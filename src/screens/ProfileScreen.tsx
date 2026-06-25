@@ -1,31 +1,14 @@
 import React, { useMemo } from 'react';
 import {
-  View, Text, StyleSheet, ScrollView, Dimensions, Platform,
+  View, Text, StyleSheet, ScrollView, Dimensions,
 } from 'react-native';
-import MapView, { MapCircle } from 'react-native-maps';
+import MapboxGL from '@rnmapbox/maps';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useStore, useStats } from '../store';
 import { flag } from '../utils/stats';
 import { DESTINATIONS } from '../data/destinations';
 
-const { width: W } = Dimensions.get('window');
 const TOTAL_COUNTRIES = 195;
-
-// Minimal map style for Android (Google Maps)
-const MINIMAL_MAP_STYLE = [
-  { elementType: 'geometry',           stylers: [{ color: '#f0f4f8' }] },
-  { elementType: 'labels',             stylers: [{ visibility: 'off' }] },
-  { featureType: 'administrative',     elementType: 'geometry', stylers: [{ visibility: 'off' }] },
-  { featureType: 'administrative.country', elementType: 'geometry.stroke', stylers: [{ color: '#c8d3dc' }, { weight: 0.8 }, { visibility: 'on' }] },
-  { featureType: 'water',              elementType: 'geometry', stylers: [{ color: '#d8eaf4' }] },
-  { featureType: 'road',               stylers: [{ visibility: 'off' }] },
-  { featureType: 'poi',                stylers: [{ visibility: 'off' }] },
-  { featureType: 'transit',            stylers: [{ visibility: 'off' }] },
-  { featureType: 'landscape',          elementType: 'geometry', stylers: [{ color: '#f0f4f8' }] },
-];
-
-// Per-destination circle radius in meters — large enough to be visible at world zoom
-const CIRCLE_RADIUS = 950_000;
 
 export default function ProfileScreen() {
   const insets = useSafeAreaInsets();
@@ -54,15 +37,19 @@ export default function ProfileScreen() {
 
   const maxCountryCount = topCountries[0]?.count ?? 1;
 
-  // Coverage intensity per destination based on country visit count
-  const coverageShapes = useMemo(() =>
-    visitedDests.map(dest => {
+  const coverageGeoJSON = useMemo((): GeoJSON.FeatureCollection => ({
+    type: 'FeatureCollection',
+    features: visitedDests.map(dest => {
       const countInCountry = stats.countryCount[dest.country] ?? 1;
-      const intensity = Math.min(countInCountry / 4, 1); // caps at 4 dests per country
-      const alpha = (0.28 + intensity * 0.42).toFixed(2);
-      return { dest, alpha };
+      const intensity = Math.min(countInCountry / 4, 1);
+      const opacity = 0.28 + intensity * 0.42;
+      return {
+        type: 'Feature',
+        geometry: { type: 'Point', coordinates: [dest.coordinates.longitude, dest.coordinates.latitude] },
+        properties: { opacity },
+      };
     }),
-  [visitedDests, stats.countryCount]);
+  }), [visitedDests, stats.countryCount]);
 
   const pct = ((stats.totalCountries / TOTAL_COUNTRIES) * 100).toFixed(1);
 
@@ -117,32 +104,37 @@ export default function ProfileScreen() {
         </View>
 
         <View pointerEvents="none" style={styles.mapWrap}>
-          <MapView
+          <MapboxGL.MapView
             style={styles.worldMap}
+            styleURL={MapboxGL.StyleURL.Light}
             scrollEnabled={false}
             zoomEnabled={false}
             rotateEnabled={false}
             pitchEnabled={false}
-            initialRegion={{ latitude: 15, longitude: 10, latitudeDelta: 155, longitudeDelta: 155 }}
-            mapType={Platform.OS === 'ios' ? 'mutedStandard' : 'standard'}
-            customMapStyle={Platform.OS === 'android' ? MINIMAL_MAP_STYLE : undefined}
-            showsUserLocation={false}
-            showsCompass={false}
-            showsScale={false}
-            showsBuildings={false}
-            showsTraffic={false}
-            showsIndoors={false}
+            logoEnabled={false}
+            compassEnabled={false}
+            scaleBarEnabled={false}
+            attributionEnabled={false}
           >
-            {coverageShapes.map(({ dest, alpha }) => (
-              <MapCircle
-                key={dest.id}
-                center={dest.coordinates}
-                radius={CIRCLE_RADIUS}
-                fillColor={`rgba(16, 185, 129, ${alpha})`}
-                strokeWidth={0}
-              />
-            ))}
-          </MapView>
+            <MapboxGL.Camera
+              defaultSettings={{ centerCoordinate: [10, 15], zoomLevel: 0.8 }}
+              animationDuration={0}
+            />
+            {visitedDests.length > 0 && (
+              <MapboxGL.ShapeSource id="coverage" shape={coverageGeoJSON}>
+                <MapboxGL.CircleLayer
+                  id="coverageCircles"
+                  style={{
+                    circleRadius: 18,
+                    circleColor: '#10B981',
+                    circleOpacity: ['get', 'opacity'] as any,
+                    circleStrokeWidth: 0,
+                    circleBlur: 1.2,
+                  }}
+                />
+              </MapboxGL.ShapeSource>
+            )}
+          </MapboxGL.MapView>
         </View>
 
         {/* Legend */}

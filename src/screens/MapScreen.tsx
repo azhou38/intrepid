@@ -1,6 +1,19 @@
 import React, { useRef, useState, useMemo, useCallback, useEffect } from 'react';
 import { View, StyleSheet, Pressable, Text, Dimensions, Animated, Platform, TextInput, Image } from 'react-native';
-import MapView, { Marker, Region } from 'react-native-maps';
+import MapboxGL from '@rnmapbox/maps';
+
+MapboxGL.setAccessToken('pk.eyJ1IjoidGFiYnkxMDEwIiwiYSI6ImNtcXN3ZHNrMTBkdG4ydnB4dGx0cjhzbTEifQ.dgznC6Z7ugUd5u56TZ3sjg');
+
+interface Region {
+  latitude: number;
+  longitude: number;
+  latitudeDelta: number;
+  longitudeDelta: number;
+}
+
+function latDeltaToZoom(latDelta: number): number {
+  return Math.max(0, Math.min(22, Math.log2(360 / latDelta) - 1));
+}
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Layers, Check, SlidersHorizontal, X, Search } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
@@ -188,12 +201,12 @@ type SearchResult =
   | { type: 'spot';        spot: Spot; destination: Destination }
 
 type MapFilter   = 'all' | 'visited' | 'wishlist';
-type MapStyleKey = 'standard' | 'hybrid';
+type MapStyleKey = 'standard' | 'satellite';
 type MapState    = 'world' | 'context' | 'sheet';
 
 const MAP_TYPES: { key: MapStyleKey; label: string }[] = [
-  { key: 'standard', label: 'Light' },
-  { key: 'hybrid',   label: 'Dark'  },
+  { key: 'standard',  label: 'Standard'  },
+  { key: 'satellite', label: 'Satellite' },
 ];
 
 function getVisibleRank(latDelta: number): number {
@@ -212,7 +225,7 @@ function getZoomDelta(category: string): number {
 
 export default function MapScreen() {
   const insets = useSafeAreaInsets();
-  const mapRef = useRef<MapView>(null);
+  const cameraRef = useRef<MapboxGL.Camera>(null);
 
   const savedDestinations = useStore(s => s.savedDestinations);
 
@@ -247,6 +260,7 @@ export default function MapScreen() {
   const [countryPinsReady, setCountryPinsReady] = useState(false);
   const selectedCountryRef   = useRef<CountryCluster | null>(null);
   const lastCountryPressRef  = useRef(0);
+  const lastMenuOpenRef      = useRef(0);
 
   // ── Animation refs ────────────────────────────────────────────────────────
   const worldPillAnim  = useRef(new Animated.Value(1)).current;
@@ -464,6 +478,32 @@ export default function MapScreen() {
     ]).start();
   }, [worldPillAnim, breadcrumbAnim]);
 
+  // ── Camera helpers ────────────────────────────────────────────────────────
+  const animateCamera = useCallback((reg: Region, duration = 500) => {
+    cameraRef.current?.setCamera({
+      centerCoordinate: [reg.longitude, reg.latitude],
+      zoomLevel: latDeltaToZoom(reg.latitudeDelta),
+      animationDuration: duration,
+      animationMode: 'easeTo',
+    });
+  }, []);
+
+  const fitCoords = useCallback((
+    coords: { latitude: number; longitude: number }[],
+    padding: { top: number; right: number; bottom: number; left: number },
+    duration = 500,
+  ) => {
+    if (!coords.length) return;
+    const lngs = coords.map(c => c.longitude);
+    const lats = coords.map(c => c.latitude);
+    cameraRef.current?.fitBounds(
+      [Math.max(...lngs), Math.max(...lats)],
+      [Math.min(...lngs), Math.min(...lats)],
+      [padding.top, padding.right, padding.bottom, padding.left],
+      duration,
+    );
+  }, []);
+
   // ── Handlers ─────────────────────────────────────────────────────────────
   const handleMarkerPress = useCallback((dest: Destination) => {
     // Keep selectedCountry set — we're drilling into a destination within the country.
@@ -478,9 +518,7 @@ export default function MapScreen() {
     setZoomedIntoDestination(true);
     showBreadcrumb(true);
     const zoom = getZoomDelta(dest.category);
-    mapRef.current?.animateToRegion(
-      { ...dest.coordinates, latitudeDelta: zoom, longitudeDelta: zoom }, 500
-    );
+    animateCamera({ ...dest.coordinates, latitudeDelta: zoom, longitudeDelta: zoom }, 500);
   }, [region, showBreadcrumb]);
 
   const handleCloseSheet = useCallback(() => {
@@ -517,10 +555,7 @@ export default function MapScreen() {
     exitTimerRef.current = setTimeout(() => { setSelectedDest(null); exitTimerRef.current = null; }, 280);
     const lat = selectedDest?.coordinates.latitude  ?? 20;
     const lng = selectedDest?.coordinates.longitude ?? 10;
-    mapRef.current?.animateToRegion(
-      { latitude: lat, longitude: lng, latitudeDelta: 120, longitudeDelta: 120 },
-      500
-    );
+    animateCamera({ latitude: lat, longitude: lng, latitudeDelta: 120, longitudeDelta: 120 }, 500);
   }, [selectedDest, showBreadcrumb]);
 
   // Called by DestinationSheet's own X/swipe close — restores the country view naturally
@@ -550,14 +585,11 @@ export default function MapScreen() {
 
     const countryRegion = getCountryRegion(selectedDest.countryCode);
     if (countryRegion) {
-      mapRef.current?.animateToRegion(countryRegion, 500);
+      animateCamera(countryRegion, 500);
     } else {
-      mapRef.current?.fitToCoordinates(
-        dests.map(d => d.coordinates),
-        { edgePadding: { top: 120, right: 120, bottom: 300, left: 120 }, animated: true },
-      );
+      fitCoords(dests.map(d => d.coordinates), { top: 120, right: 120, bottom: 300, left: 120 });
     }
-  }, [selectedDest, savedDestinations]);
+  }, [selectedDest, savedDestinations, animateCamera, fitCoords]);
 
   const handleCloseCountry = useCallback(() => {
     if (!selectedCountryRef.current) return;
@@ -567,10 +599,8 @@ export default function MapScreen() {
     showBreadcrumb(false);
     if (exitTimerRef.current) clearTimeout(exitTimerRef.current);
     exitTimerRef.current = setTimeout(() => { setSelectedCountry(null); exitTimerRef.current = null; }, 280);
-    mapRef.current?.animateToRegion(
-      { latitude, longitude, latitudeDelta: 120, longitudeDelta: 120 }, 600,
-    );
-  }, [showBreadcrumb]);
+    animateCamera({ latitude, longitude, latitudeDelta: 120, longitudeDelta: 120 }, 600);
+  }, [showBreadcrumb, animateCamera]);
 
   const handleCountryPress = useCallback((cluster: CountryCluster) => {
     lastCountryPressRef.current = Date.now();
@@ -581,27 +611,20 @@ export default function MapScreen() {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     const region = getCountryRegion(cluster.countryCode);
     if (region) {
-      mapRef.current?.animateToRegion(region, 500);
+      animateCamera(region, 500);
     } else {
-      // Fallback for unknown country codes: fit to destination pins with generous padding
       const dests = DESTINATIONS.filter(d => d.country === cluster.country);
       if (dests.length > 0) {
-        mapRef.current?.fitToCoordinates(
-          dests.map(d => d.coordinates),
-          { edgePadding: { top: 120, right: 120, bottom: 300, left: 120 }, animated: true }
-        );
+        fitCoords(dests.map(d => d.coordinates), { top: 120, right: 120, bottom: 300, left: 120 });
       }
     }
-  }, [showBreadcrumb]);
+  }, [showBreadcrumb, animateCamera, fitCoords]);
 
   const handleClusterPress = useCallback((dests: Destination[]) => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-    lastCountryPressRef.current = Date.now(); // prevent auto-dismiss during zoom animation
-    mapRef.current?.fitToCoordinates(
-      dests.map(d => d.coordinates),
-      { edgePadding: { top: 100, right: 80, bottom: 280, left: 80 }, animated: true },
-    );
-  }, []);
+    lastCountryPressRef.current = Date.now();
+    fitCoords(dests.map(d => d.coordinates), { top: 100, right: 80, bottom: 280, left: 80 });
+  }, [fitCoords]);
 
   const handleSearchSelect = useCallback((item: SearchResult) => {
     setSearchQuery('');
@@ -629,14 +652,24 @@ export default function MapScreen() {
       setSelectedDest(item.destination);
       setMapState('context');
       setZoomedIntoDestination(true);
-      mapRef.current?.animateToRegion(
-        { ...item.spot.coordinates, latitudeDelta: 0.02, longitudeDelta: 0.02 },
-        500,
-      );
+      animateCamera({ ...item.spot.coordinates, latitudeDelta: 0.02, longitudeDelta: 0.02 }, 500);
     }
-  }, [handleCountryPress, handleMarkerPress, region]);
+  }, [handleCountryPress, handleMarkerPress, region, animateCamera]);
 
-  const handleRegionChangeComplete = useCallback((newRegion: Region) => {
+  const handleMapIdle = useCallback((state: {
+    properties: {
+      center: [number, number];
+      bounds: { ne: [number, number]; sw: [number, number] };
+      zoom: number;
+    };
+  }) => {
+    const { center, bounds } = state.properties;
+    const newRegion: Region = {
+      latitude:      center[1],
+      longitude:     center[0],
+      latitudeDelta: Math.abs(bounds.ne[1] - bounds.sw[1]),
+      longitudeDelta: Math.abs(bounds.ne[0] - bounds.sw[0]),
+    };
     setRegion(newRegion);
     setShowMapMenu(false);
 
@@ -718,13 +751,13 @@ export default function MapScreen() {
     <View style={styles.root}>
 
       {/* ── MAP ──────────────────────────────────────────────────────────── */}
-      <MapView
-        ref={mapRef}
+      <MapboxGL.MapView
+        key={mapType}
         style={StyleSheet.absoluteFill}
-        mapType={mapType}
-        initialRegion={{ latitude: 20, longitude: 10, latitudeDelta: 120, longitudeDelta: 120 }}
-        onRegionChangeComplete={handleRegionChangeComplete}
+        styleURL={mapType === 'satellite' ? MapboxGL.StyleURL.SatelliteStreets : MapboxGL.StyleURL.Standard}
+        onMapIdle={handleMapIdle}
         onPress={() => {
+          if (Date.now() - lastMenuOpenRef.current < 400) return;
           if (Date.now() - lastCountryPressRef.current > 600) {
             setSelectedCountry(null);
             selectedCountryRef.current = null;
@@ -734,66 +767,74 @@ export default function MapScreen() {
           searchInputRef.current?.blur();
           setSearchFocused(false);
         }}
-        showsUserLocation
-        showsCompass={false}
-        showsPointsOfInterest={false}
+        logoEnabled={false}
+        compassEnabled={false}
+        scaleBarEnabled={false}
+        attributionEnabled={false}
       >
+        <MapboxGL.Camera
+          ref={cameraRef}
+          defaultSettings={{ centerCoordinate: [10, 20], zoomLevel: 1.5 }}
+        />
+        <MapboxGL.UserLocation animated />
+
         {/* Spot pins (shown when zoomed in) */}
         {visibleSpots.map(spot => (
-          <Marker key={spot.id} coordinate={spot.coordinates}
-            anchor={{ x: 0.5, y: 0.5 }} tracksViewChanges={false}>
+          <MapboxGL.MarkerView
+            key={spot.id}
+            coordinate={[spot.coordinates.longitude, spot.coordinates.latitude]}
+          >
             <View style={styles.spotPin}>
               <Text style={styles.spotPinIcon}>{spot.icon}</Text>
             </View>
-          </Marker>
+          </MapboxGL.MarkerView>
         ))}
 
         {/* Country cluster pills — hidden for selected country (showing its pins instead),
             still shown for all other countries whose threshold hasn't been met */}
         {countryPills.filter(c => c.countryCode !== selectedCountry?.countryCode).map(cluster => (
-          <Marker key={cluster.country}
-            coordinate={{ latitude: cluster.latitude, longitude: cluster.longitude }}
-            anchor={{ x: 0.5, y: 0.5 }} tracksViewChanges={false}
-            onPress={() => handleCountryPress(cluster)}
+          <MapboxGL.MarkerView
+            key={cluster.country}
+            coordinate={[cluster.longitude, cluster.latitude]}
           >
-            <View style={[styles.countryPill, cluster.visitedCount > 0 && styles.countryPillVisited]}>
-              <View style={styles.countryPillFlagBubble}>
-                <Text style={styles.countryPillFlag}>{flag(cluster.countryCode)}</Text>
+            <Pressable onPress={() => handleCountryPress(cluster)}>
+              <View style={[styles.countryPill, cluster.visitedCount > 0 && styles.countryPillVisited]}>
+                <View style={styles.countryPillFlagBubble}>
+                  <Text style={styles.countryPillFlag}>{flag(cluster.countryCode)}</Text>
+                </View>
+                <Text style={styles.countryPillName} numberOfLines={1}>{cluster.country}</Text>
               </View>
-              <Text style={styles.countryPillName} numberOfLines={1}>{cluster.country}</Text>
-            </View>
-          </Marker>
+            </Pressable>
+          </MapboxGL.MarkerView>
         ))}
 
         {/* Destination pins / cluster bubbles */}
         {region.latitudeDelta >= SPOT_THRESHOLD && destItems.map(item => {
           const destCountryCode = item.type === 'pin' ? item.dest.countryCode : item.dests[0]?.countryCode ?? '';
           if (selectedCountry) {
-            // Country mode: hide all pins during zoom animation (prevents flash)
             if (!countryPinsReady) return null;
-
             if (clusteredCodes.has(destCountryCode)) return null;
           } else {
-            // World mode: hide pins for countries that still have a visible pill
             if (clusteredCodes.has(destCountryCode)) return null;
           }
 
-          // Primary destination marker (full photo pin or cluster bubble)
           if (item.type === 'cluster') {
             const anyVisited  = item.dests.some(d => savedDestinations[d.id]?.type === 'visited');
             const anyWishlist = item.dests.some(d => savedDestinations[d.id]?.isWishlisted || savedDestinations[d.id]?.type === 'wishlist');
             const ringColor   = anyVisited ? VISITED_COLOR : anyWishlist ? WISHLIST_COLOR : '#374151';
             return (
-              <Marker key={`cluster-${item.latitude}-${item.longitude}`}
-                coordinate={{ latitude: item.latitude, longitude: item.longitude }}
-                anchor={{ x: 0.5, y: 0.5 }} tracksViewChanges={false}
-                onPress={() => handleClusterPress(item.dests)}>
-                <View style={[styles.clusterHalo, { backgroundColor: ringColor + '40' }]}>
-                  <View style={[styles.clusterBubble, { backgroundColor: ringColor }]}>
-                    <Text style={styles.clusterCount}>{item.count}</Text>
+              <MapboxGL.MarkerView
+                key={`cluster-${item.latitude}-${item.longitude}`}
+                coordinate={[item.longitude, item.latitude]}
+              >
+                <Pressable onPress={() => handleClusterPress(item.dests)}>
+                  <View style={[styles.clusterHalo, { backgroundColor: ringColor + '40' }]}>
+                    <View style={[styles.clusterBubble, { backgroundColor: ringColor }]}>
+                      <Text style={styles.clusterCount}>{item.count}</Text>
+                    </View>
                   </View>
-                </View>
-              </Marker>
+                </Pressable>
+              </MapboxGL.MarkerView>
             );
           }
           const dest       = item.dest;
@@ -803,17 +844,20 @@ export default function MapScreen() {
           const isSelected = dest.id === selectedDest?.id;
           const spotCount  = SPOT_COUNT_BY_DEST[dest.id] ?? 0;
           return (
-            <Marker key={dest.id} coordinate={dest.coordinates}
-              onPress={() => handleMarkerPress(dest)}
-              anchor={{ x: 0.5, y: 0.38 }} tracksViewChanges={true}>
-              <DestPin
-                dest={dest} spotCount={spotCount}
-                isVisited={isVisited} isWishlist={isWishlist} isSelected={isSelected}
-              />
-            </Marker>
+            <MapboxGL.MarkerView
+              key={dest.id}
+              coordinate={[dest.coordinates.longitude, dest.coordinates.latitude]}
+            >
+              <Pressable onPress={() => handleMarkerPress(dest)}>
+                <DestPin
+                  dest={dest} spotCount={spotCount}
+                  isVisited={isVisited} isWishlist={isWishlist} isSelected={isSelected}
+                />
+              </Pressable>
+            </MapboxGL.MarkerView>
           );
         })}
-      </MapView>
+      </MapboxGL.MapView>
 
       {/* ── Search bar (world mode only) ─────────────────────────────────── */}
       <Animated.View
@@ -827,6 +871,7 @@ export default function MapScreen() {
         <View style={[styles.searchBar, searchFocused && styles.searchBarFocused]}>
           <Pressable
             onPress={() => { setShowFilterMenu(v => !v); setShowMapMenu(false); }}
+            onPressIn={() => { lastMenuOpenRef.current = Date.now(); }}
             hitSlop={8}
           >
             <SlidersHorizontal size={16} color={filter !== 'all' ? '#6366F1' : '#9CA3AF'} />
@@ -954,11 +999,6 @@ export default function MapScreen() {
         </Animated.View>
       )}
 
-      {/* ── Menu backdrops (dismiss on outside tap) ──────────────────────── */}
-      {(showMapMenu || showFilterMenu) && (
-        <Pressable style={StyleSheet.absoluteFill}
-          onPress={() => { setShowMapMenu(false); setShowFilterMenu(false); }} />
-      )}
 
       {/* ── Up One Level pill (top right, below layers button) ──────────── */}
       {(selectedCountry || selectedDest) && (
@@ -988,7 +1028,10 @@ export default function MapScreen() {
       )}
 
       {/* ── Layers button + dropdown ─────────────────────────────────────── */}
-      <View style={[styles.mapTypeWrap, { top: insets.top + 10 }]}>
+      <View
+        style={[styles.mapTypeWrap, { top: insets.top + 10 }]}
+        onTouchStart={() => { lastMenuOpenRef.current = Date.now(); }}
+      >
         <Pressable style={[styles.mapTypeBtn, showMapMenu && styles.mapTypeBtnOpen]}
           onPress={() => { setShowMapMenu(v => !v); setShowFilterMenu(false); }}>
           <Layers size={18} color="#111827" />
@@ -1012,9 +1055,7 @@ export default function MapScreen() {
       {selectedDest && destDetached && (
         <Pressable
           style={[styles.detachedChip, { bottom: insets.bottom + 168 }]}
-          onPress={() => mapRef.current?.animateToRegion(
-            { ...selectedDest.coordinates, latitudeDelta: 0.08, longitudeDelta: 0.08 }, 500
-          )}
+          onPress={() => animateCamera({ ...selectedDest.coordinates, latitudeDelta: 0.08, longitudeDelta: 0.08 }, 500)}
         >
           <Text style={styles.detachedChipIcon}>{selectedDest.icon ?? '📍'}</Text>
           <Text style={styles.detachedChipTxt} numberOfLines={1}>
@@ -1029,7 +1070,7 @@ export default function MapScreen() {
           style={[styles.detachedChip, { bottom: insets.bottom + 168 }]}
           onPress={() => {
             const r = getCountryRegion(selectedCountry.countryCode);
-            if (r) mapRef.current?.animateToRegion(r, 500);
+            if (r) animateCamera(r, 500);
           }}
         >
           <Text style={styles.detachedChipIcon}>{flag(selectedCountry.countryCode)}</Text>
