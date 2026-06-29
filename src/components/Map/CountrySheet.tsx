@@ -242,7 +242,7 @@ export default function CountrySheet({ cluster, onClose, onSelectDestination, on
       </Animated.View>
 
       <Animated.View {...panResponder.panHandlers} style={[st.sheet, { top: slideAnim }]}>
-        <View style={{ flex: 1, overflow: 'hidden' }}>
+        <View style={[StyleSheet.absoluteFill, { overflow: 'hidden' }]}>
 
           {/* ── FULL CONTENT ─────────────────────────────────────────────── */}
           <ScrollView
@@ -388,7 +388,7 @@ const st = StyleSheet.create({
   backdrop: { ...StyleSheet.absoluteFillObject, zIndex: 200, elevation: 200 },
 
   sheet: {
-    position: 'absolute', left: 0, right: 0, bottom: 0, overflow: 'hidden',
+    position: 'absolute', left: 0, right: 0, height: H, overflow: 'hidden',
     borderTopLeftRadius: 24, borderTopRightRadius: 24, backgroundColor: '#F9FAFB',
   },
 

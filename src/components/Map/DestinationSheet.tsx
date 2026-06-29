@@ -1132,7 +1132,7 @@ export default function DestinationSheet({ destination, onClose, onExpand, onCol
       <Animated.View {...panResponder.panHandlers} style={[st.sheet, { top: slideAnim }]}>
 
         {/* ── FULL CONTENT — fills entire sheet, hero starts at y=0 ──────── */}
-        <View style={{ flex: 1, overflow: 'hidden' }}>
+        <View style={[StyleSheet.absoluteFill, { overflow: 'hidden' }]}>
         <KeyboardAvoidingView
           style={{ flex: 1 }}
           behavior={Platform.OS === 'ios' ? 'padding' : undefined}
@@ -1630,7 +1630,7 @@ const CROWD_CHART_H = 64;
 const st = StyleSheet.create({
   backdrop: { ...StyleSheet.absoluteFillObject, zIndex:200, elevation:200 },
   sheet: {
-    position:'absolute', left:0, right:0, bottom:0, overflow:'hidden',
+    position:'absolute', left:0, right:0, height:H, overflow:'hidden',
     borderTopLeftRadius:24, borderTopRightRadius:24, backgroundColor:'#F9FAFB',
   },
 
