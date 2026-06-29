@@ -8,7 +8,7 @@ const BOUNDS: Record<string, [number, number, number, number]> = {
   GB: [ 49.9,  61.1,  -8.6,   1.8],
   GR: [ 34.8,  41.8,  19.3,  29.6],
   IT: [ 36.6,  47.1,   6.6,  18.5],
-  JP: [ 24.0,  45.5, 122.9, 153.0],
+  JP: [ 30.5,  45.5, 129.0, 146.0],
   NL: [ 50.8,  53.5,   3.4,   7.2],
   US: [ 20.0,  50.0,-125.0, -66.0],
 };
@@ -38,6 +38,19 @@ export function getClusterThreshold(countryCode: string, fallback = 30): number 
   if (!b) return fallback;
   const latSpan = b[1] - b[0];
   return latSpan * 3.0;
+}
+
+/** Returns the NE/SW corners of a country's bounding box for use with fitBounds. */
+export function getCountryBounds(countryCode: string): {
+  ne: { latitude: number; longitude: number };
+  sw: { latitude: number; longitude: number };
+} | null {
+  const b = BOUNDS[countryCode];
+  if (!b) return null;
+  return {
+    ne: { latitude: b[1], longitude: b[3] },
+    sw: { latitude: b[0], longitude: b[2] },
+  };
 }
 
 /** Returns a MapView region that fits the whole country with optional padding factor (default 1.10). */

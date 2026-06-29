@@ -124,7 +124,7 @@ export default function CountrySheet({ cluster, onClose, onSelectDestination, on
   }), []);
 
   // Bookmark tabs + country btn above compact card
-  const bookmarkTop   = useMemo(() => Animated.subtract(slideAnim, 22), []);
+  const bookmarkTop   = useMemo(() => Animated.subtract(slideAnim, 24), []);
 
   // Slide in on mount
   useEffect(() => {
@@ -242,7 +242,7 @@ export default function CountrySheet({ cluster, onClose, onSelectDestination, on
       </Animated.View>
 
       <Animated.View {...panResponder.panHandlers} style={[st.sheet, { top: slideAnim }]}>
-        <View style={[StyleSheet.absoluteFill, { overflow: 'hidden' }]}>
+        <View style={[StyleSheet.absoluteFill, { overflow: 'hidden', borderTopLeftRadius: 24, borderTopRightRadius: 24 }]}>
 
           {/* ── FULL CONTENT ─────────────────────────────────────────────── */}
           <ScrollView
@@ -370,12 +370,12 @@ export default function CountrySheet({ cluster, onClose, onSelectDestination, on
         >
           {isAnyVisited && (
             <View style={[st.bookmarkTab, st.bookmarkTabVisited]}>
-              <Text style={st.bookmarkTabTxt}>Visited</Text>
+              <Text style={st.bookmarkTabTxt}>✓ Visited</Text>
             </View>
           )}
           {isAnyWishlist && (
             <View style={[st.bookmarkTab, st.bookmarkTabWishlist]}>
-              <Text style={st.bookmarkTabTxt}>Wishlist</Text>
+              <Text style={st.bookmarkTabTxt}>♡ Wishlist</Text>
             </View>
           )}
         </Animated.View>
@@ -388,8 +388,10 @@ const st = StyleSheet.create({
   backdrop: { ...StyleSheet.absoluteFillObject, zIndex: 200, elevation: 200 },
 
   sheet: {
-    position: 'absolute', left: 0, right: 0, height: H, overflow: 'hidden',
+    position: 'absolute', left: 0, right: 0, height: H,
     borderTopLeftRadius: 24, borderTopRightRadius: 24, backgroundColor: '#F9FAFB',
+    shadowColor: '#000', shadowOpacity: 0.22, shadowRadius: 20,
+    shadowOffset: { width: 0, height: -6 }, elevation: 16,
   },
 
   // ── Header ──────────────────────────────────────────────────────────────────
@@ -443,8 +445,8 @@ const st = StyleSheet.create({
     shadowColor: '#000', shadowOffset: { width: 0, height: -4 },
     shadowOpacity: 0.10, shadowRadius: 16, elevation: 12,
   },
-  compactCardVisited:  { borderTopWidth: 3, borderTopColor: '#059669' },
-  compactCardWishlist: { borderTopWidth: 3, borderTopColor: '#DB2777' },
+  compactCardVisited:  {},
+  compactCardWishlist: {},
 
   pillRow: { position: 'absolute', top: 10, left: 0, right: 0, alignItems: 'center', zIndex: 10 },
   pill:    { width: 36, height: 4, borderRadius: 2, backgroundColor: '#D1D5DB' },

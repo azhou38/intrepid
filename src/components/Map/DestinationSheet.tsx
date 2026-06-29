@@ -1111,7 +1111,7 @@ export default function DestinationSheet({ destination, onClose, onExpand, onCol
   const userRatingWhole = Math.round(userRating);
 
   // Bookmark tabs positioned just above the sheet's top edge
-  const bookmarkTop = useMemo(() => Animated.subtract(slideAnim, 22), []);
+  const bookmarkTop = useMemo(() => Animated.subtract(slideAnim, 24), []);
   // Country back button: 68px above card top (above bookmark tab area + gap)
 
   return (
@@ -1128,6 +1128,9 @@ export default function DestinationSheet({ destination, onClose, onExpand, onCol
       >
         <Pressable style={StyleSheet.absoluteFill} onPress={() => snapToCollapsedRef.current()} />
       </Animated.View>
+
+      {/* Shadow-only backdrop — sibling behind sheet so overflow:hidden doesn't clip the shadow */}
+      <Animated.View pointerEvents="none" style={[st.sheetShadow, { top: slideAnim }]} />
 
       <Animated.View {...panResponder.panHandlers} style={[st.sheet, { top: slideAnim }]}>
 
@@ -1183,7 +1186,16 @@ export default function DestinationSheet({ destination, onClose, onExpand, onCol
                 <Text style={st.heroName} numberOfLines={1}>{destination.name}</Text>
 
                 <View style={st.heroMeta}>
-                  <Text style={st.heroMetaTxt}>{flag(destination.countryCode)}  {destination.country}</Text>
+                  <View style={st.heroFlagCircle}>
+                    <View style={st.heroFlagClip}>
+                      <Image
+                        source={{ uri: `https://flagcdn.com/w160/${destination.countryCode.toLowerCase()}.png` }}
+                        style={st.heroFlagImg}
+                        resizeMode="cover"
+                      />
+                    </View>
+                  </View>
+                  <Text style={st.heroMetaTxt}>{destination.country}</Text>
                   <Text style={st.heroMetaDot}> · </Text>
                   <Text style={st.heroMetaTxt}>{destination.continent}</Text>
                 </View>
@@ -1533,7 +1545,6 @@ export default function DestinationSheet({ destination, onClose, onExpand, onCol
             position: 'absolute', left: 0, right: 0, top: 0,
             backgroundColor: 'white',
             borderTopLeftRadius: 24, borderTopRightRadius: 24,
-            ...(isVisited ? { borderTopWidth: 3, borderTopColor: '#059669' } : isWishlist ? { borderTopWidth: 3, borderTopColor: '#DB2777' } : {}),
             transform: [{ translateY: compactTranslateY }],
           }}
           onLayout={(e) => {
@@ -1606,12 +1617,12 @@ export default function DestinationSheet({ destination, onClose, onExpand, onCol
         >
           {isVisited && (
             <View style={[st.bookmarkTab, st.bookmarkTabVisited]}>
-              <Text style={st.bookmarkTabTxt}>Visited</Text>
+              <Text style={st.bookmarkTabTxt}>✓ Visited</Text>
             </View>
           )}
           {isWishlist && (
             <View style={[st.bookmarkTab, st.bookmarkTabWishlist]}>
-              <Text style={st.bookmarkTabTxt}>Wishlist</Text>
+              <Text style={st.bookmarkTabTxt}>♡ Wishlist</Text>
             </View>
           )}
         </Animated.View>
@@ -1632,6 +1643,13 @@ const st = StyleSheet.create({
   sheet: {
     position:'absolute', left:0, right:0, height:H, overflow:'hidden',
     borderTopLeftRadius:24, borderTopRightRadius:24, backgroundColor:'#F9FAFB',
+  },
+  sheetShadow: {
+    position:'absolute', left:0, right:0, height:H,
+    borderTopLeftRadius:24, borderTopRightRadius:24,
+    backgroundColor:'#F9FAFB',
+    shadowColor:'#000', shadowOpacity:0.22, shadowRadius:20,
+    shadowOffset:{ width:0, height:-6 }, elevation:16,
   },
 
   // ── Compact card header ─────────────────────────────────────────────────────
@@ -1693,9 +1711,12 @@ const st = StyleSheet.create({
   // Hero text content
   heroContent: { paddingHorizontal:20, paddingBottom:14, paddingTop:8, gap:10 },
   heroName:    { fontSize:42, fontFamily:'PlayfairDisplay_700Bold', color:'white', letterSpacing:-0.5 },
-  heroMeta:    { flexDirection:'row', alignItems:'center' },
-  heroMetaTxt: { fontSize:14, color:'rgba(255,255,255,0.90)', fontWeight:'500' },
-  heroMetaDot: { fontSize:14, color:'rgba(255,255,255,0.40)' },
+  heroMeta:      { flexDirection:'row', alignItems:'center' },
+  heroMetaTxt:   { fontSize:14, color:'rgba(255,255,255,0.90)', fontWeight:'500' },
+  heroMetaDot:   { fontSize:14, color:'rgba(255,255,255,0.40)' },
+  heroFlagCircle: { width:20, height:20, borderRadius:10, backgroundColor:'#fff', alignItems:'center', justifyContent:'center', marginRight:6 },
+  heroFlagClip:   { width:17, height:17, borderRadius:8.5, overflow:'hidden' },
+  heroFlagImg:    { width:17, height:17 },
   heroTagline: { fontSize:14, color:'rgba(255,255,255,0.78)', lineHeight:20, fontWeight:'400', letterSpacing:0.1 },
 
   // Community rating + spots row

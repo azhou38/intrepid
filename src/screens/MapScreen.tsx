@@ -2,7 +2,28 @@ import React, { useRef, useState, useMemo, useCallback, useEffect } from 'react'
 import { View, StyleSheet, Pressable, Text, Dimensions, Animated, Platform, TextInput, Image } from 'react-native';
 import MapboxGL from '@rnmapbox/maps';
 
-MapboxGL.setAccessToken('pk.eyJ1IjoidGFiYnkxMDEwIiwiYSI6ImNtcXN3ZHNrMTBkdG4ydnB4dGx0cjhzbTEifQ.dgznC6Z7ugUd5u56TZ3sjg');
+const MAPBOX_TOKEN = 'pk.eyJ1IjoidGFiYnkxMDEwIiwiYSI6ImNtcXN3ZHNrMTBkdG4ydnB4dGx0cjhzbTEifQ.dgznC6Z7ugUd5u56TZ3sjg';
+MapboxGL.setAccessToken(MAPBOX_TOKEN);
+
+// Fetch a Mapbox style, strip text-label symbol layers, and force Mercator (flat) projection.
+// Returns null if the style uses the newer imports-based format (layers array is empty).
+async function fetchStyleNoLabels(styleId: string): Promise<string | null> {
+  try {
+    const res = await fetch(
+      `https://api.mapbox.com/styles/v1/${styleId}?access_token=${MAPBOX_TOKEN}`,
+    );
+    const style = await res.json();
+    const layers: any[] = style.layers ?? [];
+    if (layers.length === 0) return null; // imports-based style — can't filter client-side
+    style.layers = layers.filter(
+      (l: any) => !(l.type === 'symbol' && l.layout?.['text-field']),
+    );
+    style.projection = { name: 'mercator' };
+    return JSON.stringify(style);
+  } catch {
+    return null;
+  }
+}
 
 interface Region {
   latitude: number;
@@ -21,7 +42,7 @@ import { useStore } from '../store';
 import { CATEGORY_ICONS } from '../types';
 import type { Destination, CountryCluster } from '../types';
 import { flag } from '../utils/stats';
-import { getCountryRegion, getCountryCenter, getClusterThreshold } from '../utils/countryBounds';
+import { getCountryRegion, getCountryBounds, getCountryCenter, getClusterThreshold } from '../utils/countryBounds';
 import { DESTINATIONS } from '../data/destinations';
 import { SPOTS, type Spot } from '../data/spots';
 import DestinationSheet from '../components/Map/DestinationSheet';
@@ -89,8 +110,8 @@ const pinSt = StyleSheet.create({
     borderWidth: PIN_BORDER, borderColor: 'white',
     overflow: 'hidden', backgroundColor: '#E5E7EB',
     alignItems: 'center', justifyContent: 'center',
-    shadowColor: '#000', shadowOpacity: 0.25, shadowRadius: 6,
-    shadowOffset: { width: 0, height: 2 }, elevation: 6,
+    shadowColor: '#000', shadowOpacity: 0.42, shadowRadius: 10,
+    shadowOffset: { width: 0, height: 3 }, elevation: 10,
   },
   fallbackIcon: { fontSize: 22 },
   badge: {
@@ -103,9 +124,10 @@ const pinSt = StyleSheet.create({
   badgeTxt: { fontSize: 10, fontWeight: '800', color: 'white', textAlign: 'center' },
   label: {
     marginTop: 4, fontSize: 11, fontWeight: '700',
-    color: '#111827', textAlign: 'center', maxWidth: 90,
-    textShadowColor: 'rgba(255,255,255,0.9)', textShadowRadius: 3,
-    textShadowOffset: { width: 0, height: 0 },
+    color: 'white', textAlign: 'center', maxWidth: 90,
+    textTransform: 'uppercase', letterSpacing: 0.6,
+    textShadowColor: 'rgba(0,0,0,0.9)', textShadowRadius: 5,
+    textShadowOffset: { width: 0, height: 1 },
   },
 });
 
@@ -209,6 +231,7 @@ const MAP_TYPES: { key: MapStyleKey; label: string }[] = [
   { key: 'satellite', label: 'Satellite' },
 ];
 
+
 function getVisibleRank(latDelta: number): number {
   if (latDelta > 50) return 1;
   if (latDelta > 20) return 2;
@@ -232,6 +255,9 @@ export default function MapScreen() {
   const [mapType,        setMapType       ] = useState<MapStyleKey>('standard');
   const [filter,         setFilter        ] = useState<MapFilter>('all');
   const [showFilterMenu, setShowFilterMenu] = useState(false);
+  const [noLabelStyles, setNoLabelStyles] = useState<Partial<Record<MapStyleKey, string>>>({});
+  const [backdropActive, setBackdropActive] = useState(false);
+  const backdropRafRef = useRef<ReturnType<typeof requestAnimationFrame> | null>(null);
   const [mapState,       setMapState      ] = useState<MapState>('world');
   const [selectedDest, setSelectedDest] = useState<Destination | null>(null);
   const [region,       setRegion      ] = useState<Region>({
@@ -240,6 +266,7 @@ export default function MapScreen() {
 
   const prevRegionRef       = useRef<Region>({ latitude: 20, longitude: 10, latitudeDelta: 120, longitudeDelta: 120 });
   const lastWorldRegionRef  = useRef<Region>({ latitude: 20, longitude: 10, latitudeDelta: 120, longitudeDelta: 120 });
+  const prevCountryRef      = useRef<CountryCluster | null>(null);
 
   const [showMapMenu, setShowMapMenu] = useState(false);
 
@@ -247,6 +274,9 @@ export default function MapScreen() {
   const [zoomedIntoDestination, setZoomedIntoDestination] = useState(false);
   const zoomTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const exitTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const lastCameraTimeRef = useRef(0);
+
+
 
   // ── Search ────────────────────────────────────────────────────────────────
   const [searchQuery,   setSearchQuery  ] = useState('');
@@ -257,16 +287,63 @@ export default function MapScreen() {
   const [selectedCountry, setSelectedCountry] = useState<CountryCluster | null>(null);
   // True only after the zoom animation into a country completes, so pins don't flash
   // during the animation (when region.latitudeDelta is still at world-view level).
-  const [countryPinsReady, setCountryPinsReady] = useState(false);
   const selectedCountryRef   = useRef<CountryCluster | null>(null);
+  // The settled camera region when a country view first stabilises — "Return" only shows after this is captured
+  const [countryHomeRegion, setCountryHomeRegion] = useState<Region | null>(null);
+  const countryHomeRegionRef = useRef<Region | null>(null);
+  const [destHomeRegion, setDestHomeRegion] = useState<Region | null>(null);
+  const destHomeRegionRef = useRef<Region | null>(null);
   const lastCountryPressRef  = useRef(0);
   const lastMenuOpenRef      = useRef(0);
+  const showMapMenuRef       = useRef(false);
+  const showFilterMenuRef    = useRef(false);
+  // Keep refs in sync so MapView's native onPress can read current menu state synchronously
+  showMapMenuRef.current    = showMapMenu;
+  showFilterMenuRef.current = showFilterMenu;
 
   // ── Animation refs ────────────────────────────────────────────────────────
-  const worldPillAnim  = useRef(new Animated.Value(1)).current;
-  const breadcrumbAnim = useRef(new Animated.Value(0)).current;
+  const worldPillAnim    = useRef(new Animated.Value(1)).current;
+  const breadcrumbAnim   = useRef(new Animated.Value(0)).current;
+  const returnPromptAnim = useRef(new Animated.Value(0)).current;
+  const destReturnPromptAnim = useRef(new Animated.Value(0)).current;
   const worldPillScale  = useMemo(() => worldPillAnim.interpolate({ inputRange: [0, 1], outputRange: [0.88, 1] }), []);
   const breadcrumbScale = useMemo(() => breadcrumbAnim.interpolate({ inputRange: [0, 1], outputRange: [0.88, 1] }), []);
+
+  // Show "Return" only after the camera has settled into the country view, and only if the
+  // user has since panned or zoomed away from that settled position.
+  const showReturnPrompt = useMemo(() => {
+    if (!selectedCountry || selectedDest || !countryHomeRegion) return false;
+    const zoomedOut = region.latitudeDelta > countryHomeRegion.latitudeDelta * 1.6;
+    const pannedAway =
+      Math.abs(region.latitude  - countryHomeRegion.latitude)  > countryHomeRegion.latitudeDelta  * 0.45 ||
+      Math.abs(region.longitude - countryHomeRegion.longitude) > countryHomeRegion.longitudeDelta * 0.45;
+    return zoomedOut || pannedAway;
+  }, [selectedCountry, selectedDest, countryHomeRegion, region]);
+
+  const showDestReturnPrompt = useMemo(() => {
+    if (!selectedDest || !destHomeRegion) return false;
+    const zoomedOut = region.latitudeDelta > destHomeRegion.latitudeDelta * 1.6;
+    const pannedAway =
+      Math.abs(region.latitude  - destHomeRegion.latitude)  > destHomeRegion.latitudeDelta  * 0.45 ||
+      Math.abs(region.longitude - destHomeRegion.longitude) > destHomeRegion.longitudeDelta * 0.45;
+    return zoomedOut || pannedAway;
+  }, [selectedDest, destHomeRegion, region]);
+
+  useEffect(() => {
+    Animated.timing(returnPromptAnim, {
+      toValue: showReturnPrompt ? 1 : 0,
+      duration: 180,
+      useNativeDriver: false,
+    }).start();
+  }, [showReturnPrompt, returnPromptAnim]);
+
+  useEffect(() => {
+    Animated.timing(destReturnPromptAnim, {
+      toValue: showDestReturnPrompt ? 1 : 0,
+      duration: 180,
+      useNativeDriver: false,
+    }).start();
+  }, [showDestReturnPrompt, destReturnPromptAnim]);
 
   // ── Map data ─────────────────────────────────────────────────────────────
   const visibleRank = useMemo(() => getVisibleRank(region.latitudeDelta), [region.latitudeDelta]);
@@ -335,7 +412,7 @@ export default function MapScreen() {
 
     for (const [country, { countryCode, lats, lngs, minRank, visitedCount }] of byCountry) {
       const threshold = getClusterThreshold(countryCode);
-      if (region.latitudeDelta <= threshold) continue; // zoomed in enough → show individual pins
+      if (region.latitudeDelta <= threshold * 0.8) continue; // remove once fully faded out
 
       // At very wide zoom, only show rank-1 countries
       if (region.latitudeDelta > CLUSTER_PROMINENT && minRank > 1) continue;
@@ -385,6 +462,13 @@ export default function MapScreen() {
       return { type: 'cluster', count: g.dests.length, latitude: lat, longitude: lng, dests: g.dests };
     });
   }, [visibleDests, region]);
+
+  // Diagnostic: log destItems when Japan is selected so we can verify Tokyo is present
+  if (selectedCountry?.countryCode === 'JP') {
+    console.log('[TripGlide] Japan destItems:', destItems.map(i => i.type === 'pin' ? `pin:${i.dest.name}` : `cluster:${i.count}(${i.dests.map(d => d.name).join(',')})`));
+    console.log('[TripGlide] Japan region: latDelta=' + region.latitudeDelta.toFixed(2) + ' lngDelta=' + region.longitudeDelta.toFixed(2));
+    console.log('[TripGlide] visibleDests:', visibleDests.map(d => d.name));
+  }
 
   const visibleSpots = useMemo(() => {
     // In context/sheet mode, always show spots for the selected destination
@@ -449,26 +533,34 @@ export default function MapScreen() {
   }, [searchQuery]);
 
   // Detect when selected country/destination has drifted out of the visible viewport
-  const countryDetached = useMemo((): boolean => {
-    if (!selectedCountry || selectedDest) return false;
-    const { latitude, longitude, latitudeDelta, longitudeDelta } = region;
-    const { latitude: cLat, longitude: cLng } = selectedCountry;
-    return (
-      cLat < latitude - latitudeDelta * 0.55 || cLat > latitude + latitudeDelta * 0.55 ||
-      cLng < longitude - longitudeDelta * 0.55 || cLng > longitude + longitudeDelta * 0.55
-    );
-  }, [selectedCountry, selectedDest, region]);
 
-  const destDetached = useMemo((): boolean => {
-    if (!selectedDest) return false;
-    const { latitude, longitude, latitudeDelta, longitudeDelta } = region;
-    const { latitude: dLat, longitude: dLng } = selectedDest.coordinates;
-    return (
-      dLat < latitude - latitudeDelta * 0.55 || dLat > latitude + latitudeDelta * 0.55 ||
-      dLng < longitude - longitudeDelta * 0.55 || dLng > longitude + longitudeDelta * 0.55
-    );
-  }, [selectedDest, region]);
 
+  // ── Fetch label-free style JSONs on mount ────────────────────────────────
+  useEffect(() => {
+    fetchStyleNoLabels('mapbox/standard').then(json => {
+      if (json) setNoLabelStyles(prev => ({ ...prev, standard: json }));
+    });
+    fetchStyleNoLabels('mapbox/standard-satellite').then(json => {
+      if (json) setNoLabelStyles(prev => ({ ...prev, satellite: json }));
+    });
+  }, []);
+
+  // Activate backdrop only after the frame following menu-open so the
+  // touch that opened the menu cannot immediately fire the backdrop.
+  useEffect(() => {
+    if (backdropRafRef.current != null) {
+      cancelAnimationFrame(backdropRafRef.current);
+      backdropRafRef.current = null;
+    }
+    if (showMapMenu || showFilterMenu) {
+      backdropRafRef.current = requestAnimationFrame(() => {
+        setBackdropActive(true);
+        backdropRafRef.current = null;
+      });
+    } else {
+      setBackdropActive(false);
+    }
+  }, [showMapMenu, showFilterMenu]);
 
   // ── Breadcrumb helpers ────────────────────────────────────────────────────
   const showBreadcrumb = useCallback((show: boolean) => {
@@ -513,13 +605,16 @@ export default function MapScreen() {
     if (exitTimerRef.current) { clearTimeout(exitTimerRef.current); exitTimerRef.current = null; }
     if (zoomTimerRef.current) { clearTimeout(zoomTimerRef.current); zoomTimerRef.current = null; }
     prevRegionRef.current = region;
+    prevCountryRef.current = selectedCountry;
     setSelectedDest(dest);
+    destHomeRegionRef.current = null;
+    setDestHomeRegion(null);
     setMapState('context');
     setZoomedIntoDestination(true);
     showBreadcrumb(true);
     const zoom = getZoomDelta(dest.category);
     animateCamera({ ...dest.coordinates, latitudeDelta: zoom, longitudeDelta: zoom }, 500);
-  }, [region, showBreadcrumb]);
+  }, [region, selectedCountry, showBreadcrumb]);
 
   const handleCloseSheet = useCallback(() => {
     setMapState('context');
@@ -539,10 +634,7 @@ export default function MapScreen() {
       visitedCount: dests.filter(d => savedDestinations[d.id]?.type === 'visited').length,
     };
     // Exit destination mode then show country card
-    setMapState('world');
-    setZoomedIntoDestination(false);
-    if (exitTimerRef.current) clearTimeout(exitTimerRef.current);
-    exitTimerRef.current = setTimeout(() => { setSelectedDest(null); exitTimerRef.current = null; }, 220);
+    // handleCountryPress clears selectedDest, mapState, and zoomedIntoDestination directly
     handleCountryPress(cluster);
   }, [selectedDest, handleCountryPress]);
 
@@ -561,8 +653,6 @@ export default function MapScreen() {
   // Called by DestinationSheet's own X/swipe close — restores the country view naturally
   const handleCloseDestinationSheet = useCallback(() => {
     if (!selectedDest) return;
-    setMapState('world');
-    setZoomedIntoDestination(false);
     if (zoomTimerRef.current) { clearTimeout(zoomTimerRef.current); zoomTimerRef.current = null; }
 
     // Rebuild the country cluster so CountrySheet can remount
@@ -577,25 +667,36 @@ export default function MapScreen() {
       minRank:      Math.min(...dests.map(d => d.rank)),
       visitedCount: dests.filter(d => savedDestinations[d.id]?.type === 'visited').length,
     };
-    selectedCountryRef.current = cluster;
-    setSelectedCountry(cluster);
-    // Breadcrumb stays visible — naturally shortens from "…> Dest" to "…> Country" after dest clears
-    if (exitTimerRef.current) clearTimeout(exitTimerRef.current);
-    exitTimerRef.current = setTimeout(() => { setSelectedDest(null); exitTimerRef.current = null; }, 300);
+    // handleCountryPress clears selectedDest/mapState/zoomedIntoDestination and calls fitCoords
+    handleCountryPress(cluster);
+  }, [selectedDest, savedDestinations, handleCountryPress]);
 
-    const countryRegion = getCountryRegion(selectedDest.countryCode);
-    if (countryRegion) {
-      animateCamera(countryRegion, 500);
+  const handleResetToCountry = useCallback(() => {
+    if (!selectedCountryRef.current) return;
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+    const cluster = selectedCountryRef.current;
+    const bounds = getCountryBounds(cluster.countryCode);
+    if (bounds) {
+      fitCoords([bounds.ne, bounds.sw], { top: 100, right: 25, bottom: 210, left: 25 });
     } else {
-      fitCoords(dests.map(d => d.coordinates), { top: 120, right: 120, bottom: 300, left: 120 });
+      const dests = DESTINATIONS.filter(d => d.country === cluster.country);
+      if (dests.length > 0) {
+        fitCoords(dests.map(d => d.coordinates), { top: 120, right: 120, bottom: 300, left: 120 });
+      }
     }
-  }, [selectedDest, savedDestinations, animateCamera, fitCoords]);
+  }, [fitCoords]);
+
+  const handleResetToDest = useCallback(() => {
+    if (!selectedDest) return;
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+    const zoom = getZoomDelta(selectedDest.category);
+    animateCamera({ ...selectedDest.coordinates, latitudeDelta: zoom, longitudeDelta: zoom }, 500);
+  }, [selectedDest, animateCamera]);
 
   const handleCloseCountry = useCallback(() => {
     if (!selectedCountryRef.current) return;
     const { latitude, longitude } = selectedCountryRef.current;
     selectedCountryRef.current = null;
-    setCountryPinsReady(false);
     showBreadcrumb(false);
     if (exitTimerRef.current) clearTimeout(exitTimerRef.current);
     exitTimerRef.current = setTimeout(() => { setSelectedCountry(null); exitTimerRef.current = null; }, 280);
@@ -603,15 +704,20 @@ export default function MapScreen() {
   }, [showBreadcrumb, animateCamera]);
 
   const handleCountryPress = useCallback((cluster: CountryCluster) => {
+    if (exitTimerRef.current) { clearTimeout(exitTimerRef.current); exitTimerRef.current = null; }
     lastCountryPressRef.current = Date.now();
     selectedCountryRef.current = cluster;
-    setCountryPinsReady(false); // pins hidden until zoom animation completes
+    countryHomeRegionRef.current = null;
+    setCountryHomeRegion(null);
+    setSelectedDest(null);
+    setMapState('world');
+    setZoomedIntoDestination(false);
     setSelectedCountry(cluster);
     showBreadcrumb(true);
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-    const region = getCountryRegion(cluster.countryCode);
-    if (region) {
-      animateCamera(region, 500);
+    const bounds = getCountryBounds(cluster.countryCode);
+    if (bounds) {
+      fitCoords([bounds.ne, bounds.sw], { top: 100, right: 25, bottom: 210, left: 25 });
     } else {
       const dests = DESTINATIONS.filter(d => d.country === cluster.country);
       if (dests.length > 0) {
@@ -619,6 +725,19 @@ export default function MapScreen() {
       }
     }
   }, [showBreadcrumb, animateCamera, fitCoords]);
+
+  // Back pill: navigate to the previous view (country→country, dest→country, or world)
+  const handleBackNav = useCallback(() => {
+    const target = prevCountryRef.current;
+    prevCountryRef.current = null;
+    if (target) {
+      handleCountryPress(target);
+    } else if (selectedDest) {
+      handleExitDestination();
+    } else {
+      handleCloseCountry();
+    }
+  }, [handleCountryPress, handleExitDestination, handleCloseCountry, selectedDest]);
 
   const handleClusterPress = useCallback((dests: Destination[]) => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
@@ -643,6 +762,7 @@ export default function MapScreen() {
         minRank:      Math.min(...dests.map(d => d.rank)),
         visitedCount: dests.filter(d => savedDestinations[d.id]?.type === 'visited').length,
       };
+      prevCountryRef.current = selectedCountry;
       handleCountryPress(cluster);
     } else if (item.type === 'destination') {
       handleMarkerPress(item.destination);
@@ -654,7 +774,28 @@ export default function MapScreen() {
       setZoomedIntoDestination(true);
       animateCamera({ ...item.spot.coordinates, latitudeDelta: 0.02, longitudeDelta: 0.02 }, 500);
     }
-  }, [handleCountryPress, handleMarkerPress, region, animateCamera]);
+  }, [handleCountryPress, handleMarkerPress, region, animateCamera, selectedCountry, savedDestinations]);
+
+  // Fires continuously while the camera moves — update region live so markers
+  // appear/fade during the gesture rather than only after it settles.
+  const handleCameraChanged = useCallback((state: {
+    properties: {
+      center: [number, number];
+      bounds: { ne: [number, number]; sw: [number, number] };
+      zoom: number;
+    };
+  }) => {
+    const now = Date.now();
+    if (now - lastCameraTimeRef.current < 50) return; // ~20 fps
+    lastCameraTimeRef.current = now;
+    const { center, bounds } = state.properties;
+    setRegion({
+      latitude:       center[1],
+      longitude:      center[0],
+      latitudeDelta:  Math.abs(bounds.ne[1] - bounds.sw[1]),
+      longitudeDelta: Math.abs(bounds.ne[0] - bounds.sw[0]),
+    });
+  }, []);
 
   const handleMapIdle = useCallback((state: {
     properties: {
@@ -671,25 +812,14 @@ export default function MapScreen() {
       longitudeDelta: Math.abs(bounds.ne[0] - bounds.sw[0]),
     };
     setRegion(newRegion);
-    setShowMapMenu(false);
-
-    // Once the zoom animation into a country lands, enable destination pins
-    if (selectedCountryRef.current) {
-      setCountryPinsReady(true);
-    }
-
-    // Dismiss country card if user manually zooms back past the country's own threshold.
-    // Skipped when viewing a destination (selectedDest) since the zoom is intentionally wide.
-    // Guard with 1.5 s so the fitToCoordinates animation itself doesn't trigger this.
-    if (selectedCountryRef.current && !selectedDest && newRegion.latitudeDelta > getClusterThreshold(selectedCountryRef.current.countryCode) &&
-        Date.now() - lastCountryPressRef.current > 1500) {
-      selectedCountryRef.current = null;
-      setSelectedCountry(null);
-      setCountryPinsReady(false);
-      showBreadcrumb(false);
-    }
 
     if (mapState === 'world' && !selectedDest) {
+      // Capture the settled camera position as the "home" for the current country view
+      if (selectedCountryRef.current && !countryHomeRegionRef.current) {
+        countryHomeRegionRef.current = newRegion;
+        setCountryHomeRegion(newRegion);
+      }
+
       if (newRegion.latitudeDelta >= SPOT_THRESHOLD) {
         // Track the last zoomed-out world region so we can restore it on exit
         lastWorldRegionRef.current = newRegion;
@@ -716,33 +846,14 @@ export default function MapScreen() {
     }
 
     if (mapState === 'context' && selectedDest) {
-      const offCenter =
-        Math.abs(newRegion.latitude  - selectedDest.coordinates.latitude)  > newRegion.latitudeDelta  ||
-        Math.abs(newRegion.longitude - selectedDest.coordinates.longitude) > newRegion.longitudeDelta;
-      const zoomedOut = newRegion.latitudeDelta > SPOT_THRESHOLD * 6;
-      if (offCenter || zoomedOut) {
-        setMapState('world');
-        setZoomedIntoDestination(false);
-        if (zoomTimerRef.current) { clearTimeout(zoomTimerRef.current); zoomTimerRef.current = null; }
-        // Restore country context so the breadcrumb and country sheet persist
-        const dests  = DESTINATIONS.filter(d => d.country === selectedDest.country);
-        const center = getCountryCenter(selectedDest.countryCode);
-        const cluster: CountryCluster = {
-          country:      selectedDest.country,
-          countryCode:  selectedDest.countryCode,
-          latitude:     center?.latitude  ?? selectedDest.coordinates.latitude,
-          longitude:    center?.longitude ?? selectedDest.coordinates.longitude,
-          count:        dests.length,
-          minRank:      Math.min(...dests.map(d => d.rank)),
-          visitedCount: dests.filter(d => savedDestinations[d.id]?.type === 'visited').length,
-        };
-        selectedCountryRef.current = cluster;
-        lastCountryPressRef.current = Date.now(); // prevent auto-dismiss guard from firing
-        setSelectedCountry(cluster);
-        if (exitTimerRef.current) clearTimeout(exitTimerRef.current);
-        exitTimerRef.current = setTimeout(() => { setSelectedDest(null); exitTimerRef.current = null; }, 220);
-      } else if (newRegion.latitudeDelta < SPOT_THRESHOLD) {
+      if (!destHomeRegionRef.current) {
+        destHomeRegionRef.current = newRegion;
+        setDestHomeRegion(newRegion);
+      }
+      if (newRegion.latitudeDelta < SPOT_THRESHOLD) {
         setZoomedIntoDestination(true);
+      } else {
+        setZoomedIntoDestination(false);
       }
     }
   }, [mapState, selectedDest, savedDestinations, showBreadcrumb]);
@@ -752,18 +863,15 @@ export default function MapScreen() {
 
       {/* ── MAP ──────────────────────────────────────────────────────────── */}
       <MapboxGL.MapView
-        key={mapType}
         style={StyleSheet.absoluteFill}
-        styleURL={mapType === 'satellite' ? MapboxGL.StyleURL.SatelliteStreets : MapboxGL.StyleURL.Standard}
+        rotateEnabled={false}
+        {...(noLabelStyles[mapType]
+          ? { styleJSON: noLabelStyles[mapType] }
+          : { styleURL: mapType === 'satellite' ? 'mapbox://styles/mapbox/satellite-v9' : MapboxGL.StyleURL.Light }
+        )}
+        onCameraChanged={handleCameraChanged}
         onMapIdle={handleMapIdle}
         onPress={() => {
-          if (Date.now() - lastMenuOpenRef.current < 400) return;
-          if (Date.now() - lastCountryPressRef.current > 600) {
-            setSelectedCountry(null);
-            selectedCountryRef.current = null;
-          }
-          setShowMapMenu(false);
-          setShowFilterMenu(false);
           searchInputRef.current?.blur();
           setSearchFocused(false);
         }}
@@ -778,6 +886,50 @@ export default function MapScreen() {
         />
         <MapboxGL.UserLocation animated />
 
+        {/* Country highlight — fill + outline for selected country */}
+        {selectedCountry && (
+          <MapboxGL.VectorSource
+            id="countryBoundaries"
+            url="mapbox://mapbox.country-boundaries-v1"
+          >
+            <MapboxGL.FillLayer
+              id="countryFill"
+              sourceLayerID="country_boundaries"
+              filter={['==', ['get', 'iso_3166_1'], selectedCountry.countryCode]}
+              style={{ fillColor: '#22C55E', fillOpacity: 0.10 }}
+            />
+	{/* Outer glow */}
+    	<MapboxGL.LineLayer
+      		id="countryGlowOuter"
+      		sourceLayerID="country_boundaries"
+      		filter={['==', ['get', 'iso_3166_1'], selectedCountry.countryCode]}
+      		style={{
+        		lineColor: '#16A34A',
+        		lineWidth: 12,
+        		lineOpacity: 0.08,
+      		}}
+    	/>
+
+    	{/* Inner glow */}
+    	<MapboxGL.LineLayer
+      		id="countryGlowInner"
+      		sourceLayerID="country_boundaries"
+      		filter={['==', ['get', 'iso_3166_1'], selectedCountry.countryCode]}
+      		style={{
+        		lineColor: '#16A34A',
+        		lineWidth: 6,
+        		lineOpacity: 0.18,
+      		}}
+    	/>
+            <MapboxGL.LineLayer
+              id="countryOutline"
+              sourceLayerID="country_boundaries"
+              filter={['==', ['get', 'iso_3166_1'], selectedCountry.countryCode]}
+              style={{ lineColor: '#16A34A', lineWidth: 2, lineOpacity: 0.7 }}
+            />
+          </MapboxGL.VectorSource>
+        )}
+
         {/* Spot pins (shown when zoomed in) */}
         {visibleSpots.map(spot => (
           <MapboxGL.MarkerView
@@ -790,32 +942,90 @@ export default function MapScreen() {
           </MapboxGL.MarkerView>
         ))}
 
-        {/* Country cluster pills — hidden for selected country (showing its pins instead),
-            still shown for all other countries whose threshold hasn't been met */}
-        {countryPills.filter(c => c.countryCode !== selectedCountry?.countryCode).map(cluster => (
-          <MapboxGL.MarkerView
-            key={cluster.country}
-            coordinate={[cluster.longitude, cluster.latitude]}
-          >
-            <Pressable onPress={() => handleCountryPress(cluster)}>
-              <View style={[styles.countryPill, cluster.visitedCount > 0 && styles.countryPillVisited]}>
-                <View style={styles.countryPillFlagBubble}>
-                  <Text style={styles.countryPillFlag}>{flag(cluster.countryCode)}</Text>
+        {/* Country cluster pills — shown for all countries in their pill zone.
+            Selected country's pill reappears when user zooms out past its threshold. */}
+        {countryPills
+          .filter(c => {
+            const thr = getClusterThreshold(c.countryCode);
+            if (c.countryCode === selectedCountry?.countryCode) {
+              // Selected country's pill: only render when entering/past the crossfade zone
+              return region.latitudeDelta > thr * 0.8;
+            }
+            // Non-selected: in country view only render pills that are fully in pill zone
+            return !selectedCountry || region.latitudeDelta >= thr;
+          })
+          .map(cluster => {
+          const thr = getClusterThreshold(cluster.countryCode);
+          const isSelectedPill = cluster.countryCode === selectedCountry?.countryCode;
+          // Selected country's pill gets smooth crossfade (fades in as user zooms out).
+          // Non-selected in country view: already filtered to visible zone, so fully opaque.
+          // World view: smooth crossfade for everyone.
+          const pillOpacity = (isSelectedPill || !selectedCountry)
+            ? Math.min(1, Math.max(0, (region.latitudeDelta - thr * 0.8) / (thr * 0.4)))
+            : 1;
+          return (
+            <MapboxGL.MarkerView
+              key={cluster.country}
+              coordinate={[cluster.longitude, cluster.latitude]}
+            >
+              <Pressable
+                onPressIn={() => { lastCountryPressRef.current = Date.now(); }}
+                onPress={() => { prevCountryRef.current = selectedCountry; handleCountryPress(cluster); }}
+                style={{ opacity: pillOpacity }}
+              >
+                <View style={styles.countryPill}>
+                  {/* Card first so circle (declared last) renders on top */}
+                  <View style={[styles.countryPillCard, isSelectedPill && styles.countryPillCardGlow]}>
+                    <Text style={styles.countryPillName} numberOfLines={1}>{cluster.country}</Text>
+                  </View>
+                  <View style={[styles.countryPillCircle, isSelectedPill && styles.countryPillCircleGlow]}>
+                    {isSelectedPill && <View style={styles.countryPillGlowRing} />}
+                    <View style={styles.countryPillFlagClip}>
+                      <Image
+                        source={{ uri: `https://flagcdn.com/w160/${cluster.countryCode.toLowerCase()}.png` }}
+                        style={styles.countryPillFlagImg}
+                        resizeMode="cover"
+                      />
+                    </View>
+                    {cluster.visitedCount > 0 && (
+                      <View style={styles.countryPillBadge}>
+                        <Text style={styles.countryPillBadgeTxt}>{cluster.visitedCount}</Text>
+                      </View>
+                    )}
+                  </View>
                 </View>
-                <Text style={styles.countryPillName} numberOfLines={1}>{cluster.country}</Text>
-              </View>
-            </Pressable>
-          </MapboxGL.MarkerView>
-        ))}
+              </Pressable>
+            </MapboxGL.MarkerView>
+          );
+        })}
 
         {/* Destination pins / cluster bubbles */}
         {region.latitudeDelta >= SPOT_THRESHOLD && destItems.map(item => {
           const destCountryCode = item.type === 'pin' ? item.dest.countryCode : item.dests[0]?.countryCode ?? '';
-          if (selectedCountry) {
-            if (!countryPinsReady) return null;
-            if (clusteredCodes.has(destCountryCode)) return null;
-          } else {
-            if (clusteredCodes.has(destCountryCode)) return null;
+
+          // Crossfade with the country pill in the [thr*0.8 → thr*1.2] zone.
+          let markerOpacity = 1;
+          const isClustered = clusteredCodes.has(destCountryCode);
+          // Only bypass fade for pins/clusters that are ENTIRELY from the selected country.
+          // A mixed-country cluster (e.g. London+Paris at world zoom) must still fade out.
+          const isSelectedCountryPin = selectedCountry != null && (
+            item.type === 'pin'
+              ? destCountryCode === selectedCountry.countryCode
+              : item.dests.every(d => d.countryCode === selectedCountry.countryCode)
+          );
+
+          if (isClustered && !isSelectedCountryPin) {
+            const thr = getClusterThreshold(destCountryCode);
+            // In country view, snap to binary — no half-faded states for non-selected countries.
+            markerOpacity = selectedCountry
+              ? (region.latitudeDelta <= thr ? 1 : 0)
+              : Math.min(1, Math.max(0, (thr * 1.2 - region.latitudeDelta) / (thr * 0.4)));
+            if (markerOpacity <= 0) return null;
+          } else if (isClustered && isSelectedCountryPin) {
+            // Selected country's own pins: smooth crossfade out when zooming past their threshold.
+            const thr = getClusterThreshold(destCountryCode);
+            markerOpacity = Math.min(1, Math.max(0, (thr * 1.2 - region.latitudeDelta) / (thr * 0.4)));
+            if (markerOpacity <= 0) return null;
           }
 
           if (item.type === 'cluster') {
@@ -827,7 +1037,7 @@ export default function MapScreen() {
                 key={`cluster-${item.latitude}-${item.longitude}`}
                 coordinate={[item.longitude, item.latitude]}
               >
-                <Pressable onPress={() => handleClusterPress(item.dests)}>
+                <Pressable style={{ opacity: markerOpacity }} onPress={() => handleClusterPress(item.dests)}>
                   <View style={[styles.clusterHalo, { backgroundColor: ringColor + '40' }]}>
                     <View style={[styles.clusterBubble, { backgroundColor: ringColor }]}>
                       <Text style={styles.clusterCount}>{item.count}</Text>
@@ -848,7 +1058,7 @@ export default function MapScreen() {
               key={dest.id}
               coordinate={[dest.coordinates.longitude, dest.coordinates.latitude]}
             >
-              <Pressable onPress={() => handleMarkerPress(dest)}>
+              <Pressable style={{ opacity: markerOpacity }} onPress={() => handleMarkerPress(dest)}>
                 <DestPin
                   dest={dest} spotCount={spotCount}
                   isVisited={isVisited} isWishlist={isWishlist} isSelected={isSelected}
@@ -870,8 +1080,8 @@ export default function MapScreen() {
       >
         <View style={[styles.searchBar, searchFocused && styles.searchBarFocused]}>
           <Pressable
-            onPress={() => { setShowFilterMenu(v => !v); setShowMapMenu(false); }}
             onPressIn={() => { lastMenuOpenRef.current = Date.now(); }}
+            onPress={() => { setShowFilterMenu(v => !v); setShowMapMenu(false); }}
             hitSlop={8}
           >
             <SlidersHorizontal size={16} color={filter !== 'all' ? '#6366F1' : '#9CA3AF'} />
@@ -956,55 +1166,70 @@ export default function MapScreen() {
           }]}
           pointerEvents={(selectedCountry || selectedDest) ? 'box-none' : 'none'}
         >
-          <View style={styles.breadcrumbPill}>
-            {/* World */}
+          {selectedDest ? (
+            /* Destination view: single white pill (fixed height) so black segment overflows below */
+            <View style={styles.breadcrumbPillWhite}>
+              <Pressable style={styles.breadcrumbSegmentInactive} onPress={handleZoomToCountry} hitSlop={6}>
+                <View style={styles.bcFlagCircle}>
+                  <View style={styles.bcFlagClip}>
+                    <Image
+                      source={{ uri: `https://flagcdn.com/w160/${selectedDest.countryCode.toLowerCase()}.png` }}
+                      style={styles.bcFlagImg}
+                      resizeMode="cover"
+                    />
+                  </View>
+                </View>
+                <Text style={styles.breadcrumbTxtDark} numberOfLines={1}>{selectedDest.country}</Text>
+              </Pressable>
+              <Pressable style={styles.breadcrumbSegmentActive} onPress={handleResetToDest} hitSlop={6}>
+                <View style={styles.breadcrumbPillRow}>
+                  <Text style={styles.breadcrumbTxtLight} numberOfLines={1}>{selectedDest.name}</Text>
+                </View>
+                <Animated.View style={{
+                  overflow: 'hidden',
+                  maxHeight: destReturnPromptAnim.interpolate({ inputRange: [0, 1], outputRange: [0, 22] }),
+                  opacity: destReturnPromptAnim,
+                }}>
+                  <Text style={styles.breadcrumbReturnTxt}>Return</Text>
+                </Animated.View>
+              </Pressable>
+            </View>
+          ) : (
+            /* Country view: black pill — expands with "Return" when user pans/zooms away */
             <Pressable
-              style={styles.breadcrumbSegment}
-              onPress={selectedDest ? handleExitDestination : handleCloseCountry}
+              style={styles.breadcrumbPillBlack}
+              onPress={handleResetToCountry}
               hitSlop={6}
             >
-              <Text style={styles.breadcrumbIcon}>🌍</Text>
-              <Text style={styles.breadcrumbTxt}>World</Text>
-            </Pressable>
-
-            {/* Country */}
-            {(selectedDest || selectedCountry) && (() => {
-              const country = selectedDest?.country ?? selectedCountry!.country;
-              const code    = selectedDest?.countryCode ?? selectedCountry!.countryCode;
-              return (
-                <>
-                  <Text style={styles.breadcrumbSep}>›</Text>
-                  <Pressable
-                    style={styles.breadcrumbSegment}
-                    onPress={selectedDest ? handleZoomToCountry : undefined}
-                    hitSlop={6}
-                  >
-                    <Text style={styles.breadcrumbIcon}>{flag(code)}</Text>
-                    <Text style={styles.breadcrumbTxt}>{country}</Text>
-                  </Pressable>
-                </>
-              );
-            })()}
-
-            {/* Destination */}
-            {selectedDest && (
-              <>
-                <Text style={styles.breadcrumbSep}>›</Text>
-                <View style={styles.breadcrumbSegment}>
-                  <Text style={styles.breadcrumbTxtActive} numberOfLines={1}>{selectedDest.name}</Text>
+              <View style={styles.breadcrumbPillRow}>
+                <View style={styles.bcFlagCircle}>
+                  <View style={styles.bcFlagClip}>
+                    <Image
+                      source={{ uri: `https://flagcdn.com/w160/${selectedCountry!.countryCode.toLowerCase()}.png` }}
+                      style={styles.bcFlagImg}
+                      resizeMode="cover"
+                    />
+                  </View>
                 </View>
-              </>
-            )}
-          </View>
+                <Text style={styles.breadcrumbTxtLight} numberOfLines={1}>{selectedCountry!.country}</Text>
+              </View>
+              <Animated.View style={{
+                overflow: 'hidden',
+                maxHeight: returnPromptAnim.interpolate({ inputRange: [0, 1], outputRange: [0, 22] }),
+                opacity: returnPromptAnim,
+              }}>
+                <Text style={styles.breadcrumbReturnTxt}>Return</Text>
+              </Animated.View>
+            </Pressable>
+          )}
         </Animated.View>
       )}
 
-
-      {/* ── Up One Level pill (top right, below layers button) ──────────── */}
+      {/* ── Back pill (bottom right, above card) ────────────────────────── */}
       {(selectedCountry || selectedDest) && (
         <Animated.View
           style={[styles.upPillWrap, {
-            top: insets.top + 58,
+            bottom: insets.bottom + 90,
             opacity: breadcrumbAnim,
             transform: [{ scale: breadcrumbScale }],
           }]}
@@ -1012,19 +1237,23 @@ export default function MapScreen() {
         >
           <Pressable
             style={styles.upPill}
-            onPress={selectedDest ? handleZoomToCountry : handleCloseCountry}
+            onPress={handleBackNav}
             hitSlop={6}
           >
-            <Text style={styles.upPillArrow}>↑</Text>
+            <Text style={styles.upPillArrow}>←</Text>
             <Text style={styles.upPillTxt} numberOfLines={1}>
-              {selectedDest
-                ? (selectedDest.country.length > 10
-                    ? flag(selectedDest.countryCode)
-                    : selectedDest.country)
-                : 'World'}
+              {prevCountryRef.current ? prevCountryRef.current.country : '🌍'}
             </Text>
           </Pressable>
         </Animated.View>
+      )}
+
+      {/* ── Menu backdrop — activates on next frame so opening-tap can't fire it ── */}
+      {backdropActive && (
+        <Pressable
+          style={StyleSheet.absoluteFill}
+          onPress={() => { setShowMapMenu(false); setShowFilterMenu(false); }}
+        />
       )}
 
       {/* ── Layers button + dropdown ─────────────────────────────────────── */}
@@ -1033,7 +1262,12 @@ export default function MapScreen() {
         onTouchStart={() => { lastMenuOpenRef.current = Date.now(); }}
       >
         <Pressable style={[styles.mapTypeBtn, showMapMenu && styles.mapTypeBtnOpen]}
-          onPress={() => { setShowMapMenu(v => !v); setShowFilterMenu(false); }}>
+          onPress={() => {
+            const next = !showMapMenuRef.current;
+            showMapMenuRef.current = next;   // sync before re-render so MapView guard sees it
+            setShowMapMenu(next);
+            setShowFilterMenu(false);
+          }}>
           <Layers size={18} color="#111827" />
         </Pressable>
         {showMapMenu && (
@@ -1051,34 +1285,6 @@ export default function MapScreen() {
         )}
       </View>
 
-      {/* ── Detached destination chip — "Return to Paris" ────────────────── */}
-      {selectedDest && destDetached && (
-        <Pressable
-          style={[styles.detachedChip, { bottom: insets.bottom + 168 }]}
-          onPress={() => animateCamera({ ...selectedDest.coordinates, latitudeDelta: 0.08, longitudeDelta: 0.08 }, 500)}
-        >
-          <Text style={styles.detachedChipIcon}>{selectedDest.icon ?? '📍'}</Text>
-          <Text style={styles.detachedChipTxt} numberOfLines={1}>
-            Return to {selectedDest.name}
-          </Text>
-        </Pressable>
-      )}
-
-      {/* ── Detached country chip — "Return to France" ───────────────────── */}
-      {selectedCountry && !selectedDest && countryDetached && (
-        <Pressable
-          style={[styles.detachedChip, { bottom: insets.bottom + 168 }]}
-          onPress={() => {
-            const r = getCountryRegion(selectedCountry.countryCode);
-            if (r) animateCamera(r, 500);
-          }}
-        >
-          <Text style={styles.detachedChipIcon}>{flag(selectedCountry.countryCode)}</Text>
-          <Text style={styles.detachedChipTxt} numberOfLines={1}>
-            Return to {selectedCountry.country}
-          </Text>
-        </Pressable>
-      )}
 
       {/* ── Country sheet ─────────────────────────────────────────────────── */}
       {selectedCountry && !selectedDest && (
@@ -1107,46 +1313,63 @@ const styles = StyleSheet.create({
 
   // Country cluster pills
   countryPill: {
-    flexDirection: 'row', alignItems: 'center', gap: 4,
-    backgroundColor: 'rgba(255,255,255,0.95)',
-    borderRadius: 10,
-    paddingHorizontal: 5, paddingVertical: 3,
-    borderWidth: 0.5, borderColor: 'rgba(0,0,0,0.08)',
-    shadowColor: '#000', shadowOpacity: 0.10, shadowRadius: 3, elevation: 3,
+    flexDirection: 'row', alignItems: 'center',
   },
-  countryPillFlagBubble: {
-    width: 18, height: 18, borderRadius: 9,
-    overflow: 'hidden',
+  countryPillCircle: {
+    position: 'absolute', left: 0,
+    width: 30, height: 30, borderRadius: 15,
+    backgroundColor: '#fff',
     alignItems: 'center', justifyContent: 'center',
-    backgroundColor: '#F1F5F9',
+    shadowColor: '#000', shadowOpacity: 0.22, shadowRadius: 5,
+    shadowOffset: { width: -3, height: 1 }, elevation: 6,
   },
-  countryPillFlag: { fontSize: 11 },
-  countryPillName: { fontSize: 10, fontWeight: '700', color: '#111827', maxWidth: 72 },
-  countryPillVisited: { borderColor: '#059669', borderWidth: 1.5 },
+  countryPillFlagClip: {
+    width: 27, height: 27, borderRadius: 13.5,
+    overflow: 'hidden',
+  },
+  countryPillFlagImg: { width: 27, height: 27 },
 
-  // Up One Level pill
-  upPillWrap: { position: 'absolute', right: 12, zIndex: 20 },
-  upPill: {
-    flexDirection: 'row', alignItems: 'center', gap: 4,
-    backgroundColor: 'rgba(255,255,255,0.97)', borderRadius: 22,
-    paddingHorizontal: 12, paddingVertical: 9,
-    shadowColor: '#000', shadowOpacity: 0.14, shadowRadius: 10,
+  countryPillBadge: {
+    position: 'absolute', bottom: -1, right: -1,
+    minWidth: 17, height: 17, borderRadius: 9,
+    backgroundColor: '#059669',
+    alignItems: 'center', justifyContent: 'center',
+    paddingHorizontal: 3,
+    borderWidth: 1.5, borderColor: '#fff',
+  },
+  countryPillBadgeTxt: { fontSize: 9, fontWeight: '700', color: '#fff' },
+  countryPillCard: {
+    backgroundColor: '#fff',
+    borderRadius: 12,
+    paddingLeft: 17, paddingRight: 7, paddingVertical: 5,
+    marginLeft: 15,
+    shadowColor: '#000', shadowOpacity: 0.22, shadowRadius: 6,
     shadowOffset: { width: 0, height: 3 }, elevation: 6,
   },
-  upPillArrow: { fontSize: 13, color: '#374151', fontWeight: '700' },
-  upPillTxt:   { fontSize: 13, fontWeight: '600', color: '#111827', maxWidth: 100 },
+  countryPillCardGlow: {
+    borderWidth: 1.5, borderColor: 'rgba(22,163,74,0.85)',
+    shadowColor: '#16A34A', shadowOpacity: 0.7, shadowRadius: 10,
+    shadowOffset: { width: 6, height: 0 },
+  },
+  countryPillCircleGlow: {
+    shadowColor: '#16A34A', shadowOpacity: 0.7, shadowRadius: 10,
+    shadowOffset: { width: -6, height: 0 },
+  },
+  countryPillGlowRing: {
+    position: 'absolute', top: -2, left: -2,
+    width: 34, height: 34, borderRadius: 17,
+    borderWidth: 1.5,
+    borderTopColor: 'rgba(22,163,74,0.7)',
+    borderLeftColor: 'rgba(22,163,74,0.7)',
+    borderBottomColor: 'rgba(22,163,74,0.7)',
+    borderRightColor: 'transparent',
+    backgroundColor: 'transparent',
+  },
+  countryPillName: { fontSize: 11, fontWeight: '600', color: '#111827', maxWidth: 90 },
+
+
 
   // Detached state chip ("Return to …")
-  detachedChip: {
-    position: 'absolute', right: 12, zIndex: 30,
-    flexDirection: 'row', alignItems: 'center', gap: 6,
-    backgroundColor: 'rgba(255,255,255,0.97)', borderRadius: 22,
-    paddingHorizontal: 14, paddingVertical: 10,
-    shadowColor: '#000', shadowOpacity: 0.18, shadowRadius: 12,
-    shadowOffset: { width: 0, height: 4 }, elevation: 8,
-  },
-  detachedChipIcon: { fontSize: 15 },
-  detachedChipTxt:  { fontSize: 13, fontWeight: '600', color: '#111827', maxWidth: 140 },
 
 
   spotPin: {
@@ -1164,8 +1387,8 @@ const styles = StyleSheet.create({
   clusterBubble: {
     width: 46, height: 46, borderRadius: 23,
     alignItems: 'center', justifyContent: 'center',
-    shadowColor: '#000', shadowOpacity: 0.25, shadowRadius: 6,
-    shadowOffset: { width: 0, height: 2 }, elevation: 6,
+    shadowColor: '#000', shadowOpacity: 0.42, shadowRadius: 10,
+    shadowOffset: { width: 0, height: 3 }, elevation: 10,
   },
   clusterCount: { fontSize: 16, fontWeight: '800', color: 'white' },
 
@@ -1208,23 +1431,66 @@ const styles = StyleSheet.create({
 
   // Breadcrumb pill
   breadcrumbBar: {
-    position: 'absolute', left: 12, zIndex: 20,
+    position: 'absolute', left: 0, right: 0, zIndex: 20, alignItems: 'center',
   },
-  breadcrumbPill: {
-    flexDirection: 'row', alignItems: 'center',
-    backgroundColor: 'rgba(255,255,255,0.97)', borderRadius: 24,
-    paddingHorizontal: 6, paddingVertical: 9,
-    shadowColor: '#000', shadowOpacity: 0.18, shadowRadius: 16,
-    shadowOffset: { width: 0, height: 4 }, elevation: 8,
+  breadcrumbPillBlack: {
+    flexDirection: 'column', alignItems: 'center',
+    backgroundColor: '#111827', borderRadius: 20,
+    paddingHorizontal: 16, paddingTop: 9, paddingBottom: 9,
+    shadowColor: '#000', shadowOpacity: 0.25, shadowRadius: 12,
+    shadowOffset: { width: 0, height: 3 }, elevation: 6,
   },
-  breadcrumbSegment: {
+  breadcrumbPillRow: { flexDirection: 'row', alignItems: 'center', gap: 6 },
+  breadcrumbReturnTxt: {
+    fontSize: 11, fontWeight: '500', color: 'rgba(255,255,255,0.65)',
+    textAlign: 'center', paddingTop: 3,
+  },
+  breadcrumbDestRow: {
+    flexDirection: 'row', alignItems: 'flex-start', gap: 6,
+  },
+  breadcrumbPillWhite: {
+    flexDirection: 'row', alignItems: 'flex-start',
+    backgroundColor: 'white', borderRadius: 100,
+    paddingHorizontal: 5, paddingVertical: 5,
+    height: 40,
+    shadowColor: '#000', shadowOpacity: 0.14, shadowRadius: 12,
+    shadowOffset: { width: 0, height: 3 }, elevation: 5,
+  },
+  breadcrumbSegmentInactive: {
     flexDirection: 'row', alignItems: 'center', gap: 5,
-    paddingHorizontal: 8,
+    paddingHorizontal: 10, paddingVertical: 4,
   },
-  breadcrumbIcon: { fontSize: 14 },
-  breadcrumbTxt:  { fontSize: 13, fontWeight: '500', color: '#374151' },
-  breadcrumbTxtActive: { fontSize: 13, fontWeight: '600', color: '#111827', maxWidth: 120 },
-  breadcrumbSep:  { fontSize: 13, color: '#9CA3AF', paddingHorizontal: 1 },
+  breadcrumbSegmentActive: {
+    flexDirection: 'column', alignItems: 'center',
+    backgroundColor: '#111827', borderRadius: 20,
+    paddingHorizontal: 12, paddingVertical: 6,
+  },
+  breadcrumbIcon:    { fontSize: 14 },
+  bcFlagCircle: {
+    width: 22, height: 22, borderRadius: 11,
+    backgroundColor: '#fff',
+    alignItems: 'center', justifyContent: 'center',
+  },
+  bcFlagClip: {
+    width: 19, height: 19, borderRadius: 9.5,
+    overflow: 'hidden',
+  },
+  bcFlagImg: { width: 19, height: 19 },
+  breadcrumbTxtDark: { fontSize: 13, fontWeight: '500', color: '#111827', maxWidth: 90 },
+  breadcrumbTxtLight:{ fontSize: 13, fontWeight: '600', color: 'white',   maxWidth: 130 },
+  breadcrumbSep:     { fontSize: 13, color: '#9CA3AF' },
+
+  // Back pill
+  upPillWrap: { position: 'absolute', right: 12, zIndex: 20 },
+  upPill: {
+    flexDirection: 'row', alignItems: 'center', gap: 4,
+    backgroundColor: 'rgba(255,255,255,0.97)', borderRadius: 22,
+    paddingHorizontal: 12, paddingVertical: 9,
+    shadowColor: '#000', shadowOpacity: 0.14, shadowRadius: 10,
+    shadowOffset: { width: 0, height: 3 }, elevation: 6,
+  },
+  upPillArrow: { fontSize: 13, color: '#374151', fontWeight: '700' },
+  upPillTxt:   { fontSize: 13, fontWeight: '600', color: '#111827', maxWidth: 100 },
 
   // Map type button + dropdown
   mapTypeWrap:    { position: 'absolute', right: 12, zIndex: 20, alignItems: 'flex-end' },
