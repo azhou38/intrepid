@@ -5,8 +5,8 @@ import {
 import MapboxGL from '@rnmapbox/maps';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useStore, useStats } from '../store';
-import { flag } from '../utils/stats';
 import { DESTINATIONS } from '../data/destinations';
+import CircleFlag from '../components/CircleFlag';
 
 const TOTAL_COUNTRIES = 195;
 
@@ -156,7 +156,7 @@ export default function ProfileScreen() {
           <Text style={styles.cardTitle}>Top Countries</Text>
           {topCountries.map(({ country, count, code }) => (
             <View key={country} style={styles.countryRow}>
-              <Text style={styles.countryFlag}>{flag(code)}</Text>
+              <CircleFlag countryCode={code} size={22} />
               <Text style={styles.countryName} numberOfLines={1}>{country}</Text>
               <View style={styles.countryBarTrack}>
                 <View style={[styles.countryBarFill, { width: `${(count / maxCountryCount) * 100}%` }]} />
@@ -182,7 +182,7 @@ export default function ProfileScreen() {
           <View style={styles.flagGrid}>
             {stats.visitedCountryCodes.map(code => (
               <View key={code} style={styles.flagItem}>
-                <Text style={styles.flagEmoji}>{flag(code)}</Text>
+                <CircleFlag countryCode={code} size={24} />
               </View>
             ))}
           </View>
@@ -255,7 +255,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row', alignItems: 'center', gap: 10,
     marginBottom: 10,
   },
-  countryFlag:     { fontSize: 20, width: 28 },
   countryName:     { fontSize: 13, fontWeight: '600', color: '#374151', width: 90 },
   countryBarTrack: { flex: 1, height: 6, backgroundColor: '#F3F4F6', borderRadius: 3, overflow: 'hidden' },
   countryBarFill:  { height: '100%', backgroundColor: '#10B981', borderRadius: 3 },
@@ -268,5 +267,4 @@ const styles = StyleSheet.create({
   // Flag grid
   flagGrid:  { flexDirection: 'row', flexWrap: 'wrap', gap: 6 },
   flagItem:  { alignItems: 'center' },
-  flagEmoji: { fontSize: 22 },
 });

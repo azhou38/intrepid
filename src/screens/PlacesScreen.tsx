@@ -8,8 +8,8 @@ import { useStore } from '../store';
 import { CONTINENT_COLORS, CATEGORY_ICONS } from '../types';
 import type { Destination } from '../types';
 import { DESTINATIONS } from '../data/destinations';
-import { flag } from '../utils/stats';
 import DestinationSheet from '../components/Map/DestinationSheet';
+import CircleFlag from '../components/CircleFlag';
 
 type Filter = 'all' | 'visited' | 'wishlist';
 
@@ -104,10 +104,13 @@ export default function PlacesScreen() {
                   <Text style={styles.rowName}>{dest.name}</Text>
                   {saved.type === 'wishlist' && <Heart size={12} color="#EC4899" fill="#EC4899" />}
                 </View>
-                <Text style={styles.rowSub}>
-                  {flag(dest.countryCode)} {dest.country}
-                  {saved.visitDate ? `  ·  ${saved.visitDate.slice(0, 7)}` : ''}
-                </Text>
+                <View style={styles.rowSubRow}>
+                  <CircleFlag countryCode={dest.countryCode} size={13} />
+                  <Text style={styles.rowSub}>
+                    {dest.country}
+                    {saved.visitDate ? `  ·  ${saved.visitDate.slice(0, 7)}` : ''}
+                  </Text>
+                </View>
               </View>
               <ChevronRight size={16} color="#D1D5DB" />
             </Pressable>
@@ -149,7 +152,8 @@ const styles = StyleSheet.create({
   rowContent: { flex: 1 },
   rowTitleRow: { flexDirection: 'row', alignItems: 'center', gap: 5 },
   rowName: { fontSize: 15, fontWeight: '600', color: '#111827' },
-  rowSub: { fontSize: 12, color: '#6B7280', marginTop: 2 },
+  rowSubRow: { flexDirection: 'row', alignItems: 'center', gap: 5, marginTop: 2 },
+  rowSub: { fontSize: 12, color: '#6B7280' },
   empty: { flex: 1, alignItems: 'center', paddingTop: 60, gap: 8 },
   emptyIcon: { fontSize: 48 },
   emptyTitle: { fontSize: 16, fontWeight: '700', color: '#374151' },

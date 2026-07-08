@@ -3,12 +3,17 @@ import type { Destination } from '../types';
 export const DESTINATIONS: Destination[] = [
   // ── NORTH AMERICA ──────────────────────────────────────────────────────────
   {
-    id: 'nyc', name: 'New York City', country: 'United States', countryCode: 'US',
+    id: 'nyc', name: 'New York', country: 'United States', countryCode: 'US',
     continent: 'North America', coordinates: { latitude: 40.7128, longitude: -74.0060 },
     category: 'city', icon: '🗽', rank: 1,
     tagline: 'The city that never sleeps, where eight million stories unfold at once.',
     description: 'New York City is the cultural, financial, and media capital of the world. From the neon glow of Times Square to the serenity of Central Park, every neighborhood pulses with its own distinct energy. The skyline alone is worth the trip.',
     whyVisit: ['Iconic skyline & culture', 'World-class arts & dining', 'Stories in every neighborhood'],
+    goodToKnow: [
+      { icon: '💵', title: 'Tip generously', detail: 'Tipping 15–20% at restaurants and bars is expected, not optional, unlike much of Europe.' },
+      { icon: '🚇', title: 'Check subway status', detail: 'The subway runs 24/7, but weekend service changes are frequent — check the app before you ride.' },
+      { icon: '🍽️', title: 'Skip Times Square dining', detail: 'Times Square restaurants are overpriced tourist traps; walk a few blocks for better food and prices.' },
+    ],
   },
   {
     id: 'la', name: 'Los Angeles', country: 'United States', countryCode: 'US',
@@ -17,6 +22,11 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'Where dreams are manufactured and year-round sunshine is guaranteed.',
     description: 'Los Angeles is a sprawling metropolis of creativity, surf culture, and reinvention. Hollywood\'s golden legacy meets world-class beaches and a food scene shaped by every culture on Earth. The city thrives on the belief that anything is possible.',
     whyVisit: ['Year-round sunshine & beaches', 'Hollywood & creative energy', 'Incredible food from everywhere'],
+    goodToKnow: [
+      { icon: '🚗', title: 'Budget for a car', detail: "LA isn't walkable between neighborhoods — budget for a rental car or rideshare." },
+      { icon: '🚦', title: 'Avoid rush hour', detail: 'Traffic is brutal 7–10am and 4–7pm; plan long drives around rush hour.' },
+      { icon: '🎬', title: 'Manage expectations', detail: 'The Hollywood Sign and Walk of Fame are often underwhelming up close — manage expectations.' },
+    ],
   },
   {
     id: 'grand-canyon', name: 'Grand Canyon', country: 'United States', countryCode: 'US',
@@ -25,9 +35,15 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'A mile-deep masterpiece carved by five million years of river and time.',
     description: 'The Grand Canyon is one of Earth\'s most spectacular natural wonders — a vast chasm 277 miles long, up to 18 miles wide, and a mile deep. Carved by the Colorado River over millions of years, its layered red rock walls read like pages from a geological encyclopedia.',
     whyVisit: ["One of Earth's seven wonders", 'Epic rim trails & vistas', 'A billion years of geology'],
+    goodToKnow: [
+      { icon: '🏜️', title: 'Pick the right rim', detail: 'The South Rim is far more developed and crowded; the North Rim closes entirely in winter.' },
+      { icon: '📵', title: 'Download offline maps', detail: "There's little to no cell service in the park — download offline maps beforehand." },
+      { icon: '🐴', title: 'Book mule rides early', detail: 'Mule rides and below-the-rim permits book out months in advance.' },
+    ],
   },
 
   // ── EUROPE ─────────────────────────────────────────────────────────────────
+  // France
   {
     id: 'paris', name: 'Paris', country: 'France', countryCode: 'FR',
     continent: 'Europe', coordinates: { latitude: 48.8566, longitude: 2.3522 },
@@ -35,7 +51,39 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'The city of light, love, and the finest pastries on the planet.',
     description: 'Paris is arguably the world\'s most beautiful city — a harmonious blend of grand Haussmann boulevards, iconic monuments, and intimate neighborhood cafés. The Eiffel Tower glitters at night, the Louvre holds a lifetime of art, and every arrondissement offers its own distinct personality.',
     whyVisit: ['Eiffel Tower at night', "World's greatest art museums", 'Unmatched café culture'],
+    goodToKnow: [
+      { icon: '🖼️', title: 'Check museum closing days', detail: 'Major museums close one day a week — the Louvre on Tuesdays, Musée d\'Orsay on Mondays.' },
+      { icon: '👛', title: 'Watch for pickpockets', detail: 'Pickpocketing is common near landmarks and on Metro Line 1 — keep bags zipped and in front.' },
+      { icon: '🔒', title: 'Expect midday closures', detail: 'Many small shops close for a few hours midafternoon, and much of the city slows down in August.' },
+    ],
   },
+  {
+    id: 'nice', name: 'Nice', country: 'France', countryCode: 'FR',
+    continent: 'Europe', coordinates: { latitude: 43.7102, longitude: 7.2620 },
+    category: 'beach', icon: '🌊', rank: 2,
+    tagline: "The French Riviera's sparkling queen of sun, sea, and art de vivre.",
+    description: "Nice is the jewel of the French Riviera — a city where Italian architecture meets French sophistication along the legendary Promenade des Anglais. The old town's tangle of ochre streets, the Matisse Museum, and beaches that glow amber at sunset make Nice one of Europe's most seductive coastal cities.",
+    whyVisit: ['Legendary Promenade des Anglais', 'Stunning Riviera coastline', 'Vibrant old town & markets'],
+    goodToKnow: [
+      { icon: '🩴', title: 'Bring water shoes', detail: 'The beaches are pebbles, not sand — water shoes make a real difference.' },
+      { icon: '🍷', title: 'Eat off the Promenade', detail: 'Restaurants directly on the Promenade are pricier and lower quality than those a few streets back.' },
+      { icon: '🚆', title: 'Day-trip by train', detail: 'Trains to Monaco and Cannes are cheap and frequent, making car-free day trips easy.' },
+    ],
+  },
+  {
+    id: 'lyon', name: 'Lyon', country: 'France', countryCode: 'FR',
+    continent: 'Europe', coordinates: { latitude: 45.7640, longitude: 4.8357 },
+    category: 'city', icon: '🥐', rank: 2,
+    tagline: "France's gastronomic capital where every meal is a reason to stay longer.",
+    description: "Lyon is the undisputed culinary capital of France — a city of traboules (hidden passages), Renaissance architecture, and more bouchons per square mile than anywhere else. Two rivers frame its historic peninsula, and its UNESCO-listed old quarters have layers of history that reward every curious wanderer.",
+    whyVisit: ["France's undisputed food capital", 'UNESCO-listed Renaissance old town', 'Hidden traboules & river views'],
+    goodToKnow: [
+      { icon: '🍲', title: 'Book bouchons ahead', detail: 'Popular bouchons often require reservations well ahead, especially for dinner.' },
+      { icon: '🗺️', title: 'Map the traboules', detail: "The Vieux Lyon traboules are unmarked — download a self-guided map to actually find them." },
+      { icon: '🛍️', title: 'Shop before Sunday', detail: 'Most shops close on Sundays, so handle errands and grocery runs on Saturday.' },
+    ],
+  },
+  // United Kingdom
   {
     id: 'london', name: 'London', country: 'United Kingdom', countryCode: 'GB',
     continent: 'Europe', coordinates: { latitude: 51.5074, longitude: -0.1278 },
@@ -43,7 +91,26 @@ export const DESTINATIONS: Destination[] = [
     tagline: "An empire's capital that reinvented itself as the world's cultural crossroads.",
     description: 'London is a city where medieval castles stand beside glass towers and black cabs navigate streets laid out centuries before the car existed. Its world-class museums are free, its theatre scene rivals Broadway, and its food now reflects every culture on the globe.',
     whyVisit: ['Millennia of living history', 'Free world-class museums', 'Iconic theatre & arts'],
+    goodToKnow: [
+      { icon: '🚇', title: 'Mind the last Tube', detail: 'The Underground stops around midnight most nights outside the limited Night Tube lines.' },
+      { icon: '🚶', title: 'Stand on the right', detail: 'Standing on the right of escalators is a near-sacred unwritten rule — don\'t block the left.' },
+      { icon: '🎟️', title: 'Book special exhibits', detail: 'Major museums are free, but special exhibits need paid, timed tickets booked online.' },
+    ],
   },
+  {
+    id: 'edinburgh', name: 'Edinburgh', country: 'United Kingdom', countryCode: 'GB',
+    continent: 'Europe', coordinates: { latitude: 55.9533, longitude: -3.1883 },
+    category: 'city', icon: '🏴', rank: 1,
+    tagline: "A castle on volcanic rock, cobblestoned wynds, and Scotland's brooding soul.",
+    description: "Edinburgh is one of Europe's most dramatic cities — a medieval Old Town of narrow closes and towering tenements facing a Georgian New Town across a glacial valley. The castle looms over everything, Arthur's Seat rises above the city like a sleeping giant, and the Royal Mile pulses with history, whisky, and festivals.",
+    whyVisit: ["Edinburgh Castle & Arthur's Seat", "World's largest arts festival", 'Moody medieval Old Town'],
+    goodToKnow: [
+      { icon: '🌦️', title: 'Pack for four seasons', detail: 'Weather flips fast — pack layers and a rain jacket even for a summer visit.' },
+      { icon: '🎭', title: 'Book ahead for August', detail: 'August (Fringe Festival) means packed streets and accommodation prices multiplying — book far ahead.' },
+      { icon: '👟', title: 'Wear sturdy shoes', detail: 'The Royal Mile is steep and cobbled; comfortable shoes matter more than style here.' },
+    ],
+  },
+  // Italy
   {
     id: 'rome', name: 'Rome', country: 'Italy', countryCode: 'IT',
     continent: 'Europe', coordinates: { latitude: 41.9028, longitude: 12.4964 },
@@ -51,7 +118,39 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'The Eternal City, where 2,000 years of history waits around every corner.',
     description: 'Rome is a city where you stumble upon ancient ruins while grabbing coffee. The Colosseum, Roman Forum, and Pantheon stand remarkably intact alongside Baroque fountains and Renaissance basilicas. Add gelato, pasta, and evening aperitivo hour, and Rome becomes nearly impossible to leave.',
     whyVisit: ['Ancient ruins still standing', 'Gelato & pasta perfection', 'Grand piazzas & fountains'],
+    goodToKnow: [
+      { icon: '🎟️', title: 'Book skip-the-line tickets', detail: 'Colosseum and Vatican lines can eat hours — book skip-the-line tickets in advance.' },
+      { icon: '🍝', title: 'Avoid tourist-trap menus', detail: 'Restaurants near major sites often push an inflated "menu turistico" — walk a few blocks for better value.' },
+      { icon: '☕', title: 'Stand at the bar', detail: 'Sitting at a café table instead of standing at the bar can double the price of the same coffee.' },
+    ],
   },
+  {
+    id: 'florence', name: 'Florence', country: 'Italy', countryCode: 'IT',
+    continent: 'Europe', coordinates: { latitude: 43.7696, longitude: 11.2558 },
+    category: 'city', icon: '🎨', rank: 1,
+    tagline: "The cradle of the Renaissance, where Michelangelo's David still stops you cold.",
+    description: "Florence is the city that ignited the Renaissance and hasn't stopped producing beauty since. Michelangelo's David, Botticelli's Birth of Venus, and Brunelleschi's cathedral dome are all here — surrounded by one of the world's greatest concentrations of medieval architecture, artisan workshops, and trattorias.",
+    whyVisit: ["Michelangelo's David in person", "Uffizi: world's finest Renaissance art", "Brunelleschi's breathtaking dome"],
+    goodToKnow: [
+      { icon: '🖼️', title: 'Reserve museum entry', detail: 'The Uffizi and Accademia require timed-entry bookings — walk-ins can wait hours or get turned away.' },
+      { icon: '🧾', title: 'Check the coperto fee', detail: 'Restaurants right around the Duomo often overcharge; check for a clearly listed "coperto" cover fee.' },
+      { icon: '👠', title: 'Skip flimsy shoes', detail: 'The historic center is charming but rough underfoot — skip flimsy shoes on the cobblestones.' },
+    ],
+  },
+  {
+    id: 'venice', name: 'Venice', country: 'Italy', countryCode: 'IT',
+    continent: 'Europe', coordinates: { latitude: 45.4408, longitude: 12.3155 },
+    category: 'city', icon: '🚤', rank: 1,
+    tagline: "A city built on water, defying physics and logic for a thousand years.",
+    description: "Venice is simply unlike any other place on Earth. Built on 118 islands connected by 400 bridges, its entire transportation network runs on canals. The Grand Canal sweeps past Gothic palazzos, gondoliers navigate silent backwaters, and St. Mark's Square floods at high tide without losing any of its splendor.",
+    whyVisit: ["Grand Canal & gondola rides", "St. Mark's Basilica & Piazza", "The world's most unique city"],
+    goodToKnow: [
+      { icon: '🎫', title: 'Check the entry fee', detail: 'Day-trippers may need to pay an entry fee and book a time slot on certain peak dates.' },
+      { icon: '🚤', title: 'Buy a multi-day pass', detail: 'Single vaporetto tickets are expensive — a multi-day pass pays off if staying more than a day or two.' },
+      { icon: '📜', title: 'Read the menu fine print', detail: 'Cafés directly on St. Mark\'s Square often add a "music surcharge" — check the menu\'s fine print first.' },
+    ],
+  },
+  // Spain
   {
     id: 'barcelona', name: 'Barcelona', country: 'Spain', countryCode: 'ES',
     continent: 'Europe', coordinates: { latitude: 41.3851, longitude: 2.1734 },
@@ -59,7 +158,26 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Gaudí's living canvas where architecture, beaches, and Mediterranean life meet.",
     description: 'Barcelona is a city of architectural wonder, golden beaches, and a culinary culture stretching from market stalls to Michelin stars. Antoni Gaudí\'s organic masterpieces — Sagrada Família, Park Güell, and Casa Batlló — make Barcelona visually unlike any other city on Earth.',
     whyVisit: ["Gaudí's surreal masterworks", 'Beautiful Mediterranean coast', 'Vibrant tapas & nightlife'],
+    goodToKnow: [
+      { icon: '🎟️', title: 'Book tickets in advance', detail: 'Sagrada Família and Park Güell require timed online tickets that often sell out days ahead.' },
+      { icon: '👛', title: 'Guard your belongings', detail: 'Las Ramblas and the metro are pickpocket hotspots — keep bags and phones secured.' },
+      { icon: '🕓', title: 'Plan around siesta hours', detail: 'Many restaurants close between lunch and dinner, roughly 4–8pm — plan meal times around it.' },
+    ],
   },
+  {
+    id: 'madrid', name: 'Madrid', country: 'Spain', countryCode: 'ES',
+    continent: 'Europe', coordinates: { latitude: 40.4168, longitude: -3.7038 },
+    category: 'city', icon: '💃', rank: 1,
+    tagline: "Spain's beating heart: art, football, flamenco, and dinner at midnight.",
+    description: "Madrid is Europe's highest capital and its most passionate — a city where the Prado houses Velázquez and Goya, Real Madrid fills 80,000 seats, and tapas bars don't fill up until 11pm. The Retiro Park, Gran Via, and a nightlife scene that runs until dawn make Madrid one of Europe's most vital cities.",
+    whyVisit: ['Prado: Velázquez & Goya masterworks', 'Best tapas & nightlife in Europe', 'Retiro Park & Royal Palace'],
+    goodToKnow: [
+      { icon: '🌙', title: 'Dine like a local, late', detail: 'Dinner rarely starts before 9–10pm locally — restaurants can look empty well into the evening.' },
+      { icon: '😴', title: 'Expect afternoon siestas', detail: 'Many smaller shops close for a mid-afternoon siesta, especially outside the center.' },
+      { icon: '🖼️', title: 'Visit the Prado for free', detail: 'The Prado is free during its last two opening hours most days.' },
+    ],
+  },
+  // Netherlands
   {
     id: 'amsterdam', name: 'Amsterdam', country: 'Netherlands', countryCode: 'NL',
     continent: 'Europe', coordinates: { latitude: 52.3676, longitude: 4.9041 },
@@ -67,7 +185,337 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'A city of canals, bicycles, and a quiet genius for beauty and tolerance.',
     description: "Amsterdam's 17th-century canal ring is a UNESCO World Heritage Site, lined with narrow merchant houses that lean gently toward the water. Its extraordinary museums — Rijksmuseum, Van Gogh, Anne Frank's house — sit alongside a laid-back café culture that makes visitors want to stay forever.",
     whyVisit: ['Fairy-tale canal views', 'Exceptional art museums', 'Charming cycling culture'],
+    goodToKnow: [
+      { icon: '🚲', title: 'Watch for bike lanes', detail: 'Bicycles have the right of way — always look both ways before stepping into a bike lane.' },
+      { icon: '🎟️', title: 'Book museums early', detail: 'The Anne Frank House and Van Gogh Museum sell out online weeks in advance.' },
+      { icon: '☕', title: 'Know your coffeeshops', detail: '"Coffeeshops" sell cannabis and are distinct from regular cafés — signage can confuse first-timers.' },
+    ],
   },
+  // Germany
+  {
+    id: 'berlin', name: 'Berlin', country: 'Germany', countryCode: 'DE',
+    continent: 'Europe', coordinates: { latitude: 52.5200, longitude: 13.4050 },
+    category: 'city', icon: '🐻', rank: 1,
+    tagline: "Europe's most reinvented city, where history, art, and nightlife collide.",
+    description: "Berlin is a city still assembling itself — raw, creative, and deeply shaped by its divided past. The Brandenburg Gate, Berlin Wall remnants, and Holocaust Memorial carry weight few cities can match, while its world-class museum island, vibrant art scene, and legendary techno clubs make it the most culturally electric city in Europe.",
+    whyVisit: ['Brandenburg Gate & Wall history', "Europe's greatest clubbing scene", 'Museum Island & world-class art'],
+    goodToKnow: [
+      { icon: '🛍️', title: 'Shop before Sunday', detail: 'Shops are closed by law on Sundays — stock up on Saturday.' },
+      { icon: '🎫', title: 'Validate your ticket', detail: 'Public transport runs on an honor system, but random ticket checks carry hefty fines for fare-dodging.' },
+      { icon: '🚪', title: 'Expect strict door policies', detail: 'Clubs like Berghain have notoriously strict, unpredictable door policies — don\'t take rejection personally.' },
+    ],
+  },
+  {
+    id: 'munich', name: 'Munich', country: 'Germany', countryCode: 'DE',
+    continent: 'Europe', coordinates: { latitude: 48.1351, longitude: 11.5820 },
+    category: 'city', icon: '🍺', rank: 1,
+    tagline: "Bavarian grandeur: beer halls, baroque palaces, and Alps on the horizon.",
+    description: "Munich is Germany's most livable and beautiful city — a place where baroque churches and royal palaces line broad boulevards, and the Alps shimmer on the horizon on clear days. The Marienplatz, English Garden, and Hofbräuhaus deliver authentic Bavarian culture, and Oktoberfest draws six million visitors each autumn.",
+    whyVisit: ['Legendary Oktoberfest & beer halls', 'Baroque palaces & English Garden', 'Alps day trips from the city'],
+    goodToKnow: [
+      { icon: '🍺', title: 'Book Oktoberfest early', detail: 'Oktoberfest accommodation books out up to a year ahead, with prices multiplying during the festival.' },
+      { icon: '🍻', title: 'Share the long tables', detail: 'Beer halls often expect you to share long communal tables and bus your own dishes.' },
+      { icon: '🤫', title: 'Keep Sundays quiet', detail: 'Sunday is a legally protected quiet day — loud activity is restricted and most shops are shut.' },
+    ],
+  },
+  // Portugal
+  {
+    id: 'lisbon', name: 'Lisbon', country: 'Portugal', countryCode: 'PT',
+    continent: 'Europe', coordinates: { latitude: 38.7169, longitude: -9.1395 },
+    category: 'city', icon: '🛤️', rank: 1,
+    tagline: "Seven hills, yellow trams, fado music, and the best pastéis de nata on Earth.",
+    description: "Lisbon is Europe's oldest capital and one of its most charming — a hilly, sun-drenched city of yellow trams, azulejo-tiled facades, and sweeping viewpoints called miradouros. The Alfama district's Moorish-era streets echo with fado music, and the Belém waterfront houses the monuments of Portugal's Age of Discovery.",
+    whyVisit: ['Iconic yellow trams & miradouros', 'Alfama fado & Moorish quarter', "Belém Tower & Age of Discovery"],
+    goodToKnow: [
+      { icon: '👟', title: 'Wear comfortable shoes', detail: 'The hills are steep and relentless — comfortable shoes matter more here than almost anywhere in Europe.' },
+      { icon: '🚋', title: 'Watch your bag on Tram 28', detail: 'Tram 28 is a well-known pickpocket hotspot thanks to its popularity with tourists.' },
+      { icon: '🍞', title: 'The bread isn\'t free', detail: 'Unordered bread, olives, and appetizers brought to your table aren\'t free and will appear on the bill.' },
+    ],
+  },
+  {
+    id: 'porto', name: 'Porto', country: 'Portugal', countryCode: 'PT',
+    continent: 'Europe', coordinates: { latitude: 41.1496, longitude: -8.6110 },
+    category: 'city', icon: '🍷', rank: 2,
+    tagline: "Port wine, azulejo art, and a riverside soul that wins everyone over.",
+    description: "Porto is Portugal's second city and arguably its most beautiful. The Ribeira district — a UNESCO World Heritage Site — tumbles down to the Douro River in a cascade of medieval houses. The city's famous port wine cellars line the opposite bank, while azulejo-covered churches and a stunning bookshop compete for attention.",
+    whyVisit: ['Ribeira: UNESCO riverside quarter', 'Port wine tasting & cellars', 'Stunning azulejo-tiled churches'],
+    goodToKnow: [
+      { icon: '🍷', title: 'Cross to Gaia for cellars', detail: 'Most port wine cellars are across the river in Vila Nova de Gaia, not in Porto proper.' },
+      { icon: '🧳', title: 'Pack light for cobbles', detail: 'The steep, cobbled historic center is tough with rolling luggage — pack light or take a taxi.' },
+      { icon: '📅', title: 'Reserve top spots early', detail: 'Top restaurants and cellar tours fill up fast on weekends, so book ahead.' },
+    ],
+  },
+  // Switzerland
+  {
+    id: 'zurich', name: 'Zurich', country: 'Switzerland', countryCode: 'CH',
+    continent: 'Europe', coordinates: { latitude: 47.3769, longitude: 8.5417 },
+    category: 'city', icon: '🏔️', rank: 2,
+    tagline: "Switzerland's financial capital, where lake views meet world-class culture.",
+    description: "Zurich combines alpine scenery, pristine lake swimming, and one of Europe's highest concentrations of museums and galleries. The medieval Altstadt climbs both banks of the Limmat River, and on clear days the Alps shimmer across Lake Zurich. The city consistently ranks as one of the world's most livable.",
+    whyVisit: ['Stunning lake & Alps views', 'Vibrant Altstadt & art scene', 'World-class food & chocolate'],
+    goodToKnow: [
+      { icon: '💰', title: 'Budget for high prices', detail: 'Switzerland is notably expensive — budget significantly more than neighboring countries.' },
+      { icon: '🕕', title: 'Shop before evening', detail: 'Shops close early, around 6–7pm, and are mostly shut on Sundays.' },
+      { icon: '🎫', title: 'Buy tickets before boarding', detail: 'Transit tickets must be bought before boarding; random inspections issue steep on-the-spot fines.' },
+    ],
+  },
+  {
+    id: 'interlaken', name: 'Interlaken', country: 'Switzerland', countryCode: 'CH',
+    continent: 'Europe', coordinates: { latitude: 46.6863, longitude: 7.8632 },
+    category: 'mountain', icon: '⛷️', rank: 1,
+    tagline: "Between two lakes, beneath the Eiger, Mönch, and Jungfrau: pure Swiss drama.",
+    description: "Interlaken sits in a valley between Lakes Thun and Brienz, framed by the Eiger, Mönch, and Jungfrau peaks. It's the gateway to the Bernese Oberland — a paradise for skiers, hikers, and paragliders. The Jungfraujoch, at 11,332 feet, is Europe's highest railway station.",
+    whyVisit: ['Eiger & Jungfrau peak views', 'Skiing, hiking & paragliding', "Europe's highest railway station"],
+    goodToKnow: [
+      { icon: '⛅', title: 'Check the forecast first', detail: 'Jungfraujoch tickets are pricey and weather-dependent — check the forecast, since clouds can erase the view.' },
+      { icon: '🪂', title: 'Book adventures early', detail: 'Adventure activities like paragliding and canyoning book up fast in peak season.' },
+      { icon: '💰', title: 'Expect premium prices', detail: 'Food and lodging prices run among the highest in Switzerland due to tourist demand.' },
+    ],
+  },
+  // Austria
+  {
+    id: 'vienna', name: 'Vienna', country: 'Austria', countryCode: 'AT',
+    continent: 'Europe', coordinates: { latitude: 48.2082, longitude: 16.3738 },
+    category: 'city', icon: '🎶', rank: 1,
+    tagline: "The city that gave the world Mozart, Klimt, Freud, and the waltz.",
+    description: "Vienna is Europe's most imperial city — a grand Habsburg capital of ring-road boulevards, Baroque palaces, and coffeehouses frozen in beautiful amber. Schönbrunn and Belvedere palaces, the Kunsthistorisches Museum, and the Vienna Philharmonic make it a cultural heavyweight, and the pastries in any Kaffeehaus will ruin you for dessert forever.",
+    whyVisit: ['Habsburg palaces & imperial grandeur', 'Mozart, Beethoven & the Philharmonic', 'World-famous Kaffeehaus culture'],
+    goodToKnow: [
+      { icon: '🎻', title: 'Grab standing-room tickets', detail: 'Same-day standing-room tickets for opera and concerts are cheap and a great budget option.' },
+      { icon: '☕', title: 'Linger over one coffee', detail: 'Coffeehouse etiquette allows lingering for hours over one coffee — a small tip (~10%) is customary.' },
+      { icon: '🖼️', title: 'Check Monday closures', detail: 'Most major museums are closed on Mondays.' },
+    ],
+  },
+  {
+    id: 'salzburg', name: 'Salzburg', country: 'Austria', countryCode: 'AT',
+    continent: 'Europe', coordinates: { latitude: 47.8095, longitude: 13.0550 },
+    category: 'city', icon: '🎵', rank: 2,
+    tagline: "Mozart's birthplace: a baroque gem nestled between the Alps and the Salzach.",
+    description: "Salzburg is one of Europe's most perfectly preserved Baroque cities — a compact, UNESCO-listed masterpiece tucked between dramatic Alpine peaks and the Salzach River. The hilltop Hohensalzburg Fortress lords over a city of Baroque churches, grand squares, and the birthplace of Wolfgang Amadeus Mozart.",
+    whyVisit: ["Mozart's birthplace & heritage", 'Hohensalzburg Fortress views', 'Sound of Music filming locations'],
+    goodToKnow: [
+      { icon: '🚶', title: 'Leave the car behind', detail: 'The Altstadt is largely pedestrian-only and easily walkable — a car just adds hassle.' },
+      { icon: '🎬', title: 'Take a guided tour', detail: 'Sound of Music filming locations are spread out; a guided tour saves a lot of logistics.' },
+      { icon: '🏰', title: 'Go early or hike up', detail: 'The fortress funicular lines get long by midday — go early or hike up instead.' },
+    ],
+  },
+  // Belgium
+  {
+    id: 'bruges', name: 'Bruges', country: 'Belgium', countryCode: 'BE',
+    continent: 'Europe', coordinates: { latitude: 51.2093, longitude: 3.2247 },
+    category: 'city', icon: '🍺', rank: 1,
+    tagline: "The best-preserved medieval city in Europe, mirrored in glass-still canals.",
+    description: "Bruges is a perfectly preserved medieval gem — a city of Gothic belfries, chocolate shops, horse-drawn carriages, and canals so still they act as perfect mirrors. The Markt and Burg squares are surrounded by Flemish Gothic architecture virtually unchanged since the 15th century, earning Bruges its title as the Venice of the North.",
+    whyVisit: ["Europe's finest medieval city center", 'Glass-still canals & belfry views', 'World-class Belgian chocolate & beer'],
+    goodToKnow: [
+      { icon: '🚲', title: 'Explore on foot or bike', detail: 'The compact center is best explored on foot or bike — a car is unnecessary and impractical.' },
+      { icon: '🍫', title: 'Seek out fresh pralines', detail: 'Chocolate shop quality varies widely — look for ones making pralines fresh on-site.' },
+      { icon: '🕐', title: 'Visit outside midday', detail: 'Day-trip crowds from cruise ships and Brussels peak midday; mornings and evenings are far calmer.' },
+    ],
+  },
+  {
+    id: 'brussels', name: 'Brussels', country: 'Belgium', countryCode: 'BE',
+    continent: 'Europe', coordinates: { latitude: 50.8503, longitude: 4.3517 },
+    category: 'city', icon: '🇪🇺', rank: 2,
+    tagline: "The capital of Europe: grand boulevards, Art Nouveau, and the world's best beer.",
+    description: "Brussels is the political heart of Europe and one of its most underrated cities. The Grand-Place — perhaps the world's most beautiful town square — is ringed by gilded guildhalls that take your breath away. Art Nouveau architecture dots every neighborhood, and Belgian cuisine punches well above the country's size.",
+    whyVisit: ['Grand-Place: most beautiful square in Europe', 'Art Nouveau architecture tour', 'Belgian beer culture & cuisine'],
+    goodToKnow: [
+      { icon: '🏛️', title: 'Check Monday closures', detail: 'Some attractions and government-adjacent sites close on Mondays.' },
+      { icon: '🍟', title: 'Find a proper friterie', detail: 'For real fries, seek out a dedicated "friterie" rather than a generic snack stand.' },
+      { icon: '🗣️', title: 'Expect bilingual signs', detail: "The city is bilingual (French/Dutch) — street signs and directions may appear in either." },
+    ],
+  },
+  // Ireland
+  {
+    id: 'dublin', name: 'Dublin', country: 'Ireland', countryCode: 'IE',
+    continent: 'Europe', coordinates: { latitude: 53.3498, longitude: -6.2603 },
+    category: 'city', icon: '🍀', rank: 1,
+    tagline: "Pubs, poets, and the craic: Ireland's capital on the Liffey.",
+    description: "Dublin is one of Europe's most welcoming and character-filled capitals — a city of Georgian squares, literary pubs, Viking history, and the warmest conversation you'll have anywhere. Trinity College's Book of Kells, the Guinness Storehouse, and Temple Bar draw millions, but the real Dublin is found in a neighborhood pub on a rainy evening.",
+    whyVisit: ['Trinity College & Book of Kells', 'Legendary pub culture & craic', 'Literary history: Joyce, Beckett & Wilde'],
+    goodToKnow: [
+      { icon: '☔', title: 'Pack a rain jacket', detail: 'Weather is unpredictable year-round — pack a rain jacket no matter the season.' },
+      { icon: '🍺', title: 'Arrive early for a seat', detail: 'Weekend nights get very crowded, especially around Temple Bar — arrive early for a seat.' },
+      { icon: '💶', title: 'Skip Temple Bar prices', detail: 'Temple Bar itself is touristy and overpriced; locals mostly drink elsewhere in the city.' },
+    ],
+  },
+  {
+    id: 'cliffs-of-moher', name: 'Cliffs of Moher', country: 'Ireland', countryCode: 'IE',
+    continent: 'Europe', coordinates: { latitude: 52.9715, longitude: -9.4309 },
+    category: 'nature', icon: '🌊', rank: 1,
+    tagline: "700 feet of sheer Atlantic drama, where Ireland falls into the sea.",
+    description: "The Cliffs of Moher plunge 700 feet into the Atlantic Ocean along eight miles of Ireland's Wild Atlantic Way. On clear days the Aran Islands and Connemara mountains are visible from the clifftops, and the raw power of the ocean crashing below is viscerally unforgettable.",
+    whyVisit: ['700-foot Atlantic cliffs', "Wild Atlantic Way highlight", 'Aran Islands views on clear days'],
+    goodToKnow: [
+      { icon: '💨', title: 'Stay behind the barriers', detail: 'Wind at the cliff edge can be dangerously strong — stay behind the barriers.' },
+      { icon: '🅿️', title: 'Arrive before mid-morning', detail: 'The visitor center car park fills early in summer; arrive before mid-morning.' },
+      { icon: '🌫️', title: 'Check the forecast', detail: 'Fog can roll in fast and erase the view entirely — check forecasts and keep a backup day if you can.' },
+    ],
+  },
+  // Sweden
+  {
+    id: 'stockholm', name: 'Stockholm', country: 'Sweden', countryCode: 'SE',
+    continent: 'Europe', coordinates: { latitude: 59.3293, longitude: 18.0686 },
+    category: 'city', icon: '👑', rank: 1,
+    tagline: "Built on 14 islands where Lake Mälaren meets the Baltic: Scandinavia's capital.",
+    description: "Stockholm is one of the world's most beautiful capitals — a city spread across 14 islands where freshwater meets saltwater, and medieval streets give way to Royal palaces and cutting-edge design. The Gamla Stan old town is a jewel of medieval Scandinavian architecture, while the Vasa Museum's 17th-century warship is one of the world's most extraordinary artifacts.",
+    whyVisit: ['Gamla Stan: medieval island old town', "Vasa Museum: 17th-century warship", 'Design, innovation & Nordic cuisine'],
+    goodToKnow: [
+      { icon: '🚋', title: 'Get a transit pass', detail: 'The city spans 14 islands — a transit pass covering ferries, buses, and metro is worth it.' },
+      { icon: '🛒', title: 'Try grocery-store meals', detail: 'Dining out is expensive; grocery-store meals are a common way locals and visitors save.' },
+      { icon: '💳', title: 'Bring a contactless card', detail: 'Sweden is nearly cashless — expect cards, often contactless-only, to be the norm everywhere.' },
+    ],
+  },
+  {
+    id: 'gothenburg', name: 'Gothenburg', country: 'Sweden', countryCode: 'SE',
+    continent: 'Europe', coordinates: { latitude: 57.7089, longitude: 11.9746 },
+    category: 'city', icon: '🦞', rank: 3,
+    tagline: "Sweden's seafood capital where the archipelago begins and canals cut through.",
+    description: "Gothenburg is Sweden's laid-back second city — a harbor town of canals, Art Nouveau architecture, and the country's best seafood. The fish market at Feskekörka (the Fish Church) is legendary, the archipelago stretches westward into the North Sea, and Liseberg amusement park is one of Europe's finest.",
+    whyVisit: ["Sweden's best seafood & fish market", 'Island archipelago day trips', 'Relaxed canal-town atmosphere'],
+    goodToKnow: [
+      { icon: '📅', title: 'Check off-season hours', detail: 'Archipelago ferries and some attractions cut back schedules significantly outside summer.' },
+      { icon: '🚲', title: 'Rent a bike to explore', detail: 'The city is very walkable and bike-friendly — renting a bike is often the best way to explore.' },
+      { icon: '🐟', title: 'Check fish market hours', detail: 'Feskekörka fish market is closed Sundays and Mondays.' },
+    ],
+  },
+  // Norway
+  {
+    id: 'bergen', name: 'Bergen', country: 'Norway', countryCode: 'NO',
+    continent: 'Europe', coordinates: { latitude: 60.3913, longitude: 5.3221 },
+    category: 'city', icon: '🌊', rank: 1,
+    tagline: "Norway's gateway to the fjords, ringed by seven mountains and colored wharves.",
+    description: "Bergen is Norway's second city and its most charming — a UNESCO-listed Hanseatic wharf town surrounded by seven mountains. The colorful wooden Bryggen buildings have stood since the 14th century, and from here the world's most spectacular fjords — Hardanger and Sognefjord — fan out in every direction.",
+    whyVisit: ['Bryggen: UNESCO Hanseatic wharf', "Gateway to Norway's greatest fjords", 'Seven mountains & stunning harbor'],
+    goodToKnow: [
+      { icon: '🌧️', title: 'Pack a real rain jacket', detail: "It's one of the rainiest cities in Europe — bring a real rain jacket, not just an umbrella." },
+      { icon: '🚡', title: 'Ride the funicular early', detail: 'The Fløibanen funicular gets long summer lines by midday — go early morning or evening.' },
+      { icon: '⛴️', title: 'Compare fjord tour prices', detail: 'Fjord tour prices and lengths vary a lot — compare a few options before booking.' },
+    ],
+  },
+  {
+    id: 'norwegian-fjords', name: 'Norwegian Fjords', country: 'Norway', countryCode: 'NO',
+    continent: 'Europe', coordinates: { latitude: 61.2000, longitude: 6.8000 },
+    category: 'nature', icon: '⛰️', rank: 1,
+    tagline: "The world's most dramatic coastline: glacial walls plunging into mirror-still water.",
+    description: "The Norwegian fjords are among the world's most magnificent natural landscapes — ancient glacial valleys carved miles deep into mountains, now filled by impossibly still seawater. Sognefjord, Geirangerfjord, and Hardangerfjord are UNESCO-listed and simply defy superlatives.",
+    whyVisit: ["World's most dramatic fjord scenery", 'UNESCO World Heritage Site', 'Kayaking, hiking & waterfall chasing'],
+    goodToKnow: [
+      { icon: '📅', title: 'Visit May through September', detail: 'Many viewpoints and hikes are only accessible May–September; snow closes roads the rest of the year.' },
+      { icon: '🚗', title: 'Drive cautiously', detail: 'A rental car gives the most flexibility, but roads are narrow and winding — drive cautiously.' },
+      { icon: '🧥', title: 'Pack layers for elevation', detail: 'Weather shifts quickly at elevation — pack layers even in summer.' },
+    ],
+  },
+  // Denmark
+  {
+    id: 'copenhagen', name: 'Copenhagen', country: 'Denmark', countryCode: 'DK',
+    continent: 'Europe', coordinates: { latitude: 55.6761, longitude: 12.5683 },
+    category: 'city', icon: '🧜', rank: 1,
+    tagline: "The world's most livable city: bikes, Noma, and Tivoli after dark.",
+    description: "Copenhagen is Scandinavia's brightest star — a city of coloured canal houses, world-leading restaurants, ancient castles, and more bicycles than people. The Tivoli Gardens opened in 1843 and still enchant. Nyhavn's painted warehouses are iconic, and the New Nordic food movement made this one of the world's great dining cities.",
+    whyVisit: ['Nyhavn & coloured canal houses', 'World-class New Nordic dining', 'Tivoli Gardens & cycling culture'],
+    goodToKnow: [
+      { icon: '🚲', title: 'Check bike lanes first', detail: 'Bikes outnumber people — always check the bike lane before stepping out; they have priority.' },
+      { icon: '🍽️', title: 'Book dining weeks ahead', detail: 'Top New Nordic restaurant reservations should be made weeks ahead.' },
+      { icon: '💳', title: 'Bring a working card', detail: 'Denmark is largely cashless — bring a card that works reliably abroad.' },
+    ],
+  },
+  {
+    id: 'aarhus', name: 'Aarhus', country: 'Denmark', countryCode: 'DK',
+    continent: 'Europe', coordinates: { latitude: 56.1629, longitude: 10.2039 },
+    category: 'city', icon: '🎨', rank: 3,
+    tagline: "Denmark's student city: a compact, creative harbor town with a rainbow panorama.",
+    description: "Aarhus is Denmark's second city — younger, hipper, and more affordable than Copenhagen. The ARoS Art Museum's iconic rainbow panorama walkway is one of Scandinavia's great contemporary art experiences, and the cobblestone Latin Quarter around the cathedral hums with cafés, boutiques, and some of Denmark's best restaurants.",
+    whyVisit: ["ARoS Museum's rainbow panorama", 'Vibrant Latin Quarter & cathedral', 'Dynamic student city energy'],
+    goodToKnow: [
+      { icon: '🚲', title: 'Explore on foot or bike', detail: 'The city is compact and best explored on foot or by bike.' },
+      { icon: '🎓', title: 'Enjoy the student energy', detail: 'A large student population gives it a younger, more casual vibe than Copenhagen.' },
+      { icon: '🌈', title: 'Visit ARoS off-peak', detail: "Visit the ARoS rainbow panorama outside midday to dodge the biggest crowds." },
+    ],
+  },
+  // Finland
+  {
+    id: 'helsinki', name: 'Helsinki', country: 'Finland', countryCode: 'FI',
+    continent: 'Europe', coordinates: { latitude: 60.1699, longitude: 24.9384 },
+    category: 'city', icon: '🦌', rank: 2,
+    tagline: "Finland's design capital: sea, sauna, and neoclassical grandeur on the Baltic.",
+    description: "Helsinki occupies a peninsula jutting into the Baltic, giving it a waterfront character unlike any other Nordic capital. Neoclassical Senate Square, the striking Helsinki Cathedral, and the market halls reflect the city's architectural ambition. Finnish design is everywhere, and the sauna culture is not optional.",
+    whyVisit: ['Helsinki Cathedral & Senate Square', 'Finnish design & Marimekko', 'Island fortress Suomenlinna'],
+    goodToKnow: [
+      { icon: '🧖', title: 'Embrace sauna culture', detail: 'Sauna culture is deeply communal — many are gender-separated and nudity is the norm.' },
+      { icon: '🎫', title: 'Get a day pass', detail: 'A transit day pass covers trams, metro, and the ferry to Suomenlinna, and often pays for itself.' },
+      { icon: '🍱', title: 'Eat lounas at lunch', detail: 'Dining out can be pricey; the midday "lounas" lunch specials are a much cheaper way to eat well.' },
+    ],
+  },
+  {
+    id: 'rovaniemi', name: 'Rovaniemi', country: 'Finland', countryCode: 'FI',
+    continent: 'Europe', coordinates: { latitude: 66.5039, longitude: 25.7294 },
+    category: 'nature', icon: '🎄', rank: 2,
+    tagline: "Santa's hometown on the Arctic Circle, where the Northern Lights dance overhead.",
+    description: "Rovaniemi sits exactly on the Arctic Circle — the official hometown of Santa Claus and gateway to Finland's Lapland wilderness. In winter, the Northern Lights arc above the frozen Ounasjoki River, reindeer pull sleds through snow-laden forests, and glass igloos let you sleep under the aurora.",
+    whyVisit: ['Northern Lights in winter', 'Reindeer safaris & glass igloos', 'Santa Village on the Arctic Circle'],
+    goodToKnow: [
+      { icon: '🌌', title: 'Visit in winter for auroras', detail: 'The Northern Lights only show during the dark winter months (roughly September–March), not summer.' },
+      { icon: '🧣', title: 'Pack thermal layers', detail: 'Temperatures fall well below freezing — proper thermal layers are essential, not optional, in winter.' },
+      { icon: '🐕', title: 'Book husky rides early', detail: 'Husky sledding and igloo stays book out early for the winter season.' },
+    ],
+  },
+  // Iceland
+  {
+    id: 'reykjavik', name: 'Reykjavik', country: 'Iceland', countryCode: 'IS',
+    continent: 'Europe', coordinates: { latitude: 64.1355, longitude: -21.8954 },
+    category: 'city', icon: '🌌', rank: 1,
+    tagline: "The world's northernmost capital: geothermal, geologic, and gloriously remote.",
+    description: "Reykjavik is the world's northernmost national capital and one of its most extraordinary — a small, colorful city where geothermal energy heats everything, the Hallgrímskirkja towers over brightly painted houses, and the Northern Lights appear overhead in winter. Iceland's dramatic landscapes begin just outside the city.",
+    whyVisit: ['Northern Lights & midnight sun', "Gateway to Iceland's volcanic wonders", 'Hallgrímskirkja & colorful cityscape'],
+    goodToKnow: [
+      { icon: '🍷', title: 'Buy alcohol at duty-free', detail: 'Alcohol is heavily taxed — buying at the airport duty-free on arrival saves real money.' },
+      { icon: '🌦️', title: 'Expect changeable weather', detail: 'Weather changes constantly; the local saying "wait five minutes" for different weather is accurate.' },
+      { icon: '🚰', title: 'Skip bottled water', detail: 'Tap water is safe and excellent everywhere — no need to buy bottled water.' },
+    ],
+  },
+  {
+    id: 'golden-circle', name: 'Golden Circle', country: 'Iceland', countryCode: 'IS',
+    continent: 'Europe', coordinates: { latitude: 64.3270, longitude: -20.1200 },
+    category: 'nature', icon: '⚡', rank: 1,
+    tagline: "Geysers, the world's oldest parliament, and a waterfall you can walk behind.",
+    description: "Iceland's Golden Circle is a 186-mile loop from Reykjavik packed with natural wonders. Þingvellir National Park is where the American and Eurasian tectonic plates meet and the world's oldest parliament was established. Strokkur erupts every few minutes, and Gullfoss waterfall plunges into a canyon of glacial fury.",
+    whyVisit: ['Strokkur geyser erupts every 5 minutes', 'Þingvellir: walk between tectonic plates', 'Gullfoss: the Golden Waterfall'],
+    goodToKnow: [
+      { icon: '🌅', title: 'Start the loop early', detail: "It's a full-day loop — start early to see everything before dark, especially in winter." },
+      { icon: '🧊', title: 'Check road conditions', detail: 'Roads can ice over or close in winter — check conditions at road.is before setting out.' },
+      { icon: '🚌', title: 'Arrive before the buses', detail: 'Popular stops like Geysir fill up with tour buses by mid-morning; go as early as you can.' },
+    ],
+  },
+  // Greece (additional)
+  {
+    id: 'athens', name: 'Athens', country: 'Greece', countryCode: 'GR',
+    continent: 'Europe', coordinates: { latitude: 37.9838, longitude: 23.7275 },
+    category: 'city', icon: '🏛️', rank: 1,
+    tagline: "Where Western civilization was born, atop a rocky hill that still stuns.",
+    description: "Athens is where democracy, philosophy, drama, and architecture were invented — and the Acropolis still presides over the city with the authority of 2,500 years. Modern Athens buzzes beneath it: a city of street art, rooftop bars, and the world's greatest concentration of classical ruins in a sprawling, chaotic, irresistible metropolis.",
+    whyVisit: ['The Acropolis & Parthenon', 'Birthplace of Western civilization', 'Ancient ruins meets vibrant city life'],
+    goodToKnow: [
+      { icon: '☀️', title: 'Visit the Acropolis at opening', detail: 'The Acropolis gets brutally hot and crowded by midday in summer — go right at opening.' },
+      { icon: '🎫', title: 'Buy the combined ticket', detail: 'A combined ticket covers the Acropolis and several other ancient sites for less than paying separately.' },
+      { icon: '🏙️', title: 'Look past the grit', detail: "Central Athens can feel gritty compared to the postcard image — don't let it stop you exploring further." },
+    ],
+  },
+  {
+    id: 'mykonos', name: 'Mykonos', country: 'Greece', countryCode: 'GR',
+    continent: 'Europe', coordinates: { latitude: 37.4467, longitude: 25.3289 },
+    category: 'island', icon: '🌊', rank: 2,
+    tagline: "Greece's most glamorous island: windmills, whitewash, and electric nightlife.",
+    description: "Mykonos is the glamour capital of the Greek islands — a dazzling white maze of Cycladic architecture, famous windmills, and turquoise harbors. Chora's labyrinthine lanes hide boutiques, bars, and seafood tavernas that overflow until sunrise. The beaches range from peaceful to Europe's wildest parties.",
+    whyVisit: ['Iconic windmills & whitewashed lanes', 'Crystal-clear Aegean beaches', 'Electric nightlife & dining'],
+    goodToKnow: [
+      { icon: '📅', title: 'Travel in shoulder season', detail: 'Prices spike dramatically in July–August; May, June, and September are far more affordable.' },
+      { icon: '🏖️', title: 'Ask about sunbed minimums', detail: 'Beach clubs often charge steep minimum spends for sunbeds — confirm costs before sitting down.' },
+      { icon: '💨', title: 'Build in ferry buffer days', detail: "The island's strong summer winds (the meltemi) can disrupt ferries — build buffer days into your plans." },
+    ],
+  },
+  // Czech Republic
   {
     id: 'prague', name: 'Prague', country: 'Czech Republic', countryCode: 'CZ',
     continent: 'Europe', coordinates: { latitude: 50.0755, longitude: 14.4378 },
@@ -75,6 +523,11 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'A fairy-tale skyline that survived two world wars nearly untouched.',
     description: 'Prague is perhaps Europe\'s most perfectly preserved medieval city, its Gothic spires and Baroque palaces reflected in the Vltava River below. The astronomical clock still marks the hours in the Old Town Square, and the hilltop castle complex offers sweeping views over a thousand years of Czech history.',
     whyVisit: ["Europe's finest medieval city", 'Old town streets unchanged', 'Legendary Czech beer culture'],
+    goodToKnow: [
+      { icon: '💱', title: 'Pay in koruna', detail: "The currency is the Czech koruna, not the euro — some tourist spots quote euros at poor rates." },
+      { icon: '🍽️', title: 'Check reviews before dining', detail: 'The Old Town has plenty of overpriced "traditional" restaurants aimed at tourists — check reviews first.' },
+      { icon: '👛', title: 'Watch your pockets on the bridge', detail: 'Pickpocketing is common on the Charles Bridge and crowded trams.' },
+    ],
   },
   {
     id: 'santorini', name: 'Santorini', country: 'Greece', countryCode: 'GR',
@@ -83,6 +536,11 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'A crescent of volcanic cliffs, blue domes, and legendary Aegean sunsets.',
     description: 'Santorini is the remnant of a catastrophic volcanic eruption that created one of the world\'s most dramatic landscapes. Whitewashed villages cling to caldera cliffs above the deep Aegean, and the sunsets over Oia are so famous they draw travelers from every corner of the globe.',
     whyVisit: ['World-famous Aegean sunsets', 'Iconic blue-domed villages', 'Volcanic cliffs & beaches'],
+    goodToKnow: [
+      { icon: '🌅', title: 'Claim your sunset spot early', detail: "Oia's famous sunset viewpoint gets packed — arrive at least an hour early for a decent spot." },
+      { icon: '🛵', title: 'Drive with confidence', detail: 'Roads are narrow and steep; renting an ATV or car requires confidence in tight spaces.' },
+      { icon: '🪜', title: 'Expect a lot of stairs', detail: 'Many cliffside hotels involve a lot of stairs — worth knowing if mobility is a concern.' },
+    ],
   },
 
   // ── ASIA ───────────────────────────────────────────────────────────────────
@@ -93,6 +551,11 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'The future and the ancient past, coexisting perfectly in the world\'s largest city.',
     description: 'Tokyo is a city of extraordinary contradictions — ancient temples nestled between gleaming skyscrapers, vending machines selling everything imaginable, and a food culture so refined it has more Michelin stars than any other city on Earth. Its punctual trains and deep attention to detail make it unlike any other metropolis.',
     whyVisit: ['Future meets ancient tradition', "World's greatest food city", 'Safe, vibrant & electric'],
+    goodToKnow: [
+      { icon: '💴', title: 'Carry cash for small spots', detail: "Carry cash — many smaller restaurants and shops still don't accept cards." },
+      { icon: '🚫', title: 'Skip the tip', detail: 'Tipping is not customary and can even cause confusion or be politely refused.' },
+      { icon: '🚃', title: 'Avoid rush-hour trains', detail: 'Morning rush-hour trains (7:30–9am) are famously packed — avoid them with luggage if you can.' },
+    ],
   },
   {
     id: 'kyoto', name: 'Kyoto', country: 'Japan', countryCode: 'JP',
@@ -101,6 +564,11 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'A thousand temples and the quiet, unhurried heart of traditional Japan.',
     description: "Kyoto was Japan's imperial capital for over a millennium, and its cultural legacy is staggering — 17 UNESCO World Heritage Sites, over 1,600 Buddhist temples, and 400 Shinto shrines. The Fushimi Inari shrine's tunnel of torii gates and Arashiyama's bamboo groves are among Asia's most beautiful sights.",
     whyVisit: ['Over 1,600 temples to explore', 'Iconic torii gate tunnels', 'Cherry blossoms in spring'],
+    goodToKnow: [
+      { icon: '📷', title: 'Mind photo rules in Gion', detail: 'Parts of the Gion geisha district restrict photography, with fines for violations.' },
+      { icon: '⛩️', title: 'Visit temples early', detail: 'Major temples get very crowded during cherry blossom and autumn foliage season — visit early morning.' },
+      { icon: '🏮', title: 'Book ryokan in advance', detail: 'Popular ryokan and restaurants often require reservations well in advance.' },
+    ],
   },
   {
     id: 'osaka', name: 'Osaka', country: 'Japan', countryCode: 'JP',
@@ -109,6 +577,11 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Japan's kitchen and its most deliciously chaotic city.",
     description: "Osaka is Japan's culinary capital and its most boisterous city — a place where locals say you'll eat yourself broke. Dotonbori's neon-lit canal, Osaka Castle's towering keep, and the labyrinthine Kuromon Market give the city an energy all its own. It's louder, friendlier, and hungrier than Tokyo.",
     whyVisit: ['World-class street food scene', 'Dazzling Dotonbori nightlife', 'Osaka Castle & historic sites'],
+    goodToKnow: [
+      { icon: '🍜', title: 'Eat before peak hours', detail: 'Dotonbori street food stalls have long lines at peak dinner hours — go earlier for shorter waits.' },
+      { icon: '🎫', title: 'Grab the Amazing Pass', detail: 'The Osaka Amazing Pass bundles transit and many attractions, worth it for a packed sightseeing day.' },
+      { icon: '🚶', title: 'Stand on the right here', detail: "Escalator etiquette is reversed from Tokyo here — stand on the right, walk on the left." },
+    ],
   },
 
   // ── OCEANIA ────────────────────────────────────────────────────────────────
@@ -119,6 +592,11 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'Opera sails, a harbour bridge, and the world\'s most beautiful city beaches.',
     description: "Sydney is one of the world's most livable and beautiful cities. Its harbour — bridged by one of engineering's great achievements and anchored by the iconic Opera House — is simply stunning. Bondi Beach's surf culture, the Blue Mountains nearby, and a restaurant scene drawing on the world's most diverse immigrant population make Sydney endlessly rewarding.",
     whyVisit: ['Iconic Opera House harbour', 'World-famous Bondi Beach', 'The perfect outdoor lifestyle'],
+    goodToKnow: [
+      { icon: '☀️', title: 'Wear sunscreen daily', detail: 'The sun is far stronger than it feels — wear sunscreen and a hat even on cloudy days.' },
+      { icon: '🌊', title: 'Swim between the flags', detail: 'Rip currents are a real danger; always swim between the red and yellow flags.' },
+      { icon: '🚆', title: 'Get around easily', detail: 'Public transport uses a tap-on/tap-off Opal card — single paper tickets aren\'t sold.' },
+    ],
   },
   {
     id: 'great-barrier-reef', name: 'Great Barrier Reef', country: 'Australia', countryCode: 'AU',
@@ -127,5 +605,10 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'The world\'s largest living structure, visible from outer space.',
     description: 'The Great Barrier Reef stretches 1,400 miles along Australia\'s northeast coast — the world\'s largest coral reef system and one of the seven natural wonders of the world. Over 1,500 fish species, 4,000 mollusc species, and 600 coral types create an underwater ecosystem of breathtaking complexity.',
     whyVisit: ["World's largest reef system", 'Over 1,500 fish species', 'Ultimate diving paradise'],
+    goodToKnow: [
+      { icon: '🪼', title: 'Wear a stinger suit', detail: 'Stinger (jellyfish) season runs roughly November–May — a protective stinger suit is recommended for swimming.' },
+      { icon: '🌊', title: 'Ask about visibility', detail: 'Coral visibility depends heavily on weather and tide — ask your operator about recent conditions.' },
+      { icon: '⛴️', title: 'Book your boat tour', detail: 'Most reef access is by boat tour from Cairns or the Whitsundays — book ahead in peak season.' },
+    ],
   },
 ];

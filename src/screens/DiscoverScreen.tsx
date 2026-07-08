@@ -8,8 +8,8 @@ import { useStore } from '../store';
 import { CATEGORY_ICONS, CONTINENT_COLORS } from '../types';
 import type { Destination } from '../types';
 import { DESTINATIONS } from '../data/destinations';
-import { flag } from '../utils/stats';
 import DestinationSheet from '../components/Map/DestinationSheet';
+import CircleFlag from '../components/CircleFlag';
 
 const { width } = Dimensions.get('window');
 const CARD_W = 148;
@@ -130,7 +130,10 @@ export default function DiscoverScreen() {
                 </View>
                 <View style={styles.searchInfo}>
                   <Text style={styles.searchName}>{dest.name}</Text>
-                  <Text style={styles.searchCountry}>{flag(dest.countryCode)} {dest.country}</Text>
+                  <View style={styles.searchCountryRow}>
+                    <CircleFlag countryCode={dest.countryCode} size={13} />
+                    <Text style={styles.searchCountry}>{dest.country}</Text>
+                  </View>
                 </View>
                 {saved?.type === 'visited'  && <Text style={styles.badgeVisited}>✓</Text>}
                 {saved?.type === 'wishlist' && <Text style={styles.badgeWishlist}>♡</Text>}
@@ -185,9 +188,10 @@ export default function DiscoverScreen() {
                       </View>
                       <View style={styles.cardBottom}>
                         <Text style={styles.cardName} numberOfLines={1}>{dest.name}</Text>
-                        <Text style={styles.cardCountry} numberOfLines={1}>
-                          {flag(dest.countryCode)} {dest.country}
-                        </Text>
+                        <View style={styles.cardCountryRow}>
+                          <CircleFlag countryCode={dest.countryCode} size={12} />
+                          <Text style={styles.cardCountry} numberOfLines={1}>{dest.country}</Text>
+                        </View>
                       </View>
                     </Pressable>
                   );
@@ -258,6 +262,7 @@ const styles = StyleSheet.create({
     padding: 10, height: CARD_H * 0.40, justifyContent: 'center',
   },
   cardName:    { fontSize: 13, fontWeight: '700', color: '#111827', marginBottom: 3 },
+  cardCountryRow: { flexDirection: 'row', alignItems: 'center', gap: 4 },
   cardCountry: { fontSize: 11, color: '#6B7280' },
 
   // Search results
@@ -277,7 +282,8 @@ const styles = StyleSheet.create({
   searchIconText:  { fontSize: 22 },
   searchInfo:      { flex: 1 },
   searchName:      { fontSize: 15, fontWeight: '600', color: '#111827' },
-  searchCountry:   { fontSize: 12, color: '#6B7280', marginTop: 1 },
+  searchCountryRow:{ flexDirection: 'row', alignItems: 'center', gap: 5, marginTop: 2 },
+  searchCountry:   { fontSize: 12, color: '#6B7280' },
   badgeVisited:    { fontSize: 18, color: '#059669', fontWeight: '700' },
   badgeWishlist:   { fontSize: 18, color: '#DB2777' },
 });

@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { useMemo } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import type { SavedDestination, Continent } from '../types';
+import type { SavedDestination, SavedSpot, SavedCountry, PhotoEntry, Continent } from '../types';
 import { DESTINATIONS } from '../data/destinations';
 import { SPOTS } from '../data/spots';
 
@@ -12,12 +12,22 @@ function uid() {
 
 interface AppState {
   savedDestinations: Record<string, SavedDestination>;
+  savedSpots: Record<string, SavedSpot>;
+  savedCountries: Record<string, SavedCountry>;
   selectedDestinationId: string | null;
   userName: string;
 
   saveDestination: (id: string, type: 'visited' | 'wishlist', extra?: Partial<Omit<SavedDestination, 'destinationId' | 'type'>>) => void;
   unsaveDestination: (id: string) => void;
   updateSaved: (id: string, update: Partial<SavedDestination>) => void;
+  // Spots. Presence of an entry in savedSpots means "visited".
+  saveSpotVisited: (spotId: string, destinationId: string) => void;
+  updateSpot: (spotId: string, update: Partial<SavedSpot>) => void;
+  unsaveSpot: (spotId: string) => void;
+  // Whole-country visited tracking — independent of any individual destination's own status.
+  saveCountryVisited: (countryCode: string, extra?: Partial<Omit<SavedCountry, 'countryCode'>>) => void;
+  unsaveCountry: (countryCode: string) => void;
+  updateSavedCountry: (countryCode: string, update: Partial<SavedCountry>) => void;
   selectDestination: (id: string | null) => void;
   setUserName: (name: string) => void;
 }
@@ -41,6 +51,8 @@ export const useStore = create<AppState>()(
   persist(
     (set) => ({
       savedDestinations: buildDefaultSaved(),
+      savedSpots: {},
+      savedCountries: {},
       selectedDestinationId: null,
       userName: 'Explorer',
 
@@ -67,6 +79,70 @@ export const useStore = create<AppState>()(
           },
         })),
 
+      // ── Spots ────────────────────────────────────────────────────────────
+      saveSpotVisited: (spotId, destinationId) =>
+        set((s) => {
+          const nextSpots = {
+            ...s.savedSpots,
+            [spotId]: s.savedSpots[spotId] ?? { spotId, destinationId },
+          };
+          // Auto-mark the parent destination visited (keeps any existing wishlist flag/data).
+          const parent = s.savedDestinations[destinationId];
+          const nextDests = parent?.type === 'visited'
+            ? s.savedDestinations
+            : {
+                ...s.savedDestinations,
+                [destinationId]: {
+                  ...(parent ?? { destinationId }),
+                  destinationId,
+                  type: 'visited' as const,
+                },
+              };
+          return { savedSpots: nextSpots, savedDestinations: nextDests };
+        }),
+
+      updateSpot: (spotId, update) =>
+        set((s) => ({
+          savedSpots: {
+            ...s.savedSpots,
+            [spotId]: { ...s.savedSpots[spotId], ...update },
+          },
+        })),
+
+      unsaveSpot: (spotId) =>
+        set((s) => {
+          const next = { ...s.savedSpots };
+          delete next[spotId];
+          return { savedSpots: next };
+        }),
+
+      // ── Countries ────────────────────────────────────────────────────────
+      // Merges with any existing record (e.g. an isWishlisted-only entry, or existing notes)
+      // rather than replacing it outright — this doubles as the general "create or update a
+      // saved country" entry point, not just a "mark visited" action.
+      saveCountryVisited: (countryCode, extra = {}) =>
+        set((s) => ({
+          savedCountries: {
+            ...s.savedCountries,
+            [countryCode]: { ...s.savedCountries[countryCode], countryCode, ...extra },
+          },
+        })),
+
+      unsaveCountry: (countryCode) =>
+        set((s) => {
+          const next = { ...s.savedCountries };
+          delete next[countryCode];
+          return { savedCountries: next };
+        }),
+
+      updateSavedCountry: (countryCode, update) =>
+        set((s) => ({
+          savedCountries: {
+            ...s.savedCountries,
+            [countryCode]: { ...s.savedCountries[countryCode], ...update },
+          },
+        })),
+
       selectDestination: (id) => set({ selectedDestinationId: id }),
       setUserName: (name) => set({ userName: name }),
     }),
@@ -77,10 +153,37 @@ export const useStore = create<AppState>()(
         if (state && Object.keys(state.savedDestinations).length === 0) {
           state.savedDestinations = buildDefaultSaved();
         }
+        // Backfill for state persisted before savedCountries existed.
+        if (state && !state.savedCountries) {
+          state.savedCountries = {};
+        }
       },
     }
   )
 );
+
+/**
+ * Merged photo list for a destination: its own photos (added at destination level, untagged)
+ * followed by every child-spot photo (tagged with spotId/spotName so the collage can label them).
+ * Spot photos are the single source of truth — they live on the spot, not duplicated here.
+ */
+export function useDestinationPhotos(destinationId: string): PhotoEntry[] {
+  const savedDestinations = useStore((s) => s.savedDestinations);
+  const savedSpots        = useStore((s) => s.savedSpots);
+
+  return useMemo(() => {
+    const own = savedDestinations[destinationId]?.photos ?? [];
+    const spotPhotos: PhotoEntry[] = [];
+    for (const ss of Object.values(savedSpots)) {
+      if (ss.destinationId !== destinationId || !ss.photos?.length) continue;
+      const spot = SPOTS.find((sp) => sp.id === ss.spotId);
+      for (const p of ss.photos) {
+        spotPhotos.push({ ...p, spotId: ss.spotId, spotName: p.spotName ?? spot?.name });
+      }
+    }
+    return [...own, ...spotPhotos];
+  }, [savedDestinations, savedSpots, destinationId]);
+}
 
 export function useStats() {
   const savedDestinations = useStore((s) => s.savedDestinations);

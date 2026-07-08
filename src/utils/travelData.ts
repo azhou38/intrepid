@@ -4,6 +4,12 @@ export interface MonthWeather {
   month: string;
   icon: string;
   tempC: number;
+  tempLowC: number;
+}
+
+export interface MonthRain {
+  month: string;
+  days: number; // approximate number of days with precipitation
 }
 
 export interface MonthCrowd {
@@ -12,19 +18,6 @@ export interface MonthCrowd {
   isBest: boolean;
 }
 
-// ── Deterministic hash ────────────────────────────────────────────────────────
-function djb2(s: string): number {
-  let h = 5381;
-  for (let i = 0; i < s.length; i++) h = ((h << 5) + h) ^ s.charCodeAt(i);
-  return Math.abs(h);
-}
-
-export function getCommunityRating(destId: string): { rating: number; count: string } {
-  const h = djb2(destId);
-  const rating = 3.9 + (h % 11) / 10;        // 3.9 – 4.9
-  const countK = 1.1 + (h % 49) / 10;        // 1.1K – 6.0K
-  return { rating: Math.round(rating * 10) / 10, count: countK.toFixed(1) + 'K' };
-}
 
 // ── Temperature profiles — Northern hemisphere baseline (°C, Jan→Dec) ─────────
 const T: Record<string, number[]> = {
@@ -72,15 +65,23 @@ function climateProfile(latitude: number, category: string): string {
   return 'cold';
 }
 
+// Approximate average diurnal (day/night) temperature swing per climate profile, purely for
+// deriving an illustrative "low" temperature alongside the existing single average reading.
+const DIURNAL_SPREAD: Record<string, number> = {
+  tropical: 5, subtropical: 9, desert: 14, temperate: 7, cold: 6, mountain: 9,
+};
+
 export function getWeatherData(latitude: number, category: string): MonthWeather[] {
   const profile = climateProfile(latitude, category);
   let temps = T[profile];
   let rains = R[profile];
   if (latitude < -5) { temps = shiftHalf(temps); rains = shiftHalf(rains); }
+  const spread = DIURNAL_SPREAD[profile] ?? 7;
   return MONTHS_SHORT.map((month, i) => ({
     month,
     icon: weatherEmoji(temps[i], rains[i]),
     tempC: Math.round(temps[i]),
+    tempLowC: Math.round(temps[i] - spread),
   }));
 }
 
@@ -101,19 +102,40 @@ function crowdProfileKey(continent: string, latitude: number): string {
   return 'yearround';
 }
 
-export function getCrowdData(continent: string, category: string, latitude: number): MonthCrowd[] {
+// Dampens the seasonal profile toward a destination's actual overall popularity (rank 1 =
+// most iconic/crowded, 5 = least) so crowd levels are absolute rather than purely relative
+// shape — a quiet, low-rank destination shows low bars year-round instead of the same
+// 1–5 seasonal swing every other place in its region gets.
+const RANK_CROWD_SCALE: Record<number, number> = { 1: 1, 2: 0.82, 3: 0.66, 4: 0.52, 5: 0.4 };
+
+export function getCrowdData(continent: string, category: string, latitude: number, rank: number = 3): MonthCrowd[] {
   const key    = crowdProfileKey(continent, latitude);
   let   levels = C[key] ?? C.yearround;
   if (latitude < -5) levels = shiftHalf(levels);
 
+  const scale  = RANK_CROWD_SCALE[rank] ?? RANK_CROWD_SCALE[3];
+  const scaled = levels.map(l => Math.max(1, Math.min(5, Math.round(l * scale))));
+
   const weather = getWeatherData(latitude, category);
-  const minL    = Math.min(...levels);
+  const minL    = Math.min(...scaled);
 
   return MONTHS_SHORT.map((month, i) => {
     const goodTemp = weather[i].tempC >= 10 && weather[i].tempC <= 36;
-    const isBest   = levels[i] <= minL + 1 && goodTemp;
-    return { month, level: levels[i], isBest };
+    const isBest   = scaled[i] <= minL + 1 && goodTemp;
+    return { month, level: scaled[i], isBest };
   });
+}
+
+/** Approximate average number of days per month with precipitation, derived from the same
+ *  rain-probability profile used for the weather icon (probability × ~30 days/month). */
+export function getRainyDaysData(latitude: number, category: string): MonthRain[] {
+  const profile = climateProfile(latitude, category);
+  let rains = R[profile];
+  if (latitude < -5) rains = shiftHalf(rains);
+  return MONTHS_SHORT.map((month, i) => ({
+    month,
+    days: Math.round(rains[i] * 30),
+  }));
 }
 
 export function crowdColor(level: number): string {

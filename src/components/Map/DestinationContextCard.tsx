@@ -2,14 +2,13 @@ import React, { useRef, useEffect, useState } from 'react';
 import {
   View, Text, Pressable, StyleSheet, Animated, PanResponder, Image, Dimensions,
 } from 'react-native';
-import { Check, Heart, Star } from 'lucide-react-native';
+import { Check, Heart } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
 import { CONTINENT_COLORS } from '../../types';
 import type { Destination, SavedDestination } from '../../types';
 import { SPOTS } from '../../data/spots';
-import { flag } from '../../utils/stats';
-import { photoCache } from '../../utils/photoCache';
-import { getCommunityRating } from '../../utils/travelData';
+import { photoCache, fetchWikiThumbnail } from '../../utils/photoCache';
+import CircleFlag from '../CircleFlag';
 
 interface Props {
   destination: Destination;
@@ -32,17 +31,6 @@ function parseMonthYear(s: string): string | null {
   return `${MO_SHORT[mi]} ${p[0]}`;
 }
 
-function StarRow({ value, size = 11, color }: { value: number; size?: number; color: string }) {
-  const whole = Math.round(value);
-  return (
-    <View style={{ flexDirection: 'row', gap: 1.5 }}>
-      {[1,2,3,4,5].map(n => (
-        <Star key={n} size={size} color={color}
-          fill={n <= whole ? color : 'none'} strokeWidth={1.5} />
-      ))}
-    </View>
-  );
-}
 
 export default function DestinationContextCard({ destination, savedEntry, visible, onOpen }: Props) {
   const spots      = SPOTS.filter(s => s.destinationId === destination.id);
@@ -50,17 +38,11 @@ export default function DestinationContextCard({ destination, savedEntry, visibl
   const isWishlist = !!(savedEntry?.isWishlisted || savedEntry?.type === 'wishlist');
   const color      = CONTINENT_COLORS[destination.continent];
 
-  // Community stats (always computed)
-  const { rating: commRating, count: commCount } = getCommunityRating(destination.id);
-
   // User visit stats
   const visits          = savedEntry?.visits ?? [];
   const visitCount      = visits.length > 0 ? visits.length : (savedEntry?.visitDate ? 1 : 0);
   const lastVisitStr    = visits[0]?.startDate ?? savedEntry?.visitDate ?? null;
   const lastVisitFmt    = lastVisitStr ? parseMonthYear(lastVisitStr) : null;
-  const userRating      = savedEntry?.rating ?? 0;
-  const userRatingWhole = Math.round(userRating);
-
   // Photo
   const [photoUrl, setPhotoUrl] = useState<string | null>(photoCache.get(destination.id) ?? null);
   useEffect(() => {
@@ -68,13 +50,9 @@ export default function DestinationContextCard({ destination, savedEntry, visibl
       setPhotoUrl(photoCache.get(destination.id)!);
       return;
     }
-    fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(destination.name)}`)
-      .then(r => r.json())
-      .then(d => {
-        const url = d?.originalimage?.source ?? d?.thumbnail?.source ?? null;
-        if (url) { photoCache.set(destination.id, url); setPhotoUrl(url); }
-      })
-      .catch(() => {});
+    fetchWikiThumbnail(destination.name, 900).then(url => {
+      if (url) { photoCache.set(destination.id, url); setPhotoUrl(url); }
+    });
   }, [destination.id]);
 
   // ── Visibility animation ──────────────────────────────────────────────────
@@ -167,17 +145,15 @@ export default function DestinationContextCard({ destination, savedEntry, visibl
             <View style={st.nameRow}>
               <Text style={st.name} numberOfLines={1}>{destination.name}</Text>
             </View>
-            <Text style={st.meta} numberOfLines={1}>
-              {flag(destination.countryCode)}{'  '}{destination.country} · {destination.continent}
-            </Text>
-            <View style={st.statsRow}>
-              <Text style={st.commRatingNum}>{commRating.toFixed(1)}</Text>
-              <StarRow value={commRating} color="#FBBF24" />
-              <Text style={st.commCount}>({commCount})</Text>
-              {spots.length > 0 && (
-                <Text style={st.sep}> · {spots.length} spots</Text>
-              )}
+            <View style={st.metaRow}>
+              <CircleFlag countryCode={destination.countryCode} size={13} />
+              <Text style={st.meta} numberOfLines={1}>
+                {destination.country} · {destination.continent}
+              </Text>
             </View>
+            {spots.length > 0 && (
+              <Text style={st.sep}>{spots.length} spots</Text>
+            )}
           </View>
         )}
 
@@ -187,17 +163,14 @@ export default function DestinationContextCard({ destination, savedEntry, visibl
             <View style={st.nameRow}>
               <Text style={st.name} numberOfLines={1}>{destination.name}</Text>
             </View>
-            <Text style={st.meta} numberOfLines={1}>
-              {flag(destination.countryCode)}{'  '}{destination.country} · {destination.continent}
-            </Text>
-            {userRatingWhole > 0 && (
-              <View style={st.statsRow}>
-                <Text style={st.yourRatingNum}>{userRatingWhole} </Text>
-                <StarRow value={userRating} color="#059669" />
-                {spots.length > 0 && (
-                  <Text style={st.yourRatingTxt}> · {spots.length} spots visited</Text>
-                )}
-              </View>
+            <View style={st.metaRow}>
+              <CircleFlag countryCode={destination.countryCode} size={13} />
+              <Text style={st.meta} numberOfLines={1}>
+                {destination.country} · {destination.continent}
+              </Text>
+            </View>
+            {spots.length > 0 && (
+              <Text style={st.sep}>{spots.length} spots visited</Text>
             )}
           </View>
         )}
@@ -273,18 +246,12 @@ const st = StyleSheet.create({
   info:    { flex: 1, paddingTop: 2 },
   nameRow: { flexDirection: 'row', alignItems: 'center', gap: 7, marginBottom: 4, flexWrap: 'wrap' },
   name:    { fontSize: 20, fontWeight: '800', color: '#111827', flexShrink: 1 },
-  meta:    { fontSize: 13, color: '#6B7280', marginBottom: 8 },
+  metaRow: { flexDirection: 'row', alignItems: 'center', gap: 5, marginBottom: 8 },
+  meta:    { fontSize: 13, color: '#6B7280' },
 
   // ── Stats rows ──────────────────────────────────────────────────────────────
   statsRow: { flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap', marginBottom: 4 },
 
-  // Community (unvisited)
-  commRatingNum: { fontSize: 13, fontWeight: '700', color: '#111827', marginLeft: 5, marginRight: 5 },
-  commCount:     { fontSize: 11, color: '#9CA3AF', marginLeft: 3 },
-
-  // User stats (visited)
-  yourRatingNum: { fontSize: 13, fontWeight: '700', color: '#059669' },
-  yourRatingTxt: { fontSize: 11, fontWeight: '500', color: '#6B7280' },
   visitInfoTxt:  { fontSize: 12, fontWeight: '600', color: '#111827' },
   spotsVisited:  { fontSize: 12, color: '#6B7280', marginTop: 4 },
 

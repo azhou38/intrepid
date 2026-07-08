@@ -5,8 +5,8 @@ import {
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useStats } from '../store';
 import { CONTINENTS, CONTINENT_COLORS, CONTINENT_EMOJIS } from '../types';
-import { flag } from '../utils/stats';
 import { ALL_COUNTRIES } from '../data/countries';
+import CircleFlag from '../components/CircleFlag';
 
 const { width } = Dimensions.get('window');
 const TOTAL_COUNTRIES = 195;
@@ -73,7 +73,7 @@ export default function StatsScreen() {
             return (
               <View key={code} style={[styles.flagItem, !visited && { opacity: 0.25 }]}>
                 <View style={[styles.flagCircle, visited && { backgroundColor: '#EFF6FF', borderColor: '#BFDBFE' }]}>
-                  <Text style={styles.flagEmoji}>{flag(code)}</Text>
+                  <CircleFlag countryCode={code} size={26} />
                 </View>
               </View>
             );
@@ -182,7 +182,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#F3F4F6', alignItems: 'center', justifyContent: 'center',
     borderWidth: 1, borderColor: '#E5E7EB',
   },
-  flagEmoji: { fontSize: 16 },
   continentRow: { flexDirection: 'row', alignItems: 'center', gap: 10, marginBottom: 10 },
   continentEmoji: { fontSize: 22, width: 30 },
   continentInfo: { flex: 1 },

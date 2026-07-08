@@ -1,17 +1,42 @@
-// Approximate bounding boxes for the 10 countries in the destinations dataset.
+// Approximate bounding boxes for countries in the destinations dataset.
 // Format: [minLat, maxLat, minLng, maxLng]
 const BOUNDS: Record<string, [number, number, number, number]> = {
+  AT: [ 46.4,  49.0,   9.5,  17.2],
   AU: [-43.6, -10.7, 113.3, 153.6],
+  BE: [ 49.5,  51.5,   2.5,   6.4],
+  CH: [ 45.8,  47.8,   6.0,  10.5],
   CZ: [ 48.6,  51.1,  12.1,  18.9],
+  DE: [ 47.3,  55.1,   6.0,  15.0],
+  DK: [ 54.5,  57.8,   8.0,  15.2],
   ES: [ 35.2,  43.8,  -9.3,   4.3],
+  FI: [ 59.8,  70.1,  19.1,  31.6],
   FR: [ 41.3,  51.1,  -5.1,   9.6],
   GB: [ 49.9,  61.1,  -8.6,   1.8],
   GR: [ 34.8,  41.8,  19.3,  29.6],
+  IE: [ 51.4,  55.4, -10.5,  -6.0],
+  IS: [ 63.4,  66.6, -24.5, -13.5],
   IT: [ 36.6,  47.1,   6.6,  18.5],
   JP: [ 30.5,  45.5, 129.0, 146.0],
   NL: [ 50.8,  53.5,   3.4,   7.2],
-  US: [ 20.0,  50.0,-125.0, -66.0],
+  NO: [ 57.9,  71.2,   4.5,  31.1],
+  PT: [ 36.8,  42.2,  -9.5,  -6.2],
+  SE: [ 55.3,  69.1,  11.0,  24.2],
+  US: [ 25.0,  50.0,-125.0, -66.0],
 };
+
+// Approximate real-world tourism/fame ranking for the countries in this dataset (1 = most
+// famous/most-visited, larger = less so). Used purely to prioritize which country map pins
+// stay visible when there isn't room to show them all without colliding — not a scientific
+// ranking, just a reasonable approximation of global tourist-arrival prominence.
+const POPULARITY: Record<string, number> = {
+  FR: 1, ES: 2, IT: 3, US: 4, GB: 5, DE: 6, JP: 7, GR: 8, AT: 9, NL: 10,
+  PT: 11, CH: 12, CZ: 13, IE: 14, IS: 15, AU: 16, BE: 17, DK: 18, SE: 19, NO: 20, FI: 21,
+};
+
+/** Lower = more famous/higher display priority. Unknown countries sort last. */
+export function getCountryPopularity(countryCode: string): number {
+  return POPULARITY[countryCode] ?? 999;
+}
 
 export interface CountryRegion {
   latitude: number;
