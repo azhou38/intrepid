@@ -2929,8 +2929,12 @@ const destItems = useMemo((): DestItem[] =>
         allowOverlap={isSelectedPill}
       >
         <FadePin exiting={exiting}>
+          {/* The selected country's pill is inert: it persists while zoomed out, so a pinch or pan
+              that ends over it would otherwise count as a tap and re-select the country — resetting
+              its sheet to half-screen and flying the camera back. (Same reason the selected
+              destination's pin is inert.) The breadcrumb's return button is the way back. */}
           <Pressable
-            disabled={exiting}
+            disabled={exiting || isSelectedPill}
             onPressIn={() => { lastCountryPressRef.current = Date.now(); }}
             onPress={() => { prevCountryRef.current = selectedCountry; handleCountryPress(cluster); }}
           >

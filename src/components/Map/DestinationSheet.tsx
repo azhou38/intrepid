@@ -2100,7 +2100,7 @@ export default function DestinationSheet({
           }, peekAnimStyle]}
         >
           <Pressable style={StyleSheet.absoluteFill} onPress={() => snapToCollapsedRef.current()}>
-            {photoUrl && <FadeInImage instant={photoWasCachedRef.current} source={{ uri: photoUrl }} style={StyleSheet.absoluteFill} resizeMode="cover" />}
+            {photoUrl && <FadeInImage instant source={{ uri: photoUrl }} style={StyleSheet.absoluteFill} resizeMode="cover" />}
             <View pointerEvents="none" style={st.peekScrim} />
             <View pointerEvents="none" style={st.peekPillRow}>
               <View style={st.peekPill} />
