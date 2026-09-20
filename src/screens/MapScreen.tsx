@@ -106,7 +106,7 @@ import { DESTINATIONS } from '../data/destinations';
 import { SPOTS, type Spot } from '../data/spots';
 import DestinationSheet from '../components/Map/DestinationSheet';
 import CircleFlag from '../components/CircleFlag';
-import FadeInImage from '../components/Map/FadeInImage';
+import PinPhoto from '../components/Map/PinPhoto';
 import { computeSearchResults, SearchResultRows, type SearchResult } from '../components/Map/SearchResults';
 import SpotSheet from '../components/Map/SpotSheet';
 import CountrySheet from '../components/Map/CountrySheet';
@@ -168,7 +168,7 @@ function DestPin({ dest, spotCount, isVisited, isSelected, pinState }: {
         <View style={[pinSt.circleShadow, { borderColor: ringColor }]}>
           <View style={pinSt.circleClip}>
             {photoUrl && (
-              <FadeInImage
+              <PinPhoto
                 instant={photoWasCachedRef.current}
                 source={{ uri: photoUrl }}
                 style={StyleSheet.absoluteFill as any}
@@ -296,7 +296,7 @@ function SpotMarker({ spot, isVisited, isSelected, exiting, isSatellite, onPress
               <View style={[styles.spotPinBubble, { width: bubbleSize, height: bubbleSize, borderRadius: bubbleSize / 2, borderColor: ringColor }]}>
                 <View style={[styles.spotPinImgClip, { width: bubbleSize - 4, height: bubbleSize - 4, borderRadius: (bubbleSize - 4) / 2 }]}>
                   {photoUrl && (
-                    <FadeInImage
+                    <PinPhoto
                       instant={photoWasCachedRef.current}
                       source={{ uri: photoUrl }}
                       style={StyleSheet.absoluteFill as any}
