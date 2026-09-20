@@ -8,13 +8,13 @@ import type { Destination } from '../../types';
 import { thumbCache, getOrFetchWikiThumbnail } from '../../utils/photoCache';
 
 // Text area under the image, sized for the wrapped reasons.
-const CARD_BOTTOM_H = 58;
+export const CARD_BOTTOM_H = 58;
 // Default (Explore feed) size: image area + text area, i.e. a 192px square.
 export const DEST_CARD_W = 134 + CARD_BOTTOM_H;
 
 // Bottom scrim behind the white name/country text. Gentler curve than the spot cards' (1.3,
 // not 1.8) so it's already fairly dark where the text sits, rather than only at the very edge.
-const GRADIENT_STOPS = Array.from({ length: 13 }, (_, i) => {
+export const GRADIENT_STOPS = Array.from({ length: 13 }, (_, i) => {
   const t = i / 12;
   return { offset: t, opacity: +(t ** 1.3 * 0.9).toFixed(4) };
 });
@@ -120,7 +120,7 @@ function DestinationCard({ dest, isVisited, onPress, width = DEST_CARD_W, showCo
   );
 }
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
   // Shadow lives on this outer view and the clipping on the inner one (cardClip): iOS drops a
   // shadow from any view that also has overflow:hidden, which is why the old single-view card
   // showed no visible edge.

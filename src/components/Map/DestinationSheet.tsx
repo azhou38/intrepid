@@ -31,6 +31,7 @@ import { X, Check, Calendar, MapPin, Camera, Pencil, Plus, ChevronRight, Chevron
 import * as Haptics from 'expo-haptics';
 import * as ImagePicker from 'expo-image-picker';
 import { useStore } from '../../store';
+import SpotCard from './SpotCard';
 import { SPOT_CATEGORY_META, CATEGORY_ICONS } from '../../types';
 import type { Destination, PhotoEntry, Visit, SpotCategory, GoodToKnowTip } from '../../types';
 import { SPOTS, type Spot } from '../../data/spots';
@@ -812,51 +813,6 @@ function HighlightCard({ spot, onPress }: { spot: Spot; onPress?: () => void }) 
   );
 }
 
-// ── Spot grid card — same visual language as HighlightCard (photo, category badge,
-// name, bio) but flex-basis'd for a 2-column wrapping grid instead of horizontal scroll.
-function SpotGridCard({ spot, onPress }: { spot: Spot; onPress?: () => void }) {
-  const cacheKey = `spot_${spot.id}`;
-  const [photoUrl, setPhotoUrl] = useState<string | null>(thumbCache.get(cacheKey) ?? null);
-  const photoWasCachedRef = useRef(thumbCache.has(cacheKey));
-  useEffect(() => {
-    if (thumbCache.has(cacheKey)) {
-      photoWasCachedRef.current = true;
-      setPhotoUrl(thumbCache.get(cacheKey)!);
-      return;
-    }
-    photoWasCachedRef.current = false;
-    setPhotoUrl(null);
-    getOrFetchWikiThumbnail(cacheKey, thumbCache, spot.name, 400).then(url => {
-      if (url) setPhotoUrl(url);
-    });
-  }, [spot.id]);
-
-  const cat = SPOT_CATEGORY_META[spot.category];
-  const isVisited = !!useStore(s => s.savedSpots[spot.id]);
-
-  return (
-    <Pressable style={st.gridCard} onPress={onPress}>
-      <View style={st.gridImageWrap}>
-        {photoUrl
-          ? <FadeInImage instant={photoWasCachedRef.current} source={{ uri: photoUrl }} style={StyleSheet.absoluteFill} resizeMode="cover" />
-          : <View style={[st.spcPlaceholder, { backgroundColor: '#111827' }]} />
-        }
-        <View style={st.hlBadge}>
-          <Text style={st.hlBadgeIcon}>{cat?.icon ?? spot.icon}</Text>
-        </View>
-        {isVisited && (
-          <View style={st.gridVisitedTag}>
-            <Check size={13} color="white" strokeWidth={3} />
-            <Text style={st.gridVisitedTagTxt}>Visited</Text>
-          </View>
-        )}
-      </View>
-      <Text style={st.hlName} numberOfLines={2}>{spot.name}</Text>
-      <Text style={st.hlBio} numberOfLines={2}>{spot.bio}</Text>
-    </Pressable>
-  );
-}
-
 // ── Spots panel — full grid of a destination's spots, with category filter tags and a
 // button that jumps into the sliding spot carousel (SpotSheet, via onSelectSpot), which
 // already receives the destination's full spot list regardless of which spot is passed.
@@ -907,7 +863,7 @@ function SpotsPanel({ spots, onSelectSpot, filterScrollRef }: {
       {filteredSpots.length > 0 ? (
         <View style={st.spotsGrid}>
           {filteredSpots.map(spot => (
-            <SpotGridCard key={spot.id} spot={spot} onPress={() => onSelectSpot?.(spot)} />
+            <SpotCard key={spot.id} spot={spot} width={GRID_CARD_W} onPress={() => onSelectSpot?.(spot)} />
           ))}
         </View>
       ) : (
@@ -2388,15 +2344,8 @@ const st = StyleSheet.create({
   filterTagIcon:   { fontSize:13 },
   filterTagTxt:    { fontSize:13.5, fontWeight:'600', color:'#4B5563' },
   filterTagTxtActive: { color:'white' },
-  spotsGrid:       { flexDirection:'row', flexWrap:'wrap', gap:GRID_GAP },
-  gridCard:        { width:GRID_CARD_W, gap:8 },
-  gridImageWrap:   { width:GRID_CARD_W, height:GRID_CARD_W * 0.87, borderRadius:16, overflow:'hidden', backgroundColor:'#F3F4F6' },
-  gridVisitedTag:  { position:'absolute', top:8, right:8,
-                     flexDirection:'row', alignItems:'center', gap:4,
-                     backgroundColor:'#059669', borderRadius:10,
-                     paddingHorizontal:9, paddingVertical:5,
-                     shadowColor:'#000', shadowOpacity:0.18, shadowRadius:4, shadowOffset:{ width:0, height:2 }, elevation:4 },
-  gridVisitedTagTxt: { fontSize:12, fontWeight:'700', color:'white' },
+  // Same padding the country sheet's destination grid has: room above and below for the cards' shadows.
+  spotsGrid:       { flexDirection:'row', flexWrap:'wrap', gap:GRID_GAP, paddingTop:4, paddingBottom:16 },
   gridEmptyTxt:    { fontSize:14, color:'#9CA3AF', textAlign:'center', paddingVertical:24 },
 
   // About
