@@ -132,7 +132,6 @@ function CarouselCard({ spot, destinationId, isActive, onPress, gradId }: {
     getOrFetchWikiThumbnail(cacheKey, thumbCache, spot.name, 700).then(u => { if (u) setThumb(u); });
   }, [spot.id]);
 
-  const cat        = SPOT_CATEGORY_META[spot.category];
   const savedSpot  = useStore(s => s.savedSpots[spot.id]);
   const isVisited  = !!savedSpot;
   const saveSpotVisited = useStore(s => s.saveSpotVisited);
@@ -191,11 +190,10 @@ function CarouselCard({ spot, destinationId, isActive, onPress, gradId }: {
             <Text style={st.cardName} numberOfLines={1}>{spot.name}</Text>
           </View>
         </View>
-        {/* Below the image — category/time, then the description with room for at least
+        {/* Below the image — time/cost, then the description with room for at least
             two lines. */}
         <View style={st.cardInfo}>
           <View style={st.cardStatRow}>
-            <Text style={st.cardCat} numberOfLines={1}>{cat.icon}  {cat.label}</Text>
             <View style={st.cardTimeRow}>
               <Clock size={12} color="#16A34A" strokeWidth={2.5} />
               <Text style={st.cardTimeTxt}>{formatVisitTime(spot.visitHours)}</Text>
@@ -1214,11 +1212,6 @@ const st = StyleSheet.create({
   // Category (left, outlined pill) and time-to-spend sit directly beside it, now below the
   // image rather than overlaid on it.
   cardStatRow: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 2, marginBottom: 8 },
-  cardCat:     {
-    fontSize: 11, fontWeight: '600', color: '#6B7280', flexShrink: 1,
-    borderWidth: 1, borderColor: '#E5E7EB', borderRadius: 20,
-    paddingHorizontal: 8, paddingVertical: 3,
-  },
   cardTimeRow: { flexDirection: 'row', alignItems: 'center', gap: 4, flexShrink: 0 },
   cardTimeTxt: { fontSize: 12.5, fontWeight: '700', color: '#16A34A' },
   cardInfo:    { backgroundColor: 'white', paddingHorizontal: 14, paddingTop: 6, paddingBottom: 12 },

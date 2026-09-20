@@ -32,7 +32,7 @@ import * as Haptics from 'expo-haptics';
 import * as ImagePicker from 'expo-image-picker';
 import { useStore } from '../../store';
 import { SPOT_CATEGORY_META, CATEGORY_ICONS } from '../../types';
-import type { Destination, PhotoEntry, Visit, SpotCategory, GoodToKnowTip } from '../../types';
+import type { Destination, PhotoEntry, Visit, GoodToKnowTip } from '../../types';
 import { SPOTS, type Spot } from '../../data/spots';
 import { photoCache, thumbCache, getOrFetchWikiThumbnail } from '../../utils/photoCache';
 import CircleFlag from '../CircleFlag';
@@ -812,8 +812,8 @@ function HighlightCard({ spot, onPress }: { spot: Spot; onPress?: () => void }) 
   );
 }
 
-// ── Spot grid card — same visual language as HighlightCard (photo, category badge,
-// name, bio) but flex-basis'd for a 2-column wrapping grid instead of horizontal scroll.
+// ── Spot grid card — same visual language as HighlightCard (photo, name,
+// bio) but flex-basis'd for a 2-column wrapping grid instead of horizontal scroll.
 function SpotGridCard({ spot, onPress }: { spot: Spot; onPress?: () => void }) {
   const cacheKey = `spot_${spot.id}`;
   const [photoUrl, setPhotoUrl] = useState<string | null>(thumbCache.get(cacheKey) ?? null);
@@ -831,7 +831,6 @@ function SpotGridCard({ spot, onPress }: { spot: Spot; onPress?: () => void }) {
     });
   }, [spot.id]);
 
-  const cat = SPOT_CATEGORY_META[spot.category];
   const isVisited = !!useStore(s => s.savedSpots[spot.id]);
 
   return (
@@ -841,9 +840,6 @@ function SpotGridCard({ spot, onPress }: { spot: Spot; onPress?: () => void }) {
           ? <FadeInImage instant={photoWasCachedRef.current} source={{ uri: photoUrl }} style={StyleSheet.absoluteFill} resizeMode="cover" />
           : <View style={[st.spcPlaceholder, { backgroundColor: '#111827' }]} />
         }
-        <View style={st.hlBadge}>
-          <Text style={st.hlBadgeIcon}>{cat?.icon ?? spot.icon}</Text>
-        </View>
         {isVisited && (
           <View style={st.gridVisitedTag}>
             <Check size={13} color="white" strokeWidth={3} />
@@ -857,24 +853,13 @@ function SpotGridCard({ spot, onPress }: { spot: Spot; onPress?: () => void }) {
   );
 }
 
-// ── Spots panel — full grid of a destination's spots, with category filter tags and a
+// ── Spots panel — full grid of a destination's spots, with a
 // button that jumps into the sliding spot carousel (SpotSheet, via onSelectSpot), which
 // already receives the destination's full spot list regardless of which spot is passed.
-function SpotsPanel({ spots, onSelectSpot, filterScrollRef }: {
+function SpotsPanel({ spots, onSelectSpot }: {
   spots: typeof SPOTS;
   onSelectSpot?: (spot: Spot) => void;
-  filterScrollRef?: React.RefObject<ScrollView | null>;
 }) {
-  const [filter, setFilter] = useState<SpotCategory | 'all'>('all');
-
-  const categories = useMemo(() => {
-    const seen = new Set<SpotCategory>();
-    spots.forEach(s => seen.add(s.category));
-    return Array.from(seen);
-  }, [spots]);
-
-  const filteredSpots = filter === 'all' ? spots : spots.filter(s => s.category === filter);
-
   return (
     <View style={{ gap: 16 }}>
       {spots.length > 0 && (
@@ -884,34 +869,14 @@ function SpotsPanel({ spots, onSelectSpot, filterScrollRef }: {
         </Pressable>
       )}
 
-      {categories.length > 1 && (
-        <ScrollView ref={filterScrollRef} horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={st.filterRow}>
-          <Pressable
-            style={[st.filterTag, filter === 'all' && st.filterTagActive]}
-            onPress={() => setFilter('all')}>
-            <Text style={[st.filterTagTxt, filter === 'all' && st.filterTagTxtActive]}>All</Text>
-          </Pressable>
-          {categories.map(cat => {
-            const meta = SPOT_CATEGORY_META[cat];
-            const active = filter === cat;
-            return (
-              <Pressable key={cat} style={[st.filterTag, active && st.filterTagActive]} onPress={() => setFilter(cat)}>
-                <Text style={st.filterTagIcon}>{meta.icon}</Text>
-                <Text style={[st.filterTagTxt, active && st.filterTagTxtActive]}>{meta.label}</Text>
-              </Pressable>
-            );
-          })}
-        </ScrollView>
-      )}
-
-      {filteredSpots.length > 0 ? (
+      {spots.length > 0 ? (
         <View style={st.spotsGrid}>
-          {filteredSpots.map(spot => (
+          {spots.map(spot => (
             <SpotGridCard key={spot.id} spot={spot} onPress={() => onSelectSpot?.(spot)} />
           ))}
         </View>
       ) : (
-        <Text style={st.gridEmptyTxt}>No spots in this category yet.</Text>
+        <Text style={st.gridEmptyTxt}>No spots yet.</Text>
       )}
     </View>
   );
@@ -1133,7 +1098,6 @@ export default function DestinationSheet({
   // forceful swipe manages to also activate the tab-swipe gesture. Registering them all
   // lets both recognize together regardless of where on the panel the swipe starts.
   const aboutHlScrollRef     = useRef<ScrollView>(null);
-  const spotsFilterScrollRef = useRef<ScrollView>(null);
   // Tab slide position: 0 = first tab, -W = second, -2W = third (if present). A Reanimated
   // shared value (not core Animated) — the gesture below writes to it directly from the UI
   // thread with zero JS-thread hop per frame, which is what makes the tab swipe track the
@@ -1273,7 +1237,7 @@ export default function DestinationSheet({
       // hasn't actually changed.
       runOnJS(setActiveTabJS)(TAB_ORDER[targetIdx]);
     })
-    .simultaneousWithExternalGesture(scrollRef, spotsFilterScrollRef)
+    .simultaneousWithExternalGesture(scrollRef)
     // The About tab's "Top Spots" carousel is the exception to the simultaneous registration
     // above: a horizontal drag that starts on it should ONLY scroll that carousel, not also
     // slide the sheet to another tab. Requiring its native scroll gesture to fail first means
@@ -2064,7 +2028,7 @@ export default function DestinationSheet({
                     style={st.slidePanel}
                     onLayout={e => measurePanel(TAB_ORDER.indexOf('spots'), e.nativeEvent.layout.height)}
                   >
-                    <SpotsPanel spots={spots} onSelectSpot={onSelectSpot} filterScrollRef={spotsFilterScrollRef} />
+                    <SpotsPanel spots={spots} onSelectSpot={onSelectSpot} />
                   </View>
                 </Reanimated.View>
               </Reanimated.View>
@@ -2381,13 +2345,6 @@ const st = StyleSheet.create({
   mapViewBtn:      { flexDirection:'row', alignItems:'center', gap:5,
                      alignSelf:'flex-end', paddingHorizontal:4, paddingVertical:4 },
   mapViewBtnTxt:   { fontSize:13, fontWeight:'600', color:'#6B7280' },
-  filterRow:       { gap:8, paddingBottom:2, paddingRight:4 },
-  filterTag:       { flexDirection:'row', alignItems:'center', gap:6,
-                     backgroundColor:'#F3F4F6', borderRadius:20, paddingHorizontal:14, paddingVertical:9 },
-  filterTagActive: { backgroundColor:'#059669' },
-  filterTagIcon:   { fontSize:13 },
-  filterTagTxt:    { fontSize:13.5, fontWeight:'600', color:'#4B5563' },
-  filterTagTxtActive: { color:'white' },
   spotsGrid:       { flexDirection:'row', flexWrap:'wrap', gap:GRID_GAP },
   gridCard:        { width:GRID_CARD_W, gap:8 },
   gridImageWrap:   { width:GRID_CARD_W, height:GRID_CARD_W * 0.87, borderRadius:16, overflow:'hidden', backgroundColor:'#F3F4F6' },
