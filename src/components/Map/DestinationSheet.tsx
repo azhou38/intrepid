@@ -31,7 +31,6 @@ import { X, Check, Calendar, MapPin, Camera, Pencil, Plus, ChevronRight, Chevron
 import * as Haptics from 'expo-haptics';
 import * as ImagePicker from 'expo-image-picker';
 import { useStore } from '../../store';
-import { SPOT_CATEGORY_META, CATEGORY_ICONS } from '../../types';
 import type { Destination, PhotoEntry, Visit, GoodToKnowTip } from '../../types';
 import { SPOTS, type Spot } from '../../data/spots';
 import { photoCache, thumbCache, getOrFetchWikiThumbnail } from '../../utils/photoCache';
@@ -774,7 +773,7 @@ function WhenToVisitCard({ destination, onOpenClimateDetail }: {
   );
 }
 
-// ── Highlight card: photo + category badge + name + short bio ────────────────
+// ── Highlight card: photo + name + short bio ─────────────────────────────────
 
 function HighlightCard({ spot, onPress }: { spot: Spot; onPress?: () => void }) {
   const cacheKey = `spot_${spot.id}`;
@@ -793,8 +792,6 @@ function HighlightCard({ spot, onPress }: { spot: Spot; onPress?: () => void }) 
     });
   }, [spot.id]);
 
-  const cat = SPOT_CATEGORY_META[spot.category];
-
   return (
     <Pressable style={st.hlCard} onPress={onPress}>
       <View style={st.hlImageWrap}>
@@ -802,9 +799,6 @@ function HighlightCard({ spot, onPress }: { spot: Spot; onPress?: () => void }) 
           ? <FadeInImage instant={photoWasCachedRef.current} source={{ uri: photoUrl }} style={StyleSheet.absoluteFill} resizeMode="cover" />
           : <View style={[st.spcPlaceholder, { backgroundColor: '#111827' }]} />
         }
-        <View style={st.hlBadge}>
-          <Text style={st.hlBadgeIcon}>{cat?.icon ?? spot.icon}</Text>
-        </View>
       </View>
       <Text style={st.hlName} numberOfLines={2}>{spot.name}</Text>
       <Text style={st.hlBio} numberOfLines={2}>{spot.bio}</Text>
@@ -1090,8 +1084,7 @@ export default function DestinationSheet({
   // gesture below and the main vertical drag gesture (further down) need it.
   const scrollRef       = useRef<ScrollView>(null);
   // Refs to the horizontal ScrollViews nested *inside* each tab panel (About's "top spots"
-  // row, Spots' category filter row, Visit's spots-visited carousel). The filter row is
-  // registered as simultaneous (below); the top-spots row instead BLOCKS tab swiping. Without
+  // row, Visit's spots-visited carousel). The top-spots row BLOCKS tab swiping. Without
   // registering
   // these as simultaneous with tabSwipeGesture below, a horizontal drag that starts on top
   // of one of them is claimed by that inner ScrollView first, and only a much larger/more
@@ -2023,7 +2016,7 @@ export default function DestinationSheet({
                     />
                   </View>
 
-                  {/* ── SPOTS PANEL — full grid, category filters, map-view button ── */}
+                  {/* ── SPOTS PANEL — full grid, map-view button ── */}
                   <View
                     style={st.slidePanel}
                     onLayout={e => measurePanel(TAB_ORDER.indexOf('spots'), e.nativeEvent.layout.height)}
@@ -2332,15 +2325,11 @@ const st = StyleSheet.create({
   hlRow:        { gap:14, paddingBottom:4, paddingRight:4 },
   hlCard:       { width:160, gap:8 },
   hlImageWrap:  { width:160, height:140, borderRadius:16, overflow:'hidden', backgroundColor:'#F3F4F6' },
-  hlBadge:      { position:'absolute', bottom:10, left:10, width:38, height:38, borderRadius:19,
-                  backgroundColor:'white', alignItems:'center', justifyContent:'center',
-                  shadowColor:'#000', shadowOpacity:0.18, shadowRadius:5, shadowOffset:{ width:0, height:2 }, elevation:4 },
-  hlBadgeIcon:  { fontSize:17 },
   hlName:       { fontSize:15, fontWeight:'800', color:'#111827', lineHeight:19 },
   hlBio:        { fontSize:12.5, color:'#6B7280', lineHeight:17 },
 
-  // Spots tab — 2-column wrapping grid (reuses HighlightCard's badge/name/bio look),
-  // a category filter tag row, and a discrete link into the sliding spot carousel (kept
+  // Spots tab — 2-column wrapping grid (reuses HighlightCard's name/bio look),
+  // and a discrete link into the sliding spot carousel (kept
   // low-key since the grid itself, not the carousel, is the primary way to browse here).
   mapViewBtn:      { flexDirection:'row', alignItems:'center', gap:5,
                      alignSelf:'flex-end', paddingHorizontal:4, paddingVertical:4 },
