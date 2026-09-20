@@ -24,7 +24,6 @@ import { Check, Star, Clock, MapPin, Pencil, ChevronUp, ChevronDown, LayoutGrid,
 import * as Haptics from 'expo-haptics';
 import * as ImagePicker from 'expo-image-picker';
 import { useStore } from '../../store';
-import { SPOT_CATEGORY_META } from '../../types';
 import type { Destination, PhotoEntry } from '../../types';
 import type { Spot } from '../../data/spots';
 import { DAY_NAMES, hoursForDay, formatSpotCost } from '../../data/spots';
@@ -132,7 +131,6 @@ function CarouselCard({ spot, destinationId, isActive, onPress, gradId }: {
     getOrFetchWikiThumbnail(cacheKey, thumbCache, spot.name, 700).then(u => { if (u) setThumb(u); });
   }, [spot.id]);
 
-  const cat        = SPOT_CATEGORY_META[spot.category];
   const savedSpot  = useStore(s => s.savedSpots[spot.id]);
   const isVisited  = !!savedSpot;
   const saveSpotVisited = useStore(s => s.saveSpotVisited);
@@ -147,7 +145,7 @@ function CarouselCard({ spot, destinationId, isActive, onPress, gradId }: {
       onPress={onPress}
     >
       <View style={[st.cardInner, { flex: 1 }]}>
-        {/* Image — taller now that name/category/time live on top of it instead of in their
+        {/* Image — taller now that the name lives on top of it instead of in their
             own row below, so the card doesn't grow overall despite the extra image height. */}
         <View style={st.cardImageWrap}>
           {thumb && (
@@ -174,7 +172,7 @@ function CarouselCard({ spot, destinationId, isActive, onPress, gradId }: {
             </Pressable>
           )}
           {/* Bottom-left overlay: just the name now, on a dark scrim so it stays legible
-              over any photo. Category and time-to-spend moved below the image. */}
+              over any photo. Time-to-spend and cost sit below the image. */}
           <View pointerEvents="none" style={st.cardImageGradWrap}>
             <Svg style={StyleSheet.absoluteFill}>
               <Defs>
@@ -191,11 +189,10 @@ function CarouselCard({ spot, destinationId, isActive, onPress, gradId }: {
             <Text style={st.cardName} numberOfLines={1}>{spot.name}</Text>
           </View>
         </View>
-        {/* Below the image — category/time, then the description with room for at least
+        {/* Below the image — time/cost, then the description with room for at least
             two lines. */}
         <View style={st.cardInfo}>
           <View style={st.cardStatRow}>
-            <Text style={st.cardCat} numberOfLines={1}>{cat.icon}  {cat.label}</Text>
             <View style={st.cardTimeRow}>
               <Clock size={12} color="#16A34A" strokeWidth={2.5} />
               <Text style={st.cardTimeTxt}>{formatVisitTime(spot.visitHours)}</Text>
@@ -297,7 +294,6 @@ export default function SpotSheet({
   const activeSpot = spots[activeIndex] ?? spots[0];
 
   const savedSpot = useStore(s => s.savedSpots[activeSpot.id]);
-  const cat       = SPOT_CATEGORY_META[activeSpot.category];
   const isVisited = !!savedSpot;
   const photos: PhotoEntry[] = savedSpot?.photos ?? [];
 
@@ -845,9 +841,6 @@ export default function SpotSheet({
 
             <View style={st.heroBottomStack}>
               <View style={st.heroContent}>
-                <View style={st.catChip}>
-                  <Text style={st.catChipTxt}>{cat.icon}  {cat.label}</Text>
-                </View>
                 <Text style={st.heroName} numberOfLines={2}>{activeSpot.name}</Text>
                 {/* Tappable when onGoToDestination is provided — the explicit upward path
                     into the destination sheet, kept separate from the back pill (which is
@@ -1163,7 +1156,7 @@ const st = StyleSheet.create({
   carListBtnTxt: { fontSize: 12.5, fontWeight: '600', color: '#6B7280' },
 
   // Carousel card — portrait layout: a full-width image forming the top half, a plain white
-  // content column (name, category/time, blurb) forming the bottom half. The shadow/border
+  // content column (name, time/cost, blurb) forming the bottom half. The shadow/border
   // live on this outer element; a separate inner wrapper (cardInner) owns overflow:'hidden'
   // so the image's top corners get clipped to the card's rounded shape without also
   // clipping (and thereby hiding) this element's own shadow — iOS clips shadows on any view
@@ -1187,7 +1180,7 @@ const st = StyleSheet.create({
   cardInner: { borderRadius: 16.5, overflow: 'hidden' },
   cardImageWrap: { width: '100%', flex: 1, backgroundColor: '#111827' },
   // Smooth gradient (matches the full-screen hero's own scrim) behind the bottom-left text
-  // overlay, tall enough to cover the name+category/time block so it stays legible over any
+  // overlay, tall enough to cover the name block so it stays legible over any
   // photo — a flat rect banded visibly at its edge, which this replaced.
   cardImageGradWrap: { position: 'absolute', left: 0, right: 0, bottom: 0, height: 64 },
   // Green "Visited" tag, top-right of the image — only rendered when actually visited.
@@ -1211,14 +1204,8 @@ const st = StyleSheet.create({
   cardName:    { fontSize: 25, fontFamily: 'PlayfairDisplay_700Bold', color: 'white', lineHeight: 28,
                  letterSpacing: -0.3,
                  textShadowColor: 'rgba(0,0,0,0.3)', textShadowRadius: 4, textShadowOffset: { width: 0, height: 1 } },
-  // Category (left, outlined pill) and time-to-spend sit directly beside it, now below the
-  // image rather than overlaid on it.
+  // Time-to-spend and cost, side by side below the image rather than overlaid on it.
   cardStatRow: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 2, marginBottom: 8 },
-  cardCat:     {
-    fontSize: 11, fontWeight: '600', color: '#6B7280', flexShrink: 1,
-    borderWidth: 1, borderColor: '#E5E7EB', borderRadius: 20,
-    paddingHorizontal: 8, paddingVertical: 3,
-  },
   cardTimeRow: { flexDirection: 'row', alignItems: 'center', gap: 4, flexShrink: 0 },
   cardTimeTxt: { fontSize: 12.5, fontWeight: '700', color: '#16A34A' },
   cardInfo:    { backgroundColor: 'white', paddingHorizontal: 14, paddingTop: 6, paddingBottom: 12 },
@@ -1274,9 +1261,6 @@ const st = StyleSheet.create({
   heroVisitPillTxt: { fontSize: 13, fontWeight: '700', color: 'white' },
   heroBottomStack: {},
   heroContent: { paddingHorizontal: 20, paddingBottom: 48, paddingTop: 8, gap: 10 },
-  catChip: { alignSelf: 'flex-start', backgroundColor: 'rgba(255,255,255,0.22)', borderRadius: 16,
-             paddingHorizontal: 9, paddingVertical: 3 },
-  catChipTxt: { fontSize: 10.5, fontWeight: '700', color: 'white' },
   heroName: { fontSize: 34, fontFamily: 'PlayfairDisplay_700Bold', color: 'white', letterSpacing: -0.5 },
   heroMeta: { flexDirection: 'row', alignItems: 'center', gap: 4 },
   heroMetaTxt: { fontSize: 14, color: 'rgba(255,255,255,0.90)', fontWeight: '500' },
