@@ -199,6 +199,8 @@ const SPOT_PIN_SIZE = 28;
 const SPOT_PIN_SIZE_SELECTED = 40;
 
 const SPOT_LABEL_GAP = 6;
+// Position of each spot in the spots data — the popularity proxy used to decide whose name wins a crowded spot.
+const SPOT_ORDER = new Map(SPOTS.map((sp, i) => [sp.id, i]));
 
 // Spot marker — the ENTIRE thing (name label + teardrop pin) rendered inside ONE MarkerView,
 // as a horizontal row. Two earlier attempts at the label failed:
@@ -218,8 +220,12 @@ const SPOT_LABEL_GAP = 6;
 // un-truncated) label renders, which requires knowing that width; onLayout measures it after
 // the first frame and anchorX corrects itself from a pin-only fallback. That one-frame
 // correction lands inside the existing FadePin fade-in, so it isn't visible in practice.
-function SpotMarker({ spot, isVisited, isSelected, exiting, isSatellite, onPress }: {
-  spot: Spot; isVisited: boolean; isSelected: boolean; exiting: boolean; isSatellite: boolean; onPress: () => void;
+function SpotMarker({ spot, isVisited, isSelected, exiting, isSatellite, labelSide, instant, onPress }: {
+  spot: Spot; isVisited: boolean; isSelected: boolean; exiting: boolean; isSatellite: boolean;
+  // Which side of the pin the name sits on, or 'none' to leave it off (see spotLabelPlan).
+  labelSide: 'left' | 'right' | 'none';
+  instant?: boolean;
+  onPress: () => void;
 }) {
   const cacheKey = `spotpin_${spot.id}`;
   const [photoUrl, setPhotoUrl] = useState<string | null>(thumbCache.get(cacheKey) ?? null);
@@ -250,14 +256,33 @@ function SpotMarker({ spot, isVisited, isSelected, exiting, isSatellite, onPress
   // the pin still reads clearly against the map rather than blending into it.
   const ringColor = isVisited ? VISITED_COLOR : 'white';
   const bubbleSize = isSelected ? SPOT_PIN_SIZE_SELECTED : SPOT_PIN_SIZE;
-  const totalW = labelW > 0 ? labelW + SPOT_LABEL_GAP + bubbleSize : bubbleSize;
-  const anchorX = labelW > 0 ? (labelW + SPOT_LABEL_GAP + bubbleSize / 2) / totalW : 0.5;
+  // The pin's tip must land on the coordinate whichever side the label is on, so the anchor is the
+  // pin's centre measured from the marker's left edge: past the label when it's on the left, at the
+  // start when it's on the right, and dead centre when there's no label (or it isn't measured yet).
+  const labelShown = labelSide !== 'none' && labelW > 0;
+  const totalW = labelShown ? labelW + SPOT_LABEL_GAP + bubbleSize : bubbleSize;
+  const anchorX = !labelShown ? 0.5
+    : labelSide === 'left' ? (labelW + SPOT_LABEL_GAP + bubbleSize / 2) / totalW
+    : (bubbleSize / 2) / totalW;
   // Satellite imagery is a busy, mid-tone photo — the standard basemap's dark-text/white-halo
   // label reads poorly on it, so this flips to white text with a black halo instead. Same
   // reasoning as the destination pill/border colors elsewhere in this file also branching on
   // mapType === 'satellite'.
   const labelColor = isSatellite ? 'white' : '#111827';
   const labelHaloColor = isSatellite ? 'black' : 'white';
+  const labelEl = labelSide === 'none' ? null : (
+    <View
+      style={styles.spotPinLabelWrap}
+      onLayout={e => setLabelW(e.nativeEvent.layout.width)}
+      pointerEvents="none"
+    >
+      <Text style={[styles.spotPinLabel, styles.spotPinLabelOutline, { color: labelHaloColor, transform: [{ translateX: -0.75 }, { translateY: -0.75 }] }]}>{spot.name}</Text>
+      <Text style={[styles.spotPinLabel, styles.spotPinLabelOutline, { color: labelHaloColor, transform: [{ translateX: 0.75 }, { translateY: -0.75 }] }]}>{spot.name}</Text>
+      <Text style={[styles.spotPinLabel, styles.spotPinLabelOutline, { color: labelHaloColor, transform: [{ translateX: -0.75 }, { translateY: 0.75 }] }]}>{spot.name}</Text>
+      <Text style={[styles.spotPinLabel, styles.spotPinLabelOutline, { color: labelHaloColor, transform: [{ translateX: 0.75 }, { translateY: 0.75 }] }]}>{spot.name}</Text>
+      <Text style={[styles.spotPinLabel, { color: labelColor }]}>{spot.name}</Text>
+    </View>
+  );
 
   return (
     <MapboxGL.MarkerView
@@ -269,20 +294,10 @@ function SpotMarker({ spot, isVisited, isSelected, exiting, isSatellite, onPress
       // zooming out" bug. Spot pins are placed deliberately, so they never take part in it.
       allowOverlap
     >
-      <FadePin exiting={exiting}>
+      <FadePin exiting={exiting} instant={instant}>
         <Pressable disabled={exiting} onPress={onPress} hitSlop={6}>
           <View style={styles.spotMarkerRow}>
-            <View
-              style={styles.spotPinLabelWrap}
-              onLayout={e => setLabelW(e.nativeEvent.layout.width)}
-              pointerEvents="none"
-            >
-              <Text style={[styles.spotPinLabel, styles.spotPinLabelOutline, { color: labelHaloColor, transform: [{ translateX: -0.75 }, { translateY: -0.75 }] }]}>{spot.name}</Text>
-              <Text style={[styles.spotPinLabel, styles.spotPinLabelOutline, { color: labelHaloColor, transform: [{ translateX: 0.75 }, { translateY: -0.75 }] }]}>{spot.name}</Text>
-              <Text style={[styles.spotPinLabel, styles.spotPinLabelOutline, { color: labelHaloColor, transform: [{ translateX: -0.75 }, { translateY: 0.75 }] }]}>{spot.name}</Text>
-              <Text style={[styles.spotPinLabel, styles.spotPinLabelOutline, { color: labelHaloColor, transform: [{ translateX: 0.75 }, { translateY: 0.75 }] }]}>{spot.name}</Text>
-              <Text style={[styles.spotPinLabel, { color: labelColor }]}>{spot.name}</Text>
-            </View>
+            {labelSide === 'left' && labelEl}
             <View style={styles.spotPinWrap}>
               <Svg
                 width={pinR * 2} height={pinR * 2 + tailL}
@@ -307,6 +322,7 @@ function SpotMarker({ spot, isVisited, isSelected, exiting, isSatellite, onPress
               </View>
               <View style={{ height: tailL }} />
             </View>
+            {labelSide === 'right' && labelEl}
           </View>
         </Pressable>
       </FadePin>
@@ -372,8 +388,10 @@ const pinSt = StyleSheet.create({
 const PIN_FADE_IN_MS = 240;
 const PIN_EXIT_MS    = 200;
 
-function FadePin({ exiting, children }: { exiting: boolean; children: React.ReactNode }) {
-  const opacity = useRef(new Animated.Value(0)).current;
+function FadePin({ exiting, instant, children }: { exiting: boolean; instant?: boolean; children: React.ReactNode }) {
+  // `instant`: mounts fully opaque (no fade-in) — for a duplicate that sits exactly over an
+  // identical, already-visible pin, where fading in would just dim the overlap.
+  const opacity = useRef(new Animated.Value(instant ? 1 : 0)).current;
   useEffect(() => {
     Animated.timing(opacity, {
       toValue: exiting ? 0 : 1,
@@ -1627,6 +1645,62 @@ const destItems = useMemo((): DestItem[] =>
   // Exit-fade tracking for spot pins (same treatment as pills/photos): pins leaving the
   // set linger for PIN_EXIT_MS fading out, new ones mount at 0 and fade in.
   const renderedSpots = useExitingItems(useStableList(visibleSpots, s => s.id), s => s.id);
+
+  // Which side of each spot pin its name goes on — or none. Names default to the LEFT of the pin;
+  // when that would run into another pin or an already-placed name the label flips to the right, and
+  // when neither side is clear it's dropped altogether (the pin itself always stays). Spots claim
+  // space in priority order — the selected spot, then ones the user has visited, then the more
+  // popular (earlier in the spots data, which is also the order the destination's carousel uses) —
+  // so the names that survive a crowd are the ones that matter most. Pixel geometry comes from the
+  // true on-screen scale, so this is what the eye actually sees; only relative offsets matter, so
+  // the projection needs no camera centre.
+  const spotLabelPlan = useMemo(() => {
+    const plan = new Map<string, 'left' | 'right' | 'none'>();
+    const live = renderedSpots.filter(r => !r.exiting).map(r => r.item);
+    if (live.length === 0) return plan;
+    const pxPerDegLng = SCREEN_W_GLOBAL / pillVisibleLngDelta;
+    type Rect = { l: number; r: number; t: number; b: number };
+    const geo = new Map<string, { pin: Rect; cy: number; cx: number; half: number; w: number }>();
+    for (const sp of live) {
+      const m = mercatorPx(sp.coordinates.longitude, sp.coordinates.latitude, pxPerDegLng);
+      const x = m.x, y = -m.y;                         // screen y grows downward, mercator's grows north
+      const sel = selectedSpot?.id === sp.id;
+      const bubble = sel ? SPOT_PIN_SIZE_SELECTED : SPOT_PIN_SIZE;
+      const tail = sel ? 14 : 10;
+      geo.set(sp.id, {
+        pin: { l: x - bubble / 2, r: x + bubble / 2, t: y - bubble - tail, b: y },
+        cx: x, cy: y - (bubble + tail) / 2, half: bubble / 2,   // the row centres the label on bubble + tail
+        w: sp.name.length * 6.6 + 4,                   // 12px bold: ~6.6px per character
+      });
+    }
+    const PAD = 3;
+    const hits = (a: Rect, b: Rect) =>
+      a.l < b.r + PAD && a.r > b.l - PAD && a.t < b.b + PAD && a.b > b.t - PAD;
+    const order = [...live].sort((a, b) => {
+      const rank = (sp: Spot) =>
+        (selectedSpot?.id === sp.id ? -2_000_000 : 0) + (savedSpots[sp.id] ? -1_000_000 : 0) + (SPOT_ORDER.get(sp.id) ?? 0);
+      return rank(a) - rank(b);
+    });
+    const placedLabels: Rect[] = [];
+    for (const sp of order) {
+      const g = geo.get(sp.id)!;
+      const labelRect = (side: 'left' | 'right'): Rect => {
+        const l = side === 'left' ? g.cx - g.half - SPOT_LABEL_GAP - g.w : g.cx + g.half + SPOT_LABEL_GAP;
+        return { l, r: l + g.w, t: g.cy - 8, b: g.cy + 8 };
+      };
+      const clear = (rect: Rect) => {
+        for (const other of live) if (other.id !== sp.id && hits(rect, geo.get(other.id)!.pin)) return false;
+        for (const lab of placedLabels) if (hits(rect, lab)) return false;
+        return true;
+      };
+      const left = labelRect('left');
+      if (clear(left)) { plan.set(sp.id, 'left'); placedLabels.push(left); continue; }
+      const right = labelRect('right');
+      if (clear(right)) { plan.set(sp.id, 'right'); placedLabels.push(right); continue; }
+      plan.set(sp.id, 'none');
+    }
+    return plan;
+  }, [renderedSpots, pillVisibleLngDelta, selectedSpot, savedSpots]);
 
   // ── Search results ────────────────────────────────────────────────────────
   const searchResults = useMemo(() => computeSearchResults(searchQuery), [searchQuery]);
@@ -3308,10 +3382,30 @@ const destItems = useMemo((): DestItem[] =>
               isSelected={isSelectedSpot}
               exiting={exiting}
               isSatellite={mapType === 'satellite'}
+              labelSide={spotLabelPlan.get(spot.id) ?? 'left'}
               onPress={() => handleSpotPress(spot)}
             />
           );
         })}
+        {/* The selected spot is drawn a second time on top of everything else. MarkerViews stack by when
+            they were MOUNTED, not by JSX order, and reordering the keyed list would remove and
+            re-add native views (the pins blinked when that was tried). So instead this identical
+            copy is mounted after the rest — and re-keyed whenever the set of spot pins changes, so
+            a pin that appears later can never end up over it. The original stays put underneath, so
+            a re-mount of the copy is never visible. */}
+        {selectedSpot && renderedSpots.some(r => r.item.id === selectedSpot.id && !r.exiting) && (
+          <SpotMarker
+            key={`top-${selectedSpot.id}-${renderedSpots.length}`}
+            spot={selectedSpot}
+            isVisited={!!savedSpots[selectedSpot.id]}
+            isSelected
+            exiting={false}
+            instant
+            isSatellite={mapType === 'satellite'}
+            labelSide={spotLabelPlan.get(selectedSpot.id) ?? 'left'}
+            onPress={() => handleSpotPress(selectedSpot)}
+          />
+        )}
 
 
         </>}
