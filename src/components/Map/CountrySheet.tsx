@@ -22,8 +22,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Check, Plus, Users, Languages, Coins, Trash2, Maximize, Landmark } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
 import { useStore } from '../../store';
-import { CATEGORY_ICONS } from '../../types';
-import type { Destination, CountryCluster, DestinationCategory } from '../../types';
+import type { Destination, CountryCluster } from '../../types';
 import { DESTINATIONS } from '../../data/destinations';
 import { SPOTS } from '../../data/spots';
 import { photoCache, getOrFetchWikiThumbnail } from '../../utils/photoCache';
@@ -146,10 +145,8 @@ const COUNTRY_FACTS: Record<string, { population: string; languages: string[]; c
 type CountryTab = 'visit' | 'about' | 'destinations';
 type CountrySnapState = 'peek' | 'collapsed' | 'full';
 
-// ── Destinations panel — grid of the country's destinations with category filter tags,
-// identical pattern to DestinationSheet's own SpotsPanel. The "Map view" button that used
-// to sit above the grid was removed — the tag filter row below is the sole way to narrow
-// this list now (by destination type), rather than jumping out to the map.
+// ── Destinations panel — grid of the country's destinations, identical pattern to
+// DestinationSheet's own SpotsPanel.
 function DestinationsPanel({
   dests, savedDestinations, onSelectDestination,
 }: {
@@ -157,40 +154,11 @@ function DestinationsPanel({
   savedDestinations: Record<string, { type?: string }>;
   onSelectDestination: (dest: Destination) => void;
 }) {
-  const [filter, setFilter] = useState<DestinationCategory | 'all'>('all');
-
-  const categories = useMemo(() => {
-    const seen = new Set<DestinationCategory>();
-    dests.forEach(d => seen.add(d.category));
-    return Array.from(seen);
-  }, [dests]);
-
-  const filteredDests = filter === 'all' ? dests : dests.filter(d => d.category === filter);
-
   return (
     <View style={{ gap: 16 }}>
-      {categories.length > 1 && (
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={st.filterRow}>
-          <Pressable
-            style={[st.filterTag, filter === 'all' && st.filterTagActive]}
-            onPress={() => setFilter('all')}>
-            <Text style={[st.filterTagTxt, filter === 'all' && st.filterTagTxtActive]}>All</Text>
-          </Pressable>
-          {categories.map(cat => {
-            const active = filter === cat;
-            return (
-              <Pressable key={cat} style={[st.filterTag, active && st.filterTagActive]} onPress={() => setFilter(cat)}>
-                <Text style={st.filterTagIcon}>{CATEGORY_ICONS[cat]}</Text>
-                <Text style={[st.filterTagTxt, active && st.filterTagTxtActive]}>{cat}</Text>
-              </Pressable>
-            );
-          })}
-        </ScrollView>
-      )}
-
-      {filteredDests.length > 0 ? (
+      {dests.length > 0 ? (
         <View style={st.destGrid}>
-          {filteredDests.map(dest => {
+          {dests.map(dest => {
             const saved      = savedDestinations[dest.id];
             const isVisited  = saved?.type === 'visited';
             return (
@@ -206,7 +174,7 @@ function DestinationsPanel({
           })}
         </View>
       ) : (
-        <Text style={st.gridEmptyTxt}>No destinations in this category yet.</Text>
+        <Text style={st.gridEmptyTxt}>No destinations yet.</Text>
       )}
     </View>
   );
@@ -1248,13 +1216,6 @@ const st = StyleSheet.create({
   glanceEmpty: { fontSize: 13, color: '#9CA3AF' },
 
   // ── Destinations grid — identical pattern to DestinationSheet's own SpotsPanel/grid. ──
-  filterRow:       { gap: 8, paddingBottom: 2, paddingRight: 4 },
-  filterTag:       { flexDirection: 'row', alignItems: 'center', gap: 6,
-                     backgroundColor: '#F3F4F6', borderRadius: 16, paddingHorizontal: 12, paddingVertical: 7 },
-  filterTagActive: { backgroundColor: '#059669' },
-  filterTagIcon:   { fontSize: 13 },
-  filterTagTxt:    { fontSize: 13.5, fontWeight: '600', color: '#4B5563' },
-  filterTagTxtActive: { color: 'white' },
   gridEmptyTxt:    { fontSize: 14, color: '#9CA3AF', textAlign: 'center', paddingVertical: 24 },
 
   // paddingBottom leaves room for the cards' shadows: the tab panel clips whatever falls
