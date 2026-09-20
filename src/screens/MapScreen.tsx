@@ -99,7 +99,6 @@ import { Layers, Check, X, Search, CornerUpLeft, ChevronDown } from 'lucide-reac
 import * as Haptics from 'expo-haptics';
 import * as Location from 'expo-location';
 import { useStore } from '../store';
-import { CATEGORY_ICONS } from '../types';
 import type { Destination, CountryCluster } from '../types';
 import type GeoJSON from 'geojson';
 import { getCountryRegion, getCountryBounds, getCountryCenter, getCountryPopularity } from '../utils/countryBounds';
@@ -107,6 +106,7 @@ import { DESTINATIONS } from '../data/destinations';
 import { SPOTS, type Spot } from '../data/spots';
 import DestinationSheet from '../components/Map/DestinationSheet';
 import CircleFlag from '../components/CircleFlag';
+import PinPhoto from '../components/Map/PinPhoto';
 import { computeSearchResults, SearchResultRows, type SearchResult } from '../components/Map/SearchResults';
 import SpotSheet from '../components/Map/SpotSheet';
 import CountrySheet from '../components/Map/CountrySheet';
@@ -131,8 +131,13 @@ function DestPin({ dest, spotCount, isVisited, isSelected, pinState }: {
   // Small pin (46px) — request a small thumbnail rather than the full-res header image,
   // so map pins load and decode quickly during pan/zoom.
   const [photoUrl, setPhotoUrl] = useState<string | null>(thumbCache.get(dest.id) ?? null);
+  // True when the photo was already cached before this pin showed: it appears at once instead of
+  // fading in. Otherwise the disc sits as a plain dark placeholder (no emoji — a flash of the
+  // category icon before every photo looked like flicker) until the photo fades in over it.
+  const photoWasCachedRef = useRef(thumbCache.has(dest.id));
   useEffect(() => {
-    if (thumbCache.has(dest.id)) { setPhotoUrl(thumbCache.get(dest.id)!); return; }
+    if (thumbCache.has(dest.id)) { photoWasCachedRef.current = true; setPhotoUrl(thumbCache.get(dest.id)!); return; }
+    photoWasCachedRef.current = false;
     setPhotoUrl(null);
     fetchWikiThumbnail(dest.name, 120).then(url => {
       if (url) { thumbCache.set(dest.id, url); setPhotoUrl(url); }
@@ -140,7 +145,6 @@ function DestPin({ dest, spotCount, isVisited, isSelected, pinState }: {
   }, [dest.id]);
 
   const ringColor = isVisited ? VISITED_COLOR : 'white';
-  const icon      = dest.icon ?? CATEGORY_ICONS[dest.category];
 
   // Stamp state — tiny dot. Selection only thickens the border (a size cue); the COLOR is
   // ringColor either way, since visited-status — not selection — is what green means here.
@@ -163,10 +167,14 @@ function DestPin({ dest, spotCount, isVisited, isSelected, pinState }: {
             unvisited pin green, same reasoning as the stamp case above. */}
         <View style={[pinSt.circleShadow, { borderColor: ringColor }]}>
           <View style={pinSt.circleClip}>
-            {photoUrl
-              ? <Image source={{ uri: photoUrl }} style={StyleSheet.absoluteFill as any} resizeMode="cover" />
-              : <Text style={pinSt.fallbackIcon}>{icon}</Text>
-            }
+            {photoUrl && (
+              <PinPhoto
+                instant={photoWasCachedRef.current}
+                source={{ uri: photoUrl }}
+                style={StyleSheet.absoluteFill as any}
+                resizeMode="cover"
+              />
+            )}
           </View>
         </View>
         {spotCount > 0 && isVisited && (
@@ -215,8 +223,10 @@ function SpotMarker({ spot, isVisited, isSelected, exiting, isSatellite, onPress
 }) {
   const cacheKey = `spotpin_${spot.id}`;
   const [photoUrl, setPhotoUrl] = useState<string | null>(thumbCache.get(cacheKey) ?? null);
+  const photoWasCachedRef = useRef(thumbCache.has(cacheKey));   // see DestPin
   useEffect(() => {
-    if (thumbCache.has(cacheKey)) { setPhotoUrl(thumbCache.get(cacheKey)!); return; }
+    if (thumbCache.has(cacheKey)) { photoWasCachedRef.current = true; setPhotoUrl(thumbCache.get(cacheKey)!); return; }
+    photoWasCachedRef.current = false;
     setPhotoUrl(null);
     fetchWikiThumbnail(spot.name, 120).then(url => {
       if (url) { thumbCache.set(cacheKey, url); setPhotoUrl(url); }
@@ -285,9 +295,14 @@ function SpotMarker({ spot, isVisited, isSelected, exiting, isSatellite, onPress
               </Svg>
               <View style={[styles.spotPinBubble, { width: bubbleSize, height: bubbleSize, borderRadius: bubbleSize / 2, borderColor: ringColor }]}>
                 <View style={[styles.spotPinImgClip, { width: bubbleSize - 4, height: bubbleSize - 4, borderRadius: (bubbleSize - 4) / 2 }]}>
-                  {photoUrl
-                    ? <Image source={{ uri: photoUrl }} style={StyleSheet.absoluteFill as any} resizeMode="cover" />
-                    : <Text style={[styles.spotPinIcon, isSelected && styles.spotPinIconSelected]}>{spot.icon}</Text>}
+                  {photoUrl && (
+                    <PinPhoto
+                      instant={photoWasCachedRef.current}
+                      source={{ uri: photoUrl }}
+                      style={StyleSheet.absoluteFill as any}
+                      resizeMode="cover"
+                    />
+                  )}
                 </View>
               </View>
               <View style={{ height: tailL }} />
@@ -323,10 +338,9 @@ const pinSt = StyleSheet.create({
     height: PIN_SIZE - PIN_BORDER * 2,
     borderRadius: (PIN_SIZE - PIN_BORDER * 2) / 2,
     overflow: 'hidden',
-    backgroundColor: '#E5E7EB',
+    backgroundColor: '#111827',
     alignItems: 'center', justifyContent: 'center',
   },
-  fallbackIcon: { fontSize: 22 },
   badge: {
     position: 'absolute', bottom: -3, right: -3,
     width: BADGE_SIZE, height: BADGE_SIZE, borderRadius: BADGE_SIZE / 2,
@@ -3777,9 +3791,7 @@ const styles = StyleSheet.create({
     alignItems: 'center', justifyContent: 'center',
   },
   // Clips the fetched photo to the bubble's own round shape, inset by the border.
-  spotPinImgClip: { overflow: 'hidden', alignItems: 'center', justifyContent: 'center', backgroundColor: '#F3F4F6' },
-  spotPinIcon: { fontSize: 13 },
-  spotPinIconSelected: { fontSize: 18 },
+  spotPinImgClip: { overflow: 'hidden', alignItems: 'center', justifyContent: 'center', backgroundColor: '#111827' },
   // Row holding [label, pin] as normal flex siblings inside SpotMarker's one MarkerView —
   // see SpotMarker's own comment for why this replaced two earlier, more fragile attempts.
   spotMarkerRow: { flexDirection: 'row', alignItems: 'center', columnGap: SPOT_LABEL_GAP },
