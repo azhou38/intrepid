@@ -734,6 +734,11 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // render) rather than swapping this — swapping the MapView style reloads the native map
   // and drops all MarkerView pins, which is exactly what we must avoid.
   const [baseStyle, setBaseStyle] = useState<string | null>(null);
+  // The map isn't mounted until the style fetch above has settled (success or failure). It used to
+  // mount on the default Light style and then swap to the fetched one; every layer's props were
+  // updated during that swap, before the new style had them — "updateLayer CircleLayer.
+  // destStampCircles Layer destStampCircles is not in style". The loading screen covers the wait.
+  const [styleResolved, setStyleResolved] = useState(false);
   const [mapReady, setMapReady] = useState(false);
   const [mapState,       setMapState      ] = useState<MapState>('world');
   const [selectedDest, setSelectedDest] = useState<Destination | null>(null);
@@ -1639,9 +1644,13 @@ const destItems = useMemo((): DestItem[] =>
 
   // ── Fetch the single base style once on mount ─────────────────────────────
   useEffect(() => {
-    fetchStyleNoLabels('mapbox/standard').then(json => {
-      if (json) setBaseStyle(json);
-    });
+    // Capped so a hung request can't leave the map unmounted: after 4s it mounts on the default style.
+    const cap = setTimeout(() => setStyleResolved(true), 4000);
+    fetchStyleNoLabels('mapbox/standard')
+      .then(json => { if (json) setBaseStyle(json); })
+      .catch(() => {})
+      .finally(() => { clearTimeout(cap); setStyleResolved(true); });
+    return () => clearTimeout(cap);
   }, []);
 
   // ── Breadcrumb helpers ────────────────────────────────────────────────────
@@ -3043,6 +3052,7 @@ const destItems = useMemo((): DestItem[] =>
     >
 
       {/* ── MAP ──────────────────────────────────────────────────────────── */}
+      {styleResolved && (
       <MapboxGL.MapView
         style={StyleSheet.absoluteFill}
         // Globe at every zoom, never swapped. Mapbox's iOS SDK applies setProjection
@@ -3288,6 +3298,7 @@ const destItems = useMemo((): DestItem[] =>
 
         </>}
       </MapboxGL.MapView>
+      )}
 
       {/* ── Search backdrop — white fill behind the focused search bar + results, so the
           search interface is the same whether opened from here or from the Explore sheet.
