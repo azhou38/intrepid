@@ -2022,9 +2022,12 @@ const destItems = useMemo((): DestItem[] =>
     mode: 'easeTo' | 'flyTo' = 'easeTo',
     framing: 'topHalf' | 'full' = 'topHalf',
     durationMs = 500,
+    // Multiplies the zoom LEVEL (not the visible span): 0.5 lands on half the destination's own
+    // default zoom, the same "half the zoom level" step-back the country close uses.
+    zoomFactor = 1,
   ) => {
     cancelCountrySettle();
-    const zoomLevel = latDeltaToZoom(getZoomDelta(dest.category));
+    const zoomLevel = latDeltaToZoom(getZoomDelta(dest.category)) * zoomFactor;
     const worldSize = 512 * Math.pow(2, zoomLevel);
     const mapViewH = mapViewHRef.current || (H - BOTTOM_TAB_H);
     const bottomBound = framing === 'full'
@@ -2395,17 +2398,7 @@ const destItems = useMemo((): DestItem[] =>
   // uses, just without actually selecting the country (no sheet reopens here).
   const handleCloseDestinationToCountryView = useCallback(() => {
     if (!selectedDest) return;
-    const dests  = DESTINATIONS.filter(d => d.country === selectedDest.country);
-    const center = getCountryCenter(selectedDest.countryCode);
-    const cluster: CountryCluster = {
-      country:      selectedDest.country,
-      countryCode:  selectedDest.countryCode,
-      latitude:     center?.latitude  ?? selectedDest.coordinates.latitude,
-      longitude:    center?.longitude ?? selectedDest.coordinates.longitude,
-      count:        dests.length,
-      minRank:      Math.min(...dests.map(d => d.rank)),
-      visitedCount: dests.filter(d => savedDestinations[d.id]?.type === 'visited').length,
-    };
+    const dest = selectedDest;
     setMapState('world');
     setZoomedIntoDestination(false);
     showBreadcrumb(false);
@@ -2423,8 +2416,18 @@ const destItems = useMemo((): DestItem[] =>
     // the same way handleCloseSpotToDestinationView does; the Explore sheet remounts instead.
     selectedCountryRef.current = null;
     setSelectedCountry(null);
-    fitCountryDefaultView(cluster, 'easeTo', 'topHalf');
-  }, [selectedDest, savedDestinations, showBreadcrumb, fitCountryDefaultView]);
+    // Suppress the south-limit glide-back while this zooms out — see suppressSouthLimitRef's own
+    // comment (and handleCloseCountry, which does the same) for why it'd otherwise stall the zoom-out.
+    suppressSouthLimitRef.current = true;
+    if (suppressSouthLimitTimerRef.current) clearTimeout(suppressSouthLimitTimerRef.current);
+    suppressSouthLimitTimerRef.current = setTimeout(() => { suppressSouthLimitRef.current = false; }, 650);
+    // Not a fit to the parent country: countries vary too much in size (closing the Grand Canyon
+    // would fling out to the whole USA, closing a Monaco-sized place to barely anything). Instead
+    // zoom out to HALF the destination's own default zoom level, centred on the destination in the
+    // area above the Explore sheet's bottom strip ('full' framing) — the same step-back rule the
+    // country close uses, applied one level down.
+    fitDestinationDefaultView(dest, 'easeTo', 'full', 600, 0.5);
+  }, [selectedDest, showBreadcrumb, fitDestinationDefaultView]);
 
   // Closing the destination sheet INTO its country view. `toCollapsed` (set when this
   // fires from a swipe-down while the destination sheet was itself collapsed) lands the
@@ -2455,8 +2458,8 @@ const destItems = useMemo((): DestItem[] =>
   }, [selectedDest, savedDestinations, handleCountryPress]);
 
   // Destination close/back, provenance-routed: drilled down from the country → back up to it;
-  // entered laterally (map pin tap with nothing selected, or search) → zoom out to the
-  // country's own default view instead, no fabricated country sheet in between.
+  // entered laterally (map pin tap with nothing selected, or search) → zoom out to half the
+  // destination's own zoom level instead, no fabricated country sheet in between.
   const handleCloseDestinationSheet = useCallback((toCollapsed?: boolean) => {
     if (destOrigin === 'country') handleCloseDestinationSheetToCountry(toCollapsed);
     else handleCloseDestinationToCountryView();
