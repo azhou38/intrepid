@@ -26,7 +26,7 @@ import * as ImagePicker from 'expo-image-picker';
 import { useStore } from '../../store';
 import type { Destination, PhotoEntry } from '../../types';
 import type { Spot } from '../../data/spots';
-import { DAY_NAMES, hoursForDay, formatSpotCost } from '../../data/spots';
+import { DAY_NAMES, hoursForDay, formatSpotCost, formatVisitTime } from '../../data/spots';
 import { photoCache, thumbCache, getOrFetchWikiThumbnail } from '../../utils/photoCache';
 import CircleFlag from '../CircleFlag';
 import FadeInImage from './FadeInImage';
@@ -75,12 +75,6 @@ const CARD_W    = W - 64;
 const CARD_GAP  = 12;
 const CARD_SNAP = CARD_W + CARD_GAP;
 const SIDE_PAD  = (W - CARD_W) / 2;
-
-// "1.5 hr" / "45 min" — spot.visitHours is a plain decimal-hours estimate.
-function formatVisitTime(hours: number): string {
-  if (hours < 1) return `${Math.round(hours * 60)} min`;
-  return `${hours % 1 === 0 ? hours : hours.toFixed(1)} hr`;
-}
 
 // ── Star rating (tappable) ────────────────────────────────────────────────────
 function StarRating({ value, onChange, size = 30 }: {
