@@ -555,7 +555,7 @@ function GlanceItem({ reason, index, isLast }: { reason: string; index: number; 
   return (
     <View style={[st.glanceRow, !isLast && st.glanceRowDivider]}>
       <View style={st.glanceNumBadge}>
-        <Text style={st.glanceNumTxt}>{String(index + 1).padStart(2, '0')}</Text>
+        <Text style={st.glanceNumTxt}>{index + 1}</Text>
       </View>
       <Text style={st.glanceRowTitle} numberOfLines={2}>{reason}</Text>
     </View>
