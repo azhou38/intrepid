@@ -54,6 +54,12 @@ const CURRENCY_FORMAT: Record<string, { prefix?: string; suffix?: string }> = {
   ISK: { suffix: ' ISK' },
 };
 
+// "1.5 hr" / "45 min" — spot.visitHours is a plain decimal-hours estimate.
+export function formatVisitTime(hours: number): string {
+  if (hours < 1) return `${Math.round(hours * 60)} min`;
+  return `${hours % 1 === 0 ? hours : hours.toFixed(1)} hr`;
+}
+
 export function formatSpotCost(spot: Spot): string {
   if (spot.free || spot.costMin == null) return 'Free';
   const fmt = CURRENCY_FORMAT[spot.currency ?? 'USD'] ?? CURRENCY_FORMAT.USD;
