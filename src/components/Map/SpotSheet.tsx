@@ -1033,7 +1033,7 @@ export default function SpotSheet({
         >
           <Pressable style={StyleSheet.absoluteFill} onPress={() => snapToCollapsedRef.current()}>
             {photoUrl
-              ? <FadeInImage instant={photoWasCachedRef.current} source={{ uri: photoUrl }} style={StyleSheet.absoluteFill} resizeMode="cover" />
+              ? <FadeInImage instant source={{ uri: photoUrl }} style={StyleSheet.absoluteFill} resizeMode="cover" />
               : <View style={[StyleSheet.absoluteFill, { backgroundColor: '#111827' }]} />}
             <View pointerEvents="none" style={st.peekScrim} />
             <View pointerEvents="none" style={st.peekPillRow}>
