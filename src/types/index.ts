@@ -75,6 +75,9 @@ export interface Destination {
   tagline?: string;
   description?: string;
   whyVisit?: [string, string, string];
+  // Up to three short (2–3 word) phrases, one per whyVisit item, for space-tight surfaces like
+  // the Explore cards ("Hot springs · Nordic cafés · Northern lights").
+  highlights?: string[];
   goodToKnow?: [GoodToKnowTip, GoodToKnowTip, GoodToKnowTip];
 }
 
@@ -126,8 +129,17 @@ export interface SavedSpot {
 
 export interface Visit {
   id: string;
+  // Optional name for the trip itself ("Anniversary trip", "Layover"), distinct from the
+  // destination's own name — most visits won't need one, so this is never required.
+  title?: string;
   startDate: string;
   endDate?: string;
+  // Each visit is its own self-contained log entry (like a separate Strava activity) —
+  // spots visited, photos, and notes all live here per-visit, not shared across every
+  // trip to the destination.
+  spotIds?: string[];
+  photos?: PhotoEntry[];
+  notes?: string;
 }
 
 export interface CountryCluster {
@@ -142,8 +154,7 @@ export interface CountryCluster {
 
 export interface SavedDestination {
   destinationId: string;
-  type: 'visited' | 'wishlist';
-  isWishlisted?: boolean;  // true when on wishlist; can coexist with type:'visited'
+  type: 'visited';
   visitDate?: string;      // legacy single date
   notes?: string;
   photos?: PhotoEntry[];
@@ -157,5 +168,4 @@ export interface SavedCountry {
   countryCode: string;
   visitDate?: string; // YYYY-MM-DD — presence is what makes the country "visited"
   notes?: string;
-  isWishlisted?: boolean; // can coexist with a visitDate, same as SavedDestination
 }

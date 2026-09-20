@@ -45,8 +45,24 @@ export interface CountryRegion {
   longitudeDelta: number;
 }
 
-/** Returns the geographic center of the country. */
+// Hand-tuned label anchor points ([lat, lng]) for countries whose bounding-box centre
+// falls off the landmass — elongated or curved shapes throw the box centre into the sea or
+// a neighbouring country (Norway's lands in Sweden, Japan's in the Sea of Japan, Greece's
+// in the Aegean, Denmark's in the Kattegat; the UK's lands in southern Scotland where
+// central England reads better). Countries not listed have well-behaved box centres.
+const LABEL_POINTS: Record<string, [number, number]> = {
+  DK: [56.0, 9.3],    // central Jutland
+  GB: [52.9, -1.5],   // English midlands
+  GR: [39.4, 22.0],   // Thessaly (mainland)
+  JP: [36.4, 138.5],  // central Honshu
+  NO: [61.2, 8.8],    // southern-interior Norway
+};
+
+/** Returns the point a country's map pin/label should anchor to — a hand-tuned on-landmass
+ *  point where one exists (see LABEL_POINTS), otherwise the bounding-box center. */
 export function getCountryCenter(countryCode: string): { latitude: number; longitude: number } | null {
+  const lp = LABEL_POINTS[countryCode];
+  if (lp) return { latitude: lp[0], longitude: lp[1] };
   const b = BOUNDS[countryCode];
   if (!b) return null;
   return { latitude: (b[0] + b[1]) / 2, longitude: (b[2] + b[3]) / 2 };

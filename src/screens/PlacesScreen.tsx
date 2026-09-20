@@ -3,7 +3,7 @@ import {
   View, Text, StyleSheet, FlatList, Pressable, TextInput,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Search, X, Heart, ChevronRight } from 'lucide-react-native';
+import { Search, X, ChevronRight } from 'lucide-react-native';
 import { useStore } from '../store';
 import { CONTINENT_COLORS, CATEGORY_ICONS } from '../types';
 import type { Destination } from '../types';
@@ -11,17 +11,13 @@ import { DESTINATIONS } from '../data/destinations';
 import DestinationSheet from '../components/Map/DestinationSheet';
 import CircleFlag from '../components/CircleFlag';
 
-type Filter = 'all' | 'visited' | 'wishlist';
-
 export default function PlacesScreen() {
   const insets = useSafeAreaInsets();
   const savedDestinations = useStore((s) => s.savedDestinations);
-  const [filter, setFilter] = useState<Filter>('all');
   const [query, setQuery] = useState('');
   const [viewing, setViewing] = useState<Destination | null>(null);
 
   const savedList = Object.values(savedDestinations)
-    .filter((s) => filter === 'all' || s.type === filter)
     .map((s) => {
       const dest = DESTINATIONS.find((d) => d.id === s.destinationId);
       return dest ? { dest, saved: s } : null;
@@ -59,20 +55,6 @@ export default function PlacesScreen() {
         {query ? <Pressable onPress={() => setQuery('')} hitSlop={8}><X size={15} color="#9CA3AF" /></Pressable> : null}
       </View>
 
-      <View style={styles.filterRow}>
-        {(['all', 'visited', 'wishlist'] as Filter[]).map((f) => (
-          <Pressable
-            key={f}
-            style={[styles.filterChip, filter === f && styles.filterChipActive]}
-            onPress={() => setFilter(f)}
-          >
-            <Text style={[styles.filterText, filter === f && styles.filterTextActive]}>
-              {f === 'all' ? 'All' : f === 'visited' ? '✓ Visited' : '♡ Wishlist'}
-            </Text>
-          </Pressable>
-        ))}
-      </View>
-
       <FlatList
         data={filtered}
         keyExtractor={(item) => item.dest.id}
@@ -83,7 +65,7 @@ export default function PlacesScreen() {
             <Text style={styles.emptyTitle}>
               {Object.keys(savedDestinations).length === 0 ? 'No spots saved yet' : 'No spots match'}
             </Text>
-            <Text style={styles.emptyText}>Tap any pin on the map to mark it visited or add to wishlist</Text>
+            <Text style={styles.emptyText}>Tap any pin on the map to mark it visited</Text>
           </View>
         }
         renderItem={({ item: { dest, saved } }) => {
@@ -91,18 +73,12 @@ export default function PlacesScreen() {
           const icon = dest.icon ?? CATEGORY_ICONS[dest.category];
           return (
             <Pressable style={styles.row} onPress={() => setViewing(dest)}>
-              <View style={[
-                styles.avatar,
-                saved.type === 'wishlist'
-                  ? { backgroundColor: 'white', borderWidth: 2, borderColor: color, borderStyle: 'dashed' }
-                  : { backgroundColor: color },
-              ]}>
+              <View style={[styles.avatar, { backgroundColor: color }]}>
                 <Text style={styles.avatarIcon}>{icon}</Text>
               </View>
               <View style={styles.rowContent}>
                 <View style={styles.rowTitleRow}>
                   <Text style={styles.rowName}>{dest.name}</Text>
-                  {saved.type === 'wishlist' && <Heart size={12} color="#EC4899" fill="#EC4899" />}
                 </View>
                 <View style={styles.rowSubRow}>
                   <CircleFlag countryCode={dest.countryCode} size={13} />
@@ -138,11 +114,6 @@ const styles = StyleSheet.create({
     borderWidth: 1, borderColor: '#E5E7EB',
   },
   searchInput: { flex: 1, fontSize: 14, color: '#111827' },
-  filterRow: { flexDirection: 'row', gap: 6, paddingHorizontal: 12, marginBottom: 4 },
-  filterChip: { paddingHorizontal: 12, paddingVertical: 6, borderRadius: 20, backgroundColor: '#F3F4F6' },
-  filterChipActive: { backgroundColor: '#111827' },
-  filterText: { fontSize: 13, fontWeight: '600', color: '#6B7280' },
-  filterTextActive: { color: 'white' },
   row: {
     flexDirection: 'row', alignItems: 'center', gap: 12,
     backgroundColor: 'white', borderRadius: 14, padding: 12,

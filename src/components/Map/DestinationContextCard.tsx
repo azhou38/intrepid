@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import {
   View, Text, Pressable, StyleSheet, Animated, PanResponder, Image, Dimensions,
 } from 'react-native';
-import { Check, Heart } from 'lucide-react-native';
+import { Check } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
 import { CONTINENT_COLORS } from '../../types';
 import type { Destination, SavedDestination } from '../../types';
@@ -35,7 +35,6 @@ function parseMonthYear(s: string): string | null {
 export default function DestinationContextCard({ destination, savedEntry, visible, onOpen }: Props) {
   const spots      = SPOTS.filter(s => s.destinationId === destination.id);
   const isVisited  = savedEntry?.type === 'visited';
-  const isWishlist = !!(savedEntry?.isWishlisted || savedEntry?.type === 'wishlist');
   const color      = CONTINENT_COLORS[destination.continent];
 
   // User visit stats
@@ -184,21 +183,14 @@ export default function DestinationContextCard({ destination, savedEntry, visibl
       </Animated.View>
 
       {/* Bookmark tabs — synced with card position */}
-      {(isVisited || isWishlist) && (
+      {isVisited && (
         <View
           pointerEvents="none"
           style={[st.bookmarkTabsRow, { top: -22 }]}
         >
-          {isVisited && (
-            <View style={[st.bookmarkTab, st.bookmarkTabVisited]}>
-              <Text style={st.bookmarkTabTxt}>Visited</Text>
-            </View>
-          )}
-          {isWishlist && (
-            <View style={[st.bookmarkTab, st.bookmarkTabWishlist]}>
-              <Text style={st.bookmarkTabTxt}>Wishlist</Text>
-            </View>
-          )}
+          <View style={[st.bookmarkTab, st.bookmarkTabVisited]}>
+            <Text style={st.bookmarkTabTxt}>Visited</Text>
+          </View>
         </View>
       )}
     </Animated.View>
@@ -262,7 +254,6 @@ const st = StyleSheet.create({
   bookmarkTab: { paddingHorizontal: 11, paddingTop: 5, paddingBottom: 5,
                  borderTopLeftRadius: 9, borderTopRightRadius: 9 },
   bookmarkTabVisited: { backgroundColor: '#059669' },
-  bookmarkTabWishlist: { backgroundColor: '#DB2777' },
   bookmarkTabTxt: { fontSize: 11, fontWeight: '700', color: 'white' },
 
   // ── Open button ─────────────────────────────────────────────────────────────

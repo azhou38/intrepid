@@ -9,7 +9,7 @@ export interface MonthWeather {
 
 export interface MonthRain {
   month: string;
-  days: number; // approximate number of days with precipitation
+  mm: number; // average TOTAL precipitation for the month, in mm
 }
 
 export interface MonthCrowd {
@@ -108,7 +108,14 @@ function crowdProfileKey(continent: string, latitude: number): string {
 // 1–5 seasonal swing every other place in its region gets.
 const RANK_CROWD_SCALE: Record<number, number> = { 1: 1, 2: 0.82, 3: 0.66, 4: 0.52, 5: 0.4 };
 
-export function getCrowdData(continent: string, category: string, latitude: number, rank: number = 3): MonthCrowd[] {
+/** `weatherOverride` lets callers pass REAL observed temperatures (see climateApi) so the
+ *  "best month" flags agree with the temperatures actually shown to the user. Without it this
+ *  falls back to the synthetic curves, which can disagree by 10°C — enough to flag a month as
+ *  pleasant that the chart right beside it shows as freezing. */
+export function getCrowdData(
+  continent: string, category: string, latitude: number, rank: number = 3,
+  weatherOverride?: MonthWeather[],
+): MonthCrowd[] {
   const key    = crowdProfileKey(continent, latitude);
   let   levels = C[key] ?? C.yearround;
   if (latitude < -5) levels = shiftHalf(levels);
@@ -116,7 +123,7 @@ export function getCrowdData(continent: string, category: string, latitude: numb
   const scale  = RANK_CROWD_SCALE[rank] ?? RANK_CROWD_SCALE[3];
   const scaled = levels.map(l => Math.max(1, Math.min(5, Math.round(l * scale))));
 
-  const weather = getWeatherData(latitude, category);
+  const weather = weatherOverride ?? getWeatherData(latitude, category);
   const minL    = Math.min(...scaled);
 
   return MONTHS_SHORT.map((month, i) => {
@@ -126,15 +133,25 @@ export function getCrowdData(continent: string, category: string, latitude: numb
   });
 }
 
-/** Approximate average number of days per month with precipitation, derived from the same
- *  rain-probability profile used for the weather icon (probability × ~30 days/month). */
+// Typical millimetres per wet day, by climate. Only used to turn the synthetic rain
+// PROBABILITY curves into a millimetre figure for the offline fallback — a tropical downpour
+// delivers several times what temperate drizzle does, so a single constant would make wet
+// climates look far too dry.
+const MM_PER_WET_DAY: Record<string, number> = {
+  tropical: 13, subtropical: 8, desert: 5, temperate: 6, cold: 5, mountain: 7,
+};
+
+/** Rough average monthly rainfall for the offline fallback: rain probability × ~30 days ×
+ *  typical wet-day intensity. Real observed totals come from climateApi instead; this only
+ *  fills in while loading or offline. */
 export function getRainyDaysData(latitude: number, category: string): MonthRain[] {
   const profile = climateProfile(latitude, category);
   let rains = R[profile];
   if (latitude < -5) rains = shiftHalf(rains);
+  const intensity = MM_PER_WET_DAY[profile] ?? 6;
   return MONTHS_SHORT.map((month, i) => ({
     month,
-    days: Math.round(rains[i] * 30),
+    mm: Math.round(rains[i] * 30 * intensity),
   }));
 }
 
@@ -144,4 +161,31 @@ export function crowdColor(level: number): string {
 
 export function crowdLabel(level: number): string {
   return ['', 'Very Quiet','Quiet','Moderate','Busy','Peak Season'][level] ?? '';
+}
+
+// ── Real observed normals ────────────────────────────────────────────────────
+// Monthly averages derived from actual recorded weather (see climateApi.ts), used in place
+// of the synthetic curves above whenever they're available. The curves remain the offline
+// fallback: they're keyed off a 4-band latitude bucket, so every destination between 38° and
+// 60° — Porto, Lisbon, Rome, Edinburgh, Berlin — otherwise shares one identical climate.
+
+export interface ClimateNormals {
+  tempC: number[];     // 12 monthly average daily highs, °C
+  tempLowC: number[];  // 12 monthly average daily lows, °C
+  rainMm: number[];    // 12 monthly average TOTAL precipitation, mm
+}
+
+export function getWeatherDataFromNormals(n: ClimateNormals): MonthWeather[] {
+  return MONTHS_SHORT.map((month, i) => ({
+    month,
+    // weatherEmoji wants a 0–1 rain probability. Derived from the monthly total against a
+    // nominally "very wet" 200mm, which is about where a month reads as persistently rainy.
+    icon: weatherEmoji(n.tempC[i], Math.min(1, n.rainMm[i] / 200)),
+    tempC: Math.round(n.tempC[i]),
+    tempLowC: Math.round(n.tempLowC[i]),
+  }));
+}
+
+export function getRainDataFromNormals(n: ClimateNormals): MonthRain[] {
+  return MONTHS_SHORT.map((month, i) => ({ month, mm: Math.round(n.rainMm[i]) }));
 }

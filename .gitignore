@@ -39,3 +39,15 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+
+# env files (keep the committed example)
+.env
+.env.*
+!.env.example
+
+# logs / editors / local tooling
+*.log
+.vscode/
+.idea/
+coverage/
+.claude/settings.local.json

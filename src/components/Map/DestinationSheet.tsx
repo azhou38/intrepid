@@ -5,7 +5,11 @@ import {
   KeyboardAvoidingView,
 } from 'react-native';
 import type { NativeSyntheticEvent, NativeScrollEvent } from 'react-native';
-// The main vertical drag (collapsed/half/full) is driven by Reanimated + Gesture Handler
+// LinearGradient aliased to avoid colliding with Reanimated/core Animated naming below, and
+// because `Stop`/`Defs`/`Rect` read fine unqualified. Powers the hero's legibility scrim —
+// see GRADIENT_STOPS for why this replaced a stack of flat strips.
+import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'react-native-svg';
+// The main vertical drag (collapsed/full) is driven by Reanimated + Gesture Handler
 // (UI thread) instead of core Animated/PanResponder — PanResponder's move events are
 // computed on the JS thread, round-tripping through the bridge every touch-move frame, which
 // was the actual cause of drag jank. Aliased to `Reanimated` (rather than replacing the core
@@ -13,7 +17,7 @@ import type { NativeSyntheticEvent, NativeScrollEvent } from 'react-native';
 // scroll-driven tab bar overlay — still use core Animated and aren't part of this fix.
 import Reanimated, {
   useSharedValue, useAnimatedStyle, useAnimatedReaction, withTiming, runOnJS,
-  interpolate, interpolateColor, Extrapolation, Easing,
+  interpolate, Extrapolation, Easing,
 } from 'react-native-reanimated';
 import type { SharedValue } from 'react-native-reanimated';
 // ScrollView specifically comes from gesture-handler (not core RN) — only a gesture-handler-
@@ -22,18 +26,21 @@ import type { SharedValue } from 'react-native-reanimated';
 // call, which is what was still blocking the full-screen swipe-down.
 import { Gesture, GestureDetector, ScrollView } from 'react-native-gesture-handler';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { X, Check, Heart, Calendar, MapPin, Camera, Pencil, Plus, ChevronRight, ChevronUp, Lightbulb, Map, Sun, LayoutGrid } from 'lucide-react-native';
+import { X, Check, Calendar, MapPin, Camera, Pencil, Plus, ChevronRight, ChevronDown, Lightbulb, Map, Sun,
+         Users, CloudRain, Thermometer, Trash2 } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
 import * as ImagePicker from 'expo-image-picker';
-import { useStore, useDestinationPhotos } from '../../store';
-import { CONTINENT_COLORS, SPOT_CATEGORY_META, CATEGORY_ICONS } from '../../types';
-import type { Destination, PhotoEntry, Visit, SpotCategory, GoodToKnowTip, SavedDestination } from '../../types';
+import { useStore } from '../../store';
+import { SPOT_CATEGORY_META, CATEGORY_ICONS } from '../../types';
+import type { Destination, PhotoEntry, Visit, SpotCategory, GoodToKnowTip } from '../../types';
 import { SPOTS, type Spot } from '../../data/spots';
-import { DESTINATIONS } from '../../data/destinations';
-import { photoCache, thumbCache, fetchWikiThumbnail } from '../../utils/photoCache';
+import { photoCache, thumbCache, getOrFetchWikiThumbnail } from '../../utils/photoCache';
 import CircleFlag from '../CircleFlag';
+import FadeInImage from './FadeInImage';
 import ClimateDetailModal from './ClimateDetailModal';
-import { MONTHS_SHORT, getCrowdData, getWeatherData, getRainyDaysData, crowdColor } from '../../utils/travelData';
+import { MONTHS_SHORT, crowdColor } from '../../utils/travelData';
+import { useDestinationClimate } from '../../utils/climateApi';
+import type { MonthCrowd, MonthWeather, MonthRain } from '../../utils/travelData';
 import {
   parseDateStr, fmtVisitRange, fmtVisitRangeShort,
   WheelCol, DatePickerModal, VisitDateRangeModal, PhotoCollage, ReviewEditModal,
@@ -43,50 +50,47 @@ const { height: H, width: W } = Dimensions.get('window');
 const FULL_POS    = 0;
 const CLOSE_POS   = H + 40;  // fully off-screen
 const HERO_H      = Math.round(H * 0.52);
-const COMPACT_H   = 164;     // handle (28) + card row height
 // Same bottom-tab-bar reservation App.tsx's Tab.Navigator uses for its own tabBarStyle
 // height — the destination sheet lives inside that "Map" tab's screen, so anything it
 // shows must end above this, not at the raw device bottom edge, or the app's own
 // Map/Explore/Profile bar covers it.
 const BOTTOM_TAB_H = Platform.OS === 'ios' ? 88 : 64;
-const COLLAPSED_Y = Math.max(0, H - BOTTOM_TAB_H - COMPACT_H);
+// Collapsed (bottom-screen carousel) always sits at exactly the screen's vertical midpoint —
+// a fixed height, not one that hugs the carousel's own content — so its bottom edge stays
+// flush just above the app's own Map/Explore/Profile tab bar.
+const COLLAPSED_Y = H / 2;
+const COMPACT_H   = Math.max(0, (H - BOTTOM_TAB_H) - COLLAPSED_Y);
+// How far the tab bar's own top edge tucks up UNDER the hero's rounded bottom corner (its
+// marginTop below, in styles) — the tab bar's on-screen footprint beyond that overlap is
+// (measured height − this), which is exactly how much shorter the hero's own collapsed crop
+// needs to be so the tab bar (including its bottom underline) fits fully within the fixed
+// collapsed visible window instead of being cut off at its edge. See heroAnimStyle.
+const TAB_BAR_TUCK = 24;
+// Peek — slid down further than collapsed, so only a thin strip of the hero image (with the
+// destination's name) sticks up above the tab bar. Entered automatically (not by user drag)
+// whenever the map itself is panned/zoomed, so the sheet gets out of the way while still
+// showing what's selected.
+const PEEK_STRIP_H = 90;
+const PEEK_Y = Math.max(COLLAPSED_Y, (H - BOTTOM_TAB_H) - PEEK_STRIP_H);
 // Snap transitions ease to their target with no overshoot at all — a plain duration+curve
 // tween instead of a physical spring, since any spring (even lightly underdamped) reads as
 // "bouncy" here given how large a distance these snaps travel.
 const SNAP_CONFIG  = { duration: 280, easing: Easing.out(Easing.cubic) };
 const QUICK_CONFIG = { duration: 150, easing: Easing.out(Easing.cubic) };
-// Half-screen snap: sheet top sits exactly at the vertical midpoint of the screen, showing
-// only the hero (cropped shorter than usual — see HALF_HERO_H) and the tab bar, with
-// everything below the tab bar naturally falling past the bottom edge of the screen — but
-// "the bottom edge" here means just above the app's own bottom tab bar, not the device edge.
-// Small nudge down from the exact midpoint so the tab row's bottom edge (About/My Visit/
-// Spots) lines up exactly with the top of the app's own bottom Map/Explore/Profile bar —
-// the plain H/2 math landed a few pixels short of that line on device.
-const HALF_SHIFT  = 1;
-const HALF_POS    = H / 2 + HALF_SHIFT;
-const TAB_BAR_H   = 50; // approx rendered height of st.tabBar (paddingVertical 15 × 2 + text)
-// A tiny bit of extra clearance above the bottom tab bar — landing the tab row's bottom
-// edge exactly flush with it left the sliding underline's bottom sliver covered by the
-// bottom bar itself, since TAB_BAR_H is only an approximation of the real rendered height.
-const HALF_BOTTOM_GAP = 2;
-// tabBar overlaps the hero's bottom edge by 24 (its own -24 marginTop), so the hero only
-// needs to shrink enough that hero-bottom + tabBar-height - 24 lands just above
-// BOTTOM_TAB_H (plus the small gap above).
-const HALF_HERO_H = HALF_POS - TAB_BAR_H + 24 - BOTTOM_TAB_H - HALF_BOTTOM_GAP;
 
-// Collapsed/bottom-screen carousel card metrics — one card centered, neighbors peeking on
-// both sides, identical scheme to SpotSheet's own collapsed carousel (CARD_W/CARD_GAP/
-// CARD_SNAP/SIDE_PAD there).
-const COMPACT_CARD_W    = W - 64;
-const COMPACT_CARD_GAP  = 12;
-const COMPACT_CARD_SNAP = COMPACT_CARD_W + COMPACT_CARD_GAP;
-const COMPACT_SIDE_PAD  = (W - COMPACT_CARD_W) / 2;
-
-// Gradient: 200 strips × 2px, t^1.8 curve — deeper scrim for text legibility
-const GRAD_N = 200, GRAD_H = 2;
-const GRADIENT_STRIPS = Array.from({ length: GRAD_N }, (_, i) => {
-  const t = i / (GRAD_N - 1);
-  return +(t ** 1.8 * 0.94).toFixed(4);
+// Legibility scrim over the hero photo: transparent at the top, darkening toward the bottom.
+//
+// Rendered as a real SVG gradient rather than the stack of 200 flat 2px strips this used to
+// be. Each strip was a solid fill, so the "gradient" was really 200 discrete steps and the
+// edges between them read as horizontal banding — most visible across smooth areas of a photo
+// like sky. An SVG gradient is interpolated per-pixel on the GPU, so it's genuinely smooth.
+const GRAD_H_TOTAL = 400;
+// The original t^1.8 × 0.94 curve, sampled. SVG interpolates LINEARLY between stops, so the
+// curve needs enough samples to trace it — 13 makes the piecewise error imperceptible, while
+// the fill between them is still smoothly interpolated.
+const GRADIENT_STOPS = Array.from({ length: 13 }, (_, i) => {
+  const t = i / 12;
+  return { offset: t, opacity: +(t ** 1.8 * 0.94).toFixed(4) };
 });
 
 
@@ -106,19 +110,83 @@ const ICON_CAT: Record<string, string> = {
 };
 const catLabel = (icon: string) => ICON_CAT[icon] ?? 'Point of Interest';
 
-// ── Full-screen visit edit sheet ──────────────────────────────────────────────
-function VisitEditSheet({ destination, onClose }: { destination: Destination; onClose: () => void }) {
-  const insets       = useSafeAreaInsets();
-  const saved        = useStore(s => s.savedDestinations[destination.id]);
-  const updateSaved  = useStore(s => s.updateSaved);
+// ── Full-screen visit MODULE edit sheet ─────────────────────────────────────
+// Scoped to exactly ONE visit (a fresh one when `visit` is null) — like editing a single
+// Strava activity or journal entry. Every field auto-commits to the store as it changes
+// (via `onSave`), keyed on this module's own id, so sibling visits are never touched.
+function VisitModuleSheet({ destination, visit, spots, onSave, onDelete, onClose }: {
+  destination: Destination;
+  visit: Visit | null;
+  spots: Spot[];
+  onSave: (v: Visit) => void;
+  onDelete: (id: string) => void;
+  onClose: () => void;
+}) {
+  const insets = useSafeAreaInsets();
+  const unsaveDestination = useStore(s => s.unsaveDestination);
+  const saveSpotVisited   = useStore(s => s.saveSpotVisited);
+  const isLegacy = visit?.id === 'legacy';
+  const idRef = useRef(visit?.id ?? Date.now().toString());
 
-  const localVisits: Visit[] = saved?.visits
-    ?? (saved?.visitDate ? [{ id: 'legacy', startDate: saved.visitDate }] : []);
-  const localPhotos: PhotoEntry[] = saved?.photos ?? [];
+  const now = new Date();
+  const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
 
-  const [localNotes,       setLocalNotes      ] = useState(saved?.notes  ?? '');
-  const [editingVisit,     setEditingVisit    ] = useState<Visit | null | 'new'>(null);
+  const [title,       setTitle      ] = useState(visit?.title ?? '');
+  const [startDate,   setStartDate  ] = useState(visit?.startDate ?? todayStr);
+  const [endDate,     setEndDate    ] = useState<string | undefined>(visit?.endDate);
+  const [spotIds,     setSpotIds    ] = useState<Set<string>>(new Set(visit?.spotIds ?? []));
+  const [localPhotos, setLocalPhotos] = useState<PhotoEntry[]>(visit?.photos ?? []);
+  const [localNotes,  setLocalNotes ] = useState(visit?.notes ?? '');
+  const [editingDates,     setEditingDates    ] = useState(false);
   const [showReviewEditor, setShowReviewEditor] = useState(false);
+  const [spotsOpen,        setSpotsOpen       ] = useState(true);
+  // Multiline title input doesn't reliably auto-grow inside this flex-row header, so its
+  // height is driven explicitly off the measured content — otherwise a wrapped second line
+  // gets clipped/overlapped by the "Tap to edit" hint sitting right below it.
+  const [titleInputHeight, setTitleInputHeight] = useState(28);
+  const TITLE_LINE_H = 25, TITLE_MAX_LINES = 2;
+  const titleInputRef = useRef<TextInput>(null);
+
+  const commit = (patch: Partial<{ title: string; startDate: string; endDate?: string; spotIds: string[]; photos: PhotoEntry[]; notes: string }>) => {
+    const nextTitle   = patch.title      !== undefined ? patch.title      : title;
+    const nextStart   = patch.startDate  !== undefined ? patch.startDate  : startDate;
+    const nextEnd     = 'endDate' in patch              ? patch.endDate    : endDate;
+    const nextSpotIds = patch.spotIds    !== undefined ? patch.spotIds    : Array.from(spotIds);
+    const nextPhotos  = patch.photos     !== undefined ? patch.photos     : localPhotos;
+    const nextNotes   = patch.notes      !== undefined ? patch.notes      : localNotes;
+    onSave({
+      id: idRef.current,
+      title: nextTitle.trim() || undefined,
+      startDate: nextStart,
+      endDate: nextEnd,
+      spotIds: nextSpotIds.length ? nextSpotIds : undefined,
+      photos: nextPhotos.length ? nextPhotos : undefined,
+      notes: nextNotes || undefined,
+    });
+  };
+
+  // Checking a spot off marks it visited destination-wide too (consistent with how
+  // "visited" works everywhere else in the app), but unchecking only removes it from THIS
+  // visit's own list — it might still have been seen on a different trip, so un-marking it
+  // globally is a separate, more deliberate action handled elsewhere.
+  const toggleSpot = (spotId: string) => {
+    const next = new Set(spotIds);
+    if (next.has(spotId)) next.delete(spotId);
+    else { next.add(spotId); saveSpotVisited(spotId, destination.id); }
+    setSpotIds(next);
+    commit({ spotIds: Array.from(next) });
+  };
+
+  // A brand new module gets created (with today's date as a starting default) the instant
+  // this sheet opens — like starting a new recording — so it exists as its own module
+  // right away rather than waiting for the first field edit.
+  const committedOnMount = useRef(false);
+  useEffect(() => {
+    if (!visit && !committedOnMount.current) {
+      committedOnMount.current = true;
+      commit({});
+    }
+  }, []);
 
   const slide = useRef(new Animated.Value(H)).current;
   useEffect(() => {
@@ -128,18 +196,6 @@ function VisitEditSheet({ destination, onClose }: { destination: Destination; on
     Animated.timing(slide, { toValue: H, duration: 280, useNativeDriver: true }).start(onClose);
   };
 
-  const handleSaveVisit = (v: Visit) => {
-    const base = localVisits.filter(x => x.id !== 'legacy');
-    const idx  = base.findIndex(x => x.id === v.id);
-    const updated = idx >= 0 ? base.map(x => x.id === v.id ? v : x) : [...base, v];
-    updated.sort((a, b) => b.startDate.localeCompare(a.startDate));
-    updateSaved(destination.id, { visits: updated, visitDate: updated[0]?.startDate });
-    setEditingVisit(null);
-  };
-  const handleDeleteVisit = (id: string) => {
-    const updated = localVisits.filter(v => v.id !== id);
-    updateSaved(destination.id, { visits: updated, visitDate: updated[0]?.startDate });
-  };
   const handleAddPhoto = async () => {
     const perm = await ImagePicker.requestMediaLibraryPermissionsAsync();
     if (!perm.granted) {
@@ -151,80 +207,165 @@ function VisitEditSheet({ destination, onClose }: { destination: Destination; on
     });
     if (!result.canceled && result.assets.length > 0) {
       const newEntries: PhotoEntry[] = result.assets.map(a => ({ uri: a.uri, width: a.width, height: a.height }));
-      updateSaved(destination.id, { photos: [...localPhotos, ...newEntries] });
+      const updated = [...localPhotos, ...newEntries];
+      setLocalPhotos(updated);
+      commit({ photos: updated });
     }
   };
   const handleDeletePhoto = (index: number) => {
     const updated = localPhotos.filter((_, i) => i !== index);
-    updateSaved(destination.id, { photos: updated });
+    setLocalPhotos(updated);
+    commit({ photos: updated });
+  };
+
+  const handleDelete = () => {
+    Alert.alert(
+      'Remove visit?',
+      isLegacy
+        ? 'This will permanently delete your log and notes for this destination.'
+        : 'This will permanently delete this visit’s dates, photos, and notes.',
+      [
+        { text: 'Cancel', style: 'cancel' },
+        {
+          text: 'Remove', style: 'destructive',
+          onPress: () => {
+            if (isLegacy) unsaveDestination(destination.id);
+            else onDelete(idRef.current);
+            dismiss();
+          },
+        },
+      ]
+    );
   };
 
   return (
     <Modal transparent animationType="none" statusBarTranslucent>
       <Animated.View style={[esS.sheet, { transform: [{ translateY: slide }] }]}>
 
-        {/* Header */}
+        {/* Header — title doubles as this module's own trip-name field. */}
         <View style={[esS.header, { paddingTop: insets.top + 10 }]}>
           <Pressable onPress={dismiss} style={esS.closeBtn} hitSlop={12}>
             <X size={18} color="#111827" />
           </Pressable>
-          <Text style={esS.headerTitle}>{destination.name}</Text>
-          <View style={{ width: 36 }} />
+          <View style={esS.headerTitleEditWrap}>
+            <TextInput
+              ref={titleInputRef}
+              style={[esS.headerTitleInput, {
+                height: Math.min(TITLE_LINE_H * TITLE_MAX_LINES + 3, Math.max(28, titleInputHeight)),
+              }]}
+              value={title}
+              onChangeText={text => {
+                // Multiline TextInputs insert a literal "\n" for the return key instead of
+                // firing a distinct submit event on iOS — stripping it here and blurring is
+                // what makes Enter "complete" the field instead of adding a new line.
+                const hadNewline = text.includes('\n');
+                const clean = hadNewline ? text.replace(/\n/g, '') : text;
+                setTitle(clean);
+                commit({ title: clean });
+                if (hadNewline) titleInputRef.current?.blur();
+              }}
+              onContentSizeChange={e => setTitleInputHeight(e.nativeEvent.contentSize.height)}
+              placeholder={destination.name}
+              placeholderTextColor="#9CA3AF"
+              maxLength={60}
+              textAlign="center"
+              multiline
+              returnKeyType="done"
+              blurOnSubmit
+              onSubmitEditing={() => titleInputRef.current?.blur()}
+            />
+            <View style={esS.headerTitleHintRow}>
+              <Pencil size={10} color="#9CA3AF" />
+              <Text style={esS.headerTitleHintTxt}>Tap to edit</Text>
+            </View>
+          </View>
+          <Pressable style={esS.headerSaveBtn} onPress={dismiss} hitSlop={8}>
+            <Text style={esS.headerSaveBtnTxt}>Save</Text>
+          </Pressable>
         </View>
 
-        <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
+        {/* No KeyboardAvoidingView here (deliberately) — this screen has no TextInput of its
+            own; the only text entry ("Notes") opens ReviewEditModal, a SEPARATE stacked
+            Modal with its own keyboard handling. A KeyboardAvoidingView protecting nothing
+            was also the actual bug behind "the edit page doesn't appear": flex:1 on a
+            KeyboardAvoidingView measures unreliably specifically when nested inside a
+            statusBarTranslucent Modal (a known RN interaction) — it was collapsing to zero
+            height, so everything below the header (a sibling, unaffected) silently vanished
+            while the map showed through underneath. */}
+        <View style={{ flex: 1 }}>
           <ScrollView
             contentContainerStyle={esS.scrollContent}
             keyboardShouldPersistTaps="handled"
             showsVerticalScrollIndicator={false}
           >
 
-            {/* ── VISIT DATES ─────────────────────────────────────── */}
+            {/* ── DATES ───────────────────────────────────────────── */}
             <View style={esS.section}>
               <View style={esS.sectionHead}>
-                <Text style={esS.sectionTitle}>Visit Dates</Text>
-                <Pressable style={esS.addBtn} onPress={() => setEditingVisit('new')}>
-                  <Plus size={13} color="#6366F1" />
-                  <Text style={esS.addBtnTxt}>Add visit</Text>
+                <Text style={esS.sectionTitle}>Dates</Text>
+              </View>
+              <View style={esS.visitRow}>
+                <View style={esS.visitDateBadge}>
+                  <Calendar size={13} color="#6366F1" />
+                  <Text style={esS.visitDateTxt}>{fmtVisitRange({ id: idRef.current, startDate, endDate })}</Text>
+                </View>
+                <Pressable onPress={() => setEditingDates(true)} hitSlop={8}>
+                  <Text style={esS.editTxt}>Edit</Text>
                 </Pressable>
               </View>
-              {localVisits.length === 0 ? (
-                <Pressable style={esS.emptyBanner} onPress={() => setEditingVisit('new')}>
-                  <Calendar size={15} color="#9CA3AF" />
-                  <Text style={esS.emptyBannerTxt}>Tap to add visit dates</Text>
-                </Pressable>
-              ) : (
-                localVisits.map((v, i) => (
-                  <View key={v.id} style={[esS.visitRow, i > 0 && esS.visitRowBorder]}>
-                    <View style={esS.visitDateBadge}>
-                      <Calendar size={13} color="#6366F1" />
-                      <Text style={esS.visitDateTxt}>{fmtVisitRange(v)}</Text>
-                    </View>
-                    <View style={{ flexDirection: 'row', gap: 16 }}>
-                      <Pressable onPress={() => setEditingVisit(v)} hitSlop={8}>
-                        <Text style={esS.editTxt}>Edit</Text>
-                      </Pressable>
-                      <Pressable onPress={() => handleDeleteVisit(v.id)} hitSlop={8}>
-                        <Text style={esS.deleteTxt}>Delete</Text>
-                      </Pressable>
-                    </View>
-                  </View>
-                ))
-              )}
             </View>
+
+            {/* ── SPOTS VISITED ───────────────────────────────────── */}
+            {spots.length > 0 && (
+              <View style={esS.section}>
+                <Pressable style={esS.sectionHead} onPress={() => setSpotsOpen(o => !o)}>
+                  <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
+                    <Text style={esS.sectionTitle}>Spots Visited</Text>
+                    {spotIds.size > 0 && (
+                      <View style={esS.spotsCountBadge}>
+                        <Text style={esS.spotsCountBadgeTxt}>{spotIds.size}</Text>
+                      </View>
+                    )}
+                  </View>
+                  <ChevronDown
+                    size={16} color="#9CA3AF"
+                    style={{ transform: [{ rotate: spotsOpen ? '180deg' : '0deg' }] }}
+                  />
+                </Pressable>
+                {spotsOpen && (
+                  <ScrollView style={esS.spotsList} bounces={false} showsVerticalScrollIndicator={false}>
+                    {spots.map(spot => {
+                      const checked = spotIds.has(spot.id);
+                      return (
+                        <Pressable key={spot.id} style={esS.spotRow} onPress={() => toggleSpot(spot.id)}>
+                          <Text style={esS.spotRowIcon}>{spot.icon}</Text>
+                          <Text style={esS.spotRowTxt} numberOfLines={1}>{spot.name}</Text>
+                          <View style={[esS.spotToggle, checked && esS.spotToggleOn]}>
+                            {checked && <Check size={11} color="white" strokeWidth={2.5} />}
+                          </View>
+                        </Pressable>
+                      );
+                    })}
+                  </ScrollView>
+                )}
+              </View>
+            )}
 
             {/* ── PHOTOS ──────────────────────────────────────────── */}
             <View style={esS.section}>
               <View style={esS.sectionHead}>
                 <Text style={esS.sectionTitle}>Photos</Text>
+                <Pressable style={esS.photosAddBtn} onPress={handleAddPhoto} hitSlop={8}>
+                  <Text style={esS.photosAddBtnTxt}>Add +</Text>
+                </Pressable>
               </View>
-              <PhotoCollage photos={localPhotos} onAdd={handleAddPhoto} onDelete={handleDeletePhoto} />
+              <PhotoCollage photos={localPhotos} onAdd={handleAddPhoto} onDelete={handleDeletePhoto} hideAddMore />
             </View>
 
-            {/* ── REVIEW ──────────────────────────────────────────── */}
+            {/* ── NOTES ───────────────────────────────────────────── */}
             <View style={esS.section}>
               <View style={esS.sectionHead}>
-                <Text style={esS.sectionTitle}>My Review</Text>
+                <Text style={esS.sectionTitle}>Notes</Text>
               </View>
               <Pressable style={esS.reviewPreview} onPress={() => setShowReviewEditor(true)}>
                 {localNotes
@@ -237,20 +378,26 @@ function VisitEditSheet({ destination, onClose }: { destination: Destination; on
               </Pressable>
             </View>
 
-            {/* ── SAVE BUTTON ─────────────────────────────────────── */}
-            <Pressable style={esS.saveBtn} onPress={dismiss}>
-              <Text style={esS.saveBtnTxt}>Save Changes</Text>
+            {/* ── DELETE ──────────────────────────────────────────── */}
+            <Pressable style={esS.deleteTripBtn} onPress={handleDelete}>
+              <Trash2 size={15} color="#EF4444" />
+              <Text style={esS.deleteTripBtnTxt}>Remove Visit</Text>
             </Pressable>
 
           </ScrollView>
-        </KeyboardAvoidingView>
+        </View>
       </Animated.View>
 
-      {editingVisit !== null && (
+      {editingDates && (
         <VisitDateRangeModal
-          visit={editingVisit === 'new' ? null : editingVisit}
-          onDone={handleSaveVisit}
-          onCancel={() => setEditingVisit(null)}
+          visit={{ id: idRef.current, title, startDate, endDate }}
+          onDone={v => {
+            setStartDate(v.startDate);
+            setEndDate(v.endDate);
+            commit({ startDate: v.startDate, endDate: v.endDate });
+            setEditingDates(false);
+          }}
+          onCancel={() => setEditingDates(false)}
         />
       )}
       {showReviewEditor && (
@@ -258,7 +405,7 @@ function VisitEditSheet({ destination, onClose }: { destination: Destination; on
           value={localNotes}
           onSave={text => {
             setLocalNotes(text);
-            updateSaved(destination.id, { notes: text || undefined });
+            commit({ notes: text });
             setShowReviewEditor(false);
           }}
           onCancel={() => setShowReviewEditor(false)}
@@ -268,14 +415,25 @@ function VisitEditSheet({ destination, onClose }: { destination: Destination; on
   );
 }
 const esS = StyleSheet.create({
-  sheet:         { ...StyleSheet.absoluteFillObject, backgroundColor: '#F3F4F6' } as any,
+  sheet:         { ...StyleSheet.absoluteFill, backgroundColor: '#F3F4F6' } as any,
   header:        { flexDirection:'row', alignItems:'center', justifyContent:'space-between',
-                   paddingHorizontal:16, paddingBottom:12,
+                   paddingHorizontal:16, paddingBottom:16,
                    borderBottomWidth:StyleSheet.hairlineWidth, borderBottomColor:'#E5E7EB',
                    backgroundColor:'white' },
   closeBtn:      { width:36, height:36, borderRadius:18, backgroundColor:'#F3F4F6',
                    alignItems:'center', justifyContent:'center' },
-  headerTitle:   { fontSize:17, fontWeight:'700', color:'#111827', flex:1, textAlign:'center' },
+  headerSaveBtn:   { paddingHorizontal:14, paddingVertical:8, borderRadius:14,
+                     backgroundColor:'#059669' },
+  headerSaveBtnTxt:{ fontSize:14, fontWeight:'700', color:'white' },
+  headerTitle:   { fontSize:21, fontWeight:'800', color:'#111827', flex:1, textAlign:'center',
+                   marginHorizontal:12 },
+  headerTitleEditWrap:{ flex:1, alignItems:'center', marginHorizontal:12 },
+  headerTitleInput:{ fontSize:21, fontWeight:'800', color:'#111827', padding:0, maxWidth:'100%',
+                     textAlignVertical:'center', lineHeight:25,
+                     borderBottomWidth:1, borderBottomColor:'#D1D5DB', borderStyle:'dashed',
+                     paddingBottom:3 },
+  headerTitleHintRow:{ flexDirection:'row', alignItems:'center', gap:3, marginTop:3 },
+  headerTitleHintTxt:{ fontSize:10, color:'#9CA3AF' },
   scrollContent: { padding:16, gap:16, paddingBottom:60 },
   section:       { backgroundColor:'white', borderRadius:18, overflow:'hidden',
                    borderWidth:1, borderColor:'#F0F1F3' },
@@ -283,9 +441,9 @@ const esS = StyleSheet.create({
                    paddingHorizontal:16, paddingTop:16, paddingBottom:12,
                    borderBottomWidth:StyleSheet.hairlineWidth, borderBottomColor:'#F0F1F3' },
   sectionTitle:  { fontSize:15, fontWeight:'700', color:'#111827' },
-  addBtn:        { flexDirection:'row', alignItems:'center', gap:4, paddingHorizontal:10, paddingVertical:5,
-                   borderRadius:10, backgroundColor:'#EEF2FF' },
-  addBtnTxt:     { fontSize:12, fontWeight:'600', color:'#6366F1' },
+  photosAddBtn:  { paddingHorizontal:10, paddingVertical:5, borderRadius:12,
+                   backgroundColor:'#ECFDF5', alignItems:'center', justifyContent:'center' },
+  photosAddBtnTxt:{ fontSize:12, fontWeight:'700', color:'#16A34A' },
   emptyBanner:   { flexDirection:'row', alignItems:'center', gap:10,
                    paddingHorizontal:16, paddingVertical:14 },
   emptyBannerTxt:{ fontSize:14, color:'#9CA3AF' },
@@ -296,14 +454,26 @@ const esS = StyleSheet.create({
   visitDateTxt:  { fontSize:14, fontWeight:'600', color:'#374151' },
   editTxt:       { fontSize:13, fontWeight:'600', color:'#6366F1' },
   deleteTxt:     { fontSize:13, fontWeight:'600', color:'#EF4444' },
+  spotsCountBadge:   { minWidth:20, height:20, borderRadius:6, backgroundColor:'#E5E7EB',
+                       paddingHorizontal:5, alignItems:'center', justifyContent:'center' },
+  spotsCountBadgeTxt:{ fontSize:11, fontWeight:'800', color:'#6B7280', lineHeight:14 },
+  spotsList:         { maxHeight:260 },
+  spotRow:           { flexDirection:'row', alignItems:'center', gap:10,
+                       paddingHorizontal:16, paddingVertical:12,
+                       borderTopWidth:StyleSheet.hairlineWidth, borderTopColor:'#F3F4F6' },
+  spotRowIcon:       { fontSize:16 },
+  spotRowTxt:        { flex:1, fontSize:14, color:'#111827' },
+  spotToggle:        { width:22, height:22, borderRadius:11, borderWidth:2, borderColor:'#D1D5DB',
+                       alignItems:'center', justifyContent:'center' },
+  spotToggleOn:      { backgroundColor:'#16A34A', borderColor:'#16A34A' },
   reviewPreview:    { paddingHorizontal:16, paddingTop:12, paddingBottom:16, minHeight:80 },
   reviewPreviewTxt: { fontSize:15, color:'#374151', lineHeight:24 },
   reviewPreviewPh:  { fontSize:15, color:'#C4C9D4', lineHeight:24 },
   reviewEditHint:   { flexDirection:'row', alignItems:'center', gap:4, marginTop:10 },
   reviewEditHintTxt:{ fontSize:12, color:'#9CA3AF' },
-  saveBtn:          { backgroundColor:'#059669', borderRadius:16, paddingVertical:15,
-                      alignItems:'center', marginTop:4 },
-  saveBtnTxt:       { fontSize:16, fontWeight:'700', color:'white' },
+  deleteTripBtn:    { flexDirection:'row', alignItems:'center', justifyContent:'center', gap:6,
+                      paddingVertical:14, marginTop:4 },
+  deleteTripBtnTxt: { fontSize:14, fontWeight:'600', color:'#EF4444' },
 });
 
 // ── Log Moment (first-visit quick-log) ────────────────────────────────────────
@@ -377,44 +547,6 @@ const lS = StyleSheet.create({
 
 
 
-// ── Spot photo card (shared: Spots Visited + Highlights) ─────────────────────
-function SpotPhotoCard({ spot, color, onPress }: {
-  spot: Spot;
-  color: string;
-  onPress?: () => void;
-}) {
-  // Small preview card (130px) — small thumbnail keeps the horizontal spot rail snappy.
-  const cacheKey = `spot_${spot.id}`;
-  const [photoUrl, setPhotoUrl] = useState<string | null>(thumbCache.get(cacheKey) ?? null);
-  useEffect(() => {
-    if (thumbCache.has(cacheKey)) { setPhotoUrl(thumbCache.get(cacheKey)!); return; }
-    setPhotoUrl(null);
-    fetchWikiThumbnail(spot.name, 400).then(url => {
-      if (url) { thumbCache.set(cacheKey, url); setPhotoUrl(url); }
-    });
-  }, [spot.id]);
-
-  const cat = SPOT_CATEGORY_META[spot.category];
-
-  return (
-    <Pressable style={st.spcCard} onPress={onPress}>
-      {photoUrl
-        ? <Image source={{ uri: photoUrl }} style={[StyleSheet.absoluteFill, { borderRadius: 16 }]} resizeMode="cover" />
-        : <View style={[st.spcPlaceholder, { backgroundColor: color + '22' }]}>
-            <Text style={st.spcPlaceholderIcon}>{spot.icon}</Text>
-          </View>
-      }
-      <View style={st.spcOverlay} />
-      {!!cat && (
-        <View style={st.spcCatTag}>
-          <Text style={st.spcCatTagTxt} numberOfLines={1}>{cat.icon} {cat.label}</Text>
-        </View>
-      )}
-      <Text style={st.spcName} numberOfLines={2}>{spot.name}</Text>
-    </Pressable>
-  );
-}
-
 // ── "At a glance" — the destination's top 3 reasons to visit, as rows within a single
 // connected group (not separate tappable cards): a light-green numbered badge on the left,
 // the reason as the row's title, with hairline dividers between rows instead of individual
@@ -450,10 +582,12 @@ function TipItem({ tip, isLast }: { tip: GoodToKnowTip; isLast: boolean }) {
 // ── "When to visit" — a best-time-to-go card (icon, headline, subtitle, destination photo)
 // followed by a 3×12 grid: crowd level, rainfall, and temperature, one colored dot per
 // month, plus a link into the full ClimateDetailModal breakdown.
-function rainDotColor(days: number): string {
-  if (days <= 4) return '#BFDBFE';
-  if (days <= 9) return '#60A5FA';
-  if (days <= 14) return '#3B82F6';
+// Monthly rainfall totals, mm. Bands chosen around how a month actually reads: under ~25mm is
+// a dry month, ~150mm+ is a properly wet one.
+function rainDotColor(mm: number): string {
+  if (mm <= 25) return '#BFDBFE';
+  if (mm <= 75) return '#60A5FA';
+  if (mm <= 150) return '#3B82F6';
   return '#1D4ED8';
 }
 function tempDotColor(tempC: number): string {
@@ -464,84 +598,172 @@ function tempDotColor(tempC: number): string {
   return '#EF4444';
 }
 
-function WhenToVisitCard({ destination, bestMonths, photoUrl, onOpenClimateDetail }: {
+// Builds the card's headline from THIS destination's own numbers, rather than the fixed
+// "Pleasant weather and fewer crowds around {months}" every destination used to get. That
+// template didn't just read generically, it could be plainly wrong — asserting pleasant
+// weather and thin crowds for a tropical destination whose best window is still humid and
+// busy, or for a rank-1 city that has no quiet month at all.
+//
+// Each clause is only included when the data supports it, so the sentence says less when
+// there's less to say instead of overclaiming.
+function buildWhenToVisitSummary(
+  crowdData: MonthCrowd[], weatherData: MonthWeather[], rainData: MonthRain[],
+): string {
+  const bestIdx = crowdData.map((c, i) => (c.isBest ? i : -1)).filter(i => i >= 0);
+  const avg = (ns: number[]) => ns.reduce((a, b) => a + b, 0) / (ns.length || 1);
+
+  // Months as RANGES, not a comma list. Good windows are usually contiguous, so a plain list
+  // produced things like "Jan, Feb, Mar, Apr, Sep, Oct, Nov and Dec" — technically right,
+  // impossible to read. Consecutive runs collapse to "Sep–Apr", including across the Dec→Jan
+  // boundary, which is exactly where a southern-hemisphere or tropical dry season sits.
+  const formatMonths = (idx: number[]): string => {
+    if (idx.length === 12) return 'any time of year';
+    const runs: number[][] = [];
+    for (const i of idx) {
+      const last = runs[runs.length - 1];
+      if (last && i === last[last.length - 1] + 1) last.push(i);
+      else runs.push([i]);
+    }
+    // Dec and Jan both present → the year wraps, so fold the trailing run into the leading one.
+    if (runs.length > 1 && runs[0][0] === 0 && runs[runs.length - 1].slice(-1)[0] === 11) {
+      runs[0] = [...runs.pop()!, ...runs[0]];
+    }
+    const label = (r: number[]) => r.length === 1
+      ? MONTHS_SHORT[r[0]]
+      : `${MONTHS_SHORT[r[0]]}–${MONTHS_SHORT[r[r.length - 1]]}`;
+    const parts = runs.map(label);
+    return parts.length <= 1 ? parts[0] ?? ''
+      : `${parts.slice(0, -1).join(', ')} and ${parts[parts.length - 1]}`;
+  };
+
+  // No month clears the "quiet enough AND temperate enough" bar — say so plainly rather
+  // than inventing a best window.
+  if (bestIdx.length === 0) {
+    const mildest = weatherData
+      .map((w, i) => ({ i, off: Math.abs(w.tempC - 20) }))
+      .sort((a, b) => a.off - b.off)[0].i;
+    return `Busy or extreme most of the year — ${MONTHS_SHORT[mildest]} is the gentlest month.`;
+  }
+
+  // Which criteria are worth mentioning depends on the destination. A metric earns a place
+  // in the sentence by how much it VARIES across the year — that's what actually makes one
+  // month better than another. Rainfall is the whole story in the tropics and noise in the
+  // desert; temperature is decisive in Reykjavík and irrelevant in Bali, where every month
+  // is ~30°C. Listing all three regardless was what made every card read the same.
+  const spread = (ns: number[]) => Math.max(...ns) - Math.min(...ns);
+  const t = avg(bestIdx.map(i => weatherData[i].tempC));
+  const rain = avg(bestIdx.map(i => rainData[i].mm));
+  const crowd = avg(bestIdx.map(i => crowdData[i].level));
+
+  const metrics = [
+    // Scores are each normalised against that metric's own plausible full range, so they're
+    // comparable: 5 crowd levels, ~20 days of rain, ~30°C of seasonal swing.
+    {
+      key: 'temp',
+      score: spread(weatherData.map(w => w.tempC)) / 30,
+      word: t < 5 ? 'cold' : t < 14 ? 'cool' : t < 22 ? 'mild' : t < 29 ? 'warm' : 'hot',
+    },
+    {
+      key: 'rain',
+      // Normalised against ~120mm of seasonal swing, the point at which a wet season is
+      // clearly a distinct thing rather than month-to-month noise.
+      score: spread(rainData.map(r => r.mm)) / 120,
+      word: rain <= 25 ? 'dry' : rain <= 75 ? 'mostly dry' : 'damp',
+    },
+    {
+      key: 'crowds',
+      score: spread(crowdData.map(c => c.level)) / 4,
+      word: crowd <= 2 ? 'quiet' : crowd <= 3 ? 'not too busy' : 'still busy',
+    },
+  ].sort((a, b) => b.score - a.score);
+
+  // Always lead with the strongest signal; add the runner-up only if it's genuinely
+  // seasonal too, so flat metrics stay out of the sentence entirely.
+  const chosen = metrics.slice(0, metrics[1].score >= 0.35 ? 2 : 1);
+  const phrase = chosen.map(m => m.word).join(' and ');
+
+  // Only when crowds are the headline AND there's a real peak to dodge — otherwise this is
+  // padding. Stays a comma clause so the summary remains a single sentence.
+  const peak = crowdData.reduce((m, c, i) => (c.level > crowdData[m].level ? i : m), 0);
+  const peakClause = chosen[0].key === 'crowds' && crowdData[peak].level >= 4 && !bestIdx.includes(peak)
+    ? `, avoiding the ${MONTHS_SHORT[peak]} peak`
+    : '';
+
+  const sentence = `${phrase} around ${formatMonths(bestIdx)}${peakClause}.`;
+  return sentence.charAt(0).toUpperCase() + sentence.slice(1);
+}
+
+function WhenToVisitCard({ destination, onOpenClimateDetail }: {
   destination: Destination;
-  bestMonths: string;
-  photoUrl?: string | null;
   onOpenClimateDetail?: () => void;
 }) {
-  const crowdData = useMemo(() =>
-    getCrowdData(destination.continent, destination.category, destination.coordinates.latitude, destination.rank),
-  [destination.id]);
-  const weatherData = useMemo(() =>
-    getWeatherData(destination.coordinates.latitude, destination.category),
-  [destination.id]);
-  const rainData = useMemo(() =>
-    getRainyDaysData(destination.coordinates.latitude, destination.category),
-  [destination.id]);
+  // Real observed normals where available, synthetic curves while loading/offline — and all
+  // three series from one source so they can never disagree with each other.
+  const { weather: weatherData, rain: rainData, crowds: crowdData } =
+    useDestinationClimate(destination);
+
+  const summary = useMemo(
+    () => buildWhenToVisitSummary(crowdData, weatherData, rainData),
+    [crowdData, weatherData, rainData],
+  );
+
+  // One row per metric, each with its own icon so the grid is readable without a colour key
+  // telling you which row is which.
+  const rows = [
+    { key: 'crowds', Icon: Users,       label: 'Crowds', dots: crowdData.map(c => crowdColor(c.level)) },
+    { key: 'rain',   Icon: CloudRain,   label: 'Rain',   dots: rainData.map(r => rainDotColor(r.mm)) },
+    { key: 'temp',   Icon: Thermometer, label: 'Temp',   dots: weatherData.map(w => tempDotColor(w.tempC)) },
+  ];
 
   return (
     <View style={st.wtvCard}>
+      {/* The recommendation IS the headline — the old "Best time to go" title sat above it
+          saying the same thing twice, and the destination thumbnail repeated the hero photo
+          a few hundred pixels up. Both gone; the sentence now leads at full contrast. */}
       <View style={st.wtvHeadRow}>
         <View style={st.wtvIconWrap}>
           <Sun size={18} color="#16A34A" />
         </View>
-        <View style={{ flex: 1 }}>
-          <Text style={st.wtvTitle}>Best time to go</Text>
-          <Text style={st.wtvSubtitle} numberOfLines={2}>
-            {bestMonths ? `Pleasant weather and fewer crowds around ${bestMonths}.` : 'Pleasant weather, fewer crowds, and lots to explore.'}
-          </Text>
-        </View>
-        {!!photoUrl && (
-          <Image source={{ uri: photoUrl }} style={st.wtvPhoto} resizeMode="cover" />
-        )}
+        <Text style={st.wtvLede}>{summary}</Text>
       </View>
 
       <View style={st.wtvGrid}>
         <View style={st.wtvGridRow}>
           <View style={st.wtvRowLabel} />
           {MONTHS_SHORT.map((m, i) => (
-            <Text key={i} style={[st.wtvMonthTxt, crowdData[i]?.isBest && st.wtvMonthTxtBest]}>{m[0]}</Text>
-          ))}
-        </View>
-        <View style={st.wtvGridRow}>
-          <Text style={st.wtvRowLabelTxt}>Crowds</Text>
-          {crowdData.map((c, i) => (
             <View key={i} style={st.wtvDotCell}>
-              <View style={[st.wtvDot, { backgroundColor: crowdColor(c.level) }]} />
+              {/* Best months get a filled chip rather than just green text — the whole point
+                  of the card is spotting them, and coloured letters alone were easy to miss */}
+              <View style={[st.wtvMonthChip, crowdData[i]?.isBest && st.wtvMonthChipBest]}>
+                <Text style={[st.wtvMonthTxt, crowdData[i]?.isBest && st.wtvMonthTxtBest]}>{m[0]}</Text>
+              </View>
             </View>
           ))}
         </View>
-        <View style={st.wtvGridRow}>
-          <Text style={st.wtvRowLabelTxt}>Rain</Text>
-          {rainData.map((r, i) => (
-            <View key={i} style={st.wtvDotCell}>
-              <View style={[st.wtvDot, { backgroundColor: rainDotColor(r.days) }]} />
-            </View>
-          ))}
-        </View>
-        <View style={st.wtvGridRow}>
-          <Text style={st.wtvRowLabelTxt}>Temp</Text>
-          {weatherData.map((w, i) => (
-            <View key={i} style={st.wtvDotCell}>
-              <View style={[st.wtvDot, { backgroundColor: tempDotColor(w.tempC) }]} />
-            </View>
-          ))}
-        </View>
-      </View>
 
-      <View style={st.wtvLegendRow}>
-        {[
-          { label: 'Low', color: crowdColor(1) },
-          { label: 'Moderate', color: crowdColor(3) },
-          { label: 'High', color: crowdColor(5) },
-        ].map(l => (
-          <View key={l.label} style={st.wtvLegendItem}>
-            <View style={[st.wtvLegendDot, { backgroundColor: l.color }]} />
-            <Text style={st.wtvLegendTxt}>{l.label}</Text>
+        {rows.map(({ key, Icon, label, dots }) => (
+          <View key={key} style={st.wtvGridRow}>
+            <View style={st.wtvRowLabel}>
+              <Icon size={13} color="#9CA3AF" strokeWidth={2} />
+              <Text style={st.wtvRowLabelTxt}>{label}</Text>
+            </View>
+            {dots.map((color, i) => (
+              <View key={i} style={st.wtvDotCell}>
+                <View style={[st.wtvDot, { backgroundColor: color }]} />
+              </View>
+            ))}
           </View>
         ))}
       </View>
+
+      {/* Replaces a Low/Moderate/High swatch key that only ever described the Crowds row —
+          Rain is drawn in blues and Temp starts blue for cold, so two thirds of the grid had
+          no legend at all. Each metric keeps its own intuitive palette (blue reads as
+          rain/cold at a glance); what they genuinely share is the DIRECTION, which is all a
+          caption needs to say. */}
+      <Text style={st.wtvScaleTxt}>
+        Deeper colour means more crowds, rainfall or heat.
+      </Text>
 
       <Pressable style={st.wtvGuideBtn} onPress={onOpenClimateDetail}>
         <Calendar size={16} color="#16A34A" />
@@ -553,89 +775,21 @@ function WhenToVisitCard({ destination, bestMonths, photoUrl, onOpenClimateDetai
 }
 
 // ── Highlight card: photo + category badge + name + short bio ────────────────
-// ── Compact-card carousel card — one per destination in the country, shown in the
-// collapsed/bottom-screen view's horizontal peek-adjacent carousel (mirrors SpotSheet's own
-// CarouselCard: a self-contained card that fetches its own thumbnail, active state
-// highlighted with a colored border). Reuses the same visual pieces (thumb, name, status
-// pill, meta row, spot count, Open button) the single static compact row used to have.
-function CompactCarouselCard({ dest, isActive, savedDestinations, onPress }: {
-  dest: Destination;
-  isActive: boolean;
-  savedDestinations: Record<string, SavedDestination>;
-  onPress: () => void;
-}) {
-  const cacheKey = dest.id;
-  const [thumb, setThumb] = useState<string | null>(thumbCache.get(cacheKey) ?? null);
-  useEffect(() => {
-    if (thumbCache.has(cacheKey)) { setThumb(thumbCache.get(cacheKey)!); return; }
-    setThumb(null);
-    fetchWikiThumbnail(dest.name, 200).then(url => {
-      if (url) { thumbCache.set(cacheKey, url); setThumb(url); }
-    });
-  }, [dest.id]);
 
-  const color = CONTINENT_COLORS[dest.continent];
-  const saved      = savedDestinations[dest.id];
-  const isVisited  = saved?.type === 'visited';
-  const isWishlist = !!(saved?.isWishlisted || saved?.type === 'wishlist');
-  const spotCount  = SPOTS.filter(s => s.destinationId === dest.id).length;
-
-  return (
-    <Pressable
-      style={[st.compactCarouselCard, isActive && st.compactCarouselCardActive, { width: COMPACT_CARD_W, marginRight: COMPACT_CARD_GAP }]}
-      onPress={onPress}
-    >
-      <View style={[st.compactThumb, { backgroundColor: color + '22' }]}>
-        {thumb
-          ? <Image source={{ uri: thumb }} style={StyleSheet.absoluteFill} resizeMode="cover" />
-          : <Text style={st.compactThumbIcon}>{dest.icon ?? '📍'}</Text>}
-        {/* Badge overlay mirrors SpotSheet's own carousel-card bookmark, but keeps both
-            real states (visited/wishlist) as distinct icon+color rather than collapsing to
-            a single generic bookmark — destinations actually have two states to show. */}
-        {(isVisited || isWishlist) && (
-          <View style={st.compactBadge}>
-            {isVisited
-              ? <Check size={12} color="#059669" strokeWidth={3} />
-              : <Heart size={12} color="#DB2777" strokeWidth={2.5} fill="#DB2777" />}
-          </View>
-        )}
-      </View>
-      <View style={st.compactInfo}>
-        {/* Country/continent dropped — every card in this carousel is already within the
-            same country, so it was redundant. Category takes that row instead, matching
-            SpotSheet's own small gray category line above the name. */}
-        <Text style={st.compactCat} numberOfLines={1}>
-          {CATEGORY_ICONS[dest.category]}  {dest.category}
-        </Text>
-        <Text style={st.compactName} numberOfLines={1}>{dest.name}</Text>
-        {spotCount > 0 && (
-          <View style={st.compactStatRow}>
-            <MapPin size={12} color="#16A34A" strokeWidth={2.5} />
-            <Text style={st.compactStatTxt}>{spotCount} spot{spotCount !== 1 ? 's' : ''}</Text>
-          </View>
-        )}
-        {!!(dest.tagline ?? dest.description) && (
-          <Text style={st.compactBio} numberOfLines={2}>{dest.tagline ?? dest.description}</Text>
-        )}
-        {isActive && (
-          <View style={st.compactExpandRow}>
-            <ChevronUp size={13} color="#16A34A" strokeWidth={2.5} />
-            <Text style={st.compactExpandTxt}>Swipe up for details</Text>
-          </View>
-        )}
-      </View>
-    </Pressable>
-  );
-}
-
-function HighlightCard({ spot, color, onPress }: { spot: Spot; color: string; onPress?: () => void }) {
+function HighlightCard({ spot, onPress }: { spot: Spot; onPress?: () => void }) {
   const cacheKey = `spot_${spot.id}`;
   const [photoUrl, setPhotoUrl] = useState<string | null>(thumbCache.get(cacheKey) ?? null);
+  const photoWasCachedRef = useRef(thumbCache.has(cacheKey));
   useEffect(() => {
-    if (thumbCache.has(cacheKey)) { setPhotoUrl(thumbCache.get(cacheKey)!); return; }
+    if (thumbCache.has(cacheKey)) {
+      photoWasCachedRef.current = true;
+      setPhotoUrl(thumbCache.get(cacheKey)!);
+      return;
+    }
+    photoWasCachedRef.current = false;
     setPhotoUrl(null);
-    fetchWikiThumbnail(spot.name, 400).then(url => {
-      if (url) { thumbCache.set(cacheKey, url); setPhotoUrl(url); }
+    getOrFetchWikiThumbnail(cacheKey, thumbCache, spot.name, 400).then(url => {
+      if (url) setPhotoUrl(url);
     });
   }, [spot.id]);
 
@@ -645,10 +799,8 @@ function HighlightCard({ spot, color, onPress }: { spot: Spot; color: string; on
     <Pressable style={st.hlCard} onPress={onPress}>
       <View style={st.hlImageWrap}>
         {photoUrl
-          ? <Image source={{ uri: photoUrl }} style={StyleSheet.absoluteFill} resizeMode="cover" />
-          : <View style={[st.spcPlaceholder, { backgroundColor: color + '22' }]}>
-              <Text style={st.spcPlaceholderIcon}>{spot.icon}</Text>
-            </View>
+          ? <FadeInImage instant={photoWasCachedRef.current} source={{ uri: photoUrl }} style={StyleSheet.absoluteFill} resizeMode="cover" />
+          : <View style={[st.spcPlaceholder, { backgroundColor: '#111827' }]} />
         }
         <View style={st.hlBadge}>
           <Text style={st.hlBadgeIcon}>{cat?.icon ?? spot.icon}</Text>
@@ -662,31 +814,42 @@ function HighlightCard({ spot, color, onPress }: { spot: Spot; color: string; on
 
 // ── Spot grid card — same visual language as HighlightCard (photo, category badge,
 // name, bio) but flex-basis'd for a 2-column wrapping grid instead of horizontal scroll.
-function SpotGridCard({ spot, color, onPress }: { spot: Spot; color: string; onPress?: () => void }) {
+function SpotGridCard({ spot, onPress }: { spot: Spot; onPress?: () => void }) {
   const cacheKey = `spot_${spot.id}`;
   const [photoUrl, setPhotoUrl] = useState<string | null>(thumbCache.get(cacheKey) ?? null);
+  const photoWasCachedRef = useRef(thumbCache.has(cacheKey));
   useEffect(() => {
-    if (thumbCache.has(cacheKey)) { setPhotoUrl(thumbCache.get(cacheKey)!); return; }
+    if (thumbCache.has(cacheKey)) {
+      photoWasCachedRef.current = true;
+      setPhotoUrl(thumbCache.get(cacheKey)!);
+      return;
+    }
+    photoWasCachedRef.current = false;
     setPhotoUrl(null);
-    fetchWikiThumbnail(spot.name, 400).then(url => {
-      if (url) { thumbCache.set(cacheKey, url); setPhotoUrl(url); }
+    getOrFetchWikiThumbnail(cacheKey, thumbCache, spot.name, 400).then(url => {
+      if (url) setPhotoUrl(url);
     });
   }, [spot.id]);
 
   const cat = SPOT_CATEGORY_META[spot.category];
+  const isVisited = !!useStore(s => s.savedSpots[spot.id]);
 
   return (
     <Pressable style={st.gridCard} onPress={onPress}>
       <View style={st.gridImageWrap}>
         {photoUrl
-          ? <Image source={{ uri: photoUrl }} style={StyleSheet.absoluteFill} resizeMode="cover" />
-          : <View style={[st.spcPlaceholder, { backgroundColor: color + '22' }]}>
-              <Text style={st.spcPlaceholderIcon}>{spot.icon}</Text>
-            </View>
+          ? <FadeInImage instant={photoWasCachedRef.current} source={{ uri: photoUrl }} style={StyleSheet.absoluteFill} resizeMode="cover" />
+          : <View style={[st.spcPlaceholder, { backgroundColor: '#111827' }]} />
         }
         <View style={st.hlBadge}>
           <Text style={st.hlBadgeIcon}>{cat?.icon ?? spot.icon}</Text>
         </View>
+        {isVisited && (
+          <View style={st.gridVisitedTag}>
+            <Check size={13} color="white" strokeWidth={3} />
+            <Text style={st.gridVisitedTagTxt}>Visited</Text>
+          </View>
+        )}
       </View>
       <Text style={st.hlName} numberOfLines={2}>{spot.name}</Text>
       <Text style={st.hlBio} numberOfLines={2}>{spot.bio}</Text>
@@ -697,9 +860,8 @@ function SpotGridCard({ spot, color, onPress }: { spot: Spot; color: string; onP
 // ── Spots panel — full grid of a destination's spots, with category filter tags and a
 // button that jumps into the sliding spot carousel (SpotSheet, via onSelectSpot), which
 // already receives the destination's full spot list regardless of which spot is passed.
-function SpotsPanel({ spots, color, onSelectSpot, filterScrollRef }: {
+function SpotsPanel({ spots, onSelectSpot, filterScrollRef }: {
   spots: typeof SPOTS;
-  color: string;
   onSelectSpot?: (spot: Spot) => void;
   filterScrollRef?: React.RefObject<ScrollView | null>;
 }) {
@@ -745,7 +907,7 @@ function SpotsPanel({ spots, color, onSelectSpot, filterScrollRef }: {
       {filteredSpots.length > 0 ? (
         <View style={st.spotsGrid}>
           {filteredSpots.map(spot => (
-            <SpotGridCard key={spot.id} spot={spot} color={color} onPress={() => onSelectSpot?.(spot)} />
+            <SpotGridCard key={spot.id} spot={spot} onPress={() => onSelectSpot?.(spot)} />
           ))}
         </View>
       ) : (
@@ -757,13 +919,11 @@ function SpotsPanel({ spots, color, onSelectSpot, filterScrollRef }: {
 
 // ── About panel (shared by visited "About" tab + non-visited view) ────────────
 function AboutPanel({
-  destination, spots, color, bestMonths, photoUrl, onSelectSpot, onOpenClimateDetail,
+  destination, spots, photoUrl, onSelectSpot, onOpenClimateDetail,
   onSeeAllSpots, hlScrollRef,
 }: {
   destination: Destination;
   spots: typeof SPOTS;
-  color: string;
-  bestMonths: string;
   photoUrl?: string | null;
   onSelectSpot?: (spot: Spot) => void;
   onOpenClimateDetail?: () => void;
@@ -800,7 +960,7 @@ function AboutPanel({
           </View>
           <ScrollView ref={hlScrollRef} horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={st.hlRow}>
             {spots.map(spot => (
-              <HighlightCard key={spot.id} spot={spot} color={color} onPress={() => onSelectSpot?.(spot)} />
+              <HighlightCard key={spot.id} spot={spot} onPress={() => onSelectSpot?.(spot)} />
             ))}
           </ScrollView>
         </View>
@@ -811,7 +971,7 @@ function AboutPanel({
       <View style={st.section}>
         <Text style={st.plainSectionHeader}>WHEN TO VISIT</Text>
         <WhenToVisitCard
-          destination={destination} bestMonths={bestMonths} photoUrl={photoUrl}
+          destination={destination}
           onOpenClimateDetail={onOpenClimateDetail}
         />
       </View>
@@ -837,13 +997,13 @@ function AboutPanel({
 
 // ── Main ─────────────────────────────────────────────────────────────────────
 type Tab = 'visit' | 'about' | 'spots';
-type SnapState = 'collapsed' | 'half' | 'full';
+type SnapState = 'peek' | 'collapsed' | 'full';
 
 interface Props {
   destination: Destination;
   // Only ever fires from a swipe-down while collapsed (bottom-screen) — see dismissSheetRef
   // below — so `toCollapsed` is always true, letting the caller land the country sheet
-  // underneath in its own collapsed view instead of the usual half-screen default.
+  // underneath in its own collapsed view instead of the usual full-screen default.
   onClose: (toCollapsed?: boolean) => void;
   onExpand?: () => void;
   onCollapse?: () => void;
@@ -852,14 +1012,14 @@ interface Props {
   // screen, once measured — lets callers (e.g. the map's back-navigation pill) position
   // themselves an exact, matching distance above it instead of guessing a fixed height.
   onCollapsedTopChange?: (distanceFromBottom: number) => void;
-  // Fires on every snap transition (tap or drag) — lets callers that care about the
-  // half-screen state specifically (e.g. repositioning the back-to-country pill) react
-  // without having to reverse-engineer it from onExpand/onCollapse alone.
+  // Fires on every snap transition (tap or drag) — lets callers that care about collapsed vs.
+  // full-screen state (e.g. repositioning the back-to-country pill) react without having to
+  // reverse-engineer it from onExpand/onCollapse alone.
   onSnapStateChange?: (state: SnapState) => void;
   // Written to continuously (every frame, not just at snap boundaries) with the exact
   // "bottom" offset the back-to-country pill should sit at *right now* — computed here (this
   // sheet owns slideAnim and its snap-point constants) by piecewise-interpolating between the
-  // three already-tuned resting targets as slideAnim moves. A shared value (not a JS callback)
+  // two already-tuned resting targets as slideAnim moves. A shared value (not a JS callback)
   // so the write happens directly on the UI thread with zero JS-thread hop — that's what lets
   // the pill track the sheet's top edge in true lockstep while dragging, instead of lagging
   // behind it.
@@ -872,112 +1032,108 @@ interface Props {
   // Ignored on subsequent destination switches, which always reset to the defaults below.
   initialTab?: Tab;
   initialSnap?: SnapState;
-  // Fires after the user swipes the hero to a different destination in the same country —
-  // lets the caller keep its own "selected destination" state (map pin highlighting, etc.)
-  // in sync. Deliberately separate from onClose/onSelectSpot: this is a lightweight
-  // notification, not a "user tapped a pin" event, so callers shouldn't attach camera
-  // animations or haptics to it the way they might for an actual marker press.
-  onSwipeToDestination?: (dest: Destination) => void;
   // Bump this (e.g. an incrementing counter) to imperatively collapse the sheet from the
-  // parent — used when the user pans the map while this sheet is at half-screen. No-ops
-  // unless the sheet is currently at half.
+  // parent — used by the back pill's down-arrow while the sheet is full-screen.
   collapseSignal?: number;
-  // "Go to list view" — swaps this sheet's collapsed carousel for CountrySheet's own
-  // Destinations tab, which is often easier to scan than swiping card-by-card. Mirrors
-  // SpotSheet's identical onGoToList.
-  onGoToCountryList?: () => void;
+  // Bump this to imperatively drop the sheet to its "peek" state — a thin strip of the
+  // hero image with the destination's name, slid down further than collapsed. Used by the
+  // parent when the user pans/zooms the map, so the sheet gets out of the way. No-ops if
+  // already peeking or the sheet has been dismissed.
+  peekSignal?: number;
+  // Set by MapScreen to Date.now() on every camera event of a live map gesture. Zooming the map
+  // with a finger resting on this sheet's strip used to be read as a swipe of the sheet itself —
+  // the finger travels upward during a pinch-in — so lifting it snapped the sheet to half-screen.
+  mapGestureAtSV?: SharedValue<number>;
+  // Increments when the parent is about to close this sheet (the back pill's X): slide it off
+  // the bottom of the screen first, so it leaves rather than vanishing. Parent then unmounts it.
+  exitSignal?: number;
 }
 
 export default function DestinationSheet({
-  destination: destinationProp, onClose, onExpand, onCollapse, onSelectSpot, onCollapsedTopChange,
+  destination, onClose, onExpand, onCollapse, onSelectSpot, onCollapsedTopChange,
   onSnapStateChange, pillOffsetSV, pillOffsetLockedSV, initialTab, initialSnap,
-  onSwipeToDestination, collapseSignal, onGoToCountryList,
+  collapseSignal, peekSignal, exitSignal, mapGestureAtSV,
 }: Props) {
   const insets            = useSafeAreaInsets();
   const savedDestinations = useStore(s => s.savedDestinations);
   const saveDestination   = useStore(s => s.saveDestination);
   const unsaveDestination = useStore(s => s.unsaveDestination);
-  // Internal "currently displayed" destination — decoupled from the `destination` prop so a
-  // hero swipe (below) can move between a country's destinations without waiting on a full
-  // prop round-trip through the parent, which would otherwise force the "genuine destination
-  // switch" reset effect further down to fire (resetting snap state/tabs), the opposite of
-  // what a carousel swipe should do. `destination` (used everywhere else in this file below,
-  // completely unchanged) now refers to this state instead of the raw prop.
-  const [destination, setDestination] = useState<Destination>(destinationProp);
-  const lastExternalDestIdRef = useRef(destinationProp.id);
-  // True only for the duration of an internally-triggered (carousel swipe) destination
-  // change — lets the reset effect further down tell a "swipe" apart from a genuine external
-  // switch (a different pin tapped on the map) without needing its own separate effect.
-  const carouselSwapRef = useRef(false);
-  // Destinations already shown via a hero swipe in this session (seeded with whichever
-  // destination is current) — lets "next closest" mean "closest not already seen" instead of
-  // just always re-picking the same nearest neighbor back and forth.
-  const swipedThroughIdsRef = useRef<Set<string>>(new Set([destinationProp.id]));
-  // The destination the user originally opened this sheet on — once a hero swipe has cycled
-  // through every other destination in the country, the carousel loops back to this one
-  // specifically (a fixed, predictable "start of the loop"), rather than just resetting the
-  // exclusion set and picking whatever's nearest to wherever the user currently is.
-  const firstDestIdRef = useRef(destinationProp.id);
-  useEffect(() => {
-    if (destinationProp.id === lastExternalDestIdRef.current) return;
-    lastExternalDestIdRef.current = destinationProp.id;
-    swipedThroughIdsRef.current = new Set([destinationProp.id]);
-    firstDestIdRef.current = destinationProp.id;
-    setDestination(destinationProp);
-  }, [destinationProp.id]);
   const updateSaved       = useStore(s => s.updateSaved);
+  const savedSpots        = useStore(s => s.savedSpots);
 
   const saved      = savedDestinations[destination.id];
-  const color      = CONTINENT_COLORS[destination.continent];
   const spots      = SPOTS.filter(s => s.destinationId === destination.id);
   const isVisited  = saved?.type === 'visited';
-  const isWishlist = !!(saved?.isWishlisted || saved?.type === 'wishlist');
-
-  const crowdData       = useMemo(() =>
-    getCrowdData(destination.continent, destination.category, destination.coordinates.latitude, destination.rank),
-  [destination.id]);
-  const bestMonths      = crowdData.filter(c => c.isBest).map(c => c.month).join(', ');
 
   const [photoUrl,      setPhotoUrl    ] = useState<string | null>(photoCache.get(destination.id) ?? null);
-  const [showEditSheet, setShowEditSheet] = useState(false);
+  // True when the CURRENTLY-shown hero photo was already sitting in photoCache before it was
+  // ever displayed (a repeat visit, or a pin-tap prefetch that won the race) — initialized
+  // synchronously (matching the useState initializer above) so it's already correct for
+  // FadeInImage's very first render, then kept correct by the effect below on every
+  // subsequent destination change too, since this sheet doesn't remount between destination
+  // selections (no `key` prop in MapScreen). Drives FadeInImage's `instant` prop: a genuine
+  // cache hit should appear immediately, not replay a fade the user never actually waited
+  // through.
+  const photoWasCachedRef = useRef(photoCache.has(destination.id));
+  // Drives the standalone per-visit edit sheet for BOTH creating a new visit module
+  // ('new') and editing one specific existing module (the Visit object) — never touches
+  // any other module's entry in the array either way.
+  const [editingVisitModule, setEditingVisitModule] = useState<Visit | 'new' | null>(null);
   const [showClimateDetail, setShowClimateDetail] = useState(false);
-  // Half-screen is the default view whenever a destination is selected — callers only pass
-  // initialSnap explicitly for the other two cases (e.g. the spot carousel's "list view"
-  // button wants 'full').
-  const resolvedInitialSnap: SnapState = initialSnap ?? 'half';
-  // Plain React state (unlike snapStateRef, which is a ref for the pan responder's benefit)
-  // so the compact card overlay below can actually re-render and hide itself in half-screen
-  // mode — its transform-based hiding alone doesn't fully clear the screen at HALF_POS.
-  const [isHalfState, setIsHalfState] = useState(resolvedInitialSnap === 'half');
-  // Half-screen shows no tab as "selected" by default (it's a preview, not a picked view) —
-  // but once the user has actually tapped a tab (in full screen), that choice should stick
-  // even after swiping back down to half, instead of always reverting to unselected.
-  const [hasUserPickedTab, setHasUserPickedTab] = useState(false);
+
+  // Collapsed (bottom-screen carousel) is the default view whenever a destination is
+  // selected — callers only pass initialSnap explicitly for the other case (e.g. the spot
+  // carousel's "list view" button wants 'full').
+  const resolvedInitialSnap: SnapState = initialSnap ?? 'collapsed';
   // Non-visited destinations have no "My Visit" tab — About and Spots only.
   const TAB_ORDER: Tab[] = useMemo(() => isVisited ? ['visit', 'about', 'spots'] : ['about', 'spots'], [isVisited]);
   const defaultTab: Tab = isVisited ? 'visit' : 'about';
   const startTab: Tab = (initialTab && TAB_ORDER.includes(initialTab)) ? initialTab : defaultTab;
   const [activeTab,     setActiveTab    ] = useState<Tab>(startTab);
 
-  // Derive visits from store (with legacy visitDate fallback)
+  // Derive visits from store, carrying the old destination-level photos/notes/spots onto
+  // the synthesized legacy entry so a pre-redesign visit still shows its content as its
+  // own module — editing it migrates those fields onto a real Visit the first time it's saved.
   const localVisits: Visit[] = saved?.visits
-    ?? (saved?.visitDate ? [{ id: 'legacy', startDate: saved.visitDate }] : []);
-  // Read-only display merges the destination's own photos with all child-spot photos
-  // (tagged so the collage shows which spot each came from).
-  const localPhotos: PhotoEntry[] = useDestinationPhotos(destination.id);
+    ?? (saved?.visitDate
+      ? [{
+          id: 'legacy', startDate: saved.visitDate, photos: saved.photos, notes: saved.notes,
+          spotIds: Object.values(savedSpots)
+            .filter(ss => ss.destinationId === destination.id)
+            .map(ss => ss.spotId),
+        }]
+      : []);
+
+  // Saves one visit module — appends a brand new one ('new') or replaces just the matching
+  // id in place. Every other entry in the array is copied through untouched either way, so
+  // sibling modules never re-render with different content as a side effect of this.
+  // Does NOT close the editor itself — VisitModuleSheet auto-commits on every field change,
+  // so this fires many times per editing session; only its own Save/X button calls onClose.
+  const handleSaveVisitModule = (v: Visit) => {
+    const base = localVisits.filter(x => x.id !== 'legacy');
+    const idx  = base.findIndex(x => x.id === v.id);
+    const updated = idx >= 0 ? base.map(x => x.id === v.id ? v : x) : [...base, v];
+    updated.sort((a, b) => b.startDate.localeCompare(a.startDate));
+    updateSaved(destination.id, { visits: updated, visitDate: updated[0]?.startDate });
+  };
+  const handleDeleteVisitModule = (id: string) => {
+    const updated = localVisits.filter(v => v.id !== id);
+    updateSaved(destination.id, { visits: updated, visitDate: updated[0]?.startDate });
+  };
 
   // Ref to the sheet's main content ScrollView — declared early since both the tab-swipe
   // gesture below and the main vertical drag gesture (further down) need it.
   const scrollRef       = useRef<ScrollView>(null);
   // Refs to the horizontal ScrollViews nested *inside* each tab panel (About's "top spots"
-  // row, Spots' category filter row, Visit's spots-visited carousel) — without registering
+  // row, Spots' category filter row, Visit's spots-visited carousel). The filter row is
+  // registered as simultaneous (below); the top-spots row instead BLOCKS tab swiping. Without
+  // registering
   // these as simultaneous with tabSwipeGesture below, a horizontal drag that starts on top
   // of one of them is claimed by that inner ScrollView first, and only a much larger/more
   // forceful swipe manages to also activate the tab-swipe gesture. Registering them all
   // lets both recognize together regardless of where on the panel the swipe starts.
   const aboutHlScrollRef     = useRef<ScrollView>(null);
   const spotsFilterScrollRef = useRef<ScrollView>(null);
-  const visitCarouselScrollRef = useRef<ScrollView>(null);
   // Tab slide position: 0 = first tab, -W = second, -2W = third (if present). A Reanimated
   // shared value (not core Animated) — the gesture below writes to it directly from the UI
   // thread with zero JS-thread hop per frame, which is what makes the tab swipe track the
@@ -1003,9 +1159,46 @@ export default function DestinationSheet({
     transform: [{ translateX: tabSlideAnim.value }],
   }));
 
+  // Measured natural height of each tab's panel, indexed to TAB_ORDER. The panels sit in a
+  // flexDirection:'row', so without this the track's height is the TALLEST of them and the
+  // ScrollView's scroll extent is governed by whichever tab is longest rather than the one
+  // actually on screen, letting a short tab scroll down into blank space left over from a
+  // taller sibling. Driving the track's height off the same shared value as the horizontal
+  // slide keeps the two in lockstep, so it eases across during a tab swipe rather than
+  // jumping when the swipe settles. Mirrors CountrySheet's own fix.
+  const panelHeightsSV  = useSharedValue<number[]>([]);
+  const panelHeightsRef = useRef<number[]>([]);
+  const measurePanel = useCallback((index: number, h: number) => {
+    if (index < 0 || !h) return;
+    if (Math.abs((panelHeightsRef.current[index] ?? 0) - h) < 1) return;
+    const next = panelHeightsRef.current.slice();
+    next[index] = h;
+    panelHeightsRef.current = next;
+    panelHeightsSV.value = next;
+  }, []);
+  const slideTrackStyle = useAnimatedStyle(() => {
+    const hs = panelHeightsSV.value;
+    // Before the first layout pass, fall through to auto height rather than collapsing to 0.
+    if (hs.length === 0) return { height: undefined };
+    const last = hs.length - 1;
+    // tabSlideAnim runs 0, -W, -2W… per tab index, and is fractional mid-drag.
+    const progress = -tabSlideAnim.value / W;
+    const i0 = Math.max(0, Math.min(last, Math.floor(progress)));
+    const i1 = Math.max(0, Math.min(last, i0 + 1));
+    const t  = Math.max(0, Math.min(1, progress - i0));
+    const h0 = hs[i0] || 0;
+    const h1 = hs[i1] || h0;
+    const h  = h0 + (h1 - h0) * t;
+    return { height: h > 0 ? h : undefined };
+  });
+
   // If visited-state flips while the sheet is open (e.g. marking a visit adds the "My
   // Visit" tab), snap the slide position back in sync instead of leaving it misaligned.
   useEffect(() => {
+    // Panel indices are positional within TAB_ORDER, so adding/removing "My Visit" shifts
+    // every measurement by one — drop them and let the panels re-report on the next layout.
+    panelHeightsRef.current = [];
+    panelHeightsSV.value = [];
     const idx = TAB_ORDER.indexOf(activeTabRef.current);
     if (idx === -1) {
       activeTabRef.current = TAB_ORDER[0];
@@ -1031,11 +1224,6 @@ export default function DestinationSheet({
   const setActiveTabJS = useCallback((tab: Tab) => {
     activeTabRef.current = tab;
     setActiveTab(tab);
-    // Matches the tab button's own onPress handler below — a deliberate swipe to a tab is
-    // just as much a "pick" as tapping it. Without this, isTabSelected (which requires
-    // hasUserPickedTab while in half-screen) never updates for the newly-swiped-to tab, so
-    // whichever tab was highlighted before the swipe visually stays highlighted afterward.
-    setHasUserPickedTab(true);
   }, []);
 
   // A Reanimated/Gesture-Handler gesture (like the vertical `pan` above), not core
@@ -1085,196 +1273,27 @@ export default function DestinationSheet({
       // hasn't actually changed.
       runOnJS(setActiveTabJS)(TAB_ORDER[targetIdx]);
     })
-    .simultaneousWithExternalGesture(scrollRef, aboutHlScrollRef, spotsFilterScrollRef, visitCarouselScrollRef);
+    .simultaneousWithExternalGesture(scrollRef, spotsFilterScrollRef)
+    // The About tab's "Top Spots" carousel is the exception to the simultaneous registration
+    // above: a horizontal drag that starts on it should ONLY scroll that carousel, not also
+    // slide the sheet to another tab. Requiring its native scroll gesture to fail first means
+    // this pan never activates for touches that begin on the carousel (the scroll wins the
+    // moment it starts moving), while touches anywhere else on the panel are unaffected —
+    // a handler that isn't tracking the touch isn't waited on.
+    .requireExternalGestureToFail(aboutHlScrollRef);
 
-  // ── Hero swipe — carousel through this country's other destinations ──────────
-  // A genuine two-sheet carousel: the incoming destination's whole sheet (see
-  // previewSheetAnimStyle below, in the render section) is rendered adjoined to the
-  // outgoing one and both move together off a single shared drag value, rather than the
-  // outgoing content sliding fully away before the new one appears within a fixed frame.
-  // `destination` (used throughout the rest of this component) is the internal state set up
-  // above, so committing a swipe is all that's needed for every other data-driven bit
-  // (photo, name, tagline, spots, saved status, etc.) to update with it.
-  const heroTranslateX = useSharedValue(0);
-  const HERO_SWIPE_CONFIG = { duration: 260, easing: Easing.out(Easing.cubic) };
-
-  // Which candidate destination is adjoined for the current drag, and on which side — only
-  // decided once the drag direction is unambiguous (a few pixels in), so a single shared
-  // "closest not yet shown" pick isn't wasted on a gesture that turns out to be vertical.
-  const previewActiveSV = useSharedValue(false);
-  const previewSignSV   = useSharedValue<1 | -1>(1);
-  const [previewDest, setPreviewDest] = useState<Destination | null>(null);
-  const [previewPhotoUrl, setPreviewPhotoUrl] = useState<string | null>(null);
-  // JS-thread mirror of previewDest so commitHeroSwipe can read it synchronously the instant
-  // the slide-out animation finishes, without waiting on a React state read.
-  const previewDestRef = useRef<Destination | null>(null);
-  const previewSpots = useMemo(
-    () => previewDest ? SPOTS.filter(s => s.destinationId === previewDest.id) : [],
-    [previewDest],
-  );
-
-  const getNextClosestDestination = useCallback((): Destination | null => {
-    const pool = DESTINATIONS.filter(d => d.country === destination.country && d.id !== destination.id);
-    if (pool.length === 0) return null;
-    const candidates = pool.filter(d => !swipedThroughIdsRef.current.has(d.id));
-    if (candidates.length === 0) {
-      // Every other destination in the country has already been shown this session —
-      // continuous carousel: loop back to the one the user originally opened, then start a
-      // fresh lap from there (rather than resetting to "closest to wherever we currently
-      // are", which wouldn't reliably land back on a fixed, predictable start-of-loop point).
-      swipedThroughIdsRef.current = new Set([destination.id]);
-      return pool.find(d => d.id === firstDestIdRef.current) ?? pool[0];
-    }
-    let best: Destination | null = null;
-    let bestDist = Infinity;
-    for (const d of candidates) {
-      const dLat = d.coordinates.latitude  - destination.coordinates.latitude;
-      const dLng = d.coordinates.longitude - destination.coordinates.longitude;
-      const dist = dLat * dLat + dLng * dLng;
-      if (dist < bestDist) { bestDist = dist; best = d; }
-    }
-    return best;
-  }, [destination]);
-
-  // Runs on the JS thread (via runOnJS) the moment the drag's direction is first clear —
-  // picks and preloads the adjoined card (including fetching its full-res photo straight
-  // into photoCache) so it's already rendered and ready by the time the finger has moved it
-  // into view — and, if the user commits the swipe, so commitHeroSwipe below can hand that
-  // same cached photo straight to the real sheet with no re-fetch/flash.
-  const preparePreview = useCallback(() => {
-    const next = getNextClosestDestination();
-    previewDestRef.current = next;
-    setPreviewDest(next);
-    if (!next) { setPreviewPhotoUrl(null); return; }
-    const cached = photoCache.get(next.id) ?? thumbCache.get(next.id) ?? null;
-    setPreviewPhotoUrl(cached);
-    if (!photoCache.has(next.id)) {
-      fetchWikiThumbnail(next.name, 900).then(url => {
-        if (url) {
-          photoCache.set(next.id, url);
-          setPreviewPhotoUrl(url);
-        }
-      });
-    }
-  }, [getNextClosestDestination]);
-
-  const clearPreview = useCallback(() => {
-    previewDestRef.current = null;
-    setPreviewDest(null);
-    setPreviewPhotoUrl(null);
-  }, []);
-
-  // Runs on the JS thread once the commit animation lands the preview card exactly at 0 —
-  // swaps the displayed destination to whatever was already adjoined and on-screen, then
-  // resets the drag value to 0 with no animation (the new "current" card is already
-  // visually sitting at 0, so there's nothing left to animate).
-  // Shared by both the hero-swipe carousel above and the collapsed-card carousel below —
-  // swaps the internal `destination` state to `next` and takes care of everything that
-  // needs to move with it (swipedThroughIds bookkeeping, the preloaded-photo hand-off to
-  // avoid a hero flash, and notifying the parent).
-  const commitDestinationSwap = useCallback((next: Destination) => {
-    carouselSwapRef.current = true;
-    swipedThroughIdsRef.current.add(next.id);
-    setDestination(next);
-    // Hand off the preloaded full-res photo directly, in the same batched update as
-    // setDestination above, rather than letting the photoUrl effect re-derive it — that
-    // effect would still land on the same (already-cached) value, but only after an extra
-    // render where photoUrl briefly reflected the outgoing destination's photo (or null),
-    // which is exactly the hero "flash" this avoids. Read straight from photoCache (the
-    // same cache the photoUrl effect itself checks) rather than previewPhotoUrl state,
-    // which may hold a lower-res thumbCache fallback used only for the transient hero-swipe
-    // ghost — handing that off here would just get immediately clobbered back to null once
-    // the effect below finds it's not actually in photoCache and re-fetches. The collapsed
-    // carousel's own thumbnails are separately cached in thumbCache, so this hand-off only
-    // ever helps when a full-res photo happens to already be cached, never hurts otherwise.
-    const preloadedPhoto = photoCache.get(next.id);
-    if (preloadedPhoto) setPhotoUrl(preloadedPhoto);
-    // Pre-mark this id as "already the external prop" too — otherwise, once the parent's
-    // `destination` prop eventually round-trips back down (via onSwipeToDestination below
-    // updating its own selectedDest state), the sync effect would see it as a genuine
-    // external change and wipe swipedThroughIdsRef right after we just built it up.
-    lastExternalDestIdRef.current = next.id;
-    onSwipeToDestination?.(next);
-  }, [onSwipeToDestination]);
-
-  const commitHeroSwipe = useCallback(() => {
-    const next = previewDestRef.current;
-    clearPreview();
-    if (!next) { heroTranslateX.value = 0; return; }
-    commitDestinationSwap(next);
-    heroTranslateX.value = 0;
-  }, [clearPreview, commitDestinationSwap]);
-
-  // ── Collapsed/bottom-screen carousel — same "swipe between this country's destinations"
-  // idea as the hero-swipe above, but for the compact card: a real horizontal ScrollView
-  // with peek-adjacent neighbors (identical mechanism to SpotSheet's own collapsed
-  // carousel), rather than the two-sheet ghost/ghost-preview dance the hero-swipe uses. That
-  // fits the compact card better — it's a small, purely-visual overlay, not a whole
-  // interactive sheet that needs a matching adjoined "ghost" of its own.
-  const compactCarouselRef = useRef<ScrollView>(null);
-  const countryDests = useMemo(
-    () => DESTINATIONS.filter(d => d.country === destination.country)
-                      .sort((a, b) => a.rank - b.rank || a.name.localeCompare(b.name)),
-    [destination.country],
-  );
-  // Keeps the carousel scrolled to whichever destination is current, however it got there
-  // (a tap elsewhere, the hero-swipe carousel, or this carousel's own settle below) — a
-  // non-animated jump, since the compact card isn't visible except while truly collapsed.
-  useEffect(() => {
-    const idx = countryDests.findIndex(d => d.id === destination.id);
-    if (idx < 0) return;
-    requestAnimationFrame(() => {
-      compactCarouselRef.current?.scrollTo({ x: idx * COMPACT_CARD_SNAP, animated: false });
-    });
-  }, [destination.id, countryDests]);
-
-  const handleCompactCarouselSettle = useCallback((offsetX: number) => {
-    const idx = Math.max(0, Math.min(countryDests.length - 1, Math.round(offsetX / COMPACT_CARD_SNAP)));
-    const next = countryDests[idx];
-    if (!next || next.id === destination.id) return;
-    Haptics.selectionAsync();
-    commitDestinationSwap(next);
-  }, [countryDests, destination.id, commitDestinationSwap]);
-
-  const HERO_SWIPE_THRESHOLD = 60;
-  const heroSwipeGesture = Gesture.Pan()
-    .activeOffsetX([-15, 15])
-    .failOffsetY([-10, 10])
-    .onUpdate(e => {
-      heroTranslateX.value = e.translationX;
-      if (!previewActiveSV.value && Math.abs(e.translationX) > 5) {
-        previewActiveSV.value = true;
-        previewSignSV.value = e.translationX < 0 ? -1 : 1;
-        runOnJS(preparePreview)();
-      }
-    })
-    .onEnd(e => {
-      const committing = previewActiveSV.value &&
-        (Math.abs(e.translationX) > HERO_SWIPE_THRESHOLD || Math.abs(e.velocityX) > 600);
-      if (committing) {
-        const sign = previewSignSV.value;
-        heroTranslateX.value = withTiming(sign * W, HERO_SWIPE_CONFIG, finished => {
-          previewActiveSV.value = false;
-          if (finished) runOnJS(commitHeroSwipe)();
-        });
-      } else {
-        heroTranslateX.value = withTiming(0, HERO_SWIPE_CONFIG, finished => {
-          previewActiveSV.value = false;
-          if (finished) runOnJS(clearPreview)();
-        });
-      }
-    })
-    // Same reasoning as tabSwipeGesture above — the hero sits inside the same
-    // gesture-handler ScrollView, which otherwise claims horizontal touches on it first.
-    .simultaneousWithExternalGesture(scrollRef);
+  // NOTE: this sheet deliberately has NO lateral destination-swiping (neither on the hero
+  // nor at collapsed height, which is now just a shorter crop of the same hero — see
+  // heroAnimStyle). Sheets only page laterally when the siblings they'd page through are
+  // the pins currently visible on the map (SpotSheet's carousel passes that test — its
+  // sibling spots are all on screen at spot zoom; a destination's siblings are other
+  // cities, off-screen). Moving between destinations happens on the map (tapping sibling
+  // pins) — there's deliberately no in-sheet destination list either.
 
   // Shared tab-bar content (buttons + sliding indicator) — rendered both inline (scrolls
   // normally with the hero) and in the fixed overlay copy that takes over once scrolled
   // past it, so the two never drift out of sync.
-  // Half-screen shows a tab as "selected" only once the user has actually tapped one
-  // (hasUserPickedTab) — otherwise it's an unselected preview. Tapping a tab there also
-  // expands straight to full, since that's the only place its content is actually visible.
-  const isTabSelected = (tab: Tab) => (hasUserPickedTab || !isHalfState) && activeTab === tab;
+  const isTabSelected = (tab: Tab) => activeTab === tab;
   const renderTabBarRow = () => (
     <>
       {TAB_ORDER.map((tab, i) => (
@@ -1283,9 +1302,11 @@ export default function DestinationSheet({
         <Pressable
           style={st.tabBtn}
           onPress={() => {
+            // Tapping a subtab (from any snap state, even the already-active tab — the
+            // tab bar is only ever fully reachable/readable at half-screen, so the tap
+            // itself signals "show me this content") always expands to full-screen.
+            if (snapStateRef.current !== 'full') snapToFullRef.current();
             switchTabRef.current(tab);
-            setHasUserPickedTab(true);
-            if (isHalfState) snapToFullRef.current();
           }}
         >
           {tab === 'visit' ? (
@@ -1294,10 +1315,8 @@ export default function DestinationSheet({
                 {localVisits.length > 1 ? 'My Visits' : 'My Visit'}
               </Text>
               {localVisits.length > 1 && (
-                <View style={[st.tabVisitBadge, isTabSelected('visit') && st.tabVisitBadgeActive]}>
-                  <Text style={[st.tabVisitBadgeTxt, isTabSelected('visit') && st.tabVisitBadgeTxtActive]}>
-                    {localVisits.length}
-                  </Text>
+                <View style={st.tabVisitBadge}>
+                  <Text style={st.tabVisitBadgeTxt}>{localVisits.length}</Text>
                 </View>
               )}
             </View>
@@ -1316,14 +1335,13 @@ export default function DestinationSheet({
         </Pressable>
         </React.Fragment>
       ))}
-      {/* Sliding underline — hidden in half-screen unless the user has already picked
-          a tab, matching isTabSelected's logic above. Outer element keeps the existing
-          per-tab left/width positioning; the visible bar itself is a narrower, centered
-          child so it doesn't span the full tab width. */}
+      {/* Sliding underline — outer element keeps the existing per-tab left/width
+          positioning; the visible bar itself is a narrower, centered child so it doesn't
+          span the full tab width. */}
       <Reanimated.View
         style={[
           st.tabIndicatorTrack,
-          { width: `${100 / TAB_ORDER.length}%`, opacity: (hasUserPickedTab || !isHalfState) ? 1 : 0 },
+          { width: `${100 / TAB_ORDER.length}%` },
           tabIndicatorStyle,
         ]}
       >
@@ -1333,21 +1351,37 @@ export default function DestinationSheet({
   );
 
   // Wikipedia photo — bounded width instead of the (often huge) original, so the hero loads fast.
+  // getOrFetchWikiThumbnail (rather than a bare fetchWikiThumbnail) shares whatever request
+  // handleMarkerPress already kicked off via prefetchWikiThumbnail at pin-tap time, instead of
+  // starting a second, duplicate one now that the sheet has mounted.
   useEffect(() => {
-    if (photoCache.has(destination.id)) { setPhotoUrl(photoCache.get(destination.id)!); return; }
+    if (photoCache.has(destination.id)) {
+      photoWasCachedRef.current = true;
+      setPhotoUrl(photoCache.get(destination.id)!);
+      return;
+    }
+    photoWasCachedRef.current = false;
     setPhotoUrl(null);
-    fetchWikiThumbnail(destination.name, 900).then(url => {
-      if (url) { photoCache.set(destination.id, url); setPhotoUrl(url); }
+    getOrFetchWikiThumbnail(destination.id, photoCache, destination.name, 900).then(url => {
+      if (url) setPhotoUrl(url);
     });
   }, [destination.id]);
 
-  // ── Unified sheet: three snap points ─────────────────────────────────────────
-  // COLLAPSED_Y = compact card visible at bottom; HALF_POS = half-screen; FULL_POS = full
+  // ── Unified sheet: two snap points ───────────────────────────────────────────
+  // COLLAPSED_Y = compact card visible at bottom; FULL_POS = full screen
   const snapStateRef = useRef<SnapState>(resolvedInitialSnap);
   // Mirrors snapStateRef but readable from the UI-thread gesture worklets below.
   const snapStateSV  = useSharedValue<SnapState>(resolvedInitialSnap);
+  // Real React state mirror (unlike the ref above, mutating it DOES trigger a re-render) —
+  // needed for scrollEnabled below, which must flip the instant the sheet reaches
+  // full-screen. Set via reportSnapState alongside every onSnapStateChange call.
+  const [snapStateReact, setSnapStateReact] = useState<SnapState>(resolvedInitialSnap);
+  const reportSnapState = useCallback((state: SnapState) => {
+    setSnapStateReact(state);
+    onSnapStateChange?.(state);
+  }, [onSnapStateChange]);
   const slideAnim    = useSharedValue(CLOSE_POS);
-  const lastPos      = useSharedValue(resolvedInitialSnap === 'full' ? FULL_POS : resolvedInitialSnap === 'half' ? HALF_POS : COLLAPSED_Y);
+  const lastPos      = useSharedValue(resolvedInitialSnap === 'full' ? FULL_POS : COLLAPSED_Y);
   // Worklet-readable scroll offset, for the drag gesture's full-screen capture gate (only
   // let a downward drag pull the sheet once its inner ScrollView is already at top).
   const scrollYSV    = useSharedValue(0);
@@ -1365,16 +1399,17 @@ export default function DestinationSheet({
     extrapolate: 'clamp',
   }), [tabBarAppearY]);
 
-  // Dynamic collapsed Y — updated when compact card is measured via onLayout. A shared value
-  // (not just a ref) so the worklets below (drag gesture, hero-height/compact-translate
-  // styles) can read the live measurement directly on the UI thread.
+  // Fixed collapsed Y (COLLAPSED_Y is itself a constant — see its own comment). A shared
+  // value (not just a ref) so the worklets below (drag gesture, heroAnimStyle) can read it
+  // directly on the UI thread.
   const collapsedYRef  = useRef(COLLAPSED_Y);
   const collapsedYAnim = useSharedValue(COLLAPSED_Y);
-  // Compact card translates: 0 when collapsed, slides off top as sheet expands.
-  // Clamped at 0 so spring overshoot / downward drag never shifts the card below y=0,
-  // which would expose the dark hero behind it.
-  const compactAnimStyle = useAnimatedStyle(() => ({
-    transform: [{ translateY: Math.max(-H, Math.min(0, slideAnim.value - collapsedYAnim.value)) }],
+  // Peek strip: a thin sliver of the hero image + name, fixed at PEEK_Y — invisible until the
+  // sheet actually drops down that far (fading in over the same range the hero itself holds
+  // steady at its collapsed height — see heroAnimStyle's CLAMP), so the two never
+  // double-render mid-transition.
+  const peekAnimStyle = useAnimatedStyle(() => ({
+    opacity: interpolate(slideAnim.value, [collapsedYAnim.value, PEEK_Y], [0, 1], Extrapolation.CLAMP),
   }));
   // Continuously writes the back-to-country pill's target "bottom" offset as slideAnim
   // moves, so the parent's pill mirrors the sheet's own top edge frame-for-frame instead of
@@ -1384,13 +1419,12 @@ export default function DestinationSheet({
   // pill's glide exactly as smooth as the sheet's own.
   //
   // Now that the hero's own close button is gone, the pill takes over that exact spot for
-  // as long as the sheet is at half or full screen — the [FULL_POS, HALF_POS] leg here is
-  // the same top-position formula heroTopRowStyle uses, just expressed in "bottom" terms
-  // (bottom = H - top - pill's own height) since that's what the pill wrapper's style
-  // actually animates. The collapsed leg is untouched — same tuned resting target as before,
-  // so the bottom-screen view keeps its existing look — with a single 3-point interpolation
-  // giving one smooth, continuous glide across all three states instead of a jump when
-  // crossing from half into collapsed (or back).
+  // as long as the sheet is full screen — the FULL_POS leg here is the same top-position
+  // formula heroTopRowStyle uses, just expressed in "bottom" terms (bottom = H - top - pill's
+  // own height) since that's what the pill wrapper's style actually animates. The collapsed
+  // leg is untouched — same tuned resting target as before, so the bottom-screen view keeps
+  // its existing look — with a single 2-point interpolation giving one smooth, continuous
+  // glide between the two states.
   useAnimatedReaction(
     () => slideAnim.value,
     (value) => {
@@ -1406,73 +1440,68 @@ export default function DestinationSheet({
       // at it. Using raw H here previously overstated the container height, and — more
       // importantly — omitted slideAnim's own contribution: heroTopRowStyle's `top` is
       // relative to the *hero's* origin, which itself sits at slideAnim.value within
-      // MapScreen's frame, not at 0. Missing that offset put the target roughly HALF_POS
-      // pixels too high (i.e. off the top of the screen) at half-screen.
+      // MapScreen's frame, not at 0.
       const SCREEN_H = H - BOTTOM_TAB_H;
       const FULL_TOP_ABS = FULL_POS + (insets.top + 20);
-      // Half-screen is the one exception to "pill sits inside the header row": here it
-      // instead floats a fixed gap above the sheet's own top edge (HALF_POS), like the
-      // collapsed pill floats above its card, rather than overlapping the header.
-      const HALF_PILL_GAP = 16;
-      const HALF_TOP_ABS = HALF_POS - HALF_PILL_GAP - PILL_H;
       const FULL_TARGET = SCREEN_H - FULL_TOP_ABS - PILL_H;
-      const HALF_TARGET = SCREEN_H - HALF_TOP_ABS - PILL_H;
-      // Collapsed: float the same fixed gap above the compact card's own *measured* top
+      // Collapsed: float a fixed gap above the compact card's own *measured* top
       // (collapsedYAnim.value, kept live by the card's onLayout) rather than a constant
       // distance from the screen's bottom. A constant broke once the collapsed card grew a
       // "Destinations in {Country}" header row above its carousel — the card's top moved up
       // by that header's height, but the fixed-from-bottom pill target didn't follow, so the
       // pill ended up overlapping the header instead of resting above the card.
-      const COLLAPSED_TOP_ABS = collapsedYAnim.value - HALF_PILL_GAP - PILL_H;
+      const COLLAPSED_PILL_GAP = 16;
+      const COLLAPSED_TOP_ABS = collapsedYAnim.value - COLLAPSED_PILL_GAP - PILL_H;
       const COLLAPSED_TARGET = SCREEN_H - COLLAPSED_TOP_ABS - PILL_H;
+      // Peek: same fixed-gap-above-the-visible-top idea, now against the peek strip's own
+      // (fixed) top instead of the collapsed card's measured one.
+      const PEEK_TOP_ABS = PEEK_Y - COLLAPSED_PILL_GAP - PILL_H;
+      const PEEK_TARGET = SCREEN_H - PEEK_TOP_ABS - PILL_H;
       pillOffsetSV.value = interpolate(
         value,
-        [FULL_POS, HALF_POS, collapsedYAnim.value],
-        [FULL_TARGET, HALF_TARGET, COLLAPSED_TARGET],
+        [FULL_POS, collapsedYAnim.value, PEEK_Y],
+        [FULL_TARGET, COLLAPSED_TARGET, PEEK_TARGET],
         Extrapolation.CLAMP,
       );
     },
     [insets.bottom, insets.top],
   );
 
-  // Pill color: dark on white card (collapsed), white on dark hero (full)
-  const pillBgStyle = useAnimatedStyle(() => ({
-    backgroundColor: interpolateColor(
-      slideAnim.value, [FULL_POS, COLLAPSED_Y], ['rgba(255,255,255,0.65)', 'rgba(0,0,0,0.18)'],
-    ),
-  }));
-
-  // Backdrop: dark when full-screen, nearly clear by half-screen and staying that way
-  // through collapsed. The sheet's drop-shadow (sheetShadow below) is the same view/style
-  // at every snap point, but shadows read poorly against a still-dim backdrop — dropping
-  // the dimming away by HALF_POS (instead of a smooth linear fade all the way to
-  // COLLAPSED_Y) gives the half-screen sheet the same bright-map, high-contrast shadow the
-  // bottom-screen (collapsed) card already has.
+  // Backdrop: dark when full-screen, fading out to clear as the sheet approaches collapsed.
+  // The sheet's drop-shadow (sheetShadow below) is the same view/style at every snap point,
+  // but shadows read poorly against a still-dim backdrop.
   const backdropStyle = useAnimatedStyle(() => ({
-    opacity: interpolate(slideAnim.value, [FULL_POS, HALF_POS, COLLAPSED_Y], [1, 0.05, 0], Extrapolation.CLAMP),
+    opacity: interpolate(slideAnim.value, [FULL_POS, COLLAPSED_Y], [1, 0], Extrapolation.CLAMP),
   }));
 
-  // Hero shrinks as the sheet passes through half-screen, so hero + tab bar together still
-  // fit within the half of the screen the sheet occupies there. Three points, not two: a
-  // simple two-point [FULL_POS, HALF_POS] interpolation clamps to the *shrunk* height for
-  // every value beyond HALF_POS too — including the collapsed position, which is well past
-  // it — so the hero (and therefore anything measuring its layout, like the tab bar's
-  // position) would be wrong any time the sheet is collapsed. Reverting back to full height
-  // beyond HALF_POS keeps collapsed/half/full all correct regardless of it being hidden
-  // behind the compact card while collapsed.
+  // Measured live (tab bar height varies slightly by tab count/font rendering) rather than
+  // assumed, so the reserved gap below is always exactly right. Default is a reasonable
+  // pre-layout guess so the very first collapsed frame isn't off before onLayout fires.
+  const tabBarHAnim = useSharedValue(54);
+
+  // Hero height animates CONTINUOUSLY with the drag — one single element that grows from
+  // its collapsed-height crop up to its full height (fullHeroH), rather than a separate
+  // duplicate card sliding away to reveal a different full-size hero underneath. This is
+  // what makes collapsed→full read as one continuous sheet: same photo, same gradient,
+  // same buttons, same text — only the crop changes. Clamped past COLLAPSED_Y so it holds
+  // steady at its collapsed height while peeking (the peek strip overlay takes over there).
+  //
+  // Collapsed crop = COMPACT_H (the fixed, full collapsed visible-window height) MINUS the
+  // tab bar's own net footprint (its measured height beyond the TAB_BAR_TUCK overlap) — so
+  // the tab bar, INCLUDING its bottom underline, lands fully inside the visible window
+  // instead of being clipped at its edge. Without this the tab bar rendered flush against
+  // the window boundary with the last few px (its underline) pushed just past it.
   const fullHeroH = HERO_H - insets.bottom;
-  const heroAnimStyle = useAnimatedStyle(() => ({
-    height: interpolate(
-      slideAnim.value,
-      [FULL_POS, HALF_POS, Math.max(HALF_POS + 1, collapsedYAnim.value)],
-      [fullHeroH, HALF_HERO_H, fullHeroH],
-      Extrapolation.CLAMP,
-    ),
-  }));
+  const heroAnimStyle = useAnimatedStyle(() => {
+    const collapsedHeroH = COMPACT_H - Math.max(0, tabBarHAnim.value - TAB_BAR_TUCK);
+    return {
+      height: interpolate(slideAnim.value, [FULL_POS, COLLAPSED_Y], [fullHeroH, collapsedHeroH], Extrapolation.CLAMP),
+    };
+  });
 
-  // Slide in from off-screen on mount — half-screen by default whenever a destination is
-  // selected, unless initialSnap requests otherwise (e.g. the spot carousel's "list view"
-  // button wants 'full').
+  // Slide in from off-screen on mount — collapsed (bottom-screen carousel) by default
+  // whenever a destination is selected, unless initialSnap requests otherwise (e.g. the spot
+  // carousel's "list view" button wants 'full').
   const didMountRef = useRef(false);
   useEffect(() => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
@@ -1482,40 +1511,29 @@ export default function DestinationSheet({
       lastPos.value = FULL_POS;
       slideAnim.value = withTiming(FULL_POS, SNAP_CONFIG);
       onExpand?.();
-      onSnapStateChange?.('full');
-    } else if (resolvedInitialSnap === 'half') {
-      snapStateRef.current = 'half';
-      snapStateSV.value = 'half';
-      lastPos.value = HALF_POS;
-      slideAnim.value = withTiming(HALF_POS, SNAP_CONFIG);
-      onSnapStateChange?.('half');
+      reportSnapState('full');
     } else {
       slideAnim.value = withTiming(collapsedYRef.current, SNAP_CONFIG);
-      onSnapStateChange?.('collapsed');
+      reportSnapState('collapsed');
     }
-    onCollapsedTopChange?.(H - (resolvedInitialSnap === 'half' ? HALF_POS : collapsedYRef.current));
+    onCollapsedTopChange?.(H - collapsedYRef.current);
   }, []);
 
-  // Reset to half-screen + default tab on genuine destination switches — but not on the
-  // very first mount (already applied initialSnap/initialTab above), and not on a hero-swipe
-  // carousel change, which should preserve exactly whatever snap state/tab the user was
-  // already on — only the displayed destination's own data should change.
+  // Reset to collapsed + default tab on destination switches — but not on the very first
+  // mount (already applied initialSnap/initialTab above).
   useEffect(() => {
     if (!didMountRef.current) { didMountRef.current = true; return; }
-    if (carouselSwapRef.current) { carouselSwapRef.current = false; return; }
-    snapStateRef.current = 'half';
-    snapStateSV.value = 'half';
+    snapStateRef.current = 'collapsed';
+    snapStateSV.value = 'collapsed';
     slideAnim.value = CLOSE_POS;
-    lastPos.value = HALF_POS;
-    slideAnim.value = withTiming(HALF_POS, SNAP_CONFIG);
-    // Same reasoning as snapToHalfRef below: if the PREVIOUS destination was being viewed
-    // full-screen, mapState is still 'sheet' from that — revert it so the back-pill's
-    // `mapState !== 'sheet'` visibility check passes for this new destination's half view.
+    lastPos.value = collapsedYRef.current;
+    slideAnim.value = withTiming(collapsedYRef.current, SNAP_CONFIG);
+    // Same reasoning as snapToCollapsedRef below: if the PREVIOUS destination was being
+    // viewed full-screen, mapState is still 'sheet' from that — revert it so the back-pill's
+    // `mapState !== 'sheet'` visibility check passes for this new destination's collapsed view.
     onCollapse?.();
-    onSnapStateChange?.('half');
-    onCollapsedTopChange?.(H - HALF_POS);
-    setIsHalfState(true);
-    setHasUserPickedTab(false);
+    reportSnapState('collapsed');
+    onCollapsedTopChange?.(H - collapsedYRef.current);
     activeTabRef.current = defaultTab;
     setActiveTab(defaultTab);
     tabSlideAnim.value = 0;
@@ -1528,30 +1546,8 @@ export default function DestinationSheet({
     snapStateSV.value = 'full';
     lastPos.value = FULL_POS;
     onExpand?.();
-    onSnapStateChange?.('full');
-    setIsHalfState(false);
+    reportSnapState('full');
     slideAnim.value = withTiming(FULL_POS, SNAP_CONFIG);
-  };
-
-  // Half-screen — deliberately does NOT call onExpand (that flips the map's mapState to
-  // 'sheet', which hides the back-to-country pill; half-screen wants the pill to stay
-  // visible, just repositioned above the sheet's new top edge via onSnapStateChange).
-  // It DOES call onCollapse, though — not to actually collapse anything, just because
-  // that's what reverts mapState back to 'context' (via handleCloseSheet in MapScreen).
-  // Without this, swiping down from FULL (which did call onExpand, setting mapState to
-  // 'sheet') left mapState stuck there, and the pill's `mapState !== 'sheet'` visibility
-  // check kept failing the whole time the sheet sat at half — the pill only reappeared
-  // once the user dragged all the way down to collapsed, which does call onCollapse.
-  const snapToHalfRef = useRef(() => {});
-  snapToHalfRef.current = () => {
-    snapStateRef.current = 'half';
-    snapStateSV.value = 'half';
-    lastPos.value = HALF_POS;
-    onCollapse?.();
-    onSnapStateChange?.('half');
-    onCollapsedTopChange?.(H - HALF_POS);
-    setIsHalfState(true);
-    slideAnim.value = withTiming(HALF_POS, SNAP_CONFIG);
   };
 
   const snapToCollapsedRef = useRef(() => {});
@@ -1561,26 +1557,61 @@ export default function DestinationSheet({
     snapStateSV.value = 'collapsed';
     lastPos.value = cy;
     onCollapse?.();
-    onSnapStateChange?.('collapsed');
+    reportSnapState('collapsed');
     onCollapsedTopChange?.(H - cy);
-    setIsHalfState(false);
     slideAnim.value = withTiming(cy, SNAP_CONFIG);
   };
 
-  // Imperatively collapse from the parent (e.g. the user started panning the map while this
-  // sheet sat at half-screen) — no-ops unless actually at half, so it's safe to bump this
-  // regardless of the sheet's current state.
+  const snapToPeekRef = useRef(() => {});
+  snapToPeekRef.current = () => {
+    snapStateRef.current = 'peek';
+    snapStateSV.value = 'peek';
+    lastPos.value = PEEK_Y;
+    onCollapse?.();
+    reportSnapState('peek');
+    onCollapsedTopChange?.(H - PEEK_Y);
+    slideAnim.value = withTiming(PEEK_Y, SNAP_CONFIG);
+  };
+
+  // Imperatively collapse from the parent — used by the back pill's down-arrow while this
+  // sheet is full-screen. No-ops on mount (only reacts to actual increments).
   const lastCollapseSignalRef = useRef(collapseSignal);
   useEffect(() => {
     if (collapseSignal === undefined || collapseSignal === lastCollapseSignalRef.current) return;
     lastCollapseSignalRef.current = collapseSignal;
-    if (snapStateRef.current === 'half') snapToCollapsedRef.current();
+    if (snapStateRef.current === 'full') snapToCollapsedRef.current();
   }, [collapseSignal]);
+
+  // Slide off the bottom, quickly, when the parent signals it's closing this sheet.
+  const lastExitSignalRef = useRef(exitSignal);
+  useEffect(() => {
+    if (exitSignal === undefined || exitSignal === lastExitSignalRef.current) return;
+    lastExitSignalRef.current = exitSignal;
+    slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) });
+  }, [exitSignal]);
+
+  // Imperatively drop to peek from the parent — used when the user pans/zooms the map, from
+  // either collapsed or full. No-ops if already peeking or dismissed.
+  const lastPeekSignalRef = useRef(peekSignal);
+  useEffect(() => {
+    if (peekSignal === undefined || peekSignal === lastPeekSignalRef.current) return;
+    lastPeekSignalRef.current = peekSignal;
+    if (snapStateRef.current === 'collapsed' || snapStateRef.current === 'full') snapToPeekRef.current();
+  }, [peekSignal]);
+
+  // TEMPORARY diagnostic (see MapScreen's [sheet-trace]): log when this sheet unmounts/dismisses.
+  useEffect(() => {
+    if (__DEV__) console.log('[sheet-trace] DestinationSheet mounted', destination.id);
+    return () => { if (__DEV__) console.log('[sheet-trace] DestinationSheet unmounted', destination.id); };
+  }, []);
 
   const dismissSheetRef = useRef(() => {});
   dismissSheetRef.current = () => {
     slideAnim.value = withTiming(CLOSE_POS, { duration: 280 }, finished => {
-      if (finished) runOnJS(onClose)(true);
+      if (finished) {
+        runOnJS(logDismiss)();
+        runOnJS(onClose)(true);
+      }
     });
   };
 
@@ -1608,9 +1639,16 @@ export default function DestinationSheet({
   );
 
   const callSnapToFull      = useCallback(() => snapToFullRef.current(), []);
-  const callSnapToHalf      = useCallback(() => snapToHalfRef.current(), []);
   const callSnapToCollapsed = useCallback(() => snapToCollapsedRef.current(), []);
+  const callSnapToPeek      = useCallback(() => snapToPeekRef.current(), []);
+  const callSnapBack = useCallback(() => {
+    const st = snapStateRef.current;
+    if (st === 'peek') snapToPeekRef.current();
+    else if (st === 'full') snapToFullRef.current();
+    else snapToCollapsedRef.current();
+  }, []);
   const callDismissSheet    = useCallback(() => dismissSheetRef.current(), []);
+  const logDismiss = useCallback(() => { if (__DEV__) console.log('[sheet-trace] DestinationSheet dismiss-by-swipe completed'); }, []);
 
   // True only once onUpdate has actually moved the sheet at least one frame during the
   // current gesture — while full-screen, onUpdate legitimately no-ops for most vertical
@@ -1638,68 +1676,67 @@ export default function DestinationSheet({
       lastPos.value = slideAnim.value;
     })
     .onUpdate(e => {
+      // A map pinch/pan in progress (or just finished) owns this touch: a finger that lands on this
+      // sheet during a two-finger map gesture must not drag it (see mapGestureAtSV).
+      if (mapGestureAtSV && Date.now() - mapGestureAtSV.value < 400) return;
       if (Math.abs(e.translationX) >= Math.abs(e.translationY)) return;
       // Mirrors the old onMoveShouldSetPanResponderCapture gate: while full-screen, only
       // let this gesture pull the sheet down once its inner ScrollView is already at top.
       if (snapStateSV.value === 'full' && !(scrollYSV.value <= 1 && e.translationY > 6)) return;
       dragEngagedSV.value = true;
-      const clampMax = snapStateSV.value === 'collapsed' ? CLOSE_POS : collapsedYAnim.value;
-      slideAnim.value = Math.max(FULL_POS, Math.min(clampMax, lastPos.value + e.translationY));
+      const raw = lastPos.value + e.translationY;
+      if (snapStateSV.value === 'collapsed' || snapStateSV.value === 'peek') {
+        // Peek is the lowest point now — swiping down from either collapsed or peek can no
+        // longer dismiss the sheet (exit to the level above). Past PEEK_Y it still visually
+        // drags, just heavily damped (rubber-band), so it's clear the gesture registered
+        // without actually being able to pull the sheet any further down.
+        slideAnim.value = raw > PEEK_Y
+          ? Math.max(FULL_POS, PEEK_Y + (raw - PEEK_Y) * 0.35)
+          : Math.max(FULL_POS, raw);
+      } else {
+        slideAnim.value = Math.max(FULL_POS, Math.min(collapsedYAnim.value, raw));
+      }
     })
     .onEnd(e => {
+      if (mapGestureAtSV && Date.now() - mapGestureAtSV.value < 400) { runOnJS(callSnapBack)(); return; }
       const pos = lastPos.value + e.translationY;
       const cy  = collapsedYAnim.value;
 
+      if (snapStateSV.value === 'peek') {
+        // Swiping up from peek goes back to collapsed; swiping down (or anything smaller)
+        // just settles back at peek — it's the lowest point, no more dismissing from here.
+        if (e.velocityY < -500 || pos < PEEK_Y - 60) runOnJS(callSnapToCollapsed)();
+        else runOnJS(callSnapToPeek)();
+        return;
+      }
+
       if (snapStateSV.value === 'collapsed') {
-        // Swiping up from collapsed lands at half — UNLESS the drag has actually been
-        // carried past the halfway point of the screen, in which case it commits straight
-        // to full instead of locking at half first. A fast fling that never physically
-        // crosses halfway still only reaches half (mirrors full → half → collapsed).
-        if (pos <= HALF_POS) { runOnJS(callSnapToFull)(); return; }
-        if (e.velocityY < -500 || pos < cy - 60) runOnJS(callSnapToHalf)();
-        else if (e.velocityY > 500 || pos > cy + 40) runOnJS(callDismissSheet)();
+        // Swiping up from collapsed goes straight to full-screen; swiping down now drops to
+        // peek instead of dismissing; anything smaller settles back at collapsed.
+        if (e.velocityY < -500 || pos < cy - 60) runOnJS(callSnapToFull)();
+        else if (e.velocityY > 500 || pos > cy + 40) runOnJS(callSnapToPeek)();
         else runOnJS(callSnapToCollapsed)();
         return;
       }
 
-      if (snapStateSV.value === 'full') {
-        // A gesture that never actually engaged (e.g. an upward scroll, or a downward one
-        // that never got past the "scrolled to top" gate) shouldn't change the sheet's snap
-        // state at all — leave it exactly at full.
-        if (!dragEngagedSV.value) return;
-        // Haptic fires right here, at the moment of release, not during the drag itself —
-        // "the user swipes down from full-screen view" is this release, regardless of
-        // whether it ends up landing at half or collapsed.
-        runOnJS(triggerHaptic)();
-        // Swiping down from full lands at half — UNLESS the drag has actually been carried
-        // past the halfway point of the screen, in which case it commits straight to
-        // collapsed instead of locking at half first.
-        if (pos >= HALF_POS) { runOnJS(callSnapToCollapsed)(); return; }
-        runOnJS(callSnapToHalf)();
-        return;
-      }
-
-      // From half: swipe up continues to full, swipe down continues to collapsed,
-      // anything smaller settles back at half.
-      if (e.velocityY < -500 || pos < HALF_POS - 60) runOnJS(callSnapToFull)();
-      else if (e.velocityY > 500 || pos > HALF_POS + 60) runOnJS(callSnapToCollapsed)();
-      else runOnJS(callSnapToHalf)();
+      // Full-screen: a gesture that never actually engaged (e.g. an upward scroll, or a
+      // downward one that never got past the "scrolled to top" gate) shouldn't change the
+      // sheet's snap state at all — leave it exactly at full.
+      if (!dragEngagedSV.value) return;
+      // Haptic fires right here, at the moment of release, not during the drag itself —
+      // "the user swipes down from full-screen view" is this release, regardless of
+      // whether it ends up landing at collapsed or snapping back.
+      runOnJS(triggerHaptic)();
+      if (e.velocityY > 500 || pos > H * 0.25) runOnJS(callSnapToCollapsed)();
+      else runOnJS(callSnapToFull)();
     });
-  // Only needed for the full-screen case (scrolled to top, then drag down) — without this,
-  // the inner ScrollView's own native pan (iOS UIScrollView / Android NestedScrollView)
-  // claims the touch outright while full-screen, so our gesture never even starts
-  // recognizing. Letting both recognize simultaneously there means the ScrollView keeps
-  // scrolling normally, while our onUpdate's own `scrollYSV.value <= 1` check (above)
-  // decides whether a given downward drag should also start moving the sheet.
-  //
-  // Deliberately NOT applied in half-screen: content is meant to be completely static there
-  // (scrollEnabled is already false), and giving the ScrollView's recognizer a simultaneous
-  // claim on the touch was letting it visibly "grab" the content for the first few pixels of
-  // a swipe-up-to-full gesture before our own gesture took over. Exclusive recognition here
-  // means our Pan claims the touch outright, with no residual scroll interaction at all.
-  if (!isHalfState) {
-    pan = pan.simultaneousWithExternalGesture(scrollRef);
-  }
+  // Needed for the full-screen case (scrolled to top, then drag down) — without this, the
+  // inner ScrollView's own native pan (iOS UIScrollView / Android NestedScrollView) claims
+  // the touch outright while full-screen, so our gesture never even starts recognizing.
+  // Letting both recognize simultaneously there means the ScrollView keeps scrolling
+  // normally, while our onUpdate's own `scrollYSV.value <= 1` check (above) decides whether
+  // a given downward drag should also start moving the sheet.
+  pan = pan.simultaneousWithExternalGesture(scrollRef);
 
   // Actions
   const handleMarkVisited = () => {
@@ -1711,61 +1748,31 @@ export default function DestinationSheet({
           { text: 'Cancel', style: 'cancel' },
           {
             text: 'Remove', style: 'destructive',
-            onPress: () => {
-              if (isWishlist) {
-                // Keep wishlist entry, just strip visited data
-                saveDestination(destination.id, 'wishlist', { isWishlisted: true });
-              } else {
-                unsaveDestination(destination.id);
-              }
-            },
+            onPress: () => unsaveDestination(destination.id),
           },
         ]
       );
       return;
     }
     saveDestination(destination.id, 'visited', {});
-    setShowEditSheet(true);
+    setEditingVisitModule('new');
   };
-  const handleWishlist = () => {
-    if (isWishlist) {
-      if (isVisited) {
-        updateSaved(destination.id, { isWishlisted: false });
-      } else {
-        unsaveDestination(destination.id);
-      }
-    } else {
-      if (saved) {
-        updateSaved(destination.id, { isWishlisted: true });
-      } else {
-        saveDestination(destination.id, 'wishlist', { isWishlisted: true });
-      }
-    }
-  };
-  // Full-screen keeps the top row (X/wishlist/visit) below the status bar, as before. In
-  // half-screen the hero is already cropped short and doesn't overlap the status bar at
-  // all, so that same offset just reads as awkward empty space above the buttons instead
-  // of them sitting in the corner — nudge them up as the sheet passes through half-screen,
-  // interpolated off slideAnim (like heroHeightAnim) so it glides rather than snapping.
+  // Top offset animates continuously with the drag, same reasoning as heroAnimStyle's own
+  // height: at full-screen the row needs to clear the status bar (insets.top + 20), but at
+  // collapsed the sheet's own top edge already sits well below the status bar — reusing the
+  // full-screen offset there pushed the button far down into the shorter collapsed crop
+  // instead of sitting near ITS top edge. A small fixed 14 is enough clearance once the
+  // sheet itself provides that gap.
   const heroTopRowStyle = useAnimatedStyle(() => ({
-    top: interpolate(slideAnim.value, [FULL_POS, HALF_POS], [insets.top + 20, 28], Extrapolation.CLAMP),
+    top: interpolate(slideAnim.value, [FULL_POS, COLLAPSED_Y], [insets.top + 20, 20], Extrapolation.CLAMP),
   }));
-  // Carries both the vertical snap-drag position AND the horizontal destination-carousel
-  // offset — applied to the *whole* sheet shape (this style, not just its inner content) is
-  // what makes the entire card (rounded corners, shadow, background) move together during a
-  // hero swipe, instead of the content sliding within a fixed sheet-shaped window.
+  // Invisible right at full-screen, fading in over the first 40pt of dragging away from it —
+  // gone well before the top action row would otherwise sit near it.
+  const dragPillStyle = useAnimatedStyle(() => ({
+    opacity: interpolate(slideAnim.value, [FULL_POS, FULL_POS + 40], [0, 1], Extrapolation.CLAMP),
+  }));
   const sheetAnimStyle = useAnimatedStyle(() => ({
-    transform: [{ translateY: slideAnim.value }, { translateX: heroTranslateX.value }],
-  }));
-  // The incoming destination's own whole sheet — locked to sit exactly one screen-width
-  // adjoined to the current one (same formula as the old previewCardStyle), so the two
-  // slide as a matched pair with no gap, but now as two independent sheet-shaped siblings
-  // rather than content confined within the current sheet's own clipped bounds.
-  const previewSheetAnimStyle = useAnimatedStyle(() => ({
-    transform: [
-      { translateY: slideAnim.value },
-      { translateX: heroTranslateX.value - previewSignSV.value * W },
-    ],
+    transform: [{ translateY: slideAnim.value }],
   }));
 
   return (
@@ -1777,7 +1784,7 @@ export default function DestinationSheet({
       />
       {/* Tap overlay to collapse (only active when fully expanded) */}
       <Animated.View
-        pointerEvents={snapStateRef.current === 'full' ? 'box-none' : 'none'}
+        pointerEvents={snapStateReact === 'full' ? 'box-none' : 'none'}
         style={StyleSheet.absoluteFill}
       >
         <Pressable style={StyleSheet.absoluteFill} onPress={() => snapToCollapsedRef.current()} />
@@ -1790,65 +1797,8 @@ export default function DestinationSheet({
           Gesture-Handler worklet running on the UI thread with no per-frame JS-thread hop. */}
       <Reanimated.View pointerEvents="none" style={[st.sheetShadow, sheetAnimStyle]} />
 
-      {/* ── PREVIEW GHOST SHEET — the incoming destination's whole sheet (own rounded
-          corners/shadow/background), locked to sit exactly one screen-width adjoined to the
-          current sheet (see previewSheetAnimStyle) for as long as the hero-swipe gesture or
-          its commit/cancel animation is running. A sibling of the real sheet — not nested
-          inside its clipped content — so it can actually render alongside/beside it rather
-          than being confined to the current sheet's own bounds. Non-interactive and limited
-          to hero+tab bar (matching exactly what's visible in collapsed/half-screen anyway;
-          in full-screen the content below simply appears once the swap completes), since
-          duplicating this sheet's entire interactive scrollable content for a
-          transient preview isn't worth the complexity. */}
-      {previewDest && (
-        <Reanimated.View pointerEvents="none" style={[st.sheet, previewSheetAnimStyle]}>
-          <Reanimated.View style={[st.hero, { backgroundColor: CONTINENT_COLORS[previewDest.continent] }, heroAnimStyle]}>
-            {previewPhotoUrl && <Image source={{ uri: previewPhotoUrl }} style={StyleSheet.absoluteFill} resizeMode="cover" />}
-            <View pointerEvents="none" style={st.heroScrim} />
-            <View style={[st.heroBottomStack, st.heroBottomStackPad]}>
-              <View style={st.heroContent}>
-                <Text style={st.heroName} numberOfLines={1}>{previewDest.name}</Text>
-                <View style={st.heroMeta}>
-                  <View style={st.heroFlagCircle}>
-                    <View style={st.heroFlagClip}>
-                      <Image
-                        source={{ uri: `https://flagcdn.com/w160/${previewDest.countryCode.toLowerCase()}.png` }}
-                        style={st.heroFlagImg}
-                        resizeMode="cover"
-                      />
-                    </View>
-                  </View>
-                  <Text style={st.heroMetaTxt}>{previewDest.country}</Text>
-                  <Text style={st.heroMetaDot}> · </Text>
-                  <Text style={st.heroMetaTxt}>{previewDest.continent}</Text>
-                </View>
-                {!!previewDest.tagline && (
-                  <Text style={st.heroTagline} numberOfLines={2}>{previewDest.tagline}</Text>
-                )}
-                {previewSpots.length > 0 && (
-                  <View style={st.commRatingRow}>
-                    <MapPin size={12} color="rgba(255,255,255,0.80)" />
-                    <Text style={st.commRatingCount}>{previewSpots.length} spots</Text>
-                  </View>
-                )}
-              </View>
-            </View>
-          </Reanimated.View>
-          <View style={st.tabBar}>{renderTabBarRow()}</View>
-        </Reanimated.View>
-      )}
-
       <GestureDetector gesture={pan}>
       <Reanimated.View style={[st.sheet, sheetAnimStyle]}>
-
-        {/* Drag handle — the compact card has its own (pillRow/pill below), but that
-            card is hidden entirely in half-screen, so half needs its own visible handle
-            at the sheet's own top-center to signal it's draggable. */}
-        {isHalfState && (
-          <View pointerEvents="none" style={st.halfHandleRow}>
-            <View style={st.halfHandle} />
-          </View>
-        )}
 
         {/* ── FULL CONTENT — fills entire sheet, hero starts at y=0 ──────── */}
         <View style={[StyleSheet.absoluteFill, { overflow: 'hidden' }]}>
@@ -1861,10 +1811,17 @@ export default function DestinationSheet({
         <ScrollView
           ref={scrollRef}
           style={{ flex: 1 }}
-          // Half-screen is a fixed crop (hero + tab bar, nothing else) — not a scrollable
-          // preview — so the only way out of it is the drag gesture (swipe up to full,
-          // down to collapsed), not an internal scroll.
-          scrollEnabled={!isHalfState}
+          // Only scrollable at full-screen — while collapsed/peeking there's nothing to
+          // scroll TO (the hero itself is cropped shorter, not scrolled), and leaving this
+          // always-true let the ScrollView's own native pan recognize simultaneously with
+          // the sheet's drag gesture at every snap state, not just full. A fast half→full
+          // swipe would then have its OWN residual motion already captured mid-flight as a
+          // scroll, so the instant the sheet visually landed at full it immediately kept
+          // moving as a content scroll instead of settling — "doesn't lock, transitions
+          // into scrolling". Gating this to snapStateReact (real React state, unlike the
+          // snapStateRef used elsewhere in this file for cheaper reads) means the very
+          // first frame at full-screen is the first frame scrolling can even engage.
+          scrollEnabled={snapStateReact === 'full'}
           bounces={false}
           showsVerticalScrollIndicator={false}
           onScroll={(e: NativeSyntheticEvent<NativeScrollEvent>) => {
@@ -1873,28 +1830,45 @@ export default function DestinationSheet({
             scrollYAnim.setValue(y);
           }}
           scrollEventThrottle={16}
-          contentContainerStyle={{ paddingBottom: insets.bottom + 36 }}
+          contentContainerStyle={{ paddingBottom: insets.bottom + 55 }}
           keyboardShouldPersistTaps="handled"
         >
 
-          {/* ── HERO ───────────────────────────────────────────────────── */}
-          <GestureDetector gesture={heroSwipeGesture}>
-          <Reanimated.View style={[st.hero, { backgroundColor: color }, heroAnimStyle]}>
-            {photoUrl && <Image source={{ uri: photoUrl }} style={StyleSheet.absoluteFill} resizeMode="cover" />}
+          {/* ── HERO ─────────────────────────────────────────────────────
+              Shared, single element for every snap state — see heroAnimStyle's own
+              comment. Tapping the background (not the buttons, which claim the touch
+              first) expands to full-screen while collapsed; a no-op once already full. */}
+          <Pressable onPress={() => { if (snapStateRef.current !== 'full') snapToFullRef.current(); }}>
+          <Reanimated.View style={[st.hero, { backgroundColor: '#111827' }, heroAnimStyle]}>
+            {photoUrl && <FadeInImage instant={photoWasCachedRef.current} source={{ uri: photoUrl }} style={StyleSheet.absoluteFill} resizeMode="cover" />}
 
             {/* Ambient scrim so text is always legible */}
             <View pointerEvents="none" style={st.heroScrim} />
 
             {/* Gradient: darkens toward the bottom */}
             <View pointerEvents="none" style={st.gradWrap}>
-              {GRADIENT_STRIPS.map((opacity, i) => (
-                <View key={i} style={{
-                  position:'absolute', left:0, right:0,
-                  bottom: (GRAD_N - 1 - i) * GRAD_H, height: GRAD_H + 0.5,
-                  backgroundColor: `rgba(0,0,0,${opacity})`,
-                }} />
-              ))}
+              <Svg style={StyleSheet.absoluteFill}>
+                <Defs>
+                  <SvgLinearGradient id="heroScrimGrad" x1="0" y1="0" x2="0" y2="1">
+                    {GRADIENT_STOPS.map(({ offset, opacity }) => (
+                      <Stop key={offset} offset={offset} stopColor="#000" stopOpacity={opacity} />
+                    ))}
+                  </SvgLinearGradient>
+                </Defs>
+                <Rect x="0" y="0" width="100%" height="100%" fill="url(#heroScrimGrad)" />
+              </Svg>
             </View>
+
+            {/* Drag-handle pill — visible while collapsed/peeking, fades out approaching
+                full-screen (where a handle would just clutter the header buttons).
+                Explicitly absolute (NOT st.peekPillRow's normal-flow layout, which is fine
+                for the separate, short peek-strip container it was designed for) — as a
+                normal-flow child here it would get swept down by the hero's own
+                justifyContent:'flex-end' to sit right above heroBottomStack instead of at
+                the top. */}
+            <Reanimated.View pointerEvents="none" style={[st.heroDragPillRow, dragPillStyle]}>
+              <View style={st.peekPill} />
+            </Reanimated.View>
 
             {/* Top row — the close/collapse button that used to live here is gone; the
                 back-navigation pill (rendered by the map screen, not this sheet) now glides
@@ -1911,23 +1885,12 @@ export default function DestinationSheet({
                     : <Plus size={15} color="white" strokeWidth={2.75} />}
                   <Text style={st.heroVisitPillTxt}>{isVisited ? 'Visited' : 'Add Visit'}</Text>
                 </Pressable>
-                {/* Wishlisting only makes sense before a visit is logged — once visited,
-                    the destination has already been "gotten to", so the option disappears. */}
-                {!isVisited && (
-                  <Pressable
-                    style={[st.heroIconBtn, isWishlist && st.heroIconBtnWishlist]}
-                    onPress={handleWishlist} hitSlop={10}>
-                    <Heart size={16} color="white" fill={isWishlist ? 'white' : 'none'} strokeWidth={isWishlist ? 0 : 2.25} />
-                  </Pressable>
-                )}
               </View>
             </Reanimated.View>
 
-            {/* Bottom stack: pushed to hero bottom via justifyContent on parent. A touch of
-                extra bottom padding (both half- and full-screen), nudging the content up
-                slightly within the same fixed hero height — doesn't change how much room
-                hero+tab bar take up overall, just the gap between "X spots" and the tab
-                bar. Irrelevant while collapsed, since the compact card covers the hero. */}
+            {/* Bottom stack: pushed to hero bottom via justifyContent on parent — tracks the
+                hero's own animated height, so it sits flush above the tab bar when
+                collapsed and lower down once expanded, same as it always has. */}
             <View style={[st.heroBottomStack, st.heroBottomStackPad]}>
               <View style={st.heroContent}>
                 <Text style={st.heroName} numberOfLines={1}>{destination.name}</Text>
@@ -1962,12 +1925,11 @@ export default function DestinationSheet({
 
             </View>
           </Reanimated.View>
-          </GestureDetector>
+          </Pressable>
 
         {/* Tab swipe handler wraps only the tab bar row + content below it — NOT the hero
-            above — so a horizontal swipe on the header always drives the destination
-            carousel (heroSwipeGesture) and never the tab switch, regardless of activation
-            threshold races between the two gestures. */}
+            above — so a horizontal swipe on the header never risks being read as a tab
+            switch. */}
         <GestureDetector gesture={tabSwipeGesture}>
         <View
           onLayout={e => {
@@ -1990,7 +1952,10 @@ export default function DestinationSheet({
           {/* ── TAB BAR — every destination gets About + Spots; visited also gets My Visit.
               Scrolls normally here; a second copy (tabBarOverlay below, outside the
               ScrollView) fades/slides in to pin it in place once this one reaches the top. */}
-          <View style={st.tabBar}>
+          <View
+            style={st.tabBar}
+            onLayout={e => { tabBarHAnim.value = e.nativeEvent.layout.height; }}
+          >
             {renderTabBarRow()}
           </View>
 
@@ -1998,95 +1963,95 @@ export default function DestinationSheet({
           <View style={st.content}>
 
             {/* ── SLIDE TRACK for tabs ─────────────────────────────────── */}
-            <View style={st.slideTrack}>
+            <Reanimated.View style={[st.slideTrack, slideTrackStyle]}>
               <Reanimated.View
                 style={[st.slideRow, { width: W * TAB_ORDER.length }, slideRowStyle]}
               >
 
                   {/* ── MY VISIT PANEL — visited destinations only ──────── */}
                   {isVisited && (
-                  <View style={st.slidePanel}>
+                  <View
+                    style={st.slidePanel}
+                    onLayout={e => measurePanel(TAB_ORDER.indexOf('visit'), e.nativeEvent.layout.height)}
+                  >
 
-                    {/* MEMORY CARD — read-only display */}
-                    <View style={st.memCard}>
-
-                      {/* Row 1: Visit date(s) + Edit button */}
-                      <View style={st.memTopRow}>
-                        <View style={{ flex: 1 }}>
-                          <Text style={st.memDateCaption}>
-                            {localVisits.length > 1 ? 'LAST VISITED' : 'VISITED'}
-                          </Text>
-                          {localVisits.length > 0 ? (
-                            <View style={{ flexDirection:'row', alignItems:'center', gap:8, flexWrap:'wrap' }}>
-                              <Text style={st.memDateVal}>{fmtVisitRangeShort(localVisits[0])}</Text>
-                              {localVisits.length > 1 && (
-                                <View style={st.memVisitBadge}>
-                                  <Text style={st.memVisitBadgeTxt}>{localVisits.length} visits</Text>
-                                </View>
-                              )}
-                            </View>
-                          ) : (
-                            <Text style={st.memDateEmpty}>No dates logged</Text>
-                          )}
+                    {/* Each logged visit is its own standalone module — its own title,
+                        dates, photos, and notes — like a separate journal entry. Adding a
+                        new one (or editing/deleting a specific one) only ever touches that
+                        single module's own card; every sibling module is copied through
+                        untouched. */}
+                    {localVisits.length === 0 ? (
+                      <Pressable style={st.memCard} onPress={() => setEditingVisitModule('new')}>
+                        <View style={st.memTopRow}>
+                          <Text style={st.memDateEmpty}>No dates logged — tap to add a visit</Text>
                         </View>
-                        <Pressable style={st.memEditBtn} onPress={() => setShowEditSheet(true)}>
-                          <Pencil size={12} color="#6366F1" />
-                          <Text style={st.memEditBtnTxt}>Edit</Text>
-                        </Pressable>
-                      </View>
-
-                      {/* Row 2: Photos collage */}
-                      <>
-                        <View style={st.memDivider} />
-                        <Text style={st.memSectionLabelPad}>YOUR PHOTOS</Text>
-                        <PhotoCollage
-                          photos={localPhotos}
-                          onAdd={() => setShowEditSheet(true)}
-                        />
-                      </>
-
-                      {/* Row 4: Review snippet */}
-                      <>
-                        <View style={st.memDivider} />
-                        <Pressable style={st.memNotesDisplay} onPress={() => setShowEditSheet(true)}>
-                          <Text style={st.memSectionLabel}>YOUR REVIEW</Text>
-                          {saved?.notes
-                            ? <Text style={[st.memNotesTxt, { marginTop: 4 }]} numberOfLines={3}>{saved.notes}</Text>
-                            : <Text style={[st.memNotesPh, { marginTop: 4 }]}>Tap to write about your trip…</Text>}
-                        </Pressable>
-                      </>
-
-                    </View>
-
-                    {/* SPOTS VISITED */}
-                    {spots.length > 0 && (
-                      <View style={st.section}>
-                        <View style={st.spotsHeaderRow}>
-                          <View style={st.spotsLabel}>
-                            <MapPin size={13} color="#16A34A" />
-                            <Text style={st.spotsLabelTxt}>{spots.length} spots visited</Text>
+                      </Pressable>
+                    ) : (
+                      localVisits.map(v => (
+                        <View key={v.id} style={st.memCard}>
+                          <View style={st.memTopRow}>
+                            <View style={{ flex: 1 }}>
+                              {!!v.title && (
+                                <Text style={st.memTripNameHeading} numberOfLines={2}>{v.title}</Text>
+                              )}
+                              <Text style={st.memDateVal}>{fmtVisitRangeShort(v)}</Text>
+                            </View>
+                            <Pressable style={st.memEditBtn} onPress={() => setEditingVisitModule(v)}>
+                              <Pencil size={12} color="#6366F1" />
+                              <Text style={st.memEditBtnTxt}>Edit</Text>
+                            </Pressable>
                           </View>
-                          <Pressable hitSlop={8}>
-                            <Text style={st.spotsAddMore}>+ add more</Text>
+                          {spots.length > 0 && (
+                            v.spotIds?.length ? (
+                              <View style={st.memSpotsWrap}>
+                                {v.spotIds.map(spotId => {
+                                  const spot = spots.find(sp => sp.id === spotId);
+                                  if (!spot) return null;
+                                  return (
+                                    <View key={spotId} style={st.memSpotChip}>
+                                      <Text style={st.memSpotChipIcon}>{spot.icon}</Text>
+                                      <Text style={st.memSpotChipTxt} numberOfLines={1}>{spot.name}</Text>
+                                    </View>
+                                  );
+                                })}
+                              </View>
+                            ) : (
+                              <Pressable style={st.memSpotsEmptyRow} onPress={() => setEditingVisitModule(v)}>
+                                <MapPin size={13} color="#9CA3AF" />
+                                <Text style={st.memSpotsEmptyTxt}>Tap to add spots visited</Text>
+                              </Pressable>
+                            )
+                          )}
+                          <View style={st.memPhotosWrap}>
+                            <PhotoCollage photos={v.photos ?? []} onAdd={() => setEditingVisitModule(v)} hideAddMore />
+                          </View>
+                          <Pressable style={st.memNotesDisplay} onPress={() => setEditingVisitModule(v)}>
+                            {v.notes
+                              ? <Text style={st.memNotesTxt} numberOfLines={3}>{v.notes}</Text>
+                              : <Text style={st.memNotesPh}>Tap to write about your trip…</Text>}
                           </Pressable>
                         </View>
-                        <ScrollView ref={visitCarouselScrollRef} horizontal showsHorizontalScrollIndicator={false}
-                          contentContainerStyle={st.spcRow}>
-                          {spots.map(spot => (
-                            <SpotPhotoCard key={spot.id} spot={spot} color={color} onPress={() => onSelectSpot?.(spot)} />
-                          ))}
-                        </ScrollView>
-                      </View>
+                      ))
                     )}
+
+                    <Pressable
+                      style={st.addVisitBtn}
+                      onPress={() => setEditingVisitModule('new')}
+                    >
+                      <Text style={st.addVisitBtnTxt}>Add Visit +</Text>
+                    </Pressable>
 
                   </View>
                   )}
 
                   {/* ── ABOUT PANEL ────────────────────────────────────── */}
-                  <View style={st.slidePanel}>
+                  <View
+                    style={st.slidePanel}
+                    onLayout={e => measurePanel(TAB_ORDER.indexOf('about'), e.nativeEvent.layout.height)}
+                  >
                     <AboutPanel
-                      destination={destination} spots={spots} color={color}
-                      bestMonths={bestMonths} photoUrl={photoUrl}
+                      destination={destination} spots={spots}
+                      photoUrl={photoUrl}
                       onSelectSpot={onSelectSpot}
                       onOpenClimateDetail={() => setShowClimateDetail(true)}
                       onSeeAllSpots={() => switchTabRef.current('spots')}
@@ -2095,11 +2060,14 @@ export default function DestinationSheet({
                   </View>
 
                   {/* ── SPOTS PANEL — full grid, category filters, map-view button ── */}
-                  <View style={st.slidePanel}>
-                    <SpotsPanel spots={spots} color={color} onSelectSpot={onSelectSpot} filterScrollRef={spotsFilterScrollRef} />
+                  <View
+                    style={st.slidePanel}
+                    onLayout={e => measurePanel(TAB_ORDER.indexOf('spots'), e.nativeEvent.layout.height)}
+                  >
+                    <SpotsPanel spots={spots} onSelectSpot={onSelectSpot} filterScrollRef={spotsFilterScrollRef} />
                   </View>
                 </Reanimated.View>
-              </View>
+              </Reanimated.View>
 
           </View>
         </View>
@@ -2119,87 +2087,33 @@ export default function DestinationSheet({
         </Animated.View>
         </View>{/* end full-content wrapper */}
 
-        {/* ── COMPACT CARD — absolute overlay, slides off top as sheet expands.
-            Force-hidden in half-screen mode: compactTranslateY's clamp only fully clears it
-            once the sheet has passed the collapsed card's own height above HALF_POS, which
-            isn't reliably true at exactly the screen midpoint, so it'd otherwise still show
-            through over the real hero/tab bar. */}
+
+        {/* ── PEEK STRIP — a thin sliver of the hero image with the destination's name,
+            shown only once the sheet has been dropped down past collapsed (via peekSignal,
+            fired when the user pans/zooms the map). Tapping it returns to collapsed. ── */}
         <Reanimated.View
-          pointerEvents={isHalfState ? 'none' : 'auto'}
+          pointerEvents="box-none"
           style={[{
-            position: 'absolute', left: 0, right: 0, top: 0,
-            backgroundColor: 'white',
+            position: 'absolute', left: 0, right: 0, top: 0, height: PEEK_STRIP_H, overflow: 'hidden',
+            backgroundColor: '#111827',
             borderTopLeftRadius: 28, borderTopRightRadius: 28,
-            opacity: isHalfState ? 0 : 1,
-          }, compactAnimStyle]}
-          onLayout={(e) => {
-            const h = e.nativeEvent.layout.height;
-            if (h < 20) return;
-            const newCY = Math.max(0, H - BOTTOM_TAB_H - h);
-            if (Math.abs(newCY - collapsedYRef.current) < 2) return;
-            collapsedYRef.current = newCY;
-            collapsedYAnim.value = newCY;
-            onCollapsedTopChange?.(H - newCY);
-            if (snapStateRef.current === 'collapsed') {
-              lastPos.value = newCY;
-              slideAnim.value = withTiming(newCY, QUICK_CONFIG);
-            }
-          }}
+          }, peekAnimStyle]}
         >
-          {/* Pill */}
-          <View pointerEvents="none" style={st.pillRow}>
-            <Reanimated.View style={[st.pill, pillBgStyle]} />
-          </View>
-
-          {/* Heading — indicates you're browsing the destinations within this country,
-              identical layout to SpotSheet's own carHeader. */}
-          <View style={st.carHeader}>
-            <View style={{ flex: 1 }}>
-              <Text style={st.carEyebrow}>DESTINATIONS IN</Text>
-              <View style={st.carDestRow}>
-                <CircleFlag countryCode={destination.countryCode} size={16} />
-                <Text style={st.carDest} numberOfLines={1}>{destination.country}</Text>
-              </View>
+          <Pressable style={StyleSheet.absoluteFill} onPress={() => snapToCollapsedRef.current()}>
+            {photoUrl && <FadeInImage instant={photoWasCachedRef.current} source={{ uri: photoUrl }} style={StyleSheet.absoluteFill} resizeMode="cover" />}
+            <View pointerEvents="none" style={st.peekScrim} />
+            <View pointerEvents="none" style={st.peekPillRow}>
+              <View style={st.peekPill} />
             </View>
-            <Text style={st.carCounter}>
-              {countryDests.findIndex(d => d.id === destination.id) + 1} / {countryDests.length}
-            </Text>
-            {!!onGoToCountryList && (
-              <Pressable style={st.carListBtn} onPress={onGoToCountryList} hitSlop={8}>
-                <LayoutGrid size={14} color="#6B7280" />
-                <Text style={st.carListBtnTxt}>List</Text>
-              </Pressable>
-            )}
-          </View>
-
-          {/* Collapsed carousel — swipe between this country's destinations, identical
-              mechanism to SpotSheet's own collapsed carousel: a horizontal ScrollView with
-              peek-adjacent neighbor cards. */}
-          <ScrollView
-            ref={compactCarouselRef}
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            snapToInterval={COMPACT_CARD_SNAP}
-            decelerationRate="fast"
-            contentContainerStyle={{ paddingHorizontal: COMPACT_SIDE_PAD }}
-            onMomentumScrollEnd={e => handleCompactCarouselSettle(e.nativeEvent.contentOffset.x)}
-          >
-            {countryDests.map((dest, i) => (
-              <CompactCarouselCard
-                key={dest.id}
-                dest={dest}
-                isActive={dest.id === destination.id}
-                savedDestinations={savedDestinations}
-                onPress={() => {
-                  if (dest.id !== destination.id) {
-                    commitDestinationSwap(dest);
-                    compactCarouselRef.current?.scrollTo({ x: i * COMPACT_CARD_SNAP, animated: true });
-                  }
-                  snapToFullRef.current();
-                }}
-              />
-            ))}
-          </ScrollView>
+            <View pointerEvents="none" style={st.peekNameRow}>
+              <Text style={st.peekNameTxt} numberOfLines={1}>{destination.name}</Text>
+              {spots.length > 0 && (
+                <Text style={st.peekSpotsTxt} numberOfLines={1}>
+                  {spots.length} spot{spots.length !== 1 ? 's' : ''}
+                </Text>
+              )}
+            </View>
+          </Pressable>
         </Reanimated.View>
 
       </Reanimated.View>
@@ -2207,8 +2121,15 @@ export default function DestinationSheet({
 
 
 
-      {showEditSheet && (
-        <VisitEditSheet destination={destination} onClose={() => setShowEditSheet(false)} />
+      {editingVisitModule !== null && (
+        <VisitModuleSheet
+          destination={destination}
+          visit={editingVisitModule === 'new' ? null : editingVisitModule}
+          spots={spots}
+          onSave={handleSaveVisitModule}
+          onDelete={handleDeleteVisitModule}
+          onClose={() => setEditingVisitModule(null)}
+        />
       )}
       {showClimateDetail && (
         <ClimateDetailModal destination={destination} onClose={() => setShowClimateDetail(false)} />
@@ -2225,7 +2146,7 @@ const GRID_GAP = 14;
 const GRID_CARD_W = (W - 32 - GRID_GAP) / 2;
 
 const st = StyleSheet.create({
-  backdrop: { ...StyleSheet.absoluteFillObject, zIndex:200, elevation:200 },
+  backdrop: { ...StyleSheet.absoluteFill, zIndex:200, elevation:200 },
   sheet: {
     position:'absolute', left:0, right:0, top:0, height:H, overflow:'hidden',
     borderTopLeftRadius:28, borderTopRightRadius:28, backgroundColor:'#F9FAFB',
@@ -2241,79 +2162,37 @@ const st = StyleSheet.create({
     shadowOffset:{ width:0, height:-8 }, elevation:20,
   },
 
-  // ── Compact card header ─────────────────────────────────────────────────────
-  // Collapsed carousel cards — same visual language the old single static compact row had
-  // (thumb/info/Open button), just narrower and boxed so neighbors can peek in on the
-  // sides; active card gets a colored border, mirroring SpotSheet's own carousel cards.
-  compactCarouselCard: {
-    flexDirection:'row', alignItems:'flex-start', gap:16,
-    paddingTop:16, paddingBottom:16, paddingHorizontal:16,
-    marginTop:12,
-    backgroundColor:'white', borderRadius:18,
-    borderWidth:1, borderColor:'#F0F1F3',
-    shadowColor:'#000', shadowOpacity:0.06, shadowRadius:8, shadowOffset:{ width:0, height:3 }, elevation:2,
-  },
-  compactCarouselCardActive: { borderColor:'#16A34A' },
-  // Collapsed-carousel heading row. paddingTop is larger than SpotSheet's own carHeader
-  // because this card's pillRow (the drag-handle pill above) is absolutely positioned and
-  // so doesn't reserve any flow space of its own — this padding is the only thing keeping
-  // the heading text clear of both the handle and the card's top edge.
-  carHeader: { flexDirection:'row', alignItems:'center', paddingHorizontal:20, paddingTop:20, paddingBottom:4 },
-  carEyebrow: { fontSize:10, fontWeight:'800', color:'#9CA3AF', letterSpacing:1.3, marginBottom:2 },
-  carDestRow: { flexDirection:'row', alignItems:'center', gap:6 },
-  carDest:    { fontSize:18, fontWeight:'800', color:'#111827' },
-  carCounter: { fontSize:13, fontWeight:'700', color:'#9CA3AF' },
-  carListBtn:    { flexDirection:'row', alignItems:'center', gap:4,
-                   marginLeft:12, paddingHorizontal:4, paddingVertical:4 },
-  carListBtnTxt: { fontSize:12.5, fontWeight:'600', color:'#6B7280' },
-  // Compact carousel card — same compact horizontal treatment as SpotSheet's own carousel
-  // card: fixed image on the left (status badge overlaid on it), category/name/stat-row/
-  // description on the right, "Swipe up for details" only on the active card.
-  compactThumb: {
-    width:96, height:96, borderRadius:14,
-    overflow:'hidden', alignItems:'center', justifyContent:'center', flexShrink:0,
-  },
-  compactThumbIcon: { fontSize:30 },
-  compactBadge: {
-    position:'absolute', top:6, right:6, width:22, height:22, borderRadius:11,
-    backgroundColor:'white', alignItems:'center', justifyContent:'center',
-    shadowColor:'#000', shadowOpacity:0.15, shadowRadius:4, elevation:3,
-  },
-  compactInfo:    { flex:1, gap:3 },
-  compactCat:     { fontSize:11.5, fontWeight:'600', color:'#6B7280' },
-  compactName:    { fontSize:15.5, fontWeight:'800', color:'#111827', lineHeight:19 },
-  compactStatRow: { flexDirection:'row', alignItems:'center', gap:4 },
-  compactStatTxt: { fontSize:12.5, fontWeight:'700', color:'#16A34A' },
-  compactBio:     { fontSize:12, color:'#6B7280', lineHeight:16 },
-  compactExpandRow: { flexDirection:'row', alignItems:'center', gap:4, marginTop:2 },
-  compactExpandTxt: { fontSize:12, fontWeight:'600', color:'#16A34A' },
+  // Hero's own drag-handle pill row — absolute so it stays pinned to the very top of the
+  // hero regardless of the hero's flex layout (see its JSX comment).
+  heroDragPillRow: { position:'absolute', top:8, left:0, right:0, alignItems:'center' },
+
+  // Peek strip — thin hero-image sliver with the destination's name, shown while peeking.
+  peekScrim: { position:'absolute', top:0, left:0, right:0, bottom:0, backgroundColor:'rgba(0,0,0,0.35)' },
+  peekPillRow: { alignItems:'center', paddingTop:8 },
+  peekPill: { width:36, height:4, borderRadius:2, backgroundColor:'rgba(229,231,235,0.85)' },
+  peekNameRow: { position:'absolute', left:16, right:16, bottom:8, gap:2 },
+  // Same serif face as the full/half-screen hero's own heroName (just smaller, to fit the
+  // much shorter peek strip) — matches its letterSpacing too so it reads as the same
+  // typographic treatment, not a different font at a bigger size.
+  peekNameTxt: { fontSize:30, fontFamily:'PlayfairDisplay_700Bold', color:'white', letterSpacing:-0.4 },
+  peekSpotsTxt: { fontSize:12.5, fontWeight:'600', color:'rgba(255,255,255,0.85)' },
 
   // Pill
   pillRow: { position:'absolute', top:10, left:0, right:0, alignItems:'center', zIndex:10 },
   pill:    { width:36, height:4, borderRadius:2 },
-  // Half-screen's own drag handle — compact card's pillRow/pill above is hidden then, so
-  // this stands in, sitting directly over the (cropped) hero at the sheet's top edge.
-  halfHandleRow: { position:'absolute', top:10, left:0, right:0, alignItems:'center', zIndex:10 },
-  halfHandle:    { width:36, height:4, borderRadius:2, backgroundColor:'rgba(255,255,255,0.65)' },
 
   // Hero — flex-end pushes heroBottomStack to the bottom; photo/gradient/topRow are absolute
   hero:    { width:'100%', height: HERO_H, overflow:'hidden', justifyContent:'flex-end' },
   heroScrim: { position:'absolute', top:0, left:0, right:0, bottom:0, backgroundColor:'rgba(0,0,0,0.18)' },
-  gradWrap:{ position:'absolute', left:0, right:0, bottom:0, height: GRAD_N * GRAD_H },
+  gradWrap:{ position:'absolute', left:0, right:0, bottom:0, height: GRAD_H_TOTAL },
 
-  // Top row — uses Animated.View so top interpolates between half/full positions
+  // Top row — uses Animated.View so it can share the same style pipeline as the rest
   heroTopRow: {
     position:'absolute', left:14, right:14,
     flexDirection:'row', justifyContent:'space-between', alignItems:'center', zIndex:10,
   },
-  heroIconBtn: {
-    width:36, height:36, borderRadius:18,
-    backgroundColor:'rgba(0,0,0,0.35)', alignItems:'center', justifyContent:'center',
-    borderWidth:1.5, borderColor:'rgba(255,255,255,0.25)',
-  },
   heroActionsRight:     { flexDirection:'row', gap:10, alignItems:'center' },
-  heroIconBtnVisited:   { backgroundColor:'#059669', borderColor:'transparent' },
-  heroIconBtnWishlist:  { backgroundColor:'#DB2777', borderColor:'transparent' },
+  heroIconBtnVisited:   { backgroundColor:'#059669', borderColor:'rgba(16,185,129,0.5)' },
   heroVisitPill: {
     flexDirection:'row', alignItems:'center', gap:6,
     height:36, borderRadius:18, paddingHorizontal:14,
@@ -2349,7 +2228,7 @@ const st = StyleSheet.create({
     backgroundColor:'white',
     borderTopLeftRadius: 24,
     borderTopRightRadius: 24,
-    marginTop: -24,
+    marginTop: -TAB_BAR_TUCK,
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderBottomColor:'#E5E7EB',
     zIndex: 1,
@@ -2367,13 +2246,11 @@ const st = StyleSheet.create({
   tabDivider:          { width: StyleSheet.hairlineWidth, marginVertical:14, backgroundColor:'#E5E7EB' },
   tabBtnTxt:           { fontSize:15, fontWeight:'600', color:'#9CA3AF' },
   tabBtnTxtActive:     { color:'#111827' },
+  // Visit and Spots counts share the same plain gray scheme — neither switches color when
+  // its tab is selected.
   tabVisitBadge:       { minWidth:20, height:20, borderRadius:6, backgroundColor:'#E5E7EB',
                          paddingHorizontal:5, alignItems:'center', justifyContent:'center' },
-  tabVisitBadgeActive: { backgroundColor:'#16A34A' },
   tabVisitBadgeTxt:    { fontSize:11, fontWeight:'800', color:'#6B7280', lineHeight:14 },
-  tabVisitBadgeTxtActive:{ color:'white' },
-  // Spots count — a plain gray rounded-square icon, always (never switches color when the
-  // tab is selected, unlike the visit badge above).
   tabSpotsBadge:    { minWidth:20, height:20, borderRadius:6, backgroundColor:'#E5E7EB',
                       paddingHorizontal:5, alignItems:'center', justifyContent:'center' },
   tabSpotsBadgeTxt: { fontSize:11, fontWeight:'800', color:'#6B7280', lineHeight:14 },
@@ -2430,41 +2307,43 @@ const st = StyleSheet.create({
   sectionBadgeTxt: { fontSize:11, fontWeight:'700', color:'white' },
 
   // Memory card (unified journal entry — read-only display)
+  addVisitBtn:         { alignSelf:'center', paddingVertical:6 },
+  addVisitBtnTxt:      { fontSize:14, fontWeight:'600', color:'#C1C6D0' },
   memCard:             { backgroundColor:'white', borderRadius:20, overflow:'hidden', borderWidth:1, borderColor:'#F0F1F3' },
-  memTopRow:           { flexDirection:'row', alignItems:'center', paddingHorizontal:18, paddingTop:18, paddingBottom:16 },
-  memDateCaption:      { fontSize:9, fontWeight:'800', color:'#9CA3AF', letterSpacing:1.3, marginBottom:4 },
-  memDateVal:          { fontSize:17, fontWeight:'800', color:'#111827' },
+  memTopRow:           { flexDirection:'row', alignItems:'flex-start', paddingHorizontal:18, paddingTop:18, paddingBottom:18 },
+  memTripNameHeading:  { fontSize:19, fontWeight:'800', color:'#111827', marginBottom:4 },
+  memDateVal:          { fontSize:14, fontWeight:'600', color:'#6B7280' },
   memDateEmpty:        { fontSize:14, fontWeight:'600', color:'#9CA3AF' },
-  memVisitBadge:       { backgroundColor:'#EEF2FF', borderRadius:8, paddingHorizontal:7, paddingVertical:3 },
-  memVisitBadgeTxt:    { fontSize:11, fontWeight:'700', color:'#6366F1' },
   memEditBtn:          { flexDirection:'row', alignItems:'center', gap:5, paddingHorizontal:10, paddingVertical:6,
                          borderRadius:10, backgroundColor:'#EEF2FF' },
   memEditBtnTxt:       { fontSize:12, fontWeight:'600', color:'#6366F1' },
+  memSharedHead:       { flexDirection:'row', alignItems:'center', justifyContent:'space-between',
+                         paddingHorizontal:18, paddingTop:16, paddingBottom:12 },
+  memSharedHeadTxt:    { fontSize:13, fontWeight:'800', color:'#9CA3AF', letterSpacing:0.5 },
   memDivider:          { height:StyleSheet.hairlineWidth, backgroundColor:'#F0F1F3' },
   memSectionRow:       { paddingHorizontal:18, paddingTop:12, paddingBottom:14 },
-  memSectionLabel:     { fontSize:9, fontWeight:'800', color:'#9CA3AF', letterSpacing:1.3, marginBottom:4 },
-  memSectionLabelPad:  { fontSize:9, fontWeight:'800', color:'#9CA3AF', letterSpacing:1.3,
-                         paddingHorizontal:18, paddingTop:12, marginBottom:0 },
   // Review display
-  memNotesDisplay:     { paddingHorizontal:18, paddingTop:12, paddingBottom:16 },
+  memNotesDisplay:     { paddingHorizontal:18, paddingTop:4, paddingBottom:16 },
   memNotesTxt:         { fontSize:15, color:'#374151', lineHeight:24 },
   memNotesPh:          { fontSize:15, color:'#C4C9D4', lineHeight:24 },
 
-  // Spots visited section header
-  spotsHeaderRow:    { flexDirection:'row', alignItems:'center', justifyContent:'space-between' },
-  spotsLabel:        { flexDirection:'row', alignItems:'center', gap:5 },
-  spotsLabelTxt:     { fontSize:13, fontWeight:'600', color:'#6B7280' },
-  spotsAddMore:      { fontSize:13, fontWeight:'600', color:'#16A34A' },
+  // Photos display
+  memPhotosWrap:       { paddingTop:4 },
+  // Spots visited display (chip preview within each visit module)
+  memSpotsWrap:        { flexDirection:'row', flexWrap:'wrap', gap:8,
+                         paddingHorizontal:18, paddingTop:4, paddingBottom:4 },
+  memSpotChip:         { flexDirection:'row', alignItems:'center', gap:5,
+                         backgroundColor:'#F3F4F6', borderRadius:14,
+                         paddingHorizontal:10, paddingVertical:6, maxWidth:'100%' },
+  memSpotChipIcon:     { fontSize:13 },
+  memSpotChipTxt:      { fontSize:13, fontWeight:'600', color:'#374151' },
+  memSpotsEmptyRow:    { flexDirection:'row', alignItems:'center', gap:6,
+                         paddingHorizontal:18, paddingTop:4, paddingBottom:4 },
+  memSpotsEmptyTxt:    { fontSize:13, color:'#9CA3AF' },
 
-  // Spot photo card (shared)
-  spcRow:             { gap:12, paddingBottom:4, paddingRight:4 },
-  spcCard:            { width:130, height:130, borderRadius:16, overflow:'hidden', backgroundColor:'#F3F4F6' },
-  spcPlaceholder:     { ...StyleSheet.absoluteFillObject, alignItems:'center', justifyContent:'center' },
-  spcPlaceholderIcon: { fontSize:36 },
-  spcOverlay:         { position:'absolute', left:0, right:0, bottom:0, height:68, backgroundColor:'rgba(0,0,0,0.45)' },
-  spcCatTag:          { position:'absolute', bottom:32, left:8, right:8 },
-  spcCatTagTxt:       { fontSize:10, fontWeight:'700', color:'rgba(255,255,255,0.85)' },
-  spcName:            { position:'absolute', bottom:8, left:8, right:8, fontSize:12, fontWeight:'700', color:'white', lineHeight:16 },
+  // Spots visited section header
+  // Spot photo card placeholder background (solid, no icon — fades to the real photo)
+  spcPlaceholder:     { ...StyleSheet.absoluteFill },
 
   // Plain (non-colored) section header + "See all" link — used for the At a Glance /
   // Highlights pair, which read as light-gray caps rather than the colored-eyebrow style
@@ -2512,6 +2391,12 @@ const st = StyleSheet.create({
   spotsGrid:       { flexDirection:'row', flexWrap:'wrap', gap:GRID_GAP },
   gridCard:        { width:GRID_CARD_W, gap:8 },
   gridImageWrap:   { width:GRID_CARD_W, height:GRID_CARD_W * 0.87, borderRadius:16, overflow:'hidden', backgroundColor:'#F3F4F6' },
+  gridVisitedTag:  { position:'absolute', top:8, right:8,
+                     flexDirection:'row', alignItems:'center', gap:4,
+                     backgroundColor:'#059669', borderRadius:10,
+                     paddingHorizontal:9, paddingVertical:5,
+                     shadowColor:'#000', shadowOpacity:0.18, shadowRadius:4, shadowOffset:{ width:0, height:2 }, elevation:4 },
+  gridVisitedTagTxt: { fontSize:12, fontWeight:'700', color:'white' },
   gridEmptyTxt:    { fontSize:14, color:'#9CA3AF', textAlign:'center', paddingVertical:24 },
 
   // About
@@ -2527,21 +2412,23 @@ const st = StyleSheet.create({
   wtvHeadRow:     { flexDirection:'row', alignItems:'center', gap:12 },
   wtvIconWrap:    { width:38, height:38, borderRadius:12, backgroundColor:'#ECFDF5',
                     alignItems:'center', justifyContent:'center' },
-  wtvTitle:       { fontSize:14.5, fontWeight:'700', color:'#111827' },
-  wtvSubtitle:    { fontSize:12.5, color:'#9CA3AF', marginTop:2, lineHeight:17 },
-  wtvPhoto:       { width:56, height:44, borderRadius:10, backgroundColor:'#F3F4F6' },
-  wtvGrid:        { gap:7 },
+  // The recommendation is the card's headline now, so it carries primary-text weight rather
+  // than the muted grey it had as a subtitle under a redundant title.
+  wtvLede:        { flex:1, fontSize:13.5, fontWeight:'600', color:'#374151', lineHeight:19 },
+  wtvGrid:        { gap:8 },
   wtvGridRow:     { flexDirection:'row', alignItems:'center' },
-  wtvRowLabel:    { width:46 },
-  wtvRowLabelTxt: { width:46, fontSize:10, fontWeight:'700', color:'#9CA3AF' },
-  wtvMonthTxt:    { flex:1, textAlign:'center', fontSize:9, fontWeight:'700', color:'#9CA3AF' },
+  // Wider than before to fit an icon alongside the word; the icon is what makes each row
+  // identifiable at a glance.
+  wtvRowLabel:    { width:62, flexDirection:'row', alignItems:'center', gap:5 },
+  wtvRowLabelTxt: { fontSize:10.5, fontWeight:'700', color:'#9CA3AF' },
+  wtvMonthChip:   { width:18, height:18, borderRadius:6,
+                    alignItems:'center', justifyContent:'center' },
+  wtvMonthChipBest:{ backgroundColor:'#ECFDF5' },
+  wtvMonthTxt:    { fontSize:9.5, fontWeight:'700', color:'#9CA3AF' },
   wtvMonthTxtBest:{ color:'#16A34A' },
   wtvDotCell:     { flex:1, alignItems:'center', justifyContent:'center' },
-  wtvDot:         { width:9, height:9, borderRadius:4.5 },
-  wtvLegendRow:   { flexDirection:'row', gap:14 },
-  wtvLegendItem:  { flexDirection:'row', alignItems:'center', gap:5 },
-  wtvLegendDot:   { width:8, height:8, borderRadius:4 },
-  wtvLegendTxt:   { fontSize:11.5, color:'#6B7280', fontWeight:'500' },
+  wtvDot:         { width:10, height:10, borderRadius:5 },
+  wtvScaleTxt:    { fontSize:11.5, color:'#9CA3AF', fontWeight:'500', lineHeight:16 },
   wtvGuideBtn:    { flexDirection:'row', alignItems:'center', gap:8,
                     backgroundColor:'#F9FAFB', borderRadius:12, padding:11 },
   wtvGuideBtnTxt: { flex:1, fontSize:13, fontWeight:'600', color:'#374151' },

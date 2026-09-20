@@ -3,10 +3,10 @@ import { View, Text, StyleSheet, Pressable, ScrollView, Animated, Dimensions, Mo
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Svg, { Polyline, Circle, Text as SvgText } from 'react-native-svg';
 import { X, Users, Thermometer, CloudRain } from 'lucide-react-native';
-import {
-  MONTHS_SHORT, getWeatherData, getCrowdData, getRainyDaysData,
-  crowdColor,
-} from '../../utils/travelData';
+import { MONTHS_SHORT, crowdColor } from '../../utils/travelData';
+import type { MonthCrowd, MonthWeather, MonthRain } from '../../utils/travelData';
+import { useDestinationClimate } from '../../utils/climateApi';
+import type { Destination } from '../../types';
 
 const { height: H, width: W } = Dimensions.get('window');
 const CHART_W = W - 32 - 32; // screen minus outer padding minus card padding
@@ -15,12 +15,14 @@ const CHART_W = W - 32 - 32; // screen minus outer padding minus card padding
 // pixel-identical across all three cards.
 
 interface Props {
-  destination: { name: string; category: string; continent: string; coordinates: { latitude: number }; rank?: number };
+  // Widened from a structural subset to the real Destination: the climate lookup needs
+  // longitude, which that subset omitted. The only caller already passes a full Destination.
+  destination: Destination;
   onClose: () => void;
 }
 
 // ── Crowds by Month — vertical bar chart ──────────────────────────────────────
-function CrowdChart({ data }: { data: ReturnType<typeof getCrowdData> }) {
+function CrowdChart({ data }: { data: MonthCrowd[] }) {
   const BAR_MAX = 90;
   return (
     <View>
@@ -50,7 +52,7 @@ function CrowdChart({ data }: { data: ReturnType<typeof getCrowdData> }) {
 }
 
 // ── Average Temperatures — dual-line SVG chart ────────────────────────────────
-function TempChart({ data }: { data: ReturnType<typeof getWeatherData> }) {
+function TempChart({ data }: { data: MonthWeather[] }) {
   const highs = data.map(d => d.tempC);
   const lows  = data.map(d => d.tempLowC);
   const dataMin = Math.min(...lows);
@@ -117,19 +119,22 @@ function TempChart({ data }: { data: ReturnType<typeof getWeatherData> }) {
 // Fixed axis (0–30) rather than one scaled to the data, so the scale reads consistently
 // across destinations — bar height still scales against 31 as headroom, so a month with
 // more rainy days than the top label can still grow slightly past it instead of clipping.
-// Bars scale against 31 (not the labeled-elsewhere 30) purely for headroom, so a 31-day
-// month still fits without clipping — there's no axis label to keep in sync with anymore.
-const RAIN_SCALE_MAX = 31;
+// Rainfall bars are scaled per destination rather than against a fixed ceiling: monthly totals
+// span roughly 0mm in Dubai to 380mm in Bali, so any single maximum would either flatten dry
+// climates to nothing or clip wet ones. Floored so a near-dry destination doesn't amplify a
+// 3mm month into a full-height bar.
+const RAIN_SCALE_MIN = 60;
 
-function RainChart({ data }: { data: ReturnType<typeof getRainyDaysData> }) {
+function RainChart({ data }: { data: MonthRain[] }) {
   const BAR_MAX = 90;
+  const scaleMax = Math.max(RAIN_SCALE_MIN, ...data.map(d => d.mm));
   return (
     <View style={st.barsArea}>
       {data.map((d, i) => (
         <View key={i} style={st.barCol}>
           <View style={st.barTrack}>
-            <Text style={st.barValueLbl}>{d.days}</Text>
-            <View style={[st.bar, { height: Math.max(4, (Math.min(d.days, RAIN_SCALE_MAX) / RAIN_SCALE_MAX) * BAR_MAX), backgroundColor: '#60A5FA' }]} />
+            <Text style={st.barValueLbl}>{d.mm}</Text>
+            <View style={[st.bar, { height: Math.max(4, (d.mm / scaleMax) * BAR_MAX), backgroundColor: '#60A5FA' }]} />
           </View>
           <Text style={st.monthLbl}>{d.month[0]}</Text>
         </View>
@@ -149,9 +154,10 @@ export default function ClimateDetailModal({ destination, onClose }: Props) {
     Animated.timing(slide, { toValue: H, duration: 280, useNativeDriver: true }).start(onClose);
   };
 
-  const weatherData = getWeatherData(destination.coordinates.latitude, destination.category);
-  const crowdData   = getCrowdData(destination.continent as any, destination.category, destination.coordinates.latitude, destination.rank);
-  const rainData    = getRainyDaysData(destination.coordinates.latitude, destination.category);
+  // Same hook the destination sheet uses, so this detail view and the summary card can never
+  // show different numbers for the same destination.
+  const { weather: weatherData, rain: rainData, crowds: crowdData } =
+    useDestinationClimate(destination);
 
   return (
     <Modal transparent animationType="none" statusBarTranslucent>
@@ -188,8 +194,8 @@ export default function ClimateDetailModal({ destination, onClose }: Props) {
           <View style={st.cardHeadRow}>
             <CloudRain size={16} color="#111827" />
             <View style={{ marginLeft: 8 }}>
-              <Text style={st.cardTitle}>RAINY DAYS</Text>
-              <Text style={st.cardSub}>Average number of days with precipitation</Text>
+              <Text style={st.cardTitle}>RAINFALL (MM)</Text>
+              <Text style={st.cardSub}>Average monthly total precipitation</Text>
             </View>
           </View>
           <RainChart data={rainData} />

@@ -46,7 +46,6 @@ export default function StatsScreen() {
         {[
           { icon: '🌍', label: 'Countries', value: stats.totalCountries },
           { icon: '📍', label: 'Destinations', value: stats.totalVisited },
-          { icon: '♡', label: 'Wishlist', value: stats.totalWishlist },
         ].map(({ icon, label, value }) => (
           <View key={label} style={styles.statCard}>
             <Text style={styles.statIcon}>{icon}</Text>

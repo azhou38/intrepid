@@ -17,7 +17,7 @@ interface AppState {
   selectedDestinationId: string | null;
   userName: string;
 
-  saveDestination: (id: string, type: 'visited' | 'wishlist', extra?: Partial<Omit<SavedDestination, 'destinationId' | 'type'>>) => void;
+  saveDestination: (id: string, type: 'visited', extra?: Partial<Omit<SavedDestination, 'destinationId' | 'type'>>) => void;
   unsaveDestination: (id: string) => void;
   updateSaved: (id: string, update: Partial<SavedDestination>) => void;
   // Spots. Presence of an entry in savedSpots means "visited".
@@ -86,7 +86,7 @@ export const useStore = create<AppState>()(
             ...s.savedSpots,
             [spotId]: s.savedSpots[spotId] ?? { spotId, destinationId },
           };
-          // Auto-mark the parent destination visited (keeps any existing wishlist flag/data).
+          // Auto-mark the parent destination visited (keeps any existing notes/photos/visits).
           const parent = s.savedDestinations[destinationId];
           const nextDests = parent?.type === 'visited'
             ? s.savedDestinations
@@ -117,9 +117,9 @@ export const useStore = create<AppState>()(
         }),
 
       // ── Countries ────────────────────────────────────────────────────────
-      // Merges with any existing record (e.g. an isWishlisted-only entry, or existing notes)
-      // rather than replacing it outright — this doubles as the general "create or update a
-      // saved country" entry point, not just a "mark visited" action.
+      // Merges with any existing record (e.g. existing notes) rather than replacing it
+      // outright — this doubles as the general "create or update a saved country" entry
+      // point, not just a "mark visited" action.
       saveCountryVisited: (countryCode, extra = {}) =>
         set((s) => ({
           savedCountries: {
@@ -191,7 +191,6 @@ export function useStats() {
   return useMemo(() => {
     const entries = Object.values(savedDestinations);
     const visitedEntries = entries.filter((e) => e.type === 'visited');
-    const wishlistCount = entries.filter((e) => e.isWishlisted || e.type === 'wishlist').length;
 
     const visitedDests = visitedEntries
       .map((e) => DESTINATIONS.find((d) => d.id === e.destinationId))
@@ -228,7 +227,6 @@ export function useStats() {
     return {
       totalDestinations: visitedDests.length,
       totalVisited: visitedDests.length,
-      totalWishlist: wishlistCount,
       totalSpots: SPOTS.filter(s => new Set(visitedDests.map(d => d.id)).has(s.destinationId)).length,
       totalCountries: countryCodes.size,
       visitedCountryCodes: [...countryCodes],

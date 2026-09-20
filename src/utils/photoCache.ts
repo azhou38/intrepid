@@ -1,3 +1,5 @@
+import { WIKI_IMAGE_OVERRIDES } from '../data/imageOverrides';
+
 // Full-resolution images (headers/hero photos) — keyed by destination/spot/country id.
 export const photoCache = new Map<string, string>();
 
@@ -26,9 +28,77 @@ export const thumbCache = new Map<string, string>();
  * result search ranks first.
  */
 export async function fetchWikiThumbnail(title: string, width: number, context?: string): Promise<string | null> {
+  // A hand-picked photo takes precedence over whatever the article's own lead image is — see
+  // WIKI_IMAGE_OVERRIDES for why some places need one. Falls through to the normal lookup if
+  // the override can't be resolved (offline, file renamed on Commons).
+  const override = WIKI_IMAGE_OVERRIDES[title];
+  if (override) {
+    const url = await fetchCommonsFileThumbnail(override, width);
+    if (url) return url;
+  }
   const exact = await fetchExactTitleThumbnail(title, width);
   if (exact) return exact;
   return fetchSearchThumbnail(context ? `${title} ${context}` : title, width);
+}
+
+// In-flight requests, keyed the same way as photoCache/thumbCache — lets a prefetch fired at
+// pin-tap time and the sheet's own mount-time fetch share one network request instead of
+// racing two, when the sheet mounts (as it normally does) before the prefetch has resolved.
+const pendingFetches = new Map<string, Promise<string | null>>();
+
+/**
+ * Starts (or reuses) a thumbnail fetch for `cacheKey` without waiting on the result — fire
+ * this the moment the user taps a pin, so the network round trip overlaps the sheet's
+ * slide-up animation instead of only starting once the sheet has already mounted. A no-op if
+ * the URL is already cached or a fetch for this key is already in flight (e.g. re-tapping the
+ * same pin quickly). Callers that need the eventual result should use `getOrFetchWikiThumbnail`
+ * instead, which attaches to this same in-flight promise rather than double-fetching.
+ */
+export function prefetchWikiThumbnail(
+  cacheKey: string, cache: Map<string, string>, title: string, width: number, context?: string,
+): void {
+  if (cache.has(cacheKey) || pendingFetches.has(cacheKey)) return;
+  const promise = fetchWikiThumbnail(title, width, context).then(url => {
+    pendingFetches.delete(cacheKey);
+    if (url) cache.set(cacheKey, url);
+    return url;
+  });
+  pendingFetches.set(cacheKey, promise);
+}
+
+/**
+ * Resolves `cacheKey`'s thumbnail, reusing an in-flight fetch (e.g. one kicked off by
+ * `prefetchWikiThumbnail` at pin-tap time) instead of starting a duplicate network request.
+ */
+export function getOrFetchWikiThumbnail(
+  cacheKey: string, cache: Map<string, string>, title: string, width: number, context?: string,
+): Promise<string | null> {
+  if (cache.has(cacheKey)) return Promise.resolve(cache.get(cacheKey)!);
+  const pending = pendingFetches.get(cacheKey);
+  if (pending) return pending;
+  const promise = fetchWikiThumbnail(title, width, context).then(url => {
+    pendingFetches.delete(cacheKey);
+    if (url) cache.set(cacheKey, url);
+    return url;
+  });
+  pendingFetches.set(cacheKey, promise);
+  return promise;
+}
+
+// Resolves a Wikimedia Commons file (name without the "File:" prefix) to a thumbnail URL of the
+// requested width.
+async function fetchCommonsFileThumbnail(file: string, width: number): Promise<string | null> {
+  try {
+    const url =
+      `https://commons.wikimedia.org/w/api.php?action=query&titles=${encodeURIComponent('File:' + file)}` +
+      `&prop=imageinfo&iiprop=url&iiurlwidth=${width}&format=json&origin=*`;
+    const res = await fetch(url);
+    const data = await res.json();
+    const page = data?.query?.pages ? Object.values(data.query.pages)[0] as any : null;
+    return page?.imageinfo?.[0]?.thumburl ?? null;
+  } catch {
+    return null;
+  }
 }
 
 async function fetchExactTitleThumbnail(title: string, width: number): Promise<string | null> {

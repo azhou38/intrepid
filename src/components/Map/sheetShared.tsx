@@ -135,8 +135,13 @@ const pS = StyleSheet.create({
 });
 
 // ── Visit date-range picker ───────────────────────────────────────────────────
-export function VisitDateRangeModal({ visit, onDone, onCancel }: {
+export function VisitDateRangeModal({ visit, withTitle, onDone, onCancel }: {
   visit: Visit | null;
+  // Only used by the standalone "Add Visit" flow — creating a brand new visit that's kept
+  // separate from the shared destination edit page, so its title has to be captured here
+  // instead. Editing an existing visit's dates (from within that shared page) never sets
+  // this, since that page's own header already owns title editing.
+  withTitle?: boolean;
   onDone: (v: Visit) => void;
   onCancel: () => void;
 }) {
@@ -145,6 +150,7 @@ export function VisitDateRangeModal({ visit, onDone, onCancel }: {
   const e = visit?.endDate   ? parseDateStr(visit.endDate)   : null;
   const startDayInit = s ? (s.day === '00' ? '–' : s.day) : '–';
   const endDayInit   = e ? (e.day === '00' ? '–' : e.day) : '–';
+  const [title,   setTitle  ] = useState(visit?.title ?? '');
   const [startMo, setStartMo] = useState(s?.monthLabel ?? MO[now.getMonth()]);
   const [startDy, setStartDy] = useState(startDayInit);
   const [startYr, setStartYr] = useState(s?.year        ?? String(now.getFullYear()));
@@ -162,7 +168,13 @@ export function VisitDateRangeModal({ visit, onDone, onCancel }: {
       const ed = endDy === '–' ? '00' : endDy;
       endDate = `${endYr}-${em}-${ed}`;
     }
-    onDone({ id: visit?.id ?? Date.now().toString(), startDate, endDate });
+    // When editing an existing visit's dates (withTitle unset), title is preserved by the
+    // caller instead — that flow's title lives on the shared edit page's own header.
+    onDone({
+      id: visit?.id ?? Date.now().toString(),
+      title: withTitle ? (title.trim() || undefined) : visit?.title,
+      startDate, endDate,
+    });
   };
   return (
     <Modal transparent animationType="fade" statusBarTranslucent>
@@ -173,6 +185,19 @@ export function VisitDateRangeModal({ visit, onDone, onCancel }: {
             <Text style={pS.title}>Trip Dates</Text>
             <Pressable onPress={done} hitSlop={12}><Text style={pS.done}>Done</Text></Pressable>
           </View>
+          {withTitle && (
+            <View style={vdS.titleSection}>
+              <Text style={vdS.label}>TRIP NAME (OPTIONAL)</Text>
+              <TextInput
+                style={vdS.titleInput}
+                value={title}
+                onChangeText={setTitle}
+                placeholder="e.g. Anniversary trip"
+                placeholderTextColor="#C4C9D4"
+                maxLength={60}
+              />
+            </View>
+          )}
           <View style={vdS.section}>
             <Text style={vdS.label}>FROM</Text>
             <View style={pS.wheels}>
@@ -210,6 +235,8 @@ const vdS = StyleSheet.create({
                alignItems:'center', justifyContent:'center' },
   toggleOn:  { backgroundColor:'#16A34A', borderColor:'#16A34A' },
   toggleTxt: { fontSize:14, color:'#6B7280' },
+  titleSection: { paddingHorizontal:20, paddingTop:16, paddingBottom:8 },
+  titleInput:   { fontSize:15, color:'#111827', paddingVertical:8, textAlign:'center' },
 });
 
 // ── Photo collage ─────────────────────────────────────────────────────────────
@@ -336,8 +363,8 @@ export function PhotoCollage({ photos, onAdd, onDelete, hideAddMore }: {
   );
 }
 const pcS = StyleSheet.create({
-  imgFill:    { ...StyleSheet.absoluteFillObject } as any,
-  wrap:       { paddingHorizontal:12, paddingTop:12 },
+  imgFill:    { ...StyleSheet.absoluteFill } as any,
+  wrap:       { paddingHorizontal:12, paddingTop:12, paddingBottom:12 },
   addOnly:    { flexDirection:'column', alignItems:'center', justifyContent:'center', gap:10,
                 marginHorizontal:12, marginVertical:12,
                 paddingVertical:30, borderRadius:16,
@@ -348,7 +375,7 @@ const pcS = StyleSheet.create({
                 marginTop:8, paddingVertical:8, borderRadius:10,
                 borderWidth:1, borderColor:'#D1FAE5', backgroundColor:'#F0FDF4' },
   addMoreTxt: { fontSize:12, fontWeight:'600', color:'#16A34A' },
-  moreOverlay:{ ...StyleSheet.absoluteFillObject, backgroundColor:'rgba(0,0,0,0.5)',
+  moreOverlay:{ ...StyleSheet.absoluteFill, backgroundColor:'rgba(0,0,0,0.5)',
                 alignItems:'center', justifyContent:'center' } as any,
   moreTxt:    { fontSize:18, fontWeight:'800', color:'white' },
   delBtn:     { position:'absolute', top:5, right:5, zIndex:10 },
