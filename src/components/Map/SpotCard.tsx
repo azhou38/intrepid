@@ -21,7 +21,7 @@ function SpotCard({ spot, onPress, width }: {
 }) {
   const isVisited = !!useStore(s => s.savedSpots[spot.id]);
 
-  // Own cache key at 700px for the same reason DestinationCard has one: the bare `spot_<id>` key is
+  // Own cache key at 960px (the sharpest step suited to a card) for the same reason DestinationCard has one: the bare `spot_<id>` key is
   // shared with smaller thumbnails elsewhere, and whichever loaded first would be stretched here.
   const cacheKey = `spotcard_${spot.id}`;
   const [photoUrl, setPhotoUrl] = useState<string | null>(thumbCache.get(cacheKey) ?? null);
@@ -35,7 +35,7 @@ function SpotCard({ spot, onPress, width }: {
     }
     photoWasCachedRef.current = false;
     setPhotoUrl(null);
-    getOrFetchWikiThumbnail(cacheKey, thumbCache, spot.name, 700).then(url => {
+    getOrFetchWikiThumbnail(cacheKey, thumbCache, spot.name, 960).then(url => {
       if (url) setPhotoUrl(url);
     });
   }, [spot.id]);
