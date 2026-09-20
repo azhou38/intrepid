@@ -34,7 +34,7 @@ import { useStore } from '../../store';
 import SpotCard from './SpotCard';
 import type { Destination, PhotoEntry, Visit, GoodToKnowTip } from '../../types';
 import { SPOTS, type Spot } from '../../data/spots';
-import { photoCache, thumbCache, getOrFetchWikiThumbnail } from '../../utils/photoCache';
+import { photoCache, getOrFetchWikiThumbnail } from '../../utils/photoCache';
 import CircleFlag from '../CircleFlag';
 import FadeInImage from './FadeInImage';
 import ClimateDetailModal from './ClimateDetailModal';
