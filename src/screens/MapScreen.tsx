@@ -2069,6 +2069,20 @@ const destItems = useMemo((): DestItem[] =>
   }, [cancelCountrySettle]);
 
   // ── Handlers ─────────────────────────────────────────────────────────────
+  // Drops the selected country when the destination being opened belongs to a DIFFERENT one. The
+  // selection is kept on purpose while drilling into a destination of the same country (so the
+  // country pill doesn't flash back before the zoom lands), but carried over to another country's
+  // destination it left that country's border highlight, glow and pin ranking switched on around
+  // a place that isn't in it — e.g. Austria still outlined while Venice's sheet was open.
+  const dropCountryIfForeign = useCallback((destCountry: string) => {
+    const sel = selectedCountryRef.current;
+    if (!sel || sel.country === destCountry) return;
+    selectedCountryRef.current = null;
+    setSelectedCountry(null);
+    countryHomeRegionRef.current = null;
+    setCountryHomeRegion(null);
+  }, []);
+
   const handleMarkerPress = useCallback((dest: Destination) => {
     // Provenance: a normal drill-down only when the tapped destination actually belongs to
     // the currently selected country — not just "is *some* country selected". Rank-1
@@ -2093,6 +2107,7 @@ const destItems = useMemo((): DestItem[] =>
     if (zoomTimerRef.current) { clearTimeout(zoomTimerRef.current); zoomTimerRef.current = null; }
     prevRegionRef.current = regionRef.current;
     prevCountryRef.current = selectedCountry;
+    dropCountryIfForeign(dest.country);
     selectedDestRef.current = dest;
     setSelectedDest(dest);
     // Kick off DestinationSheet's own hero-photo fetch right now, in parallel with the sheet's
@@ -2143,7 +2158,7 @@ const destItems = useMemo((): DestItem[] =>
     fitDestinationDefaultView(dest, 'flyTo', 'topHalf');
     // Reads region via regionRef (not a dep) so this callback stays stable across pans and
     // doesn't bust the memoized destination-pin marker list.
-  }, [selectedCountry, showBreadcrumb, animateCamera]);
+  }, [selectedCountry, showBreadcrumb, animateCamera, dropCountryIfForeign]);
 
   const handleCloseSheet = useCallback(() => {
     setMapState('context');
@@ -2231,6 +2246,7 @@ const destItems = useMemo((): DestItem[] =>
     if (zoomTimerRef.current) { clearTimeout(zoomTimerRef.current); zoomTimerRef.current = null; }
     // Keep the parent destination selected so the country/destination breadcrumb stays present.
     if (selectedDestRef.current?.id !== dest.id) {
+      dropCountryIfForeign(dest.country);
       selectedDestRef.current = dest;
       setSelectedDest(dest);
     }
@@ -2257,7 +2273,7 @@ const destItems = useMemo((): DestItem[] =>
     // match (see SpotSheet's own focusSpotId effect), and the slower of the two dominates how
     // sluggish the combined transition reads.
     fitSpotView(spot, 'easeTo', 280);
-  }, [showBreadcrumb, fitSpotView, spotFocusId]);
+  }, [showBreadcrumb, fitSpotView, spotFocusId, dropCountryIfForeign]);
 
   // Fired as the user swipes the spot carousel. Follows the focused spot with the map
   // (pan + pin highlight) WITHOUT touching spotFocusId, so the carousel isn't reset.
