@@ -2250,8 +2250,10 @@ const st = StyleSheet.create({
   // Highlight cards (bigger than the old spot preview cards — photo, badge, name, bio)
   // The cards have an outer shadow, which a horizontal ScrollView clips at its edges — so the row gets
   // padding to hold it, and the scroll view matching negative margins so the layout doesn't shift.
-  hlScroll:     { marginHorizontal:-4, marginTop:-4, marginBottom:-8 },
-  hlRow:        { gap:14, paddingHorizontal:4, paddingTop:4, paddingBottom:12 },
+  // 12px each way: the shadow (radius 8, 2px down) reaches ~10px out, and anything less clipped it in a
+  // straight line that showed as a faint band above the cards.
+  hlScroll:     { marginHorizontal:-12, marginTop:-12, marginBottom:-8 },
+  hlRow:        { gap:14, paddingHorizontal:12, paddingTop:12, paddingBottom:12 },
 
   // Spots tab — 2-column wrapping grid of SpotCards,
   // and a discrete link into the sliding spot carousel (kept
