@@ -774,39 +774,6 @@ function WhenToVisitCard({ destination, onOpenClimateDetail }: {
   );
 }
 
-// ── Highlight card: photo + name + short bio ─────────────────────────────────
-
-function HighlightCard({ spot, onPress }: { spot: Spot; onPress?: () => void }) {
-  const cacheKey = `spot_${spot.id}`;
-  const [photoUrl, setPhotoUrl] = useState<string | null>(thumbCache.get(cacheKey) ?? null);
-  const photoWasCachedRef = useRef(thumbCache.has(cacheKey));
-  useEffect(() => {
-    if (thumbCache.has(cacheKey)) {
-      photoWasCachedRef.current = true;
-      setPhotoUrl(thumbCache.get(cacheKey)!);
-      return;
-    }
-    photoWasCachedRef.current = false;
-    setPhotoUrl(null);
-    getOrFetchWikiThumbnail(cacheKey, thumbCache, spot.name, 400).then(url => {
-      if (url) setPhotoUrl(url);
-    });
-  }, [spot.id]);
-
-  return (
-    <Pressable style={st.hlCard} onPress={onPress}>
-      <View style={st.hlImageWrap}>
-        {photoUrl
-          ? <FadeInImage instant={photoWasCachedRef.current} source={{ uri: photoUrl }} style={StyleSheet.absoluteFill} resizeMode="cover" />
-          : <View style={[st.spcPlaceholder, { backgroundColor: '#111827' }]} />
-        }
-      </View>
-      <Text style={st.hlName} numberOfLines={2}>{spot.name}</Text>
-      <Text style={st.hlBio} numberOfLines={2}>{spot.bio}</Text>
-    </Pressable>
-  );
-}
-
 // ── Spots panel — full grid of a destination's spots, with a
 // button that jumps into the sliding spot carousel (SpotSheet, via onSelectSpot), which
 // already receives the destination's full spot list regardless of which spot is passed.
@@ -877,9 +844,9 @@ function AboutPanel({
               <ChevronRight size={15} color="#16A34A" />
             </Pressable>
           </View>
-          <ScrollView ref={hlScrollRef} horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={st.hlRow}>
+          <ScrollView ref={hlScrollRef} horizontal showsHorizontalScrollIndicator={false} style={st.hlScroll} contentContainerStyle={st.hlRow}>
             {spots.map(spot => (
-              <HighlightCard key={spot.id} spot={spot} onPress={() => onSelectSpot?.(spot)} />
+              <SpotCard key={spot.id} spot={spot} width={GRID_CARD_W} onPress={() => onSelectSpot?.(spot)} />
             ))}
           </ScrollView>
         </View>
@@ -2260,7 +2227,6 @@ const st = StyleSheet.create({
 
   // Spots visited section header
   // Spot photo card placeholder background (solid, no icon — fades to the real photo)
-  spcPlaceholder:     { ...StyleSheet.absoluteFill },
 
   // Plain (non-colored) section header + "See all" link — used for the At a Glance /
   // Highlights pair, which read as light-gray caps rather than the colored-eyebrow style
@@ -2282,13 +2248,12 @@ const st = StyleSheet.create({
   glanceRowTitle:  { flex:1, fontSize:15, fontWeight:'700', color:'#111827', lineHeight:20 },
 
   // Highlight cards (bigger than the old spot preview cards — photo, badge, name, bio)
-  hlRow:        { gap:14, paddingBottom:4, paddingRight:4 },
-  hlCard:       { width:160, gap:8 },
-  hlImageWrap:  { width:160, height:140, borderRadius:16, overflow:'hidden', backgroundColor:'#F3F4F6' },
-  hlName:       { fontSize:15, fontWeight:'800', color:'#111827', lineHeight:19 },
-  hlBio:        { fontSize:12.5, color:'#6B7280', lineHeight:17 },
+  // The cards have an outer shadow, which a horizontal ScrollView clips at its edges — so the row gets
+  // padding to hold it, and the scroll view matching negative margins so the layout doesn't shift.
+  hlScroll:     { marginHorizontal:-4, marginTop:-4, marginBottom:-8 },
+  hlRow:        { gap:14, paddingHorizontal:4, paddingTop:4, paddingBottom:12 },
 
-  // Spots tab — 2-column wrapping grid (reuses HighlightCard's name/bio look),
+  // Spots tab — 2-column wrapping grid of SpotCards,
   // and a discrete link into the sliding spot carousel (kept
   // low-key since the grid itself, not the carousel, is the primary way to browse here).
   mapViewBtn:      { flexDirection:'row', alignItems:'center', gap:5,
