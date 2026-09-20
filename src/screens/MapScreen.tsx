@@ -730,20 +730,20 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // bar reserves its own layout space below it). Measured rather than assumed so
   // fitCountryDefaultView's bottom padding is exact on every device; see its own comment.
   const mapViewHRef = useRef(0);
-  // Pending vertical settle that finishes a country fit (see fitCountryDefaultView). The token
-  // is bumped whenever a newer fit starts or the user grabs the map, so an in-flight settle
-  // that's been superseded quietly drops instead of yanking the camera.
+  // Legacy from when a country fit was two moves (fit, then a timed corrective settle). The fit is now a
+  // single animation and no settle timer is ever set, but cancelCountrySettle — called from every camera
+  // entry point — still uses these to drop a pending cache capture (countryCacheArmRef) when something
+  // newer moves the camera, so they stay.
   const countrySettleTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const countrySettleTokenRef = useRef(0);
-  // Country framing, once resolved, is reusable: the camera that Mapbox's bounds fit plus the
-  // settle lands on is a plain centre+zoom, so every later visit to that country can fly
-  // straight there as ONE continuous motion instead of repeating the two-part fit. Keyed by
-  // country code and stamped with the geometry it was derived under, so a rotation or
-  // safe-area change invalidates it rather than replaying a stale frame.
+  // Country framing, once resolved, is reusable: the camera the window fit lands on is a plain centre+zoom,
+  // so every later visit to that country can go straight there without recomputing (and the country close
+  // reads its zoom for its half-zoom step-back). Keyed by country code and stamped with the geometry it was
+  // derived under, so a rotation or safe-area change invalidates it rather than replaying a stale frame.
   const countryCamCacheRef = useRef<Record<string, {
     lng: number; lat: number; zoom: number; mapH: number;
   }>>({});
-  // Set while a two-part fit is in flight, telling handleMapIdle to capture the result.
+  // Set while a country fit is in flight, telling handleMapIdle to capture the result.
   const countryCacheArmRef = useRef<{ code: string; key: string; at: number } | null>(null);
 
   const savedDestinations = useStore(s => s.savedDestinations);
@@ -1868,46 +1868,29 @@ const destItems = useMemo((): DestItem[] =>
   // fades out whenever it would overlap (see crumbGateStyle). An earlier version reserved the
   // pill's height at the top; that's deliberately gone.
   //
-  // Done in two moves — a bounds fit, then a short vertical settle — because neither Mapbox
-  // nor a JS solve can do both halves of this alone under projection="globe":
-  //   • SIZE: only Mapbox gets this right. A globe COMPRESSES latitude toward the limb where
-  //     Mercator STRETCHES it, so a closed-form Mercator solve that framed France correctly
-  //     rendered Sweden at ~60% of its intended size. Mapbox's bounds fit is projection-aware
-  //     and sizes correctly at any latitude, so the fit below delegates sizing to it.
-  //   • POSITION: Mapbox can't do this. Its bounds branch passes padding to
-  //     camera(for:padding:) and uses the returned options as-is (RNMBXCamera.swift), unlike
-  //     its centerCoordinate branch which attaches padding to CameraOptions itself — so the
-  //     box always lands centred on the MAP VIEW, padding ignored. Confirmed on-device:
-  //     Sweden landed at y≈396, where map-view-centred framing predicts 396 and padded
-  //     framing predicts 186. More padding can't rescue it either: a box centred on the map's
-  //     own centre that still fits inside this window could only be ~88px tall.
-  // Hence the settle. The leftover error is a CONSTANT screen-space offset — the gap between
-  // the map view's centre and this window's centre — identical for every country and
-  // independent of projection, so it needs no projection math at all. moveBy takes raw screen
-  // pixels (it's implemented as a synthetic drag), which is exactly the right primitive.
+  // ONE camera animation, computed natively by patches/@rnmapbox+maps+10.3.1.patch (`fitWindow`).
   //
-  // A later attempt tried to pre-empt this with an analytically-estimated latitude shift on
-  // the INPUT bounds (turning settleDy into an approximate degree offset via the same JS zoom
-  // math fitCoords uses, then feeding the shifted bounds into ONE fit call, avoiding a second
-  // visible motion) — reverted: at Switzerland's latitude the estimate was badly wrong (the
-  // country landed almost entirely off the top of the screen), confirming the mercator-vs-
-  // globe error above applies to this kind of positioning estimate too, not just to overall
-  // sizing. moveBy's pixel value needs no projection estimate at all — it's an exact
-  // screen-space drag — which is why the two-move approach, imperfect as it visibly reads, is
-  // the one that's actually correct.
+  // This used to be two moves — Mapbox's bounds fit, then a corrective moveBy — and each of the two halves of
+  // the job is wrong under projection="globe" on its own:
+  //   • The stock bounds fit (camera(for:padding:)) is documented as unsupported on Globe. Measured on a
+  //     simulator: it ignores the sheet padding at globe zooms (Sweden, Norway, France, Japan all landed
+  //     ~175px low, i.e. centred on the whole map), respects it only once the map has flattened into
+  //     ordinary Mercator (Switzerland), and returns a wrong camera for very large extents (Chile).
+  //   • The corrective moveBy is a synthetic drag, which isn't exact on a globe: it left Sweden 41px and
+  //     Norway 56px off, and — because it assumed the fit had ignored the padding — overshot Switzerland by
+  //     161px, cutting its top off.
+  // Two sequential animations also read as two motions however short the second is (see git history).
   //
-  // Two sequential animations each accelerate and decelerate, so the join between them reads
-  // as a distinct second motion however short it is — shortening the settle makes it abrupt,
-  // lengthening it makes it a visible drift. The fix isn't tuning: it's not doing it twice.
-  // The camera the two-part fit lands on is just a centre+zoom, so it's captured on idle
-  // (see handleMapIdle) and every later visit to that country flies straight there in ONE
-  // continuous motion. Only the first view of a given country pays the two-part cost — and
-  // since a destination is always reached THROUGH its country, the destination→country
-  // flyTo-back path always runs off a warm cache.
+  // The native mode instead uses Mapbox's own renderer as the oracle: it applies trial cameras instantly (no
+  // frame is drawn between them), projects the country's outline with Mapbox's own point(for:), and corrects
+  // zoom and centre from where the points actually land, then restores the original camera and returns the
+  // final one. No latitude/projection maths of ours is involved. We then animate to it once.
   //
-  // Switching to projection="mercator" while zoomed in would make a one-move solve possible
-  // every time, but Mapbox's iOS SDK has no animated globe↔mercator transition, so it reads
-  // as a hard snap mid-flight. Keeping the globe throughout is the deliberate trade.
+  // Verified on the simulator across Switzerland, Sweden, Norway, France, Japan, the US, Australia,
+  // Indonesia and Chile: outline centred in the window to within 0.4px (equal space above and below, equal
+  // left and right), 90% fill on the binding axis, nothing off-screen, and a single ~515ms motion with no
+  // pause or second movement — for both easeTo and flyTo. Needs a native rebuild (`expo run:ios`) since the
+  // patch changes native code.
   const fitCountryDefaultView = useCallback((
     cluster: CountryCluster,
     mode: 'easeTo' | 'flyTo' = 'easeTo',
@@ -1936,9 +1919,8 @@ const destItems = useMemo((): DestItem[] =>
     // BOTTOM_TAB_H constant those sheets use.
     const mapViewH = mapViewHRef.current || (H - BOTTOM_TAB_H);
 
-    // Already resolved this country at this geometry — fly straight to the known camera as a
-    // single continuous motion, skipping the two-part fit entirely. 'flyTo' works here too,
-    // unlike the bounds path, since this is a plain centre+zoom stop.
+    // Already resolved this country at this geometry — go straight to the known camera, skipping the
+    // recompute. A plain centre+zoom stop, so 'flyTo' works here just as it does for the fit below.
     // Keyed by framing too — the same country resolves to a different camera in each window.
     const cacheKey = `${cluster.countryCode}:${framing}`;
     const cached = countryCamCacheRef.current[cacheKey];
@@ -1956,9 +1938,11 @@ const destItems = useMemo((): DestItem[] =>
     const bottomBound = framing === 'full'
       ? Math.max(40, mapViewH - PEEK_STRIP_H) // top of the peek strip — all the visible map
       : H / 2;                                // matches CountrySheet's own COLLAPSED_Y
+
+    // Padding describing the same window. The fitWindow mode ignores it, but a build that predates the native
+    // patch (it needs `expo run:ios`) falls back to the stock fit, which does size correctly from it — so an
+    // app running new JS on old native lands the right size rather than an arbitrary one.
     const availH = Math.max(40, bottomBound - topBound);
-    // Insetting by 5% per side on BOTH axes shrinks the fit to exactly 90% whichever axis
-    // binds, since bounds-fitting takes the min over axes.
     const insetV = availH * (1 - SHRINK) / 2;
     const insetH = SCREEN_W_GLOBAL * (1 - SHRINK) / 2;
 
@@ -1970,41 +1954,21 @@ const destItems = useMemo((): DestItem[] =>
         paddingBottom: Math.max(0, mapViewH - bottomBound) + insetV,
         paddingLeft:   insetH,
         paddingRight:  insetH,
-      },
+        // Fields added by the @rnmapbox/maps patch (not in its types): frame the bounds inside this screen
+        // window at `shrink` of its size. See the block comment above.
+        mode: 'fitWindow',
+        windowTop: topBound,
+        windowBottom: bottomBound,
+        shrink: SHRINK,
+      } as any,
       animationDuration: FIT_MS,
       animationMode: mode,
     });
 
-    // Negative y drags the content UP (moveBy is a synthetic drag from the view centre), which
-    // is what's wanted: the fit leaves the country centred at mapViewH/2, and it belongs at
-    // this window's centre, which is higher up. A previous attempt tried to PRE-empt this with
-    // an analytically-estimated latitude shift on the input bounds (turning the known pixel
-    // offset into an approximate degree one via the same JS zoom math fitCoords uses) instead
-    // of measuring and correcting after the fact — reverted: at Switzerland's latitude the
-    // estimate was badly wrong (the country landed almost entirely off the top of the screen),
-    // confirming the mercator-vs-globe error this function's own top comment already warns
-    // about applies here too, not just to overall sizing. moveBy's PIXEL value, by contrast,
-    // needs no projection estimate at all — it's an exact screen-space drag — which is why
-    // this measured-correction approach is the one worth keeping even though it's a second,
-    // separately visible motion.
-    const settleDy = (topBound + bottomBound) / 2 - mapViewH / 2;
-    if (Math.abs(settleDy) < 1) return;
-    const SETTLE_MS = Math.round(260 * Math.min(1, durationMs / 500));
-    const token = ++countrySettleTokenRef.current;
-    countrySettleTimerRef.current = setTimeout(() => {
-      countrySettleTimerRef.current = null;
-      // Skip if the user grabbed the map, or moved on to something else, while the fit was in
-      // flight — their gesture (or the newer selection) owns the camera now, not this settle.
-      if (token !== countrySettleTokenRef.current) return;
-      cameraRef.current?.moveBy({ x: 0, y: settleDy, animationMode: 'easeTo', animationDuration: SETTLE_MS });
-      // Arm the capture only now, as the settle actually starts — the fit's own idle fires
-      // around this moment, and capturing that one would bake in the pre-settle (too low)
-      // camera and replay the error forever. handleMapIdle additionally requires SETTLE_MS to
-      // have elapsed before it accepts a capture.
-      countryCacheArmRef.current = {
-        code: cluster.countryCode, key: cacheKey, at: Date.now() + SETTLE_MS,
-      };
-    }, FIT_MS);
+    // Arm the capture of the camera this lands on, so later visits (and the country close's half-zoom) can
+    // use it. The map idle that follows this single move holds the final camera; handleMapIdle accepts it
+    // once FIT_MS has elapsed.
+    countryCacheArmRef.current = { code: cluster.countryCode, key: cacheKey, at: Date.now() + FIT_MS };
   }, [fitCoords, cancelCountrySettle]);
 
   // Destination equivalent of fitCountryDefaultView, and much simpler for two reasons: a
@@ -2907,11 +2871,10 @@ const destItems = useMemo((): DestItem[] =>
     setRegion(newRegion);
     setCamZoom(state.properties.zoom);
 
-    // Captures the camera a two-part country fit resolved to, so later visits can fly there in
-    // one continuous motion (see fitCountryDefaultView). Only accepted once the settle has had
-    // time to finish — the fit's own idle fires first and would bake in the uncorrected
-    // position — and only while that country is still the selection, so an idle that actually
-    // reflects a user pan or a newer navigation never poisons the cache.
+    // Captures the camera a country fit landed on, so later visits can go straight there (see
+    // fitCountryDefaultView). Only accepted once the fit's duration has elapsed, and only while that country
+    // is still the selection, so an idle that actually reflects a user pan or a newer navigation never
+    // poisons the cache.
     const arm = countryCacheArmRef.current;
     if (arm && Date.now() >= arm.at && selectedCountryRef.current?.countryCode === arm.code
         && !selectedDestRef.current && !selectedSpotRef.current) {

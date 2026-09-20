@@ -1,0 +1,131 @@
+diff --git a/node_modules/@rnmapbox/maps/ios/RNMBX/RNMBXCamera.swift b/node_modules/@rnmapbox/maps/ios/RNMBX/RNMBXCamera.swift
+index 191bfe5..e96d506 100644
+--- a/node_modules/@rnmapbox/maps/ios/RNMBX/RNMBXCamera.swift
++++ b/node_modules/@rnmapbox/maps/ios/RNMBX/RNMBXCamera.swift
+@@ -514,13 +514,27 @@ open class RNMBXCamera : RNMBXMapAndMapViewComponentBase {
+       
+       withMapView { map in
+         let bounds = [sw, ne]
+-
+-        camera = map.mapboxMap.camera(
+-          for: bounds,
+-          padding: padding,
+-          bearing: heading ?? map.mapboxMap.cameraState.bearing,
+-          pitch: pitch ?? map.mapboxMap.cameraState.pitch
+-        )
++        let bearing = heading ?? map.mapboxMap.cameraState.bearing
++        let pitchValue = pitch ?? map.mapboxMap.cameraState.pitch
++
++        // intrepid: opt-in `boundsMode: "fitWindow"` — frame the bounds inside a screen window (see
++        // fitWindowCamera). Anything else takes the stock path below, unchanged.
++        if (stop["boundsMode"] as? String) == "fitWindow" {
++          camera = self.fitWindowCamera(
++            map: map, sw: sw, ne: ne,
++            windowTop: CGFloat(stop["boundsWindowTop"] as? Double ?? 0),
++            windowBottom: CGFloat(stop["boundsWindowBottom"] as? Double ?? Double(map.bounds.height)),
++            shrink: CGFloat(stop["boundsShrink"] as? Double ?? 0.9),
++            bearing: bearing, pitch: pitchValue
++          )
++        } else {
++          camera = map.mapboxMap.camera(
++            for: bounds,
++            padding: padding,
++            bearing: bearing,
++            pitch: pitchValue
++          )
++        }
+       }
+     } else {
+       camera = CameraOptions(
+@@ -554,6 +568,75 @@ open class RNMBXCamera : RNMBXMapAndMapViewComponentBase {
+     )
+   }
+   
++  // intrepid: the camera that frames `sw`/`ne` inside the screen window [windowTop, windowBottom] (full width),
++  // filling `shrink` of it, with the bounds centred in that window — computed WITHOUT moving the map on screen.
++  //
++  // Mapbox's own projection is the oracle: a trial camera is applied instantly and the bounds' perimeter is
++  // projected with the renderer's own point(for:), then zoom and centre are corrected from where the points
++  // actually land, until it settles. It all happens synchronously on the main thread, so no frame is drawn
++  // between the trial cameras, and the original camera is restored before returning. This sidesteps the two
++  // things that don't hold on a globe: the SDK's coordinate fit (documented as unsupported there, and observed
++  // to give a map-centred result that ignores padding, or a wrong one for very large extents) and any
++  // hand-written latitude/projection maths.
++  private func fitWindowCamera(
++    map: MapView, sw: CLLocationCoordinate2D, ne: CLLocationCoordinate2D,
++    windowTop: CGFloat, windowBottom: CGFloat, shrink: CGFloat,
++    bearing: CLLocationDirection, pitch: CGFloat
++  ) -> CameraOptions? {
++    let mapbox: MapboxMap = map.mapboxMap   // implicitly-unwrapped on MapView; pin the type so it isn't inferred optional
++    let size = map.bounds.size
++    let saved = CameraOptions(cameraState: mapbox.cameraState)
++    defer { mapbox.setCamera(to: saved) }
++
++    let target = CGPoint(x: size.width / 2, y: (windowTop + windowBottom) / 2)
++    let availW = size.width * shrink
++    let availH = (windowBottom - windowTop) * shrink
++
++    // The bounds' perimeter, 5 points per side.
++    var samples: [CLLocationCoordinate2D] = []
++    let n = 4
++    for i in 0...n {
++      for j in 0...n where i == 0 || i == n || j == 0 || j == n {
++        samples.append(CLLocationCoordinate2D(
++          latitude: sw.latitude + (ne.latitude - sw.latitude) * Double(j) / Double(n),
++          longitude: sw.longitude + (ne.longitude - sw.longitude) * Double(i) / Double(n)
++        ))
++      }
++    }
++
++    var center = CLLocationCoordinate2D(
++      latitude: (sw.latitude + ne.latitude) / 2,
++      longitude: (sw.longitude + ne.longitude) / 2
++    )
++    var zoom: CGFloat = 2
++
++    // Alternate zoom-only and centre-only corrections. Doing both at once used a centre shift measured at the
++    // OLD zoom (175px is a huge arc on a globe at zoom 2) and applied it at the new one, which diverged.
++    for iteration in 0..<28 {
++      mapbox.setCamera(to: CameraOptions(center: center, zoom: zoom, bearing: bearing, pitch: pitch))
++      let pts = samples.map { mapbox.point(for: $0) }
++      guard pts.allSatisfy({ $0.x.isFinite && $0.y.isFinite }) else {
++        zoom = max(0, zoom - 0.5)   // part of the box is beyond the horizon: pull back
++        continue
++      }
++      let minX = pts.map { $0.x }.min()!, maxX = pts.map { $0.x }.max()!
++      let minY = pts.map { $0.y }.min()!, maxY = pts.map { $0.y }.max()!
++      let boxCentre = CGPoint(x: (minX + maxX) / 2, y: (minY + maxY) / 2)
++      // A zoom level doubles the on-screen scale, so the zoom change that makes the box fill the window is
++      // log2 of the size ratio — the definition of zoom, not a projection estimate.
++      let ratio = min(availW / max(maxX - minX, 1), availH / max(maxY - minY, 1))
++      let dz = CGFloat(log2(Double(ratio)))
++      let err = hypot(target.x - boxCentre.x, target.y - boxCentre.y)
++      if abs(dz) < 0.002 && err < 0.4 { break }
++      if iteration % 2 == 0 {
++        if abs(dz) >= 0.002 { zoom = min(22, max(0, zoom + max(-3, min(6, dz)))) }
++      } else if err >= 0.4 {
++        if let c = mapbox.dragCameraOptions(from: boxCentre, to: target).center { center = c }
++      }
++    }
++    return CameraOptions(center: center, zoom: zoom, bearing: bearing, pitch: pitch)
++  }
++
+   func _updateCamera() {
+     if let _ = map {
+       if followUserLocation {
+diff --git a/node_modules/@rnmapbox/maps/lib/module/components/Camera.js b/node_modules/@rnmapbox/maps/lib/module/components/Camera.js
+index da6b273..6f11a9f 100644
+--- a/node_modules/@rnmapbox/maps/lib/module/components/Camera.js
++++ b/node_modules/@rnmapbox/maps/lib/module/components/Camera.js
+@@ -110,6 +110,11 @@ export const Camera = /*#__PURE__*/memo(/*#__PURE__*/forwardRef((props, ref) =>
+         sw
+       } = stop.bounds;
+       _nativeStop.bounds = JSON.stringify(makeLatLngBounds(ne, sw));
++      // intrepid: opt-in window fit (see RNMBXCamera.swift, fitWindowCamera)
++      if (stop.bounds.mode !== undefined) _nativeStop.boundsMode = stop.bounds.mode;
++      if (stop.bounds.windowTop !== undefined) _nativeStop.boundsWindowTop = stop.bounds.windowTop;
++      if (stop.bounds.windowBottom !== undefined) _nativeStop.boundsWindowBottom = stop.bounds.windowBottom;
++      if (stop.bounds.shrink !== undefined) _nativeStop.boundsShrink = stop.bounds.shrink;
+     }
+     const paddingTop = stop.padding?.paddingTop ?? stop.bounds?.paddingTop;
+     if (paddingTop !== undefined) {
