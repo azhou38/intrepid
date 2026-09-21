@@ -1065,15 +1065,13 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     () => wasMapGestureActiveRef.current || (fingersDownRef.current > 0 && mapMovedThisTouchRef.current),
     [],
   );
-  // A press on a pin, pill, spot or the back pill that is really part of a map gesture — a finger of a pinch
-  // lifting over it, which iOS delivers as a tap — is not a selection. Either a second finger touched during this
-  // touch sequence (a pinch by definition; a real tap only ever has one finger) or the map is mid-interaction.
-  // Best effort: over the native map the root view may only see the first finger, so the map-moved check is the
-  // one that reliably fires.
-  const pressBlocked = useCallback(
-    () => maxFingersRef.current >= 2 || mapMovedThisTouchRef.current || isMapInteracting(),
-    [isMapInteracting],
-  );
+  // A press on a pin, pill, spot or the back pill that is really part of a pinch — a finger of the pinch lifting over
+  // it, which iOS delivers as a tap — is not a selection. A pinch by definition has a second finger, and a real tap
+  // only ever has one, so that is all this checks. It must NOT also look at whether the map is "interacting": the
+  // map's gesture flag stays true after the last camera event until the map goes idle, so a genuine tap made right
+  // after a zoom was swallowed and the user had to tap twice (seen on device: pressBlocked=true with
+  // mapMovedThisTouch=false, isMapInteracting=true, then the second tap 0.7s later went through).
+  const pressBlocked = useCallback(() => maxFingersRef.current >= 2, []);
   const showMapMenuRef       = useRef(false);
   // Keep ref in sync so MapView's native onPress/onCameraChanged can read current menu
   // state synchronously without needing it in those callbacks' own dependency arrays.
