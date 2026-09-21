@@ -1,4 +1,12 @@
 import { WIKI_IMAGE_OVERRIDES } from '../data/imageOverrides';
+import imageManifest from '../data/imageManifest.json';
+import { buildThumbUrl, manifestKey, type ManifestEntry } from './imageUrl';
+
+// Which Wikimedia image each place uses, resolved ahead of time by scripts/build-image-manifest.ts. With
+// an entry the thumbnail URL is built right here for any width — no Wikipedia API round trip, so photos
+// no longer need a lookup on every launch. Anything the manifest doesn't have (a place added since it was
+// last generated, or one it couldn't find a photo for) falls through to the live lookup below.
+const MANIFEST = (imageManifest as { entries: Record<string, ManifestEntry> }).entries;
 
 // Full-resolution images (headers/hero photos) — keyed by destination/spot/country id.
 export const photoCache = new Map<string, string>();
@@ -28,6 +36,9 @@ export const thumbCache = new Map<string, string>();
  * result search ranks first.
  */
 export async function fetchWikiThumbnail(title: string, width: number, context?: string): Promise<string | null> {
+  const known = MANIFEST[manifestKey(title, context)];
+  if (known) return buildThumbUrl(known, width);
+
   // A hand-picked photo takes precedence over whatever the article's own lead image is — see
   // WIKI_IMAGE_OVERRIDES for why some places need one. Falls through to the normal lookup if
   // the override can't be resolved (offline, file renamed on Commons).

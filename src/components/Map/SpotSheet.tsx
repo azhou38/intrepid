@@ -122,7 +122,7 @@ function CarouselCard({ spot, destinationId, isActive, onPress, gradId }: {
       return;
     }
     thumbWasCachedRef.current = false;
-    getOrFetchWikiThumbnail(cacheKey, thumbCache, spot.name, 700).then(u => { if (u) setThumb(u); });
+    getOrFetchWikiThumbnail(cacheKey, thumbCache, spot.name, 960).then(u => { if (u) setThumb(u); });
   }, [spot.id]);
 
   const savedSpot  = useStore(s => s.savedSpots[spot.id]);

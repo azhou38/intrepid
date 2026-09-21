@@ -47,7 +47,7 @@ function DestinationCard({ dest, isVisited, onPress, width = DEST_CARD_W, showCo
     }
     photoWasCachedRef.current = false;
     setPhotoUrl(null);
-    getOrFetchWikiThumbnail(cacheKey, thumbCache, dest.name, 700).then(url => {
+    getOrFetchWikiThumbnail(cacheKey, thumbCache, dest.name, 960).then(url => {
       if (url) setPhotoUrl(url);
     });
   }, [dest.id]);
