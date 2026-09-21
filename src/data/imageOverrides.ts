@@ -35,4 +35,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Geysir Hot Spring": "Strokkur Geyser (3353874718).jpg",
   "Retiro Park": "Monumento a Alfonso XII de España en los Jardines del Retiro - 04.jpg",
   "Berlin Wall Memorial": "East side gallery, Berlin Wall (Ank Kumar, Infosys Limited) 14.jpg",
+  // The plain "Blue Lagoon" title is a disambiguation page with no image, and the search fallback finds none.
+  // CC0 (Frank Denney), so it needs no attribution.
+  "Blue Lagoon": "Blue-lagoon-spa-spring (Unsplash).jpg",
 };
