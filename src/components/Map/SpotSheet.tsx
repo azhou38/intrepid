@@ -261,7 +261,7 @@ interface Props {
   collapseSignal?: number;
 }
 
-export default function SpotSheet({
+function SpotSheet({
   spots, focusSpotId, destination, onClose, onExpand, onCollapse, onActiveSpotChange, onCollapsedTopChange,
   pillOffsetSV, onSnapStateChange, peekSignal, exitSignal, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, onGoToList, onGoToDestination, collapseSignal,
 }: Props) {
@@ -1300,3 +1300,7 @@ const st = StyleSheet.create({
                borderRadius: 16, padding: 16, borderWidth: 1, borderColor: '#F3F4F6' },
   ticketTxt: { fontSize: 15, fontWeight: '600', color: '#6366F1' },
 });
+
+// Memoized: the map screen re-renders continuously while the camera moves, and a re-render of the sheet is a React
+// commit on its animated views for no reason. With stable props it now renders only when its own inputs change.
+export default React.memo(SpotSheet);

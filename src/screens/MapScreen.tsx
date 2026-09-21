@@ -1756,6 +1756,7 @@ const destItems = useMemo((): DestItem[] =>
 
 
 
+
   // ── Fetch the single base style once on mount ─────────────────────────────
   useEffect(() => {
     // Capped so a hung request can't leave the map unmounted: after 4s it mounts on the default style.
@@ -2147,6 +2148,7 @@ const destItems = useMemo((): DestItem[] =>
     // doesn't bust the memoized destination-pin marker list.
   }, [selectedCountry, showBreadcrumb, animateCamera, dropCountryIfForeign]);
 
+  const handleSheetExpand = useCallback(() => setMapState('sheet'), []);
   const handleCloseSheet = useCallback(() => {
     setMapState('context');
   }, []);
@@ -3145,6 +3147,7 @@ const destItems = useMemo((): DestItem[] =>
   const enterFromPrevious = prevSheetKindRef.current !== null && prevSheetKindRef.current !== sheetKind;
   useEffect(() => { prevSheetKindRef.current = sheetKind; }, [sheetKind]);
 
+
   return (
     <View
       style={styles.root}
@@ -3648,7 +3651,7 @@ const destItems = useMemo((): DestItem[] =>
           cluster={selectedCountry}
           onClose={handleCloseCountry}
           onSelectDestination={handleMarkerPress}
-          onExpand={() => setMapState('sheet')}
+          onExpand={handleSheetExpand}
           onCollapse={handleCloseSheet}
           pillOffsetSV={upPillBottomSV}
           pillOffsetLockedSV={spotOwnsPillSV}
@@ -3678,7 +3681,7 @@ const destItems = useMemo((): DestItem[] =>
         <DestinationSheet
           destination={selectedDest}
           onClose={handleCloseDestinationSheet}
-          onExpand={() => setMapState('sheet')}
+          onExpand={handleSheetExpand}
           onCollapse={handleCloseSheet}
           onSelectSpot={handleSpotPress}
           onCollapsedTopChange={setDestCardTop}
@@ -3704,7 +3707,7 @@ const destItems = useMemo((): DestItem[] =>
           focusSpotId={spotFocusId}
           destination={selectedDest}
           onClose={handleCloseSpot}
-          onExpand={() => setMapState('sheet')}
+          onExpand={handleSheetExpand}
           onCollapse={handleCloseSheet}
           onActiveSpotChange={handleActiveSpotChange}
           pillOffsetSV={upPillBottomSV}

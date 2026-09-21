@@ -187,7 +187,7 @@ function DestinationsPanel({
 }
 
 // ── Main component ─────────────────────────────────────────────────────────────
-export default function CountrySheet({
+function CountrySheet({
   cluster, onClose, onSelectDestination, onExpand, onCollapse,
   pillOffsetSV, pillOffsetLockedSV, onSnapStateChange, initialTab, initialSnap, collapseSignal, peekSignal, exitSignal, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious,
 }: Props) {
@@ -1204,3 +1204,7 @@ const st = StyleSheet.create({
   peekNameTxt: { fontSize: 30, fontFamily: 'PlayfairDisplay_700Bold', color: 'white', letterSpacing: -0.4, flexShrink: 1 },
   peekStatsTxt: { fontSize: 12.5, fontWeight: '600', color: 'rgba(255,255,255,0.85)' },
 });
+
+// Memoized: the map screen re-renders continuously while the camera moves, and a re-render of the sheet is a React
+// commit on its animated views for no reason. With stable props it now renders only when its own inputs change.
+export default React.memo(CountrySheet);

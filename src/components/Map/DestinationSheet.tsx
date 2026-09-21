@@ -940,7 +940,7 @@ interface Props {
   exitSignal?: number;
 }
 
-export default function DestinationSheet({
+function DestinationSheet({
   destination, onClose, onExpand, onCollapse, onSelectSpot, onCollapsedTopChange,
   onSnapStateChange, pillOffsetSV, pillOffsetLockedSV, initialTab, initialSnap,
   collapseSignal, peekSignal, exitSignal, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious,
@@ -2290,3 +2290,7 @@ const st = StyleSheet.create({
   tipTitleTxt:  { fontSize:14.5, fontWeight:'700', color:'#111827', marginBottom:2 },
   tipDetailTxt: { fontSize:13, color:'#6B7280', lineHeight:18 },
 });
+
+// Memoized: the map screen re-renders continuously while the camera moves, and a re-render of the sheet is a React
+// commit on its animated views for no reason. With stable props it now renders only when its own inputs change.
+export default React.memo(DestinationSheet);
