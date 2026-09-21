@@ -3886,18 +3886,18 @@ const styles = StyleSheet.create({
   // visited country's pill, always (the selected country keeps the full glow above instead).
   countryPillCardBorder: { borderWidth: 1.5, borderColor: 'rgba(22,163,74,0.85)' },
   // Unvisited and selected: the same border and flag ring as a visited pill, in a light gray.
-  countryPillCardBorderGray: { borderWidth: 1.5, borderColor: 'rgba(156,163,175,0.95)' },
+  countryPillCardBorderGray: { borderWidth: 1.5, borderColor: 'rgba(188,193,202,0.95)' },
   countryPillFlagRingCirclePlain: {
     width: 24, height: 24, borderRadius: 12,
-    borderWidth: 1.5, borderColor: 'rgba(156,163,175,0.95)',
+    borderWidth: 1.5, borderColor: 'rgba(188,193,202,0.95)',
   },
   countryPillFlagRingBarTopPlain: {
     position: 'absolute', top: 0, left: 12,
-    width: 12, height: 1.5, backgroundColor: 'rgba(156,163,175,0.95)',
+    width: 12, height: 1.5, backgroundColor: 'rgba(188,193,202,0.95)',
   },
   countryPillFlagRingBarBottomPlain: {
     position: 'absolute', bottom: 0, left: 12,
-    width: 12, height: 1.5, backgroundColor: 'rgba(156,163,175,0.95)',
+    width: 12, height: 1.5, backgroundColor: 'rgba(188,193,202,0.95)',
   },
   countryPillName: { fontSize: 11, fontWeight: '600', color: '#111827', maxWidth: 90 },
 
