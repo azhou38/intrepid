@@ -932,6 +932,7 @@ interface Props {
   // True while the user is interacting with the map (fingers down and the map moving). A selection change or a new
   // sheet during that interaction stays peeked instead of popping up to half-screen. Read on the JS thread only.
   isMapInteracting?: () => boolean;
+  isPressBlocked?: () => boolean;   // a press that is really a finger of a map gesture (see MapScreen.pressBlocked)
   // Increments when the parent is about to close this sheet (the back pill's X): slide it off
   // the bottom of the screen first, so it leaves rather than vanishing. Parent then unmounts it.
   exitSignal?: number;
@@ -940,7 +941,7 @@ interface Props {
 export default function DestinationSheet({
   destination, onClose, onExpand, onCollapse, onSelectSpot, onCollapsedTopChange,
   onSnapStateChange, pillOffsetSV, pillOffsetLockedSV, initialTab, initialSnap,
-  collapseSignal, peekSignal, exitSignal, mapGestureAtSV, isMapInteracting,
+  collapseSignal, peekSignal, exitSignal, mapGestureAtSV, isMapInteracting, isPressBlocked,
 }: Props) {
   const insets            = useSafeAreaInsets();
   const savedDestinations = useStore(s => s.savedDestinations);
@@ -1511,6 +1512,7 @@ export default function DestinationSheet({
   // old PanResponder computed every frame's position on the JS thread regardless of which
   // style property consumed it).
   let pan = Gesture.Pan()
+    .maxPointers(1)   // a two-finger map pinch that lands on the sheet is never a drag of it
     // Only activates once the drag is decisively vertical, and fails outright (ceding the
     // touch) once it's decisively horizontal instead — without this, this gesture (with no
     // direction restriction) could win the race against the horizontal tab-swipe gesture
@@ -1949,7 +1951,7 @@ export default function DestinationSheet({
             borderTopLeftRadius: 28, borderTopRightRadius: 28,
           }, peekAnimStyle]}
         >
-          <Pressable style={StyleSheet.absoluteFill} onPress={() => snapToCollapsedRef.current()}>
+          <Pressable style={StyleSheet.absoluteFill} onPress={() => { if (isPressBlocked?.()) return; snapToCollapsedRef.current(); }}>
             <EntityPhoto
               instant
               cacheKey={destination.id}

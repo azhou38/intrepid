@@ -1070,7 +1070,10 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // touch sequence (a pinch by definition; a real tap only ever has one finger) or the map is mid-interaction.
   // Best effort: over the native map the root view may only see the first finger, so the map-moved check is the
   // one that reliably fires.
-  const pressBlocked = useCallback(() => maxFingersRef.current >= 2 || isMapInteracting(), [isMapInteracting]);
+  const pressBlocked = useCallback(
+    () => maxFingersRef.current >= 2 || mapMovedThisTouchRef.current || isMapInteracting(),
+    [isMapInteracting],
+  );
   const showMapMenuRef       = useRef(false);
   // Keep ref in sync so MapView's native onPress/onCameraChanged can read current menu
   // state synchronously without needing it in those callbacks' own dependency arrays.
@@ -3639,6 +3642,7 @@ const destItems = useMemo((): DestItem[] =>
           peekSignal={peekSheetSignal}
           exitSignal={sheetExitSignal}
           isMapInteracting={isMapInteracting}
+          isPressBlocked={pressBlocked}
           mapGestureAtSV={mapGestureAtSV}
           initialTab={countryInitialTab}
           initialSnap={countryInitialSnap}
@@ -3669,6 +3673,7 @@ const destItems = useMemo((): DestItem[] =>
           peekSignal={peekSheetSignal}
           exitSignal={sheetExitSignal}
           isMapInteracting={isMapInteracting}
+          isPressBlocked={pressBlocked}
           mapGestureAtSV={mapGestureAtSV}
           onSnapStateChange={handleSheetSnapStateChange}
           initialTab={destInitialTab}
@@ -3690,6 +3695,7 @@ const destItems = useMemo((): DestItem[] =>
           peekSignal={peekSheetSignal}
           exitSignal={sheetExitSignal}
           isMapInteracting={isMapInteracting}
+          isPressBlocked={pressBlocked}
           mapGestureAtSV={mapGestureAtSV}
           onSnapStateChange={handleSheetSnapStateChange}
           onGoToList={handleGoToListView}

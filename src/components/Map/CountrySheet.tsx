@@ -72,6 +72,7 @@ interface Props {
   // True while the user is interacting with the map (fingers down and the map moving); a selection change or new
   // sheet during that interaction stays peeked. Read on the JS thread only.
   isMapInteracting?: () => boolean;
+  isPressBlocked?: () => boolean;   // a press that is really a finger of a map gesture (see MapScreen.pressBlocked)
   // Increments when the parent is about to close this sheet (the back pill's X): slide it off
   // the bottom of the screen first, so it leaves rather than vanishing. Parent then unmounts it.
   exitSignal?: number;
@@ -186,7 +187,7 @@ function DestinationsPanel({
 // ── Main component ─────────────────────────────────────────────────────────────
 export default function CountrySheet({
   cluster, onClose, onSelectDestination, onExpand, onCollapse,
-  pillOffsetSV, pillOffsetLockedSV, onSnapStateChange, initialTab, initialSnap, collapseSignal, peekSignal, exitSignal, mapGestureAtSV, isMapInteracting,
+  pillOffsetSV, pillOffsetLockedSV, onSnapStateChange, initialTab, initialSnap, collapseSignal, peekSignal, exitSignal, mapGestureAtSV, isMapInteracting, isPressBlocked,
 }: Props) {
   // Collapsed (bottom-screen carousel) is the default view whenever a country is selected —
   // callers only pass initialSnap explicitly for the other case (e.g. the destination sheet's
@@ -618,7 +619,8 @@ export default function CountrySheet({
   // old PanResponder computed every frame's position on the JS thread regardless of which
   // style property consumed it).
   const pan = Gesture.Pan()
-    // Only activates once the drag is decisively vertical, ceding horizontal drags to the
+    .maxPointers(1)   // a two-finger map pinch that lands on the sheet is never a drag of it
+    //Only activates once the drag is decisively vertical, ceding horizontal drags to the
     // tab-swipe gesture below instead of racing it for every touch.
     .activeOffsetY([-10, 10])
     .failOffsetX([-10, 10])
@@ -1027,7 +1029,7 @@ export default function CountrySheet({
               borderTopLeftRadius: 28, borderTopRightRadius: 28,
             }, peekAnimStyle]}
           >
-            <Pressable style={StyleSheet.absoluteFill} onPress={() => snapToCollapsedRef.current()}>
+            <Pressable style={StyleSheet.absoluteFill} onPress={() => { if (isPressBlocked?.()) return; snapToCollapsedRef.current(); }}>
               <EntityPhoto instant cacheKey={countryPhotoKey} cache={photoCache} load={loadCountryPhoto} style={StyleSheet.absoluteFill as any} />
               <View pointerEvents="none" style={st.peekScrim} />
               <View pointerEvents="none" style={st.peekPillRow}>

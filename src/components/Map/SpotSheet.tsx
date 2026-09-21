@@ -242,6 +242,7 @@ interface Props {
   // True while the user is interacting with the map (fingers down and the map moving); a spot change or new sheet
   // during that interaction stays peeked. Read on the JS thread only.
   isMapInteracting?: () => boolean;
+  isPressBlocked?: () => boolean;   // a press that is really a finger of a map gesture (see MapScreen.pressBlocked)
   // Increments when the parent is about to close this sheet (the back pill's X): slide it off
   // the bottom of the screen first, so it leaves rather than vanishing. Parent then unmounts it.
   exitSignal?: number;
@@ -260,7 +261,7 @@ interface Props {
 
 export default function SpotSheet({
   spots, focusSpotId, destination, onClose, onExpand, onCollapse, onActiveSpotChange, onCollapsedTopChange,
-  pillOffsetSV, onSnapStateChange, peekSignal, exitSignal, mapGestureAtSV, isMapInteracting, onGoToList, onGoToDestination, collapseSignal,
+  pillOffsetSV, onSnapStateChange, peekSignal, exitSignal, mapGestureAtSV, isMapInteracting, isPressBlocked, onGoToList, onGoToDestination, collapseSignal,
 }: Props) {
   const insets       = useSafeAreaInsets();
   const saveSpotVisited = useStore(s => s.saveSpotVisited);
@@ -621,6 +622,7 @@ export default function SpotSheet({
   // every frame) is the standard, safe Reanimated pattern — and it's already proven in this
   // exact app, since DestinationSheet has run on it the whole time.
   let pan = Gesture.Pan()
+    .maxPointers(1)   // a two-finger map pinch that lands on the sheet is never a drag of it
     .activeOffsetY([-10, 10])
     .failOffsetX([-10, 10])
     .onStart(() => {
@@ -1001,7 +1003,7 @@ export default function SpotSheet({
           pointerEvents="box-none"
           style={[st.peekStrip, peekOpacityStyle]}
         >
-          <Pressable style={StyleSheet.absoluteFill} onPress={() => snapToCollapsedRef.current()}>
+          <Pressable style={StyleSheet.absoluteFill} onPress={() => { if (isPressBlocked?.()) return; snapToCollapsedRef.current(); }}>
             <EntityPhoto instant placeholderColor="#111827" cacheKey={activePhotoKey} cache={photoCache} load={loadActivePhoto} />
             <View pointerEvents="none" style={st.peekScrim} />
             <View pointerEvents="none" style={st.peekPillRow}>
