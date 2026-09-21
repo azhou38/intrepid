@@ -3024,14 +3024,19 @@ const destItems = useMemo((): DestItem[] =>
         allowOverlap={isSelectedPill}
       >
         <FadePin exiting={exiting}>
-          {/* The selected country's pill is inert: it persists while zoomed out, so a pinch or pan
-              that ends over it would otherwise count as a tap and re-select the country — resetting
-              its sheet to half-screen and flying the camera back. (Same reason the selected
-              destination's pin is inert.) The breadcrumb's return button is the way back. */}
+          {/* The selected country's pill persists while zoomed out. A tap on it only re-frames the camera on the country's
+              default view (handleResetToCountry, same as the breadcrumb) — it does NOT re-select it, so the sheet stays as
+              it is. A pinch that ends over it is filtered out by pressBlocked (a pinch has two fingers). */}
           <Pressable
-            disabled={exiting || isSelectedPill}
+            disabled={exiting}
             onPressIn={() => { lastCountryPressRef.current = Date.now(); }}
-            onPress={() => { if (pressBlocked()) return; prevCountryRef.current = selectedCountry; handleCountryPress(cluster); }}
+            onPress={() => {
+              if (pressBlocked()) return;
+              // The selected country's own pill only re-frames the camera on the country's default view (same as the
+              // breadcrumb) — it is not a re-selection, so the sheet stays as it is.
+              if (isSelectedPill) { handleResetToCountry(); return; }
+              prevCountryRef.current = selectedCountry; handleCountryPress(cluster);
+            }}
           >
             <View style={styles.countryPill}>
               {/* Card first so circle (declared last) renders on top */}
@@ -3084,7 +3089,7 @@ const destItems = useMemo((): DestItem[] =>
         </FadePin>
       </MapboxGL.MarkerView>
     );
-  }), [renderedCountryPills, selectedCountry, handleCountryPress, visitedCountryCodeSet]);
+  }), [renderedCountryPills, selectedCountry, handleCountryPress, handleResetToCountry, visitedCountryCodeSet]);
 
   // Promoted photo destinations, excluding any destination the camera is currently inside
   // of at spot zoom (its spot pins represent it instead; zoomedIntoDestIds) — selected or
