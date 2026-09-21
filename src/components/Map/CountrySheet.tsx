@@ -662,9 +662,13 @@ function CountrySheet({
       const cy  = collapsedYAnim.value;
 
       if (snapStateSV.value === 'peek') {
-        // Swiping up from peek goes back to collapsed; swiping down (or anything smaller)
-        // just settles back at peek — it's the lowest point, no more dismissing from here.
-        if (e.velocityY < -500 || pos < PEEK_Y - 60) runOnJS(callSnapToCollapsed)();
+        // One continuous swipe can run the whole way from peek to full-screen: the sheet already follows the finger
+        // across every snap, so settle on the snap the release lands nearest to — a hard fling up, or a drag past
+        // halfway between collapsed and full, goes straight to full; a lighter fling or drag past halfway between peek
+        // and collapsed stops at collapsed; anything less settles back at peek (the lowest point, no dismissing).
+        const cyPeek = cy;
+        if (e.velocityY < -1500 || pos < (FULL_POS + cyPeek) / 2) runOnJS(callSnapToFull)();
+        else if (e.velocityY < -500 || pos < (cyPeek + PEEK_Y) / 2) runOnJS(callSnapToCollapsed)();
         else runOnJS(callSnapToPeek)();
         return;
       }
