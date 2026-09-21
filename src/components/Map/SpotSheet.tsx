@@ -669,13 +669,10 @@ function SpotSheet({
       if (mapGestureAtSV && Date.now() - mapGestureAtSV.value < 400) { runOnJS(callSnapBack)(); return; }
       const pos = lastPos.value + e.translationY;
       if (snapStateSV.value === 'peek') {
-        // One continuous swipe can run the whole way from peek to full-screen: the sheet already follows the finger
-        // across every snap, so settle on the snap the release lands nearest to — a hard fling up, or a drag past
-        // halfway between collapsed and full, goes straight to full; a lighter fling or drag past halfway between peek
-        // and collapsed stops at collapsed; anything less settles back at peek (the lowest point, no dismissing).
-        const cyPeek = COLLAPSED_Y;
-        if (e.velocityY < -1500 || pos < (FULL_POS + cyPeek) / 2) runOnJS(callSnapToFullWithHaptic)();
-        else if (e.velocityY < -500 || pos < (cyPeek + PEEK_Y) / 2) runOnJS(callSnapToCollapsed)();
+        // Same as the Explore sheet: a drag carried past the half-screen position commits straight to full-screen
+        // (a direct bottom -> top connection); a smaller swipe up stops at half-screen; anything less settles back.
+        if (pos <= COLLAPSED_Y) { runOnJS(callSnapToFullWithHaptic)(); return; }
+        if (e.velocityY < -500 || pos < PEEK_Y - 60) runOnJS(callSnapToCollapsed)();
         else runOnJS(callSnapToPeek)();
       } else if (snapStateSV.value === 'collapsed') {
         // Swiping up from collapsed goes to full-screen; swiping down now drops to peek
@@ -687,7 +684,9 @@ function SpotSheet({
         // Full-screen: a gesture that never actually engaged (e.g. it never got past the
         // "scrolled to top" gate) shouldn't change the sheet's snap state at all.
         if (!dragEngagedSV.value) return;
-        if (e.velocityY > 800 || pos > H * 0.25) runOnJS(callSnapToCollapsed)();
+        // Carried past the half-screen position: straight down to the bottom view, like the Explore sheet.
+        if (pos >= COLLAPSED_Y) runOnJS(callSnapToPeek)();
+        else if (e.velocityY > 800 || pos > H * 0.25) runOnJS(callSnapToCollapsed)();
         else runOnJS(callSnapToFull)();
       }
     });

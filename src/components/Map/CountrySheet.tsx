@@ -662,13 +662,10 @@ function CountrySheet({
       const cy  = collapsedYAnim.value;
 
       if (snapStateSV.value === 'peek') {
-        // One continuous swipe can run the whole way from peek to full-screen: the sheet already follows the finger
-        // across every snap, so settle on the snap the release lands nearest to — a hard fling up, or a drag past
-        // halfway between collapsed and full, goes straight to full; a lighter fling or drag past halfway between peek
-        // and collapsed stops at collapsed; anything less settles back at peek (the lowest point, no dismissing).
-        const cyPeek = cy;
-        if (e.velocityY < -1500 || pos < (FULL_POS + cyPeek) / 2) runOnJS(callSnapToFull)();
-        else if (e.velocityY < -500 || pos < (cyPeek + PEEK_Y) / 2) runOnJS(callSnapToCollapsed)();
+        // Same as the Explore sheet: a drag carried past the half-screen position commits straight to full-screen
+        // (a direct bottom -> top connection); a smaller swipe up stops at half-screen; anything less settles back.
+        if (pos <= cy) { runOnJS(callSnapToFull)(); return; }
+        if (e.velocityY < -500 || pos < PEEK_Y - 60) runOnJS(callSnapToCollapsed)();
         else runOnJS(callSnapToPeek)();
         return;
       }
@@ -689,7 +686,9 @@ function CountrySheet({
       // "the user swipes down from full-screen view" is this release, regardless of
       // whether it ends up landing at collapsed or snapping back.
       runOnJS(triggerHaptic)();
-      if (e.velocityY > 500 || pos > H * 0.25) runOnJS(callSnapToCollapsed)();
+      // Carried past the half-screen position: straight down to the bottom view, like the Explore sheet.
+      if (pos >= cy) runOnJS(callSnapToPeek)();
+      else if (e.velocityY > 500 || pos > H * 0.25) runOnJS(callSnapToCollapsed)();
       else runOnJS(callSnapToFull)();
     })
     // Without this, the inner ScrollView's own native pan claims the touch outright while
