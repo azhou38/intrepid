@@ -730,12 +730,6 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // bar reserves its own layout space below it). Measured rather than assumed so
   // fitCountryDefaultView's bottom padding is exact on every device; see its own comment.
   const mapViewHRef = useRef(0);
-  // Legacy from when a country fit was two moves (fit, then a timed corrective settle). The fit is now a
-  // single animation and no settle timer is ever set, but cancelCountrySettle — called from every camera
-  // entry point — still uses these to drop a pending cache capture (countryCacheArmRef) when something
-  // newer moves the camera, so they stay.
-  const countrySettleTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const countrySettleTokenRef = useRef(0);
   // Country framing, once resolved, is reusable: the camera the window fit lands on is a plain centre+zoom,
   // so every later visit to that country can go straight there without recomputing (and the country close
   // reads its zoom for its half-zoom step-back). Keyed by country code and stamped with the geometry it was
@@ -1761,32 +1755,26 @@ const destItems = useMemo((): DestItem[] =>
   // smooth throughout. 'flyTo' (Mapbox's van Wijk/Nuij curve, purpose-built for exactly this
   // combination) keeps the destination visually converging throughout instead, so callers
   // doing a big zoom-in-toward-a-point pass 'flyTo' explicitly.
-  // Invalidates any country fit's pending settle (see fitCountryDefaultView). Called from the
-  // two shared camera entry points below, so ANY subsequent camera move — selecting a
-  // destination, backing out to the world, a search jump — drops a settle that would otherwise
-  // fire a moment later and yank the camera away from wherever the app just went.
-  const cancelCountrySettle = useCallback(() => {
-    countrySettleTokenRef.current++;
+  // Drops the pending capture of a country fit's final camera (see countryCacheArmRef). Called from the
+  // shared camera entry points, so ANY subsequent camera move — selecting a destination, backing out to
+  // the world, a search jump — stops the idle that follows it from being recorded as that country's default
+  // camera.
+  const cancelCountryCapture = useCallback(() => {
     countryCacheArmRef.current = null;
-    if (countrySettleTimerRef.current) {
-      clearTimeout(countrySettleTimerRef.current);
-      countrySettleTimerRef.current = null;
-    }
   }, []);
   useEffect(() => () => {
-    if (countrySettleTimerRef.current) clearTimeout(countrySettleTimerRef.current);
     if (suppressFrameSyncTimerRef.current) clearTimeout(suppressFrameSyncTimerRef.current);
   }, []);
 
   const animateCamera = useCallback((reg: Region, duration = 500, mode: 'easeTo' | 'flyTo' = 'easeTo') => {
-    cancelCountrySettle();
+    cancelCountryCapture();
     cameraRef.current?.setCamera({
       centerCoordinate: [reg.longitude, reg.latitude],
       zoomLevel: latDeltaToZoom(reg.latitudeDelta),
       animationDuration: duration,
       animationMode: mode,
     });
-  }, [cancelCountrySettle]);
+  }, [cancelCountryCapture]);
 
   // Computes an explicit centerCoordinate + zoomLevel ourselves (the exact same primitives
   // animateCamera uses) rather than handing raw coordinates to setCamera's `bounds` field —
@@ -1815,7 +1803,7 @@ const destItems = useMemo((): DestItem[] =>
     mode: 'easeTo' | 'flyTo' = 'easeTo',
   ) => {
     if (!coords.length) return;
-    cancelCountrySettle();
+    cancelCountryCapture();
     const lngs = coords.map(c => c.longitude);
     const lats = coords.map(c => c.latitude);
     const ne = { longitude: Math.max(...lngs), latitude: Math.max(...lats) };
@@ -1847,7 +1835,7 @@ const destItems = useMemo((): DestItem[] =>
       animationDuration: duration,
       animationMode: mode,
     });
-  }, [cancelCountrySettle]);
+  }, [cancelCountryCapture]);
 
   // Default framing for a freshly-selected country. The vertical window runs from the very
   // top of the screen down to wherever the sheet's top edge will settle, and the country is
@@ -1897,7 +1885,7 @@ const destItems = useMemo((): DestItem[] =>
     framing: 'topHalf' | 'full' = 'topHalf',
     durationMs = 500,
   ) => {
-    cancelCountrySettle();
+    cancelCountryCapture();
 
     const bounds = getCountryBounds(cluster.countryCode);
     if (!bounds) {
@@ -1969,7 +1957,7 @@ const destItems = useMemo((): DestItem[] =>
     // use it. The map idle that follows this single move holds the final camera; handleMapIdle accepts it
     // once FIT_MS has elapsed.
     countryCacheArmRef.current = { code: cluster.countryCode, key: cacheKey, at: Date.now() + FIT_MS };
-  }, [fitCoords, cancelCountrySettle]);
+  }, [fitCoords, cancelCountryCapture]);
 
   // Destination equivalent of fitCountryDefaultView, and much simpler for two reasons: a
   // destination is a POINT rather than a bounding box, so there's nothing to size — the zoom
@@ -1987,7 +1975,7 @@ const destItems = useMemo((): DestItem[] =>
     framing: 'topHalf' | 'full' = 'topHalf',
     durationMs = 500,
   ) => {
-    cancelCountrySettle();
+    cancelCountryCapture();
     const zoomLevel = latDeltaToZoom(getZoomDelta(dest.category));
     const worldSize = 512 * Math.pow(2, zoomLevel);
     const mapViewH = mapViewHRef.current || (H - BOTTOM_TAB_H);
@@ -2007,7 +1995,7 @@ const destItems = useMemo((): DestItem[] =>
       animationDuration: durationMs,
       animationMode: mode,
     });
-  }, [cancelCountrySettle]);
+  }, [cancelCountryCapture]);
 
   // Spot equivalent of fitDestinationDefaultView — same closed-form point-centring math, but
   // fixed at spot zoom (latitudeDelta 0.02) and always framed for the half-screen carousel
@@ -2016,7 +2004,7 @@ const destItems = useMemo((): DestItem[] =>
   // sheet's top edge (COLLAPSED_Y = H/2) — so the pin landed hidden behind the sheet instead
   // of in the visible top half, reading as the pin having disappeared.
   const fitSpotView = useCallback((spot: Spot, mode: 'easeTo' | 'flyTo' = 'easeTo', durationMs = 500) => {
-    cancelCountrySettle();
+    cancelCountryCapture();
     const zoomLevel = latDeltaToZoom(0.02);
     const worldSize = 512 * Math.pow(2, zoomLevel);
     const mapViewH = mapViewHRef.current || (H - BOTTOM_TAB_H);
@@ -2030,7 +2018,7 @@ const destItems = useMemo((): DestItem[] =>
       animationDuration: durationMs,
       animationMode: mode,
     });
-  }, [cancelCountrySettle]);
+  }, [cancelCountryCapture]);
 
   // ── Handlers ─────────────────────────────────────────────────────────────
   const handleMarkerPress = useCallback((dest: Destination) => {
@@ -2737,13 +2725,9 @@ const destItems = useMemo((): DestItem[] =>
       // mark it so the next onMapIdle (which will reflect wherever THEIR gesture ends, not
       // the destination's real home) doesn't get captured as destHomeRegion.
       if (suppressDestReturnPromptRef.current) destFlightInterruptedRef.current = true;
-      // Likewise for a country fit's pending settle — the user owns the camera now, so
-      // invalidate it rather than nudging them off their own pan a moment later.
-      countrySettleTokenRef.current++;
-      if (countrySettleTimerRef.current) {
-        clearTimeout(countrySettleTimerRef.current);
-        countrySettleTimerRef.current = null;
-      }
+      // Likewise for a country fit still in flight — the user owns the camera now, so drop the pending capture
+      // rather than have the idle after THEIR pan recorded as the country's default camera.
+      countryCacheArmRef.current = null;
     }
     if (isGestureActive) {
       // Throttled off a plain ref: READING a shared value's .value on the JS thread waits on the UI
@@ -2906,14 +2890,10 @@ const destItems = useMemo((): DestItem[] =>
 
     // Capture the settled camera position as the "home" for the current country view.
     //
-    // Not while a two-part fit still has its settle outstanding, though. That fit lands,
-    // fires THIS idle, and only then eases the last ~169px into place — so capturing here
-    // would record a home the camera is about to leave. It's not a rounding error either:
-    // 169px is 44% of the 45%-of-a-screen pan-away threshold, which left the check wildly
-    // lopsided (tripping after ~214px of pan one way, needing ~552px the other) and made
-    // the breadcrumb's return arrow look like it appeared at random. Skipping here is safe
-    // because the settle's own completion fires another idle, which captures the real
-    // resting position.
+    // Not while a country fit is still in flight (its capture is armed but not yet due), so this can't
+    // record a home the camera is still travelling toward — home must be the resting position, or the
+    // breadcrumb's return arrow measures pan-away against a point the camera never rested on. The fit's own
+    // completion fires another idle, which captures the real resting position.
     //
     // Deliberately NOT gated on mapState === 'world' (unlike the lastWorldRegionRef capture
     // below) — collapsing the country sheet from full-screen sets mapState to 'context' (see
@@ -2924,9 +2904,8 @@ const destItems = useMemo((): DestItem[] =>
     // countryHomeRegionRef and just no-ops while that's still null. !selectedDest alone is
     // exactly what should scope this to "country selected, no destination" — selectedSpot
     // always implies selectedDest is also set, so it's covered by the same check.
-    const settlePending = countrySettleTimerRef.current !== null
-      || (countryCacheArmRef.current !== null && Date.now() < countryCacheArmRef.current.at);
-    if (selectedCountryRef.current && !selectedDest && !countryHomeRegionRef.current && !settlePending) {
+    const capturePending = countryCacheArmRef.current !== null && Date.now() < countryCacheArmRef.current.at;
+    if (selectedCountryRef.current && !selectedDest && !countryHomeRegionRef.current && !capturePending) {
       countryHomeRegionRef.current = newRegion;
       setCountryHomeRegion(newRegion);
     }
