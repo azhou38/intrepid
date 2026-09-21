@@ -3282,13 +3282,12 @@ const destItems = useMemo((): DestItem[] =>
             keeps the existing gray border unchanged either way. */}
         {selectedCountry && (() => {
           const selectedIsVisited = visitedCountryCodeSet.has(selectedCountry.countryCode);
-          const fillColor = selectedIsVisited ? '#22C55E' : '#4B5563';
+          const fillColor = selectedIsVisited ? '#22C55E' : '#FFFFFF';
           const lineColor = selectedIsVisited
             ? '#16A34A'
             : (mapType === 'satellite' ? '#FFFFFF' : '#4B5563');
-          // Gray (unvisited) fill in standard map view only gets its own, lighter opacity —
-          // visited (emerald) and satellite-view-unvisited both keep the original 0.10.
-          const fillOpacity = (!selectedIsVisited && mapType !== 'satellite') ? 0.05 : 0.10;
+          // A 10% tint over the whole country: emerald if visited, white if not.
+          const fillOpacity = 0.10;
           // Unvisited in standard map view: the outline itself is white (as in satellite view) with a dark slate casing
           // drawn just under it, so it stays readable against the light land, water and green of the map. The halo (glow)
           // is white as well.
