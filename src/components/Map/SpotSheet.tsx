@@ -30,6 +30,7 @@ import { DAY_NAMES, hoursForDay, formatSpotCost, formatVisitTime } from '../../d
 import { photoCache, thumbCache, getOrFetchWikiThumbnail } from '../../utils/photoCache';
 import CircleFlag from '../CircleFlag';
 import FadeInImage from './FadeInImage';
+import EntityPhoto from './EntityPhoto';
 import {
   parseDateStr, fmtDatePart,
   DatePickerModal, PhotoCollage, ReviewEditModal,
@@ -238,6 +239,9 @@ interface Props {
   // with a finger resting on this sheet's strip used to be read as a swipe of the sheet itself —
   // the finger travels upward during a pinch-in — so lifting it snapped the sheet to half-screen.
   mapGestureAtSV?: SharedValue<number>;
+  // True while the user is interacting with the map (fingers down and the map moving); a spot change or new sheet
+  // during that interaction stays peeked. Read on the JS thread only.
+  isMapInteracting?: () => boolean;
   // Increments when the parent is about to close this sheet (the back pill's X): slide it off
   // the bottom of the screen first, so it leaves rather than vanishing. Parent then unmounts it.
   exitSignal?: number;
@@ -256,7 +260,7 @@ interface Props {
 
 export default function SpotSheet({
   spots, focusSpotId, destination, onClose, onExpand, onCollapse, onActiveSpotChange, onCollapsedTopChange,
-  pillOffsetSV, onSnapStateChange, peekSignal, exitSignal, mapGestureAtSV, onGoToList, onGoToDestination, collapseSignal,
+  pillOffsetSV, onSnapStateChange, peekSignal, exitSignal, mapGestureAtSV, isMapInteracting, onGoToList, onGoToDestination, collapseSignal,
 }: Props) {
   const insets       = useSafeAreaInsets();
   const saveSpotVisited = useStore(s => s.saveSpotVisited);
@@ -307,15 +311,6 @@ export default function SpotSheet({
       { spot: spots[0], realIndex: 0 },
     ];
   }, [spots]);
-  const [photoUrl,  setPhotoUrl ] = useState<string | null>(photoCache.get(`spot_${activeSpot.id}`) ?? null);
-  // True when the CURRENTLY-shown hero photo was already sitting in photoCache before it was
-  // ever displayed (a repeat visit, or a pin-tap prefetch that won the race) — initialized
-  // synchronously (matching the useState initializer above) so it's already correct for
-  // FadeInImage's very first render, then kept correct by the effect below on every
-  // subsequent active-spot change too (carousel swipes don't remount this sheet). Drives
-  // FadeInImage's `instant` prop: a genuine cache hit should appear immediately, not replay a
-  // fade the user never actually waited through.
-  const photoWasCachedRef = useRef(photoCache.has(`spot_${activeSpot.id}`));
   const [activeTab, setActiveTab] = useState<'visit' | 'about'>('visit');
   const [showDP,    setShowDP   ] = useState(false);
   const [showReview,setShowReview] = useState(false);
@@ -387,23 +382,16 @@ export default function SpotSheet({
       if (!success) snapTabToNearest();
     });
 
-  // Hero photo for the active spot — bounded width instead of the (often huge) original.
-  // getOrFetchWikiThumbnail (rather than a bare fetchWikiThumbnail) shares whatever request a
-  // pin-tap prefetch already kicked off, instead of starting a second, duplicate one now that
-  // this effect has run.
+  // The hero and peek photos are <EntityPhoto> elements keyed on the active spot (see EntityPhoto.tsx): the URL is
+  // derived from that spot's own cache key so it can't be another spot's, and loading it never re-renders this
+  // sheet. getOrFetchWikiThumbnail (rather than a bare fetchWikiThumbnail) shares whatever request a pin-tap
+  // prefetch already kicked off.
+  const activePhotoKey = `spot_${activeSpot.id}`;
+  const loadActivePhoto = () => getOrFetchWikiThumbnail(activePhotoKey, photoCache, activeSpot.name, 900);
+
+  // Reset tab whenever the focused spot changes. (This used to sit at the end of the photo effect, after an early
+  // return for a cached photo — so the tab only reset when the photo happened not to be cached.)
   useEffect(() => {
-    const cacheKey = `spot_${activeSpot.id}`;
-    if (photoCache.has(cacheKey)) {
-      photoWasCachedRef.current = true;
-      setPhotoUrl(photoCache.get(cacheKey)!);
-      return;
-    }
-    photoWasCachedRef.current = false;
-    setPhotoUrl(null);
-    getOrFetchWikiThumbnail(cacheKey, photoCache, activeSpot.name, 900).then(url => {
-      if (url) setPhotoUrl(url);
-    });
-    // Reset tab whenever the focused spot changes.
     activeTabRef.current = 'visit';
     setActiveTab('visit');
     tabSlideAnim.value = 0;
@@ -490,47 +478,42 @@ export default function SpotSheet({
     [insets.bottom, insets.top],
   );
 
-  // withHaptic fires a haptic exactly when the sheet's OWN animation lands on FULL_POS — via
-  // withTiming's completion callback, a UI-thread worklet reanimated invokes the instant the
-  // value actually arrives, not a fixed setTimeout guess at how long the animation "should"
-  // take. Only the swipe-up gesture below passes withHaptic=true; tap-triggered expands (e.g.
-  // tapping the collapsed pill) don't request it, matching this sheet's existing haptic
-  // policy of ticking for drags, not taps.
-  const snapToFullRef = useRef((withHaptic?: boolean) => {});
-  snapToFullRef.current = (withHaptic = false) => {
-    snapStateRef.current = 'full';
-    snapStateSV.value = 'full';
-    setSnapStateReact('full');
-    lastPos.value = FULL_POS;
-    onExpand?.();
-    onSnapStateChange?.('full');
-    slideAnim.value = withTiming(FULL_POS, SNAP_CONFIG, withHaptic ? (finished) => {
+  // ── Sheet position: one authority ─────────────────────────────────────────────────────────────────────
+  // Same design as DestinationSheet (see the long comment there): snapStateRef / snapStateSV hold the snap this
+  // sheet is meant to be in, and every position change except the user's own finger drag goes through
+  // transitionTo. Focusing another spot used to call snapToCollapsed unconditionally, which pulled the sheet up
+  // to half-screen in the middle of a map gesture that was holding it peeked.
+  const closingRef = useRef(false);
+  const transitionToRef = useRef<(next: 'peek' | 'collapsed' | 'full', reason: string, withHaptic?: boolean) => void>(() => {});
+  transitionToRef.current = (next, reason, withHaptic = false) => {
+    // Once the parent has told this sheet to leave, only a NEW selection may bring it back.
+    if (closingRef.current && reason !== 'selectionChange') return;
+    closingRef.current = false;
+    const prev = snapStateRef.current;
+    const target = next === 'full' ? FULL_POS : next === 'peek' ? PEEK_Y : COLLAPSED_Y;
+    if (__DEV__) console.log('[sheet] Spot', activeSpot.id, prev, '->', next, `reason=${reason}`, 'mapInteracting=', isMapInteracting?.() ?? false);
+    snapStateRef.current = next;
+    snapStateSV.value = next;
+    setSnapStateReact(next);
+    lastPos.value = target;
+    if (next === 'full') onExpand?.(); else if (reason !== 'mount') onCollapse?.();
+    onSnapStateChange?.(next);
+    if (next !== 'full') onCollapsedTopChange?.(H - target);
+    // withHaptic fires a haptic exactly when the sheet's OWN animation lands on FULL_POS — via withTiming's
+    // completion callback, a UI-thread worklet reanimated invokes the instant the value actually arrives. Only the
+    // swipe-up gesture passes withHaptic=true; tap-triggered expands don't, matching this sheet's existing haptic
+    // policy of ticking for drags, not taps.
+    slideAnim.value = withTiming(target, SNAP_CONFIG, withHaptic && next === 'full' ? (finished) => {
       'worklet';
       if (finished) runOnJS(triggerHaptic)(Haptics.ImpactFeedbackStyle.Medium);
     } : undefined);
   };
+  const snapToFullRef = useRef((withHaptic?: boolean) => {});
+  snapToFullRef.current = (withHaptic = false) => transitionToRef.current('full', 'user', withHaptic);
   const snapToCollapsedRef = useRef(() => {});
-  snapToCollapsedRef.current = () => {
-    snapStateRef.current = 'collapsed';
-    snapStateSV.value = 'collapsed';
-    setSnapStateReact('collapsed');
-    lastPos.value = COLLAPSED_Y;
-    onCollapse?.();
-    onSnapStateChange?.('collapsed');
-    onCollapsedTopChange?.(H - COLLAPSED_Y);
-    slideAnim.value = withTiming(COLLAPSED_Y, SNAP_CONFIG);
-  };
+  snapToCollapsedRef.current = () => transitionToRef.current('collapsed', 'user');
   const snapToPeekRef = useRef(() => {});
-  snapToPeekRef.current = () => {
-    snapStateRef.current = 'peek';
-    snapStateSV.value = 'peek';
-    setSnapStateReact('peek');
-    lastPos.value = PEEK_Y;
-    onCollapse?.();
-    onSnapStateChange?.('peek');
-    onCollapsedTopChange?.(H - PEEK_Y);
-    slideAnim.value = withTiming(PEEK_Y, SNAP_CONFIG);
-  };
+  snapToPeekRef.current = () => transitionToRef.current('peek', 'user');
   // JS-callable wrappers for the gesture worklet below (runOnJS needs a plain function
   // reference, not `() => xRef.current()` inlined every call) — matches DestinationSheet.
   const callSnapToFull      = useCallback(() => snapToFullRef.current(), []);
@@ -552,6 +535,8 @@ export default function SpotSheet({
   useEffect(() => {
     if (exitSignal === undefined || exitSignal === lastExitSignalRef.current) return;
     lastExitSignalRef.current = exitSignal;
+    closingRef.current = true;
+    if (__DEV__) console.log('[sheet] Spot', activeSpot.id, snapStateRef.current, '-> closed', 'reason=exit');
     slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) });
   }, [exitSignal]);
 
@@ -561,7 +546,7 @@ export default function SpotSheet({
   useEffect(() => {
     if (peekSignal === undefined || peekSignal === lastPeekSignalRef.current) return;
     lastPeekSignalRef.current = peekSignal;
-    if (snapStateRef.current === 'collapsed' || snapStateRef.current === 'full') snapToPeekRef.current();
+    if (snapStateRef.current === 'collapsed' || snapStateRef.current === 'full') transitionToRef.current('peek', 'mapGesture');
   }, [peekSignal]);
 
   // Imperatively collapse from the parent — used by the shared back pill's down-arrow while
@@ -575,16 +560,14 @@ export default function SpotSheet({
   useEffect(() => {
     if (collapseSignal === undefined || collapseSignal === lastCollapseSignalRef.current) return;
     lastCollapseSignalRef.current = collapseSignal;
-    if (snapStateRef.current === 'full' || snapStateRef.current === 'peek') snapToCollapsedRef.current();
+    if (snapStateRef.current === 'full' || snapStateRef.current === 'peek') transitionToRef.current('collapsed', 'backPill');
   }, [collapseSignal]);
 
   // Slide in from off-screen on first mount.
   useEffect(() => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-    lastPos.value = COLLAPSED_Y;
-    slideAnim.value = withTiming(COLLAPSED_Y, SNAP_CONFIG);
-    onCollapsedTopChange?.(H - COLLAPSED_Y);
-    onSnapStateChange?.('collapsed');
+    // Collapsed, or already peeked if the map is being interacted with.
+    transitionToRef.current(isMapInteracting?.() ? 'peek' : 'collapsed', 'mount');
   }, []);
 
   // When a NEW spot is tapped on the map (focusSpotId changes), jump the carousel to it and
@@ -609,7 +592,7 @@ export default function SpotSheet({
     const isFirstFocus = !hasHandledFocusRef.current;
     hasHandledFocusRef.current = true;
     requestAnimationFrame(() => carouselRef.current?.scrollTo({ x: (initialIndex + loopOffset) * CARD_SNAP, animated: false }));
-    if (!isFirstFocus) snapToCollapsedRef.current();
+    if (!isFirstFocus) transitionToRef.current(isMapInteracting?.() ? 'peek' : 'collapsed', 'selectionChange');
   }, [focusSpotId]);
 
   const hapticFiredSV = useSharedValue(false);
@@ -801,7 +784,7 @@ export default function SpotSheet({
         >
           {/* ── HERO (active spot, shown when expanded) ─────────────────── */}
           <View style={[st.hero, { backgroundColor: '#111827', height: HERO_H - insets.bottom }]}>
-            {photoUrl && <FadeInImage instant={photoWasCachedRef.current} source={{ uri: photoUrl }} style={StyleSheet.absoluteFill} resizeMode="cover" />}
+            <EntityPhoto cacheKey={activePhotoKey} cache={photoCache} load={loadActivePhoto} />
             <View pointerEvents="none" style={st.heroScrim} />
             <View pointerEvents="none" style={st.gradWrap}>
               <Svg style={StyleSheet.absoluteFill}>
@@ -1019,9 +1002,7 @@ export default function SpotSheet({
           style={[st.peekStrip, peekOpacityStyle]}
         >
           <Pressable style={StyleSheet.absoluteFill} onPress={() => snapToCollapsedRef.current()}>
-            {photoUrl
-              ? <FadeInImage instant source={{ uri: photoUrl }} style={StyleSheet.absoluteFill} resizeMode="cover" />
-              : <View style={[StyleSheet.absoluteFill, { backgroundColor: '#111827' }]} />}
+            <EntityPhoto instant placeholderColor="#111827" cacheKey={activePhotoKey} cache={photoCache} load={loadActivePhoto} />
             <View pointerEvents="none" style={st.peekScrim} />
             <View pointerEvents="none" style={st.peekPillRow}>
               <View style={st.peekPill} />

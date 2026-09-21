@@ -36,7 +36,7 @@ import type { Destination, PhotoEntry, Visit, GoodToKnowTip } from '../../types'
 import { SPOTS, type Spot } from '../../data/spots';
 import { photoCache, getOrFetchWikiThumbnail } from '../../utils/photoCache';
 import CircleFlag from '../CircleFlag';
-import FadeInImage from './FadeInImage';
+import EntityPhoto from './EntityPhoto';
 import ClimateDetailModal from './ClimateDetailModal';
 import { MONTHS_SHORT, crowdColor } from '../../utils/travelData';
 import { useDestinationClimate } from '../../utils/climateApi';
@@ -805,12 +805,11 @@ function SpotsPanel({ spots, onSelectSpot }: {
 
 // ── About panel (shared by visited "About" tab + non-visited view) ────────────
 function AboutPanel({
-  destination, spots, photoUrl, onSelectSpot, onOpenClimateDetail,
+  destination, spots, onSelectSpot, onOpenClimateDetail,
   onSeeAllSpots, hlScrollRef,
 }: {
   destination: Destination;
   spots: typeof SPOTS;
-  photoUrl?: string | null;
   onSelectSpot?: (spot: Spot) => void;
   onOpenClimateDetail?: () => void;
   onSeeAllSpots?: () => void;
@@ -930,6 +929,9 @@ interface Props {
   // with a finger resting on this sheet's strip used to be read as a swipe of the sheet itself —
   // the finger travels upward during a pinch-in — so lifting it snapped the sheet to half-screen.
   mapGestureAtSV?: SharedValue<number>;
+  // True while the user is interacting with the map (fingers down and the map moving). A selection change or a new
+  // sheet during that interaction stays peeked instead of popping up to half-screen. Read on the JS thread only.
+  isMapInteracting?: () => boolean;
   // Increments when the parent is about to close this sheet (the back pill's X): slide it off
   // the bottom of the screen first, so it leaves rather than vanishing. Parent then unmounts it.
   exitSignal?: number;
@@ -938,7 +940,7 @@ interface Props {
 export default function DestinationSheet({
   destination, onClose, onExpand, onCollapse, onSelectSpot, onCollapsedTopChange,
   onSnapStateChange, pillOffsetSV, pillOffsetLockedSV, initialTab, initialSnap,
-  collapseSignal, peekSignal, exitSignal, mapGestureAtSV,
+  collapseSignal, peekSignal, exitSignal, mapGestureAtSV, isMapInteracting,
 }: Props) {
   const insets            = useSafeAreaInsets();
   const savedDestinations = useStore(s => s.savedDestinations);
@@ -951,16 +953,6 @@ export default function DestinationSheet({
   const spots      = SPOTS.filter(s => s.destinationId === destination.id);
   const isVisited  = saved?.type === 'visited';
 
-  const [photoUrl,      setPhotoUrl    ] = useState<string | null>(photoCache.get(destination.id) ?? null);
-  // True when the CURRENTLY-shown hero photo was already sitting in photoCache before it was
-  // ever displayed (a repeat visit, or a pin-tap prefetch that won the race) — initialized
-  // synchronously (matching the useState initializer above) so it's already correct for
-  // FadeInImage's very first render, then kept correct by the effect below on every
-  // subsequent destination change too, since this sheet doesn't remount between destination
-  // selections (no `key` prop in MapScreen). Drives FadeInImage's `instant` prop: a genuine
-  // cache hit should appear immediately, not replay a fade the user never actually waited
-  // through.
-  const photoWasCachedRef = useRef(photoCache.has(destination.id));
   // Drives the standalone per-visit edit sheet for BOTH creating a new visit module
   // ('new') and editing one specific existing module (the Visit object) — never touches
   // any other module's entry in the array either way.
@@ -1234,22 +1226,9 @@ export default function DestinationSheet({
     </>
   );
 
-  // Wikipedia photo — bounded width instead of the (often huge) original, so the hero loads fast.
-  // getOrFetchWikiThumbnail (rather than a bare fetchWikiThumbnail) shares whatever request
-  // handleMarkerPress already kicked off via prefetchWikiThumbnail at pin-tap time, instead of
-  // starting a second, duplicate one now that the sheet has mounted.
-  useEffect(() => {
-    if (photoCache.has(destination.id)) {
-      photoWasCachedRef.current = true;
-      setPhotoUrl(photoCache.get(destination.id)!);
-      return;
-    }
-    photoWasCachedRef.current = false;
-    setPhotoUrl(null);
-    getOrFetchWikiThumbnail(destination.id, photoCache, destination.name, 900).then(url => {
-      if (url) setPhotoUrl(url);
-    });
-  }, [destination.id]);
+  // The hero and peek photos are <EntityPhoto> elements (see EntityPhoto.tsx): they derive their URL from this
+  // destination's own cache key, so it can't be another destination's, and their loading state never re-renders
+  // this sheet.
 
   // ── Unified sheet: two snap points ───────────────────────────────────────────
   // COLLAPSED_Y = compact card visible at bottom; FULL_POS = full screen
@@ -1383,79 +1362,61 @@ export default function DestinationSheet({
     };
   });
 
-  // Slide in from off-screen on mount — collapsed (bottom-screen carousel) by default
-  // whenever a destination is selected, unless initialSnap requests otherwise (e.g. the spot
-  // carousel's "list view" button wants 'full').
+  // ── Sheet position: one authority ─────────────────────────────────────────────────────────────────────
+  // snapStateRef / snapStateSV hold which snap this sheet is MEANT to be in and slideAnim is animated toward it.
+  // Every change of position except the user's own finger drag goes through transitionTo, so there is no second,
+  // contradictory writer: a map gesture, a selection change, the back pill and a swipe each just name a target
+  // snap, and this function alone turns that into an animation (assigning a new withTiming replaces whatever was
+  // running). Nothing routes through the off-screen position except closing. That is what the selection-change
+  // effect used to do — it snapped the sheet to CLOSE_POS and slid it back up to half-screen on every switch,
+  // which fought the map gesture's peek and showed up as the sheet jumping to half-screen or vanishing.
   const didMountRef = useRef(false);
+  const closingRef = useRef(false);
+  const transitionToRef = useRef<(next: SnapState, reason: string) => void>(() => {});
+  transitionToRef.current = (next, reason) => {
+    // Once the parent has told this sheet to leave, only a NEW selection may bring it back — otherwise a late
+    // peek/collapse would cancel the slide-out and leave a sheet that's about to unmount hanging on screen.
+    if (closingRef.current && reason !== 'selectionChange') return;
+    closingRef.current = false;
+    const prev = snapStateRef.current;
+    const target = next === 'full' ? FULL_POS : next === 'peek' ? PEEK_Y : collapsedYRef.current;
+    if (__DEV__) console.log('[sheet] Destination', destination.id, prev, '->', next, `reason=${reason}`, 'mapInteracting=', isMapInteracting?.() ?? false);
+    snapStateRef.current = next;
+    snapStateSV.value = next;
+    lastPos.value = target;
+    if (next === 'full') onExpand?.(); else if (reason !== 'mount') onCollapse?.();
+    reportSnapState(next);
+    if (next !== 'full') onCollapsedTopChange?.(H - target);
+    slideAnim.value = withTiming(target, SNAP_CONFIG);
+  };
+
+  // Slide in on mount — collapsed (bottom-screen carousel) by default whenever a destination is selected, unless
+  // initialSnap requests otherwise (e.g. the spot carousel's "list view" button wants 'full'), or the map is being
+  // interacted with, in which case it comes in already out of the way.
   useEffect(() => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-    if (resolvedInitialSnap === 'full') {
-      snapStateRef.current = 'full';
-      snapStateSV.value = 'full';
-      lastPos.value = FULL_POS;
-      slideAnim.value = withTiming(FULL_POS, SNAP_CONFIG);
-      onExpand?.();
-      reportSnapState('full');
-    } else {
-      slideAnim.value = withTiming(collapsedYRef.current, SNAP_CONFIG);
-      reportSnapState('collapsed');
-    }
-    onCollapsedTopChange?.(H - collapsedYRef.current);
+    transitionToRef.current(resolvedInitialSnap === 'full' ? 'full' : isMapInteracting?.() ? 'peek' : 'collapsed', 'mount');
   }, []);
 
-  // Reset to collapsed + default tab on destination switches — but not on the very first
-  // mount (already applied initialSnap/initialTab above).
+  // A different destination was selected while this sheet is up (it isn't remounted). Go straight to the snap it
+  // should be in now — half-screen for an ordinary tap, but peeked if the user is mid map gesture, so the
+  // selection change can't fight the gesture that's already holding the sheet out of the way. Not the first mount
+  // (handled above, which also applies initialSnap/initialTab).
   useEffect(() => {
     if (!didMountRef.current) { didMountRef.current = true; return; }
-    snapStateRef.current = 'collapsed';
-    snapStateSV.value = 'collapsed';
-    slideAnim.value = CLOSE_POS;
-    lastPos.value = collapsedYRef.current;
-    slideAnim.value = withTiming(collapsedYRef.current, SNAP_CONFIG);
-    // Same reasoning as snapToCollapsedRef below: if the PREVIOUS destination was being
-    // viewed full-screen, mapState is still 'sheet' from that — revert it so the back-pill's
-    // `mapState !== 'sheet'` visibility check passes for this new destination's collapsed view.
-    onCollapse?.();
-    reportSnapState('collapsed');
-    onCollapsedTopChange?.(H - collapsedYRef.current);
+    transitionToRef.current(isMapInteracting?.() ? 'peek' : 'collapsed', 'selectionChange');
     activeTabRef.current = defaultTab;
     setActiveTab(defaultTab);
     tabSlideAnim.value = 0;
   }, [destination.id]);
 
-  // Use refs so panResponder (created once) always calls the latest version
+  // Use refs so the gesture worklets (created once) always call the latest version
   const snapToFullRef = useRef(() => {});
-  snapToFullRef.current = () => {
-    snapStateRef.current = 'full';
-    snapStateSV.value = 'full';
-    lastPos.value = FULL_POS;
-    onExpand?.();
-    reportSnapState('full');
-    slideAnim.value = withTiming(FULL_POS, SNAP_CONFIG);
-  };
-
+  snapToFullRef.current = () => transitionToRef.current('full', 'user');
   const snapToCollapsedRef = useRef(() => {});
-  snapToCollapsedRef.current = () => {
-    const cy = collapsedYRef.current;
-    snapStateRef.current = 'collapsed';
-    snapStateSV.value = 'collapsed';
-    lastPos.value = cy;
-    onCollapse?.();
-    reportSnapState('collapsed');
-    onCollapsedTopChange?.(H - cy);
-    slideAnim.value = withTiming(cy, SNAP_CONFIG);
-  };
-
+  snapToCollapsedRef.current = () => transitionToRef.current('collapsed', 'user');
   const snapToPeekRef = useRef(() => {});
-  snapToPeekRef.current = () => {
-    snapStateRef.current = 'peek';
-    snapStateSV.value = 'peek';
-    lastPos.value = PEEK_Y;
-    onCollapse?.();
-    reportSnapState('peek');
-    onCollapsedTopChange?.(H - PEEK_Y);
-    slideAnim.value = withTiming(PEEK_Y, SNAP_CONFIG);
-  };
+  snapToPeekRef.current = () => transitionToRef.current('peek', 'user');
 
   // Imperatively collapse from the parent — used by the back pill's down-arrow while this
   // sheet is full-screen. No-ops on mount (only reacts to actual increments).
@@ -1463,7 +1424,7 @@ export default function DestinationSheet({
   useEffect(() => {
     if (collapseSignal === undefined || collapseSignal === lastCollapseSignalRef.current) return;
     lastCollapseSignalRef.current = collapseSignal;
-    if (snapStateRef.current === 'full') snapToCollapsedRef.current();
+    if (snapStateRef.current === 'full') transitionToRef.current('collapsed', 'backPill');
   }, [collapseSignal]);
 
   // Slide off the bottom, quickly, when the parent signals it's closing this sheet.
@@ -1471,6 +1432,8 @@ export default function DestinationSheet({
   useEffect(() => {
     if (exitSignal === undefined || exitSignal === lastExitSignalRef.current) return;
     lastExitSignalRef.current = exitSignal;
+    closingRef.current = true;
+    if (__DEV__) console.log('[sheet] Destination', destination.id, snapStateRef.current, '-> closed', 'reason=exit');
     slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) });
   }, [exitSignal]);
 
@@ -1480,7 +1443,7 @@ export default function DestinationSheet({
   useEffect(() => {
     if (peekSignal === undefined || peekSignal === lastPeekSignalRef.current) return;
     lastPeekSignalRef.current = peekSignal;
-    if (snapStateRef.current === 'collapsed' || snapStateRef.current === 'full') snapToPeekRef.current();
+    if (snapStateRef.current === 'collapsed' || snapStateRef.current === 'full') transitionToRef.current('peek', 'mapGesture');
   }, [peekSignal]);
 
   // TEMPORARY diagnostic (see MapScreen's [sheet-trace]): log when this sheet unmounts/dismisses.
@@ -1724,7 +1687,11 @@ export default function DestinationSheet({
               first) expands to full-screen while collapsed; a no-op once already full. */}
           <Pressable onPress={() => { if (snapStateRef.current !== 'full') snapToFullRef.current(); }}>
           <Reanimated.View style={[st.hero, { backgroundColor: '#111827' }, heroAnimStyle]}>
-            {photoUrl && <FadeInImage instant={photoWasCachedRef.current} source={{ uri: photoUrl }} style={StyleSheet.absoluteFill} resizeMode="cover" />}
+            <EntityPhoto
+              cacheKey={destination.id}
+              cache={photoCache}
+              load={() => getOrFetchWikiThumbnail(destination.id, photoCache, destination.name, 900)}
+            />
 
             {/* Ambient scrim so text is always legible */}
             <View pointerEvents="none" style={st.heroScrim} />
@@ -1935,7 +1902,6 @@ export default function DestinationSheet({
                   >
                     <AboutPanel
                       destination={destination} spots={spots}
-                      photoUrl={photoUrl}
                       onSelectSpot={onSelectSpot}
                       onOpenClimateDetail={() => setShowClimateDetail(true)}
                       onSeeAllSpots={() => switchTabRef.current('spots')}
@@ -1984,7 +1950,12 @@ export default function DestinationSheet({
           }, peekAnimStyle]}
         >
           <Pressable style={StyleSheet.absoluteFill} onPress={() => snapToCollapsedRef.current()}>
-            {photoUrl && <FadeInImage instant source={{ uri: photoUrl }} style={StyleSheet.absoluteFill} resizeMode="cover" />}
+            <EntityPhoto
+              instant
+              cacheKey={destination.id}
+              cache={photoCache}
+              load={() => getOrFetchWikiThumbnail(destination.id, photoCache, destination.name, 900)}
+            />
             <View pointerEvents="none" style={st.peekScrim} />
             <View pointerEvents="none" style={st.peekPillRow}>
               <View style={st.peekPill} />
