@@ -490,8 +490,8 @@ function SpotSheet({
   // transitionTo. Focusing another spot used to call snapToCollapsed unconditionally, which pulled the sheet up
   // to half-screen in the middle of a map gesture that was holding it peeked.
   const closingRef = useRef(false);
-  const transitionToRef = useRef<(next: 'peek' | 'collapsed' | 'full', reason: string, withHaptic?: boolean) => void>(() => {});
-  transitionToRef.current = (next, reason, withHaptic = false) => {
+  const transitionToRef = useRef<(next: 'peek' | 'collapsed' | 'full', reason: string) => void>(() => {});
+  transitionToRef.current = (next, reason) => {
     // Once the parent has told this sheet to leave, only a NEW selection may bring it back.
     if (closingRef.current && reason !== 'selectionChange') return;
     closingRef.current = false;
@@ -505,18 +505,11 @@ function SpotSheet({
     if (next === 'full') onExpand?.(); else if (reason !== 'mount') onCollapse?.();
     onSnapStateChange?.(next);
     if (next !== 'full') onCollapsedTopChange?.(H - target);
-    // withHaptic fires a haptic exactly when the sheet's OWN animation lands on FULL_POS — via withTiming's
-    // completion callback, a UI-thread worklet reanimated invokes the instant the value actually arrives. Only the
-    // swipe-up gesture passes withHaptic=true; tap-triggered expands don't, matching this sheet's existing haptic
-    // policy of ticking for drags, not taps.
     sheetPose.set(next === 'full' ? null : target);
-    slideAnim.value = withTiming(target, SNAP_CONFIG, withHaptic && next === 'full' ? (finished) => {
-      'worklet';
-      if (finished) runOnJS(triggerHaptic)(Haptics.ImpactFeedbackStyle.Medium);
-    } : undefined);
+    slideAnim.value = withTiming(target, SNAP_CONFIG);
   };
-  const snapToFullRef = useRef((withHaptic?: boolean) => {});
-  snapToFullRef.current = (withHaptic = false) => transitionToRef.current('full', 'user', withHaptic);
+  const snapToFullRef = useRef(() => {});
+  snapToFullRef.current = () => transitionToRef.current('full', 'user');
   const snapToCollapsedRef = useRef(() => {});
   snapToCollapsedRef.current = () => transitionToRef.current('collapsed', 'user');
   const snapToPeekRef = useRef(() => {});
@@ -524,7 +517,6 @@ function SpotSheet({
   // JS-callable wrappers for the gesture worklet below (runOnJS needs a plain function
   // reference, not `() => xRef.current()` inlined every call) — matches DestinationSheet.
   const callSnapToFull      = useCallback(() => snapToFullRef.current(), []);
-  const callSnapToFullWithHaptic = useCallback(() => snapToFullRef.current(true), []);
   const callSnapToCollapsed = useCallback(() => snapToCollapsedRef.current(), []);
   const callSnapToPeek      = useCallback(() => snapToPeekRef.current(), []);
   const callSnapBack = useCallback(() => {
@@ -532,9 +524,6 @@ function SpotSheet({
     if (st === 'peek') snapToPeekRef.current();
     else if (st === 'full') snapToFullRef.current();
     else snapToCollapsedRef.current();
-  }, []);
-  const triggerHaptic = useCallback((style: Haptics.ImpactFeedbackStyle) => {
-    Haptics.impactAsync(style);
   }, []);
 
   // Slide off the bottom, quickly, when the parent signals it's closing this sheet.
@@ -580,7 +569,6 @@ function SpotSheet({
       });
       return;
     }
-    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     // Collapsed, or already peeked if the map is being interacted with.
     transitionToRef.current(isMapInteracting?.() ? 'peek' : 'collapsed', 'mount');
   }, []);
@@ -610,7 +598,6 @@ function SpotSheet({
     if (!isFirstFocus) transitionToRef.current(isMapInteracting?.() ? 'peek' : 'collapsed', 'selectionChange');
   }, [focusSpotId]);
 
-  const hapticFiredSV = useSharedValue(false);
   // True once a given gesture has actually been allowed to move the sheet (see the
   // full-screen gate in onUpdate below) — lets onEnd tell "a drag that genuinely engaged"
   // apart from "a touch that ended without ever being allowed to do anything".
@@ -640,7 +627,6 @@ function SpotSheet({
     .activeOffsetY([-10, 10])
     .failOffsetX([-10, 10])
     .onStart(() => {
-      hapticFiredSV.value = false;
       dragEngagedSV.value = false;
       lastPos.value = slideAnim.value;
     })
@@ -655,13 +641,6 @@ function SpotSheet({
       // already scrolled to the top.
       if (snapStateSV.value === 'full' && !(scrollYSV.value <= 1 && e.translationY > 6)) return;
       dragEngagedSV.value = true;
-      // No haptic for collapsed/peek drags — only full-screen ones still get the
-      // "drag started" tick.
-      if (Math.abs(e.translationY) > 8 && !hapticFiredSV.value
-          && snapStateSV.value !== 'collapsed' && snapStateSV.value !== 'peek') {
-        hapticFiredSV.value = true;
-        runOnJS(triggerHaptic)(Haptics.ImpactFeedbackStyle.Light);
-      }
       const raw = lastPos.value + e.translationY;
       if (snapStateSV.value === 'collapsed' || snapStateSV.value === 'peek') {
         // Peek is the lowest point now — swiping down from either collapsed or peek can no
@@ -679,21 +658,24 @@ function SpotSheet({
       if (mapGestureAtSV && Date.now() - mapGestureAtSV.value < 400) { runOnJS(callSnapBack)(); return; }
       const pos = lastPos.value + e.translationY;
       if (snapStateSV.value === 'peek') {
-        // Swiping up from peek goes back to collapsed; swiping down (or anything smaller)
-        // just settles back at peek — it's the lowest point, no more dismissing from here.
+        // Same as the Explore sheet: a drag carried past the half-screen position commits straight to full-screen
+        // (a direct bottom -> top connection); a smaller swipe up stops at half-screen; anything less settles back.
+        if (pos <= COLLAPSED_Y) { runOnJS(callSnapToFull)(); return; }
         if (e.velocityY < -500 || pos < PEEK_Y - 60) runOnJS(callSnapToCollapsed)();
         else runOnJS(callSnapToPeek)();
       } else if (snapStateSV.value === 'collapsed') {
         // Swiping up from collapsed goes to full-screen; swiping down now drops to peek
         // instead of dismissing; anything smaller settles back at collapsed.
-        if (e.velocityY < -500 || pos < COLLAPSED_Y - 60) runOnJS(callSnapToFullWithHaptic)();
+        if (e.velocityY < -500 || pos < COLLAPSED_Y - 60) runOnJS(callSnapToFull)();
         else if (e.velocityY > 500 || pos > COLLAPSED_Y + 40) runOnJS(callSnapToPeek)();
         else runOnJS(callSnapToCollapsed)();
       } else {
         // Full-screen: a gesture that never actually engaged (e.g. it never got past the
         // "scrolled to top" gate) shouldn't change the sheet's snap state at all.
         if (!dragEngagedSV.value) return;
-        if (e.velocityY > 800 || pos > H * 0.25) runOnJS(callSnapToCollapsed)();
+        // Carried past the half-screen position: straight down to the bottom view, like the Explore sheet.
+        if (pos >= COLLAPSED_Y) runOnJS(callSnapToPeek)();
+        else if (e.velocityY > 800 || pos > H * 0.25) runOnJS(callSnapToCollapsed)();
         else runOnJS(callSnapToFull)();
       }
     });

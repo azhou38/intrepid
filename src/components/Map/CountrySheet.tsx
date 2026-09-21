@@ -501,7 +501,6 @@ function CountrySheet({
       });
       return;
     }
-    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     transitionToRef.current(
       resolvedInitialSnap === 'peek' ? 'peek'
         : resolvedInitialSnap === 'full' ? 'full'
@@ -586,28 +585,6 @@ function CountrySheet({
     });
   };
 
-  const triggerHaptic = useCallback(() => {
-    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-  }, []);
-
-  // Fires the "hit the top" haptic the instant slideAnim actually reaches FULL_POS, rather
-  // than waiting on withTiming's completion callback — that callback only fires once the
-  // full animation duration has elapsed, which lags slightly behind the moment the value
-  // itself lands on target (the perceptible "small delay" this replaces). Watching the
-  // value directly also means this fires immediately if the user's own drag pushes the
-  // sheet all the way to the clamp (genuinely hitting the top edge), not only after a
-  // separate settle animation gets there. Guarded on the previous value so it only fires
-  // once per arrival, not on every frame the sheet happens to sit at FULL_POS. Placed after
-  // triggerHaptic's own declaration — worklets capture their closure by value at creation
-  // time, so referencing triggerHaptic here before it's assigned would bake in `undefined`.
-  useAnimatedReaction(
-    () => slideAnim.value,
-    (value, prevValue) => {
-      if (value <= FULL_POS && (prevValue === null || prevValue > FULL_POS)) {
-        runOnJS(triggerHaptic)();
-      }
-    },
-  );
 
   const callSnapToFull      = useCallback(() => snapToFullRef.current(), []);
   const callSnapToCollapsed = useCallback(() => snapToCollapsedRef.current(), []);
@@ -672,8 +649,9 @@ function CountrySheet({
       const cy  = collapsedYAnim.value;
 
       if (snapStateSV.value === 'peek') {
-        // Swiping up from peek goes back to collapsed; swiping down (or anything smaller)
-        // just settles back at peek — it's the lowest point, no more dismissing from here.
+        // Same as the Explore sheet: a drag carried past the half-screen position commits straight to full-screen
+        // (a direct bottom -> top connection); a smaller swipe up stops at half-screen; anything less settles back.
+        if (pos <= cy) { runOnJS(callSnapToFull)(); return; }
         if (e.velocityY < -500 || pos < PEEK_Y - 60) runOnJS(callSnapToCollapsed)();
         else runOnJS(callSnapToPeek)();
         return;
@@ -691,11 +669,9 @@ function CountrySheet({
       // Full-screen: a gesture that never actually engaged (e.g. an upward scroll)
       // shouldn't change the sheet's snap state at all — leave it exactly at full.
       if (!dragEngagedSV.value) return;
-      // Haptic fires right here, at the moment of release, not during the drag itself —
-      // "the user swipes down from full-screen view" is this release, regardless of
-      // whether it ends up landing at collapsed or snapping back.
-      runOnJS(triggerHaptic)();
-      if (e.velocityY > 500 || pos > H * 0.25) runOnJS(callSnapToCollapsed)();
+      // Carried past the half-screen position: straight down to the bottom view, like the Explore sheet.
+      if (pos >= cy) runOnJS(callSnapToPeek)();
+      else if (e.velocityY > 500 || pos > H * 0.25) runOnJS(callSnapToCollapsed)();
       else runOnJS(callSnapToFull)();
     })
     // Without this, the inner ScrollView's own native pan claims the touch outright while
