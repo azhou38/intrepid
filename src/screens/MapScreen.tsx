@@ -2,6 +2,7 @@ import React, { useRef, useState, useMemo, useCallback, useEffect } from 'react'
 import { View, StyleSheet, Pressable, Text, Dimensions, Animated, Platform, TextInput, Image, Easing as RNEasing, Keyboard, ScrollView } from 'react-native';
 import Reanimated, { useSharedValue, useAnimatedStyle, useAnimatedReaction, runOnJS, withTiming, Easing } from 'react-native-reanimated';
 import Svg, { Rect, Path, Circle } from 'react-native-svg';
+import { sheetPose } from '../components/Map/sheetPose';
 import MapboxGL from '@rnmapbox/maps';
 
 // Public (pk.) token — Mapbox's own public tokens are designed to ship in client bundles
@@ -2390,10 +2391,9 @@ const destItems = useMemo((): DestItem[] =>
     // Exit destination mode then show country card
     // handleCountryPress clears selectedDest, mapState, and zoomedIntoDestination directly.
     // 'flyTo' — same big-pan/deep-zoom-out case as handleCloseDestinationSheetToCountry.
-    // openPeeked — this is the breadcrumb's back-return, so the country sheet comes up in
-    // bottom-screen and the map is framed for the whole visible screen rather than its top
-    // half. (The breadcrumb is only even visible in that state; see crumbGateStyle.)
-    handleCountryPress(cluster, 'flyTo', true);
+    // Not openPeeked: choosing the country in the breadcrumb brings its sheet up to half-screen (and frames the map
+    // for the top half), like selecting the country any other way — it used to stay at the bottom of the screen.
+    handleCountryPress(cluster, 'flyTo', false);
   }, [selectedDest, handleCountryPress]);
 
   // Provenance back for a laterally-entered destination ('map'/'search' origin, i.e. the back
@@ -3145,9 +3145,49 @@ const destItems = useMemo((): DestItem[] =>
     : mapState !== 'world' && selectedDest && !selectedSpot ? 'dest'
     : selectedCountry && !selectedDest ? 'country'
     : null;
-  const prevSheetKindRef = useRef(sheetKind);
-  const enterFromPrevious = prevSheetKindRef.current !== null && prevSheetKindRef.current !== sheetKind;
-  useEffect(() => { prevSheetKindRef.current = sheetKind; }, [sheetKind]);
+  // ── Sheet swaps ──────────────────────────────────────────────────────────────────────────────────────────
+  // Whenever the sheet on screen is replaced by another (country <-> destination <-> spot in any direction, or one
+  // destination / country / spot's sheet by another of the same kind), the old sheet is kept on screen as a
+  // non-interactive OUTGOING copy that slides off the bottom while the new sheet rises from below. The copy is drawn
+  // from a snapshot of what the old sheet showed, starts where it rested (sheetPose), and removes itself when its
+  // slide finishes. The live sheet is re-keyed per swap so it mounts fresh and pops up.
+  // Not animated — the sheets just swap in place, as before — when the old sheet had no resting pose (full screen, or
+  // already exiting) or the user is mid map gesture (the sheets stay peeked out of the way then).
+  type SheetSnap = { identity: string; kind: 'country' | 'dest' | 'spot'; cluster: CountryCluster | null; dest: Destination | null; spots: Spot[]; focusId: string | null };
+  const sheetIdentity = sheetKind === 'country' ? `country:${selectedCountry?.countryCode}`
+    : sheetKind === 'dest' ? `dest:${selectedDest?.id}`
+    : sheetKind === 'spot' ? `spot:${selectedDest?.id}` : null;
+  const shownSnapRef = useRef<SheetSnap | null>(null);
+  const swapRef = useRef({ identity: sheetIdentity as string | null, animate: false, enterFromPrevious: false, key: 0, seq: 0 });
+  const leavingSheetRef = useRef<(SheetSnap & { seq: number }) | null>(null);
+  const [, setLeavingTick] = useState(0);
+  if (sheetIdentity !== swapRef.current.identity) {
+    const prevSnap = shownSnapRef.current;
+    const animate = !!(prevSnap && sheetIdentity && sheetPose.get() !== null && !isMapInteracting());
+    swapRef.current = {
+      identity: sheetIdentity,
+      animate,
+      enterFromPrevious: !animate && !!prevSnap && !!sheetKind && prevSnap.kind !== sheetKind,
+      key: swapRef.current.key + (animate ? 1 : 0),
+      seq: swapRef.current.seq + 1,
+    };
+    if (animate && prevSnap) leavingSheetRef.current = { ...prevSnap, seq: swapRef.current.seq };
+  }
+  if (sheetKind && sheetIdentity) {
+    shownSnapRef.current = {
+      identity: sheetIdentity, kind: sheetKind, cluster: selectedCountry, dest: selectedDest,
+      spots: sheetKind === 'spot' ? spotsInDest : [], focusId: spotFocusId,
+    };
+  } else if (!sheetKind) {
+    shownSnapRef.current = null;
+  }
+  const newSheetEnterFromPrevious = swapRef.current.enterFromPrevious;
+  const sheetSwapKey = swapRef.current.key;
+  const handleLeavingSheetExited = useCallback(() => {
+    leavingSheetRef.current = null;
+    setLeavingTick(t => t + 1);
+  }, []);
+  const noop = useCallback(() => {}, []);
 
 
   return (
@@ -3661,6 +3701,7 @@ const destItems = useMemo((): DestItem[] =>
 {/* ── Country sheet ─────────────────────────────────────────────────── */}
       {selectedCountry && !selectedDest && (
         <CountrySheet
+          key={`country-${sheetSwapKey}`}
           cluster={selectedCountry}
           onClose={handleCloseCountry}
           onSelectDestination={handleMarkerPress}
@@ -3673,7 +3714,7 @@ const destItems = useMemo((): DestItem[] =>
           exitSignal={sheetExitSignal}
           isMapInteracting={isMapInteracting}
           isPressBlocked={pressBlocked}
-          enterFromPrevious={enterFromPrevious}
+          enterFromPrevious={newSheetEnterFromPrevious}
           mapGestureAtSV={mapGestureAtSV}
           initialTab={countryInitialTab}
           initialSnap={countryInitialSnap}
@@ -3692,6 +3733,7 @@ const destItems = useMemo((): DestItem[] =>
       {/* ── Unified destination sheet — hidden while a spot sheet is open on top */}
       {mapState !== 'world' && selectedDest && !selectedSpot && (
         <DestinationSheet
+          key={`dest-${sheetSwapKey}`}
           destination={selectedDest}
           onClose={handleCloseDestinationSheet}
           onExpand={handleSheetExpand}
@@ -3705,7 +3747,7 @@ const destItems = useMemo((): DestItem[] =>
           exitSignal={sheetExitSignal}
           isMapInteracting={isMapInteracting}
           isPressBlocked={pressBlocked}
-          enterFromPrevious={enterFromPrevious}
+          enterFromPrevious={newSheetEnterFromPrevious}
           mapGestureAtSV={mapGestureAtSV}
           onSnapStateChange={handleSheetSnapStateChange}
           initialTab={destInitialTab}
@@ -3716,6 +3758,7 @@ const destItems = useMemo((): DestItem[] =>
       {/* ── Spot sheet — swipeable carousel of the destination's spots, expandable to full */}
       {selectedSpot && selectedDest && spotFocusId && (
         <SpotSheet
+          key={`spot-${sheetSwapKey}`}
           spots={spotsInDest}
           focusSpotId={spotFocusId}
           destination={selectedDest}
@@ -3728,13 +3771,53 @@ const destItems = useMemo((): DestItem[] =>
           exitSignal={sheetExitSignal}
           isMapInteracting={isMapInteracting}
           isPressBlocked={pressBlocked}
-          enterFromPrevious={enterFromPrevious}
+          enterFromPrevious={newSheetEnterFromPrevious}
           mapGestureAtSV={mapGestureAtSV}
           onSnapStateChange={handleSheetSnapStateChange}
           onGoToList={handleGoToListView}
           onGoToDestination={handleCloseSpotToDestination}
           collapseSignal={collapseSheetSignal}
         />
+      )}
+
+{/* ── Outgoing copy of the sheet a country <-> destination swap is replacing — drawn ABOVE the incoming sheet so its slide down is visible while the new one rises beneath it ── */}
+      {leavingSheetRef.current && (
+        <View pointerEvents="none" style={StyleSheet.absoluteFill}>
+          {leavingSheetRef.current.kind === 'country' && leavingSheetRef.current.cluster && (
+            <CountrySheet
+              key={`leaving-country-${leavingSheetRef.current.seq}`}
+              cluster={leavingSheetRef.current.cluster}
+              onClose={noop}
+              onSelectDestination={noop}
+              leaving
+              onExited={handleLeavingSheetExited}
+              enterFromPrevious
+            />
+          )}
+          {leavingSheetRef.current.kind === 'spot' && leavingSheetRef.current.dest && leavingSheetRef.current.focusId && (
+            <SpotSheet
+              key={`leaving-spot-${leavingSheetRef.current.seq}`}
+              spots={leavingSheetRef.current.spots}
+              focusSpotId={leavingSheetRef.current.focusId}
+              destination={leavingSheetRef.current.dest}
+              onClose={noop}
+              leaving
+              onExited={handleLeavingSheetExited}
+              enterFromPrevious
+            />
+          )}
+          {leavingSheetRef.current.kind === 'dest' && leavingSheetRef.current.dest && (
+            <DestinationSheet
+              key={`leaving-dest-${leavingSheetRef.current.seq}`}
+              destination={leavingSheetRef.current.dest}
+              onClose={noop}
+              onSelectSpot={noop}
+              leaving
+              onExited={handleLeavingSheetExited}
+              enterFromPrevious
+            />
+          )}
+        </View>
       )}
 
       {/* ── Back pill — visible through collapsed/full for the country, destination, AND

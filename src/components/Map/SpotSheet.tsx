@@ -243,6 +243,9 @@ interface Props {
   // True while the user is interacting with the map (fingers down and the map moving); a spot change or new sheet
   // during that interaction stays peeked. Read on the JS thread only.
   isMapInteracting?: () => boolean;
+  // The OUTGOING copy of a sheet another sheet is replacing — see DestinationSheet.
+  leaving?: boolean;
+  onExited?: () => void;
   enterFromPrevious?: boolean;   // this sheet replaces another one that was showing: start where it rested, not below the screen
   isPressBlocked?: () => boolean;   // a press that is really a finger of a map gesture (see MapScreen.pressBlocked)
   // Increments when the parent is about to close this sheet (the back pill's X): slide it off
@@ -263,7 +266,7 @@ interface Props {
 
 function SpotSheet({
   spots, focusSpotId, destination, onClose, onExpand, onCollapse, onActiveSpotChange, onCollapsedTopChange,
-  pillOffsetSV, onSnapStateChange, peekSignal, exitSignal, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, onGoToList, onGoToDestination, collapseSignal,
+  pillOffsetSV, onSnapStateChange, peekSignal, exitSignal, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, onExited, onGoToList, onGoToDestination, collapseSignal,
 }: Props) {
   const insets       = useSafeAreaInsets();
   const saveSpotVisited = useStore(s => s.saveSpotVisited);
@@ -570,6 +573,13 @@ function SpotSheet({
 
   // Slide in from off-screen on first mount.
   useEffect(() => {
+    if (leaving) {
+      closingRef.current = true;
+      slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, finished => {
+        if (finished && onExited) runOnJS(onExited)();
+      });
+      return;
+    }
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     // Collapsed, or already peeked if the map is being interacted with.
     transitionToRef.current(isMapInteracting?.() ? 'peek' : 'collapsed', 'mount');
