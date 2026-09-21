@@ -1275,6 +1275,25 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   //     mercatorPx projection destPinPlan uses, so this is stable while panning) walks the
   //     priority order and only rejects a candidate if it would genuinely overlap an
   //     already-placed, higher-priority pin (rectangular pill-footprint test).
+  // ── Selection as seen by the pin / pill / stamp PLANNING ────────────────────────────────────────────────────────
+  // Which destinations are eligible, which get photo pins, which pills show and which stamp tier is on all depend on the
+  // selection. Closing a destination clears it at once, but the camera takes ~600ms to zoom out, so all of that used to
+  // re-plan against a still-zoomed-in camera: pins and pills the selection had been propping up faded out, then faded
+  // back in as the camera caught up — a flash. Here the planning keeps seeing the last selection through a close, and
+  // lets go on the first map idle (the zoom-out has settled) or the first map gesture, so it re-plans once at the
+  // settled zoom. Any new selection applies immediately.
+  const heldSelRef = useRef<{ country: CountryCluster | null; dest: Destination | null }>({ country: null, dest: null });
+  const [, setHeldSelTick] = useState(0);
+  if (selectedCountry || selectedDest) heldSelRef.current = { country: selectedCountry, dest: selectedDest };
+  const planCountry = selectedCountry ?? heldSelRef.current.country;
+  const planDest = selectedDest ?? heldSelRef.current.dest;
+  const releaseHeldSelection = useCallback(() => {
+    if (!heldSelRef.current.country && !heldSelRef.current.dest) return;
+    if (selectedCountryRef.current || selectedDestRef.current) return;
+    heldSelRef.current = { country: null, dest: null };
+    setHeldSelTick(t => t + 1);
+  }, []);
+
   const countryPills = useMemo(() => {
     // "visitedCount" is spots, not destinations: for each destination marked visited, every
     // spot it has counts (SPOT_COUNT_BY_DEST) — not just spots individually checked off via
@@ -1302,8 +1321,8 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     // old behaviour of showing no pill.
     const candidates: CountryCluster[] = [];
     for (const g of COUNTRY_GROUPS) {
-      const isSelectedCountry = selectedCountry?.countryCode === g.countryCode;
-      if (!isSelectedCountry && selectedDest?.countryCode === g.countryCode) continue;
+      const isSelectedCountry = planCountry?.countryCode === g.countryCode;
+      if (!isSelectedCountry && planDest?.countryCode === g.countryCode) continue;
       // Zoomed in past this country's own default view → its pill never shows (see
       // getCountryPillCutoffLngDelta). Smaller neighbouring countries keep their pills a
       // while longer (their own default views sit deeper), which preserves useful edge
@@ -1318,8 +1337,8 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     // Rule 2: priority order — real-world fame, then a fixed tiebreak for determinism.
     const byPriority = (a: CountryCluster, b: CountryCluster) => {
       // The selected country always sorts first, so it wins every collision below.
-      const aSel = a.countryCode === selectedCountry?.countryCode;
-      const bSel = b.countryCode === selectedCountry?.countryCode;
+      const aSel = a.countryCode === planCountry?.countryCode;
+      const bSel = b.countryCode === planCountry?.countryCode;
       if (aSel !== bSel) return aSel ? -1 : 1;
       const pop = getCountryPopularity(a.countryCode) - getCountryPopularity(b.countryCode);
       if (pop !== 0) return pop;
@@ -1346,8 +1365,8 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
       ? mercatorPx(selectedSpot.coordinates.longitude, selectedSpot.coordinates.latitude, pxPerDegLng)
       : null;
     // Likewise the selected destination's own pin (it persists at any zoom out to its default view).
-    const destPx = selectedDest
-      ? mercatorPx(selectedDest.coordinates.longitude, selectedDest.coordinates.latitude, pxPerDegLng)
+    const destPx = planDest
+      ? mercatorPx(planDest.coordinates.longitude, planDest.coordinates.latitude, pxPerDegLng)
       : null;
     for (const c of ordered) {
       const p = mercatorPx(c.longitude, c.latitude, pxPerDegLng);
@@ -1366,7 +1385,7 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     // Depends on planLngDelta/pillVisibleLngDelta only (pan-invariant zoom) — NOT
     // latitudeDelta, which drifts on pan and would otherwise recompute this and re-resolve
     // pill collisions mid-pan.
-  }, [savedDestinations, selectedCountry, selectedDest, selectedSpot, planLngDelta, pillVisibleLngDelta]);
+  }, [savedDestinations, planCountry, planDest, selectedSpot, planLngDelta, pillVisibleLngDelta]);
 
   // Render set = the pan-invariant eligible set (see note above; ~45 pins max, Mapbox clips
   // off-screen). Stable while panning, so the pin/stamp lists never churn on pan.
@@ -1404,7 +1423,7 @@ const destItems = useMemo((): DestItem[] =>
 
     // The selected destination always wins a photo, unconditionally (even outside the photo
     // zoom range); its MarkerView is hidden separately while its sheet is open.
-    const isForced = (d: Destination) => selectedDest?.id === d.id;
+    const isForced = (d: Destination) => planDest?.id === d.id;
 
     // Rank-STAGGERED promotion gates (pan-invariant latDelta): the most prominent
     // destinations (rank 1) blossom into photo pins first, at a much wider zoom, and each
@@ -1420,7 +1439,7 @@ const destItems = useMemo((): DestItem[] =>
     // of selecting it is exploring what's inside), and some countries' default views sit
     // wider than any global gate. Capped at the same per-country threshold the stamp fade
     // uses so the bypass ends once the user zooms far out toward continent/world view.
-    const selCountryCode = selectedCountry?.countryCode ?? selectedDest?.countryCode;
+    const selCountryCode = planCountry?.countryCode ?? planDest?.countryCode;
     const inSelectedCountryRange =
       !!selCountryCode && panLatDelta <= getCountryStampThreshold(selCountryCode);
     const canPromote = (d: Destination) => {
@@ -1445,7 +1464,7 @@ const destItems = useMemo((): DestItem[] =>
     // cause of pins swapping stamp↔photo as you panned.
     const rankScore = (d: Destination) =>
       (isForced(d) ? -1_000_000 : 0) +
-      (selectedCountry && d.countryCode === selectedCountry.countryCode ? -1_000 : 0) +
+      (planCountry && d.countryCode === planCountry.countryCode ? -1_000 : 0) +
       d.rank;
     const ordered = [...dests].sort(
       (a, b) => rankScore(a) - rankScore(b) || (a.id < b.id ? -1 : 1),
@@ -1502,7 +1521,7 @@ const destItems = useMemo((): DestItem[] =>
     // Pure function of zoom (planLngDelta) + eligible set + selection + saved state +
     // the (equally pan-invariant) country pill plan.
     // No camera centre → recompute produces an identical plan while panning at fixed zoom.
-  }, [eligibleDests, planLngDelta, pillVisibleLngDelta, selectedCountry, selectedDest, selectedSpot, savedDestinations, countryPills]);
+  }, [eligibleDests, planLngDelta, pillVisibleLngDelta, planCountry, planDest, selectedSpot, savedDestinations, countryPills]);
 
   // Stamps are rendered via CircleLayer (not MarkerView) so Mapbox renders all of them
   // regardless of proximity. Every filter-passing destination gets a stamp — INCLUDING ones
@@ -1537,9 +1556,9 @@ const destItems = useMemo((): DestItem[] =>
     // The SELECTED destination is hidden for as long as its spot pins are showing, wherever the
     // camera is: it now opts out of Mapbox's marker collision (so it can persist zooming out), and
     // that same collision pass used to be what quietly hid it once its spots overlapped it.
-    if (selectedDest && DEST_SPOT_RADIUS[selectedDest.id] !== undefined) ids.add(selectedDest.id);
+    if (planDest && DEST_SPOT_RADIUS[planDest.id] !== undefined) ids.add(planDest.id);
     return ids;
-  }, [region.latitude, region.longitude, region.latitudeDelta, selectedDest]);
+  }, [region.latitude, region.longitude, region.latitudeDelta, planDest]);
   const zoomedIntoDestIds = useStableSet(zoomedIntoDestIdsRaw);
 
   // Destinations the camera has zoomed DEEPER than their own default view (the depth
@@ -1566,10 +1585,10 @@ const destItems = useMemo((): DestItem[] =>
     // per-country threshold (see getCountryStampThreshold) — a geographically wide country
     // (Australia, US...) needs a wider view than the flat world cutoff allows before its
     // own stamps should appear.
-    const countryCode = selectedCountry?.countryCode ?? selectedDest?.countryCode;
+    const countryCode = planCountry?.countryCode ?? planDest?.countryCode;
     const threshold = countryCode ? getCountryStampThreshold(countryCode) : WORLD_VIEW_LATDELTA;
     return Math.max(0, latDeltaToZoom(threshold) - 0.35);
-  }, [selectedCountry, selectedDest]);
+  }, [planCountry, planDest]);
   const STAMP_TIER_STEP = 0.6; // zoom levels between successive tiers' fade-ins
 
   // Highest tier currently switched on — a discrete step function of the camera zoom.
@@ -1581,7 +1600,7 @@ const destItems = useMemo((): DestItem[] =>
   ), [camZoom, stampFadeBaseZoom]);
 
   const stampGeoJSON = useMemo(() => {
-    const selCountryCode = selectedCountry?.countryCode ?? selectedDest?.countryCode;
+    const selCountryCode = planCountry?.countryCode ?? planDest?.countryCode;
 
     const features: GeoJSON.Feature<GeoJSON.Point>[] = [];
     for (const dest of DESTINATIONS) {
@@ -1609,7 +1628,7 @@ const destItems = useMemo((): DestItem[] =>
       });
     }
     return { type: 'FeatureCollection' as const, features };
-  }, [savedDestinations, selectedCountry, selectedDest, activeStampTier, hiddenDestIds]);
+  }, [savedDestinations, planCountry, planDest, activeStampTier, hiddenDestIds]);
 
   // Discrete tier activation + native style TRANSITION (not a continuous zoom
   // interpolation): the opacity expression only ever targets exactly 0 or 1 per dot, and
@@ -2777,6 +2796,7 @@ const destItems = useMemo((): DestItem[] =>
     // Rising-edge check — minimize the layers pill if it's expanded, so it doesn't sit
     // open over the map while the user navigates.
     if (isGestureActive && !wasMapGestureActiveRef.current) {
+      releaseHeldSelection();   // the user took over the camera: don't keep planning around the closed selection
       if (showMapMenuRef.current) { showMapMenuRef.current = false; setShowMapMenu(false); }
       // The user grabbed the map while a destination's initial fly-to was still in flight —
       // mark it so the next onMapIdle (which will reflect wherever THEIR gesture ends, not
@@ -2884,7 +2904,7 @@ const destItems = useMemo((): DestItem[] =>
       longitudeDelta: lngDelta,
     });
     setCamZoom(state.properties.zoom);
-  }, [returnPromptProgress, destReturnPromptProgress, mapGestureAtSV]);
+  }, [returnPromptProgress, destReturnPromptProgress, mapGestureAtSV, releaseHeldSelection]);
 
   const handleMapIdle = useCallback((state: {
     properties: {
@@ -2899,6 +2919,7 @@ const destItems = useMemo((): DestItem[] =>
     // and the *next* pan's true would never register as a fresh rising edge (only the very
     // first pan of the whole session ever would). Reset it here so every pan is detected.
     wasMapGestureActiveRef.current = false;
+    releaseHeldSelection();   // a close's zoom-out has settled: let the pin/pill planning drop the old selection
     const { center, bounds } = state.properties;
     const newRegion: Region = {
       latitude:      center[1],
@@ -2974,7 +2995,7 @@ const destItems = useMemo((): DestItem[] =>
       }
       return;
     }
-  }, [mapState, selectedDest, savedDestinations, showBreadcrumb]);
+  }, [mapState, selectedDest, savedDestinations, showBreadcrumb, releaseHeldSelection]);
 
   // Pre-rendered marker element arrays, memoized on their pan-invariant inputs. Building the
   // MarkerViews here (instead of inline in the JSX) means the SAME element instances — and
