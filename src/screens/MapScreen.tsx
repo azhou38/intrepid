@@ -391,8 +391,8 @@ const pinSt = StyleSheet.create({
 // plan stay mounted for PIN_EXIT_MS fading to 0, then unmount. This is what turns the
 // stamp↔photo promotions and pill collision wins/losses from sudden appearance changes into
 // gradual cross-fades, matching how Apple/Google Maps POI labels resolve density changes.
-const PIN_FADE_IN_MS = 240;
-const PIN_EXIT_MS    = 200;
+const PIN_FADE_IN_MS = 160;
+const PIN_EXIT_MS    = 120;
 
 function FadePin({ exiting, instant, children }: { exiting: boolean; instant?: boolean; children: React.ReactNode }) {
   // `instant`: mounts fully opaque (no fade-in) — for a duplicate that sits exactly over an
@@ -1330,7 +1330,9 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     // Rule 3: greedy collision resolution using the same pan-invariant Mercator projection
     // destPinPlan uses (scaled off the true visible span only), so results don't shift
     // while panning.
-    const pxPerDegLng = Dimensions.get('window').width / planLngDelta;
+    // True on-screen scale (see destPinPlan): pills the plan lets through here must not overlap in reality, or Mapbox
+    // hides one natively, instantly, instead of it fading out.
+    const pxPerDegLng = Dimensions.get('window').width / pillVisibleLngDelta;
     // A pill is a WIDE, SHORT shape (flag circle + name card, ~110×26pt), so collision is a
     // rectangle test on the center deltas, not a circular radius. The old 70px circular
     // radius treated two pills stacked ~60px apart VERTICALLY as colliding even though they
@@ -1394,7 +1396,11 @@ const destItems = useMemo((): DestItem[] =>
   const destPinPlan = useMemo(() => {
     // Pan-invariant Web-Mercator projection scaled off the true visible span only (see
     // mercatorPx + planLngDelta). NO camera centre, NO latitudeDelta — both drift under pan.
-    const pxPerDegLng = SCREEN_W / planLngDelta;
+    // Collisions are tested at the TRUE on-screen scale (pillVisibleLngDelta), not the planning scale. The planning scale
+    // runs ~2x deeper than reality, so two pins the plan thought 60pt apart were really 30pt apart and overlapped; Mapbox
+    // then hid one of them natively — instantly, with no fade. Tested at real distances the plan resolves the overlap
+    // itself (the loser becomes a dot, through the normal cross-fade). The promotion GATES below stay on planLngDelta.
+    const pxPerDegLng = SCREEN_W / pillVisibleLngDelta;
 
     // Plan over the pan-invariant ELIGIBLE set (not the viewport-culled render set), so the
     // greedy collision resolution sees a stable roster while panning.
@@ -2874,7 +2880,7 @@ const destItems = useMemo((): DestItem[] =>
 
     // Throttle the region-state updates to ~20 fps.
     const now = Date.now();
-    if (now - lastCameraTimeRef.current < 50) return;
+    if (now - lastCameraTimeRef.current < 24) return;
     lastCameraTimeRef.current = now;
 
     setRegion({
