@@ -3120,10 +3120,10 @@ const destItems = useMemo((): DestItem[] =>
           allowOverlap={isSelectedDest}
         >
           <FadePin exiting={exiting}>
-            {/* The selected destination's own pin is inert: it persists while zooming out, so a
-                pinch that ends over it would otherwise "re-select" it, resetting its sheet to
-                half-screen and flying the camera back. */}
-            <Pressable disabled={exiting || isSelectedDest} onPress={() => { if (pressBlocked()) return; handleMarkerPress(dest); }}>
+            {/* The selected destination's own pin persists while zooming out. Tapping it only re-frames the camera on the
+                destination's default view (handleResetToDest, same as the breadcrumb) — it does NOT re-select it, so the
+                sheet stays as it is. A pinch that ends over it is filtered out by pressBlocked (a pinch has two fingers). */}
+            <Pressable disabled={exiting} onPress={() => { if (pressBlocked()) return; if (isSelectedDest) handleResetToDest(); else handleMarkerPress(dest); }}>
               <DestPin
                 dest={dest} spotCount={spotCount}
                 isVisited={isVisited}
@@ -3134,7 +3134,7 @@ const destItems = useMemo((): DestItem[] =>
         </MapboxGL.MarkerView>
       );
     }),
-  [renderedPhotoDests, selectedDest, savedDestinations, visitedSpotCountByDest, handleMarkerPress]);
+  [renderedPhotoDests, selectedDest, savedDestinations, visitedSpotCountByDest, handleMarkerPress, handleResetToDest]);
 
   // Which sliding sheet is mounted right now. When it changes from one level to another, the incoming sheet is a
   // replacement for the one that was showing and starts where that one rested (see sheetPose) rather than from below
@@ -3351,7 +3351,7 @@ const destItems = useMemo((): DestItem[] =>
             const id = e.features[0]?.properties?.id as string | undefined;
             if (!id) return;
             const dest = DESTINATIONS.find(d => d.id === id);
-            if (dest && !pressBlocked()) handleMarkerPress(dest);
+            if (dest && !pressBlocked()) { if (selectedDestRef.current?.id === dest.id) handleResetToDest(); else handleMarkerPress(dest); }
           }}
         >
           <MapboxGL.CircleLayer
