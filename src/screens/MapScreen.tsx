@@ -1043,6 +1043,35 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // handleCameraChanged below, the moment the user starts panning/zooming the map.
   const [peekSheetSignal, setPeekSheetSignal] = useState(0);
   const wasMapGestureActiveRef = useRef(false);
+
+  // ── Is the map being interacted with? ─────────────────────────────────────────────────────────────────
+  // Timer-free and deterministic: true while at least one finger is down AND the map has actually moved since that
+  // touch began, or while the map itself reports a gesture (which also covers momentum). The map's own flag alone
+  // isn't enough — it flickers false between the steps of a slow pinch, so a selection landing in one of those gaps
+  // looked like "no gesture" and pulled the sheet up while the user's fingers were still on the map.
+  const fingersDownRef = useRef(0);
+  const maxFingersRef = useRef(0);          // most fingers down at once in the current touch sequence
+  const mapMovedThisTouchRef = useRef(false);
+  const handleRootTouchStart = useCallback((e: { nativeEvent: { touches: unknown[] } }) => {
+    const n = e.nativeEvent.touches.length;
+    if (n <= 1) { maxFingersRef.current = 1; mapMovedThisTouchRef.current = false; }   // a new touch sequence begins
+    else maxFingersRef.current = Math.max(maxFingersRef.current, n);
+    fingersDownRef.current = n;
+  }, []);
+  const handleRootTouchEnd = useCallback((e: { nativeEvent: { touches: unknown[] } }) => {
+    fingersDownRef.current = e.nativeEvent.touches.length;
+  }, []);
+  const isMapInteracting = useCallback(
+    () => wasMapGestureActiveRef.current || (fingersDownRef.current > 0 && mapMovedThisTouchRef.current),
+    [],
+  );
+  // A press on a pin, pill, spot or the back pill that is really part of a pinch — a finger of the pinch lifting over
+  // it, which iOS delivers as a tap — is not a selection. A pinch by definition has a second finger, and a real tap
+  // only ever has one, so that is all this checks. It must NOT also look at whether the map is "interacting": the
+  // map's gesture flag stays true after the last camera event until the map goes idle, so a genuine tap made right
+  // after a zoom was swallowed and the user had to tap twice (seen on device: pressBlocked=true with
+  // mapMovedThisTouch=false, isMapInteracting=true, then the second tap 0.7s later went through).
+  const pressBlocked = useCallback(() => maxFingersRef.current >= 2, []);
   const showMapMenuRef       = useRef(false);
   // Keep ref in sync so MapView's native onPress/onCameraChanged can read current menu
   // state synchronously without needing it in those callbacks' own dependency arrays.
@@ -1724,6 +1753,8 @@ const destItems = useMemo((): DestItem[] =>
   // Detect when selected country/destination has drifted out of the visible viewport
 
 
+
+
   // ── Fetch the single base style once on mount ─────────────────────────────
   useEffect(() => {
     // Capped so a hung request can't leave the map unmounted: after 4s it mounts on the default style.
@@ -2084,7 +2115,7 @@ const destItems = useMemo((): DestItem[] =>
     // that first pan, reading as "jumps back to collapsed instead of going to peek."
     // DestinationSheet always opens 'collapsed' by default (initialSnap only ever requests
     // otherwise from a caller that doesn't run through this path).
-    setSheetSnapState('collapsed');
+    setSheetSnapState(isMapInteracting() ? 'peek' : 'collapsed');
     // destHomeRegion itself is captured LAZILY from the real, settled camera bounds once the
     // fly-to below actually lands (see handleMapIdle) — NOT fabricated synchronously from
     // this target region. A synthetic guess (this same latitudeDelta/longitudeDelta pair)
@@ -2115,6 +2146,7 @@ const destItems = useMemo((): DestItem[] =>
     // doesn't bust the memoized destination-pin marker list.
   }, [selectedCountry, showBreadcrumb, animateCamera, dropCountryIfForeign]);
 
+  const handleSheetExpand = useCallback(() => setMapState('sheet'), []);
   const handleCloseSheet = useCallback(() => {
     setMapState('context');
   }, []);
@@ -2221,8 +2253,8 @@ const destItems = useMemo((): DestItem[] =>
     setZoomedIntoDestination(true);
     showBreadcrumb(true);
     // Synchronous reset — see handleMarkerPress's own comment for why this can't wait on
-    // SpotSheet's mount effect to report back.
-    setSheetSnapState('collapsed');
+    // SpotSheet's mount effect to report back. Mirrors the snap it will choose: peeked if the map is being interacted with.
+    setSheetSnapState(isMapInteracting() ? 'peek' : 'collapsed');
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     // 280ms (down from 500) — tapping a new spot pin, the carousel itself is also sliding to
     // match (see SpotSheet's own focusSpotId effect), and the slower of the two dominates how
@@ -2557,7 +2589,7 @@ const destItems = useMemo((): DestItem[] =>
     // Synchronous reset — see handleMarkerPress's own comment for why this can't wait on
     // CountrySheet's own mount effect to report back.
     setCountryInitialSnap(openPeeked ? 'peek' : undefined);
-    setSheetSnapState(openPeeked ? 'peek' : 'collapsed');
+    setSheetSnapState(openPeeked || isMapInteracting() ? 'peek' : 'collapsed');
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     fitCountryDefaultView(cluster, cameraMode, openPeeked ? 'full' : 'topHalf');
     // Kick off CountrySheet's own header-photo fetch right now, in parallel with the sheet's
@@ -2590,6 +2622,7 @@ const destItems = useMemo((): DestItem[] =>
 
   // Back pill: one level up — spot → destination, destination → country, country → world
   const handleBackNav = useCallback(() => {
+    if (pressBlocked()) return;   // a pinch finger lifting over the X is not a close
     closeWithSheetExit(() => {
       if (selectedSpot) {
         handleCloseSpot();
@@ -2759,6 +2792,7 @@ const destItems = useMemo((): DestItem[] =>
       }
     }
     wasMapGestureActiveRef.current = isGestureActive;
+    if (isGestureActive) mapMovedThisTouchRef.current = true;
 
     // South-limit glide-back: let the user freely drag as far south as they want (so they
     // can actually see how much of Antarctica there is while their finger is down) — but
@@ -2994,7 +3028,7 @@ const destItems = useMemo((): DestItem[] =>
           <Pressable
             disabled={exiting || isSelectedPill}
             onPressIn={() => { lastCountryPressRef.current = Date.now(); }}
-            onPress={() => { prevCountryRef.current = selectedCountry; handleCountryPress(cluster); }}
+            onPress={() => { if (pressBlocked()) return; prevCountryRef.current = selectedCountry; handleCountryPress(cluster); }}
           >
             <View style={styles.countryPill}>
               {/* Card first so circle (declared last) renders on top */}
@@ -3085,7 +3119,7 @@ const destItems = useMemo((): DestItem[] =>
             {/* The selected destination's own pin is inert: it persists while zooming out, so a
                 pinch that ends over it would otherwise "re-select" it, resetting its sheet to
                 half-screen and flying the camera back. */}
-            <Pressable disabled={exiting || isSelectedDest} onPress={() => handleMarkerPress(dest)}>
+            <Pressable disabled={exiting || isSelectedDest} onPress={() => { if (pressBlocked()) return; handleMarkerPress(dest); }}>
               <DestPin
                 dest={dest} spotCount={spotCount}
                 isVisited={isVisited}
@@ -3098,10 +3132,27 @@ const destItems = useMemo((): DestItem[] =>
     }),
   [renderedPhotoDests, selectedDest, savedDestinations, visitedSpotCountByDest, handleMarkerPress]);
 
+  // Which sliding sheet is mounted right now. When it changes from one level to another, the incoming sheet is a
+  // replacement for the one that was showing and starts where that one rested (see sheetPose) rather than from below
+  // the screen. Read during render (the ref is only advanced after the commit), so it is a stable answer for the
+  // render that mounts the new sheet.
+  const sheetKind: 'country' | 'dest' | 'spot' | null =
+    selectedSpot && selectedDest && spotFocusId ? 'spot'
+    : mapState !== 'world' && selectedDest && !selectedSpot ? 'dest'
+    : selectedCountry && !selectedDest ? 'country'
+    : null;
+  const prevSheetKindRef = useRef(sheetKind);
+  const enterFromPrevious = prevSheetKindRef.current !== null && prevSheetKindRef.current !== sheetKind;
+  useEffect(() => { prevSheetKindRef.current = sheetKind; }, [sheetKind]);
+
+
   return (
     <View
       style={styles.root}
       onLayout={e => { mapViewHRef.current = e.nativeEvent.layout.height; }}
+      onTouchStart={handleRootTouchStart}
+      onTouchEnd={handleRootTouchEnd}
+      onTouchCancel={handleRootTouchEnd}
     >
 
       {/* ── MAP ──────────────────────────────────────────────────────────── */}
@@ -3285,7 +3336,7 @@ const destItems = useMemo((): DestItem[] =>
             const id = e.features[0]?.properties?.id as string | undefined;
             if (!id) return;
             const dest = DESTINATIONS.find(d => d.id === id);
-            if (dest) handleMarkerPress(dest);
+            if (dest && !pressBlocked()) handleMarkerPress(dest);
           }}
         >
           <MapboxGL.CircleLayer
@@ -3344,7 +3395,7 @@ const destItems = useMemo((): DestItem[] =>
               exiting={exiting}
               isSatellite={mapType === 'satellite'}
               labelSide={spotLabelPlan.get(spot.id) ?? 'left'}
-              onPress={() => handleSpotPress(spot)}
+              onPress={() => { if (pressBlocked()) return; handleSpotPress(spot); }}
             />
           );
         })}
@@ -3598,13 +3649,16 @@ const destItems = useMemo((): DestItem[] =>
           cluster={selectedCountry}
           onClose={handleCloseCountry}
           onSelectDestination={handleMarkerPress}
-          onExpand={() => setMapState('sheet')}
+          onExpand={handleSheetExpand}
           onCollapse={handleCloseSheet}
           pillOffsetSV={upPillBottomSV}
           pillOffsetLockedSV={spotOwnsPillSV}
           collapseSignal={collapseSheetSignal}
           peekSignal={peekSheetSignal}
           exitSignal={sheetExitSignal}
+          isMapInteracting={isMapInteracting}
+          isPressBlocked={pressBlocked}
+          enterFromPrevious={enterFromPrevious}
           mapGestureAtSV={mapGestureAtSV}
           initialTab={countryInitialTab}
           initialSnap={countryInitialSnap}
@@ -3625,7 +3679,7 @@ const destItems = useMemo((): DestItem[] =>
         <DestinationSheet
           destination={selectedDest}
           onClose={handleCloseDestinationSheet}
-          onExpand={() => setMapState('sheet')}
+          onExpand={handleSheetExpand}
           onCollapse={handleCloseSheet}
           onSelectSpot={handleSpotPress}
           onCollapsedTopChange={setDestCardTop}
@@ -3634,6 +3688,9 @@ const destItems = useMemo((): DestItem[] =>
           collapseSignal={collapseSheetSignal}
           peekSignal={peekSheetSignal}
           exitSignal={sheetExitSignal}
+          isMapInteracting={isMapInteracting}
+          isPressBlocked={pressBlocked}
+          enterFromPrevious={enterFromPrevious}
           mapGestureAtSV={mapGestureAtSV}
           onSnapStateChange={handleSheetSnapStateChange}
           initialTab={destInitialTab}
@@ -3648,12 +3705,15 @@ const destItems = useMemo((): DestItem[] =>
           focusSpotId={spotFocusId}
           destination={selectedDest}
           onClose={handleCloseSpot}
-          onExpand={() => setMapState('sheet')}
+          onExpand={handleSheetExpand}
           onCollapse={handleCloseSheet}
           onActiveSpotChange={handleActiveSpotChange}
           pillOffsetSV={upPillBottomSV}
           peekSignal={peekSheetSignal}
           exitSignal={sheetExitSignal}
+          isMapInteracting={isMapInteracting}
+          isPressBlocked={pressBlocked}
+          enterFromPrevious={enterFromPrevious}
           mapGestureAtSV={mapGestureAtSV}
           onSnapStateChange={handleSheetSnapStateChange}
           onGoToList={handleGoToListView}

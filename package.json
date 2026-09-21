@@ -43,5 +43,10 @@
     "web": "expo start --web",
     "postinstall": "patch-package"
   },
-  "private": true
+  "private": true,
+  "reanimated": {
+    "staticFeatureFlags": {
+      "FORCE_REACT_RENDER_FOR_SETTLED_ANIMATIONS": false
+    }
+  }
 }

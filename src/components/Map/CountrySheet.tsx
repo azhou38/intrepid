@@ -27,7 +27,8 @@ import { DESTINATIONS } from '../../data/destinations';
 import { SPOTS } from '../../data/spots';
 import { photoCache, getOrFetchWikiThumbnail } from '../../utils/photoCache';
 import CircleFlag from '../CircleFlag';
-import FadeInImage from './FadeInImage';
+import { sheetPose } from './sheetPose';
+import EntityPhoto from './EntityPhoto';
 import DestinationCard from './DestinationCard';
 
 interface Props {
@@ -69,6 +70,11 @@ interface Props {
   // with a finger resting on this sheet's strip used to be read as a swipe of the sheet itself —
   // the finger travels upward during a pinch-in — so lifting it snapped the sheet to half-screen.
   mapGestureAtSV?: SharedValue<number>;
+  // True while the user is interacting with the map (fingers down and the map moving); a selection change or new
+  // sheet during that interaction stays peeked. Read on the JS thread only.
+  isMapInteracting?: () => boolean;
+  enterFromPrevious?: boolean;   // this sheet replaces another one that was showing: start where it rested, not below the screen
+  isPressBlocked?: () => boolean;   // a press that is really a finger of a map gesture (see MapScreen.pressBlocked)
   // Increments when the parent is about to close this sheet (the back pill's X): slide it off
   // the bottom of the screen first, so it leaves rather than vanishing. Parent then unmounts it.
   exitSignal?: number;
@@ -181,9 +187,9 @@ function DestinationsPanel({
 }
 
 // ── Main component ─────────────────────────────────────────────────────────────
-export default function CountrySheet({
+function CountrySheet({
   cluster, onClose, onSelectDestination, onExpand, onCollapse,
-  pillOffsetSV, pillOffsetLockedSV, onSnapStateChange, initialTab, initialSnap, collapseSignal, peekSignal, exitSignal, mapGestureAtSV,
+  pillOffsetSV, pillOffsetLockedSV, onSnapStateChange, initialTab, initialSnap, collapseSignal, peekSignal, exitSignal, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious,
 }: Props) {
   // Collapsed (bottom-screen carousel) is the default view whenever a country is selected —
   // callers only pass initialSnap explicitly for the other case (e.g. the destination sheet's
@@ -333,7 +339,7 @@ export default function CountrySheet({
     setSnapStateReact(state);
     onSnapStateChange?.(state);
   }, [onSnapStateChange]);
-  const slideAnim    = useSharedValue(CLOSE_POS);
+  const slideAnim    = useSharedValue(enterFromPrevious ? (sheetPose.get() ?? CLOSE_POS) : CLOSE_POS);
   const lastPos      = useSharedValue(
     resolvedInitialSnap === 'full' ? FULL_POS : COLLAPSED_Y,
   );
@@ -455,48 +461,51 @@ export default function CountrySheet({
     [insets.bottom, insets.top],
   );
 
-  // Slide in on mount — collapsed (half-screen) by default whenever a country is selected,
-  // unless initialSnap requests otherwise: 'full' for the destination sheet's own "List view"
-  // button, 'peek' when returning up from a destination via the breadcrumb (the map is framed
-  // for a fully-visible screen there, so the sheet has to stay out of the way).
+  // ── Sheet position: one authority ─────────────────────────────────────────────────────────────────────
+  // Same design as DestinationSheet (see the long comment there): snapStateRef / snapStateSV hold the snap this
+  // sheet is meant to be in, and every position change except the user's own finger drag goes through
+  // transitionTo. Selecting another country used to snap the sheet to CLOSE_POS and slide it back up to
+  // half-screen, which fought the map gesture's peek; it now goes straight to the right snap.
+  const didMountRef = useRef(false);
+  const closingRef = useRef(false);
+  const transitionToRef = useRef<(next: CountrySnapState, reason: string) => void>(() => {});
+  transitionToRef.current = (next, reason) => {
+    // Once the parent has told this sheet to leave, only a NEW selection may bring it back.
+    if (closingRef.current && reason !== 'selectionChange') return;
+    closingRef.current = false;
+    const prev = snapStateRef.current;
+    const target = next === 'full' ? FULL_POS : next === 'peek' ? PEEK_Y : collapsedYRef.current;
+    if (__DEV__) console.log('[sheet] Country', cluster.countryCode, prev, '->', next, `reason=${reason}`, 'mapInteracting=', isMapInteracting?.() ?? false);
+    snapStateRef.current = next;
+    snapStateSV.value = next;
+    lastPos.value = target;
+    // Mounting straight into 'collapsed' never told the parent to collapse; 'peek' and 'full' always did.
+    if (next === 'full') onExpand?.(); else if (reason !== 'mount' || next === 'peek') onCollapse?.();
+    sheetPose.set(next === 'full' ? null : target);
+    slideAnim.value = withTiming(target, SNAP_CONFIG);
+    reportSnapState(next);
+  };
+
+  // Slide in on mount — collapsed (half-screen) by default whenever a country is selected, unless initialSnap
+  // requests otherwise: 'full' for the destination sheet's own "List view" button, 'peek' when returning up from a
+  // destination via the breadcrumb (the map is framed for a fully-visible screen there, so the sheet has to stay
+  // out of the way), or peeked from the start when the map is being interacted with.
   useEffect(() => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-    if (resolvedInitialSnap === 'peek') {
-      snapStateRef.current = 'peek';
-      snapStateSV.value = 'peek';
-      lastPos.value = PEEK_Y;
-      onCollapse?.();
-      slideAnim.value = withTiming(PEEK_Y, SNAP_CONFIG);
-      reportSnapState('peek');
-    } else if (resolvedInitialSnap === 'full') {
-      snapStateRef.current = 'full';
-      snapStateSV.value = 'full';
-      lastPos.value = FULL_POS;
-      onExpand?.();
-      slideAnim.value = withTiming(FULL_POS, SNAP_CONFIG);
-      reportSnapState('full');
-    } else {
-      snapStateRef.current = 'collapsed';
-      snapStateSV.value = 'collapsed';
-      lastPos.value = collapsedYRef.current;
-      slideAnim.value = withTiming(collapsedYRef.current, SNAP_CONFIG);
-      reportSnapState('collapsed');
-    }
+    transitionToRef.current(
+      resolvedInitialSnap === 'peek' ? 'peek'
+        : resolvedInitialSnap === 'full' ? 'full'
+        : isMapInteracting?.() ? 'peek' : 'collapsed',
+      'mount',
+    );
   }, []);
 
-  // Reset when country changes — but not on the very first mount, which already applied
-  // initialSnap above (otherwise this would immediately override e.g. a 'full'
-  // initialSnap back to collapsed, since this effect's own dependency also "changes" on
-  // mount).
-  const didMountRef = useRef(false);
+  // A different country was selected while this sheet is up (it isn't remounted). Straight to the snap it should
+  // be in now: half-screen for an ordinary tap, peeked if the user is mid map gesture. Not the first mount, which
+  // already applied initialSnap above.
   useEffect(() => {
     if (!didMountRef.current) { didMountRef.current = true; return; }
-    snapStateRef.current = 'collapsed';
-    snapStateSV.value = 'collapsed';
-    slideAnim.value = CLOSE_POS;
-    lastPos.value = collapsedYRef.current;
-    slideAnim.value = withTiming(collapsedYRef.current, SNAP_CONFIG);
-    reportSnapState('collapsed');
+    transitionToRef.current(isMapInteracting?.() ? 'peek' : 'collapsed', 'selectionChange');
   }, [cluster.country]);
 
   // Country photo from Wikipedia — full-screen header — request a size bounded to what a
@@ -509,68 +518,26 @@ export default function CountrySheet({
   // The country's top-ranked destination (dests is already sorted by rank, so dests[0] is
   // its most iconic place) gives an actual landscape/cityscape/landmark photo instead —
   // the same lookup DestinationSheet already uses successfully for its own hero images.
-  const [photoUrl, setPhotoUrl] = useState<string | null>(
-    photoCache.get(`country_${cluster.countryCode}`) ?? null,
-  );
-  // True when the CURRENTLY-shown photoUrl was already sitting in photoCache before it was
-  // ever displayed (a repeat visit, or a pin-tap prefetch that won the race) — initialized
-  // synchronously (matching the useState initializer above) so it's already correct for
-  // FadeInImage's very first render, then kept correct by the effect below on every
-  // subsequent cluster change too, since this sheet doesn't remount between country
-  // selections (no `key` prop in MapScreen — selecting a new pill while one sheet is already
-  // open just updates `cluster` on the same instance, it doesn't recreate this ref). Drives
-  // FadeInImage's `instant` prop: a genuine cache hit should appear immediately, not replay a
-  // fade the user never actually waited through.
-  const photoWasCachedRef = useRef(photoCache.has(`country_${cluster.countryCode}`));
-  useEffect(() => {
-    const cacheKey = `country_${cluster.countryCode}`;
-    if (photoCache.has(cacheKey)) {
-      photoWasCachedRef.current = true;
-      setPhotoUrl(photoCache.get(cacheKey)!);
-      return;
-    }
-    photoWasCachedRef.current = false;
-    setPhotoUrl(null);
+  //
+  // Rendered by <EntityPhoto> (see EntityPhoto.tsx), keyed on the country, so the photo can only ever be this
+  // country's and its loading never re-renders this sheet. getOrFetchWikiThumbnail (rather than a bare
+  // fetchWikiThumbnail) shares whatever request handleCountryPress already kicked off via prefetchWikiThumbnail
+  // at pin-tap time.
+  const countryPhotoKey = `country_${cluster.countryCode}`;
+  const loadCountryPhoto = () => {
     const topDest = dests[0];
-    // getOrFetchWikiThumbnail (rather than a bare fetchWikiThumbnail) shares whatever request
-    // handleCountryPress already kicked off via prefetchWikiThumbnail at pin-tap time, instead
-    // of starting a second, duplicate one now that the sheet has mounted.
-    const lookup = topDest
-      ? getOrFetchWikiThumbnail(cacheKey, photoCache, topDest.name, 900, cluster.country)
-      : getOrFetchWikiThumbnail(cacheKey, photoCache, cluster.country, 900);
-    lookup.then(url => { if (url) setPhotoUrl(url); });
-  }, [cluster.countryCode, cluster.country, dests]);
+    return topDest
+      ? getOrFetchWikiThumbnail(countryPhotoKey, photoCache, topDest.name, 900, cluster.country)
+      : getOrFetchWikiThumbnail(countryPhotoKey, photoCache, cluster.country, 900);
+  };
 
+  // Use refs so the gesture worklets (created once) always call the latest version
   const snapToFullRef = useRef(() => {});
-  snapToFullRef.current = () => {
-    snapStateRef.current = 'full';
-    snapStateSV.value = 'full';
-    lastPos.value = FULL_POS;
-    onExpand?.();
-    slideAnim.value = withTiming(FULL_POS, SNAP_CONFIG);
-    reportSnapState('full');
-  };
-
+  snapToFullRef.current = () => transitionToRef.current('full', 'user');
   const snapToCollapsedRef = useRef(() => {});
-  snapToCollapsedRef.current = () => {
-    const cy = collapsedYRef.current;
-    snapStateRef.current = 'collapsed';
-    snapStateSV.value = 'collapsed';
-    lastPos.value = cy;
-    onCollapse?.();
-    slideAnim.value = withTiming(cy, SNAP_CONFIG);
-    reportSnapState('collapsed');
-  };
-
+  snapToCollapsedRef.current = () => transitionToRef.current('collapsed', 'user');
   const snapToPeekRef = useRef(() => {});
-  snapToPeekRef.current = () => {
-    snapStateRef.current = 'peek';
-    snapStateSV.value = 'peek';
-    lastPos.value = PEEK_Y;
-    onCollapse?.();
-    slideAnim.value = withTiming(PEEK_Y, SNAP_CONFIG);
-    reportSnapState('peek');
-  };
+  snapToPeekRef.current = () => transitionToRef.current('peek', 'user');
 
   // Imperatively collapse from the parent — used by the back pill's down-arrow while this
   // sheet is full-screen. No-ops on mount (only reacts to actual increments).
@@ -578,7 +545,7 @@ export default function CountrySheet({
   useEffect(() => {
     if (collapseSignal === undefined || collapseSignal === lastCollapseSignalRef.current) return;
     lastCollapseSignalRef.current = collapseSignal;
-    if (snapStateRef.current === 'full') snapToCollapsedRef.current();
+    if (snapStateRef.current === 'full') transitionToRef.current('collapsed', 'backPill');
   }, [collapseSignal]);
 
   // Slide off the bottom, quickly, when the parent signals it's closing this sheet.
@@ -586,6 +553,9 @@ export default function CountrySheet({
   useEffect(() => {
     if (exitSignal === undefined || exitSignal === lastExitSignalRef.current) return;
     lastExitSignalRef.current = exitSignal;
+    closingRef.current = true;
+    if (__DEV__) console.log('[sheet] Country', cluster.countryCode, snapStateRef.current, '-> closed', 'reason=exit');
+    sheetPose.set(null);
     slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) });
   }, [exitSignal]);
 
@@ -595,11 +565,12 @@ export default function CountrySheet({
   useEffect(() => {
     if (peekSignal === undefined || peekSignal === lastPeekSignalRef.current) return;
     lastPeekSignalRef.current = peekSignal;
-    if (snapStateRef.current === 'collapsed' || snapStateRef.current === 'full') snapToPeekRef.current();
+    if (snapStateRef.current === 'collapsed' || snapStateRef.current === 'full') transitionToRef.current('peek', 'mapGesture');
   }, [peekSignal]);
 
   const dismissSheetRef = useRef(() => {});
   dismissSheetRef.current = () => {
+    sheetPose.set(null);
     slideAnim.value = withTiming(CLOSE_POS, { duration: 280 }, finished => {
       if (finished) runOnJS(onClose)();
     });
@@ -653,7 +624,8 @@ export default function CountrySheet({
   // old PanResponder computed every frame's position on the JS thread regardless of which
   // style property consumed it).
   const pan = Gesture.Pan()
-    // Only activates once the drag is decisively vertical, ceding horizontal drags to the
+    .maxPointers(1)   // a two-finger map pinch that lands on the sheet is never a drag of it
+    //Only activates once the drag is decisively vertical, ceding horizontal drags to the
     // tab-swipe gesture below instead of racing it for every touch.
     .activeOffsetY([-10, 10])
     .failOffsetX([-10, 10])
@@ -859,20 +831,15 @@ export default function CountrySheet({
             <Pressable onPress={() => { if (snapStateRef.current !== 'full') snapToFullRef.current(); }}>
             <Animated.View style={[st.header, { backgroundColor: '#111827' }, headerAnimStyle]}>
               {/* Country photo background */}
-              {photoUrl && (
-                <FadeInImage
-                  instant={photoWasCachedRef.current}
-                  source={{ uri: photoUrl }}
-                  style={StyleSheet.absoluteFill as any}
-                  resizeMode="cover"
-                />
-              )}
-              {/* Dark scrim for text legibility over the photo — the header's own
-                  backgroundColor is already dark enough on its own once there's no photo to
-                  scrim. */}
-              {photoUrl && (
-                <View style={[StyleSheet.absoluteFill as any, { backgroundColor: 'rgba(0,0,0,0.45)' }]} />
-              )}
+              {/* The dark scrim (for text legibility over the photo) is part of EntityPhoto, drawn only while
+                  there's a photo — the header's own backgroundColor is already dark enough without one. */}
+              <EntityPhoto
+                cacheKey={countryPhotoKey}
+                cache={photoCache}
+                load={loadCountryPhoto}
+                scrim="rgba(0,0,0,0.45)"
+                style={StyleSheet.absoluteFill as any}
+              />
 
               {/* Drag-handle pill — visible while collapsed/peeking, fades out approaching
                   full-screen. Identical mechanism to DestinationSheet's own drag pill. */}
@@ -1067,8 +1034,8 @@ export default function CountrySheet({
               borderTopLeftRadius: 28, borderTopRightRadius: 28,
             }, peekAnimStyle]}
           >
-            <Pressable style={StyleSheet.absoluteFill} onPress={() => snapToCollapsedRef.current()}>
-              {photoUrl && <FadeInImage instant source={{ uri: photoUrl }} style={StyleSheet.absoluteFill as any} resizeMode="cover" />}
+            <Pressable style={StyleSheet.absoluteFill} onPress={() => { if (isPressBlocked?.()) return; snapToCollapsedRef.current(); }}>
+              <EntityPhoto instant cacheKey={countryPhotoKey} cache={photoCache} load={loadCountryPhoto} style={StyleSheet.absoluteFill as any} />
               <View pointerEvents="none" style={st.peekScrim} />
               <View pointerEvents="none" style={st.peekPillRow}>
                 <View style={st.peekPill} />
@@ -1237,3 +1204,7 @@ const st = StyleSheet.create({
   peekNameTxt: { fontSize: 30, fontFamily: 'PlayfairDisplay_700Bold', color: 'white', letterSpacing: -0.4, flexShrink: 1 },
   peekStatsTxt: { fontSize: 12.5, fontWeight: '600', color: 'rgba(255,255,255,0.85)' },
 });
+
+// Memoized: the map screen re-renders continuously while the camera moves, and a re-render of the sheet is a React
+// commit on its animated views for no reason. With stable props it now renders only when its own inputs change.
+export default React.memo(CountrySheet);
