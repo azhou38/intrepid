@@ -36,6 +36,7 @@ import type { Destination, PhotoEntry, Visit, GoodToKnowTip } from '../../types'
 import { SPOTS, type Spot } from '../../data/spots';
 import { photoCache, getOrFetchWikiThumbnail } from '../../utils/photoCache';
 import CircleFlag from '../CircleFlag';
+import { sheetPose } from './sheetPose';
 import EntityPhoto from './EntityPhoto';
 import ClimateDetailModal from './ClimateDetailModal';
 import { MONTHS_SHORT, crowdColor } from '../../utils/travelData';
@@ -932,6 +933,7 @@ interface Props {
   // True while the user is interacting with the map (fingers down and the map moving). A selection change or a new
   // sheet during that interaction stays peeked instead of popping up to half-screen. Read on the JS thread only.
   isMapInteracting?: () => boolean;
+  enterFromPrevious?: boolean;   // this sheet replaces another one that was showing: start where it rested, not below the screen
   isPressBlocked?: () => boolean;   // a press that is really a finger of a map gesture (see MapScreen.pressBlocked)
   // Increments when the parent is about to close this sheet (the back pill's X): slide it off
   // the bottom of the screen first, so it leaves rather than vanishing. Parent then unmounts it.
@@ -941,7 +943,7 @@ interface Props {
 export default function DestinationSheet({
   destination, onClose, onExpand, onCollapse, onSelectSpot, onCollapsedTopChange,
   onSnapStateChange, pillOffsetSV, pillOffsetLockedSV, initialTab, initialSnap,
-  collapseSignal, peekSignal, exitSignal, mapGestureAtSV, isMapInteracting, isPressBlocked,
+  collapseSignal, peekSignal, exitSignal, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious,
 }: Props) {
   const insets            = useSafeAreaInsets();
   const savedDestinations = useStore(s => s.savedDestinations);
@@ -1244,7 +1246,7 @@ export default function DestinationSheet({
     setSnapStateReact(state);
     onSnapStateChange?.(state);
   }, [onSnapStateChange]);
-  const slideAnim    = useSharedValue(CLOSE_POS);
+  const slideAnim    = useSharedValue(enterFromPrevious ? (sheetPose.get() ?? CLOSE_POS) : CLOSE_POS);
   const lastPos      = useSharedValue(resolvedInitialSnap === 'full' ? FULL_POS : COLLAPSED_Y);
   // Worklet-readable scroll offset, for the drag gesture's full-screen capture gate (only
   // let a downward drag pull the sheet once its inner ScrollView is already at top).
@@ -1388,6 +1390,7 @@ export default function DestinationSheet({
     if (next === 'full') onExpand?.(); else if (reason !== 'mount') onCollapse?.();
     reportSnapState(next);
     if (next !== 'full') onCollapsedTopChange?.(H - target);
+    sheetPose.set(next === 'full' ? null : target);
     slideAnim.value = withTiming(target, SNAP_CONFIG);
   };
 
@@ -1435,6 +1438,7 @@ export default function DestinationSheet({
     lastExitSignalRef.current = exitSignal;
     closingRef.current = true;
     if (__DEV__) console.log('[sheet] Destination', destination.id, snapStateRef.current, '-> closed', 'reason=exit');
+    sheetPose.set(null);
     slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) });
   }, [exitSignal]);
 
@@ -1455,6 +1459,7 @@ export default function DestinationSheet({
 
   const dismissSheetRef = useRef(() => {});
   dismissSheetRef.current = () => {
+    sheetPose.set(null);
     slideAnim.value = withTiming(CLOSE_POS, { duration: 280 }, finished => {
       if (finished) {
         runOnJS(logDismiss)();

@@ -1755,6 +1755,7 @@ const destItems = useMemo((): DestItem[] =>
   // Detect when selected country/destination has drifted out of the visible viewport
 
 
+
   // ── Fetch the single base style once on mount ─────────────────────────────
   useEffect(() => {
     // Capped so a hung request can't leave the map unmounted: after 4s it mounts on the default style.
@@ -3131,6 +3132,19 @@ const destItems = useMemo((): DestItem[] =>
     }),
   [renderedPhotoDests, selectedDest, savedDestinations, visitedSpotCountByDest, handleMarkerPress]);
 
+  // Which sliding sheet is mounted right now. When it changes from one level to another, the incoming sheet is a
+  // replacement for the one that was showing and starts where that one rested (see sheetPose) rather than from below
+  // the screen. Read during render (the ref is only advanced after the commit), so it is a stable answer for the
+  // render that mounts the new sheet.
+  const sheetKind: 'country' | 'dest' | 'spot' | null =
+    selectedSpot && selectedDest && spotFocusId ? 'spot'
+    : mapState !== 'world' && selectedDest && !selectedSpot ? 'dest'
+    : selectedCountry && !selectedDest ? 'country'
+    : null;
+  const prevSheetKindRef = useRef(sheetKind);
+  const enterFromPrevious = prevSheetKindRef.current !== null && prevSheetKindRef.current !== sheetKind;
+  useEffect(() => { prevSheetKindRef.current = sheetKind; }, [sheetKind]);
+
   return (
     <View
       style={styles.root}
@@ -3643,6 +3657,7 @@ const destItems = useMemo((): DestItem[] =>
           exitSignal={sheetExitSignal}
           isMapInteracting={isMapInteracting}
           isPressBlocked={pressBlocked}
+          enterFromPrevious={enterFromPrevious}
           mapGestureAtSV={mapGestureAtSV}
           initialTab={countryInitialTab}
           initialSnap={countryInitialSnap}
@@ -3674,6 +3689,7 @@ const destItems = useMemo((): DestItem[] =>
           exitSignal={sheetExitSignal}
           isMapInteracting={isMapInteracting}
           isPressBlocked={pressBlocked}
+          enterFromPrevious={enterFromPrevious}
           mapGestureAtSV={mapGestureAtSV}
           onSnapStateChange={handleSheetSnapStateChange}
           initialTab={destInitialTab}
@@ -3696,6 +3712,7 @@ const destItems = useMemo((): DestItem[] =>
           exitSignal={sheetExitSignal}
           isMapInteracting={isMapInteracting}
           isPressBlocked={pressBlocked}
+          enterFromPrevious={enterFromPrevious}
           mapGestureAtSV={mapGestureAtSV}
           onSnapStateChange={handleSheetSnapStateChange}
           onGoToList={handleGoToListView}

@@ -30,6 +30,7 @@ import { DAY_NAMES, hoursForDay, formatSpotCost, formatVisitTime } from '../../d
 import { photoCache, thumbCache, getOrFetchWikiThumbnail } from '../../utils/photoCache';
 import CircleFlag from '../CircleFlag';
 import FadeInImage from './FadeInImage';
+import { sheetPose } from './sheetPose';
 import EntityPhoto from './EntityPhoto';
 import {
   parseDateStr, fmtDatePart,
@@ -242,6 +243,7 @@ interface Props {
   // True while the user is interacting with the map (fingers down and the map moving); a spot change or new sheet
   // during that interaction stays peeked. Read on the JS thread only.
   isMapInteracting?: () => boolean;
+  enterFromPrevious?: boolean;   // this sheet replaces another one that was showing: start where it rested, not below the screen
   isPressBlocked?: () => boolean;   // a press that is really a finger of a map gesture (see MapScreen.pressBlocked)
   // Increments when the parent is about to close this sheet (the back pill's X): slide it off
   // the bottom of the screen first, so it leaves rather than vanishing. Parent then unmounts it.
@@ -261,7 +263,7 @@ interface Props {
 
 export default function SpotSheet({
   spots, focusSpotId, destination, onClose, onExpand, onCollapse, onActiveSpotChange, onCollapsedTopChange,
-  pillOffsetSV, onSnapStateChange, peekSignal, exitSignal, mapGestureAtSV, isMapInteracting, isPressBlocked, onGoToList, onGoToDestination, collapseSignal,
+  pillOffsetSV, onSnapStateChange, peekSignal, exitSignal, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, onGoToList, onGoToDestination, collapseSignal,
 }: Props) {
   const insets       = useSafeAreaInsets();
   const saveSpotVisited = useStore(s => s.saveSpotVisited);
@@ -418,7 +420,7 @@ export default function SpotSheet({
   // with matching duration/curve pairs and a token to guard stale completions) — once slideAnim
   // is itself a Reanimated shared value, the pill can just react to it directly (see the
   // useAnimatedReaction below), the same way DestinationSheet's own pill always has.
-  const slideAnim    = useSharedValue(CLOSE_POS);
+  const slideAnim    = useSharedValue(enterFromPrevious ? (sheetPose.get() ?? CLOSE_POS) : CLOSE_POS);
   const lastPos      = useSharedValue(0);
   // Worklet-readable scroll offset, for the drag gesture's full-screen capture gate (only let
   // a downward drag pull the sheet once its inner ScrollView is already at top) — a plain ref
@@ -504,6 +506,7 @@ export default function SpotSheet({
     // completion callback, a UI-thread worklet reanimated invokes the instant the value actually arrives. Only the
     // swipe-up gesture passes withHaptic=true; tap-triggered expands don't, matching this sheet's existing haptic
     // policy of ticking for drags, not taps.
+    sheetPose.set(next === 'full' ? null : target);
     slideAnim.value = withTiming(target, SNAP_CONFIG, withHaptic && next === 'full' ? (finished) => {
       'worklet';
       if (finished) runOnJS(triggerHaptic)(Haptics.ImpactFeedbackStyle.Medium);
@@ -538,6 +541,7 @@ export default function SpotSheet({
     lastExitSignalRef.current = exitSignal;
     closingRef.current = true;
     if (__DEV__) console.log('[sheet] Spot', activeSpot.id, snapStateRef.current, '-> closed', 'reason=exit');
+    sheetPose.set(null);
     slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) });
   }, [exitSignal]);
 

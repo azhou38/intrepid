@@ -27,6 +27,7 @@ import { DESTINATIONS } from '../../data/destinations';
 import { SPOTS } from '../../data/spots';
 import { photoCache, getOrFetchWikiThumbnail } from '../../utils/photoCache';
 import CircleFlag from '../CircleFlag';
+import { sheetPose } from './sheetPose';
 import EntityPhoto from './EntityPhoto';
 import DestinationCard from './DestinationCard';
 
@@ -72,6 +73,7 @@ interface Props {
   // True while the user is interacting with the map (fingers down and the map moving); a selection change or new
   // sheet during that interaction stays peeked. Read on the JS thread only.
   isMapInteracting?: () => boolean;
+  enterFromPrevious?: boolean;   // this sheet replaces another one that was showing: start where it rested, not below the screen
   isPressBlocked?: () => boolean;   // a press that is really a finger of a map gesture (see MapScreen.pressBlocked)
   // Increments when the parent is about to close this sheet (the back pill's X): slide it off
   // the bottom of the screen first, so it leaves rather than vanishing. Parent then unmounts it.
@@ -187,7 +189,7 @@ function DestinationsPanel({
 // ── Main component ─────────────────────────────────────────────────────────────
 export default function CountrySheet({
   cluster, onClose, onSelectDestination, onExpand, onCollapse,
-  pillOffsetSV, pillOffsetLockedSV, onSnapStateChange, initialTab, initialSnap, collapseSignal, peekSignal, exitSignal, mapGestureAtSV, isMapInteracting, isPressBlocked,
+  pillOffsetSV, pillOffsetLockedSV, onSnapStateChange, initialTab, initialSnap, collapseSignal, peekSignal, exitSignal, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious,
 }: Props) {
   // Collapsed (bottom-screen carousel) is the default view whenever a country is selected —
   // callers only pass initialSnap explicitly for the other case (e.g. the destination sheet's
@@ -337,7 +339,7 @@ export default function CountrySheet({
     setSnapStateReact(state);
     onSnapStateChange?.(state);
   }, [onSnapStateChange]);
-  const slideAnim    = useSharedValue(CLOSE_POS);
+  const slideAnim    = useSharedValue(enterFromPrevious ? (sheetPose.get() ?? CLOSE_POS) : CLOSE_POS);
   const lastPos      = useSharedValue(
     resolvedInitialSnap === 'full' ? FULL_POS : COLLAPSED_Y,
   );
@@ -479,6 +481,7 @@ export default function CountrySheet({
     lastPos.value = target;
     // Mounting straight into 'collapsed' never told the parent to collapse; 'peek' and 'full' always did.
     if (next === 'full') onExpand?.(); else if (reason !== 'mount' || next === 'peek') onCollapse?.();
+    sheetPose.set(next === 'full' ? null : target);
     slideAnim.value = withTiming(target, SNAP_CONFIG);
     reportSnapState(next);
   };
@@ -552,6 +555,7 @@ export default function CountrySheet({
     lastExitSignalRef.current = exitSignal;
     closingRef.current = true;
     if (__DEV__) console.log('[sheet] Country', cluster.countryCode, snapStateRef.current, '-> closed', 'reason=exit');
+    sheetPose.set(null);
     slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) });
   }, [exitSignal]);
 
@@ -566,6 +570,7 @@ export default function CountrySheet({
 
   const dismissSheetRef = useRef(() => {});
   dismissSheetRef.current = () => {
+    sheetPose.set(null);
     slideAnim.value = withTiming(CLOSE_POS, { duration: 280 }, finished => {
       if (finished) runOnJS(onClose)();
     });
