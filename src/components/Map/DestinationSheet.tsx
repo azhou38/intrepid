@@ -933,6 +933,11 @@ interface Props {
   // True while the user is interacting with the map (fingers down and the map moving). A selection change or a new
   // sheet during that interaction stays peeked instead of popping up to half-screen. Read on the JS thread only.
   isMapInteracting?: () => boolean;
+  // This instance is only the OUTGOING copy of a sheet that another level's sheet is replacing: it starts where the
+  // sheet rested, slides off the bottom while the new one slides up, then calls onExited. It never reports snap state,
+  // moves the back pill or records a pose.
+  leaving?: boolean;
+  onExited?: () => void;
   enterFromPrevious?: boolean;   // this sheet replaces another one that was showing: start where it rested, not below the screen
   isPressBlocked?: () => boolean;   // a press that is really a finger of a map gesture (see MapScreen.pressBlocked)
   // Increments when the parent is about to close this sheet (the back pill's X): slide it off
@@ -943,7 +948,7 @@ interface Props {
 function DestinationSheet({
   destination, onClose, onExpand, onCollapse, onSelectSpot, onCollapsedTopChange,
   onSnapStateChange, pillOffsetSV, pillOffsetLockedSV, initialTab, initialSnap,
-  collapseSignal, peekSignal, exitSignal, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious,
+  collapseSignal, peekSignal, exitSignal, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, onExited,
 }: Props) {
   const insets            = useSafeAreaInsets();
   const savedDestinations = useStore(s => s.savedDestinations);
@@ -1398,6 +1403,13 @@ function DestinationSheet({
   // initialSnap requests otherwise (e.g. the spot carousel's "list view" button wants 'full'), or the map is being
   // interacted with, in which case it comes in already out of the way.
   useEffect(() => {
+    if (leaving) {
+      closingRef.current = true;
+      slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, finished => {
+        if (finished && onExited) runOnJS(onExited)();
+      });
+      return;
+    }
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     transitionToRef.current(resolvedInitialSnap === 'full' ? 'full' : isMapInteracting?.() ? 'peek' : 'collapsed', 'mount');
   }, []);

@@ -73,6 +73,9 @@ interface Props {
   // True while the user is interacting with the map (fingers down and the map moving); a selection change or new
   // sheet during that interaction stays peeked. Read on the JS thread only.
   isMapInteracting?: () => boolean;
+  // The OUTGOING copy of a sheet another level's sheet is replacing — see DestinationSheet.
+  leaving?: boolean;
+  onExited?: () => void;
   enterFromPrevious?: boolean;   // this sheet replaces another one that was showing: start where it rested, not below the screen
   isPressBlocked?: () => boolean;   // a press that is really a finger of a map gesture (see MapScreen.pressBlocked)
   // Increments when the parent is about to close this sheet (the back pill's X): slide it off
@@ -189,7 +192,7 @@ function DestinationsPanel({
 // ── Main component ─────────────────────────────────────────────────────────────
 function CountrySheet({
   cluster, onClose, onSelectDestination, onExpand, onCollapse,
-  pillOffsetSV, pillOffsetLockedSV, onSnapStateChange, initialTab, initialSnap, collapseSignal, peekSignal, exitSignal, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious,
+  pillOffsetSV, pillOffsetLockedSV, onSnapStateChange, initialTab, initialSnap, collapseSignal, peekSignal, exitSignal, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, onExited,
 }: Props) {
   // Collapsed (bottom-screen carousel) is the default view whenever a country is selected —
   // callers only pass initialSnap explicitly for the other case (e.g. the destination sheet's
@@ -491,6 +494,13 @@ function CountrySheet({
   // destination via the breadcrumb (the map is framed for a fully-visible screen there, so the sheet has to stay
   // out of the way), or peeked from the start when the map is being interacted with.
   useEffect(() => {
+    if (leaving) {
+      closingRef.current = true;
+      slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, finished => {
+        if (finished && onExited) runOnJS(onExited)();
+      });
+      return;
+    }
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     transitionToRef.current(
       resolvedInitialSnap === 'peek' ? 'peek'
