@@ -3006,11 +3006,9 @@ const destItems = useMemo((): DestItem[] =>
     // visitedCount at 0 despite genuinely being visited, silently hiding this border.
     const isClusterVisited = visitedCountryCodeSet.has(cluster.countryCode);
     const isVisitedHighlighted = isClusterVisited && !isSelectedPill;
-    // Selected-but-unvisited uses the blue variant instead of the default emerald —
-    // isVisitedHighlighted (the non-selected case) is always a visited country by
-    // construction, so it never needs this: gray is reserved for "you're looking at this
-    // country but haven't been there," not for the general highlight color.
-    const isSelectedUnvisited = isSelectedPill && !isClusterVisited;
+    // An unvisited country's pill has no border until it is selected; then it wears a light-gray wrap-around border
+    // (a visited pill's is green), plus a white glow; a selected VISITED country's glow is green.
+    const isUnvisitedPlain = !isClusterVisited && isSelectedPill;
     return (
       <MapboxGL.MarkerView
         key={cluster.country}
@@ -3034,14 +3032,15 @@ const destItems = useMemo((): DestItem[] =>
               {/* Card first so circle (declared last) renders on top */}
               <View style={[
                 styles.countryPillCard,
-                isSelectedPill && (isSelectedUnvisited ? styles.countryPillCardGlowGray : styles.countryPillCardGlow),
+                isSelectedPill && (isClusterVisited ? styles.countryPillCardGlow : styles.countryPillCardGlowWhite),
                 isVisitedHighlighted && styles.countryPillCardBorder,
+                isUnvisitedPlain && styles.countryPillCardBorderGray,
               ]}>
                 <Text style={styles.countryPillName} numberOfLines={1}>{cluster.country}</Text>
               </View>
               <View style={[
                 styles.countryPillCircle,
-                isSelectedPill && (isSelectedUnvisited ? styles.countryPillCircleGlowGray : styles.countryPillCircleGlow),
+                isSelectedPill && (isClusterVisited ? styles.countryPillCircleGlow : styles.countryPillCircleGlowWhite),
               ]}>
                 <View style={styles.countryPillFlagClip}>
                   <Image
@@ -3050,7 +3049,7 @@ const destItems = useMemo((): DestItem[] =>
                     resizeMode="cover"
                   />
                 </View>
-                {(isSelectedPill || isVisitedHighlighted) && (
+                {(isSelectedPill || isVisitedHighlighted || isUnvisitedPlain) && (
                   <>
                     {/* Left semicircle only (clipped to the flag's true outer-cap half) —
                         a full circular ring here would dip into the card's interior for
@@ -3063,10 +3062,10 @@ const destItems = useMemo((): DestItem[] =>
                         the selected-but-unvisited case (isVisitedHighlighted alone is
                         always a visited country, so it's always the green ones). */}
                     <View style={styles.countryPillFlagRingClip}>
-                      <View style={isSelectedUnvisited ? styles.countryPillFlagRingCircleGray : styles.countryPillFlagRingCircle} />
+                      <View style={isUnvisitedPlain ? styles.countryPillFlagRingCirclePlain : styles.countryPillFlagRingCircle} />
                     </View>
-                    <View style={isSelectedUnvisited ? styles.countryPillFlagRingBarTopGray : styles.countryPillFlagRingBarTop} />
-                    <View style={isSelectedUnvisited ? styles.countryPillFlagRingBarBottomGray : styles.countryPillFlagRingBarBottom} />
+                    <View style={isUnvisitedPlain ? styles.countryPillFlagRingBarTopPlain : styles.countryPillFlagRingBarTop} />
+                    <View style={isUnvisitedPlain ? styles.countryPillFlagRingBarBottomPlain : styles.countryPillFlagRingBarBottom} />
                   </>
                 )}
                 {cluster.visitedCount > 0 && (
@@ -3276,21 +3275,25 @@ const destItems = useMemo((): DestItem[] =>
             mounts/unmounts on every selection change, while the stamp layer mounts once —
             native insertion order otherwise depends on mount timing, not render position.
             Fill color depends on whether the selected country has been visited: the default
-            emerald if so, gray if not — matching the pill glow's own
-            countryPillCardGlow/countryPillCardGlowGray. The BORDER (line) color keeps that
+            emerald if so, gray if not. The BORDER (line) color keeps that
             same emerald for a VISITED country in both map views (it already reads clearly
             against satellite imagery) — only the unvisited gray border switches to white in
             satellite view, where the dark imagery leaves gray hard to see; standard map view
             keeps the existing gray border unchanged either way. */}
         {selectedCountry && (() => {
           const selectedIsVisited = visitedCountryCodeSet.has(selectedCountry.countryCode);
-          const fillColor = selectedIsVisited ? '#22C55E' : '#4B5563';
+          const fillColor = selectedIsVisited ? '#22C55E' : '#FFFFFF';
           const lineColor = selectedIsVisited
             ? '#16A34A'
             : (mapType === 'satellite' ? '#FFFFFF' : '#4B5563');
-          // Gray (unvisited) fill in standard map view only gets its own, lighter opacity —
-          // visited (emerald) and satellite-view-unvisited both keep the original 0.10.
-          const fillOpacity = (!selectedIsVisited && mapType !== 'satellite') ? 0.05 : 0.10;
+          // A 10% tint over the whole country: emerald if visited, white if not.
+          const fillOpacity = 0.10;
+          // Unvisited in standard map view: the outline itself is white (as in satellite view) with a dark slate casing
+          // drawn just under it, so it stays readable against the light land, water and green of the map. The halo (glow)
+          // is white as well.
+          const whiteCasedOutline = !selectedIsVisited && mapType !== 'satellite';
+          const outlineColor = whiteCasedOutline ? '#FFFFFF' : lineColor;
+          const glowColor = whiteCasedOutline ? '#FFFFFF' : lineColor;
           return (
             <MapboxGL.VectorSource
               id="countryBoundaries"
@@ -3308,21 +3311,28 @@ const destItems = useMemo((): DestItem[] =>
                 sourceLayerID="country_boundaries"
                 filter={['==', ['get', 'iso_3166_1'], selectedCountry.countryCode]}
                 belowLayerID="destStampCircles"
-                style={{ lineColor, lineWidth: 12, lineOpacity: 0.08 }}
+                style={{ lineColor: glowColor, lineWidth: whiteCasedOutline ? 14 : 12, lineOpacity: whiteCasedOutline ? 0.22 : 0.08 }}
               />
               <MapboxGL.LineLayer
                 id="countryGlowInner"
                 sourceLayerID="country_boundaries"
                 filter={['==', ['get', 'iso_3166_1'], selectedCountry.countryCode]}
                 belowLayerID="destStampCircles"
-                style={{ lineColor, lineWidth: 6, lineOpacity: 0.18 }}
+                style={{ lineColor: glowColor, lineWidth: whiteCasedOutline ? 7 : 6, lineOpacity: whiteCasedOutline ? 0.45 : 0.18 }}
+              />
+              <MapboxGL.LineLayer
+                id="countryOutlineCasing"
+                sourceLayerID="country_boundaries"
+                filter={['==', ['get', 'iso_3166_1'], selectedCountry.countryCode]}
+                belowLayerID="destStampCircles"
+                style={{ lineColor: '#1F2937', lineWidth: 2.6, lineOpacity: whiteCasedOutline ? 0.55 : 0 }}
               />
               <MapboxGL.LineLayer
                 id="countryOutline"
                 sourceLayerID="country_boundaries"
                 filter={['==', ['get', 'iso_3166_1'], selectedCountry.countryCode]}
                 belowLayerID="destStampCircles"
-                style={{ lineColor, lineWidth: 2, lineOpacity: 0.7 }}
+                style={{ lineColor: outlineColor, lineWidth: whiteCasedOutline ? 1.5 : 2, lineOpacity: whiteCasedOutline ? 1 : 0.7 }}
               />
             </MapboxGL.VectorSource>
           );
@@ -3834,22 +3844,6 @@ const styles = StyleSheet.create({
     position: 'absolute', bottom: 0, left: 12,
     width: 12, height: 1.5, backgroundColor: 'rgba(22,163,74,0.85)',
   },
-  // Charcoal variants — selected-but-unvisited country, replacing the default emerald
-  // above. #4B5563 (a solid, neutral slate — no blue undertone) so the ring has real
-  // contrast against the flag circle's own white backing (see countryPillCircle); a light
-  // gray here was tried first but was too close to white to read as a highlight at all.
-  countryPillFlagRingCircleGray: {
-    width: 24, height: 24, borderRadius: 12,
-    borderWidth: 1.5, borderColor: '#4B5563',
-  },
-  countryPillFlagRingBarTopGray: {
-    position: 'absolute', top: 0, left: 12,
-    width: 12, height: 1.5, backgroundColor: '#4B5563',
-  },
-  countryPillFlagRingBarBottomGray: {
-    position: 'absolute', bottom: 0, left: 12,
-    width: 12, height: 1.5, backgroundColor: '#4B5563',
-  },
 
   countryPillBadge: {
     position: 'absolute', bottom: -4, right: -1,
@@ -3879,22 +3873,32 @@ const styles = StyleSheet.create({
     shadowColor: '#16A34A', shadowOpacity: 0.7, shadowRadius: 10,
     shadowOffset: { width: -6, height: 0 },
   },
-  // Charcoal variants — selected country that hasn't been visited, replacing the default
-  // emerald glow above with a solid slate highlight instead (#4B5563 — dark enough for
-  // real contrast against the card's own white face, and reads as deliberately neutral
-  // rather than the original muddy blue-gray).
-  countryPillCardGlowGray: {
-    borderWidth: 1.5, borderColor: '#4B5563',
-    shadowColor: '#4B5563', shadowOpacity: 0.9, shadowRadius: 10,
+  // Selected but unvisited: the same split glow as above, white (the gray border comes from countryPillCardBorderGray).
+  countryPillCardGlowWhite: {
+    shadowColor: '#FFFFFF', shadowOpacity: 0.9, shadowRadius: 10,
     shadowOffset: { width: 6, height: 0 },
   },
-  countryPillCircleGlowGray: {
-    shadowColor: '#4B5563', shadowOpacity: 0.9, shadowRadius: 10,
+  countryPillCircleGlowWhite: {
+    shadowColor: '#FFFFFF', shadowOpacity: 0.9, shadowRadius: 10,
     shadowOffset: { width: -6, height: 0 },
   },
   // Same border color as countryPillCardGlow, minus the shadow — used for every OTHER
   // visited country's pill, always (the selected country keeps the full glow above instead).
   countryPillCardBorder: { borderWidth: 1.5, borderColor: 'rgba(22,163,74,0.85)' },
+  // Unvisited and selected: the same border and flag ring as a visited pill, in a light gray.
+  countryPillCardBorderGray: { borderWidth: 1.5, borderColor: 'rgba(188,193,202,0.95)' },
+  countryPillFlagRingCirclePlain: {
+    width: 24, height: 24, borderRadius: 12,
+    borderWidth: 1.5, borderColor: 'rgba(188,193,202,0.95)',
+  },
+  countryPillFlagRingBarTopPlain: {
+    position: 'absolute', top: 0, left: 12,
+    width: 12, height: 1.5, backgroundColor: 'rgba(188,193,202,0.95)',
+  },
+  countryPillFlagRingBarBottomPlain: {
+    position: 'absolute', bottom: 0, left: 12,
+    width: 12, height: 1.5, backgroundColor: 'rgba(188,193,202,0.95)',
+  },
   countryPillName: { fontSize: 11, fontWeight: '600', color: '#111827', maxWidth: 90 },
 
 
