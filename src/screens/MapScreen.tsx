@@ -278,11 +278,11 @@ function SpotMarker({ spot, isVisited, isSelected, exiting, isSatellite, labelSi
       ]}
       pointerEvents="none"
     >
-      <Text style={[styles.spotPinLabel, styles.spotPinLabelOutline, { color: labelHaloColor, transform: [{ translateX: -0.75 }, { translateY: -0.75 }] }]}>{spot.name}</Text>
-      <Text style={[styles.spotPinLabel, styles.spotPinLabelOutline, { color: labelHaloColor, transform: [{ translateX: 0.75 }, { translateY: -0.75 }] }]}>{spot.name}</Text>
-      <Text style={[styles.spotPinLabel, styles.spotPinLabelOutline, { color: labelHaloColor, transform: [{ translateX: -0.75 }, { translateY: 0.75 }] }]}>{spot.name}</Text>
-      <Text style={[styles.spotPinLabel, styles.spotPinLabelOutline, { color: labelHaloColor, transform: [{ translateX: 0.75 }, { translateY: 0.75 }] }]}>{spot.name}</Text>
-      <Text numberOfLines={1} style={[styles.spotPinLabel, { color: labelColor }]}>{spot.name}</Text>
+      <Text style={[styles.spotPinLabel, styles.spotPinLabelOutline, { textAlign: labelSide === 'left' ? 'right' : 'left', color: labelHaloColor, transform: [{ translateX: -0.75 }, { translateY: -0.75 }] }]}>{spot.name}</Text>
+      <Text style={[styles.spotPinLabel, styles.spotPinLabelOutline, { textAlign: labelSide === 'left' ? 'right' : 'left', color: labelHaloColor, transform: [{ translateX: 0.75 }, { translateY: -0.75 }] }]}>{spot.name}</Text>
+      <Text style={[styles.spotPinLabel, styles.spotPinLabelOutline, { textAlign: labelSide === 'left' ? 'right' : 'left', color: labelHaloColor, transform: [{ translateX: -0.75 }, { translateY: 0.75 }] }]}>{spot.name}</Text>
+      <Text style={[styles.spotPinLabel, styles.spotPinLabelOutline, { textAlign: labelSide === 'left' ? 'right' : 'left', color: labelHaloColor, transform: [{ translateX: 0.75 }, { translateY: 0.75 }] }]}>{spot.name}</Text>
+      <Text numberOfLines={1} style={[styles.spotPinLabel, { color: labelColor, textAlign: labelSide === 'left' ? 'right' : 'left' }]}>{spot.name}</Text>
     </View>
   );
 
