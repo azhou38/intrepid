@@ -64,7 +64,7 @@ function SpotCard({ spot, onPress, width }: {
               <Rect x="0" y="0" width="100%" height="100%" fill={`url(#spotCardGrad-${spot.id})`} />
             </Svg>
           </View>
-          <View pointerEvents="none" style={styles.cardImageInfo}>
+          <View pointerEvents="none" style={[styles.cardImageInfo, local.imageInfo]}>
             <Text style={styles.cardName} numberOfLines={2}>{spot.name}</Text>
             <View style={local.metaRow}>
               <Clock size={11} color="rgba(255,255,255,0.9)" strokeWidth={2.5} />
@@ -86,6 +86,8 @@ function SpotCard({ spot, onPress, width }: {
 }
 
 const local = StyleSheet.create({
+  // Lifted off the card's bottom edge so the name / time / cost block isn't cramped against it.
+  imageInfo: { bottom: 16 },
   metaRow: { flexDirection: 'row', alignItems: 'center', gap: 4 },
   metaTxt: {
     fontSize: 11, fontWeight: '600', color: 'rgba(255,255,255,0.9)',
