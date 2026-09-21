@@ -165,7 +165,7 @@ function DestPin({ dest, spotCount, isVisited, isSelected, pinState }: {
         {/* Shadow on outer ring; overflow:hidden kept on inner clip so shadow isn't clipped on iOS.
             Ring color is ALWAYS ringColor (visited-derived) — selection must not tint an
             unvisited pin green, same reasoning as the stamp case above. */}
-        <View style={[pinSt.circleShadow, { borderColor: ringColor }]}>
+        <View style={[pinSt.circleShadow, { borderColor: ringColor }, isSelected && pinSt.circleSelectedGlow, isSelected && isVisited && { shadowColor: VISITED_COLOR }]}>
           <View style={pinSt.circleClip}>
             {photoUrl && (
               <PinPhoto
@@ -347,6 +347,11 @@ const pinSt = StyleSheet.create({
     alignItems: 'center', justifyContent: 'center',
     shadowColor: '#000', shadowOpacity: 0.55, shadowRadius: 16,
     shadowOffset: { width: 0, height: 4 }, elevation: 14,
+  },
+  // Selected: a white halo (green for a visited destination, set inline) in place of the dark drop shadow.
+  circleSelectedGlow: {
+    shadowColor: '#FFFFFF', shadowOpacity: 0.95, shadowRadius: 12,
+    shadowOffset: { width: 0, height: 0 },
   },
   // Inner circle: clips photo/emoji to round shape.
   circleClip: {
