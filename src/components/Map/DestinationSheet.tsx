@@ -28,7 +28,6 @@ import { Gesture, GestureDetector, ScrollView } from 'react-native-gesture-handl
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { X, Check, Calendar, MapPin, Camera, Pencil, Plus, ChevronRight, ChevronDown, Lightbulb, Map, Sun,
          Users, CloudRain, Thermometer, Trash2 } from 'lucide-react-native';
-import * as Haptics from 'expo-haptics';
 import * as ImagePicker from 'expo-image-picker';
 import { useStore } from '../../store';
 import SpotCard from './SpotCard';
@@ -1398,7 +1397,6 @@ function DestinationSheet({
   // initialSnap requests otherwise (e.g. the spot carousel's "list view" button wants 'full'), or the map is being
   // interacted with, in which case it comes in already out of the way.
   useEffect(() => {
-    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     transitionToRef.current(resolvedInitialSnap === 'full' ? 'full' : isMapInteracting?.() ? 'peek' : 'collapsed', 'mount');
   }, []);
 
@@ -1468,28 +1466,6 @@ function DestinationSheet({
     });
   };
 
-  const triggerHaptic = useCallback(() => {
-    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-  }, []);
-
-  // Fires the "hit the top" haptic the instant slideAnim actually reaches FULL_POS, rather
-  // than waiting on withTiming's completion callback — that callback only fires once the
-  // full animation duration has elapsed, which lags slightly behind the moment the value
-  // itself lands on target (the perceptible "small delay" this replaces). Watching the
-  // value directly also means this fires immediately if the user's own drag pushes the
-  // sheet all the way to the clamp (genuinely hitting the top edge), not only after a
-  // separate settle animation gets there. Guarded on the previous value so it only fires
-  // once per arrival, not on every frame the sheet happens to sit at FULL_POS. Placed after
-  // triggerHaptic's own declaration — worklets capture their closure by value at creation
-  // time, so referencing triggerHaptic here before it's assigned would bake in `undefined`.
-  useAnimatedReaction(
-    () => slideAnim.value,
-    (value, prevValue) => {
-      if (value <= FULL_POS && (prevValue === null || prevValue > FULL_POS)) {
-        runOnJS(triggerHaptic)();
-      }
-    },
-  );
 
   const callSnapToFull      = useCallback(() => snapToFullRef.current(), []);
   const callSnapToCollapsed = useCallback(() => snapToCollapsedRef.current(), []);
@@ -1578,10 +1554,6 @@ function DestinationSheet({
       // downward one that never got past the "scrolled to top" gate) shouldn't change the
       // sheet's snap state at all — leave it exactly at full.
       if (!dragEngagedSV.value) return;
-      // Haptic fires right here, at the moment of release, not during the drag itself —
-      // "the user swipes down from full-screen view" is this release, regardless of
-      // whether it ends up landing at collapsed or snapping back.
-      runOnJS(triggerHaptic)();
       // Carried past the half-screen position: straight down to the bottom view, like the Explore sheet.
       if (pos >= cy) runOnJS(callSnapToPeek)();
       else if (e.velocityY > 500 || pos > H * 0.25) runOnJS(callSnapToCollapsed)();
