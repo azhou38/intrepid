@@ -1101,7 +1101,6 @@ function SpotAbout({ spot, nearbySpots, onSelectNearby, onSeeAll }: { spot: Spot
 
       {!!spot.ticketUrl && (
         <View style={st.section}>
-          <Text style={st.sectionTitle}>TICKETS</Text>
           <Pressable style={st.ticketRow} onPress={() => Linking.openURL(spot.ticketUrl!)}>
             <ExternalLink size={16} color="#6366F1" />
             <Text style={st.ticketTxt}>Official ticket site</Text>
@@ -1311,7 +1310,7 @@ const st = StyleSheet.create({
   // About
   section: { gap: 10 },
   sectionTitle: { fontSize: 13, fontWeight: '800', color: '#9CA3AF', letterSpacing: 0.4 },
-  glanceCard: { backgroundColor: 'white', borderRadius: 16, flexDirection: 'row', borderWidth: 1, borderColor: '#F3F4F6' },
+  glanceCard: { backgroundColor: '#F9FAFB', borderRadius: 16, flexDirection: 'row', borderWidth: 1, borderColor: '#F3F4F6' },
   glanceItem: { flex: 1, alignItems: 'center', paddingVertical: 20, gap: 5 },
   glanceDivider: { width: StyleSheet.hairlineWidth, backgroundColor: '#E5E7EB', marginVertical: 14 },
   glanceVal: { fontSize: 20, fontWeight: '800', color: '#111827' },
