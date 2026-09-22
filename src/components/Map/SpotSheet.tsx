@@ -1107,7 +1107,7 @@ function SpotAbout({ spot, nearbySpots, onSelectNearby, onSeeAll }: { spot: Spot
         <View style={st.section}>
           <Pressable style={st.ticketRow} onPress={() => Linking.openURL(spot.ticketUrl!)}>
             <ExternalLink size={16} color="#6366F1" />
-            <Text style={st.ticketTxt}>Official {spot.name} tickets</Text>
+            <Text style={st.ticketTxt}>{spot.name} official tickets</Text>
           </Pressable>
         </View>
       )}
