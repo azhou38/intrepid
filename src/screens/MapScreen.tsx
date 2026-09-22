@@ -1,5 +1,5 @@
 import React, { useRef, useState, useMemo, useCallback, useEffect } from 'react';
-import { View, StyleSheet, Pressable, Text, Dimensions, Animated, Platform, TextInput, Image, Easing as RNEasing, Keyboard, ScrollView } from 'react-native';
+import { unstable_batchedUpdates, View, StyleSheet, Pressable, Text, Dimensions, Animated, Platform, TextInput, Image, Easing as RNEasing, Keyboard, ScrollView } from 'react-native';
 import Reanimated, { useSharedValue, useAnimatedStyle, useAnimatedReaction, runOnJS, withTiming, Easing } from 'react-native-reanimated';
 import Svg, { Rect, Path, Circle } from 'react-native-svg';
 import { sheetPose } from '../components/Map/sheetPose';
@@ -412,36 +412,49 @@ function FadePin({ exiting, instant, children }: { exiting: boolean; instant?: b
 // PIN_EXIT_MS (so FadePin can animate them out) before pruning. Re-added keys cancel their
 // pending removal and simply fade back in.
 function useExitingItems<T>(items: T[], keyOf: (t: T) => string): { item: T; key: string; exiting: boolean }[] {
-  const [rendered, setRendered] = useState<{ item: T; key: string; exiting: boolean }[]>(
-    () => items.map(item => ({ item, key: keyOf(item), exiting: false })),
-  );
+  type R = { item: T; key: string; exiting: boolean };
+  const [, force] = useState(0);
+  const prevRef = useRef<R[]>(items.map(item => ({ item, key: keyOf(item), exiting: false })));
   const timersRef = useRef<Map<string, ReturnType<typeof setTimeout>>>(new Map());
+
+  // Derived DURING render (not in an effect that sets state): a change to the item list used to cost a render for the
+  // change and a second one for the effect's setState, on a screen whose render is expensive. That doubling is what made
+  // pins react late on a fast zoom. The previous array is reused when nothing changed, so memoized marker lists stay put.
+  const liveKeys = new Set<string>();
+  const next: R[] = [];
+  for (const item of items) {
+    const key = keyOf(item);
+    liveKeys.add(key);
+    next.push({ item, key, exiting: false });
+  }
+  for (const r of prevRef.current) {
+    if (!liveKeys.has(r.key)) next.push({ ...r, exiting: true });
+  }
+  const prev = prevRef.current;
+  const same = prev.length === next.length && prev.every((r, i) => r.key === next[i].key && r.item === next[i].item && r.exiting === next[i].exiting);
+  if (!same) prevRef.current = next;
+  const result = prevRef.current;
+
+  // Timers (a side effect, so after commit): re-added keys cancel their removal; each exiting key is pruned once its
+  // fade has finished.
   useEffect(() => {
-    setRendered(prev => {
-      const liveKeys = new Set(items.map(keyOf));
-      const next: { item: T; key: string; exiting: boolean }[] = [];
-      for (const item of items) {
-        const key = keyOf(item);
-        const t = timersRef.current.get(key);
-        if (t) { clearTimeout(t); timersRef.current.delete(key); }
-        next.push({ item, key, exiting: false });
+    for (const r of result) {
+      if (!r.exiting) {
+        const t = timersRef.current.get(r.key);
+        if (t) { clearTimeout(t); timersRef.current.delete(r.key); }
+      } else if (!timersRef.current.has(r.key)) {
+        const key = r.key;
+        timersRef.current.set(key, setTimeout(() => {
+          timersRef.current.delete(key);
+          prevRef.current = prevRef.current.filter(c => !(c.key === key && c.exiting));
+          force(n => n + 1);
+        }, PIN_EXIT_MS + 40));
       }
-      for (const r of prev) {
-        if (liveKeys.has(r.key)) continue;
-        next.push({ ...r, exiting: true });
-        if (!timersRef.current.has(r.key)) {
-          timersRef.current.set(r.key, setTimeout(() => {
-            timersRef.current.delete(r.key);
-            setRendered(cur => cur.filter(c => c.key !== r.key));
-          }, PIN_EXIT_MS + 40));
-        }
-      }
-      return next;
-    });
-  }, [items]);
+    }
+  }, [result]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => () => { for (const t of timersRef.current.values()) clearTimeout(t); }, []);
-  return rendered;
+  return result;
 }
 
 // ─── Country Marker (photo circle — world view) ───────────────────────────────
@@ -2883,13 +2896,17 @@ const destItems = useMemo((): DestItem[] =>
     if (now - lastCameraTimeRef.current < 24) return;
     lastCameraTimeRef.current = now;
 
-    setRegion({
-      latitude:       lat,
-      longitude:      lng,
-      latitudeDelta:  latDelta,
-      longitudeDelta: lngDelta,
+    // One batched update: the region and the zoom always change together, and applying them separately renders the
+    // whole (large) screen twice per camera frame — which is what made pins react late on a fast pinch.
+    unstable_batchedUpdates(() => {
+      setRegion({
+        latitude:       lat,
+        longitude:      lng,
+        latitudeDelta:  latDelta,
+        longitudeDelta: lngDelta,
+      });
+      setCamZoom(state.properties.zoom);
     });
-    setCamZoom(state.properties.zoom);
   }, [returnPromptProgress, destReturnPromptProgress, mapGestureAtSV]);
 
   const handleMapIdle = useCallback((state: {
@@ -3004,7 +3021,8 @@ const destItems = useMemo((): DestItem[] =>
 
   // Exit-fade tracking: pills/photos dropped from the plan linger for PIN_EXIT_MS fading
   // out (see useExitingItems/FadePin) instead of vanishing on the next frame.
-  const renderedCountryPills = useExitingItems(countryPills, c => c.country);
+  const stableCountryPills = useStableList(countryPills, c => `${c.countryCode}:${c.visitedCount}`);
+  const renderedCountryPills = useExitingItems(stableCountryPills, c => c.country);
 
   const countryPillMarkers = useMemo(() => renderedCountryPills.map(({ item: cluster, exiting }) => {
     const isSelectedPill = cluster.countryCode === selectedCountry?.countryCode;
@@ -3100,11 +3118,16 @@ const destItems = useMemo((): DestItem[] =>
   // any other destination — rather than the old blanket "selected ⇒ never a photo pin"
   // exclusion, which left it stuck as a plain stamp dot at every zoom past that range (there
   // was no path back to a photo pin once zoomedIntoDestIds no longer covered it).
+  // The plan is recomputed on every camera frame (it is a function of continuous zoom) but its RESULT only changes at
+  // threshold crossings. Downstream lists are keyed on this stable copy, so a frame that changes nothing costs nothing
+  // beyond the plan itself — no new arrays, no marker-list rebuild, no extra renders — and a frame that does change
+  // something reacts immediately instead of queueing behind a pile of no-op re-renders.
+  const stablePhotoIds = useStableSet(destPinPlan.photoIds);
   const promotedDests = useMemo(() => destItems
-    .filter(item => !hiddenDestIds.has(item.dest.id) && destPinPlan.photoIds.has(item.dest.id))
+    .filter(item => !hiddenDestIds.has(item.dest.id) && stablePhotoIds.has(item.dest.id))
     .map(item => item.dest)
     .sort((a, b) => b.rank - a.rank), // rank=1 renders last (on top)
-  [destItems, destPinPlan, hiddenDestIds]);
+  [destItems, stablePhotoIds, hiddenDestIds]);
   const renderedPhotoDests = useExitingItems(promotedDests, d => d.id);
 
   const destPhotoMarkers = useMemo(() => renderedPhotoDests
