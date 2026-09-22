@@ -926,12 +926,12 @@ function SpotSheet({
 
                   {/* ── ABOUT PANEL ────────────────────────────────────── */}
                   <View style={st.slidePanel}>
-                    <SpotAbout spot={activeSpot} nearbySpots={spots.filter(s => s.id !== activeSpot.id)} onSelectNearby={handleSelectNearby} onSeeAll={onGoToList} />
+                    <SpotAbout spot={activeSpot} nearbySpots={spots.filter(s => s.id !== activeSpot.id)} onSelectNearby={handleSelectNearby} onExplore={() => snapToCollapsedRef.current()} />
                   </View>
                 </Reanimated.View>
               </View>
             ) : (
-              <SpotAbout spot={activeSpot} nearbySpots={spots.filter(s => s.id !== activeSpot.id)} onSelectNearby={handleSelectNearby} onSeeAll={onGoToList} />
+              <SpotAbout spot={activeSpot} nearbySpots={spots.filter(s => s.id !== activeSpot.id)} onSelectNearby={handleSelectNearby} onExplore={() => snapToCollapsedRef.current()} />
             )}
           </View>
         </GHScrollView>
@@ -1049,7 +1049,7 @@ function SpotSheet({
 }
 
 // ── About panel (shared between visited/non-visited) ──────────────────────────
-function SpotAbout({ spot, nearbySpots, onSelectNearby, onSeeAll }: { spot: Spot; nearbySpots: Spot[]; onSelectNearby: (spot: Spot) => void; onSeeAll?: () => void }) {
+function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore }: { spot: Spot; nearbySpots: Spot[]; onSelectNearby: (spot: Spot) => void; onExplore?: () => void }) {
   const [hoursOpen, setHoursOpen] = useState(false);
   const today = new Date().getDay();
 
@@ -1112,15 +1112,16 @@ function SpotAbout({ spot, nearbySpots, onSelectNearby, onSeeAll }: { spot: Spot
         </View>
       )}
 
-      {/* Explore nearby — same design as the destination sheet's "Top Spots" row (square SpotCards,
-          same width, same horizontal scroll): the destination's other spots, one tap away. */}
+      {/* Nearby — same design as the destination sheet's "Top Spots" row (square SpotCards,
+          same width, same horizontal scroll): the destination's other spots, one tap away.
+          "Explore" collapses this sheet to half-screen, back to the full carousel of spots. */}
       {nearbySpots.length > 0 && (
         <View style={st.section}>
           <View style={st.secHeadRow}>
-            <Text style={st.sectionTitle}>EXPLORE NEARBY</Text>
-            {!!onSeeAll && (
-              <Pressable style={st.seeAllRow} onPress={onSeeAll} hitSlop={8}>
-                <Text style={st.seeAllTxt}>See all</Text>
+            <Text style={st.sectionTitle}>NEARBY</Text>
+            {!!onExplore && (
+              <Pressable style={st.seeAllRow} onPress={onExplore} hitSlop={8}>
+                <Text style={st.seeAllTxt}>Explore</Text>
                 <ChevronRight size={15} color="#16A34A" />
               </Pressable>
             )}
