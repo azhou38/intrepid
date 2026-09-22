@@ -1065,7 +1065,7 @@ function SpotAbout({ spot, nearbySpots, onSelectNearby, onSeeAll }: { spot: Spot
           <View style={st.glanceDivider} />
           <View style={st.glanceItem}>
             <DollarSign size={20} color="#16A34A" />
-            <Text style={[st.glanceVal, { fontSize: 14 }]} numberOfLines={1}>{formatSpotCost(spot)}</Text>
+            <Text style={st.glanceVal} numberOfLines={1}>{formatSpotCost(spot)}</Text>
             <Text style={st.glanceLbl}>Cost</Text>
           </View>
         </View>
