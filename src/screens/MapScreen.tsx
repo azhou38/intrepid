@@ -3042,10 +3042,13 @@ const destItems = useMemo((): DestItem[] =>
       <MapboxGL.MarkerView
         key={cluster.country}
         coordinate={[cluster.longitude, cluster.latitude]}
-        // The selected country's pill must not be hidden by Mapbox's marker-collision pass (the
-        // default). Others keep it: their overlaps are resolved by the plan, and this way a pill
-        // the selected one sits on can still be dropped natively as a backstop.
-        allowOverlap={isSelectedPill}
+        // Unconditional: the JS-side plan (countryPills, above) is the sole authority on which pills are shown and
+        // already resolves every collision at the TRUE on-screen scale before a pill is ever placed. Leaving Mapbox's
+        // own native collision pass on let it make a SECOND, uncoordinated overlap decision on the same markers —
+        // whichever system updated first for a given camera frame won, for exactly one frame, which is what caused
+        // pills to flash/disappear and reappear instead of cross-fading (see FadePin) when several pills' visibility
+        // changed together (e.g. Belgium/Denmark/Czech Republic at once while zooming).
+        allowOverlap
       >
         <FadePin exiting={exiting}>
           {/* The selected country's pill is inert: it persists while zoomed out, so a pinch or pan
@@ -3140,13 +3143,13 @@ const destItems = useMemo((): DestItem[] =>
         <MapboxGL.MarkerView
           key={dest.id}
           coordinate={[dest.coordinates.longitude, dest.coordinates.latitude]}
-          // Only the SELECTED destination's pin opts out of Mapbox's marker-collision pass (the
-          // default, allowOverlap={false}, hides whichever marker collides), so it can't drop out
-          // and pop back while zooming out. Every other photo pin MUST keep that pass: destPinPlan
-          // resolves collisions on its own planning scale, which runs wider than the real screen
-          // scale, so it lets through overlaps that native collision was quietly cleaning up —
-          // turning it off for all of them filled the map with overlapping pins.
-          allowOverlap={isSelectedDest}
+          // Unconditional (previously only the selected destination opted out): destPinPlan is the sole authority on
+          // which destinations get a photo pin, and now resolves every collision at the TRUE on-screen scale (see its
+          // own comment) before ever promoting one — so Mapbox's native collision pass was making a SECOND,
+          // uncoordinated overlap decision on the same markers. Whichever system updated first for a given camera
+          // frame won, for exactly one frame: that's what flashed a whole screen's worth of pins to dots and back
+          // instead of the intended cross-fade (see FadePin) when the plan's own result changed.
+          allowOverlap
         >
           <FadePin exiting={exiting}>
             {/* The selected destination's own pin persists while zooming out. Tapping it only re-frames the camera on the
