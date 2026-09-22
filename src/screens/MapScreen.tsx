@@ -240,8 +240,6 @@ function SpotMarker({ spot, isVisited, isSelected, exiting, isSatellite, labelSi
     });
   }, [spot.id]);
 
-  const [labelW, setLabelW] = useState(0);
-
   // Teardrop geometry: the tail's two edges are the straight TANGENT lines from the tip to the
   // bubble's circle, so each edge meets the circle smoothly instead of kinking where a small
   // triangle used to butt against it. For a circle of radius R and a tip a distance d below
@@ -257,14 +255,12 @@ function SpotMarker({ spot, isVisited, isSelected, exiting, isSatellite, labelSi
   // the pin still reads clearly against the map rather than blending into it.
   const ringColor = isVisited ? VISITED_COLOR : 'white';
   const bubbleSize = isSelected ? SPOT_PIN_SIZE_SELECTED : SPOT_PIN_SIZE;
-  // The pin's tip must land on the coordinate whichever side the label is on, so the anchor is the
-  // pin's centre measured from the marker's left edge: past the label when it's on the left, at the
-  // start when it's on the right, and dead centre when there's no label (or it isn't measured yet).
-  const labelShown = labelSide !== 'none' && labelW > 0;
-  const totalW = labelShown ? labelW + SPOT_LABEL_GAP + bubbleSize : bubbleSize;
-  const anchorX = !labelShown ? 0.5
-    : labelSide === 'left' ? (labelW + SPOT_LABEL_GAP + bubbleSize / 2) / totalW
-    : (bubbleSize / 2) / totalW;
+  // The pin's tip must land on the coordinate whichever side the label is on — and while the label appears, flips
+  // side or is dropped during a zoom. So the marker is JUST the pin (a constant size, constant anchor), and the label is
+  // positioned absolutely beside it, outside the marker's measured box. Previously the label was part of the marker's
+  // row and the anchor was computed from its measured width; when the label changed, the native marker kept its old
+  // (wider) box for a frame while the anchor jumped to the pin-only centre, drawing a phantom pin beside the real one.
+  const LABEL_BOX_W = 200;
   // Satellite imagery is a busy, mid-tone photo — the standard basemap's dark-text/white-halo
   // label reads poorly on it, so this flips to white text with a black halo instead. Same
   // reasoning as the destination pill/border colors elsewhere in this file also branching on
@@ -273,22 +269,27 @@ function SpotMarker({ spot, isVisited, isSelected, exiting, isSatellite, labelSi
   const labelHaloColor = isSatellite ? 'black' : 'white';
   const labelEl = labelSide === 'none' ? null : (
     <View
-      style={styles.spotPinLabelWrap}
-      onLayout={e => setLabelW(e.nativeEvent.layout.width)}
+      style={[
+        styles.spotPinLabelWrap,
+        { width: LABEL_BOX_W, top: bubbleSize / 2 - 9 },
+        labelSide === 'left'
+          ? { right: bubbleSize + SPOT_LABEL_GAP, alignItems: 'flex-end' }
+          : { left: bubbleSize + SPOT_LABEL_GAP, alignItems: 'flex-start' },
+      ]}
       pointerEvents="none"
     >
-      <Text style={[styles.spotPinLabel, styles.spotPinLabelOutline, { color: labelHaloColor, transform: [{ translateX: -0.75 }, { translateY: -0.75 }] }]}>{spot.name}</Text>
-      <Text style={[styles.spotPinLabel, styles.spotPinLabelOutline, { color: labelHaloColor, transform: [{ translateX: 0.75 }, { translateY: -0.75 }] }]}>{spot.name}</Text>
-      <Text style={[styles.spotPinLabel, styles.spotPinLabelOutline, { color: labelHaloColor, transform: [{ translateX: -0.75 }, { translateY: 0.75 }] }]}>{spot.name}</Text>
-      <Text style={[styles.spotPinLabel, styles.spotPinLabelOutline, { color: labelHaloColor, transform: [{ translateX: 0.75 }, { translateY: 0.75 }] }]}>{spot.name}</Text>
-      <Text style={[styles.spotPinLabel, { color: labelColor }]}>{spot.name}</Text>
+      <Text style={[styles.spotPinLabel, styles.spotPinLabelOutline, { textAlign: labelSide === 'left' ? 'right' : 'left', color: labelHaloColor, transform: [{ translateX: -0.75 }, { translateY: -0.75 }] }]}>{spot.name}</Text>
+      <Text style={[styles.spotPinLabel, styles.spotPinLabelOutline, { textAlign: labelSide === 'left' ? 'right' : 'left', color: labelHaloColor, transform: [{ translateX: 0.75 }, { translateY: -0.75 }] }]}>{spot.name}</Text>
+      <Text style={[styles.spotPinLabel, styles.spotPinLabelOutline, { textAlign: labelSide === 'left' ? 'right' : 'left', color: labelHaloColor, transform: [{ translateX: -0.75 }, { translateY: 0.75 }] }]}>{spot.name}</Text>
+      <Text style={[styles.spotPinLabel, styles.spotPinLabelOutline, { textAlign: labelSide === 'left' ? 'right' : 'left', color: labelHaloColor, transform: [{ translateX: 0.75 }, { translateY: 0.75 }] }]}>{spot.name}</Text>
+      <Text numberOfLines={1} style={[styles.spotPinLabel, { color: labelColor, textAlign: labelSide === 'left' ? 'right' : 'left' }]}>{spot.name}</Text>
     </View>
   );
 
   return (
     <MapboxGL.MarkerView
       coordinate={[spot.coordinates.longitude, spot.coordinates.latitude]}
-      anchor={{ x: anchorX, y: 1 }}
+      anchor={{ x: 0.5, y: 1 }}
       // MarkerView defaults to allowOverlap={false}: Mapbox then HIDES any marker that collides
       // with another one on screen. Zooming out brings pills/photos/other spots onto the selected
       // spot, and it was being dropped by that collision pass — the "sometimes disappears while
@@ -298,7 +299,6 @@ function SpotMarker({ spot, isVisited, isSelected, exiting, isSatellite, labelSi
       <FadePin exiting={exiting} instant={instant}>
         <Pressable disabled={exiting} onPress={onPress} hitSlop={6}>
           <View style={styles.spotMarkerRow}>
-            {labelSide === 'left' && labelEl}
             <View style={styles.spotPinWrap}>
               <Svg
                 width={pinR * 2} height={pinR * 2 + tailL}
@@ -323,7 +323,7 @@ function SpotMarker({ spot, isVisited, isSelected, exiting, isSatellite, labelSi
               </View>
               <View style={{ height: tailL }} />
             </View>
-            {labelSide === 'right' && labelEl}
+            {labelEl}
           </View>
         </Pressable>
       </FadePin>
@@ -1580,6 +1580,24 @@ const destItems = useMemo((): DestItem[] =>
       : Math.min(5, Math.floor((camZoom - stampFadeBaseZoom) / STAMP_TIER_STEP) + 1)
   ), [camZoom, stampFadeBaseZoom]);
 
+  // A destination the camera has just zoomed OUT of (it was hidden — the camera was inside it at spot zoom — and is now
+  // planned as a photo pin) must not show its stamp dot until that photo pin is actually mounted: the dot is a map
+  // layer that appears at once, while the photo pin is a marker that mounts a render later and fades in, so the dot
+  // used to show alone first. Tracked in render (not an effect) so there is no frame in between; cleared by an effect
+  // once the pin is mounted, or immediately if it is no longer planned as a photo.
+  const prevHiddenDestIdsRef = useRef(hiddenDestIds);
+  const pendingRevealRef = useRef<Set<string>>(new Set());
+  const [revealTick, setRevealTick] = useState(0);
+  if (prevHiddenDestIdsRef.current !== hiddenDestIds) {
+    for (const id of prevHiddenDestIdsRef.current) {
+      if (!hiddenDestIds.has(id) && destPinPlan.photoIds.has(id)) pendingRevealRef.current.add(id);
+    }
+    prevHiddenDestIdsRef.current = hiddenDestIds;
+  }
+  for (const id of pendingRevealRef.current) {
+    if (!destPinPlan.photoIds.has(id) || hiddenDestIds.has(id)) pendingRevealRef.current.delete(id);
+  }
+
   const stampGeoJSON = useMemo(() => {
     const selCountryCode = selectedCountry?.countryCode ?? selectedDest?.countryCode;
 
@@ -1589,6 +1607,7 @@ const destItems = useMemo((): DestItem[] =>
       // Camera is inside this destination at spot zoom → no marker at all (its spot pins
       // represent it; see zoomedIntoDestIds).
       if (hiddenDestIds.has(dest.id)) continue;
+      if (pendingRevealRef.current.has(dest.id)) continue;   // its photo pin is about to appear — no dot first
       const tier = dest.countryCode === selCountryCode
         ? 1
         : Math.max(1, dest.rank - (saved ? 1 : 0));
@@ -1609,7 +1628,7 @@ const destItems = useMemo((): DestItem[] =>
       });
     }
     return { type: 'FeatureCollection' as const, features };
-  }, [savedDestinations, selectedCountry, selectedDest, activeStampTier, hiddenDestIds]);
+  }, [savedDestinations, selectedCountry, selectedDest, activeStampTier, hiddenDestIds, revealTick, destPinPlan]);
 
   // Discrete tier activation + native style TRANSITION (not a continuous zoom
   // interpolation): the opacity expression only ever targets exactly 0 or 1 per dot, and
@@ -3100,6 +3119,13 @@ const destItems = useMemo((): DestItem[] =>
     .sort((a, b) => b.rank - a.rank), // rank=1 renders last (on top)
   [destItems, destPinPlan, hiddenDestIds]);
   const renderedPhotoDests = useExitingItems(promotedDests, d => d.id);
+  useEffect(() => {
+    let cleared = false;
+    for (const id of pendingRevealRef.current) {
+      if (renderedPhotoDests.some(r => r.item.id === id && !r.exiting)) { pendingRevealRef.current.delete(id); cleared = true; }
+    }
+    if (cleared) setRevealTick(t => t + 1);
+  }, [renderedPhotoDests]);
 
   const destPhotoMarkers = useMemo(() => renderedPhotoDests
     .map(({ item: dest, exiting }) => {
@@ -4013,7 +4039,7 @@ const styles = StyleSheet.create({
   // Row holding [label, pin] as normal flex siblings inside SpotMarker's one MarkerView —
   // see SpotMarker's own comment for why this replaced two earlier, more fragile attempts.
   spotMarkerRow: { flexDirection: 'row', alignItems: 'center', columnGap: SPOT_LABEL_GAP },
-  spotPinLabelWrap: {},
+  spotPinLabelWrap: { position: 'absolute' },
   spotPinLabel: {
     fontSize: 12, fontWeight: '700', color: '#111827',
   },
