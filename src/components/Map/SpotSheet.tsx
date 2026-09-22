@@ -19,7 +19,7 @@ import Reanimated, {
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { SharedValue } from 'react-native-reanimated';
 import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'react-native-svg';
-import { Check, Star, Clock, MapPin, Pencil, ChevronUp, ChevronDown, LayoutGrid, Plus,
+import { Check, Star, Clock, MapPin, Pencil, ChevronUp, ChevronDown, ChevronRight, LayoutGrid, Plus,
          DollarSign, ExternalLink } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
 import * as ImagePicker from 'expo-image-picker';
@@ -30,6 +30,7 @@ import { DAY_NAMES, hoursForDay, formatSpotCost, formatVisitTime } from '../../d
 import { photoCache, thumbCache, getOrFetchWikiThumbnail } from '../../utils/photoCache';
 import CircleFlag from '../CircleFlag';
 import FadeInImage from './FadeInImage';
+import SpotCard from './SpotCard';
 import { sheetPose } from './sheetPose';
 import EntityPhoto from './EntityPhoto';
 import {
@@ -77,6 +78,11 @@ const CARD_W    = W - 64;
 const CARD_GAP  = 12;
 const CARD_SNAP = CARD_W + CARD_GAP;
 const SIDE_PAD  = (W - CARD_W) / 2;
+
+// "Explore nearby" grid card — same square SpotCard, same width formula, as the destination
+// sheet's "Top Spots" row (see DestinationSheet's own GRID_CARD_W), so the two carousels match exactly.
+const NEARBY_GRID_GAP = 14;
+const NEARBY_CARD_W = (W - 32 - NEARBY_GRID_GAP) / 2;
 
 // ── Star rating (tappable) ────────────────────────────────────────────────────
 function StarRating({ value, onChange, size = 30 }: {
@@ -749,6 +755,17 @@ function SpotSheet({
     onActiveSpotChange?.(spots[idx]);
   };
 
+  // "Explore nearby" (SpotAbout, below) taps a sibling spot in this same destination — same
+  // "jump the carousel to a given real index" mechanics as a direct tap on a carousel card
+  // (see the CarouselCard onPress below), just keyed by id instead of by extendedSpots index.
+  const handleSelectNearby = useCallback((spot: Spot) => {
+    const idx = spots.findIndex(s => s.id === spot.id);
+    if (idx === -1 || idx === activeIndex) return;
+    setActiveIndex(idx);
+    carouselRef.current?.scrollTo({ x: (idx + loopOffset) * CARD_SNAP, animated: true });
+    onActiveSpotChange?.(spots[idx]);
+  }, [spots, activeIndex, loopOffset, onActiveSpotChange]);
+
   const heroTopRowTop = insets.top + 14;
   const visitDate = savedSpot?.visitDate ?? '';
   const vd = parseDateStr(visitDate);
@@ -909,12 +926,12 @@ function SpotSheet({
 
                   {/* ── ABOUT PANEL ────────────────────────────────────── */}
                   <View style={st.slidePanel}>
-                    <SpotAbout spot={activeSpot} />
+                    <SpotAbout spot={activeSpot} nearbySpots={spots.filter(s => s.id !== activeSpot.id)} onSelectNearby={handleSelectNearby} onSeeAll={onGoToList} />
                   </View>
                 </Reanimated.View>
               </View>
             ) : (
-              <SpotAbout spot={activeSpot} />
+              <SpotAbout spot={activeSpot} nearbySpots={spots.filter(s => s.id !== activeSpot.id)} onSelectNearby={handleSelectNearby} onSeeAll={onGoToList} />
             )}
           </View>
         </GHScrollView>
@@ -1032,14 +1049,13 @@ function SpotSheet({
 }
 
 // ── About panel (shared between visited/non-visited) ──────────────────────────
-function SpotAbout({ spot }: { spot: Spot }) {
+function SpotAbout({ spot, nearbySpots, onSelectNearby, onSeeAll }: { spot: Spot; nearbySpots: Spot[]; onSelectNearby: (spot: Spot) => void; onSeeAll?: () => void }) {
   const [hoursOpen, setHoursOpen] = useState(false);
   const today = new Date().getDay();
 
   return (
     <>
       <View style={st.section}>
-        <Text style={st.sectionTitle}>AT A GLANCE</Text>
         <View style={st.glanceCard}>
           <View style={st.glanceItem}>
             <Clock size={20} color="#6366F1" />
@@ -1055,30 +1071,32 @@ function SpotAbout({ spot }: { spot: Spot }) {
         </View>
       </View>
 
-      {/* Collapsed: just today's hours, since that's what a visitor actually needs right now.
-          Expanding reveals the full week, with today's row picked out. */}
+      {/* One connected card: the row and (when open) the full week are the same card, joined by a
+          hairline divider, rather than two separate floating cards with a gap between them. Collapsed
+          shows just today's hours, since that's what a visitor actually needs right now; expanding
+          reveals the full week, with today's row picked out. */}
       <View style={st.section}>
-        <Text style={st.sectionTitle}>OPENING HOURS</Text>
-        <Pressable style={st.hoursRow} onPress={() => setHoursOpen(o => !o)}>
-          <Clock size={16} color="#16A34A" />
-          <Text style={st.hoursTxt}>Today: {hoursForDay(spot, today)}</Text>
-          <ChevronDown
-            size={16} color="#9CA3AF"
-            style={{ marginLeft: 'auto', transform: [{ rotate: hoursOpen ? '180deg' : '0deg' }] }}
-          />
-        </Pressable>
-        {hoursOpen && (
-          <View style={st.hoursWeekWrap}>
-            {DAY_NAMES.map((day, i) => (
-              <View key={day} style={[st.hoursWeekRow, i > 0 && st.hoursWeekRowBorder]}>
-                <Text style={[st.hoursWeekDay, i === today && st.hoursWeekDayToday]}>{day}</Text>
-                <Text style={[st.hoursWeekVal, i === today && st.hoursWeekDayToday]}>
-                  {hoursForDay(spot, i)}
-                </Text>
-              </View>
-            ))}
-          </View>
-        )}
+        <View style={st.hoursCard}>
+          <Pressable style={st.hoursRow} onPress={() => setHoursOpen(o => !o)}>
+            <Clock size={16} color="#16A34A" />
+            <Text style={st.hoursTxt}>Today: {hoursForDay(spot, today)}</Text>
+            {hoursOpen
+              ? <ChevronUp size={16} color="#9CA3AF" style={{ marginLeft: 'auto' }} />
+              : <ChevronDown size={16} color="#9CA3AF" style={{ marginLeft: 'auto' }} />}
+          </Pressable>
+          {hoursOpen && (
+            <View style={st.hoursWeekWrap}>
+              {DAY_NAMES.map((day, i) => (
+                <View key={day} style={[st.hoursWeekRow, i > 0 && st.hoursWeekRowBorder]}>
+                  <Text style={[st.hoursWeekDay, i === today && st.hoursWeekDayToday]}>{day}</Text>
+                  <Text style={[st.hoursWeekVal, i === today && st.hoursWeekDayToday]}>
+                    {hoursForDay(spot, i)}
+                  </Text>
+                </View>
+              ))}
+            </View>
+          )}
+        </View>
       </View>
 
       {!!spot.ticketUrl && (
@@ -1088,6 +1106,27 @@ function SpotAbout({ spot }: { spot: Spot }) {
             <ExternalLink size={16} color="#6366F1" />
             <Text style={st.ticketTxt}>Official ticket site</Text>
           </Pressable>
+        </View>
+      )}
+
+      {/* Explore nearby — same design as the destination sheet's "Top Spots" row (square SpotCards,
+          same width, same horizontal scroll): the destination's other spots, one tap away. */}
+      {nearbySpots.length > 0 && (
+        <View style={st.section}>
+          <View style={st.secHeadRow}>
+            <Text style={st.sectionTitle}>EXPLORE NEARBY</Text>
+            {!!onSeeAll && (
+              <Pressable style={st.seeAllRow} onPress={onSeeAll} hitSlop={8}>
+                <Text style={st.seeAllTxt}>See all</Text>
+                <ChevronRight size={15} color="#16A34A" />
+              </Pressable>
+            )}
+          </View>
+          <ScrollView horizontal showsHorizontalScrollIndicator={false} style={st.hlScroll} contentContainerStyle={st.hlRow}>
+            {nearbySpots.map(s => (
+              <SpotCard key={s.id} spot={s} width={NEARBY_CARD_W} onPress={() => onSelectNearby(s)} />
+            ))}
+          </ScrollView>
         </View>
       )}
     </>
@@ -1277,11 +1316,13 @@ const st = StyleSheet.create({
   glanceDivider: { width: StyleSheet.hairlineWidth, backgroundColor: '#E5E7EB', marginVertical: 14 },
   glanceVal: { fontSize: 20, fontWeight: '800', color: '#111827' },
   glanceLbl: { fontSize: 11, color: '#9CA3AF', fontWeight: '500' },
-  hoursRow: { flexDirection: 'row', alignItems: 'center', gap: 10, backgroundColor: 'white',
-              borderRadius: 16, padding: 16, borderWidth: 1, borderColor: '#F3F4F6' },
+  // One connected card holding both the row and (when open) the week list — see SpotAbout's own
+  // comment. The card itself carries the background/radius/border; the row and the list are plain
+  // children of it, joined by hoursWeekWrap's top hairline instead of each having its own floating card.
+  hoursCard: { backgroundColor: 'white', borderRadius: 16, overflow: 'hidden', borderWidth: 1, borderColor: '#F3F4F6' },
+  hoursRow: { flexDirection: 'row', alignItems: 'center', gap: 10, padding: 16 },
   hoursTxt: { fontSize: 15, fontWeight: '600', color: '#374151' },
-  hoursWeekWrap:    { backgroundColor: 'white', borderRadius: 16, marginTop: 8,
-                      borderWidth: 1, borderColor: '#F3F4F6', overflow: 'hidden' },
+  hoursWeekWrap:    { borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: '#F3F4F6' },
   hoursWeekRow:     { flexDirection: 'row', justifyContent: 'space-between',
                       paddingHorizontal: 16, paddingVertical: 11 },
   hoursWeekRowBorder: { borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: '#F3F4F6' },
@@ -1291,6 +1332,14 @@ const st = StyleSheet.create({
   ticketRow: { flexDirection: 'row', alignItems: 'center', gap: 10, backgroundColor: 'white',
                borderRadius: 16, padding: 16, borderWidth: 1, borderColor: '#F3F4F6' },
   ticketTxt: { fontSize: 15, fontWeight: '600', color: '#6366F1' },
+
+  // "Explore nearby" — same header + horizontal-scroll pattern as the destination sheet's own
+  // "Top Spots" row (see DestinationSheet's plainSectionHeader/seeAllRow/hlScroll/hlRow).
+  secHeadRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
+  seeAllRow:  { flexDirection: 'row', alignItems: 'center', gap: 1 },
+  seeAllTxt:  { fontSize: 14, fontWeight: '600', color: '#16A34A' },
+  hlScroll:   { marginHorizontal: -12, marginTop: -12, marginBottom: -8 },
+  hlRow:      { gap: 14, paddingHorizontal: 12, paddingTop: 12, paddingBottom: 12 },
 });
 
 // Memoized: the map screen re-renders continuously while the camera moves, and a re-render of the sheet is a React
