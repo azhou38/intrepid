@@ -112,6 +112,12 @@ export interface PhotoEntry {
   uri: string;
   width: number;
   height: number;
+  // The media library's own stable ID for this asset (expo-image-picker's ImagePickerAsset.assetId)
+  // — used to detect the same photo being picked again, since `uri` alone isn't reliable for
+  // that (the picker can hand back a fresh temp-file copy of the same underlying photo on a
+  // later pick, e.g. on iOS). Absent when the OS didn't provide one (e.g. limited library
+  // access, or an Android file picked outside the media library) — those can't be deduped.
+  assetId?: string;
   // When a photo originates from a spot, it's tagged so the destination collage
   // can show which spot it came from. Absent for photos added at the destination level.
   spotId?: string;

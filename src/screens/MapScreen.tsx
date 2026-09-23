@@ -574,6 +574,21 @@ const COUNTRY_GROUPS: CountryGroup[] = (() => {
     };
   });
 })();
+// How far apart (in longitude) a country's OWN destinations in this dataset actually spread —
+// distinct from BOUNDS' full political extent (see getCountryPillCutoffLngDelta's own
+// comment for why the two can disagree badly). Built once alongside COUNTRY_GROUPS, from the
+// same per-destination pass.
+const DEST_LNG_SPAN_BY_COUNTRY: Record<string, number> = (() => {
+  const byCountry = new Map<string, number[]>();
+  for (const d of DESTINATIONS) {
+    const arr = byCountry.get(d.countryCode) ?? [];
+    arr.push(d.coordinates.longitude);
+    byCountry.set(d.countryCode, arr);
+  }
+  const out: Record<string, number> = {};
+  for (const [code, lngs] of byCountry) out[code] = Math.max(...lngs) - Math.min(...lngs);
+  return out;
+})();
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 const { width: SCREEN_W_GLOBAL, height: H } = Dimensions.get('window');
@@ -617,6 +632,24 @@ const WORLD_VIEW_LATDELTA = 50;
 // where the globe's edges nearly touch the screen sides. Previously these animations used
 // 120+, over-zooming out well past the app's own opening view.
 const WORLD_HOME_LATDELTA = 90;
+// The longitude span these two thresholds are built from — the SMALLER of the country's full
+// political bounds (BOUNDS, used elsewhere as-is for fitCountryDefaultView's "show the whole
+// country outline" camera fit, which should stay generous) and how far its own DESTINATIONS in
+// this dataset actually spread. The two can disagree badly for a country whose populated/
+// touristic area is a small corner of its full territory — Norway's political bounds reach the
+// Russian border (lngSpan ~26.6°) even though its only destinations here (Bergen, the fjords)
+// sit in a narrow southwest strip. That inflated a threshold meant to answer "how zoomed out do
+// you need to be before Norway's own pill/stamps are relevant" far past where the pill actually
+// had any chance: by the time the camera was wide enough to satisfy it, a higher-priority
+// neighbor (Iceland, closer to the camera's world-zoom scale) was still in view and always won
+// the pill's collision check — Norway's pill could never win a slot at ANY zoom, not just a
+// suboptimal one. Falls back to the raw political span for a country with no matching
+// DEST_LNG_SPAN_BY_COUNTRY entry (shouldn't happen — every COUNTRY_GROUPS entry has ≥1
+// destination — but keeps this total either way).
+function cappedLngSpan(countryCode: string, politicalLngSpan: number): number {
+  const destSpan = DEST_LNG_SPAN_BY_COUNTRY[countryCode];
+  return destSpan != null ? Math.min(politicalLngSpan, destSpan) : politicalLngSpan;
+}
 // Per-country stamp-visibility threshold — replaces the single global WORLD_VIEW_LATDELTA
 // cutoff whenever a country/destination is selected, so a geographically wide country
 // (Australia, Canada, Russia...) doesn't have its stamps blanked out just because its own
@@ -628,7 +661,7 @@ const WORLD_HOME_LATDELTA = 90;
 function getCountryStampThreshold(countryCode: string): number {
   const bounds = getCountryBounds(countryCode);
   if (!bounds) return WORLD_VIEW_LATDELTA;
-  const lngSpan = bounds.ne.longitude - bounds.sw.longitude;
+  const lngSpan = cappedLngSpan(countryCode, bounds.ne.longitude - bounds.sw.longitude);
   return panInvariantLatDelta(lngSpan * 1.35) * 1.25;
 }
 // A country's pill disappears once the camera is zoomed in to (or past) that country's own
@@ -642,7 +675,8 @@ function getCountryStampThreshold(countryCode: string): number {
 function getCountryPillCutoffLngDelta(countryCode: string): number {
   const bounds = getCountryBounds(countryCode);
   if (!bounds) return 0; // unknown bounds → never cut off
-  return (bounds.ne.longitude - bounds.sw.longitude) * 1.35 * 1.1;
+  const lngSpan = cappedLngSpan(countryCode, bounds.ne.longitude - bounds.sw.longitude);
+  return lngSpan * 1.35 * 1.1;
 }
 
 type DestItem = { type: 'pin'; dest: Destination };
@@ -1690,13 +1724,43 @@ const destItems = useMemo((): DestItem[] =>
   // Discrete tier activation + native style TRANSITION (not a continuous zoom
   // interpolation): the opacity expression only ever targets exactly 0 or 1 per dot, and
   // the 300ms circleOpacityTransition on the layer cross-fades a tier's dots whenever it
-  // flips on or off. A continuous zoom-interpolated ramp was tried first, but the camera
+  // flips on or off. A continuous zoom-interpolated RAMP was tried first, but the camera
   // can settle anywhere inside a ramp, leaving dots stuck half-faded at rest — with
   // discrete targets every dot is always either fully solid or fully hidden once the
   // transition finishes, while zooming still reads as a staggered, gradual reveal.
-  const stampOpacityExpr = useMemo(() =>
-    ['case', ['<=', ['get', 'tier'], activeStampTier], 1, 0] as any,
-  [activeStampTier]);
+  //
+  // The THRESHOLD itself is evaluated against ['zoom'] — Mapbox's own native camera
+  // zoom, re-evaluated every render frame by the native layer — rather than against
+  // activeStampTier (a plain JS number re-derived from React state that only updates on
+  // the throttled camera-changed callback, one React render behind the actual gesture).
+  // That JS round-trip is exactly what made a fast pinch look laggier than Google Maps'
+  // own icons, which fade purely off the native camera with no app-thread involvement at
+  // all: this expression reproduces the same effect while keeping the crossfade itself at
+  // its existing 300ms (circleOpacityTransition, unchanged) — only the trigger moment gets
+  // faster, not the fade. activeStampTier is still used elsewhere (stampGeoJSON's own
+  // culling of which features are even mounted, a coarser, less latency-sensitive decision
+  // that still needs a real JS list to hand Mapbox).
+  //
+  // ['zoom'] can ONLY appear as the direct input to a top-level 'step'/'interpolate'
+  // expression in the Mapbox style spec — nesting it inside a 'case'/comparison (as a first
+  // attempt at this did) is an invalid expression, which silently made every dot transparent
+  // instead of erroring. 'step' with one fixed zoom breakpoint per tier (the tier count is
+  // capped at 5 — see activeStampTier's own Math.min) reproduces the same per-feature,
+  // zoom-dependent threshold in the one form the spec actually allows: at each breakpoint,
+  // the output is a 'case' over ['get','tier'] matching exactly what activeStampTier's own
+  // JS formula would have computed for a camera sitting at that breakpoint.
+  const stampOpacityExpr = useMemo(() => {
+    const tierAtOrBelow = (n: number) => ['case', ['<=', ['get', 'tier'], n], 1, 0] as any;
+    return [
+      'step', ['zoom'],
+      0,
+      stampFadeBaseZoom,                        tierAtOrBelow(1),
+      stampFadeBaseZoom + STAMP_TIER_STEP,      tierAtOrBelow(2),
+      stampFadeBaseZoom + STAMP_TIER_STEP * 2,  tierAtOrBelow(3),
+      stampFadeBaseZoom + STAMP_TIER_STEP * 3,  tierAtOrBelow(4),
+      stampFadeBaseZoom + STAMP_TIER_STEP * 4,  tierAtOrBelow(5),
+    ] as any;
+  }, [stampFadeBaseZoom]);
 
   // All spots in the selected destination — the set the spot carousel pages through.
   const spotsInDest = useMemo(
@@ -2418,6 +2482,22 @@ const destItems = useMemo((): DestItem[] =>
     // just as React state — this ref needs the answer synchronously, before that commits).
     setSheetSnapState(landOnFull ? 'full' : 'collapsed');
     if (selectedDest) {
+      // Suppress both handleCameraChanged's peek-push and the destination "return to home
+      // view" breadcrumb prompt for the duration of this camera move — same reasoning as
+      // handleMarkerPress/handleResetToDest's own use of these guards. Unlike
+      // handleMarkerPress's fresh-open case, destHomeRegion is already set here (the
+      // destination sheet was open underneath the spot sheet the whole time), so the
+      // `!destHomeRegion` short-circuit in showDestReturnPrompt doesn't cover this camera
+      // move on its own: easeTo-ing back from the spot's own tight zoom genuinely reads as
+      // "panned away" against that already-captured home region until it settles, which was
+      // flashing the breadcrumb pill over the half-screen destination sheet every time a spot
+      // was closed back to its destination.
+      suppressPeekPushRef.current = true;
+      if (suppressPeekPushTimerRef.current) clearTimeout(suppressPeekPushTimerRef.current);
+      suppressPeekPushTimerRef.current = setTimeout(() => { suppressPeekPushRef.current = false; }, 650);
+      suppressDestReturnPromptRef.current = true;
+      if (suppressDestReturnPromptTimerRef.current) clearTimeout(suppressDestReturnPromptTimerRef.current);
+      suppressDestReturnPromptTimerRef.current = setTimeout(() => { suppressDestReturnPromptRef.current = false; }, 650);
       // Neither snap this can land on leaves the bottom-screen strip showing, so 'topHalf'.
       fitDestinationDefaultView(selectedDest, 'easeTo', 'topHalf');
     }
@@ -2969,9 +3049,21 @@ const destItems = useMemo((): DestItem[] =>
       animatePrompt(false, destReturnPromptVisibleRef, destReturnPromptProgress);
     }
 
-    // Throttle the region-state updates to ~20 fps.
+    // Throttle the region-state updates — tightened from the original 24ms (~40fps) to 3ms.
+    // 3ms is below any real display's frame interval (even 120Hz is ~8.3ms/frame), so this no
+    // longer meaningfully throttles at all — in practice every camera-changed event Mapbox
+    // actually fires gets through, capped only by however often the native side emits them.
+    // Everything that decides which pins/pills are even in the plan (visibleSpots,
+    // destPinPlan, activeStampTier's culling) is derived from this React state, one commit
+    // behind the actual gesture — during a fast pinch that lag is what made pin fades start
+    // late even though the fade animation itself (FadePin's own fixed-duration timing) was
+    // unchanged. Tighter throttling doesn't touch that duration, only how promptly the
+    // decision to start it can react. The batched update below (a single render for both
+    // region and zoom) is what makes going this tight safe rather than doubling render cost —
+    // if this ever shows up as jank on lower-end devices, that batching is the first place to
+    // look before backing the number off again.
     const now = Date.now();
-    if (now - lastCameraTimeRef.current < 24) return;
+    if (now - lastCameraTimeRef.current < 3) return;
     lastCameraTimeRef.current = now;
 
     // One batched update: the region and the zoom always change together, and applying them separately renders the

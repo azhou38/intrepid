@@ -3,13 +3,27 @@
 import React, { useRef, useEffect, useState } from 'react';
 import {
   View, Text, StyleSheet, Pressable, ScrollView, Image,
-  Dimensions, Modal, TextInput, Platform, KeyboardAvoidingView,
+  Dimensions, Modal, TextInput, Platform, KeyboardAvoidingView, Alert,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { X, Check, Camera } from 'lucide-react-native';
 import type { PhotoEntry, Visit } from '../../types';
 
 const { width: W } = Dimensions.get('window');
+
+// ── Photo picking ────────────────────────────────────────────────────────────
+// Filters a freshly-picked batch down to photos not already in the collage, so re-picking the
+// same photo (the OS picker has no memory of a previous session's selection, and doesn't let
+// us pre-tick anything in its own UI) doesn't add it twice. Matched by assetId when both sides
+// have one (the reliable media-library identity — `uri` alone can differ between two picks of
+// the very same photo), falling back to `uri` only when assetId is unavailable on either side.
+export function dedupeNewPhotos(existing: PhotoEntry[], picked: PhotoEntry[]): PhotoEntry[] {
+  const existingAssetIds = new Set(existing.map(p => p.assetId).filter((id): id is string => !!id));
+  const existingUris     = new Set(existing.map(p => p.uri));
+  return picked.filter(p =>
+    p.assetId ? !existingAssetIds.has(p.assetId) : !existingUris.has(p.uri)
+  );
+}
 
 // ── Date helpers ──────────────────────────────────────────────────────────────
 export const MO = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -167,6 +181,15 @@ export function VisitDateRangeModal({ visit, withTitle, onDone, onCancel }: {
       const em = String(MO.indexOf(endMo) + 1).padStart(2, '0');
       const ed = endDy === '–' ? '00' : endDy;
       endDate = `${endYr}-${em}-${ed}`;
+      // A "YYYY-MM-DD" pair compares correctly with plain string comparison (zero-padded,
+      // most-significant field first) — including an unknown day ('00'), which sorts as the
+      // earliest possible day of its month, the only sensible reading when we don't know
+      // which day it actually was. Blocks the save rather than silently clamping/swapping,
+      // so the user notices and fixes the field they actually meant to change.
+      if (endDate <= startDate) {
+        Alert.alert('Invalid dates', 'The end date must be after the start date.');
+        return;
+      }
     }
     // When editing an existing visit's dates (withTitle unset), title is preserved by the
     // caller instead — that flow's title lives on the shared edit page's own header.
@@ -182,7 +205,7 @@ export function VisitDateRangeModal({ visit, withTitle, onDone, onCancel }: {
         <View style={pS.card}>
           <View style={pS.header}>
             <Pressable onPress={onCancel} hitSlop={12}><Text style={pS.cancel}>Cancel</Text></Pressable>
-            <Text style={pS.title}>Trip Dates</Text>
+            <Text style={pS.title}>{hasEnd ? 'Trip Dates' : 'Trip Date'}</Text>
             <Pressable onPress={done} hitSlop={12}><Text style={pS.done}>Done</Text></Pressable>
           </View>
           {withTitle && (
@@ -199,7 +222,9 @@ export function VisitDateRangeModal({ visit, withTitle, onDone, onCancel }: {
             </View>
           )}
           <View style={vdS.section}>
-            <Text style={vdS.label}>FROM</Text>
+            {/* "FROM" only means something once there's also a "TO" to distinguish it from —
+                a single date doesn't need a label. */}
+            {hasEnd && <Text style={vdS.label}>FROM</Text>}
             <View style={pS.wheels}>
               <WheelCol data={P_MONTHS}   value={startMo} onChange={setStartMo} width={72} />
               <WheelCol data={P_DAYS_OPT} value={startDy} onChange={setStartDy} width={52} />
@@ -210,10 +235,11 @@ export function VisitDateRangeModal({ visit, withTitle, onDone, onCancel }: {
             <View style={[vdS.toggle, hasEnd && vdS.toggleOn]}>
               {hasEnd && <Check size={11} color="white" strokeWidth={2.5} />}
             </View>
-            <Text style={vdS.toggleTxt}>Add date range</Text>
+            <Text style={vdS.toggleTxt}>Add end date</Text>
           </Pressable>
           {hasEnd && (
             <View style={vdS.section}>
+              <Text style={vdS.label}>TO</Text>
               <View style={pS.wheels}>
                 <WheelCol data={P_MONTHS}   value={endMo} onChange={setEndMo} width={72} />
                 <WheelCol data={P_DAYS_OPT} value={endDy} onChange={setEndDy} width={52} />
@@ -243,6 +269,12 @@ const vdS = StyleSheet.create({
 // inner width = screen - 32 (content padding) - 24 (wrap padding)
 const COLLAGE_INNER_W = W - 32 - 24;
 const COLLAGE_H = 196;
+const COLLAGE_H_TALL = 320; // exactly 4 photos (2x2 grid) — see collageH's own comment
+// 5+ photos' own layout: repeats the count===3 big-tile-plus-stacked-pair block as its own
+// row, adding a whole new block as photos grow (capped at BLOCK_MAX — see renderTiles).
+const BLOCK_SIZE = 3;
+const BLOCK_H = 130;
+const BLOCK_MAX = 4;
 
 export function PhotoCollage({ photos, onAdd, onDelete, hideAddMore }: {
   photos: PhotoEntry[];
@@ -260,6 +292,11 @@ export function PhotoCollage({ photos, onAdd, onDelete, hideAddMore }: {
   }
   const count = photos.length;
   const avgAR = photos.reduce((s, p) => s + p.width / Math.max(p.height, 1), 0) / count;
+  // Single-row layouts (1-3 photos) keep the base height; the 2x2 grid (exactly 4 photos)
+  // gets real height of its own instead of squeezing two rows into the same total. 5+ photos
+  // use their own dynamic grid below (see renderTiles), which grows a row at a time instead
+  // of a fixed height.
+  const collageH = count <= 3 ? COLLAGE_H : COLLAGE_H_TALL;
 
   const delBtn = (idx: number) => onDelete ? (
     <Pressable style={pcS.delBtn} onPress={() => onDelete(idx)} hitSlop={6}>
@@ -318,7 +355,7 @@ export function PhotoCollage({ photos, onAdd, onDelete, hideAddMore }: {
     }
     if (count === 4) {
       return (
-        <View style={{ height: COLLAGE_H, gap:3 }}>
+        <View style={{ height: collageH, gap:3 }}>
           <View style={{ flex:1, flexDirection:'row', gap:3 }}>
             {tile(photos[0].uri, 0, { flex: 1, borderRadius: 10 })}
             {tile(photos[1].uri, 1, { flex: 1, borderRadius: 10 })}
@@ -330,22 +367,73 @@ export function PhotoCollage({ photos, onAdd, onDelete, hideAddMore }: {
         </View>
       );
     }
-    // 5+ photos
-    const extra = count - 3;
+    // 5+ photos — repeats the count===3 block (one big tile + two stacked small ones,
+    // alternating which side the big tile is on) as its own row, adding a whole new block as
+    // photos grow instead of either (a) one dominant tile that just gets taller (the old
+    // design) or (b) a flat uniform grid with no visual variety (last iteration). Blocks are
+    // capped (BLOCK_MAX) at a still-reasonable total height; only beyond that does a "+N"
+    // overlay take over the last visible tile.
+    const totalBlocks   = Math.ceil(count / BLOCK_SIZE);
+    const visibleBlocks = Math.min(totalBlocks, BLOCK_MAX);
+    const visibleSlots  = visibleBlocks * BLOCK_SIZE;
+    const overflowing   = count > visibleSlots;
+    const shownCount    = overflowing ? visibleSlots : count;
+    const extra         = count - shownCount;
+    const blocks = Array.from({ length: visibleBlocks }, (_, b) => photos.slice(b * BLOCK_SIZE, b * BLOCK_SIZE + BLOCK_SIZE).map((_, j) => b * BLOCK_SIZE + j)).filter(idxs => idxs.length > 0 && idxs[0] < shownCount);
     return (
-      <View style={{ height: COLLAGE_H, flexDirection:'row', gap:3 }}>
-        {tile(photos[0].uri, 0, { flex: 3, borderRadius: 10 })}
-        <View style={{ flex:2, gap:3 }}>
-          {tile(photos[1].uri, 1, { flex: 1, borderRadius: 8 })}
-          <View style={{ flex:1, borderRadius:8, overflow:'hidden' }}>
-            {tile(photos[2].uri, 2)}
-            {extra > 0 && (
-              <View pointerEvents="none" style={pcS.moreOverlay}>
-                <Text style={pcS.moreTxt}>+{extra}</Text>
+      <View style={{ gap: 3 }}>
+        {blocks.map((idxs, b) => {
+          const visibleIdxs = idxs.filter(i => i < shownCount);
+          const bigOnRight = b % 2 === 1; // alternate sides block to block for variety
+          const overlayIdx = overflowing && b === blocks.length - 1 ? visibleIdxs[visibleIdxs.length - 1] : -1;
+          const overlay = (i: number) => i === overlayIdx ? (
+            <View pointerEvents="none" style={pcS.moreOverlay}>
+              <Text style={pcS.moreTxt}>+{extra}</Text>
+            </View>
+          ) : null;
+          if (visibleIdxs.length === 1) {
+            const i = visibleIdxs[0];
+            return (
+              <View key={b} style={{ height: BLOCK_H, borderRadius: 10, overflow: 'hidden' }}>
+                {tile(photos[i].uri, i)}
+                {overlay(i)}
               </View>
-            )}
-          </View>
-        </View>
+            );
+          }
+          if (visibleIdxs.length === 2) {
+            const [i0, i1] = visibleIdxs;
+            return (
+              <View key={b} style={{ height: BLOCK_H, flexDirection: 'row', gap: 3 }}>
+                {tile(photos[i0].uri, i0, { flex: 1, borderRadius: 10 })}
+                <View style={{ flex: 1, borderRadius: 10, overflow: 'hidden' }}>
+                  {tile(photos[i1].uri, i1)}
+                  {overlay(i1)}
+                </View>
+              </View>
+            );
+          }
+          const [big, s0, s1] = bigOnRight ? [visibleIdxs[2], visibleIdxs[0], visibleIdxs[1]] : visibleIdxs;
+          const stack = (
+            <View style={{ flex: 2, gap: 3 }}>
+              {tile(photos[s0].uri, s0, { flex: 1, borderRadius: 8 })}
+              <View style={{ flex: 1, borderRadius: 8, overflow: 'hidden' }}>
+                {tile(photos[s1].uri, s1)}
+                {overlay(s1)}
+              </View>
+            </View>
+          );
+          const bigTile = (
+            <View style={{ flex: 3, borderRadius: 10, overflow: 'hidden' }}>
+              {tile(photos[big].uri, big)}
+              {overlay(big)}
+            </View>
+          );
+          return (
+            <View key={b} style={{ height: BLOCK_H, flexDirection: 'row', gap: 3 }}>
+              {bigOnRight ? <>{stack}{bigTile}</> : <>{bigTile}{stack}</>}
+            </View>
+          );
+        })}
       </View>
     );
   };

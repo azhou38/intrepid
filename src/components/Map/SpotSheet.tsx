@@ -35,7 +35,7 @@ import { sheetPose } from './sheetPose';
 import EntityPhoto from './EntityPhoto';
 import {
   parseDateStr, fmtDatePart,
-  DatePickerModal, PhotoCollage, ReviewEditModal,
+  DatePickerModal, PhotoCollage, ReviewEditModal, dedupeNewPhotos,
 } from './sheetShared';
 
 const { height: H, width: W } = Dimensions.get('window');
@@ -541,12 +541,17 @@ function SpotSheet({
   // at all, since both this sheet and the pill are UI-thread Reanimated values now, which is
   // what keeps the pill's glide exactly as smooth as the sheet's own.
   useAnimatedReaction(
-    () => slideAnim.value,
-    (value) => {
+    () => [slideAnim.value, scrollYSV.value] as const,
+    ([value, scrollY]) => {
       if (!pillOffsetSV) return;
       const PILL_H = 36;
       const SCREEN_H = H - BOTTOM_TAB_H;
-      const FULL_TOP_ABS = FULL_POS + (insets.top + 14);
+      // While full-screen, the pill tracks scroll 1:1, sliding up and off the top edge as
+      // the user scrolls down — same as any other piece of header content, rather than
+      // staying pinned at a fixed screen position while the hero scrolls away underneath it.
+      // scrollYSV is already clamped to >= 0 by bounces={false} on this ScrollView. See
+      // DestinationSheet's own identical reaction for the fuller writeup.
+      const FULL_TOP_ABS = FULL_POS + (insets.top + 14) - scrollY;
       const FULL_TARGET = SCREEN_H - FULL_TOP_ABS - PILL_H;
       const COLLAPSED_PILL_GAP = 16;
       const COLLAPSED_TOP_ABS = COLLAPSED_Y - COLLAPSED_PILL_GAP - PILL_H;
@@ -717,8 +722,14 @@ function SpotSheet({
       // should already guarantee this, but costs nothing to double-check.
       if (Math.abs(e.translationX) >= Math.abs(e.translationY)) return;
       // Full-screen: only let this gesture pull the sheet down once its inner ScrollView is
-      // already scrolled to the top.
-      if (snapStateSV.value === 'full' && !(scrollYSV.value <= 1 && e.translationY > 6)) return;
+      // already scrolled to the top. The translationY threshold used to be 6 — easily crossed
+      // by a few pixels of ordinary touch movement while scrolling content that's already at
+      // the top (ending a scroll, or an overscroll bounce), which started dragging the sheet
+      // itself along with it — and since the back-navigation pill (the down arrow) glides in
+      // lockstep with the sheet's own position, that read as the arrow "moving while
+      // scrolling" even though nothing was actually being collapsed. 24 requires a clearly
+      // deliberate pull before the sheet (and the pill riding along with it) starts moving.
+      if (snapStateSV.value === 'full' && !(scrollYSV.value <= 1 && e.translationY > 24)) return;
       dragEngagedSV.value = true;
       const raw = lastPos.value + e.translationY;
       if (snapStateSV.value === 'collapsed' || snapStateSV.value === 'peek') {
@@ -795,9 +806,15 @@ function SpotSheet({
       mediaTypes: ['images'], quality: 0.85, allowsMultipleSelection: true,
     });
     if (!result.canceled && result.assets.length > 0) {
-      const newEntries: PhotoEntry[] = result.assets.map(a => ({
-        uri: a.uri, width: a.width, height: a.height, spotId: activeSpot.id, spotName: activeSpot.name,
+      const picked: PhotoEntry[] = result.assets.map(a => ({
+        uri: a.uri, width: a.width, height: a.height, assetId: a.assetId ?? undefined,
+        spotId: activeSpot.id, spotName: activeSpot.name,
       }));
+      const newEntries = dedupeNewPhotos(photos, picked);
+      if (newEntries.length === 0) {
+        Alert.alert('Already added', "You've already added every photo you picked.");
+        return;
+      }
       updateSpot(activeSpot.id, { photos: [...photos, ...newEntries] });
     }
   };
