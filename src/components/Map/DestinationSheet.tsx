@@ -43,7 +43,7 @@ import { useDestinationClimate } from '../../utils/climateApi';
 import type { MonthCrowd, MonthWeather, MonthRain } from '../../utils/travelData';
 import {
   parseDateStr, fmtVisitRange, fmtVisitRangeShort,
-  WheelCol, DatePickerModal, VisitDateRangeModal, PhotoCollage, ReviewEditModal,
+  WheelCol, DatePickerModal, VisitDateRangeModal, PhotoCollage, ReviewEditModal, dedupeNewPhotos,
 } from './sheetShared';
 
 const { height: H, width: W } = Dimensions.get('window');
@@ -156,7 +156,10 @@ function VisitModuleSheet({ destination, visit, spots, onSave, onDelete, onClose
     const nextNotes   = patch.notes      !== undefined ? patch.notes      : localNotes;
     onSave({
       id: idRef.current,
-      title: nextTitle.trim() || undefined,
+      // Saved as the real title when the user never typed one (not left blank for some other
+      // component to guess a fallback later) — matches the placeholder text itself, so what
+      // you see before typing is exactly what gets saved if you don't.
+      title: nextTitle.trim() || `${destination.name} Trip`,
       startDate: nextStart,
       endDate: nextEnd,
       spotIds: nextSpotIds.length ? nextSpotIds : undefined,
@@ -206,7 +209,14 @@ function VisitModuleSheet({ destination, visit, spots, onSave, onDelete, onClose
       mediaTypes: ['images'], quality: 0.85, allowsMultipleSelection: true,
     });
     if (!result.canceled && result.assets.length > 0) {
-      const newEntries: PhotoEntry[] = result.assets.map(a => ({ uri: a.uri, width: a.width, height: a.height }));
+      const picked: PhotoEntry[] = result.assets.map(a => ({
+        uri: a.uri, width: a.width, height: a.height, assetId: a.assetId ?? undefined,
+      }));
+      const newEntries = dedupeNewPhotos(localPhotos, picked);
+      if (newEntries.length === 0) {
+        Alert.alert('Already added', "You've already added every photo you picked.");
+        return;
+      }
       const updated = [...localPhotos, ...newEntries];
       setLocalPhotos(updated);
       commit({ photos: updated });
@@ -220,10 +230,10 @@ function VisitModuleSheet({ destination, visit, spots, onSave, onDelete, onClose
 
   const handleDelete = () => {
     Alert.alert(
-      'Remove visit?',
+      'Remove trip?',
       isLegacy
         ? 'This will permanently delete your log and notes for this destination.'
-        : 'This will permanently delete this visit’s dates, photos, and notes.',
+        : 'This will permanently delete this trip’s dates, photos, and notes.',
       [
         { text: 'Cancel', style: 'cancel' },
         {
@@ -265,7 +275,7 @@ function VisitModuleSheet({ destination, visit, spots, onSave, onDelete, onClose
                 if (hadNewline) titleInputRef.current?.blur();
               }}
               onContentSizeChange={e => setTitleInputHeight(e.nativeEvent.contentSize.height)}
-              placeholder={destination.name}
+              placeholder={`${destination.name} Trip`}
               placeholderTextColor="#9CA3AF"
               maxLength={60}
               textAlign="center"
@@ -338,7 +348,14 @@ function VisitModuleSheet({ destination, visit, spots, onSave, onDelete, onClose
                       const checked = spotIds.has(spot.id);
                       return (
                         <Pressable key={spot.id} style={esS.spotRow} onPress={() => toggleSpot(spot.id)}>
-                          <Text style={esS.spotRowIcon}>{spot.icon}</Text>
+                          <View style={esS.spotRowThumb}>
+                            <EntityPhoto
+                              cacheKey={`spot_${spot.id}`}
+                              cache={photoCache}
+                              load={() => getOrFetchWikiThumbnail(`spot_${spot.id}`, photoCache, spot.name, 200)}
+                              placeholderColor="#F3F4F6"
+                            />
+                          </View>
                           <Text style={esS.spotRowTxt} numberOfLines={1}>{spot.name}</Text>
                           <View style={[esS.spotToggle, checked && esS.spotToggleOn]}>
                             {checked && <Check size={11} color="white" strokeWidth={2.5} />}
@@ -355,9 +372,15 @@ function VisitModuleSheet({ destination, visit, spots, onSave, onDelete, onClose
             <View style={esS.section}>
               <View style={esS.sectionHead}>
                 <Text style={esS.sectionTitle}>Photos</Text>
-                <Pressable style={esS.photosAddBtn} onPress={handleAddPhoto} hitSlop={8}>
-                  <Text style={esS.photosAddBtnTxt}>Add +</Text>
-                </Pressable>
+                {/* Redundant with PhotoCollage's own big "Add your travel photos" placeholder
+                    while empty — only becomes the add-more affordance (in place of the
+                    collage's own, suppressed via hideAddMore below) once there's at least
+                    one photo. */}
+                {localPhotos.length > 0 && (
+                  <Pressable style={esS.photosAddBtn} onPress={handleAddPhoto} hitSlop={8}>
+                    <Text style={esS.photosAddBtnTxt}>Add +</Text>
+                  </Pressable>
+                )}
               </View>
               <PhotoCollage photos={localPhotos} onAdd={handleAddPhoto} onDelete={handleDeletePhoto} hideAddMore />
             </View>
@@ -381,7 +404,7 @@ function VisitModuleSheet({ destination, visit, spots, onSave, onDelete, onClose
             {/* ── DELETE ──────────────────────────────────────────── */}
             <Pressable style={esS.deleteTripBtn} onPress={handleDelete}>
               <Trash2 size={15} color="#EF4444" />
-              <Text style={esS.deleteTripBtnTxt}>Remove Visit</Text>
+              <Text style={esS.deleteTripBtnTxt}>Remove Trip</Text>
             </Pressable>
 
           </ScrollView>
@@ -461,7 +484,7 @@ const esS = StyleSheet.create({
   spotRow:           { flexDirection:'row', alignItems:'center', gap:10,
                        paddingHorizontal:16, paddingVertical:12,
                        borderTopWidth:StyleSheet.hairlineWidth, borderTopColor:'#F3F4F6' },
-  spotRowIcon:       { fontSize:16 },
+  spotRowThumb:      { width:36, height:36, borderRadius:9, overflow:'hidden', backgroundColor:'#F3F4F6' },
   spotRowTxt:        { flex:1, fontSize:14, color:'#111827' },
   spotToggle:        { width:22, height:22, borderRadius:11, borderWidth:2, borderColor:'#D1D5DB',
                        alignItems:'center', justifyContent:'center' },
@@ -1281,12 +1304,12 @@ function DestinationSheet({
   const peekAnimStyle = useAnimatedStyle(() => ({
     opacity: interpolate(slideAnim.value, [collapsedYAnim.value, PEEK_Y], [0, 1], Extrapolation.CLAMP),
   }));
-  // Continuously writes the back-to-country pill's target "bottom" offset as slideAnim
-  // moves, so the parent's pill mirrors the sheet's own top edge frame-for-frame instead of
-  // only re-targeting an animation after a drag settles at a new snap point. Written directly
-  // to the shared value passed in via pillOffsetSV — no runOnJS/JS-thread hop at all, since
-  // both this sheet and the pill are UI-thread Reanimated values, which is what keeps the
-  // pill's glide exactly as smooth as the sheet's own.
+  // Continuously writes the back-to-country pill's target "bottom" offset as slideAnim (or
+  // scroll position — see below) moves, so the parent's pill mirrors the sheet's own top edge
+  // frame-for-frame instead of only re-targeting an animation after a drag settles at a new
+  // snap point. Written directly to the shared value passed in via pillOffsetSV — no
+  // runOnJS/JS-thread hop at all, since both this sheet and the pill are UI-thread Reanimated
+  // values, which is what keeps the pill's glide exactly as smooth as the sheet's own.
   //
   // Now that the hero's own close button is gone, the pill takes over that exact spot for
   // as long as the sheet is full screen — the FULL_POS leg here is the same top-position
@@ -1296,8 +1319,8 @@ function DestinationSheet({
   // its existing look — with a single 2-point interpolation giving one smooth, continuous
   // glide between the two states.
   useAnimatedReaction(
-    () => slideAnim.value,
-    (value) => {
+    () => [slideAnim.value, scrollYSV.value] as const,
+    ([value, scrollY]) => {
       if (!pillOffsetSV || pillOffsetLockedSV?.value) return;
       // Approximate rendered height of the back pill itself (MapScreen's st.upPill) — used
       // to convert its target *top* position (matching where the hero's close button used
@@ -1312,7 +1335,15 @@ function DestinationSheet({
       // relative to the *hero's* origin, which itself sits at slideAnim.value within
       // MapScreen's frame, not at 0.
       const SCREEN_H = H - BOTTOM_TAB_H;
-      const FULL_TOP_ABS = FULL_POS + (insets.top + 20);
+      // While full-screen, the pill is meant to sit exactly where a real in-flow button at
+      // the top of the hero would — so it tracks scroll 1:1, sliding up and off the top edge
+      // as the user scrolls down, same as any other piece of header content would, instead
+      // of staying pinned at a fixed screen position while the hero (and everything else)
+      // scrolls underneath it. That fixed-position version was what let it end up floating
+      // over the sticky tab-bar overlay / scrolled body text — impossible once it genuinely
+      // leaves the screen with the rest of the header. `scrollY` is already clamped to >= 0
+      // by bounces={false} on this ScrollView, so no extra clamping is needed here.
+      const FULL_TOP_ABS = FULL_POS + (insets.top + 20) - scrollY;
       const FULL_TARGET = SCREEN_H - FULL_TOP_ABS - PILL_H;
       // Collapsed: float a fixed gap above the compact card's own *measured* top
       // (collapsedYAnim.value, kept live by the card's onLayout) rather than a constant
@@ -1524,7 +1555,12 @@ function DestinationSheet({
       if (Math.abs(e.translationX) >= Math.abs(e.translationY)) return;
       // Mirrors the old onMoveShouldSetPanResponderCapture gate: while full-screen, only
       // let this gesture pull the sheet down once its inner ScrollView is already at top.
-      if (snapStateSV.value === 'full' && !(scrollYSV.value <= 1 && e.translationY > 6)) return;
+      // Threshold raised from 6 to 24 — see SpotSheet's own identical gate for why: a few
+      // stray pixels of touch movement while scrolling content that's already at the top
+      // shouldn't be read as "start collapsing the sheet," since that also drags the
+      // back-navigation pill (the down arrow) along with it, making it look like it moves
+      // during ordinary scrolling.
+      if (snapStateSV.value === 'full' && !(scrollYSV.value <= 1 && e.translationY > 24)) return;
       dragEngagedSV.value = true;
       const raw = lastPos.value + e.translationY;
       if (snapStateSV.value === 'collapsed' || snapStateSV.value === 'peek') {
@@ -1853,9 +1889,16 @@ function DestinationSheet({
                                   const spot = spots.find(sp => sp.id === spotId);
                                   if (!spot) return null;
                                   return (
-                                    <View key={spotId} style={st.memSpotChip}>
-                                      <Text style={st.memSpotChipIcon}>{spot.icon}</Text>
-                                      <Text style={st.memSpotChipTxt} numberOfLines={1}>{spot.name}</Text>
+                                    <View key={spotId} style={st.memSpotRow}>
+                                      <View style={st.memSpotRowThumb}>
+                                        <EntityPhoto
+                                          cacheKey={`spot_${spot.id}`}
+                                          cache={photoCache}
+                                          load={() => getOrFetchWikiThumbnail(`spot_${spot.id}`, photoCache, spot.name, 200)}
+                                          placeholderColor="#F3F4F6"
+                                        />
+                                      </View>
+                                      <Text style={st.memSpotRowTxt} numberOfLines={1}>{spot.name}</Text>
                                     </View>
                                   );
                                 })}
@@ -2178,14 +2221,13 @@ const st = StyleSheet.create({
 
   // Photos display
   memPhotosWrap:       { paddingTop:4 },
-  // Spots visited display (chip preview within each visit module)
-  memSpotsWrap:        { flexDirection:'row', flexWrap:'wrap', gap:8,
-                         paddingHorizontal:18, paddingTop:4, paddingBottom:4 },
-  memSpotChip:         { flexDirection:'row', alignItems:'center', gap:5,
-                         backgroundColor:'#F3F4F6', borderRadius:14,
-                         paddingHorizontal:10, paddingVertical:6, maxWidth:'100%' },
-  memSpotChipIcon:     { fontSize:13 },
-  memSpotChipTxt:      { fontSize:13, fontWeight:'600', color:'#374151' },
+  // Spots visited display (read-only rows within each saved visit module) — one row per
+  // spot, each with its own header-image thumbnail, same shape as the edit page's own
+  // spotRow/spotRowThumb (just without the toggle, since this is read-only).
+  memSpotsWrap:        { paddingHorizontal:18, paddingTop:4, paddingBottom:4, gap:2 },
+  memSpotRow:          { flexDirection:'row', alignItems:'center', gap:10, paddingVertical:6 },
+  memSpotRowThumb:      { width:34, height:34, borderRadius:9, overflow:'hidden', backgroundColor:'#F3F4F6' },
+  memSpotRowTxt:        { flex:1, fontSize:13.5, fontWeight:'600', color:'#374151' },
   memSpotsEmptyRow:    { flexDirection:'row', alignItems:'center', gap:6,
                          paddingHorizontal:18, paddingTop:4, paddingBottom:4 },
   memSpotsEmptyTxt:    { fontSize:13, color:'#9CA3AF' },

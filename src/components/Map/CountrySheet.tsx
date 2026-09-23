@@ -438,12 +438,18 @@ function CountrySheet({
   // App.tsx's tab bar reserves its own layout space rather than floating over the content).
   // The collapsed leg is untouched — same tuned resting target as before.
   useAnimatedReaction(
-    () => slideAnim.value,
-    (value) => {
+    () => [slideAnim.value, scrollY.value] as const,
+    ([value, scrollYVal]) => {
       if (!pillOffsetSV || pillOffsetLockedSV?.value) return;
       const PILL_H = 36;
       const SCREEN_H = H - BOTTOM_TAB_H;
-      const FULL_TOP_ABS = FULL_POS + (insets.top + 20);
+      // While full-screen, the pill tracks scroll 1:1, sliding up and off the top edge as
+      // the user scrolls down — same as any other piece of header content, rather than
+      // staying pinned at a fixed screen position while the header scrolls away underneath
+      // it (which let it end up floating over scrolled body content). scrollY is already
+      // clamped to >= 0 by bounces={false} on this ScrollView. See DestinationSheet's own
+      // identical reaction for the fuller writeup.
+      const FULL_TOP_ABS = FULL_POS + (insets.top + 20) - scrollYVal;
       const FULL_TARGET = SCREEN_H - FULL_TOP_ABS - PILL_H;
       // Collapsed: float a fixed gap above the header's own measured top (collapsedYAnim.value),
       // same convention as DestinationSheet's own reaction.
@@ -627,7 +633,12 @@ function CountrySheet({
       if (Math.abs(e.translationX) >= Math.abs(e.translationY)) return;
       // Mirrors the old onMoveShouldSetPanResponderCapture gate: while full-screen, only
       // let this gesture pull the sheet down once its inner ScrollView is already at top.
-      if (snapStateSV.value === 'full' && !(scrollY.value <= 1 && e.translationY > 6)) return;
+      // Threshold raised from 6 to 24 — see SpotSheet's own identical gate for why: a few
+      // stray pixels of touch movement while scrolling content that's already at the top
+      // shouldn't be read as "start collapsing the sheet," since that also drags the
+      // back-navigation pill (the down arrow) along with it, making it look like it moves
+      // during ordinary scrolling.
+      if (snapStateSV.value === 'full' && !(scrollY.value <= 1 && e.translationY > 24)) return;
       dragEngagedSV.value = true;
       const raw = lastPos.value + e.translationY;
       if (snapStateSV.value === 'collapsed' || snapStateSV.value === 'peek') {
