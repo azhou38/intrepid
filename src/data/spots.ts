@@ -81,7 +81,12 @@ export function formatSpotCost(spot: Spot): string {
   const fmt = CURRENCY_FORMAT[spot.currency ?? 'USD'] ?? CURRENCY_FORMAT.USD;
   const one = (n: number) => `${fmt.prefix ?? ''}${n}${fmt.suffix ?? ''}`;
   if (spot.costMax == null || spot.costMax === spot.costMin) return one(spot.costMin);
-  return `${one(spot.costMin)} – ${one(spot.costMax)}`;
+  // One currency marker for the whole range, not one per value — "NOK 140 – 160" / "$13 –
+  // 35", never "140 NOK – 160 NOK" / "$13 – $35". A suffix-style currency (the Nordic kr-
+  // based codes, placed after the number on a single value to disambiguate which krona/krone
+  // it is) moves to the front here instead of repeating at both ends of the range.
+  if (fmt.suffix) return `${fmt.suffix.trim()} ${spot.costMin} – ${spot.costMax}`;
+  return `${fmt.prefix ?? ''}${spot.costMin} – ${spot.costMax}`;
 }
 
 export const SPOTS: Spot[] = [

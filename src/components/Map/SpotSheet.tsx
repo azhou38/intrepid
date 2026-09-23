@@ -20,7 +20,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { SharedValue } from 'react-native-reanimated';
 import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'react-native-svg';
 import { Check, Star, Clock, MapPin, Pencil, ChevronUp, ChevronDown, ChevronRight, LayoutGrid, Plus,
-         DollarSign, ExternalLink, Ticket } from 'lucide-react-native';
+         Tag, ExternalLink, Ticket } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
 import * as ImagePicker from 'expo-image-picker';
 import { useStore } from '../../store';
@@ -854,6 +854,10 @@ function SpotSheet({
     setActiveIndex(idx);
     carouselRef.current?.scrollTo({ x: (idx + loopOffset) * CARD_SNAP, animated: true });
     onActiveSpotChange?.(spots[idx]);
+    // Jump the sheet's own content back to its top — otherwise the newly selected spot's
+    // hero/name renders wherever the PREVIOUS spot's scroll position happened to be (often
+    // mid-page, since "Nearby" sits near the bottom), which reads as if nothing changed.
+    scrollRef.current?.scrollTo({ y: 0, animated: true });
   }, [spots, activeIndex, loopOffset, onActiveSpotChange]);
 
   const heroTopRowTop = insets.top + 14;
@@ -1159,7 +1163,7 @@ function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore, nearbyHlScrol
         <View style={st.glanceCard}>
           <View style={st.glanceItem}>
             <View style={st.glanceIconCircleGreen}>
-              <DollarSign size={20} color="#16A34A" />
+              <Tag size={20} color="#16A34A" />
             </View>
             <Text style={st.glanceVal} numberOfLines={1}>{formatSpotCost(spot)}</Text>
             <Text style={st.glanceLbl}>Cost</Text>
