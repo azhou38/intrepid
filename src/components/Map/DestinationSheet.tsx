@@ -785,7 +785,7 @@ function SpotsPanel({ spots, onSelectSpot }: {
     <View style={{ gap: 16 }}>
       {spots.length > 0 && (
         <Pressable style={st.mapViewBtn} onPress={() => onSelectSpot?.(spots[0])} hitSlop={6}>
-          <Map size={13} color="#6B7280" />
+          <Map size={14} color="#6B7280" />
           <Text style={st.mapViewBtnTxt}>Map view</Text>
         </Pressable>
       )}
@@ -2068,7 +2068,7 @@ const st = StyleSheet.create({
 
   // Spots row
   commRatingRow:  { flexDirection:'row', alignItems:'center', gap:5, marginTop:6 },
-  commRatingCount:{ fontSize:13, color:'rgba(255,255,255,0.75)', fontWeight:'500' },
+  commRatingCount:{ fontSize:13, color:'rgba(255,255,255,0.92)', fontWeight:'800' },
 
 
   // Tab bar — sits between hero and content for visited destinations
@@ -2223,9 +2223,13 @@ const st = StyleSheet.create({
   // Spots tab — 2-column wrapping grid of SpotCards,
   // and a discrete link into the sliding spot carousel (kept
   // low-key since the grid itself, not the carousel, is the primary way to browse here).
-  mapViewBtn:      { flexDirection:'row', alignItems:'center', gap:5,
-                     alignSelf:'flex-end', paddingHorizontal:4, paddingVertical:4 },
-  mapViewBtnTxt:   { fontSize:13, fontWeight:'600', color:'#6B7280' },
+  // Bordered pill, same shape/sizing as the spot carousel's own List button (SpotSheet's
+  // carListBtn/carListBtnTxt) — mirrored so the two "jump to the other view" controls read
+  // as the same affordance wherever they show up.
+  mapViewBtn:      { flexDirection:'row', alignItems:'center', gap:4,
+                     alignSelf:'flex-end', paddingHorizontal:8, paddingVertical:5,
+                     borderRadius:8, borderWidth:1, borderColor:'#E5E7EB' },
+  mapViewBtnTxt:   { fontSize:12.5, fontWeight:'600', color:'#6B7280' },
   // Same padding the country sheet's destination grid has: room above and below for the cards' shadows.
   spotsGrid:       { flexDirection:'row', flexWrap:'wrap', gap:GRID_GAP, paddingTop:4, paddingBottom:16 },
   gridEmptyTxt:    { fontSize:14, color:'#9CA3AF', textAlign:'center', paddingVertical:24 },

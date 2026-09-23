@@ -68,7 +68,7 @@ function SpotCard({ spot, onPress, width }: {
             <Text style={styles.cardName} numberOfLines={2}>{spot.name}</Text>
             <View style={local.metaRow}>
               <Clock size={11} color="rgba(255,255,255,0.9)" strokeWidth={2.5} />
-              <Text style={local.metaTxt}>{formatVisitTime(spot.visitHours)}</Text>
+              <Text style={local.metaTxt}>{formatVisitTime(spot.visitHoursMin, spot.visitHoursMax)}</Text>
               <Text style={local.metaDot}>·</Text>
               <Text style={local.metaTxt}>{formatSpotCost(spot)}</Text>
             </View>

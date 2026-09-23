@@ -197,7 +197,7 @@ function CarouselCard({ spot, destinationId, isActive, onPress, gradId }: {
           <View style={st.cardStatRow}>
             <View style={st.cardTimeRow}>
               <Clock size={12} color="#16A34A" strokeWidth={2.5} />
-              <Text style={st.cardTimeTxt}>{formatVisitTime(spot.visitHours)}</Text>
+              <Text style={st.cardTimeTxt}>{formatVisitTime(spot.visitHoursMin, spot.visitHoursMax)}</Text>
             </View>
             <View style={st.cardTimeRow}>
               <Text style={st.cardTimeTxt}>{formatSpotCost(spot)}</Text>
@@ -309,6 +309,13 @@ function SpotSheet({
 
   const carouselRef = useRef<ScrollView>(null);
   const scrollRef    = useRef<GHScrollView>(null);
+  // The About panel's own "NEARBY" horizontal ScrollView — registered below via
+  // requireExternalGestureToFail so a swipe that starts on that carousel scrolls it instead of
+  // paging the tab bar (mirrors DestinationSheet's own aboutHlScrollRef/"Top Spots" carousel).
+  // Must be the GH-aware ScrollView, not the plain RN one — requireExternalGestureToFail only
+  // recognizes gesture-handler-managed native views (DestinationSheet's own equivalent ref is
+  // GH's ScrollView for the same reason).
+  const nearbyHlScrollRef = useRef<GHScrollView>(null);
   // Endless-scroll illusion: a clone of the last spot is prepended and a clone of the first
   // is appended, so scrolling past either real end reveals a card that looks identical to
   // wrapping around — then the moment that clone settles, we silently (non-animated)
@@ -348,20 +355,39 @@ function SpotSheet({
     setActiveTab(newTab);
     tabSlideAnim.value = withTiming(newTab === 'visit' ? 0 : -W, TAB_SLIDE_CONFIG);
   };
+  const setActiveTabJS = useCallback((tab: 'visit' | 'about') => {
+    activeTabRef.current = tab;
+    setActiveTab(tab);
+  }, []);
   // Marked 'worklet' — its only call site is inside tabSwipeGesture's onFinalize below, which
   // runs as a genuine UI-thread worklet (no `.runOnJS(true)` on this gesture). A plain JS
   // function referenced by name from inside a worklet isn't automatically workletized just
   // because the CALLING code is — Reanimated's babel plugin only auto-workletizes the gesture
   // callbacks themselves, not other functions they happen to call — so without this directive
   // calling it threw "Tried to synchronously call a non-worklet function on the UI thread."
+  //
+  // Snaps toward tabSlideAnim's own CURRENT value, never activeTabRef.current — a plain ref
+  // read from inside a UI-thread worklet can hold a stale snapshot (see tabSwipeGesture's own
+  // onEnd comment below), and this one fires on every vertical scroll of the tab content: a
+  // scroll drag always fails this Pan via failOffsetY, so onFinalize(success=false) calls this
+  // on virtually every scroll gesture. A stale 'visit' snapshot was yanking the sheet back to
+  // My Visit the instant someone scrolled the About panel, even though tabSlideAnim itself
+  // (a real shared value, always live) was already sitting correctly at -W. Deriving the
+  // target from tabSlideAnim.value instead makes this a true no-op whenever nothing actually
+  // moved, and still syncs the JS-side tab state afterward in case a genuine cancelled
+  // mid-drag left tabSlideAnim partway between the two sides.
+  //
+  // Declared AFTER setActiveTabJS on purpose — this worklet captures setActiveTabJS by
+  // reference at creation time, and referencing a `const` before its own initializer (even
+  // just to close over it, never mind calling it) throws through the TDZ the moment
+  // Reanimated's babel plugin serializes the closure, surfacing as "Cannot read property
+  // '__remoteFunction' of undefined" the first time onFinalize ran this.
   const snapTabToNearest = () => {
     'worklet';
-    tabSlideAnim.value = withTiming(activeTabRef.current === 'visit' ? 0 : -W, TAB_SLIDE_CONFIG);
+    const nearest: 'visit' | 'about' = tabSlideAnim.value > -W / 2 ? 'visit' : 'about';
+    tabSlideAnim.value = withTiming(nearest === 'visit' ? 0 : -W, TAB_SLIDE_CONFIG);
+    runOnJS(setActiveTabJS)(nearest);
   };
-  const setActiveTabJS = useCallback((tab: 'visit' | 'about') => {
-    activeTabRef.current = tab;
-    setActiveTab(tab);
-  }, []);
   // A real UI-thread worklet now (no `.runOnJS(true)`) — matches DestinationSheet's own
   // tabSwipeGesture exactly. onUpdate mutates tabSlideAnim directly with zero JS-thread hop
   // per frame; runOnJS is used only for the two JS-side effects at onEnd (updating React
@@ -369,18 +395,42 @@ function SpotSheet({
   // the earlier native crash (see the vertical `pan` gesture's own comment) came from wrapping
   // an entire per-frame callback in `runOnJS(freshClosure)(args)`, not from worklets that
   // directly write shared values and call runOnJS sparingly for discrete outcomes.
+  // True only once onUpdate has actually run at least once for the CURRENT touch — lets
+  // onFinalize tell "a drag that genuinely moved the tab strip" apart from "a touch that never
+  // engaged", same distinction the vertical `pan` gesture's own dragEngagedSV draws.
+  const tabDragEngagedSV = useSharedValue(false);
   const tabSwipeGesture = Gesture.Pan()
     .activeOffsetX([-12, 12])
     .failOffsetY([-10, 10])
     .onStart(() => {
       tabSwipeBaseRef.value = tabSlideAnim.value;
+      tabDragEngagedSV.value = false;
     })
     .onUpdate(e => {
+      tabDragEngagedSV.value = true;
       tabSlideAnim.value = Math.max(-W, Math.min(0, tabSwipeBaseRef.value + e.translationX));
     })
     .onEnd(e => {
       const projected = tabSwipeBaseRef.value + e.translationX;
-      const goTo: 'visit' | 'about' = (e.velocityX < -400 || projected < -W / 2) ? 'about' : 'visit';
+      // Nearest tab by raw dragged position, unless a decisive fling overrides it to step
+      // exactly one tab further in the fling direction — matches DestinationSheet's own
+      // tabSwipeGesture. The PREVIOUS version only special-cased a fast LEFTWARD fling
+      // (`velocityX < -400`) forcing 'about', with no symmetric case for a fast RIGHTWARD
+      // fling forcing 'visit' — swiping from 'about' back to 'visit' had no velocity assist
+      // at all and required dragging past the exact halfway point every time, which is what
+      // read as "sticky" in that direction. `Math.abs(e.velocityX) > 400` now catches a
+      // decisive fling in EITHER direction equally.
+      let goTo: 'visit' | 'about' = projected < -W / 2 ? 'about' : 'visit';
+      if (Math.abs(e.velocityX) > 400) {
+        // Derived from tabSwipeBaseRef (this gesture's own recorded start position), not
+        // activeTabRef.current — matches DestinationSheet's own onEnd reasoning: a plain ref
+        // read from a UI-thread worklet can be stale on a quick second swipe fired before the
+        // previous swipe's JS-thread update had landed.
+        const curIdx: 0 | 1 = tabSwipeBaseRef.value < -W / 2 ? 1 : 0; // 0 = visit, 1 = about
+        const dir = e.velocityX < 0 ? 1 : -1;
+        const targetIdx = Math.max(0, Math.min(1, curIdx + dir));
+        goTo = targetIdx === 0 ? 'visit' : 'about';
+      }
       tabSlideAnim.value = withTiming(goTo === 'visit' ? 0 : -W, TAB_SLIDE_CONFIG);
       // Always sync JS state rather than trying to skip a no-op by comparing against
       // activeTabRef.current here — a plain JS ref read from inside a UI-thread worklet can
@@ -389,10 +439,33 @@ function SpotSheet({
       runOnJS(setActiveTabJS)(goTo);
     })
     // Mirrors the old onPanResponderTerminate — if the gesture gets cancelled/interrupted
-    // rather than ending cleanly, still settle the tab rather than leaving it mid-drag.
+    // rather than ending cleanly, still settle the tab rather than leaving it mid-drag. Gated
+    // on tabDragEngagedSV: without this, EVERY failed gesture called snapTabToNearest — which
+    // includes a plain tap on one of the tab bar's own Pressable buttons, since that Pressable
+    // sits inside this gesture's detection area and the tap itself is "a touch that failed to
+    // become a pan". snapTabToNearest read tabSlideAnim.value to decide the target, but the
+    // Pressable's onPress had *just* kicked off its own withTiming animation toward the OTHER
+    // tab a moment earlier in the same event — reading the shared value before that animation
+    // had advanced saw it still near its old position and "corrected" the tap right back to
+    // the tab the user was leaving, immediately after switchTabRef had set the new one. That
+    // read this exact bug: the color flip looked like it silently reverted, and only a SECOND
+    // tap (now racing against an already-in-flight animation closer to its target) landed on
+    // the right side. A tap that never dragged never touched tabSlideAnim, so there is nothing
+    // for this gesture to correct — only a genuinely engaged, then-interrupted drag should.
     .onFinalize((_, success) => {
-      if (!success) snapTabToNearest();
-    });
+      if (!success && tabDragEngagedSV.value) snapTabToNearest();
+    })
+    // Without this, this Pan and the content ScrollView's own native gesture are exclusive —
+    // whichever the touch system picks first wins outright, which is what made the tab swipe
+    // feel sticky/unreliable (a swipe that also brushed vertically often lost the race to the
+    // ScrollView entirely, or got stuck in a pending state neither gesture resolved cleanly).
+    // Registering them as simultaneous lets both recognize together, exactly like
+    // DestinationSheet's own tabSwipeGesture.
+    .simultaneousWithExternalGesture(scrollRef)
+    // The About panel's "NEARBY" row is the exception: a horizontal drag starting on it should
+    // only scroll that carousel, not also page the tab bar. Requiring its own native scroll to
+    // fail first means this Pan never activates for touches beginning there.
+    .requireExternalGestureToFail(nearbyHlScrollRef);
 
   // The hero and peek photos are <EntityPhoto> elements keyed on the active spot (see EntityPhoto.tsx): the URL is
   // derived from that spot's own cache key so it can't be another spot's, and loading it never re-renders this
@@ -869,6 +942,7 @@ function SpotSheet({
               >
                 <Text style={[st.tabBtnTxt, activeTab === 'visit' && st.tabBtnTxtActive]}>My Visit</Text>
               </Pressable>
+              <View style={st.tabDivider} />
               <Pressable
                 style={st.tabBtn}
                 onPress={() => {
@@ -926,12 +1000,12 @@ function SpotSheet({
 
                   {/* ── ABOUT PANEL ────────────────────────────────────── */}
                   <View style={st.slidePanel}>
-                    <SpotAbout spot={activeSpot} nearbySpots={spots.filter(s => s.id !== activeSpot.id)} onSelectNearby={handleSelectNearby} onExplore={() => snapToCollapsedRef.current()} />
+                    <SpotAbout spot={activeSpot} nearbySpots={spots.filter(s => s.id !== activeSpot.id)} onSelectNearby={handleSelectNearby} onExplore={() => snapToCollapsedRef.current()} nearbyHlScrollRef={nearbyHlScrollRef} />
                   </View>
                 </Reanimated.View>
               </View>
             ) : (
-              <SpotAbout spot={activeSpot} nearbySpots={spots.filter(s => s.id !== activeSpot.id)} onSelectNearby={handleSelectNearby} onExplore={() => snapToCollapsedRef.current()} />
+              <SpotAbout spot={activeSpot} nearbySpots={spots.filter(s => s.id !== activeSpot.id)} onSelectNearby={handleSelectNearby} onExplore={() => snapToCollapsedRef.current()} nearbyHlScrollRef={nearbyHlScrollRef} />
             )}
           </View>
         </GHScrollView>
@@ -960,7 +1034,7 @@ function SpotSheet({
             {!!onGoToList && (
               <Pressable style={st.carListBtn} onPress={onGoToList} hitSlop={8}>
                 <LayoutGrid size={14} color="#6B7280" />
-                <Text style={st.carListBtnTxt}>List</Text>
+                <Text style={st.carListBtnTxt}>List view</Text>
               </Pressable>
             )}
           </View>
@@ -1049,22 +1123,23 @@ function SpotSheet({
 }
 
 // ── About panel (shared between visited/non-visited) ──────────────────────────
-function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore }: { spot: Spot; nearbySpots: Spot[]; onSelectNearby: (spot: Spot) => void; onExplore?: () => void }) {
+function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore, nearbyHlScrollRef }: { spot: Spot; nearbySpots: Spot[]; onSelectNearby: (spot: Spot) => void; onExplore?: () => void; nearbyHlScrollRef?: React.RefObject<GHScrollView | null> }) {
   const [hoursOpen, setHoursOpen] = useState(false);
   const today = new Date().getDay();
 
   return (
     <>
-      <View style={st.section}>
+      <View style={[st.section, st.glanceRow]}>
         <View style={st.glanceCard}>
           <View style={st.glanceItem}>
             <View style={st.glanceIconCircleIndigo}>
               <Clock size={20} color="#6366F1" />
             </View>
-            <Text style={st.glanceVal}>{spot.visitHours}h</Text>
+            <Text style={st.glanceVal} numberOfLines={1}>{formatVisitTime(spot.visitHoursMin, spot.visitHoursMax)}</Text>
             <Text style={st.glanceLbl}>Time needed</Text>
           </View>
-          <View style={st.glanceDivider} />
+        </View>
+        <View style={st.glanceCard}>
           <View style={st.glanceItem}>
             <View style={st.glanceIconCircleGreen}>
               <DollarSign size={20} color="#16A34A" />
@@ -1079,33 +1154,47 @@ function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore }: { spot: Spo
           (today's hours, tap to expand) and, only while open, its own plain white card
           listing the full week. No "OPENING HOURS" eyebrow and no "Today" tag on the
           matching row below — just the bold value line and (when open) that row's own
-          green-tinted text, matching how it already picked today out. */}
-      <View style={st.section}>
-        <Pressable style={st.hoursCard} onPress={() => setHoursOpen(o => !o)}>
-          <View style={st.hoursIconCircle}>
-            <Clock size={20} color="#16A34A" />
-          </View>
-          <Text style={st.hoursTxt}>Today: {hoursForDay(spot, today)}</Text>
-          {hoursOpen
-            ? <ChevronUp size={18} color="#065F46" style={{ marginLeft: 'auto' }} />
-            : <ChevronDown size={18} color="#065F46" style={{ marginLeft: 'auto' }} />}
-        </Pressable>
-      </View>
-
-      {hoursOpen && (
-        <View style={st.section}>
-          <View style={st.hoursWeekCard}>
-            {DAY_NAMES.map((day, i) => (
-              <View key={day} style={[st.hoursWeekRow, i > 0 && st.hoursWeekRowBorder]}>
-                <Text style={[st.hoursWeekDay, i === today && st.hoursWeekDayToday]}>{day}</Text>
-                <Text style={[st.hoursWeekVal, i === today && st.hoursWeekDayToday]}>
-                  {hoursForDay(spot, i)}
+          tinted text, matching how it already picked today out. Closed today switches every
+          element of the collapsed row (and the matching week row) from green to red, rather
+          than just the "Closed" value text — the card as a whole should read as a status. */}
+      {(() => {
+        const closedToday = hoursForDay(spot, today) === 'Closed';
+        return (
+          <>
+            <View style={st.section}>
+              <Pressable style={[st.hoursCard, closedToday && st.hoursCardClosed]} onPress={() => setHoursOpen(o => !o)}>
+                <View style={st.hoursIconCircle}>
+                  <Clock size={20} color={closedToday ? '#DC2626' : '#16A34A'} />
+                </View>
+                <Text style={[st.hoursTxt, closedToday && st.hoursTxtClosed]}>
+                  Today: {hoursForDay(spot, today)}
                 </Text>
+                {hoursOpen
+                  ? <ChevronUp size={18} color={closedToday ? '#991B1B' : '#065F46'} style={{ marginLeft: 'auto' }} />
+                  : <ChevronDown size={18} color={closedToday ? '#991B1B' : '#065F46'} style={{ marginLeft: 'auto' }} />}
+              </Pressable>
+            </View>
+
+            {hoursOpen && (
+              <View style={st.section}>
+                <View style={st.hoursWeekCard}>
+                  {DAY_NAMES.map((day, i) => {
+                    const isToday = i === today;
+                    return (
+                      <View key={day} style={[st.hoursWeekRow, i > 0 && st.hoursWeekRowBorder]}>
+                        <Text style={[st.hoursWeekDay, isToday && (closedToday ? st.hoursWeekDayTodayClosed : st.hoursWeekDayToday)]}>{day}</Text>
+                        <Text style={[st.hoursWeekVal, isToday && (closedToday ? st.hoursWeekDayTodayClosed : st.hoursWeekDayToday)]}>
+                          {hoursForDay(spot, i)}
+                        </Text>
+                      </View>
+                    );
+                  })}
+                </View>
               </View>
-            ))}
-          </View>
-        </View>
-      )}
+            )}
+          </>
+        );
+      })()}
 
       {!!spot.ticketUrl && (
         <View style={st.section}>
@@ -1127,21 +1216,21 @@ function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore }: { spot: Spo
           same width, same horizontal scroll): the destination's other spots, one tap away.
           "Explore" collapses this sheet to half-screen, back to the full carousel of spots. */}
       {nearbySpots.length > 0 && (
-        <View style={st.section}>
+        <View style={[st.section, st.nearbySection]}>
           <View style={st.secHeadRow}>
-            <Text style={st.sectionTitle}>NEARBY</Text>
+            <Text style={st.sectionTitle}>NEARBY SPOTS</Text>
             {!!onExplore && (
               <Pressable style={st.seeAllRow} onPress={onExplore} hitSlop={8}>
-                <Text style={st.seeAllTxt}>Explore</Text>
+                <Text style={st.seeAllTxt}>See all</Text>
                 <ChevronRight size={15} color="#16A34A" />
               </Pressable>
             )}
           </View>
-          <ScrollView horizontal showsHorizontalScrollIndicator={false} style={st.hlScroll} contentContainerStyle={st.hlRow}>
+          <GHScrollView ref={nearbyHlScrollRef} horizontal showsHorizontalScrollIndicator={false} style={st.hlScroll} contentContainerStyle={st.hlRow}>
             {nearbySpots.map(s => (
               <SpotCard key={s.id} spot={s} width={NEARBY_CARD_W} onPress={() => onSelectNearby(s)} />
             ))}
-          </ScrollView>
+          </GHScrollView>
         </View>
       )}
     </>
@@ -1300,6 +1389,7 @@ const st = StyleSheet.create({
             borderTopLeftRadius: 24, borderTopRightRadius: 24, marginTop: -24,
             borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: '#E5E7EB', zIndex: 1, overflow: 'hidden' },
   tabBtn: { flex: 1, paddingVertical: 15, alignItems: 'center' },
+  tabDivider: { width: StyleSheet.hairlineWidth, marginVertical: 14, backgroundColor: '#E5E7EB' },
   tabBtnTxt: { fontSize: 15, fontWeight: '600', color: '#9CA3AF' },
   tabBtnTxtActive: { color: '#111827' },
   // Sliding underline — outer track keeps the existing per-tab left/width positioning; the
@@ -1326,22 +1416,25 @@ const st = StyleSheet.create({
   // About
   section: { gap: 10 },
   sectionTitle: { fontSize: 13, fontWeight: '800', color: '#9CA3AF', letterSpacing: 0.4 },
-  glanceCard: { backgroundColor: '#F9FAFB', borderRadius: 16, flexDirection: 'row', borderWidth: 1, borderColor: '#F3F4F6' },
+  glanceRow: { flexDirection: 'row' },
+  glanceCard: { flex: 1, backgroundColor: '#F9FAFB', borderRadius: 16, flexDirection: 'row', borderWidth: 1, borderColor: '#F3F4F6' },
   glanceItem: { flex: 1, alignItems: 'center', paddingVertical: 20, gap: 5 },
   glanceIconCircleIndigo: { width: 40, height: 40, borderRadius: 20, backgroundColor: '#EEF2FF',
                             alignItems: 'center', justifyContent: 'center', marginBottom: 2 },
   glanceIconCircleGreen:  { width: 40, height: 40, borderRadius: 20, backgroundColor: '#ECFDF5',
                             alignItems: 'center', justifyContent: 'center', marginBottom: 2 },
-  glanceDivider: { width: StyleSheet.hairlineWidth, backgroundColor: '#E5E7EB', marginVertical: 14 },
   glanceVal: { fontSize: 20, fontWeight: '800', color: '#111827' },
   glanceLbl: { fontSize: 11, color: '#9CA3AF', fontWeight: '500' },
   // Collapsed hours row — its own tinted card now (not joined to the week list below it, which
   // only exists as a separate card while open — see SpotAbout's own comment).
   hoursCard: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: '#F0FDF4',
                borderRadius: 16, padding: 14, borderWidth: 1, borderColor: '#DCFCE7' },
+  // Closed-today variant — same shape, red instead of green (see SpotAbout's own comment).
+  hoursCardClosed: { backgroundColor: '#FEF2F2', borderColor: '#FECACA' },
   hoursIconCircle: { width: 40, height: 40, borderRadius: 20, backgroundColor: 'white',
                      alignItems: 'center', justifyContent: 'center' },
   hoursTxt: { fontSize: 15, fontWeight: '700', color: '#065F46' },
+  hoursTxtClosed: { color: '#B91C1C' },
   // The full-week card, only rendered while open — plain white, its own border/radius, each
   // row joined to the next by a top hairline instead of each row having its own card.
   hoursWeekCard: { backgroundColor: 'white', borderRadius: 16, overflow: 'hidden',
@@ -1352,6 +1445,7 @@ const st = StyleSheet.create({
   hoursWeekDay:     { fontSize: 14, color: '#6B7280', fontWeight: '500' },
   hoursWeekVal:     { fontSize: 14, color: '#374151', fontWeight: '500' },
   hoursWeekDayToday: { color: '#16A34A', fontWeight: '800' },
+  hoursWeekDayTodayClosed: { color: '#DC2626', fontWeight: '800' },
   // Ticketing — same tinted-card shape as hoursCard, indigo instead of green, with a small
   // filled button in place of the chevron (no separate body copy — see SpotAbout's own comment).
   ticketCard: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: '#EEF2FF',
@@ -1370,6 +1464,13 @@ const st = StyleSheet.create({
   seeAllTxt:  { fontSize: 14, fontWeight: '600', color: '#16A34A' },
   hlScroll:   { marginHorizontal: -12, marginTop: -12, marginBottom: -8 },
   hlRow:      { gap: 14, paddingHorizontal: 12, paddingTop: 12, paddingBottom: 12 },
+  // Extra breathing room below the carousel — it's the last section in the About panel, and
+  // hlScroll's own negative marginBottom (pulled up to tighten the row-to-card gap) otherwise
+  // leaves almost nothing between the cards and the panel's own scroll-end padding.
+  // marginTop adds to (not replaces) the 16px gap the panel's own `content`/`slidePanel`
+  // container already puts between sibling sections, since this section wants more room
+  // above it than the others get.
+  nearbySection: { paddingBottom: 16, marginTop: 8 },
 });
 
 // Memoized: the map screen re-renders continuously while the camera moves, and a re-render of the sheet is a React
