@@ -1172,13 +1172,20 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   }, [selectedCountry, selectedDest, countryHomeRegion, region]);
 
   const showDestReturnPrompt = useMemo(() => {
-    if (!selectedDest || !destHomeRegion || suppressDestReturnPromptRef.current) return false;
+    // Also suppressed once a spot is selected — same nesting rule showReturnPrompt already
+    // applies for country->destination (there, `selectedDest` truthy silences the country
+    // prompt). Without this, browsing the spot carousel triggered false positives: each swipe
+    // reframes the camera tightly on that one spot (see fitSpotView/handleActiveSpotChange),
+    // which is naturally a big pan+zoom away from the destination-wide destHomeRegion even
+    // though the user never touched the map — SpotSheet's own peek state (pillPeekSV) is the
+    // right signal for "should the breadcrumb show" while a spot is open, not this one.
+    if (!selectedDest || !destHomeRegion || !!selectedSpot || suppressDestReturnPromptRef.current) return false;
     const zoomedOut = region.latitudeDelta > destHomeRegion.latitudeDelta * 1.6;
     const pannedAway =
       Math.abs(region.latitude  - destHomeRegion.latitude)  > destHomeRegion.latitudeDelta  * 0.45 ||
       Math.abs(region.longitude - destHomeRegion.longitude) > destHomeRegion.longitudeDelta * 0.45;
     return zoomedOut || pannedAway;
-  }, [selectedDest, destHomeRegion, region]);
+  }, [selectedDest, destHomeRegion, region, selectedSpot]);
 
   useEffect(() => {
     // Fallback for state-driven transitions (e.g. selectedCountry changes while map is static).
@@ -2346,6 +2353,16 @@ const destItems = useMemo((): DestItem[] =>
   const handleActiveSpotChange = useCallback((spot: Spot) => {
     selectedSpotRef.current = spot;
     setSelectedSpot(spot);
+    // Suppress handleCameraChanged's peek-push for the duration of this camera move — same
+    // reasoning as handleResetToDest's own suppressPeekPushRef use. Without it, swiping the
+    // spot carousel could occasionally have this easeTo's own camera-changed events misread
+    // as a fresh user map gesture (Mapbox doesn't always report isGestureActive:false on the
+    // very first frame of a programmatic move), which dropped the sheet to "peek" and, as a
+    // side effect, flashed the top country/destination breadcrumb pill mid-swipe even though
+    // the sheet was still at bottom-screen/collapsed the whole time.
+    suppressPeekPushRef.current = true;
+    if (suppressPeekPushTimerRef.current) clearTimeout(suppressPeekPushTimerRef.current);
+    suppressPeekPushTimerRef.current = setTimeout(() => { suppressPeekPushRef.current = false; }, 350);
     // 200ms (down from 400) — this fires continuously as the carousel settles on each card,
     // so it needs to keep pace with a quick swipe rather than visibly trail behind it.
     fitSpotView(spot, 'easeTo', 200);
@@ -2938,7 +2955,12 @@ const destItems = useMemo((): DestItem[] =>
     // showDestReturnPrompt alone (the fallback effect below) wasn't enough, since this
     // block runs first and independently writes to the same shared value.
     const dh = destHomeRegionRef.current;
-    if (selectedDestRef.current && dh && !suppressDestReturnPromptRef.current) {
+    // Also gated on !selectedSpotRef.current — see showDestReturnPrompt's own comment. Without
+    // it, this unthrottled path (which runs on every raw camera-changed event, well before that
+    // memo's throttled `region` state catches up) was the one actually firing the arrow: each
+    // spot-carousel swipe reframes the camera on fitSpotView's own tight per-spot zoom, which
+    // reads as "panned away" against the destination-wide dh region on the very first frame.
+    if (selectedDestRef.current && dh && !selectedSpotRef.current && !suppressDestReturnPromptRef.current) {
       const zoomedOut  = latDelta > dh.latitudeDelta * 1.6;
       const pannedAway = Math.abs(lat - dh.latitude)  > dh.latitudeDelta  * 0.45 ||
                          Math.abs(lng - dh.longitude) > dh.longitudeDelta * 0.45;
