@@ -1,5 +1,5 @@
 import React, { useRef, useState, useMemo, useCallback, useEffect } from 'react';
-import { View, StyleSheet, Pressable, Text, Dimensions, Animated, Platform, TextInput, Image, Easing as RNEasing, Keyboard, ScrollView } from 'react-native';
+import { unstable_batchedUpdates, View, StyleSheet, Pressable, Text, Dimensions, Animated, Platform, TextInput, Image, Easing as RNEasing, Keyboard, ScrollView } from 'react-native';
 import Reanimated, { useSharedValue, useAnimatedStyle, useAnimatedReaction, runOnJS, withTiming, Easing } from 'react-native-reanimated';
 import Svg, { Rect, Path, Circle } from 'react-native-svg';
 import { sheetPose } from '../components/Map/sheetPose';
@@ -391,8 +391,8 @@ const pinSt = StyleSheet.create({
 // plan stay mounted for PIN_EXIT_MS fading to 0, then unmount. This is what turns the
 // stamp↔photo promotions and pill collision wins/losses from sudden appearance changes into
 // gradual cross-fades, matching how Apple/Google Maps POI labels resolve density changes.
-const PIN_FADE_IN_MS = 240;
-const PIN_EXIT_MS    = 200;
+const PIN_FADE_IN_MS = 160;
+const PIN_EXIT_MS    = 120;
 
 function FadePin({ exiting, instant, children }: { exiting: boolean; instant?: boolean; children: React.ReactNode }) {
   // `instant`: mounts fully opaque (no fade-in) — for a duplicate that sits exactly over an
@@ -412,36 +412,49 @@ function FadePin({ exiting, instant, children }: { exiting: boolean; instant?: b
 // PIN_EXIT_MS (so FadePin can animate them out) before pruning. Re-added keys cancel their
 // pending removal and simply fade back in.
 function useExitingItems<T>(items: T[], keyOf: (t: T) => string): { item: T; key: string; exiting: boolean }[] {
-  const [rendered, setRendered] = useState<{ item: T; key: string; exiting: boolean }[]>(
-    () => items.map(item => ({ item, key: keyOf(item), exiting: false })),
-  );
+  type R = { item: T; key: string; exiting: boolean };
+  const [, force] = useState(0);
+  const prevRef = useRef<R[]>(items.map(item => ({ item, key: keyOf(item), exiting: false })));
   const timersRef = useRef<Map<string, ReturnType<typeof setTimeout>>>(new Map());
+
+  // Derived DURING render (not in an effect that sets state): a change to the item list used to cost a render for the
+  // change and a second one for the effect's setState, on a screen whose render is expensive. That doubling is what made
+  // pins react late on a fast zoom. The previous array is reused when nothing changed, so memoized marker lists stay put.
+  const liveKeys = new Set<string>();
+  const next: R[] = [];
+  for (const item of items) {
+    const key = keyOf(item);
+    liveKeys.add(key);
+    next.push({ item, key, exiting: false });
+  }
+  for (const r of prevRef.current) {
+    if (!liveKeys.has(r.key)) next.push({ ...r, exiting: true });
+  }
+  const prev = prevRef.current;
+  const same = prev.length === next.length && prev.every((r, i) => r.key === next[i].key && r.item === next[i].item && r.exiting === next[i].exiting);
+  if (!same) prevRef.current = next;
+  const result = prevRef.current;
+
+  // Timers (a side effect, so after commit): re-added keys cancel their removal; each exiting key is pruned once its
+  // fade has finished.
   useEffect(() => {
-    setRendered(prev => {
-      const liveKeys = new Set(items.map(keyOf));
-      const next: { item: T; key: string; exiting: boolean }[] = [];
-      for (const item of items) {
-        const key = keyOf(item);
-        const t = timersRef.current.get(key);
-        if (t) { clearTimeout(t); timersRef.current.delete(key); }
-        next.push({ item, key, exiting: false });
+    for (const r of result) {
+      if (!r.exiting) {
+        const t = timersRef.current.get(r.key);
+        if (t) { clearTimeout(t); timersRef.current.delete(r.key); }
+      } else if (!timersRef.current.has(r.key)) {
+        const key = r.key;
+        timersRef.current.set(key, setTimeout(() => {
+          timersRef.current.delete(key);
+          prevRef.current = prevRef.current.filter(c => !(c.key === key && c.exiting));
+          force(n => n + 1);
+        }, PIN_EXIT_MS + 40));
       }
-      for (const r of prev) {
-        if (liveKeys.has(r.key)) continue;
-        next.push({ ...r, exiting: true });
-        if (!timersRef.current.has(r.key)) {
-          timersRef.current.set(r.key, setTimeout(() => {
-            timersRef.current.delete(r.key);
-            setRendered(cur => cur.filter(c => c.key !== r.key));
-          }, PIN_EXIT_MS + 40));
-        }
-      }
-      return next;
-    });
-  }, [items]);
+    }
+  }, [result]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => () => { for (const t of timersRef.current.values()) clearTimeout(t); }, []);
-  return rendered;
+  return result;
 }
 
 // ─── Country Marker (photo circle — world view) ───────────────────────────────
@@ -1342,7 +1355,9 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     // Rule 3: greedy collision resolution using the same pan-invariant Mercator projection
     // destPinPlan uses (scaled off the true visible span only), so results don't shift
     // while panning.
-    const pxPerDegLng = Dimensions.get('window').width / planLngDelta;
+    // True on-screen scale (see destPinPlan): pills the plan lets through here must not overlap in reality, or Mapbox
+    // hides one natively, instantly, instead of it fading out.
+    const pxPerDegLng = Dimensions.get('window').width / pillVisibleLngDelta;
     // A pill is a WIDE, SHORT shape (flag circle + name card, ~110×26pt), so collision is a
     // rectangle test on the center deltas, not a circular radius. The old 70px circular
     // radius treated two pills stacked ~60px apart VERTICALLY as colliding even though they
@@ -1406,7 +1421,11 @@ const destItems = useMemo((): DestItem[] =>
   const destPinPlan = useMemo(() => {
     // Pan-invariant Web-Mercator projection scaled off the true visible span only (see
     // mercatorPx + planLngDelta). NO camera centre, NO latitudeDelta — both drift under pan.
-    const pxPerDegLng = SCREEN_W / planLngDelta;
+    // Collisions are tested at the TRUE on-screen scale (pillVisibleLngDelta), not the planning scale. The planning scale
+    // runs ~2x deeper than reality, so two pins the plan thought 60pt apart were really 30pt apart and overlapped; Mapbox
+    // then hid one of them natively — instantly, with no fade. Tested at real distances the plan resolves the overlap
+    // itself (the loser becomes a dot, through the normal cross-fade). The promotion GATES below stay on planLngDelta.
+    const pxPerDegLng = SCREEN_W / pillVisibleLngDelta;
 
     // Plan over the pan-invariant ELIGIBLE set (not the viewport-culled render set), so the
     // greedy collision resolution sees a stable roster while panning.
@@ -2910,16 +2929,20 @@ const destItems = useMemo((): DestItem[] =>
 
     // Throttle the region-state updates to ~20 fps.
     const now = Date.now();
-    if (now - lastCameraTimeRef.current < 50) return;
+    if (now - lastCameraTimeRef.current < 24) return;
     lastCameraTimeRef.current = now;
 
-    setRegion({
-      latitude:       lat,
-      longitude:      lng,
-      latitudeDelta:  latDelta,
-      longitudeDelta: lngDelta,
+    // One batched update: the region and the zoom always change together, and applying them separately renders the
+    // whole (large) screen twice per camera frame — which is what made pins react late on a fast pinch.
+    unstable_batchedUpdates(() => {
+      setRegion({
+        latitude:       lat,
+        longitude:      lng,
+        latitudeDelta:  latDelta,
+        longitudeDelta: lngDelta,
+      });
+      setCamZoom(state.properties.zoom);
     });
-    setCamZoom(state.properties.zoom);
   }, [returnPromptProgress, destReturnPromptProgress, mapGestureAtSV]);
 
   const handleMapIdle = useCallback((state: {
@@ -3034,7 +3057,8 @@ const destItems = useMemo((): DestItem[] =>
 
   // Exit-fade tracking: pills/photos dropped from the plan linger for PIN_EXIT_MS fading
   // out (see useExitingItems/FadePin) instead of vanishing on the next frame.
-  const renderedCountryPills = useExitingItems(countryPills, c => c.country);
+  const stableCountryPills = useStableList(countryPills, c => `${c.countryCode}:${c.visitedCount}`);
+  const renderedCountryPills = useExitingItems(stableCountryPills, c => c.country);
 
   const countryPillMarkers = useMemo(() => renderedCountryPills.map(({ item: cluster, exiting }) => {
     const isSelectedPill = cluster.countryCode === selectedCountry?.countryCode;
@@ -3054,10 +3078,13 @@ const destItems = useMemo((): DestItem[] =>
       <MapboxGL.MarkerView
         key={cluster.country}
         coordinate={[cluster.longitude, cluster.latitude]}
-        // The selected country's pill must not be hidden by Mapbox's marker-collision pass (the
-        // default). Others keep it: their overlaps are resolved by the plan, and this way a pill
-        // the selected one sits on can still be dropped natively as a backstop.
-        allowOverlap={isSelectedPill}
+        // Unconditional: the JS-side plan (countryPills, above) is the sole authority on which pills are shown and
+        // already resolves every collision at the TRUE on-screen scale before a pill is ever placed. Leaving Mapbox's
+        // own native collision pass on let it make a SECOND, uncoordinated overlap decision on the same markers —
+        // whichever system updated first for a given camera frame won, for exactly one frame, which is what caused
+        // pills to flash/disappear and reappear instead of cross-fading (see FadePin) when several pills' visibility
+        // changed together (e.g. Belgium/Denmark/Czech Republic at once while zooming).
+        allowOverlap
       >
         <FadePin exiting={exiting}>
           {/* The selected country's pill is inert: it persists while zoomed out, so a pinch or pan
@@ -3130,11 +3157,16 @@ const destItems = useMemo((): DestItem[] =>
   // any other destination — rather than the old blanket "selected ⇒ never a photo pin"
   // exclusion, which left it stuck as a plain stamp dot at every zoom past that range (there
   // was no path back to a photo pin once zoomedIntoDestIds no longer covered it).
+  // The plan is recomputed on every camera frame (it is a function of continuous zoom) but its RESULT only changes at
+  // threshold crossings. Downstream lists are keyed on this stable copy, so a frame that changes nothing costs nothing
+  // beyond the plan itself — no new arrays, no marker-list rebuild, no extra renders — and a frame that does change
+  // something reacts immediately instead of queueing behind a pile of no-op re-renders.
+  const stablePhotoIds = useStableSet(destPinPlan.photoIds);
   const promotedDests = useMemo(() => destItems
-    .filter(item => !hiddenDestIds.has(item.dest.id) && destPinPlan.photoIds.has(item.dest.id))
+    .filter(item => !hiddenDestIds.has(item.dest.id) && stablePhotoIds.has(item.dest.id))
     .map(item => item.dest)
     .sort((a, b) => b.rank - a.rank), // rank=1 renders last (on top)
-  [destItems, destPinPlan, hiddenDestIds]);
+  [destItems, stablePhotoIds, hiddenDestIds]);
   const renderedPhotoDests = useExitingItems(promotedDests, d => d.id);
   useEffect(() => {
     let cleared = false;
@@ -3154,13 +3186,13 @@ const destItems = useMemo((): DestItem[] =>
         <MapboxGL.MarkerView
           key={dest.id}
           coordinate={[dest.coordinates.longitude, dest.coordinates.latitude]}
-          // Only the SELECTED destination's pin opts out of Mapbox's marker-collision pass (the
-          // default, allowOverlap={false}, hides whichever marker collides), so it can't drop out
-          // and pop back while zooming out. Every other photo pin MUST keep that pass: destPinPlan
-          // resolves collisions on its own planning scale, which runs wider than the real screen
-          // scale, so it lets through overlaps that native collision was quietly cleaning up —
-          // turning it off for all of them filled the map with overlapping pins.
-          allowOverlap={isSelectedDest}
+          // Unconditional (previously only the selected destination opted out): destPinPlan is the sole authority on
+          // which destinations get a photo pin, and now resolves every collision at the TRUE on-screen scale (see its
+          // own comment) before ever promoting one — so Mapbox's native collision pass was making a SECOND,
+          // uncoordinated overlap decision on the same markers. Whichever system updated first for a given camera
+          // frame won, for exactly one frame: that's what flashed a whole screen's worth of pins to dots and back
+          // instead of the intended cross-fade (see FadePin) when the plan's own result changed.
+          allowOverlap
         >
           <FadePin exiting={exiting}>
             {/* The selected destination's own pin persists while zooming out. Tapping it only re-frames the camera on the
