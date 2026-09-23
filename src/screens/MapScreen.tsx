@@ -2418,6 +2418,22 @@ const destItems = useMemo((): DestItem[] =>
     // just as React state — this ref needs the answer synchronously, before that commits).
     setSheetSnapState(landOnFull ? 'full' : 'collapsed');
     if (selectedDest) {
+      // Suppress both handleCameraChanged's peek-push and the destination "return to home
+      // view" breadcrumb prompt for the duration of this camera move — same reasoning as
+      // handleMarkerPress/handleResetToDest's own use of these guards. Unlike
+      // handleMarkerPress's fresh-open case, destHomeRegion is already set here (the
+      // destination sheet was open underneath the spot sheet the whole time), so the
+      // `!destHomeRegion` short-circuit in showDestReturnPrompt doesn't cover this camera
+      // move on its own: easeTo-ing back from the spot's own tight zoom genuinely reads as
+      // "panned away" against that already-captured home region until it settles, which was
+      // flashing the breadcrumb pill over the half-screen destination sheet every time a spot
+      // was closed back to its destination.
+      suppressPeekPushRef.current = true;
+      if (suppressPeekPushTimerRef.current) clearTimeout(suppressPeekPushTimerRef.current);
+      suppressPeekPushTimerRef.current = setTimeout(() => { suppressPeekPushRef.current = false; }, 650);
+      suppressDestReturnPromptRef.current = true;
+      if (suppressDestReturnPromptTimerRef.current) clearTimeout(suppressDestReturnPromptTimerRef.current);
+      suppressDestReturnPromptTimerRef.current = setTimeout(() => { suppressDestReturnPromptRef.current = false; }, 650);
       // Neither snap this can land on leaves the bottom-screen strip showing, so 'topHalf'.
       fitDestinationDefaultView(selectedDest, 'easeTo', 'topHalf');
     }
