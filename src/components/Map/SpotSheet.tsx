@@ -20,7 +20,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { SharedValue } from 'react-native-reanimated';
 import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'react-native-svg';
 import { Check, Star, Clock, MapPin, Pencil, ChevronUp, ChevronDown, ChevronRight, LayoutGrid, Plus,
-         DollarSign, ExternalLink } from 'lucide-react-native';
+         DollarSign, ExternalLink, Ticket } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
 import * as ImagePicker from 'expo-image-picker';
 import { useStore } from '../../store';
@@ -1075,40 +1075,51 @@ function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore }: { spot: Spo
         </View>
       </View>
 
-      {/* One connected card: the row and (when open) the full week are the same card, joined by a
-          hairline divider, rather than two separate floating cards with a gap between them. Collapsed
-          shows just today's hours, since that's what a visitor actually needs right now; expanding
-          reveals the full week, with today's row picked out. */}
+      {/* Two separate cards now (not one joined by a hairline) — a tinted collapsed row
+          (today's hours, tap to expand) and, only while open, its own plain white card
+          listing the full week. No "OPENING HOURS" eyebrow and no "Today" tag on the
+          matching row below — just the bold value line and (when open) that row's own
+          green-tinted text, matching how it already picked today out. */}
       <View style={st.section}>
-        <View style={st.hoursCard}>
-          <Pressable style={st.hoursRow} onPress={() => setHoursOpen(o => !o)}>
-            <Clock size={16} color="#16A34A" />
-            <Text style={st.hoursTxt}>Today: {hoursForDay(spot, today)}</Text>
-            {hoursOpen
-              ? <ChevronUp size={16} color="#9CA3AF" style={{ marginLeft: 'auto' }} />
-              : <ChevronDown size={16} color="#9CA3AF" style={{ marginLeft: 'auto' }} />}
-          </Pressable>
-          {hoursOpen && (
-            <View style={st.hoursWeekWrap}>
-              {DAY_NAMES.map((day, i) => (
-                <View key={day} style={[st.hoursWeekRow, i > 0 && st.hoursWeekRowBorder]}>
-                  <Text style={[st.hoursWeekDay, i === today && st.hoursWeekDayToday]}>{day}</Text>
-                  <Text style={[st.hoursWeekVal, i === today && st.hoursWeekDayToday]}>
-                    {hoursForDay(spot, i)}
-                  </Text>
-                </View>
-              ))}
-            </View>
-          )}
-        </View>
+        <Pressable style={st.hoursCard} onPress={() => setHoursOpen(o => !o)}>
+          <View style={st.hoursIconCircle}>
+            <Clock size={20} color="#16A34A" />
+          </View>
+          <Text style={st.hoursTxt}>Today: {hoursForDay(spot, today)}</Text>
+          {hoursOpen
+            ? <ChevronUp size={18} color="#065F46" style={{ marginLeft: 'auto' }} />
+            : <ChevronDown size={18} color="#065F46" style={{ marginLeft: 'auto' }} />}
+        </Pressable>
       </View>
+
+      {hoursOpen && (
+        <View style={st.section}>
+          <View style={st.hoursWeekCard}>
+            {DAY_NAMES.map((day, i) => (
+              <View key={day} style={[st.hoursWeekRow, i > 0 && st.hoursWeekRowBorder]}>
+                <Text style={[st.hoursWeekDay, i === today && st.hoursWeekDayToday]}>{day}</Text>
+                <Text style={[st.hoursWeekVal, i === today && st.hoursWeekDayToday]}>
+                  {hoursForDay(spot, i)}
+                </Text>
+              </View>
+            ))}
+          </View>
+        </View>
+      )}
 
       {!!spot.ticketUrl && (
         <View style={st.section}>
-          <Pressable style={st.ticketRow} onPress={() => Linking.openURL(spot.ticketUrl!)}>
-            <ExternalLink size={16} color="#6366F1" />
-            <Text style={st.ticketTxt}>{spot.name} official tickets</Text>
-          </Pressable>
+          <View style={st.ticketCard}>
+            <View style={st.ticketIconCircle}>
+              <Ticket size={20} color="#6366F1" />
+            </View>
+            <Text style={st.ticketTxt} numberOfLines={2}>{spot.name} official tickets</Text>
+            <Pressable style={st.ticketBtn} onPress={() => Linking.openURL(spot.ticketUrl!)} hitSlop={6}>
+              <ExternalLink size={13} color="white" />
+              <Text style={st.ticketBtnTxt}>Visit site</Text>
+              <ChevronRight size={13} color="white" />
+            </Pressable>
+          </View>
         </View>
       )}
 
@@ -1324,22 +1335,33 @@ const st = StyleSheet.create({
   glanceDivider: { width: StyleSheet.hairlineWidth, backgroundColor: '#E5E7EB', marginVertical: 14 },
   glanceVal: { fontSize: 20, fontWeight: '800', color: '#111827' },
   glanceLbl: { fontSize: 11, color: '#9CA3AF', fontWeight: '500' },
-  // One connected card holding both the row and (when open) the week list — see SpotAbout's own
-  // comment. The card itself carries the background/radius/border; the row and the list are plain
-  // children of it, joined by hoursWeekWrap's top hairline instead of each having its own floating card.
-  hoursCard: { backgroundColor: 'white', borderRadius: 16, overflow: 'hidden', borderWidth: 1, borderColor: '#F3F4F6' },
-  hoursRow: { flexDirection: 'row', alignItems: 'center', gap: 10, padding: 16 },
-  hoursTxt: { fontSize: 15, fontWeight: '600', color: '#374151' },
-  hoursWeekWrap:    { borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: '#F3F4F6' },
+  // Collapsed hours row — its own tinted card now (not joined to the week list below it, which
+  // only exists as a separate card while open — see SpotAbout's own comment).
+  hoursCard: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: '#F0FDF4',
+               borderRadius: 16, padding: 14, borderWidth: 1, borderColor: '#DCFCE7' },
+  hoursIconCircle: { width: 40, height: 40, borderRadius: 20, backgroundColor: 'white',
+                     alignItems: 'center', justifyContent: 'center' },
+  hoursTxt: { fontSize: 15, fontWeight: '700', color: '#065F46' },
+  // The full-week card, only rendered while open — plain white, its own border/radius, each
+  // row joined to the next by a top hairline instead of each row having its own card.
+  hoursWeekCard: { backgroundColor: 'white', borderRadius: 16, overflow: 'hidden',
+                   borderWidth: 1, borderColor: '#F3F4F6' },
   hoursWeekRow:     { flexDirection: 'row', justifyContent: 'space-between',
-                      paddingHorizontal: 16, paddingVertical: 11 },
+                      paddingHorizontal: 16, paddingVertical: 13 },
   hoursWeekRowBorder: { borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: '#F3F4F6' },
   hoursWeekDay:     { fontSize: 14, color: '#6B7280', fontWeight: '500' },
   hoursWeekVal:     { fontSize: 14, color: '#374151', fontWeight: '500' },
   hoursWeekDayToday: { color: '#16A34A', fontWeight: '800' },
-  ticketRow: { flexDirection: 'row', alignItems: 'center', gap: 10, backgroundColor: 'white',
-               borderRadius: 16, padding: 16, borderWidth: 1, borderColor: '#F3F4F6' },
-  ticketTxt: { fontSize: 15, fontWeight: '600', color: '#6366F1' },
+  // Ticketing — same tinted-card shape as hoursCard, indigo instead of green, with a small
+  // filled button in place of the chevron (no separate body copy — see SpotAbout's own comment).
+  ticketCard: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: '#EEF2FF',
+                borderRadius: 16, padding: 14, borderWidth: 1, borderColor: '#E0E7FF' },
+  ticketIconCircle: { width: 40, height: 40, borderRadius: 20, backgroundColor: 'white',
+                      alignItems: 'center', justifyContent: 'center' },
+  ticketTxt: { flex: 1, fontSize: 14.5, fontWeight: '700', color: '#312E81' },
+  ticketBtn: { flexDirection: 'row', alignItems: 'center', gap: 4, backgroundColor: '#6366F1',
+               borderRadius: 10, paddingHorizontal: 12, paddingVertical: 9 },
+  ticketBtnTxt: { fontSize: 13, fontWeight: '700', color: 'white' },
 
   // "Explore nearby" — same header + horizontal-scroll pattern as the destination sheet's own
   // "Top Spots" row (see DestinationSheet's plainSectionHeader/seeAllRow/hlScroll/hlRow).
