@@ -1071,6 +1071,18 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     () => wasMapGestureActiveRef.current || (fingersDownRef.current > 0 && mapMovedThisTouchRef.current),
     [],
   );
+  // Same "is a finger actively dragging the map" question, but WITHOUT isMapInteracting's sticky
+  // wasMapGestureActiveRef component — that flag covers momentum, staying true through a fling's
+  // whole deceleration glide even after the finger has lifted. A tap that lands on a pin/pill while
+  // a previous pan is still coasting is a deliberate selection, not a mid-gesture accident (the tap's
+  // own touch sequence resets mapMovedThisTouchRef at touch-start, so this is only ever true if THIS
+  // touch itself is what's dragging the map — which a Pressable onPress firing at all rules out).
+  // Used at the sheet's peek-vs-collapsed decision on tap so a pin tapped mid-momentum still opens
+  // to half-screen instead of getting stuck peeking.
+  const isFingerDraggingMap = useCallback(
+    () => fingersDownRef.current > 0 && mapMovedThisTouchRef.current,
+    [],
+  );
   // A press on a pin, pill, spot or the back pill that is really part of a pinch — a finger of the pinch lifting over
   // it, which iOS delivers as a tap — is not a selection. A pinch by definition has a second finger, and a real tap
   // only ever has one, so that is all this checks. It must NOT also look at whether the map is "interacting": the
@@ -2139,8 +2151,10 @@ const destItems = useMemo((): DestItem[] =>
     // and skip bumping peekSignal entirely — the new sheet then never dropped to peek on
     // that first pan, reading as "jumps back to collapsed instead of going to peek."
     // DestinationSheet always opens 'collapsed' by default (initialSnap only ever requests
-    // otherwise from a caller that doesn't run through this path).
-    setSheetSnapState(isMapInteracting() ? 'peek' : 'collapsed');
+    // otherwise from a caller that doesn't run through this path). isFingerDraggingMap, not
+    // isMapInteracting — see its own comment: a tap landing while a previous pan is still
+    // coasting on momentum must still open collapsed, not get stuck peeking.
+    setSheetSnapState(isFingerDraggingMap() ? 'peek' : 'collapsed');
     // destHomeRegion itself is captured LAZILY from the real, settled camera bounds once the
     // fly-to below actually lands (see handleMapIdle) — NOT fabricated synchronously from
     // this target region. A synthetic guess (this same latitudeDelta/longitudeDelta pair)
@@ -2278,8 +2292,10 @@ const destItems = useMemo((): DestItem[] =>
     setZoomedIntoDestination(true);
     showBreadcrumb(true);
     // Synchronous reset — see handleMarkerPress's own comment for why this can't wait on
-    // SpotSheet's mount effect to report back. Mirrors the snap it will choose: peeked if the map is being interacted with.
-    setSheetSnapState(isMapInteracting() ? 'peek' : 'collapsed');
+    // SpotSheet's mount effect to report back. isFingerDraggingMap, not isMapInteracting — a
+    // spot tapped while a previous pan is still coasting on momentum must still open collapsed
+    // (see isFingerDraggingMap's own comment).
+    setSheetSnapState(isFingerDraggingMap() ? 'peek' : 'collapsed');
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     // 280ms (down from 500) — tapping a new spot pin, the carousel itself is also sliding to
     // match (see SpotSheet's own focusSpotId effect), and the slower of the two dominates how
@@ -2611,9 +2627,10 @@ const destItems = useMemo((): DestItem[] =>
     setSelectedCountry(cluster);
     showBreadcrumb(true);
     // Synchronous reset — see handleMarkerPress's own comment for why this can't wait on
-    // CountrySheet's own mount effect to report back.
+    // CountrySheet's own mount effect to report back. isFingerDraggingMap, not isMapInteracting
+    // (see its own comment) — a tap must still open collapsed even mid-momentum.
     setCountryInitialSnap(openPeeked ? 'peek' : undefined);
-    setSheetSnapState(openPeeked || isMapInteracting() ? 'peek' : 'collapsed');
+    setSheetSnapState(openPeeked || isFingerDraggingMap() ? 'peek' : 'collapsed');
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     fitCountryDefaultView(cluster, cameraMode, openPeeked ? 'full' : 'topHalf');
     // Kick off CountrySheet's own header-photo fetch right now, in parallel with the sheet's
@@ -3738,7 +3755,7 @@ const destItems = useMemo((): DestItem[] =>
           collapseSignal={collapseSheetSignal}
           peekSignal={peekSheetSignal}
           exitSignal={sheetExitSignal}
-          isMapInteracting={isMapInteracting}
+          isMapInteracting={isFingerDraggingMap}
           isPressBlocked={pressBlocked}
           enterFromPrevious={newSheetEnterFromPrevious}
           mapGestureAtSV={mapGestureAtSV}
@@ -3771,7 +3788,7 @@ const destItems = useMemo((): DestItem[] =>
           collapseSignal={collapseSheetSignal}
           peekSignal={peekSheetSignal}
           exitSignal={sheetExitSignal}
-          isMapInteracting={isMapInteracting}
+          isMapInteracting={isFingerDraggingMap}
           isPressBlocked={pressBlocked}
           enterFromPrevious={newSheetEnterFromPrevious}
           mapGestureAtSV={mapGestureAtSV}
@@ -3795,7 +3812,7 @@ const destItems = useMemo((): DestItem[] =>
           pillOffsetSV={upPillBottomSV}
           peekSignal={peekSheetSignal}
           exitSignal={sheetExitSignal}
-          isMapInteracting={isMapInteracting}
+          isMapInteracting={isFingerDraggingMap}
           isPressBlocked={pressBlocked}
           enterFromPrevious={newSheetEnterFromPrevious}
           mapGestureAtSV={mapGestureAtSV}
