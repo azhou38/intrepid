@@ -622,6 +622,16 @@ const PROGRAMMATIC_CAMERA_BUFFER_MS = 100;
 const SCREEN_ASPECT = H / SCREEN_W_GLOBAL;
 const panInvariantLatDelta = (longitudeDelta: number) => longitudeDelta * SCREEN_ASPECT;
 
+// How many zoom levels out from a destination's settled home view counts as "zoomed out" for
+// its return arrow — log2(1.6), i.e. the same 1.6× visible-span threshold this used to express
+// as a latitudeDelta ratio. Measured on the camera's zoom LEVEL rather than its reported bounds:
+// under projection="globe" the bounds Mapbox reports once the camera zooms out to globe scale
+// aren't reliable (bounds maths is documented as unsupported on Globe — see
+// fitCountryDefaultView), and near the poles, where the pole itself comes into view early,
+// the latitude span they report could stay under the threshold however far the user zoomed
+// out, so the arrow never appeared (e.g. Stockholm). Zoom is exact at every scale and latitude.
+const DEST_ZOOMED_OUT_LEVELS = Math.log2(1.6);
+
 const SPOT_THRESHOLD     = 0.5;
 // At true world-view zoom (the same "> 50" boundary already used elsewhere to bypass
 // viewport-bounds filtering, and to cap visibleRank at 1), destination stamps add visual
@@ -1046,6 +1056,10 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   const countryHomeRegionRef = useRef<Region | null>(null);
   const [destHomeRegion, setDestHomeRegion] = useState<Region | null>(null);
   const destHomeRegionRef = useRef<Region | null>(null);
+  // Camera zoom level at the moment destHomeRegion was captured (always set alongside it in
+  // handleMapIdle) — the "zoomed out" half of the return-arrow check measures against this.
+  // See DEST_ZOOMED_OUT_LEVELS.
+  const destHomeZoomRef = useRef(0);
   // Suppresses the "return to destination" arrow for the duration of the initial fly-to a
   // freshly-selected destination, and gates when destHomeRegion is allowed to be captured —
   // see the set-site comment in handleMarkerPress for the full reasoning.
@@ -1222,12 +1236,12 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     // suppressDestReturnPromptRef itself for the duration of its own camera move, the same
     // guard every other programmatic camera move in this file already uses.
     if (!selectedDest || !destHomeRegion || suppressDestReturnPromptRef.current) return false;
-    const zoomedOut = region.latitudeDelta > destHomeRegion.latitudeDelta * 1.6;
+    const zoomedOut = camZoom < destHomeZoomRef.current - DEST_ZOOMED_OUT_LEVELS;
     const pannedAway =
       Math.abs(region.latitude  - destHomeRegion.latitude)  > destHomeRegion.latitudeDelta  * 0.45 ||
       Math.abs(region.longitude - destHomeRegion.longitude) > destHomeRegion.longitudeDelta * 0.45;
     return zoomedOut || pannedAway;
-  }, [selectedDest, destHomeRegion, region]);
+  }, [selectedDest, destHomeRegion, region, camZoom]);
 
   useEffect(() => {
     // Fallback for state-driven transitions (e.g. selectedCountry changes while map is static).
@@ -3110,7 +3124,7 @@ const destItems = useMemo((): DestItem[] =>
     // camera-changed event, well before the throttled `region` state the memo reads catches up
     // — from misreading the spot carousel's own per-spot fitSpotView reframing as a user pan.
     if (selectedDestRef.current && dh && !suppressDestReturnPromptRef.current) {
-      const zoomedOut  = latDelta > dh.latitudeDelta * 1.6;
+      const zoomedOut  = state.properties.zoom < destHomeZoomRef.current - DEST_ZOOMED_OUT_LEVELS;
       const pannedAway = Math.abs(lat - dh.latitude)  > dh.latitudeDelta  * 0.45 ||
                          Math.abs(lng - dh.longitude) > dh.longitudeDelta * 0.45;
       animatePrompt(zoomedOut || pannedAway, destReturnPromptVisibleRef, destReturnPromptProgress);
@@ -3199,6 +3213,7 @@ const destItems = useMemo((): DestItem[] =>
     if (selectedDestRef.current && !destHomeRegionRef.current && newRegion.latitudeDelta < 2
         && !destFlightInterruptedRef.current) {
       destHomeRegionRef.current = newRegion;
+      destHomeZoomRef.current = state.properties.zoom;
       setDestHomeRegion(newRegion);
       // Belt-and-suspenders: force arrow hidden immediately when home is captured.
       destReturnPromptProgress.value = 0; destReturnPromptVisibleRef.current = false;
