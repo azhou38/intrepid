@@ -178,7 +178,7 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: '{months} bring mild weather and a break from the peak summer crush.',
   },
   {
-    id: 'venice', name: 'Venr', country: 'Italy', countryCode: 'IT',
+    id: 'venice', name: 'Venice', country: 'Italy', countryCode: 'IT',
     continent: 'Europe', coordinates: { latitude: 45.4408, longitude: 12.3155 },
     category: 'city', icon: '🚤', rank: 1,
     tagline: "A city built on water, defying physics and logic for a thousand years.",
