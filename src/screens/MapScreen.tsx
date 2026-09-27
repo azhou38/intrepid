@@ -605,6 +605,9 @@ const PEEK_STRIP_H = 90;
 // — the sheet reports its new snap on the same tick it starts its own timing, so matching the
 // duration is what makes the map track the sheet rather than trail it.
 const SHEET_SNAP_MS = 280;
+// Slack added on top of a programmatic camera animation's own duration before it's considered
+// finished (see beginProgrammaticCameraMove), so its last camera-changed events still count as ours.
+const PROGRAMMATIC_CAMERA_BUFFER_MS = 100;
 
 // Pan-invariant zoom measure. `latitudeDelta` (the viewport's degree-span in latitude)
 // DRIFTS as you pan north/south — Mercator compresses degrees toward the poles, so at a
@@ -928,13 +931,17 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // easing back — don't retrigger/restart themselves mid-flight.
   const southCorrectingRef = useRef(false);
   const southCorrectingTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  // Suppresses the south-limit glide-back for the duration of an explicit "zoom out to
-  // world" animation (see handleCloseCountry) — without this, zooming out from a southern
-  // country like Australia passes through intermediate frames whose bounds legitimately dip
-  // past SOUTH_LIMIT, and the glide-back would fire its own competing setCamera (with no
-  // zoomLevel of its own) mid-flight, stalling the zoom-out almost immediately.
-  const suppressSouthLimitRef = useRef(false);
-  const suppressSouthLimitTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  // True while one of our own programmatic camera animations is in flight (set by
+  // beginProgrammaticCameraMove, which every shared camera helper below calls just before its
+  // setCamera). Programmatic moves fire camera-changed events with isGestureActive:false exactly
+  // like a released user gesture does, so without this the south-limit glide-back can't tell
+  // them apart: a move whose intermediate frames legitimately dip past SOUTH_LIMIT (zooming out
+  // from a southern country like Australia, or zooming back IN to a destination from maximum
+  // globe zoom, where the whole globe's south edge is already past the limit) would get its own
+  // competing setCamera — with no zoomLevel of its own — fired mid-flight, stalling or
+  // overriding the intended camera almost immediately.
+  const programmaticCameraMoveRef = useRef(false);
+  const programmaticCameraMoveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
 
 
@@ -1054,7 +1061,7 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // a fresh selection — e.g. tapping the breadcrumb's "return to destination" arrow while
   // the sheet is already peeking. Mirrors the same suppression pattern already used for
   // other programmatic camera moves in this file (suppressDestReturnPromptRef,
-  // suppressSouthLimitRef) — native camera-changed events fire throughout ANY animated
+  // programmaticCameraMoveRef) — native camera-changed events fire throughout ANY animated
   // setCamera call, programmatic or not, and without this guard they can race ahead of/
   // interfere with gesture-state bookkeeping that assumes only real user gestures move the
   // camera, an interference already documented as a known risk elsewhere in this file.
@@ -1962,17 +1969,35 @@ const destItems = useMemo((): DestItem[] =>
   }, []);
   useEffect(() => () => {
     if (suppressFrameSyncTimerRef.current) clearTimeout(suppressFrameSyncTimerRef.current);
+    if (programmaticCameraMoveTimerRef.current) clearTimeout(programmaticCameraMoveTimerRef.current);
+  }, []);
+
+  // Marks the camera as moving under our own control for `durationMs` (the animation's own
+  // duration — the source of truth) plus a small buffer for the final camera-changed events to
+  // land. Any previous move's timer is replaced, so a camera command issued mid-animation
+  // extends the window to cover the NEW animation rather than letting the old timer clear it
+  // early, and nothing can be left stuck on. A user gesture also clears it (see
+  // handleCameraChanged), so taking over the map mid-animation restores the south-limit
+  // glide-back immediately.
+  const beginProgrammaticCameraMove = useCallback((durationMs: number) => {
+    programmaticCameraMoveRef.current = true;
+    if (programmaticCameraMoveTimerRef.current) clearTimeout(programmaticCameraMoveTimerRef.current);
+    programmaticCameraMoveTimerRef.current = setTimeout(() => {
+      programmaticCameraMoveRef.current = false;
+      programmaticCameraMoveTimerRef.current = null;
+    }, durationMs + PROGRAMMATIC_CAMERA_BUFFER_MS);
   }, []);
 
   const animateCamera = useCallback((reg: Region, duration = 500, mode: 'easeTo' | 'flyTo' = 'easeTo') => {
     cancelCountryCapture();
+    beginProgrammaticCameraMove(duration);
     cameraRef.current?.setCamera({
       centerCoordinate: [reg.longitude, reg.latitude],
       zoomLevel: latDeltaToZoom(reg.latitudeDelta),
       animationDuration: duration,
       animationMode: mode,
     });
-  }, [cancelCountryCapture]);
+  }, [cancelCountryCapture, beginProgrammaticCameraMove]);
 
   // Computes an explicit centerCoordinate + zoomLevel ourselves (the exact same primitives
   // animateCamera uses) rather than handing raw coordinates to setCamera's `bounds` field —
@@ -2027,13 +2052,14 @@ const destItems = useMemo((): DestItem[] =>
     const rawCenterLng = (ne.longitude + sw.longitude) / 2;
     const rawCenterLat = (ne.latitude  + sw.latitude)  / 2;
 
+    beginProgrammaticCameraMove(duration);
     cameraRef.current?.setCamera({
       centerCoordinate: [rawCenterLng - dxPx / scale, rawCenterLat + dyPx / scale],
       zoomLevel,
       animationDuration: duration,
       animationMode: mode,
     });
-  }, [cancelCountryCapture]);
+  }, [cancelCountryCapture, beginProgrammaticCameraMove]);
 
   // Default framing for a freshly-selected country. The vertical window runs from the very
   // top of the screen down to wherever the sheet's top edge will settle, and the country is
@@ -2111,6 +2137,7 @@ const destItems = useMemo((): DestItem[] =>
     const cacheKey = `${cluster.countryCode}:${framing}`;
     const cached = countryCamCacheRef.current[cacheKey];
     if (cached && cached.mapH === mapViewH) {
+      beginProgrammaticCameraMove(FIT_MS);
       cameraRef.current?.setCamera({
         centerCoordinate: [cached.lng, cached.lat],
         zoomLevel: cached.zoom,
@@ -2132,6 +2159,7 @@ const destItems = useMemo((): DestItem[] =>
     const insetV = availH * (1 - SHRINK) / 2;
     const insetH = SCREEN_W_GLOBAL * (1 - SHRINK) / 2;
 
+    beginProgrammaticCameraMove(FIT_MS);
     cameraRef.current?.setCamera({
       bounds: {
         ne: [bounds.ne.longitude, bounds.ne.latitude],
@@ -2155,7 +2183,7 @@ const destItems = useMemo((): DestItem[] =>
     // use it. The map idle that follows this single move holds the final camera; handleMapIdle accepts it
     // once FIT_MS has elapsed.
     countryCacheArmRef.current = { code: cluster.countryCode, key: cacheKey, at: Date.now() + FIT_MS };
-  }, [fitCoords, cancelCountryCapture]);
+  }, [fitCoords, cancelCountryCapture, beginProgrammaticCameraMove]);
 
   // Destination equivalent of fitCountryDefaultView, and much simpler for two reasons: a
   // destination is a POINT rather than a bounding box, so there's nothing to size — the zoom
@@ -2190,13 +2218,14 @@ const destItems = useMemo((): DestItem[] =>
     const centerLat = invMercY(
       mercY(dest.coordinates.latitude) - (targetY - mapViewH / 2) / worldSize,
     );
+    beginProgrammaticCameraMove(durationMs);
     cameraRef.current?.setCamera({
       centerCoordinate: [dest.coordinates.longitude, centerLat],
       zoomLevel,
       animationDuration: durationMs,
       animationMode: mode,
     });
-  }, [cancelCountryCapture]);
+  }, [cancelCountryCapture, beginProgrammaticCameraMove]);
 
   // Spot equivalent of fitDestinationDefaultView — same closed-form point-centring math, but
   // fixed at spot zoom (latitudeDelta 0.02) and always framed for the half-screen carousel
@@ -2213,13 +2242,14 @@ const destItems = useMemo((): DestItem[] =>
     const centerLat = invMercY(
       mercY(spot.coordinates.latitude) - (targetY - mapViewH / 2) / worldSize,
     );
+    beginProgrammaticCameraMove(durationMs);
     cameraRef.current?.setCamera({
       centerCoordinate: [spot.coordinates.longitude, centerLat],
       zoomLevel,
       animationDuration: durationMs,
       animationMode: mode,
     });
-  }, [cancelCountryCapture]);
+  }, [cancelCountryCapture, beginProgrammaticCameraMove]);
 
   // ── Handlers ─────────────────────────────────────────────────────────────
   // Drops the selected country when the destination being opened belongs to a DIFFERENT one. The
@@ -2622,11 +2652,8 @@ const destItems = useMemo((): DestItem[] =>
     // the same way handleCloseSpotToDestinationView does; the Explore sheet remounts instead.
     selectedCountryRef.current = null;
     setSelectedCountry(null);
-    // Suppress the south-limit glide-back while this zooms out — see suppressSouthLimitRef's own
-    // comment (and handleCloseCountry, which does the same) for why it'd otherwise stall the zoom-out.
-    suppressSouthLimitRef.current = true;
-    if (suppressSouthLimitTimerRef.current) clearTimeout(suppressSouthLimitTimerRef.current);
-    suppressSouthLimitTimerRef.current = setTimeout(() => { suppressSouthLimitRef.current = false; }, 650);
+    // (The south-limit glide-back is held off for this zoom-out by fitDestinationDefaultView
+    // itself — see programmaticCameraMoveRef.)
     // Not a fit to the parent country: countries vary too much in size (closing the Grand Canyon
     // would fling out to the whole USA, closing a Monaco-sized place to barely anything). Instead
     // zoom out to HALF the destination's own default zoom level, centred on the destination in the
@@ -2741,11 +2768,8 @@ const destItems = useMemo((): DestItem[] =>
     // whole close read as laggy. ExploreSheet still animates itself up from off-screen on
     // mount, which covers the swap.
     setSelectedCountry(null);
-    // Suppress the south-limit glide-back for the duration of this animation — see
-    // suppressSouthLimitRef's own comment for why it'd otherwise stall the zoom-out.
-    suppressSouthLimitRef.current = true;
-    if (suppressSouthLimitTimerRef.current) clearTimeout(suppressSouthLimitTimerRef.current);
-    suppressSouthLimitTimerRef.current = setTimeout(() => { suppressSouthLimitRef.current = false; }, 650);
+    // Both camera paths below hold off the south-limit glide-back for the duration of the
+    // zoom-out — see programmaticCameraMoveRef's own comment for why it'd otherwise stall it.
     // Zoom out to HALF the zoom level of the country's own default (topHalf-framed) view,
     // rather than always the fixed world/globe home view — reads as "step back from this
     // country" rather than "reset the whole map", matching the destination/spot X cases'
@@ -2759,6 +2783,7 @@ const destItems = useMemo((): DestItem[] =>
     const mapViewH = mapViewHRef.current || (H - BOTTOM_TAB_H);
     const cached = countryCamCacheRef.current[`${cluster.countryCode}:topHalf`];
     if (cached && cached.mapH === mapViewH) {
+      beginProgrammaticCameraMove(600);
       cameraRef.current?.setCamera({
         centerCoordinate: [cached.lng, cached.lat],
         zoomLevel: cached.zoom / 2,
@@ -2768,7 +2793,7 @@ const destItems = useMemo((): DestItem[] =>
       return;
     }
     animateCamera({ latitude: 20, longitude: regionRef.current.longitude, latitudeDelta: WORLD_HOME_LATDELTA, longitudeDelta: WORLD_HOME_LATDELTA }, 600);
-  }, [showBreadcrumb, animateCamera]);
+  }, [showBreadcrumb, animateCamera, beginProgrammaticCameraMove]);
 
   // `openPeeked` is for returning UP to a country from a destination via the breadcrumb: the
   // sheet opens in bottom-screen/peek instead of half-screen, and the map is framed for the
@@ -3001,6 +3026,16 @@ const destItems = useMemo((): DestItem[] =>
     }
     wasMapGestureActiveRef.current = isGestureActive;
     if (isGestureActive) mapMovedThisTouchRef.current = true;
+    // The user has taken the camera over from any in-flight programmatic move, so it's theirs
+    // again — drop the flag now rather than waiting out that animation's timer, so the
+    // south-limit glide-back below still fires the moment they release.
+    if (isGestureActive && programmaticCameraMoveRef.current) {
+      programmaticCameraMoveRef.current = false;
+      if (programmaticCameraMoveTimerRef.current) {
+        clearTimeout(programmaticCameraMoveTimerRef.current);
+        programmaticCameraMoveTimerRef.current = null;
+      }
+    }
 
     // South-limit glide-back: let the user freely drag as far south as they want (so they
     // can actually see how much of Antarctica there is while their finger is down) — but
@@ -3010,9 +3045,11 @@ const destItems = useMemo((): DestItem[] =>
     // -60 keeps southern South America (Cape Horn ≈ -56°) comfortably in view while
     // trimming Antarctica to only its northernmost strip. Only the south edge is clamped;
     // the north cap and longitude (center[0], passed through) are untouched.
+    // isGestureActive:false alone doesn't mean "the user just released" — our own animations
+    // report it too — so skip while one of those is in flight (programmaticCameraMoveRef).
     const SOUTH_LIMIT = -60;
     if (!selectedCountryRef.current && !isGestureActive && !southCorrectingRef.current
-        && !suppressSouthLimitRef.current && bounds.sw[1] < SOUTH_LIMIT) {
+        && !programmaticCameraMoveRef.current && bounds.sw[1] < SOUTH_LIMIT) {
       southCorrectingRef.current = true;
       const toMercY = (lt: number) => Math.log(Math.tan(Math.PI / 4 + lt * Math.PI / 360));
       const fromMercY = (y: number) => (2 * Math.atan(Math.exp(y)) - Math.PI / 2) * 180 / Math.PI;
