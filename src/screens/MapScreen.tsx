@@ -2279,6 +2279,13 @@ const destItems = useMemo((): DestItem[] =>
   // selection's default zoom, the close leaves the camera exactly where it is instead — they
   // chose that wider view, and flying back in towards the selection they're leaving reads
   // backwards. Each close handler checks this against the default zoom of what's being closed.
+  //
+  // A close that stays put must also let go of the held selection itself (releaseHeldSelection):
+  // the pin/pill planning normally keeps the closed selection until the close's zoom-out settles,
+  // but with no camera move there's no idle to release it, so the closed destination's pin (or
+  // country's pill) would stay forced on, and styled as selected, until the user next touched the
+  // map. Released right away, the planning re-plans at the current zoom at once: the pin shows
+  // deselected, or fades out through its normal exit fade if it doesn't belong at this zoom.
   const isZoomedOutBeyond = useCallback((defaultZoom: number | null) =>
     defaultZoom !== null && camZoomRef.current < defaultZoom - ZOOM_EPSILON, []);
 
@@ -2564,8 +2571,10 @@ const destItems = useMemo((): DestItem[] =>
     setSelectedCountry(null);
     if (dest && !isZoomedOutBeyond(latDeltaToZoom(SPOT_VIEW_LATDELTA))) {
       fitDestinationDefaultView(dest, 'easeTo', 'topHalf');
+    } else {
+      releaseHeldSelection();
     }
-  }, [showBreadcrumb, fitDestinationDefaultView, isZoomedOutBeyond]);
+  }, [showBreadcrumb, fitDestinationDefaultView, isZoomedOutBeyond, releaseHeldSelection]);
 
   // Closing the spot sheet INTO its parent destination sheet (still selected), re-centering
   // the camera on the destination's default zoomed-in view. `toCollapsed` (set when this
@@ -2709,9 +2718,12 @@ const destItems = useMemo((): DestItem[] =>
     // country close uses, applied one level down.
     // Unless the user is already zoomed out past the destination's default zoom, in which case
     // the camera stays put (see isZoomedOutBeyond).
-    if (isZoomedOutBeyond(latDeltaToZoom(getZoomDelta(dest.category)))) return;
+    if (isZoomedOutBeyond(latDeltaToZoom(getZoomDelta(dest.category)))) {
+      releaseHeldSelection();
+      return;
+    }
     fitDestinationDefaultView(dest, 'easeTo', 'full', 600, 0.5);
-  }, [selectedDest, showBreadcrumb, fitDestinationDefaultView, isZoomedOutBeyond]);
+  }, [selectedDest, showBreadcrumb, fitDestinationDefaultView, isZoomedOutBeyond, releaseHeldSelection]);
 
   // Closing the destination sheet INTO its country view. `toCollapsed` (set when this
   // fires from a swipe-down while the destination sheet was itself collapsed) lands the
@@ -2836,7 +2848,10 @@ const destItems = useMemo((): DestItem[] =>
     //
     // Already zoomed out past the country's default zoom, though, the camera stays put (see
     // isZoomedOutBeyond).
-    if (isZoomedOutBeyond(countryDefaultCamera(cluster.countryCode)?.zoom ?? null)) return;
+    if (isZoomedOutBeyond(countryDefaultCamera(cluster.countryCode)?.zoom ?? null)) {
+      releaseHeldSelection();
+      return;
+    }
     const mapViewH = mapViewHRef.current || (H - BOTTOM_TAB_H);
     const cached = countryCamCacheRef.current[`${cluster.countryCode}:topHalf`];
     if (cached && cached.mapH === mapViewH) {
@@ -2850,7 +2865,7 @@ const destItems = useMemo((): DestItem[] =>
       return;
     }
     animateCamera({ latitude: 20, longitude: regionRef.current.longitude, latitudeDelta: WORLD_HOME_LATDELTA, longitudeDelta: WORLD_HOME_LATDELTA }, 600);
-  }, [showBreadcrumb, animateCamera, beginProgrammaticCameraMove, isZoomedOutBeyond, countryDefaultCamera]);
+  }, [showBreadcrumb, animateCamera, beginProgrammaticCameraMove, isZoomedOutBeyond, countryDefaultCamera, releaseHeldSelection]);
 
   // `openPeeked` is for returning UP to a country from a destination via the breadcrumb: the
   // sheet opens in bottom-screen/peek instead of half-screen, and the map is framed for the
