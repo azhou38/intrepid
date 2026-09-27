@@ -3000,11 +3000,10 @@ const destItems = useMemo((): DestItem[] =>
   // was only ever there to keep country-scoped pin-eligibility logic elsewhere in this file
   // fed a real country instead of null, and every one of those call sites already falls back
   // to selectedDest's own country/countryCode when selectedCountry is unset (see eligibleDests
-  // etc.). The one thing setting it ALSO does, as an unavoidable side effect, is draw the
-  // country boundary highlight (that block renders on selectedCountry alone, independent of
-  // whether a destination is also selected) — which reads as "picking a destination selected
-  // its whole country" for what's really just a direct jump to one place. Leaving it unset
-  // avoids that without losing the pin-eligibility behavior. selectedCountryRef.current is
+  // etc.). Setting it also used to draw the country boundary highlight, which read as "picking a
+  // destination selected its whole country" for what's really just a direct jump to one place
+  // (the highlight is now hidden whenever a destination is selected anyway). Leaving it unset
+  // keeps the pin-eligibility behavior without that. selectedCountryRef.current is
   // already null here regardless (ExploreSheet only mounts while nothing is selected), so
   // handleMarkerPress's own provenance check naturally resolves to 'map'; overriding to
   // 'search' below (same as the actual search flow) is what makes back restore this exact
@@ -3666,7 +3665,12 @@ const destItems = useMemo((): DestItem[] =>
           />
         </MapboxGL.VectorSource>
 
-        {/* Country boundary highlight — only when a country is selected. Explicitly pinned
+        {/* Country boundary highlight — only while the COUNTRY itself is the selection: not once a
+            destination (or one of its spots — a spot always has its destination selected too)
+            is open, even one drilled into from this country, where selectedCountry deliberately
+            stays set (see handleMarkerPress) and search sets it too (see handleSearchSelect).
+            Going back up to the country ("‹ Country" or the breadcrumb's country segment, both
+            via handleCountryPress) clears selectedDest, which brings the highlight back. Explicitly pinned
             below the stamp layer via belowLayerID (not just JSX order) since this block
             mounts/unmounts on every selection change, while the stamp layer mounts once —
             native insertion order otherwise depends on mount timing, not render position.
@@ -3676,7 +3680,7 @@ const destItems = useMemo((): DestItem[] =>
             against satellite imagery) — only the unvisited gray border switches to white in
             satellite view, where the dark imagery leaves gray hard to see; standard map view
             keeps the existing gray border unchanged either way. */}
-        {selectedCountry && (() => {
+        {selectedCountry && !selectedDest && (() => {
           const selectedIsVisited = visitedCountryCodeSet.has(selectedCountry.countryCode);
           const fillColor = selectedIsVisited ? '#22C55E' : '#FFFFFF';
           const lineColor = selectedIsVisited
