@@ -31,6 +31,42 @@ export interface CrowdMonthMeta {
   sources: string[];
 }
 
+export interface MonthDaylight {
+  month: string;
+  hours: number; // average hours of daylight (sunrise to sunset) for that month
+}
+
+// ── Daylight hours ─────────────────────────────────────────────────────────
+//
+// Deliberately NOT sourced from a weather API: day length is pure astronomy — a fixed function
+// of latitude and calendar date, unrelated to weather or climate — so computing it exactly here
+// is strictly more accurate than fetching it (no API rounds this any better), and needs no
+// network call, no bundle, no build step. The formula is the standard one used by NOAA's own
+// solar calculator: a Cooper's-equation approximation of solar declination, then the sunrise
+// hour-angle from latitude and declination.
+const DAY_OF_YEAR_MID_MONTH = [17, 47, 75, 105, 135, 162, 198, 228, 259, 289, 319, 345];
+
+function daylightHoursForDay(latitude: number, dayOfYear: number): number {
+  const rad = Math.PI / 180;
+  // Solar declination, degrees (Cooper's approximation).
+  const declDeg = 23.44 * Math.sin(rad * (360 / 365) * (dayOfYear - 81));
+  const latRad = latitude * rad;
+  const declRad = declDeg * rad;
+  // Clamp for polar day/night, where the sun never sets or never rises and the raw cosine
+  // would fall outside [-1, 1] (no valid sunrise hour-angle to solve for).
+  const cosHourAngle = Math.max(-1, Math.min(1, -Math.tan(latRad) * Math.tan(declRad)));
+  const hourAngleDeg = Math.acos(cosHourAngle) / rad;
+  return (2 * hourAngleDeg) / 15; // 15° of hour-angle per hour of daylight
+}
+
+/** 12 monthly average daylight hours (sunrise to sunset) for a latitude — exact, not estimated,
+ *  and the same for every destination at that latitude regardless of local weather. */
+export function getDaylightHours(latitude: number): MonthDaylight[] {
+  return MONTHS_SHORT.map((month, i) => ({
+    month,
+    hours: Math.round(daylightHoursForDay(latitude, DAY_OF_YEAR_MID_MONTH[i]) * 10) / 10,
+  }));
+}
 
 // ── Temperature profiles — Northern hemisphere baseline (°C, Jan→Dec) ─────────
 const T: Record<string, number[]> = {
@@ -245,16 +281,47 @@ export function scoreToCrowdLevel(score: number): number {
   return 5;
 }
 
+// A "best time to visit" that covers 6+ months isn't a recommendation any more, and one that
+// covers fewer than 2 reads as a single lucky month rather than an actual window — keep it
+// between these two bounds regardless of how many months genuinely qualify.
+const MIN_BEST_MONTHS = 2;
+const MAX_BEST_MONTHS = 5;
+
 /** Turns final per-month levels (from either the precomputed bundle or the live fallback below)
- *  into the MonthCrowd[] shape every consumer expects, including the "best month" flag —
- *  quietest months AND comfortable weather, exactly as before. */
-export function levelsToMonthCrowd(levels: number[], weather: MonthWeather[]): MonthCrowd[] {
+ *  into the MonthCrowd[] shape every consumer expects, including the "best month" flag.
+ *
+ *  `consensusMonths` (1–12, from Destination.bestMonths) takes over entirely when given: "best
+ *  time to visit" is meant to reflect actual travel-guide consensus, not this app's own crowd/
+ *  temperature model, so a destination with curated months uses exactly those rather than
+ *  anything derived below. The quietest-month computation remains only as the fallback for a
+ *  destination with no curated months yet. */
+export function levelsToMonthCrowd(
+  levels: number[], weather: MonthWeather[], consensusMonths?: number[],
+): MonthCrowd[] {
+  if (consensusMonths?.length) {
+    const bestSet = new Set(consensusMonths.map(m => m - 1));
+    return MONTHS_SHORT.map((month, i) => ({ month, level: levels[i], isBest: bestSet.has(i) }));
+  }
+
   const minLevel = Math.min(...levels);
-  return MONTHS_SHORT.map((month, i) => {
-    const goodTemp = weather[i].tempC >= 10 && weather[i].tempC <= 36;
-    const isBest = levels[i] <= minLevel + 1 && goodTemp;
-    return { month, level: levels[i], isBest };
-  });
+  const qualifies = (level: number, tempC: number) =>
+    level <= minLevel + 1 && tempC >= 10 && tempC <= 36;
+
+  // Every month, ranked quietest-first (then closest to a mild ~20°C as the tiebreaker) —
+  // the top MIN_BEST_MONTHS are always included even if none of them individually clears the
+  // "quiet enough and comfortable" bar, so a destination with a harsh climate still gets a real
+  // (if modest) recommendation instead of none at all.
+  const ranked = levels
+    .map((level, i) => ({ i, level, tempC: weather[i].tempC }))
+    .sort((a, b) => a.level - b.level || Math.abs(a.tempC - 20) - Math.abs(b.tempC - 20));
+
+  const bestSet = new Set<number>();
+  for (const c of ranked) {
+    if (bestSet.size >= MAX_BEST_MONTHS) break;
+    if (bestSet.size < MIN_BEST_MONTHS || qualifies(c.level, c.tempC)) bestSet.add(c.i);
+  }
+
+  return MONTHS_SHORT.map((month, i) => ({ month, level: levels[i], isBest: bestSet.has(i) }));
 }
 
 /** Live Tier 2/4 fallback for any destination the precomputed bundle (crowdNormals.json, built
@@ -274,7 +341,7 @@ export function getCrowdData(destination: Destination, weatherOverride?: MonthWe
   const raw = tier2 ? base.map((v, i) => v + tier2[i]) : base;
   const levels = relativeCrowdScores(raw).map(scoreToCrowdLevel);
   const weather = weatherOverride ?? getWeatherData(latitude, destination.category);
-  return levelsToMonthCrowd(levels, weather);
+  return levelsToMonthCrowd(levels, weather, destination.bestMonths);
 }
 
 // Typical millimetres per wet day, by climate. Only used to turn the synthetic rain

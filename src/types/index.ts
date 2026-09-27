@@ -102,6 +102,14 @@ export interface Destination {
   goodToKnow?: [GoodToKnowTip, GoodToKnowTip, GoodToKnowTip];
   // Destination-specific crowd drivers (Tier 2 of the crowd model) — see travelData.ts.
   seasonalTags?: SeasonalSignal[];
+  // "Best time to visit" months (1–12), from general travel-guide consensus rather than this
+  // app's own climate/crowd model — see levelsToMonthCrowd in travelData.ts, which uses this
+  // directly instead of deriving "best" from computed crowd levels and temperature.
+  bestMonths?: number[];
+  // Freeform "why these months" sentence, also from travel-guide consensus rather than this
+  // app's own weather/crowd numbers. Must contain exactly one `{months}` placeholder, which
+  // WhenToVisitCard swaps for the actual (coloured) month range from `bestMonths`.
+  bestTimeBlurb?: string;
 }
 
 export type SpotCategory =

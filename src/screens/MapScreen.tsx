@@ -1824,14 +1824,25 @@ const destItems = useMemo((): DestItem[] =>
   // so the names that survive a crowd are the ones that matter most. Pixel geometry comes from the
   // true on-screen scale, so this is what the eye actually sees; only relative offsets matter, so
   // the projection needs no camera centre.
+  const prevSpotLabelPlanRef = useRef<Map<string, 'left' | 'right' | 'none'>>(new Map());
   const spotLabelPlan = useMemo(() => {
     const plan = new Map<string, 'left' | 'right' | 'none'>();
+    // ALL rendered spots (including ones mid-exit-fade) count for collision geometry — a spot
+    // that just dropped below the zoom threshold is still on screen for PIN_EXIT_MS fading out,
+    // and if a surviving neighbour is allowed to treat its pin as already gone, the neighbour's
+    // label snaps to reclaim that side while the old pin is still visibly there, producing an
+    // abrupt swap for one or more frames right at the zoom threshold. Only LIVE spots get a
+    // label newly planned below; an exiting spot keeps whatever side it last had (via the ref)
+    // instead of resetting to the 'left' default, so its own label doesn't also jump right as
+    // it starts fading.
+    const all = renderedSpots.map(r => r.item);
+    if (all.length === 0) { prevSpotLabelPlanRef.current = plan; return plan; }
     const live = renderedSpots.filter(r => !r.exiting).map(r => r.item);
-    if (live.length === 0) return plan;
+    const exitingIds = renderedSpots.filter(r => r.exiting).map(r => r.item.id);
     const pxPerDegLng = SCREEN_W_GLOBAL / pillVisibleLngDelta;
     type Rect = { l: number; r: number; t: number; b: number };
     const geo = new Map<string, { pin: Rect; cy: number; cx: number; half: number; w: number }>();
-    for (const sp of live) {
+    for (const sp of all) {
       const m = mercatorPx(sp.coordinates.longitude, sp.coordinates.latitude, pxPerDegLng);
       const x = m.x, y = -m.y;                         // screen y grows downward, mercator's grows north
       const sel = selectedSpot?.id === sp.id;
@@ -1846,29 +1857,38 @@ const destItems = useMemo((): DestItem[] =>
     const PAD = 3;
     const hits = (a: Rect, b: Rect) =>
       a.l < b.r + PAD && a.r > b.l - PAD && a.t < b.b + PAD && a.b > b.t - PAD;
+    const labelRectFor = (g: { cx: number; cy: number; half: number; w: number }, side: 'left' | 'right'): Rect => {
+      const l = side === 'left' ? g.cx - g.half - SPOT_LABEL_GAP - g.w : g.cx + g.half + SPOT_LABEL_GAP;
+      return { l, r: l + g.w, t: g.cy - 8, b: g.cy + 8 };
+    };
+    const placedLabels: Rect[] = [];
+    // Exiting spots pre-claim their previous label rect so live spots' collision checks below
+    // still see it as occupied — the same protection a still-live spot would give a neighbour.
+    for (const id of exitingIds) {
+      const prevSide = prevSpotLabelPlanRef.current.get(id);
+      if (!prevSide) continue;
+      plan.set(id, prevSide);
+      if (prevSide !== 'none') placedLabels.push(labelRectFor(geo.get(id)!, prevSide));
+    }
     const order = [...live].sort((a, b) => {
       const rank = (sp: Spot) =>
         (selectedSpot?.id === sp.id ? -2_000_000 : 0) + (savedSpots[sp.id] ? -1_000_000 : 0) + (SPOT_ORDER.get(sp.id) ?? 0);
       return rank(a) - rank(b);
     });
-    const placedLabels: Rect[] = [];
     for (const sp of order) {
       const g = geo.get(sp.id)!;
-      const labelRect = (side: 'left' | 'right'): Rect => {
-        const l = side === 'left' ? g.cx - g.half - SPOT_LABEL_GAP - g.w : g.cx + g.half + SPOT_LABEL_GAP;
-        return { l, r: l + g.w, t: g.cy - 8, b: g.cy + 8 };
-      };
       const clear = (rect: Rect) => {
-        for (const other of live) if (other.id !== sp.id && hits(rect, geo.get(other.id)!.pin)) return false;
+        for (const other of all) if (other.id !== sp.id && hits(rect, geo.get(other.id)!.pin)) return false;
         for (const lab of placedLabels) if (hits(rect, lab)) return false;
         return true;
       };
-      const left = labelRect('left');
+      const left = labelRectFor(g, 'left');
       if (clear(left)) { plan.set(sp.id, 'left'); placedLabels.push(left); continue; }
-      const right = labelRect('right');
+      const right = labelRectFor(g, 'right');
       if (clear(right)) { plan.set(sp.id, 'right'); placedLabels.push(right); continue; }
       plan.set(sp.id, 'none');
     }
+    prevSpotLabelPlanRef.current = plan;
     return plan;
   }, [renderedSpots, pillVisibleLngDelta, selectedSpot, savedSpots]);
 

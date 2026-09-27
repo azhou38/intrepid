@@ -15,6 +15,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🚇', title: 'Check subway status', detail: 'The subway runs 24/7, but weekend service changes are frequent — check the app before you ride.' },
       { icon: '🍽️', title: 'Skip Times Square dining', detail: 'Times Square restaurants are overpriced tourist traps; walk a few blocks for better food and prices.' },
     ],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [4, 5, 9, 10],
+    bestTimeBlurb: '{months} bring mild weather, blooming parks, and thinner crowds than peak summer.',
   },
   {
     id: 'la', name: 'Los Angeles', country: 'United States', countryCode: 'US',
@@ -29,6 +32,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🚦', title: 'Avoid rush hour', detail: 'Traffic is brutal 7–10am and 4–7pm; plan long drives around rush hour.' },
       { icon: '🎬', title: 'Manage expectations', detail: 'The Hollywood Sign and Walk of Fame are often underwhelming up close — manage expectations.' },
     ],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [3, 4, 5],
+    bestTimeBlurb: '{months} offer LA’s mildest, least crowded stretch before the summer rush.',
   },
   {
     id: 'grand-canyon', name: 'Grand Canyon', country: 'United States', countryCode: 'US',
@@ -43,6 +49,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '📵', title: 'Download offline maps', detail: "There's little to no cell service in the park — download offline maps beforehand." },
       { icon: '🐴', title: 'Book mule rides early', detail: 'Mule rides and below-the-rim permits book out months in advance.' },
     ],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [5, 9, 10],
+    bestTimeBlurb: '{months} dodge the brutal summer heat and the biggest rim crowds.',
   },
 
   // ── EUROPE ─────────────────────────────────────────────────────────────────
@@ -60,6 +69,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '👛', title: 'Watch for pickpockets', detail: 'Pickpocketing is common near landmarks and on Metro Line 1 — keep bags zipped and in front.' },
       { icon: '🔒', title: 'Expect midday closures', detail: 'Many small shops close for a few hours midafternoon, and much of the city slows down in August.' },
     ],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [4, 5, 6, 9, 10],
+    bestTimeBlurb: '{months} bring mild weather, blooming gardens, and thinner crowds than midsummer.',
   },
   {
     id: 'nice', name: 'Nice', country: 'France', countryCode: 'FR',
@@ -74,6 +86,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🍷', title: 'Eat off the Promenade', detail: 'Restaurants directly on the Promenade are pricier and lower quality than those a few streets back.' },
       { icon: '🚆', title: 'Day-trip by train', detail: 'Trains to Monaco and Cannes are cheap and frequent, making car-free day trips easy.' },
     ],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [5, 6, 9],
+    bestTimeBlurb: '{months} bring warm Riviera weather without August’s peak crowds and prices.',
   },
   {
     id: 'lyon', name: 'Lyon', country: 'France', countryCode: 'FR',
@@ -88,6 +103,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🗺️', title: 'Map the traboules', detail: "The Vieux Lyon traboules are unmarked — download a self-guided map to actually find them." },
       { icon: '🛍️', title: 'Shop before Sunday', detail: 'Most shops close on Sundays, so handle errands and grocery runs on Saturday.' },
     ],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [5, 6, 9],
+    bestTimeBlurb: '{months} bring comfortable weather and a calmer, more local Lyon.',
   },
   // United Kingdom
   {
@@ -103,6 +121,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🚶', title: 'Stand on the right', detail: 'Standing on the right of escalators is a near-sacred unwritten rule — don\'t block the left.' },
       { icon: '🎟️', title: 'Book special exhibits', detail: 'Major museums are free, but special exhibits need paid, timed tickets booked online.' },
     ],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [4, 5, 9],
+    bestTimeBlurb: '{months} bring milder weather and noticeably thinner crowds than summer.',
   },
   {
     id: 'edinburgh', name: 'Edinburgh', country: 'United Kingdom', countryCode: 'GB',
@@ -117,6 +138,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🎭', title: 'Book ahead for August', detail: 'August (Fringe Festival) means packed streets and accommodation prices multiplying — book far ahead.' },
       { icon: '👟', title: 'Wear sturdy shoes', detail: 'The Royal Mile is steep and cobbled; comfortable shoes matter more than style here.' },
     ],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [5, 6, 9],
+    bestTimeBlurb: '{months} bring good weather without the Fringe Festival’s August crush.',
   },
   // Italy
   {
@@ -132,6 +156,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🍝', title: 'Avoid tourist-trap menus', detail: 'Restaurants near major sites often push an inflated "menu turistico" — walk a few blocks for better value.' },
       { icon: '☕', title: 'Stand at the bar', detail: 'Sitting at a café table instead of standing at the bar can double the price of the same coffee.' },
     ],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [4, 5, 9, 10],
+    bestTimeBlurb: '{months} bring pleasant temperatures and relief from summer’s heat and crowds.',
   },
   {
     id: 'florence', name: 'Florence', country: 'Italy', countryCode: 'IT',
@@ -146,6 +173,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🧾', title: 'Check the coperto fee', detail: 'Restaurants right around the Duomo often overcharge; check for a clearly listed "coperto" cover fee.' },
       { icon: '👠', title: 'Skip flimsy shoes', detail: 'The historic center is charming but rough underfoot — skip flimsy shoes on the cobblestones.' },
     ],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [4, 5, 9, 10],
+    bestTimeBlurb: '{months} bring mild weather and a break from the peak summer crush.',
   },
   {
     id: 'venice', name: 'Venice', country: 'Italy', countryCode: 'IT',
@@ -163,6 +193,9 @@ export const DESTINATIONS: Destination[] = [
     // Carnevale (Feb) is a real, well-known secondary peak — kept secondary since Venice's
     // dominant, heavily documented overtourism season is still summer.
     seasonalTags: [{ tag: 'major-festival', months: [2], strength: 0.6 }],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [4, 5, 9, 10],
+    bestTimeBlurb: '{months} avoid summer’s heat and crowds, and autumn’s acqua alta flooding.',
   },
   // Spain
   {
@@ -178,6 +211,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '👛', title: 'Guard your belongings', detail: 'Las Ramblas and the metro are pickpocket hotspots — keep bags and phones secured.' },
       { icon: '🕓', title: 'Plan around siesta hours', detail: 'Many restaurants close between lunch and dinner, roughly 4–8pm — plan meal times around it.' },
     ],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [5, 6, 9],
+    bestTimeBlurb: '{months} bring warm beach weather without August’s peak crowds.',
   },
   {
     id: 'madrid', name: 'Madrid', country: 'Spain', countryCode: 'ES',
@@ -192,6 +228,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '😴', title: 'Expect afternoon siestas', detail: 'Many smaller shops close for a mid-afternoon siesta, especially outside the center.' },
       { icon: '🖼️', title: 'Visit the Prado for free', detail: 'The Prado is free during its last two opening hours most days.' },
     ],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [4, 5, 9, 10],
+    bestTimeBlurb: '{months} bring mild weather, dodging summer’s brutal heat.',
   },
   // Netherlands
   {
@@ -207,6 +246,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🎟️', title: 'Book museums early', detail: 'The Anne Frank House and Van Gogh Museum sell out online weeks in advance.' },
       { icon: '☕', title: 'Know your coffeeshops', detail: '"Coffeeshops" sell cannabis and are distinct from regular cafés — signage can confuse first-timers.' },
     ],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [4, 5, 9],
+    bestTimeBlurb: '{months} bring tulip season and milder, less crowded canals.',
   },
   // Germany
   {
@@ -222,6 +264,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🎫', title: 'Validate your ticket', detail: 'Public transport runs on an honor system, but random ticket checks carry hefty fines for fare-dodging.' },
       { icon: '🚪', title: 'Expect strict door policies', detail: 'Clubs like Berghain have notoriously strict, unpredictable door policies — don\'t take rejection personally.' },
     ],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [5, 6, 9],
+    bestTimeBlurb: '{months} bring comfortable weather and a calmer city before summer’s peak.',
   },
   {
     id: 'munich', name: 'Munich', country: 'Germany', countryCode: 'DE',
@@ -239,6 +284,9 @@ export const DESTINATIONS: Destination[] = [
     // Oktoberfest (mid-Sep–early Oct) genuinely outdraws Munich's summer season — hotel demand
     // and prices are well documented to peak here, not in July/August.
     seasonalTags: [{ tag: 'major-festival', months: [9, 10], strength: 0.9 }],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [5, 9, 10],
+    bestTimeBlurb: '{months} bring Oktoberfest and the year’s biggest, liveliest crowds.',
   },
   // Portugal
   {
@@ -254,6 +302,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🚋', title: 'Watch your bag on Tram 28', detail: 'Tram 28 is a well-known pickpocket hotspot thanks to its popularity with tourists.' },
       { icon: '🍞', title: 'The bread isn\'t free', detail: 'Unordered bread, olives, and appetizers brought to your table aren\'t free and will appear on the bill.' },
     ],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [4, 5, 9, 10],
+    bestTimeBlurb: '{months} bring warm weather without summer’s peak heat and crowds.',
   },
   {
     id: 'porto', name: 'Porto', country: 'Portugal', countryCode: 'PT',
@@ -268,6 +319,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🧳', title: 'Pack light for cobbles', detail: 'The steep, cobbled historic center is tough with rolling luggage — pack light or take a taxi.' },
       { icon: '📅', title: 'Reserve top spots early', detail: 'Top restaurants and cellar tours fill up fast on weekends, so book ahead.' },
     ],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [5, 6, 9],
+    bestTimeBlurb: '{months} bring mild weather and thinner crowds along the Douro.',
   },
   // Switzerland
   {
@@ -283,6 +337,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🕕', title: 'Shop before evening', detail: 'Shops close early, around 6–7pm, and are mostly shut on Sundays.' },
       { icon: '🎫', title: 'Buy tickets before boarding', detail: 'Transit tickets must be bought before boarding; random inspections issue steep on-the-spot fines.' },
     ],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [6, 7, 9],
+    bestTimeBlurb: '{months} bring warm weather for the lake and mountains at their best.',
   },
   {
     id: 'interlaken', name: 'Interlaken', country: 'Switzerland', countryCode: 'CH',
@@ -300,6 +357,9 @@ export const DESTINATIONS: Destination[] = [
     // No extra ski tag here deliberately: Switzerland's real Eurostat national curve (Tier 1)
     // already carries a strong winter ski-resort signal at the country level — adding another
     // boost on top double-counted it and overcorrected a summer-leaning town toward winter.
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [6, 7, 9],
+    bestTimeBlurb: '{months} bring the summer window for hiking, paragliding, and open trails.',
   },
   // Austria
   {
@@ -315,6 +375,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '☕', title: 'Linger over one coffee', detail: 'Coffeehouse etiquette allows lingering for hours over one coffee — a small tip (~10%) is customary.' },
       { icon: '🖼️', title: 'Check Monday closures', detail: 'Most major museums are closed on Mondays.' },
     ],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [4, 5, 9, 10],
+    bestTimeBlurb: '{months} bring mild weather and a calmer city before summer’s peak.',
   },
   {
     id: 'salzburg', name: 'Salzburg', country: 'Austria', countryCode: 'AT',
@@ -329,6 +392,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🎬', title: 'Take a guided tour', detail: 'Sound of Music filming locations are spread out; a guided tour saves a lot of logistics.' },
       { icon: '🏰', title: 'Go early or hike up', detail: 'The fortress funicular lines get long by midday — go early or hike up instead.' },
     ],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [5, 6, 9],
+    bestTimeBlurb: '{months} bring comfortable weather and thinner crowds than midsummer.',
   },
   // Belgium
   {
@@ -344,6 +410,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🍫', title: 'Seek out fresh pralines', detail: 'Chocolate shop quality varies widely — look for ones making pralines fresh on-site.' },
       { icon: '🕐', title: 'Visit outside midday', detail: 'Day-trip crowds from cruise ships and Brussels peak midday; mornings and evenings are far calmer.' },
     ],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [4, 5, 9],
+    bestTimeBlurb: '{months} bring mild weather and a quieter, less crowded old town.',
   },
   {
     id: 'brussels', name: 'Brussels', country: 'Belgium', countryCode: 'BE',
@@ -358,6 +427,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🍟', title: 'Find a proper friterie', detail: 'For real fries, seek out a dedicated "friterie" rather than a generic snack stand.' },
       { icon: '🗣️', title: 'Expect bilingual signs', detail: "The city is bilingual (French/Dutch) — street signs and directions may appear in either." },
     ],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [5, 6, 9],
+    bestTimeBlurb: '{months} bring comfortable weather without summer’s peak crowds.',
   },
   // Ireland
   {
@@ -373,6 +445,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🍺', title: 'Arrive early for a seat', detail: 'Weekend nights get very crowded, especially around Temple Bar — arrive early for a seat.' },
       { icon: '💶', title: 'Skip Temple Bar prices', detail: 'Temple Bar itself is touristy and overpriced; locals mostly drink elsewhere in the city.' },
     ],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [5, 6, 9],
+    bestTimeBlurb: '{months} bring the mildest, driest stretch of Irish weather.',
   },
   {
     id: 'cliffs-of-moher', name: 'Cliffs of Moher', country: 'Ireland', countryCode: 'IE',
@@ -387,6 +462,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🅿️', title: 'Arrive before mid-morning', detail: 'The visitor center car park fills early in summer; arrive before mid-morning.' },
       { icon: '🌫️', title: 'Check the forecast', detail: 'Fog can roll in fast and erase the view entirely — check forecasts and keep a backup day if you can.' },
     ],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [5, 6, 9],
+    bestTimeBlurb: '{months} bring the clearest views and calmest weather at the cliffs.',
   },
   // Sweden
   {
@@ -402,6 +480,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🛒', title: 'Try grocery-store meals', detail: 'Dining out is expensive; grocery-store meals are a common way locals and visitors save.' },
       { icon: '💳', title: 'Bring a contactless card', detail: 'Sweden is nearly cashless — expect cards, often contactless-only, to be the norm everywhere.' },
     ],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [6, 7, 8],
+    bestTimeBlurb: '{months} bring long daylight and the Swedish summer at its best.',
   },
   {
     id: 'gothenburg', name: 'Gothenburg', country: 'Sweden', countryCode: 'SE',
@@ -416,6 +497,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🚲', title: 'Rent a bike to explore', detail: 'The city is very walkable and bike-friendly — renting a bike is often the best way to explore.' },
       { icon: '🐟', title: 'Check fish market hours', detail: 'Feskekörka fish market is closed Sundays and Mondays.' },
     ],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [6, 7],
+    bestTimeBlurb: '{months} bring warm weather and the city’s liveliest season.',
   },
   // Norway
   {
@@ -434,6 +518,9 @@ export const DESTINATIONS: Destination[] = [
     // Weak: Bergen's real driver is the summer fjord-cruise season, already captured by the
     // geographic base curve — aurora tourism is real here but secondary, not the headline.
     seasonalTags: [{ tag: 'northern-lights', strength: 0.35 }],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [6, 7, 8],
+    bestTimeBlurb: '{months} bring the clearest weather for fjord cruises and hikes.',
   },
   {
     id: 'norwegian-fjords', name: 'Norwegian Fjords', country: 'Norway', countryCode: 'NO',
@@ -448,6 +535,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🚗', title: 'Drive cautiously', detail: 'A rental car gives the most flexibility, but roads are narrow and winding — drive cautiously.' },
       { icon: '🧥', title: 'Pack layers for elevation', detail: 'Weather shifts quickly at elevation — pack layers even in summer.' },
     ],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [6, 7, 8],
+    bestTimeBlurb: '{months} bring the calmest seas and clearest views for fjord cruising.',
   },
   // Denmark
   {
@@ -463,6 +553,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🍽️', title: 'Book dining weeks ahead', detail: 'Top New Nordic restaurant reservations should be made weeks ahead.' },
       { icon: '💳', title: 'Bring a working card', detail: 'Denmark is largely cashless — bring a card that works reliably abroad.' },
     ],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [6, 7],
+    bestTimeBlurb: '{months} bring long days and the city’s best outdoor season.',
   },
   {
     id: 'aarhus', name: 'Aarhus', country: 'Denmark', countryCode: 'DK',
@@ -477,6 +570,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🎓', title: 'Enjoy the student energy', detail: 'A large student population gives it a younger, more casual vibe than Copenhagen.' },
       { icon: '🌈', title: 'Visit ARoS off-peak', detail: "Visit the ARoS rainbow panorama outside midday to dodge the biggest crowds." },
     ],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [6, 7],
+    bestTimeBlurb: '{months} bring warm weather and Aarhus’s liveliest season.',
   },
   // Finland
   {
@@ -492,6 +588,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🎫', title: 'Get a day pass', detail: 'A transit day pass covers trams, metro, and the ferry to Suomenlinna, and often pays for itself.' },
       { icon: '🍱', title: 'Eat lounas at lunch', detail: 'Dining out can be pricey; the midday "lounas" lunch specials are a much cheaper way to eat well.' },
     ],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [6, 7],
+    bestTimeBlurb: '{months} bring long daylight and the mildest Finnish weather.',
   },
   {
     id: 'rovaniemi', name: 'Rovaniemi', country: 'Finland', countryCode: 'FI',
@@ -509,6 +608,9 @@ export const DESTINATIONS: Destination[] = [
     // Rovaniemi's Santa Claus Village tourism spikes hard in December specifically, on top of
     // (and separate from) the broader Arctic winter/northern-lights season.
     seasonalTags: [{ tag: 'northern-lights' }, { tag: 'major-festival', months: [12], strength: 0.8 }],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [12, 1, 2],
+    bestTimeBlurb: '{months} bring the Northern Lights, snow, and Lapland’s Christmas season.',
   },
   // Iceland
   {
@@ -527,6 +629,9 @@ export const DESTINATIONS: Destination[] = [
     // Weak: Iceland's real annual peak is summer road-trip season — aurora tourism is real and
     // growing, but a secondary draw, not the destination's headline pattern.
     seasonalTags: [{ tag: 'northern-lights', strength: 0.45 }],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [6, 7, 9],
+    bestTimeBlurb: '{months} bring long days, road-trip weather, and the best access to the interior.',
   },
   {
     id: 'golden-circle', name: 'Golden Circle', country: 'Iceland', countryCode: 'IS',
@@ -542,6 +647,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🚌', title: 'Arrive before the buses', detail: 'Popular stops like Geysir fill up with tour buses by mid-morning; go as early as you can.' },
     ],
     seasonalTags: [{ tag: 'northern-lights', strength: 0.45 }],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [6, 7, 8],
+    bestTimeBlurb: '{months} bring the easiest road conditions and longest daylight for the loop.',
   },
   // Greece (additional)
   {
@@ -557,6 +665,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🎫', title: 'Buy the combined ticket', detail: 'A combined ticket covers the Acropolis and several other ancient sites for less than paying separately.' },
       { icon: '🏙️', title: 'Look past the grit', detail: "Central Athens can feel gritty compared to the postcard image — don't let it stop you exploring further." },
     ],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [4, 5, 9, 10],
+    bestTimeBlurb: '{months} bring warm weather without summer’s brutal heat.',
   },
   {
     id: 'mykonos', name: 'Mykonos', country: 'Greece', countryCode: 'GR',
@@ -572,6 +683,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '💨', title: 'Build in ferry buffer days', detail: "The island's strong summer winds (the meltemi) can disrupt ferries — build buffer days into your plans." },
     ],
     seasonalTags: [{ tag: 'beach-peak' }],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [6, 9],
+    bestTimeBlurb: '{months} bring warm beach weather while dodging peak-August crowds and prices.',
   },
   // Czech Republic
   {
@@ -587,6 +701,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🍽️', title: 'Check reviews before dining', detail: 'The Old Town has plenty of overpriced "traditional" restaurants aimed at tourists — check reviews first.' },
       { icon: '👛', title: 'Watch your pockets on the bridge', detail: 'Pickpocketing is common on the Charles Bridge and crowded trams.' },
     ],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [4, 5, 9, 10],
+    bestTimeBlurb: '{months} bring mild weather and thinner crowds than midsummer.',
   },
   {
     id: 'santorini', name: 'Santorini', country: 'Greece', countryCode: 'GR',
@@ -602,6 +719,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🪜', title: 'Expect a lot of stairs', detail: 'Many cliffside hotels involve a lot of stairs — worth knowing if mobility is a concern.' },
     ],
     seasonalTags: [{ tag: 'beach-peak' }],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [6, 9],
+    bestTimeBlurb: '{months} bring warm weather and caldera views without July–August’s crush.',
   },
 
   // ── ASIA ───────────────────────────────────────────────────────────────────
@@ -619,6 +739,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🚃', title: 'Avoid rush-hour trains', detail: 'Morning rush-hour trains (7:30–9am) are famously packed — avoid them with luggage if you can.' },
     ],
     seasonalTags: [{ tag: 'cherry-blossom' }, { tag: 'autumn-foliage' }],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [3, 4, 10, 11],
+    bestTimeBlurb: '{months} bring cherry blossoms and autumn foliage, Tokyo’s two signature seasons.',
   },
   {
     id: 'kyoto', name: 'Kyoto', country: 'Japan', countryCode: 'JP',
@@ -634,6 +757,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🏮', title: 'Book ryokan in advance', detail: 'Popular ryokan and restaurants often require reservations well in advance.' },
     ],
     seasonalTags: [{ tag: 'cherry-blossom' }, { tag: 'autumn-foliage' }],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [4, 10, 11],
+    bestTimeBlurb: '{months} are Kyoto’s cherry blossom and autumn foliage windows — the two seasons every guide points to.',
   },
   {
     id: 'osaka', name: 'Osaka', country: 'Japan', countryCode: 'JP',
@@ -648,6 +774,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🎫', title: 'Grab the Amazing Pass', detail: 'The Osaka Amazing Pass bundles transit and many attractions, worth it for a packed sightseeing day.' },
       { icon: '🚶', title: 'Stand on the right here', detail: "Escalator etiquette is reversed from Tokyo here — stand on the right, walk on the left." },
     ],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [4, 10, 11],
+    bestTimeBlurb: '{months} bring cherry blossoms and autumn foliage without summer’s humidity.',
   },
 
   // ── OCEANIA ────────────────────────────────────────────────────────────────
@@ -664,6 +793,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🌊', title: 'Swim between the flags', detail: 'Rip currents are a real danger; always swim between the red and yellow flags.' },
       { icon: '🚆', title: 'Get around easily', detail: 'Public transport uses a tap-on/tap-off Opal card — single paper tickets aren\'t sold.' },
     ],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [3, 4, 10, 11],
+    bestTimeBlurb: '{months} bring mild, sunny weather without the summer holiday crowds.',
   },
   {
     id: 'great-barrier-reef', name: 'Great Barrier Reef', country: 'Australia', countryCode: 'AU',
@@ -678,5 +810,8 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🌊', title: 'Ask about visibility', detail: 'Coral visibility depends heavily on weather and tide — ask your operator about recent conditions.' },
       { icon: '⛴️', title: 'Book your boat tour', detail: 'Most reef access is by boat tour from Cairns or the Whitsundays — book ahead in peak season.' },
     ],
+    // Internet-consensus best months (travel-guide wisdom), not derived from this app's own climate/crowd model.
+    bestMonths: [6, 7, 8, 9],
+    bestTimeBlurb: '{months} bring the driest weather, calmest seas, and clearest reef visibility.',
   },
 ];

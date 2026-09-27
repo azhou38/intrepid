@@ -26,8 +26,8 @@ import type { SharedValue } from 'react-native-reanimated';
 // call, which is what was still blocking the full-screen swipe-down.
 import { Gesture, GestureDetector, ScrollView } from 'react-native-gesture-handler';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { X, Check, Calendar, MapPin, Camera, Pencil, Plus, ChevronRight, ChevronDown, Map, Sun,
-         Users, CloudRain, Thermometer, Trash2 } from 'lucide-react-native';
+import { X, Check, Calendar, MapPin, Camera, Pencil, Plus, ChevronRight, ChevronDown, Map,
+         Trash2 } from 'lucide-react-native';
 import * as ImagePicker from 'expo-image-picker';
 import { useStore } from '../../store';
 import SpotCard from './SpotCard';
@@ -38,9 +38,8 @@ import CircleFlag from '../CircleFlag';
 import { sheetPose } from './sheetPose';
 import EntityPhoto from './EntityPhoto';
 import ClimateDetailModal from './ClimateDetailModal';
-import { MONTHS_SHORT, crowdColor } from '../../utils/travelData';
-import { useDestinationClimate } from '../../utils/climateApi';
-import type { MonthCrowd, MonthWeather, MonthRain } from '../../utils/travelData';
+import { MONTHS_SHORT } from '../../utils/travelData';
+import { getCrowdMeta } from '../../utils/climateApi';
 import {
   parseDateStr, fmtVisitRange, fmtVisitRangeShort,
   WheelCol, DatePickerModal, VisitDateRangeModal, PhotoCollage, ReviewEditModal, dedupeNewPhotos,
@@ -602,24 +601,8 @@ function TipItem({ tip, isLast }: { tip: GoodToKnowTip; isLast: boolean }) {
   );
 }
 
-// ── "When to visit" — a best-time-to-go card (icon, headline, subtitle, destination photo)
-// followed by a 3×12 grid: crowd level, rainfall, and temperature, one colored dot per
-// month, plus a link into the full ClimateDetailModal breakdown.
-// Monthly rainfall totals, mm. Bands chosen around how a month actually reads: under ~25mm is
-// a dry month, ~150mm+ is a properly wet one.
-function rainDotColor(mm: number): string {
-  if (mm <= 25) return '#BFDBFE';
-  if (mm <= 75) return '#60A5FA';
-  if (mm <= 150) return '#3B82F6';
-  return '#1D4ED8';
-}
-function tempDotColor(tempC: number): string {
-  if (tempC < 5) return '#60A5FA';
-  if (tempC < 15) return '#34D399';
-  if (tempC < 24) return '#FBBF24';
-  if (tempC < 32) return '#F97316';
-  return '#EF4444';
-}
+// ── "When to visit" — a best-time-to-go card (headline built from this destination's own
+// numbers) plus a link into the full ClimateDetailModal breakdown.
 
 // Builds the card's headline from THIS destination's own numbers, rather than the fixed
 // "Pleasant weather and fewer crowds around {months}" every destination used to get. That
@@ -629,168 +612,99 @@ function tempDotColor(tempC: number): string {
 //
 // Each clause is only included when the data supports it, so the sentence says less when
 // there's less to say instead of overclaiming.
-function buildWhenToVisitSummary(
-  crowdData: MonthCrowd[], weatherData: MonthWeather[], rainData: MonthRain[],
-): string {
-  const bestIdx = crowdData.map((c, i) => (c.isBest ? i : -1)).filter(i => i >= 0);
-  const avg = (ns: number[]) => ns.reduce((a, b) => a + b, 0) / (ns.length || 1);
+// A month/range is its own segment (coloured green on render); a joiner (", " or " and ",
+// between multiple non-contiguous best windows) is its own separate segment so it stays plain
+// text — only the actual months should read as green, not the word "and" sitting between them.
+interface MonthSegment { text: string; isMonth: boolean }
 
-  // Months as RANGES, not a comma list. Good windows are usually contiguous, so a plain list
-  // produced things like "Jan, Feb, Mar, Apr, Sep, Oct, Nov and Dec" — technically right,
-  // impossible to read. Consecutive runs collapse to "Sep–Apr", including across the Dec→Jan
-  // boundary, which is exactly where a southern-hemisphere or tropical dry season sits.
-  const formatMonths = (idx: number[]): string => {
-    if (idx.length === 12) return 'any time of year';
-    const runs: number[][] = [];
-    for (const i of idx) {
-      const last = runs[runs.length - 1];
-      if (last && i === last[last.length - 1] + 1) last.push(i);
-      else runs.push([i]);
-    }
-    // Dec and Jan both present → the year wraps, so fold the trailing run into the leading one.
-    if (runs.length > 1 && runs[0][0] === 0 && runs[runs.length - 1].slice(-1)[0] === 11) {
-      runs[0] = [...runs.pop()!, ...runs[0]];
-    }
-    const label = (r: number[]) => r.length === 1
-      ? MONTHS_SHORT[r[0]]
-      : `${MONTHS_SHORT[r[0]]}–${MONTHS_SHORT[r[r.length - 1]]}`;
-    const parts = runs.map(label);
-    return parts.length <= 1 ? parts[0] ?? ''
-      : `${parts.slice(0, -1).join(', ')} and ${parts[parts.length - 1]}`;
-  };
+// Split into the parts around the month range/name, so the render side can colour just the
+// month segments — `before + months + after` reproduces the exact original sentence.
+interface WhenToVisitSummary { before: string; months: MonthSegment[]; after: string }
 
-  // No month clears the "quiet enough AND temperate enough" bar — say so plainly rather
-  // than inventing a best window.
-  if (bestIdx.length === 0) {
-    const mildest = weatherData
-      .map((w, i) => ({ i, off: Math.abs(w.tempC - 20) }))
-      .sort((a, b) => a.off - b.off)[0].i;
-    return `Busy or extreme most of the year — ${MONTHS_SHORT[mildest]} is the gentlest month.`;
+// Months as RANGES, not a comma list. Good windows are usually contiguous, so a plain list
+// produced things like "Jan, Feb, Mar, Apr, Sep, Oct, Nov and Dec" — technically right,
+// impossible to read. Consecutive runs collapse to "Sep–Apr", including across the Dec→Jan
+// boundary, which is exactly where a southern-hemisphere or tropical dry season sits.
+function formatMonths(idx: number[]): MonthSegment[] {
+  if (idx.length === 12) return [{ text: 'any time of year', isMonth: true }];
+  const runs: number[][] = [];
+  for (const i of idx) {
+    const last = runs[runs.length - 1];
+    if (last && i === last[last.length - 1] + 1) last.push(i);
+    else runs.push([i]);
   }
+  // Dec and Jan both present → the year wraps, so fold the trailing run into the leading one.
+  if (runs.length > 1 && runs[0][0] === 0 && runs[runs.length - 1].slice(-1)[0] === 11) {
+    runs[0] = [...runs.pop()!, ...runs[0]];
+  }
+  const label = (r: number[]) => r.length === 1
+    ? MONTHS_SHORT[r[0]]
+    : `${MONTHS_SHORT[r[0]]}–${MONTHS_SHORT[r[r.length - 1]]}`;
+  const parts = runs.map(label);
+  if (parts.length <= 1) return parts.length ? [{ text: parts[0], isMonth: true }] : [];
+  // Each month/range segment stays its own span so only those render green — "," and " and "
+  // are separate plain-text segments in between.
+  const segments: MonthSegment[] = [];
+  parts.slice(0, -1).forEach((p, i) => {
+    segments.push({ text: p, isMonth: true });
+    segments.push({ text: i < parts.length - 2 ? ', ' : ' and ', isMonth: false });
+  });
+  segments.push({ text: parts[parts.length - 1], isMonth: true });
+  return segments;
+}
 
-  // Which criteria are worth mentioning depends on the destination. A metric earns a place
-  // in the sentence by how much it VARIES across the year — that's what actually makes one
-  // month better than another. Rainfall is the whole story in the tropics and noise in the
-  // desert; temperature is decisive in Reykjavík and irrelevant in Bali, where every month
-  // is ~30°C. Listing all three regardless was what made every card read the same.
-  const spread = (ns: number[]) => Math.max(...ns) - Math.min(...ns);
-  const t = avg(bestIdx.map(i => weatherData[i].tempC));
-  const rain = avg(bestIdx.map(i => rainData[i].mm));
-  const crowd = avg(bestIdx.map(i => crowdData[i].level));
+// Freeform, not templated — the sentence is whatever the destination's own `bestTimeBlurb` says
+// (general travel-guide consensus, written per destination rather than derived from this app's
+// own crowd/weather numbers), with exactly one `{months}` placeholder swapped out for the actual
+// coloured month range. A destination with no curated months/blurb yet falls back to a plain,
+// generic line rather than the old crowd/weather-driven sentence-builder.
+function buildWhenToVisitSummary(destination: Destination): WhenToVisitSummary {
+  const bestIdx = [...(destination.bestMonths ?? [])].map(m => m - 1).sort((a, b) => a - b);
+  const months = formatMonths(bestIdx);
 
-  const metrics = [
-    // Scores are each normalised against that metric's own plausible full range, so they're
-    // comparable: 5 crowd levels, ~20 days of rain, ~30°C of seasonal swing.
-    {
-      key: 'temp',
-      score: spread(weatherData.map(w => w.tempC)) / 30,
-      word: t < 5 ? 'cold' : t < 14 ? 'cool' : t < 22 ? 'mild' : t < 29 ? 'warm' : 'hot',
-    },
-    {
-      key: 'rain',
-      // Normalised against ~120mm of seasonal swing, the point at which a wet season is
-      // clearly a distinct thing rather than month-to-month noise.
-      score: spread(rainData.map(r => r.mm)) / 120,
-      word: rain <= 25 ? 'dry' : rain <= 75 ? 'mostly dry' : 'damp',
-    },
-    {
-      key: 'crowds',
-      score: spread(crowdData.map(c => c.level)) / 4,
-      word: crowd <= 2 ? 'quiet' : crowd <= 3 ? 'not too busy' : 'still busy',
-    },
-  ].sort((a, b) => b.score - a.score);
-
-  // Always lead with the strongest signal; add the runner-up only if it's genuinely
-  // seasonal too, so flat metrics stay out of the sentence entirely.
-  const chosen = metrics.slice(0, metrics[1].score >= 0.35 ? 2 : 1);
-  const phrase = chosen.map(m => m.word).join(' and ');
-
-  // Only when crowds are the headline AND there's a real peak to dodge — otherwise this is
-  // padding. Stays a comma clause so the summary remains a single sentence.
-  const peak = crowdData.reduce((m, c, i) => (c.level > crowdData[m].level ? i : m), 0);
-  const peakClause = chosen[0].key === 'crowds' && crowdData[peak].level >= 4 && !bestIdx.includes(peak)
-    ? `, avoiding the ${MONTHS_SHORT[peak]} peak`
-    : '';
-
-  const sentence = `${phrase} around ${formatMonths(bestIdx)}${peakClause}.`;
-  return sentence.charAt(0).toUpperCase() + sentence.slice(1);
+  const blurb = destination.bestTimeBlurb;
+  if (bestIdx.length && blurb?.includes('{months}')) {
+    const [before, after] = blurb.split('{months}');
+    return { before, months, after };
+  }
+  return bestIdx.length
+    ? { before: '', months, after: ' is typically the best time to visit.' }
+    : { before: 'Great to visit ', months: [{ text: 'year-round', isMonth: true }], after: '.' };
 }
 
 function WhenToVisitCard({ destination, onOpenClimateDetail }: {
   destination: Destination;
   onOpenClimateDetail?: () => void;
 }) {
-  // Real observed normals where available, synthetic curves while loading/offline — and all
-  // three series from one source so they can never disagree with each other.
-  const { weather: weatherData, rain: rainData, crowds: crowdData } =
-    useDestinationClimate(destination);
+  // The headline no longer touches computed crowd/weather data at all — it's built purely from
+  // the destination's own curated bestMonths/bestTimeBlurb (see buildWhenToVisitSummary).
+  const summary = useMemo(() => buildWhenToVisitSummary(destination), [destination]);
 
-  const summary = useMemo(
-    () => buildWhenToVisitSummary(crowdData, weatherData, rainData),
-    [crowdData, weatherData, rainData],
-  );
-
-  // One row per metric, each with its own icon so the grid is readable without a colour key
-  // telling you which row is which.
-  const rows = [
-    { key: 'crowds', Icon: Users,       label: 'Crowds', dots: crowdData.map(c => crowdColor(c.level)) },
-    { key: 'rain',   Icon: CloudRain,   label: 'Rain',   dots: rainData.map(r => rainDotColor(r.mm)) },
-    { key: 'temp',   Icon: Thermometer, label: 'Temp',   dots: weatherData.map(w => tempDotColor(w.tempC)) },
-  ];
+  // The linked detail view only shows a visitors/crowds chart for Tier 1 destinations (real
+  // tourism data) — label the button accordingly rather than promising data that isn't there.
+  const hasVisitorData = getCrowdMeta(destination.id)?.[0]?.tier === 1;
 
   return (
     <View style={st.wtvCard}>
       {/* The recommendation IS the headline — the old "Best time to go" title sat above it
           saying the same thing twice, and the destination thumbnail repeated the hero photo
-          a few hundred pixels up. Both gone; the sentence now leads at full contrast. */}
+          a few hundred pixels up. Both gone; the sentence now leads at full contrast. No icon
+          any more either — the green month range itself is now the visual anchor. */}
       <View style={st.wtvHeadRow}>
-        <View style={st.wtvIconWrap}>
-          <Sun size={18} color="#16A34A" />
-        </View>
-        <Text style={st.wtvLede}>{summary}</Text>
-      </View>
-
-      <View style={st.wtvGrid}>
-        <View style={st.wtvGridRow}>
-          <View style={st.wtvRowLabel} />
-          {MONTHS_SHORT.map((m, i) => (
-            <View key={i} style={st.wtvDotCell}>
-              {/* Best months get a filled chip rather than just green text — the whole point
-                  of the card is spotting them, and coloured letters alone were easy to miss */}
-              <View style={[st.wtvMonthChip, crowdData[i]?.isBest && st.wtvMonthChipBest]}>
-                <Text style={[st.wtvMonthTxt, crowdData[i]?.isBest && st.wtvMonthTxtBest]}>{m[0]}</Text>
-              </View>
-            </View>
+        <Text style={st.wtvLede}>
+          {summary.before}
+          {summary.months.map((seg, i) => (
+            <Text key={i} style={seg.isMonth ? st.wtvLedeMonths : undefined}>{seg.text}</Text>
           ))}
-        </View>
-
-        {rows.map(({ key, Icon, label, dots }) => (
-          <View key={key} style={st.wtvGridRow}>
-            <View style={st.wtvRowLabel}>
-              <Icon size={13} color="#9CA3AF" strokeWidth={2} />
-              <Text style={st.wtvRowLabelTxt}>{label}</Text>
-            </View>
-            {dots.map((color, i) => (
-              <View key={i} style={st.wtvDotCell}>
-                <View style={[st.wtvDot, { backgroundColor: color }]} />
-              </View>
-            ))}
-          </View>
-        ))}
+          {summary.after}
+        </Text>
       </View>
-
-      {/* Replaces a Low/Moderate/High swatch key that only ever described the Crowds row —
-          Rain is drawn in blues and Temp starts blue for cold, so two thirds of the grid had
-          no legend at all. Each metric keeps its own intuitive palette (blue reads as
-          rain/cold at a glance); what they genuinely share is the DIRECTION, which is all a
-          caption needs to say. */}
-      <Text style={st.wtvScaleTxt}>
-        Deeper colour means more crowds, rainfall or heat.
-      </Text>
 
       <Pressable style={st.wtvGuideBtn} onPress={onOpenClimateDetail}>
         <Calendar size={16} color="#16A34A" />
-        <Text style={st.wtvGuideBtnTxt} numberOfLines={1}>View all data</Text>
+        <Text style={st.wtvGuideBtnTxt} numberOfLines={1}>
+          {hasVisitorData ? 'View climate and visitor data' : 'View climate data'}
+        </Text>
         <ChevronRight size={16} color="#D1D5DB" />
       </Pressable>
     </View>
@@ -2260,7 +2174,8 @@ const st = StyleSheet.create({
   glanceNumBadge:  { width:42, height:42, borderRadius:12, backgroundColor:'#ECFDF5',
                      alignItems:'center', justifyContent:'center' },
   glanceNumTxt:    { fontSize:16, fontWeight:'800', color:'#16A34A' },
-  glanceRowTitle:  { flex:1, fontSize:15, fontWeight:'700', color:'#111827', lineHeight:20 },
+  // Matches wtvLede (the "When to Visit" card's headline) — same size/weight/line-height.
+  glanceRowTitle:  { flex:1, fontSize:16, fontWeight:'600', color:'#111827', lineHeight:22 },
 
   // Highlight cards (bigger than the old spot preview cards — photo, badge, name, bio)
   // The cards have an outer shadow, which a horizontal ScrollView clips at its edges — so the row gets
@@ -2298,25 +2213,12 @@ const st = StyleSheet.create({
   wtvCard:        { backgroundColor:'white', borderRadius:16, padding:14, gap:14,
                     borderWidth:1, borderColor:'#F0F1F3' },
   wtvHeadRow:     { flexDirection:'row', alignItems:'center', gap:12 },
-  wtvIconWrap:    { width:38, height:38, borderRadius:12, backgroundColor:'#ECFDF5',
-                    alignItems:'center', justifyContent:'center' },
   // The recommendation is the card's headline now, so it carries primary-text weight rather
   // than the muted grey it had as a subtitle under a redundant title.
-  wtvLede:        { flex:1, fontSize:13.5, fontWeight:'600', color:'#374151', lineHeight:19 },
-  wtvGrid:        { gap:8 },
-  wtvGridRow:     { flexDirection:'row', alignItems:'center' },
-  // Wider than before to fit an icon alongside the word; the icon is what makes each row
-  // identifiable at a glance.
-  wtvRowLabel:    { width:62, flexDirection:'row', alignItems:'center', gap:5 },
-  wtvRowLabelTxt: { fontSize:10.5, fontWeight:'700', color:'#9CA3AF' },
-  wtvMonthChip:   { width:18, height:18, borderRadius:6,
-                    alignItems:'center', justifyContent:'center' },
-  wtvMonthChipBest:{ backgroundColor:'#ECFDF5' },
-  wtvMonthTxt:    { fontSize:9.5, fontWeight:'700', color:'#9CA3AF' },
-  wtvMonthTxtBest:{ color:'#16A34A' },
-  wtvDotCell:     { flex:1, alignItems:'center', justifyContent:'center' },
-  wtvDot:         { width:10, height:10, borderRadius:5 },
-  wtvScaleTxt:    { fontSize:11.5, color:'#9CA3AF', fontWeight:'500', lineHeight:16 },
+  wtvLede:        { flex:1, fontSize:16, fontWeight:'600', color:'#374151', lineHeight:22 },
+  // Same green used everywhere else (buttons, tags, the grid's own "best month" highlight) so
+  // the month range reads as the one thing to notice in the sentence.
+  wtvLedeMonths:  { color:'#16A34A' },
   wtvGuideBtn:    { flexDirection:'row', alignItems:'center', gap:8,
                     backgroundColor:'#F9FAFB', borderRadius:12, padding:11 },
   wtvGuideBtnTxt: { flex:1, fontSize:13, fontWeight:'600', color:'#374151' },

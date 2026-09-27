@@ -138,7 +138,7 @@ export function useDestinationClimate(destination: Destination): DestinationClim
     : getRainyDaysData(latitude, destination.category);
   const crowdBundle = BUNDLED_CROWDS[destination.id];
   const crowds = crowdBundle
-    ? levelsToMonthCrowd(crowdBundle.months.map(m => m.level), weather)
+    ? levelsToMonthCrowd(crowdBundle.months.map(m => m.level), weather, destination.bestMonths)
     : getCrowdData(destination, weather);
 
   return { weather, rain, crowds, isReal: normals != null };

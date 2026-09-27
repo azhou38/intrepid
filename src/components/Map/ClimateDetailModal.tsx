@@ -2,9 +2,9 @@ import React, { useRef, useEffect } from 'react';
 import { View, Text, StyleSheet, Pressable, ScrollView, Animated, Dimensions, Modal } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Svg, { Polyline, Circle, Text as SvgText } from 'react-native-svg';
-import { X, Users, Thermometer, CloudRain } from 'lucide-react-native';
-import { MONTHS_SHORT, crowdColor } from '../../utils/travelData';
-import type { MonthCrowd, MonthWeather, MonthRain } from '../../utils/travelData';
+import { X, Users, Thermometer, CloudRain, Sun } from 'lucide-react-native';
+import { MONTHS_SHORT, crowdColor, getDaylightHours } from '../../utils/travelData';
+import type { MonthCrowd, MonthWeather, MonthRain, MonthDaylight } from '../../utils/travelData';
 import { useDestinationClimate, getCrowdMeta } from '../../utils/climateApi';
 import { CLIMATE_WINDOW_YEARS } from '../../utils/climateNormalsFetch';
 import type { Destination } from '../../types';
@@ -116,6 +116,27 @@ function TempChart({ data }: { data: MonthWeather[] }) {
   );
 }
 
+// ── Daylight Hours — vertical bar chart ───────────────────────────────────────
+const DAYLIGHT_SCALE_MIN = 12;
+
+function DaylightChart({ data }: { data: MonthDaylight[] }) {
+  const BAR_MAX = 90;
+  const scaleMax = Math.max(DAYLIGHT_SCALE_MIN, ...data.map(d => d.hours));
+  return (
+    <View style={[st.barsArea, { marginTop: 12 }]}>
+      {data.map((d, i) => (
+        <View key={i} style={st.barCol}>
+          <View style={st.barTrack}>
+            <Text style={st.barValueLbl}>{Math.round(d.hours)}</Text>
+            <View style={[st.bar, { height: Math.max(4, (d.hours / scaleMax) * BAR_MAX), backgroundColor: '#F59E0B' }]} />
+          </View>
+          <Text style={st.monthLbl}>{d.month[0]}</Text>
+        </View>
+      ))}
+    </View>
+  );
+}
+
 // ── Rainy Days — vertical bar chart ───────────────────────────────────────────
 // Fixed axis (0–30) rather than one scaled to the data, so the scale reads consistently
 // across destinations — bar height still scales against 31 as headroom, so a month with
@@ -130,7 +151,10 @@ function RainChart({ data }: { data: MonthRain[] }) {
   const BAR_MAX = 90;
   const scaleMax = Math.max(RAIN_SCALE_MIN, ...data.map(d => d.mm));
   return (
-    <View style={st.barsArea}>
+    // Extra top margin beyond the shared barsArea's own spacing: the tallest bar always hits
+    // BAR_MAX exactly (scaleMax is derived from the data itself), so its value label sits right
+    // at the top of the track — too close to the subheading above without this.
+    <View style={[st.barsArea, { marginTop: 12 }]}>
       {data.map((d, i) => (
         <View key={i} style={st.barCol}>
           <View style={st.barTrack}>
@@ -163,12 +187,15 @@ export default function ClimateDetailModal({ destination, onClose }: Props) {
   // Each subheading names the ACTUAL methodology behind the numbers above it, which differs by
   // destination and by chart — a single generic caption would misdescribe most of them. Kept to
   // one short line each so they fit the card without wrapping.
-  const crowdTier = getCrowdMeta(destination.id)?.[0]?.tier;
-  const crowdSub =
-    crowdTier === 1 ? 'Based on real tourism data'
-    : crowdTier === 2 ? 'Based on seasonal event patterns'
-    : 'Estimated from regional seasonality';
+  //
+  // The visitors/crowds card only ever shows for Tier 1 destinations (real Eurostat tourism
+  // data) — Tier 2/4 are seasonal-signal or geographic guesses, not actual visitor stats, and
+  // showing a bar chart of them read as more authoritative than the data actually is.
+  const hasVisitorData = getCrowdMeta(destination.id)?.[0]?.tier === 1;
   const stationSub = isReal ? `Nearby stations, last ${CLIMATE_WINDOW_YEARS} years` : 'Estimated — no station nearby';
+  // Pure astronomy (latitude + date), not weather — computed directly rather than fetched;
+  // see getDaylightHours's own comment for why this is more accurate than any API here.
+  const daylightData = getDaylightHours(destination.coordinates.latitude);
 
   return (
     <Modal transparent animationType="none" statusBarTranslucent>
@@ -182,16 +209,18 @@ export default function ClimateDetailModal({ destination, onClose }: Props) {
       </View>
 
       <ScrollView contentContainerStyle={st.scrollContent} showsVerticalScrollIndicator={false}>
-        <View style={st.card}>
-          <View style={st.cardHeadRow}>
-            <Users size={16} color="#111827" />
-            <View style={{ marginLeft: 8 }}>
-              <Text style={st.cardTitle}>CROWDS BY MONTH</Text>
-              <Text style={st.cardSub} numberOfLines={1}>{crowdSub}</Text>
+        {hasVisitorData && (
+          <View style={st.card}>
+            <View style={st.cardHeadRow}>
+              <Users size={16} color="#111827" />
+              <View style={{ marginLeft: 8 }}>
+                <Text style={st.cardTitle}>VISITORS BY MONTH</Text>
+                <Text style={st.cardSub} numberOfLines={1}>Based on real tourism data</Text>
+              </View>
             </View>
+            <CrowdChart data={crowdData} />
           </View>
-          <CrowdChart data={crowdData} />
-        </View>
+        )}
 
         <View style={st.card}>
           <View style={st.cardHeadRow}>
@@ -213,6 +242,19 @@ export default function ClimateDetailModal({ destination, onClose }: Props) {
             </View>
           </View>
           <RainChart data={rainData} />
+        </View>
+
+        <View style={st.card}>
+          <View style={st.cardHeadRow}>
+            <Sun size={16} color="#111827" />
+            <View style={{ marginLeft: 8 }}>
+              <Text style={st.cardTitle}>DAYLIGHT (HOURS)</Text>
+              {/* Not station data — day length is exact astronomy (latitude + date), not
+                  weather, so it's calculated directly rather than sourced/estimated. */}
+              <Text style={st.cardSub} numberOfLines={1}>Calculated for this latitude</Text>
+            </View>
+          </View>
+          <DaylightChart data={daylightData} />
         </View>
       </ScrollView>
       </Animated.View>
