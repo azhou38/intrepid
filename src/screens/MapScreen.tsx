@@ -2274,11 +2274,14 @@ const destItems = useMemo((): DestItem[] =>
   }, [cancelCountryCapture, beginProgrammaticCameraMove]);
 
   // ── Close (X) zoom rule ─────────────────────────────────────────────────────
-  // Closing a spot/destination/country normally animates the camera to a view derived from the
-  // closed selection's default view. If the user has already zoomed out further than that
-  // selection's default zoom, the close leaves the camera exactly where it is instead — they
-  // chose that wider view, and flying back in towards the selection they're leaving reads
-  // backwards. Each close handler checks this against the default zoom of what's being closed.
+  // A bare-X close (a laterally-entered spot/destination, or a country) normally animates the
+  // camera to a view derived from the closed selection's default view. If the user has already
+  // zoomed out further than that selection's default zoom, the close leaves the camera exactly
+  // where it is instead — they chose that wider view, and flying back in towards the selection
+  // they're leaving reads backwards. Each such close handler checks this against the default
+  // zoom of what's being closed. NOT applied to the "‹ Parent" back buttons (a destination
+  // drilled into from its country, a spot from its destination): those navigate UP a level and
+  // always land on the parent's default view, however far out the user has zoomed.
   //
   // A close that stays put must also let go of the held selection itself (releaseHeldSelection):
   // the pin/pill planning normally keeps the closed selection until the close's zoom-out settles,
@@ -2596,10 +2599,10 @@ const destItems = useMemo((): DestItem[] =>
     // handleGoToListView's landOnFull case (which also sets destInitialSnap='full' itself,
     // just as React state — this ref needs the answer synchronously, before that commits).
     setSheetSnapState(landOnFull ? 'full' : 'collapsed');
-    // Zoomed out past the spot's default: leave the camera where it is (see isZoomedOutBeyond).
-    // The suppressions below are skipped too, since there's no camera move for them to cover —
-    // left on, they'd hide a return arrow the user's zoomed-out view should show.
-    if (selectedDest && !isZoomedOutBeyond(latDeltaToZoom(SPOT_VIEW_LATDELTA))) {
+    // Always lands on the destination's default view, however far out the user has zoomed —
+    // this is deliberate upward navigation ("‹ Destination"), not the bare-X close
+    // isZoomedOutBeyond's stay-put rule is for.
+    if (selectedDest) {
       // Suppress both handleCameraChanged's peek-push and the destination "return to home
       // view" breadcrumb prompt for the duration of this camera move — same reasoning as
       // handleMarkerPress/handleResetToDest's own use of these guards. Unlike
@@ -2619,7 +2622,7 @@ const destItems = useMemo((): DestItem[] =>
       // Neither snap this can land on leaves the bottom-screen strip showing, so 'topHalf'.
       fitDestinationDefaultView(selectedDest, 'easeTo', 'topHalf');
     }
-  }, [spotOrigin, selectedDest, fitDestinationDefaultView, setSheetSnapState, isZoomedOutBeyond]);
+  }, [spotOrigin, selectedDest, fitDestinationDefaultView, setSheetSnapState]);
 
   // Spot close/back, provenance-routed: entered from the destination → return to it;
   // entered laterally (map tap at spot zoom, or search) → back to the map as it was.
@@ -2749,11 +2752,11 @@ const destItems = useMemo((): DestItem[] =>
     // handleCountryPress clears selectedDest/mapState/zoomedIntoDestination and calls
     // fitCoords. 'flyTo' — a destination zooming back out to its full country's bounds is
     // the same big-pan/deep-zoom combination pure easeTo reads badly for (see
-    // animateCamera's own comment on the equivalent zoom-IN case). Zoomed out past the
-    // destination's default zoom, the camera stays put instead (see isZoomedOutBeyond).
-    const keepCamera = isZoomedOutBeyond(latDeltaToZoom(getZoomDelta(selectedDest.category)));
-    handleCountryPress(cluster, 'flyTo', false, keepCamera);
-  }, [selectedDest, savedDestinations, handleCountryPress, isZoomedOutBeyond]);
+    // animateCamera's own comment on the equivalent zoom-IN case). Always lands on the
+    // country's default view, however far out the user has zoomed — this is deliberate upward
+    // navigation ("‹ Country"), not the bare-X close isZoomedOutBeyond's stay-put rule is for.
+    handleCountryPress(cluster, 'flyTo');
+  }, [selectedDest, savedDestinations, handleCountryPress]);
 
   // Destination close/back, provenance-routed: drilled down from the country → back up to it;
   // entered laterally (map pin tap with nothing selected, or search) → zoom out to half the
@@ -2870,14 +2873,10 @@ const destItems = useMemo((): DestItem[] =>
   // `openPeeked` is for returning UP to a country from a destination via the breadcrumb: the
   // sheet opens in bottom-screen/peek instead of half-screen, and the map is framed for the
   // whole visible screen to match. The two must move together — see fitCountryDefaultView.
-  //
-  // `keepCamera` selects the country without moving the camera at all (closing a destination
-  // into its country while zoomed out past the destination's default — see isZoomedOutBeyond).
   const handleCountryPress = useCallback((
     cluster: CountryCluster,
     cameraMode: 'easeTo' | 'flyTo' = 'easeTo',
     openPeeked = false,
-    keepCamera = false,
   ) => {
     lastCountryPressRef.current = Date.now();
     selectedCountryRef.current = cluster;
@@ -2899,28 +2898,7 @@ const destItems = useMemo((): DestItem[] =>
     setCountryInitialSnap(openPeeked ? 'peek' : undefined);
     setSheetSnapState(openPeeked || isFingerDraggingMap() ? 'peek' : 'collapsed');
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-    if (!keepCamera) {
-      fitCountryDefaultView(cluster, cameraMode, openPeeked ? 'full' : 'topHalf');
-    } else {
-      // No fit means no settling idle to capture the country's home view from, and the next
-      // idle would instead record wherever the user's own pan ends. Use the country's cached
-      // default camera as home instead (the same camera the fit would have landed on), so the
-      // breadcrumb's return arrow still measures "away" against the real default view.
-      // Its deltas are the mercator span at that zoom, matching what the settled bounds report.
-      const cam = countryDefaultCamera(cluster.countryCode);
-      if (cam) {
-        const worldSize = 512 * Math.pow(2, cam.zoom);
-        const halfH = cam.mapH / 2 / worldSize;
-        const home: Region = {
-          latitude: cam.lat,
-          longitude: cam.lng,
-          latitudeDelta: invMercY(mercY(cam.lat) - halfH) - invMercY(mercY(cam.lat) + halfH),
-          longitudeDelta: SCREEN_W_GLOBAL * 360 / worldSize,
-        };
-        countryHomeRegionRef.current = home;
-        setCountryHomeRegion(home);
-      }
-    }
+    fitCountryDefaultView(cluster, cameraMode, openPeeked ? 'full' : 'topHalf');
     // Kick off CountrySheet's own header-photo fetch right now, in parallel with the sheet's
     // slide-up/camera animation, instead of waiting for CountrySheet to mount and run its own
     // effect a render cycle later — same top-destination lookup CountrySheet uses for its
@@ -2932,7 +2910,7 @@ const destItems = useMemo((): DestItem[] =>
     const cacheKey = `country_${cluster.countryCode}`;
     if (topDest) prefetchWikiThumbnail(cacheKey, photoCache, topDest.name, 900, cluster.country);
     else prefetchWikiThumbnail(cacheKey, photoCache, cluster.country, 900);
-  }, [showBreadcrumb, animateCamera, fitCountryDefaultView, setSheetSnapState, countryDefaultCamera]);
+  }, [showBreadcrumb, animateCamera, fitCountryDefaultView, setSheetSnapState]);
 
   // Closing from the back pill's X while a sheet is half-screen or bottom-screen: let it slide
   // off the bottom first (exitSignal → the sheets' own slide-out), and only then run the actual
