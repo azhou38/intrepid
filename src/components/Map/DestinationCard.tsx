@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { View, Text, StyleSheet, Pressable } from 'react-native';
 import { Check } from 'lucide-react-native';
 import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'react-native-svg';
@@ -6,6 +6,8 @@ import CircleFlag from '../CircleFlag';
 import FadeInImage from './FadeInImage';
 import type { Destination } from '../../types';
 import { thumbCache, getOrFetchWikiThumbnail } from '../../utils/photoCache';
+import { useDestinationClimate } from '../../utils/climateApi';
+import { formatBestMonthsShort } from '../../utils/travelData';
 
 // Text area under the image, sized for the wrapped reasons.
 export const CARD_BOTTOM_H = 58;
@@ -21,14 +23,19 @@ export const GRADIENT_STOPS = Array.from({ length: 13 }, (_, i) => {
 
 // Destination card, shared by the Explore feed and the country sheet's Destinations tab: photo
 // with name + country overlaid in white, up to three reasons to visit below.
-function DestinationCard({ dest, isVisited, onPress, width = DEST_CARD_W, showCountry = true }: {
+function DestinationCard({ dest, isVisited, onPress, width = DEST_CARD_W, showCountry = true, showHighlights = true }: {
   dest: Destination;
   isVisited: boolean;
   onPress: () => void;
-  // Card is always square: the image takes whatever height the fixed-size text area leaves.
+  // Card is always square: the image takes whatever height the fixed-size text area leaves
+  // (or the full card, once showHighlights is off — see its own comment).
   width?: number;
   // Off where the country is already obvious from context (the country sheet's own list).
   showCountry?: boolean;
+  // Off for the country sheet's own grid: with no reasons-to-visit text, there's no need to
+  // reserve CARD_BOTTOM_H for it, so the photo fills the entire square card instead of just
+  // its top portion.
+  showHighlights?: boolean;
 }) {
   // Own cache key, not the bare dest.id: thumbCache is shared with the map pins and search
   // results, which fetch the same destination at ~120px — whichever loaded first left a tiny
@@ -38,6 +45,14 @@ function DestinationCard({ dest, isVisited, onPress, width = DEST_CARD_W, showCo
   const cacheKey = `destcard_${dest.id}`;
   const [photoUrl, setPhotoUrl] = useState<string | null>(thumbCache.get(cacheKey) ?? null);
   const photoWasCachedRef = useRef(thumbCache.has(cacheKey));
+
+  // Best months come from the same real-vs-synthetic climate data the destination sheet's own
+  // "when to visit" card uses, so the two can never disagree.
+  const { crowds: crowdData } = useDestinationClimate(dest);
+  const bestMonths = useMemo(
+    () => formatBestMonthsShort(crowdData.map((c, i) => (c.isBest ? i : -1)).filter(i => i >= 0)),
+    [crowdData],
+  );
 
   useEffect(() => {
     if (thumbCache.has(cacheKey)) {
@@ -57,7 +72,7 @@ function DestinationCard({ dest, isVisited, onPress, width = DEST_CARD_W, showCo
       <View style={styles.cardClip}>
       {/* Solid dark placeholder (no emoji) that the photo fades in over — same treatment as the
           spot cards. Name + country sit on the image in white, over a bottom gradient. */}
-      <View style={[styles.cardTop, { height: width - CARD_BOTTOM_H }]}>
+      <View style={[styles.cardTop, { height: showHighlights ? width - CARD_BOTTOM_H : width }]}>
         {photoUrl && (
           <FadeInImage
             instant={photoWasCachedRef.current}
@@ -78,13 +93,18 @@ function DestinationCard({ dest, isVisited, onPress, width = DEST_CARD_W, showCo
             <Rect x="0" y="0" width="100%" height="100%" fill={`url(#destCardGrad-${dest.id})`} />
           </Svg>
         </View>
-        <View pointerEvents="none" style={styles.cardImageInfo}>
+        <View pointerEvents="none" style={[styles.cardImageInfo, local.imageInfo]}>
           <Text style={styles.cardName} numberOfLines={2}>{dest.name}</Text>
           {showCountry && (
             <View style={styles.cardCountryRow}>
               <CircleFlag countryCode={dest.countryCode} size={12} />
               <Text style={styles.cardCountry} numberOfLines={1}>{dest.country}</Text>
             </View>
+          )}
+          {/* Same text style, size and lift off the card's bottom edge as the spot cards' own
+              visit-time line, so the two read as one consistent "meta" treatment. */}
+          {!!bestMonths && (
+            <Text style={[local.metaTxt, local.metaTxtSpacing]} numberOfLines={1}>Best: {bestMonths}</Text>
           )}
         </View>
         {isVisited && (
@@ -94,27 +114,30 @@ function DestinationCard({ dest, isVisited, onPress, width = DEST_CARD_W, showCo
           </View>
         )}
       </View>
-      <View style={styles.cardBottom}>
-        {/* Reasons flow as one wrapping block, each followed by a small gray dot (except the
-            last). The dot is an inline View so it can be centred against the text, and is glued
-            to its phrase with a non-breaking space so a wrap never strands it at a line start. */}
-        {!!dest.highlights?.length && (
-          <Text style={styles.cardBlurb} numberOfLines={3}>
-            {dest.highlights.map((h, i) => (
-              <Text key={i}>
-                {h}
-                {i < dest.highlights!.length - 1 && (
-                  <>
-                    {'\u00A0\u2009'}
-                    <View style={styles.cardSepBox}><View style={styles.cardSepDot} /></View>
-                    {' \u2009'}
-                  </>
-                )}
-              </Text>
-            ))}
-          </Text>
-        )}
-      </View>
+      {showHighlights && (
+        <View style={styles.cardBottom}>
+          {/* Reasons flow as one wrapping block, each followed by a small gray dot (except the
+              last). The dot is an inline View so it can be centred against the text, and is
+              glued to its phrase with a non-breaking space so a wrap never strands it at a
+              line start. */}
+          {!!dest.highlights?.length && (
+            <Text style={styles.cardBlurb} numberOfLines={3}>
+              {dest.highlights.map((h, i) => (
+                <Text key={i}>
+                  {h}
+                  {i < dest.highlights!.length - 1 && (
+                    <>
+                      {'\u00A0\u2009'}
+                      <View style={styles.cardSepBox}><View style={styles.cardSepDot} /></View>
+                      {' \u2009'}
+                    </>
+                  )}
+                </Text>
+              ))}
+            </Text>
+          )}
+        </View>
+      )}
       </View>
     </Pressable>
   );
@@ -161,6 +184,18 @@ export const styles = StyleSheet.create({
   // and centres it about 3.5px up — the middle of the lowercase letters.
   cardSepBox: { width: 3, height: 7, justifyContent: 'center' },
   cardSepDot: { width: 3, height: 3, borderRadius: 1.5, backgroundColor: '#059669' },
+});
+
+// Matches the spot cards' own visit-time treatment exactly (same lift off the bottom edge, same
+// text size/weight/shadow) so the two "meta" lines read as one consistent style across cards.
+const local = StyleSheet.create({
+  imageInfo: { bottom: 16 },
+  metaTxt: {
+    fontSize: 11, fontWeight: '600', color: 'rgba(255,255,255,0.9)',
+    textShadowColor: 'rgba(0,0,0,0.3)', textShadowRadius: 3, textShadowOffset: { width: 0, height: 1 },
+  },
+  // A bit more room than cardImageInfo's own column gap (3) gives it from the country row above.
+  metaTxtSpacing: { marginTop: 2 },
 });
 
 // Fifty of these sit in the Explore feed; re-rendering them (each draws an SVG gradient) on every

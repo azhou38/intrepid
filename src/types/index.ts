@@ -62,6 +62,27 @@ export interface GoodToKnowTip {
   detail: string;
 }
 
+// Known recurring seasonal patterns that drive tourist crowds independently of (or on top of)
+// generic weather/hemisphere assumptions — see utils/travelData.ts's crowd model. A tag only
+// asserts THAT a pattern applies to this destination; the actual month-by-month curve for each
+// tag is defined once, generically, and shared by every destination that carries it. Tags whose
+// timing genuinely varies by place (a specific festival, a migration, a pilgrimage) take an
+// explicit `months`; the rest (ski, cherry blossom, beach, northern lights, autumn foliage) have
+// a sensible default and only need `months` to override it.
+export type SeasonalTagKind =
+  | 'ski' | 'cherry-blossom' | 'autumn-foliage' | 'beach-peak' | 'northern-lights'
+  | 'monsoon-dry-season' | 'major-festival' | 'religious-pilgrimage' | 'wildlife-migration';
+
+export interface SeasonalSignal {
+  tag: SeasonalTagKind;
+  // 1–12 (Jan–Dec). Required for monsoon-dry-season/major-festival/religious-pilgrimage/
+  // wildlife-migration, since those have no universal default; optional override for the rest.
+  months?: number[];
+  // 0–1, default 1: how strongly this signal should pull the curve, for a pattern that matters
+  // but isn't the dominant reason people visit (e.g. a smaller regional festival).
+  strength?: number;
+}
+
 export interface Destination {
   id: string;
   name: string;
@@ -79,6 +100,8 @@ export interface Destination {
   // the Explore cards ("Hot springs · Nordic cafés · Northern lights").
   highlights?: string[];
   goodToKnow?: [GoodToKnowTip, GoodToKnowTip, GoodToKnowTip];
+  // Destination-specific crowd drivers (Tier 2 of the crowd model) — see travelData.ts.
+  seasonalTags?: SeasonalSignal[];
 }
 
 export type SpotCategory =

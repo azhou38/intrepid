@@ -69,7 +69,7 @@ function SpotCard({ spot, onPress, width }: {
             <View style={local.metaRow}>
               <Clock size={11} color="rgba(255,255,255,0.9)" strokeWidth={2.5} />
               <Text style={local.metaTxt}>{formatVisitTime(spot.visitHoursMin, spot.visitHoursMax)}</Text>
-              <Text style={local.metaDot}>·</Text>
+              <View style={local.metaDivider} />
               <Text style={local.metaTxt}>{formatSpotCost(spot)}</Text>
             </View>
           </View>
@@ -93,7 +93,7 @@ const local = StyleSheet.create({
     fontSize: 11, fontWeight: '600', color: 'rgba(255,255,255,0.9)',
     textShadowColor: 'rgba(0,0,0,0.3)', textShadowRadius: 3, textShadowOffset: { width: 0, height: 1 },
   },
-  metaDot: { fontSize: 11, fontWeight: '700', color: 'rgba(255,255,255,0.7)' },
+  metaDivider: { width: 1, height: 11, marginHorizontal: 2, backgroundColor: 'rgba(255,255,255,0.7)' },
 });
 
 export default React.memo(SpotCard);

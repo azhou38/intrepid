@@ -256,6 +256,7 @@ export default function DiscoverScreen({
                   key={dest.id}
                   dest={dest}
                   isVisited={savedDestinations[dest.id]?.type === 'visited'}
+                  showHighlights={false}
                   onPress={() => onSelectDestination(dest)}
                 />
               ))}

@@ -1,36 +1,56 @@
 import { useEffect, useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
-  getWeatherData, getRainyDaysData, getCrowdData,
+  getWeatherData, getRainyDaysData, getCrowdData, levelsToMonthCrowd,
   getWeatherDataFromNormals, getRainDataFromNormals,
 } from './travelData';
-import type { ClimateNormals, MonthWeather, MonthRain, MonthCrowd } from './travelData';
+import type { MonthWeather, MonthRain, MonthCrowd, CrowdMonthMeta } from './travelData';
+import { fetchClimateNormals, type ClimateNormals } from './climateNormalsFetch';
+import climateNormalsBundle from '../data/climateNormals.json';
+import crowdNormalsBundle from '../data/crowdNormals.json';
 import type { Destination } from '../types';
 
-// Real monthly climate normals from Open-Meteo's historical archive (free, no API key).
+export type { ClimateNormals };
+
+// Real monthly climate normals, resolved ahead of time by scripts/build-climate-normals.ts and
+// bundled with the app — no network call, no cache miss.
 //
 // Replaces travelData's synthetic curves, which bucket latitude into four bands and so hand
 // Porto, Lisbon, Rome, Edinburgh and Berlin byte-identical weather — Porto was showing −3°C
 // January nights it has never recorded. The curves stay as the offline fallback.
 //
-// Open-Meteo exposes daily records rather than pre-computed normals, so this averages
-// YEARS_SAMPLED whole years down to twelve monthly figures itself.
+// The bundle is sourced from real Meteostat ground stations (nearest usable station to each
+// destination, see the build script), not reanalysis — a grid-cell model average can differ
+// noticeably from what a traveler actually experiences, especially somewhere coastal or
+// mountainous. The live path below still queries Open-Meteo's reanalysis archive; it only
+// exists as a safety net for a destination added since the bundle was last generated, so it's
+// never the source of truth for anything actually shown — re-run the build script instead of
+// relying on it. Rainfall is reported as a monthly TOTAL rather than a count of rainy days:
+// day-count thresholds were tried first, for the old reanalysis path, and were never trustworthy
+// (they ran +19% to +99% high against published normals) — totals are what both sources agree on.
 
-const ARCHIVE_URL = 'https://archive-api.open-meteo.com/v1/archive';
-const YEARS_SAMPLED = 5;
-// era5_seamless blends in 9km ERA5-Land over land instead of ERA5's ~31km cells alone, which
-// measurably tightens rainfall totals: checked against published annual figures it moved Porto
-// 1.21x -> 1.08x, Rome 1.16x -> 1.01x, Barcelona 1.24x -> 0.90x.
-const MODEL = 'era5_seamless';
+const BUNDLED_NORMALS: Record<string, ClimateNormals> =
+  (climateNormalsBundle as { entries: Record<string, ClimateNormals> }).entries;
+
+// Real (Tier 1/2) monthly crowd data, resolved ahead of time by scripts/build-crowd-normals.ts —
+// see that script and utils/travelData.ts's crowd model for the full tiering. Missing entries
+// (a destination added since the last build) fall through to travelData's live Tier 2/4 heuristic.
+const BUNDLED_CROWDS: Record<string, { months: CrowdMonthMeta[] }> =
+  (crowdNormalsBundle as { entries: Record<string, { months: CrowdMonthMeta[] }> }).entries;
+
+/** The full internal record (score/confidence/tier/sources) behind a destination's crowd bars —
+ *  not used by any UI yet, but exposed so a future surface (or debug view) can show data
+ *  quality without re-deriving it. Null for a destination missing from the bundle. */
+export function getCrowdMeta(destinationId: string): CrowdMonthMeta[] | null {
+  return BUNDLED_CROWDS[destinationId]?.months ?? null;
+}
+
+// Live fallback samples fewer years than the build script (5 vs. 10): it runs on a user's
+// device on demand, so it trades some accuracy for a faster first response.
+const LIVE_YEARS_SAMPLED = 5;
 // Bumped if the shape or derivation changes, so stale entries are ignored rather than
 // reinterpreted under new assumptions.
 const CACHE_PREFIX = 'climate_v1_';
-// Rainfall is reported as a monthly TOTAL rather than a count of rainy days. Day counts were
-// tried first and are not trustworthy from reanalysis: measured against published normals they
-// ran +19% (London) to +99% (Bali), because ERA5 reports a grid-cell area average and models
-// drizzle far too often — so any threshold catches days the gauge never recorded. No threshold
-// fixed it either; at >=2.5mm Rome came right but Porto and London fell ~25% short. Totals are
-// the quantity this source actually gets close on.
 
 // Two layers on purpose: AsyncStorage survives restarts, the Map avoids re-reading (and
 // re-parsing) it every time a sheet reopens within a session.
@@ -42,64 +62,8 @@ const inflight = new Map<string, Promise<ClimateNormals | null>>();
 // its climate, and there's no meaning in a separate entry per metre.
 const cacheKey = (lat: number, lng: number) => `${lat.toFixed(2)},${lng.toFixed(2)}`;
 
-function aggregate(daily: {
-  time: string[];
-  temperature_2m_max: (number | null)[];
-  temperature_2m_min: (number | null)[];
-  precipitation_sum: (number | null)[];
-}): ClimateNormals | null {
-  const highs: number[][] = Array.from({ length: 12 }, () => []);
-  const lows:  number[][] = Array.from({ length: 12 }, () => []);
-  const rain:  number[]   = Array(12).fill(0);
-  const years = new Set<string>();
-
-  daily.time.forEach((iso, i) => {
-    const m = Number(iso.slice(5, 7)) - 1;
-    if (m < 0 || m > 11) return;
-    years.add(iso.slice(0, 4));
-    const hi = daily.temperature_2m_max[i];
-    const lo = daily.temperature_2m_min[i];
-    const pr = daily.precipitation_sum[i];
-    if (hi != null) highs[m].push(hi);
-    if (lo != null) lows[m].push(lo);
-    rain[m] += pr ?? 0;
-  });
-
-  // A month with no readings at all means the response was partial — fall back rather than
-  // publish a hole as 0°C.
-  if (highs.some(h => h.length === 0) || lows.some(l => l.length === 0)) return null;
-
-  const nYears = Math.max(1, years.size);
-  const mean = (ns: number[]) => ns.reduce((a, b) => a + b, 0) / ns.length;
-  return {
-    tempC:    highs.map(mean),
-    tempLowC: lows.map(mean),
-    rainMm:   rain.map(total => total / nYears),
-  };
-}
-
-async function fetchNormals(lat: number, lng: number): Promise<ClimateNormals | null> {
-  // Ends at the last COMPLETE calendar year: the archive lags a few days behind real time,
-  // and a partial year would skew whichever months it happens to cover.
-  const lastFullYear = new Date().getFullYear() - 1;
-  // Built by hand rather than with URLSearchParams: RN's polyfill for it is inconsistent
-  // across engines, and every value here is already URL-safe (numbers and fixed keywords).
-  const query = [
-    `latitude=${lat}`,
-    `longitude=${lng}`,
-    `start_date=${lastFullYear - YEARS_SAMPLED + 1}-01-01`,
-    `end_date=${lastFullYear}-12-31`,
-    'daily=temperature_2m_max,temperature_2m_min,precipitation_sum',
-    'timezone=UTC',
-    `models=${MODEL}`,
-  ].join('&');
-  const res = await fetch(`${ARCHIVE_URL}?${query}`);
-  if (!res.ok) return null;
-  const json = await res.json();
-  return json?.daily?.time?.length ? aggregate(json.daily) : null;
-}
-
-/** Cached lookup. Resolves null on any failure — callers fall back to the synthetic curves. */
+/** Cached live lookup, for a destination missing from the bundled manifest. Resolves null on
+ *  any failure — callers fall back to the synthetic curves. */
 export async function getClimateNormals(lat: number, lng: number): Promise<ClimateNormals | null> {
   const key = cacheKey(lat, lng);
   const hit = memCache.get(key);
@@ -118,7 +82,7 @@ export async function getClimateNormals(lat: number, lng: number): Promise<Clima
     } catch {}
 
     try {
-      const fresh = await fetchNormals(lat, lng);
+      const fresh = await fetchClimateNormals(lat, lng, LIVE_YEARS_SAMPLED);
       if (fresh) {
         memCache.set(key, fresh);
         // Deliberately not awaited: a cache write failing must not delay or fail the lookup.
@@ -150,18 +114,21 @@ export interface DestinationClimate {
  */
 export function useDestinationClimate(destination: Destination): DestinationClimate {
   const { latitude, longitude } = destination.coordinates;
-  // Seeded from the memory cache so a revisit renders real data on the FIRST frame, with no
-  // flash of synthetic values.
+  const bundled = BUNDLED_NORMALS[destination.id];
+  // Seeded from the bundle (instant, no flash of synthetic values) or, failing that, the memory
+  // cache so a revisit still renders real data on the FIRST frame.
   const [normals, setNormals] = useState<ClimateNormals | null>(
-    () => memCache.get(cacheKey(latitude, longitude)) ?? null,
+    () => bundled ?? memCache.get(cacheKey(latitude, longitude)) ?? null,
   );
 
   useEffect(() => {
+    // Bundled destinations never hit the network — see the block comment above.
+    if (bundled) { setNormals(bundled); return; }
     let cancelled = false;
     setNormals(memCache.get(cacheKey(latitude, longitude)) ?? null);
     getClimateNormals(latitude, longitude).then(n => { if (!cancelled && n) setNormals(n); });
     return () => { cancelled = true; };
-  }, [latitude, longitude]);
+  }, [destination.id, bundled, latitude, longitude]);
 
   const weather = normals
     ? getWeatherDataFromNormals(normals)
@@ -169,9 +136,10 @@ export function useDestinationClimate(destination: Destination): DestinationClim
   const rain = normals
     ? getRainDataFromNormals(normals)
     : getRainyDaysData(latitude, destination.category);
-  const crowds = getCrowdData(
-    destination.continent, destination.category, latitude, destination.rank, weather,
-  );
+  const crowdBundle = BUNDLED_CROWDS[destination.id];
+  const crowds = crowdBundle
+    ? levelsToMonthCrowd(crowdBundle.months.map(m => m.level), weather)
+    : getCrowdData(destination, weather);
 
   return { weather, rain, crowds, isReal: normals != null };
 }

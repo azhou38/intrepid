@@ -177,6 +177,7 @@ function DestinationsPanel({
                 isVisited={isVisited}
                 width={GRID_CARD_W}
                 showCountry={false}
+                showHighlights={false}
                 onPress={() => onSelectDestination(dest)}
               />
             );

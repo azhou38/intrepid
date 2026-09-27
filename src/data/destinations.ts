@@ -160,6 +160,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🚤', title: 'Buy a multi-day pass', detail: 'Single vaporetto tickets are expensive — a multi-day pass pays off if staying more than a day or two.' },
       { icon: '📜', title: 'Read the menu fine print', detail: 'Cafés directly on St. Mark\'s Square often add a "music surcharge" — check the menu\'s fine print first.' },
     ],
+    // Carnevale (Feb) is a real, well-known secondary peak — kept secondary since Venice's
+    // dominant, heavily documented overtourism season is still summer.
+    seasonalTags: [{ tag: 'major-festival', months: [2], strength: 0.6 }],
   },
   // Spain
   {
@@ -233,6 +236,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🍻', title: 'Share the long tables', detail: 'Beer halls often expect you to share long communal tables and bus your own dishes.' },
       { icon: '🤫', title: 'Keep Sundays quiet', detail: 'Sunday is a legally protected quiet day — loud activity is restricted and most shops are shut.' },
     ],
+    // Oktoberfest (mid-Sep–early Oct) genuinely outdraws Munich's summer season — hotel demand
+    // and prices are well documented to peak here, not in July/August.
+    seasonalTags: [{ tag: 'major-festival', months: [9, 10], strength: 0.9 }],
   },
   // Portugal
   {
@@ -291,6 +297,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🪂', title: 'Book adventures early', detail: 'Adventure activities like paragliding and canyoning book up fast in peak season.' },
       { icon: '💰', title: 'Expect premium prices', detail: 'Food and lodging prices run among the highest in Switzerland due to tourist demand.' },
     ],
+    // No extra ski tag here deliberately: Switzerland's real Eurostat national curve (Tier 1)
+    // already carries a strong winter ski-resort signal at the country level — adding another
+    // boost on top double-counted it and overcorrected a summer-leaning town toward winter.
   },
   // Austria
   {
@@ -422,6 +431,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🚡', title: 'Ride the funicular early', detail: 'The Fløibanen funicular gets long summer lines by midday — go early morning or evening.' },
       { icon: '⛴️', title: 'Compare fjord tour prices', detail: 'Fjord tour prices and lengths vary a lot — compare a few options before booking.' },
     ],
+    // Weak: Bergen's real driver is the summer fjord-cruise season, already captured by the
+    // geographic base curve — aurora tourism is real here but secondary, not the headline.
+    seasonalTags: [{ tag: 'northern-lights', strength: 0.35 }],
   },
   {
     id: 'norwegian-fjords', name: 'Norwegian Fjords', country: 'Norway', countryCode: 'NO',
@@ -494,6 +506,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🧣', title: 'Pack thermal layers', detail: 'Temperatures fall well below freezing — proper thermal layers are essential, not optional, in winter.' },
       { icon: '🐕', title: 'Book husky rides early', detail: 'Husky sledding and igloo stays book out early for the winter season.' },
     ],
+    // Rovaniemi's Santa Claus Village tourism spikes hard in December specifically, on top of
+    // (and separate from) the broader Arctic winter/northern-lights season.
+    seasonalTags: [{ tag: 'northern-lights' }, { tag: 'major-festival', months: [12], strength: 0.8 }],
   },
   // Iceland
   {
@@ -509,6 +524,9 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🌦️', title: 'Expect changeable weather', detail: 'Weather changes constantly; the local saying "wait five minutes" for different weather is accurate.' },
       { icon: '🚰', title: 'Skip bottled water', detail: 'Tap water is safe and excellent everywhere — no need to buy bottled water.' },
     ],
+    // Weak: Iceland's real annual peak is summer road-trip season — aurora tourism is real and
+    // growing, but a secondary draw, not the destination's headline pattern.
+    seasonalTags: [{ tag: 'northern-lights', strength: 0.45 }],
   },
   {
     id: 'golden-circle', name: 'Golden Circle', country: 'Iceland', countryCode: 'IS',
@@ -523,6 +541,7 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🧊', title: 'Check road conditions', detail: 'Roads can ice over or close in winter — check conditions at road.is before setting out.' },
       { icon: '🚌', title: 'Arrive before the buses', detail: 'Popular stops like Geysir fill up with tour buses by mid-morning; go as early as you can.' },
     ],
+    seasonalTags: [{ tag: 'northern-lights', strength: 0.45 }],
   },
   // Greece (additional)
   {
@@ -552,6 +571,7 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🏖️', title: 'Ask about sunbed minimums', detail: 'Beach clubs often charge steep minimum spends for sunbeds — confirm costs before sitting down.' },
       { icon: '💨', title: 'Build in ferry buffer days', detail: "The island's strong summer winds (the meltemi) can disrupt ferries — build buffer days into your plans." },
     ],
+    seasonalTags: [{ tag: 'beach-peak' }],
   },
   // Czech Republic
   {
@@ -581,6 +601,7 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🛵', title: 'Drive with confidence', detail: 'Roads are narrow and steep; renting an ATV or car requires confidence in tight spaces.' },
       { icon: '🪜', title: 'Expect a lot of stairs', detail: 'Many cliffside hotels involve a lot of stairs — worth knowing if mobility is a concern.' },
     ],
+    seasonalTags: [{ tag: 'beach-peak' }],
   },
 
   // ── ASIA ───────────────────────────────────────────────────────────────────
@@ -597,6 +618,7 @@ export const DESTINATIONS: Destination[] = [
       { icon: '🚫', title: 'Skip the tip', detail: 'Tipping is not customary and can even cause confusion or be politely refused.' },
       { icon: '🚃', title: 'Avoid rush-hour trains', detail: 'Morning rush-hour trains (7:30–9am) are famously packed — avoid them with luggage if you can.' },
     ],
+    seasonalTags: [{ tag: 'cherry-blossom' }, { tag: 'autumn-foliage' }],
   },
   {
     id: 'kyoto', name: 'Kyoto', country: 'Japan', countryCode: 'JP',
@@ -611,6 +633,7 @@ export const DESTINATIONS: Destination[] = [
       { icon: '⛩️', title: 'Visit temples early', detail: 'Major temples get very crowded during cherry blossom and autumn foliage season — visit early morning.' },
       { icon: '🏮', title: 'Book ryokan in advance', detail: 'Popular ryokan and restaurants often require reservations well in advance.' },
     ],
+    seasonalTags: [{ tag: 'cherry-blossom' }, { tag: 'autumn-foliage' }],
   },
   {
     id: 'osaka', name: 'Osaka', country: 'Japan', countryCode: 'JP',

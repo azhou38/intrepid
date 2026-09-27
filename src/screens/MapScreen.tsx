@@ -1206,20 +1206,21 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   }, [selectedCountry, selectedDest, countryHomeRegion, region]);
 
   const showDestReturnPrompt = useMemo(() => {
-    // Also suppressed once a spot is selected — same nesting rule showReturnPrompt already
-    // applies for country->destination (there, `selectedDest` truthy silences the country
-    // prompt). Without this, browsing the spot carousel triggered false positives: each swipe
-    // reframes the camera tightly on that one spot (see fitSpotView/handleActiveSpotChange),
-    // which is naturally a big pan+zoom away from the destination-wide destHomeRegion even
-    // though the user never touched the map — SpotSheet's own peek state (pillPeekSV) is the
-    // right signal for "should the breadcrumb show" while a spot is open, not this one.
-    if (!selectedDest || !destHomeRegion || !!selectedSpot || suppressDestReturnPromptRef.current) return false;
+    // NOT gated on selectedSpot — a genuine user pan away from the destination while a spot
+    // is open should still offer the way back, same as with no spot selected. The carousel-
+    // swipe false positive this used to guard against (each swipe reframes the camera tightly
+    // on one spot via fitSpotView/handleActiveSpotChange, which is naturally a big pan+zoom
+    // away from the destination-wide destHomeRegion even though the user never touched the
+    // map) is instead handled at the source: handleActiveSpotChange sets
+    // suppressDestReturnPromptRef itself for the duration of its own camera move, the same
+    // guard every other programmatic camera move in this file already uses.
+    if (!selectedDest || !destHomeRegion || suppressDestReturnPromptRef.current) return false;
     const zoomedOut = region.latitudeDelta > destHomeRegion.latitudeDelta * 1.6;
     const pannedAway =
       Math.abs(region.latitude  - destHomeRegion.latitude)  > destHomeRegion.latitudeDelta  * 0.45 ||
       Math.abs(region.longitude - destHomeRegion.longitude) > destHomeRegion.longitudeDelta * 0.45;
     return zoomedOut || pannedAway;
-  }, [selectedDest, destHomeRegion, region, selectedSpot]);
+  }, [selectedDest, destHomeRegion, region]);
 
   useEffect(() => {
     // Fallback for state-driven transitions (e.g. selectedCountry changes while map is static).
@@ -2427,6 +2428,16 @@ const destItems = useMemo((): DestItem[] =>
     suppressPeekPushRef.current = true;
     if (suppressPeekPushTimerRef.current) clearTimeout(suppressPeekPushTimerRef.current);
     suppressPeekPushTimerRef.current = setTimeout(() => { suppressPeekPushRef.current = false; }, 350);
+    // Same guard, same reasoning, for the destination "return to home view" breadcrumb arrow —
+    // this easeTo's own per-spot reframing reads as "panned away" against the destination-wide
+    // destHomeRegion, which used to be worked around by blanket-hiding the arrow any time a
+    // spot was selected at all (see showDestReturnPrompt's own history) — that also hid it
+    // during a genuine user pan away from the destination with a spot open, which is exactly
+    // when it's most useful. Suppressing only for the duration of this specific camera move
+    // fixes the false positive without losing the real case.
+    suppressDestReturnPromptRef.current = true;
+    if (suppressDestReturnPromptTimerRef.current) clearTimeout(suppressDestReturnPromptTimerRef.current);
+    suppressDestReturnPromptTimerRef.current = setTimeout(() => { suppressDestReturnPromptRef.current = false; }, 350);
     // 200ms (down from 400) — this fires continuously as the carousel settles on each card,
     // so it needs to keep pace with a quick swipe rather than visibly trail behind it.
     fitSpotView(spot, 'easeTo', 200);
@@ -3035,12 +3046,13 @@ const destItems = useMemo((): DestItem[] =>
     // showDestReturnPrompt alone (the fallback effect below) wasn't enough, since this
     // block runs first and independently writes to the same shared value.
     const dh = destHomeRegionRef.current;
-    // Also gated on !selectedSpotRef.current — see showDestReturnPrompt's own comment. Without
-    // it, this unthrottled path (which runs on every raw camera-changed event, well before that
-    // memo's throttled `region` state catches up) was the one actually firing the arrow: each
-    // spot-carousel swipe reframes the camera on fitSpotView's own tight per-spot zoom, which
-    // reads as "panned away" against the destination-wide dh region on the very first frame.
-    if (selectedDestRef.current && dh && !selectedSpotRef.current && !suppressDestReturnPromptRef.current) {
+    // NOT gated on selectedSpotRef — see showDestReturnPrompt's own comment: a genuine user
+    // pan away from the destination should still offer the way back even with a spot open.
+    // suppressDestReturnPromptRef (set by handleActiveSpotChange for the duration of its own
+    // camera move) is what actually protects this unthrottled path — which runs on every raw
+    // camera-changed event, well before the throttled `region` state the memo reads catches up
+    // — from misreading the spot carousel's own per-spot fitSpotView reframing as a user pan.
+    if (selectedDestRef.current && dh && !suppressDestReturnPromptRef.current) {
       const zoomedOut  = latDelta > dh.latitudeDelta * 1.6;
       const pannedAway = Math.abs(lat - dh.latitude)  > dh.latitudeDelta  * 0.45 ||
                          Math.abs(lng - dh.longitude) > dh.longitudeDelta * 0.45;

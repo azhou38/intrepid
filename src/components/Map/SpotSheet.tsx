@@ -199,6 +199,7 @@ function CarouselCard({ spot, destinationId, isActive, onPress, gradId }: {
               <Clock size={12} color="#16A34A" strokeWidth={2.5} />
               <Text style={st.cardTimeTxt}>{formatVisitTime(spot.visitHoursMin, spot.visitHoursMax)}</Text>
             </View>
+            <View style={st.cardStatDivider} />
             <View style={st.cardTimeRow}>
               <Text style={st.cardTimeTxt}>{formatSpotCost(spot)}</Text>
             </View>
@@ -533,6 +534,22 @@ function SpotSheet({
   // applied to two views, matching DestinationSheet's own sheetAnimStyle.
   const sheetAnimStyle = useAnimatedStyle(() => ({
     transform: [{ translateY: slideAnim.value }],
+  }));
+  // Hides the hero/scrollable content (st.sheet's own children) the instant the sheet passes
+  // collapsed, heading toward peek. st.sheet keeps translating with slideAnim the whole way
+  // (sheetAnimStyle, above) — including through the collapsed→peek range, where the carousel
+  // and peek strip are meant to be the ONLY visible things, cross-fading against each other
+  // (carouselOpacityStyle/peekOpacityStyle). Without this, st.sheet's own hero — still fully
+  // opaque and still moving underneath — showed through the carousel the moment its opacity
+  // dropped below 1 mid-swipe: the hero's own (much larger, differently-positioned) name text
+  // and "Add Visit" pill bled through at whatever position the still-sliding sheet had reached,
+  // reading as a garbled double-exposure rather than a clean carousel↔peek crossfade. Full→
+  // collapsed is untouched — carousel is already opaque (1) for that whole range regardless
+  // (carouselOpacityStyle's input range starts at COLLAPSED_Y), so the hero being visible
+  // underneath there was never actually visible anyway; this only needed to kick in from
+  // COLLAPSED_Y onward.
+  const contentOpacityStyle = useAnimatedStyle(() => ({
+    opacity: interpolate(slideAnim.value, [COLLAPSED_Y - 1, COLLAPSED_Y], [1, 0], Extrapolation.CLAMP),
   }));
 
   // Continuously writes the back-to-destination pill's target "bottom" offset as slideAnim
@@ -878,7 +895,7 @@ function SpotSheet({
 
       <GestureDetector gesture={pan}>
       <Reanimated.View style={[st.sheet, sheetAnimStyle]}>
-        <View style={[StyleSheet.absoluteFill, { overflow: 'hidden' }]}>
+        <Reanimated.View style={[StyleSheet.absoluteFill, { overflow: 'hidden' }, contentOpacityStyle]}>
         <GestureDetector gesture={tabSwipeGesture}>
         <View style={{ flex: 1 }}>
         <GHScrollView
@@ -1032,7 +1049,7 @@ function SpotSheet({
         </GHScrollView>
         </View>
         </GestureDetector>{/* end tabSwipeGesture wrapper */}
-        </View>{/* end full-content wrapper */}
+        </Reanimated.View>{/* end full-content wrapper */}
 
         {/* ── CAROUSEL — collapsed overlay: all spots in this destination. Fixed height
             (COMPACT_H) rather than one measured from its own content — always exactly
@@ -1345,6 +1362,7 @@ const st = StyleSheet.create({
   cardStatRow: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 2, marginBottom: 8 },
   cardTimeRow: { flexDirection: 'row', alignItems: 'center', gap: 4, flexShrink: 0 },
   cardTimeTxt: { fontSize: 12.5, fontWeight: '700', color: '#16A34A' },
+  cardStatDivider: { width: 1, height: 12, marginHorizontal: 2, backgroundColor: '#16A34A' },
   cardInfo:    { backgroundColor: 'white', paddingHorizontal: 14, paddingTop: 6, paddingBottom: 12 },
   cardBio:     { fontSize: 12.5, color: '#6B7280', lineHeight: 16, minHeight: 48 },
   // Sits below the carousel (a sibling of the ScrollView, not any one card) — sandwiched

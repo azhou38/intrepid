@@ -1,3 +1,5 @@
+import type { Destination, SeasonalSignal, SeasonalTagKind } from '../types';
+
 export const MONTHS_SHORT = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
 export interface MonthWeather {
@@ -16,6 +18,17 @@ export interface MonthCrowd {
   month: string;
   level: number; // 1 (quiet) – 5 (packed)
   isBest: boolean;
+}
+
+// Richer per-month record the crowd bundle stores internally (see scripts/build-crowd-normals.ts)
+// — not consumed by any UI today, but kept alongside the score/level so a future surface can
+// distinguish "real tourism data" from "a geographic guess" without re-deriving it.
+export interface CrowdMonthMeta {
+  score: number;             // 0–100, relative to this destination's own months
+  level: number;             // same 1–5 scale as MonthCrowd.level
+  confidence: 'high' | 'medium' | 'low';
+  tier: 1 | 2 | 4;            // 1 = real tourism data, 2 = seasonal signals, 4 = geographic fallback
+  sources: string[];
 }
 
 
@@ -85,52 +98,183 @@ export function getWeatherData(latitude: number, category: string): MonthWeather
   }));
 }
 
-// ── Crowd profiles (1=quiet … 5=packed) — N hemisphere ───────────────────────
-const C: Record<string, number[]> = {
+// ── Crowd model — tiered, destination-relative seasonality ───────────────────
+//
+// Tier 1 (real country-level tourism data, e.g. Eurostat nights-spent statistics) only runs at
+// BUILD time — see scripts/build-crowd-normals.ts, which bakes it into src/data/crowdNormals.json.
+// Everything below is Tier 2 (destination-specific seasonal signals) and Tier 4 (geographic/
+// hemisphere fallback), used live only for a destination the bundle doesn't cover yet — re-run
+// the build script instead of relying on this for anything meant to ship. Tier 3 (search/travel
+// demand) is deliberately not implemented: every free option depends on an unofficial, fragile
+// scraper rather than a real API, which is exactly the kind of dependency to avoid here.
+
+// Tier 4 — geographic/hemisphere shape when nothing more specific is known. Purely a RELATIVE
+// low-season-vs-high-season shape, not an absolute crowd count.
+const GEO_BASE_CURVES: Record<string, number[]> = {
   summer:    [2,2,3,3,3,4,5,5,4,3,2,2],
   winter:    [5,4,3,2,2,1,1,1,2,2,4,5],
   shoulder:  [2,2,4,4,3,3,3,3,4,4,2,2],
   yearround: [3,3,3,4,4,3,4,4,4,3,3,3],
 };
 
-function crowdProfileKey(continent: string, latitude: number): string {
+function geoBaseCurveKey(continent: string, latitude: number): keyof typeof GEO_BASE_CURVES {
   if (continent === 'Europe' || continent === 'North America') return 'summer';
   if (continent === 'South America') return 'shoulder';
-  if (continent === 'Oceania')       return 'summer'; // shifted for S hemisphere
+  if (continent === 'Oceania')       return 'summer'; // shifted below for S hemisphere
   if (continent === 'Africa')        return latitude > 10 ? 'winter' : 'yearround';
   if (continent === 'Asia')          return latitude < 35 ? 'winter' : 'summer';
   return 'yearround';
 }
 
-// Dampens the seasonal profile toward a destination's actual overall popularity (rank 1 =
-// most iconic/crowded, 5 = least) so crowd levels are absolute rather than purely relative
-// shape — a quiet, low-rank destination shows low bars year-round instead of the same
-// 1–5 seasonal swing every other place in its region gets.
-const RANK_CROWD_SCALE: Record<number, number> = { 1: 1, 2: 0.82, 3: 0.66, 4: 0.52, 5: 0.4 };
+/** Tier 4: a plain 12-value relative-demand curve from continent/hemisphere/latitude alone. */
+export function geographicCrowdCurve(continent: string, latitude: number): number[] {
+  const curve = GEO_BASE_CURVES[geoBaseCurveKey(continent, latitude)];
+  return latitude < -5 ? shiftHalf(curve) : curve;
+}
 
-/** `weatherOverride` lets callers pass REAL observed temperatures (see climateApi) so the
- *  "best month" flags agree with the temperatures actually shown to the user. Without it this
- *  falls back to the synthetic curves, which can disagree by 10°C — enough to flag a month as
- *  pleasant that the chart right beside it shows as freezing. */
-export function getCrowdData(
-  continent: string, category: string, latitude: number, rank: number = 3,
-  weatherOverride?: MonthWeather[],
-): MonthCrowd[] {
-  const key    = crowdProfileKey(continent, latitude);
-  let   levels = C[key] ?? C.yearround;
-  if (latitude < -5) levels = shiftHalf(levels);
+// Tier 2 — destination-specific seasonal signals (SeasonalTagKind, in types/index.ts). Each tag
+// is one generic monthly weight curve, shared by every destination that carries it — a
+// destination only says WHICH signals apply (and, for event-like tags, WHEN); it never supplies
+// its own curve, which is what keeps this reusable instead of a per-destination lookup table.
+// Hemisphere-relative tags (ski/beach/blossom/foliage/lights) default to Northern Hemisphere
+// timing and flip automatically south of the equator; explicit-month tags (a specific festival,
+// a migration, a pilgrimage) don't, since their timing is already a real calendar fact rather
+// than a hemisphere inference.
+const HEMISPHERE_RELATIVE: Partial<Record<SeasonalTagKind, number[]>> = {
+  ski:               [12, 1, 2, 3],
+  'cherry-blossom':  [3, 4],
+  'autumn-foliage':  [10, 11],
+  'beach-peak':      [6, 7, 8],
+  'northern-lights': [10, 11, 12, 1, 2, 3],
+};
 
-  const scale  = RANK_CROWD_SCALE[rank] ?? RANK_CROWD_SCALE[3];
-  const scaled = levels.map(l => Math.max(1, Math.min(5, Math.round(l * scale))));
+// How much force each tag carries at full (strength: 1) — not every signal is the same size of
+// crowd event. A religious pilgrimage (e.g. Hajj, which brings millions to a single city in one
+// week) or a named festival is a near-deterministic, concentrated spike and should be able to
+// override a merely-coincidental geographic guess; a diffuse regional pattern like aurora tourism
+// or a general ski season is real but proportionally smaller and shouldn't overpower everything
+// else on its own.
+const TAG_WEIGHT: Record<SeasonalTagKind, number> = {
+  'religious-pilgrimage': 6,
+  'major-festival': 4,
+  'wildlife-migration': 4,
+  'monsoon-dry-season': 3.5,
+  ski: 3,
+  'cherry-blossom': 3,
+  'beach-peak': 3,
+  'autumn-foliage': 2.5,
+  'northern-lights': 2.5,
+};
 
-  const weather = weatherOverride ?? getWeatherData(latitude, category);
-  const minL    = Math.min(...scaled);
+// A signal's peak months get full weight; the calendar months immediately either side get a
+// partial "shoulder" weight, so the resulting curve is a bump rather than a knife-edge step.
+function monthWeights(months: number[]): number[] {
+  const w = Array(12).fill(0);
+  for (const m of months) {
+    const i = ((m - 1) % 12 + 12) % 12;
+    w[i] = 1;
+    w[(i + 11) % 12] = Math.max(w[(i + 11) % 12], 0.4);
+    w[(i + 1) % 12]  = Math.max(w[(i + 1) % 12], 0.4);
+  }
+  return w;
+}
 
+const flipToSouthernHemisphere = (months: number[]) => months.map(m => ((m - 1 + 6) % 12) + 1);
+
+// Rescales any raw curve to a mean of `targetMean` — needed before adding a Tier 2 boost onto a
+// Tier 1 curve, since real tourism figures (tens of millions of nights) and the small synthetic
+// Tier 4 curves (roughly 1–5) live on completely different scales. Without this, SEASONAL_BOOST_
+// SCALE's units are negligible against real numbers and a tagged signal (e.g. Munich's
+// Oktoberfest) has no visible effect once real data is available — exactly the bug this fixes.
+export function normalizeToMean(raw: number[], targetMean = 3): number[] {
+  const mean = raw.reduce((a, b) => a + b, 0) / raw.length;
+  if (mean === 0) return raw.map(() => targetMean);
+  return raw.map(v => (v / mean) * targetMean);
+}
+
+/** Tier 2: combines a destination's seasonal signals into one relative weight curve, or null if
+ *  it has none (or none resolve to any months, e.g. an event-like tag given with no `months`). */
+export function seasonalSignalCurve(signals: SeasonalSignal[] | undefined, latitude: number): number[] | null {
+  if (!signals?.length) return null;
+  let curve = Array(12).fill(0);
+  let any = false;
+  for (const { tag, months: explicitMonths, strength = 1 } of signals) {
+    let months = explicitMonths ?? HEMISPHERE_RELATIVE[tag];
+    if (!months) continue;
+    if (!explicitMonths && latitude < -5) months = flipToSouthernHemisphere(months);
+    const w = monthWeights(months);
+    const weight = TAG_WEIGHT[tag] * strength;
+    curve = curve.map((v, i) => v + w[i] * weight);
+    any = true;
+  }
+  return any ? curve : null;
+}
+
+// ── Turning a raw relative-demand curve into 0–100 scores ────────────────────
+//
+// Scores are relative to the destination's OWN months, not a universal scale — a place that's
+// merely a little busier in summer should get a small spread around the middle, not be stretched
+// to fill the full 0–100 range just because it has a highest and lowest month. `spread` measures
+// how much the raw curve actually varies (its coefficient of variation) and dampens the z-score
+// mapping when that variation is small, so a nearly flat curve stays clustered near 50 instead of
+// manufacturing a Low-to-Very-High swing the underlying data doesn't support.
+export function relativeCrowdScores(raw: number[]): number[] {
+  const mean = raw.reduce((a, b) => a + b, 0) / raw.length;
+  if (mean === 0) return raw.map(() => 50);
+  const variance = raw.reduce((a, v) => a + (v - mean) ** 2, 0) / raw.length;
+  const std = Math.sqrt(variance);
+  const cv = std / mean;
+  // A coefficient of variation of ~0.25 (a clearly seasonal destination) maps to the full
+  // spread; below that the spread shrinks proportionally, with a floor so two genuinely
+  // different months never render as perfectly identical.
+  const spread = Math.max(0.15, Math.min(1, cv / 0.25));
+  return raw.map(v => {
+    const z = std === 0 ? 0 : (v - mean) / std;
+    return Math.max(0, Math.min(100, 50 + z * spread * 25));
+  });
+}
+
+/** 0–24 Low · 25–49 Moderate · 50–74 High · 75–100 Very high, mapped onto the existing 1–5
+ *  `MonthCrowd.level` scale so every current consumer (the crowd chart and its Low/Moderate/
+ *  High/Very High legend, the "best months" grid) keeps working unmodified — crowdLabel/
+ *  crowdColor already treat 1/3/4/5 as those four buckets, so level 2 is deliberately unused. */
+export function scoreToCrowdLevel(score: number): number {
+  if (score < 25) return 1;
+  if (score < 50) return 3;
+  if (score < 75) return 4;
+  return 5;
+}
+
+/** Turns final per-month levels (from either the precomputed bundle or the live fallback below)
+ *  into the MonthCrowd[] shape every consumer expects, including the "best month" flag —
+ *  quietest months AND comfortable weather, exactly as before. */
+export function levelsToMonthCrowd(levels: number[], weather: MonthWeather[]): MonthCrowd[] {
+  const minLevel = Math.min(...levels);
   return MONTHS_SHORT.map((month, i) => {
     const goodTemp = weather[i].tempC >= 10 && weather[i].tempC <= 36;
-    const isBest   = scaled[i] <= minL + 1 && goodTemp;
-    return { month, level: scaled[i], isBest };
+    const isBest = levels[i] <= minLevel + 1 && goodTemp;
+    return { month, level: levels[i], isBest };
   });
+}
+
+/** Live Tier 2/4 fallback for any destination the precomputed bundle (crowdNormals.json, built
+ *  by scripts/build-crowd-normals.ts from real country-level tourism data) doesn't cover yet —
+ *  e.g. one added since the last build. `weatherOverride` lets callers pass REAL observed
+ *  temperatures (see climateApi) so the "best month" flag agrees with the temperatures actually
+ *  shown to the user, rather than the synthetic curves, which can disagree by 10°C. */
+export function getCrowdData(destination: Destination, weatherOverride?: MonthWeather[]): MonthCrowd[] {
+  const { latitude } = destination.coordinates;
+  const base = geographicCrowdCurve(destination.continent, latitude);
+  const tier2 = seasonalSignalCurve(destination.seasonalTags, latitude);
+  // Seasonal signals ADD emphasis on top of the geographic shape rather than replacing it (each
+  // tag's own TAG_WEIGHT already sets how hard it pushes) — a destination with no tags keeps the
+  // plain Tier 4 curve untouched, and one with a real but secondary pattern (a niche winter
+  // aurora season on top of a summer-dominant place) gets a real bump without its true peak
+  // being overwritten.
+  const raw = tier2 ? base.map((v, i) => v + tier2[i]) : base;
+  const levels = relativeCrowdScores(raw).map(scoreToCrowdLevel);
+  const weather = weatherOverride ?? getWeatherData(latitude, destination.category);
+  return levelsToMonthCrowd(levels, weather);
 }
 
 // Typical millimetres per wet day, by climate. Only used to turn the synthetic rain
@@ -153,6 +297,32 @@ export function getRainyDaysData(latitude: number, category: string): MonthRain[
     month,
     mm: Math.round(rains[i] * 30 * intensity),
   }));
+}
+
+// Groups month indices (0=Jan…11=Dec) into consecutive runs, folding a Dec→Jan wrap into a
+// single run — shared by every "best months" label so they can never disagree on groupings.
+export function groupMonthRuns(idx: number[]): number[][] {
+  const runs: number[][] = [];
+  for (const i of idx) {
+    const last = runs[runs.length - 1];
+    if (last && i === last[last.length - 1] + 1) last.push(i);
+    else runs.push([i]);
+  }
+  if (runs.length > 1 && runs[0][0] === 0 && runs[runs.length - 1].slice(-1)[0] === 11) {
+    runs[0] = [...runs.pop()!, ...runs[0]];
+  }
+  return runs;
+}
+
+// Compact "Jun-Jul" / "Oct-Jan, Jul" label for space-tight surfaces like the Explore cards —
+// same month groupings as the When To Visit sentence, joined with commas instead of "and".
+export function formatBestMonthsShort(idx: number[]): string {
+  if (idx.length === 0) return '';
+  if (idx.length === 12) return 'Year-round';
+  const label = (r: number[]) => r.length === 1
+    ? MONTHS_SHORT[r[0]]
+    : `${MONTHS_SHORT[r[0]]}-${MONTHS_SHORT[r[r.length - 1]]}`;
+  return groupMonthRuns(idx).map(label).join(', ');
 }
 
 export function crowdColor(level: number): string {

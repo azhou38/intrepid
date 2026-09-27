@@ -26,7 +26,7 @@ import type { SharedValue } from 'react-native-reanimated';
 // call, which is what was still blocking the full-screen swipe-down.
 import { Gesture, GestureDetector, ScrollView } from 'react-native-gesture-handler';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { X, Check, Calendar, MapPin, Camera, Pencil, Plus, ChevronRight, ChevronDown, Lightbulb, Map, Sun,
+import { X, Check, Calendar, MapPin, Camera, Pencil, Plus, ChevronRight, ChevronDown, Map, Sun,
          Users, CloudRain, Thermometer, Trash2 } from 'lucide-react-native';
 import * as ImagePicker from 'expo-image-picker';
 import { useStore } from '../../store';
@@ -574,9 +574,9 @@ const lS = StyleSheet.create({
 // connected group (not separate tappable cards): a light-green numbered badge on the left,
 // the reason as the row's title, with hairline dividers between rows instead of individual
 // chevrons — these are informational, not navigational.
-function GlanceItem({ reason, index, isLast }: { reason: string; index: number; isLast: boolean }) {
+function GlanceItem({ reason, index }: { reason: string; index: number }) {
   return (
-    <View style={[st.glanceRow, !isLast && st.glanceRowDivider]}>
+    <View style={st.glanceRow}>
       <View style={st.glanceNumBadge}>
         <Text style={st.glanceNumTxt}>{index + 1}</Text>
       </View>
@@ -840,20 +840,23 @@ function AboutPanel({
 }) {
   return (
     <View style={st.aboutStack}>
-      {!!destination.whyVisit && (
+      {(!!destination.whyVisit || !!destination.description) && (
         <View style={[st.section, st.aboutFirstSection]}>
-          <Text style={st.plainSectionHeader}>WHY VISIT {destination.name.toUpperCase()}?</Text>
+          {!!destination.whyVisit && (
+            <Text style={st.plainSectionHeader}>WHY VISIT {destination.name.toUpperCase()}?</Text>
+          )}
+          {/* One connected card for both the numbered reasons and the description below —
+              no hairlines between the reason rows themselves (they're closely related
+              facets of the same "why visit" answer, not separate list entries), just the
+              one outer border/shadow wrapping the whole card. */}
           <View style={st.glanceStack}>
-            {destination.whyVisit.map((reason, i) => (
-              <GlanceItem key={i} reason={reason} index={i} isLast={i === destination.whyVisit!.length - 1} />
+            {destination.whyVisit?.map((reason, i) => (
+              <GlanceItem key={i} reason={reason} index={i} />
             ))}
+            {!!destination.description && (
+              <Text style={[st.aboutTxt, st.glanceDescription]}>{destination.description}</Text>
+            )}
           </View>
-        </View>
-      )}
-
-      {!!destination.description && (
-        <View style={st.section}>
-          <Text style={st.aboutTxt}>{destination.description}</Text>
         </View>
       )}
 
@@ -888,7 +891,6 @@ function AboutPanel({
         <View style={[st.section, st.aboutLastSection]}>
           <View style={st.secHeadRow}>
             <View style={st.goodToKnowHeadRow}>
-              <Lightbulb size={14} color="#B45309" />
               <Text style={st.plainSectionHeader}>GOOD TO KNOW</Text>
             </View>
           </View>
@@ -2000,9 +2002,13 @@ function DestinationSheet({
             <View pointerEvents="none" style={st.peekNameRow}>
               <Text style={st.peekNameTxt} numberOfLines={1}>{destination.name}</Text>
               {spots.length > 0 && (
-                <Text style={st.peekSpotsTxt} numberOfLines={1}>
-                  {spots.length} spot{spots.length !== 1 ? 's' : ''}
-                </Text>
+                // marginTop:0 override — commRatingRow's own marginTop:6 is meant for the
+                // hero (no other spacing mechanism there); here peekNameRow's own gap:2
+                // already spaces this from the name above it, so the two shouldn't stack.
+                <View style={[st.commRatingRow, { marginTop: 0 }]}>
+                  <MapPin size={12} color="rgba(255,255,255,0.80)" />
+                  <Text style={st.commRatingCount} numberOfLines={1}>{spots.length} spots</Text>
+                </View>
               )}
             </View>
           </Pressable>
@@ -2067,7 +2073,6 @@ const st = StyleSheet.create({
   // much shorter peek strip) — matches its letterSpacing too so it reads as the same
   // typographic treatment, not a different font at a bigger size.
   peekNameTxt: { fontSize:30, fontFamily:'PlayfairDisplay_700Bold', color:'white', letterSpacing:-0.4 },
-  peekSpotsTxt: { fontSize:12.5, fontWeight:'600', color:'rgba(255,255,255,0.85)' },
 
   // Pill
   pillRow: { position:'absolute', top:10, left:0, right:0, alignItems:'center', zIndex:10 },
@@ -2242,13 +2247,16 @@ const st = StyleSheet.create({
   seeAllRow:          { flexDirection:'row', alignItems:'center', gap:1 },
   seeAllTxt:          { fontSize:14, fontWeight:'600', color:'#16A34A' },
 
-  // At a glance — one connected card containing all three rows (hairline dividers between
-  // them) rather than separate floating cards, since these are informational, not tappable.
+  // At a glance — one connected card containing the reason rows AND the description below
+  // (see AboutTab's own comment), no hairlines between the rows themselves, just the one
+  // outer border/shadow wrapping the whole card.
   glanceStack:     { backgroundColor:'white', borderRadius:16, overflow:'hidden',
-                     borderWidth:1, borderColor:'#F0F1F3',
+                     borderWidth:1, borderColor:'#F0F1F3', paddingTop:8,
                      shadowColor:'#000', shadowOpacity:0.04, shadowRadius:6, shadowOffset:{ width:0, height:2 }, elevation:1 },
-  glanceRow:       { flexDirection:'row', alignItems:'center', gap:12, padding:14 },
-  glanceRowDivider:{ borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor:'#F0F1F3' },
+  // Vertical padding trimmed from 14 to 6 — each row's own bottom+top padding is what
+  // separates it from its neighbor now that the hairline dividers are gone, so the previous
+  // 14+14=28px gap between rows read as too loose for three closely related reasons.
+  glanceRow:       { flexDirection:'row', alignItems:'center', gap:12, paddingHorizontal:14, paddingVertical:6 },
   glanceNumBadge:  { width:42, height:42, borderRadius:12, backgroundColor:'#ECFDF5',
                      alignItems:'center', justifyContent:'center' },
   glanceNumTxt:    { fontSize:16, fontWeight:'800', color:'#16A34A' },
@@ -2278,6 +2286,9 @@ const st = StyleSheet.create({
 
   // About
   aboutTxt: { fontSize:15.5, color:'#374151', lineHeight:25 },
+  // Description text's own padding when it sits inside glanceStack (below the reason rows,
+  // which already carry their own padding via glanceRow).
+  glanceDescription: { padding:14 },
 
   // Section header row (label + optional icon/link on the right)
   secHeadRow:  { flexDirection:'row', alignItems:'center', justifyContent:'space-between' },

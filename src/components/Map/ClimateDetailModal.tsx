@@ -5,7 +5,8 @@ import Svg, { Polyline, Circle, Text as SvgText } from 'react-native-svg';
 import { X, Users, Thermometer, CloudRain } from 'lucide-react-native';
 import { MONTHS_SHORT, crowdColor } from '../../utils/travelData';
 import type { MonthCrowd, MonthWeather, MonthRain } from '../../utils/travelData';
-import { useDestinationClimate } from '../../utils/climateApi';
+import { useDestinationClimate, getCrowdMeta } from '../../utils/climateApi';
+import { CLIMATE_WINDOW_YEARS } from '../../utils/climateNormalsFetch';
 import type { Destination } from '../../types';
 
 const { height: H, width: W } = Dimensions.get('window');
@@ -156,8 +157,18 @@ export default function ClimateDetailModal({ destination, onClose }: Props) {
 
   // Same hook the destination sheet uses, so this detail view and the summary card can never
   // show different numbers for the same destination.
-  const { weather: weatherData, rain: rainData, crowds: crowdData } =
+  const { weather: weatherData, rain: rainData, crowds: crowdData, isReal } =
     useDestinationClimate(destination);
+
+  // Each subheading names the ACTUAL methodology behind the numbers above it, which differs by
+  // destination and by chart — a single generic caption would misdescribe most of them. Kept to
+  // one short line each so they fit the card without wrapping.
+  const crowdTier = getCrowdMeta(destination.id)?.[0]?.tier;
+  const crowdSub =
+    crowdTier === 1 ? 'Based on real tourism data'
+    : crowdTier === 2 ? 'Based on seasonal event patterns'
+    : 'Estimated from regional seasonality';
+  const stationSub = isReal ? `Nearby stations, last ${CLIMATE_WINDOW_YEARS} years` : 'Estimated — no station nearby';
 
   return (
     <Modal transparent animationType="none" statusBarTranslucent>
@@ -176,7 +187,7 @@ export default function ClimateDetailModal({ destination, onClose }: Props) {
             <Users size={16} color="#111827" />
             <View style={{ marginLeft: 8 }}>
               <Text style={st.cardTitle}>CROWDS BY MONTH</Text>
-              <Text style={st.cardSub}>Based on visitor data</Text>
+              <Text style={st.cardSub} numberOfLines={1}>{crowdSub}</Text>
             </View>
           </View>
           <CrowdChart data={crowdData} />
@@ -185,7 +196,10 @@ export default function ClimateDetailModal({ destination, onClose }: Props) {
         <View style={st.card}>
           <View style={st.cardHeadRow}>
             <Thermometer size={16} color="#111827" />
-            <Text style={[st.cardTitle, { marginLeft: 8 }]}>AVERAGE TEMPERATURES (°C)</Text>
+            <View style={{ marginLeft: 8 }}>
+              <Text style={st.cardTitle}>AVERAGE TEMPERATURES (°C)</Text>
+              <Text style={st.cardSub} numberOfLines={1}>{stationSub}</Text>
+            </View>
           </View>
           <TempChart data={weatherData} />
         </View>
@@ -195,7 +209,7 @@ export default function ClimateDetailModal({ destination, onClose }: Props) {
             <CloudRain size={16} color="#111827" />
             <View style={{ marginLeft: 8 }}>
               <Text style={st.cardTitle}>RAINFALL (MM)</Text>
-              <Text style={st.cardSub}>Average monthly total precipitation</Text>
+              <Text style={st.cardSub} numberOfLines={1}>{stationSub}</Text>
             </View>
           </View>
           <RainChart data={rainData} />
