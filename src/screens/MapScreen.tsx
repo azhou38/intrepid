@@ -3688,12 +3688,13 @@ const destItems = useMemo((): DestItem[] =>
             : (mapType === 'satellite' ? '#FFFFFF' : '#4B5563');
           // A 10% tint over the whole country: emerald if visited, white if not.
           const fillOpacity = 0.10;
-          // Unvisited in standard map view: the outline itself is white (as in satellite view) with a dark slate casing
-          // drawn just under it, so it stays readable against the light land, water and green of the map. The halo (glow)
-          // is white as well.
-          const whiteCasedOutline = !selectedIsVisited && mapType !== 'satellite';
-          const outlineColor = whiteCasedOutline ? '#FFFFFF' : lineColor;
-          const glowColor = whiteCasedOutline ? '#FFFFFF' : lineColor;
+          // Unvisited in standard map view: a single gray line down the middle of the border, drawn over a
+          // wider white casing so it stays readable against the light land, water and green of the map. (It
+          // used to be the reverse — a white line over a dark casing — which read as two gray lines, one on
+          // either side of the border.) The halo (glow) is white as well.
+          const grayCenterOutline = !selectedIsVisited && mapType !== 'satellite';
+          const outlineColor = grayCenterOutline ? '#4B5563' : lineColor;
+          const glowColor = grayCenterOutline ? '#FFFFFF' : lineColor;
           return (
             <MapboxGL.VectorSource
               id="countryBoundaries"
@@ -3711,28 +3712,28 @@ const destItems = useMemo((): DestItem[] =>
                 sourceLayerID="country_boundaries"
                 filter={['==', ['get', 'iso_3166_1'], selectedCountry.countryCode]}
                 belowLayerID="destStampCircles"
-                style={{ lineColor: glowColor, lineWidth: whiteCasedOutline ? 14 : 12, lineOpacity: whiteCasedOutline ? 0.22 : 0.08 }}
+                style={{ lineColor: glowColor, lineWidth: grayCenterOutline ? 14 : 12, lineOpacity: grayCenterOutline ? 0.22 : 0.08 }}
               />
               <MapboxGL.LineLayer
                 id="countryGlowInner"
                 sourceLayerID="country_boundaries"
                 filter={['==', ['get', 'iso_3166_1'], selectedCountry.countryCode]}
                 belowLayerID="destStampCircles"
-                style={{ lineColor: glowColor, lineWidth: whiteCasedOutline ? 7 : 6, lineOpacity: whiteCasedOutline ? 0.45 : 0.18 }}
+                style={{ lineColor: glowColor, lineWidth: grayCenterOutline ? 7 : 6, lineOpacity: grayCenterOutline ? 0.45 : 0.18 }}
               />
               <MapboxGL.LineLayer
                 id="countryOutlineCasing"
                 sourceLayerID="country_boundaries"
                 filter={['==', ['get', 'iso_3166_1'], selectedCountry.countryCode]}
                 belowLayerID="destStampCircles"
-                style={{ lineColor: '#1F2937', lineWidth: 2.6, lineOpacity: whiteCasedOutline ? 0.55 : 0 }}
+                style={{ lineColor: '#FFFFFF', lineWidth: 3, lineOpacity: grayCenterOutline ? 1 : 0 }}
               />
               <MapboxGL.LineLayer
                 id="countryOutline"
                 sourceLayerID="country_boundaries"
                 filter={['==', ['get', 'iso_3166_1'], selectedCountry.countryCode]}
                 belowLayerID="destStampCircles"
-                style={{ lineColor: outlineColor, lineWidth: whiteCasedOutline ? 1.5 : 2, lineOpacity: whiteCasedOutline ? 1 : 0.7 }}
+                style={{ lineColor: outlineColor, lineWidth: grayCenterOutline ? 1.2 : 2, lineOpacity: grayCenterOutline ? 1 : 0.7 }}
               />
             </MapboxGL.VectorSource>
           );
