@@ -3693,7 +3693,7 @@ const destItems = useMemo((): DestItem[] =>
           // used to be the reverse — a white line over a dark casing — which read as two gray lines, one on
           // either side of the border.) The halo (glow) is white as well.
           const grayCenterOutline = !selectedIsVisited && mapType !== 'satellite';
-          const outlineColor = grayCenterOutline ? '#4B5563' : lineColor;
+          const outlineColor = grayCenterOutline ? '#6B7280' : lineColor;
           const glowColor = grayCenterOutline ? '#FFFFFF' : lineColor;
           return (
             <MapboxGL.VectorSource
