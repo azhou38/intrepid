@@ -1181,7 +1181,7 @@ function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore, nearbyHlScrol
               <Tag size={20} color="#6B7280" />
             </View>
             <Text style={st.glanceVal} numberOfLines={1}>{formatSpotCost(spot)}</Text>
-            <Text style={st.glanceLbl}>Cost</Text>
+            <Text style={st.glanceLbl}>Cost (Adult)</Text>
           </View>
         </View>
       </View>
