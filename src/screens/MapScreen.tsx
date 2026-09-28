@@ -908,6 +908,13 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // in its temporal dead zone when the worklet closes over it, which surfaced as
   // "Cannot read property 'value' of undefined".
   const pillPeekSV = useSharedValue(0);
+  // 1 whenever a spot's sheet is sitting at half-screen ('collapsed') — forces the breadcrumb
+  // bar (Country | Destination) to hide there regardless of what crumbGateStyle's other inputs
+  // say, since the sheet's own header already names the spot. Kept separate from breadcrumbAnim
+  // (which the back/X pill also reads, and must stay 1 the whole time a spot is open) so hiding
+  // this bar can never also hide that pill. See setSheetSnapState, which writes it, and
+  // crumbGateStyle, which reads it.
+  const spotCollapsedSV = useSharedValue(0);
   const upPillWrapStyle = useAnimatedStyle(() => ({ bottom: upPillBottomSV.value }));
   // One-shot mount hints for DestinationSheet, set right before it (re)mounts so it can open
   // straight to a specific tab/snap point (e.g. the spot carousel's "list view" button).
@@ -1160,6 +1167,10 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
       duration: peeking ? 220 : 160,
       easing: Easing.out(Easing.quad),
     });
+    // No animation — this is a hard "definitely don't show the breadcrumb bar" gate (see
+    // spotCollapsedSV's own comment), not a visual transition of its own; crumbGateStyle's
+    // existing timing on its other inputs already smooths the overall fade.
+    spotCollapsedSV.value = !!selectedSpotRef.current && state === 'collapsed' ? 1 : 0;
   }, []);
   // Bumped to imperatively drop whichever sheet is open down to its "peek" state — driven by
   // handleCameraChanged below, the moment the user starts panning/zooming the map.
@@ -1246,8 +1257,13 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // two return-prompt progress values and the peek value — so taking their max inherits those
   // existing eases and needs no timing of its own. Declared here, below all three, since a
   // worklet capturing a `const` declared further down hits its temporal dead zone.
+  // spotCollapsedSV overrides all of that to a hard 0 whenever a spot's sheet sits at
+  // half-screen — the return-prompt/peek inputs above don't know about that case on their
+  // own (they're about panning away from "home", not about a spot sheet's own snap state),
+  // so without this override a stale/transient return-prompt value could show the bar right
+  // when a spot is first selected, which is exactly the moment it must stay hidden.
   const crumbGateStyle = useAnimatedStyle(() => ({
-    opacity: Math.max(
+    opacity: spotCollapsedSV.value > 0.5 ? 0 : Math.max(
       returnPromptProgress.value,
       destReturnPromptProgress.value,
       pillPeekSV.value,
@@ -1259,7 +1275,8 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // an invisible breadcrumb keeps swallowing taps at the top of the map.
   const [crumbInteractive, setCrumbInteractive] = useState(false);
   useAnimatedReaction(
-    () => Math.max(returnPromptProgress.value, destReturnPromptProgress.value, pillPeekSV.value) > 0.05,
+    () => spotCollapsedSV.value <= 0.5
+      && Math.max(returnPromptProgress.value, destReturnPromptProgress.value, pillPeekSV.value) > 0.05,
     (visible, prev) => { if (visible !== prev) runOnJS(setCrumbInteractive)(visible); },
   );
 
