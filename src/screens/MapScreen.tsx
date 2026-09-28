@@ -622,6 +622,20 @@ const PROGRAMMATIC_CAMERA_BUFFER_MS = 100;
 const SCREEN_ASPECT = H / SCREEN_W_GLOBAL;
 const panInvariantLatDelta = (longitudeDelta: number) => longitudeDelta * SCREEN_ASPECT;
 
+// How many zoom levels out from a destination's settled home view counts as "zoomed out" for
+// its return arrow — log2(1.6), i.e. the same 1.6× visible-span threshold this used to express
+// as a latitudeDelta ratio. Measured on the camera's zoom LEVEL rather than its reported bounds:
+// under projection="globe" the bounds Mapbox reports once the camera zooms out to globe scale
+// aren't reliable (bounds maths is documented as unsupported on Globe — see
+// fitCountryDefaultView), and near the poles, where the pole itself comes into view early,
+// the latitude span they report could stay under the threshold however far the user zoomed
+// out, so the arrow never appeared (e.g. Stockholm). Zoom is exact at every scale and latitude.
+const DEST_ZOOMED_OUT_LEVELS = Math.log2(1.6);
+
+// Slack for "zoomed out further than the close's target zoom" (see isZoomedOutBeyond) — just
+// enough to absorb float noise in the zoom the camera reports after landing exactly on a view.
+const ZOOM_EPSILON = 0.05;
+
 const SPOT_THRESHOLD     = 0.5;
 // At true world-view zoom (the same "> 50" boundary already used elsewhere to bypass
 // viewport-bounds filtering, and to cap visibleRank at 1), destination stamps add visual
@@ -890,6 +904,8 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // sees, collapsing the planning px/deg scale and culling nearly every country pill as a
   // "collision" (the only-France-over-all-of-Europe bug). The camera zoom doesn't lie.
   const [camZoom, setCamZoom] = useState(0);
+  // Always-current mirror of camZoom, for callbacks (the X/close handlers) that only read it.
+  const camZoomRef = useRef(0);
   // Always-current mirror of `region`, so callbacks that only need to *read* the latest
   // region (e.g. handleMarkerPress capturing the pre-zoom view) can do so WITHOUT taking
   // `region` as a useCallback dep — which would otherwise recreate the callback on every
@@ -1046,6 +1062,10 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   const countryHomeRegionRef = useRef<Region | null>(null);
   const [destHomeRegion, setDestHomeRegion] = useState<Region | null>(null);
   const destHomeRegionRef = useRef<Region | null>(null);
+  // Camera zoom level at the moment destHomeRegion was captured (always set alongside it in
+  // handleMapIdle) — the "zoomed out" half of the return-arrow check measures against this.
+  // See DEST_ZOOMED_OUT_LEVELS.
+  const destHomeZoomRef = useRef(0);
   // Suppresses the "return to destination" arrow for the duration of the initial fly-to a
   // freshly-selected destination, and gates when destHomeRegion is allowed to be captured —
   // see the set-site comment in handleMarkerPress for the full reasoning.
@@ -1222,12 +1242,12 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     // suppressDestReturnPromptRef itself for the duration of its own camera move, the same
     // guard every other programmatic camera move in this file already uses.
     if (!selectedDest || !destHomeRegion || suppressDestReturnPromptRef.current) return false;
-    const zoomedOut = region.latitudeDelta > destHomeRegion.latitudeDelta * 1.6;
+    const zoomedOut = camZoom < destHomeZoomRef.current - DEST_ZOOMED_OUT_LEVELS;
     const pannedAway =
       Math.abs(region.latitude  - destHomeRegion.latitude)  > destHomeRegion.latitudeDelta  * 0.45 ||
       Math.abs(region.longitude - destHomeRegion.longitude) > destHomeRegion.longitudeDelta * 0.45;
     return zoomedOut || pannedAway;
-  }, [selectedDest, destHomeRegion, region]);
+  }, [selectedDest, destHomeRegion, region, camZoom]);
 
   useEffect(() => {
     // Fallback for state-driven transitions (e.g. selectedCountry changes while map is static).
@@ -2251,6 +2271,25 @@ const destItems = useMemo((): DestItem[] =>
     });
   }, [cancelCountryCapture, beginProgrammaticCameraMove]);
 
+  // ── Close (X) zoom rule ─────────────────────────────────────────────────────
+  // A bare-X close (a laterally-entered spot/destination, or a country) animates the camera to
+  // a target view (see each handler for what that is). If the user is already zoomed out further
+  // than that target's zoom, the close leaves the camera exactly where it is instead — they chose
+  // that wider view, and zooming back IN as part of closing something reads backwards. So each
+  // such handler resolves its target zoom first and checks it here before moving. NOT applied to
+  // the "‹ Parent" back buttons (a destination drilled into from its country, a spot from its
+  // destination): those navigate UP a level and always land on the parent's default view,
+  // however far out the user has zoomed.
+  //
+  // A close that stays put must also let go of the held selection itself (releaseHeldSelection):
+  // the pin/pill planning normally keeps the closed selection until the close's zoom-out settles,
+  // but with no camera move there's no idle to release it, so the closed destination's pin (or
+  // country's pill) would stay forced on, and styled as selected, until the user next touched the
+  // map. Released right away, the planning re-plans at the current zoom at once: the pin shows
+  // deselected, or fades out through its normal exit fade if it doesn't belong at this zoom.
+  const isZoomedOutBeyond = useCallback((targetZoom: number) =>
+    camZoomRef.current < targetZoom - ZOOM_EPSILON, []);
+
   // ── Handlers ─────────────────────────────────────────────────────────────
   // Drops the selected country when the destination being opened belongs to a DIFFERENT one. The
   // selection is kept on purpose while drilling into a destination of the same country (so the
@@ -2519,8 +2558,14 @@ const destItems = useMemo((): DestItem[] =>
     selectedDestRef.current = null;
     setSelectedDest(null);
     setSelectedCountry(null);
-    if (dest) fitDestinationDefaultView(dest, 'easeTo', 'topHalf');
-  }, [showBreadcrumb, fitDestinationDefaultView]);
+    // Target: the destination's default view — unless already zoomed out past it (see
+    // isZoomedOutBeyond).
+    if (dest && !isZoomedOutBeyond(latDeltaToZoom(getZoomDelta(dest.category)))) {
+      fitDestinationDefaultView(dest, 'easeTo', 'topHalf');
+    } else {
+      releaseHeldSelection();
+    }
+  }, [showBreadcrumb, fitDestinationDefaultView, isZoomedOutBeyond, releaseHeldSelection]);
 
   // Closing the spot sheet INTO its parent destination sheet (still selected), re-centering
   // the camera on the destination's default zoomed-in view. `toCollapsed` (set when this
@@ -2542,6 +2587,9 @@ const destItems = useMemo((): DestItem[] =>
     // handleGoToListView's landOnFull case (which also sets destInitialSnap='full' itself,
     // just as React state — this ref needs the answer synchronously, before that commits).
     setSheetSnapState(landOnFull ? 'full' : 'collapsed');
+    // Always lands on the destination's default view, however far out the user has zoomed —
+    // this is deliberate upward navigation ("‹ Destination"), not the bare-X close
+    // isZoomedOutBeyond's stay-put rule is for.
     if (selectedDest) {
       // Suppress both handleCameraChanged's peek-push and the destination "return to home
       // view" breadcrumb prompt for the duration of this camera move — same reasoning as
@@ -2659,8 +2707,14 @@ const destItems = useMemo((): DestItem[] =>
     // zoom out to HALF the destination's own default zoom level, centred on the destination in the
     // area above the Explore sheet's bottom strip ('full' framing) — the same step-back rule the
     // country close uses, applied one level down.
+    // Unless the user is already zoomed out past that half zoom, in which case the camera stays
+    // put (see isZoomedOutBeyond). 0.5 matches the zoomFactor passed below.
+    if (isZoomedOutBeyond(latDeltaToZoom(getZoomDelta(dest.category)) * 0.5)) {
+      releaseHeldSelection();
+      return;
+    }
     fitDestinationDefaultView(dest, 'easeTo', 'full', 600, 0.5);
-  }, [selectedDest, showBreadcrumb, fitDestinationDefaultView]);
+  }, [selectedDest, showBreadcrumb, fitDestinationDefaultView, isZoomedOutBeyond, releaseHeldSelection]);
 
   // Closing the destination sheet INTO its country view. `toCollapsed` (set when this
   // fires from a swipe-down while the destination sheet was itself collapsed) lands the
@@ -2686,7 +2740,9 @@ const destItems = useMemo((): DestItem[] =>
     // handleCountryPress clears selectedDest/mapState/zoomedIntoDestination and calls
     // fitCoords. 'flyTo' — a destination zooming back out to its full country's bounds is
     // the same big-pan/deep-zoom combination pure easeTo reads badly for (see
-    // animateCamera's own comment on the equivalent zoom-IN case).
+    // animateCamera's own comment on the equivalent zoom-IN case). Always lands on the
+    // country's default view, however far out the user has zoomed — this is deliberate upward
+    // navigation ("‹ Country"), not the bare-X close isZoomedOutBeyond's stay-put rule is for.
     handleCountryPress(cluster, 'flyTo');
   }, [selectedDest, savedDestinations, handleCountryPress]);
 
@@ -2780,9 +2836,17 @@ const destItems = useMemo((): DestItem[] =>
     // settled and been cached (see fitCountryDefaultView/handleMapIdle) — read the exact
     // value from there. The world-view fallback below only matters in the practically
     // unreachable case where the cache is missing (e.g. mapViewH changed underneath it).
+    //
+    // Already zoomed out past whichever of those two targets applies, though, the camera stays
+    // put (see isZoomedOutBeyond).
     const mapViewH = mapViewHRef.current || (H - BOTTOM_TAB_H);
     const cached = countryCamCacheRef.current[`${cluster.countryCode}:topHalf`];
-    if (cached && cached.mapH === mapViewH) {
+    const hasCached = !!cached && cached.mapH === mapViewH;
+    if (isZoomedOutBeyond(hasCached ? cached.zoom / 2 : latDeltaToZoom(WORLD_HOME_LATDELTA))) {
+      releaseHeldSelection();
+      return;
+    }
+    if (hasCached) {
       beginProgrammaticCameraMove(600);
       cameraRef.current?.setCamera({
         centerCoordinate: [cached.lng, cached.lat],
@@ -2793,7 +2857,7 @@ const destItems = useMemo((): DestItem[] =>
       return;
     }
     animateCamera({ latitude: 20, longitude: regionRef.current.longitude, latitudeDelta: WORLD_HOME_LATDELTA, longitudeDelta: WORLD_HOME_LATDELTA }, 600);
-  }, [showBreadcrumb, animateCamera, beginProgrammaticCameraMove]);
+  }, [showBreadcrumb, animateCamera, beginProgrammaticCameraMove, isZoomedOutBeyond, releaseHeldSelection]);
 
   // `openPeeked` is for returning UP to a country from a destination via the breadcrumb: the
   // sheet opens in bottom-screen/peek instead of half-screen, and the map is framed for the
@@ -2936,11 +3000,10 @@ const destItems = useMemo((): DestItem[] =>
   // was only ever there to keep country-scoped pin-eligibility logic elsewhere in this file
   // fed a real country instead of null, and every one of those call sites already falls back
   // to selectedDest's own country/countryCode when selectedCountry is unset (see eligibleDests
-  // etc.). The one thing setting it ALSO does, as an unavoidable side effect, is draw the
-  // country boundary highlight (that block renders on selectedCountry alone, independent of
-  // whether a destination is also selected) — which reads as "picking a destination selected
-  // its whole country" for what's really just a direct jump to one place. Leaving it unset
-  // avoids that without losing the pin-eligibility behavior. selectedCountryRef.current is
+  // etc.). Setting it also used to draw the country boundary highlight, which read as "picking a
+  // destination selected its whole country" for what's really just a direct jump to one place
+  // (the highlight is now hidden whenever a destination is selected anyway). Leaving it unset
+  // keeps the pin-eligibility behavior without that. selectedCountryRef.current is
   // already null here regardless (ExploreSheet only mounts while nothing is selected), so
   // handleMarkerPress's own provenance check naturally resolves to 'map'; overriding to
   // 'search' below (same as the actual search flow) is what makes back restore this exact
@@ -3110,7 +3173,7 @@ const destItems = useMemo((): DestItem[] =>
     // camera-changed event, well before the throttled `region` state the memo reads catches up
     // — from misreading the spot carousel's own per-spot fitSpotView reframing as a user pan.
     if (selectedDestRef.current && dh && !suppressDestReturnPromptRef.current) {
-      const zoomedOut  = latDelta > dh.latitudeDelta * 1.6;
+      const zoomedOut  = state.properties.zoom < destHomeZoomRef.current - DEST_ZOOMED_OUT_LEVELS;
       const pannedAway = Math.abs(lat - dh.latitude)  > dh.latitudeDelta  * 0.45 ||
                          Math.abs(lng - dh.longitude) > dh.longitudeDelta * 0.45;
       animatePrompt(zoomedOut || pannedAway, destReturnPromptVisibleRef, destReturnPromptProgress);
@@ -3146,6 +3209,7 @@ const destItems = useMemo((): DestItem[] =>
       });
       setCamZoom(state.properties.zoom);
     });
+    camZoomRef.current = state.properties.zoom;
   }, [returnPromptProgress, destReturnPromptProgress, mapGestureAtSV, releaseHeldSelection]);
 
   const handleMapIdle = useCallback((state: {
@@ -3175,6 +3239,7 @@ const destItems = useMemo((): DestItem[] =>
 
     setRegion(newRegion);
     setCamZoom(state.properties.zoom);
+    camZoomRef.current = state.properties.zoom;
 
     // Captures the camera a country fit landed on, so later visits can go straight there (see
     // fitCountryDefaultView). Only accepted once the fit's duration has elapsed, and only while that country
@@ -3199,6 +3264,7 @@ const destItems = useMemo((): DestItem[] =>
     if (selectedDestRef.current && !destHomeRegionRef.current && newRegion.latitudeDelta < 2
         && !destFlightInterruptedRef.current) {
       destHomeRegionRef.current = newRegion;
+      destHomeZoomRef.current = state.properties.zoom;
       setDestHomeRegion(newRegion);
       // Belt-and-suspenders: force arrow hidden immediately when home is captured.
       destReturnPromptProgress.value = 0; destReturnPromptVisibleRef.current = false;
@@ -3599,7 +3665,12 @@ const destItems = useMemo((): DestItem[] =>
           />
         </MapboxGL.VectorSource>
 
-        {/* Country boundary highlight — only when a country is selected. Explicitly pinned
+        {/* Country boundary highlight — only while the COUNTRY itself is the selection: not once a
+            destination (or one of its spots — a spot always has its destination selected too)
+            is open, even one drilled into from this country, where selectedCountry deliberately
+            stays set (see handleMarkerPress) and search sets it too (see handleSearchSelect).
+            Going back up to the country ("‹ Country" or the breadcrumb's country segment, both
+            via handleCountryPress) clears selectedDest, which brings the highlight back. Explicitly pinned
             below the stamp layer via belowLayerID (not just JSX order) since this block
             mounts/unmounts on every selection change, while the stamp layer mounts once —
             native insertion order otherwise depends on mount timing, not render position.
@@ -3609,7 +3680,7 @@ const destItems = useMemo((): DestItem[] =>
             against satellite imagery) — only the unvisited gray border switches to white in
             satellite view, where the dark imagery leaves gray hard to see; standard map view
             keeps the existing gray border unchanged either way. */}
-        {selectedCountry && (() => {
+        {selectedCountry && !selectedDest && (() => {
           const selectedIsVisited = visitedCountryCodeSet.has(selectedCountry.countryCode);
           const fillColor = selectedIsVisited ? '#22C55E' : '#FFFFFF';
           const lineColor = selectedIsVisited
@@ -3617,12 +3688,13 @@ const destItems = useMemo((): DestItem[] =>
             : (mapType === 'satellite' ? '#FFFFFF' : '#4B5563');
           // A 10% tint over the whole country: emerald if visited, white if not.
           const fillOpacity = 0.10;
-          // Unvisited in standard map view: the outline itself is white (as in satellite view) with a dark slate casing
-          // drawn just under it, so it stays readable against the light land, water and green of the map. The halo (glow)
-          // is white as well.
-          const whiteCasedOutline = !selectedIsVisited && mapType !== 'satellite';
-          const outlineColor = whiteCasedOutline ? '#FFFFFF' : lineColor;
-          const glowColor = whiteCasedOutline ? '#FFFFFF' : lineColor;
+          // Unvisited in standard map view: a single gray line down the middle of the border, drawn over a
+          // wider white casing so it stays readable against the light land, water and green of the map. (It
+          // used to be the reverse — a white line over a dark casing — which read as two gray lines, one on
+          // either side of the border.) The halo (glow) is white as well.
+          const grayCenterOutline = !selectedIsVisited && mapType !== 'satellite';
+          const outlineColor = grayCenterOutline ? '#6B7280' : lineColor;
+          const glowColor = grayCenterOutline ? '#FFFFFF' : lineColor;
           return (
             <MapboxGL.VectorSource
               id="countryBoundaries"
@@ -3640,28 +3712,28 @@ const destItems = useMemo((): DestItem[] =>
                 sourceLayerID="country_boundaries"
                 filter={['==', ['get', 'iso_3166_1'], selectedCountry.countryCode]}
                 belowLayerID="destStampCircles"
-                style={{ lineColor: glowColor, lineWidth: whiteCasedOutline ? 14 : 12, lineOpacity: whiteCasedOutline ? 0.22 : 0.08 }}
+                style={{ lineColor: glowColor, lineWidth: grayCenterOutline ? 14 : 12, lineOpacity: grayCenterOutline ? 0.22 : 0.08 }}
               />
               <MapboxGL.LineLayer
                 id="countryGlowInner"
                 sourceLayerID="country_boundaries"
                 filter={['==', ['get', 'iso_3166_1'], selectedCountry.countryCode]}
                 belowLayerID="destStampCircles"
-                style={{ lineColor: glowColor, lineWidth: whiteCasedOutline ? 7 : 6, lineOpacity: whiteCasedOutline ? 0.45 : 0.18 }}
+                style={{ lineColor: glowColor, lineWidth: grayCenterOutline ? 7 : 6, lineOpacity: grayCenterOutline ? 0.45 : 0.18 }}
               />
               <MapboxGL.LineLayer
                 id="countryOutlineCasing"
                 sourceLayerID="country_boundaries"
                 filter={['==', ['get', 'iso_3166_1'], selectedCountry.countryCode]}
                 belowLayerID="destStampCircles"
-                style={{ lineColor: '#1F2937', lineWidth: 2.6, lineOpacity: whiteCasedOutline ? 0.55 : 0 }}
+                style={{ lineColor: '#FFFFFF', lineWidth: 3, lineOpacity: grayCenterOutline ? 1 : 0 }}
               />
               <MapboxGL.LineLayer
                 id="countryOutline"
                 sourceLayerID="country_boundaries"
                 filter={['==', ['get', 'iso_3166_1'], selectedCountry.countryCode]}
                 belowLayerID="destStampCircles"
-                style={{ lineColor: outlineColor, lineWidth: whiteCasedOutline ? 1.5 : 2, lineOpacity: whiteCasedOutline ? 1 : 0.7 }}
+                style={{ lineColor: outlineColor, lineWidth: grayCenterOutline ? 1.2 : 2, lineOpacity: grayCenterOutline ? 1 : 0.7 }}
               />
             </MapboxGL.VectorSource>
           );
