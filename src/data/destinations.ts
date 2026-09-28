@@ -3,7 +3,7 @@ import type { Destination } from '../types';
 export const DESTINATIONS: Destination[] = [
   // ── NORTH AMERICA ──────────────────────────────────────────────────────────
   {
-    id: 'nyc', name: 'New York', country: 'United States', countryCode: 'US',
+    id: 'nyc', name: 'New York', country: 'United States', countryCode: 'US', timezone: 'America/New_York', defaultZoomSpanKm: 38,
     continent: 'North America', coordinates: { latitude: 40.7128, longitude: -74.0060 },
     category: 'city', icon: '🗽', rank: 1,
     tagline: 'The city that never sleeps, where eight million stories unfold at once.',
@@ -20,7 +20,7 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: '{months} bring mild weather, blooming parks, and thinner crowds than peak summer.',
   },
   {
-    id: 'la', name: 'Los Angeles', country: 'United States', countryCode: 'US',
+    id: 'la', name: 'Los Angeles', country: 'United States', countryCode: 'US', timezone: 'America/Los_Angeles', defaultZoomSpanKm: 55,
     continent: 'North America', coordinates: { latitude: 34.0522, longitude: -118.2437 },
     category: 'city', icon: '🎬', rank: 1,
     tagline: 'Where dreams are manufactured and year-round sunshine is guaranteed.',
@@ -37,7 +37,7 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: '{months} offer LA’s mildest, least crowded stretch before the summer rush.',
   },
   {
-    id: 'grand-canyon', name: 'Grand Canyon', country: 'United States', countryCode: 'US',
+    id: 'grand-canyon', name: 'Grand Canyon', country: 'United States', countryCode: 'US', timezone: 'America/Phoenix', defaultZoomSpanKm: 45,
     continent: 'North America', coordinates: { latitude: 36.1069, longitude: -112.1129 },
     category: 'park', icon: '🏜️', rank: 1,
     tagline: 'A mile-deep masterpiece carved by five million years of river and time.',
@@ -57,7 +57,7 @@ export const DESTINATIONS: Destination[] = [
   // ── EUROPE ─────────────────────────────────────────────────────────────────
   // France
   {
-    id: 'paris', name: 'Paris', country: 'France', countryCode: 'FR',
+    id: 'paris', name: 'Paris', country: 'France', countryCode: 'FR', timezone: 'Europe/Paris', defaultZoomSpanKm: 30,
     continent: 'Europe', coordinates: { latitude: 48.8566, longitude: 2.3522 },
     category: 'city', icon: '🗼', rank: 1,
     tagline: 'The city of light, love, and the finest pastries on the planet.',
@@ -74,7 +74,7 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: '{months} bring mild weather, blooming gardens, and thinner crowds than midsummer.',
   },
   {
-    id: 'nice', name: 'Nice', country: 'France', countryCode: 'FR',
+    id: 'nice', name: 'Nice', country: 'France', countryCode: 'FR', timezone: 'Europe/Paris', defaultZoomSpanKm: 15,
     continent: 'Europe', coordinates: { latitude: 43.7102, longitude: 7.2620 },
     category: 'beach', icon: '🌊', rank: 2,
     tagline: "The French Riviera's sparkling queen of sun, sea, and art de vivre.",
@@ -91,7 +91,7 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: '{months} bring warm Riviera weather without August’s peak crowds and prices.',
   },
   {
-    id: 'lyon', name: 'Lyon', country: 'France', countryCode: 'FR',
+    id: 'lyon', name: 'Lyon', country: 'France', countryCode: 'FR', timezone: 'Europe/Paris', defaultZoomSpanKm: 25,
     continent: 'Europe', coordinates: { latitude: 45.7640, longitude: 4.8357 },
     category: 'city', icon: '🥐', rank: 2,
     tagline: "France's gastronomic capital where every meal is a reason to stay longer.",
@@ -109,7 +109,7 @@ export const DESTINATIONS: Destination[] = [
   },
   // United Kingdom
   {
-    id: 'london', name: 'London', country: 'United Kingdom', countryCode: 'GB',
+    id: 'london', name: 'London', country: 'United Kingdom', countryCode: 'GB', timezone: 'Europe/London', defaultZoomSpanKm: 50,
     continent: 'Europe', coordinates: { latitude: 51.5074, longitude: -0.1278 },
     category: 'city', icon: '🎡', rank: 1,
     tagline: "An empire's capital that reinvented itself as the world's cultural crossroads.",
@@ -126,7 +126,7 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: '{months} bring milder weather and noticeably thinner crowds than summer.',
   },
   {
-    id: 'edinburgh', name: 'Edinburgh', country: 'United Kingdom', countryCode: 'GB',
+    id: 'edinburgh', name: 'Edinburgh', country: 'United Kingdom', countryCode: 'GB', timezone: 'Europe/London', defaultZoomSpanKm: 20,
     continent: 'Europe', coordinates: { latitude: 55.9533, longitude: -3.1883 },
     category: 'city', icon: '🏴', rank: 1,
     tagline: "A castle on volcanic rock, cobblestoned wynds, and Scotland's brooding soul.",
@@ -144,7 +144,7 @@ export const DESTINATIONS: Destination[] = [
   },
   // Italy
   {
-    id: 'rome', name: 'Rome', country: 'Italy', countryCode: 'IT',
+    id: 'rome', name: 'Rome', country: 'Italy', countryCode: 'IT', timezone: 'Europe/Rome', defaultZoomSpanKm: 35,
     continent: 'Europe', coordinates: { latitude: 41.9028, longitude: 12.4964 },
     category: 'city', icon: '🏟️', rank: 1,
     tagline: 'The Eternal City, where 2,000 years of history waits around every corner.',
@@ -161,7 +161,7 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: '{months} bring pleasant temperatures and relief from summer’s heat and crowds.',
   },
   {
-    id: 'florence', name: 'Florence', country: 'Italy', countryCode: 'IT',
+    id: 'florence', name: 'Florence', country: 'Italy', countryCode: 'IT', timezone: 'Europe/Rome', defaultZoomSpanKm: 15,
     continent: 'Europe', coordinates: { latitude: 43.7696, longitude: 11.2558 },
     category: 'city', icon: '🎨', rank: 1,
     tagline: "The cradle of the Renaissance, where Michelangelo's David still stops you cold.",
@@ -178,7 +178,7 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: '{months} bring mild weather and a break from the peak summer crush.',
   },
   {
-    id: 'venice', name: 'Venice', country: 'Italy', countryCode: 'IT',
+    id: 'venice', name: 'Venice', country: 'Italy', countryCode: 'IT', timezone: 'Europe/Rome', defaultZoomSpanKm: 15,
     continent: 'Europe', coordinates: { latitude: 45.4408, longitude: 12.3155 },
     category: 'city', icon: '🚤', rank: 1,
     tagline: "A city built on water, defying physics and logic for a thousand years.",
@@ -199,7 +199,7 @@ export const DESTINATIONS: Destination[] = [
   },
   // Spain
   {
-    id: 'barcelona', name: 'Barcelona', country: 'Spain', countryCode: 'ES',
+    id: 'barcelona', name: 'Barcelona', country: 'Spain', countryCode: 'ES', timezone: 'Europe/Madrid', defaultZoomSpanKm: 25,
     continent: 'Europe', coordinates: { latitude: 41.3851, longitude: 2.1734 },
     category: 'city', icon: '🦎', rank: 1,
     tagline: "Gaudí's living canvas where architecture, beaches, and Mediterranean life meet.",
@@ -216,7 +216,7 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: '{months} bring warm beach weather without August’s peak crowds.',
   },
   {
-    id: 'madrid', name: 'Madrid', country: 'Spain', countryCode: 'ES',
+    id: 'madrid', name: 'Madrid', country: 'Spain', countryCode: 'ES', timezone: 'Europe/Madrid', defaultZoomSpanKm: 35,
     continent: 'Europe', coordinates: { latitude: 40.4168, longitude: -3.7038 },
     category: 'city', icon: '💃', rank: 1,
     tagline: "Spain's beating heart: art, football, flamenco, and dinner at midnight.",
@@ -234,7 +234,7 @@ export const DESTINATIONS: Destination[] = [
   },
   // Netherlands
   {
-    id: 'amsterdam', name: 'Amsterdam', country: 'Netherlands', countryCode: 'NL',
+    id: 'amsterdam', name: 'Amsterdam', country: 'Netherlands', countryCode: 'NL', timezone: 'Europe/Amsterdam', defaultZoomSpanKm: 20,
     continent: 'Europe', coordinates: { latitude: 52.3676, longitude: 4.9041 },
     category: 'city', icon: '🌷', rank: 1,
     tagline: 'A city of canals, bicycles, and a quiet genius for beauty and tolerance.',
@@ -252,7 +252,7 @@ export const DESTINATIONS: Destination[] = [
   },
   // Germany
   {
-    id: 'berlin', name: 'Berlin', country: 'Germany', countryCode: 'DE',
+    id: 'berlin', name: 'Berlin', country: 'Germany', countryCode: 'DE', timezone: 'Europe/Berlin', defaultZoomSpanKm: 40,
     continent: 'Europe', coordinates: { latitude: 52.5200, longitude: 13.4050 },
     category: 'city', icon: '🐻', rank: 1,
     tagline: "Europe's most reinvented city, where history, art, and nightlife collide.",
@@ -269,7 +269,7 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: '{months} bring comfortable weather and a calmer city before summer’s peak.',
   },
   {
-    id: 'munich', name: 'Munich', country: 'Germany', countryCode: 'DE',
+    id: 'munich', name: 'Munich', country: 'Germany', countryCode: 'DE', timezone: 'Europe/Berlin', defaultZoomSpanKm: 25,
     continent: 'Europe', coordinates: { latitude: 48.1351, longitude: 11.5820 },
     category: 'city', icon: '🍺', rank: 1,
     tagline: "Bavarian grandeur: beer halls, baroque palaces, and Alps on the horizon.",
@@ -290,7 +290,7 @@ export const DESTINATIONS: Destination[] = [
   },
   // Portugal
   {
-    id: 'lisbon', name: 'Lisbon', country: 'Portugal', countryCode: 'PT',
+    id: 'lisbon', name: 'Lisbon', country: 'Portugal', countryCode: 'PT', timezone: 'Europe/Lisbon', defaultZoomSpanKm: 30,
     continent: 'Europe', coordinates: { latitude: 38.7169, longitude: -9.1395 },
     category: 'city', icon: '🛤️', rank: 1,
     tagline: "Seven hills, yellow trams, fado music, and the best pastéis de nata on Earth.",
@@ -307,7 +307,7 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: '{months} bring warm weather without summer’s peak heat and crowds.',
   },
   {
-    id: 'porto', name: 'Porto', country: 'Portugal', countryCode: 'PT',
+    id: 'porto', name: 'Porto', country: 'Portugal', countryCode: 'PT', timezone: 'Europe/Lisbon', defaultZoomSpanKm: 18,
     continent: 'Europe', coordinates: { latitude: 41.1496, longitude: -8.6110 },
     category: 'city', icon: '🍷', rank: 2,
     tagline: "Port wine, azulejo art, and a riverside soul that wins everyone over.",
@@ -325,7 +325,7 @@ export const DESTINATIONS: Destination[] = [
   },
   // Switzerland
   {
-    id: 'zurich', name: 'Zurich', country: 'Switzerland', countryCode: 'CH',
+    id: 'zurich', name: 'Zurich', country: 'Switzerland', countryCode: 'CH', timezone: 'Europe/Zurich', defaultZoomSpanKm: 20,
     continent: 'Europe', coordinates: { latitude: 47.3769, longitude: 8.5417 },
     category: 'city', icon: '🏔️', rank: 2,
     tagline: "Switzerland's financial capital, where lake views meet world-class culture.",
@@ -342,7 +342,7 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: '{months} bring warm weather for the lake and mountains at their best.',
   },
   {
-    id: 'interlaken', name: 'Interlaken', country: 'Switzerland', countryCode: 'CH',
+    id: 'interlaken', name: 'Interlaken', country: 'Switzerland', countryCode: 'CH', timezone: 'Europe/Zurich', defaultZoomSpanKm: 35,
     continent: 'Europe', coordinates: { latitude: 46.6863, longitude: 7.8632 },
     category: 'mountain', icon: '⛷️', rank: 1,
     tagline: "Between two lakes, beneath the Eiger, Mönch, and Jungfrau: pure Swiss drama.",
@@ -363,7 +363,7 @@ export const DESTINATIONS: Destination[] = [
   },
   // Austria
   {
-    id: 'vienna', name: 'Vienna', country: 'Austria', countryCode: 'AT',
+    id: 'vienna', name: 'Vienna', country: 'Austria', countryCode: 'AT', timezone: 'Europe/Vienna', defaultZoomSpanKm: 30,
     continent: 'Europe', coordinates: { latitude: 48.2082, longitude: 16.3738 },
     category: 'city', icon: '🎶', rank: 1,
     tagline: "The city that gave the world Mozart, Klimt, Freud, and the waltz.",
@@ -380,7 +380,7 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: '{months} bring mild weather and a calmer city before summer’s peak.',
   },
   {
-    id: 'salzburg', name: 'Salzburg', country: 'Austria', countryCode: 'AT',
+    id: 'salzburg', name: 'Salzburg', country: 'Austria', countryCode: 'AT', timezone: 'Europe/Vienna', defaultZoomSpanKm: 18,
     continent: 'Europe', coordinates: { latitude: 47.8095, longitude: 13.0550 },
     category: 'city', icon: '🎵', rank: 2,
     tagline: "Mozart's birthplace: a baroque gem nestled between the Alps and the Salzach.",
@@ -398,7 +398,7 @@ export const DESTINATIONS: Destination[] = [
   },
   // Belgium
   {
-    id: 'bruges', name: 'Bruges', country: 'Belgium', countryCode: 'BE',
+    id: 'bruges', name: 'Bruges', country: 'Belgium', countryCode: 'BE', timezone: 'Europe/Brussels', defaultZoomSpanKm: 12,
     continent: 'Europe', coordinates: { latitude: 51.2093, longitude: 3.2247 },
     category: 'city', icon: '🍺', rank: 1,
     tagline: "The best-preserved medieval city in Europe, mirrored in glass-still canals.",
@@ -415,7 +415,7 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: '{months} bring mild weather and a quieter, less crowded old town.',
   },
   {
-    id: 'brussels', name: 'Brussels', country: 'Belgium', countryCode: 'BE',
+    id: 'brussels', name: 'Brussels', country: 'Belgium', countryCode: 'BE', timezone: 'Europe/Brussels', defaultZoomSpanKm: 28,
     continent: 'Europe', coordinates: { latitude: 50.8503, longitude: 4.3517 },
     category: 'city', icon: '🇪🇺', rank: 2,
     tagline: "The capital of Europe: grand boulevards, Art Nouveau, and the world's best beer.",
@@ -433,7 +433,7 @@ export const DESTINATIONS: Destination[] = [
   },
   // Ireland
   {
-    id: 'dublin', name: 'Dublin', country: 'Ireland', countryCode: 'IE',
+    id: 'dublin', name: 'Dublin', country: 'Ireland', countryCode: 'IE', timezone: 'Europe/Dublin', defaultZoomSpanKm: 28,
     continent: 'Europe', coordinates: { latitude: 53.3498, longitude: -6.2603 },
     category: 'city', icon: '🍀', rank: 1,
     tagline: "Pubs, poets, and the craic: Ireland's capital on the Liffey.",
@@ -450,7 +450,7 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: '{months} bring the mildest, driest stretch of Irish weather.',
   },
   {
-    id: 'cliffs-of-moher', name: 'Cliffs of Moher', country: 'Ireland', countryCode: 'IE',
+    id: 'cliffs-of-moher', name: 'Cliffs of Moher', country: 'Ireland', countryCode: 'IE', timezone: 'Europe/Dublin', defaultZoomSpanKm: 15,
     continent: 'Europe', coordinates: { latitude: 52.9715, longitude: -9.4309 },
     category: 'nature', icon: '🌊', rank: 1,
     tagline: "700 feet of sheer Atlantic drama, where Ireland falls into the sea.",
@@ -468,7 +468,7 @@ export const DESTINATIONS: Destination[] = [
   },
   // Sweden
   {
-    id: 'stockholm', name: 'Stockholm', country: 'Sweden', countryCode: 'SE',
+    id: 'stockholm', name: 'Stockholm', country: 'Sweden', countryCode: 'SE', timezone: 'Europe/Stockholm', defaultZoomSpanKm: 35,
     continent: 'Europe', coordinates: { latitude: 59.3293, longitude: 18.0686 },
     category: 'city', icon: '👑', rank: 1,
     tagline: "Built on 14 islands where Lake Mälaren meets the Baltic: Scandinavia's capital.",
@@ -485,7 +485,7 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: '{months} bring long daylight and the Swedish summer at its best.',
   },
   {
-    id: 'gothenburg', name: 'Gothenburg', country: 'Sweden', countryCode: 'SE',
+    id: 'gothenburg', name: 'Gothenburg', country: 'Sweden', countryCode: 'SE', timezone: 'Europe/Stockholm', defaultZoomSpanKm: 20,
     continent: 'Europe', coordinates: { latitude: 57.7089, longitude: 11.9746 },
     category: 'city', icon: '🦞', rank: 3,
     tagline: "Sweden's seafood capital where the archipelago begins and canals cut through.",
@@ -503,7 +503,7 @@ export const DESTINATIONS: Destination[] = [
   },
   // Norway
   {
-    id: 'bergen', name: 'Bergen', country: 'Norway', countryCode: 'NO',
+    id: 'bergen', name: 'Bergen', country: 'Norway', countryCode: 'NO', timezone: 'Europe/Oslo', defaultZoomSpanKm: 20,
     continent: 'Europe', coordinates: { latitude: 60.3913, longitude: 5.3221 },
     category: 'city', icon: '🌊', rank: 1,
     tagline: "Norway's gateway to the fjords, ringed by seven mountains and colored wharves.",
@@ -523,7 +523,7 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: '{months} bring the clearest weather for fjord cruises and hikes.',
   },
   {
-    id: 'norwegian-fjords', name: 'Norwegian Fjords', country: 'Norway', countryCode: 'NO',
+    id: 'norwegian-fjords', name: 'Norwegian Fjords', country: 'Norway', countryCode: 'NO', timezone: 'Europe/Oslo', defaultZoomSpanKm: 120,
     continent: 'Europe', coordinates: { latitude: 61.2000, longitude: 6.8000 },
     category: 'nature', icon: '⛰️', rank: 1,
     tagline: "The world's most dramatic coastline: glacial walls plunging into mirror-still water.",
@@ -541,7 +541,7 @@ export const DESTINATIONS: Destination[] = [
   },
   // Denmark
   {
-    id: 'copenhagen', name: 'Copenhagen', country: 'Denmark', countryCode: 'DK',
+    id: 'copenhagen', name: 'Copenhagen', country: 'Denmark', countryCode: 'DK', timezone: 'Europe/Copenhagen', defaultZoomSpanKm: 30,
     continent: 'Europe', coordinates: { latitude: 55.6761, longitude: 12.5683 },
     category: 'city', icon: '🧜', rank: 1,
     tagline: "The world's most livable city: bikes, Noma, and Tivoli after dark.",
@@ -558,7 +558,7 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: '{months} bring long days and the city’s best outdoor season.',
   },
   {
-    id: 'aarhus', name: 'Aarhus', country: 'Denmark', countryCode: 'DK',
+    id: 'aarhus', name: 'Aarhus', country: 'Denmark', countryCode: 'DK', timezone: 'Europe/Copenhagen', defaultZoomSpanKm: 18,
     continent: 'Europe', coordinates: { latitude: 56.1629, longitude: 10.2039 },
     category: 'city', icon: '🎨', rank: 3,
     tagline: "Denmark's student city: a compact, creative harbor town with a rainbow panorama.",
@@ -576,7 +576,7 @@ export const DESTINATIONS: Destination[] = [
   },
   // Finland
   {
-    id: 'helsinki', name: 'Helsinki', country: 'Finland', countryCode: 'FI',
+    id: 'helsinki', name: 'Helsinki', country: 'Finland', countryCode: 'FI', timezone: 'Europe/Helsinki', defaultZoomSpanKm: 25,
     continent: 'Europe', coordinates: { latitude: 60.1699, longitude: 24.9384 },
     category: 'city', icon: '🦌', rank: 2,
     tagline: "Finland's design capital: sea, sauna, and neoclassical grandeur on the Baltic.",
@@ -593,7 +593,7 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: '{months} bring long daylight and the mildest Finnish weather.',
   },
   {
-    id: 'rovaniemi', name: 'Rovaniemi', country: 'Finland', countryCode: 'FI',
+    id: 'rovaniemi', name: 'Rovaniemi', country: 'Finland', countryCode: 'FI', timezone: 'Europe/Helsinki', defaultZoomSpanKm: 15,
     continent: 'Europe', coordinates: { latitude: 66.5039, longitude: 25.7294 },
     category: 'nature', icon: '🎄', rank: 2,
     tagline: "Santa's hometown on the Arctic Circle, where the Northern Lights dance overhead.",
@@ -614,7 +614,7 @@ export const DESTINATIONS: Destination[] = [
   },
   // Iceland
   {
-    id: 'reykjavik', name: 'Reykjavik', country: 'Iceland', countryCode: 'IS',
+    id: 'reykjavik', name: 'Reykjavik', country: 'Iceland', countryCode: 'IS', timezone: 'Atlantic/Reykjavik', defaultZoomSpanKm: 20,
     continent: 'Europe', coordinates: { latitude: 64.1355, longitude: -21.8954 },
     category: 'city', icon: '🌌', rank: 1,
     tagline: "The world's northernmost capital: geothermal, geologic, and gloriously remote.",
@@ -634,7 +634,7 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: '{months} bring long days, road-trip weather, and the best access to the interior.',
   },
   {
-    id: 'golden-circle', name: 'Golden Circle', country: 'Iceland', countryCode: 'IS',
+    id: 'golden-circle', name: 'Golden Circle', country: 'Iceland', countryCode: 'IS', timezone: 'Atlantic/Reykjavik', defaultZoomSpanKm: 40,
     continent: 'Europe', coordinates: { latitude: 64.3270, longitude: -20.1200 },
     category: 'nature', icon: '⚡', rank: 1,
     tagline: "Geysers, the world's oldest parliament, and a waterfall you can walk behind.",
@@ -653,7 +653,7 @@ export const DESTINATIONS: Destination[] = [
   },
   // Greece (additional)
   {
-    id: 'athens', name: 'Athens', country: 'Greece', countryCode: 'GR',
+    id: 'athens', name: 'Athens', country: 'Greece', countryCode: 'GR', timezone: 'Europe/Athens', defaultZoomSpanKm: 30,
     continent: 'Europe', coordinates: { latitude: 37.9838, longitude: 23.7275 },
     category: 'city', icon: '🏛️', rank: 1,
     tagline: "Where Western civilization was born, atop a rocky hill that still stuns.",
@@ -670,7 +670,7 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: '{months} bring warm weather without summer’s brutal heat.',
   },
   {
-    id: 'mykonos', name: 'Mykonos', country: 'Greece', countryCode: 'GR',
+    id: 'mykonos', name: 'Mykonos', country: 'Greece', countryCode: 'GR', timezone: 'Europe/Athens', defaultZoomSpanKm: 15,
     continent: 'Europe', coordinates: { latitude: 37.4467, longitude: 25.3289 },
     category: 'island', icon: '🌊', rank: 2,
     tagline: "Greece's most glamorous island: windmills, whitewash, and electric nightlife.",
@@ -689,7 +689,7 @@ export const DESTINATIONS: Destination[] = [
   },
   // Czech Republic
   {
-    id: 'prague', name: 'Prague', country: 'Czech Republic', countryCode: 'CZ',
+    id: 'prague', name: 'Prague', country: 'Czech Republic', countryCode: 'CZ', timezone: 'Europe/Prague', defaultZoomSpanKm: 25,
     continent: 'Europe', coordinates: { latitude: 50.0755, longitude: 14.4378 },
     category: 'city', icon: '🕰️', rank: 1,
     tagline: 'A fairy-tale skyline that survived two world wars nearly untouched.',
@@ -706,7 +706,7 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: '{months} bring mild weather and thinner crowds than midsummer.',
   },
   {
-    id: 'santorini', name: 'Santorini', country: 'Greece', countryCode: 'GR',
+    id: 'santorini', name: 'Santorini', country: 'Greece', countryCode: 'GR', timezone: 'Europe/Athens', defaultZoomSpanKm: 20,
     continent: 'Europe', coordinates: { latitude: 36.3932, longitude: 25.4615 },
     category: 'beach', icon: '🌅', rank: 1,
     tagline: 'A crescent of volcanic cliffs, blue domes, and legendary Aegean sunsets.',
@@ -726,7 +726,7 @@ export const DESTINATIONS: Destination[] = [
 
   // ── ASIA ───────────────────────────────────────────────────────────────────
   {
-    id: 'tokyo', name: 'Tokyo', country: 'Japan', countryCode: 'JP',
+    id: 'tokyo', name: 'Tokyo', country: 'Japan', countryCode: 'JP', timezone: 'Asia/Tokyo', defaultZoomSpanKm: 55,
     continent: 'Asia', coordinates: { latitude: 35.6762, longitude: 139.6503 },
     category: 'city', icon: '⛩️', rank: 1,
     tagline: 'The future and the ancient past, coexisting perfectly in the world\'s largest city.',
@@ -744,7 +744,7 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: '{months} bring cherry blossoms and autumn foliage, Tokyo’s two signature seasons.',
   },
   {
-    id: 'kyoto', name: 'Kyoto', country: 'Japan', countryCode: 'JP',
+    id: 'kyoto', name: 'Kyoto', country: 'Japan', countryCode: 'JP', timezone: 'Asia/Tokyo', defaultZoomSpanKm: 25,
     continent: 'Asia', coordinates: { latitude: 35.0116, longitude: 135.7681 },
     category: 'city', icon: '🍵', rank: 1,
     tagline: 'A thousand temples and the quiet, unhurried heart of traditional Japan.',
@@ -762,7 +762,7 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: '{months} are Kyoto’s cherry blossom and autumn foliage windows — the two seasons every guide points to.',
   },
   {
-    id: 'osaka', name: 'Osaka', country: 'Japan', countryCode: 'JP',
+    id: 'osaka', name: 'Osaka', country: 'Japan', countryCode: 'JP', timezone: 'Asia/Tokyo', defaultZoomSpanKm: 30,
     continent: 'Asia', coordinates: { latitude: 34.6937, longitude: 135.5023 },
     category: 'city', icon: '🏯', rank: 2,
     tagline: "Japan's kitchen and its most deliciously chaotic city.",
@@ -781,7 +781,7 @@ export const DESTINATIONS: Destination[] = [
 
   // ── OCEANIA ────────────────────────────────────────────────────────────────
   {
-    id: 'sydney', name: 'Sydney', country: 'Australia', countryCode: 'AU',
+    id: 'sydney', name: 'Sydney', country: 'Australia', countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 40,
     continent: 'Oceania', coordinates: { latitude: -33.8688, longitude: 151.2093 },
     category: 'city', icon: '🎭', rank: 1,
     tagline: 'Opera sails, a harbour bridge, and the world\'s most beautiful city beaches.',
@@ -798,7 +798,7 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: '{months} bring mild, sunny weather without the summer holiday crowds.',
   },
   {
-    id: 'great-barrier-reef', name: 'Great Barrier Reef', country: 'Australia', countryCode: 'AU',
+    id: 'great-barrier-reef', name: 'Great Barrier Reef', country: 'Australia', countryCode: 'AU', timezone: 'Australia/Brisbane', defaultZoomSpanKm: 100,
     continent: 'Oceania', coordinates: { latitude: -18.2871, longitude: 147.6992 },
     category: 'nature', icon: '🐠', rank: 1,
     tagline: 'The world\'s largest living structure, visible from outer space.',

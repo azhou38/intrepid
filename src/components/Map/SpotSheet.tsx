@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState, useMemo, useCallback } from 'react';
 import {
   View, Text, StyleSheet, Pressable, ScrollView, Alert,
-  Dimensions, Platform, Linking,
+  Dimensions, Platform, Linking, Image,
 } from 'react-native';
 // Aliased — only the horizontal carousel below is swapped to this GH-aware ScrollView, so
 // its native pan can properly arbitrate (via the vertical `pan` gesture's own
@@ -19,14 +19,14 @@ import Reanimated, {
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { SharedValue } from 'react-native-reanimated';
 import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'react-native-svg';
-import { Check, Star, Clock, MapPin, Pencil, ChevronUp, ChevronDown, ChevronRight, LayoutGrid, Plus,
+import { Check, Star, Clock, CalendarClock, Pencil, ChevronUp, ChevronDown, ChevronRight, LayoutGrid, Plus,
          Tag, ExternalLink, Ticket } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
 import * as ImagePicker from 'expo-image-picker';
 import { useStore } from '../../store';
 import type { Destination, PhotoEntry } from '../../types';
 import type { Spot } from '../../data/spots';
-import { DAY_NAMES, hoursForDay, formatSpotCost, formatVisitTime } from '../../data/spots';
+import { DAY_NAMES, hoursForDay, formatSpotCost, formatVisitTime, getSpotOpenStatus, specialClosureOn, zonedNowForSpot } from '../../data/spots';
 import { photoCache, thumbCache, getOrFetchWikiThumbnail } from '../../utils/photoCache';
 import CircleFlag from '../CircleFlag';
 import FadeInImage from './FadeInImage';
@@ -258,13 +258,9 @@ interface Props {
   // Increments when the parent is about to close this sheet (the back pill's X): slide it off
   // the bottom of the screen first, so it leaves rather than vanishing. Parent then unmounts it.
   exitSignal?: number;
-  // "Go to list view" — swaps this carousel for the destination sheet's full-screen Spots
-  // grid, which is often easier to scan than swiping card-by-card.
+  // "Grid view" — swaps this carousel for the destination sheet's full-screen Spots grid,
+  // which is often easier to scan than swiping card-by-card.
   onGoToList?: () => void;
-  // Deliberate upward navigation INTO the parent destination sheet, regardless of where
-  // back would go — wired to the tappable "in {destination}" hero meta row, so a user who
-  // free-zoomed straight to a spot still has a one-tap path up to its destination.
-  onGoToDestination?: () => void;
   // Bump this to imperatively collapse from the parent — used by the shared back pill's
   // down-arrow while this sheet is full-screen (the hero's own close button was removed in
   // favor of that pill, same as DestinationSheet).
@@ -273,7 +269,7 @@ interface Props {
 
 function SpotSheet({
   spots, focusSpotId, destination, onClose, onExpand, onCollapse, onActiveSpotChange, onCollapsedTopChange,
-  pillOffsetSV, onSnapStateChange, peekSignal, exitSignal, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, onExited, onGoToList, onGoToDestination, collapseSignal,
+  pillOffsetSV, onSnapStateChange, peekSignal, exitSignal, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, onExited, onGoToList, collapseSignal,
 }: Props) {
   const insets       = useSafeAreaInsets();
   const saveSpotVisited = useStore(s => s.saveSpotVisited);
@@ -945,21 +941,12 @@ function SpotSheet({
             <View style={st.heroBottomStack}>
               <View style={st.heroContent}>
                 <Text style={st.heroName} numberOfLines={2}>{activeSpot.name}</Text>
-                {/* Tappable when onGoToDestination is provided — the explicit upward path
-                    into the destination sheet, kept separate from the back pill (which is
-                    provenance-routed and may return to the map instead). */}
-                <Pressable
-                  style={st.heroMeta}
-                  onPress={onGoToDestination}
-                  disabled={!onGoToDestination}
-                  hitSlop={8}
-                >
-                  <MapPin size={12} color="rgba(255,255,255,0.85)" />
+                <View style={st.heroMeta}>
                   <Text style={st.heroMetaTxt}>{destination.name}</Text>
-                  <Text style={st.heroMetaDot}> · </Text>
+                  <View style={st.heroMetaDivider} />
                   <CircleFlag countryCode={destination.countryCode} size={13} />
                   <Text style={[st.heroMetaTxt, { marginLeft: 4 }]}>{destination.country}</Text>
-                </Pressable>
+                </View>
                 <Text style={st.heroBio} numberOfLines={3}>{activeSpot.bio}</Text>
               </View>
             </View>
@@ -1072,7 +1059,7 @@ function SpotSheet({
             {!!onGoToList && (
               <Pressable style={st.carListBtn} onPress={onGoToList} hitSlop={8}>
                 <LayoutGrid size={14} color="#6B7280" />
-                <Text style={st.carListBtnTxt}>List view</Text>
+                <Text style={st.carListBtnTxt}>Grid view</Text>
               </Pressable>
             )}
           </View>
@@ -1163,24 +1150,35 @@ function SpotSheet({
 // ── About panel (shared between visited/non-visited) ──────────────────────────
 function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore, nearbyHlScrollRef }: { spot: Spot; nearbySpots: Spot[]; onSelectNearby: (spot: Spot) => void; onExplore?: () => void; nearbyHlScrollRef?: React.RefObject<GHScrollView | null> }) {
   const [hoursOpen, setHoursOpen] = useState(false);
-  const today = new Date().getDay();
+  const [faviconFailed, setFaviconFailed] = useState(false);
+  // "Today" per the spot's OWN destination timezone (not the device's) — agrees with the live
+  // status text below, which is also computed in that timezone. See getSpotOpenStatus.
+  const today = zonedNowForSpot(spot).getDay();
+  const ticketFaviconUri = useMemo(() => {
+    if (!spot.ticketUrl) return null;
+    try {
+      const host = new URL(spot.ticketUrl).hostname;
+      return `https://www.google.com/s2/favicons?domain=${host}&sz=64`;
+    } catch {
+      return null;
+    }
+  }, [spot.ticketUrl]);
 
   return (
     <>
-      <View style={[st.section, st.glanceRow]}>
+      <View style={st.section}>
         <View style={st.glanceCard}>
           <View style={st.glanceItem}>
-            <View style={st.glanceIconCircleIndigo}>
-              <Clock size={20} color="#6366F1" />
+            <View style={st.glanceIconCircleGray}>
+              <Clock size={20} color="#6B7280" />
             </View>
             <Text style={st.glanceVal} numberOfLines={1}>{formatVisitTime(spot.visitHoursMin, spot.visitHoursMax)}</Text>
-            <Text style={st.glanceLbl}>Time needed</Text>
+            <Text style={st.glanceLbl}>Time Needed</Text>
           </View>
-        </View>
-        <View style={st.glanceCard}>
+          <View style={st.glanceDivider} />
           <View style={st.glanceItem}>
-            <View style={st.glanceIconCircleGreen}>
-              <Tag size={20} color="#16A34A" />
+            <View style={st.glanceIconCircleGray}>
+              <Tag size={20} color="#6B7280" />
             </View>
             <Text style={st.glanceVal} numberOfLines={1}>{formatSpotCost(spot)}</Text>
             <Text style={st.glanceLbl}>Cost</Text>
@@ -1196,40 +1194,58 @@ function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore, nearbyHlScrol
           element of the collapsed row (and the matching week row) from green to red, rather
           than just the "Closed" value text — the card as a whole should read as a status. */}
       {(() => {
+        // Live status (Open/Closes soon/Opens soon/Closed, incl. a same-day special closure) —
+        // see getSpotOpenStatus's own comment for what it can and can't parse from `hours`.
+        const status = getSpotOpenStatus(spot);
+        // 'closed' gets its own light red, distinct from the amber used for the "soon" states —
+        // closed is the more final/negative state, so it reads differently from a countdown.
+        const statusColor = status.kind === 'open' ? '#16A34A'
+          : status.kind === 'closing-soon' || status.kind === 'opening-soon' ? '#D97706'
+          : status.kind === 'closed' ? '#DC2626'
+          : '#111827';
         const closedToday = hoursForDay(spot, today) === 'Closed';
+        const todayHoliday = specialClosureOn(spot, zonedNowForSpot(spot));
         return (
           <>
-            <View style={st.section}>
-              <Pressable style={[st.hoursCard, closedToday && st.hoursCardClosed]} onPress={() => setHoursOpen(o => !o)}>
-                <View style={st.hoursIconCircle}>
-                  <Clock size={20} color={closedToday ? '#DC2626' : '#16A34A'} />
-                </View>
-                <Text style={[st.hoursTxt, closedToday && st.hoursTxtClosed]}>
-                  Today: {hoursForDay(spot, today)}
+            {/* hoursCard and hoursWeekCard now share ONE section so there's no gap between
+                them when open — hoursCard drops its bottom radius/border and hoursWeekCard
+                its top radius, so the two read as a single attached box, not separate cards. */}
+            <View style={[st.section, { gap: 0 }]}>
+              <Pressable
+                style={[st.hoursCard, hoursOpen && st.hoursCardOpen]}
+                onPress={() => setHoursOpen(o => !o)}
+              >
+                <CalendarClock size={20} color={statusColor} />
+                <Text numberOfLines={1}>
+                  <Text style={[st.hoursTxt, { color: statusColor }]}>{status.label}</Text>
+                  {status.detail && (
+                    <Text style={st.hoursTxtDetail}> · {status.detail}</Text>
+                  )}
                 </Text>
                 {hoursOpen
-                  ? <ChevronUp size={18} color={closedToday ? '#991B1B' : '#065F46'} style={{ marginLeft: 'auto' }} />
-                  : <ChevronDown size={18} color={closedToday ? '#991B1B' : '#065F46'} style={{ marginLeft: 'auto' }} />}
+                  ? <ChevronUp size={18} color={statusColor} style={{ marginLeft: 'auto' }} />
+                  : <ChevronDown size={18} color={statusColor} style={{ marginLeft: 'auto' }} />}
               </Pressable>
-            </View>
 
-            {hoursOpen && (
-              <View style={st.section}>
+              {hoursOpen && (
                 <View style={st.hoursWeekCard}>
                   {DAY_NAMES.map((day, i) => {
                     const isToday = i === today;
+                    // Only today has a real calendar date to check a special closure against —
+                    // the other rows are "this weekday in general", not a specific future date.
+                    const val = isToday && todayHoliday ? `Closed (${todayHoliday})` : hoursForDay(spot, i);
                     return (
                       <View key={day} style={[st.hoursWeekRow, i > 0 && st.hoursWeekRowBorder]}>
-                        <Text style={[st.hoursWeekDay, isToday && (closedToday ? st.hoursWeekDayTodayClosed : st.hoursWeekDayToday)]}>{day}</Text>
-                        <Text style={[st.hoursWeekVal, isToday && (closedToday ? st.hoursWeekDayTodayClosed : st.hoursWeekDayToday)]}>
-                          {hoursForDay(spot, i)}
+                        <Text style={[st.hoursWeekDay, isToday && (closedToday ? st.hoursWeekDayTodayClosed : [st.hoursWeekDayToday, { color: statusColor }])]}>{day}</Text>
+                        <Text style={[st.hoursWeekVal, isToday && (closedToday ? st.hoursWeekDayTodayClosed : [st.hoursWeekDayToday, { color: statusColor }])]}>
+                          {val}
                         </Text>
                       </View>
                     );
                   })}
                 </View>
-              </View>
-            )}
+              )}
+            </View>
           </>
         );
       })()}
@@ -1237,13 +1253,13 @@ function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore, nearbyHlScrol
       {!!spot.ticketUrl && (
         <View style={st.section}>
           <View style={st.ticketCard}>
-            <View style={st.ticketIconCircle}>
-              <Ticket size={20} color="#6366F1" />
-            </View>
-            <Text style={st.ticketTxt} numberOfLines={2}>{spot.name} official tickets</Text>
+            {ticketFaviconUri && !faviconFailed
+              ? <Image source={{ uri: ticketFaviconUri }} style={st.ticketFavicon} onError={() => setFaviconFailed(true)} />
+              : <Ticket size={20} color="#6366F1" />}
+            <Text style={st.ticketTxt} numberOfLines={2}>{spot.name} official site</Text>
             <Pressable style={st.ticketBtn} onPress={() => Linking.openURL(spot.ticketUrl!)} hitSlop={6}>
               <ExternalLink size={13} color="white" />
-              <Text style={st.ticketBtnTxt}>Visit site</Text>
+              <Text style={st.ticketBtnTxt}>Visit</Text>
               <ChevronRight size={13} color="white" />
             </Pressable>
           </View>
@@ -1419,7 +1435,7 @@ const st = StyleSheet.create({
   heroName: { fontSize: 34, fontFamily: 'PlayfairDisplay_700Bold', color: 'white', letterSpacing: -0.5 },
   heroMeta: { flexDirection: 'row', alignItems: 'center', gap: 4 },
   heroMetaTxt: { fontSize: 14, color: 'rgba(255,255,255,0.90)', fontWeight: '500' },
-  heroMetaDot: { fontSize: 14, color: 'rgba(255,255,255,0.40)' },
+  heroMetaDivider: { width: 1, height: 12, backgroundColor: 'rgba(255,255,255,0.40)', marginHorizontal: 8 },
   heroBio: { fontSize: 13.5, lineHeight: 19, color: 'rgba(255,255,255,0.88)', marginTop: 10,
              textShadowColor: 'rgba(0,0,0,0.35)', textShadowRadius: 3, textShadowOffset: { width: 0, height: 1 } },
 
@@ -1455,44 +1471,50 @@ const st = StyleSheet.create({
   // About
   section: { gap: 10 },
   sectionTitle: { fontSize: 13, fontWeight: '800', color: '#9CA3AF', letterSpacing: 0.4 },
-  glanceRow: { flexDirection: 'row' },
-  glanceCard: { flex: 1, backgroundColor: '#F9FAFB', borderRadius: 16, flexDirection: 'row', borderWidth: 1, borderColor: '#F3F4F6' },
+  // One combined card (was two separate ones) — a vertical divider between the two halves
+  // instead of a gap, white background, light gray border.
+  glanceCard: { backgroundColor: 'white', borderRadius: 16, flexDirection: 'row', borderWidth: 1, borderColor: '#F0F1F3' },
   glanceItem: { flex: 1, alignItems: 'center', paddingVertical: 20, gap: 5 },
-  glanceIconCircleIndigo: { width: 40, height: 40, borderRadius: 20, backgroundColor: '#EEF2FF',
+  glanceDivider: { width: 1, backgroundColor: '#F0F1F3', marginVertical: 14 },
+  glanceIconCircleGray:   { width: 40, height: 40, borderRadius: 20, backgroundColor: '#F3F4F6',
                             alignItems: 'center', justifyContent: 'center', marginBottom: 2 },
-  glanceIconCircleGreen:  { width: 40, height: 40, borderRadius: 20, backgroundColor: '#ECFDF5',
-                            alignItems: 'center', justifyContent: 'center', marginBottom: 2 },
-  glanceVal: { fontSize: 20, fontWeight: '800', color: '#111827' },
+  // 20% larger than DestinationSheet's glanceRowTitle ("Why Visit" reasons text), which this
+  // otherwise matches in weight/color.
+  glanceVal: { fontSize: 19, fontWeight: '600', color: '#111827', lineHeight: 26 },
   glanceLbl: { fontSize: 11, color: '#9CA3AF', fontWeight: '500' },
-  // Collapsed hours row — its own tinted card now (not joined to the week list below it, which
-  // only exists as a separate card while open — see SpotAbout's own comment).
-  hoursCard: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: '#F0FDF4',
-               borderRadius: 16, padding: 14, borderWidth: 1, borderColor: '#DCFCE7' },
-  // Closed-today variant — same shape, red instead of green (see SpotAbout's own comment).
-  hoursCardClosed: { backgroundColor: '#FEF2F2', borderColor: '#FECACA' },
-  hoursIconCircle: { width: 40, height: 40, borderRadius: 20, backgroundColor: 'white',
-                     alignItems: 'center', justifyContent: 'center' },
-  hoursTxt: { fontSize: 15, fontWeight: '700', color: '#065F46' },
-  hoursTxtClosed: { color: '#B91C1C' },
-  // The full-week card, only rendered while open — plain white, its own border/radius, each
-  // row joined to the next by a top hairline instead of each row having its own card.
-  hoursWeekCard: { backgroundColor: 'white', borderRadius: 16, overflow: 'hidden',
-                   borderWidth: 1, borderColor: '#F3F4F6' },
+  // Collapsed hours row — white card, light gray border (not joined to the week list below it,
+  // which only exists as a separate card while open — see SpotAbout's own comment).
+  hoursCard: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: 'white',
+               borderRadius: 16, padding: 14, borderWidth: 1, borderColor: '#F0F1F3' },
+  // While open, the week list sits flush underneath — square off the bottom and drop the
+  // border there so the two read as one attached box, not two separate cards.
+  hoursCardOpen: { borderBottomLeftRadius: 0, borderBottomRightRadius: 0, borderBottomWidth: 0 },
+  // Color set inline per status (green/orange/neutral) — see getSpotOpenStatus.
+  hoursTxt: { fontSize: 16, fontWeight: '600', lineHeight: 22 },
+  // The "· Closes 6:00 PM" part after the label — always black (unlike the colored label).
+  hoursTxtDetail: { fontSize: 16, fontWeight: '600', color: '#111827', lineHeight: 22 },
+  // The full-week card, only rendered while open — attached directly under hoursCard (see its
+  // own comment), so its top corners are square and its border color matches; each row joined
+  // to the next by a top hairline instead of each row having its own card.
+  hoursWeekCard: { backgroundColor: 'white', borderRadius: 16, borderTopLeftRadius: 0, borderTopRightRadius: 0,
+                   overflow: 'hidden', borderWidth: 1, borderColor: '#F0F1F3' },
   hoursWeekRow:     { flexDirection: 'row', justifyContent: 'space-between',
                       paddingHorizontal: 16, paddingVertical: 13 },
   hoursWeekRowBorder: { borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: '#F3F4F6' },
-  hoursWeekDay:     { fontSize: 14, color: '#6B7280', fontWeight: '500' },
-  hoursWeekVal:     { fontSize: 14, color: '#374151', fontWeight: '500' },
-  hoursWeekDayToday: { color: '#16A34A', fontWeight: '800' },
-  hoursWeekDayTodayClosed: { color: '#DC2626', fontWeight: '800' },
-  // Ticketing — same tinted-card shape as hoursCard, indigo instead of green, with a small
-  // filled button in place of the chevron (no separate body copy — see SpotAbout's own comment).
-  ticketCard: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: '#EEF2FF',
-                borderRadius: 16, padding: 14, borderWidth: 1, borderColor: '#E0E7FF' },
-  ticketIconCircle: { width: 40, height: 40, borderRadius: 20, backgroundColor: 'white',
-                      alignItems: 'center', justifyContent: 'center' },
-  ticketTxt: { flex: 1, fontSize: 14.5, fontWeight: '700', color: '#312E81' },
-  ticketBtn: { flexDirection: 'row', alignItems: 'center', gap: 4, backgroundColor: '#6366F1',
+  hoursWeekDay:     { fontSize: 14, color: '#6B7280', fontWeight: '600' },
+  hoursWeekVal:     { fontSize: 14, color: '#374151', fontWeight: '600' },
+  // Color is applied inline as `statusColor`, matching the header text live (green/orange/
+  // neutral) instead of a fixed color — see getSpotOpenStatus. Weight matches the other rows
+  // (hoursWeekDay/hoursWeekVal) — only the color sets today's row apart, not extra boldness.
+  hoursWeekDayToday: { fontWeight: '600' },
+  hoursWeekDayTodayClosed: { color: '#DC2626', fontWeight: '600' },
+  // Ticketing — same white/light-gray card shape as hoursCard, with a small filled button in
+  // place of the chevron (no separate body copy — see SpotAbout's own comment).
+  ticketCard: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: 'white',
+                borderRadius: 16, padding: 14, borderWidth: 1, borderColor: '#F0F1F3' },
+  ticketFavicon: { width: 24, height: 24, borderRadius: 4 },
+  ticketTxt: { flex: 1, fontSize: 16, fontWeight: '600', color: '#111827', lineHeight: 22 },
+  ticketBtn: { flexDirection: 'row', alignItems: 'center', gap: 4, backgroundColor: '#111827',
                borderRadius: 10, paddingHorizontal: 12, paddingVertical: 9 },
   ticketBtnTxt: { fontSize: 13, fontWeight: '700', color: 'white' },
 

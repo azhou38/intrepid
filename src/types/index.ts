@@ -88,9 +88,17 @@ export interface Destination {
   name: string;
   country: string;
   countryCode: string;
+  // IANA timezone identifier (e.g. "Europe/Paris") — used to compute each spot's live open/
+  // closed status in the destination's own local time rather than the device's.
+  timezone: string;
   continent: Continent;
   coordinates: { latitude: number; longitude: number };
   category: DestinationCategory;
+  // The full span (in km) the map's default zoom for this destination should fit on screen —
+  // sized to just contain the metro area (city destinations) or the visited/scenic extent of
+  // the park or natural region (nature/park destinations), rather than one fixed zoom for every
+  // destination regardless of size. See getDestZoomDelta in MapScreen.tsx, the sole consumer.
+  defaultZoomSpanKm: number;
   icon?: string;
   rank: 1 | 2 | 3 | 4 | 5;
   tagline?: string;

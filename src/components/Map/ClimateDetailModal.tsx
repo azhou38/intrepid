@@ -128,7 +128,7 @@ function DaylightChart({ data }: { data: MonthDaylight[] }) {
         <View key={i} style={st.barCol}>
           <View style={st.barTrack}>
             <Text style={st.barValueLbl}>{Math.round(d.hours)}</Text>
-            <View style={[st.bar, { height: Math.max(4, (d.hours / scaleMax) * BAR_MAX), backgroundColor: '#F59E0B' }]} />
+            <View style={[st.bar, { height: Math.max(4, (d.hours / scaleMax) * BAR_MAX), backgroundColor: '#FACC15' }]} />
           </View>
           <Text style={st.monthLbl}>{d.month[0]}</Text>
         </View>
@@ -159,7 +159,7 @@ function RainChart({ data }: { data: MonthRain[] }) {
         <View key={i} style={st.barCol}>
           <View style={st.barTrack}>
             <Text style={st.barValueLbl}>{d.mm}</Text>
-            <View style={[st.bar, { height: Math.max(4, (d.mm / scaleMax) * BAR_MAX), backgroundColor: '#60A5FA' }]} />
+            <View style={[st.bar, { height: Math.max(4, (d.mm / scaleMax) * BAR_MAX), backgroundColor: '#3B82F6' }]} />
           </View>
           <Text style={st.monthLbl}>{d.month[0]}</Text>
         </View>

@@ -69,6 +69,10 @@ function SpotCard({ spot, onPress, width }: {
             <View style={local.metaRow}>
               <Clock size={11} color="rgba(255,255,255,0.9)" strokeWidth={2.5} />
               <Text style={local.metaTxt}>{formatVisitTime(spot.visitHoursMin, spot.visitHoursMax)}</Text>
+              {/* Divider stays attached to the time row above (the row it separates FROM) —
+                  a cost string too long to fit the remaining space on that first line wraps
+                  alone to its own line below, rather than dragging the divider down with it
+                  or the card clipping. */}
               <View style={local.metaDivider} />
               <Text style={local.metaTxt}>{formatSpotCost(spot)}</Text>
             </View>
@@ -88,7 +92,7 @@ function SpotCard({ spot, onPress, width }: {
 const local = StyleSheet.create({
   // Lifted off the card's bottom edge so the name / time / cost block isn't cramped against it.
   imageInfo: { bottom: 16 },
-  metaRow: { flexDirection: 'row', alignItems: 'center', gap: 4 },
+  metaRow: { flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap', gap: 4, rowGap: 2 },
   metaTxt: {
     fontSize: 11, fontWeight: '600', color: 'rgba(255,255,255,0.9)',
     textShadowColor: 'rgba(0,0,0,0.3)', textShadowRadius: 3, textShadowOffset: { width: 0, height: 1 },

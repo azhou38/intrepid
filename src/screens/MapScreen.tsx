@@ -74,8 +74,9 @@ function latDeltaToZoom(latDelta: number): number {
 // Web-Mercator vertical projection, normalized 0 (north pole) .. 1 (south pole). Multiply a
 // difference of these by the world size in px (512·2^zoom) to get real screen pixels.
 //
-// Only sound at DESTINATION zooms. getZoomDelta feeds latDeltaToZoom to give z≈9.5–10.8,
-// far past the ~z6 point where Mapbox's globe has finished blending into mercator, so the
+// Only sound at DESTINATION zooms. getDestZoomDelta feeds latDeltaToZoom to give roughly
+// z≈7.4–10.7 depending on the destination's own defaultZoomSpanKm, comfortably past the ~z6
+// point where Mapbox's globe has finished blending into mercator, so the
 // projection really is mercator there and this is exact. It is NOT valid at the country zooms
 // (z≈2–5) fitCountryDefaultView deals with — that's the whole reason that function delegates
 // its sizing to Mapbox instead of solving in closed form. Don't reuse these there.
@@ -765,9 +766,50 @@ function getVisibleRank(latDelta: number): number {
   return 5;
 }
 
-function getZoomDelta(category: string): number {
-  if (category === 'park' || category === 'nature' || category === 'desert') return 0.25;
-  return 0.1;
+// Degrees of latitude per km — constant (unlike longitude, which compresses toward the poles),
+// so a destination's own real-world span converts to a latitude delta with no lat-dependent term.
+const KM_PER_DEG_LAT = 111;
+
+// The destination's own default-zoom span (Destination.defaultZoomSpanKm — sized per destination
+// to just contain its metro area or park/nature extent, see the field's own comment), converted
+// to a latitudeDelta. Replaces a single category-wide constant that put every city at the same
+// zoom regardless of how large its own metro area actually is (Tokyo and Paris landed far too
+// zoomed in at the same depth as a small town).
+function getDestZoomDelta(dest: Destination): number {
+  return dest.defaultZoomSpanKm / KM_PER_DEG_LAT;
+}
+
+// Same lookup, precomputed once by destination id — used where only a spot's destinationId is
+// at hand (the live viewport spot query below), not the full Destination object.
+const DEST_ZOOM_DELTA_BY_ID: Record<string, number> = (() => {
+  const out: Record<string, number> = {};
+  for (const d of DESTINATIONS) out[d.id] = getDestZoomDelta(d);
+  return out;
+})();
+// The same thresholds expressed as zoom LEVELS rather than latitude deltas — camZoom (the
+// camera's live zoom level) is what the destination-pin/spot-pin handoff below actually
+// compares against, so the threshold needs to be in the same units.
+const DEST_ZOOM_LEVEL_BY_ID: Record<string, number> = (() => {
+  const out: Record<string, number> = {};
+  for (const id in DEST_ZOOM_DELTA_BY_ID) out[id] = latDeltaToZoom(DEST_ZOOM_DELTA_BY_ID[id]);
+  return out;
+})();
+// The loosest (smallest-zoom-level) of every destination's own default-zoom threshold — the
+// point past which NO destination could possibly want its spot pins shown yet. Used as a coarse
+// outer gate so the live spot query doesn't run at all while zoomed out further than every
+// single destination's own threshold.
+const MIN_DEST_ZOOM_LEVEL = Math.min(...Object.values(DEST_ZOOM_LEVEL_BY_ID));
+
+// Whether the camera is at or past `dest`'s own default zoom — the single threshold that
+// governs BOTH halves of the handoff: at or past it, `dest`'s spot pins show and its own
+// destination pin hides; short of it (zoomed further out), the destination pin shows and its
+// spot pins hide. ZOOM_EPSILON biases the exact boundary toward "past" (spots showing) rather
+// than needing to zoom in slightly further than the destination's own landing position for its
+// spot pins to actually appear — fitDestinationDefaultView lands the camera exactly AT this
+// threshold, and that landing itself must already read as "past" it.
+function isPastDestDefaultZoom(destId: string, camZoom: number): boolean {
+  const level = DEST_ZOOM_LEVEL_BY_ID[destId];
+  return level !== undefined && camZoom >= level - ZOOM_EPSILON;
 }
 
 
@@ -1661,13 +1703,14 @@ const destItems = useMemo((): DestItem[] =>
   }, [region.latitude, region.longitude, region.latitudeDelta, planDest]);
   const zoomedIntoDestIds = useStableSet(zoomedIntoDestIdsRaw);
 
-  // Destinations the camera has zoomed DEEPER than their own default view (the depth
-  // fitDestinationDefaultView lands on): their pin/dot never shows past that point, selected or
-  // not — the spot pins take over. A small margin so the default view itself still shows it.
+  // Destinations the camera is at or past the own default view for (the depth
+  // fitDestinationDefaultView lands on): their pin/dot never shows at or past that point,
+  // selected or not — the spot pins take over AT that same landing position, not only once
+  // zoomed in further still (see isPastDestDefaultZoom).
   const zoomedPastDefaultIdsRaw = useMemo(() => {
     const ids = new Set<string>();
     for (const d of DESTINATIONS) {
-      if (camZoom > latDeltaToZoom(getZoomDelta(d.category)) + 0.15) ids.add(d.id);
+      if (isPastDestDefaultZoom(d.id, camZoom)) ids.add(d.id);
     }
     return ids;
   }, [camZoom]);
@@ -1797,10 +1840,14 @@ const destItems = useMemo((): DestItem[] =>
   );
 
   const visibleSpots = useMemo(() => {
-    // Binary gate at SPOT_THRESHOLD — under the old continuous zoom-fade this was
-    // SPOT_THRESHOLD + 0.1 of mount headroom for the fade band, but pins were already
-    // fully transparent past the threshold; now FadePin's exit fade covers removal.
-    const belowSpotZoom = region.latitudeDelta < SPOT_THRESHOLD;
+    // Coarse OUTER gate: is the camera at or past ANY destination's own default zoom at all?
+    // (MIN_DEST_ZOOM_LEVEL is the loosest of the 45 — the earliest any destination's spots
+    // could possibly need to appear.) It does NOT by itself decide any individual spot's
+    // visibility — that's each destination's OWN threshold, applied per-spot below
+    // (isPastDestDefaultZoom for spotsInDest, and per spot for others) — so a tighter
+    // destination doesn't show its pins early just because some other, wider one is already
+    // past ITS OWN threshold.
+    const belowSpotZoom = camZoom >= MIN_DEST_ZOOM_LEVEL - ZOOM_EPSILON;
 
     // While a destination is selected — its own sheet open, or drilled into one of its
     // spots — show that destination's full, small, static spot set rather than a live
@@ -1818,11 +1865,19 @@ const destItems = useMemo((): DestItem[] =>
     // too rather than leaving that area bare.
     // The selected spot itself is added back below whatever else this decides, so it stays on the
     // map at any zoom.
-    // Past the spot zoom cutoff only the selected spot persists — not its whole destination's set.
+    // Short of the spot zoom cutoff only the selected spot persists — not its whole destination's set.
     if (!belowSpotZoom) return selectedSpot ? [selectedSpot] : [];
 
+    // The SELECTED destination's own spots show AT AND PAST its own default zoom (the exact
+    // landing position fitDestinationDefaultView flies to) — same threshold that hides its own
+    // destination pin (see zoomedPastDefaultIds/isPastDestDefaultZoom), so the two switch over
+    // together with no gap and no overlap. belowSpotZoom above is only the coarse outer gate
+    // (loosened for OTHER, possibly-wider destinations) and must not let a tighter selected
+    // destination's pins appear early just because something else passed that outer check.
+    const selectedBelowOwnZoom = !!selectedDest && isPastDestDefaultZoom(selectedDest.id, camZoom);
+
     const others: Spot[] = [];
-    if (belowSpotZoom) {
+    {
       const { latitude, longitude, latitudeDelta, longitudeDelta } = region;
       const pad = 0.15;
       const minLat = latitude - latitudeDelta * (0.5 + pad);
@@ -1831,26 +1886,32 @@ const destItems = useMemo((): DestItem[] =>
       const maxLng = longitude + longitudeDelta * (0.5 + pad);
       for (const s of SPOTS) {
         if (selectedDest && s.destinationId === selectedDest.id) continue;
+        // Each OTHER destination's spots only show at and past THAT destination's own default
+        // zoom — same reasoning as selectedBelowOwnZoom above, just per-spot since there's no
+        // single "selected" destination to read the threshold from here.
+        if (!isPastDestDefaultZoom(s.destinationId, camZoom)) continue;
         const { latitude: lat, longitude: lng } = s.coordinates;
         if (lat >= minLat && lat <= maxLat && lng >= minLng && lng <= maxLng) others.push(s);
       }
     }
-    const result = selectedDest ? [...spotsInDest, ...others] : others;
+    const result = selectedDest && selectedBelowOwnZoom ? [...spotsInDest, ...others] : others;
     if (selectedSpot && !result.some(sp => sp.id === selectedSpot.id)) result.push(selectedSpot);
     return result;
-  }, [region, selectedSpot, selectedDest, spotsInDest]);
+  }, [region, camZoom, selectedSpot, selectedDest, spotsInDest]);
   // Exit-fade tracking for spot pins (same treatment as pills/photos): pins leaving the
   // set linger for PIN_EXIT_MS fading out, new ones mount at 0 and fade in.
   const renderedSpots = useExitingItems(useStableList(visibleSpots, s => s.id), s => s.id);
 
   // Which side of each spot pin its name goes on — or none. Names default to the LEFT of the pin;
   // when that would run into another pin or an already-placed name the label flips to the right, and
-  // when neither side is clear it's dropped altogether (the pin itself always stays). Spots claim
-  // space in priority order — the selected spot, then ones the user has visited, then the more
-  // popular (earlier in the spots data, which is also the order the destination's carousel uses) —
-  // so the names that survive a crowd are the ones that matter most. Pixel geometry comes from the
-  // true on-screen scale, so this is what the eye actually sees; only relative offsets matter, so
-  // the projection needs no camera centre.
+  // when neither side is clear it's dropped altogether (the pin itself always stays) — UNLESS it's
+  // the selected spot, whose name is guaranteed to show (left, even overlapping a neighbour's pin
+  // if it must) rather than ever disappearing, however far zoomed out or crowded the view gets.
+  // Spots claim space in priority order — the selected spot, then ones the user has visited, then
+  // the more popular (earlier in the spots data, which is also the order the destination's carousel
+  // uses) — so the names that survive a crowd are the ones that matter most. Pixel geometry comes
+  // from the true on-screen scale, so this is what the eye actually sees; only relative offsets
+  // matter, so the projection needs no camera centre.
   const prevSpotLabelPlanRef = useRef<Map<string, 'left' | 'right' | 'none'>>(new Map());
   const spotLabelPlan = useMemo(() => {
     const plan = new Map<string, 'left' | 'right' | 'none'>();
@@ -1913,6 +1974,12 @@ const destItems = useMemo((): DestItem[] =>
       if (clear(left)) { plan.set(sp.id, 'left'); placedLabels.push(left); continue; }
       const right = labelRectFor(g, 'right');
       if (clear(right)) { plan.set(sp.id, 'right'); placedLabels.push(right); continue; }
+      // The selected spot's name never drops to 'none', however crowded the view — it's
+      // first in `order` (priority rank), so the only thing that can still block both sides
+      // here is another spot's PIN sitting right on top of it (common once zoomed out far
+      // enough to show many spots at once). Some overlap with a neighbour's pin reads better
+      // than losing the one label the user is actually focused on.
+      if (selectedSpot?.id === sp.id) { plan.set(sp.id, 'left'); placedLabels.push(left); continue; }
       plan.set(sp.id, 'none');
     }
     prevSpotLabelPlanRef.current = plan;
@@ -2207,7 +2274,7 @@ const destItems = useMemo((): DestItem[] =>
 
   // Destination equivalent of fitCountryDefaultView, and much simpler for two reasons: a
   // destination is a POINT rather than a bounding box, so there's nothing to size — the zoom
-  // is just getZoomDelta's — and its zoom is deep enough to be squarely in mercator, so the
+  // is just getDestZoomDelta's — and its zoom is deep enough to be squarely in mercator, so the
   // vertical placement solves in closed form (see mercY). No bounds fit, no settle, no cache:
   // one camera stop that lands exactly right the first time.
   //
@@ -2225,7 +2292,7 @@ const destItems = useMemo((): DestItem[] =>
     zoomFactor = 1,
   ) => {
     cancelCountryCapture();
-    const zoomLevel = latDeltaToZoom(getZoomDelta(dest.category)) * zoomFactor;
+    const zoomLevel = latDeltaToZoom(getDestZoomDelta(dest)) * zoomFactor;
     const worldSize = 512 * Math.pow(2, zoomLevel);
     const mapViewH = mapViewHRef.current || (H - BOTTOM_TAB_H);
     const bottomBound = framing === 'full'
@@ -2560,7 +2627,7 @@ const destItems = useMemo((): DestItem[] =>
     setSelectedCountry(null);
     // Target: the destination's default view — unless already zoomed out past it (see
     // isZoomedOutBeyond).
-    if (dest && !isZoomedOutBeyond(latDeltaToZoom(getZoomDelta(dest.category)))) {
+    if (dest && !isZoomedOutBeyond(latDeltaToZoom(getDestZoomDelta(dest)))) {
       fitDestinationDefaultView(dest, 'easeTo', 'topHalf');
     } else {
       releaseHeldSelection();
@@ -2619,7 +2686,7 @@ const destItems = useMemo((): DestItem[] =>
     else handleCloseSpotToDestinationView();
   }, [spotOrigin, handleCloseSpotToDestination, handleCloseSpotToDestinationView]);
 
-  // "List view" from the spot carousel — swap it for the destination sheet, opened straight
+  // "Grid view" from the spot carousel — swap it for the destination sheet, opened straight
   // to its full-screen Spots grid rather than the usual collapsed compact card. Always a
   // deliberate move INTO the destination, so it bypasses the provenance router.
   const handleGoToListView = useCallback(() => {
@@ -2709,7 +2776,7 @@ const destItems = useMemo((): DestItem[] =>
     // country close uses, applied one level down.
     // Unless the user is already zoomed out past that half zoom, in which case the camera stays
     // put (see isZoomedOutBeyond). 0.5 matches the zoomFactor passed below.
-    if (isZoomedOutBeyond(latDeltaToZoom(getZoomDelta(dest.category)) * 0.5)) {
+    if (isZoomedOutBeyond(latDeltaToZoom(getDestZoomDelta(dest)) * 0.5)) {
       releaseHeldSelection();
       return;
     }
@@ -3788,9 +3855,10 @@ const destItems = useMemo((): DestItem[] =>
 
         {/* Spot pins — teardrop markers whose pointed tip sits on the exact coordinate.
             Solid-or-hidden like every other pin: visibility is a binary zoom cutoff
-            (visibleSpots' SPOT_THRESHOLD gate) and the appearance/disappearance itself is
-            the FadePin mount/exit cross-fade — never a continuous zoom-tied opacity, which
-            could leave pins resting half-faded when the camera settled mid-ramp.
+            (visibleSpots' per-destination isPastDestDefaultZoom gate) and the
+            appearance/disappearance itself is the FadePin mount/exit cross-fade — never a
+            continuous zoom-tied opacity, which could leave pins resting half-faded when the
+            camera settled mid-ramp.
             Rendered after the country pills and destination photos. Not reordered when the
             selection changes: moving a keyed MarkerView means removing and re-adding its native view,
             which made pins blink. */}
@@ -4131,7 +4199,6 @@ const destItems = useMemo((): DestItem[] =>
           mapGestureAtSV={mapGestureAtSV}
           onSnapStateChange={handleSheetSnapStateChange}
           onGoToList={handleGoToListView}
-          onGoToDestination={handleCloseSpotToDestination}
           collapseSignal={collapseSheetSignal}
         />
       )}

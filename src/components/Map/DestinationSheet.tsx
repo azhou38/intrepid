@@ -1703,7 +1703,7 @@ function DestinationSheet({
                     </View>
                   </View>
                   <Text style={st.heroMetaTxt}>{destination.country}</Text>
-                  <Text style={st.heroMetaDot}> · </Text>
+                  <View style={st.heroMetaDivider} />
                   <Text style={st.heroMetaTxt}>{destination.continent}</Text>
                 </View>
 
@@ -2022,7 +2022,7 @@ const st = StyleSheet.create({
   heroName:    { fontSize:42, fontFamily:'PlayfairDisplay_700Bold', color:'white', letterSpacing:-0.5 },
   heroMeta:      { flexDirection:'row', alignItems:'center' },
   heroMetaTxt:   { fontSize:14, color:'rgba(255,255,255,0.90)', fontWeight:'500' },
-  heroMetaDot:   { fontSize:14, color:'rgba(255,255,255,0.40)' },
+  heroMetaDivider: { width: 1, height: 12, backgroundColor: 'rgba(255,255,255,0.40)', marginHorizontal: 8 },
   heroFlagCircle: { width:20, height:20, borderRadius:10, backgroundColor:'#fff', alignItems:'center', justifyContent:'center', marginRight:6 },
   heroFlagClip:   { width:17, height:17, borderRadius:8.5, overflow:'hidden' },
   heroFlagImg:    { width:17, height:17 },
@@ -2215,7 +2215,9 @@ const st = StyleSheet.create({
   wtvHeadRow:     { flexDirection:'row', alignItems:'center', gap:12 },
   // The recommendation is the card's headline now, so it carries primary-text weight rather
   // than the muted grey it had as a subtitle under a redundant title.
-  wtvLede:        { flex:1, fontSize:16, fontWeight:'600', color:'#374151', lineHeight:22 },
+  // Same color as glanceRowTitle ("Why Visit" reasons text) — the green month range (wtvLedeMonths)
+  // overrides this per-segment.
+  wtvLede:        { flex:1, fontSize:16, fontWeight:'600', color:'#111827', lineHeight:22 },
   // Same green used everywhere else (buttons, tags, the grid's own "best month" highlight) so
   // the month range reads as the one thing to notice in the sentence.
   wtvLedeMonths:  { color:'#16A34A' },
@@ -2233,8 +2235,10 @@ const st = StyleSheet.create({
   tipIconBadge: { width:40, height:40, borderRadius:20, backgroundColor:'#FEF3C7',
                   alignItems:'center', justifyContent:'center' },
   tipIconTxt:   { fontSize:18 },
-  tipTitleTxt:  { fontSize:14.5, fontWeight:'700', color:'#111827', marginBottom:2 },
-  tipDetailTxt: { fontSize:13, color:'#6B7280', lineHeight:18 },
+  // Same size/weight/color as wtvLede (the "When to Visit" card's headline).
+  tipTitleTxt:  { fontSize:16, fontWeight:'600', color:'#111827', lineHeight:22, marginBottom:2 },
+  // Same size/color as wtvGuideBtnTxt ("View climate and visitor data"), but unbolded.
+  tipDetailTxt: { fontSize:13, fontWeight:'400', color:'#374151', lineHeight:18 },
 });
 
 // Memoized: the map screen re-renders continuously while the camera moves, and a re-render of the sheet is a React

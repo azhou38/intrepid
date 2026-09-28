@@ -1,4 +1,5 @@
 import type { SpotCategory } from '../types';
+import { DESTINATIONS } from './destinations';
 
 export interface Spot {
   id: string;
@@ -26,10 +27,17 @@ export interface Spot {
   costMin?: number;
   costMax?: number;
   currency?: string;
-  // Official ticketing/booking site, when one genuinely exists (a single canonical operator).
-  // Omitted for free/public spots and for attractions booked through many different operators
-  // with no one official site (e.g. scenic flights).
+  // The spot's official site, when one genuinely exists (a single canonical operator/steward —
+  // not a general city/tourism-board page) — whether or not the spot charges admission. Omitted
+  // for spots with no single official site: open public squares/districts/streets with no one
+  // steward, and attractions booked through many different third-party operators with no
+  // canonical site of their own (e.g. scenic flights).
   ticketUrl?: string;
+  // Fixed-date (month/day, recurs every year) closures for a well-documented public holiday or
+  // special occasion — e.g. the Louvre's Jan 1/May 1/Dec 25 closures. Deliberately NOT a
+  // general holiday calendar: only populated where a specific closure is confidently known for
+  // that venue, not derived from the destination's country. Most spots have none.
+  specialClosures?: { month: number; day: number; reason: string }[];
 }
 
 // Sunday-first, matching Date#getDay() (0 = Sunday … 6 = Saturday).
@@ -39,6 +47,140 @@ export const DAY_NAMES_SHORT = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 export function hoursForDay(spot: Spot, dayIndex: number): string {
   if (spot.closedDays?.includes(dayIndex)) return 'Closed';
   return spot.hours;
+}
+
+/** A special closure active on this exact calendar date, or null. */
+export function specialClosureOn(spot: Spot, date: Date): string | null {
+  const hit = spot.specialClosures?.find(c => c.month === date.getMonth() + 1 && c.day === date.getDate());
+  return hit?.reason ?? null;
+}
+
+// ── Live open/closed status ───────────────────────────────────────────────────
+//
+// `hours` is a free-text field ("9:00 AM – 6:00 PM", "Open 24 hours", "Daytime tours", …), not
+// a structured time range, so this only computes a live status for the common "H:MM AM/PM –
+// H:MM AM/PM" pattern (optionally followed by a parenthetical like "(summer)", which is
+// stripped) and the always-open phrasings — anything else (e.g. "Daytime tours") falls back to
+// 'unknown' rather than guessing. Times are compared against the SPOT'S destination timezone
+// (via Destination.timezone, looked up below), not the device's — so a traveler checking a
+// Tokyo spot from a phone set to New York time still sees Tokyo's actual open/closed state.
+const SOON_WINDOW_MIN = 60;
+
+const DESTINATION_TIMEZONE: Record<string, string> = Object.fromEntries(
+  DESTINATIONS.map(d => [d.id, d.timezone])
+);
+
+/** `date`'s wall-clock date/time as observed in `timeZone`, expressed as a Date whose OWN local
+ *  getters (getHours/getDay/setDate/…) read out those wall-clock values — so existing device-
+ *  local-clock logic keeps working unmodified, just fed the destination's time instead. Falls
+ *  back to `date` itself if `timeZone` is invalid or Intl can't resolve it. */
+function zonedNow(date: Date, timeZone: string | undefined): Date {
+  if (!timeZone) return date;
+  try {
+    const parts = new Intl.DateTimeFormat('en-US', {
+      timeZone, year: 'numeric', month: '2-digit', day: '2-digit',
+      hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23',
+    }).formatToParts(date);
+    const get = (type: string) => Number(parts.find(p => p.type === type)?.value ?? NaN);
+    const year = get('year'), month = get('month'), day = get('day');
+    const hour = get('hour'), minute = get('minute'), second = get('second');
+    if ([year, month, day, hour, minute, second].some(Number.isNaN)) return date;
+    return new Date(year, month - 1, day, hour, minute, second);
+  } catch {
+    return date;
+  }
+}
+
+/** `now`, expressed in the spot's own destination timezone — for callers (e.g. the "today" row
+ *  highlight in the hours dropdown) that need to agree with what `getSpotOpenStatus` itself is
+ *  treating as "today", rather than the device's own calendar date. */
+export function zonedNowForSpot(spot: Spot, deviceNow: Date = new Date()): Date {
+  return zonedNow(deviceNow, DESTINATION_TIMEZONE[spot.destinationId]);
+}
+
+interface TimeRange { openMin: number; closeMin: number } // minutes since local midnight; closeMin may exceed 1440 (crosses midnight)
+
+function parseHoursRange(hours: string): TimeRange | 'always' | null {
+  if (/open 24 hours|anytime/i.test(hours)) return 'always';
+  const m = hours.match(/(\d{1,2}):(\d{2})\s*(AM|PM)\s*[–-]\s*(\d{1,2}):(\d{2})\s*(AM|PM)/i);
+  if (!m) return null;
+  const toMin = (h: string, mm: string, ap: string) => {
+    const hh = (Number(h) % 12) + (ap.toUpperCase() === 'PM' ? 12 : 0);
+    return hh * 60 + Number(mm);
+  };
+  const openMin = toMin(m[1], m[2], m[3]);
+  let closeMin = toMin(m[4], m[5], m[6]);
+  if (closeMin <= openMin) closeMin += 24 * 60;
+  return { openMin, closeMin };
+}
+
+const formatMin = (min: number): string => {
+  const m = ((min % 1440) + 1440) % 1440;
+  const h24 = Math.floor(m / 60), mm = m % 60;
+  const h12 = h24 % 12 === 0 ? 12 : h24 % 12;
+  return `${h12}:${String(mm).padStart(2, '0')} ${h24 < 12 ? 'AM' : 'PM'}`;
+};
+
+// `label` is the short status word/phrase (colored, bold); `detail`, when present, is what used
+// to follow a colon (e.g. "Closes 6:00 PM") — rendered as its own plain black, unbolded segment
+// by the UI, with a "·" between the two instead of a colon. Kept as separate fields rather than
+// one pre-joined string so the UI never has to parse a colon back out of it.
+export type SpotOpenStatus =
+  | { kind: 'open';         label: string; detail?: string; color: 'green' }
+  | { kind: 'closing-soon'; label: string; detail: string;  color: 'orange' }
+  | { kind: 'opening-soon'; label: string; detail: string;  color: 'orange' }
+  | { kind: 'closed';       label: string; detail?: string; color: 'orange' }
+  | { kind: 'unknown';      label: string; detail: string };
+
+/** Live "Open · Closes 6:00 PM" / "Closed · Opens 9:00 AM Mon" / "Closes soon · …" /
+ *  "Opens soon · …" / "Closed (Reason)" status for right now (in the spot's OWN destination
+ *  timezone, not the device's — see `zonedNow`), or 'unknown' when `hours` isn't a parseable
+ *  time range (falls back to just showing the raw string). */
+export function getSpotOpenStatus(spot: Spot, deviceNow: Date = new Date()): SpotOpenStatus {
+  const now = zonedNow(deviceNow, DESTINATION_TIMEZONE[spot.destinationId]);
+
+  const todayReason = specialClosureOn(spot, now);
+  if (todayReason) return { kind: 'closed', label: `Closed (${todayReason})`, color: 'orange' };
+
+  const range = parseHoursRange(spot.hours);
+  if (range === 'always') return { kind: 'open', label: 'Open 24 hours', color: 'green' };
+  if (!range) return { kind: 'unknown', label: 'Today', detail: spot.hours };
+
+  const todayIdx = now.getDay();
+  const nowMin = now.getHours() * 60 + now.getMinutes();
+  const todayClosed = spot.closedDays?.includes(todayIdx) ?? false;
+  const yestClosed = spot.closedDays?.includes((todayIdx + 6) % 7) ?? false;
+
+  // Two candidate sessions: today's own (may run past midnight into tomorrow) and yesterday's
+  // (shifted into today's 0–1439 frame), for the case "now" is in the small hours still
+  // covered by a session that opened yesterday evening.
+  const inToday = !todayClosed && nowMin >= range.openMin && nowMin < range.closeMin;
+  const inYesterday = !yestClosed && nowMin + 1440 >= range.openMin && nowMin + 1440 < range.closeMin;
+
+  if (inToday || inYesterday) {
+    const closesAtMin = inToday ? range.closeMin : range.closeMin - 1440;
+    const minsLeft = closesAtMin - nowMin;
+    return minsLeft <= SOON_WINDOW_MIN
+      ? { kind: 'closing-soon', label: 'Closes soon', detail: formatMin(closesAtMin), color: 'orange' }
+      : { kind: 'open', label: 'Open', detail: `Closes ${formatMin(closesAtMin)}`, color: 'green' };
+  }
+
+  // Closed right now — find when it next opens: later today, or the next non-closed,
+  // non-specially-closed day (checked up to a week out).
+  if (!todayClosed && nowMin < range.openMin) {
+    const minsUntil = range.openMin - nowMin;
+    return minsUntil <= SOON_WINDOW_MIN
+      ? { kind: 'opening-soon', label: 'Opens soon', detail: formatMin(range.openMin), color: 'orange' }
+      : { kind: 'closed', label: 'Closed', detail: `Opens ${formatMin(range.openMin)}`, color: 'orange' };
+  }
+  for (let add = 1; add <= 7; add++) {
+    const d = new Date(now); d.setDate(d.getDate() + add);
+    const dayIdx = d.getDay();
+    if (spot.closedDays?.includes(dayIdx)) continue;
+    if (specialClosureOn(spot, d)) continue;
+    return { kind: 'closed', label: 'Closed', detail: `Opens ${formatMin(range.openMin)} ${DAY_NAMES_SHORT[dayIdx]}`, color: 'orange' };
+  }
+  return { kind: 'closed', label: 'Closed', color: 'orange' };
 }
 
 // Prefix (symbol before the number) or suffix (code after it, for currencies whose symbol
@@ -68,10 +210,10 @@ export function formatVisitTime(min: number, max: number): string {
   if (max === min) return oneVisitTime(min);
   // Both ends the same unit (both under an hour, or both an hour+) — one shared suffix rather
   // than repeating "hr"/"min" on each side.
-  if (min < 1 && max < 1) return `${Math.round(min * 60)}–${Math.round(max * 60)} min`;
+  if (min < 1 && max < 1) return `${Math.round(min * 60)} – ${Math.round(max * 60)} min`;
   if (min >= 1 && max >= 1) {
     const fmt = (h: number) => (h % 1 === 0 ? h : h.toFixed(1));
-    return `${fmt(min)}–${fmt(max)} hr`;
+    return `${fmt(min)} – ${fmt(max)} hr`;
   }
   return `${oneVisitTime(min)} – ${oneVisitTime(max)}`;
 }
@@ -91,23 +233,24 @@ export function formatSpotCost(spot: Spot): string {
 
 export const SPOTS: Spot[] = [
   // NYC
-  { id: 'nyc-1', destinationId: 'nyc', name: 'Times Square', icon: '🎭', coordinates: { latitude: 40.7580, longitude: -73.9855 }, category: 'landmark', bio: 'The dazzling neon heart of Manhattan, where Broadway meets a million lights and the crowds never thin.', hours: 'Open 24 hours', visitHoursMin: 1, visitHoursMax: 1.5, free: true },
-  { id: 'nyc-2', destinationId: 'nyc', name: 'Central Park', icon: '🌳', coordinates: { latitude: 40.7851, longitude: -73.9683 }, category: 'nature', bio: '843 acres of meadows, lakes, and wooded paths carved into the middle of the city grid.', hours: '6:00 AM – 1:00 AM', visitHoursMin: 2, visitHoursMax: 3, free: true },
+  { id: 'nyc-1', destinationId: 'nyc', name: 'Times Square', icon: '🎭', coordinates: { latitude: 40.7580, longitude: -73.9855 }, category: 'landmark', bio: 'The dazzling neon heart of Manhattan, where Broadway meets a million lights and the crowds never thin.', hours: 'Open 24 hours', visitHoursMin: 1, visitHoursMax: 1.5, free: true, ticketUrl: 'https://www.timessquarenyc.org' },
+  { id: 'nyc-2', destinationId: 'nyc', name: 'Central Park', icon: '🌳', coordinates: { latitude: 40.7851, longitude: -73.9683 }, category: 'nature', bio: '843 acres of meadows, lakes, and wooded paths carved into the middle of the city grid.', hours: '6:00 AM – 1:00 AM', visitHoursMin: 2, visitHoursMax: 3, free: true, ticketUrl: 'https://www.centralparknyc.org' },
   { id: 'nyc-3', destinationId: 'nyc', name: 'Empire State Building', icon: '🏙️', coordinates: { latitude: 40.7484, longitude: -73.9967 }, category: 'viewpoint', bio: 'The Art Deco icon whose 86th-floor deck offers the definitive Manhattan panorama.', hours: '10:00 AM – 10:00 PM', visitHoursMin: 1, visitHoursMax: 2, costMin: 44, costMax: 79, ticketUrl: 'https://www.esbnyc.com' },
   // Los Angeles
-  { id: 'la-1', destinationId: 'la', name: 'Hollywood Sign', icon: '🎬', coordinates: { latitude: 34.1341, longitude: -118.3215 }, category: 'landmark', bio: 'The 45-foot white letters on Mount Lee that have symbolized movie-making dreams since 1923.', hours: 'Open 24 hours', visitHoursMin: 1.5, visitHoursMax: 2.5, free: true },
-  { id: 'la-2', destinationId: 'la', name: 'Santa Monica Pier', icon: '🎡', coordinates: { latitude: 34.0081, longitude: -118.4960 }, category: 'entertainment', bio: 'A century-old pier with a solar-powered Ferris wheel, arcade, and the end of Route 66.', hours: 'Open 24 hours', visitHoursMin: 1.5, visitHoursMax: 2.5, free: true },
+  { id: 'la-1', destinationId: 'la', name: 'Hollywood Sign', icon: '🎬', coordinates: { latitude: 34.1341, longitude: -118.3215 }, category: 'landmark', bio: 'The 45-foot white letters on Mount Lee that have symbolized movie-making dreams since 1923.', hours: 'Open 24 hours', visitHoursMin: 1.5, visitHoursMax: 2.5, free: true, ticketUrl: 'https://www.hollywoodsign.org' },
+  { id: 'la-2', destinationId: 'la', name: 'Santa Monica Pier', icon: '🎡', coordinates: { latitude: 34.0081, longitude: -118.4960 }, category: 'entertainment', bio: 'A century-old pier with a solar-powered Ferris wheel, arcade, and the end of Route 66.', hours: 'Open 24 hours', visitHoursMin: 1.5, visitHoursMax: 2.5, free: true, ticketUrl: 'https://www.santamonicapier.org' },
   { id: 'la-3', destinationId: 'la', name: 'Griffith Observatory', icon: '🔭', coordinates: { latitude: 34.1184, longitude: -118.3004 }, category: 'viewpoint', bio: 'A gleaming Art Deco observatory with telescopes, science halls, and sweeping views of the LA basin.', hours: '12:00 PM – 10:00 PM', visitHoursMin: 1.5, visitHoursMax: 2.5, closedDays: [1], free: true, ticketUrl: 'https://griffithobservatory.org' },
   // Grand Canyon
-  { id: 'grand-canyon-1', destinationId: 'grand-canyon', name: 'Mather Point', icon: '👁️', coordinates: { latitude: 36.0572, longitude: -112.1069 }, category: 'viewpoint', bio: 'The classic first look at the canyon, with a railed overlook reaching out over a mile of layered rock.', hours: 'Open 24 hours', visitHoursMin: 1, visitHoursMax: 1.5, free: true },
-  { id: 'grand-canyon-2', destinationId: 'grand-canyon', name: 'Bright Angel Trail', icon: '🥾', coordinates: { latitude: 36.0561, longitude: -112.1428 }, category: 'hike', bio: 'The most famous trail into the canyon, switchbacking down past rest houses toward the Colorado River.', hours: 'Open 24 hours', visitHoursMin: 3, visitHoursMax: 5, free: true },
-  { id: 'grand-canyon-3', destinationId: 'grand-canyon', name: 'Yavapai Point', icon: '🌅', coordinates: { latitude: 36.0660, longitude: -112.1019 }, category: 'viewpoint', bio: 'A panoramic overlook and geology museum with some of the finest sunset views on the South Rim.', hours: 'Open 24 hours', visitHoursMin: 1, visitHoursMax: 1.5, free: true },
+  { id: 'grand-canyon-1', destinationId: 'grand-canyon', name: 'Mather Point', icon: '👁️', coordinates: { latitude: 36.0572, longitude: -112.1069 }, category: 'viewpoint', bio: 'The classic first look at the canyon, with a railed overlook reaching out over a mile of layered rock.', hours: 'Open 24 hours', visitHoursMin: 1, visitHoursMax: 1.5, free: true, ticketUrl: 'https://www.nps.gov/grca' },
+  { id: 'grand-canyon-2', destinationId: 'grand-canyon', name: 'Bright Angel Trail', icon: '🥾', coordinates: { latitude: 36.0561, longitude: -112.1428 }, category: 'hike', bio: 'The most famous trail into the canyon, switchbacking down past rest houses toward the Colorado River.', hours: 'Open 24 hours', visitHoursMin: 3, visitHoursMax: 5, free: true, ticketUrl: 'https://www.nps.gov/grca' },
+  { id: 'grand-canyon-3', destinationId: 'grand-canyon', name: 'Yavapai Point', icon: '🌅', coordinates: { latitude: 36.0660, longitude: -112.1019 }, category: 'viewpoint', bio: 'A panoramic overlook and geology museum with some of the finest sunset views on the South Rim.', hours: 'Open 24 hours', visitHoursMin: 1, visitHoursMax: 1.5, free: true, ticketUrl: 'https://www.nps.gov/grca' },
   // Paris
   { id: 'paris-1', destinationId: 'paris', name: 'Eiffel Tower', icon: '🗼', coordinates: { latitude: 48.8584, longitude: 2.2945 }, category: 'monument', bio: "Gustave Eiffel's 330-metre iron lattice tower, the enduring symbol of Paris and its most visited monument.", hours: '9:30 AM – 11:45 PM', visitHoursMin: 2, visitHoursMax: 3, costMin: 13, costMax: 35, currency: 'EUR', ticketUrl: 'https://www.toureiffel.paris' },
-  { id: 'paris-2', destinationId: 'paris', name: 'The Louvre', icon: '🎨', coordinates: { latitude: 48.8606, longitude: 2.3376 }, category: 'museum', bio: "The world's largest art museum, home to the Mona Lisa, Venus de Milo, and 35,000 works across former royal palaces.", hours: '9:00 AM – 6:00 PM', visitHoursMin: 2.5, visitHoursMax: 3.5, closedDays: [2], costMin: 22, costMax: 22, currency: 'EUR', ticketUrl: 'https://www.louvre.fr' },
-  { id: 'paris-3', destinationId: 'paris', name: 'Notre-Dame', icon: '⛪', coordinates: { latitude: 48.8530, longitude: 2.3499 }, category: 'religious', bio: 'The masterpiece of French Gothic architecture on the Île de la Cité, famed for its rose windows and flying buttresses.', hours: '8:00 AM – 6:45 PM', visitHoursMin: 1, visitHoursMax: 2, free: true },
+  { id: 'paris-2', destinationId: 'paris', name: 'The Louvre', icon: '🎨', coordinates: { latitude: 48.8606, longitude: 2.3376 }, category: 'museum', bio: "The world's largest art museum, home to the Mona Lisa, Venus de Milo, and 35,000 works across former royal palaces.", hours: '9:00 AM – 6:00 PM', visitHoursMin: 2.5, visitHoursMax: 3.5, closedDays: [2], costMin: 22, costMax: 22, currency: 'EUR', ticketUrl: 'https://www.louvre.fr',
+    specialClosures: [{ month: 1, day: 1, reason: "New Year's Day" }, { month: 5, day: 1, reason: 'Labour Day' }, { month: 12, day: 25, reason: 'Christmas Day' }] },
+  { id: 'paris-3', destinationId: 'paris', name: 'Notre-Dame', icon: '⛪', coordinates: { latitude: 48.8530, longitude: 2.3499 }, category: 'religious', bio: 'The masterpiece of French Gothic architecture on the Île de la Cité, famed for its rose windows and flying buttresses.', hours: '8:00 AM – 6:45 PM', visitHoursMin: 1, visitHoursMax: 2, free: true, ticketUrl: 'https://www.notredamedeparis.fr' },
   // London
-  { id: 'london-1', destinationId: 'london', name: 'Big Ben', icon: '🕰️', coordinates: { latitude: 51.5007, longitude: -0.1246 }, category: 'landmark', bio: 'The great clock tower of the Palace of Westminster, whose chimes have marked London time since 1859.', hours: 'Exterior viewing anytime', visitHoursMin: 0.5, visitHoursMax: 1, free: true },
+  { id: 'london-1', destinationId: 'london', name: 'Big Ben', icon: '🕰️', coordinates: { latitude: 51.5007, longitude: -0.1246 }, category: 'landmark', bio: 'The great clock tower of the Palace of Westminster, whose chimes have marked London time since 1859.', hours: 'Exterior viewing anytime', visitHoursMin: 0.5, visitHoursMax: 1, free: true, ticketUrl: 'https://www.parliament.uk/bigben' },
   { id: 'london-2', destinationId: 'london', name: 'Tower of London', icon: '🏰', coordinates: { latitude: 51.5081, longitude: -0.0759 }, category: 'historic', bio: 'A 1,000-year-old fortress, palace, and prison on the Thames, guarding the Crown Jewels and its famous ravens.', hours: '9:00 AM – 5:30 PM', visitHoursMin: 2.5, visitHoursMax: 3.5, costMin: 34, costMax: 40, currency: 'GBP', ticketUrl: 'https://www.hrp.org.uk/tower-of-london' },
   { id: 'london-3', destinationId: 'london', name: 'Buckingham Palace', icon: '👑', coordinates: { latitude: 51.5014, longitude: -0.1419 }, category: 'landmark', bio: 'The London residence of the British monarch, famed for its balcony and the Changing of the Guard ceremony.', hours: '9:30 AM – 7:30 PM (summer)', visitHoursMin: 1.5, visitHoursMax: 2.5, costMin: 32, costMax: 37, currency: 'GBP', ticketUrl: 'https://www.rct.uk' },
   // Rome
@@ -117,7 +260,7 @@ export const SPOTS: Spot[] = [
   // Barcelona
   { id: 'barcelona-1', destinationId: 'barcelona', name: 'Sagrada Família', icon: '⛪', coordinates: { latitude: 41.4036, longitude: 2.1744 }, category: 'religious', bio: "Gaudí's unfinished basilica, a soaring forest of stone columns under construction since 1882.", hours: '9:00 AM – 8:00 PM', visitHoursMin: 1.5, visitHoursMax: 2.5, costMin: 26, costMax: 40, currency: 'EUR', ticketUrl: 'https://sagradafamilia.org' },
   { id: 'barcelona-2', destinationId: 'barcelona', name: 'Park Güell', icon: '🦎', coordinates: { latitude: 41.4145, longitude: 2.1527 }, category: 'landmark', bio: "Gaudí's whimsical hillside park of mosaic serpents, gingerbread pavilions, and city views.", hours: '9:30 AM – 7:30 PM', visitHoursMin: 1.5, visitHoursMax: 2.5, costMin: 10, costMax: 13, currency: 'EUR', ticketUrl: 'https://parkguell.barcelona' },
-  { id: 'barcelona-3', destinationId: 'barcelona', name: 'La Boqueria', icon: '🍅', coordinates: { latitude: 41.3817, longitude: 2.1718 }, category: 'market', bio: "Barcelona's legendary public market off La Rambla, bursting with jamón, seafood, and fruit stalls.", hours: '8:00 AM – 8:30 PM', visitHoursMin: 1, visitHoursMax: 1.5, closedDays: [0], free: true },
+  { id: 'barcelona-3', destinationId: 'barcelona', name: 'La Boqueria', icon: '🍅', coordinates: { latitude: 41.3817, longitude: 2.1718 }, category: 'market', bio: "Barcelona's legendary public market off La Rambla, bursting with jamón, seafood, and fruit stalls.", hours: '8:00 AM – 8:30 PM', visitHoursMin: 1, visitHoursMax: 1.5, closedDays: [0], free: true, ticketUrl: 'https://www.boqueria.barcelona' },
   // Amsterdam
   { id: 'amsterdam-1', destinationId: 'amsterdam', name: 'Rijksmuseum', icon: '🎨', coordinates: { latitude: 52.3600, longitude: 4.8852 }, category: 'museum', bio: 'The Dutch national museum, home to Rembrandt\'s Night Watch and centuries of Golden Age masterpieces.', hours: '9:00 AM – 5:00 PM', visitHoursMin: 2.5, visitHoursMax: 3.5, costMin: 24, costMax: 24, currency: 'EUR', ticketUrl: 'https://www.rijksmuseum.nl' },
   { id: 'amsterdam-2', destinationId: 'amsterdam', name: "Anne Frank's House", icon: '📖', coordinates: { latitude: 52.3752, longitude: 4.8840 }, category: 'historic', bio: 'The canal-house annex where Anne Frank hid and wrote her diary, now a deeply moving museum.', hours: '9:00 AM – 10:00 PM', visitHoursMin: 1, visitHoursMax: 2, costMin: 18, costMax: 18, currency: 'EUR', ticketUrl: 'https://www.annefrank.org' },
@@ -134,8 +277,8 @@ export const SPOTS: Spot[] = [
   { id: 'nice-1', destinationId: 'nice', name: 'Promenade des Anglais', icon: '🌊', coordinates: { latitude: 43.6955, longitude: 7.2648 }, category: 'landmark', bio: 'The grand seaside boulevard curving along the Baie des Anges, lined with palms and Belle Époque hotels.', hours: 'Open 24 hours', visitHoursMin: 1, visitHoursMax: 2, free: true },
   { id: 'nice-2', destinationId: 'nice', name: 'Vieux-Nice Old Town', icon: '🏠', coordinates: { latitude: 43.6961, longitude: 7.2757 }, category: 'historic', bio: 'A maze of ochre lanes, Baroque churches, and market squares that form the soul of old Nice.', hours: 'Open 24 hours', visitHoursMin: 1.5, visitHoursMax: 2.5, free: true },
   // Lyon
-  { id: 'lyon-1', destinationId: 'lyon', name: 'Basilica of Fourvière', icon: '⛪', coordinates: { latitude: 45.7624, longitude: 4.8222 }, category: 'religious', bio: 'An ornate 19th-century basilica crowning Fourvière hill, with mosaics inside and city panoramas outside.', hours: '8:00 AM – 7:00 PM', visitHoursMin: 1, visitHoursMax: 2, free: true },
-  { id: 'lyon-2', destinationId: 'lyon', name: 'Les Halles Paul Bocuse', icon: '🥩', coordinates: { latitude: 45.7651, longitude: 4.8586 }, category: 'market', bio: "Lyon's temple of gastronomy, an indoor market of celebrated cheesemongers, charcutiers, and traiteurs.", hours: '7:00 AM – 7:00 PM', visitHoursMin: 1, visitHoursMax: 1.5, closedDays: [1], free: true },
+  { id: 'lyon-1', destinationId: 'lyon', name: 'Basilica of Fourvière', icon: '⛪', coordinates: { latitude: 45.7624, longitude: 4.8222 }, category: 'religious', bio: 'An ornate 19th-century basilica crowning Fourvière hill, with mosaics inside and city panoramas outside.', hours: '8:00 AM – 7:00 PM', visitHoursMin: 1, visitHoursMax: 2, free: true, ticketUrl: 'https://www.fourviere.org' },
+  { id: 'lyon-2', destinationId: 'lyon', name: 'Les Halles Paul Bocuse', icon: '🥩', coordinates: { latitude: 45.7651, longitude: 4.8586 }, category: 'market', bio: "Lyon's temple of gastronomy, an indoor market of celebrated cheesemongers, charcutiers, and traiteurs.", hours: '7:00 AM – 7:00 PM', visitHoursMin: 1, visitHoursMax: 1.5, closedDays: [1], free: true, ticketUrl: 'https://www.halles-de-lyon-paulbocuse.com' },
   // Edinburgh
   { id: 'edinburgh-1', destinationId: 'edinburgh', name: 'Edinburgh Castle', icon: '🏰', coordinates: { latitude: 55.9486, longitude: -3.1999 }, category: 'historic', bio: 'An ancient fortress atop volcanic Castle Rock, guarding the Scottish Crown Jewels and the Stone of Destiny.', hours: '9:30 AM – 6:00 PM', visitHoursMin: 2, visitHoursMax: 3, costMin: 19, costMax: 26, currency: 'GBP', ticketUrl: 'https://www.edinburghcastle.scot' },
   { id: 'edinburgh-2', destinationId: 'edinburgh', name: "Arthur's Seat", icon: '⛰️', coordinates: { latitude: 55.9444, longitude: -3.1617 }, category: 'hike', bio: 'An extinct volcano rising 251 metres above the city, offering the finest walk-up view in Edinburgh.', hours: 'Open 24 hours', visitHoursMin: 2, visitHoursMax: 3, free: true },
@@ -156,7 +299,7 @@ export const SPOTS: Spot[] = [
   { id: 'mykonos-2', destinationId: 'mykonos', name: 'Little Venice', icon: '🌊', coordinates: { latitude: 37.4456, longitude: 25.3261 }, category: 'viewpoint', bio: 'A row of colourful merchant houses perched at the water\'s edge, famous for cocktails at sunset.', hours: 'Open 24 hours', visitHoursMin: 1, visitHoursMax: 2, free: true },
   // Berlin
   { id: 'berlin-1', destinationId: 'berlin', name: 'Brandenburg Gate', icon: '🏛️', coordinates: { latitude: 52.5163, longitude: 13.3777 }, category: 'monument', bio: 'The neoclassical 18th-century gate that became the symbol of a divided — then reunited — Germany.', hours: 'Open 24 hours', visitHoursMin: 0.5, visitHoursMax: 1, free: true },
-  { id: 'berlin-2', destinationId: 'berlin', name: 'Berlin Wall Memorial', icon: '🧱', coordinates: { latitude: 52.5352, longitude: 13.3902 }, category: 'historic', bio: 'A preserved stretch of the Wall with a documentation centre, memorializing the city\'s Cold War division.', hours: '8:00 AM – 10:00 PM', visitHoursMin: 1, visitHoursMax: 2, free: true },
+  { id: 'berlin-2', destinationId: 'berlin', name: 'Berlin Wall Memorial', icon: '🧱', coordinates: { latitude: 52.5352, longitude: 13.3902 }, category: 'historic', bio: 'A preserved stretch of the Wall with a documentation centre, memorializing the city\'s Cold War division.', hours: '8:00 AM – 10:00 PM', visitHoursMin: 1, visitHoursMax: 2, free: true, ticketUrl: 'https://www.stiftung-berliner-mauer.de' },
   // Munich
   { id: 'munich-1', destinationId: 'munich', name: 'Marienplatz', icon: '🏙️', coordinates: { latitude: 48.1374, longitude: 11.5755 }, category: 'landmark', bio: "Munich's central square since 1158, dominated by the New Town Hall and its famous Glockenspiel.", hours: 'Open 24 hours', visitHoursMin: 1, visitHoursMax: 1.5, free: true },
   { id: 'munich-2', destinationId: 'munich', name: 'English Garden', icon: '🌳', coordinates: { latitude: 48.1642, longitude: 11.6050 }, category: 'nature', bio: 'One of the world\'s largest urban parks, with beer gardens, a Chinese tower, and a river-surfing wave.', hours: 'Open 24 hours', visitHoursMin: 1.5, visitHoursMax: 2.5, free: true },
@@ -189,7 +332,7 @@ export const SPOTS: Spot[] = [
   { id: 'dublin-2', destinationId: 'dublin', name: 'Guinness Storehouse', icon: '🍺', coordinates: { latitude: 53.3419, longitude: -6.2868 }, category: 'entertainment', bio: 'A seven-storey pint-shaped museum of Ireland\'s most famous stout, topped by the panoramic Gravity Bar.', hours: '9:30 AM – 7:00 PM', visitHoursMin: 1.5, visitHoursMax: 2.5, costMin: 28, costMax: 35, currency: 'EUR', ticketUrl: 'https://www.guinness-storehouse.com' },
   // Cliffs of Moher
   { id: 'cliffs-of-moher-1', destinationId: 'cliffs-of-moher', name: "O'Brien's Tower", icon: '🗼', coordinates: { latitude: 52.9722, longitude: -9.4272 }, category: 'viewpoint', bio: 'A 19th-century stone tower at the cliffs\' highest point, with views to the Aran Islands and Galway Bay.', hours: '9:00 AM – 5:00 PM', visitHoursMin: 1, visitHoursMax: 1.5, costMin: 10, costMax: 10, currency: 'EUR', ticketUrl: 'https://www.cliffsofmoher.ie' },
-  { id: 'cliffs-of-moher-2', destinationId: 'cliffs-of-moher', name: "Hag's Head", icon: '🌊', coordinates: { latitude: 52.9421, longitude: -9.4608 }, category: 'hike', bio: 'The dramatic southern promontory of the cliffs, reached by a wild coastal trail away from the crowds.', hours: 'Open 24 hours', visitHoursMin: 1.5, visitHoursMax: 2.5, free: true },
+  { id: 'cliffs-of-moher-2', destinationId: 'cliffs-of-moher', name: "Hag's Head", icon: '🌊', coordinates: { latitude: 52.9421, longitude: -9.4608 }, category: 'hike', bio: 'The dramatic southern promontory of the cliffs, reached by a wild coastal trail away from the crowds.', hours: 'Open 24 hours', visitHoursMin: 1.5, visitHoursMax: 2.5, free: true, ticketUrl: 'https://www.cliffsofmoher.ie' },
   // Stockholm
   { id: 'stockholm-1', destinationId: 'stockholm', name: 'Gamla Stan', icon: '🏘️', coordinates: { latitude: 59.3230, longitude: 18.0710 }, category: 'historic', bio: 'One of Europe\'s best-preserved medieval old towns, an island of cobbled lanes and ochre merchant houses.', hours: 'Open 24 hours', visitHoursMin: 1.5, visitHoursMax: 2.5, free: true },
   { id: 'stockholm-2', destinationId: 'stockholm', name: 'Vasa Museum', icon: '⛵', coordinates: { latitude: 59.3280, longitude: 18.0914 }, category: 'museum', bio: 'Home to a fully intact 17th-century warship salvaged after 333 years on the harbour floor.', hours: '10:00 AM – 5:00 PM', visitHoursMin: 1, visitHoursMax: 2, costMin: 190, costMax: 190, currency: 'SEK', ticketUrl: 'https://www.vasamuseet.se' },
@@ -201,16 +344,16 @@ export const SPOTS: Spot[] = [
   { id: 'bergen-2', destinationId: 'bergen', name: 'Fløibanen Funicular', icon: '🚡', coordinates: { latitude: 60.3961, longitude: 5.3269 }, category: 'viewpoint', bio: 'A funicular climbing Mount Fløyen for sweeping views over Bergen, its fjords, and surrounding peaks.', hours: '7:30 AM – 11:00 PM', visitHoursMin: 1, visitHoursMax: 2, costMin: 160, costMax: 190, currency: 'NOK', ticketUrl: 'https://www.floyen.no' },
   // Norwegian Fjords
   { id: 'norwegian-fjords-1', destinationId: 'norwegian-fjords', name: 'Geirangerfjord', icon: '⛰️', coordinates: { latitude: 62.1046, longitude: 7.2058 }, category: 'nature', bio: 'A UNESCO fjord of sheer cliffs and cascading waterfalls, among the most beautiful in the world.', hours: 'Open 24 hours', visitHoursMin: 2.5, visitHoursMax: 3.5, free: true },
-  { id: 'norwegian-fjords-2', destinationId: 'norwegian-fjords', name: 'Preikestolen', icon: '🪨', coordinates: { latitude: 58.9868, longitude: 6.1894 }, category: 'hike', bio: 'The Pulpit Rock, a flat cliff plateau towering 604m above Lysefjord — Norway\'s most iconic hike.', hours: 'Open 24 hours', visitHoursMin: 3, visitHoursMax: 5, free: true },
+  { id: 'norwegian-fjords-2', destinationId: 'norwegian-fjords', name: 'Preikestolen', icon: '🪨', coordinates: { latitude: 58.9868, longitude: 6.1894 }, category: 'hike', bio: 'The Pulpit Rock, a flat cliff plateau towering 604m above Lysefjord — Norway\'s most iconic hike.', hours: 'Open 24 hours', visitHoursMin: 3, visitHoursMax: 5, free: true, ticketUrl: 'https://www.preikestolen.no' },
   // Copenhagen
   { id: 'copenhagen-1', destinationId: 'copenhagen', name: 'Nyhavn', icon: '⛵', coordinates: { latitude: 55.6796, longitude: 12.5910 }, category: 'landmark', bio: 'The postcard-perfect 17th-century canal lined with candy-coloured townhouses and wooden ships.', hours: 'Open 24 hours', visitHoursMin: 1, visitHoursMax: 2, free: true },
   { id: 'copenhagen-2', destinationId: 'copenhagen', name: 'Tivoli Gardens', icon: '🎡', coordinates: { latitude: 55.6736, longitude: 12.5681 }, category: 'entertainment', bio: 'The world\'s second-oldest amusement park, an 1843 wonderland of gardens, rides, and evening lights.', hours: '11:00 AM – 11:00 PM (seasonal)', visitHoursMin: 2.5, visitHoursMax: 3.5, costMin: 195, costMax: 235, currency: 'DKK', ticketUrl: 'https://www.tivoli.dk' },
   // Aarhus
   { id: 'aarhus-1', destinationId: 'aarhus', name: 'ARoS Art Museum', icon: '🌈', coordinates: { latitude: 56.1543, longitude: 10.2005 }, category: 'museum', bio: 'A landmark museum crowned by Your Rainbow Panorama, a circular walkway of coloured glass over the city.', hours: '10:00 AM – 5:00 PM', visitHoursMin: 1.5, visitHoursMax: 2.5, closedDays: [1], costMin: 140, costMax: 140, currency: 'DKK', ticketUrl: 'https://www.aros.dk' },
-  { id: 'aarhus-2', destinationId: 'aarhus', name: 'Aarhus Cathedral', icon: '⛪', coordinates: { latitude: 56.1575, longitude: 10.2113 }, category: 'religious', bio: 'Denmark\'s longest and tallest cathedral, a Gothic landmark with medieval frescoes and a soaring nave.', hours: '10:00 AM – 4:00 PM', visitHoursMin: 1, visitHoursMax: 1.5, free: true },
+  { id: 'aarhus-2', destinationId: 'aarhus', name: 'Aarhus Cathedral', icon: '⛪', coordinates: { latitude: 56.1575, longitude: 10.2113 }, category: 'religious', bio: 'Denmark\'s longest and tallest cathedral, a Gothic landmark with medieval frescoes and a soaring nave.', hours: '10:00 AM – 4:00 PM', visitHoursMin: 1, visitHoursMax: 1.5, free: true, ticketUrl: 'https://www.aarhusdomkirke.dk' },
   // Helsinki
   { id: 'helsinki-1', destinationId: 'helsinki', name: 'Helsinki Cathedral', icon: '⛪', coordinates: { latitude: 60.1699, longitude: 24.9523 }, category: 'religious', bio: 'A dazzling white neoclassical cathedral presiding over Senate Square, the symbol of Helsinki.', hours: '9:00 AM – 6:00 PM', visitHoursMin: 1, visitHoursMax: 1.5, free: true },
-  { id: 'helsinki-2', destinationId: 'helsinki', name: 'Suomenlinna Fortress', icon: '🏰', coordinates: { latitude: 60.1454, longitude: 24.9881 }, category: 'historic', bio: 'A UNESCO sea fortress spread across islands, reached by ferry and dotted with tunnels and ramparts.', hours: 'Open 24 hours', visitHoursMin: 2.5, visitHoursMax: 3.5, free: true },
+  { id: 'helsinki-2', destinationId: 'helsinki', name: 'Suomenlinna Fortress', icon: '🏰', coordinates: { latitude: 60.1454, longitude: 24.9881 }, category: 'historic', bio: 'A UNESCO sea fortress spread across islands, reached by ferry and dotted with tunnels and ramparts.', hours: 'Open 24 hours', visitHoursMin: 2.5, visitHoursMax: 3.5, free: true, ticketUrl: 'https://www.suomenlinna.fi' },
   // Rovaniemi
   { id: 'rovaniemi-1', destinationId: 'rovaniemi', name: 'Santa Claus Village', icon: '🎅', coordinates: { latitude: 66.5436, longitude: 25.8468 }, category: 'entertainment', bio: 'A festive village straddling the Arctic Circle, home to Santa\'s office and the main post office year-round.', hours: '10:00 AM – 5:00 PM', visitHoursMin: 2, visitHoursMax: 3, free: true, ticketUrl: 'https://santaclausvillage.info' },
   { id: 'rovaniemi-2', destinationId: 'rovaniemi', name: 'Arktikum Museum', icon: '🌌', coordinates: { latitude: 66.5089, longitude: 25.7246 }, category: 'museum', bio: 'A striking glass-tunnel museum exploring Arctic nature, Lapland culture, and the science of the aurora.', hours: '10:00 AM – 6:00 PM', visitHoursMin: 1.5, visitHoursMax: 2.5, costMin: 16, costMax: 16, currency: 'EUR', ticketUrl: 'https://www.arktikum.fi' },
@@ -221,11 +364,11 @@ export const SPOTS: Spot[] = [
   { id: 'golden-circle-1', destinationId: 'golden-circle', name: 'Geysir Hot Spring', icon: '💨', coordinates: { latitude: 64.3121, longitude: -20.3020 }, category: 'nature', bio: 'The geothermal field that gave geysers their name, where Strokkur erupts skyward every few minutes.', hours: 'Open 24 hours', visitHoursMin: 1, visitHoursMax: 1.5, free: true },
   { id: 'golden-circle-2', destinationId: 'golden-circle', name: 'Gullfoss Waterfall', icon: '💧', coordinates: { latitude: 64.3270, longitude: -20.1200 }, category: 'nature', bio: 'The "Golden Falls", a thunderous two-tier cascade plunging into a rugged glacial canyon.', hours: 'Open 24 hours', visitHoursMin: 1, visitHoursMax: 1.5, free: true },
   // Tokyo
-  { id: 'tokyo-1', destinationId: 'tokyo', name: 'Senso-ji Temple', icon: '⛩️', coordinates: { latitude: 35.7148, longitude: 139.7967 }, category: 'religious', bio: "Tokyo's oldest temple, approached through the lantern-hung Thunder Gate and a lively market street.", hours: '6:00 AM – 5:00 PM', visitHoursMin: 1, visitHoursMax: 2, free: true },
+  { id: 'tokyo-1', destinationId: 'tokyo', name: 'Senso-ji Temple', icon: '⛩️', coordinates: { latitude: 35.7148, longitude: 139.7967 }, category: 'religious', bio: "Tokyo's oldest temple, approached through the lantern-hung Thunder Gate and a lively market street.", hours: '6:00 AM – 5:00 PM', visitHoursMin: 1, visitHoursMax: 2, free: true, ticketUrl: 'https://www.senso-ji.jp' },
   { id: 'tokyo-2', destinationId: 'tokyo', name: 'Shibuya Crossing', icon: '🚦', coordinates: { latitude: 35.6595, longitude: 139.7004 }, category: 'landmark', bio: 'The world\'s busiest pedestrian scramble, a mesmerizing surge of thousands beneath giant screens.', hours: 'Open 24 hours', visitHoursMin: 0.5, visitHoursMax: 1, free: true },
   { id: 'tokyo-3', destinationId: 'tokyo', name: 'Tokyo Tower', icon: '📡', coordinates: { latitude: 35.6586, longitude: 139.7454 }, category: 'viewpoint', bio: 'A 333m red-and-white broadcasting tower inspired by the Eiffel, with observation decks over the city.', hours: '9:00 AM – 11:00 PM', visitHoursMin: 1, visitHoursMax: 2, costMin: 1200, costMax: 3000, currency: 'JPY', ticketUrl: 'https://www.tokyotower.co.jp' },
   // Kyoto
-  { id: 'kyoto-1', destinationId: 'kyoto', name: 'Fushimi Inari Shrine', icon: '⛩️', coordinates: { latitude: 34.9671, longitude: 135.7727 }, category: 'religious', bio: 'A mountainside shrine famed for thousands of vermilion torii gates forming tunnels up the hillside.', hours: 'Open 24 hours', visitHoursMin: 2, visitHoursMax: 3, free: true },
+  { id: 'kyoto-1', destinationId: 'kyoto', name: 'Fushimi Inari Shrine', icon: '⛩️', coordinates: { latitude: 34.9671, longitude: 135.7727 }, category: 'religious', bio: 'A mountainside shrine famed for thousands of vermilion torii gates forming tunnels up the hillside.', hours: 'Open 24 hours', visitHoursMin: 2, visitHoursMax: 3, free: true, ticketUrl: 'https://inari.jp' },
   { id: 'kyoto-2', destinationId: 'kyoto', name: 'Arashiyama Bamboo', icon: '🎋', coordinates: { latitude: 35.0094, longitude: 135.6706 }, category: 'nature', bio: 'A dreamlike grove where towering bamboo stalks sway and creak, filtering the light to a green glow.', hours: 'Open 24 hours', visitHoursMin: 1, visitHoursMax: 1.5, free: true },
   { id: 'kyoto-3', destinationId: 'kyoto', name: 'Kinkaku-ji', icon: '🥇', coordinates: { latitude: 35.0394, longitude: 135.7292 }, category: 'religious', bio: 'The Golden Pavilion, a Zen temple sheathed in gold leaf and mirrored in its tranquil reflecting pond.', hours: '9:00 AM – 5:00 PM', visitHoursMin: 1, visitHoursMax: 1.5, costMin: 500, costMax: 500, currency: 'JPY', ticketUrl: 'https://www.shokoku-ji.jp' },
   // Osaka
