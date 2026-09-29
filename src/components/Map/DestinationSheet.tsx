@@ -41,8 +41,8 @@ import ClimateDetailModal from './ClimateDetailModal';
 import { MONTHS_SHORT } from '../../utils/travelData';
 import { getCrowdMeta } from '../../utils/climateApi';
 import {
-  parseDateStr, fmtVisitRange, fmtVisitRangeShort,
-  WheelCol, DatePickerModal, VisitDateRangeModal, PhotoCollage, ReviewEditModal, dedupeNewPhotos,
+  parseDateStr, fmtVisitRange, fmtVisitRangeShort, visitDayCount, notePhotoGridScroll,
+  WheelCol, DatePickerModal, VisitDateRangeModal, PhotoCollage, PhotoGalleryModal, ReviewEditModal, dedupeNewPhotos,
 } from './sheetShared';
 
 const { height: H, width: W } = Dimensions.get('window');
@@ -135,6 +135,10 @@ function VisitModuleSheet({ destination, visit, spots, onSave, onDelete, onClose
   const [endDate,     setEndDate    ] = useState<string | undefined>(visit?.endDate);
   const [spotIds,     setSpotIds    ] = useState<Set<string>>(new Set(visit?.spotIds ?? []));
   const [localPhotos, setLocalPhotos] = useState<PhotoEntry[]>(visit?.photos ?? []);
+  // True while a photo drag is in progress in the grid below — disables this whole page's own
+  // ScrollView for that window (see the ScrollView prop below), since it was otherwise free to
+  // recognize a large drag movement as its own scroll and cancel the tile's drag gesture mid-way.
+  const [photoDragActive, setPhotoDragActive] = useState(false);
   const [localNotes,  setLocalNotes ] = useState(visit?.notes ?? '');
   const [editingDates,     setEditingDates    ] = useState(false);
   const [showReviewEditor, setShowReviewEditor] = useState(false);
@@ -146,26 +150,28 @@ function VisitModuleSheet({ destination, visit, spots, onSave, onDelete, onClose
   const TITLE_LINE_H = 25, TITLE_MAX_LINES = 2;
   const titleInputRef = useRef<TextInput>(null);
 
-  const commit = (patch: Partial<{ title: string; startDate: string; endDate?: string; spotIds: string[]; photos: PhotoEntry[]; notes: string }>) => {
-    const nextTitle   = patch.title      !== undefined ? patch.title      : title;
-    const nextStart   = patch.startDate  !== undefined ? patch.startDate  : startDate;
-    const nextEnd     = 'endDate' in patch              ? patch.endDate    : endDate;
-    const nextSpotIds = patch.spotIds    !== undefined ? patch.spotIds    : Array.from(spotIds);
-    const nextPhotos  = patch.photos     !== undefined ? patch.photos     : localPhotos;
-    const nextNotes   = patch.notes      !== undefined ? patch.notes      : localNotes;
-    onSave({
-      id: idRef.current,
-      // Saved as the real title when the user never typed one (not left blank for some other
-      // component to guess a fallback later) — matches the placeholder text itself, so what
-      // you see before typing is exactly what gets saved if you don't.
-      title: nextTitle.trim() || `${destination.name} Trip`,
-      startDate: nextStart,
-      endDate: nextEnd,
-      spotIds: nextSpotIds.length ? nextSpotIds : undefined,
-      photos: nextPhotos.length ? nextPhotos : undefined,
-      notes: nextNotes || undefined,
-    });
+  // Not persisted until Save (see handleSave) — every field setter below calls this right
+  // alongside its own setState, so it doubles as "something changed" tracking for the X
+  // button's discard-changes prompt (handleClose). Kept as a ref, not state: it only needs to
+  // be read once, at close/save time, so there's no reason to re-render on every keystroke.
+  const dirtyRef = useRef(false);
+  const commit = () => {
+    dirtyRef.current = true;
   };
+  // Builds the persisted Visit shape from current draft state — called only at actual Save
+  // time now (see handleSave), not on every field edit.
+  const buildVisit = (): Visit => ({
+    id: idRef.current,
+    // Saved as the real title when the user never typed one (not left blank for some other
+    // component to guess a fallback later) — matches the placeholder text itself, so what
+    // you see before typing is exactly what gets saved if you don't.
+    title: title.trim() || `${destination.name} Trip`,
+    startDate,
+    endDate,
+    spotIds: spotIds.size ? Array.from(spotIds) : undefined,
+    photos: localPhotos.length ? localPhotos : undefined,
+    notes: localNotes || undefined,
+  });
 
   // Checking a spot off marks it visited destination-wide too (consistent with how
   // "visited" works everywhere else in the app), but unchecking only removes it from THIS
@@ -176,19 +182,8 @@ function VisitModuleSheet({ destination, visit, spots, onSave, onDelete, onClose
     if (next.has(spotId)) next.delete(spotId);
     else { next.add(spotId); saveSpotVisited(spotId, destination.id); }
     setSpotIds(next);
-    commit({ spotIds: Array.from(next) });
+    commit();
   };
-
-  // A brand new module gets created (with today's date as a starting default) the instant
-  // this sheet opens — like starting a new recording — so it exists as its own module
-  // right away rather than waiting for the first field edit.
-  const committedOnMount = useRef(false);
-  useEffect(() => {
-    if (!visit && !committedOnMount.current) {
-      committedOnMount.current = true;
-      commit({});
-    }
-  }, []);
 
   const slide = useRef(new Animated.Value(H)).current;
   useEffect(() => {
@@ -196,6 +191,26 @@ function VisitModuleSheet({ destination, visit, spots, onSave, onDelete, onClose
   }, []);
   const dismiss = () => {
     Animated.timing(slide, { toValue: H, duration: 280, useNativeDriver: true }).start(onClose);
+  };
+  // The Save button — persists the draft for real, then closes. Always unconditional: tapping
+  // Save always means "commit these edits," never needs the discard-changes check below.
+  const handleSave = () => {
+    onSave(buildVisit());
+    dirtyRef.current = false;
+    dismiss();
+  };
+  // The X button — closes WITHOUT persisting, so anything edited since opening (or since the
+  // last Save) needs a confirmation first, since it would otherwise be silently lost.
+  const handleClose = () => {
+    if (!dirtyRef.current) { dismiss(); return; }
+    Alert.alert(
+      'Discard changes?',
+      'You have unsaved changes to this trip.',
+      [
+        { text: 'Keep Editing', style: 'cancel' },
+        { text: 'Discard', style: 'destructive', onPress: dismiss },
+      ]
+    );
   };
 
   const handleAddPhoto = async () => {
@@ -218,13 +233,17 @@ function VisitModuleSheet({ destination, visit, spots, onSave, onDelete, onClose
       }
       const updated = [...localPhotos, ...newEntries];
       setLocalPhotos(updated);
-      commit({ photos: updated });
+      commit();
     }
   };
   const handleDeletePhoto = (index: number) => {
     const updated = localPhotos.filter((_, i) => i !== index);
     setLocalPhotos(updated);
-    commit({ photos: updated });
+    commit();
+  };
+  const handleReorderPhotos = (reordered: PhotoEntry[]) => {
+    setLocalPhotos(reordered);
+    commit();
   };
 
   const handleDelete = () => {
@@ -253,7 +272,7 @@ function VisitModuleSheet({ destination, visit, spots, onSave, onDelete, onClose
 
         {/* Header — title doubles as this module's own trip-name field. */}
         <View style={[esS.header, { paddingTop: insets.top + 10 }]}>
-          <Pressable onPress={dismiss} style={esS.closeBtn} hitSlop={12}>
+          <Pressable onPress={handleClose} style={esS.closeBtn} hitSlop={12}>
             <X size={18} color="#111827" />
           </Pressable>
           <View style={esS.headerTitleEditWrap}>
@@ -270,7 +289,7 @@ function VisitModuleSheet({ destination, visit, spots, onSave, onDelete, onClose
                 const hadNewline = text.includes('\n');
                 const clean = hadNewline ? text.replace(/\n/g, '') : text;
                 setTitle(clean);
-                commit({ title: clean });
+                commit();
                 if (hadNewline) titleInputRef.current?.blur();
               }}
               onContentSizeChange={e => setTitleInputHeight(e.nativeEvent.contentSize.height)}
@@ -288,7 +307,7 @@ function VisitModuleSheet({ destination, visit, spots, onSave, onDelete, onClose
               <Text style={esS.headerTitleHintTxt}>Tap to edit</Text>
             </View>
           </View>
-          <Pressable style={esS.headerSaveBtn} onPress={dismiss} hitSlop={8}>
+          <Pressable style={esS.headerSaveBtn} onPress={handleSave} hitSlop={8}>
             <Text style={esS.headerSaveBtnTxt}>Save</Text>
           </Pressable>
         </View>
@@ -306,6 +325,10 @@ function VisitModuleSheet({ destination, visit, spots, onSave, onDelete, onClose
             contentContainerStyle={esS.scrollContent}
             keyboardShouldPersistTaps="handled"
             showsVerticalScrollIndicator={false}
+            scrollEnabled={!photoDragActive}
+            scrollEventThrottle={16}
+            // A swipe that starts on a photo and scrolls this page must not open the photo viewer.
+            onScroll={notePhotoGridScroll}
           >
 
             {/* ── DATES ───────────────────────────────────────────── */}
@@ -322,6 +345,22 @@ function VisitModuleSheet({ destination, visit, spots, onSave, onDelete, onClose
                   <Text style={esS.editTxt}>Edit</Text>
                 </Pressable>
               </View>
+            </View>
+
+            {/* ── NOTES ───────────────────────────────────────────── */}
+            <View style={esS.section}>
+              <View style={esS.sectionHead}>
+                <Text style={esS.sectionTitle}>Notes</Text>
+              </View>
+              <Pressable style={esS.reviewPreview} onPress={() => setShowReviewEditor(true)}>
+                {localNotes
+                  ? <Text style={esS.reviewPreviewTxt}>{localNotes}</Text>
+                  : <Text style={esS.reviewPreviewPh}>Write about your trip…</Text>}
+                <View style={esS.reviewEditHint}>
+                  <Pencil size={11} color="#9CA3AF" />
+                  <Text style={esS.reviewEditHintTxt}>Tap to edit</Text>
+                </View>
+              </Pressable>
             </View>
 
             {/* ── SPOTS VISITED ───────────────────────────────────── */}
@@ -381,23 +420,7 @@ function VisitModuleSheet({ destination, visit, spots, onSave, onDelete, onClose
                   </Pressable>
                 )}
               </View>
-              <PhotoCollage photos={localPhotos} onAdd={handleAddPhoto} onDelete={handleDeletePhoto} hideAddMore />
-            </View>
-
-            {/* ── NOTES ───────────────────────────────────────────── */}
-            <View style={esS.section}>
-              <View style={esS.sectionHead}>
-                <Text style={esS.sectionTitle}>Notes</Text>
-              </View>
-              <Pressable style={esS.reviewPreview} onPress={() => setShowReviewEditor(true)}>
-                {localNotes
-                  ? <Text style={esS.reviewPreviewTxt}>{localNotes}</Text>
-                  : <Text style={esS.reviewPreviewPh}>Write about your trip…</Text>}
-                <View style={esS.reviewEditHint}>
-                  <Pencil size={11} color="#9CA3AF" />
-                  <Text style={esS.reviewEditHintTxt}>Tap to edit</Text>
-                </View>
-              </Pressable>
+              <PhotoCollage photos={localPhotos} onAdd={handleAddPhoto} onDelete={handleDeletePhoto} onReorder={handleReorderPhotos} onDragActiveChange={setPhotoDragActive} hideAddMore expandAll />
             </View>
 
             {/* ── DELETE ──────────────────────────────────────────── */}
@@ -416,7 +439,7 @@ function VisitModuleSheet({ destination, visit, spots, onSave, onDelete, onClose
           onDone={v => {
             setStartDate(v.startDate);
             setEndDate(v.endDate);
-            commit({ startDate: v.startDate, endDate: v.endDate });
+            commit();
             setEditingDates(false);
           }}
           onCancel={() => setEditingDates(false)}
@@ -427,7 +450,7 @@ function VisitModuleSheet({ destination, visit, spots, onSave, onDelete, onClose
           value={localNotes}
           onSave={text => {
             setLocalNotes(text);
-            commit({ notes: text });
+            commit();
             setShowReviewEditor(false);
           }}
           onCancel={() => setShowReviewEditor(false)}
@@ -484,7 +507,7 @@ const esS = StyleSheet.create({
                        paddingHorizontal:16, paddingVertical:12,
                        borderTopWidth:StyleSheet.hairlineWidth, borderTopColor:'#F3F4F6' },
   spotRowThumb:      { width:36, height:36, borderRadius:9, overflow:'hidden', backgroundColor:'#F3F4F6' },
-  spotRowTxt:        { flex:1, fontSize:14, color:'#111827' },
+  spotRowTxt:        { flex:1, fontSize:14, fontWeight:'700', color:'#111827' },
   spotToggle:        { width:22, height:22, borderRadius:11, borderWidth:2, borderColor:'#D1D5DB',
                        alignItems:'center', justifyContent:'center' },
   spotToggleOn:      { backgroundColor:'#16A34A', borderColor:'#16A34A' },
@@ -904,6 +927,17 @@ function DestinationSheet({
   // any other module's entry in the array either way.
   const [editingVisitModule, setEditingVisitModule] = useState<Visit | 'new' | null>(null);
   const [showClimateDetail, setShowClimateDetail] = useState(false);
+  // Which visit's full photo set is open in the standalone gallery page — separate from
+  // editingVisitModule (which opens the EDIT sheet) since viewing all photos is read-only and
+  // shouldn't also surface the date/spots/notes editing UI.
+  const [galleryVisit, setGalleryVisit] = useState<Visit | null>(null);
+  // Sizes the read-only "spots visited" carousel's square cards to match the photo grid's own
+  // tiles exactly. Measured (not hardcoded) off the carousel's own container width, using the
+  // identical padding/gap math PhotoCollage's EditablePhotoGrid applies to ITS measured width —
+  // since both sit in the same memCard at the same 3-per-row layout, that reproduces the same
+  // tile size without the two components needing to share any direct reference. One value for
+  // the whole sheet (not per visit module) since every module's card is the same screen width.
+  const [spotSquareSize, setSpotSquareSize] = useState(92);
 
   // Collapsed (bottom-screen carousel) is the default view whenever a destination is
   // selected — callers only pass initialSnap explicitly for the other case (e.g. the spot
@@ -1784,40 +1818,87 @@ function DestinationSheet({
                         </View>
                       </Pressable>
                     ) : (
-                      localVisits.map(v => (
+                      localVisits.map(v => {
+                        const days = visitDayCount(v);
+                        return (
                         <View key={v.id} style={st.memCard}>
                           <View style={st.memTopRow}>
                             <View style={{ flex: 1 }}>
                               {!!v.title && (
                                 <Text style={st.memTripNameHeading} numberOfLines={2}>{v.title}</Text>
                               )}
-                              <Text style={st.memDateVal}>{fmtVisitRangeShort(v)}</Text>
+                              <Text style={st.memDateVal}>
+                                {fmtVisitRangeShort(v)}
+                                {days != null && `  ·  ${days} day${days === 1 ? '' : 's'}`}
+                              </Text>
                             </View>
                             <Pressable style={st.memEditBtn} onPress={() => setEditingVisitModule(v)}>
-                              <Pencil size={12} color="#6366F1" />
+                              <Pencil size={12} color="white" />
                               <Text style={st.memEditBtnTxt}>Edit</Text>
                             </Pressable>
                           </View>
+                          <Pressable style={st.memNotesDisplay} onPress={() => setEditingVisitModule(v)}>
+                            {v.notes
+                              ? <Text style={st.memNotesTxt} numberOfLines={3}>{v.notes}</Text>
+                              : <Text style={st.memNotesPh}>Tap to write about your trip…</Text>}
+                          </Pressable>
                           {spots.length > 0 && (
                             v.spotIds?.length ? (
-                              <View style={st.memSpotsWrap}>
+                              <View
+                                onLayout={e => {
+                                  // Same 3-column, 6px-gap math EditablePhotoGrid applies to ITS
+                                  // own measured width — this container is the same full memCard
+                                  // width pcS.wrap also receives, so subtracting pcS.wrap's own
+                                  // 12px-each-side padding here reproduces the same tile size.
+                                  const w = e.nativeEvent.layout.width - 24;
+                                  const size = (w - 6 * 2) / 3;
+                                  if (Math.abs(size - spotSquareSize) > 0.5) setSpotSquareSize(size);
+                                }}
+                              >
+                                <Text style={st.memSpotsCount}>
+                                  {v.spotIds.length} spot{v.spotIds.length === 1 ? '' : 's'} visited
+                                </Text>
+                                <ScrollView
+                                  horizontal
+                                  showsHorizontalScrollIndicator={false}
+                                  style={st.memSpotsCarousel}
+                                  contentContainerStyle={st.memSpotsCarouselContent}
+                                >
                                 {v.spotIds.map(spotId => {
                                   const spot = spots.find(sp => sp.id === spotId);
                                   if (!spot) return null;
                                   return (
-                                    <View key={spotId} style={st.memSpotRow}>
-                                      <View style={st.memSpotRowThumb}>
-                                        <EntityPhoto
-                                          cacheKey={`spot_${spot.id}`}
-                                          cache={photoCache}
-                                          load={() => getOrFetchWikiThumbnail(`spot_${spot.id}`, photoCache, spot.name, 200)}
-                                          placeholderColor="#F3F4F6"
-                                        />
+                                    <View key={spotId} style={[st.memSpotCard, { width: spotSquareSize, height: spotSquareSize }]}>
+                                      <EntityPhoto
+                                        cacheKey={`spot_${spot.id}`}
+                                        cache={photoCache}
+                                        load={() => getOrFetchWikiThumbnail(`spot_${spot.id}`, photoCache, spot.name, 300)}
+                                        placeholderColor="#F3F4F6"
+                                      />
+                                      {/* Same bottom-darkening gradient as the hero photo above (GRADIENT_STOPS),
+                                          so the white overlaid name stays legible over any photo. */}
+                                      <View pointerEvents="none" style={st.memSpotCardGradWrap}>
+                                        {/* Explicit NUMERIC width/height (not "100%") — spotSquareSize is already the exact
+                                            live value from React state, so this tracks it on every re-render directly.
+                                            Percentage sizing (even set as a prop, not just via style) still left the SVG
+                                            canvas short of the card's actual right edge once it grew past its initial
+                                            default size — this sidesteps that resolution entirely. */}
+                                        <Svg width={spotSquareSize} height={62}>
+                                          <Defs>
+                                            <SvgLinearGradient id={`memSpotGrad-${spotId}`} x1="0" y1="0" x2="0" y2="1">
+                                              {GRADIENT_STOPS.map(({ offset, opacity }) => (
+                                                <Stop key={offset} offset={offset} stopColor="#000" stopOpacity={opacity} />
+                                              ))}
+                                            </SvgLinearGradient>
+                                          </Defs>
+                                          <Rect x="0" y="0" width={spotSquareSize} height={62} fill={`url(#memSpotGrad-${spotId})`} />
+                                        </Svg>
                                       </View>
-                                      <Text style={st.memSpotRowTxt} numberOfLines={1}>{spot.name}</Text>
+                                      <Text style={st.memSpotCardName} numberOfLines={2}>{spot.name}</Text>
                                     </View>
                                   );
                                 })}
+                                </ScrollView>
                               </View>
                             ) : (
                               <Pressable style={st.memSpotsEmptyRow} onPress={() => setEditingVisitModule(v)}>
@@ -1826,16 +1907,23 @@ function DestinationSheet({
                               </Pressable>
                             )
                           )}
-                          <View style={st.memPhotosWrap}>
-                            <PhotoCollage photos={v.photos ?? []} onAdd={() => setEditingVisitModule(v)} hideAddMore />
-                          </View>
-                          <Pressable style={st.memNotesDisplay} onPress={() => setEditingVisitModule(v)}>
-                            {v.notes
-                              ? <Text style={st.memNotesTxt} numberOfLines={3}>{v.notes}</Text>
-                              : <Text style={st.memNotesPh}>Tap to write about your trip…</Text>}
-                          </Pressable>
+                          {!!v.photos?.length && (
+                            <View style={st.memPhotosWrap}>
+                              <View style={st.memPhotosHeadRow}>
+                                <Text style={st.memPhotosCount}>{v.photos.length} photo{v.photos.length === 1 ? '' : 's'}</Text>
+                                <Pressable style={st.seeAllRow} onPress={() => setGalleryVisit(v)} hitSlop={8}>
+                                  <Text style={st.seeAllTxt}>View all</Text>
+                                  <ChevronRight size={15} color="#16A34A" />
+                                </Pressable>
+                              </View>
+                              <Pressable onPress={() => setGalleryVisit(v)}>
+                                <PhotoCollage photos={v.photos} onAdd={() => setGalleryVisit(v)} hideAddMore expandAll maxRows={3} />
+                              </Pressable>
+                            </View>
+                          )}
                         </View>
-                      ))
+                        );
+                      })
                     )}
 
                     <Pressable
@@ -1945,6 +2033,13 @@ function DestinationSheet({
       )}
       {showClimateDetail && (
         <ClimateDetailModal destination={destination} onClose={() => setShowClimateDetail(false)} />
+      )}
+      {galleryVisit && (
+        <PhotoGalleryModal
+          photos={galleryVisit.photos ?? []}
+          subtitle={fmtVisitRangeShort(galleryVisit)}
+          onClose={() => setGalleryVisit(null)}
+        />
       )}
     </View>
   );
@@ -2120,33 +2215,55 @@ const st = StyleSheet.create({
   // Memory card (unified journal entry — read-only display)
   addVisitBtn:         { alignSelf:'center', paddingVertical:6 },
   addVisitBtnTxt:      { fontSize:14, fontWeight:'600', color:'#C1C6D0' },
-  memCard:             { backgroundColor:'white', borderRadius:20, overflow:'hidden', borderWidth:1, borderColor:'#F0F1F3' },
-  memTopRow:           { flexDirection:'row', alignItems:'flex-start', paddingHorizontal:18, paddingTop:18, paddingBottom:18 },
-  memTripNameHeading:  { fontSize:19, fontWeight:'800', color:'#111827', marginBottom:4 },
-  memDateVal:          { fontSize:14, fontWeight:'600', color:'#6B7280' },
+  memCard:             { backgroundColor:'white', borderRadius:20, overflow:'hidden', borderWidth:1, borderColor:'#D8DBE0' },
+  memTopRow:           { flexDirection:'row', alignItems:'flex-start', paddingHorizontal:18, paddingTop:18, paddingBottom:18,
+                         backgroundColor:'#111827', marginBottom:8,
+                         // Rounded to match memCard's own corner radius (minus its 1px border)
+                         // explicitly, rather than relying only on memCard's overflow:hidden to
+                         // mask a sharp-cornered rectangle — that left a visible kink where the
+                         // straight edge met the card's curve.
+                         borderTopLeftRadius:19, borderTopRightRadius:19 },
+  memTripNameHeading:  { fontSize:19, fontWeight:'800', color:'white', marginBottom:4 },
+  memDateVal:          { fontSize:14, fontWeight:'600', color:'#9CA3AF' },
   memDateEmpty:        { fontSize:14, fontWeight:'600', color:'#9CA3AF' },
   memEditBtn:          { flexDirection:'row', alignItems:'center', gap:5, paddingHorizontal:10, paddingVertical:6,
-                         borderRadius:10, backgroundColor:'#EEF2FF' },
-  memEditBtnTxt:       { fontSize:12, fontWeight:'600', color:'#6366F1' },
+                         borderRadius:10, backgroundColor:'rgba(255,255,255,0.14)' },
+  memEditBtnTxt:       { fontSize:12, fontWeight:'600', color:'white' },
   memSharedHead:       { flexDirection:'row', alignItems:'center', justifyContent:'space-between',
                          paddingHorizontal:18, paddingTop:16, paddingBottom:12 },
   memSharedHeadTxt:    { fontSize:13, fontWeight:'800', color:'#9CA3AF', letterSpacing:0.5 },
   memDivider:          { height:StyleSheet.hairlineWidth, backgroundColor:'#F0F1F3' },
   memSectionRow:       { paddingHorizontal:18, paddingTop:12, paddingBottom:14 },
   // Review display
-  memNotesDisplay:     { paddingHorizontal:18, paddingTop:4, paddingBottom:16 },
+  memNotesDisplay:     { marginHorizontal:12, marginTop:10, marginBottom:16,
+                         paddingHorizontal:14, paddingVertical:12,
+                         borderRadius:14, backgroundColor:'#F9FAFB' },
   memNotesTxt:         { fontSize:15, color:'#374151', lineHeight:24 },
   memNotesPh:          { fontSize:15, color:'#C4C9D4', lineHeight:24 },
 
   // Photos display
-  memPhotosWrap:       { paddingTop:4 },
-  // Spots visited display (read-only rows within each saved visit module) — one row per
-  // spot, each with its own header-image thumbnail, same shape as the edit page's own
-  // spotRow/spotRowThumb (just without the toggle, since this is read-only).
-  memSpotsWrap:        { paddingHorizontal:18, paddingTop:4, paddingBottom:4, gap:2 },
-  memSpotRow:          { flexDirection:'row', alignItems:'center', gap:10, paddingVertical:6 },
-  memSpotRowThumb:      { width:34, height:34, borderRadius:9, overflow:'hidden', backgroundColor:'#F3F4F6' },
-  memSpotRowTxt:        { flex:1, fontSize:13.5, fontWeight:'600', color:'#374151' },
+  memPhotosWrap:       { paddingTop:16 },
+  memPhotosHeadRow:    { flexDirection:'row', alignItems:'center', justifyContent:'space-between',
+                         paddingHorizontal:12, marginBottom:4 },
+  memPhotosCount:      { fontSize:12, fontWeight:'600', color:'#9CA3AF' },
+  // Spots visited display (read-only, within each saved visit module) — a horizontal carousel
+  // of square photo cards, the spot's own name overlaid at the bottom over a gradient (same
+  // GRADIENT_STOPS-driven scrim as the hero photo above), rather than the old vertical list of
+  // thumbnail rows.
+  memSpotsCount:           { fontSize:12, fontWeight:'600', color:'#9CA3AF', paddingHorizontal:12, marginBottom:10 },
+  memSpotsCarousel:        { paddingTop:4, paddingBottom:4 },
+  // paddingHorizontal:12 and gap:6 (not 18/10) to match pcS.wrap's own outer padding and
+  // EDIT_GAP's own inter-tile gap on the photo grid below it — the outer padding is also the
+  // same value the spotSquareSize onLayout calc already assumes, so the squares' outer edges
+  // line up with the photo grid's edges, not just their sizes.
+  memSpotsCarouselContent: { paddingHorizontal:12, gap:6 },
+  // width/height come from spotSquareSize (measured to match the photo grid's own tile size),
+  // not a fixed value here.
+  memSpotCard:             { borderRadius:14, overflow:'hidden', backgroundColor:'#F3F4F6' },
+  memSpotCardGradWrap:     { position:'absolute', left:0, right:0, bottom:0, height:62 },
+  memSpotCardName:         { position:'absolute', left:8, right:8, bottom:7,
+                              fontSize:12, fontWeight:'700', color:'white',
+                              textShadowColor:'rgba(0,0,0,0.3)', textShadowRadius:3, textShadowOffset:{ width:0, height:1 } },
   memSpotsEmptyRow:    { flexDirection:'row', alignItems:'center', gap:6,
                          paddingHorizontal:18, paddingTop:4, paddingBottom:4 },
   memSpotsEmptyTxt:    { fontSize:13, color:'#9CA3AF' },
