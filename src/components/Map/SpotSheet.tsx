@@ -19,12 +19,11 @@ import Reanimated, {
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { SharedValue } from 'react-native-reanimated';
 import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'react-native-svg';
-import { Check, Star, Clock, CalendarClock, Pencil, ChevronUp, ChevronDown, ChevronRight, LayoutGrid, Plus,
+import { Check, Clock, CalendarClock, ChevronUp, ChevronDown, ChevronRight, LayoutGrid, Plus,
          Tag, ExternalLink, Ticket } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
-import * as ImagePicker from 'expo-image-picker';
 import { useStore } from '../../store';
-import type { Destination, PhotoEntry } from '../../types';
+import type { Destination, Visit } from '../../types';
 import type { Spot } from '../../data/spots';
 import { DAY_NAMES, hoursForDay, formatSpotCost, formatVisitTime, getSpotOpenStatus, specialClosureOn, zonedNowForSpot } from '../../data/spots';
 import { photoCache, thumbCache, getOrFetchWikiThumbnail } from '../../utils/photoCache';
@@ -34,8 +33,7 @@ import SpotCard from './SpotCard';
 import { sheetPose } from './sheetPose';
 import EntityPhoto from './EntityPhoto';
 import {
-  parseDateStr, fmtDatePart,
-  DatePickerModal, PhotoCollage, ReviewEditModal, dedupeNewPhotos,
+  VisitCardList, VisitModuleSheet, PhotoGalleryModal,
 } from './sheetShared';
 
 const { height: H, width: W } = Dimensions.get('window');
@@ -80,33 +78,17 @@ const CARD_SNAP = CARD_W + CARD_GAP;
 const SIDE_PAD  = (W - CARD_W) / 2;
 
 // "Explore nearby" grid card — same square SpotCard, same width formula, as the destination
-// sheet's "Top Spots" row (see DestinationSheet's own GRID_CARD_W), so the two carousels match exactly.
+// sheet's "Popular Spots" row (see DestinationSheet's own GRID_CARD_W), so the two carousels match exactly.
 const NEARBY_GRID_GAP = 14;
 const NEARBY_CARD_W = (W - 32 - NEARBY_GRID_GAP) / 2;
 
-// ── Star rating (tappable) ────────────────────────────────────────────────────
-function StarRating({ value, onChange, size = 30 }: {
-  value: number; onChange?: (v: number) => void; size?: number;
-}) {
-  return (
-    <View style={{ flexDirection: 'row', gap: 6 }}>
-      {[1, 2, 3, 4, 5].map(n => (
-        <Pressable key={n} disabled={!onChange} onPress={() => onChange?.(n)} hitSlop={6}>
-          <Star
-            size={size}
-            color={n <= value ? '#16A34A' : '#D1D5DB'}
-            fill={n <= value ? '#16A34A' : 'none'}
-            strokeWidth={2}
-          />
-        </Pressable>
-      ))}
-    </View>
-  );
-}
-
 // ── Carousel preview card (one per spot in the collapsed carousel) ───────────
-function CarouselCard({ spot, destinationId, isActive, onPress, gradId }: {
-  spot: Spot; destinationId: string; isActive: boolean; onPress: () => void;
+function CarouselCard({ spot, isActive, onPress, onAddVisit, gradId }: {
+  spot: Spot; isActive: boolean; onPress: () => void;
+  // Tapping the "Add Visit" tag (unvisited spots only) — makes this card the active spot and
+  // opens its trip editor, same as the hero's own "Add Visit" pill (handleMarkVisited), instead
+  // of marking the spot visited immediately with no editor, which is what this used to do.
+  onAddVisit: () => void;
   // Unique PER RENDERED CARD (not just per spot) — the endless-scroll illusion renders
   // clones of the first/last spot alongside the real ones, so multiple simultaneously-
   // mounted cards can share the same spot.id. Reusing spot.id as the SVG gradient's <Defs>
@@ -135,7 +117,6 @@ function CarouselCard({ spot, destinationId, isActive, onPress, gradId }: {
 
   const savedSpot  = useStore(s => s.savedSpots[spot.id]);
   const isVisited  = !!savedSpot;
-  const saveSpotVisited = useStore(s => s.saveSpotVisited);
 
   return (
     <Pressable
@@ -163,10 +144,7 @@ function CarouselCard({ spot, destinationId, isActive, onPress, gradId }: {
           ) : (
             <Pressable
               style={st.cardAddVisitTag}
-              onPress={() => {
-                saveSpotVisited(spot.id, destinationId);
-                Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-              }}
+              onPress={onAddVisit}
               hitSlop={6}
             >
               <Plus size={13} color="white" strokeWidth={3} />
@@ -302,13 +280,45 @@ function SpotSheet({
 
   const savedSpot = useStore(s => s.savedSpots[activeSpot.id]);
   const isVisited = !!savedSpot;
-  const photos: PhotoEntry[] = savedSpot?.photos ?? [];
+
+  // Derive visits from the store, carrying the old single visitDate/notes/photos fields onto a
+  // synthesized legacy entry so a pre-redesign spot visit still shows its content as its own
+  // module — editing it migrates those fields onto a real Visit the first time it's saved.
+  // Identical mechanism to DestinationSheet's/CountrySheet's own localVisits. Gated on
+  // visitDate specifically (not notes/photos alone) — same as the other two levels.
+  const localVisits: Visit[] = savedSpot?.visits
+    ?? (savedSpot?.visitDate
+      ? [{ id: 'legacy', startDate: savedSpot.visitDate, photos: savedSpot.photos, notes: savedSpot.notes }]
+      : []);
+
+  // Saves one visit module — appends a brand new one ('new') or replaces just the matching id
+  // in place. Identical mechanism to DestinationSheet's/CountrySheet's own handleSaveVisitModule.
+  const handleSaveVisitModule = useCallback((v: Visit) => {
+    // The spot only actually becomes "visited" here, on a genuine save — not the moment "Add
+    // Visit" was tapped (see handleMarkVisited).
+    if (!isVisited) saveSpotVisited(activeSpot.id, destination.id);
+    const base = localVisits.filter(x => x.id !== 'legacy');
+    const idx  = base.findIndex(x => x.id === v.id);
+    const updated = idx >= 0 ? base.map(x => x.id === v.id ? v : x) : [...base, v];
+    updated.sort((a, b) => b.startDate.localeCompare(a.startDate));
+    updateSpot(activeSpot.id, { visits: updated, visitDate: updated[0]?.startDate });
+  }, [isVisited, localVisits, activeSpot.id, destination.id, saveSpotVisited, updateSpot]);
+
+  // That was the last (or only ever synthesized legacy) visit logged for this spot — not just
+  // "visited with zero trips", so this unsaves the spot entirely (also dropping its rating, same
+  // as the old "Remove visit" flow did), rather than leaving a record with an empty visits array.
+  const handleDeleteVisitModule = useCallback((id: string) => {
+    if (!isVisited) return;
+    const updated = localVisits.filter(v => v.id !== id);
+    if (updated.length === 0) { unsaveSpot(activeSpot.id); return; }
+    updateSpot(activeSpot.id, { visits: updated, visitDate: updated[0]?.startDate });
+  }, [isVisited, localVisits, activeSpot.id, unsaveSpot, updateSpot]);
 
   const carouselRef = useRef<ScrollView>(null);
   const scrollRef    = useRef<GHScrollView>(null);
   // The About panel's own "NEARBY" horizontal ScrollView — registered below via
   // requireExternalGestureToFail so a swipe that starts on that carousel scrolls it instead of
-  // paging the tab bar (mirrors DestinationSheet's own aboutHlScrollRef/"Top Spots" carousel).
+  // paging the tab bar (mirrors DestinationSheet's own aboutHlScrollRef/"Popular Spots" carousel).
   // Must be the GH-aware ScrollView, not the plain RN one — requireExternalGestureToFail only
   // recognizes gesture-handler-managed native views (DestinationSheet's own equivalent ref is
   // GH's ScrollView for the same reason).
@@ -328,8 +338,13 @@ function SpotSheet({
     ];
   }, [spots]);
   const [activeTab, setActiveTab] = useState<'visit' | 'about'>('visit');
-  const [showDP,    setShowDP   ] = useState(false);
-  const [showReview,setShowReview] = useState(false);
+  // Drives the standalone per-visit edit sheet for BOTH creating a new visit module ('new') and
+  // editing one specific existing module (the Visit object) — identical mechanism to
+  // DestinationSheet's/CountrySheet's own editingVisitModule.
+  const [editingVisitModule, setEditingVisitModule] = useState<Visit | 'new' | null>(null);
+  // Which visit's full photo set is open in the standalone gallery page — read-only, separate
+  // from editingVisitModule.
+  const [galleryVisit, setGalleryVisit] = useState<Visit | null>(null);
 
   // Tab slide position: 0 = visit tab, -W = about tab. A Reanimated shared value (not core
   // Animated) — matches DestinationSheet's own tabSlideAnim exactly, including dropping the
@@ -794,11 +809,15 @@ function SpotSheet({
   pan = pan.simultaneousWithExternalGesture(scrollRef);
 
   // ── Actions ──────────────────────────────────────────────────────────────────
+  // Identical mechanism to DestinationSheet's/CountrySheet's own handleMarkVisited — tapping
+  // "Add Visit" opens the trip editor WITHOUT marking the spot visited yet (that only happens
+  // once the user actually saves a trip inside it, see handleSaveVisitModule), rather than
+  // marking it visited immediately.
   const handleMarkVisited = () => {
     if (isVisited) {
       Alert.alert(
         'Remove visit?',
-        'This will delete your rating, notes, and photos for this spot.',
+        'This will delete your rating and all logged visits for this spot.',
         [
           { text: 'Cancel', style: 'cancel' },
           { text: 'Remove', style: 'destructive', onPress: () => unsaveSpot(activeSpot.id) },
@@ -806,33 +825,8 @@ function SpotSheet({
       );
       return;
     }
-    saveSpotVisited(activeSpot.id, destination.id);
+    setEditingVisitModule('new');
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-  };
-  const handleAddPhoto = async () => {
-    const perm = await ImagePicker.requestMediaLibraryPermissionsAsync();
-    if (!perm.granted) {
-      Alert.alert('Permission needed', 'Allow photo library access to add photos.');
-      return;
-    }
-    const result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ['images'], quality: 0.85, allowsMultipleSelection: true,
-    });
-    if (!result.canceled && result.assets.length > 0) {
-      const picked: PhotoEntry[] = result.assets.map(a => ({
-        uri: a.uri, width: a.width, height: a.height, assetId: a.assetId ?? undefined,
-        spotId: activeSpot.id, spotName: activeSpot.name,
-      }));
-      const newEntries = dedupeNewPhotos(photos, picked);
-      if (newEntries.length === 0) {
-        Alert.alert('Already added', "You've already added every photo you picked.");
-        return;
-      }
-      updateSpot(activeSpot.id, { photos: [...photos, ...newEntries] });
-    }
-  };
-  const handleDeletePhoto = (index: number) => {
-    updateSpot(activeSpot.id, { photos: photos.filter((_, i) => i !== index) });
   };
 
   const handleCarouselSettle = (offsetX: number) => {
@@ -874,8 +868,6 @@ function SpotSheet({
   }, [spots, activeIndex, loopOffset, onActiveSpotChange]);
 
   const heroTopRowTop = insets.top + 14;
-  const visitDate = savedSpot?.visitDate ?? '';
-  const vd = parseDateStr(visitDate);
 
   return (
     <View style={st.backdrop} pointerEvents="box-none">
@@ -952,8 +944,10 @@ function SpotSheet({
             </View>
           </View>
 
-          {/* ── TAB BAR (visited only) ──────────────────────────────────── */}
-          {isVisited && (
+          {/* ── TAB BAR — visited spots get My Visit + About; an unvisited spot still gets
+              this same header, just with "About" alone as its one (non-switching) tab, so the
+              sheet reads consistently whether or not there's a My Visit tab to show. ────── */}
+          {isVisited ? (
             <View style={st.tabBar}>
               <Pressable
                 style={st.tabBtn}
@@ -981,46 +975,42 @@ function SpotSheet({
                 <View style={st.tabIndicator} />
               </Reanimated.View>
             </View>
+          ) : (
+            <View style={st.tabBar}>
+              <Pressable
+                style={st.tabBtn}
+                onPress={() => { if (snapStateRef.current !== 'full') snapToFullRef.current(); }}
+              >
+                <Text style={[st.tabBtnTxt, st.tabBtnTxtActive]}>About</Text>
+              </Pressable>
+              {/* Full-width track (not tabIndicatorTrack's usual 50%, sized for two tabs) — a
+                  single tab has nothing to slide between, so the underline just sits centered
+                  under it, statically. */}
+              <View style={[st.tabIndicatorTrack, st.tabIndicatorTrackSingle]}>
+                <View style={st.tabIndicator} />
+              </View>
+            </View>
           )}
 
           {/* ── CONTENT ────────────────────────────────────────────────── */}
-          <View style={[st.content, !isVisited && st.contentRounded]}>
+          <View style={st.content}>
             {isVisited ? (
               <View style={st.slideTrack}>
                 <Reanimated.View style={[st.slideRow, slideRowStyle]}>
                   {/* ── MY VISIT PANEL ─────────────────────────────────── */}
                   <View style={st.slidePanel}>
-                    <View style={st.card2}>
-                      <Text style={st.cardLabel}>YOUR RATING</Text>
-                      <View style={{ marginTop: 10, alignItems: 'flex-start' }}>
-                        <StarRating value={savedSpot?.rating ?? 0} onChange={r => updateSpot(activeSpot.id, { rating: r })} />
-                      </View>
-                    </View>
-
-                    <View style={st.card2}>
-                      <Text style={st.cardLabel}>VISIT DATE</Text>
-                      <Pressable style={st.dateRow} onPress={() => setShowDP(true)}>
-                        <Clock size={15} color="#6366F1" />
-                        <Text style={vd ? st.dateVal : st.datePh}>
-                          {vd ? fmtDatePart(visitDate) : 'Add the date you visited'}
-                        </Text>
-                        <Pencil size={12} color="#9CA3AF" />
-                      </Pressable>
-                    </View>
-
-                    <View style={st.card2}>
-                      <Text style={st.cardLabel}>YOUR PHOTOS</Text>
-                      <PhotoCollage photos={photos} onAdd={handleAddPhoto} onDelete={handleDeletePhoto} />
-                    </View>
-
-                    <View style={st.card2}>
-                      <Pressable onPress={() => setShowReview(true)}>
-                        <Text style={st.cardLabel}>YOUR REVIEW</Text>
-                        {savedSpot?.notes
-                          ? <Text style={[st.reviewTxt, { marginTop: 6 }]}>{savedSpot.notes}</Text>
-                          : <Text style={[st.reviewPh, { marginTop: 6 }]}>Tap to write about this spot…</Text>}
-                      </Pressable>
-                    </View>
+                    {/* Each logged visit is its own standalone module — its own title, dates,
+                        photos, and notes — like a separate journal entry. Shared with
+                        DestinationSheet/CountrySheet — see VisitCardList. No selector section
+                        here (a spot has nothing beneath it to tag a visit with). */}
+                    <VisitCardList
+                      visits={localVisits}
+                      onEditVisit={setEditingVisitModule}
+                      onNewVisit={() => setEditingVisitModule('new')}
+                      onOpenGallery={setGalleryVisit}
+                      ratingValue={savedSpot?.rating}
+                      hideSingleDayCount
+                    />
                   </View>
 
                   {/* ── ABOUT PANEL ────────────────────────────────────── */}
@@ -1084,7 +1074,6 @@ function SpotSheet({
               <CarouselCard
                 key={`${item.spot.id}-${i}`}
                 spot={item.spot}
-                destinationId={destination.id}
                 isActive={item.realIndex === activeIndex}
                 gradId={`${i}`}
                 onPress={() => {
@@ -1094,6 +1083,21 @@ function SpotSheet({
                     onActiveSpotChange?.(spots[item.realIndex]);
                   }
                   snapToFullRef.current();
+                }}
+                onAddVisit={() => {
+                  // Same selection logic as onPress above, but goes straight into the trip
+                  // editor instead — matching handleMarkVisited's own not-visited branch
+                  // (inlined rather than called directly, since that reads the CURRENT
+                  // activeSpot/isVisited from this render's closure, which would still be
+                  // whatever spot was active before this tap changed it).
+                  if (item.realIndex !== activeIndex) {
+                    setActiveIndex(item.realIndex);
+                    carouselRef.current?.scrollTo({ x: (item.realIndex + loopOffset) * CARD_SNAP, animated: true });
+                    onActiveSpotChange?.(spots[item.realIndex]);
+                  }
+                  snapToFullRef.current();
+                  setEditingVisitModule('new');
+                  Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
                 }}
               />
             ))}
@@ -1129,18 +1133,32 @@ function SpotSheet({
       </Reanimated.View>
       </GestureDetector>
 
-      {showDP && (
-        <DatePickerModal
-          value={visitDate}
-          onDone={d => { updateSpot(activeSpot.id, { visitDate: d }); setShowDP(false); }}
-          onCancel={() => setShowDP(false)}
+      {editingVisitModule !== null && (
+        <VisitModuleSheet
+          entityName={activeSpot.name}
+          visit={editingVisitModule === 'new' ? null : editingVisitModule}
+          onSave={handleSaveVisitModule}
+          onDelete={handleDeleteVisitModule}
+          onClose={() => setEditingVisitModule(null)}
+          // No selectorLabel/selectorItems — a spot has nothing beneath it to tag a visit with.
+          onRemoveLegacy={() => unsaveSpot(activeSpot.id)}
+          // Rating lives outside the visits system (it's a per-spot attribute, not tied to any
+          // one trip) — rendered by VisitModuleSheet itself, right under Dates, rather than a
+          // separate always-visible card on the My Visit tab.
+          ratingValue={savedSpot?.rating ?? 0}
+          onRatingChange={r => updateSpot(activeSpot.id, { rating: r })}
+          // Spots call these "visits", not "trips" — a spot is a single stop, not a whole
+          // journey. Also hides the "1 day" subtitle for a same-day visit (still shows a real
+          // multi-day count, e.g. camping).
+          noun="Visit"
+          hideSingleDayCount
         />
       )}
-      {showReview && (
-        <ReviewEditModal
-          value={savedSpot?.notes ?? ''}
-          onSave={text => { updateSpot(activeSpot.id, { notes: text || undefined }); setShowReview(false); }}
-          onCancel={() => setShowReview(false)}
+      {galleryVisit && (
+        <PhotoGalleryModal
+          photos={galleryVisit.photos ?? []}
+          title={galleryVisit.title || `${activeSpot.name} Visit`}
+          onClose={() => setGalleryVisit(null)}
         />
       )}
     </View>
@@ -1266,7 +1284,7 @@ function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore, nearbyHlScrol
         </View>
       )}
 
-      {/* Nearby — same design as the destination sheet's "Top Spots" row (square SpotCards,
+      {/* Nearby — same design as the destination sheet's "Popular Spots" row (square SpotCards,
           same width, same horizontal scroll): the destination's other spots, one tap away.
           "Explore" collapses this sheet to half-screen, back to the full carousel of spots. */}
       {nearbySpots.length > 0 && (
@@ -1450,18 +1468,16 @@ const st = StyleSheet.create({
   // Sliding underline — outer track keeps the existing per-tab left/width positioning; the
   // visible bar itself is a narrower, centered child so it doesn't span the full tab width.
   tabIndicatorTrack: { position: 'absolute', bottom: 0, width: '50%', alignItems: 'center' },
+  tabIndicatorTrackSingle: { width: '100%' },
   tabIndicator: { width: 28, height: 2.5, backgroundColor: '#111827', borderRadius: 2 },
 
   // Content
   content: { backgroundColor: 'white', padding: 16, gap: 16 },
-  contentRounded: { borderTopLeftRadius: 24, borderTopRightRadius: 24, marginTop: -24 },
   slideTrack: { overflow: 'hidden', marginHorizontal: -16, width: W },
   slideRow: { flexDirection: 'row', alignItems: 'flex-start', width: W * 2 },
   slidePanel: { width: W, paddingHorizontal: 16, gap: 16 },
 
   // My Visit cards
-  card2: { backgroundColor: 'white', borderRadius: 18, padding: 16, borderWidth: 1, borderColor: '#F0F1F3' },
-  cardLabel: { fontSize: 9, fontWeight: '800', color: '#9CA3AF', letterSpacing: 1.3 },
   dateRow: { flexDirection: 'row', alignItems: 'center', gap: 10, marginTop: 10 },
   dateVal: { flex: 1, fontSize: 15, fontWeight: '600', color: '#111827' },
   datePh:  { flex: 1, fontSize: 15, color: '#9CA3AF' },
@@ -1472,8 +1488,9 @@ const st = StyleSheet.create({
   section: { gap: 10 },
   sectionTitle: { fontSize: 13, fontWeight: '800', color: '#9CA3AF', letterSpacing: 0.4 },
   // One combined card (was two separate ones) — a vertical divider between the two halves
-  // instead of a gap, white background, light gray border.
-  glanceCard: { backgroundColor: 'white', borderRadius: 16, flexDirection: 'row', borderWidth: 1, borderColor: '#F0F1F3' },
+  // instead of a gap, white background, light gray border. Same border strength as
+  // DestinationSheet's About-tab boxes (its ABOUT_BORDER, '#D8DBE0') — was a fainter '#F0F1F3'.
+  glanceCard: { backgroundColor: 'white', borderRadius: 16, flexDirection: 'row', borderWidth: 1, borderColor: '#D8DBE0' },
   glanceItem: { flex: 1, alignItems: 'center', paddingVertical: 20, gap: 5 },
   glanceDivider: { width: 1, backgroundColor: '#F0F1F3', marginVertical: 14 },
   glanceIconCircleGray:   { width: 40, height: 40, borderRadius: 20, backgroundColor: '#F3F4F6',
@@ -1485,7 +1502,7 @@ const st = StyleSheet.create({
   // Collapsed hours row — white card, light gray border (not joined to the week list below it,
   // which only exists as a separate card while open — see SpotAbout's own comment).
   hoursCard: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: 'white',
-               borderRadius: 16, padding: 14, borderWidth: 1, borderColor: '#F0F1F3' },
+               borderRadius: 16, padding: 14, borderWidth: 1, borderColor: '#D8DBE0' },
   // While open, the week list sits flush underneath — square off the bottom and drop the
   // border there so the two read as one attached box, not two separate cards.
   hoursCardOpen: { borderBottomLeftRadius: 0, borderBottomRightRadius: 0, borderBottomWidth: 0 },
@@ -1497,7 +1514,7 @@ const st = StyleSheet.create({
   // own comment), so its top corners are square and its border color matches; each row joined
   // to the next by a top hairline instead of each row having its own card.
   hoursWeekCard: { backgroundColor: 'white', borderRadius: 16, borderTopLeftRadius: 0, borderTopRightRadius: 0,
-                   overflow: 'hidden', borderWidth: 1, borderColor: '#F0F1F3' },
+                   overflow: 'hidden', borderWidth: 1, borderColor: '#D8DBE0' },
   hoursWeekRow:     { flexDirection: 'row', justifyContent: 'space-between',
                       paddingHorizontal: 16, paddingVertical: 13 },
   hoursWeekRowBorder: { borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: '#F3F4F6' },
@@ -1511,7 +1528,7 @@ const st = StyleSheet.create({
   // Ticketing — same white/light-gray card shape as hoursCard, with a small filled button in
   // place of the chevron (no separate body copy — see SpotAbout's own comment).
   ticketCard: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: 'white',
-                borderRadius: 16, padding: 14, borderWidth: 1, borderColor: '#F0F1F3' },
+                borderRadius: 16, padding: 14, borderWidth: 1, borderColor: '#D8DBE0' },
   ticketFavicon: { width: 24, height: 24, borderRadius: 4 },
   ticketTxt: { flex: 1, fontSize: 16, fontWeight: '600', color: '#111827', lineHeight: 22 },
   ticketBtn: { flexDirection: 'row', alignItems: 'center', gap: 4, backgroundColor: '#111827',
@@ -1519,7 +1536,7 @@ const st = StyleSheet.create({
   ticketBtnTxt: { fontSize: 13, fontWeight: '700', color: 'white' },
 
   // "Explore nearby" — same header + horizontal-scroll pattern as the destination sheet's own
-  // "Top Spots" row (see DestinationSheet's plainSectionHeader/seeAllRow/hlScroll/hlRow).
+  // "Popular Spots" row (see DestinationSheet's plainSectionHeader/seeAllRow/hlScroll/hlRow).
   secHeadRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
   seeAllRow:  { flexDirection: 'row', alignItems: 'center', gap: 1 },
   seeAllTxt:  { fontSize: 14, fontWeight: '600', color: '#16A34A' },

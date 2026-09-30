@@ -207,6 +207,20 @@ async function main() {
   }
   console.log(`C. search: ${needSearch.filter(k => hitFor.has(k)).length}/${needSearch.length} resolved`);
 
+  // C2. Hand-picked Commons files (destination.whyVisitPhotos), keyed "File:<name>" — these name an
+  // exact file rather than an article, so they skip the override/exact/search steps entirely.
+  const whyFiles = [...new Set(DESTINATIONS.flatMap(d => d.whyVisitPhotos ?? []))];
+  const whyPages = await queryPages(
+    'commons.wikimedia.org', `prop=imageinfo&iiprop=url&iiurlwidth=${TEMPLATE_WIDTH}`,
+    whyFiles.map(f => 'File:' + f), BATCH);
+  for (const f of whyFiles) {
+    const key = 'File:' + f;
+    keys.push(key);
+    const url = whyPages.get(key)?.imageinfo?.[0]?.thumburl;
+    if (url) hitFor.set(key, { source: url, file: f });
+  }
+  console.log(`C2. why-visit files: ${whyFiles.filter(f => hitFor.has('File:' + f)).length}/${whyFiles.length} resolved`);
+
   // D. File metadata (size + credit) for every distinct photo picked, batched.
   const files = [...new Set([...hitFor.values()].map(h => h.file))];
   const infos = await fileInfos(files);

@@ -104,6 +104,11 @@ export interface Destination {
   tagline?: string;
   description?: string;
   whyVisit?: [string, string, string];
+  // One Wikimedia Commons file name (no "File:" prefix) per whyVisit item — a specific photo hand-
+  // picked to show exactly that reason (e.g. the Eiffel Tower AT NIGHT), shown beside it in the
+  // About tab's "Why visit" card. Pre-resolved into imageManifest.json under "File:<name>" (see
+  // scripts/build-image-manifest.ts), so it loads with no lookup — see fetchCommonsPhoto.
+  whyVisitPhotos?: [string, string, string];
   // Up to three short (2–3 word) phrases, one per whyVisit item, for space-tight surfaces like
   // the Explore cards ("Hot springs · Nordic cafés · Northern lights").
   highlights?: string[];
@@ -167,9 +172,13 @@ export interface SavedSpot {
   spotId: string;
   destinationId: string;
   rating?: number;       // 1–5 stars
-  visitDate?: string;    // YYYY-MM-DD (day may be '00')
-  notes?: string;
-  photos?: PhotoEntry[];
+  visitDate?: string;    // legacy single date (YYYY-MM-DD, day may be '00')
+  notes?: string;        // legacy single note
+  photos?: PhotoEntry[]; // legacy single photo set
+  // Same per-visit journal-entry system as SavedDestination.visits — a spot has no selector
+  // section of its own (see the shared VisitCardList/VisitModuleSheet's own selectorLabel), but
+  // otherwise logs trips the same way.
+  visits?: Visit[];
 }
 
 export interface Visit {
@@ -211,6 +220,12 @@ export interface SavedDestination {
 // onto one of this app's curated destinations.
 export interface SavedCountry {
   countryCode: string;
-  visitDate?: string; // YYYY-MM-DD — presence is what makes the country "visited"
-  notes?: string;
+  visitDate?: string; // legacy single date (YYYY-MM-DD) — presence is what made the country "visited" pre-visits-array
+  notes?: string;      // legacy single note
+  // Same per-visit journal-entry system as SavedDestination.visits, with the selector section
+  // (see the shared VisitCardList/VisitModuleSheet) populated by this country's own
+  // destinations rather than spots. Presence of visitDate, OR a non-empty visits array, OR one
+  // of this country's own destinations being visited, is what makes the country "visited" —
+  // see CountrySheet's own isCountryVisited.
+  visits?: Visit[];
 }

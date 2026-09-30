@@ -1,5 +1,5 @@
-// Shared sliding-sheet primitives used by both DestinationSheet and SpotSheet.
-// Extracted so the two sheets stay visually and behaviourally in sync.
+// Shared sliding-sheet primitives used by DestinationSheet, CountrySheet, and SpotSheet.
+// Extracted so the three sheets stay visually and behaviourally in sync.
 import React, { useRef, useEffect, useState } from 'react';
 import {
   View, Text, StyleSheet, Pressable, ScrollView, Image,
@@ -8,7 +8,9 @@ import {
 import { ScrollView as GHScrollView, Gesture, GestureDetector, State } from 'react-native-gesture-handler';
 import Reanimated, { useSharedValue, useAnimatedStyle, withTiming, runOnJS } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { X, Check, Camera } from 'lucide-react-native';
+import { X, Check, Camera, Calendar, Pencil, ChevronDown, ChevronRight, Trash2, Star } from 'lucide-react-native';
+import * as ImagePicker from 'expo-image-picker';
+import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'react-native-svg';
 import type { PhotoEntry, Visit } from '../../types';
 
 const { width: W, height: H } = Dimensions.get('window');
@@ -166,13 +168,16 @@ const pS = StyleSheet.create({
 });
 
 // ── Visit date-range picker ───────────────────────────────────────────────────
-export function VisitDateRangeModal({ visit, withTitle, onDone, onCancel }: {
+export function VisitDateRangeModal({ visit, withTitle, noun = 'Trip', onDone, onCancel }: {
   visit: Visit | null;
   // Only used by the standalone "Add Visit" flow — creating a brand new visit that's kept
   // separate from the shared destination edit page, so its title has to be captured here
   // instead. Editing an existing visit's dates (from within that shared page) never sets
   // this, since that page's own header already owns title editing.
   withTitle?: boolean;
+  // "Trip" (default) or "Visit" — spots call these visits, not trips (see VisitModuleSheet's
+  // own `noun`, which this mirrors when opened from inside it).
+  noun?: string;
   onDone: (v: Visit) => void;
   onCancel: () => void;
 }) {
@@ -222,7 +227,7 @@ export function VisitDateRangeModal({ visit, withTitle, onDone, onCancel }: {
         <View style={pS.card}>
           <View style={pS.header}>
             <Pressable onPress={onCancel} hitSlop={12}><Text style={pS.cancel}>Cancel</Text></Pressable>
-            <Text style={pS.title}>{hasEnd ? 'Trip Dates' : 'Trip Date'}</Text>
+            <Text style={pS.title}>{hasEnd ? `${noun} Dates` : `${noun} Date`}</Text>
             <Pressable onPress={done} hitSlop={12}><Text style={pS.done}>Done</Text></Pressable>
           </View>
           {withTitle && (
@@ -252,7 +257,7 @@ export function VisitDateRangeModal({ visit, withTitle, onDone, onCancel }: {
             <View style={[vdS.toggle, hasEnd && vdS.toggleOn]}>
               {hasEnd && <Check size={11} color="white" strokeWidth={2.5} />}
             </View>
-            <Text style={vdS.toggleTxt}>Add end date</Text>
+            <Text style={vdS.toggleTxt}>Add date range</Text>
           </Pressable>
           {hasEnd && (
             <View style={vdS.section}>
@@ -1022,11 +1027,11 @@ const GALLERY_COLS = 3;
 const GALLERY_GAP = 3;
 const GALLERY_TILE = (W - 32 - GALLERY_GAP * (GALLERY_COLS - 1)) / GALLERY_COLS;
 
-export function PhotoGalleryModal({ photos, subtitle, onClose }: {
+export function PhotoGalleryModal({ photos, title, onClose }: {
   photos: PhotoEntry[];
-  // Optional context line under the title (e.g. the visit's own date range) — the modal itself
-  // is destination-agnostic, so the caller supplies whatever names this specific photo set.
-  subtitle?: string;
+  // Header title (e.g. the trip's own name) — the modal itself is destination-agnostic, so the
+  // caller supplies whatever names this specific photo set. The photo count sits under it.
+  title: string;
   onClose: () => void;
 }) {
   const insets = useSafeAreaInsets();
@@ -1047,8 +1052,8 @@ export function PhotoGalleryModal({ photos, subtitle, onClose }: {
             <X size={18} color="#111827" />
           </Pressable>
           <View style={{ flex: 1 }}>
-            <Text style={pgS.headerTitle} numberOfLines={1}>{photos.length} photo{photos.length === 1 ? '' : 's'}</Text>
-            {!!subtitle && <Text style={pgS.headerSub} numberOfLines={1}>{subtitle}</Text>}
+            <Text style={pgS.headerTitle} numberOfLines={1}>{title}</Text>
+            <Text style={pgS.headerSub} numberOfLines={1}>{photos.length} photo{photos.length === 1 ? '' : 's'}</Text>
           </View>
           <View style={{ width: 36 }} />
         </View>
@@ -1102,6 +1107,15 @@ export function PhotoViewerModal({ photos, initialIndex, onClose }: {
 }) {
   const insets = useSafeAreaInsets();
   const scrollRef = useRef<ScrollView>(null);
+  const N = photos.length;
+  // Continuous carousel: pad the real photos with one duplicate of the last photo up front and
+  // one duplicate of the first at the end, so swiping past either edge lands on a REAL-looking
+  // neighbor instead of just bouncing. The moment that duplicate page settles, we silently jump
+  // (no animation) to the matching real page on the other side — invisible to the user, since a
+  // duplicate frame looks identical to the real one it stands in for.
+  const loopPhotos = N > 1 ? [photos[N - 1], ...photos, photos[0]] : photos;
+  const posToIndex = (p: number) => N > 1 ? (p === 0 ? N - 1 : p === N + 1 ? 0 : p - 1) : p;
+  const initialPos = N > 1 ? initialIndex + 1 : initialIndex;
   const [index, setIndex] = useState(initialIndex);
   const opacity = useRef(new Animated.Value(0)).current;
   useEffect(() => {
@@ -1111,34 +1125,69 @@ export function PhotoViewerModal({ photos, initialIndex, onClose }: {
     Animated.timing(opacity, { toValue: 0, duration: 160, useNativeDriver: true }).start(onClose);
   };
 
+  // Swipe-down-to-dismiss — a Reanimated pan on top of the ScrollView, not instead of it.
+  // activeOffsetY restricts activation to a clear DOWNWARD drag (upward never activates it, so
+  // it can't be triggered trying to scroll up past nothing); failOffsetX releases the gesture to
+  // the ScrollView the moment the drag reads as mostly horizontal, so normal paging is untouched.
+  const dragY = useSharedValue(0);
+  const pan = Gesture.Pan()
+    .activeOffsetY([-100000, 24])
+    .failOffsetX([-15, 15])
+    .onUpdate(e => { dragY.value = Math.max(0, e.translationY); })
+    .onEnd(e => {
+      if (e.translationY > 120 || e.velocityY > 800) {
+        // Keep sliding rather than snapping back — the fade-out below finishes the dismissal.
+        dragY.value = withTiming(dragY.value + 200, { duration: 160 });
+        runOnJS(dismiss)();
+      } else {
+        dragY.value = withTiming(0, { duration: 200 });
+      }
+    });
+  const dragStyle = useAnimatedStyle(() => ({
+    transform: [{ translateY: dragY.value }],
+    opacity: 1 - Math.min(dragY.value / 300, 0.6),
+  }));
+
   return (
     <Modal transparent animationType="none" statusBarTranslucent>
       <Animated.View style={[pvS.overlay, { opacity }]}>
-        <ScrollView
-          ref={scrollRef}
-          horizontal
-          pagingEnabled
-          showsHorizontalScrollIndicator={false}
-          // contentOffset (not scrollTo in an effect) — positions correctly on the very first
-          // frame, before anything is painted, so there's no visible jump from photo 0 to the
-          // tapped index.
-          contentOffset={{ x: initialIndex * W, y: 0 }}
-          onMomentumScrollEnd={e => setIndex(Math.round(e.nativeEvent.contentOffset.x / W))}
-        >
-          {photos.map((p, i) => (
-            <View key={p.assetId ?? p.uri ?? i} style={pvS.page}>
-              <Image source={{ uri: p.uri }} style={pvS.image} resizeMode="contain" />
-            </View>
-          ))}
-        </ScrollView>
-        <Pressable onPress={dismiss} style={[pvS.closeBtn, { top: insets.top + 10 }]} hitSlop={12}>
-          <X size={20} color="white" />
-        </Pressable>
-        {photos.length > 1 && (
-          <View style={[pvS.counterWrap, { bottom: insets.bottom + 20 }]} pointerEvents="none">
-            <Text style={pvS.counterTxt}>{index + 1} / {photos.length}</Text>
-          </View>
-        )}
+        <GestureDetector gesture={pan}>
+          <Reanimated.View style={[{ flex: 1 }, dragStyle]}>
+            <ScrollView
+              ref={scrollRef}
+              horizontal
+              pagingEnabled
+              showsHorizontalScrollIndicator={false}
+              // contentOffset (not scrollTo in an effect) — positions correctly on the very first
+              // frame, before anything is painted, so there's no visible jump from photo 0 to the
+              // tapped index.
+              contentOffset={{ x: initialPos * W, y: 0 }}
+              onMomentumScrollEnd={e => {
+                const p = Math.round(e.nativeEvent.contentOffset.x / W);
+                setIndex(posToIndex(p));
+                if (N > 1 && (p === 0 || p === N + 1)) {
+                  // Landed on a padding duplicate — snap to the real page it stands in for, with no
+                  // animation, so the wrap-around is invisible.
+                  scrollRef.current?.scrollTo({ x: (p === 0 ? N : 1) * W, animated: false });
+                }
+              }}
+            >
+              {loopPhotos.map((p, i) => (
+                <View key={`${p.assetId ?? p.uri ?? i}-${i}`} style={pvS.page}>
+                  <Image source={{ uri: p.uri }} style={pvS.image} resizeMode="contain" />
+                </View>
+              ))}
+            </ScrollView>
+            <Pressable onPress={dismiss} style={[pvS.closeBtn, { top: insets.top + 10 }]} hitSlop={12}>
+              <X size={20} color="white" />
+            </Pressable>
+            {photos.length > 1 && (
+              <View style={[pvS.counterWrap, { bottom: insets.bottom + 20 }]} pointerEvents="none">
+                <Text style={pvS.counterTxt}>{index + 1} / {photos.length}</Text>
+              </View>
+            )}
+          </Reanimated.View>
+        </GestureDetector>
       </Animated.View>
     </Modal>
   );
@@ -1157,46 +1206,67 @@ const pvS = StyleSheet.create({
 // ── Review edit popup (floats above keyboard) ─────────────────────────────────
 const REVIEW_MAX = 500;
 
-export function ReviewEditModal({ value, onSave, onCancel }: {
+export function ReviewEditModal({ value, onSave, onCancel, title = 'My Review', placeholder = 'Write about your visit…' }: {
   value: string;
   onSave: (text: string) => void;
   onCancel: () => void;
+  title?: string;
+  placeholder?: string;
 }) {
   const [text, setText] = useState(value);
   const insets = useSafeAreaInsets();
   const atLimit = text.length >= REVIEW_MAX;
+  // Cancel (or tapping the dimmed backdrop) discards silently when nothing changed; otherwise
+  // confirms first, so an accidental tap can't lose typed text.
+  const handleCancel = () => {
+    if (text === value) { onCancel(); return; }
+    Alert.alert('Discard changes?', 'Your edits to this note haven’t been saved.', [
+      { text: 'Keep Editing', style: 'cancel' },
+      { text: 'Discard', style: 'destructive', onPress: onCancel },
+    ]);
+  };
   return (
     <Modal transparent animationType="fade" statusBarTranslucent>
       <View style={{ flex: 1, justifyContent: 'flex-end' }}>
         <Pressable
           style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.45)' }}
-          onPress={onCancel}
+          onPress={handleCancel}
         />
         <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
-          <View style={[rvS.card, { paddingBottom: insets.bottom + 12 }]}>
-            <View style={rvS.headerRow}>
-              <Pressable onPress={onCancel} hitSlop={12}>
-                <Text style={rvS.cancel}>Cancel</Text>
-              </Pressable>
-              <Text style={rvS.title}>My Review</Text>
-              <Pressable onPress={() => onSave(text)} hitSlop={12}>
-                <Text style={rvS.save}>Save</Text>
-              </Pressable>
+          <View>
+            <View style={[rvS.card, { paddingBottom: insets.bottom + 12 }]}>
+              <View style={rvS.headerRow}>
+                <Pressable onPress={handleCancel} hitSlop={12}>
+                  <Text style={rvS.cancel}>Cancel</Text>
+                </Pressable>
+                <Text style={rvS.title}>{title}</Text>
+                <Pressable onPress={() => onSave(text)} hitSlop={12}>
+                  <Text style={rvS.save}>Save</Text>
+                </Pressable>
+              </View>
+              <TextInput
+                style={rvS.input}
+                value={text}
+                onChangeText={setText}
+                placeholder={placeholder}
+                placeholderTextColor="#9CA3AF"
+                multiline
+                autoFocus
+                scrollEnabled
+                maxLength={REVIEW_MAX}
+              />
+              <Text style={[rvS.charCount, atLimit && rvS.charCountLimit]}>
+                {text.length}/{REVIEW_MAX}
+              </Text>
             </View>
-            <TextInput
-              style={rvS.input}
-              value={text}
-              onChangeText={setText}
-              placeholder="Write about your visit…"
-              placeholderTextColor="#9CA3AF"
-              multiline
-              autoFocus
-              scrollEnabled
-              maxLength={REVIEW_MAX}
-            />
-            <Text style={[rvS.charCount, atLimit && rvS.charCountLimit]}>
-              {text.length}/{REVIEW_MAX}
-            </Text>
+            {/* White filler that rides up with the card (same KeyboardAvoidingView-shifted
+                parent) and extends far past the screen bottom — so once the card is pushed up
+                above the keyboard, this sits exactly where the keyboard renders. The system
+                keyboard's own top corners are slightly rounded, exposing a sliver of whatever
+                sits directly behind it; without this, that sliver showed the dim backdrop
+                Pressable behind the whole modal as two odd blank corners. White here reads as
+                the note card simply continuing on behind the keyboard instead. */}
+            <View style={rvS.keyboardFiller} pointerEvents="none" />
           </View>
         </KeyboardAvoidingView>
       </View>
@@ -1206,6 +1276,7 @@ export function ReviewEditModal({ value, onSave, onCancel }: {
 const rvS = StyleSheet.create({
   card:          { backgroundColor:'white', borderTopLeftRadius:28, borderTopRightRadius:28,
                    paddingHorizontal:20, paddingTop:16 },
+  keyboardFiller:{ position:'absolute', top:'100%', left:0, right:0, height:1000, backgroundColor:'white' },
   headerRow:     { flexDirection:'row', alignItems:'center', justifyContent:'space-between', marginBottom:12 },
   title:         { fontSize:15, fontWeight:'700', color:'#111827' },
   cancel:        { fontSize:15, color:'#6B7280', minWidth:56 },
@@ -1213,4 +1284,951 @@ const rvS = StyleSheet.create({
   input:         { fontSize:15, color:'#111827', lineHeight:24, minHeight:120, maxHeight:260 },
   charCount:     { fontSize:12, color:'#9CA3AF', textAlign:'right', paddingTop:6, paddingBottom:4 },
   charCountLimit:{ color:'#EF4444' },
+});
+
+// ── Visit log system (read-only "My Visit" card list + full-screen editor) ───────────────────
+// Shared by all three levels that can log a visit — destination, country, spot — so the journal-
+// entry UX (one standalone module per trip: title, dates, notes, spots-visited-style selector,
+// photos) is implemented exactly once instead of three times. Each caller supplies its own
+// selector (or none at all, for the spot level, which has nothing beneath it to tag a visit
+// with) and its own store wiring (save/delete/mark-visited), so this file never needs to know
+// which level it's being used from.
+
+// One selectable thing a visit can be tagged with — a spot (destination level) or a destination
+// (country level). Kept generic on purpose: this file only ever reads id/name/renderThumb.
+export interface VisitSelectorItem {
+  id: string;
+  name: string;
+  // Renders this item's own thumbnail — typically an <EntityPhoto>, which fills whatever sized/
+  // clipped wrapper the caller-agnostic layout below puts it in (EntityPhoto defaults to
+  // absoluteFill). Kept as a render callback (not e.g. a cacheKey/load pair) so this file never
+  // needs to import EntityPhoto or know how a given level fetches its thumbnails.
+  renderThumb: () => React.ReactNode;
+}
+
+// Same gray used for the About tab's boxes elsewhere in the app (DestinationSheet's own
+// ABOUT_BORDER) — duplicated here as a plain value rather than imported, since this file sits
+// below DestinationSheet in the dependency graph.
+const VISIT_CARD_BORDER = '#D8DBE0';
+// Caption-strip treatment for a selector item's thumbnail card (name over a dark gradient that
+// fades up into the photo) — same formula as DestinationSheet's own WHY_STRIP_OPACITY/
+// STRIP_FADE_STOPS, just scoped to this file's own (smaller) card size.
+const VISIT_STRIP_OPACITY = 0.68;
+const VISIT_STRIP_FADE_H = 32;
+const VISIT_STRIP_FADE_STOPS = Array.from({ length: 11 }, (_, i) => {
+  const t = i / 10;
+  return { offset: `${t}`, opacity: VISIT_STRIP_OPACITY * t * t * (3 - 2 * t) };
+});
+
+// ── Read-only "My Visit" card list ────────────────────────────────────────────────────────────
+// Each logged visit is its own standalone module — its own title, dates, photos, and notes, like
+// a separate journal entry. Renders one memCard per visit (each section — notes, selector,
+// photos — completely omitted when empty, with the LAST populated section, or the header alone
+// if all are empty, getting consistent bottom padding — see memTopRowOnly/memNotesLast/
+// memSpotsCarouselLast below), plus a trailing "Add Visit +" button.
+export function VisitCardList<T extends VisitSelectorItem>({
+  visits, onEditVisit, onNewVisit, onOpenGallery, onSelectItem, selectorLabel, selectorItems,
+  ratingValue, hideSingleDayCount,
+}: {
+  visits: Visit[];
+  onEditVisit: (v: Visit) => void;
+  onNewVisit: () => void;
+  onOpenGallery: (v: Visit) => void;
+  // Pressing a selector item's own card within a visit (e.g. jumping to that spot's or
+  // destination's own sheet).
+  onSelectItem?: (item: T) => void;
+  // Both omitted (or an empty item list) hides the selector section entirely — the spot level
+  // passes neither, since there's nothing beneath a spot to tag a visit with.
+  selectorLabel?: string;
+  selectorItems?: T[];
+  // Rating is a per-ENTITY attribute (e.g. a spot's own rating), not per-visit — same value
+  // shown on every card's header here when provided. Omitted (or 0) hides the stars entirely;
+  // only the spot level passes this.
+  ratingValue?: number;
+  // A single-day visit's "· 1 day" is noise for a spot (inherently a short, usually same-day
+  // stop) — hidden when this is true, mirroring VisitModuleSheet's own prop of the same name.
+  // A genuinely multi-day spot visit still shows its real day count.
+  hideSingleDayCount?: boolean;
+}) {
+  // Sizes the selector carousel's square cards to match the photo grid's own tiles exactly —
+  // measured (not hardcoded) off the carousel's own container width, using the identical
+  // padding/gap math PhotoCollage's EditablePhotoGrid applies to ITS measured width, since both
+  // sit in the same memCard at the same 3-column layout. One value for the whole list (not per
+  // visit module), since every module's card is the same screen width.
+  const [itemSquareSize, setItemSquareSize] = useState(92);
+  const hasSelector = !!selectorLabel && !!selectorItems?.length;
+  // "Spots Visited" → "spots"/"spot", "Destinations Visited" → "destinations"/"destination" —
+  // derived from the caller's own label rather than a second prop, so the two can never drift.
+  const pluralNoun   = selectorLabel ? selectorLabel.replace(/\s+Visited$/i, '').toLowerCase() : '';
+  const singularNoun = pluralNoun.endsWith('s') ? pluralNoun.slice(0, -1) : pluralNoun;
+
+  if (visits.length === 0) {
+    return (
+      <View style={vcS.listWrap}>
+        <View style={vcS.memCardShadow}>
+          <Pressable style={vcS.memCard} onPress={onNewVisit}>
+            <View style={vcS.memTopRow}>
+              <Text style={vcS.memDateEmpty}>No dates logged — tap to add a visit</Text>
+            </View>
+          </Pressable>
+        </View>
+        <Pressable style={vcS.addVisitBtn} onPress={onNewVisit}>
+          <Text style={vcS.addVisitBtnTxt}>Add Visit +</Text>
+        </Pressable>
+      </View>
+    );
+  }
+
+  return (
+    <View style={vcS.listWrap}>
+      {visits.map(v => {
+        const days = visitDayCount(v);
+        const itemsForVisit = hasSelector ? selectorItems!.filter(it => v.spotIds?.includes(it.id)) : [];
+        // Nothing besides the title/dates header itself — no white sliver of empty card below
+        // it in that case; the dark header just fills the whole box (all four corners rounded,
+        // no trailing margin).
+        const headerOnly = !v.notes && !itemsForVisit.length && !v.photos?.length;
+        return (
+          <View key={v.id} style={vcS.memCardShadow}>
+            <View style={vcS.memCard}>
+              <View style={[vcS.memTopRow, headerOnly && vcS.memTopRowOnly]}>
+                <View style={{ flex: 1 }}>
+                  {!!v.title && (
+                    <Text style={vcS.memTripNameHeading} numberOfLines={2}>{v.title}</Text>
+                  )}
+                  {!!ratingValue && (
+                    <View style={vcS.memRatingRow}>
+                      <StarRating value={ratingValue} size={13} />
+                    </View>
+                  )}
+                  <Text style={vcS.memDateVal}>
+                    {fmtVisitRangeShort(v)}
+                    {days != null && !(days === 1 && hideSingleDayCount) && `  ·  ${days} day${days === 1 ? '' : 's'}`}
+                  </Text>
+                </View>
+                <Pressable style={vcS.memEditBtn} onPress={() => onEditVisit(v)}>
+                  <Pencil size={12} color="white" />
+                  <Text style={vcS.memEditBtnTxt}>Edit</Text>
+                </Pressable>
+              </View>
+              {!!v.notes && (
+                // When nothing follows (no selector items, no photos), match the same bottom
+                // padding the card ends on when photos ARE the last section.
+                <Pressable
+                  style={[vcS.memNotesDisplay, !itemsForVisit.length && !v.photos?.length && vcS.memNotesLast]}
+                  onPress={() => onEditVisit(v)}
+                >
+                  <Text style={vcS.memNotesTxt} numberOfLines={3}>{v.notes}</Text>
+                </Pressable>
+              )}
+              {hasSelector && itemsForVisit.length > 0 && (
+                <View
+                  // No notes block above means nothing separates this from the dark heading
+                  // section — give it a bit of its own top space in that case.
+                  style={!v.notes && vcS.memSpotsWrapNoNotes}
+                  onLayout={e => {
+                    // Same 3-column, 6px-gap math EditablePhotoGrid applies to ITS own measured
+                    // width — this container is the same full memCard width pcS.wrap also
+                    // receives, so subtracting pcS.wrap's own 12px-each-side padding here
+                    // reproduces the same tile size.
+                    const w = e.nativeEvent.layout.width - 24;
+                    const size = (w - 6 * 2) / 3;
+                    if (Math.abs(size - itemSquareSize) > 0.5) setItemSquareSize(size);
+                  }}
+                >
+                  <Text style={vcS.memSpotsCount}>
+                    {itemsForVisit.length} {itemsForVisit.length === 1 ? singularNoun : pluralNoun} visited
+                  </Text>
+                  {/* When no photos follow, match the same bottom padding the card ends on
+                      when photos ARE last. */}
+                  <GHScrollView
+                    horizontal
+                    showsHorizontalScrollIndicator={false}
+                    style={[vcS.memSpotsCarousel, !v.photos?.length && vcS.memSpotsCarouselLast]}
+                    contentContainerStyle={vcS.memSpotsCarouselContent}
+                  >
+                    {itemsForVisit.map(item => (
+                      <Pressable
+                        key={item.id}
+                        style={[vcS.memSpotCard, { width: itemSquareSize, height: itemSquareSize }]}
+                        onPress={() => onSelectItem?.(item)}
+                      >
+                        {item.renderThumb()}
+                        {/* Name on a dark strip whose top fades up into the photo — same
+                            treatment as the About tab's "Why visit" captions. */}
+                        <View pointerEvents="none" style={vcS.memSpotCardStrip}>
+                          <View style={vcS.memSpotCardStripFade}>
+                            {/* Explicit NUMERIC width/height (not "100%") — percentage sizing
+                                inside react-native-svg has fallen short of its container before. */}
+                            <Svg width={itemSquareSize} height={VISIT_STRIP_FADE_H}>
+                              <Defs>
+                                <SvgLinearGradient id={`memItemGrad-${item.id}`} x1="0" y1="0" x2="0" y2="1">
+                                  {VISIT_STRIP_FADE_STOPS.map(({ offset, opacity }) => (
+                                    <Stop key={offset} offset={offset} stopColor="#000" stopOpacity={opacity} />
+                                  ))}
+                                </SvgLinearGradient>
+                              </Defs>
+                              <Rect x="0" y="0" width={itemSquareSize} height={VISIT_STRIP_FADE_H} fill={`url(#memItemGrad-${item.id})`} />
+                            </Svg>
+                          </View>
+                          {/* Arrow as a trailing text glyph (not a separate icon) so it flows
+                              with the text and sits right after the last letter, even once the
+                              name wraps to a second line. */}
+                          <Text style={vcS.memSpotCardName} numberOfLines={2}>
+                            {item.name}
+                            <Text style={vcS.memSpotCardArrow}> ›</Text>
+                          </Text>
+                        </View>
+                      </Pressable>
+                    ))}
+                  </GHScrollView>
+                </View>
+              )}
+              {!!v.photos?.length && (
+                // Same edge case as the selector section above — nothing (no notes, no
+                // selector items) separating this from the dark heading section — gets the
+                // same bit of extra top space on top of its own baseline paddingTop.
+                <View style={[vcS.memPhotosWrap, !v.notes && !itemsForVisit.length && vcS.memSpotsWrapNoNotes]}>
+                  <View style={vcS.memPhotosHeadRow}>
+                    <Text style={vcS.memPhotosCount}>{v.photos.length} photo{v.photos.length === 1 ? '' : 's'}</Text>
+                    <Pressable style={vcS.seeAllRow} onPress={() => onOpenGallery(v)} hitSlop={8}>
+                      <Text style={[vcS.seeAllTxt, vcS.memViewAllTxt]}>View all</Text>
+                      <ChevronRight size={15} color="#9CA3AF" />
+                    </Pressable>
+                  </View>
+                  {/* Negative margin pulls the grid up against PhotoCollage's own 12px top
+                      padding (pcS.wrap, shared with other PhotoCollage callers so not safe to
+                      trim there) — memPhotosHeadRow's marginBottom alone left too much space
+                      above the photos. */}
+                  <Pressable style={{ marginTop: -8 }} onPress={() => onOpenGallery(v)}>
+                    <PhotoCollage photos={v.photos} onAdd={() => onOpenGallery(v)} hideAddMore expandAll maxRows={3} />
+                  </Pressable>
+                </View>
+              )}
+            </View>
+          </View>
+        );
+      })}
+      <Pressable style={vcS.addVisitBtn} onPress={onNewVisit}>
+        <Text style={vcS.addVisitBtnTxt}>Add Visit +</Text>
+      </Pressable>
+    </View>
+  );
+}
+const vcS = StyleSheet.create({
+  addVisitBtn:         { alignSelf:'center', paddingVertical:6 },
+  addVisitBtnTxt:      { fontSize:14, fontWeight:'600', color:'#C1C6D0' },
+  // gap:16 reproduces what each caller's own slidePanel gap used to provide directly between
+  // these cards, back when this list's elements were the panel's own direct children (a bare
+  // Fragment) instead of wrapped in this View. paddingTop gives the FIRST card's own shadow
+  // room to render — the tab content sits inside a panel with overflow:'hidden' (for the tab
+  // swipe animation), which otherwise clipped the shadow bleeding above that first card's top
+  // edge (every card after it already had that same room, from the gap above it).
+  // paddingTop comfortably clears the shadow's full reach above the card (shadowRadius:14 minus
+  // the 5px downward offset still leaves a soft blur reaching further than that) — anything
+  // short of the shadow's true falloff distance clips its faint outer edge abruptly instead of
+  // letting it fade to nothing, which reads as a visible seam rather than no shadow at all.
+  listWrap:            { gap:16, paddingTop:20 },
+  // Shadow lives on this outer wrapper, not memCard itself — memCard needs overflow:'hidden' to
+  // clip its dark header strip to the rounded corners, and iOS clips a shadow along with content
+  // when both are on the same view.
+  memCardShadow:       { borderRadius:20, backgroundColor:'white',
+                          shadowColor:'#000', shadowOpacity:0.16, shadowRadius:14, shadowOffset:{ width:0, height:5 }, elevation:5 },
+  memCard:             { backgroundColor:'white', borderRadius:20, overflow:'hidden', borderWidth:1, borderColor:VISIT_CARD_BORDER },
+  memTopRow:           { flexDirection:'row', alignItems:'flex-start', paddingHorizontal:18, paddingTop:18, paddingBottom:18,
+                         backgroundColor:'#111827', marginBottom:8,
+                         borderTopLeftRadius:19, borderTopRightRadius:19 },
+  // When nothing follows the header (see headerOnly above) — rounds the bottom corners to match
+  // and drops the trailing margin, so the dark header itself fills the entire card.
+  memTopRowOnly:       { marginBottom:0, borderBottomLeftRadius:19, borderBottomRightRadius:19 },
+  memTripNameHeading:  { fontSize:25, fontFamily:'PlayfairDisplay_700Bold', color:'white', marginBottom:4 },
+  memRatingRow:        { marginBottom:8 },
+  memDateVal:          { fontSize:14, fontWeight:'600', color:'#9CA3AF' },
+  memDateEmpty:        { fontSize:14, fontWeight:'600', color:'#9CA3AF' },
+  memEditBtn:          { flexDirection:'row', alignItems:'center', gap:5, paddingHorizontal:10, paddingVertical:6,
+                         borderRadius:10, backgroundColor:'rgba(255,255,255,0.14)' },
+  memEditBtnTxt:       { fontSize:12, fontWeight:'600', color:'white' },
+  memNotesDisplay:     { marginHorizontal:12, marginTop:10, marginBottom:16,
+                         paddingHorizontal:14, paddingVertical:12,
+                         borderRadius:14, backgroundColor:'#F9FAFB' },
+  // Overrides memNotesDisplay's marginBottom when notes is the card's last section — 12, to
+  // match the card's bottom space when photos are the last section (PhotoCollage's pcS.wrap).
+  memNotesLast:        { marginBottom:12 },
+  memNotesTxt:         { fontSize:15, color:'#374151', lineHeight:24 },
+  memPhotosWrap:       { paddingTop:16 },
+  memPhotosHeadRow:    { flexDirection:'row', alignItems:'center', justifyContent:'space-between',
+                         paddingHorizontal:12, marginBottom:2 },
+  memPhotosCount:      { fontSize:13, fontWeight:'600', color:'#9CA3AF', marginLeft:3 },
+  // Selector-items-visited display (read-only) — a horizontal carousel of square photo cards,
+  // the item's own name overlaid at the bottom over a gradient scrim, rather than a vertical
+  // list of thumbnail rows.
+  memSpotsCount:           { fontSize:13, fontWeight:'600', color:'#9CA3AF', paddingHorizontal:12, marginLeft:3, marginBottom:6 },
+  memSpotsWrapNoNotes:     { marginTop:7 },
+  memSpotsCarousel:        { paddingBottom:4 },
+  // When the selector is the card's last section (no photos follow), match the same bottom
+  // space the card ends on when photos ARE last (PhotoCollage's pcS.wrap paddingBottom:12).
+  memSpotsCarouselLast:    { paddingBottom:12 },
+  // paddingHorizontal:12 and gap:6 (not 18/10) to match pcS.wrap's own outer padding and
+  // EDIT_GAP's own inter-tile gap on the photo grid below it — the outer padding is also the
+  // same value the itemSquareSize onLayout calc already assumes, so the squares' outer edges
+  // line up with the photo grid's edges, not just their sizes.
+  memSpotsCarouselContent: { paddingHorizontal:12, gap:6 },
+  // width/height come from itemSquareSize (measured to match the photo grid's own tile size),
+  // not a fixed value here.
+  memSpotCard:             { borderRadius:14, overflow:'hidden', backgroundColor:'#F3F4F6',
+                              borderWidth:2, borderColor:'#16A34A' },
+  memSpotCardStrip:        { position:'absolute', left:0, right:0, bottom:0,
+                              paddingHorizontal:8, paddingTop:6, paddingBottom:10, backgroundColor:`rgba(0,0,0,${VISIT_STRIP_OPACITY})` },
+  memSpotCardStripFade:    { position:'absolute', left:0, right:0, top:-VISIT_STRIP_FADE_H, height:VISIT_STRIP_FADE_H },
+  memSpotCardName:         { fontSize:12, fontWeight:'700', color:'white' },
+  memSpotCardArrow:        { fontSize:12, fontWeight:'700', color:'#D1D5DB' },
+  seeAllRow:          { flexDirection:'row', alignItems:'center', gap:1 },
+  seeAllTxt:          { fontSize:13, fontWeight:'600', color:'#16A34A' },
+  // Override for the My Visit "View all" photos link — gray instead of the shared seeAllTxt green.
+  memViewAllTxt:      { color:'#9CA3AF' },
+});
+
+// One color for the WHOLE rating, keyed off the value chosen (not one color per star index) —
+// a 2-star rating shows both filled stars orange, a 5-star rating shows all five green, etc.,
+// reading at a glance as "bad" → "great" rather than a flat single color regardless of rating.
+const RATING_COLORS: Record<number, string> = {
+  1: '#DC2626', // red
+  2: '#F97316', // orange
+  3: '#EAB308', // yellow
+  4: '#16A34A', // green
+  5: '#16A34A', // green
+};
+
+// ── Star rating (tappable) ────────────────────────────────────────────────────
+// Used by VisitModuleSheet's optional rating row below (spot-level trips only, see
+// ratingValue/onRatingChange) — moved here from SpotSheet.tsx alongside it.
+export function StarRating({ value, onChange, size = 30 }: {
+  value: number; onChange?: (v: number) => void; size?: number;
+}) {
+  const color = RATING_COLORS[value] ?? '#16A34A';
+  return (
+    <View style={{ flexDirection: 'row', gap: 6 }}>
+      {[1, 2, 3, 4, 5].map(n => (
+        <Pressable key={n} disabled={!onChange} onPress={() => onChange?.(n)} hitSlop={6}>
+          <Star
+            size={size}
+            color={n <= value ? color : '#D1D5DB'}
+            fill={n <= value ? color : 'none'}
+            strokeWidth={2}
+          />
+        </Pressable>
+      ))}
+    </View>
+  );
+}
+
+// ── Full-screen visit MODULE edit sheet ───────────────────────────────────────────────────────
+// Scoped to exactly ONE visit (a fresh one when `visit` is null) — like editing a single Strava
+// activity or journal entry. Every field auto-commits to LOCAL state as it changes; nothing is
+// persisted to the caller's store until Save (see handleSave/canSave), keyed on this module's
+// own id, so sibling visits are never touched.
+export function VisitModuleSheet<T extends VisitSelectorItem>({
+  entityName, visit, onSave, onDelete, onClose,
+  selectorLabel, selectorItems, onCheckItem, onRemoveLegacy,
+  ratingValue, onRatingChange, noun = 'Trip', hideSingleDayCount,
+}: {
+  // Used for the title placeholder/fallback ("${entityName} ${noun}") — the destination's,
+  // country's, or spot's own name.
+  entityName: string;
+  // "Trip" (default) or "Visit" — spots call these visits, not trips, throughout this sheet's
+  // own copy (title placeholder, "Remove Trip"/"Remove Visit", "Trip Notes"/"Visit Notes", the
+  // "Add trip/visit dates" placeholders, the discard-changes prompt, etc.) and the date picker
+  // it opens.
+  noun?: string;
+  // A single-day visit's "1 day" subtitle next to the date range is noise for a spot (which is
+  // inherently a short, usually same-day stop) — hidden when this is true, but a genuinely
+  // multi-day spot visit (e.g. camping) still shows its real day count. Destination/country
+  // leave this unset and always show it.
+  hideSingleDayCount?: boolean;
+  visit: Visit | null;
+  onSave: (v: Visit) => void;
+  onDelete: (id: string) => void;
+  onClose: () => void;
+  // Both omitted (or an empty item list) hides the selector section entirely — the spot level
+  // passes neither.
+  selectorLabel?: string;
+  selectorItems?: T[];
+  // Fired only when an item is newly CHECKED (not on uncheck) — lets the caller mirror whatever
+  // "checking this off also marks IT visited" side effect makes sense at its own level (e.g. the
+  // destination level marks a checked spot visited destination-wide too), without this shared
+  // file needing to know what that side effect actually is.
+  onCheckItem?: (id: string) => void;
+  // Fired instead of onDelete when removing the synthesized 'legacy' visit (migrated from this
+  // entity's pre-visits-array fields, see each caller's own localVisits derivation) — the caller
+  // unsaves the whole entity rather than trying to delete a visit id that was never actually
+  // persisted as its own record.
+  onRemoveLegacy?: () => void;
+  // Rating lives outside the visits system (it's a per-ENTITY attribute — e.g. a spot's own
+  // rating — not tied to any one trip's own fields), but is edited HERE, right under Dates, for
+  // the levels that have one. Omitted entirely (both props) hides the row — only the spot level
+  // passes these.
+  ratingValue?: number;
+  onRatingChange?: (v: number) => void;
+}) {
+  const insets = useSafeAreaInsets();
+  const isLegacy = visit?.id === 'legacy';
+  const idRef = useRef(visit?.id ?? Date.now().toString());
+  const hasSelector = !!selectorLabel && !!selectorItems?.length;
+
+  const now = new Date();
+  const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+
+  const [title,       setTitle      ] = useState(visit?.title ?? '');
+  // Empty (not defaulted to today) for a brand-new trip — the Dates row shows its own blank
+  // "Add trip dates" placeholder until the user actually picks something (see the JSX below),
+  // rather than silently pre-filling today's date as if the user had chosen it.
+  const [startDate,   setStartDate  ] = useState(visit?.startDate ?? '');
+  const [endDate,     setEndDate    ] = useState<string | undefined>(visit?.endDate);
+  const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set(visit?.spotIds ?? []));
+  const [localPhotos, setLocalPhotos] = useState<PhotoEntry[]>(visit?.photos ?? []);
+  // True while a photo drag is in progress in the grid below — disables this whole page's own
+  // ScrollView for that window (see the ScrollView prop below), since it was otherwise free to
+  // recognize a large drag movement as its own scroll and cancel the tile's drag gesture mid-way.
+  const [photoDragActive, setPhotoDragActive] = useState(false);
+  const [localNotes,  setLocalNotes ] = useState(visit?.notes ?? '');
+  const [editingDates,     setEditingDates    ] = useState(false);
+  const [showReviewEditor, setShowReviewEditor] = useState(false);
+  // Where the title's last line of text ends (from the hidden mirror's onTextLayout below) —
+  // lets the pencil sit right after the actual title instead of a fixed "Tap to edit" row.
+  const [titleLastLine, setTitleLastLine] = useState<{ x: number; y: number; width: number; height: number } | null>(null);
+  const [titleFocused, setTitleFocused] = useState(false);
+  const [selectorOpen, setSelectorOpen] = useState(true);
+  // Multiline title input doesn't reliably auto-grow inside this flex-row header, so its
+  // height is driven explicitly off the measured content — otherwise a wrapped second line
+  // gets clipped/overlapped by the "Tap to edit" hint sitting right below it.
+  const TITLE_LINE_H = 25, TITLE_MAX_LINES = 3;
+  // Seeded to the full 3-line height whenever there's an existing title, not the 1-line
+  // default — onContentSizeChange doesn't reliably fire (or fires too late) for a multiline
+  // TextInput's OWN initial value on remount, so a saved multi-line title opened with its later
+  // lines clipped until you typed a character. A shorter title just shrinks back down the
+  // instant onContentSizeChange does fire, which happens virtually immediately.
+  const [titleInputHeight, setTitleInputHeight] = useState(() => visit?.title ? TITLE_LINE_H * TITLE_MAX_LINES : 28);
+  const titleInputRef = useRef<TextInput>(null);
+  // Last title that measured within the 3-line cap — a typed character that would wrap to a
+  // 4th line gets reverted back to this in onContentSizeChange below (there's no native
+  // maxLines-style prop for a multiline TextInput, only a total-character maxLength, which is
+  // no longer used here — the limit is lines, not characters).
+  const lastFittingTitleRef = useRef(title);
+
+  // Not persisted until Save (see handleSave) — every field setter below calls this right
+  // alongside its own setState, so it doubles as "something changed" tracking for both the X
+  // button's discard-changes prompt (handleClose) and graying out the Save button until there
+  // IS something to save. State (not a ref) because the Save button needs to actually
+  // re-render when this flips — every call site already triggers its own setState right next
+  // to this one, so this adds no re-renders beyond what was already happening.
+  const [dirty, setDirty] = useState(false);
+  const commit = () => {
+    setDirty(true);
+  };
+  // Builds the persisted Visit shape from current draft state — called only at actual Save
+  // time now (see handleSave), not on every field edit.
+  const buildVisit = (): Visit => ({
+    id: idRef.current,
+    // Saved as the real title when the user never typed one (not left blank for some other
+    // component to guess a fallback later) — matches the placeholder text itself, so what
+    // you see before typing is exactly what gets saved if you don't.
+    title: title.trim() || `${entityName} ${noun}`,
+    // Visit.startDate is required, so a trip saved on the strength of notes/selector/photos
+    // alone (dates never actually picked, still '') falls back to today here at save time —
+    // the UI itself stays genuinely blank until the user picks something, only this persisted
+    // record needs a real date.
+    startDate: startDate || todayStr,
+    endDate,
+    spotIds: selectedIds.size ? Array.from(selectedIds) : undefined,
+    photos: localPhotos.length ? localPhotos : undefined,
+    notes: localNotes || undefined,
+  });
+  // At least one of these has to actually have something — a bare title (or nothing at all)
+  // isn't a trip worth saving. Combined with `dirty` for the Save button below: `dirty` says
+  // something CHANGED, this says there's something WORTH keeping. ratingValue only exists for
+  // the levels that pass one (spots) — undefined/0 there just falls through like any other
+  // level that never had it.
+  const hasContent = !!localNotes || selectedIds.size > 0 || localPhotos.length > 0 || !!startDate || !!ratingValue;
+  const canSave = dirty && hasContent;
+
+  // Checking an item off may trigger the caller's own "mark IT visited too" side effect (see
+  // onCheckItem's own doc), but unchecking only removes it from THIS visit's own list — it
+  // might still have been seen on a different trip, so un-marking it globally is a separate,
+  // more deliberate action handled elsewhere.
+  const toggleItem = (id: string) => {
+    const next = new Set(selectedIds);
+    if (next.has(id)) next.delete(id);
+    else { next.add(id); onCheckItem?.(id); }
+    setSelectedIds(next);
+    commit();
+  };
+
+  const slide = useRef(new Animated.Value(H)).current;
+  useEffect(() => {
+    Animated.spring(slide, { toValue: 0, damping: 24, stiffness: 260, useNativeDriver: true }).start();
+  }, []);
+  const dismiss = () => {
+    Animated.timing(slide, { toValue: H, duration: 280, useNativeDriver: true }).start(onClose);
+  };
+  // The Save button — persists the draft for real, then closes. Grayed out (see headerSaveBtn
+  // below) and a no-op until something's actually changed AND there's real content to save
+  // (see canSave/hasContent above).
+  const handleSave = () => {
+    if (!canSave) return;
+    onSave(buildVisit());
+    setDirty(false);
+    dismiss();
+  };
+  // The X button — closes WITHOUT persisting, so anything edited since opening (or since the
+  // last Save) needs a confirmation first, since it would otherwise be silently lost.
+  const handleClose = () => {
+    if (!dirty) { dismiss(); return; }
+    Alert.alert(
+      'Discard changes?',
+      `You have unsaved changes to this ${noun.toLowerCase()}.`,
+      [
+        { text: 'Keep Editing', style: 'cancel' },
+        { text: 'Discard', style: 'destructive', onPress: dismiss },
+      ]
+    );
+  };
+
+  const handleAddPhoto = async () => {
+    const perm = await ImagePicker.requestMediaLibraryPermissionsAsync();
+    if (!perm.granted) {
+      Alert.alert('Permission needed', 'Allow photo library access to add photos.');
+      return;
+    }
+    const result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ['images'], quality: 0.85, allowsMultipleSelection: true,
+    });
+    if (!result.canceled && result.assets.length > 0) {
+      const picked: PhotoEntry[] = result.assets.map(a => ({
+        uri: a.uri, width: a.width, height: a.height, assetId: a.assetId ?? undefined,
+      }));
+      const newEntries = dedupeNewPhotos(localPhotos, picked);
+      if (newEntries.length === 0) {
+        Alert.alert('Already added', "You've already added every photo you picked.");
+        return;
+      }
+      const updated = [...localPhotos, ...newEntries];
+      setLocalPhotos(updated);
+      commit();
+    }
+  };
+  const handleDeletePhoto = (index: number) => {
+    const updated = localPhotos.filter((_, i) => i !== index);
+    setLocalPhotos(updated);
+    commit();
+  };
+  const handleReorderPhotos = (reordered: PhotoEntry[]) => {
+    setLocalPhotos(reordered);
+    commit();
+  };
+
+  const handleDelete = () => {
+    Alert.alert(
+      `Remove ${noun.toLowerCase()}?`,
+      isLegacy
+        ? 'This will permanently delete your log and notes.'
+        : `This will permanently delete this ${noun.toLowerCase()}’s dates, photos, and notes.`,
+      [
+        { text: 'Cancel', style: 'cancel' },
+        {
+          text: 'Remove', style: 'destructive',
+          onPress: () => {
+            if (isLegacy) onRemoveLegacy?.();
+            else onDelete(idRef.current);
+            dismiss();
+          },
+        },
+      ]
+    );
+  };
+
+  return (
+    <Modal transparent animationType="none" statusBarTranslucent>
+      <Animated.View style={[esS.sheet, { transform: [{ translateY: slide }] }]}>
+
+        {/* Header — title doubles as this module's own trip-name field. */}
+        <View style={[esS.header, { paddingTop: insets.top + 10 }]}>
+          {/* Creating a brand-new trip (visit === null) — "Cancel" reads as abandoning
+              something not yet created, where the X (used once a trip already exists) reads
+              more like closing/dismissing an existing one. */}
+          {visit ? (
+            <Pressable onPress={handleClose} style={esS.closeBtn} hitSlop={12}>
+              <X size={18} color="#111827" />
+            </Pressable>
+          ) : (
+            <Pressable onPress={handleClose} style={esS.cancelBtn} hitSlop={12}>
+              <Text style={esS.cancelBtnTxt}>Cancel</Text>
+            </Pressable>
+          )}
+          <View style={esS.headerTitleEditWrap}>
+            {/* Hidden mirror of the title, same font/width, used only to MEASURE the height the
+                real box below should be — TextInput's own onContentSizeChange is unreliable when
+                content SHRINKS (fires fine on growth, often doesn't on deletion), which left the
+                real box stuck at its tallest-ever height even after the title shrank back down.
+                A plain Text's onLayout doesn't have that asymmetry — it fires on every change,
+                growing or shrinking, so it's used as the source of truth instead. */}
+            <Text
+              style={esS.headerTitleMirror}
+              pointerEvents="none"
+              onLayout={e => {
+                const h = e.nativeEvent.layout.height;
+                // A 4th line's worth of height (with a little slack for rounding) means the
+                // character just typed pushed it over the 3-line cap — revert to the last title
+                // that still fit, rather than accept it and let the box clip it invisibly.
+                if (h > TITLE_LINE_H * TITLE_MAX_LINES + 6) {
+                  setTitle(lastFittingTitleRef.current);
+                  setTitleInputHeight(TITLE_LINE_H * TITLE_MAX_LINES);
+                } else {
+                  lastFittingTitleRef.current = title;
+                  setTitleInputHeight(h);
+                }
+              }}
+              onTextLayout={e => {
+                const lines = e.nativeEvent.lines;
+                if (lines.length) setTitleLastLine(lines[lines.length - 1]);
+              }}
+            >
+              {title || ' '}
+            </Text>
+            <TextInput
+              ref={titleInputRef}
+              style={[esS.headerTitleInput, {
+                height: Math.min(TITLE_LINE_H * TITLE_MAX_LINES + 3, Math.max(28, titleInputHeight)),
+              }]}
+              value={title}
+              onChangeText={text => {
+                // Multiline TextInputs insert a literal "\n" for the return key instead of
+                // firing a distinct submit event on iOS — stripping it here and blurring is
+                // what makes Enter "complete" the field instead of adding a new line.
+                const hadNewline = text.includes('\n');
+                const clean = hadNewline ? text.replace(/\n/g, '') : text;
+                setTitle(clean);
+                commit();
+                if (hadNewline) titleInputRef.current?.blur();
+              }}
+              placeholder={`${entityName} ${noun}`}
+              placeholderTextColor="#9CA3AF"
+              textAlign="center"
+              multiline
+              returnKeyType="done"
+              blurOnSubmit
+              onSubmitEditing={() => titleInputRef.current?.blur()}
+              onFocus={() => setTitleFocused(true)}
+              onBlur={() => setTitleFocused(false)}
+            />
+            {title ? (
+              // Title has real text — just the pencil, positioned right after the actual last
+              // letter (via titleLastLine, measured off the hidden mirror above), no "Tap to
+              // edit" row taking up its own line underneath. Hidden entirely while actually
+              // editing — there's no need to hint "you can edit this" while already doing so.
+              !titleFocused && titleLastLine && (
+                <Pencil
+                  size={16}
+                  color="#D1D5DB"
+                  style={[esS.headerTitlePencil, {
+                    left: titleLastLine.x + titleLastLine.width + 8,
+                    top: titleLastLine.y + (titleLastLine.height - 16) / 2,
+                  }]}
+                />
+              )
+            ) : (
+              // No title typed yet — keep the explicit "Tap to edit" hint, since there's no
+              // actual title text for a lone pencil to sit "after".
+              <View style={esS.headerTitleHintRow}>
+                <Pencil size={10} color="#9CA3AF" />
+                <Text style={esS.headerTitleHintTxt}>Tap to edit</Text>
+              </View>
+            )}
+          </View>
+          <Pressable
+            style={[esS.headerSaveBtn, !canSave && esS.headerSaveBtnDisabled]}
+            onPress={handleSave}
+            disabled={!canSave}
+            hitSlop={8}
+          >
+            <Text style={[esS.headerSaveBtnTxt, !canSave && esS.headerSaveBtnTxtDisabled]}>Save</Text>
+          </Pressable>
+        </View>
+
+        {/* No KeyboardAvoidingView here (deliberately) — this screen has no TextInput of its
+            own; the only text entry ("Notes") opens ReviewEditModal, a SEPARATE stacked
+            Modal with its own keyboard handling. A KeyboardAvoidingView protecting nothing
+            was also the actual bug behind "the edit page doesn't appear": flex:1 on a
+            KeyboardAvoidingView measures unreliably specifically when nested inside a
+            statusBarTranslucent Modal (a known RN interaction) — it was collapsing to zero
+            height, so everything below the header (a sibling, unaffected) silently vanished
+            while the map showed through underneath. */}
+        <View style={{ flex: 1 }}>
+          <GHScrollView
+            contentContainerStyle={esS.scrollContent}
+            keyboardShouldPersistTaps="handled"
+            showsVerticalScrollIndicator={false}
+            scrollEnabled={!photoDragActive}
+            scrollEventThrottle={16}
+            // A swipe that starts on a photo and scrolls this page must not open the photo viewer.
+            onScroll={notePhotoGridScroll}
+          >
+
+            {/* ── DATES ───────────────────────────────────────────── */}
+            <View style={esS.section}>
+              <View style={esS.sectionHead}>
+                <Text style={esS.sectionTitle}>Dates</Text>
+              </View>
+              {/* The whole row opens the editor now, not just a small "Edit" link — bigger,
+                  easier target, with a chevron (the same "tap to open" affordance used
+                  elsewhere in this file) replacing the old text link. */}
+              <Pressable style={esS.dateRow} onPress={() => setEditingDates(true)}>
+                {startDate ? (
+                  <>
+                    <View style={esS.dateIconBadge}>
+                      <Calendar size={19} color="#059669" />
+                    </View>
+                    <View style={esS.dateTextCol}>
+                      {/* Same abbreviation rules as the read-only My Visit card
+                          (fmtVisitRangeShort) — same-month/same-year ranges collapse instead of
+                          spelling out both full dates. */}
+                      <Text style={esS.dateRangeTxt} numberOfLines={1}>
+                        {fmtVisitRangeShort({ id: idRef.current, startDate, endDate })}
+                      </Text>
+                      {(() => {
+                        const days = visitDayCount({ id: idRef.current, startDate, endDate });
+                        if (days == null || (days === 1 && hideSingleDayCount)) return null;
+                        return <Text style={esS.dateSubTxt}>{days} day{days === 1 ? '' : 's'}</Text>;
+                      })()}
+                    </View>
+                  </>
+                ) : (
+                  // Blank state, before any date has actually been picked for a new visit — a
+                  // gray (not green) calendar badge, same shape/size as the filled-in state, and
+                  // "Add trip/visit dates" instead of a real range.
+                  <>
+                    <View style={[esS.dateIconBadge, esS.dateIconBadgeEmpty]}>
+                      <Calendar size={19} color="#9CA3AF" />
+                    </View>
+                    <View style={esS.dateTextCol}>
+                      <Text style={esS.dateRangePh}>Add {noun.toLowerCase()} dates</Text>
+                    </View>
+                  </>
+                )}
+                <Pencil size={16} color="#D1D5DB" />
+              </Pressable>
+            </View>
+
+            {onRatingChange && (
+              <View style={esS.section}>
+                <View style={esS.sectionHead}>
+                  <Text style={esS.sectionTitle}>Your Rating</Text>
+                </View>
+                <View style={esS.ratingRow}>
+                  {/* onRatingChange itself writes straight to the caller's store (rating lives
+                      outside the local draft/Save system, unlike every other field here) — commit()
+                      alongside it just marks the Save button's own dirty/hasContent state so it
+                      reflects a rating that was just set, same as every other field's own setter does. */}
+                  <StarRating value={ratingValue ?? 0} onChange={r => { onRatingChange(r); commit(); }} />
+                </View>
+              </View>
+            )}
+
+            {/* ── NOTES ───────────────────────────────────────────── */}
+            <View style={esS.section}>
+              <View style={esS.sectionHead}>
+                <Text style={esS.sectionTitle}>Notes</Text>
+              </View>
+              {/* Same row layout as the Dates row — text/placeholder flex:1, pencil pinned to
+                  the right edge and vertically centered by the row itself. */}
+              <Pressable style={esS.reviewPreview} onPress={() => setShowReviewEditor(true)}>
+                {localNotes
+                  ? <Text style={esS.reviewPreviewTxt}>{localNotes}</Text>
+                  : <Text style={esS.reviewPreviewPh}>Add {noun.toLowerCase()} notes</Text>}
+                <Pencil size={16} color="#D1D5DB" />
+              </Pressable>
+            </View>
+
+            {/* ── SELECTOR (e.g. "Spots Visited" / "Destinations Visited") ─── */}
+            {hasSelector && (
+              <View style={esS.section}>
+                <Pressable style={esS.sectionHead} onPress={() => setSelectorOpen(o => !o)}>
+                  <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
+                    <Text style={esS.sectionTitle}>{selectorLabel}</Text>
+                    {selectedIds.size > 0 && (
+                      <View style={esS.spotsCountBadge}>
+                        <Text style={esS.spotsCountBadgeTxt}>{selectedIds.size}</Text>
+                      </View>
+                    )}
+                  </View>
+                  <ChevronDown
+                    size={16} color="#9CA3AF"
+                    style={{ transform: [{ rotate: selectorOpen ? '180deg' : '0deg' }] }}
+                  />
+                </Pressable>
+                {selectorOpen && (
+                  <GHScrollView style={esS.spotsList} bounces={false} showsVerticalScrollIndicator nestedScrollEnabled>
+                    {selectorItems!.map(item => {
+                      const checked = selectedIds.has(item.id);
+                      return (
+                        <Pressable key={item.id} style={esS.spotRow} onPress={() => toggleItem(item.id)}>
+                          <View style={esS.spotRowThumb}>
+                            {item.renderThumb()}
+                          </View>
+                          <Text style={esS.spotRowTxt} numberOfLines={1}>{item.name}</Text>
+                          <View style={[esS.spotToggle, checked && esS.spotToggleOn]}>
+                            {checked && <Check size={11} color="white" strokeWidth={2.5} />}
+                          </View>
+                        </Pressable>
+                      );
+                    })}
+                  </GHScrollView>
+                )}
+              </View>
+            )}
+
+            {/* ── PHOTOS ──────────────────────────────────────────── */}
+            <View style={esS.section}>
+              <View style={esS.sectionHead}>
+                <Text style={esS.sectionTitle}>Photos</Text>
+                {/* Redundant with PhotoCollage's own big "Add your travel photos" placeholder
+                    while empty — only becomes the add-more affordance (in place of the
+                    collage's own, suppressed via hideAddMore below) once there's at least
+                    one photo. */}
+                {localPhotos.length > 0 && (
+                  <Pressable style={esS.photosAddBtn} onPress={handleAddPhoto} hitSlop={8}>
+                    <Text style={esS.photosAddBtnTxt}>Add +</Text>
+                  </Pressable>
+                )}
+              </View>
+              <PhotoCollage photos={localPhotos} onAdd={handleAddPhoto} onDelete={handleDeletePhoto} onReorder={handleReorderPhotos} onDragActiveChange={setPhotoDragActive} hideAddMore expandAll />
+            </View>
+
+            {/* ── DELETE ──────────────────────────────────────────── */}
+            <Pressable style={esS.deleteTripBtn} onPress={handleDelete}>
+              <Trash2 size={15} color="#EF4444" />
+              <Text style={esS.deleteTripBtnTxt}>Remove {noun}</Text>
+            </Pressable>
+
+          </GHScrollView>
+        </View>
+      </Animated.View>
+
+      {editingDates && (
+        <VisitDateRangeModal
+          visit={{ id: idRef.current, title, startDate, endDate }}
+          noun={noun}
+          onDone={v => {
+            setStartDate(v.startDate);
+            setEndDate(v.endDate);
+            commit();
+            setEditingDates(false);
+          }}
+          onCancel={() => setEditingDates(false)}
+        />
+      )}
+      {showReviewEditor && (
+        <ReviewEditModal
+          value={localNotes}
+          title={`${noun} Notes`}
+          placeholder={`Write about your ${noun.toLowerCase()}…`}
+          onSave={text => {
+            setLocalNotes(text);
+            commit();
+            setShowReviewEditor(false);
+          }}
+          onCancel={() => setShowReviewEditor(false)}
+        />
+      )}
+    </Modal>
+  );
+}
+const esS = StyleSheet.create({
+  sheet:         { ...StyleSheet.absoluteFill, backgroundColor: '#F3F4F6' } as any,
+  // No fixed height anywhere in this row or its children — it's sized by its tallest child
+  // (the title column, which itself grows/shrinks with the title's own 1–3 line height), so the
+  // whole header genuinely grows and shrinks with the title rather than clipping it.
+  // alignItems:'flex-start' (not 'center') keeps the close/save buttons anchored near the
+  // title's FIRST line as it grows, instead of drifting down to the vertical center of an
+  // increasingly tall block.
+  header:        { flexDirection:'row', alignItems:'flex-start', justifyContent:'space-between',
+                   paddingHorizontal:16, paddingBottom:16,
+                   borderBottomWidth:StyleSheet.hairlineWidth, borderBottomColor:'#E5E7EB',
+                   backgroundColor:'white' },
+  // marginTop nudges these down slightly to line up with the title's first line now that the
+  // header row is flex-start (not vertically centering them against the whole, possibly
+  // multi-line, title block anymore).
+  closeBtn:      { width:36, height:36, borderRadius:18, backgroundColor:'#F3F4F6',
+                   alignItems:'center', justifyContent:'center', marginTop:2 },
+  // Text alternative to closeBtn for a brand-new trip (see JSX comment) — sized to content
+  // rather than the X button's fixed circle, but kept the same marginTop so it lines up.
+  cancelBtn:     { justifyContent:'center', marginTop:2, minHeight:36 },
+  cancelBtnTxt:  { fontSize:15, color:'#6B7280', fontWeight:'600' },
+  headerSaveBtn:   { paddingHorizontal:14, paddingVertical:8, borderRadius:14,
+                     backgroundColor:'#059669', marginTop:2 },
+  headerSaveBtnDisabled: { backgroundColor:'#E5E7EB' },
+  headerSaveBtnTxt:{ fontSize:14, fontWeight:'700', color:'white' },
+  headerSaveBtnTxtDisabled: { color:'#9CA3AF' },
+  headerTitle:   { fontSize:21, fontWeight:'800', color:'#111827', flex:1, textAlign:'center',
+                   marginHorizontal:12 },
+  headerTitleEditWrap:{ flex:1, alignItems:'center', marginHorizontal:12 },
+  headerTitleInput:{ fontSize:21, fontWeight:'800', color:'#111827', padding:0, maxWidth:'100%',
+                     textAlignVertical:'center', lineHeight:25,
+                     borderBottomWidth:1, borderBottomColor:'#D1D5DB', borderStyle:'dashed',
+                     paddingBottom:3 },
+  // Same font metrics/width as headerTitleInput (not its border/height/color, which don't
+  // affect wrapping) — absolutely positioned and invisible so it never affects layout or shows
+  // to the user; it exists purely so onLayout can measure it (see JSX comment above).
+  headerTitleMirror:{ position:'absolute', top:0, left:0, right:0,
+                      fontSize:21, fontWeight:'800', lineHeight:25, paddingBottom:3,
+                      textAlign:'center', opacity:0 },
+  headerTitleHintRow:{ flexDirection:'row', alignItems:'center', gap:3, marginTop:3 },
+  headerTitleHintTxt:{ fontSize:10, color:'#9CA3AF' },
+  headerTitlePencil:{ position:'absolute' },
+  scrollContent: { padding:16, gap:16, paddingBottom:60 },
+  section:       { backgroundColor:'white', borderRadius:18, overflow:'hidden',
+                   borderWidth:1, borderColor:'#F0F1F3' },
+  sectionHead:   { flexDirection:'row', alignItems:'center', justifyContent:'space-between',
+                   paddingHorizontal:16, paddingTop:16, paddingBottom:12,
+                   borderBottomWidth:StyleSheet.hairlineWidth, borderBottomColor:'#F0F1F3' },
+  sectionTitle:  { fontSize:15, fontWeight:'700', color:'#111827' },
+  photosAddBtn:  { paddingHorizontal:10, paddingVertical:5, borderRadius:12,
+                   backgroundColor:'#ECFDF5', alignItems:'center', justifyContent:'center' },
+  photosAddBtnTxt:{ fontSize:12, fontWeight:'700', color:'#16A34A' },
+  dateRow:       { flexDirection:'row', alignItems:'center', gap:12,
+                   paddingHorizontal:16, paddingVertical:14 },
+  ratingRow:     { paddingHorizontal:16, paddingVertical:14 },
+  // Same green as headerSaveBtn/spotToggleOn.
+  dateIconBadge: { width:40, height:40, borderRadius:20, backgroundColor:'#ECFDF5',
+                   alignItems:'center', justifyContent:'center' },
+  // Blank state (no date picked yet) — gray instead of green.
+  dateIconBadgeEmpty: { backgroundColor:'#F3F4F6' },
+  dateTextCol:   { flex:1, gap:2 },
+  dateRangeTxt:  { fontSize:16, fontWeight:'700', color:'#111827' },
+  dateRangePh:   { fontSize:16, fontWeight:'700', color:'#C4C9D4' },
+  dateSubTxt:    { fontSize:13, color:'#9CA3AF' },
+  spotsCountBadge:   { minWidth:20, height:20, borderRadius:6, backgroundColor:'#E5E7EB',
+                       paddingHorizontal:5, alignItems:'center', justifyContent:'center' },
+  spotsCountBadgeTxt:{ fontSize:11, fontWeight:'800', color:'#6B7280', lineHeight:14 },
+  // Caps the list at exactly 5 rows tall (spotRow's own height: 36px thumb + 24px vertical
+  // padding + its hairline top border) — a 6th item then scrolls into view instead of the
+  // section just growing forever.
+  spotsList:         { maxHeight: 5 * (36 + 24 + StyleSheet.hairlineWidth) },
+  spotRow:           { flexDirection:'row', alignItems:'center', gap:10,
+                       paddingHorizontal:16, paddingVertical:12,
+                       borderTopWidth:StyleSheet.hairlineWidth, borderTopColor:'#F3F4F6' },
+  spotRowThumb:      { width:36, height:36, borderRadius:9, overflow:'hidden', backgroundColor:'#F3F4F6' },
+  spotRowTxt:        { flex:1, fontSize:14, fontWeight:'700', color:'#111827' },
+  spotToggle:        { width:22, height:22, borderRadius:11, borderWidth:2, borderColor:'#D1D5DB',
+                       alignItems:'center', justifyContent:'center' },
+  // Same green as headerSaveBtn (the Save button up top).
+  spotToggleOn:      { backgroundColor:'#059669', borderColor:'#059669' },
+  // Same row shape as dateRow — content flex:1, pencil pinned to the right edge and vertically
+  // centered by the row itself.
+  reviewPreview:    { flexDirection:'row', alignItems:'center', gap:12,
+                      paddingHorizontal:16, paddingVertical:14, minHeight:80 },
+  reviewPreviewTxt: { flex:1, fontSize:15, color:'#374151', lineHeight:24 },
+  reviewPreviewPh:  { flex:1, fontSize:15, color:'#C4C9D4', lineHeight:24 },
+  deleteTripBtn:    { flexDirection:'row', alignItems:'center', justifyContent:'center', gap:6,
+                      paddingVertical:14, marginTop:4 },
+  deleteTripBtnTxt: { fontSize:14, fontWeight:'600', color:'#EF4444' },
 });

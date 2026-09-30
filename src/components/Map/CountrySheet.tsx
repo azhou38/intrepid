@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState, useMemo, useCallback } from 'react';
 import {
-  View, Text, StyleSheet, Pressable, TextInput,
+  View, Text, StyleSheet, Pressable, Alert,
   Dimensions, Platform,
 } from 'react-native';
 // Sheet drag is driven entirely by Reanimated + Gesture Handler (UI thread) rather than the
@@ -19,10 +19,10 @@ import type { SharedValue } from 'react-native-reanimated';
 // call, which is what was still blocking the full-screen swipe-down.
 import { Gesture, GestureDetector, ScrollView } from 'react-native-gesture-handler';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Check, Plus, Users, Languages, Coins, Trash2, Maximize, Landmark } from 'lucide-react-native';
+import { Check, Plus, Users, Languages, Coins, Maximize, Landmark } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
 import { useStore } from '../../store';
-import type { Destination, CountryCluster } from '../../types';
+import type { Destination, CountryCluster, Visit } from '../../types';
 import { DESTINATIONS } from '../../data/destinations';
 import { SPOTS } from '../../data/spots';
 import { photoCache, getOrFetchWikiThumbnail } from '../../utils/photoCache';
@@ -30,6 +30,7 @@ import CircleFlag from '../CircleFlag';
 import { sheetPose } from './sheetPose';
 import EntityPhoto from './EntityPhoto';
 import DestinationCard from './DestinationCard';
+import { VisitCardList, VisitModuleSheet, PhotoGalleryModal, type VisitSelectorItem } from './sheetShared';
 
 interface Props {
   cluster: CountryCluster;
@@ -205,6 +206,14 @@ function CountrySheet({
   const saveCountryVisited = useStore(s => s.saveCountryVisited);
   const unsaveCountry      = useStore(s => s.unsaveCountry);
   const updateSavedCountry = useStore(s => s.updateSavedCountry);
+  const saveDestination    = useStore(s => s.saveDestination);
+  // Drives the standalone per-visit edit sheet for BOTH creating a new visit module ('new')
+  // and editing one specific existing module (the Visit object) — identical mechanism to
+  // DestinationSheet's own editingVisitModule.
+  const [editingVisitModule, setEditingVisitModule] = useState<Visit | 'new' | null>(null);
+  // Which visit's full photo set is open in the standalone gallery page — separate from
+  // editingVisitModule, since viewing all photos is read-only.
+  const [galleryVisit, setGalleryVisit] = useState<Visit | null>(null);
 
   const dests = useMemo(
     () => DESTINATIONS.filter(d => d.country === cluster.country)
@@ -222,24 +231,98 @@ function CountrySheet({
   const savedCountry       = savedCountries[cluster.countryCode];
   // A country counts as visited by default as soon as any of its destinations is (marking a spot
   // visited already marks its destination — see saveSpotVisited), without needing its own
-  // saved entry. Only a country visit the user marked directly can be removed here; one implied
-  // by a visited destination goes away when that destination does.
+  // saved entry. Only a country visit the user actually logged here can be removed here; one
+  // implied by a visited destination goes away when that destination does.
   const hasVisitedDest       = useMemo(
     () => dests.some(d => savedDestinations[d.id]?.type === 'visited'),
     [dests, savedDestinations],
   );
-  const isCountryVisited     = !!savedCountry?.visitDate || hasVisitedDest;
+  const isCountryVisited     = !!savedCountry?.visitDate || !!savedCountry?.visits?.length || hasVisitedDest;
   const facts = COUNTRY_FACTS[cluster.countryCode];
 
-  const handleToggleVisited = useCallback(() => {
-    if (hasVisitedDest) return;
+  // Derive visits from the store, carrying the old country-level visitDate/notes fields onto a
+  // synthesized legacy entry so a pre-redesign country visit still shows its content as its own
+  // module — editing it migrates those fields onto a real Visit the first time it's saved.
+  // Identical mechanism to DestinationSheet's own localVisits.
+  const localVisits: Visit[] = savedCountry?.visits
+    ?? (savedCountry?.visitDate
+      ? [{ id: 'legacy', startDate: savedCountry.visitDate, notes: savedCountry.notes }]
+      : []);
+
+  // The shared visit-log components' generic selector, one item per destination in this
+  // country — thumbnail loading stays here (this file already owns getOrFetchWikiThumbnail for
+  // its own header photo), the shared list/editor only ever sees id/name/renderThumb.
+  const destSelectorItems: VisitSelectorItem[] = useMemo(
+    () => dests.map(dest => ({
+      id: dest.id,
+      name: dest.name,
+      renderThumb: () => (
+        <EntityPhoto
+          cacheKey={dest.id}
+          cache={photoCache}
+          load={() => getOrFetchWikiThumbnail(dest.id, photoCache, dest.name, 300)}
+          placeholderColor="#F3F4F6"
+        />
+      ),
+    })),
+    [dests],
+  );
+
+  // Saves one visit module — appends a brand new one ('new') or replaces just the matching id
+  // in place. Identical mechanism to DestinationSheet's own handleSaveVisitModule.
+  const handleSaveVisitModule = useCallback((v: Visit) => {
+    // The country only actually becomes "visited" here, on a genuine save — not the moment
+    // "Add Visit" was tapped (see handleMarkVisited). updateSavedCountry below patches fields
+    // onto an EXISTING record, so one has to exist first when this is the very first visit.
+    if (!isCountryVisited) saveCountryVisited(cluster.countryCode, {});
+    const base = localVisits.filter(x => x.id !== 'legacy');
+    const idx  = base.findIndex(x => x.id === v.id);
+    const updated = idx >= 0 ? base.map(x => x.id === v.id ? v : x) : [...base, v];
+    updated.sort((a, b) => b.startDate.localeCompare(a.startDate));
+    updateSavedCountry(cluster.countryCode, { visits: updated, visitDate: updated[0]?.startDate });
+  }, [isCountryVisited, localVisits, cluster.countryCode, saveCountryVisited, updateSavedCountry]);
+
+  // That was the last visit logged directly for this country — clears its own record. Unless
+  // hasVisitedDest still implies "visited" through one of its destinations, in which case the
+  // country stays visited but with nothing of its own logged, same as DestinationSheet's own
+  // handleDeleteVisitModule clearing the legacy fields via unsaveDestination when nothing
+  // implies visited status anymore.
+  const clearOwnVisits = useCallback(() => {
+    if (!hasVisitedDest) unsaveCountry(cluster.countryCode);
+    else updateSavedCountry(cluster.countryCode, { visits: [], visitDate: undefined, notes: undefined });
+  }, [hasVisitedDest, cluster.countryCode, unsaveCountry, updateSavedCountry]);
+
+  const handleDeleteVisitModule = useCallback((id: string) => {
+    if (!isCountryVisited) return;
+    const updated = localVisits.filter(v => v.id !== id);
+    if (updated.length === 0) { clearOwnVisits(); return; }
+    updateSavedCountry(cluster.countryCode, { visits: updated, visitDate: updated[0]?.startDate });
+  }, [isCountryVisited, localVisits, cluster.countryCode, updateSavedCountry, clearOwnVisits]);
+  // Fired instead of handleDeleteVisitModule when removing the synthesized 'legacy' visit — see
+  // VisitModuleSheet's own onRemoveLegacy doc.
+  const handleRemoveLegacyVisit = clearOwnVisits;
+
+  // Header "Add Visit"/"Visited" pill — identical mechanism to DestinationSheet's own
+  // handleMarkVisited. Opens the trip editor WITHOUT marking the country visited yet (that only
+  // happens once the user actually saves a trip inside it, see handleSaveVisitModule).
+  const handleMarkVisited = useCallback(() => {
     if (isCountryVisited) {
-      unsaveCountry(cluster.countryCode);
-    } else {
-      saveCountryVisited(cluster.countryCode, { visitDate: new Date().toISOString().slice(0, 10) });
-      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+      // A visit implied by one of this country's own visited destinations isn't this sheet's
+      // own record to remove — it goes away when that destination does.
+      if (hasVisitedDest) return;
+      Alert.alert(
+        'Remove visit?',
+        'This will permanently delete your log and notes for this country.',
+        [
+          { text: 'Cancel', style: 'cancel' },
+          { text: 'Remove', style: 'destructive', onPress: () => unsaveCountry(cluster.countryCode) },
+        ]
+      );
+      return;
     }
-  }, [isCountryVisited, hasVisitedDest, cluster.countryCode, saveCountryVisited, unsaveCountry]);
+    setEditingVisitModule('new');
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+  }, [isCountryVisited, hasVisitedDest, cluster.countryCode, unsaveCountry]);
 
   // ── Tabs ───────────────────────────────────────────────────────────────────
   const TAB_ORDER: CountryTab[] = useMemo(
@@ -852,7 +935,7 @@ function CountrySheet({
                 <View style={st.headerActionsRight}>
                   <Pressable
                     style={[st.headerVisitPill, isCountryVisited && st.headerVisitPillActive]}
-                    onPress={handleToggleVisited} hitSlop={10}
+                    onPress={handleMarkVisited} hitSlop={10}
                   >
                     {isCountryVisited
                       ? <Check size={15} color="white" strokeWidth={2.75} />
@@ -919,34 +1002,21 @@ function CountrySheet({
                     style={st.slidePanel}
                     onLayout={e => measurePanel(TAB_ORDER.indexOf('visit'), e.nativeEvent.layout.height)}
                   >
-                    <View style={st.memCard}>
-                      <View style={st.memTopRow}>
-                        <View style={{ flex: 1 }}>
-                          <Text style={st.memDateCaption}>VISITED</Text>
-                          <Text style={st.memDateVal}>
-                            {savedCountry?.visitDate
-                              ? new Date(savedCountry.visitDate + 'T00:00:00').toLocaleDateString(undefined, { month: 'long', year: 'numeric' })
-                              : 'Date unknown'}
-                          </Text>
-                        </View>
-                        {!hasVisitedDest && (
-                          <Pressable style={st.memRemoveBtn} onPress={handleToggleVisited} hitSlop={8}>
-                            <Trash2 size={13} color="#EF4444" />
-                            <Text style={st.memRemoveBtnTxt}>Remove</Text>
-                          </Pressable>
-                        )}
-                      </View>
-                      <View style={st.memDivider} />
-                      <Text style={st.memSectionLabel}>NOTES</Text>
-                      <TextInput
-                        style={st.memNotesInput}
-                        placeholder="Write about your trip…"
-                        placeholderTextColor="#9CA3AF"
-                        multiline
-                        value={savedCountry?.notes ?? ''}
-                        onChangeText={(text) => updateSavedCountry(cluster.countryCode, { notes: text })}
-                      />
-                    </View>
+                    {/* Each logged visit is its own standalone module — its own title, dates,
+                        photos, and notes — like a separate journal entry. Shared with
+                        DestinationSheet/SpotSheet — see VisitCardList. */}
+                    <VisitCardList
+                      visits={localVisits}
+                      onEditVisit={setEditingVisitModule}
+                      onNewVisit={() => setEditingVisitModule('new')}
+                      onOpenGallery={setGalleryVisit}
+                      onSelectItem={item => {
+                        const dest = dests.find(d => d.id === item.id);
+                        if (dest) onSelectDestination(dest);
+                      }}
+                      selectorLabel={dests.length > 0 ? 'Destinations Visited' : undefined}
+                      selectorItems={dests.length > 0 ? destSelectorItems : undefined}
+                    />
                   </View>
                 )}
 
@@ -1043,10 +1113,19 @@ function CountrySheet({
                   <CircleFlag countryCode={cluster.countryCode} size={18} style={st.peekFlag} />
                   <Text style={st.peekNameTxt} numberOfLines={1}>{cluster.country}</Text>
                 </View>
-                <Text style={st.peekStatsTxt} numberOfLines={1}>
-                  {dests.length} destination{dests.length !== 1 ? 's' : ''}
-                  {spotsCount > 0 ? ` · ${spotsCount} spot${spotsCount !== 1 ? 's' : ''}` : ''}
-                </Text>
+                <View style={st.peekStatsRow}>
+                  <Text style={st.peekStatsTxt} numberOfLines={1}>
+                    {dests.length} destination{dests.length !== 1 ? 's' : ''}
+                  </Text>
+                  {spotsCount > 0 && (
+                    <>
+                      <View style={st.peekStatsDivider} />
+                      <Text style={st.peekStatsTxt} numberOfLines={1}>
+                        {spotsCount} spot{spotsCount !== 1 ? 's' : ''}
+                      </Text>
+                    </>
+                  )}
+                </View>
               </View>
             </Pressable>
           </Animated.View>
@@ -1054,6 +1133,30 @@ function CountrySheet({
         </View>
       </Animated.View>
       </GestureDetector>
+
+      {editingVisitModule !== null && (
+        <VisitModuleSheet
+          entityName={cluster.country}
+          visit={editingVisitModule === 'new' ? null : editingVisitModule}
+          onSave={handleSaveVisitModule}
+          onDelete={handleDeleteVisitModule}
+          onClose={() => setEditingVisitModule(null)}
+          selectorLabel={dests.length > 0 ? 'Destinations Visited' : undefined}
+          selectorItems={dests.length > 0 ? destSelectorItems : undefined}
+          // Checking a destination off marks IT visited country-wide too (consistent with how
+          // "visited" works everywhere else in the app) — unchecking is handled entirely inside
+          // the shared editor itself (removes it from just this visit).
+          onCheckItem={destId => saveDestination(destId, 'visited', {})}
+          onRemoveLegacy={handleRemoveLegacyVisit}
+        />
+      )}
+      {galleryVisit && (
+        <PhotoGalleryModal
+          photos={galleryVisit.photos ?? []}
+          title={galleryVisit.title || `${cluster.country} Trip`}
+          onClose={() => setGalleryVisit(null)}
+        />
+      )}
     </View>
   );
 }
@@ -1145,26 +1248,6 @@ const st = StyleSheet.create({
   slideRow:   { flexDirection: 'row', alignItems: 'flex-start' },
   slidePanel: { width: W, paddingHorizontal: 16, paddingTop: 16, gap: 16 },
 
-  // ── My Visit panel ──────────────────────────────────────────────────────────
-  memCard: {
-    backgroundColor: 'white', borderRadius: 18, padding: 16,
-    borderWidth: 1, borderColor: '#F0F1F3', gap: 4,
-  },
-  memTopRow: { flexDirection: 'row', alignItems: 'center' },
-  memDateCaption: { fontSize: 11, fontWeight: '700', color: '#9CA3AF', letterSpacing: 0.5 },
-  memDateVal: { fontSize: 17, fontWeight: '800', color: '#111827', marginTop: 2 },
-  memRemoveBtn: {
-    flexDirection: 'row', alignItems: 'center', gap: 4,
-    paddingHorizontal: 10, paddingVertical: 6, borderRadius: 10,
-    backgroundColor: '#FEF2F2',
-  },
-  memRemoveBtnTxt: { fontSize: 12, fontWeight: '700', color: '#EF4444' },
-  memDivider: { height: StyleSheet.hairlineWidth, backgroundColor: '#F0F1F3', marginVertical: 12 },
-  memSectionLabel: { fontSize: 11, fontWeight: '700', color: '#9CA3AF', letterSpacing: 0.5, marginBottom: 6 },
-  memNotesInput: {
-    fontSize: 14, color: '#111827', minHeight: 60, textAlignVertical: 'top',
-  },
-
   // ── About panel — At a Glance ───────────────────────────────────────────────
   glanceCard: {
     backgroundColor: 'white', borderRadius: 18, padding: 14,
@@ -1200,7 +1283,11 @@ const st = StyleSheet.create({
   peekTitleRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   peekFlag: { borderWidth: 1, borderColor: 'rgba(156,163,175,0.7)', borderRadius: 9 },
   peekNameTxt: { fontSize: 30, fontFamily: 'PlayfairDisplay_700Bold', color: 'white', letterSpacing: -0.4, flexShrink: 1 },
-  peekStatsTxt: { fontSize: 12.5, fontWeight: '600', color: 'rgba(255,255,255,0.85)' },
+  // Same type as the destination sheet's own peek-strip "X spots" (its commRatingCount), with the
+  // same vertical divider its hero uses between country and continent.
+  peekStatsRow: { flexDirection: 'row', alignItems: 'center' },
+  peekStatsTxt: { fontSize: 13, fontWeight: '800', color: 'rgba(255,255,255,0.92)' },
+  peekStatsDivider: { width: 1, height: 12, backgroundColor: 'rgba(255,255,255,0.40)', marginHorizontal: 8 },
 });
 
 // Memoized: the map screen re-renders continuously while the camera moves, and a re-render of the sheet is a React

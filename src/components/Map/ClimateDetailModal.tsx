@@ -204,7 +204,12 @@ export default function ClimateDetailModal({ destination, onClose }: Props) {
         <Pressable onPress={dismiss} style={st.closeBtn} hitSlop={12}>
           <X size={18} color="#111827" />
         </Pressable>
-        <Text style={st.headerTitle} numberOfLines={1}>{destination.name}</Text>
+        <View style={{ flex: 1 }}>
+          <Text style={st.headerTitle} numberOfLines={1}>{destination.name}</Text>
+          <Text style={st.headerSub} numberOfLines={1}>
+            {hasVisitorData ? 'Climate and visitor data' : 'Climate data'}
+          </Text>
+        </View>
         <View style={{ width: 36 }} />
       </View>
 
@@ -274,7 +279,9 @@ const st = StyleSheet.create({
     backgroundColor: 'white',
   },
   closeBtn: { width: 36, height: 36, borderRadius: 18, backgroundColor: '#F3F4F6', alignItems: 'center', justifyContent: 'center' },
-  headerTitle: { fontSize: 17, fontWeight: '700', color: '#111827', flex: 1, textAlign: 'center' },
+  headerTitle: { fontSize: 17, fontWeight: '700', color: '#111827', textAlign: 'center' },
+  // Same treatment as the photo gallery's own header subtitle (pgS.headerSub in sheetShared).
+  headerSub:   { fontSize: 12, color: '#9CA3AF', textAlign: 'center', marginTop: 1 },
   scrollContent: { padding: 16, gap: 16, paddingBottom: 48 },
 
   card: { backgroundColor: 'white', borderRadius: 18, padding: 16, borderWidth: 1, borderColor: '#F0F1F3', gap: 14 },

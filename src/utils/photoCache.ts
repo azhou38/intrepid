@@ -96,6 +96,19 @@ export function getOrFetchWikiThumbnail(
   return promise;
 }
 
+/**
+ * A specific, hand-picked Commons file (name without the "File:" prefix) — used where the photo
+ * has to show something precise (e.g. the Eiffel Tower AT NIGHT), which an article's own lead
+ * image can't guarantee. The manifest holds these under "File:<name>", so this is normally a
+ * pure local URL build with no network lookup; the live Commons query is only a fallback for a
+ * file added since the manifest was last generated.
+ */
+export async function fetchCommonsPhoto(file: string, width: number): Promise<string | null> {
+  const known = MANIFEST['File:' + file];
+  if (known) return buildThumbUrl(known, width);
+  return fetchCommonsFileThumbnail(file, width);
+}
+
 // Resolves a Wikimedia Commons file (name without the "File:" prefix) to a thumbnail URL of the
 // requested width.
 async function fetchCommonsFileThumbnail(file: string, width: number): Promise<string | null> {
