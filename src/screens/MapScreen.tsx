@@ -1,4 +1,4 @@
-import React, { useRef, useState, useMemo, useCallback, useEffect } from 'react';
+import React, { useRef, useState, useMemo, useCallback, useEffect, useLayoutEffect } from 'react';
 import { unstable_batchedUpdates, View, StyleSheet, Pressable, Text, Dimensions, Animated, Platform, TextInput, Image, Easing as RNEasing, Keyboard, ScrollView } from 'react-native';
 import Reanimated, { useSharedValue, useAnimatedStyle, useAnimatedReaction, runOnJS, withTiming, Easing } from 'react-native-reanimated';
 import Svg, { Rect, Path, Circle } from 'react-native-svg';
@@ -399,23 +399,29 @@ function FadePin({ exiting, instant, children }: { exiting: boolean; instant?: b
   // `instant`: mounts fully opaque (no fade-in) — for a duplicate that sits exactly over an
   // identical, already-visible pin, where fading in would just dim the overlap.
   const opacity = useRef(new Animated.Value(instant ? 1 : 0)).current;
-  useEffect(() => {
+  // Stable style object, so a re-render (e.g. the one that flips `exiting`) hands Animated the
+  // same props shape rather than a new one to re-attach.
+  const style = useMemo(() => ({ opacity }), [opacity]);
+  // A LAYOUT effect, not a passive one: the fade must start in the same commit that flips
+  // `exiting`. That commit re-renders this Animated.View, and under the New Architecture the
+  // view's opacity can snap to a stale value at that moment until a native animation drives it
+  // again. With a passive effect the fade only started once the JS thread caught up — over
+  // 100ms later while the map is busy (e.g. a destination landing and handing off to its spot
+  // pins) — so the pin vanished, then reappeared mid-fade: a visible flash. Layout effects run
+  // synchronously with the commit, so the fade takes over the very same frame.
+  useLayoutEffect(() => {
     const toValue = exiting ? 0 : 1;
     Animated.timing(opacity, {
       toValue,
       duration: exiting ? PIN_EXIT_MS : PIN_FADE_IN_MS,
       useNativeDriver: true,
     }).start(({ finished }) => {
-      // A native-driven animation runs entirely on the UI side and leaves the JS-side value where
-      // it started (0 after a fade-in). Under the New Architecture, the next React re-render of
-      // this Animated.View — e.g. the one that flips `exiting` — re-applies that stale JS value,
-      // so a fully-shown pin snapped to invisible for a moment before its exit fade (which runs
-      // from the true native value, 1) began: the pin vanished, then flashed back and faded out.
-      // Syncing the settled value back keeps any later re-render at the real opacity.
+      // Native-driven animations leave the JS-side value where it started; sync the settled
+      // value back so any later re-render applies the real opacity.
       if (finished) opacity.setValue(toValue);
     });
   }, [exiting, opacity]);
-  return <Animated.View style={{ opacity }}>{children}</Animated.View>;
+  return <Animated.View style={style}>{children}</Animated.View>;
 }
 
 // Tracks a keyed item list across renders, holding removed items in an "exiting" state for
