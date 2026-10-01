@@ -926,6 +926,10 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // time a selection is open) so hiding this bar can never also hide that pill. See
   // setSheetSnapState, which writes it, and crumbGateStyle, which reads it.
   const sheetCollapsedSV = useSharedValue(0);
+  // The breadcrumb bar's own copy of pillPeekSV (1 while the sheet peeks), on the sheets' own
+  // slide timing instead of the pill's quicker one — so the bar fades in step with the sheet as
+  // it's swiped between half-screen and peek. See setSheetSnapState and crumbGateStyle.
+  const crumbPeekSV = useSharedValue(0);
   const upPillWrapStyle = useAnimatedStyle(() => ({ bottom: upPillBottomSV.value }));
   // One-shot mount hints for DestinationSheet, set right before it (re)mounts so it can open
   // straight to a specific tab/snap point (e.g. the spot carousel's "list view" button).
@@ -1167,8 +1171,9 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // whether a map pan/zoom should auto-peek the sheet, without needing that callback to
   // depend on (and re-create itself around) React state.
   const sheetSnapStateRef = useRef<'peek' | 'collapsed' | 'full'>('collapsed');
-  // Every write to sheetSnapStateRef goes through this so pillPeekSV — one of the inputs to
-  // the breadcrumb's visibility gate (see crumbGateStyle) — can never desync from the sheet.
+  // Every write to sheetSnapStateRef goes through this so pillPeekSV (the back/X pill) and
+  // crumbPeekSV/sheetCollapsedSV (the breadcrumb's visibility gate, see crumbGateStyle) can
+  // never desync from the sheet.
   // The ref is set both reactively (onSnapStateChange) and synchronously at each site that
   // mounts/resets a sheet, and missing any one of those would strand the breadcrumb.
   const setSheetSnapState = useCallback((state: 'peek' | 'collapsed' | 'full') => {
@@ -1178,14 +1183,12 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
       duration: peeking ? 220 : 160,
       easing: Easing.out(Easing.quad),
     });
-    // Same timing as pillPeekSV just above (fade out over 160ms, back in over 220ms), so the bar
-    // fades gracefully as any sheet — spot sheets included — is swiped between half-screen and
-    // peek, exactly as it already did for the destination sheet via pillPeekSV alone.
-    const collapsed = state === 'collapsed';
-    sheetCollapsedSV.value = withTiming(collapsed ? 1 : 0, {
-      duration: collapsed ? 160 : 220,
-      easing: Easing.out(Easing.quad),
-    });
+    // The breadcrumb bar's two inputs fade over the sheets' own slide (SHEET_SNAP_MS, with their
+    // SNAP_CONFIG easing), in both directions, so the bar fades in step with any sheet — spot
+    // sheets included — as it's swiped between half-screen and peek.
+    const crumbFade = { duration: SHEET_SNAP_MS, easing: Easing.out(Easing.cubic) };
+    crumbPeekSV.value = withTiming(peeking ? 1 : 0, crumbFade);
+    sheetCollapsedSV.value = withTiming(state === 'collapsed' ? 1 : 0, crumbFade);
   }, []);
   // Bumped to imperatively drop whichever sheet is open down to its "peek" state — driven by
   // handleCameraChanged below, the moment the user starts panning/zooming the map.
@@ -1280,7 +1283,7 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     opacity: (1 - sheetCollapsedSV.value) * Math.max(
       returnPromptProgress.value,
       destReturnPromptProgress.value,
-      pillPeekSV.value,
+      crumbPeekSV.value,
     ),
   }));
   // Keeps touch handling in lockstep with that opacity, whichever path drove it — the
@@ -1290,7 +1293,7 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   const [crumbInteractive, setCrumbInteractive] = useState(false);
   useAnimatedReaction(
     () => sheetCollapsedSV.value <= 0.5
-      && Math.max(returnPromptProgress.value, destReturnPromptProgress.value, pillPeekSV.value) > 0.05,
+      && Math.max(returnPromptProgress.value, destReturnPromptProgress.value, crumbPeekSV.value) > 0.05,
     (visible, prev) => { if (visible !== prev) runOnJS(setCrumbInteractive)(visible); },
   );
 
