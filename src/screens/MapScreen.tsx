@@ -908,13 +908,15 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // in its temporal dead zone when the worklet closes over it, which surfaced as
   // "Cannot read property 'value' of undefined".
   const pillPeekSV = useSharedValue(0);
-  // 1 whenever a spot's sheet is sitting at half-screen ('collapsed') — forces the breadcrumb
-  // bar (Country | Destination) to hide there regardless of what crumbGateStyle's other inputs
-  // say, since the sheet's own header already names the spot. Kept separate from breadcrumbAnim
-  // (which the back/X pill also reads, and must stay 1 the whole time a spot is open) so hiding
-  // this bar can never also hide that pill. See setSheetSnapState, which writes it, and
-  // crumbGateStyle, which reads it.
-  const spotCollapsedSV = useSharedValue(0);
+  // 1 whenever the open sheet — country, destination or spot — is sitting at half-screen
+  // ('collapsed'): forces the breadcrumb bar (Country | Destination) to hide there regardless of
+  // what crumbGateStyle's other inputs say, since the sheet's own header already names the
+  // selection. Without it, a return arrow that's showing (the user panned/zoomed away) kept the
+  // bar up after swiping the sheet back up to half-screen, until the arrow itself was pressed.
+  // Kept separate from breadcrumbAnim (which the back/X pill also reads, and must stay 1 the whole
+  // time a selection is open) so hiding this bar can never also hide that pill. See
+  // setSheetSnapState, which writes it, and crumbGateStyle, which reads it.
+  const sheetCollapsedSV = useSharedValue(0);
   const upPillWrapStyle = useAnimatedStyle(() => ({ bottom: upPillBottomSV.value }));
   // One-shot mount hints for DestinationSheet, set right before it (re)mounts so it can open
   // straight to a specific tab/snap point (e.g. the spot carousel's "list view" button).
@@ -1167,10 +1169,12 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
       duration: peeking ? 220 : 160,
       easing: Easing.out(Easing.quad),
     });
-    // No animation — this is a hard "definitely don't show the breadcrumb bar" gate (see
-    // spotCollapsedSV's own comment), not a visual transition of its own; crumbGateStyle's
-    // existing timing on its other inputs already smooths the overall fade.
-    spotCollapsedSV.value = !!selectedSpotRef.current && state === 'collapsed' ? 1 : 0;
+    // Hides instantly — a hard "definitely don't show the breadcrumb bar" gate (see
+    // sheetCollapsedSV's own comment), so it can't flash for a frame as a sheet opens at
+    // half-screen — but lets go with the same ease pillPeekSV uses when the sheet drops to peek.
+    sheetCollapsedSV.value = state === 'collapsed'
+      ? 1
+      : withTiming(0, { duration: 220, easing: Easing.out(Easing.quad) });
   }, []);
   // Bumped to imperatively drop whichever sheet is open down to its "peek" state — driven by
   // handleCameraChanged below, the moment the user starts panning/zooming the map.
@@ -1257,13 +1261,12 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // two return-prompt progress values and the peek value — so taking their max inherits those
   // existing eases and needs no timing of its own. Declared here, below all three, since a
   // worklet capturing a `const` declared further down hits its temporal dead zone.
-  // spotCollapsedSV overrides all of that to a hard 0 whenever a spot's sheet sits at
-  // half-screen — the return-prompt/peek inputs above don't know about that case on their
-  // own (they're about panning away from "home", not about a spot sheet's own snap state),
-  // so without this override a stale/transient return-prompt value could show the bar right
-  // when a spot is first selected, which is exactly the moment it must stay hidden.
+  // sheetCollapsedSV overrides all of that whenever the open sheet sits at half-screen — the
+  // return-prompt/peek inputs above don't know about the sheet's own snap state (they're about
+  // panning away from "home"), so on their own a showing return arrow kept the bar up at
+  // half-screen, and a stale/transient return-prompt value could show it right as a sheet opens.
   const crumbGateStyle = useAnimatedStyle(() => ({
-    opacity: spotCollapsedSV.value > 0.5 ? 0 : Math.max(
+    opacity: (1 - sheetCollapsedSV.value) * Math.max(
       returnPromptProgress.value,
       destReturnPromptProgress.value,
       pillPeekSV.value,
@@ -1275,7 +1278,7 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // an invisible breadcrumb keeps swallowing taps at the top of the map.
   const [crumbInteractive, setCrumbInteractive] = useState(false);
   useAnimatedReaction(
-    () => spotCollapsedSV.value <= 0.5
+    () => sheetCollapsedSV.value <= 0.5
       && Math.max(returnPromptProgress.value, destReturnPromptProgress.value, pillPeekSV.value) > 0.05,
     (visible, prev) => { if (visible !== prev) runOnJS(setCrumbInteractive)(visible); },
   );
