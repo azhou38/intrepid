@@ -1113,13 +1113,24 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   const exploreScrollYRef = useRef(0);
   const [exploreRestore, setExploreRestore] =
     useState<{ snap: 'peek' | 'collapsed' | 'full'; scrollY: number } | undefined>(undefined);
+  // Closing search via its X/backdrop holds the Explore sheet's remount back by a frame (see
+  // closeSearch), so the commit that closes search stays light. The restore hint is only cleared
+  // once the sheet has actually remounted with it.
+  const [exploreHeld, setExploreHeld] = useState(false);
+  useEffect(() => {
+    if (!exploreHeld) return;
+    const id = requestAnimationFrame(() => setExploreHeld(false));
+    return () => cancelAnimationFrame(id);
+  }, [exploreHeld]);
   useEffect(() => {
     if (searchFocused) setExploreRestore({ snap: exploreSnapRef.current, scrollY: exploreScrollYRef.current });
-    else if (exploreRestore) setExploreRestore(undefined);
-  }, [searchFocused]);
+    else if (exploreRestore && !exploreHeld) setExploreRestore(undefined);
+  }, [searchFocused, exploreHeld]);
   // The bar's width and the layers pill swap instantly — no animation. Animating them (the bar
   // widening while the pill faded out) read as the two shapes merging into each other.
-  useEffect(() => {
+  // Layout effect: applied in the same commit as the focus change, not once the (heavy) screen's
+  // passive effects get round to it.
+  useLayoutEffect(() => {
     searchWidthAnim.setValue(searchFocused ? searchExpandedWidth : searchCollapsedWidth);
   }, [searchFocused, searchCollapsedWidth, searchExpandedWidth]);
 
@@ -1134,7 +1145,8 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // (map ↔ white) — it doesn't touch the bar or pill — except when opened from the Explore
   // sheet, whose own white/gray surface is already up: there it's instant to avoid a flash of map.
   const searchFocusProgress = useSharedValue(0);
-  useEffect(() => {
+  // Layout effect, like the width above — the backdrop starts fading with the commit itself.
+  useLayoutEffect(() => {
     if (searchFocused && searchFromSheetRef.current) {
       searchFocusProgress.value = 1;
       return;
@@ -1148,6 +1160,20 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   const searchBackdropStyle = useAnimatedStyle(() => ({
     opacity: searchFocusProgress.value,
   }));
+  // Closing search from its X or the white backdrop. The close commit re-renders this whole
+  // screen and used to remount the Explore sheet (its full feed) in the same pass, so nothing on
+  // screen changed for about half a second after the tap. Now the visible close starts at once,
+  // imperatively — backdrop fading, bar back to its collapsed width — and the Explore sheet's
+  // remount waits a frame (exploreHeld), keeping the close commit itself light.
+  const closeSearch = useCallback(() => {
+    searchFromSheetRef.current = false;
+    searchFocusProgress.value = withTiming(0, { duration: 200, easing: Easing.out(Easing.cubic) });
+    searchWidthAnim.setValue(searchCollapsedWidth);
+    searchInputRef.current?.blur();
+    setExploreHeld(true);
+    setSearchFocused(false);
+    setSearchQuery('');
+  }, [searchCollapsedWidth]);
   // True only after the zoom animation into a country completes, so pins don't flash
   // during the animation (when region.latitudeDelta is still at world-view level).
   const selectedCountryRef   = useRef<CountryCluster | null>(null);
@@ -4024,7 +4050,7 @@ const destItems = useMemo((): DestItem[] =>
       >
         <Pressable
           style={StyleSheet.absoluteFill}
-          onPress={() => { searchInputRef.current?.blur(); setSearchFocused(false); setSearchQuery(''); }}
+          onPress={closeSearch}
         />
       </Reanimated.View>
 
@@ -4067,7 +4093,7 @@ const destItems = useMemo((): DestItem[] =>
           {searchFocused && (
             <Pressable
               style={styles.searchCloseBtn}
-              onPress={() => { searchInputRef.current?.blur(); setSearchFocused(false); setSearchQuery(''); }}
+              onPress={closeSearch}
               hitSlop={6}
             >
               <X size={18} color="#111827" />
@@ -4220,7 +4246,7 @@ const destItems = useMemo((): DestItem[] =>
           Shown whenever nothing is selected; hidden the instant the user drills into a
           country/destination/spot, exactly like the other sheets are mutually exclusive
           with each other. ─────────────────────────────────────────────────────────────── */}
-      {!selectedCountry && !selectedDest && !selectedSpot && !searchFocused && (
+      {!selectedCountry && !selectedDest && !selectedSpot && !searchFocused && !exploreHeld && (
         <ExploreSheet
           collapseSignal={peekSheetSignal}
           onSnapStateChange={handleExploreSnapChange}
