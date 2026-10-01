@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState, useMemo, useCallback } from 'react';
+import React, { useRef, useEffect, useLayoutEffect, useState, useMemo, useCallback } from 'react';
 import {
   View, Text, StyleSheet, Pressable, ScrollView, Alert,
   Dimensions, Platform, Linking, Image,
@@ -34,6 +34,7 @@ import { sheetPose } from './sheetPose';
 import EntityPhoto from './EntityPhoto';
 import {
   VisitCardList, VisitModuleSheet, PhotoGalleryModal,
+  useDeferredMount,
 } from './sheetShared';
 
 const { height: H, width: W } = Dimensions.get('window');
@@ -610,6 +611,9 @@ function SpotSheet({
   // to half-screen in the middle of a map gesture that was holding it peeked.
   const closingRef = useRef(false);
   const transitionToRef = useRef<(next: 'peek' | 'collapsed' | 'full', reason: string) => void>(() => {});
+  // Full-screen panels mount a moment after the sheet does, or at once on heading to full — see
+  // useDeferredMount.
+  const [panelsReady, revealPanels] = useDeferredMount();
   transitionToRef.current = (next, reason) => {
     // Once the parent has told this sheet to leave, only a NEW selection may bring it back.
     if (closingRef.current && reason !== 'selectionChange') return;
@@ -618,6 +622,7 @@ function SpotSheet({
     const target = next === 'full' ? FULL_POS : next === 'peek' ? PEEK_Y : COLLAPSED_Y;
     if (__DEV__) console.log('[sheet] Spot', activeSpot.id, prev, '->', next, `reason=${reason}`, 'mapInteracting=', isMapInteracting?.() ?? false);
     snapStateRef.current = next;
+    if (next === 'full') revealPanels();
     snapStateSV.value = next;
     setSnapStateReact(next);
     lastPos.value = target;
@@ -647,7 +652,7 @@ function SpotSheet({
 
   // Slide off the bottom, quickly, when the parent signals it's closing this sheet.
   const lastExitSignalRef = useRef(exitSignal);
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (exitSignal === undefined || exitSignal === lastExitSignalRef.current) return;
     lastExitSignalRef.current = exitSignal;
     closingRef.current = true;
@@ -659,7 +664,7 @@ function SpotSheet({
   // Imperatively drop to peek from the parent — used when the user pans/zooms the map, from
   // either collapsed or full. No-ops if already peeking or dismissed.
   const lastPeekSignalRef = useRef(peekSignal);
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (peekSignal === undefined || peekSignal === lastPeekSignalRef.current) return;
     lastPeekSignalRef.current = peekSignal;
     if (snapStateRef.current === 'collapsed' || snapStateRef.current === 'full') transitionToRef.current('peek', 'mapGesture');
@@ -673,14 +678,14 @@ function SpotSheet({
   // re-tapping a peeking spot's pin should bring it back to half-screen exactly like tapping
   // any other spot's pin does.
   const lastCollapseSignalRef = useRef(collapseSignal);
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (collapseSignal === undefined || collapseSignal === lastCollapseSignalRef.current) return;
     lastCollapseSignalRef.current = collapseSignal;
     if (snapStateRef.current === 'full' || snapStateRef.current === 'peek') transitionToRef.current('collapsed', 'backPill');
   }, [collapseSignal]);
 
   // Slide in from off-screen on first mount.
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (leaving) {
       closingRef.current = true;
       slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, finished => {
@@ -710,7 +715,7 @@ function SpotSheet({
   // already flushes it (setting ITS ref) before this effect's own very first run in the same
   // commit, which previously made this effect think it was never the first invocation.
   const hasHandledFocusRef = useRef(false);
-  useEffect(() => {
+  useLayoutEffect(() => {
     const isFirstFocus = !hasHandledFocusRef.current;
     hasHandledFocusRef.current = true;
     requestAnimationFrame(() => carouselRef.current?.scrollTo({ x: (initialIndex + loopOffset) * CARD_SNAP, animated: false }));
@@ -891,6 +896,10 @@ function SpotSheet({
       <GestureDetector gesture={pan}>
       <Reanimated.View style={[st.sheet, sheetAnimStyle]}>
         <Reanimated.View style={[StyleSheet.absoluteFill, { overflow: 'hidden' }, contentOpacityStyle]}>
+        {/* An outgoing copy (leaving) only ever rests at half-screen or peek, where this whole
+            full-screen layer is fully transparent (contentOpacityStyle) — so it skips it, keeping
+            the copy cheap to mount in the busy commit that swaps sheets (MapScreen "Sheet swaps"). */}
+        {!leaving && panelsReady && (
         <GestureDetector gesture={tabSwipeGesture}>
         <View style={{ flex: 1 }}>
         <GHScrollView
@@ -1032,7 +1041,8 @@ function SpotSheet({
           </View>
         </GHScrollView>
         </View>
-        </GestureDetector>{/* end tabSwipeGesture wrapper */}
+        </GestureDetector>
+        )}{/* end tabSwipeGesture wrapper */}
         </Reanimated.View>{/* end full-content wrapper */}
 
         {/* ── CAROUSEL — collapsed overlay: all spots in this destination. Fixed height

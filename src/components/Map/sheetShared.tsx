@@ -1,6 +1,6 @@
 // Shared sliding-sheet primitives used by DestinationSheet, CountrySheet, and SpotSheet.
 // Extracted so the three sheets stay visually and behaviourally in sync.
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, useCallback } from 'react';
 import {
   View, Text, StyleSheet, Pressable, ScrollView, Image,
   Dimensions, Modal, TextInput, Platform, KeyboardAvoidingView, Alert, Animated,
@@ -21,6 +21,28 @@ const { width: W, height: H } = Dimensions.get('window');
 // us pre-tick anything in its own UI) doesn't add it twice. Matched by assetId when both sides
 // have one (the reliable media-library identity — `uri` alone can differ between two picks of
 // the very same photo), falling back to `uri` only when assetId is unavailable on either side.
+// Mount-time deferral for a sheet's heavy, off-screen content (its full-screen tab panels). A sheet
+// opens at half-screen or peek, where that content sits below the visible part of the sheet, and it
+// mounts in the busiest commit there is — the one that swaps sheets while the map re-plans its pins
+// and the camera moves. Mounting it a moment later, once the slide-in has finished, keeps that
+// commit (and the slide itself) light. `reveal` mounts it right away instead — call it the moment
+// the sheet heads to full-screen, where the content is visible.
+export const SHEET_PANEL_MOUNT_DELAY_MS = 300;
+export function useDeferredMount(delayMs = SHEET_PANEL_MOUNT_DELAY_MS): [boolean, () => void] {
+  const [ready, setReady] = useState(false);
+  const readyRef = useRef(false);
+  const reveal = useCallback(() => {
+    if (readyRef.current) return;
+    readyRef.current = true;
+    setReady(true);
+  }, []);
+  useEffect(() => {
+    const t = setTimeout(reveal, delayMs);
+    return () => clearTimeout(t);
+  }, [reveal, delayMs]);
+  return [ready, reveal];
+}
+
 export function dedupeNewPhotos(existing: PhotoEntry[], picked: PhotoEntry[]): PhotoEntry[] {
   const existingAssetIds = new Set(existing.map(p => p.assetId).filter((id): id is string => !!id));
   const existingUris     = new Set(existing.map(p => p.uri));

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState, useMemo, useCallback } from 'react';
+import React, { useRef, useEffect, useLayoutEffect, useState, useMemo, useCallback } from 'react';
 import {
   View, Text, StyleSheet, Pressable, Alert,
   Dimensions, Platform,
@@ -30,7 +30,7 @@ import CircleFlag from '../CircleFlag';
 import { sheetPose } from './sheetPose';
 import EntityPhoto from './EntityPhoto';
 import DestinationCard from './DestinationCard';
-import { VisitCardList, VisitModuleSheet, PhotoGalleryModal, type VisitSelectorItem } from './sheetShared';
+import { VisitCardList, VisitModuleSheet, PhotoGalleryModal, useDeferredMount, type VisitSelectorItem } from './sheetShared';
 
 interface Props {
   cluster: CountryCluster;
@@ -562,6 +562,9 @@ function CountrySheet({
   const didMountRef = useRef(false);
   const closingRef = useRef(false);
   const transitionToRef = useRef<(next: CountrySnapState, reason: string) => void>(() => {});
+  // Full-screen panels mount a moment after the sheet does, or at once on heading to full — see
+  // useDeferredMount.
+  const [panelsReady, revealPanels] = useDeferredMount();
   transitionToRef.current = (next, reason) => {
     // Once the parent has told this sheet to leave, only a NEW selection may bring it back.
     if (closingRef.current && reason !== 'selectionChange') return;
@@ -570,6 +573,7 @@ function CountrySheet({
     const target = next === 'full' ? FULL_POS : next === 'peek' ? PEEK_Y : collapsedYRef.current;
     if (__DEV__) console.log('[sheet] Country', cluster.countryCode, prev, '->', next, `reason=${reason}`, 'mapInteracting=', isMapInteracting?.() ?? false);
     snapStateRef.current = next;
+    if (next === 'full') revealPanels();
     snapStateSV.value = next;
     lastPos.value = target;
     // Mounting straight into 'collapsed' never told the parent to collapse; 'peek' and 'full' always did.
@@ -583,7 +587,7 @@ function CountrySheet({
   // requests otherwise: 'full' for the destination sheet's own "List view" button, 'peek' when returning up from a
   // destination via the breadcrumb (the map is framed for a fully-visible screen there, so the sheet has to stay
   // out of the way), or peeked from the start when the map is being interacted with.
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (leaving) {
       closingRef.current = true;
       slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, finished => {
@@ -602,7 +606,7 @@ function CountrySheet({
   // A different country was selected while this sheet is up (it isn't remounted). Straight to the snap it should
   // be in now: half-screen for an ordinary tap, peeked if the user is mid map gesture. Not the first mount, which
   // already applied initialSnap above.
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!didMountRef.current) { didMountRef.current = true; return; }
     transitionToRef.current(isMapInteracting?.() ? 'peek' : 'collapsed', 'selectionChange');
   }, [cluster.country]);
@@ -641,7 +645,7 @@ function CountrySheet({
   // Imperatively collapse from the parent — used by the back pill's down-arrow while this
   // sheet is full-screen. No-ops on mount (only reacts to actual increments).
   const lastCollapseSignalRef = useRef(collapseSignal);
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (collapseSignal === undefined || collapseSignal === lastCollapseSignalRef.current) return;
     lastCollapseSignalRef.current = collapseSignal;
     if (snapStateRef.current === 'full') transitionToRef.current('collapsed', 'backPill');
@@ -649,7 +653,7 @@ function CountrySheet({
 
   // Slide off the bottom, quickly, when the parent signals it's closing this sheet.
   const lastExitSignalRef = useRef(exitSignal);
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (exitSignal === undefined || exitSignal === lastExitSignalRef.current) return;
     lastExitSignalRef.current = exitSignal;
     closingRef.current = true;
@@ -661,7 +665,7 @@ function CountrySheet({
   // Imperatively drop to peek from the parent — used when the user pans/zooms the map.
   // No-ops if already peeking or dismissed. Identical to DestinationSheet's own peekSignal.
   const lastPeekSignalRef = useRef(peekSignal);
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (peekSignal === undefined || peekSignal === lastPeekSignalRef.current) return;
     lastPeekSignalRef.current = peekSignal;
     if (snapStateRef.current === 'collapsed' || snapStateRef.current === 'full') transitionToRef.current('peek', 'mapGesture');
@@ -992,6 +996,10 @@ function CountrySheet({
             </View>
 
             {/* ── CONTENT ──────────────────────────────────────────────── */}
+            {/* An outgoing copy (leaving) only ever rests at half-screen or peek, where these panels
+                sit below the visible part of the sheet — so it skips them, keeping the copy cheap to
+                mount in the busy commit that swaps sheets (see MapScreen's "Sheet swaps"). */}
+            {!leaving && panelsReady && (
             <GestureDetector gesture={tabSwipeGesture}>
             <Animated.View style={[st.slideTrack, slideTrackStyle]}>
               <Animated.View style={[st.slideRow, { width: W * TAB_ORDER.length }, slideRowStyle]}>
@@ -1089,6 +1097,7 @@ function CountrySheet({
               </Animated.View>
             </Animated.View>
             </GestureDetector>
+            )}
           </ScrollView>
 
           {/* ── PEEK STRIP — a thin sliver of the header image with the country's name,
