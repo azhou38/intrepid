@@ -11,7 +11,10 @@ import { Animated, type ImageProps } from 'react-native';
  */
 export default function PinPhoto({ instant, onLoad, style, ...rest }: ImageProps & { instant?: boolean }) {
   const opacity = useRef(new Animated.Value(instant ? 1 : 0)).current;
-  const fadeIn = () => Animated.timing(opacity, { toValue: 1, duration: 220, useNativeDriver: true }).start();
+  // On finish, sync the settled value back to JS: a native-driven animation leaves the JS-side value at 0, and the next
+  // React re-render would otherwise re-apply that, hiding the photo again (see FadePin in MapScreen).
+  const fadeIn = () => Animated.timing(opacity, { toValue: 1, duration: 220, useNativeDriver: true })
+    .start(({ finished }) => { if (finished) opacity.setValue(1); });
 
   // Failsafe if onLoad never fires, so a photo can't stay hidden behind its placeholder.
   useEffect(() => {

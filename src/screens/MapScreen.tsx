@@ -400,11 +400,20 @@ function FadePin({ exiting, instant, children }: { exiting: boolean; instant?: b
   // identical, already-visible pin, where fading in would just dim the overlap.
   const opacity = useRef(new Animated.Value(instant ? 1 : 0)).current;
   useEffect(() => {
+    const toValue = exiting ? 0 : 1;
     Animated.timing(opacity, {
-      toValue: exiting ? 0 : 1,
+      toValue,
       duration: exiting ? PIN_EXIT_MS : PIN_FADE_IN_MS,
       useNativeDriver: true,
-    }).start();
+    }).start(({ finished }) => {
+      // A native-driven animation runs entirely on the UI side and leaves the JS-side value where
+      // it started (0 after a fade-in). Under the New Architecture, the next React re-render of
+      // this Animated.View — e.g. the one that flips `exiting` — re-applies that stale JS value,
+      // so a fully-shown pin snapped to invisible for a moment before its exit fade (which runs
+      // from the true native value, 1) began: the pin vanished, then flashed back and faded out.
+      // Syncing the settled value back keeps any later re-render at the real opacity.
+      if (finished) opacity.setValue(toValue);
+    });
   }, [exiting, opacity]);
   return <Animated.View style={{ opacity }}>{children}</Animated.View>;
 }
@@ -3539,25 +3548,6 @@ const destItems = useMemo((): DestItem[] =>
     }
     if (cleared) setRevealTick(t => t + 1);
   }, [renderedPhotoDests]);
-
-  // TEMP DEBUG (pin flash on destination select) — logs every change in how the selected
-  // destination's pin is planned/rendered, with the camera state at that moment. Remove once fixed.
-  const pinDbgRef = useRef('');
-  useEffect(() => {
-    if (!__DEV__ || !selectedDest) { pinDbgRef.current = ''; return; }
-    const id = selectedDest.id;
-    const r = renderedPhotoDests.find(x => x.item.id === id);
-    const state = [
-      `zoomedInto=${zoomedIntoDestIds.has(id)}`,
-      `zoomedPast=${zoomedPastDefaultIds.has(id)}`,
-      `photoPlan=${stablePhotoIds.has(id)}`,
-      `rendered=${r ? (r.exiting ? 'exiting' : 'live') : 'none'}`,
-      `stampPending=${pendingRevealRef.current.has(id)}`,
-    ].join(' ');
-    if (state === pinDbgRef.current) return;
-    pinDbgRef.current = state;
-    console.log(`[pinflash] t=${Date.now() % 100000} ${id} z=${camZoom.toFixed(3)} latD=${region.latitudeDelta.toFixed(4)} ${state}`);
-  });
 
   const destPhotoMarkers = useMemo(() => renderedPhotoDests
     .map(({ item: dest, exiting }) => {
