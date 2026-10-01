@@ -3049,7 +3049,7 @@ const destItems = useMemo((): DestItem[] =>
   // Back pill: one level up — spot → destination, destination → country, country → world
   const handleBackNav = useCallback(() => {
     if (pressBlocked()) return;   // a pinch finger lifting over the X is not a close
-    closeWithSheetExit(() => {
+    const close = () => {
       if (selectedSpot) {
         handleCloseSpot();
       } else if (selectedDest) {
@@ -3057,8 +3057,17 @@ const destItems = useMemo((): DestItem[] =>
       } else {
         handleCloseCountry();
       }
-    });
-  }, [selectedSpot, selectedDest, handleCloseSpot, handleCloseDestinationSheet, handleCloseCountry, closeWithSheetExit]);
+    };
+    // "‹ Parent" (a spot drilled into from its destination, or a destination from its country)
+    // replaces this sheet with the parent's, so close straight away and let the sheet swap
+    // animate it (see "Sheet swaps": the outgoing sheet slides down while the parent's rises in
+    // its place). Sliding this sheet off first, as a bare-X close does, left the map with no
+    // sheet at all — just the lingering back pill — until the parent's sheet mounted afterwards.
+    if (sheetExitingRef.current) return;
+    const toParentSheet = selectedSpot ? spotOrigin === 'destination' : !!selectedDest && destOrigin === 'country';
+    if (toParentSheet) close();
+    else closeWithSheetExit(close);
+  }, [selectedSpot, selectedDest, spotOrigin, destOrigin, handleCloseSpot, handleCloseDestinationSheet, handleCloseCountry, closeWithSheetExit]);
 
   // Back pill, while the country/destination sheet is full-screen: instead of navigating up
   // a level, just collapse the currently open sheet to its bottom-screen carousel view.
