@@ -3540,6 +3540,25 @@ const destItems = useMemo((): DestItem[] =>
     if (cleared) setRevealTick(t => t + 1);
   }, [renderedPhotoDests]);
 
+  // TEMP DEBUG (pin flash on destination select) — logs every change in how the selected
+  // destination's pin is planned/rendered, with the camera state at that moment. Remove once fixed.
+  const pinDbgRef = useRef('');
+  useEffect(() => {
+    if (!__DEV__ || !selectedDest) { pinDbgRef.current = ''; return; }
+    const id = selectedDest.id;
+    const r = renderedPhotoDests.find(x => x.item.id === id);
+    const state = [
+      `zoomedInto=${zoomedIntoDestIds.has(id)}`,
+      `zoomedPast=${zoomedPastDefaultIds.has(id)}`,
+      `photoPlan=${stablePhotoIds.has(id)}`,
+      `rendered=${r ? (r.exiting ? 'exiting' : 'live') : 'none'}`,
+      `stampPending=${pendingRevealRef.current.has(id)}`,
+    ].join(' ');
+    if (state === pinDbgRef.current) return;
+    pinDbgRef.current = state;
+    console.log(`[pinflash] t=${Date.now() % 100000} ${id} z=${camZoom.toFixed(3)} latD=${region.latitudeDelta.toFixed(4)} ${state}`);
+  });
+
   const destPhotoMarkers = useMemo(() => renderedPhotoDests
     .map(({ item: dest, exiting }) => {
       const saved = savedDestinations[dest.id];
