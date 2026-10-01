@@ -1169,12 +1169,14 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
       duration: peeking ? 220 : 160,
       easing: Easing.out(Easing.quad),
     });
-    // Hides instantly — a hard "definitely don't show the breadcrumb bar" gate (see
-    // sheetCollapsedSV's own comment), so it can't flash for a frame as a sheet opens at
-    // half-screen — but lets go with the same ease pillPeekSV uses when the sheet drops to peek.
-    sheetCollapsedSV.value = state === 'collapsed'
-      ? 1
-      : withTiming(0, { duration: 220, easing: Easing.out(Easing.quad) });
+    // Same timing as pillPeekSV just above (fade out over 160ms, back in over 220ms), so the bar
+    // fades gracefully as any sheet — spot sheets included — is swiped between half-screen and
+    // peek, exactly as it already did for the destination sheet via pillPeekSV alone.
+    const collapsed = state === 'collapsed';
+    sheetCollapsedSV.value = withTiming(collapsed ? 1 : 0, {
+      duration: collapsed ? 160 : 220,
+      easing: Easing.out(Easing.quad),
+    });
   }, []);
   // Bumped to imperatively drop whichever sheet is open down to its "peek" state — driven by
   // handleCameraChanged below, the moment the user starts panning/zooming the map.
