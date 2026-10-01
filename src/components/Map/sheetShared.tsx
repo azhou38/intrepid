@@ -1334,9 +1334,11 @@ export interface VisitSelectorItem {
 const VISIT_CARD_BORDER = '#D8DBE0';
 // Caption-strip treatment for a selector item's thumbnail card (name over a dark gradient that
 // fades up into the photo) — same formula as DestinationSheet's own WHY_STRIP_OPACITY/
-// STRIP_FADE_STOPS, just scoped to this file's own (smaller) card size.
+// STRIP_FADE_STOPS, just scoped to this file's own (smaller) card size. Kept short: the solid
+// strip only hugs the name (see memSpotCardStrip's padding) and this fade above it is brief, so
+// most of the small square card still shows the photo rather than a dark scrim.
 const VISIT_STRIP_OPACITY = 0.68;
-const VISIT_STRIP_FADE_H = 32;
+const VISIT_STRIP_FADE_H = 14;
 const VISIT_STRIP_FADE_STOPS = Array.from({ length: 11 }, (_, i) => {
   const t = i / 10;
   return { offset: `${t}`, opacity: VISIT_STRIP_OPACITY * t * t * (3 - 2 * t) };
@@ -1605,7 +1607,7 @@ const vcS = StyleSheet.create({
   memSpotCard:             { borderRadius:14, overflow:'hidden', backgroundColor:'#F3F4F6',
                               borderWidth:1, borderColor:'#059669' },
   memSpotCardStrip:        { position:'absolute', left:0, right:0, bottom:0,
-                              paddingHorizontal:8, paddingTop:6, paddingBottom:10, backgroundColor:`rgba(0,0,0,${VISIT_STRIP_OPACITY})` },
+                              paddingHorizontal:8, paddingTop:2, paddingBottom:7, backgroundColor:`rgba(0,0,0,${VISIT_STRIP_OPACITY})` },
   memSpotCardStripFade:    { position:'absolute', left:0, right:0, top:-VISIT_STRIP_FADE_H, height:VISIT_STRIP_FADE_H },
   memSpotCardName:         { fontSize:12, fontWeight:'700', color:'white' },
   memSpotCardArrow:        { fontSize:12, fontWeight:'700', color:'#D1D5DB' },
