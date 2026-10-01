@@ -436,15 +436,26 @@ function useExitingItems<T>(items: T[], keyOf: (t: T) => string): { item: T; key
   // Derived DURING render (not in an effect that sets state): a change to the item list used to cost a render for the
   // change and a second one for the effect's setState, on a screen whose render is expensive. That doubling is what made
   // pins react late on a fast zoom. The previous array is reused when nothing changed, so memoized marker lists stay put.
-  const liveKeys = new Set<string>();
+  //
+  // ORDER IS STABLE: every key keeps the position it already had — an item that drops out stays where it was (now
+  // exiting), and only brand-new keys are appended at the end. This list feeds keyed MarkerViews, and under the New
+  // Architecture reordering them makes Fabric remove and re-insert native marker views, which re-adds their Mapbox view
+  // annotations — a re-added annotation stays invisible mid-camera-animation until its next update. Exiting items used to
+  // be moved to the end of the list, so one commit where many markers started exiting (a destination landing: ~14 pills
+  // and several photo pins at once) re-inserted still-live pins too — the selected destination's pin vanished, then
+  // reappeared for its own exit fade (a flash). Marker stacking follows mount order, not list order, so nothing relies on
+  // the order here.
+  const itemByKey = new Map<string, T>();
+  for (const item of items) itemByKey.set(keyOf(item), item);
   const next: R[] = [];
-  for (const item of items) {
-    const key = keyOf(item);
-    liveKeys.add(key);
-    next.push({ item, key, exiting: false });
-  }
+  const seen = new Set<string>();
   for (const r of prevRef.current) {
-    if (!liveKeys.has(r.key)) next.push({ ...r, exiting: true });
+    seen.add(r.key);
+    const item = itemByKey.get(r.key);
+    next.push(item !== undefined ? { item, key: r.key, exiting: false } : { ...r, exiting: true });
+  }
+  for (const [key, item] of itemByKey) {
+    if (!seen.has(key)) next.push({ item, key, exiting: false });
   }
   const prev = prevRef.current;
   const same = prev.length === next.length && prev.every((r, i) => r.key === next[i].key && r.item === next[i].item && r.exiting === next[i].exiting);
@@ -3547,7 +3558,7 @@ const destItems = useMemo((): DestItem[] =>
   const promotedDests = useMemo(() => destItems
     .filter(item => !hiddenDestIds.has(item.dest.id) && stablePhotoIds.has(item.dest.id))
     .map(item => item.dest)
-    .sort((a, b) => b.rank - a.rank), // rank=1 renders last (on top)
+    .sort((a, b) => b.rank - a.rank), // deterministic order; on-map stacking follows mount order (see useExitingItems)
   [destItems, stablePhotoIds, hiddenDestIds]);
   const renderedPhotoDests = useExitingItems(promotedDests, d => d.id);
   useEffect(() => {
@@ -3558,7 +3569,6 @@ const destItems = useMemo((): DestItem[] =>
     if (cleared) setRevealTick(t => t + 1);
   }, [renderedPhotoDests]);
 
-  const dbgRenderRef = useRef(0);   // TEMP DEBUG HUD render counter — see the HUD below
   const destPhotoMarkers = useMemo(() => renderedPhotoDests
     .map(({ item: dest, exiting }) => {
       const saved = savedDestinations[dest.id];
@@ -4219,26 +4229,6 @@ const destItems = useMemo((): DestItem[] =>
           initialSnap={destInitialSnap}
         />
       )}
-
-      {/* TEMP DEBUG HUD (pin flash on destination landing) — shows the state React has committed,
-          so a screen recording lines it up with what's on screen. Dev builds only. Remove once fixed. */}
-      {__DEV__ && (() => {
-        dbgRenderRef.current += 1;
-        const sel = selectedDest;
-        const r = sel ? renderedPhotoDests.find(x => x.item.id === sel.id) : undefined;
-        const cnt = (l: { exiting: boolean }[]) => `${l.filter(x => !x.exiting).length}+${l.filter(x => x.exiting).length}x`;
-        const stamp = sel ? stampGeoJSON.features.some(f => f.properties?.id === sel.id) : false;
-        return (
-          <View pointerEvents="none" style={{ position: 'absolute', top: insets.top + 64, left: 8, zIndex: 9999,
-            backgroundColor: 'rgba(0,0,0,0.75)', borderRadius: 6, paddingHorizontal: 6, paddingVertical: 3 }}>
-            <Text style={{ color: '#0F0', fontSize: 11, fontFamily: Platform.OS === 'ios' ? 'Menlo' : 'monospace' }}>
-              {`#${dbgRenderRef.current} z=${camZoom.toFixed(3)}\n`}
-              {`${sel?.id ?? '-'} pin=${r ? (r.exiting ? 'EXIT' : 'live') : 'none'} stamp=${stamp ? 'Y' : 'n'}\n`}
-              {`pills=${cnt(renderedCountryPills)} photos=${cnt(renderedPhotoDests)} spots=${cnt(renderedSpots)}`}
-            </Text>
-          </View>
-        );
-      })()}
 
       {/* ── Spot sheet — swipeable carousel of the destination's spots, expandable to full */}
       {selectedSpot && selectedDest && spotFocusId && (
