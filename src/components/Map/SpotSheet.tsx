@@ -1050,7 +1050,11 @@ function SpotSheet({
             </View>
             <Text style={st.carCounter}>{activeIndex + 1} / {spots.length}</Text>
             {!!onGoToList && (
-              <Pressable style={st.carListBtn} onPress={onGoToList} hitSlop={8}>
+              <Pressable
+                style={st.carListBtn}
+                onPress={() => { Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light); onGoToList(); }}
+                hitSlop={8}
+              >
                 <LayoutGrid size={14} color="#6B7280" />
                 <Text style={st.carListBtnTxt}>Grid view</Text>
               </Pressable>
