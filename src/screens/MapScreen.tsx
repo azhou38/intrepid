@@ -297,7 +297,9 @@ function SpotMarker({ spot, isVisited, isSelected, exiting, isSatellite, labelSi
       // zooming out" bug. Spot pins are placed deliberately, so they never take part in it.
       allowOverlap
     >
-      <FadePin exiting={exiting} instant={instant}>
+      {/* Spot pins only ever appear/disappear through the destination handoff (or the zoom
+          threshold beside it), so they always take the gentler handoff fade. */}
+      <FadePin exiting={exiting} instant={instant} slow>
         <Pressable disabled={exiting} onPress={onPress} hitSlop={6}>
           <View style={styles.spotMarkerRow}>
             <View style={styles.spotPinWrap}>
@@ -394,8 +396,13 @@ const pinSt = StyleSheet.create({
 // gradual cross-fades, matching how Apple/Google Maps POI labels resolve density changes.
 const PIN_FADE_IN_MS = 160;
 const PIN_EXIT_MS    = 120;
+// The destination ↔ spot handoff (landing on a destination's default view, or zooming back out
+// of it) is one deliberate swap of the destination's pin for its spot pins, so it cross-fades
+// more gently than ordinary zoom-driven pin churn — matching the stamp dots' own 300ms transition.
+// See FadePin's `slow`.
+const HANDOFF_FADE_MS = 300;
 
-function FadePin({ exiting, instant, children }: { exiting: boolean; instant?: boolean; children: React.ReactNode }) {
+function FadePin({ exiting, instant, slow, children }: { exiting: boolean; instant?: boolean; slow?: boolean; children: React.ReactNode }) {
   // `instant`: mounts fully opaque (no fade-in) — for a duplicate that sits exactly over an
   // identical, already-visible pin, where fading in would just dim the overlap.
   const opacity = useRef(new Animated.Value(instant ? 1 : 0)).current;
@@ -409,11 +416,15 @@ function FadePin({ exiting, instant, children }: { exiting: boolean; instant?: b
   // 100ms later while the map is busy (e.g. a destination landing and handing off to its spot
   // pins) — so the pin vanished, then reappeared mid-fade: a visible flash. Layout effects run
   // synchronously with the commit, so the fade takes over the very same frame.
+  // `slow`: use HANDOFF_FADE_MS both ways. Read through a ref so a later change to it (it's
+  // derived per render) never restarts a fade already in progress — only `exiting` does.
+  const slowRef = useRef(slow);
+  slowRef.current = slow;
   useLayoutEffect(() => {
     const toValue = exiting ? 0 : 1;
     Animated.timing(opacity, {
       toValue,
-      duration: exiting ? PIN_EXIT_MS : PIN_FADE_IN_MS,
+      duration: slowRef.current ? HANDOFF_FADE_MS : exiting ? PIN_EXIT_MS : PIN_FADE_IN_MS,
       useNativeDriver: true,
     }).start(({ finished }) => {
       // Native-driven animations leave the JS-side value where it started; sync the settled
@@ -425,9 +436,10 @@ function FadePin({ exiting, instant, children }: { exiting: boolean; instant?: b
 }
 
 // Tracks a keyed item list across renders, holding removed items in an "exiting" state for
-// PIN_EXIT_MS (so FadePin can animate them out) before pruning. Re-added keys cancel their
-// pending removal and simply fade back in.
-function useExitingItems<T>(items: T[], keyOf: (t: T) => string): { item: T; key: string; exiting: boolean }[] {
+// `exitMs` (PIN_EXIT_MS by default — the longest exit fade its FadePins use) so FadePin can
+// animate them out before pruning. Re-added keys cancel their pending removal and simply fade
+// back in.
+function useExitingItems<T>(items: T[], keyOf: (t: T) => string, exitMs = PIN_EXIT_MS): { item: T; key: string; exiting: boolean }[] {
   type R = { item: T; key: string; exiting: boolean };
   const [, force] = useState(0);
   const prevRef = useRef<R[]>(items.map(item => ({ item, key: keyOf(item), exiting: false })));
@@ -475,7 +487,7 @@ function useExitingItems<T>(items: T[], keyOf: (t: T) => string): { item: T; key
           timersRef.current.delete(key);
           prevRef.current = prevRef.current.filter(c => !(c.key === key && c.exiting));
           force(n => n + 1);
-        }, PIN_EXIT_MS + 40));
+        }, exitMs + 40));
       }
     }
   }, [result]);
@@ -1951,7 +1963,7 @@ const destItems = useMemo((): DestItem[] =>
   }, [region, camZoom, selectedSpot, selectedDest, spotsInDest]);
   // Exit-fade tracking for spot pins (same treatment as pills/photos): pins leaving the
   // set linger for PIN_EXIT_MS fading out, new ones mount at 0 and fade in.
-  const renderedSpots = useExitingItems(useStableList(visibleSpots, s => s.id), s => s.id);
+  const renderedSpots = useExitingItems(useStableList(visibleSpots, s => s.id), s => s.id, HANDOFF_FADE_MS);
 
   // Which side of each spot pin its name goes on — or none. Names default to the LEFT of the pin;
   // when that would run into another pin or an already-placed name the label flips to the right, and
@@ -3560,7 +3572,8 @@ const destItems = useMemo((): DestItem[] =>
     .map(item => item.dest)
     .sort((a, b) => b.rank - a.rank), // deterministic order; on-map stacking follows mount order (see useExitingItems)
   [destItems, stablePhotoIds, hiddenDestIds]);
-  const renderedPhotoDests = useExitingItems(promotedDests, d => d.id);
+  // HANDOFF_FADE_MS: a destination's photo pin may leave through the slower handoff fade (see below).
+  const renderedPhotoDests = useExitingItems(promotedDests, d => d.id, HANDOFF_FADE_MS);
   useEffect(() => {
     let cleared = false;
     for (const id of pendingRevealRef.current) {
@@ -3587,7 +3600,10 @@ const destItems = useMemo((): DestItem[] =>
           // instead of the intended cross-fade (see FadePin) when the plan's own result changed.
           allowOverlap
         >
-          <FadePin exiting={exiting}>
+          {/* The handoff fade when this pin is swapping with its own spot pins: leaving because the
+              camera reached its default view (hiddenDestIds), or returning because the camera just
+              zoomed back out of it (pendingRevealRef). Ordinary plan changes keep the quick fade. */}
+          <FadePin exiting={exiting} slow={exiting ? hiddenDestIds.has(dest.id) : pendingRevealRef.current.has(dest.id)}>
             {/* The selected destination's own pin persists while zooming out. Tapping it only re-frames the camera on the
                 destination's default view (handleResetToDest, same as the breadcrumb) — it does NOT re-select it, so the
                 sheet stays as it is. A pinch that ends over it is filtered out by pressBlocked (a pinch has two fingers). */}
@@ -3602,7 +3618,7 @@ const destItems = useMemo((): DestItem[] =>
         </MapboxGL.MarkerView>
       );
     }),
-  [renderedPhotoDests, selectedDest, savedDestinations, visitedSpotCountByDest, handleMarkerPress, handleResetToDest]);
+  [renderedPhotoDests, selectedDest, savedDestinations, visitedSpotCountByDest, handleMarkerPress, handleResetToDest, hiddenDestIds]);
 
   // Which sliding sheet is mounted right now. When it changes from one level to another, the incoming sheet is a
   // replacement for the one that was showing and starts where that one rested (see sheetPose) rather than from below
