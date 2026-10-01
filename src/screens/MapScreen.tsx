@@ -1,4 +1,4 @@
-import React, { useRef, useState, useMemo, useCallback, useEffect } from 'react';
+import React, { useRef, useState, useMemo, useCallback, useEffect, useLayoutEffect } from 'react';
 import { unstable_batchedUpdates, View, StyleSheet, Pressable, Text, Dimensions, Animated, Platform, TextInput, Image, Easing as RNEasing, Keyboard, ScrollView } from 'react-native';
 import Reanimated, { useSharedValue, useAnimatedStyle, useAnimatedReaction, runOnJS, withTiming, Easing } from 'react-native-reanimated';
 import Svg, { Rect, Path, Circle } from 'react-native-svg';
@@ -297,7 +297,9 @@ function SpotMarker({ spot, isVisited, isSelected, exiting, isSatellite, labelSi
       // zooming out" bug. Spot pins are placed deliberately, so they never take part in it.
       allowOverlap
     >
-      <FadePin exiting={exiting} instant={instant}>
+      {/* Spot pins only ever appear/disappear through the destination handoff (or the zoom
+          threshold beside it), so they always take the gentler handoff fade. */}
+      <FadePin exiting={exiting} instant={instant} slow>
         <Pressable disabled={exiting} onPress={onPress} hitSlop={6}>
           <View style={styles.spotMarkerRow}>
             <View style={styles.spotPinWrap}>
@@ -394,25 +396,50 @@ const pinSt = StyleSheet.create({
 // gradual cross-fades, matching how Apple/Google Maps POI labels resolve density changes.
 const PIN_FADE_IN_MS = 160;
 const PIN_EXIT_MS    = 120;
+// The destination ↔ spot handoff (landing on a destination's default view, or zooming back out
+// of it) is one deliberate swap of the destination's pin for its spot pins, so it cross-fades
+// more gently than ordinary zoom-driven pin churn — matching the stamp dots' own 300ms transition.
+// See FadePin's `slow`.
+const HANDOFF_FADE_MS = 300;
 
-function FadePin({ exiting, instant, children }: { exiting: boolean; instant?: boolean; children: React.ReactNode }) {
+function FadePin({ exiting, instant, slow, children }: { exiting: boolean; instant?: boolean; slow?: boolean; children: React.ReactNode }) {
   // `instant`: mounts fully opaque (no fade-in) — for a duplicate that sits exactly over an
   // identical, already-visible pin, where fading in would just dim the overlap.
   const opacity = useRef(new Animated.Value(instant ? 1 : 0)).current;
-  useEffect(() => {
+  // Stable style object, so a re-render (e.g. the one that flips `exiting`) hands Animated the
+  // same props shape rather than a new one to re-attach.
+  const style = useMemo(() => ({ opacity }), [opacity]);
+  // A LAYOUT effect, not a passive one: the fade must start in the same commit that flips
+  // `exiting`. That commit re-renders this Animated.View, and under the New Architecture the
+  // view's opacity can snap to a stale value at that moment until a native animation drives it
+  // again. With a passive effect the fade only started once the JS thread caught up — over
+  // 100ms later while the map is busy (e.g. a destination landing and handing off to its spot
+  // pins) — so the pin vanished, then reappeared mid-fade: a visible flash. Layout effects run
+  // synchronously with the commit, so the fade takes over the very same frame.
+  // `slow`: use HANDOFF_FADE_MS both ways. Read through a ref so a later change to it (it's
+  // derived per render) never restarts a fade already in progress — only `exiting` does.
+  const slowRef = useRef(slow);
+  slowRef.current = slow;
+  useLayoutEffect(() => {
+    const toValue = exiting ? 0 : 1;
     Animated.timing(opacity, {
-      toValue: exiting ? 0 : 1,
-      duration: exiting ? PIN_EXIT_MS : PIN_FADE_IN_MS,
+      toValue,
+      duration: slowRef.current ? HANDOFF_FADE_MS : exiting ? PIN_EXIT_MS : PIN_FADE_IN_MS,
       useNativeDriver: true,
-    }).start();
+    }).start(({ finished }) => {
+      // Native-driven animations leave the JS-side value where it started; sync the settled
+      // value back so any later re-render applies the real opacity.
+      if (finished) opacity.setValue(toValue);
+    });
   }, [exiting, opacity]);
-  return <Animated.View style={{ opacity }}>{children}</Animated.View>;
+  return <Animated.View style={style}>{children}</Animated.View>;
 }
 
 // Tracks a keyed item list across renders, holding removed items in an "exiting" state for
-// PIN_EXIT_MS (so FadePin can animate them out) before pruning. Re-added keys cancel their
-// pending removal and simply fade back in.
-function useExitingItems<T>(items: T[], keyOf: (t: T) => string): { item: T; key: string; exiting: boolean }[] {
+// `exitMs` (PIN_EXIT_MS by default — the longest exit fade its FadePins use) so FadePin can
+// animate them out before pruning. Re-added keys cancel their pending removal and simply fade
+// back in.
+function useExitingItems<T>(items: T[], keyOf: (t: T) => string, exitMs = PIN_EXIT_MS): { item: T; key: string; exiting: boolean }[] {
   type R = { item: T; key: string; exiting: boolean };
   const [, force] = useState(0);
   const prevRef = useRef<R[]>(items.map(item => ({ item, key: keyOf(item), exiting: false })));
@@ -421,15 +448,26 @@ function useExitingItems<T>(items: T[], keyOf: (t: T) => string): { item: T; key
   // Derived DURING render (not in an effect that sets state): a change to the item list used to cost a render for the
   // change and a second one for the effect's setState, on a screen whose render is expensive. That doubling is what made
   // pins react late on a fast zoom. The previous array is reused when nothing changed, so memoized marker lists stay put.
-  const liveKeys = new Set<string>();
+  //
+  // ORDER IS STABLE: every key keeps the position it already had — an item that drops out stays where it was (now
+  // exiting), and only brand-new keys are appended at the end. This list feeds keyed MarkerViews, and under the New
+  // Architecture reordering them makes Fabric remove and re-insert native marker views, which re-adds their Mapbox view
+  // annotations — a re-added annotation stays invisible mid-camera-animation until its next update. Exiting items used to
+  // be moved to the end of the list, so one commit where many markers started exiting (a destination landing: ~14 pills
+  // and several photo pins at once) re-inserted still-live pins too — the selected destination's pin vanished, then
+  // reappeared for its own exit fade (a flash). Marker stacking follows mount order, not list order, so nothing relies on
+  // the order here.
+  const itemByKey = new Map<string, T>();
+  for (const item of items) itemByKey.set(keyOf(item), item);
   const next: R[] = [];
-  for (const item of items) {
-    const key = keyOf(item);
-    liveKeys.add(key);
-    next.push({ item, key, exiting: false });
-  }
+  const seen = new Set<string>();
   for (const r of prevRef.current) {
-    if (!liveKeys.has(r.key)) next.push({ ...r, exiting: true });
+    seen.add(r.key);
+    const item = itemByKey.get(r.key);
+    next.push(item !== undefined ? { item, key: r.key, exiting: false } : { ...r, exiting: true });
+  }
+  for (const [key, item] of itemByKey) {
+    if (!seen.has(key)) next.push({ item, key, exiting: false });
   }
   const prev = prevRef.current;
   const same = prev.length === next.length && prev.every((r, i) => r.key === next[i].key && r.item === next[i].item && r.exiting === next[i].exiting);
@@ -449,7 +487,7 @@ function useExitingItems<T>(items: T[], keyOf: (t: T) => string): { item: T; key
           timersRef.current.delete(key);
           prevRef.current = prevRef.current.filter(c => !(c.key === key && c.exiting));
           force(n => n + 1);
-        }, PIN_EXIT_MS + 40));
+        }, exitMs + 40));
       }
     }
   }, [result]);
@@ -908,13 +946,19 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // in its temporal dead zone when the worklet closes over it, which surfaced as
   // "Cannot read property 'value' of undefined".
   const pillPeekSV = useSharedValue(0);
-  // 1 whenever a spot's sheet is sitting at half-screen ('collapsed') — forces the breadcrumb
-  // bar (Country | Destination) to hide there regardless of what crumbGateStyle's other inputs
-  // say, since the sheet's own header already names the spot. Kept separate from breadcrumbAnim
-  // (which the back/X pill also reads, and must stay 1 the whole time a spot is open) so hiding
-  // this bar can never also hide that pill. See setSheetSnapState, which writes it, and
-  // crumbGateStyle, which reads it.
-  const spotCollapsedSV = useSharedValue(0);
+  // 1 whenever the open sheet — country, destination or spot — is sitting at half-screen
+  // ('collapsed'): forces the breadcrumb bar (Country | Destination) to hide there regardless of
+  // what crumbGateStyle's other inputs say, since the sheet's own header already names the
+  // selection. Without it, a return arrow that's showing (the user panned/zoomed away) kept the
+  // bar up after swiping the sheet back up to half-screen, until the arrow itself was pressed.
+  // Kept separate from breadcrumbAnim (which the back/X pill also reads, and must stay 1 the whole
+  // time a selection is open) so hiding this bar can never also hide that pill. See
+  // setSheetSnapState, which writes it, and crumbGateStyle, which reads it.
+  const sheetCollapsedSV = useSharedValue(0);
+  // The breadcrumb bar's own copy of pillPeekSV (1 while the sheet peeks), on the sheets' own
+  // slide timing instead of the pill's quicker one — so the bar fades in step with the sheet as
+  // it's swiped between half-screen and peek. See setSheetSnapState and crumbGateStyle.
+  const crumbPeekSV = useSharedValue(0);
   const upPillWrapStyle = useAnimatedStyle(() => ({ bottom: upPillBottomSV.value }));
   // One-shot mount hints for DestinationSheet, set right before it (re)mounts so it can open
   // straight to a specific tab/snap point (e.g. the spot carousel's "list view" button).
@@ -1156,8 +1200,9 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // whether a map pan/zoom should auto-peek the sheet, without needing that callback to
   // depend on (and re-create itself around) React state.
   const sheetSnapStateRef = useRef<'peek' | 'collapsed' | 'full'>('collapsed');
-  // Every write to sheetSnapStateRef goes through this so pillPeekSV — one of the inputs to
-  // the breadcrumb's visibility gate (see crumbGateStyle) — can never desync from the sheet.
+  // Every write to sheetSnapStateRef goes through this so pillPeekSV (the back/X pill) and
+  // crumbPeekSV/sheetCollapsedSV (the breadcrumb's visibility gate, see crumbGateStyle) can
+  // never desync from the sheet.
   // The ref is set both reactively (onSnapStateChange) and synchronously at each site that
   // mounts/resets a sheet, and missing any one of those would strand the breadcrumb.
   const setSheetSnapState = useCallback((state: 'peek' | 'collapsed' | 'full') => {
@@ -1167,10 +1212,12 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
       duration: peeking ? 220 : 160,
       easing: Easing.out(Easing.quad),
     });
-    // No animation — this is a hard "definitely don't show the breadcrumb bar" gate (see
-    // spotCollapsedSV's own comment), not a visual transition of its own; crumbGateStyle's
-    // existing timing on its other inputs already smooths the overall fade.
-    spotCollapsedSV.value = !!selectedSpotRef.current && state === 'collapsed' ? 1 : 0;
+    // The breadcrumb bar's two inputs fade over the sheets' own slide (SHEET_SNAP_MS, with their
+    // SNAP_CONFIG easing), in both directions, so the bar fades in step with any sheet — spot
+    // sheets included — as it's swiped between half-screen and peek.
+    const crumbFade = { duration: SHEET_SNAP_MS, easing: Easing.out(Easing.cubic) };
+    crumbPeekSV.value = withTiming(peeking ? 1 : 0, crumbFade);
+    sheetCollapsedSV.value = withTiming(state === 'collapsed' ? 1 : 0, crumbFade);
   }, []);
   // Bumped to imperatively drop whichever sheet is open down to its "peek" state — driven by
   // handleCameraChanged below, the moment the user starts panning/zooming the map.
@@ -1257,16 +1304,15 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // two return-prompt progress values and the peek value — so taking their max inherits those
   // existing eases and needs no timing of its own. Declared here, below all three, since a
   // worklet capturing a `const` declared further down hits its temporal dead zone.
-  // spotCollapsedSV overrides all of that to a hard 0 whenever a spot's sheet sits at
-  // half-screen — the return-prompt/peek inputs above don't know about that case on their
-  // own (they're about panning away from "home", not about a spot sheet's own snap state),
-  // so without this override a stale/transient return-prompt value could show the bar right
-  // when a spot is first selected, which is exactly the moment it must stay hidden.
+  // sheetCollapsedSV overrides all of that whenever the open sheet sits at half-screen — the
+  // return-prompt/peek inputs above don't know about the sheet's own snap state (they're about
+  // panning away from "home"), so on their own a showing return arrow kept the bar up at
+  // half-screen, and a stale/transient return-prompt value could show it right as a sheet opens.
   const crumbGateStyle = useAnimatedStyle(() => ({
-    opacity: spotCollapsedSV.value > 0.5 ? 0 : Math.max(
+    opacity: (1 - sheetCollapsedSV.value) * Math.max(
       returnPromptProgress.value,
       destReturnPromptProgress.value,
-      pillPeekSV.value,
+      crumbPeekSV.value,
     ),
   }));
   // Keeps touch handling in lockstep with that opacity, whichever path drove it — the
@@ -1275,8 +1321,8 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // an invisible breadcrumb keeps swallowing taps at the top of the map.
   const [crumbInteractive, setCrumbInteractive] = useState(false);
   useAnimatedReaction(
-    () => spotCollapsedSV.value <= 0.5
-      && Math.max(returnPromptProgress.value, destReturnPromptProgress.value, pillPeekSV.value) > 0.05,
+    () => sheetCollapsedSV.value <= 0.5
+      && Math.max(returnPromptProgress.value, destReturnPromptProgress.value, crumbPeekSV.value) > 0.05,
     (visible, prev) => { if (visible !== prev) runOnJS(setCrumbInteractive)(visible); },
   );
 
@@ -1917,7 +1963,7 @@ const destItems = useMemo((): DestItem[] =>
   }, [region, camZoom, selectedSpot, selectedDest, spotsInDest]);
   // Exit-fade tracking for spot pins (same treatment as pills/photos): pins leaving the
   // set linger for PIN_EXIT_MS fading out, new ones mount at 0 and fade in.
-  const renderedSpots = useExitingItems(useStableList(visibleSpots, s => s.id), s => s.id);
+  const renderedSpots = useExitingItems(useStableList(visibleSpots, s => s.id), s => s.id, HANDOFF_FADE_MS);
 
   // Which side of each spot pin its name goes on — or none. Names default to the LEFT of the pin;
   // when that would run into another pin or an already-placed name the label flips to the right, and
@@ -2299,6 +2345,28 @@ const destItems = useMemo((): DestItem[] =>
   // the sheet is in, exactly as for countries:
   //   • 'topHalf' — sheet at half-screen. Window y 0..H/2.
   //   • 'full'    — sheet in bottom-screen/peek. Window runs to the top of the peek strip.
+  // The camera fitDestinationDefaultView sends the map to — see its comment for the framing math.
+  const destDefaultCamera = useCallback((
+    dest: Destination,
+    framing: 'topHalf' | 'full',
+    zoomFactor = 1,
+  ) => {
+    const zoom = latDeltaToZoom(getDestZoomDelta(dest)) * zoomFactor;
+    const worldSize = 512 * Math.pow(2, zoom);
+    const mapViewH = mapViewHRef.current || (H - BOTTOM_TAB_H);
+    const bottomBound = framing === 'full'
+      ? Math.max(40, mapViewH - PEEK_STRIP_H)
+      : H / 2;
+    const targetY = bottomBound / 2;   // top bound is 0, so the centre is just half of it
+    // Offset the CAMERA centre so the DESTINATION lands at targetY: the camera centre renders
+    // at the map view's own middle, so placing the destination higher means centring south of
+    // it. Negative (targetY - mapViewH/2) therefore pushes mercY down-screen, i.e. southward.
+    const lat = invMercY(
+      mercY(dest.coordinates.latitude) - (targetY - mapViewH / 2) / worldSize,
+    );
+    return { lng: dest.coordinates.longitude, lat, zoom };
+  }, []);
+
   const fitDestinationDefaultView = useCallback((
     dest: Destination,
     mode: 'easeTo' | 'flyTo' = 'easeTo',
@@ -2309,27 +2377,40 @@ const destItems = useMemo((): DestItem[] =>
     zoomFactor = 1,
   ) => {
     cancelCountryCapture();
-    const zoomLevel = latDeltaToZoom(getDestZoomDelta(dest)) * zoomFactor;
-    const worldSize = 512 * Math.pow(2, zoomLevel);
-    const mapViewH = mapViewHRef.current || (H - BOTTOM_TAB_H);
-    const bottomBound = framing === 'full'
-      ? Math.max(40, mapViewH - PEEK_STRIP_H)
-      : H / 2;
-    const targetY = bottomBound / 2;   // top bound is 0, so the centre is just half of it
-    // Offset the CAMERA centre so the DESTINATION lands at targetY: the camera centre renders
-    // at the map view's own middle, so placing the destination higher means centring south of
-    // it. Negative (targetY - mapViewH/2) therefore pushes mercY down-screen, i.e. southward.
-    const centerLat = invMercY(
-      mercY(dest.coordinates.latitude) - (targetY - mapViewH / 2) / worldSize,
-    );
+    const cam = destDefaultCamera(dest, framing, zoomFactor);
     beginProgrammaticCameraMove(durationMs);
     cameraRef.current?.setCamera({
-      centerCoordinate: [dest.coordinates.longitude, centerLat],
-      zoomLevel,
+      centerCoordinate: [cam.lng, cam.lat],
+      zoomLevel: cam.zoom,
       animationDuration: durationMs,
       animationMode: mode,
     });
-  }, [cancelCountryCapture, beginProgrammaticCameraMove]);
+  }, [cancelCountryCapture, beginProgrammaticCameraMove, destDefaultCamera]);
+
+  // The selected destination's "home" for its breadcrumb return arrow (destHomeRegion +
+  // destHomeZoomRef), set to the exact default view `framing` puts the camera on — computed, not
+  // observed. Home used to be dropped whenever the camera was sent to the default view and then
+  // captured from the next map idle, which made it depend on the user leaving the camera alone
+  // until it settled: a quick pan/zoom before that recorded wherever THEIR gesture ended as home
+  // (or, zoomed far out, nothing at all), and the arrow then never showed however far they went.
+  // The deltas are what the settled camera's bounds report at that zoom: destination zooms are
+  // deep in mercator, so the span follows exactly from the zoom, the map view's size and the
+  // centre latitude (including mercator's latitude dependence, which an earlier synthesized
+  // guess ignored).
+  const setDestHomeToDefault = useCallback((dest: Destination, framing: 'topHalf' | 'full') => {
+    const cam = destDefaultCamera(dest, framing);
+    const worldSize = 512 * Math.pow(2, cam.zoom);
+    const halfH = (mapViewHRef.current || (H - BOTTOM_TAB_H)) / 2 / worldSize;
+    const home: Region = {
+      latitude: cam.lat,
+      longitude: cam.lng,
+      latitudeDelta: invMercY(mercY(cam.lat) - halfH) - invMercY(mercY(cam.lat) + halfH),
+      longitudeDelta: SCREEN_W_GLOBAL * 360 / worldSize,
+    };
+    destHomeRegionRef.current = home;
+    destHomeZoomRef.current = cam.zoom;
+    setDestHomeRegion(home);
+  }, [destDefaultCamera]);
 
   // Spot equivalent of fitDestinationDefaultView — same closed-form point-centring math, but
   // fixed at spot zoom (latitudeDelta 0.02) and always framed for the half-screen carousel
@@ -2438,24 +2519,14 @@ const destItems = useMemo((): DestItem[] =>
     // isMapInteracting — see its own comment: a tap landing while a previous pan is still
     // coasting on momentum must still open collapsed, not get stuck peeking.
     setSheetSnapState(isFingerDraggingMap() ? 'peek' : 'collapsed');
-    // destHomeRegion itself is captured LAZILY from the real, settled camera bounds once the
-    // fly-to below actually lands (see handleMapIdle) — NOT fabricated synchronously from
-    // this target region. A synthetic guess (this same latitudeDelta/longitudeDelta pair)
-    // was tried, but it doesn't match what the camera actually reports once settled: real
-    // longitude span is a function of zoom+screen-width alone, while real latitude span
-    // (Mercator) additionally depends on the destination's own latitude, an effect no simple
-    // formula here reproduces closely enough — the mismatch made the "panned away" check
-    // misfire a moment after landing dead-centered on the destination. Observing the real,
-    // settled bounds sidesteps that error entirely, at the cost of needing to guard against
-    // the user interrupting the flight before it settles (see destFlightInterruptedRef and
-    // handleCameraChanged/handleMapIdle) — otherwise the first idle after an interruption
-    // would capture wherever the user's OWN pan ended as "home" instead.
-    destHomeRegionRef.current = null;
-    setDestHomeRegion(null);
+    // destHomeRegion is set right away to the exact default view the fly-to below targets (see
+    // setDestHomeToDefault) — not captured from wherever the camera first comes to rest, which a
+    // quick pan/zoom before the flight settled used to turn into the wrong home (no arrow).
+    setDestHomeToDefault(dest, 'topHalf');
     destReturnPromptProgress.value = 0; destReturnPromptVisibleRef.current = false;
-    // Suppresses prompt evaluation and gates home-capture until the flight settles (or the
-    // fallback below gives up) — see destFlightInterruptedRef's own comment for the other
-    // half of this mechanism.
+    // Suppresses prompt evaluation while the flight is still on its way to home (the camera is
+    // legitimately "away" until it lands). A user gesture ends this early — see
+    // handleCameraChanged — since from then on the camera is theirs.
     destFlightInterruptedRef.current = false;
     suppressDestReturnPromptRef.current = true;
     if (suppressDestReturnPromptTimerRef.current) clearTimeout(suppressDestReturnPromptTimerRef.current);
@@ -2466,7 +2537,7 @@ const destItems = useMemo((): DestItem[] =>
     fitDestinationDefaultView(dest, 'flyTo', 'topHalf');
     // Reads region via regionRef (not a dep) so this callback stays stable across pans and
     // doesn't bust the memoized destination-pin marker list.
-  }, [selectedCountry, showBreadcrumb, animateCamera, dropCountryIfForeign]);
+  }, [selectedCountry, showBreadcrumb, animateCamera, dropCountryIfForeign, setDestHomeToDefault]);
 
   const handleSheetExpand = useCallback(() => setMapState('sheet'), []);
   const handleCloseSheet = useCallback(() => {
@@ -2528,15 +2599,16 @@ const destItems = useMemo((): DestItem[] =>
 
     // Not away (checked above), so home is still accurate to shed and let the next idle
     // recapture wherever this settles — see fitCountryDefaultView's callers for the same
-    // reasoning.
+    // reasoning. A destination's home is instead moved straight to its default view for the new
+    // window (see setDestHomeToDefault), so a pan before this shift settles can't become home.
     countryHomeRegionRef.current = null;
     setCountryHomeRegion(null);
-    destHomeRegionRef.current = null;
-    setDestHomeRegion(null);
+    if (selectedDestRef.current) setDestHomeToDefault(selectedDestRef.current, state === 'peek' ? 'full' : 'topHalf');
+    else { destHomeRegionRef.current = null; setDestHomeRegion(null); }
     destFlightInterruptedRef.current = false;
 
     cameraRef.current?.moveBy({ x: 0, y: dy, animationMode: 'easeTo', animationDuration: SHEET_SNAP_MS });
-  }, [setSheetSnapState]);
+  }, [setSheetSnapState, setDestHomeToDefault]);
 
   // ── Spot selection ──────────────────────────────────────────────────────────
   const handleSpotPress = useCallback((spot: Spot) => {
@@ -2692,9 +2764,10 @@ const destItems = useMemo((): DestItem[] =>
       if (suppressDestReturnPromptTimerRef.current) clearTimeout(suppressDestReturnPromptTimerRef.current);
       suppressDestReturnPromptTimerRef.current = setTimeout(() => { suppressDestReturnPromptRef.current = false; }, 650);
       // Neither snap this can land on leaves the bottom-screen strip showing, so 'topHalf'.
+      setDestHomeToDefault(selectedDest, 'topHalf');
       fitDestinationDefaultView(selectedDest, 'easeTo', 'topHalf');
     }
-  }, [spotOrigin, selectedDest, fitDestinationDefaultView, setSheetSnapState]);
+  }, [spotOrigin, selectedDest, fitDestinationDefaultView, setSheetSnapState, setDestHomeToDefault]);
 
   // Spot close/back, provenance-routed: entered from the destination → return to it;
   // entered laterally (map tap at spot zoom, or search) → back to the map as it was.
@@ -2876,19 +2949,14 @@ const destItems = useMemo((): DestItem[] =>
     if (suppressPeekPushTimerRef.current) clearTimeout(suppressPeekPushTimerRef.current);
     suppressPeekPushTimerRef.current = setTimeout(() => { suppressPeekPushRef.current = false; }, 650);
     // Framing follows the sheet's CURRENT snap, since this handler deliberately doesn't move
-    // it — same reasoning as handleResetToCountry. Home is dropped so the next idle recaptures
-    // at whatever framing we land in, otherwise later pan-away checks measure against a
-    // position the camera has left; destFlightInterruptedRef is cleared so that capture is
-    // actually allowed to happen.
-    destHomeRegionRef.current = null;
-    setDestHomeRegion(null);
+    // it — same reasoning as handleResetToCountry. Home moves to the default view for that
+    // framing (see setDestHomeToDefault), otherwise later pan-away checks measure against a
+    // position the camera has left.
+    const framing = sheetSnapStateRef.current === 'peek' ? 'full' : 'topHalf';
+    setDestHomeToDefault(selectedDest, framing);
     destFlightInterruptedRef.current = false;
-    fitDestinationDefaultView(
-      selectedDest,
-      'easeTo',
-      sheetSnapStateRef.current === 'peek' ? 'full' : 'topHalf',
-    );
-  }, [selectedDest, fitDestinationDefaultView]);
+    fitDestinationDefaultView(selectedDest, 'easeTo', framing);
+  }, [selectedDest, fitDestinationDefaultView, setDestHomeToDefault]);
 
   const handleCloseCountry = useCallback(() => {
     if (!selectedCountryRef.current) return;
@@ -3003,7 +3071,7 @@ const destItems = useMemo((): DestItem[] =>
   // Back pill: one level up — spot → destination, destination → country, country → world
   const handleBackNav = useCallback(() => {
     if (pressBlocked()) return;   // a pinch finger lifting over the X is not a close
-    closeWithSheetExit(() => {
+    const close = () => {
       if (selectedSpot) {
         handleCloseSpot();
       } else if (selectedDest) {
@@ -3011,8 +3079,17 @@ const destItems = useMemo((): DestItem[] =>
       } else {
         handleCloseCountry();
       }
-    });
-  }, [selectedSpot, selectedDest, handleCloseSpot, handleCloseDestinationSheet, handleCloseCountry, closeWithSheetExit]);
+    };
+    // "‹ Parent" (a spot drilled into from its destination, or a destination from its country)
+    // replaces this sheet with the parent's, so close straight away and let the sheet swap
+    // animate it (see "Sheet swaps": the outgoing sheet slides down while the parent's rises in
+    // its place). Sliding this sheet off first, as a bare-X close does, left the map with no
+    // sheet at all — just the lingering back pill — until the parent's sheet mounted afterwards.
+    if (sheetExitingRef.current) return;
+    const toParentSheet = selectedSpot ? spotOrigin === 'destination' : !!selectedDest && destOrigin === 'country';
+    if (toParentSheet) close();
+    else closeWithSheetExit(close);
+  }, [selectedSpot, selectedDest, spotOrigin, destOrigin, handleCloseSpot, handleCloseDestinationSheet, handleCloseCountry, closeWithSheetExit]);
 
   // Back pill, while the country/destination sheet is full-screen: instead of navigating up
   // a level, just collapse the currently open sheet to its bottom-screen carousel view.
@@ -3157,6 +3234,17 @@ const destItems = useMemo((): DestItem[] =>
       // mark it so the next onMapIdle (which will reflect wherever THEIR gesture ends, not
       // the destination's real home) doesn't get captured as destHomeRegion.
       if (suppressDestReturnPromptRef.current) destFlightInterruptedRef.current = true;
+      // And end the return arrow's suppression now: it only exists to hide the arrow while one
+      // of OUR camera moves heads home, and the camera is the user's from here. Left running, a
+      // quick pan/zoom right after selecting a destination (or swiping the spot carousel) was
+      // never evaluated — the arrow stayed hidden until some later camera move.
+      if (suppressDestReturnPromptRef.current) {
+        suppressDestReturnPromptRef.current = false;
+        if (suppressDestReturnPromptTimerRef.current) {
+          clearTimeout(suppressDestReturnPromptTimerRef.current);
+          suppressDestReturnPromptTimerRef.current = null;
+        }
+      }
       // Likewise for a country fit still in flight — the user owns the camera now, so drop the pending capture
       // rather than have the idle after THEIR pan recorded as the country's default camera.
       countryCacheArmRef.current = null;
@@ -3524,9 +3612,10 @@ const destItems = useMemo((): DestItem[] =>
   const promotedDests = useMemo(() => destItems
     .filter(item => !hiddenDestIds.has(item.dest.id) && stablePhotoIds.has(item.dest.id))
     .map(item => item.dest)
-    .sort((a, b) => b.rank - a.rank), // rank=1 renders last (on top)
+    .sort((a, b) => b.rank - a.rank), // deterministic order; on-map stacking follows mount order (see useExitingItems)
   [destItems, stablePhotoIds, hiddenDestIds]);
-  const renderedPhotoDests = useExitingItems(promotedDests, d => d.id);
+  // HANDOFF_FADE_MS: a destination's photo pin may leave through the slower handoff fade (see below).
+  const renderedPhotoDests = useExitingItems(promotedDests, d => d.id, HANDOFF_FADE_MS);
   useEffect(() => {
     let cleared = false;
     for (const id of pendingRevealRef.current) {
@@ -3553,7 +3642,10 @@ const destItems = useMemo((): DestItem[] =>
           // instead of the intended cross-fade (see FadePin) when the plan's own result changed.
           allowOverlap
         >
-          <FadePin exiting={exiting}>
+          {/* The handoff fade when this pin is swapping with its own spot pins: leaving because the
+              camera reached its default view (hiddenDestIds), or returning because the camera just
+              zoomed back out of it (pendingRevealRef). Ordinary plan changes keep the quick fade. */}
+          <FadePin exiting={exiting} slow={exiting ? hiddenDestIds.has(dest.id) : pendingRevealRef.current.has(dest.id)}>
             {/* The selected destination's own pin persists while zooming out. Tapping it only re-frames the camera on the
                 destination's default view (handleResetToDest, same as the breadcrumb) — it does NOT re-select it, so the
                 sheet stays as it is. A pinch that ends over it is filtered out by pressBlocked (a pinch has two fingers). */}
@@ -3568,7 +3660,7 @@ const destItems = useMemo((): DestItem[] =>
         </MapboxGL.MarkerView>
       );
     }),
-  [renderedPhotoDests, selectedDest, savedDestinations, visitedSpotCountByDest, handleMarkerPress, handleResetToDest]);
+  [renderedPhotoDests, selectedDest, savedDestinations, visitedSpotCountByDest, handleMarkerPress, handleResetToDest, hiddenDestIds]);
 
   // Which sliding sheet is mounted right now. When it changes from one level to another, the incoming sheet is a
   // replacement for the one that was showing and starts where that one rested (see sheetPose) rather than from below
