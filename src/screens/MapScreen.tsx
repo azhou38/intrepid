@@ -120,6 +120,9 @@ const EXPLORE_COLOR  = '#6366F1';
 
 const PIN_SIZE        = 41;  // 10% larger than 37 (which was 20% smaller than the original 46)
 const PIN_BORDER      = 2;
+// Disc colour a destination/spot pin shows until its photo has loaded and faded in over it. Light
+// gray, not dark: on the light map a near-black disc read as heavy/broken rather than "loading".
+const PIN_PLACEHOLDER_COLOR = '#E5E7EB';
 const BADGE_SIZE      = 16;  // 20% smaller than the original 20
 const STAMP_SIZE = 7;        // 20% smaller than the original 9
 
@@ -134,7 +137,7 @@ function DestPin({ dest, spotCount, isVisited, isSelected, pinState }: {
   // so map pins load and decode quickly during pan/zoom.
   const [photoUrl, setPhotoUrl] = useState<string | null>(thumbCache.get(dest.id) ?? null);
   // True when the photo was already cached before this pin showed: it appears at once instead of
-  // fading in. Otherwise the disc sits as a plain dark placeholder (no emoji — a flash of the
+  // fading in. Otherwise the disc sits as a plain light placeholder (no emoji — a flash of the
   // category icon before every photo looked like flicker) until the photo fades in over it.
   const photoWasCachedRef = useRef(thumbCache.has(dest.id));
   useEffect(() => {
@@ -363,7 +366,7 @@ const pinSt = StyleSheet.create({
     height: PIN_SIZE - PIN_BORDER * 2,
     borderRadius: (PIN_SIZE - PIN_BORDER * 2) / 2,
     overflow: 'hidden',
-    backgroundColor: '#111827',
+    backgroundColor: PIN_PLACEHOLDER_COLOR,
     alignItems: 'center', justifyContent: 'center',
   },
   badge: {
@@ -4541,7 +4544,7 @@ const styles = StyleSheet.create({
     alignItems: 'center', justifyContent: 'center',
   },
   // Clips the fetched photo to the bubble's own round shape, inset by the border.
-  spotPinImgClip: { overflow: 'hidden', alignItems: 'center', justifyContent: 'center', backgroundColor: '#111827' },
+  spotPinImgClip: { overflow: 'hidden', alignItems: 'center', justifyContent: 'center', backgroundColor: PIN_PLACEHOLDER_COLOR },
   // Row holding [label, pin] as normal flex siblings inside SpotMarker's one MarkerView —
   // see SpotMarker's own comment for why this replaced two earlier, more fragile attempts.
   spotMarkerRow: { flexDirection: 'row', alignItems: 'center', columnGap: SPOT_LABEL_GAP },
