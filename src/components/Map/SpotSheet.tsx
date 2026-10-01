@@ -122,9 +122,8 @@ function CarouselCard({ spot, isActive, onPress, onAddVisit, gradId }: {
     <Pressable
       style={[
         st.card,
-        // Every card (not just the active one) gets a faint shadow tinted by its own visited
-        // status — same green as cardVisitedTag when visited, neutral gray/black otherwise.
-        // isActive's own stronger glow (cardActive/cardActiveUnvisited) overrides this on top.
+        // Every card's border is tinted by its own visited status — same green as
+        // cardVisitedTag when visited, neutral gray otherwise. No shadows: the cards sit flat.
         isVisited ? st.cardShadowVisited : st.cardShadowUnvisited,
         isActive && (isVisited ? st.cardActive : st.cardActiveUnvisited),
         { width: CARD_W, marginRight: CARD_GAP, height: '100%' },
@@ -1348,27 +1347,18 @@ const st = StyleSheet.create({
   carListBtnTxt: { fontSize: 12.5, fontWeight: '600', color: '#6B7280' },
 
   // Carousel card — portrait layout: a full-width image forming the top half, a plain white
-  // content column (name, time/cost, blurb) forming the bottom half. The shadow/border
-  // live on this outer element; a separate inner wrapper (cardInner) owns overflow:'hidden'
-  // so the image's top corners get clipped to the card's rounded shape without also
-  // clipping (and thereby hiding) this element's own shadow — iOS clips shadows on any view
-  // that has overflow:'hidden' set directly on it.
+  // content column (name, time/cost, blurb) forming the bottom half. The border lives on
+  // this outer element; a separate inner wrapper (cardInner) owns overflow:'hidden' so the
+  // image's top corners get clipped to the card's rounded shape. No shadow (flat cards).
   card: {
     backgroundColor: 'white', borderRadius: 18,
     borderWidth: 1.5, borderColor: '#DADEE3',
-    shadowColor: '#000', shadowOpacity: 0.06, shadowRadius: 8, shadowOffset: { width: 0, height: 3 }, elevation: 2,
   },
-  // Baseline (non-active) shadow + border tint by visited status — same green as cardVisitedTag.
-  cardShadowVisited:   { shadowColor: '#059669', shadowOpacity: 0.18, borderColor: '#059669' },
-  cardShadowUnvisited: { shadowColor: '#6B7280', shadowOpacity: 0.40, borderColor: '#9CA3AF' },
-  cardActive: {
-    borderColor: '#16A34A',
-    shadowColor: '#16A34A', shadowOpacity: 0.35, shadowRadius: 4, shadowOffset: { width: 0, height: 0 }, elevation: 5,
-  },
-  cardActiveUnvisited: {
-    borderColor: '#9CA3AF',
-    shadowColor: '#9CA3AF', shadowOpacity: 0.3, shadowRadius: 4, shadowOffset: { width: 0, height: 0 }, elevation: 5,
-  },
+  // Baseline (non-active) border tint by visited status — same green as cardVisitedTag.
+  cardShadowVisited:   { borderColor: '#059669' },
+  cardShadowUnvisited: { borderColor: '#9CA3AF' },
+  cardActive:          { borderColor: '#16A34A' },
+  cardActiveUnvisited: { borderColor: '#9CA3AF' },
   // Radius is the outer card's (18) minus its borderWidth (1.5) — matching it exactly to 18
   // left a hairline of the card's white background showing at each corner, since the inner
   // rect (inset by the border) needs a slightly smaller radius to sit flush inside it.
