@@ -68,8 +68,21 @@ function DestinationCard({ dest, isVisited, onPress, width = DEST_CARD_W, showCo
   }, [dest.id]);
 
   return (
-    <Pressable style={[styles.card, { width }]} onPress={onPress}>
-      <View style={styles.cardClip}>
+    // Shadow color reflects visited status — same green as the "Visited" tag itself when
+    // visited, a neutral gray/black otherwise (shadowOpacity bumped up a bit for the colored
+    // case, since a tinted shadow reads fainter than a plain black one at the same opacity).
+    <Pressable
+      style={[
+        styles.card,
+        { width },
+        isVisited
+          ? { shadowColor: '#059669', shadowOpacity: 0.28 }
+          : { shadowColor: '#6B7280', shadowOpacity: 0.40 },
+      ]}
+      onPress={onPress}
+    >
+      {/* Border color matches the shadow's own visited-status tint above. */}
+      <View style={[styles.cardClip, isVisited ? { borderColor: '#059669' } : { borderColor: '#9CA3AF' }]}>
       {/* Solid dark placeholder (no emoji) that the photo fades in over — same treatment as the
           spot cards. Name + country sit on the image in white, over a bottom gradient. */}
       <View style={[styles.cardTop, { height: showHighlights ? width - CARD_BOTTOM_H : width }]}>

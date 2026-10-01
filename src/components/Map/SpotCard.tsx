@@ -41,8 +41,20 @@ function SpotCard({ spot, onPress, width }: {
   }, [spot.id]);
 
   return (
-    <Pressable style={[styles.card, { width }]} onPress={onPress}>
-      <View style={styles.cardClip}>
+    // Shadow color reflects visited status — same green as the "Visited" tag itself when
+    // visited, a neutral gray/black otherwise, matching DestinationCard's own treatment.
+    <Pressable
+      style={[
+        styles.card,
+        { width },
+        isVisited
+          ? { shadowColor: '#059669', shadowOpacity: 0.28 }
+          : { shadowColor: '#6B7280', shadowOpacity: 0.40 },
+      ]}
+      onPress={onPress}
+    >
+      {/* Border color matches the shadow's own visited-status tint above. */}
+      <View style={[styles.cardClip, isVisited ? { borderColor: '#059669' } : { borderColor: '#9CA3AF' }]}>
         <View style={[styles.cardTop, { height: width }]}>
           {photoUrl && (
             <FadeInImage

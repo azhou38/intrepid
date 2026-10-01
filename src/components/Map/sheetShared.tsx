@@ -1575,8 +1575,13 @@ const vcS = StyleSheet.create({
   memSpotsCarouselContent: { paddingHorizontal:12, gap:6 },
   // width/height come from itemSquareSize (measured to match the photo grid's own tile size),
   // not a fixed value here.
+  // Same green as the visited tag elsewhere (cardVisitedTag's #059669), slightly thinner than
+  // before (was #16A34A at 2px). A whole-pixel width (1, not 1.5) — a fractional borderWidth
+  // here left thin slivers of the card's own background peeking through at the rounded
+  // corners, where the border's curve and the overflow:'hidden' clip plane rounded slightly
+  // differently from each other.
   memSpotCard:             { borderRadius:14, overflow:'hidden', backgroundColor:'#F3F4F6',
-                              borderWidth:2, borderColor:'#16A34A' },
+                              borderWidth:1, borderColor:'#059669' },
   memSpotCardStrip:        { position:'absolute', left:0, right:0, bottom:0,
                               paddingHorizontal:8, paddingTop:6, paddingBottom:10, backgroundColor:`rgba(0,0,0,${VISIT_STRIP_OPACITY})` },
   memSpotCardStripFade:    { position:'absolute', left:0, right:0, top:-VISIT_STRIP_FADE_H, height:VISIT_STRIP_FADE_H },

@@ -122,6 +122,10 @@ function CarouselCard({ spot, isActive, onPress, onAddVisit, gradId }: {
     <Pressable
       style={[
         st.card,
+        // Every card (not just the active one) gets a faint shadow tinted by its own visited
+        // status — same green as cardVisitedTag when visited, neutral gray/black otherwise.
+        // isActive's own stronger glow (cardActive/cardActiveUnvisited) overrides this on top.
+        isVisited ? st.cardShadowVisited : st.cardShadowUnvisited,
         isActive && (isVisited ? st.cardActive : st.cardActiveUnvisited),
         { width: CARD_W, marginRight: CARD_GAP, height: '100%' },
       ]}
@@ -1187,16 +1191,16 @@ function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore, nearbyHlScrol
       <View style={st.section}>
         <View style={st.glanceCard}>
           <View style={st.glanceItem}>
-            <View style={st.glanceIconCircleGray}>
-              <Clock size={20} color="#6B7280" />
+            <View style={[st.glanceIconCircleGray, st.glanceIconCircleBlue]}>
+              <Clock size={20} color="#1D4ED8" />
             </View>
             <Text style={st.glanceVal} numberOfLines={1}>{formatVisitTime(spot.visitHoursMin, spot.visitHoursMax)}</Text>
             <Text style={st.glanceLbl}>Time Needed</Text>
           </View>
           <View style={st.glanceDivider} />
           <View style={st.glanceItem}>
-            <View style={st.glanceIconCircleGray}>
-              <Tag size={20} color="#6B7280" />
+            <View style={[st.glanceIconCircleGray, st.glanceIconCircleBlue]}>
+              <Tag size={20} color="#1D4ED8" />
             </View>
             <Text style={st.glanceVal} numberOfLines={1}>{formatSpotCost(spot)}</Text>
             <Text style={st.glanceLbl}>Cost (Adult)</Text>
@@ -1354,6 +1358,9 @@ const st = StyleSheet.create({
     borderWidth: 1.5, borderColor: '#DADEE3',
     shadowColor: '#000', shadowOpacity: 0.06, shadowRadius: 8, shadowOffset: { width: 0, height: 3 }, elevation: 2,
   },
+  // Baseline (non-active) shadow + border tint by visited status — same green as cardVisitedTag.
+  cardShadowVisited:   { shadowColor: '#059669', shadowOpacity: 0.18, borderColor: '#059669' },
+  cardShadowUnvisited: { shadowColor: '#6B7280', shadowOpacity: 0.40, borderColor: '#9CA3AF' },
   cardActive: {
     borderColor: '#16A34A',
     shadowColor: '#16A34A', shadowOpacity: 0.35, shadowRadius: 4, shadowOffset: { width: 0, height: 0 }, elevation: 5,
@@ -1490,15 +1497,18 @@ const st = StyleSheet.create({
   // One combined card (was two separate ones) — a vertical divider between the two halves
   // instead of a gap, white background, light gray border. Same border strength as
   // DestinationSheet's About-tab boxes (its ABOUT_BORDER, '#D8DBE0') — was a fainter '#F0F1F3'.
-  glanceCard: { backgroundColor: 'white', borderRadius: 16, flexDirection: 'row', borderWidth: 1, borderColor: '#D8DBE0' },
+  glanceCard: { backgroundColor: '#F3F8FF', borderRadius: 16, flexDirection: 'row', borderWidth: 1, borderColor: '#BFDBFE' },
   glanceItem: { flex: 1, alignItems: 'center', paddingVertical: 20, gap: 5 },
-  glanceDivider: { width: 1, backgroundColor: '#F0F1F3', marginVertical: 14 },
+  glanceDivider: { width: 1, backgroundColor: '#E2EDFE', marginVertical: 14 },
   glanceIconCircleGray:   { width: 40, height: 40, borderRadius: 20, backgroundColor: '#F3F4F6',
                             alignItems: 'center', justifyContent: 'center', marginBottom: 2 },
+  // Override for Time Needed and Ticket only (Cost stays the plain gray badge) — a darker blue,
+  // matching glanceCard's own faint blue tint/border.
+  glanceIconCircleBlue:   { backgroundColor: '#E2EDFE' },
   // 20% larger than DestinationSheet's glanceRowTitle ("Why Visit" reasons text), which this
   // otherwise matches in weight/color.
   glanceVal: { fontSize: 19, fontWeight: '600', color: '#111827', lineHeight: 26 },
-  glanceLbl: { fontSize: 11, color: '#9CA3AF', fontWeight: '500' },
+  glanceLbl: { fontSize: 11, color: '#9CA3AF', fontWeight: '700' },
   // Collapsed hours row — white card, light gray border (not joined to the week list below it,
   // which only exists as a separate card while open — see SpotAbout's own comment).
   hoursCard: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: 'white',
