@@ -2345,6 +2345,28 @@ const destItems = useMemo((): DestItem[] =>
   // the sheet is in, exactly as for countries:
   //   • 'topHalf' — sheet at half-screen. Window y 0..H/2.
   //   • 'full'    — sheet in bottom-screen/peek. Window runs to the top of the peek strip.
+  // The camera fitDestinationDefaultView sends the map to — see its comment for the framing math.
+  const destDefaultCamera = useCallback((
+    dest: Destination,
+    framing: 'topHalf' | 'full',
+    zoomFactor = 1,
+  ) => {
+    const zoom = latDeltaToZoom(getDestZoomDelta(dest)) * zoomFactor;
+    const worldSize = 512 * Math.pow(2, zoom);
+    const mapViewH = mapViewHRef.current || (H - BOTTOM_TAB_H);
+    const bottomBound = framing === 'full'
+      ? Math.max(40, mapViewH - PEEK_STRIP_H)
+      : H / 2;
+    const targetY = bottomBound / 2;   // top bound is 0, so the centre is just half of it
+    // Offset the CAMERA centre so the DESTINATION lands at targetY: the camera centre renders
+    // at the map view's own middle, so placing the destination higher means centring south of
+    // it. Negative (targetY - mapViewH/2) therefore pushes mercY down-screen, i.e. southward.
+    const lat = invMercY(
+      mercY(dest.coordinates.latitude) - (targetY - mapViewH / 2) / worldSize,
+    );
+    return { lng: dest.coordinates.longitude, lat, zoom };
+  }, []);
+
   const fitDestinationDefaultView = useCallback((
     dest: Destination,
     mode: 'easeTo' | 'flyTo' = 'easeTo',
@@ -2355,27 +2377,40 @@ const destItems = useMemo((): DestItem[] =>
     zoomFactor = 1,
   ) => {
     cancelCountryCapture();
-    const zoomLevel = latDeltaToZoom(getDestZoomDelta(dest)) * zoomFactor;
-    const worldSize = 512 * Math.pow(2, zoomLevel);
-    const mapViewH = mapViewHRef.current || (H - BOTTOM_TAB_H);
-    const bottomBound = framing === 'full'
-      ? Math.max(40, mapViewH - PEEK_STRIP_H)
-      : H / 2;
-    const targetY = bottomBound / 2;   // top bound is 0, so the centre is just half of it
-    // Offset the CAMERA centre so the DESTINATION lands at targetY: the camera centre renders
-    // at the map view's own middle, so placing the destination higher means centring south of
-    // it. Negative (targetY - mapViewH/2) therefore pushes mercY down-screen, i.e. southward.
-    const centerLat = invMercY(
-      mercY(dest.coordinates.latitude) - (targetY - mapViewH / 2) / worldSize,
-    );
+    const cam = destDefaultCamera(dest, framing, zoomFactor);
     beginProgrammaticCameraMove(durationMs);
     cameraRef.current?.setCamera({
-      centerCoordinate: [dest.coordinates.longitude, centerLat],
-      zoomLevel,
+      centerCoordinate: [cam.lng, cam.lat],
+      zoomLevel: cam.zoom,
       animationDuration: durationMs,
       animationMode: mode,
     });
-  }, [cancelCountryCapture, beginProgrammaticCameraMove]);
+  }, [cancelCountryCapture, beginProgrammaticCameraMove, destDefaultCamera]);
+
+  // The selected destination's "home" for its breadcrumb return arrow (destHomeRegion +
+  // destHomeZoomRef), set to the exact default view `framing` puts the camera on — computed, not
+  // observed. Home used to be dropped whenever the camera was sent to the default view and then
+  // captured from the next map idle, which made it depend on the user leaving the camera alone
+  // until it settled: a quick pan/zoom before that recorded wherever THEIR gesture ended as home
+  // (or, zoomed far out, nothing at all), and the arrow then never showed however far they went.
+  // The deltas are what the settled camera's bounds report at that zoom: destination zooms are
+  // deep in mercator, so the span follows exactly from the zoom, the map view's size and the
+  // centre latitude (including mercator's latitude dependence, which an earlier synthesized
+  // guess ignored).
+  const setDestHomeToDefault = useCallback((dest: Destination, framing: 'topHalf' | 'full') => {
+    const cam = destDefaultCamera(dest, framing);
+    const worldSize = 512 * Math.pow(2, cam.zoom);
+    const halfH = (mapViewHRef.current || (H - BOTTOM_TAB_H)) / 2 / worldSize;
+    const home: Region = {
+      latitude: cam.lat,
+      longitude: cam.lng,
+      latitudeDelta: invMercY(mercY(cam.lat) - halfH) - invMercY(mercY(cam.lat) + halfH),
+      longitudeDelta: SCREEN_W_GLOBAL * 360 / worldSize,
+    };
+    destHomeRegionRef.current = home;
+    destHomeZoomRef.current = cam.zoom;
+    setDestHomeRegion(home);
+  }, [destDefaultCamera]);
 
   // Spot equivalent of fitDestinationDefaultView — same closed-form point-centring math, but
   // fixed at spot zoom (latitudeDelta 0.02) and always framed for the half-screen carousel
@@ -2484,24 +2519,14 @@ const destItems = useMemo((): DestItem[] =>
     // isMapInteracting — see its own comment: a tap landing while a previous pan is still
     // coasting on momentum must still open collapsed, not get stuck peeking.
     setSheetSnapState(isFingerDraggingMap() ? 'peek' : 'collapsed');
-    // destHomeRegion itself is captured LAZILY from the real, settled camera bounds once the
-    // fly-to below actually lands (see handleMapIdle) — NOT fabricated synchronously from
-    // this target region. A synthetic guess (this same latitudeDelta/longitudeDelta pair)
-    // was tried, but it doesn't match what the camera actually reports once settled: real
-    // longitude span is a function of zoom+screen-width alone, while real latitude span
-    // (Mercator) additionally depends on the destination's own latitude, an effect no simple
-    // formula here reproduces closely enough — the mismatch made the "panned away" check
-    // misfire a moment after landing dead-centered on the destination. Observing the real,
-    // settled bounds sidesteps that error entirely, at the cost of needing to guard against
-    // the user interrupting the flight before it settles (see destFlightInterruptedRef and
-    // handleCameraChanged/handleMapIdle) — otherwise the first idle after an interruption
-    // would capture wherever the user's OWN pan ended as "home" instead.
-    destHomeRegionRef.current = null;
-    setDestHomeRegion(null);
+    // destHomeRegion is set right away to the exact default view the fly-to below targets (see
+    // setDestHomeToDefault) — not captured from wherever the camera first comes to rest, which a
+    // quick pan/zoom before the flight settled used to turn into the wrong home (no arrow).
+    setDestHomeToDefault(dest, 'topHalf');
     destReturnPromptProgress.value = 0; destReturnPromptVisibleRef.current = false;
-    // Suppresses prompt evaluation and gates home-capture until the flight settles (or the
-    // fallback below gives up) — see destFlightInterruptedRef's own comment for the other
-    // half of this mechanism.
+    // Suppresses prompt evaluation while the flight is still on its way to home (the camera is
+    // legitimately "away" until it lands). A user gesture ends this early — see
+    // handleCameraChanged — since from then on the camera is theirs.
     destFlightInterruptedRef.current = false;
     suppressDestReturnPromptRef.current = true;
     if (suppressDestReturnPromptTimerRef.current) clearTimeout(suppressDestReturnPromptTimerRef.current);
@@ -2512,7 +2537,7 @@ const destItems = useMemo((): DestItem[] =>
     fitDestinationDefaultView(dest, 'flyTo', 'topHalf');
     // Reads region via regionRef (not a dep) so this callback stays stable across pans and
     // doesn't bust the memoized destination-pin marker list.
-  }, [selectedCountry, showBreadcrumb, animateCamera, dropCountryIfForeign]);
+  }, [selectedCountry, showBreadcrumb, animateCamera, dropCountryIfForeign, setDestHomeToDefault]);
 
   const handleSheetExpand = useCallback(() => setMapState('sheet'), []);
   const handleCloseSheet = useCallback(() => {
@@ -2574,15 +2599,16 @@ const destItems = useMemo((): DestItem[] =>
 
     // Not away (checked above), so home is still accurate to shed and let the next idle
     // recapture wherever this settles — see fitCountryDefaultView's callers for the same
-    // reasoning.
+    // reasoning. A destination's home is instead moved straight to its default view for the new
+    // window (see setDestHomeToDefault), so a pan before this shift settles can't become home.
     countryHomeRegionRef.current = null;
     setCountryHomeRegion(null);
-    destHomeRegionRef.current = null;
-    setDestHomeRegion(null);
+    if (selectedDestRef.current) setDestHomeToDefault(selectedDestRef.current, state === 'peek' ? 'full' : 'topHalf');
+    else { destHomeRegionRef.current = null; setDestHomeRegion(null); }
     destFlightInterruptedRef.current = false;
 
     cameraRef.current?.moveBy({ x: 0, y: dy, animationMode: 'easeTo', animationDuration: SHEET_SNAP_MS });
-  }, [setSheetSnapState]);
+  }, [setSheetSnapState, setDestHomeToDefault]);
 
   // ── Spot selection ──────────────────────────────────────────────────────────
   const handleSpotPress = useCallback((spot: Spot) => {
@@ -2738,9 +2764,10 @@ const destItems = useMemo((): DestItem[] =>
       if (suppressDestReturnPromptTimerRef.current) clearTimeout(suppressDestReturnPromptTimerRef.current);
       suppressDestReturnPromptTimerRef.current = setTimeout(() => { suppressDestReturnPromptRef.current = false; }, 650);
       // Neither snap this can land on leaves the bottom-screen strip showing, so 'topHalf'.
+      setDestHomeToDefault(selectedDest, 'topHalf');
       fitDestinationDefaultView(selectedDest, 'easeTo', 'topHalf');
     }
-  }, [spotOrigin, selectedDest, fitDestinationDefaultView, setSheetSnapState]);
+  }, [spotOrigin, selectedDest, fitDestinationDefaultView, setSheetSnapState, setDestHomeToDefault]);
 
   // Spot close/back, provenance-routed: entered from the destination → return to it;
   // entered laterally (map tap at spot zoom, or search) → back to the map as it was.
@@ -2922,19 +2949,14 @@ const destItems = useMemo((): DestItem[] =>
     if (suppressPeekPushTimerRef.current) clearTimeout(suppressPeekPushTimerRef.current);
     suppressPeekPushTimerRef.current = setTimeout(() => { suppressPeekPushRef.current = false; }, 650);
     // Framing follows the sheet's CURRENT snap, since this handler deliberately doesn't move
-    // it — same reasoning as handleResetToCountry. Home is dropped so the next idle recaptures
-    // at whatever framing we land in, otherwise later pan-away checks measure against a
-    // position the camera has left; destFlightInterruptedRef is cleared so that capture is
-    // actually allowed to happen.
-    destHomeRegionRef.current = null;
-    setDestHomeRegion(null);
+    // it — same reasoning as handleResetToCountry. Home moves to the default view for that
+    // framing (see setDestHomeToDefault), otherwise later pan-away checks measure against a
+    // position the camera has left.
+    const framing = sheetSnapStateRef.current === 'peek' ? 'full' : 'topHalf';
+    setDestHomeToDefault(selectedDest, framing);
     destFlightInterruptedRef.current = false;
-    fitDestinationDefaultView(
-      selectedDest,
-      'easeTo',
-      sheetSnapStateRef.current === 'peek' ? 'full' : 'topHalf',
-    );
-  }, [selectedDest, fitDestinationDefaultView]);
+    fitDestinationDefaultView(selectedDest, 'easeTo', framing);
+  }, [selectedDest, fitDestinationDefaultView, setDestHomeToDefault]);
 
   const handleCloseCountry = useCallback(() => {
     if (!selectedCountryRef.current) return;
@@ -3212,6 +3234,17 @@ const destItems = useMemo((): DestItem[] =>
       // mark it so the next onMapIdle (which will reflect wherever THEIR gesture ends, not
       // the destination's real home) doesn't get captured as destHomeRegion.
       if (suppressDestReturnPromptRef.current) destFlightInterruptedRef.current = true;
+      // And end the return arrow's suppression now: it only exists to hide the arrow while one
+      // of OUR camera moves heads home, and the camera is the user's from here. Left running, a
+      // quick pan/zoom right after selecting a destination (or swiping the spot carousel) was
+      // never evaluated — the arrow stayed hidden until some later camera move.
+      if (suppressDestReturnPromptRef.current) {
+        suppressDestReturnPromptRef.current = false;
+        if (suppressDestReturnPromptTimerRef.current) {
+          clearTimeout(suppressDestReturnPromptTimerRef.current);
+          suppressDestReturnPromptTimerRef.current = null;
+        }
+      }
       // Likewise for a country fit still in flight — the user owns the camera now, so drop the pending capture
       // rather than have the idle after THEIR pan recorded as the country's default camera.
       countryCacheArmRef.current = null;
