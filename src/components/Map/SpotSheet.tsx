@@ -527,16 +527,19 @@ function SpotSheet({
   // COLLAPSED_Y is a plain module constant (this sheet's carousel is always exactly
   // half-screen, never a dynamically measured height the way DestinationSheet's collapsed card
   // can grow) — no need for a ref/shared-value wrapper around it.
-  const carouselTranslateY = useAnimatedStyle(() => ({
-    transform: [{
-      translateY: interpolate(slideAnim.value - COLLAPSED_Y, [-H, 0], [-H, 0], Extrapolation.CLAMP),
-    }],
-  }));
+  // Half-screen ↔ full-screen is a CROSS-FADE, not a reveal: the carousel stays put on the
+  // sheet (it used to translate up at twice the sheet's speed, uncovering the full content
+  // underneath like a lifting curtain) and fades out over the first part of the climb while
+  // the full content fades in over the same stretch (contentOpacityStyle) — done by
+  // FULL_FADE_END_Y, 60% of the way from half-screen to full.
+  const FULL_FADE_END_Y = COLLAPSED_Y - (COLLAPSED_Y - FULL_POS) * 0.6;
   // Carousel content fades out / peek strip fades in over the same [collapsed, peek] range,
   // so the two never overlap mid-transition — mirrors DestinationSheet's own compactAnimStyle
-  // / peekAnimStyle opacity pair.
+  // / peekAnimStyle opacity pair. Above collapsed, the full-screen cross-fade above.
   const carouselOpacityStyle = useAnimatedStyle(() => ({
-    opacity: interpolate(slideAnim.value, [COLLAPSED_Y, PEEK_Y], [1, 0], Extrapolation.CLAMP),
+    opacity: slideAnim.value <= COLLAPSED_Y
+      ? interpolate(slideAnim.value, [FULL_FADE_END_Y, COLLAPSED_Y], [0, 1], Extrapolation.CLAMP)
+      : interpolate(slideAnim.value, [COLLAPSED_Y, PEEK_Y], [1, 0], Extrapolation.CLAMP),
   }));
   const peekOpacityStyle = useAnimatedStyle(() => ({
     opacity: interpolate(slideAnim.value, [COLLAPSED_Y, PEEK_Y], [0, 1], Extrapolation.CLAMP),
@@ -562,8 +565,9 @@ function SpotSheet({
   // (carouselOpacityStyle's input range starts at COLLAPSED_Y), so the hero being visible
   // underneath there was never actually visible anyway; this only needed to kick in from
   // COLLAPSED_Y onward.
+  // Toward full-screen, fades in over the same stretch the carousel fades out (FULL_FADE_END_Y).
   const contentOpacityStyle = useAnimatedStyle(() => ({
-    opacity: interpolate(slideAnim.value, [COLLAPSED_Y - 1, COLLAPSED_Y], [1, 0], Extrapolation.CLAMP),
+    opacity: interpolate(slideAnim.value, [FULL_FADE_END_Y, COLLAPSED_Y], [1, 0], Extrapolation.CLAMP),
   }));
 
   // Continuously writes the back-to-destination pill's target "bottom" offset as slideAnim
@@ -1036,7 +1040,10 @@ function SpotSheet({
             half the screen, top edge at the midpoint, bottom edge flush above the tab
             bar. ── */}
         <Reanimated.View
-          style={[st.carouselWrap, { height: COMPACT_H }, carouselOpacityStyle, carouselTranslateY]}
+          // Faded out but still in place at full-screen (see FULL_FADE_END_Y) — mustn't swallow
+          // taps meant for the full content beneath it there.
+          pointerEvents={snapStateReact === 'full' ? 'none' : 'auto'}
+          style={[st.carouselWrap, { height: COMPACT_H }, carouselOpacityStyle]}
         >
           <View pointerEvents="none" style={st.pillRow}>
             <View style={st.pill} />
