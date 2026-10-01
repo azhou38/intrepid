@@ -3558,6 +3558,7 @@ const destItems = useMemo((): DestItem[] =>
     if (cleared) setRevealTick(t => t + 1);
   }, [renderedPhotoDests]);
 
+  const dbgRenderRef = useRef(0);   // TEMP DEBUG HUD render counter — see the HUD below
   const destPhotoMarkers = useMemo(() => renderedPhotoDests
     .map(({ item: dest, exiting }) => {
       const saved = savedDestinations[dest.id];
@@ -4218,6 +4219,26 @@ const destItems = useMemo((): DestItem[] =>
           initialSnap={destInitialSnap}
         />
       )}
+
+      {/* TEMP DEBUG HUD (pin flash on destination landing) — shows the state React has committed,
+          so a screen recording lines it up with what's on screen. Dev builds only. Remove once fixed. */}
+      {__DEV__ && (() => {
+        dbgRenderRef.current += 1;
+        const sel = selectedDest;
+        const r = sel ? renderedPhotoDests.find(x => x.item.id === sel.id) : undefined;
+        const cnt = (l: { exiting: boolean }[]) => `${l.filter(x => !x.exiting).length}+${l.filter(x => x.exiting).length}x`;
+        const stamp = sel ? stampGeoJSON.features.some(f => f.properties?.id === sel.id) : false;
+        return (
+          <View pointerEvents="none" style={{ position: 'absolute', top: insets.top + 64, left: 8, zIndex: 9999,
+            backgroundColor: 'rgba(0,0,0,0.75)', borderRadius: 6, paddingHorizontal: 6, paddingVertical: 3 }}>
+            <Text style={{ color: '#0F0', fontSize: 11, fontFamily: Platform.OS === 'ios' ? 'Menlo' : 'monospace' }}>
+              {`#${dbgRenderRef.current} z=${camZoom.toFixed(3)}\n`}
+              {`${sel?.id ?? '-'} pin=${r ? (r.exiting ? 'EXIT' : 'live') : 'none'} stamp=${stamp ? 'Y' : 'n'}\n`}
+              {`pills=${cnt(renderedCountryPills)} photos=${cnt(renderedPhotoDests)} spots=${cnt(renderedSpots)}`}
+            </Text>
+          </View>
+        );
+      })()}
 
       {/* ── Spot sheet — swipeable carousel of the destination's spots, expandable to full */}
       {selectedSpot && selectedDest && spotFocusId && (
