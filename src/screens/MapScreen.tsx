@@ -3214,9 +3214,15 @@ const destItems = useMemo((): DestItem[] =>
   }, [handleSheetSnapStateChange]);
   const handleExploreMountSnap = useCallback((state: 'peek' | 'collapsed' | 'full') => {
     exploreSnapRef.current = state;
+    // Record where the newly mounted sheet sits, WITHOUT the camera shift handleSheetSnapStateChange
+    // applies to snap changes — a mount isn't the sheet moving. Left unrecorded, sheetSnapStateRef
+    // kept whatever it held before (its 'collapsed' default at app start), so the first real report
+    // — the sheet restored at peek after closing search — read as a collapsed→peek move and
+    // shifted the map. It also kept later Explore swipes from shifting when they should have.
+    setSheetSnapState(state);
     // A fresh (non-restored) sheet starts at the top of its feed.
     if (!exploreRestoreRef.current) exploreScrollYRef.current = 0;
-  }, []);
+  }, [setSheetSnapState]);
   const handleExploreScrollY = useCallback((y: number) => { exploreScrollYRef.current = y; }, []);
   const handleExploreSearchPress = useCallback(() => {
     // Opened from the sheet's own bar (which sits exactly where this one does, already
