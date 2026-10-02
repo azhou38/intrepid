@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState, useMemo, useCallback } from 'react';
+import React, { useRef, useEffect, useLayoutEffect, useState, useMemo, useCallback } from 'react';
 import {
   View, Text, StyleSheet, Pressable, ScrollView, Alert,
   Dimensions, Platform, Linking, Image,
@@ -34,6 +34,7 @@ import { sheetPose } from './sheetPose';
 import EntityPhoto from './EntityPhoto';
 import {
   VisitCardList, VisitModuleSheet, PhotoGalleryModal,
+  useDeferredMount,
 } from './sheetShared';
 
 const { height: H, width: W } = Dimensions.get('window');
@@ -122,9 +123,8 @@ function CarouselCard({ spot, isActive, onPress, onAddVisit, gradId }: {
     <Pressable
       style={[
         st.card,
-        // Every card (not just the active one) gets a faint shadow tinted by its own visited
-        // status — same green as cardVisitedTag when visited, neutral gray/black otherwise.
-        // isActive's own stronger glow (cardActive/cardActiveUnvisited) overrides this on top.
+        // Every card's border is tinted by its own visited status — same green as
+        // cardVisitedTag when visited, neutral gray otherwise. No shadows: the cards sit flat.
         isVisited ? st.cardShadowVisited : st.cardShadowUnvisited,
         isActive && (isVisited ? st.cardActive : st.cardActiveUnvisited),
         { width: CARD_W, marginRight: CARD_GAP, height: '100%' },
@@ -528,16 +528,19 @@ function SpotSheet({
   // COLLAPSED_Y is a plain module constant (this sheet's carousel is always exactly
   // half-screen, never a dynamically measured height the way DestinationSheet's collapsed card
   // can grow) — no need for a ref/shared-value wrapper around it.
-  const carouselTranslateY = useAnimatedStyle(() => ({
-    transform: [{
-      translateY: interpolate(slideAnim.value - COLLAPSED_Y, [-H, 0], [-H, 0], Extrapolation.CLAMP),
-    }],
-  }));
+  // Half-screen ↔ full-screen is a CROSS-FADE, not a reveal: the carousel stays put on the
+  // sheet (it used to translate up at twice the sheet's speed, uncovering the full content
+  // underneath like a lifting curtain) and fades out over the first part of the climb while
+  // the full content fades in over the same stretch (contentOpacityStyle) — done by
+  // FULL_FADE_END_Y, 60% of the way from half-screen to full.
+  const FULL_FADE_END_Y = COLLAPSED_Y - (COLLAPSED_Y - FULL_POS) * 0.6;
   // Carousel content fades out / peek strip fades in over the same [collapsed, peek] range,
   // so the two never overlap mid-transition — mirrors DestinationSheet's own compactAnimStyle
-  // / peekAnimStyle opacity pair.
+  // / peekAnimStyle opacity pair. Above collapsed, the full-screen cross-fade above.
   const carouselOpacityStyle = useAnimatedStyle(() => ({
-    opacity: interpolate(slideAnim.value, [COLLAPSED_Y, PEEK_Y], [1, 0], Extrapolation.CLAMP),
+    opacity: slideAnim.value <= COLLAPSED_Y
+      ? interpolate(slideAnim.value, [FULL_FADE_END_Y, COLLAPSED_Y], [0, 1], Extrapolation.CLAMP)
+      : interpolate(slideAnim.value, [COLLAPSED_Y, PEEK_Y], [1, 0], Extrapolation.CLAMP),
   }));
   const peekOpacityStyle = useAnimatedStyle(() => ({
     opacity: interpolate(slideAnim.value, [COLLAPSED_Y, PEEK_Y], [0, 1], Extrapolation.CLAMP),
@@ -563,8 +566,9 @@ function SpotSheet({
   // (carouselOpacityStyle's input range starts at COLLAPSED_Y), so the hero being visible
   // underneath there was never actually visible anyway; this only needed to kick in from
   // COLLAPSED_Y onward.
+  // Toward full-screen, fades in over the same stretch the carousel fades out (FULL_FADE_END_Y).
   const contentOpacityStyle = useAnimatedStyle(() => ({
-    opacity: interpolate(slideAnim.value, [COLLAPSED_Y - 1, COLLAPSED_Y], [1, 0], Extrapolation.CLAMP),
+    opacity: interpolate(slideAnim.value, [FULL_FADE_END_Y, COLLAPSED_Y], [1, 0], Extrapolation.CLAMP),
   }));
 
   // Continuously writes the back-to-destination pill's target "bottom" offset as slideAnim
@@ -607,6 +611,9 @@ function SpotSheet({
   // to half-screen in the middle of a map gesture that was holding it peeked.
   const closingRef = useRef(false);
   const transitionToRef = useRef<(next: 'peek' | 'collapsed' | 'full', reason: string) => void>(() => {});
+  // Full-screen panels mount a moment after the sheet does, or at once on heading to full — see
+  // useDeferredMount.
+  const [panelsReady, revealPanels] = useDeferredMount();
   transitionToRef.current = (next, reason) => {
     // Once the parent has told this sheet to leave, only a NEW selection may bring it back.
     if (closingRef.current && reason !== 'selectionChange') return;
@@ -615,6 +622,7 @@ function SpotSheet({
     const target = next === 'full' ? FULL_POS : next === 'peek' ? PEEK_Y : COLLAPSED_Y;
     if (__DEV__) console.log('[sheet] Spot', activeSpot.id, prev, '->', next, `reason=${reason}`, 'mapInteracting=', isMapInteracting?.() ?? false);
     snapStateRef.current = next;
+    if (next === 'full') revealPanels();
     snapStateSV.value = next;
     setSnapStateReact(next);
     lastPos.value = target;
@@ -644,7 +652,7 @@ function SpotSheet({
 
   // Slide off the bottom, quickly, when the parent signals it's closing this sheet.
   const lastExitSignalRef = useRef(exitSignal);
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (exitSignal === undefined || exitSignal === lastExitSignalRef.current) return;
     lastExitSignalRef.current = exitSignal;
     closingRef.current = true;
@@ -656,7 +664,7 @@ function SpotSheet({
   // Imperatively drop to peek from the parent — used when the user pans/zooms the map, from
   // either collapsed or full. No-ops if already peeking or dismissed.
   const lastPeekSignalRef = useRef(peekSignal);
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (peekSignal === undefined || peekSignal === lastPeekSignalRef.current) return;
     lastPeekSignalRef.current = peekSignal;
     if (snapStateRef.current === 'collapsed' || snapStateRef.current === 'full') transitionToRef.current('peek', 'mapGesture');
@@ -670,14 +678,14 @@ function SpotSheet({
   // re-tapping a peeking spot's pin should bring it back to half-screen exactly like tapping
   // any other spot's pin does.
   const lastCollapseSignalRef = useRef(collapseSignal);
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (collapseSignal === undefined || collapseSignal === lastCollapseSignalRef.current) return;
     lastCollapseSignalRef.current = collapseSignal;
     if (snapStateRef.current === 'full' || snapStateRef.current === 'peek') transitionToRef.current('collapsed', 'backPill');
   }, [collapseSignal]);
 
   // Slide in from off-screen on first mount.
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (leaving) {
       closingRef.current = true;
       slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, finished => {
@@ -707,7 +715,7 @@ function SpotSheet({
   // already flushes it (setting ITS ref) before this effect's own very first run in the same
   // commit, which previously made this effect think it was never the first invocation.
   const hasHandledFocusRef = useRef(false);
-  useEffect(() => {
+  useLayoutEffect(() => {
     const isFirstFocus = !hasHandledFocusRef.current;
     hasHandledFocusRef.current = true;
     requestAnimationFrame(() => carouselRef.current?.scrollTo({ x: (initialIndex + loopOffset) * CARD_SNAP, animated: false }));
@@ -888,6 +896,10 @@ function SpotSheet({
       <GestureDetector gesture={pan}>
       <Reanimated.View style={[st.sheet, sheetAnimStyle]}>
         <Reanimated.View style={[StyleSheet.absoluteFill, { overflow: 'hidden' }, contentOpacityStyle]}>
+        {/* An outgoing copy (leaving) only ever rests at half-screen or peek, where this whole
+            full-screen layer is fully transparent (contentOpacityStyle) — so it skips it, keeping
+            the copy cheap to mount in the busy commit that swaps sheets (MapScreen "Sheet swaps"). */}
+        {!leaving && panelsReady && (
         <GestureDetector gesture={tabSwipeGesture}>
         <View style={{ flex: 1 }}>
         <GHScrollView
@@ -1029,7 +1041,8 @@ function SpotSheet({
           </View>
         </GHScrollView>
         </View>
-        </GestureDetector>{/* end tabSwipeGesture wrapper */}
+        </GestureDetector>
+        )}{/* end tabSwipeGesture wrapper */}
         </Reanimated.View>{/* end full-content wrapper */}
 
         {/* ── CAROUSEL — collapsed overlay: all spots in this destination. Fixed height
@@ -1037,7 +1050,10 @@ function SpotSheet({
             half the screen, top edge at the midpoint, bottom edge flush above the tab
             bar. ── */}
         <Reanimated.View
-          style={[st.carouselWrap, { height: COMPACT_H }, carouselOpacityStyle, carouselTranslateY]}
+          // Faded out but still in place at full-screen (see FULL_FADE_END_Y) — mustn't swallow
+          // taps meant for the full content beneath it there.
+          pointerEvents={snapStateReact === 'full' ? 'none' : 'auto'}
+          style={[st.carouselWrap, { height: COMPACT_H }, carouselOpacityStyle]}
         >
           <View pointerEvents="none" style={st.pillRow}>
             <View style={st.pill} />
@@ -1051,7 +1067,11 @@ function SpotSheet({
             </View>
             <Text style={st.carCounter}>{activeIndex + 1} / {spots.length}</Text>
             {!!onGoToList && (
-              <Pressable style={st.carListBtn} onPress={onGoToList} hitSlop={8}>
+              <Pressable
+                style={st.carListBtn}
+                onPress={() => { Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light); onGoToList(); }}
+                hitSlop={8}
+              >
                 <LayoutGrid size={14} color="#6B7280" />
                 <Text style={st.carListBtnTxt}>Grid view</Text>
               </Pressable>
@@ -1348,27 +1368,18 @@ const st = StyleSheet.create({
   carListBtnTxt: { fontSize: 12.5, fontWeight: '600', color: '#6B7280' },
 
   // Carousel card — portrait layout: a full-width image forming the top half, a plain white
-  // content column (name, time/cost, blurb) forming the bottom half. The shadow/border
-  // live on this outer element; a separate inner wrapper (cardInner) owns overflow:'hidden'
-  // so the image's top corners get clipped to the card's rounded shape without also
-  // clipping (and thereby hiding) this element's own shadow — iOS clips shadows on any view
-  // that has overflow:'hidden' set directly on it.
+  // content column (name, time/cost, blurb) forming the bottom half. The border lives on
+  // this outer element; a separate inner wrapper (cardInner) owns overflow:'hidden' so the
+  // image's top corners get clipped to the card's rounded shape. No shadow (flat cards).
   card: {
     backgroundColor: 'white', borderRadius: 18,
     borderWidth: 1.5, borderColor: '#DADEE3',
-    shadowColor: '#000', shadowOpacity: 0.06, shadowRadius: 8, shadowOffset: { width: 0, height: 3 }, elevation: 2,
   },
-  // Baseline (non-active) shadow + border tint by visited status — same green as cardVisitedTag.
-  cardShadowVisited:   { shadowColor: '#059669', shadowOpacity: 0.18, borderColor: '#059669' },
-  cardShadowUnvisited: { shadowColor: '#6B7280', shadowOpacity: 0.40, borderColor: '#9CA3AF' },
-  cardActive: {
-    borderColor: '#16A34A',
-    shadowColor: '#16A34A', shadowOpacity: 0.35, shadowRadius: 4, shadowOffset: { width: 0, height: 0 }, elevation: 5,
-  },
-  cardActiveUnvisited: {
-    borderColor: '#9CA3AF',
-    shadowColor: '#9CA3AF', shadowOpacity: 0.3, shadowRadius: 4, shadowOffset: { width: 0, height: 0 }, elevation: 5,
-  },
+  // Baseline (non-active) border tint by visited status — same green as cardVisitedTag.
+  cardShadowVisited:   { borderColor: '#059669' },
+  cardShadowUnvisited: { borderColor: '#9CA3AF' },
+  cardActive:          { borderColor: '#16A34A' },
+  cardActiveUnvisited: { borderColor: '#9CA3AF' },
   // Radius is the outer card's (18) minus its borderWidth (1.5) — matching it exactly to 18
   // left a hairline of the card's white background showing at each corner, since the inner
   // rect (inset by the border) needs a slightly smaller radius to sit flush inside it.

@@ -1,6 +1,6 @@
 // Shared sliding-sheet primitives used by DestinationSheet, CountrySheet, and SpotSheet.
 // Extracted so the three sheets stay visually and behaviourally in sync.
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, useCallback } from 'react';
 import {
   View, Text, StyleSheet, Pressable, ScrollView, Image,
   Dimensions, Modal, TextInput, Platform, KeyboardAvoidingView, Alert, Animated,
@@ -21,6 +21,28 @@ const { width: W, height: H } = Dimensions.get('window');
 // us pre-tick anything in its own UI) doesn't add it twice. Matched by assetId when both sides
 // have one (the reliable media-library identity — `uri` alone can differ between two picks of
 // the very same photo), falling back to `uri` only when assetId is unavailable on either side.
+// Mount-time deferral for a sheet's heavy, off-screen content (its full-screen tab panels). A sheet
+// opens at half-screen or peek, where that content sits below the visible part of the sheet, and it
+// mounts in the busiest commit there is — the one that swaps sheets while the map re-plans its pins
+// and the camera moves. Mounting it a moment later, once the slide-in has finished, keeps that
+// commit (and the slide itself) light. `reveal` mounts it right away instead — call it the moment
+// the sheet heads to full-screen, where the content is visible.
+export const SHEET_PANEL_MOUNT_DELAY_MS = 300;
+export function useDeferredMount(delayMs = SHEET_PANEL_MOUNT_DELAY_MS): [boolean, () => void] {
+  const [ready, setReady] = useState(false);
+  const readyRef = useRef(false);
+  const reveal = useCallback(() => {
+    if (readyRef.current) return;
+    readyRef.current = true;
+    setReady(true);
+  }, []);
+  useEffect(() => {
+    const t = setTimeout(reveal, delayMs);
+    return () => clearTimeout(t);
+  }, [reveal, delayMs]);
+  return [ready, reveal];
+}
+
 export function dedupeNewPhotos(existing: PhotoEntry[], picked: PhotoEntry[]): PhotoEntry[] {
   const existingAssetIds = new Set(existing.map(p => p.assetId).filter((id): id is string => !!id));
   const existingUris     = new Set(existing.map(p => p.uri));
@@ -1312,9 +1334,11 @@ export interface VisitSelectorItem {
 const VISIT_CARD_BORDER = '#D8DBE0';
 // Caption-strip treatment for a selector item's thumbnail card (name over a dark gradient that
 // fades up into the photo) — same formula as DestinationSheet's own WHY_STRIP_OPACITY/
-// STRIP_FADE_STOPS, just scoped to this file's own (smaller) card size.
+// STRIP_FADE_STOPS, just scoped to this file's own (smaller) card size. Kept short: the solid
+// strip only hugs the name (see memSpotCardStrip's padding) and this fade above it is brief, so
+// most of the small square card still shows the photo rather than a dark scrim.
 const VISIT_STRIP_OPACITY = 0.68;
-const VISIT_STRIP_FADE_H = 32;
+const VISIT_STRIP_FADE_H = 14;
 const VISIT_STRIP_FADE_STOPS = Array.from({ length: 11 }, (_, i) => {
   const t = i / 10;
   return { offset: `${t}`, opacity: VISIT_STRIP_OPACITY * t * t * (3 - 2 * t) };
@@ -1583,7 +1607,7 @@ const vcS = StyleSheet.create({
   memSpotCard:             { borderRadius:14, overflow:'hidden', backgroundColor:'#F3F4F6',
                               borderWidth:1, borderColor:'#059669' },
   memSpotCardStrip:        { position:'absolute', left:0, right:0, bottom:0,
-                              paddingHorizontal:8, paddingTop:6, paddingBottom:10, backgroundColor:`rgba(0,0,0,${VISIT_STRIP_OPACITY})` },
+                              paddingHorizontal:8, paddingTop:2, paddingBottom:7, backgroundColor:`rgba(0,0,0,${VISIT_STRIP_OPACITY})` },
   memSpotCardStripFade:    { position:'absolute', left:0, right:0, top:-VISIT_STRIP_FADE_H, height:VISIT_STRIP_FADE_H },
   memSpotCardName:         { fontSize:12, fontWeight:'700', color:'white' },
   memSpotCardArrow:        { fontSize:12, fontWeight:'700', color:'#D1D5DB' },

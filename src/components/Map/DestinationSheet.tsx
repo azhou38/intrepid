@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState, useCallback, useMemo } from 'react';
+import React, { useRef, useEffect, useLayoutEffect, useState, useCallback, useMemo } from 'react';
 import {
   View, Text, StyleSheet, Pressable, Image, Alert,
   Animated, Dimensions, Modal, TextInput, Platform,
@@ -41,6 +41,7 @@ import { getCrowdMeta } from '../../utils/climateApi';
 import {
   parseDateStr, DatePickerModal, PhotoGalleryModal,
   VisitCardList, VisitModuleSheet, type VisitSelectorItem,
+  useDeferredMount,
 } from './sheetShared';
 
 const { height: H, width: W } = Dimensions.get('window');
@@ -1054,6 +1055,9 @@ function DestinationSheet({
   const didMountRef = useRef(false);
   const closingRef = useRef(false);
   const transitionToRef = useRef<(next: SnapState, reason: string) => void>(() => {});
+  // Full-screen panels mount a moment after the sheet does, or at once on heading to full — see
+  // useDeferredMount.
+  const [panelsReady, revealPanels] = useDeferredMount();
   transitionToRef.current = (next, reason) => {
     // Once the parent has told this sheet to leave, only a NEW selection may bring it back — otherwise a late
     // peek/collapse would cancel the slide-out and leave a sheet that's about to unmount hanging on screen.
@@ -1063,6 +1067,7 @@ function DestinationSheet({
     const target = next === 'full' ? FULL_POS : next === 'peek' ? PEEK_Y : collapsedYRef.current;
     if (__DEV__) console.log('[sheet] Destination', destination.id, prev, '->', next, `reason=${reason}`, 'mapInteracting=', isMapInteracting?.() ?? false);
     snapStateRef.current = next;
+    if (next === 'full') revealPanels();
     snapStateSV.value = next;
     lastPos.value = target;
     if (next === 'full') onExpand?.(); else if (reason !== 'mount') onCollapse?.();
@@ -1075,7 +1080,7 @@ function DestinationSheet({
   // Slide in on mount — collapsed (bottom-screen carousel) by default whenever a destination is selected, unless
   // initialSnap requests otherwise (e.g. the spot carousel's "list view" button wants 'full'), or the map is being
   // interacted with, in which case it comes in already out of the way.
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (leaving) {
       closingRef.current = true;
       slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, finished => {
@@ -1090,7 +1095,7 @@ function DestinationSheet({
   // should be in now — half-screen for an ordinary tap, but peeked if the user is mid map gesture, so the
   // selection change can't fight the gesture that's already holding the sheet out of the way. Not the first mount
   // (handled above, which also applies initialSnap/initialTab).
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!didMountRef.current) { didMountRef.current = true; return; }
     transitionToRef.current(isMapInteracting?.() ? 'peek' : 'collapsed', 'selectionChange');
     activeTabRef.current = defaultTab;
@@ -1109,7 +1114,7 @@ function DestinationSheet({
   // Imperatively collapse from the parent — used by the back pill's down-arrow while this
   // sheet is full-screen. No-ops on mount (only reacts to actual increments).
   const lastCollapseSignalRef = useRef(collapseSignal);
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (collapseSignal === undefined || collapseSignal === lastCollapseSignalRef.current) return;
     lastCollapseSignalRef.current = collapseSignal;
     if (snapStateRef.current === 'full') transitionToRef.current('collapsed', 'backPill');
@@ -1117,7 +1122,7 @@ function DestinationSheet({
 
   // Slide off the bottom, quickly, when the parent signals it's closing this sheet.
   const lastExitSignalRef = useRef(exitSignal);
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (exitSignal === undefined || exitSignal === lastExitSignalRef.current) return;
     lastExitSignalRef.current = exitSignal;
     closingRef.current = true;
@@ -1129,7 +1134,7 @@ function DestinationSheet({
   // Imperatively drop to peek from the parent — used when the user pans/zooms the map, from
   // either collapsed or full. No-ops if already peeking or dismissed.
   const lastPeekSignalRef = useRef(peekSignal);
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (peekSignal === undefined || peekSignal === lastPeekSignalRef.current) return;
     lastPeekSignalRef.current = peekSignal;
     if (snapStateRef.current === 'collapsed' || snapStateRef.current === 'full') transitionToRef.current('peek', 'mapGesture');
@@ -1493,7 +1498,11 @@ function DestinationSheet({
           {/* ── CONTENT ────────────────────────────────────────────────── */}
           <View style={st.content}>
 
+            {/* An outgoing copy (leaving) only ever rests at half-screen or peek, where these panels
+                sit below the visible part of the sheet — so it skips them, keeping the copy cheap to
+                mount in the busy commit that swaps sheets (see MapScreen's "Sheet swaps"). */}
             {/* ── SLIDE TRACK for tabs ─────────────────────────────────── */}
+            {!leaving && panelsReady && (
             <Reanimated.View style={[st.slideTrack, slideTrackStyle]}>
               <Reanimated.View
                 style={[st.slideRow, { width: W * TAB_ORDER.length }, slideRowStyle]}
@@ -1551,6 +1560,7 @@ function DestinationSheet({
                   </View>
                 </Reanimated.View>
               </Reanimated.View>
+            )}
 
           </View>
         </View>

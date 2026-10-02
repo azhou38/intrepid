@@ -120,6 +120,9 @@ const EXPLORE_COLOR  = '#6366F1';
 
 const PIN_SIZE        = 41;  // 10% larger than 37 (which was 20% smaller than the original 46)
 const PIN_BORDER      = 2;
+// Disc colour a destination/spot pin shows until its photo has loaded and faded in over it. Light
+// gray, not dark: on the light map a near-black disc read as heavy/broken rather than "loading".
+const PIN_PLACEHOLDER_COLOR = '#E5E7EB';
 const BADGE_SIZE      = 16;  // 20% smaller than the original 20
 const STAMP_SIZE = 7;        // 20% smaller than the original 9
 
@@ -134,7 +137,7 @@ function DestPin({ dest, spotCount, isVisited, isSelected, pinState }: {
   // so map pins load and decode quickly during pan/zoom.
   const [photoUrl, setPhotoUrl] = useState<string | null>(thumbCache.get(dest.id) ?? null);
   // True when the photo was already cached before this pin showed: it appears at once instead of
-  // fading in. Otherwise the disc sits as a plain dark placeholder (no emoji — a flash of the
+  // fading in. Otherwise the disc sits as a plain light placeholder (no emoji — a flash of the
   // category icon before every photo looked like flicker) until the photo fades in over it.
   const photoWasCachedRef = useRef(thumbCache.has(dest.id));
   useEffect(() => {
@@ -363,7 +366,7 @@ const pinSt = StyleSheet.create({
     height: PIN_SIZE - PIN_BORDER * 2,
     borderRadius: (PIN_SIZE - PIN_BORDER * 2) / 2,
     overflow: 'hidden',
-    backgroundColor: '#111827',
+    backgroundColor: PIN_PLACEHOLDER_COLOR,
     alignItems: 'center', justifyContent: 'center',
   },
   badge: {
@@ -1110,13 +1113,24 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   const exploreScrollYRef = useRef(0);
   const [exploreRestore, setExploreRestore] =
     useState<{ snap: 'peek' | 'collapsed' | 'full'; scrollY: number } | undefined>(undefined);
+  // Closing search via its X/backdrop holds the Explore sheet's remount back by a frame (see
+  // closeSearch), so the commit that closes search stays light. The restore hint is only cleared
+  // once the sheet has actually remounted with it.
+  const [exploreHeld, setExploreHeld] = useState(false);
+  useEffect(() => {
+    if (!exploreHeld) return;
+    const id = requestAnimationFrame(() => setExploreHeld(false));
+    return () => cancelAnimationFrame(id);
+  }, [exploreHeld]);
   useEffect(() => {
     if (searchFocused) setExploreRestore({ snap: exploreSnapRef.current, scrollY: exploreScrollYRef.current });
-    else if (exploreRestore) setExploreRestore(undefined);
-  }, [searchFocused]);
+    else if (exploreRestore && !exploreHeld) setExploreRestore(undefined);
+  }, [searchFocused, exploreHeld]);
   // The bar's width and the layers pill swap instantly — no animation. Animating them (the bar
   // widening while the pill faded out) read as the two shapes merging into each other.
-  useEffect(() => {
+  // Layout effect: applied in the same commit as the focus change, not once the (heavy) screen's
+  // passive effects get round to it.
+  useLayoutEffect(() => {
     searchWidthAnim.setValue(searchFocused ? searchExpandedWidth : searchCollapsedWidth);
   }, [searchFocused, searchCollapsedWidth, searchExpandedWidth]);
 
@@ -1131,7 +1145,8 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // (map ↔ white) — it doesn't touch the bar or pill — except when opened from the Explore
   // sheet, whose own white/gray surface is already up: there it's instant to avoid a flash of map.
   const searchFocusProgress = useSharedValue(0);
-  useEffect(() => {
+  // Layout effect, like the width above — the backdrop starts fading with the commit itself.
+  useLayoutEffect(() => {
     if (searchFocused && searchFromSheetRef.current) {
       searchFocusProgress.value = 1;
       return;
@@ -1145,6 +1160,20 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   const searchBackdropStyle = useAnimatedStyle(() => ({
     opacity: searchFocusProgress.value,
   }));
+  // Closing search from its X or the white backdrop. The close commit re-renders this whole
+  // screen and used to remount the Explore sheet (its full feed) in the same pass, so nothing on
+  // screen changed for about half a second after the tap. Now the visible close starts at once,
+  // imperatively — backdrop fading, bar back to its collapsed width — and the Explore sheet's
+  // remount waits a frame (exploreHeld), keeping the close commit itself light.
+  const closeSearch = useCallback(() => {
+    searchFromSheetRef.current = false;
+    searchFocusProgress.value = withTiming(0, { duration: 200, easing: Easing.out(Easing.cubic) });
+    searchWidthAnim.setValue(searchCollapsedWidth);
+    searchInputRef.current?.blur();
+    setExploreHeld(true);
+    setSearchFocused(false);
+    setSearchQuery('');
+  }, [searchCollapsedWidth]);
   // True only after the zoom animation into a country completes, so pins don't flash
   // during the animation (when region.latitudeDelta is still at world-view level).
   const selectedCountryRef   = useRef<CountryCluster | null>(null);
@@ -3185,9 +3214,15 @@ const destItems = useMemo((): DestItem[] =>
   }, [handleSheetSnapStateChange]);
   const handleExploreMountSnap = useCallback((state: 'peek' | 'collapsed' | 'full') => {
     exploreSnapRef.current = state;
+    // Record where the newly mounted sheet sits, WITHOUT the camera shift handleSheetSnapStateChange
+    // applies to snap changes — a mount isn't the sheet moving. Left unrecorded, sheetSnapStateRef
+    // kept whatever it held before (its 'collapsed' default at app start), so the first real report
+    // — the sheet restored at peek after closing search — read as a collapsed→peek move and
+    // shifted the map. It also kept later Explore swipes from shifting when they should have.
+    setSheetSnapState(state);
     // A fresh (non-restored) sheet starts at the top of its feed.
     if (!exploreRestoreRef.current) exploreScrollYRef.current = 0;
-  }, []);
+  }, [setSheetSnapState]);
   const handleExploreScrollY = useCallback((y: number) => { exploreScrollYRef.current = y; }, []);
   const handleExploreSearchPress = useCallback(() => {
     // Opened from the sheet's own bar (which sits exactly where this one does, already
@@ -4021,7 +4056,7 @@ const destItems = useMemo((): DestItem[] =>
       >
         <Pressable
           style={StyleSheet.absoluteFill}
-          onPress={() => { searchInputRef.current?.blur(); setSearchFocused(false); setSearchQuery(''); }}
+          onPress={closeSearch}
         />
       </Reanimated.View>
 
@@ -4064,7 +4099,7 @@ const destItems = useMemo((): DestItem[] =>
           {searchFocused && (
             <Pressable
               style={styles.searchCloseBtn}
-              onPress={() => { searchInputRef.current?.blur(); setSearchFocused(false); setSearchQuery(''); }}
+              onPress={closeSearch}
               hitSlop={6}
             >
               <X size={18} color="#111827" />
@@ -4217,7 +4252,7 @@ const destItems = useMemo((): DestItem[] =>
           Shown whenever nothing is selected; hidden the instant the user drills into a
           country/destination/spot, exactly like the other sheets are mutually exclusive
           with each other. ─────────────────────────────────────────────────────────────── */}
-      {!selectedCountry && !selectedDest && !selectedSpot && !searchFocused && (
+      {!selectedCountry && !selectedDest && !selectedSpot && !searchFocused && !exploreHeld && (
         <ExploreSheet
           collapseSignal={peekSheetSignal}
           onSnapStateChange={handleExploreSnapChange}
@@ -4541,7 +4576,7 @@ const styles = StyleSheet.create({
     alignItems: 'center', justifyContent: 'center',
   },
   // Clips the fetched photo to the bubble's own round shape, inset by the border.
-  spotPinImgClip: { overflow: 'hidden', alignItems: 'center', justifyContent: 'center', backgroundColor: '#111827' },
+  spotPinImgClip: { overflow: 'hidden', alignItems: 'center', justifyContent: 'center', backgroundColor: PIN_PLACEHOLDER_COLOR },
   // Row holding [label, pin] as normal flex siblings inside SpotMarker's one MarkerView —
   // see SpotMarker's own comment for why this replaced two earlier, more fragile attempts.
   spotMarkerRow: { flexDirection: 'row', alignItems: 'center', columnGap: SPOT_LABEL_GAP },
