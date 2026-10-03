@@ -1413,7 +1413,7 @@ export function VisitCardList<T extends VisitSelectorItem>({
   if (visits.length === 0) {
     const what = hasSelector ? `dates, the ${pluralNoun} you visited, notes and photos` : 'a date, notes and photos';
     return (
-      <View style={vcS.listWrap}>
+      <View style={[vcS.listWrap, vcS.emptyWrap]}>
         <View style={vcS.memCardShadow}>
           <Pressable style={[vcS.memCard, vcS.emptyCard]} onPress={onNewVisit}>
             <View style={vcS.emptyIcon}>
@@ -1605,7 +1605,10 @@ const vcS = StyleSheet.create({
   memTripNameHeading:  { fontSize:25, fontFamily:'PlayfairDisplay_700Bold', color:'white', marginBottom:4 },
   memRatingRow:        { marginBottom:8 },
   memDateVal:          { fontSize:14, fontWeight:'600', color:'#9CA3AF' },
-  // Empty state (visited, nothing logged) — see VisitCardList.
+  // Empty state (visited, nothing logged) — see VisitCardList. With no "Add Visit +" button below the
+  // card, the panel (overflow hidden, for the tab swipe) clipped its shadow's lower half; this leaves the
+  // shadow the same room below as listWrap's paddingTop gives it above.
+  emptyWrap:           { paddingBottom:24 },
   emptyCard:           { alignItems:'center', paddingHorizontal:24, paddingTop:28, paddingBottom:24 },
   emptyIcon:           { width:52, height:52, borderRadius:26, backgroundColor:'#ECFDF5',
                          alignItems:'center', justifyContent:'center', marginBottom:14 },
@@ -1816,13 +1819,8 @@ export function VisitModuleSheet<T extends VisitSelectorItem>({
     photos: localPhotos.length ? localPhotos : undefined,
     notes: localNotes || undefined,
   });
-  // At least one of these has to actually have something — a bare title (or nothing at all)
-  // isn't a trip worth saving. Combined with `dirty` for the Save button below: `dirty` says
-  // something CHANGED, this says there's something WORTH keeping. ratingValue only exists for
-  // the levels that pass one (spots) — undefined/0 there just falls through like any other
-  // level that never had it.
-  const hasContent = !!localNotes || selectedIds.size > 0 || localPhotos.length > 0 || !!startDate || !!ratingValue;
-  const canSave = dirty && hasContent;
+  // Any single edit is enough to save — a title alone, a date alone, one ticked place, a note.
+  const canSave = dirty;
 
   // Checking an item off counts it as visited (see utils/visitStatus.ts) — nothing else is written,
   // so it needs no log of its own.
@@ -1842,8 +1840,7 @@ export function VisitModuleSheet<T extends VisitSelectorItem>({
     Animated.timing(slide, { toValue: H, duration: 280, useNativeDriver: true }).start(onClose);
   };
   // The Save button — persists the draft for real, then closes. Grayed out (see headerSaveBtn
-  // below) and a no-op until something's actually changed AND there's real content to save
-  // (see canSave/hasContent above).
+  // below) and a no-op until something's actually changed (see canSave above).
   const handleSave = () => {
     if (!canSave) return;
     onSave(buildVisit());
@@ -2097,7 +2094,7 @@ export function VisitModuleSheet<T extends VisitSelectorItem>({
                 <View style={esS.ratingRow}>
                   {/* onRatingChange itself writes straight to the caller's store (rating lives
                       outside the local draft/Save system, unlike every other field here) — commit()
-                      alongside it just marks the Save button's own dirty/hasContent state so it
+                      alongside it just marks the Save button's own dirty state so it
                       reflects a rating that was just set, same as every other field's own setter does. */}
                   <StarRating value={ratingValue ?? 0} onChange={r => { onRatingChange(r); commit(); }} />
                 </View>

@@ -211,6 +211,9 @@ function CountrySheet({
   // and editing one specific existing module (the Visit object) — identical mechanism to
   // DestinationSheet's own editingVisitModule.
   const [editingVisitModule, setEditingVisitModule] = useState<Visit | 'new' | null>(null);
+  // Set by a trip's Save — once the sheet has its My Visit tab, it switches there and opens fully, so
+  // the saved trip is what's showing as the editor slides away (see the effect by snapToFullRef).
+  const [revealVisit, setRevealVisit] = useState(false);
   // Which visit's full photo set is open in the standalone gallery page — separate from
   // editingVisitModule, since viewing all photos is read-only.
   const [galleryVisit, setGalleryVisit] = useState<Visit | null>(null);
@@ -266,6 +269,7 @@ function CountrySheet({
     // "Add Visit" was tapped (see handleMarkVisited). updateSavedCountry below patches fields
     // onto an EXISTING record, so one has to exist first when this is the very first visit.
     if (!savedCountry) saveCountryVisited(cluster.countryCode, {});
+    setRevealVisit(true);
     const base = localVisits.filter(x => x.id !== 'legacy');
     const idx  = base.findIndex(x => x.id === v.id);
     const updated = idx >= 0 ? base.map(x => x.id === v.id ? v : x) : [...base, v];
@@ -625,6 +629,12 @@ function CountrySheet({
   // Use refs so the gesture worklets (created once) always call the latest version
   const snapToFullRef = useRef(() => {});
   snapToFullRef.current = () => transitionToRef.current('full', 'user');
+  useEffect(() => {
+    if (!revealVisit || !TAB_ORDER.includes('visit')) return;
+    setRevealVisit(false);
+    switchTab('visit');
+    if (snapStateRef.current !== 'full') snapToFullRef.current();
+  }, [revealVisit, TAB_ORDER]);
   const snapToCollapsedRef = useRef(() => {});
   snapToCollapsedRef.current = () => transitionToRef.current('collapsed', 'user');
   const snapToPeekRef = useRef(() => {});

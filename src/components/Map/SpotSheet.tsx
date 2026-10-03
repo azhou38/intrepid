@@ -309,6 +309,7 @@ function SpotSheet({
     // The spot only actually becomes "visited" here, on a genuine save — not the moment "Add
     // Visit" was tapped (see handleMarkVisited).
     if (!savedSpot) saveSpotVisited(activeSpot.id, destination.id);
+    setRevealVisit(true);
     const base = localVisits.filter(x => x.id !== 'legacy');
     const idx  = base.findIndex(x => x.id === v.id);
     const updated = idx >= 0 ? base.map(x => x.id === v.id ? v : x) : [...base, v];
@@ -354,6 +355,9 @@ function SpotSheet({
   // editing one specific existing module (the Visit object) — identical mechanism to
   // DestinationSheet's/CountrySheet's own editingVisitModule.
   const [editingVisitModule, setEditingVisitModule] = useState<Visit | 'new' | null>(null);
+  // Set by a trip's Save — once the sheet has its My Visit tab, it switches there and opens fully, so
+  // the saved trip is what's showing as the editor slides away (see the effect by snapToFullRef).
+  const [revealVisit, setRevealVisit] = useState(false);
   // Which visit's full photo set is open in the standalone gallery page — read-only, separate
   // from editingVisitModule.
   const [galleryVisit, setGalleryVisit] = useState<Visit | null>(null);
@@ -642,6 +646,12 @@ function SpotSheet({
   };
   const snapToFullRef = useRef(() => {});
   snapToFullRef.current = () => transitionToRef.current('full', 'user');
+  useEffect(() => {
+    if (!revealVisit || !isVisited) return;
+    setRevealVisit(false);
+    switchTabRef.current('visit');
+    if (snapStateRef.current !== 'full') snapToFullRef.current();
+  }, [revealVisit, isVisited]);
   const snapToCollapsedRef = useRef(() => {});
   snapToCollapsedRef.current = () => transitionToRef.current('collapsed', 'user');
   const snapToPeekRef = useRef(() => {});
