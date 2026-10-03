@@ -113,7 +113,7 @@ import { computeSearchResults, computeSuggestions, SearchResultRows, toRecentSea
 import SpotSheet from '../components/Map/SpotSheet';
 import CountrySheet from '../components/Map/CountrySheet';
 import ExploreSheet from '../components/Map/ExploreSheet';
-import { thumbCache, photoCache, fetchWikiThumbnail, prefetchWikiThumbnail } from '../utils/photoCache';
+import { thumbCache, photoCache, fetchWikiThumbnail, prefetchWikiThumbnail, HEADER_PX } from '../utils/photoCache';
 
 const VISITED_COLOR  = '#10B981';
 const EXPLORE_COLOR  = '#6366F1';
@@ -2538,7 +2538,7 @@ const destItems = useMemo((): DestItem[] =>
     setSelectedDest(dest);
     // Kick off DestinationSheet's own hero-photo fetch right now, in parallel with the sheet's
     // slide-up/camera animation, instead of waiting for it to mount a render cycle later.
-    prefetchWikiThumbnail(dest.id, photoCache, dest.name, 900);
+    prefetchWikiThumbnail(dest.id, photoCache, dest.name, HEADER_PX);
     setMapState('context');
     setZoomedIntoDestination(true);
     showBreadcrumb(true);
@@ -2680,7 +2680,7 @@ const destItems = useMemo((): DestItem[] =>
     setSelectedSpot(spot);
     // Kick off SpotSheet's own hero-photo fetch right now, in parallel with the sheet's
     // slide-up/camera animation, instead of waiting for it to mount a render cycle later.
-    prefetchWikiThumbnail(`spot_${spot.id}`, photoCache, spot.name, 900);
+    prefetchWikiThumbnail(`spot_${spot.id}`, photoCache, spot.name, HEADER_PX);
     setSpotFocusId(spot.id);
     setMapState('context');
     setZoomedIntoDestination(true);
@@ -3088,8 +3088,8 @@ const destItems = useMemo((): DestItem[] =>
       .filter(d => d.country === cluster.country)
       .sort((a, b) => a.rank - b.rank || a.name.localeCompare(b.name))[0];
     const cacheKey = `country_${cluster.countryCode}`;
-    if (topDest) prefetchWikiThumbnail(cacheKey, photoCache, topDest.name, 900, cluster.country);
-    else prefetchWikiThumbnail(cacheKey, photoCache, cluster.country, 900);
+    if (topDest) prefetchWikiThumbnail(cacheKey, photoCache, topDest.name, HEADER_PX, cluster.country);
+    else prefetchWikiThumbnail(cacheKey, photoCache, cluster.country, HEADER_PX);
   }, [showBreadcrumb, animateCamera, fitCountryDefaultView, setSheetSnapState]);
 
   // Closing from the back pill's X while a sheet is half-screen or bottom-screen: let it slide

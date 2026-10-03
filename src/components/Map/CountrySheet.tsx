@@ -26,7 +26,7 @@ import { countryTripsOf, logsInCountry, removeVisitMessage } from '../../utils/v
 import type { Destination, CountryCluster, Visit } from '../../types';
 import { DESTINATIONS } from '../../data/destinations';
 import { SPOTS } from '../../data/spots';
-import { photoCache, getOrFetchWikiThumbnail } from '../../utils/photoCache';
+import { photoCache, thumbCache, getOrFetchWikiThumbnail, HEADER_PX } from '../../utils/photoCache';
 import CircleFlag from '../CircleFlag';
 import { sheetPose } from './sheetPose';
 import EntityPhoto from './EntityPhoto';
@@ -247,9 +247,11 @@ function CountrySheet({
       name: dest.name,
       renderThumb: () => (
         <EntityPhoto
-          cacheKey={dest.id}
-          cache={photoCache}
-          load={() => getOrFetchWikiThumbnail(dest.id, photoCache, dest.name, 300)}
+          // Its own small-image key: sharing the destination's header key (dest.id) let this 300px copy
+          // be reused as that destination's header, which then looked blurry.
+          cacheKey={`pick_${dest.id}`}
+          cache={thumbCache}
+          load={() => getOrFetchWikiThumbnail(`pick_${dest.id}`, thumbCache, dest.name, 300)}
           placeholderColor="#F3F4F6"
         />
       ),
@@ -616,8 +618,8 @@ function CountrySheet({
   const loadCountryPhoto = () => {
     const topDest = dests[0];
     return topDest
-      ? getOrFetchWikiThumbnail(countryPhotoKey, photoCache, topDest.name, 900, cluster.country)
-      : getOrFetchWikiThumbnail(countryPhotoKey, photoCache, cluster.country, 900);
+      ? getOrFetchWikiThumbnail(countryPhotoKey, photoCache, topDest.name, HEADER_PX, cluster.country)
+      : getOrFetchWikiThumbnail(countryPhotoKey, photoCache, cluster.country, HEADER_PX);
   };
 
   // Use refs so the gesture worklets (created once) always call the latest version

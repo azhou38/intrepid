@@ -32,7 +32,7 @@ import { destinationTripsOf, removeVisitMessage, spotLogsIn } from '../../utils/
 import SpotCard from './SpotCard';
 import type { Destination, PhotoEntry, Visit, GoodToKnowTip } from '../../types';
 import { SPOTS, type Spot } from '../../data/spots';
-import { photoCache, getOrFetchWikiThumbnail, fetchCommonsPhoto } from '../../utils/photoCache';
+import { photoCache, thumbCache, getOrFetchWikiThumbnail, fetchCommonsPhoto, HEADER_PX } from '../../utils/photoCache';
 import CircleFlag from '../CircleFlag';
 import { sheetPose } from './sheetPose';
 import EntityPhoto from './EntityPhoto';
@@ -613,9 +613,11 @@ function DestinationSheet({
       name: spot.name,
       renderThumb: () => (
         <EntityPhoto
-          cacheKey={`spot_${spot.id}`}
-          cache={photoCache}
-          load={() => getOrFetchWikiThumbnail(`spot_${spot.id}`, photoCache, spot.name, 300)}
+          // Its own small-image key: sharing the spot's header key (spot_<id>) let this 300px copy be
+          // reused as that spot's header, which then looked blurry.
+          cacheKey={`pick_spot_${spot.id}`}
+          cache={thumbCache}
+          load={() => getOrFetchWikiThumbnail(`pick_spot_${spot.id}`, thumbCache, spot.name, 300)}
           placeholderColor="#F3F4F6"
         />
       ),
@@ -1375,7 +1377,7 @@ function DestinationSheet({
             <EntityPhoto
               cacheKey={destination.id}
               cache={photoCache}
-              load={() => getOrFetchWikiThumbnail(destination.id, photoCache, destination.name, 900)}
+              load={() => getOrFetchWikiThumbnail(destination.id, photoCache, destination.name, HEADER_PX)}
             />
 
             {/* Ambient scrim so text is always legible */}
@@ -1599,7 +1601,7 @@ function DestinationSheet({
               instant
               cacheKey={destination.id}
               cache={photoCache}
-              load={() => getOrFetchWikiThumbnail(destination.id, photoCache, destination.name, 900)}
+              load={() => getOrFetchWikiThumbnail(destination.id, photoCache, destination.name, HEADER_PX)}
             />
             <View pointerEvents="none" style={st.peekScrim} />
             <View pointerEvents="none" style={st.peekPillRow}>
