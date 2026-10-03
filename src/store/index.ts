@@ -5,7 +5,10 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import type { SavedDestination, SavedSpot, SavedCountry, PhotoEntry, Continent } from '../types';
 import { DESTINATIONS } from '../data/destinations';
 import { SPOTS } from '../data/spots';
-import { buildVisitIndex, type VisitIndex } from '../utils/visitStatus';
+import {
+  buildVisitIndex, withoutCountry, withoutCountryTrip, withoutDestination, withoutDestinationTrip, withoutSpot,
+  type VisitIndex,
+} from '../utils/visitStatus';
 
 // A place opened from search, by id — resolved back to the live data when shown, so a renamed or removed
 // place can never resurface stale.
@@ -38,6 +41,14 @@ interface AppState {
   saveCountryVisited: (countryCode: string, extra?: Partial<Omit<SavedCountry, 'countryCode'>>) => void;
   unsaveCountry: (countryCode: string) => void;
   updateSavedCountry: (countryCode: string, update: Partial<SavedCountry>) => void;
+  // Removing what was logged (see the `without…` helpers in utils/visitStatus.ts). A trip id may be
+  // a derived one, which removes what it was built from.
+  removeDestinationTrip: (destinationId: string, tripId: string) => void;
+  removeCountryTrip: (countryCode: string, tripId: string) => void;
+  // Un-visit a place entirely: everything logged for it and beneath it, and its ticks in the trips above.
+  unvisitSpot: (spotId: string) => void;
+  unvisitDestination: (destinationId: string) => void;
+  unvisitCountry: (countryCode: string) => void;
   selectDestination: (id: string | null) => void;
   setUserName: (name: string) => void;
   // Places opened from search, most recent first (see RecentSearch) — shown as the search bar's
@@ -148,6 +159,12 @@ export const useStore = create<AppState>()(
             [countryCode]: { ...s.savedCountries[countryCode], ...update },
           },
         })),
+
+      removeDestinationTrip: (destinationId, tripId) => set((s) => withoutDestinationTrip(s, destinationId, tripId)),
+      removeCountryTrip: (countryCode, tripId) => set((s) => withoutCountryTrip(s, countryCode, tripId)),
+      unvisitSpot: (spotId) => set((s) => withoutSpot(s, spotId)),
+      unvisitDestination: (destinationId) => set((s) => withoutDestination(s, destinationId)),
+      unvisitCountry: (countryCode) => set((s) => withoutCountry(s, countryCode)),
 
       selectDestination: (id) => set({ selectedDestinationId: id }),
       setUserName: (name) => set({ userName: name }),

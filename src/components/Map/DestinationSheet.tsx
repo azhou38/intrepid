@@ -28,7 +28,7 @@ import { Gesture, GestureDetector, ScrollView } from 'react-native-gesture-handl
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { X, Check, Calendar, MapPin, Camera, Pencil, Plus, ChevronRight, ChevronDown, Map } from 'lucide-react-native';
 import { useStore, useVisitIndex } from '../../store';
-import { destinationDisplayTrips, spotVisitsOf, type DisplayTrip } from '../../utils/visitStatus';
+import { destinationDisplayTrips, destinationTripsOf, type DisplayTrip } from '../../utils/visitStatus';
 import SpotCard from './SpotCard';
 import type { Destination, PhotoEntry, Visit, GoodToKnowTip } from '../../types';
 import { SPOTS, type Spot } from '../../data/spots';
@@ -586,8 +586,8 @@ function DestinationSheet({
   const unsaveDestination = useStore(s => s.unsaveDestination);
   const updateSaved       = useStore(s => s.updateSaved);
   const savedSpots        = useStore(s => s.savedSpots);
-  const updateSpot        = useStore(s => s.updateSpot);
-  const unsaveSpot        = useStore(s => s.unsaveSpot);
+  const removeDestinationTrip = useStore(s => s.removeDestinationTrip);
+  const unvisitDestination    = useStore(s => s.unvisitDestination);
   const visitIndex        = useVisitIndex();
 
   // `saved` is the destination's own record (its own trips) — the only thing this sheet writes.
@@ -637,20 +637,20 @@ function DestinationSheet({
   // Derive visits from store, carrying the old destination-level photos/notes/spots onto
   // the synthesized legacy entry so a pre-redesign visit still shows its content as its
   // own module — editing it migrates those fields onto a real Visit the first time it's saved.
-  const localVisits: Visit[] = useMemo(() => saved?.visits
-    ?? (saved?.visitDate
-      ? [{
-          id: 'legacy', startDate: saved.visitDate, photos: saved.photos, notes: saved.notes,
-          spotIds: Object.values(savedSpots)
-            .filter(ss => ss.destinationId === destination.id)
-            .map(ss => ss.spotId),
-        }]
-      : []), [saved, savedSpots, destination.id]);
+  const localVisits: Visit[] = useMemo(() => destinationTripsOf(saved, savedSpots), [saved, savedSpots]);
   // What My Visit shows: the destination's own trips with its spot visits grouped in, plus trips
-  // derived from spot visits that don't fall within one of them (see destinationDisplayTrips).
+  // derived from spot visits that don't fall within one of them (see destinationDisplayTrips) —
+  // and, read-only, country trips that ticked this destination.
   const displayTrips: DisplayTrip[] = useMemo(
     () => destinationDisplayTrips(destination.id, localVisits, savedSpots),
     [destination.id, localVisits, savedSpots],
+  );
+  const linkedTrips = visitIndex.linkedTripsForDest(destination.id);
+  const linkedTripIds = useMemo(() => new Set(linkedTrips.map(l => l.visit.id)), [linkedTrips]);
+  const shownTrips: Visit[] = useMemo(
+    () => [...displayTrips, ...linkedTrips.map(l => l.visit)].sort((x, y) =>
+      (!x.startDate ? 1 : 0) - (!y.startDate ? 1 : 0) || y.startDate.localeCompare(x.startDate)),
+    [displayTrips, linkedTrips],
   );
   // A derived trip saved as a real one gets an id of its own, worked out from the derived id so
   // the editor's repeated auto-commits all land on the same trip — and never equal to a derived id,
@@ -676,35 +676,10 @@ function DestinationSheet({
     updated.sort((a, b) => b.startDate.localeCompare(a.startDate));
     updateSaved(destination.id, { visits: updated, visitDate: updated[0]?.startDate });
   };
+  // Removes the destination's own trip, or a derived one along with the spot visits it was built
+  // from (see removeDestinationTrip). A brand-new trip that was never saved has nothing to remove.
   const handleDeleteVisitModule = (id: string) => {
-    // A derived trip that was never saved as a real one: removing it removes the spot visits it
-    // was built from (a spot left with no visits is un-visited, same as removing its last trip
-    // on the spot's own sheet).
-    if (!localVisits.some(v => v.id === ownTripId(id))) {
-      const derivedFrom = displayTrips.find(t => t.id === id)?.derivedFrom ?? [];
-      const bySpot: Record<string, Set<string>> = {};
-      for (const { spotId, visitId } of derivedFrom) (bySpot[spotId] ??= new Set()).add(visitId);
-      for (const [spotId, visitIds] of Object.entries(bySpot)) {
-        const rec = savedSpots[spotId];
-        if (!rec) continue;
-        const left = rec.visits?.length ? spotVisitsOf(rec).filter(v => !visitIds.has(v.id)) : [];
-        if (left.length === 0) unsaveSpot(spotId);
-        else updateSpot(spotId, { visits: left, visitDate: left[0]?.startDate });
-      }
-      return;
-    }
-    id = ownTripId(id);
-    // Nothing to remove (and nothing to touch in the store) without a record of its own —
-    // proceeding would otherwise write a malformed record missing destinationId/type.
-    if (!saved) return;
-    const updated = localVisits.filter(v => v.id !== id);
-    // That was the only trip logged for this destination — it's not "visited" anymore, not
-    // just visited-with-zero-trips. Unsaves the destination entirely (also drops the legacy
-    // visitDate/notes/photos fields, if this was that synthesized single-visit entry) rather
-    // than leaving a type:'visited' record with an empty visits array — which would keep the
-    // green "Visited" state and the My Visit tab showing despite nothing actually being logged.
-    if (updated.length === 0) { unsaveDestination(destination.id); return; }
-    updateSaved(destination.id, { visits: updated, visitDate: updated[0]?.startDate });
+    removeDestinationTrip(destination.id, localVisits.some(v => v.id === ownTripId(id)) ? ownTripId(id) : id);
   };
 
   // Ref to the sheet's main content ScrollView — declared early since both the tab-swipe
@@ -899,11 +874,11 @@ function DestinationSheet({
           {tab === 'visit' ? (
             <View style={{ flexDirection:'row', alignItems:'center', gap:6 }}>
               <Text style={[st.tabBtnTxt, isTabSelected('visit') && st.tabBtnTxtActive]}>
-                {displayTrips.length > 1 ? 'My Visits' : 'My Visit'}
+                {shownTrips.length > 1 ? 'My Visits' : 'My Visit'}
               </Text>
-              {displayTrips.length > 1 && (
+              {shownTrips.length > 1 && (
                 <View style={st.tabVisitBadge}>
-                  <Text style={st.tabVisitBadgeTxt}>{displayTrips.length}</Text>
+                  <Text style={st.tabVisitBadgeTxt}>{shownTrips.length}</Text>
                 </View>
               )}
             </View>
@@ -1303,16 +1278,15 @@ function DestinationSheet({
   // Actions
   const handleMarkVisited = () => {
     if (isVisited) {
-      // Visited only through its spots or a country trip: nothing of its own to remove here.
-      if (!saved) return;
+      // Un-visits it entirely: its own trips, its spots' visits, and its ticks on country trips.
       Alert.alert(
         'Remove visit?',
-        'This will permanently delete your log and notes for this destination.',
+        `This will permanently delete everything you logged for ${destination.name} and its spots.`,
         [
           { text: 'Cancel', style: 'cancel' },
           {
             text: 'Remove', style: 'destructive',
-            onPress: () => unsaveDestination(destination.id),
+            onPress: () => unvisitDestination(destination.id),
           },
         ]
       );
@@ -1560,7 +1534,8 @@ function DestinationSheet({
                         single module's own card; every sibling module is copied through
                         untouched. Shared with CountrySheet/SpotSheet — see VisitCardList. */}
                     <VisitCardList
-                      visits={displayTrips}
+                      visits={shownTrips}
+                      readOnlyCaption={v => linkedTripIds.has(v.id) ? `From your ${destination.country} trip` : undefined}
                       onEditVisit={setEditingVisitModule}
                       onNewVisit={() => setEditingVisitModule('new')}
                       onOpenGallery={setGalleryVisit}

@@ -20,7 +20,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { SharedValue } from 'react-native-reanimated';
 import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'react-native-svg';
 import { Check, Clock, CalendarClock, ChevronUp, ChevronDown, ChevronRight, LayoutGrid, Plus,
-         Tag, ExternalLink, Ticket } from 'lucide-react-native';
+         ExternalLink, Ticket } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
 import { useStore, useVisitIndex } from '../../store';
 import type { Destination, Visit } from '../../types';
@@ -39,9 +39,9 @@ import {
 } from './sheetShared';
 
 const { height: H, width: W } = Dimensions.get('window');
-// Practical-info blue — time needed and cost. Deliberately
-// not green: across the app green means "visited" (pins, rings, card borders, the Visited tag).
-const INFO_BLUE = '#1D4ED8';
+// Practical info — time needed and cost — in plain black, both on the carousel cards and in the
+// sheet's gray box. Deliberately not green: across the app green means "visited".
+const INFO_INK = '#111827';
 
 const FULL_POS    = 0;
 const CLOSE_POS   = H + 40;  // fully off-screen
@@ -182,7 +182,7 @@ function CarouselCard({ spot, isActive, onPress, onAddVisit, gradId }: {
         <View style={st.cardInfo}>
           <View style={st.cardStatRow}>
             <View style={st.cardTimeRow}>
-              <Clock size={12} color={INFO_BLUE} strokeWidth={2.5} />
+              <Clock size={12} color={INFO_INK} strokeWidth={2.5} />
               <Text style={st.cardTimeTxt}>{formatVisitTime(spot.visitHoursMin, spot.visitHoursMax)}</Text>
             </View>
             <View style={st.cardStatDivider} />
@@ -261,6 +261,7 @@ function SpotSheet({
   const saveSpotVisited = useStore(s => s.saveSpotVisited);
   const updateSpot   = useStore(s => s.updateSpot);
   const unsaveSpot   = useStore(s => s.unsaveSpot);
+  const unvisitSpot  = useStore(s => s.unvisitSpot);
 
   // ── Which spot is focused in the carousel ────────────────────────────────────
   const initialIndex = useMemo(
@@ -843,14 +844,13 @@ function SpotSheet({
   // marking it visited immediately.
   const handleMarkVisited = () => {
     if (isVisited) {
-      // Visited only through a destination trip: nothing of its own to remove here.
-      if (!savedSpot) return;
+      // Un-visits it entirely: its own trips and rating, and its ticks on destination trips.
       Alert.alert(
         'Remove visit?',
-        'This will delete your rating and all logged visits for this spot.',
+        'This will delete your rating and all logged visits for this spot, and untick it from your trips.',
         [
           { text: 'Cancel', style: 'cancel' },
-          { text: 'Remove', style: 'destructive', onPress: () => unsaveSpot(activeSpot.id) },
+          { text: 'Remove', style: 'destructive', onPress: () => unvisitSpot(activeSpot.id) },
         ]
       );
       return;
@@ -1230,16 +1230,16 @@ function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore, nearbyHlScrol
       <View style={st.section}>
         <View style={st.glanceCard}>
           <View style={st.glanceItem}>
-            <View style={[st.glanceIconCircleGray, st.glanceIconCircleBlue]}>
-              <Clock size={20} color={INFO_BLUE} />
+            <View style={st.glanceIconCircle}>
+              <Clock size={20} color={INFO_INK} />
             </View>
             <Text style={st.glanceVal} numberOfLines={1}>{formatVisitTime(spot.visitHoursMin, spot.visitHoursMax)}</Text>
             <Text style={st.glanceLbl}>Time Needed</Text>
           </View>
           <View style={st.glanceDivider} />
           <View style={st.glanceItem}>
-            <View style={[st.glanceIconCircleGray, st.glanceIconCircleBlue]}>
-              <Tag size={20} color={INFO_BLUE} />
+            <View style={st.glanceIconCircle}>
+              <Ticket size={20} color={INFO_INK} />
             </View>
             <Text style={st.glanceVal} numberOfLines={1}>{formatSpotCost(spot)}</Text>
             <Text style={st.glanceLbl}>Cost (Adult)</Text>
@@ -1434,8 +1434,8 @@ const st = StyleSheet.create({
   // Time-to-spend and cost, side by side below the image rather than overlaid on it.
   cardStatRow: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 2, marginBottom: 8 },
   cardTimeRow: { flexDirection: 'row', alignItems: 'center', gap: 4, flexShrink: 0 },
-  cardTimeTxt: { fontSize: 12.5, fontWeight: '700', color: INFO_BLUE },
-  cardStatDivider: { width: 1, height: 12, marginHorizontal: 2, backgroundColor: INFO_BLUE },
+  cardTimeTxt: { fontSize: 12.5, fontWeight: '700', color: INFO_INK },
+  cardStatDivider: { width: 1, height: 12, marginHorizontal: 2, backgroundColor: INFO_INK },
   cardInfo:    { backgroundColor: 'white', paddingHorizontal: 14, paddingTop: 6, paddingBottom: 12 },
   cardBio:     { fontSize: 12.5, color: '#6B7280', lineHeight: 16, minHeight: 48 },
   // Sits below the carousel (a sibling of the ScrollView, not any one card) — sandwiched
@@ -1529,14 +1529,13 @@ const st = StyleSheet.create({
   // One combined card (was two separate ones) — a vertical divider between the two halves
   // instead of a gap, white background, light gray border. Same border strength as
   // DestinationSheet's About-tab boxes (its ABOUT_BORDER, '#D8DBE0') — was a fainter '#F0F1F3'.
-  glanceCard: { backgroundColor: '#F3F8FF', borderRadius: 16, flexDirection: 'row', borderWidth: 1, borderColor: '#BFDBFE' },
+  // Gray box, gray border (the About boxes' '#D8DBE0'), black clock and ticket icons on a
+  // slightly darker gray circle.
+  glanceCard: { backgroundColor: '#F3F4F6', borderRadius: 16, flexDirection: 'row', borderWidth: 1, borderColor: '#D8DBE0' },
   glanceItem: { flex: 1, alignItems: 'center', paddingVertical: 20, gap: 5 },
-  glanceDivider: { width: 1, backgroundColor: '#E2EDFE', marginVertical: 14 },
-  glanceIconCircleGray:   { width: 40, height: 40, borderRadius: 20, backgroundColor: '#F3F4F6',
-                            alignItems: 'center', justifyContent: 'center', marginBottom: 2 },
-  // Override for Time Needed and Ticket only (Cost stays the plain gray badge) — a darker blue,
-  // matching glanceCard's own faint blue tint/border.
-  glanceIconCircleBlue:   { backgroundColor: '#E2EDFE' },
+  glanceDivider: { width: 1, backgroundColor: '#D8DBE0', marginVertical: 14 },
+  glanceIconCircle: { width: 40, height: 40, borderRadius: 20, backgroundColor: '#E5E7EB',
+                      alignItems: 'center', justifyContent: 'center', marginBottom: 2 },
   // 20% larger than DestinationSheet's glanceRowTitle ("Why Visit" reasons text), which this
   // otherwise matches in weight/color.
   glanceVal: { fontSize: 19, fontWeight: '600', color: '#111827', lineHeight: 26 },
