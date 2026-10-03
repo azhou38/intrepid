@@ -7,6 +7,10 @@
 //     photos — keeps only files that meet the size/shape rules, and writes photo-picker.html: a contact
 //     sheet to choose from. Open it in a browser, pick, and press "Download picks.json".
 //
+//   npx tsx scripts/photo-picker.ts --auto [--country NZ] [--spots]
+//     No browsing: chooses the best-scoring candidate for every missing header and "Why visit" photo itself
+//     (see scoreCandidate) and writes them straight in. Spots keep their Wikipedia lead photo unless --spots.
+//
 //   npx tsx scripts/photo-picker.ts --apply ~/Downloads/picks.json
 //     Writes the picks into src/data/imageOverrides.ts and src/data/destinations.ts. Then run
 //     scripts/check-destination-headers.ts and scripts/build-image-manifest.ts as usual.
@@ -27,7 +31,7 @@ const MIN_GAP_MS = Number(process.env.PICKER_GAP_MS ?? 1000);
 const PER_SLOT = 12;
 
 type SlotKind = 'header' | 'why' | 'spot';
-interface Candidate { file: string; thumb: string; w: number; h: number; page: string }
+interface Candidate { file: string; thumb: string; w: number; h: number; page: string; rank: number }
 // `ref` is what a pick is saved under: the destination's name (header), its id (why — with `index`), or
 // the spot's name (spot).
 interface Slot { key: string; kind: SlotKind; ref: string; index?: number; label: string; hint: string; candidates: Candidate[] }
@@ -71,7 +75,8 @@ async function searchCommons(query: string): Promise<Candidate[]> {
     .sort((a, b) => (a.index ?? 0) - (b.index ?? 0))
     .map(p => ({ p, info: p.imageinfo?.[0] }))
     .filter(({ info }) => info && /^image\/(jpeg|png|webp)$/.test(info.mime))
-    .map(({ p, info }) => ({
+    .map(({ p, info }, rank) => ({
+      rank,
       file: String(p.title).replace(/^File:/, ''),
       thumb: info.thumburl as string,
       w: info.width as number,
@@ -101,11 +106,52 @@ async function candidates(kind: SlotKind, queries: string[]): Promise<Candidate[
   return out.slice(0, PER_SLOT);
 }
 
+// ── Choosing automatically ───────────────────────────────────────────────────
+
+const STOP = new Set(['the', 'and', 'with', 'for', 'from', 'into', 'over', 'that', 'this', 'their', 'its', 'your', 'new', 'zealand']);
+const stem = (w: string) => w.replace(/(ing|es|s)$/, '');
+const wordsOf = (s: string) => new Set(
+  s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9\s]/g, ' ')
+    .split(/\s+/).filter(w => w.length > 2 && !STOP.has(w)).map(stem));
+
+// Files that are almost never a good photo of the place: maps, logos, diagrams, signage, scans.
+const NEVER = /\b(map|maps|logo|flag|coat of arms|diagram|chart|plan|poster|sign|signage|stamp|banknote|coin|icon|locator|location|timetable|schematic|drawing|painting|engraving|postcard|cropped|detail)\b/i;
+// Headers must not be high aerial/satellite views (AGENTS.md).
+const HEADER_NEVER = /\b(aerial|satellite|drone|from above|from space|nasa|landsat|sentinel)\b/i;
+
+// Higher is better. Relevance to what the slot is about (words from the destination name / topic found in the file
+// name), then how well Commons itself ranked it, then size, then — for headers — a shape that survives the phone's
+// near-square crop. Deterministic, so re-running picks the same files.
+function scoreCandidate(kind: SlotKind, c: Candidate, about: Set<string>): number {
+  const name = c.file.replace(/\.[a-z]+$/i, '');
+  if (NEVER.test(name) || (kind === 'header' && HEADER_NEVER.test(name))) return -Infinity;
+  const nameWords = wordsOf(name);
+  let score = 0;
+  if (kind !== 'header' && HEADER_NEVER.test(name)) score -= 4;   // allowed on a "Why visit" card, but a ground-level view wins
+  for (const w of about) if (nameWords.has(w)) score += 3;
+  score -= c.rank * 0.25;
+  score += Math.min(c.w, 6000) / 2000;
+  if (kind === 'header') {
+    const aspect = c.w / c.h;
+    if (aspect >= 1.2 && aspect <= 1.6) score += 1.5;
+    else if (aspect < 1.2) score += 0.5;
+  }
+  return score;
+}
+
+function chooseBest(slot: Slot, about: Set<string>, taken: Set<string>): Candidate | undefined {
+  return slot.candidates
+    .filter(c => !taken.has(c.file))
+    .map(c => ({ c, score: scoreCandidate(slot.kind, c, about) }))
+    .filter(x => x.score > -Infinity)
+    .sort((a, b) => b.score - a.score)[0]?.c;
+}
+
 // ── Build the contact sheet ──────────────────────────────────────────────────
 
 const isTown = (d: Destination) => d.category === 'city';
 
-async function build(country: string | undefined, withSpots: boolean) {
+async function build(country: string | undefined, withSpots: boolean, auto: boolean) {
   const overrides = WIKI_IMAGE_OVERRIDES as Record<string, string>;
   const dests = DESTINATIONS.filter(d => (!country || d.countryCode === country)
     && (!overrides[d.name] || !d.whyVisitPhotos));
@@ -148,6 +194,29 @@ async function build(country: string | undefined, withSpots: boolean) {
       }
     }
     groups.push({ dest: d, slots });
+  }
+
+  if (auto) {
+    const picks: Picks = { headers: {}, why: {}, spots: {} };
+    const unresolved: string[] = [];
+    console.log('\nChosen:');
+    for (const { dest, slots } of groups) {
+      const taken = new Set<string>();
+      for (const slot of slots) {
+        const about = wordsOf(slot.kind === 'header' ? dest.name : `${dest.highlights?.[slot.index ?? 0] ?? ''} ${dest.whyVisit?.[slot.index ?? 0] ?? ''} ${dest.name}`);
+        const best = chooseBest(slot, slot.kind === 'spot' ? wordsOf(slot.ref) : about, taken);
+        if (!best) { unresolved.push(`${dest.name} — ${slot.label}`); continue; }
+        taken.add(best.file);
+        if (slot.kind === 'header') picks.headers[slot.ref] = best.file;
+        else if (slot.kind === 'spot') picks.spots[slot.ref] = best.file;
+        else (picks.why[slot.ref] ??= {})[String(slot.index)] = best.file;
+        console.log(`  ${dest.name} · ${slot.label}: ${best.file} (${best.w}×${best.h})`);
+      }
+    }
+    writeFileSync(resolvePath(ROOT, 'photo-picks.json'), JSON.stringify(picks, null, 2));
+    applyPicks(picks);
+    if (unresolved.length) console.log(`\nNo suitable file found for ${unresolved.length} slot(s) — try the contact sheet for these:\n  ${unresolved.join('\n  ')}`);
+    return;
   }
 
   const out = resolvePath(ROOT, 'photo-picker.html');
@@ -240,7 +309,10 @@ function renderHtml(groups: { dest: Destination; slots: Slot[] }[]): string {
 interface Picks { headers: Record<string, string>; why: Record<string, Record<string, string>>; spots: Record<string, string> }
 
 function apply(path: string) {
-  const picks = JSON.parse(readFileSync(resolvePath(path.replace(/^~/, process.env.HOME ?? '~')), 'utf8')) as Picks;
+  applyPicks(JSON.parse(readFileSync(resolvePath(path.replace(/^~/, process.env.HOME ?? '~')), 'utf8')) as Picks);
+}
+
+function applyPicks(picks: Picks) {
 
   // Headers and spot photos → WIKI_IMAGE_OVERRIDES (added, or an existing entry replaced).
   const overridesPath = resolvePath(ROOT, 'src/data/imageOverrides.ts');
@@ -292,4 +364,4 @@ const args = process.argv.slice(2);
 const flag = (name: string) => { const i = args.indexOf(name); return i >= 0 ? (args[i + 1] ?? '') : undefined; };
 const applyPath = flag('--apply');
 if (applyPath) apply(applyPath);
-else build(flag('--country'), !args.includes('--no-spots')).catch(e => { console.error('ABORTED:', e); process.exit(1); });
+else build(flag('--country'), args.includes('--auto') ? args.includes('--spots') : !args.includes('--no-spots'), args.includes('--auto')).catch(e => { console.error('ABORTED:', e); process.exit(1); });
