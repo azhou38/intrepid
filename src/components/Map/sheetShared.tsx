@@ -48,11 +48,11 @@ export function useDeferredMount(delayMs = SHEET_PANEL_MOUNT_DELAY_MS): [boolean
 export function AIContentNote() {
   return (
     <Text style={aiNoteStyle}>
-      Content on this page is AI-generated and may contain inaccuracies.
+      AI-generated content. Verify important information.
     </Text>
   );
 }
-const aiNoteStyle = { fontSize: 11, color: '#9CA3AF', textAlign: 'center' as const, marginTop: 8, lineHeight: 15 };
+const aiNoteStyle = { fontSize: 11, color: '#C4C9D1', textAlign: 'center' as const, marginTop: 8, lineHeight: 15 };
 
 export function dedupeNewPhotos(existing: PhotoEntry[], picked: PhotoEntry[]): PhotoEntry[] {
   const existingAssetIds = new Set(existing.map(p => p.assetId).filter((id): id is string => !!id));
