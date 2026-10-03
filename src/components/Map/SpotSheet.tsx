@@ -928,7 +928,10 @@ function SpotSheet({
           showsVerticalScrollIndicator={false}
           onScroll={e => { scrollYSV.value = e.nativeEvent.contentOffset.y; }}
           scrollEventThrottle={16}
-          contentContainerStyle={{ paddingBottom: insets.bottom + 36 }}
+          // White to the bottom of the sheet, like the content above it — the trailing padding, and any
+          // space left under a short tab (e.g. My Visit with one small trip card), otherwise showed the
+          // sheet's light gray as a stray strip.
+          contentContainerStyle={{ paddingBottom: insets.bottom + 36, backgroundColor: 'white', flexGrow: 1 }}
           keyboardShouldPersistTaps="handled"
         >
           {/* ── HERO (active spot, shown when expanded) ─────────────────── */}

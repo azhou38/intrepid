@@ -1383,7 +1383,9 @@ function DestinationSheet({
           // scroll content's own trailing space, past the white "content" card, and shows
           // through whenever a tab's content is short enough not to need scrolling past it
           // (most visibly the Spots tab with few spots), where it read as a stray gray strip.
-          contentContainerStyle={{ paddingBottom: insets.bottom + 55, backgroundColor: 'white' }}
+          // flexGrow too: content shorter than the sheet (a short My Visit tab) otherwise ended above
+          // the sheet's bottom and left the gray sheet showing beneath it.
+          contentContainerStyle={{ paddingBottom: insets.bottom + 55, backgroundColor: 'white', flexGrow: 1 }}
           keyboardShouldPersistTaps="handled"
         >
 
