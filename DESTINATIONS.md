@@ -9,7 +9,15 @@ Use this whenever you add a country, region, destination or spot, or are asked f
 - **Destination** — a place you travel *to* and base yourself around for a few hours to a few days: a city or town, a national park, a lake, an island, a stretch of coast, a wine region. It gets its own pin, sheet, ranking, climate and crowd data.
 - **Spot** — one thing you go *to see or do* within a destination: an attraction, viewpoint, trail, beach, museum, market, a notable cruise or tour. It gets a pin only once the camera is inside its destination.
 
-A spot never stands alone: every spot belongs to exactly one destination. If something is worth a trip on its own and has things to do around it, it is a destination; if it is a single stop within a trip, it is a spot.
+A spot belongs to **at most one** destination, and **can stand alone**:
+
+- If a place is worth a trip on its own *and* has enough going on around it to fill a visit, it is a **destination**, and the things around it are its spots.
+- If it is a stop within a destination's area that visitors reach from that destination's base, it is a **spot of that destination**.
+- If it is a stop with **no appropriate destination to bucket it under**, or **too few neighbouring spots to justify a destination of its own**, it is a **standalone spot**: it sits on the map and in search by itself, with no parent.
+
+Do not force a spot under a destination just because one is nearby. A place with its own identity and its own journey — Glenorchy, an hour from Queenstown at the head of the lake — is separate from Queenstown, not one of its spots: bucketing it there misstates where it is, widens Queenstown's map view, and hides it from anyone not looking at Queenstown. Conversely, do not promote a lone attraction to a destination to give it a home; that needs a description, reasons, tips and best months it cannot honestly support.
+
+Rule of thumb for a destination: a base with roughly **three or more** worthwhile spots around it, or a headline attraction large enough to be a trip in itself (a national park, a major city). That is a guide to the call, not a quota.
 
 ## What qualifies
 
@@ -33,8 +41,9 @@ When unsure, leave it out. A tight, credible list beats an exhaustive one; it is
 ## Coverage — how many
 
 - **Destinations:** every place that passes the test above for the area asked about, at its natural granularity. A region becomes several destinations (one per base or park), not one big pin and not one per village. Check the list against the guidebook structure: each guide chapter is usually one destination.
-- **Spots per destination:** typically **3–9**; fewer than 3 usually means the place is not really a destination (fold it into a neighbour), and more than ~10 means it should be split or trimmed. Big draws (a city, a flagship park) sit at the top of the range; small bases (a service town) at the bottom.
-- **Each destination's spots** should include its unmissable headline attraction(s) first, then the best secondary stops, then (where relevant) one or two food/culture/market stops. Order spots by importance, not geography.
+- **Spots: no cap, per destination or overall.** Include **every** spot that passes the test above; a great city or flagship park may have dozens. Do not trim a good spot to hit a number, and do not pad a thin one up to one.
+- **Order each destination's spots by importance, not geography:** the unmissable headline attraction(s) first, then the best secondary stops, then (where relevant) food, culture and market stops.
+- **Where a spot goes:** under the destination visitors reach it from *and* that actually surrounds it (within the destination's map span); otherwise it stands alone. If a destination's span would have to balloon to hold a spot, the spot is not part of that destination.
 
 ## Ranking destinations (`rank`)
 
@@ -69,7 +78,8 @@ Write in the app's voice: plain, specific, enthusiastic without superlatives you
 
 ## Writing a spot
 
-- `id` — `<destinationId>-<n>`, numbered from 1 in importance order, never reused.
+- `id` — for a spot of a destination, `<destinationId>-<n>`, numbered from 1 in importance order and never reused. For a standalone spot, its own lowercase hyphenated slug (`glenorchy`), unique among all spot and destination ids.
+- `destinationId` — the parent destination's id, or **omitted** for a standalone spot (see "Standalone spots in the app" below).
 - `name` — the **exact title of its Wikipedia article** (or the name its article is most likely to be found under). The app looks the spot's photo up by this name, so a creative or abbreviated name silently loads the wrong photo or none. Where the natural name is ambiguous or shared with other places (a common lake or park name), disambiguate or give it a hand-picked photo in `WIKI_IMAGE_OVERRIDES`.
 - `category` — `museum | landmark | monument | religious | nature | viewpoint | hike | entertainment | market | beach | historic`. `icon` — one emoji that suits it.
 - `coordinates` — the spot's entrance, trailhead or the point visitors stand at, accurate to ~100 m. Never reuse the destination's centre for a spot that is somewhere else.
@@ -78,6 +88,10 @@ Write in the app's voice: plain, specific, enthusiastic without superlatives you
 - `visitHoursMin` / `visitHoursMax` — a range of hours a typical visitor spends, always a range.
 - **Cost** — `free: true` for no charge; otherwise `costMin`/`costMax` in the local currency with `currency` as an ISO 4217 code (`NZD`, `EUR`, `GBP`, …; omit only for USD). Use a single price (`costMin === costMax`) or the real range (adult entry, standard tour). Approximate and rounded is fine; invented precision is not. Operator-run experiences (cruises, flights, bungy) list the typical adult price.
 - `ticketUrl` — only the spot's single official site (the operator or steward), whether or not it charges. Omit it for open squares and districts with no one steward and for attractions sold by many operators. For public-land trails and parks, the managing agency's page for that park (e.g. the Department of Conservation) is the official site. Never link a booking aggregator or a guess you have not seen resolve.
+
+## Standalone spots in the app
+
+**The app does not support standalone spots yet:** `Spot.destinationId` is required, and the map pins, spot sheet, saved data, visit roll-up (spot → destination → country), search, climate and Near You all assume a parent. Until that is built, do not add a standalone spot — it would break those paths or silently misfile — and do not quietly bucket it under a distant destination either. Decide what it is (destination / spot of X / standalone), add the destination and in-area spots, and **list every standalone spot you identified in your summary** so it can be added once the model allows it. The convention above is the target; building it is a separate change (an optional `destinationId`, its own country/timezone/rank fields, and a pin/sheet that works without a destination).
 
 ## New country or region checklist
 
@@ -96,8 +110,9 @@ Every new destination needs a hand-picked header and three "Why visit" photos, r
 
 - `npx tsc --noEmit -p .` shows no new errors.
 - `npx tsx scripts/check-destination-headers.ts` passes (or lists only destinations whose photos you are about to add).
-- Ids unique across the file; every spot's `destinationId` exists; no two spots share a name; each destination has 3+ spots.
-- Coordinates look right on a map (a swapped sign puts a New Zealand spot in the Atlantic); every spot is within the destination's span.
+- Ids unique across the file; every spot's `destinationId` exists; no two spots share a name.
+- Each destination has enough surrounding spots to justify being a destination (see "The two levels"); lone attractions are listed as standalone spots, not promoted.
+- Coordinates look right on a map (a swapped sign puts a New Zealand spot in the Atlantic); every spot is within its destination's span (otherwise it is standalone, or the span is wrong).
 - Every destination has exactly three `whyVisit`, three `highlights`, three `goodToKnow`; each `bestTimeBlurb` has one `{months}`.
 - Costs have a `currency`, free spots say `free: true`, and no `ticketUrl` points anywhere you have not confirmed.
 - Say plainly in your summary what you could not verify (hours, prices, links) — these are approximate until someone checks them.
