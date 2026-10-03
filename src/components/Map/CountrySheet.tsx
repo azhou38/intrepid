@@ -345,15 +345,21 @@ function CountrySheet({
   // space left over from its taller Destinations tab. Driving the track's height off the same
   // shared value as the horizontal slide keeps the two in lockstep, so the height eases across
   // during a tab swipe rather than jumping when the swipe settles.
+  // Heights are kept by tab NAME and laid out in TAB_ORDER's order — so adding or removing the My
+  // Visit tab never mixes them up or needs them re-measured (a panel only reports its height again
+  // when its size changes, so clearing them used to leave the track at the tallest tab's height,
+  // with empty space under a short My Visit).
   const panelHeightsSV  = useSharedValue<number[]>([]);
-  const panelHeightsRef = useRef<number[]>([]);
-  const measurePanel = useCallback((index: number, h: number) => {
-    if (index < 0 || !h) return;
-    if (Math.abs((panelHeightsRef.current[index] ?? 0) - h) < 1) return;
-    const next = panelHeightsRef.current.slice();
-    next[index] = h;
-    panelHeightsRef.current = next;
-    panelHeightsSV.value = next;
+  const panelHeightsRef = useRef<Partial<Record<CountryTab, number>>>({});
+  const tabOrderRef     = useRef<CountryTab[]>([]);
+  tabOrderRef.current = TAB_ORDER;
+  const syncPanelHeights = useCallback(() => {
+    panelHeightsSV.value = tabOrderRef.current.map(t => panelHeightsRef.current[t] ?? 0);
+  }, []);
+  const measurePanel = useCallback((tab: CountryTab, h: number) => {
+    if (!h || Math.abs((panelHeightsRef.current[tab] ?? 0) - h) < 1) return;
+    panelHeightsRef.current = { ...panelHeightsRef.current, [tab]: h };
+    syncPanelHeights();
   }, []);
   const slideTrackStyle = useAnimatedStyle(() => {
     const hs = panelHeightsSV.value;
@@ -375,11 +381,8 @@ function CountrySheet({
   // adds or removes the "My Visit" tab), keep the slide position matched to whichever tab is
   // still active instead of leaving it misaligned.
   useEffect(() => {
-    // Panel indices are positional within TAB_ORDER, so adding/removing "My Visit" shifts
-    // every measurement by one — drop them and let the panels re-report on the next layout
-    // (the track falls back to auto height for that single frame).
-    panelHeightsRef.current = [];
-    panelHeightsSV.value = [];
+    // Re-lay the heights out in the new tab order (see panelHeightsRef).
+    syncPanelHeights();
     const idx = TAB_ORDER.indexOf(activeTab);
     if (idx === -1) {
       setActiveTab(TAB_ORDER[0]);
@@ -992,7 +995,7 @@ function CountrySheet({
                 {isCountryVisited && (
                   <View
                     style={st.slidePanel}
-                    onLayout={e => measurePanel(TAB_ORDER.indexOf('visit'), e.nativeEvent.layout.height)}
+                    onLayout={e => measurePanel('visit', e.nativeEvent.layout.height)}
                   >
                     {/* Each logged visit is its own standalone module — its own title, dates,
                         photos, and notes — like a separate journal entry. Shared with
@@ -1016,7 +1019,7 @@ function CountrySheet({
                 {/* ── ABOUT PANEL ──────────────────────────────────────── */}
                 <View
                   style={st.slidePanel}
-                  onLayout={e => measurePanel(TAB_ORDER.indexOf('about'), e.nativeEvent.layout.height)}
+                  onLayout={e => measurePanel('about', e.nativeEvent.layout.height)}
                 >
                   <View style={st.glanceCard}>
                     {facts ? (
@@ -1071,7 +1074,7 @@ function CountrySheet({
                 {/* ── DESTINATIONS PANEL ───────────────────────────────── */}
                 <View
                   style={st.slidePanel}
-                  onLayout={e => measurePanel(TAB_ORDER.indexOf('destinations'), e.nativeEvent.layout.height)}
+                  onLayout={e => measurePanel('destinations', e.nativeEvent.layout.height)}
                 >
                   <DestinationsPanel
                     dests={dests}

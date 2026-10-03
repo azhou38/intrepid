@@ -372,6 +372,21 @@ function SpotSheet({
   const tabIndicatorLeft = useAnimatedStyle(() => ({
     left: `${interpolate(tabSlideAnim.value, [-W, 0], [50, 0], Extrapolation.CLAMP)}%` as `${number}%`,
   }));
+  // The track's height follows the tab showing — [My Visit, About] — easing between them with the
+  // slide. Without it the track took the taller tab's height, so a short My Visit (one small trip
+  // card) sat over a large empty space left by About.
+  const panelHeightsSV = useSharedValue<[number, number]>([0, 0]);
+  const measurePanel = useCallback((index: 0 | 1, h: number) => {
+    const cur = panelHeightsSV.value;
+    if (!h || Math.abs(cur[index] - h) < 1) return;
+    panelHeightsSV.value = index === 0 ? [h, cur[1]] : [cur[0], h];
+  }, []);
+  const slideTrackStyle = useAnimatedStyle(() => {
+    const [hVisit, hAbout] = panelHeightsSV.value;
+    if (!hVisit || !hAbout) return { height: undefined };   // until both are measured
+    const t = Math.max(0, Math.min(1, -tabSlideAnim.value / W));
+    return { height: hVisit + (hAbout - hVisit) * t };
+  });
   const slideRowStyle = useAnimatedStyle(() => ({
     transform: [{ translateX: tabSlideAnim.value }],
   }));
@@ -848,7 +863,7 @@ function SpotSheet({
       // Un-visits it entirely: its own trips and rating, and its ticks on destination trips.
       Alert.alert(
         'Remove visit?',
-        'This will delete your rating and all logged visits for this spot, and untick it from your trips.',
+        'This will delete all logged visits for this spot.',
         [
           { text: 'Cancel', style: 'cancel' },
           { text: 'Remove', style: 'destructive', onPress: () => unvisitSpot(activeSpot.id) },
@@ -1033,10 +1048,10 @@ function SpotSheet({
           {/* ── CONTENT ────────────────────────────────────────────────── */}
           <View style={st.content}>
             {isVisited ? (
-              <View style={st.slideTrack}>
+              <Reanimated.View style={[st.slideTrack, slideTrackStyle]}>
                 <Reanimated.View style={[st.slideRow, slideRowStyle]}>
                   {/* ── MY VISIT PANEL ─────────────────────────────────── */}
-                  <View style={st.slidePanel}>
+                  <View style={st.slidePanel} onLayout={e => measurePanel(0, e.nativeEvent.layout.height)}>
                     {/* Each logged visit is its own standalone module — its own title, dates,
                         photos, and notes — like a separate journal entry. Shared with
                         DestinationSheet/CountrySheet — see VisitCardList. No selector section
@@ -1054,11 +1069,11 @@ function SpotSheet({
                   </View>
 
                   {/* ── ABOUT PANEL ────────────────────────────────────── */}
-                  <View style={st.slidePanel}>
+                  <View style={st.slidePanel} onLayout={e => measurePanel(1, e.nativeEvent.layout.height)}>
                     <SpotAbout spot={activeSpot} nearbySpots={spots.filter(s => s.id !== activeSpot.id)} onSelectNearby={handleSelectNearby} onExplore={() => snapToCollapsedRef.current()} nearbyHlScrollRef={nearbyHlScrollRef} />
                   </View>
                 </Reanimated.View>
-              </View>
+              </Reanimated.View>
             ) : (
               <SpotAbout spot={activeSpot} nearbySpots={spots.filter(s => s.id !== activeSpot.id)} onSelectNearby={handleSelectNearby} onExplore={() => snapToCollapsedRef.current()} nearbyHlScrollRef={nearbyHlScrollRef} />
             )}
@@ -1143,7 +1158,9 @@ function SpotSheet({
                     carouselRef.current?.scrollTo({ x: (item.realIndex + loopOffset) * CARD_SNAP, animated: true });
                     onActiveSpotChange?.(spots[item.realIndex]);
                   }
-                  snapToFullRef.current();
+                  // The editor opens straight over the carousel; the sheet stays put underneath. It
+                  // only goes full-screen once a trip is saved (revealVisit), to show it on My Visit —
+                  // expanding first made the sheet visibly rise before the editor appeared.
                   setEditingVisitModule('new');
                   Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
                 }}

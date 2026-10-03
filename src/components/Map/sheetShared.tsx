@@ -2099,7 +2099,7 @@ export function VisitModuleSheet<T extends VisitSelectorItem>({
             {onRatingChange && (
               <View style={esS.section}>
                 <View style={esS.sectionHead}>
-                  <Text style={esS.sectionTitle}>Your Rating</Text>
+                  <Text style={esS.sectionTitle}>Rating</Text>
                 </View>
                 <View style={esS.ratingRow}>
                   {/* onRatingChange itself writes straight to the caller's store (rating lives
@@ -2251,7 +2251,9 @@ const esS = StyleSheet.create({
   headerTitleEditWrap:{ flex:1, alignItems:'center', marginHorizontal:12 },
   headerTitleInput:{ fontSize:21, fontWeight:'800', color:'#111827', padding:0, maxWidth:'100%',
                      textAlignVertical:'center', lineHeight:25,
-                     borderBottomWidth:1, borderBottomColor:'#D1D5DB', borderStyle:'dashed',
+                     // No dashed underline: iOS only draws a dashed border when all four sides share one
+                     // color, so a bottom-only one was never drawn — it just logged "Unsupported dashed /
+                     // dotted border style" on every render. The pencil / "Tap to edit" hint marks it as editable.
                      paddingBottom:3 },
   // Same font metrics/width as headerTitleInput (not its border/height/color, which don't
   // affect wrapping) — absolutely positioned and invisible so it never affects layout or shows
