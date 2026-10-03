@@ -100,6 +100,9 @@ export interface Destination {
   // destination regardless of size. See getDestZoomDelta in MapScreen.tsx, the sole consumer.
   defaultZoomSpanKm: number;
   icon?: string;
+  // Prominence tier, used to rank what's shown when space is limited (pin plans, Near You):
+  //   1 world-famous · 2 country highlight · 3 regional favourite · 4 worth a detour · 5 local.
+  // Keep the tiers honest as coverage grows — a country guidebook's "top experiences" map to 1–2.
   rank: 1 | 2 | 3 | 4 | 5;
   tagline?: string;
   description?: string;
