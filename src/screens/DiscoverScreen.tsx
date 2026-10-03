@@ -12,6 +12,7 @@ import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'reac
 import * as Location from 'expo-location';
 import { useStore } from '../store';
 import type { Destination } from '../types';
+import { nearYouDestinations, type Coords } from '../utils/nearYou';
 import { DESTINATIONS } from '../data/destinations';
 import { SPOTS } from '../data/spots';
 import DestinationCard from '../components/Map/DestinationCard';
@@ -66,17 +67,8 @@ const FEED_SECTIONS: {
 // ── Near You — the destinations closest to the user, replacing the old "Trending Now" row.
 // Kept module-level so the feed remounting (the Explore sheet unmounts while search is open)
 // doesn't refetch the location or make the row pop in again.
-type Coords = { latitude: number; longitude: number };
 let cachedUserCoords: Coords | null = null;
 
-function distanceKm(a: Coords, b: Coords) {
-  const R = 6371, rad = Math.PI / 180;
-  const dLat = (b.latitude - a.latitude) * rad;
-  const dLng = (b.longitude - a.longitude) * rad;
-  const h = Math.sin(dLat / 2) ** 2
-    + Math.cos(a.latitude * rad) * Math.cos(b.latitude * rad) * Math.sin(dLng / 2) ** 2;
-  return 2 * R * Math.asin(Math.sqrt(h));
-}
 
 // Null until permission is granted and a fix arrives; the row is simply omitted until then
 // (and for good if permission is denied) rather than showing something unrelated in its place.
@@ -184,15 +176,10 @@ export default function DiscoverScreen({
     const base = FEED_SECTIONS
       .map(sec => ({ ...sec, items: DESTINATIONS.filter(sec.filter).slice(0, 10) }))
       .filter(sec => sec.items.length > 0);
-    const all = userCoords
-      ? [{
-          id: 'nearby', title: 'Near You', emoji: '📍',
-          items: [...DESTINATIONS]
-            .map(d => ({ d, km: distanceKm(userCoords, d.coordinates) }))
-            .sort((a, b) => a.km - b.km)
-            .slice(0, 10)
-            .map(x => x.d),
-        }, ...base]
+    // See nearYouDestinations — empty (row omitted) when too little is nearby.
+    const nearby = userCoords ? nearYouDestinations(userCoords, DESTINATIONS) : [];
+    const all = nearby.length
+      ? [{ id: 'nearby', title: 'Near You', emoji: '📍', items: nearby }, ...base]
       : base;
     // Visited destinations go to the far right of each row, the rest keeping their order
     // (Array.sort is stable, so returning 0 for two of the same kind preserves it).
@@ -249,6 +236,7 @@ export default function DiscoverScreen({
             <ScrollView
               horizontal
               showsHorizontalScrollIndicator={false}
+              style={styles.cardScroll}
               contentContainerStyle={styles.cardRow}
             >
               {section.items.map(dest => (
@@ -305,5 +293,10 @@ const styles = StyleSheet.create({
   },
   sectionEmoji: { fontSize: 18 },
   sectionTitle: { fontSize: 17, fontWeight: '700', color: '#111827' },
-  cardRow: { paddingHorizontal: 16, gap: 12, paddingTop: 2, paddingBottom: 14 },
+  // The cards' shadow (radius 8, 2px down) reaches ~10px above them and ~18px below, and a horizontal
+  // ScrollView clips to its own bounds — with 2px/14px of room it ended in hard lines at both edges.
+  // The row pads to hold the whole shadow; the scroll view's negative margins take that extra room back
+  // out of the layout, so the sections sit exactly where they did.
+  cardScroll: { marginTop: -10, marginBottom: -8 },
+  cardRow: { paddingHorizontal: 16, gap: 12, paddingTop: 12, paddingBottom: 22 },
 });

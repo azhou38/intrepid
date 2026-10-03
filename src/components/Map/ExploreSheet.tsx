@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { View, Text, StyleSheet, Pressable, Dimensions, Platform } from 'react-native';
 // Sheet drag is driven entirely by Reanimated + Gesture Handler (UI thread), identical
 // mechanism to CountrySheet/DestinationSheet's own three-state (collapsed/half/full) drag —
@@ -31,6 +31,9 @@ const COLLAPSED_Y = Math.max(0, H - BOTTOM_TAB_H - COMPACT_H);
 const HALF_SHIFT = 1;
 const HALF_POS   = H / 2 + HALF_SHIFT;
 const SNAP_CONFIG = { duration: 280, easing: Easing.out(Easing.cubic) };
+// Coming back after search (see initialSnap): a touch quicker than the normal entrance, since the
+// user is returning to something they just had open rather than being shown something new.
+const RESTORE_CONFIG = { duration: 220, easing: Easing.out(Easing.cubic) };
 
 type ExploreSnapState = 'collapsed' | 'half' | 'full';
 
@@ -58,8 +61,8 @@ interface Props {
   // Forwarded to DiscoverScreen's own prop of the same name — tapping its search bar opens
   // MapScreen's search interface.
   onSearchPress?: () => void;
-  // Read once, at mount, in the shared vocabulary (see onSnapStateChange): come back already
-  // at this position, with no slide-in, instead of sliding up to the bottom strip. MapScreen
+  // Read once, at mount, in the shared vocabulary (see onSnapStateChange): slide up into this
+  // position instead of the bottom strip. MapScreen
   // sets this when closing search so the sheet returns to where it was before search opened.
   initialSnap?: 'peek' | 'collapsed' | 'full';
   // Read once, at mount: restore the feed to this scroll offset (see initialSnap), and the
@@ -93,7 +96,9 @@ function ExploreSheet({ collapseSignal, onSnapStateChange, onSelectDestination, 
   // conditionally renders it) every time the user returns to world view, so this produces
   // the same "sliding/appearing in from the bottom" entrance CountrySheet/DestinationSheet
   // use when a country/destination is selected.
-  const slideAnim    = useSharedValue(startSnap ? startPos : CLOSE_POS);
+  // A restored mount (closing search, see initialSnap) slides up from the bottom too — into its
+  // restored position rather than collapsed — instead of appearing there all at once.
+  const slideAnim    = useSharedValue(CLOSE_POS);
   const lastPos      = useSharedValue(startPos);
 
   // Reads/writes for the feed's own ScrollView (rendered inside DiscoverScreen), forwarded
@@ -180,15 +185,17 @@ function ExploreSheet({ collapseSignal, onSnapStateChange, onSelectDestination, 
   // starts off-screen (CLOSE_POS, set above) and animates up to the collapsed resting
   // position with the same SNAP_CONFIG curve, so returning to world view (or backing out of
   // a country/destination sheet, which unmounts and remounts this one) produces the
-  // identical slide-up-from-bottom transition.
-  useEffect(() => {
+  // identical slide-up-from-bottom transition. A restored mount (closing search) slides up the
+  // same way, into its restored position. A layout effect, so the slide starts with the mount
+  // commit itself rather than once the (busy) JS thread gets round to passive effects.
+  useLayoutEffect(() => {
     onMountSnap?.(initialSnap ?? 'peek');
     // The feed reveals itself via DiscoverScreen's onInitialScrollApplied; this is only a
     // failsafe so it can never stay hidden if that never fires.
     if (initialScrollY) setTimeout(() => setFeedReady(true), 250);
-    if (startSnap) { onSnapStateChange?.(initialSnap!); return; }
-    lastPos.value = COLLAPSED_Y;
-    slideAnim.value = withTiming(COLLAPSED_Y, SNAP_CONFIG);
+    lastPos.value = startPos;
+    slideAnim.value = withTiming(startPos, startSnap ? RESTORE_CONFIG : SNAP_CONFIG);
+    if (startSnap) onSnapStateChange?.(initialSnap!);
   }, []);
 
   // Map interaction started (see Props.collapseSignal) → drop from half back to collapsed,

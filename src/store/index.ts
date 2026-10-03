@@ -6,6 +6,15 @@ import type { SavedDestination, SavedSpot, SavedCountry, PhotoEntry, Continent }
 import { DESTINATIONS } from '../data/destinations';
 import { SPOTS } from '../data/spots';
 
+// A place opened from search, by id — resolved back to the live data when shown, so a renamed or removed
+// place can never resurface stale.
+export type RecentSearch =
+  | { type: 'country';     countryCode: string }
+  | { type: 'destination'; id: string }
+  | { type: 'spot';        id: string };
+const MAX_RECENT_SEARCHES = 5;
+const recentKey = (r: RecentSearch) => r.type === 'country' ? `country:${r.countryCode}` : `${r.type}:${r.id}`;
+
 function uid() {
   return Math.random().toString(36).slice(2) + Date.now().toString(36);
 }
@@ -30,6 +39,12 @@ interface AppState {
   updateSavedCountry: (countryCode: string, update: Partial<SavedCountry>) => void;
   selectDestination: (id: string | null) => void;
   setUserName: (name: string) => void;
+  // Places opened from search, most recent first (see RecentSearch) — shown as the search bar's
+  // "Recent" suggestions.
+  recentSearches: RecentSearch[];
+  addRecentSearch: (r: RecentSearch) => void;
+  removeRecentSearch: (r: RecentSearch) => void;
+  clearRecentSearches: () => void;
 }
 
 const DEFAULT_VISITED_IDS = [
@@ -145,6 +160,17 @@ export const useStore = create<AppState>()(
 
       selectDestination: (id) => set({ selectedDestinationId: id }),
       setUserName: (name) => set({ userName: name }),
+
+      recentSearches: [],
+      // Moves an already-listed place back to the top rather than listing it twice.
+      addRecentSearch: (r) =>
+        set((s) => ({
+          recentSearches: [r, ...(s.recentSearches ?? []).filter(x => recentKey(x) !== recentKey(r))]
+            .slice(0, MAX_RECENT_SEARCHES),
+        })),
+      removeRecentSearch: (r) =>
+        set((s) => ({ recentSearches: (s.recentSearches ?? []).filter(x => recentKey(x) !== recentKey(r)) })),
+      clearRecentSearches: () => set({ recentSearches: [] }),
     }),
     {
       name: 'intrepid-store',
@@ -156,6 +182,10 @@ export const useStore = create<AppState>()(
         // Backfill for state persisted before savedCountries existed.
         if (state && !state.savedCountries) {
           state.savedCountries = {};
+        }
+        // Likewise for recentSearches.
+        if (state && !state.recentSearches) {
+          state.recentSearches = [];
         }
       },
     }

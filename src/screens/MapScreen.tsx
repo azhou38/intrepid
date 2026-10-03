@@ -109,7 +109,7 @@ import { SPOTS, type Spot } from '../data/spots';
 import DestinationSheet from '../components/Map/DestinationSheet';
 import CircleFlag from '../components/CircleFlag';
 import PinPhoto from '../components/Map/PinPhoto';
-import { computeSearchResults, SearchResultRows, type SearchResult } from '../components/Map/SearchResults';
+import { computeSearchResults, computeSuggestions, SearchResultRows, toRecentSearch, type SearchResult } from '../components/Map/SearchResults';
 import SpotSheet from '../components/Map/SpotSheet';
 import CountrySheet from '../components/Map/CountrySheet';
 import ExploreSheet from '../components/Map/ExploreSheet';
@@ -895,6 +895,10 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
 
   const savedDestinations = useStore(s => s.savedDestinations);
   const savedSpots        = useStore(s => s.savedSpots);
+  const recentSearches    = useStore(s => s.recentSearches);
+  const addRecentSearch   = useStore(s => s.addRecentSearch);
+  const clearRecentSearches = useStore(s => s.clearRecentSearches);
+  const removeRecentSearch  = useStore(s => s.removeRecentSearch);
 
   // Per-destination count of individually-visited spots (presence in savedSpots, not the
   // destination's own visited flag — see saveSpotVisited: marking a spot visited also marks
@@ -1117,7 +1121,8 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // closeSearch), so the commit that closes search stays light. The restore hint is only cleared
   // once the sheet has actually remounted with it.
   const [exploreHeld, setExploreHeld] = useState(false);
-  useEffect(() => {
+  // Layout effect: the frame's wait starts with the close commit itself, not once passive effects run.
+  useLayoutEffect(() => {
     if (!exploreHeld) return;
     const id = requestAnimationFrame(() => setExploreHeld(false));
     return () => cancelAnimationFrame(id);
@@ -1160,20 +1165,20 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   const searchBackdropStyle = useAnimatedStyle(() => ({
     opacity: searchFocusProgress.value,
   }));
-  // Closing search from its X or the white backdrop. The close commit re-renders this whole
-  // screen and used to remount the Explore sheet (its full feed) in the same pass, so nothing on
-  // screen changed for about half a second after the tap. Now the visible close starts at once,
-  // imperatively — backdrop fading, bar back to its collapsed width — and the Explore sheet's
-  // remount waits a frame (exploreHeld), keeping the close commit itself light.
+  // Closing search from its X or the white backdrop. Everything visible about the close — the
+  // backdrop fade, the bar back to its collapsed width, the X and results dropdown going away —
+  // happens in the one commit that clears searchFocused (the width and fade via the layout effects
+  // above), so no frame shows half of it. An earlier version started the fade and width change
+  // imperatively before that commit, which showed one frame of the narrowed bar with the X still
+  // in it, pushed left. What keeps that commit light (it used to take ~0.5s) is that the Explore
+  // sheet's remount waits a frame (exploreHeld).
   const closeSearch = useCallback(() => {
     searchFromSheetRef.current = false;
-    searchFocusProgress.value = withTiming(0, { duration: 200, easing: Easing.out(Easing.cubic) });
-    searchWidthAnim.setValue(searchCollapsedWidth);
     searchInputRef.current?.blur();
     setExploreHeld(true);
     setSearchFocused(false);
     setSearchQuery('');
-  }, [searchCollapsedWidth]);
+  }, []);
   // True only after the zoom animation into a country completes, so pins don't flash
   // during the animation (when region.latitudeDelta is still at world-view level).
   const selectedCountryRef   = useRef<CountryCluster | null>(null);
@@ -2080,6 +2085,14 @@ const destItems = useMemo((): DestItem[] =>
 
   // ── Search results ────────────────────────────────────────────────────────
   const searchResults = useMemo(() => computeSearchResults(searchQuery), [searchQuery]);
+  // What shows before anything is typed (see computeSuggestions) — possibly nothing. Worked out when
+  // search opens, from the map view at that moment: the camera doesn't move while searching (the white
+  // backdrop covers the map), so there's no need to recompute it on every camera frame.
+  const searchSuggestions = useMemo(() => !searchFocused ? [] : computeSuggestions({
+    recents: recentSearches ?? [],
+    view: { ...regionRef.current, zoom: camZoomRef.current },
+    savedDestinations, savedSpots,
+  }), [searchFocused, recentSearches, savedDestinations, savedSpots]);
   // Text typed into the search bar never outlives the search: whenever the bar isn't focused,
   // any query is dropped — including one that arrives late (the native field can re-report its
   // old text through onChangeText when it's blurred in the same tick it's emptied, which is
@@ -3144,6 +3157,7 @@ const destItems = useMemo((): DestItem[] =>
   }, [savedDestinations]);
 
   const handleSearchSelect = useCallback((item: SearchResult) => {
+    addRecentSearch(toRecentSearch(item));
     setExploreRestore(undefined);
     setSearchQuery('');
     setSearchFocused(false);
@@ -3183,7 +3197,7 @@ const destItems = useMemo((): DestItem[] =>
       handleSpotPress(item.spot);
       setSpotOrigin('search');
     }
-  }, [handleCountryPress, handleMarkerPress, handleSpotPress, region, selectedCountry, savedDestinations, buildCountryCluster]);
+  }, [handleCountryPress, handleMarkerPress, handleSpotPress, region, selectedCountry, savedDestinations, buildCountryCluster, addRecentSearch]);
 
   // Tapping a destination card in the Explore feed (ExploreSheet/DiscoverScreen). Deliberately
   // does NOT set selectedCountry the way handleSearchSelect's destination branch does — that
@@ -4108,9 +4122,10 @@ const destItems = useMemo((): DestItem[] =>
         </Animated.View>
 
 
-        {/* Search results (or, with no query yet, suggested destinations) — capped above
-            the keyboard (searchResultsMaxHeight) and scrollable once results overflow it. */}
-        {searchFocused && (searchResults.length > 0 || searchQuery.trim().length > 0) && (
+        {/* Search results (or, with no query yet, any suggestions — see computeSuggestions; with
+            none, no dropdown at all) — capped above the keyboard (searchResultsMaxHeight) and
+            scrollable once results overflow it. */}
+        {searchFocused && (searchQuery.trim().length > 0 || searchSuggestions.length > 0) && (
           <ScrollView
             style={[styles.searchResultsList, { maxHeight: searchResultsMaxHeight }]}
             contentContainerStyle={{ paddingRight: 2 }}
@@ -4124,7 +4139,14 @@ const destItems = useMemo((): DestItem[] =>
             // Android's own scrollbar already respects the clip).
             scrollIndicatorInsets={{ top: 4, right: 3, bottom: 4 }}
           >
-            <SearchResultRows query={searchQuery} results={searchResults} onSelect={handleSearchSelect} />
+            <SearchResultRows
+              query={searchQuery}
+              results={searchResults}
+              sections={searchSuggestions}
+              onSelect={handleSearchSelect}
+              onClearRecent={clearRecentSearches}
+              onRemoveRecent={item => removeRecentSearch(toRecentSearch(item))}
+            />
           </ScrollView>
         )}
       </Animated.View>

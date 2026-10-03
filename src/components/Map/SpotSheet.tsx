@@ -39,6 +39,10 @@ import {
 } from './sheetShared';
 
 const { height: H, width: W } = Dimensions.get('window');
+// Practical-info blue — time needed and cost. Deliberately
+// not green: across the app green means "visited" (pins, rings, card borders, the Visited tag).
+const INFO_BLUE = '#1D4ED8';
+
 const FULL_POS    = 0;
 const CLOSE_POS   = H + 40;  // fully off-screen
 // Sheet settle curve — matches DestinationSheet's own SNAP_CONFIG exactly (same duration,
@@ -179,7 +183,7 @@ function CarouselCard({ spot, isActive, onPress, onAddVisit, gradId }: {
         <View style={st.cardInfo}>
           <View style={st.cardStatRow}>
             <View style={st.cardTimeRow}>
-              <Clock size={12} color="#16A34A" strokeWidth={2.5} />
+              <Clock size={12} color={INFO_BLUE} strokeWidth={2.5} />
               <Text style={st.cardTimeTxt}>{formatVisitTime(spot.visitHoursMin, spot.visitHoursMax)}</Text>
             </View>
             <View style={st.cardStatDivider} />
@@ -1132,7 +1136,7 @@ function SpotSheet({
               level hint (not tied to any one card) since the card itself was shrunk to make
               room for it here. */}
           <View pointerEvents="none" style={st.carouselHintRow}>
-            <ChevronUp size={13} color="#16A34A" strokeWidth={2.5} />
+            <ChevronUp size={13} color="#111827" strokeWidth={2.5} />
             <Text style={st.carouselHintTxt}>Swipe up to explore</Text>
           </View>
         </Reanimated.View>
@@ -1213,7 +1217,7 @@ function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore, nearbyHlScrol
         <View style={st.glanceCard}>
           <View style={st.glanceItem}>
             <View style={[st.glanceIconCircleGray, st.glanceIconCircleBlue]}>
-              <Clock size={20} color="#1D4ED8" />
+              <Clock size={20} color={INFO_BLUE} />
             </View>
             <Text style={st.glanceVal} numberOfLines={1}>{formatVisitTime(spot.visitHoursMin, spot.visitHoursMax)}</Text>
             <Text style={st.glanceLbl}>Time Needed</Text>
@@ -1221,7 +1225,7 @@ function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore, nearbyHlScrol
           <View style={st.glanceDivider} />
           <View style={st.glanceItem}>
             <View style={[st.glanceIconCircleGray, st.glanceIconCircleBlue]}>
-              <Tag size={20} color="#1D4ED8" />
+              <Tag size={20} color={INFO_BLUE} />
             </View>
             <Text style={st.glanceVal} numberOfLines={1}>{formatSpotCost(spot)}</Text>
             <Text style={st.glanceLbl}>Cost (Adult)</Text>
@@ -1416,8 +1420,8 @@ const st = StyleSheet.create({
   // Time-to-spend and cost, side by side below the image rather than overlaid on it.
   cardStatRow: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 2, marginBottom: 8 },
   cardTimeRow: { flexDirection: 'row', alignItems: 'center', gap: 4, flexShrink: 0 },
-  cardTimeTxt: { fontSize: 12.5, fontWeight: '700', color: '#16A34A' },
-  cardStatDivider: { width: 1, height: 12, marginHorizontal: 2, backgroundColor: '#16A34A' },
+  cardTimeTxt: { fontSize: 12.5, fontWeight: '700', color: INFO_BLUE },
+  cardStatDivider: { width: 1, height: 12, marginHorizontal: 2, backgroundColor: INFO_BLUE },
   cardInfo:    { backgroundColor: 'white', paddingHorizontal: 14, paddingTop: 6, paddingBottom: 12 },
   cardBio:     { fontSize: 12.5, color: '#6B7280', lineHeight: 16, minHeight: 48 },
   // Sits below the carousel (a sibling of the ScrollView, not any one card) — sandwiched
@@ -1429,7 +1433,7 @@ const st = StyleSheet.create({
     marginTop: 'auto',
     paddingTop: 3, paddingBottom: COLLAPSED_GAP,
   },
-  carouselHintTxt: { fontSize: 12, fontWeight: '600', color: '#16A34A' },
+  carouselHintTxt: { fontSize: 12, fontWeight: '600', color: '#111827' },
 
   // Peek strip — thin hero-image sliver with the active spot's name, shown while peeking.
   peekStrip: {
