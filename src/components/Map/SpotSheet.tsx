@@ -35,6 +35,7 @@ import EntityPhoto from './EntityPhoto';
 import {
   VisitCardList, VisitModuleSheet, PhotoGalleryModal,
   useDeferredMount,
+  AIContentNote,
 } from './sheetShared';
 
 const { height: H, width: W } = Dimensions.get('window');
@@ -1329,6 +1330,7 @@ function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore, nearbyHlScrol
           </GHScrollView>
         </View>
       )}
+      <AIContentNote />
     </>
   );
 }

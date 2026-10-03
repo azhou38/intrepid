@@ -42,6 +42,7 @@ import {
   parseDateStr, DatePickerModal, PhotoGalleryModal,
   VisitCardList, VisitModuleSheet, type VisitSelectorItem,
   useDeferredMount,
+  AIContentNote,
 } from './sheetShared';
 
 const { height: H, width: W } = Dimensions.get('window');
@@ -1549,6 +1550,7 @@ function DestinationSheet({
                       hlScrollRef={aboutHlScrollRef}
                       whyScrollRef={whyScrollRef}
                     />
+                    <AIContentNote />
                   </View>
 
                   {/* ── SPOTS PANEL — full grid, map-view button ── */}

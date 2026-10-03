@@ -30,7 +30,7 @@ import CircleFlag from '../CircleFlag';
 import { sheetPose } from './sheetPose';
 import EntityPhoto from './EntityPhoto';
 import DestinationCard from './DestinationCard';
-import { VisitCardList, VisitModuleSheet, PhotoGalleryModal, useDeferredMount, type VisitSelectorItem } from './sheetShared';
+import { VisitCardList, VisitModuleSheet, PhotoGalleryModal, useDeferredMount, AIContentNote, type VisitSelectorItem } from './sheetShared';
 
 interface Props {
   cluster: CountryCluster;
@@ -1080,6 +1080,7 @@ function CountrySheet({
                       <Text style={st.glanceEmpty}>No details available yet.</Text>
                     )}
                   </View>
+                  <AIContentNote />
                 </View>
 
                 {/* ── DESTINATIONS PANEL ───────────────────────────────── */}

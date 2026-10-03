@@ -43,6 +43,17 @@ export function useDeferredMount(delayMs = SHEET_PANEL_MOUNT_DELAY_MS): [boolean
   return [ready, reveal];
 }
 
+// Small light-gray note at the bottom of every About tab (country, destination, spot), flagging that
+// its descriptive content is AI-generated.
+export function AIContentNote() {
+  return (
+    <Text style={aiNoteStyle}>
+      Content on this page is AI-generated and may contain inaccuracies.
+    </Text>
+  );
+}
+const aiNoteStyle = { fontSize: 11, color: '#9CA3AF', textAlign: 'center' as const, marginTop: 8, lineHeight: 15 };
+
 export function dedupeNewPhotos(existing: PhotoEntry[], picked: PhotoEntry[]): PhotoEntry[] {
   const existingAssetIds = new Set(existing.map(p => p.assetId).filter((id): id is string => !!id));
   const existingUris     = new Set(existing.map(p => p.uri));
