@@ -561,9 +561,6 @@ const cpinSt = StyleSheet.create({
 });
 
 
-// Spot counts per destination (static — SPOTS never changes at runtime)
-const SPOT_COUNT_BY_DEST: Record<string, number> = {};
-for (const s of SPOTS) SPOT_COUNT_BY_DEST[s.destinationId] = (SPOT_COUNT_BY_DEST[s.destinationId] ?? 0) + 1;
 
 // Radius (in latitude-equivalent degrees) of each destination's own spot spread — how far
 // its farthest spot sits from the destination coordinate, padded. Used to decide when the
@@ -1531,15 +1528,12 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   }, []);
 
   const countryPills = useMemo(() => {
-    // "visitedCount" is spots, not destinations: for each destination marked visited, every
-    // spot it has counts (SPOT_COUNT_BY_DEST) — not just spots individually checked off via
-    // savedSpots, which stays empty for most real data (destinations are commonly marked
-    // visited in bulk without ever visiting each spot one by one), which would make the
-    // country pill badge disappear entirely for effectively every country.
+    // "visitedCount" is the country's visited destinations (see visitIndex) — the number on its
+    // pill's badge.
     const toCluster = (g: (typeof COUNTRY_GROUPS)[number]): CountryCluster => {
       let visitedCount = 0;
       for (const id of g.destIds) {
-        if (visitIndex.isDestVisited(id)) visitedCount += SPOT_COUNT_BY_DEST[id] ?? 0;
+        if (visitIndex.isDestVisited(id)) visitedCount += 1;
       }
       return {
         country: g.country, countryCode: g.countryCode,
@@ -3553,10 +3547,9 @@ const destItems = useMemo((): DestItem[] =>
     // Plain border (no glow/shadow) on every OTHER visited country's pill, always — the
     // selected country keeps the full glow treatment instead, handled separately below so
     // the two states never compete on the same element. Checked against
-    // visitedCountryCodeSet (destination-visited-status based, same source the map boundary
-    // highlight uses) rather than cluster.visitedCount, which is actually a SPOT count
-    // (SPOT_COUNT_BY_DEST) — a visited destination with zero spots in the data would leave
-    // visitedCount at 0 despite genuinely being visited, silently hiding this border.
+    // visitedCountryCodeSet (the same source the map boundary highlight uses) rather than
+    // cluster.visitedCount, which only counts destinations — a country visited through its own
+    // trips alone has none.
     const isClusterVisited = visitedCountryCodeSet.has(cluster.countryCode);
     const isVisitedHighlighted = isClusterVisited && !isSelectedPill;
     // An unvisited country's pill has no border until it is selected; then it wears a light-gray wrap-around border
