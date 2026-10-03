@@ -35,6 +35,7 @@ import { photoCache, getOrFetchWikiThumbnail, fetchCommonsPhoto } from '../../ut
 import CircleFlag from '../CircleFlag';
 import { sheetPose } from './sheetPose';
 import EntityPhoto from './EntityPhoto';
+import { PHOTO_FOCUS_Y } from '../../data/imageOverrides';
 import ClimateDetailModal from './ClimateDetailModal';
 import { MONTHS_SHORT } from '../../utils/travelData';
 import { getCrowdMeta } from '../../utils/climateApi';
@@ -42,6 +43,7 @@ import {
   parseDateStr, DatePickerModal, PhotoGalleryModal,
   VisitCardList, VisitModuleSheet, type VisitSelectorItem,
   useDeferredMount,
+  AIContentNote,
 } from './sheetShared';
 
 const { height: H, width: W } = Dimensions.get('window');
@@ -247,6 +249,8 @@ function WhyVisitCarousel({ destination, scrollRef }: {
                 cache={photoCache}
                 load={() => fetchCommonsPhoto(file, 960)}
                 placeholderColor="#E5E7EB"
+                focusY={PHOTO_FOCUS_Y[file]}
+                frame={{ w: WHY_CARD_W, h: WHY_CARD_H }}
               />
             )}
             {/* Caption on its own translucent dark strip across the bottom of the photo, whose top
@@ -1549,6 +1553,7 @@ function DestinationSheet({
                       hlScrollRef={aboutHlScrollRef}
                       whyScrollRef={whyScrollRef}
                     />
+                    <AIContentNote />
                   </View>
 
                   {/* ── SPOTS PANEL — full grid, map-view button ── */}
@@ -1850,10 +1855,12 @@ const st = StyleSheet.create({
   // Highlight cards (bigger than the old spot preview cards — photo, badge, name, bio)
   // The cards have an outer shadow, which a horizontal ScrollView clips at its edges — so the row gets
   // padding to hold it, and the scroll view matching negative margins so the layout doesn't shift.
-  // 12px each way: the shadow (radius 8, 2px down) reaches ~10px out, and anything less clipped it in a
-  // straight line that showed as a faint band above the cards.
-  hlScroll:     { marginHorizontal:-12, marginTop:-12, marginBottom:-8 },
-  hlRow:        { gap:14, paddingHorizontal:12, paddingTop:12, paddingBottom:12 },
+  // 12px above and to the sides: the shadow (radius 8, 2px down) reaches ~10px out, and anything less
+  // clipped it in a straight line that showed as a faint band above the cards. 22px below, where the 2px
+  // offset pushes its falloff furthest (~18px) — at 12 it ended in a hard edge under the cards. Same as
+  // SpotSheet's Nearby Spots row.
+  hlScroll:     { marginHorizontal:-12, marginTop:-12, marginBottom:-18 },
+  hlRow:        { gap:14, paddingHorizontal:12, paddingTop:12, paddingBottom:22 },
 
   // Spots tab — 2-column wrapping grid of SpotCards,
   // and a discrete link into the sliding spot carousel (kept

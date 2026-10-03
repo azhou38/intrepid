@@ -4,6 +4,7 @@ import React, { useRef, useEffect, useState, useCallback } from 'react';
 import {
   View, Text, StyleSheet, Pressable, ScrollView, Image,
   Dimensions, Modal, TextInput, Platform, KeyboardAvoidingView, Alert, Animated,
+  type StyleProp, type TextStyle,
 } from 'react-native';
 import { ScrollView as GHScrollView, Gesture, GestureDetector, State } from 'react-native-gesture-handler';
 import Reanimated, { useSharedValue, useAnimatedStyle, withTiming, runOnJS } from 'react-native-reanimated';
@@ -42,6 +43,17 @@ export function useDeferredMount(delayMs = SHEET_PANEL_MOUNT_DELAY_MS): [boolean
   }, [reveal, delayMs]);
   return [ready, reveal];
 }
+
+// Small light-gray note at the bottom of every About tab (country, destination, spot), flagging that
+// its descriptive content is AI-generated.
+export function AIContentNote({ style }: { style?: StyleProp<TextStyle> }) {
+  return (
+    <Text style={[aiNoteStyle, style]}>
+      AI-generated content. Verify important information.
+    </Text>
+  );
+}
+const aiNoteStyle = { fontSize: 12, color: '#D1D5DB', textAlign: 'center' as const, marginTop: 0, marginBottom: 10, lineHeight: 16 };
 
 export function dedupeNewPhotos(existing: PhotoEntry[], picked: PhotoEntry[]): PhotoEntry[] {
   const existingAssetIds = new Set(existing.map(p => p.assetId).filter((id): id is string => !!id));

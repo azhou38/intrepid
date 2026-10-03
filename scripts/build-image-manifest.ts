@@ -21,6 +21,7 @@ import { DESTINATIONS } from '../src/data/destinations';
 import { SPOTS } from '../src/data/spots';
 import { WIKI_IMAGE_OVERRIDES } from '../src/data/imageOverrides';
 import { manifestKey, buildThumbUrl, THUMB_STEPS, type ManifestEntry } from '../src/utils/imageUrl';
+import { checkCuratedHeaders, checkHeaderDimensions } from './destination-header-policy';
 
 const UA = 'IntrepidApp-ImageManifest/1.0 (personal hobby project)';   // Wikimedia asks for a descriptive UA
 const TEMPLATE_WIDTH = 960;
@@ -101,7 +102,7 @@ async function viaSearch(query: string): Promise<Hit | null> {
 // ── File metadata: original URL/size (a thumbnail can't be wider than the source) + credit ─────
 
 const stripHtml = (s?: string) => (s ?? '').replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim() || undefined;
-type FileInfo = { o: string; ow: number; credit: ManifestEntry['credit'] };
+type FileInfo = { o: string; ow: number; oh: number; credit: ManifestEntry['credit'] };
 
 function toFileInfo(page: any): FileInfo | null {
   const info = page?.imageinfo?.[0];
@@ -110,6 +111,7 @@ function toFileInfo(page: any): FileInfo | null {
   return {
     o: info.url as string,
     ow: (info.width as number) ?? 0,
+    oh: (info.height as number) ?? 0,
     credit: {
       by: stripHtml(m.Artist?.value),
       license: stripHtml(m.LicenseShortName?.value),
@@ -163,6 +165,18 @@ for (const c of countries) {
 
 async function main() {
   const started = Date.now();
+
+  // Every destination needs a hand-picked header image (see destination-header-policy.ts / AGENTS.md).
+  // Checked before any network work, so a new destination can't slip into the manifest with whatever
+  // photo happens to lead its Wikipedia article.
+  const headerCheck = checkCuratedHeaders();
+  for (const w of headerCheck.warnings) console.warn(`warning: ${w}`);
+  if (headerCheck.errors.length) {
+    for (const e of headerCheck.errors) console.error(`error: ${e}`);
+    console.error('ABORTED — no manifest written. Give these destinations a hand-picked header image first.');
+    process.exit(1);
+  }
+
   const overrides = WIKI_IMAGE_OVERRIDES as Record<string, string>;
   const keys = [...lookups.keys()].sort();
   const titles = [...new Set([...lookups.values()].map(l => l.title))];
@@ -226,6 +240,13 @@ async function main() {
   const infos = await fileInfos(files);
   console.log(`D. file info: ${[...infos.values()].filter(Boolean).length}/${files.length} resolved`);
 
+  // Hand-picked destination headers that are too small, or too wide/tall for the phone's near-square
+  // header crop. Reported (not fatal) so the photo can be swapped — see destination-header-policy.ts.
+  const headerProblems = checkHeaderDimensions(file => {
+    const info = infos.get(file);
+    return info ? { w: info.ow, h: info.oh } : undefined;
+  });
+
   const entries: Record<string, ManifestEntry> = {};
   const missing: string[] = [];                           // the API answered, and there is no usable photo
   for (const key of keys) {
@@ -266,6 +287,10 @@ async function main() {
   console.log(`\nDone in ${Math.round((Date.now() - started) / 1000)}s. Wrote ${Object.keys(entries).length} of ${keys.length} entries.`);
   console.log(`No photo found for ${missing.length}:`, missing);
   console.log(`URLs that failed verification: ${bad.length}`, bad.slice(0, 20));
+  if (headerProblems.length) {
+    console.warn(`\nDestination header images to review (${headerProblems.length}):`);
+    for (const p of headerProblems) console.warn(`  - ${p}`);
+  }
 }
 
 main().catch(e => { console.error('ABORTED — no manifest written:', e); process.exit(1); });
