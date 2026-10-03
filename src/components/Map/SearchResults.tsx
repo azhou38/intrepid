@@ -258,7 +258,7 @@ const st = StyleSheet.create({
     fontSize: 11, fontWeight: '700', color: '#9CA3AF', letterSpacing: 0.5,
     textTransform: 'uppercase',
   },
-  clear: { fontSize: 12, fontWeight: '600', color: '#6B7280' },
+  clear: { fontSize: 12, fontWeight: '600', color: '#9CA3AF' },
   noResults: {
     fontSize: 14, color: '#9CA3AF', textAlign: 'center',
     paddingHorizontal: 14, paddingVertical: 24,

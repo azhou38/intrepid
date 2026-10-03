@@ -1121,7 +1121,8 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // closeSearch), so the commit that closes search stays light. The restore hint is only cleared
   // once the sheet has actually remounted with it.
   const [exploreHeld, setExploreHeld] = useState(false);
-  useEffect(() => {
+  // Layout effect: the frame's wait starts with the close commit itself, not once passive effects run.
+  useLayoutEffect(() => {
     if (!exploreHeld) return;
     const id = requestAnimationFrame(() => setExploreHeld(false));
     return () => cancelAnimationFrame(id);

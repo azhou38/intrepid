@@ -236,6 +236,7 @@ export default function DiscoverScreen({
             <ScrollView
               horizontal
               showsHorizontalScrollIndicator={false}
+              style={styles.cardScroll}
               contentContainerStyle={styles.cardRow}
             >
               {section.items.map(dest => (
@@ -292,5 +293,10 @@ const styles = StyleSheet.create({
   },
   sectionEmoji: { fontSize: 18 },
   sectionTitle: { fontSize: 17, fontWeight: '700', color: '#111827' },
-  cardRow: { paddingHorizontal: 16, gap: 12, paddingTop: 2, paddingBottom: 14 },
+  // The cards' shadow (radius 8, 2px down) reaches ~10px above them and ~18px below, and a horizontal
+  // ScrollView clips to its own bounds — with 2px/14px of room it ended in hard lines at both edges.
+  // The row pads to hold the whole shadow; the scroll view's negative margins take that extra room back
+  // out of the layout, so the sections sit exactly where they did.
+  cardScroll: { marginTop: -10, marginBottom: -8 },
+  cardRow: { paddingHorizontal: 16, gap: 12, paddingTop: 12, paddingBottom: 22 },
 });

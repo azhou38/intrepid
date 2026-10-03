@@ -31,6 +31,9 @@ const COLLAPSED_Y = Math.max(0, H - BOTTOM_TAB_H - COMPACT_H);
 const HALF_SHIFT = 1;
 const HALF_POS   = H / 2 + HALF_SHIFT;
 const SNAP_CONFIG = { duration: 280, easing: Easing.out(Easing.cubic) };
+// Coming back after search (see initialSnap): a touch quicker than the normal entrance, since the
+// user is returning to something they just had open rather than being shown something new.
+const RESTORE_CONFIG = { duration: 220, easing: Easing.out(Easing.cubic) };
 
 type ExploreSnapState = 'collapsed' | 'half' | 'full';
 
@@ -191,7 +194,7 @@ function ExploreSheet({ collapseSignal, onSnapStateChange, onSelectDestination, 
     // failsafe so it can never stay hidden if that never fires.
     if (initialScrollY) setTimeout(() => setFeedReady(true), 250);
     lastPos.value = startPos;
-    slideAnim.value = withTiming(startPos, SNAP_CONFIG);
+    slideAnim.value = withTiming(startPos, startSnap ? RESTORE_CONFIG : SNAP_CONFIG);
     if (startSnap) onSnapStateChange?.(initialSnap!);
   }, []);
 
