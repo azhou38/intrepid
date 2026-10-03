@@ -141,22 +141,21 @@ export function withoutAutoLogs(r: VisitRecords): VisitRecords {
 
 // ── Counting what's logged beneath a place (for the remove-visit warnings) ─────────────────────────
 
-const hasSpotLog = (rec: SavedSpot) => !!rec.visits?.length || !!rec.visitDate;
+// A place counts as "logged" here whenever it's visited — with a log of its own or not.
 
-// How many of a destination's spots have something logged.
-export function spotsWithLogsIn(r: VisitRecords, destinationId: string): number {
-  return Object.entries(r.savedSpots).filter(([id, rec]) => SPOT_DEST.get(id) === destinationId && hasSpotLog(rec)).length;
+// How many of a destination's spots are visited.
+export function visitedSpotsIn(r: VisitRecords, destinationId: string): number {
+  const index = buildVisitIndex(r.savedDestinations, r.savedSpots, r.savedCountries);
+  return [...index.visitedSpotIds].filter(id => SPOT_DEST.get(id) === destinationId).length;
 }
 
-// How many of a country's destinations, and of their spots, have something logged.
-export function placesWithLogsInCountry(r: VisitRecords, countryCode: string): { destinations: number; spots: number } {
-  const destinations = Object.entries(r.savedDestinations).filter(([id, rec]) =>
-    DEST_COUNTRY.get(id) === countryCode && destinationTripsOf(rec, r.savedSpots).length > 0).length;
-  const spots = Object.entries(r.savedSpots).filter(([id, rec]) => {
-    const destId = SPOT_DEST.get(id);
-    return !!destId && DEST_COUNTRY.get(destId) === countryCode && hasSpotLog(rec);
-  }).length;
-  return { destinations, spots };
+// How many of a country's destinations, and of their spots, are visited.
+export function visitedPlacesInCountry(r: VisitRecords, countryCode: string): { destinations: number; spots: number } {
+  const index = buildVisitIndex(r.savedDestinations, r.savedSpots, r.savedCountries);
+  return {
+    destinations: [...index.visitedDestIds].filter(id => DEST_COUNTRY.get(id) === countryCode).length,
+    spots: [...index.visitedSpotIds].filter(id => DEST_COUNTRY.get(SPOT_DEST.get(id) ?? '') === countryCode).length,
+  };
 }
 
 const counted = (n: number, word: string) => `${n} ${word}${n === 1 ? '' : 's'}`;

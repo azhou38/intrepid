@@ -1441,6 +1441,8 @@ export function VisitCardList<T extends VisitSelectorItem>({
         // no trailing margin).
         const headerOnly = !v.notes && !itemsForVisit.length && !v.photos?.length;
         const readOnly = !!isReadOnly?.(v);
+        // Only a title so far — invite the dates, the first thing most people add.
+        const titleOnly = headerOnly && !v.startDate && !readOnly;
         return (
           <View key={v.id} style={vcS.memCardShadow}>
             <View style={vcS.memCard}>
@@ -1448,16 +1450,22 @@ export function VisitCardList<T extends VisitSelectorItem>({
                 <View style={{ flex: 1 }}>
                   {!!(v.title || defaultTitle) && (
                     // No trailing gap when nothing follows it — an undated trip's header is just its title.
-                    <Text style={[vcS.memTripNameHeading, !ratingValue && !v.startDate && { marginBottom: 0 }]} numberOfLines={2}>
+                    <Text style={[vcS.memTripNameHeading, !ratingValue && !v.startDate && !titleOnly && { marginBottom: 0 }]} numberOfLines={2}>
                       {v.title || defaultTitle}
                     </Text>
                   )}
                   {!!ratingValue && (
-                    <View style={[vcS.memRatingRow, !v.startDate && { marginBottom: 0 }]}>
+                    <View style={[vcS.memRatingRow, !v.startDate && !titleOnly && { marginBottom: 0 }]}>
                       <StarRating value={ratingValue} size={13} />
                     </View>
                   )}
-                  {/* Nothing at all for an undated trip, rather than a "no dates" label. */}
+                  {titleOnly && (
+                    <Pressable style={vcS.memAddDates} onPress={() => onEditVisit(v)} hitSlop={6}>
+                      <Calendar size={13} color="#9CA3AF" />
+                      <Text style={vcS.memAddDatesTxt}>Add {noun.toLowerCase()} dates</Text>
+                    </Pressable>
+                  )}
+                  {/* Otherwise nothing at all for an undated trip, rather than a "no dates" label. */}
                   {!!v.startDate && (
                     <Text style={vcS.memDateVal}>
                       {fmtVisitRangeShort(v)}
@@ -1617,6 +1625,8 @@ const vcS = StyleSheet.create({
   emptyBtn:            { flexDirection:'row', alignItems:'center', gap:6, height:40, paddingHorizontal:18,
                          borderRadius:20, backgroundColor:'#111827' },
   emptyBtnTxt:         { fontSize:14, fontWeight:'700', color:'white' },
+  memAddDates:         { flexDirection:'row', alignItems:'center', gap:6, alignSelf:'flex-start' },
+  memAddDatesTxt:      { fontSize:14, fontWeight:'600', color:'#9CA3AF' },
   memEditBtn:          { flexDirection:'row', alignItems:'center', gap:5, paddingHorizontal:10, paddingVertical:6,
                          borderRadius:10, backgroundColor:'rgba(255,255,255,0.14)' },
   memEditBtnTxt:       { fontSize:12, fontWeight:'600', color:'white' },

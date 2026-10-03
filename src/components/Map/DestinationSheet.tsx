@@ -28,7 +28,7 @@ import { Gesture, GestureDetector, ScrollView } from 'react-native-gesture-handl
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { X, Check, Calendar, MapPin, Camera, Pencil, Plus, ChevronRight, ChevronDown, Map } from 'lucide-react-native';
 import { useStore, useVisitIndex } from '../../store';
-import { destinationTripsOf, removeDestinationMessage, spotsWithLogsIn } from '../../utils/visitStatus';
+import { destinationTripsOf, removeDestinationMessage, visitedSpotsIn } from '../../utils/visitStatus';
 import SpotCard from './SpotCard';
 import type { Destination, PhotoEntry, Visit, GoodToKnowTip } from '../../types';
 import { SPOTS, type Spot } from '../../data/spots';
@@ -872,14 +872,10 @@ function DestinationSheet({
               )}
             </View>
           ) : tab === 'spots' ? (
-            <View style={{ flexDirection:'row', alignItems:'center', gap:6 }}>
-              <Text style={[st.tabBtnTxt, isTabSelected('spots') && st.tabBtnTxtActive]}>Spots</Text>
-              {spots.length > 0 && (
-                <View style={st.tabSpotsBadge}>
-                  <Text style={st.tabSpotsBadgeTxt}>{spots.length}</Text>
-                </View>
-              )}
-            </View>
+            // Count as plain text after the label — "Spots (12)".
+            <Text style={[st.tabBtnTxt, isTabSelected('spots') && st.tabBtnTxtActive]}>
+              Spots{spots.length > 0 ? ` (${spots.length})` : ''}
+            </Text>
           ) : (
             <Text style={[st.tabBtnTxt, isTabSelected(tab) && st.tabBtnTxtActive]}>About</Text>
           )}
@@ -1276,7 +1272,7 @@ function DestinationSheet({
       // Un-visits it entirely: its own trips, its spots' visits, and its ticks on country trips.
       Alert.alert(
         'Remove visit?',
-        removeDestinationMessage(destination.name, spotsWithLogsIn(useStore.getState(), destination.id)),
+        removeDestinationMessage(destination.name, visitedSpotsIn(useStore.getState(), destination.id)),
         [
           { text: 'Cancel', style: 'cancel' },
           {
@@ -1767,14 +1763,10 @@ const st = StyleSheet.create({
   tabDivider:          { width: StyleSheet.hairlineWidth, marginVertical:14, backgroundColor:'#E5E7EB' },
   tabBtnTxt:           { fontSize:15, fontWeight:'600', color:'#9CA3AF' },
   tabBtnTxtActive:     { color:'#111827' },
-  // Visit and Spots counts share the same plain gray scheme — neither switches color when
-  // its tab is selected.
+  // The My Visits count — plain gray, doesn't switch color when its tab is selected.
   tabVisitBadge:       { minWidth:20, height:20, borderRadius:6, backgroundColor:'#E5E7EB',
                          paddingHorizontal:5, alignItems:'center', justifyContent:'center' },
   tabVisitBadgeTxt:    { fontSize:11, fontWeight:'800', color:'#6B7280', lineHeight:14 },
-  tabSpotsBadge:    { minWidth:20, height:20, borderRadius:6, backgroundColor:'#E5E7EB',
-                      paddingHorizontal:5, alignItems:'center', justifyContent:'center' },
-  tabSpotsBadgeTxt: { fontSize:11, fontWeight:'800', color:'#6B7280', lineHeight:14 },
   // Animated sliding underline — outer track keeps the full per-tab width (for left/width
   // positioning math elsewhere), the visible bar inside it is narrower and centered.
   tabIndicatorTrack: {

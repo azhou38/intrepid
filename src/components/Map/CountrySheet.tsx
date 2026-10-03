@@ -22,7 +22,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Check, Plus, Users, Languages, Coins, Maximize, Landmark } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
 import { useStore, useVisitIndex } from '../../store';
-import { countryTripsOf, placesWithLogsInCountry, removeCountryMessage } from '../../utils/visitStatus';
+import { countryTripsOf, visitedPlacesInCountry, removeCountryMessage } from '../../utils/visitStatus';
 import type { Destination, CountryCluster, Visit } from '../../types';
 import { DESTINATIONS } from '../../data/destinations';
 import { SPOTS } from '../../data/spots';
@@ -296,7 +296,7 @@ function CountrySheet({
       // Un-visits it entirely: its own trips and everything logged for its destinations and spots.
       Alert.alert(
         'Remove visit?',
-        removeCountryMessage(cluster.country, placesWithLogsInCountry(useStore.getState(), cluster.countryCode)),
+        removeCountryMessage(cluster.country, visitedPlacesInCountry(useStore.getState(), cluster.countryCode)),
         [
           { text: 'Cancel', style: 'cancel' },
           { text: 'Remove', style: 'destructive', onPress: () => unvisitCountry(cluster.countryCode) },
@@ -823,16 +823,10 @@ function CountrySheet({
             }}
           >
             {tab === 'destinations' ? (
-              <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
-                <Text style={[st.tabBtnTxt, isTabSelected('destinations') && st.tabBtnTxtActive]}>
-                  Destinations
-                </Text>
-                {dests.length > 0 && (
-                  <View style={st.tabDestsBadge}>
-                    <Text style={st.tabDestsBadgeTxt}>{dests.length}</Text>
-                  </View>
-                )}
-              </View>
+              // Count as plain text after the label — "Destinations (8)".
+              <Text style={[st.tabBtnTxt, isTabSelected('destinations') && st.tabBtnTxtActive]}>
+                Destinations{dests.length > 0 ? ` (${dests.length})` : ''}
+              </Text>
             ) : (
               <Text style={[st.tabBtnTxt, isTabSelected(tab) && st.tabBtnTxtActive]}>
                 {tab === 'visit' ? 'My Visit' : 'About'}
@@ -1233,11 +1227,6 @@ const st = StyleSheet.create({
   tabBtnTxt: { fontSize: 15, fontWeight: '600', color: '#9CA3AF' },
   tabBtnTxtActive: { color: '#111827' },
   tabDivider: { width: StyleSheet.hairlineWidth, marginVertical: 14, backgroundColor: '#E5E7EB' },
-  // Destination count — identical treatment to DestinationSheet's own tabSpotsBadge (plain
-  // gray rounded-square, doesn't switch color when the tab is selected).
-  tabDestsBadge:    { minWidth: 20, height: 20, borderRadius: 6, backgroundColor: '#E5E7EB',
-                      paddingHorizontal: 5, alignItems: 'center', justifyContent: 'center' },
-  tabDestsBadgeTxt: { fontSize: 11, fontWeight: '800', color: '#6B7280', lineHeight: 14 },
   tabIndicatorTrack: { position: 'absolute', bottom: 0, alignItems: 'center' },
   tabIndicator: { width: 28, height: 2.5, backgroundColor: '#111827', borderRadius: 2 },
 
