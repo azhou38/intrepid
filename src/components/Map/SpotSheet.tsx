@@ -25,7 +25,7 @@ import * as Haptics from 'expo-haptics';
 import { useStore, useVisitIndex } from '../../store';
 import type { Destination, Visit } from '../../types';
 import type { Spot } from '../../data/spots';
-import { DAY_NAMES, hoursForDay, formatSpotCost, formatVisitTime, getSpotOpenStatus, specialClosureOn, zonedNowForSpot } from '../../data/spots';
+import { DAY_NAMES, hoursForDay, formatSpotCost, formatVisitTime, getSpotOpenStatus, specialClosureOn, spotCountry, spotCountryCode, zonedNowForSpot } from '../../data/spots';
 import { photoCache, thumbCache, getOrFetchWikiThumbnail, HEADER_PX } from '../../utils/photoCache';
 import CircleFlag from '../CircleFlag';
 import FadeInImage from './FadeInImage';
@@ -201,7 +201,8 @@ function CarouselCard({ spot, isActive, onPress, onAddVisit, gradId }: {
 interface Props {
   spots: Spot[];
   focusSpotId: string;
-  destination: Destination;
+  // The spots' destination — null for a STANDALONE spot, which has none. The sheet then names only the spot's country.
+  destination?: Destination | null;
   // `toCollapsed` is true when this fires from a swipe-down while the carousel itself was
   // collapsed (bottom-screen), so the caller can land the destination sheet underneath in
   // its own collapsed/bottom-screen view instead of the usual half-screen default. False
@@ -988,14 +989,14 @@ function SpotSheet({
                 <Text style={st.heroName} numberOfLines={2}>{activeSpot.name}</Text>
                 <View style={st.heroMeta}>
                   {/* A standalone spot has no destination to name — just its country. */}
-                  {!destination.standaloneSpotId && (
+                  {!!destination && (
                     <>
                       <Text style={st.heroMetaTxt}>{destination.name}</Text>
                       <View style={st.heroMetaDivider} />
                     </>
                   )}
-                  <CircleFlag countryCode={destination.countryCode} size={13} />
-                  <Text style={[st.heroMetaTxt, { marginLeft: 4 }]}>{destination.country}</Text>
+                  {!!spotCountryCode(activeSpot) && <CircleFlag countryCode={spotCountryCode(activeSpot)!} size={13} />}
+                  <Text style={[st.heroMetaTxt, { marginLeft: 4 }]}>{spotCountry(activeSpot)}</Text>
                 </View>
                 <Text style={st.heroBio} numberOfLines={3}>{activeSpot.bio}</Text>
               </View>
@@ -1106,8 +1107,8 @@ function SpotSheet({
           {/* Heading — indicates you're browsing the spots within this destination */}
           <View style={st.carHeader}>
             <View style={{ flex: 1 }}>
-              <Text style={st.carEyebrow}>{destination.standaloneSpotId ? 'SPOT IN' : 'SPOTS IN'}</Text>
-              <Text style={st.carDest} numberOfLines={1}>{destination.standaloneSpotId ? destination.country : destination.name}</Text>
+              <Text style={st.carEyebrow}>{destination ? 'SPOTS IN' : 'SPOT IN'}</Text>
+              <Text style={st.carDest} numberOfLines={1}>{destination ? destination.name : spotCountry(activeSpot)}</Text>
             </View>
             {spots.length > 1 && <Text style={st.carCounter}>{activeIndex + 1} / {spots.length}</Text>}
             {!!onGoToList && (

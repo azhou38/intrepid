@@ -100,27 +100,9 @@ export function spotTimezone(spot: Spot): string | undefined {
   return spot.timezone ?? spotDestination(spot)?.timezone;
 }
 
-// What a standalone spot "looks like" as a destination, for the parts of the UI that are written around a selected
-// destination (the map's selection and camera framing, the spot sheet's heading). In-memory only: it is not in
-// DESTINATIONS, is never saved, and is flagged with standaloneSpotId. The zoom span is the one place its pins appear
-// at (see isPastDestDefaultZoom in MapScreen) and where "close" returns the camera to.
+// How wide a view frames a standalone spot (it has no destination to supply a default zoom): the span its pin
+// appears at on the map, and where closing it returns the camera to.
 export const STANDALONE_SPOT_SPAN_KM = 40;
-const contextCache = new Map<string, Destination>();
-export function spotContext(spot: Spot): Destination | undefined {
-  const real = spotDestination(spot);
-  if (real) return real;
-  if (spot.destinationId || !spot.country || !spot.countryCode || !spot.continent || !spot.timezone) return undefined;
-  let ctx = contextCache.get(spot.id);
-  if (!ctx) {
-    ctx = {
-      id: spot.id, standaloneSpotId: spot.id, name: spot.name,
-      country: spot.country, countryCode: spot.countryCode, timezone: spot.timezone, continent: spot.continent,
-      coordinates: spot.coordinates, category: 'landmark', defaultZoomSpanKm: STANDALONE_SPOT_SPAN_KM, rank: 5,
-    };
-    contextCache.set(spot.id, ctx);
-  }
-  return ctx;
-}
 
 /** `date`'s wall-clock date/time as observed in `timeZone`, expressed as a Date whose OWN local
  *  getters (getHours/getDay/setDate/…) read out those wall-clock values — so existing device-

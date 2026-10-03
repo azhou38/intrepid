@@ -101,12 +101,12 @@ A spot with no `destinationId` is standalone, and the app supports it end to end
 Put standalone spots in the "Standalone spots" section at the end of `src/data/spots.ts`. Their id is a unique slug (it must not collide with any destination or spot id), and, like every id, is never changed once shipped.
 
 How they behave:
-- **Map:** the pin appears once the camera is zoomed in to about a 40 km view (`STANDALONE_SPOT_SPAN_KM`), the same handoff a destination's spots use. Selecting one opens the spot sheet alone, with its country as the heading and no destination name, carousel counter or "grid view" button. Closing it returns to a ~40 km view.
+- **Map:** the pin appears once the camera is zoomed in to about a 40 km view (`STANDALONE_SPOT_SPAN_KM`), the same handoff a destination's spots use. Selecting one opens the spot sheet alone, with its country as the heading and no destination name, carousel counter or "grid view" button; the map's breadcrumb names the spot under its country. Nothing is selected as a destination — a standalone spot opened from a destination's context goes back to that destination, otherwise closing it returns to a ~40 km view of its own area.
 - **Search:** found by name, labelled with its country instead of a destination.
 - **Visited:** visiting it marks its **country** visited (there is no destination to carry it up); un-visiting it never un-visits the country, and removing the country removes it. The country sheet's spot count includes it.
 - **Hours:** read in its own `timezone`.
 
-Never read `spot.destinationId` directly: use `spotDestination`, `spotCountryCode`, `spotCountry`, `spotContinent`, `spotTimezone` and `spotContext` from `src/data/spots.ts`, which handle both kinds.
+Never read `spot.destinationId` directly: use `spotDestination`, `spotCountryCode`, `spotCountry`, `spotContinent` and `spotTimezone` from `src/data/spots.ts`, which handle both kinds.
 
 Known limits: a country needs at least one destination to get a map pill and a country sheet (a country with only standalone spots has neither); a standalone spot cannot be ticked in a country trip (that selector lists destinations); and it has no destination sheet, so no "My Visit" grouping above it.
 
