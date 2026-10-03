@@ -1330,7 +1330,8 @@ function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore, nearbyHlScrol
           </GHScrollView>
         </View>
       )}
-      <AIContentNote />
+      {/* A touch higher than the shared default (closer to the Nearby Spots row) and with more room below. */}
+      <AIContentNote style={{ marginTop: -8, marginBottom: 24 }} />
     </>
   );
 }
@@ -1563,8 +1564,11 @@ const st = StyleSheet.create({
   secHeadRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
   seeAllRow:  { flexDirection: 'row', alignItems: 'center', gap: 1 },
   seeAllTxt:  { fontSize: 14, fontWeight: '600', color: '#16A34A' },
-  hlScroll:   { marginHorizontal: -12, marginTop: -12, marginBottom: -8 },
-  hlRow:      { gap: 14, paddingHorizontal: 12, paddingTop: 12, paddingBottom: 12 },
+  // The padding gives the cards' shadows room inside the horizontal ScrollView, which clips to its own
+  // bounds — the negative margins take that room back out of the layout. Below the cards it has to cover
+  // the full shadow (radius 8 + 2 offset, ~18px of falloff); at 12 the shadow ended in a hard edge.
+  hlScroll:   { marginHorizontal: -12, marginTop: -12, marginBottom: -18 },
+  hlRow:      { gap: 14, paddingHorizontal: 12, paddingTop: 12, paddingBottom: 22 },
   // Extra breathing room below the carousel — it's the last section in the About panel, and
   // hlScroll's own negative marginBottom (pulled up to tighten the row-to-card gap) otherwise
   // leaves almost nothing between the cards and the panel's own scroll-end padding.
