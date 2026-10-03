@@ -209,7 +209,7 @@ function SearchResultRow({ item, last, onSelect, onRemove }: {
   item: SearchResult;
   last: boolean;
   onSelect: (item: SearchResult) => void;
-  // Shown as an X in place of the type badge (Recent rows).
+  // Shown as an X after the type badge (Recent rows).
   onRemove?: (item: SearchResult) => void;
 }) {
   let icon: string | null, countryCode: string | null, label: string, sublabel: string, badge: string;
@@ -237,12 +237,11 @@ function SearchResultRow({ item, last, onSelect, onRemove }: {
         <Text style={st.label} numberOfLines={1}>{label}</Text>
         {sublabel ? <Text style={st.sub} numberOfLines={1}>{sublabel}</Text> : null}
       </View>
-      {onRemove ? (
-        <Pressable onPress={() => onRemove(item)} hitSlop={10} accessibilityLabel={`Remove ${label} from recent searches`}>
+      <Text style={st.badge}>{badge}</Text>
+      {onRemove && (
+        <Pressable onPress={() => onRemove(item)} hitSlop={10} style={st.remove} accessibilityLabel={`Remove ${label} from recent searches`}>
           <X size={16} color="#9CA3AF" />
         </Pressable>
-      ) : (
-        <Text style={st.badge}>{badge}</Text>
       )}
     </Pressable>
   );
@@ -271,4 +270,6 @@ const st = StyleSheet.create({
   label: { fontSize: 14, fontWeight: '600', color: '#111827' },
   sub:   { fontSize: 12, color: '#6B7280', marginTop: 1 },
   badge: { fontSize: 11, fontWeight: '600', color: '#9CA3AF' },
+  // A little extra space between the badge and the X, beyond the row's own gap.
+  remove: { marginLeft: 4 },
 });
