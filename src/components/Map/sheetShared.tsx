@@ -2099,7 +2099,7 @@ export function VisitModuleSheet<T extends VisitSelectorItem>({
             {onRatingChange && (
               <View style={esS.section}>
                 <View style={esS.sectionHead}>
-                  <Text style={esS.sectionTitle}>Your Rating</Text>
+                  <Text style={esS.sectionTitle}>Rating</Text>
                 </View>
                 <View style={esS.ratingRow}>
                   {/* onRatingChange itself writes straight to the caller's store (rating lives
