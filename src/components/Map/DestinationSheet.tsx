@@ -35,6 +35,7 @@ import { photoCache, getOrFetchWikiThumbnail, fetchCommonsPhoto } from '../../ut
 import CircleFlag from '../CircleFlag';
 import { sheetPose } from './sheetPose';
 import EntityPhoto from './EntityPhoto';
+import { PHOTO_FOCUS_Y } from '../../data/imageOverrides';
 import ClimateDetailModal from './ClimateDetailModal';
 import { MONTHS_SHORT } from '../../utils/travelData';
 import { getCrowdMeta } from '../../utils/climateApi';
@@ -248,6 +249,8 @@ function WhyVisitCarousel({ destination, scrollRef }: {
                 cache={photoCache}
                 load={() => fetchCommonsPhoto(file, 960)}
                 placeholderColor="#E5E7EB"
+                focusY={PHOTO_FOCUS_Y[file]}
+                frame={{ w: WHY_CARD_W, h: WHY_CARD_H }}
               />
             )}
             {/* Caption on its own translucent dark strip across the bottom of the photo, whose top

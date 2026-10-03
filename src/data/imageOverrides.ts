@@ -9,6 +9,15 @@
 // panorama (or, for nature destinations, a wide landscape) — never one building, attraction or an aerial
 // view. See AGENTS.md ("Destination header images") and scripts/destination-header-policy.ts, which
 // enforces it.
+// Vertical framing for specific Commons photos shown in a wider-than-tall card (the About tab's "Why visit"
+// cards), keyed by Commons file name: 0 crops toward the photo's top, 0.5 is the default centre crop, 1 its
+// bottom. For photos whose default centre crop lands on the wrong part — see EntityPhoto's `focusY`.
+export const PHOTO_FOCUS_Y: Record<string, number> = {
+  // Centred, the crop landed on the statue's midsection; keep the head and torso in view instead.
+  "Michelangelo's David 2015.jpg": 0.1,
+  "Venice Gondola Grand Canal.jpg": 0.3,
+};
+
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Rovaniemi": "Santa Claus Village (5306867729).jpg",
   "Golden Circle": "Gullfoss, Suðurland, Islandia, 2014-08-16, DD 123.JPG",

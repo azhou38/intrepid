@@ -52,7 +52,7 @@ export function AIContentNote() {
     </Text>
   );
 }
-const aiNoteStyle = { fontSize: 11, color: '#C4C9D1', textAlign: 'center' as const, marginTop: 8, lineHeight: 15 };
+const aiNoteStyle = { fontSize: 12, color: '#D1D5DB', textAlign: 'center' as const, marginTop: 0, marginBottom: 10, lineHeight: 16 };
 
 export function dedupeNewPhotos(existing: PhotoEntry[], picked: PhotoEntry[]): PhotoEntry[] {
   const existingAssetIds = new Set(existing.map(p => p.assetId).filter((id): id is string => !!id));
