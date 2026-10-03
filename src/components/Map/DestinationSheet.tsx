@@ -1537,7 +1537,7 @@ function DestinationSheet({
                         untouched. Shared with CountrySheet/SpotSheet — see VisitCardList. */}
                     <VisitCardList
                       visits={shownTrips}
-                      readOnlyCaption={v => linkedTripIds.has(v.id) ? `From your ${destination.country} trip` : undefined}
+                      isReadOnly={v => linkedTripIds.has(v.id)}
                       onEditVisit={setEditingVisitModule}
                       onNewVisit={() => setEditingVisitModule('new')}
                       onOpenGallery={setGalleryVisit}

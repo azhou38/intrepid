@@ -82,7 +82,7 @@ export function parseDateStr(s: string) {
 }
 export function fmtDatePart(dateStr: string): string {
   const p = parseDateStr(dateStr);
-  if (!p) return 'Unknown';
+  if (!p) return 'No dates';
   if (p.day === '00') return `${p.monthLabel} ${p.year}`;
   return `${p.monthLabel} ${parseInt(p.day, 10)}, ${p.year}`;
 }
@@ -109,7 +109,7 @@ export function visitDayCount(visit: Visit): number | null {
 // Compact range used in the read-only My Visit card only
 export function fmtVisitRangeShort(visit: Visit): string {
   const s = parseDateStr(visit.startDate);
-  if (!s) return 'Unknown';
+  if (!s) return 'No dates';
   if (!visit.endDate) return fmtDatePart(visit.startDate);
   const e = parseDateStr(visit.endDate);
   if (!e) return fmtDatePart(visit.startDate);
@@ -1368,7 +1368,7 @@ const VISIT_STRIP_FADE_STOPS = Array.from({ length: 21 }, (_, i) => {
 // memSpotsCarouselLast below), plus a trailing "Add Visit +" button.
 export function VisitCardList<T extends VisitSelectorItem>({
   visits, onEditVisit, onNewVisit, onOpenGallery, onSelectItem, selectorLabel, selectorItems,
-  ratingValue, hideSingleDayCount, readOnlyCaption,
+  ratingValue, hideSingleDayCount, isReadOnly,
 }: {
   visits: Visit[];
   onEditVisit: (v: Visit) => void;
@@ -1389,9 +1389,9 @@ export function VisitCardList<T extends VisitSelectorItem>({
   // stop) — hidden when this is true, mirroring VisitModuleSheet's own prop of the same name.
   // A genuinely multi-day spot visit still shows its real day count.
   hideSingleDayCount?: boolean;
-  // A visit this returns a caption for is shown read-only, with the caption in place of its Edit
-  // button — e.g. a destination trip that ticked this spot, which is edited on the destination.
-  readOnlyCaption?: (v: Visit) => string | undefined;
+  // A visit this returns true for is shown read-only, with no Edit button — e.g. a destination
+  // trip that ticked this spot, which is edited on the destination.
+  isReadOnly?: (v: Visit) => boolean;
 }) {
   // Sizes the selector carousel's square cards to match the photo grid's own tiles exactly —
   // measured (not hardcoded) off the carousel's own container width, using the identical
@@ -1431,7 +1431,7 @@ export function VisitCardList<T extends VisitSelectorItem>({
         // it in that case; the dark header just fills the whole box (all four corners rounded,
         // no trailing margin).
         const headerOnly = !v.notes && !itemsForVisit.length && !v.photos?.length;
-        const caption = readOnlyCaption?.(v);
+        const readOnly = !!isReadOnly?.(v);
         return (
           <View key={v.id} style={vcS.memCardShadow}>
             <View style={vcS.memCard}>
@@ -1449,9 +1449,8 @@ export function VisitCardList<T extends VisitSelectorItem>({
                     {fmtVisitRangeShort(v)}
                     {days != null && !(days === 1 && hideSingleDayCount) && `  ·  ${days} day${days === 1 ? '' : 's'}`}
                   </Text>
-                  {!!caption && <Text style={vcS.memReadOnlyCaption} numberOfLines={1}>{caption}</Text>}
                 </View>
-                {!caption && (
+                {!readOnly && (
                   <Pressable style={vcS.memEditBtn} onPress={() => onEditVisit(v)}>
                     <Pencil size={12} color="white" />
                     <Text style={vcS.memEditBtnTxt}>Edit</Text>
@@ -1463,7 +1462,7 @@ export function VisitCardList<T extends VisitSelectorItem>({
                 // padding the card ends on when photos ARE the last section.
                 <Pressable
                   style={[vcS.memNotesDisplay, !itemsForVisit.length && !v.photos?.length && vcS.memNotesLast]}
-                  onPress={caption ? undefined : () => onEditVisit(v)}
+                  onPress={readOnly ? undefined : () => onEditVisit(v)}
                 >
                   <Text style={vcS.memNotesTxt} numberOfLines={3}>{v.notes}</Text>
                 </Pressable>
@@ -1592,7 +1591,6 @@ const vcS = StyleSheet.create({
   memRatingRow:        { marginBottom:8 },
   memDateVal:          { fontSize:14, fontWeight:'600', color:'#9CA3AF' },
   memDateEmpty:        { fontSize:14, fontWeight:'600', color:'#9CA3AF' },
-  memReadOnlyCaption:  { fontSize:12, fontWeight:'500', color:'#9CA3AF', marginTop:2 },
   memEditBtn:          { flexDirection:'row', alignItems:'center', gap:5, paddingHorizontal:10, paddingVertical:6,
                          borderRadius:10, backgroundColor:'rgba(255,255,255,0.14)' },
   memEditBtnTxt:       { fontSize:12, fontWeight:'600', color:'white' },
@@ -1723,9 +1721,6 @@ export function VisitModuleSheet<T extends VisitSelectorItem>({
   const idRef = useRef(visit?.id ?? Date.now().toString());
   const hasSelector = !!selectorLabel && !!selectorItems?.length;
 
-  const now = new Date();
-  const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
-
   const [title,       setTitle      ] = useState(visit?.title ?? '');
   // Empty (not defaulted to today) for a brand-new trip — the Dates row shows its own blank
   // "Add trip dates" placeholder until the user actually picks something (see the JSX below),
@@ -1781,11 +1776,8 @@ export function VisitModuleSheet<T extends VisitSelectorItem>({
     // component to guess a fallback later) — matches the placeholder text itself, so what
     // you see before typing is exactly what gets saved if you don't.
     title: title.trim() || `${entityName} ${noun}`,
-    // Visit.startDate is required, so a trip saved on the strength of notes/selector/photos
-    // alone (dates never actually picked, still '') falls back to today here at save time —
-    // the UI itself stays genuinely blank until the user picks something, only this persisted
-    // record needs a real date.
-    startDate: startDate || todayStr,
+    // Left '' when the user never picked dates — an undated trip, never a made-up date.
+    startDate,
     endDate,
     spotIds: selectedIds.size ? Array.from(selectedIds) : undefined,
     photos: localPhotos.length ? localPhotos : undefined,

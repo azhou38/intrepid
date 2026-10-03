@@ -303,7 +303,7 @@ function SpotSheet({
       ? [{ id: 'legacy', startDate: savedSpot.visitDate, photos: savedSpot.photos, notes: savedSpot.notes }]
       : []), [savedSpot]);
   // Destination trips that ticked this spot, shown alongside its own trips but read-only — they're
-  // edited on the destination (see readOnlyCaption below).
+  // edited on the destination (see isReadOnly below).
   const linkedTrips = visitIndex.linkedTripsForSpot(activeSpot.id);
   const linkedTripIds = useMemo(() => new Set(linkedTrips.map(l => l.visit.id)), [linkedTrips]);
   const shownVisits: Visit[] = useMemo(
@@ -1044,7 +1044,7 @@ function SpotSheet({
                       onOpenGallery={setGalleryVisit}
                       ratingValue={savedSpot?.rating}
                       hideSingleDayCount
-                      readOnlyCaption={v => linkedTripIds.has(v.id) ? `From your ${destination.name} trip` : undefined}
+                      isReadOnly={v => linkedTripIds.has(v.id)}
                     />
                   </View>
 
