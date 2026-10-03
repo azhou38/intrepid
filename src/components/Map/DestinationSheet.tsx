@@ -28,7 +28,7 @@ import { Gesture, GestureDetector, ScrollView } from 'react-native-gesture-handl
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { X, Check, Calendar, MapPin, Camera, Pencil, Plus, ChevronRight, ChevronDown, Map } from 'lucide-react-native';
 import { useStore, useVisitIndex } from '../../store';
-import { destinationTripsOf, removeVisitMessage, spotLogsIn } from '../../utils/visitStatus';
+import { destinationTripsOf, removeDestinationMessage, spotsWithLogsIn } from '../../utils/visitStatus';
 import SpotCard from './SpotCard';
 import type { Destination, PhotoEntry, Visit, GoodToKnowTip } from '../../types';
 import { SPOTS, type Spot } from '../../data/spots';
@@ -1276,11 +1276,7 @@ function DestinationSheet({
       // Un-visits it entirely: its own trips, its spots' visits, and its ticks on country trips.
       Alert.alert(
         'Remove visit?',
-        removeVisitMessage(
-          { count: localVisits.length, label: `${destination.name} trip` },
-          [{ count: spotLogsIn(useStore.getState(), destination.id), label: 'spot visit' }],
-          `${destination.name} and its spots`,
-        ),
+        removeDestinationMessage(destination.name, spotsWithLogsIn(useStore.getState(), destination.id)),
         [
           { text: 'Cancel', style: 'cancel' },
           {

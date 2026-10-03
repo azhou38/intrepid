@@ -139,37 +139,36 @@ export function withoutAutoLogs(r: VisitRecords): VisitRecords {
 
 // ── Counting what's logged beneath a place (for the remove-visit warnings) ─────────────────────────
 
-const plural = (n: number, word: string) => `${n} ${word}${n === 1 ? '' : 's'}`;
-const listOf = (parts: string[]) =>
-  parts.length <= 1 ? parts.join('') : `${parts.slice(0, -1).join(', ')} and ${parts[parts.length - 1]}`;
+const hasSpotLog = (rec: SavedSpot) => !!rec.visits?.length || !!rec.visitDate;
 
-// "This will permanently delete your 1 France trip, 3 destination trips and 5 spot visits, and …"
-export function removeVisitMessage(own: { count: number; label: string }, below: { count: number; label: string }[], unvisited: string): string {
-  const parts = [own, ...below].filter(x => x.count > 0).map(x => plural(x.count, x.label));
-  const what = parts.length ? `permanently delete your ${listOf(parts)}, and ` : '';
-  return `This will ${what}mark ${unvisited} as not visited.`;
+// How many of a destination's spots have something logged.
+export function spotsWithLogsIn(r: VisitRecords, destinationId: string): number {
+  return Object.values(r.savedSpots).filter(rec => SPOT_DEST.get(rec.spotId) === destinationId && hasSpotLog(rec)).length;
 }
 
-const spotLogCount = (rec: SavedSpot) => rec.visits?.length ?? (rec.visitDate ? 1 : 0);
-
-// A destination's spots' logs.
-export function spotLogsIn(r: VisitRecords, destinationId: string): number {
-  let n = 0;
-  for (const rec of Object.values(r.savedSpots)) if (SPOT_DEST.get(rec.spotId) === destinationId) n += spotLogCount(rec);
-  return n;
-}
-
-// A country's destinations' trips and their spots' logs.
-export function logsInCountry(r: VisitRecords, countryCode: string): { destinationTrips: number; spotLogs: number } {
-  let destinationTrips = 0, spotLogs = 0;
-  for (const rec of Object.values(r.savedDestinations)) {
-    if (DEST_COUNTRY.get(rec.destinationId) === countryCode) destinationTrips += destinationTripsOf(rec, r.savedSpots).length;
-  }
-  for (const rec of Object.values(r.savedSpots)) {
+// How many of a country's destinations, and of their spots, have something logged.
+export function placesWithLogsInCountry(r: VisitRecords, countryCode: string): { destinations: number; spots: number } {
+  const destinations = Object.values(r.savedDestinations).filter(rec =>
+    DEST_COUNTRY.get(rec.destinationId) === countryCode && destinationTripsOf(rec, r.savedSpots).length > 0).length;
+  const spots = Object.values(r.savedSpots).filter(rec => {
     const destId = SPOT_DEST.get(rec.spotId);
-    if (destId && DEST_COUNTRY.get(destId) === countryCode) spotLogs += spotLogCount(rec);
-  }
-  return { destinationTrips, spotLogs };
+    return !!destId && DEST_COUNTRY.get(destId) === countryCode && hasSpotLog(rec);
+  }).length;
+  return { destinations, spots };
+}
+
+const counted = (n: number, word: string) => `${n} ${word}${n === 1 ? '' : 's'}`;
+
+// "This will permanently delete everything you logged for France, including its 3 destinations and 5 spots."
+export function removeCountryMessage(country: string, n: { destinations: number; spots: number }): string {
+  const parts = [n.destinations && counted(n.destinations, 'destination'), n.spots && counted(n.spots, 'spot')].filter(Boolean);
+  const including = parts.length ? `, including its ${parts.join(' and ')}` : '';
+  return `This will permanently delete everything you logged for ${country}${including}.`;
+}
+
+// "This will permanently delete everything you logged for Paris and its 4 spots."
+export function removeDestinationMessage(destination: string, spots: number): string {
+  return `This will permanently delete everything you logged for ${destination}${spots ? ` and its ${counted(spots, 'spot')}` : ''}.`;
 }
 
 // ── Removing what was logged ───────────────────────────────────────────────────────────────────
