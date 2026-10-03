@@ -1349,11 +1349,15 @@ const VISIT_CARD_BORDER = '#D8DBE0';
 // STRIP_FADE_STOPS, just scoped to this file's own (smaller) card size. Kept short: the solid
 // strip only hugs the name (see memSpotCardStrip's padding) and this fade above it is brief, so
 // most of the small square card still shows the photo rather than a dark scrim.
-const VISIT_STRIP_OPACITY = 0.68;
-const VISIT_STRIP_FADE_H = 14;
-const VISIT_STRIP_FADE_STOPS = Array.from({ length: 11 }, (_, i) => {
-  const t = i / 10;
-  return { offset: `${t}`, opacity: VISIT_STRIP_OPACITY * t * t * (3 - 2 * t) };
+// Gentler than DestinationSheet's WHY_STRIP_OPACITY (0.68): enough to carry white text on these small
+// cards without reading as a heavy black band.
+const VISIT_STRIP_OPACITY = 0.55;
+const VISIT_STRIP_FADE_H = 26;
+// Smootherstep (6t⁵−15t⁴+10t³) rather than smoothstep: it lifts off zero more gradually, so the fade's
+// top edge melts into the photo instead of showing where it starts. 21 stops so it never bands.
+const VISIT_STRIP_FADE_STOPS = Array.from({ length: 21 }, (_, i) => {
+  const t = i / 20;
+  return { offset: `${t}`, opacity: VISIT_STRIP_OPACITY * t * t * t * (t * (6 * t - 15) + 10) };
 });
 
 // ── Read-only "My Visit" card list ────────────────────────────────────────────────────────────
