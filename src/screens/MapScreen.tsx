@@ -1429,10 +1429,30 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // region.longitudeDelta, which the 3D globe inflates to most of the hemisphere at wide
   // zooms (see camZoom's comment). min() keeps the two in agreement at flat/deep zooms
   // (where bounds are accurate) and guards the zoom=0 initial state.
+  // LOOK-AHEAD while a close zooms out. Closing a destination/country/spot flies the camera to a known, wider view
+  // over ~600ms, but everything planned from `camZoom` only learns about that zoom as the (heavy) per-frame renders
+  // catch up — in practice after the animation had finished. So the pins the wider view won't have stayed on screen,
+  // piled on top of each other, then faded out once the camera had settled. For the duration of the move, photo-pin /
+  // spot / rank planning therefore reads the TARGET zoom (planZoom) instead: the pins that don't belong there start
+  // their (native-driven) fade on the very first frame and are mostly gone by the time the map is crowded. Cleared on
+  // the first idle, a user gesture, a new selection, or a safety timer — see beginClosePlan / releaseHeldSelection.
+  // Country pills deliberately keep the live zoom: they belong to the wider view and would otherwise pop in over a
+  // still zoomed-in map.
+  const planZoomTargetRef = useRef<number | null>(null);
+  if (selectedCountry || selectedDest) planZoomTargetRef.current = null;
+  const planZoomTarget = planZoomTargetRef.current;
+  const planZoom = planZoomTarget !== null ? Math.min(camZoom, planZoomTarget) : camZoom;
+  // The bounds-derived span lags the same way, so it's ignored while looking ahead.
+  const planRegionLng = planZoomTarget !== null ? Infinity : region.longitudeDelta;
   const planLngDelta = useMemo(() => Math.min(
-    region.longitudeDelta,
-    SCREEN_W_GLOBAL * 360 / (512 * Math.pow(2, camZoom)),
-  ), [region.longitudeDelta, camZoom]);
+    planRegionLng,
+    SCREEN_W_GLOBAL * 360 / (512 * Math.pow(2, planZoom)),
+  ), [planRegionLng, planZoom]);
+  // pillVisibleLngDelta (below), looking ahead — for the photo-pin plan only.
+  const pillPlanLngDelta = useMemo(() => Math.min(
+    planRegionLng,
+    SCREEN_W_GLOBAL * 360 / (256 * Math.pow(2, planZoom)),
+  ), [planRegionLng, planZoom]);
 
   // The TRUE visible span (256-convention zoom mapping, which matches what's actually on
   // screen) — used ONLY for the country-pill default-view cutoff, where "has the user
@@ -1515,15 +1535,40 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // back in as the camera caught up — a flash. Here the planning keeps seeing the last selection through a close, and
   // lets go on the first map idle (the zoom-out has settled) or the first map gesture, so it re-plans once at the
   // settled zoom. Any new selection applies immediately.
+  // A close that zooms OUT doesn't wait: beginClosePlan plans for the wider view from the first frame and drops the
+  // selection at once (see planZoomTarget), so the pins that don't belong there fade during the zoom. The hold above
+  // remains for a close that stays put or zooms in.
   const heldSelRef = useRef<{ country: CountryCluster | null; dest: Destination | null }>({ country: null, dest: null });
   const [, setHeldSelTick] = useState(0);
   if (selectedCountry || selectedDest) heldSelRef.current = { country: selectedCountry, dest: selectedDest };
   const planCountry = selectedCountry ?? heldSelRef.current.country;
   const planDest = selectedDest ?? heldSelRef.current.dest;
+  const planZoomTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const releaseHeldSelection = useCallback(() => {
-    if (!heldSelRef.current.country && !heldSelRef.current.dest) return;
+    const hadTarget = planZoomTargetRef.current !== null;
+    if (!heldSelRef.current.country && !heldSelRef.current.dest && !hadTarget) return;
     if (selectedCountryRef.current || selectedDestRef.current) return;
+    planZoomTargetRef.current = null;
+    if (planZoomTimerRef.current) { clearTimeout(planZoomTimerRef.current); planZoomTimerRef.current = null; }
     heldSelRef.current = { country: null, dest: null };
+    setHeldSelTick(t => t + 1);
+  }, []);
+  // A close that zooms OUT to `targetZoom` over `durationMs`: plan for the wider view from the first frame (see
+  // planZoomTarget) and let go of the closed selection at once — planning at the final zoom needs no hold to avoid the
+  // flash the hold exists for, since the plan no longer changes as the camera catches up. A close that doesn't zoom out
+  // keeps the old behaviour (hold, then release at idle).
+  const beginClosePlan = useCallback((targetZoom: number, durationMs: number) => {
+    if (targetZoom >= camZoomRef.current - ZOOM_EPSILON) return;
+    planZoomTargetRef.current = targetZoom;
+    heldSelRef.current = { country: null, dest: null };
+    if (planZoomTimerRef.current) clearTimeout(planZoomTimerRef.current);
+    // Safety net if no idle ever arrives (the move was cancelled or replaced).
+    planZoomTimerRef.current = setTimeout(() => {
+      planZoomTimerRef.current = null;
+      if (planZoomTargetRef.current === null) return;
+      planZoomTargetRef.current = null;
+      setHeldSelTick(t => t + 1);
+    }, durationMs + 800);
     setHeldSelTick(t => t + 1);
   }, []);
 
@@ -1649,7 +1694,7 @@ const destItems = useMemo((): DestItem[] =>
     // runs ~2x deeper than reality, so two pins the plan thought 60pt apart were really 30pt apart and overlapped; Mapbox
     // then hid one of them natively — instantly, with no fade. Tested at real distances the plan resolves the overlap
     // itself (the loser becomes a dot, through the normal cross-fade). The promotion GATES below stay on planLngDelta.
-    const pxPerDegLng = SCREEN_W / pillVisibleLngDelta;
+    const pxPerDegLng = SCREEN_W / pillPlanLngDelta;
 
     // Plan over the pan-invariant ELIGIBLE set (not the viewport-culled render set), so the
     // greedy collision resolution sees a stable roster while panning.
@@ -1688,7 +1733,7 @@ const destItems = useMemo((): DestItem[] =>
       // pill was already gone (e.g. Los Angeles/Grand Canyon still dots with the western
       // US filling the screen). Eligibility (visibleRank/saved) and the photo-vs-photo and
       // pill collision rules still apply on top.
-      if (pillVisibleLngDelta < getCountryPillCutoffLngDelta(d.countryCode)) return true;
+      if (pillPlanLngDelta < getCountryPillCutoffLngDelta(d.countryCode)) return true;
       const effRank = Math.max(1, d.rank - (visitIndex.isDestVisited(d.id) ? 1 : 0));
       return panLatDelta <= (PROMOTE_LATDELTA_BY_RANK[effRank] ?? 2.5);
     };
@@ -1757,7 +1802,7 @@ const destItems = useMemo((): DestItem[] =>
     // Pure function of zoom (planLngDelta) + eligible set + selection + saved state +
     // the (equally pan-invariant) country pill plan.
     // No camera centre → recompute produces an identical plan while panning at fixed zoom.
-  }, [eligibleDests, planLngDelta, pillVisibleLngDelta, planCountry, planDest, selectedSpot, visitIndex, countryPills]);
+  }, [eligibleDests, planLngDelta, pillPlanLngDelta, planCountry, planDest, selectedSpot, visitIndex, countryPills]);
 
   // Stamps are rendered via CircleLayer (not MarkerView) so Mapbox renders all of them
   // regardless of proximity. Every filter-passing destination gets a stamp — INCLUDING ones
@@ -1804,10 +1849,10 @@ const destItems = useMemo((): DestItem[] =>
   const zoomedPastDefaultIdsRaw = useMemo(() => {
     const ids = new Set<string>();
     for (const d of DESTINATIONS) {
-      if (isPastDestDefaultZoom(d.id, camZoom)) ids.add(d.id);
+      if (isPastDestDefaultZoom(d.id, planZoom)) ids.add(d.id);
     }
     return ids;
-  }, [camZoom]);
+  }, [planZoom]);
   const zoomedPastDefaultIds = useStableSet(zoomedPastDefaultIdsRaw);
   const hiddenDestIdsRaw = useMemo(() => {
     if (zoomedPastDefaultIds.size === 0) return zoomedIntoDestIds;
@@ -1941,7 +1986,7 @@ const destItems = useMemo((): DestItem[] =>
     // (isPastDestDefaultZoom for spotsInDest, and per spot for others) — so a tighter
     // destination doesn't show its pins early just because some other, wider one is already
     // past ITS OWN threshold.
-    const belowSpotZoom = camZoom >= MIN_DEST_ZOOM_LEVEL - ZOOM_EPSILON;
+    const belowSpotZoom = planZoom >= MIN_DEST_ZOOM_LEVEL - ZOOM_EPSILON;
 
     // While a destination is selected — its own sheet open, or drilled into one of its
     // spots — show that destination's full, small, static spot set rather than a live
@@ -1968,7 +2013,7 @@ const destItems = useMemo((): DestItem[] =>
     // together with no gap and no overlap. belowSpotZoom above is only the coarse outer gate
     // (loosened for OTHER, possibly-wider destinations) and must not let a tighter selected
     // destination's pins appear early just because something else passed that outer check.
-    const selectedBelowOwnZoom = !!selectedDest && isPastDestDefaultZoom(selectedDest.id, camZoom);
+    const selectedBelowOwnZoom = !!selectedDest && isPastDestDefaultZoom(selectedDest.id, planZoom);
 
     const others: Spot[] = [];
     {
@@ -1983,7 +2028,7 @@ const destItems = useMemo((): DestItem[] =>
         // Each OTHER destination's spots only show at and past THAT destination's own default
         // zoom — same reasoning as selectedBelowOwnZoom above, just per-spot since there's no
         // single "selected" destination to read the threshold from here.
-        if (!isPastDestDefaultZoom(s.destinationId, camZoom)) continue;
+        if (!isPastDestDefaultZoom(s.destinationId, planZoom)) continue;
         const { latitude: lat, longitude: lng } = s.coordinates;
         if (lat >= minLat && lat <= maxLat && lng >= minLng && lng <= maxLng) others.push(s);
       }
@@ -1991,7 +2036,7 @@ const destItems = useMemo((): DestItem[] =>
     const result = selectedDest && selectedBelowOwnZoom ? [...spotsInDest, ...others] : others;
     if (selectedSpot && !result.some(sp => sp.id === selectedSpot.id)) result.push(selectedSpot);
     return result;
-  }, [region, camZoom, selectedSpot, selectedDest, spotsInDest]);
+  }, [region, planZoom, selectedSpot, selectedDest, spotsInDest]);
   // Exit-fade tracking for spot pins (same treatment as pills/photos): pins leaving the
   // set linger for PIN_EXIT_MS fading out, new ones mount at 0 and fade in.
   const renderedSpots = useExitingItems(useStableList(visibleSpots, s => s.id), s => s.id, HANDOFF_FADE_MS);
@@ -2756,11 +2801,12 @@ const destItems = useMemo((): DestItem[] =>
     // Target: the destination's default view — unless already zoomed out past it (see
     // isZoomedOutBeyond).
     if (dest && !isZoomedOutBeyond(latDeltaToZoom(getDestZoomDelta(dest)))) {
+      beginClosePlan(destDefaultCamera(dest, 'topHalf').zoom, 500);   // see planZoomTarget (a no-op unless this zooms out)
       fitDestinationDefaultView(dest, 'easeTo', 'topHalf');
     } else {
       releaseHeldSelection();
     }
-  }, [showBreadcrumb, fitDestinationDefaultView, isZoomedOutBeyond, releaseHeldSelection]);
+  }, [showBreadcrumb, fitDestinationDefaultView, isZoomedOutBeyond, releaseHeldSelection, beginClosePlan, destDefaultCamera]);
 
   // Closing the spot sheet INTO its parent destination sheet (still selected), re-centering
   // the camera on the destination's default zoomed-in view. `toCollapsed` (set when this
@@ -2909,8 +2955,11 @@ const destItems = useMemo((): DestItem[] =>
       releaseHeldSelection();
       return;
     }
+    // Plan for the zoomed-out view from the first frame, so the pins it won't have fade out DURING the zoom (see
+    // planZoomTarget) rather than after it settles.
+    beginClosePlan(destDefaultCamera(dest, 'full', 0.5).zoom, 600);
     fitDestinationDefaultView(dest, 'easeTo', 'full', 600, 0.5);
-  }, [selectedDest, showBreadcrumb, fitDestinationDefaultView, isZoomedOutBeyond, releaseHeldSelection]);
+  }, [selectedDest, showBreadcrumb, fitDestinationDefaultView, isZoomedOutBeyond, releaseHeldSelection, beginClosePlan, destDefaultCamera]);
 
   // Closing the destination sheet INTO its country view. `toCollapsed` (set when this
   // fires from a swipe-down while the destination sheet was itself collapsed) lands the
@@ -3037,6 +3086,7 @@ const destItems = useMemo((): DestItem[] =>
       releaseHeldSelection();
       return;
     }
+    beginClosePlan(hasCached ? cached.zoom / 2 : latDeltaToZoom(WORLD_HOME_LATDELTA), 600);   // see planZoomTarget
     if (hasCached) {
       beginProgrammaticCameraMove(600);
       cameraRef.current?.setCamera({
@@ -3048,7 +3098,7 @@ const destItems = useMemo((): DestItem[] =>
       return;
     }
     animateCamera({ latitude: 20, longitude: regionRef.current.longitude, latitudeDelta: WORLD_HOME_LATDELTA, longitudeDelta: WORLD_HOME_LATDELTA }, 600);
-  }, [showBreadcrumb, animateCamera, beginProgrammaticCameraMove, isZoomedOutBeyond, releaseHeldSelection]);
+  }, [showBreadcrumb, animateCamera, beginProgrammaticCameraMove, isZoomedOutBeyond, releaseHeldSelection, beginClosePlan]);
 
   // `openPeeked` is for returning UP to a country from a destination via the breadcrumb: the
   // sheet opens in bottom-screen/peek instead of half-screen, and the map is framed for the
