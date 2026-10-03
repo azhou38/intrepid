@@ -167,9 +167,9 @@ export function removeCountryMessage(country: string, n: { destinations: number;
   return `This will permanently delete everything you logged for ${country}${including}.`;
 }
 
-// "This will permanently delete everything you logged for Paris and its 4 spots."
+// "This will permanently delete everything you logged for Paris, including 4 spots."
 export function removeDestinationMessage(destination: string, spots: number): string {
-  return `This will permanently delete everything you logged for ${destination}${spots ? ` and its ${counted(spots, 'spot')}` : ''}.`;
+  return `This will permanently delete everything you logged for ${destination}${spots ? `, including ${counted(spots, 'spot')}` : ''}.`;
 }
 
 // ── Removing what was logged ───────────────────────────────────────────────────────────────────
