@@ -1143,7 +1143,9 @@ function SpotSheet({
                     carouselRef.current?.scrollTo({ x: (item.realIndex + loopOffset) * CARD_SNAP, animated: true });
                     onActiveSpotChange?.(spots[item.realIndex]);
                   }
-                  snapToFullRef.current();
+                  // The editor opens straight over the carousel; the sheet stays put underneath. It
+                  // only goes full-screen once a trip is saved (revealVisit), to show it on My Visit —
+                  // expanding first made the sheet visibly rise before the editor appeared.
                   setEditingVisitModule('new');
                   Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
                 }}
