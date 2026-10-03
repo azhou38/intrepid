@@ -39,7 +39,7 @@ import {
 } from './sheetShared';
 
 const { height: H, width: W } = Dimensions.get('window');
-// Practical-info blue — time needed, cost, and the carousel's "Swipe up to explore" hint. Deliberately
+// Practical-info blue — time needed and cost. Deliberately
 // not green: across the app green means "visited" (pins, rings, card borders, the Visited tag).
 const INFO_BLUE = '#1D4ED8';
 
@@ -1136,7 +1136,7 @@ function SpotSheet({
               level hint (not tied to any one card) since the card itself was shrunk to make
               room for it here. */}
           <View pointerEvents="none" style={st.carouselHintRow}>
-            <ChevronUp size={13} color={INFO_BLUE} strokeWidth={2.5} />
+            <ChevronUp size={13} color="#111827" strokeWidth={2.5} />
             <Text style={st.carouselHintTxt}>Swipe up to explore</Text>
           </View>
         </Reanimated.View>
@@ -1433,7 +1433,7 @@ const st = StyleSheet.create({
     marginTop: 'auto',
     paddingTop: 3, paddingBottom: COLLAPSED_GAP,
   },
-  carouselHintTxt: { fontSize: 12, fontWeight: '600', color: INFO_BLUE },
+  carouselHintTxt: { fontSize: 12, fontWeight: '600', color: '#111827' },
 
   // Peek strip — thin hero-image sliver with the active spot's name, shown while peeking.
   peekStrip: {
