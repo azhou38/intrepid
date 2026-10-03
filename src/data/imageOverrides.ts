@@ -19,6 +19,8 @@ export const PHOTO_FOCUS_Y: Record<string, number> = {
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
+  // Downtown skyline in front of the snow-capped San Gabriel Mountains — the city, not the Hollywood sign.
+  "Los Angeles": "LA Skyline Mountains2.jpg",
   "Rovaniemi": "Santa Claus Village (5306867729).jpg",
   "Golden Circle": "Gullfoss, Suðurland, Islandia, 2014-08-16, DD 123.JPG",
   "Mykonos": "View of Mykonos 03.jpg",

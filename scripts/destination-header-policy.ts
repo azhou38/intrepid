@@ -25,7 +25,7 @@ export const HEADER_ASPECT_MAX = 2.0;
 // here — give it a hand-picked header instead. Remove an id once its header has been curated (the check
 // warns about ids here that already have one).
 export const HEADER_REVIEW_BACKLOG = new Set<string>([
-  'nyc', 'la', 'grand-canyon', 'paris', 'nice', 'lyon', 'london', 'edinburgh', 'rome', 'florence',
+  'nyc', 'grand-canyon', 'paris', 'nice', 'lyon', 'london', 'edinburgh', 'rome', 'florence',
   'barcelona', 'amsterdam', 'berlin', 'munich', 'lisbon', 'porto', 'zurich', 'interlaken', 'salzburg',
   'bruges', 'brussels', 'dublin', 'cliffs-of-moher', 'gothenburg', 'bergen', 'copenhagen', 'aarhus',
   'reykjavik', 'athens', 'prague', 'tokyo', 'kyoto', 'osaka', 'sydney',
