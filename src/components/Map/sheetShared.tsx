@@ -1368,7 +1368,7 @@ const VISIT_STRIP_FADE_STOPS = Array.from({ length: 21 }, (_, i) => {
 // memSpotsCarouselLast below), plus a trailing "Add Visit +" button.
 export function VisitCardList<T extends VisitSelectorItem>({
   visits, onEditVisit, onNewVisit, onOpenGallery, onSelectItem, selectorLabel, selectorItems,
-  ratingValue, hideSingleDayCount, isReadOnly,
+  ratingValue, hideSingleDayCount, isReadOnly, defaultTitle,
 }: {
   visits: Visit[];
   onEditVisit: (v: Visit) => void;
@@ -1392,6 +1392,8 @@ export function VisitCardList<T extends VisitSelectorItem>({
   // A visit this returns true for is shown read-only, with no Edit button — e.g. a destination
   // trip that ticked this spot, which is edited on the destination.
   isReadOnly?: (v: Visit) => boolean;
+  // Shown for a trip saved without a title (e.g. a pre-redesign one) — "Paris Trip".
+  defaultTitle?: string;
 }) {
   // Sizes the selector carousel's square cards to match the photo grid's own tiles exactly —
   // measured (not hardcoded) off the carousel's own container width, using the identical
@@ -1437,8 +1439,8 @@ export function VisitCardList<T extends VisitSelectorItem>({
             <View style={vcS.memCard}>
               <View style={[vcS.memTopRow, headerOnly && vcS.memTopRowOnly]}>
                 <View style={{ flex: 1 }}>
-                  {!!v.title && (
-                    <Text style={vcS.memTripNameHeading} numberOfLines={2}>{v.title}</Text>
+                  {!!(v.title || defaultTitle) && (
+                    <Text style={vcS.memTripNameHeading} numberOfLines={2}>{v.title || defaultTitle}</Text>
                   )}
                   {!!ratingValue && (
                     <View style={vcS.memRatingRow}>
@@ -1673,6 +1675,12 @@ export function StarRating({ value, onChange, size = 30 }: {
   );
 }
 
+// A trip's default title: "Paris Trip" / "Louvre Visit", numbered from the second one on
+// ("Paris Trip 2") — `existing` is how many trips the place already has logged.
+export function defaultTripTitle(name: string, noun: string, existing = 0): string {
+  return existing > 0 ? `${name} ${noun} ${existing + 1}` : `${name} ${noun}`;
+}
+
 // ── Full-screen visit MODULE edit sheet ───────────────────────────────────────────────────────
 // Scoped to exactly ONE visit (a fresh one when `visit` is null) — like editing a single Strava
 // activity or journal entry. Every field auto-commits to LOCAL state as it changes; nothing is
@@ -1681,11 +1689,14 @@ export function StarRating({ value, onChange, size = 30 }: {
 export function VisitModuleSheet<T extends VisitSelectorItem>({
   entityName, visit, onSave, onDelete, onClose,
   selectorLabel, selectorItems, onRemoveLegacy,
-  ratingValue, onRatingChange, noun = 'Trip', hideSingleDayCount,
+  ratingValue, onRatingChange, noun = 'Trip', hideSingleDayCount, existingCount = 0,
 }: {
-  // Used for the title placeholder/fallback ("${entityName} ${noun}") — the destination's,
-  // country's, or spot's own name.
+  // Used for the title placeholder/fallback (see defaultTripTitle) — the destination's, country's,
+  // or spot's own name.
   entityName: string;
+  // How many trips the place already has logged, which numbers a new trip's default title
+  // ("Paris Trip 2"). Only counts for a new trip — an existing one keeps the plain default.
+  existingCount?: number;
   // "Trip" (default) or "Visit" — spots call these visits, not trips, throughout this sheet's
   // own copy (title placeholder, "Remove Trip"/"Remove Visit", "Trip Notes"/"Visit Notes", the
   // "Add trip/visit dates" placeholders, the discard-changes prompt, etc.) and the date picker
@@ -1718,6 +1729,7 @@ export function VisitModuleSheet<T extends VisitSelectorItem>({
 }) {
   const insets = useSafeAreaInsets();
   const isLegacy = visit?.id === 'legacy';
+  const defaultTitle = defaultTripTitle(entityName, noun, visit ? 0 : existingCount);
   const idRef = useRef(visit?.id ?? Date.now().toString());
   const hasSelector = !!selectorLabel && !!selectorItems?.length;
 
@@ -1775,7 +1787,7 @@ export function VisitModuleSheet<T extends VisitSelectorItem>({
     // Saved as the real title when the user never typed one (not left blank for some other
     // component to guess a fallback later) — matches the placeholder text itself, so what
     // you see before typing is exactly what gets saved if you don't.
-    title: title.trim() || `${entityName} ${noun}`,
+    title: title.trim() || defaultTitle,
     // Left '' when the user never picked dates — an undated trip, never a made-up date.
     startDate,
     endDate,
@@ -1795,8 +1807,26 @@ export function VisitModuleSheet<T extends VisitSelectorItem>({
   // (see syncTripTicks in the store); unchecking it takes that log away again while it's untouched.
   const toggleItem = (id: string) => {
     const next = new Set(selectedIds);
-    if (next.has(id)) next.delete(id);
-    else next.add(id);
+    if (next.has(id)) {
+      // Unticking un-marks a place the user said they visited — confirm first.
+      const name = selectorItems?.find(it => it.id === id)?.name ?? 'this';
+      Alert.alert(
+        `Unmark ${name}?`,
+        `${name} will no longer be marked as visited on this ${noun.toLowerCase()}. If ticking it here created its log, that log is removed too, unless you've edited it.`,
+        [
+          { text: 'Cancel', style: 'cancel' },
+          {
+            text: 'Unmark', style: 'destructive',
+            onPress: () => {
+              setSelectedIds(prev => { const n = new Set(prev); n.delete(id); return n; });
+              commit();
+            },
+          },
+        ],
+      );
+      return;
+    }
+    next.add(id);
     setSelectedIds(next);
     commit();
   };
@@ -1948,7 +1978,7 @@ export function VisitModuleSheet<T extends VisitSelectorItem>({
                 commit();
                 if (hadNewline) titleInputRef.current?.blur();
               }}
-              placeholder={`${entityName} ${noun}`}
+              placeholder={defaultTitle}
               placeholderTextColor="#9CA3AF"
               textAlign="center"
               multiline

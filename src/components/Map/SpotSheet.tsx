@@ -1029,6 +1029,7 @@ function SpotSheet({
                         DestinationSheet/CountrySheet — see VisitCardList. No selector section
                         here (a spot has nothing beneath it to tag a visit with). */}
                     <VisitCardList
+                      defaultTitle={`${activeSpot.name} Visit`}
                       visits={localVisits}
                       onEditVisit={setEditingVisitModule}
                       onNewVisit={() => setEditingVisitModule('new')}
@@ -1168,6 +1169,7 @@ function SpotSheet({
 
       {editingVisitModule !== null && (
         <VisitModuleSheet
+          existingCount={localVisits.length}
           entityName={activeSpot.name}
           visit={editingVisitModule === 'new' ? null : editingVisitModule}
           onSave={handleSaveVisitModule}

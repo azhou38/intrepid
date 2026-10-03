@@ -6,7 +6,8 @@ import type { SavedDestination, SavedSpot, SavedCountry, PhotoEntry, Continent }
 import { DESTINATIONS } from '../data/destinations';
 import { SPOTS } from '../data/spots';
 import {
-  buildVisitIndex, withoutCountry, withoutDestination, withoutSpot, withTripTicks,
+  buildVisitIndex, withoutCountry, withoutDestination, withoutDestinationRecord, withoutSpot, withoutSpotRecord,
+  withTripTicks,
   type VisitIndex,
 } from '../utils/visitStatus';
 
@@ -91,12 +92,8 @@ export const useStore = create<AppState>()(
           },
         })),
 
-      unsaveDestination: (id) =>
-        set((s) => {
-          const next = { ...s.savedDestinations };
-          delete next[id];
-          return { savedDestinations: next };
-        }),
+      // Never un-visits its country (see withoutDestinationRecord).
+      unsaveDestination: (id) => set((s) => withoutDestinationRecord(s, id)),
 
       updateSaved: (id, update) =>
         set((s) => ({
@@ -126,12 +123,8 @@ export const useStore = create<AppState>()(
           },
         })),
 
-      unsaveSpot: (spotId) =>
-        set((s) => {
-          const next = { ...s.savedSpots };
-          delete next[spotId];
-          return { savedSpots: next };
-        }),
+      // Never un-visits its destination or country (see withoutSpotRecord).
+      unsaveSpot: (spotId) => set((s) => withoutSpotRecord(s, spotId)),
 
       // ── Countries ────────────────────────────────────────────────────────
       // Merges with any existing record (e.g. existing notes) rather than replacing it

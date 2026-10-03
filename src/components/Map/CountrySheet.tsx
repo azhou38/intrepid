@@ -998,6 +998,7 @@ function CountrySheet({
                         photos, and notes — like a separate journal entry. Shared with
                         DestinationSheet/SpotSheet — see VisitCardList. */}
                     <VisitCardList
+                      defaultTitle={`${cluster.country} Trip`}
                       visits={localVisits}
                       onEditVisit={setEditingVisitModule}
                       onNewVisit={() => setEditingVisitModule('new')}
@@ -1130,6 +1131,7 @@ function CountrySheet({
 
       {editingVisitModule !== null && (
         <VisitModuleSheet
+          existingCount={localVisits.length}
           entityName={cluster.country}
           visit={editingVisitModule === 'new' ? null : editingVisitModule}
           onSave={handleSaveVisitModule}

@@ -1523,6 +1523,7 @@ function DestinationSheet({
                         single module's own card; every sibling module is copied through
                         untouched. Shared with CountrySheet/SpotSheet — see VisitCardList. */}
                     <VisitCardList
+                      defaultTitle={`${destination.name} Trip`}
                       visits={localVisits}
                       onEditVisit={setEditingVisitModule}
                       onNewVisit={() => setEditingVisitModule('new')}
@@ -1628,6 +1629,7 @@ function DestinationSheet({
 
       {editingVisitModule !== null && (
         <VisitModuleSheet
+          existingCount={localVisits.length}
           entityName={destination.name}
           visit={editingVisitModule === 'new' ? null : editingVisitModule}
           onSave={handleSaveVisitModule}

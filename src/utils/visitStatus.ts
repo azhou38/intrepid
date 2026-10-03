@@ -9,8 +9,12 @@
 //   • a spot is visited if it has its own record, or a destination trip ticked it under "Spots Visited";
 //   • a destination is visited if it has its own record, any of its spots is visited, or a country trip
 //     ticked it under "Destinations Visited";
-//   • a country is visited if it has its own trips, or any of its destinations is visited.
+//   • a country is visited if it has a record of its own, or any of its destinations is visited.
 // Visiting a destination never marks its spots, and visiting a country never marks its destinations.
+//
+// Un-visiting goes the other way: it rolls DOWN, never up. Un-visiting a country un-visits its
+// destinations and spots, and un-visiting a destination its spots — but the place above stays visited
+// (see keepVisited), even if it was visited only through what was removed.
 
 import { DESTINATIONS } from '../data/destinations';
 import { SPOTS } from '../data/spots';
@@ -65,7 +69,7 @@ export function buildVisitIndex(
 
   const visitedCountryCodes = new Set<string>();
   for (const rec of Object.values(savedCountries)) {
-    if (rec.visitDate || rec.visits?.length) visitedCountryCodes.add(rec.countryCode);
+    visitedCountryCodes.add(rec.countryCode);   // a country record is only ever made for a visit
   }
   for (const destId of visitedDestIds) {
     const code = DEST_COUNTRY.get(destId);
@@ -184,29 +188,57 @@ const untick = (rec: { visits?: Visit[] }, id: string) =>
     ? { visits: rec.visits.map(v => v.spotIds?.includes(id) ? { ...v, spotIds: v.spotIds.filter(x => x !== id) } : v) }
     : null;
 
-// Un-visits a spot: its own record goes, and it's unticked from its destination's trips.
+// Un-visits a spot: its own record goes, and it's unticked from its destination's trips. Its
+// destination and country stay visited.
 export function withoutSpot(r: VisitRecords, spotId: string): VisitRecords {
   const destId = SPOT_DEST.get(spotId);
   const dest = destId ? r.savedDestinations[destId] : undefined;
   const unticked = dest && untick(dest, spotId);
-  return {
+  return keepVisited(r, {
     ...r,
     savedSpots: omit(r.savedSpots, [spotId]),
     savedDestinations: unticked ? { ...r.savedDestinations, [destId!]: { ...dest!, ...unticked } } : r.savedDestinations,
-  };
+  }, destId);
+}
+
+// Removes a spot's record (its last trip went) — without un-visiting its destination or country.
+export function withoutSpotRecord(r: VisitRecords, spotId: string): VisitRecords {
+  return keepVisited(r, { ...r, savedSpots: omit(r.savedSpots, [spotId]) }, SPOT_DEST.get(spotId));
+}
+
+// Removes a destination's record (its last trip went) — without un-visiting its country.
+export function withoutDestinationRecord(r: VisitRecords, destinationId: string): VisitRecords {
+  return keepVisited(r, { ...r, savedDestinations: omit(r.savedDestinations, [destinationId]) }, undefined, DEST_COUNTRY.get(destinationId));
+}
+
+// Un-visiting never rolls up: after a removal, a destination (and/or country) above it that was visited
+// before and no longer is gets a bare record of its own, so it stays visited.
+function keepVisited(before: VisitRecords, after: VisitRecords, destId?: string, countryCode?: string): VisitRecords {
+  const was = buildVisitIndex(before.savedDestinations, before.savedSpots, before.savedCountries);
+  let next = after;
+  let now = buildVisitIndex(next.savedDestinations, next.savedSpots, next.savedCountries);
+  if (destId && was.isDestVisited(destId) && !now.isDestVisited(destId)) {
+    next = { ...next, savedDestinations: { ...next.savedDestinations, [destId]: { destinationId: destId, type: 'visited' } } };
+    now = buildVisitIndex(next.savedDestinations, next.savedSpots, next.savedCountries);
+  }
+  const code = countryCode ?? (destId ? DEST_COUNTRY.get(destId) : undefined);
+  if (code && was.isCountryVisited(code) && !now.isCountryVisited(code)) {
+    next = { ...next, savedCountries: { ...next.savedCountries, [code]: { countryCode: code } } };
+  }
+  return next;
 }
 
 // Un-visits a destination: its own record and all its spots' records go, and it's unticked from its
-// country's trips.
+// country's trips. Its country stays visited.
 export function withoutDestination(r: VisitRecords, destinationId: string): VisitRecords {
   const code = DEST_COUNTRY.get(destinationId);
   const country = code ? r.savedCountries[code] : undefined;
   const unticked = country && untick(country, destinationId);
-  return {
+  return keepVisited(r, {
     savedDestinations: omit(r.savedDestinations, [destinationId]),
     savedSpots: omit(r.savedSpots, Object.values(r.savedSpots).filter(s => SPOT_DEST.get(s.spotId) === destinationId).map(s => s.spotId)),
     savedCountries: unticked ? { ...r.savedCountries, [code!]: { ...country!, ...unticked } } : r.savedCountries,
-  };
+  }, undefined, code);
 }
 
 // Un-visits a country: its own record, and every record of its destinations and their spots, go.
