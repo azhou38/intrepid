@@ -19,6 +19,7 @@ const BOUNDS: Record<string, [number, number, number, number]> = {
   JP: [ 30.5,  45.5, 129.0, 146.0],
   NL: [ 50.8,  53.5,   3.4,   7.2],
   NO: [ 57.9,  71.2,   4.5,  31.1],
+  NZ: [-47.3, -34.4, 166.4, 178.6],
   PT: [ 36.8,  42.2,  -9.5,  -6.2],
   SE: [ 55.3,  69.1,  11.0,  24.2],
   US: [ 25.0,  50.0,-125.0, -66.0],
@@ -30,7 +31,7 @@ const BOUNDS: Record<string, [number, number, number, number]> = {
 // ranking, just a reasonable approximation of global tourist-arrival prominence.
 const POPULARITY: Record<string, number> = {
   FR: 1, ES: 2, IT: 3, US: 4, GB: 5, DE: 6, JP: 7, GR: 8, AT: 9, NL: 10,
-  PT: 11, CH: 12, CZ: 13, IE: 14, IS: 15, AU: 16, BE: 17, DK: 18, SE: 19, NO: 20, FI: 21,
+  PT: 11, CH: 12, CZ: 13, IE: 14, IS: 15, AU: 16, BE: 17, DK: 18, SE: 19, NO: 20, FI: 21, NZ: 22,
 };
 
 /** Lower = more famous/higher display priority. Unknown countries sort last. */
@@ -56,6 +57,7 @@ const LABEL_POINTS: Record<string, [number, number]> = {
   GR: [39.4, 22.0],   // Thessaly (mainland)
   JP: [36.4, 138.5],  // central Honshu
   NO: [61.2, 8.8],    // southern-interior Norway
+  NZ: [-43.6, 171.2], // Canterbury, central South Island (the box centre falls in Cook Strait)
 };
 
 /** Returns the point a country's map pin/label should anchor to — a hand-tuned on-landmass

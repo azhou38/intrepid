@@ -12,7 +12,7 @@ Every destination's header image (the photo at the top of its sheet, also used f
 
 When adding a destination:
 
-1. Pick a Wikimedia Commons file that meets the rules above. Open it and check it visually.
+1. Pick a Wikimedia Commons file that meets the rules above. Open it and check it visually. `npx tsx scripts/photo-picker.ts [--country XX]` searches Commons for every missing header, "Why visit" photo and spot photo, keeps only files that meet the size rules, and writes `photo-picker.html` to choose from by eye; `--apply picks.json` then writes the picks in (covering step 2).
 2. Add it to `WIKI_IMAGE_OVERRIDES` in `src/data/imageOverrides.ts`, keyed by the destination's exact `name`.
 3. Run `npx tsx scripts/check-destination-headers.ts`, which works offline.
 4. Regenerate the manifest with `npx tsx scripts/build-image-manifest.ts`. It refuses to run if any destination lacks a hand-picked header, and lists headers that are too small or too wide.
