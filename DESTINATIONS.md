@@ -79,7 +79,7 @@ Write in the app's voice: plain, specific, enthusiastic without superlatives you
 ## Writing a spot
 
 - `id` — for a spot of a destination, `<destinationId>-<n>`, numbered from 1 in importance order and never reused. For a standalone spot, its own lowercase hyphenated slug (`glenorchy`), unique among all spot and destination ids.
-- `destinationId` — the parent destination's id, or **omitted** for a standalone spot (see "Standalone spots in the app" below).
+- `destinationId` — the parent destination's id, or **omitted** for a standalone spot, which then needs `country`, `countryCode`, `continent` and `timezone` (see "Standalone spots in the app" below).
 - `name` — the **exact title of its Wikipedia article** (or the name its article is most likely to be found under). The app looks the spot's photo up by this name, so a creative or abbreviated name silently loads the wrong photo or none. Where the natural name is ambiguous or shared with other places (a common lake or park name), disambiguate or give it a hand-picked photo in `WIKI_IMAGE_OVERRIDES`.
 - `category` — `museum | landmark | monument | religious | nature | viewpoint | hike | entertainment | market | beach | historic`. `icon` — one emoji that suits it.
 - `coordinates` — the spot's entrance, trailhead or the point visitors stand at, accurate to ~100 m. Never reuse the destination's centre for a spot that is somewhere else.
@@ -91,7 +91,24 @@ Write in the app's voice: plain, specific, enthusiastic without superlatives you
 
 ## Standalone spots in the app
 
-**The app does not support standalone spots yet:** `Spot.destinationId` is required, and the map pins, spot sheet, saved data, visit roll-up (spot → destination → country), search, climate and Near You all assume a parent. Until that is built, do not add a standalone spot — it would break those paths or silently misfile — and do not quietly bucket it under a distant destination either. Decide what it is (destination / spot of X / standalone), add the destination and in-area spots, and **list every standalone spot you identified in your summary** so it can be added once the model allows it. The convention above is the target; building it is a separate change (an optional `destinationId`, its own country/timezone/rank fields, and a pin/sheet that works without a destination).
+A spot with no `destinationId` is standalone, and the app supports it end to end. Because a destination normally supplies a spot's place context, a standalone spot carries its own — **all four are required**:
+
+```ts
+{ id: 'glenorchy', country: 'New Zealand', countryCode: 'NZ', continent: 'Oceania', timezone: 'Pacific/Auckland',
+  name: 'Glenorchy', icon: '🏔️', coordinates: { … }, category: 'nature', bio: '…', hours: …, … }
+```
+
+Put standalone spots in the "Standalone spots" section at the end of `src/data/spots.ts`. Their id is a unique slug (it must not collide with any destination or spot id), and, like every id, is never changed once shipped.
+
+How they behave:
+- **Map:** the pin appears once the camera is zoomed in to about a 40 km view (`STANDALONE_SPOT_SPAN_KM`), the same handoff a destination's spots use. Selecting one opens the spot sheet alone, with its country as the heading and no destination name, carousel counter or "grid view" button. Closing it returns to a ~40 km view.
+- **Search:** found by name, labelled with its country instead of a destination.
+- **Visited:** visiting it marks its **country** visited (there is no destination to carry it up); un-visiting it never un-visits the country, and removing the country removes it. The country sheet's spot count includes it.
+- **Hours:** read in its own `timezone`.
+
+Never read `spot.destinationId` directly: use `spotDestination`, `spotCountryCode`, `spotCountry`, `spotContinent`, `spotTimezone` and `spotContext` from `src/data/spots.ts`, which handle both kinds.
+
+Known limits: a country needs at least one destination to get a map pill and a country sheet (a country with only standalone spots has neither); a standalone spot cannot be ticked in a country trip (that selector lists destinations); and it has no destination sheet, so no "My Visit" grouping above it.
 
 ## New country or region checklist
 
@@ -110,7 +127,7 @@ Every new destination needs a hand-picked header and three "Why visit" photos, r
 
 - `npx tsc --noEmit -p .` shows no new errors.
 - `npx tsx scripts/check-destination-headers.ts` passes (or lists only destinations whose photos you are about to add).
-- Ids unique across the file; every spot's `destinationId` exists; no two spots share a name.
+- Ids unique across the file; every spot has a `destinationId` that exists or the four standalone fields; no two spots share a name.
 - Each destination has enough surrounding spots to justify being a destination (see "The two levels"); lone attractions are listed as standalone spots, not promoted.
 - Coordinates look right on a map (a swapped sign puts a New Zealand spot in the Atlantic); every spot is within its destination's span (otherwise it is standalone, or the span is wrong).
 - Every destination has exactly three `whyVisit`, three `highlights`, three `goodToKnow`; each `bestTimeBlurb` has one `{months}`.

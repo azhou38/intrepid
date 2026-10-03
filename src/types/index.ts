@@ -85,6 +85,10 @@ export interface SeasonalSignal {
 
 export interface Destination {
   id: string;
+  // Set only on the in-memory context built for a STANDALONE spot (see spotContext in data/spots.ts), whose id is
+  // the spot's id. Never present on an entry of DESTINATIONS and never stored: it lets the sheets and map, which
+  // are written around a selected destination, show a spot that has none.
+  standaloneSpotId?: string;
   name: string;
   country: string;
   countryCode: string;
@@ -173,7 +177,7 @@ export interface PhotoEntry {
 
 export interface SavedSpot {
   spotId: string;
-  destinationId: string;
+  destinationId?: string;   // absent for a standalone spot (see Spot in data/spots.ts)
   rating?: number;       // 1–5 stars
   visitDate?: string;    // legacy single date (YYYY-MM-DD, day may be '00')
   notes?: string;        // legacy single note

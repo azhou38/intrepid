@@ -1,9 +1,18 @@
-import type { SpotCategory } from '../types';
+import type { Continent, Destination, SpotCategory } from '../types';
 import { DESTINATIONS } from './destinations';
 
 export interface Spot {
   id: string;
-  destinationId: string;
+  // The destination this spot belongs to — OMITTED for a STANDALONE spot: one with no appropriate destination to
+  // sit under, or too few neighbouring spots to make one (see DESTINATIONS.md). A standalone spot instead carries
+  // the place context a destination would have supplied (country, countryCode, continent, timezone), all required
+  // when destinationId is absent. Read these through spotCountryCode / spotCountry / spotTimezone / spotDestination,
+  // never through destinationId directly.
+  destinationId?: string;
+  country?: string;
+  countryCode?: string;
+  continent?: Continent;
+  timezone?: string;       // IANA, e.g. "Pacific/Auckland" — opening hours are read in it
   name: string;
   icon: string;
   coordinates: { latitude: number; longitude: number };
@@ -66,9 +75,52 @@ export function specialClosureOn(spot: Spot, date: Date): string | null {
 // Tokyo spot from a phone set to New York time still sees Tokyo's actual open/closed state.
 const SOON_WINDOW_MIN = 60;
 
-const DESTINATION_TIMEZONE: Record<string, string> = Object.fromEntries(
-  DESTINATIONS.map(d => [d.id, d.timezone])
-);
+const DESTINATION_BY_ID = new Map(DESTINATIONS.map(d => [d.id, d]));
+
+// ── A spot's parent, country and timezone — absent parent tolerated ───────────
+// Every consumer goes through these rather than reading destinationId, so a standalone spot (no parent) works
+// everywhere a parented one does.
+
+export const isStandaloneSpot = (spot: Spot) => !spot.destinationId;
+
+/** The spot's destination, or undefined for a standalone spot (or an id no longer in DESTINATIONS). */
+export function spotDestination(spot: Spot): Destination | undefined {
+  return spot.destinationId ? DESTINATION_BY_ID.get(spot.destinationId) : undefined;
+}
+export function spotCountryCode(spot: Spot): string | undefined {
+  return spot.countryCode ?? spotDestination(spot)?.countryCode;
+}
+export function spotCountry(spot: Spot): string | undefined {
+  return spot.country ?? spotDestination(spot)?.country;
+}
+export function spotContinent(spot: Spot): Continent | undefined {
+  return spot.continent ?? spotDestination(spot)?.continent;
+}
+export function spotTimezone(spot: Spot): string | undefined {
+  return spot.timezone ?? spotDestination(spot)?.timezone;
+}
+
+// What a standalone spot "looks like" as a destination, for the parts of the UI that are written around a selected
+// destination (the map's selection and camera framing, the spot sheet's heading). In-memory only: it is not in
+// DESTINATIONS, is never saved, and is flagged with standaloneSpotId. The zoom span is the one place its pins appear
+// at (see isPastDestDefaultZoom in MapScreen) and where "close" returns the camera to.
+export const STANDALONE_SPOT_SPAN_KM = 40;
+const contextCache = new Map<string, Destination>();
+export function spotContext(spot: Spot): Destination | undefined {
+  const real = spotDestination(spot);
+  if (real) return real;
+  if (spot.destinationId || !spot.country || !spot.countryCode || !spot.continent || !spot.timezone) return undefined;
+  let ctx = contextCache.get(spot.id);
+  if (!ctx) {
+    ctx = {
+      id: spot.id, standaloneSpotId: spot.id, name: spot.name,
+      country: spot.country, countryCode: spot.countryCode, timezone: spot.timezone, continent: spot.continent,
+      coordinates: spot.coordinates, category: 'landmark', defaultZoomSpanKm: STANDALONE_SPOT_SPAN_KM, rank: 5,
+    };
+    contextCache.set(spot.id, ctx);
+  }
+  return ctx;
+}
 
 /** `date`'s wall-clock date/time as observed in `timeZone`, expressed as a Date whose OWN local
  *  getters (getHours/getDay/setDate/…) read out those wall-clock values — so existing device-
@@ -95,7 +147,7 @@ function zonedNow(date: Date, timeZone: string | undefined): Date {
  *  highlight in the hours dropdown) that need to agree with what `getSpotOpenStatus` itself is
  *  treating as "today", rather than the device's own calendar date. */
 export function zonedNowForSpot(spot: Spot, deviceNow: Date = new Date()): Date {
-  return zonedNow(deviceNow, DESTINATION_TIMEZONE[spot.destinationId]);
+  return zonedNow(deviceNow, spotTimezone(spot));
 }
 
 interface TimeRange { openMin: number; closeMin: number } // minutes since local midnight; closeMin may exceed 1440 (crosses midnight)
@@ -137,7 +189,7 @@ export type SpotOpenStatus =
  *  timezone, not the device's — see `zonedNow`), or 'unknown' when `hours` isn't a parseable
  *  time range (falls back to just showing the raw string). */
 export function getSpotOpenStatus(spot: Spot, deviceNow: Date = new Date()): SpotOpenStatus {
-  const now = zonedNow(deviceNow, DESTINATION_TIMEZONE[spot.destinationId]);
+  const now = zonedNow(deviceNow, spotTimezone(spot));
 
   const todayReason = specialClosureOn(spot, now);
   if (todayReason) return { kind: 'closed', label: `Closed (${todayReason})`, color: 'orange' };
@@ -431,7 +483,6 @@ export const SPOTS: Spot[] = [
   { id: 'queenstown-3', destinationId: 'queenstown', name: 'Shotover Jet', icon: '🚤', coordinates: { latitude: -44.9960, longitude: 168.6840 }, category: 'entertainment', bio: 'A high-speed jet boat that spins and skims past the rock walls of the narrow Shotover River canyons.', hours: '8:30 AM – 5:30 PM', visitHoursMin: 1, visitHoursMax: 1.5, costMin: 159, costMax: 159, currency: 'NZD', ticketUrl: 'https://www.shotoverjet.com' },
   { id: 'queenstown-4', destinationId: 'queenstown', name: 'TSS Earnslaw', icon: '🛳️', coordinates: { latitude: -45.0346, longitude: 168.6595 }, category: 'entertainment', bio: 'A century-old coal-fired steamship cruising Lake Wakatipu to Walter Peak high-country farm.', hours: '10:00 AM – 6:00 PM (sailings)', visitHoursMin: 1.5, visitHoursMax: 3.5, costMin: 85, costMax: 85, currency: 'NZD', ticketUrl: 'https://www.realnz.com' },
   { id: 'queenstown-5', destinationId: 'queenstown', name: 'Arrowtown', icon: '🍂', coordinates: { latitude: -44.9410, longitude: 168.8310 }, category: 'historic', bio: 'A gold-rush village of heritage cottages and a restored Chinese miners\' settlement, ablaze with colour in autumn.', hours: 'Open 24 hours', visitHoursMin: 2, visitHoursMax: 3, free: true },
-  { id: 'queenstown-6', destinationId: 'queenstown', name: 'Glenorchy', icon: '🏔️', coordinates: { latitude: -44.8500, longitude: 168.3870 }, category: 'nature', bio: 'A tiny village at the head of Lake Wakatipu, beneath the peaks and valleys used as Middle-earth in The Lord of the Rings.', hours: 'Open 24 hours', visitHoursMin: 2, visitHoursMax: 4, free: true },
   { id: 'queenstown-7', destinationId: 'queenstown', name: 'Ben Lomond Track', icon: '🥾', coordinates: { latitude: -44.9900, longitude: 168.6250 }, category: 'hike', bio: 'A big climb from the top of the gondola to a 1,748 m summit with views across the lake and the Southern Alps.', hours: 'Open 24 hours', visitHoursMin: 6, visitHoursMax: 8, free: true },
   { id: 'queenstown-8', destinationId: 'queenstown', name: 'Queenstown Gardens', icon: '🌳', coordinates: { latitude: -45.0381, longitude: 168.6630 }, category: 'nature', bio: 'A lakeside peninsula of lawns, rose beds and a frisbee-golf course, with the Remarkables framed across the water.', hours: 'Open 24 hours', visitHoursMin: 0.5, visitHoursMax: 1.5, free: true },
   { id: 'queenstown-9', destinationId: 'queenstown', name: 'Gibbston Valley', icon: '🍷', coordinates: { latitude: -45.0160, longitude: 168.9400 }, category: 'nature', bio: 'A narrow river valley of Pinot Noir vineyards, with cellar doors and a wine cave carved into the hillside.', hours: '10:00 AM – 5:00 PM', visitHoursMin: 2, visitHoursMax: 4, free: true },
@@ -441,7 +492,6 @@ export const SPOTS: Spot[] = [
   { id: 'wanaka-3', destinationId: 'wanaka', name: 'Rob Roy Glacier Track', icon: '🧊', coordinates: { latitude: -44.5020, longitude: 168.7540 }, category: 'hike', bio: 'A walk up a beech-forested valley in Mount Aspiring National Park to a hanging glacier spilling waterfalls.', hours: 'Open 24 hours', visitHoursMin: 3, visitHoursMax: 4, free: true, ticketUrl: 'https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/mount-aspiring-national-park/' },
   { id: 'wanaka-4', destinationId: 'wanaka', name: 'Puzzling World', icon: '🧩', coordinates: { latitude: -44.6950, longitude: 169.1600 }, category: 'entertainment', bio: 'A leaning clock tower, a two-storey maze and rooms of mind-bending optical illusions.', hours: '8:30 AM – 5:30 PM', visitHoursMin: 1.5, visitHoursMax: 2.5, costMin: 25, costMax: 25, currency: 'NZD', ticketUrl: 'https://www.puzzlingworld.co.nz' },
   { id: 'wanaka-5', destinationId: 'wanaka', name: 'Mount Iron', icon: '🥾', coordinates: { latitude: -44.6990, longitude: 169.1660 }, category: 'hike', bio: 'A short climb over a glacier-carved knoll to a summit overlooking the town, the lake and the Clutha River.', hours: 'Open 24 hours', visitHoursMin: 1, visitHoursMax: 1.5, free: true },
-  { id: 'wanaka-6', destinationId: 'wanaka', name: 'Blue Pools', icon: '💎', coordinates: { latitude: -44.1600, longitude: 169.2700 }, category: 'nature', bio: 'Clear, glacier-blue pools in a beech forest gorge on the Haast Pass road, reached over swing bridges.', hours: 'Open 24 hours', visitHoursMin: 1, visitHoursMax: 1, free: true },
   { id: 'wanaka-7', destinationId: 'wanaka', name: 'Cardrona Hotel', icon: '🍺', coordinates: { latitude: -44.8750, longitude: 169.0060 }, category: 'historic', bio: 'An 1863 gold-rush hotel on the Crown Range road, one of the oldest in New Zealand, with a sunny garden bar.', hours: '10:00 AM – 10:00 PM', visitHoursMin: 1, visitHoursMax: 1.5, free: true },
   // Fiordland
   { id: 'fiordland-1', destinationId: 'fiordland', name: 'Milford Sound', icon: '🛳️', coordinates: { latitude: -44.6414, longitude: 167.8974 }, category: 'nature', bio: 'The legendary fiord where Mitre Peak rises from black water and waterfalls pour off sheer granite walls.', hours: 'Cruises 8:30 AM – 4:30 PM', visitHoursMin: 2, visitHoursMax: 3, costMin: 75, costMax: 150, currency: 'NZD' },
@@ -553,4 +603,8 @@ export const SPOTS: Spot[] = [
   { id: 'invercargill-2', destinationId: 'invercargill', name: 'Bill Richardson Transport World', icon: '🚚', coordinates: { latitude: -46.4170, longitude: 168.3700 }, category: 'museum', bio: 'One of the largest private collections of trucks and vehicles in the world, with a quirky WOW wearable-art gallery.', hours: '10:00 AM – 5:00 PM', visitHoursMin: 2, visitHoursMax: 3, costMin: 30, costMax: 30, currency: 'NZD', ticketUrl: 'https://www.transportworld.co.nz' },
   { id: 'invercargill-3', destinationId: 'invercargill', name: 'Queens Park, Invercargill', icon: '🌳', coordinates: { latitude: -46.3990, longitude: 168.3540 }, category: 'nature', bio: 'An 80-hectare park of rose gardens, an aviary and an animal enclosure at the heart of the city.', hours: 'Open 24 hours', visitHoursMin: 1, visitHoursMax: 1.5, free: true },
   { id: 'invercargill-4', destinationId: 'invercargill', name: 'Stirling Point', icon: '🧭', coordinates: { latitude: -46.6140, longitude: 168.3590 }, category: 'landmark', bio: "Bluff's famous signpost at the end of State Highway 1, pointing to cities around the world.", hours: 'Open 24 hours', visitHoursMin: 0.5, visitHoursMax: 0.5, free: true },
+  // ── Standalone spots (no destination) ──────────────────────────────────────────
+  // Places with no appropriate destination to sit under, or too few neighbouring spots to be one — see DESTINATIONS.md.
+  { id: 'glenorchy', country: 'New Zealand', countryCode: 'NZ', continent: 'Oceania', timezone: 'Pacific/Auckland', name: 'Glenorchy', icon: '🏔️', coordinates: { latitude: -44.8500, longitude: 168.3870 }, category: 'nature', bio: 'A tiny village at the head of Lake Wakatipu, beneath the peaks and valleys used as Middle-earth in The Lord of the Rings.', hours: 'Open 24 hours', visitHoursMin: 2, visitHoursMax: 4, free: true },
+  { id: 'blue-pools', country: 'New Zealand', countryCode: 'NZ', continent: 'Oceania', timezone: 'Pacific/Auckland', name: 'Blue Pools', icon: '💎', coordinates: { latitude: -44.1600, longitude: 169.2700 }, category: 'nature', bio: 'Clear, glacier-blue pools in a beech forest gorge on the Haast Pass road, reached over swing bridges.', hours: 'Open 24 hours', visitHoursMin: 1, visitHoursMax: 1, free: true },
 ];

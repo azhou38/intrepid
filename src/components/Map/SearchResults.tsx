@@ -3,7 +3,7 @@ import { View, Text, Image, Pressable, StyleSheet } from 'react-native';
 import { X } from 'lucide-react-native';
 import CircleFlag from '../CircleFlag';
 import { DESTINATIONS } from '../../data/destinations';
-import { SPOTS, type Spot } from '../../data/spots';
+import { SPOTS, spotCountry, spotDestination, type Spot } from '../../data/spots';
 import type { Destination } from '../../types';
 import type { VisitIndex } from '../../utils/visitStatus';
 import type { RecentSearch } from '../../store';
@@ -18,7 +18,8 @@ export const SEARCH_PLACEHOLDER =
 export type SearchResult =
   | { type: 'country';     country: string; countryCode: string }
   | { type: 'destination'; destination: Destination }
-  | { type: 'spot';        spot: Spot; destination: Destination };
+  // `destination` is the spot's parent — absent for a standalone spot.
+  | { type: 'spot';        spot: Spot; destination?: Destination };
 
 // Shared by the map's own search bar and the Explore sheet's inline one, so both always
 // return identical results for the same query.
@@ -40,10 +41,7 @@ export function computeSearchResults(query: string): SearchResult[] {
     if (d.name.toLowerCase().includes(q)) results.push({ type: 'destination', destination: d });
   }
   for (const s of SPOTS) {
-    if (s.name.toLowerCase().includes(q)) {
-      const dest = DESTINATIONS.find(d => d.id === s.destinationId);
-      if (dest) results.push({ type: 'spot', spot: s, destination: dest });
-    }
+    if (s.name.toLowerCase().includes(q)) results.push({ type: 'spot', spot: s, destination: spotDestination(s) });
   }
   return results.slice(0, 10);
 }
@@ -89,8 +87,7 @@ function resolveRecent(r: RecentSearch): SearchResult | null {
     return destination ? { type: 'destination', destination } : null;
   }
   const spot = SPOTS.find(x => x.id === r.id);
-  const destination = spot && DESTINATIONS.find(x => x.id === spot.destinationId);
-  return spot && destination ? { type: 'spot', spot, destination } : null;
+  return spot ? { type: 'spot', spot, destination: spotDestination(spot) } : null;
 }
 
 export function computeSuggestions({ recents, view, visitIndex }: {
@@ -116,9 +113,7 @@ export function computeSuggestions({ recents, view, visitIndex }: {
       items = SPOTS
         .filter(sp => inView(sp.coordinates))
         .sort((a, b) => Number(visitIndex.isSpotVisited(a.id)) - Number(visitIndex.isSpotVisited(b.id)) || dist(a.coordinates) - dist(b.coordinates))
-        .map(spot => ({ spot, destination: DESTINATIONS.find(d => d.id === spot.destinationId) }))
-        .filter((x): x is { spot: Spot; destination: Destination } => !!x.destination)
-        .map(({ spot, destination }): SearchResult => ({ type: 'spot', spot, destination }));
+        .map((spot): SearchResult => ({ type: 'spot', spot, destination: spotDestination(spot) }));
     } else {
       const visited = (d: Destination) => visitIndex.isDestVisited(d.id);
       items = DESTINATIONS
@@ -222,7 +217,7 @@ function SearchResultRow({ item, last, onSelect, onRemove }: {
     thumbName = item.destination.name; thumbKey = item.destination.id;
   } else {
     icon = item.spot.icon; countryCode = null; label = item.spot.name;
-    sublabel = item.destination.name; badge = 'Spot';
+    sublabel = item.destination?.name ?? spotCountry(item.spot) ?? ''; badge = 'Spot';
     thumbName = item.spot.name; thumbKey = `spot_${item.spot.id}`;
   }
   return (

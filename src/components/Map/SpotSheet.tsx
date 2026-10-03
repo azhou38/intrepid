@@ -308,14 +308,14 @@ function SpotSheet({
   const handleSaveVisitModule = useCallback((v: Visit) => {
     // The spot only actually becomes "visited" here, on a genuine save — not the moment "Add
     // Visit" was tapped (see handleMarkVisited).
-    if (!savedSpot) saveSpotVisited(activeSpot.id, destination.id);
+    if (!savedSpot) saveSpotVisited(activeSpot.id, activeSpot.destinationId);
     setRevealVisit(true);
     const base = localVisits.filter(x => x.id !== 'legacy');
     const idx  = base.findIndex(x => x.id === v.id);
     const updated = idx >= 0 ? base.map(x => x.id === v.id ? v : x) : [...base, v];
     updated.sort((a, b) => b.startDate.localeCompare(a.startDate));
     updateSpot(activeSpot.id, { visits: updated, visitDate: updated[0]?.startDate });
-  }, [savedSpot, localVisits, activeSpot.id, destination.id, saveSpotVisited, updateSpot]);
+  }, [savedSpot, localVisits, activeSpot.id, activeSpot.destinationId, saveSpotVisited, updateSpot]);
 
   // That was the last (or only ever synthesized legacy) visit logged for this spot — not just
   // "visited with zero trips", so this unsaves the spot entirely (also dropping its rating, same
@@ -987,8 +987,13 @@ function SpotSheet({
               <View style={st.heroContent}>
                 <Text style={st.heroName} numberOfLines={2}>{activeSpot.name}</Text>
                 <View style={st.heroMeta}>
-                  <Text style={st.heroMetaTxt}>{destination.name}</Text>
-                  <View style={st.heroMetaDivider} />
+                  {/* A standalone spot has no destination to name — just its country. */}
+                  {!destination.standaloneSpotId && (
+                    <>
+                      <Text style={st.heroMetaTxt}>{destination.name}</Text>
+                      <View style={st.heroMetaDivider} />
+                    </>
+                  )}
                   <CircleFlag countryCode={destination.countryCode} size={13} />
                   <Text style={[st.heroMetaTxt, { marginLeft: 4 }]}>{destination.country}</Text>
                 </View>
@@ -1101,10 +1106,10 @@ function SpotSheet({
           {/* Heading — indicates you're browsing the spots within this destination */}
           <View style={st.carHeader}>
             <View style={{ flex: 1 }}>
-              <Text style={st.carEyebrow}>SPOTS IN</Text>
-              <Text style={st.carDest} numberOfLines={1}>{destination.name}</Text>
+              <Text style={st.carEyebrow}>{destination.standaloneSpotId ? 'SPOT IN' : 'SPOTS IN'}</Text>
+              <Text style={st.carDest} numberOfLines={1}>{destination.standaloneSpotId ? destination.country : destination.name}</Text>
             </View>
-            <Text style={st.carCounter}>{activeIndex + 1} / {spots.length}</Text>
+            {spots.length > 1 && <Text style={st.carCounter}>{activeIndex + 1} / {spots.length}</Text>}
             {!!onGoToList && (
               <Pressable
                 style={st.carListBtn}

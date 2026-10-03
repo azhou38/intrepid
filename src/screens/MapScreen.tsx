@@ -105,7 +105,7 @@ import type { Destination, CountryCluster } from '../types';
 import type GeoJSON from 'geojson';
 import { getCountryRegion, getCountryBounds, getCountryCenter, getCountryPopularity } from '../utils/countryBounds';
 import { DESTINATIONS } from '../data/destinations';
-import { SPOTS, type Spot } from '../data/spots';
+import { SPOTS, STANDALONE_SPOT_SPAN_KM, spotContext, type Spot } from '../data/spots';
 import DestinationSheet from '../components/Map/DestinationSheet';
 import CircleFlag from '../components/CircleFlag';
 import PinPhoto from '../components/Map/PinPhoto';
@@ -572,7 +572,7 @@ const DEST_SPOT_RADIUS: Record<string, number> = (() => {
   const out: Record<string, number> = {};
   for (const s of SPOTS) {
     const d = DESTINATIONS.find(dd => dd.id === s.destinationId);
-    if (!d) continue;
+    if (!d || !s.destinationId) continue;   // a standalone spot has no destination whose marker it replaces
     const dLat = s.coordinates.latitude - d.coordinates.latitude;
     const dLng = (s.coordinates.longitude - d.coordinates.longitude)
       * Math.cos((d.coordinates.latitude * Math.PI) / 180);
@@ -822,6 +822,9 @@ function getDestZoomDelta(dest: Destination): number {
 const DEST_ZOOM_DELTA_BY_ID: Record<string, number> = (() => {
   const out: Record<string, number> = {};
   for (const d of DESTINATIONS) out[d.id] = getDestZoomDelta(d);
+  // A standalone spot is keyed by its own id: it has no destination, so it is its own "parent" for the pin
+  // handoff — its pin appears once the camera is at or past this span.
+  for (const s of SPOTS) if (!s.destinationId) out[s.id] = STANDALONE_SPOT_SPAN_KM / KM_PER_DEG_LAT;
   return out;
 })();
 // The same thresholds expressed as zoom LEVELS rather than latitude deltas — camZoom (the
@@ -849,6 +852,8 @@ function isPastDestDefaultZoom(destId: string, camZoom: number): boolean {
   const level = DEST_ZOOM_LEVEL_BY_ID[destId];
   return level !== undefined && camZoom >= level - ZOOM_EPSILON;
 }
+// The key a spot's pin handoff is tracked under: its destination's id, or its own id when standalone.
+const spotParentKey = (s: Spot) => s.destinationId ?? s.id;
 
 
 // Returns the SAME Set/array instance as last time whenever its contents haven't changed. The
@@ -907,7 +912,7 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   const visitedSpotCountByDest = useMemo(() => {
     const counts: Record<string, number> = {};
     for (const sp of SPOTS) {
-      if (visitIndex.isSpotVisited(sp.id)) counts[sp.destinationId] = (counts[sp.destinationId] ?? 0) + 1;
+      if (sp.destinationId && visitIndex.isSpotVisited(sp.id)) counts[sp.destinationId] = (counts[sp.destinationId] ?? 0) + 1;
     }
     return counts;
   }, [visitIndex]);
@@ -1974,7 +1979,7 @@ const destItems = useMemo((): DestItem[] =>
 
   // All spots in the selected destination — the set the spot carousel pages through.
   const spotsInDest = useMemo(
-    () => (selectedDest ? SPOTS.filter(s => s.destinationId === selectedDest.id) : []),
+    () => (selectedDest ? SPOTS.filter(s => spotParentKey(s) === selectedDest.id) : []),
     [selectedDest],
   );
 
@@ -2024,11 +2029,11 @@ const destItems = useMemo((): DestItem[] =>
       const minLng = longitude - longitudeDelta * (0.5 + pad);
       const maxLng = longitude + longitudeDelta * (0.5 + pad);
       for (const s of SPOTS) {
-        if (selectedDest && s.destinationId === selectedDest.id) continue;
+        if (selectedDest && spotParentKey(s) === selectedDest.id) continue;
         // Each OTHER destination's spots only show at and past THAT destination's own default
         // zoom — same reasoning as selectedBelowOwnZoom above, just per-spot since there's no
         // single "selected" destination to read the threshold from here.
-        if (!isPastDestDefaultZoom(s.destinationId, planZoom)) continue;
+        if (!isPastDestDefaultZoom(spotParentKey(s), planZoom)) continue;
         const { latitude: lat, longitude: lng } = s.coordinates;
         if (lat >= minLat && lat <= maxLat && lng >= minLng && lng <= maxLng) others.push(s);
       }
@@ -2696,14 +2701,16 @@ const destItems = useMemo((): DestItem[] =>
 
   // ── Spot selection ──────────────────────────────────────────────────────────
   const handleSpotPress = useCallback((spot: Spot) => {
-    const dest = DESTINATIONS.find(d => d.id === spot.destinationId);
+    // Its destination, or — for a standalone spot — the in-memory context standing in for one (see spotContext).
+    const dest = spotContext(spot);
     if (!dest) return;
     // Provenance: entered from an open destination context → back goes up to it. Entered by
     // free-zooming to spot level and tapping a teardrop with nothing selected → the X pill
     // zooms out to the destination's default view instead (the parent destination still gets
     // selected below as internal bookkeeping — SpotSheet needs it — but the user never
     // visited it, so back must not open its sheet). handleSearchSelect overrides after.
-    if (!selectedDestRef.current) {
+    // A standalone spot has no destination sheet to go back up to, so it is always entered "from the map".
+    if (!selectedDestRef.current || dest.standaloneSpotId) {
       setSpotOrigin('map');
     } else {
       setSpotOrigin('destination');
@@ -2781,7 +2788,7 @@ const destItems = useMemo((): DestItem[] =>
   const handleCloseSpotToDestinationView = useCallback(() => {
     const spot = selectedSpotRef.current;
     const dest = selectedDestRef.current
-      ?? (spot ? DESTINATIONS.find(d => d.id === spot.destinationId) : undefined);
+      ?? (spot ? spotContext(spot) : undefined);
     if (zoomTimerRef.current) { clearTimeout(zoomTimerRef.current); zoomTimerRef.current = null; }
     selectedSpotRef.current = null;
     setSelectedSpot(null);
@@ -3237,7 +3244,10 @@ const destItems = useMemo((): DestItem[] =>
     } else {
       // Spot: same reasoning as the destination branch above — handleSpotPress never sets
       // selectedCountry either.
-      const cluster = buildCountryCluster(item.destination.country, item.destination.countryCode);
+      // The spot's country: its destination's, or its own when standalone.
+      const ctx = spotContext(item.spot);
+      if (!ctx) return;
+      const cluster = buildCountryCluster(ctx.country, ctx.countryCode);
       selectedCountryRef.current = cluster;
       setSelectedCountry(cluster);
       prevRegionRef.current = region;
@@ -4403,7 +4413,8 @@ const destItems = useMemo((): DestItem[] =>
           enterFromPrevious={newSheetEnterFromPrevious}
           mapGestureAtSV={mapGestureAtSV}
           onSnapStateChange={handleSheetSnapStateChange}
-          onGoToList={handleGoToListView}
+          // A standalone spot has no destination sheet to open a list in.
+          onGoToList={selectedDest?.standaloneSpotId ? undefined : handleGoToListView}
           collapseSignal={collapseSheetSignal}
         />
       )}

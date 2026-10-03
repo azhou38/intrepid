@@ -229,8 +229,9 @@ function CountrySheet({
 
   const spotsCount = useMemo(() => {
     const destIds = new Set(dests.map(d => d.id));
-    return SPOTS.filter(s => destIds.has(s.destinationId)).length;
-  }, [dests]);
+    // Spots of its destinations, plus any standalone spot in the country.
+    return SPOTS.filter(s => (s.destinationId ? destIds.has(s.destinationId) : s.countryCode === cluster.countryCode)).length;
+  }, [dests, cluster.countryCode]);
 
   const savedCountry       = savedCountries[cluster.countryCode];
   // Visited if this country has trips of its own or any of its destinations is visited (see
