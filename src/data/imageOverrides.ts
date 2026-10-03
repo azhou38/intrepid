@@ -4,15 +4,23 @@
 // exact title the app looks the place up by (a destination's or spot's name), value is the
 // Commons file name without the "File:" prefix. Each was chosen as a single, clearly identifiable
 // photograph of the place.
+//
+// Every DESTINATION must have an entry here: its header image, which must be a spectacular cityscape or
+// panorama (or, for nature destinations, a wide landscape) — never one building, attraction or an aerial
+// view. See AGENTS.md ("Destination header images") and scripts/destination-header-policy.ts, which
+// enforces it.
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Rovaniemi": "Santa Claus Village (5306867729).jpg",
   "Golden Circle": "Gullfoss, Suðurland, Islandia, 2014-08-16, DD 123.JPG",
-  "Mykonos": "Windmills of the Mykonos Island, Chora. Cyclades, Agean Sea, Greece.jpg",
+  "Mykonos": "View of Mykonos 03.jpg",
   "Santorini": "SantoriniPartialPano.jpg",
   "Great Barrier Reef": "Amazing Great Barrier Reef 1.jpg",
   "Stockholm": "Stockholm-Gamla-Stan-panorama.jpg",
   "Norwegian Fjords": "Geirangerfjord from Ørnesvingen, 2013 June.jpg",
-  "Madrid": "Plaza Mayor de Madrid - 01.jpg",
+  "Madrid": "Gran Via, Madrid, at night II.jpg",
+  "Vienna": "Vienna panorama.jpg",
+  "Venice": "Canal Grande Chiesa della Salute e Dogana dal ponte dell Accademia.jpg",
+  "Helsinki": "Skyline of Helsinki as seen from the Erottaja fire station.jpg",
   "Yavapai Point": "Grand Canyon Powell Point Evening Light 2013.jpg",
   "Vatican": "Vatican Aerial View.jpg",
   "Van Gogh Museum": "Van Gogh Museum, Kurokawa wing.jpg",
