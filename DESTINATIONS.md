@@ -121,7 +121,7 @@ When the area's country is not yet in the app, also update (the data alone is no
 
 ## Photos
 
-Every new destination needs a hand-picked header and three "Why visit" photos, resolved through the image manifest. See `AGENTS.md`; `scripts/photo-picker.ts` (add `--auto` to have it choose) does the searching. Spot photos default to the spot's Wikipedia lead image, which is fine unless it is wrong for the spot.
+Every new destination needs a hand-picked header and three "Why visit" photos, resolved through the image manifest. All the rules, and how to run `scripts/photo-picker.ts`, are in `IMAGES.md`. Spot photos default to the spot's Wikipedia lead image, which is fine unless it is wrong for the spot.
 
 ## Before you finish
 
