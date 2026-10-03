@@ -1234,7 +1234,7 @@ function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore, nearbyHlScrol
         <View style={st.glanceCard}>
           <View style={st.glanceItem}>
             <View style={st.glanceIconCircle}>
-              <Clock size={20} color="white" />
+              <Clock size={20} color={INFO_INK} />
             </View>
             <Text style={st.glanceVal} numberOfLines={1}>{formatVisitTime(spot.visitHoursMin, spot.visitHoursMax)}</Text>
             <Text style={st.glanceLbl}>Time Needed</Text>
@@ -1242,7 +1242,7 @@ function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore, nearbyHlScrol
           <View style={st.glanceDivider} />
           <View style={st.glanceItem}>
             <View style={st.glanceIconCircle}>
-              <Ticket size={20} color="white" />
+              <Ticket size={20} color={INFO_INK} />
             </View>
             <Text style={st.glanceVal} numberOfLines={1}>{formatSpotCost(spot)}</Text>
             <Text style={st.glanceLbl}>Cost (Adult)</Text>
@@ -1532,12 +1532,12 @@ const st = StyleSheet.create({
   // One combined card (was two separate ones) — a vertical divider between the two halves
   // instead of a gap, white background, light gray border. Same border strength as
   // DestinationSheet's About-tab boxes (its ABOUT_BORDER, '#D8DBE0') — was a fainter '#F0F1F3'.
-  // Gray box, gray border (the About boxes' '#D8DBE0'), white clock and ticket icons on a dark gray
+  // White box, gray border (the About boxes' '#D8DBE0'), black clock and ticket icons on a light gray
   // circle.
-  glanceCard: { backgroundColor: '#F3F4F6', borderRadius: 16, flexDirection: 'row', borderWidth: 1, borderColor: '#D8DBE0' },
+  glanceCard: { backgroundColor: 'white', borderRadius: 16, flexDirection: 'row', borderWidth: 1, borderColor: '#D8DBE0' },
   glanceItem: { flex: 1, alignItems: 'center', paddingVertical: 20, gap: 5 },
   glanceDivider: { width: 1, backgroundColor: '#D8DBE0', marginVertical: 14 },
-  glanceIconCircle: { width: 40, height: 40, borderRadius: 20, backgroundColor: '#1F2937',
+  glanceIconCircle: { width: 40, height: 40, borderRadius: 20, backgroundColor: '#E5E7EB',
                       alignItems: 'center', justifyContent: 'center', marginBottom: 2 },
   // 20% larger than DestinationSheet's glanceRowTitle ("Why Visit" reasons text), which this
   // otherwise matches in weight/color.

@@ -219,6 +219,21 @@ function whySnapOffsets(count: number): number[] {
   });
 }
 
+// The slot order for `count` reasons, as indices into the reasons list: the #1 reason in the middle
+// slot (the card the carousel opens on), then the next ones alternating to its left and right —
+// for three, [2nd, 1st, 3rd].
+function centeredOrder(count: number): number[] {
+  const mid = Math.floor(count / 2);
+  const slots: number[] = new Array(count);
+  let rank = 0;
+  slots[mid] = rank++;
+  for (let d = 1; rank < count; d++) {
+    if (mid - d >= 0 && rank < count) slots[mid - d] = rank++;
+    if (mid + d < count && rank < count) slots[mid + d] = rank++;
+  }
+  return slots;
+}
+
 function WhyVisitCarousel({ destination, scrollRef }: {
   destination: Destination;
   scrollRef?: React.RefObject<ScrollView | null>;
@@ -240,7 +255,9 @@ function WhyVisitCarousel({ destination, scrollRef }: {
       style={st.whyScroll}
       contentContainerStyle={st.whyRow}
     >
-      {reasons.map((reason, i) => {
+      {/* The #1 reason sits in the middle slot, where the carousel opens (see centeredOrder). */}
+      {centeredOrder(reasons.length).map(i => {
+        const reason = reasons[i];
         const file = destination.whyVisitPhotos?.[i];
         return (
           <View key={i} style={st.whyCard}>
