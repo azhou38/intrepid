@@ -43,6 +43,7 @@ interface AppState {
   // "Recent" suggestions.
   recentSearches: RecentSearch[];
   addRecentSearch: (r: RecentSearch) => void;
+  removeRecentSearch: (r: RecentSearch) => void;
   clearRecentSearches: () => void;
 }
 
@@ -167,6 +168,8 @@ export const useStore = create<AppState>()(
           recentSearches: [r, ...(s.recentSearches ?? []).filter(x => recentKey(x) !== recentKey(r))]
             .slice(0, MAX_RECENT_SEARCHES),
         })),
+      removeRecentSearch: (r) =>
+        set((s) => ({ recentSearches: (s.recentSearches ?? []).filter(x => recentKey(x) !== recentKey(r)) })),
       clearRecentSearches: () => set({ recentSearches: [] }),
     }),
     {

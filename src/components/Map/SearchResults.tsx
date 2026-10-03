@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, Image, Pressable, StyleSheet } from 'react-native';
+import { X } from 'lucide-react-native';
 import CircleFlag from '../CircleFlag';
 import { DESTINATIONS } from '../../data/destinations';
 import { SPOTS, type Spot } from '../../data/spots';
@@ -69,6 +70,13 @@ const ON_MAP_MAX = 4;
 
 const resultKey = (r: SearchResult) =>
   r.type === 'country' ? `country:${r.countryCode}` : r.type === 'destination' ? `destination:${r.destination.id}` : `spot:${r.spot.id}`;
+
+// The stored form of a search result (see the store's RecentSearch).
+export function toRecentSearch(item: SearchResult): RecentSearch {
+  return item.type === 'country' ? { type: 'country', countryCode: item.countryCode }
+    : item.type === 'destination' ? { type: 'destination', id: item.destination.id }
+    : { type: 'spot', id: item.spot.id };
+}
 
 function resolveRecent(r: RecentSearch): SearchResult | null {
   if (r.type === 'country') {
@@ -150,12 +158,14 @@ function SearchResultThumb({ name, icon, cacheKey, size }: {
 // The rows only (section headers / empty state / items) — the caller supplies the scrolling container,
 // since the map's dropdown and the sheet's full-screen list scroll and are styled differently. With a
 // query, the matches; without one, the suggestion sections (which may be none at all).
-export function SearchResultRows({ query, results, sections, onSelect, onClearRecent }: {
+export function SearchResultRows({ query, results, sections, onSelect, onClearRecent, onRemoveRecent }: {
   query: string;
   results: SearchResult[];
   sections: SearchSection[];
   onSelect: (item: SearchResult) => void;
   onClearRecent?: () => void;
+  // Removes one place from Recent — each Recent row gets an X for it.
+  onRemoveRecent?: (item: SearchResult) => void;
 }) {
   const hasQuery = query.trim().length > 0;
   if (hasQuery) {
@@ -186,6 +196,7 @@ export function SearchResultRows({ query, results, sections, onSelect, onClearRe
               item={item}
               last={si === sections.length - 1 && i === section.items.length - 1}
               onSelect={onSelect}
+              onRemove={section.kind === 'recent' ? onRemoveRecent : undefined}
             />
           ))}
         </React.Fragment>
@@ -194,10 +205,12 @@ export function SearchResultRows({ query, results, sections, onSelect, onClearRe
   );
 }
 
-function SearchResultRow({ item, last, onSelect }: {
+function SearchResultRow({ item, last, onSelect, onRemove }: {
   item: SearchResult;
   last: boolean;
   onSelect: (item: SearchResult) => void;
+  // Shown as an X in place of the type badge (Recent rows).
+  onRemove?: (item: SearchResult) => void;
 }) {
   let icon: string | null, countryCode: string | null, label: string, sublabel: string, badge: string;
   let thumbName: string | null = null, thumbKey: string | null = null;
@@ -224,7 +237,13 @@ function SearchResultRow({ item, last, onSelect }: {
         <Text style={st.label} numberOfLines={1}>{label}</Text>
         {sublabel ? <Text style={st.sub} numberOfLines={1}>{sublabel}</Text> : null}
       </View>
-      <Text style={st.badge}>{badge}</Text>
+      {onRemove ? (
+        <Pressable onPress={() => onRemove(item)} hitSlop={10} accessibilityLabel={`Remove ${label} from recent searches`}>
+          <X size={16} color="#9CA3AF" />
+        </Pressable>
+      ) : (
+        <Text style={st.badge}>{badge}</Text>
+      )}
     </Pressable>
   );
 }

@@ -109,7 +109,7 @@ import { SPOTS, type Spot } from '../data/spots';
 import DestinationSheet from '../components/Map/DestinationSheet';
 import CircleFlag from '../components/CircleFlag';
 import PinPhoto from '../components/Map/PinPhoto';
-import { computeSearchResults, computeSuggestions, SearchResultRows, type SearchResult } from '../components/Map/SearchResults';
+import { computeSearchResults, computeSuggestions, SearchResultRows, toRecentSearch, type SearchResult } from '../components/Map/SearchResults';
 import SpotSheet from '../components/Map/SpotSheet';
 import CountrySheet from '../components/Map/CountrySheet';
 import ExploreSheet from '../components/Map/ExploreSheet';
@@ -898,6 +898,7 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   const recentSearches    = useStore(s => s.recentSearches);
   const addRecentSearch   = useStore(s => s.addRecentSearch);
   const clearRecentSearches = useStore(s => s.clearRecentSearches);
+  const removeRecentSearch  = useStore(s => s.removeRecentSearch);
 
   // Per-destination count of individually-visited spots (presence in savedSpots, not the
   // destination's own visited flag — see saveSpotVisited: marking a spot visited also marks
@@ -3155,11 +3156,7 @@ const destItems = useMemo((): DestItem[] =>
   }, [savedDestinations]);
 
   const handleSearchSelect = useCallback((item: SearchResult) => {
-    addRecentSearch(
-      item.type === 'country' ? { type: 'country', countryCode: item.countryCode }
-        : item.type === 'destination' ? { type: 'destination', id: item.destination.id }
-        : { type: 'spot', id: item.spot.id },
-    );
+    addRecentSearch(toRecentSearch(item));
     setExploreRestore(undefined);
     setSearchQuery('');
     setSearchFocused(false);
@@ -4147,6 +4144,7 @@ const destItems = useMemo((): DestItem[] =>
               sections={searchSuggestions}
               onSelect={handleSearchSelect}
               onClearRecent={clearRecentSearches}
+              onRemoveRecent={item => removeRecentSearch(toRecentSearch(item))}
             />
           </ScrollView>
         )}
