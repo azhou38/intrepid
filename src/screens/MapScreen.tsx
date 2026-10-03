@@ -109,7 +109,7 @@ import { SPOTS, type Spot } from '../data/spots';
 import DestinationSheet from '../components/Map/DestinationSheet';
 import CircleFlag from '../components/CircleFlag';
 import PinPhoto from '../components/Map/PinPhoto';
-import { computeSearchResults, SearchResultRows, type SearchResult } from '../components/Map/SearchResults';
+import { computeSearchResults, computeSuggestions, SearchResultRows, type SearchResult } from '../components/Map/SearchResults';
 import SpotSheet from '../components/Map/SpotSheet';
 import CountrySheet from '../components/Map/CountrySheet';
 import ExploreSheet from '../components/Map/ExploreSheet';
@@ -895,6 +895,9 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
 
   const savedDestinations = useStore(s => s.savedDestinations);
   const savedSpots        = useStore(s => s.savedSpots);
+  const recentSearches    = useStore(s => s.recentSearches);
+  const addRecentSearch   = useStore(s => s.addRecentSearch);
+  const clearRecentSearches = useStore(s => s.clearRecentSearches);
 
   // Per-destination count of individually-visited spots (presence in savedSpots, not the
   // destination's own visited flag — see saveSpotVisited: marking a spot visited also marks
@@ -2080,6 +2083,14 @@ const destItems = useMemo((): DestItem[] =>
 
   // ── Search results ────────────────────────────────────────────────────────
   const searchResults = useMemo(() => computeSearchResults(searchQuery), [searchQuery]);
+  // What shows before anything is typed (see computeSuggestions) — possibly nothing. Worked out when
+  // search opens, from the map view at that moment: the camera doesn't move while searching (the white
+  // backdrop covers the map), so there's no need to recompute it on every camera frame.
+  const searchSuggestions = useMemo(() => !searchFocused ? [] : computeSuggestions({
+    recents: recentSearches ?? [],
+    view: { ...regionRef.current, zoom: camZoomRef.current },
+    savedDestinations, savedSpots,
+  }), [searchFocused, recentSearches, savedDestinations, savedSpots]);
   // Text typed into the search bar never outlives the search: whenever the bar isn't focused,
   // any query is dropped — including one that arrives late (the native field can re-report its
   // old text through onChangeText when it's blurred in the same tick it's emptied, which is
@@ -3144,6 +3155,11 @@ const destItems = useMemo((): DestItem[] =>
   }, [savedDestinations]);
 
   const handleSearchSelect = useCallback((item: SearchResult) => {
+    addRecentSearch(
+      item.type === 'country' ? { type: 'country', countryCode: item.countryCode }
+        : item.type === 'destination' ? { type: 'destination', id: item.destination.id }
+        : { type: 'spot', id: item.spot.id },
+    );
     setExploreRestore(undefined);
     setSearchQuery('');
     setSearchFocused(false);
@@ -3183,7 +3199,7 @@ const destItems = useMemo((): DestItem[] =>
       handleSpotPress(item.spot);
       setSpotOrigin('search');
     }
-  }, [handleCountryPress, handleMarkerPress, handleSpotPress, region, selectedCountry, savedDestinations, buildCountryCluster]);
+  }, [handleCountryPress, handleMarkerPress, handleSpotPress, region, selectedCountry, savedDestinations, buildCountryCluster, addRecentSearch]);
 
   // Tapping a destination card in the Explore feed (ExploreSheet/DiscoverScreen). Deliberately
   // does NOT set selectedCountry the way handleSearchSelect's destination branch does — that
@@ -4108,9 +4124,10 @@ const destItems = useMemo((): DestItem[] =>
         </Animated.View>
 
 
-        {/* Search results (or, with no query yet, suggested destinations) — capped above
-            the keyboard (searchResultsMaxHeight) and scrollable once results overflow it. */}
-        {searchFocused && (searchResults.length > 0 || searchQuery.trim().length > 0) && (
+        {/* Search results (or, with no query yet, any suggestions — see computeSuggestions; with
+            none, no dropdown at all) — capped above the keyboard (searchResultsMaxHeight) and
+            scrollable once results overflow it. */}
+        {searchFocused && (searchQuery.trim().length > 0 || searchSuggestions.length > 0) && (
           <ScrollView
             style={[styles.searchResultsList, { maxHeight: searchResultsMaxHeight }]}
             contentContainerStyle={{ paddingRight: 2 }}
@@ -4124,7 +4141,13 @@ const destItems = useMemo((): DestItem[] =>
             // Android's own scrollbar already respects the clip).
             scrollIndicatorInsets={{ top: 4, right: 3, bottom: 4 }}
           >
-            <SearchResultRows query={searchQuery} results={searchResults} onSelect={handleSearchSelect} />
+            <SearchResultRows
+              query={searchQuery}
+              results={searchResults}
+              sections={searchSuggestions}
+              onSelect={handleSearchSelect}
+              onClearRecent={clearRecentSearches}
+            />
           </ScrollView>
         )}
       </Animated.View>

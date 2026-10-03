@@ -3,7 +3,8 @@ import { View, Text, Image, Pressable, StyleSheet } from 'react-native';
 import CircleFlag from '../CircleFlag';
 import { DESTINATIONS } from '../../data/destinations';
 import { SPOTS, type Spot } from '../../data/spots';
-import type { Destination } from '../../types';
+import type { Destination, SavedDestination, SavedSpot } from '../../types';
+import type { RecentSearch } from '../../store';
 import { thumbCache, fetchWikiThumbnail } from '../../utils/photoCache';
 
 // Default (empty-field) text for both search bars — states the size of the catalog instead of
@@ -19,16 +20,11 @@ export type SearchResult =
 
 // Shared by the map's own search bar and the Explore sheet's inline one, so both always
 // return identical results for the same query.
+// Results for a typed query. Empty for an empty query — what shows before typing is
+// computeSuggestions' job.
 export function computeSearchResults(query: string): SearchResult[] {
   const q = query.trim().toLowerCase();
-  if (!q) {
-    // Suggestions shown before typing anything — the highest-ranked (most popular)
-    // destinations, so there's always something useful to tap into instead of an empty list.
-    return [...DESTINATIONS]
-      .sort((a, b) => a.rank - b.rank)
-      .slice(0, 10)
-      .map((destination): SearchResult => ({ type: 'destination', destination }));
-  }
+  if (!q) return [];
   const results: SearchResult[] = [];
 
   const seenCountries = new Set<string>();
@@ -48,6 +44,84 @@ export function computeSearchResults(query: string): SearchResult[] {
     }
   }
   return results.slice(0, 10);
+}
+
+// ── Suggestions (empty search field) ────────────────────────────────────────────────────────────
+// Only ever shown when there's a reason for them — otherwise nothing, and the bar's placeholder does
+// the talking. No generic "popular" list: most destinations share rank 1, so that list was really
+// just the first entries of destinations.ts.
+//   • Recent — places opened from search, newest first (persisted, see the store's recentSearches).
+//   • On the map — what's in the current view, once the map is zoomed in past continent level:
+//     destinations in view, or that view's spots once zoomed in to destination level. Unvisited
+//     first, then the most prominent, then the closest to the centre of the view.
+export type SearchSection = { kind: 'recent' | 'onMap'; title: string; items: SearchResult[] };
+
+export type MapView = {
+  latitude: number; longitude: number; latitudeDelta: number; longitudeDelta: number;
+  zoom: number;
+};
+
+// Below this camera zoom the view spans a continent or more — "what's here" means nothing.
+const ON_MAP_MIN_ZOOM = 4;
+// At or past this zoom the view is a single destination's area, so suggest its spots instead.
+const ON_MAP_SPOTS_ZOOM = 8;
+const ON_MAP_MAX = 4;
+
+const resultKey = (r: SearchResult) =>
+  r.type === 'country' ? `country:${r.countryCode}` : r.type === 'destination' ? `destination:${r.destination.id}` : `spot:${r.spot.id}`;
+
+function resolveRecent(r: RecentSearch): SearchResult | null {
+  if (r.type === 'country') {
+    const d = DESTINATIONS.find(x => x.countryCode === r.countryCode);
+    return d ? { type: 'country', country: d.country, countryCode: d.countryCode } : null;
+  }
+  if (r.type === 'destination') {
+    const destination = DESTINATIONS.find(x => x.id === r.id);
+    return destination ? { type: 'destination', destination } : null;
+  }
+  const spot = SPOTS.find(x => x.id === r.id);
+  const destination = spot && DESTINATIONS.find(x => x.id === spot.destinationId);
+  return spot && destination ? { type: 'spot', spot, destination } : null;
+}
+
+export function computeSuggestions({ recents, view, savedDestinations, savedSpots }: {
+  recents: RecentSearch[];
+  view: MapView | null;
+  savedDestinations: Record<string, SavedDestination>;
+  savedSpots: Record<string, SavedSpot>;
+}): SearchSection[] {
+  const sections: SearchSection[] = [];
+
+  const recentItems = recents.map(resolveRecent).filter((r): r is SearchResult => r !== null);
+  if (recentItems.length) sections.push({ kind: 'recent', title: 'Recent', items: recentItems });
+
+  if (view && view.zoom >= ON_MAP_MIN_ZOOM) {
+    const listed = new Set(recentItems.map(resultKey));
+    const inView = (c: { latitude: number; longitude: number }) =>
+      Math.abs(c.latitude - view.latitude) <= view.latitudeDelta / 2
+      && Math.abs(c.longitude - view.longitude) <= view.longitudeDelta / 2;
+    const dist = (c: { latitude: number; longitude: number }) =>
+      Math.hypot(c.latitude - view.latitude, (c.longitude - view.longitude) * Math.cos(view.latitude * Math.PI / 180));
+
+    let items: SearchResult[];
+    if (view.zoom >= ON_MAP_SPOTS_ZOOM) {
+      items = SPOTS
+        .filter(sp => inView(sp.coordinates))
+        .sort((a, b) => Number(!!savedSpots[a.id]) - Number(!!savedSpots[b.id]) || dist(a.coordinates) - dist(b.coordinates))
+        .map(spot => ({ spot, destination: DESTINATIONS.find(d => d.id === spot.destinationId) }))
+        .filter((x): x is { spot: Spot; destination: Destination } => !!x.destination)
+        .map(({ spot, destination }): SearchResult => ({ type: 'spot', spot, destination }));
+    } else {
+      const visited = (d: Destination) => savedDestinations[d.id]?.type === 'visited';
+      items = DESTINATIONS
+        .filter(d => inView(d.coordinates))
+        .sort((a, b) => Number(visited(a)) - Number(visited(b)) || a.rank - b.rank || dist(a.coordinates) - dist(b.coordinates))
+        .map((destination): SearchResult => ({ type: 'destination', destination }));
+    }
+    items = items.filter(r => !listed.has(resultKey(r))).slice(0, ON_MAP_MAX);
+    if (items.length) sections.push({ kind: 'onMap', title: 'On the map', items });
+  }
+  return sections;
 }
 
 // Rounded-square header-image thumbnail for destination/spot rows, falling back to the emoji
@@ -73,60 +147,99 @@ function SearchResultThumb({ name, icon, cacheKey, size }: {
   );
 }
 
-// The rows only (header / empty state / items) — the caller supplies the scrolling container,
-// since the map's dropdown and the sheet's full-screen list scroll and are styled differently.
-export function SearchResultRows({ query, results, onSelect }: {
+// The rows only (section headers / empty state / items) — the caller supplies the scrolling container,
+// since the map's dropdown and the sheet's full-screen list scroll and are styled differently. With a
+// query, the matches; without one, the suggestion sections (which may be none at all).
+export function SearchResultRows({ query, results, sections, onSelect, onClearRecent }: {
   query: string;
   results: SearchResult[];
+  sections: SearchSection[];
   onSelect: (item: SearchResult) => void;
+  onClearRecent?: () => void;
 }) {
   const hasQuery = query.trim().length > 0;
+  if (hasQuery) {
+    return (
+      <>
+        {results.length === 0 && <Text style={st.noResults}>No results</Text>}
+        {results.map((item, i) => (
+          <SearchResultRow key={resultKey(item)} item={item} last={i === results.length - 1} onSelect={onSelect} />
+        ))}
+      </>
+    );
+  }
   return (
     <>
-      {!hasQuery && <Text style={st.header}>Suggested</Text>}
-      {hasQuery && results.length === 0 && <Text style={st.noResults}>No results</Text>}
-      {results.map((item, i) => {
-        let icon: string | null, countryCode: string | null, label: string, sublabel: string, badge: string;
-        let thumbName: string | null = null, thumbKey: string | null = null;
-        if (item.type === 'country') {
-          icon = null; countryCode = item.countryCode; label = item.country; sublabel = ''; badge = 'Country';
-        } else if (item.type === 'destination') {
-          icon = item.destination.icon ?? '📍'; countryCode = null; label = item.destination.name;
-          sublabel = item.destination.country; badge = 'Destination';
-          thumbName = item.destination.name; thumbKey = item.destination.id;
-        } else {
-          icon = item.spot.icon; countryCode = null; label = item.spot.name;
-          sublabel = item.destination.name; badge = 'Spot';
-          thumbName = item.spot.name; thumbKey = `spot_${item.spot.id}`;
-        }
-        return (
-          <Pressable
-            key={i}
-            style={[st.item, i === results.length - 1 && { borderBottomWidth: 0 }]}
-            onPress={() => onSelect(item)}
-          >
-            {countryCode
-              ? <CircleFlag countryCode={countryCode} size={22} />
-              : <SearchResultThumb name={thumbName!} icon={icon ?? '📍'} cacheKey={thumbKey!} size={30} />}
-            <View style={{ flex: 1 }}>
-              <Text style={st.label} numberOfLines={1}>{label}</Text>
-              {sublabel ? <Text style={st.sub} numberOfLines={1}>{sublabel}</Text> : null}
-            </View>
-            <Text style={st.badge}>{badge}</Text>
-          </Pressable>
-        );
-      })}
+      {sections.map((section, si) => (
+        <React.Fragment key={section.kind}>
+          <View style={st.headerRow}>
+            <Text style={st.header}>{section.title}</Text>
+            {section.kind === 'recent' && onClearRecent && (
+              <Pressable onPress={onClearRecent} hitSlop={8}>
+                <Text style={st.clear}>Clear</Text>
+              </Pressable>
+            )}
+          </View>
+          {section.items.map((item, i) => (
+            <SearchResultRow
+              key={`${section.kind}-${resultKey(item)}`}
+              item={item}
+              last={si === sections.length - 1 && i === section.items.length - 1}
+              onSelect={onSelect}
+            />
+          ))}
+        </React.Fragment>
+      ))}
     </>
+  );
+}
+
+function SearchResultRow({ item, last, onSelect }: {
+  item: SearchResult;
+  last: boolean;
+  onSelect: (item: SearchResult) => void;
+}) {
+  let icon: string | null, countryCode: string | null, label: string, sublabel: string, badge: string;
+  let thumbName: string | null = null, thumbKey: string | null = null;
+  if (item.type === 'country') {
+    icon = null; countryCode = item.countryCode; label = item.country; sublabel = ''; badge = 'Country';
+  } else if (item.type === 'destination') {
+    icon = item.destination.icon ?? '📍'; countryCode = null; label = item.destination.name;
+    sublabel = item.destination.country; badge = 'Destination';
+    thumbName = item.destination.name; thumbKey = item.destination.id;
+  } else {
+    icon = item.spot.icon; countryCode = null; label = item.spot.name;
+    sublabel = item.destination.name; badge = 'Spot';
+    thumbName = item.spot.name; thumbKey = `spot_${item.spot.id}`;
+  }
+  return (
+    <Pressable
+      style={[st.item, last && { borderBottomWidth: 0 }]}
+      onPress={() => onSelect(item)}
+    >
+      {countryCode
+        ? <CircleFlag countryCode={countryCode} size={22} />
+        : <SearchResultThumb name={thumbName!} icon={icon ?? '📍'} cacheKey={thumbKey!} size={30} />}
+      <View style={{ flex: 1 }}>
+        <Text style={st.label} numberOfLines={1}>{label}</Text>
+        {sublabel ? <Text style={st.sub} numberOfLines={1}>{sublabel}</Text> : null}
+      </View>
+      <Text style={st.badge}>{badge}</Text>
+    </Pressable>
   );
 }
 
 const st = StyleSheet.create({
   thumb: { overflow: 'hidden', backgroundColor: '#F3F4F6', alignItems: 'center', justifyContent: 'center' },
+  headerRow: {
+    flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
+    paddingHorizontal: 14, paddingTop: 12, paddingBottom: 4,
+  },
   header: {
     fontSize: 11, fontWeight: '700', color: '#9CA3AF', letterSpacing: 0.5,
     textTransform: 'uppercase',
-    paddingHorizontal: 14, paddingTop: 12, paddingBottom: 4,
   },
+  clear: { fontSize: 12, fontWeight: '600', color: '#6B7280' },
   noResults: {
     fontSize: 14, color: '#9CA3AF', textAlign: 'center',
     paddingHorizontal: 14, paddingVertical: 24,
