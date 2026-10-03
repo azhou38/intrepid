@@ -26,34 +26,25 @@ export interface VisitIndex {
   isSpotVisited: (id: string) => boolean;
   isDestVisited: (id: string) => boolean;
   isCountryVisited: (countryCode: string) => boolean;
-  // Destination trips that ticked this spot (read-only on the spot — they're edited on the destination).
-  linkedTripsForSpot: (spotId: string) => { destinationId: string; visit: Visit }[];
-  // Country trips that ticked this destination (read-only on the destination, likewise).
-  linkedTripsForDest: (destinationId: string) => { countryCode: string; visit: Visit }[];
 }
-
-const NONE: never[] = [];
 
 export function buildVisitIndex(
   savedDestinations: Record<string, SavedDestination>,
   savedSpots: Record<string, SavedSpot>,
   savedCountries: Record<string, SavedCountry>,
 ): VisitIndex {
-  const linked = new Map<string, { destinationId: string; visit: Visit }[]>();
+  const ticked = new Set<string>();
   for (const rec of Object.values(savedDestinations)) {
     for (const visit of rec.visits ?? []) {
       for (const spotId of visit.spotIds ?? []) {
-        if (SPOT_DEST.get(spotId) !== rec.destinationId) continue;
-        const list = linked.get(spotId) ?? [];
-        list.push({ destinationId: rec.destinationId, visit });
-        linked.set(spotId, list);
+        if (SPOT_DEST.get(spotId) === rec.destinationId) ticked.add(spotId);
       }
     }
   }
 
   const visitedSpotIds = new Set<string>([
     ...Object.keys(savedSpots).filter(id => SPOT_DEST.has(id)),
-    ...linked.keys(),
+    ...ticked,
   ]);
 
   const visitedDestIds = new Set<string>();
@@ -64,15 +55,10 @@ export function buildVisitIndex(
     const destId = SPOT_DEST.get(spotId);
     if (destId) visitedDestIds.add(destId);
   }
-  const linkedDest = new Map<string, { countryCode: string; visit: Visit }[]>();
   for (const rec of Object.values(savedCountries)) {
     for (const visit of rec.visits ?? []) {
       for (const destId of visit.spotIds ?? []) {        // a country trip's selector items are destinations
-        if (DEST_COUNTRY.get(destId) !== rec.countryCode) continue;
-        visitedDestIds.add(destId);
-        const list = linkedDest.get(destId) ?? [];
-        list.push({ countryCode: rec.countryCode, visit });
-        linkedDest.set(destId, list);
+        if (DEST_COUNTRY.get(destId) === rec.countryCode) visitedDestIds.add(destId);
       }
     }
   }
@@ -91,55 +77,11 @@ export function buildVisitIndex(
     isSpotVisited: id => visitedSpotIds.has(id),
     isDestVisited: id => visitedDestIds.has(id),
     isCountryVisited: code => visitedCountryCodes.has(code),
-    linkedTripsForSpot: id => linked.get(id) ?? NONE,
-    linkedTripsForDest: id => linkedDest.get(id) ?? NONE,
   };
 }
 
-// ── Trips, with what was logged beneath them grouped in ───────────────────────────────────────────
-// People remember "my Paris trip", not one entry per spot. So on a destination's My Visit tab (its
-// spots' visits) and a country's (its destinations' trips):
-//   • a visit beneath it within TRIP_GAP_DAYS of one of its own trips shows inside that trip;
-//   • the remaining ones are grouped with each other the same way (any gap ≤ TRIP_GAP_DAYS joins
-//     them) into trips that are derived, not stored — editing one saves it as a real trip, removing
-//     one removes what it was built from (see `derivedFrom`);
-//   • ones with no dates form one "undated" trip, never merged into dated ones.
-
-export const TRIP_GAP_DAYS = 2;
-
-export type DisplayTrip = Visit & {
-  // Present on derived trips: what it was built from — spot visits on a destination's tab
-  // (id = spot id), destination trips on a country's (id = destination id).
-  derivedFrom?: { id: string; visitId: string }[];
-};
-
-const DAY_MS = 86400000;
-// A date as [first day, last day] in whole days; month-only dates ("2024-04-00") span their month.
-function dayRange(start: string, end?: string): [number, number] | null {
-  const parse = (s: string, last: boolean): number | null => {
-    const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s ?? '');
-    if (!m) return null;
-    const y = +m[1], mo = +m[2] - 1, d = +m[3];
-    if (mo < 0 || mo > 11) return null;
-    const day = d === 0 ? (last ? new Date(Date.UTC(y, mo + 1, 0)).getUTCDate() : 1) : d;
-    return Math.round(Date.UTC(y, mo, day) / DAY_MS);
-  };
-  const s = parse(start, false);
-  if (s === null) return null;
-  const e = (end ? parse(end, true) : null) ?? parse(start, true) ?? s;
-  return [s, Math.max(s, e)];
-}
-const near = (a: [number, number], b: [number, number]) =>
-  a[0] <= b[1] + TRIP_GAP_DAYS && b[0] <= a[1] + TRIP_GAP_DAYS;
-
-const newestFirst = (a: Visit, b: Visit) =>
-  (!a.startDate ? 1 : 0) - (!b.startDate ? 1 : 0) || b.startDate.localeCompare(a.startDate);
-
-// A spot record's visits, with the pre-redesign single-date fields (and a dateless record) as one visit.
-export function spotVisitsOf(rec: SavedSpot): Visit[] {
-  if (rec.visits?.length) return rec.visits;
-  return [{ id: 'legacy', startDate: rec.visitDate ?? '' }];
-}
+// ── Each level's own trips ─────────────────────────────────────────────────────────────────────
+// A My Visit tab lists only that place's own trips — nothing is grouped in from the levels around it.
 
 // A destination record's own trips — the pre-redesign single-visit fields as one 'legacy' trip.
 export function destinationTripsOf(rec: SavedDestination | undefined, savedSpots: Record<string, SavedSpot>): Visit[] {
@@ -158,97 +100,67 @@ export function countryTripsOf(rec: SavedCountry | undefined): Visit[] {
   return rec.visits ?? (rec.visitDate ? [{ id: 'legacy', startDate: rec.visitDate, notes: rec.notes }] : []);
 }
 
-type Beneath = { id: string; visit: Visit };
+// ── Ticking a place in a trip gives it a log of its own ──────────────────────────────────────────
+// Ticking a spot in a destination trip (or a destination in a country trip) that has no record of its
+// own yet gives it one log, so its own My Visit tab has a trip to edit. Only what was ticked is carried
+// over — no dates, notes or photos. The log's id ties it to the trip that made it ('auto:<trip id>'),
+// so unticking it again, or removing that trip, takes it away — as long as it's still untouched.
 
-function groupTrips(ownTrips: Visit[], beneath: Beneath[]): DisplayTrip[] {
-  const own: DisplayTrip[] = ownTrips.map(v => ({ ...v, spotIds: [...(v.spotIds ?? [])] }));
-  const ownRanges = own.map(v => dayRange(v.startDate, v.endDate));
+const SPOT_NAME = new Map(SPOTS.map(s => [s.id, s.name]));
+const DEST_NAME = new Map(DESTINATIONS.map(d => [d.id, d.name]));
+const autoId = (tripId: string) => `auto:${tripId}`;
+// Untouched = exactly as created: no dates, notes, photos or ticks of its own, default title.
+const isUntouched = (v: Visit, title: string) =>
+  !v.startDate && !v.endDate && !v.notes && !v.photos?.length && !v.spotIds?.length && (!v.title || v.title === title);
 
-  type Item = Beneath & { range: [number, number] | null };
-  const loose: Item[] = [];
-  for (const b of beneath) {
-    const range = dayRange(b.visit.startDate, b.visit.endDate);
-    const host = range ? own.findIndex((_, i) => ownRanges[i] && near(range, ownRanges[i]!)) : -1;
-    if (host >= 0) {
-      if (!own[host].spotIds!.includes(b.id)) own[host].spotIds!.push(b.id);
-    } else {
-      loose.push({ ...b, range });
+export function withTripTicks(
+  r: VisitRecords,
+  level: 'destination' | 'country',
+  tripId: string,
+  before: string[],
+  after: string[],
+): VisitRecords {
+  const added = after.filter(id => !before.includes(id));
+  const removed = before.filter(id => !after.includes(id));
+  if (!added.length && !removed.length) return r;
+  const id = autoId(tripId);
+
+  if (level === 'destination') {
+    const savedSpots = { ...r.savedSpots };
+    for (const spotId of added) {
+      const rec = savedSpots[spotId];
+      const destinationId = SPOT_DEST.get(spotId);
+      if (!destinationId || rec) continue;   // already has a record of its own
+      const visit: Visit = { id, title: `${SPOT_NAME.get(spotId)} Visit`, startDate: '' };
+      savedSpots[spotId] = { spotId, destinationId, visits: [visit] };
     }
+    for (const spotId of removed) {
+      const rec = savedSpots[spotId];
+      const auto = rec?.visits?.find(v => v.id === id);
+      if (!rec || !auto || !isUntouched(auto, `${SPOT_NAME.get(spotId)} Visit`)) continue;
+      const left = rec.visits!.filter(v => v.id !== id);
+      if (left.length || rec.rating) savedSpots[spotId] = { ...rec, visits: left };
+      else delete savedSpots[spotId];
+    }
+    return { ...r, savedSpots };
   }
 
-  const derived: DisplayTrip[] = [];
-  const toTrip = (group: Item[], undated: boolean): DisplayTrip => {
-    const sorted = [...group].sort((a, b) => (a.range?.[0] ?? 0) - (b.range?.[0] ?? 0));
-    const first = sorted[0].visit;
-    const last = sorted.reduce((m, x) => (x.range && m.range && x.range[1] > m.range[1] ? x : m), sorted[0]);
-    const endDate = last.visit.endDate ?? last.visit.startDate;
-    const derivedFrom = sorted.map(x => ({ id: x.id, visitId: x.visit.id }));
-    return {
-      id: 'derived:' + derivedFrom.map(x => `${x.id}/${x.visitId}`).join(','),
-      startDate: undated ? '' : first.startDate,
-      endDate: undated || endDate === first.startDate ? undefined : endDate,
-      spotIds: [...new Set(sorted.map(x => x.id))],
-      derivedFrom,
-    };
-  };
-  const dated = loose.filter(x => x.range).sort((a, b) => a.range![0] - b.range![0]);
-  let group: Item[] = [];
-  let groupEnd = -Infinity;
-  for (const x of dated) {
-    if (group.length && x.range![0] > groupEnd + TRIP_GAP_DAYS) { derived.push(toTrip(group, false)); group = []; }
-    group.push(x);
-    groupEnd = group.length === 1 ? x.range![1] : Math.max(groupEnd, x.range![1]);
+  const savedDestinations = { ...r.savedDestinations };
+  for (const destId of added) {
+    const rec = savedDestinations[destId];
+    if (!DEST_COUNTRY.has(destId) || rec) continue;   // already has a record of its own
+    const visit: Visit = { id, title: `${DEST_NAME.get(destId)} Trip`, startDate: '' };
+    savedDestinations[destId] = { destinationId: destId, type: 'visited', visits: [visit] };
   }
-  if (group.length) derived.push(toTrip(group, false));
-  const undated = loose.filter(x => !x.range);
-  if (undated.length) derived.push(toTrip(undated, true));
-
-  return [...own, ...derived].sort(newestFirst);
-}
-
-// A destination's My Visit: its own trips, with its spots' visits grouped in.
-export function destinationDisplayTrips(
-  destinationId: string,
-  ownTrips: Visit[],
-  savedSpots: Record<string, SavedSpot>,
-): DisplayTrip[] {
-  const beneath: Beneath[] = [];
-  for (const rec of Object.values(savedSpots)) {
-    if (rec.destinationId !== destinationId || SPOT_DEST.get(rec.spotId) !== destinationId) continue;
-    for (const visit of spotVisitsOf(rec)) beneath.push({ id: rec.spotId, visit });
+  for (const destId of removed) {
+    const rec = savedDestinations[destId];
+    const auto = rec?.visits?.find(v => v.id === id);
+    if (!rec || !auto || !isUntouched(auto, `${DEST_NAME.get(destId)} Trip`)) continue;
+    const left = rec.visits!.filter(v => v.id !== id);
+    if (left.length || rec.photos?.length || rec.notes) savedDestinations[destId] = { ...rec, visits: left };
+    else delete savedDestinations[destId];
   }
-  return groupTrips(ownTrips, beneath);
-}
-
-// A destination's trips as they roll up to its country: everything its own My Visit shows, or — for
-// a destination marked visited with nothing logged — one undated entry ('record').
-function destinationRollUp(destinationId: string, rec: SavedDestination | undefined, savedSpots: Record<string, SavedSpot>): Visit[] {
-  const trips = destinationDisplayTrips(destinationId, destinationTripsOf(rec, savedSpots), savedSpots);
-  if (trips.length) return trips;
-  return rec ? [{ id: 'record', startDate: '' }] : [];
-}
-
-// A country's My Visit: its own trips, with its destinations' trips (their spot visits included)
-// grouped in.
-export function countryDisplayTrips(
-  countryCode: string,
-  ownTrips: Visit[],
-  savedDestinations: Record<string, SavedDestination>,
-  savedSpots: Record<string, SavedSpot>,
-): DisplayTrip[] {
-  const destIds = new Set<string>();
-  for (const rec of Object.values(savedDestinations)) {
-    if (DEST_COUNTRY.get(rec.destinationId) === countryCode) destIds.add(rec.destinationId);
-  }
-  for (const rec of Object.values(savedSpots)) {
-    const destId = SPOT_DEST.get(rec.spotId);
-    if (destId && DEST_COUNTRY.get(destId) === countryCode) destIds.add(destId);
-  }
-  const beneath: Beneath[] = [];
-  for (const destId of destIds) {
-    for (const visit of destinationRollUp(destId, savedDestinations[destId], savedSpots)) beneath.push({ id: destId, visit });
-  }
-  return groupTrips(ownTrips, beneath);
+  return { ...r, savedDestinations };
 }
 
 // ── Removing what was logged ───────────────────────────────────────────────────────────────────
@@ -264,51 +176,6 @@ export interface VisitRecords {
 function omit<T>(map: Record<string, T>, keys: Iterable<string>): Record<string, T> {
   const next = { ...map };
   for (const k of keys) delete next[k];
-  return next;
-}
-
-// Removes some of spots' visits; a spot left with none has its record (and rating) removed.
-export function withoutSpotVisits(r: VisitRecords, pairs: { id: string; visitId: string }[]): VisitRecords {
-  const savedSpots = { ...r.savedSpots };
-  const bySpot: Record<string, Set<string>> = {};
-  for (const { id, visitId } of pairs) (bySpot[id] ??= new Set()).add(visitId);
-  for (const [spotId, visitIds] of Object.entries(bySpot)) {
-    const rec = savedSpots[spotId];
-    if (!rec) continue;
-    const left = rec.visits?.length ? rec.visits.filter(v => !visitIds.has(v.id)) : [];
-    if (left.length) savedSpots[spotId] = { ...rec, visits: left, visitDate: left[0]?.startDate };
-    else delete savedSpots[spotId];
-  }
-  return { ...r, savedSpots };
-}
-
-// Removes one trip from a destination's My Visit — its own, or a derived one (its spot visits) — or
-// ('record') its bare visited record.
-export function withoutDestinationTrip(r: VisitRecords, destinationId: string, tripId: string): VisitRecords {
-  const rec = r.savedDestinations[destinationId];
-  const own = destinationTripsOf(rec, r.savedSpots);
-  if (tripId === 'record' || own.some(v => v.id === tripId)) {
-    const left = own.filter(v => v.id !== tripId && v.id !== 'legacy');
-    if (!left.length || tripId === 'record') return { ...r, savedDestinations: omit(r.savedDestinations, [destinationId]) };
-    return { ...r, savedDestinations: { ...r.savedDestinations, [destinationId]: { ...rec!, visits: left, visitDate: left[0]?.startDate } } };
-  }
-  const trip = destinationDisplayTrips(destinationId, own, r.savedSpots).find(t => t.id === tripId);
-  return trip?.derivedFrom ? withoutSpotVisits(r, trip.derivedFrom) : r;
-}
-
-// Removes one trip from a country's My Visit — its own, or a derived one (the destination trips it
-// was built from).
-export function withoutCountryTrip(r: VisitRecords, countryCode: string, tripId: string): VisitRecords {
-  const rec = r.savedCountries[countryCode];
-  const own = countryTripsOf(rec);
-  if (own.some(v => v.id === tripId)) {
-    const left = own.filter(v => v.id !== tripId && v.id !== 'legacy');
-    if (!left.length) return { ...r, savedCountries: omit(r.savedCountries, [countryCode]) };
-    return { ...r, savedCountries: { ...r.savedCountries, [countryCode]: { ...rec!, visits: left, visitDate: left[0]?.startDate } } };
-  }
-  const trip = countryDisplayTrips(countryCode, own, r.savedDestinations, r.savedSpots).find(t => t.id === tripId);
-  let next = r;
-  for (const { id, visitId } of trip?.derivedFrom ?? []) next = withoutDestinationTrip(next, id, visitId);
   return next;
 }
 

@@ -22,7 +22,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Check, Plus, Users, Languages, Coins, Maximize, Landmark } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
 import { useStore, useVisitIndex } from '../../store';
-import { countryDisplayTrips, countryTripsOf, type DisplayTrip } from '../../utils/visitStatus';
+import { countryTripsOf } from '../../utils/visitStatus';
 import type { Destination, CountryCluster, Visit } from '../../types';
 import { DESTINATIONS } from '../../data/destinations';
 import { SPOTS } from '../../data/spots';
@@ -202,9 +202,7 @@ function CountrySheet({
   const resolvedInitialSnap: CountrySnapState = initialSnap ?? 'collapsed';
   const insets            = useSafeAreaInsets();
   const savedCountries    = useStore(s => s.savedCountries);
-  const savedDestinations = useStore(s => s.savedDestinations);
-  const savedSpots        = useStore(s => s.savedSpots);
-  const removeCountryTrip = useStore(s => s.removeCountryTrip);
+  const syncTripTicks     = useStore(s => s.syncTripTicks);
   const unvisitCountry    = useStore(s => s.unvisitCountry);
   const visitIndex        = useVisitIndex();
   const saveCountryVisited = useStore(s => s.saveCountryVisited);
@@ -240,16 +238,6 @@ function CountrySheet({
   // The country's own trips (a pre-redesign single visit as one 'legacy' trip — editing it migrates
   // it onto a real Visit the first time it's saved).
   const localVisits: Visit[] = useMemo(() => countryTripsOf(savedCountry), [savedCountry]);
-  // What My Visit shows: those, with its destinations' trips (and their spot visits) grouped in by
-  // date, plus trips derived from the ones that don't fall within one (see countryDisplayTrips).
-  const displayTrips: DisplayTrip[] = useMemo(
-    // Derived trips show the same default title a trip gets when saved untitled ("France Trip").
-    () => countryDisplayTrips(cluster.countryCode, localVisits, savedDestinations, savedSpots)
-      .map(t => t.derivedFrom && !t.title ? { ...t, title: `${cluster.country} Trip` } : t),
-    [cluster.countryCode, cluster.country, localVisits, savedDestinations, savedSpots],
-  );
-  // A derived trip saved as a real one gets an id of its own — same as DestinationSheet's ownTripId.
-  const ownTripId = (id: string) => id.startsWith('derived:') ? 'trip:' + id.slice('derived:'.length) : id;
 
   // The shared visit-log components' generic selector, one item per destination in this
   // country — thumbnail loading stays here (this file already owns getOrFetchWikiThumbnail for
@@ -272,10 +260,7 @@ function CountrySheet({
 
   // Saves one visit module — appends a brand new one ('new') or replaces just the matching id
   // in place. Identical mechanism to DestinationSheet's own handleSaveVisitModule.
-  const handleSaveVisitModule = useCallback((edited: Visit) => {
-    // Editing a derived trip saves it as one of the country's own (see ownTripId).
-    const { derivedFrom: _derivedFrom, ...rest } = edited as DisplayTrip;
-    const v: Visit = { ...rest, id: ownTripId(edited.id) };
+  const handleSaveVisitModule = useCallback((v: Visit) => {
     // The country only actually becomes "visited" here, on a genuine save — not the moment
     // "Add Visit" was tapped (see handleMarkVisited). updateSavedCountry below patches fields
     // onto an EXISTING record, so one has to exist first when this is the very first visit.
@@ -285,13 +270,20 @@ function CountrySheet({
     const updated = idx >= 0 ? base.map(x => x.id === v.id ? v : x) : [...base, v];
     updated.sort((a, b) => b.startDate.localeCompare(a.startDate));
     updateSavedCountry(cluster.countryCode, { visits: updated, visitDate: updated[0]?.startDate });
-  }, [savedCountry, localVisits, cluster.countryCode, saveCountryVisited, updateSavedCountry]);
+    // A destination newly ticked here gets a log of its own to edit on its My Visit tab (see syncTripTicks).
+    syncTripTicks('country', v.id, localVisits.find(x => x.id === v.id)?.spotIds ?? [], v.spotIds ?? []);
+  }, [savedCountry, localVisits, cluster.countryCode, saveCountryVisited, updateSavedCountry, syncTripTicks]);
 
-  // Removes the country's own trip, or a derived one along with the destination trips it was built
-  // from (see removeCountryTrip). A brand-new trip that was never saved has nothing to remove.
   const handleDeleteVisitModule = useCallback((id: string) => {
-    removeCountryTrip(cluster.countryCode, localVisits.some(v => v.id === ownTripId(id)) ? ownTripId(id) : id);
-  }, [localVisits, cluster.countryCode, removeCountryTrip]);
+    if (!savedCountry) return;
+    const trip = localVisits.find(v => v.id === id);
+    if (!trip) return;
+    syncTripTicks('country', id, trip.spotIds ?? [], []);
+    const updated = localVisits.filter(v => v.id !== id);
+    // That was the last trip logged for this country — drops its record, which holds nothing but trips.
+    if (updated.length === 0) { unsaveCountry(cluster.countryCode); return; }
+    updateSavedCountry(cluster.countryCode, { visits: updated, visitDate: updated[0]?.startDate });
+  }, [savedCountry, localVisits, cluster.countryCode, unsaveCountry, updateSavedCountry, syncTripTicks]);
   // Fired instead of handleDeleteVisitModule when removing the synthesized 'legacy' visit — see
   // VisitModuleSheet's own onRemoveLegacy doc.
   const handleRemoveLegacyVisit = useCallback(() => unsaveCountry(cluster.countryCode), [cluster.countryCode, unsaveCountry]);
@@ -1006,7 +998,7 @@ function CountrySheet({
                         photos, and notes — like a separate journal entry. Shared with
                         DestinationSheet/SpotSheet — see VisitCardList. */}
                     <VisitCardList
-                      visits={displayTrips}
+                      visits={localVisits}
                       onEditVisit={setEditingVisitModule}
                       onNewVisit={() => setEditingVisitModule('new')}
                       onOpenGallery={setGalleryVisit}

@@ -1791,8 +1791,8 @@ export function VisitModuleSheet<T extends VisitSelectorItem>({
   const hasContent = !!localNotes || selectedIds.size > 0 || localPhotos.length > 0 || !!startDate || !!ratingValue;
   const canSave = dirty && hasContent;
 
-  // Checking an item off is all it takes to count it as visited (see utils/visitStatus.ts) —
-  // nothing else is written, so unchecking it un-visits it again unless something else covers it.
+  // Checking an item off counts it as visited, and on save gives it a log of its own if it has none
+  // (see syncTripTicks in the store); unchecking it takes that log away again while it's untouched.
   const toggleItem = (id: string) => {
     const next = new Set(selectedIds);
     if (next.has(id)) next.delete(id);

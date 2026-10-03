@@ -6,7 +6,7 @@ import type { SavedDestination, SavedSpot, SavedCountry, PhotoEntry, Continent }
 import { DESTINATIONS } from '../data/destinations';
 import { SPOTS } from '../data/spots';
 import {
-  buildVisitIndex, withoutCountry, withoutCountryTrip, withoutDestination, withoutDestinationTrip, withoutSpot,
+  buildVisitIndex, withoutCountry, withoutDestination, withoutSpot, withTripTicks,
   type VisitIndex,
 } from '../utils/visitStatus';
 
@@ -41,10 +41,10 @@ interface AppState {
   saveCountryVisited: (countryCode: string, extra?: Partial<Omit<SavedCountry, 'countryCode'>>) => void;
   unsaveCountry: (countryCode: string) => void;
   updateSavedCountry: (countryCode: string, update: Partial<SavedCountry>) => void;
-  // Removing what was logged (see the `without…` helpers in utils/visitStatus.ts). A trip id may be
-  // a derived one, which removes what it was built from.
-  removeDestinationTrip: (destinationId: string, tripId: string) => void;
-  removeCountryTrip: (countryCode: string, tripId: string) => void;
+  // After a destination (or country) trip's ticks change from `before` to `after`: a newly ticked
+  // spot (or destination) with nothing logged gets a log of its own, and one unticked again loses the
+  // untouched log that trip gave it (see withTripTicks in utils/visitStatus.ts).
+  syncTripTicks: (level: 'destination' | 'country', tripId: string, before: string[], after: string[]) => void;
   // Un-visit a place entirely: everything logged for it and beneath it, and its ticks in the trips above.
   unvisitSpot: (spotId: string) => void;
   unvisitDestination: (destinationId: string) => void;
@@ -160,8 +160,7 @@ export const useStore = create<AppState>()(
           },
         })),
 
-      removeDestinationTrip: (destinationId, tripId) => set((s) => withoutDestinationTrip(s, destinationId, tripId)),
-      removeCountryTrip: (countryCode, tripId) => set((s) => withoutCountryTrip(s, countryCode, tripId)),
+      syncTripTicks: (level, tripId, before, after) => set((s) => withTripTicks(s, level, tripId, before, after)),
       unvisitSpot: (spotId) => set((s) => withoutSpot(s, spotId)),
       unvisitDestination: (destinationId) => set((s) => withoutDestination(s, destinationId)),
       unvisitCountry: (countryCode) => set((s) => withoutCountry(s, countryCode)),
@@ -194,6 +193,19 @@ export const useStore = create<AppState>()(
         // Likewise for recentSearches.
         if (state && !state.recentSearches) {
           state.recentSearches = [];
+        }
+        // Places ticked on a trip before ticking gave them a log of their own get one now, so
+        // every visited spot or destination has a trip to edit on its My Visit tab.
+        if (state) {
+          let r: Pick<AppState, 'savedDestinations' | 'savedSpots' | 'savedCountries'> = state;
+          for (const rec of Object.values(state.savedCountries)) {
+            for (const v of rec.visits ?? []) r = withTripTicks(r, 'country', v.id, [], v.spotIds ?? []);
+          }
+          for (const rec of Object.values(r.savedDestinations)) {
+            for (const v of rec.visits ?? []) r = withTripTicks(r, 'destination', v.id, [], v.spotIds ?? []);
+          }
+          state.savedDestinations = r.savedDestinations;
+          state.savedSpots = r.savedSpots;
         }
       },
     }

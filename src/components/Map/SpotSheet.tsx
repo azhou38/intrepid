@@ -302,15 +302,6 @@ function SpotSheet({
     ?? (savedSpot?.visitDate
       ? [{ id: 'legacy', startDate: savedSpot.visitDate, photos: savedSpot.photos, notes: savedSpot.notes }]
       : []), [savedSpot]);
-  // Destination trips that ticked this spot, shown alongside its own trips but read-only — they're
-  // edited on the destination (see isReadOnly below).
-  const linkedTrips = visitIndex.linkedTripsForSpot(activeSpot.id);
-  const linkedTripIds = useMemo(() => new Set(linkedTrips.map(l => l.visit.id)), [linkedTrips]);
-  const shownVisits: Visit[] = useMemo(
-    () => [...localVisits, ...linkedTrips.map(l => l.visit)].sort((a, b) =>
-      (!a.startDate ? 1 : 0) - (!b.startDate ? 1 : 0) || b.startDate.localeCompare(a.startDate)),
-    [localVisits, linkedTrips],
-  );
 
   // Saves one visit module — appends a brand new one ('new') or replaces just the matching id
   // in place. Identical mechanism to DestinationSheet's/CountrySheet's own handleSaveVisitModule.
@@ -1038,13 +1029,12 @@ function SpotSheet({
                         DestinationSheet/CountrySheet — see VisitCardList. No selector section
                         here (a spot has nothing beneath it to tag a visit with). */}
                     <VisitCardList
-                      visits={shownVisits}
+                      visits={localVisits}
                       onEditVisit={setEditingVisitModule}
                       onNewVisit={() => setEditingVisitModule('new')}
                       onOpenGallery={setGalleryVisit}
                       ratingValue={savedSpot?.rating}
                       hideSingleDayCount
-                      isReadOnly={v => linkedTripIds.has(v.id)}
                     />
                   </View>
 
