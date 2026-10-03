@@ -20,6 +20,8 @@ export type RecentSearch =
 const MAX_RECENT_SEARCHES = 5;
 const recentKey = (r: RecentSearch) => r.type === 'country' ? `country:${r.countryCode}` : `${r.type}:${r.id}`;
 
+const SPOT_DEST_ID = new Map(SPOTS.map(s => [s.id, s.destinationId]));
+
 function uid() {
   return Math.random().toString(36).slice(2) + Date.now().toString(36);
 }
@@ -95,7 +97,7 @@ export const useStore = create<AppState>()(
         set((s) => ({
           savedDestinations: {
             ...s.savedDestinations,
-            [id]: { ...s.savedDestinations[id], ...update },
+            [id]: { ...s.savedDestinations[id], ...update, destinationId: id, type: 'visited' },
           },
         })),
 
@@ -111,11 +113,16 @@ export const useStore = create<AppState>()(
           },
         })),
 
+      // Creates the record if needed (e.g. rating a spot in its trip editor before the trip is saved),
+      // always with its own ids — a record without them was missed by un-visiting its destination.
       updateSpot: (spotId, update) =>
         set((s) => ({
           savedSpots: {
             ...s.savedSpots,
-            [spotId]: { ...s.savedSpots[spotId], ...update },
+            [spotId]: {
+              ...s.savedSpots[spotId], ...update,
+              spotId, destinationId: s.savedSpots[spotId]?.destinationId ?? SPOT_DEST_ID.get(spotId) ?? '',
+            },
           },
         })),
 
@@ -145,7 +152,7 @@ export const useStore = create<AppState>()(
         set((s) => ({
           savedCountries: {
             ...s.savedCountries,
-            [countryCode]: { ...s.savedCountries[countryCode], ...update },
+            [countryCode]: { ...s.savedCountries[countryCode], ...update, countryCode },
           },
         })),
 
@@ -181,6 +188,15 @@ export const useStore = create<AppState>()(
         // Likewise for recentSearches.
         if (state && !state.recentSearches) {
           state.recentSearches = [];
+        }
+        // Records written by a field update before their place was saved could lack their own ids.
+        if (state) {
+          for (const [id, rec] of Object.entries(state.savedSpots)) {
+            if (!rec.spotId || !rec.destinationId) state.savedSpots[id] = { ...rec, spotId: id, destinationId: rec.destinationId || (SPOT_DEST_ID.get(id) ?? '') };
+          }
+          for (const [id, rec] of Object.entries(state.savedDestinations)) {
+            if (!rec.destinationId || !rec.type) state.savedDestinations[id] = { ...rec, destinationId: id, type: 'visited' };
+          }
         }
         // Logs that ticking a place used to create, still untouched, are removed — ticking now only
         // marks the place visited (see withoutAutoLogs).

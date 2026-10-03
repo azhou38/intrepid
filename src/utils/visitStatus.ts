@@ -20,6 +20,8 @@ import { DESTINATIONS } from '../data/destinations';
 import { SPOTS } from '../data/spots';
 import type { SavedCountry, SavedDestination, SavedSpot, Visit } from '../types';
 
+// Records are always looked up by their key (the place's id), never by the id fields inside them — a
+// record written by a field update before the place was saved can lack those fields.
 const SPOT_DEST = new Map(SPOTS.map(s => [s.id, s.destinationId]));
 const DEST_COUNTRY = new Map(DESTINATIONS.map(d => [d.id, d.countryCode]));
 
@@ -38,10 +40,10 @@ export function buildVisitIndex(
   savedCountries: Record<string, SavedCountry>,
 ): VisitIndex {
   const ticked = new Set<string>();
-  for (const rec of Object.values(savedDestinations)) {
+  for (const [destId, rec] of Object.entries(savedDestinations)) {
     for (const visit of rec.visits ?? []) {
       for (const spotId of visit.spotIds ?? []) {
-        if (SPOT_DEST.get(spotId) === rec.destinationId) ticked.add(spotId);
+        if (SPOT_DEST.get(spotId) === destId) ticked.add(spotId);
       }
     }
   }
@@ -52,24 +54,24 @@ export function buildVisitIndex(
   ]);
 
   const visitedDestIds = new Set<string>();
-  for (const rec of Object.values(savedDestinations)) {
-    if (rec.type === 'visited' && DEST_COUNTRY.has(rec.destinationId)) visitedDestIds.add(rec.destinationId);
+  for (const destId of Object.keys(savedDestinations)) {
+    if (DEST_COUNTRY.has(destId)) visitedDestIds.add(destId);
   }
   for (const spotId of visitedSpotIds) {
     const destId = SPOT_DEST.get(spotId);
     if (destId) visitedDestIds.add(destId);
   }
-  for (const rec of Object.values(savedCountries)) {
+  for (const [code, rec] of Object.entries(savedCountries)) {
     for (const visit of rec.visits ?? []) {
       for (const destId of visit.spotIds ?? []) {        // a country trip's selector items are destinations
-        if (DEST_COUNTRY.get(destId) === rec.countryCode) visitedDestIds.add(destId);
+        if (DEST_COUNTRY.get(destId) === code) visitedDestIds.add(destId);
       }
     }
   }
 
   const visitedCountryCodes = new Set<string>();
-  for (const rec of Object.values(savedCountries)) {
-    visitedCountryCodes.add(rec.countryCode);   // a country record is only ever made for a visit
+  for (const code of Object.keys(savedCountries)) {
+    visitedCountryCodes.add(code);   // a country record is only ever made for a visit
   }
   for (const destId of visitedDestIds) {
     const code = DEST_COUNTRY.get(destId);
@@ -94,7 +96,7 @@ export function destinationTripsOf(rec: SavedDestination | undefined, savedSpots
   if (!rec.visitDate) return [];
   return [{
     id: 'legacy', startDate: rec.visitDate, photos: rec.photos, notes: rec.notes,
-    spotIds: Object.values(savedSpots).filter(ss => ss.destinationId === rec.destinationId).map(ss => ss.spotId),
+    spotIds: Object.keys(savedSpots).filter(id => SPOT_DEST.get(id) === rec.destinationId),
   }];
 }
 
@@ -143,15 +145,15 @@ const hasSpotLog = (rec: SavedSpot) => !!rec.visits?.length || !!rec.visitDate;
 
 // How many of a destination's spots have something logged.
 export function spotsWithLogsIn(r: VisitRecords, destinationId: string): number {
-  return Object.values(r.savedSpots).filter(rec => SPOT_DEST.get(rec.spotId) === destinationId && hasSpotLog(rec)).length;
+  return Object.entries(r.savedSpots).filter(([id, rec]) => SPOT_DEST.get(id) === destinationId && hasSpotLog(rec)).length;
 }
 
 // How many of a country's destinations, and of their spots, have something logged.
 export function placesWithLogsInCountry(r: VisitRecords, countryCode: string): { destinations: number; spots: number } {
-  const destinations = Object.values(r.savedDestinations).filter(rec =>
-    DEST_COUNTRY.get(rec.destinationId) === countryCode && destinationTripsOf(rec, r.savedSpots).length > 0).length;
-  const spots = Object.values(r.savedSpots).filter(rec => {
-    const destId = SPOT_DEST.get(rec.spotId);
+  const destinations = Object.entries(r.savedDestinations).filter(([id, rec]) =>
+    DEST_COUNTRY.get(id) === countryCode && destinationTripsOf(rec, r.savedSpots).length > 0).length;
+  const spots = Object.entries(r.savedSpots).filter(([id, rec]) => {
+    const destId = SPOT_DEST.get(id);
     return !!destId && DEST_COUNTRY.get(destId) === countryCode && hasSpotLog(rec);
   }).length;
   return { destinations, spots };
@@ -159,10 +161,10 @@ export function placesWithLogsInCountry(r: VisitRecords, countryCode: string): {
 
 const counted = (n: number, word: string) => `${n} ${word}${n === 1 ? '' : 's'}`;
 
-// "This will permanently delete everything you logged for France, including its 3 destinations and 5 spots."
+// "This will permanently delete everything you logged for France, including 3 destinations and 5 spots."
 export function removeCountryMessage(country: string, n: { destinations: number; spots: number }): string {
   const parts = [n.destinations && counted(n.destinations, 'destination'), n.spots && counted(n.spots, 'spot')].filter(Boolean);
-  const including = parts.length ? `, including its ${parts.join(' and ')}` : '';
+  const including = parts.length ? `, including ${parts.join(' and ')}` : '';
   return `This will permanently delete everything you logged for ${country}${including}.`;
 }
 
@@ -240,7 +242,7 @@ export function withoutDestination(r: VisitRecords, destinationId: string): Visi
   const unticked = country && untick(country, destinationId);
   return keepVisited(r, {
     savedDestinations: omit(r.savedDestinations, [destinationId]),
-    savedSpots: omit(r.savedSpots, Object.values(r.savedSpots).filter(s => SPOT_DEST.get(s.spotId) === destinationId).map(s => s.spotId)),
+    savedSpots: omit(r.savedSpots, Object.keys(r.savedSpots).filter(id => SPOT_DEST.get(id) === destinationId)),
     savedCountries: unticked ? { ...r.savedCountries, [code!]: { ...country!, ...unticked } } : r.savedCountries,
   }, undefined, code);
 }
@@ -251,6 +253,6 @@ export function withoutCountry(r: VisitRecords, countryCode: string): VisitRecor
   return {
     savedCountries: omit(r.savedCountries, [countryCode]),
     savedDestinations: omit(r.savedDestinations, Object.keys(r.savedDestinations).filter(inCountry)),
-    savedSpots: omit(r.savedSpots, Object.values(r.savedSpots).filter(s => inCountry(SPOT_DEST.get(s.spotId))).map(s => s.spotId)),
+    savedSpots: omit(r.savedSpots, Object.keys(r.savedSpots).filter(id => inCountry(SPOT_DEST.get(id)))),
   };
 }
