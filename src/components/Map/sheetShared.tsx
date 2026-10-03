@@ -1368,7 +1368,7 @@ const VISIT_STRIP_FADE_STOPS = Array.from({ length: 21 }, (_, i) => {
 // memSpotsCarouselLast below), plus a trailing "Add Visit +" button.
 export function VisitCardList<T extends VisitSelectorItem>({
   visits, onEditVisit, onNewVisit, onOpenGallery, onSelectItem, selectorLabel, selectorItems,
-  ratingValue, hideSingleDayCount,
+  ratingValue, hideSingleDayCount, readOnlyCaption,
 }: {
   visits: Visit[];
   onEditVisit: (v: Visit) => void;
@@ -1389,6 +1389,9 @@ export function VisitCardList<T extends VisitSelectorItem>({
   // stop) — hidden when this is true, mirroring VisitModuleSheet's own prop of the same name.
   // A genuinely multi-day spot visit still shows its real day count.
   hideSingleDayCount?: boolean;
+  // A visit this returns a caption for is shown read-only, with the caption in place of its Edit
+  // button — e.g. a destination trip that ticked this spot, which is edited on the destination.
+  readOnlyCaption?: (v: Visit) => string | undefined;
 }) {
   // Sizes the selector carousel's square cards to match the photo grid's own tiles exactly —
   // measured (not hardcoded) off the carousel's own container width, using the identical
@@ -1428,6 +1431,7 @@ export function VisitCardList<T extends VisitSelectorItem>({
         // it in that case; the dark header just fills the whole box (all four corners rounded,
         // no trailing margin).
         const headerOnly = !v.notes && !itemsForVisit.length && !v.photos?.length;
+        const caption = readOnlyCaption?.(v);
         return (
           <View key={v.id} style={vcS.memCardShadow}>
             <View style={vcS.memCard}>
@@ -1445,18 +1449,21 @@ export function VisitCardList<T extends VisitSelectorItem>({
                     {fmtVisitRangeShort(v)}
                     {days != null && !(days === 1 && hideSingleDayCount) && `  ·  ${days} day${days === 1 ? '' : 's'}`}
                   </Text>
+                  {!!caption && <Text style={vcS.memReadOnlyCaption} numberOfLines={1}>{caption}</Text>}
                 </View>
-                <Pressable style={vcS.memEditBtn} onPress={() => onEditVisit(v)}>
-                  <Pencil size={12} color="white" />
-                  <Text style={vcS.memEditBtnTxt}>Edit</Text>
-                </Pressable>
+                {!caption && (
+                  <Pressable style={vcS.memEditBtn} onPress={() => onEditVisit(v)}>
+                    <Pencil size={12} color="white" />
+                    <Text style={vcS.memEditBtnTxt}>Edit</Text>
+                  </Pressable>
+                )}
               </View>
               {!!v.notes && (
                 // When nothing follows (no selector items, no photos), match the same bottom
                 // padding the card ends on when photos ARE the last section.
                 <Pressable
                   style={[vcS.memNotesDisplay, !itemsForVisit.length && !v.photos?.length && vcS.memNotesLast]}
-                  onPress={() => onEditVisit(v)}
+                  onPress={caption ? undefined : () => onEditVisit(v)}
                 >
                   <Text style={vcS.memNotesTxt} numberOfLines={3}>{v.notes}</Text>
                 </Pressable>
@@ -1585,6 +1592,7 @@ const vcS = StyleSheet.create({
   memRatingRow:        { marginBottom:8 },
   memDateVal:          { fontSize:14, fontWeight:'600', color:'#9CA3AF' },
   memDateEmpty:        { fontSize:14, fontWeight:'600', color:'#9CA3AF' },
+  memReadOnlyCaption:  { fontSize:12, fontWeight:'500', color:'#9CA3AF', marginTop:2 },
   memEditBtn:          { flexDirection:'row', alignItems:'center', gap:5, paddingHorizontal:10, paddingVertical:6,
                          borderRadius:10, backgroundColor:'rgba(255,255,255,0.14)' },
   memEditBtnTxt:       { fontSize:12, fontWeight:'600', color:'white' },
@@ -1674,7 +1682,7 @@ export function StarRating({ value, onChange, size = 30 }: {
 // own id, so sibling visits are never touched.
 export function VisitModuleSheet<T extends VisitSelectorItem>({
   entityName, visit, onSave, onDelete, onClose,
-  selectorLabel, selectorItems, onCheckItem, onRemoveLegacy,
+  selectorLabel, selectorItems, onRemoveLegacy,
   ratingValue, onRatingChange, noun = 'Trip', hideSingleDayCount,
 }: {
   // Used for the title placeholder/fallback ("${entityName} ${noun}") — the destination's,
@@ -1698,11 +1706,6 @@ export function VisitModuleSheet<T extends VisitSelectorItem>({
   // passes neither.
   selectorLabel?: string;
   selectorItems?: T[];
-  // Fired only when an item is newly CHECKED (not on uncheck) — lets the caller mirror whatever
-  // "checking this off also marks IT visited" side effect makes sense at its own level (e.g. the
-  // destination level marks a checked spot visited destination-wide too), without this shared
-  // file needing to know what that side effect actually is.
-  onCheckItem?: (id: string) => void;
   // Fired instead of onDelete when removing the synthesized 'legacy' visit (migrated from this
   // entity's pre-visits-array fields, see each caller's own localVisits derivation) — the caller
   // unsaves the whole entity rather than trying to delete a visit id that was never actually
@@ -1796,14 +1799,12 @@ export function VisitModuleSheet<T extends VisitSelectorItem>({
   const hasContent = !!localNotes || selectedIds.size > 0 || localPhotos.length > 0 || !!startDate || !!ratingValue;
   const canSave = dirty && hasContent;
 
-  // Checking an item off may trigger the caller's own "mark IT visited too" side effect (see
-  // onCheckItem's own doc), but unchecking only removes it from THIS visit's own list — it
-  // might still have been seen on a different trip, so un-marking it globally is a separate,
-  // more deliberate action handled elsewhere.
+  // Checking an item off is all it takes to count it as visited (see utils/visitStatus.ts) —
+  // nothing else is written, so unchecking it un-visits it again unless something else covers it.
   const toggleItem = (id: string) => {
     const next = new Set(selectedIds);
     if (next.has(id)) next.delete(id);
-    else { next.add(id); onCheckItem?.(id); }
+    else next.add(id);
     setSelectedIds(next);
     commit();
   };

@@ -21,7 +21,7 @@ import { Gesture, GestureDetector, ScrollView } from 'react-native-gesture-handl
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Check, Plus, Users, Languages, Coins, Maximize, Landmark } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
-import { useStore } from '../../store';
+import { useStore, useVisitIndex } from '../../store';
 import type { Destination, CountryCluster, Visit } from '../../types';
 import { DESTINATIONS } from '../../data/destinations';
 import { SPOTS } from '../../data/spots';
@@ -158,10 +158,10 @@ type CountrySnapState = 'peek' | 'collapsed' | 'full';
 // ── Destinations panel — grid of the country's destinations, identical pattern to
 // DestinationSheet's own SpotsPanel.
 function DestinationsPanel({
-  dests, savedDestinations, onSelectDestination,
+  dests, isDestVisited, onSelectDestination,
 }: {
   dests: Destination[];
-  savedDestinations: Record<string, { type?: string }>;
+  isDestVisited: (id: string) => boolean;
   onSelectDestination: (dest: Destination) => void;
 }) {
   return (
@@ -169,8 +169,7 @@ function DestinationsPanel({
       {dests.length > 0 ? (
         <View style={st.destGrid}>
           {dests.map(dest => {
-            const saved      = savedDestinations[dest.id];
-            const isVisited  = saved?.type === 'visited';
+            const isVisited  = isDestVisited(dest.id);
             return (
               <DestinationCard
                 key={dest.id}
@@ -201,12 +200,11 @@ function CountrySheet({
   // own "List view" button wants 'full').
   const resolvedInitialSnap: CountrySnapState = initialSnap ?? 'collapsed';
   const insets            = useSafeAreaInsets();
-  const savedDestinations = useStore(s => s.savedDestinations);
   const savedCountries    = useStore(s => s.savedCountries);
+  const visitIndex        = useVisitIndex();
   const saveCountryVisited = useStore(s => s.saveCountryVisited);
   const unsaveCountry      = useStore(s => s.unsaveCountry);
   const updateSavedCountry = useStore(s => s.updateSavedCountry);
-  const saveDestination    = useStore(s => s.saveDestination);
   // Drives the standalone per-visit edit sheet for BOTH creating a new visit module ('new')
   // and editing one specific existing module (the Visit object) — identical mechanism to
   // DestinationSheet's own editingVisitModule.
@@ -229,15 +227,11 @@ function CountrySheet({
   }, [dests]);
 
   const savedCountry       = savedCountries[cluster.countryCode];
-  // A country counts as visited by default as soon as any of its destinations is (marking a spot
-  // visited already marks its destination — see saveSpotVisited), without needing its own
-  // saved entry. Only a country visit the user actually logged here can be removed here; one
-  // implied by a visited destination goes away when that destination does.
-  const hasVisitedDest       = useMemo(
-    () => dests.some(d => savedDestinations[d.id]?.type === 'visited'),
-    [dests, savedDestinations],
-  );
-  const isCountryVisited     = !!savedCountry?.visitDate || !!savedCountry?.visits?.length || hasVisitedDest;
+  // Visited if this country has trips of its own or any of its destinations is visited (see
+  // utils/visitStatus.ts). Only the trips logged here are this sheet's to remove — a visit that
+  // comes through a destination goes away when that destination's does.
+  const hasOwnVisit          = !!savedCountry?.visitDate || !!savedCountry?.visits?.length;
+  const isCountryVisited     = visitIndex.isCountryVisited(cluster.countryCode);
   const facts = COUNTRY_FACTS[cluster.countryCode];
 
   // Derive visits from the store, carrying the old country-level visitDate/notes fields onto a
@@ -274,30 +268,26 @@ function CountrySheet({
     // The country only actually becomes "visited" here, on a genuine save — not the moment
     // "Add Visit" was tapped (see handleMarkVisited). updateSavedCountry below patches fields
     // onto an EXISTING record, so one has to exist first when this is the very first visit.
-    if (!isCountryVisited) saveCountryVisited(cluster.countryCode, {});
+    if (!savedCountry) saveCountryVisited(cluster.countryCode, {});
     const base = localVisits.filter(x => x.id !== 'legacy');
     const idx  = base.findIndex(x => x.id === v.id);
     const updated = idx >= 0 ? base.map(x => x.id === v.id ? v : x) : [...base, v];
     updated.sort((a, b) => b.startDate.localeCompare(a.startDate));
     updateSavedCountry(cluster.countryCode, { visits: updated, visitDate: updated[0]?.startDate });
-  }, [isCountryVisited, localVisits, cluster.countryCode, saveCountryVisited, updateSavedCountry]);
+  }, [savedCountry, localVisits, cluster.countryCode, saveCountryVisited, updateSavedCountry]);
 
-  // That was the last visit logged directly for this country — clears its own record. Unless
-  // hasVisitedDest still implies "visited" through one of its destinations, in which case the
-  // country stays visited but with nothing of its own logged, same as DestinationSheet's own
-  // handleDeleteVisitModule clearing the legacy fields via unsaveDestination when nothing
-  // implies visited status anymore.
+  // That was the last trip logged for this country — drops its record, which holds nothing but
+  // trips. The country stays visited only if one of its destinations still is.
   const clearOwnVisits = useCallback(() => {
-    if (!hasVisitedDest) unsaveCountry(cluster.countryCode);
-    else updateSavedCountry(cluster.countryCode, { visits: [], visitDate: undefined, notes: undefined });
-  }, [hasVisitedDest, cluster.countryCode, unsaveCountry, updateSavedCountry]);
+    unsaveCountry(cluster.countryCode);
+  }, [cluster.countryCode, unsaveCountry]);
 
   const handleDeleteVisitModule = useCallback((id: string) => {
-    if (!isCountryVisited) return;
+    if (!savedCountry) return;
     const updated = localVisits.filter(v => v.id !== id);
     if (updated.length === 0) { clearOwnVisits(); return; }
     updateSavedCountry(cluster.countryCode, { visits: updated, visitDate: updated[0]?.startDate });
-  }, [isCountryVisited, localVisits, cluster.countryCode, updateSavedCountry, clearOwnVisits]);
+  }, [savedCountry, localVisits, cluster.countryCode, updateSavedCountry, clearOwnVisits]);
   // Fired instead of handleDeleteVisitModule when removing the synthesized 'legacy' visit — see
   // VisitModuleSheet's own onRemoveLegacy doc.
   const handleRemoveLegacyVisit = clearOwnVisits;
@@ -307,9 +297,9 @@ function CountrySheet({
   // happens once the user actually saves a trip inside it, see handleSaveVisitModule).
   const handleMarkVisited = useCallback(() => {
     if (isCountryVisited) {
-      // A visit implied by one of this country's own visited destinations isn't this sheet's
-      // own record to remove — it goes away when that destination does.
-      if (hasVisitedDest) return;
+      // A visit that comes only through one of this country's destinations isn't this sheet's to
+      // remove — it goes away when that destination's does.
+      if (!hasOwnVisit) return;
       Alert.alert(
         'Remove visit?',
         'This will permanently delete your log and notes for this country.',
@@ -322,7 +312,7 @@ function CountrySheet({
     }
     setEditingVisitModule('new');
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-  }, [isCountryVisited, hasVisitedDest, cluster.countryCode, unsaveCountry]);
+  }, [isCountryVisited, hasOwnVisit, cluster.countryCode, unsaveCountry]);
 
   // ── Tabs ───────────────────────────────────────────────────────────────────
   const TAB_ORDER: CountryTab[] = useMemo(
@@ -1090,7 +1080,7 @@ function CountrySheet({
                 >
                   <DestinationsPanel
                     dests={dests}
-                    savedDestinations={savedDestinations}
+                    isDestVisited={visitIndex.isDestVisited}
                     onSelectDestination={onSelectDestination}
                   />
                 </View>
@@ -1153,10 +1143,6 @@ function CountrySheet({
           onClose={() => setEditingVisitModule(null)}
           selectorLabel={dests.length > 0 ? 'Destinations Visited' : undefined}
           selectorItems={dests.length > 0 ? destSelectorItems : undefined}
-          // Checking a destination off marks IT visited country-wide too (consistent with how
-          // "visited" works everywhere else in the app) — unchecking is handled entirely inside
-          // the shared editor itself (removes it from just this visit).
-          onCheckItem={destId => saveDestination(destId, 'visited', {})}
           onRemoveLegacy={handleRemoveLegacyVisit}
         />
       )}

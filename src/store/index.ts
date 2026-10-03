@@ -5,6 +5,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import type { SavedDestination, SavedSpot, SavedCountry, PhotoEntry, Continent } from '../types';
 import { DESTINATIONS } from '../data/destinations';
 import { SPOTS } from '../data/spots';
+import { buildVisitIndex, type VisitIndex } from '../utils/visitStatus';
 
 // A place opened from search, by id — resolved back to the live data when shown, so a renamed or removed
 // place can never resurface stale.
@@ -95,26 +96,16 @@ export const useStore = create<AppState>()(
         })),
 
       // ── Spots ────────────────────────────────────────────────────────────
+      // Only the spot's own record. Its destination (and country) count as visited through it — see
+      // utils/visitStatus.ts — rather than through a destination record written here, which used to
+      // leave the destination visited after the spot was un-visited.
       saveSpotVisited: (spotId, destinationId) =>
-        set((s) => {
-          const nextSpots = {
+        set((s) => ({
+          savedSpots: {
             ...s.savedSpots,
             [spotId]: s.savedSpots[spotId] ?? { spotId, destinationId },
-          };
-          // Auto-mark the parent destination visited (keeps any existing notes/photos/visits).
-          const parent = s.savedDestinations[destinationId];
-          const nextDests = parent?.type === 'visited'
-            ? s.savedDestinations
-            : {
-                ...s.savedDestinations,
-                [destinationId]: {
-                  ...(parent ?? { destinationId }),
-                  destinationId,
-                  type: 'visited' as const,
-                },
-              };
-          return { savedSpots: nextSpots, savedDestinations: nextDests };
-        }),
+          },
+        })),
 
       updateSpot: (spotId, update) =>
         set((s) => ({
@@ -215,18 +206,34 @@ export function useDestinationPhotos(destinationId: string): PhotoEntry[] {
   }, [savedDestinations, savedSpots, destinationId]);
 }
 
+// Visited status for every spot, destination and country, derived from what's logged — the one place
+// the app gets it from (see utils/visitStatus.ts). Built once per change to the saved records and
+// shared by every caller, so a list of cards each asking for it doesn't each rebuild it.
+let visitIndexCache: { inputs: unknown[]; index: VisitIndex } | null = null;
+function getVisitIndex(s: AppState): VisitIndex {
+  const inputs = [s.savedDestinations, s.savedSpots, s.savedCountries];
+  if (!visitIndexCache || inputs.some((x, i) => x !== visitIndexCache!.inputs[i])) {
+    visitIndexCache = { inputs, index: buildVisitIndex(s.savedDestinations, s.savedSpots, s.savedCountries) };
+  }
+  return visitIndexCache.index;
+}
+export function useVisitIndex(): VisitIndex {
+  return useStore(getVisitIndex);
+}
+
 export function useStats() {
   const savedDestinations = useStore((s) => s.savedDestinations);
+  const index = useVisitIndex();
 
   return useMemo(() => {
     const entries = Object.values(savedDestinations);
     const visitedEntries = entries.filter((e) => e.type === 'visited');
 
-    const visitedDests = visitedEntries
-      .map((e) => DESTINATIONS.find((d) => d.id === e.destinationId))
-      .filter(Boolean) as typeof DESTINATIONS;
+    // Visited destinations/countries per the visit index — including ones visited only through a spot
+    // or a country trip — rather than only destinations with their own record.
+    const visitedDests = DESTINATIONS.filter((d) => index.isDestVisited(d.id));
 
-    const countryCodes = new Set(visitedDests.map((d) => d.countryCode));
+    const countryCodes = index.visitedCountryCodes;
     const continents = new Set<Continent>(visitedDests.map((d) => d.continent));
 
     const countryCount: Record<string, number> = {};
@@ -257,7 +264,8 @@ export function useStats() {
     return {
       totalDestinations: visitedDests.length,
       totalVisited: visitedDests.length,
-      totalSpots: SPOTS.filter(s => new Set(visitedDests.map(d => d.id)).has(s.destinationId)).length,
+      // Spots actually logged (their own visit, or ticked on a trip) — not every spot of a visited destination.
+      totalSpots: index.visitedSpotIds.size,
       totalCountries: countryCodes.size,
       visitedCountryCodes: [...countryCodes],
       continentsVisited: [...continents] as Continent[],
@@ -268,5 +276,5 @@ export function useStats() {
       firstVisitDate: visitDates[0] ?? '',
       mostRecentVisitDate: visitDates[visitDates.length - 1] ?? '',
     };
-  }, [savedDestinations]);
+  }, [savedDestinations, index]);
 }

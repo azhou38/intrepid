@@ -4,7 +4,7 @@ import {
 } from 'react-native';
 import MapboxGL from '@rnmapbox/maps';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { useStore, useStats } from '../store';
+import { useStore, useStats, useVisitIndex } from '../store';
 import { DESTINATIONS } from '../data/destinations';
 import CircleFlag from '../components/CircleFlag';
 
@@ -13,12 +13,12 @@ const TOTAL_COUNTRIES = 195;
 export default function ProfileScreen() {
   const insets = useSafeAreaInsets();
   const stats  = useStats();
-  const savedDestinations = useStore(s => s.savedDestinations);
+  const visitIndex        = useVisitIndex();
   const userName          = useStore(s => s.userName);
 
   const visitedDests = useMemo(() =>
-    DESTINATIONS.filter(d => savedDestinations[d.id]?.type === 'visited'),
-  [savedDestinations]);
+    DESTINATIONS.filter(d => visitIndex.isDestVisited(d.id)),
+  [visitIndex]);
 
   // Country code lookup: country name → ISO code (for flag)
   const countryCodeByName = useMemo(() => {

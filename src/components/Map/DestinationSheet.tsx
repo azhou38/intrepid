@@ -27,7 +27,8 @@ import type { SharedValue } from 'react-native-reanimated';
 import { Gesture, GestureDetector, ScrollView } from 'react-native-gesture-handler';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { X, Check, Calendar, MapPin, Camera, Pencil, Plus, ChevronRight, ChevronDown, Map } from 'lucide-react-native';
-import { useStore } from '../../store';
+import { useStore, useVisitIndex } from '../../store';
+import { destinationDisplayTrips, spotVisitsOf, type DisplayTrip } from '../../utils/visitStatus';
 import SpotCard from './SpotCard';
 import type { Destination, PhotoEntry, Visit, GoodToKnowTip } from '../../types';
 import { SPOTS, type Spot } from '../../data/spots';
@@ -585,11 +586,15 @@ function DestinationSheet({
   const unsaveDestination = useStore(s => s.unsaveDestination);
   const updateSaved       = useStore(s => s.updateSaved);
   const savedSpots        = useStore(s => s.savedSpots);
-  const saveSpotVisited   = useStore(s => s.saveSpotVisited);
+  const updateSpot        = useStore(s => s.updateSpot);
+  const unsaveSpot        = useStore(s => s.unsaveSpot);
+  const visitIndex        = useVisitIndex();
 
+  // `saved` is the destination's own record (its own trips) — the only thing this sheet writes.
+  // Visited status also comes through its spots and country trips (see utils/visitStatus.ts).
   const saved      = savedDestinations[destination.id];
   const spots      = SPOTS.filter(s => s.destinationId === destination.id);
-  const isVisited  = saved?.type === 'visited';
+  const isVisited  = visitIndex.isDestVisited(destination.id);
 
   // Drives the standalone per-visit edit sheet for BOTH creating a new visit module
   // ('new') and editing one specific existing module (the Visit object) — never touches
@@ -632,7 +637,7 @@ function DestinationSheet({
   // Derive visits from store, carrying the old destination-level photos/notes/spots onto
   // the synthesized legacy entry so a pre-redesign visit still shows its content as its
   // own module — editing it migrates those fields onto a real Visit the first time it's saved.
-  const localVisits: Visit[] = saved?.visits
+  const localVisits: Visit[] = useMemo(() => saved?.visits
     ?? (saved?.visitDate
       ? [{
           id: 'legacy', startDate: saved.visitDate, photos: saved.photos, notes: saved.notes,
@@ -640,18 +645,31 @@ function DestinationSheet({
             .filter(ss => ss.destinationId === destination.id)
             .map(ss => ss.spotId),
         }]
-      : []);
+      : []), [saved, savedSpots, destination.id]);
+  // What My Visit shows: the destination's own trips with its spot visits grouped in, plus trips
+  // derived from spot visits that don't fall within one of them (see destinationDisplayTrips).
+  const displayTrips: DisplayTrip[] = useMemo(
+    () => destinationDisplayTrips(destination.id, localVisits, savedSpots),
+    [destination.id, localVisits, savedSpots],
+  );
+  // A derived trip saved as a real one gets an id of its own, worked out from the derived id so
+  // the editor's repeated auto-commits all land on the same trip — and never equal to a derived id,
+  // so a spot visit moved out of it later can't produce a duplicate.
+  const ownTripId = (id: string) => id.startsWith('derived:') ? 'trip:' + id.slice('derived:'.length) : id;
 
   // Saves one visit module — appends a brand new one ('new') or replaces just the matching
   // id in place. Every other entry in the array is copied through untouched either way, so
   // sibling modules never re-render with different content as a side effect of this.
   // Does NOT close the editor itself — VisitModuleSheet auto-commits on every field change,
   // so this fires many times per editing session; only its own Save/X button calls onClose.
-  const handleSaveVisitModule = (v: Visit) => {
-    // The destination only actually becomes "visited" here, on a genuine save — not the moment
+  const handleSaveVisitModule = (edited: Visit) => {
+    // Editing a derived trip saves it as one of the destination's own (see ownTripId).
+    const { derivedFrom: _derivedFrom, ...rest } = edited as DisplayTrip;
+    const v: Visit = { ...rest, id: ownTripId(edited.id) };
+    // The destination only gets a record of its own here, on a genuine save — not the moment
     // "Add Visit" was tapped (see handleMarkVisited). updateSaved below patches fields onto an
-    // EXISTING record, so one has to exist first when this is the very first visit.
-    if (!isVisited) saveDestination(destination.id, 'visited', {});
+    // EXISTING record, so one has to exist first when this is the very first trip.
+    if (!saved) saveDestination(destination.id, 'visited', {});
     const base = localVisits.filter(x => x.id !== 'legacy');
     const idx  = base.findIndex(x => x.id === v.id);
     const updated = idx >= 0 ? base.map(x => x.id === v.id ? v : x) : [...base, v];
@@ -659,11 +677,26 @@ function DestinationSheet({
     updateSaved(destination.id, { visits: updated, visitDate: updated[0]?.startDate });
   };
   const handleDeleteVisitModule = (id: string) => {
-    // Nothing to remove (and nothing to touch in the store) if this destination was never
-    // actually saved as visited in the first place — e.g. Remove Trip on a brand-new visit
-    // that was never saved. Proceeding here would otherwise write a malformed record missing
-    // destinationId/type.
-    if (!isVisited) return;
+    // A derived trip that was never saved as a real one: removing it removes the spot visits it
+    // was built from (a spot left with no visits is un-visited, same as removing its last trip
+    // on the spot's own sheet).
+    if (!localVisits.some(v => v.id === ownTripId(id))) {
+      const derivedFrom = displayTrips.find(t => t.id === id)?.derivedFrom ?? [];
+      const bySpot: Record<string, Set<string>> = {};
+      for (const { spotId, visitId } of derivedFrom) (bySpot[spotId] ??= new Set()).add(visitId);
+      for (const [spotId, visitIds] of Object.entries(bySpot)) {
+        const rec = savedSpots[spotId];
+        if (!rec) continue;
+        const left = rec.visits?.length ? spotVisitsOf(rec).filter(v => !visitIds.has(v.id)) : [];
+        if (left.length === 0) unsaveSpot(spotId);
+        else updateSpot(spotId, { visits: left, visitDate: left[0]?.startDate });
+      }
+      return;
+    }
+    id = ownTripId(id);
+    // Nothing to remove (and nothing to touch in the store) without a record of its own —
+    // proceeding would otherwise write a malformed record missing destinationId/type.
+    if (!saved) return;
     const updated = localVisits.filter(v => v.id !== id);
     // That was the only trip logged for this destination — it's not "visited" anymore, not
     // just visited-with-zero-trips. Unsaves the destination entirely (also drops the legacy
@@ -866,11 +899,11 @@ function DestinationSheet({
           {tab === 'visit' ? (
             <View style={{ flexDirection:'row', alignItems:'center', gap:6 }}>
               <Text style={[st.tabBtnTxt, isTabSelected('visit') && st.tabBtnTxtActive]}>
-                {localVisits.length > 1 ? 'My Visits' : 'My Visit'}
+                {displayTrips.length > 1 ? 'My Visits' : 'My Visit'}
               </Text>
-              {localVisits.length > 1 && (
+              {displayTrips.length > 1 && (
                 <View style={st.tabVisitBadge}>
-                  <Text style={st.tabVisitBadgeTxt}>{localVisits.length}</Text>
+                  <Text style={st.tabVisitBadgeTxt}>{displayTrips.length}</Text>
                 </View>
               )}
             </View>
@@ -1270,6 +1303,8 @@ function DestinationSheet({
   // Actions
   const handleMarkVisited = () => {
     if (isVisited) {
+      // Visited only through its spots or a country trip: nothing of its own to remove here.
+      if (!saved) return;
       Alert.alert(
         'Remove visit?',
         'This will permanently delete your log and notes for this destination.',
@@ -1525,7 +1560,7 @@ function DestinationSheet({
                         single module's own card; every sibling module is copied through
                         untouched. Shared with CountrySheet/SpotSheet — see VisitCardList. */}
                     <VisitCardList
-                      visits={localVisits}
+                      visits={displayTrips}
                       onEditVisit={setEditingVisitModule}
                       onNewVisit={() => setEditingVisitModule('new')}
                       onOpenGallery={setGalleryVisit}
@@ -1637,10 +1672,6 @@ function DestinationSheet({
           onClose={() => setEditingVisitModule(null)}
           selectorLabel={spots.length > 0 ? 'Spots Visited' : undefined}
           selectorItems={spots.length > 0 ? spotSelectorItems : undefined}
-          // Checking a spot off marks it visited destination-wide too (consistent with how
-          // "visited" works everywhere else in the app) — unchecking is handled entirely
-          // inside the shared editor itself (removes it from just this visit).
-          onCheckItem={spotId => saveSpotVisited(spotId, destination.id)}
           onRemoveLegacy={() => unsaveDestination(destination.id)}
         />
       )}

@@ -7,6 +7,7 @@ import * as Haptics from 'expo-haptics';
 import { CONTINENT_COLORS } from '../../types';
 import type { Destination, SavedDestination } from '../../types';
 import { SPOTS } from '../../data/spots';
+import { useVisitIndex } from '../../store';
 import { photoCache, fetchWikiThumbnail } from '../../utils/photoCache';
 import CircleFlag from '../CircleFlag';
 
@@ -34,7 +35,7 @@ function parseMonthYear(s: string): string | null {
 
 export default function DestinationContextCard({ destination, savedEntry, visible, onOpen }: Props) {
   const spots      = SPOTS.filter(s => s.destinationId === destination.id);
-  const isVisited  = savedEntry?.type === 'visited';
+  const isVisited  = useVisitIndex().isDestVisited(destination.id);
   const color      = CONTINENT_COLORS[destination.continent];
 
   // User visit stats

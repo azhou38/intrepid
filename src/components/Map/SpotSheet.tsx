@@ -22,7 +22,7 @@ import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'reac
 import { Check, Clock, CalendarClock, ChevronUp, ChevronDown, ChevronRight, LayoutGrid, Plus,
          Tag, ExternalLink, Ticket } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
-import { useStore } from '../../store';
+import { useStore, useVisitIndex } from '../../store';
 import type { Destination, Visit } from '../../types';
 import type { Spot } from '../../data/spots';
 import { DAY_NAMES, hoursForDay, formatSpotCost, formatVisitTime, getSpotOpenStatus, specialClosureOn, zonedNowForSpot } from '../../data/spots';
@@ -121,8 +121,7 @@ function CarouselCard({ spot, isActive, onPress, onAddVisit, gradId }: {
     getOrFetchWikiThumbnail(cacheKey, thumbCache, spot.name, 960).then(u => { if (u) setThumb(u); });
   }, [spot.id]);
 
-  const savedSpot  = useStore(s => s.savedSpots[spot.id]);
-  const isVisited  = !!savedSpot;
+  const isVisited  = useVisitIndex().isSpotVisited(spot.id);
 
   return (
     <Pressable
@@ -287,41 +286,53 @@ function SpotSheet({
   }
   const activeSpot = spots[activeIndex] ?? spots[0];
 
-  const savedSpot = useStore(s => s.savedSpots[activeSpot.id]);
-  const isVisited = !!savedSpot;
+  // `savedSpot` is the spot's own record (its own trips and rating) — the only thing this sheet
+  // writes. A spot is also visited when a destination trip ticked it (see utils/visitStatus.ts).
+  const savedSpot   = useStore(s => s.savedSpots[activeSpot.id]);
+  const visitIndex  = useVisitIndex();
+  const isVisited   = visitIndex.isSpotVisited(activeSpot.id);
 
   // Derive visits from the store, carrying the old single visitDate/notes/photos fields onto a
   // synthesized legacy entry so a pre-redesign spot visit still shows its content as its own
   // module — editing it migrates those fields onto a real Visit the first time it's saved.
   // Identical mechanism to DestinationSheet's/CountrySheet's own localVisits. Gated on
   // visitDate specifically (not notes/photos alone) — same as the other two levels.
-  const localVisits: Visit[] = savedSpot?.visits
+  const localVisits: Visit[] = useMemo(() => savedSpot?.visits
     ?? (savedSpot?.visitDate
       ? [{ id: 'legacy', startDate: savedSpot.visitDate, photos: savedSpot.photos, notes: savedSpot.notes }]
-      : []);
+      : []), [savedSpot]);
+  // Destination trips that ticked this spot, shown alongside its own trips but read-only — they're
+  // edited on the destination (see readOnlyCaption below).
+  const linkedTrips = visitIndex.linkedTripsForSpot(activeSpot.id);
+  const linkedTripIds = useMemo(() => new Set(linkedTrips.map(l => l.visit.id)), [linkedTrips]);
+  const shownVisits: Visit[] = useMemo(
+    () => [...localVisits, ...linkedTrips.map(l => l.visit)].sort((a, b) =>
+      (!a.startDate ? 1 : 0) - (!b.startDate ? 1 : 0) || b.startDate.localeCompare(a.startDate)),
+    [localVisits, linkedTrips],
+  );
 
   // Saves one visit module — appends a brand new one ('new') or replaces just the matching id
   // in place. Identical mechanism to DestinationSheet's/CountrySheet's own handleSaveVisitModule.
   const handleSaveVisitModule = useCallback((v: Visit) => {
     // The spot only actually becomes "visited" here, on a genuine save — not the moment "Add
     // Visit" was tapped (see handleMarkVisited).
-    if (!isVisited) saveSpotVisited(activeSpot.id, destination.id);
+    if (!savedSpot) saveSpotVisited(activeSpot.id, destination.id);
     const base = localVisits.filter(x => x.id !== 'legacy');
     const idx  = base.findIndex(x => x.id === v.id);
     const updated = idx >= 0 ? base.map(x => x.id === v.id ? v : x) : [...base, v];
     updated.sort((a, b) => b.startDate.localeCompare(a.startDate));
     updateSpot(activeSpot.id, { visits: updated, visitDate: updated[0]?.startDate });
-  }, [isVisited, localVisits, activeSpot.id, destination.id, saveSpotVisited, updateSpot]);
+  }, [savedSpot, localVisits, activeSpot.id, destination.id, saveSpotVisited, updateSpot]);
 
   // That was the last (or only ever synthesized legacy) visit logged for this spot — not just
   // "visited with zero trips", so this unsaves the spot entirely (also dropping its rating, same
   // as the old "Remove visit" flow did), rather than leaving a record with an empty visits array.
   const handleDeleteVisitModule = useCallback((id: string) => {
-    if (!isVisited) return;
+    if (!savedSpot) return;
     const updated = localVisits.filter(v => v.id !== id);
     if (updated.length === 0) { unsaveSpot(activeSpot.id); return; }
     updateSpot(activeSpot.id, { visits: updated, visitDate: updated[0]?.startDate });
-  }, [isVisited, localVisits, activeSpot.id, unsaveSpot, updateSpot]);
+  }, [savedSpot, localVisits, activeSpot.id, unsaveSpot, updateSpot]);
 
   const carouselRef = useRef<ScrollView>(null);
   const scrollRef    = useRef<GHScrollView>(null);
@@ -832,6 +843,8 @@ function SpotSheet({
   // marking it visited immediately.
   const handleMarkVisited = () => {
     if (isVisited) {
+      // Visited only through a destination trip: nothing of its own to remove here.
+      if (!savedSpot) return;
       Alert.alert(
         'Remove visit?',
         'This will delete your rating and all logged visits for this spot.',
@@ -1025,12 +1038,13 @@ function SpotSheet({
                         DestinationSheet/CountrySheet — see VisitCardList. No selector section
                         here (a spot has nothing beneath it to tag a visit with). */}
                     <VisitCardList
-                      visits={localVisits}
+                      visits={shownVisits}
                       onEditVisit={setEditingVisitModule}
                       onNewVisit={() => setEditingVisitModule('new')}
                       onOpenGallery={setGalleryVisit}
                       ratingValue={savedSpot?.rating}
                       hideSingleDayCount
+                      readOnlyCaption={v => linkedTripIds.has(v.id) ? `From your ${destination.name} trip` : undefined}
                     />
                   </View>
 
