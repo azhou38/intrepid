@@ -848,7 +848,7 @@ function SpotSheet({
       // Un-visits it entirely: its own trips and rating, and its ticks on destination trips.
       Alert.alert(
         'Remove visit?',
-        'This will delete your rating and all logged visits for this spot, and untick it from your trips.',
+        'This will delete all logged visits for this spot.',
         [
           { text: 'Cancel', style: 'cancel' },
           { text: 'Remove', style: 'destructive', onPress: () => unvisitSpot(activeSpot.id) },
