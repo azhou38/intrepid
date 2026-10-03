@@ -243,8 +243,10 @@ function CountrySheet({
   // What My Visit shows: those, with its destinations' trips (and their spot visits) grouped in by
   // date, plus trips derived from the ones that don't fall within one (see countryDisplayTrips).
   const displayTrips: DisplayTrip[] = useMemo(
-    () => countryDisplayTrips(cluster.countryCode, localVisits, savedDestinations, savedSpots),
-    [cluster.countryCode, localVisits, savedDestinations, savedSpots],
+    // Derived trips show the same default title a trip gets when saved untitled ("France Trip").
+    () => countryDisplayTrips(cluster.countryCode, localVisits, savedDestinations, savedSpots)
+      .map(t => t.derivedFrom && !t.title ? { ...t, title: `${cluster.country} Trip` } : t),
+    [cluster.countryCode, cluster.country, localVisits, savedDestinations, savedSpots],
   );
   // A derived trip saved as a real one gets an id of its own — same as DestinationSheet's ownTripId.
   const ownTripId = (id: string) => id.startsWith('derived:') ? 'trip:' + id.slice('derived:'.length) : id;

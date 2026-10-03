@@ -642,8 +642,10 @@ function DestinationSheet({
   // derived from spot visits that don't fall within one of them (see destinationDisplayTrips) —
   // and, read-only, country trips that ticked this destination.
   const displayTrips: DisplayTrip[] = useMemo(
-    () => destinationDisplayTrips(destination.id, localVisits, savedSpots),
-    [destination.id, localVisits, savedSpots],
+    // Derived trips show the same default title a trip gets when saved untitled ("Paris Trip").
+    () => destinationDisplayTrips(destination.id, localVisits, savedSpots)
+      .map(t => t.derivedFrom && !t.title ? { ...t, title: `${destination.name} Trip` } : t),
+    [destination.id, destination.name, localVisits, savedSpots],
   );
   const linkedTrips = visitIndex.linkedTripsForDest(destination.id);
   const linkedTripIds = useMemo(() => new Set(linkedTrips.map(l => l.visit.id)), [linkedTrips]);
