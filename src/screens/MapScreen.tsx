@@ -1164,20 +1164,20 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   const searchBackdropStyle = useAnimatedStyle(() => ({
     opacity: searchFocusProgress.value,
   }));
-  // Closing search from its X or the white backdrop. The close commit re-renders this whole
-  // screen and used to remount the Explore sheet (its full feed) in the same pass, so nothing on
-  // screen changed for about half a second after the tap. Now the visible close starts at once,
-  // imperatively — backdrop fading, bar back to its collapsed width — and the Explore sheet's
-  // remount waits a frame (exploreHeld), keeping the close commit itself light.
+  // Closing search from its X or the white backdrop. Everything visible about the close — the
+  // backdrop fade, the bar back to its collapsed width, the X and results dropdown going away —
+  // happens in the one commit that clears searchFocused (the width and fade via the layout effects
+  // above), so no frame shows half of it. An earlier version started the fade and width change
+  // imperatively before that commit, which showed one frame of the narrowed bar with the X still
+  // in it, pushed left. What keeps that commit light (it used to take ~0.5s) is that the Explore
+  // sheet's remount waits a frame (exploreHeld).
   const closeSearch = useCallback(() => {
     searchFromSheetRef.current = false;
-    searchFocusProgress.value = withTiming(0, { duration: 200, easing: Easing.out(Easing.cubic) });
-    searchWidthAnim.setValue(searchCollapsedWidth);
     searchInputRef.current?.blur();
     setExploreHeld(true);
     setSearchFocused(false);
     setSearchQuery('');
-  }, [searchCollapsedWidth]);
+  }, []);
   // True only after the zoom animation into a country completes, so pins don't flash
   // during the animation (when region.latitudeDelta is still at world-view level).
   const selectedCountryRef   = useRef<CountryCluster | null>(null);
