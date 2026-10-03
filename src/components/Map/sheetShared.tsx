@@ -9,7 +9,7 @@ import {
 import { ScrollView as GHScrollView, Gesture, GestureDetector, State } from 'react-native-gesture-handler';
 import Reanimated, { useSharedValue, useAnimatedStyle, withTiming, runOnJS } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { X, Check, Camera, Calendar, Pencil, ChevronDown, ChevronRight, Trash2, Star } from 'lucide-react-native';
+import { X, Check, Camera, Calendar, Pencil, ChevronDown, ChevronRight, Trash2, Star, NotebookPen, Plus } from 'lucide-react-native';
 import * as ImagePicker from 'expo-image-picker';
 import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'react-native-svg';
 import type { PhotoEntry, Visit } from '../../types';
@@ -82,7 +82,7 @@ export function parseDateStr(s: string) {
 }
 export function fmtDatePart(dateStr: string): string {
   const p = parseDateStr(dateStr);
-  if (!p) return 'No dates';
+  if (!p) return '';
   if (p.day === '00') return `${p.monthLabel} ${p.year}`;
   return `${p.monthLabel} ${parseInt(p.day, 10)}, ${p.year}`;
 }
@@ -109,7 +109,7 @@ export function visitDayCount(visit: Visit): number | null {
 // Compact range used in the read-only My Visit card only
 export function fmtVisitRangeShort(visit: Visit): string {
   const s = parseDateStr(visit.startDate);
-  if (!s) return 'No dates';
+  if (!s) return '';
   if (!visit.endDate) return fmtDatePart(visit.startDate);
   const e = parseDateStr(visit.endDate);
   if (!e) return fmtDatePart(visit.startDate);
@@ -1368,7 +1368,7 @@ const VISIT_STRIP_FADE_STOPS = Array.from({ length: 21 }, (_, i) => {
 // memSpotsCarouselLast below), plus a trailing "Add Visit +" button.
 export function VisitCardList<T extends VisitSelectorItem>({
   visits, onEditVisit, onNewVisit, onOpenGallery, onSelectItem, selectorLabel, selectorItems,
-  ratingValue, hideSingleDayCount, isReadOnly, defaultTitle,
+  ratingValue, hideSingleDayCount, isReadOnly, defaultTitle, noun = 'Trip',
 }: {
   visits: Visit[];
   onEditVisit: (v: Visit) => void;
@@ -1394,6 +1394,8 @@ export function VisitCardList<T extends VisitSelectorItem>({
   isReadOnly?: (v: Visit) => boolean;
   // Shown for a trip saved without a title (e.g. a pre-redesign one) — "Paris Trip".
   defaultTitle?: string;
+  // "Trip" (default) or "Visit" — the empty state's wording.
+  noun?: string;
 }) {
   // Sizes the selector carousel's square cards to match the photo grid's own tiles exactly —
   // measured (not hardcoded) off the carousel's own container width, using the identical
@@ -1407,19 +1409,24 @@ export function VisitCardList<T extends VisitSelectorItem>({
   const pluralNoun   = selectorLabel ? selectorLabel.replace(/\s+Visited$/i, '').toLowerCase() : '';
   const singularNoun = pluralNoun.endsWith('s') ? pluralNoun.slice(0, -1) : pluralNoun;
 
+  // Visited, nothing logged yet: an invitation to log it rather than an empty trip card.
   if (visits.length === 0) {
+    const what = hasSelector ? `dates, the ${pluralNoun} you visited, notes and photos` : 'a date, notes and photos';
     return (
       <View style={vcS.listWrap}>
         <View style={vcS.memCardShadow}>
-          <Pressable style={vcS.memCard} onPress={onNewVisit}>
-            <View style={vcS.memTopRow}>
-              <Text style={vcS.memDateEmpty}>No dates logged — tap to add a visit</Text>
+          <Pressable style={[vcS.memCard, vcS.emptyCard]} onPress={onNewVisit}>
+            <View style={vcS.emptyIcon}>
+              <NotebookPen size={22} color="#059669" />
+            </View>
+            <Text style={vcS.emptyTitle}>Log your {noun.toLowerCase()}</Text>
+            <Text style={vcS.emptySub}>Add {what} to remember it by.</Text>
+            <View style={vcS.emptyBtn}>
+              <Plus size={15} color="white" strokeWidth={2.75} />
+              <Text style={vcS.emptyBtnTxt}>Add {noun}</Text>
             </View>
           </Pressable>
         </View>
-        <Pressable style={vcS.addVisitBtn} onPress={onNewVisit}>
-          <Text style={vcS.addVisitBtnTxt}>Add Visit +</Text>
-        </Pressable>
       </View>
     );
   }
@@ -1440,17 +1447,23 @@ export function VisitCardList<T extends VisitSelectorItem>({
               <View style={[vcS.memTopRow, headerOnly && vcS.memTopRowOnly]}>
                 <View style={{ flex: 1 }}>
                   {!!(v.title || defaultTitle) && (
-                    <Text style={vcS.memTripNameHeading} numberOfLines={2}>{v.title || defaultTitle}</Text>
+                    // No trailing gap when nothing follows it — an undated trip's header is just its title.
+                    <Text style={[vcS.memTripNameHeading, !ratingValue && !v.startDate && { marginBottom: 0 }]} numberOfLines={2}>
+                      {v.title || defaultTitle}
+                    </Text>
                   )}
                   {!!ratingValue && (
-                    <View style={vcS.memRatingRow}>
+                    <View style={[vcS.memRatingRow, !v.startDate && { marginBottom: 0 }]}>
                       <StarRating value={ratingValue} size={13} />
                     </View>
                   )}
-                  <Text style={vcS.memDateVal}>
-                    {fmtVisitRangeShort(v)}
-                    {days != null && !(days === 1 && hideSingleDayCount) && `  ·  ${days} day${days === 1 ? '' : 's'}`}
-                  </Text>
+                  {/* Nothing at all for an undated trip, rather than a "no dates" label. */}
+                  {!!v.startDate && (
+                    <Text style={vcS.memDateVal}>
+                      {fmtVisitRangeShort(v)}
+                      {days != null && !(days === 1 && hideSingleDayCount) && `  ·  ${days} day${days === 1 ? '' : 's'}`}
+                    </Text>
+                  )}
                 </View>
                 {!readOnly && (
                   <Pressable style={vcS.memEditBtn} onPress={() => onEditVisit(v)}>
@@ -1592,7 +1605,15 @@ const vcS = StyleSheet.create({
   memTripNameHeading:  { fontSize:25, fontFamily:'PlayfairDisplay_700Bold', color:'white', marginBottom:4 },
   memRatingRow:        { marginBottom:8 },
   memDateVal:          { fontSize:14, fontWeight:'600', color:'#9CA3AF' },
-  memDateEmpty:        { fontSize:14, fontWeight:'600', color:'#9CA3AF' },
+  // Empty state (visited, nothing logged) — see VisitCardList.
+  emptyCard:           { alignItems:'center', paddingHorizontal:24, paddingTop:28, paddingBottom:24 },
+  emptyIcon:           { width:52, height:52, borderRadius:26, backgroundColor:'#ECFDF5',
+                         alignItems:'center', justifyContent:'center', marginBottom:14 },
+  emptyTitle:          { fontSize:22, fontFamily:'PlayfairDisplay_700Bold', color:'#111827', textAlign:'center' },
+  emptySub:            { fontSize:14, color:'#6B7280', lineHeight:20, textAlign:'center', marginTop:6, marginBottom:18 },
+  emptyBtn:            { flexDirection:'row', alignItems:'center', gap:6, height:40, paddingHorizontal:18,
+                         borderRadius:20, backgroundColor:'#111827' },
+  emptyBtnTxt:         { fontSize:14, fontWeight:'700', color:'white' },
   memEditBtn:          { flexDirection:'row', alignItems:'center', gap:5, paddingHorizontal:10, paddingVertical:6,
                          borderRadius:10, backgroundColor:'rgba(255,255,255,0.14)' },
   memEditBtnTxt:       { fontSize:12, fontWeight:'600', color:'white' },
@@ -1803,30 +1824,12 @@ export function VisitModuleSheet<T extends VisitSelectorItem>({
   const hasContent = !!localNotes || selectedIds.size > 0 || localPhotos.length > 0 || !!startDate || !!ratingValue;
   const canSave = dirty && hasContent;
 
-  // Checking an item off counts it as visited, and on save gives it a log of its own if it has none
-  // (see syncTripTicks in the store); unchecking it takes that log away again while it's untouched.
+  // Checking an item off counts it as visited (see utils/visitStatus.ts) — nothing else is written,
+  // so it needs no log of its own.
   const toggleItem = (id: string) => {
     const next = new Set(selectedIds);
-    if (next.has(id)) {
-      // Unticking un-marks a place the user said they visited — confirm first.
-      const name = selectorItems?.find(it => it.id === id)?.name ?? 'this';
-      Alert.alert(
-        `Unmark ${name}?`,
-        `${name} will no longer be marked as visited on this ${noun.toLowerCase()}. If ticking it here created its log, that log is removed too, unless you've edited it.`,
-        [
-          { text: 'Cancel', style: 'cancel' },
-          {
-            text: 'Unmark', style: 'destructive',
-            onPress: () => {
-              setSelectedIds(prev => { const n = new Set(prev); n.delete(id); return n; });
-              commit();
-            },
-          },
-        ],
-      );
-      return;
-    }
-    next.add(id);
+    if (next.has(id)) next.delete(id);
+    else next.add(id);
     setSelectedIds(next);
     commit();
   };

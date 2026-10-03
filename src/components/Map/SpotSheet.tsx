@@ -1030,6 +1030,7 @@ function SpotSheet({
                         here (a spot has nothing beneath it to tag a visit with). */}
                     <VisitCardList
                       defaultTitle={`${activeSpot.name} Visit`}
+                      noun="Visit"
                       visits={localVisits}
                       onEditVisit={setEditingVisitModule}
                       onNewVisit={() => setEditingVisitModule('new')}

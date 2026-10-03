@@ -28,7 +28,7 @@ import { Gesture, GestureDetector, ScrollView } from 'react-native-gesture-handl
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { X, Check, Calendar, MapPin, Camera, Pencil, Plus, ChevronRight, ChevronDown, Map } from 'lucide-react-native';
 import { useStore, useVisitIndex } from '../../store';
-import { destinationTripsOf } from '../../utils/visitStatus';
+import { destinationTripsOf, removeVisitMessage, spotLogsIn } from '../../utils/visitStatus';
 import SpotCard from './SpotCard';
 import type { Destination, PhotoEntry, Visit, GoodToKnowTip } from '../../types';
 import { SPOTS, type Spot } from '../../data/spots';
@@ -586,7 +586,6 @@ function DestinationSheet({
   const unsaveDestination = useStore(s => s.unsaveDestination);
   const updateSaved       = useStore(s => s.updateSaved);
   const savedSpots        = useStore(s => s.savedSpots);
-  const syncTripTicks         = useStore(s => s.syncTripTicks);
   const unvisitDestination    = useStore(s => s.unvisitDestination);
   const visitIndex        = useVisitIndex();
 
@@ -654,16 +653,11 @@ function DestinationSheet({
     const updated = idx >= 0 ? base.map(x => x.id === v.id ? v : x) : [...base, v];
     updated.sort((a, b) => b.startDate.localeCompare(a.startDate));
     updateSaved(destination.id, { visits: updated, visitDate: updated[0]?.startDate });
-    // A spot newly ticked here gets a log of its own to edit on its My Visit tab (see syncTripTicks).
-    syncTripTicks('destination', v.id, localVisits.find(x => x.id === v.id)?.spotIds ?? [], v.spotIds ?? []);
   };
   const handleDeleteVisitModule = (id: string) => {
     // Nothing to remove (and nothing to touch in the store) without a record of its own — e.g.
     // Remove Trip on a brand-new trip that was never saved.
     if (!saved) return;
-    const trip = localVisits.find(v => v.id === id);
-    if (!trip) return;
-    syncTripTicks('destination', id, trip.spotIds ?? [], []);
     const updated = localVisits.filter(v => v.id !== id);
     // That was the only trip logged for this destination — drops its record (also the legacy
     // visitDate/notes/photos fields) rather than leaving one with an empty visits array.
@@ -1270,7 +1264,11 @@ function DestinationSheet({
       // Un-visits it entirely: its own trips, its spots' visits, and its ticks on country trips.
       Alert.alert(
         'Remove visit?',
-        `This will permanently delete everything you logged for ${destination.name} and its spots.`,
+        removeVisitMessage(
+          { count: localVisits.length, label: `${destination.name} trip` },
+          [{ count: spotLogsIn(useStore.getState(), destination.id), label: 'spot visit' }],
+          `${destination.name} and its spots`,
+        ),
         [
           { text: 'Cancel', style: 'cancel' },
           {

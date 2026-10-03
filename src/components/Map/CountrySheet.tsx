@@ -22,7 +22,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Check, Plus, Users, Languages, Coins, Maximize, Landmark } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
 import { useStore, useVisitIndex } from '../../store';
-import { countryTripsOf } from '../../utils/visitStatus';
+import { countryTripsOf, logsInCountry, removeVisitMessage } from '../../utils/visitStatus';
 import type { Destination, CountryCluster, Visit } from '../../types';
 import { DESTINATIONS } from '../../data/destinations';
 import { SPOTS } from '../../data/spots';
@@ -202,7 +202,6 @@ function CountrySheet({
   const resolvedInitialSnap: CountrySnapState = initialSnap ?? 'collapsed';
   const insets            = useSafeAreaInsets();
   const savedCountries    = useStore(s => s.savedCountries);
-  const syncTripTicks     = useStore(s => s.syncTripTicks);
   const unvisitCountry    = useStore(s => s.unvisitCountry);
   const visitIndex        = useVisitIndex();
   const saveCountryVisited = useStore(s => s.saveCountryVisited);
@@ -270,20 +269,15 @@ function CountrySheet({
     const updated = idx >= 0 ? base.map(x => x.id === v.id ? v : x) : [...base, v];
     updated.sort((a, b) => b.startDate.localeCompare(a.startDate));
     updateSavedCountry(cluster.countryCode, { visits: updated, visitDate: updated[0]?.startDate });
-    // A destination newly ticked here gets a log of its own to edit on its My Visit tab (see syncTripTicks).
-    syncTripTicks('country', v.id, localVisits.find(x => x.id === v.id)?.spotIds ?? [], v.spotIds ?? []);
-  }, [savedCountry, localVisits, cluster.countryCode, saveCountryVisited, updateSavedCountry, syncTripTicks]);
+  }, [savedCountry, localVisits, cluster.countryCode, saveCountryVisited, updateSavedCountry]);
 
   const handleDeleteVisitModule = useCallback((id: string) => {
     if (!savedCountry) return;
-    const trip = localVisits.find(v => v.id === id);
-    if (!trip) return;
-    syncTripTicks('country', id, trip.spotIds ?? [], []);
     const updated = localVisits.filter(v => v.id !== id);
     // That was the last trip logged for this country — drops its record, which holds nothing but trips.
     if (updated.length === 0) { unsaveCountry(cluster.countryCode); return; }
     updateSavedCountry(cluster.countryCode, { visits: updated, visitDate: updated[0]?.startDate });
-  }, [savedCountry, localVisits, cluster.countryCode, unsaveCountry, updateSavedCountry, syncTripTicks]);
+  }, [savedCountry, localVisits, cluster.countryCode, unsaveCountry, updateSavedCountry]);
   // Fired instead of handleDeleteVisitModule when removing the synthesized 'legacy' visit — see
   // VisitModuleSheet's own onRemoveLegacy doc.
   const handleRemoveLegacyVisit = useCallback(() => unsaveCountry(cluster.countryCode), [cluster.countryCode, unsaveCountry]);
@@ -294,9 +288,17 @@ function CountrySheet({
   const handleMarkVisited = useCallback(() => {
     if (isCountryVisited) {
       // Un-visits it entirely: its own trips and everything logged for its destinations and spots.
+      const below = logsInCountry(useStore.getState(), cluster.countryCode);
       Alert.alert(
         'Remove visit?',
-        `This will permanently delete everything you logged for ${cluster.country}, including its destinations and spots.`,
+        removeVisitMessage(
+          { count: localVisits.length, label: `${cluster.country} trip` },
+          [
+            { count: below.destinationTrips, label: 'destination trip' },
+            { count: below.spotLogs, label: 'spot visit' },
+          ],
+          `${cluster.country} and all its destinations and spots`,
+        ),
         [
           { text: 'Cancel', style: 'cancel' },
           { text: 'Remove', style: 'destructive', onPress: () => unvisitCountry(cluster.countryCode) },
@@ -306,7 +308,7 @@ function CountrySheet({
     }
     setEditingVisitModule('new');
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-  }, [isCountryVisited, cluster.countryCode, cluster.country, unvisitCountry]);
+  }, [isCountryVisited, localVisits, cluster.countryCode, cluster.country, unvisitCountry]);
 
   // ── Tabs ───────────────────────────────────────────────────────────────────
   const TAB_ORDER: CountryTab[] = useMemo(

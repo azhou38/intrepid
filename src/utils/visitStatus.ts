@@ -104,67 +104,72 @@ export function countryTripsOf(rec: SavedCountry | undefined): Visit[] {
   return rec.visits ?? (rec.visitDate ? [{ id: 'legacy', startDate: rec.visitDate, notes: rec.notes }] : []);
 }
 
-// ── Ticking a place in a trip gives it a log of its own ──────────────────────────────────────────
-// Ticking a spot in a destination trip (or a destination in a country trip) that has no record of its
-// own yet gives it one log, so its own My Visit tab has a trip to edit. Only what was ticked is carried
-// over — no dates, notes or photos. The log's id ties it to the trip that made it ('auto:<trip id>'),
-// so unticking it again, or removing that trip, takes it away — as long as it's still untouched.
+// ── Clean-up: logs ticking used to create ────────────────────────────────────────────────────────
+// For a while, ticking a spot in a destination trip (or a destination in a country trip) gave it a
+// log of its own ('auto:<trip id>', titled "{Spot} Visit" / "{Destination} Trip"). Ticking now only
+// marks it visited, so the ones still exactly as created are removed — along with a record left with
+// nothing else in it (the tick still counts it as visited).
 
 const SPOT_NAME = new Map(SPOTS.map(s => [s.id, s.name]));
 const DEST_NAME = new Map(DESTINATIONS.map(d => [d.id, d.name]));
-const autoId = (tripId: string) => `auto:${tripId}`;
-// Untouched = exactly as created: no dates, notes, photos or ticks of its own, default title.
-const isUntouched = (v: Visit, title: string) =>
-  !v.startDate && !v.endDate && !v.notes && !v.photos?.length && !v.spotIds?.length && (!v.title || v.title === title);
+const isUntouchedAuto = (v: Visit, title: string) =>
+  v.id.startsWith('auto:') && !v.startDate && !v.endDate && !v.notes && !v.photos?.length
+  && !v.spotIds?.length && (!v.title || v.title === title);
 
-export function withTripTicks(
-  r: VisitRecords,
-  level: 'destination' | 'country',
-  tripId: string,
-  before: string[],
-  after: string[],
-): VisitRecords {
-  const added = after.filter(id => !before.includes(id));
-  const removed = before.filter(id => !after.includes(id));
-  if (!added.length && !removed.length) return r;
-  const id = autoId(tripId);
-
-  if (level === 'destination') {
-    const savedSpots = { ...r.savedSpots };
-    for (const spotId of added) {
-      const rec = savedSpots[spotId];
-      const destinationId = SPOT_DEST.get(spotId);
-      if (!destinationId || rec) continue;   // already has a record of its own
-      const visit: Visit = { id, title: `${SPOT_NAME.get(spotId)} Visit`, startDate: '' };
-      savedSpots[spotId] = { spotId, destinationId, visits: [visit] };
-    }
-    for (const spotId of removed) {
-      const rec = savedSpots[spotId];
-      const auto = rec?.visits?.find(v => v.id === id);
-      if (!rec || !auto || !isUntouched(auto, `${SPOT_NAME.get(spotId)} Visit`)) continue;
-      const left = rec.visits!.filter(v => v.id !== id);
-      if (left.length || rec.rating) savedSpots[spotId] = { ...rec, visits: left };
-      else delete savedSpots[spotId];
-    }
-    return { ...r, savedSpots };
+export function withoutAutoLogs(r: VisitRecords): VisitRecords {
+  let changed = false;
+  const savedSpots = { ...r.savedSpots };
+  for (const [id, rec] of Object.entries(r.savedSpots)) {
+    const visits = rec.visits?.filter(v => !isUntouchedAuto(v, `${SPOT_NAME.get(id)} Visit`));
+    if (!rec.visits || visits!.length === rec.visits.length) continue;
+    changed = true;
+    if (visits!.length || rec.rating) savedSpots[id] = { ...rec, visits: visits! };
+    else delete savedSpots[id];
   }
-
   const savedDestinations = { ...r.savedDestinations };
-  for (const destId of added) {
-    const rec = savedDestinations[destId];
-    if (!DEST_COUNTRY.has(destId) || rec) continue;   // already has a record of its own
-    const visit: Visit = { id, title: `${DEST_NAME.get(destId)} Trip`, startDate: '' };
-    savedDestinations[destId] = { destinationId: destId, type: 'visited', visits: [visit] };
+  for (const [id, rec] of Object.entries(r.savedDestinations)) {
+    const visits = rec.visits?.filter(v => !isUntouchedAuto(v, `${DEST_NAME.get(id)} Trip`));
+    if (!rec.visits || visits!.length === rec.visits.length) continue;
+    changed = true;
+    if (visits!.length || rec.photos?.length || rec.notes) savedDestinations[id] = { ...rec, visits: visits! };
+    else delete savedDestinations[id];
   }
-  for (const destId of removed) {
-    const rec = savedDestinations[destId];
-    const auto = rec?.visits?.find(v => v.id === id);
-    if (!rec || !auto || !isUntouched(auto, `${DEST_NAME.get(destId)} Trip`)) continue;
-    const left = rec.visits!.filter(v => v.id !== id);
-    if (left.length || rec.photos?.length || rec.notes) savedDestinations[destId] = { ...rec, visits: left };
-    else delete savedDestinations[destId];
+  return changed ? { ...r, savedSpots, savedDestinations } : r;
+}
+
+// ── Counting what's logged beneath a place (for the remove-visit warnings) ─────────────────────────
+
+const plural = (n: number, word: string) => `${n} ${word}${n === 1 ? '' : 's'}`;
+const listOf = (parts: string[]) =>
+  parts.length <= 1 ? parts.join('') : `${parts.slice(0, -1).join(', ')} and ${parts[parts.length - 1]}`;
+
+// "This will permanently delete your 1 France trip, 3 destination trips and 5 spot visits, and …"
+export function removeVisitMessage(own: { count: number; label: string }, below: { count: number; label: string }[], unvisited: string): string {
+  const parts = [own, ...below].filter(x => x.count > 0).map(x => plural(x.count, x.label));
+  const what = parts.length ? `permanently delete your ${listOf(parts)}, and ` : '';
+  return `This will ${what}mark ${unvisited} as not visited.`;
+}
+
+const spotLogCount = (rec: SavedSpot) => rec.visits?.length ?? (rec.visitDate ? 1 : 0);
+
+// A destination's spots' logs.
+export function spotLogsIn(r: VisitRecords, destinationId: string): number {
+  let n = 0;
+  for (const rec of Object.values(r.savedSpots)) if (SPOT_DEST.get(rec.spotId) === destinationId) n += spotLogCount(rec);
+  return n;
+}
+
+// A country's destinations' trips and their spots' logs.
+export function logsInCountry(r: VisitRecords, countryCode: string): { destinationTrips: number; spotLogs: number } {
+  let destinationTrips = 0, spotLogs = 0;
+  for (const rec of Object.values(r.savedDestinations)) {
+    if (DEST_COUNTRY.get(rec.destinationId) === countryCode) destinationTrips += destinationTripsOf(rec, r.savedSpots).length;
   }
-  return { ...r, savedDestinations };
+  for (const rec of Object.values(r.savedSpots)) {
+    const destId = SPOT_DEST.get(rec.spotId);
+    if (destId && DEST_COUNTRY.get(destId) === countryCode) spotLogs += spotLogCount(rec);
+  }
+  return { destinationTrips, spotLogs };
 }
 
 // ── Removing what was logged ───────────────────────────────────────────────────────────────────
