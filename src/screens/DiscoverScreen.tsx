@@ -10,7 +10,7 @@ import Animated, { useAnimatedStyle, useSharedValue, interpolate, Extrapolation,
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'react-native-svg';
 import * as Location from 'expo-location';
-import { useStore } from '../store';
+import { useVisitIndex } from '../store';
 import type { Destination } from '../types';
 import { nearYouDestinations, type Coords } from '../utils/nearYou';
 import { DESTINATIONS } from '../data/destinations';
@@ -137,7 +137,7 @@ export default function DiscoverScreen({
 }: Props) {
   const initialScrollDoneRef = useRef(!initialScrollY);
   const insets            = useSafeAreaInsets();
-  const savedDestinations = useStore(s => s.savedDestinations);
+  const visitIndex        = useVisitIndex();
   const fallbackProgress  = useSharedValue(1);
   const progress          = searchProgress ?? fallbackProgress;
 
@@ -183,12 +183,12 @@ export default function DiscoverScreen({
       : base;
     // Visited destinations go to the far right of each row, the rest keeping their order
     // (Array.sort is stable, so returning 0 for two of the same kind preserves it).
-    const visited = (d: Destination) => savedDestinations[d.id]?.type === 'visited';
+    const visited = (d: Destination) => visitIndex.isDestVisited(d.id);
     return all.map(sec => ({
       ...sec,
       items: [...sec.items].sort((a, b) => Number(visited(a)) - Number(visited(b))),
     }));
-  }, [userCoords, savedDestinations]);
+  }, [userCoords, visitIndex]);
 
   return (
     <View style={styles.root}>
@@ -243,7 +243,7 @@ export default function DiscoverScreen({
                 <DestinationCard
                   key={dest.id}
                   dest={dest}
-                  isVisited={savedDestinations[dest.id]?.type === 'visited'}
+                  isVisited={visitIndex.isDestVisited(dest.id)}
                   showHighlights={false}
                   onPress={() => onSelectDestination(dest)}
                 />

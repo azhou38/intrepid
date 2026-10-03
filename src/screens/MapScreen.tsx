@@ -100,7 +100,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Layers, Check, X, Search, CornerUpLeft, ChevronDown } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
 import * as Location from 'expo-location';
-import { useStore } from '../store';
+import { useStore, useVisitIndex } from '../store';
 import type { Destination, CountryCluster } from '../types';
 import type GeoJSON from 'geojson';
 import { getCountryRegion, getCountryBounds, getCountryCenter, getCountryPopularity } from '../utils/countryBounds';
@@ -113,7 +113,7 @@ import { computeSearchResults, computeSuggestions, SearchResultRows, toRecentSea
 import SpotSheet from '../components/Map/SpotSheet';
 import CountrySheet from '../components/Map/CountrySheet';
 import ExploreSheet from '../components/Map/ExploreSheet';
-import { thumbCache, photoCache, fetchWikiThumbnail, prefetchWikiThumbnail } from '../utils/photoCache';
+import { thumbCache, photoCache, fetchWikiThumbnail, prefetchWikiThumbnail, HEADER_PX } from '../utils/photoCache';
 
 const VISITED_COLOR  = '#10B981';
 const EXPLORE_COLOR  = '#6366F1';
@@ -561,9 +561,6 @@ const cpinSt = StyleSheet.create({
 });
 
 
-// Spot counts per destination (static — SPOTS never changes at runtime)
-const SPOT_COUNT_BY_DEST: Record<string, number> = {};
-for (const s of SPOTS) SPOT_COUNT_BY_DEST[s.destinationId] = (SPOT_COUNT_BY_DEST[s.destinationId] ?? 0) + 1;
 
 // Radius (in latitude-equivalent degrees) of each destination's own spot spread — how far
 // its farthest spot sits from the destination coordinate, padded. Used to decide when the
@@ -895,6 +892,8 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
 
   const savedDestinations = useStore(s => s.savedDestinations);
   const savedSpots        = useStore(s => s.savedSpots);
+  // Visited status for every spot/destination/country, derived from what's logged (utils/visitStatus).
+  const visitIndex        = useVisitIndex();
   const recentSearches    = useStore(s => s.recentSearches);
   const addRecentSearch   = useStore(s => s.addRecentSearch);
   const clearRecentSearches = useStore(s => s.clearRecentSearches);
@@ -904,13 +903,14 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // destination's own visited flag — see saveSpotVisited: marking a spot visited also marks
   // its parent destination visited, but not every visited destination has any spots
   // individually checked off, so this can legitimately be 0 even while isVisited is true).
+  // Every visited spot counts, including ones only ticked on a destination trip (see visitIndex).
   const visitedSpotCountByDest = useMemo(() => {
     const counts: Record<string, number> = {};
-    for (const ss of Object.values(savedSpots)) {
-      counts[ss.destinationId] = (counts[ss.destinationId] ?? 0) + 1;
+    for (const sp of SPOTS) {
+      if (visitIndex.isSpotVisited(sp.id)) counts[sp.destinationId] = (counts[sp.destinationId] ?? 0) + 1;
     }
     return counts;
-  }, [savedSpots]);
+  }, [visitIndex]);
 
   const [mapType,        setMapType       ] = useState<MapStyleKey>('standard');
   // A single stable base style. Satellite is layered on top as a toggleable raster (see
@@ -1462,7 +1462,7 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     const results: Destination[] = [];
     const added = new Set<string>();
     for (const d of DESTINATIONS) {
-      const saved = savedDestinations[d.id];
+      const saved = visitIndex.isDestVisited(d.id);
       // Bypass for a destination's siblings applies whether the country got selected
       // explicitly (selectedCountry) OR only implicitly via a directly-selected destination
       // (e.g. reached through search with no country context) — either way, its country
@@ -1473,14 +1473,14 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
       // Eligible if: it's the selected destination; or in the selected country (always shown);
       // or within the current rank tier (or saved, which is always shown); or a rank-1 anchor
       // worldwide while drilled into a country/destination (so every country pill can form).
-      const rankOk = d.rank <= visibleRank || !!saved;
+      const rankOk = d.rank <= visibleRank || saved;
       const anchorRank1 = (selectedCountry || selectedDest) && d.rank === 1;
       if (!(isSelected || inSelectedCountry || rankOk || anchorRank1)) continue;
       results.push(d);
       added.add(d.id);
     }
     return results;
-  }, [visibleRank, savedDestinations, selectedCountry, selectedDest]);
+  }, [visibleRank, visitIndex, selectedCountry, selectedDest]);
 
   // NOTE: there is deliberately NO viewport-bounds culling of the render set. There are only
   // ~45 destinations total, so rendering every eligible one (Mapbox natively clips whatever
@@ -1528,15 +1528,12 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   }, []);
 
   const countryPills = useMemo(() => {
-    // "visitedCount" is spots, not destinations: for each destination marked visited, every
-    // spot it has counts (SPOT_COUNT_BY_DEST) — not just spots individually checked off via
-    // savedSpots, which stays empty for most real data (destinations are commonly marked
-    // visited in bulk without ever visiting each spot one by one), which would make the
-    // country pill badge disappear entirely for effectively every country.
+    // "visitedCount" is the country's visited destinations (see visitIndex) — the number on its
+    // pill's badge.
     const toCluster = (g: (typeof COUNTRY_GROUPS)[number]): CountryCluster => {
       let visitedCount = 0;
       for (const id of g.destIds) {
-        if (savedDestinations[id]?.type === 'visited') visitedCount += SPOT_COUNT_BY_DEST[id] ?? 0;
+        if (visitIndex.isDestVisited(id)) visitedCount += 1;
       }
       return {
         country: g.country, countryCode: g.countryCode,
@@ -1620,7 +1617,7 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     // Depends on planLngDelta/pillVisibleLngDelta only (pan-invariant zoom) — NOT
     // latitudeDelta, which drifts on pan and would otherwise recompute this and re-resolve
     // pill collisions mid-pan.
-  }, [savedDestinations, planCountry, planDest, selectedSpot, planLngDelta, pillVisibleLngDelta]);
+  }, [savedDestinations, visitIndex, planCountry, planDest, selectedSpot, planLngDelta, pillVisibleLngDelta]);
 
   // Render set = the pan-invariant eligible set (see note above; ~45 pins max, Mapbox clips
   // off-screen). Stable while panning, so the pin/stamp lists never churn on pan.
@@ -1692,7 +1689,7 @@ const destItems = useMemo((): DestItem[] =>
       // US filling the screen). Eligibility (visibleRank/saved) and the photo-vs-photo and
       // pill collision rules still apply on top.
       if (pillVisibleLngDelta < getCountryPillCutoffLngDelta(d.countryCode)) return true;
-      const effRank = Math.max(1, d.rank - (savedDestinations[d.id] ? 1 : 0));
+      const effRank = Math.max(1, d.rank - (visitIndex.isDestVisited(d.id) ? 1 : 0));
       return panLatDelta <= (PROMOTE_LATDELTA_BY_RANK[effRank] ?? 2.5);
     };
 
@@ -1760,7 +1757,7 @@ const destItems = useMemo((): DestItem[] =>
     // Pure function of zoom (planLngDelta) + eligible set + selection + saved state +
     // the (equally pan-invariant) country pill plan.
     // No camera centre → recompute produces an identical plan while panning at fixed zoom.
-  }, [eligibleDests, planLngDelta, pillVisibleLngDelta, planCountry, planDest, selectedSpot, savedDestinations, countryPills]);
+  }, [eligibleDests, planLngDelta, pillVisibleLngDelta, planCountry, planDest, selectedSpot, visitIndex, countryPills]);
 
   // Stamps are rendered via CircleLayer (not MarkerView) so Mapbox renders all of them
   // regardless of proximity. Every filter-passing destination gets a stamp — INCLUDING ones
@@ -1862,7 +1859,7 @@ const destItems = useMemo((): DestItem[] =>
 
     const features: GeoJSON.Feature<GeoJSON.Point>[] = [];
     for (const dest of DESTINATIONS) {
-      const saved = savedDestinations[dest.id];
+      const saved = visitIndex.isDestVisited(dest.id);
       // Camera is inside this destination at spot zoom → no marker at all (its spot pins
       // represent it; see zoomedIntoDestIds).
       if (hiddenDestIds.has(dest.id)) continue;
@@ -1882,12 +1879,12 @@ const destItems = useMemo((): DestItem[] =>
         properties: {
           id: dest.id,
           tier,
-          color: saved?.type === 'visited' ? VISITED_COLOR : '#6B7280',
+          color: visitIndex.isDestVisited(dest.id) ? VISITED_COLOR : '#6B7280',
         },
       });
     }
     return { type: 'FeatureCollection' as const, features };
-  }, [savedDestinations, planCountry, planDest, activeStampTier, hiddenDestIds, revealTick, destPinPlan]);
+  }, [savedDestinations, visitIndex, planCountry, planDest, activeStampTier, hiddenDestIds, revealTick, destPinPlan]);
 
   // Discrete tier activation + native style TRANSITION (not a continuous zoom
   // interpolation): the opacity expression only ever targets exactly 0 or 1 per dot, and
@@ -2057,7 +2054,7 @@ const destItems = useMemo((): DestItem[] =>
     }
     const order = [...live].sort((a, b) => {
       const rank = (sp: Spot) =>
-        (selectedSpot?.id === sp.id ? -2_000_000 : 0) + (savedSpots[sp.id] ? -1_000_000 : 0) + (SPOT_ORDER.get(sp.id) ?? 0);
+        (selectedSpot?.id === sp.id ? -2_000_000 : 0) + (visitIndex.isSpotVisited(sp.id) ? -1_000_000 : 0) + (SPOT_ORDER.get(sp.id) ?? 0);
       return rank(a) - rank(b);
     });
     for (const sp of order) {
@@ -2081,7 +2078,7 @@ const destItems = useMemo((): DestItem[] =>
     }
     prevSpotLabelPlanRef.current = plan;
     return plan;
-  }, [renderedSpots, pillVisibleLngDelta, selectedSpot, savedSpots]);
+  }, [renderedSpots, pillVisibleLngDelta, selectedSpot, savedSpots, visitIndex]);
 
   // ── Search results ────────────────────────────────────────────────────────
   const searchResults = useMemo(() => computeSearchResults(searchQuery), [searchQuery]);
@@ -2091,8 +2088,8 @@ const destItems = useMemo((): DestItem[] =>
   const searchSuggestions = useMemo(() => !searchFocused ? [] : computeSuggestions({
     recents: recentSearches ?? [],
     view: { ...regionRef.current, zoom: camZoomRef.current },
-    savedDestinations, savedSpots,
-  }), [searchFocused, recentSearches, savedDestinations, savedSpots]);
+    visitIndex,
+  }), [searchFocused, recentSearches, visitIndex]);
   // Text typed into the search bar never outlives the search: whenever the bar isn't focused,
   // any query is dropped — including one that arrives late (the native field can re-report its
   // old text through onChangeText when it's blurred in the same tick it's emptied, which is
@@ -2541,7 +2538,7 @@ const destItems = useMemo((): DestItem[] =>
     setSelectedDest(dest);
     // Kick off DestinationSheet's own hero-photo fetch right now, in parallel with the sheet's
     // slide-up/camera animation, instead of waiting for it to mount a render cycle later.
-    prefetchWikiThumbnail(dest.id, photoCache, dest.name, 900);
+    prefetchWikiThumbnail(dest.id, photoCache, dest.name, HEADER_PX);
     setMapState('context');
     setZoomedIntoDestination(true);
     showBreadcrumb(true);
@@ -2683,7 +2680,7 @@ const destItems = useMemo((): DestItem[] =>
     setSelectedSpot(spot);
     // Kick off SpotSheet's own hero-photo fetch right now, in parallel with the sheet's
     // slide-up/camera animation, instead of waiting for it to mount a render cycle later.
-    prefetchWikiThumbnail(`spot_${spot.id}`, photoCache, spot.name, 900);
+    prefetchWikiThumbnail(`spot_${spot.id}`, photoCache, spot.name, HEADER_PX);
     setSpotFocusId(spot.id);
     setMapState('context');
     setZoomedIntoDestination(true);
@@ -2864,7 +2861,7 @@ const destItems = useMemo((): DestItem[] =>
       longitude:    center?.longitude ?? selectedDest.coordinates.longitude,
       count:        dests.length,
       minRank:      Math.min(...dests.map(d => d.rank)),
-      visitedCount: dests.filter(d => savedDestinations[d.id]?.type === 'visited').length,
+      visitedCount: dests.filter(d => visitIndex.isDestVisited(d.id)).length,
     };
     // Exit destination mode then show country card
     // handleCountryPress clears selectedDest, mapState, and zoomedIntoDestination directly.
@@ -2872,7 +2869,7 @@ const destItems = useMemo((): DestItem[] =>
     // Not openPeeked: choosing the country in the breadcrumb brings its sheet up to half-screen (and frames the map
     // for the top half), like selecting the country any other way — it used to stay at the bottom of the screen.
     handleCountryPress(cluster, 'flyTo', false);
-  }, [selectedDest, handleCountryPress]);
+  }, [selectedDest, handleCountryPress, visitIndex]);
 
   // Provenance back for a laterally-entered destination ('map'/'search' origin, i.e. the back
   // pill shows a bare X rather than "‹ Country"): tear down the whole selection stack, and
@@ -2934,7 +2931,7 @@ const destItems = useMemo((): DestItem[] =>
       longitude:    center?.longitude ?? selectedDest.coordinates.longitude,
       count:        dests.length,
       minRank:      Math.min(...dests.map(d => d.rank)),
-      visitedCount: dests.filter(d => savedDestinations[d.id]?.type === 'visited').length,
+      visitedCount: dests.filter(d => visitIndex.isDestVisited(d.id)).length,
     };
     // handleCountryPress clears selectedDest/mapState/zoomedIntoDestination and calls
     // fitCoords. 'flyTo' — a destination zooming back out to its full country's bounds is
@@ -2943,7 +2940,7 @@ const destItems = useMemo((): DestItem[] =>
     // country's default view, however far out the user has zoomed — this is deliberate upward
     // navigation ("‹ Country"), not the bare-X close isZoomedOutBeyond's stay-put rule is for.
     handleCountryPress(cluster, 'flyTo');
-  }, [selectedDest, savedDestinations, handleCountryPress]);
+  }, [selectedDest, savedDestinations, handleCountryPress, visitIndex]);
 
   // Destination close/back, provenance-routed: drilled down from the country → back up to it;
   // entered laterally (map pin tap with nothing selected, or search) → zoom out to half the
@@ -3091,8 +3088,8 @@ const destItems = useMemo((): DestItem[] =>
       .filter(d => d.country === cluster.country)
       .sort((a, b) => a.rank - b.rank || a.name.localeCompare(b.name))[0];
     const cacheKey = `country_${cluster.countryCode}`;
-    if (topDest) prefetchWikiThumbnail(cacheKey, photoCache, topDest.name, 900, cluster.country);
-    else prefetchWikiThumbnail(cacheKey, photoCache, cluster.country, 900);
+    if (topDest) prefetchWikiThumbnail(cacheKey, photoCache, topDest.name, HEADER_PX, cluster.country);
+    else prefetchWikiThumbnail(cacheKey, photoCache, cluster.country, HEADER_PX);
   }, [showBreadcrumb, animateCamera, fitCountryDefaultView, setSheetSnapState]);
 
   // Closing from the back pill's X while a sheet is half-screen or bottom-screen: let it slide
@@ -3152,9 +3149,9 @@ const destItems = useMemo((): DestItem[] =>
       longitude:    center?.longitude ?? dests[0]?.coordinates.longitude ?? 0,
       count:        dests.length,
       minRank:      dests.length > 0 ? Math.min(...dests.map(d => d.rank)) : 1,
-      visitedCount: dests.filter(d => savedDestinations[d.id]?.type === 'visited').length,
+      visitedCount: dests.filter(d => visitIndex.isDestVisited(d.id)).length,
     };
-  }, [savedDestinations]);
+  }, [savedDestinations, visitIndex]);
 
   const handleSearchSelect = useCallback((item: SearchResult) => {
     addRecentSearch(toRecentSearch(item));
@@ -3538,13 +3535,7 @@ const destItems = useMemo((): DestItem[] =>
   // COUNTRY_GROUPS list, NOT from countryPills — countryPills drops a country's pill when
   // it collides with a higher-priority one at wide zoom (by design, so pills don't
   // overlap), but this highlight must stay independent of that.
-  const visitedCountryCodes = useMemo(
-    () => COUNTRY_GROUPS
-      .filter(g => g.destIds.some(id => savedDestinations[id]?.type === 'visited'))
-      .map(g => g.countryCode),
-    [savedDestinations],
-  );
-  const visitedCountryCodeSet = useMemo(() => new Set(visitedCountryCodes), [visitedCountryCodes]);
+  const visitedCountryCodeSet = visitIndex.visitedCountryCodes;
 
   // Exit-fade tracking: pills/photos dropped from the plan linger for PIN_EXIT_MS fading
   // out (see useExitingItems/FadePin) instead of vanishing on the next frame.
@@ -3556,10 +3547,9 @@ const destItems = useMemo((): DestItem[] =>
     // Plain border (no glow/shadow) on every OTHER visited country's pill, always — the
     // selected country keeps the full glow treatment instead, handled separately below so
     // the two states never compete on the same element. Checked against
-    // visitedCountryCodeSet (destination-visited-status based, same source the map boundary
-    // highlight uses) rather than cluster.visitedCount, which is actually a SPOT count
-    // (SPOT_COUNT_BY_DEST) — a visited destination with zero spots in the data would leave
-    // visitedCount at 0 despite genuinely being visited, silently hiding this border.
+    // visitedCountryCodeSet (the same source the map boundary highlight uses) rather than
+    // cluster.visitedCount, which only counts destinations — a country visited through its own
+    // trips alone has none.
     const isClusterVisited = visitedCountryCodeSet.has(cluster.countryCode);
     const isVisitedHighlighted = isClusterVisited && !isSelectedPill;
     // An unvisited country's pill has no border until it is selected; then it wears a light-gray wrap-around border
@@ -3675,8 +3665,7 @@ const destItems = useMemo((): DestItem[] =>
 
   const destPhotoMarkers = useMemo(() => renderedPhotoDests
     .map(({ item: dest, exiting }) => {
-      const saved = savedDestinations[dest.id];
-      const isVisited  = saved?.type === 'visited';
+      const isVisited  = visitIndex.isDestVisited(dest.id);
       const spotCount  = visitedSpotCountByDest[dest.id] ?? 0;
       const isSelectedDest = selectedDest?.id === dest.id;
       return (
@@ -3709,7 +3698,7 @@ const destItems = useMemo((): DestItem[] =>
         </MapboxGL.MarkerView>
       );
     }),
-  [renderedPhotoDests, selectedDest, savedDestinations, visitedSpotCountByDest, handleMarkerPress, handleResetToDest, hiddenDestIds]);
+  [renderedPhotoDests, selectedDest, savedDestinations, visitIndex, visitedSpotCountByDest, handleMarkerPress, handleResetToDest, hiddenDestIds]);
 
   // Which sliding sheet is mounted right now. When it changes from one level to another, the incoming sheet is a
   // replacement for the one that was showing and starts where that one rested (see sheetPose) rather than from below
@@ -4022,7 +4011,7 @@ const destItems = useMemo((): DestItem[] =>
             which made pins blink. */}
         {renderedSpots.map(({ item: spot, exiting }) => {
           const isSelectedSpot = selectedSpot?.id === spot.id;
-          const isVisitedSpot = !!savedSpots[spot.id];
+          const isVisitedSpot = visitIndex.isSpotVisited(spot.id);
           return (
             <SpotMarker
               key={spot.id}
@@ -4046,7 +4035,7 @@ const destItems = useMemo((): DestItem[] =>
           <SpotMarker
             key={`top-${selectedSpot.id}-${renderedSpots.length}`}
             spot={selectedSpot}
-            isVisited={!!savedSpots[selectedSpot.id]}
+            isVisited={visitIndex.isSpotVisited(selectedSpot.id)}
             isSelected
             exiting={false}
             instant

@@ -5,7 +5,7 @@ import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'reac
 import FadeInImage from './FadeInImage';
 import { GRADIENT_STOPS, styles } from './DestinationCard';
 import { formatSpotCost, formatVisitTime, type Spot } from '../../data/spots';
-import { useStore } from '../../store';
+import { useVisitIndex } from '../../store';
 import { thumbCache, getOrFetchWikiThumbnail } from '../../utils/photoCache';
 
 // Spot card for the destination sheet's Spots tab. Deliberately the same card as the destination
@@ -19,7 +19,7 @@ function SpotCard({ spot, onPress, width }: {
   onPress: () => void;
   width: number;
 }) {
-  const isVisited = !!useStore(s => s.savedSpots[spot.id]);
+  const isVisited = useVisitIndex().isSpotVisited(spot.id);
 
   // Own cache key at 960px (the sharpest step suited to a card) for the same reason DestinationCard has one: the bare `spot_<id>` key is
   // shared with smaller thumbnails elsewhere, and whichever loaded first would be stretched here.

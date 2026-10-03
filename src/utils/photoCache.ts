@@ -1,3 +1,4 @@
+import { Dimensions, PixelRatio } from 'react-native';
 import { WIKI_IMAGE_OVERRIDES } from '../data/imageOverrides';
 import imageManifest from '../data/imageManifest.json';
 import { buildThumbUrl, manifestKey, type ManifestEntry } from './imageUrl';
@@ -8,7 +9,13 @@ import { buildThumbUrl, manifestKey, type ManifestEntry } from './imageUrl';
 // last generated, or one it couldn't find a photo for) falls through to the live lookup below.
 const MANIFEST = (imageManifest as { entries: Record<string, ManifestEntry> }).entries;
 
-// Full-resolution images (headers/hero photos) — keyed by destination/spot/country id.
+// Width to request for a full-width header photo, in pixels. The header shows a roughly square crop
+// of a (usually 3:2) photo at full screen width, so the photo needs ~1.5× the screen's pixel width to
+// fill it without being upscaled — 900px, the old request, was blown up ~2× on a 3× phone.
+export const HEADER_PX = Math.min(1920, Math.ceil(Dimensions.get('window').width * PixelRatio.get() * 1.5));
+
+// Full-resolution images (headers/hero photos) — keyed by destination/spot/country id. Only header-sized
+// photos go in here: anything smaller uses thumbCache, so a small copy can never be reused for a header.
 export const photoCache = new Map<string, string>();
 
 // Small images (map pins, list thumbnails, preview cards) — separate namespace so a pin's

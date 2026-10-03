@@ -20,13 +20,13 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { SharedValue } from 'react-native-reanimated';
 import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'react-native-svg';
 import { Check, Clock, CalendarClock, ChevronUp, ChevronDown, ChevronRight, LayoutGrid, Plus,
-         Tag, ExternalLink, Ticket } from 'lucide-react-native';
+         ExternalLink, Ticket } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
-import { useStore } from '../../store';
+import { useStore, useVisitIndex } from '../../store';
 import type { Destination, Visit } from '../../types';
 import type { Spot } from '../../data/spots';
 import { DAY_NAMES, hoursForDay, formatSpotCost, formatVisitTime, getSpotOpenStatus, specialClosureOn, zonedNowForSpot } from '../../data/spots';
-import { photoCache, thumbCache, getOrFetchWikiThumbnail } from '../../utils/photoCache';
+import { photoCache, thumbCache, getOrFetchWikiThumbnail, HEADER_PX } from '../../utils/photoCache';
 import CircleFlag from '../CircleFlag';
 import FadeInImage from './FadeInImage';
 import SpotCard from './SpotCard';
@@ -39,9 +39,9 @@ import {
 } from './sheetShared';
 
 const { height: H, width: W } = Dimensions.get('window');
-// Practical-info blue — time needed and cost. Deliberately
-// not green: across the app green means "visited" (pins, rings, card borders, the Visited tag).
-const INFO_BLUE = '#1D4ED8';
+// Practical info — time needed and cost — in plain black, both on the carousel cards and in the
+// sheet's gray box. Deliberately not green: across the app green means "visited".
+const INFO_INK = '#111827';
 
 const FULL_POS    = 0;
 const CLOSE_POS   = H + 40;  // fully off-screen
@@ -121,8 +121,7 @@ function CarouselCard({ spot, isActive, onPress, onAddVisit, gradId }: {
     getOrFetchWikiThumbnail(cacheKey, thumbCache, spot.name, 960).then(u => { if (u) setThumb(u); });
   }, [spot.id]);
 
-  const savedSpot  = useStore(s => s.savedSpots[spot.id]);
-  const isVisited  = !!savedSpot;
+  const isVisited  = useVisitIndex().isSpotVisited(spot.id);
 
   return (
     <Pressable
@@ -183,7 +182,7 @@ function CarouselCard({ spot, isActive, onPress, onAddVisit, gradId }: {
         <View style={st.cardInfo}>
           <View style={st.cardStatRow}>
             <View style={st.cardTimeRow}>
-              <Clock size={12} color={INFO_BLUE} strokeWidth={2.5} />
+              <Clock size={12} color={INFO_INK} strokeWidth={2.5} />
               <Text style={st.cardTimeTxt}>{formatVisitTime(spot.visitHoursMin, spot.visitHoursMax)}</Text>
             </View>
             <View style={st.cardStatDivider} />
@@ -262,6 +261,7 @@ function SpotSheet({
   const saveSpotVisited = useStore(s => s.saveSpotVisited);
   const updateSpot   = useStore(s => s.updateSpot);
   const unsaveSpot   = useStore(s => s.unsaveSpot);
+  const unvisitSpot  = useStore(s => s.unvisitSpot);
 
   // ── Which spot is focused in the carousel ────────────────────────────────────
   const initialIndex = useMemo(
@@ -287,41 +287,45 @@ function SpotSheet({
   }
   const activeSpot = spots[activeIndex] ?? spots[0];
 
-  const savedSpot = useStore(s => s.savedSpots[activeSpot.id]);
-  const isVisited = !!savedSpot;
+  // `savedSpot` is the spot's own record (its own trips and rating) — the only thing this sheet
+  // writes. A spot is also visited when a destination trip ticked it (see utils/visitStatus.ts).
+  const savedSpot   = useStore(s => s.savedSpots[activeSpot.id]);
+  const visitIndex  = useVisitIndex();
+  const isVisited   = visitIndex.isSpotVisited(activeSpot.id);
 
   // Derive visits from the store, carrying the old single visitDate/notes/photos fields onto a
   // synthesized legacy entry so a pre-redesign spot visit still shows its content as its own
   // module — editing it migrates those fields onto a real Visit the first time it's saved.
   // Identical mechanism to DestinationSheet's/CountrySheet's own localVisits. Gated on
   // visitDate specifically (not notes/photos alone) — same as the other two levels.
-  const localVisits: Visit[] = savedSpot?.visits
+  const localVisits: Visit[] = useMemo(() => savedSpot?.visits
     ?? (savedSpot?.visitDate
       ? [{ id: 'legacy', startDate: savedSpot.visitDate, photos: savedSpot.photos, notes: savedSpot.notes }]
-      : []);
+      : []), [savedSpot]);
 
   // Saves one visit module — appends a brand new one ('new') or replaces just the matching id
   // in place. Identical mechanism to DestinationSheet's/CountrySheet's own handleSaveVisitModule.
   const handleSaveVisitModule = useCallback((v: Visit) => {
     // The spot only actually becomes "visited" here, on a genuine save — not the moment "Add
     // Visit" was tapped (see handleMarkVisited).
-    if (!isVisited) saveSpotVisited(activeSpot.id, destination.id);
+    if (!savedSpot) saveSpotVisited(activeSpot.id, destination.id);
+    setRevealVisit(true);
     const base = localVisits.filter(x => x.id !== 'legacy');
     const idx  = base.findIndex(x => x.id === v.id);
     const updated = idx >= 0 ? base.map(x => x.id === v.id ? v : x) : [...base, v];
     updated.sort((a, b) => b.startDate.localeCompare(a.startDate));
     updateSpot(activeSpot.id, { visits: updated, visitDate: updated[0]?.startDate });
-  }, [isVisited, localVisits, activeSpot.id, destination.id, saveSpotVisited, updateSpot]);
+  }, [savedSpot, localVisits, activeSpot.id, destination.id, saveSpotVisited, updateSpot]);
 
   // That was the last (or only ever synthesized legacy) visit logged for this spot — not just
   // "visited with zero trips", so this unsaves the spot entirely (also dropping its rating, same
   // as the old "Remove visit" flow did), rather than leaving a record with an empty visits array.
   const handleDeleteVisitModule = useCallback((id: string) => {
-    if (!isVisited) return;
+    if (!savedSpot) return;
     const updated = localVisits.filter(v => v.id !== id);
     if (updated.length === 0) { unsaveSpot(activeSpot.id); return; }
     updateSpot(activeSpot.id, { visits: updated, visitDate: updated[0]?.startDate });
-  }, [isVisited, localVisits, activeSpot.id, unsaveSpot, updateSpot]);
+  }, [savedSpot, localVisits, activeSpot.id, unsaveSpot, updateSpot]);
 
   const carouselRef = useRef<ScrollView>(null);
   const scrollRef    = useRef<GHScrollView>(null);
@@ -351,6 +355,9 @@ function SpotSheet({
   // editing one specific existing module (the Visit object) — identical mechanism to
   // DestinationSheet's/CountrySheet's own editingVisitModule.
   const [editingVisitModule, setEditingVisitModule] = useState<Visit | 'new' | null>(null);
+  // Set by a trip's Save — once the sheet has its My Visit tab, it switches there and opens fully, so
+  // the saved trip is what's showing as the editor slides away (see the effect by snapToFullRef).
+  const [revealVisit, setRevealVisit] = useState(false);
   // Which visit's full photo set is open in the standalone gallery page — read-only, separate
   // from editingVisitModule.
   const [galleryVisit, setGalleryVisit] = useState<Visit | null>(null);
@@ -493,7 +500,7 @@ function SpotSheet({
   // sheet. getOrFetchWikiThumbnail (rather than a bare fetchWikiThumbnail) shares whatever request a pin-tap
   // prefetch already kicked off.
   const activePhotoKey = `spot_${activeSpot.id}`;
-  const loadActivePhoto = () => getOrFetchWikiThumbnail(activePhotoKey, photoCache, activeSpot.name, 900);
+  const loadActivePhoto = () => getOrFetchWikiThumbnail(activePhotoKey, photoCache, activeSpot.name, HEADER_PX);
 
   // Reset tab whenever the focused spot changes. (This used to sit at the end of the photo effect, after an early
   // return for a cached photo — so the tab only reset when the photo happened not to be cached.)
@@ -639,6 +646,12 @@ function SpotSheet({
   };
   const snapToFullRef = useRef(() => {});
   snapToFullRef.current = () => transitionToRef.current('full', 'user');
+  useEffect(() => {
+    if (!revealVisit || !isVisited) return;
+    setRevealVisit(false);
+    switchTabRef.current('visit');
+    if (snapStateRef.current !== 'full') snapToFullRef.current();
+  }, [revealVisit, isVisited]);
   const snapToCollapsedRef = useRef(() => {});
   snapToCollapsedRef.current = () => transitionToRef.current('collapsed', 'user');
   const snapToPeekRef = useRef(() => {});
@@ -832,12 +845,13 @@ function SpotSheet({
   // marking it visited immediately.
   const handleMarkVisited = () => {
     if (isVisited) {
+      // Un-visits it entirely: its own trips and rating, and its ticks on destination trips.
       Alert.alert(
         'Remove visit?',
-        'This will delete your rating and all logged visits for this spot.',
+        'This will delete your rating and all logged visits for this spot, and untick it from your trips.',
         [
           { text: 'Cancel', style: 'cancel' },
-          { text: 'Remove', style: 'destructive', onPress: () => unsaveSpot(activeSpot.id) },
+          { text: 'Remove', style: 'destructive', onPress: () => unvisitSpot(activeSpot.id) },
         ]
       );
       return;
@@ -914,7 +928,10 @@ function SpotSheet({
           showsVerticalScrollIndicator={false}
           onScroll={e => { scrollYSV.value = e.nativeEvent.contentOffset.y; }}
           scrollEventThrottle={16}
-          contentContainerStyle={{ paddingBottom: insets.bottom + 36 }}
+          // White to the bottom of the sheet, like the content above it — the trailing padding, and any
+          // space left under a short tab (e.g. My Visit with one small trip card), otherwise showed the
+          // sheet's light gray as a stray strip.
+          contentContainerStyle={{ paddingBottom: insets.bottom + 36, backgroundColor: 'white', flexGrow: 1 }}
           keyboardShouldPersistTaps="handled"
         >
           {/* ── HERO (active spot, shown when expanded) ─────────────────── */}
@@ -1025,6 +1042,8 @@ function SpotSheet({
                         DestinationSheet/CountrySheet — see VisitCardList. No selector section
                         here (a spot has nothing beneath it to tag a visit with). */}
                     <VisitCardList
+                      defaultTitle={`${activeSpot.name} Visit`}
+                      noun="Visit"
                       visits={localVisits}
                       onEditVisit={setEditingVisitModule}
                       onNewVisit={() => setEditingVisitModule('new')}
@@ -1164,6 +1183,7 @@ function SpotSheet({
 
       {editingVisitModule !== null && (
         <VisitModuleSheet
+          existingCount={localVisits.length}
           entityName={activeSpot.name}
           visit={editingVisitModule === 'new' ? null : editingVisitModule}
           onSave={handleSaveVisitModule}
@@ -1216,16 +1236,16 @@ function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore, nearbyHlScrol
       <View style={st.section}>
         <View style={st.glanceCard}>
           <View style={st.glanceItem}>
-            <View style={[st.glanceIconCircleGray, st.glanceIconCircleBlue]}>
-              <Clock size={20} color={INFO_BLUE} />
+            <View style={st.glanceIconCircle}>
+              <Clock size={20} color={INFO_INK} />
             </View>
             <Text style={st.glanceVal} numberOfLines={1}>{formatVisitTime(spot.visitHoursMin, spot.visitHoursMax)}</Text>
             <Text style={st.glanceLbl}>Time Needed</Text>
           </View>
           <View style={st.glanceDivider} />
           <View style={st.glanceItem}>
-            <View style={[st.glanceIconCircleGray, st.glanceIconCircleBlue]}>
-              <Tag size={20} color={INFO_BLUE} />
+            <View style={st.glanceIconCircle}>
+              <Ticket size={20} color={INFO_INK} />
             </View>
             <Text style={st.glanceVal} numberOfLines={1}>{formatSpotCost(spot)}</Text>
             <Text style={st.glanceLbl}>Cost (Adult)</Text>
@@ -1420,8 +1440,8 @@ const st = StyleSheet.create({
   // Time-to-spend and cost, side by side below the image rather than overlaid on it.
   cardStatRow: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 2, marginBottom: 8 },
   cardTimeRow: { flexDirection: 'row', alignItems: 'center', gap: 4, flexShrink: 0 },
-  cardTimeTxt: { fontSize: 12.5, fontWeight: '700', color: INFO_BLUE },
-  cardStatDivider: { width: 1, height: 12, marginHorizontal: 2, backgroundColor: INFO_BLUE },
+  cardTimeTxt: { fontSize: 12.5, fontWeight: '700', color: INFO_INK },
+  cardStatDivider: { width: 1, height: 12, marginHorizontal: 2, backgroundColor: INFO_INK },
   cardInfo:    { backgroundColor: 'white', paddingHorizontal: 14, paddingTop: 6, paddingBottom: 12 },
   cardBio:     { fontSize: 12.5, color: '#6B7280', lineHeight: 16, minHeight: 48 },
   // Sits below the carousel (a sibling of the ScrollView, not any one card) — sandwiched
@@ -1515,14 +1535,13 @@ const st = StyleSheet.create({
   // One combined card (was two separate ones) — a vertical divider between the two halves
   // instead of a gap, white background, light gray border. Same border strength as
   // DestinationSheet's About-tab boxes (its ABOUT_BORDER, '#D8DBE0') — was a fainter '#F0F1F3'.
-  glanceCard: { backgroundColor: '#F3F8FF', borderRadius: 16, flexDirection: 'row', borderWidth: 1, borderColor: '#BFDBFE' },
+  // White box, gray border (the About boxes' '#D8DBE0'), black clock and ticket icons on a light gray
+  // circle.
+  glanceCard: { backgroundColor: 'white', borderRadius: 16, flexDirection: 'row', borderWidth: 1, borderColor: '#D8DBE0' },
   glanceItem: { flex: 1, alignItems: 'center', paddingVertical: 20, gap: 5 },
-  glanceDivider: { width: 1, backgroundColor: '#E2EDFE', marginVertical: 14 },
-  glanceIconCircleGray:   { width: 40, height: 40, borderRadius: 20, backgroundColor: '#F3F4F6',
-                            alignItems: 'center', justifyContent: 'center', marginBottom: 2 },
-  // Override for Time Needed and Ticket only (Cost stays the plain gray badge) — a darker blue,
-  // matching glanceCard's own faint blue tint/border.
-  glanceIconCircleBlue:   { backgroundColor: '#E2EDFE' },
+  glanceDivider: { width: 1, backgroundColor: '#D8DBE0', marginVertical: 14 },
+  glanceIconCircle: { width: 40, height: 40, borderRadius: 20, backgroundColor: '#E5E7EB',
+                      alignItems: 'center', justifyContent: 'center', marginBottom: 2 },
   // 20% larger than DestinationSheet's glanceRowTitle ("Why Visit" reasons text), which this
   // otherwise matches in weight/color.
   glanceVal: { fontSize: 19, fontWeight: '600', color: '#111827', lineHeight: 26 },

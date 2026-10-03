@@ -9,7 +9,7 @@ import {
 import { ScrollView as GHScrollView, Gesture, GestureDetector, State } from 'react-native-gesture-handler';
 import Reanimated, { useSharedValue, useAnimatedStyle, withTiming, runOnJS } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { X, Check, Camera, Calendar, Pencil, ChevronDown, ChevronRight, Trash2, Star } from 'lucide-react-native';
+import { X, Check, Camera, Calendar, Pencil, ChevronDown, ChevronRight, Trash2, Star, NotebookPen, Plus } from 'lucide-react-native';
 import * as ImagePicker from 'expo-image-picker';
 import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'react-native-svg';
 import type { PhotoEntry, Visit } from '../../types';
@@ -82,7 +82,7 @@ export function parseDateStr(s: string) {
 }
 export function fmtDatePart(dateStr: string): string {
   const p = parseDateStr(dateStr);
-  if (!p) return 'Unknown';
+  if (!p) return '';
   if (p.day === '00') return `${p.monthLabel} ${p.year}`;
   return `${p.monthLabel} ${parseInt(p.day, 10)}, ${p.year}`;
 }
@@ -109,7 +109,7 @@ export function visitDayCount(visit: Visit): number | null {
 // Compact range used in the read-only My Visit card only
 export function fmtVisitRangeShort(visit: Visit): string {
   const s = parseDateStr(visit.startDate);
-  if (!s) return 'Unknown';
+  if (!s) return '';
   if (!visit.endDate) return fmtDatePart(visit.startDate);
   const e = parseDateStr(visit.endDate);
   if (!e) return fmtDatePart(visit.startDate);
@@ -1368,7 +1368,7 @@ const VISIT_STRIP_FADE_STOPS = Array.from({ length: 21 }, (_, i) => {
 // memSpotsCarouselLast below), plus a trailing "Add Visit +" button.
 export function VisitCardList<T extends VisitSelectorItem>({
   visits, onEditVisit, onNewVisit, onOpenGallery, onSelectItem, selectorLabel, selectorItems,
-  ratingValue, hideSingleDayCount,
+  ratingValue, hideSingleDayCount, isReadOnly, defaultTitle, noun = 'Trip',
 }: {
   visits: Visit[];
   onEditVisit: (v: Visit) => void;
@@ -1389,6 +1389,13 @@ export function VisitCardList<T extends VisitSelectorItem>({
   // stop) — hidden when this is true, mirroring VisitModuleSheet's own prop of the same name.
   // A genuinely multi-day spot visit still shows its real day count.
   hideSingleDayCount?: boolean;
+  // A visit this returns true for is shown read-only, with no Edit button — e.g. a destination
+  // trip that ticked this spot, which is edited on the destination.
+  isReadOnly?: (v: Visit) => boolean;
+  // Shown for a trip saved without a title (e.g. a pre-redesign one) — "Paris Trip".
+  defaultTitle?: string;
+  // "Trip" (default) or "Visit" — the empty state's wording.
+  noun?: string;
 }) {
   // Sizes the selector carousel's square cards to match the photo grid's own tiles exactly —
   // measured (not hardcoded) off the carousel's own container width, using the identical
@@ -1402,19 +1409,24 @@ export function VisitCardList<T extends VisitSelectorItem>({
   const pluralNoun   = selectorLabel ? selectorLabel.replace(/\s+Visited$/i, '').toLowerCase() : '';
   const singularNoun = pluralNoun.endsWith('s') ? pluralNoun.slice(0, -1) : pluralNoun;
 
+  // Visited, nothing logged yet: an invitation to log it rather than an empty trip card.
   if (visits.length === 0) {
+    const what = hasSelector ? `dates, the ${pluralNoun} you visited, notes and photos` : 'a date, notes and photos';
     return (
-      <View style={vcS.listWrap}>
+      <View style={[vcS.listWrap, vcS.emptyWrap]}>
         <View style={vcS.memCardShadow}>
-          <Pressable style={vcS.memCard} onPress={onNewVisit}>
-            <View style={vcS.memTopRow}>
-              <Text style={vcS.memDateEmpty}>No dates logged — tap to add a visit</Text>
+          <Pressable style={[vcS.memCard, vcS.emptyCard]} onPress={onNewVisit}>
+            <View style={vcS.emptyIcon}>
+              <NotebookPen size={22} color="#059669" />
+            </View>
+            <Text style={vcS.emptyTitle}>Log your {noun.toLowerCase()}</Text>
+            <Text style={vcS.emptySub}>Add {what} to remember it by.</Text>
+            <View style={vcS.emptyBtn}>
+              <Plus size={15} color="white" strokeWidth={2.75} />
+              <Text style={vcS.emptyBtnTxt}>Add {noun}</Text>
             </View>
           </Pressable>
         </View>
-        <Pressable style={vcS.addVisitBtn} onPress={onNewVisit}>
-          <Text style={vcS.addVisitBtnTxt}>Add Visit +</Text>
-        </Pressable>
       </View>
     );
   }
@@ -1428,35 +1440,52 @@ export function VisitCardList<T extends VisitSelectorItem>({
         // it in that case; the dark header just fills the whole box (all four corners rounded,
         // no trailing margin).
         const headerOnly = !v.notes && !itemsForVisit.length && !v.photos?.length;
+        const readOnly = !!isReadOnly?.(v);
+        // Only a title so far — invite the dates, the first thing most people add.
+        const titleOnly = headerOnly && !v.startDate && !readOnly;
         return (
           <View key={v.id} style={vcS.memCardShadow}>
             <View style={vcS.memCard}>
               <View style={[vcS.memTopRow, headerOnly && vcS.memTopRowOnly]}>
                 <View style={{ flex: 1 }}>
-                  {!!v.title && (
-                    <Text style={vcS.memTripNameHeading} numberOfLines={2}>{v.title}</Text>
+                  {!!(v.title || defaultTitle) && (
+                    // No trailing gap when nothing follows it — an undated trip's header is just its title.
+                    <Text style={[vcS.memTripNameHeading, !ratingValue && !v.startDate && !titleOnly && { marginBottom: 0 }]} numberOfLines={2}>
+                      {v.title || defaultTitle}
+                    </Text>
                   )}
                   {!!ratingValue && (
-                    <View style={vcS.memRatingRow}>
+                    <View style={[vcS.memRatingRow, !v.startDate && !titleOnly && { marginBottom: 0 }]}>
                       <StarRating value={ratingValue} size={13} />
                     </View>
                   )}
-                  <Text style={vcS.memDateVal}>
-                    {fmtVisitRangeShort(v)}
-                    {days != null && !(days === 1 && hideSingleDayCount) && `  ·  ${days} day${days === 1 ? '' : 's'}`}
-                  </Text>
+                  {titleOnly && (
+                    <Pressable style={vcS.memAddDates} onPress={() => onEditVisit(v)} hitSlop={6}>
+                      <Calendar size={13} color="#9CA3AF" />
+                      <Text style={vcS.memAddDatesTxt}>Add {noun.toLowerCase()} dates</Text>
+                    </Pressable>
+                  )}
+                  {/* Otherwise nothing at all for an undated trip, rather than a "no dates" label. */}
+                  {!!v.startDate && (
+                    <Text style={vcS.memDateVal}>
+                      {fmtVisitRangeShort(v)}
+                      {days != null && !(days === 1 && hideSingleDayCount) && `  ·  ${days} day${days === 1 ? '' : 's'}`}
+                    </Text>
+                  )}
                 </View>
-                <Pressable style={vcS.memEditBtn} onPress={() => onEditVisit(v)}>
-                  <Pencil size={12} color="white" />
-                  <Text style={vcS.memEditBtnTxt}>Edit</Text>
-                </Pressable>
+                {!readOnly && (
+                  <Pressable style={vcS.memEditBtn} onPress={() => onEditVisit(v)}>
+                    <Pencil size={12} color="white" />
+                    <Text style={vcS.memEditBtnTxt}>Edit</Text>
+                  </Pressable>
+                )}
               </View>
               {!!v.notes && (
                 // When nothing follows (no selector items, no photos), match the same bottom
                 // padding the card ends on when photos ARE the last section.
                 <Pressable
                   style={[vcS.memNotesDisplay, !itemsForVisit.length && !v.photos?.length && vcS.memNotesLast]}
-                  onPress={() => onEditVisit(v)}
+                  onPress={readOnly ? undefined : () => onEditVisit(v)}
                 >
                   <Text style={vcS.memNotesTxt} numberOfLines={3}>{v.notes}</Text>
                 </Pressable>
@@ -1584,7 +1613,20 @@ const vcS = StyleSheet.create({
   memTripNameHeading:  { fontSize:25, fontFamily:'PlayfairDisplay_700Bold', color:'white', marginBottom:4 },
   memRatingRow:        { marginBottom:8 },
   memDateVal:          { fontSize:14, fontWeight:'600', color:'#9CA3AF' },
-  memDateEmpty:        { fontSize:14, fontWeight:'600', color:'#9CA3AF' },
+  // Empty state (visited, nothing logged) — see VisitCardList. With no "Add Visit +" button below the
+  // card, the panel (overflow hidden, for the tab swipe) clipped its shadow's lower half; this leaves the
+  // shadow the same room below as listWrap's paddingTop gives it above.
+  emptyWrap:           { paddingBottom:24 },
+  emptyCard:           { alignItems:'center', paddingHorizontal:24, paddingTop:28, paddingBottom:24 },
+  emptyIcon:           { width:52, height:52, borderRadius:26, backgroundColor:'#ECFDF5',
+                         alignItems:'center', justifyContent:'center', marginBottom:14 },
+  emptyTitle:          { fontSize:22, fontFamily:'PlayfairDisplay_700Bold', color:'#111827', textAlign:'center' },
+  emptySub:            { fontSize:14, color:'#6B7280', lineHeight:20, textAlign:'center', marginTop:6, marginBottom:18 },
+  emptyBtn:            { flexDirection:'row', alignItems:'center', gap:6, height:40, paddingHorizontal:18,
+                         borderRadius:20, backgroundColor:'#111827' },
+  emptyBtnTxt:         { fontSize:14, fontWeight:'700', color:'white' },
+  memAddDates:         { flexDirection:'row', alignItems:'center', gap:6, alignSelf:'flex-start' },
+  memAddDatesTxt:      { fontSize:14, fontWeight:'600', color:'#9CA3AF' },
   memEditBtn:          { flexDirection:'row', alignItems:'center', gap:5, paddingHorizontal:10, paddingVertical:6,
                          borderRadius:10, backgroundColor:'rgba(255,255,255,0.14)' },
   memEditBtnTxt:       { fontSize:12, fontWeight:'600', color:'white' },
@@ -1667,6 +1709,12 @@ export function StarRating({ value, onChange, size = 30 }: {
   );
 }
 
+// A trip's default title: "Paris Trip" / "Louvre Visit", numbered from the second one on
+// ("Paris Trip 2") — `existing` is how many trips the place already has logged.
+export function defaultTripTitle(name: string, noun: string, existing = 0): string {
+  return existing > 0 ? `${name} ${noun} ${existing + 1}` : `${name} ${noun}`;
+}
+
 // ── Full-screen visit MODULE edit sheet ───────────────────────────────────────────────────────
 // Scoped to exactly ONE visit (a fresh one when `visit` is null) — like editing a single Strava
 // activity or journal entry. Every field auto-commits to LOCAL state as it changes; nothing is
@@ -1674,12 +1722,15 @@ export function StarRating({ value, onChange, size = 30 }: {
 // own id, so sibling visits are never touched.
 export function VisitModuleSheet<T extends VisitSelectorItem>({
   entityName, visit, onSave, onDelete, onClose,
-  selectorLabel, selectorItems, onCheckItem, onRemoveLegacy,
-  ratingValue, onRatingChange, noun = 'Trip', hideSingleDayCount,
+  selectorLabel, selectorItems, onRemoveLegacy,
+  ratingValue, onRatingChange, noun = 'Trip', hideSingleDayCount, existingCount = 0,
 }: {
-  // Used for the title placeholder/fallback ("${entityName} ${noun}") — the destination's,
-  // country's, or spot's own name.
+  // Used for the title placeholder/fallback (see defaultTripTitle) — the destination's, country's,
+  // or spot's own name.
   entityName: string;
+  // How many trips the place already has logged, which numbers a new trip's default title
+  // ("Paris Trip 2"). Only counts for a new trip — an existing one keeps the plain default.
+  existingCount?: number;
   // "Trip" (default) or "Visit" — spots call these visits, not trips, throughout this sheet's
   // own copy (title placeholder, "Remove Trip"/"Remove Visit", "Trip Notes"/"Visit Notes", the
   // "Add trip/visit dates" placeholders, the discard-changes prompt, etc.) and the date picker
@@ -1698,11 +1749,6 @@ export function VisitModuleSheet<T extends VisitSelectorItem>({
   // passes neither.
   selectorLabel?: string;
   selectorItems?: T[];
-  // Fired only when an item is newly CHECKED (not on uncheck) — lets the caller mirror whatever
-  // "checking this off also marks IT visited" side effect makes sense at its own level (e.g. the
-  // destination level marks a checked spot visited destination-wide too), without this shared
-  // file needing to know what that side effect actually is.
-  onCheckItem?: (id: string) => void;
   // Fired instead of onDelete when removing the synthesized 'legacy' visit (migrated from this
   // entity's pre-visits-array fields, see each caller's own localVisits derivation) — the caller
   // unsaves the whole entity rather than trying to delete a visit id that was never actually
@@ -1717,11 +1763,9 @@ export function VisitModuleSheet<T extends VisitSelectorItem>({
 }) {
   const insets = useSafeAreaInsets();
   const isLegacy = visit?.id === 'legacy';
+  const defaultTitle = defaultTripTitle(entityName, noun, visit ? 0 : existingCount);
   const idRef = useRef(visit?.id ?? Date.now().toString());
   const hasSelector = !!selectorLabel && !!selectorItems?.length;
-
-  const now = new Date();
-  const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
 
   const [title,       setTitle      ] = useState(visit?.title ?? '');
   // Empty (not defaulted to today) for a brand-new trip — the Dates row shows its own blank
@@ -1777,33 +1821,23 @@ export function VisitModuleSheet<T extends VisitSelectorItem>({
     // Saved as the real title when the user never typed one (not left blank for some other
     // component to guess a fallback later) — matches the placeholder text itself, so what
     // you see before typing is exactly what gets saved if you don't.
-    title: title.trim() || `${entityName} ${noun}`,
-    // Visit.startDate is required, so a trip saved on the strength of notes/selector/photos
-    // alone (dates never actually picked, still '') falls back to today here at save time —
-    // the UI itself stays genuinely blank until the user picks something, only this persisted
-    // record needs a real date.
-    startDate: startDate || todayStr,
+    title: title.trim() || defaultTitle,
+    // Left '' when the user never picked dates — an undated trip, never a made-up date.
+    startDate,
     endDate,
     spotIds: selectedIds.size ? Array.from(selectedIds) : undefined,
     photos: localPhotos.length ? localPhotos : undefined,
     notes: localNotes || undefined,
   });
-  // At least one of these has to actually have something — a bare title (or nothing at all)
-  // isn't a trip worth saving. Combined with `dirty` for the Save button below: `dirty` says
-  // something CHANGED, this says there's something WORTH keeping. ratingValue only exists for
-  // the levels that pass one (spots) — undefined/0 there just falls through like any other
-  // level that never had it.
-  const hasContent = !!localNotes || selectedIds.size > 0 || localPhotos.length > 0 || !!startDate || !!ratingValue;
-  const canSave = dirty && hasContent;
+  // Any single edit is enough to save — a title alone, a date alone, one ticked place, a note.
+  const canSave = dirty;
 
-  // Checking an item off may trigger the caller's own "mark IT visited too" side effect (see
-  // onCheckItem's own doc), but unchecking only removes it from THIS visit's own list — it
-  // might still have been seen on a different trip, so un-marking it globally is a separate,
-  // more deliberate action handled elsewhere.
+  // Checking an item off counts it as visited (see utils/visitStatus.ts) — nothing else is written,
+  // so it needs no log of its own.
   const toggleItem = (id: string) => {
     const next = new Set(selectedIds);
     if (next.has(id)) next.delete(id);
-    else { next.add(id); onCheckItem?.(id); }
+    else next.add(id);
     setSelectedIds(next);
     commit();
   };
@@ -1816,8 +1850,7 @@ export function VisitModuleSheet<T extends VisitSelectorItem>({
     Animated.timing(slide, { toValue: H, duration: 280, useNativeDriver: true }).start(onClose);
   };
   // The Save button — persists the draft for real, then closes. Grayed out (see headerSaveBtn
-  // below) and a no-op until something's actually changed AND there's real content to save
-  // (see canSave/hasContent above).
+  // below) and a no-op until something's actually changed (see canSave above).
   const handleSave = () => {
     if (!canSave) return;
     onSave(buildVisit());
@@ -1955,7 +1988,7 @@ export function VisitModuleSheet<T extends VisitSelectorItem>({
                 commit();
                 if (hadNewline) titleInputRef.current?.blur();
               }}
-              placeholder={`${entityName} ${noun}`}
+              placeholder={defaultTitle}
               placeholderTextColor="#9CA3AF"
               textAlign="center"
               multiline
@@ -2071,7 +2104,7 @@ export function VisitModuleSheet<T extends VisitSelectorItem>({
                 <View style={esS.ratingRow}>
                   {/* onRatingChange itself writes straight to the caller's store (rating lives
                       outside the local draft/Save system, unlike every other field here) — commit()
-                      alongside it just marks the Save button's own dirty/hasContent state so it
+                      alongside it just marks the Save button's own dirty state so it
                       reflects a rating that was just set, same as every other field's own setter does. */}
                   <StarRating value={ratingValue ?? 0} onChange={r => { onRatingChange(r); commit(); }} />
                 </View>

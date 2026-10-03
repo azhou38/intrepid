@@ -5,8 +5,13 @@
 // Wikimedia only generates thumbnails at a fixed set of widths and answers HTTP 400 for anything else
 // (verified: 100/150/400/700/900/1024 are rejected; 120/250/330/500/960/1280/1920 are served). These are
 // the steps the app uses. Every requested width is rounded UP to the next one so images are never
-// blurrier than asked for.
-export const THUMB_STEPS = [120, 250, 500, 960] as const;
+// blurrier than asked for. 1280/1920 are for full-width headers on high-density screens, which 960
+// left visibly soft.
+export const THUMB_STEPS = [120, 250, 500, 960, 1280, 1920] as const;
+
+// An original no wider than this is used as-is when no thumbnail step is both big enough and narrower
+// than it — sharper than settling for a smaller step, and still a reasonable download.
+const MAX_ORIGINAL_W = 2560;
 
 export interface ManifestCredit {
   by?: string;          // photographer / author, plain text
@@ -42,5 +47,7 @@ export function snapWidth(want: number, originalWidth: number): number | null {
 export function buildThumbUrl(entry: ManifestEntry, want: number): string {
   if (!entry.t) return entry.o;
   const w = snapWidth(want, entry.ow);
-  return w == null ? entry.o : entry.t.replace('{w}', String(w));
+  if (w == null) return entry.o;
+  if (w < want && entry.ow > w && entry.ow <= MAX_ORIGINAL_W) return entry.o;
+  return entry.t.replace('{w}', String(w));
 }

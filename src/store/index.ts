@@ -5,6 +5,11 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import type { SavedDestination, SavedSpot, SavedCountry, PhotoEntry, Continent } from '../types';
 import { DESTINATIONS } from '../data/destinations';
 import { SPOTS } from '../data/spots';
+import {
+  buildVisitIndex, withoutAutoLogs, withoutCountry, withoutDestination, withoutDestinationRecord, withoutSpot,
+  withoutSpotRecord,
+  type VisitIndex,
+} from '../utils/visitStatus';
 
 // A place opened from search, by id — resolved back to the live data when shown, so a renamed or removed
 // place can never resurface stale.
@@ -14,6 +19,8 @@ export type RecentSearch =
   | { type: 'spot';        id: string };
 const MAX_RECENT_SEARCHES = 5;
 const recentKey = (r: RecentSearch) => r.type === 'country' ? `country:${r.countryCode}` : `${r.type}:${r.id}`;
+
+const SPOT_DEST_ID = new Map(SPOTS.map(s => [s.id, s.destinationId]));
 
 function uid() {
   return Math.random().toString(36).slice(2) + Date.now().toString(36);
@@ -37,6 +44,10 @@ interface AppState {
   saveCountryVisited: (countryCode: string, extra?: Partial<Omit<SavedCountry, 'countryCode'>>) => void;
   unsaveCountry: (countryCode: string) => void;
   updateSavedCountry: (countryCode: string, update: Partial<SavedCountry>) => void;
+  // Un-visit a place entirely: everything logged for it and beneath it, and its ticks in the trips above.
+  unvisitSpot: (spotId: string) => void;
+  unvisitDestination: (destinationId: string) => void;
+  unvisitCountry: (countryCode: string) => void;
   selectDestination: (id: string | null) => void;
   setUserName: (name: string) => void;
   // Places opened from search, most recent first (see RecentSearch) — shown as the search bar's
@@ -79,57 +90,44 @@ export const useStore = create<AppState>()(
           },
         })),
 
-      unsaveDestination: (id) =>
-        set((s) => {
-          const next = { ...s.savedDestinations };
-          delete next[id];
-          return { savedDestinations: next };
-        }),
+      // Never un-visits its country (see withoutDestinationRecord).
+      unsaveDestination: (id) => set((s) => withoutDestinationRecord(s, id)),
 
       updateSaved: (id, update) =>
         set((s) => ({
           savedDestinations: {
             ...s.savedDestinations,
-            [id]: { ...s.savedDestinations[id], ...update },
+            [id]: { ...s.savedDestinations[id], ...update, destinationId: id, type: 'visited' },
           },
         })),
 
       // ── Spots ────────────────────────────────────────────────────────────
+      // Only the spot's own record. Its destination (and country) count as visited through it — see
+      // utils/visitStatus.ts — rather than through a destination record written here, which used to
+      // leave the destination visited after the spot was un-visited.
       saveSpotVisited: (spotId, destinationId) =>
-        set((s) => {
-          const nextSpots = {
+        set((s) => ({
+          savedSpots: {
             ...s.savedSpots,
             [spotId]: s.savedSpots[spotId] ?? { spotId, destinationId },
-          };
-          // Auto-mark the parent destination visited (keeps any existing notes/photos/visits).
-          const parent = s.savedDestinations[destinationId];
-          const nextDests = parent?.type === 'visited'
-            ? s.savedDestinations
-            : {
-                ...s.savedDestinations,
-                [destinationId]: {
-                  ...(parent ?? { destinationId }),
-                  destinationId,
-                  type: 'visited' as const,
-                },
-              };
-          return { savedSpots: nextSpots, savedDestinations: nextDests };
-        }),
+          },
+        })),
 
+      // Creates the record if needed (e.g. rating a spot in its trip editor before the trip is saved),
+      // always with its own ids — a record without them was missed by un-visiting its destination.
       updateSpot: (spotId, update) =>
         set((s) => ({
           savedSpots: {
             ...s.savedSpots,
-            [spotId]: { ...s.savedSpots[spotId], ...update },
+            [spotId]: {
+              ...s.savedSpots[spotId], ...update,
+              spotId, destinationId: s.savedSpots[spotId]?.destinationId ?? SPOT_DEST_ID.get(spotId) ?? '',
+            },
           },
         })),
 
-      unsaveSpot: (spotId) =>
-        set((s) => {
-          const next = { ...s.savedSpots };
-          delete next[spotId];
-          return { savedSpots: next };
-        }),
+      // Never un-visits its destination or country (see withoutSpotRecord).
+      unsaveSpot: (spotId) => set((s) => withoutSpotRecord(s, spotId)),
 
       // ── Countries ────────────────────────────────────────────────────────
       // Merges with any existing record (e.g. existing notes) rather than replacing it
@@ -154,9 +152,13 @@ export const useStore = create<AppState>()(
         set((s) => ({
           savedCountries: {
             ...s.savedCountries,
-            [countryCode]: { ...s.savedCountries[countryCode], ...update },
+            [countryCode]: { ...s.savedCountries[countryCode], ...update, countryCode },
           },
         })),
+
+      unvisitSpot: (spotId) => set((s) => withoutSpot(s, spotId)),
+      unvisitDestination: (destinationId) => set((s) => withoutDestination(s, destinationId)),
+      unvisitCountry: (countryCode) => set((s) => withoutCountry(s, countryCode)),
 
       selectDestination: (id) => set({ selectedDestinationId: id }),
       setUserName: (name) => set({ userName: name }),
@@ -187,6 +189,22 @@ export const useStore = create<AppState>()(
         if (state && !state.recentSearches) {
           state.recentSearches = [];
         }
+        // Records written by a field update before their place was saved could lack their own ids.
+        if (state) {
+          for (const [id, rec] of Object.entries(state.savedSpots)) {
+            if (!rec.spotId || !rec.destinationId) state.savedSpots[id] = { ...rec, spotId: id, destinationId: rec.destinationId || (SPOT_DEST_ID.get(id) ?? '') };
+          }
+          for (const [id, rec] of Object.entries(state.savedDestinations)) {
+            if (!rec.destinationId || !rec.type) state.savedDestinations[id] = { ...rec, destinationId: id, type: 'visited' };
+          }
+        }
+        // Logs that ticking a place used to create, still untouched, are removed — ticking now only
+        // marks the place visited (see withoutAutoLogs).
+        if (state) {
+          const r = withoutAutoLogs(state);
+          state.savedDestinations = r.savedDestinations;
+          state.savedSpots = r.savedSpots;
+        }
       },
     }
   )
@@ -215,18 +233,34 @@ export function useDestinationPhotos(destinationId: string): PhotoEntry[] {
   }, [savedDestinations, savedSpots, destinationId]);
 }
 
+// Visited status for every spot, destination and country, derived from what's logged — the one place
+// the app gets it from (see utils/visitStatus.ts). Built once per change to the saved records and
+// shared by every caller, so a list of cards each asking for it doesn't each rebuild it.
+let visitIndexCache: { inputs: unknown[]; index: VisitIndex } | null = null;
+function getVisitIndex(s: AppState): VisitIndex {
+  const inputs = [s.savedDestinations, s.savedSpots, s.savedCountries];
+  if (!visitIndexCache || inputs.some((x, i) => x !== visitIndexCache!.inputs[i])) {
+    visitIndexCache = { inputs, index: buildVisitIndex(s.savedDestinations, s.savedSpots, s.savedCountries) };
+  }
+  return visitIndexCache.index;
+}
+export function useVisitIndex(): VisitIndex {
+  return useStore(getVisitIndex);
+}
+
 export function useStats() {
   const savedDestinations = useStore((s) => s.savedDestinations);
+  const index = useVisitIndex();
 
   return useMemo(() => {
     const entries = Object.values(savedDestinations);
     const visitedEntries = entries.filter((e) => e.type === 'visited');
 
-    const visitedDests = visitedEntries
-      .map((e) => DESTINATIONS.find((d) => d.id === e.destinationId))
-      .filter(Boolean) as typeof DESTINATIONS;
+    // Visited destinations/countries per the visit index — including ones visited only through a spot
+    // or a country trip — rather than only destinations with their own record.
+    const visitedDests = DESTINATIONS.filter((d) => index.isDestVisited(d.id));
 
-    const countryCodes = new Set(visitedDests.map((d) => d.countryCode));
+    const countryCodes = index.visitedCountryCodes;
     const continents = new Set<Continent>(visitedDests.map((d) => d.continent));
 
     const countryCount: Record<string, number> = {};
@@ -257,7 +291,8 @@ export function useStats() {
     return {
       totalDestinations: visitedDests.length,
       totalVisited: visitedDests.length,
-      totalSpots: SPOTS.filter(s => new Set(visitedDests.map(d => d.id)).has(s.destinationId)).length,
+      // Spots actually logged (their own visit, or ticked on a trip) — not every spot of a visited destination.
+      totalSpots: index.visitedSpotIds.size,
       totalCountries: countryCodes.size,
       visitedCountryCodes: [...countryCodes],
       continentsVisited: [...continents] as Continent[],
@@ -268,5 +303,5 @@ export function useStats() {
       firstVisitDate: visitDates[0] ?? '',
       mostRecentVisitDate: visitDates[visitDates.length - 1] ?? '',
     };
-  }, [savedDestinations]);
+  }, [savedDestinations, index]);
 }

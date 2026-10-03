@@ -27,11 +27,12 @@ import type { SharedValue } from 'react-native-reanimated';
 import { Gesture, GestureDetector, ScrollView } from 'react-native-gesture-handler';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { X, Check, Calendar, MapPin, Camera, Pencil, Plus, ChevronRight, ChevronDown, Map } from 'lucide-react-native';
-import { useStore } from '../../store';
+import { useStore, useVisitIndex } from '../../store';
+import { destinationTripsOf, removeDestinationMessage, visitedSpotsIn } from '../../utils/visitStatus';
 import SpotCard from './SpotCard';
 import type { Destination, PhotoEntry, Visit, GoodToKnowTip } from '../../types';
 import { SPOTS, type Spot } from '../../data/spots';
-import { photoCache, getOrFetchWikiThumbnail, fetchCommonsPhoto } from '../../utils/photoCache';
+import { photoCache, thumbCache, getOrFetchWikiThumbnail, fetchCommonsPhoto, HEADER_PX } from '../../utils/photoCache';
 import CircleFlag from '../CircleFlag';
 import { sheetPose } from './sheetPose';
 import EntityPhoto from './EntityPhoto';
@@ -218,6 +219,21 @@ function whySnapOffsets(count: number): number[] {
   });
 }
 
+// The slot order for `count` reasons, as indices into the reasons list: the #1 reason in the middle
+// slot (the card the carousel opens on), then the next ones alternating to its left and right —
+// for three, [2nd, 1st, 3rd].
+function centeredOrder(count: number): number[] {
+  const mid = Math.floor(count / 2);
+  const slots: number[] = new Array(count);
+  let rank = 0;
+  slots[mid] = rank++;
+  for (let d = 1; rank < count; d++) {
+    if (mid - d >= 0 && rank < count) slots[mid - d] = rank++;
+    if (mid + d < count && rank < count) slots[mid + d] = rank++;
+  }
+  return slots;
+}
+
 function WhyVisitCarousel({ destination, scrollRef }: {
   destination: Destination;
   scrollRef?: React.RefObject<ScrollView | null>;
@@ -239,7 +255,9 @@ function WhyVisitCarousel({ destination, scrollRef }: {
       style={st.whyScroll}
       contentContainerStyle={st.whyRow}
     >
-      {reasons.map((reason, i) => {
+      {/* The #1 reason sits in the middle slot, where the carousel opens (see centeredOrder). */}
+      {centeredOrder(reasons.length).map(i => {
+        const reason = reasons[i];
         const file = destination.whyVisitPhotos?.[i];
         return (
           <View key={i} style={st.whyCard}>
@@ -585,16 +603,22 @@ function DestinationSheet({
   const unsaveDestination = useStore(s => s.unsaveDestination);
   const updateSaved       = useStore(s => s.updateSaved);
   const savedSpots        = useStore(s => s.savedSpots);
-  const saveSpotVisited   = useStore(s => s.saveSpotVisited);
+  const unvisitDestination    = useStore(s => s.unvisitDestination);
+  const visitIndex        = useVisitIndex();
 
+  // `saved` is the destination's own record (its own trips) — the only thing this sheet writes.
+  // Visited status also comes through its spots and country trips (see utils/visitStatus.ts).
   const saved      = savedDestinations[destination.id];
   const spots      = SPOTS.filter(s => s.destinationId === destination.id);
-  const isVisited  = saved?.type === 'visited';
+  const isVisited  = visitIndex.isDestVisited(destination.id);
 
   // Drives the standalone per-visit edit sheet for BOTH creating a new visit module
   // ('new') and editing one specific existing module (the Visit object) — never touches
   // any other module's entry in the array either way.
   const [editingVisitModule, setEditingVisitModule] = useState<Visit | 'new' | null>(null);
+  // Set by a trip's Save — once the sheet has its My Visit tab, it switches there and opens fully, so
+  // the saved trip is what's showing as the editor slides away (see the effect by snapToFullRef).
+  const [revealVisit, setRevealVisit] = useState(false);
   const [showClimateDetail, setShowClimateDetail] = useState(false);
   // Which visit's full photo set is open in the standalone gallery page — separate from
   // editingVisitModule (which opens the EDIT sheet) since viewing all photos is read-only and
@@ -609,9 +633,11 @@ function DestinationSheet({
       name: spot.name,
       renderThumb: () => (
         <EntityPhoto
-          cacheKey={`spot_${spot.id}`}
-          cache={photoCache}
-          load={() => getOrFetchWikiThumbnail(`spot_${spot.id}`, photoCache, spot.name, 300)}
+          // Its own small-image key: sharing the spot's header key (spot_<id>) let this 300px copy be
+          // reused as that spot's header, which then looked blurry.
+          cacheKey={`pick_spot_${spot.id}`}
+          cache={thumbCache}
+          load={() => getOrFetchWikiThumbnail(`pick_spot_${spot.id}`, thumbCache, spot.name, 300)}
           placeholderColor="#F3F4F6"
         />
       ),
@@ -632,15 +658,7 @@ function DestinationSheet({
   // Derive visits from store, carrying the old destination-level photos/notes/spots onto
   // the synthesized legacy entry so a pre-redesign visit still shows its content as its
   // own module — editing it migrates those fields onto a real Visit the first time it's saved.
-  const localVisits: Visit[] = saved?.visits
-    ?? (saved?.visitDate
-      ? [{
-          id: 'legacy', startDate: saved.visitDate, photos: saved.photos, notes: saved.notes,
-          spotIds: Object.values(savedSpots)
-            .filter(ss => ss.destinationId === destination.id)
-            .map(ss => ss.spotId),
-        }]
-      : []);
+  const localVisits: Visit[] = useMemo(() => destinationTripsOf(saved, savedSpots), [saved, savedSpots]);
 
   // Saves one visit module — appends a brand new one ('new') or replaces just the matching
   // id in place. Every other entry in the array is copied through untouched either way, so
@@ -648,10 +666,11 @@ function DestinationSheet({
   // Does NOT close the editor itself — VisitModuleSheet auto-commits on every field change,
   // so this fires many times per editing session; only its own Save/X button calls onClose.
   const handleSaveVisitModule = (v: Visit) => {
-    // The destination only actually becomes "visited" here, on a genuine save — not the moment
+    // The destination only gets a record of its own here, on a genuine save — not the moment
     // "Add Visit" was tapped (see handleMarkVisited). updateSaved below patches fields onto an
-    // EXISTING record, so one has to exist first when this is the very first visit.
-    if (!isVisited) saveDestination(destination.id, 'visited', {});
+    // EXISTING record, so one has to exist first when this is the very first trip.
+    if (!saved) saveDestination(destination.id, 'visited', {});
+    setRevealVisit(true);
     const base = localVisits.filter(x => x.id !== 'legacy');
     const idx  = base.findIndex(x => x.id === v.id);
     const updated = idx >= 0 ? base.map(x => x.id === v.id ? v : x) : [...base, v];
@@ -659,17 +678,12 @@ function DestinationSheet({
     updateSaved(destination.id, { visits: updated, visitDate: updated[0]?.startDate });
   };
   const handleDeleteVisitModule = (id: string) => {
-    // Nothing to remove (and nothing to touch in the store) if this destination was never
-    // actually saved as visited in the first place — e.g. Remove Trip on a brand-new visit
-    // that was never saved. Proceeding here would otherwise write a malformed record missing
-    // destinationId/type.
-    if (!isVisited) return;
+    // Nothing to remove (and nothing to touch in the store) without a record of its own — e.g.
+    // Remove Trip on a brand-new trip that was never saved.
+    if (!saved) return;
     const updated = localVisits.filter(v => v.id !== id);
-    // That was the only trip logged for this destination — it's not "visited" anymore, not
-    // just visited-with-zero-trips. Unsaves the destination entirely (also drops the legacy
-    // visitDate/notes/photos fields, if this was that synthesized single-visit entry) rather
-    // than leaving a type:'visited' record with an empty visits array — which would keep the
-    // green "Visited" state and the My Visit tab showing despite nothing actually being logged.
+    // That was the only trip logged for this destination — drops its record (also the legacy
+    // visitDate/notes/photos fields) rather than leaving one with an empty visits array.
     if (updated.length === 0) { unsaveDestination(destination.id); return; }
     updateSaved(destination.id, { visits: updated, visitDate: updated[0]?.startDate });
   };
@@ -875,14 +889,10 @@ function DestinationSheet({
               )}
             </View>
           ) : tab === 'spots' ? (
-            <View style={{ flexDirection:'row', alignItems:'center', gap:6 }}>
-              <Text style={[st.tabBtnTxt, isTabSelected('spots') && st.tabBtnTxtActive]}>Spots</Text>
-              {spots.length > 0 && (
-                <View style={st.tabSpotsBadge}>
-                  <Text style={st.tabSpotsBadgeTxt}>{spots.length}</Text>
-                </View>
-              )}
-            </View>
+            // Count as plain text after the label — "Spots (12)".
+            <Text style={[st.tabBtnTxt, isTabSelected('spots') && st.tabBtnTxtActive]}>
+              Spots{spots.length > 0 ? ` (${spots.length})` : ''}
+            </Text>
           ) : (
             <Text style={[st.tabBtnTxt, isTabSelected(tab) && st.tabBtnTxtActive]}>About</Text>
           )}
@@ -1110,6 +1120,12 @@ function DestinationSheet({
   // Use refs so the gesture worklets (created once) always call the latest version
   const snapToFullRef = useRef(() => {});
   snapToFullRef.current = () => transitionToRef.current('full', 'user');
+  useEffect(() => {
+    if (!revealVisit || !TAB_ORDER.includes('visit')) return;
+    setRevealVisit(false);
+    switchTabRef.current('visit');
+    if (snapStateRef.current !== 'full') snapToFullRef.current();
+  }, [revealVisit, TAB_ORDER]);
   const snapToCollapsedRef = useRef(() => {});
   snapToCollapsedRef.current = () => transitionToRef.current('collapsed', 'user');
   const snapToPeekRef = useRef(() => {});
@@ -1270,14 +1286,15 @@ function DestinationSheet({
   // Actions
   const handleMarkVisited = () => {
     if (isVisited) {
+      // Un-visits it entirely: its own trips, its spots' visits, and its ticks on country trips.
       Alert.alert(
         'Remove visit?',
-        'This will permanently delete your log and notes for this destination.',
+        removeDestinationMessage(destination.name, visitedSpotsIn(useStore.getState(), destination.id)),
         [
           { text: 'Cancel', style: 'cancel' },
           {
             text: 'Remove', style: 'destructive',
-            onPress: () => unsaveDestination(destination.id),
+            onPress: () => unvisitDestination(destination.id),
           },
         ]
       );
@@ -1366,7 +1383,9 @@ function DestinationSheet({
           // scroll content's own trailing space, past the white "content" card, and shows
           // through whenever a tab's content is short enough not to need scrolling past it
           // (most visibly the Spots tab with few spots), where it read as a stray gray strip.
-          contentContainerStyle={{ paddingBottom: insets.bottom + 55, backgroundColor: 'white' }}
+          // flexGrow too: content shorter than the sheet (a short My Visit tab) otherwise ended above
+          // the sheet's bottom and left the gray sheet showing beneath it.
+          contentContainerStyle={{ paddingBottom: insets.bottom + 55, backgroundColor: 'white', flexGrow: 1 }}
           keyboardShouldPersistTaps="handled"
         >
 
@@ -1379,7 +1398,7 @@ function DestinationSheet({
             <EntityPhoto
               cacheKey={destination.id}
               cache={photoCache}
-              load={() => getOrFetchWikiThumbnail(destination.id, photoCache, destination.name, 900)}
+              load={() => getOrFetchWikiThumbnail(destination.id, photoCache, destination.name, HEADER_PX)}
             />
 
             {/* Ambient scrim so text is always legible */}
@@ -1525,6 +1544,7 @@ function DestinationSheet({
                         single module's own card; every sibling module is copied through
                         untouched. Shared with CountrySheet/SpotSheet — see VisitCardList. */}
                     <VisitCardList
+                      defaultTitle={`${destination.name} Trip`}
                       visits={localVisits}
                       onEditVisit={setEditingVisitModule}
                       onNewVisit={() => setEditingVisitModule('new')}
@@ -1602,7 +1622,7 @@ function DestinationSheet({
               instant
               cacheKey={destination.id}
               cache={photoCache}
-              load={() => getOrFetchWikiThumbnail(destination.id, photoCache, destination.name, 900)}
+              load={() => getOrFetchWikiThumbnail(destination.id, photoCache, destination.name, HEADER_PX)}
             />
             <View pointerEvents="none" style={st.peekScrim} />
             <View pointerEvents="none" style={st.peekPillRow}>
@@ -1630,6 +1650,7 @@ function DestinationSheet({
 
       {editingVisitModule !== null && (
         <VisitModuleSheet
+          existingCount={localVisits.length}
           entityName={destination.name}
           visit={editingVisitModule === 'new' ? null : editingVisitModule}
           onSave={handleSaveVisitModule}
@@ -1637,10 +1658,6 @@ function DestinationSheet({
           onClose={() => setEditingVisitModule(null)}
           selectorLabel={spots.length > 0 ? 'Spots Visited' : undefined}
           selectorItems={spots.length > 0 ? spotSelectorItems : undefined}
-          // Checking a spot off marks it visited destination-wide too (consistent with how
-          // "visited" works everywhere else in the app) — unchecking is handled entirely
-          // inside the shared editor itself (removes it from just this visit).
-          onCheckItem={spotId => saveSpotVisited(spotId, destination.id)}
           onRemoveLegacy={() => unsaveDestination(destination.id)}
         />
       )}
@@ -1765,14 +1782,10 @@ const st = StyleSheet.create({
   tabDivider:          { width: StyleSheet.hairlineWidth, marginVertical:14, backgroundColor:'#E5E7EB' },
   tabBtnTxt:           { fontSize:15, fontWeight:'600', color:'#9CA3AF' },
   tabBtnTxtActive:     { color:'#111827' },
-  // Visit and Spots counts share the same plain gray scheme — neither switches color when
-  // its tab is selected.
+  // The My Visits count — plain gray, doesn't switch color when its tab is selected.
   tabVisitBadge:       { minWidth:20, height:20, borderRadius:6, backgroundColor:'#E5E7EB',
                          paddingHorizontal:5, alignItems:'center', justifyContent:'center' },
   tabVisitBadgeTxt:    { fontSize:11, fontWeight:'800', color:'#6B7280', lineHeight:14 },
-  tabSpotsBadge:    { minWidth:20, height:20, borderRadius:6, backgroundColor:'#E5E7EB',
-                      paddingHorizontal:5, alignItems:'center', justifyContent:'center' },
-  tabSpotsBadgeTxt: { fontSize:11, fontWeight:'800', color:'#6B7280', lineHeight:14 },
   // Animated sliding underline — outer track keeps the full per-tab width (for left/width
   // positioning math elsewhere), the visible bar inside it is narrower and centered.
   tabIndicatorTrack: {

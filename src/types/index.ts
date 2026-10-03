@@ -206,7 +206,7 @@ export interface CountryCluster {
   longitude: number;
   count: number;
   minRank: number;
-  visitedCount: number;
+  visitedCount: number; // visited destinations in the country
 }
 
 export interface SavedDestination {

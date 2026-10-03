@@ -7,7 +7,8 @@ import * as Haptics from 'expo-haptics';
 import { CONTINENT_COLORS } from '../../types';
 import type { Destination, SavedDestination } from '../../types';
 import { SPOTS } from '../../data/spots';
-import { photoCache, fetchWikiThumbnail } from '../../utils/photoCache';
+import { useVisitIndex } from '../../store';
+import { photoCache, fetchWikiThumbnail, HEADER_PX } from '../../utils/photoCache';
 import CircleFlag from '../CircleFlag';
 
 interface Props {
@@ -34,7 +35,7 @@ function parseMonthYear(s: string): string | null {
 
 export default function DestinationContextCard({ destination, savedEntry, visible, onOpen }: Props) {
   const spots      = SPOTS.filter(s => s.destinationId === destination.id);
-  const isVisited  = savedEntry?.type === 'visited';
+  const isVisited  = useVisitIndex().isDestVisited(destination.id);
   const color      = CONTINENT_COLORS[destination.continent];
 
   // User visit stats
@@ -49,7 +50,7 @@ export default function DestinationContextCard({ destination, savedEntry, visibl
       setPhotoUrl(photoCache.get(destination.id)!);
       return;
     }
-    fetchWikiThumbnail(destination.name, 900).then(url => {
+    fetchWikiThumbnail(destination.name, HEADER_PX).then(url => {
       if (url) { photoCache.set(destination.id, url); setPhotoUrl(url); }
     });
   }, [destination.id]);

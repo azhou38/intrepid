@@ -4,7 +4,8 @@ import { X } from 'lucide-react-native';
 import CircleFlag from '../CircleFlag';
 import { DESTINATIONS } from '../../data/destinations';
 import { SPOTS, type Spot } from '../../data/spots';
-import type { Destination, SavedDestination, SavedSpot } from '../../types';
+import type { Destination } from '../../types';
+import type { VisitIndex } from '../../utils/visitStatus';
 import type { RecentSearch } from '../../store';
 import { thumbCache, fetchWikiThumbnail } from '../../utils/photoCache';
 
@@ -92,11 +93,10 @@ function resolveRecent(r: RecentSearch): SearchResult | null {
   return spot && destination ? { type: 'spot', spot, destination } : null;
 }
 
-export function computeSuggestions({ recents, view, savedDestinations, savedSpots }: {
+export function computeSuggestions({ recents, view, visitIndex }: {
   recents: RecentSearch[];
   view: MapView | null;
-  savedDestinations: Record<string, SavedDestination>;
-  savedSpots: Record<string, SavedSpot>;
+  visitIndex: VisitIndex;
 }): SearchSection[] {
   const sections: SearchSection[] = [];
 
@@ -115,12 +115,12 @@ export function computeSuggestions({ recents, view, savedDestinations, savedSpot
     if (view.zoom >= ON_MAP_SPOTS_ZOOM) {
       items = SPOTS
         .filter(sp => inView(sp.coordinates))
-        .sort((a, b) => Number(!!savedSpots[a.id]) - Number(!!savedSpots[b.id]) || dist(a.coordinates) - dist(b.coordinates))
+        .sort((a, b) => Number(visitIndex.isSpotVisited(a.id)) - Number(visitIndex.isSpotVisited(b.id)) || dist(a.coordinates) - dist(b.coordinates))
         .map(spot => ({ spot, destination: DESTINATIONS.find(d => d.id === spot.destinationId) }))
         .filter((x): x is { spot: Spot; destination: Destination } => !!x.destination)
         .map(({ spot, destination }): SearchResult => ({ type: 'spot', spot, destination }));
     } else {
-      const visited = (d: Destination) => savedDestinations[d.id]?.type === 'visited';
+      const visited = (d: Destination) => visitIndex.isDestVisited(d.id);
       items = DESTINATIONS
         .filter(d => inView(d.coordinates))
         .sort((a, b) => Number(visited(a)) - Number(visited(b)) || a.rank - b.rank || dist(a.coordinates) - dist(b.coordinates))
