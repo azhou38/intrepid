@@ -20,7 +20,8 @@ export type RecentSearch =
 const MAX_RECENT_SEARCHES = 5;
 const recentKey = (r: RecentSearch) => r.type === 'country' ? `country:${r.countryCode}` : `${r.type}:${r.id}`;
 
-const SPOT_DEST_ID = new Map(SPOTS.map(s => [s.id, s.destinationId]));
+// A spot's parent destination id — undefined for a standalone spot.
+const SPOT_DEST_ID = new Map<string, string | undefined>(SPOTS.map(s => [s.id, s.destinationId]));
 
 function uid() {
   return Math.random().toString(36).slice(2) + Date.now().toString(36);
@@ -37,7 +38,8 @@ interface AppState {
   unsaveDestination: (id: string) => void;
   updateSaved: (id: string, update: Partial<SavedDestination>) => void;
   // Spots. Presence of an entry in savedSpots means "visited".
-  saveSpotVisited: (spotId: string, destinationId: string) => void;
+  // `destinationId` is the spot's parent, absent for a standalone spot.
+  saveSpotVisited: (spotId: string, destinationId?: string) => void;
   updateSpot: (spotId: string, update: Partial<SavedSpot>) => void;
   unsaveSpot: (spotId: string) => void;
   // Whole-country visited tracking — independent of any individual destination's own status.
@@ -121,7 +123,7 @@ export const useStore = create<AppState>()(
             ...s.savedSpots,
             [spotId]: {
               ...s.savedSpots[spotId], ...update,
-              spotId, destinationId: s.savedSpots[spotId]?.destinationId ?? SPOT_DEST_ID.get(spotId) ?? '',
+              spotId, destinationId: s.savedSpots[spotId]?.destinationId ?? SPOT_DEST_ID.get(spotId),
             },
           },
         })),
@@ -192,7 +194,7 @@ export const useStore = create<AppState>()(
         // Records written by a field update before their place was saved could lack their own ids.
         if (state) {
           for (const [id, rec] of Object.entries(state.savedSpots)) {
-            if (!rec.spotId || !rec.destinationId) state.savedSpots[id] = { ...rec, spotId: id, destinationId: rec.destinationId || (SPOT_DEST_ID.get(id) ?? '') };
+            if (!rec.spotId) state.savedSpots[id] = { ...rec, spotId: id, destinationId: rec.destinationId ?? SPOT_DEST_ID.get(id) };
           }
           for (const [id, rec] of Object.entries(state.savedDestinations)) {
             if (!rec.destinationId || !rec.type) state.savedDestinations[id] = { ...rec, destinationId: id, type: 'visited' };
@@ -222,11 +224,12 @@ export function useDestinationPhotos(destinationId: string): PhotoEntry[] {
   return useMemo(() => {
     const own = savedDestinations[destinationId]?.photos ?? [];
     const spotPhotos: PhotoEntry[] = [];
-    for (const ss of Object.values(savedSpots)) {
-      if (ss.destinationId !== destinationId || !ss.photos?.length) continue;
-      const spot = SPOTS.find((sp) => sp.id === ss.spotId);
+    for (const [key, ss] of Object.entries(savedSpots)) {
+      // By the record's key (the spot's id), not the destinationId field inside it, which a standalone spot lacks.
+      if (SPOT_DEST_ID.get(key) !== destinationId || !ss.photos?.length) continue;
+      const spot = SPOTS.find((sp) => sp.id === key);
       for (const p of ss.photos) {
-        spotPhotos.push({ ...p, spotId: ss.spotId, spotName: p.spotName ?? spot?.name });
+        spotPhotos.push({ ...p, spotId: key, spotName: p.spotName ?? spot?.name });
       }
     }
     return [...own, ...spotPhotos];

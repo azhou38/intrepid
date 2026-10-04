@@ -22,6 +22,15 @@ const { width: W, height: H } = Dimensions.get('window');
 // us pre-tick anything in its own UI) doesn't add it twice. Matched by assetId when both sides
 // have one (the reliable media-library identity — `uri` alone can differ between two picks of
 // the very same photo), falling back to `uri` only when assetId is unavailable on either side.
+// A place's name is always written out in full, wrapping onto new lines rather than ending in "…" (only the thin
+// bottom-screen peek strips, which have room for one line, still truncate). To keep a long name from filling the
+// card or header it sits in, the font steps down with its length: `size` is the base size, `breaks` the name lengths
+// (in characters) after which it steps to the next of `sizes` (`[size, size-?, …]`). Lines are sized by lineHeight
+// so a wrapped name stays compact.
+export function nameFontSize(name: string, sizes: [number, number, number], breaks: [number, number]): number {
+  return name.length <= breaks[0] ? sizes[0] : name.length <= breaks[1] ? sizes[1] : sizes[2];
+}
+
 // Mount-time deferral for a sheet's heavy, off-screen content (its full-screen tab panels). A sheet
 // opens at half-screen or peek, where that content sits below the visible part of the sheet, and it
 // mounts in the busiest commit there is — the one that swaps sheets while the map re-plans its pins

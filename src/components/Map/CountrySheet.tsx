@@ -151,6 +151,7 @@ const COUNTRY_FACTS: Record<string, { population: string; languages: string[]; c
   CZ: { population: '10.5 million', languages: ['Czech'],                                         currency: 'Czech Koruna',       area: '78,870 km²',    capital: 'Prague' },
   JP: { population: '124 million',  languages: ['Japanese'],                                      currency: 'Japanese Yen',       area: '377,970 km²',   capital: 'Tokyo' },
   AU: { population: '26 million',   languages: ['English'],                                       currency: 'Australian Dollar',  area: '7,692,000 km²', capital: 'Canberra' },
+  NZ: { population: '5.3 million',  languages: ['English', 'Māori', 'NZ Sign Language'],         currency: 'New Zealand Dollar', area: '268,021 km²',   capital: 'Wellington' },
 };
 
 type CountryTab = 'visit' | 'about' | 'destinations';
@@ -228,8 +229,9 @@ function CountrySheet({
 
   const spotsCount = useMemo(() => {
     const destIds = new Set(dests.map(d => d.id));
-    return SPOTS.filter(s => destIds.has(s.destinationId)).length;
-  }, [dests]);
+    // Spots of its destinations, plus any standalone spot in the country.
+    return SPOTS.filter(s => (s.destinationId ? destIds.has(s.destinationId) : s.countryCode === cluster.countryCode)).length;
+  }, [dests, cluster.countryCode]);
 
   const savedCountry       = savedCountries[cluster.countryCode];
   // Visited if this country has trips of its own or any of its destinations is visited (see

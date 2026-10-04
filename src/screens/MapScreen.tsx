@@ -105,7 +105,7 @@ import type { Destination, CountryCluster } from '../types';
 import type GeoJSON from 'geojson';
 import { getCountryRegion, getCountryBounds, getCountryCenter, getCountryPopularity } from '../utils/countryBounds';
 import { DESTINATIONS } from '../data/destinations';
-import { SPOTS, type Spot } from '../data/spots';
+import { SPOTS, STANDALONE_SPOT_SPAN_KM, spotCountry, spotCountryCode, spotDestination, type Spot } from '../data/spots';
 import DestinationSheet from '../components/Map/DestinationSheet';
 import CircleFlag from '../components/CircleFlag';
 import PinPhoto from '../components/Map/PinPhoto';
@@ -572,7 +572,7 @@ const DEST_SPOT_RADIUS: Record<string, number> = (() => {
   const out: Record<string, number> = {};
   for (const s of SPOTS) {
     const d = DESTINATIONS.find(dd => dd.id === s.destinationId);
-    if (!d) continue;
+    if (!d || !s.destinationId) continue;   // a standalone spot has no destination whose marker it replaces
     const dLat = s.coordinates.latitude - d.coordinates.latitude;
     const dLng = (s.coordinates.longitude - d.coordinates.longitude)
       * Math.cos((d.coordinates.latitude * Math.PI) / 180);
@@ -813,7 +813,7 @@ const KM_PER_DEG_LAT = 111;
 // to a latitudeDelta. Replaces a single category-wide constant that put every city at the same
 // zoom regardless of how large its own metro area actually is (Tokyo and Paris landed far too
 // zoomed in at the same depth as a small town).
-function getDestZoomDelta(dest: Destination): number {
+function getDestZoomDelta(dest: Pick<Destination, 'defaultZoomSpanKm'>): number {
   return dest.defaultZoomSpanKm / KM_PER_DEG_LAT;
 }
 
@@ -822,6 +822,9 @@ function getDestZoomDelta(dest: Destination): number {
 const DEST_ZOOM_DELTA_BY_ID: Record<string, number> = (() => {
   const out: Record<string, number> = {};
   for (const d of DESTINATIONS) out[d.id] = getDestZoomDelta(d);
+  // A standalone spot is keyed by its own id: it has no destination, so it is its own "parent" for the pin
+  // handoff — its pin appears once the camera is at or past this span.
+  for (const s of SPOTS) if (!s.destinationId) out[s.id] = STANDALONE_SPOT_SPAN_KM / KM_PER_DEG_LAT;
   return out;
 })();
 // The same thresholds expressed as zoom LEVELS rather than latitude deltas — camZoom (the
@@ -849,6 +852,10 @@ function isPastDestDefaultZoom(destId: string, camZoom: number): boolean {
   const level = DEST_ZOOM_LEVEL_BY_ID[destId];
   return level !== undefined && camZoom >= level - ZOOM_EPSILON;
 }
+// The key a spot's pin handoff is tracked under: its destination's id, or its own id when standalone.
+const spotParentKey = (s: Spot) => s.destinationId ?? s.id;
+// The area a standalone spot is framed by (it has no destination to supply one).
+const standaloneSpotArea = (s: Spot) => ({ coordinates: s.coordinates, defaultZoomSpanKm: STANDALONE_SPOT_SPAN_KM });
 
 
 // Returns the SAME Set/array instance as last time whenever its contents haven't changed. The
@@ -907,7 +914,7 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   const visitedSpotCountByDest = useMemo(() => {
     const counts: Record<string, number> = {};
     for (const sp of SPOTS) {
-      if (visitIndex.isSpotVisited(sp.id)) counts[sp.destinationId] = (counts[sp.destinationId] ?? 0) + 1;
+      if (sp.destinationId && visitIndex.isSpotVisited(sp.id)) counts[sp.destinationId] = (counts[sp.destinationId] ?? 0) + 1;
     }
     return counts;
   }, [visitIndex]);
@@ -1429,10 +1436,30 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // region.longitudeDelta, which the 3D globe inflates to most of the hemisphere at wide
   // zooms (see camZoom's comment). min() keeps the two in agreement at flat/deep zooms
   // (where bounds are accurate) and guards the zoom=0 initial state.
+  // LOOK-AHEAD while a close zooms out. Closing a destination/country/spot flies the camera to a known, wider view
+  // over ~600ms, but everything planned from `camZoom` only learns about that zoom as the (heavy) per-frame renders
+  // catch up — in practice after the animation had finished. So the pins the wider view won't have stayed on screen,
+  // piled on top of each other, then faded out once the camera had settled. For the duration of the move, photo-pin /
+  // spot / rank planning therefore reads the TARGET zoom (planZoom) instead: the pins that don't belong there start
+  // their (native-driven) fade on the very first frame and are mostly gone by the time the map is crowded. Cleared on
+  // the first idle, a user gesture, a new selection, or a safety timer — see beginClosePlan / releaseHeldSelection.
+  // Country pills deliberately keep the live zoom: they belong to the wider view and would otherwise pop in over a
+  // still zoomed-in map.
+  const planZoomTargetRef = useRef<number | null>(null);
+  if (selectedCountry || selectedDest) planZoomTargetRef.current = null;
+  const planZoomTarget = planZoomTargetRef.current;
+  const planZoom = planZoomTarget !== null ? Math.min(camZoom, planZoomTarget) : camZoom;
+  // The bounds-derived span lags the same way, so it's ignored while looking ahead.
+  const planRegionLng = planZoomTarget !== null ? Infinity : region.longitudeDelta;
   const planLngDelta = useMemo(() => Math.min(
-    region.longitudeDelta,
-    SCREEN_W_GLOBAL * 360 / (512 * Math.pow(2, camZoom)),
-  ), [region.longitudeDelta, camZoom]);
+    planRegionLng,
+    SCREEN_W_GLOBAL * 360 / (512 * Math.pow(2, planZoom)),
+  ), [planRegionLng, planZoom]);
+  // pillVisibleLngDelta (below), looking ahead — for the photo-pin plan only.
+  const pillPlanLngDelta = useMemo(() => Math.min(
+    planRegionLng,
+    SCREEN_W_GLOBAL * 360 / (256 * Math.pow(2, planZoom)),
+  ), [planRegionLng, planZoom]);
 
   // The TRUE visible span (256-convention zoom mapping, which matches what's actually on
   // screen) — used ONLY for the country-pill default-view cutoff, where "has the user
@@ -1515,15 +1542,40 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // back in as the camera caught up — a flash. Here the planning keeps seeing the last selection through a close, and
   // lets go on the first map idle (the zoom-out has settled) or the first map gesture, so it re-plans once at the
   // settled zoom. Any new selection applies immediately.
+  // A close that zooms OUT doesn't wait: beginClosePlan plans for the wider view from the first frame and drops the
+  // selection at once (see planZoomTarget), so the pins that don't belong there fade during the zoom. The hold above
+  // remains for a close that stays put or zooms in.
   const heldSelRef = useRef<{ country: CountryCluster | null; dest: Destination | null }>({ country: null, dest: null });
   const [, setHeldSelTick] = useState(0);
   if (selectedCountry || selectedDest) heldSelRef.current = { country: selectedCountry, dest: selectedDest };
   const planCountry = selectedCountry ?? heldSelRef.current.country;
   const planDest = selectedDest ?? heldSelRef.current.dest;
+  const planZoomTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const releaseHeldSelection = useCallback(() => {
-    if (!heldSelRef.current.country && !heldSelRef.current.dest) return;
+    const hadTarget = planZoomTargetRef.current !== null;
+    if (!heldSelRef.current.country && !heldSelRef.current.dest && !hadTarget) return;
     if (selectedCountryRef.current || selectedDestRef.current) return;
+    planZoomTargetRef.current = null;
+    if (planZoomTimerRef.current) { clearTimeout(planZoomTimerRef.current); planZoomTimerRef.current = null; }
     heldSelRef.current = { country: null, dest: null };
+    setHeldSelTick(t => t + 1);
+  }, []);
+  // A close that zooms OUT to `targetZoom` over `durationMs`: plan for the wider view from the first frame (see
+  // planZoomTarget) and let go of the closed selection at once — planning at the final zoom needs no hold to avoid the
+  // flash the hold exists for, since the plan no longer changes as the camera catches up. A close that doesn't zoom out
+  // keeps the old behaviour (hold, then release at idle).
+  const beginClosePlan = useCallback((targetZoom: number, durationMs: number) => {
+    if (targetZoom >= camZoomRef.current - ZOOM_EPSILON) return;
+    planZoomTargetRef.current = targetZoom;
+    heldSelRef.current = { country: null, dest: null };
+    if (planZoomTimerRef.current) clearTimeout(planZoomTimerRef.current);
+    // Safety net if no idle ever arrives (the move was cancelled or replaced).
+    planZoomTimerRef.current = setTimeout(() => {
+      planZoomTimerRef.current = null;
+      if (planZoomTargetRef.current === null) return;
+      planZoomTargetRef.current = null;
+      setHeldSelTick(t => t + 1);
+    }, durationMs + 800);
     setHeldSelTick(t => t + 1);
   }, []);
 
@@ -1649,7 +1701,7 @@ const destItems = useMemo((): DestItem[] =>
     // runs ~2x deeper than reality, so two pins the plan thought 60pt apart were really 30pt apart and overlapped; Mapbox
     // then hid one of them natively — instantly, with no fade. Tested at real distances the plan resolves the overlap
     // itself (the loser becomes a dot, through the normal cross-fade). The promotion GATES below stay on planLngDelta.
-    const pxPerDegLng = SCREEN_W / pillVisibleLngDelta;
+    const pxPerDegLng = SCREEN_W / pillPlanLngDelta;
 
     // Plan over the pan-invariant ELIGIBLE set (not the viewport-culled render set), so the
     // greedy collision resolution sees a stable roster while panning.
@@ -1688,7 +1740,7 @@ const destItems = useMemo((): DestItem[] =>
       // pill was already gone (e.g. Los Angeles/Grand Canyon still dots with the western
       // US filling the screen). Eligibility (visibleRank/saved) and the photo-vs-photo and
       // pill collision rules still apply on top.
-      if (pillVisibleLngDelta < getCountryPillCutoffLngDelta(d.countryCode)) return true;
+      if (pillPlanLngDelta < getCountryPillCutoffLngDelta(d.countryCode)) return true;
       const effRank = Math.max(1, d.rank - (visitIndex.isDestVisited(d.id) ? 1 : 0));
       return panLatDelta <= (PROMOTE_LATDELTA_BY_RANK[effRank] ?? 2.5);
     };
@@ -1757,7 +1809,7 @@ const destItems = useMemo((): DestItem[] =>
     // Pure function of zoom (planLngDelta) + eligible set + selection + saved state +
     // the (equally pan-invariant) country pill plan.
     // No camera centre → recompute produces an identical plan while panning at fixed zoom.
-  }, [eligibleDests, planLngDelta, pillVisibleLngDelta, planCountry, planDest, selectedSpot, visitIndex, countryPills]);
+  }, [eligibleDests, planLngDelta, pillPlanLngDelta, planCountry, planDest, selectedSpot, visitIndex, countryPills]);
 
   // Stamps are rendered via CircleLayer (not MarkerView) so Mapbox renders all of them
   // regardless of proximity. Every filter-passing destination gets a stamp — INCLUDING ones
@@ -1804,10 +1856,10 @@ const destItems = useMemo((): DestItem[] =>
   const zoomedPastDefaultIdsRaw = useMemo(() => {
     const ids = new Set<string>();
     for (const d of DESTINATIONS) {
-      if (isPastDestDefaultZoom(d.id, camZoom)) ids.add(d.id);
+      if (isPastDestDefaultZoom(d.id, planZoom)) ids.add(d.id);
     }
     return ids;
-  }, [camZoom]);
+  }, [planZoom]);
   const zoomedPastDefaultIds = useStableSet(zoomedPastDefaultIdsRaw);
   const hiddenDestIdsRaw = useMemo(() => {
     if (zoomedPastDefaultIds.size === 0) return zoomedIntoDestIds;
@@ -1929,10 +1981,29 @@ const destItems = useMemo((): DestItem[] =>
 
   // All spots in the selected destination — the set the spot carousel pages through.
   const spotsInDest = useMemo(
-    () => (selectedDest ? SPOTS.filter(s => s.destinationId === selectedDest.id) : []),
+    () => (selectedDest ? SPOTS.filter(s => spotParentKey(s) === selectedDest.id) : []),
     [selectedDest],
   );
 
+  // The spots the spot sheet's carousel pages through: the selected spot's destination's, or just the spot itself when
+  // it's standalone (it has no destination, so nothing to page through). Follows the SPOT, not selectedDest, which can
+  // be a different destination the user came from.
+  const selectedSpotDestId = selectedSpot?.destinationId;
+  const carouselSpots = useMemo(
+    () => selectedSpotDestId ? SPOTS.filter(s => s.destinationId === selectedSpotDestId) : selectedSpot ? [selectedSpot] : [],
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [selectedSpotDestId, selectedSpotDestId ? null : selectedSpot?.id],
+  );
+
+  // What the breadcrumb names as "where you are": the selected destination, or — for a standalone spot, which has no
+  // destination — the spot itself under its own country.
+  const crumb = (() => {
+    if (selectedSpot && !selectedSpot.destinationId) {
+      const countryCode = spotCountryCode(selectedSpot), country = spotCountry(selectedSpot);
+      return countryCode && country ? { name: selectedSpot.name, country, countryCode } : null;
+    }
+    return selectedDest ? { name: selectedDest.name, country: selectedDest.country, countryCode: selectedDest.countryCode } : null;
+  })();
   const visibleSpots = useMemo(() => {
     // Coarse OUTER gate: is the camera at or past ANY destination's own default zoom at all?
     // (MIN_DEST_ZOOM_LEVEL is the loosest of the 45 — the earliest any destination's spots
@@ -1941,7 +2012,7 @@ const destItems = useMemo((): DestItem[] =>
     // (isPastDestDefaultZoom for spotsInDest, and per spot for others) — so a tighter
     // destination doesn't show its pins early just because some other, wider one is already
     // past ITS OWN threshold.
-    const belowSpotZoom = camZoom >= MIN_DEST_ZOOM_LEVEL - ZOOM_EPSILON;
+    const belowSpotZoom = planZoom >= MIN_DEST_ZOOM_LEVEL - ZOOM_EPSILON;
 
     // While a destination is selected — its own sheet open, or drilled into one of its
     // spots — show that destination's full, small, static spot set rather than a live
@@ -1968,7 +2039,7 @@ const destItems = useMemo((): DestItem[] =>
     // together with no gap and no overlap. belowSpotZoom above is only the coarse outer gate
     // (loosened for OTHER, possibly-wider destinations) and must not let a tighter selected
     // destination's pins appear early just because something else passed that outer check.
-    const selectedBelowOwnZoom = !!selectedDest && isPastDestDefaultZoom(selectedDest.id, camZoom);
+    const selectedBelowOwnZoom = !!selectedDest && isPastDestDefaultZoom(selectedDest.id, planZoom);
 
     const others: Spot[] = [];
     {
@@ -1979,11 +2050,11 @@ const destItems = useMemo((): DestItem[] =>
       const minLng = longitude - longitudeDelta * (0.5 + pad);
       const maxLng = longitude + longitudeDelta * (0.5 + pad);
       for (const s of SPOTS) {
-        if (selectedDest && s.destinationId === selectedDest.id) continue;
+        if (selectedDest && spotParentKey(s) === selectedDest.id) continue;
         // Each OTHER destination's spots only show at and past THAT destination's own default
         // zoom — same reasoning as selectedBelowOwnZoom above, just per-spot since there's no
         // single "selected" destination to read the threshold from here.
-        if (!isPastDestDefaultZoom(s.destinationId, camZoom)) continue;
+        if (!isPastDestDefaultZoom(spotParentKey(s), planZoom)) continue;
         const { latitude: lat, longitude: lng } = s.coordinates;
         if (lat >= minLat && lat <= maxLat && lng >= minLng && lng <= maxLng) others.push(s);
       }
@@ -1991,7 +2062,7 @@ const destItems = useMemo((): DestItem[] =>
     const result = selectedDest && selectedBelowOwnZoom ? [...spotsInDest, ...others] : others;
     if (selectedSpot && !result.some(sp => sp.id === selectedSpot.id)) result.push(selectedSpot);
     return result;
-  }, [region, camZoom, selectedSpot, selectedDest, spotsInDest]);
+  }, [region, planZoom, selectedSpot, selectedDest, spotsInDest]);
   // Exit-fade tracking for spot pins (same treatment as pills/photos): pins leaving the
   // set linger for PIN_EXIT_MS fading out, new ones mount at 0 and fade in.
   const renderedSpots = useExitingItems(useStableList(visibleSpots, s => s.id), s => s.id, HANDOFF_FADE_MS);
@@ -2386,7 +2457,8 @@ const destItems = useMemo((): DestItem[] =>
   //   • 'full'    — sheet in bottom-screen/peek. Window runs to the top of the peek strip.
   // The camera fitDestinationDefaultView sends the map to — see its comment for the framing math.
   const destDefaultCamera = useCallback((
-    dest: Destination,
+    // A destination, or anything shaped like one for framing (a standalone spot's area: see standaloneSpotArea).
+    dest: Pick<Destination, 'coordinates' | 'defaultZoomSpanKm'>,
     framing: 'topHalf' | 'full',
     zoomFactor = 1,
   ) => {
@@ -2651,24 +2723,33 @@ const destItems = useMemo((): DestItem[] =>
 
   // ── Spot selection ──────────────────────────────────────────────────────────
   const handleSpotPress = useCallback((spot: Spot) => {
-    const dest = DESTINATIONS.find(d => d.id === spot.destinationId);
-    if (!dest) return;
+    // Its destination — undefined for a STANDALONE spot, which has none and needs none selected.
+    const dest = spotDestination(spot);
+    const country = spotCountry(spot);
+    if (!dest && !country) return;
     // Provenance: entered from an open destination context → back goes up to it. Entered by
     // free-zooming to spot level and tapping a teardrop with nothing selected → the X pill
     // zooms out to the destination's default view instead (the parent destination still gets
     // selected below as internal bookkeeping — SpotSheet needs it — but the user never
     // visited it, so back must not open its sheet). handleSearchSelect overrides after.
+    // A standalone spot opened while a destination is selected goes back up to that destination (it is what the user
+    // came from), with the destination left selected; with nothing selected it is entered from the map.
     if (!selectedDestRef.current) {
       setSpotOrigin('map');
     } else {
       setSpotOrigin('destination');
     }
     if (zoomTimerRef.current) { clearTimeout(zoomTimerRef.current); zoomTimerRef.current = null; }
-    // Keep the parent destination selected so the country/destination breadcrumb stays present.
-    if (selectedDestRef.current?.id !== dest.id) {
-      dropCountryIfForeign(dest.country);
-      selectedDestRef.current = dest;
-      setSelectedDest(dest);
+    // Keep the parent destination selected so the country/destination breadcrumb stays present. A standalone spot has
+    // none to select: it only drops a selected country that isn't its own.
+    if (dest) {
+      if (selectedDestRef.current?.id !== dest.id) {
+        dropCountryIfForeign(dest.country);
+        selectedDestRef.current = dest;
+        setSelectedDest(dest);
+      }
+    } else {
+      dropCountryIfForeign(country!);
     }
     // Re-tapping the ALREADY-focused spot's own pin (e.g. after panning away, which auto-peeks
     // the sheet) doesn't change spotFocusId — SpotSheet's carousel-jump effect is keyed off
@@ -2735,8 +2816,9 @@ const destItems = useMemo((): DestItem[] =>
   // The Explore sheet remounts (slide-up entrance) once the deferred clear below lands.
   const handleCloseSpotToDestinationView = useCallback(() => {
     const spot = selectedSpotRef.current;
-    const dest = selectedDestRef.current
-      ?? (spot ? DESTINATIONS.find(d => d.id === spot.destinationId) : undefined);
+    // A standalone spot closes to ITS OWN area, never to whichever unrelated destination happens to be selected.
+    const standalone = spot && !spot.destinationId ? spot : null;
+    const dest = standalone ? undefined : (selectedDestRef.current ?? (spot ? spotDestination(spot) : undefined));
     if (zoomTimerRef.current) { clearTimeout(zoomTimerRef.current); zoomTimerRef.current = null; }
     selectedSpotRef.current = null;
     setSelectedSpot(null);
@@ -2756,11 +2838,23 @@ const destItems = useMemo((): DestItem[] =>
     // Target: the destination's default view — unless already zoomed out past it (see
     // isZoomedOutBeyond).
     if (dest && !isZoomedOutBeyond(latDeltaToZoom(getDestZoomDelta(dest)))) {
+      beginClosePlan(destDefaultCamera(dest, 'topHalf').zoom, 500);   // see planZoomTarget (a no-op unless this zooms out)
       fitDestinationDefaultView(dest, 'easeTo', 'topHalf');
+    } else if (standalone) {
+      const cam = destDefaultCamera(standaloneSpotArea(standalone), 'topHalf');
+      if (!isZoomedOutBeyond(cam.zoom)) {
+        beginClosePlan(cam.zoom, 500);
+        beginProgrammaticCameraMove(500);
+        cameraRef.current?.setCamera({
+          centerCoordinate: [cam.lng, cam.lat], zoomLevel: cam.zoom, animationDuration: 500, animationMode: 'easeTo',
+        });
+      } else {
+        releaseHeldSelection();
+      }
     } else {
       releaseHeldSelection();
     }
-  }, [showBreadcrumb, fitDestinationDefaultView, isZoomedOutBeyond, releaseHeldSelection]);
+  }, [showBreadcrumb, fitDestinationDefaultView, isZoomedOutBeyond, releaseHeldSelection, beginClosePlan, destDefaultCamera, beginProgrammaticCameraMove]);
 
   // Closing the spot sheet INTO its parent destination sheet (still selected), re-centering
   // the camera on the destination's default zoomed-in view. `toCollapsed` (set when this
@@ -2851,14 +2945,14 @@ const destItems = useMemo((): DestItem[] =>
 
 
   const handleZoomToCountry = useCallback(() => {
-    if (!selectedDest) return;
-    const dests  = DESTINATIONS.filter(d => d.country === selectedDest.country);
-    const center = getCountryCenter(selectedDest.countryCode);
+    if (!crumb) return;
+    const dests  = DESTINATIONS.filter(d => d.country === crumb.country);
+    const center = getCountryCenter(crumb.countryCode);
     const cluster: CountryCluster = {
-      country:      selectedDest.country,
-      countryCode:  selectedDest.countryCode,
-      latitude:     center?.latitude  ?? selectedDest.coordinates.latitude,
-      longitude:    center?.longitude ?? selectedDest.coordinates.longitude,
+      country:      crumb.country,
+      countryCode:  crumb.countryCode,
+      latitude:     center?.latitude  ?? selectedSpot?.coordinates.latitude ?? selectedDest!.coordinates.latitude,
+      longitude:    center?.longitude ?? selectedSpot?.coordinates.longitude ?? selectedDest!.coordinates.longitude,
       count:        dests.length,
       minRank:      Math.min(...dests.map(d => d.rank)),
       visitedCount: dests.filter(d => visitIndex.isDestVisited(d.id)).length,
@@ -2869,7 +2963,7 @@ const destItems = useMemo((): DestItem[] =>
     // Not openPeeked: choosing the country in the breadcrumb brings its sheet up to half-screen (and frames the map
     // for the top half), like selecting the country any other way — it used to stay at the bottom of the screen.
     handleCountryPress(cluster, 'flyTo', false);
-  }, [selectedDest, handleCountryPress, visitIndex]);
+  }, [crumb, selectedSpot, selectedDest, handleCountryPress, visitIndex]);
 
   // Provenance back for a laterally-entered destination ('map'/'search' origin, i.e. the back
   // pill shows a bare X rather than "‹ Country"): tear down the whole selection stack, and
@@ -2909,8 +3003,11 @@ const destItems = useMemo((): DestItem[] =>
       releaseHeldSelection();
       return;
     }
+    // Plan for the zoomed-out view from the first frame, so the pins it won't have fade out DURING the zoom (see
+    // planZoomTarget) rather than after it settles.
+    beginClosePlan(destDefaultCamera(dest, 'full', 0.5).zoom, 600);
     fitDestinationDefaultView(dest, 'easeTo', 'full', 600, 0.5);
-  }, [selectedDest, showBreadcrumb, fitDestinationDefaultView, isZoomedOutBeyond, releaseHeldSelection]);
+  }, [selectedDest, showBreadcrumb, fitDestinationDefaultView, isZoomedOutBeyond, releaseHeldSelection, beginClosePlan, destDefaultCamera]);
 
   // Closing the destination sheet INTO its country view. `toCollapsed` (set when this
   // fires from a swipe-down while the destination sheet was itself collapsed) lands the
@@ -2974,6 +3071,15 @@ const destItems = useMemo((): DestItem[] =>
   }, [fitCountryDefaultView]);
 
   const handleResetToDest = useCallback(() => {
+    // A standalone spot has no destination: this segment recentres on the spot instead.
+    if (selectedSpot && !selectedSpot.destinationId) {
+      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+      suppressPeekPushRef.current = true;
+      if (suppressPeekPushTimerRef.current) clearTimeout(suppressPeekPushTimerRef.current);
+      suppressPeekPushTimerRef.current = setTimeout(() => { suppressPeekPushRef.current = false; }, 650);
+      fitSpotView(selectedSpot, 'easeTo', 400);
+      return;
+    }
     if (!selectedDest) return;
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     // Deliberately a no-op on whatever sheet is currently showing (spot or destination) —
@@ -2995,7 +3101,7 @@ const destItems = useMemo((): DestItem[] =>
     setDestHomeToDefault(selectedDest, framing);
     destFlightInterruptedRef.current = false;
     fitDestinationDefaultView(selectedDest, 'easeTo', framing);
-  }, [selectedDest, fitDestinationDefaultView, setDestHomeToDefault]);
+  }, [selectedDest, selectedSpot, fitSpotView, fitDestinationDefaultView, setDestHomeToDefault]);
 
   const handleCloseCountry = useCallback(() => {
     if (!selectedCountryRef.current) return;
@@ -3037,6 +3143,7 @@ const destItems = useMemo((): DestItem[] =>
       releaseHeldSelection();
       return;
     }
+    beginClosePlan(hasCached ? cached.zoom / 2 : latDeltaToZoom(WORLD_HOME_LATDELTA), 600);   // see planZoomTarget
     if (hasCached) {
       beginProgrammaticCameraMove(600);
       cameraRef.current?.setCamera({
@@ -3048,7 +3155,7 @@ const destItems = useMemo((): DestItem[] =>
       return;
     }
     animateCamera({ latitude: 20, longitude: regionRef.current.longitude, latitudeDelta: WORLD_HOME_LATDELTA, longitudeDelta: WORLD_HOME_LATDELTA }, 600);
-  }, [showBreadcrumb, animateCamera, beginProgrammaticCameraMove, isZoomedOutBeyond, releaseHeldSelection]);
+  }, [showBreadcrumb, animateCamera, beginProgrammaticCameraMove, isZoomedOutBeyond, releaseHeldSelection, beginClosePlan]);
 
   // `openPeeked` is for returning UP to a country from a destination via the breadcrumb: the
   // sheet opens in bottom-screen/peek instead of half-screen, and the map is framed for the
@@ -3187,9 +3294,19 @@ const destItems = useMemo((): DestItem[] =>
     } else {
       // Spot: same reasoning as the destination branch above — handleSpotPress never sets
       // selectedCountry either.
-      const cluster = buildCountryCluster(item.destination.country, item.destination.countryCode);
-      selectedCountryRef.current = cluster;
-      setSelectedCountry(cluster);
+      const dest = spotDestination(item.spot);
+      if (dest) {
+        const cluster = buildCountryCluster(dest.country, dest.countryCode);
+        selectedCountryRef.current = cluster;
+        setSelectedCountry(cluster);
+      } else {
+        // A standalone spot has no destination or country sheet to climb back into: drop whatever was selected so the
+        // jump is clean and closing it returns to its own area, not the previous selection.
+        selectedDestRef.current = null;
+        setSelectedDest(null);
+        selectedCountryRef.current = null;
+        setSelectedCountry(null);
+      }
       prevRegionRef.current = region;
       handleSpotPress(item.spot);
       setSpotOrigin('search');
@@ -3507,10 +3624,10 @@ const destItems = useMemo((): DestItem[] =>
     // got (re-)captured for the rest of that country session — anything panned/zoomed away
     // afterward never showed the return arrow at all, since the check below reads it from
     // countryHomeRegionRef and just no-ops while that's still null. !selectedDest alone is
-    // exactly what should scope this to "country selected, no destination" — selectedSpot
-    // always implies selectedDest is also set, so it's covered by the same check.
+    // exactly what should scope this to "country selected, no destination" — plus no spot
+    // either, since a standalone spot is selected without any destination.
     const capturePending = countryCacheArmRef.current !== null && Date.now() < countryCacheArmRef.current.at;
-    if (selectedCountryRef.current && !selectedDest && !countryHomeRegionRef.current && !capturePending) {
+    if (selectedCountryRef.current && !selectedDest && !selectedSpotRef.current && !countryHomeRegionRef.current && !capturePending) {
       countryHomeRegionRef.current = newRegion;
       setCountryHomeRegion(newRegion);
     }
@@ -3705,9 +3822,9 @@ const destItems = useMemo((): DestItem[] =>
   // the screen. Read during render (the ref is only advanced after the commit), so it is a stable answer for the
   // render that mounts the new sheet.
   const sheetKind: 'country' | 'dest' | 'spot' | null =
-    selectedSpot && selectedDest && spotFocusId ? 'spot'
+    selectedSpot && spotFocusId ? 'spot'
     : mapState !== 'world' && selectedDest && !selectedSpot ? 'dest'
-    : selectedCountry && !selectedDest ? 'country'
+    : selectedCountry && !selectedDest && !selectedSpot ? 'country'
     : null;
   // ── Sheet swaps ──────────────────────────────────────────────────────────────────────────────────────────
   // Whenever the sheet on screen is replaced by another (country <-> destination <-> spot in any direction, or one
@@ -3720,7 +3837,7 @@ const destItems = useMemo((): DestItem[] =>
   type SheetSnap = { identity: string; kind: 'country' | 'dest' | 'spot'; cluster: CountryCluster | null; dest: Destination | null; spots: Spot[]; focusId: string | null };
   const sheetIdentity = sheetKind === 'country' ? `country:${selectedCountry?.countryCode}`
     : sheetKind === 'dest' ? `dest:${selectedDest?.id}`
-    : sheetKind === 'spot' ? `spot:${selectedDest?.id}` : null;
+    : sheetKind === 'spot' ? `spot:${selectedSpot?.destinationId ?? selectedSpot?.id}` : null;
   const shownSnapRef = useRef<SheetSnap | null>(null);
   const swapRef = useRef({ identity: sheetIdentity as string | null, animate: false, enterFromPrevious: false, key: 0, seq: 0 });
   const leavingSheetRef = useRef<(SheetSnap & { seq: number }) | null>(null);
@@ -3739,8 +3856,10 @@ const destItems = useMemo((): DestItem[] =>
   }
   if (sheetKind && sheetIdentity) {
     shownSnapRef.current = {
-      identity: sheetIdentity, kind: sheetKind, cluster: selectedCountry, dest: selectedDest,
-      spots: sheetKind === 'spot' ? spotsInDest : [], focusId: spotFocusId,
+      identity: sheetIdentity, kind: sheetKind, cluster: selectedCountry,
+      // A spot sheet's destination is the SPOT's own (none when standalone), not whatever happens to be selected.
+      dest: sheetKind === 'spot' && selectedSpot ? (spotDestination(selectedSpot) ?? null) : selectedDest,
+      spots: sheetKind === 'spot' ? carouselSpots : [], focusId: spotFocusId,
     };
   } else if (!sheetKind) {
     shownSnapRef.current = null;
@@ -4141,7 +4260,7 @@ const destItems = useMemo((): DestItem[] =>
       </Animated.View>
 
       {/* ── Breadcrumb (country + destination modes) ─────────────────────── */}
-      {(selectedCountry || selectedDest) && (
+      {(selectedCountry || selectedDest || selectedSpot) && (
         // Two nested views on purpose: the outer carries the Reanimated gate (panned-away /
         // peeking) and the inner keeps the existing core-Animated, native-driven entrance
         // fade. Merging a Reanimated style and a native-driven core-Animated style onto one
@@ -4159,27 +4278,27 @@ const destItems = useMemo((): DestItem[] =>
           }}
           pointerEvents="box-none"
         >
-          {selectedDest ? (
+          {crumb ? (
             /* Destination view: single white pill (fixed height) so black segment overflows below */
             <View style={styles.breadcrumbPillWhite}>
               <Pressable style={styles.breadcrumbSegmentInactive} onPress={handleZoomToCountry} hitSlop={6}>
                 <View style={styles.bcFlagCircle}>
                   <View style={styles.bcFlagClip}>
                     <Image
-                      source={{ uri: `https://flagcdn.com/w160/${selectedDest.countryCode.toLowerCase()}.png` }}
+                      source={{ uri: `https://flagcdn.com/w160/${crumb.countryCode.toLowerCase()}.png` }}
                       style={styles.bcFlagImg}
                       resizeMode="cover"
                     />
                   </View>
                 </View>
-                <Text style={styles.breadcrumbTxtDark}>{selectedDest.country}</Text>
+                <Text style={styles.breadcrumbTxtDark}>{crumb.country}</Text>
               </Pressable>
               <Pressable style={styles.breadcrumbSegmentActive} onPress={handleResetToDest} hitSlop={6}>
                 <Reanimated.View style={destReturnPromptStyle}>
                   <CornerUpLeft size={14} color="rgba(255,255,255,0.9)" strokeWidth={2.5} />
                 </Reanimated.View>
                 <View style={styles.breadcrumbPillRow}>
-                  <Text style={styles.breadcrumbTxtLight} numberOfLines={1}>{selectedDest.name}</Text>
+                  <Text style={styles.breadcrumbTxtLight} numberOfLines={1}>{crumb.name}</Text>
                 </View>
               </Pressable>
             </View>
@@ -4278,7 +4397,7 @@ const destItems = useMemo((): DestItem[] =>
       )}
 
 {/* ── Country sheet ─────────────────────────────────────────────────── */}
-      {selectedCountry && !selectedDest && (
+      {selectedCountry && !selectedDest && !selectedSpot && (
         <CountrySheet
           key={`country-${sheetSwapKey}`}
           cluster={selectedCountry}
@@ -4335,12 +4454,12 @@ const destItems = useMemo((): DestItem[] =>
       )}
 
       {/* ── Spot sheet — swipeable carousel of the destination's spots, expandable to full */}
-      {selectedSpot && selectedDest && spotFocusId && (
+      {selectedSpot && spotFocusId && (
         <SpotSheet
           key={`spot-${sheetSwapKey}`}
-          spots={spotsInDest}
+          spots={carouselSpots}
           focusSpotId={spotFocusId}
-          destination={selectedDest}
+          destination={spotDestination(selectedSpot) ?? null}
           onClose={handleCloseSpot}
           onExpand={handleSheetExpand}
           onCollapse={handleCloseSheet}
@@ -4353,7 +4472,8 @@ const destItems = useMemo((): DestItem[] =>
           enterFromPrevious={newSheetEnterFromPrevious}
           mapGestureAtSV={mapGestureAtSV}
           onSnapStateChange={handleSheetSnapStateChange}
-          onGoToList={handleGoToListView}
+          // A standalone spot has no destination sheet to open a list in.
+          onGoToList={selectedSpot.destinationId ? handleGoToListView : undefined}
           collapseSignal={collapseSheetSignal}
         />
       )}
@@ -4372,7 +4492,7 @@ const destItems = useMemo((): DestItem[] =>
               enterFromPrevious
             />
           )}
-          {leavingSheetRef.current.kind === 'spot' && leavingSheetRef.current.dest && leavingSheetRef.current.focusId && (
+          {leavingSheetRef.current.kind === 'spot' && leavingSheetRef.current.focusId && (
             <SpotSheet
               key={`leaving-spot-${leavingSheetRef.current.seq}`}
               spots={leavingSheetRef.current.spots}
@@ -4403,7 +4523,7 @@ const destItems = useMemo((): DestItem[] =>
           gliding to take its place at full screen — see each sheet's own pillOffsetSV
           reaction). Rendered after the sheets above (not before) so it reliably paints on
           top of them, reinforcing its zIndex rather than depending on it alone. */}
-      {(selectedCountry || selectedDest) && (
+      {(selectedCountry || selectedDest || selectedSpot) && (
         // `bottom` lives on this outer Reanimated wrapper (a UI-thread shared value, written
         // to directly by DestinationSheet — see pillOffsetSV — with no JS-thread hop, so it
         // glides exactly as smoothly as the sheet itself), separate from the inner view's

@@ -1,1 +1,3 @@
 @AGENTS.md
+@DESTINATIONS.md
+@IMAGES.md

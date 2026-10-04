@@ -25,7 +25,7 @@ import * as Haptics from 'expo-haptics';
 import { useStore, useVisitIndex } from '../../store';
 import type { Destination, Visit } from '../../types';
 import type { Spot } from '../../data/spots';
-import { DAY_NAMES, hoursForDay, formatSpotCost, formatVisitTime, getSpotOpenStatus, specialClosureOn, zonedNowForSpot } from '../../data/spots';
+import { DAY_NAMES, hoursForDay, formatSpotCost, formatVisitTime, getSpotOpenStatus, specialClosureOn, spotCountry, spotCountryCode, zonedNowForSpot } from '../../data/spots';
 import { photoCache, thumbCache, getOrFetchWikiThumbnail, HEADER_PX } from '../../utils/photoCache';
 import CircleFlag from '../CircleFlag';
 import FadeInImage from './FadeInImage';
@@ -35,10 +35,19 @@ import EntityPhoto from './EntityPhoto';
 import {
   VisitCardList, VisitModuleSheet, PhotoGalleryModal,
   useDeferredMount,
-  AIContentNote,
+  AIContentNote, nameFontSize,
 } from './sheetShared';
 
 const { height: H, width: W } = Dimensions.get('window');
+
+const heroNameSize = (name: string) => {
+  const fontSize = nameFontSize(name, [34, 29, 25], [18, 28]);
+  return { fontSize, lineHeight: Math.round(fontSize * 1.1) };
+};
+const cardNameSize = (name: string) => {
+  const fontSize = nameFontSize(name, [25, 22, 19], [16, 26]);
+  return { fontSize, lineHeight: Math.round(fontSize * 1.12) };
+};
 // Practical info — time needed and cost — in plain black, both on the carousel cards and in the
 // sheet's gray box. Deliberately not green: across the app green means "visited".
 const INFO_INK = '#111827';
@@ -174,7 +183,7 @@ function CarouselCard({ spot, isActive, onPress, onAddVisit, gradId }: {
             </Svg>
           </View>
           <View pointerEvents="none" style={st.cardImageInfo}>
-            <Text style={st.cardName} numberOfLines={1}>{spot.name}</Text>
+            <Text style={[st.cardName, cardNameSize(spot.name)]}>{spot.name}</Text>
           </View>
         </View>
         {/* Below the image — time/cost, then the description with room for at least
@@ -201,7 +210,8 @@ function CarouselCard({ spot, isActive, onPress, onAddVisit, gradId }: {
 interface Props {
   spots: Spot[];
   focusSpotId: string;
-  destination: Destination;
+  // The spots' destination — null for a STANDALONE spot, which has none. The sheet then names only the spot's country.
+  destination?: Destination | null;
   // `toCollapsed` is true when this fires from a swipe-down while the carousel itself was
   // collapsed (bottom-screen), so the caller can land the destination sheet underneath in
   // its own collapsed/bottom-screen view instead of the usual half-screen default. False
@@ -308,14 +318,14 @@ function SpotSheet({
   const handleSaveVisitModule = useCallback((v: Visit) => {
     // The spot only actually becomes "visited" here, on a genuine save — not the moment "Add
     // Visit" was tapped (see handleMarkVisited).
-    if (!savedSpot) saveSpotVisited(activeSpot.id, destination.id);
+    if (!savedSpot) saveSpotVisited(activeSpot.id, activeSpot.destinationId);
     setRevealVisit(true);
     const base = localVisits.filter(x => x.id !== 'legacy');
     const idx  = base.findIndex(x => x.id === v.id);
     const updated = idx >= 0 ? base.map(x => x.id === v.id ? v : x) : [...base, v];
     updated.sort((a, b) => b.startDate.localeCompare(a.startDate));
     updateSpot(activeSpot.id, { visits: updated, visitDate: updated[0]?.startDate });
-  }, [savedSpot, localVisits, activeSpot.id, destination.id, saveSpotVisited, updateSpot]);
+  }, [savedSpot, localVisits, activeSpot.id, activeSpot.destinationId, saveSpotVisited, updateSpot]);
 
   // That was the last (or only ever synthesized legacy) visit logged for this spot — not just
   // "visited with zero trips", so this unsaves the spot entirely (also dropping its rating, same
@@ -985,12 +995,17 @@ function SpotSheet({
 
             <View style={st.heroBottomStack}>
               <View style={st.heroContent}>
-                <Text style={st.heroName} numberOfLines={2}>{activeSpot.name}</Text>
+                <Text style={[st.heroName, heroNameSize(activeSpot.name)]}>{activeSpot.name}</Text>
                 <View style={st.heroMeta}>
-                  <Text style={st.heroMetaTxt}>{destination.name}</Text>
-                  <View style={st.heroMetaDivider} />
-                  <CircleFlag countryCode={destination.countryCode} size={13} />
-                  <Text style={[st.heroMetaTxt, { marginLeft: 4 }]}>{destination.country}</Text>
+                  {/* A standalone spot has no destination to name — just its country. */}
+                  {!!destination && (
+                    <>
+                      <Text style={st.heroMetaTxt}>{destination.name}</Text>
+                      <View style={st.heroMetaDivider} />
+                    </>
+                  )}
+                  {!!spotCountryCode(activeSpot) && <CircleFlag countryCode={spotCountryCode(activeSpot)!} size={13} />}
+                  <Text style={[st.heroMetaTxt, { marginLeft: 4 }]}>{spotCountry(activeSpot)}</Text>
                 </View>
                 <Text style={st.heroBio} numberOfLines={3}>{activeSpot.bio}</Text>
               </View>
@@ -1101,10 +1116,10 @@ function SpotSheet({
           {/* Heading — indicates you're browsing the spots within this destination */}
           <View style={st.carHeader}>
             <View style={{ flex: 1 }}>
-              <Text style={st.carEyebrow}>SPOTS IN</Text>
-              <Text style={st.carDest} numberOfLines={1}>{destination.name}</Text>
+              <Text style={st.carEyebrow}>{destination ? 'SPOTS IN' : 'SPOT IN'}</Text>
+              <Text style={st.carDest}>{destination ? destination.name : spotCountry(activeSpot)}</Text>
             </View>
-            <Text style={st.carCounter}>{activeIndex + 1} / {spots.length}</Text>
+            {spots.length > 1 && <Text style={st.carCounter}>{activeIndex + 1} / {spots.length}</Text>}
             {!!onGoToList && (
               <Pressable
                 style={st.carListBtn}

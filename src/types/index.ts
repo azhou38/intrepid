@@ -173,7 +173,7 @@ export interface PhotoEntry {
 
 export interface SavedSpot {
   spotId: string;
-  destinationId: string;
+  destinationId?: string;   // absent for a standalone spot (see Spot in data/spots.ts)
   rating?: number;       // 1–5 stars
   visitDate?: string;    // legacy single date (YYYY-MM-DD, day may be '00')
   notes?: string;        // legacy single note

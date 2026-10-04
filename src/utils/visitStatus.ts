@@ -17,12 +17,15 @@
 // (see keepVisited), even if it was visited only through what was removed.
 
 import { DESTINATIONS } from '../data/destinations';
-import { SPOTS } from '../data/spots';
+import { SPOTS, spotCountryCode } from '../data/spots';
 import type { SavedCountry, SavedDestination, SavedSpot, Visit } from '../types';
 
 // Records are always looked up by their key (the place's id), never by the id fields inside them — a
 // record written by a field update before the place was saved can lack those fields.
-const SPOT_DEST = new Map(SPOTS.map(s => [s.id, s.destinationId]));
+// A spot's parent destination id (undefined for a STANDALONE spot, which has none) and its country (its own, or its
+// destination's). Visited rolls up spot → destination (when there is one) → country either way.
+const SPOT_DEST = new Map<string, string | undefined>(SPOTS.map(s => [s.id, s.destinationId]));
+const SPOT_COUNTRY = new Map<string, string | undefined>(SPOTS.map(s => [s.id, spotCountryCode(s)]));
 const DEST_COUNTRY = new Map(DESTINATIONS.map(d => [d.id, d.countryCode]));
 
 export interface VisitIndex {
@@ -75,6 +78,11 @@ export function buildVisitIndex(
   }
   for (const destId of visitedDestIds) {
     const code = DEST_COUNTRY.get(destId);
+    if (code) visitedCountryCodes.add(code);
+  }
+  // A standalone spot has no destination to carry its visit up to the country, so it does so itself.
+  for (const spotId of visitedSpotIds) {
+    const code = SPOT_COUNTRY.get(spotId);
     if (code) visitedCountryCodes.add(code);
   }
 
@@ -154,7 +162,7 @@ export function visitedPlacesInCountry(r: VisitRecords, countryCode: string): { 
   const index = buildVisitIndex(r.savedDestinations, r.savedSpots, r.savedCountries);
   return {
     destinations: [...index.visitedDestIds].filter(id => DEST_COUNTRY.get(id) === countryCode).length,
-    spots: [...index.visitedSpotIds].filter(id => DEST_COUNTRY.get(SPOT_DEST.get(id) ?? '') === countryCode).length,
+    spots: [...index.visitedSpotIds].filter(id => SPOT_COUNTRY.get(id) === countryCode).length,
   };
 }
 
@@ -203,12 +211,12 @@ export function withoutSpot(r: VisitRecords, spotId: string): VisitRecords {
     ...r,
     savedSpots: omit(r.savedSpots, [spotId]),
     savedDestinations: unticked ? { ...r.savedDestinations, [destId!]: { ...dest!, ...unticked } } : r.savedDestinations,
-  }, destId);
+  }, destId, SPOT_COUNTRY.get(spotId));
 }
 
 // Removes a spot's record (its last trip went) — without un-visiting its destination or country.
 export function withoutSpotRecord(r: VisitRecords, spotId: string): VisitRecords {
-  return keepVisited(r, { ...r, savedSpots: omit(r.savedSpots, [spotId]) }, SPOT_DEST.get(spotId));
+  return keepVisited(r, { ...r, savedSpots: omit(r.savedSpots, [spotId]) }, SPOT_DEST.get(spotId), SPOT_COUNTRY.get(spotId));
 }
 
 // Removes a destination's record (its last trip went) — without un-visiting its country.
@@ -252,6 +260,7 @@ export function withoutCountry(r: VisitRecords, countryCode: string): VisitRecor
   return {
     savedCountries: omit(r.savedCountries, [countryCode]),
     savedDestinations: omit(r.savedDestinations, Object.keys(r.savedDestinations).filter(inCountry)),
-    savedSpots: omit(r.savedSpots, Object.keys(r.savedSpots).filter(id => inCountry(SPOT_DEST.get(id)))),
+    // Standalone spots in the country go too (they have no destination to be found through).
+    savedSpots: omit(r.savedSpots, Object.keys(r.savedSpots).filter(id => SPOT_COUNTRY.get(id) === countryCode)),
   };
 }
