@@ -930,7 +930,7 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: '{months} bring crisp, settled weather for walks and quieter pools.',
   },
   {
-    id: 'arthurs-pass', name: "Arthur's Pass National Park", country: 'New Zealand', countryCode: 'NZ', timezone: 'Pacific/Auckland', defaultZoomSpanKm: 70,
+    id: 'arthurs-pass', name: "Arthur's Pass National Park", country: 'New Zealand', countryCode: 'NZ', timezone: 'Pacific/Auckland', defaultZoomSpanKm: 40,
     continent: 'Oceania', coordinates: { latitude: -42.9420, longitude: 171.5640 },
     category: 'park', icon: '🏔️', rank: 3,
     tagline: 'Rugged alpine passes, braided rivers and the cheeky kea.',
