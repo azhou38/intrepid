@@ -118,6 +118,9 @@ import { thumbCache, photoCache, fetchWikiThumbnail, prefetchWikiThumbnail, HEAD
 const VISITED_COLOR  = '#10B981';
 const EXPLORE_COLOR  = '#6366F1';
 
+// Pin-plan look-ahead while the camera zooms out (see planZoom / zoomOutLead).
+const PLAN_LAG_SEC = 0.6;         // assumed delay between a camera frame and the render that reacts to it
+const PLAN_LEAD_MAX_ZOOM = 4;     // cap on the predicted outward travel
 const PIN_SIZE        = 41;  // 10% larger than 37 (which was 20% smaller than the original 46)
 const PIN_BORDER      = 2;
 // Disc colour a destination/spot pin shows until its photo has loaded and faded in over it. Light
@@ -126,13 +129,21 @@ const PIN_PLACEHOLDER_COLOR = '#E5E7EB';
 const BADGE_SIZE      = 16;  // 20% smaller than the original 20
 const STAMP_SIZE = 7;        // 20% smaller than the original 9
 
-function DestPin({ dest, spotCount, isVisited, isSelected, pinState }: {
+function DestPin({ dest, spotCount, isVisited, isSelected, pinState, hideLabel = false }: {
   dest: Destination;
   spotCount: number;
   isVisited: boolean;
   isSelected: boolean;
   pinState: 'photo' | 'stamp';
+  // The name is hidden (its space is kept, so the pin doesn't shift and the name stays tappable) while it would
+  // collide with another destination pin or label — it returns once the user zooms in far enough to clear them.
+  hideLabel?: boolean;
 }) {
+  // The name fades out / back in (rather than snapping) as it starts or stops colliding with a neighbour.
+  const labelOpacity = useRef(new Animated.Value(hideLabel ? 0 : 1)).current;
+  useEffect(() => {
+    Animated.timing(labelOpacity, { toValue: hideLabel ? 0 : 1, duration: 260, useNativeDriver: true }).start();
+  }, [hideLabel, labelOpacity]);
   // Small pin (46px) — request a small thumbnail rather than the full-res header image,
   // so map pins load and decode quickly during pan/zoom.
   const [photoUrl, setPhotoUrl] = useState<string | null>(thumbCache.get(dest.id) ?? null);
@@ -189,13 +200,13 @@ function DestPin({ dest, spotCount, isVisited, isSelected, pinState }: {
         )}
       </View>
       {/* Outlined label: 4 dark offset copies behind the white text trace the letter borders */}
-      <View style={pinSt.labelWrap}>
-        <Text style={[pinSt.label, pinSt.labelOutline, { transform: [{ translateX: -1 }, { translateY: -1 }] }]} numberOfLines={2}>{dest.name}</Text>
-        <Text style={[pinSt.label, pinSt.labelOutline, { transform: [{ translateX:  1 }, { translateY: -1 }] }]} numberOfLines={2}>{dest.name}</Text>
-        <Text style={[pinSt.label, pinSt.labelOutline, { transform: [{ translateX: -1 }, { translateY:  1 }] }]} numberOfLines={2}>{dest.name}</Text>
-        <Text style={[pinSt.label, pinSt.labelOutline, { transform: [{ translateX:  1 }, { translateY:  1 }] }]} numberOfLines={2}>{dest.name}</Text>
-        <Text style={pinSt.label} numberOfLines={2}>{dest.name}</Text>
-      </View>
+      <Animated.View pointerEvents="none" style={[pinSt.labelWrap, { opacity: labelOpacity }]}>
+        <Text style={[pinSt.label, pinSt.labelOutline, { transform: [{ translateX: -1 }, { translateY: -1 }] }]}>{dest.name}</Text>
+        <Text style={[pinSt.label, pinSt.labelOutline, { transform: [{ translateX:  1 }, { translateY: -1 }] }]}>{dest.name}</Text>
+        <Text style={[pinSt.label, pinSt.labelOutline, { transform: [{ translateX: -1 }, { translateY:  1 }] }]}>{dest.name}</Text>
+        <Text style={[pinSt.label, pinSt.labelOutline, { transform: [{ translateX:  1 }, { translateY:  1 }] }]}>{dest.name}</Text>
+        <Text style={pinSt.label}>{dest.name}</Text>
+      </Animated.View>
     </View>
   );
 }
@@ -204,6 +215,26 @@ const SPOT_PIN_SIZE = 28;
 const SPOT_PIN_SIZE_SELECTED = 40;
 
 const SPOT_LABEL_GAP = 6;
+// A spot's name label is at most this many characters per line (spaces included). A longer name
+// continues on a new line, breaking only BETWEEN words: a single word longer than this keeps its
+// own line rather than being split mid-word.
+const SPOT_LABEL_MAX_CHARS = 20;
+const SPOT_LABEL_LINE_H = 15;
+const spotLabelLinesCache = new Map<string, string[]>();
+function spotLabelLines(name: string): string[] {
+  const hit = spotLabelLinesCache.get(name);
+  if (hit) return hit;
+  const lines: string[] = [];
+  let cur = '';
+  for (const word of name.trim().split(/\s+/)) {
+    if (!cur) cur = word;
+    else if (cur.length + 1 + word.length <= SPOT_LABEL_MAX_CHARS) cur += ' ' + word;
+    else { lines.push(cur); cur = word; }
+  }
+  if (cur) lines.push(cur);
+  spotLabelLinesCache.set(name, lines);
+  return lines;
+}
 // Position of each spot in the spots data — the popularity proxy used to decide whose name wins a crowded spot.
 const SPOT_ORDER = new Map(SPOTS.map((sp, i) => [sp.id, i]));
 
@@ -271,22 +302,30 @@ function SpotMarker({ spot, isVisited, isSelected, exiting, isSatellite, labelSi
   // mapType === 'satellite'.
   const labelColor = isSatellite ? 'white' : '#111827';
   const labelHaloColor = isSatellite ? 'black' : 'white';
+  // Wrapped at SPOT_LABEL_MAX_CHARS per line (words are never split) and centred vertically on the
+  // bubble whatever the line count. The label stays outside the marker's own box, so it takes no
+  // touches itself: a tap on it is resolved by the map's onPress against the label rects the label
+  // planner already computes (see spotLabelHitRef), which opens the spot exactly like the pin.
+  const labelLines = spotLabelLines(spot.name);
+  const labelText = labelLines.join('\n');
+  const labelH = labelLines.length * SPOT_LABEL_LINE_H;
+  const labelAlign = labelSide === 'left' ? 'right' : 'left';
   const labelEl = labelSide === 'none' ? null : (
     <View
       style={[
         styles.spotPinLabelWrap,
-        { width: LABEL_BOX_W, top: bubbleSize / 2 - 9 },
+        { width: LABEL_BOX_W, top: bubbleSize / 2 - labelH / 2 - 1.5 },
         labelSide === 'left'
           ? { right: bubbleSize + SPOT_LABEL_GAP, alignItems: 'flex-end' }
           : { left: bubbleSize + SPOT_LABEL_GAP, alignItems: 'flex-start' },
       ]}
       pointerEvents="none"
     >
-      <Text style={[styles.spotPinLabel, styles.spotPinLabelOutline, { textAlign: labelSide === 'left' ? 'right' : 'left', color: labelHaloColor, transform: [{ translateX: -0.75 }, { translateY: -0.75 }] }]}>{spot.name}</Text>
-      <Text style={[styles.spotPinLabel, styles.spotPinLabelOutline, { textAlign: labelSide === 'left' ? 'right' : 'left', color: labelHaloColor, transform: [{ translateX: 0.75 }, { translateY: -0.75 }] }]}>{spot.name}</Text>
-      <Text style={[styles.spotPinLabel, styles.spotPinLabelOutline, { textAlign: labelSide === 'left' ? 'right' : 'left', color: labelHaloColor, transform: [{ translateX: -0.75 }, { translateY: 0.75 }] }]}>{spot.name}</Text>
-      <Text style={[styles.spotPinLabel, styles.spotPinLabelOutline, { textAlign: labelSide === 'left' ? 'right' : 'left', color: labelHaloColor, transform: [{ translateX: 0.75 }, { translateY: 0.75 }] }]}>{spot.name}</Text>
-      <Text numberOfLines={1} style={[styles.spotPinLabel, { color: labelColor, textAlign: labelSide === 'left' ? 'right' : 'left' }]}>{spot.name}</Text>
+      <Text style={[styles.spotPinLabel, styles.spotPinLabelOutline, { textAlign: labelAlign, color: labelHaloColor, transform: [{ translateX: -0.75 }, { translateY: -0.75 }] }]}>{labelText}</Text>
+      <Text style={[styles.spotPinLabel, styles.spotPinLabelOutline, { textAlign: labelAlign, color: labelHaloColor, transform: [{ translateX: 0.75 }, { translateY: -0.75 }] }]}>{labelText}</Text>
+      <Text style={[styles.spotPinLabel, styles.spotPinLabelOutline, { textAlign: labelAlign, color: labelHaloColor, transform: [{ translateX: -0.75 }, { translateY: 0.75 }] }]}>{labelText}</Text>
+      <Text style={[styles.spotPinLabel, styles.spotPinLabelOutline, { textAlign: labelAlign, color: labelHaloColor, transform: [{ translateX: 0.75 }, { translateY: 0.75 }] }]}>{labelText}</Text>
+      <Text style={[styles.spotPinLabel, { color: labelColor, textAlign: labelAlign }]}>{labelText}</Text>
     </View>
   );
 
@@ -345,7 +384,7 @@ const pinSt = StyleSheet.create({
     shadowColor: '#000', shadowOpacity: 0.3, shadowRadius: 3,
     shadowOffset: { width: 0, height: 1 }, elevation: 4,
   },
-  wrap:  { alignItems: 'center' },
+  wrap:  { alignItems: 'center', width: PIN_SIZE, height: PIN_SIZE },
   // Outer ring: carries the shadow. No overflow:hidden so shadow renders on iOS.
   circleShadow: {
     width: PIN_SIZE, height: PIN_SIZE, borderRadius: PIN_SIZE / 2,
@@ -376,7 +415,10 @@ const pinSt = StyleSheet.create({
     shadowColor: '#000', shadowOpacity: 0.2, shadowRadius: 3, elevation: 4,
   },
   badgeTxt: { fontSize: 10, fontWeight: '800', color: 'white', textAlign: 'center' },
-  labelWrap: { alignItems: 'center', marginTop: 4 },
+  // Outside the marker's own box (absolute, below the circle): the marker is JUST the circle, so the circle sits exactly
+  // on the coordinate (covering its stamp dot) whatever the name's length. Taps on the name are matched against the
+  // planner's label rects in the map's onPress (see destLabelHitRef).
+  labelWrap: { position: 'absolute', top: PIN_SIZE + 4, left: (PIN_SIZE - 90) / 2, width: 90, alignItems: 'center' },
   label: {
     fontSize: 11, fontWeight: '700',
     color: 'white', textAlign: 'center', maxWidth: 90,
@@ -397,14 +439,17 @@ const pinSt = StyleSheet.create({
 // plan stay mounted for PIN_EXIT_MS fading to 0, then unmount. This is what turns the
 // stamp↔photo promotions and pill collision wins/losses from sudden appearance changes into
 // gradual cross-fades, matching how Apple/Google Maps POI labels resolve density changes.
-const PIN_FADE_IN_MS = 160;
-const PIN_EXIT_MS    = 120;
+const PIN_FADE_IN_MS = 260;
+const PIN_EXIT_MS    = 170;
 // The destination ↔ spot handoff (landing on a destination's default view, or zooming back out
 // of it) is one deliberate swap of the destination's pin for its spot pins, so it cross-fades
 // more gently than ordinary zoom-driven pin churn — matching the stamp dots' own 300ms transition.
 // See FadePin's `slow`.
-const HANDOFF_FADE_MS = 300;
+const HANDOFF_FADE_MS = 170;
 
+// Set by MapScreen while a close is zooming out to a known view: pins leaving the plan then use a short fade.
+const closeFade = { fast: false };
+const CLOSE_EXIT_MS = 90;
 function FadePin({ exiting, instant, slow, children }: { exiting: boolean; instant?: boolean; slow?: boolean; children: React.ReactNode }) {
   // `instant`: mounts fully opaque (no fade-in) — for a duplicate that sits exactly over an
   // identical, already-visible pin, where fading in would just dim the overlap.
@@ -427,7 +472,7 @@ function FadePin({ exiting, instant, slow, children }: { exiting: boolean; insta
     const toValue = exiting ? 0 : 1;
     Animated.timing(opacity, {
       toValue,
-      duration: slowRef.current ? HANDOFF_FADE_MS : exiting ? PIN_EXIT_MS : PIN_FADE_IN_MS,
+      duration: slowRef.current ? HANDOFF_FADE_MS : exiting ? (closeFade.fast ? CLOSE_EXIT_MS : PIN_EXIT_MS) : PIN_FADE_IN_MS,
       useNativeDriver: true,
     }).start(({ finished }) => {
       // Native-driven animations leave the JS-side value where it started; sync the settled
@@ -758,6 +803,7 @@ const CAMERA_DEFAULT_SETTINGS = { centerCoordinate: [10, 20] as [number, number]
 // letting the grow/shrink animation target an exact pixel value instead of an unmeasured
 // 'auto'. Closed height is exactly MAP_PILL_BTN (a true circle); open height adds the
 // divider + two option rows beneath it.
+const CRUMB_PILL_H        = 40;   // the breadcrumb pill's height (see styles.breadcrumbPillWhite)
 const MAP_PILL_BTN        = 44;   // also the pill's fixed width throughout
 const MAP_PILL_OPTION_H   = 44;
 const MAP_PILL_DIVIDER_H  = StyleSheet.hairlineWidth;
@@ -973,6 +1019,9 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // slide timing instead of the pill's quicker one — so the bar fades in step with the sheet as
   // it's swiped between half-screen and peek. See setSheetSnapState and crumbGateStyle.
   const crumbPeekSV = useSharedValue(0);
+  // The breadcrumb pill's measured width (it is centred, so a long destination name widens it toward the map-type
+  // selector in the top-right corner — see layersShiftStyle).
+  const crumbWidthSV = useSharedValue(0);
   const upPillWrapStyle = useAnimatedStyle(() => ({ bottom: upPillBottomSV.value }));
   // One-shot mount hints for DestinationSheet, set right before it (re)mounts so it can open
   // straight to a specific tab/snap point (e.g. the spot carousel's "list view" button).
@@ -1011,6 +1060,10 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // sees, collapsing the planning px/deg scale and culling nearly every country pill as a
   // "collision" (the only-France-over-all-of-Europe bug). The camera zoom doesn't lie.
   const [camZoom, setCamZoom] = useState(0);
+  // How many zoom levels the camera is expected to travel OUTWARD before the next render lands (0 when not zooming out).
+  // Measured from the camera-changed events' own zoom velocity; the pin plan reads it so it decides ahead of the render lag.
+  const [zoomOutLead, setZoomOutLead] = useState(0);
+  const zoomSampleRef = useRef<{ z: number; t: number; v: number } | null>(null);
   // Always-current mirror of camZoom, for callbacks (the X/close handlers) that only read it.
   const camZoomRef = useRef(0);
   // Always-current mirror of `region`, so callbacks that only need to *read* the latest
@@ -1356,6 +1409,19 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
       crumbPeekSV.value,
     ),
   }));
+  // A breadcrumb wide enough to reach the map-type selector (top-right) pushes the selector down to just below it, in
+  // step with the breadcrumb's own fade, and it returns to the corner when the breadcrumb is hidden or narrow again.
+  const layersShiftStyle = useAnimatedStyle(() => {
+    const gate = (1 - sheetCollapsedSV.value) * Math.max(
+      returnPromptProgress.value,
+      destReturnPromptProgress.value,
+      crumbPeekSV.value,
+    );
+    const crumbRight = (SCREEN_W_GLOBAL + crumbWidthSV.value) / 2;
+    const layersLeft = SCREEN_W_GLOBAL - 12 - MAP_PILL_BTN;
+    const overlaps = crumbWidthSV.value > 0 && crumbRight + 8 > layersLeft;
+    return { transform: [{ translateY: overlaps ? gate * (CRUMB_PILL_H + 8) : 0 }] };
+  });
   // Keeps touch handling in lockstep with that opacity, whichever path drove it — the
   // destination prompt is written from BOTH a memo and handleCameraChanged's raw camera
   // events, so watching the rendered value is the only way to catch every case. Without this
@@ -1448,7 +1514,18 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   const planZoomTargetRef = useRef<number | null>(null);
   if (selectedCountry || selectedDest) planZoomTargetRef.current = null;
   const planZoomTarget = planZoomTargetRef.current;
-  const planZoom = planZoomTarget !== null ? Math.min(camZoom, planZoomTarget) : camZoom;
+  // Pin planning runs ahead of the (heavy, laggy) per-frame renders.
+  // - A close that flies to a known wider view plans AT that view from its first frame (planZoomTarget): the spot pins
+  //   and photo pins the wider view doesn't have start leaving at once, and no intermediate zoom's pin set (many photo
+  //   pins, bunched) ever appears on the way. Reading the live zoom there flashed exactly that set.
+  // - Any other zoom-out (a pinch) reads the zoom the camera is PREDICTED to reach by the time the render lands: live
+  //   zoom minus the measured outward velocity x the render lag, so pins demote one at a time as each crosses its own
+  //   threshold rather than piling up first.
+  const planZoom = planZoomTarget !== null
+    ? Math.min(camZoom, planZoomTarget)
+    : Math.min(camZoom, camZoom - zoomOutLead);
+  // While such a close is under way, pins that leave fade out quickly (see FadePin) instead of lingering.
+  closeFade.fast = planZoomTarget !== null;
   // The bounds-derived span lags the same way, so it's ignored while looking ahead.
   const planRegionLng = planZoomTarget !== null ? Infinity : region.longitudeDelta;
   const planLngDelta = useMemo(() => Math.min(
@@ -1694,6 +1771,8 @@ const destItems = useMemo((): DestItem[] =>
   // also reused as the minimum spacing between any two promoted photo markers below.
   const STAMP_PX = 44;  // 20% smaller than the original 55, kept proportional to PIN_SIZE
 
+  // Rects of the visible destination name labels, read by the map's onPress (written by destPinPlan below).
+  const destLabelHitRef = useRef<{ pxPerDegLng: number; rects: { id: string; rect: { l: number; r: number; t: number; b: number } }[] }>({ pxPerDegLng: 1, rects: [] });
   const destPinPlan = useMemo(() => {
     // Pan-invariant Web-Mercator projection scaled off the true visible span only (see
     // mercatorPx + planLngDelta). NO camera centre, NO latitudeDelta — both drift under pan.
@@ -1805,7 +1884,47 @@ const destItems = useMemo((): DestItem[] =>
       placed.push(p);
     }
 
-    return { photoIds, positions };
+    // Name labels. A label is hidden when its text box would overlap another placed destination's circle or an
+    // already-visible higher-priority label. The circle is centred on the coordinate and the label hangs below it.
+    const R = PIN_SIZE / 2 + 2, LH = 13, CHW = 6.3, MAXW = 90;
+    const geo = new Map<string, { cx: number; cy: number; l: number; r: number; t: number; b: number }>();
+    for (const d of ordered) {
+      if (!photoIds.has(d.id)) continue;
+      const p = positions.get(d.id)!;
+      let lines = 1, cur = 0;
+      const perLine = Math.floor(MAXW / CHW);
+      for (const w of d.name.split(/\s+/)) {
+        if (cur === 0) cur = w.length;
+        else if (cur + 1 + w.length <= perLine) cur += 1 + w.length;
+        else { lines++; cur = w.length; }
+        while (cur > perLine) { lines++; cur -= perLine; }
+      }
+      const longest = Math.min(MAXW, Math.min(d.name.length, perLine) * CHW + 2);
+      // mercatorPx's y grows northward, so the screen-down y is -p.y; the circle is centred on the coordinate.
+      const h = lines * LH, cy = -p.y;
+      geo.set(d.id, { cx: p.x, cy, l: p.x - longest / 2, r: p.x + longest / 2, t: cy + PIN_SIZE / 2 + 4, b: cy + PIN_SIZE / 2 + 4 + h });
+    }
+    const labelHiddenIds = new Set<string>();
+    const shownLabels: { l: number; r: number; t: number; b: number }[] = [];
+    for (const d of ordered) {
+      const g = geo.get(d.id);
+      if (!g) continue;
+      let hide = false;
+      for (const [oid, o] of geo) {
+        if (oid === d.id) continue;
+        // nearest point of the other circle to this label's box
+        const nx = Math.max(g.l, Math.min(o.cx, g.r)), ny = Math.max(g.t, Math.min(o.cy, g.b));
+        if ((nx - o.cx) ** 2 + (ny - o.cy) ** 2 < R * R) { hide = true; break; }
+      }
+      if (!hide) hide = shownLabels.some(o => g.l < o.r && g.r > o.l && g.t < o.b && g.b > o.t);
+      if (hide) labelHiddenIds.add(d.id); else shownLabels.push(g);
+    }
+
+    const labelRects: { id: string; rect: { l: number; r: number; t: number; b: number } }[] = [];
+    geo.forEach((g, id) => { if (!labelHiddenIds.has(id)) labelRects.push({ id, rect: g }); });
+    destLabelHitRef.current = { pxPerDegLng, rects: labelRects };
+
+    return { photoIds, positions, labelHiddenIds };
     // Pure function of zoom (planLngDelta) + eligible set + selection + saved state +
     // the (equally pan-invariant) country pill plan.
     // No camera centre → recompute produces an identical plan while panning at fixed zoom.
@@ -2078,6 +2197,7 @@ const destItems = useMemo((): DestItem[] =>
   // from the true on-screen scale, so this is what the eye actually sees; only relative offsets
   // matter, so the projection needs no camera centre.
   const prevSpotLabelPlanRef = useRef<Map<string, 'left' | 'right' | 'none'>>(new Map());
+  const spotLabelHitRef = useRef<{ pxPerDegLng: number; rects: { id: string; rect: { l: number; r: number; t: number; b: number } }[] }>({ pxPerDegLng: 1, rects: [] });
   const spotLabelPlan = useMemo(() => {
     const plan = new Map<string, 'left' | 'right' | 'none'>();
     // ALL rendered spots (including ones mid-exit-fade) count for collision geometry — a spot
@@ -2094,7 +2214,7 @@ const destItems = useMemo((): DestItem[] =>
     const exitingIds = renderedSpots.filter(r => r.exiting).map(r => r.item.id);
     const pxPerDegLng = SCREEN_W_GLOBAL / pillVisibleLngDelta;
     type Rect = { l: number; r: number; t: number; b: number };
-    const geo = new Map<string, { pin: Rect; cy: number; cx: number; half: number; w: number }>();
+    const geo = new Map<string, { pin: Rect; cy: number; cx: number; half: number; w: number; h: number }>();
     for (const sp of all) {
       const m = mercatorPx(sp.coordinates.longitude, sp.coordinates.latitude, pxPerDegLng);
       const x = m.x, y = -m.y;                         // screen y grows downward, mercator's grows north
@@ -2104,15 +2224,18 @@ const destItems = useMemo((): DestItem[] =>
       geo.set(sp.id, {
         pin: { l: x - bubble / 2, r: x + bubble / 2, t: y - bubble - tail, b: y },
         cx: x, cy: y - (bubble + tail) / 2, half: bubble / 2,   // the row centres the label on bubble + tail
-        w: sp.name.length * 6.6 + 4,                   // 12px bold: ~6.6px per character
+        // The label wraps at SPOT_LABEL_MAX_CHARS per line (see spotLabelLines): as wide as its longest
+        // line, as tall as its line count.
+        w: Math.max(...spotLabelLines(sp.name).map(l => l.length)) * 6.6 + 4,   // 12px bold: ~6.6px per character
+        h: spotLabelLines(sp.name).length * SPOT_LABEL_LINE_H,
       });
     }
     const PAD = 3;
     const hits = (a: Rect, b: Rect) =>
       a.l < b.r + PAD && a.r > b.l - PAD && a.t < b.b + PAD && a.b > b.t - PAD;
-    const labelRectFor = (g: { cx: number; cy: number; half: number; w: number }, side: 'left' | 'right'): Rect => {
+    const labelRectFor = (g: { cx: number; cy: number; half: number; w: number; h: number }, side: 'left' | 'right'): Rect => {
       const l = side === 'left' ? g.cx - g.half - SPOT_LABEL_GAP - g.w : g.cx + g.half + SPOT_LABEL_GAP;
-      return { l, r: l + g.w, t: g.cy - 8, b: g.cy + 8 };
+      return { l, r: l + g.w, t: g.cy - Math.max(8, g.h / 2), b: g.cy + Math.max(8, g.h / 2) };
     };
     const placedLabels: Rect[] = [];
     // Exiting spots pre-claim their previous label rect so live spots' collision checks below
@@ -2147,9 +2270,34 @@ const destItems = useMemo((): DestItem[] =>
       if (selectedSpot?.id === sp.id) { plan.set(sp.id, 'left'); placedLabels.push(left); continue; }
       plan.set(sp.id, 'none');
     }
+    // Where each visible name sits, in the same absolute mercator-pixel space as the geometry above, so
+    // a tap on the name can be matched to its spot (see the map's onPress).
+    const hitRects: { id: string; rect: Rect }[] = [];
+    for (const sp of live) {
+      const side = plan.get(sp.id);
+      if (!side || side === 'none') continue;
+      // The planner's cy sits half a tail below where the label is actually drawn (centred on the
+      // bubble), so shift the tap target up to match what's on screen.
+      const shift = (selectedSpot?.id === sp.id ? 14 : 10) / 2;
+      const r = labelRectFor(geo.get(sp.id)!, side);
+      hitRects.push({ id: sp.id, rect: { l: r.l, r: r.r, t: r.t - shift, b: r.b - shift } });
+    }
+    spotLabelHitRef.current = { pxPerDegLng, rects: hitRects };
     prevSpotLabelPlanRef.current = plan;
     return plan;
   }, [renderedSpots, pillVisibleLngDelta, selectedSpot, savedSpots, visitIndex]);
+
+  // Spot pins in depth order: northernmost first, southernmost last. MarkerViews stack by when they
+  // were mounted, so mounting in this order puts a pin that is lower on the map in front of any pin
+  // above it. A pin is ONE element, foot and photo together: wherever two crowd each other, the one
+  // whose foot (its pointed tip) is nearer the top of the screen is behind the other as a whole,
+  // never just its tail. The order is by latitude alone (fixed, unlike anything camera-dependent),
+  // so pins joining or leaving never reorder the ones already on the map, which would remount them
+  // and make them blink.
+  const spotsByDepth = useMemo(
+    () => [...renderedSpots].sort((a, b) => b.item.coordinates.latitude - a.item.coordinates.latitude),
+    [renderedSpots],
+  );
 
   // ── Search results ────────────────────────────────────────────────────────
   const searchResults = useMemo(() => computeSearchResults(searchQuery), [searchQuery]);
@@ -2629,7 +2777,16 @@ const destItems = useMemo((): DestItem[] =>
     // otherwise from a caller that doesn't run through this path). isFingerDraggingMap, not
     // isMapInteracting — see its own comment: a tap landing while a previous pan is still
     // coasting on momentum must still open collapsed, not get stuck peeking.
-    setSheetSnapState(isFingerDraggingMap() ? 'peek' : 'collapsed');
+    const openPeeked = isFingerDraggingMap();
+    setSheetSnapState(openPeeked ? 'peek' : 'collapsed');
+    // The new destination opens at half-screen, where there is no breadcrumb. The gate's inputs normally ease over the
+    // sheet's slide, which left a breadcrumb that was already showing (the map had been panned, or a country prompt was
+    // up) visible for that fade — a flash — so they snap to their half-screen values here instead.
+    if (!openPeeked) {
+      crumbPeekSV.value = 0;
+      sheetCollapsedSV.value = 1;
+      returnPromptProgress.value = 0; returnPromptVisibleRef.current = false;
+    }
     // destHomeRegion is set right away to the exact default view the fly-to below targets (see
     // setDestHomeToDefault) — not captured from wherever the camera first comes to rest, which a
     // quick pan/zoom before the flight settled used to turn into the wrong home (no arrow).
@@ -3543,6 +3700,12 @@ const destItems = useMemo((): DestItem[] =>
         longitudeDelta: lngDelta,
       });
       setCamZoom(state.properties.zoom);
+      // Smoothed zoom velocity (levels/sec) from successive events -> predicted outward travel over the render lag.
+      const prev = zoomSampleRef.current, z = state.properties.zoom;
+      let v = 0;
+      if (prev && now > prev.t) v = 0.5 * prev.v + 0.5 * ((z - prev.z) / ((now - prev.t) / 1000));
+      zoomSampleRef.current = { z, t: now, v };
+      setZoomOutLead(Math.max(0, Math.min(PLAN_LEAD_MAX_ZOOM, -v * PLAN_LAG_SEC)));
     });
     camZoomRef.current = state.properties.zoom;
   }, [returnPromptProgress, destReturnPromptProgress, mapGestureAtSV, releaseHeldSelection]);
@@ -3574,6 +3737,8 @@ const destItems = useMemo((): DestItem[] =>
 
     setRegion(newRegion);
     setCamZoom(state.properties.zoom);
+    zoomSampleRef.current = null;
+    setZoomOutLead(0);
     camZoomRef.current = state.properties.zoom;
 
     // Captures the camera a country fit landed on, so later visits can go straight there (see
@@ -3808,14 +3973,14 @@ const destItems = useMemo((): DestItem[] =>
               <DestPin
                 dest={dest} spotCount={spotCount}
                 isVisited={isVisited}
-                isSelected={isSelectedDest} pinState="photo"
+                isSelected={isSelectedDest} pinState="photo" hideLabel={destPinPlan.labelHiddenIds.has(dest.id)}
               />
             </Pressable>
           </FadePin>
         </MapboxGL.MarkerView>
       );
     }),
-  [renderedPhotoDests, selectedDest, savedDestinations, visitIndex, visitedSpotCountByDest, handleMarkerPress, handleResetToDest, hiddenDestIds]);
+  [renderedPhotoDests, selectedDest, savedDestinations, visitIndex, visitedSpotCountByDest, handleMarkerPress, handleResetToDest, hiddenDestIds, destPinPlan]);
 
   // Which sliding sheet is mounted right now. When it changes from one level to another, the incoming sheet is a
   // replacement for the one that was showing and starts where that one rested (see sheetPose) rather than from below
@@ -3910,7 +4075,36 @@ const destItems = useMemo((): DestItem[] =>
         }}
         onCameraChanged={handleCameraChanged}
         onMapIdle={handleMapIdle}
-        onPress={() => {
+        onPress={(e: any) => {
+          // A tap that lands on a spot's NAME opens that spot, same as tapping its pin. The names are
+          // plain overlays outside the marker's own box (they can't take touches), so the tap arrives
+          // here as a map tap and is matched against the label rects the planner already computed.
+          const c = e?.geometry?.coordinates;
+          if (c && !pressBlocked()) {
+            const { pxPerDegLng, rects } = spotLabelHitRef.current;
+            const t = mercatorPx(c[0], c[1], pxPerDegLng);
+            const tx = t.x, ty = -t.y;
+            const PAD = 6;
+            let hitId: string | null = null, best = Infinity;
+            for (const { id, rect } of rects) {
+              if (tx < rect.l - PAD || tx > rect.r + PAD || ty < rect.t - PAD || ty > rect.b + PAD) continue;
+              const d = Math.abs(tx - (rect.l + rect.r) / 2) + Math.abs(ty - (rect.t + rect.b) / 2);
+              if (d < best) { best = d; hitId = id; }
+            }
+            const hitSpot = hitId ? renderedSpots.find(r => r.item.id === hitId && !r.exiting)?.item : undefined;
+            if (hitSpot) { handleSpotPress(hitSpot); return; }
+            // Same for a destination's name (drawn below its pin, outside the marker's box).
+            const dh = destLabelHitRef.current;
+            const dt = mercatorPx(c[0], c[1], dh.pxPerDegLng);
+            let dHit: string | null = null, dBest = Infinity;
+            for (const { id, rect } of dh.rects) {
+              if (dt.x < rect.l - PAD || dt.x > rect.r + PAD || -dt.y < rect.t - PAD || -dt.y > rect.b + PAD) continue;
+              const d = Math.abs(dt.x - (rect.l + rect.r) / 2) + Math.abs(-dt.y - (rect.t + rect.b) / 2);
+              if (d < dBest) { dBest = d; dHit = id; }
+            }
+            const hitDest = dHit ? renderedPhotoDests.find(r => r.item.id === dHit && !r.exiting)?.item : undefined;
+            if (hitDest) { if (selectedDest?.id === hitDest.id) handleResetToDest(); else handleMarkerPress(hitDest); return; }
+          }
           searchInputRef.current?.blur();
           setSearchFocused(false);
           if (showMapMenuRef.current) { showMapMenuRef.current = false; setShowMapMenu(false); }
@@ -4125,10 +4319,10 @@ const destItems = useMemo((): DestItem[] =>
             appearance/disappearance itself is the FadePin mount/exit cross-fade — never a
             continuous zoom-tied opacity, which could leave pins resting half-faded when the
             camera settled mid-ramp.
-            Rendered after the country pills and destination photos. Not reordered when the
-            selection changes: moving a keyed MarkerView means removing and re-adding its native view,
-            which made pins blink. */}
-        {renderedSpots.map(({ item: spot, exiting }) => {
+            Rendered after the country pills and destination photos, in depth order (see spotsByDepth:
+            lower on the map = in front). Not reordered when the selection changes: moving a keyed
+            MarkerView means removing and re-adding its native view, which made pins blink. */}
+        {spotsByDepth.map(({ item: spot, exiting }) => {
           const isSelectedSpot = selectedSpot?.id === spot.id;
           const isVisitedSpot = visitIndex.isSpotVisited(spot.id);
           return (
@@ -4274,13 +4468,13 @@ const destItems = useMemo((): DestItem[] =>
           style={{
             opacity: breadcrumbAnim,
             transform: [{ scale: breadcrumbScale }],
-            alignItems: 'center',
+            alignItems: 'center', maxWidth: '100%',
           }}
           pointerEvents="box-none"
         >
           {crumb ? (
             /* Destination view: single white pill (fixed height) so black segment overflows below */
-            <View style={styles.breadcrumbPillWhite}>
+            <View style={styles.breadcrumbPillWhite} onLayout={e => { crumbWidthSV.value = e.nativeEvent.layout.width; }}>
               <Pressable style={styles.breadcrumbSegmentInactive} onPress={handleZoomToCountry} hitSlop={6}>
                 <View style={styles.bcFlagCircle}>
                   <View style={styles.bcFlagClip}>
@@ -4298,7 +4492,7 @@ const destItems = useMemo((): DestItem[] =>
                   <CornerUpLeft size={14} color="rgba(255,255,255,0.9)" strokeWidth={2.5} />
                 </Reanimated.View>
                 <View style={styles.breadcrumbPillRow}>
-                  <Text style={styles.breadcrumbTxtLight} numberOfLines={1}>{crumb.name}</Text>
+                  <Text style={styles.breadcrumbTxtLight} numberOfLines={1} ellipsizeMode="tail">{crumb.name}</Text>
                 </View>
               </Pressable>
             </View>
@@ -4306,6 +4500,7 @@ const destItems = useMemo((): DestItem[] =>
             /* Country view: black pill — arrow slides in when user pans/zooms away */
             <Pressable
               style={styles.breadcrumbPillBlack}
+              onLayout={e => { crumbWidthSV.value = e.nativeEvent.layout.width; }}
               onPress={handleResetToCountry}
               hitSlop={6}
             >
@@ -4338,7 +4533,7 @@ const destItems = useMemo((): DestItem[] =>
           search bar is focused (layersPillFadeStyle) since the expanded search bar then
           occupies this same corner. ──────────────────────────────────────────────────── */}
       <Reanimated.View
-        style={[styles.mapTypeWrap, { top: insets.top + 10 }, layersPillFadeStyle]}
+        style={[styles.mapTypeWrap, { top: insets.top + 10 }, layersPillFadeStyle, layersShiftStyle]}
         onTouchStart={() => { lastMenuOpenRef.current = Date.now(); }}
         pointerEvents={searchFocused ? 'none' : 'auto'}
       >
@@ -4713,7 +4908,7 @@ const styles = StyleSheet.create({
   spotMarkerRow: { flexDirection: 'row', alignItems: 'center', columnGap: SPOT_LABEL_GAP },
   spotPinLabelWrap: { position: 'absolute' },
   spotPinLabel: {
-    fontSize: 12, fontWeight: '700', color: '#111827',
+    fontSize: 12, lineHeight: SPOT_LABEL_LINE_H, fontWeight: '700', color: '#111827',
   },
   // Absolute white copies offset ±0.75px in each diagonal — halo trace, same trick as
   // DestPin's labelOutline (inverted colors: dark text needs a light halo here, not vice
@@ -4757,15 +4952,18 @@ const styles = StyleSheet.create({
   // Breadcrumb pill
   breadcrumbBar: {
     position: 'absolute', left: 0, right: 0, zIndex: 20, alignItems: 'center',
+    // Side margin: a long name stops short of the screen edges and ends in "..." (see breadcrumbPillWhite / the text).
+    paddingHorizontal: 12,
   },
   breadcrumbPillBlack: {
+    maxWidth: '100%',
     flexDirection: 'row', alignItems: 'center',
     backgroundColor: '#111827', borderRadius: 20,
     paddingHorizontal: 16, paddingTop: 9, paddingBottom: 9,
     shadowColor: '#000', shadowOpacity: 0.25, shadowRadius: 12,
     shadowOffset: { width: 0, height: 3 }, elevation: 6,
   },
-  breadcrumbPillRow: { flexDirection: 'row', alignItems: 'center', gap: 6 },
+  breadcrumbPillRow: { flexDirection: 'row', alignItems: 'center', gap: 6, flexShrink: 1, minWidth: 0 },
 
   breadcrumbDestRow: {
     flexDirection: 'row', alignItems: 'flex-start', gap: 6,
@@ -4774,11 +4972,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row', alignItems: 'center',
     backgroundColor: 'white', borderRadius: 100,
     paddingHorizontal: 4, paddingVertical: 3,
-    height: 40,
+    height: 40, maxWidth: '100%',
     shadowColor: '#000', shadowOpacity: 0.14, shadowRadius: 12,
     shadowOffset: { width: 0, height: 3 }, elevation: 5,
   },
   breadcrumbSegmentInactive: {
+    flexShrink: 0,
     flexDirection: 'row', alignItems: 'center', gap: 5,
     paddingHorizontal: 10, paddingVertical: 4,
   },
@@ -4786,6 +4985,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row', alignItems: 'center',
     backgroundColor: '#111827', borderRadius: 100,
     paddingHorizontal: 16, alignSelf: 'stretch',
+    flexShrink: 1, minWidth: 0,   // takes the squeeze when the name is long: the name's text truncates, the arrow keeps its room
   },
   breadcrumbIcon:    { fontSize: 14 },
   bcFlagCircle: {
@@ -4799,7 +4999,7 @@ const styles = StyleSheet.create({
   },
   bcFlagImg: { width: 19, height: 19 },
   breadcrumbTxtDark: { fontSize: 13, fontWeight: '500', color: '#111827' },
-  breadcrumbTxtLight:{ fontSize: 13, fontWeight: '600', color: 'white' },
+  breadcrumbTxtLight:{ fontSize: 13, fontWeight: '600', color: 'white', flexShrink: 1 },
   breadcrumbSep:     { fontSize: 13, color: '#9CA3AF' },
 
   // Back pill

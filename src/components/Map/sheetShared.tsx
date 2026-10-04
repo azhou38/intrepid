@@ -27,6 +27,25 @@ const { width: W, height: H } = Dimensions.get('window');
 // card or header it sits in, the font steps down with its length: `size` is the base size, `breaks` the name lengths
 // (in characters) after which it steps to the next of `sizes` (`[size, size-?, …]`). Lines are sized by lineHeight
 // so a wrapped name stays compact.
+// Sheet header names keep their full base size however long they are, wrapping onto up to `maxLines` lines; the
+// font only steps down (through `sizes`, largest first) once the name would need more lines than that. Lines are
+// estimated by greedy word wrap at an average serif-bold glyph width (~0.56em, letterSpacing included).
+export function heroFontSize(name: string, sizes: number[], maxWidth: number, maxLines = 3): number {
+  const words = name.split(/\s+/).filter(Boolean);
+  for (const size of sizes) {
+    const perLine = Math.floor(maxWidth / (size * 0.56));
+    let lines = 1, cur = 0;
+    for (const w of words) {
+      const len = w.length;
+      if (cur === 0) cur = len;
+      else if (cur + 1 + len <= perLine) cur += 1 + len;
+      else { lines++; cur = len; }
+      while (cur > perLine) { lines++; cur -= perLine; } // a single word longer than a line breaks mid-word
+    }
+    if (lines <= maxLines) return size;
+  }
+  return sizes[sizes.length - 1];
+}
 export function nameFontSize(name: string, sizes: [number, number, number], breaks: [number, number]): number {
   return name.length <= breaks[0] ? sizes[0] : name.length <= breaks[1] ? sizes[1] : sizes[2];
 }
@@ -1552,7 +1571,7 @@ export function VisitCardList<T extends VisitSelectorItem>({
                           {/* Arrow as a trailing text glyph (not a separate icon) so it flows
                               with the text and sits right after the last letter, even once the
                               name wraps to a second line. */}
-                          <Text style={vcS.memSpotCardName} numberOfLines={2}>
+                          <Text style={vcS.memSpotCardName}>
                             {item.name}
                             <Text style={vcS.memSpotCardArrow}> ›</Text>
                           </Text>
@@ -2161,7 +2180,7 @@ export function VisitModuleSheet<T extends VisitSelectorItem>({
                           <View style={esS.spotRowThumb}>
                             {item.renderThumb()}
                           </View>
-                          <Text style={esS.spotRowTxt} numberOfLines={1}>{item.name}</Text>
+                          <Text style={esS.spotRowTxt}>{item.name}</Text>
                           <View style={[esS.spotToggle, checked && esS.spotToggleOn]}>
                             {checked && <Check size={11} color="white" strokeWidth={2.5} />}
                           </View>

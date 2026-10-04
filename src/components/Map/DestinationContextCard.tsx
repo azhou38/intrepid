@@ -143,7 +143,7 @@ export default function DestinationContextCard({ destination, savedEntry, visibl
         {!isVisited && (
           <View style={st.info}>
             <View style={st.nameRow}>
-              <Text style={st.name} numberOfLines={1}>{destination.name}</Text>
+              <Text style={st.name}>{destination.name}</Text>
             </View>
             <View style={st.metaRow}>
               <CircleFlag countryCode={destination.countryCode} size={13} />
@@ -161,7 +161,7 @@ export default function DestinationContextCard({ destination, savedEntry, visibl
         {isVisited && (
           <View style={st.info}>
             <View style={st.nameRow}>
-              <Text style={st.name} numberOfLines={1}>{destination.name}</Text>
+              <Text style={st.name}>{destination.name}</Text>
             </View>
             <View style={st.metaRow}>
               <CircleFlag countryCode={destination.countryCode} size={13} />

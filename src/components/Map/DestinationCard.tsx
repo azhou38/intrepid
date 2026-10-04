@@ -67,6 +67,10 @@ function DestinationCard({ dest, isVisited, onPress, width = DEST_CARD_W, showCo
     });
   }, [dest.id]);
 
+  // The scrim reaches as high as the text does: base height, or the text block's height plus its lift and some fade.
+  const [infoH, setInfoH] = useState(0);
+  const gradH = Math.max(100, infoH + 16 + 28);
+
   return (
     // Shadow color reflects visited status — same green as the "Visited" tag itself when
     // visited, a neutral gray/black otherwise (shadowOpacity bumped up a bit for the colored
@@ -94,7 +98,7 @@ function DestinationCard({ dest, isVisited, onPress, width = DEST_CARD_W, showCo
             resizeMode="cover"
           />
         )}
-        <View pointerEvents="none" style={styles.cardGradWrap}>
+        <View pointerEvents="none" style={[styles.cardGradWrap, { height: gradH }]}>
           <Svg style={StyleSheet.absoluteFill}>
             <Defs>
               <SvgLinearGradient id={`destCardGrad-${dest.id}`} x1="0" y1="0" x2="0" y2="1">
@@ -106,7 +110,7 @@ function DestinationCard({ dest, isVisited, onPress, width = DEST_CARD_W, showCo
             <Rect x="0" y="0" width="100%" height="100%" fill={`url(#destCardGrad-${dest.id})`} />
           </Svg>
         </View>
-        <View pointerEvents="none" style={[styles.cardImageInfo, local.imageInfo]}>
+        <View pointerEvents="none" style={[styles.cardImageInfo, local.imageInfo]} onLayout={e => setInfoH(e.nativeEvent.layout.height)}>
           <Text style={styles.cardName}>{dest.name}</Text>
           {showCountry && (
             <View style={styles.cardCountryRow}>

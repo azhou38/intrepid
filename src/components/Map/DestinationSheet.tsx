@@ -44,7 +44,7 @@ import {
   parseDateStr, DatePickerModal, PhotoGalleryModal,
   VisitCardList, VisitModuleSheet, type VisitSelectorItem,
   useDeferredMount,
-  AIContentNote, nameFontSize,
+  AIContentNote, nameFontSize, heroFontSize,
 } from './sheetShared';
 
 const { height: H, width: W } = Dimensions.get('window');
@@ -74,7 +74,7 @@ const TAB_BAR_TUCK = 24;
 const PEEK_STRIP_H = 90;
 // The hero name's size and line height, stepping down for a long name so the wrapped lines stay compact.
 const heroNameSize = (name: string) => {
-  const fontSize = nameFontSize(name, [42, 34, 29], [14, 24]);
+  const fontSize = heroFontSize(name, [42, 34, 29, 24], W - 48);
   return { fontSize, lineHeight: Math.round(fontSize * 1.1) };
 };
 const PEEK_Y = Math.max(COLLAPSED_Y, (H - BOTTOM_TAB_H) - PEEK_STRIP_H);
