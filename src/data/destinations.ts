@@ -999,7 +999,7 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: '{months} bring either long summer days on the lake or prime ski season on the Remarkables and Coronet Peak.',
   },
   {
-    id: 'wanaka', name: 'Wānaka', country: 'New Zealand', countryCode: 'NZ', timezone: 'Pacific/Auckland', defaultZoomSpanKm: 40,
+    id: 'wanaka', name: 'Wānaka', country: 'New Zealand', countryCode: 'NZ', timezone: 'Pacific/Auckland', defaultZoomSpanKm: 50,
     continent: 'Oceania', coordinates: { latitude: -44.7032, longitude: 169.1321 },
     category: 'lake', icon: '🌳', rank: 2,
     tagline: "Queenstown's laid-back neighbour, with a lake, a famous tree and big mountains.",
