@@ -229,7 +229,7 @@ function SearchResultRow({ item, last, onSelect, onRemove }: {
         ? <CircleFlag countryCode={countryCode} size={22} />
         : <SearchResultThumb name={thumbName!} icon={icon ?? '📍'} cacheKey={thumbKey!} size={30} />}
       <View style={{ flex: 1 }}>
-        <Text style={st.label} numberOfLines={1}>{label}</Text>
+        <Text style={st.label}>{label}</Text>
         {sublabel ? <Text style={st.sub} numberOfLines={1}>{sublabel}</Text> : null}
       </View>
       <Text style={st.badge}>{badge}</Text>

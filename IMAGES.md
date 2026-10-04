@@ -12,12 +12,38 @@ There are three kinds of photo, each with its own rule:
 
 ## Every photo
 
-- **Real, ground-level, in focus, well lit.** A photograph of the place as a visitor sees it. Not a drawing, painting, postcard scan, rendering or collage.
-- **Never** a map, flag, logo, coat of arms, diagram, chart, floor plan, poster, signage, banknote, coin, icon or a heavily cropped detail.
+- **Real, ground-level, in focus, well lit.** A photograph of the place as a visitor sees it. Not a drawing, painting, engraving, lithograph, postcard scan, rendering or collage.
+- **Never** a map, satellite or orbital image, flag, logo, coat of arms, diagram, chart, floor plan, poster, signage, banknote, coin, icon or a heavily cropped detail.
 - **Never** a different place with a similar name. Check the file's page, not just its name.
+- **Pass the four checks below.** They are the mistakes that have actually shipped.
 - **No people as the subject**, no watermarks, no text overlaid, no extreme filters or HDR.
 - **Free licence only.** Commons files carry one; the build records the author and licence in the manifest. (The app doesn't display credits yet; keep to Commons so they can be shown later.)
 - **Sharp at the size it's shown.** The app requests photos at about 1.5× the screen's pixel width (up to 1920px) for headers and 960px for cards, so a file narrower than the minimum below looks soft.
+
+## The four checks
+
+Run all four on every photo: headers, why-visit photos and spot overrides alike. **One failure rejects the photo.** Look at the image itself by opening the file's Commons page. A file name, a search ranking or a matching Wikipedia title proves nothing.
+
+1. **It is the right place.** If the name is vague, shared, or also a person, film, band, ship or a place in another country (Clyde, Hanmer, Blue Lake, and so on), the photo must be proven to be the local place.
+   - Search with the region ("Clyde, Central Otago", never "Clyde").
+   - Confirm on the file's page that its description, categories or coordinates are the local place. Reject anything categorised under people, films, ships or another country.
+   - A high name-match score is **not** evidence for an ambiguous name: the search rewards a file literally named after the string, which is how this happens. *Clyde used a photo of Bonnie and Clyde.*
+
+2. **It shows the named thing itself.** The subject is the lake, the hot pool, the peak, the bridge: not the township, car park, sign, jetty or building beside it. The name on the card is the subject.
+   - Test: shown this photo with no caption, would a visitor say "that's the X" and recognise what they came for?
+   - If the file is mainly of a settlement that shares the name, it fails. *"Blue Lake, St Bathans" used a photo of the St Bathans township, not the blue lake.*
+
+3. **It is spectacular and wide.** Headers and why-visit cards sell the place: a sweeping scenic view, a dramatic landscape, a skyline or waterfront with its setting around it, a striking moment.
+   - Fails: a house, shopfront, street corner, garden, car park, ordinary building or close-up, even a genuine photo taken in the town, unless that building is the very attraction the card is about.
+   - A town header is the town in its landscape (lake, mountains, coast), never a single house in it. *The Wanaka and Hanmer Springs headers were each just a house.*
+   - If no spectacular photo exists on Commons, say so rather than shipping a flat one.
+
+4. **It is a photograph of the real place, not a representation.** No drawings, paintings, engravings, lithographs, illustrations, maps (including relief and tourist maps), satellite or orbital imagery, 3D renders, diagrams, collages, or photos of a map or a sign.
+   - This applies to why-visit photos exactly as it does to headers. *All three Hanmer Springs why-visit photos were drawings, maps or similar.*
+   - Files in Commons categories such as "Maps of", "Satellite images of", "Drawings of" and "Lithographs of" often have photo-like file names, so judge the image, not the name.
+   - If you cannot tell whether it is a photograph, it fails.
+
+Each of the three why-visit photos is checked on its own: a destination is not done until every one passes. When one bad photo turns up, **audit the rest of that destination and its neighbours**: bad picks come from the same batch and share the same mistake.
 
 ## Headers
 
@@ -57,6 +83,9 @@ One photo per reason, three per destination, in the same order as `whyVisit`.
 
 - **Contact sheet (default):** searches Commons, keeps only files that meet the size and shape rules, and writes `photo-picker.html`. Open it, choose by eye, press "Download picks.json", then `npx tsx scripts/photo-picker.ts --apply picks.json`. Prefer this for headers.
 - **`--auto`:** chooses for you: it drops files that fail the rules, scores the rest (how well the file name matches the place or reason, Commons' own ranking, resolution, and for headers a 1.2–1.6 aspect), avoids repeating a file, writes the winners in, and prints each choice. It never picks a map, logo or diagram, and never an aerial or satellite view for a header. A score is not an eye: **read the printed list and open anything doubtful** before keeping it. Spots are skipped unless you add `--spots`.
+  - `--auto` cannot enforce the four checks. It matches names, so it favours a file literally called "Clyde" (check 1), cannot tell the lake from the village beside it (check 2), cannot tell a scenic view from a house (check 3), and can pick a drawing or map with a photo-like name (check 4).
+  - Always treat these as doubtful and open the file: any vague or shared name, any town or region header (the "just a house" risk), and any file whose name or categories mention map, satellite, drawing, plan, lithograph, engraving or illustration.
+  - For vague names, don't use `--auto` at all: use the contact sheet.
 
 Without network access (this applies to some sessions) you cannot see Commons: do not invent file names. Either leave the photos for the user to run `--auto` or the contact sheet, or say plainly that they are unverified.
 

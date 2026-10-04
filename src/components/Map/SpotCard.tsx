@@ -40,6 +40,9 @@ function SpotCard({ spot, onPress, width }: {
     });
   }, [spot.id]);
 
+  const [infoH, setInfoH] = useState(0);
+  const gradH = Math.max(110, infoH + 16 + 28);
+
   return (
     // Shadow color reflects visited status — same green as the "Visited" tag itself when
     // visited, a neutral gray/black otherwise, matching DestinationCard's own treatment.
@@ -64,7 +67,7 @@ function SpotCard({ spot, onPress, width }: {
               resizeMode="cover"
             />
           )}
-          <View pointerEvents="none" style={[styles.cardGradWrap, { height: 110 }]}>
+          <View pointerEvents="none" style={[styles.cardGradWrap, { height: gradH }]}>
             <Svg style={StyleSheet.absoluteFill}>
               <Defs>
                 <SvgLinearGradient id={`spotCardGrad-${spot.id}`} x1="0" y1="0" x2="0" y2="1">
@@ -76,7 +79,7 @@ function SpotCard({ spot, onPress, width }: {
               <Rect x="0" y="0" width="100%" height="100%" fill={`url(#spotCardGrad-${spot.id})`} />
             </Svg>
           </View>
-          <View pointerEvents="none" style={[styles.cardImageInfo, local.imageInfo]}>
+          <View pointerEvents="none" style={[styles.cardImageInfo, local.imageInfo]} onLayout={e => setInfoH(e.nativeEvent.layout.height)}>
             <Text style={styles.cardName}>{spot.name}</Text>
             <View style={local.metaRow}>
               <Clock size={11} color="rgba(255,255,255,0.9)" strokeWidth={2.5} />

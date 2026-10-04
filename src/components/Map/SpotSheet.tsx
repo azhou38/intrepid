@@ -35,13 +35,13 @@ import EntityPhoto from './EntityPhoto';
 import {
   VisitCardList, VisitModuleSheet, PhotoGalleryModal,
   useDeferredMount,
-  AIContentNote, nameFontSize,
+  AIContentNote, nameFontSize, heroFontSize,
 } from './sheetShared';
 
 const { height: H, width: W } = Dimensions.get('window');
 
 const heroNameSize = (name: string) => {
-  const fontSize = nameFontSize(name, [34, 29, 25], [18, 28]);
+  const fontSize = heroFontSize(name, [34, 29, 25, 21], W - 48);
   return { fontSize, lineHeight: Math.round(fontSize * 1.1) };
 };
 const cardNameSize = (name: string) => {
@@ -118,6 +118,7 @@ function CarouselCard({ spot, isActive, onPress, onAddVisit, gradId }: {
   // lower-res image that happened to get cached first under the shared key (e.g. a map pin
   // or search result thumbnail, both requested at ~120px).
   const cacheKey = `spotcard_${spot.id}`;
+  const [nameH, setNameH] = useState(0);
   const [thumb, setThumb] = useState<string | null>(thumbCache.get(cacheKey) ?? null);
   const thumbWasCachedRef = useRef(thumbCache.has(cacheKey));
   useEffect(() => {
@@ -170,7 +171,7 @@ function CarouselCard({ spot, isActive, onPress, onAddVisit, gradId }: {
           )}
           {/* Bottom-left overlay: just the name now, on a dark scrim so it stays legible
               over any photo. Time-to-spend and cost sit below the image. */}
-          <View pointerEvents="none" style={st.cardImageGradWrap}>
+          <View pointerEvents="none" style={[st.cardImageGradWrap, { height: Math.max(64, nameH + 10 + 28) }]}>
             <Svg style={StyleSheet.absoluteFill}>
               <Defs>
                 <SvgLinearGradient id={`cardGrad-${gradId}`} x1="0" y1="0" x2="0" y2="1">
@@ -182,7 +183,7 @@ function CarouselCard({ spot, isActive, onPress, onAddVisit, gradId }: {
               <Rect x="0" y="0" width="100%" height="100%" fill={`url(#cardGrad-${gradId})`} />
             </Svg>
           </View>
-          <View pointerEvents="none" style={st.cardImageInfo}>
+          <View pointerEvents="none" style={st.cardImageInfo} onLayout={e => setNameH(e.nativeEvent.layout.height)}>
             <Text style={[st.cardName, cardNameSize(spot.name)]}>{spot.name}</Text>
           </View>
         </View>
@@ -1355,7 +1356,7 @@ function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore, nearbyHlScrol
             {ticketFaviconUri && !faviconFailed
               ? <Image source={{ uri: ticketFaviconUri }} style={st.ticketFavicon} onError={() => setFaviconFailed(true)} />
               : <Ticket size={20} color="#6366F1" />}
-            <Text style={st.ticketTxt} numberOfLines={2}>{spot.name} official site</Text>
+            <Text style={st.ticketTxt}>{spot.name} official site</Text>
             <Pressable style={st.ticketBtn} onPress={() => Linking.openURL(spot.ticketUrl!)} hitSlop={6}>
               <ExternalLink size={13} color="white" />
               <Text style={st.ticketBtnTxt}>Visit</Text>
