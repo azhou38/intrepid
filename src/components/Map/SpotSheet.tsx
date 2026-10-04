@@ -35,10 +35,19 @@ import EntityPhoto from './EntityPhoto';
 import {
   VisitCardList, VisitModuleSheet, PhotoGalleryModal,
   useDeferredMount,
-  AIContentNote,
+  AIContentNote, nameFontSize,
 } from './sheetShared';
 
 const { height: H, width: W } = Dimensions.get('window');
+
+const heroNameSize = (name: string) => {
+  const fontSize = nameFontSize(name, [34, 29, 25], [18, 28]);
+  return { fontSize, lineHeight: Math.round(fontSize * 1.1) };
+};
+const cardNameSize = (name: string) => {
+  const fontSize = nameFontSize(name, [25, 22, 19], [16, 26]);
+  return { fontSize, lineHeight: Math.round(fontSize * 1.12) };
+};
 // Practical info — time needed and cost — in plain black, both on the carousel cards and in the
 // sheet's gray box. Deliberately not green: across the app green means "visited".
 const INFO_INK = '#111827';
@@ -174,7 +183,7 @@ function CarouselCard({ spot, isActive, onPress, onAddVisit, gradId }: {
             </Svg>
           </View>
           <View pointerEvents="none" style={st.cardImageInfo}>
-            <Text style={st.cardName} numberOfLines={1}>{spot.name}</Text>
+            <Text style={[st.cardName, cardNameSize(spot.name)]}>{spot.name}</Text>
           </View>
         </View>
         {/* Below the image — time/cost, then the description with room for at least
@@ -986,7 +995,7 @@ function SpotSheet({
 
             <View style={st.heroBottomStack}>
               <View style={st.heroContent}>
-                <Text style={st.heroName} numberOfLines={2}>{activeSpot.name}</Text>
+                <Text style={[st.heroName, heroNameSize(activeSpot.name)]}>{activeSpot.name}</Text>
                 <View style={st.heroMeta}>
                   {/* A standalone spot has no destination to name — just its country. */}
                   {!!destination && (
@@ -1108,7 +1117,7 @@ function SpotSheet({
           <View style={st.carHeader}>
             <View style={{ flex: 1 }}>
               <Text style={st.carEyebrow}>{destination ? 'SPOTS IN' : 'SPOT IN'}</Text>
-              <Text style={st.carDest} numberOfLines={1}>{destination ? destination.name : spotCountry(activeSpot)}</Text>
+              <Text style={st.carDest}>{destination ? destination.name : spotCountry(activeSpot)}</Text>
             </View>
             {spots.length > 1 && <Text style={st.carCounter}>{activeIndex + 1} / {spots.length}</Text>}
             {!!onGoToList && (

@@ -107,7 +107,7 @@ function DestinationCard({ dest, isVisited, onPress, width = DEST_CARD_W, showCo
           </Svg>
         </View>
         <View pointerEvents="none" style={[styles.cardImageInfo, local.imageInfo]}>
-          <Text style={styles.cardName} numberOfLines={2}>{dest.name}</Text>
+          <Text style={styles.cardName}>{dest.name}</Text>
           {showCountry && (
             <View style={styles.cardCountryRow}>
               <CircleFlag countryCode={dest.countryCode} size={12} />

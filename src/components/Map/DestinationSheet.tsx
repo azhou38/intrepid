@@ -44,7 +44,7 @@ import {
   parseDateStr, DatePickerModal, PhotoGalleryModal,
   VisitCardList, VisitModuleSheet, type VisitSelectorItem,
   useDeferredMount,
-  AIContentNote,
+  AIContentNote, nameFontSize,
 } from './sheetShared';
 
 const { height: H, width: W } = Dimensions.get('window');
@@ -72,6 +72,11 @@ const TAB_BAR_TUCK = 24;
 // whenever the map itself is panned/zoomed, so the sheet gets out of the way while still
 // showing what's selected.
 const PEEK_STRIP_H = 90;
+// The hero name's size and line height, stepping down for a long name so the wrapped lines stay compact.
+const heroNameSize = (name: string) => {
+  const fontSize = nameFontSize(name, [42, 34, 29], [14, 24]);
+  return { fontSize, lineHeight: Math.round(fontSize * 1.1) };
+};
 const PEEK_Y = Math.max(COLLAPSED_Y, (H - BOTTOM_TAB_H) - PEEK_STRIP_H);
 // Snap transitions ease to their target with no overshoot at all — a plain duration+curve
 // tween instead of a physical spring, since any spring (even lightly underdamped) reads as
@@ -1456,7 +1461,8 @@ function DestinationSheet({
                 collapsed and lower down once expanded, same as it always has. */}
             <View style={[st.heroBottomStack, st.heroBottomStackPad]}>
               <View style={st.heroContent}>
-                <Text style={st.heroName} numberOfLines={1}>{destination.name}</Text>
+                {/* Full name, wrapping — never "…" (the peek strip below is the only one-line version). */}
+                <Text style={[st.heroName, heroNameSize(destination.name)]}>{destination.name}</Text>
 
                 <View style={st.heroMeta}>
                   <View style={st.heroFlagCircle}>

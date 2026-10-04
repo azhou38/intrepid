@@ -19,6 +19,13 @@ Do not force a spot under a destination just because one is nearby. A place with
 
 Rule of thumb for a destination: a base with roughly **three or more** worthwhile spots around it, or a headline attraction large enough to be a trip in itself (a national park, a major city). That is a guide to the call, not a quota.
 
+### Granularity: what is and isn't a destination
+
+- **Every national park is a destination**, named as the park (`Paparoa National Park`), with the park's gateway villages, walks and sights as its spots. Do not make a destination of a village or feature *inside* a park (Punakaiki, Franz Josef, Fox Glacier): merge them into the park (Paparoa, Westland Tai Poutini). The same goes for any place too small or local to stand beside its neighbours: fold it into the park, coast or region that contains it.
+- **Sizable settlements are destinations**, even without a headline attraction, when a guidebook gives them their own chapter or they are a regional hub (Timaru, Blenheim, Invercargill). A city or town people stop in, base from, or travel through earns a pin; do not skip it for lack of a famous sight.
+- **No overlapping destinations.** A region and its sub-areas must not both be destinations (Marlborough vs Marlborough Sounds, or a wine region vs its main town): keep the one visitors plan around, and name the other by its town (Blenheim) if it is a separate base. Check a new destination's span against its neighbours'.
+- **Towns that don't make the cut are spots**, not omitted: a small town with a few services or a gallery strip (Takaka, Picton, Havelock, Te Anau) is a spot of the destination it serves, or standalone if it has none.
+
 ## What qualifies
 
 **The test: would a Lonely Planet (or Rough Guide) chapter for the area give it its own entry or a highlighted mention?** Include what a typical independent traveller would actually plan around. Exclude what only locals use, however pleasant.
@@ -123,13 +130,17 @@ When the area's country is not yet in the app, also update (the data alone is no
 
 Every new destination needs a hand-picked header and three "Why visit" photos, resolved through the image manifest. All the rules, and how to run `scripts/photo-picker.ts`, are in `IMAGES.md`. Spot photos default to the spot's Wikipedia lead image, which is fine unless it is wrong for the spot.
 
+## Verifying coordinates
+
+A coordinate in the wrong place (a trailhead in the sea) is easy to write and hard to see. Take spot coordinates from a source that names the entrance, car park or trailhead (the managing agency's page, OpenStreetMap, Wikipedia), never from memory, and say plainly which you could not confirm. `npx tsx scripts/verify-coordinates.ts --country NZ` (needs network) checks each spot against OpenStreetMap: it flags points OSM places in the sea and names OSM puts more than `--max-km` away; `--fix` writes the OSM position back, so review the diff.
+
 ## Before you finish
 
 - `npx tsc --noEmit -p .` shows no new errors.
 - `npx tsx scripts/check-destination-headers.ts` passes (or lists only destinations whose photos you are about to add).
 - Ids unique across the file; every spot has a `destinationId` that exists or the four standalone fields; no two spots share a name.
 - Each destination has enough surrounding spots to justify being a destination (see "The two levels"); lone attractions are listed as standalone spots, not promoted.
-- Coordinates look right on a map (a swapped sign puts a New Zealand spot in the Atlantic); every spot is within its destination's span (otherwise it is standalone, or the span is wrong).
+- `scripts/verify-coordinates.ts` run for the area when you have network access; coordinates look right on a map (a swapped sign puts a New Zealand spot in the Atlantic); every spot is within its destination's span (otherwise it is standalone, or the span is wrong).
 - Every destination has exactly three `whyVisit`, three `highlights`, three `goodToKnow`; each `bestTimeBlurb` has one `{months}`.
 - Costs have a `currency`, free spots say `free: true`, and no `ticketUrl` points anywhere you have not confirmed.
 - Say plainly in your summary what you could not verify (hours, prices, links) — these are approximate until someone checks them.
