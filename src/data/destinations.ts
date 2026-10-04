@@ -868,6 +868,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'A garden city reborn, with street art, trams and the Southern Alps on its doorstep.',
     description: "Christchurch is the South Island's largest city and the gateway to its wild south. Rebuilt after the 2010–11 earthquakes, it pairs leafy heritage — the Botanic Gardens, punts gliding down the Avon and the restored Arts Centre — with bold new architecture, laneway bars and a thriving street-art scene. Akaroa, the Port Hills and the Alps are all within easy reach.",
     whyVisit: ['Punting on the Avon River', 'Bold post-quake rebuild & street art', 'Gateway to the Southern Alps'],
+    whyVisitPhotos: ["Avon River - Christchurch Botanic Gardens - Christchurch, NZ - DSC00948.jpg", "Christchurch ReStart Container Shops 1.jpg", "Southern Alps from Christchurch Airport - panoramio.jpg"],
     highlights: ['Avon punts', 'Street art', 'Alps gateway'],
     goodToKnow: [
       { icon: '🚋', title: 'Ride the heritage tram', detail: 'A hop-on hop-off ticket on the city tram loop doubles as an easy orientation tour of the rebuilt centre.' },
@@ -885,6 +886,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'A French-flavoured harbour village in the crater of an ancient volcano.',
     description: "Akaroa sits on a sheltered harbour carved from an extinct volcano on Banks Peninsula, 80 km from Christchurch. Founded by French settlers in 1840, its streets still carry French names, and its calm waters are home to the world's smallest dolphin, the endemic Hector's. Cafés, galleries and craggy peninsula walks make it a favourite escape.",
     whyVisit: ["Swim with rare Hector's dolphins", 'French colonial heritage', 'Volcanic harbour scenery'],
+    whyVisitPhotos: ["Hectors Dolphin near Akaroa.jpg", "Langlois-Eteveneaux Cottage, Akaroa (c.1843).jpg", "Onawe Peninsula by Tomas Sobek.jpg"],
     highlights: ["Hector's dolphins", 'French heritage', 'Volcanic harbour'],
     goodToKnow: [
       { icon: '🚢', title: 'Avoid cruise-ship days', detail: 'Cruise ships anchor in the harbour on many summer days — check the schedule and plan around them.' },
@@ -902,6 +904,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'Where snow-capped mountains plunge straight into a sea full of whales.',
     description: "Kaikōura is one of the few places on Earth where giant sperm whales can be seen year-round, drawn by a deep submarine canyon just offshore. The Seaward Kaikōura Range rises straight from the coast, framing a town known for its wildlife — fur seals, dusky dolphins and albatross — and its crayfish (kōura in Māori, which gives the town its name).",
     whyVisit: ['Year-round sperm whale watching', 'Mountains meeting the sea', 'Seals, dolphins & albatross'],
+    whyVisitPhotos: ["Destination Kaikoura-513967-whale-tail.jpg", "Seascape. Kaikoura. NZ (14544544353).jpg", "Anim1772 - Flickr - NOAA Photo Library.jpg"],
     highlights: ['Whale watching', 'Mountains & sea', 'Marine wildlife'],
     goodToKnow: [
       { icon: '🌊', title: 'Expect weather cancellations', detail: 'Whale-watch boats often cancel in rough seas — book early in your stay so there is time to rebook.' },
@@ -919,6 +922,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'An alpine spa village of hot pools, forest trails and jet boats.',
     description: 'Hanmer Springs is a small alpine village in North Canterbury, built around natural thermal springs first noted by Europeans in 1859. Its open-air thermal pools, steaming beneath the mountains, are the main draw, but the village also has forest walks, mountain biking, and jet-boating and bungy on the nearby Waiau River.',
     whyVisit: ['Open-air thermal pools', 'Alpine forest walks', 'Adventure on the Waiau River'],
+    whyVisitPhotos: ["Hamner Springs (261408475).jpg", "Hanmer Springs Conical Hill Walkway - panoramio.jpg", "Auf der Fahrt nach Hanmer Springs.JPG"],
     highlights: ['Thermal pools', 'Forest walks', 'River adventures'],
     goodToKnow: [
       { icon: '♨️', title: 'Soak after dark', detail: 'The pools stay open into the evening, and soaking under the stars on a cold night is the classic Hanmer experience.' },
@@ -936,6 +940,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'Rugged alpine passes, braided rivers and the cheeky kea.',
     description: "Arthur's Pass National Park straddles the Southern Alps on the road between Canterbury and the West Coast. Its small village is a base for alpine day hikes like Avalanche Peak, waterfall walks and river valleys, and it's the scenic high point of the TranzAlpine train. Watch for the kea, the world's only alpine parrot — as clever as it is mischievous.",
     whyVisit: ['Ride the TranzAlpine train', 'Alpine day hikes', 'Meet the cheeky kea'],
+    whyVisitPhotos: ["Return TranzAlpine at Otira in unexpected sun (49407823601).jpg", "Black Range from the track to Avalanche Peak, Arthur's Pass National Park, New Zealand.jpg", "Wild Kea at the peak of the Arthur's Pass (Unsplash).jpg"],
     highlights: ['TranzAlpine', 'Alpine hikes', 'Kea parrots'],
     goodToKnow: [
       { icon: '🦜', title: 'Guard your car from kea', detail: "Kea pull rubber seals and wipers off parked cars — don't feed them or leave food out." },
@@ -953,6 +958,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'A turquoise glacial lake beneath one of the darkest night skies on Earth.',
     description: "Lake Tekapo's milky-turquoise water, coloured by fine glacial 'rock flour', sits on the edge of the high Mackenzie Basin with the Southern Alps behind it. It lies within the Aoraki Mackenzie International Dark Sky Reserve, one of the world's best places for stargazing, and in late spring its shores blaze with purple, pink and blue lupins.",
     whyVisit: ['Turquoise glacial lake', 'World-class stargazing', 'Summer lupin fields'],
+    whyVisitPhotos: ["Lake Tekapo Canterbury NZ.jpg", "Church of the Good Shepherd on the shores of Lake Tekapo (ann19065a).jpg", "Russel lupins Lake Tekapo. (52603471079).jpg"],
     highlights: ['Turquoise lake', 'Stargazing', 'Lupin fields'],
     goodToKnow: [
       { icon: '🌑', title: 'Stargaze near a new moon', detail: 'Night-sky tours are best around the new moon — the Milky Way is far clearer without moonlight.' },
@@ -970,6 +976,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "New Zealand's highest peak, ringed by glaciers and ice-blue lakes.",
     description: "Aoraki / Mount Cook, at 3,724 m, is New Zealand's highest mountain and the heart of a national park where more than a third of the land is permanent snow and ice. Easy, spectacular trails like the Hooker Valley Track lead to iceberg-strewn glacial lakes, and scenic flights land on the vast Tasman Glacier. The approach along Lake Pukaki is one of the country's great drives.",
     whyVisit: ["New Zealand's highest mountain", 'The Hooker Valley Track', 'Glaciers and iceberg lakes'],
+    whyVisitPhotos: ["Hooker Valley towards Aoraki Mount Cook at sunset.jpg", "NZ Hooker Valley track.jpg", "Icebergs in Hooker Glacier Lake in front of Aoraki Mount Cook.jpg"],
     highlights: ['Aoraki / Mount Cook', 'Hooker Valley', 'Glacier lakes'],
     goodToKnow: [
       { icon: '🌤️', title: 'Go early for clear views', detail: 'Cloud often builds around the summit by midday — mornings give the best chance of seeing the peak.' },
@@ -987,6 +994,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'The adventure capital of the world, on a lake beneath the Remarkables.',
     description: "Queenstown sits on the shore of glacial Lake Wakatipu, hemmed in by the jagged Remarkables — a setting that turned a gold-rush town into the world's adventure capital. Commercial bungy jumping began here, and jet boats, skydives and ski fields keep the adrenaline flowing, while vineyards, Arrowtown's heritage streets and Glenorchy's Lord of the Rings scenery offer a slower pace.",
     whyVisit: ['Birthplace of commercial bungy', 'Lake Wakatipu & the Remarkables', 'Gateway to Milford Sound'],
+    whyVisitPhotos: ["NZ200315 Kawarau Gorge Bridge 04.jpg", "Queenstown-Lakes 24.jpg", "Milford Sound in Fiordland National Park 04.jpg"],
     highlights: ['Bungy & jet boats', 'Lake Wakatipu', 'Milford gateway'],
     goodToKnow: [
       { icon: '🍔', title: 'Beat the Fergburger queue', detail: 'Queues at the famous burger joint get long by evening — order by phone or go mid-afternoon.' },
@@ -1005,6 +1013,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Queenstown's laid-back neighbour, with a lake, a famous tree and big mountains.",
     description: "Wānaka is a relaxed lakeside town on the edge of Mount Aspiring National Park. Its lakefront willow, 'That Wānaka Tree', growing out of the water, is one of the most photographed sights in the country, while Roys Peak delivers a famous summit view. In winter, the Cardrona and Treble Cone ski fields are close by.",
     whyVisit: ['That Wānaka Tree', 'Roys Peak summit view', 'Gateway to Mount Aspiring'],
+    whyVisitPhotos: ["Wānaka, Part I - Wanaka9347.jpg", "Wanaka, New Zealand, view 2.jpg", "00 1316 Lake Wanaka - New Zealand.jpg"],
     highlights: ['Wānaka Tree', 'Roys Peak', 'Mount Aspiring'],
     goodToKnow: [
       { icon: '🥾', title: 'Start Roys Peak at dawn', detail: 'The track is steep and fully exposed — start early for cooler air, quieter trails and better light.' },
@@ -1023,6 +1032,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Sheer fiords, thundering waterfalls and New Zealand's Great Walks.",
     description: "Fiordland is New Zealand's largest national park, a wilderness of glacier-carved fiords, rainforest and granite peaks in the island's far southwest. Milford Sound — with Mitre Peak rising from black water and waterfalls pouring off its cliffs — is the country's most famous sight, while remote Doubtful Sound offers deep silence. Te Anau is the base for cruises, glowworm caves and three Great Walks.",
     whyVisit: ['Cruise Milford Sound', 'Remote Doubtful Sound', 'Three Great Walks'],
+    whyVisitPhotos: ["Milford Sound, Mitre Peak, ships 2016-01-31.jpg", "Doubtful Sound - Patea - DoubtfulSound9081.jpg", "Milford Track Mackinnon Pass Track 2.jpg"],
     highlights: ['Milford Sound', 'Doubtful Sound', 'Great Walks'],
     goodToKnow: [
       { icon: '🌧️', title: 'Rain is a bonus', detail: "Fiordland gets over 6 m of rain a year — but rain sets off hundreds of temporary waterfalls, so don't cancel for it." },
@@ -1040,6 +1050,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'A Scottish-rooted university city with albatross and penguins next door.',
     description: "Dunedin — from the Gaelic name for Edinburgh — wears its Scottish heritage in grand Victorian stone buildings like its ornate Railway Station. It's a lively student city with a strong café and music scene, at the head of the Otago Peninsula, home to the world's only mainland breeding colony of royal albatross, yellow-eyed penguins and fur seals.",
     whyVisit: ['Royal albatross colony', 'Victorian Scottish heritage', 'Penguins on the Otago Peninsula'],
+    whyVisitPhotos: ["Northern royal albatross,( Diomedea sanfordi,) (31759302480).jpg", "00 1513 Dunedin (New Zealand) - Railway Station.jpg", "Yellow-Eyed Penguins in Dunedin, NZ.jpg"],
     highlights: ['Royal albatross', 'Victorian heritage', 'Penguins'],
     goodToKnow: [
       { icon: '🐧', title: 'See penguins at dusk', detail: 'Yellow-eyed penguins come ashore in the late afternoon — a guided hide tour beats walking beaches alone.' },
@@ -1057,6 +1068,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'Victorian whitestone streets, steampunk and little blue penguins.',
     description: "Oamaru's harbourside Victorian Precinct, built from creamy local limestone, is among the best-preserved historic streetscapes in New Zealand — and the self-proclaimed steampunk capital of the world. Each evening little blue penguins, the world's smallest, come ashore at the town's colony, and the spherical Moeraki Boulders lie a short drive south.",
     whyVisit: ['Little blue penguin parade', 'Victorian whitestone precinct', 'The Moeraki Boulders'],
+    whyVisitPhotos: ["Little blue penguin walking on pond edge.jpg", "Oamaru Victoria style buildings (cropped).jpg", "Moeraki Boulders and beach.jpg"],
     highlights: ['Blue penguins', 'Victorian precinct', 'Moeraki Boulders'],
     goodToKnow: [
       { icon: '📵', title: 'No photos of the penguins', detail: 'Photography is banned during evening penguin viewing to protect the birds.' },
@@ -1074,6 +1086,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'A wild southern coast of waterfalls, sea lions and forest.',
     description: "The Catlins is a remote, beautiful stretch of the South Island's southeast coast between Dunedin and Invercargill. Native forest runs down to empty beaches where sea lions sprawl on the sand, waterfalls like Purakaunui and McLean tumble through the bush, and at Curio Bay a 180-million-year-old petrified forest emerges at low tide.",
     whyVisit: ['Forest waterfalls', 'Sea lions & penguins', 'Petrified forest at Curio Bay'],
+    whyVisitPhotos: ["Purakaunui Falls.jpg", "Hooker's sea lion.jpg", "Petrified Forest, Curio Bay (16538895762).jpg"],
     highlights: ['Waterfalls', 'Sea lions', 'Petrified forest'],
     goodToKnow: [
       { icon: '⛽', title: 'Fuel up first', detail: 'Petrol stations are few — fill up in Balclutha or Invercargill before driving through.' },
@@ -1091,6 +1104,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "New Zealand's wild third island, where kiwi roam the beaches.",
     description: "Stewart Island / Rakiura, across Foveaux Strait from Bluff, is almost entirely national park — a quiet world of bush, birdsong and empty bays with one small village, Oban. It's one of the best places in the country to see wild kiwi, and predator-free Ulva Island is a sanctuary for rare native birds. Rakiura means 'glowing skies', a nod to its southern auroras.",
     whyVisit: ['See kiwi in the wild', 'Ulva Island bird sanctuary', 'The Rakiura Track'],
+    whyVisitPhotos: ["Apteryx australis lawryi - Genevieve Early - 473849803.jpeg", "Gallirallus australis (Weka) on Ulva Island, New Zealand 03.jpg", "Maori Beach, Rakiura Track, Stewart Island (16538845902).jpg"],
     highlights: ['Wild kiwi', 'Ulva Island', 'Rakiura Track'],
     goodToKnow: [
       { icon: '⛴️', title: 'The crossing can be rough', detail: 'The one-hour ferry across Foveaux Strait is notoriously choppy — take seasickness tablets, or fly from Invercargill.' },
@@ -1108,6 +1122,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'Rainforest glaciers that tumble almost to the sea.',
     description: 'Westland Tai Poutini National Park runs from the Southern Alps to the Tasman Sea, and its two headline glaciers, Franz Josef and Fox, descend almost to sea level through temperate rainforest. Heli-hikes land on the ice, valley walks lead toward the glacier faces, and at dawn Lake Matheson mirrors Aoraki / Mount Cook in its still, dark water. The villages of Franz Josef and Fox Glacier are the bases.',
     whyVisit: ['Heli-hike on a glacier', 'Glaciers in the rainforest', 'Mirror views at Lake Matheson'],
+    whyVisitPhotos: ["FGG Fox-glacier-heli-hike-group-helicopter 01.jpg", "Franz Josef Glacier 14.jpg", "Lake Matheson reflection of Mount Tasman and Aoraki Mount Cook.jpg"],
     highlights: ['Glacier heli-hikes', 'Rainforest ice', 'Lake Matheson'],
     goodToKnow: [
       { icon: '🚁', title: 'Keep a buffer day', detail: 'Heli-hikes and scenic flights are often cancelled for cloud, so leave some flexibility in your plans.' },
@@ -1125,6 +1140,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'A wild-west beach town of greenstone carving and sunsets.',
     description: "Hokitika was a booming gold-rush port in the 1860s and is now the West Coast's arts hub, known for its pounamu (greenstone) carving studios. Driftwood sculptures line its wild beach at sunset, and the startlingly blue Hokitika Gorge and the Treetop Walk through rimu forest are short drives away.",
     whyVisit: ['Pounamu greenstone carving', 'The turquoise Hokitika Gorge', 'Driftwood beach sunsets'],
+    whyVisitPhotos: ["Pounamu Hook1.jpg", "Hokitika River and Hokitika Gorge upstream from swingbridge.jpg", "Hokitika sunset.jpg"],
     highlights: ['Pounamu', 'Hokitika Gorge', 'Beach sunsets'],
     goodToKnow: [
       { icon: '💚', title: 'Buy genuine pounamu', detail: 'Look for the Ngāi Tahu Pounamu authenticity mark — imported jade is sold as greenstone too.' },
@@ -1142,6 +1158,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'Pancake-stacked limestone, roaring blowholes and a Great Walk on the wild West Coast.',
     description: 'Paparoa National Park is best known for the Pancake Rocks at Punakaiki, layered limestone formations that look like giant stacks of pancakes. At high tide with a westerly swell, the sea surges through the blowholes in spectacular plumes. Behind the coast lie limestone canyons, caves and the Paparoa Track Great Walk.',
     whyVisit: ['Pancake Rocks & blowholes', 'Limestone river canyons', 'The Paparoa Track'],
+    whyVisitPhotos: ["Punakaiki blow holes. (53094420216).jpg", "Pororari River MRD 04.jpg", "Paparoa Track.jpg"],
     highlights: ['Pancake Rocks', 'Limestone canyons', 'Paparoa Track'],
     goodToKnow: [
       { icon: '🌊', title: 'Time it for high tide', detail: 'The blowholes only perform around high tide with a decent swell, so check tide times.' },
@@ -1159,6 +1176,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "The West Coast's largest town, at the end of the TranzAlpine line.",
     description: "Greymouth is the West Coast's biggest town, where the Grey River meets the Tasman Sea. It's the western terminus of the TranzAlpine train from Christchurch and a handy base for exploring the coast, with the recreated gold-rush town of Shantytown, Monteith's original brewery and the Point Elizabeth Walkway close by.",
     whyVisit: ['End of the TranzAlpine', 'A recreated gold-rush town', "Monteith's original brewery"],
+    whyVisitPhotos: ["804, the retun TranzAlpine.jpg", "00 1221 Shantytown Heritage Park - New Zealand.jpg", "Monteiths Brewery in Greymouth (4673825776).jpg"],
     highlights: ['TranzAlpine', 'Shantytown', "Monteith's"],
     goodToKnow: [
       { icon: '🚂', title: 'Plan the train connection', detail: 'The TranzAlpine arrives around midday — arrange a rental car at the station if you are driving on.' },
@@ -1176,6 +1194,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'Seal colonies, coal heritage and the gateway to the Buller Gorge.',
     description: "Westport, at the mouth of the Buller River, is the gateway to the northern West Coast. Fur seals crowd the rocks at nearby Cape Foulwind, the Denniston Plateau tells the story of the region's daring coal-mining past, and the Buller Gorge winds inland toward Nelson.",
     whyVisit: ['Cape Foulwind seal colony', 'Coal-mining heritage', 'Gateway to the Buller Gorge'],
+    whyVisitPhotos: ["Tauranga Bay Seal Colony, New Zealand (6).JPG", "Denniston Incline 001.jpg", "Lower Buller Gorge, South Island NZ.jpg"],
     highlights: ['Seal colony', 'Mining heritage', 'Buller Gorge'],
     goodToKnow: [
       { icon: '🦭', title: 'Come for the seal pups', detail: 'Pups are born at Tauranga Bay from late November, so the colony is liveliest in early summer.' },
@@ -1193,6 +1212,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "A sunny city of artists, craft beer and beaches.",
     description: "Nelson is one of New Zealand's sunniest places — a laid-back city of artists, craft breweries and heritage cottages at the top of the South Island. It's the gateway to three national parks, Abel Tasman, Kahurangi and Nelson Lakes, while Tāhunanui Beach, the Saturday market and the region's vineyards and orchards fill the days in town.",
     whyVisit: ["One of NZ's sunniest cities", 'Arts, crafts & craft beer', 'Gateway to three national parks'],
+    whyVisitPhotos: ["Ruby Bay.jpg", "The Suter Art Gallery, Nelson.jpg", "Lake Rotoiti at Nelson Lakes National Park.jpg"],
     highlights: ['Sunshine', 'Arts & craft beer', 'National parks'],
     goodToKnow: [
       { icon: '🛍️', title: 'Visit the Saturday market', detail: 'Nelson Market, every Saturday morning, is the best place for local crafts, food and produce.' },
@@ -1210,6 +1230,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'Golden beaches and turquoise bays along a coastal Great Walk.',
     description: "Abel Tasman is New Zealand's smallest national park and one of its most loved — a coast of golden sand beaches, granite headlands and clear turquoise bays. The Abel Tasman Coast Track, one of the Great Walks, winds through forest above the sea, and water taxis make it easy to walk or kayak any section, from half a day to five days.",
     whyVisit: ['Golden sand beaches', 'The Abel Tasman Coast Track', 'Sea kayaking with seals'],
+    whyVisitPhotos: ["Cove north of Anapai Bay.jpg", "View south towards Anapai Bay.jpg", "Sea Kayaking Abel Tasman National Park.jpg"],
     highlights: ['Golden beaches', 'Coast Track', 'Sea kayaking'],
     goodToKnow: [
       { icon: '🚤', title: 'Use the water taxis', detail: 'Water taxis from Kaiteriteri and Mārahau drop you at any beach, so you can walk one-way sections.' },
@@ -1227,6 +1248,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'A remote, sun-soaked corner of springs, sand spits and rock arches.',
     description: "Over the winding Tākaka Hill, Golden Bay feels like a world apart — an artsy, unhurried region of beaches, limestone landscapes and wilderness. Te Waikoropupū Springs hold some of the clearest fresh water ever measured, Farewell Spit curves 30 km into the sea, and windswept Wharariki Beach, with its rock arches, is one of the country's most dramatic.",
     whyVisit: ['Crystal-clear Te Waikoropupū Springs', 'Wild Wharariki Beach', 'Farewell Spit'],
+    whyVisitPhotos: ["Clear waters of Te Waikoropupu Springs.jpg", "Surf crashing against rocks east of Wharariki Beach.jpg", "Farewell Spit overview from hills near Puponga.jpg"],
     highlights: ['Pupu Springs', 'Wharariki Beach', 'Farewell Spit'],
     goodToKnow: [
       { icon: '🛣️', title: 'Allow time for Tākaka Hill', detail: 'The winding road over Tākaka Hill, the only road in, takes about an hour from Motueka.' },
@@ -1244,6 +1266,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'A maze of drowned valleys, quiet coves and coastal tracks.',
     description: "The Marlborough Sounds are a vast network of sea-drowned river valleys at the top of the South Island, with a fifth of New Zealand's coastline folded into their bays and forested ridges. Most visitors arrive by ferry into Picton, then explore by boat, kayak or on foot along the Queen Charlotte Track, staying in lodges reachable only by water.",
     whyVisit: ['The Queen Charlotte Track', 'Kayaking quiet coves', 'A scenic ferry arrival'],
+    whyVisitPhotos: ["Queen Charlotte Track (3380053425).jpg", "Portage Bay NZ 02.jpg", "View of Picton from the ferry.jpg"],
     highlights: ['Queen Charlotte Track', 'Kayaking', 'Ferry arrival'],
     goodToKnow: [
       { icon: '⛴️', title: 'Sail in daylight', detail: "The Cook Strait ferry's final hour through Queen Charlotte Sound is spectacular — choose a daytime sailing." },
@@ -1261,6 +1284,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'Sunny vineyards that made New Zealand Sauvignon Blanc famous.',
     description: "Blenheim is the hub of Marlborough, New Zealand's largest wine region and the place that put its zesty Sauvignon Blanc on the world map. Sunny days and cool nights on the Wairau Plains suit well over a hundred wineries, many with cellar doors and vineyard restaurants, best explored by bike or on a tasting tour. It is also the home of a world-class WWI aviation museum.",
     whyVisit: ['World-famous Sauvignon Blanc', 'Cellar doors by bike', 'Omaka aviation museum'],
+    whyVisitPhotos: ["Autumn in the Awatere Valley.jpg", "Cloudy Bay Cellar Door in Marlborough (4671490362).jpg", "Nieuport 24 at Omaka Aviation Heritage Centre's 'Knights of the Sky' exhibition.jpg"],
     highlights: ['Sauvignon Blanc', 'Cellar doors', 'Aviation museum'],
     goodToKnow: [
       { icon: '🚲', title: 'Cycle between wineries', detail: 'The valley floor is flat, and bike hire with winery maps is easy to find in Renwick and Blenheim.' },
@@ -1279,6 +1303,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'Alpine lakes, beech forest and the famous Lake Rotoiti jetty.',
     description: "Nelson Lakes National Park marks the northern end of the Southern Alps, centred on two glacial lakes, Rotoiti and Rotoroa, ringed by beech forest and mountains. From the small village of St Arnaud, short walks and the Mount Robert ridge reach big alpine views, and Lake Rotoiti's jetty is one of the South Island's most photographed spots.",
     whyVisit: ['The Lake Rotoiti jetty', 'Alpine ridge walks', 'Quiet beech forest'],
+    whyVisitPhotos: ["View of Lake Rotoiti from Kerr Bay in St Arnaud (4672173842).jpg", "Nelson Lakes National Park XVI.jpg", "Trail in Nelson Lakes NP 03.jpg"],
     highlights: ['Lake Rotoiti', 'Alpine walks', 'Beech forest'],
     goodToKnow: [
       { icon: '🦟', title: 'Bring repellent', detail: 'The lake shores are famous for sandflies — repellent is a must.' },
@@ -1296,6 +1321,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'Gold-rush villages, rail-trail cycling and big-sky country.',
     description: "Central Otago is a dry, sun-baked interior of tussock ranges, schist tors and gold-rush history. The Otago Central Rail Trail, New Zealand's original Great Ride, follows an old railway line through tunnels and over viaducts between historic villages, and the region's Pinot Noir and summer stone fruit are among the best in the country.",
     whyVisit: ['Cycle the Otago Central Rail Trail', 'Gold-rush heritage villages', 'Pinot Noir and summer fruit'],
+    whyVisitPhotos: ["Otago Central Rail Trail 20170101.jpg", "Vulcan Hotel towards Public Hall and Post Office.jpg", "016 Central Otago wine region - vineyard in Gibbston Valley in South Island, New Zealand.jpg"],
     highlights: ['Rail Trail', 'Gold-rush villages', 'Pinot Noir'],
     goodToKnow: [
       { icon: '🚲', title: 'Book a rail-trail package', detail: 'Operators supply bikes, maps and luggage transfers between villages — most people ride it over three or four days.' },
@@ -1313,6 +1339,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "The country's southernmost city, gateway to Bluff and Stewart Island.",
     description: "Invercargill, near the foot of the South Island, is a broad, friendly city of Victorian and Art Deco buildings. It's the hometown of Burt Munro of The World's Fastest Indian fame, whose motorcycle is on show at E Hayes hardware store, and the gateway to Bluff — where State Highway 1 ends at Stirling Point — and to Stewart Island.",
     whyVisit: ["Burt Munro's World's Fastest Indian", "Bluff's Stirling Point signpost", 'Gateway to Stewart Island'],
+    whyVisitPhotos: ["Burt Munro Special - streamline.jpg", "Lands End Signpost - panoramio.jpg", "Sunrise in Bluff NZ - panoramio.jpg"],
     highlights: ['Burt Munro', 'Stirling Point', 'Stewart Island'],
     goodToKnow: [
       { icon: '🦪', title: 'Eat Bluff oysters in season', detail: 'Bluff oysters are in season from roughly March to August, celebrated at the Bluff Oyster Festival in May.' },
@@ -1330,6 +1357,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "New Zealand's second-largest national park, home to the Heaphy Track and limestone arches.",
     description: 'Kahurangi is a vast wilderness of marble mountains, beech forest and wild coast at the top of the South Island. The Heaphy Track, the longest of the Great Walks, crosses it from Golden Bay to the West Coast, while on the Karamea side the Ōpārara Basin hides huge limestone arches, caves and ancient forest.',
     whyVisit: ['Walk the Heaphy Track', 'The Ōpārara limestone arches', 'Remote, uncrowded wilderness'],
+    whyVisitPhotos: ["Heaphy Track - coastal section.jpg", "Moria Gate Arch SM2014.jpg", "Kahurangi National Park, New Zealand.jpg"],
     highlights: ['Heaphy Track', 'Ōpārara Arches', 'Wilderness'],
     goodToKnow: [
       { icon: '🎒', title: 'Book Heaphy huts early', detail: 'Heaphy Track huts and campsites must be booked with DOC, and the Great Walk season fills up.' },
@@ -1347,6 +1375,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'Glaciers, swing-bridge gorges and the pyramid peak of Tititea.',
     description: 'Mount Aspiring National Park protects a wide swathe of the Southern Alps, crowned by the pyramid peak of Tititea / Mount Aspiring. Day visitors reach it from Wānaka and the Haast Pass road, with the Rob Roy Glacier walk in the Matukituki Valley and the glacier-blue Blue Pools among the favourites. The Routeburn and other multi-day tracks start from its edges.',
     whyVisit: ['The Rob Roy Glacier walk', 'Blue Pools on the Haast Pass road', 'Alpine peaks and valleys'],
+    whyVisitPhotos: ["Rob Roy Glacier, Mt Aspiring, New Zealand - panoramio.jpg", "Blue Pools Track kz03.jpg", "Matukituki River West Branch upstream from swingbridge.jpg"],
     highlights: ['Rob Roy Glacier', 'Blue Pools', 'Alpine valleys'],
     goodToKnow: [
       { icon: '🚗', title: 'Mind the gravel road', detail: 'The Matukituki Valley road to Raspberry Creek is gravel with unbridged fords; check conditions first.' },
@@ -1364,6 +1393,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "South Canterbury's port city, with a sheltered beach and a Māori rock art centre.",
     description: "Timaru is South Canterbury's main city, a working port with Edwardian architecture and a calmer pace than the tourist hubs inland. Caroline Bay is a sandy city beach with a summer carnival tradition, and the town has a good regional museum and a Māori rock art centre. It makes a natural stop between Christchurch and Dunedin or the Mackenzie Country.",
     whyVisit: ['Caroline Bay beach', 'Māori rock art at Te Ana', 'A stop on the way south'],
+    whyVisitPhotos: ["", "", "Timaru Botanic Garden, New Zealand.jpg"],
     highlights: ['Caroline Bay', 'Rock art', 'Port city'],
     goodToKnow: [
       { icon: '🏖️', title: 'Visit in summer', detail: 'Caroline Bay is liveliest at the Christmas carnival and in the warm summer months.' },
