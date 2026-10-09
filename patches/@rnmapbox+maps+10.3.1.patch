@@ -131,6 +131,22 @@ index 0bb9417..8ace963 100644
      } reject:reject methodName:@"refresh"];
  }
  
+diff --git a/node_modules/@rnmapbox/maps/ios/RNMBX/RNMBXImages.swift b/node_modules/@rnmapbox/maps/ios/RNMBX/RNMBXImages.swift
+index 797cf3e..6d1989b 100644
+--- a/node_modules/@rnmapbox/maps/ios/RNMBX/RNMBXImages.swift
++++ b/node_modules/@rnmapbox/maps/ios/RNMBX/RNMBXImages.swift
+@@ -44,6 +44,11 @@ open class RNMBXImages : UIView, RNMBXMapComponent {
+   
+   @objc public func addImageView(_ image: RNMBXImage) {
+     imageViews.append(image)
++    // An <Image> mounted after <Images> was already added to the map was never connected to the style (only the
++    // ones present at addToMap were), so its snapshot was never registered. Connect it now.
++    if style != nil {
++      image.images = self
++    }
+   }
+ 
+   @objc public func removeImageView(_ image: RNMBXImage) {
 diff --git a/node_modules/@rnmapbox/maps/lib/module/components/Camera.js b/node_modules/@rnmapbox/maps/lib/module/components/Camera.js
 index da6b273..6f11a9f 100644
 --- a/node_modules/@rnmapbox/maps/lib/module/components/Camera.js
