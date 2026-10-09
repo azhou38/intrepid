@@ -68,7 +68,8 @@ function SpotCard({ spot, onPress, width }: {
             />
           )}
           <View pointerEvents="none" style={[styles.cardGradWrap, { height: gradH }]}>
-            <Svg style={StyleSheet.absoluteFill}>
+            {/* keyed by its height: react-native-svg keeps its first size when the wrapper later grows */}
+            <Svg key={gradH} style={StyleSheet.absoluteFill}>
               <Defs>
                 <SvgLinearGradient id={`spotCardGrad-${spot.id}`} x1="0" y1="0" x2="0" y2="1">
                   {GRADIENT_STOPS.map(({ offset, opacity }) => (

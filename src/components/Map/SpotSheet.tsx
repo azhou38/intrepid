@@ -172,7 +172,8 @@ function CarouselCard({ spot, isActive, onPress, onAddVisit, gradId }: {
           {/* Bottom-left overlay: just the name now, on a dark scrim so it stays legible
               over any photo. Time-to-spend and cost sit below the image. */}
           <View pointerEvents="none" style={[st.cardImageGradWrap, { height: Math.max(64, nameH + 10 + 28) }]}>
-            <Svg style={StyleSheet.absoluteFill}>
+            {/* keyed by its height: react-native-svg keeps its first size when the wrapper later grows */}
+            <Svg key={Math.max(64, nameH + 10 + 28)} style={StyleSheet.absoluteFill}>
               <Defs>
                 <SvgLinearGradient id={`cardGrad-${gradId}`} x1="0" y1="0" x2="0" y2="1">
                   {GRADIENT_STOPS.map(({ offset, opacity }) => (

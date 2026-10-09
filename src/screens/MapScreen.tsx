@@ -1524,6 +1524,11 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   const planZoom = planZoomTarget !== null
     ? Math.min(camZoom, planZoomTarget)
     : Math.min(camZoom, camZoom - zoomOutLead);
+  // The destination <-> spot handoff (which pin shows, and from what zoom) must follow the zoom the camera is really at —
+  // or, for a close, the known target — never the velocity prediction above: a pinch that merely starts to zoom out would
+  // otherwise read as already past the destination's default zoom, flash its pin in and its spot pins out, then undo it
+  // when the gesture settled.
+  const handoffZoom = planZoomTarget !== null ? Math.min(camZoom, planZoomTarget) : camZoom;
   // While such a close is under way, pins that leave fade out quickly (see FadePin) instead of lingering.
   closeFade.fast = planZoomTarget !== null;
   // The bounds-derived span lags the same way, so it's ignored while looking ahead.
@@ -1975,10 +1980,10 @@ const destItems = useMemo((): DestItem[] =>
   const zoomedPastDefaultIdsRaw = useMemo(() => {
     const ids = new Set<string>();
     for (const d of DESTINATIONS) {
-      if (isPastDestDefaultZoom(d.id, planZoom)) ids.add(d.id);
+      if (isPastDestDefaultZoom(d.id, handoffZoom)) ids.add(d.id);
     }
     return ids;
-  }, [planZoom]);
+  }, [handoffZoom]);
   const zoomedPastDefaultIds = useStableSet(zoomedPastDefaultIdsRaw);
   const hiddenDestIdsRaw = useMemo(() => {
     if (zoomedPastDefaultIds.size === 0) return zoomedIntoDestIds;
@@ -2131,7 +2136,7 @@ const destItems = useMemo((): DestItem[] =>
     // (isPastDestDefaultZoom for spotsInDest, and per spot for others) — so a tighter
     // destination doesn't show its pins early just because some other, wider one is already
     // past ITS OWN threshold.
-    const belowSpotZoom = planZoom >= MIN_DEST_ZOOM_LEVEL - ZOOM_EPSILON;
+    const belowSpotZoom = handoffZoom >= MIN_DEST_ZOOM_LEVEL - ZOOM_EPSILON;
 
     // While a destination is selected — its own sheet open, or drilled into one of its
     // spots — show that destination's full, small, static spot set rather than a live
@@ -2158,7 +2163,7 @@ const destItems = useMemo((): DestItem[] =>
     // together with no gap and no overlap. belowSpotZoom above is only the coarse outer gate
     // (loosened for OTHER, possibly-wider destinations) and must not let a tighter selected
     // destination's pins appear early just because something else passed that outer check.
-    const selectedBelowOwnZoom = !!selectedDest && isPastDestDefaultZoom(selectedDest.id, planZoom);
+    const selectedBelowOwnZoom = !!selectedDest && isPastDestDefaultZoom(selectedDest.id, handoffZoom);
 
     const others: Spot[] = [];
     {
@@ -2173,7 +2178,7 @@ const destItems = useMemo((): DestItem[] =>
         // Each OTHER destination's spots only show at and past THAT destination's own default
         // zoom — same reasoning as selectedBelowOwnZoom above, just per-spot since there's no
         // single "selected" destination to read the threshold from here.
-        if (!isPastDestDefaultZoom(spotParentKey(s), planZoom)) continue;
+        if (!isPastDestDefaultZoom(spotParentKey(s), handoffZoom)) continue;
         const { latitude: lat, longitude: lng } = s.coordinates;
         if (lat >= minLat && lat <= maxLat && lng >= minLng && lng <= maxLng) others.push(s);
       }
@@ -2181,7 +2186,7 @@ const destItems = useMemo((): DestItem[] =>
     const result = selectedDest && selectedBelowOwnZoom ? [...spotsInDest, ...others] : others;
     if (selectedSpot && !result.some(sp => sp.id === selectedSpot.id)) result.push(selectedSpot);
     return result;
-  }, [region, planZoom, selectedSpot, selectedDest, spotsInDest]);
+  }, [region, handoffZoom, selectedSpot, selectedDest, spotsInDest]);
   // Exit-fade tracking for spot pins (same treatment as pills/photos): pins leaving the
   // set linger for PIN_EXIT_MS fading out, new ones mount at 0 and fade in.
   const renderedSpots = useExitingItems(useStableList(visibleSpots, s => s.id), s => s.id, HANDOFF_FADE_MS);

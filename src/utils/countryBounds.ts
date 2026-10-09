@@ -57,7 +57,7 @@ const LABEL_POINTS: Record<string, [number, number]> = {
   GR: [39.4, 22.0],   // Thessaly (mainland)
   JP: [36.4, 138.5],  // central Honshu
   NO: [61.2, 8.8],    // southern-interior Norway
-  NZ: [-43.6, 171.2], // Canterbury, central South Island (the box centre falls in Cook Strait)
+  NZ: [-41.0, 174.0], // the middle of the country, over Cook Strait between the two islands
 };
 
 /** Returns the point a country's map pin/label should anchor to — a hand-tuned on-landmass
