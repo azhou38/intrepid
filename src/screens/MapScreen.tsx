@@ -114,6 +114,7 @@ import SpotSheet from '../components/Map/SpotSheet';
 import CountrySheet from '../components/Map/CountrySheet';
 import ExploreSheet from '../components/Map/ExploreSheet';
 import { thumbCache, photoCache, fetchWikiThumbnail, prefetchWikiThumbnail, HEADER_PX } from '../utils/photoCache';
+import DestPinImages, { DEST_PIN_SIZE, destPinImageName, type DestPinImageSpec } from '../components/Map/DestPinImages';
 
 const VISITED_COLOR  = '#10B981';
 const EXPLORE_COLOR  = '#6366F1';
@@ -121,6 +122,10 @@ const EXPLORE_COLOR  = '#6366F1';
 // Pin-plan look-ahead while the camera zooms out (see planZoom / zoomOutLead).
 const PLAN_LAG_SEC = 0.6;         // assumed delay between a camera frame and the render that reacts to it
 const PLAN_LEAD_MAX_ZOOM = 4;     // cap on the predicted outward travel
+// Destination photo pins are a native Mapbox SymbolLayer (destPhotoSymbols): Mapbox resolves pin-vs-pin and name
+// collisions itself on every rendered frame and fades symbols in and out, so pins never pile up while zooming (the
+// JS plan only decides which destinations are eligible for a photo at all). false falls back to the old MarkerView pins.
+const NATIVE_DEST_PINS = true;
 const PIN_SIZE        = 41;  // 10% larger than 37 (which was 20% smaller than the original 46)
 const PIN_BORDER      = 2;
 // Disc colour a destination/spot pin shows until its photo has loaded and faded in over it. Light
@@ -796,6 +801,31 @@ const MAP_TYPES: { key: MapStyleKey; label: string }[] = [
 // reference changes, which fires onCameraChanged → setRegion → re-render → a new literal →
 // reset again, an infinite "Maximum update depth exceeded" loop under any state change that
 // re-renders MapScreen while the camera is live (e.g. panning/zooming).
+// The native destination pin: its photo image (DestPinImages) centred on the coordinate, the name hanging below it.
+// Pins never overlap one another (lower symbolSortKey wins); a name that would collide is dropped while its pin stays
+// (textOptional), and returns once there is room. Mapbox fades both in and out as placements change.
+const DEST_SYMBOL_STYLE: any = {
+  iconImage: ['get', 'img'],
+  iconAllowOverlap: false,
+  iconIgnorePlacement: false,
+  iconPadding: 0,
+  symbolSortKey: ['get', 'sort'],
+  textField: ['get', 'label'],
+  textFont: ['DIN Pro Bold', 'Arial Unicode MS Bold'],
+  textSize: 11,
+  textLetterSpacing: 0.03,
+  textMaxWidth: 8.5,
+  textAnchor: 'top',
+  textOffset: [0, (DEST_PIN_SIZE / 2 + 4) / 11],
+  textColor: '#FFFFFF',
+  textHaloColor: 'rgba(0,0,0,0.6)',
+  textHaloWidth: 1.2,
+  textHaloBlur: 0.4,
+  textOptional: true,
+  textAllowOverlap: false,
+  textIgnorePlacement: false,
+  textPadding: 1,
+};
 const CAMERA_DEFAULT_SETTINGS = { centerCoordinate: [10, 20] as [number, number], zoomLevel: 1 };
 
 // Layer pill sizing — a single continuous capsule (see the JSX comment above its render
@@ -1879,7 +1909,7 @@ const destItems = useMemo((): DestItem[] =>
         // ever placed in the fixed priority order, the lower-priority one is the one that
         // stays a stamp. STAMP_PX (44) > photo diameter (37) so photos never overlap.
         let collides = false;
-        for (const o of placed) {
+        if (!NATIVE_DEST_PINS) for (const o of placed) {
           const dx = p.x - o.x, dy = p.y - o.y;
           if (dx * dx + dy * dy < STAMP_PX * STAMP_PX) { collides = true; break; }
         }
@@ -1887,6 +1917,14 @@ const destItems = useMemo((): DestItem[] =>
       }
       photoIds.add(d.id);
       placed.push(p);
+    }
+
+    // Placement priority for the native layer (symbolSortKey: lower is placed first and wins a collision).
+    const priority = new Map<string, number>();
+    ordered.forEach((d, i) => priority.set(d.id, i));
+    if (NATIVE_DEST_PINS) {
+      destLabelHitRef.current = { pxPerDegLng, rects: [] };   // names are native symbols: they take taps themselves
+      return { photoIds, positions, labelHiddenIds: new Set<string>(), priority };
     }
 
     // Name labels. A label is hidden when its text box would overlap another placed destination's circle or an
@@ -1929,7 +1967,7 @@ const destItems = useMemo((): DestItem[] =>
     geo.forEach((g, id) => { if (!labelHiddenIds.has(id)) labelRects.push({ id, rect: g }); });
     destLabelHitRef.current = { pxPerDegLng, rects: labelRects };
 
-    return { photoIds, positions, labelHiddenIds };
+    return { photoIds, positions, labelHiddenIds, priority };
     // Pure function of zoom (planLngDelta) + eligible set + selection + saved state +
     // the (equally pan-invariant) country pill plan.
     // No camera centre → recompute produces an identical plan while panning at fixed zoom.
@@ -2022,7 +2060,7 @@ const destItems = useMemo((): DestItem[] =>
   const [revealTick, setRevealTick] = useState(0);
   if (prevHiddenDestIdsRef.current !== hiddenDestIds) {
     for (const id of prevHiddenDestIdsRef.current) {
-      if (!hiddenDestIds.has(id) && destPinPlan.photoIds.has(id)) pendingRevealRef.current.add(id);
+      if (!NATIVE_DEST_PINS && !hiddenDestIds.has(id) && destPinPlan.photoIds.has(id)) pendingRevealRef.current.add(id);
     }
     prevHiddenDestIdsRef.current = hiddenDestIds;
   }
@@ -3950,7 +3988,7 @@ const destItems = useMemo((): DestItem[] =>
     if (cleared) setRevealTick(t => t + 1);
   }, [renderedPhotoDests]);
 
-  const destPhotoMarkers = useMemo(() => renderedPhotoDests
+  const destPhotoMarkers = useMemo(() => NATIVE_DEST_PINS ? null : renderedPhotoDests
     .map(({ item: dest, exiting }) => {
       const isVisited  = visitIndex.isDestVisited(dest.id);
       const spotCount  = visitedSpotCountByDest[dest.id] ?? 0;
@@ -3986,6 +4024,34 @@ const destItems = useMemo((): DestItem[] =>
       );
     }),
   [renderedPhotoDests, selectedDest, savedDestinations, visitIndex, visitedSpotCountByDest, handleMarkerPress, handleResetToDest, hiddenDestIds, destPinPlan]);
+
+  // Native destination photo pins: one point feature per eligible destination, pointing at that pin's style image.
+  // Collisions (pin vs pin, name vs pin) and the fades are left to Mapbox — see NATIVE_DEST_PINS.
+  // Pin images are grow-only: once registered, an image stays mounted, so a symbol never loses its image mid-fade.
+  const destPinSpecsRef = useRef<Map<string, DestPinImageSpec>>(new Map());
+  const destPinSpecListRef = useRef<DestPinImageSpec[]>([]);
+  const nativeDestPins = useMemo(() => {
+    if (!NATIVE_DEST_PINS) return null;
+    const specs = destPinSpecsRef.current;
+    let added = false;
+    const features: GeoJSON.Feature<GeoJSON.Point>[] = [];
+    for (const dest of promotedDests) {
+      const visited = visitIndex.isDestVisited(dest.id);
+      const badge = visited ? (visitedSpotCountByDest[dest.id] ?? 0) : 0;
+      // No separate selected look: a new image name would remount the image and flash the placeholder disc.
+      const selected = false;
+      const img = destPinImageName(dest.id, visited, badge, selected);
+      if (!specs.has(img)) { specs.set(img, { name: img, dest, visited, badge, selected }); added = true; }
+      features.push({
+        type: 'Feature',
+        id: dest.id,
+        geometry: { type: 'Point', coordinates: [dest.coordinates.longitude, dest.coordinates.latitude] },
+        properties: { id: dest.id, img, label: dest.name, sort: destPinPlan.priority.get(dest.id) ?? 9999 },
+      });
+    }
+    if (added) destPinSpecListRef.current = [...specs.values()];
+    return { shape: { type: 'FeatureCollection' as const, features }, specs: destPinSpecListRef.current };
+  }, [promotedDests, visitIndex, visitedSpotCountByDest, destPinPlan]);
 
   // Which sliding sheet is mounted right now. When it changes from one level to another, the incoming sheet is a
   // replacement for the one that was showing and starts where that one rested (see sheetPose) rather than from below
@@ -4303,6 +4369,22 @@ const destItems = useMemo((): DestItem[] =>
             }}
           />
         </MapboxGL.ShapeSource>
+
+        {nativeDestPins && <DestPinImages specs={nativeDestPins.specs} />}
+        {nativeDestPins && (
+          <MapboxGL.ShapeSource
+            id="destPhotos"
+            shape={nativeDestPins.shape}
+            onPress={(e) => {
+              const id = e.features[0]?.properties?.id as string | undefined;
+              if (!id) return;
+              const dest = DESTINATIONS.find(d => d.id === id);
+              if (dest && !pressBlocked()) { if (selectedDestRef.current?.id === dest.id) handleResetToDest(); else handleMarkerPress(dest); }
+            }}
+          >
+            <MapboxGL.SymbolLayer id="destPhotoSymbols" aboveLayerID="destStampCircles" style={DEST_SYMBOL_STYLE} />
+          </MapboxGL.ShapeSource>
+        )}
 
         {/* All MarkerViews require the map style to be loaded before Mapbox can
             project coordinates to screen positions. Gate on mapReady. */}
