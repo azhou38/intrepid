@@ -568,7 +568,8 @@ function CountrySheet({
     // Mounting straight into 'collapsed' never told the parent to collapse; 'peek' and 'full' always did.
     if (next === 'full') onExpand?.(); else if (reason !== 'mount' || next === 'peek') onCollapse?.();
     sheetPose.set(next === 'full' ? null : target);
-    slideAnim.value = withTiming(target, SNAP_CONFIG);
+    // 'userUI': the gesture worklet already started this exact animation on the UI thread (see snapUI).
+    if (reason !== 'userUI') slideAnim.value = withTiming(target, SNAP_CONFIG);
     reportSnapState(next);
   };
 
@@ -699,6 +700,20 @@ function CountrySheet({
   // switching the sheet's own positioning from `top` to `transform` wasn't enough, since the
   // old PanResponder computed every frame's position on the JS thread regardless of which
   // style property consumed it).
+  // Starts the snap animation inside the gesture worklet, on the UI thread, the same frame the finger lifts; the JS
+  // bookkeeping (transitionTo, reason 'userUI') follows through runOnJS but no longer gates the motion. Waiting on the
+  // JS thread here was the pause after release: while one of these sheets is open the JS thread is busy with the map.
+  const snapUI = (next: CountrySnapState) => {
+    'worklet';
+    const target = next === 'full' ? FULL_POS : next === 'peek' ? PEEK_Y : collapsedYAnim.value;
+    snapStateSV.value = next;
+    lastPos.value = target;
+    slideAnim.value = withTiming(target, SNAP_CONFIG);
+  };
+  const callSnapToFullUI      = useCallback(() => transitionToRef.current('full', 'userUI'), []);
+  const callSnapToCollapsedUI = useCallback(() => transitionToRef.current('collapsed', 'userUI'), []);
+  const callSnapToPeekUI      = useCallback(() => transitionToRef.current('peek', 'userUI'), []);
+
   const pan = Gesture.Pan()
     .maxPointers(1)   // a two-finger map pinch that lands on the sheet is never a drag of it
     //Only activates once the drag is decisively vertical, ceding horizontal drags to the
@@ -745,18 +760,18 @@ function CountrySheet({
       if (snapStateSV.value === 'peek') {
         // Same as the Explore sheet: a drag carried past the half-screen position commits straight to full-screen
         // (a direct bottom -> top connection); a smaller swipe up stops at half-screen; anything less settles back.
-        if (pos <= cy) { runOnJS(callSnapToFull)(); return; }
-        if (e.velocityY < -500 || pos < PEEK_Y - 60) runOnJS(callSnapToCollapsed)();
-        else runOnJS(callSnapToPeek)();
+        if (pos <= cy) { (snapUI('full'), runOnJS(callSnapToFullUI)()); return; }
+        if (e.velocityY < -500 || pos < PEEK_Y - 60) (snapUI('collapsed'), runOnJS(callSnapToCollapsedUI)());
+        else (snapUI('peek'), runOnJS(callSnapToPeekUI)());
         return;
       }
 
       if (snapStateSV.value === 'collapsed') {
         // Swiping up from collapsed goes straight to full-screen; swiping down now drops to
         // peek instead of dismissing; anything smaller settles back at collapsed.
-        if (e.velocityY < -500 || pos < cy - 60) runOnJS(callSnapToFull)();
-        else if (e.velocityY > 500 || pos > cy + 40) runOnJS(callSnapToPeek)();
-        else runOnJS(callSnapToCollapsed)();
+        if (e.velocityY < -500 || pos < cy - 60) (snapUI('full'), runOnJS(callSnapToFullUI)());
+        else if (e.velocityY > 500 || pos > cy + 40) (snapUI('peek'), runOnJS(callSnapToPeekUI)());
+        else (snapUI('collapsed'), runOnJS(callSnapToCollapsedUI)());
         return;
       }
 
@@ -764,9 +779,9 @@ function CountrySheet({
       // shouldn't change the sheet's snap state at all — leave it exactly at full.
       if (!dragEngagedSV.value) return;
       // Carried past the half-screen position: straight down to the bottom view, like the Explore sheet.
-      if (pos >= cy) runOnJS(callSnapToPeek)();
-      else if (e.velocityY > 500 || pos > H * 0.25) runOnJS(callSnapToCollapsed)();
-      else runOnJS(callSnapToFull)();
+      if (pos >= cy) (snapUI('peek'), runOnJS(callSnapToPeekUI)());
+      else if (e.velocityY > 500 || pos > H * 0.25) (snapUI('collapsed'), runOnJS(callSnapToCollapsedUI)());
+      else (snapUI('full'), runOnJS(callSnapToFullUI)());
     })
     // Without this, the inner ScrollView's own native pan claims the touch outright while
     // full-screen, so our gesture never even starts recognizing — letting both recognize
