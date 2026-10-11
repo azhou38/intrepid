@@ -472,12 +472,15 @@ function CountrySheet({
     const t = headerNameYSV.value - COMPACT_BAR_H;
     // Only fades at full-screen: at half-screen and peek the header is the sheet's face, never scrolled.
     const full = interpolate(slideAnim.value, [FULL_POS, FULL_POS + 40], [1, 0], Extrapolation.CLAMP);
-    const fade = interpolate(scrollY.value, [t - 70, t + 20], [1, 0], Extrapolation.CLAMP);
+    // Starts once the name is almost at the bar, finishing just as it goes under it.
+    const fade = interpolate(scrollY.value, [t - 25, t + 40], [1, 0], Extrapolation.CLAMP);
     return { opacity: 1 - full * (1 - fade) };
   });
   // The bar and the pinned tab bar are one piece: the bar appears exactly where the tab bar pins under it.
   const compactBarStyle = useAnimatedStyle(() => {
-    const on = scrollY.value >= tabBarYSV.value - 20 - COMPACT_BAR_H ? 1 : 0;
+    // Fades in over the last 40pt before the tab bar pins, so it's fully in by the time the tabs settle under it.
+    const at = tabBarYSV.value - 20 - COMPACT_BAR_H;
+    const on = interpolate(scrollY.value, [at - 40, at], [0, 1], Extrapolation.CLAMP);
     const full = interpolate(slideAnim.value, [FULL_POS, FULL_POS + 40], [1, 0], Extrapolation.CLAMP);
     return { opacity: on * full };
   });

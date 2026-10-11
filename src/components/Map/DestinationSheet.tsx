@@ -1086,13 +1086,16 @@ function DestinationSheet({
     const t = heroTextTopSV.value - (insets.top + 56);
     // Only fades at full-screen: at half-screen and peek the header is the sheet's face, never scrolled.
     const full = interpolate(slideAnim.value, [FULL_POS, FULL_POS + 40], [1, 0], Extrapolation.CLAMP);
-    const fade = interpolate(scrollYSV.value, [t - 70, t + 20], [1, 0], Extrapolation.CLAMP);
+    // Starts once the text is almost at the bar, finishing just as it goes under it.
+    const fade = interpolate(scrollYSV.value, [t - 25, t + 40], [1, 0], Extrapolation.CLAMP);
     return { opacity: 1 - full * (1 - fade) };
   });
   // The bar and the pinned tab bar are one piece: the bar appears at exactly the scroll position where the tab bar pins
   // under it (tabBarAppearY - COMPACT_BAR_H; see tabBarOverlayY), not earlier.
   const compactBarStyle = useAnimatedStyle(() => {
-    const on = scrollYSV.value >= tabAppearSV.value - (insets.top + 56) ? 1 : 0;
+    // Fades in over the last 40pt before the tab bar pins, so it's fully in by the time the tabs settle under it.
+    const at = tabAppearSV.value - (insets.top + 56);
+    const on = interpolate(scrollYSV.value, [at - 40, at], [0, 1], Extrapolation.CLAMP);
     // Only ever at full-screen — at half-screen and peek there is no scrolled header to stand in for.
     const full = interpolate(slideAnim.value, [FULL_POS, FULL_POS + 40], [1, 0], Extrapolation.CLAMP);
     return { opacity: on * full };
