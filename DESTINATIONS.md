@@ -66,6 +66,15 @@ Prominence tier; it decides what shows when space is limited (pin plans, Near Yo
 
 A country with 20+ destinations should have only a handful at rank 1. A guidebook's "top experiences" map to ranks 1–2.
 
+## Names (countries, destinations and spots)
+
+Applies to every `name` shown in the app.
+
+- **Just the place's own name.** Never add the destination, region or country to a spot's name: "Russell", not "Russell, New Zealand"; "Queens Park", not "Queens Park, Invercargill"; "Mount Victoria", not "Mount Victoria, Wellington". The app already shows where a place is. The same goes for a destination's name ("Wellington", not "Wellington, New Zealand").
+- **Capitalise each word.** Title case: every word starts with a capital ("Te Paki Sand Dunes", "Hundertwasser Toilets", "Wellington Waterfront"). Short joining words (*of, the, and, to, in, on, a, de, la*…) stay lowercase unless they open the name ("Craters of the Moon", "Bridge to Nowhere", "Bay of Islands"). Country names follow the same rule ("Côte d'Ivoire", "United States").
+- **A needed disambiguator belongs in `wiki`, not `name`.** If the Wikipedia article is titled "Russell, New Zealand" or "Blue Lake (Rotorua)", put that exact title in the spot's `wiki` field (see "Writing a spot"); the shown name stays "Russell" or "Blue Lake". Two places may then share a shown name — that is fine, search results show which destination each belongs to.
+- **Keep a local alternative name only when it is part of the name people use**, such as "Mykonos Town (Chora)". It is not a place qualifier.
+
 ## Writing a destination
 
 Follow an existing entry in the same file (they are the reference); every field below is required unless noted.
@@ -87,7 +96,7 @@ Write in the app's voice: plain, specific, enthusiastic without superlatives you
 
 - `id` — for a spot of a destination, `<destinationId>-<n>`, numbered from 1 in importance order and never reused. For a standalone spot, its own lowercase hyphenated slug (`glenorchy`), unique among all spot and destination ids.
 - `destinationId` — the parent destination's id, or **omitted** for a standalone spot, which then needs `country`, `countryCode`, `continent` and `timezone` (see "Standalone spots in the app" below).
-- `name` — the name shown in the app: the place's own name in **title case** (every word capitalised except short joining words such as *of*, *the*, *and*, *to*: "Te Paki Sand Dunes", "Craters of the Moon"), with **no destination, country or other disambiguator** tacked on ("Russell", not "Russell, New Zealand"; "Queens Park", not "Queens Park, Invercargill"). The same rule applies to destination names.
+- `name` — the name shown in the app, following "Names" above: the place's own name in title case, with no destination, country or other disambiguator.
 - `wiki` — the **exact title of the spot's Wikipedia article**, only when it differs from `name` (usually a disambiguated title such as "Russell, New Zealand" or "Blue Lake (Rotorua)"). The app looks the spot's photo up by this title (`spotPhotoTitle`: `wiki`, else `name`), and `WIKI_IMAGE_OVERRIDES` and the image manifest are keyed by it, so a creative or abbreviated title silently loads the wrong photo or none. When you rename a spot, move its old name into `wiki` if that was its article title. Where the article title is itself ambiguous (a common lake or park name), give it a hand-picked photo in `WIKI_IMAGE_OVERRIDES`.
 - `category` — `museum | landmark | monument | religious | nature | viewpoint | hike | entertainment | market | beach | historic`. `icon` — one emoji that suits it.
 - `coordinates` — the spot's entrance, trailhead or the point visitors stand at, accurate to ~100 m. Never reuse the destination's centre for a spot that is somewhere else.
@@ -109,7 +118,8 @@ A spot with no `destinationId` is standalone, and the app supports it end to end
 Put standalone spots in the "Standalone spots" section at the end of `src/data/spots.ts`. Their id is a unique slug (it must not collide with any destination or spot id), and, like every id, is never changed once shipped.
 
 How they behave:
-- **Map:** the pin appears once the camera is zoomed in to about a 40 km view (`STANDALONE_SPOT_SPAN_KM`), the same handoff a destination's spots use. Selecting one opens the spot sheet alone, with its country as the heading and no destination name, carousel counter or "grid view" button; the map's breadcrumb names the spot under its country. Nothing is selected as a destination — a standalone spot opened from a destination's context goes back to that destination, otherwise closing it returns to a ~40 km view of its own area.
+- **Map:** the pin appears once the camera is zoomed in to about a 40 km view (`STANDALONE_SPOT_SPAN_KM`), the same handoff a destination's spots use. Nothing is selected as a destination — a standalone spot opened from a destination's context goes back to that destination, otherwise closing it returns to a ~40 km view of its own area. The map's breadcrumb names the spot under its country.
+- **"Near" carousel:** a standalone spot's half-screen sheet is a carousel of that spot first, then every other standalone spot within 40 km (`NEAR_RADIUS_KM`), nearest first, up to 10 (`NEAR_MAX_SPOTS`). It is headed **NEAR** over the **nearest destination's name** (by straight-line distance from the spot to each destination's centre), for example "NEAR / Queenstown" for Glenorchy. Destination spots are never in it: they belong to their own destination's carousel. With no other standalone spot nearby it is a single card. Swiping keeps this context and each card gets its map pin; tapping a pin leaves it; closing returns to the standalone spot's own area. There is no "grid view" button, since there is no destination sheet to open a list in. A destination's own spots carousel is headed **SPOTS** over the destination's name.
 - **Search:** found by name, labelled with its country instead of a destination.
 - **Visited:** visiting it marks its **country** visited (there is no destination to carry it up); un-visiting it never un-visits the country, and removing the country removes it. The country sheet's spot count includes it.
 - **Hours:** read in its own `timezone`.
