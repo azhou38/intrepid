@@ -470,7 +470,10 @@ function CountrySheet({
   }));
   const headerTextFadeStyle = useAnimatedStyle(() => {
     const t = headerNameYSV.value - COMPACT_BAR_H;
-    return { opacity: interpolate(scrollY.value, [t - 70, t + 20], [1, 0], Extrapolation.CLAMP) };
+    // Only fades at full-screen: at half-screen and peek the header is the sheet's face, never scrolled.
+    const full = interpolate(slideAnim.value, [FULL_POS, FULL_POS + 40], [1, 0], Extrapolation.CLAMP);
+    const fade = interpolate(scrollY.value, [t - 70, t + 20], [1, 0], Extrapolation.CLAMP);
+    return { opacity: 1 - full * (1 - fade) };
   });
   const compactBarStyle = useAnimatedStyle(() => {
     const t = headerNameYSV.value - COMPACT_BAR_H + 24;

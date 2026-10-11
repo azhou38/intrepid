@@ -958,7 +958,8 @@ function DestinationSheet({
   const COMPACT_BAR_H = insets.top + 56;
   const tabBarOverlayY = useMemo(() => scrollYAnim.interpolate({
     inputRange: [tabBarAppearY - COMPACT_BAR_H - 1, tabBarAppearY - COMPACT_BAR_H],
-    outputRange: [-120, 0],
+    // Hidden far enough up to clear the compact bar's height too (it now sits below that bar, not at the very top).
+    outputRange: [-400, 0],
     extrapolate: 'clamp',
   }), [tabBarAppearY, COMPACT_BAR_H]);
 
@@ -1080,7 +1081,10 @@ function DestinationSheet({
   }));
   const heroTextFadeStyle = useAnimatedStyle(() => {
     const t = heroTextTopSV.value - (insets.top + 56);
-    return { opacity: interpolate(scrollYSV.value, [t - 70, t + 20], [1, 0], Extrapolation.CLAMP) };
+    // Only fades at full-screen: at half-screen and peek the header is the sheet's face, never scrolled.
+    const full = interpolate(slideAnim.value, [FULL_POS, FULL_POS + 40], [1, 0], Extrapolation.CLAMP);
+    const fade = interpolate(scrollYSV.value, [t - 70, t + 20], [1, 0], Extrapolation.CLAMP);
+    return { opacity: 1 - full * (1 - fade) };
   });
   const compactBarStyle = useAnimatedStyle(() => {
     const t = heroTextTopSV.value - (insets.top + 56) + 24;
@@ -1505,7 +1509,9 @@ function DestinationSheet({
                 collapsed and lower down once expanded, same as it always has. */}
             <Reanimated.View
               style={[st.heroBottomStack, st.heroBottomStackPad, heroTextFadeStyle]}
-              onLayout={e => { if (snapStateRef.current === 'full') heroTextTopSV.value = e.nativeEvent.layout.y; }}
+              // Bottom-anchored in the hero, so its top at full-screen is the full hero height less its own height — measured
+              // from the height alone, which (unlike its y) doesn't change while the hero is cropped shorter mid-transition.
+              onLayout={e => { heroTextTopSV.value = fullHeroH - e.nativeEvent.layout.height; }}
             >
               <View style={st.heroContent}>
                 {/* Full name, wrapping — never "…" (the peek strip below is the only one-line version). */}
@@ -1562,7 +1568,9 @@ function DestinationSheet({
             // Ignore measurements taken while collapsed/half — the hero (and therefore this
             // tab bar's position) is intentionally a different height there, and would
             // otherwise corrupt the threshold the full-screen sticky overlay uses.
-            if (snapStateRef.current === 'full') setTabBarAppearY(e.nativeEvent.layout.y);
+            // Only a measurement taken with the hero at its full height (not mid-transition, while it's still cropped).
+            const y = e.nativeEvent.layout.y;
+            if (snapStateRef.current === 'full' && Math.abs(y - fullHeroH) < 40) setTabBarAppearY(y);
           }}
         >
 
