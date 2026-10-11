@@ -132,7 +132,13 @@ Every new destination needs a hand-picked header and three "Why visit" photos, r
 
 ## Verifying coordinates
 
-A coordinate in the wrong place (a trailhead in the sea) is easy to write and hard to see. Take spot coordinates from a source that names the entrance, car park or trailhead (the managing agency's page, OpenStreetMap, Wikipedia), never from memory, and say plainly which you could not confirm. `npx tsx scripts/verify-coordinates.ts --country NZ` (needs network) checks each spot against OpenStreetMap: it flags points OSM places in the sea and names OSM puts more than `--max-km` away; `--fix` writes the OSM position back, so review the diff.
+A coordinate in the wrong place (a trailhead in the sea) is easy to write and hard to see. Take spot coordinates from a source that names the entrance, car park, summit or trailhead (the managing agency's page, OpenStreetMap, Wikipedia), **never from memory**: remembered coordinates are typically off by several hundred metres, which on the map is a pin beside the mountain instead of on it, or a beach pin in the sea.
+
+Run `npx tsx scripts/audit-spot-coordinates.ts --country NZ` (needs network) after adding or moving spots. For each spot it reports:
+- a point that lies **in water** on the map itself (Mapbox Streets' water layer). Correct for a lake, sound or harbour; wrong for a beach, bay, walkway, cape or anything on land, which should sit on the shore or at the visitor's standing point;
+- a point more than `--max-m` (default 250 m) from the spot's **Wikipedia** coordinates or **OpenStreetMap**'s match for its name, with the OSM feature type.
+
+Use the type to judge the flag: a `natural/peak`, `waterway/waterfall`, `man_made/lighthouse`, museum or attraction is a precise point, so move the spot onto it. A `natural/bay` or lake is a centroid in the water, a park or protected area a centroid of its land, and a long trail or glacier a point somewhere along it; keep the spot at its real visitor point (car park, viewpoint, trailhead) instead. Wikipedia coordinates are often rounded to the nearest town. The older `scripts/verify-coordinates.ts` only catches errors over 1 km and open sea, so it misses most of these.
 
 ## Before you finish
 

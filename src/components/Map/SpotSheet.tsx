@@ -172,7 +172,8 @@ function CarouselCard({ spot, isActive, onPress, onAddVisit, gradId }: {
           {/* Bottom-left overlay: just the name now, on a dark scrim so it stays legible
               over any photo. Time-to-spend and cost sit below the image. */}
           <View pointerEvents="none" style={[st.cardImageGradWrap, { height: Math.max(64, nameH + 10 + 28) }]}>
-            <Svg style={StyleSheet.absoluteFill}>
+            {/* keyed by its height: react-native-svg keeps its first size when the wrapper later grows */}
+            <Svg key={Math.max(64, nameH + 10 + 28)} style={StyleSheet.absoluteFill}>
               <Defs>
                 <SvgLinearGradient id={`cardGrad-${gradId}`} x1="0" y1="0" x2="0" y2="1">
                   {GRADIENT_STOPS.map(({ offset, opacity }) => (
@@ -668,7 +669,8 @@ function SpotSheet({
     onSnapStateChange?.(next);
     if (next !== 'full') onCollapsedTopChange?.(H - target);
     sheetPose.set(next === 'full' ? null : target);
-    slideAnim.value = withTiming(target, SNAP_CONFIG);
+    // 'userUI': the gesture worklet already started this exact animation on the UI thread (see snapUI).
+    if (reason !== 'userUI') slideAnim.value = withTiming(target, SNAP_CONFIG);
   };
   const snapToFullRef = useRef(() => {});
   snapToFullRef.current = () => transitionToRef.current('full', 'user');
@@ -790,6 +792,20 @@ function SpotSheet({
   // directly and calls runOnJS(namedCallback)() only a few times per gesture (at onEnd, not
   // every frame) is the standard, safe Reanimated pattern — and it's already proven in this
   // exact app, since DestinationSheet has run on it the whole time.
+  // Starts the snap animation inside the gesture worklet, on the UI thread, the same frame the finger lifts; the JS
+  // bookkeeping (transitionTo, reason 'userUI') follows through runOnJS but no longer gates the motion. Waiting on the
+  // JS thread here was the pause after release: while one of these sheets is open the JS thread is busy with the map.
+  const snapUI = (next: 'peek' | 'collapsed' | 'full') => {
+    'worklet';
+    const target = next === 'full' ? FULL_POS : next === 'peek' ? PEEK_Y : COLLAPSED_Y;
+    snapStateSV.value = next;
+    lastPos.value = target;
+    slideAnim.value = withTiming(target, SNAP_CONFIG);
+  };
+  const callSnapToFullUI      = useCallback(() => transitionToRef.current('full', 'userUI'), []);
+  const callSnapToCollapsedUI = useCallback(() => transitionToRef.current('collapsed', 'userUI'), []);
+  const callSnapToPeekUI      = useCallback(() => transitionToRef.current('peek', 'userUI'), []);
+
   let pan = Gesture.Pan()
     .maxPointers(1)   // a two-finger map pinch that lands on the sheet is never a drag of it
     .activeOffsetY([-10, 10])
@@ -834,23 +850,23 @@ function SpotSheet({
       if (snapStateSV.value === 'peek') {
         // Same as the Explore sheet: a drag carried past the half-screen position commits straight to full-screen
         // (a direct bottom -> top connection); a smaller swipe up stops at half-screen; anything less settles back.
-        if (pos <= COLLAPSED_Y) { runOnJS(callSnapToFull)(); return; }
-        if (e.velocityY < -500 || pos < PEEK_Y - 60) runOnJS(callSnapToCollapsed)();
-        else runOnJS(callSnapToPeek)();
+        if (pos <= COLLAPSED_Y) { (snapUI('full'), runOnJS(callSnapToFullUI)()); return; }
+        if (e.velocityY < -500 || pos < PEEK_Y - 60) (snapUI('collapsed'), runOnJS(callSnapToCollapsedUI)());
+        else (snapUI('peek'), runOnJS(callSnapToPeekUI)());
       } else if (snapStateSV.value === 'collapsed') {
         // Swiping up from collapsed goes to full-screen; swiping down now drops to peek
         // instead of dismissing; anything smaller settles back at collapsed.
-        if (e.velocityY < -500 || pos < COLLAPSED_Y - 60) runOnJS(callSnapToFull)();
-        else if (e.velocityY > 500 || pos > COLLAPSED_Y + 40) runOnJS(callSnapToPeek)();
-        else runOnJS(callSnapToCollapsed)();
+        if (e.velocityY < -500 || pos < COLLAPSED_Y - 60) (snapUI('full'), runOnJS(callSnapToFullUI)());
+        else if (e.velocityY > 500 || pos > COLLAPSED_Y + 40) (snapUI('peek'), runOnJS(callSnapToPeekUI)());
+        else (snapUI('collapsed'), runOnJS(callSnapToCollapsedUI)());
       } else {
         // Full-screen: a gesture that never actually engaged (e.g. it never got past the
         // "scrolled to top" gate) shouldn't change the sheet's snap state at all.
         if (!dragEngagedSV.value) return;
         // Carried past the half-screen position: straight down to the bottom view, like the Explore sheet.
-        if (pos >= COLLAPSED_Y) runOnJS(callSnapToPeek)();
-        else if (e.velocityY > 800 || pos > H * 0.25) runOnJS(callSnapToCollapsed)();
-        else runOnJS(callSnapToFull)();
+        if (pos >= COLLAPSED_Y) (snapUI('peek'), runOnJS(callSnapToPeekUI)());
+        else if (e.velocityY > 800 || pos > H * 0.25) (snapUI('collapsed'), runOnJS(callSnapToCollapsedUI)());
+        else (snapUI('full'), runOnJS(callSnapToFullUI)());
       }
     });
   // Needed for full-screen swipe-down-to-collapse: without this, the main content
@@ -1117,7 +1133,7 @@ function SpotSheet({
           {/* Heading — indicates you're browsing the spots within this destination */}
           <View style={st.carHeader}>
             <View style={{ flex: 1 }}>
-              <Text style={st.carEyebrow}>{destination ? 'SPOTS IN' : 'SPOT IN'}</Text>
+              <Text style={st.carEyebrow}>{destination ? 'SPOTS' : 'SPOT'}</Text>
               <Text style={st.carDest}>{destination ? destination.name : spotCountry(activeSpot)}</Text>
             </View>
             {spots.length > 1 && <Text style={st.carCounter}>{activeIndex + 1} / {spots.length}</Text>}

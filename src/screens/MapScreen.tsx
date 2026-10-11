@@ -114,6 +114,7 @@ import SpotSheet from '../components/Map/SpotSheet';
 import CountrySheet from '../components/Map/CountrySheet';
 import ExploreSheet from '../components/Map/ExploreSheet';
 import { thumbCache, photoCache, fetchWikiThumbnail, prefetchWikiThumbnail, HEADER_PX } from '../utils/photoCache';
+import DestPinImages, { DEST_PIN_SIZE, destPinImageName, type DestPinImageSpec } from '../components/Map/DestPinImages';
 
 const VISITED_COLOR  = '#10B981';
 const EXPLORE_COLOR  = '#6366F1';
@@ -121,6 +122,10 @@ const EXPLORE_COLOR  = '#6366F1';
 // Pin-plan look-ahead while the camera zooms out (see planZoom / zoomOutLead).
 const PLAN_LAG_SEC = 0.6;         // assumed delay between a camera frame and the render that reacts to it
 const PLAN_LEAD_MAX_ZOOM = 4;     // cap on the predicted outward travel
+// Destination photo pins are a native Mapbox SymbolLayer (destPhotoSymbols): Mapbox resolves pin-vs-pin and name
+// collisions itself on every rendered frame and fades symbols in and out, so pins never pile up while zooming (the
+// JS plan only decides which destinations are eligible for a photo at all). false falls back to the old MarkerView pins.
+const NATIVE_DEST_PINS = true;
 const PIN_SIZE        = 41;  // 10% larger than 37 (which was 20% smaller than the original 46)
 const PIN_BORDER      = 2;
 // Disc colour a destination/spot pin shows until its photo has loaded and faded in over it. Light
@@ -796,6 +801,31 @@ const MAP_TYPES: { key: MapStyleKey; label: string }[] = [
 // reference changes, which fires onCameraChanged → setRegion → re-render → a new literal →
 // reset again, an infinite "Maximum update depth exceeded" loop under any state change that
 // re-renders MapScreen while the camera is live (e.g. panning/zooming).
+// The native destination pin: its photo image (DestPinImages) centred on the coordinate, the name hanging below it.
+// Pins never overlap one another (lower symbolSortKey wins); a name that would collide is dropped while its pin stays
+// (textOptional), and returns once there is room. Mapbox fades both in and out as placements change.
+const DEST_SYMBOL_STYLE: any = {
+  iconImage: ['get', 'img'],
+  iconAllowOverlap: false,
+  iconIgnorePlacement: false,
+  iconPadding: 0,
+  symbolSortKey: ['get', 'sort'],
+  textField: ['get', 'label'],
+  textFont: ['DIN Pro Bold', 'Arial Unicode MS Bold'],
+  textSize: 11,
+  textLetterSpacing: 0.03,
+  textMaxWidth: 8.5,
+  textAnchor: 'top',
+  textOffset: [0, (DEST_PIN_SIZE / 2 + 4) / 11],
+  textColor: '#FFFFFF',
+  textHaloColor: 'rgba(0,0,0,0.6)',
+  textHaloWidth: 1.2,
+  textHaloBlur: 0.4,
+  textOptional: true,
+  textAllowOverlap: false,
+  textIgnorePlacement: false,
+  textPadding: 1,
+};
 const CAMERA_DEFAULT_SETTINGS = { centerCoordinate: [10, 20] as [number, number], zoomLevel: 1 };
 
 // Layer pill sizing — a single continuous capsule (see the JSX comment above its render
@@ -900,6 +930,36 @@ function isPastDestDefaultZoom(destId: string, camZoom: number): boolean {
 }
 // The key a spot's pin handoff is tracked under: its destination's id, or its own id when standalone.
 const spotParentKey = (s: Spot) => s.destinationId ?? s.id;
+
+// Spots far from their destination's centre are revealed EARLIER than the destination's own default zoom: as soon as
+// they sit far enough from the destination pin on screen not to crowd it (SPOT_EARLY_SEPARATION_PX), but never more
+// than SPOT_EARLY_MAX_LEVELS zoom levels early. Otherwise zooming in on a destination left its outlying spots (often
+// off-screen at its default view) invisible until the very end. The destination pin itself still hands over at its own
+// default zoom; until then it and these outlying spot pins show together.
+const SPOT_EARLY_SEPARATION_PX = 90;
+const SPOT_EARLY_MAX_LEVELS = 2;
+const SPOT_REVEAL_ZOOM_BY_ID: Record<string, number> = (() => {
+  const out: Record<string, number> = {};
+  const destById = new Map(DESTINATIONS.map(d => [d.id, d]));
+  for (const sp of SPOTS) {
+    const base = DEST_ZOOM_LEVEL_BY_ID[spotParentKey(sp)];
+    if (base === undefined) continue;
+    const d = sp.destinationId ? destById.get(sp.destinationId) : undefined;
+    if (!d) { out[sp.id] = base; continue; }
+    // Separation in Web-Mercator degrees, so it converts to on-screen points at any zoom: 512 * 2^z / 360 per degree.
+    const a = mercatorPx(sp.coordinates.longitude, sp.coordinates.latitude, 1);
+    const b = mercatorPx(d.coordinates.longitude, d.coordinates.latitude, 1);
+    const deg = Math.hypot(a.x - b.x, a.y - b.y);
+    const sepZoom = deg > 0 ? Math.log2((SPOT_EARLY_SEPARATION_PX * 360) / (512 * deg)) : Infinity;
+    out[sp.id] = Math.min(base, Math.max(base - SPOT_EARLY_MAX_LEVELS, sepZoom));
+  }
+  return out;
+})();
+const MIN_SPOT_REVEAL_ZOOM = Math.min(...Object.values(SPOT_REVEAL_ZOOM_BY_ID));
+function isSpotRevealed(sp: Spot, zoom: number): boolean {
+  const level = SPOT_REVEAL_ZOOM_BY_ID[sp.id];
+  return level !== undefined && zoom >= level - ZOOM_EPSILON;
+}
 // The area a standalone spot is framed by (it has no destination to supply one).
 const standaloneSpotArea = (s: Spot) => ({ coordinates: s.coordinates, defaultZoomSpanKm: STANDALONE_SPOT_SPAN_KM });
 
@@ -1524,6 +1584,11 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   const planZoom = planZoomTarget !== null
     ? Math.min(camZoom, planZoomTarget)
     : Math.min(camZoom, camZoom - zoomOutLead);
+  // The destination <-> spot handoff (which pin shows, and from what zoom) must follow the zoom the camera is really at —
+  // or, for a close, the known target — never the velocity prediction above: a pinch that merely starts to zoom out would
+  // otherwise read as already past the destination's default zoom, flash its pin in and its spot pins out, then undo it
+  // when the gesture settled.
+  const handoffZoom = planZoomTarget !== null ? Math.min(camZoom, planZoomTarget) : camZoom;
   // While such a close is under way, pins that leave fade out quickly (see FadePin) instead of lingering.
   closeFade.fast = planZoomTarget !== null;
   // The bounds-derived span lags the same way, so it's ignored while looking ahead.
@@ -1874,7 +1939,7 @@ const destItems = useMemo((): DestItem[] =>
         // ever placed in the fixed priority order, the lower-priority one is the one that
         // stays a stamp. STAMP_PX (44) > photo diameter (37) so photos never overlap.
         let collides = false;
-        for (const o of placed) {
+        if (!NATIVE_DEST_PINS) for (const o of placed) {
           const dx = p.x - o.x, dy = p.y - o.y;
           if (dx * dx + dy * dy < STAMP_PX * STAMP_PX) { collides = true; break; }
         }
@@ -1882,6 +1947,14 @@ const destItems = useMemo((): DestItem[] =>
       }
       photoIds.add(d.id);
       placed.push(p);
+    }
+
+    // Placement priority for the native layer (symbolSortKey: lower is placed first and wins a collision).
+    const priority = new Map<string, number>();
+    ordered.forEach((d, i) => priority.set(d.id, i));
+    if (NATIVE_DEST_PINS) {
+      destLabelHitRef.current = { pxPerDegLng, rects: [] };   // names are native symbols: they take taps themselves
+      return { photoIds, positions, labelHiddenIds: new Set<string>(), priority };
     }
 
     // Name labels. A label is hidden when its text box would overlap another placed destination's circle or an
@@ -1924,7 +1997,7 @@ const destItems = useMemo((): DestItem[] =>
     geo.forEach((g, id) => { if (!labelHiddenIds.has(id)) labelRects.push({ id, rect: g }); });
     destLabelHitRef.current = { pxPerDegLng, rects: labelRects };
 
-    return { photoIds, positions, labelHiddenIds };
+    return { photoIds, positions, labelHiddenIds, priority };
     // Pure function of zoom (planLngDelta) + eligible set + selection + saved state +
     // the (equally pan-invariant) country pill plan.
     // No camera centre → recompute produces an identical plan while panning at fixed zoom.
@@ -1975,10 +2048,10 @@ const destItems = useMemo((): DestItem[] =>
   const zoomedPastDefaultIdsRaw = useMemo(() => {
     const ids = new Set<string>();
     for (const d of DESTINATIONS) {
-      if (isPastDestDefaultZoom(d.id, planZoom)) ids.add(d.id);
+      if (isPastDestDefaultZoom(d.id, handoffZoom)) ids.add(d.id);
     }
     return ids;
-  }, [planZoom]);
+  }, [handoffZoom]);
   const zoomedPastDefaultIds = useStableSet(zoomedPastDefaultIdsRaw);
   const hiddenDestIdsRaw = useMemo(() => {
     if (zoomedPastDefaultIds.size === 0) return zoomedIntoDestIds;
@@ -2017,7 +2090,7 @@ const destItems = useMemo((): DestItem[] =>
   const [revealTick, setRevealTick] = useState(0);
   if (prevHiddenDestIdsRef.current !== hiddenDestIds) {
     for (const id of prevHiddenDestIdsRef.current) {
-      if (!hiddenDestIds.has(id) && destPinPlan.photoIds.has(id)) pendingRevealRef.current.add(id);
+      if (!NATIVE_DEST_PINS && !hiddenDestIds.has(id) && destPinPlan.photoIds.has(id)) pendingRevealRef.current.add(id);
     }
     prevHiddenDestIdsRef.current = hiddenDestIds;
   }
@@ -2131,7 +2204,7 @@ const destItems = useMemo((): DestItem[] =>
     // (isPastDestDefaultZoom for spotsInDest, and per spot for others) — so a tighter
     // destination doesn't show its pins early just because some other, wider one is already
     // past ITS OWN threshold.
-    const belowSpotZoom = planZoom >= MIN_DEST_ZOOM_LEVEL - ZOOM_EPSILON;
+    const belowSpotZoom = handoffZoom >= Math.min(MIN_DEST_ZOOM_LEVEL, MIN_SPOT_REVEAL_ZOOM) - ZOOM_EPSILON;
 
     // While a destination is selected — its own sheet open, or drilled into one of its
     // spots — show that destination's full, small, static spot set rather than a live
@@ -2158,7 +2231,7 @@ const destItems = useMemo((): DestItem[] =>
     // together with no gap and no overlap. belowSpotZoom above is only the coarse outer gate
     // (loosened for OTHER, possibly-wider destinations) and must not let a tighter selected
     // destination's pins appear early just because something else passed that outer check.
-    const selectedBelowOwnZoom = !!selectedDest && isPastDestDefaultZoom(selectedDest.id, planZoom);
+    const selectedBelowOwnZoom = !!selectedDest && isPastDestDefaultZoom(selectedDest.id, handoffZoom);
 
     const others: Spot[] = [];
     {
@@ -2173,15 +2246,19 @@ const destItems = useMemo((): DestItem[] =>
         // Each OTHER destination's spots only show at and past THAT destination's own default
         // zoom — same reasoning as selectedBelowOwnZoom above, just per-spot since there's no
         // single "selected" destination to read the threshold from here.
-        if (!isPastDestDefaultZoom(spotParentKey(s), planZoom)) continue;
+        // (Or earlier, for a spot far enough out from its destination — see SPOT_REVEAL_ZOOM_BY_ID.)
+        if (!isSpotRevealed(s, handoffZoom)) continue;
         const { latitude: lat, longitude: lng } = s.coordinates;
         if (lat >= minLat && lat <= maxLat && lng >= minLng && lng <= maxLng) others.push(s);
       }
     }
-    const result = selectedDest && selectedBelowOwnZoom ? [...spotsInDest, ...others] : others;
+    // Short of its own default zoom, the selected destination still shows its outlying spots (see isSpotRevealed).
+    const result = selectedDest
+      ? [...(selectedBelowOwnZoom ? spotsInDest : spotsInDest.filter(sp => isSpotRevealed(sp, handoffZoom))), ...others]
+      : others;
     if (selectedSpot && !result.some(sp => sp.id === selectedSpot.id)) result.push(selectedSpot);
     return result;
-  }, [region, planZoom, selectedSpot, selectedDest, spotsInDest]);
+  }, [region, handoffZoom, selectedSpot, selectedDest, spotsInDest]);
   // Exit-fade tracking for spot pins (same treatment as pills/photos): pins leaving the
   // set linger for PIN_EXIT_MS fading out, new ones mount at 0 and fade in.
   const renderedSpots = useExitingItems(useStableList(visibleSpots, s => s.id), s => s.id, HANDOFF_FADE_MS);
@@ -3945,7 +4022,7 @@ const destItems = useMemo((): DestItem[] =>
     if (cleared) setRevealTick(t => t + 1);
   }, [renderedPhotoDests]);
 
-  const destPhotoMarkers = useMemo(() => renderedPhotoDests
+  const destPhotoMarkers = useMemo(() => NATIVE_DEST_PINS ? null : renderedPhotoDests
     .map(({ item: dest, exiting }) => {
       const isVisited  = visitIndex.isDestVisited(dest.id);
       const spotCount  = visitedSpotCountByDest[dest.id] ?? 0;
@@ -3981,6 +4058,34 @@ const destItems = useMemo((): DestItem[] =>
       );
     }),
   [renderedPhotoDests, selectedDest, savedDestinations, visitIndex, visitedSpotCountByDest, handleMarkerPress, handleResetToDest, hiddenDestIds, destPinPlan]);
+
+  // Native destination photo pins: one point feature per eligible destination, pointing at that pin's style image.
+  // Collisions (pin vs pin, name vs pin) and the fades are left to Mapbox — see NATIVE_DEST_PINS.
+  // Pin images are grow-only: once registered, an image stays mounted, so a symbol never loses its image mid-fade.
+  const destPinSpecsRef = useRef<Map<string, DestPinImageSpec>>(new Map());
+  const destPinSpecListRef = useRef<DestPinImageSpec[]>([]);
+  const nativeDestPins = useMemo(() => {
+    if (!NATIVE_DEST_PINS) return null;
+    const specs = destPinSpecsRef.current;
+    let added = false;
+    const features: GeoJSON.Feature<GeoJSON.Point>[] = [];
+    for (const dest of promotedDests) {
+      const visited = visitIndex.isDestVisited(dest.id);
+      const badge = visited ? (visitedSpotCountByDest[dest.id] ?? 0) : 0;
+      // No separate selected look: a new image name would remount the image and flash the placeholder disc.
+      const selected = false;
+      const img = destPinImageName(dest.id, visited, badge, selected);
+      if (!specs.has(img)) { specs.set(img, { name: img, dest, visited, badge, selected }); added = true; }
+      features.push({
+        type: 'Feature',
+        id: dest.id,
+        geometry: { type: 'Point', coordinates: [dest.coordinates.longitude, dest.coordinates.latitude] },
+        properties: { id: dest.id, img, label: dest.name, sort: destPinPlan.priority.get(dest.id) ?? 9999 },
+      });
+    }
+    if (added) destPinSpecListRef.current = [...specs.values()];
+    return { shape: { type: 'FeatureCollection' as const, features }, specs: destPinSpecListRef.current };
+  }, [promotedDests, visitIndex, visitedSpotCountByDest, destPinPlan]);
 
   // Which sliding sheet is mounted right now. When it changes from one level to another, the incoming sheet is a
   // replacement for the one that was showing and starts where that one rested (see sheetPose) rather than from below
@@ -4298,6 +4403,22 @@ const destItems = useMemo((): DestItem[] =>
             }}
           />
         </MapboxGL.ShapeSource>
+
+        {nativeDestPins && <DestPinImages specs={nativeDestPins.specs} />}
+        {nativeDestPins && (
+          <MapboxGL.ShapeSource
+            id="destPhotos"
+            shape={nativeDestPins.shape}
+            onPress={(e) => {
+              const id = e.features[0]?.properties?.id as string | undefined;
+              if (!id) return;
+              const dest = DESTINATIONS.find(d => d.id === id);
+              if (dest && !pressBlocked()) { if (selectedDestRef.current?.id === dest.id) handleResetToDest(); else handleMarkerPress(dest); }
+            }}
+          >
+            <MapboxGL.SymbolLayer id="destPhotoSymbols" aboveLayerID="destStampCircles" style={DEST_SYMBOL_STYLE} />
+          </MapboxGL.ShapeSource>
+        )}
 
         {/* All MarkerViews require the map style to be loaded before Mapbox can
             project coordinates to screen positions. Gate on mapReady. */}
