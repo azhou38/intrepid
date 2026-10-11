@@ -930,6 +930,36 @@ function isPastDestDefaultZoom(destId: string, camZoom: number): boolean {
 }
 // The key a spot's pin handoff is tracked under: its destination's id, or its own id when standalone.
 const spotParentKey = (s: Spot) => s.destinationId ?? s.id;
+
+// Spots far from their destination's centre are revealed EARLIER than the destination's own default zoom: as soon as
+// they sit far enough from the destination pin on screen not to crowd it (SPOT_EARLY_SEPARATION_PX), but never more
+// than SPOT_EARLY_MAX_LEVELS zoom levels early. Otherwise zooming in on a destination left its outlying spots (often
+// off-screen at its default view) invisible until the very end. The destination pin itself still hands over at its own
+// default zoom; until then it and these outlying spot pins show together.
+const SPOT_EARLY_SEPARATION_PX = 90;
+const SPOT_EARLY_MAX_LEVELS = 2;
+const SPOT_REVEAL_ZOOM_BY_ID: Record<string, number> = (() => {
+  const out: Record<string, number> = {};
+  const destById = new Map(DESTINATIONS.map(d => [d.id, d]));
+  for (const sp of SPOTS) {
+    const base = DEST_ZOOM_LEVEL_BY_ID[spotParentKey(sp)];
+    if (base === undefined) continue;
+    const d = sp.destinationId ? destById.get(sp.destinationId) : undefined;
+    if (!d) { out[sp.id] = base; continue; }
+    // Separation in Web-Mercator degrees, so it converts to on-screen points at any zoom: 512 * 2^z / 360 per degree.
+    const a = mercatorPx(sp.coordinates.longitude, sp.coordinates.latitude, 1);
+    const b = mercatorPx(d.coordinates.longitude, d.coordinates.latitude, 1);
+    const deg = Math.hypot(a.x - b.x, a.y - b.y);
+    const sepZoom = deg > 0 ? Math.log2((SPOT_EARLY_SEPARATION_PX * 360) / (512 * deg)) : Infinity;
+    out[sp.id] = Math.min(base, Math.max(base - SPOT_EARLY_MAX_LEVELS, sepZoom));
+  }
+  return out;
+})();
+const MIN_SPOT_REVEAL_ZOOM = Math.min(...Object.values(SPOT_REVEAL_ZOOM_BY_ID));
+function isSpotRevealed(sp: Spot, zoom: number): boolean {
+  const level = SPOT_REVEAL_ZOOM_BY_ID[sp.id];
+  return level !== undefined && zoom >= level - ZOOM_EPSILON;
+}
 // The area a standalone spot is framed by (it has no destination to supply one).
 const standaloneSpotArea = (s: Spot) => ({ coordinates: s.coordinates, defaultZoomSpanKm: STANDALONE_SPOT_SPAN_KM });
 
@@ -2174,7 +2204,7 @@ const destItems = useMemo((): DestItem[] =>
     // (isPastDestDefaultZoom for spotsInDest, and per spot for others) — so a tighter
     // destination doesn't show its pins early just because some other, wider one is already
     // past ITS OWN threshold.
-    const belowSpotZoom = handoffZoom >= MIN_DEST_ZOOM_LEVEL - ZOOM_EPSILON;
+    const belowSpotZoom = handoffZoom >= Math.min(MIN_DEST_ZOOM_LEVEL, MIN_SPOT_REVEAL_ZOOM) - ZOOM_EPSILON;
 
     // While a destination is selected — its own sheet open, or drilled into one of its
     // spots — show that destination's full, small, static spot set rather than a live
@@ -2216,12 +2246,16 @@ const destItems = useMemo((): DestItem[] =>
         // Each OTHER destination's spots only show at and past THAT destination's own default
         // zoom — same reasoning as selectedBelowOwnZoom above, just per-spot since there's no
         // single "selected" destination to read the threshold from here.
-        if (!isPastDestDefaultZoom(spotParentKey(s), handoffZoom)) continue;
+        // (Or earlier, for a spot far enough out from its destination — see SPOT_REVEAL_ZOOM_BY_ID.)
+        if (!isSpotRevealed(s, handoffZoom)) continue;
         const { latitude: lat, longitude: lng } = s.coordinates;
         if (lat >= minLat && lat <= maxLat && lng >= minLng && lng <= maxLng) others.push(s);
       }
     }
-    const result = selectedDest && selectedBelowOwnZoom ? [...spotsInDest, ...others] : others;
+    // Short of its own default zoom, the selected destination still shows its outlying spots (see isSpotRevealed).
+    const result = selectedDest
+      ? [...(selectedBelowOwnZoom ? spotsInDest : spotsInDest.filter(sp => isSpotRevealed(sp, handoffZoom))), ...others]
+      : others;
     if (selectedSpot && !result.some(sp => sp.id === selectedSpot.id)) result.push(selectedSpot);
     return result;
   }, [region, handoffZoom, selectedSpot, selectedDest, spotsInDest]);
