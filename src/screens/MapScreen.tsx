@@ -931,6 +931,33 @@ function isPastDestDefaultZoom(destId: string, camZoom: number): boolean {
 // The key a spot's pin handoff is tracked under: its destination's id, or its own id when standalone.
 const spotParentKey = (s: Spot) => s.destinationId ?? s.id;
 
+// A standalone spot's carousel ("near" context): the spot itself, then the closest other spots within NEAR_RADIUS_KM
+// of it (any destination's, or other standalone ones), nearest first — so its sheet is something to swipe through
+// rather than a single dead-end card. Labelled with the nearest destination ("NEAR / Queenstown").
+const NEAR_RADIUS_KM = 40;
+const NEAR_MAX_SPOTS = 10;
+const kmBetween = (a: { latitude: number; longitude: number }, b: { latitude: number; longitude: number }) => {
+  const r = Math.PI / 180, dl = (b.latitude - a.latitude) * r, dn = (b.longitude - a.longitude) * r;
+  const x = Math.sin(dl / 2) ** 2 + Math.cos(a.latitude * r) * Math.cos(b.latitude * r) * Math.sin(dn / 2) ** 2;
+  return 12742 * Math.asin(Math.sqrt(x));
+};
+type NearContext = { anchor: Spot; spots: Spot[]; near?: Destination };
+function nearContextFor(anchor: Spot): NearContext {
+  const others = SPOTS
+    .filter(s => s.id !== anchor.id)
+    .map(s => ({ s, km: kmBetween(anchor.coordinates, s.coordinates) }))
+    .filter(o => o.km <= NEAR_RADIUS_KM)
+    .sort((a, b) => a.km - b.km)
+    .slice(0, NEAR_MAX_SPOTS)
+    .map(o => o.s);
+  let near: Destination | undefined, best = Infinity;
+  for (const d of DESTINATIONS) {
+    const km = kmBetween(anchor.coordinates, d.coordinates);
+    if (km < best) { best = km; near = d; }
+  }
+  return { anchor, spots: [anchor, ...others], near };
+}
+
 // Spots far from their destination's centre are revealed EARLIER than the destination's own default zoom: as soon as
 // they sit far enough from the destination pin on screen not to crowd it (SPOT_EARLY_SEPARATION_PX), but never more
 // than SPOT_EARLY_MAX_LEVELS zoom levels early. Otherwise zooming in on a destination left its outlying spots (often
@@ -2180,17 +2207,26 @@ const destItems = useMemo((): DestItem[] =>
   // The spots the spot sheet's carousel pages through: the selected spot's destination's, or just the spot itself when
   // it's standalone (it has no destination, so nothing to page through). Follows the SPOT, not selectedDest, which can
   // be a different destination the user came from.
+  // The near context lives as long as the selected spot is its anchor or one of its neighbours (swiping the carousel,
+  // or tapping one of their pins); selecting anything else, or closing, ends it. While it lasts, the sheet stays the
+  // anchor's sheet even when the active card belongs to some destination.
+  const nearCtxRef = useRef<NearContext | null>(null);
+  if (!selectedSpot) nearCtxRef.current = null;
+  else if (nearCtxRef.current?.spots.some(s => s.id === selectedSpot.id)) { /* keep */ }
+  else nearCtxRef.current = selectedSpot.destinationId ? null : nearContextFor(selectedSpot);
+  const nearCtx = nearCtxRef.current;
   const selectedSpotDestId = selectedSpot?.destinationId;
   const carouselSpots = useMemo(
-    () => selectedSpotDestId ? SPOTS.filter(s => s.destinationId === selectedSpotDestId) : selectedSpot ? [selectedSpot] : [],
+    () => nearCtx ? nearCtx.spots
+      : selectedSpotDestId ? SPOTS.filter(s => s.destinationId === selectedSpotDestId) : selectedSpot ? [selectedSpot] : [],
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [selectedSpotDestId, selectedSpotDestId ? null : selectedSpot?.id],
+    [nearCtx, selectedSpotDestId, selectedSpotDestId ? null : selectedSpot?.id],
   );
 
   // What the breadcrumb names as "where you are": the selected destination, or — for a standalone spot, which has no
   // destination — the spot itself under its own country.
   const crumb = (() => {
-    if (selectedSpot && !selectedSpot.destinationId) {
+    if (selectedSpot && (!selectedSpot.destinationId || nearCtx)) {
       const countryCode = spotCountryCode(selectedSpot), country = spotCountry(selectedSpot);
       return countryCode && country ? { name: selectedSpot.name, country, countryCode } : null;
     }
@@ -2256,9 +2292,11 @@ const destItems = useMemo((): DestItem[] =>
     const result = selectedDest
       ? [...(selectedBelowOwnZoom ? spotsInDest : spotsInDest.filter(sp => isSpotRevealed(sp, handoffZoom))), ...others]
       : others;
+    // A near context's carousel spots all get pins, so each card it settles on has its pin on the map.
+    if (nearCtx) for (const sp of nearCtx.spots) if (!result.some(r => r.id === sp.id)) result.push(sp);
     if (selectedSpot && !result.some(sp => sp.id === selectedSpot.id)) result.push(selectedSpot);
     return result;
-  }, [region, handoffZoom, selectedSpot, selectedDest, spotsInDest]);
+  }, [region, handoffZoom, selectedSpot, selectedDest, spotsInDest, nearCtx]);
   // Exit-fade tracking for spot pins (same treatment as pills/photos): pins leaving the
   // set linger for PIN_EXIT_MS fading out, new ones mount at 0 and fade in.
   const renderedSpots = useExitingItems(useStableList(visibleSpots, s => s.id), s => s.id, HANDOFF_FADE_MS);
@@ -2957,6 +2995,9 @@ const destItems = useMemo((): DestItem[] =>
 
   // ── Spot selection ──────────────────────────────────────────────────────────
   const handleSpotPress = useCallback((spot: Spot) => {
+    // Tapping a pin (rather than swiping the carousel) leaves any near context: a destination's spot then opens in that
+    // destination's own context, and a standalone one starts its own near context.
+    nearCtxRef.current = null;
     // Its destination — undefined for a STANDALONE spot, which has none and needs none selected.
     const dest = spotDestination(spot);
     const country = spotCountry(spot);
@@ -3049,7 +3090,8 @@ const destItems = useMemo((): DestItem[] =>
   // matching the drilled-down (‹ Name) case's zoom target even though no sheet reopens here.
   // The Explore sheet remounts (slide-up entrance) once the deferred clear below lands.
   const handleCloseSpotToDestinationView = useCallback(() => {
-    const spot = selectedSpotRef.current;
+    // In a near context, close to the ANCHOR's area, not that of whichever neighbour's card is showing.
+    const spot = nearCtxRef.current?.anchor ?? selectedSpotRef.current;
     // A standalone spot closes to ITS OWN area, never to whichever unrelated destination happens to be selected.
     const standalone = spot && !spot.destinationId ? spot : null;
     const dest = standalone ? undefined : (selectedDestRef.current ?? (spot ? spotDestination(spot) : undefined));
@@ -3306,7 +3348,7 @@ const destItems = useMemo((): DestItem[] =>
 
   const handleResetToDest = useCallback(() => {
     // A standalone spot has no destination: this segment recentres on the spot instead.
-    if (selectedSpot && !selectedSpot.destinationId) {
+    if (selectedSpot && (!selectedSpot.destinationId || nearCtxRef.current)) {
       Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
       suppressPeekPushRef.current = true;
       if (suppressPeekPushTimerRef.current) clearTimeout(suppressPeekPushTimerRef.current);
@@ -4107,7 +4149,7 @@ const destItems = useMemo((): DestItem[] =>
   type SheetSnap = { identity: string; kind: 'country' | 'dest' | 'spot'; cluster: CountryCluster | null; dest: Destination | null; spots: Spot[]; focusId: string | null };
   const sheetIdentity = sheetKind === 'country' ? `country:${selectedCountry?.countryCode}`
     : sheetKind === 'dest' ? `dest:${selectedDest?.id}`
-    : sheetKind === 'spot' ? `spot:${selectedSpot?.destinationId ?? selectedSpot?.id}` : null;
+    : sheetKind === 'spot' ? `spot:${nearCtx ? nearCtx.anchor.id : selectedSpot?.destinationId ?? selectedSpot?.id}` : null;
   const shownSnapRef = useRef<SheetSnap | null>(null);
   const swapRef = useRef({ identity: sheetIdentity as string | null, animate: false, enterFromPrevious: false, key: 0, seq: 0 });
   const leavingSheetRef = useRef<(SheetSnap & { seq: number }) | null>(null);
@@ -4128,7 +4170,7 @@ const destItems = useMemo((): DestItem[] =>
     shownSnapRef.current = {
       identity: sheetIdentity, kind: sheetKind, cluster: selectedCountry,
       // A spot sheet's destination is the SPOT's own (none when standalone), not whatever happens to be selected.
-      dest: sheetKind === 'spot' && selectedSpot ? (spotDestination(selectedSpot) ?? null) : selectedDest,
+      dest: sheetKind === 'spot' && selectedSpot ? (nearCtx ? null : spotDestination(selectedSpot) ?? null) : selectedDest,
       spots: sheetKind === 'spot' ? carouselSpots : [], focusId: spotFocusId,
     };
   } else if (!sheetKind) {
@@ -4775,7 +4817,8 @@ const destItems = useMemo((): DestItem[] =>
           key={`spot-${sheetSwapKey}`}
           spots={carouselSpots}
           focusSpotId={spotFocusId}
-          destination={spotDestination(selectedSpot) ?? null}
+          destination={nearCtx ? null : spotDestination(selectedSpot) ?? null}
+          nearLabel={nearCtx?.near?.name}
           onClose={handleCloseSpot}
           onExpand={handleSheetExpand}
           onCollapse={handleCloseSheet}
@@ -4789,7 +4832,7 @@ const destItems = useMemo((): DestItem[] =>
           mapGestureAtSV={mapGestureAtSV}
           onSnapStateChange={handleSheetSnapStateChange}
           // A standalone spot has no destination sheet to open a list in.
-          onGoToList={selectedSpot.destinationId ? handleGoToListView : undefined}
+          onGoToList={selectedSpot.destinationId && !nearCtx ? handleGoToListView : undefined}
           collapseSignal={collapseSheetSignal}
         />
       )}

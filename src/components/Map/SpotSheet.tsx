@@ -214,6 +214,9 @@ interface Props {
   focusSpotId: string;
   // The spots' destination — null for a STANDALONE spot, which has none. The sheet then names only the spot's country.
   destination?: Destination | null;
+  // A standalone spot's carousel is the spot plus its neighbours (see MapScreen's near context): the heading then
+  // reads "NEAR" over this name — the nearest destination — instead of "SPOTS" over a destination or country.
+  nearLabel?: string;
   // `toCollapsed` is true when this fires from a swipe-down while the carousel itself was
   // collapsed (bottom-screen), so the caller can land the destination sheet underneath in
   // its own collapsed/bottom-screen view instead of the usual half-screen default. False
@@ -266,7 +269,7 @@ interface Props {
 }
 
 function SpotSheet({
-  spots, focusSpotId, destination, onClose, onExpand, onCollapse, onActiveSpotChange, onCollapsedTopChange,
+  spots, focusSpotId, destination, nearLabel, onClose, onExpand, onCollapse, onActiveSpotChange, onCollapsedTopChange,
   pillOffsetSV, onSnapStateChange, peekSignal, exitSignal, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, onExited, onGoToList, collapseSignal,
 }: Props) {
   const insets       = useSafeAreaInsets();
@@ -1133,8 +1136,8 @@ function SpotSheet({
           {/* Heading — indicates you're browsing the spots within this destination */}
           <View style={st.carHeader}>
             <View style={{ flex: 1 }}>
-              <Text style={st.carEyebrow}>{destination ? 'SPOTS' : 'SPOT'}</Text>
-              <Text style={st.carDest}>{destination ? destination.name : spotCountry(activeSpot)}</Text>
+              <Text style={st.carEyebrow}>{nearLabel ? 'NEAR' : 'SPOTS'}</Text>
+              <Text style={st.carDest}>{nearLabel ?? (destination ? destination.name : spotCountry(activeSpot))}</Text>
             </View>
             {spots.length > 1 && <Text style={st.carCounter}>{activeIndex + 1} / {spots.length}</Text>}
             {!!onGoToList && (
