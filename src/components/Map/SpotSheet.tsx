@@ -14,7 +14,7 @@ import { ScrollView as GHScrollView, Gesture, GestureDetector } from 'react-nati
 // react-native and mixing the two default-export namings would be confusing.
 import Reanimated, {
   useSharedValue, useAnimatedStyle, useAnimatedReaction, withTiming, runOnJS,
-  interpolate, Extrapolation, Easing,
+  interpolate, Extrapolation, Easing, scrollTo, useAnimatedRef,
 } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { SharedValue } from 'react-native-reanimated';
@@ -630,7 +630,7 @@ function SpotSheet({
       // scrollYSV is already clamped to >= 0 by bounces={false} on this ScrollView. See
       // DestinationSheet's own identical reaction for the fuller writeup.
       // Fixed at full-screen (Spotify-style): it sits in the compact title bar once the header has scrolled away.
-      const FULL_TOP_ABS = FULL_POS + (insets.top + 14);
+      const FULL_TOP_ABS = FULL_POS + (insets.top + 6);
       const FULL_TARGET = SCREEN_H - FULL_TOP_ABS - PILL_H;
       const COLLAPSED_PILL_GAP = 16;
       const COLLAPSED_TOP_ABS = COLLAPSED_Y - COLLAPSED_PILL_GAP - PILL_H;
@@ -657,6 +657,21 @@ function SpotSheet({
   // Full-screen panels mount a moment after the sheet does, or at once on heading to full — see
   // useDeferredMount.
   const [panelsReady, revealPanels] = useDeferredMount();
+  // Scrolls the content back to its top on the UI thread, over a fixed 220ms — finishing before the sheet settles at
+  // half-screen (SNAP_CONFIG, 280ms), so it never still looks like it's scrolling once the sheet has landed. (The
+  // ScrollView's own animated scrollTo has a fixed, longer duration of its own.)
+  const scrollAnimRef = useAnimatedRef<any>();
+  const scrollResetSV = useSharedValue(-1);   // -1: idle
+  useAnimatedReaction(() => scrollResetSV.value, y => { if (y >= 0) scrollTo(scrollAnimRef, 0, y, false); });
+  const resetScrollToTop = () => {
+    const y0 = scrollYSV.value;
+    if (y0 <= 0) return;
+    scrollResetSV.value = y0;
+    scrollResetSV.value = withTiming(0, { duration: 220, easing: Easing.out(Easing.cubic) }, () => { scrollResetSV.value = -1; });
+    // Safety net, should the UI-thread scroll not have reached the ScrollView.
+    setTimeout(() => scrollRef.current?.scrollTo({ y: 0, animated: false }), 320);
+  };
+
   transitionToRef.current = (next, reason) => {
     // Once the parent has told this sheet to leave, only a NEW selection may bring it back.
     if (closingRef.current && reason !== 'selectionChange') return;
@@ -664,7 +679,7 @@ function SpotSheet({
     const prev = snapStateRef.current;
     // Leaving full-screen (the down arrow, or a swipe): bring the content back to its top as the sheet slides down,
     // so half-screen shows the sheet's header rather than whatever section was scrolled to.
-    if (prev === 'full' && next !== 'full') scrollRef.current?.scrollTo({ y: 0, animated: true });
+    if (prev === 'full' && next !== 'full') resetScrollToTop();
     const target = next === 'full' ? FULL_POS : next === 'peek' ? PEEK_Y : COLLAPSED_Y;
     if (__DEV__) console.log('[sheet] Spot', activeSpot.id, prev, '->', next, `reason=${reason}`, 'mapInteracting=', isMapInteracting?.() ?? false);
     snapStateRef.current = next;
@@ -947,11 +962,11 @@ function SpotSheet({
     scrollRef.current?.scrollTo({ y: 0, animated: true });
   }, [spots, activeIndex, loopOffset, onActiveSpotChange]);
 
-  const heroTopRowTop = insets.top + 14;
+  const heroTopRowTop = insets.top + 6;
 
   // Spotify-style header (see the fixed HERO PHOTO layer): the photo dims as content covers it, the header text fades as
   // it nears the compact title bar, the bar fades in once the name has gone under it, and the tab bar pins below it.
-  const COMPACT_BAR_H = heroTopRowTop + 36 + 6;
+  const COMPACT_BAR_H = heroTopRowTop + 36;
   const heroTextTopSV = useSharedValue(HERO_H - insets.bottom - 200);
   const heroDimStyle = useAnimatedStyle(() => ({
     opacity: interpolate(scrollYSV.value, [0, (HERO_H - insets.bottom) * 0.85], [0, 0.55], Extrapolation.CLAMP),
@@ -1061,7 +1076,7 @@ isVisited ? (
           <Reanimated.View style={[StyleSheet.absoluteFill, { backgroundColor: '#000' }, heroDimStyle]} />
         </View>
         <GHScrollView
-          ref={scrollRef}
+          ref={(r: any) => { (scrollRef as any).current = r; scrollAnimRef(r); }}
           style={{ flex: 1 }}
           scrollEnabled bounces={false}
           stickyHeaderIndices={[1]}
@@ -1616,7 +1631,6 @@ const st = StyleSheet.create({
   heroBackdrop: { position: 'absolute', top: 0, left: 0, right: 0, overflow: 'hidden', backgroundColor: '#111827' },
   compactBar: {
     backgroundColor: 'white', alignItems: 'center', paddingHorizontal: 110,
-    shadowColor: '#000', shadowOpacity: 0.06, shadowRadius: 4, shadowOffset: { width: 0, height: 1 },
   },
   tabCornerFill: { position: 'absolute', left: 0, right: 0, height: 24, backgroundColor: 'white' },
   compactBarFixed: { position: 'absolute', top: 0, left: 0, right: 0, zIndex: 3 },

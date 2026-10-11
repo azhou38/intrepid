@@ -10,7 +10,7 @@ import {
 // since the bottleneck was the gesture pipeline itself, not which style property it drove).
 import Animated, {
   useSharedValue, useAnimatedStyle, useAnimatedReaction, withTiming, runOnJS,
-  interpolate, Extrapolation, Easing,
+  interpolate, Extrapolation, Easing, scrollTo, useAnimatedRef,
 } from 'react-native-reanimated';
 import type { SharedValue } from 'react-native-reanimated';
 // ScrollView specifically comes from gesture-handler (not core RN) — only a gesture-handler-
@@ -462,7 +462,7 @@ function CountrySheet({
   // COLLAPSED_Y so it holds steady while peeking (the peek strip overlay takes over there).
   // Spotify-style header (see the fixed HEADER PHOTO layer): the photo dims as content covers it, the header text fades
   // as it nears the compact title bar, the bar fades in once the name has gone under it, and the tab bar pins below it.
-  const COMPACT_BAR_H = insets.top + 56;
+  const COMPACT_BAR_H = insets.top + 48;
   const headerNameYSV = useSharedValue(insets.top + 80);
   const headerDimStyle = useAnimatedStyle(() => ({
     opacity: interpolate(scrollY.value, [0, fullHeaderH * 0.85], [0, 0.55], Extrapolation.CLAMP),
@@ -495,7 +495,7 @@ function CountrySheet({
   // own heroTopRowStyle: at full-screen the row needs to clear the status bar, but at
   // collapsed the sheet's own top edge already sits well below it.
   const headerTopRowStyle = useAnimatedStyle(() => ({
-    top: interpolate(slideAnim.value, [FULL_POS, COLLAPSED_Y], [insets.top + 20, 20], Extrapolation.CLAMP),
+    top: interpolate(slideAnim.value, [FULL_POS, COLLAPSED_Y], [insets.top + 12, 20], Extrapolation.CLAMP),
   }));
   // Nudges the flag/name/continent/stats stack down as the sheet approaches half-screen, and
   // only there — at full-screen the offset is 0, so that view is untouched. The content wrap
@@ -547,7 +547,7 @@ function CountrySheet({
       // clamped to >= 0 by bounces={false} on this ScrollView. See DestinationSheet's own
       // identical reaction for the fuller writeup.
       // Fixed at full-screen (Spotify-style): it sits in the compact title bar once the header has scrolled away.
-      const FULL_TOP_ABS = FULL_POS + (insets.top + 20);
+      const FULL_TOP_ABS = FULL_POS + (insets.top + 12);
       const FULL_TARGET = SCREEN_H - FULL_TOP_ABS - PILL_H;
       // Collapsed: float a fixed gap above the header's own measured top (collapsedYAnim.value),
       // same convention as DestinationSheet's own reaction.
@@ -579,6 +579,21 @@ function CountrySheet({
   // Full-screen panels mount a moment after the sheet does, or at once on heading to full — see
   // useDeferredMount.
   const [panelsReady, revealPanels] = useDeferredMount();
+  // Scrolls the content back to its top on the UI thread, over a fixed 220ms — finishing before the sheet settles at
+  // half-screen (SNAP_CONFIG, 280ms), so it never still looks like it's scrolling once the sheet has landed. (The
+  // ScrollView's own animated scrollTo has a fixed, longer duration of its own.)
+  const scrollAnimRef = useAnimatedRef<any>();
+  const scrollResetSV = useSharedValue(-1);   // -1: idle
+  useAnimatedReaction(() => scrollResetSV.value, y => { if (y >= 0) scrollTo(scrollAnimRef, 0, y, false); });
+  const resetScrollToTop = () => {
+    const y0 = scrollY.value;
+    if (y0 <= 0) return;
+    scrollResetSV.value = y0;
+    scrollResetSV.value = withTiming(0, { duration: 220, easing: Easing.out(Easing.cubic) }, () => { scrollResetSV.value = -1; });
+    // Safety net, should the UI-thread scroll not have reached the ScrollView.
+    setTimeout(() => scrollRef.current?.scrollTo({ y: 0, animated: false }), 320);
+  };
+
   transitionToRef.current = (next, reason) => {
     // Once the parent has told this sheet to leave, only a NEW selection may bring it back.
     if (closingRef.current && reason !== 'selectionChange') return;
@@ -586,7 +601,7 @@ function CountrySheet({
     const prev = snapStateRef.current;
     // Leaving full-screen (the down arrow, or a swipe): bring the content back to its top as the sheet slides down,
     // so half-screen shows the sheet's header rather than whatever section was scrolled to.
-    if (prev === 'full' && next !== 'full') scrollRef.current?.scrollTo({ y: 0, animated: true });
+    if (prev === 'full' && next !== 'full') resetScrollToTop();
     const target = next === 'full' ? FULL_POS : next === 'peek' ? PEEK_Y : collapsedYRef.current;
     if (__DEV__) console.log('[sheet] Country', cluster.countryCode, prev, '->', next, `reason=${reason}`, 'mapInteracting=', isMapInteracting?.() ?? false);
     snapStateRef.current = next;
@@ -936,7 +951,7 @@ function CountrySheet({
 
           {/* ── FULL CONTENT ─────────────────────────────────────────────── */}
           <ScrollView
-            ref={scrollRef}
+            ref={(r: any) => { (scrollRef as any).current = r; scrollAnimRef(r); }}
             style={{ flex: 1 }}
             // Only scrollable at full-screen — while collapsed/peeking there's nothing to
             // scroll TO (the header itself is cropped shorter, not scrolled). Identical
@@ -1157,7 +1172,7 @@ function CountrySheet({
           </ScrollView>
           {/* ── COMPACT TITLE BAR — fixed at the very top; fades in as the tab bar arrives under it and pins (the sticky
               header leaves exactly this much room above the tab bar), and out again as it scrolls back down. */}
-          <Animated.View pointerEvents="none" style={[st.compactBar, st.compactBarFixed, { height: COMPACT_BAR_H, paddingTop: insets.top + 20 }, compactBarStyle]}>
+          <Animated.View pointerEvents="none" style={[st.compactBar, st.compactBarFixed, { height: COMPACT_BAR_H, paddingTop: insets.top + 12 }, compactBarStyle]}>
             <Text style={st.compactBarTitle} numberOfLines={1}>{cluster.country}</Text>
           </Animated.View>
 
@@ -1244,7 +1259,6 @@ const st = StyleSheet.create({
   headerBackdrop: { position: 'absolute', top: 0, left: 0, right: 0, height: HEADER_H, overflow: 'hidden', backgroundColor: '#111827' },
   compactBar: {
     backgroundColor: 'white', alignItems: 'center', paddingHorizontal: 110,
-    shadowColor: '#000', shadowOpacity: 0.06, shadowRadius: 4, shadowOffset: { width: 0, height: 1 },
   },
   tabCornerFill: { position: 'absolute', left: 0, right: 0, height: 24, backgroundColor: 'white' },
   compactBarFixed: { position: 'absolute', top: 0, left: 0, right: 0, zIndex: 3 },

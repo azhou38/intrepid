@@ -17,7 +17,7 @@ import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'reac
 // scroll-driven tab bar overlay — still use core Animated and aren't part of this fix.
 import Reanimated, {
   useSharedValue, useAnimatedStyle, useAnimatedReaction, withTiming, runOnJS,
-  interpolate, Extrapolation, Easing,
+  interpolate, Extrapolation, Easing, scrollTo, useAnimatedRef,
 } from 'react-native-reanimated';
 import type { SharedValue } from 'react-native-reanimated';
 // ScrollView specifically comes from gesture-handler (not core RN) — only a gesture-handler-
@@ -1006,7 +1006,7 @@ function DestinationSheet({
       // by bounces={false} on this ScrollView, so no extra clamping is needed here.
       // Fixed at full-screen (Spotify-style): it no longer scrolls away with the header — once the header has gone, it
       // sits in the compact title bar (see compactBarStyle).
-      const FULL_TOP_ABS = FULL_POS + (insets.top + 20);
+      const FULL_TOP_ABS = FULL_POS + (insets.top + 12);
       const FULL_TARGET = SCREEN_H - FULL_TOP_ABS - PILL_H;
       // Collapsed: float a fixed gap above the compact card's own *measured* top
       // (collapsedYAnim.value, kept live by the card's onLayout) rather than a constant
@@ -1064,7 +1064,7 @@ function DestinationSheet({
   });
 
   // The sticky header (title bar + tab bar) — see STICKY HEADER in the ScrollView.
-  const COMPACT_BAR_H = insets.top + 56;
+  const COMPACT_BAR_H = insets.top + 48;
   // Spotify-style header (see the fixed HERO PHOTO layer): the photo dims as content covers it, the header text fades as
   // it nears the compact bar, and the bar fades in once the name has gone under it.
   const heroTextTopSV = useSharedValue(HERO_H - insets.bottom - 160);
@@ -1072,7 +1072,7 @@ function DestinationSheet({
     opacity: interpolate(scrollYSV.value, [0, fullHeroH * 0.85], [0, 0.55], Extrapolation.CLAMP),
   }));
   const heroTextFadeStyle = useAnimatedStyle(() => {
-    const t = heroTextTopSV.value - (insets.top + 56);
+    const t = heroTextTopSV.value - COMPACT_BAR_H;
     // Only fades at full-screen: at half-screen and peek the header is the sheet's face, never scrolled.
     const full = interpolate(slideAnim.value, [FULL_POS, FULL_POS + 40], [1, 0], Extrapolation.CLAMP);
     // Holds until the text has reached the bar, then fades as it rises past it.
@@ -1103,6 +1103,21 @@ function DestinationSheet({
   // Full-screen panels mount a moment after the sheet does, or at once on heading to full — see
   // useDeferredMount.
   const [panelsReady, revealPanels] = useDeferredMount();
+  // Scrolls the content back to its top on the UI thread, over a fixed 220ms — finishing before the sheet settles at
+  // half-screen (SNAP_CONFIG, 280ms), so it never still looks like it's scrolling once the sheet has landed. (The
+  // ScrollView's own animated scrollTo has a fixed, longer duration of its own.)
+  const scrollAnimRef = useAnimatedRef<any>();
+  const scrollResetSV = useSharedValue(-1);   // -1: idle
+  useAnimatedReaction(() => scrollResetSV.value, y => { if (y >= 0) scrollTo(scrollAnimRef, 0, y, false); });
+  const resetScrollToTop = () => {
+    const y0 = scrollYSV.value;
+    if (y0 <= 0) return;
+    scrollResetSV.value = y0;
+    scrollResetSV.value = withTiming(0, { duration: 220, easing: Easing.out(Easing.cubic) }, () => { scrollResetSV.value = -1; });
+    // Safety net, should the UI-thread scroll not have reached the ScrollView.
+    setTimeout(() => scrollRef.current?.scrollTo({ y: 0, animated: false }), 320);
+  };
+
   transitionToRef.current = (next, reason) => {
     // Once the parent has told this sheet to leave, only a NEW selection may bring it back — otherwise a late
     // peek/collapse would cancel the slide-out and leave a sheet that's about to unmount hanging on screen.
@@ -1111,7 +1126,7 @@ function DestinationSheet({
     const prev = snapStateRef.current;
     // Leaving full-screen (the down arrow, or a swipe): bring the content back to its top as the sheet slides down,
     // so half-screen shows the sheet's header rather than whatever section was scrolled to.
-    if (prev === 'full' && next !== 'full') scrollRef.current?.scrollTo({ y: 0, animated: true });
+    if (prev === 'full' && next !== 'full') resetScrollToTop();
     const target = next === 'full' ? FULL_POS : next === 'peek' ? PEEK_Y : collapsedYRef.current;
     if (__DEV__) console.log('[sheet] Destination', destination.id, prev, '->', next, `reason=${reason}`, 'mapInteracting=', isMapInteracting?.() ?? false);
     snapStateRef.current = next;
@@ -1362,7 +1377,7 @@ function DestinationSheet({
   // instead of sitting near ITS top edge. A small fixed 14 is enough clearance once the
   // sheet itself provides that gap.
   const heroTopRowStyle = useAnimatedStyle(() => ({
-    top: interpolate(slideAnim.value, [FULL_POS, COLLAPSED_Y], [insets.top + 20, 20], Extrapolation.CLAMP),
+    top: interpolate(slideAnim.value, [FULL_POS, COLLAPSED_Y], [insets.top + 12, 20], Extrapolation.CLAMP),
   }));
   // Invisible right at full-screen, fading in over the first 40pt of dragging away from it —
   // gone well before the top action row would otherwise sit near it.
@@ -1435,7 +1450,7 @@ function DestinationSheet({
           <Reanimated.View style={[StyleSheet.absoluteFill, st.heroDim, heroDimStyle]} />
         </Reanimated.View>
         <ScrollView
-          ref={scrollRef}
+          ref={(r: any) => { (scrollRef as any).current = r; scrollAnimRef(r); }}
           style={{ flex: 1 }}
           // Only scrollable at full-screen — while collapsed/peeking there's nothing to
           // scroll TO (the hero itself is cropped shorter, not scrolled), and leaving this
@@ -1650,7 +1665,7 @@ function DestinationSheet({
         </KeyboardAvoidingView>
         {/* ── COMPACT TITLE BAR — fixed at the very top; fades in as the tab bar arrives under it and pins (the sticky
             header leaves exactly this much room above the tab bar), and out again as it scrolls back down. */}
-        <Reanimated.View pointerEvents="none" style={[st.compactBar, st.compactBarFixed, { height: COMPACT_BAR_H, paddingTop: insets.top + 20 }, compactBarStyle]}>
+        <Reanimated.View pointerEvents="none" style={[st.compactBar, st.compactBarFixed, { height: COMPACT_BAR_H, paddingTop: insets.top + 12 }, compactBarStyle]}>
           <Text style={st.compactBarTitle} numberOfLines={1}>{destination.name}</Text>
         </Reanimated.View>
 
@@ -1774,7 +1789,6 @@ const st = StyleSheet.create({
   heroDim: { backgroundColor:'#000' },
   compactBar: {
     backgroundColor:'white', alignItems:'center', paddingHorizontal: 110,
-    shadowColor:'#000', shadowOpacity:0.06, shadowRadius:4, shadowOffset:{ width:0, height:1 },
   },
   tabCornerFill: { position:'absolute', left:0, right:0, height: 24, backgroundColor:'white' },
   compactBarFixed: { position: 'absolute', top: 0, left: 0, right: 0, zIndex: 3 },
