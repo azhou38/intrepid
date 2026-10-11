@@ -958,10 +958,10 @@ function SpotSheet({
     const t = heroTextTopSV.value - COMPACT_BAR_H;
     return { opacity: interpolate(scrollYSV.value, [t - 70, t + 20], [1, 0], Extrapolation.CLAMP) };
   });
-  const compactBarStyle = useAnimatedStyle(() => {
-    const t = heroTextTopSV.value - COMPACT_BAR_H + 24;
-    return { opacity: interpolate(scrollYSV.value, [t - 12, t + 12], [0, 1], Extrapolation.CLAMP) };
-  });
+  // The bar and the pinned tab bar are one piece: the bar appears exactly where the tab bar pins under it.
+  const compactBarStyle = useAnimatedStyle(() => ({
+    opacity: scrollYSV.value >= tabBarYSV.value - COMPACT_BAR_H ? 1 : 0,
+  }));
   const tabBarOverlayStyle = useAnimatedStyle(() => ({
     transform: [{ translateY: scrollYSV.value >= tabBarYSV.value - COMPACT_BAR_H ? 0 : -400 }],
   }));

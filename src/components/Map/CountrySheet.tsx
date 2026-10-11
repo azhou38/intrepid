@@ -475,9 +475,9 @@ function CountrySheet({
     const fade = interpolate(scrollY.value, [t - 70, t + 20], [1, 0], Extrapolation.CLAMP);
     return { opacity: 1 - full * (1 - fade) };
   });
+  // The bar and the pinned tab bar are one piece: the bar appears exactly where the tab bar pins under it.
   const compactBarStyle = useAnimatedStyle(() => {
-    const t = headerNameYSV.value - COMPACT_BAR_H + 24;
-    const on = interpolate(scrollY.value, [t - 12, t + 12], [0, 1], Extrapolation.CLAMP);
+    const on = scrollY.value >= tabBarYSV.value - 20 - COMPACT_BAR_H ? 1 : 0;
     const full = interpolate(slideAnim.value, [FULL_POS, FULL_POS + 40], [1, 0], Extrapolation.CLAMP);
     return { opacity: on * full };
   });

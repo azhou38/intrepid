@@ -953,6 +953,9 @@ function DestinationSheet({
   // -24 marginTop (it overlaps the hero's bottom edge) would otherwise throw the threshold
   // off by that amount, causing a visible gap where neither copy is correctly positioned.
   const [tabBarAppearY, setTabBarAppearY] = useState(HERO_H - insets.bottom - 24);
+  // Mirror for the UI-thread styles (the compact bar appears together with the pinned tab bar).
+  const tabAppearSV = useSharedValue(HERO_H - insets.bottom - 24);
+  useEffect(() => { tabAppearSV.value = tabBarAppearY; }, [tabBarAppearY]);
   // The compact title bar (see compactBarStyle) holds the top of the sheet once the header has scrolled away, so the
   // pinned tab bar sits right below it, handing over as the inline one reaches the bar's bottom edge.
   const COMPACT_BAR_H = insets.top + 56;
@@ -1086,9 +1089,10 @@ function DestinationSheet({
     const fade = interpolate(scrollYSV.value, [t - 70, t + 20], [1, 0], Extrapolation.CLAMP);
     return { opacity: 1 - full * (1 - fade) };
   });
+  // The bar and the pinned tab bar are one piece: the bar appears at exactly the scroll position where the tab bar pins
+  // under it (tabBarAppearY - COMPACT_BAR_H; see tabBarOverlayY), not earlier.
   const compactBarStyle = useAnimatedStyle(() => {
-    const t = heroTextTopSV.value - (insets.top + 56) + 24;
-    const on = interpolate(scrollYSV.value, [t - 12, t + 12], [0, 1], Extrapolation.CLAMP);
+    const on = scrollYSV.value >= tabAppearSV.value - (insets.top + 56) ? 1 : 0;
     // Only ever at full-screen — at half-screen and peek there is no scrolled header to stand in for.
     const full = interpolate(slideAnim.value, [FULL_POS, FULL_POS + 40], [1, 0], Extrapolation.CLAMP);
     return { opacity: on * full };
