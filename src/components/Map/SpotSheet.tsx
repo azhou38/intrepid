@@ -629,7 +629,8 @@ function SpotSheet({
       // staying pinned at a fixed screen position while the hero scrolls away underneath it.
       // scrollYSV is already clamped to >= 0 by bounces={false} on this ScrollView. See
       // DestinationSheet's own identical reaction for the fuller writeup.
-      const FULL_TOP_ABS = FULL_POS + (insets.top + 14) - scrollY;
+      // Fixed at full-screen (Spotify-style): it sits in the compact title bar once the header has scrolled away.
+      const FULL_TOP_ABS = FULL_POS + (insets.top + 14);
       const FULL_TARGET = SCREEN_H - FULL_TOP_ABS - PILL_H;
       const COLLAPSED_PILL_GAP = 16;
       const COLLAPSED_TOP_ABS = COLLAPSED_Y - COLLAPSED_PILL_GAP - PILL_H;
@@ -945,98 +946,33 @@ function SpotSheet({
 
   const heroTopRowTop = insets.top + 14;
 
-  return (
-    <View style={st.backdrop} pointerEvents="box-none">
-      <Reanimated.View pointerEvents="none"
-        style={[StyleSheet.absoluteFill, { backgroundColor: 'rgba(0,0,0,0.45)' }, backdropStyle]} />
-      <View
-        pointerEvents={snapStateReact === 'full' ? 'box-none' : 'none'}
-        style={StyleSheet.absoluteFill}>
-        <Pressable style={StyleSheet.absoluteFill} onPress={() => snapToCollapsedRef.current()} />
-      </View>
+  // Spotify-style header (see the fixed HERO PHOTO layer): the photo dims as content covers it, the header text fades as
+  // it nears the compact title bar, the bar fades in once the name has gone under it, and the tab bar pins below it.
+  const COMPACT_BAR_H = heroTopRowTop + 36 + 6;
+  const heroTextTopSV = useSharedValue(HERO_H - insets.bottom - 200);
+  const tabBarYSV = useSharedValue(HERO_H - insets.bottom);
+  const heroDimStyle = useAnimatedStyle(() => ({
+    opacity: interpolate(scrollYSV.value, [0, (HERO_H - insets.bottom) * 0.85], [0, 0.55], Extrapolation.CLAMP),
+  }));
+  const heroTextFadeStyle = useAnimatedStyle(() => {
+    const t = heroTextTopSV.value - COMPACT_BAR_H;
+    return { opacity: interpolate(scrollYSV.value, [t - 70, t + 20], [1, 0], Extrapolation.CLAMP) };
+  });
+  const compactBarStyle = useAnimatedStyle(() => {
+    const t = heroTextTopSV.value - COMPACT_BAR_H + 24;
+    return { opacity: interpolate(scrollYSV.value, [t - 12, t + 12], [0, 1], Extrapolation.CLAMP) };
+  });
+  const tabBarOverlayStyle = useAnimatedStyle(() => ({
+    transform: [{ translateY: scrollYSV.value >= tabBarYSV.value - COMPACT_BAR_H ? 0 : -400 }],
+  }));
 
-      <Reanimated.View pointerEvents="none" style={[st.sheetShadow, sheetAnimStyle]} />
 
-      <GestureDetector gesture={pan}>
-      <Reanimated.View style={[st.sheet, sheetAnimStyle]}>
-        <Reanimated.View style={[StyleSheet.absoluteFill, { overflow: 'hidden' }, contentOpacityStyle]}>
-        {/* An outgoing copy (leaving) only ever rests at half-screen or peek, where this whole
-            full-screen layer is fully transparent (contentOpacityStyle) — so it skips it, keeping
-            the copy cheap to mount in the busy commit that swaps sheets (MapScreen "Sheet swaps"). */}
-        {!leaving && panelsReady && (
-        <GestureDetector gesture={tabSwipeGesture}>
-        <View style={{ flex: 1 }}>
-        <GHScrollView
-          ref={scrollRef}
-          style={{ flex: 1 }}
-          scrollEnabled bounces={false}
-          showsVerticalScrollIndicator={false}
-          onScroll={e => { scrollYSV.value = e.nativeEvent.contentOffset.y; }}
-          scrollEventThrottle={16}
-          // White to the bottom of the sheet, like the content above it — the trailing padding, and any
-          // space left under a short tab (e.g. My Visit with one small trip card), otherwise showed the
-          // sheet's light gray as a stray strip.
-          contentContainerStyle={{ paddingBottom: insets.bottom + 36, backgroundColor: 'white', flexGrow: 1 }}
-          keyboardShouldPersistTaps="handled"
-        >
-          {/* ── HERO (active spot, shown when expanded) ─────────────────── */}
-          <View style={[st.hero, { backgroundColor: '#111827', height: HERO_H - insets.bottom }]}>
-            <EntityPhoto cacheKey={activePhotoKey} cache={photoCache} load={loadActivePhoto} />
-            <View pointerEvents="none" style={st.heroScrim} />
-            <View pointerEvents="none" style={st.gradWrap}>
-              <Svg style={StyleSheet.absoluteFill}>
-                <Defs>
-                  <SvgLinearGradient id="spotHeroScrimGrad" x1="0" y1="0" x2="0" y2="1">
-                    {GRADIENT_STOPS.map(({ offset, opacity }) => (
-                      <Stop key={offset} offset={offset} stopColor="#000" stopOpacity={opacity} />
-                    ))}
-                  </SvgLinearGradient>
-                </Defs>
-                <Rect x="0" y="0" width="100%" height="100%" fill="url(#spotHeroScrimGrad)" />
-              </Svg>
-            </View>
-
-            {/* Top row — the back/collapse button that used to live here is gone; the
-                shared back-navigation pill (rendered by the map screen, not this sheet) now
-                glides to sit in that same top-left spot instead, identical to
-                DestinationSheet. Only the visited-status pill stays, on the right. */}
-            <View style={[st.heroTopRow, { top: heroTopRowTop, justifyContent: 'flex-end' }]}>
-              <View style={st.heroActionsRight}>
-                <Pressable
-                  style={[st.heroVisitPill, isVisited && st.heroIconBtnVisited]}
-                  onPress={handleMarkVisited} hitSlop={10}>
-                  {isVisited
-                    ? <Check size={15} color="white" strokeWidth={2.75} />
-                    : <Plus size={15} color="white" strokeWidth={2.75} />}
-                  <Text style={st.heroVisitPillTxt}>{isVisited ? 'Visited' : 'Add Visit'}</Text>
-                </Pressable>
-              </View>
-            </View>
-
-            <View style={st.heroBottomStack}>
-              <View style={st.heroContent}>
-                <Text style={[st.heroName, heroNameSize(activeSpot.name)]}>{activeSpot.name}</Text>
-                <View style={st.heroMeta}>
-                  {/* A standalone spot has no destination to name — just its country. */}
-                  {!!destination && (
-                    <>
-                      <Text style={st.heroMetaTxt}>{destination.name}</Text>
-                      <View style={st.heroMetaDivider} />
-                    </>
-                  )}
-                  {!!spotCountryCode(activeSpot) && <CircleFlag countryCode={spotCountryCode(activeSpot)!} size={13} />}
-                  <Text style={[st.heroMetaTxt, { marginLeft: 4 }]}>{spotCountry(activeSpot)}</Text>
-                </View>
-                <Text style={st.heroBio} numberOfLines={3}>{activeSpot.bio}</Text>
-              </View>
-            </View>
-          </View>
-
-          {/* ── TAB BAR — visited spots get My Visit + About; an unvisited spot still gets
-              this same header, just with "About" alone as its one (non-switching) tab, so the
-              sheet reads consistently whether or not there's a My Visit tab to show. ────── */}
-          {isVisited ? (
-            <View style={st.tabBar}>
+  // The tab bar: visited spots get My Visit + About; an unvisited spot still gets this same header, just with "About"
+  // alone as its one (non-switching) tab, so the sheet reads consistently whether or not there's a My Visit tab.
+  // Rendered inline in the scroll content, and again `pinned` under the compact bar once that one scrolls up to it.
+  const renderTabBar = (pinned: boolean) => (
+isVisited ? (
+            <View style={[st.tabBar, pinned && st.tabBarPinned]}>
               <Pressable
                 style={st.tabBtn}
                 onPress={() => {
@@ -1064,7 +1000,7 @@ function SpotSheet({
               </Reanimated.View>
             </View>
           ) : (
-            <View style={st.tabBar}>
+            <View style={[st.tabBar, pinned && st.tabBarPinned]}>
               <Pressable
                 style={st.tabBtn}
                 onPress={() => { if (snapStateRef.current !== 'full') snapToFullRef.current(); }}
@@ -1078,7 +1014,111 @@ function SpotSheet({
                 <View style={st.tabIndicator} />
               </View>
             </View>
-          )}
+          )
+  );
+
+  return (
+    <View style={st.backdrop} pointerEvents="box-none">
+      <Reanimated.View pointerEvents="none"
+        style={[StyleSheet.absoluteFill, { backgroundColor: 'rgba(0,0,0,0.45)' }, backdropStyle]} />
+      <View
+        pointerEvents={snapStateReact === 'full' ? 'box-none' : 'none'}
+        style={StyleSheet.absoluteFill}>
+        <Pressable style={StyleSheet.absoluteFill} onPress={() => snapToCollapsedRef.current()} />
+      </View>
+
+      <Reanimated.View pointerEvents="none" style={[st.sheetShadow, sheetAnimStyle]} />
+
+      <GestureDetector gesture={pan}>
+      <Reanimated.View style={[st.sheet, sheetAnimStyle]}>
+        <Reanimated.View style={[StyleSheet.absoluteFill, { overflow: 'hidden' }, contentOpacityStyle]}>
+        {/* An outgoing copy (leaving) only ever rests at half-screen or peek, where this whole
+            full-screen layer is fully transparent (contentOpacityStyle) — so it skips it, keeping
+            the copy cheap to mount in the busy commit that swaps sheets (MapScreen "Sheet swaps"). */}
+        {!leaving && panelsReady && (
+        <GestureDetector gesture={tabSwipeGesture}>
+        <View style={{ flex: 1 }}>
+        {/* ── HERO PHOTO — a fixed layer BEHIND the scroll content (Spotify-style): scrolling slides the header text
+            and then the content over it while the photo stays put, dimming as it is covered. */}
+        <View pointerEvents="none" style={[st.heroBackdrop, { height: HERO_H - insets.bottom }]}>
+              <EntityPhoto cacheKey={activePhotoKey} cache={photoCache} load={loadActivePhoto} />
+              <View pointerEvents="none" style={st.heroScrim} />
+              <View pointerEvents="none" style={st.gradWrap}>
+                <Svg style={StyleSheet.absoluteFill}>
+                  <Defs>
+                    <SvgLinearGradient id="spotHeroScrimGrad" x1="0" y1="0" x2="0" y2="1">
+                      {GRADIENT_STOPS.map(({ offset, opacity }) => (
+                        <Stop key={offset} offset={offset} stopColor="#000" stopOpacity={opacity} />
+                      ))}
+                    </SvgLinearGradient>
+                  </Defs>
+                  <Rect x="0" y="0" width="100%" height="100%" fill="url(#spotHeroScrimGrad)" />
+                </Svg>
+              </View>
+          <Reanimated.View style={[StyleSheet.absoluteFill, { backgroundColor: '#000' }, heroDimStyle]} />
+        </View>
+        <GHScrollView
+          ref={scrollRef}
+          style={{ flex: 1 }}
+          scrollEnabled bounces={false}
+          showsVerticalScrollIndicator={false}
+          onScroll={e => { scrollYSV.value = e.nativeEvent.contentOffset.y; }}
+          scrollEventThrottle={16}
+          // White to the bottom of the sheet, like the content above it — the trailing padding, and any
+          // space left under a short tab (e.g. My Visit with one small trip card), otherwise showed the
+          // sheet's light gray as a stray strip.
+          // Transparent where the hero sits (the fixed photo shows through); white from the tab bar down.
+          contentContainerStyle={{ flexGrow: 1 }}
+          keyboardShouldPersistTaps="handled"
+        >
+          {/* ── HERO (active spot, shown when expanded) ─────────────────── */}
+          <View style={[st.hero, { height: HERO_H - insets.bottom }]}>
+            {/* Top row — the back/collapse button that used to live here is gone; the
+                shared back-navigation pill (rendered by the map screen, not this sheet) now
+                glides to sit in that same top-left spot instead, identical to
+                DestinationSheet. Only the visited-status pill stays, on the right. */}
+            <View style={[st.heroTopRow, { top: heroTopRowTop, justifyContent: 'flex-end' }]}>
+              <View style={st.heroActionsRight}>
+                <Pressable
+                  style={[st.heroVisitPill, isVisited && st.heroIconBtnVisited]}
+                  onPress={handleMarkVisited} hitSlop={10}>
+                  {isVisited
+                    ? <Check size={15} color="white" strokeWidth={2.75} />
+                    : <Plus size={15} color="white" strokeWidth={2.75} />}
+                  <Text style={st.heroVisitPillTxt}>{isVisited ? 'Visited' : 'Add Visit'}</Text>
+                </Pressable>
+              </View>
+            </View>
+
+            <Reanimated.View
+              style={[st.heroBottomStack, heroTextFadeStyle]}
+              onLayout={e => { heroTextTopSV.value = e.nativeEvent.layout.y; }}
+            >
+              <View style={st.heroContent}>
+                <Text style={[st.heroName, heroNameSize(activeSpot.name)]}>{activeSpot.name}</Text>
+                <View style={st.heroMeta}>
+                  {/* A standalone spot has no destination to name — just its country. */}
+                  {!!destination && (
+                    <>
+                      <Text style={st.heroMetaTxt}>{destination.name}</Text>
+                      <View style={st.heroMetaDivider} />
+                    </>
+                  )}
+                  {!!spotCountryCode(activeSpot) && <CircleFlag countryCode={spotCountryCode(activeSpot)!} size={13} />}
+                  <Text style={[st.heroMetaTxt, { marginLeft: 4 }]}>{spotCountry(activeSpot)}</Text>
+                </View>
+                <Text style={st.heroBio} numberOfLines={3}>{activeSpot.bio}</Text>
+              </View>
+            </Reanimated.View>
+          </View>
+
+          <View
+            style={{ flexGrow: 1, backgroundColor: 'white', paddingBottom: insets.bottom + 36 }}
+            onLayout={e => { tabBarYSV.value = e.nativeEvent.layout.y; }}
+          >
+          {/* ── TAB BAR — see renderTabBar. Scrolls normally here; a pinned copy sits under the compact bar once this one
+              reaches it (TAB BAR OVERLAY below). */}
+          {renderTabBar(false)}
 
           {/* ── CONTENT ────────────────────────────────────────────────── */}
           <View style={st.content}>
@@ -1113,7 +1153,19 @@ function SpotSheet({
               <SpotAbout spot={activeSpot} nearbySpots={spots.filter(s => s.id !== activeSpot.id)} onSelectNearby={handleSelectNearby} onExplore={() => snapToCollapsedRef.current()} nearbyHlScrollRef={nearbyHlScrollRef} />
             )}
           </View>
+          </View>
         </GHScrollView>
+
+        {/* ── TAB BAR OVERLAY — pinned copy below the compact bar once the inline tab bar scrolls up to it. */}
+        <Reanimated.View pointerEvents="box-none" style={[st.tabBarOverlay, { top: COMPACT_BAR_H }, tabBarOverlayStyle]}>
+          {renderTabBar(true)}
+        </Reanimated.View>
+
+        {/* ── COMPACT TITLE BAR — the spot's name, small, once the header name has scrolled up under it; stays until
+            the header comes back into view. The back pill (MapScreen's) sits fixed at its left. */}
+        <Reanimated.View pointerEvents="none" style={[st.compactBar, { height: COMPACT_BAR_H, paddingTop: heroTopRowTop }, compactBarStyle]}>
+          <Text style={st.compactBarTitle} numberOfLines={1}>{activeSpot.name}</Text>
+        </Reanimated.View>
         </View>
         </GestureDetector>
         )}{/* end tabSwipeGesture wrapper */}
@@ -1555,6 +1607,18 @@ const st = StyleSheet.create({
              textShadowColor: 'rgba(0,0,0,0.35)', textShadowRadius: 3, textShadowOffset: { width: 0, height: 1 } },
 
   // Tab bar
+  heroBackdrop: { position: 'absolute', top: 0, left: 0, right: 0, overflow: 'hidden', backgroundColor: '#111827' },
+  compactBar: {
+    position: 'absolute', top: 0, left: 0, right: 0, zIndex: 3,
+    backgroundColor: 'white', alignItems: 'center', paddingHorizontal: 110,
+    shadowColor: '#000', shadowOpacity: 0.06, shadowRadius: 4, shadowOffset: { width: 0, height: 1 },
+  },
+  compactBarTitle: { height: 36, lineHeight: 36, fontSize: 16, fontWeight: '700', color: '#111827' },
+  tabBarOverlay: {
+    position: 'absolute', left: 0, right: 0, zIndex: 2,
+    shadowColor: '#000', shadowOpacity: 0.08, shadowRadius: 6, shadowOffset: { width: 0, height: 2 }, elevation: 4,
+  },
+  tabBarPinned: { marginTop: 0, borderTopLeftRadius: 0, borderTopRightRadius: 0 },
   tabBar: { flexDirection: 'row', backgroundColor: 'white',
             borderTopLeftRadius: 24, borderTopRightRadius: 24, marginTop: -24,
             borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: '#E5E7EB', zIndex: 1, overflow: 'hidden' },

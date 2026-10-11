@@ -953,11 +953,14 @@ function DestinationSheet({
   // -24 marginTop (it overlaps the hero's bottom edge) would otherwise throw the threshold
   // off by that amount, causing a visible gap where neither copy is correctly positioned.
   const [tabBarAppearY, setTabBarAppearY] = useState(HERO_H - insets.bottom - 24);
+  // The compact title bar (see compactBarStyle) holds the top of the sheet once the header has scrolled away, so the
+  // pinned tab bar sits right below it, handing over as the inline one reaches the bar's bottom edge.
+  const COMPACT_BAR_H = insets.top + 56;
   const tabBarOverlayY = useMemo(() => scrollYAnim.interpolate({
-    inputRange: [tabBarAppearY - 1, tabBarAppearY],
+    inputRange: [tabBarAppearY - COMPACT_BAR_H - 1, tabBarAppearY - COMPACT_BAR_H],
     outputRange: [-120, 0],
     extrapolate: 'clamp',
-  }), [tabBarAppearY]);
+  }), [tabBarAppearY, COMPACT_BAR_H]);
 
   // Fixed collapsed Y (COLLAPSED_Y is itself a constant — see its own comment). A shared
   // value (not just a ref) so the worklets below (drag gesture, heroAnimStyle) can read it
@@ -1010,7 +1013,9 @@ function DestinationSheet({
       // over the sticky tab-bar overlay / scrolled body text — impossible once it genuinely
       // leaves the screen with the rest of the header. `scrollY` is already clamped to >= 0
       // by bounces={false} on this ScrollView, so no extra clamping is needed here.
-      const FULL_TOP_ABS = FULL_POS + (insets.top + 20) - scrollY;
+      // Fixed at full-screen (Spotify-style): it no longer scrolls away with the header — once the header has gone, it
+      // sits in the compact title bar (see compactBarStyle).
+      const FULL_TOP_ABS = FULL_POS + (insets.top + 20);
       const FULL_TARGET = SCREEN_H - FULL_TOP_ABS - PILL_H;
       // Collapsed: float a fixed gap above the compact card's own *measured* top
       // (collapsedYAnim.value, kept live by the card's onLayout) rather than a constant
@@ -1065,6 +1070,24 @@ function DestinationSheet({
     return {
       height: interpolate(slideAnim.value, [FULL_POS, COLLAPSED_Y], [fullHeroH, collapsedHeroH], Extrapolation.CLAMP),
     };
+  });
+
+  // Spotify-style header (see the fixed HERO PHOTO layer): the photo dims as content covers it, the header text fades as
+  // it nears the compact bar, and the bar fades in once the name has gone under it.
+  const heroTextTopSV = useSharedValue(HERO_H - insets.bottom - 160);
+  const heroDimStyle = useAnimatedStyle(() => ({
+    opacity: interpolate(scrollYSV.value, [0, fullHeroH * 0.85], [0, 0.55], Extrapolation.CLAMP),
+  }));
+  const heroTextFadeStyle = useAnimatedStyle(() => {
+    const t = heroTextTopSV.value - (insets.top + 56);
+    return { opacity: interpolate(scrollYSV.value, [t - 70, t + 20], [1, 0], Extrapolation.CLAMP) };
+  });
+  const compactBarStyle = useAnimatedStyle(() => {
+    const t = heroTextTopSV.value - (insets.top + 56) + 24;
+    const on = interpolate(scrollYSV.value, [t - 12, t + 12], [0, 1], Extrapolation.CLAMP);
+    // Only ever at full-screen — at half-screen and peek there is no scrolled header to stand in for.
+    const full = interpolate(slideAnim.value, [FULL_POS, FULL_POS + 40], [1, 0], Extrapolation.CLAMP);
+    return { opacity: on * full };
   });
 
   // ── Sheet position: one authority ─────────────────────────────────────────────────────────────────────
@@ -1381,6 +1404,34 @@ function DestinationSheet({
           keyboardVerticalOffset={0}
         >
         <View style={{ flex: 1 }}>
+        {/* ── HERO PHOTO — a fixed layer BEHIND the scroll content (Spotify-style): scrolling slides the header text
+            and then the content over it while the photo itself stays put, dimming as it is covered. Same animated
+            height as the hero placeholder in the ScrollView, so every snap state crops it exactly as before. */}
+        <Reanimated.View pointerEvents="none" style={[st.heroBackdrop, heroAnimStyle]}>
+              <EntityPhoto
+                cacheKey={destination.id}
+                cache={photoCache}
+                load={() => getOrFetchWikiThumbnail(destination.id, photoCache, destination.name, HEADER_PX)}
+              />
+
+              {/* Ambient scrim so text is always legible */}
+              <View pointerEvents="none" style={st.heroScrim} />
+
+              {/* Gradient: darkens toward the bottom */}
+              <View pointerEvents="none" style={st.gradWrap}>
+                <Svg style={StyleSheet.absoluteFill}>
+                  <Defs>
+                    <SvgLinearGradient id="heroScrimGrad" x1="0" y1="0" x2="0" y2="1">
+                      {GRADIENT_STOPS.map(({ offset, opacity }) => (
+                        <Stop key={offset} offset={offset} stopColor="#000" stopOpacity={opacity} />
+                      ))}
+                    </SvgLinearGradient>
+                  </Defs>
+                  <Rect x="0" y="0" width="100%" height="100%" fill="url(#heroScrimGrad)" />
+                </Svg>
+              </View>
+          <Reanimated.View style={[StyleSheet.absoluteFill, st.heroDim, heroDimStyle]} />
+        </Reanimated.View>
         <ScrollView
           ref={scrollRef}
           style={{ flex: 1 }}
@@ -1409,7 +1460,8 @@ function DestinationSheet({
           // (most visibly the Spots tab with few spots), where it read as a stray gray strip.
           // flexGrow too: content shorter than the sheet (a short My Visit tab) otherwise ended above
           // the sheet's bottom and left the gray sheet showing beneath it.
-          contentContainerStyle={{ paddingBottom: insets.bottom + 55, backgroundColor: 'white', flexGrow: 1 }}
+          // Transparent where the hero sits (the fixed photo layer shows through); the white starts below it.
+          contentContainerStyle={{ flexGrow: 1 }}
           keyboardShouldPersistTaps="handled"
         >
 
@@ -1418,30 +1470,7 @@ function DestinationSheet({
               comment. Tapping the background (not the buttons, which claim the touch
               first) expands to full-screen while collapsed; a no-op once already full. */}
           <Pressable onPress={() => { if (snapStateRef.current !== 'full') snapToFullRef.current(); }}>
-          <Reanimated.View style={[st.hero, { backgroundColor: '#111827' }, heroAnimStyle]}>
-            <EntityPhoto
-              cacheKey={destination.id}
-              cache={photoCache}
-              load={() => getOrFetchWikiThumbnail(destination.id, photoCache, destination.name, HEADER_PX)}
-            />
-
-            {/* Ambient scrim so text is always legible */}
-            <View pointerEvents="none" style={st.heroScrim} />
-
-            {/* Gradient: darkens toward the bottom */}
-            <View pointerEvents="none" style={st.gradWrap}>
-              <Svg style={StyleSheet.absoluteFill}>
-                <Defs>
-                  <SvgLinearGradient id="heroScrimGrad" x1="0" y1="0" x2="0" y2="1">
-                    {GRADIENT_STOPS.map(({ offset, opacity }) => (
-                      <Stop key={offset} offset={offset} stopColor="#000" stopOpacity={opacity} />
-                    ))}
-                  </SvgLinearGradient>
-                </Defs>
-                <Rect x="0" y="0" width="100%" height="100%" fill="url(#heroScrimGrad)" />
-              </Svg>
-            </View>
-
+          <Reanimated.View style={[st.hero, heroAnimStyle]}>
             {/* Drag-handle pill — visible while collapsed/peeking, fades out approaching
                 full-screen (where a handle would just clutter the header buttons).
                 Explicitly absolute (NOT st.peekPillRow's normal-flow layout, which is fine
@@ -1474,7 +1503,10 @@ function DestinationSheet({
             {/* Bottom stack: pushed to hero bottom via justifyContent on parent — tracks the
                 hero's own animated height, so it sits flush above the tab bar when
                 collapsed and lower down once expanded, same as it always has. */}
-            <View style={[st.heroBottomStack, st.heroBottomStackPad]}>
+            <Reanimated.View
+              style={[st.heroBottomStack, st.heroBottomStackPad, heroTextFadeStyle]}
+              onLayout={e => { if (snapStateRef.current === 'full') heroTextTopSV.value = e.nativeEvent.layout.y; }}
+            >
               <View style={st.heroContent}>
                 {/* Full name, wrapping — never "…" (the peek strip below is the only one-line version). */}
                 <Text style={[st.heroName, heroNameSize(destination.name)]}>{destination.name}</Text>
@@ -1507,7 +1539,7 @@ function DestinationSheet({
                 )}
               </View>
 
-            </View>
+            </Reanimated.View>
           </Reanimated.View>
           </Pressable>
 
@@ -1516,6 +1548,7 @@ function DestinationSheet({
             switch. */}
         <GestureDetector gesture={tabSwipeGesture}>
         <View
+          style={{ flexGrow: 1, backgroundColor: 'white', paddingBottom: insets.bottom + 55 }}
           onLayout={e => {
             // Measured here (on this wrapper) rather than on the tab bar View directly — this
             // wrapper is now the tab bar's immediate parent (needed so a single GestureDetector
@@ -1624,10 +1657,16 @@ function DestinationSheet({
             scrolling back up reveals the hero again underneath it. */}
         <Animated.View
           pointerEvents="box-none"
-          style={[st.tabBar, st.tabBarOverlay, { top: 0, paddingTop: insets.top, transform: [{ translateY: tabBarOverlayY }] }]}
+          style={[st.tabBar, st.tabBarOverlay, { top: COMPACT_BAR_H, transform: [{ translateY: tabBarOverlayY }] }]}
         >
           {renderTabBarRow()}
         </Animated.View>
+
+        {/* ── COMPACT TITLE BAR — the destination's name, small, once the header text has scrolled up under it; stays
+            until the header comes back into view. The back pill (MapScreen's) sits fixed at its left. */}
+        <Reanimated.View pointerEvents="none" style={[st.compactBar, { height: COMPACT_BAR_H, paddingTop: insets.top + 20 }, compactBarStyle]}>
+          <Text style={st.compactBarTitle} numberOfLines={1}>{destination.name}</Text>
+        </Reanimated.View>
         </View>{/* end full-content wrapper */}
 
 
@@ -1744,6 +1783,14 @@ const st = StyleSheet.create({
 
   // Hero — flex-end pushes heroBottomStack to the bottom; photo/gradient/topRow are absolute
   hero:    { width:'100%', height: HERO_H, overflow:'hidden', justifyContent:'flex-end' },
+  heroBackdrop: { position:'absolute', top:0, left:0, right:0, height: HERO_H, overflow:'hidden', backgroundColor:'#111827' },
+  heroDim: { backgroundColor:'#000' },
+  compactBar: {
+    position:'absolute', top:0, left:0, right:0, zIndex: 3,
+    backgroundColor:'white', alignItems:'center', paddingHorizontal: 110,
+    shadowColor:'#000', shadowOpacity:0.06, shadowRadius:4, shadowOffset:{ width:0, height:1 },
+  },
+  compactBarTitle: { height: 36, lineHeight: 36, fontSize: 16, fontWeight: '700', color: '#111827' },
   heroScrim: { position:'absolute', top:0, left:0, right:0, bottom:0, backgroundColor:'rgba(0,0,0,0.18)' },
   gradWrap:{ position:'absolute', left:0, right:0, bottom:0, height: GRAD_H_TOTAL },
 
