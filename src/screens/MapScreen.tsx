@@ -931,9 +931,11 @@ function isPastDestDefaultZoom(destId: string, camZoom: number): boolean {
 // The key a spot's pin handoff is tracked under: its destination's id, or its own id when standalone.
 const spotParentKey = (s: Spot) => s.destinationId ?? s.id;
 
-// A standalone spot's carousel ("near" context): the spot itself, then the closest other spots within NEAR_RADIUS_KM
-// of it (any destination's, or other standalone ones), nearest first — so its sheet is something to swipe through
-// rather than a single dead-end card. Labelled with the nearest destination ("NEAR / Queenstown").
+// A standalone spot's carousel ("near" context): the spot itself, then its neighbours, nearest first — so its sheet is
+// something to swipe through rather than a single dead-end card. Labelled with the nearest destination ("NEAR /
+// Queenstown"). Neighbours are that destination's own spots plus other standalone spots within NEAR_RADIUS_KM — not
+// every spot within reach as the crow flies, which across mountains or water can be hours away by road (Glenorchy is
+// 31 km from Fiordland's Mirror Lakes).
 const NEAR_RADIUS_KM = 40;
 const NEAR_MAX_SPOTS = 10;
 const kmBetween = (a: { latitude: number; longitude: number }, b: { latitude: number; longitude: number }) => {
@@ -943,18 +945,18 @@ const kmBetween = (a: { latitude: number; longitude: number }, b: { latitude: nu
 };
 type NearContext = { anchor: Spot; spots: Spot[]; near?: Destination };
 function nearContextFor(anchor: Spot): NearContext {
-  const others = SPOTS
-    .filter(s => s.id !== anchor.id)
-    .map(s => ({ s, km: kmBetween(anchor.coordinates, s.coordinates) }))
-    .filter(o => o.km <= NEAR_RADIUS_KM)
-    .sort((a, b) => a.km - b.km)
-    .slice(0, NEAR_MAX_SPOTS)
-    .map(o => o.s);
   let near: Destination | undefined, best = Infinity;
   for (const d of DESTINATIONS) {
     const km = kmBetween(anchor.coordinates, d.coordinates);
     if (km < best) { best = km; near = d; }
   }
+  const others = SPOTS
+    .filter(s => s.id !== anchor.id)
+    .map(s => ({ s, km: kmBetween(anchor.coordinates, s.coordinates) }))
+    .filter(o => (near && o.s.destinationId === near.id) || (!o.s.destinationId && o.km <= NEAR_RADIUS_KM))
+    .sort((a, b) => a.km - b.km)
+    .slice(0, NEAR_MAX_SPOTS)
+    .map(o => o.s);
   return { anchor, spots: [anchor, ...others], near };
 }
 
