@@ -25,7 +25,7 @@ import * as Haptics from 'expo-haptics';
 import { useStore, useVisitIndex } from '../../store';
 import type { Destination, Visit } from '../../types';
 import type { Spot } from '../../data/spots';
-import { DAY_NAMES, hoursForDay, formatSpotCost, formatVisitTime, getSpotOpenStatus, specialClosureOn, spotCountry, spotCountryCode, zonedNowForSpot } from '../../data/spots';
+import { DAY_NAMES, hoursForDay, formatSpotCost, formatVisitTime, getSpotOpenStatus, specialClosureOn, spotCountry, spotCountryCode, spotPhotoTitle, zonedNowForSpot } from '../../data/spots';
 import { photoCache, thumbCache, getOrFetchWikiThumbnail, HEADER_PX } from '../../utils/photoCache';
 import CircleFlag from '../CircleFlag';
 import FadeInImage from './FadeInImage';
@@ -128,7 +128,7 @@ function CarouselCard({ spot, isActive, onPress, onAddVisit, gradId }: {
       return;
     }
     thumbWasCachedRef.current = false;
-    getOrFetchWikiThumbnail(cacheKey, thumbCache, spot.name, 960).then(u => { if (u) setThumb(u); });
+    getOrFetchWikiThumbnail(cacheKey, thumbCache, spotPhotoTitle(spot), 960).then(u => { if (u) setThumb(u); });
   }, [spot.id]);
 
   const isVisited  = useVisitIndex().isSpotVisited(spot.id);
@@ -530,7 +530,7 @@ function SpotSheet({
   // sheet. getOrFetchWikiThumbnail (rather than a bare fetchWikiThumbnail) shares whatever request a pin-tap
   // prefetch already kicked off.
   const activePhotoKey = `spot_${activeSpot.id}`;
-  const loadActivePhoto = () => getOrFetchWikiThumbnail(activePhotoKey, photoCache, activeSpot.name, HEADER_PX);
+  const loadActivePhoto = () => getOrFetchWikiThumbnail(activePhotoKey, photoCache, spotPhotoTitle(activeSpot), HEADER_PX);
 
   // Reset tab whenever the focused spot changes. (This used to sit at the end of the photo effect, after an early
   // return for a cached photo — so the tab only reset when the photo happened not to be cached.)

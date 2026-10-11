@@ -105,7 +105,7 @@ import type { Destination, CountryCluster } from '../types';
 import type GeoJSON from 'geojson';
 import { getCountryRegion, getCountryBounds, getCountryCenter, getCountryPopularity } from '../utils/countryBounds';
 import { DESTINATIONS } from '../data/destinations';
-import { SPOTS, STANDALONE_SPOT_SPAN_KM, spotCountry, spotCountryCode, spotDestination, type Spot } from '../data/spots';
+import { SPOTS, STANDALONE_SPOT_SPAN_KM, spotPhotoTitle, spotCountry, spotCountryCode, spotDestination, type Spot } from '../data/spots';
 import DestinationSheet from '../components/Map/DestinationSheet';
 import CircleFlag from '../components/CircleFlag';
 import PinPhoto from '../components/Map/PinPhoto';
@@ -275,7 +275,7 @@ function SpotMarker({ spot, isVisited, isSelected, exiting, isSatellite, labelSi
     if (thumbCache.has(cacheKey)) { photoWasCachedRef.current = true; setPhotoUrl(thumbCache.get(cacheKey)!); return; }
     photoWasCachedRef.current = false;
     setPhotoUrl(null);
-    fetchWikiThumbnail(spot.name, 120).then(url => {
+    fetchWikiThumbnail(spotPhotoTitle(spot), 120).then(url => {
       if (url) { thumbCache.set(cacheKey, url); setPhotoUrl(url); }
     });
   }, [spot.id]);
@@ -3038,7 +3038,7 @@ const destItems = useMemo((): DestItem[] =>
     setSelectedSpot(spot);
     // Kick off SpotSheet's own hero-photo fetch right now, in parallel with the sheet's
     // slide-up/camera animation, instead of waiting for it to mount a render cycle later.
-    prefetchWikiThumbnail(`spot_${spot.id}`, photoCache, spot.name, HEADER_PX);
+    prefetchWikiThumbnail(`spot_${spot.id}`, photoCache, spotPhotoTitle(spot), HEADER_PX);
     setSpotFocusId(spot.id);
     setMapState('context');
     setZoomedIntoDestination(true);

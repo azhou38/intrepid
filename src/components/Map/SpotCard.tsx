@@ -4,7 +4,7 @@ import { Check, Clock } from 'lucide-react-native';
 import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'react-native-svg';
 import FadeInImage from './FadeInImage';
 import { GRADIENT_STOPS, styles } from './DestinationCard';
-import { formatSpotCost, formatVisitTime, type Spot } from '../../data/spots';
+import { formatSpotCost, formatVisitTime, spotPhotoTitle, type Spot } from '../../data/spots';
 import { useVisitIndex } from '../../store';
 import { thumbCache, getOrFetchWikiThumbnail } from '../../utils/photoCache';
 
@@ -35,7 +35,7 @@ function SpotCard({ spot, onPress, width }: {
     }
     photoWasCachedRef.current = false;
     setPhotoUrl(null);
-    getOrFetchWikiThumbnail(cacheKey, thumbCache, spot.name, 960).then(url => {
+    getOrFetchWikiThumbnail(cacheKey, thumbCache, spotPhotoTitle(spot), 960).then(url => {
       if (url) setPhotoUrl(url);
     });
   }, [spot.id]);

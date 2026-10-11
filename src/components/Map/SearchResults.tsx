@@ -3,7 +3,7 @@ import { View, Text, Image, Pressable, StyleSheet } from 'react-native';
 import { X } from 'lucide-react-native';
 import CircleFlag from '../CircleFlag';
 import { DESTINATIONS } from '../../data/destinations';
-import { SPOTS, spotCountry, spotDestination, type Spot } from '../../data/spots';
+import { SPOTS, spotCountry, spotDestination, spotPhotoTitle, type Spot } from '../../data/spots';
 import type { Destination } from '../../types';
 import type { VisitIndex } from '../../utils/visitStatus';
 import type { RecentSearch } from '../../store';
@@ -218,7 +218,7 @@ function SearchResultRow({ item, last, onSelect, onRemove }: {
   } else {
     icon = item.spot.icon; countryCode = null; label = item.spot.name;
     sublabel = item.destination?.name ?? spotCountry(item.spot) ?? ''; badge = 'Spot';
-    thumbName = item.spot.name; thumbKey = `spot_${item.spot.id}`;
+    thumbName = spotPhotoTitle(item.spot); thumbKey = `spot_${item.spot.id}`;
   }
   return (
     <Pressable

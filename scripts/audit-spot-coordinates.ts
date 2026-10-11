@@ -12,7 +12,7 @@
  */
 import { readFileSync, writeFileSync } from 'fs';
 import { DESTINATIONS } from '../src/data/destinations';
-import { SPOTS, spotCountryCode } from '../src/data/spots';
+import { SPOTS, spotCountryCode, spotPhotoTitle } from '../src/data/spots';
 
 const arg = (f: string) => { const i = process.argv.indexOf(f); return i > 0 ? process.argv[i + 1] : undefined; };
 const country = arg('--country'), destFilter = arg('--dest'), jsonOut = arg('--json');
@@ -69,7 +69,7 @@ async function inWater(lat: number, lon: number): Promise<string | null> {
 
 async function main() {
   const spots = SPOTS.filter(s => (!country || spotCountryCode(s) === country) && (!destFilter || s.destinationId === destFilter));
-  const wiki = await wikiCoords([...new Set(spots.map(s => s.name))]);
+  const wiki = await wikiCoords([...new Set(spots.map(spotPhotoTitle))]);
   const rows: any[] = [];
   let flagged = 0;
   for (const s of spots) {
@@ -80,7 +80,7 @@ async function main() {
     const hits = await getJson(`https://nominatim.openstreetmap.org/search?format=jsonv2&limit=3&q=${encodeURIComponent(s.name)}${vb}`) ?? [];
     await sleep(1100);
     const water = await inWater(cur[0], cur[1]);
-    const w = wiki.get(s.name);
+    const w = wiki.get(spotPhotoTitle(s));
     const o = hits[0];
     const osm: [number, number] | undefined = o ? [Number(o.lat), Number(o.lon)] : undefined;
     const row = {

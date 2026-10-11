@@ -20,7 +20,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve as resolvePath } from 'node:path';
 import { DESTINATIONS } from '../src/data/destinations';
-import { SPOTS } from '../src/data/spots';
+import { SPOTS, spotPhotoTitle } from '../src/data/spots';
 import { WIKI_IMAGE_OVERRIDES } from '../src/data/imageOverrides';
 import { HEADER_MIN_WIDTH, HEADER_ASPECT_MIN, HEADER_ASPECT_MAX } from './destination-header-policy';
 import type { Destination } from '../src/types';
@@ -186,9 +186,9 @@ async function build(country: string | undefined, withSpots: boolean, auto: bool
       }
     }
     if (withSpots) {
-      for (const s of SPOTS.filter(s => s.destinationId === d.id && !overrides[s.name])) {
+      for (const s of SPOTS.filter(s => s.destinationId === d.id && !overrides[spotPhotoTitle(s)])) {
         slots.push({
-          key: `spot:${s.name}`, kind: 'spot', ref: s.name, label: s.name, hint: `${s.bio} (optional — "Automatic" keeps the Wikipedia lead photo)`,
+          key: `spot:${spotPhotoTitle(s)}`, kind: 'spot', ref: spotPhotoTitle(s), label: s.name, hint: `${s.bio} (optional — "Automatic" keeps the Wikipedia lead photo)`,
           candidates: await candidates('spot', [`${s.name} ${d.name}`, s.name]),
         });
       }

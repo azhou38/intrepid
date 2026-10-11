@@ -31,7 +31,7 @@ import { useStore, useVisitIndex } from '../../store';
 import { destinationTripsOf, removeDestinationMessage, visitedSpotsIn } from '../../utils/visitStatus';
 import SpotCard from './SpotCard';
 import type { Destination, PhotoEntry, Visit, GoodToKnowTip } from '../../types';
-import { SPOTS, type Spot } from '../../data/spots';
+import { SPOTS, spotPhotoTitle, type Spot } from '../../data/spots';
 import { photoCache, thumbCache, getOrFetchWikiThumbnail, fetchCommonsPhoto, HEADER_PX } from '../../utils/photoCache';
 import CircleFlag from '../CircleFlag';
 import { sheetPose } from './sheetPose';
@@ -642,7 +642,7 @@ function DestinationSheet({
           // reused as that spot's header, which then looked blurry.
           cacheKey={`pick_spot_${spot.id}`}
           cache={thumbCache}
-          load={() => getOrFetchWikiThumbnail(`pick_spot_${spot.id}`, thumbCache, spot.name, 300)}
+          load={() => getOrFetchWikiThumbnail(`pick_spot_${spot.id}`, thumbCache, spotPhotoTitle(spot), 300)}
           placeholderColor="#F3F4F6"
         />
       ),

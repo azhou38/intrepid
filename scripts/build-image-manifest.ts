@@ -18,7 +18,7 @@
 import { writeFileSync } from 'node:fs';
 import { resolve as resolvePath } from 'node:path';
 import { DESTINATIONS } from '../src/data/destinations';
-import { SPOTS } from '../src/data/spots';
+import { SPOTS, spotPhotoTitle } from '../src/data/spots';
 import { WIKI_IMAGE_OVERRIDES } from '../src/data/imageOverrides';
 import { manifestKey, buildThumbUrl, THUMB_STEPS, type ManifestEntry } from '../src/utils/imageUrl';
 import { checkCuratedHeaders, checkHeaderDimensions } from './destination-header-policy';
@@ -152,7 +152,7 @@ const lookups = new Map<string, { title: string; context?: string }>();
 const want = (title: string, context?: string) => lookups.set(manifestKey(title, context), { title, context });
 
 for (const d of DESTINATIONS) want(d.name);
-for (const s of SPOTS) want(s.name);
+for (const s of SPOTS) want(spotPhotoTitle(s));
 const countries = [...new Set(DESTINATIONS.map(d => d.country))];
 for (const c of countries) {
   want(c);                                            // country name on its own (pills, fallback header)
