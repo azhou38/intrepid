@@ -952,19 +952,6 @@ function DestinationSheet({
   // via onLayout (below) rather than computed from HERO_H/insets, since the tab bar's own
   // -24 marginTop (it overlaps the hero's bottom edge) would otherwise throw the threshold
   // off by that amount, causing a visible gap where neither copy is correctly positioned.
-  const [tabBarAppearY, setTabBarAppearY] = useState(HERO_H - insets.bottom - 24);
-  // Mirror for the UI-thread styles (the compact bar appears together with the pinned tab bar).
-  const tabAppearSV = useSharedValue(HERO_H - insets.bottom - 24);
-  useEffect(() => { tabAppearSV.value = tabBarAppearY; }, [tabBarAppearY]);
-  // The compact title bar (see compactBarStyle) holds the top of the sheet once the header has scrolled away, so the
-  // pinned tab bar sits right below it, handing over as the inline one reaches the bar's bottom edge.
-  const COMPACT_BAR_H = insets.top + 56;
-  const tabBarOverlayY = useMemo(() => scrollYAnim.interpolate({
-    inputRange: [tabBarAppearY - COMPACT_BAR_H - 1, tabBarAppearY - COMPACT_BAR_H],
-    // Hidden far enough up to clear the compact bar's height too (it now sits below that bar, not at the very top).
-    outputRange: [-400, 0],
-    extrapolate: 'clamp',
-  }), [tabBarAppearY, COMPACT_BAR_H]);
 
   // Fixed collapsed Y (COLLAPSED_Y is itself a constant — see its own comment). A shared
   // value (not just a ref) so the worklets below (drag gesture, heroAnimStyle) can read it
@@ -1076,6 +1063,8 @@ function DestinationSheet({
     };
   });
 
+  // The sticky header (title bar + tab bar) — see STICKY HEADER in the ScrollView.
+  const COMPACT_BAR_H = insets.top + 56;
   // Spotify-style header (see the fixed HERO PHOTO layer): the photo dims as content covers it, the header text fades as
   // it nears the compact bar, and the bar fades in once the name has gone under it.
   const heroTextTopSV = useSharedValue(HERO_H - insets.bottom - 160);
@@ -1086,15 +1075,14 @@ function DestinationSheet({
     const t = heroTextTopSV.value - (insets.top + 56);
     // Only fades at full-screen: at half-screen and peek the header is the sheet's face, never scrolled.
     const full = interpolate(slideAnim.value, [FULL_POS, FULL_POS + 40], [1, 0], Extrapolation.CLAMP);
-    // Starts once the text is almost at the bar, finishing just as it goes under it.
-    const fade = interpolate(scrollYSV.value, [t - 25, t + 40], [1, 0], Extrapolation.CLAMP);
+    // Holds until the text has reached the bar, then fades as it rises past it.
+    const fade = interpolate(scrollYSV.value, [t + 10, t + 80], [1, 0], Extrapolation.CLAMP);
     return { opacity: 1 - full * (1 - fade) };
   });
-  // The bar and the pinned tab bar are one piece: the bar appears at exactly the scroll position where the tab bar pins
-  // under it (tabBarAppearY - COMPACT_BAR_H; see tabBarOverlayY), not earlier.
+  // The bar is the top of the sticky header, so it rides up with the tab bar and pins with it (natively — see
+  // stickyHeaderIndices); it fades in over the last 40pt before that, so it's fully in by the time they pin.
   const compactBarStyle = useAnimatedStyle(() => {
-    // Fades in over the last 40pt before the tab bar pins, so it's fully in by the time the tabs settle under it.
-    const at = tabAppearSV.value - (insets.top + 56);
+    const at = fullHeroH - TAB_BAR_TUCK - COMPACT_BAR_H;
     const on = interpolate(scrollYSV.value, [at - 40, at], [0, 1], Extrapolation.CLAMP);
     // Only ever at full-screen — at half-screen and peek there is no scrolled header to stand in for.
     const full = interpolate(slideAnim.value, [FULL_POS, FULL_POS + 40], [1, 0], Extrapolation.CLAMP);
@@ -1457,6 +1445,7 @@ function DestinationSheet({
           // snapStateRef used elsewhere in this file for cheaper reads) means the very
           // first frame at full-screen is the first frame scrolling can even engage.
           scrollEnabled={snapStateReact === 'full'}
+          stickyHeaderIndices={[1]}
           bounces={false}
           showsVerticalScrollIndicator={false}
           onScroll={(e: NativeSyntheticEvent<NativeScrollEvent>) => {
@@ -1556,41 +1545,32 @@ function DestinationSheet({
           </Reanimated.View>
           </Pressable>
 
+        {/* ── STICKY HEADER — the compact title bar and the tab bar as one piece, pinned natively by the ScrollView
+            (stickyHeaderIndices) the frame its top reaches the sheet's top, so nothing has to catch up with the scroll.
+            Pulled up by its bar's height so the tab bar still tucks over the hero's bottom edge as before; the bar
+            part stays transparent (and untouchable) until it fades in just before pinning. */}
+        <View pointerEvents="box-none" style={{ marginTop: -(COMPACT_BAR_H + TAB_BAR_TUCK), zIndex: 2 }}>
+          <Reanimated.View pointerEvents="none" style={[st.compactBar, { height: COMPACT_BAR_H, paddingTop: insets.top + 20 }, compactBarStyle]}>
+            <Text style={st.compactBarTitle} numberOfLines={1}>{destination.name}</Text>
+          </Reanimated.View>
+          {/* White behind the tab bar's rounded top corners once pinned under the bar. */}
+          <Reanimated.View pointerEvents="none" style={[st.tabCornerFill, { top: COMPACT_BAR_H }, compactBarStyle]} />
+          {/* ── TAB BAR — every destination gets About + Spots; visited also gets My Visit. */}
+          <View
+            style={[st.tabBar, { marginTop: 0 }]}
+            onLayout={e => { tabBarHAnim.value = e.nativeEvent.layout.height; }}
+          >
+            {renderTabBarRow()}
+          </View>
+        </View>
+
         {/* Tab swipe handler wraps only the tab bar row + content below it — NOT the hero
             above — so a horizontal swipe on the header never risks being read as a tab
             switch. */}
         <GestureDetector gesture={tabSwipeGesture}>
         <View
           style={{ flexGrow: 1, backgroundColor: 'white', paddingBottom: insets.bottom + 55 }}
-          onLayout={e => {
-            // Measured here (on this wrapper) rather than on the tab bar View directly — this
-            // wrapper is now the tab bar's immediate parent (needed so a single GestureDetector
-            // can cover both the tab bar and the content below it), and onLayout's y is always
-            // relative to the immediate parent. Measuring on the tab bar itself here would
-            // report ~0 (its own offset within this wrapper, which is always 0), not the real
-            // position within the scroll content that tabBarOverlayY's scroll-position
-            // comparison needs — this wrapper's own y is exactly that value instead, since it
-            // sits with zero offset where the tab bar used to sit directly.
-            //
-            // Ignore measurements taken while collapsed/half — the hero (and therefore this
-            // tab bar's position) is intentionally a different height there, and would
-            // otherwise corrupt the threshold the full-screen sticky overlay uses.
-            // Only a measurement taken with the hero at its full height (not mid-transition, while it's still cropped).
-            const y = e.nativeEvent.layout.y;
-            if (snapStateRef.current === 'full' && Math.abs(y - fullHeroH) < 40) setTabBarAppearY(y);
-          }}
         >
-
-          {/* ── TAB BAR — every destination gets About + Spots; visited also gets My Visit.
-              Scrolls normally here; a second copy (tabBarOverlay below, outside the
-              ScrollView) fades/slides in to pin it in place once this one reaches the top. */}
-          <View
-            style={st.tabBar}
-            onLayout={e => { tabBarHAnim.value = e.nativeEvent.layout.height; }}
-          >
-            {renderTabBarRow()}
-          </View>
-
           {/* ── CONTENT ────────────────────────────────────────────────── */}
           <View style={st.content}>
 
@@ -1667,21 +1647,6 @@ function DestinationSheet({
         </View>
         </KeyboardAvoidingView>
 
-        {/* ── TAB BAR OVERLAY — fixed copy that slides in once the inline one (above,
-            inside the ScrollView) scrolls up to this point, and slides back out as soon as
-            scrolling back up reveals the hero again underneath it. */}
-        <Animated.View
-          pointerEvents="box-none"
-          style={[st.tabBar, st.tabBarOverlay, { top: COMPACT_BAR_H, transform: [{ translateY: tabBarOverlayY }] }]}
-        >
-          {renderTabBarRow()}
-        </Animated.View>
-
-        {/* ── COMPACT TITLE BAR — the destination's name, small, once the header text has scrolled up under it; stays
-            until the header comes back into view. The back pill (MapScreen's) sits fixed at its left. */}
-        <Reanimated.View pointerEvents="none" style={[st.compactBar, { height: COMPACT_BAR_H, paddingTop: insets.top + 20 }, compactBarStyle]}>
-          <Text style={st.compactBarTitle} numberOfLines={1}>{destination.name}</Text>
-        </Reanimated.View>
         </View>{/* end full-content wrapper */}
 
 
@@ -1801,10 +1766,10 @@ const st = StyleSheet.create({
   heroBackdrop: { position:'absolute', top:0, left:0, right:0, height: HERO_H, overflow:'hidden', backgroundColor:'#111827' },
   heroDim: { backgroundColor:'#000' },
   compactBar: {
-    position:'absolute', top:0, left:0, right:0, zIndex: 3,
     backgroundColor:'white', alignItems:'center', paddingHorizontal: 110,
     shadowColor:'#000', shadowOpacity:0.06, shadowRadius:4, shadowOffset:{ width:0, height:1 },
   },
+  tabCornerFill: { position:'absolute', left:0, right:0, height: 24, backgroundColor:'white' },
   compactBarTitle: { height: 36, lineHeight: 36, fontSize: 16, fontWeight: '700', color: '#111827' },
   heroScrim: { position:'absolute', top:0, left:0, right:0, bottom:0, backgroundColor:'rgba(0,0,0,0.18)' },
   gradWrap:{ position:'absolute', left:0, right:0, bottom:0, height: GRAD_H_TOTAL },

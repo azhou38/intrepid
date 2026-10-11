@@ -950,24 +950,21 @@ function SpotSheet({
   // it nears the compact title bar, the bar fades in once the name has gone under it, and the tab bar pins below it.
   const COMPACT_BAR_H = heroTopRowTop + 36 + 6;
   const heroTextTopSV = useSharedValue(HERO_H - insets.bottom - 200);
-  const tabBarYSV = useSharedValue(HERO_H - insets.bottom);
   const heroDimStyle = useAnimatedStyle(() => ({
     opacity: interpolate(scrollYSV.value, [0, (HERO_H - insets.bottom) * 0.85], [0, 0.55], Extrapolation.CLAMP),
   }));
   const heroTextFadeStyle = useAnimatedStyle(() => {
     const t = heroTextTopSV.value - COMPACT_BAR_H;
-    // Starts once the text is almost at the bar, finishing just as it goes under it.
-    return { opacity: interpolate(scrollYSV.value, [t - 25, t + 40], [1, 0], Extrapolation.CLAMP) };
+    // Holds until the text has reached the bar, then fades as it rises past it.
+    return { opacity: interpolate(scrollYSV.value, [t + 10, t + 80], [1, 0], Extrapolation.CLAMP) };
   });
   // The bar and the pinned tab bar are one piece: the bar appears exactly where the tab bar pins under it.
-  // Fades in over the last 40pt before the tab bar pins, so it's fully in by the time the tabs settle under it.
+  // The bar is the top of the sticky header, so it rides up with the tab bar and pins with it (natively — see
+  // stickyHeaderIndices); it fades in over the last 40pt before that, so it's fully in by the time they pin.
   const compactBarStyle = useAnimatedStyle(() => {
-    const at = tabBarYSV.value - COMPACT_BAR_H;
+    const at = (HERO_H - insets.bottom) - 24 - COMPACT_BAR_H;
     return { opacity: interpolate(scrollYSV.value, [at - 40, at], [0, 1], Extrapolation.CLAMP) };
   });
-  const tabBarOverlayStyle = useAnimatedStyle(() => ({
-    transform: [{ translateY: scrollYSV.value >= tabBarYSV.value - COMPACT_BAR_H ? 0 : -400 }],
-  }));
 
 
   // The tab bar: visited spots get My Visit + About; an unvisited spot still gets this same header, just with "About"
@@ -1064,6 +1061,7 @@ isVisited ? (
           ref={scrollRef}
           style={{ flex: 1 }}
           scrollEnabled bounces={false}
+          stickyHeaderIndices={[1]}
           showsVerticalScrollIndicator={false}
           onScroll={e => { scrollYSV.value = e.nativeEvent.contentOffset.y; }}
           scrollEventThrottle={16}
@@ -1115,13 +1113,20 @@ isVisited ? (
             </Reanimated.View>
           </View>
 
-          <View
-            style={{ flexGrow: 1, backgroundColor: 'white', paddingBottom: insets.bottom + 36 }}
-            onLayout={e => { tabBarYSV.value = e.nativeEvent.layout.y; }}
-          >
-          {/* ── TAB BAR — see renderTabBar. Scrolls normally here; a pinned copy sits under the compact bar once this one
-              reaches it (TAB BAR OVERLAY below). */}
-          {renderTabBar(false)}
+          {/* ── STICKY HEADER — the compact title bar and the tab bar (see renderTabBar) as one piece, pinned natively by
+              the ScrollView (stickyHeaderIndices) the frame its top reaches the sheet's top. Pulled up by its bar's
+              height so the tab bar still tucks over the hero's bottom edge; the bar part stays transparent (and
+              untouchable) until it fades in just before pinning. */}
+          <View pointerEvents="box-none" style={{ marginTop: -(COMPACT_BAR_H + 24), zIndex: 2 }}>
+            <Reanimated.View pointerEvents="none" style={[st.compactBar, { height: COMPACT_BAR_H, paddingTop: heroTopRowTop }, compactBarStyle]}>
+              <Text style={st.compactBarTitle} numberOfLines={1}>{activeSpot.name}</Text>
+            </Reanimated.View>
+            {/* White behind the tab bar's rounded top corners once pinned under the bar. */}
+            <Reanimated.View pointerEvents="none" style={[st.tabCornerFill, { top: COMPACT_BAR_H }, compactBarStyle]} />
+            {renderTabBar(true)}
+          </View>
+
+          <View style={{ flexGrow: 1, backgroundColor: 'white', paddingBottom: insets.bottom + 36 }}>
 
           {/* ── CONTENT ────────────────────────────────────────────────── */}
           <View style={st.content}>
@@ -1159,16 +1164,7 @@ isVisited ? (
           </View>
         </GHScrollView>
 
-        {/* ── TAB BAR OVERLAY — pinned copy below the compact bar once the inline tab bar scrolls up to it. */}
-        <Reanimated.View pointerEvents="box-none" style={[st.tabBarOverlay, { top: COMPACT_BAR_H }, tabBarOverlayStyle]}>
-          {renderTabBar(true)}
-        </Reanimated.View>
 
-        {/* ── COMPACT TITLE BAR — the spot's name, small, once the header name has scrolled up under it; stays until
-            the header comes back into view. The back pill (MapScreen's) sits fixed at its left. */}
-        <Reanimated.View pointerEvents="none" style={[st.compactBar, { height: COMPACT_BAR_H, paddingTop: heroTopRowTop }, compactBarStyle]}>
-          <Text style={st.compactBarTitle} numberOfLines={1}>{activeSpot.name}</Text>
-        </Reanimated.View>
         </View>
         </GestureDetector>
         )}{/* end tabSwipeGesture wrapper */}
@@ -1612,16 +1608,16 @@ const st = StyleSheet.create({
   // Tab bar
   heroBackdrop: { position: 'absolute', top: 0, left: 0, right: 0, overflow: 'hidden', backgroundColor: '#111827' },
   compactBar: {
-    position: 'absolute', top: 0, left: 0, right: 0, zIndex: 3,
     backgroundColor: 'white', alignItems: 'center', paddingHorizontal: 110,
     shadowColor: '#000', shadowOpacity: 0.06, shadowRadius: 4, shadowOffset: { width: 0, height: 1 },
   },
+  tabCornerFill: { position: 'absolute', left: 0, right: 0, height: 24, backgroundColor: 'white' },
   compactBarTitle: { height: 36, lineHeight: 36, fontSize: 16, fontWeight: '700', color: '#111827' },
   tabBarOverlay: {
     position: 'absolute', left: 0, right: 0, zIndex: 2,
     shadowColor: '#000', shadowOpacity: 0.08, shadowRadius: 6, shadowOffset: { width: 0, height: 2 }, elevation: 4,
   },
-  tabBarPinned: { marginTop: 0, borderTopLeftRadius: 0, borderTopRightRadius: 0 },
+  tabBarPinned: { marginTop: 0 },
   tabBar: { flexDirection: 'row', backgroundColor: 'white',
             borderTopLeftRadius: 24, borderTopRightRadius: 24, marginTop: -24,
             borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: '#E5E7EB', zIndex: 1, overflow: 'hidden' },

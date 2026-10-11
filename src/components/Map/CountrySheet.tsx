@@ -464,7 +464,6 @@ function CountrySheet({
   // as it nears the compact title bar, the bar fades in once the name has gone under it, and the tab bar pins below it.
   const COMPACT_BAR_H = insets.top + 56;
   const headerNameYSV = useSharedValue(insets.top + 80);
-  const tabBarYSV = useSharedValue(HEADER_H);
   const headerDimStyle = useAnimatedStyle(() => ({
     opacity: interpolate(scrollY.value, [0, fullHeaderH * 0.85], [0, 0.55], Extrapolation.CLAMP),
   }));
@@ -472,23 +471,17 @@ function CountrySheet({
     const t = headerNameYSV.value - COMPACT_BAR_H;
     // Only fades at full-screen: at half-screen and peek the header is the sheet's face, never scrolled.
     const full = interpolate(slideAnim.value, [FULL_POS, FULL_POS + 40], [1, 0], Extrapolation.CLAMP);
-    // Starts once the name is almost at the bar, finishing just as it goes under it.
-    const fade = interpolate(scrollY.value, [t - 25, t + 40], [1, 0], Extrapolation.CLAMP);
+    // Holds until the name has reached the bar, then fades as it rises past it.
+    const fade = interpolate(scrollY.value, [t + 10, t + 80], [1, 0], Extrapolation.CLAMP);
     return { opacity: 1 - full * (1 - fade) };
   });
-  // The bar and the pinned tab bar are one piece: the bar appears exactly where the tab bar pins under it.
+  // The bar is the top of the sticky header, so it rides up with the tab bar and pins with it (natively — see
+  // stickyHeaderIndices); it fades in over the last 40pt before that, so it's fully in by the time they pin.
   const compactBarStyle = useAnimatedStyle(() => {
-    // Fades in over the last 40pt before the tab bar pins, so it's fully in by the time the tabs settle under it.
-    const at = tabBarYSV.value - 20 - COMPACT_BAR_H;
+    const at = headerFullHAnim.value - TAB_BAR_TUCK - COMPACT_BAR_H;
     const on = interpolate(scrollY.value, [at - 40, at], [0, 1], Extrapolation.CLAMP);
     const full = interpolate(slideAnim.value, [FULL_POS, FULL_POS + 40], [1, 0], Extrapolation.CLAMP);
     return { opacity: on * full };
-  });
-  // The inline tab bar sits 20pt above its wrapper's top (marginTop -20); it reaches the bar's bottom edge there.
-  const tabBarOverlayStyle = useAnimatedStyle(() => {
-    const at = tabBarYSV.value - 20 - COMPACT_BAR_H;
-    const full = slideAnim.value <= FULL_POS + 1;
-    return { transform: [{ translateY: full && scrollY.value >= at ? 0 : -400 }] };
   });
 
   const headerAnimStyle = useAnimatedStyle(() => {
@@ -949,6 +942,7 @@ function CountrySheet({
             // the sheet's drag gesture at every snap state, so a fast half→full swipe could
             // have its own residual motion already captured mid-flight as a scroll.
             scrollEnabled={snapStateReact === 'full'}
+            stickyHeaderIndices={[1]}
             bounces={false}
             showsVerticalScrollIndicator={false}
             onScroll={e => { scrollY.value = e.nativeEvent.contentOffset.y; }}
@@ -1031,17 +1025,26 @@ function CountrySheet({
             </Animated.View>
             </Pressable>
 
-            <View
-              style={{ flexGrow: 1, backgroundColor: '#F9FAFB', paddingBottom: BOTTOM_TAB_H + 16 }}
-              onLayout={e => { if (snapStateRef.current === 'full') tabBarYSV.value = e.nativeEvent.layout.y; }}
-            >
-            {/* ── TAB BAR ──────────────────────────────────────────────── */}
-            <View
-              style={st.tabBar}
-              onLayout={e => { tabBarHAnim.value = e.nativeEvent.layout.height; }}
-            >
-              {renderTabBarRow()}
+            {/* ── STICKY HEADER — the compact title bar and the tab bar as one piece, pinned natively by the
+                ScrollView (stickyHeaderIndices) the frame its top reaches the sheet's top. Pulled up by its bar's
+                height so the tab bar still tucks over the header's bottom edge; the bar part stays transparent (and
+                untouchable) until it fades in just before pinning. */}
+            <View pointerEvents="box-none" style={{ marginTop: -(COMPACT_BAR_H + TAB_BAR_TUCK), zIndex: 2 }}>
+              <Animated.View pointerEvents="none" style={[st.compactBar, { height: COMPACT_BAR_H, paddingTop: insets.top + 20 }, compactBarStyle]}>
+                <Text style={st.compactBarTitle} numberOfLines={1}>{cluster.country}</Text>
+              </Animated.View>
+              {/* White behind the tab bar's rounded top corners once pinned under the bar. */}
+              <Animated.View pointerEvents="none" style={[st.tabCornerFill, { top: COMPACT_BAR_H }, compactBarStyle]} />
+              {/* ── TAB BAR ──────────────────────────────────────────────── */}
+              <View
+                style={[st.tabBar, { marginTop: 0 }]}
+                onLayout={e => { tabBarHAnim.value = e.nativeEvent.layout.height; }}
+              >
+                {renderTabBarRow()}
+              </View>
             </View>
+
+            <View style={{ flexGrow: 1, backgroundColor: '#F9FAFB', paddingBottom: BOTTOM_TAB_H + 16 }}>
 
             {/* ── CONTENT ──────────────────────────────────────────────── */}
             {/* An outgoing copy (leaving) only ever rests at half-screen or peek, where these panels
@@ -1151,16 +1154,7 @@ function CountrySheet({
             </View>
           </ScrollView>
 
-          {/* ── TAB BAR OVERLAY — pinned copy below the compact bar once the inline tab bar scrolls up to it. */}
-          <Animated.View pointerEvents="box-none" style={[st.tabBar, st.tabBarOverlay, { top: COMPACT_BAR_H }, tabBarOverlayStyle]}>
-            {renderTabBarRow()}
-          </Animated.View>
 
-          {/* ── COMPACT TITLE BAR — the country's name, small, once the header name has scrolled up under it; stays
-              until the header comes back into view. The back pill (MapScreen's) sits fixed at its left. */}
-          <Animated.View pointerEvents="none" style={[st.compactBar, { height: COMPACT_BAR_H, paddingTop: insets.top + 20 }, compactBarStyle]}>
-            <Text style={st.compactBarTitle} numberOfLines={1}>{cluster.country}</Text>
-          </Animated.View>
 
           {/* ── PEEK STRIP — a thin sliver of the header image with the country's name,
               shown only once the sheet has been dropped down past collapsed (via peekSignal,
@@ -1242,10 +1236,10 @@ const st = StyleSheet.create({
   // ── Header ──────────────────────────────────────────────────────────────────
   headerBackdrop: { position: 'absolute', top: 0, left: 0, right: 0, height: HEADER_H, overflow: 'hidden', backgroundColor: '#111827' },
   compactBar: {
-    position: 'absolute', top: 0, left: 0, right: 0, zIndex: 3,
     backgroundColor: 'white', alignItems: 'center', paddingHorizontal: 110,
     shadowColor: '#000', shadowOpacity: 0.06, shadowRadius: 4, shadowOffset: { width: 0, height: 1 },
   },
+  tabCornerFill: { position: 'absolute', left: 0, right: 0, height: 24, backgroundColor: 'white' },
   compactBarTitle: { height: 36, lineHeight: 36, fontSize: 16, fontWeight: '700', color: '#111827' },
   tabBarOverlay: {
     position: 'absolute', left: 0, right: 0, zIndex: 2,
