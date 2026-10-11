@@ -662,6 +662,9 @@ function SpotSheet({
     if (closingRef.current && reason !== 'selectionChange') return;
     closingRef.current = false;
     const prev = snapStateRef.current;
+    // Leaving full-screen (the down arrow, or a swipe): bring the content back to its top as the sheet slides down,
+    // so half-screen shows the sheet's header rather than whatever section was scrolled to.
+    if (prev === 'full' && next !== 'full') scrollRef.current?.scrollTo({ y: 0, animated: true });
     const target = next === 'full' ? FULL_POS : next === 'peek' ? PEEK_Y : COLLAPSED_Y;
     if (__DEV__) console.log('[sheet] Spot', activeSpot.id, prev, '->', next, `reason=${reason}`, 'mapInteracting=', isMapInteracting?.() ?? false);
     snapStateRef.current = next;
@@ -959,11 +962,11 @@ function SpotSheet({
     return { opacity: interpolate(scrollYSV.value, [t + 10, t + 80], [1, 0], Extrapolation.CLAMP) };
   });
   // The bar and the pinned tab bar are one piece: the bar appears exactly where the tab bar pins under it.
-  // The bar is the top of the sticky header, so it rides up with the tab bar and pins with it (natively — see
-  // stickyHeaderIndices); it fades in over the last 40pt before that, so it's fully in by the time they pin.
+  // The bar is fixed at the top (COMPACT TITLE BAR) and fades in around the moment the tab bar arrives under it and
+  // pins — the sticky header (stickyHeaderIndices) leaves exactly the bar's height above the tab bar for it.
   const compactBarStyle = useAnimatedStyle(() => {
     const at = (HERO_H - insets.bottom) - 24 - COMPACT_BAR_H;
-    return { opacity: interpolate(scrollYSV.value, [at - 40, at], [0, 1], Extrapolation.CLAMP) };
+    return { opacity: interpolate(scrollYSV.value, [at - 20, at + 10], [0, 1], Extrapolation.CLAMP) };
   });
 
 
@@ -1118,9 +1121,8 @@ isVisited ? (
               height so the tab bar still tucks over the hero's bottom edge; the bar part stays transparent (and
               untouchable) until it fades in just before pinning. */}
           <View pointerEvents="box-none" style={{ marginTop: -(COMPACT_BAR_H + 24), zIndex: 2 }}>
-            <Reanimated.View pointerEvents="none" style={[st.compactBar, { height: COMPACT_BAR_H, paddingTop: heroTopRowTop }, compactBarStyle]}>
-              <Text style={st.compactBarTitle} numberOfLines={1}>{activeSpot.name}</Text>
-            </Reanimated.View>
+            {/* Room the title bar (fixed at the top — see COMPACT TITLE BAR) pins over; transparent here. */}
+            <View pointerEvents="none" style={{ height: COMPACT_BAR_H }} />
             {/* White behind the tab bar's rounded top corners once pinned under the bar. */}
             <Reanimated.View pointerEvents="none" style={[st.tabCornerFill, { top: COMPACT_BAR_H }, compactBarStyle]} />
             {renderTabBar(true)}
@@ -1163,6 +1165,11 @@ isVisited ? (
           </View>
           </View>
         </GHScrollView>
+        {/* ── COMPACT TITLE BAR — fixed at the very top; fades in as the tab bar arrives under it and pins (the sticky
+            header leaves exactly this much room above the tab bar), and out again as it scrolls back down. */}
+        <Reanimated.View pointerEvents="none" style={[st.compactBar, st.compactBarFixed, { height: COMPACT_BAR_H, paddingTop: heroTopRowTop }, compactBarStyle]}>
+          <Text style={st.compactBarTitle} numberOfLines={1}>{activeSpot.name}</Text>
+        </Reanimated.View>
 
 
         </View>
@@ -1612,6 +1619,7 @@ const st = StyleSheet.create({
     shadowColor: '#000', shadowOpacity: 0.06, shadowRadius: 4, shadowOffset: { width: 0, height: 1 },
   },
   tabCornerFill: { position: 'absolute', left: 0, right: 0, height: 24, backgroundColor: 'white' },
+  compactBarFixed: { position: 'absolute', top: 0, left: 0, right: 0, zIndex: 3 },
   compactBarTitle: { height: 36, lineHeight: 36, fontSize: 16, fontWeight: '700', color: '#111827' },
   tabBarOverlay: {
     position: 'absolute', left: 0, right: 0, zIndex: 2,

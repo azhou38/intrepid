@@ -475,11 +475,11 @@ function CountrySheet({
     const fade = interpolate(scrollY.value, [t + 10, t + 80], [1, 0], Extrapolation.CLAMP);
     return { opacity: 1 - full * (1 - fade) };
   });
-  // The bar is the top of the sticky header, so it rides up with the tab bar and pins with it (natively — see
-  // stickyHeaderIndices); it fades in over the last 40pt before that, so it's fully in by the time they pin.
+  // The bar is fixed at the top (COMPACT TITLE BAR) and fades in around the moment the tab bar arrives under it and
+  // pins — the sticky header (stickyHeaderIndices) leaves exactly the bar's height above the tab bar for it.
   const compactBarStyle = useAnimatedStyle(() => {
     const at = headerFullHAnim.value - TAB_BAR_TUCK - COMPACT_BAR_H;
-    const on = interpolate(scrollY.value, [at - 40, at], [0, 1], Extrapolation.CLAMP);
+    const on = interpolate(scrollY.value, [at - 20, at + 10], [0, 1], Extrapolation.CLAMP);
     const full = interpolate(slideAnim.value, [FULL_POS, FULL_POS + 40], [1, 0], Extrapolation.CLAMP);
     return { opacity: on * full };
   });
@@ -584,6 +584,9 @@ function CountrySheet({
     if (closingRef.current && reason !== 'selectionChange') return;
     closingRef.current = false;
     const prev = snapStateRef.current;
+    // Leaving full-screen (the down arrow, or a swipe): bring the content back to its top as the sheet slides down,
+    // so half-screen shows the sheet's header rather than whatever section was scrolled to.
+    if (prev === 'full' && next !== 'full') scrollRef.current?.scrollTo({ y: 0, animated: true });
     const target = next === 'full' ? FULL_POS : next === 'peek' ? PEEK_Y : collapsedYRef.current;
     if (__DEV__) console.log('[sheet] Country', cluster.countryCode, prev, '->', next, `reason=${reason}`, 'mapInteracting=', isMapInteracting?.() ?? false);
     snapStateRef.current = next;
@@ -1030,9 +1033,8 @@ function CountrySheet({
                 height so the tab bar still tucks over the header's bottom edge; the bar part stays transparent (and
                 untouchable) until it fades in just before pinning. */}
             <View pointerEvents="box-none" style={{ marginTop: -(COMPACT_BAR_H + TAB_BAR_TUCK), zIndex: 2 }}>
-              <Animated.View pointerEvents="none" style={[st.compactBar, { height: COMPACT_BAR_H, paddingTop: insets.top + 20 }, compactBarStyle]}>
-                <Text style={st.compactBarTitle} numberOfLines={1}>{cluster.country}</Text>
-              </Animated.View>
+              {/* Room the title bar (fixed at the top — see COMPACT TITLE BAR) pins over; transparent here. */}
+              <View pointerEvents="none" style={{ height: COMPACT_BAR_H }} />
               {/* White behind the tab bar's rounded top corners once pinned under the bar. */}
               <Animated.View pointerEvents="none" style={[st.tabCornerFill, { top: COMPACT_BAR_H }, compactBarStyle]} />
               {/* ── TAB BAR ──────────────────────────────────────────────── */}
@@ -1153,6 +1155,11 @@ function CountrySheet({
             )}
             </View>
           </ScrollView>
+          {/* ── COMPACT TITLE BAR — fixed at the very top; fades in as the tab bar arrives under it and pins (the sticky
+              header leaves exactly this much room above the tab bar), and out again as it scrolls back down. */}
+          <Animated.View pointerEvents="none" style={[st.compactBar, st.compactBarFixed, { height: COMPACT_BAR_H, paddingTop: insets.top + 20 }, compactBarStyle]}>
+            <Text style={st.compactBarTitle} numberOfLines={1}>{cluster.country}</Text>
+          </Animated.View>
 
 
 
@@ -1240,6 +1247,7 @@ const st = StyleSheet.create({
     shadowColor: '#000', shadowOpacity: 0.06, shadowRadius: 4, shadowOffset: { width: 0, height: 1 },
   },
   tabCornerFill: { position: 'absolute', left: 0, right: 0, height: 24, backgroundColor: 'white' },
+  compactBarFixed: { position: 'absolute', top: 0, left: 0, right: 0, zIndex: 3 },
   compactBarTitle: { height: 36, lineHeight: 36, fontSize: 16, fontWeight: '700', color: '#111827' },
   tabBarOverlay: {
     position: 'absolute', left: 0, right: 0, zIndex: 2,
