@@ -279,7 +279,8 @@ const st = StyleSheet.create({
     backgroundColor: 'white',
   },
   closeBtn: { width: 36, height: 36, borderRadius: 18, backgroundColor: '#F3F4F6', alignItems: 'center', justifyContent: 'center' },
-  headerTitle: { fontSize: 17, fontWeight: '700', color: '#111827', textAlign: 'center' },
+  // Same type as the sheets' compact title bar (compactBarTitle in DestinationSheet).
+  headerTitle: { fontSize: 16, fontWeight: '700', color: '#111827', textAlign: 'center' },
   // Same treatment as the photo gallery's own header subtitle (pgS.headerSub in sheetShared).
   headerSub:   { fontSize: 12, color: '#9CA3AF', textAlign: 'center', marginTop: 1 },
   scrollContent: { padding: 16, gap: 16, paddingBottom: 48 },
