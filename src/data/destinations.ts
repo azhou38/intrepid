@@ -860,7 +860,7 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: '{months} bring the driest weather, calmest seas, and clearest reef visibility.',
   },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
-  // scripts/photo-picker.ts (see AGENTS.md), not guessed.
+  // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {
     id: 'christchurch', name: 'Christchurch', country: 'New Zealand', countryCode: 'NZ', timezone: 'Pacific/Auckland', defaultZoomSpanKm: 25,
     continent: 'Oceania', coordinates: { latitude: -43.5321, longitude: 172.6362 },

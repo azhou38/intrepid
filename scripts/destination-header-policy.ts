@@ -1,5 +1,5 @@
-// Destination header images: the rule, and the checks that enforce it. See AGENTS.md ("Destination
-// header images") for the rule in full.
+// Destination header images: the rule, and the checks that enforce it. See IMAGES.md ("Headers")
+// for the rule in full.
 //
 // A destination's header (the big photo at the top of its sheet, also used for its map pin) is the
 // first impression of the place, so it is never left to whatever photo leads the place's Wikipedia
@@ -41,7 +41,7 @@ export function checkCuratedHeaders(): { errors: string[]; warnings: string[] } 
     const curated = !!overrides[d.name];
     if (!curated && !HEADER_REVIEW_BACKLOG.has(d.id)) {
       errors.push(`${d.name} (${d.id}) has no hand-picked header image — add one to WIKI_IMAGE_OVERRIDES in `
-        + `src/data/imageOverrides.ts (see AGENTS.md, "Destination header images").`);
+        + `src/data/imageOverrides.ts (see IMAGES.md, "Headers").`);
     }
     if (curated && HEADER_REVIEW_BACKLOG.has(d.id)) {
       warnings.push(`${d.name} (${d.id}) now has a hand-picked header — remove it from HEADER_REVIEW_BACKLOG.`);

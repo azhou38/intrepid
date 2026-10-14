@@ -166,7 +166,7 @@ for (const c of countries) {
 async function main() {
   const started = Date.now();
 
-  // Every destination needs a hand-picked header image (see destination-header-policy.ts / AGENTS.md).
+  // Every destination needs a hand-picked header image (see destination-header-policy.ts / IMAGES.md).
   // Checked before any network work, so a new destination can't slip into the manifest with whatever
   // photo happens to lead its Wikipedia article.
   const headerCheck = checkCuratedHeaders();

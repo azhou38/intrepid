@@ -1,5 +1,5 @@
 // Offline check that every destination has a hand-picked header image (see
-// scripts/destination-header-policy.ts and AGENTS.md, "Destination header images"). Needs no network:
+// scripts/destination-header-policy.ts and IMAGES.md, "Headers"). Needs no network:
 //   npx tsx scripts/check-destination-headers.ts
 // build-image-manifest.ts runs the same check first, so a destination without a curated header can't
 // get into the manifest unnoticed.

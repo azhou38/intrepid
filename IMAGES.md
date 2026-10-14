@@ -1,6 +1,6 @@
 # Choosing images
 
-How to pick the photos the app shows for places. All photos come from Wikimedia Commons (or the place's Wikipedia article), resolved ahead of time into `src/data/imageManifest.json` so the app builds URLs locally. What to put in the data files is in `DESTINATIONS.md`; this file is about the photos.
+How to pick the photos the app shows for places. All photos come from Wikimedia Commons (or the place's Wikipedia article), resolved ahead of time into `src/data/imageManifest.json` so the app builds URLs locally. What to put in the data files is in `WRITING.md`; this file is about the photos.
 
 There are three kinds of photo, each with its own rule:
 
@@ -59,7 +59,7 @@ Each of the three why-visit photos is checked on its own: a destination is not d
 
 ## Headers
 
-The first impression of the place, so never left to whatever photo leads its Wikipedia article.
+The first impression of the place, so never left to whatever photo leads its Wikipedia article. Every destination's header (also used for its map pin) must be hand-picked.
 
 - **Cities and towns:** a spectacular cityscape or panorama of the place itself, such as a skyline, a waterfront, or a sweeping view over the rooftops. Never a single building, monument or attraction, and never a high aerial or satellite view.
 - **Nature destinations (parks, lakes, coasts, mountains, islands, regions):** the landscape the place is known for, shown wide.
@@ -67,11 +67,20 @@ The first impression of the place, so never left to whatever photo leads its Wik
 - **Size:** at least **2000px wide**.
 - Register it in `WIKI_IMAGE_OVERRIDES` (`src/data/imageOverrides.ts`) keyed by the destination's exact `name`.
 
+### Adding a header (the procedure)
+
+1. Pick a Wikimedia Commons file that meets the rules above. Open it and check it visually. `npx tsx scripts/photo-picker.ts` does the searching (and `--auto` the choosing; see "Choosing" below).
+2. Add it to `WIKI_IMAGE_OVERRIDES` in `src/data/imageOverrides.ts`, keyed by the destination's exact `name`.
+3. Run `npx tsx scripts/check-destination-headers.ts`, which works offline.
+4. Regenerate the manifest with `npx tsx scripts/build-image-manifest.ts`. It refuses to run if any destination lacks a hand-picked header, and lists headers that are too small or too wide.
+
+`HEADER_REVIEW_BACKLOG` in `scripts/destination-header-policy.ts` lists the older destinations that still need a curated header. Never add new destinations to it; remove each entry once its header has been curated.
+
 ## "Why visit" photos
 
 One photo per reason, three per destination, in the same order as `whyVisit`.
 
-- **It must show that reason**, not the place in general. "Punting on the Avon" is a punt on the Avon; "Meet the cheeky kea" is a kea. If no good photo of the reason exists, rewrite the reason (see `DESTINATIONS.md`) rather than settling for a vague one.
+- **It must show that reason**, not the place in general. "Punting on the Avon" is a punt on the Avon; "Meet the cheeky kea" is a kea. If no good photo of the reason exists, rewrite the reason (see `WRITING.md`) rather than settling for a vague one.
 - **Three different photos**, no repeats within a destination, and none of them the header.
 - **Shape:** the cards are about 1.6:1 landscape, centre-cropped. Prefer a landscape file with the subject near the centre. If the default crop cuts off the subject (a tall statue, a bird high in the frame), set `PHOTO_FOCUS_Y` for that file in `imageOverrides.ts` (0 = crop toward the top, 0.5 = centre, 1 = bottom).
 - **Size:** at least **1280px wide**. A ground-level view is preferred; an aerial is acceptable here only when the reason is itself about the view from above.
@@ -81,7 +90,7 @@ One photo per reason, three per destination, in the same order as `whyVisit`.
 
 Every spot photo in the app is checked, not only the ones given an override: the default (the lead photo of the spot's Wikipedia article) is accepted only if it passes the pre-filter above and the four checks. A default that fails gets an override in `WIKI_IMAGE_OVERRIDES`, keyed by `spotPhotoTitle` (the spot's `wiki` title, else its `name`).
 
-- **Default:** the lead photo of the spot's Wikipedia article, found by the spot's `name` (which is why spot names must match article titles; see `DESTINATIONS.md`). Most spots need nothing more.
+- **Default:** the lead photo of the spot's Wikipedia article, found by the spot's `name` (which is why a spot's `wiki` title, when it has one, must match its article exactly; see `WRITING.md`). Most spots need nothing more.
 - **Override when the default is wrong:** the name is ambiguous or shared with another place (a common lake, park or street name), the article's lead image is a map, logo, plan, drawing, an interior when visitors come for the exterior, or the wrong attraction, or the article has no image. Add the spot's name to `WIKI_IMAGE_OVERRIDES` with a better file.
 - **What a good spot photo is:** the attraction itself, recognisable at a small size (it's shown in square thumbnails and map pins), subject centred. Landmarks and viewpoints: the view or the structure; trails: a characteristic stretch; museums: the building; wildlife: the animal.
 - **Size:** at least **1280px wide** where possible.

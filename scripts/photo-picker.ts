@@ -1,5 +1,5 @@
 // Photo picker: helps hand-pick the Wikimedia Commons photos the app shows for new places, by eye, as
-// AGENTS.md requires ("open it and check it visually").
+// IMAGES.md requires ("open it and check it visually").
 //
 //   npx tsx scripts/photo-picker.ts [--country NZ] [--no-spots]
 //     Searches Commons for candidates for every photo slot still missing — a destination's header
@@ -116,7 +116,7 @@ const wordsOf = (s: string) => new Set(
 
 // Files that are almost never a good photo of the place: maps, logos, diagrams, signage, scans.
 const NEVER = /\b(map|maps|logo|flag|coat of arms|diagram|chart|plan|poster|sign|signage|stamp|banknote|coin|icon|locator|location|timetable|schematic|drawing|painting|engraving|postcard|cropped|detail)\b/i;
-// Headers must not be high aerial/satellite views (AGENTS.md).
+// Headers must not be high aerial/satellite views (IMAGES.md).
 const HEADER_NEVER = /\b(aerial|satellite|drone|from above|from space|nasa|landsat|sentinel)\b/i;
 
 // Higher is better. Relevance to what the slot is about (words from the destination name / topic found in the file

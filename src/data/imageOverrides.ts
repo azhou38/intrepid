@@ -7,7 +7,7 @@
 //
 // Every DESTINATION must have an entry here: its header image, which must be a spectacular cityscape or
 // panorama (or, for nature destinations, a wide landscape) — never one building, attraction or an aerial
-// view. See AGENTS.md ("Destination header images") and scripts/destination-header-policy.ts, which
+// view. See IMAGES.md ("Headers") and scripts/destination-header-policy.ts, which
 // enforces it.
 // Vertical framing for specific Commons photos shown in a wider-than-tall card (the About tab's "Why visit"
 // cards), keyed by Commons file name: 0 crops toward the photo's top, 0.5 is the default centre crop, 1 its

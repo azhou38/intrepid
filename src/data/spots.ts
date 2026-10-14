@@ -4,7 +4,7 @@ import { DESTINATIONS } from './destinations';
 export interface Spot {
   id: string;
   // The destination this spot belongs to — OMITTED for a STANDALONE spot: one with no appropriate destination to
-  // sit under, or too few neighbouring spots to make one (see DESTINATIONS.md). A standalone spot instead carries
+  // sit under, or too few neighbouring spots to make one (see COVERAGE.md). A standalone spot instead carries
   // the place context a destination would have supplied (country, countryCode, continent, timezone), all required
   // when destinationId is absent. Read these through spotCountryCode / spotCountry / spotTimezone / spotDestination,
   // never through destinationId directly.
@@ -788,7 +788,7 @@ export const SPOTS: Spot[] = [
   { id: 'chatham-islands-4', destinationId: 'chatham-islands', name: 'Waitangi', wiki: 'Waitangi, Chatham Islands', icon: '⚓', coordinates: { latitude: -43.95073, longitude: -176.56073 }, category: 'historic', bio: "The only town in the Chathams, a small port with a wharf, a pub and a shop.", hours: 'Open 24 hours', visitHoursMin: 1, visitHoursMax: 2, free: true },
   { id: 'chatham-islands-6', destinationId: 'chatham-islands', name: 'Kōpinga Marae', icon: '🏛️', coordinates: { latitude: -43.9676, longitude: -176.5151 }, category: 'historic', bio: "A Moriori marae that tells the story of the first people of the Chathams.", hours: 'By arrangement', visitHoursMin: 1, visitHoursMax: 2, free: true },
   // ── Standalone spots (no destination) ──────────────────────────────────────────
-  // Places with no appropriate destination to sit under, or too few neighbouring spots to be one — see DESTINATIONS.md.
+  // Places with no appropriate destination to sit under, or too few neighbouring spots to be one — see COVERAGE.md.
   { id: 'glenorchy', country: 'New Zealand', countryCode: 'NZ', continent: 'Oceania', timezone: 'Pacific/Auckland', name: 'Glenorchy', icon: '🏔️', coordinates: { latitude: -44.8500, longitude: 168.3870 }, category: 'nature', bio: 'A tiny village at the head of Lake Wakatipu, beneath the peaks and valleys used as Middle-earth in The Lord of the Rings.', hours: 'Open 24 hours', visitHoursMin: 2, visitHoursMax: 4, free: true },
   { id: 'kura-tawhiti-castle-hill', country: 'New Zealand', countryCode: 'NZ', continent: 'Oceania', timezone: 'Pacific/Auckland', name: 'Kura Tāwhiti / Castle Hill', icon: '🪨', coordinates: { latitude: -43.21896, longitude: 171.71573 }, category: 'nature', bio: 'Kura Tāwhiti, a surreal field of giant limestone boulders on a tussock hillside, sacred to Ngāi Tahu.', hours: 'Open 24 hours', visitHoursMin: 1, visitHoursMax: 2, free: true },
   { id: 'cave-stream', country: 'New Zealand', countryCode: 'NZ', continent: 'Oceania', timezone: 'Pacific/Auckland', name: 'Cave Stream Scenic Reserve', icon: '🔦', coordinates: { latitude: -43.2000, longitude: 171.7500 }, category: 'hike', bio: 'Wade 594 m through a dark limestone cave with a stream running through it — bring a torch and warm clothes.', hours: 'Open 24 hours', visitHoursMin: 1, visitHoursMax: 1.5, free: true },
