@@ -121,4 +121,6 @@ npx tsx scripts/build-image-manifest.ts        # needs Commons; refuses to run i
 
 The manifest build resolves every file, records its size and credit, and lists headers that are too small or too wide: fix those and re-run. Commit the rebuilt `src/data/imageManifest.json`.
 
+**The build is incremental.** It keeps every entry already in the manifest and only looks up what is new or changed (a destination, spot or photo override added, changed or removed), so a normal run takes seconds. It records what decided each entry in `scripts/image-manifest.sigs.json`, which is committed with the manifest. It cannot see a Wikipedia article's own lead image changing under an unchanged entry, so run `npx tsx scripts/build-image-manifest.ts --full` (every lookup and URL check from scratch, about 30–40 minutes) now and then, roughly monthly; `--verify` re-checks every image URL without redoing the lookups.
+
 `HEADER_REVIEW_BACKLOG` in `scripts/destination-header-policy.ts` lists older destinations still waiting for a curated header. Never add a new destination to it; remove an entry once its header is curated.

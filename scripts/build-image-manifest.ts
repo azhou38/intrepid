@@ -3,7 +3,15 @@
 // Wikipedia's API on every launch.
 //
 // Run from the project root (needs network; tsx is fetched on demand, it isn't a project dependency):
-//   npx tsx scripts/build-image-manifest.ts
+//   npx tsx scripts/build-image-manifest.ts            incremental (default): only new or changed entries
+//   npx tsx scripts/build-image-manifest.ts --verify   incremental lookups, but re-check every image URL
+//   npx tsx scripts/build-image-manifest.ts --full     look up and verify everything from scratch
+//
+// Incremental: an entry already in the manifest is kept as it is unless what decides its photo changed — a
+// hand-picked override added, changed or removed (tracked in scripts/image-manifest.sigs.json) — or it had no
+// photo last time. Only the rest go to Wikimedia, so a normal rebuild takes seconds, not the ~30 minutes of a
+// full one. The one thing it cannot see is a Wikipedia article's own lead image changing underneath an
+// unchanged entry; run --full now and then (monthly is plenty) to pick that up.
 //
 // Resolution deliberately mirrors utils/photoCache.ts's fetchWikiThumbnail — hand-picked override
 // first, then exact article title, then full-text search — so the manifest picks the same photo the
@@ -15,7 +23,7 @@
 // sequential with a minimum gap and Retry-After honoured, and a batch that still fails after retries
 // aborts the run — a failed request is never recorded as "this place has no photo".
 
-import { writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { resolve as resolvePath } from 'node:path';
 import { DESTINATIONS } from '../src/data/destinations';
 import { SPOTS, spotPhotoTitle } from '../src/data/spots';
@@ -178,9 +186,46 @@ async function main() {
   }
 
   const overrides = WIKI_IMAGE_OVERRIDES as Record<string, string>;
+  const full = process.argv.includes('--full');
+  const verifyAll = full || process.argv.includes('--verify');
   const keys = [...lookups.keys()].sort();
-  const titles = [...new Set([...lookups.values()].map(l => l.title))];
-  console.log(`${keys.length} lookups over ${titles.length} distinct titles.`);
+  // Hand-picked Commons files (destination.whyVisitPhotos), keyed "File:<name>" — these name an exact file
+  // rather than an article, so they skip the override/exact/search steps entirely.
+  const whyFiles = [...new Set(DESTINATIONS.flatMap(d => d.whyVisitPhotos ?? []))].filter(Boolean);   // "" = no photo yet
+  for (const f of whyFiles) keys.push('File:' + f);
+
+  // What decides each key's photo: an override file, a named file, or the article's default lead image.
+  const sigOf = (key: string): string => {
+    if (key.startsWith('File:')) return 'f';
+    const o = overrides[lookups.get(key)!.title];
+    return o ? `o:${o}` : 'd';
+  };
+  const OUT = process.env.MANIFEST_OUT ?? resolvePath(process.cwd(), 'src/data/imageManifest.json');
+  const SIGS = resolvePath(process.cwd(), 'scripts/image-manifest.sigs.json');
+  const read = (path: string): any => { try { return existsSync(path) ? JSON.parse(readFileSync(path, 'utf8')) : null; } catch { return null; } };
+  const old = full ? null : read(OUT);
+  const oldEntries: Record<string, ManifestEntry> = old?.entries ?? {};
+  const oldSigs: Record<string, string> = full ? {} : (read(SIGS) ?? {});
+  const stepsSame = !old || JSON.stringify(old.steps) === JSON.stringify(THUMB_STEPS);
+  // The Commons file an existing entry points at, from its credit page ("…/wiki/File:Name.jpg").
+  const fileOf = (e: ManifestEntry) => {
+    const m = e.credit?.page?.match(/\/wiki\/File:([^?#]+)/);
+    return m ? decodeURIComponent(m[1]).replace(/_/g, ' ') : undefined;
+  };
+  const reusable = (key: string): boolean => {
+    const e = oldEntries[key];
+    if (full || !stepsSame || !e) return false;
+    const sig = sigOf(key);
+    // Entries written before signatures were tracked: an overridden title is trusted only if its entry really
+    // points at the override file; anything else is assumed to be the default lead image (what it was).
+    const had = oldSigs[key] ?? (sig.startsWith('o:') ? (fileOf(e) === sig.slice(2).replace(/_/g, ' ') ? sig : undefined) : sig);
+    return had === sig;
+  };
+  const reused = new Set(keys.filter(reusable));
+  const todo = keys.filter(k => !reused.has(k));
+  const titles = [...new Set(todo.filter(k => !k.startsWith('File:')).map(k => lookups.get(k)!.title))];
+  console.log(`${keys.length} lookups: ${reused.size} reused from the manifest, ${todo.length} to look up`
+    + (full ? ' (--full)' : '') + '.');
 
   // A. Hand-picked overrides, one batched Commons query for all of them.
   const overrideTitles = titles.filter(t => overrides[t]);
@@ -207,7 +252,7 @@ async function main() {
   // C. Full-text search for what's still unresolved, one query per (title, context) the app actually makes.
   const hitFor = new Map<string, Hit>();                  // manifest key -> hit
   const needSearch: string[] = [];
-  for (const key of keys) {
+  for (const key of todo.filter(k => !k.startsWith('File:'))) {
     const { title } = lookups.get(key)!;
     const settled = byTitle.get(title);
     if (settled) hitFor.set(key, settled); else needSearch.push(key);
@@ -221,22 +266,23 @@ async function main() {
   }
   console.log(`C. search: ${needSearch.filter(k => hitFor.has(k)).length}/${needSearch.length} resolved`);
 
-  // C2. Hand-picked Commons files (destination.whyVisitPhotos), keyed "File:<name>" — these name an
-  // exact file rather than an article, so they skip the override/exact/search steps entirely.
-  const whyFiles = [...new Set(DESTINATIONS.flatMap(d => d.whyVisitPhotos ?? []))];
+  // C2. The why-visit files that still need resolving (see above).
+  const newWhy = whyFiles.filter(f => todo.includes('File:' + f));
   const whyPages = await queryPages(
     'commons.wikimedia.org', `prop=imageinfo&iiprop=url&iiurlwidth=${TEMPLATE_WIDTH}`,
-    whyFiles.map(f => 'File:' + f), BATCH);
-  for (const f of whyFiles) {
+    newWhy.map(f => 'File:' + f), BATCH);
+  for (const f of newWhy) {
     const key = 'File:' + f;
-    keys.push(key);
     const url = whyPages.get(key)?.imageinfo?.[0]?.thumburl;
     if (url) hitFor.set(key, { source: url, file: f });
   }
-  console.log(`C2. why-visit files: ${whyFiles.filter(f => hitFor.has('File:' + f)).length}/${whyFiles.length} resolved`);
+  console.log(`C2. why-visit files: ${newWhy.filter(f => hitFor.has('File:' + f)).length}/${newWhy.length} resolved`);
 
   // D. File metadata (size + credit) for every distinct photo picked, batched.
-  const files = [...new Set([...hitFor.values()].map(h => h.file))];
+  // Plus every destination's header file, so the header size/shape check below still covers all of them even
+  // when their entries were reused (the manifest keeps a width but not a height).
+  const headerFiles = DESTINATIONS.map(d => overrides[d.name]).filter(Boolean);
+  const files = [...new Set([...[...hitFor.values()].map(h => h.file), ...headerFiles])];
   const infos = await fileInfos(files);
   console.log(`D. file info: ${[...infos.values()].filter(Boolean).length}/${files.length} resolved`);
 
@@ -250,6 +296,7 @@ async function main() {
   const entries: Record<string, ManifestEntry> = {};
   const missing: string[] = [];                           // the API answered, and there is no usable photo
   for (const key of keys) {
+    if (reused.has(key)) { entries[key] = oldEntries[key]; continue; }
     const hit = hitFor.get(key);
     const info = hit ? infos.get(hit.file) : null;
     if (!hit || !info) { missing.push(key); continue; }
@@ -262,6 +309,7 @@ async function main() {
   const bad: string[] = [];
   const checks = new Map<string, string>();
   for (const [key, e] of Object.entries(entries)) {
+    if (!verifyAll && reused.has(key)) continue;          // verified when it was first written
     for (const w of [THUMB_STEPS[0], THUMB_STEPS[THUMB_STEPS.length - 1]]) checks.set(buildThumbUrl(e, w), key);
   }
   let v = 0;
@@ -281,10 +329,13 @@ async function main() {
   const sorted = Object.fromEntries(Object.entries(entries).sort(([a], [b]) => a.localeCompare(b)));
   writeFileSync(
     // MANIFEST_OUT lets a run write somewhere else (e.g. while another branch is checked out).
-    process.env.MANIFEST_OUT ?? resolvePath(process.cwd(), 'src/data/imageManifest.json'),
+    OUT,
     JSON.stringify({ generatedAt: new Date().toISOString(), steps: THUMB_STEPS, entries: sorted, missing: missing.sort() }, null, 1) + '\n',
   );
-  console.log(`\nDone in ${Math.round((Date.now() - started) / 1000)}s. Wrote ${Object.keys(entries).length} of ${keys.length} entries.`);
+  const sigs = Object.fromEntries(Object.keys(sorted).map(k => [k, sigOf(k)]));
+  writeFileSync(SIGS, JSON.stringify(sigs, null, 1) + '\n');
+  console.log(`\nDone in ${Math.round((Date.now() - started) / 1000)}s. Wrote ${Object.keys(entries).length} of ${keys.length} entries `
+    + `(${reused.size} reused, ${Object.keys(entries).length - reused.size} looked up).`);
   console.log(`No photo found for ${missing.length}:`, missing);
   console.log(`URLs that failed verification: ${bad.length}`, bad.slice(0, 20));
   if (headerProblems.length) {
