@@ -52,6 +52,21 @@ When unsure, leave it out. A tight, credible list beats an exhaustive one; it is
 - **Order each destination's spots by importance, not geography:** the unmissable headline attraction(s) first, then the best secondary stops, then (where relevant) food, culture and market stops.
 - **Where a spot goes:** under the destination visitors reach it from *and* that actually surrounds it (within the destination's map span); otherwise it stands alone. If a destination's span would have to balloon to hold a spot, the spot is not part of that destination.
 
+## Finding what is missing (recall)
+
+Spot and destination lists written from memory miss obvious places: Red Rocks (Wellington), Kapiti Island and Lake Coleridge were all absent. Build and audit coverage from sources, then decide:
+
+1. **Enumerate candidates from sources, not memory:** Wikivoyage's See and Do listings for the region; Wikipedia's tourist-attraction and national-park categories; the Department of Conservation's (or local agency's) popular-places lists; OpenStreetMap attractions and viewpoints that carry a Wikipedia link; Wikipedia page views as the popularity signal.
+2. **For every destination ask "what would a guidebook list that we don't?"** Each gap is either proposed or rejected with a written reason. Silence is not allowed.
+3. **Decide where each candidate goes**, using the "Where a spot goes" rule above and:
+   - inside a destination's map span (about 75% of `defaultZoomSpanKm` from its centre) → a spot of that destination;
+   - not within any destination's span and reached on its own (an island, a remote lake, a roadside stop) → a standalone spot;
+   - several such places clustered around one base, enough to fill a visit → propose a new destination instead (Kapiti Island plus the Kāpiti Coast around it);
+   - otherwise → leave out, and say why.
+4. **Benchmark:** a coverage run is only trusted if it proposes Red Rocks as a Wellington spot, Kapiti Island as a standalone spot (or part of a new Kāpiti Coast destination) and Lake Coleridge as a standalone spot. If it does not, fix the process before running it unattended.
+
+Prefer recall at this step; the exclusion test in "What qualifies" is applied when deciding each candidate, not to discard the enumeration unseen.
+
 ## Ranking destinations (`rank`)
 
 Prominence tier; it decides what shows when space is limited (pin plans, Near You). Be honest — do not inflate.
@@ -89,6 +104,16 @@ Follow an existing entry in the same file (they are the reference); every field 
 - `goodToKnow` — exactly three practical tips that trip up first-timers (booking, weather, transport, etiquette, safety). Specific beats generic; no filler.
 - `bestMonths` (1–12) and `bestTimeBlurb` containing exactly one `{months}` placeholder — from travel-guide consensus, written for the destination's own hemisphere (southern-hemisphere summer is Dec–Feb).
 - `seasonalTags` — only where a real recurring pattern drives crowds (a ski season, a festival, a migration); omit otherwise. Hemisphere-relative tags flip automatically south of the equator; explicit-month tags do not.
+
+## Voice (descriptions, reasons, taglines and spot bios)
+
+Applies to `tagline`, `description`, `whyVisit`, `highlights`, `goodToKnow` and every spot `bio`.
+
+- **Facts from sources only.** Every claim traces to a source (Wikipedia, Wikivoyage, the operator or managing agency). Hours, prices and "best in the world" claims that cannot be sourced are cut, or flagged as approximate. Never invent.
+- **Concrete, not marketing.** Say what the place is, why people go and one distinctive fact. No filler ("stunning", "must-see"), no superlatives that cannot be backed.
+- **No repetition** within an entry (description, reasons, tips and tagline each say something different) or across entries (two destinations should not share near-identical phrasing).
+- **One sentence** for a `tagline` and a spot `bio`; a `description` is 3–4 sentences.
+- **Reasons match photos.** Choose the three `whyVisit` reasons, then find a photo for each; if no honest photo exists, rewrite the reason (see `IMAGES.md`).
 
 Write in the app's voice: plain, specific, enthusiastic without superlatives you cannot back up. No marketing filler, no unverifiable "best in the world" claims, no repetition between description, reasons and tips.
 

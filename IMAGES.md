@@ -12,6 +12,7 @@ There are three kinds of photo, each with its own rule:
 
 ## Every photo
 
+- **A current colour photograph.** Not archival, historical, black-and-white or sepia, however sharp: a 1913 view of the Government Gardens or a National Library glass-plate of Blue Lake is the wrong picture for a place visitors see today. The exception is a photo whose subject is itself the history (a spot about an old ship or a heritage museum), and even then a modern photo is preferred. Rotorua's Government Gardens and Blue Lake shipped with exactly this mistake.
 - **Real, ground-level, in focus, well lit.** A photograph of the place as a visitor sees it. Not a drawing, painting, engraving, lithograph, postcard scan, rendering or collage.
 - **Never** a map, satellite or orbital image, flag, logo, coat of arms, diagram, chart, floor plan, poster, signage, banknote, coin, icon or a heavily cropped detail.
 - **Never** a different place with a similar name. Check the file's page, not just its name.
@@ -43,6 +44,17 @@ Run all four on every photo: headers, why-visit photos and spot overrides alike.
    - Files in Commons categories such as "Maps of", "Satellite images of", "Drawings of" and "Lithographs of" often have photo-like file names, so judge the image, not the name.
    - If you cannot tell whether it is a photograph, it fails.
 
+### Automatic pre-filter
+
+Before anyone (or any model) looks at a candidate, reject it by metadata and pixels. This is cheap, so run it on **every** photo in the app, including each spot's default Wikipedia lead image, not only the ones someone hand-picked:
+
+- date taken before about 2000, or no date and an archive source (national libraries, museums, Library of Congress, "The Commons" uploads);
+- Commons categories such as "Historical images", "Black and white photographs", "Photographs by [archive]", "Maps of", "Drawings of";
+- low colour saturation (a black-and-white or sepia scan);
+- under the minimum size, outside the aspect range, or already used for another place in the app.
+
+What survives goes on to the four checks.
+
 Each of the three why-visit photos is checked on its own: a destination is not done until every one passes. When one bad photo turns up, **audit the rest of that destination and its neighbours**: bad picks come from the same batch and share the same mistake.
 
 ## Headers
@@ -66,6 +78,8 @@ One photo per reason, three per destination, in the same order as `whyVisit`.
 - Store the three Commons file names in `whyVisitPhotos`, in order.
 
 ## Spot photos
+
+Every spot photo in the app is checked, not only the ones given an override: the default (the lead photo of the spot's Wikipedia article) is accepted only if it passes the pre-filter above and the four checks. A default that fails gets an override in `WIKI_IMAGE_OVERRIDES`, keyed by `spotPhotoTitle` (the spot's `wiki` title, else its `name`).
 
 - **Default:** the lead photo of the spot's Wikipedia article, found by the spot's `name` (which is why spot names must match article titles; see `DESTINATIONS.md`). Most spots need nothing more.
 - **Override when the default is wrong:** the name is ambiguous or shared with another place (a common lake, park or street name), the article's lead image is a map, logo, plan, drawing, an interior when visitors come for the exterior, or the wrong attraction, or the article has no image. Add the spot's name to `WIKI_IMAGE_OVERRIDES` with a better file.
