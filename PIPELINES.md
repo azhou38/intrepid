@@ -7,7 +7,11 @@ Roles and order for improving destinations, spots, photos and copy in the backgr
 - every photo, the pre-filter, headers, why-visit and spot photos, the header workflow and manifest → `IMAGES.md`
 
 ## Shared conventions
-- **Unit of work:** one destination (or one country for the destination list). One branch and one pull request per batch; never merge without review.
+- **Unit of work:** one destination (or one country for the destination list).
+- **Batches of 5.** One branch and one pull request per batch of **5 destinations**, with **one commit per destination** so any single destination can be reverted on its own. Never merge: the agents only open pull requests.
+- **Pull request mechanics (verified by the cloud probe):** `git push` of a branch works; `gh pr create` does **not** (GitHub's GraphQL API is blocked in cloud sessions), so open the PR with the REST API: `gh api repos/azhou38/intrepid/pulls -f title=… -f head=<branch> -f base=main -f body=…`, then assign it to `azhou38` through the REST API so GitHub notifies the owner.
+- **Title and body:** the title names the destinations ("Wellington, Napier, Rotorua, …: photos and copy"); the body carries the evidence (sources, contact sheets, coverage table).
+- **Notify on completion:** send a push notification ("N destinations updated, PR ready") with the pull request link.
 - **One writer per file:** each agent writes only its own output file; a single merge step edits `src/data/*`. No shared scratch folders.
 - **Evidence on every PR:** sources for facts, before/after contact sheets for photos, an evidence table for coverage.
 - **Scripts do the objective checks:** `npx tsc --noEmit`, `scripts/check-destination-headers.ts`, `scripts/audit-spot-coordinates.ts`, `scripts/build-image-manifest.ts` (slow; its own job).
