@@ -59,6 +59,8 @@ async function wikiCoords(titles: string[]): Promise<Map<string, [number, number
 // Water test against the same data the map draws: Mapbox Streets' `water` layer (oceans, bays, lakes, rivers) via the
 // Tilequery API, using the app's public token from .env.local.
 const TOKEN = (() => {
+  // The environment (a cloud run) first; else the local .env.local.
+  if (process.env.EXPO_PUBLIC_MAPBOX_TOKEN) return process.env.EXPO_PUBLIC_MAPBOX_TOKEN;
   try { return readFileSync('.env.local', 'utf8').match(/EXPO_PUBLIC_MAPBOX_TOKEN=(\S+)/)?.[1] ?? ''; } catch { return ''; }
 })();
 async function inWater(lat: number, lon: number): Promise<string | null> {
