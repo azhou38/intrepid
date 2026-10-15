@@ -1391,7 +1391,7 @@ function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore, nearbyHlScrol
             <View style={[st.glanceIconCircle, { backgroundColor: GLANCE_PLACE.bg }]}>
               <MapPin size={20} color={GLANCE_PLACE.fg} />
             </View>
-            <Text style={st.glanceVal} numberOfLines={1}>{spotDestination(spot)?.name ?? spotCountry(spot) ?? ''}</Text>
+            <Text style={[st.glanceVal, { textAlign: 'center' }]} numberOfLines={2}>{spotDestination(spot)?.name ?? spotCountry(spot) ?? ''}</Text>
             <Text style={st.glanceLbl}>Location</Text>
           </View>
         </View>
@@ -1702,9 +1702,11 @@ const st = StyleSheet.create({
   // White box, gray border (the About boxes' '#D8DBE0'), black clock and ticket icons on a light gray
   // circle.
   // No box around the three facts — just the row, with a hairline divider between them.
-  glanceCard: { flexDirection: 'row' },
-  glanceItem: { flex: 1, alignItems: 'center', paddingVertical: 18, paddingHorizontal: 6, gap: 4 },
-  glanceDivider: { width: 1, backgroundColor: '#E5E7EB', marginVertical: 14 },
+  // Each fact is only as wide as its text (they were equal thirds of a box); the row spreads them edge to edge across the
+  // page margins, with a divider in each gap.
+  glanceCard: { flexDirection: 'row', justifyContent: 'space-between' },
+  glanceItem: { flexShrink: 1, alignItems: 'center', paddingVertical: 18, gap: 4 },
+  glanceDivider: { width: 1, backgroundColor: '#E5E7EB', marginVertical: 14, marginHorizontal: 4 },
   // Colour comes inline per fact (GLANCE_TIME / GLANCE_COST / GLANCE_PLACE).
   glanceIconCircle: { width: 44, height: 44, borderRadius: 22, alignItems: 'center', justifyContent: 'center', marginBottom: 4 },
   glanceVal: { fontSize: 16, fontWeight: '700', color: '#111827', lineHeight: 22 },
