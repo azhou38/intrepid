@@ -1702,11 +1702,10 @@ const st = StyleSheet.create({
   // White box, gray border (the About boxes' '#D8DBE0'), black clock and ticket icons on a light gray
   // circle.
   // No box around the three facts — just the row, with a hairline divider between them.
-  // Each fact is only as wide as its text (they were equal thirds of a box); the row spreads them edge to edge across the
-  // page margins, with a divider in each gap.
-  glanceCard: { flexDirection: 'row', justifyContent: 'space-between' },
-  glanceItem: { flexShrink: 1, alignItems: 'center', paddingVertical: 18, gap: 4 },
-  glanceDivider: { width: 1, backgroundColor: '#E5E7EB', marginVertical: 14, marginHorizontal: 4 },
+  // Three equal columns, each fact centred in its own, with a hairline divider between them.
+  glanceCard: { flexDirection: 'row' },
+  glanceItem: { flex: 1, alignItems: 'center', paddingVertical: 18, paddingHorizontal: 6, gap: 4 },
+  glanceDivider: { width: 1, backgroundColor: '#E5E7EB', marginVertical: 14 },
   // Colour comes inline per fact (GLANCE_TIME / GLANCE_COST / GLANCE_PLACE).
   glanceIconCircle: { width: 44, height: 44, borderRadius: 22, alignItems: 'center', justifyContent: 'center', marginBottom: 4 },
   glanceVal: { fontSize: 16, fontWeight: '700', color: '#111827', lineHeight: 22 },
