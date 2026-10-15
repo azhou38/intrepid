@@ -303,6 +303,15 @@ async function main() {
     entries[key] = { t: toTemplate(hit.source), o: info.o, ow: info.ow, credit: info.credit };
   }
 
+  // Photos that aren't on Commons (supplied by hand, stored in the repo) — see src/data/externalPhotos.json. They win
+  // over anything looked up, and are not reported as missing.
+  const external = read(resolvePath(process.cwd(), 'src/data/externalPhotos.json')) ?? {};
+  for (const [key, e] of Object.entries(external)) {
+    entries[key] = e as ManifestEntry;
+    const i = missing.indexOf(key);
+    if (i >= 0) missing.splice(i, 1);
+  }
+
   // Verify the URLs the app will actually build — the first and last width step (they share one path
   // pattern, so this catches a wrong template or a size the source can't supply).
   console.log('Verifying URLs…');
