@@ -248,4 +248,5 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Centre of New Zealand": "The Centre of New Zealand 02.jpg",
   "Cape Foulwind": "Cape Foulwind Lighthouse.jpg",
   "Weta Workshop": "The Weta Cave.jpg",
+  "Stony Batter Historic Reserve": "Callitriche stagnalis Scop. (AM AK309216-3).jpg",
 };
