@@ -1398,7 +1398,10 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     // sheets included — as it's swiped between half-screen and peek.
     const crumbFade = { duration: SHEET_SNAP_MS, easing: Easing.out(Easing.cubic) };
     crumbPeekSV.value = withTiming(peeking ? 1 : 0, crumbFade);
-    sheetCollapsedSV.value = withTiming(state === 'collapsed' ? 1 : 0, crumbFade);
+    // Half-screen and full-screen are both "the sheet names the selection", so this stays 1 across a swipe between
+    // them. Keyed to 'collapsed' alone it ramped 1→0→1 on every half↔full swipe, and any return-prompt value still
+    // above zero showed through the bar for the length of that ramp.
+    sheetCollapsedSV.value = withTiming(state !== 'peek' ? 1 : 0, crumbFade);
   }, []);
   // Bumped to imperatively drop whichever sheet is open down to its "peek" state — driven by
   // handleCameraChanged below, the moment the user starts panning/zooming the map.
