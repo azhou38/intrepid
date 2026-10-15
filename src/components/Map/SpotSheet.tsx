@@ -1367,7 +1367,7 @@ function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore, nearbyHlScrol
 
   return (
     <>
-      <View style={st.section}>
+      <View style={[st.section, { marginTop: -10 }]}>
         {/* Three at-a-glance facts, each icon on its own tinted circle: time needed (green), cost (orange) and where it is
             (purple) — the destination, or the country for a standalone spot. */}
         <View style={st.glanceCard}>
@@ -1670,7 +1670,7 @@ const st = StyleSheet.create({
             borderTopLeftRadius: 24, borderTopRightRadius: 24, marginTop: -24,
             borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: '#E5E7EB', zIndex: 1, overflow: 'hidden' },
   // No tab bar for a single tab: the same white round-topped edge, but only tall enough to be a cap, with no hairline.
-  tabBarCap: { height: 28, borderBottomWidth: 0 },
+  tabBarCap: { height: 24, borderBottomWidth: 0 },
   tabBtn: { flex: 1, paddingVertical: 15, alignItems: 'center' },
   tabDivider: { width: StyleSheet.hairlineWidth, marginVertical: 14, backgroundColor: '#E5E7EB' },
   tabBtnTxt: { fontSize: 15, fontWeight: '600', color: '#9CA3AF' },
