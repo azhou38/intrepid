@@ -1,0 +1,84 @@
+{
+ "destination": {
+  "id": "whanganui-national-park",
+  "name": "Whanganui National Park",
+  "country": "New Zealand",
+  "category": "park",
+  "coordinates": {
+   "latitude": -39.35,
+   "longitude": 175.04
+  },
+  "whyVisit": [
+   "Paddle the Whanganui Journey",
+   "The Bridge to Nowhere",
+   "River Road and Jerusalem"
+  ]
+ },
+ "only_slots_with_flags_need_work": true,
+ "slots": [
+  {
+   "slot": "header",
+   "key": "Whanganui National Park",
+   "current": "Pipiriki with Whanganui River - panoramio - Duane Wilkins (1).jpg",
+   "flags": [
+    "also used for Pipiriki"
+   ]
+  },
+  {
+   "slot": "why-1",
+   "reason": "Paddle the Whanganui Journey",
+   "current": "Whanganui Journey.jpg",
+   "flags": []
+  },
+  {
+   "slot": "why-2",
+   "reason": "The Bridge to Nowhere",
+   "current": "Bridge to Nowhere (25430934253).jpg",
+   "flags": []
+  },
+  {
+   "slot": "why-3",
+   "reason": "River Road and Jerusalem",
+   "current": "Along the River Road by Jacqui McGowan.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:whanganui-1",
+   "spot": "Whanganui Journey",
+   "bio": "A 145 km canoe journey from Taumarunui to Pipiriki, one of New Zealand's Great Walks, usually paddled over five days.",
+   "key": "Whanganui Journey",
+   "override": "Whanganui Journey.jpg",
+   "current": "Whanganui Journey.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:whanganui-2",
+   "spot": "Bridge to Nowhere",
+   "bio": "A concrete bridge deep in the bush, built for a settlement that was later abandoned, reached by jet boat or canoe.",
+   "key": "Bridge to Nowhere",
+   "override": "Bridge to Nowhere (25430934253).jpg",
+   "current": "Bridge to Nowhere (25430934253).jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:whanganui-national-park-1",
+   "spot": "Pipiriki",
+   "bio": "A riverside hamlet 79 km up the Whanganui River, where the Whanganui Journey ends and the scenic River Road from Whanganui arrives.",
+   "key": "Pipiriki",
+   "override": "Pipiriki with Whanganui River - panoramio - Duane Wilkins (1).jpg",
+   "current": "Pipiriki with Whanganui River - panoramio - Duane Wilkins (1).jpg",
+   "flags": [
+    "also used for Whanganui National Park"
+   ]
+  },
+  {
+   "slot": "spot:whanganui-national-park-2",
+   "spot": "Jerusalem",
+   "bio": "A small riverside settlement where Suzanne Aubert founded the Sisters of Compassion in 1892, with a mission church and convent.",
+   "key": "Jerusalem, New Zealand",
+   "override": "Church at jerusalem.jpg",
+   "current": "Church at jerusalem.jpg",
+   "flags": []
+  }
+ ]
+}

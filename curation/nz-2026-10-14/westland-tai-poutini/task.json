@@ -1,0 +1,100 @@
+{
+ "destination": {
+  "id": "westland-tai-poutini",
+  "name": "Westland Tai Poutini National Park",
+  "country": "New Zealand",
+  "category": "park",
+  "coordinates": {
+   "latitude": -43.38,
+   "longitude": 170.1
+  },
+  "whyVisit": [
+   "Heli-hike on a glacier",
+   "Glaciers in the rainforest",
+   "Mirror views at Lake Matheson"
+  ]
+ },
+ "only_slots_with_flags_need_work": true,
+ "slots": [
+  {
+   "slot": "header",
+   "key": "Westland Tai Poutini National Park",
+   "current": "Franz josef Glacier LC0250.jpg",
+   "flags": [
+    "also used for Franz Josef Glacier"
+   ]
+  },
+  {
+   "slot": "why-1",
+   "reason": "Heli-hike on a glacier",
+   "current": "FGG Fox-glacier-heli-hike-group-helicopter 01.jpg",
+   "flags": []
+  },
+  {
+   "slot": "why-2",
+   "reason": "Glaciers in the rainforest",
+   "current": "Franz Josef Glacier 14.jpg",
+   "flags": []
+  },
+  {
+   "slot": "why-3",
+   "reason": "Mirror views at Lake Matheson",
+   "current": "Lake Matheson reflection of Mount Tasman and Aoraki Mount Cook.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:westland-tai-poutini-1",
+   "spot": "Franz Josef Glacier",
+   "bio": "A glacier tumbling from the Southern Alps into rainforest — walk the valley to its viewpoint or heli-hike onto the ice.",
+   "key": "Franz Josef Glacier",
+   "current": "Franz josef Glacier LC0250.jpg",
+   "flags": [
+    "also used for Westland Tai Poutini National Park"
+   ]
+  },
+  {
+   "slot": "spot:westland-tai-poutini-2",
+   "spot": "Fox Glacier",
+   "bio": "Franz Josef's twin, a 12 km river of ice whose valley walk shows how fast the glacier has retreated.",
+   "key": "Fox Glacier",
+   "current": "Fox-Gletscher1.jpg",
+   "flags": [
+    "600px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:westland-tai-poutini-3",
+   "spot": "Lake Matheson",
+   "bio": "A dark, still lake that mirrors Aoraki / Mount Cook and Mount Tasman on calm mornings.",
+   "key": "Lake Matheson",
+   "current": "Lake Matheson reflection of Mount Tasman and Aoraki Mount Cook.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:westland-tai-poutini-4",
+   "spot": "Glacier Hot Pools",
+   "bio": "Hot pools set in the rainforest at the edge of the village, fed by glacier water.",
+   "key": "Glacier Hot Pools",
+   "current": "Sloquet Hotsprings.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:westland-tai-poutini-5",
+   "spot": "West Coast Wildlife Centre",
+   "bio": "A hatchery raising rowi and Haast tokoeka — the world's rarest kiwi — with a nocturnal viewing house.",
+   "key": "West Coast Wildlife Centre",
+   "current": "West Coast Wildlife Centre MRD.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:westland-tai-poutini-6",
+   "spot": "Okarito",
+   "bio": "A tiny coastal hamlet on New Zealand's largest unmodified wetland, for kayaking, birdwatching and kiwi tours.",
+   "key": "Okarito",
+   "current": "Okarito kiwi 2.jpg",
+   "flags": [
+    "523px wide, minimum 960 for a spot"
+   ]
+  }
+ ]
+}

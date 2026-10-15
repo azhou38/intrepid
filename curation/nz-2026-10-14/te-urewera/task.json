@@ -1,0 +1,77 @@
+{
+ "destination": {
+  "id": "te-urewera",
+  "name": "Te Urewera",
+  "country": "New Zealand",
+  "category": "park",
+  "coordinates": {
+   "latitude": -38.75,
+   "longitude": 177.15
+  },
+  "whyVisit": [
+   "Great Walk round Lake Waikaremoana",
+   "Aniwaniwa Falls",
+   "Remote native forest"
+  ]
+ },
+ "only_slots_with_flags_need_work": true,
+ "slots": [
+  {
+   "slot": "header",
+   "key": "Te Urewera",
+   "current": "Lake Waikaremoana 01.jpg",
+   "flags": []
+  },
+  {
+   "slot": "why-1",
+   "reason": "Great Walk round Lake Waikaremoana",
+   "current": "New Zealand, Great Walk Lake Waikaremoana (4).JPG",
+   "flags": []
+  },
+  {
+   "slot": "why-2",
+   "reason": "Aniwaniwa Falls",
+   "current": "Te Tangi O Hinerau Falls, Lake Waikaremoana (21422291498).jpg",
+   "flags": [
+    "category: Photographs by National Library NZ on The Commons; Photographs in the National Library of New Zealand",
+    "black-and-white? (saturation 0.00)"
+   ]
+  },
+  {
+   "slot": "why-3",
+   "reason": "Remote native forest",
+   "current": "Up Dam Track looking North2.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:te-urewera-1",
+   "spot": "Lake Waikaremoana",
+   "bio": "A large lake ringed by forest and mountains, with a multi-day Great Walk around its shore.",
+   "key": "Lake Waikaremoana",
+   "current": "New Zealand, Great Walk Lake Waikaremoana (1).JPG",
+   "flags": [
+    "also used for Lake Waikareiti"
+   ]
+  },
+  {
+   "slot": "spot:te-urewera-2",
+   "spot": "Aniwaniwa Falls",
+   "bio": "A series of cascades in the forest, reached by a short walk from the lake's visitor centre.",
+   "key": "Aniwaniwa Falls",
+   "current": "Aniwaniwa 1.JPG",
+   "flags": [
+    "640px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:te-urewera-3",
+   "spot": "Lake Waikareiti",
+   "bio": "A forested lake with an island in a lake, reached by a bush walk, with a hut and kayaking.",
+   "key": "Lake Waikareiti",
+   "current": "New Zealand, Great Walk Lake Waikaremoana (1).JPG",
+   "flags": [
+    "also used for Lake Waikaremoana"
+   ]
+  }
+ ]
+}

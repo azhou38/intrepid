@@ -1,0 +1,28 @@
+{
+ "why-1": {
+  "candidates": [
+   {"file":"Green Glow Caves in New Zealand (6563152219).jpg","right_place":false,"shows_named_thing":false,"spectacular_wide":true,"real_photograph":true,"verdict":"reject","reason":"Striking glowworm ceiling photo, but Flickr description says it was taken at Green Glow eco-adventures (a separate operator/cave), not the Waitomo Glowworm Cave boat ride; no boat. Commons category is the only link to the Glowworm Caves."},
+   {"file":"NZL-waitomo-cave-exit.jpg","right_place":true,"shows_named_thing":false,"spectacular_wide":false,"real_photograph":true,"verdict":"reject","reason":"Real photo of the cave exit/landing, but it is a muddy waterway with railings and a sign, no boat or glowworms; flat and unspectacular."},
+   {"file":"'Cathedral' in Waitomo Cave.jpg","right_place":true,"shows_named_thing":false,"spectacular_wide":false,"real_photograph":true,"verdict":"reject","reason":"Genuine Waitomo Glowworm Caves photo (2007, category confirmed) but shows the dry Cathedral chamber on foot, not the boat/glowworm experience; low-angle, yellow-cast, floor fills the bottom."},
+   {"file":"Waitomo Caves - panoramio.jpg","right_place":true,"shows_named_thing":false,"spectacular_wide":false,"real_photograph":true,"verdict":"reject","reason":"Murky yellow cave passage, no glowworms or boat; not evocative."}
+  ],
+  "choice": "none: no candidate shows the boat/glowworm ride (Green Glow photo is the right look but a different cave); current is a 1960s/70s scan, which fails the pre-filter"
+ },
+ "spot:waitomo-1": {
+  "candidates": [
+   {"file":"Green Glow Caves in New Zealand (6563152219).jpg","right_place":false,"shows_named_thing":false,"spectacular_wide":true,"real_photograph":true,"verdict":"reject","reason":"Taken at Green Glow eco-adventures, a different cave/operator, not the Waitomo Glowworm Caves themselves."},
+   {"file":"NZL-waitomo-cave-exit.jpg","right_place":true,"shows_named_thing":true,"spectacular_wide":false,"real_photograph":true,"verdict":"reject","reason":"Real cave exit with landing; recognisable as a cave mouth over water but cluttered with railings/sign and drab; weaker than the Cathedral."},
+   {"file":"'Cathedral' in Waitomo Cave.jpg","right_place":true,"shows_named_thing":true,"spectacular_wide":true,"real_photograph":true,"verdict":"accept","reason":"2007 colour photo of the Cathedral chamber inside Waitomo Glowworm Caves (category and description confirm); clear, recognisable formations, 2272px wide. No glowworms visible, but acceptable for a spot."},
+   {"file":"Waitomo Caves - panoramio.jpg","right_place":true,"shows_named_thing":true,"spectacular_wide":false,"real_photograph":true,"verdict":"reject","reason":"Murky, yellow, unclear passage; not clearly recognisable."},
+   {"file":"Limestone cave walls in Waitomo Glowworm Cave.jpg","right_place":true,"shows_named_thing":false,"spectacular_wide":false,"real_photograph":true,"verdict":"reject","reason":"Close-up detail of rock surfaces in a dark portrait frame; not recognisable as the caves."}
+  ],
+  "choice": "'Cathedral' in Waitomo Cave.jpg"
+ },
+ "spot:waitomo-5": {
+  "candidates": [
+   {"file":"Bottom rock arch of Mangapohue Natural Bridge over Mangapohue Stream.jpg","right_place":true,"shows_named_thing":true,"spectacular_wide":true,"real_photograph":true,"verdict":"accept","reason":"2012 photo, category Mangapohue Natural Bridge, coords match (-38.260, 174.900). Shows the arch spanning the stream with bush beyond; 3264px wide, clearly recognisable (dark but readable portrait)."},
+   {"file":"Inside Mangapohue Natural Bridge rock arch.jpg","right_place":true,"shows_named_thing":true,"spectacular_wide":false,"real_photograph":true,"verdict":"accept","reason":"Genuine photo of the arch from the boardwalk, 1620px wide; recognisable but cluttered with stairs and railings and strong backlight, so second choice."}
+  ],
+  "choice": "Bottom rock arch of Mangapohue Natural Bridge over Mangapohue Stream.jpg"
+ }
+}

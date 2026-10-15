@@ -72,7 +72,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Oamaru": "Habour St Oamaru NZ. (52101976304).jpg",
   "The Catlins": "Catlins Coast, South Island - 8604763257.jpg",
   "Stewart Island": "Stewart Island Ringaringa Beach and Native Island.jpg",
-  "Westland Tai Poutini National Park": "Franz josef Glacier LC0250.jpg",
+  "Westland Tai Poutini National Park": "Westland landscapes feat. Fox Glacier - Te Moeka o Tuawe - WestlandLandscapes10042.jpg",
   "Hokitika": "Hokitika River in Hokitika, West Coast, New Zealand.jpg",
   "Paparoa National Park": "Pancake Rocks in winter.jpg",
   "Greymouth": "Greymouth town.jpg",
@@ -234,4 +234,5 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Pipiriki": "Pipiriki with Whanganui River - panoramio - Duane Wilkins (1).jpg",
   "Jerusalem, New Zealand": "Church at jerusalem.jpg",
   "PS Waimarie": "Waimarie paddle steamer on Whanganui River, Whanganui.jpg",
+  "Fox Glacier": "Fox Glacier in Westland National Park 07.jpg",
 };
