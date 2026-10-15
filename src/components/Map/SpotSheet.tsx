@@ -1575,7 +1575,7 @@ const st = StyleSheet.create({
   cardTimeRow: { flexDirection: 'row', alignItems: 'center', gap: 4, flexShrink: 0 },
   cardTimeTxt: { fontSize: 12.5, fontWeight: '700', color: 'white', textShadowColor: 'rgba(0,0,0,0.5)', textShadowRadius: 3, textShadowOffset: { width: 0, height: 1 } },
   cardStatDivider: { width: 1, height: 12, marginHorizontal: 2, backgroundColor: 'rgba(255,255,255,0.7)' },
-  cardBio:     { fontSize: 12.5, color: 'rgba(255,255,255,0.92)', lineHeight: 16, textShadowColor: 'rgba(0,0,0,0.5)', textShadowRadius: 3, textShadowOffset: { width: 0, height: 1 } },
+  cardBio:     { fontSize: 12.5, fontWeight: '500', color: 'rgba(255,255,255,0.92)', lineHeight: 16, textShadowColor: 'rgba(0,0,0,0.5)', textShadowRadius: 3, textShadowOffset: { width: 0, height: 1 } },
   // Sits below the carousel (a sibling of the ScrollView, not any one card) — sandwiched
   // between the active card's bottom edge and the tab bar underneath. marginTop:'auto'
   // pins it to the bottom of the now fixed-height carouselWrap even when the card content
