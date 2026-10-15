@@ -48,3 +48,10 @@ Benchmark: Clyde, Hamilton, Blue Lake, the 1913 Government Gardens and the archi
 
 ## Build order
 Pipeline B first (most objective checks), then A, then C.
+
+## What is implemented
+- **Scripts (deterministic):** `scripts/photo-prefilter.ts` (Pipeline B step 1 and the technical check; hard fails plus colour "review" flags, cached per file in `scripts/prefilter-cache.json`) and `scripts/curation-backlog.ts` (weakest-first ranking and the next batch of 5). Existing: `check-destination-headers.ts`, `audit-spot-coordinates.ts`, `build-image-manifest.ts`.
+- **Roles:** one subagent per role in `.claude/agents/` (`image-searcher`, `image-judge`, `coverage-enumerator`, `coverage-recall-checker`, `coverage-proposer`, `coverage-skeptic`, `spot-researcher`, `copy-writer`, `fact-checker`, `copy-editor`, `reconciler`). They point at the guides and add no rules of their own.
+- **Orchestration:** one prompt per pipeline in `.claude/routines/` (`b-imagery.md`, `a-coverage.md`, `c-writing.md`). A cloud routine's prompt is just "follow `.claude/routines/<file>`", so changing a pipeline is a normal pull request.
+- **Pre-filter findings are inputs, not verdicts.** A hard fail is objective (an archive date, a map or flag category, too small, one photo used for two places); a few can be false positives (a flags category on a Times Square photo), so the judges look at them. "Review" flags are colour heuristics that a sunset can trip.
+
