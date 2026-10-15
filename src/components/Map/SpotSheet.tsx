@@ -97,6 +97,9 @@ const SIDE_PAD  = (W - CARD_W) / 2;
 const NEARBY_GRID_GAP = 14;
 const NEARBY_CARD_W = (W - 32 - NEARBY_GRID_GAP) / 2;
 
+// Gap between the bottom of the card and its overlaid text.
+const CARD_INFO_BOTTOM = 12;
+
 // Offsets (px) of the dark copies that outline a card title — eight directions at about 1 px.
 const OUTLINE_OFFSETS: [number, number][] = [[-1, 0], [1, 0], [0, -1], [0, 1], [-0.8, -0.8], [0.8, -0.8], [-0.8, 0.8], [0.8, 0.8]];
 
@@ -133,6 +136,11 @@ function CarouselCard({ spot, isActive, onPress, onAddVisit, gradId }: {
     thumbWasCachedRef.current = false;
     getOrFetchWikiThumbnail(cacheKey, thumbCache, spotPhotoTitle(spot), 960).then(u => { if (u) setThumb(u); });
   }, [spot.id]);
+
+  // The black scrim is as tall as the text block it sits behind — its measured height (nameH, the whole overlay: name,
+  // time/cost and description), the overlay's bottom inset, and a short fade above the first line — so a card with a
+  // short description gets a short scrim and one with a long description a tall one.
+  const scrimH = nameH + CARD_INFO_BOTTOM + 28;
 
   const isVisited  = useVisitIndex().isSpotVisited(spot.id);
 
@@ -174,9 +182,9 @@ function CarouselCard({ spot, isActive, onPress, onAddVisit, gradId }: {
           )}
           {/* Bottom overlay: name, time/cost and the description, layered over the photo (which fills the whole card)
               on a black scrim that fades up from the bottom so the white text stays legible over any photo. */}
-          <View pointerEvents="none" style={[st.cardImageGradWrap, { height: Math.max(80, nameH + 10 + 56) }]}>
+          <View pointerEvents="none" style={[st.cardImageGradWrap, { height: scrimH }]}>
             {/* keyed by its height: react-native-svg keeps its first size when the wrapper later grows */}
-            <Svg key={Math.max(80, nameH + 10 + 56)} style={StyleSheet.absoluteFill}>
+            <Svg key={scrimH} style={StyleSheet.absoluteFill}>
               <Defs>
                 <SvgLinearGradient id={`cardGrad-${gradId}`} x1="0" y1="0" x2="0" y2="1">
                   {GRADIENT_STOPS.map(({ offset, opacity }) => (
@@ -1564,7 +1572,7 @@ const st = StyleSheet.create({
   },
   cardAddVisitTagTxt: { fontSize: 12, fontWeight: '700', color: 'white' },
   // Bottom-left overlay on the image itself, sitting on the gradient (cardImageGradWrap).
-  cardImageInfo: { position: 'absolute', left: 14, right: 14, bottom: 12, gap: 5 },
+  cardImageInfo: { position: 'absolute', left: 14, right: 14, bottom: CARD_INFO_BOTTOM, gap: 5 },
   cardName:    { fontSize: 25, fontFamily: 'PlayfairDisplay_700Bold', color: 'white', lineHeight: 28,
                  letterSpacing: -0.3,
                  textShadowColor: 'rgba(0,0,0,0.3)', textShadowRadius: 4, textShadowOffset: { width: 0, height: 1 } },
