@@ -1624,7 +1624,7 @@ const st = StyleSheet.create({
   heroMeta: { flexDirection: 'row', alignItems: 'center', gap: 4 },
   heroMetaTxt: { fontSize: 14, color: 'rgba(255,255,255,0.90)', fontWeight: '500' },
   heroMetaDivider: { width: 1, height: 12, backgroundColor: 'rgba(255,255,255,0.40)', marginHorizontal: 8 },
-  heroBio: { fontSize: 13.5, lineHeight: 19, color: 'rgba(255,255,255,0.88)', marginTop: 10,
+  heroBio: { fontSize: 13.5, lineHeight: 19, fontWeight: '500', color: 'rgba(255,255,255,0.88)', marginTop: 10,
              textShadowColor: 'rgba(0,0,0,0.35)', textShadowRadius: 3, textShadowOffset: { width: 0, height: 1 } },
 
   // Tab bar
