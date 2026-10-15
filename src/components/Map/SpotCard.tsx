@@ -3,7 +3,8 @@ import { View, Text, StyleSheet, Pressable } from 'react-native';
 import { Check, Clock } from 'lucide-react-native';
 import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'react-native-svg';
 import FadeInImage from './FadeInImage';
-import { GRADIENT_STOPS, styles } from './DestinationCard';
+import { styles } from './DestinationCard';
+import { CARD_SCRIM_FADE, cardScrimStops } from './cardScrim';
 import { formatSpotCost, formatVisitTime, spotPhotoTitle, type Spot } from '../../data/spots';
 import { useVisitIndex } from '../../store';
 import { thumbCache, getOrFetchWikiThumbnail } from '../../utils/photoCache';
@@ -41,7 +42,9 @@ function SpotCard({ spot, onPress, width }: {
   }, [spot.id]);
 
   const [infoH, setInfoH] = useState(0);
-  const gradH = Math.max(110, infoH + 16 + 28);
+  // As tall as the name / time / cost block it sits behind (plus its 16 px bottom inset and a soft edge), so the name is on
+  // solid shading however many lines it wraps to — see cardScrim.
+  const gradH = infoH + 16 + CARD_SCRIM_FADE;
 
   return (
     // Shadow color reflects visited status — same green as the "Visited" tag itself when
@@ -72,7 +75,7 @@ function SpotCard({ spot, onPress, width }: {
             <Svg key={gradH} style={StyleSheet.absoluteFill}>
               <Defs>
                 <SvgLinearGradient id={`spotCardGrad-${spot.id}`} x1="0" y1="0" x2="0" y2="1">
-                  {GRADIENT_STOPS.map(({ offset, opacity }) => (
+                  {cardScrimStops(gradH).map(({ offset, opacity }) => (
                     <Stop key={offset} offset={offset} stopColor="#000" stopOpacity={opacity} />
                   ))}
                 </SvgLinearGradient>

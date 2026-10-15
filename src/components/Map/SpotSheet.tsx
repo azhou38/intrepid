@@ -28,6 +28,7 @@ import type { Spot } from '../../data/spots';
 import { DAY_NAMES, hoursForDay, formatSpotCost, formatVisitTime, getSpotOpenStatus, specialClosureOn, spotCountry, spotCountryCode, spotPhotoTitle, zonedNowForSpot } from '../../data/spots';
 import { photoCache, thumbCache, getOrFetchWikiThumbnail, HEADER_PX } from '../../utils/photoCache';
 import CircleFlag from '../CircleFlag';
+import { CARD_SCRIM_FADE, cardScrimStops } from './cardScrim';
 import FadeInImage from './FadeInImage';
 import SpotCard from './SpotCard';
 import { sheetPose } from './sheetPose';
@@ -96,21 +97,6 @@ const SIDE_PAD  = (W - CARD_W) / 2;
 // sheet's "Popular Spots" row (see DestinationSheet's own GRID_CARD_W), so the two carousels match exactly.
 const NEARBY_GRID_GAP = 14;
 const NEARBY_CARD_W = (W - 32 - NEARBY_GRID_GAP) / 2;
-
-// Height (px) of the soft edge above the text block, where the scrim fades in from clear.
-const CARD_SCRIM_FADE = 36;
-// The scrim's gradient for a given total height: a smooth fade from clear to ~60% black over the top CARD_SCRIM_FADE px,
-// then on to ~90% at the bottom — so the whole text block, title included, sits on solid shading, not just the last
-// lines. (The shared GRADIENT_STOPS fade across the whole height, which left the title on an almost clear patch.)
-function cardScrimStops(totalH: number): { offset: string; opacity: number }[] {
-  const f = Math.min(1, CARD_SCRIM_FADE / Math.max(totalH, 1));
-  const out = Array.from({ length: 7 }, (_, i) => {
-    const t = i / 6;
-    return { offset: `${(f * t).toFixed(3)}`, opacity: 0.6 * t * t * (3 - 2 * t) };
-  });
-  out.push({ offset: '1', opacity: 0.9 });
-  return out;
-}
 
 // Gap between the bottom of the card and its overlaid text.
 const CARD_INFO_BOTTOM = 12;
