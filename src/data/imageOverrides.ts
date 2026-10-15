@@ -252,4 +252,8 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Okarito": "Ōkārito Lagoon • Okarito Kayaks • MRD 05.jpg",
   "Otago Central Rail Trail": "Poolburn Viaduct - December 2025.jpg",
   "Hokianga Harbour": "Hokianga Harbour (panorama).jpg",
+  "Te Ana – The Caves": "Interior of Te Ana – The Caves.jpg",
+  "Kaikōura Museum": "Kaikoura. Museum 03.jpg",
+  "Point Kean": "NZ Fur Seal - 1231 2013 002 (14184250871).jpg",
+  "Nin's Bin": "Nin's Bin @ Kaikoura.jpg",
 };

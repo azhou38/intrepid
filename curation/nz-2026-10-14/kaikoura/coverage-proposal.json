@@ -1,0 +1,88 @@
+{
+ "destination": "kaikoura",
+ "sources_used": [
+  "https://en.wikivoyage.org/wiki/Kaikoura",
+  "https://en.wikipedia.org/wiki/Kaik%C5%8Dura",
+  "https://en.wikipedia.org/wiki/Kaik%C5%8Dura_Peninsula",
+  "https://en.wikipedia.org/wiki/%C5%8Chau_Point",
+  "https://en.wikipedia.org/wiki/Te_Ana_%E2%80%93_The_Caves",
+  "https://en.wikipedia.org/wiki/Nin%27s_Bin",
+  "https://en.wikipedia.org/wiki/Kaik%C5%8Dura_Canyon",
+  "https://en.wikipedia.org/w/api.php?action=query&list=geosearch (10 km around town) and list=search for Kaikoura",
+  "https://nominatim.openstreetmap.org (name lookups)",
+  "https://www.kaikoura.co.nz/ (official tourism site; see/do content is script-rendered, not usable)",
+  "https://www.doc.govt.nz/ (Kaikoura Peninsula Walkway page loads; DOC place-list pages not reachable, Overpass API timed out so OSM attractions were checked via Nominatim only)"
+ ],
+ "gaps": [
+  {"name": "Te Ana – The Caves", "wiki": "Te Ana – The Caves", "sources": ["https://en.wikipedia.org/wiki/Te_Ana_%E2%80%93_The_Caves"], "decision": "add", "reason": "Limestone cave open to tourists on SH1, 2 km south of town (formerly Maori Leap Cave, reopened late 2025). Has a Wikipedia article, car park and cafe; inside the span (2.2 km)."},
+  {"name": "Kaikōura Museum", "wiki": null, "sources": ["https://en.wikivoyage.org/wiki/Kaikoura"], "decision": "add", "reason": "Wikivoyage See listing: exhibitions on the 2016 earthquake, natural and social history, in a crayfish-pot-shaped building on West End."},
+  {"name": "Point Kean", "wiki": null, "sources": ["https://en.wikivoyage.org/wiki/Kaikoura"], "decision": "add", "reason": "Wikivoyage See listing: viewpoint at the peninsula tip with a fur seal colony a short walk from the car park. Separate stop from the Peninsula Walkway (about 400 m from the existing walkway pin, reached by car without doing the walk); drop if a near-duplicate is judged too close."},
+  {"name": "Nin's Bin", "wiki": "Nin's Bin", "sources": ["https://en.wikipedia.org/wiki/Nin%27s_Bin", "https://en.wikivoyage.org/wiki/Kaikoura"], "decision": "add", "reason": "Quirky roadside icon: blue-and-white crayfish caravan on SH1 at Half Moon Bay, open since 1977, has a Wikipedia article and Wikivoyage listing, ~15 km north of town (inside span)."},
+  {"name": "Kaikōura Peninsula", "wiki": "Kaikōura Peninsula", "sources": ["https://en.wikipedia.org/wiki/Kaik%C5%8Dura_Peninsula"], "decision": "reject", "reason": "Duplicate of Kaikōura Peninsula Walkway / Point Kean, which are the places visitors go on it."},
+  {"name": "South Bay", "wiki": null, "sources": ["https://en.wikivoyage.org/wiki/Kaikoura"], "decision": "reject", "reason": "Only mentioned as the far end of the Peninsula Walkway; no source names it as a stop in its own right."},
+  {"name": "Kaikōura Canyon", "wiki": "Kaikōura Canyon", "sources": ["https://en.wikipedia.org/wiki/Kaik%C5%8Dura_Canyon"], "decision": "reject", "reason": "Submarine canyon 1 km+ offshore; not somewhere you stand. It is the reason for the whale-watch trip, already covered by the Whale Watch spot."},
+  {"name": "Hikurangi Marine Reserve", "wiki": "Hikurangi Marine Reserve", "sources": ["https://en.wikipedia.org/wiki/Hikurangi_Marine_Reserve"], "decision": "reject", "reason": "Offshore marine reserve with no visitor access point."},
+  {"name": "Hinau Track", "wiki": null, "sources": ["https://en.wikivoyage.org/wiki/Kaikoura"], "decision": "reject", "reason": "45-minute loop from the Mount Fyffe car park; folded into the Mount Fyffe spot rather than a separate pin."},
+  {"name": "Puhi Peaks Nature Reserve", "wiki": "Puhi Peaks", "sources": ["https://en.wikivoyage.org/wiki/Kaikoura"], "decision": "reject", "reason": "Private reserve reached only on guided multi-day operator walks; not a public stop."},
+  {"name": "Dolphin Encounter / Swim With Seals / Kaikoura Kayaks / Dive Kaikoura", "wiki": null, "sources": ["https://en.wikivoyage.org/wiki/Kaikoura"], "decision": "reject", "reason": "Operators, not places (COVERAGE.md 'A spot is a place'); the dolphins and seals are covered by the wildlife spots."},
+  {"name": "Takahanga Marae, Mayfair Theatre, Kaikōura Memorial Hall, Kowhai River, Lake Rotorua (Canterbury)", "wiki": null, "sources": ["https://en.wikipedia.org/w/api.php?action=query&list=geosearch&gscoord=-42.4008|173.6814"], "decision": "reject", "reason": "Appear in Wikipedia geosearch but no travel source names them as somewhere to go; local or private places."},
+  {"name": "Coastal Pacific train", "wiki": "Coastal Pacific", "sources": ["https://en.wikipedia.org/wiki/Coastal_Pacific"], "decision": "reject", "reason": "A vehicle; the place at the end is Kaikōura itself."},
+  {"name": "Ward Beach, Wharanui", "wiki": "Ward Beach", "sources": ["https://en.wikipedia.org/wiki/Ward_Beach"], "decision": "reject", "reason": "About 40 km+ north near Ward (Marlborough), outside the 30 km span; belongs to a Marlborough area, not Kaikōura."},
+  {"name": "Ōhau Stream waterfall walk", "wiki": null, "sources": [], "decision": "reject", "reason": "No source loaded that names it; the shoreline at the stream is closed to the public (Ōhau Point seal sanctuary), so it is left out."}
+ ],
+ "existing_fixes": [
+  {"spot_id": "kaikoura-1", "action": "replace", "to": "Judgement call, optional: Whale Watch Kaikōura is an operator, but the attraction is the open water over the Kaikōura Canyon with no landing place, so the ride is the attraction. Recommend KEEP as is (rename not needed). If the rule is applied strictly, replace with a spot named 'Kaikōura Canyon' (wiki 'Kaikōura Canyon') and keep ticketUrl https://whalewatch.co.nz in its bio/hours. Note whalewatch.co.nz redirects to /kia-ora/ and loads with title 'Whale Watch Kaikoura'.", "reason": "Audit flag: operator-named spot."},
+  {"spot_id": "kaikoura-4", "action": "replace", "to": "ticketUrl https://www.visitheritage.co.nz/visit/upper-south-island/fyffe-house", "reason": "Current ticketUrl is the generic Heritage NZ homepage; this page was loaded and its title is 'Heritage New Zealand - Visit Fyffe House | Kaikōura Attraction'. Wikivoyage also gives seasonal hours (Oct-Apr Wed-Mon 10-5, May-Sep Fri-Mon 10-4), differing from the current '10:00 AM – 4:00 PM'."},
+  {"spot_id": "kaikoura-2", "action": "replace", "to": "add ticketUrl https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/kaikoura-area/things-to-do/tracks/kaikoura-peninsula-walkway/", "reason": "Spot has no ticketUrl; DOC page loaded, title 'Kaikōura Peninsula Walkway: South Marlborough tracks and walks' (managing agency). Existing coordinates (-42.4210, 173.7130) are on the walkway about 400 m from Point Kean; fine."}
+ ],
+ "new_spots": [
+  {
+   "name": "Te Ana – The Caves", "wiki": null, "icon": "🕳️",
+   "coordinates": {"latitude": -42.4117, "longitude": 173.6585},
+   "coordinates_source": "Wikipedia article coordinates (2 km south of Kaikōura on SH 1); verify against the entrance with scripts/audit-spot-coordinates.ts",
+   "category": "nature",
+   "bio": "A roughly 91 m limestone sea cave beside State Highway 1, formerly Maori Leap Cave, with stalactites and stalagmites and reopened in late 2025 under its new name.",
+   "hours": "Daytime tours", "visitHoursMin": 0.5, "visitHoursMax": 1.5,
+   "free": null, "costMin": null, "costMax": null, "currency": null,
+   "ticketUrl": null, "ticketUrl_checked": "No official site found: Wikipedia lists none, the guessed domains did not resolve, and teana.co.nz is the unrelated Timaru rock-art centre. Left null.",
+   "photo": {"file": "Interior of Te Ana – The Caves.jpg", "page": "https://commons.wikimedia.org/wiki/File:Interior_of_Te_Ana_%E2%80%93_The_Caves.jpg", "width": 3636, "height": 2720, "looked_at": true},
+   "sources": ["https://en.wikipedia.org/wiki/Te_Ana_%E2%80%93_The_Caves"]
+  },
+  {
+   "name": "Kaikōura Museum", "wiki": null, "icon": "🏛️",
+   "coordinates": {"latitude": -42.4028, "longitude": 173.6826},
+   "coordinates_source": "OSM Nominatim museum node, 96 West End (Wikivoyage gives -42.4027, 173.6827)",
+   "category": "museum",
+   "bio": "A town museum on West End with exhibitions on the 2016 earthquake and the area's natural and social history, in a building shaped like a supplejack crayfish pot.",
+   "hours": "10:00 AM – 5:00 PM", "visitHoursMin": 0.5, "visitHoursMax": 1.5,
+   "free": null, "costMin": 12, "costMax": 12, "currency": "NZD",
+   "ticketUrl": "https://kaikoura-museum.co.nz/", "ticketUrl_checked": "Loaded; page title 'Kaikōura Museum' and exhibition headings name the place. URL is the one given on Wikivoyage. Hours and price are from Wikivoyage (2020) and approximate.",
+   "photo": {"file": "Kaikoura. Museum 03.jpg", "page": "https://commons.wikimedia.org/wiki/File:Kaikoura._Museum_03.jpg", "width": 4608, "height": 3456, "looked_at": true},
+   "sources": ["https://en.wikivoyage.org/wiki/Kaikoura", "https://kaikoura-museum.co.nz/"]
+  },
+  {
+   "name": "Point Kean", "wiki": null, "icon": "🦭",
+   "coordinates": {"latitude": -42.4232, "longitude": 173.7164},
+   "coordinates_source": "Wikivoyage 'Point Kean Viewpoint' listing, Fyffe Quay (OSM Nominatim cape node for Point Kean is -42.4212, 173.7237, the tip itself)",
+   "category": "viewpoint",
+   "bio": "A viewpoint at the tip of the Kaikōura Peninsula where fur seals bask on the rocks a short walk from the car park, and the start of the Peninsula Walkway.",
+   "hours": "Open 24 hours", "visitHoursMin": 0.5, "visitHoursMax": 1,
+   "free": true, "costMin": null, "costMax": null, "currency": null,
+   "ticketUrl": null, "ticketUrl_checked": "Open public viewpoint, no steward; none.",
+   "photo": {"file": "NZ Fur Seal - 1231 2013 002 (14184250871).jpg", "page": "https://commons.wikimedia.org/wiki/File:NZ_Fur_Seal_-_1231_2013_002_(14184250871).jpg", "width": 5184, "height": 3456, "looked_at": true},
+   "sources": ["https://en.wikivoyage.org/wiki/Kaikoura"]
+  },
+  {
+   "name": "Nin's Bin", "wiki": null, "icon": "🦞",
+   "coordinates": {"latitude": -42.2647, "longitude": 173.8076},
+   "coordinates_source": "Wikipedia article coordinates (Half Moon Bay, SH 1); Wikivoyage gives -42.2646, 173.8076, OSM Nominatim -42.2646, 173.8077",
+   "category": "landmark",
+   "bio": "A blue-and-white caravan beside State Highway 1 at Half Moon Bay selling crayfish, pāua and fish and chips since 1977, with the ocean in view.",
+   "hours": "10:00 AM – 3:00 PM (weather permitting)", "visitHoursMin": 0.5, "visitHoursMax": 1,
+   "free": null, "costMin": null, "costMax": null, "currency": null,
+   "ticketUrl": "https://www.ninsbin.co.nz/", "ticketUrl_checked": "Loaded; page title 'Crayfish | Nins Bin | Kaikōura' (URL from Wikivoyage listing). Hours are Wikivoyage (2020), approximate; Wikipedia notes it is often closed in bad weather.",
+   "photo": {"file": "Nin's Bin @ Kaikoura.jpg", "page": "https://commons.wikimedia.org/wiki/File:Nin%27s_Bin_@_Kaikoura.jpg", "width": 4288, "height": 2848, "looked_at": true},
+   "sources": ["https://en.wikipedia.org/wiki/Nin%27s_Bin", "https://en.wikivoyage.org/wiki/Kaikoura"]
+  }
+ ]
+}
