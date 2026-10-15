@@ -5,7 +5,7 @@ import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'reac
 import FadeInImage from './FadeInImage';
 import { styles } from './DestinationCard';
 import { CARD_SCRIM_FADE, cardScrimStops } from './cardScrim';
-import { heroFontSize } from './sheetShared';
+import { fitNameFontSize } from './sheetShared';
 import { formatSpotCost, formatVisitTime, spotPhotoTitle, type Spot } from '../../data/spots';
 import { useVisitIndex } from '../../store';
 import { thumbCache, getOrFetchWikiThumbnail } from '../../utils/photoCache';
@@ -42,9 +42,9 @@ function SpotCard({ spot, onPress, width }: {
     });
   }, [spot.id]);
 
-  // Full size while the name fits on two lines; once it is on track to need a third, the font steps down until it fits on
-  // two (down to 14), rather than the card filling with a tall title. Text width: the card minus its 10 px side insets and border.
-  const nameSize = heroFontSize(spot.name, [23, 20, 18, 16, 14], width - 23, 2);
+  // Full size while the name fits on two lines; once it is on track to need a third, the font shrinks just enough to fit on
+  // two (down to 11) with no word split across lines, rather than the card filling with a tall title. Text width: the card minus its 10 px side insets and border.
+  const nameSize = fitNameFontSize(spot.name, 23, 11, width - 23, 2);
 
   const [infoH, setInfoH] = useState(0);
   // As tall as the name / time / cost block it sits behind (plus its 16 px bottom inset and a soft edge), so the name is on
