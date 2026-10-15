@@ -20,13 +20,15 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { SharedValue } from 'react-native-reanimated';
 import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'react-native-svg';
 import { Check, Clock, CalendarClock, ChevronUp, ChevronDown, ChevronRight, LayoutGrid, Plus,
-         ExternalLink, Ticket, MapPin } from 'lucide-react-native';
+         ExternalLink, Ticket, MapPin, Image as ImageIcon } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
 import { useStore, useVisitIndex } from '../../store';
 import type { Destination, Visit } from '../../types';
 import type { Spot } from '../../data/spots';
 import { DAY_NAMES, hoursForDay, formatSpotCost, formatVisitTime, getSpotOpenStatus, specialClosureOn, spotCountry, spotCountryCode, spotDestination, spotPhotoTitle, zonedNowForSpot } from '../../data/spots';
 import { photoCache, thumbCache, getOrFetchWikiThumbnail, HEADER_PX } from '../../utils/photoCache';
+import { buildThumbUrl, type ManifestEntry } from '../../utils/imageUrl';
+import spotGalleries from '../../data/spotGalleries.json';
 import CircleFlag from '../CircleFlag';
 import { CARD_SCRIM_FADE, cardScrimStops } from './cardScrim';
 import { fitNameFontSize } from '../../utils/fitNameFontSize';
@@ -1343,6 +1345,41 @@ isVisited ? (
   );
 }
 
+// ── Photo gallery (a sliding row of extra photos on the About tab) ─────────────
+// Which spots have one, and how many photos each shows, is decided by scripts/build-spot-galleries.ts (0–10, by how many
+// good photos exist and how popular the spot is) into src/data/spotGalleries.json. A spot with no entry shows no gallery.
+const GALLERY_PHOTO_W = Math.min(W * 0.62, 260);
+const GALLERY_PHOTO_H = Math.round(GALLERY_PHOTO_W * 0.68);
+const GALLERY_GAP = 8;
+
+function SpotGallery({ spotId }: { spotId: string }) {
+  const photos = ((spotGalleries as unknown as Record<string, ManifestEntry[]>)[spotId] ?? []);
+  if (photos.length === 0) return null;
+  return (
+    <View style={st.section}>
+      {/* Bleeds to the screen edges (the content column pads 16), snaps to each photo, and uses the gesture-handler scroll
+          view like the carousel so it doesn't fight the sheet's own vertical drag. */}
+      <GHScrollView
+        horizontal showsHorizontalScrollIndicator={false}
+        snapToInterval={GALLERY_PHOTO_W + GALLERY_GAP} decelerationRate="fast"
+        style={st.galleryScroll} contentContainerStyle={st.galleryRow}
+      >
+        {photos.map((p, i) => (
+          <View key={p.o} style={st.galleryPhoto}>
+            <Image source={{ uri: buildThumbUrl(p, 960) }} style={StyleSheet.absoluteFill} resizeMode="cover" />
+            {i === 0 && (
+              <View style={st.galleryCount}>
+                <ImageIcon size={13} color="white" />
+                <Text style={st.galleryCountTxt}>{photos.length} {photos.length === 1 ? 'photo' : 'photos'}</Text>
+              </View>
+            )}
+          </View>
+        ))}
+      </GHScrollView>
+    </View>
+  );
+}
+
 // Icon colours for the three at-a-glance facts on the About tab: icon colour on a light tint of the same hue.
 const GLANCE_TIME  = { bg: '#DCFCE7', fg: '#16A34A' };
 const GLANCE_COST  = { bg: '#FFEDD5', fg: '#EA580C' };
@@ -1484,6 +1521,8 @@ function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore, nearbyHlScrol
           </Pressable>
         </View>
       )}
+
+      <SpotGallery spotId={spot.id} />
 
       {/* Nearby — same design as the destination sheet's "Popular Spots" row (square SpotCards,
           same width, same horizontal scroll): the destination's other spots, one tap away.
@@ -1745,6 +1784,14 @@ const st = StyleSheet.create({
   siteEyebrow: { fontSize: 11, fontWeight: '600', color: '#9CA3AF', letterSpacing: 0.6 },
   siteName: { fontSize: 16, fontWeight: '700', color: '#111827' },
   siteBtn: { width: 40, height: 40, borderRadius: 20, backgroundColor: '#DCFCE7', alignItems: 'center', justifyContent: 'center' },
+
+  // Photo gallery — a bleed-to-the-edge sliding row of rounded photos, the first carrying a "N photos" pill.
+  galleryScroll: { marginHorizontal: -16 },
+  galleryRow: { gap: GALLERY_GAP, paddingHorizontal: 16 },
+  galleryPhoto: { width: GALLERY_PHOTO_W, height: GALLERY_PHOTO_H, borderRadius: 16, overflow: 'hidden', backgroundColor: '#E5E7EB' },
+  galleryCount: { position: 'absolute', left: 10, bottom: 10, flexDirection: 'row', alignItems: 'center', gap: 5,
+                  backgroundColor: 'rgba(0,0,0,0.55)', borderRadius: 10, paddingHorizontal: 9, paddingVertical: 5 },
+  galleryCountTxt: { fontSize: 12, fontWeight: '700', color: 'white' },
 
   // "Explore nearby" — same header + horizontal-scroll pattern as the destination sheet's own
   // "Popular Spots" row (see DestinationSheet's plainSectionHeader/seeAllRow/hlScroll/hlRow).
