@@ -29,6 +29,7 @@ import { DAY_NAMES, hoursForDay, formatSpotCost, formatVisitTime, getSpotOpenSta
 import { photoCache, thumbCache, getOrFetchWikiThumbnail, HEADER_PX } from '../../utils/photoCache';
 import CircleFlag from '../CircleFlag';
 import { CARD_SCRIM_FADE, cardScrimStops } from './cardScrim';
+import { fitNameFontSize } from '../../utils/fitNameFontSize';
 import FadeInImage from './FadeInImage';
 import SpotCard from './SpotCard';
 import { sheetPose } from './sheetPose';
@@ -36,7 +37,7 @@ import EntityPhoto from './EntityPhoto';
 import {
   VisitCardList, VisitModuleSheet, PhotoGalleryModal,
   useDeferredMount,
-  AIContentNote, nameFontSize, heroFontSize, fitNameFontSize,
+  AIContentNote, nameFontSize, heroFontSize,
 } from './sheetShared';
 
 const { height: H, width: W } = Dimensions.get('window');

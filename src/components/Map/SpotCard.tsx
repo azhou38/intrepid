@@ -5,7 +5,7 @@ import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'reac
 import FadeInImage from './FadeInImage';
 import { styles } from './DestinationCard';
 import { CARD_SCRIM_FADE, cardScrimStops } from './cardScrim';
-import { fitNameFontSize } from './sheetShared';
+import { fitNameFontSize } from '../../utils/fitNameFontSize';
 import { formatSpotCost, formatVisitTime, spotPhotoTitle, type Spot } from '../../data/spots';
 import { useVisitIndex } from '../../store';
 import { thumbCache, getOrFetchWikiThumbnail } from '../../utils/photoCache';
