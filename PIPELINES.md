@@ -23,7 +23,8 @@ Roles and order for improving destinations, spots, photos and copy in the backgr
 3. **Proposer** — spot / standalone / new destination / leave out, by the placement rules.
 4. **Skeptic** — challenges additions that fail the rubric (overlap, no real draw). Does not default to "leave it out".
 5. **Verifier (script)** — names, ids, spans, coordinate audit.
-Benchmark: Red Rocks, Kapiti Island, Lake Coleridge.
+Benchmark: the full list in `COVERAGE.md` → "Finding what is missing" (Red Rocks, Kapiti Island, Lake Coleridge, Sumner Beach, Godley Head, Lyttelton, Birdlings Flat, Paradise, Hump Ridge Track, St Kilda Beach, Ohakune Carrot; Ninety Mile Beach standalone, not under Cape Reinga; Walter Peak High Country Farm in place of TSS Earnslaw).
+   - The skeptic must not hold back second-tier stops (a beach, headland or harbour town that one guide names); its job is to reject the rarely visited and the vehicle-as-spot.
 
 ## Pipeline B — imagery
 1. **Pre-filter (script)** — `IMAGES.md` → "Automatic pre-filter", over every photo in the app.

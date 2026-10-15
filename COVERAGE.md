@@ -7,7 +7,7 @@ Use this whenever you add a country, region, destination or spot, or are asked f
 ## The two levels
 
 - **Destination** — a place you travel *to* and base yourself around for a few hours to a few days: a city or town, a national park, a lake, an island, a stretch of coast, a wine region. It gets its own pin, sheet, ranking, climate and crowd data.
-- **Spot** — one thing you go *to see or do* within a destination: an attraction, viewpoint, trail, beach, museum, market, a notable cruise or tour. It gets a pin only once the camera is inside its destination.
+- **Spot** — one *place* you go to see or do something, within a destination: an attraction, viewpoint, trail, beach, museum, market, a landmark. It gets a pin only once the camera is inside its destination. A spot is a place, never a vehicle or an operator (see "A spot is a place" below).
 
 A spot belongs to **at most one** destination, and **can stand alone**:
 
@@ -26,12 +26,29 @@ Rule of thumb for a destination: a base with roughly **three or more** worthwhil
 - **No overlapping destinations.** A region and its sub-areas must not both be destinations (Marlborough vs Marlborough Sounds, or a wine region vs its main town): keep the one visitors plan around, and name the other by its town (Blenheim) if it is a separate base. Check a new destination's span against its neighbours'.
 - **Towns that don't make the cut are spots**, not omitted: a small town with a few services or a gallery strip (Takaka, Picton, Havelock, Te Anau) is a spot of the destination it serves, or standalone if it has none.
 
+### A spot is a place, not the way you get there
+
+A cruise, ferry, train, gondola or tour is how you reach a place, and the place is the spot. **TSS Earnslaw is not a spot: Walter Peak High Country Farm is**, and its bio says it is reached by the TSS Earnslaw steamship across Lake Wakatipu (the operator's page goes in `ticketUrl`, the sailing in the bio and hours). The same goes for a sound cruise (the sound), a boat to an island (the island), a water taxi to a sanctuary, a scenic flight (what it flies over).
+
+Keep the ride itself as a spot only when the ride *is* the attraction and there is no distinct place at the end worth naming: a heritage railway with no destination station, a funicular that goes up to nothing but its own café. If there is a named place at the top or the far end (a lookout, a farm, an island), that is the spot, and the vehicle is mentioned in its bio.
+
+### How far a spot reaches: its own place, not its neighbour's
+
+A spot goes under a destination only if visitors reach it *from that destination's base* and it lies *around that base*, not merely beside it on the map. Two common mistakes:
+
+- **A long linear feature belongs to where its visitors reach it.** A beach, river, trail or road that runs for tens of kilometres is placed at its main visitor access point, and it goes under a destination only if that point is inside the destination's span and the destination is where people base themselves for it. **Ninety Mile Beach is not part of Cape Reinga**: it is an 88 km beach reached from Ahipara, Kaitaia and Far North tours, and only its far northern end meets the Te Paki area. It is a standalone spot (or a spot of whichever base visitors use for it), with its coordinates at its main access point, not a spot of Cape Reinga because the two touch.
+- **A city's destination holds the city's own attractions.** When a coast, park or headland near a city has enough in it to be a trip of its own, it is its own destination, and its spots leave the city. **Many Whangārei spots are not Whangārei's**: Poor Knights Islands, Tutukaka and Mount Manaia belong with the Tutukaka Coast and Whangārei Heads, not with the city's Town Basin, falls and museums. Check each spot's distance and approach: if reaching it means leaving the city for a separate stretch of coast, it belongs to that stretch's destination.
+
 ## What qualifies
 
-**The test: would a Lonely Planet (or Rough Guide) chapter for the area give it its own entry or a highlighted mention?** Include what a typical independent traveller would actually plan around. Exclude what only locals use, however pleasant.
+**The test: would a traveller from elsewhere plausibly go, and does a source back it?** Include what a typical independent traveller would plan around *or add as a worthwhile stop*, not only the headline sights: a place qualifies when a guidebook (Lonely Planet, Rough Guide), Wikivoyage's See/Do list, the managing agency's popular-places list, or a regional tourism board names it as somewhere to go, and visitors really do go (it has a car park, signage, a Wikipedia article or a steady stream of visitors). One such source is enough; it does not have to be a top experience. Exclude what only locals use, and anything rarely visited, however pleasant.
+
+The bar is deliberately a little forgiving. Examples of New Zealand places that clear it and must be present: **Red Rocks** (Wellington), **Kapiti Island**, **Sumner Beach** and **Godley Head** (Christchurch), **Birdlings Flat**, **Lyttelton**, **Paradise** (near Glenorchy), **Hump Ridge Track**, **St Kilda Beach** (Dunedin), and quirky roadside icons such as the **Ohakune Carrot**. What does not clear it: an ordinary suburban park, a street with one café, a lookout no one outside the suburb has heard of.
 
 Include:
-- Places and attractions the major guidebooks feature, and the "top experiences" lists for the country or region.
+- Places and attractions the major guidebooks feature, and the "top experiences" lists for the country or region, **and the second tier**: the beaches, bays, headlands, walks, harbour towns and small villages that a guide recommends as a stop (Sumner, St Kilda, Godley Head, Lyttelton, Paradise, Birdlings Flat).
+- **Quirky landmarks and roadside icons** that travellers stop for and photograph (the Ohakune Carrot, giant sculptures, famous signposts): they are spots, with a short bio saying what they are.
+- Multi-day and day walks outside the Great Walks that a guide or DOC promotes (Hump Ridge Track), and island and wildlife sanctuaries (Kapiti Island).
 - Anywhere with its own accommodation base and tourism infrastructure (tours, visitor centre, transport links).
 - National parks and Great Walks/long trails, with their best day-sections as spots.
 - Natural features, viewpoints, beaches, wildlife encounters, museums, heritage sites, markets, wine/food regions that visitors travel for.
@@ -43,7 +60,7 @@ Leave out:
 - Anything you cannot confirm exists, is open to visitors, or has a stable name.
 - Near-duplicates: do not list a destination as a spot of itself, or the same attraction under two names.
 
-When unsure, leave it out. A tight, credible list beats an exhaustive one; it is easy to add a place later and awkward to defend an empty one.
+When unsure, look for one independent source naming it as somewhere to go: include it if there is one, leave it out if there is none. A credible list beats an exhaustive one, but an *incomplete* one is the bigger failure: missing Red Rocks, Sumner or Lyttelton makes the app look thin, whereas a modest extra stop costs little.
 
 ## Coverage — how many
 
@@ -63,7 +80,7 @@ Spot and destination lists written from memory miss obvious places: Red Rocks (W
    - not within any destination's span and reached on its own (an island, a remote lake, a roadside stop) → a standalone spot;
    - several such places clustered around one base, enough to fill a visit → propose a new destination instead (Kapiti Island plus the Kāpiti Coast around it);
    - otherwise → leave out, and say why.
-4. **Benchmark:** a coverage run is only trusted if it proposes Red Rocks as a Wellington spot, Kapiti Island as a standalone spot (or part of a new Kāpiti Coast destination) and Lake Coleridge as a standalone spot. If it does not, fix the process before running it unattended.
+4. **Benchmark:** a coverage run is only trusted if it proposes, at least, Red Rocks as a Wellington spot; Kapiti Island as a standalone spot (or part of a new Kāpiti Coast destination); Lake Coleridge as a standalone spot; Sumner Beach, Godley Head and Lyttelton as Christchurch spots; Birdlings Flat as a spot or standalone spot; Paradise as a Glenorchy-area spot; Hump Ridge Track; St Kilda Beach as a Dunedin spot; the Ohakune Carrot as a spot; and Ninety Mile Beach as its own standalone spot, *not* under Cape Reinga. It must also not propose TSS Earnslaw as a spot (Walter Peak High Country Farm instead). If it does not, fix the process before running it unattended.
 
 Prefer recall at this step; the exclusion test in "What qualifies" is applied when deciding each candidate, not to discard the enumeration unseen.
 
