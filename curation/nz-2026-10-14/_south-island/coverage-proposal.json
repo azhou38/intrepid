@@ -1,0 +1,1355 @@
+{
+ "country": "NZ",
+ "scope": "South Island and Stewart Island",
+ "sources_used": [
+  "https://en.wikivoyage.org (Tuatapere/Southland, Glenorchy, Haast, Twizel, Omarama, Methven, Reefton, Gore, Murchison, Waipara, Kingston)",
+  "https://en.wikipedia.org (spot articles; extracts and coordinates)",
+  "https://commons.wikimedia.org (photos, geotags, categories)",
+  "https://www.realnz.com/en/destinations/walter-peak-high-country-farm/",
+  "https://humpridgetrack.co.nz",
+  "https://bullergorge.co.nz",
+  "WebSearch summaries for Gore Hokonui hours"
+ ],
+ "new_destinations": [
+  {
+   "id": "tuatapere",
+   "name": "Tuatapere",
+   "coordinates": {
+    "latitude": -46.1333,
+    "longitude": 167.6833
+   },
+   "coordinates_source": "Wikipedia \"Tuatapere\" infobox",
+   "category": "city",
+   "defaultZoomSpanKm": 60,
+   "rank": 5,
+   "why": "Gateway town of the western Southland coast on the Southern Scenic Route (Wikipedia, Wikivoyage Southland), base for the Hump Ridge Track (a Great Walk since 2024) and the lakes and historic bridge around it. Roughly 123 km from Fiordland's centre, so outside Fiordland's 75% span (105 km); Hump Ridge and Clifden are already standalone spots. NOTE: Lake Monowai (about 95 km from Fiordland centre) is technically inside Fiordland's span but is reached from here, via Clifden.",
+   "absorbs_existing_spot_ids": [
+    "hump-ridge-track",
+    "clifden-suspension-bridge"
+   ],
+   "spots": [
+    {
+     "id": "tuatapere-1",
+     "name": "Lake Hauroko",
+     "icon": "🏞️",
+     "coordinates": {
+      "latitude": -45.99007,
+      "longitude": 167.381558
+     },
+     "coordinates_source": "Commons geotag of Lake-Hauroko-pier.jpg (jetty)",
+     "category": "nature",
+     "bio": "New Zealand's deepest lake at 462 m, reached by a gravel road from Tuatapere, set in a Fiordland valley with a jetty at the shore.",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 1,
+     "visitHoursMax": 3,
+     "free": true,
+     "photo": {
+      "file": "Lake-Hauroko-pier.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Lake-Hauroko-pier.jpg",
+      "width": 2791,
+      "height": 2068,
+      "license": "CC BY-SA 3.0",
+      "date": "2008-06-09",
+      "checks": "right place, shows named thing, current colour, free licence, >=960px, not in imageOverrides.ts; jetty and snow-capped ridge, 2008"
+     },
+     "sources": [
+      "https://en.wikipedia.org/wiki/Lake_Hauroko"
+     ],
+     "destinationId": "tuatapere"
+    },
+    {
+     "id": "tuatapere-2",
+     "name": "Te Waewae Bay",
+     "icon": "🌊",
+     "coordinates": {
+      "latitude": -46.228236,
+      "longitude": 167.66834
+     },
+     "coordinates_source": "Commons geotag of Pláž Te Waewae Bay, Pahia Hill - panoramio.jpg (beach lookout)",
+     "category": "beach",
+     "bio": "A 27 km bay on the Foveaux Strait coast, a marine mammal sanctuary where endemic Hector's dolphins and fur seals live, with the Pahia Hill lookout above the beach.",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 1,
+     "visitHoursMax": 2,
+     "free": true,
+     "photo": {
+      "file": "Pláž Te Waewae Bay, Pahia Hill - panoramio.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Pl%C3%A1%C5%BE_Te_Waewae_Bay,_Pahia_Hill_-_panoramio.jpg",
+      "width": 2592,
+      "height": 1944,
+      "license": "CC BY 3.0",
+      "date": "Taken on<s",
+      "checks": "right place, shows named thing, current colour, free licence, >=960px, not in imageOverrides.ts; long beach with Pahia Point behind, bay not a map"
+     },
+     "sources": [
+      "https://en.wikipedia.org/wiki/Te_Waewae_Bay"
+     ],
+     "destinationId": "tuatapere"
+    },
+    {
+     "id": "tuatapere-3",
+     "name": "Lake Monowai",
+     "icon": "🏞️",
+     "coordinates": {
+      "latitude": -45.86666667,
+      "longitude": 167.45
+     },
+     "coordinates_source": "Wikipedia \"Lake Monowai\" (rounded, lake centre; use the Lake Monowai campsite/road end when verifying)",
+     "category": "nature",
+     "bio": "A large U-shaped lake of 31 square kilometres in the south of Fiordland National Park, 120 km north-west of Invercargill, with mountain-backed shores.",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 1,
+     "visitHoursMax": 3,
+     "free": true,
+     "photo": {
+      "file": "Lake Monowai, New Zealand - September 2005.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Lake_Monowai,_New_Zealand_-_September_2005.jpg",
+      "width": 2272,
+      "height": 1704,
+      "license": "Public domain",
+      "date": "2005-09-21",
+      "checks": "right place, shows named thing, current colour, free licence, >=960px, not in imageOverrides.ts; mountain lake view; 2005 colour photo"
+     },
+     "sources": [
+      "https://en.wikipedia.org/wiki/Lake_Monowai"
+     ],
+     "destinationId": "tuatapere"
+    }
+   ]
+  },
+  {
+   "id": "glenorchy",
+   "name": "Glenorchy",
+   "coordinates": {
+    "latitude": -44.8503,
+    "longitude": 168.3883
+   },
+   "coordinates_source": "Wikipedia \"Glenorchy, New Zealand\"",
+   "category": "nature",
+   "defaultZoomSpanKm": 40,
+   "rank": 4,
+   "why": "Village at the head of Lake Wakatipu, about 45 km by road from Queenstown, with its own journey and base for the Routeburn, Greenstone-Caples and Rees-Dart tracks (Wikivoyage Glenorchy); Paradise, Diamond Lake and the Dart River valley around it give four or more spots. COVERAGE.md uses Glenorchy as a standalone spot, but with Paradise now qualifying as a spot of its own it clears the three-spot bar. Routeburn Track stays in Fiordland (fiordland-8). NOTE id collision: destination id 'glenorchy' = existing standalone spot id 'glenorchy', which must be removed (see existing_fixes); a visited flag on that spot would need migrating, or use destination id 'glenorchy-paradise' to avoid it.",
+   "absorbs_existing_spot_ids": [
+    "glenorchy"
+   ],
+   "spots": [
+    {
+     "id": "glenorchy-1",
+     "name": "Paradise",
+     "icon": "🌄",
+     "coordinates": {
+      "latitude": -44.7043,
+      "longitude": 168.3574
+     },
+     "coordinates_source": "Commons geotag of Paradise - Flickr - Kiwi Tom.jpg",
+     "category": "nature",
+     "bio": "A farming valley beside the Dart River at the head of Lake Wakatipu, used as a backdrop in several films, with Mount Earnslaw and the Forbes range on the horizon.",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 1,
+     "visitHoursMax": 2,
+     "free": true,
+     "photo": {
+      "file": "Paradise - Flickr - Kiwi Tom.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Paradise_-_Flickr_-_Kiwi_Tom.jpg",
+      "width": 1920,
+      "height": 1249,
+      "license": "CC BY 2.0",
+      "date": "Taken on<s",
+      "checks": "right place, shows named thing, current colour, free licence, >=960px, not in imageOverrides.ts; shows the Paradise flats; processed but a photograph (note: vivid contrast; swap if a calmer one is preferred; Brent Trolle files on Commons are paintings and were rejected)"
+     },
+     "sources": [
+      "https://en.wikipedia.org/wiki/Paradise,_New_Zealand"
+     ],
+     "destinationId": "glenorchy"
+    },
+    {
+     "id": "glenorchy-2",
+     "name": "Diamond Lake",
+     "icon": "🏞️",
+     "coordinates": {
+      "latitude": -44.73777778,
+      "longitude": 168.37444444
+     },
+     "coordinates_source": "Commons category \"Diamond Lake (Glenorchy, New Zealand)\" coordinates",
+     "category": "hike",
+     "bio": "A small lake and wetland with a short climb to a lookout over the Rees Valley, Dart flats and Paradise.",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 1,
+     "visitHoursMax": 3,
+     "free": true,
+     "photo": {
+      "file": "Paradise Paddock - panoramio (1).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Paradise_Paddock_-_panoramio_(1).jpg",
+      "width": 4887,
+      "height": 3237,
+      "license": "CC BY 3.0",
+      "date": "Taken on<s",
+      "checks": "right place, shows named thing, current colour, free licence, >=960px, not in imageOverrides.ts; view over Diamond Lake and Paradise from the lookout track"
+     },
+     "sources": [
+      "https://commons.wikimedia.org/wiki/Category:Diamond_Lake_(Glenorchy,_New_Zealand)"
+     ],
+     "destinationId": "glenorchy"
+    },
+    {
+     "id": "glenorchy-3",
+     "name": "Dart River / Te Awa Whakatipu",
+     "icon": "🏞️",
+     "coordinates": {
+      "latitude": -44.8468,
+      "longitude": 168.3648
+     },
+     "coordinates_source": "Commons category \"Dart River / Te Awa Whakatipu\" coordinates (river mouth at Glenorchy)",
+     "category": "nature",
+     "bio": "A braided glacial river entering the head of Lake Wakatipu beside Glenorchy, with jetboat and walking trips running up the valley (Wikivoyage Glenorchy).",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 1,
+     "visitHoursMax": 3,
+     "free": true,
+     "photo": {
+      "file": "Dart River, Glenorchy.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Dart_River,_Glenorchy.jpg",
+      "width": 4416,
+      "height": 2480,
+      "license": "CC BY 2.0",
+      "date": "2010-05-14",
+      "checks": "right place, shows named thing, current colour, free licence, >=960px, not in imageOverrides.ts; braided river bed and mountains with low cloud, 2010"
+     },
+     "sources": [
+      "https://en.wikivoyage.org/wiki/Glenorchy",
+      "https://en.wikipedia.org/wiki/Dart_River_/_Te_Awa_Whakatipu"
+     ],
+     "destinationId": "glenorchy"
+    },
+    {
+     "id": "glenorchy-4",
+     "name": "Mount Earnslaw / Pikirakatahi",
+     "icon": "⛰️",
+     "coordinates": {
+      "latitude": -44.624,
+      "longitude": 168.397
+     },
+     "coordinates_source": "Commons category \"Mount Earnslaw / Pikirakatahi\" coordinates (summit)",
+     "category": "viewpoint",
+     "bio": "A 2,819 m peak in Mount Aspiring National Park 25 km north of Glenorchy, and a sacred peak of Ngāi Tahu, visible from the roads around the village.",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 1,
+     "visitHoursMax": 2,
+     "free": true,
+     "photo": {
+      "file": "Mt Earnslaw from Bennetts Bluff lookout.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Mt_Earnslaw_from_Bennetts_Bluff_lookout.jpg",
+      "width": 4896,
+      "height": 3264,
+      "license": "Public domain",
+      "date": "2021-11-29",
+      "checks": "right place, shows named thing, current colour, free licence, >=960px, not in imageOverrides.ts; summit seen from Bennetts Bluff lookout on the Glenorchy road (named mountain is the subject)"
+     },
+     "sources": [
+      "https://en.wikipedia.org/wiki/Mount_Earnslaw",
+      "https://en.wikivoyage.org/wiki/Glenorchy"
+     ],
+     "destinationId": "glenorchy"
+    }
+   ]
+  },
+  {
+   "id": "haast",
+   "name": "Haast",
+   "coordinates": {
+    "latitude": -43.8811,
+    "longitude": 169.0422
+   },
+   "coordinates_source": "Wikipedia \"Haast, New Zealand\"",
+   "category": "nature",
+   "defaultZoomSpanKm": 50,
+   "rank": 4,
+   "why": "Southernmost settlement on the West Coast road (Wikivoyage Haast chapter) in the Te Wahipounamu World Heritage area, 95 km from Westland Tai Poutini's centre (outside its 52 km span) and 85 km from Mount Aspiring's, so no destination covers it; Jackson Bay, Ship Creek, Lake Moeraki, Knights Point and Thunder Creek Falls cluster within 36 km. Haast Pass (mount-aspiring-3) stays under Mount Aspiring.",
+   "absorbs_existing_spot_ids": [],
+   "spots": [
+    {
+     "id": "haast-1",
+     "name": "Jackson Bay",
+     "icon": "🌊",
+     "coordinates": {
+      "latitude": -43.97351,
+      "longitude": 168.613953
+     },
+     "coordinates_source": "Commons geotag of Jackson Bay MRD 01.jpg (wharf)",
+     "category": "nature",
+     "bio": "A 24 km bay at the southern end of the West Coast road, with a fishing wharf and the Southern Alps behind it.",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 1,
+     "visitHoursMax": 2,
+     "free": true,
+     "photo": {
+      "file": "Jackson Bay MRD 01.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Jackson_Bay_MRD_01.jpg",
+      "width": 3952,
+      "height": 2964,
+      "license": "CC BY 4.0",
+      "date": "2021-05-01",
+      "checks": "right place, shows named thing, current colour, free licence, >=960px, not in imageOverrides.ts; wharf and bay with mountains, 2021"
+     },
+     "sources": [
+      "https://en.wikipedia.org/wiki/Jackson_Bay",
+      "https://en.wikivoyage.org/wiki/Haast"
+     ],
+     "destinationId": "haast"
+    },
+    {
+     "id": "haast-2",
+     "name": "Ship Creek",
+     "icon": "🌲",
+     "coordinates": {
+      "latitude": -43.757547,
+      "longitude": 169.147244
+     },
+     "coordinates_source": "Commons geotag of Ship Creek - panoramio (2).jpg",
+     "category": "nature",
+     "bio": "Short walks around dune lakes and ancient kahikatea swamp forest where Ship Creek meets the Tasman Sea, 20 km north-east of Haast.",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 0.5,
+     "visitHoursMax": 1.5,
+     "free": true,
+     "photo": {
+      "file": "Ship Creek - panoramio (2).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Ship_Creek_-_panoramio_(2).jpg",
+      "width": 4896,
+      "height": 3672,
+      "license": "CC BY 3.0",
+      "date": "Taken on 9",
+      "checks": "right place, shows named thing, current colour, free licence, >=960px, not in imageOverrides.ts; dune lake (tannin-dark water) at Ship Creek"
+     },
+     "sources": [
+      "https://en.wikipedia.org/wiki/Ship_Creek_(New_Zealand)",
+      "https://en.wikivoyage.org/wiki/Haast"
+     ],
+     "destinationId": "haast"
+    },
+    {
+     "id": "haast-3",
+     "name": "Thunder Creek Falls",
+     "icon": "💧",
+     "coordinates": {
+      "latitude": -44.037663,
+      "longitude": 169.36538
+     },
+     "coordinates_source": "Commons geotag of Thunder Creek Falls 2006 - panoramio.jpg (at the falls)",
+     "category": "nature",
+     "bio": "A 28 m waterfall beside State Highway 6 near the Gates of Haast bridge, about 52 km inland from Haast.",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 0.25,
+     "visitHoursMax": 0.75,
+     "free": true,
+     "photo": {
+      "file": "Thunder Creek Falls Flickr 02.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Thunder_Creek_Falls_Flickr_02.jpg",
+      "width": 5976,
+      "height": 3984,
+      "license": "CC BY 2.0",
+      "date": "2017-01-12",
+      "checks": "right place, shows named thing, current colour, free licence, >=960px, not in imageOverrides.ts; the falls and plunge pool, 2017"
+     },
+     "sources": [
+      "https://en.wikipedia.org/wiki/Thunder_Creek_Falls"
+     ],
+     "destinationId": "haast"
+    },
+    {
+     "id": "haast-4",
+     "name": "Lake Moeraki",
+     "icon": "🐧",
+     "coordinates": {
+      "latitude": -43.73278611,
+      "longitude": 169.30124722
+     },
+     "coordinates_source": "Commons geotag of Lake Moeraki, West Coast Region, New Zealand 01.jpg",
+     "category": "nature",
+     "bio": "A small bush-fringed lake on the highway in Te Wahipounamu, where Fiordland crested penguin tours run and a southern elephant seal has returned yearly.",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 0.5,
+     "visitHoursMax": 2,
+     "free": true,
+     "photo": {
+      "file": "Lake Moeraki, West Coast Region, New Zealand 01.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Lake_Moeraki,_West_Coast_Region,_New_Zealand_01.jpg",
+      "width": 5472,
+      "height": 3648,
+      "license": "CC BY-SA 4.0",
+      "date": "2020-01-18",
+      "checks": "right place, shows named thing, current colour, free licence, >=960px, not in imageOverrides.ts; lake shore with forested hill, 2020"
+     },
+     "sources": [
+      "https://en.wikipedia.org/wiki/Lake_Moeraki"
+     ],
+     "destinationId": "haast"
+    },
+    {
+     "id": "haast-5",
+     "name": "Knights Point",
+     "icon": "🌅",
+     "coordinates": {
+      "latitude": -43.715514,
+      "longitude": 169.22555
+     },
+     "coordinates_source": "Commons geotag of Rock Island Knights Point 01.jpg",
+     "category": "viewpoint",
+     "bio": "A coastal lookout on State Highway 6 where the north and south road gangs met in 1965, with a view over rocky islets in the Tasman Sea.",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 0.25,
+     "visitHoursMax": 0.5,
+     "free": true,
+     "photo": {
+      "file": "Rock Island Knights Point 01.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Rock_Island_Knights_Point_01.jpg",
+      "width": 2685,
+      "height": 1974,
+      "license": "CC BY-SA 4.0",
+      "date": "2017-11-21",
+      "checks": "right place, shows named thing, current colour, free licence, >=960px, not in imageOverrides.ts; rock islets seen from the lookout, 2017"
+     },
+     "sources": [
+      "https://en.wikipedia.org/wiki/Knights_Point"
+     ],
+     "destinationId": "haast"
+    }
+   ]
+  },
+  {
+   "id": "twizel",
+   "name": "Twizel",
+   "coordinates": {
+    "latitude": -44.25,
+    "longitude": 170.1
+   },
+   "coordinates_source": "Wikipedia \"Twizel\" (rounded)",
+   "category": "city",
+   "defaultZoomSpanKm": 60,
+   "rank": 5,
+   "why": "Mackenzie Country's largest town and the closest sizeable base to Aoraki / Mount Cook (Wikivoyage Twizel); 58 km from Aoraki's centre and 45 km from Lake Tekapo, so outside both spans (37.5 and 18.75 km). Holds the southern Mackenzie: Omarama's Clay Cliffs, Lake Ōhau, Lake Benmore and Lake Ruataniwha (Wikivoyage Twizel, Omarama). Lindis Pass sits inside Central Otago's span and is left there.",
+   "absorbs_existing_spot_ids": [],
+   "spots": [
+    {
+     "id": "twizel-1",
+     "name": "Clay Cliffs",
+     "icon": "🏜️",
+     "coordinates": {
+      "latitude": -44.488545,
+      "longitude": 169.871637
+     },
+     "coordinates_source": "Commons geotag of Omarama Clay Cliffs.jpg",
+     "category": "nature",
+     "bio": "Eroded clay pinnacles near Omarama on private land, reached by a short gravel road with a per-vehicle fee, formed by erosion along the Ostler fault.",
+     "hours": "Daylight hours",
+     "visitHoursMin": 0.5,
+     "visitHoursMax": 1.5,
+     "costMin": 5,
+     "costMax": 5,
+     "currency": "NZD",
+     "cost_note": "Wikivoyage Omarama says $5 per vehicle; undated, likely higher now",
+     "photo": {
+      "file": "Omarama Clay Cliffs.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Omarama_Clay_Cliffs.jpg",
+      "width": 2172,
+      "height": 1449,
+      "license": "CC0",
+      "date": "2013-10-12",
+      "checks": "right place, shows named thing, current colour, free licence, >=960px, not in imageOverrides.ts; pinnacles against blue sky, 2013"
+     },
+     "sources": [
+      "https://en.wikivoyage.org/wiki/Omarama"
+     ],
+     "destinationId": "twizel"
+    },
+    {
+     "id": "twizel-2",
+     "name": "Lake Ōhau",
+     "icon": "🏞️",
+     "coordinates": {
+      "latitude": -44.25,
+      "longitude": 169.85
+     },
+     "coordinates_source": "Wikipedia \"Lake Ōhau\" (rounded lake centre)",
+     "category": "nature",
+     "bio": "A mountain-ringed lake fed by the Hopkins and Dobson rivers, with the Barrier range on its west side.",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 1,
+     "visitHoursMax": 3,
+     "free": true,
+     "photo": {
+      "file": "Lake Ohau Scenery in Summer 2008.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Lake_Ohau_Scenery_in_Summer_2008.jpg",
+      "width": 2304,
+      "height": 1728,
+      "license": "CC BY 3.0",
+      "date": "2007-12-17",
+      "checks": "right place, shows named thing, current colour, free licence, >=960px, not in imageOverrides.ts; lake with Ben Ohau range, 2007"
+     },
+     "sources": [
+      "https://en.wikipedia.org/wiki/Lake_%C5%8Chau"
+     ],
+     "destinationId": "twizel"
+    },
+    {
+     "id": "twizel-3",
+     "name": "Lake Benmore",
+     "icon": "🚣",
+     "coordinates": {
+      "latitude": -44.415,
+      "longitude": 170.22055556
+     },
+     "coordinates_source": "Wikipedia \"Lake Benmore\" (rounded lake centre)",
+     "category": "nature",
+     "bio": "New Zealand's largest artificial lake, created in the 1960s by the Benmore Dam on the Waitaki River, popular for boating and fishing.",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 1,
+     "visitHoursMax": 3,
+     "free": true,
+     "photo": {
+      "file": "Lake Benmore with surrounding hills, New Zealand 02.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Lake_Benmore_with_surrounding_hills,_New_Zealand_02.jpg",
+      "width": 11904,
+      "height": 3370,
+      "license": "CC BY-SA 4.0",
+      "date": "2019-04-05",
+      "checks": "right place, shows named thing, current colour, free licence, >=960px, not in imageOverrides.ts; featured-picture panorama (aspect ~3.5:1; crop for square thumbnails or use \"Lake Benmore, New Zealand.jpg\")"
+     },
+     "sources": [
+      "https://en.wikipedia.org/wiki/Lake_Benmore"
+     ],
+     "destinationId": "twizel"
+    },
+    {
+     "id": "twizel-4",
+     "name": "Lake Ruataniwha",
+     "icon": "🛶",
+     "coordinates": {
+      "latitude": -44.2737,
+      "longitude": 170.069773
+     },
+     "coordinates_source": "Commons geotag of Lake Ruataniwha 03.jpg",
+     "category": "nature",
+     "bio": "A man-made lake two kilometres south of Twizel with a roadside lookout, used for rowing and water sports.",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 0.5,
+     "visitHoursMax": 2,
+     "free": true,
+     "photo": {
+      "file": "Lake Ruataniwha 03.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Lake_Ruataniwha_03.jpg",
+      "width": 3913,
+      "height": 2144,
+      "license": "CC BY-SA 4.0",
+      "date": "2017-11-16",
+      "checks": "right place, shows named thing, current colour, free licence, >=960px, not in imageOverrides.ts; lake and hills, 2017"
+     },
+     "sources": [
+      "https://en.wikivoyage.org/wiki/Twizel",
+      "https://en.wikipedia.org/wiki/Lake_Ruataniwha"
+     ],
+     "destinationId": "twizel"
+    }
+   ]
+  },
+  {
+   "id": "methven",
+   "name": "Methven",
+   "coordinates": {
+    "latitude": -43.63264722,
+    "longitude": 171.64736389
+   },
+   "coordinates_source": "Commons geotag of Central Crossroads, Methven, New Zealand.jpg",
+   "category": "city",
+   "defaultZoomSpanKm": 50,
+   "rank": 5,
+   "why": "Mt Hutt's base town in inland Canterbury, about 93 km from Christchurch Airport (Wikivoyage Methven), a year-round action base; 70+ km from Christchurch and Timaru, outside their spans. Span kept to 50 so Lake Coleridge (42 km) remains the standalone spot the benchmark expects. Ōpuke Thermal Pools (Wikivoyage) is a further candidate but no Commons photo was found.",
+   "absorbs_existing_spot_ids": [],
+   "spots": [
+    {
+     "id": "methven-1",
+     "name": "Mount Hutt",
+     "icon": "⛷️",
+     "coordinates": {
+      "latitude": -43.46666667,
+      "longitude": 171.53333333
+     },
+     "coordinates_source": "Wikipedia \"Mount Hutt\" (rounded)",
+     "category": "nature",
+     "bio": "A 2,190 m peak of the Southern Alps 80 km west of Christchurch, home of the Mt Hutt ski area above the Rakaia River headwaters.",
+     "hours": "Ski season hours",
+     "visitHoursMin": 3,
+     "visitHoursMax": 7,
+     "pending_ticketUrl": "Mt Hutt operator site returned 403 to a script; check in a browser",
+     "photo": {
+      "file": "Mt Hutt.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Mt_Hutt.jpg",
+      "width": 1250,
+      "height": 909,
+      "license": "Public domain",
+      "date": "18 May 200",
+      "checks": "right place, shows named thing, current colour, free licence, >=960px, not in imageOverrides.ts; snow-covered peak from the plains (1250px, colour; Wikipedia lead image)"
+     },
+     "sources": [
+      "https://en.wikipedia.org/wiki/Mount_Hutt",
+      "https://en.wikivoyage.org/wiki/Methven"
+     ],
+     "destinationId": "methven"
+    },
+    {
+     "id": "methven-2",
+     "name": "Rakaia Gorge",
+     "icon": "🌉",
+     "coordinates": {
+      "latitude": -43.51800833,
+      "longitude": 171.6557
+     },
+     "coordinates_source": "Commons geotag of RakaiaGorgeBridge gobeirne.jpg",
+     "category": "nature",
+     "bio": "A turquoise river gorge crossed by the old Rakaia Gorge Bridge on the Inland Scenic Route, with Southern Alps views upstream.",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 0.5,
+     "visitHoursMax": 1.5,
+     "free": true,
+     "photo": {
+      "file": "RakaiaGorgeBridge gobeirne.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:RakaiaGorgeBridge_gobeirne.jpg",
+      "width": 3072,
+      "height": 2304,
+      "license": "CC BY 2.5",
+      "date": "2006-05-21",
+      "checks": "right place, shows named thing, current colour, free licence, >=960px, not in imageOverrides.ts; bridge over the gorge with snowy peaks, 2006"
+     },
+     "sources": [
+      "https://en.wikipedia.org/wiki/Rakaia_Gorge_Bridge"
+     ],
+     "destinationId": "methven"
+    },
+    {
+     "id": "methven-3",
+     "name": "Mount Somers Track",
+     "icon": "🥾",
+     "coordinates": {
+      "latitude": -43.60715,
+      "longitude": 171.32217
+     },
+     "coordinates_source": "Commons geotag of Woolshed Creek Hut, Hakatere Conservation Park, Canterbury, New Zealand 05.jpg",
+     "category": "hike",
+     "bio": "A day or overnight walk in Hakatere Conservation Park past Woolshed Creek Hut, with limestone gorges and tussock ridges under Mount Somers (Te Kiekie).",
+     "hours": "Daylight hours",
+     "visitHoursMin": 4,
+     "visitHoursMax": 8,
+     "free": true,
+     "photo": {
+      "file": "Woolshed Creek Hut, Hakatere Conservation Park, Canterbury, New Zealand 05.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Woolshed_Creek_Hut,_Hakatere_Conservation_Park,_Canterbury,_New_Zealand_05.jpg",
+      "width": 5472,
+      "height": 3648,
+      "license": "CC BY-SA 4.0",
+      "date": "2021-01-25",
+      "checks": "right place, shows named thing, current colour, free licence, >=960px, not in imageOverrides.ts; track valley and ridges, 2021"
+     },
+     "sources": [
+      "https://en.wikipedia.org/wiki/Mount_Somers"
+     ],
+     "destinationId": "methven"
+    }
+   ]
+  },
+  {
+   "id": "craigieburn-forest-park",
+   "name": "Craigieburn Forest Park",
+   "coordinates": {
+    "latitude": -43.1527,
+    "longitude": 171.7315
+   },
+   "coordinates_source": "Wikipedia \"Craigieburn Forest Park\"",
+   "category": "park",
+   "defaultZoomSpanKm": 30,
+   "rank": 4,
+   "why": "DOC park on State Highway 73 beside Arthur's Pass National Park, where Castle Hill, Cave Stream, Porters Pass and Lake Pearson form a cluster; Castle Hill and Cave Stream are 31-33 km from Arthur's Pass's centre (outside its 30 km span). Lake Pearson (24 km from Arthur's Pass centre) is nearer here (7 km). Absorbs two existing standalone spots.",
+   "absorbs_existing_spot_ids": [
+    "kura-tawhiti-castle-hill",
+    "cave-stream"
+   ],
+   "spots": [
+    {
+     "id": "craigieburn-forest-park-1",
+     "name": "Lake Pearson",
+     "icon": "🏞️",
+     "coordinates": {
+      "latitude": -43.095578,
+      "longitude": 171.778339
+     },
+     "coordinates_source": "Commons geotag of Lake Pearson 01.jpg",
+     "category": "nature",
+     "bio": "A high-country lake beside State Highway 73 below the Craigieburn Range, with a lakeshore track and views of the surrounding peaks.",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 0.5,
+     "visitHoursMax": 2,
+     "free": true,
+     "photo": {
+      "file": "Lake Pearson 01.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Lake_Pearson_01.jpg",
+      "width": 4226,
+      "height": 2097,
+      "license": "CC BY-SA 4.0",
+      "date": "2017-11-15",
+      "checks": "right place, shows named thing, current colour, free licence, >=960px, not in imageOverrides.ts; lakeshore and hillside, 2017"
+     },
+     "sources": [
+      "https://commons.wikimedia.org/wiki/Category:Lake_Pearson"
+     ],
+     "destinationId": "craigieburn-forest-park"
+    },
+    {
+     "id": "craigieburn-forest-park-2",
+     "name": "Porters Pass",
+     "icon": "🛣️",
+     "coordinates": {
+      "latitude": -43.2968,
+      "longitude": 171.7419
+     },
+     "coordinates_source": "Commons geotag of The highest point of Porters Pass, Torlesse Range, New Zealand.jpg",
+     "category": "viewpoint",
+     "bio": "A 939 m pass on State Highway 73, the last mountain pass on the road from Westland to Christchurch, within Korowai / Torlesse Tussocklands Park.",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 0.25,
+     "visitHoursMax": 0.5,
+     "free": true,
+     "photo": {
+      "file": "Road to Porters Pass 01.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Road_to_Porters_Pass_01.jpg",
+      "width": 3072,
+      "height": 2048,
+      "license": "CC BY 2.0",
+      "date": "2007-11-24",
+      "checks": "right place, shows named thing, current colour, free licence, >=960px, not in imageOverrides.ts; valley view from the pass (2007)"
+     },
+     "sources": [
+      "https://en.wikipedia.org/wiki/Porters_Pass"
+     ],
+     "destinationId": "craigieburn-forest-park"
+    }
+   ]
+  },
+  {
+   "id": "reefton",
+   "name": "Reefton",
+   "coordinates": {
+    "latitude": -42.11527778,
+    "longitude": 171.86305556
+   },
+   "coordinates_source": "Wikipedia \"Reefton\"",
+   "category": "city",
+   "defaultZoomSpanKm": 80,
+   "rank": 5,
+   "why": "Wikivoyage town chapter (4th biggest on the West Coast): first town in the southern hemisphere with public electricity, a gold-mining past, and a base for Lewis Pass. 65+ km from Greymouth and Westport, outside their spans; Hanmer span (22 km) does not reach Maruia Springs. Existing standalone lewis-pass (53 km east) is left standalone.",
+   "absorbs_existing_spot_ids": [],
+   "spots": [
+    {
+     "id": "reefton-1",
+     "name": "Waiuta",
+     "icon": "🏚️",
+     "coordinates": {
+      "latitude": -42.294758,
+      "longitude": 171.824814
+     },
+     "coordinates_source": "Commons geotag of Waiuta MRD 08.jpg (Waiuta site)",
+     "category": "historic",
+     "bio": "An abandoned gold-mining town 21 km south of Reefton, where a mine shaft chimney, foundations and a few buildings remain from the mine that closed in 1951.",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 1,
+     "visitHoursMax": 3,
+     "free": true,
+     "photo": {
+      "file": "Waiuta MRD 09.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Waiuta_MRD_09.jpg",
+      "width": 4032,
+      "height": 2750,
+      "license": "CC BY 4.0",
+      "date": "2021-10-03",
+      "checks": "right place, shows named thing, current colour, free licence, >=960px, not in imageOverrides.ts; chimney and shed at the Waiuta site, 2021"
+     },
+     "sources": [
+      "https://en.wikipedia.org/wiki/Waiuta"
+     ],
+     "destinationId": "reefton"
+    },
+    {
+     "id": "reefton-2",
+     "name": "Blacks Point Museum",
+     "icon": "🏛️",
+     "coordinates": {
+      "latitude": -42.1314,
+      "longitude": 171.882203
+     },
+     "coordinates_source": "Commons geotag of Blacks Point Museum MRD 03.jpg",
+     "category": "museum",
+     "bio": "A small museum in Blacks Point, 2 km east of Reefton, on the area's gold and coal mining past (open Labour Weekend to Easter).",
+     "hours": "Labour Weekend to Easter (hours vary)",
+     "visitHoursMin": 0.5,
+     "visitHoursMax": 1.5,
+     "photo": {
+      "file": "Blacks Point Museum MRD 03.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Blacks_Point_Museum_MRD_03.jpg",
+      "width": 1280,
+      "height": 766,
+      "license": "CC BY 4.0",
+      "date": "2020-09-05",
+      "checks": "right place, shows named thing, current colour, free licence, >=960px, not in imageOverrides.ts; museum building with mural, 2020"
+     },
+     "sources": [
+      "https://en.wikivoyage.org/wiki/Reefton",
+      "https://en.wikipedia.org/wiki/Blacks_Point_Museum"
+     ],
+     "destinationId": "reefton"
+    },
+    {
+     "id": "reefton-3",
+     "name": "Maruia Springs",
+     "icon": "♨️",
+     "coordinates": {
+      "latitude": -42.379033,
+      "longitude": 172.333022
+     },
+     "coordinates_source": "Commons geotag of Maruia Springs.jpg",
+     "category": "nature",
+     "bio": "A hot-spring spa beside State Highway 7 west of Lewis Pass with a Japanese bath house, private spas and two rock pools fed by 55 C water.",
+     "hours": "Daytime (check spa hours)",
+     "visitHoursMin": 1,
+     "visitHoursMax": 3,
+     "pending_costs": "not sourced",
+     "photo": {
+      "file": "Rock Pools, Maruia Springs.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Rock_Pools,_Maruia_Springs.jpg",
+      "width": 1200,
+      "height": 803,
+      "license": "CC BY-SA 2.0",
+      "date": "2012-03-21",
+      "checks": "right place, shows named thing, current colour, free licence, >=960px, not in imageOverrides.ts; rock pools and bath house, 2012"
+     },
+     "sources": [
+      "https://en.wikipedia.org/wiki/Maruia_Springs"
+     ],
+     "destinationId": "reefton"
+    }
+   ]
+  },
+  {
+   "id": "murchison",
+   "name": "Murchison",
+   "coordinates": {
+    "latitude": -41.8,
+    "longitude": 172.3333
+   },
+   "coordinates_source": "Wikipedia \"Murchison, New Zealand\" (rounded)",
+   "category": "city",
+   "defaultZoomSpanKm": 40,
+   "rank": 5,
+   "why": "Town on SH6 between Nelson and the West Coast (Wikivoyage Murchison; whitewater hub) at the Buller Gorge. 43 km from Nelson Lakes's centre and 50 km from Westport, outside their spans.",
+   "absorbs_existing_spot_ids": [],
+   "spots": [
+    {
+     "id": "murchison-1",
+     "name": "Buller Gorge Swingbridge",
+     "icon": "🌉",
+     "coordinates": {
+      "latitude": -41.7680051,
+      "longitude": 172.1925577
+     },
+     "coordinates_source": "Commons category \"Buller Gorge Swingbridge\" coordinates",
+     "category": "landmark",
+     "bio": "New Zealand's longest swingbridge at about 110 m, spanning the Buller River 14 km west of Murchison, within an adventure and heritage park with a flying fox and gold panning.",
+     "hours": "9:00 AM - 5:00 PM (third-party listing, unconfirmed)",
+     "visitHoursMin": 1,
+     "visitHoursMax": 3,
+     "ticketUrl": "https://bullergorge.co.nz",
+     "photo": {
+      "file": "Swing bridge at Buller River A24.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Swing_bridge_at_Buller_River_A24.jpg",
+      "width": 2250,
+      "height": 1687,
+      "license": "CC BY-SA 3.0",
+      "date": "Taken in<s",
+      "checks": "right place, shows named thing, current colour, free licence, >=960px, not in imageOverrides.ts; swingbridge over river (Commons category Buller Gorge Swingbridge), 2250px"
+     },
+     "sources": [
+      "https://en.wikipedia.org/wiki/Buller_Gorge",
+      "https://bullergorge.co.nz"
+     ],
+     "destinationId": "murchison"
+    },
+    {
+     "id": "murchison-2",
+     "name": "Maruia Falls",
+     "icon": "💧",
+     "coordinates": {
+      "latitude": -41.859277,
+      "longitude": 172.252221
+     },
+     "coordinates_source": "Commons geotag of Maruia Falls 01.jpg",
+     "category": "nature",
+     "bio": "A low, wide waterfall on the Maruia River created when the 1929 Murchison earthquake raised the riverbed.",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 0.25,
+     "visitHoursMax": 0.75,
+     "free": true,
+     "photo": {
+      "file": "Maruia Falls 01.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Maruia_Falls_01.jpg",
+      "width": 4707,
+      "height": 3236,
+      "license": "CC BY-SA 4.0",
+      "date": "2017-11-14",
+      "checks": "right place, shows named thing, current colour, free licence, >=960px, not in imageOverrides.ts; falls and river, 2017"
+     },
+     "sources": [
+      "https://en.wikipedia.org/wiki/Maruia_Falls"
+     ],
+     "destinationId": "murchison"
+    },
+    {
+     "id": "murchison-3",
+     "name": "Murchison Museum",
+     "icon": "🏛️",
+     "coordinates": {
+      "latitude": -41.80154167,
+      "longitude": 172.32542222
+     },
+     "coordinates_source": "Commons geotag of Murchison Museum, Murchison, New Zealand 05.jpg",
+     "category": "museum",
+     "bio": "A museum in the town centre whose focus is the 1929 Murchison earthquake and its effects on the township.",
+     "hours": "Daytime (hours not verified)",
+     "visitHoursMin": 0.5,
+     "visitHoursMax": 1,
+     "photo": {
+      "file": "Murchison Museum, Murchison, New Zealand 05.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Murchison_Museum,_Murchison,_New_Zealand_05.jpg",
+      "width": 5116,
+      "height": 3001,
+      "license": "CC BY-SA 4.0",
+      "date": "2020-01-03",
+      "checks": "right place, shows named thing, current colour, free licence, >=960px, not in imageOverrides.ts; museum facade, 2020"
+     },
+     "sources": [
+      "https://en.wikipedia.org/wiki/Murchison,_New_Zealand",
+      "https://en.wikivoyage.org/wiki/Murchison"
+     ],
+     "destinationId": "murchison"
+    }
+   ]
+  },
+  {
+   "id": "gore",
+   "name": "Gore",
+   "coordinates": {
+    "latitude": -46.09916667,
+    "longitude": 168.94638889
+   },
+   "coordinates_source": "Wikipedia \"Gore, New Zealand\"",
+   "category": "city",
+   "defaultZoomSpanKm": 25,
+   "rank": 5,
+   "why": "Wikivoyage Southland lists Gore as a city: Southland's second town, brown-trout and country-music capital, regional hub (8,300 people), 50 km from Invercargill so outside its 34 km span. Four See entries on Wikivoyage (Eastern Southland Gallery, Hokonui Heritage Centre, Brown Trout statue, Hands of Fame).",
+   "absorbs_existing_spot_ids": [],
+   "spots": [
+    {
+     "id": "gore-1",
+     "name": "Eastern Southland Gallery",
+     "icon": "🖼️",
+     "coordinates": {
+      "latitude": -46.098,
+      "longitude": 168.946
+     },
+     "coordinates_source": "Wikipedia \"Eastern Southland Gallery\"",
+     "category": "museum",
+     "bio": "A provincial art gallery in the 1909 Carnegie library building, holding the Ralph Hotere Gallery of more than 60 works and the John Money ethnological art collection.",
+     "hours": "Mon-Fri 10:00 AM - 4:30 PM, Sat-Sun 1:00 PM - 4:30 PM",
+     "visitHoursMin": 0.5,
+     "visitHoursMax": 1.5,
+     "free": true,
+     "closedDays": [],
+     "photo": {
+      "file": "The Old Public Library (Gore).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:The_Old_Public_Library_(Gore).jpg",
+      "width": 4000,
+      "height": 6000,
+      "license": "CC BY-SA 2.0",
+      "date": "2019-09-08",
+      "checks": "right place, shows named thing, current colour, free licence, >=960px, not in imageOverrides.ts; Carnegie library entrance (the gallery building), 2019"
+     },
+     "sources": [
+      "https://en.wikivoyage.org/wiki/Gore",
+      "https://en.wikipedia.org/wiki/Eastern_Southland_Gallery"
+     ],
+     "destinationId": "gore"
+    },
+    {
+     "id": "gore-2",
+     "name": "Brown Trout Statue",
+     "icon": "🐟",
+     "coordinates": {
+      "latitude": -46.098611,
+      "longitude": 168.946389
+     },
+     "coordinates_source": "Commons geotag of Big trout in Gore.jpg",
+     "category": "landmark",
+     "bio": "A 9 m, 1.5-tonne brown trout sculpture at the entrance to town, made in the 1980s when Gore claimed the title world capital of brown trout fishing.",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 0.1,
+     "visitHoursMax": 0.25,
+     "free": true,
+     "photo": {
+      "file": "Big trout in Gore.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Big_trout_in_Gore.jpg",
+      "width": 3024,
+      "height": 4032,
+      "license": "CC0",
+      "date": "2021-01-22",
+      "checks": "right place, shows named thing, current colour, free licence, >=960px, not in imageOverrides.ts; the statue, 2021"
+     },
+     "sources": [
+      "https://en.wikivoyage.org/wiki/Gore"
+     ],
+     "destinationId": "gore"
+    },
+    {
+     "id": "gore-3",
+     "name": "Hokonui Heritage Centre",
+     "icon": "🥃",
+     "coordinates": {
+      "latitude": -46.098,
+      "longitude": 168.946
+     },
+     "coordinates_source": "Wikivoyage \"Gore\": same corner as the gallery (Hokonui Drive and Norfolk Street); approximate, verify on site",
+     "category": "museum",
+     "bio": "A heritage precinct housing the Hokonui Moonshine Museum on the district's illicit whisky making and the Gore Historical Museum with a trout-fishing exhibition.",
+     "hours": "Mon-Fri 8:30 AM - 5:00 PM, Sat 9:30 AM - 4:00 PM, Sun 1:00 PM - 4:00 PM",
+     "visitHoursMin": 0.5,
+     "visitHoursMax": 1.5,
+     "photo": null,
+     "photo_note": "no Commons photo found; needs one before shipping",
+     "sources": [
+      "https://en.wikivoyage.org/wiki/Gore",
+      "https://en.wikipedia.org/wiki/Gore,_New_Zealand"
+     ],
+     "destinationId": "gore"
+    }
+   ]
+  }
+ ],
+ "standalone_spots": [
+  {
+   "id": "lake-coleridge",
+   "name": "Lake Coleridge",
+   "icon": "🏞️",
+   "coordinates": {
+    "latitude": -43.28333333,
+    "longitude": 171.5
+   },
+   "coordinates_source": "Wikipedia \"Lake Coleridge\" (rounded lake centre)",
+   "category": "nature",
+   "bio": "An inland Canterbury lake of 47 square kilometres in an over-deepened glacial valley, 35 km north-west of Methven, with a small settlement and no natural outflow.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "photo": {
+    "file": "Lake Coleridge New Zealand (2168055700).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Lake_Coleridge_New_Zealand_(2168055700).jpg",
+    "width": 3072,
+    "height": 2304,
+    "license": "CC BY 2.0",
+    "date": "2008-01-05",
+    "checks": "right place, shows named thing, current colour, free licence, >=960px, not in imageOverrides.ts; lake and ranges, 2008"
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lake_Coleridge"
+   ]
+  },
+  {
+   "id": "birdlings-flat",
+   "name": "Birdlings Flat",
+   "icon": "🪨",
+   "coordinates": {
+    "latitude": -43.827038,
+    "longitude": 172.707963
+   },
+   "coordinates_source": "Commons geotag of Birdlings Flat - panoramio.jpg (beach)",
+   "category": "beach",
+   "bio": "A pebble beach at the eastern end of Kaitorete Spit, known for small agates and rounded stones, where swimming is not advised because of strong currents.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "photo": {
+    "file": "Birdling's Flat 02.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Birdling's_Flat_02.jpg",
+    "width": 3072,
+    "height": 2048,
+    "license": "CC BY 2.0",
+    "date": "2007-12-23",
+    "checks": "right place, shows named thing, current colour, free licence, >=960px, not in imageOverrides.ts; pebble beach with anglers, 2007"
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Birdlings_Flat"
+   ]
+  },
+  {
+   "id": "lake-brunner",
+   "name": "Lake Brunner",
+   "icon": "🏞️",
+   "coordinates": {
+    "latitude": -42.57555556,
+    "longitude": 171.48027778
+   },
+   "coordinates_source": "Wikipedia \"Moana, New Zealand\" (northern shore settlement and access)",
+   "category": "nature",
+   "bio": "The largest lake on the West Coast, 31 km south-east of Greymouth, with the lakeside settlement of Moana and a pedestrian suspension bridge over the outflow.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "photo": {
+    "file": "Lake Brunner south shore MRD 01.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Lake_Brunner_south_shore_MRD_01.jpg",
+    "width": 4032,
+    "height": 3024,
+    "license": "CC BY 4.0",
+    "date": "2021-07-24",
+    "checks": "right place, shows named thing, current colour, free licence, >=960px, not in imageOverrides.ts; lake with reflected hills, 2021"
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lake_Brunner"
+   ]
+  },
+  {
+   "id": "mavora-lakes",
+   "name": "Mavora Lakes",
+   "icon": "🏞️",
+   "coordinates": {
+    "latitude": -45.29548167,
+    "longitude": 168.17581833
+   },
+   "coordinates_source": "Commons geotag of North Mavora Lake - panoramio.jpg",
+   "category": "nature",
+   "bio": "Two lakes in a conservation park of the Te Wahipounamu World Heritage Area, a Lord of the Rings filming location with a basic campsite and tracks.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "free": true,
+   "photo": {
+    "file": "North Mavora Lake - panoramio.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:North_Mavora_Lake_-_panoramio.jpg",
+    "width": 4928,
+    "height": 3264,
+    "license": "CC BY 3.0",
+    "date": "Taken on<s",
+    "checks": "right place, shows named thing, current colour, free licence, >=960px, not in imageOverrides.ts; lake in valley, 4928px"
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mavora_Lakes"
+   ]
+  },
+  {
+   "id": "molesworth-station",
+   "name": "Molesworth Station",
+   "icon": "🐄",
+   "coordinates": {
+    "latitude": -42.09024,
+    "longitude": 173.1924
+   },
+   "coordinates_source": "Wikipedia \"Molesworth Station\"",
+   "category": "landmark",
+   "bio": "New Zealand's largest farm at over 1,800 square kilometres in inland Marlborough, a high-country cattle station crossed by a summer road.",
+   "hours": "Summer opening of the road (check DOC)",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "photo": {
+    "file": "Molesworth station at -42.097089, 173.231521 041A5707 D.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Molesworth_station_at_-42.097089,_173.231521_041A5707_D.jpg",
+    "width": 5472,
+    "height": 3648,
+    "license": "CC BY 4.0",
+    "date": "2020-01-26",
+    "checks": "right place, shows named thing, current colour, free licence, >=960px, not in imageOverrides.ts; station gate and hills, 2020"
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Molesworth_Station"
+   ]
+  },
+  {
+   "id": "weka-pass-railway",
+   "name": "Weka Pass Railway",
+   "icon": "🚂",
+   "coordinates": {
+    "latitude": -43.0544,
+    "longitude": 172.7579
+   },
+   "coordinates_source": "Wikipedia \"Weka Pass Railway\"",
+   "category": "entertainment",
+   "bio": "A volunteer-run heritage railway on 12.8 km of the former Waiau branch line between Waipara and Waikari, with steam and diesel trains on selected Sundays.",
+   "hours": "Selected Sundays (1st and 3rd Sunday of month per Wikivoyage)",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "costMin": 18,
+   "costMax": 30,
+   "currency": "NZD",
+   "cost_note": "Wikivoyage Waipara: adult 18 one way, 30 return (undated)",
+   "photo": {
+    "file": "Dg 770 on the Weka Pass Railway.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Dg_770_on_the_Weka_Pass_Railway.jpg",
+    "width": 4395,
+    "height": 3057,
+    "license": "CC BY-SA 4.0",
+    "date": "2017-01-15",
+    "checks": "right place, shows named thing, current colour, free licence, >=960px, not in imageOverrides.ts; locomotive on the line, 2017; RIDE-AS-ATTRACTION: there is no distinct end place, kept as railway per COVERAGE"
+   },
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Waipara",
+    "https://en.wikipedia.org/wiki/Weka_Pass_Railway"
+   ]
+  }
+ ],
+ "existing_fixes": [
+  {
+   "spot_id": "queenstown-4",
+   "action": "replace",
+   "to": {
+    "id": "queenstown-4",
+    "name": "Walter Peak High Country Farm",
+    "icon": "🐑",
+    "coordinates": {
+     "latitude": -45.111158,
+     "longitude": 168.544458
+    },
+    "coordinates_source": "Commons geotag of Walter Peak High Country Farm - panoramio.jpg (2400px)",
+    "category": "landmark",
+    "bio": "A working high-country farm on the western shore of Lake Wakatipu opposite Queenstown, reached by the TSS Earnslaw steamship crossing, with farm tours and a barbecue dinner.",
+    "hours": "Sailings from Steamer Wharf, Queenstown",
+    "visitHoursMin": 3.75,
+    "visitHoursMax": 3.75,
+    "costMin": 139,
+    "costMax": 139,
+    "currency": "NZD",
+    "ticketUrl": "https://www.realnz.com/en/destinations/walter-peak-high-country-farm/",
+    "cost_note": "page: \"From NZD $139\" farm tour; page title names Walter Peak High Country Farm",
+    "photo": {
+     "file": "瓦尔特峰高原牧场 Walter Peak High Country Farm - panoramio.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:%E7%93%A6%E5%B0%94%E7%89%B9%E5%B3%B0%E9%AB%98%E5%8E%9F%E7%89%A7%E5%9C%BA_Walter_Peak_High_Country_Farm_-_panoramio.jpg",
+     "width": 2400,
+     "height": 1569,
+     "license": "CC BY-SA 3.0",
+     "date": "Taken on<s",
+     "checks": "right place, shows named thing, current colour, free licence, >=960px, not in imageOverrides.ts; homestead on the lake shore (2400px); not the ship"
+    },
+    "sources": [
+     "https://www.realnz.com/en/destinations/walter-peak-high-country-farm/"
+    ]
+   },
+   "reason": "TSS Earnslaw is a vehicle; COVERAGE.md says the spot is Walter Peak High Country Farm (14 km from Queenstown centre, inside its 22.5 km span). Page loaded: realnz.com destination page names the farm and the TSS Earnslaw crossing."
+  },
+  {
+   "spot_id": "glenorchy",
+   "action": "remove",
+   "to": null,
+   "reason": "Standalone Glenorchy is replaced by the new destination glenorchy (same id, collision) with spots Paradise, Diamond Lake, Dart River, Mount Earnslaw. If the destination is not accepted, keep the standalone spot unchanged."
+  },
+  {
+   "spot_id": "arthurs-pass-1",
+   "action": "replace",
+   "to": "Arthur's Pass",
+   "reason": "TranzAlpine is a train (vehicle); the place it stops at is Arthur's Pass village/station, at coordinates -42.9403,171.5627. Keep the ride in the bio and ticketUrl, name the spot Arthur's Pass (per COVERAGE vehicle rule). Photo/bio to be rewritten in the Arthur's Pass destination job."
+  },
+  {
+   "spot_id": "queenstown-1",
+   "action": "rename",
+   "to": "Bob's Peak",
+   "reason": "LOW CONFIDENCE: Skyline Queenstown is a gondola/operator; the named place at the top is Bob's Peak. Optional, decide with the Queenstown job."
+  },
+  {
+   "spot_id": "queenstown-3",
+   "action": "rename",
+   "to": "Shotover River",
+   "reason": "LOW CONFIDENCE: Shotover Jet is an operator/vehicle (jet boat); the place is the Shotover River canyon. Optional, decide with the Queenstown job."
+  },
+  {
+   "spot_id": "christchurch-9",
+   "action": "rename",
+   "to": "Mount Cavendish",
+   "reason": "LOW CONFIDENCE: Christchurch Gondola goes up to Mount Cavendish with a lookout and cafe; gondola rule allows keeping the ride only if nothing named at the top. Optional."
+  }
+ ],
+ "rejected": [
+  {
+   "name": "Waipara Valley (destination)",
+   "reason": "Wikivoyage and Wikipedia name only Weka Pass Railway, Glenmark Church (St Paul's) and unnamed wine tours; Gore Bay Cathedral Cliffs is 50 km away. Weka Pass Railway proposed standalone; Glenmark Church could be added to it as a standalone with photo Glenmark Church, Waipara (west view).jpg if wanted. Revisit with named wineries."
+  },
+  {
+   "name": "Cardrona",
+   "reason": "Inside Wanaka's span (21 km of 37.5 km); suggest Cardrona Alpine Resort and Cardrona Distillery as Wanaka spots in that destination's job. Cardrona Hotel already present."
+  },
+  {
+   "name": "Banks Peninsula towns (Little River, Okains Bay, Le Bons Bay)",
+   "reason": "Inside Akaroa's span (15 km radius) and Akaroa already has Okains Bay Museum added; Lyttelton, Sumner, Godley Head, Governors Bay are inside Christchurch's 18.75 km span (current Christchurch list has none of them, a Christchurch-job gap per the benchmark)."
+  },
+  {
+   "name": "Ashburton",
+   "reason": "Wikivoyage 'Ashburton' resolves to Devon, England; no NZ source collected."
+  },
+  {
+   "name": "Geraldine / Peel Forest",
+   "reason": "Peel Forest has a Wikipedia article but no suitable Commons photo (lead image is a hall, searches return a church); Geraldine has no Wikivoyage article. Revisit with DOC Peel Forest page."
+  },
+  {
+   "name": "Lake Heron",
+   "reason": "Only a Wikipedia article (DOC-managed); 41 km from Methven, outside the proposed 37.5 km span; add as standalone only if a guidebook source is found."
+  },
+  {
+   "name": "Kingston and Kingston Flyer",
+   "reason": "Wikivoyage Kingston names only the Kingston Flyer (a train); the village's Commons lead photo is an HDR drone view and rejected. Revisit as standalone Kingston with a ground-level photo."
+  },
+  {
+   "name": "Lake Ellesmere / Te Waihora and Kaitorete Spit",
+   "reason": "Wikipedia only and the only usable photos are aerial; Birdlings Flat covers the spit's visitor stop."
+  },
+  {
+   "name": "Cathedral Cliffs / Gore Bay",
+   "reason": "Single Wikipedia source, 50 km from the nearest cluster."
+  },
+  {
+   "name": "Ōpuke Thermal Pools (Methven)",
+   "reason": "Named on Wikivoyage Methven but no Wikipedia article or Commons photo found; add to Methven when a photo is found."
+  },
+  {
+   "name": "Hands of Fame (Gore)",
+   "reason": "Named on Wikivoyage Gore but no Commons photo; optional fourth Gore spot."
+  },
+  {
+   "name": "Bottled Lightning Powerhouse Walk (Reefton)",
+   "reason": "Wikivoyage Do entry; only available Commons photos show people as the subject."
+  },
+  {
+   "name": "Lake Sylvan / Glenorchy Lagoon Walkway",
+   "reason": "No sourced detail or photo gathered within budget; candidates for Glenorchy later."
+  },
+  {
+   "name": "Mataura, Winton, Bluff, Riverton",
+   "reason": "Inside or adjoining Invercargill's 34 km span (Riverton, Bluff) or minor; Mataura named on Wikivoyage Southland, no photo gathered."
+  },
+  {
+   "name": "Routeburn Track move",
+   "reason": "Left under Fiordland (fiordland-8); Fiordland job already added Key Summit etc."
+  },
+  {
+   "name": "Hump Ridge Track and Clifden Suspension Bridge (new)",
+   "reason": "Already added as standalone spots by the Fiordland job (commit 446459a); proposed here to be absorbed into the new Tuatapere destination."
+  },
+  {
+   "name": "Lindis Pass, Haast Pass, Moeraki Boulders",
+   "reason": "Already inside Central Otago, Mount Aspiring and Oamaru spans respectively."
+  }
+ ],
+ "notes": "ticketUrl only on loaded pages (Walter Peak, Buller Gorge Swingbridge; Hump Ridge already shipped). Mt Hutt operator site 403; DOC pages not verified so no ticketUrl. Costs omitted unless sourced. Hours are approximate. Spot ids in destinations are numbered per proposed order. Photos not already in imageOverrides.ts at time of check; 'Lewis Pass' tarn photo is already used so not reused."
+}
