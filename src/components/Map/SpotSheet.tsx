@@ -169,15 +169,15 @@ function CarouselCard({ spot, isActive, onPress, onAddVisit, gradId }: {
               <Text style={st.cardAddVisitTagTxt}>Add Visit</Text>
             </Pressable>
           )}
-          {/* Bottom-left overlay: just the name now, on a dark scrim so it stays legible
-              over any photo. Time-to-spend and cost sit below the image. */}
-          <View pointerEvents="none" style={[st.cardImageGradWrap, { height: Math.max(64, nameH + 10 + 28) }]}>
+          {/* Bottom overlay: name, time/cost and the description, layered over the photo (which fills the whole card)
+              on a black scrim that fades up from the bottom so the white text stays legible over any photo. */}
+          <View pointerEvents="none" style={[st.cardImageGradWrap, { height: Math.max(80, nameH + 10 + 56) }]}>
             {/* keyed by its height: react-native-svg keeps its first size when the wrapper later grows */}
-            <Svg key={Math.max(64, nameH + 10 + 28)} style={StyleSheet.absoluteFill}>
+            <Svg key={Math.max(80, nameH + 10 + 56)} style={StyleSheet.absoluteFill}>
               <Defs>
                 <SvgLinearGradient id={`cardGrad-${gradId}`} x1="0" y1="0" x2="0" y2="1">
                   {GRADIENT_STOPS.map(({ offset, opacity }) => (
-                    <Stop key={offset} offset={offset} stopColor="#000" stopOpacity={opacity} />
+                    <Stop key={offset} offset={offset} stopColor="#000" stopOpacity={Math.min(1, opacity * 1.25)} />
                   ))}
                 </SvgLinearGradient>
               </Defs>
@@ -186,22 +186,18 @@ function CarouselCard({ spot, isActive, onPress, onAddVisit, gradId }: {
           </View>
           <View pointerEvents="none" style={st.cardImageInfo} onLayout={e => setNameH(e.nativeEvent.layout.height)}>
             <Text style={[st.cardName, cardNameSize(spot.name)]}>{spot.name}</Text>
-          </View>
-        </View>
-        {/* Below the image — time/cost, then the description with room for at least
-            two lines. */}
-        <View style={st.cardInfo}>
-          <View style={st.cardStatRow}>
-            <View style={st.cardTimeRow}>
-              <Clock size={12} color={INFO_INK} strokeWidth={2.5} />
-              <Text style={st.cardTimeTxt}>{formatVisitTime(spot.visitHoursMin, spot.visitHoursMax)}</Text>
+            <View style={st.cardStatRow}>
+              <View style={st.cardTimeRow}>
+                <Clock size={12} color="white" strokeWidth={2.5} />
+                <Text style={st.cardTimeTxt}>{formatVisitTime(spot.visitHoursMin, spot.visitHoursMax)}</Text>
+              </View>
+              <View style={st.cardStatDivider} />
+              <View style={st.cardTimeRow}>
+                <Text style={st.cardTimeTxt}>{formatSpotCost(spot)}</Text>
+              </View>
             </View>
-            <View style={st.cardStatDivider} />
-            <View style={st.cardTimeRow}>
-              <Text style={st.cardTimeTxt}>{formatSpotCost(spot)}</Text>
-            </View>
+            <Text style={st.cardBio} numberOfLines={3}>{spot.bio}</Text>
           </View>
-          <Text style={st.cardBio} numberOfLines={3}>{spot.bio}</Text>
         </View>
       </View>
     </Pressable>
@@ -1540,7 +1536,7 @@ const st = StyleSheet.create({
   // Smooth gradient (matches the full-screen hero's own scrim) behind the bottom-left text
   // overlay, tall enough to cover the name block so it stays legible over any
   // photo — a flat rect banded visibly at its edge, which this replaced.
-  cardImageGradWrap: { position: 'absolute', left: 0, right: 0, bottom: 0, height: 64 },
+  cardImageGradWrap: { position: 'absolute', left: 0, right: 0, bottom: 0, height: 80 },
   // Green "Visited" tag, top-right of the image — only rendered when actually visited.
   cardVisitedTag: {
     position: 'absolute', top: 10, right: 10,
@@ -1558,17 +1554,16 @@ const st = StyleSheet.create({
   },
   cardAddVisitTagTxt: { fontSize: 12, fontWeight: '700', color: 'white' },
   // Bottom-left overlay on the image itself, sitting on the gradient (cardImageGradWrap).
-  cardImageInfo: { position: 'absolute', left: 14, right: 14, bottom: 10, gap: 5 },
+  cardImageInfo: { position: 'absolute', left: 14, right: 14, bottom: 12, gap: 5 },
   cardName:    { fontSize: 25, fontFamily: 'PlayfairDisplay_700Bold', color: 'white', lineHeight: 28,
                  letterSpacing: -0.3,
                  textShadowColor: 'rgba(0,0,0,0.3)', textShadowRadius: 4, textShadowOffset: { width: 0, height: 1 } },
   // Time-to-spend and cost, side by side below the image rather than overlaid on it.
-  cardStatRow: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 2, marginBottom: 8 },
+  cardStatRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   cardTimeRow: { flexDirection: 'row', alignItems: 'center', gap: 4, flexShrink: 0 },
-  cardTimeTxt: { fontSize: 12.5, fontWeight: '700', color: INFO_INK },
-  cardStatDivider: { width: 1, height: 12, marginHorizontal: 2, backgroundColor: INFO_INK },
-  cardInfo:    { backgroundColor: 'white', paddingHorizontal: 14, paddingTop: 6, paddingBottom: 12 },
-  cardBio:     { fontSize: 12.5, color: '#6B7280', lineHeight: 16, minHeight: 48 },
+  cardTimeTxt: { fontSize: 12.5, fontWeight: '700', color: 'white', textShadowColor: 'rgba(0,0,0,0.5)', textShadowRadius: 3, textShadowOffset: { width: 0, height: 1 } },
+  cardStatDivider: { width: 1, height: 12, marginHorizontal: 2, backgroundColor: 'rgba(255,255,255,0.7)' },
+  cardBio:     { fontSize: 12.5, color: 'rgba(255,255,255,0.92)', lineHeight: 16, textShadowColor: 'rgba(0,0,0,0.5)', textShadowRadius: 3, textShadowOffset: { width: 0, height: 1 } },
   // Sits below the carousel (a sibling of the ScrollView, not any one card) — sandwiched
   // between the active card's bottom edge and the tab bar underneath. marginTop:'auto'
   // pins it to the bottom of the now fixed-height carouselWrap even when the card content
