@@ -1701,7 +1701,8 @@ const st = StyleSheet.create({
   // DestinationSheet's About-tab boxes (its ABOUT_BORDER, '#D8DBE0') — was a fainter '#F0F1F3'.
   // White box, gray border (the About boxes' '#D8DBE0'), black clock and ticket icons on a light gray
   // circle.
-  glanceCard: { backgroundColor: 'white', borderRadius: 20, flexDirection: 'row', borderWidth: 1, borderColor: '#E5E7EB' },
+  // No box around the three facts — just the row, with a hairline divider between them.
+  glanceCard: { flexDirection: 'row' },
   glanceItem: { flex: 1, alignItems: 'center', paddingVertical: 18, paddingHorizontal: 6, gap: 4 },
   glanceDivider: { width: 1, backgroundColor: '#E5E7EB', marginVertical: 14 },
   // Colour comes inline per fact (GLANCE_TIME / GLANCE_COST / GLANCE_PLACE).
