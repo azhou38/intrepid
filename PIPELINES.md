@@ -28,6 +28,10 @@ Benchmark: Red Rocks, Kapiti Island, Lake Coleridge.
 ## Pipeline B — imagery
 1. **Pre-filter (script)** — `IMAGES.md` → "Automatic pre-filter", over every photo in the app.
 2. **Searcher** — region-qualified queries, Commons categories, geosearch near the coordinates.
+   - Commons first (its licence data is clean and the app hot-links its thumbnails); prefer Featured, Quality and Valued images.
+   - **Fallback when Commons has nothing usable:** Openverse (`api.openverse.org/v1/images`, no key needed, `license_type=commercial`), which also surfaces Flickr and similar. Accept only CC0, PDM and CC-BY; never NC or ND. Store the licence, author and landing URL in the manifest next to the file, and use only a source that allows hot-linking.
+   - Unsplash/Pexels only for headline destinations (their location tags are unreliable); tourism-board and Google Places photos are out (copyright / terms).
+   - Cloud runs may hit Wikimedia 429s (see the rate-limit probe); run the Commons-heavy steps with backoff, or locally.
 3. **Judge** — views the image, scores the checks with reasons.
 4. **Second judge** — re-scores finalists blind; disagreement means reject or ask a human.
 5. **Technical check (script)** — licence, size, manifest.
