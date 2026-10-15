@@ -1480,7 +1480,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "144 islands, dolphin cruises and the birthplace of modern New Zealand.",
     description: "The Bay of Islands is a drowned valley of about 144 islands, sheltered bays and white-shell beaches on the Northland coast. Paihia and Russell are the bases for dolphin cruises and the Hole in the Rock, while the Waitangi Treaty Grounds mark where the founding agreement between Māori and the Crown was signed in 1840. Kerikeri, inland, has the country's oldest stone building.",
     whyVisit: ["Cruise to the Hole in the Rock", "Waitangi, where NZ began", "Kayak and sail the islands"],
-    whyVisitPhotos: [",00 0664 Bay of Island (Neuseeland) - Hole in the Rock.jpg", "Waitangi Grounds (Treaty House & Flagstaff) (16045248795).jpg", "Urupukapuka Island (52735059736).jpg"],
+    whyVisitPhotos: [",00 0664 Bay of Island (Neuseeland) - Hole in the Rock.jpg", "00 27 0577 Waitangi, New Zealand - Treaty House.jpg", "Urupukapuka Island (52735059736).jpg"],
     highlights: ['Island cruises', 'Waitangi', 'Historic Russell'],
     goodToKnow: [
       { icon: '⛴️', title: 'Cross to Russell by ferry', detail: 'A short passenger ferry links Paihia and Russell, and is the best way to reach the town.' },

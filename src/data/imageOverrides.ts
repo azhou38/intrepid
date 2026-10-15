@@ -236,4 +236,6 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "PS Waimarie": "Waimarie paddle steamer on Whanganui River, Whanganui.jpg",
   "Fox Glacier": "Fox Glacier in Westland National Park 07.jpg",
   "Lake Waikaremoana": "New Zealand, Great Walk Lake Waikaremoana (41).JPG",
+  "Waitangi Treaty Grounds": "00 27 0577 Waitangi, New Zealand - Treaty House.jpg",
+  "Russell, New Zealand": "00 26 0874 Russell Neuseeland - Bay of Islands.jpg",
 };
