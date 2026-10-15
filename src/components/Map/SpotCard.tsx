@@ -6,6 +6,7 @@ import FadeInImage from './FadeInImage';
 import { styles } from './DestinationCard';
 import { CARD_SCRIM_FADE, cardScrimStops } from './cardScrim';
 import { fitNameFontSize } from '../../utils/fitNameFontSize';
+import { titleStatGap } from '../../utils/titleStatGap';
 import { formatSpotCost, formatVisitTime, spotPhotoTitle, type Spot } from '../../data/spots';
 import { useVisitIndex } from '../../store';
 import { thumbCache, getOrFetchWikiThumbnail } from '../../utils/photoCache';
@@ -89,7 +90,7 @@ function SpotCard({ spot, onPress, width }: {
             </Svg>
           </View>
           <View pointerEvents="none" style={[styles.cardImageInfo, local.imageInfo]} onLayout={e => setInfoH(e.nativeEvent.layout.height)}>
-            <Text style={[styles.cardName, { fontSize: nameSize, lineHeight: Math.round(nameSize * 1.14) }]}>{spot.name}</Text>
+            <Text style={[styles.cardName, { fontSize: nameSize, lineHeight: Math.round(nameSize * 1.14), marginBottom: titleStatGap(nameSize, 1.14, 6.5) }]}>{spot.name}</Text>
             <View style={local.metaRow}>
               <Clock size={11} color="rgba(255,255,255,0.9)" strokeWidth={2.5} />
               <Text style={local.metaTxt}>{formatVisitTime(spot.visitHoursMin, spot.visitHoursMax)}</Text>
@@ -115,7 +116,8 @@ function SpotCard({ spot, onPress, width }: {
 
 const local = StyleSheet.create({
   // Lifted off the card's bottom edge so the name / time / cost block isn't cramped against it.
-  imageInfo: { bottom: 16 },
+  // gap 0: the space under the title is set per font size (titleStatGap), so it stays the same visible size at any size.
+  imageInfo: { bottom: 16, gap: 0 },
   metaRow: { flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap', gap: 4, rowGap: 2 },
   metaTxt: {
     fontSize: 11, fontWeight: '600', color: 'rgba(255,255,255,0.9)',

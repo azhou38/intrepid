@@ -30,6 +30,7 @@ import { photoCache, thumbCache, getOrFetchWikiThumbnail, HEADER_PX } from '../.
 import CircleFlag from '../CircleFlag';
 import { CARD_SCRIM_FADE, cardScrimStops } from './cardScrim';
 import { fitNameFontSize } from '../../utils/fitNameFontSize';
+import { titleStatGap } from '../../utils/titleStatGap';
 import FadeInImage from './FadeInImage';
 import SpotCard from './SpotCard';
 import { sheetPose } from './sheetPose';
@@ -50,7 +51,8 @@ const cardNameSize = (name: string) => {
   // Full size (25) for any name that fits on two lines; otherwise just small enough to fit on two, with no word split
   // across lines.
   const fontSize = fitNameFontSize(name, 25, 12, CARD_W - 32, 2);
-  return { fontSize, lineHeight: Math.round(fontSize * 1.12) };
+  // The margin under the title is sized so the visible gap to the time/cost line is the same at every font size.
+  return { fontSize, lineHeight: Math.round(fontSize * 1.12), marginBottom: titleStatGap(fontSize, 1.12, CARD_TITLE_STAT_GAP) };
 };
 // Practical info — time needed and cost — in plain black, both on the carousel cards and in the
 // sheet's gray box. Deliberately not green: across the app green means "visited".
@@ -100,6 +102,10 @@ const SIDE_PAD  = (W - CARD_W) / 2;
 // sheet's "Popular Spots" row (see DestinationSheet's own GRID_CARD_W), so the two carousels match exactly.
 const NEARBY_GRID_GAP = 14;
 const NEARBY_CARD_W = (W - 32 - NEARBY_GRID_GAP) / 2;
+
+// Visible gap (px) between a carousel card's title and its time/cost line: what the old fixed 5 px gap looked like under a
+// 25 px title.
+const CARD_TITLE_STAT_GAP = 8.6;
 
 // Gap between the bottom of the card and its overlaid text.
 const CARD_INFO_BOTTOM = 12;
@@ -1566,12 +1572,12 @@ const st = StyleSheet.create({
   },
   cardAddVisitTagTxt: { fontSize: 12, fontWeight: '700', color: 'white' },
   // Bottom-left overlay on the image itself, sitting on the gradient (cardImageGradWrap).
-  cardImageInfo: { position: 'absolute', left: 14, right: 14, bottom: CARD_INFO_BOTTOM, gap: 5 },
+  cardImageInfo: { position: 'absolute', left: 14, right: 14, bottom: CARD_INFO_BOTTOM },
   cardName:    { fontSize: 25, fontFamily: 'PlayfairDisplay_700Bold', color: 'white', lineHeight: 28,
                  letterSpacing: -0.3,
                  textShadowColor: 'rgba(0,0,0,0.3)', textShadowRadius: 4, textShadowOffset: { width: 0, height: 1 } },
   // Time-to-spend and cost, side by side below the image rather than overlaid on it.
-  cardStatRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+  cardStatRow: { flexDirection: 'row', alignItems: 'center', gap: 8, marginBottom: 5 },
   cardTimeRow: { flexDirection: 'row', alignItems: 'center', gap: 4, flexShrink: 0 },
   cardTimeTxt: { fontSize: 12.5, fontWeight: '700', color: 'white', textShadowColor: 'rgba(0,0,0,0.5)', textShadowRadius: 3, textShadowOffset: { width: 0, height: 1 } },
   cardStatDivider: { width: 1, height: 12, marginHorizontal: 2, backgroundColor: 'rgba(255,255,255,0.7)' },
