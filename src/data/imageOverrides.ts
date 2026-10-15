@@ -238,4 +238,6 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Lake Waikaremoana": "New Zealand, Great Walk Lake Waikaremoana (41).JPG",
   "Waitangi Treaty Grounds": "00 27 0577 Waitangi, New Zealand - Treaty House.jpg",
   "Russell, New Zealand": "00 26 0874 Russell Neuseeland - Bay of Islands.jpg",
+  "Waitomo Glowworm Caves": "'Cathedral' in Waitomo Cave.jpg",
+  "Mangapohue Natural Bridge": "Bottom rock arch of Mangapohue Natural Bridge over Mangapohue Stream.jpg",
 };
