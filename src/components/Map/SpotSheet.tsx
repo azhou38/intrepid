@@ -97,6 +97,21 @@ const SIDE_PAD  = (W - CARD_W) / 2;
 const NEARBY_GRID_GAP = 14;
 const NEARBY_CARD_W = (W - 32 - NEARBY_GRID_GAP) / 2;
 
+// Height (px) of the soft edge above the text block, where the scrim fades in from clear.
+const CARD_SCRIM_FADE = 36;
+// The scrim's gradient for a given total height: a smooth fade from clear to ~60% black over the top CARD_SCRIM_FADE px,
+// then on to ~90% at the bottom — so the whole text block, title included, sits on solid shading, not just the last
+// lines. (The shared GRADIENT_STOPS fade across the whole height, which left the title on an almost clear patch.)
+function cardScrimStops(totalH: number): { offset: string; opacity: number }[] {
+  const f = Math.min(1, CARD_SCRIM_FADE / Math.max(totalH, 1));
+  const out = Array.from({ length: 7 }, (_, i) => {
+    const t = i / 6;
+    return { offset: `${(f * t).toFixed(3)}`, opacity: 0.6 * t * t * (3 - 2 * t) };
+  });
+  out.push({ offset: '1', opacity: 0.9 });
+  return out;
+}
+
 // Gap between the bottom of the card and its overlaid text.
 const CARD_INFO_BOTTOM = 12;
 
@@ -137,7 +152,7 @@ function CarouselCard({ spot, isActive, onPress, onAddVisit, gradId }: {
   // The black scrim is as tall as the text block it sits behind — its measured height (nameH, the whole overlay: name,
   // time/cost and description), the overlay's bottom inset, and a short fade above the first line — so a card with a
   // short description gets a short scrim and one with a long description a tall one.
-  const scrimH = nameH + CARD_INFO_BOTTOM + 28;
+  const scrimH = nameH + CARD_INFO_BOTTOM + CARD_SCRIM_FADE;
 
   const isVisited  = useVisitIndex().isSpotVisited(spot.id);
 
@@ -184,8 +199,8 @@ function CarouselCard({ spot, isActive, onPress, onAddVisit, gradId }: {
             <Svg key={scrimH} style={StyleSheet.absoluteFill}>
               <Defs>
                 <SvgLinearGradient id={`cardGrad-${gradId}`} x1="0" y1="0" x2="0" y2="1">
-                  {GRADIENT_STOPS.map(({ offset, opacity }) => (
-                    <Stop key={offset} offset={offset} stopColor="#000" stopOpacity={Math.min(1, opacity * 1.25)} />
+                  {cardScrimStops(scrimH).map(({ offset, opacity }) => (
+                    <Stop key={offset} offset={offset} stopColor="#000" stopOpacity={opacity} />
                   ))}
                 </SvgLinearGradient>
               </Defs>
