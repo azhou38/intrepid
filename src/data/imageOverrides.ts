@@ -262,4 +262,8 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Kea Point": "Southern Alps from Kea Point, Aoraki - Mount Cook National Park, New Zealand.jpg",
   "Sealy Tarns": "Larger of the Sealy Tarns with Huddleston Glacier in the background.jpg",
   "Red Tarns": "Red Tarn with Aoraki Mount Cook in the background.jpg",
+  "Akaroa Head": "Akaroa Head 1986.jpg",
+  "Banks Track": "Banks Peninsula Track 0399.jpg",
+  "Hinewai Reserve": "Hinewai Reserve - northern parts, Banks Peninsula, New Zealand.jpg",
+  "Okains Bay Museum": "Okains Bay Museum MRD 01.jpg",
 };
