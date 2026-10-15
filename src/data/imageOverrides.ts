@@ -218,4 +218,15 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Mount Maunganui Main Beach": "Mount Maunganui Main Beach, 2013 (05).jpg",
   "Pitt Island": "Tree on Rangihaute Rangiauria Pitt Island (52785344950).jpg",
   "Whanganui River Road": "Jerusalem - Hiruharama.JPG",
+  // Auckland spots
+  "Museum of Transport and Technology": "MOTAT, Auckland, New Zealand 3.jpg",
+  "Mission Bay, New Zealand": "Mission Bay Beach 2014.jpg",
+  "Auckland Zoo": "Kea at Auckland Zoo 2023.jpg",
+  "Auckland Domain": "Auckland, the domain, winter garden, cortile 02.jpg",
+  "Maungakiekie / One Tree Hill": "One Tree Hill, Auckland NZ.jpg",
+  "Parnell, New Zealand": "Parnell Rose Festival.jpg",
+  "Ponsonby, New Zealand": "Ponsonby Road, Ponsonby, Auckland, New Zealand.jpg",
+  "Takapuna": "View of Rangitoto Island from Takapuna Beach.jpg",
+  "Wynyard Quarter": "Wynyard Quarter, Auckland, 1010, New Zealand - panoramio.jpg",
+  "North Head": "North Head And Eastern Devonport.jpg",
 };
