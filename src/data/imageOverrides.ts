@@ -259,4 +259,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Queen Mary Hospital (Hanmer Springs)": "Queen Mary Hospital, Hanmer Springs.jpg",
   "Lewis Pass": "Alpine tarn on Lewis Pass 05.jpg",
   "Sheepdog Statue": "Lake Tekapo Sheepdog Statue 002.JPG",
+  "Kea Point": "Southern Alps from Kea Point, Aoraki - Mount Cook National Park, New Zealand.jpg",
+  "Sealy Tarns": "Larger of the Sealy Tarns with Huddleston Glacier in the background.jpg",
+  "Red Tarns": "Red Tarn with Aoraki Mount Cook in the background.jpg",
 };
