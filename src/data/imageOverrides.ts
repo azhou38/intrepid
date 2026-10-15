@@ -113,7 +113,6 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Penguin Place": "Megadyptes antipodes -Otago Peninsula, Dunedin, New Zealand -family-8.jpg",
   "Bushy Beach": "Bushy Beach, Oamaru.jpg",
   "Oamaru Blue Penguin Colony": "Little blue penguin walking into water.jpg",
-  "Ackers Point": "Butterfield Beach Stewart Island.jpg",
   "Observation Rock": "Stewart Island Observation Rock sunset.jpg",
   "Rakiura Track": "Rakiura Track, Stewart Island (16538257491).jpg",
   "Ulva Island": "Ulva Island wharf area.jpg",
