@@ -197,7 +197,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Blue Lake (Rotorua)": "Lake Tikitapu, New Zealand (2).JPG",
   "Government Gardens": "Government Gardens. Rotorua (26149155395).jpg",
   "Skyline Rotorua": "Rotorua Skyline - Fairy Springs, Rotorua New Zealand (25727788947).jpg",
-  "Lake Tarawera": "View of Mount Tarawera looking across Lake Tarawera (21094420760).jpg",
+  "Lake Tarawera": "20250124-L1020197.jpg",
   "Craters of the Moon": "Karapiti 03.jpg",
   "Taupō Bungy": "Bungy jump in Taupo - panoramio.jpg",
   "Tongariro Alpine Crossing": "Tongariro alpine crossing Ngauruhoe behind volcanic mouth.JPG",
