@@ -20,12 +20,12 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { SharedValue } from 'react-native-reanimated';
 import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'react-native-svg';
 import { Check, Clock, CalendarClock, ChevronUp, ChevronDown, ChevronRight, LayoutGrid, Plus,
-         ExternalLink, Ticket } from 'lucide-react-native';
+         ExternalLink, Ticket, MapPin } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
 import { useStore, useVisitIndex } from '../../store';
 import type { Destination, Visit } from '../../types';
 import type { Spot } from '../../data/spots';
-import { DAY_NAMES, hoursForDay, formatSpotCost, formatVisitTime, getSpotOpenStatus, specialClosureOn, spotCountry, spotCountryCode, spotPhotoTitle, zonedNowForSpot } from '../../data/spots';
+import { DAY_NAMES, hoursForDay, formatSpotCost, formatVisitTime, getSpotOpenStatus, specialClosureOn, spotCountry, spotCountryCode, spotDestination, spotPhotoTitle, zonedNowForSpot } from '../../data/spots';
 import { photoCache, thumbCache, getOrFetchWikiThumbnail, HEADER_PX } from '../../utils/photoCache';
 import CircleFlag from '../CircleFlag';
 import { CARD_SCRIM_FADE, cardScrimStops } from './cardScrim';
@@ -1353,6 +1353,11 @@ isVisited ? (
   );
 }
 
+// Icon colours for the three at-a-glance facts on the About tab: icon colour on a light tint of the same hue.
+const GLANCE_TIME  = { bg: '#DCFCE7', fg: '#16A34A' };
+const GLANCE_COST  = { bg: '#FFEDD5', fg: '#EA580C' };
+const GLANCE_PLACE = { bg: '#EDE9FE', fg: '#7C3AED' };
+
 // ── About panel (shared between visited/non-visited) ──────────────────────────
 function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore, nearbyHlScrollRef }: { spot: Spot; nearbySpots: Spot[]; onSelectNearby: (spot: Spot) => void; onExplore?: () => void; nearbyHlScrollRef?: React.RefObject<GHScrollView | null> }) {
   const [hoursOpen, setHoursOpen] = useState(false);
@@ -1373,21 +1378,31 @@ function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore, nearbyHlScrol
   return (
     <>
       <View style={st.section}>
+        {/* Three at-a-glance facts, each icon on its own tinted circle: time needed (green), cost (orange) and where it is
+            (purple) — the destination, or the country for a standalone spot. */}
         <View style={st.glanceCard}>
           <View style={st.glanceItem}>
-            <View style={st.glanceIconCircle}>
-              <Clock size={20} color={INFO_INK} />
+            <View style={[st.glanceIconCircle, { backgroundColor: GLANCE_TIME.bg }]}>
+              <Clock size={20} color={GLANCE_TIME.fg} />
             </View>
             <Text style={st.glanceVal} numberOfLines={1}>{formatVisitTime(spot.visitHoursMin, spot.visitHoursMax)}</Text>
-            <Text style={st.glanceLbl}>Time Needed</Text>
+            <Text style={st.glanceLbl}>Time needed</Text>
           </View>
           <View style={st.glanceDivider} />
           <View style={st.glanceItem}>
-            <View style={st.glanceIconCircle}>
-              <Ticket size={20} color={INFO_INK} />
+            <View style={[st.glanceIconCircle, { backgroundColor: GLANCE_COST.bg }]}>
+              <Ticket size={20} color={GLANCE_COST.fg} />
             </View>
             <Text style={st.glanceVal} numberOfLines={1}>{formatSpotCost(spot)}</Text>
             <Text style={st.glanceLbl}>Cost (Adult)</Text>
+          </View>
+          <View style={st.glanceDivider} />
+          <View style={st.glanceItem}>
+            <View style={[st.glanceIconCircle, { backgroundColor: GLANCE_PLACE.bg }]}>
+              <MapPin size={20} color={GLANCE_PLACE.fg} />
+            </View>
+            <Text style={st.glanceVal} numberOfLines={1}>{spotDestination(spot)?.name ?? spotCountry(spot) ?? ''}</Text>
+            <Text style={st.glanceLbl}>Location</Text>
           </View>
         </View>
       </View>
@@ -1409,6 +1424,11 @@ function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore, nearbyHlScrol
           : status.kind === 'closing-soon' || status.kind === 'opening-soon' ? '#D97706'
           : status.kind === 'closed' ? '#DC2626'
           : '#111827';
+        // The whole row is tinted by the status, like its text: light green open, amber soon, red closed.
+        const statusTint = status.kind === 'open' ? { bg: '#F0FDF4', border: '#BBF7D0' }
+          : status.kind === 'closing-soon' || status.kind === 'opening-soon' ? { bg: '#FFFBEB', border: '#FDE68A' }
+          : status.kind === 'closed' ? { bg: '#FEF2F2', border: '#FECACA' }
+          : { bg: 'white', border: '#D8DBE0' };
         const closedToday = hoursForDay(spot, today) === 'Closed';
         const todayHoliday = specialClosureOn(spot, zonedNowForSpot(spot));
         return (
@@ -1418,7 +1438,7 @@ function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore, nearbyHlScrol
                 its top radius, so the two read as a single attached box, not separate cards. */}
             <View style={[st.section, { gap: 0 }]}>
               <Pressable
-                style={[st.hoursCard, hoursOpen && st.hoursCardOpen]}
+                style={[st.hoursCard, { backgroundColor: statusTint.bg, borderColor: statusTint.border }, hoursOpen && st.hoursCardOpen]}
                 onPress={() => setHoursOpen(o => !o)}
               >
                 <CalendarClock size={20} color={statusColor} />
@@ -1430,7 +1450,7 @@ function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore, nearbyHlScrol
                 </Text>
                 {hoursOpen
                   ? <ChevronUp size={18} color={statusColor} style={{ marginLeft: 'auto' }} />
-                  : <ChevronDown size={18} color={statusColor} style={{ marginLeft: 'auto' }} />}
+                  : <ChevronRight size={18} color={statusColor} style={{ marginLeft: 'auto' }} />}
               </Pressable>
 
               {hoursOpen && (
@@ -1458,17 +1478,20 @@ function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore, nearbyHlScrol
 
       {!!spot.ticketUrl && (
         <View style={st.section}>
-          <View style={st.ticketCard}>
+          {/* The whole card opens the site: favicon, a small gray "OFFICIAL SITE" label over the spot's name, and a round
+              green open-in-new button. No body copy. */}
+          <Pressable style={st.siteCard} onPress={() => Linking.openURL(spot.ticketUrl!)}>
             {ticketFaviconUri && !faviconFailed
-              ? <Image source={{ uri: ticketFaviconUri }} style={st.ticketFavicon} onError={() => setFaviconFailed(true)} />
-              : <Ticket size={20} color="#6366F1" />}
-            <Text style={st.ticketTxt}>{spot.name} official site</Text>
-            <Pressable style={st.ticketBtn} onPress={() => Linking.openURL(spot.ticketUrl!)} hitSlop={6}>
-              <ExternalLink size={13} color="white" />
-              <Text style={st.ticketBtnTxt}>Visit</Text>
-              <ChevronRight size={13} color="white" />
-            </Pressable>
-          </View>
+              ? <Image source={{ uri: ticketFaviconUri }} style={st.siteFavicon} onError={() => setFaviconFailed(true)} />
+              : <View style={st.siteFavicon}><Ticket size={20} color="#6366F1" /></View>}
+            <View style={st.siteText}>
+              <Text style={st.siteEyebrow}>OFFICIAL SITE</Text>
+              <Text style={st.siteName} numberOfLines={1}>{spot.name}</Text>
+            </View>
+            <View style={st.siteBtn}>
+              <ExternalLink size={18} color="#16A34A" />
+            </View>
+          </Pressable>
         </View>
       )}
 
@@ -1687,15 +1710,13 @@ const st = StyleSheet.create({
   // DestinationSheet's About-tab boxes (its ABOUT_BORDER, '#D8DBE0') — was a fainter '#F0F1F3'.
   // White box, gray border (the About boxes' '#D8DBE0'), black clock and ticket icons on a light gray
   // circle.
-  glanceCard: { backgroundColor: 'white', borderRadius: 16, flexDirection: 'row', borderWidth: 1, borderColor: '#D8DBE0' },
-  glanceItem: { flex: 1, alignItems: 'center', paddingVertical: 20, gap: 5 },
-  glanceDivider: { width: 1, backgroundColor: '#D8DBE0', marginVertical: 14 },
-  glanceIconCircle: { width: 40, height: 40, borderRadius: 20, backgroundColor: '#E5E7EB',
-                      alignItems: 'center', justifyContent: 'center', marginBottom: 2 },
-  // 20% larger than DestinationSheet's glanceRowTitle ("Why Visit" reasons text), which this
-  // otherwise matches in weight/color.
-  glanceVal: { fontSize: 19, fontWeight: '600', color: '#111827', lineHeight: 26 },
-  glanceLbl: { fontSize: 11, color: '#9CA3AF', fontWeight: '700' },
+  glanceCard: { backgroundColor: 'white', borderRadius: 20, flexDirection: 'row', borderWidth: 1, borderColor: '#E5E7EB' },
+  glanceItem: { flex: 1, alignItems: 'center', paddingVertical: 18, paddingHorizontal: 6, gap: 4 },
+  glanceDivider: { width: 1, backgroundColor: '#E5E7EB', marginVertical: 14 },
+  // Colour comes inline per fact (GLANCE_TIME / GLANCE_COST / GLANCE_PLACE).
+  glanceIconCircle: { width: 44, height: 44, borderRadius: 22, alignItems: 'center', justifyContent: 'center', marginBottom: 4 },
+  glanceVal: { fontSize: 16, fontWeight: '700', color: '#111827', lineHeight: 22 },
+  glanceLbl: { fontSize: 12, color: '#9CA3AF', fontWeight: '500' },
   // Collapsed hours row — white card, light gray border (not joined to the week list below it,
   // which only exists as a separate card while open — see SpotAbout's own comment).
   hoursCard: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: 'white',
@@ -1722,15 +1743,14 @@ const st = StyleSheet.create({
   // (hoursWeekDay/hoursWeekVal) — only the color sets today's row apart, not extra boldness.
   hoursWeekDayToday: { fontWeight: '600' },
   hoursWeekDayTodayClosed: { color: '#DC2626', fontWeight: '600' },
-  // Ticketing — same white/light-gray card shape as hoursCard, with a small filled button in
-  // place of the chevron (no separate body copy — see SpotAbout's own comment).
-  ticketCard: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: 'white',
-                borderRadius: 16, padding: 14, borderWidth: 1, borderColor: '#D8DBE0' },
-  ticketFavicon: { width: 24, height: 24, borderRadius: 4 },
-  ticketTxt: { flex: 1, fontSize: 16, fontWeight: '600', color: '#111827', lineHeight: 22 },
-  ticketBtn: { flexDirection: 'row', alignItems: 'center', gap: 4, backgroundColor: '#111827',
-               borderRadius: 10, paddingHorizontal: 12, paddingVertical: 9 },
-  ticketBtnTxt: { fontSize: 13, fontWeight: '700', color: 'white' },
+  // Official site — a white card with a favicon, a small gray eyebrow over the name, and a round green button.
+  siteCard: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: 'white',
+              borderRadius: 18, padding: 12, borderWidth: 1, borderColor: '#E5E7EB' },
+  siteFavicon: { width: 44, height: 44, borderRadius: 10, backgroundColor: '#F3F4F6', alignItems: 'center', justifyContent: 'center' },
+  siteText: { flex: 1, gap: 2 },
+  siteEyebrow: { fontSize: 11, fontWeight: '600', color: '#9CA3AF', letterSpacing: 0.6 },
+  siteName: { fontSize: 16, fontWeight: '700', color: '#111827' },
+  siteBtn: { width: 40, height: 40, borderRadius: 20, backgroundColor: '#DCFCE7', alignItems: 'center', justifyContent: 'center' },
 
   // "Explore nearby" — same header + horizontal-scroll pattern as the destination sheet's own
   // "Popular Spots" row (see DestinationSheet's plainSectionHeader/seeAllRow/hlScroll/hlRow).
