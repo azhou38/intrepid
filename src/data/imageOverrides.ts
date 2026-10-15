@@ -250,4 +250,5 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Weta Workshop": "The Weta Cave.jpg",
   "Stony Batter Historic Reserve": "Callitriche stagnalis Scop. (AM AK309216-3).jpg",
   "Okarito": "Ōkārito Lagoon • Okarito Kayaks • MRD 05.jpg",
+  "Otago Central Rail Trail": "Poolburn Viaduct - December 2025.jpg",
 };
