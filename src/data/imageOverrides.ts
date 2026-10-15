@@ -246,4 +246,5 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Cathedral Caves": "Cathedral seacave NZ-1.jpg",
   "Slope Point": "Slope point is the most Southerly point of the South Island. The ever present force of the Southerly winds carves the trees into surreal forms. - panoramio.jpg",
   "Centre of New Zealand": "The Centre of New Zealand 02.jpg",
+  "Cape Foulwind": "Cape Foulwind Lighthouse.jpg",
 };
