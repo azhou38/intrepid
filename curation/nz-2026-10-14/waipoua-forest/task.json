@@ -1,0 +1,87 @@
+{
+ "destination": {
+  "id": "waipoua-forest",
+  "name": "Waipoua Forest",
+  "country": "New Zealand",
+  "category": "park",
+  "coordinates": {
+   "latitude": -35.63,
+   "longitude": 173.54
+  },
+  "whyVisit": [
+   "See Tāne Mahuta, lord of the forest",
+   "Ancient kauri walks",
+   "Hokianga Harbour sand dunes"
+  ]
+ },
+ "only_slots_with_flags_need_work": true,
+ "slots": [
+  {
+   "slot": "header",
+   "key": "Waipoua Forest",
+   "current": "Waipoua Forest, kauri trees.jpg",
+   "flags": []
+  },
+  {
+   "slot": "why-1",
+   "reason": "See Tāne Mahuta, lord of the forest",
+   "current": "Tane Mahuta, 2016-01-22-2.jpg",
+   "flags": []
+  },
+  {
+   "slot": "why-2",
+   "reason": "Ancient kauri walks",
+   "current": "Te Matua Ngahere with damage 2008.jpg",
+   "flags": []
+  },
+  {
+   "slot": "why-3",
+   "reason": "Hokianga Harbour sand dunes",
+   "current": "00 0460 Opononi, New Zeeland - Hokianga Harbour.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:waipoua-forest-1",
+   "spot": "Tāne Mahuta",
+   "bio": "The largest known living kauri tree, about 2,000 years old and over 50 metres tall.",
+   "key": "Tāne Mahuta",
+   "current": "00 29 0496 Waipoua Forest NZ - Kauri Baum Tane Mahuta.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:waipoua-forest-2",
+   "spot": "Te Matua Ngāhere",
+   "bio": "Father of the Forest, a huge kauri with the widest girth in the country, reached by a short bush walk.",
+   "key": "Te Matua Ngāhere",
+   "current": "Te Matua Ngahere with damage 2008.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:waipoua-forest-3",
+   "spot": "Four Sisters",
+   "bio": "A cluster of four kauri trees joined at the base, beside the road through the forest.",
+   "key": "Four Sisters",
+   "override": "Waipoua Forest, group of kauri trees (Four Sisters)-6.jpg",
+   "current": "Waipoua Forest, group of kauri trees (Four Sisters)-6.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:waipoua-forest-4",
+   "spot": "Hokianga Harbour",
+   "bio": "A long, tidal harbour with huge white sand dunes on the north head, reached by ferry or boat.",
+   "key": "Hokianga Harbour",
+   "current": "Hokianga.jpg",
+   "flags": [
+    "category: Maps of New Zealand"
+   ]
+  },
+  {
+   "slot": "spot:waipoua-forest-5",
+   "spot": "Opononi",
+   "bio": "A harbourside village famous for Opo the friendly dolphin of the 1950s, with views over the dunes.",
+   "key": "Opononi",
+   "current": "Opononi beach2.jpg",
+   "flags": []
+  }
+ ]
+}

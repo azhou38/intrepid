@@ -1,0 +1,88 @@
+{
+ "destination": {
+  "id": "east-cape",
+  "name": "East Cape",
+  "country": "New Zealand",
+  "category": "nature",
+  "coordinates": {
+   "latitude": -37.69,
+   "longitude": 178.55
+  },
+  "whyVisit": [
+   "East Cape Lighthouse sunrise",
+   "Historic coastal wharves",
+   "Quiet bays like Hicks Bay"
+  ]
+ },
+ "only_slots_with_flags_need_work": true,
+ "slots": [
+  {
+   "slot": "header",
+   "key": "East Cape",
+   "current": "View of Hicks Bay.jpg",
+   "flags": []
+  },
+  {
+   "slot": "why-1",
+   "reason": "East Cape Lighthouse sunrise",
+   "current": "East Cape Lighthouse (2) (25579643847).jpg",
+   "flags": []
+  },
+  {
+   "slot": "why-2",
+   "reason": "Historic coastal wharves",
+   "current": "Dilapidated Hicks Bay Wharf.jpg",
+   "flags": []
+  },
+  {
+   "slot": "why-3",
+   "reason": "Quiet bays like Hicks Bay",
+   "current": "Hicks Bay, East Coast, New Zealand, 13th. Dec. 2010 - Flickr - PhillipC (2).jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:east-cape-1",
+   "spot": "East Cape Lighthouse",
+   "bio": "The easternmost lighthouse in New Zealand, reached by a steep stairway, one of the first places to see the sunrise.",
+   "key": "East Cape Lighthouse",
+   "current": "East Cape Lighthouse.JPG",
+   "flags": []
+  },
+  {
+   "slot": "spot:east-cape-2",
+   "spot": "Hicks Bay",
+   "bio": "A sheltered bay on the north coast with a wharf and a quiet beach.",
+   "key": "Hicks Bay",
+   "current": "Hicks Bay, East Coast, New Zealand, 13th. Dec. 2010 - Flickr - PhillipC (2).jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:east-cape-3",
+   "spot": "Te Araroa Pōhutukawa",
+   "bio": "Te Waha o Rerekohu, a huge pōhutukawa tree thought to be the largest in the country, beside the school.",
+   "key": "Te Araroa Pōhutukawa",
+   "current": "World%27s Biggest P%C5%8Dhutukawa.jpg",
+   "flags": [
+    "900px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:east-cape-4",
+   "spot": "Tokomaru Bay",
+   "bio": "A small bay with an old wharf, a quiet beach and views of the coastline.",
+   "key": "Tokomaru Bay",
+   "override": "Tokomaru Bay.jpg",
+   "current": "Tokomaru Bay.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:east-cape-5",
+   "spot": "Cooks Cove Walkway",
+   "bio": "A coastal walk to a cave through the rock at Cooks Cove, with views of Tolaga Bay.",
+   "key": "Cooks Cove Walkway",
+   "override": "Rock Cooks Cove.jpg",
+   "current": "Rock Cooks Cove.jpg",
+   "flags": []
+  }
+ ]
+}
