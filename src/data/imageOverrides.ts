@@ -229,7 +229,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Wynyard Quarter": "Wynyard Quarter, Auckland, 1010, New Zealand - panoramio.jpg",
   "North Head": "North Head And Eastern Devonport.jpg",
   // Whanganui National Park
-  "Whanganui National Park": "Pipiriki with Whanganui River - panoramio - Duane Wilkins (1).jpg",
+  "Whanganui National Park": "Photo taken in Whanganui - panoramio - Duane Wilkins (1).jpg",
   "Whanganui Journey": "Whanganui Journey.jpg",
   "Pipiriki": "Pipiriki with Whanganui River - panoramio - Duane Wilkins (1).jpg",
   "Jerusalem, New Zealand": "Church at jerusalem.jpg",
