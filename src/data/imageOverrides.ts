@@ -258,4 +258,5 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Nin's Bin": "Nin's Bin @ Kaikoura.jpg",
   "Queen Mary Hospital (Hanmer Springs)": "Queen Mary Hospital, Hanmer Springs.jpg",
   "Lewis Pass": "Alpine tarn on Lewis Pass 05.jpg",
+  "Sheepdog Statue": "Lake Tekapo Sheepdog Statue 002.JPG",
 };
