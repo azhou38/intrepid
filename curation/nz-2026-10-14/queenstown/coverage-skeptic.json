@@ -1,0 +1,164 @@
+{
+ "new_spots": [
+  {
+   "name": "Fergburger",
+   "keep": true,
+   "objection": "",
+   "coordinates_ok": true,
+   "bio_ok": true,
+   "bio_fix": null,
+   "ticketUrl_ok": true,
+   "photo_verdict": "reject",
+   "photo_reason": "Looked at it: a shopfront with a queue of roughly twenty people filling the lower half. The crowd is the subject (IMAGES.md: no people as the subject) and it is a flat street-level frontage. Find a photo of the burger or an uncrowded exterior, or ship with no photo."
+  },
+  {
+   "name": "Coronet Peak",
+   "keep": true,
+   "objection": "",
+   "coordinates_ok": true,
+   "bio_ok": true,
+   "bio_fix": null,
+   "ticketUrl_ok": null,
+   "photo_verdict": "accept",
+   "photo_reason": "Looked at it (2011, colour): snow-covered ski field and peak, clearly the Coronet Peak Ski Area per Commons category. Right place, named thing, wide and scenic, a real photograph."
+  },
+  {
+   "name": "The Remarkables",
+   "keep": true,
+   "objection": "",
+   "coordinates_ok": true,
+   "bio_ok": true,
+   "bio_fix": null,
+   "ticketUrl_ok": null,
+   "photo_verdict": "accept",
+   "photo_reason": "Looked at it (2019): the jagged range above Lake Wakatipu from the Skyline side, range dominates the frame, categories The Remarkables/Lake Wakatipu. Passes all four."
+  },
+  {
+   "name": "Lake Hayes",
+   "keep": true,
+   "objection": "",
+   "coordinates_ok": true,
+   "bio_ok": true,
+   "bio_fix": null,
+   "ticketUrl_ok": null,
+   "photo_verdict": "accept",
+   "photo_reason": "Looked at it (2015): autumn-framed lake with mountains and reflection, categorised Lake Hayes. Right place, the lake is the subject, scenic, real photo."
+  },
+  {
+   "name": "Queenstown Hill",
+   "keep": true,
+   "objection": "",
+   "coordinates_ok": true,
+   "bio_ok": true,
+   "bio_fix": null,
+   "ticketUrl_ok": null,
+   "photo_verdict": "none",
+   "photo_reason": "No photo proposed; none to judge. Wikipedia lead image not checked, coordinator may try it."
+  },
+  {
+   "name": "Skippers Canyon",
+   "keep": true,
+   "objection": "",
+   "coordinates_ok": true,
+   "bio_ok": true,
+   "bio_fix": null,
+   "ticketUrl_ok": null,
+   "photo_verdict": "accept",
+   "photo_reason": "Looked at it (2008): canyon road and walkers near Skippers Saddle, categorised Skippers Canyon. Walkers are small in frame, not the subject. Scenic, real photograph."
+  },
+  {
+   "name": "Macetown",
+   "keep": true,
+   "objection": "",
+   "coordinates_ok": true,
+   "bio_ok": true,
+   "bio_fix": null,
+   "ticketUrl_ok": null,
+   "photo_verdict": "none",
+   "photo_reason": "No photo proposed."
+  },
+  {
+   "name": "Arrowtown Chinese Settlement",
+   "keep": true,
+   "objection": "",
+   "coordinates_ok": true,
+   "bio_ok": true,
+   "bio_fix": null,
+   "ticketUrl_ok": null,
+   "photo_verdict": "accept",
+   "photo_reason": "Looked at it (2014): a restored stone miners' hut with rusty iron roof, categorised Arrowtown Chinese Settlement. The hut is the attraction itself, so a building close-up is acceptable; colour, in focus. Not spectacular, but nothing better is required for a heritage site."
+  },
+  {
+   "name": "Lakes District Museum",
+   "keep": true,
+   "objection": "",
+   "coordinates_ok": true,
+   "bio_ok": true,
+   "bio_fix": null,
+   "ticketUrl_ok": true,
+   "photo_verdict": "none",
+   "photo_reason": "No photo proposed."
+  },
+  {
+   "name": "Kiwi Park",
+   "keep": true,
+   "objection": "",
+   "coordinates_ok": true,
+   "bio_ok": true,
+   "bio_fix": null,
+   "ticketUrl_ok": true,
+   "photo_verdict": "reject",
+   "photo_reason": "Looked at it (2019): a flat shot of the entrance building, slightly sun-flared, with a person at the door. Fails check 3 (an ordinary building, not the attraction visitors come for, which is the birds). Find a kiwi or aviary photo or ship none."
+  },
+  {
+   "name": "Queenstown Trail",
+   "keep": true,
+   "objection": "",
+   "coordinates_ok": true,
+   "bio_ok": true,
+   "bio_fix": null,
+   "ticketUrl_ok": true,
+   "photo_verdict": "accept",
+   "photo_reason": "Looked at it (2019): gravel trail beside the Kawarau/Frankton bridges with the Remarkables behind, categorised Queenstown Trail. Right place and a characteristic stretch; acceptable though not spectacular (bridge and railings share the frame)."
+  },
+  {
+   "name": "Walter Peak High Country Farm",
+   "keep": true,
+   "objection": "",
+   "coordinates_ok": true,
+   "bio_ok": true,
+   "bio_fix": null,
+   "ticketUrl_ok": true,
+   "photo_verdict": "none",
+   "photo_reason": "No photo proposed; Commons farm photos carry overlaid captions, rejecting them is correct."
+  },
+  {
+   "name": "Kingston",
+   "keep": true,
+   "objection": "",
+   "coordinates_ok": true,
+   "bio_ok": true,
+   "bio_fix": null,
+   "ticketUrl_ok": null,
+   "photo_verdict": "none",
+   "photo_reason": "No photo proposed."
+  }
+ ],
+ "existing_fixes": [
+  {
+   "spot_id": "queenstown-4",
+   "apply": true,
+   "reason": "TSS Earnslaw is a vessel/operator, exactly the case COVERAGE.md names; replacing with Walter Peak High Country Farm is right (Wikipedia confirms the steamship's destination is the farm). The replacement has no photo, so add a WIKI_IMAGE_OVERRIDES entry or leave it photo-less; drop any TSS Earnslaw override. The 85 NZD cost is carried over and unverified."
+  },
+  {
+   "spot_id": "queenstown-3",
+   "apply": false,
+   "reason": "Do not rename to Shotover River: the river's canyon is already covered by the new Skippers Canyon spot, so it would create a near-duplicate, and Shotover Jet is the single best-known ride there. Leave as is (low confidence, a judgment call)."
+  },
+  {
+   "spot_id": "queenstown-7",
+   "apply": true,
+   "reason": "Confirmed: Wikipedia puts Ben Lomond (Otago) summit at -45.007, 168.6156, about 2 km south-west of the current pin (-44.99, 168.625), which is near Bowen Peak. The bio describes the summit climb, so move the pin to about -45.007, 168.6156."
+  }
+ ]
+}

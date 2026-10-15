@@ -277,4 +277,11 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Sutherland Falls": "Sutherland Falls 2011.jpg",
   "Hump Ridge Track": "Boardwalk up near Okaka hut looking to Lake Poteriteri.jpg",
   "Clifden Suspension Bridge": "Clifden Suspension Bridge, the span.jpg",
+  "Walter Peak High Country Farm": "瓦尔特峰高原牧场 Walter Peak High Country Farm - panoramio.jpg",
+  "Coronet Peak": "Coronet Peak 02.jpg",
+  "The Remarkables": "The Remarkables from Queenstown, New Zealand 08.jpg",
+  "Lake Hayes": "Lake Hayes Otago. NZ (17803245300).jpg",
+  "Skippers Canyon": "Skippers Canyon Queenstown NewZealand.jpg",
+  "Arrowtown Chinese Settlement": "Arrowtown Chinese Settlement, New Zealand; September 2014.jpg",
+  "Queenstown Trail": "Queenstown Trail Frankton.jpg",
 };
