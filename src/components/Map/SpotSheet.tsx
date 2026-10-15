@@ -48,7 +48,7 @@ const heroNameSize = (name: string) => {
 const cardNameSize = (name: string) => {
   // Full size (25) for any name that fits on two lines — "Bill Richardson Transport World" wraps rather than shrinking to
   // one small line — and steps down only for names needing more.
-  const fontSize = heroFontSize(name, [25, 22, 19], CARD_W - 32, 2);
+  const fontSize = heroFontSize(name, [25, 22, 19, 17, 15], CARD_W - 32, 2);
   return { fontSize, lineHeight: Math.round(fontSize * 1.12) };
 };
 // Practical info — time needed and cost — in plain black, both on the carousel cards and in the

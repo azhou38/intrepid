@@ -5,6 +5,7 @@ import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'reac
 import FadeInImage from './FadeInImage';
 import { styles } from './DestinationCard';
 import { CARD_SCRIM_FADE, cardScrimStops } from './cardScrim';
+import { heroFontSize } from './sheetShared';
 import { formatSpotCost, formatVisitTime, spotPhotoTitle, type Spot } from '../../data/spots';
 import { useVisitIndex } from '../../store';
 import { thumbCache, getOrFetchWikiThumbnail } from '../../utils/photoCache';
@@ -40,6 +41,10 @@ function SpotCard({ spot, onPress, width }: {
       if (url) setPhotoUrl(url);
     });
   }, [spot.id]);
+
+  // Full size while the name fits on two lines; once it is on track to need a third, the font steps down until it fits on
+  // two (down to 14), rather than the card filling with a tall title. Text width: the card minus its 10 px side insets and border.
+  const nameSize = heroFontSize(spot.name, [23, 20, 18, 16, 14], width - 23, 2);
 
   const [infoH, setInfoH] = useState(0);
   // As tall as the name / time / cost block it sits behind (plus its 16 px bottom inset and a soft edge), so the name is on
@@ -84,7 +89,7 @@ function SpotCard({ spot, onPress, width }: {
             </Svg>
           </View>
           <View pointerEvents="none" style={[styles.cardImageInfo, local.imageInfo]} onLayout={e => setInfoH(e.nativeEvent.layout.height)}>
-            <Text style={styles.cardName}>{spot.name}</Text>
+            <Text style={[styles.cardName, { fontSize: nameSize, lineHeight: Math.round(nameSize * 1.14) }]}>{spot.name}</Text>
             <View style={local.metaRow}>
               <Clock size={11} color="rgba(255,255,255,0.9)" strokeWidth={2.5} />
               <Text style={local.metaTxt}>{formatVisitTime(spot.visitHoursMin, spot.visitHoursMax)}</Text>
