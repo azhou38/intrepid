@@ -1825,7 +1825,7 @@ const st = StyleSheet.create({
   heroFlagCircle: { width:20, height:20, borderRadius:10, backgroundColor:'#fff', alignItems:'center', justifyContent:'center', marginRight:6 },
   heroFlagClip:   { width:17, height:17, borderRadius:8.5, overflow:'hidden' },
   heroFlagImg:    { width:17, height:17 },
-  heroTagline: { fontSize:14, color:'rgba(255,255,255,0.78)', lineHeight:20, fontWeight:'400', letterSpacing:0.1 },
+  heroTagline: { fontSize:14, color:'rgba(255,255,255,0.78)', lineHeight:20, fontWeight:'500', letterSpacing:0.1 },
 
   // Spots row
   commRatingRow:  { flexDirection:'row', alignItems:'center', gap:5, marginTop:6 },
