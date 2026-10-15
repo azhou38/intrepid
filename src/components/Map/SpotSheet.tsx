@@ -1704,8 +1704,9 @@ const st = StyleSheet.create({
   // No box around the three facts — just the row, with a hairline divider between them.
   // Three equal columns, each fact centred in its own, with a hairline divider between them.
   glanceCard: { flexDirection: 'row' },
-  glanceItem: { flex: 1, alignItems: 'center', paddingVertical: 18, paddingHorizontal: 6, gap: 4 },
-  glanceDivider: { width: 1, backgroundColor: '#E5E7EB', marginVertical: 14 },
+  // No top padding: the icons sit right at the content's own 16 px inset below the tab bar / cap.
+  glanceItem: { flex: 1, alignItems: 'center', paddingTop: 0, paddingBottom: 18, paddingHorizontal: 6, gap: 4 },
+  glanceDivider: { width: 1, backgroundColor: '#E5E7EB', marginTop: 0, marginBottom: 14 },
   // Colour comes inline per fact (GLANCE_TIME / GLANCE_COST / GLANCE_PLACE).
   glanceIconCircle: { width: 44, height: 44, borderRadius: 22, alignItems: 'center', justifyContent: 'center', marginBottom: 4 },
   glanceVal: { fontSize: 16, fontWeight: '700', color: '#111827', lineHeight: 22 },
