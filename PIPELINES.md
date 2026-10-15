@@ -39,6 +39,7 @@ Benchmark: Clyde, Hamilton, Blue Lake, the 1913 Government Gardens and the archi
 
 ## Pipeline C — writing
 1. **Researcher** — facts with source links.
+   - Includes each spot's official site (`WRITING.md` → `ticketUrl`): found from the operator, loaded and checked, deep links taken from the site's own navigation. A spot with an official site and no `ticketUrl` is a failed check.
 2. **Writer** — several variants in the app's voice (`WRITING.md` → "Voice").
 3. **Fact-checker** — every claim against the sources; cut or flag the unverifiable.
 4. **Editor** — style, repetition within and across entries.
