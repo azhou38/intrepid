@@ -217,7 +217,6 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Whakarewarewa Forest": "Redwoods Forest Rotorua 16.jpg",
   "Mount Maunganui Main Beach": "Mount Maunganui Main Beach, 2013 (05).jpg",
   "Pitt Island": "Tree on Rangihaute Rangiauria Pitt Island (52785344950).jpg",
-  "Whanganui River Road": "Jerusalem - Hiruharama.JPG",
   // Auckland spots
   "Museum of Transport and Technology": "MOTAT, Auckland, New Zealand 3.jpg",
   "Mission Bay, New Zealand": "Mission Bay Beach 2014.jpg",
@@ -229,4 +228,10 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Takapuna": "View of Rangitoto Island from Takapuna Beach.jpg",
   "Wynyard Quarter": "Wynyard Quarter, Auckland, 1010, New Zealand - panoramio.jpg",
   "North Head": "North Head And Eastern Devonport.jpg",
+  // Whanganui National Park
+  "Whanganui National Park": "Pipiriki with Whanganui River - panoramio - Duane Wilkins (1).jpg",
+  "Whanganui Journey": "Whanganui Journey.jpg",
+  "Pipiriki": "Pipiriki with Whanganui River - panoramio - Duane Wilkins (1).jpg",
+  "Jerusalem, New Zealand": "Church at jerusalem.jpg",
+  "PS Waimarie": "Waimarie paddle steamer on Whanganui River, Whanganui.jpg",
 };
