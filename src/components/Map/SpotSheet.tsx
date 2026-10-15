@@ -999,8 +999,8 @@ function SpotSheet({
   });
 
 
-  // The tab bar: visited spots get My Visit + About; an unvisited spot still gets this same header, just with "About"
-  // alone as its one (non-switching) tab, so the sheet reads consistently whether or not there's a My Visit tab.
+  // The tab bar: only a visited spot has more than one tab (My Visit + About), so only it gets the bar; an unvisited spot
+  // gets just the empty cap (see below) and goes straight to its About content.
   // Rendered inline in the scroll content, and again `pinned` under the compact bar once that one scrolls up to it.
   const renderTabBar = (pinned: boolean) => (
 isVisited ? (
@@ -1032,20 +1032,10 @@ isVisited ? (
               </Reanimated.View>
             </View>
           ) : (
-            <View style={[st.tabBar, pinned && st.tabBarPinned]}>
-              <Pressable
-                style={st.tabBtn}
-                onPress={() => { if (snapStateRef.current !== 'full') snapToFullRef.current(); }}
-              >
-                <Text style={[st.tabBtnTxt, st.tabBtnTxtActive]}>About</Text>
-              </Pressable>
-              {/* Full-width track (not tabIndicatorTrack's usual 50%, sized for two tabs) — a
-                  single tab has nothing to slide between, so the underline just sits centered
-                  under it, statically. */}
-              <View style={[st.tabIndicatorTrack, st.tabIndicatorTrackSingle]}>
-                <View style={st.tabIndicator} />
-              </View>
-            </View>
+            // One tab is no tab bar: an unvisited spot has only About, so no "About" label or underline is drawn. What
+            // stays is the bar's shape — the white, round-topped edge that tucks over the hero's bottom and is what the
+            // ScrollView pins (stickyHeaderIndices) — as a slim cap with nothing in it.
+            <View style={[st.tabBar, st.tabBarCap, pinned && st.tabBarPinned]} />
           )
   );
 
@@ -1679,6 +1669,8 @@ const st = StyleSheet.create({
   tabBar: { flexDirection: 'row', backgroundColor: 'white',
             borderTopLeftRadius: 24, borderTopRightRadius: 24, marginTop: -24,
             borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: '#E5E7EB', zIndex: 1, overflow: 'hidden' },
+  // No tab bar for a single tab: the same white round-topped edge, but only tall enough to be a cap, with no hairline.
+  tabBarCap: { height: 28, borderBottomWidth: 0 },
   tabBtn: { flex: 1, paddingVertical: 15, alignItems: 'center' },
   tabDivider: { width: StyleSheet.hairlineWidth, marginVertical: 14, backgroundColor: '#E5E7EB' },
   tabBtnTxt: { fontSize: 15, fontWeight: '600', color: '#9CA3AF' },
@@ -1686,7 +1678,6 @@ const st = StyleSheet.create({
   // Sliding underline — outer track keeps the existing per-tab left/width positioning; the
   // visible bar itself is a narrower, centered child so it doesn't span the full tab width.
   tabIndicatorTrack: { position: 'absolute', bottom: 0, width: '50%', alignItems: 'center' },
-  tabIndicatorTrackSingle: { width: '100%' },
   tabIndicator: { width: 28, height: 2.5, backgroundColor: '#111827', borderRadius: 2 },
 
   // Content
