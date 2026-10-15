@@ -41,9 +41,17 @@ A spot goes under a destination only if visitors reach it *from that destination
 
 ## What qualifies
 
-**The test: would a traveller from elsewhere plausibly go, and does a source back it?** Include what a typical independent traveller would plan around *or add as a worthwhile stop*, not only the headline sights: a place qualifies when a guidebook (Lonely Planet, Rough Guide), Wikivoyage's See/Do list, the managing agency's popular-places list, or a regional tourism board names it as somewhere to go, and visitors really do go (it has a car park, signage, a Wikipedia article or a steady stream of visitors). One such source is enough; it does not have to be a top experience. Exclude what only locals use, and anything rarely visited, however pleasant.
+**The test: would a traveller from elsewhere go out of their way for it, can they actually do something there, and does a visitor-oriented source say so?** A candidate must pass all three of these, or be held for review (below).
 
-The bar is deliberately a little forgiving. Examples of New Zealand places that clear it and must be present: **Red Rocks** (Wellington), **Kapiti Island**, **Sumner Beach** and **Godley Head** (Christchurch), **Birdlings Flat**, **Lyttelton**, **Paradise** (near Glenorchy), **Hump Ridge Track**, **St Kilda Beach** (Dunedin), and quirky roadside icons such as the **Ohakune Carrot**. What does not clear it: an ordinary suburban park, a street with one café, a lookout no one outside the suburb has heard of.
+1. **A visitor-oriented source names it as somewhere to go.** Counted: Wikivoyage's See/Do listings, the managing agency's visitor page (DOC and equivalents), a regional tourism board, a guidebook (Lonely Planet, Rough Guide). **Not counted on their own:** a Wikipedia article, an OpenStreetMap node, a Commons category or a heritage-register entry. Those exist for any building or bend in a road. One counted source is enough for an obvious draw; a marginal one needs two independent counted sources.
+2. **A visitor can actually do or see something.** It is open or freely accessible to the public, and gives a reason to stop for roughly half an hour or more (see it, walk it, swim, tour it, eat the thing it is known for). Fail: a building seen only from the pavement (a library, a church, a council or civic building, a hospital), a place that is closed, being restored or has no public access, private land, and a venue that is only a shop, restaurant or office. A heritage building qualifies only if the public can go in, or it is the named stop of a guide's walking route.
+3. **It is a distinct draw.** Not a near-duplicate of a spot already in the app, not part of a larger spot (an outlook on the track the app already lists), not a minor memorial or plaque, not a roadside pull-out with a ten-minute look unless a guide singles it out by name.
+
+Run the friend test last: would you tell a friend flying in for four days to go there? If the honest answer is "only if they are nearby anyway", it is marginal.
+
+**Marginal cases are not auto-added.** A candidate that passes only on one counted source and a short visit, or that a reviewer would argue either way, goes in a "review" list in the pull request (with its sources and the case for and against) and is added only once the owner approves. The bar stays forgiving for strong places and strict for borderline ones. Rarely visited places, places only locals use, near-duplicates and an operator or vehicle in place of its destination always fail.
+
+The bar is deliberately a little forgiving about *what kind* of place counts. Examples of New Zealand places that clear it and must be present: **Red Rocks** (Wellington), **Kapiti Island**, **Sumner Beach** and **Godley Head** (Christchurch), **Birdlings Flat**, **Lyttelton**, **Paradise** (near Glenorchy), **Hump Ridge Track**, **St Kilda Beach** (Dunedin), and quirky roadside icons such as the **Ohakune Carrot**. **Must be rejected (negative benchmarks):** Queen Mary Hospital (Hanmer Springs: not open to visitors, exterior only), Tūranga (Christchurch library: a civic building), the Bridge of Remembrance (a minor memorial), a local church or community hall, and an ordinary suburban park.
 
 Include:
 - Places and attractions the major guidebooks feature, and the "top experiences" lists for the country or region, **and the second tier**: the beaches, bays, headlands, walks, harbour towns and small villages that a guide recommends as a stop (Sumner, St Kilda, Godley Head, Lyttelton, Paradise, Birdlings Flat).
@@ -60,7 +68,7 @@ Leave out:
 - Anything you cannot confirm exists, is open to visitors, or has a stable name.
 - Near-duplicates: do not list a destination as a spot of itself, or the same attraction under two names.
 
-When unsure, look for one independent source naming it as somewhere to go: include it if there is one, leave it out if there is none. A credible list beats an exhaustive one, but an *incomplete* one is the bigger failure: missing Red Rocks, Sumner or Lyttelton makes the app look thin, whereas a modest extra stop costs little.
+When unsure, apply the three-part test above. A place that passes all three is added; a place that fails any one is left out, or held for review if it is marginal. A credible list beats an exhaustive one, but an *incomplete* one is the bigger failure: missing Red Rocks, Sumner or Lyttelton makes the app look thin, whereas a modest extra stop costs little.
 
 ## Coverage — how many
 
@@ -80,7 +88,7 @@ Spot and destination lists written from memory miss obvious places: Red Rocks (W
    - not within any destination's span and reached on its own (an island, a remote lake, a roadside stop) → a standalone spot;
    - several such places clustered around one base, enough to fill a visit → propose a new destination instead (Kapiti Island plus the Kāpiti Coast around it);
    - otherwise → leave out, and say why.
-4. **Benchmark:** a coverage run is only trusted if it proposes, at least, Red Rocks as a Wellington spot; Kapiti Island as a standalone spot (or part of a new Kāpiti Coast destination); Lake Coleridge as a standalone spot; Sumner Beach, Godley Head and Lyttelton as Christchurch spots; Birdlings Flat as a spot or standalone spot; Paradise as a Glenorchy-area spot; Hump Ridge Track; St Kilda Beach as a Dunedin spot; the Ohakune Carrot as a spot; and Ninety Mile Beach as its own standalone spot, *not* under Cape Reinga. It must also not propose TSS Earnslaw as a spot (Walter Peak High Country Farm instead). If it does not, fix the process before running it unattended.
+4. **Benchmark:** a coverage run is only trusted if it proposes, at least, Red Rocks as a Wellington spot; Kapiti Island as a standalone spot (or part of a new Kāpiti Coast destination); Lake Coleridge as a standalone spot; Sumner Beach, Godley Head and Lyttelton as Christchurch spots; Birdlings Flat as a spot or standalone spot; Paradise as a Glenorchy-area spot; Hump Ridge Track; St Kilda Beach as a Dunedin spot; the Ohakune Carrot as a spot; and Ninety Mile Beach as its own standalone spot, *not* under Cape Reinga. It must also not propose TSS Earnslaw as a spot (Walter Peak High Country Farm instead). It must reject the negative benchmarks in "What qualifies" (Queen Mary Hospital, Tūranga, the Bridge of Remembrance). If it does not, fix the process before running it unattended.
 
 Prefer recall at this step; the exclusion test in "What qualifies" is applied when deciding each candidate, not to discard the enumeration unseen.
 
