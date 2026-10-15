@@ -256,4 +256,6 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Kaikōura Museum": "Kaikoura. Museum 03.jpg",
   "Point Kean": "NZ Fur Seal - 1231 2013 002 (14184250871).jpg",
   "Nin's Bin": "Nin's Bin @ Kaikoura.jpg",
+  "Queen Mary Hospital (Hanmer Springs)": "Queen Mary Hospital, Hanmer Springs.jpg",
+  "Lewis Pass": "Alpine tarn on Lewis Pass 05.jpg",
 };

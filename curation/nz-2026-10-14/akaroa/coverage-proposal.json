@@ -1,0 +1,417 @@
+{
+ "destination": "akaroa",
+ "sources_used": [
+  "https://en.wikivoyage.org/wiki/Akaroa (See/Do, via API)",
+  "https://en.wikipedia.org/wiki/Akaroa",
+  "https://en.wikipedia.org/w/api.php?action=query&list=geosearch (four 10 km searches covering the peninsula)",
+  "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/banks-peninsula-area/ (DOC Banks Peninsula area places list)",
+  "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/banks-peninsula-area/historic-akaroa-head/",
+  "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/banks-peninsula-area/pohatu-marine-reserve/",
+  "https://www.hinewai.org.nz/",
+  "https://bankstrack.co.nz/",
+  "https://okainsbaymuseum.co.nz/",
+  "https://nominatim.openstreetmap.org (name lookups; Overpass API failed so OSM attractions checked via Nominatim only)",
+  "https://commons.wikimedia.org/w/api.php (photo search, geotags, file metadata)",
+  "Wikipedia page views (pageviews prop; all peninsula articles are low, 1-10/day, so views were not used to exclude)"
+ ],
+ "gaps": [
+  {
+   "name": "Akaroa Head",
+   "wiki": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Akaroa",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/banks-peninsula-area/historic-akaroa-head/"
+   ],
+   "decision": "add",
+   "reason": "Wikivoyage See entry and DOC places-to-go page; scenic reserve at the harbour mouth, 9.6 km from the centre (inside the 15 km span). Distinct from the existing Akaroa Lighthouse (the relocated lighthouse in town)."
+  },
+  {
+   "name": "Pōhatu / Flea Bay",
+   "wiki": "Pōhatu / Flea Bay",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Akaroa",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/banks-peninsula-area/pohatu-marine-reserve/",
+    "https://en.wikipedia.org/wiki/P%C5%8Dhatu_/_Flea_Bay"
+   ],
+   "decision": "add",
+   "reason": "Wikivoyage See entry, DOC page and Wikipedia article; largest penguin colony on Banks Peninsula and a marine reserve. About 8.5 km from centre. Merges the marine reserve and the bay into one spot."
+  },
+  {
+   "name": "Banks Peninsula Track",
+   "wiki": "Banks Track",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Akaroa",
+    "https://en.wikipedia.org/wiki/Banks_Track",
+    "https://bankstrack.co.nz/"
+   ],
+   "decision": "add",
+   "reason": "Wikivoyage Do entry plus Wikipedia article; a 31 km multi-day walk starting and ending in Akaroa, the kind of guided/promoted multi-day walk COVERAGE.md says to include (cf. Hump Ridge). Placed at its Ōnuku start, 5.5 km from centre."
+  },
+  {
+   "name": "Hinewai Reserve",
+   "wiki": null,
+   "sources": [
+    "https://en.wikipedia.org/wiki/Hinewai_Reserve",
+    "https://www.hinewai.org.nz/",
+    "https://en.wikivoyage.org/wiki/Akaroa"
+   ],
+   "decision": "add",
+   "reason": "Wikipedia article, official site says freely open on foot, 20+ public tracks, named on the Wikivoyage Banks Track route. Main gate 5.3 km from centre. Note the 2021 floods damaged tracks; the official site says much of the network is walkable again but restoration continues."
+  },
+  {
+   "name": "Ōnawe Peninsula",
+   "wiki": "Ōnawe Peninsula",
+   "sources": [
+    "https://en.wikipedia.org/wiki/%C5%8Cnawe_Peninsula"
+   ],
+   "decision": "add",
+   "reason": "Wikipedia article describes a historic reserve visitors can explore with a car park and access details; already used as a whyVisit photo for the destination. About 5 km from centre. One source only, but within the deliberately forgiving bar."
+  },
+  {
+   "name": "Okains Bay Museum",
+   "wiki": null,
+   "sources": [
+    "https://en.wikipedia.org/wiki/Okains_Bay_Museum",
+    "https://okainsbaymuseum.co.nz/",
+    "https://en.wikipedia.org/wiki/Okains_Bay"
+   ],
+   "decision": "add",
+   "reason": "Wikipedia article and official site (25 minutes by car from Akaroa, adult entry $15, Thu-Mon). Nationally significant Māori taonga per Te Papa assessment. About 12 km from centre, inside the 15 km span. Okains Bay beach itself is folded into this spot (no separate source naming the beach as a stop beyond its Wikipedia stub)."
+  },
+  {
+   "name": "Akaroa Marine Reserve",
+   "wiki": "Akaroa Marine Reserve",
+   "sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/banks-peninsula-area/akaroa-marine-reserve/"
+   ],
+   "decision": "reject",
+   "reason": "Covers the same harbour-mouth waters that the existing Akaroa Harbour spot (dolphin cruises) represents; near-duplicate. No land access of its own."
+  },
+  {
+   "name": "Horomaka Island",
+   "wiki": null,
+   "sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/banks-peninsula-area/horomaka-island/"
+   ],
+   "decision": "reject",
+   "reason": "Offshore island not open to ordinary visitors; no source names it as somewhere to go."
+  },
+  {
+   "name": "Tauhinukorokio / Mt Pleasant Heavy Anti-aircraft Battery",
+   "wiki": null,
+   "sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/banks-peninsula-area/mt-pleasant-heavy-anti-aircraft-artillery-battery/"
+   ],
+   "decision": "reject",
+   "reason": "Above Christchurch/Lyttelton side of the peninsula, far outside Akaroa's span; belongs to the Christchurch area."
+  },
+  {
+   "name": "Akaroa Historic Area (Rue Lavaud, Beach Road)",
+   "wiki": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Akaroa"
+   ],
+   "decision": "reject",
+   "reason": "The town itself, i.e. the destination; would be a spot of itself."
+  },
+  {
+   "name": "The Gaiety Hall",
+   "wiki": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Akaroa"
+   ],
+   "decision": "reject",
+   "reason": "Community hall; Wikivoyage says it is closed for earthquake strengthening and it is not an attraction to visit."
+  },
+  {
+   "name": "Bank of New Zealand Building, Akaroa",
+   "wiki": "Bank of New Zealand Building, Akaroa",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Bank_of_New_Zealand_Building,_Akaroa"
+   ],
+   "decision": "reject",
+   "reason": "One-line stub for a street-front heritage building within the Historic Area; no source names it as somewhere to go."
+  },
+  {
+   "name": "St Peter's Church, Akaroa",
+   "wiki": "St Peter's Church, Akaroa",
+   "sources": [
+    "https://en.wikipedia.org/wiki/St_Peter%27s_Church,_Akaroa"
+   ],
+   "decision": "reject",
+   "reason": "Heritage-listed church but only a heritage article names it; a building within the town like the others on Rue Balguerie, not a stop on any See/Do list. Could be revisited if a guidebook lists it."
+  },
+  {
+   "name": "Onuku Church / Ōnuku Marae",
+   "wiki": null,
+   "sources": [
+    "https://en.wikipedia.org/wiki/Akaroa"
+   ],
+   "decision": "reject",
+   "reason": "Active marae site; no source says visitors may enter or that it is a visitor stop."
+  },
+  {
+   "name": "Akaroa French Cemetery / L'Aube Hill",
+   "wiki": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Akaroa"
+   ],
+   "decision": "reject",
+   "reason": "Only named as the eastern boundary of the Historic Area walk in Wikivoyage; part of the town walk."
+  },
+  {
+   "name": "Takapūneke Reserve",
+   "wiki": "Takapūneke",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Takap%C5%ABneke"
+   ],
+   "decision": "reject",
+   "reason": "Significant Ngāi Tahu site, but Wikipedia describes a former landfill/sewage plant site still awaiting reserve status, with no visitor facilities; not a visitor stop yet."
+  },
+  {
+   "name": "Duvauchelle, Barry's Bay, Takamatua, Robinsons Bay",
+   "wiki": null,
+   "sources": [
+    "https://en.wikipedia.org/wiki/Duvauchelle",
+    "https://en.wikipedia.org/wiki/Takamatua"
+   ],
+   "decision": "reject",
+   "reason": "Roadside settlements on SH75; no See/Do list or guidebook source names them as stops (searched Wikivoyage, no entries)."
+  },
+  {
+   "name": "Ellangowan Scenic Reserve",
+   "wiki": "Ellangowan Scenic Reserve",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ellangowan_Scenic_Reserve"
+   ],
+   "decision": "reject",
+   "reason": "Small local scenic reserve (1 page view a day, only a Wikipedia stub); rarely visited."
+  },
+  {
+   "name": "Little Akaloa / Le Bons Bay / Pigeon Bay / Stony Bay",
+   "wiki": null,
+   "sources": [
+    "https://en.wikipedia.org/wiki/Little_Akaloa"
+   ],
+   "decision": "reject",
+   "reason": "Remote bays; Wikivoyage Akaroa and DOC do not list them and no independent source found naming them as stops (Stony Bay is covered by the Banks Track spot). Little Akaloa is 12 km north in straight line, at the span edge."
+  },
+  {
+   "name": "Summit Road viewpoints",
+   "wiki": null,
+   "sources": [
+    "https://commons.wikimedia.org/wiki/File:Summit_Rd_near_Akaroa,_Canterbury_100120_1.jpg"
+   ],
+   "decision": "reject",
+   "reason": "Destination goodToKnow already tells visitors about the Summit Road; no single named viewpoint was found in a source to pin."
+  }
+ ],
+ "existing_fixes": [
+  {
+   "spot_id": "akaroa-4",
+   "action": "replace",
+   "to": "hours: 'Mon-Fri 10:30 AM - 4:00 PM (daily in school holidays)'; closedDays [0,6] if exact hours kept",
+   "reason": "Wikivoyage (lastedit unknown) lists Mon-Fri and daily during school holidays; current data says 10:30-4:00 with no closed days. Not verified against the museum's own site (akaroamuseum.org.nz not loaded), so low confidence; check before editing."
+  },
+  {
+   "spot_id": "akaroa-1",
+   "action": "rename",
+   "to": "(no change) keep as Akaroa Harbour",
+   "reason": "Audit only: it is a place (the harbour) not an operator, although its bio and cost are cruise-based; acceptable per COVERAGE.md. Coordinates are in the water, correct for a harbour. No fix needed."
+  }
+ ],
+ "new_spots": [
+  {
+   "name": "Akaroa Head",
+   "wiki": null,
+   "icon": "🌊",
+   "coordinates": {
+    "latitude": -43.889173,
+    "longitude": 172.978399
+   },
+   "coordinates_source": "Wikivoyage Akaroa 'Akaroa Head' See listing (end of Lighthouse Road); agrees with OSM Akaroa Head Scenic Reserve (-43.8880, 172.9783)",
+   "category": "viewpoint",
+   "bio": "A clifftop scenic reserve at the mouth of Akaroa Harbour with the foundations of the 1880 lighthouse keepers' homes, a hand-blasted supply road, and a chance of spotting Hector's dolphins from shore.",
+   "hours": "Daylight hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/banks-peninsula-area/historic-akaroa-head/",
+   "ticketUrl_checked": "Loaded page; title 'Akaroa Head: Christchurch and Banks Peninsula' and text describe the Akaroa Head lighthouse site (DOC managing-agency page).",
+   "photo": {
+    "file": "Akaroa Head 1986.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Akaroa_Head_1986.jpg",
+    "width": 3264,
+    "height": 2448,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Akaroa",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/banks-peninsula-area/historic-akaroa-head/"
+   ]
+  },
+  {
+   "name": "Pōhatu / Flea Bay",
+   "wiki": "Pōhatu / Flea Bay",
+   "icon": "🐧",
+   "coordinates": {
+    "latitude": -43.8712,
+    "longitude": 173.0105
+   },
+   "coordinates_source": "Commons geotag of a Flea Bay penguin photo on land at the bay head (-43.8712, 173.0105); Wikipedia bay centroid (-43.8745, 173.0123) is on the water and Wikivoyage gives -43.868, 173.004 (road). Needs audit-spot-coordinates check",
+   "category": "nature",
+   "bio": "A sheltered bay on the peninsula's outer coast with its largest penguin colony and the Pōhatu Marine Reserve, reached by a steep gravel road that DOC says suits 4WD vehicles only.",
+   "hours": "Daylight hours; weather permitting",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/banks-peninsula-area/pohatu-marine-reserve/",
+   "ticketUrl_checked": "Loaded page; title 'Pōhatu Marine Reserve: Banks Peninsula places to visit', text describes access to the bay and beach (DOC managing-agency page).",
+   "photo": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Akaroa",
+    "https://en.wikipedia.org/wiki/P%C5%8Dhatu_/_Flea_Bay",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/banks-peninsula-area/pohatu-marine-reserve/"
+   ],
+   "photo_note": "No passing photo: Commons has no Flea Bay file other than a yellow-eyed penguin close-up (fails the named-thing check) and Wikipedia's lead image is a Banks Track hillside (wrong place). Left null; free is true because DOC lists no fee but beach access is across private land, so confirm."
+  },
+  {
+   "name": "Banks Peninsula Track",
+   "wiki": "Banks Track",
+   "icon": "🥾",
+   "coordinates": {
+    "latitude": -43.852957,
+    "longitude": 172.964386
+   },
+   "coordinates_source": "Wikipedia Banks Track article coordinates (a point on the route near the Ōnuku start, 5.5 km from town); the track starts on a farm at Ōnuku per the article",
+   "category": "hike",
+   "bio": "A privately owned 31 km walk from Ōnuku through Flea Bay, Stony Bay and Hinewai Reserve, done as a two- or three-day trip with huts and open from 1 October to 30 April.",
+   "hours": "1 Oct - 30 Apr (booking required)",
+   "visitHoursMin": 16,
+   "visitHoursMax": 48,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://bankstrack.co.nz/",
+   "ticketUrl_checked": "Loaded page; title 'Banks Peninsula Track | 2 & 3-Day Walks from Akaroa', heading describes the walks from Akaroa (operator's own site, linked from Wikipedia and Wikivoyage).",
+   "photo": {
+    "file": "Banks Peninsula Track 0399.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Banks_Peninsula_Track_0399.jpg",
+    "width": 1600,
+    "height": 1200,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Akaroa",
+    "https://en.wikipedia.org/wiki/Banks_Track",
+    "https://bankstrack.co.nz/"
+   ],
+   "photo_note": "Photo is a 2007 colour view of a natural arch on the track coast (category Banks Peninsula Track + Natural arches); 1600px wide, acceptable but not spectacular. Price not on the operator page (Wikivoyage's old $195/$390 is unverified), so cost omitted. visitHours are the walk length (2-3 days), set as 16-48 h, adjust to house style."
+  },
+  {
+   "name": "Hinewai Reserve",
+   "wiki": null,
+   "icon": "🌿",
+   "coordinates": {
+    "latitude": -43.809978,
+    "longitude": 173.033233
+   },
+   "coordinates_source": "Commons geotag of 'Hinewai Reserve - main gate' (On foot only sign), -43.809978, 173.033233",
+   "category": "nature",
+   "bio": "A privately owned reserve of regenerating native forest east of Akaroa, with over 20 public walking tracks that are free to enter on foot.",
+   "hours": "Open to walkers daily",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://www.hinewai.org.nz/",
+   "ticketUrl_checked": "Loaded page; title 'Hinewai Reserve', 'The Official Website of the Hinewai Reserve', text says freely open to the public on foot.",
+   "photo": {
+    "file": "Hinewai Reserve - northern parts, Banks Peninsula, New Zealand.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Hinewai_Reserve_-_northern_parts,_Banks_Peninsula,_New_Zealand.jpg",
+    "width": 5472,
+    "height": 3648,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Hinewai_Reserve",
+    "https://www.hinewai.org.nz/"
+   ],
+   "photo_note": "Quality-image 2019 colour photo of the regenerating bush. Official site says track network is still being restored after the Dec 2021 floods; opening hours not stated (shown as a qualifier)."
+  },
+  {
+   "name": "Ōnawe Peninsula",
+   "wiki": "Ōnawe Peninsula",
+   "icon": "⛰️",
+   "coordinates": {
+    "latitude": -43.7622,
+    "longitude": 172.9272
+   },
+   "coordinates_source": "OSM Nominatim: southern end of Onawe Flat Road (-43.7622, 172.9272), where Wikipedia says the car park is; the peninsula itself centres near -43.774, 172.925 (Wikipedia)",
+   "category": "historic",
+   "bio": "A whale-shaped volcanic plug in Akaroa Harbour and the sacred site of a former Ngāi Tahu pā, reached on foot across a narrow isthmus from a car park on Onawe Flat Road.",
+   "hours": "Low tide only",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_checked": "No official page found that names the place (DOC page does not exist for it); left null.",
+   "photo": {
+    "file": "Onawe Peninsula MRD 03.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Onawe_Peninsula_MRD_03.jpg",
+    "width": 4032,
+    "height": 3024,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/%C5%8Cnawe_Peninsula"
+   ],
+   "photo_note": "Not the 'Onawe Peninsula by Tomas Sobek.jpg' already used as a whyVisit photo. Shows the summit of the peninsula (2024, colour). Wikipedia says the peninsula is accessible only at low tide; no fee mentioned, free left null. Coordinates are the car park end of the road, needs audit-spot-coordinates confirmation."
+  },
+  {
+   "name": "Okains Bay Museum",
+   "wiki": null,
+   "icon": "🛶",
+   "coordinates": {
+    "latitude": -43.710178,
+    "longitude": 173.041488
+   },
+   "coordinates_source": "OSM Nominatim museum feature 'Okains Bay Maori & Colonial Museum', 1146 Okains Bay Road",
+   "category": "museum",
+   "bio": "A museum of nationally significant Māori taonga, historic canoes and relocated colonial buildings, including a marae, in Okains Bay about 25 minutes' drive from Akaroa.",
+   "hours": "10:00 AM - 4:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": 15,
+   "costMax": 15,
+   "currency": "NZD",
+   "ticketUrl": "https://okainsbaymuseum.co.nz/",
+   "ticketUrl_checked": "Loaded page; title 'Okains Bay Museum', H1 'Okains Bay Maori & Colonial Museum', hours Thu-Mon 10-4 (closed Tue and Wed) and adult $15 stated on it.",
+   "photo": {
+    "file": "Okains Bay Museum MRD 01.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Okains_Bay_Museum_MRD_01.jpg",
+    "width": 4032,
+    "height": 2800,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Okains_Bay_Museum",
+    "https://okainsbaymuseum.co.nz/"
+   ],
+   "photo_note": "Set closedDays [2,3] (Tue, Wed) per the museum site; adult entry $15, so free is not true. Wikipedia's lead image for the article is a different Commons file I did not review."
+  }
+ ]
+}
