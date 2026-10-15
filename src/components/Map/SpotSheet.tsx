@@ -97,6 +97,9 @@ const SIDE_PAD  = (W - CARD_W) / 2;
 const NEARBY_GRID_GAP = 14;
 const NEARBY_CARD_W = (W - 32 - NEARBY_GRID_GAP) / 2;
 
+// Offsets (px) of the dark copies that outline a card title — eight directions at about 1 px.
+const OUTLINE_OFFSETS: [number, number][] = [[-1, 0], [1, 0], [0, -1], [0, 1], [-0.8, -0.8], [0.8, -0.8], [-0.8, 0.8], [0.8, 0.8]];
+
 // ── Carousel preview card (one per spot in the collapsed carousel) ───────────
 function CarouselCard({ spot, isActive, onPress, onAddVisit, gradId }: {
   spot: Spot; isActive: boolean; onPress: () => void;
@@ -185,7 +188,14 @@ function CarouselCard({ spot, isActive, onPress, onAddVisit, gradId }: {
             </Svg>
           </View>
           <View pointerEvents="none" style={st.cardImageInfo} onLayout={e => setNameH(e.nativeEvent.layout.height)}>
-            <Text style={[st.cardName, cardNameSize(spot.name)]}>{spot.name}</Text>
+            {/* A slight dark outline: React Native has no text stroke, so the name is drawn once per direction in a dark,
+                translucent colour behind the white copy, which stays in the normal flow and sets the layout. */}
+            <View>
+              {OUTLINE_OFFSETS.map(([dx, dy]) => (
+                <Text key={`${dx},${dy}`} style={[st.cardName, cardNameSize(spot.name), st.cardNameOutline, { transform: [{ translateX: dx }, { translateY: dy }] }]}>{spot.name}</Text>
+              ))}
+              <Text style={[st.cardName, cardNameSize(spot.name)]}>{spot.name}</Text>
+            </View>
             <View style={st.cardStatRow}>
               <View style={st.cardTimeRow}>
                 <Clock size={12} color="white" strokeWidth={2.5} />
@@ -1558,6 +1568,8 @@ const st = StyleSheet.create({
   cardName:    { fontSize: 25, fontFamily: 'PlayfairDisplay_700Bold', color: 'white', lineHeight: 28,
                  letterSpacing: -0.3,
                  textShadowColor: 'rgba(0,0,0,0.3)', textShadowRadius: 4, textShadowOffset: { width: 0, height: 1 } },
+  // The dark copies behind the title: absolutely placed over the same box, so they wrap exactly like the white text.
+  cardNameOutline: { position: 'absolute', left: 0, right: 0, top: 0, color: 'rgba(0,0,0,0.6)', textShadowColor: 'transparent', textShadowRadius: 0 },
   // Time-to-spend and cost, side by side below the image rather than overlaid on it.
   cardStatRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   cardTimeRow: { flexDirection: 'row', alignItems: 'center', gap: 4, flexShrink: 0 },
