@@ -240,4 +240,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Russell, New Zealand": "00 26 0874 Russell Neuseeland - Bay of Islands.jpg",
   "Waitomo Glowworm Caves": "'Cathedral' in Waitomo Cave.jpg",
   "Mangapohue Natural Bridge": "Bottom rock arch of Mangapohue Natural Bridge over Mangapohue Stream.jpg",
+  "Otago Museum": "Otago Museum building MRD 02.jpg",
+  "Toitū Otago Settlers Museum": "Toitu Otago Settlers Museum main wing.jpg",
+  "Baldwin Street": "At the Bottom of Baldwin Street Dunedin (30746731174).jpg",
 };

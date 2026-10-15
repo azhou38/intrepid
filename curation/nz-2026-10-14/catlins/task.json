@@ -1,0 +1,98 @@
+{
+ "destination": {
+  "id": "catlins",
+  "name": "The Catlins",
+  "country": "New Zealand",
+  "category": "nature",
+  "coordinates": {
+   "latitude": -46.53,
+   "longitude": 169.46
+  },
+  "whyVisit": [
+   "Forest waterfalls",
+   "Sea lions & penguins",
+   "Petrified forest at Curio Bay"
+  ]
+ },
+ "only_slots_with_flags_need_work": true,
+ "slots": [
+  {
+   "slot": "header",
+   "key": "The Catlins",
+   "current": "Catlins Coast, South Island - 8604763257.jpg",
+   "flags": []
+  },
+  {
+   "slot": "why-1",
+   "reason": "Forest waterfalls",
+   "current": "Purakaunui Falls.jpg",
+   "flags": []
+  },
+  {
+   "slot": "why-2",
+   "reason": "Sea lions & penguins",
+   "current": "Hooker's sea lion.jpg",
+   "flags": [
+    "sepia? (94% one warm hue, no vivid colour)"
+   ]
+  },
+  {
+   "slot": "why-3",
+   "reason": "Petrified forest at Curio Bay",
+   "current": "Petrified Forest, Curio Bay (16538895762).jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:catlins-1",
+   "spot": "Nugget Point",
+   "bio": "A lighthouse on a knife-edge headland above a scatter of rocky islets, with fur seals below.",
+   "key": "Nugget Point",
+   "current": "Nugget Point and The Nuggets.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:catlins-2",
+   "spot": "Purakaunui Falls",
+   "bio": "A graceful three-tiered waterfall reached by a short walk through podocarp forest.",
+   "key": "Purakaunui Falls",
+   "current": "Purakaunui Falls.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:catlins-3",
+   "spot": "Cathedral Caves",
+   "bio": "Vast sea caves 30 m high on Waipati Beach, only reachable for a couple of hours either side of low tide.",
+   "key": "Cathedral Caves",
+   "current": "In Cathedral Caves 3.jpg",
+   "flags": [
+    "black-and-white? (saturation 0.04)"
+   ]
+  },
+  {
+   "slot": "spot:catlins-4",
+   "spot": "McLean Falls",
+   "bio": "The tallest waterfall in the Catlins, cascading 22 m through lush rainforest.",
+   "key": "McLean Falls",
+   "current": "McLean Falls.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:catlins-5",
+   "spot": "Curio Bay",
+   "bio": "A 180-million-year-old petrified forest revealed at low tide, with yellow-eyed penguins and Hector's dolphins nearby.",
+   "key": "Curio Bay",
+   "current": "Petrified log at Curio Bay.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:catlins-6",
+   "spot": "Slope Point",
+   "bio": "The southernmost point of the South Island, marked by a signpost amid wind-sculpted, sideways-growing trees.",
+   "key": "Slope Point",
+   "current": "Slopepointcliff.jpg",
+   "flags": [
+    "400px wide, minimum 960 for a spot"
+   ]
+  }
+ ]
+}
