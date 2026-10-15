@@ -2,11 +2,11 @@
 // The LARGEST font size (down in 0.5 px steps, never below `min`) at which `name` fits on at most `maxLines` lines with
 // no word broken across lines — React Native wraps at spaces and only splits a word mid-way when the word alone is wider
 // than the line, so every word must fit on one line as well as the whole name fitting in `maxLines`. Glyph width is
-// estimated at 0.58em (a little wide, serif bold, letterSpacing included) so a rare wide word errs towards shrinking.
-export function fitNameFontSize(name: string, max: number, min: number, maxWidth: number, maxLines = 2): number {
+// estimated at `glyphEm` (default 0.58em, a little wide for serif bold with its letterSpacing, so a rare wide word errs towards shrinking; the narrow grid cards pass a tighter 0.53 so their names are not shrunk more than they need to be).
+export function fitNameFontSize(name: string, max: number, min: number, maxWidth: number, maxLines = 2, glyphEm = 0.58): number {
   const words = name.split(/\s+/).filter(Boolean);
   for (let size = max; size >= min; size -= 0.5) {
-    const perLine = Math.floor(maxWidth / (size * 0.58));
+    const perLine = Math.floor(maxWidth / (size * glyphEm));
     if (words.some(w => w.length > perLine)) continue;                      // a word alone would split across lines
     let lines = 1, cur = 0;
     for (const w of words) {
