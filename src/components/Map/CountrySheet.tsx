@@ -479,9 +479,15 @@ function CountrySheet({
   // pins — the sticky header (stickyHeaderIndices) leaves exactly the bar's height above the tab bar for it.
   const compactBarStyle = useAnimatedStyle(() => {
     const at = headerFullHAnim.value - TAB_BAR_TUCK - COMPACT_BAR_H;
-    const on = interpolate(scrollY.value, [at, at + 14], [0, 1], Extrapolation.CLAMP);
+    const on = interpolate(scrollY.value, [at - 40, at + 10], [0, 1], Extrapolation.CLAMP);
     const full = interpolate(slideAnim.value, [FULL_POS, FULL_POS + 40], [1, 0], Extrapolation.CLAMP);
     return { opacity: on * full };
+  });
+  // The fade now starts up to 40px before the tab bar reaches the bar, so for that stretch the bar's white grows down to meet the
+  // tab bar's top edge: no strip of the hero photo shows between them while it fades in.
+  const compactBarGrowStyle = useAnimatedStyle(() => {
+    const at = headerFullHAnim.value - TAB_BAR_TUCK - COMPACT_BAR_H;
+    return { height: COMPACT_BAR_H + Math.min(40, Math.max(0, at - scrollY.value)) };
   });
 
   const headerAnimStyle = useAnimatedStyle(() => {
@@ -1172,7 +1178,7 @@ function CountrySheet({
           </ScrollView>
           {/* ── COMPACT TITLE BAR — fixed at the very top; fades in as the tab bar arrives under it and pins (the sticky
               header leaves exactly this much room above the tab bar), and out again as it scrolls back down. */}
-          <Animated.View pointerEvents="none" style={[st.compactBar, st.compactBarFixed, { height: COMPACT_BAR_H, paddingTop: insets.top + 12 }, compactBarStyle]}>
+          <Animated.View pointerEvents="none" style={[st.compactBar, st.compactBarFixed, { height: COMPACT_BAR_H, paddingTop: insets.top + 12 }, compactBarStyle, compactBarGrowStyle]}>
             <Text style={st.compactBarTitle} numberOfLines={1}>{cluster.country}</Text>
           </Animated.View>
 
