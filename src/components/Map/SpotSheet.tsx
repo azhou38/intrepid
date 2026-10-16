@@ -1380,6 +1380,9 @@ function SpotGallery({ spotId }: { spotId: string }) {
   );
 }
 
+// Temporarily hides the About tab's opening-hours row (the live open/closed status and the week list). Set to true to bring it back.
+const SHOW_OPENING_HOURS = false;
+
 // Icon colours for the three at-a-glance facts on the About tab: icon colour on a light tint of the same hue.
 const GLANCE_TIME  = { bg: '#DCFCE7', fg: '#16A34A' };
 const GLANCE_COST  = { bg: '#FFEDD5', fg: '#EA580C' };
@@ -1441,7 +1444,7 @@ function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore, nearbyHlScrol
           tinted text, matching how it already picked today out. Closed today switches every
           element of the collapsed row (and the matching week row) from green to red, rather
           than just the "Closed" value text — the card as a whole should read as a status. */}
-      {(() => {
+      {SHOW_OPENING_HOURS && (() => {
         // Live status (Open/Closes soon/Opens soon/Closed, incl. a same-day special closure) —
         // see getSpotOpenStatus's own comment for what it can and can't parse from `hours`.
         const status = getSpotOpenStatus(spot);
