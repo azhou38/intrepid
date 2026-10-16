@@ -176,7 +176,6 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Matiatia": "Matiatia Headland 1.jpg",
   "Aotea Track": "Mount Hobson Great Barrier Island.jpg",
   "Kaitoke Hot Springs": "Great Barrier Island Hot Pools II.jpg",
-  "Matakana Village Farmers Market": "Matakana Markets.jpg",
   "Kawau Island": "Mansion House, Kawau Island.jpg",
   "Urupukapuka Island": "00 0866 Island of the Bay of Islands.jpg",
   "Poor Knights Islands": "Aorangi Island and Archway Island.jpg",
