@@ -24,11 +24,11 @@
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { resolve as resolvePath } from 'node:path';
 import jpeg from 'jpeg-js';
-import { SPOTS, spotPhotoTitle } from '../src/data/spots';
+import { SPOTS, spotPhotoTitle, spotCountryCode } from '../src/data/spots';
 import { BAD_CATEGORY, BAD_TITLE, colourStats } from './photo-checks';
 
 const arg = (f: string) => { const i = process.argv.indexOf(f); return i > 0 ? process.argv[i + 1] : undefined; };
-const dest = arg('--dest'), only = arg('--spot'), candOut = arg('--candidates');
+const dest = arg('--dest'), only = arg('--spot'), candOut = arg('--candidates'), country = arg('--country');
 const UA = 'IntrepidApp-Galleries/1.0 (personal hobby project; alexzhou38@gmail.com)';
 const ROOT = process.cwd();
 const OUT = resolvePath(ROOT, 'src/data/spotGalleries.json');
@@ -149,7 +149,7 @@ async function colourOk(p: Photo): Promise<boolean> {
 }
 
 async function main() {
-  const spots = SPOTS.filter(s => (!dest || s.destinationId === dest) && (!only || s.id === only));
+  const spots = SPOTS.filter(s => (!dest || s.destinationId === dest) && (!only || s.id === only) && (!country || spotCountryCode(s) === country));
   if (!spots.length) { console.log('no spots matched'); return; }
   const manifest = read(resolvePath(ROOT, 'src/data/imageManifest.json'))?.entries ?? {};
   const exclude = read(EXCL) ?? {};
