@@ -141,3 +141,16 @@ Every photo must show something the others and the spot's own photo do not. Reje
 - **Count (0–10):** set by `scripts/build-spot-galleries.ts` from how popular the spot is (a year of English Wikipedia page views for its article, capped at 4 when the title is only a redirect to a broader article, so it borrows that article's views) and by how many distinct photos were picked. Where a spot has no article, or the set needs more slots to cover the roles above (the Centre of New Zealand needs five: the monument, two views, the approach sign, the plaque), set the count by hand in `scripts/spot-gallery-counts.json`. Fewer than two photos means no gallery.
 - **Picks are made by eye**, from contact sheets of the spot's Commons category **and** of geotagged files near it (a category search returns a politician's visit or a crab; the geotag search is what finds the views and the approach), and written, best first, to `scripts/spot-gallery-picks.json`. The builder never adds a photo itself. Put the photo that most shows the place first.
 - Same licence, size (≥ 1280 px wide), date and colour rules as every other photo.
+
+## When Commons has no suitable photo
+
+Do not drop a spot or leave a wrong photo because Commons has nothing; use a photo from elsewhere on the internet. In order of preference:
+
+1. **Openly licensed** (CC0, public domain, CC BY, CC BY-SA): Openverse (`api.openverse.org`, which indexes Flickr and others), the Department of Conservation's images that DOC labels "Creative Commons", Unsplash, Pexels. No permission needed; keep the credit.
+2. **Official or tourism-organisation photos** (DOC, regional tourism boards, the operator or steward of the place). Not openly licensed, so they are a copyright risk for a published app; permission from the owner is advisable. Record the source page and owner in the credit.
+3. Blogs, travel sites and stock agencies last, and only when nothing better exists.
+
+The photo still has to pass the four checks and the size rules (spot ≥ 960 px, why-visit ≥ 1280 px, header ≥ 2000 px): travel blogs usually shrink images to 750 px, which fails.
+
+**How a non-Commons photo is added:** download the original, resize to at most 1920 px, save it as `assets/photos/<name>.jpg`, commit it, then add an entry to `src/data/externalPhotos.json` keyed by the place's photo key (the spot's name, or `wiki` title; a destination's name for a header; `File:<name>` for a why-visit photo, using a name like `ext-<slug>.jpg` in `whyVisitPhotos`). The entry is `{ t: null, o: <raw.githubusercontent.com URL pinned to the commit that added the file>, ow, credit: { by, license, page } }`. Pin to the commit hash, not `main` (a fresh push is cached as a 404 for minutes), and push before expecting the photo to load. Then run `scripts/build-image-manifest.ts`; it merges the file and a rebuild keeps it. The pre-filter does not check these photos, so look at them yourself.
+

@@ -1,0 +1,53 @@
+{
+ "spot:waipoua-forest-4": {
+  "current_check": "Hokianga.jpg is a NASA World Wind satellite image (category Maps of New Zealand): fails check 4, replace.",
+  "candidates": [
+   {
+    "file": "Hokianga Harbour (panorama).jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Colour photo (2017) of the harbour mouth with the white North Head dunes, in category Hokianga Harbour; reads as the harbour. Very wide strip (3.2:1) but the dunes sit centre, so a square crop still works."
+   },
+   {
+    "file": "Arai Te Uru Hokianga.JPG",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Same view and quality but 3.1:1, dunes smaller and less central; panorama is the better of the pair."
+   },
+   {
+    "file": "The Hokianga Harbour Northland. NZ (9569850386).jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Omapere wharf ruins; shows a jetty, not the harbour as a whole (check 2); dated tonal grading."
+   },
+   {
+    "file": "Hokianga Harbour at Kohukohu.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Kohukohu shore and old piles, flat light, only 1024px wide; not the recognisable harbour."
+   },
+   {
+    "file": "Sand dunes3.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Close view of eroded dune formations; a visitor would not say harbour (check 2)."
+   }
+  ],
+  "choice": "Hokianga Harbour (panorama).jpg"
+ }
+}

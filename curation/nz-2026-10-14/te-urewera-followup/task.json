@@ -1,0 +1,38 @@
+{
+ "destination": {
+  "id": "te-urewera",
+  "name": "Te Urewera",
+  "country": "New Zealand",
+  "category": "park",
+  "coordinates": {
+   "latitude": -38.75,
+   "longitude": 177.15
+  },
+  "whyVisit": [
+   "Great Walk round Lake Waikaremoana",
+   "Aniwaniwa Falls",
+   "Remote native forest"
+  ]
+ },
+ "only_slots_with_flags_need_work": true,
+ "slots": [
+  {
+   "slot": "why-2",
+   "reason": "Aniwaniwa Falls",
+   "current": "Te Tangi O Hinerau Falls, Lake Waikaremoana (21422291498).jpg",
+   "flags": [
+    "archive photo (c.1910), shows Papakorito Falls not Aniwaniwa; only 640px colour Aniwaniwa photos known"
+   ]
+  },
+  {
+   "slot": "spot:te-urewera-3",
+   "spot": "Lake Waikareiti",
+   "bio": "A forested lake with an island in a lake, reached by a bush walk, with a hut and kayaking.",
+   "key": "Lake Waikareiti",
+   "current": "New Zealand, Great Walk Lake Waikaremoana (1).JPG",
+   "flags": [
+    "wrong lake: current photo is Lake Waikaremoana; need Lake Waikareiti itself (try Wikipedia/Wikimedia Commons categories, Waikareiti Track)"
+   ]
+  }
+ ]
+}

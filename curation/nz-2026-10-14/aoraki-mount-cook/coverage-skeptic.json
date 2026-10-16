@@ -1,0 +1,15 @@
+{
+ "new_spots": [
+  {"name":"Kea Point","keep":true,"objection":"","coordinates_ok":true,"bio_ok":true,"bio_fix":null,"ticketUrl_ok":true,"photo_verdict":"accept","photo_reason":"Podzemnik 2020 colour photo, Commons category Kea Point Track; Mount Sefton and glaciers seen from the track, wide and sunlit, no map/people/text. It shows the view the walk is for rather than the deck itself, acceptable for a viewpoint walk."},
+  {"name":"Sealy Tarns","keep":true,"objection":"","coordinates_ok":true,"bio_ok":true,"bio_fix":null,"ticketUrl_ok":true,"photo_verdict":"accept","photo_reason":"2016 colour photo, categories Sealy Tarns and Huddleston Glacier; the tarn itself with glacier behind, ground-level and sharp. Note: set wiki to 'Sealy Tarns' (the proposal's gap list names the article but new_spot has wiki null)."},
+  {"name":"Red Tarns","keep":true,"objection":"","coordinates_ok":true,"bio_ok":true,"bio_fix":null,"ticketUrl_ok":true,"photo_verdict":"accept","photo_reason":"2016 colour photo, category Red Tarns; pink pond-weed tarn with Aoraki behind, a recognisable shot of the tarns. Passes all four checks."},
+  {"name":"Governors Bush Walk","keep":true,"objection":"","coordinates_ok":true,"bio_ok":true,"bio_fix":null,"ticketUrl_ok":true,"photo_verdict":"none","photo_reason":"Proposal has no photo; fine, leave without one rather than ship a weak close-up."}
+ ],
+ "existing_fixes": [
+  {"spot_id":"aoraki-mount-cook-1","apply":true,"reason":"New Hooker Valley Track DOC URL loads (200, title 'Hooker Valley Track'). The upper-track closure for the bridge was not rechecked here; confirm hours/bio before release."},
+  {"spot_id":"aoraki-mount-cook-3","apply":true,"reason":"Mueller Hut Route DOC page loads (200) and names the route; replaces the dead park-root URL."},
+  {"spot_id":"aoraki-mount-cook-2","apply":true,"reason":"things-to-do page loads (200), title is the park, not the glacier. Acceptable as the official park page; dropping the link is the alternative if a glacier-specific page is wanted."},
+  {"spot_id":"aoraki-mount-cook-4","apply":true,"reason":"Wikivoyage Alpine Centre entry gives daily 8:30AM-8PM, adult $25, child $15. Apply hours and NZD 25; the price is from a secondary source dated 2023, so flag it for the operator check."},
+  {"spot_id":"aoraki-mount-cook-5","apply":true,"reason":"Rounded coordinates (-44.0500, 170.1700) should be replaced with a sourced point; Wikipedia's Lake Pukaki centre is -44.1167, 170.1667 (about 45 km from the village), so pick a sourced viewing point inside the 37.5 km span, e.g. an OSM node, rather than the lake centre."}
+ ]
+}

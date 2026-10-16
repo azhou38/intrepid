@@ -1,0 +1,249 @@
+{
+ "destination": "hanmer-springs",
+ "sources_used": [
+  "https://en.wikivoyage.org/wiki/Hanmer_Springs",
+  "https://en.wikipedia.org/wiki/Hanmer_Springs",
+  "https://en.wikipedia.org/wiki/Queen_Mary_Hospital_(Hanmer_Springs)",
+  "https://en.wikipedia.org/wiki/Lewis_Pass",
+  "https://doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/hanmer-forest-park/",
+  "https://www.tripideas.nz/hanmer-springs",
+  "https://overpass-api.de (OSM)",
+  "https://nominatim.openstreetmap.org",
+  "https://commons.wikimedia.org/w/api.php"
+ ],
+ "gaps": [
+  {
+   "name": "Dog Stream Waterfall",
+   "wiki": null,
+   "sources": [
+    "https://doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/hanmer-forest-park/things-to-do/waterfall-track",
+    "https://www.tripideas.nz/hanmer-springs"
+   ],
+   "decision": "add",
+   "reason": "DOC track page and a guide name it as a Hanmer walk; 41 m fall, ~4 km from the village."
+  },
+  {
+   "name": "Mount Isobel",
+   "wiki": "Mount Isobel",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Hanmer_Springs",
+    "https://www.tripideas.nz/hanmer-springs"
+   ],
+   "decision": "add",
+   "reason": "The peak above the village, with hiking tracks named by a guide and Wikipedia."
+  },
+  {
+   "name": "Queen Mary Hospital (Hanmer Springs)",
+   "wiki": "Queen Mary Hospital (Hanmer Springs)",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Queen_Mary_Hospital_(Hanmer_Springs)",
+    "https://www.tripideas.nz/hanmer-springs"
+   ],
+   "decision": "add",
+   "reason": "Has a Wikipedia article, Category I heritage buildings and a guide lists it as an attraction behind the pools."
+  },
+  {
+   "name": "Lewis Pass",
+   "wiki": null,
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lewis_Pass"
+   ],
+   "decision": "add",
+   "reason": "Wikipedia: scenic reserve with Alpine Nature Walk; 33 km from Hanmer, outside its span, no other destination -> standalone."
+  },
+  {
+   "name": "Hanmer Forest Park",
+   "wiki": "",
+   "sources": [
+    "https://doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/hanmer-forest-park/"
+   ],
+   "decision": "reject",
+   "reason": "Named by DOC but it is a large area with no single entrance coordinate I could source; its tracks are covered by Dog Stream Waterfall and Conical Hill. Could be revisited with a sourced trailhead."
+  },
+  {
+   "name": "Hanmer Springs Animal Park",
+   "wiki": null,
+   "sources": [
+    "https://nominatim.openstreetmap.org (zoo)"
+   ],
+   "decision": "reject",
+   "reason": "Only an OSM entry found; no guide/Wikivoyage/DOC source naming it as somewhere to go."
+  },
+  {
+   "name": "Dog Stream Reserve / Woodland Walk / Majuba Walk",
+   "wiki": null,
+   "sources": [
+    "https://www.tripideas.nz/hanmer-springs"
+   ],
+   "decision": "reject",
+   "reason": "Short local forest walks within the town; no coordinates sourced and not a distinct stop beyond Conical Hill."
+  },
+  {
+   "name": "Thomas Hanmer Memorial / Jollies Pass Hotel memorial / Jacks Pass viewpoint",
+   "wiki": null,
+   "sources": [
+    "https://overpass-api.de"
+   ],
+   "decision": "reject",
+   "reason": "OSM-only minor features, no guide source."
+  },
+  {
+   "name": "Mouse Point Siphon",
+   "wiki": null,
+   "sources": [
+    "https://overpass-api.de"
+   ],
+   "decision": "reject",
+   "reason": "OSM attraction ~20 km south, rarely visited, no guide source."
+  },
+  {
+   "name": "Lake Tennyson",
+   "wiki": "Lake Tennyson",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lake_Tennyson"
+   ],
+   "decision": "reject",
+   "reason": "About 40+ km away on a 4WD high-country road, not reached from Hanmer as a day stop; no guide source found."
+  },
+  {
+   "name": "Maruia Springs",
+   "wiki": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Nelson_Bays"
+   ],
+   "decision": "reject",
+   "reason": "West Coast side of Lewis Pass (~40 km), a commercial resort; not verified further."
+  }
+ ],
+ "existing_fixes": [],
+ "new_spots": [
+  {
+   "name": "Dog Stream Waterfall",
+   "wiki": null,
+   "icon": "💧",
+   "coordinates": {
+    "latitude": -42.49034,
+    "longitude": 172.84086
+   },
+   "coordinates_source": "OSM Nominatim 'Dog Stream Waterfall' (natural/waterfall) https://nominatim.openstreetmap.org",
+   "category": "nature",
+   "bio": "A 41-metre waterfall reached by the Waterfall Track through mountain beech forest in Hanmer Forest Park, with the steeper Spur Track as a loop option.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2.5,
+   "visitHoursMax": 3.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/hanmer-forest-park/things-to-do/waterfall-track",
+   "ticketUrl_checked": "Loaded the DOC page; title 'Waterfall Track: Hanmer Forest Park', text names the Dog Stream waterfall. Title is the track/park, not the fall by name, so reviewer may prefer null.",
+   "photo": null,
+   "sources": [
+    "https://doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/hanmer-forest-park/things-to-do/waterfall-track",
+    "https://doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/hanmer-forest-park/things-to-do/spur-track"
+   ],
+   "photo_note": "No Commons photo of this waterfall found in searches; set null."
+  },
+  {
+   "name": "Mount Isobel",
+   "wiki": "Mount Isobel",
+   "icon": "⛰️",
+   "coordinates": {
+    "latitude": -42.48175,
+    "longitude": 172.84825
+   },
+   "coordinates_source": "OSM node natural=peak 'Mount Isobel' (Overpass)",
+   "category": "hike",
+   "bio": "The 1,324 m peak that looks over Hanmer Springs, climbed on long tracks from Jacks Pass, Jollies Pass or Clarence Valley Road.",
+   "hours": "Daylight hours",
+   "visitHoursMin": 4,
+   "visitHoursMax": 7,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_checked": "No single official page; left null.",
+   "photo": {
+    "file": "Mount Isobel behind Hanmer Springs.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Mount_Isobel_behind_Hanmer_Springs.jpg",
+    "width": 1024,
+    "height": 768,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Hanmer_Springs",
+    "https://www.tripideas.nz/hanmer-springs",
+    "https://hanmersprings.co.nz (Hanmer trails map, via search snippet: Jacks Pass/Jollies Pass/Clarence Valley Rd access; times unverified, I could not load the PDF)"
+   ],
+   "note": "Wikipedia article title 'Mount Isobel' does not resolve via API (no article found); name only. Photo is 2008, 1024 px wide, mountain with village roofs and a patio umbrella in the foreground; marginal."
+  },
+  {
+   "name": "Queen Mary Hospital",
+   "wiki": "Queen Mary Hospital (Hanmer Springs)",
+   "icon": "🏛️",
+   "coordinates": {
+    "latitude": -42.52361,
+    "longitude": 172.82778
+   },
+   "coordinates_source": "Wikipedia article coordinates",
+   "category": "historic",
+   "bio": "A former soldiers' hospital opened in 1916 beside the thermal pools, whose Soldiers' Block, Nurses' Home and Chisholm Block are Category I heritage buildings now owned by DOC.",
+   "hours": "Exterior viewable from the thermal reserve",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_checked": "None found; left null.",
+   "photo": {
+    "file": "Queen Mary Hospital, Hanmer Springs.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Queen_Mary_Hospital,_Hanmer_Springs.jpg",
+    "width": 1968,
+    "height": 1312,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Queen_Mary_Hospital_(Hanmer_Springs)",
+    "https://en.wikipedia.org/wiki/Hanmer_Springs",
+    "https://www.tripideas.nz/hanmer-springs"
+   ],
+   "note": "Visiting hours and access are unverified; photo shows a building (the attraction itself), dated 2019, colour."
+  },
+  {
+   "name": "Lewis Pass",
+   "wiki": null,
+   "icon": "🏞️",
+   "coordinates": {
+    "latitude": -42.3797,
+    "longitude": 172.4
+   },
+   "coordinates_source": "Wikipedia 'Lewis Pass' coordinates (saddle); standalone, ~33 km WNW of Hanmer Springs",
+   "category": "nature",
+   "bio": "A 907 m pass on State Highway 7 through native beech forest in a national scenic reserve, with a short Alpine Nature Walk loop around a tarn near the saddle.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_checked": "Not checked; left null.",
+   "photo": {
+    "file": "Alpine tarn on Lewis Pass 05.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Alpine_tarn_on_Lewis_Pass_05.jpg",
+    "width": 2903,
+    "height": 2000,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lewis_Pass"
+   ],
+   "standalone": true,
+   "id_suggestion": "lewis-pass"
+  }
+ ]
+}

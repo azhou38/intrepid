@@ -1,0 +1,127 @@
+{
+ "destination": {
+  "id": "wellington",
+  "name": "Wellington",
+  "country": "New Zealand",
+  "category": "city",
+  "coordinates": {
+   "latitude": -41.2865,
+   "longitude": 174.7762
+  },
+  "whyVisit": [
+   "Te Papa national museum",
+   "Cable car and Botanic Garden",
+   "Zealandia, a city wildlife sanctuary"
+  ]
+ },
+ "only_slots_with_flags_need_work": true,
+ "slots": [
+  {
+   "slot": "header",
+   "key": "Wellington",
+   "current": "Wellington - Te Whanganui-a-Tara, Part II - Wellington9239.jpg",
+   "flags": []
+  },
+  {
+   "slot": "why-1",
+   "reason": "Te Papa national museum",
+   "current": "Exterior view of Te Papa from the Wellington Waterfront.jpg",
+   "flags": []
+  },
+  {
+   "slot": "why-2",
+   "reason": "Cable car and Botanic Garden",
+   "current": "Wellington Cable Car Cityscape.jpg",
+   "flags": []
+  },
+  {
+   "slot": "why-3",
+   "reason": "Zealandia, a city wildlife sanctuary",
+   "current": "Water - Zealandia (Karori Wildlife Sanctuary) - Wellington - New Zealand - DSC00196.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:wellington-1",
+   "spot": "Te Papa",
+   "bio": "The national museum, with Māori and Pacific treasures, natural history, earthquake simulators and a colossal squid.",
+   "key": "Te Papa",
+   "current": "Museum of New Zealand Te Papa Tongarewa unsaturated.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:wellington-2",
+   "spot": "Wellington Cable Car",
+   "bio": "A funicular from Lambton Quay to the Botanic Garden, with views of the city and harbour.",
+   "key": "Wellington Cable Car",
+   "current": "Wellington Cable Car (20240206a) (53532605708).jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:wellington-3",
+   "spot": "Zealandia",
+   "bio": "A fenced valley sanctuary where native birds such as kākā, tūī and little spotted kiwi live free.",
+   "key": "Zealandia",
+   "override": "Boat - Zealandia (Karori Wildlife Sanctuary) - Wellington - New Zealand - DSC00207.jpg",
+   "current": "Boat - Zealandia (Karori Wildlife Sanctuary) - Wellington - New Zealand - DSC00207.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:wellington-4",
+   "spot": "Mount Victoria",
+   "bio": "A 196-metre lookout with 360-degree views over the city, harbour and airport.",
+   "key": "Mount Victoria, Wellington",
+   "current": "Oriental Bay from Wellington Harbour Ferry.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:wellington-5",
+   "spot": "Wellington Botanic Garden",
+   "bio": "A hillside garden with a rose garden, a cable-car terminus and an observatory.",
+   "key": "Wellington Botanic Garden",
+   "current": "Wellington Botanical Garden 10.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:wellington-6",
+   "spot": "Weta Workshop",
+   "bio": "A film prop and effects studio behind The Lord of the Rings, with workshop tours.",
+   "key": "Weta Workshop",
+   "current": "Weta Workshop Buildings.jpg",
+   "flags": [
+    "800px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:wellington-7",
+   "spot": "Cuba Street",
+   "bio": "The city's bohemian street of cafés, vintage shops and bars, with a bucket fountain.",
+   "key": "Cuba Street",
+   "current": "Bucket Fountain, 2020.png",
+   "flags": []
+  },
+  {
+   "slot": "spot:wellington-8",
+   "spot": "New Zealand Parliament Buildings",
+   "bio": "The seat of government, with the round Beehive and free guided tours of the debating chamber.",
+   "key": "New Zealand Parliament Buildings",
+   "current": "NZ Parliament Buildings 2020-06-26.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:wellington-9",
+   "spot": "Wellington Waterfront",
+   "bio": "A harbourside promenade of sculptures, cafés and swimming spots running from Te Papa to Oriental Bay.",
+   "key": "Wellington waterfront",
+   "current": "Wellington Harbour, New Zealand, Nov. 2009.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:wellington-10",
+   "spot": "Wellington Zoo",
+   "bio": "A small city zoo with Sumatran tigers, red pandas and a kiwi house.",
+   "key": "Wellington Zoo",
+   "current": "Wellington Zoo entrance 01 (cropped).jpg",
+   "flags": []
+  }
+ ]
+}

@@ -1,0 +1,82 @@
+{
+ "new_spots": [
+  {
+   "name": "Akaroa Head",
+   "keep": true,
+   "objection": "",
+   "coordinates_ok": true,
+   "bio_ok": false,
+   "bio_fix": "A clifftop scenic reserve at the mouth of Akaroa Harbour with the foundations of the 1880 lighthouse keepers' homes and a good chance of spotting Hector's dolphins from shore.",
+   "ticketUrl_ok": true,
+   "photo_verdict": "accept",
+   "photo_reason": "Real colour photo (March 2018; file name says 1986 but the Commons description gives 2018) of the Akaroa Heads headland across turquoise water; the DOC danger sign is in the corner but not the subject. Right place (sign reads Akaroa Heads). Scenic enough, slightly plain sky."
+  },
+  {
+   "name": "Pōhatu / Flea Bay",
+   "keep": true,
+   "objection": "",
+   "coordinates_ok": true,
+   "bio_ok": true,
+   "bio_fix": null,
+   "ticketUrl_ok": true,
+   "photo_verdict": "none",
+   "photo_reason": "Proposal left photo null; no candidate to judge."
+  },
+  {
+   "name": "Banks Peninsula Track",
+   "keep": true,
+   "objection": "A private operator's walk, but it is a trail (a place), named by Wikivoyage and Wikipedia; keep. Note season is October to April, matching the hours.",
+   "coordinates_ok": true,
+   "bio_ok": true,
+   "bio_fix": null,
+   "ticketUrl_ok": true,
+   "photo_verdict": "accept",
+   "photo_reason": "Real colour photograph of a sea arch on the track's coast (Commons category Banks Peninsula Track), wide, scenic, sharp, no people or text. Shows track scenery rather than the trail itself, but acceptable."
+  },
+  {
+   "name": "Hinewai Reserve",
+   "keep": true,
+   "objection": "",
+   "coordinates_ok": true,
+   "bio_ok": true,
+   "bio_fix": null,
+   "ticketUrl_ok": true,
+   "photo_verdict": "accept",
+   "photo_reason": "Quality-image colour photo of Hinewai's regenerating bush-clad hills (2019), wide and sharp, no people or text; right place per the file title and categories."
+  },
+  {
+   "name": "Ōnawe Peninsula",
+   "keep": true,
+   "objection": "",
+   "coordinates_ok": true,
+   "bio_ok": true,
+   "bio_fix": null,
+   "ticketUrl_ok": null,
+   "photo_verdict": "reject",
+   "photo_reason": "Fails check 3: a plain dry-grass mound under overcast sky, flat and unremarkable, not recognisable as Ōnawe. The destination already uses the stronger 'Onawe Peninsula by Tomas Sobek.jpg'; find a wider shot of the whale-shaped peninsula from the harbour side, or leave none."
+  },
+  {
+   "name": "Okains Bay Museum",
+   "keep": true,
+   "objection": "",
+   "coordinates_ok": true,
+   "bio_ok": true,
+   "bio_fix": null,
+   "ticketUrl_ok": true,
+   "photo_verdict": "accept",
+   "photo_reason": "Real colour photo of the museum's whare taonga and marae buildings against the hills; the building complex is the attraction, so check 2 and 3 pass. Right place per Commons description (Okains Bay Māori and Colonial Museum). Note for the writer: the museum site shows seasonal hours (winter, from 1 May, weekends only; summer Thu-Mon 10-4), so 'closedDays [2,3]' is the summer pattern; say 'Thu-Mon in summer, weekends in winter' in hours."
+  }
+ ],
+ "existing_fixes": [
+  {
+   "spot_id": "akaroa-4",
+   "apply": false,
+   "reason": "Only Wikivoyage (undated) supports Mon-Fri; the museum's own site (akaroamuseum.org.nz) returned no readable content, so the change is unverified. Leave the current hours until the museum's own page confirms them."
+  },
+  {
+   "spot_id": "akaroa-1",
+   "apply": false,
+   "reason": "Agree: no change needed. It is the harbour, a place, with coordinates on the water."
+  }
+ ]
+}

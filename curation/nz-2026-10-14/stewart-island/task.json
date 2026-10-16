@@ -1,0 +1,81 @@
+{
+ "destination": {
+  "id": "stewart-island",
+  "name": "Stewart Island",
+  "country": "New Zealand",
+  "category": "island",
+  "coordinates": {
+   "latitude": -46.8988,
+   "longitude": 168.1278
+  },
+  "whyVisit": [
+   "See kiwi in the wild",
+   "Ulva Island bird sanctuary",
+   "The Rakiura Track"
+  ]
+ },
+ "only_slots_with_flags_need_work": true,
+ "slots": [
+  {
+   "slot": "header",
+   "key": "Stewart Island",
+   "current": "Stewart Island Ringaringa Beach and Native Island.jpg",
+   "flags": []
+  },
+  {
+   "slot": "why-1",
+   "reason": "See kiwi in the wild",
+   "current": "Apteryx australis lawryi - Genevieve Early - 473849803.jpeg",
+   "flags": []
+  },
+  {
+   "slot": "why-2",
+   "reason": "Ulva Island bird sanctuary",
+   "current": "Gallirallus australis (Weka) on Ulva Island, New Zealand 03.jpg",
+   "flags": []
+  },
+  {
+   "slot": "why-3",
+   "reason": "The Rakiura Track",
+   "current": "Maori Beach, Rakiura Track, Stewart Island (16538845902).jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:stewart-island-1",
+   "spot": "Ulva Island",
+   "bio": "A predator-free open sanctuary where saddleback, rifleman and Stewart Island robins flit around your feet.",
+   "key": "Ulva Island",
+   "override": "Ulva Island wharf area.jpg",
+   "current": "Ulva Island wharf area.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:stewart-island-2",
+   "spot": "Rakiura Track",
+   "bio": "A three-day Great Walk loop through rimu forest and along golden beaches from Oban.",
+   "key": "Rakiura Track",
+   "override": "Rakiura Track, Stewart Island (16538257491).jpg",
+   "current": "Rakiura Track, Stewart Island (16538257491).jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:stewart-island-4",
+   "spot": "Observation Rock",
+   "bio": "A short climb above Oban to a granite outcrop with sunset views over Paterson Inlet.",
+   "key": "Observation Rock",
+   "override": "Stewart Island Observation Rock sunset.jpg",
+   "current": "Stewart Island Observation Rock sunset.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:stewart-island-5",
+   "spot": "Mason Bay",
+   "bio": "A remote 20 km beach of dunes on the wild west coast, where Stewart Island kiwi forage even by day.",
+   "key": "Mason Bay",
+   "current": "Mason crosby 2010.jpg",
+   "flags": [
+    "277px wide, minimum 960 for a spot"
+   ]
+  }
+ ]
+}

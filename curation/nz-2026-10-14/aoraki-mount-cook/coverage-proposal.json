@@ -1,0 +1,339 @@
+{
+ "destination": "aoraki-mount-cook",
+ "sources_used": [
+  "https://en.wikivoyage.org/wiki/Aoraki_/_Mount_Cook_National_Park",
+  "https://en.wikivoyage.org/wiki/Twizel",
+  "https://en.wikivoyage.org/wiki/Omarama",
+  "https://en.wikipedia.org/wiki/Aoraki_/_Mount_Cook_National_Park",
+  "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/aoraki-mount-cook-national-park/things-to-do/",
+  "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/aoraki-mount-cook-national-park/things-to-do/tracks/kea-point-track/",
+  "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/aoraki-mount-cook-national-park/things-to-do/tracks/sealy-tarns-track/",
+  "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/aoraki-mount-cook-national-park/things-to-do/tracks/red-tarns-track/",
+  "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/aoraki-mount-cook-national-park/things-to-do/tracks/governors-bush-walk/",
+  "Wikipedia geosearch (API) around the village, Tasman Valley and Lake Pukaki",
+  "OSM Overpass bbox -44.20,169.95,-43.60,170.30",
+  "Wikimedia pageviews API (Sep 2025-Aug 2026)",
+  "Wikimedia Commons API"
+ ],
+ "gaps": [
+  {
+   "name": "Kea Point",
+   "wiki": null,
+   "sources": [
+    "DOC Kea Point Track page",
+    "Wikivoyage park page (mentions Kea Point Track parking)",
+    "OSM"
+   ],
+   "decision": "add",
+   "reason": "DOC-promoted short walk from the village to a viewing deck; a classic second-tier stop."
+  },
+  {
+   "name": "Sealy Tarns",
+   "wiki": "Sealy Tarns",
+   "sources": [
+    "DOC Sealy Tarns Track page",
+    "https://en.wikipedia.org/wiki/Sealy_Tarns"
+   ],
+   "decision": "add",
+   "reason": "Own Wikipedia article and DOC track (3-4 hr return); distinct from Mueller Hut, which is a further route beyond."
+  },
+  {
+   "name": "Red Tarns",
+   "wiki": null,
+   "sources": [
+    "DOC Red Tarns Track page",
+    "OSM viewpoint"
+   ],
+   "decision": "add",
+   "reason": "DOC walking track (2 hr return) from the village to a viewing deck; no Wikipedia article, so wiki null."
+  },
+  {
+   "name": "Governors Bush Walk",
+   "wiki": null,
+   "sources": [
+    "DOC Governors Bush Walk page"
+   ],
+   "decision": "add",
+   "reason": "DOC short walk and the sheltered bad-weather option; low rank. Proposed with null photo."
+  },
+  {
+   "name": "Blue Lakes / Blue Lake (Canterbury)",
+   "wiki": "Blue Lake (Canterbury)",
+   "sources": [
+    "Wikivoyage park page",
+    "Wikipedia",
+    "OSM"
+   ],
+   "decision": "reject",
+   "reason": "Same walk and viewpoint as the existing Tasman Glacier spot, about 400 m away; duplicate."
+  },
+  {
+   "name": "Hooker Lake / Hooker Glacier",
+   "wiki": "Hooker Lake",
+   "sources": [
+    "Wikipedia",
+    "Wikivoyage"
+   ],
+   "decision": "reject",
+   "reason": "The end of the Hooker Valley Track, already a spot; duplicate."
+  },
+  {
+   "name": "Mueller Glacier / Mueller Lake lookout",
+   "wiki": "Mueller Glacier",
+   "sources": [
+    "Wikipedia",
+    "OSM"
+   ],
+   "decision": "reject",
+   "reason": "Seen from Kea Point and Red Tarns; only a viewpoint, no separate visitor destination."
+  },
+  {
+   "name": "Mount Ollivier / Mount Sefton / other peaks",
+   "wiki": null,
+   "sources": [
+    "Wikipedia"
+   ],
+   "decision": "reject",
+   "reason": "Mountaineering objectives rather than visitor stops; seen from the walks above."
+  },
+  {
+   "name": "Mount Cook Village",
+   "wiki": "Mount Cook Village",
+   "sources": [
+    "Wikipedia",
+    "Wikivoyage"
+   ],
+   "decision": "reject",
+   "reason": "It is the destination's base and centre; the Hermitage and Alpine Centre already cover it."
+  },
+  {
+   "name": "Bowen Bush Walk, Glencoe Walk",
+   "wiki": null,
+   "sources": [
+    "DOC short walks list"
+   ],
+   "decision": "reject",
+   "reason": "10-minute village strolls that only locals and overnight guests walk; Bowen joins Governors Bush."
+  },
+  {
+   "name": "Ball Pass, Ball Hut Track, Copland Pass, Hooker Hut",
+   "wiki": null,
+   "sources": [
+    "Wikivoyage",
+    "OSM"
+   ],
+   "decision": "reject",
+   "reason": "Mountaineering routes needing alpine experience; rarely visited by ordinary travellers."
+  },
+  {
+   "name": "Mount Cook Airport, Glentanner Park, Heliworks",
+   "wiki": null,
+   "sources": [
+    "OSM",
+    "Wikivoyage"
+   ],
+   "decision": "reject",
+   "reason": "Aerodrome, campground and flight operators; vehicles/operators, not places. The glacier landing is covered by the Tasman Glacier spot."
+  },
+  {
+   "name": "Peter's Lookout (Tapataia Mahaka), Lake Pukaki Visitor Centre and Mt Cook Alpine Salmon",
+   "wiki": null,
+   "sources": [
+    "OSM"
+   ],
+   "decision": "reject",
+   "reason": "Viewpoint and stops at the south end of Lake Pukaki, 40-50 km from the centre, outside 75% of the 50 km span (37.5 km); they are part of the Lake Pukaki experience, already a spot."
+  },
+  {
+   "name": "Alps 2 Ocean Cycle Trail",
+   "wiki": "Alps 2 Ocean Cycle Trail",
+   "sources": [
+    "Wikipedia"
+   ],
+   "decision": "reject",
+   "reason": "A 300 km cycle trail, not a place here; the village is only its start. Handle as a standalone or country-level item."
+  },
+  {
+   "name": "Twizel",
+   "wiki": "Twizel",
+   "sources": [
+    "Wikivoyage Twizel"
+   ],
+   "decision": "reject",
+   "reason": "About 58 km away, beyond the span, and a separate base (DOC calls it the nearest town). Flag for the Mackenzie Basin run as a possible destination or standalone spot, along with Lake Ruataniwha view point, Lake Ohau and Omarama Clay Cliffs."
+  },
+  {
+   "name": "Lake Tekapo area, Church of the Good Shepherd",
+   "wiki": null,
+   "sources": [
+    "Wikivoyage"
+   ],
+   "decision": "reject",
+   "reason": "Already the Lake Tekapo destination, about 55 km away."
+  },
+  {
+   "name": "Hooker Valley Track suspension bridges, Alpine Memorial, Mueller Lake Lookout",
+   "wiki": null,
+   "sources": [
+    "OSM"
+   ],
+   "decision": "reject",
+   "reason": "Features on the Hooker Valley Track and village paths; not separate stops."
+  }
+ ],
+ "existing_fixes": [
+  {
+   "spot_id": "aoraki-mount-cook-1",
+   "action": "replace",
+   "to": "ticketUrl: https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/aoraki-mount-cook-national-park/things-to-do/tracks/hooker-valley-track/",
+   "reason": "Current ticketUrl (.../aoraki-mount-cook-national-park/ with no subpage) loads a page titled 'Page not found'. The replacement's title is 'Hooker Valley Track: Aoraki/Mount Cook National Park'. Also DOC says the upper track is closed for a new bridge (Apr 2026 release), so check hours/bio before release."
+  },
+  {
+   "spot_id": "aoraki-mount-cook-3",
+   "action": "replace",
+   "to": "ticketUrl: https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/aoraki-mount-cook-national-park/things-to-do/tracks/mueller-hut-route/",
+   "reason": "Same dead park-root URL ('Page not found'); the replacement's title names the Mueller Hut Route."
+  },
+  {
+   "spot_id": "aoraki-mount-cook-2",
+   "action": "replace",
+   "to": "ticketUrl: https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/aoraki-mount-cook-national-park/things-to-do/",
+   "reason": "Same dead park-root URL. The things-to-do page's title is 'Aoraki/Mount Cook National Park: Places to go in Canterbury' (names the park, not the glacier), or drop the link."
+  },
+  {
+   "spot_id": "aoraki-mount-cook-4",
+   "action": "replace",
+   "to": "hours '8:30 AM – 8:00 PM'; cost NZD 25 adult",
+   "reason": "Wikivoyage (updated Sep 2023) gives daily 8:30AM-8PM and adult $25; the entry has 7:00 AM and $20. Operator's current prices should be confirmed (hermitage.co.nz loads)."
+  },
+  {
+   "spot_id": "aoraki-mount-cook-5",
+   "action": "move",
+   "to": "keep as a lake spot, but its coordinates (-44.0500, 170.1700) are rounded, probably from memory; take them from OSM/Wikipedia",
+   "reason": "Not a duplicate or misplaced; the point is in the lake about 35 km from the centre, inside the span."
+  }
+ ],
+ "new_spots": [
+  {
+   "name": "Kea Point",
+   "wiki": null,
+   "icon": "🦜",
+   "coordinates": {
+    "latitude": -43.7105518,
+    "longitude": 170.0842842
+   },
+   "coordinates_source": "OSM node 1313378949 (tourism=viewpoint 'Kea Point'), the viewing deck at the track end",
+   "category": "hike",
+   "bio": "A short, gentle walk from the village through subalpine scrub to a viewing deck over the Mueller Glacier lake, Mount Sefton and Aoraki / Mount Cook.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/aoraki-mount-cook-national-park/things-to-do/tracks/kea-point-track/",
+   "ticketUrl_checked": "Loaded the DOC page with curl; its <title> names 'Kea Point' (a bare 200 not relied on: the generic path returns a soft 404)",
+   "photo": {
+    "file": "Southern Alps from Kea Point, Aoraki - Mount Cook National Park, New Zealand.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Southern_Alps_from_Kea_Point,_Aoraki_-_Mount_Cook_National_Park,_New_Zealand.jpg",
+    "width": 6734,
+    "height": 3788,
+    "looked_at": true
+   },
+   "sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/aoraki-mount-cook-national-park/things-to-do/tracks/kea-point-track/",
+    "https://en.wikivoyage.org/wiki/Aoraki_/_Mount_Cook_National_Park"
+   ]
+  },
+  {
+   "name": "Sealy Tarns",
+   "wiki": null,
+   "icon": "⛰️",
+   "coordinates": {
+    "latitude": -43.7129532,
+    "longitude": 170.0744105
+   },
+   "coordinates_source": "OSM node 365706014 (tourism=viewpoint 'Sealy Tarns Viewpoint'); en.wikipedia Sealy Tarns -43.7132,170.074",
+   "category": "hike",
+   "bio": "Climb about 2,200 steps, known as the stairway to heaven, to small alpine tarns with views over the Hooker Valley and Aoraki / Mount Cook.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 3,
+   "visitHoursMax": 4,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/aoraki-mount-cook-national-park/things-to-do/tracks/sealy-tarns-track/",
+   "ticketUrl_checked": "Loaded the DOC page with curl; its <title> names 'Sealy Tarns' (a bare 200 not relied on: the generic path returns a soft 404)",
+   "photo": {
+    "file": "Larger of the Sealy Tarns with Huddleston Glacier in the background.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Larger_of_the_Sealy_Tarns_with_Huddleston_Glacier_in_the_background.jpg",
+    "width": 4896,
+    "height": 3264,
+    "looked_at": true
+   },
+   "sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/aoraki-mount-cook-national-park/things-to-do/tracks/sealy-tarns-track/",
+    "https://en.wikipedia.org/wiki/Sealy_Tarns"
+   ]
+  },
+  {
+   "name": "Red Tarns",
+   "wiki": null,
+   "icon": "🌿",
+   "coordinates": {
+    "latitude": -43.7478991,
+    "longitude": 170.0985033
+   },
+   "coordinates_source": "OSM node 4441613192 (tourism=viewpoint 'Red Tarns'), the viewing point at the tarns",
+   "category": "hike",
+   "bio": "A steep two-hour return climb from the village to tarns tinted red by pond weed, with a panoramic viewing deck over the valleys and Aoraki / Mount Cook.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 2.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/aoraki-mount-cook-national-park/things-to-do/tracks/red-tarns-track/",
+   "ticketUrl_checked": "Loaded the DOC page with curl; its <title> names 'Red Tarns' (a bare 200 not relied on: the generic path returns a soft 404)",
+   "photo": {
+    "file": "Red Tarn with Aoraki Mount Cook in the background.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Red_Tarn_with_Aoraki_Mount_Cook_in_the_background.jpg",
+    "width": 4896,
+    "height": 3264,
+    "looked_at": true
+   },
+   "sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/aoraki-mount-cook-national-park/things-to-do/tracks/red-tarns-track/"
+   ]
+  },
+  {
+   "name": "Governors Bush Walk",
+   "wiki": null,
+   "icon": "🌲",
+   "coordinates": {
+    "latitude": -43.7380606,
+    "longitude": 170.0953623
+   },
+   "coordinates_source": "OSM way 77411437 'Governors Bush Track', first node (start of the loop by the village)",
+   "category": "hike",
+   "bio": "A sheltered one-hour forest loop by the village with a lookout towards Wakefield Ridge and Aoraki / Mount Cook, handy in poor weather.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/aoraki-mount-cook-national-park/things-to-do/tracks/governors-bush-walk/",
+   "ticketUrl_checked": "Loaded the DOC page with curl; its <title> names 'Governors Bush Walk' (a bare 200 not relied on: the generic path returns a soft 404)",
+   "photo": null,
+   "sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/aoraki-mount-cook-national-park/things-to-do/tracks/governors-bush-walk/"
+   ],
+   "photo_note": "No passing Commons photo found: results were plant close-ups or a snow-covered trail view that does not show the walk recognisably"
+  }
+ ]
+}

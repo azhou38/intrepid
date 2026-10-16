@@ -1,0 +1,89 @@
+{
+ "destination": {
+  "id": "waiheke-island",
+  "name": "Waiheke Island",
+  "country": "New Zealand",
+  "category": "island",
+  "coordinates": {
+   "latitude": -36.8,
+   "longitude": 175.1
+  },
+  "whyVisit": [
+   "Vineyards with sea views",
+   "Long sandy beaches",
+   "Sheltered coves and bays"
+  ]
+ },
+ "only_slots_with_flags_need_work": true,
+ "slots": [
+  {
+   "slot": "header",
+   "key": "Waiheke Island",
+   "current": "Waiheke Island Oneroa Beach from Korora Road.jpg",
+   "flags": []
+  },
+  {
+   "slot": "why-1",
+   "reason": "Vineyards with sea views",
+   "current": "Waiheke View Marsanne Block.jpg",
+   "flags": []
+  },
+  {
+   "slot": "why-2",
+   "reason": "Long sandy beaches",
+   "current": "Waiheke Island Onetangi Beach.jpg",
+   "flags": []
+  },
+  {
+   "slot": "why-3",
+   "reason": "Sheltered coves and bays",
+   "current": "Waiheke Island landscape.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:waiheke-island-1",
+   "spot": "Onetangi",
+   "bio": "Waiheke's longest beach, a sweep of white sand with cafés and a surf-life-saving club.",
+   "key": "Onetangi",
+   "current": "Waiheke Island Onetangi Beach.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:waiheke-island-2",
+   "spot": "Cable Bay Vineyards",
+   "bio": "A hillside winery with a restaurant and tasting room looking over the Hauraki Gulf and the Auckland skyline.",
+   "key": "Cable Bay Vineyards",
+   "override": "Waiheke CBV Vineyard Views Pinot Gris Olives (1).jpg",
+   "current": "Waiheke CBV Vineyard Views Pinot Gris Olives (1).jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:waiheke-island-3",
+   "spot": "Oneroa",
+   "bio": "The island's main village, with cafés, galleries and a sheltered beach beside a clifftop walk.",
+   "key": "Oneroa",
+   "override": "Waiheke Island Oneroa Beach.jpg",
+   "current": "Waiheke Island Oneroa Beach.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:waiheke-island-4",
+   "spot": "Stony Batter Historic Reserve",
+   "bio": "Second World War coastal-defence tunnels and gun emplacements on a farm at the island's eastern end.",
+   "key": "Stony Batter Historic Reserve",
+   "current": "NZ-StonyBatter3.jpg",
+   "flags": [
+    "896px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:waiheke-island-5",
+   "spot": "Matiatia",
+   "bio": "Waiheke's ferry wharf and bay, with a walkway up to headland views over Auckland.",
+   "key": "Matiatia",
+   "override": "Matiatia Headland 1.jpg",
+   "current": "Matiatia Headland 1.jpg",
+   "flags": []
+  }
+ ]
+}

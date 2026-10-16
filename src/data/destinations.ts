@@ -1480,7 +1480,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "144 islands, dolphin cruises and the birthplace of modern New Zealand.",
     description: "The Bay of Islands is a drowned valley of about 144 islands, sheltered bays and white-shell beaches on the Northland coast. Paihia and Russell are the bases for dolphin cruises and the Hole in the Rock, while the Waitangi Treaty Grounds mark where the founding agreement between Māori and the Crown was signed in 1840. Kerikeri, inland, has the country's oldest stone building.",
     whyVisit: ["Cruise to the Hole in the Rock", "Waitangi, where NZ began", "Kayak and sail the islands"],
-    whyVisitPhotos: [",00 0664 Bay of Island (Neuseeland) - Hole in the Rock.jpg", "Waitangi Grounds (Treaty House & Flagstaff) (16045248795).jpg", "Urupukapuka Island (52735059736).jpg"],
+    whyVisitPhotos: [",00 0664 Bay of Island (Neuseeland) - Hole in the Rock.jpg", "00 27 0577 Waitangi, New Zealand - Treaty House.jpg", "Urupukapuka Island (52735059736).jpg"],
     highlights: ['Island cruises', 'Waitangi', 'Historic Russell'],
     goodToKnow: [
       { icon: '⛴️', title: 'Cross to Russell by ferry', detail: 'A short passenger ferry links Paihia and Russell, and is the best way to reach the town.' },
@@ -1702,7 +1702,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "A remote forest homeland of the Tūhoe people, with a Great Walk around Lake Waikaremoana.",
     description: "Te Urewera is a large, mountainous forest in the North Island's east, legally recognised as a person and cared for by the Tūhoe people. Lake Waikaremoana, 'the sea of rippling waters', is circled by a Great Walk of about three to four days. Waterfalls and short bush walks are accessible near the lake's visitor area.",
     whyVisit: ["Great Walk round Lake Waikaremoana", "Aniwaniwa Falls", "Remote native forest"],
-    whyVisitPhotos: ["New Zealand, Great Walk Lake Waikaremoana (4).JPG", "Te Tangi O Hinerau Falls, Lake Waikaremoana (21422291498).jpg", "Up Dam Track looking North2.jpg"],
+    whyVisitPhotos: ["New Zealand, Great Walk Lake Waikaremoana (4).JPG", "ext-aniwaniwa-falls.jpg", "Up Dam Track looking North2.jpg"],
     highlights: ['Great Walk', 'Waterfalls', 'Native forest'],
     goodToKnow: [
       { icon: '🥾', title: 'Book the Great Walk', detail: 'Huts and campsites on the Lake Waikaremoana Track need booking, particularly in summer.' },
@@ -1770,7 +1770,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "A coastal city beneath a volcano, with gardens, art and a seafront walkway.",
     description: "New Plymouth is the main city of Taranaki, with Mount Taranaki rising behind it. The Coastal Walkway links the Te Rewa Rewa Bridge, black-sand beaches and the city centre, and Pukekura Park is a Victorian-era garden with lakes. The Len Lye Centre and Govett-Brewster Art Gallery give the city an unusually strong arts scene.",
     whyVisit: ["The Coastal Walkway", "Pukekura Park gardens", "Len Lye Centre"],
-    whyVisitPhotos: ["Te Rewa Rewa Bridge (8390682009).jpg", "Pukekura20101002.jpg", "Len Lye Centre in November 2018 551.jpg"],
+    whyVisitPhotos: ["Te Rewa Rewa Bridge, New Plymouth (14155038182).jpg", "Pukekura20101002.jpg", "Len Lye Centre in November 2018 551.jpg"],
     highlights: ['Coastal Walkway', 'Pukekura Park', 'Modern art'],
     goodToKnow: [
       { icon: '🚶', title: 'Walk or cycle the coast', detail: 'The 13 km walkway is flat and mostly paved, so it suits bikes and prams as well as walkers.' },
