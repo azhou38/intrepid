@@ -998,8 +998,10 @@ function SpotSheet({
   // The bar is fixed at the top (COMPACT TITLE BAR) and fades in around the moment the tab bar arrives under it and
   // pins — the sticky header (stickyHeaderIndices) leaves exactly the bar's height above the tab bar for it.
   const compactBarStyle = useAnimatedStyle(() => {
+    // The bar fades in only once the tab bar has reached it (scroll `at`): any earlier and the gap still between them shows the
+    // hero photo as a dark band.
     const at = (HERO_H - insets.bottom) - 24 - COMPACT_BAR_H;
-    return { opacity: interpolate(scrollYSV.value, [at - 20, at + 10], [0, 1], Extrapolation.CLAMP) };
+    return { opacity: interpolate(scrollYSV.value, [at, at + 14], [0, 1], Extrapolation.CLAMP) };
   });
 
 

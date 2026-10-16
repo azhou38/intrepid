@@ -479,7 +479,7 @@ function CountrySheet({
   // pins — the sticky header (stickyHeaderIndices) leaves exactly the bar's height above the tab bar for it.
   const compactBarStyle = useAnimatedStyle(() => {
     const at = headerFullHAnim.value - TAB_BAR_TUCK - COMPACT_BAR_H;
-    const on = interpolate(scrollY.value, [at - 20, at + 10], [0, 1], Extrapolation.CLAMP);
+    const on = interpolate(scrollY.value, [at, at + 14], [0, 1], Extrapolation.CLAMP);
     const full = interpolate(slideAnim.value, [FULL_POS, FULL_POS + 40], [1, 0], Extrapolation.CLAMP);
     return { opacity: on * full };
   });

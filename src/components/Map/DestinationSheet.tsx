@@ -1082,8 +1082,10 @@ function DestinationSheet({
   // The bar is fixed at the top (COMPACT TITLE BAR) and fades in around the moment the tab bar arrives under it and
   // pins — the sticky header (stickyHeaderIndices) leaves exactly the bar's height above the tab bar for it.
   const compactBarStyle = useAnimatedStyle(() => {
+    // The bar fades in only once the tab bar has reached it (scroll `at`): any earlier and the gap still between them shows the
+    // hero photo as a dark band.
     const at = fullHeroH - TAB_BAR_TUCK - COMPACT_BAR_H;
-    const on = interpolate(scrollYSV.value, [at - 20, at + 10], [0, 1], Extrapolation.CLAMP);
+    const on = interpolate(scrollYSV.value, [at, at + 14], [0, 1], Extrapolation.CLAMP);
     // Only ever at full-screen — at half-screen and peek there is no scrolled header to stand in for.
     const full = interpolate(slideAnim.value, [FULL_POS, FULL_POS + 40], [1, 0], Extrapolation.CLAMP);
     return { opacity: on * full };
