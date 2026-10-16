@@ -32,6 +32,8 @@ import spotGalleries from '../../data/spotGalleries.json';
 import CircleFlag from '../CircleFlag';
 import { CARD_SCRIM_FADE, cardScrimStops } from './cardScrim';
 import { GoogleMapsIcon, AppleMapsIcon } from './MapAppIcons';
+import GoogleRating from './GoogleRating';
+import spotRatings from '../../data/spotRatings.json';
 import { fitNameFontSize } from '../../utils/fitNameFontSize';
 import { titleStatGap } from '../../utils/titleStatGap';
 import FadeInImage from './FadeInImage';
@@ -1384,6 +1386,10 @@ function SpotGallery({ spotId }: { spotId: string }) {
 // Temporarily hides the About tab's opening-hours row (the live open/closed status and the week list). Set to true to bring it back.
 const SHOW_OPENING_HOURS = false;
 
+// The Google rating for a spot, if one has been fetched (src/data/spotRatings.json, keyed by spot id).
+const spotRating = (s: Spot): { rating: number; count?: number } | undefined =>
+  (spotRatings as Record<string, { rating: number; count?: number }>)[s.id];
+
 // Map links for a spot. Google Maps: a SEARCH for the spot's name and place, centred on its coordinates, so it opens the real
 // place listing (its own pin, photos, hours) where Google has one, and falls back to the point itself where it does not (a
 // viewpoint, a stretch of beach). Apple Maps: the point, labelled with the name. https links open the installed app.
@@ -1440,11 +1446,15 @@ function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore, nearbyHlScrol
           </View>
           <View style={st.glanceDivider} />
           <View style={st.glanceItem}>
-            <View style={[st.glanceIconCircle, { backgroundColor: GLANCE_PLACE.bg }]}>
-              <MapPin size={20} color={GLANCE_PLACE.fg} />
-            </View>
-            <Text style={[st.glanceVal, { textAlign: 'center' }]} numberOfLines={2}>{spotDestination(spot)?.name ?? spotCountry(spot) ?? ''}</Text>
-            <Text style={st.glanceLbl}>Location</Text>
+            {/* Google rating in place of the location: the number, the stars and the Google mark. Shown only once the spot
+                has a rating in src/data/spotRatings.json (see scripts/fetch-google-ratings.ts); no rating, no column. */}
+            {spotRating(spot) ? (
+              <GoogleRating rating={spotRating(spot)!.rating} count={spotRating(spot)!.count} />
+            ) : (
+              <View style={[st.glanceIconCircle, { backgroundColor: GLANCE_PLACE.bg }]}>
+                <MapPin size={20} color={GLANCE_PLACE.fg} />
+              </View>
+            )}
           </View>
         </View>
       </View>
