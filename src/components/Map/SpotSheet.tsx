@@ -1150,7 +1150,9 @@ isVisited ? (
             {renderTabBar(true)}
           </View>
 
-          <View style={{ flexGrow: 1, backgroundColor: 'white', paddingBottom: insets.bottom + 36 }}>
+          {/* Tucked 2px under the bar (marginTop/paddingTop): while the sheet moves, the natively-pinned bar and this white block can land a sub-pixel
+              apart and flash a thin seam; the overlap leaves nothing to show through. */}
+          <View style={{ flexGrow: 1, backgroundColor: 'white', marginTop: -2, paddingTop: 2, paddingBottom: insets.bottom + 36 }}>
 
           {/* ── CONTENT ────────────────────────────────────────────────── */}
           <View style={st.content}>
