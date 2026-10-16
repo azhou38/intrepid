@@ -1519,43 +1519,44 @@ function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore, nearbyHlScrol
 
       <SpotGallery spotId={spot.id} />
 
-      {!!spot.ticketUrl && (
-        <View style={st.section}>
-          {/* The whole card opens the site: favicon, a small gray "OFFICIAL SITE" label over the spot's name, and a round
-              green open-in-new button. No body copy. */}
-          <Pressable style={st.siteCard} onPress={() => Linking.openURL(spot.ticketUrl!)}>
-            {ticketFaviconUri && !faviconFailed
-              ? <Image source={{ uri: ticketFaviconUri }} style={st.siteFavicon} onError={() => setFaviconFailed(true)} />
-              : <View style={st.siteFavicon}><Ticket size={20} color="#6366F1" /></View>}
-            <View style={st.siteText}>
-              <Text style={st.siteEyebrow}>OFFICIAL SITE</Text>
-              <Text style={st.siteName} numberOfLines={1}>{spot.name}</Text>
-            </View>
-            <View style={st.siteBtn}>
-              <ExternalLink size={18} color="#16A34A" />
-            </View>
-          </Pressable>
-        </View>
-      )}
-
-      {/* View on maps — opens the spot's coordinates in Google Maps or Apple Maps (https links, which open the installed app). */}
+      {/* Official site and View on maps, joined as ONE card with a hairline between them (the site row is left out for a spot with
+          no official site). The site row opens the site; the maps row opens Google Maps or Apple Maps at the spot. */}
       <View style={st.section}>
-        <View style={st.mapsCard}>
-          {/* A map icon on a light tile at the left, the same size and place as the official site card's favicon. */}
-          <View style={st.siteFavicon}>
-            <MapIcon size={22} color="#111827" />
-          </View>
-          <View style={st.mapsBody}>
-            <Text style={st.siteEyebrow}>VIEW ON MAPS</Text>
-            <View style={st.mapsRow}>
-              <Pressable style={st.mapsBtn} onPress={() => Linking.openURL(googleMapsUrl(spot))}>
-                <MapPin size={16} color="#16A34A" />
-                <Text style={st.mapsBtnTxt}>Google Maps</Text>
+        <View style={st.linksCard}>
+          {!!spot.ticketUrl && (
+            <>
+              <Pressable style={st.linksRow} onPress={() => Linking.openURL(spot.ticketUrl!)}>
+                {ticketFaviconUri && !faviconFailed
+                  ? <Image source={{ uri: ticketFaviconUri }} style={st.siteFavicon} onError={() => setFaviconFailed(true)} />
+                  : <View style={st.siteFavicon}><Ticket size={20} color="#6366F1" /></View>}
+                <View style={st.siteText}>
+                  <Text style={st.siteEyebrow}>OFFICIAL SITE</Text>
+                  <Text style={st.siteName} numberOfLines={1}>{spot.name}</Text>
+                </View>
+                <View style={st.siteBtn}>
+                  <ExternalLink size={18} color="#16A34A" />
+                </View>
               </Pressable>
-              <Pressable style={st.mapsBtn} onPress={() => Linking.openURL(appleMapsUrl(spot))}>
-                <MapPin size={16} color="#2563EB" />
-                <Text style={st.mapsBtnTxt}>Apple Maps</Text>
-              </Pressable>
+              <View style={st.linksDivider} />
+            </>
+          )}
+          <View style={st.linksRow}>
+            {/* A map icon on a light tile at the left, the same size and place as the favicon above. */}
+            <View style={st.siteFavicon}>
+              <MapIcon size={22} color="#111827" />
+            </View>
+            <View style={st.mapsBody}>
+              <Text style={st.siteEyebrow}>VIEW ON MAPS</Text>
+              <View style={st.mapsRow}>
+                <Pressable style={st.mapsBtn} onPress={() => Linking.openURL(googleMapsUrl(spot))}>
+                  <MapPin size={16} color="#16A34A" />
+                  <Text style={st.mapsBtnTxt}>Google Maps</Text>
+                </Pressable>
+                <Pressable style={st.mapsBtn} onPress={() => Linking.openURL(appleMapsUrl(spot))}>
+                  <MapPin size={16} color="#2563EB" />
+                  <Text style={st.mapsBtnTxt}>Apple Maps</Text>
+                </Pressable>
+              </View>
             </View>
           </View>
         </View>
@@ -1813,16 +1814,16 @@ const st = StyleSheet.create({
   // (hoursWeekDay/hoursWeekVal) — only the color sets today's row apart, not extra boldness.
   hoursWeekDayToday: { fontWeight: '600' },
   hoursWeekDayTodayClosed: { color: '#DC2626', fontWeight: '600' },
-  // Official site — a white card with a favicon, a small gray eyebrow over the name, and a round green button.
-  siteCard: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: 'white',
-              borderRadius: 18, padding: 12, borderWidth: 1, borderColor: '#E5E7EB' },
+  // Official site + View on maps — ONE white card; each row is a favicon-sized tile, a gray eyebrow and its content, with a hairline
+  // between the rows.
+  linksCard: { backgroundColor: 'white', borderRadius: 18, borderWidth: 1, borderColor: '#E5E7EB', overflow: 'hidden' },
+  linksRow: { flexDirection: 'row', alignItems: 'center', gap: 12, padding: 12 },
+  linksDivider: { height: StyleSheet.hairlineWidth, backgroundColor: '#E5E7EB', marginHorizontal: 12 },
   siteFavicon: { width: 44, height: 44, borderRadius: 10, backgroundColor: '#F3F4F6', alignItems: 'center', justifyContent: 'center' },
   siteText: { flex: 1, gap: 2 },
   siteEyebrow: { fontSize: 11, fontWeight: '600', color: '#9CA3AF', letterSpacing: 0.6 },
   siteName: { fontSize: 16, fontWeight: '700', color: '#111827' },
   // View on maps — a white card with the gray eyebrow over two equal pill buttons.
-  mapsCard: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: 'white', borderRadius: 18, padding: 12,
-              borderWidth: 1, borderColor: '#E5E7EB' },
   mapsBody: { flex: 1, gap: 8 },
   mapsRow: { flexDirection: 'row', gap: 10 },
   mapsBtn: { flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 7, backgroundColor: '#F3F4F6',
