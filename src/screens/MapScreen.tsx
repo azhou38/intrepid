@@ -2363,6 +2363,18 @@ const destItems = useMemo((): DestItem[] =>
       return { l, r: l + g.w, t: g.cy - Math.max(8, g.h / 2), b: g.cy + Math.max(8, g.h / 2) };
     };
     const placedLabels: Rect[] = [];
+    // Destination photo pins on screen (and the name under each) are obstacles too: they are native map symbols drawn BENEATH
+    // the spot markers, so a spot name left to run across one would sit on top of the destination's icon. The pin circle is
+    // centred on its coordinate with its name hanging below (about 90px wide, up to two 13px lines).
+    const destBlocks: Rect[] = [];
+    for (const id of destPinPlan.photoIds) {
+      const d = DESTINATIONS.find(dd => dd.id === id);
+      if (!d) continue;
+      const m = mercatorPx(d.coordinates.longitude, d.coordinates.latitude, pxPerDegLng);
+      const x = m.x, y = -m.y, R = PIN_SIZE / 2 + 2;
+      const nameW = Math.min(90, d.name.length * 6.3), nameH = d.name.length * 6.3 > 90 ? 26 : 13;
+      destBlocks.push({ l: x - Math.max(R, nameW / 2), r: x + Math.max(R, nameW / 2), t: y - R, b: y + R + 4 + nameH });
+    }
     // Exiting spots pre-claim their previous label rect so live spots' collision checks below
     // still see it as occupied — the same protection a still-live spot would give a neighbour.
     for (const id of exitingIds) {
@@ -2381,6 +2393,7 @@ const destItems = useMemo((): DestItem[] =>
       const clear = (rect: Rect) => {
         for (const other of all) if (other.id !== sp.id && hits(rect, geo.get(other.id)!.pin)) return false;
         for (const lab of placedLabels) if (hits(rect, lab)) return false;
+        for (const blk of destBlocks) if (hits(rect, blk)) return false;
         return true;
       };
       const left = labelRectFor(g, 'left');
@@ -2410,7 +2423,7 @@ const destItems = useMemo((): DestItem[] =>
     spotLabelHitRef.current = { pxPerDegLng, rects: hitRects };
     prevSpotLabelPlanRef.current = plan;
     return plan;
-  }, [renderedSpots, pillVisibleLngDelta, selectedSpot, savedSpots, visitIndex]);
+  }, [renderedSpots, pillVisibleLngDelta, selectedSpot, savedSpots, visitIndex, destPinPlan]);
 
   // Spot pins in depth order: northernmost first, southernmost last. MarkerViews stack by when they
   // were mounted, so mounting in this order puts a pin that is lower on the map in front of any pin
