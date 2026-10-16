@@ -1134,7 +1134,6 @@ isVisited ? (
                   {!!spotCountryCode(activeSpot) && <CircleFlag countryCode={spotCountryCode(activeSpot)!} size={13} />}
                   <Text style={[st.heroMetaTxt, { marginLeft: 4 }]}>{spotCountry(activeSpot)}</Text>
                 </View>
-                <Text style={st.heroBio} numberOfLines={3}>{activeSpot.bio}</Text>
               </View>
             </Reanimated.View>
           </View>
@@ -1525,6 +1524,11 @@ function SpotAbout({ spot, tabbed, nearbySpots, onSelectNearby, onExplore, nearb
 
       {SHOW_SPOT_GALLERY && <SpotGallery spotId={spot.id} />}
 
+      {/* The description moved here from the hero: below the time / cost / rating row, above the official site. */}
+      <View style={st.section}>
+        <Text style={st.aboutBio}>{spot.bio}</Text>
+      </View>
+
       {/* Official site: one card that opens the site (left out for a spot with no official site). */}
       {!!spot.ticketUrl && (
         <View style={st.section}>
@@ -1710,8 +1714,8 @@ const st = StyleSheet.create({
   heroMeta: { flexDirection: 'row', alignItems: 'center', gap: 4 },
   heroMetaTxt: { fontSize: 14, color: 'rgba(255,255,255,0.90)', fontWeight: '500' },
   heroMetaDivider: { width: 1, height: 12, backgroundColor: 'rgba(255,255,255,0.40)', marginHorizontal: 8 },
-  heroBio: { fontSize: 13.5, lineHeight: 19, fontWeight: '500', color: 'rgba(255,255,255,0.88)', marginTop: 10,
-             textShadowColor: 'rgba(0,0,0,0.35)', textShadowRadius: 3, textShadowOffset: { width: 0, height: 1 } },
+  // The spot description, in the About panel between the glance row and the official site.
+  aboutBio: { fontSize: 15, lineHeight: 22, fontWeight: '400', color: '#374151' },
 
   // Tab bar
   heroBackdrop: { position: 'absolute', top: 0, left: 0, right: 0, overflow: 'hidden', backgroundColor: '#111827' },
