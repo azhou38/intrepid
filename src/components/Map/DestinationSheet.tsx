@@ -1792,7 +1792,7 @@ const st = StyleSheet.create({
   heroBackdrop: { position:'absolute', top:0, left:0, right:0, height: HERO_H, overflow:'hidden', backgroundColor:'#111827' },
   heroDim: { backgroundColor:'#000' },
   compactBar: {
-    backgroundColor:'white', alignItems:'center', paddingHorizontal: 110,
+    backgroundColor:'white', alignItems:'center', paddingHorizontal: 60,
   },
   tabCornerFill: { position:'absolute', left:0, right:0, height: 24, backgroundColor:'white' },
   compactBarFixed: { position: 'absolute', top: 0, left: 0, right: 0, zIndex: 3 },
