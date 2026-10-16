@@ -1542,20 +1542,18 @@ function DestinationSheet({
                     </View>
                   </View>
                   <Text style={st.heroMetaTxt}>{destination.country}</Text>
-                  <View style={st.heroMetaDivider} />
-                  <Text style={st.heroMetaTxt}>{destination.continent}</Text>
+                  {/* The spot count takes the continent's old place after the country. */}
+                  {spots.length > 0 && (
+                    <>
+                      <View style={st.heroMetaDivider} />
+                      <MapPin size={13} color="rgba(255,255,255,0.90)" />
+                      <Text style={[st.heroMetaTxt, { marginLeft: 4 }]}>{spots.length} spots</Text>
+                    </>
+                  )}
                 </View>
 
                 {!!destination.tagline && (
                   <Text style={st.heroTagline} numberOfLines={2}>{destination.tagline}</Text>
-                )}
-
-                {/* Spots row */}
-                {spots.length > 0 && (
-                  <View style={st.commRatingRow}>
-                    <MapPin size={12} color="rgba(255,255,255,0.80)" />
-                    <Text style={st.commRatingCount}>{spots.length} spots</Text>
-                  </View>
                 )}
               </View>
 
