@@ -5180,13 +5180,11 @@ const styles = StyleSheet.create({
     shadowColor: '#000', shadowOpacity: 0.14, shadowRadius: 10,
     shadowOffset: { width: 0, height: 3 }, elevation: 6,
   },
-  // Full-screen's collapse arrow — a translucent circular outline around the icon, no
-  // solid fill/shadow like the regular pill.
+  // Full-screen's collapse arrow — a solid white circle behind the icon (no shadow, unlike the regular pill).
   upPillBare: {
     flexDirection: 'row', alignItems: 'center', justifyContent: 'center',
     width: 36, height: 36, borderRadius: 18,
-    backgroundColor: 'rgba(255,255,255,0.35)',
-    borderWidth: 1.5, borderColor: 'rgba(255,255,255,0.55)',
+    backgroundColor: '#FFFFFF',
   },
   upPillArrow: { fontSize: 13, color: '#374151', fontWeight: '700' },
   upPillTxt:   { fontSize: 13, fontWeight: '600', color: '#111827' },
