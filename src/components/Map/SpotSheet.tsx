@@ -31,7 +31,6 @@ import { buildThumbUrl, type ManifestEntry } from '../../utils/imageUrl';
 import spotGalleries from '../../data/spotGalleries.json';
 import CircleFlag from '../CircleFlag';
 import { CARD_SCRIM_FADE, cardScrimStops } from './cardScrim';
-import { GoogleMapsIcon, AppleMapsIcon } from './MapAppIcons';
 import GoogleRating from './GoogleRating';
 import spotRatings from '../../data/spotRatings.json';
 import { fitNameFontSize } from '../../utils/fitNameFontSize';
@@ -1390,17 +1389,6 @@ const SHOW_OPENING_HOURS = false;
 const spotRating = (s: Spot): { rating: number; count?: number } | undefined =>
   (spotRatings as Record<string, { rating: number; count?: number }>)[s.id];
 
-// Map links for a spot. Google Maps: a SEARCH for the spot's name and place, centred on its coordinates, so it opens the real
-// place listing (its own pin, photos, hours) where Google has one, and falls back to the point itself where it does not (a
-// viewpoint, a stretch of beach). Apple Maps: the point, labelled with the name. https links open the installed app.
-const googleMapsUrl = (s: Spot) => {
-  const where = spotDestination(s)?.name ?? spotCountry(s) ?? '';
-  const q = encodeURIComponent(where ? `${s.name}, ${where}` : s.name);
-  return `https://www.google.com/maps/search/${q}/@${s.coordinates.latitude},${s.coordinates.longitude},17z`;
-};
-const appleMapsUrl = (s: Spot) =>
-  `https://maps.apple.com/?ll=${s.coordinates.latitude},${s.coordinates.longitude}&q=${encodeURIComponent(s.name)}`;
-
 // Icon colours for the three at-a-glance facts on the About tab: icon colour on a light tint of the same hue.
 const GLANCE_TIME  = { bg: '#DCFCE7', fg: '#16A34A' };
 const GLANCE_COST  = { bg: '#FFEDD5', fg: '#EA580C' };
@@ -1530,40 +1518,23 @@ function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore, nearbyHlScrol
 
       <SpotGallery spotId={spot.id} />
 
-      {/* Official site and View on maps, joined as ONE card with a hairline between them (the site row is left out for a spot with
-          no official site). The site row opens the site; the maps row opens Google Maps or Apple Maps at the spot. */}
+      {/* Official site: one card that opens the site (left out for a spot with no official site). */}
       <View style={st.section}>
         <View style={st.linksCard}>
           {!!spot.ticketUrl && (
-            <>
-              <Pressable style={st.linksRow} onPress={() => Linking.openURL(spot.ticketUrl!)}>
-                {ticketFaviconUri && !faviconFailed
-                  ? <Image source={{ uri: ticketFaviconUri }} style={st.siteFavicon} onError={() => setFaviconFailed(true)} />
-                  : <View style={st.siteFavicon}><Ticket size={20} color="#6366F1" /></View>}
-                <View style={st.siteText}>
-                  <Text style={st.siteEyebrow}>OFFICIAL SITE</Text>
-                  <Text style={st.siteName} numberOfLines={1}>{spot.name}</Text>
-                </View>
-                <View style={st.siteBtn}>
-                  <ExternalLink size={18} color="#16A34A" />
-                </View>
-              </Pressable>
-              <View style={st.linksDivider} />
-            </>
+            <Pressable style={st.linksRow} onPress={() => Linking.openURL(spot.ticketUrl!)}>
+              {ticketFaviconUri && !faviconFailed
+                ? <Image source={{ uri: ticketFaviconUri }} style={st.siteFavicon} onError={() => setFaviconFailed(true)} />
+                : <View style={st.siteFavicon}><Ticket size={20} color="#6366F1" /></View>}
+              <View style={st.siteText}>
+                <Text style={st.siteEyebrow}>OFFICIAL SITE</Text>
+                <Text style={st.siteName} numberOfLines={1}>{spot.name}</Text>
+              </View>
+              <View style={st.siteBtn}>
+                <ExternalLink size={18} color="#16A34A" />
+              </View>
+            </Pressable>
           )}
-          {/* The map links: just the two buttons, no icon tile or title. */}
-          <View style={st.linksRow}>
-            <View style={st.mapsRow}>
-              <Pressable style={st.mapsBtn} onPress={() => Linking.openURL(googleMapsUrl(spot))}>
-                <GoogleMapsIcon size={20} />
-                <Text style={st.mapsBtnTxt}>Google Maps</Text>
-              </Pressable>
-              <Pressable style={st.mapsBtn} onPress={() => Linking.openURL(appleMapsUrl(spot))}>
-                <AppleMapsIcon size={20} />
-                <Text style={st.mapsBtnTxt}>Apple Maps</Text>
-              </Pressable>
-            </View>
-          </View>
         </View>
       </View>
 
@@ -1819,20 +1790,13 @@ const st = StyleSheet.create({
   // (hoursWeekDay/hoursWeekVal) — only the color sets today's row apart, not extra boldness.
   hoursWeekDayToday: { fontWeight: '600' },
   hoursWeekDayTodayClosed: { color: '#DC2626', fontWeight: '600' },
-  // Official site + View on maps — ONE white card; each row is a favicon-sized tile, a gray eyebrow and its content, with a hairline
-  // between the rows.
+  // Official site — one white card; the row is a favicon-sized tile, a gray eyebrow and the name.
   linksCard: { backgroundColor: 'white', borderRadius: 18, borderWidth: 1, borderColor: '#E5E7EB', overflow: 'hidden' },
   linksRow: { flexDirection: 'row', alignItems: 'center', gap: 12, padding: 12 },
-  linksDivider: { height: StyleSheet.hairlineWidth, backgroundColor: '#E5E7EB', marginHorizontal: 12 },
   siteFavicon: { width: 44, height: 44, borderRadius: 10, backgroundColor: '#F3F4F6', alignItems: 'center', justifyContent: 'center' },
   siteText: { flex: 1, gap: 2 },
   siteEyebrow: { fontSize: 11, fontWeight: '600', color: '#9CA3AF', letterSpacing: 0.6 },
   siteName: { fontSize: 16, fontWeight: '700', color: '#111827' },
-  // View on maps — a white card with the gray eyebrow over two equal pill buttons.
-  mapsRow: { flex: 1, flexDirection: 'row', gap: 10 },
-  mapsBtn: { flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 7, backgroundColor: '#F3F4F6',
-             borderRadius: 14, paddingVertical: 12 },
-  mapsBtnTxt: { fontSize: 14, fontWeight: '700', color: '#111827' },
   siteBtn: { width: 40, height: 40, borderRadius: 20, backgroundColor: '#DCFCE7', alignItems: 'center', justifyContent: 'center' },
 
   // Photo gallery — a bleed-to-the-edge sliding row of rounded photos, the first carrying a "N photos" pill.
