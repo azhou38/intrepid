@@ -151,7 +151,8 @@ async function colourOk(p: Photo): Promise<boolean> {
 
 // A non-Commons photo in the repo, linked from raw.githubusercontent.com pinned to the commit that added it.
 function localPhoto(l: { local: string; w: number; credit: any }): Photo {
-  const sha = execSync(`git log -1 --format=%h -- ${JSON.stringify(l.local)}`, { cwd: ROOT }).toString().trim();
+  // Full 40-character SHA: raw.githubusercontent.com can serve a short one a 404 and keep serving it.
+  const sha = execSync(`git log -1 --format=%H -- ${JSON.stringify(l.local)}`, { cwd: ROOT }).toString().trim();
   if (!sha) throw new Error(`${l.local} is not committed yet — commit it, then rebuild`);
   const url = `https://raw.githubusercontent.com/azhou38/intrepid/${sha}/${l.local}`;
   return { file: l.local, w: l.w, h: 0, year: undefined, score: 0, t: null, o: url, thumb960: url, credit: l.credit };
