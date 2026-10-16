@@ -1545,11 +1545,18 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     // guard every other programmatic camera move in this file already uses.
     if (!selectedDest || !destHomeRegion || suppressDestReturnPromptRef.current) return false;
     const zoomedOut = camZoom < destHomeZoomRef.current - DEST_ZOOMED_OUT_LEVELS;
+    // With a spot open the camera is framed on that spot (tight zoom, and shifted up by the sheet at bottom-screen), which for
+    // a spot near the edge of the destination's home view reads as "panned away" from the home CENTRE even though the user is
+    // well inside the destination — the return arrow then showed after swiping the sheet down. So while the camera is still
+    // on the spot (its pin within 0.6 of a screen of the centre), it has not been panned away; a real pan past that still offers the way back.
+    if (selectedSpot && !zoomedOut
+      && Math.abs(region.latitude  - selectedSpot.coordinates.latitude)  < region.latitudeDelta  * 0.6
+      && Math.abs(region.longitude - selectedSpot.coordinates.longitude) < region.longitudeDelta * 0.6) return false;
     const pannedAway =
       Math.abs(region.latitude  - destHomeRegion.latitude)  > destHomeRegion.latitudeDelta  * 0.45 ||
       Math.abs(region.longitude - destHomeRegion.longitude) > destHomeRegion.longitudeDelta * 0.45;
     return zoomedOut || pannedAway;
-  }, [selectedDest, destHomeRegion, region, camZoom]);
+  }, [selectedDest, destHomeRegion, region, camZoom, selectedSpot]);
 
   useEffect(() => {
     // Fallback for state-driven transitions (e.g. selectedCountry changes while map is static).
