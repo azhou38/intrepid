@@ -1526,9 +1526,9 @@ function SpotAbout({ spot, tabbed, nearbySpots, onSelectNearby, onExplore, nearb
       {SHOW_SPOT_GALLERY && <SpotGallery spotId={spot.id} />}
 
       {/* Official site: one card that opens the site (left out for a spot with no official site). */}
-      <View style={st.section}>
-        <View style={st.linksCard}>
-          {!!spot.ticketUrl && (
+      {!!spot.ticketUrl && (
+        <View style={st.section}>
+          <View style={st.linksCard}>
             <Pressable style={st.linksRow} onPress={() => Linking.openURL(spot.ticketUrl!)}>
               {ticketFaviconUri && !faviconFailed
                 ? <Image source={{ uri: ticketFaviconUri }} style={st.siteFavicon} onError={() => setFaviconFailed(true)} />
@@ -1541,9 +1541,9 @@ function SpotAbout({ spot, tabbed, nearbySpots, onSelectNearby, onExplore, nearb
                 <ExternalLink size={18} color="#374151" />
               </View>
             </Pressable>
-          )}
+          </View>
         </View>
-      </View>
+      )}
 
       {/* Nearby — same design as the destination sheet's "Popular Spots" row (square SpotCards,
           same width, same horizontal scroll): the destination's other spots, one tap away.
