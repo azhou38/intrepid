@@ -1383,10 +1383,14 @@ function SpotGallery({ spotId }: { spotId: string }) {
 // Temporarily hides the About tab's opening-hours row (the live open/closed status and the week list). Set to true to bring it back.
 const SHOW_OPENING_HOURS = false;
 
-// Map links for a spot: the exact point, labelled with its name. https links open the Google Maps / Apple Maps app when it
-// is installed, else the web page.
-const googleMapsUrl = (s: Spot) =>
-  `https://www.google.com/maps/search/?api=1&query=${s.coordinates.latitude},${s.coordinates.longitude}`;
+// Map links for a spot. Google Maps: a SEARCH for the spot's name and place, centred on its coordinates, so it opens the real
+// place listing (its own pin, photos, hours) where Google has one, and falls back to the point itself where it does not (a
+// viewpoint, a stretch of beach). Apple Maps: the point, labelled with the name. https links open the installed app.
+const googleMapsUrl = (s: Spot) => {
+  const where = spotDestination(s)?.name ?? spotCountry(s) ?? '';
+  const q = encodeURIComponent(where ? `${s.name}, ${where}` : s.name);
+  return `https://www.google.com/maps/search/${q}/@${s.coordinates.latitude},${s.coordinates.longitude},17z`;
+};
 const appleMapsUrl = (s: Spot) =>
   `https://maps.apple.com/?ll=${s.coordinates.latitude},${s.coordinates.longitude}&q=${encodeURIComponent(s.name)}`;
 
