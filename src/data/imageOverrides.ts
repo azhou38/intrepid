@@ -87,7 +87,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Invercargill": "Downtown Invercargill, Southland, New Zealand - Flickr - PhillipC.jpg",
   "Kahurangi National Park": "View towards Lookout Range from John Reid Hut, Kahurangi, New Zealand.jpg",
   "Mount Aspiring National Park": "Mt Edward - Mount Aspiring National Park.jpg",
-  "Timaru": "Timaru Port Breakwater.JPG",
+  "Timaru": "20250309-DJI 0056.jpg",
   // New Zealand spots whose default Wikipedia photo was wrong (wrong place, wrong subject, map/aerial/drawing):
   "Christchurch Gondola": "Christchurch Gondola.jpg",
   "Akaroa Lighthouse": "Historic Akaroa Lighthouse. (31392380543).jpg",
