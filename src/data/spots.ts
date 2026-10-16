@@ -231,7 +231,9 @@ const CURRENCY_FORMAT: Record<string, { prefix?: string; suffix?: string }> = {
   EUR: { prefix: '€' },
   GBP: { prefix: '£' },
   JPY: { prefix: '¥' },
-  AUD: { prefix: 'A$' },
+  // A symbol shared by several currencies belongs to the most prominent one ($ → USD); the rest spell out their code.
+  AUD: { prefix: 'AUD ' },
+  NZD: { prefix: 'NZD ' },
   CHF: { prefix: 'CHF ' },
   CZK: { suffix: ' Kč' },
   SEK: { suffix: ' SEK' },
