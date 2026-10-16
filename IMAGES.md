@@ -124,3 +124,12 @@ The manifest build resolves every file, records its size and credit, and lists h
 **The build is incremental.** It keeps every entry already in the manifest and only looks up what is new or changed (a destination, spot or photo override added, changed or removed), so a normal run takes seconds. It records what decided each entry in `scripts/image-manifest.sigs.json`, which is committed with the manifest. It cannot see a Wikipedia article's own lead image changing under an unchanged entry, so run `npx tsx scripts/build-image-manifest.ts --full` (every lookup and URL check from scratch, about 30–40 minutes) now and then, roughly monthly; `--verify` re-checks every image URL without redoing the lookups.
 
 `HEADER_REVIEW_BACKLOG` in `scripts/destination-header-policy.ts` lists older destinations still waiting for a curated header. Never add a new destination to it; remove an entry once its header is curated.
+
+## Spot galleries (the sliding photo row on a spot's About tab)
+
+A gallery is **extra information about the place**, not more of the same photo. Every photo in it must show something the others and the spot's own photo do not: a different subject or vantage (the **view from** the spot, the **approach** or setting, the **entrance**, an **interior**, a **detail** that tells you something such as a plaque or sign, a season or time of day). Reject near-duplicates (five angles of the same monument or facade), close-ups that tell the visitor nothing, and anything that fails the four checks. If only two or three photos pass this, the gallery has two or three photos; length is never padded.
+
+- **Count (0–10):** set by `scripts/build-spot-galleries.ts` from how popular the spot is (a year of English Wikipedia page views for its article; a hand-set value in `scripts/spot-gallery-counts.json` where it has no article, or its title is only a redirect to a broader article) and capped by how many distinct photos were actually picked. Fewer than two photos means no gallery.
+- **Picks are made by eye**, from contact sheets of the spot's Commons category and of geotagged files near it (a category search happily returns a politician's visit or a crab), and written, best first, to `scripts/spot-gallery-picks.json`. The builder never adds a photo itself.
+- Same licence, size (≥ 1280 px wide), date and colour rules as every other photo.
+
