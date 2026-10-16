@@ -1538,7 +1538,7 @@ function SpotAbout({ spot, tabbed, nearbySpots, onSelectNearby, onExplore, nearb
                 <Text style={st.siteName} numberOfLines={1}>{spot.name}</Text>
               </View>
               <View style={st.siteBtn}>
-                <ExternalLink size={18} color="#16A34A" />
+                <ExternalLink size={18} color="#FFFFFF" />
               </View>
             </Pressable>
           )}
@@ -1804,7 +1804,7 @@ const st = StyleSheet.create({
   siteText: { flex: 1, gap: 2 },
   siteEyebrow: { fontSize: 11, fontWeight: '600', color: '#9CA3AF', letterSpacing: 0.6 },
   siteName: { fontSize: 16, fontWeight: '700', color: '#111827' },
-  siteBtn: { width: 40, height: 40, borderRadius: 20, backgroundColor: '#DCFCE7', alignItems: 'center', justifyContent: 'center' },
+  siteBtn: { width: 40, height: 40, borderRadius: 20, backgroundColor: '#111111', alignItems: 'center', justifyContent: 'center' },
 
   // Photo gallery — a bleed-to-the-edge sliding row of rounded photos, the first carrying a "N photos" pill.
   galleryScroll: { marginHorizontal: -16 },
