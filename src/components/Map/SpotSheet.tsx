@@ -25,7 +25,7 @@ import * as Haptics from 'expo-haptics';
 import { useStore, useVisitIndex } from '../../store';
 import type { Destination, Visit } from '../../types';
 import type { Spot } from '../../data/spots';
-import { DAY_NAMES, hoursForDay, formatSpotCost, formatVisitTime, getSpotOpenStatus, specialClosureOn, spotCountry, spotCountryCode, spotDestination, spotPhotoTitle, zonedNowForSpot } from '../../data/spots';
+import { DAY_NAMES, hoursForDay, formatSpotCost, formatVisitTime, spotCostTone, visitTimeTone, getSpotOpenStatus, specialClosureOn, spotCountry, spotCountryCode, spotDestination, spotPhotoTitle, zonedNowForSpot } from '../../data/spots';
 import { photoCache, thumbCache, getOrFetchWikiThumbnail, HEADER_PX } from '../../utils/photoCache';
 import { buildThumbUrl, type ManifestEntry } from '../../utils/imageUrl';
 import spotGalleries from '../../data/spotGalleries.json';
@@ -1390,8 +1390,12 @@ const spotRating = (s: Spot): { rating: number; count?: number } | undefined =>
   (spotRatings as Record<string, { rating: number; count?: number }>)[s.id];
 
 // Icon colours for the three at-a-glance facts on the About tab: icon colour on a light tint of the same hue.
-const GLANCE_TIME  = { bg: '#DCFCE7', fg: '#16A34A' };
-const GLANCE_COST  = { bg: '#FFEDD5', fg: '#EA580C' };
+// Time and cost are traffic-lit by visitTimeTone / spotCostTone (spots.ts); location stays purple.
+const GLANCE_TONE = {
+  green:  { bg: '#DCFCE7', fg: '#16A34A' },
+  yellow: { bg: '#FEF9C3', fg: '#CA8A04' },
+  orange: { bg: '#FFEDD5', fg: '#EA580C' },
+};
 const GLANCE_PLACE = { bg: '#EDE9FE', fg: '#7C3AED' };
 
 // ── About panel (shared between visited/non-visited) ──────────────────────────
@@ -1414,20 +1418,20 @@ function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore, nearbyHlScrol
   return (
     <>
       <View style={[st.section, { marginTop: -10 }]}>
-        {/* Three at-a-glance facts, each icon on its own tinted circle: time needed (green), cost (orange) and where it is
+        {/* Three at-a-glance facts, each icon on its own tinted circle: time needed and cost (traffic-light coloured) and where it is
             (purple) — the destination, or the country for a standalone spot. */}
         <View style={st.glanceCard}>
           <View style={st.glanceItem}>
-            <View style={[st.glanceIconCircle, { backgroundColor: GLANCE_TIME.bg }]}>
-              <Clock size={20} color={GLANCE_TIME.fg} />
+            <View style={[st.glanceIconCircle, { backgroundColor: GLANCE_TONE[visitTimeTone(spot.visitHoursMin)].bg }]}>
+              <Clock size={20} color={GLANCE_TONE[visitTimeTone(spot.visitHoursMin)].fg} />
             </View>
             <Text style={st.glanceVal} numberOfLines={1}>{formatVisitTime(spot.visitHoursMin, spot.visitHoursMax)}</Text>
             <Text style={st.glanceLbl}>Time needed</Text>
           </View>
           <View style={st.glanceDivider} />
           <View style={st.glanceItem}>
-            <View style={[st.glanceIconCircle, { backgroundColor: GLANCE_COST.bg }]}>
-              <Ticket size={20} color={GLANCE_COST.fg} />
+            <View style={[st.glanceIconCircle, { backgroundColor: GLANCE_TONE[spotCostTone(spot)].bg }]}>
+              <Ticket size={20} color={GLANCE_TONE[spotCostTone(spot)].fg} />
             </View>
             <Text style={st.glanceVal} numberOfLines={1}>{formatSpotCost(spot)}</Text>
             <Text style={st.glanceLbl}>Cost (Adult)</Text>

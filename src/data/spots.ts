@@ -240,24 +240,25 @@ const CURRENCY_FORMAT: Record<string, { prefix?: string; suffix?: string }> = {
   ISK: { suffix: ' ISK' },
 };
 
-// "1–1.5 hr" / "30–60 min" / "45 min – 1 hr" — always a range (see visitHoursMin/Max), matching
-// the "single value when equal, range when it differs" precedent formatSpotCost below already
-// sets for costMin/costMax, except a visit range is never authored equal so it always spells
-// out both ends.
-const oneVisitTime = (hours: number): string =>
-  hours < 1 ? `${Math.round(hours * 60)} min` : `${hours % 1 === 0 ? hours : hours.toFixed(1)} hr`;
-
+// Visit time is always in hours — "0.5 – 1 hr", "1 – 1.5 hr", "2 hr" — never mixing minutes and hours, so spots read
+// the same way and compare at a glance. Up to two decimals ("0.75"), trailing zeros dropped.
+const hoursTxt = (h: number): string => String(Math.round(h * 100) / 100);
 export function formatVisitTime(min: number, max: number): string {
-  if (max === min) return oneVisitTime(min);
-  // Both ends the same unit (both under an hour, or both an hour+) — one shared suffix rather
-  // than repeating "hr"/"min" on each side.
-  if (min < 1 && max < 1) return `${Math.round(min * 60)} – ${Math.round(max * 60)} min`;
-  if (min >= 1 && max >= 1) {
-    const fmt = (h: number) => (h % 1 === 0 ? h : h.toFixed(1));
-    return `${fmt(min)} – ${fmt(max)} hr`;
-  }
-  return `${oneVisitTime(min)} – ${oneVisitTime(max)}`;
+  return max === min ? `${hoursTxt(min)} hr` : `${hoursTxt(min)} – ${hoursTxt(max)} hr`;
 }
+
+// Traffic-light tone for the at-a-glance icons. A range takes the tone of its LOW end, so a range that reaches a
+// threshold gets the lighter tone: time is green when 1 hr is in range (min ≤ 1), yellow when 3 hr is (min ≤ 3),
+// else orange; cost is green when $10 is in range (min ≤ 10), yellow when $30 is (min ≤ 30), else orange.
+export type Tone = 'green' | 'yellow' | 'orange';
+export const visitTimeTone = (min: number): Tone => (min <= 1 ? 'green' : min <= 3 ? 'yellow' : 'orange');
+// Approximate USD per unit of each currency, only to place a price against the $10 / $30 thresholds (not for display).
+const USD_PER: Record<string, number> = { USD: 1, EUR: 1.1, GBP: 1.3, JPY: 0.0067, AUD: 0.65, NZD: 0.6, CHF: 1.15, CZK: 0.044, SEK: 0.095, NOK: 0.093, DKK: 0.147, ISK: 0.0073 };
+export const spotCostTone = (spot: Spot): Tone => {
+  if (spot.free || spot.costMin == null) return 'green';
+  const usd = spot.costMin * (USD_PER[spot.currency ?? 'USD'] ?? 1);
+  return usd <= 10 ? 'green' : usd <= 30 ? 'yellow' : 'orange';
+};
 
 export function formatSpotCost(spot: Spot): string {
   if (spot.free || spot.costMin == null) return 'Free';
