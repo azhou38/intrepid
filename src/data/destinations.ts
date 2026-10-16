@@ -1702,7 +1702,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "A remote forest homeland of the Tūhoe people, with a Great Walk around Lake Waikaremoana.",
     description: "Te Urewera is a large, mountainous forest in the North Island's east, legally recognised as a person and cared for by the Tūhoe people. Lake Waikaremoana, 'the sea of rippling waters', is circled by a Great Walk of about three to four days. Waterfalls and short bush walks are accessible near the lake's visitor area.",
     whyVisit: ["Great Walk round Lake Waikaremoana", "Aniwaniwa Falls", "Remote native forest"],
-    whyVisitPhotos: ["New Zealand, Great Walk Lake Waikaremoana (4).JPG", "Te Tangi O Hinerau Falls, Lake Waikaremoana (21422291498).jpg", "Up Dam Track looking North2.jpg"],
+    whyVisitPhotos: ["New Zealand, Great Walk Lake Waikaremoana (4).JPG", "ext-aniwaniwa-falls.jpg", "Up Dam Track looking North2.jpg"],
     highlights: ['Great Walk', 'Waterfalls', 'Native forest'],
     goodToKnow: [
       { icon: '🥾', title: 'Book the Great Walk', detail: 'Huts and campsites on the Lake Waikaremoana Track need booking, particularly in summer.' },

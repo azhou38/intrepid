@@ -124,3 +124,16 @@ The manifest build resolves every file, records its size and credit, and lists h
 **The build is incremental.** It keeps every entry already in the manifest and only looks up what is new or changed (a destination, spot or photo override added, changed or removed), so a normal run takes seconds. It records what decided each entry in `scripts/image-manifest.sigs.json`, which is committed with the manifest. It cannot see a Wikipedia article's own lead image changing under an unchanged entry, so run `npx tsx scripts/build-image-manifest.ts --full` (every lookup and URL check from scratch, about 30–40 minutes) now and then, roughly monthly; `--verify` re-checks every image URL without redoing the lookups.
 
 `HEADER_REVIEW_BACKLOG` in `scripts/destination-header-policy.ts` lists older destinations still waiting for a curated header. Never add a new destination to it; remove an entry once its header is curated.
+
+## When Commons has no suitable photo
+
+Do not drop a spot or leave a wrong photo because Commons has nothing; use a photo from elsewhere on the internet. In order of preference:
+
+1. **Openly licensed** (CC0, public domain, CC BY, CC BY-SA): Openverse (`api.openverse.org`, which indexes Flickr and others), the Department of Conservation's images that DOC labels "Creative Commons", Unsplash, Pexels. No permission needed; keep the credit.
+2. **Official or tourism-organisation photos** (DOC, regional tourism boards, the operator or steward of the place). Not openly licensed, so they are a copyright risk for a published app; permission from the owner is advisable. Record the source page and owner in the credit.
+3. Blogs, travel sites and stock agencies last, and only when nothing better exists.
+
+The photo still has to pass the four checks and the size rules (spot ≥ 960 px, why-visit ≥ 1280 px, header ≥ 2000 px): travel blogs usually shrink images to 750 px, which fails.
+
+**How a non-Commons photo is added:** download the original, resize to at most 1920 px, save it as `assets/photos/<name>.jpg`, commit it, then add an entry to `src/data/externalPhotos.json` keyed by the place's photo key (the spot's name, or `wiki` title; a destination's name for a header; `File:<name>` for a why-visit photo, using a name like `ext-<slug>.jpg` in `whyVisitPhotos`). The entry is `{ t: null, o: <raw.githubusercontent.com URL pinned to the commit that added the file>, ow, credit: { by, license, page } }`. Pin to the commit hash, not `main` (a fresh push is cached as a 404 for minutes), and push before expecting the photo to load. Then run `scripts/build-image-manifest.ts`; it merges the file and a rebuild keeps it. The pre-filter does not check these photos, so look at them yourself.
+
