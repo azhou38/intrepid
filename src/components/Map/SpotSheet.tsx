@@ -31,6 +31,7 @@ import { buildThumbUrl, type ManifestEntry } from '../../utils/imageUrl';
 import spotGalleries from '../../data/spotGalleries.json';
 import CircleFlag from '../CircleFlag';
 import { CARD_SCRIM_FADE, cardScrimStops } from './cardScrim';
+import { GoogleMapsIcon, AppleMapsIcon } from './MapAppIcons';
 import { fitNameFontSize } from '../../utils/fitNameFontSize';
 import { titleStatGap } from '../../utils/titleStatGap';
 import FadeInImage from './FadeInImage';
@@ -1544,11 +1545,11 @@ function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore, nearbyHlScrol
           <View style={st.linksRow}>
             <View style={st.mapsRow}>
               <Pressable style={st.mapsBtn} onPress={() => Linking.openURL(googleMapsUrl(spot))}>
-                <MapPin size={16} color="#16A34A" />
+                <GoogleMapsIcon size={20} />
                 <Text style={st.mapsBtnTxt}>Google Maps</Text>
               </Pressable>
               <Pressable style={st.mapsBtn} onPress={() => Linking.openURL(appleMapsUrl(spot))}>
-                <MapPin size={16} color="#2563EB" />
+                <AppleMapsIcon size={20} />
                 <Text style={st.mapsBtnTxt}>Apple Maps</Text>
               </Pressable>
             </View>
