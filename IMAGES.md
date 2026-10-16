@@ -127,9 +127,17 @@ The manifest build resolves every file, records its size and credit, and lists h
 
 ## Spot galleries (the sliding photo row on a spot's About tab)
 
-A gallery is **extra information about the place**, not more of the same photo. Every photo in it must show something the others and the spot's own photo do not: a different subject or vantage (the **view from** the spot, the **approach** or setting, the **entrance**, an **interior**, a **detail** that tells you something such as a plaque or sign, a season or time of day). Reject near-duplicates (five angles of the same monument or facade), close-ups that tell the visitor nothing, and anything that fails the four checks. If only two or three photos pass this, the gallery has two or three photos; length is never padded.
+A gallery is **extra information about the place**, not more of the same photo, and it must still **show the place itself**. Choose it as a small set with a job for each photo:
 
-- **Count (0–10):** set by `scripts/build-spot-galleries.ts` from how popular the spot is (a year of English Wikipedia page views for its article; a hand-set value in `scripts/spot-gallery-counts.json` where it has no article, or its title is only a redirect to a broader article) and capped by how many distinct photos were actually picked. Fewer than two photos means no gallery.
-- **Picks are made by eye**, from contact sheets of the spot's Commons category and of geotagged files near it (a category search happily returns a politician's visit or a crab), and written, best first, to `scripts/spot-gallery-picks.json`. The builder never adds a photo itself.
+1. **The thing itself, in its setting** (always include one). The monument, building, beach or trail as a visitor sees it, with enough around it to place it. Not a tight close-up; not the same shot as the spot's own photo.
+2. **The view from it**, where the spot has one: what you see when you are standing there (a lookout's panorama, the bay from a headland).
+3. **The approach or access**: the entrance, the path, the sign at the trailhead, how you get there.
+4. **An interior or a different part**, where it has one (the nave, a gallery room, a different end of the beach).
+5. **A detail that tells you something**: a plaque, a sign, an exhibit, a distinctive feature, with its meaning readable, not a texture.
+6. Optionally a different season or time of day, if it shows something the others do not.
+
+Every photo must show something the others and the spot's own photo do not. Reject near-duplicates (five angles of the same facade), close-ups that tell the visitor nothing, and anything that fails the four checks. A gallery that is all views and no sight of the place itself is as wrong as one that is all close-ups of the place and no view: check both are covered. If only two or three photos pass, the gallery has two or three; length is never padded.
+
+- **Count (0–10):** set by `scripts/build-spot-galleries.ts` from how popular the spot is (a year of English Wikipedia page views for its article, capped at 4 when the title is only a redirect to a broader article, so it borrows that article's views) and by how many distinct photos were picked. Where a spot has no article, or the set needs more slots to cover the roles above (the Centre of New Zealand needs five: the monument, two views, the approach sign, the plaque), set the count by hand in `scripts/spot-gallery-counts.json`. Fewer than two photos means no gallery.
+- **Picks are made by eye**, from contact sheets of the spot's Commons category **and** of geotagged files near it (a category search returns a politician's visit or a crab; the geotag search is what finds the views and the approach), and written, best first, to `scripts/spot-gallery-picks.json`. The builder never adds a photo itself. Put the photo that most shows the place first.
 - Same licence, size (≥ 1280 px wide), date and colour rules as every other photo.
-
