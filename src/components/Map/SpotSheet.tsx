@@ -1532,7 +1532,7 @@ function SpotAbout({ spot, tabbed, nearbySpots, onSelectNearby, onExplore, nearb
             <Pressable style={st.linksRow} onPress={() => Linking.openURL(spot.ticketUrl!)}>
               {ticketFaviconUri && !faviconFailed
                 ? <Image source={{ uri: ticketFaviconUri }} style={st.siteFavicon} onError={() => setFaviconFailed(true)} />
-                : <View style={st.siteFavicon}><Ticket size={20} color="#6366F1" /></View>}
+                : <View style={st.siteFavicon}><Ticket size={16} color="#6366F1" /></View>}
               <View style={st.siteText}>
                 <Text style={st.siteEyebrow}>OFFICIAL SITE</Text>
                 <Text style={st.siteName} numberOfLines={1}>{spot.name}</Text>
@@ -1800,7 +1800,7 @@ const st = StyleSheet.create({
   // Official site — one white card; the row is a favicon-sized tile, a gray eyebrow and the name.
   linksCard: { backgroundColor: 'white', borderRadius: 18, borderWidth: 1, borderColor: '#E5E7EB', overflow: 'hidden' },
   linksRow: { flexDirection: 'row', alignItems: 'center', gap: 12, padding: 12 },
-  siteFavicon: { width: 44, height: 44, borderRadius: 10, backgroundColor: '#F3F4F6', alignItems: 'center', justifyContent: 'center' },
+  siteFavicon: { width: 32, height: 32, borderRadius: 8, backgroundColor: '#F3F4F6', alignItems: 'center', justifyContent: 'center' },
   siteText: { flex: 1, gap: 2 },
   siteEyebrow: { fontSize: 11, fontWeight: '600', color: '#9CA3AF', letterSpacing: 0.6 },
   siteName: { fontSize: 16, fontWeight: '700', color: '#111827' },
