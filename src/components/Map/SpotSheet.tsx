@@ -1354,6 +1354,8 @@ const GALLERY_PHOTO_W = Math.min(W * 0.62, 260);
 const GALLERY_PHOTO_H = Math.round(GALLERY_PHOTO_W * 0.68);
 const GALLERY_GAP = 8;
 
+// The photo gallery on the About tab is switched off for now; set true to bring it back (data in spotGalleries.json is kept).
+const SHOW_SPOT_GALLERY = false;
 function SpotGallery({ spotId }: { spotId: string }) {
   const photos = ((spotGalleries as unknown as Record<string, ManifestEntry[]>)[spotId] ?? []);
   if (photos.length === 0) return null;
@@ -1520,7 +1522,7 @@ function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore, nearbyHlScrol
         );
       })()}
 
-      <SpotGallery spotId={spot.id} />
+      {SHOW_SPOT_GALLERY && <SpotGallery spotId={spot.id} />}
 
       {/* Official site: one card that opens the site (left out for a spot with no official site). */}
       <View style={st.section}>
