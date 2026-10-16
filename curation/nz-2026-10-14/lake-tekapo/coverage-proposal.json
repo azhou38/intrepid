@@ -1,0 +1,371 @@
+{
+ "destination": "lake-tekapo",
+ "sources_used": [
+  "https://en.wikivoyage.org/wiki/Lake_Tekapo",
+  "https://en.wikipedia.org/wiki/Lake_Tekapo_(town)",
+  "https://en.wikipedia.org/wiki/Lake_Tekapo_Regional_Park",
+  "https://en.wikipedia.org/wiki/Lake_Alexandrina_(New_Zealand)",
+  "https://en.wikipedia.org/wiki/Lake_McGregor",
+  "https://en.wikipedia.org/wiki/Burkes_Pass",
+  "https://en.wikivoyage.org/wiki/Twizel",
+  "https://en.wikivoyage.org/wiki/Burkes_Pass",
+  "https://www.ecan.govt.nz/your-region/living-here/regional-parks/lake-tekapo-regional-park/",
+  "https://nominatim.openstreetmap.org (OSM)",
+  "https://commons.wikimedia.org (geotags and photos)",
+  "https://en.wikipedia.org/w/api.php?list=geosearch (10 km radius around Tekapo and 3 offset centres)",
+  "https://www.doc.govt.nz (popular places page and search returned nothing usable for Tekapo)"
+ ],
+ "gaps": [
+  {
+   "name": "Sheepdog Statue",
+   "wiki": null,
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lake_Tekapo_(town)",
+    "https://en.wikivoyage.org/wiki/Lake_Tekapo"
+   ],
+   "decision": "add",
+   "reason": "Named in Wikipedia's Attractions section and Wikivoyage See (Church of the Good Shepherd entry); a famous bronze beside the church that every visitor photographs. Distinct stop from the church, 100 m away."
+  },
+  {
+   "name": "Mount John Walkway",
+   "wiki": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Lake_Tekapo",
+    "https://nominatim.openstreetmap.org (highway=track Mount John Walkway)"
+   ],
+   "decision": "add",
+   "reason": "Wikivoyage Do/Tramping lists it with a 3 hour return; DOC-signed track from the town to the summit. A separate, free alternative to the observatory spot (which is the summit), so not a duplicate."
+  },
+  {
+   "name": "Lake Tekapo Regional Park",
+   "wiki": "Lake Tekapo Regional Park",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lake_Tekapo_(town)",
+    "https://en.wikipedia.org/wiki/Lake_Tekapo_Regional_Park",
+    "https://www.ecan.govt.nz/your-region/living-here/regional-parks/lake-tekapo-regional-park/"
+   ],
+   "decision": "add",
+   "reason": "Wikipedia attractions section and the managing agency (Environment Canterbury) page: 165 ha with 24 km of walking and cycling tracks, picnic areas, reached on foot or bike from the village."
+  },
+  {
+   "name": "Lake Alexandrina",
+   "wiki": "Lake Alexandrina (New Zealand)",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lake_Alexandrina_(New_Zealand)",
+    "https://nominatim.openstreetmap.org (natural=water Lake Alexandrina)"
+   ],
+   "decision": "add",
+   "reason": "Wikipedia article, sealed road access about 10 km north of the village, wildlife refuge and fishing lake beside Lake McGregor; a plausible second-tier stop. Only one source and marginal, so a human may drop it."
+  },
+  {
+   "name": "Burkes Pass",
+   "wiki": "Burkes Pass",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Burkes_Pass",
+    "https://en.wikivoyage.org/wiki/Burkes_Pass",
+    "https://nominatim.openstreetmap.org (place=hamlet)"
+   ],
+   "decision": "add",
+   "reason": "Wikipedia and Wikivoyage articles; small village with cafe, antique shops and Burke memorial on the road in from Fairlie/Timaru, about 17 km from Tekapo, inside the 75% span (18.75 km). Marginal; a roadside stop."
+  },
+  {
+   "name": "Peninsula Walkway",
+   "wiki": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Lake_Tekapo"
+   ],
+   "decision": "reject",
+   "reason": "Wikivoyage only, no article or DOC page, closed October to December for lambing, rarely signed; an obscure local walk."
+  },
+  {
+   "name": "Parkbrae Estate",
+   "wiki": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Lake_Tekapo"
+   ],
+   "decision": "reject",
+   "reason": "Private garden operator open limited hours, no article; an operator, not a general stop."
+  },
+  {
+   "name": "Lake Tekapo Footbridge",
+   "wiki": null,
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lake_Tekapo_(town)"
+   ],
+   "decision": "reject",
+   "reason": "A 125 m path linking the church to the village, part of the church stop rather than a place to go."
+  },
+  {
+   "name": "Cowan's Hill Observatory",
+   "wiki": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Lake_Tekapo"
+   ],
+   "decision": "reject",
+   "reason": "A tour-only site of the Dark Sky Project; the operator and its Mount John spot already cover it."
+  },
+  {
+   "name": "Tekapo Hot Springs",
+   "wiki": null,
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lake_Tekapo_(town)"
+   ],
+   "decision": "reject",
+   "reason": "Duplicate of existing spot Tekapo Springs."
+  },
+  {
+   "name": "Lake McGregor",
+   "wiki": "Lake McGregor",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lake_McGregor"
+   ],
+   "decision": "reject",
+   "reason": "Small shallow lake beside Lake Alexandrina with no visitor facilities or mention by any guide; covered by the Lake Alexandrina stop."
+  },
+  {
+   "name": "Lake George Scott",
+   "wiki": null,
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lake_Tekapo_(town)"
+   ],
+   "decision": "reject",
+   "reason": "Wikipedia geosearch hit only; small pond in the village, not a destination."
+  },
+  {
+   "name": "Tekapo A Power Station / Tekapo Canal",
+   "wiki": null,
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lake_Tekapo_(town)"
+   ],
+   "decision": "reject",
+   "reason": "Hydro infrastructure mentioned in history only; no visitor access or guide listing."
+  },
+  {
+   "name": "Tekapo Military Camp",
+   "wiki": null,
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lake_Tekapo_(town)"
+   ],
+   "decision": "reject",
+   "reason": "Active training base, not open to visitors."
+  },
+  {
+   "name": "Roundhill Ski Area",
+   "wiki": null,
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lake_Tekapo_(town)",
+    "https://en.wikivoyage.org/wiki/Lake_Tekapo"
+   ],
+   "decision": "reject",
+   "reason": "32 km away, outside the span, seasonal operator-run ski area reached from Tekapo only in winter. Human could add as a standalone spot if skifields are wanted."
+  },
+  {
+   "name": "Mount Dobson Ski Field",
+   "wiki": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Lake_Tekapo"
+   ],
+   "decision": "reject",
+   "reason": "About 40 km away, outside the span, seasonal operator; as for Roundhill."
+  },
+  {
+   "name": "Lake Pukaki",
+   "wiki": "Lake Pukaki",
+   "sources": [
+    "src/data/spots.ts aoraki-mount-cook-5"
+   ],
+   "decision": "reject",
+   "reason": "Already a spot (of Aoraki / Mount Cook National Park), about 25 km from Tekapo and outside its span."
+  },
+  {
+   "name": "Twizel",
+   "wiki": "Twizel",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Twizel"
+   ],
+   "decision": "reject",
+   "reason": "About 60 km away; a town that may deserve its own destination (not in destinations.ts) but outside this destination. Flag for the south-island pass."
+  },
+  {
+   "name": "Tekapo air and heli scenic flights; kayaking; bike hire; salmon farm tours",
+   "wiki": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Lake_Tekapo"
+   ],
+   "decision": "reject",
+   "reason": "Operators and activities, not places."
+  },
+  {
+   "name": "Aoraki Mackenzie International Dark Sky Reserve",
+   "wiki": null,
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lake_Tekapo_(town)"
+   ],
+   "decision": "reject",
+   "reason": "A 430,000 ha designation, not a place to stand; stargazing is covered by Mount John Observatory and Dark Sky Project."
+  }
+ ],
+ "existing_fixes": [
+  {
+   "spot_id": "lake-tekapo-3",
+   "action": "replace",
+   "to": "Keep as a place (the Dark Sky Project lakefront building at 1 Motuariki Lane), but rewrite the bio to name the lakefront centre rather than the Mount John tours, e.g. 'The lakefront astronomy centre of the Dark Sky Project, where guided night-sky tours depart for Mount John and a daytime exhibit explains the dark-sky reserve.' Avoid an operator-only spot.",
+   "reason": "Near-duplicate of lake-tekapo-2 (Mount John University Observatory): the bio describes the same stargazing tours at Mount John. Operator-like, so keep it distinct as the lakefront centre or remove if reviewers prefer one stargazing spot. Wikivoyage lists tours via Dark Sky Project at 1 Motuariki Lane, 10AM-late."
+  },
+  {
+   "spot_id": "lake-tekapo-2",
+   "action": "rename",
+   "to": "Mount John Observatory",
+   "reason": "Optional: Wikivoyage names it Mount John Observatory; current name is acceptable. No change required, leave if unsure."
+  }
+ ],
+ "new_spots": [
+  {
+   "name": "Sheepdog Statue",
+   "wiki": null,
+   "icon": "🐕",
+   "coordinates": {
+    "latitude": -44.00366,
+    "longitude": 170.48418
+   },
+   "coordinates_source": "Wikimedia Commons geotag of File:Lake Tekapo Sheepdog Statue 002.JPG (-44.00365898, 170.48417974), consistent with a second Commons geotag at -44.003403, 170.483801",
+   "category": "monument",
+   "bio": "A bronze statue of a New Zealand collie on a rock plinth beside the Church of the Good Shepherd, put up by Mackenzie Country residents in honour of the sheepdogs that high-country farming depends on.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_checked": "No steward or official site; open-air memorial.",
+   "photo": {
+    "file": "Lake Tekapo Sheepdog Statue 002.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Lake_Tekapo_Sheepdog_Statue_002.JPG",
+    "width": 3872,
+    "height": 2592,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lake_Tekapo_(town)",
+    "https://en.wikivoyage.org/wiki/Lake_Tekapo"
+   ]
+  },
+  {
+   "name": "Mount John Walkway",
+   "wiki": null,
+   "icon": "🥾",
+   "coordinates": {
+    "latitude": -43.99477,
+    "longitude": 170.46039
+   },
+   "coordinates_source": "Trailhead at the signed DOC start by Tekapo Springs: Commons geotag of File:Mt. John Walkway - 2013.04 - panoramio.jpg (-43.994765, 170.460388), consistent with OSM Nominatim 'Mount John Walkway' track at -43.9941, 170.4672",
+   "category": "hike",
+   "bio": "A track from beside Tekapo Springs up through forest and tussock to the Mount John summit, with panoramic views of the lake and an allow-3-hours return.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_checked": "DOC's Mt John Walkway deep links tried (/places-to-go/canterbury/places/mt-john-walkway/ and a lake-tekapo-area guess) returned 404; no page confirmed, left null.",
+   "photo": {
+    "file": "Mt. John Walkway - 2013.04 - panoramio.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Mt._John_Walkway_-_2013.04_-_panoramio.jpg",
+    "width": 4608,
+    "height": 3456,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Lake_Tekapo"
+   ]
+  },
+  {
+   "name": "Lake Tekapo Regional Park",
+   "wiki": "Lake Tekapo Regional Park",
+   "icon": "🚲",
+   "coordinates": {
+    "latitude": -44.00493,
+    "longitude": 170.50792
+   },
+   "coordinates_source": "OSM Nominatim boundary=protected_area 'Takapō Regional Park' centroid (-44.0049276, 170.5079189); Wikipedia gives -44.0083, 170.5. Centroid of the park, not an entrance (access is on foot or bike from the village or by car from Lilybank Road); verify with the audit script.",
+   "category": "nature",
+   "bio": "A 165-hectare Environment Canterbury park on the eastern lakeshore with picnic areas, a dog exercise park and 24 km of walking and cycling tracks.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://www.ecan.govt.nz/your-region/living-here/regional-parks/lake-tekapo-regional-park/",
+   "ticketUrl_checked": "Loaded the page: HTML title 'Takapō Regional Park | Environment Canterbury' and h1 'Takapō Regional Park'; the managing agency's page.",
+   "photo": null,
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lake_Tekapo_(town)",
+    "https://en.wikipedia.org/wiki/Lake_Tekapo_Regional_Park",
+    "https://www.ecan.govt.nz/your-region/living-here/regional-parks/lake-tekapo-regional-park/"
+   ]
+  },
+  {
+   "name": "Lake Alexandrina",
+   "wiki": "Lake Alexandrina (New Zealand)",
+   "icon": "🏞️",
+   "coordinates": {
+    "latitude": -43.93819,
+    "longitude": 170.45255
+   },
+   "coordinates_source": "OSM Nominatim natural=water 'Lake Alexandrina' (-43.9381889, 170.4525482); Wikipedia gives a rounded -43.95, 170.45. Lake centroid, in the water, which is correct for a lake.",
+   "category": "nature",
+   "bio": "A shallow glacial wildlife-refuge lake in the Mackenzie Basin, spring fed and known for brown and rainbow trout and salmon fishing, just north of Lake Tekapo.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_checked": "No official visitor site for the lake; omitted.",
+   "photo": null,
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lake_Alexandrina_(New_Zealand)"
+   ]
+  },
+  {
+   "name": "Burkes Pass",
+   "wiki": "Burkes Pass",
+   "icon": "🏘️",
+   "coordinates": {
+    "latitude": -44.08944,
+    "longitude": 170.65279
+   },
+   "coordinates_source": "OSM Nominatim place=hamlet 'Burkes Pass' (-44.0894425, 170.6527866), matching Commons geotags of the village street (-44.089, 170.653); Wikipedia's -44.09, 170.6 is the pass saddle with the Burke memorial, 5 km west.",
+   "category": "historic",
+   "bio": "A small village at the gateway to the Mackenzie Country, named for Michael Burke who drove bullocks through the pass in 1855, with a cafe and roadside shops on State Highway 8.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_checked": "Village with no single steward; omitted.",
+   "photo": {
+    "file": "Burkes Pass.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Burkes_Pass.jpg",
+    "width": 4096,
+    "height": 2304,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Burkes_Pass",
+    "https://en.wikivoyage.org/wiki/Burkes_Pass"
+   ]
+  }
+ ]
+}

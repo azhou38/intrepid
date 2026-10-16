@@ -1,0 +1,95 @@
+{
+ "destination": {
+  "id": "new-plymouth",
+  "name": "New Plymouth",
+  "country": "New Zealand",
+  "category": "city",
+  "coordinates": {
+   "latitude": -39.0556,
+   "longitude": 174.0752
+  },
+  "whyVisit": [
+   "The Coastal Walkway",
+   "Pukekura Park gardens",
+   "Len Lye Centre"
+  ]
+ },
+ "only_slots_with_flags_need_work": true,
+ "slots": [
+  {
+   "slot": "header",
+   "key": "New Plymouth",
+   "current": "MT Taranaki New Plymouth.jpg",
+   "flags": []
+  },
+  {
+   "slot": "why-1",
+   "reason": "The Coastal Walkway",
+   "current": "Te Rewa Rewa Bridge (8390682009).jpg",
+   "flags": [
+    "black-and-white? (saturation 0.04)"
+   ]
+  },
+  {
+   "slot": "why-2",
+   "reason": "Pukekura Park gardens",
+   "current": "Pukekura20101002.jpg",
+   "flags": []
+  },
+  {
+   "slot": "why-3",
+   "reason": "Len Lye Centre",
+   "current": "Len Lye Centre in November 2018 551.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:new-plymouth-1",
+   "spot": "Pukekura Park",
+   "bio": "A 52-hectare Victorian park of lakes, fernery, waterfalls and tropical gardens, with a lit-up summer festival.",
+   "key": "Pukekura Park",
+   "current": "Pukekura20101002.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:new-plymouth-2",
+   "spot": "Te Rewa Rewa Bridge",
+   "bio": "A whale-skeleton-shaped pedestrian bridge on the Coastal Walkway, framing Mount Taranaki.",
+   "key": "Te Rewa Rewa Bridge",
+   "current": "Te Rewa Rewa.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:new-plymouth-3",
+   "spot": "Len Lye Centre",
+   "bio": "A mirrored-steel gallery of kinetic sculpture and film by Len Lye, joined to the Govett-Brewster Art Gallery.",
+   "key": "Len Lye Centre",
+   "current": "GovettBrewster20090806.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:new-plymouth-4",
+   "spot": "Paritutu Rock",
+   "bio": "A steep rock stack with a short scramble to a view over the city and Mount Taranaki.",
+   "key": "Paritutu Rock",
+   "override": "Paritutu Rock, New Plymouth.jpg",
+   "current": "Paritutu Rock, New Plymouth.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:new-plymouth-5",
+   "spot": "Puke Ariki",
+   "bio": "A waterfront museum, library and visitor centre telling the story of Taranaki.",
+   "key": "Puke Ariki",
+   "current": "Puke Ariki MRD 10.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:new-plymouth-6",
+   "spot": "Coastal Walkway",
+   "bio": "A 13-km paved walking and cycling path along the coast between Bell Block and Port Taranaki.",
+   "key": "Coastal Walkway",
+   "current": "New Plymouth Coastal Walkway 45.jpg",
+   "flags": []
+  }
+ ]
+}

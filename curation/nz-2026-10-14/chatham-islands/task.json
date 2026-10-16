@@ -1,0 +1,88 @@
+{
+ "destination": {
+  "id": "chatham-islands",
+  "name": "Chatham Islands",
+  "country": "New Zealand",
+  "category": "island",
+  "coordinates": {
+   "latitude": -43.95,
+   "longitude": -176.56
+  },
+  "whyVisit": [
+   "Remote, rarely visited landscape",
+   "Moriori tree carvings at Hapupu",
+   "Rare endemic birds"
+  ]
+ },
+ "only_slots_with_flags_need_work": true,
+ "slots": [
+  {
+   "slot": "header",
+   "key": "Chatham Islands",
+   "current": "Waikato Point. Cliffs rise to about 30 metres on the west coast of the lagoon.jpg",
+   "flags": []
+  },
+  {
+   "slot": "why-1",
+   "reason": "Remote, rarely visited landscape",
+   "current": "Te Whanga Lagoon at Blind Jims Creek. 178m Korako is to the left, 149m Rangitihi and 188m Mt Chudleigh to the right.jpg",
+   "flags": []
+  },
+  {
+   "slot": "why-2",
+   "reason": "Moriori tree carvings at Hapupu",
+   "current": "Chatham Island Tree Carving.JPG",
+   "flags": []
+  },
+  {
+   "slot": "why-3",
+   "reason": "Rare endemic birds",
+   "current": "Pterodroma magentae in New Zealand.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:chatham-islands-1",
+   "spot": "Te Whanga Lagoon",
+   "bio": "A huge tidal lagoon covering a fifth of Chatham Island, rich in birds and fish.",
+   "key": "Te Whanga Lagoon",
+   "override": "Cattle Point, Te Whanga Lagoon.jpg",
+   "current": "Cattle Point, Te Whanga Lagoon.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:chatham-islands-2",
+   "spot": "Hapupu National Historic Reserve",
+   "bio": "A grove of kōpi trees carved by the Moriori, with dendroglyphs of human and bird forms.",
+   "key": "Hapupu National Historic Reserve",
+   "current": "Chatham Island Tree Carving.JPG",
+   "flags": []
+  },
+  {
+   "slot": "spot:chatham-islands-3",
+   "spot": "Pitt Island",
+   "bio": "A smaller, remote island south-east of the main island, with farmland, cliffs and rare birds.",
+   "key": "Pitt Island",
+   "override": "Tree on Rangihaute Rangiauria Pitt Island (52785344950).jpg",
+   "current": "Tree on Rangihaute Rangiauria Pitt Island (52785344950).jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:chatham-islands-4",
+   "spot": "Waitangi",
+   "bio": "The only town in the Chathams, a small port with a wharf, a pub and a shop.",
+   "key": "Waitangi, Chatham Islands",
+   "current": "Chatham Island Waitangi.JPG",
+   "flags": []
+  },
+  {
+   "slot": "spot:chatham-islands-6",
+   "spot": "Kōpinga Marae",
+   "bio": "A Moriori marae that tells the story of the first people of the Chathams.",
+   "key": "Kōpinga Marae",
+   "current": "Chatham Islands photo, 1910, Canterbury Museum, 2016-01-27.jpg",
+   "flags": [
+    "dated 1910"
+   ]
+  }
+ ]
+}

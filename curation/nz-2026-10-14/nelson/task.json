@@ -1,0 +1,98 @@
+{
+ "destination": {
+  "id": "nelson",
+  "name": "Nelson",
+  "country": "New Zealand",
+  "category": "city",
+  "coordinates": {
+   "latitude": -41.2706,
+   "longitude": 173.284
+  },
+  "whyVisit": [
+   "One of NZ's sunniest cities",
+   "Arts, crafts & craft beer",
+   "Gateway to three national parks"
+  ]
+ },
+ "only_slots_with_flags_need_work": true,
+ "slots": [
+  {
+   "slot": "header",
+   "key": "Nelson",
+   "current": "Nelson New Zealand.jpg",
+   "flags": [
+    "also used for Centre of New Zealand"
+   ]
+  },
+  {
+   "slot": "why-1",
+   "reason": "One of NZ's sunniest cities",
+   "current": "Ruby Bay.jpg",
+   "flags": []
+  },
+  {
+   "slot": "why-2",
+   "reason": "Arts, crafts & craft beer",
+   "current": "The Suter Art Gallery, Nelson.jpg",
+   "flags": []
+  },
+  {
+   "slot": "why-3",
+   "reason": "Gateway to three national parks",
+   "current": "Lake Rotoiti at Nelson Lakes National Park.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:nelson-1",
+   "spot": "Tāhunanui Beach",
+   "bio": "A huge, shallow sandy beach on the edge of the city, popular for swimming, kite-surfing and sunsets.",
+   "key": "Tāhunanui Beach",
+   "current": "Tahunanui Beach - 4406892213.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:nelson-2",
+   "spot": "Centre of New Zealand",
+   "bio": "A hilltop marker said to be the geographic centre of the country, with views across the city and Tasman Bay.",
+   "key": "Centre of New Zealand",
+   "current": "Nelson New Zealand.jpg",
+   "flags": [
+    "also used for Nelson"
+   ]
+  },
+  {
+   "slot": "spot:nelson-3",
+   "spot": "Nelson Market",
+   "bio": "A Saturday market in Montgomery Square packed with local artisans, growers and food stalls.",
+   "key": "Nelson Market",
+   "current": "Willie Nelson - Flickr - Me in ME.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:nelson-4",
+   "spot": "World of WearableArt and Classic Cars Museum",
+   "bio": "Extravagant wearable-art garments from the famous WOW show, alongside a gleaming collection of classic cars.",
+   "key": "World of WearableArt and Classic Cars Museum",
+   "override": "Museum Exterior - National WOW Museum.jpg",
+   "current": "Museum Exterior - National WOW Museum.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:nelson-5",
+   "spot": "Christ Church Cathedral",
+   "bio": "A grey marble cathedral atop Church Hill at the head of the main street, reached by a broad flight of steps.",
+   "key": "Christ Church Cathedral, Nelson",
+   "current": "Christ Church Nelson 01.JPG",
+   "flags": []
+  },
+  {
+   "slot": "spot:nelson-6",
+   "spot": "Suter Art Gallery",
+   "bio": "One of New Zealand's oldest public galleries, beside Queens Gardens, with strong regional and Māori collections.",
+   "key": "Suter Art Gallery",
+   "override": "The Suter Art Gallery, Nelson.jpg",
+   "current": "The Suter Art Gallery, Nelson.jpg",
+   "flags": []
+  }
+ ]
+}

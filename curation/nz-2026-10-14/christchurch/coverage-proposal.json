@@ -1,0 +1,1279 @@
+{
+ "destination": "christchurch",
+ "sources_used": [
+  "https://en.wikivoyage.org/wiki/Christchurch",
+  "https://en.wikivoyage.org/wiki/Lyttelton",
+  "https://en.wikivoyage.org/wiki/Canterbury_(New_Zealand)",
+  "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_Christchurch",
+  "https://en.wikipedia.org/wiki/Category:Banks_Peninsula",
+  "https://en.wikipedia.org/wiki/Category:Geography_of_Christchurch",
+  "https://en.wikipedia.org/wiki/Category:Parks_in_Christchurch",
+  "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/godley-head/",
+  "https://nominatim.openstreetmap.org",
+  "https://commons.wikimedia.org/w/api.php",
+  "https://www.canterburymuseum.com/",
+  "https://quakecity.co.nz/",
+  "Wikipedia article page-views (monthly average Oct 2025 to Aug 2026, REST API)"
+ ],
+ "gaps": [
+  {
+   "name": "Lyttelton",
+   "wiki": "Lyttelton, New Zealand",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Lyttelton",
+    "https://en.wikipedia.org/wiki/Lyttelton,_New_Zealand"
+   ],
+   "decision": "add",
+   "reason": "Named by the listed source(s) as somewhere to go; within span or standalone as noted; see new_spots."
+  },
+  {
+   "name": "Lyttelton Timeball Station",
+   "wiki": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Lyttelton",
+    "https://en.wikipedia.org/wiki/Lyttelton_Timeball_Station"
+   ],
+   "decision": "add",
+   "reason": "Named by the listed source(s) as somewhere to go; within span or standalone as noted; see new_spots."
+  },
+  {
+   "name": "Sumner Beach",
+   "wiki": "Sumner, New Zealand",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch",
+    "https://en.wikipedia.org/wiki/Sumner,_New_Zealand",
+    "https://en.wikipedia.org/wiki/Cave_Rock,_Sumner"
+   ],
+   "decision": "add",
+   "reason": "Named by the listed source(s) as somewhere to go; within span or standalone as noted; see new_spots."
+  },
+  {
+   "name": "Godley Head",
+   "wiki": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Lyttelton",
+    "https://en.wikivoyage.org/wiki/Christchurch",
+    "https://en.wikipedia.org/wiki/Godley_Head",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/godley-head/"
+   ],
+   "decision": "add",
+   "reason": "Named by the listed source(s) as somewhere to go; within span or standalone as noted; see new_spots."
+  },
+  {
+   "name": "Bridle Path",
+   "wiki": "Bridle Path (New Zealand)",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch",
+    "https://en.wikivoyage.org/wiki/Lyttelton",
+    "https://en.wikipedia.org/wiki/Bridle_Path_(New_Zealand)"
+   ],
+   "decision": "add",
+   "reason": "Named by the listed source(s) as somewhere to go; within span or standalone as noted; see new_spots."
+  },
+  {
+   "name": "Corsair Bay",
+   "wiki": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Lyttelton"
+   ],
+   "decision": "add",
+   "reason": "Named by the listed source(s) as somewhere to go; within span or standalone as noted; see new_spots."
+  },
+  {
+   "name": "Ōtamahua / Quail Island",
+   "wiki": null,
+   "sources": [
+    "https://en.wikipedia.org/wiki/%C5%8Ctamahua_/_Quail_Island"
+   ],
+   "decision": "add",
+   "reason": "Named by the listed source(s) as somewhere to go; within span or standalone as noted; see new_spots."
+  },
+  {
+   "name": "Hagley Park",
+   "wiki": "Hagley Park, Christchurch",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Hagley_Park,_Christchurch",
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_Christchurch"
+   ],
+   "decision": "add",
+   "reason": "Named by the listed source(s) as somewhere to go; within span or standalone as noted; see new_spots."
+  },
+  {
+   "name": "Tūranga",
+   "wiki": null,
+   "sources": [
+    "https://en.wikipedia.org/wiki/T%C5%ABranga",
+    "https://my.christchurchcitylibraries.com/turanga/",
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_Christchurch"
+   ],
+   "decision": "add",
+   "reason": "Named by the listed source(s) as somewhere to go; within span or standalone as noted; see new_spots."
+  },
+  {
+   "name": "ChristChurch Cathedral",
+   "wiki": "Christ Church Cathedral, Christchurch",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch",
+    "https://en.wikipedia.org/wiki/Christ_Church_Cathedral,_Christchurch"
+   ],
+   "decision": "add",
+   "reason": "Named by the listed source(s) as somewhere to go; within span or standalone as noted; see new_spots."
+  },
+  {
+   "name": "Canterbury Earthquake National Memorial",
+   "wiki": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch",
+    "https://en.wikipedia.org/wiki/Canterbury_Earthquake_National_Memorial"
+   ],
+   "decision": "add",
+   "reason": "Named by the listed source(s) as somewhere to go; within span or standalone as noted; see new_spots."
+  },
+  {
+   "name": "Bridge of Remembrance",
+   "wiki": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch",
+    "https://en.wikipedia.org/wiki/Bridge_of_Remembrance"
+   ],
+   "decision": "add",
+   "reason": "Named by the listed source(s) as somewhere to go; within span or standalone as noted; see new_spots."
+  },
+  {
+   "name": "Quake City",
+   "wiki": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch",
+    "https://quakecity.co.nz/"
+   ],
+   "decision": "add",
+   "reason": "Named by the listed source(s) as somewhere to go; within span or standalone as noted; see new_spots."
+  },
+  {
+   "name": "New Brighton Pier",
+   "wiki": "New Brighton Pier, Christchurch",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch",
+    "https://en.wikipedia.org/wiki/New_Brighton_Pier,_Christchurch",
+    "https://en.wikipedia.org/wiki/New_Brighton,_New_Zealand"
+   ],
+   "decision": "add",
+   "reason": "Named by the listed source(s) as somewhere to go; within span or standalone as noted; see new_spots."
+  },
+  {
+   "name": "Orana Wildlife Park",
+   "wiki": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch",
+    "https://www.oranawildlifepark.co.nz"
+   ],
+   "decision": "add",
+   "reason": "Named by the listed source(s) as somewhere to go; within span or standalone as noted; see new_spots."
+  },
+  {
+   "name": "Willowbank Wildlife Reserve",
+   "wiki": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch",
+    "https://www.willowbank.co.nz/"
+   ],
+   "decision": "add",
+   "reason": "Named by the listed source(s) as somewhere to go; within span or standalone as noted; see new_spots."
+  },
+  {
+   "name": "Riccarton House and Bush",
+   "wiki": "Riccarton House",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch",
+    "https://en.wikipedia.org/wiki/Riccarton_House"
+   ],
+   "decision": "add",
+   "reason": "Named by the listed source(s) as somewhere to go; within span or standalone as noted; see new_spots."
+  },
+  {
+   "name": "Mona Vale",
+   "wiki": "Mona Vale, Christchurch",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch",
+    "https://en.wikipedia.org/wiki/Mona_Vale,_Christchurch"
+   ],
+   "decision": "add",
+   "reason": "Named by the listed source(s) as somewhere to go; within span or standalone as noted; see new_spots."
+  },
+  {
+   "name": "Ferrymead Heritage Park",
+   "wiki": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch",
+    "http://www.ferrymead.org.nz/"
+   ],
+   "decision": "add",
+   "reason": "Named by the listed source(s) as somewhere to go; within span or standalone as noted; see new_spots."
+  },
+  {
+   "name": "Air Force Museum of New Zealand",
+   "wiki": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch",
+    "https://en.wikipedia.org/wiki/Air_Force_Museum_of_New_Zealand"
+   ],
+   "decision": "add",
+   "reason": "Named by the listed source(s) as somewhere to go; within span or standalone as noted; see new_spots."
+  },
+  {
+   "name": "Christchurch Adventure Park",
+   "wiki": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch",
+    "https://en.wikipedia.org/wiki/Christchurch_Adventure_Park",
+    "https://christchurchadventurepark.com/"
+   ],
+   "decision": "add",
+   "reason": "Named by the listed source(s) as somewhere to go; within span or standalone as noted; see new_spots."
+  },
+  {
+   "name": "Birdlings Flat",
+   "wiki": null,
+   "sources": [
+    "https://en.wikipedia.org/wiki/Birdlings_Flat",
+    "https://en.wikipedia.org/wiki/Category:Banks_Peninsula"
+   ],
+   "decision": "add",
+   "reason": "Named by the listed source(s) as somewhere to go; within span or standalone as noted; see new_spots."
+  },
+  {
+   "name": "Canterbury Museum",
+   "wiki": "Canterbury Museum, Christchurch",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch",
+    "https://www.canterburymuseum.com/"
+   ],
+   "decision": "reject",
+   "reason": "Wikivoyage lists it, but the museum's own site shows the main building closed for redevelopment with a Museum Pop-Up at 66 Gloucester Street; propose again when it reopens."
+  },
+  {
+   "name": "Castle Rock / Te Tihi-o-Kahukura",
+   "wiki": "Te Tihi-o-Kahukura / Castle Rock",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Te_Tihi-o-Kahukura_/_Castle_Rock"
+   ],
+   "decision": "reject",
+   "reason": "Only a Wikipedia geography stub; no guide, Wikivoyage or agency source names it as somewhere to go."
+  },
+  {
+   "name": "Sign of the Takahe",
+   "wiki": "Sign of the Takahe",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Sign_of_the_Takahe"
+   ],
+   "decision": "reject",
+   "reason": "Now a wedding and function venue (Wikipedia), not a visitor stop; the Gondola and Port Hills spots cover the area."
+  },
+  {
+   "name": "Sign of the Kiwi / Summit Road / Sign of walkway",
+   "wiki": "Sign of the Kiwi",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch"
+   ],
+   "decision": "reject",
+   "reason": "A road and a café-hut route; the ride or drive is the way to the Port Hills viewpoints (Gondola, Godley Head) rather than a place in itself."
+  },
+  {
+   "name": "Victoria Park",
+   "wiki": "Victoria Park, Christchurch",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_Christchurch"
+   ],
+   "decision": "reject",
+   "reason": "Local Port Hills reserve; its draw (Adventure Park, walkway) is covered by other spots."
+  },
+  {
+   "name": "Cave Rock",
+   "wiki": "Cave Rock, Sumner",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Cave_Rock,_Sumner"
+   ],
+   "decision": "reject",
+   "reason": "Part of Sumner Beach; mentioned in that spot's bio, not a separate stop."
+  },
+  {
+   "name": "Cathedral Square",
+   "wiki": "Cathedral Square, Christchurch",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Cathedral_Square,_Christchurch"
+   ],
+   "decision": "reject",
+   "reason": "Near-duplicate of ChristChurch Cathedral and Tūranga, which are the places on it."
+  },
+  {
+   "name": "185 Empty Chairs",
+   "wiki": "185 empty chairs",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch"
+   ],
+   "decision": "reject",
+   "reason": "Temporary art installation (Wikivoyage: 'was an art work'); the Earthquake National Memorial is the lasting place."
+  },
+  {
+   "name": "Site of CTV Building memorial garden",
+   "wiki": "CTV Building",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch"
+   ],
+   "decision": "reject",
+   "reason": "A quiet memorial garden at a site of loss, not a visitor attraction; left out."
+  },
+  {
+   "name": "St Michael and All Angels Church",
+   "wiki": "Church of St Michael and All Angels, Christchurch",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch"
+   ],
+   "decision": "reject",
+   "reason": "Working parish church with services and ad hoc viewing; minor stop, rarely a trip on its own."
+  },
+  {
+   "name": "Centre of Contemporary Art (CoCA)",
+   "wiki": "Centre of Contemporary Art",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch"
+   ],
+   "decision": "reject",
+   "reason": "Small local gallery with no Wikipedia article and low interest (~50 page views a month); Christchurch Art Gallery already covers art."
+  },
+  {
+   "name": "Teece Museum of Classical Antiquities",
+   "wiki": "Teece Museum",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch"
+   ],
+   "decision": "reject",
+   "reason": "Small museum inside The Arts Centre precinct; near-duplicate of christchurch-4 and limited hours (Wed-Sun 11-3)."
+  },
+  {
+   "name": "Yaldhurst Museum of Transport",
+   "wiki": "Yaldhurst Museum",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch"
+   ],
+   "decision": "reject",
+   "reason": "Wikivoyage notes it has been closed since Covid."
+  },
+  {
+   "name": "Re:START container mall",
+   "wiki": "Re:START",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_Christchurch"
+   ],
+   "decision": "reject",
+   "reason": "Temporary post-quake container mall that no longer operates; the rebuilt city is covered by New Regent Street and Riverside Market."
+  },
+  {
+   "name": "Christ's College",
+   "wiki": "Christ's College, Christchurch",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch"
+   ],
+   "decision": "reject",
+   "reason": "Private boarding school; only a $20 guided history tour on weekday mornings in a limited season."
+  },
+  {
+   "name": "Christchurch Casino",
+   "wiki": "Christchurch Casino",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch"
+   ],
+   "decision": "reject",
+   "reason": "A venue, not a place visitors go to see."
+  },
+  {
+   "name": "Hagley Oval",
+   "wiki": "Hagley Oval",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch"
+   ],
+   "decision": "reject",
+   "reason": "Cricket ground within Hagley Park (which is added); not a separate stop."
+  },
+  {
+   "name": "Christchurch Tram",
+   "wiki": "Christchurch tramway system",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch"
+   ],
+   "decision": "reject",
+   "reason": "A vehicle/operator; the places it passes (New Regent Street, Cathedral Square) are the spots."
+  },
+  {
+   "name": "Garden City Helicopters",
+   "wiki": "Garden City Helicopters",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch"
+   ],
+   "decision": "reject",
+   "reason": "Scenic-flight operator, not a place."
+  },
+  {
+   "name": "Antigua Boat Sheds",
+   "wiki": "Antigua Boat Sheds",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch",
+    "https://en.wikipedia.org/wiki/Antigua_Boat_Sheds"
+   ],
+   "decision": "reject",
+   "reason": "Punts depart here; already covered by christchurch-2 (Avon River / Ōtākaro), and its Commons photo is already in use for that spot."
+  },
+  {
+   "name": "Christchurch 360 Trail",
+   "wiki": "Christchurch 360 Trail",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_Christchurch"
+   ],
+   "decision": "reject",
+   "reason": "A long network of routes around the city, not a place; no single access point."
+  },
+  {
+   "name": "Christchurch Town Hall",
+   "wiki": "Christchurch Town Hall",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_Christchurch"
+   ],
+   "decision": "reject",
+   "reason": "A performing-arts venue; no guide source naming it as a stop."
+  },
+  {
+   "name": "Travis Wetland",
+   "wiki": "Travis Wetland",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_Christchurch"
+   ],
+   "decision": "reject",
+   "reason": "Local nature reserve (~40 page views a month); only a Wikipedia category lists it."
+  },
+  {
+   "name": "Lake Roto Kohatu, Peacock Fountain, Victoria Clock Tower, Johnson's Grocers, Twelve Local Heroes, Diminish and Ascend, Pioneer Women's Memorial, Cracroft Reserve, Deans Cottage, C1 Espresso, Seagull Pit",
+   "wiki": "",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_Christchurch"
+   ],
+   "decision": "reject",
+   "reason": "Minor items in a Wikipedia category (local park, street furniture, cafe, small sculptures); no guide source names them as places to go. Deans Cottage sits inside Riccarton House and Bush."
+  },
+  {
+   "name": "Ripapa Island",
+   "wiki": "Ripapa Island",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Lyttelton",
+    "https://en.wikipedia.org/wiki/Ripapa_Island"
+   ],
+   "decision": "reject",
+   "reason": "Wikivoyage calls it an 'occasional tourist curio'; no regular public access (boat only), rarely visited."
+  },
+  {
+   "name": "Diamond Harbour",
+   "wiki": "Diamond Harbour, New Zealand",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Diamond_Harbour,_New_Zealand"
+   ],
+   "decision": "reject",
+   "reason": "Residential village across the harbour; no guide source names it as a stop."
+  },
+  {
+   "name": "Governors Bay",
+   "wiki": "Governors Bay",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Governors_Bay"
+   ],
+   "decision": "reject",
+   "reason": "Residential bay village; no guide source names it as a stop."
+  },
+  {
+   "name": "Orton Bradley Park",
+   "wiki": "Orton Bradley Park",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Orton_Bradley_Park"
+   ],
+   "decision": "reject",
+   "reason": "Local farm park (~40 page views a month); only Wikipedia names it."
+  },
+  {
+   "name": "Mount Herbert / Te Ahu Pātiki",
+   "wiki": "Mount Herbert (Canterbury)",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Herbert_(Canterbury)"
+   ],
+   "decision": "reject",
+   "reason": "19.5 km from centre, beyond the 18.75 km span, and no guide source names it; not worth a standalone spot."
+  },
+  {
+   "name": "Kaiapoi",
+   "wiki": "Kaiapoi",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Kaiapoi"
+   ],
+   "decision": "reject",
+   "reason": "Satellite town 17 km north with no See/Do entry in Wikivoyage or any guide source; belongs to Waimakariri, not Christchurch's visitor spots."
+  },
+  {
+   "name": "Lake Ellesmere / Te Waihora",
+   "wiki": "Lake Ellesmere / Te Waihora",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lake_Ellesmere_/_Te_Waihora"
+   ],
+   "decision": "reject",
+   "reason": "35 km away; Wikipedia only, no guide or agency source naming it as somewhere to go. Birdlings Flat on its spit is added instead."
+  },
+  {
+   "name": "Lyttelton Farmers Market",
+   "wiki": "",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Lyttelton"
+   ],
+   "decision": "reject",
+   "reason": "A Saturday market inside Lyttelton; covered by the Lyttelton spot's bio."
+  },
+  {
+   "name": "Festivals (World Buskers Festival, Electric Avenue, Kidsfest, Arts Festival, Carnival Week, Carols, Open Christchurch)",
+   "wiki": "",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch"
+   ],
+   "decision": "reject",
+   "reason": "Events, not places."
+  },
+  {
+   "name": "Hinewai Reserve, Okains Bay, Pōhatu / Flea Bay, Little River, Banks Peninsula Track",
+   "wiki": "",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Category:Banks_Peninsula"
+   ],
+   "decision": "reject",
+   "reason": "On Banks Peninsula, 40+ km away and within or near Akaroa's span; belong to the Akaroa destination or its own pass, not Christchurch."
+  },
+  {
+   "name": "St Paul's Church Glenmark, Weka Pass Railway (Waipara)",
+   "wiki": "",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Waipara"
+   ],
+   "decision": "reject",
+   "reason": "About 60 km north; belongs to a Waipara or North Canterbury destination, not Christchurch."
+  },
+  {
+   "name": "Ravenscar House Museum",
+   "wiki": "",
+   "sources": [
+    "https://www.canterburymuseum.com/"
+   ],
+   "decision": "reject",
+   "reason": "Only named by the museum's own site; not found in any guide or Wikivoyage list."
+  }
+ ],
+ "existing_fixes": [],
+ "new_spots": [
+  {
+   "name": "Lyttelton",
+   "wiki": "Lyttelton, New Zealand",
+   "icon": "⚓",
+   "coordinates": {
+    "latitude": -43.6032,
+    "longitude": 172.7215
+   },
+   "coordinates_source": "Wikivoyage Lyttelton town-centre mapframe (-43.6032, 172.7215)",
+   "category": "historic",
+   "bio": "A steep-streeted harbour town in the caldera of an extinct volcano, with a Saturday farmers market, bars on London Street and the Timeball Station above.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_checked": "none: a town with no single steward",
+   "photo": {
+    "file": "26658LytteltonPanorama.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:26658LytteltonPanorama.jpg",
+    "width": 3500,
+    "height": 1421,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Lyttelton",
+    "https://en.wikipedia.org/wiki/Lyttelton,_New_Zealand"
+   ]
+  },
+  {
+   "name": "Lyttelton Timeball Station",
+   "wiki": null,
+   "icon": "⏱️",
+   "coordinates": {
+    "latitude": -43.606449,
+    "longitude": 172.726765
+   },
+   "coordinates_source": "Wikipedia article coordinates (-43.606449, 172.726765); Wikivoyage Lyttelton gives -43.6064, 172.727",
+   "category": "historic",
+   "bio": "A time-signal tower opened in 1876 whose ball dropped daily at 1 PM, destroyed in the 2011 earthquake and rebuilt as a tower in 2017–18.",
+   "hours": "Daytime access",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_checked": "Heritage NZ list-details/7366 loaded but is a different place (Castlerock Station), Wikivoyage link is an old historicplaces.org.nz URL; left null",
+   "photo": {
+    "file": "Lyttelton Timeball Station Nov 2018.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Lyttelton_Timeball_Station_Nov_2018.jpg",
+    "width": 2048,
+    "height": 1365,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Lyttelton",
+    "https://en.wikipedia.org/wiki/Lyttelton_Timeball_Station"
+   ]
+  },
+  {
+   "name": "Sumner Beach",
+   "wiki": "Sumner, New Zealand",
+   "icon": "🏖️",
+   "coordinates": {
+    "latitude": -43.56794,
+    "longitude": 172.76184
+   },
+   "coordinates_source": "OSM Nominatim: Matuku-takotako / Sumner Beach (-43.5679403, 172.7618429)",
+   "category": "beach",
+   "bio": "The sandy beach of the seaside suburb of Sumner, with Cave Rock at its end and the Port Hills rising behind.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_checked": "none: public beach",
+   "photo": {
+    "file": "Sumner_033.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Sumner_033.JPG",
+    "width": 5472,
+    "height": 3648,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch",
+    "https://en.wikipedia.org/wiki/Sumner,_New_Zealand",
+    "https://en.wikipedia.org/wiki/Cave_Rock,_Sumner"
+   ]
+  },
+  {
+   "name": "Godley Head",
+   "wiki": null,
+   "icon": "🌊",
+   "coordinates": {
+    "latitude": -43.5872,
+    "longitude": 172.8064
+   },
+   "coordinates_source": "Wikivoyage Lyttelton See entry (-43.5872, 172.8064), matches Wikipedia (-43.5875, 172.805) and the DOC place page",
+   "category": "nature",
+   "bio": "A headland at the mouth of Lyttelton Harbour with a WWII coastal defence battery, a lighthouse site and a roughly three-hour loop walk from Taylors Mistake.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/godley-head/",
+   "ticketUrl_checked": "loaded: page title 'Awaroa/Godley Head: Places to go in Canterbury'",
+   "photo": {
+    "file": "Gun Emplacement 3, Godley Head Battery Compound.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Gun_Emplacement_3,_Godley_Head_Battery_Compound.jpg",
+    "width": 3374,
+    "height": 2250,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Lyttelton",
+    "https://en.wikivoyage.org/wiki/Christchurch",
+    "https://en.wikipedia.org/wiki/Godley_Head",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/godley-head/"
+   ]
+  },
+  {
+   "name": "Bridle Path",
+   "wiki": "Bridle Path (New Zealand)",
+   "icon": "🥾",
+   "coordinates": {
+    "latitude": -43.5907903,
+    "longitude": 172.705905
+   },
+   "coordinates_source": "OSM Nominatim: Bridle Path track, Heathcote Valley end (-43.59079, 172.70590)",
+   "category": "hike",
+   "bio": "A steep track of about 1.5 hours one way from Heathcote over the Port Hills to Lyttelton, the route early settlers walked.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_checked": "CCC page from Wikivoyage returned 403 to scripts; left null",
+   "photo": {
+    "file": "Bridle_Path_049.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Bridle_Path_049.JPG",
+    "width": 3264,
+    "height": 2448,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch",
+    "https://en.wikivoyage.org/wiki/Lyttelton",
+    "https://en.wikipedia.org/wiki/Bridle_Path_(New_Zealand)"
+   ]
+  },
+  {
+   "name": "Corsair Bay",
+   "wiki": null,
+   "icon": "🏖️",
+   "coordinates": {
+    "latitude": -43.6079459,
+    "longitude": 172.6999849
+   },
+   "coordinates_source": "OSM Nominatim: Corsair Bay beach (-43.60795, 172.69998); Wikivoyage -43.60776, 172.69983",
+   "category": "beach",
+   "bio": "A sandy swimming beach at the bottom of a steep-sided cove, one bay west of Lyttelton's port.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_checked": "none: public beach",
+   "photo": {
+    "file": "Boats in Motukauatiiti - Corsair Bay from Coastal Path Lyttelton, Canterbury, New Zealand 02.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Boats_in_Motukauatiiti_-_Corsair_Bay_from_Coastal_Path_Lyttelton,_Canterbury,_New_Zealand_02.jpg",
+    "width": 5189,
+    "height": 3284,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Lyttelton"
+   ]
+  },
+  {
+   "name": "Ōtamahua / Quail Island",
+   "wiki": null,
+   "icon": "🏝️",
+   "coordinates": {
+    "latitude": -43.6280657,
+    "longitude": 172.6916877
+   },
+   "coordinates_source": "OSM Nominatim: island centroid (-43.62807, 172.69169); Wikipedia gives no article coordinates; landing point not sourced",
+   "category": "nature",
+   "bio": "An 81 ha uninhabited island in Lyttelton Harbour with safe swimming beaches, a day shelter and a ferry service, about 16,000 visitors a year.",
+   "hours": "Ferry timetable",
+   "visitHoursMin": 3,
+   "visitHoursMax": 5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_checked": "none found: DOC place page not located (guessed deep links returned 404); left null",
+   "photo": {
+    "file": "Quail_Island_207.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Quail_Island_207.JPG",
+    "width": 5472,
+    "height": 3648,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/%C5%8Ctamahua_/_Quail_Island"
+   ]
+  },
+  {
+   "name": "Hagley Park",
+   "wiki": "Hagley Park, Christchurch",
+   "icon": "🌳",
+   "coordinates": {
+    "latitude": -43.527621,
+    "longitude": 172.6202505
+   },
+   "coordinates_source": "OSM Nominatim: Hagley Park (-43.52762, 172.62025); Wikivoyage Hagley Oval -43.534, 172.619",
+   "category": "nature",
+   "bio": "Christchurch's largest urban open space, 165 hectares of broad lawns and tree-lined paths beside the Botanic Gardens, reserved as public park since 1855.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_checked": "no official page verified; left null",
+   "photo": {
+    "file": "Hagley Park, Christchurch, New Zealand 004.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Hagley_Park,_Christchurch,_New_Zealand_004.jpg",
+    "width": 5399,
+    "height": 3466,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Hagley_Park,_Christchurch",
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_Christchurch"
+   ]
+  },
+  {
+   "name": "Tūranga",
+   "wiki": null,
+   "icon": "📚",
+   "coordinates": {
+    "latitude": -43.53,
+    "longitude": 172.63694444
+   },
+   "coordinates_source": "Wikipedia article coordinates (-43.53, 172.63694), rounded to ~100 m; address 60 Cathedral Square per library page",
+   "category": "landmark",
+   "bio": "The central city library on Cathedral Square, a striking modern building opened after the earthquakes.",
+   "hours": "Mon–Fri 9:00 AM – 8:00 PM, weekends 10:00 AM – 5:00 PM",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://my.christchurchcitylibraries.com/turanga/",
+   "ticketUrl_checked": "loaded: page title and heading 'About Tūranga'",
+   "photo": {
+    "file": "Tūranga,_Christchurch,_New_Zealand.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:T%C5%ABranga,_Christchurch,_New_Zealand.jpg",
+    "width": 14015,
+    "height": 6416,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/T%C5%ABranga",
+    "https://my.christchurchcitylibraries.com/turanga/",
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_Christchurch"
+   ]
+  },
+  {
+   "name": "ChristChurch Cathedral",
+   "wiki": "Christ Church Cathedral, Christchurch",
+   "icon": "⛪",
+   "coordinates": {
+    "latitude": -43.531,
+    "longitude": 172.637
+   },
+   "coordinates_source": "Wikivoyage Christchurch See entry (-43.531, 172.637), matches Wikipedia",
+   "category": "religious",
+   "bio": "The Gothic Revival cathedral on Cathedral Square, built 1864–1904, whose spire and tower were lost in the February 2011 earthquake and which has stood damaged since.",
+   "hours": "Viewable from Cathedral Square",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_checked": "no verified official page; left null",
+   "photo": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch",
+    "https://en.wikipedia.org/wiki/Christ_Church_Cathedral,_Christchurch"
+   ],
+   "photo_note": "No passing photo found: Commons has pre-2011 shots (spire standing, so not the place as it is today), a 2021 construction-hoarding shot and 2024 interiors; a 2022 wide shot shows other buildings. Left null."
+  },
+  {
+   "name": "Canterbury Earthquake National Memorial",
+   "wiki": null,
+   "icon": "🕊️",
+   "coordinates": {
+    "latitude": -43.53455,
+    "longitude": 172.63149
+   },
+   "coordinates_source": "Wikipedia article coordinates (-43.53455, 172.63149); Wikivoyage -43.5348, 172.6310",
+   "category": "monument",
+   "bio": "A memorial wall beside the Avon River dedicated to those who died or were injured in the 22 February 2011 earthquake.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_checked": "none: no single steward page verified",
+   "photo": {
+    "file": "Canterbury_Earthquake_National_Memorial,_Christchurch_City,_New_Zealand_04.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Canterbury_Earthquake_National_Memorial,_Christchurch_City,_New_Zealand_04.jpg",
+    "width": 8573,
+    "height": 4299,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch",
+    "https://en.wikipedia.org/wiki/Canterbury_Earthquake_National_Memorial"
+   ]
+  },
+  {
+   "name": "Bridge of Remembrance",
+   "wiki": null,
+   "icon": "🏛️",
+   "coordinates": {
+    "latitude": -43.5331,
+    "longitude": 172.6334
+   },
+   "coordinates_source": "Wikipedia article coordinates (-43.5331, 172.6334); Wikivoyage -43.5331, 172.6334",
+   "category": "monument",
+   "bio": "A memorial arch on the Avon River commemorating those lost in the First World War and later conflicts.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_checked": "CCC page from Wikivoyage returned 403 to scripts; left null",
+   "photo": {
+    "file": "Bridge_of_Remembrance_01.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Bridge_of_Remembrance_01.jpg",
+    "width": 3774,
+    "height": 2897,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch",
+    "https://en.wikipedia.org/wiki/Bridge_of_Remembrance"
+   ]
+  },
+  {
+   "name": "Quake City",
+   "wiki": null,
+   "icon": "🏛️",
+   "coordinates": {
+    "latitude": -43.5286,
+    "longitude": 172.6334
+   },
+   "coordinates_source": "Wikivoyage Christchurch See entry (-43.5286, 172.6334); address 299 Durham Street North per quakecity.co.nz",
+   "category": "museum",
+   "bio": "A Canterbury Museum exhibition on the Canterbury earthquakes, particularly the February 2011 quake.",
+   "hours": "10:00 AM – 5:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://quakecity.co.nz/",
+   "ticketUrl_checked": "loaded: page title 'Stories from the Canterbury earthquakes » Quake City'; open daily except Christmas Day, admission charged (price not taken from a current source)",
+   "photo": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch",
+    "https://quakecity.co.nz/"
+   ],
+   "photo_note": "No passing photo: the only Commons file in Category:Quake City is an indoor sculpture (Kaiapoi Pa monument) not the building; left null."
+  },
+  {
+   "name": "New Brighton Pier",
+   "wiki": "New Brighton Pier, Christchurch",
+   "icon": "🎣",
+   "coordinates": {
+    "latitude": -43.5065,
+    "longitude": 172.733
+   },
+   "coordinates_source": "Wikipedia article coordinates (-43.5065, 172.733)",
+   "category": "landmark",
+   "bio": "A concrete pier opened in 1997, one of the icons of Christchurch, jutting into the sea from New Brighton beach.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_checked": "none: public pier",
+   "photo": {
+    "file": "New_Brighton_Pier,_New_Brighton,_New_Zealand_02.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:New_Brighton_Pier,_New_Brighton,_New_Zealand_02.jpg",
+    "width": 5404,
+    "height": 3603,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch",
+    "https://en.wikipedia.org/wiki/New_Brighton_Pier,_Christchurch",
+    "https://en.wikipedia.org/wiki/New_Brighton,_New_Zealand"
+   ]
+  },
+  {
+   "name": "Orana Wildlife Park",
+   "wiki": null,
+   "icon": "🦁",
+   "coordinates": {
+    "latitude": -43.4676956,
+    "longitude": 172.4616999
+   },
+   "coordinates_source": "OSM Nominatim: Orana Wildlife Park zoo (-43.46770, 172.46170); Wikivoyage -43.4675, 172.4625",
+   "category": "entertainment",
+   "bio": "New Zealand's largest wildlife sanctuary, with endangered animals from around the world and a drive-through lion reserve.",
+   "hours": "10:00 AM – 5:00 PM (last admission 4:00 PM)",
+   "visitHoursMin": 3,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://www.oranawildlifepark.co.nz",
+   "ticketUrl_checked": "loaded: page title 'Open Range Zoo, Christchurch NZ | Orana Wildlife Park'",
+   "photo": {
+    "file": "Orana Park 049.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Orana_Park_049.JPG",
+    "width": 5472,
+    "height": 3648,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch",
+    "https://www.oranawildlifepark.co.nz"
+   ],
+   "photo_note": "Photo is otters at Orana Park (no good wide view of the park on Commons; Category:Orana Wildlife Park has only a lion-reserve file that is b/w or people-and-truck); weakest of the batch, acceptable for a wildlife spot."
+  },
+  {
+   "name": "Willowbank Wildlife Reserve",
+   "wiki": null,
+   "icon": "🥝",
+   "coordinates": {
+    "latitude": -43.4637501,
+    "longitude": 172.594098
+   },
+   "coordinates_source": "OSM Nominatim: Willowbank Wildlife Reserve zoo (-43.46375, 172.59410); Wikipedia -43.46278, 172.59417",
+   "category": "entertainment",
+   "bio": "A smaller wildlife park than Orana, focused on New Zealand species such as kiwi in natural settings.",
+   "hours": "9:30 AM – 5:00 PM",
+   "visitHoursMin": 2,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://www.willowbank.co.nz/",
+   "ticketUrl_checked": "loaded: page title 'Willowbank Wildlife Reserve | Christchurch, NZ'",
+   "photo": {
+    "file": "General view - Willowbank Wildlife Reserve - Christchurch, NZ - DSC01533.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:General_view_-_Willowbank_Wildlife_Reserve_-_Christchurch,_NZ_-_DSC01533.jpg",
+    "width": 5472,
+    "height": 3648,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch",
+    "https://www.willowbank.co.nz/"
+   ]
+  },
+  {
+   "name": "Riccarton House and Bush",
+   "wiki": "Riccarton House",
+   "icon": "🌲",
+   "coordinates": {
+    "latitude": -43.5268669,
+    "longitude": 172.5988519
+   },
+   "coordinates_source": "OSM Nominatim: Riccarton Bush park (-43.52687, 172.59885); Wikipedia Riccarton House -43.52658, 172.59783",
+   "category": "nature",
+   "bio": "The last forest remnant on the Canterbury Plains, set in the city beside the historic Riccarton House.",
+   "hours": "Daylight hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_checked": "riccartonhouse.co.nz loaded but title is 'Home' and heading does not name the place, so not accepted; left null",
+   "photo": {
+    "file": "Riccarton_house_December_2008.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Riccarton_house_December_2008.jpg",
+    "width": 3008,
+    "height": 2000,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch",
+    "https://en.wikipedia.org/wiki/Riccarton_House"
+   ],
+   "photo_note": "Photo is Riccarton House (the Bush is its setting); acceptable as the named place's main building."
+  },
+  {
+   "name": "Mona Vale",
+   "wiki": "Mona Vale, Christchurch",
+   "icon": "🌹",
+   "coordinates": {
+    "latitude": -43.52330278,
+    "longitude": 172.60851944
+   },
+   "coordinates_source": "Wikipedia article coordinates (-43.52330, 172.60852); Wikivoyage -43.523313, 172.608187",
+   "category": "nature",
+   "bio": "A 4 ha riverside park on the Avon with a heritage homestead, a fernery and a rose garden.",
+   "hours": "Daylight hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_checked": "monavale.co.nz loaded but says 'Coming soon'; left null",
+   "photo": {
+    "file": "Mona Vale, Christchurch, New Zealand.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Mona_Vale,_Christchurch,_New_Zealand.jpg",
+    "width": 5359,
+    "height": 3648,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch",
+    "https://en.wikipedia.org/wiki/Mona_Vale,_Christchurch"
+   ]
+  },
+  {
+   "name": "Ferrymead Heritage Park",
+   "wiki": null,
+   "icon": "🚂",
+   "coordinates": {
+    "latitude": -43.5676528,
+    "longitude": 172.7009396
+   },
+   "coordinates_source": "OSM Nominatim: Ferrymead Heritage Park (-43.56765, 172.70094); Wikivoyage -43.567286, 172.7022",
+   "category": "entertainment",
+   "bio": "A recreated Edwardian township and museum with a horse and carriage, trams and trains on operating days.",
+   "hours": "10:00 AM – 4:30 PM",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "http://www.ferrymead.org.nz/",
+   "ticketUrl_checked": "loaded: page title 'Ferrymead Heritage Park | Christchurch, New Zealand'",
+   "photo": {
+    "file": "Main_Street_of_Ferrymead_Heritage_Park.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Main_Street_of_Ferrymead_Heritage_Park.jpg",
+    "width": 4896,
+    "height": 3264,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch",
+    "http://www.ferrymead.org.nz/"
+   ]
+  },
+  {
+   "name": "Air Force Museum of New Zealand",
+   "wiki": null,
+   "icon": "✈️",
+   "coordinates": {
+    "latitude": -43.5465976,
+    "longitude": 172.5476612
+   },
+   "coordinates_source": "OSM Nominatim: Te Whakairinga Mutu / Air Force Museum, Wigram (-43.54660, 172.54766); Wikivoyage -43.5464, 172.5476",
+   "category": "museum",
+   "bio": "A museum of New Zealand military aviation at Wigram, beside the former RNZAF base, with full-size replica fighters.",
+   "hours": "10:00 AM – 5:00 PM",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_checked": "airforcemuseum.co.nz returned 403 (Cloudflare challenge) to scripts; left null",
+   "photo": {
+    "file": "RNZAFmuseumwigram.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:RNZAFmuseumwigram.jpg",
+    "width": 2560,
+    "height": 1920,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch",
+    "https://en.wikipedia.org/wiki/Air_Force_Museum_of_New_Zealand"
+   ]
+  },
+  {
+   "name": "Christchurch Adventure Park",
+   "wiki": null,
+   "icon": "🚵",
+   "coordinates": {
+    "latitude": -43.578,
+    "longitude": 172.616
+   },
+   "coordinates_source": "Wikivoyage Christchurch Do entry (-43.578, 172.616); Wikipedia lists -43.5987, 172.6323 (~2.5 km apart), so confirm the base-area point on a map",
+   "category": "entertainment",
+   "bio": "A Port Hills park of downhill and beginner mountain-bike trails with zip-lines and a chairlift.",
+   "hours": "Seasonal hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://christchurchadventurepark.com/",
+   "ticketUrl_checked": "loaded: page title ends 'Christchurch Adventure Park'",
+   "photo": {
+    "file": "Christchurch_Adventure_Park_Village.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Christchurch_Adventure_Park_Village.jpg",
+    "width": 5184,
+    "height": 3456,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch",
+    "https://en.wikipedia.org/wiki/Christchurch_Adventure_Park",
+    "https://christchurchadventurepark.com/"
+   ],
+   "coordinate_confidence": "medium: two sources disagree by ~2.5 km"
+  },
+  {
+   "name": "Birdlings Flat",
+   "wiki": null,
+   "icon": "🪨",
+   "coordinates": {
+    "latitude": -43.8253465,
+    "longitude": 172.7075565
+   },
+   "coordinates_source": "OSM Nominatim: Birdlings Flat village (-43.82535, 172.70756); Wikipedia -43.8244, 172.7058",
+   "category": "beach",
+   "bio": "A pebble beach at the eastern end of Kaitorete Spit, well known for small agates, with Hector's dolphins offshore.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_checked": "none: public beach",
+   "photo": {
+    "file": "Birdling's_Flat_02.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Birdling%27s_Flat_02.jpg",
+    "width": 3072,
+    "height": 2048,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Birdlings_Flat",
+    "https://en.wikipedia.org/wiki/Category:Banks_Peninsula"
+   ],
+   "standalone": true,
+   "standalone_reason": "~33 km SW of Christchurch centre, beyond the 18.75 km span and outside Akaroa's 20 km span; not a spot of any destination. Photo shows small anglers on the beach (incidental)."
+  }
+ ]
+}

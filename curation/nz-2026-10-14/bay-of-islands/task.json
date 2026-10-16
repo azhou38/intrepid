@@ -1,0 +1,107 @@
+{
+ "destination": {
+  "id": "bay-of-islands",
+  "name": "Bay of Islands",
+  "country": "New Zealand",
+  "category": "nature",
+  "coordinates": {
+   "latitude": -35.26,
+   "longitude": 174.12
+  },
+  "whyVisit": [
+   "Cruise to the Hole in the Rock",
+   "Waitangi, where NZ began",
+   "Kayak and sail the islands"
+  ]
+ },
+ "only_slots_with_flags_need_work": true,
+ "slots": [
+  {
+   "slot": "header",
+   "key": "Bay of Islands",
+   "current": "Hole in the Rock, Paihia, Bay of Islands.jpg",
+   "flags": []
+  },
+  {
+   "slot": "why-1",
+   "reason": "Cruise to the Hole in the Rock",
+   "current": ",00 0664 Bay of Island (Neuseeland) - Hole in the Rock.jpg",
+   "flags": []
+  },
+  {
+   "slot": "why-2",
+   "reason": "Waitangi, where NZ began",
+   "current": "Waitangi Grounds (Treaty House & Flagstaff) (16045248795).jpg",
+   "flags": [
+    "black-and-white? (saturation 0.02)"
+   ]
+  },
+  {
+   "slot": "why-3",
+   "reason": "Kayak and sail the islands",
+   "current": "Urupukapuka Island (52735059736).jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:bay-of-islands-1",
+   "spot": "Waitangi Treaty Grounds",
+   "bio": "The site where the Treaty of Waitangi was signed in 1840, with the Treaty House, a carved meeting house and a giant war canoe.",
+   "key": "Waitangi Treaty Grounds",
+   "current": "Waitangi Day.jpg",
+   "flags": [
+    "640px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:bay-of-islands-2",
+   "spot": "Piercy Island",
+   "bio": "The island with the Hole in the Rock, a natural arch large enough for cruise boats to pass through.",
+   "key": "Piercy Island",
+   "current": "Motukokako Island (Piercy Island) with Hole in the Rock.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:bay-of-islands-3",
+   "spot": "Russell",
+   "bio": "The country's first capital, a waterfront village of colonial buildings, including Pompallier Mission and Christ Church.",
+   "key": "Russell, New Zealand",
+   "current": "Russell, New Zealand.jpg",
+   "flags": [
+    "800px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:bay-of-islands-4",
+   "spot": "Paihia",
+   "bio": "The main tourist base on the bay, a beachfront town with cruise and ferry departures.",
+   "key": "Paihia",
+   "current": "Paihia, Williams Road.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:bay-of-islands-5",
+   "spot": "Haruru Falls",
+   "bio": "A horseshoe-shaped waterfall on the Waitangi River, reached by a short path from Paihia.",
+   "key": "Haruru Falls",
+   "current": "Haruru falls.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:bay-of-islands-6",
+   "spot": "Urupukapuka Island",
+   "bio": "The bay's biggest island, with walking tracks, quiet beaches and views of the surrounding islands.",
+   "key": "Urupukapuka Island",
+   "override": "00 0866 Island of the Bay of Islands.jpg",
+   "current": "00 0866 Island of the Bay of Islands.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:bay-of-islands-7",
+   "spot": "Hundertwasser Toilets",
+   "bio": "A colourful public toilet designed by Friedensreich Hundertwasser, a quirky landmark in Kawakawa.",
+   "key": "Hundertwasser toilets",
+   "current": "Hundertwasser Toilets - Back Wall 2023.jpg",
+   "flags": []
+  }
+ ]
+}

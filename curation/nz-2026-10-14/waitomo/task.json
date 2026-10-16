@@ -1,0 +1,90 @@
+{
+ "destination": {
+  "id": "waitomo",
+  "name": "Waitomo",
+  "country": "New Zealand",
+  "category": "nature",
+  "coordinates": {
+   "latitude": -38.26,
+   "longitude": 175.105
+  },
+  "whyVisit": [
+   "Glowworm Caves by boat",
+   "Explore Ruakuri Cave",
+   "Marokopa Falls"
+  ]
+ },
+ "only_slots_with_flags_need_work": true,
+ "slots": [
+  {
+   "slot": "header",
+   "key": "Waitomo",
+   "current": "Agricultural Airfield, Waitomo Area.jpg",
+   "flags": []
+  },
+  {
+   "slot": "why-1",
+   "reason": "Glowworm Caves by boat",
+   "current": "Glowworm Grotto, Waitomo Glowworm Cave.jpg",
+   "flags": [
+    "dated 1970"
+   ]
+  },
+  {
+   "slot": "why-2",
+   "reason": "Explore Ruakuri Cave",
+   "current": "Spiral Entrance to the Ruakuri Cave, Waitomo, New Zealand (50801068603).jpg",
+   "flags": []
+  },
+  {
+   "slot": "why-3",
+   "reason": "Marokopa Falls",
+   "current": "Marokopa Falls and tree fern stump.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:waitomo-1",
+   "spot": "Waitomo Glowworm Caves",
+   "bio": "Limestone caves where visitors glide by boat beneath a ceiling of thousands of glowworms.",
+   "key": "Waitomo Glowworm Caves",
+   "current": "Glowworm Grotto, Waitomo Glowworm Cave.jpg",
+   "flags": [
+    "dated 1970"
+   ]
+  },
+  {
+   "slot": "spot:waitomo-2",
+   "spot": "Ruakuri Cave",
+   "bio": "A cave of spiral entrance, waterfalls and glowworms, visited on a guided walking tour.",
+   "key": "Ruakuri Cave",
+   "current": "Lit up stalactites and stalagmites in Ruakuri Cave.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:waitomo-3",
+   "spot": "Aranui Cave",
+   "bio": "A dry limestone cave decorated with delicate stalactites and stalagmites.",
+   "key": "Aranui Cave",
+   "current": "Waitomo Cave Entrance n.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:waitomo-4",
+   "spot": "Marokopa Falls",
+   "bio": "A 35-metre waterfall on the Marokopa River, reached by a short bush walk.",
+   "key": "Marokopa Falls",
+   "current": "Marokopa Falls.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:waitomo-5",
+   "spot": "Mangapohue Natural Bridge",
+   "bio": "A natural limestone arch reached by an easy track beside a stream.",
+   "key": "Mangapohue Natural Bridge",
+   "current": "Two rock arches at Mangapohue Natural Bridge.jpg",
+   "flags": [
+    "726px wide, minimum 960 for a spot"
+   ]
+  }
+ ]
+}

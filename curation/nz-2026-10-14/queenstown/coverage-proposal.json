@@ -1,0 +1,713 @@
+{
+ "destination": "queenstown",
+ "sources_used": [
+  "https://en.wikivoyage.org/wiki/Queenstown_(New_Zealand)",
+  "https://en.wikivoyage.org/wiki/Arrowtown",
+  "https://en.wikivoyage.org/wiki/Queenstown-Lakes",
+  "https://en.wikivoyage.org/wiki/Glenorchy",
+  "https://en.wikivoyage.org/wiki/Kingston_(New_Zealand)",
+  "https://en.wikipedia.org/wiki/Category:Queenstown-Lakes_District",
+  "https://en.wikipedia.org/wiki/Category:Queenstown,_New_Zealand",
+  "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_Otago",
+  "https://en.wikipedia.org/w/api.php?action=query&list=geosearch (25 km around -45.0312,168.6626)",
+  "https://wikimedia.org/api/rest_v1/metrics/pageviews (Wikipedia page views Sep 2025-Aug 2026)",
+  "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/queenstown-area/ (page is script-rendered; only the Queenstown day walks brochure PDF link was readable, not parsed)",
+  "https://nominatim.openstreetmap.org",
+  "https://overpass-api.de (OSM)",
+  "https://commons.wikimedia.org/w/api.php"
+ ],
+ "gaps": [
+  {
+   "name": "Fergburger",
+   "wiki": "Fergburger",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Queenstown_(New_Zealand)",
+    "https://en.wikipedia.org/wiki/Fergburger"
+   ],
+   "decision": "add",
+   "reason": "Wikivoyage's Queenstown Eat list calls it legendary and insanely busy, it has its own Wikipedia article (about 11.7k views/yr) and the app's own Queenstown tip already tells visitors to beat its queue. A venue that is itself a recognised attraction, the one individual eatery COVERAGE.md lets through."
+  },
+  {
+   "name": "Coronet Peak",
+   "wiki": "Coronet Peak",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Queenstown_(New_Zealand)",
+    "https://en.wikipedia.org/wiki/Coronet_Peak"
+   ],
+   "decision": "add",
+   "reason": "Named in Wikivoyage's Queenstown Skiing list as the closest ski field (about 20 min by sealed road); Wikipedia article, about 7.8k views. About 13 km from the centre, inside the 22.5 km span."
+  },
+  {
+   "name": "The Remarkables",
+   "wiki": "The Remarkables",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Queenstown_(New_Zealand)",
+    "https://en.wikipedia.org/wiki/The_Remarkables"
+   ],
+   "decision": "add",
+   "reason": "Named in Wikivoyage Skiing and Understand; Wikipedia article is the most-viewed Queenstown-area natural feature after Lake Wakatipu (about 23k views). Pin sits at the ski-area road end (visitor point, about 12 km), not the range centroid."
+  },
+  {
+   "name": "Lake Hayes",
+   "wiki": "Lake Hayes",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Queenstown-Lakes",
+    "https://en.wikivoyage.org/wiki/Southern_Lakes_(New_Zealand)",
+    "https://en.wikipedia.org/wiki/Lake_Hayes"
+   ],
+   "decision": "add",
+   "reason": "Wikivoyage Queenstown-Lakes names it as the popular swimming lake near Arrowtown; Wikipedia notes a circuit track on the Queenstown Trail. About 13 km from centre."
+  },
+  {
+   "name": "Queenstown Hill",
+   "wiki": "Queenstown Hill",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Queenstown_(New_Zealand)",
+    "https://en.wikipedia.org/wiki/Queenstown_Hill"
+   ],
+   "decision": "add",
+   "reason": "Wikivoyage Do/Hiking: climbed in about 3/4 hours for a fantastic view and free. Wikipedia article exists (Time Walk). 3 km from centre."
+  },
+  {
+   "name": "Skippers Canyon",
+   "wiki": "Skippers Canyon",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Skippers_Canyon"
+   ],
+   "decision": "add",
+   "reason": "Wikipedia calls Skippers Road one of New Zealand's better-known scenic roads; about 8k views/yr and a staple of Queenstown tourism. Only a Wikipedia source was retrieved (the DOC page is script-rendered). The place is the canyon, not the 4WD or jet tours that go there."
+  },
+  {
+   "name": "Macetown",
+   "wiki": "Macetown",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Arrowtown",
+    "https://en.wikipedia.org/wiki/Macetown",
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_Otago"
+   ],
+   "decision": "add",
+   "reason": "Wikivoyage Arrowtown Do lists the trip into Macetown; Wikipedia says it is a tourist attraction and lists it under Tourist attractions in Otago. About 22 km straight-line from centre, borderline but inside the 22.5 km span; reached from Arrowtown."
+  },
+  {
+   "name": "Arrowtown Chinese Settlement",
+   "wiki": "Arrowtown Chinese Settlement",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Arrowtown",
+    "https://en.wikipedia.org/wiki/Arrowtown_Chinese_Settlement"
+   ],
+   "decision": "add",
+   "reason": "Wikivoyage Arrowtown See (the second entry) and its own Wikipedia article. Distinct place from the Arrowtown village spot, which currently mentions it in its bio; coordinator may trim that bio to avoid overlap."
+  },
+  {
+   "name": "Lakes District Museum",
+   "wiki": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Arrowtown"
+   ],
+   "decision": "add",
+   "reason": "First entry in Wikivoyage Arrowtown See (the town's museum and information centre), with listed hours and price. No English Wikipedia article."
+  },
+  {
+   "name": "Kiwi Park",
+   "wiki": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Queenstown_(New_Zealand)",
+    "https://kiwibird.co.nz/"
+   ],
+   "decision": "add",
+   "reason": "Wikivoyage Queenstown See lists Kiwi Park (Kiwi Birdlife Park) with hours and price; central, 0.6 km from the centre. Venue was renamed Kiwi Park Queenstown; Wikimedia Commons category is Kiwi Park."
+  },
+  {
+   "name": "Queenstown Trail",
+   "wiki": "Queenstown Trail",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Queenstown_Trail",
+    "https://www.queenstowntrails.org.nz/"
+   ],
+   "decision": "add",
+   "reason": "Wikipedia article and in Category:Queenstown-Lakes District; a cycle and walking network linking town, Arrowtown, Jack's Point and Gibbston, the same kind of spot as the Otago Central Rail Trail. Wikivoyage's Do section also sends cyclists along it to Arrowtown."
+  },
+  {
+   "name": "Walter Peak High Country Farm",
+   "wiki": null,
+   "sources": [
+    "https://en.wikipedia.org/wiki/Walter_Peak_(New_Zealand)",
+    "https://www.realnz.com/en/destinations/walter-peak-high-country-farm/"
+   ],
+   "decision": "add",
+   "reason": "The place at the end of the TSS Earnslaw sailing; replaces the TSS Earnslaw spot (see existing_fixes). About 13 km from centre across the lake."
+  },
+  {
+   "name": "Kingston",
+   "wiki": "Kingston, New Zealand",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kingston_(New_Zealand)",
+    "https://en.wikivoyage.org/wiki/Queenstown-Lakes",
+    "https://en.wikipedia.org/wiki/Kingston,_New_Zealand"
+   ],
+   "decision": "add",
+   "reason": "Wikivoyage lists Kingston as a Queenstown-Lakes settlement and the base of the Kingston Flyer. About 33 km straight line (47 km by road), outside Queenstown's span, so a standalone spot. Check it does not fall within another destination's span."
+  },
+  {
+   "name": "Kingston Flyer",
+   "wiki": "Kingston Flyer",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kingston_(New_Zealand)"
+   ],
+   "decision": "reject",
+   "reason": "A heritage steam train (vehicle/operator) at a village that is proposed as the spot; mentioned in Kingston's bio instead."
+  },
+  {
+   "name": "Crown Range Road / Summit lookout",
+   "wiki": "Crown Range Road",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Crown_Range_Road",
+    "https://en.wikivoyage.org/wiki/Queenstown_(New_Zealand)"
+   ],
+   "decision": "reject",
+   "reason": "A road (the way you get to Wanaka/Cardrona); the summit is about 25 km from the centre, outside the span, and it is reached on the way to Wanaka. Could be a standalone lookout spot if a source names a distinct viewpoint; none was found."
+  },
+  {
+   "name": "Lake Wakatipu",
+   "wiki": "Lake Wakatipu",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lake_Wakatipu"
+   ],
+   "decision": "reject",
+   "reason": "The lake is the setting of the whole destination (already its tagline and the Queenstown Gardens/Skyline views), not a separate stop; no distinct visitor point beyond the lakefront."
+  },
+  {
+   "name": "Moke Lake",
+   "wiki": "Moke Lake",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Moke_Lake"
+   ],
+   "decision": "reject",
+   "reason": "Only a Wikipedia stub was found; the DOC page that would list the campsite and walk could not be read. Reconsider if the DOC Queenstown popular-places list confirms it. About 8 km from centre."
+  },
+  {
+   "name": "Nevis Bungy / Nevis Highwire Platform",
+   "wiki": "Nevis Highwire Platform",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Queenstown_(New_Zealand)",
+    "https://en.wikipedia.org/wiki/Nevis_Highwire_Platform"
+   ],
+   "decision": "reject",
+   "reason": "Bungy operator, and about 29 km from centre (outside span); Kawarau Gorge Suspension Bridge already covers the bungy story."
+  },
+  {
+   "name": "Bannockburn",
+   "wiki": "Bannockburn, New Zealand",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Bannockburn,_New_Zealand"
+   ],
+   "decision": "reject",
+   "reason": "Wine area near Cromwell, belongs to Central Otago."
+  },
+  {
+   "name": "Cardrona Alpine Resort / Cardrona",
+   "wiki": "Cardrona, New Zealand",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Queenstown_(New_Zealand)"
+   ],
+   "decision": "reject",
+   "reason": "About 40 km away over the Crown Range; belongs to the Wanaka destination (Cardrona Hotel already is a Wanaka spot)."
+  },
+  {
+   "name": "Highlands Motorsport Park",
+   "wiki": "Highlands Motorsport Park",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Highlands_Motorsport_Park"
+   ],
+   "decision": "reject",
+   "reason": "At Cromwell, about 33 km east; belongs to Central Otago."
+  },
+  {
+   "name": "Paradise (Glenorchy area)",
+   "wiki": "Paradise, New Zealand",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Paradise,_New_Zealand",
+    "https://en.wikivoyage.org/wiki/Glenorchy"
+   ],
+   "decision": "reject",
+   "reason": "Not a Queenstown spot: about 40 km up the lake, beyond the span. COVERAGE.md's benchmark requires it as a Glenorchy-area spot; it is absent from spots.ts (only the standalone Glenorchy exists), so coordinator should check the Glenorchy/Mount Aspiring runs cover it."
+  },
+  {
+   "name": "Ledge Bungy, Ziptrek, Luge, Nevis Catapult, Kawarau Jet and other operators",
+   "wiki": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Queenstown_(New_Zealand)"
+   ],
+   "decision": "reject",
+   "reason": "Operators/experiences; the place is Bob's Peak (Skyline), the Kawarau bridge or the river."
+  },
+  {
+   "name": "Queenstown Arts Centre, Ivan Clarke Gallery",
+   "wiki": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Queenstown_(New_Zealand)"
+   ],
+   "decision": "reject",
+   "reason": "Small town galleries with one source listing each; a gallery strip, not a stop that draws travellers (COVERAGE.md 'town galleries')."
+  },
+  {
+   "name": "Millbrook Resort",
+   "wiki": "Millbrook Resort",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Millbrook_Resort"
+   ],
+   "decision": "reject",
+   "reason": "A golf resort and hotel, not a place visitors tour."
+  },
+  {
+   "name": "Cecil Peak, Bowen Peak, Mount Alfred, Hidden Island",
+   "wiki": null,
+   "sources": [
+    "https://en.wikipedia.org/wiki/Category:Queenstown-Lakes_District"
+   ],
+   "decision": "reject",
+   "reason": "Peaks and islets seen from town with no visitor access or low visitation; Ben Lomond and Queenstown Hill already cover the climbs."
+  },
+  {
+   "name": "One Mile Creek Power Station, Sunshine Bay, Kelvin Peninsula, Jack's Point, Arthurs Point, Edith Cavell Bridge, Frankton Arm",
+   "wiki": null,
+   "sources": [
+    "https://en.wikipedia.org/wiki/Category:Queenstown,_New_Zealand"
+   ],
+   "decision": "reject",
+   "reason": "Suburbs and local heritage items that few visitors go to (the 'ordinary suburban park' case)."
+  },
+  {
+   "name": "Shotover River",
+   "wiki": "Shotover River",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Shotover_River"
+   ],
+   "decision": "reject",
+   "reason": "Covered by Shotover Jet (existing) and the proposed Skippers Canyon."
+  },
+  {
+   "name": "Kawarau Gibbston Dark Sky Park",
+   "wiki": "Kawarau Gibbston Dark Sky Park",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Kawarau_Gibbston_Dark_Sky_Park"
+   ],
+   "decision": "reject",
+   "reason": "Designation over the Gibbston valley, no distinct stop; Gibbston Valley already a spot."
+  }
+ ],
+ "existing_fixes": [
+  {
+   "spot_id": "queenstown-4",
+   "action": "replace",
+   "to": "Walter Peak High Country Farm",
+   "reason": "TSS Earnslaw is a vehicle/operator: COVERAGE.md names it explicitly. Replace with the place at the end of the sailing, keep the steamship in the bio and RealNZ in ticketUrl. Keep the id queenstown-4 (never reused) or retire it, coordinator's call; the replacement entry is in new_spots with photo null, because Walter Peak High Country Farm has no English Wikipedia article (`wiki` null) so the default lead-image lookup finds nothing and an override would need to be added (the only Commons farm photos found carry an overlaid caption). Also drop any WIKI_IMAGE_OVERRIDES entry for TSS Earnslaw."
+  },
+  {
+   "spot_id": "queenstown-3",
+   "action": "rename",
+   "to": "Shotover River (wiki: Shotover River), keep the jet-boat operator in ticketUrl",
+   "reason": "Judgment call, low confidence: 'Shotover Jet' is an operator ride whose place is the Shotover River canyons; COVERAGE.md says to name the place unless the ride is the attraction with no distinct place. Leave as is if the coordinator considers the jet ride itself the attraction. The bio and ticketUrl already read fine."
+  },
+  {
+   "spot_id": "queenstown-7",
+   "action": "move",
+   "to": "Ben Lomond Track trailhead/saddle (Wikipedia's summit is -45.007, 168.6156; OSM Queenstown Hill walkway entrance -45.0274, 168.6667 is not it)",
+   "reason": "Low-priority coordinate check: the pin (-44.9900, 168.6250) is about 2 km north of the Wikipedia summit coordinate, and the bio describes the summit climb. Run scripts/audit-spot-coordinates.ts for it and place at the track start (top of the Skyline gondola) or the summit; not changed here."
+  }
+ ],
+ "new_spots": [
+  {
+   "name": "Fergburger",
+   "wiki": null,
+   "icon": "🍔",
+   "coordinates": {
+    "latitude": -45.03174,
+    "longitude": 168.65946
+   },
+   "coordinates_source": "OSM Nominatim: Fergburger, 42 Shotover Street (way/node), also Wikipedia -45.0317,168.6595",
+   "category": "entertainment",
+   "bio": "Queenstown's famous gourmet burger shop on Shotover Street, with lamb, venison, cod and falafel burgers and queues for much of the day.",
+   "hours": "7:00 AM – 2:30 AM",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://www.fergburger.com/",
+   "ticketUrl_checked": "Loaded 2026-10-15: title 'Ferg Loves You', h1 'FERGBURGER', lists 42 Shotover Street, open every day 7am-2.30am",
+   "photo": {
+    "file": "Fergburger 714.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Fergburger_714.jpg",
+    "width": 5472,
+    "height": 3648,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Queenstown_(New_Zealand)",
+    "https://en.wikipedia.org/wiki/Fergburger",
+    "https://www.fergburger.com/"
+   ]
+  },
+  {
+   "name": "Coronet Peak",
+   "wiki": null,
+   "icon": "⛷️",
+   "coordinates": {
+    "latitude": -44.92697,
+    "longitude": 168.73647
+   },
+   "coordinates_source": "OSM Nominatim: Coronet Peak Ski Area (-44.9270,168.7365); matches Wikipedia -44.9269,168.7361",
+   "category": "nature",
+   "bio": "A commercial ski field on the southern slopes of a 1,649 m peak above Arrowtown, the closest to Queenstown (about 20 minutes by sealed road).",
+   "hours": "Ski season (winter)",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_checked": "Operator sites (nzski.com, coronetpeak.co.nz) returned 403 Cloudflare challenge; left null",
+   "photo": {
+    "file": "Coronet Peak 02.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Coronet_Peak_02.jpg",
+    "width": 3008,
+    "height": 2000,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Queenstown_(New_Zealand)",
+    "https://en.wikipedia.org/wiki/Coronet_Peak"
+   ]
+  },
+  {
+   "name": "The Remarkables",
+   "wiki": "The Remarkables",
+   "icon": "🏔️",
+   "coordinates": {
+    "latitude": -45.05499,
+    "longitude": 168.8169
+   },
+   "coordinates_source": "OSM Nominatim: The Remarkables Ski Area, at the end of the Remarkables Ski Field Access Road (visitor point; Wikipedia's range coordinate -45.15,168.83 is the range centre)",
+   "category": "nature",
+   "bio": "A jagged range rising sharply from the south-east shore of Lake Wakatipu, with a ski area and a walk to Lake Alta reached by an access road.",
+   "hours": "Ski area in winter; range visible all year",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_checked": "Operator sites returned 403 Cloudflare challenge; left null",
+   "photo": {
+    "file": "The Remarkables from Queenstown, New Zealand 08.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:The_Remarkables_from_Queenstown,_New_Zealand_08.jpg",
+    "width": 6000,
+    "height": 4000,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Queenstown_(New_Zealand)",
+    "https://en.wikipedia.org/wiki/The_Remarkables"
+   ]
+  },
+  {
+   "name": "Lake Hayes",
+   "wiki": null,
+   "icon": "🍂",
+   "coordinates": {
+    "latitude": -44.98109,
+    "longitude": 168.80843
+   },
+   "coordinates_source": "OSM Nominatim: Waiwhakaata / Lake Hayes lake centroid (-44.9811,168.8084); Wikipedia -44.9833,168.8",
+   "category": "nature",
+   "bio": "A small lake in the Wakatipu Basin, circled by a walking and cycling track that is part of the Queenstown Trail and popular for swimming.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_checked": "none (no official single site / not applicable)",
+   "photo": {
+    "file": "Lake Hayes Otago. NZ (17803245300).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Lake_Hayes_Otago._NZ_(17803245300).jpg",
+    "width": 2400,
+    "height": 1604,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Queenstown-Lakes",
+    "https://en.wikipedia.org/wiki/Lake_Hayes"
+   ]
+  },
+  {
+   "name": "Queenstown Hill",
+   "wiki": null,
+   "icon": "🥾",
+   "coordinates": {
+    "latitude": -45.02739,
+    "longitude": 168.66672
+   },
+   "coordinates_source": "OSM node 'Queenstown Hill Walkway entrance' (information board) via Overpass; summit is -45.0087,168.6924",
+   "category": "hike",
+   "bio": "A 907 m hill behind town with a signed walk to the top (the Time Walk), about three-quarters of an hour up for wide views over Queenstown and the lake.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_checked": "none (no official single site / not applicable)",
+   "photo": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Queenstown_(New_Zealand)",
+    "https://en.wikipedia.org/wiki/Queenstown_Hill"
+   ],
+   "note": "No photo: no Commons file of the hill or its summit view that passed the checks; the Wikipedia lead image was not checked, coordinator can try it."
+  },
+  {
+   "name": "Skippers Canyon",
+   "wiki": null,
+   "icon": "🏜️",
+   "coordinates": {
+    "latitude": -44.8789,
+    "longitude": 168.6265
+   },
+   "coordinates_source": "Wikipedia Skippers Canyon coordinates; OSM way Skippers Bridge -44.8443,168.6869 is the far (northern) end",
+   "category": "nature",
+   "bio": "A 22 km gorge carved by the Shotover River, a former gold-mining area reached by a narrow one-lane gravel road above sheer drops.",
+   "hours": "Daylight hours",
+   "visitHoursMin": 3,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_checked": "none: reached by many 4WD tour operators and by self-drive (rental insurance is not honoured on Skippers Road per Wikipedia)",
+   "photo": {
+    "file": "Skippers Canyon Queenstown NewZealand.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Skippers_Canyon_Queenstown_NewZealand.jpg",
+    "width": 4188,
+    "height": 2792,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Skippers_Canyon"
+   ],
+   "note": "Photo checked against the category 'Skippers Canyon' on Commons: shows the canyon road and walkers."
+  },
+  {
+   "name": "Macetown",
+   "wiki": null,
+   "icon": "🏚️",
+   "coordinates": {
+    "latitude": -44.86685,
+    "longitude": 168.8201
+   },
+   "coordinates_source": "OSM Nominatim: Macetown locality (-44.8669,168.8201); Wikipedia -44.8667,168.8333",
+   "category": "historic",
+   "bio": "An abandoned gold-mining settlement of scattered ruins in the Arrow River valley, reached by a 4WD track with many river crossings on foot, bike or 4WD from Arrowtown.",
+   "hours": "Daylight hours",
+   "visitHoursMin": 4,
+   "visitHoursMax": 8,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_checked": "none (no official single site / not applicable)",
+   "photo": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Arrowtown",
+    "https://en.wikipedia.org/wiki/Macetown"
+   ],
+   "note": "No photo: only archival and a mountain-bike photo were found."
+  },
+  {
+   "name": "Arrowtown Chinese Settlement",
+   "wiki": null,
+   "icon": "🏚️",
+   "coordinates": {
+    "latitude": -44.93819,
+    "longitude": 168.82569
+   },
+   "coordinates_source": "OSM Nominatim: Arrowtown Chinese Settlement protected_area (-44.9382,168.8257); Wikivoyage places it at the west end of Buckingham Street",
+   "category": "historic",
+   "bio": "A restored settlement of stone gold-miners' huts built by Chinese miners in the 1860s on Bush Creek, a short walk from Arrowtown's main street.",
+   "hours": "Daylight hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_checked": "none (no official single site / not applicable)",
+   "photo": {
+    "file": "Arrowtown Chinese Settlement, New Zealand; September 2014.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Arrowtown_Chinese_Settlement,_New_Zealand;_September_2014.jpg",
+    "width": 2400,
+    "height": 1800,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Arrowtown",
+    "https://en.wikipedia.org/wiki/Arrowtown_Chinese_Settlement"
+   ]
+  },
+  {
+   "name": "Lakes District Museum",
+   "wiki": null,
+   "icon": "🏛️",
+   "coordinates": {
+    "latitude": -44.93851,
+    "longitude": 168.83331
+   },
+   "coordinates_source": "OSM Nominatim: Lakes District Museum, Buckingham Street, Arrowtown (museum)",
+   "category": "museum",
+   "bio": "Arrowtown's museum of gold-rush and district history, which is also the town's information centre.",
+   "hours": "9:00 AM – 5:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": 12,
+   "costMax": 12,
+   "currency": "NZD",
+   "ticketUrl": "https://www.lakesdistrictmuseum.nz/",
+   "ticketUrl_checked": "Loaded 2026-10-15 (the old .co.nz address redirects): title 'Lakes District Museum | Queenstown & Arrowtown'",
+   "photo": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Arrowtown (hours daily 9AM-5PM; adults $12, updated Apr 2023, so approximate)"
+   ],
+   "note": "No photo: the only Commons image is an interior reconstruction."
+  },
+  {
+   "name": "Kiwi Park",
+   "wiki": null,
+   "icon": "🥝",
+   "coordinates": {
+    "latitude": -45.02743,
+    "longitude": 168.65708
+   },
+   "coordinates_source": "OSM Nominatim: Kiwi Birdlife Park, Brecon Street (zoo)",
+   "category": "entertainment",
+   "bio": "A small wildlife park near the town centre with native New Zealand birds, including kiwi.",
+   "hours": "9:00 AM – 5:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": 50,
+   "costMax": 50,
+   "currency": "NZD",
+   "ticketUrl": "https://kiwibird.co.nz/",
+   "ticketUrl_checked": "Loaded 2026-10-15: title 'Kiwi Park Queenstown | Wildlife Sanctuary', headings 'Experience Kiwi Daily', 'Kiwi Encounters'",
+   "photo": {
+    "file": "Kiwi Birdlife Park, Queenstown; 25.03.19.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Kiwi_Birdlife_Park,_Queenstown;_25.03.19.jpg",
+    "width": 4896,
+    "height": 3672,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Queenstown_(New_Zealand) (Daily 9am-5pm, $50, updated May 2023, so approximate)",
+    "https://kiwibird.co.nz/"
+   ]
+  },
+  {
+   "name": "Queenstown Trail",
+   "wiki": null,
+   "icon": "🚲",
+   "coordinates": {
+    "latitude": -45.036,
+    "longitude": 168.6741
+   },
+   "coordinates_source": "Wikipedia Queenstown Trail coordinates (-45.036,168.6741, the Queenstown end near Frankton Road/lakefront)",
+   "category": "hike",
+   "bio": "A network of cycling and walking trails linking Queenstown with Arrowtown, Jack's Point and Gibbston, running beside rivers and lakes.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://www.queenstowntrails.org.nz/",
+   "ticketUrl_checked": "Loaded 2026-10-15 (queenstowntrail.co.nz redirects): title 'Queenstown Trails | Over 200km of Cycle & Walking Trails NZ'. free:true is not explicitly sourced (public trail), confirm",
+   "photo": {
+    "file": "Queenstown Trail Frankton.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Queenstown_Trail_Frankton.jpg",
+    "width": 4608,
+    "height": 3456,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Queenstown_Trail",
+    "https://www.queenstowntrails.org.nz/"
+   ]
+  },
+  {
+   "name": "Walter Peak High Country Farm",
+   "wiki": null,
+   "icon": "🐑",
+   "coordinates": {
+    "latitude": -45.1123,
+    "longitude": 168.5413
+   },
+   "coordinates_source": "OSM relation 'Walter Peak Station Farmstead' (-45.1123,168.5413); Colonel's Homestead Restaurant way -45.1123,168.5438",
+   "category": "entertainment",
+   "bio": "A working high-country sheep station on the far shore of Lake Wakatipu, reached by the TSS Earnslaw steamship, with a historic homestead serving lunch and dinner.",
+   "hours": "10:00 AM – 6:00 PM (sailings)",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": 85,
+   "costMax": 85,
+   "currency": "NZD",
+   "ticketUrl": "https://www.realnz.com/en/destinations/walter-peak-high-country-farm/",
+   "ticketUrl_checked": "Loaded 2026-10-15: title 'Walter Peak High Country Farm | A Must-Visit Destination', h1 'Walter Peak High Country Farm'",
+   "photo": null,
+   "sources": [
+    "https://en.wikipedia.org/wiki/Walter_Peak_(New_Zealand)",
+    "https://www.realnz.com/en/destinations/walter-peak-high-country-farm/"
+   ],
+   "note": "Replaces queenstown-4 (TSS Earnslaw). Cost 85 NZD carried over from the existing TSS Earnslaw entry, unverified (Wikivoyage had $70 in 2018). No Wikipedia article for the farm, so no default photo; no passing Commons photo found (candidates carried an overlaid caption)."
+  },
+  {
+   "name": "Kingston",
+   "wiki": "Kingston, New Zealand",
+   "icon": "🚂",
+   "coordinates": {
+    "latitude": -45.33437,
+    "longitude": 168.71751
+   },
+   "coordinates_source": "OSM village node Kingston via Overpass (-45.3344,168.7175)",
+   "category": "landmark",
+   "bio": "A small village at the southern end of Lake Wakatipu, 47 km from Queenstown by road and the base of the Kingston Flyer vintage steam train.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_checked": "none (no official single site / not applicable)",
+   "photo": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kingston_(New_Zealand)",
+    "https://en.wikipedia.org/wiki/Kingston,_New_Zealand"
+   ],
+   "standalone": true,
+   "note": "No photo: Kingston photos found were of the steam train or a street scene, neither the village itself."
+  }
+ ]
+}

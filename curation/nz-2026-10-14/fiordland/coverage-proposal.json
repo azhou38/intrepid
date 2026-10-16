@@ -1,0 +1,836 @@
+{
+ "destination": "fiordland",
+ "sources_used": [
+  "https://en.wikivoyage.org/wiki/Fiordland_National_Park",
+  "https://en.wikivoyage.org/wiki/Te_Anau",
+  "https://en.wikivoyage.org/wiki/Manapouri",
+  "https://en.wikivoyage.org/wiki/Milford_Sound",
+  "https://en.wikivoyage.org/wiki/Milford_Road",
+  "https://en.wikipedia.org/w/api.php (summaries, coordinates)",
+  "https://nominatim.openstreetmap.org (coordinates)",
+  "https://overpass-api.de (Rarakau Car Park)",
+  "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/",
+  "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/places-to-go/milford-road-milford-sound-area/",
+  "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/places-to-go/lake-te-anau-area/",
+  "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/places-to-go/lake-manapouri-area/",
+  "https://commons.wikimedia.org/w/api.php (photos)"
+ ],
+ "gaps": [
+  {
+   "name": "The Chasm",
+   "wiki": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Milford_Road",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/things-to-do/tracks/the-chasm-walk/"
+   ],
+   "decision": "add",
+   "reason": "Named by source as somewhere to go; inside span."
+  },
+  {
+   "name": "Key Summit",
+   "wiki": null,
+   "sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/things-to-do/tracks/routeburn-track/",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/places-to-go/milford-road-milford-sound-area/",
+    "https://en.wikivoyage.org/wiki/Milford_Road"
+   ],
+   "decision": "add",
+   "reason": "Named by source as somewhere to go; inside span."
+  },
+  {
+   "name": "Lake Marian",
+   "wiki": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Te_Anau",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/things-to-do/tracks/lake-marian-track/",
+    "https://en.wikipedia.org/wiki/Lake_Marian"
+   ],
+   "decision": "add",
+   "reason": "Named by source as somewhere to go; inside span."
+  },
+  {
+   "name": "Manapōuri",
+   "wiki": "Manapouri",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Manapouri",
+    "https://en.wikipedia.org/wiki/Manapouri",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/places-to-go/lake-manapouri-area/"
+   ],
+   "decision": "add",
+   "reason": "Named by source as somewhere to go; inside span."
+  },
+  {
+   "name": "Bowen Falls",
+   "wiki": "Bowen Falls",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Milford_Sound",
+    "https://en.wikipedia.org/wiki/Bowen_Falls"
+   ],
+   "decision": "add",
+   "reason": "Named by source as somewhere to go; inside span."
+  },
+  {
+   "name": "Te Anau Bird Sanctuary",
+   "wiki": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Te_Anau",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/places-to-go/lake-te-anau-area/punanga-manu-o-te-anau-te-anau-bird-sanctuary/"
+   ],
+   "decision": "add",
+   "reason": "Named by source as somewhere to go; inside span."
+  },
+  {
+   "name": "Hollyford Track",
+   "wiki": null,
+   "sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/things-to-do/tracks/hollyford-track/",
+    "https://en.wikipedia.org/wiki/Hollyford_Track"
+   ],
+   "decision": "add",
+   "reason": "Named by source as somewhere to go; inside span."
+  },
+  {
+   "name": "Pop's View Lookout",
+   "wiki": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Milford_Road"
+   ],
+   "decision": "add",
+   "reason": "Named by source as somewhere to go; inside span."
+  },
+  {
+   "name": "Monkey Creek",
+   "wiki": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Milford_Road"
+   ],
+   "decision": "add",
+   "reason": "Named by source as somewhere to go; inside span."
+  },
+  {
+   "name": "Lake Gunn",
+   "wiki": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Milford_Road",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/things-to-do/tracks/lake-gunn-nature-walk/"
+   ],
+   "decision": "add",
+   "reason": "Named by source as somewhere to go; inside span."
+  },
+  {
+   "name": "Sutherland Falls",
+   "wiki": "Sutherland Falls",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Fiordland_National_Park",
+    "https://en.wikipedia.org/wiki/Sutherland_Falls"
+   ],
+   "decision": "add",
+   "reason": "Named by source as somewhere to go; inside span."
+  },
+  {
+   "name": "Lake Mistletoe",
+   "wiki": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Milford_Road",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/things-to-do/tracks/lake-mistletoe-track/"
+   ],
+   "decision": "add",
+   "reason": "Named by source as somewhere to go; inside span."
+  },
+  {
+   "name": "Hump Ridge Track",
+   "wiki": null,
+   "sources": [
+    "https://en.wikipedia.org/wiki/Hump_Ridge_Track",
+    "https://humpridgetrack.co.nz/",
+    "https://humpridgetrack.co.nz/how-to-get-here/"
+   ],
+   "decision": "add",
+   "reason": "Standalone: beyond ~105 km span; Outside Fiordland span (about 125 km south of centre): standalone. Benchmark spot per COVERAGE.md."
+  },
+  {
+   "name": "Clifden Suspension Bridge",
+   "wiki": "Clifden Suspension Bridge",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Clifden_Suspension_Bridge",
+    "https://en.wikipedia.org/wiki/Tuatapere"
+   ],
+   "decision": "add",
+   "reason": "Standalone: beyond ~105 km span; About 113 km south of centre: standalone."
+  },
+  {
+   "name": "Tuatapere",
+   "wiki": "Tuatapere",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Tuatapere",
+    "https://en.wikipedia.org/wiki/Hump_Ridge_Track"
+   ],
+   "decision": "add",
+   "reason": "Standalone: beyond ~105 km span; About 123 km south of centre: standalone. Photo is weak (the sausage-shop sign, 2005). With Hump Ridge Track, Clifden Bridge, a candidate cluster for a Tuatapere/Waiau destination if wanted."
+  },
+  {
+   "name": "Lake Te Anau",
+   "wiki": "Lake Te Anau",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Te_Anau"
+   ],
+   "decision": "reject",
+   "reason": "The setting of the existing Te Anau and Te Anau Glowworm Caves spots; no distinct visitor point (a pin would sit mid-lake)."
+  },
+  {
+   "name": "Mitre Peak",
+   "wiki": "Mitre Peak",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Milford_Sound"
+   ],
+   "decision": "reject",
+   "reason": "Near-duplicate: seen from and described in the existing Milford Sound spot."
+  },
+  {
+   "name": "Stirling Falls",
+   "wiki": "Stirling Falls",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Milford_Sound"
+   ],
+   "decision": "reject",
+   "reason": "Part of the Milford Sound cruise experience, no separate visitor stop; Bowen Falls is added instead."
+  },
+  {
+   "name": "Eglinton Valley",
+   "wiki": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Milford_Road"
+   ],
+   "decision": "reject",
+   "reason": "Road corridor, not a place; its stops (Mirror Lakes, Lake Gunn, Monkey Creek) are spots."
+  },
+  {
+   "name": "Milford Deep Underwater Observatory / Milford Discovery Centre",
+   "wiki": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Milford_Sound"
+   ],
+   "decision": "reject",
+   "reason": "Operator product reached on a cruise, with no independent source, price or official page verified this run; revisit if wanted."
+  },
+  {
+   "name": "Knobs Flat / Christie Falls / Alpine View / Gertrude Valley / Lake Gunn Viewpoint / Hollyford Valley Lookout",
+   "wiki": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Milford_Road"
+   ],
+   "decision": "reject",
+   "reason": "Roadside pull-outs listed once in Wikivoyage with no walk, signage or article; rarely a destination in themselves (Pop's View, Monkey Creek and Lake Gunn kept as the better-known stops)."
+  },
+  {
+   "name": "Gertrude Saddle",
+   "wiki": null,
+   "sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/things-to-do/tracks/gertrude-saddle-route/"
+   ],
+   "decision": "reject",
+   "reason": "DOC Expert route, warns of fatal falls; rarely visited by ordinary travellers."
+  },
+  {
+   "name": "Humboldt Falls",
+   "wiki": null,
+   "sources": [
+    "https://en.wikipedia.org/wiki/Humboldt_Falls"
+   ],
+   "decision": "reject",
+   "reason": "Minor falls off Hollyford Road; no guidebook or DOC popular listing found, rarely visited."
+  },
+  {
+   "name": "Dusky Track",
+   "wiki": null,
+   "sources": [
+    "https://en.wikipedia.org/wiki/Dusky_Track"
+   ],
+   "decision": "reject",
+   "reason": "Remote multi-day wilderness tramp with very low visitor numbers; rarely visited."
+  },
+  {
+   "name": "Luxmore Caves / Brod Bay / Mount Luxmore",
+   "wiki": null,
+   "sources": [
+    "https://en.wikipedia.org/wiki/Kepler_Track"
+   ],
+   "decision": "reject",
+   "reason": "Sections of the existing Kepler Track spot."
+  },
+  {
+   "name": "Manapōuri Power Station",
+   "wiki": null,
+   "sources": [
+    "https://en.wikipedia.org/wiki/Manap%C5%8Dri_Power_Station"
+   ],
+   "decision": "reject",
+   "reason": "Visited only as part of the Doubtful Sound trip (existing spot)."
+  },
+  {
+   "name": "The Divide",
+   "wiki": null,
+   "sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/things-to-do/tracks/routeburn-track/"
+   ],
+   "decision": "reject",
+   "reason": "Trailhead folded into Key Summit and the existing Routeburn Track spot."
+  },
+  {
+   "name": "Mavora Lakes",
+   "wiki": null,
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mavora_Lakes"
+   ],
+   "decision": "reject",
+   "reason": "Only a Wikipedia protected-area article found, no guidebook or DOC popular listing; far gravel-road campsite area mostly for locals and 4WD campers."
+  },
+  {
+   "name": "Lake Monowai / Lake Hauroko",
+   "wiki": null,
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lake_Monowai"
+   ],
+   "decision": "reject",
+   "reason": "Off-the-beaten-track fishing and boating lakes (DOC says so for Monowai); rarely visited."
+  },
+  {
+   "name": "Westray Horse Treks / Cruise Te Anau / Te Anau Library",
+   "wiki": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Te_Anau"
+   ],
+   "decision": "reject",
+   "reason": "Operators or a municipal library, not places."
+  },
+  {
+   "name": "Glenorchy",
+   "wiki": null,
+   "sources": [],
+   "decision": "reject",
+   "reason": "Already a standalone spot, about 50 km from centre."
+  }
+ ],
+ "existing_fixes": [
+  {
+   "spot_id": "fiordland-3",
+   "action": "move",
+   "to": {
+    "latitude": -45.0284,
+    "longitude": 168.011
+   },
+   "reason": "Mirror Lakes coordinates are about 4.5 km north of the lakes. Wikipedia gives -45.02861,168.01083 and OSM -45.02841,168.01096 for Mirror Lakes."
+  },
+  {
+   "spot_id": "fiordland-4",
+   "action": "move",
+   "to": {
+    "latitude": -44.7642,
+    "longitude": 167.9812
+   },
+   "reason": "Homer Tunnel is about 700 m east of the OSM tunnel (man_made=tunnel -44.76422,167.98136). Minor."
+  },
+  {
+   "spot_id": "fiordland-6",
+   "action": "replace",
+   "to": "ticketUrl https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/things-to-do/tracks/milford-track/",
+   "reason": "Current ticketUrl is the DOC park page, not the track. Loaded the Milford Track page: title 'Milford Track: Fiordland National Park', 53.5 km, 4 days, Great Walks season November to April (spot hours say Oct - Apr; change to Nov - Apr)."
+  },
+  {
+   "spot_id": "fiordland-7",
+   "action": "replace",
+   "to": "ticketUrl https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/things-to-do/tracks/kepler-track/",
+   "reason": "Current ticketUrl is the park page; loaded Kepler Track page, title 'Kepler Track: Fiordland National Park', 60 km loop."
+  },
+  {
+   "spot_id": "fiordland-8",
+   "action": "replace",
+   "to": "ticketUrl https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/things-to-do/tracks/routeburn-track/",
+   "reason": "Loaded Routeburn Track page, title 'Routeburn Track: Fiordland National Park'. Spot sits at -44.825,168.12; OSM Routeburn path -44.8153,168.1202 (about 1 km). Minor; track is shared with Mount Aspiring National Park."
+  }
+ ],
+ "new_spots": [
+  {
+   "name": "The Chasm",
+   "icon": "🌊",
+   "coordinates": {
+    "latitude": -44.7215,
+    "longitude": 167.9478
+   },
+   "coordinates_source": "OSM Nominatim: The Chasm viewpoint (tourism=viewpoint) -44.72150,167.94774; Wikivoyage Milford Road -44.7216,167.9476",
+   "category": "nature",
+   "bio": "A 20-minute return bush walk off the Milford Road ends at the Cleddau River, where the water pours through and over rock sculpted into basins and hollows.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/things-to-do/tracks/the-chasm-walk/",
+   "ticketUrl_checked": "Loaded DOC page; title 'The Chasm Walk: Fiordland National Park', states 400 m return, 20 min",
+   "photo": {
+    "file": "The Chasm (Fiordland, NZ).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:The_Chasm_(Fiordland,_NZ).jpg",
+    "width": 3008,
+    "height": 2000,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Milford_Road",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/things-to-do/tracks/the-chasm-walk/"
+   ],
+   "wiki": null
+  },
+  {
+   "name": "Key Summit",
+   "icon": "⛰️",
+   "coordinates": {
+    "latitude": -44.8151,
+    "longitude": 168.1274
+   },
+   "coordinates_source": "OSM Nominatim: Key Summit (natural=peak) -44.81513,168.12743",
+   "category": "hike",
+   "bio": "A side trip from the Routeburn Track at The Divide climbs above the bushline to an alpine wetland with views of the Darran Mountains and the Hollyford Valley.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_checked": "DOC has no separate Key Summit page reachable (URL guess redirected to park page); left null",
+   "photo": {
+    "file": "View from Key Summit across tarns.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:View_from_Key_Summit_across_tarns.jpg",
+    "width": 4896,
+    "height": 3264,
+    "looked_at": true
+   },
+   "sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/things-to-do/tracks/routeburn-track/",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/places-to-go/milford-road-milford-sound-area/",
+    "https://en.wikivoyage.org/wiki/Milford_Road"
+   ],
+   "wiki": null
+  },
+  {
+   "name": "Lake Marian",
+   "icon": "🥾",
+   "coordinates": {
+    "latitude": -44.786,
+    "longitude": 168.0766
+   },
+   "coordinates_source": "OSM Nominatim: Hinepipiwai / Lake Marian -44.78599,168.07659; Wikipedia -44.785,168.075 (lake is the destination; trailhead is Lake Marian carpark 1 km down Hollyford Road)",
+   "category": "hike",
+   "bio": "A 3.1 km track from Hollyford Road climbs past a series of waterfalls to an alpine lake in a glacier-carved hanging valley, about 1 hr 30 min each way.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 3,
+   "visitHoursMax": 4.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/things-to-do/tracks/lake-marian-track/",
+   "ticketUrl_checked": "Loaded DOC page; title 'Lake Marian Track: Fiordland National Park', 3.1 km, 1 hr 30 min one way",
+   "photo": {
+    "file": "View across Lake Marian up the valley.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:View_across_Lake_Marian_up_the_valley.jpg",
+    "width": 4896,
+    "height": 3264,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Te_Anau",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/things-to-do/tracks/lake-marian-track/",
+    "https://en.wikipedia.org/wiki/Lake_Marian"
+   ],
+   "wiki": null
+  },
+  {
+   "name": "Manapōuri",
+   "wiki": "Manapouri",
+   "icon": "🏡",
+   "coordinates": {
+    "latitude": -45.5651,
+    "longitude": 167.6134
+   },
+   "coordinates_source": "OSM Nominatim: Manapouri (place=village) -45.56515,167.61340; Wikipedia -45.5669,167.6115",
+   "category": "landmark",
+   "bio": "A lakeside township 20 minutes from Te Anau where tourist boats based on Lake Manapouri set out for Doubtful Sound and the start of local walking tracks.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_checked": "DOC 'Lake Manapouri area' page loaded but is an area page, not an official site for the township; left null",
+   "photo": {
+    "file": "Manapouri Above.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Manapouri_Above.JPG",
+    "width": 1315,
+    "height": 879,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Manapouri",
+    "https://en.wikipedia.org/wiki/Manapouri",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/places-to-go/lake-manapouri-area/"
+   ]
+  },
+  {
+   "name": "Bowen Falls",
+   "wiki": "Bowen Falls",
+   "icon": "💦",
+   "coordinates": {
+    "latitude": -44.6651,
+    "longitude": 167.9262
+   },
+   "coordinates_source": "OSM Nominatim: Hineteawa / Bowen Falls (waterway=waterfall) -44.66511,167.92620",
+   "category": "nature",
+   "bio": "At 162 m the tallest permanent waterfall to pour into Milford Sound, reached from the wharf by a short on-demand boat hop and a walk.",
+   "hours": "Daytime",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_checked": "No official page for the falls; boat service price not sourced so cost omitted",
+   "photo": {
+    "file": "Lady Bowen Falls. Milford Sound NZ (31091105904).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Lady_Bowen_Falls._Milford_Sound_NZ_(31091105904).jpg",
+    "width": 5383,
+    "height": 3335,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Milford_Sound",
+    "https://en.wikipedia.org/wiki/Bowen_Falls"
+   ]
+  },
+  {
+   "name": "Te Anau Bird Sanctuary",
+   "icon": "🦜",
+   "coordinates": {
+    "latitude": -45.4327,
+    "longitude": 167.7133
+   },
+   "coordinates_source": "OSM Nominatim: Te Anau Bird Sanctuary / Punanga Manu o Te Anau (tourism=zoo) -45.43265,167.71334; Wikivoyage -45.43302,167.71324",
+   "category": "nature",
+   "bio": "A free DOC sanctuary on the shore of Lake Te Anau where you can see the rare flightless takahe and other Fiordland birds hard to spot in the wild.",
+   "hours": "Daylight hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/places-to-go/lake-te-anau-area/punanga-manu-o-te-anau-te-anau-bird-sanctuary/",
+   "ticketUrl_checked": "Loaded DOC page; title 'Punanga Manu o Te Anau/Te Anau Bird Sanctuary: Features'; says open and free in daylight hours",
+   "photo": {
+    "file": "Takahe NZ gf161.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Takahe_NZ_gf161.jpg",
+    "width": 5472,
+    "height": 3648,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Te_Anau",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/places-to-go/lake-te-anau-area/punanga-manu-o-te-anau-te-anau-bird-sanctuary/"
+   ],
+   "wiki": null
+  },
+  {
+   "name": "Hollyford Track",
+   "icon": "🥾",
+   "coordinates": {
+    "latitude": -44.6928,
+    "longitude": 168.1258
+   },
+   "coordinates_source": "Wikipedia Hollyford Track coordinates -44.6928,168.1258 (northern, Hollyford Road end); OSM path node -44.5607,168.1264",
+   "category": "hike",
+   "bio": "A 56 km, 4 to 5 day tramp from the Darran Mountains down the Hollyford Valley to Martins Bay on the West Coast, with no alpine sections so it is rarely closed by snow.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 24,
+   "visitHoursMax": 40,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/things-to-do/tracks/hollyford-track/",
+   "ticketUrl_checked": "Loaded DOC page; title 'Hollyford Track: Fiordland National Park', 56 km one way, 4-5 days",
+   "photo": {
+    "file": "Mt Madeline, Hollyford Track (5845381298).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Mt_Madeline,_Hollyford_Track_(5845381298).jpg",
+    "width": 3966,
+    "height": 2807,
+    "looked_at": true
+   },
+   "sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/things-to-do/tracks/hollyford-track/",
+    "https://en.wikipedia.org/wiki/Hollyford_Track"
+   ],
+   "wiki": null
+  },
+  {
+   "name": "Pop's View Lookout",
+   "icon": "🏞️",
+   "coordinates": {
+    "latitude": -44.8088,
+    "longitude": 168.1074
+   },
+   "coordinates_source": "Wikivoyage Milford Road marker -44.8088,168.1074",
+   "category": "viewpoint",
+   "bio": "A roadside lookout on the Milford Road above the Hollyford Valley, with long views of the towering mountains along the valley.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_checked": "No official page loaded whose title names the place; left null",
+   "photo": {
+    "file": "View From Hollyford Valley Lookout (Pops View) in Fiordland National Park (4687492931).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:View_From_Hollyford_Valley_Lookout_(Pops_View)_in_Fiordland_National_Park_(4687492931).jpg",
+    "width": 3008,
+    "height": 2000,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Milford_Road"
+   ],
+   "wiki": null
+  },
+  {
+   "name": "Monkey Creek",
+   "icon": "🦜",
+   "coordinates": {
+    "latitude": -44.8009,
+    "longitude": 168.0213
+   },
+   "coordinates_source": "OSM Nominatim: Monkey Creek (tourism=viewpoint) -44.80086,168.02135; Wikivoyage -44.8012,168.0214",
+   "category": "nature",
+   "bio": "A roadside stop on the Milford Road at a mountain stream, known for chances to spot kea and blue duck.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_checked": "No official page loaded whose title names the place; left null",
+   "photo": {
+    "file": "Monkey Creek, New Zealand 01.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Monkey_Creek,_New_Zealand_01.jpg",
+    "width": 6000,
+    "height": 4000,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Milford_Road"
+   ],
+   "wiki": null
+  },
+  {
+   "name": "Lake Gunn",
+   "icon": "🌲",
+   "coordinates": {
+    "latitude": -44.8949,
+    "longitude": 168.0835
+   },
+   "coordinates_source": "Wikivoyage Milford Road: Cascade Creek, start of Lake Gunn Nature Walk -44.8949,168.0835; OSM lake -44.88842,168.07847",
+   "category": "nature",
+   "bio": "A beech-forest lake in the Eglinton Valley with an easy 45-minute loop walk from Cascade Creek through red beech forest and birdlife.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/things-to-do/tracks/lake-gunn-nature-walk/",
+   "ticketUrl_checked": "Loaded DOC page; title 'Lake Gunn Nature Walk: Fiordland National Park', 1.4 km loop, 45 min",
+   "photo": {
+    "file": "Lake Gunn in Fiordland National Park.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Lake_Gunn_in_Fiordland_National_Park.jpg",
+    "width": 3477,
+    "height": 2224,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Milford_Road",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/things-to-do/tracks/lake-gunn-nature-walk/"
+   ],
+   "wiki": null
+  },
+  {
+   "name": "Sutherland Falls",
+   "wiki": "Sutherland Falls",
+   "icon": "💦",
+   "coordinates": {
+    "latitude": -44.8007,
+    "longitude": 167.7295
+   },
+   "coordinates_source": "OSM Nominatim: Sutherland Falls (waterway=waterfall) -44.80066,167.72949; Wikivoyage -44.8007,167.7289",
+   "category": "nature",
+   "bio": "At 580 m one of New Zealand's tallest waterfalls, dropping in three cascades from Lake Quill, reached by a 90-minute return side walk from Quintin Shelter on the Milford Track.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_checked": "No separate official page; left null",
+   "photo": {
+    "file": "Sutherland Falls 2011.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Sutherland_Falls_2011.jpg",
+    "width": 2592,
+    "height": 3888,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Fiordland_National_Park",
+    "https://en.wikipedia.org/wiki/Sutherland_Falls"
+   ]
+  },
+  {
+   "name": "Lake Mistletoe",
+   "icon": "🌳",
+   "coordinates": {
+    "latitude": -45.2023,
+    "longitude": 167.8286
+   },
+   "coordinates_source": "OSM Nominatim: Lake Mistletoe (natural=water) -45.20226,167.82861; Wikivoyage -45.2004,167.8226",
+   "category": "nature",
+   "bio": "An easy, short forest walk from the Milford Road leads to a small, peaceful lake near Te Anau Downs.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/things-to-do/tracks/lake-mistletoe-track/",
+   "ticketUrl_checked": "Loaded DOC page; title 'Lake Mistletoe Track: Fiordland National Park', easy short walk from Milford Road",
+   "photo": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Milford_Road",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/things-to-do/tracks/lake-mistletoe-track/"
+   ],
+   "wiki": null
+  },
+  {
+   "name": "Hump Ridge Track",
+   "icon": "🥾",
+   "coordinates": {
+    "latitude": -46.14647,
+    "longitude": 167.47277
+   },
+   "coordinates_source": "OSM Overpass: Rarakau Car Park (amenity=parking) -46.146473,167.472768, named by the operator as the track start; Wikipedia -46.1486,167.4745",
+   "category": "hike",
+   "bio": "A 60 km walk, partly in Fiordland National Park and opened as a Great Walk in 2024, climbing the Hump Ridge from Rarakau on the south coast.",
+   "hours": "Booked 3-day walk",
+   "visitHoursMin": 24,
+   "visitHoursMax": 60,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://humpridgetrack.co.nz/",
+   "ticketUrl_checked": "Loaded homepage; title '3-Day Great Walk in Fiordland | Tuatapere Humpridge Track'; price not sourced so cost omitted",
+   "photo": {
+    "file": "Boardwalk up near Okaka hut looking to Lake Poteriteri.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Boardwalk_up_near_Okaka_hut_looking_to_Lake_Poteriteri.jpg",
+    "width": 2592,
+    "height": 1944,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Hump_Ridge_Track",
+    "https://humpridgetrack.co.nz/",
+    "https://humpridgetrack.co.nz/how-to-get-here/"
+   ],
+   "standalone": true,
+   "note": "Outside Fiordland span (about 125 km south of centre): standalone. Benchmark spot per COVERAGE.md.",
+   "wiki": null
+  },
+  {
+   "name": "Clifden Suspension Bridge",
+   "wiki": "Clifden Suspension Bridge",
+   "icon": "🌉",
+   "coordinates": {
+    "latitude": -46.03,
+    "longitude": 167.7151
+   },
+   "coordinates_source": "Wikipedia -46.030086,167.715075; OSM Nominatim man_made=bridge -46.02987,167.71512",
+   "category": "historic",
+   "bio": "An 1899 suspension bridge, 111.5 m long, over the Waiau River that still has its original wooden decking and is now open to pedestrians.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_checked": "No official page loaded whose title names the place; left null",
+   "photo": {
+    "file": "Clifden Suspension Bridge, the span.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Clifden_Suspension_Bridge,_the_span.jpg",
+    "width": 4288,
+    "height": 3216,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Clifden_Suspension_Bridge",
+    "https://en.wikipedia.org/wiki/Tuatapere"
+   ],
+   "standalone": true,
+   "note": "About 113 km south of centre: standalone."
+  },
+  {
+   "name": "Tuatapere",
+   "wiki": "Tuatapere",
+   "icon": "🌭",
+   "coordinates": {
+    "latitude": -46.1316,
+    "longitude": 167.6899
+   },
+   "coordinates_source": "OSM Nominatim: Tuatapere (place=village) -46.13164,167.68985; Wikipedia -46.1333,167.6833",
+   "category": "landmark",
+   "bio": "A small Southland town that calls itself the Sausage Capital of New Zealand, a tourist stop on the Southern Scenic Route near the Clifden Suspension Bridge.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_checked": "No official page loaded whose title names the place; left null",
+   "photo": {
+    "file": "Tuatapere sausage capital.jpeg",
+    "page": "https://commons.wikimedia.org/wiki/File:Tuatapere_sausage_capital.jpeg",
+    "width": 2856,
+    "height": 2142,
+    "looked_at": true
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Tuatapere",
+    "https://en.wikipedia.org/wiki/Hump_Ridge_Track"
+   ],
+   "standalone": true,
+   "note": "About 123 km south of centre: standalone. Photo is weak (the sausage-shop sign, 2005). With Hump Ridge Track, Clifden Bridge, a candidate cluster for a Tuatapere/Waiau destination if wanted."
+  }
+ ]
+}

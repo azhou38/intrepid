@@ -1,0 +1,81 @@
+{
+ "destination": {
+  "id": "central-otago",
+  "name": "Central Otago",
+  "country": "New Zealand",
+  "category": "nature",
+  "coordinates": {
+   "latitude": -45.08,
+   "longitude": 169.45
+  },
+  "whyVisit": [
+   "Cycle the Otago Central Rail Trail",
+   "Gold-rush heritage villages",
+   "Pinot Noir and summer fruit"
+  ]
+ },
+ "only_slots_with_flags_need_work": true,
+ "slots": [
+  {
+   "slot": "header",
+   "key": "Central Otago",
+   "current": "Dunstan Mountains from the Sugarloaf.jpg",
+   "flags": []
+  },
+  {
+   "slot": "why-1",
+   "reason": "Cycle the Otago Central Rail Trail",
+   "current": "Otago Central Rail Trail 20170101.jpg",
+   "flags": []
+  },
+  {
+   "slot": "why-2",
+   "reason": "Gold-rush heritage villages",
+   "current": "Vulcan Hotel towards Public Hall and Post Office.jpg",
+   "flags": []
+  },
+  {
+   "slot": "why-3",
+   "reason": "Pinot Noir and summer fruit",
+   "current": "016 Central Otago wine region - vineyard in Gibbston Valley in South Island, New Zealand.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:central-otago-1",
+   "spot": "Otago Central Rail Trail",
+   "bio": "152 km of gentle cycling along an old railway line through tunnels, viaducts and gold-rush villages.",
+   "key": "Otago Central Rail Trail",
+   "current": "CORT01.JPG",
+   "flags": [
+    "818px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:central-otago-2",
+   "spot": "Clyde",
+   "bio": "A charming gold-rush town of stone cottages and old hotels beneath the Clyde Dam, at the start of the Rail Trail.",
+   "key": "Clyde",
+   "override": "Clyde Town, Central Otago.jpg",
+   "current": "Clyde Town, Central Otago.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:central-otago-3",
+   "spot": "Blue Lake",
+   "bio": "A vivid blue lake filling an old gold-sluicing pit, ringed by eroded white cliffs beside a tiny historic village.",
+   "key": "Blue Lake, St Bathans",
+   "override": "Blue Lake in Central Otago.jpg",
+   "current": "Blue Lake in Central Otago.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:central-otago-4",
+   "spot": "Cromwell Heritage Precinct",
+   "bio": "Old Cromwell rebuilt stone by stone on the shore of Lake Dunstan after the town was flooded by the Clyde Dam.",
+   "key": "Cromwell Heritage Precinct",
+   "override": "Old Stores at Lake Dunstan Cycle Trail, Cromwell, New Zealand.jpg",
+   "current": "Old Stores at Lake Dunstan Cycle Trail, Cromwell, New Zealand.jpg",
+   "flags": []
+  }
+ ]
+}

@@ -1,0 +1,30 @@
+{
+ "destination": {
+  "id": "nelson",
+  "name": "Nelson",
+  "country": "New Zealand",
+  "category": "city",
+  "coordinates": {
+   "latitude": -41.2706,
+   "longitude": 173.284
+  },
+  "whyVisit": [
+   "One of NZ's sunniest cities",
+   "Arts, crafts & craft beer",
+   "Gateway to three national parks"
+  ]
+ },
+ "only_slots_with_flags_need_work": true,
+ "slots": [
+  {
+   "slot": "spot:nelson-3",
+   "spot": "Nelson Market",
+   "bio": "A Saturday market in Montgomery Square packed with local artisans, growers and food stalls.",
+   "key": "Nelson Market",
+   "current": "Willie Nelson - Flickr - Me in ME.jpg",
+   "flags": [
+    "WRONG SUBJECT: current photo is the singer Willie Nelson (a person), not Nelson Market"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,81 @@
+{
+ "destination": {
+  "id": "timaru",
+  "name": "Timaru",
+  "country": "New Zealand",
+  "category": "city",
+  "coordinates": {
+   "latitude": -44.397,
+   "longitude": 171.255
+  },
+  "whyVisit": [
+   "Caroline Bay beach",
+   "Māori rock art at Te Ana",
+   "A stop on the way south"
+  ]
+ },
+ "only_slots_with_flags_need_work": true,
+ "slots": [
+  {
+   "slot": "header",
+   "key": "Timaru",
+   "current": "Timaru Port Breakwater.JPG",
+   "flags": [
+    "also used for Caroline Bay"
+   ]
+  },
+  {
+   "slot": "why-1",
+   "reason": "Caroline Bay beach",
+   "current": "",
+   "flags": []
+  },
+  {
+   "slot": "why-2",
+   "reason": "Māori rock art at Te Ana",
+   "current": "",
+   "flags": []
+  },
+  {
+   "slot": "why-3",
+   "reason": "A stop on the way south",
+   "current": "Timaru Botanic Garden, New Zealand.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:timaru-1",
+   "spot": "Caroline Bay",
+   "bio": "A sandy city beach with a summer carnival tradition, close to the town centre.",
+   "key": "Caroline Bay",
+   "override": "Timaru Port Breakwater.JPG",
+   "current": "Timaru Port Breakwater.JPG",
+   "flags": [
+    "also used for Timaru"
+   ]
+  },
+  {
+   "slot": "spot:timaru-2",
+   "spot": "South Canterbury Museum",
+   "bio": "A regional museum with natural history and the story of Richard Pearse's early flight experiments.",
+   "key": "South Canterbury Museum",
+   "current": "Pearse aeroplane replica, South Canterbury Museum-1.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:timaru-3",
+   "spot": "Te Ana Māori Rock Art Centre",
+   "bio": "An interpretive centre on the Māori rock art of South Canterbury, with guided tours of the art in the region.",
+   "key": "Te Ana Māori Rock Art Centre",
+   "current": "Timaru-Stafford.St.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:timaru-4",
+   "spot": "Aigantighe Art Gallery",
+   "bio": "A regional art gallery in a historic house, set in sculpture-dotted gardens.",
+   "key": "Aigantighe Art Gallery",
+   "current": "Aigantighe Art Gallery - 13 - House - North side.jpg",
+   "flags": []
+  }
+ ]
+}

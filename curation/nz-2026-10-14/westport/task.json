@@ -1,0 +1,73 @@
+{
+ "destination": {
+  "id": "westport",
+  "name": "Westport",
+  "country": "New Zealand",
+  "category": "city",
+  "coordinates": {
+   "latitude": -41.7546,
+   "longitude": 171.6015
+  },
+  "whyVisit": [
+   "Cape Foulwind seal colony",
+   "Coal-mining heritage",
+   "Gateway to the Buller Gorge"
+  ]
+ },
+ "only_slots_with_flags_need_work": true,
+ "slots": [
+  {
+   "slot": "header",
+   "key": "Westport",
+   "current": "Cape Foulwind.jpg",
+   "flags": [
+    "also used for Cape Foulwind"
+   ]
+  },
+  {
+   "slot": "why-1",
+   "reason": "Cape Foulwind seal colony",
+   "current": "Tauranga Bay Seal Colony, New Zealand (6).JPG",
+   "flags": []
+  },
+  {
+   "slot": "why-2",
+   "reason": "Coal-mining heritage",
+   "current": "Denniston Incline 001.jpg",
+   "flags": []
+  },
+  {
+   "slot": "why-3",
+   "reason": "Gateway to the Buller Gorge",
+   "current": "Lower Buller Gorge, South Island NZ.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:westport-1",
+   "spot": "Cape Foulwind",
+   "bio": "A windswept clifftop walkway from the lighthouse to the Tauranga Bay fur seal colony.",
+   "key": "Cape Foulwind",
+   "current": "Cape Foulwind.jpg",
+   "flags": [
+    "also used for Westport"
+   ]
+  },
+  {
+   "slot": "spot:westport-2",
+   "spot": "Denniston Plateau",
+   "bio": "The remains of a hilltop coal town and its 'Eighth Wonder' incline, which lowered coal wagons down a sheer slope.",
+   "key": "Denniston Plateau",
+   "current": "Denniston Plateau MRD 04.jpg",
+   "flags": []
+  },
+  {
+   "slot": "spot:westport-3",
+   "spot": "Coaltown Museum",
+   "bio": "A modern museum telling the story of the West Coast's coal and gold mining, including a replica Denniston wagon.",
+   "key": "Coaltown Museum",
+   "override": "Westport MRD 08.jpg",
+   "current": "Westport MRD 08.jpg",
+   "flags": []
+  }
+ ]
+}
