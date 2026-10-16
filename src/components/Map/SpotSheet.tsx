@@ -20,7 +20,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { SharedValue } from 'react-native-reanimated';
 import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'react-native-svg';
 import { Check, Clock, CalendarClock, ChevronUp, ChevronDown, ChevronRight, LayoutGrid, Plus,
-         ExternalLink, Ticket, MapPin, Image as ImageIcon } from 'lucide-react-native';
+         ExternalLink, Ticket, MapPin, Map as MapIcon, Image as ImageIcon } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
 import { useStore, useVisitIndex } from '../../store';
 import type { Destination, Visit } from '../../types';
@@ -1541,16 +1541,22 @@ function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore, nearbyHlScrol
       {/* View on maps — opens the spot's coordinates in Google Maps or Apple Maps (https links, which open the installed app). */}
       <View style={st.section}>
         <View style={st.mapsCard}>
-          <Text style={st.siteEyebrow}>VIEW ON MAPS</Text>
-          <View style={st.mapsRow}>
-            <Pressable style={st.mapsBtn} onPress={() => Linking.openURL(googleMapsUrl(spot))}>
-              <MapPin size={16} color="#16A34A" />
-              <Text style={st.mapsBtnTxt}>Google Maps</Text>
-            </Pressable>
-            <Pressable style={st.mapsBtn} onPress={() => Linking.openURL(appleMapsUrl(spot))}>
-              <MapPin size={16} color="#2563EB" />
-              <Text style={st.mapsBtnTxt}>Apple Maps</Text>
-            </Pressable>
+          {/* A map icon on a light tile at the left, the same size and place as the official site card's favicon. */}
+          <View style={st.siteFavicon}>
+            <MapIcon size={22} color="#111827" />
+          </View>
+          <View style={st.mapsBody}>
+            <Text style={st.siteEyebrow}>VIEW ON MAPS</Text>
+            <View style={st.mapsRow}>
+              <Pressable style={st.mapsBtn} onPress={() => Linking.openURL(googleMapsUrl(spot))}>
+                <MapPin size={16} color="#16A34A" />
+                <Text style={st.mapsBtnTxt}>Google Maps</Text>
+              </Pressable>
+              <Pressable style={st.mapsBtn} onPress={() => Linking.openURL(appleMapsUrl(spot))}>
+                <MapPin size={16} color="#2563EB" />
+                <Text style={st.mapsBtnTxt}>Apple Maps</Text>
+              </Pressable>
+            </View>
           </View>
         </View>
       </View>
@@ -1815,7 +1821,9 @@ const st = StyleSheet.create({
   siteEyebrow: { fontSize: 11, fontWeight: '600', color: '#9CA3AF', letterSpacing: 0.6 },
   siteName: { fontSize: 16, fontWeight: '700', color: '#111827' },
   // View on maps — a white card with the gray eyebrow over two equal pill buttons.
-  mapsCard: { backgroundColor: 'white', borderRadius: 18, padding: 14, gap: 10, borderWidth: 1, borderColor: '#E5E7EB' },
+  mapsCard: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: 'white', borderRadius: 18, padding: 12,
+              borderWidth: 1, borderColor: '#E5E7EB' },
+  mapsBody: { flex: 1, gap: 8 },
   mapsRow: { flexDirection: 'row', gap: 10 },
   mapsBtn: { flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 7, backgroundColor: '#F3F4F6',
              borderRadius: 14, paddingVertical: 12 },
