@@ -1715,7 +1715,7 @@ const st = StyleSheet.create({
   heroMetaTxt: { fontSize: 14, color: 'rgba(255,255,255,0.90)', fontWeight: '500' },
   heroMetaDivider: { width: 1, height: 12, backgroundColor: 'rgba(255,255,255,0.40)', marginHorizontal: 8 },
   // The spot description, in the About panel between the glance row and the official site.
-  aboutBio: { fontSize: 15, lineHeight: 22, fontWeight: '400', color: '#374151' },
+  aboutBio: { paddingHorizontal: 12, fontSize: 15, lineHeight: 22, fontWeight: '400', color: '#374151' },
 
   // Tab bar
   heroBackdrop: { position: 'absolute', top: 0, left: 0, right: 0, overflow: 'hidden', backgroundColor: '#111827' },
