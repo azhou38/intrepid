@@ -1383,6 +1383,13 @@ function SpotGallery({ spotId }: { spotId: string }) {
 // Temporarily hides the About tab's opening-hours row (the live open/closed status and the week list). Set to true to bring it back.
 const SHOW_OPENING_HOURS = false;
 
+// Map links for a spot: the exact point, labelled with its name. https links open the Google Maps / Apple Maps app when it
+// is installed, else the web page.
+const googleMapsUrl = (s: Spot) =>
+  `https://www.google.com/maps/search/?api=1&query=${s.coordinates.latitude},${s.coordinates.longitude}`;
+const appleMapsUrl = (s: Spot) =>
+  `https://maps.apple.com/?ll=${s.coordinates.latitude},${s.coordinates.longitude}&q=${encodeURIComponent(s.name)}`;
+
 // Icon colours for the three at-a-glance facts on the About tab: icon colour on a light tint of the same hue.
 const GLANCE_TIME  = { bg: '#DCFCE7', fg: '#16A34A' };
 const GLANCE_COST  = { bg: '#FFEDD5', fg: '#EA580C' };
@@ -1526,6 +1533,23 @@ function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore, nearbyHlScrol
           </Pressable>
         </View>
       )}
+
+      {/* View on maps — opens the spot's coordinates in Google Maps or Apple Maps (https links, which open the installed app). */}
+      <View style={st.section}>
+        <View style={st.mapsCard}>
+          <Text style={st.siteEyebrow}>VIEW ON MAPS</Text>
+          <View style={st.mapsRow}>
+            <Pressable style={st.mapsBtn} onPress={() => Linking.openURL(googleMapsUrl(spot))}>
+              <MapPin size={16} color="#16A34A" />
+              <Text style={st.mapsBtnTxt}>Google Maps</Text>
+            </Pressable>
+            <Pressable style={st.mapsBtn} onPress={() => Linking.openURL(appleMapsUrl(spot))}>
+              <MapPin size={16} color="#2563EB" />
+              <Text style={st.mapsBtnTxt}>Apple Maps</Text>
+            </Pressable>
+          </View>
+        </View>
+      </View>
 
       {/* Nearby — same design as the destination sheet's "Popular Spots" row (square SpotCards,
           same width, same horizontal scroll): the destination's other spots, one tap away.
@@ -1786,6 +1810,12 @@ const st = StyleSheet.create({
   siteText: { flex: 1, gap: 2 },
   siteEyebrow: { fontSize: 11, fontWeight: '600', color: '#9CA3AF', letterSpacing: 0.6 },
   siteName: { fontSize: 16, fontWeight: '700', color: '#111827' },
+  // View on maps — a white card with the gray eyebrow over two equal pill buttons.
+  mapsCard: { backgroundColor: 'white', borderRadius: 18, padding: 14, gap: 10, borderWidth: 1, borderColor: '#E5E7EB' },
+  mapsRow: { flexDirection: 'row', gap: 10 },
+  mapsBtn: { flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 7, backgroundColor: '#F3F4F6',
+             borderRadius: 14, paddingVertical: 12 },
+  mapsBtnTxt: { fontSize: 14, fontWeight: '700', color: '#111827' },
   siteBtn: { width: 40, height: 40, borderRadius: 20, backgroundColor: '#DCFCE7', alignItems: 'center', justifyContent: 'center' },
 
   // Photo gallery — a bleed-to-the-edge sliding row of rounded photos, the first carrying a "N photos" pill.
