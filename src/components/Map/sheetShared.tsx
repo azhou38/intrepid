@@ -73,11 +73,11 @@ export function useDeferredMount(delayMs = SHEET_PANEL_MOUNT_DELAY_MS): [boolean
 }
 
 // Small light-gray note at the bottom of every About tab (country, destination, spot), flagging that
-// its descriptive content is AI-generated.
+// its descriptive content is AI-collated.
 export function AIContentNote({ style }: { style?: StyleProp<TextStyle> }) {
   return (
     <Text style={[aiNoteStyle, style]}>
-      AI-generated content. Verify important information.
+      AI-collated content. Verify important information.
     </Text>
   );
 }
