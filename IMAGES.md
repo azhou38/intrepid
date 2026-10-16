@@ -28,6 +28,7 @@ Run all four on every photo: headers, why-visit photos and spot overrides alike.
 1. **It is the right place.** If the name is vague, shared, or also a person, film, band, ship or a place in another country (Clyde, Hanmer, Blue Lake, and so on), the photo must be proven to be the local place.
    - Search with the region ("Clyde, Central Otago", never "Clyde").
    - Confirm on the file's page that its description, categories or coordinates are the local place. Reject anything categorised under people, films, ships or another country.
+   - **The pre-filter cannot catch this.** It reads dates, categories, colour and size, not what a photo shows, so a wrong subject sails through. Real cases: *Nelson Market* shipped with a photo of the singer Willie Nelson, *Mason Bay* with the American-football player Mason Crosby, *Lake Waikareiti* with Lake Waikaremoana, and *Clyde* with Bonnie and Clyde. A judge must look at every photo and its file page, and for any place whose name is also a person, band, film or another place, confirm it.
    - A high name-match score is **not** evidence for an ambiguous name: the search rewards a file literally named after the string, which is how this happens. *Clyde used a photo of Bonnie and Clyde.*
 
 2. **It shows the named thing itself.** The subject is the lake, the hot pool, the peak, the bridge: not the township, car park, sign, jetty or building beside it. The name on the card is the subject.
