@@ -1331,7 +1331,7 @@ const st = StyleSheet.create({
     backgroundColor: 'white',
     borderTopLeftRadius: 20, borderTopRightRadius: 20,
     marginTop: -20,
-    borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: '#E5E7EB',
+    borderBottomWidth: 1, borderBottomColor: '#D1D5DB',
   },
   tabBtn:    { flex: 1, paddingVertical: 15, alignItems: 'center' },
   tabBtnTxt: { fontSize: 15, fontWeight: '600', color: '#9CA3AF' },

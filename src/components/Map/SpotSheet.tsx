@@ -1740,7 +1740,7 @@ const st = StyleSheet.create({
   tabBarPinned: { marginTop: 0 },
   tabBar: { flexDirection: 'row', backgroundColor: 'white',
             borderTopLeftRadius: 24, borderTopRightRadius: 24, marginTop: -24,
-            borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: '#E5E7EB', zIndex: 1, overflow: 'hidden' },
+            borderBottomWidth: 1, borderBottomColor: '#D1D5DB', zIndex: 1, overflow: 'hidden' },
   // No tab bar for a single tab: the same white round-topped edge, but only tall enough to be a cap, with no hairline.
   tabBarCap: { height: 24, borderBottomWidth: 0 },
   tabBtn: { flex: 1, paddingVertical: 15, alignItems: 'center' },
