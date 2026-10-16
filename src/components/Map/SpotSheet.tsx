@@ -1178,7 +1178,7 @@ isVisited ? (
 
                   {/* ── ABOUT PANEL ────────────────────────────────────── */}
                   <View style={st.slidePanel} onLayout={e => measurePanel(1, e.nativeEvent.layout.height)}>
-                    <SpotAbout spot={activeSpot} nearbySpots={spots.filter(s => s.id !== activeSpot.id)} onSelectNearby={handleSelectNearby} onExplore={() => snapToCollapsedRef.current()} nearbyHlScrollRef={nearbyHlScrollRef} />
+                    <SpotAbout spot={activeSpot} tabbed nearbySpots={spots.filter(s => s.id !== activeSpot.id)} onSelectNearby={handleSelectNearby} onExplore={() => snapToCollapsedRef.current()} nearbyHlScrollRef={nearbyHlScrollRef} />
                   </View>
                 </Reanimated.View>
               </Reanimated.View>
@@ -1401,7 +1401,7 @@ const GLANCE_TONE = {
 const GLANCE_PLACE = { bg: '#EDE9FE', fg: '#7C3AED' };
 
 // ── About panel (shared between visited/non-visited) ──────────────────────────
-function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore, nearbyHlScrollRef }: { spot: Spot; nearbySpots: Spot[]; onSelectNearby: (spot: Spot) => void; onExplore?: () => void; nearbyHlScrollRef?: React.RefObject<GHScrollView | null> }) {
+function SpotAbout({ spot, tabbed, nearbySpots, onSelectNearby, onExplore, nearbyHlScrollRef }: { spot: Spot; tabbed?: boolean; nearbySpots: Spot[]; onSelectNearby: (spot: Spot) => void; onExplore?: () => void; nearbyHlScrollRef?: React.RefObject<GHScrollView | null> }) {
   const [hoursOpen, setHoursOpen] = useState(false);
   const [faviconFailed, setFaviconFailed] = useState(false);
   // "Today" per the spot's OWN destination timezone (not the device's) — agrees with the live
@@ -1419,7 +1419,8 @@ function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore, nearbyHlScrol
 
   return (
     <>
-      <View style={[st.section, { marginTop: -10 }]}>
+      {/* Unvisited: tuck up under the slim cap. Visited (`tabbed`): sit below the full tab bar, which would otherwise clip the icons. */}
+      <View style={[st.section, { marginTop: tabbed ? 4 : -10 }]}>
         {/* Three at-a-glance facts, each icon on its own tinted circle: time needed and cost (traffic-light coloured) and where it is
             (purple) — the destination, or the country for a standalone spot. */}
         <View style={st.glanceCard}>
