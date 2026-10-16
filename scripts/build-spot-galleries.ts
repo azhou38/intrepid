@@ -22,6 +22,7 @@
 //      repeated. Fewer than 2 photos → no gallery (0).
 // Needs network access; paced, with backoff on 429.
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
+import { execSync } from 'node:child_process';
 import { resolve as resolvePath } from 'node:path';
 import jpeg from 'jpeg-js';
 import { SPOTS, spotPhotoTitle, spotCountryCode } from '../src/data/spots';
@@ -148,6 +149,14 @@ async function colourOk(p: Photo): Promise<boolean> {
   } catch { return true; }
 }
 
+// A non-Commons photo in the repo, linked from raw.githubusercontent.com pinned to the commit that added it.
+function localPhoto(l: { local: string; w: number; credit: any }): Photo {
+  const sha = execSync(`git log -1 --format=%h -- ${JSON.stringify(l.local)}`, { cwd: ROOT }).toString().trim();
+  if (!sha) throw new Error(`${l.local} is not committed yet — commit it, then rebuild`);
+  const url = `https://raw.githubusercontent.com/azhou38/intrepid/${sha}/${l.local}`;
+  return { file: l.local, w: l.w, h: 0, year: undefined, score: 0, t: null, o: url, thumb960: url, credit: l.credit };
+}
+
 async function main() {
   const spots = SPOTS.filter(s => (!dest || s.destinationId === dest) && (!only || s.id === only) && (!country || spotCountryCode(s) === country));
   if (!spots.length) { console.log('no spots matched'); return; }
@@ -165,7 +174,10 @@ async function main() {
     // overstate it: cap it at 4. A spot with no article can have its count set by hand in scripts/spot-gallery-counts.json.
     const viaRedirect = !!art && art.title.replace(/_/g, ' ').toLowerCase() !== title.replace(/_/g, ' ').toLowerCase();
     const want = read(COUNTS)?.[s.id] ?? Math.min(countFor(views), viaRedirect ? 4 : MAX_PHOTOS);
-    const picks: string[] | undefined = read(PICKS)?.[s.id];
+    // A pick is a Commons file name (a string), or a non-Commons photo: { "local": "assets/photos/x.jpg", "w": 1920, "credit": {...} }
+    // — a file in the repo, which is linked by the commit that added it (so the link survives later changes), and must carry its
+    // credit and licence. Non-Commons photos are used only when Commons has too few good ones (IMAGES.md).
+    const picks: (string | { local: string; w: number; credit: any })[] | undefined = read(PICKS)?.[s.id];
     if (candOut) {
       const cat = await commonsCategory(s.id, title, s.name);
       let photos: Photo[] = [];
@@ -180,9 +192,12 @@ async function main() {
       continue;
     }
     // Build from the picks, in the order given, limited by popularity and by what is still valid.
-    const valid = picks?.length ? (await photosFor(picks, new Set(), hero)) : [];
-    const order = new Map((picks ?? []).map((f, i) => [f, i]));
-    const photos = valid.sort((a, b) => (order.get(a.file) ?? 0) - (order.get(b.file) ?? 0));
+    const commonsPicks = (picks ?? []).filter((p): p is string => typeof p === 'string');
+    const local = (picks ?? []).filter((p): p is { local: string; w: number; credit: any } => typeof p !== 'string');
+    const valid = commonsPicks.length ? (await photosFor(commonsPicks, new Set(), hero)) : [];
+    const localPhotos = local.map(l => localPhoto(l));
+    const order = new Map((picks ?? []).map((p, i) => [typeof p === 'string' ? p : p.local, i]));
+    const photos = [...valid, ...localPhotos].sort((a, b) => (order.get(a.file) ?? 0) - (order.get(b.file) ?? 0));
     const chosen = photos.length >= 2 ? photos.slice(0, Math.min(want, MAX_PHOTOS, photos.length)) : [];
     console.log(`${s.id.padEnd(14)} ${s.name.slice(0, 38).padEnd(38)} views=${views ?? 'n/a'} want=${want} picks=${picks?.length ?? 0} valid=${photos.length} -> ${chosen.length} photo(s)`);
     if (chosen.length) galleries[s.id] = chosen.map(p => ({ f: p.file, t: p.t, o: p.o, ow: p.w, credit: p.credit }));
