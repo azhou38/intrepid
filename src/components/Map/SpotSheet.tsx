@@ -1506,6 +1506,8 @@ function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore, nearbyHlScrol
         );
       })()}
 
+      <SpotGallery spotId={spot.id} />
+
       {!!spot.ticketUrl && (
         <View style={st.section}>
           {/* The whole card opens the site: favicon, a small gray "OFFICIAL SITE" label over the spot's name, and a round
@@ -1524,8 +1526,6 @@ function SpotAbout({ spot, nearbySpots, onSelectNearby, onExplore, nearbyHlScrol
           </Pressable>
         </View>
       )}
-
-      <SpotGallery spotId={spot.id} />
 
       {/* Nearby — same design as the destination sheet's "Popular Spots" row (square SpotCards,
           same width, same horizontal scroll): the destination's other spots, one tap away.
