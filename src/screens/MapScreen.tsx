@@ -1670,8 +1670,10 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   const closeViewScale = planZoomTarget !== null ? Math.pow(2, Math.max(0, camZoom - handoffZoom)) : 1;
   // While such a close is under way, pins that leave fade out quickly (see FadePin) instead of lingering.
   closeFade.fast = planZoomTarget !== null;
-  // The bounds-derived span lags the same way, so it's ignored while looking ahead.
-  const planRegionLng = planZoomTarget !== null ? Infinity : region.longitudeDelta;
+  // The pin plan's spans come from the camera zoom alone. The bounds-derived span both lags and, on the globe, changes as
+  // the camera pans north or south at a fixed zoom, which made the photo/dot plan shift under a pan. Capped at the whole
+  // world for the zoom-0 start.
+  const planRegionLng = 360;
   const planLngDelta = useMemo(() => Math.min(
     planRegionLng,
     SCREEN_W_GLOBAL * 360 / (512 * Math.pow(2, planZoom)),
@@ -1688,10 +1690,12 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // destination dot/photo logic deliberately stays on planLngDelta's scale: its thresholds
   // were tuned against that scale and read well in practice (recalibrating them made dots
   // appear far too late — e.g. none at France's default view).
+  // From the camera zoom alone (capped at the whole world): the globe's bounds-derived span changes as the camera pans
+  // north or south at a fixed zoom, which made country pills (and the photo pins they block) come and go under a pan.
   const pillVisibleLngDelta = useMemo(() => Math.min(
-    region.longitudeDelta,
+    360,
     SCREEN_W_GLOBAL * 360 / (256 * Math.pow(2, camZoom)),
-  ), [region.longitudeDelta, camZoom]);
+  ), [camZoom]);
 
   // Pan-invariant: derived from longitudeDelta (see panInvariantLatDelta) so panning north/
   // south never flips the rank tier — which would otherwise reshuffle eligibleDests and the
@@ -1920,6 +1924,7 @@ const destItems = useMemo((): DestItem[] =>
   // STAMP_PX must exceed the photo pin diameter (37pt) so two photo pins never overlap —
   // also reused as the minimum spacing between any two promoted photo markers below.
   const STAMP_PX = 44;  // 20% smaller than the original 55, kept proportional to PIN_SIZE
+  const NATIVE_PIN_SPACING_PX = DEST_PIN_SIZE + 10;
 
   // Rects of the visible destination name labels, read by the map's onPress (written by destPinPlan below).
   const destLabelHitRef = useRef<{ pxPerDegLng: number; rects: { id: string; rect: { l: number; r: number; t: number; b: number } }[] }>({ pxPerDegLng: 1, rects: [] });
@@ -2024,9 +2029,14 @@ const destItems = useMemo((): DestItem[] =>
         // ever placed in the fixed priority order, the lower-priority one is the one that
         // stays a stamp. STAMP_PX (44) > photo diameter (37) so photos never overlap.
         let collides = false;
-        if (!NATIVE_DEST_PINS) for (const o of placed) {
+        // Native pins are spaced here too, on this pan-invariant projection, rather than left to Mapbox's own collision pass:
+        // that one runs in screen space, and on the globe the screen distance between two places changes as the camera pans,
+        // so which of two close pins kept its photo changed with a pan at an unchanged zoom. Wide enough apart for the pin
+        // images (DEST_PIN_SIZE plus their padding) that Mapbox has nothing left to resolve.
+        const minPx = NATIVE_DEST_PINS ? NATIVE_PIN_SPACING_PX : STAMP_PX;
+        for (const o of placed) {
           const dx = p.x - o.x, dy = p.y - o.y;
-          if (dx * dx + dy * dy < STAMP_PX * STAMP_PX) { collides = true; break; }
+          if (dx * dx + dy * dy < minPx * minPx) { collides = true; break; }
         }
         if (collides) continue;
       }
