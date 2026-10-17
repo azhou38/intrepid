@@ -2342,6 +2342,12 @@ const destItems = useMemo((): DestItem[] =>
   // that fails either test — or is revealed before its destination's own zoom, see beforeOwnZoom — becomes a dot, which sits under the pins and lives exactly as long as the pin would have. The
   // spots already holding a pin get a small head start so zooming doesn't swap pins and dots back and forth.
   const prevPinIdsRef = useRef<Set<string>>(new Set());
+  // The visible span the spot pin/dot plan works in: the close's target view while one is under way (planRegionLng is
+  // Infinity then, so only the target zoom counts), otherwise the live view.
+  const pinPlanLngDelta = useMemo(() => Math.min(
+    planRegionLng,
+    SCREEN_W_GLOBAL * 360 / (256 * Math.pow(2, handoffZoom)),
+  ), [planRegionLng, handoffZoom]);
   const { pinSpots, dotSpots } = useMemo(() => {
     const must = new Set<string>();
     if (selectedSpot) must.add(selectedSpot.id);
@@ -2351,10 +2357,11 @@ const destItems = useMemo((): DestItem[] =>
       (must.has(sp.id) ? -2_000_000 : 0) + (visitIndex.isSpotVisited(sp.id) ? -1_000_000 : 0)
       + (SPOT_IMPORTANCE.get(sp.id) ?? 0) * 1000 - (prev.has(sp.id) ? 500 : 0) + (SPOT_ORDER.get(sp.id) ?? 0);
     const sorted = [...visibleSpots].sort((x, y) => rank(x) - rank(y));
-    // Planned at the zoom the camera is heading to, not the one the last render saw: a close plans at its target view and a
-    // pinch-out at its predicted zoom (planZoom / pillPlanLngDelta), so pins that won't fit there turn into dots while the
-    // camera is still moving out, instead of piling up and only collapsing once it settles.
-    const pxPerDegLng = SCREEN_W_GLOBAL / pillPlanLngDelta;
+    // A close plans at the view it is flying to (handoffZoom holds that target), so pins that won't fit there turn into
+    // dots while the camera is still moving out instead of piling up and collapsing once it settles. A pinch plans at the
+    // zoom the camera is really at: the velocity prediction (planZoom) ran ahead of the fingers and turned pins into dots
+    // mid-gesture, only for them to come back on release.
+    const pxPerDegLng = SCREEN_W_GLOBAL / pinPlanLngDelta;
     type Box = { l: number; r: number; t: number; b: number };
     const overlaps = (a: Box, b: Box) => a.l < b.r && a.r > b.l && a.t < b.b && a.b > b.t;
     const taken: Box[] = [];
@@ -2376,13 +2383,13 @@ const destItems = useMemo((): DestItem[] =>
       // A spot revealed ahead of its destination's own default zoom (an outlying one, see SPOT_REVEAL_ZOOM_BY_ID) is on the
       // map while that destination's own pin still is, so it shows only as a dot until the destination hands over: the
       // destination leads, and the spot grows its photo only once the camera has reached the destination's view.
-      const beforeOwnZoom = !isPastDestDefaultZoom(spotParentKey(sp), planZoom);
+      const beforeOwnZoom = !isPastDestDefaultZoom(spotParentKey(sp), handoffZoom);
       if (!must.has(sp.id) && (beforeOwnZoom || pins.length >= MAX_SPOT_PINS || taken.some(t => overlaps(t, box)))) { dots.push(sp); continue; }
       pins.push(sp); taken.push(box);
     }
     prevPinIdsRef.current = new Set(pins.map(sp => sp.id));
     return { pinSpots: pins, dotSpots: dots };
-  }, [visibleSpots, selectedSpot, nearCtx, visitIndex, pillPlanLngDelta, destPinPlan, planZoom]);
+  }, [visibleSpots, selectedSpot, nearCtx, visitIndex, pinPlanLngDelta, destPinPlan, handoffZoom]);
   const stableDotSpots = useStableList(dotSpots, s => s.id);
   const spotDotsGeoJSON = useMemo((): GeoJSON.FeatureCollection<GeoJSON.Point> => ({
     type: 'FeatureCollection',
