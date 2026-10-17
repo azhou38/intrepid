@@ -1868,7 +1868,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Wellington's west-coast day trip, where the sun sets into the Tasman.",
     description: "The Kāpiti Coast runs from Paekākāriki in the south to Ōtaki, the northernmost point of the Wellington Region, between the Tasman Sea and the mountains. Its beach towns lie about 50–60 km north of Wellington and face Kāpiti Island, a 19.65 km² predator-free island that gave the district its name. Paraparaumu is the biggest town and commercial centre, and the Kapiti Line train from Wellington takes about an hour to reach it. Queen Elizabeth Park holds the last area of natural dunes on the coast.",
     whyVisit: ["Spend a day on Kāpiti Island, where takahē, kōkako and hihi live wild", "Cross two swing bridges on the Escarpment Track above the coast", "Walk the beaches and dunes that look across to the island"],
-    whyVisitPhotos: ["Takahe2.jpg", "Paekakariki Escarpment Track Swing Bridge (31034011486).jpg", "Kapiti Island (165463619).jpg"],
+    whyVisitPhotos: ["Takahe2.jpg", "ext-paekakariki-escarpment-track.jpg", "Kapiti Island (165463619).jpg"],
     highlights: ["Island birdlife", "Swing bridges", "Beaches and dunes"],
     goodToKnow: [
       { icon: "⛴️", title: "Book the island early", detail: "You can only land on Kāpiti Island with an authorised operator, from the Kapiti Boating Club at Paraparaumu Beach. Summer bookings need to be made well in advance, and bags are checked for pests before boarding." },
