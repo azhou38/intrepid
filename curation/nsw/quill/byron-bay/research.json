@@ -1,0 +1,97 @@
+{
+  "id": "byron-bay",
+  "name": "Byron Bay",
+  "country": "Australia", "countryCode": "AU", "continent": "Oceania", "timezone": "Australia/Sydney",
+  "what_and_where": {
+    "fact": "Beachside town in the far north-east corner of New South Wales (Bundjalung Country), 772 km north of Sydney and 165 km south of Brisbane. Cape Byron, the headland beside the town, is the easternmost point of mainland Australia. Population 6,330 (2021 census); the town draws around 2 million visitors a year (2018 figure). Traditional name Cavvanbah, 'meeting place'. Cook named the cape in 1770. Known for surf beaches, diving at Julian Rocks, whale watching, and a wellness/alternative scene.",
+    "sources": ["https://en.wikipedia.org/wiki/Byron_Bay", "https://en.wikivoyage.org/wiki/Byron_Bay", "https://www.visitnsw.com/destinations/north-coast/byron-bay-area/byron-bay"]
+  },
+  "coordinates": {
+    "latitude": -28.6431, "longitude": 153.615,
+    "source": "https://en.wikipedia.org/wiki/Byron_Bay (28.64306S 153.61500E, town centre by Main Beach). placement.json used -28.644744,153.621376 (Wikivoyage); either works, Wikipedia's is the town centre and is recommended.",
+    "farthest_placed_spots_from_this_centre_km": "Crystal Castle ~15.5, Mullumbimby ~15, Brunswick Heads ~14, Bangalow ~11 (computed from placement.json coordinates)"
+  },
+  "defaultZoomSpanKm": 40,
+  "defaultZoomSpanKm_note": "75% of 40 = 30 km, comfortably holding every placed spot (max ~16 km). placement.json proposes 40. Could be trimmed to 35 but 40 matches the proposal.",
+  "category": "city",
+  "category_note": "A town with its own accommodation base; cape and beaches are spots under it. placement.json proposes city.",
+  "rank": 2,
+  "rank_note": "placement.json proposes 2 (national highlight; 112,501 Wikipedia views, 3 counted sources). Judgement call: a stricter reading of COVERAGE.md could say 3, but Byron is one of Australia's best-known beach destinations. No source ranks it; this is editorial.",
+  "tagline_fact_candidates": [
+    "Cape Byron, beside the town, is the easternmost point of mainland Australia (Wikipedia, Wikivoyage, NPWS).",
+    "Famed for surfing beaches, scuba diving, whale watching and a laid-back lifestyle (Wikivoyage)."
+  ],
+  "whyVisit_candidates": [
+    {
+      "reason": "Walk to the lighthouse on Australia's most easterly point",
+      "photo_subject": "Cape Byron Lighthouse and the clifftop track (placement photos: 'Cape Byron Lighthouse (26742976849).jpg', 'ByronBayLighthouseWalk.jpg')",
+      "facts": [
+        "Cape Byron Lighthouse sits on the most easterly point of the Australian mainland, built at the turn of the 19th century, operated by resident keepers until 1989, now automated; a Maritime Museum is in the former keeper's office. Regular sightings of turtles, dolphins and humpback whales from the point.",
+        "Walgun Cape Byron walking track: 3.7 km loop, Grade 3, suggested 1-3 hours (NPWS says a good two hours), through rainforest, beach, grassland and clifftops to the lighthouse; whales in season; Wikivoyage: about 20 min from the town-end parking along the beach to the lighthouse."
+      ],
+      "sources": ["https://www.nationalparks.nsw.gov.au/things-to-do/historic-buildings-places/cape-byron-lighthouse", "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/walgun-cape-byron-walking-track", "https://en.wikivoyage.org/wiki/Byron_Bay"]
+    },
+    {
+      "reason": "Surf, swim and sunbathe on a string of beaches",
+      "photo_subject": "Main Beach with Cape Byron, or Wategos Beach (placement photos accepted for both)",
+      "facts": [
+        "Main Beach is patrolled all summer; Wategos, on the north side of the point, has a cult longboard crowd; The Pass is a long-board break at the southern end of Clarkes Beach (Clarkes is sheltered and good for kids); Tallow Beach is long, faces south and gets bigger surf. VisitNSW calls The Pass and The Wreck two of Australia's most famous surf breaks and lists lessons (Soul Surf School).",
+        "Pods of common dolphins are not uncommon among surfers at Wategos and The Pass (Wikivoyage)."
+      ],
+      "sources": ["https://en.wikivoyage.org/wiki/Byron_Bay", "https://www.visitnsw.com/destinations/north-coast/byron-bay-area/byron-bay"]
+    },
+    {
+      "reason": "Dive Julian Rocks or watch humpbacks pass the cape",
+      "photo_subject": "Julian Rocks underwater ('Into The Light (Julian Rocks).jpg') for the dive; a whale photo would need a separate Commons search (not checked here)",
+      "facts": [
+        "Julian Rocks is about 2.5 km offshore in Cape Byron Marine Park (Wikivoyage: five minutes by boat, depths 5-25 m, suitable for snorkelling); VisitNSW calls it a pilgrimage site among divers, tours via Sundive, Wild Byron, Out of the Blue. Temperate and tropical waters merge here (Wikipedia). It is the resting place of Nguthungulli in Bundjalung tradition (Wikipedia).",
+        "Humpback whales pass close to shore on the winter migration; VisitNSW: peak months July to September; Wikivoyage: September and October best for whale watching; Wild Byron runs daily cruises June to October."
+      ],
+      "sources": ["https://en.wikipedia.org/wiki/Byron_Bay", "https://en.wikivoyage.org/wiki/Byron_Bay", "https://www.visitnsw.com/destinations/north-coast/byron-bay-area/byron-bay", "https://byronbay.com/experiences/whale-watching-safari-with-wild-byron/"]
+    }
+  ],
+  "whyVisit_note": "The hinterland (Crystal Castle at Montecollum, Bangalow, Mullumbimby, Brunswick Heads) is a real draw (VisitNSW names Crystal Castle & Shambhala Gardens and Bangalow) but is better as description/highlight text than a fourth reason; the three above are distinct and photographable. If the owner prefers a hinterland reason in place of whales, Crystal Castle has an accepted placement photo.",
+  "highlights_candidates": ["Cape Byron Lighthouse", "Surf beaches", "Julian Rocks and whales"],
+  "goodToKnow_candidates": [
+    {
+      "tip": "Lighthouse parking is paid and capped: $10 per vehicle per hour at the lighthouse carpark, maximum 1 hour per vehicle per calendar day (even for annual pass holders); $5 per hour at The Pass, Bawaii and Cosy Corner. NPWS warns it is busy on weekends and parking can be limited. Walking up from town along the beach takes about 20 min (Wikivoyage), and the park is open all hours but can close for weather or fire danger.",
+      "sources": ["https://www.nationalparks.nsw.gov.au/things-to-do/historic-buildings-places/cape-byron-lighthouse", "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/walgun-cape-byron-walking-track", "https://en.wikivoyage.org/wiki/Byron_Bay"],
+      "note": "NPWS fees are as shown on the page fetched 2026; they change, say 'about' or cite no figure if unsure."
+    },
+    {
+      "tip": "Traffic into town is slow in school-holiday periods and summer on Ewingsdale Road; Wikivoyage suggests leaving the M1 at the Lennox Head exit (Ross Lane) and entering from the south. Trains no longer run to Byron (only a 2 km solar shuttle); the nearest airports are Ballina/Byron (about 30 min) and Gold Coast (about 1 hr).",
+      "sources": ["https://en.wikivoyage.org/wiki/Byron_Bay"]
+    },
+    {
+      "tip": "Late November to early December is Schoolies week, which Wikivoyage says may be a time to avoid; other crowd peaks are Easter (Bluesfest) and July (Splendour in the Grass, Wikivoyage; Wikipedia says Splendour is separate from the town). Swimming: Main Beach is patrolled all summer, other beaches (Wategos) only over the Christmas school holidays (Wikivoyage), so swim at Main Beach outside that. Winter is cool for swimming (daytime ~20 C).",
+      "sources": ["https://en.wikivoyage.org/wiki/Byron_Bay", "https://en.wikipedia.org/wiki/Byron_Bay"]
+    }
+  ],
+  "goodToKnow_unsourced_candidates_NOT_to_use": "'Accommodation books out in school holidays' is plausible but no fetched source states it; do not use without a source. The Cape Byron Lighthouse Cafe is closed until further notice from 31 May 2026 (NPWS) so do not recommend it.",
+  "bestMonths": [4, 5, 9, 10, 11],
+  "bestMonths_note": "Editorial inference from sourced data, no source states a best-months list. Climate (Wikipedia, Cape Byron AWS): September is the driest month (47 mm), Aug 75 mm, Oct-Nov ~95 mm; summer Jan-Mar is hot (daily max ~27-28 C) and wetter (~165 mm Jan/Feb); April has the highest rainfall (183.5 mm) so Apr-May is the weaker half of this set (consider [5, 9, 10, 11] or [9, 10, 11]). Whales: peak Jul-Sep (VisitNSW), best Sep-Oct (Wikivoyage). Winter max 19-20 C (cool for swimming).",
+  "bestTimeBlurb_source_facts": [
+    "September to November is the driest, mildest stretch and overlaps whale season (VisitNSW peak July-September; Wikivoyage best Sept-Oct) before the summer heat and crowds (Wikipedia climate; Wikivoyage on school-holiday traffic).",
+    "Summer evenings can be wet and daily averages ~27 C (Wikipedia). Winters are mild, daily max ~19 C (Wikipedia)."
+  ],
+  "bestTimeBlurb_sources": ["https://en.wikipedia.org/wiki/Byron_Bay", "https://www.visitnsw.com/destinations/north-coast/byron-bay-area/byron-bay", "https://en.wikivoyage.org/wiki/Byron_Bay"],
+  "seasonalTags": [
+    {
+      "tag": "Whale migration",
+      "months": [6, 7, 8, 9, 10, 11],
+      "peak": [7, 8, 9],
+      "note": "Humpbacks pass the cape on the winter migration; VisitNSW: peak July-September; Wild Byron cruises run June-October; Wikivoyage: best Sept-Oct. June-November is the wider window the caller suggested; the fetched sources support June-October for cruises and July-September peak. Use explicit months (not hemisphere-relative) if the tag system flips."
+    }
+  ],
+  "seasonalTags_other": "Schoolies (late Nov-early Dec) and Bluesfest (Easter) are events/crowd patterns per Wikivoyage/Wikipedia, not recommended as tags; mention in tips only.",
+  "ticketUrl_note": "Not applicable to destinations. Official visitor site candidates for tips only (not checked as ticketUrl): https://www.visitnsw.com/destinations/north-coast/byron-bay-area/byron-bay (loaded, title 'Byron Bay, North Coast ...').",
+  "unverified": [
+    "bestMonths: editorial; no source lists best months (see note).",
+    "Accommodation booking-out / peak school-holiday pricing: no source fetched.",
+    "NPWS parking fees: from the page as fetched, may change.",
+    "Whale photo for the third reason: not searched here; the Julian Rocks dive photo already accepted in placement.json.",
+    "Wikivoyage's 'population about 30,000' and '1.7 million visitors' conflict with Wikipedia's 6,330 town / 2 million visitors (2018); use Wikipedia's 6,330 (2021 census) if a figure is used.",
+    "Crystal Castle price and hinterland details are not re-verified here (placement.json notes hours from the operator, price omitted).",
+    "byron-bay-15 (The Farm) held for owner: no accepted photo, so not counted in the description."
+  ]
+}

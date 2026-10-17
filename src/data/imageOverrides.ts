@@ -441,4 +441,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Breadknife and Grand High Tops Walk": "The Breadknife, Warrumbungle National Park.jpg",
   "Siding Spring Observatory": "40in-SSO.jpg",
   "Coonabarabran": "CoonabarabranWarMemorial.JPG",
+  "Border Ranges National Park": "Border Ranges National Park.jpg",
+  "Yuraygir National Park": "Angourie Back Beach.jpg",
+  "Grafton, New South Wales": "Grafton Clarence River-1 (30437650822).jpg",
 };
