@@ -4308,22 +4308,14 @@ const destItems = useMemo((): DestItem[] =>
       planDest?.id === id ? -1 : (book.since.get(id) ?? book.seq) * 100_000 + (destPinPlan.priority.get(id) ?? 9999);
     const specs = destPinSpecsRef.current;
     let added = false;
-    // Every destination's pin image is registered up front, not when it first gets a photo. Registering takes a moment
-    // (the image is drawn from a view), and a pin added to the layer before its image existed sat there invisible, then
-    // popped in at full opacity when the image landed — no fade — the first time each destination got a photo.
-    const imgFor = (dest: Destination) => {
+    const features: GeoJSON.Feature<GeoJSON.Point>[] = [];
+    for (const dest of promotedDests) {
       const visited = visitIndex.isDestVisited(dest.id);
       const badge = visited ? (visitedSpotCountByDest[dest.id] ?? 0) : 0;
       // No separate selected look: a new image name would remount the image and flash the placeholder disc.
       const selected = false;
       const img = destPinImageName(dest.id, visited, badge, selected);
       if (!specs.has(img)) { specs.set(img, { name: img, dest, visited, badge, selected }); added = true; }
-      return img;
-    };
-    for (const dest of DESTINATIONS) imgFor(dest);
-    const features: GeoJSON.Feature<GeoJSON.Point>[] = [];
-    for (const dest of promotedDests) {
-      const img = imgFor(dest);
       features.push({
         type: 'Feature',
         id: dest.id,
