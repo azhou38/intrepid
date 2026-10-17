@@ -1866,6 +1866,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: '{months} are the best for wine tasting and for the south coast drive.',
   },
   {
+    id: 'kapiti-coast', name: "Kāpiti Coast", country: 'New Zealand', countryCode: 'NZ', timezone: 'Pacific/Auckland', defaultZoomSpanKm: 40,
+    continent: 'Oceania', coordinates: { latitude: -40.89, longitude: 175.0 },
+    category: 'beach', icon: '🏝️', rank: 4,
+    tagline: "Wellington's west-coast day trip, where the sun sets into the Tasman.",
+    description: "The Kāpiti Coast runs from Paekākāriki in the south to Ōtaki, the northernmost point of the Wellington Region, between the Tasman Sea and the mountains. Its beach towns lie about 50–60 km north of Wellington and face Kāpiti Island, a 19.65 km² predator-free island that gave the district its name. Paraparaumu is the biggest town and commercial centre, and the Kapiti Line train from Wellington takes about an hour to reach it. Queen Elizabeth Park holds the last area of natural dunes on the coast.",
+    whyVisit: ["Spend a day on Kāpiti Island, where takahē, kōkako and hihi live wild", "Cross two swing bridges on the Escarpment Track above the coast", "Walk the beaches and dunes that look across to the island"],
+    whyVisitPhotos: ["Takahe2.jpg", "Paekakariki Escarpment Track Swing Bridge (31034011486).jpg", "Kapiti Island (165463619).jpg"],
+    highlights: ["Island birdlife", "Swing bridges", "Beaches and dunes"],
+    goodToKnow: [
+      { icon: "⛴️", title: "Book the island early", detail: "You can only land on Kāpiti Island with an authorised operator, from the Kapiti Boating Club at Paraparaumu Beach. Summer bookings need to be made well in advance, and bags are checked for pests before boarding." },
+      { icon: "🌧️", title: "Sailings can be cancelled", detail: "Island trips depend on conditions, and the ferry skipper can cancel a sailing, so confirm with the operator on the morning." },
+      { icon: "🚆", title: "Walk the track one way", detail: "The Escarpment Track has about 1,200 steep steps and narrow ridgelines, and people with vertigo are warned off it. Walk it one way and take the train back, as there are stations at both ends." },
+    ],
+    bestMonths: [12, 1, 2, 3],
+    bestTimeBlurb: "{months} are the warmest months for swimming and long beach walks, and winter is noticeably cooler.",
+  },
+  {
     id: 'wellington', name: 'Wellington', country: 'New Zealand', countryCode: 'NZ', timezone: 'Pacific/Auckland', defaultZoomSpanKm: 30,
     continent: 'Oceania', coordinates: { latitude: -41.2865, longitude: 174.7762 },
     category: 'city', icon: '🚋', rank: 1,

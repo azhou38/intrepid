@@ -1,0 +1,187 @@
+{
+  "destination": "kapiti-coast",
+  "stage": "Pipeline C step 4: final copy (fact-check fixes and cuts applied; no photos, no data-file edits)",
+  "id": "kapiti-coast",
+  "name": "Kāpiti Coast",
+  "country": "New Zealand",
+  "countryCode": "NZ",
+  "continent": "Oceania",
+  "timezone": "Pacific/Auckland",
+  "category": "beach",
+  "icon": "🏝️",
+  "rank": 4,
+  "coordinates": { "latitude": -40.89, "longitude": 175.0 },
+  "defaultZoomSpanKm": 40,
+  "tagline": "Wellington's west-coast day trip, where the sun sets into the Tasman.",
+  "description": "The Kāpiti Coast runs from Paekākāriki in the south to Ōtaki, the northernmost point of the Wellington Region, between the Tasman Sea and the mountains. Its beach towns lie about 50–60 km north of Wellington and face Kāpiti Island, a 19.65 km² predator-free island that gave the district its name. Paraparaumu is the biggest town and commercial centre, and the Kapiti Line train from Wellington takes about an hour to reach it. Queen Elizabeth Park holds the last area of natural dunes on the coast.",
+  "whyVisit": [
+    "Spend a day on Kāpiti Island, where takahē, kōkako and hihi live wild",
+    "Cross two swing bridges on the Escarpment Track above the coast",
+    "Walk the beaches and dunes that look across to the island"
+  ],
+  "highlights": ["Island birdlife", "Swing bridges", "Beaches and dunes"],
+  "goodToKnow": [
+    {
+      "icon": "⛴️",
+      "title": "Book the island early",
+      "detail": "You can only land on Kāpiti Island with an authorised operator, from the Kapiti Boating Club at Paraparaumu Beach. Summer bookings need to be made well in advance, and bags are checked for pests before boarding."
+    },
+    {
+      "icon": "🌧️",
+      "title": "Sailings can be cancelled",
+      "detail": "Island trips depend on conditions, and the ferry skipper can cancel a sailing, so confirm with the operator on the morning."
+    },
+    {
+      "icon": "🚆",
+      "title": "Walk the track one way",
+      "detail": "The Escarpment Track has about 1,200 steep steps and narrow ridgelines, and people with vertigo are warned off it. Walk it one way and take the train back, as there are stations at both ends."
+    }
+  ],
+  "bestMonths": [12, 1, 2, 3],
+  "bestTimeBlurb": "{months} are the warmest months for swimming and long beach walks, and winter is noticeably cooler.",
+  "seasonalTags": null,
+  "notes": {
+    "choices": "Tagline = tagline[2] corrected; description = description[0] corrected; whyVisit 1 = variant B[0], 2 = rewritten from A[1]/B[1] to the swing bridges only (no views claim), 3 = A[2] reworded to beaches and dunes (dunes: Queen Elizabeth Park, Wikipedia) without the sunset clause that the tagline already uses; tips = variant A with all corrections; blurb = bestTimeBlurb[1] corrected.",
+    "dropped_for_repetition": "Train-time tip (description already gives 'about an hour'), park-gate tip, Boulder Bank closure tip and Tramway Museum tip (kept out of the three; the museum is in the Queen Elizabeth Park bio).",
+    "not_compared": "Neighbouring Wellington/Wairarapa entries were compared in destinations.ts (titles, tips, blurb and phrasing all differ); spots.ts bios were not read line by line.",
+    "unverified": "Kapiti Line time (about an hour only), Marine Gardens facts (2017 Wikivoyage), all coordinates are source points not entrance-verified, prices and hours as of 2026-10-17 from operator pages, Escarpment Track has no verified ticketUrl, bestMonths medium confidence (Wikipedia island climate)."
+  },
+  "spots": [
+    {
+      "id": "kapiti-coast-1",
+      "name": "Kāpiti Island",
+      "wiki": "Kapiti Island",
+      "category": "nature",
+      "bio": "A predator-free island reserve off Paraparaumu Beach, reached only by licensed boat, where kākā, hihi and takahē live wild and a track climbs to the 521 m summit.",
+      "hours": "Daytime tours only; operator day trips depart from 8:00 AM, weather permitting",
+      "visitHoursMin": 5,
+      "visitHoursMax": 7,
+      "currency": "NZD",
+      "costMin": 139,
+      "costMax": 169,
+      "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/kapiti-island-nature-reserve/",
+      "coordinates": { "latitude": -40.855, "longitude": 174.915 },
+      "notes": "Operator adult 'from' prices: Waiorua half-day 139, Rangatira day trip 169, including ferry, DOC permit and talk. Coordinates are the island centroid (in water, correct for an island); audit."
+    },
+    {
+      "id": "kapiti-coast-2",
+      "name": "Paekākāriki",
+      "category": "landmark",
+      "bio": "A beachfront village of about 1,700 people at the south end of the coast, with a surf beach, a railway station museum and the foot of the Escarpment Track.",
+      "hours": "Open 24 hours",
+      "visitHoursMin": 1,
+      "visitHoursMax": 3,
+      "free": true,
+      "ticketUrl": null,
+      "coordinates": { "latitude": -40.983, "longitude": 174.954 }
+    },
+    {
+      "id": "kapiti-coast-3",
+      "name": "Raumati Beach",
+      "category": "beach",
+      "bio": "A beachside village with views across to Kāpiti Island, good for surfcasting and swimming, with Marine Gardens holding a miniature railway and a paddling pool and playground.",
+      "hours": "Open 24 hours",
+      "visitHoursMin": 1,
+      "visitHoursMax": 3,
+      "free": true,
+      "ticketUrl": null,
+      "coordinates": { "latitude": -40.91872, "longitude": 174.98114 }
+    },
+    {
+      "id": "kapiti-coast-4",
+      "name": "Southward Car Museum",
+      "category": "museum",
+      "bio": "A purpose-built hall of more than 400 vehicles and exhibits assembled by Sir Len Southward, with a 474-seat theatre housing a 1929 Wurlitzer organ.",
+      "hours": "9:00 AM – 4:30 PM daily (last entry 4:00 PM); closed Good Friday and Christmas Day",
+      "visitHoursMin": 1.5,
+      "visitHoursMax": 3,
+      "currency": "NZD",
+      "costMin": 23,
+      "costMax": 23,
+      "ticketUrl": "https://www.southwardcarmuseum.co.nz/",
+      "coordinates": { "latitude": -40.89404, "longitude": 175.02922 },
+      "notes": "Adult 23 NZD (16+)."
+    },
+    {
+      "id": "kapiti-coast-5",
+      "name": "Paraparaumu Beach",
+      "category": "beach",
+      "bio": "A sandy beach opposite Kāpiti Island, sheltered by it and safe for children, with a playground and skate park, and the departure point for island boats.",
+      "hours": "Open 24 hours",
+      "visitHoursMin": 1,
+      "visitHoursMax": 3,
+      "free": true,
+      "ticketUrl": null,
+      "coordinates": { "latitude": -40.89378, "longitude": 174.97944 },
+      "notes": "Wikivoyage beach point is -40.8861,174.9815 (about 900 m north); audit before shipping."
+    },
+    {
+      "id": "kapiti-coast-6",
+      "name": "Paekākāriki Escarpment Track",
+      "wiki": "Escarpment Track",
+      "category": "hike",
+      "bio": "An intermediate section of Te Araroa of about 10 km between Paekākāriki and Pukerua Bay, climbing to about 220 m with about 1,200 steps, two swing bridges and views over the coast to Kāpiti Island.",
+      "hours": "Open 24 hours (daylight advised)",
+      "visitHoursMin": 3,
+      "visitHoursMax": 4,
+      "free": true,
+      "ticketUrl": null,
+      "coordinates": { "latitude": -40.9872, "longitude": 174.9542 },
+      "notes": "No steward page verified, so ticketUrl is omitted. Coordinates are the Paekākāriki end; audit."
+    },
+    {
+      "id": "kapiti-coast-7",
+      "name": "Ōtaki Beach",
+      "category": "beach",
+      "bio": "A beach for walks and fishing at the north end of the coast, 4 km from Ōtaki town, with the Tararua Ranges behind and a cairn marking two 1878 shipwrecks.",
+      "hours": "Open 24 hours",
+      "visitHoursMin": 1,
+      "visitHoursMax": 2,
+      "free": true,
+      "ticketUrl": null,
+      "coordinates": { "latitude": -40.743, "longitude": 175.119 }
+    },
+    {
+      "id": "kapiti-coast-8",
+      "name": "Queen Elizabeth Park",
+      "wiki": "Queen Elizabeth Park, Kāpiti Coast",
+      "category": "nature",
+      "bio": "A regional park between Paekākāriki and Raumati South with the coast's last natural dunes, restored wetlands, the only kahikatea forest remnant on the coast and the Wellington Tramway Museum.",
+      "hours": "Open to foot traffic always; vehicle gates 6:00 AM – 6:00 PM (1 Apr–30 Sep) and 6:00 AM – 9:00 PM (1 Oct–31 Mar)",
+      "visitHoursMin": 2,
+      "visitHoursMax": 4,
+      "free": true,
+      "ticketUrl": "https://www.gw.govt.nz/parks/queen-elizabeth-park/",
+      "coordinates": { "latitude": -40.96995, "longitude": 174.97857 },
+      "notes": "Greater Wellington (the manager) gate hours used; Kapiti Coast Council page differs. Tramway Museum runs trams Saturdays and Sundays from 11am, last tram to the beach 4pm (https://www.wellingtontrams.org.nz/)."
+    },
+    {
+      "id": "kapiti-coast-9",
+      "name": "Ngā Manu Nature Reserve",
+      "category": "nature",
+      "bio": "A 14-hectare bird reserve in Waikanae with aviaries, a nocturnal house with kiwi and tuatara, eel feeding and a bush walk through the largest remnant of lowland swamp forest on the coast.",
+      "hours": "10:00 AM – 5:00 PM daily (closed Christmas Day)",
+      "visitHoursMin": 1.5,
+      "visitHoursMax": 2.5,
+      "currency": "NZD",
+      "costMin": 17,
+      "costMax": 17,
+      "ticketUrl": "https://ngamanu.org.nz/",
+      "coordinates": { "latitude": -40.861, "longitude": 175.0605 },
+      "notes": "Adult 17 NZD."
+    },
+    {
+      "id": "kapiti-coast-11",
+      "name": "Waikanae Beach",
+      "category": "beach",
+      "bio": "A 2.4 km beach at the Waikanae River mouth, beside an estuary scientific reserve with more than 60 bird species.",
+      "hours": "Open 24 hours",
+      "visitHoursMin": 1,
+      "visitHoursMax": 2,
+      "free": true,
+      "ticketUrl": null,
+      "coordinates": { "latitude": -40.8633, "longitude": 175.0202 },
+      "notes": "Id kapiti-coast-11 kept; kapiti-coast-10 (Staglands, excluded) is never reused."
+    }
+  ]
+}

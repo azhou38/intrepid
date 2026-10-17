@@ -167,6 +167,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Palmerston North": "A splash of colour... (50819840311).jpg",
   "Wairarapa": "Martinborough from Rapaki.jpg",
   "Wellington": "Wellington - Te Whanganui-a-Tara, Part II - Wellington9239.jpg",
+  "Kāpiti Coast": "Kapiti Island from the Track.jpg",
   "Chatham Islands": "Waikato Point. Cliffs rise to about 30 metres on the west coast of the lagoon.jpg",
   // ── New Zealand — North Island spots (default Wikipedia lead image was wrong or missing) ──
   "Sky Tower": "Auckland Sky Tower in Christmas colours.jpg",
@@ -329,4 +330,15 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Remutaka Forest Park": "View_up_Catchpool_Valley.jpg",
   "Kaitoke Regional Park": "Hutt_River_from_flume_bridge,_Kaitoke.jpg",
   "Southern Crossing": "Southern_Crossing,_Tararuas,_New_Zealand_(11).JPG",
+  // ── Kāpiti Coast spots ──
+  "Kapiti Island": "Kapiti_Island_(51331562058)_(cropped).jpg",
+  "Paekākāriki": "Paekakariki.jpg",
+  "Raumati Beach": "Raumati.jpg",
+  "Southward Car Museum": "Southward_Car_Museum_main_hall_2021_01.jpg",
+  "Paraparaumu Beach": "Paraparaumu_Beach_165845.jpg",
+  "Escarpment Track": "View_from_Escarpment_track_towards_Kapiti.jpg",
+  "Ōtaki Beach": "Otaki_Beach.jpg",
+  "Queen Elizabeth Park, Kāpiti Coast": "Queen_Elizabeth_Park,_New_Zealand.jpg",
+  "Ngā Manu Nature Reserve": "Nga_Manu_lawn_area_with_lake.jpg",
+  "Waikanae Beach": "Kapiti_from_Waimeha_Domain,_Waikanae_on_7_July_2024.jpg",
 };
