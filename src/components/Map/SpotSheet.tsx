@@ -1410,7 +1410,9 @@ const GLANCE_PLACE = { bg: '#EDE9FE', fg: '#7C3AED' };
 // ── About panel (shared between visited/non-visited) ──────────────────────────
 function SpotAbout({ spot, tabbed, nearbySpots, onSelectNearby, onExplore, nearbyHlScrollRef }: { spot: Spot; tabbed?: boolean; nearbySpots: Spot[]; onSelectNearby: (spot: Spot) => void; onExplore?: () => void; nearbyHlScrollRef?: React.RefObject<GHScrollView | null> }) {
   const [hoursOpen, setHoursOpen] = useState(false);
-  const [faviconFailed, setFaviconFailed] = useState(false);
+  // The favicon URL that failed to load (not a bare flag): this panel is reused as the spot changes, so a flag set by one spot's
+  // missing favicon used to stick and show the globe for every spot opened after it.
+  const [failedFavicon, setFailedFavicon] = useState<string | null>(null);
   // "Today" per the spot's OWN destination timezone (not the device's) — agrees with the live
   // status text below, which is also computed in that timezone. See getSpotOpenStatus.
   const today = zonedNowForSpot(spot).getDay();
@@ -1542,8 +1544,8 @@ function SpotAbout({ spot, tabbed, nearbySpots, onSelectNearby, onExplore, nearb
         <View style={st.section}>
           <View style={st.linksCard}>
             <Pressable style={st.linksRow} onPress={() => Linking.openURL(spot.ticketUrl!)}>
-              {ticketFaviconUri && !faviconFailed
-                ? <Image source={{ uri: ticketFaviconUri }} style={st.siteFavicon} onError={() => setFaviconFailed(true)} />
+              {ticketFaviconUri && failedFavicon !== ticketFaviconUri
+                ? <Image source={{ uri: ticketFaviconUri }} style={st.siteFavicon} onError={() => setFailedFavicon(ticketFaviconUri)} />
                 : <View style={st.siteFavicon}><Globe size={18} color="#2563EB" /></View>}
               <View style={st.siteText}>
                 <Text style={st.siteEyebrow}>OFFICIAL SITE</Text>
