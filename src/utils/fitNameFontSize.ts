@@ -18,3 +18,15 @@ export function fitNameFontSize(name: string, max: number, min: number, maxWidth
   }
   return min;
 }
+
+// A long name would shrink to an unreadable size to fit two lines, so it takes more lines instead — but as few as it can,
+// and never so many that it swallows a small card. Two lines while the font stays at `comfort` or larger; else three lines
+// while that keeps it at `comfort - 2` or larger; else four lines, with the font held to `comfort` (at four lines a name
+// could otherwise grow large enough to fill the card). Never an ellipsis and never a word broken across lines.
+export function fitNameSize(name: string, max: number, min: number, maxWidth: number, comfort: number, glyphEm = 0.58): number {
+  const two = fitNameFontSize(name, max, min, maxWidth, 2, glyphEm);
+  if (two >= comfort) return two;
+  const three = fitNameFontSize(name, max, min, maxWidth, 3, glyphEm);
+  if (three >= comfort - 2) return three;
+  return Math.min(comfort, fitNameFontSize(name, max, min, maxWidth, 4, glyphEm));
+}
