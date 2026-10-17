@@ -1,0 +1,217 @@
+{
+  "id": "byron-bay",
+  "current": "New destination: no current text.",
+  "sources_key": {
+    "WP": "https://en.wikipedia.org/wiki/Byron_Bay",
+    "WV": "https://en.wikivoyage.org/wiki/Byron_Bay",
+    "VNSW": "https://www.visitnsw.com/destinations/north-coast/byron-bay-area/byron-bay",
+    "NPWS-L": "https://www.nationalparks.nsw.gov.au/things-to-do/historic-buildings-places/cape-byron-lighthouse",
+    "NPWS-W": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/walgun-cape-byron-walking-track",
+    "WB": "https://byronbay.com/experiences/whale-watching-safari-with-wild-byron/"
+  },
+  "tagline": {
+    "variants": [
+      {
+        "text": "A surf, dive and whale-watching town at the edge of Cape Byron, with a laid-back lifestyle to match.",
+        "claims": "surfing, scuba diving, whale watching, laid-back lifestyle: WV (tagline_fact_candidates)"
+      },
+      {
+        "text": "A beachside town beside the easternmost point of mainland Australia.",
+        "claims": "WP, WV, NPWS"
+      },
+      {
+        "text": "Surf beaches, a reef reached by dive boat and a lighthouse walk, beside Cape Byron.",
+        "claims": "beaches/lighthouse walk: WV, NPWS-W; Julian Rocks by dive boat: WV, VNSW"
+      }
+    ]
+  },
+  "description": {
+    "variants": [
+      {
+        "text": "Byron Bay is a beachside town of 6,330 people (2021 census) in the far north-east corner of New South Wales, 772 km north of Sydney and 165 km south of Brisbane. Cape Byron, the headland beside it, is the easternmost point of mainland Australia. People come for the surf beaches, diving at Julian Rocks, whale watching and a wellness and alternative scene, around 2 million of them a year (2018 figure). The traditional name for the place is Cavvanbah, 'meeting place'.",
+        "claims": "population, distances, easternmost, visitor figure, attractions, Cavvanbah: WP, WV, VNSW (what_and_where.fact)"
+      },
+      {
+        "text": "Byron Bay sits in Bundjalung Country, where Cook named the cape in 1770 and the traditional name Cavvanbah means 'meeting place'. Today it is a town of 6,330 people (2021 census) that draws around 2 million visitors a year (2018 figure), 772 km north of Sydney and 165 km south of Brisbane. Surf beaches and reef diving at Julian Rocks sit alongside a wellness and alternative scene. The hinterland has its own stops, among them Crystal Castle and Shambhala Gardens and the village of Bangalow.",
+        "claims": "Bundjalung Country, Cook 1770, Cavvanbah, figures, distances: WP/WV (what_and_where.fact); hinterland Crystal Castle and Bangalow: VNSW (whyVisit_note)"
+      },
+      {
+        "text": "The town of Byron Bay (6,330 people at the 2021 census) lies in the far north-east of New South Wales, 165 km south of Brisbane, with Cape Byron and its lighthouse on the headland beside it. Surfers, divers and whale watchers share the coast, and Julian Rocks, about 2.5 km offshore, is a marine park dive site where temperate and tropical waters merge. Around 2 million people visit each year (2018 figure). Inland, the hills behind the town hold Mullumbimby, Bangalow and Crystal Castle.",
+        "claims": "population/distance/figure: WP, WV; Julian Rocks 2.5 km, merge of waters: WP, WV; hinterland names: VNSW + placement.json"
+      }
+    ]
+  },
+  "whyVisit": {
+    "note": "Three reasons each, strongest first. Photo status: reasons 1 and 2 have accepted placement photos (Cape Byron Lighthouse / ByronBayLighthouseWalk; Main Beach and Cape Byron or Wategos). Reason 3 'dive' has an accepted photo ('Into The Light (Julian Rocks).jpg'). Any whale reason has NO photo searched yet: do not ship it until a real whale/cape photo is found. The hinterland variant (set C) has an accepted placement photo for Crystal Castle only.",
+    "variants": [
+      {
+        "label": "A (dive reason, photo available)",
+        "reasons": [
+          {
+            "text": "Walk to the lighthouse on Australia's most easterly point",
+            "source": "NPWS-L, NPWS-W, WV: lighthouse on the most easterly point of the mainland; 3.7 km Walgun Cape Byron walking track loop through rainforest, beach, grassland and clifftops"
+          },
+          {
+            "text": "Surf, swim and sunbathe on a string of beaches",
+            "source": "WV, VNSW: Main Beach, Wategos, Clarkes Beach with The Pass, Tallow Beach"
+          },
+          {
+            "text": "Dive the reef at Julian Rocks",
+            "source": "WV, VNSW, WP: about 2.5 km offshore in Cape Byron Marine Park, depths 5-25 m, tours by Sundive, Wild Byron, Out of the Blue"
+          }
+        ],
+        "highlights": ["Cape Byron Lighthouse", "Surf beaches", "Julian Rocks diving"]
+      },
+      {
+        "label": "B (whales, ONLY if a whale photo is found)",
+        "reasons": [
+          {
+            "text": "Walk the clifftops to the lighthouse on Australia's most easterly point",
+            "source": "NPWS-L, NPWS-W, WV"
+          },
+          {
+            "text": "Surf, swim and sunbathe on a string of beaches",
+            "source": "WV, VNSW"
+          },
+          {
+            "text": "Watch humpbacks pass the cape on their winter migration",
+            "source": "VNSW: humpbacks pass close to shore, peak July to September; WV: September and October best; WB: Wild Byron cruises run June to October; NPWS-L: regular sightings from the point"
+          }
+        ],
+        "highlights": ["Cape Byron walk", "Surf beaches", "Humpback whale watching"]
+      },
+      {
+        "label": "C (hinterland third reason; Crystal Castle photo accepted)",
+        "reasons": [
+          {
+            "text": "Walk to the lighthouse on Australia's most easterly point",
+            "source": "NPWS-L, NPWS-W, WV"
+          },
+          {
+            "text": "Surf, swim and sunbathe on a string of beaches",
+            "source": "WV, VNSW"
+          },
+          {
+            "text": "Head inland to Crystal Castle and the hinterland villages",
+            "source": "VNSW names Crystal Castle and Shambhala Gardens and Bangalow (whyVisit_note); Brunswick Heads and Mullumbimby are placed spots (placement.json)"
+          }
+        ],
+        "highlights": ["Cape Byron Lighthouse", "Surf beaches", "Hinterland villages"]
+      }
+    ]
+  },
+  "goodToKnow": {
+    "variants": [
+      {
+        "label": "A (parking, getting there, swimming)",
+        "tips": [
+          {
+            "text": "Parking at the lighthouse is paid and capped at one hour per vehicle per day (about $10 an hour at the time of writing), so most people walk up from town along the beach, which takes about 20 minutes.",
+            "source": "NPWS-L, NPWS-W (fees as fetched 2026, may change); WV for the 20 min walk"
+          },
+          {
+            "text": "Ewingsdale Road into town is slow in school holidays and summer; Wikivoyage suggests leaving the M1 at the Lennox Head exit (Ross Lane) and coming in from the south. There is no train, and the nearest airports are Ballina/Byron (about 30 minutes) and Gold Coast (about an hour).",
+            "source": "WV"
+          },
+          {
+            "text": "Main Beach is patrolled all summer, but Wategos and other beaches only over the Christmas school holidays, so swim at Main Beach outside that. Winter days reach only about 20 C.",
+            "source": "WV (patrols); WP climate (winter max 19-20 C)"
+          }
+        ]
+      },
+      {
+        "label": "B (crowds, swimming, lighthouse access)",
+        "tips": [
+          {
+            "text": "Late November to early December is Schoolies week, which Wikivoyage suggests may be a time to avoid, and Easter brings the Bluesfest crowds.",
+            "source": "WV"
+          },
+          {
+            "text": "Main Beach is the one patrolled all summer; Wategos is patrolled only over the Christmas school holidays.",
+            "source": "WV"
+          },
+          {
+            "text": "The lighthouse carpark is limited at weekends and charges per hour with a one-hour daily maximum, so the 3.7 km Walgun walking track from town is the easier way up; the park can close for weather or fire danger.",
+            "source": "NPWS-L, NPWS-W (fee detail as fetched 2026)"
+          }
+        ]
+      }
+    ]
+  },
+  "bestMonths": {
+    "recommended": [9, 10, 11],
+    "alternative": [9, 10, 11, 5],
+    "note": "Editorial inference; no source lists best months. September is the driest month (47 mm), Oct-Nov about 95 mm (WP climate); May is the editor's lesser pick, April is the wettest month (183.5 mm), so April is dropped. Whales best Sept-Oct (WV), peak Jul-Sep (VNSW)."
+  },
+  "bestTimeBlurb": {
+    "variants": [
+      {
+        "text": "{months} is the driest and mildest stretch, with humpbacks still passing the cape and the summer heat and school-holiday traffic yet to arrive.",
+        "claims": "WP climate (Sept driest, 47 mm; summer max ~27-28 C); WV whales Sept-Oct, holiday traffic; VNSW whales"
+      },
+      {
+        "text": "Come in {months}: September is the driest month (47 mm), whale watching is at its best in September and October, and summer afternoons are still weeks away.",
+        "claims": "WP climate; WV (best Sept-Oct)"
+      },
+      {
+        "text": "Summer brings daily highs near 27 C, heavier rain and the busiest roads, so {months} gives drier beach days and whale season without them.",
+        "claims": "WP climate (Jan-Mar ~27-28 C, ~165 mm Jan/Feb); WV on traffic"
+      }
+    ]
+  },
+  "seasonalTags": {
+    "tags": [
+      {
+        "tag": "Whale migration",
+        "months": [6, 7, 8, 9, 10],
+        "note": "Use explicit months (southern-hemisphere pattern, do not rely on auto-flip). Wild Byron cruises run June to October (WB), VNSW peak July to September, WV best September and October. Research suggested a wider June-November window, but November is not backed by a fetched source; June-October is."
+      }
+    ]
+  },
+  "spotBios": {
+    "corrected": [
+      {
+        "id": "byron-bay-4",
+        "name": "Wategos Beach",
+        "placement_bio": "A sheltered beach behind the Cape Byron headland, known for its longboard surf breaks.",
+        "variants": [
+          "A beach on the north side of Cape Byron with a longboard following, where common dolphins are not uncommon among the surfers.",
+          "A beach on the north side of Cape Byron known for its longboard crowd, and for dolphin pods among the surfers."
+        ],
+        "why": "'Sheltered' is not in the research. Research: Wategos is on the north side of the point with a cult longboard crowd; pods of common dolphins are not uncommon among surfers. Source: WV."
+      },
+      {
+        "id": "byron-bay-5",
+        "name": "The Pass",
+        "placement_bio": "A surf break and surfers' lookout at the end of Clarkes Beach, below Cape Byron.",
+        "variants": [
+          "A long-board surf break at the southern end of Clarkes Beach, which VisitNSW names among Australia's most famous surf breaks.",
+          "A surf break at the southern end of Clarkes Beach, with lessons available in town."
+        ],
+        "why": "'Surfers' lookout' is not in the research; research puts it at the southern end of Clarkes Beach and VisitNSW calls The Pass and The Wreck two of Australia's most famous surf breaks. Sources: WV, VNSW. (Lessons: VNSW lists Soul Surf School.)"
+      }
+    ],
+    "untouched_supported_by_research": [
+      "byron-bay-1 Cape Byron Lighthouse (lawn, maritime museum in former keeper's office: NPWS-L; lighthouse bio fine)",
+      "byron-bay-2 Cape Byron Walk (3.7 km loop: NPWS-W)",
+      "byron-bay-3 Main Beach (patrolled all summer: WV)",
+      "byron-bay-6 Julian Rocks (about five minutes by boat: WV)",
+      "byron-bay-11 Tallow Beach (long, south-facing: WV; but 'birdwatching and whale watching' not in this research, from placement/NPWS)"
+    ],
+    "untouched_not_covered_by_research_so_not_checked": [
+      "byron-bay-7 Crystal Castle (research notes details not re-verified)",
+      "byron-bay-8 Brunswick Heads",
+      "byron-bay-9 Bangalow ('well-preserved nineteenth-century main street' is not in research.json)",
+      "byron-bay-10 Mullumbimby",
+      "byron-bay-12 Arakwal National Park",
+      "byron-bay-13 Broken Head Nature Reserve",
+      "byron-bay-14 Belongil Beach"
+    ],
+    "note": "byron-bay-15 (The Farm) is held for the owner with no accepted photo; not mentioned in any text above."
+  },
+  "excluded_per_instructions": [
+    "Cape Byron Lighthouse Cafe (closed since 31 May 2026): not mentioned",
+    "Accommodation books out in school holidays: unsourced, not used",
+    "Splendour in the Grass: Wikipedia says it is separate from the town, so not used"
+  ]
+}
