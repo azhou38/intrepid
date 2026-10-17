@@ -350,7 +350,9 @@ const SpotMarker = memo(function SpotMarker({ spot, isVisited, isSelected, exiti
     >
       {/* Spot pins only ever appear/disappear through the destination handoff (or the zoom
           threshold beside it), so they always take the gentler handoff fade. */}
-      <FadePin exiting={exiting} instant={instant} slow>
+      {/* A close that zooms out to a known view (closeFade.fast) clears them with the short close fade instead, so they're
+          gone before the wider view crowds them; read when `exiting` flips, which is what re-renders this memoized pin. */}
+      <FadePin exiting={exiting} instant={instant} slow={!closeFade.fast}>
         <Pressable disabled={exiting} onPress={() => onPress(spot)} hitSlop={6}>
           <View style={styles.spotMarkerRow}>
             <View style={styles.spotPinWrap}>
@@ -3157,7 +3159,11 @@ const destItems = useMemo((): DestItem[] =>
     fitSpotView(spot, 'easeTo', 280);
   }, [showBreadcrumb, fitSpotView, spotFocusId, dropCountryIfForeign]);
   // Stable for the memoized SpotMarker pins (a two-finger gesture landing on a pin isn't a tap).
-  const onSpotPinPress = useCallback((spot: Spot) => { if (pressBlocked()) return; handleSpotPress(spot); }, [pressBlocked, handleSpotPress]);
+  // Reads handleSpotPress through a ref: it changes with every selection, and passing it straight through re-rendered every
+  // spot pin on each open and close of a spot.
+  const handleSpotPressRef = useRef(handleSpotPress);
+  handleSpotPressRef.current = handleSpotPress;
+  const onSpotPinPress = useCallback((spot: Spot) => { if (pressBlocked()) return; handleSpotPressRef.current(spot); }, [pressBlocked]);
 
   // Fired as the user swipes the spot carousel. Follows the focused spot with the map
   // (pan + pin highlight) WITHOUT touching spotFocusId, so the carousel isn't reset.
