@@ -2435,7 +2435,9 @@ const destItems = useMemo((): DestItem[] =>
     if (all.length === 0) { prevSpotLabelPlanRef.current = plan; return plan; }
     const live = renderedSpots.filter(r => !r.exiting).map(r => r.item);
     const exitingIds = renderedSpots.filter(r => r.exiting).map(r => r.item.id);
-    const pxPerDegLng = SCREEN_W_GLOBAL / pillVisibleLngDelta;
+    // Same scale the pin/dot plan uses (pinPlanLngDelta), so during a close the names are placed for the view the pins
+    // are planned for, and don't re-place themselves once the camera settles.
+    const pxPerDegLng = SCREEN_W_GLOBAL / pinPlanLngDelta;
     type Rect = { l: number; r: number; t: number; b: number };
     const geo = new Map<string, { pin: Rect; cy: number; cx: number; half: number; w: number; h: number }>();
     for (const sp of all) {
@@ -2494,10 +2496,17 @@ const destItems = useMemo((): DestItem[] =>
         for (const blk of destBlocks) if (hits(rect, blk)) return false;
         return true;
       };
+      // A name stays on the side it is already on while that side is still clear, and only then tries the other: always
+      // trying left first made names flick between sides as small zoom changes cleared and blocked the left one.
+      const prevSide = prevSpotLabelPlanRef.current.get(sp.id);
+      const sides: ('left' | 'right')[] = prevSide === 'right' ? ['right', 'left'] : ['left', 'right'];
+      let placed = false;
+      for (const side of sides) {
+        const rect = labelRectFor(g, side);
+        if (clear(rect)) { plan.set(sp.id, side); placedLabels.push(rect); placed = true; break; }
+      }
+      if (placed) continue;
       const left = labelRectFor(g, 'left');
-      if (clear(left)) { plan.set(sp.id, 'left'); placedLabels.push(left); continue; }
-      const right = labelRectFor(g, 'right');
-      if (clear(right)) { plan.set(sp.id, 'right'); placedLabels.push(right); continue; }
       // The selected spot's name never drops to 'none', however crowded the view — it's
       // first in `order` (priority rank), so the only thing that can still block both sides
       // here is another spot's PIN sitting right on top of it (common once zoomed out far
@@ -2521,7 +2530,7 @@ const destItems = useMemo((): DestItem[] =>
     spotLabelHitRef.current = { pxPerDegLng, rects: hitRects };
     prevSpotLabelPlanRef.current = plan;
     return plan;
-  }, [renderedSpots, pillVisibleLngDelta, selectedSpot, savedSpots, visitIndex, destPinPlan]);
+  }, [renderedSpots, pinPlanLngDelta, selectedSpot, savedSpots, visitIndex, destPinPlan]);
 
   // Spot pins in depth order: northernmost first, southernmost last. MarkerViews stack by when they
   // were mounted, so mounting in this order puts a pin that is lower on the map in front of any pin
