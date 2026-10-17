@@ -1,0 +1,370 @@
+{
+  "destination": {
+    "id": "wellington",
+    "checked": "2026-10-17",
+    "description": {
+      "facts": [
+        {"claim": "Capital since 1865; southernmost capital of a sovereign state; harbour city; windy (average wind speed 27 km/h); Te Papa is the national museum", "url": "https://en.wikipedia.org/wiki/Wellington"},
+        {"claim": "Central city is compact and easy to explore on foot (the 'Golden Mile' railway station to Courtenay Place); Cable car Lambton Quay to Kelburn is a city icon; Zealandia shelters endangered birds, tuatara, weta; Weta Workshop tours", "url": "https://en.wikivoyage.org/wiki/Wellington"}
+      ],
+      "flags": [
+        "CURRENT COPY: 'easily the most walkable city in the country' is an unsourced superlative (Wikivoyage only says the centre is compact and walkable). Cut 'easily the most' or say 'a compact, walkable centre'.",
+        "CURRENT COPY: 'a lively food scene' and 'wraps around a harbour and climbs steep green hills' are not stated by a fetched source; Wikipedia says the city is dense because of limited land between harbour and hills. Keep only if a source is added.",
+        "Distinctive fact not yet used: Wellington is the world's southernmost capital of a sovereign state (Wikipedia)."
+      ]
+    },
+    "whyVisit": [
+      {"reason": "Te Papa national museum", "photographable": true, "facts": [
+        {"claim": "Te Papa is NZ's national museum, opened 1998; world's largest specimen of the colossal squid; free for New Zealanders, NZ$35 for international visitors aged 16+", "url": "https://www.tepapa.govt.nz/visit"},
+        {"claim": "Opened 1998, merger of National Museum and National Art Gallery; more than 1.1 million visitors a year; earthquake house simulation / Quake Braker", "url": "https://en.wikipedia.org/wiki/Museum_of_New_Zealand_Te_Papa_Tongarewa"}
+      ]},
+      {"reason": "Cable car and Botanic Garden", "photographable": true, "facts": [
+        {"claim": "Cable car: 609 m track, originally built 1902, Lambton Quay to Kelburn, Cable Car Museum at top", "url": "https://www.wellingtoncablecar.co.nz/"},
+        {"claim": "Botanic Garden: 25 ha, Lady Norwood Rose Garden (300+ varieties, best Nov-Mar), cable car lookout with 180-degree view, Space Place", "url": "https://wellingtongardens.nz/our-gardens/wellington-botanic-garden-ki-paekaka"}
+      ],
+      "flags": ["Two things in one reason; the existing photo 'Wellington Cable Car Cityscape.jpg' only shows one. Consider 'Cable car above the city' alone, since the Botanic Garden is its own spot (wellington-5)."]},
+      {"reason": "Zealandia, a city wildlife sanctuary", "photographable": true, "facts": [
+        {"claim": "225 ha forest valley inside an 8.6 km predator fence completed 1999; little spotted kiwi (20 released 2000), kaka (2002), tuatara (70 released 2005), takahe; night tours often see kiwi", "url": "https://en.wikipedia.org/wiki/Zealandia_(wildlife_sanctuary)"}
+      ]}
+    ],
+    "tips": [
+      {"tip": "Pack for wind (any season)", "supported": true, "facts": [
+        {"claim": "Wellington is nicknamed Windy Wellington; average wind speed 27 km/h", "url": "https://en.wikipedia.org/wiki/Wellington"},
+        {"claim": "Guides say pack for wind year-round", "url": "https://www.intrepidtravel.com/eu/new-zealand/wellington/when-to-visit-wellington"}
+      ]},
+      {"tip": "Walk the waterfront / sights within easy walking distance", "supported": true, "facts": [
+        {"claim": "Central city is compact and easy on foot; street parking metered; Metlink buses and trains with Snapper or contactless (tag on AND off buses or be charged the full route)", "url": "https://en.wikivoyage.org/wiki/Wellington"}
+      ],
+      "note": "Better first-timer tips available from sources: tag on and off buses (Wikivoyage); Te Papa charges NZ$35 to international visitors aged 16+ (https://www.tepapa.govt.nz/visit); Matiu/Somes Island ferry needs booking (https://eastbywest.co.nz/ferry-services/matiu-somes-island/)."},
+      {"tip": "Book Zealandia night tours", "supported": "partly", "facts": [
+        {"claim": "Night tours exist, visitors often see kiwi; dawn tours also run", "url": "https://en.wikipedia.org/wiki/Zealandia_(wildlife_sanctuary)"}
+      ],
+      "flags": ["'need booking ahead' not confirmed from the operator site (visitzealandia.com returns 403 to scripts). Soften to 'book ahead' or verify in a browser."]}
+    ],
+    "bestMonths": {
+      "current": [12, 1, 2, 3],
+      "facts": [
+        {"claim": "Dec-Feb warmest and sunniest (webjet summary); February highest mean daily max 20.6C; January sunniest month (231.8 h); June-July wettest", "url": "https://en.wikipedia.org/wiki/Wellington"},
+        {"claim": "Guides vary: mid-Nov to late April (Champion Traveler), Dec-Feb peak, late Mar-Apr fewer visitors; Intrepid favours spring", "url": "https://championtraveler.com/dates/best-time-to-visit-wellington-nz/"}
+      ],
+      "verdict": "[12,1,2,3] is defensible against Wikipedia climate data. Blurb is generic ('best weather for the waterfront and the hill walks'): could cite sunniest January and warmest February."
+    },
+    "seasonalPatterns": [
+      {"claim": "Cuba Dupa street festival held over a weekend in late March (up to 100,000 people)", "url": "https://en.wikipedia.org/wiki/Cuba_Street"},
+      {"claim": "Wellington Fringe runs Feb-Mar; World of Wearable Art late Sept-early Oct (third-party summary, dates not checked on organiser sites)", "url": "https://www.intrepidtravel.com/eu/new-zealand/wellington/when-to-visit-wellington"},
+      {"claim": "Fur seals peak in winter at Red Rocks and Turakirae Head", "url": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/turakirae-head-scientific-reserve/"}
+    ],
+    "seasonalTagsRecommendation": "None needed at destination level; festivals belong in text, not spots. Dates unverified on organiser sites."
+  },
+  "spots": [
+    {"id": "wellington-1", "name": "Te Papa",
+     "bio": {"facts": [
+       {"claim": "National museum; colossal squid highlight; Maori and Pacific treasures and national art collection listed", "url": "https://www.tepapa.govt.nz/visit"},
+       {"claim": "Earthquake house simulation / Quake Braker", "url": "https://en.wikipedia.org/wiki/Museum_of_New_Zealand_Te_Papa_Tongarewa"}],
+      "flags": ["'earthquake simulators' supported only as 'earthquake house simulation' by Wikipedia; Te Papa's visit page does not mention it."]},
+     "hours": {"value": "10:00 AM – 6:00 PM, daily, closed Christmas Day", "url": "https://www.tepapa.govt.nz/visit", "currentCopyOk": true},
+     "visitHours": "current 2-4 is plausible; no source",
+     "cost": {"value": "Free for New Zealanders/residents; NZ$35 for international visitors aged 16+; some exhibitions charge", "url": "https://www.tepapa.govt.nz/visit",
+       "flag": "CURRENT COPY 'free: true' is STALE for the app's international audience. Suggest costMin 0 / costMax 35 NZD or a bio note. Wikipedia dates the charge to Sept 2024."},
+     "ticketUrl": {"url": "https://www.tepapa.govt.nz/", "verified": true, "title": "Home | Te Papa", "status": "MISSING in current data - add"}},
+    {"id": "wellington-2", "name": "Wellington Cable Car",
+     "bio": {"facts": [
+       {"claim": "Lambton Quay terminal to Kelburn terminal at top of hill, 609 m track, built 1902, Cable Car Museum at top", "url": "https://www.wellingtoncablecar.co.nz/"},
+       {"claim": "Runs about every 10 min; ~5 min ride; Cable Car Lookout has 180-degree view; can ride one way and walk down through garden", "url": "https://wellingtongardens.nz/our-gardens/wellington-botanic-garden-ki-paekaka"}]},
+     "hours": {"value": "Mon-Thu 7:30 AM–8:00 PM; Fri 7:30 AM–9:00 PM; Sat 8:30 AM–9:00 PM; Sun and public holidays 8:30 AM–7:00 PM; closed 25 Dec", "url": "https://www.wellingtoncablecar.co.nz/timetable-fares",
+       "flag": "CURRENT '7:00 AM – 10:00 PM' is STALE/wrong."},
+     "visitHours": "0.5-1 plausible (5 min ride plus museum/lookout)",
+     "cost": {"value": "Adult one-way NZ$7, return NZ$13 (Spring Sunday promo $3/$6 after 3pm to 18 Oct 2026)", "url": "https://www.wellingtoncablecar.co.nz/timetable-fares",
+       "flag": "CURRENT costMin/costMax 11 is STALE. Suggest 7-13 NZD."},
+     "ticketUrl": {"url": "https://www.wellingtoncablecar.co.nz/", "verified": true, "title": "Home Page | Wellington Cable Car", "status": "current value correct"}},
+    {"id": "wellington-3", "name": "Zealandia",
+     "bio": {"facts": [
+       {"claim": "225 ha valley, 8.6 km predator-proof fence, kaka, little spotted kiwi, tuatara, takahe released inside", "url": "https://en.wikipedia.org/wiki/Zealandia_(wildlife_sanctuary)"}],
+      "flags": ["'native birds such as kaka, tui' - tui not named in fetched sources (kaka is). Fine but tui unsourced."]},
+     "hours": {"value": "9:00 AM–5:00 PM (4:30 PM in winter per booking page); last entry 4:00 PM; closed 25 Dec", "url": "https://en.wikipedia.org/wiki/Zealandia_(wildlife_sanctuary)", "note": "Winter close and last entry from a Rezdy booking snippet seen in search, not loaded; visitzealandia.com returns 403."},
+     "visitHours": "2-4 plausible",
+     "cost": {"value": "General admission from about NZ$26 (third-party and booking-site listings; newzealand.com shows a range $26-$31/$27-$39; two-day validity)", "url": "https://visitzealandia.rezdy.com/581277/general-admission-tickets",
+       "flag": "Current NZ$25 looks slightly stale; unverified because official pages 403 to scripts."},
+     "ticketUrl": {"url": "https://www.visitzealandia.com/", "verified": false, "reason": "Linked from Wikipedia as official site but returns 403 to scripts (curl and WebFetch); needs a real-browser check. Keep current value unverified."}},
+    {"id": "wellington-4", "name": "Mount Victoria",
+     "bio": {"facts": [
+       {"claim": "196 m high; summit lookout with 360-degree views of city, suburbs, harbour, Evans Bay and Miramar Peninsula; lookout built 1964, upgraded 2004-07; alternative name Matairangi; Lord of the Rings scenes filmed on the hill; about 25 km of trails", "url": "https://en.wikipedia.org/wiki/Mount_Victoria_(Wellington_hill)"},
+       {"claim": "Best lookout in Wellington; 360-degree view of airport, harbour and CBD", "url": "https://en.wikivoyage.org/wiki/Wellington"}]},
+     "hours": {"value": "Open 24 hours (public hill/lookout, no gate found); unverified as no managing-agency page loaded (wellington.govt.nz returns 403)"},
+     "visitHours": "1-1.5 plausible",
+     "cost": {"value": "free", "url": "https://en.wikivoyage.org/wiki/Wellington"},
+     "ticketUrl": {"status": "none; council reserve, no operator"},
+     "flags": ["WIKI FIELD WRONG: wiki 'Mount Victoria, Wellington' redirects to the 'Mount Victoria' disambiguation page. The hill article is 'Mount Victoria (Wellington hill)' (the suburb is 'Mount Victoria (Wellington suburb)'). Fix `wiki` and check the image manifest/override for this name."]},
+    {"id": "wellington-5", "name": "Wellington Botanic Garden",
+     "bio": {"facts": [
+       {"claim": "25 ha; garden established 1868; Lady Norwood Rose Garden (opened 1953, 300+ varieties, best Nov-Mar); cable car; Space Place with Thomas Cooke telescope; Peace Flame from Hiroshima; Garden of National Significance; glow-worm night tours", "url": "https://wellingtongardens.nz/our-gardens/wellington-botanic-garden-ki-paekaka"}],
+      "flags": ["Bio names 'a cable-car terminus and an observatory', duplicating spots wellington-2 and wellington-23. Better distinct hook: Lady Norwood Rose Garden or the Peace Flame / Garden of National Significance."]},
+     "hours": {"value": "Grounds open dawn to dusk year-round; Treehouse Visitor Centre Mon-Fri 9-4, weekends/holidays 10-4 (Sept-Apr); Picnic Cafe 8:30-4", "url": "https://wellingtongardens.nz/our-gardens/wellington-botanic-garden-ki-paekaka",
+       "flag": "CURRENT 'Open 24 hours' is WRONG: grounds are dawn to dusk."},
+     "visitHours": "1-2 plausible",
+     "cost": {"value": "Page does not state a charge; grounds appear free (cable car, Space Place, cafes paid; Rose Garden car park paid, 2 h)", "url": "https://wellingtongardens.nz/our-gardens/wellington-botanic-garden-ki-paekaka"},
+     "ticketUrl": {"url": "https://wellingtongardens.nz/our-gardens/wellington-botanic-garden-ki-paekaka", "verified": true, "title": "Wellington Gardens | Wellington Botanic Garden ki Paekākā", "status": "MISSING in current data - add (Wellington City Council's garden steward)"}},
+    {"id": "wellington-6", "name": "Weta Workshop",
+     "bio": {"facts": [
+       {"claim": "Creative studio and special-effects house in Miramar; Oscar-winning Lord of the Rings work; runs visitor attractions", "url": "https://en.wikipedia.org/wiki/W%C4%93t%C4%81_Workshop"},
+       {"claim": "Wellington tours at 1 Weka Street, Miramar; Tour from NZ$59; Guided Transfers & Tour from NZ$105 (90 min plus city pickup); open 7 days except Christmas Day", "url": "https://www.wetaworkshop.com/tours/wellington"}],
+      "flags": ["Name uses 'Weta Workshop' but article title is 'Wētā Workshop' (macrons). Add wiki: 'Wētā Workshop' if the plain title does not resolve."]},
+     "hours": {"value": "Open 7 days except Christmas Day; session times not listed, summer late nights", "url": "https://www.wetaworkshop.com/tours/wellington", "flag": "CURRENT '9:00 AM – 5:00 PM' is unsourced."},
+     "visitHours": "1.5-2.5 plausible (90 min tour)",
+     "cost": {"value": "From NZ$59 (tour)", "url": "https://www.wetaworkshop.com/tours/wellington", "flag": "CURRENT NZ$60 is close; suggest 59."},
+     "ticketUrl": {"url": "https://www.wetaworkshop.com/", "verified": true, "title": "Wētā Workshop", "deepLink": "https://www.wetaworkshop.com/tours/wellington (loaded, lists tours)", "status": "current value correct"}},
+    {"id": "wellington-7", "name": "Cuba Street",
+     "bio": {"facts": [
+       {"claim": "Bohemian street, 'creative heart'; Bucket Fountain installed 1969 with 13 tipping buckets; middle section a pedestrian mall since 1969; vintage and secondhand shops, cafes, bars, live music; Cuba Dupa festival late March", "url": "https://en.wikipedia.org/wiki/Cuba_Street"},
+       {"claim": "Bohemian street in Te Aro with many restaurants, cafes and bars", "url": "https://en.wikivoyage.org/wiki/Wellington"}]},
+     "hours": {"value": "Open 24 hours (public street); shops vary"},
+     "visitHours": "1-2 plausible",
+     "cost": {"value": "free"},
+     "ticketUrl": {"status": "none; public street"}},
+    {"id": "wellington-8", "name": "New Zealand Parliament Buildings",
+     "bio": {"facts": [
+       {"claim": "Free public tours daily 10am-4pm; Visitor Centre in the Beehive open 9:30am-4:30pm daily (closed some public holidays); main tour Introducing Parliament about 1 hour; free self-guided outdoor map tour ~40 min", "url": "https://www3.parliament.nz/mi/visit-and-learn/visit/visitor-centre/"},
+       {"claim": "Beehive and Parliament House near Old Government Buildings", "url": "https://en.wikivoyage.org/wiki/Wellington"}],
+      "flags": ["Source for tour times is a search-result summary of the official Parliament site; the pages themselves could not be loaded (Radware captcha). 'Debating chamber' tours are subject to change on sitting days."]},
+     "hours": {"value": "Tours 10:00 AM – 4:00 PM daily; Visitor Centre 9:30 AM – 4:30 PM", "url": "https://www3.parliament.nz/mi/visit-and-learn/visit/visitor-centre/"},
+     "visitHours": "1-1.5 plausible",
+     "cost": {"value": "free tours"},
+     "ticketUrl": {"verified": false, "candidate": "https://www.parliament.nz/en/visit-and-learn/", "reason": "Official domain (Wikipedia links parliament.nz pages) but both parliament.nz and www3.parliament.nz serve a Radware captcha to scripts; the bare URL parliament.nz/en/visit-and-learn/ also 404'd for WebFetch. Needs a real-browser check. Current data has no ticketUrl (free-entry spot with one steward - a link is still wanted)."}},
+    {"id": "wellington-9", "name": "Wellington Waterfront",
+     "bio": {"facts": [
+       {"claim": "Walk runs from Kumutoto Stream to Oriental Bay, ~30 min one way; sculptures such as Solace in the Wind; Wellington Writers Walk with 23 writers' quotes set into the path", "url": "https://freewalks.nz/wellington-writers-walk/"}],
+      "flags": ["'swimming spots' not supported by anything fetched (Oriental Bay is the swimming beach, a separate spot). 'from Te Papa to Oriental Bay' loosely matches sources (Kumutoto to Oriental Bay).",
+        "WIKI FIELD: 'Wellington waterfront' has no Wikipedia article (title missing); 'Wellington Waterfront' redirects to 'Wellington Harbour'. The spot photo lookup will resolve to the harbour article. Needs a WIKI_IMAGE_OVERRIDES entry or a different wiki title.",
+        "Cross-entry repetition: waterfront bio ends at Oriental Bay, which is wellington-14; Te Papa and Wellington Museum sit on it."]},
+     "hours": {"value": "Open 24 hours (public promenade)"},
+     "visitHours": "1-2 plausible",
+     "cost": {"value": "free"},
+     "ticketUrl": {"status": "none; public promenade"}},
+    {"id": "wellington-10", "name": "Wellington Zoo",
+     "bio": {"facts": [
+       {"claim": "Opened 1906, oldest public zoo in NZ; 13 ha; ~80 species, 500+ animals; only Malayan sun bear in NZ; giraffes, meerkats, lemurs, big cats; The Nest Te Kohanga wildlife hospital with viewing", "url": "https://en.wikipedia.org/wiki/Wellington_Zoo"},
+       {"claim": "Sumatran tigers and red pandas reported by third-party guides/news (not by the zoo's own site, which 403s)", "url": "https://kidsonboard.co.nz/activity_dw/wellington-zoo/"}],
+      "flags": ["CURRENT BIO 'and a kiwi house' is WRONG: the nocturnal house closed in 2021 and, per Wikipedia as of 2026, the zoo has no kiwi. Remove it; use e.g. giraffes and the Nest wildlife hospital."]},
+     "hours": {"value": "9:30 AM – 5:00 PM daily (last entry 4:15 PM), closed Christmas Day", "url": "https://www.newzealand.com/int/plan/business/wellington-zoo-4780689/", "note": "Seen in search results, not loaded; official site 403s."},
+     "visitHours": "2-3 plausible",
+     "cost": {"value": "Adult NZ$28 NZ resident, NZ$35 international (listings)", "url": "https://wellingtonzoo.com/plan-your-visit", "flag": "CURRENT NZ$29 differs from listings ($28 / $35 intl); unverified."},
+     "ticketUrl": {"url": "https://wellingtonzoo.com/plan-your-visit", "verified": false, "reason": "Official domain wellingtonzoo.com (appears in search results as Ticket prices page) but 403 to scripts. Current data uses www.wellingtonzoo.com - confirm in a browser that it redirects to wellingtonzoo.com."}},
+    {"id": "wellington-11", "name": "Porirua",
+     "bio": {"facts": [
+       {"claim": "City wrapping Porirua Harbour; Pataka Art + Museum; Te Rauparaha Arena aquatic centre; Whitireia Park headland walks; Aotea Lagoon; Te Araroa passes through", "url": "https://www.newzealand.com/nz/porirua/"},
+       {"claim": "Porirua city, population 62,400 (2023)", "url": "https://en.wikipedia.org/wiki/Porirua"}],
+      "flags": ["COVERAGE: a whole city listed as a spot of Wellington, with Pataka (wellington-29) as a separate spot - near-duplicate. Te Rauparaha Arena is a swimming/fitness centre, not a visitor draw. Send to review; consider re-bioing around Whitireia Park / Titahi Bay or removing.",
+        "Category 'historic' does not fit a city."]},
+     "hours": {"value": "Open 24 hours (a city) - not meaningful"},
+     "cost": {"value": "free"},
+     "ticketUrl": {"status": "none; city"}},
+    {"id": "wellington-12", "name": "Ōtari-Wilton's Bush",
+     "bio": {"facts": [
+       {"claim": "Only public botanic garden in NZ dedicated solely to native plants; ~11 km of tracks; ~1,200 native species/hybrids/cultivars; Job Wilton protected 7 ha of original forest; plant collections established 1926 by Dr Leonard Cockayne; 100 years in 2026; canopy walkway on wheelchair-friendly route", "url": "https://wellingtongardens.nz/our-gardens/otari-wiltons-bush"}],
+      "flags": ["'large podocarp bush remnant' not stated on the fetched page (Wilton's 7 ha original forest is). Keep only with a source."]},
+     "hours": {"value": "Dawn to dusk year-round; Tane Whakapiripiri Visitor Centre 7:30 AM – 4:00 PM", "url": "https://wellingtongardens.nz/our-gardens/otari-wiltons-bush", "currentCopyOk": true},
+     "visitHours": "1-2 plausible; 11 km of tracks suggests up to 3",
+     "cost": {"value": "free (page lists no charge; not explicit)", "url": "https://wellingtongardens.nz/our-gardens/otari-wiltons-bush"},
+     "ticketUrl": {"url": "https://wellingtongardens.nz/our-gardens/otari-wiltons-bush", "verified": true, "title": "Wellington Gardens | Ōtari-Wilton's Bush", "status": "MISSING in current data - add. (Also owbt.nz = Ōtari-Wilton's Bush Trust, a support trust, verified title but not the steward.)"}},
+    {"id": "wellington-13", "name": "Matiu/Somes Island",
+     "bio": {"facts": [
+       {"claim": "DOC Scientific and Historic Reserve, 24.8 ha, gentle track around the island, little blue penguins listed, island and visitor centre open daily 8:30 AM – 5 PM, may close in extreme fire danger", "url": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/matiu-somes-island/"},
+       {"claim": "East by West ferry Queens Wharf to Days Bay to island; return adult NZ$42 (from 15 May 2026, includes $6 visitor fee), child $24, SuperGold $6; booking required for day trips; 2-2.5 h on island (weekend trips just over 3 h); bring food and water; biosecurity checks", "url": "https://eastbywest.co.nz/ferry-services/matiu-somes-island/"},
+       {"claim": "Loop track about 75 min on foot per DOC brochure", "url": "https://www.doc.govt.nz/documents/parks-and-recreation/places-to-visit/wellington/matiu-somes-island-brochure.pdf"}],
+      "flags": ["'former quarantine station' supported by Wikipedia/Stuff link but not loaded."]},
+     "hours": {"value": "Island 8:30 AM – 5:00 PM daily; ferry-dependent", "url": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/matiu-somes-island/", "flag": "Current 'Ferry-dependent; daylight' is OK but can be tightened."},
+     "visitHours": "current 3-4 OK (2-3.3 h on island)",
+     "cost": {"value": "NZ$42 adult return ferry incl. visitor fee", "url": "https://eastbywest.co.nz/ferry-services/matiu-somes-island/", "flag": "CURRENT has NO cost or currency: add costMin/costMax 42 NZD."},
+     "ticketUrl": {"url": "https://eastbywest.co.nz/ferry-services/matiu-somes-island/", "verified": true, "title": "Mātiu / Somes Island | East by West Ferries", "status": "MISSING in current data - add (sole ferry operator; DOC page https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/matiu-somes-island/ also verified: 'Matiu/Somes Island Scientific and Historic Reserve: Places to go in Wellington and Kapiti'). Prefer the DOC page per the public-land rule, or the ferry page since that is how it is reached and booked."}},
+    {"id": "wellington-14", "name": "Oriental Bay",
+     "bio": {"facts": [
+       {"claim": "Wellington's city beach; sand brought in (22,000 tonnes from Golden Bay in the early 2000s); promenade created 1910s-20s; Norfolk pines are a distinctive feature; wooden pontoon swimmers; Freyberg Pool; against north slope of Mount Victoria 1.5 km from centre", "url": "https://en.wikipedia.org/wiki/Oriental_Bay"},
+       {"claim": "Oriental Parade waterfront strip with beach and cafes", "url": "https://en.wikivoyage.org/wiki/Wellington"}],
+      "flags": ["CURRENT 'palm-lined' is NOT supported: Wikipedia names Norfolk pines, not palms. Say 'pine-lined' or cut.",
+        "Overlaps with wellington-9 (waterfront runs to Oriental Bay) and wellington-4 (Mount Victoria skyline)."]},
+     "hours": {"value": "Open 24 hours (public beach)"},
+     "visitHours": "1-2 plausible",
+     "cost": {"value": "free"},
+     "ticketUrl": {"status": "none; public beach"}},
+    {"id": "wellington-15", "name": "Mount Kaukau",
+     "bio": {"facts": [
+       {"claim": "Summit 445 m; transmitter mast ~122 m; Khandallah Park has 9 km of walking tracks reaching the peak from Khandallah, Johnsonville, Ngaio, Crofton Downs; views of city, harbour, Remutaka and Tararua Ranges, on clear days the Kaikoura Ranges; part of Northern Skyline track", "url": "https://en.wikipedia.org/wiki/Mount_Kaukau"}]},
+     "hours": {"value": "Open 24 hours (public track); unverified, council page wellington.govt.nz returns 403"},
+     "visitHours": "1.5-3 plausible; Wikipedia gives no walking time",
+     "cost": {"value": "free"},
+     "ticketUrl": {"status": "none; council reserve"}},
+    {"id": "wellington-16", "name": "Wellington Museum",
+     "bio": {"facts": [
+       {"claim": "Housed in the 1892 Bond Store by Frederick de Jersey Clere, a former bonded cargo warehouse on the waterfront; exhibits: Wellington timeline, maritime history, Wahine Theatre (1968 Wahine disaster film), Paddy the Wanderer, The Attic", "url": "https://www.museumswellington.org.nz/wellington-museum/"}],
+      "flags": ["'shipwreck stories' covered by Wahine/maritime exhibits; OK."]},
+     "hours": {"value": "10:00 AM – 5:00 PM, 7 days", "url": "https://www.museumswellington.org.nz/wellington-museum/", "currentCopyOk": true},
+     "visitHours": "1-2 plausible",
+     "cost": {"value": "General admission free; page notes international visitors may be charged (details on admission changes page)", "url": "https://www.museumswellington.org.nz/wellington-museum/", "flag": "Check the international charge before keeping 'free: true'."},
+     "ticketUrl": {"url": "https://www.museumswellington.org.nz/wellington-museum/", "verified": true, "title": "Wellington Museum (page heading 'Te Waka Huia o Nga Taonga Tuku Iho | Wellington Museum')", "status": "MISSING in current data - add (wellingtonmuseum.nz redirects here)"}},
+    {"id": "wellington-17", "name": "Days Bay",
+     "bio": {"facts": [
+       {"claim": "Bay walled on three sides by bush-clad slopes; Williams Park; resort era from 1895 wharf; East by West ferry; Katherine Mansfield's 'At the Bay' drew on childhood holidays here", "url": "https://en.wikipedia.org/wiki/Days_Bay"},
+       {"claim": "Ferry between Queens Wharf and Days Bay", "url": "https://eastbywest.co.nz/ferry-services/matiu-somes-island/"}],
+      "flags": ["CURRENT 'a historic pavilion': Wikipedia says the original 1897 Pavilion was destroyed by fire in 1952. A present-day pavilion exists in Williams Park but is not sourced here. Cut or verify.",
+        "'Eastbourne's bay' - Days Bay is a Lower Hutt suburb in Eastbourne ward; fine.",
+        "Ferry fare/timetable for Days Bay not fetched; ferries run to Days Bay via https://eastbywest.co.nz/ (verified title 'East by West Ferries | Explore Wellington From The Water')."]},
+     "hours": {"value": "Open 24 hours (public beach/park)"},
+     "visitHours": "2-4 plausible",
+     "cost": {"value": "free (ferry extra)"},
+     "ticketUrl": {"status": "none; public park. East by West is the ferry operator, not the place."}},
+    {"id": "wellington-18", "name": "Pariwhero / Red Rocks",
+     "bio": {"facts": [
+       {"claim": "Geological formation in a scientific reserve on Wellington's south coast; track from Te Kopahou Reserve visitor centre in Owhiro Bay; fur seals at Sinclair Head just beyond", "url": "https://en.wikipedia.org/wiki/Pariwhero_/_Red_Rocks"},
+       {"claim": "Red Rocks Track 4.7 km, about 1 h 30 min; seals gather near Red Rocks past Sinclair Head in winter; dogs on lead; may close in wildfire season", "url": "https://www.wellingtonnz.com/visit/trails/waimapihi-reserve-brooklyn-turbine-and-te-kopahou-reserve/red-rocks-track"}],
+      "flags": ["Seal-watching rule: keep at least 20 m away (kidsonboard guide, secondary)."]},
+     "hours": {"value": "Open 24 hours (public track) - fire-season closures possible"},
+     "visitHours": "2-3 plausible (1.5 h each way per WellingtonNZ if going to the seals; 4.7 km may be one way)",
+     "cost": {"value": "free"},
+     "ticketUrl": {"status": "none; council/Greater Wellington reserve, no loadable official page (wellington.govt.nz 403)"}},
+    {"id": "wellington-19", "name": "Katherine Mansfield House & Garden",
+     "bio": {"facts": [
+       {"claim": "Writer's museum and Category 1 Historic Place in Thorndon; opened to public 1988; house dates from 1888; 25 Tinakori Road", "url": "https://www.katherinemansfield.com/visit-katherine-mansfield-house-and-garden"}],
+      "flags": ["'restored to its Victorian state' not stated on the loaded pages; they say it offers insight into 19th-century Wellington. 'where the writer was born in 1888' - the site says the house dates from 1888 and she was its 'famous former occupant'; birth year not fetched (the Birthplace Society name implies birth there). Verify with /about/katherine-mansfield."]},
+     "hours": {"value": "Tuesday to Sunday 10:00 AM – 4:00 PM; closed Mondays and most public holidays (New Year's Day, 2 Jan, Good Friday, Christmas Day, Boxing Day)", "url": "https://www.katherinemansfield.com/visit-katherine-mansfield-house-and-garden/hours-and-admission",
+       "flag": "CURRENT '(closed Mon-Tue; check)' is WRONG: closed Monday only. Set closedDays [1] and hours 10:00 AM – 4:00 PM."},
+     "visitHours": "1-1.5 plausible",
+     "cost": {"value": "Adults NZ$10; concession NZ$8 (65+, tertiary students, Community Services Card); under-18s free", "url": "https://www.katherinemansfield.com/visit-katherine-mansfield-house-and-garden/hours-and-admission", "flag": "CURRENT has NO cost: add 8-10 NZD."},
+     "ticketUrl": {"url": "https://www.katherinemansfield.com/", "verified": true, "title": "Katherine Mansfield House & Garden", "deepLink": "https://www.katherinemansfield.com/visit-katherine-mansfield-house-and-garden/hours-and-admission (copied from the site's own nav, loaded)", "status": "MISSING in current data - add"}},
+    {"id": "wellington-20", "name": "Mākara Beach",
+     "bio": {"facts": [
+       {"claim": "Seaside village ~20 min drive from Karori; toilets, parking, one cafe; fishing and diving; off-lead dog area; 7 km DOC walkway from the village along the beach and across farmland to historic gun emplacements; Cyclone Gita 2018 and 2021 road flooding", "url": "https://en.wikipedia.org/wiki/M%C4%81kara_Beach"}],
+      "flags": ["CURRENT BIO 'a shipwreck-era history' and 'wide Cook Strait views' are NOT in the fetched source. Replace with the gun-emplacement walkway (Wikipedia; DOC page https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/makara-beach-area/things-to-do/makara-walkway/ cited there, not loaded) and fishing village history.",
+        "Road to Makara has been closed for weeks after flooding (2021): worth a tip."]},
+     "hours": {"value": "Open 24 hours (public beach)"},
+     "visitHours": "1-2 plausible; 7 km walkway would need more",
+     "cost": {"value": "free"},
+     "ticketUrl": {"status": "none; public beach (DOC walkway page exists but not loaded)"}},
+    {"id": "wellington-21", "name": "City Gallery Wellington",
+     "bio": {"facts": [
+       {"claim": "Contemporary art gallery; began 1980 as Wellington City Art Gallery, current name from 1993; Civic Square building on Victoria St", "url": "https://en.wikipedia.org/wiki/City_Gallery_Wellington"},
+       {"claim": "Official site lists the address as 67 Victoria Street; open daily 10am-5pm, Thursday until 9pm; Ata restaurant daily", "url": "https://citygallery.org.nz/visit/"},
+       {"claim": "Entry free; permanent home closed while buildings around Ngakau Civic Square are renovated", "url": "https://www.wellingtonnz.com/visit/see-and-do/city-gallery-wellington"}],
+      "flags": ["VENUE STATUS UNCLEAR: search results and WellingtonNZ say the Civic Square building is closed for earthquake-strengthening works and the gallery used the National Library (Molesworth St) as a temporary venue; the official site now lists '67 Victoria Street' and normal hours. Confirm the current venue and whether the pin (Civic Square) and bio ('on Civic Square') are still right before keeping.",
+        "Not confirmed that exhibitions are always free (a source says special events may charge)."]},
+     "hours": {"value": "10:00 AM – 5:00 PM daily; Thursday until 9:00 PM", "url": "https://citygallery.org.nz/visit/"},
+     "visitHours": "1-2 plausible",
+     "cost": {"value": "free (WellingtonNZ: 'gallery entry is free')", "url": "https://www.wellingtonnz.com/visit/see-and-do/city-gallery-wellington", "flag": "CURRENT has no cost and no free flag: add free: true if confirmed."},
+     "ticketUrl": {"url": "https://citygallery.org.nz/", "verified": true, "title": "Home - City Gallery (visit page title 'Visit - City Gallery')", "status": "MISSING in current data - add"}},
+    {"id": "wellington-22", "name": "Pukeahu National War Memorial Park",
+     "bio": {"facts": [
+       {"claim": "Built 2015 for the WWI centenary around the National War Memorial; Tomb of the Unknown Warrior, bronze sculptures, international memorials from eight countries; 19 Buckle Street; 50-metre Carillon opened Anzac Day 1932", "url": "https://www.wellingtonnz.com/visit/see-and-do/pukeahu-national-war-memorial-park"},
+       {"claim": "Managed by Manatu Taonga Ministry for Culture and Heritage; a ministry page said the Memorial Building and Carillon were closed for seismic strengthening (2021-2026) except for ceremonies; park open; carillon recitals third weekend monthly", "url": "https://mch.govt.nz/pukeahu"}],
+      "flags": ["Tower/building status unverified (mch.govt.nz returns 403 captcha). WellingtonNZ lists the Memorial Building open 12-4pm Sat-Sun autumn/winter and Thu-Sun spring/summer. Park itself: 'Open 24 hours' unverified.",
+        "COVERAGE: a memorial park; guide-listed, but marginal vs the 'minor memorial' rule (Bridge of Remembrance negative benchmark). The National War Memorial and Tomb are a headline stop, so probably fine; note for review."]},
+     "hours": {"value": "Park: unverified (open access assumed); National War Memorial Building 12-4pm Sat-Sun (autumn/winter), Thu-Sun (spring/summer)", "url": "https://www.wellingtonnz.com/visit/see-and-do/pukeahu-national-war-memorial-park"},
+     "visitHours": "1-1.5 plausible",
+     "cost": {"value": "free"},
+     "ticketUrl": {"verified": false, "candidate": "https://mch.govt.nz/pukeahu", "reason": "Steward is Manatu Taonga; page behind Cloudflare challenge for scripts; needs real-browser check. Not linking the tourism-board page as an official site."}},
+    {"id": "wellington-23", "name": "Space Place at Carter Observatory",
+     "bio": {"facts": [
+       {"claim": "Space Place at 40 Salamanca Rd: digital full-dome planetarium, telescope viewing (weather permitting), galleries on space, Matariki and Maori star navigation; Thomas Cooke telescope", "url": "https://www.museumswellington.org.nz/space-place/"},
+       {"claim": "Short walk from the upper cable car terminus; sits in the Botanic Garden precinct", "url": "https://wellingtongardens.nz/our-gardens/wellington-botanic-garden-ki-paekaka"}],
+      "flags": ["Official name now 'Te Ara Whanui ki te Rangi | Space Place'. Wikipedia article title is 'Space Place at Carter Observatory' (rebranded Space Place)."]},
+     "hours": {"value": "Term time (13 Oct–13 Dec): closed Mon; Tue & Wed 5:00–10:30 PM; Thu 10 AM–10:30 PM; Fri & Sat 10 AM–11 PM; Sun 10 AM–5 PM. School holidays (14 Dec–7 Feb): Mon 10–5; Tue–Thu 10 AM–10:30 PM; Fri & Sat to 11 PM; Sun 10–5. Last entry 30 min before closing. Closed Christmas Day.", "url": "https://www.museumswellington.org.nz/space-place/",
+       "flag": "CURRENT 'Check operator for hours' - hours vary by term; a qualifier like 'Varies by day; evening planetarium' is honest. closedDays [1] in term time only."},
+     "visitHours": "1-2 plausible",
+     "cost": {"value": "Adult NZ$16; NZ student/Gold Card $14; child (4-14) $10; under-4 free; family $49", "url": "https://www.museumswellington.org.nz/space-place/", "flag": "CURRENT has no cost: add 16 NZD."},
+     "ticketUrl": {"url": "https://www.museumswellington.org.nz/space-place/", "verified": true, "title": "Te Ara Whānui ki te Rangi | Space Place", "status": "MISSING in current data - add (spaceplace.nz redirects here)"}},
+    {"id": "wellington-24", "name": "Turakirae Head Scientific Reserve",
+     "bio": {"facts": [
+       {"claim": "Largest NZ fur seal colony in the Wellington region; five earthquake-raised beaches recording ~7,000 years of uplift; 1855 magnitude 8 quake raised the beach 2.5 m; up to 500 seals each winter; ~45 min walk from carpark across Orongorongo River bridge; no dogs; foot access only", "url": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/turakirae-head-scientific-reserve/"}],
+      "flags": ["Cross-entry repetition: 'fur seals haul out in winter' also in Red Rocks (wellington-18). Differentiate Turakirae by the raised beaches."]},
+     "hours": {"value": "Open 24 hours (reserve); walk is ~45 min each way; fire ban"},
+     "visitHours": "2-3 plausible",
+     "cost": {"value": "free"},
+     "ticketUrl": {"url": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/turakirae-head-scientific-reserve/", "verified": true, "title": "Turakirae Head Scientific Reserve: Places to go in Wellington and Kapiti", "status": "MISSING in current data - add (managing agency)"}},
+    {"id": "wellington-25", "name": "Belmont Regional Park",
+     "bio": {"facts": [
+       {"claim": "Between Lower Hutt and Porirua; farmland, native bush, peaks up to 456 m (Belmont Trig); established 1986; 1903-04 concrete dams on Korokoro Stream; WWII ammunition stores; Greater Wellington's largest park; mountain bike network Grade 2-5; campsite", "url": "https://en.wikipedia.org/wiki/Belmont_Regional_Park"},
+       {"claim": "Key attractions: Korokoro Dam, Belmont Trig with views of Porirua Harbour and Hutt Valley, Pareraho Pa, WWII ammunition stores, original Wellington coach road; Waterfall Route 2.2 km return easy; Belmont Trig Loop 10.8 km hard", "url": "https://www.gw.govt.nz/parks/belmont-regional-park/"}],
+      "flags": ["CURRENT BIO 'historic quarry' is unsourced; use Korokoro Dam / WWII ammunition stores / coach road."]},
+     "hours": {"value": "Park always open; Dry Creek gate 5 AM–9 PM (1 Oct–31 Mar), 6 AM–6 PM (1 Apr–30 Sep); parts may close for lambing", "url": "https://www.gw.govt.nz/parks/belmont-regional-park/"},
+     "visitHours": "2-4 plausible",
+     "cost": {"value": "free to enter (page lists only camping fees and a horse permit)", "url": "https://www.gw.govt.nz/parks/belmont-regional-park/"},
+     "ticketUrl": {"url": "https://www.gw.govt.nz/parks/belmont-regional-park/", "verified": true, "title": "Belmont Regional Park | Greater Wellington (redirect from /belmont-regional-park/)", "status": "MISSING in current data - add (managing agency)"}},
+    {"id": "wellington-26", "name": "Dowse Art Museum",
+     "bio": {"facts": [
+       {"claim": "Opened 1971 in Lower Hutt as the Dowse Art Gallery, renamed 1982, building remodelled 2013; focus on NZ craft, design and contemporary art not confirmed on a loaded page", "url": "https://en.wikipedia.org/wiki/Dowse_Art_Museum"}],
+      "flags": ["Official site dowse.org.nz returns a Cloudflare challenge; hours seen only in search snippets (Tue-Sun 10-5, closed Monday and Christmas/Boxing/New Year's Day). Wikipedia lists the old domain newdowse.org.nz, whose redirect was not checked.",
+        "Wikipedia article title is 'Dowse Art Museum'; fine."]},
+     "hours": {"value": "Tue–Sun 10:00 AM – 5:00 PM (search snippet of the museum's visit page, not loaded)", "flag": "CURRENT '10:00 AM – 4:00 PM' likely STALE; add closedDays [1]. Unverified."},
+     "visitHours": "1-2 plausible",
+     "cost": {"value": "free (2026 Wellington guide, secondary)"},
+     "ticketUrl": {"url": "https://dowse.org.nz/", "verified": false, "reason": "Official domain (Wikipedia infobox) but behind a Cloudflare challenge for scripts; needs real-browser check. Missing in current data."}},
+    {"id": "wellington-27", "name": "Pencarrow Lighthouse",
+     "bio": {"facts": [
+       {"claim": "First permanent lighthouse in New Zealand, built 1859; NZ's only female lighthouse keeper, Mary Bennett, worked here; area has no road access, walking and mountain-biking track along the coast; return walk from Eastbourne about 4 hours", "url": "https://en.wikipedia.org/wiki/Pencarrow_Head"},
+       {"claim": "Starts at Burden's Gate, south end of Eastbourne, ~8 km gravel track; ~1 km return climb up to the old lighthouse; exposed route, no provisions beyond Eastbourne; bike hire at Burden's Gate in summer and holiday weekends", "url": "https://www.tripideas.nz/place/pencarrow-lighthouse"}],
+      "flags": ["CURRENT BIO 'Pencarrow Coast Road' not confirmed as a name by sources fetched (Hutt Valley NZ's page /see-and-do/cycling/pencarrow-coast was a 404). Say 'coast track from Eastbourne'.",
+        "Note: Wikipedia calls this 'Pencarrow Head Lighthouse'; the wiki field is absent so the photo lookup uses 'Pencarrow Lighthouse' - check it resolves."]},
+     "hours": {"value": "Open 24 hours (public track); no gate found"},
+     "visitHours": "current 2-4 OK (Wikipedia: 4 h return on foot; cycling ~1.5 h)",
+     "cost": {"value": "free"},
+     "ticketUrl": {"status": "none verified; track is in Greater Wellington's East Harbour area (no page loaded)"}},
+    {"id": "wellington-28", "name": "Petone Settlers Museum",
+     "bio": {"facts": [
+       {"claim": "Museum at The Esplanade, Petone, run by Hutt City Council; Wikipedia article exists", "url": "https://en.wikipedia.org/wiki/Petone_Settlers_Museum"},
+       {"claim": "Hutt City page (search snippet): open Wed–Sun 10am–4pm, closed Christmas, Boxing and New Year's Days", "url": "https://huttcity.govt.nz/arts-and-culture/museums/petone-settlers-museum/visit"}],
+      "flags": ["Bio says 'on Petone Wharf' - sources say The Esplanade, Petone (the building is the former wharf shed beside the wharf); the 1840 landing is the museum's theme but not confirmed on a loaded page.",
+        "huttcity.govt.nz returns a Cloudflare challenge to scripts, so the page could not be loaded."]},
+     "hours": {"value": "Wed–Sun 10:00 AM – 4:00 PM (snippet, unverified)", "flag": "CURRENT 'Check operator for hours' can be replaced if verified; add closedDays [1, 2]."},
+     "visitHours": "1-1.5 plausible",
+     "cost": {"value": "free (current copy; not verified)"},
+     "ticketUrl": {"url": "https://huttcity.govt.nz/arts-and-culture/museums/petone-settlers-museum/visit", "verified": false, "reason": "Official operator page but blocked to scripts; needs a real-browser check. DO NOT use https://petonesettlers.org.nz/ - Wikipedia lists it but it now serves an unrelated casino page (title 'BetZillo Casino Australia'), so it is hijacked/dead."}},
+    {"id": "wellington-29", "name": "Pātaka Art + Museum",
+     "bio": {"facts": [
+       {"claim": "Municipal museum and gallery in Porirua City; building Te Marae o Te Umu Kai o Hau opened 1998; houses the library, a privately run cafe and a Japanese garden", "url": "https://en.wikipedia.org/wiki/P%C4%81taka_Art_%2B_Museum"},
+       {"claim": "Newzealand.com: focuses on Maori and Pacific art; official site: current and upcoming exhibitions (art, photography, Pacific and Maori works, local history)", "url": "https://pataka.org.nz/"}]},
+     "hours": {"value": "10:00 AM – 5:00 PM, 7 days a week", "url": "https://pataka.org.nz/", "flag": "CURRENT '10:00 AM – 4:30 PM' is STALE."},
+     "visitHours": "1-2 plausible",
+     "cost": {"value": "free admission", "url": "https://pataka.org.nz/"},
+     "ticketUrl": {"url": "https://pataka.org.nz/", "verified": true, "title": "Pataka home - pataka.org.nz (200, content names Pataka and its exhibitions)", "status": "MISSING in current data - add"}},
+    {"id": "wellington-30", "name": "Makara Peak Mountain Bike Park",
+     "bio": {"facts": [
+       {"claim": "250 ha of regenerating native bush; over 50 km of single track from technical descents to flow and family trails; volunteer-built and -maintained (4,500+ volunteer hours a year); every day listed as open", "url": "https://makarapeak.bike/"}],
+      "flags": ["Name in data 'Makara Peak' vs article 'Mākara Peak Mountain Bike Park' (wiki field set) - fine. Category 'hike' while the spot is a bike park; consider 'nature'. Walkers also use the trails (unverified)."]},
+     "hours": {"value": "Open daily (page shows every day 'Open', no times); keep 'Open daylight hours'", "url": "https://makarapeak.bike/", "flag": "'Open 24 hours' not stated by the site; 'daylight hours' safer. Unverified."},
+     "visitHours": "1.5-3 plausible",
+     "cost": {"value": "free (park run by Wellington City Council; entry charge not mentioned)", "url": "https://makarapeak.bike/"},
+     "ticketUrl": {"url": "https://makarapeak.bike/", "verified": true, "title": "Mākara Peak Mountain Bike Park", "status": "MISSING in current data - add (Makara Peak Supporters, Wikipedia-listed official site)"}}
+  ],
+  "crossEntryRepetition": [
+    "wellington-5 Botanic Garden bio repeats the cable-car terminus (wellington-2) and the observatory (wellington-23).",
+    "wellington-9 Waterfront and wellington-14 Oriental Bay overlap: the waterfront bio ends at Oriental Bay, the Oriental Bay bio mentions the Mount Victoria skyline (wellington-4).",
+    "wellington-18 Red Rocks and wellington-24 Turakirae Head both lead with winter fur seals.",
+    "wellington-11 Porirua and wellington-29 Pataka overlap (Porirua bio names Pataka).",
+    "Destination description repeats Te Papa, cable car, Zealandia, which are also the three whyVisit reasons and highlights."
+  ],
+  "unverified": [
+    "Zealandia and Wellington Zoo official sites (visitzealandia.com, wellingtonzoo.com) return 403 to curl and WebFetch: tickets, hours and ticketUrl titles unconfirmed; prices from third-party listings.",
+    "Parliament (parliament.nz, www3.parliament.nz): Radware captcha; tour times from a search summary; ticketUrl not verified.",
+    "Dowse (dowse.org.nz), Hutt City pages for Petone Settlers Museum, Pukeahu (mch.govt.nz): Cloudflare challenge; hours via search snippets only.",
+    "Mount Victoria, Mount Kaukau, Red Rocks, Makara Beach, Oriental Bay, Cuba Street, Waterfront, Pencarrow: no steward page loadable (wellington.govt.nz 403); 24-hour access assumed; no ticketUrl.",
+    "City Gallery current venue and entry policy (see flags); Katherine Mansfield 'born in the house' and 'restored to Victorian state' wording.",
+    "Wellington Fringe and WOW dates (third-party summary only); Cuba Dupa late March is from Wikipedia."
+  ],
+  "ticketUrlSummary": {
+    "currentCorrectAndVerified": ["wellington-2 https://www.wellingtoncablecar.co.nz/", "wellington-6 https://www.wetaworkshop.com/"],
+    "currentButUnverified": ["wellington-3 https://www.visitzealandia.com/ (403)", "wellington-10 https://www.wellingtonzoo.com/ (403; official is wellingtonzoo.com)"],
+    "missingNowVerified": {
+      "wellington-1": "https://www.tepapa.govt.nz/",
+      "wellington-5": "https://wellingtongardens.nz/our-gardens/wellington-botanic-garden-ki-paekaka",
+      "wellington-12": "https://wellingtongardens.nz/our-gardens/otari-wiltons-bush",
+      "wellington-13": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/matiu-somes-island/ (or https://eastbywest.co.nz/ferry-services/matiu-somes-island/)",
+      "wellington-16": "https://www.museumswellington.org.nz/wellington-museum/",
+      "wellington-19": "https://www.katherinemansfield.com/",
+      "wellington-21": "https://citygallery.org.nz/",
+      "wellington-23": "https://www.museumswellington.org.nz/space-place/",
+      "wellington-24": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/turakirae-head-scientific-reserve/",
+      "wellington-25": "https://www.gw.govt.nz/parks/belmont-regional-park/",
+      "wellington-29": "https://pataka.org.nz/",
+      "wellington-30": "https://makarapeak.bike/"
+    },
+    "missingUnverified": ["wellington-8 Parliament", "wellington-22 Pukeahu (mch.govt.nz/pukeahu)", "wellington-26 Dowse (dowse.org.nz)", "wellington-28 Petone Settlers Museum (huttcity.govt.nz page; petonesettlers.org.nz is hijacked, do not use)"]
+  }
+}

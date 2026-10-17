@@ -1,0 +1,717 @@
+{
+  "destination": "wairarapa",
+  "drafted": "2026-10-17",
+  "conventions": [
+    "Each changed field is {current, proposed, variants, reason, sources}. variants[0] is always the proposal; variants[1] and variants[2] are alternatives. Fields with no text choice (hours, cost, ticketUrl, coordinates) carry only proposed.",
+    "Naming: DOC's Remutaka is used for the range, forest park and trail. The spot name 'Rimutaka Incline' stays because it is the Wikipedia title and the historic name; its bio uses Remutaka for everything else.",
+    "Nothing in src/data was touched. No photos were checked or looked up (no network or Commons access in this task); photo suggestions are for Lens to confirm."
+  ],
+  "destinationEntry": {
+    "id": "wairarapa",
+    "fields": {
+      "tagline": {
+        "current": "Pinot noir country, pretty towns and a wild south coast.",
+        "proposed": "Pinot noir country over the Remutaka Range from Wellington, running down to Cape Palliser.",
+        "variants": [
+          "Pinot noir country over the Remutaka Range from Wellington, running down to Cape Palliser.",
+          "A warm, dry corner of the North Island sheltered by the Remutaka and Tararua ranges.",
+          "Wellington's wine-and-coast day trip, from Martinborough's vineyards to the southern tip of the North Island."
+        ],
+        "reason": "'Pretty towns' and 'wild' are unsourced adjectives. Replaced with facts: location behind the Remutakas, pinot noir around Martinborough, and Cape Palliser as the southern tip. Variant 2 uses Wikivoyage's climate fact.",
+        "sources": [
+          "https://en.wikivoyage.org/wiki/Wairarapa",
+          "https://en.wikipedia.org/wiki/Wairarapa",
+          "https://en.wikipedia.org/wiki/Cape_Palliser_Lighthouse"
+        ]
+      },
+      "description": {
+        "current": "The Wairarapa lies just over the Remutaka Range from Wellington and is known for its wineries, especially around Martinborough. Towns such as Greytown and Masterton have historic main streets, cafés and boutiques. The south coast has Cape Palliser's lighthouse, seal colonies and the Putangirua Pinnacles.",
+        "proposed": "The Wairarapa is the south-eastern corner of the North Island, separated from the Wellington area by the Remutaka Range and popular with Wellington day-trippers. The Remutaka and Tararua ranges shelter it from the prevailing westerlies, giving a warm, dry climate, and wine centres on Martinborough, where pinot noir and sauvignon blanc are the two main varieties. Masterton is the largest town, with Carterton, Greytown and Featherston strung along the way. More than 1,000 people commute 'through the hill' to Wellington each day.",
+        "variants": [
+          "The Wairarapa is the south-eastern corner of the North Island, separated from the Wellington area by the Remutaka Range and popular with Wellington day-trippers. The Remutaka and Tararua ranges shelter it from the prevailing westerlies, giving a warm, dry climate, and wine centres on Martinborough, where pinot noir and sauvignon blanc are the two main varieties. Masterton is the largest town, with Carterton, Greytown and Featherston strung along the way. More than 1,000 people commute 'through the hill' to Wellington each day.",
+          "Sheltered from the prevailing westerlies by the Remutaka and Tararua ranges, the Wairarapa has a warm, dry climate that suits grapes, and the main wine area is around Martinborough. Masterton is the largest town, with Carterton, Greytown and Featherston to its south. Beyond them the land runs out to a rugged south coast, while to the north Pūkaha keeps kiwi and takahē in a forest sanctuary on State Highway 2.",
+          "Over the Remutaka Range from Wellington, the Wairarapa is a warm, dry region of vineyards and small towns, with Masterton the largest. Pinot noir and sauvignon blanc are the two main wine varieties, grown mostly around Martinborough. Trains run to Masterton, and the forested Tararua Range rises behind the plain."
+        ],
+        "reason": "Cut the unsourced 'historic main streets, cafés and boutiques' (none of the loaded sources describes them for Greytown or Masterton). Facts from Wikivoyage Wairarapa (towns, shelter, climate, pinot noir and sauvignon blanc, wine centred on Martinborough) and Wikipedia (day-trippers/commuters). Cape Palliser and the Pinnacles are dropped from the description because they now appear in the reasons and spot bios (no repetition). Variant 2 uses Pūkaha for the north; variant 3 is three sentences.",
+        "sources": [
+          "https://en.wikivoyage.org/wiki/Wairarapa",
+          "https://en.wikipedia.org/wiki/Wairarapa",
+          "https://en.wikipedia.org/wiki/Wairarapa_Connection",
+          "https://pukaha.org.nz/"
+        ]
+      },
+      "whyVisit": {
+        "current": ["Martinborough pinot noir", "Putangirua Pinnacles", "Cape Palliser lighthouse and seals"],
+        "proposed": [
+          "Walk to the Putangirua Pinnacles, filmed as the Paths of the Dead",
+          "Climb to Cape Palliser's lighthouse at the North Island's southern tip",
+          "Meet kiwi, kākā and takahē at Pūkaha"
+        ],
+        "variants": [
+          [
+            "Walk to the Putangirua Pinnacles, filmed as the Paths of the Dead",
+            "Climb to Cape Palliser's lighthouse at the North Island's southern tip",
+            "Meet kiwi, kākā and takahē at Pūkaha"
+          ],
+          [
+            "Stand inside Stonehenge Aotearoa, an astronomical stone circle",
+            "Walk to the Putangirua Pinnacles, filmed as the Paths of the Dead",
+            "Climb to Cape Palliser's lighthouse at the North Island's southern tip"
+          ],
+          [
+            "Taste pinot noir among Martinborough's vineyards",
+            "Walk to the Putangirua Pinnacles, filmed as the Paths of the Dead",
+            "Climb to Cape Palliser's lighthouse at the North Island's southern tip"
+          ]
+        ],
+        "reason": "Original reason 1 ('Martinborough pinot noir') has no good photo (Lens is rejecting IMG9408 and has found no replacement). Variant 1 (preferred) drops it and re-orders so existing photos stay: the Putangirua photo moves to slot 1, the Cape Palliser photo to slot 2, and only slot 3 needs a new photo (kākā or takahē at Pūkaha, an animal photo is straightforward). Variant 2 keeps the order and needs one new photo, of Stonehenge Aotearoa, in slot 1. Variant 3 restores the original wine reason in reworded form and is only usable if Lens finds a real ground-level vineyard photo; wine is the region's identity per Wikivoyage, so reinstate it first if a photo turns up. 'Seals' removed from the Cape Palliser reason because the colony lies along the road, not at the lighthouse, and the photo is of the lighthouse. Reasons are not repeated in the description.",
+        "sources": [
+          "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wairarapa/places/putangirua-pinnacles-scenic-reserve/",
+          "https://en.wikipedia.org/wiki/Cape_Palliser_Lighthouse",
+          "https://pukaha.org.nz/",
+          "https://stonehenge-aotearoa.nz/",
+          "https://en.wikivoyage.org/wiki/Wairarapa"
+        ]
+      },
+      "highlights": {
+        "current": ["Wineries", "Pinnacles", "Cape Palliser"],
+        "proposed": ["Paths of the Dead", "Lighthouse climb", "Native birds"],
+        "variants": [
+          ["Paths of the Dead", "Lighthouse climb", "Native birds"],
+          ["Stone circle", "Paths of the Dead", "Lighthouse climb"],
+          ["Pinot noir", "Paths of the Dead", "Lighthouse climb"]
+        ],
+        "reason": "One phrase per reason, in the same order as the matching whyVisit variant (variant 1 with variant 1, and so on).",
+        "sources": ["see whyVisit"]
+      },
+      "goodToKnow": {
+        "current": [
+          { "icon": "🚆", "title": "Day-trip from Wellington", "detail": "The Wairarapa Line runs trains to Masterton, and Martinborough is about 90 minutes by road." },
+          { "icon": "🍷", "title": "Book a designated driver", "detail": "Wineries are close together in Martinborough, and cycling or a tour avoids drinking and driving." },
+          { "icon": "🦭", "title": "Keep your distance from seals", "detail": "Fur seals at Cape Palliser can be aggressive if approached, so stay at least 10 metres away." }
+        ],
+        "proposed": [
+          { "icon": "🚆", "title": "Trains stop at Masterton", "detail": "The Wairarapa Line runs 91 km from Wellington to Masterton, with five services each way Monday to Friday but only two at weekends and on public holidays. There is no train to Martinborough; Metlink bus 200 runs there from Masterton and Featherston." },
+          { "icon": "🚲", "title": "Hire a bike, not a car", "detail": "Martinborough's vineyards lie in ribbons around the north and east of town, and the Martinborough Wine Centre hires cycles, which avoids drinking and driving." },
+          { "icon": "🦭", "title": "Give seals 20 metres", "detail": "DOC advises staying at least 20 metres from fur seals, which have sharp teeth and move quickly if threatened. Keep dogs leashed and away, and never get between a seal and the sea." }
+        ],
+        "variants": [
+          [
+            { "icon": "🚆", "title": "Trains stop at Masterton", "detail": "The Wairarapa Line runs 91 km from Wellington to Masterton, with five services each way Monday to Friday but only two at weekends and on public holidays. There is no train to Martinborough; Metlink bus 200 runs there from Masterton and Featherston." },
+            { "icon": "🚲", "title": "Hire a bike, not a car", "detail": "Martinborough's vineyards lie in ribbons around the north and east of town, and the Martinborough Wine Centre hires cycles, which avoids drinking and driving." },
+            { "icon": "🦭", "title": "Give seals 20 metres", "detail": "DOC advises staying at least 20 metres from fur seals, which have sharp teeth and move quickly if threatened. Keep dogs leashed and away, and never get between a seal and the sea." }
+          ],
+          [
+            { "icon": "🛣️", "title": "Watch the Remutaka Hill Road", "detail": "The only road from Wellington is a narrow, winding 15 km climb that Wikivoyage calls one of the country's worst crash blackspots, and it can close, so check the road status before you set off." },
+            { "icon": "🚲", "title": "Hire a bike, not a car", "detail": "Martinborough's vineyards lie in ribbons around the north and east of town, and the Martinborough Wine Centre hires cycles, which avoids drinking and driving." },
+            { "icon": "🦭", "title": "Give seals 20 metres", "detail": "DOC advises staying at least 20 metres from fur seals, which have sharp teeth and move quickly if threatened. Keep dogs leashed and away, and never get between a seal and the sea." }
+          ],
+          [
+            { "icon": "🚆", "title": "Weekend trains are limited", "detail": "At weekends and on public holidays the Wairarapa Line runs only two services each way between Wellington and Masterton, so a day trip by train means one morning and one evening departure." },
+            { "icon": "🛣️", "title": "Check the hill before driving", "detail": "The Remutaka Hill Road is a narrow, winding 15 km climb out of the Hutt Valley; Wikivoyage warns of crash blackspots, so allow extra time and check for closures." },
+            { "icon": "🦭", "title": "Give seals 20 metres", "detail": "DOC advises staying at least 20 metres from fur seals, which have sharp teeth and move quickly if threatened. Keep dogs leashed and away, and never get between a seal and the sea." }
+          ]
+        ],
+        "reason": "Tip 3: DOC says 20 m, not 10 m (media releases 2017 and 2021). Tip 1: the stored '90 minutes by road' is unsourced and the train claim omitted the weekend limit (five services each way Mon-Fri, two at weekends/holidays per Wikipedia and Wikivoyage); Martinborough has no train, bus 200 serves it per Wikivoyage. Tip 2: kept the sourced content (vineyards in ribbons north and east; Wine Centre cycle hire) and dropped the unsourced 'close together'. Variants 2 and 3 bring in the Remutaka Hill Road warning from Wikivoyage. Note the Wine Centre cycle-hire line comes from a truncated Wikivoyage sentence ('Cycle hire is...'); if Quill step 3 can reread it, confirm before shipping. 'Metlink' naming comes from the research notes.",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Wairarapa_Connection",
+          "https://en.wikivoyage.org/wiki/Wairarapa",
+          "https://en.wikivoyage.org/wiki/Martinborough",
+          "https://en.wikipedia.org/wiki/Martinborough",
+          "https://doc.govt.nz/news/media-releases/2017/leave-seals-alone-theyre-just-resting",
+          "https://www.doc.govt.nz/news/media-releases/2021-media-releases/seals-coming-in-to-rest-on-whanganui-beaches/",
+          "https://stonehenge-aotearoa.nz/"
+        ]
+      }
+    },
+    "untouched": [
+      "id, name, country, countryCode, timezone, continent",
+      "coordinates (-41.25, 175.65): a rural point near Lake Wairarapa, not a town; owner could move it to Martinborough (-41.2188, 175.4592) or Masterton (-40.97, 175.65). Left as is.",
+      "category 'nature', rank 4 (matches COVERAGE.md), icon, defaultZoomSpanKm 90 (all spots inside 67.5 km; Castlepoint 61.7 km and Pūkaha 58.8 km justify it)",
+      "bestMonths [11,12,1,2,3,4] and bestTimeBlurb: no climate source loaded, so left unchanged and flagged as unverified; Toast Martinborough (November) is an event and not a reason to change them",
+      "whyVisitPhotos: not touched here; Lens owns them (see whyVisit)"
+    ]
+  },
+  "spots": [
+    {
+      "id": "wairarapa-1",
+      "name": "Martinborough",
+      "fields": {
+        "bio": {
+          "current": "A wine village with dozens of cellar doors within walking and cycling distance, known for pinot noir.",
+          "proposed": "A town laid out in 1879 in the pattern of the Union Jack, with vineyards in ribbons around its northern and eastern sides, best known for pinot noir.",
+          "variants": [
+            "A town laid out in 1879 in the pattern of the Union Jack, with vineyards in ribbons around its northern and eastern sides, best known for pinot noir.",
+            "The Wairarapa's wine town, where pinot noir vineyards follow dry riverbeds to the north, east and south and a warm micro-climate ripens the grapes.",
+            "A town of about 1,900 people, 65 km east of Wellington, whose vineyards, among them Ata Rangi, Dry River and Palliser Estate, are known for pinot noir."
+          ],
+          "reason": "'Dozens of cellar doors within walking and cycling distance' has no source (Wikipedia gives only 'a large number of vineyards'). Union Jack plan, 1879, vineyard layout, population and winery names are from Wikivoyage and Wikipedia.",
+          "sources": [
+            "https://en.wikivoyage.org/wiki/Martinborough",
+            "https://en.wikipedia.org/wiki/Martinborough"
+          ]
+        },
+        "hours": {
+          "current": "Cellar doors 11:00 AM – 5:00 PM",
+          "proposed": "Cellar door hours vary",
+          "reason": "11-5 is unsourced and cellar doors differ. Only sourced hours are for the Wine Centre (10-5 daily in winter, Fri/Sat to 7 PM in summer, Wikivoyage, dated), too specific for the whole town. Short qualifier per WRITING.md.",
+          "sources": ["https://en.wikivoyage.org/wiki/Martinborough"]
+        },
+        "costMin/costMax/currency": {
+          "current": "10-20 NZD",
+          "proposed": "remove costMin, costMax and currency (leave cost unset)",
+          "reason": "Tasting-fee range has no source in research. The town is free to walk, and the cost is a per-winery choice, so no honest single range exists. Owner may prefer free: true for the town itself.",
+          "sources": []
+        }
+      },
+      "untouched": ["name", "icon", "coordinates (within 100 m of Wikipedia and Nominatim)", "category", "visitHoursMin/Max 3-6 (plausible, unsourced)", "no ticketUrl by design: many cellar doors, no single steward (martinborough.com did not load)"]
+    },
+    {
+      "id": "wairarapa-2",
+      "name": "Putangirua Pinnacles",
+      "fields": {
+        "bio": {
+          "current": "Eroded gravel spires in a valley, used as the Paths of the Dead in The Lord of the Rings, reached by a river-bed walk.",
+          "proposed": "Eroded gravel spires at the head of the Pūtangirua Stream valley, seen best from the Pinnacles Ridge Track lookout and filmed as the Paths of the Dead in The Lord of the Rings.",
+          "variants": [
+            "Eroded gravel spires at the head of the Pūtangirua Stream valley, seen best from the Pinnacles Ridge Track lookout and filmed as the Paths of the Dead in The Lord of the Rings.",
+            "Earth pillars left where the Pūtangirua Stream cut through an ancient gravel layer, with a ridge-top lookout and a Lord of the Rings film location in the Paths of the Dead.",
+            "Some of the best earth pillar formations in New Zealand, reached on foot from a car park and campsite and used as the Paths of the Dead in The Lord of the Rings."
+          ],
+          "reason": "DOC says the best view is the lookout on Pinnacles Ridge Track and advises against approaching the base and exploring the stream bed (rockfall, flash floods), so 'reached by a river-bed walk' is replaced. Variant 3 uses DOC's own wording on the formations. Wikipedia and DOC agree on the Return of the King filming.",
+          "sources": [
+            "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wairarapa/places/putangirua-pinnacles-scenic-reserve/",
+            "https://en.wikipedia.org/wiki/Putangirua_Pinnacles"
+          ]
+        },
+        "ticketUrl": {
+          "current": null,
+          "proposed": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wairarapa/places/putangirua-pinnacles-scenic-reserve/",
+          "reason": "DOC's page, loaded; title 'Putangirua Pinnacles Scenic Reserve: Places to go in Wairarapa'. Use exactly this /wairarapa/ path (the /wellington-kapiti/ guess is a 404).",
+          "sources": ["https://www.doc.govt.nz/parks-and-recreation/places-to-go/wairarapa/places/putangirua-pinnacles-scenic-reserve/"]
+        },
+        "coordinates": {
+          "current": { "latitude": -41.4468, "longitude": 175.2468 },
+          "proposed": { "latitude": -41.449483, "longitude": 175.221505 },
+          "status": "UNVERIFIED proposal (DOC page GPS; not re-checked on a map or with audit-spot-coordinates.ts)",
+          "reason": "The stored point is the pinnacles themselves, roughly 2 km from the car park at the entrance (WRITING.md: the entrance or point visitors stand at). Run audit-spot-coordinates.ts before accepting; if the owner prefers the pin on the formation, keep the stored value.",
+          "sources": ["https://www.doc.govt.nz/parks-and-recreation/places-to-go/wairarapa/places/putangirua-pinnacles-scenic-reserve/"]
+        }
+      },
+      "untouched": ["name (no macron; Wikipedia title is Pūtangirua Pinnacles and the URL redirects, so check the photo lookup resolves, add wiki: 'Pūtangirua Pinnacles' only if it does not)", "hours Open 24 hours", "free: true", "visitHoursMin/Max 2-3", "category nature"]
+    },
+    {
+      "id": "wairarapa-3",
+      "name": "Cape Palliser Lighthouse",
+      "fields": {
+        "bio": {
+          "current": "A red-and-white striped lighthouse reached by 250 steps, near a fur seal colony at the southern tip of the North Island.",
+          "proposed": "A red-and-white striped lighthouse from 1897 at the southern tip of the North Island, reached by 258 steps up a 58 m cliff.",
+          "variants": [
+            "A red-and-white striped lighthouse from 1897 at the southern tip of the North Island, reached by 258 steps up a 58 m cliff.",
+            "A lighthouse reached by 258 steps, at the end of a coast road that passes the North Island's largest fur seal colony.",
+            "The southern tip of the North Island, with a lookout across Cook Strait from the steps to a striped lighthouse."
+          ],
+          "reason": "Step count is 258 (Wikipedia and Wikivoyage), not 250. Wikivoyage places the fur seal colony on the coastal rocks along the road to the lighthouse, not at it, so variant 1 omits it (seals are covered in the destination tip) and variant 2 states it correctly. Lighthouse built 1897, staircase 1912, cliff 58 m: Wikipedia.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Cape_Palliser_Lighthouse",
+            "https://en.wikivoyage.org/wiki/Wairarapa"
+          ]
+        }
+      },
+      "untouched": ["coordinates (exact to Nominatim)", "hours Open 24 hours (unverified, no Maritime NZ page loaded)", "free: true", "visitHoursMin/Max 1-1.5", "no ticketUrl: no official visitor page exists (Maritime NZ owns it; DOC has none)"]
+    },
+    {
+      "id": "wairarapa-4",
+      "name": "Castlepoint",
+      "fields": {
+        "bio": {
+          "current": "A lighthouse on a reef headland, with a lagoon and a ridge walk over Castle Rock.",
+          "proposed": "A limestone reef, lagoon and lighthouse beneath 162 m Castle Rock, the only place in the world where the shrubby Castlepoint daisy grows.",
+          "variants": [
+            "A limestone reef, lagoon and lighthouse beneath 162 m Castle Rock, the only place in the world where the shrubby Castlepoint daisy grows.",
+            "A scenic reserve about an hour from Masterton where all the walks, including the one to the lighthouse, start from the road-end car park beside the reef and lagoon.",
+            "A fossil-rich reef about 1 km long where seals, white-fronted terns and shags gather, named Rangiwhakaoma, 'the skies that race', by Kupe."
+          ],
+          "reason": "'A ridge walk over Castle Rock' contradicts DOC, which does not recommend climbing Castle Rock. Replaced with DOC facts (reef, lagoon, lighthouse, Castle Rock 162 m, the daisy found only here). Walk times are not in the loaded DOC page, so none are stated.",
+          "sources": [
+            "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wairarapa/places/castlepoint-scenic-reserve/",
+            "https://en.wikipedia.org/wiki/Castlepoint"
+          ]
+        },
+        "ticketUrl": {
+          "current": null,
+          "proposed": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wairarapa/places/castlepoint-scenic-reserve/",
+          "reason": "DOC's page, loaded; title 'Castlepoint Scenic Reserve: Places to go in the Wairarapa'.",
+          "sources": ["https://www.doc.govt.nz/parks-and-recreation/places-to-go/wairarapa/places/castlepoint-scenic-reserve/"]
+        },
+        "category": {
+          "current": "viewpoint",
+          "proposed": "nature",
+          "status": "owner's call",
+          "reason": "A reef, lagoon and scenic reserve is nature rather than a viewpoint; the viewpoint was the discredited ridge walk.",
+          "sources": ["https://www.doc.govt.nz/parks-and-recreation/places-to-go/wairarapa/places/castlepoint-scenic-reserve/"]
+        }
+      },
+      "untouched": ["coordinates: stored is the settlement point (-40.9009, 176.2217); the OSM lighthouse is about 0.8 km east at -40.9004, 176.2315; the road-end car park coordinate was not found, so no move is proposed", "hours Open 24 hours", "free: true", "visitHoursMin/Max 1.5-3"]
+    },
+    {
+      "id": "wairarapa-5",
+      "name": "Greytown",
+      "fields": {
+        "bio": {
+          "current": "A village of Victorian shopfronts, boutiques and cafés on the main street.",
+          "proposed": "A small town on State Highway 2 where New Zealand's first Arbor Day was celebrated in 1890, and which still keeps a register of its trees.",
+          "variants": [
+            "A small town on State Highway 2 where New Zealand's first Arbor Day was celebrated in 1890, and which still keeps a register of its trees.",
+            "A town settled in 1854 under the Small Farms Association scheme and named after Governor Sir George Grey, 24 km south-west of Masterton.",
+            "The Wairarapa town where New Zealand's first Arbor Day was held in 1890, founded in 1854 as a small-farms settlement."
+          ],
+          "reason": "'Victorian shopfronts, boutiques and cafés' is unsourced in everything loaded (Wikipedia covers history and Arbor Day; Wikivoyage's Greytown article is empty). Replaced with sourced facts. The Cobblestones Museum is left out so it does not repeat wairarapa-11.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Greytown,_New_Zealand"
+          ]
+        }
+      },
+      "untouched": ["wiki 'Greytown, New Zealand'", "coordinates", "hours Open 24 hours", "free: true", "visitHoursMin/Max 1-2", "no ticketUrl by design"],
+      "flag": "Without the main-street description Greytown's visitor draw rests on Wikipedia alone. COVERAGE.md requires a counted visitor-oriented source; none was read for Greytown (Destination Wairarapa loaded but no main-street text was read). Owner should confirm it still qualifies or find a counted source for the main street (then the original claim could return)."
+    },
+    {
+      "id": "wairarapa-6",
+      "name": "Stonehenge Aotearoa",
+      "fields": {
+        "bio": {
+          "current": "A full-size astronomical replica of Stonehenge built by the Phoenix Astronomical Society near Carterton, laid out for the southern hemisphere sky.",
+          "proposed": "An open-sky astronomical stone circle near Carterton, inspired by England's Stonehenge, built on a similar scale and laid out for the southern hemisphere sky.",
+          "variants": [
+            "An open-sky astronomical stone circle near Carterton, inspired by England's Stonehenge, built on a similar scale and laid out for the southern hemisphere sky.",
+            "An astronomical stone circle with a star compass, opened in 2005, offering self-guided visits, sunset tours and night-sky sessions.",
+            "A stone circle 12 km east of Carterton that works as an observatory, with guided tours at 10:30, 12:30 and 2:00 and evening star sessions."
+          ],
+          "reason": "'Full-size replica' overstates Wikipedia ('inspired by and built on a similar scale'). 'Built by the Phoenix Astronomical Society' is not confirmed in a loaded source, so it is cut. Opening year and 12 km are from Wikivoyage; tours and star compass from the operator.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Stonehenge_Aotearoa",
+            "https://en.wikivoyage.org/wiki/Wairarapa",
+            "https://stonehenge-aotearoa.nz/"
+          ]
+        },
+        "hours": {
+          "current": "Open daily; check times",
+          "proposed": "Self-guided 10:00 AM – 4:00 PM daily; guided tours 10:30, 12:30 and 2:00",
+          "reason": "Operator site, retrieved 2026-10-17. Night-sky and sunset sessions are booked separately.",
+          "sources": ["https://stonehenge-aotearoa.nz/"]
+        },
+        "costMin/costMax/currency": {
+          "current": null,
+          "proposed": { "costMin": 5, "costMax": 18, "currency": "NZD" },
+          "reason": "Operator: self-guided $5-$18 by ticket type. Guided and sunset tours $25-$65 per person and Star Trek night $60-$80 are separate.",
+          "sources": ["https://stonehenge-aotearoa.nz/"]
+        },
+        "ticketUrl": {
+          "current": null,
+          "proposed": "https://stonehenge-aotearoa.nz/",
+          "reason": "Loaded; title names the place. Old stonehenge-aotearoa.org.nz redirects here, so use the .nz domain.",
+          "sources": ["https://stonehenge-aotearoa.nz/"]
+        }
+      },
+      "untouched": ["coordinates (exact to Wikipedia)", "visitHoursMin/Max 1-2", "category landmark"]
+    },
+    {
+      "id": "wairarapa-7",
+      "name": "Mount Holdsworth",
+      "fields": {
+        "bio": {
+          "current": "A Tararua Forest Park trailhead and campsite near Masterton, starting point for day walks and the Southern Crossing.",
+          "proposed": "A road end 17 km from Masterton with a bookable DOC lodge, a campsite, Donnelly Flat picnic area and day walks, including the Atiwhakatu Track, plus the start of the 24 km Jumbo circuit.",
+          "variants": [
+            "A road end 17 km from Masterton with a bookable DOC lodge, a campsite, Donnelly Flat picnic area and day walks, including the Atiwhakatu Track, plus the start of the 24 km Jumbo circuit.",
+            "A Tararua trailhead with Holdsworth Lodge, which sleeps 28, a campsite beside the Atiwhakatu Stream and day walks to a lookout and around Donnelly Flat.",
+            "The usual start for the Mount Holdsworth and Jumbo circuit, a 24 km two-to-three-day tramp, and for shorter walks along the Atiwhakatu Stream."
+          ],
+          "reason": "The Southern Crossing runs from Ōtaki Forks to Kaitoke (DOC), not from Holdsworth, so the stored mention is wrong and is removed (the crossing has its own spot). Details are DOC (17 km from Masterton, lodge sleeps 28, Atiwhakatu Track, Donnelly Flat loop, Holdsworth Lookout Track) and Wikivoyage Masterton (Jumbo circuit 24 km, 2-3 days, 2017 listing). 'Entrance' wording is left to the Tararua Forest Park bio to avoid repeating it. Wikipedia says the locality is 17 km north of Carterton; DOC says 17 km from Masterton, DOC is used.",
+          "sources": [
+            "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/tararua-forest-park/",
+            "https://en.wikipedia.org/wiki/Mount_Holdsworth,_New_Zealand",
+            "https://en.wikivoyage.org/wiki/Masterton"
+          ]
+        },
+        "ticketUrl": {
+          "current": null,
+          "proposed": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/tararua-forest-park/",
+          "reason": "No dedicated DOC Holdsworth page was found; the park page was loaded and names Holdsworth. Same URL as the standalone Tararua Forest Park, acceptable since both are DOC park-level.",
+          "sources": ["https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/tararua-forest-park/"]
+        },
+        "coordinates": {
+          "current": { "latitude": -40.893, "longitude": 175.527 },
+          "proposed": { "latitude": -40.9064, "longitude": 175.4767 },
+          "status": "UNVERIFIED proposal (OSM Holdsworth Lodge, wilderness_hut; not the car park itself)",
+          "reason": "The stored point is Wikipedia's locality centroid, about 4.5 km from the road end. Within span: about 41 km from the Wairarapa centre. Exact car park point not found; run audit-spot-coordinates.ts.",
+          "sources": ["https://en.wikipedia.org/wiki/Mount_Holdsworth,_New_Zealand"]
+        }
+      },
+      "untouched": ["wiki", "hours Open 24 hours", "free: true", "visitHoursMin/Max 3-8", "category hike"]
+    },
+    {
+      "id": "wairarapa-8",
+      "name": "Fell Locomotive Museum",
+      "fields": {
+        "bio": {
+          "current": "A small museum in Featherston with the only surviving Fell engine, one of those that worked the Remutaka Incline.",
+          "proposed": "A Featherston museum holding H199 Mont Cenis, the only surviving Fell locomotive in the world, alongside a restored brakevan, photos and video.",
+          "variants": [
+            "A Featherston museum holding H199 Mont Cenis, the only surviving Fell locomotive in the world, alongside a restored brakevan, photos and video.",
+            "Home of H199 Mont Cenis, one of six Fell locomotives that hauled trains over the Rimutaka Incline until 1955, a short walk from Featherston station.",
+            "A small railway museum on the corner of State Highway 2 and Lyon Street, showing the Fell system's four horizontal wheels that clamped a raised centre rail."
+          ],
+          "reason": "Kept the good core. 'Surviving' now says 'in the world' (museum site and Wikipedia). The museum bio is about the locomotive, while the Rimutaka Incline spot is about the trail, which removes the overlap; variants 2 and 3 mention the incline or the Fell system only once.",
+          "sources": [
+            "https://fellmuseum.org.nz/",
+            "https://en.wikipedia.org/wiki/Fell_Locomotive_Museum",
+            "https://en.wikivoyage.org/wiki/Wairarapa"
+          ]
+        },
+        "hours": {
+          "current": "Open Wed-Sun; check",
+          "proposed": "Saturday and Sunday 10:00 AM – 4:00 PM; closed public holidays",
+          "reason": "Operator site, retrieved 2026-10-17. Group tours are bookable any day. Wikivoyage's daily 10-4 is stale.",
+          "sources": ["https://fellmuseum.org.nz/"]
+        },
+        "closedDays": {
+          "current": null,
+          "proposed": [1, 2, 3, 4, 5],
+          "reason": "Open only Saturday and Sunday for walk-ins; group tours by booking.",
+          "sources": ["https://fellmuseum.org.nz/"]
+        },
+        "costMin/costMax/currency": {
+          "current": null,
+          "proposed": { "costMin": 7, "costMax": 7, "currency": "NZD" },
+          "reason": "Operator: adult $7 (child over 5 $2, family $15).",
+          "sources": ["https://fellmuseum.org.nz/"]
+        },
+        "ticketUrl": {
+          "current": null,
+          "proposed": "https://fellmuseum.org.nz/",
+          "reason": "Loaded; title 'The Fell Locomotive Museum'.",
+          "sources": ["https://fellmuseum.org.nz/"]
+        }
+      },
+      "untouched": ["coordinates", "visitHoursMin/Max 0.5-1", "category museum"]
+    },
+    {
+      "id": "wairarapa-10",
+      "name": "Pūkaha Mount Bruce National Wildlife Centre",
+      "fields": {
+        "bio": {
+          "current": "A forest wildlife centre in the Tararua foothills with kiwi, kākā, takahē and daily feeding talks.",
+          "proposed": "A 942-hectare unfenced forest sanctuary on State Highway 2 where kiwi, kākā and takahē are bred and released, with a nocturnal kiwi house and daily feeding talks.",
+          "variants": [
+            "A 942-hectare unfenced forest sanctuary on State Highway 2 where kiwi, kākā and takahē are bred and released, with a nocturnal kiwi house and daily feeding talks.",
+            "A not-for-profit wildlife centre 10 km south of Eketahuna that breeds endangered birds, with a daily kiwi talk at noon, longfin tuna at 1:30 and kākā at 3:00.",
+            "A forest sanctuary on the edge of the Wairarapa and Tararua where visitors can see kiwi, tīeke, tuatara and longfin eels."
+          ],
+          "reason": "'Tararua foothills' is unsourced; the operator says the edge of the Wairarapa and Tararua. Size, species, talks and distance from the operator's site; breeding and release from the operator and Wikipedia. Talk times are as retrieved 2026-10-17 and may change.",
+          "sources": [
+            "https://pukaha.org.nz/",
+            "https://pukaha.org.nz/experiences/",
+            "https://en.wikipedia.org/wiki/P%C5%ABkaha_National_Wildlife_Centre"
+          ]
+        },
+        "hours": {
+          "current": "9:00 AM – 4:00 PM",
+          "proposed": "9:00 AM – 5:00 PM",
+          "reason": "Operator homepage, retrieved 2026-10-17: open daily 9am-5pm (the Kākā Café closes at 4pm). Wikivoyage's 9-4:30 is stale.",
+          "sources": ["https://pukaha.org.nz/"]
+        },
+        "costMin/costMax/currency": {
+          "current": null,
+          "proposed": { "costMin": 26, "costMax": 26, "currency": "NZD" },
+          "reason": "Operator experiences page: adult $26 self-guided (the one-hour guided tour is $60 and is not the base price).",
+          "sources": ["https://pukaha.org.nz/experiences/"]
+        },
+        "ticketUrl": {
+          "current": null,
+          "proposed": "https://pukaha.org.nz/",
+          "reason": "Loaded; the www. host does not resolve, so use the bare domain.",
+          "sources": ["https://pukaha.org.nz/"]
+        }
+      },
+      "untouched": ["coordinates (exact to Wikipedia)", "wiki", "visitHoursMin/Max 2-3 (operator says two to three hours)", "category nature"],
+      "flag": "Name: the operator and Wikipedia call it 'Pūkaha National Wildlife Centre'; the stored name keeps 'Mount Bruce'. Left as is; shortening it is the owner's decision (the id and wiki are unaffected)."
+    },
+    {
+      "id": "wairarapa-11",
+      "name": "Cobblestones Museum",
+      "fields": {
+        "bio": {
+          "current": "A museum in Greytown with restored colonial buildings, a stagecoach and a cobblestone-lined shearing shed.",
+          "proposed": "A heritage village in Greytown built around the Hastwell stables and their cobblestone courtyard, with a colonial cottage, the Wairarapa's first public hospital, a country school and the Donald Woolshed.",
+          "variants": [
+            "A heritage village in Greytown built around the Hastwell stables and their cobblestone courtyard, with a colonial cottage, the Wairarapa's first public hospital, a country school and the Donald Woolshed.",
+            "A working Victorian heritage village with six Category 2 Heritage New Zealand buildings, including the Wairarapa's first purpose-built woolshed.",
+            "The old Hastwell stables, where stagecoaches stopped between Masterton and Wellington, now the centre of a self-guided village with a church, school and hospital."
+          ],
+          "reason": "The stored bio is wrong: the cobbles are the stable courtyard that stagecoaches used, and the woolshed is the Donald Woolshed, not a 'cobblestone-lined shearing shed'. A stagecoach exhibit is not confirmed in any loaded source. Rewritten from Wikipedia and the operator ('working Victorian heritage village', self-guided map).",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Cobblestones_Museum",
+            "https://cobblestonesmuseum.org.nz/visit-us"
+          ]
+        },
+        "hours": {
+          "current": "9:30 AM – 4:00 PM (check)",
+          "proposed": "Sep–May 10:00 AM – 4:00 PM; Jun–Aug 10:00 AM – 3:00 PM",
+          "reason": "Operator, retrieved 2026-10-17: last admission 3:30 PM (Sep-May) and 2:30 PM (Jun-Aug); closed on some public holidays (full list truncated, so not stated).",
+          "sources": ["https://cobblestonesmuseum.org.nz/visit-us"]
+        },
+        "costMin/costMax/currency": {
+          "current": null,
+          "proposed": { "costMin": 18, "costMax": 18, "currency": "NZD" },
+          "reason": "Operator: adult $18 (Gold card $12, student $12, child 5+ $5, family $30).",
+          "sources": ["https://cobblestonesmuseum.org.nz/visit-us"]
+        },
+        "ticketUrl": {
+          "current": null,
+          "proposed": "https://cobblestonesmuseum.org.nz/",
+          "reason": "Loaded; title 'Cobblestones Museum | Early Settler Museum Greytown | Historic Village'.",
+          "sources": ["https://cobblestonesmuseum.org.nz/"]
+        },
+        "visitHoursMin/Max": {
+          "current": "1-1.5",
+          "proposed": "1-2",
+          "reason": "A village of several buildings; research judged 1-2 plausible but this is an estimate, not a sourced figure. Optional.",
+          "sources": []
+        }
+      },
+      "untouched": ["coordinates", "category museum"]
+    },
+    {
+      "id": "wairarapa-12",
+      "name": "Aratoi Wairarapa Museum of Art and History",
+      "fields": {
+        "bio": {
+          "current": "The Wairarapa's art and history museum in Masterton, with regional and national collections.",
+          "proposed": "The Wairarapa's museum of art and history on Bruce Street in Masterton, with changing exhibitions from textile craft to inventions.",
+          "variants": [
+            "The Wairarapa's museum of art and history on Bruce Street in Masterton, with changing exhibitions from textile craft to inventions.",
+            "A charitable-trust museum in Masterton that calls itself the cultural heart of the Wairarapa, with art and history exhibitions.",
+            "Masterton's museum of art and history, open Tuesday to Sunday, showing a changing programme of exhibitions."
+          ],
+          "reason": "'Regional and national collections' is unsourced; the operator pages describe exhibitions, not collections. Rewritten from the operator's own description. Variant 3 repeats the hours and is the weakest.",
+          "sources": [
+            "https://www.aratoi.org.nz/visit",
+            "https://www.aratoi.org.nz/news/changes-aratoi-introducing-entry-fee"
+          ]
+        },
+        "hours": {
+          "current": "10:00 AM – 4:30 PM (check)",
+          "proposed": "10:00 AM – 3:00 PM; closed Monday",
+          "reason": "Operator /visit, retrieved 2026-10-17: Tuesday to Sunday 10am-3pm, changed 29 June 2026.",
+          "sources": ["https://www.aratoi.org.nz/visit"]
+        },
+        "closedDays": {
+          "current": null,
+          "proposed": [1],
+          "reason": "Closed Mondays.",
+          "sources": ["https://www.aratoi.org.nz/visit"]
+        },
+        "costMin/costMax/currency": {
+          "current": null,
+          "proposed": { "costMin": 5, "costMax": 5, "currency": "NZD" },
+          "reason": "Entry fee from 29/30 June 2026: $5 for non-residents ($2 Masterton residents, free for 16 and under and Friends). Not free, so no free: true. The operator's news item says 29 June and the visit page 30 June.",
+          "sources": [
+            "https://www.aratoi.org.nz/visit",
+            "https://www.aratoi.org.nz/news/changes-aratoi-introducing-entry-fee"
+          ]
+        },
+        "ticketUrl": {
+          "current": null,
+          "proposed": "https://www.aratoi.org.nz/",
+          "reason": "Loaded; title 'Aratoi, Wairarapa Museum of Art and History'.",
+          "sources": ["https://www.aratoi.org.nz/"]
+        }
+      },
+      "untouched": ["coordinates", "visitHoursMin/Max 1-2", "category museum"],
+      "flag": "Wikipedia has no standalone Aratoi article (the summary resolves to Masterton), so the name-based photo lookup may return a Masterton image; check the manifest photo and set an override if needed."
+    }
+  ],
+  "standaloneSpots": [
+    {
+      "id": "rimutaka-incline",
+      "name": "Rimutaka Incline",
+      "fields": {
+        "bio": {
+          "current": "A heritage rail formation over the Remutaka Range, now a walking and cycling trail with tunnels and the old Fell railway grade between Upper Hutt and Wairarapa.",
+          "proposed": "The old railway grade over the Remutaka Range, now part of an 18 km walking and cycling trail from Kaitoke to Cross Creek with restored bridges, tunnels (bring a torch) and a viewing platform.",
+          "variants": [
+            "The old railway grade over the Remutaka Range, now part of an 18 km walking and cycling trail from Kaitoke to Cross Creek with restored bridges, tunnels (bring a torch) and a viewing platform.",
+            "The steepest part of the old Wairarapa Line, a 4.8 km grade at about 1 in 15 between Summit and Cross Creek, now walked and cycled as part of the Remutaka Rail Trail.",
+            "A one-way walk of about 4.5 hours or a ride of about 1.5 hours from Kaitoke, with a platform between the Summit and Siberia tunnels looking down the old route from Cross Creek."
+          ],
+          "reason": "Differentiated from the Fell Locomotive Museum (the engine) and Remutaka Forest Park (the park and Catchpool): this bio is about the trail and grade only. The incline strictly is the 4.8 km Summit to Cross Creek section; the trail is DOC's 18 km Remutaka Rail Trail, and variant 2 makes that distinction. Walk and ride times are DOC's.",
+          "sources": [
+            "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/remutaka-forest-park/things-to-do/tracks/remutaka-rail-trail/",
+            "https://en.wikipedia.org/wiki/Rimutaka_Incline"
+          ]
+        },
+        "ticketUrl": {
+          "current": null,
+          "proposed": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/remutaka-forest-park/things-to-do/tracks/remutaka-rail-trail/",
+          "reason": "DOC Remutaka Rail Trail page, loaded.",
+          "sources": ["https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/remutaka-forest-park/things-to-do/tracks/remutaka-rail-trail/"]
+        }
+      },
+      "untouched": ["name (Wikipedia and historic title; DOC says Remutaka Rail Trail)", "coordinates (route point, acceptable)", "hours Open 24 hours (a 2022 DOC release closed a section near Corner Creek; current status unverified)", "free: true", "visitHoursMin/Max 2-5"]
+    },
+    {
+      "id": "kaitoke-regional-park",
+      "name": "Kaitoke Regional Park",
+      "fields": {
+        "bio": {
+          "current": "A Greater Wellington regional park on the Hutt River with swimming holes, bush walks and the Rivendell film location, entered off State Highway 2.",
+          "proposed": "A Greater Wellington park on the Hutt River with short bush walks, river swimming, the Kaitoke Weir and the Rivendell film location, entered from Waterworks Road.",
+          "variants": [
+            "A Greater Wellington park on the Hutt River with short bush walks, river swimming, the Kaitoke Weir and the Rivendell film location, entered from Waterworks Road.",
+            "A park of walks from 15 minutes to the Rivendell site and the weir up to an hour on the Swingbridge Track above the Hutt River gorge.",
+            "A much-visited picnic, camping and swimming park north-east of Upper Hutt, where the weir collects almost half of Wellington's water."
+          ],
+          "reason": "'Swimming holes' is a stretch; the operator says swimming in the river. Walk times, Rivendell, the weir fact and Waterworks Road are from Greater Wellington. The Southern Crossing finish and Rail Trail start are left to those spots.",
+          "sources": [
+            "https://www.gw.govt.nz/parks/kaitoke-regional-park/",
+            "https://en.wikipedia.org/wiki/Kaitoke_Regional_Park"
+          ]
+        },
+        "hours": {
+          "current": "Open daily, daylight hours",
+          "proposed": "6:00 AM – 6:00 PM (1 April – 30 September); 6:00 AM – 9:00 PM (1 October – 31 March)",
+          "reason": "Greater Wellington, retrieved 2026-10-17.",
+          "sources": ["https://www.gw.govt.nz/parks/kaitoke-regional-park/"]
+        },
+        "ticketUrl": {
+          "current": null,
+          "proposed": "https://www.gw.govt.nz/parks/kaitoke-regional-park/",
+          "reason": "Loaded; title 'Kaitoke Regional Park | Greater Wellington'.",
+          "sources": ["https://www.gw.govt.nz/parks/kaitoke-regional-park/"]
+        }
+      },
+      "untouched": ["coordinates (Flume Bridge viewpoint, exact; under 1 km from the main camp)", "free: true (no day-entry fee seen; unverified, camping is charged)", "visitHoursMin/Max 1-3"]
+    },
+    {
+      "id": "tararua-forest-park",
+      "name": "Tararua Forest Park",
+      "fields": {
+        "bio": {
+          "current": "A large forest park of ridges and tramping tracks above the Kāpiti and Wairarapa plains, managed by the Department of Conservation.",
+          "proposed": "New Zealand's first forest park, established in 1954, 1,150 square kilometres of Tararua Range bush, huts and tracks that rise to 1,571 m at Mitre, entered from Holdsworth, Waiohine Gorge or Ōtaki Forks.",
+          "variants": [
+            "New Zealand's first forest park, established in 1954, 1,150 square kilometres of Tararua Range bush, huts and tracks that rise to 1,571 m at Mitre, entered from Holdsworth, Waiohine Gorge or Ōtaki Forks.",
+            "A range of ridges and open tops where cold southerlies have caused several fatalities, so routes across the tops are for experienced trampers only.",
+            "Tararua tramping, hunting and walking country covering 1,150 square kilometres between the Kāpiti Coast and the Wairarapa."
+          ],
+          "reason": "Supported in substance, but the first-forest-park fact (Wikipedia) and the three DOC entrances make it distinctive. Holdsworth detail stays in wairarapa-7 and the crossing in the Southern Crossing bio, so there is no repetition.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Tararua_Forest_Park",
+            "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/tararua-forest-park/"
+          ]
+        },
+        "ticketUrl": {
+          "current": null,
+          "proposed": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/tararua-forest-park/",
+          "reason": "DOC park page, loaded. (A /wairarapa/ path guess is a 404.)",
+          "sources": ["https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/tararua-forest-park/"]
+        }
+      },
+      "untouched": ["coordinates (Wikipedia park point; there is no single visitor hub)", "hours Open 24 hours", "free: true", "visitHoursMin/Max 3-8"]
+    },
+    {
+      "id": "remutaka-forest-park",
+      "name": "Remutaka Forest Park",
+      "fields": {
+        "bio": {
+          "current": "A forest park on the Remutaka Range between the Hutt Valley and Wairarapa, with tracks, rivers and the Catchpool Valley.",
+          "proposed": "A 22,000-hectare forest park across the Remutaka Range, with a campground and swimming spots in the Catchpool Valley 30 km from Wellington and kiwi released since 2006.",
+          "variants": [
+            "A 22,000-hectare forest park across the Remutaka Range, with a campground and swimming spots in the Catchpool Valley 30 km from Wellington and kiwi released since 2006.",
+            "A tramping and hunting park with six bookable huts, where the Catchpool Valley leads to longer tramps in the Ōrongorongo Valley.",
+            "A forest park with Wairarapa-side entries along Western Lake Road at Waiorongomai, Battery Stream and Ocean Beach."
+          ],
+          "reason": "The stored bio's 'tracks, rivers' is generic. DOC and Wikipedia supply the area, Catchpool Valley campground and swimming, huts, Ōrongorongo tramps, Western Lake Road entries and 2006 kiwi release. The Rail Trail start at Cross Creek is left to the Rimutaka Incline spot so the two do not repeat each other.",
+          "sources": [
+            "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/remutaka-forest-park/",
+            "https://en.wikipedia.org/wiki/Remutaka_Forest_Park"
+          ]
+        },
+        "ticketUrl": {
+          "current": null,
+          "proposed": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/remutaka-forest-park/",
+          "reason": "DOC park page, loaded.",
+          "sources": ["https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/remutaka-forest-park/"]
+        }
+      },
+      "untouched": ["coordinates (Wikipedia park point -41.36, 175.0; a Catchpool Valley car park point would be better but none was found, so no number is proposed)", "hours Open 24 hours", "free: true", "visitHoursMin/Max 2-6"]
+    },
+    {
+      "id": "tararua-southern-crossing",
+      "name": "Tararua Southern Crossing",
+      "fields": {
+        "bio": {
+          "current": "A classic two-day tramp across the exposed main range of the Tararuas between Ōtaki Forks and Mount Holdsworth.",
+          "proposed": "A 32 km alpine tramp of two to three days from Ōtaki Forks over Mount Hector to Kaitoke, one of the Tararua Range's four classic tramps and for experienced trampers only.",
+          "variants": [
+            "A 32 km alpine tramp of two to three days from Ōtaki Forks over Mount Hector to Kaitoke, one of the Tararua Range's four classic tramps and for experienced trampers only.",
+            "DOC's advanced three-day route over Mount Hector (1,529 m) with Field, Kime and Alpha huts, notorious for strong winds, mist and freezing temperatures.",
+            "A route from Ōtaki Forks to Kaitoke across the exposed tops, popularised in the 1920s and 1930s by the Tararua Tramping Club."
+          ],
+          "reason": "Stored bio is wrong on two counts: the crossing ends at Kaitoke, not Mount Holdsworth (Ōtaki Forks to Holdsworth is the separate Middle Crossing, four days), and it takes three days (DOC) or two to three (Wikipedia), not two. 'Experienced trampers only' and wind/mist follow DOC. Tramping-club history is DOC.",
+          "sources": [
+            "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/tararua-forest-park/things-to-do/tracks/tararua-southern-crossing/",
+            "https://en.wikipedia.org/wiki/Southern_Crossing",
+            "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/tararua-forest-park/things-to-do/tracks/tararua-middle-crossing/"
+          ]
+        },
+        "hours": {
+          "current": "Open 24 hours; hut booking required",
+          "proposed": "Open 24 hours",
+          "reason": "'Hut booking required' is not sourced: DOC lists the huts as Standard category and the loaded page does not say bookings are required. Hut fees are not loaded.",
+          "sources": ["https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/tararua-forest-park/things-to-do/tracks/tararua-southern-crossing/"]
+        },
+        "visitHoursMin/Max": {
+          "current": "16-24",
+          "proposed": { "visitHoursMin": 19, "visitHoursMax": 23 },
+          "reason": "DOC leg times add to 19-23 hours of walking: Ōtaki Forks to Field Hut 3-4 h, Field to Kime 3-4 h, Kime to Alpha 5-6 h, Alpha to Kaitoke 8-9 h, over three days. Elapsed time with weather will be longer.",
+          "sources": ["https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/tararua-forest-park/things-to-do/tracks/tararua-southern-crossing/"]
+        },
+        "ticketUrl": {
+          "current": null,
+          "proposed": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/tararua-forest-park/things-to-do/tracks/tararua-southern-crossing/",
+          "reason": "DOC track page, loaded; heading 'Tararua Southern Crossing'.",
+          "sources": ["https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/tararua-forest-park/things-to-do/tracks/tararua-southern-crossing/"]
+        }
+      },
+      "untouched": ["name, wiki 'Southern Crossing'", "coordinates (Ōtaki Forks track start, about 1 km from Nominatim's locality)", "no free: true and no cost set: hut fees for Field, Kime and Alpha are unverified", "category hike"]
+    }
+  ],
+  "coordinateProposals": [
+    {
+      "id": "wairarapa-2",
+      "from": [-41.4468, 175.2468],
+      "to": [-41.449483, 175.221505],
+      "status": "UNVERIFIED",
+      "source": "DOC Putangirua Pinnacles page GPS (the car park); the stored point is the formation, about 2 km east"
+    },
+    {
+      "id": "wairarapa-7",
+      "from": [-40.893, 175.527],
+      "to": [-40.9064, 175.4767],
+      "status": "UNVERIFIED",
+      "source": "OSM/Nominatim Holdsworth Lodge (wilderness_hut) at the road end; the stored point is a Wikipedia locality centroid about 4.5 km away. The car park itself was not found."
+    }
+  ],
+  "flags": [
+    "Wairarapa best months and the Toast Martinborough point: no climate source, left untouched.",
+    "Wairarapa-9 appears nowhere in git history; do not reuse it until someone with full history checks.",
+    "Greytown (wairarapa-5): the visitor draw needs a counted source after the unsourced main-street claim is removed.",
+    "Castlepoint coordinates: stored point is the settlement; the lighthouse is 0.8 km east. No change proposed because the car park point was not found.",
+    "Cape Palliser: current hours and access unverified (no Maritime NZ page).",
+    "Tararua Southern Crossing: current status of Ōtaki Gorge Road and the Ōtaki Forks campsite is undated and unverified, so the bio makes no access claim.",
+    "Quill step 3 should reload the truncated Martinborough Wine Centre Wikivoyage text before the cycle-hire tip ships."
+  ]
+}
