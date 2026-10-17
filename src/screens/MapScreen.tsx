@@ -1001,7 +1001,8 @@ const SPOT_IMPORTANCE = (() => {
   return out;
 })();
 const SPOT_BY_ID = new Map(SPOTS.map(sp => [sp.id, sp]));
-const SPOT_DOT_RADIUS = 5.5;
+const SPOT_DOT_RADIUS = 6.5;
+const SPOT_DOT_CORE_RADIUS = 3.2;
 const MIN_SPOT_REVEAL_ZOOM = Math.min(...Object.values(SPOT_REVEAL_ZOOM_BY_ID));
 function isSpotRevealed(sp: Spot, zoom: number): boolean {
   const level = SPOT_REVEAL_ZOOM_BY_ID[sp.id];
@@ -2329,27 +2330,53 @@ const destItems = useMemo((): DestItem[] =>
   }, [region, handoffZoom, selectedSpot, selectedDest, spotsInDest, nearCtx]);
   // Exit-fade tracking for spot pins (same treatment as pills/photos): pins leaving the
   // set linger for PIN_EXIT_MS fading out, new ones mount at 0 and fade in.
-  // Full photo pins for the highest-priority spots in view (the selected spot and a near carousel's spots always among
-  // them, then visited ones, then the most important by their place in their destination's list); everything else that
-  // is revealed becomes a dot. Ranked on static data only, so panning never reshuffles which spots hold a pin.
+  // Which revealed spots get a full photo pin and which collapse to a dot. Spots are taken in priority order (the selected
+  // spot and a near carousel's spots first, then visited ones, then the most important by their place in their
+  // destination's list) and a spot keeps its photo pin only if it still has room: its pin must not overlap a pin already
+  // placed or a destination's photo pin and name on screen, and no more than MAX_SPOT_PINS pins draw at once. A spot
+  // that fails either test becomes a dot, which sits under the pins and lives exactly as long as the pin would have. The
+  // spots already holding a pin get a small head start so zooming doesn't swap pins and dots back and forth.
+  const prevPinIdsRef = useRef<Set<string>>(new Set());
   const { pinSpots, dotSpots } = useMemo(() => {
-    if (visibleSpots.length <= MAX_SPOT_PINS) return { pinSpots: visibleSpots, dotSpots: [] as Spot[] };
     const must = new Set<string>();
     if (selectedSpot) must.add(selectedSpot.id);
     if (nearCtx) for (const sp of nearCtx.spots) must.add(sp.id);
+    const prev = prevPinIdsRef.current;
     const rank = (sp: Spot) =>
       (must.has(sp.id) ? -2_000_000 : 0) + (visitIndex.isSpotVisited(sp.id) ? -1_000_000 : 0)
-      + (SPOT_IMPORTANCE.get(sp.id) ?? 0) * 1000 + (SPOT_ORDER.get(sp.id) ?? 0);
+      + (SPOT_IMPORTANCE.get(sp.id) ?? 0) * 1000 - (prev.has(sp.id) ? 500 : 0) + (SPOT_ORDER.get(sp.id) ?? 0);
     const sorted = [...visibleSpots].sort((x, y) => rank(x) - rank(y));
-    const k = Math.max(MAX_SPOT_PINS, must.size);
-    return { pinSpots: sorted.slice(0, k), dotSpots: sorted.slice(k) };
-  }, [visibleSpots, selectedSpot, nearCtx, visitIndex]);
+    const pxPerDegLng = SCREEN_W_GLOBAL / pillVisibleLngDelta;
+    type Box = { l: number; r: number; t: number; b: number };
+    const overlaps = (a: Box, b: Box) => a.l < b.r && a.r > b.l && a.t < b.b && a.b > b.t;
+    const taken: Box[] = [];
+    // Destination photo pins on screen, with the name hanging below each (same footprint spotLabelPlan avoids).
+    for (const id of destPinPlan.photoIds) {
+      const d = DESTINATIONS.find(dd => dd.id === id);
+      if (!d) continue;
+      const m = mercatorPx(d.coordinates.longitude, d.coordinates.latitude, pxPerDegLng);
+      const x = m.x, y = -m.y, R = PIN_SIZE / 2 + 2;
+      const nameW = Math.min(90, d.name.length * 6.3), nameH = d.name.length * 6.3 > 90 ? 26 : 13;
+      taken.push({ l: x - Math.max(R, nameW / 2), r: x + Math.max(R, nameW / 2), t: y - R, b: y + R + 4 + nameH });
+    }
+    const pins: Spot[] = [], dots: Spot[] = [];
+    for (const sp of sorted) {
+      const m = mercatorPx(sp.coordinates.longitude, sp.coordinates.latitude, pxPerDegLng);
+      const x = m.x, y = -m.y;
+      // The pin's footprint: the bubble plus the tail hanging to the coordinate, with a little air around it.
+      const box: Box = { l: x - SPOT_PIN_SIZE / 2 - 2, r: x + SPOT_PIN_SIZE / 2 + 2, t: y - SPOT_PIN_SIZE - 10 - 2, b: y + 2 };
+      if (!must.has(sp.id) && (pins.length >= MAX_SPOT_PINS || taken.some(t => overlaps(t, box)))) { dots.push(sp); continue; }
+      pins.push(sp); taken.push(box);
+    }
+    prevPinIdsRef.current = new Set(pins.map(sp => sp.id));
+    return { pinSpots: pins, dotSpots: dots };
+  }, [visibleSpots, selectedSpot, nearCtx, visitIndex, pillVisibleLngDelta, destPinPlan]);
   const stableDotSpots = useStableList(dotSpots, s => s.id);
   const spotDotsGeoJSON = useMemo((): GeoJSON.FeatureCollection<GeoJSON.Point> => ({
     type: 'FeatureCollection',
     features: stableDotSpots.map(sp => ({
       type: 'Feature',
-      properties: { id: sp.id, color: visitIndex.isSpotVisited(sp.id) ? VISITED_COLOR : '#374151' },
+      properties: { id: sp.id, color: visitIndex.isSpotVisited(sp.id) ? VISITED_COLOR : '#1E293B' },
       geometry: { type: 'Point', coordinates: [sp.coordinates.longitude, sp.coordinates.latitude] },
     })),
   }), [stableDotSpots, visitIndex]);
@@ -4542,14 +4569,24 @@ const destItems = useMemo((): DestItem[] =>
             if (spot && !pressBlocked()) handleSpotPress(spot);
           }}
         >
+          {/* A mini version of the spot pin: its white bubble with the photo collapsed to a coloured core. Larger and
+              white-ringed, so it reads as a spot and not as one of the small solid grey destination dots. */}
           <MapboxGL.CircleLayer
-            id="spotDotCircles"
+            id="spotDotRing"
             belowLayerID="destStampCircles"
             style={{
               circleRadius: SPOT_DOT_RADIUS,
+              circleColor: 'white',
+              circleStrokeWidth: 1,
+              circleStrokeColor: 'rgba(15,23,42,0.35)',
+            }}
+          />
+          <MapboxGL.CircleLayer
+            id="spotDotCore"
+            aboveLayerID="spotDotRing"
+            style={{
+              circleRadius: SPOT_DOT_CORE_RADIUS,
               circleColor: ['get', 'color'] as any,
-              circleStrokeWidth: 2,
-              circleStrokeColor: 'white',
             }}
           />
         </MapboxGL.ShapeSource>
