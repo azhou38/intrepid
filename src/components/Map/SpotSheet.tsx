@@ -20,7 +20,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { SharedValue } from 'react-native-reanimated';
 import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'react-native-svg';
 import { Check, Clock, CalendarClock, ChevronUp, ChevronDown, ChevronRight, LayoutGrid, Plus,
-         ExternalLink, Ticket, MapPin, Image as ImageIcon } from 'lucide-react-native';
+         ExternalLink, Ticket, MapPin, Globe, Image as ImageIcon } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
 import { useStore, useVisitIndex } from '../../store';
 import type { Destination, Visit } from '../../types';
@@ -1544,7 +1544,7 @@ function SpotAbout({ spot, tabbed, nearbySpots, onSelectNearby, onExplore, nearb
             <Pressable style={st.linksRow} onPress={() => Linking.openURL(spot.ticketUrl!)}>
               {ticketFaviconUri && !faviconFailed
                 ? <Image source={{ uri: ticketFaviconUri }} style={st.siteFavicon} onError={() => setFaviconFailed(true)} />
-                : <View style={st.siteFavicon}><Ticket size={16} color="#6366F1" /></View>}
+                : <View style={st.siteFavicon}><Globe size={18} color="#6B7280" /></View>}
               <View style={st.siteText}>
                 <Text style={st.siteEyebrow}>OFFICIAL SITE</Text>
                 <Text style={st.siteName} numberOfLines={1}>{spot.name}</Text>
