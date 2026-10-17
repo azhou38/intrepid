@@ -1637,6 +1637,13 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   const planZoomTargetRef = useRef<number | null>(null);
   if (selectedCountry || selectedDest) planZoomTargetRef.current = null;
   const planZoomTarget = planZoomTargetRef.current;
+  // The same look-ahead for closing a spot back INTO its destination (the "‹ Destination" back), which keeps the
+  // destination selected and so can't use planZoomTarget (cleared above while one is selected). Spot pins, dots and names
+  // plan at the destination's default view from the first frame of the zoom-out instead of bunching up at the old zoom.
+  // Cleared on the first idle, a user gesture or a safety timer, like planZoomTarget.
+  const spotCloseTargetRef = useRef<number | null>(null);
+  const spotCloseTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const closeTarget = planZoomTarget ?? spotCloseTargetRef.current;
   // Pin planning runs ahead of the (heavy, laggy) per-frame renders.
   // - A close that flies to a known wider view plans AT that view from its first frame (planZoomTarget): the spot pins
   //   and photo pins the wider view doesn't have start leaving at once, and no intermediate zoom's pin set (many photo
@@ -1651,14 +1658,14 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // or, for a close, the known target — never the velocity prediction above: a pinch that merely starts to zoom out would
   // otherwise read as already past the destination's default zoom, flash its pin in and its spot pins out, then undo it
   // when the gesture settled.
-  const handoffZoom = planZoomTarget !== null ? Math.min(camZoom, planZoomTarget) : camZoom;
+  const handoffZoom = closeTarget !== null ? Math.min(camZoom, closeTarget) : camZoom;
   // How much wider the view a close is flying to is than the one the camera reports right now (1 when no close is under
   // way). The viewport spot query and the spot pin plan scale the live bounds by it, so they work in the target view from
   // the first frame: the bounds lag the camera, and a close used to show only the few spots inside the old zoomed-in view
   // as dots at first, the rest arriving as the bounds caught up.
-  const closeViewScale = planZoomTarget !== null ? Math.pow(2, Math.max(0, camZoom - handoffZoom)) : 1;
+  const closeViewScale = closeTarget !== null ? Math.pow(2, Math.max(0, camZoom - handoffZoom)) : 1;
   // While such a close is under way, pins that leave fade out quickly (see FadePin) instead of lingering.
-  closeFade.fast = planZoomTarget !== null;
+  closeFade.fast = closeTarget !== null;
   // The bounds-derived span lags the same way, so it's ignored while looking ahead.
   const planRegionLng = planZoomTarget !== null ? Infinity : region.longitudeDelta;
   const planLngDelta = useMemo(() => Math.min(
@@ -1768,6 +1775,12 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     planZoomTargetRef.current = null;
     if (planZoomTimerRef.current) { clearTimeout(planZoomTimerRef.current); planZoomTimerRef.current = null; }
     heldSelRef.current = { country: null, dest: null };
+    setHeldSelTick(t => t + 1);
+  }, []);
+  const releaseSpotCloseTarget = useCallback(() => {
+    if (spotCloseTimerRef.current) { clearTimeout(spotCloseTimerRef.current); spotCloseTimerRef.current = null; }
+    if (spotCloseTargetRef.current === null) return;
+    spotCloseTargetRef.current = null;
     setHeldSelTick(t => t + 1);
   }, []);
   // A close that zooms OUT to `targetZoom` over `durationMs`: plan for the wider view from the first frame (see
@@ -3310,9 +3323,21 @@ const destItems = useMemo((): DestItem[] =>
       suppressDestReturnPromptTimerRef.current = setTimeout(() => { suppressDestReturnPromptRef.current = false; }, 650);
       // Neither snap this can land on leaves the bottom-screen strip showing, so 'topHalf'.
       setDestHomeToDefault(selectedDest, 'topHalf');
+      // Plan the spot pins at the view this lands on (see spotCloseTargetRef) — only when it zooms out.
+      const target = destDefaultCamera(selectedDest, 'topHalf').zoom;
+      if (target < camZoomRef.current - ZOOM_EPSILON) {
+        spotCloseTargetRef.current = target;
+        if (spotCloseTimerRef.current) clearTimeout(spotCloseTimerRef.current);
+        spotCloseTimerRef.current = setTimeout(() => {
+          spotCloseTimerRef.current = null;
+          if (spotCloseTargetRef.current === null) return;
+          spotCloseTargetRef.current = null;
+          setHeldSelTick(t => t + 1);
+        }, 500 + 800);
+      }
       fitDestinationDefaultView(selectedDest, 'easeTo', 'topHalf');
     }
-  }, [spotOrigin, selectedDest, fitDestinationDefaultView, setSheetSnapState, setDestHomeToDefault]);
+  }, [spotOrigin, selectedDest, fitDestinationDefaultView, setSheetSnapState, setDestHomeToDefault, destDefaultCamera]);
 
   // Spot close/back, provenance-routed: entered from the destination → return to it;
   // entered laterally (map tap at spot zoom, or search) → back to the map as it was.
@@ -3804,6 +3829,7 @@ const destItems = useMemo((): DestItem[] =>
     // open over the map while the user navigates.
     if (isGestureActive && !wasMapGestureActiveRef.current) {
       releaseHeldSelection();   // the user took over the camera: don't keep planning around the closed selection
+      releaseSpotCloseTarget();
       if (showMapMenuRef.current) { showMapMenuRef.current = false; setShowMapMenu(false); }
       // The user grabbed the map while a destination's initial fly-to was still in flight —
       // mark it so the next onMapIdle (which will reflect wherever THEIR gesture ends, not
@@ -3979,6 +4005,7 @@ const destItems = useMemo((): DestItem[] =>
     // first pan of the whole session ever would). Reset it here so every pan is detected.
     wasMapGestureActiveRef.current = false;
     releaseHeldSelection();   // a close's zoom-out has settled: let the pin/pill planning drop the old selection
+    releaseSpotCloseTarget();
     const { center, bounds } = state.properties;
     const newRegion: Region = {
       latitude:      center[1],
