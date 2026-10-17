@@ -1,0 +1,95 @@
+{
+  "destination": "dubbo",
+  "step": "Quill step 3 (fact check)",
+  "checked": "2026-10-17",
+  "resolutions": {
+    "zoo_distance": {
+      "verdict": "fix",
+      "finding": "Both numbers are right, measuring different things. Straight line from the centre pin (-32.2569, 148.6011) to the zoo (Wikivoyage geo -32.27858, 148.58176) is about 3.0 km. Wikipedia (Taronga Western Plains Zoo: 'about 5 km from the city') and Wikivoyage ('5 km taxi or bus ride') give the road distance. Visitors travel by road, so use 5 km in copy, say 'by road'. Keep 3 km only as the internal span calculation.",
+      "use_in_copy": "about 5 km from town"
+    },
+    "caves_distance": {
+      "verdict": "fix",
+      "finding": "placement.json's 33 km is wrong. Great-circle from centre to Wikipedia caves coordinates (-32.62083, 148.93806) is 51.4 km, so '51 km' holds only as a straight line. Wikipedia (Wellington NSW) puts the town 49 km SE of Dubbo and the caves are 8 km (Wikipedia) / about 9 km (operator) south of Wellington on the Mitchell Highway, so the drive is roughly 58 km and no source gives drive time. 'South-east' is supported (Wellington is 'SE of Dubbo', caves are further south-east). Copy should say 'about 50 km south-east' and never 'off the Mitchell Highway' for the 51 km figure (that 9 km is Wellington to the caves). defaultZoomSpanKm 70 stays valid (75% = 52.5 km > 51.4).",
+      "use_in_copy": "about 50 km south-east of Dubbo, near Wellington"
+    },
+    "zoo_price": {
+      "verdict": "ok",
+      "finding": "Ticket-prices page (loaded): adult gate $57.00, online 'From $51.30'; concession $43/$38.70, child 4-15 $33/$29.70, infant free. Tickets cover 2 consecutive days. Wikivoyage's $45 is stale.",
+      "spot_fields": "costMin 51.3, costMax 57, currency AUD"
+    },
+    "ticketUrls": {
+      "zoo": "ok - https://www.taronga.org.au/dubbo-zoo loads, title 'Visit Taronga Western Plains Zoo | Dubbo Zoo NSW | Taronga Zoo'",
+      "gaol": "ok - https://www.olddubbogaol.com.au/ loads, title 'Old Dubbo Gaol', page names 90 Macquarie Street",
+      "caves": "ok - https://www.wellingtoncaves.com.au/ loads, title 'Wellington Caves and Holiday Park', 101 Caves Road, Apsley. Operator is Dubbo Regional Council."
+    },
+    "rfds": {
+      "verdict": "fix",
+      "finding": "An official page exists. The RFDS national 'Visit us' page (https://www.flyingdoctor.org.au/support-us/visit-us/) lists the Dubbo Visitor Experience at 21 Judy Jakins Drive, Dubbo NSW 2830 and links https://dubbo.experience.flyingdoctor.org.au/ (loads, title 'Royal Flying Doctor Service | Dubbo Visitor Centre'). Its /visit page gives the hours below, which match Wikivoyage's 2021 hours except public holidays and closures; its listing page says it is 'an interactive and immersive exploration of the world of the RFDS', with an operations-control interactive, an actual emergency aircraft to explore, augmented-reality missions and the Outback Trek Cafe. Prices on /visit: adult $25, concession $20, child 4-15 $15, family (2+2) $60. So P's free:true is wrong. Wikivoyage also gives Dubbo Visitor Experience as the name; the on-site brand is 'Dubbo Visitor Experience' / 'Dubbo Visitor Centre'.",
+      "ticketUrl": "https://dubbo.experience.flyingdoctor.org.au/",
+      "hours": "Mon-Fri 9:00 AM - 5:00 PM, Sat 9:00 AM - 4:00 PM, Sun and public holidays 9:00 AM - 3:00 PM; closed Christmas Day, Boxing Day, New Year's Day, Anzac Day and Good Friday",
+      "cost": "adult $25 (concession $20, child $15)"
+    },
+    "caves_price": {
+      "verdict": "unverifiable",
+      "finding": "No tour price found: /book-a-cave-tour, /plan-your-visit, /tours and /faq 404 on the Wix site; /explore loads but lists no prices. Booking is via the site ('BOOK TOURS HERE'), tours are not free, so placement free:true is wrong. Leave costMin/costMax out and flag; do not invent. The site mentions a free 'Ancient Landscapes exhibition' only."
+    }
+  },
+  "flagged_phrases": {
+    "south-east": { "verdict": "ok", "finding": "Supported (see caves_distance); Wikipedia Wellington says town is SE of Dubbo, caves lie further SE." },
+    "or car": { "verdict": "cut", "finding": "Only Wikivoyage ('hire a bike, car or walk') says this; the zoo's own pages list bikes, electric carts and pedal boats and never a car. Wikivoyage's 'car' may mean the cart. Use the operator's list: bike, electric cart or pedal boat." },
+    "cells": { "verdict": "ok", "finding": "Old Dubbo Gaol /visit page lists a 'Male Cell Division' exhibition and 'Explore the cells by torchlight' (night tour). Safe to say 'cells' but the photo is not a cells view (photo_match note stands). Variant 3 reason 1 still fails on bike photo." },
+    "gaol grounds": { "verdict": "ok", "finding": "Gaol /visit: 'wander through the historic grounds' and 'Our Exercise Yards'. Supported, though the zoo is the stronger outdoor reason for blurb variant 3." }
+  },
+  "items": [
+    { "id": "tagline", "preferred": 0, "status": "ok", "text": "A Central West city with an open-range zoo, a 19th-century gaol and limestone caves within a day trip.", "note": "Zoo and gaol supported; caves as a day trip per Wikivoyage; 'within a day trip' means the caves, fine. 'Largest in Orana' (variant 2) also supported by Wikipedia." },
+    { "id": "description", "preferred": 0, "status": "fix", "text": "Dubbo is a city of 43,516 people (2021) at the junction of the Newell, Mitchell and Golden highways, about 400 km by road from Sydney, and the largest population centre in the Orana region. Most visitors come for Taronga Western Plains Zoo, which opened in 1977 on 300 ha and uses concealed moats rather than fences. In town, Old Dubbo Gaol, a gaol from 1859 to 1966, is now a museum. Wellington Caves, about 50 km south-east, are the usual day trip.", "note": "Pop 43,516 (June 2021), three highways, 400 km road, Orana: Wikipedia. Zoo 28 Feb 1977, 300 ha, concealed moats: Wikipedia. Gaol: proclaimed a gaol 12 July 1859 (operator /discover), closed 1966 (Wikipedia; Wikivoyage 'official gaol from 1859 to 1966'). Fix: '51 km' to 'about 50 km' (straight line, not a drive distance); 'usual day trip' is Wikivoyage's 'good day trip' - ok. Variant 2: 'at the airport' for RFDS ok (21 Judy Jakins Dr, beside Dubbo Regional Airport per Wikivoyage geo -32.216, 148.571); 'half-day trip' is unsourced - cut. Variant 3: 'west of Sydney' - Wikipedia says north-west, Wikivoyage 'west'; 400 km road ok; 'a second day' unsourced. Do not use variant 3 wording 'in the centre' loosely: gaol is on Macquarie Street in town, ok." },
+    { "id": "whyVisit", "preferred": 1, "status": "fix", "reasons": [
+        "See elephants, giraffes and black rhinos in an open-range zoo with no fences",
+        "Tour a former gaol that held prisoners until 1966",
+        "Take a guided tour through Wellington Caves, limestone karst about 50 km from town"
+      ], "highlights": ["Zoo with giraffes", "Historic gaol tours", "Limestone cave tours"], "note": "Elephants, giraffes, black rhinos: Wikivoyage and Wikipedia (Asian elephants, South-central black rhino, giraffe). 'No fences': Wikipedia 'walls and fences replaced by concealed moats'. Gaol: Wikipedia 1966 closure. Caves: tours of three cave sites (operator); 'guided' is supported (Wikipedia 'guided tours'). Fix only '51 km' to 'about 50 km'. Variant 1: 'diprotodon and giant kangaroo bones found in 1830' supported (Wikipedia: George Ranken, two years after 1828); 'cycle or drive round' fails ('drive' unsupported, bikes and carts are) - use variant 2. Variant 3 'Walk the cells' supported but reason 1 (bike hire) is not shown by the giraffe photo." },
+    { "id": "goodToKnow", "preferred": "composite", "status": "fix", "tips": [
+        "No car needed to reach Dubbo: an XPT train runs daily from Sydney, usually arriving 2-3 PM, and the zoo is about 5 km from town by road, with a taxi, bus or the Tracker Riley Cycleway to get there.",
+        "Book zoo tickets online, where an adult is from $51.30 against $57.00 at the gate. The zoo is open every day of the year, with the Zoo Circuit running 9:00 AM-4:00 PM.",
+        "Summer highs often pass 40 C, so visit the zoo early or outside summer; Wellington Caves are open 9:00 AM-4:15 PM daily and tours are booked through the caves' website."
+      ], "note": "Tip 1: XPT daily 2-3 PM (Wikivoyage); 'few places practical without a car' (Wikivoyage); 5 km taxi/bus, cycleway from centre to zoo (Wikivoyage). Fix: zoo is 5 km by road (not 3). Tip 2: ticket-prices and visitor-information pages. Tip 3 fix: 'must be booked' and 'allow a half day with the drive' are not sourced (site says 'BOOK TOURS HERE' and Wikivoyage 'good day trip'), so reworded. 'Summer highs often pass 40 C' Wikipedia ('often peaking above 40 C'). Variant 2 tip 3 'January's mean max 33.6 C' ok but 'in winter mornings can drop below zero' ok (Wikipedia subzero). Variant 3 tip 3 is wrong as written: 'Wellington Caves are 51 km off the Mitchell Highway' (cut; the caves are 9 km south of Wellington on the highway). Variant 3 tip 2 'Savannah Visitor Plaza from 8:30 AM' ok." },
+    { "id": "bestMonths", "status": "ok", "value": [3, 4, 5, 9, 10, 11], "note": "Derived from Wikipedia climate (Jan mean max 33.6 C; summer peaks above 40 C; subzero winter mornings). Not a guidebook statement; flag as derived. Acceptable." },
+    { "id": "bestTimeBlurb", "preferred": 0, "status": "ok", "text": "{months} give mild days for the open-range zoo and the cave tours; summer can pass 40 C and winter mornings are frosty.", "note": "One {months}. Variant 2 ok (33.6 C, often tops 40 C). Variant 3 ok ('gaol grounds' supported) but 'avoid frosts' fine." }
+  ],
+  "spots": [
+    {
+      "id": "dubbo-1", "name": "Taronga Western Plains Zoo", "status": "fix",
+      "bio_preferred": "A 300 ha open-range zoo that opened in 1977, with elephants, giraffes and a breeding program for rare black rhinos.",
+      "bio_note": "Variant 2 fully supported (Wikipedia, Wikivoyage). Variant 3 'or car': cut. Variant 1 ok: bikes, electric carts and pedal boats confirmed on zoo pages; use 'concealed moats replace fences'.",
+      "fields": { "hours": "9:00 AM - 4:00 PM", "hours_note": "Zoo Circuit 9:00am-4:00pm, Savannah Visitor Plaza 8:30am-4:00pm, open every day (visitor-information page)", "free": false, "costMin": 51.3, "costMax": 57, "currency": "AUD", "ticketUrl": "https://www.taronga.org.au/dubbo-zoo", "visitHoursMin": null, "visitHoursMax": null },
+      "note": "Wikivoyage's $45 and 9-5 are stale. Placement's free:true and 'Daytime hours' are wrong. Wikivoyage zoo telephone/hours not used. Address: Obley Road."
+    },
+    {
+      "id": "dubbo-2", "name": "Old Dubbo Gaol", "status": "ok",
+      "bio_preferred": "A former gaol, in use from 1859 to 1966, that visitors now tour as a museum at 90 Macquarie Street.",
+      "bio_note": "1859: operator /discover timeline ('Dubbo lock-up officially proclaimed a gaol', 12 July 1859). 1966: Wikipedia 'Closed as a gaol in 1966'. Variant 3 'open seven days' ok. Variant 1 'theatrical performances, immersive displays' from operator homepage; 'guided or self-guided' ok ('explore the gaol in your own time' plus tours). Stronger line if wanted: 'proclaimed a gaol in 1859'.",
+      "fields": { "hours": "9:00 AM - 5:00 PM", "hours_note": "Open 7 days, closed Christmas Day", "free": false, "costMin": 24.5, "costMax": 24.5, "currency": "AUD", "ticketUrl": "https://www.olddubbogaol.com.au/", "extra": "Adult $24.50, child $9; 10% off online; free for Dubbo Region residents with ID (not relevant to visitors)." }
+    },
+    {
+      "id": "dubbo-3", "name": "Wellington Caves", "status": "fix",
+      "bio_preferred": "Limestone caves about 50 km from Dubbo where a diprotodon and giant kangaroo bones were found in 1830, with tours of three cave sites.",
+      "bio_note": "1830 find: Wikipedia (Ranken, 'two years' after Hume's 1828 account). Fix: '51 km' to 'about 50 km' (straight line). Variant 2 ok ('Cathedral Cave tours began about 1885' Wikipedia; visitor centre and Discovery Lab on operator site). Variant 3: phosphate mine reopened for tours in 1996, Wikipedia ok.",
+      "fields": { "hours": "9:00 AM - 4:15 PM", "hours_note": "Open 7 days, except Christmas Day (operator)", "free": false, "costMin": null, "costMax": null, "currency": "AUD", "ticketUrl": "https://www.wellingtoncaves.com.au/", "price_status": "unverifiable - omit costMin/costMax and flag in the summary" },
+      "coordinates_note": "-32.62083, 148.93806 is Wikipedia's coordinate for the cave group, 8 km south of Wellington. The operator is at 101 Caves Road, Apsley, about 9 km south of Wellington on the Mitchell Highway; run the coordinate audit to confirm it sits at the visitor centre or car park (not verified here)."
+    },
+    {
+      "id": "dubbo-4", "name": "Royal Flying Doctor Service Dubbo Visitor Experience", "status": "fix",
+      "bio_preferred": "The Royal Flying Doctor Service's visitor experience beside Dubbo airport, with interactive operations-control screens and an actual emergency aircraft to explore.",
+      "bio_note": "Bio was too thin in the draft; the official site now supplies content: 'Get hands-on with our operations control screens ... explore an actual emergency aircraft' and augmented-reality missions. 'Beside the airport' per Wikivoyage geo (-32.21628, 148.57153 vs airport -32.2167, 148.5747, ~300 m). Draft variant 2 'open seven days' ok (see hours). Variant 3 '21 Judy Jakins Drive' ok.",
+      "fields": { "hours": "Mon-Fri 9:00 AM - 5:00 PM, Sat 9:00 AM - 4:00 PM, Sun and public holidays 9:00 AM - 3:00 PM", "closedDays_note": "No regular weekly closure; closed Christmas Day, Boxing Day, New Year's Day, Anzac Day, Good Friday", "free": false, "costMin": 25, "costMax": 25, "currency": "AUD", "ticketUrl": "https://dubbo.experience.flyingdoctor.org.au/", "price_note": "Adult $25 (concession $20, child $15); source dubbo.experience.flyingdoctor.org.au/visit" }
+    }
+  ],
+  "other_flags": [
+    "placement.json's 33 km for Wellington Caves is wrong; correct to about 50 km straight line.",
+    "Gaol start date 1859 is when the lock-up was proclaimed a gaol (operator timeline); Wikipedia describes the present gaol as built 1847-1945 and 'believed to have been officially opened in 1887'. Copy 'a gaol from 1859 to 1966' is fine; do not say the current buildings date from 1859.",
+    "Zoo 'cycle or drive' phrasing (research variant 1 reason 1): 'drive' is not supported by the zoo pages; avoid.",
+    "Cave tour prices unverifiable; RFDS and zoo prices verified; gaol price verified.",
+    "Best months are derived from climate, not a guidebook."
+  ]
+}

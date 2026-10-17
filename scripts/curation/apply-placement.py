@@ -2,6 +2,10 @@
 """Applies a region's placement.json (Atlas step 5) to src/data: its new spots and their photos.
 
   python3 scripts/curation/apply-placement.py curation/<branch>/region-<id>/placement.json [--dry-run] [--currency AUD]
+                                              [--dest <id>] [--overrides curation/<branch>/quill/<dest>/final.json]
+
+--dest restricts the run to the placements of one destination (use it after apply-destination.py has added that destination);
+--overrides merges the copy editor's `spots` changes (bio, hours, cost, ticketUrl, …) over each placement's spot before it is written.
 
 Adds, to src/data/spots.ts, every placement whose `action` is
   "spot"        and whose `destination` already exists in src/data/destinations.ts  → after that destination's last spot
@@ -23,6 +27,8 @@ if not args or args[0].startswith('--'):
 path = args[0]
 dry = '--dry-run' in args
 currency = args[args.index('--currency') + 1] if '--currency' in args else 'AUD'
+only_dest = args[args.index('--dest') + 1] if '--dest' in args else None
+overrides = json.load(open(args[args.index('--overrides') + 1])).get('spots', {}) if '--overrides' in args else {}
 
 place = json.load(open(path))
 spots_src = open('src/data/spots.ts').read()
@@ -80,6 +86,18 @@ standalone = []
 for e in place['placements']:
     act, dest, sid = e.get('action'), e.get('destination'), e.get('id')
     name = e.get('name')
+    if only_dest and dest != only_dest:
+        continue
+    # Some placement files carry the finished record as `entry` (with id/destinationId/coordinates) rather than `spot`.
+    if 'spot' not in e and 'entry' in e:
+        e['spot'] = {k: v for k, v in e['entry'].items() if k not in ('id', 'destinationId', 'coordinates')}
+        e.setdefault('coordinates', e['entry'].get('coordinates'))
+    if sid in overrides and 'spot' in e:
+        e['spot'] = {**e['spot'], **overrides[sid]}
+        if e['spot'].get('free') is False:
+            e['spot'].pop('free')
+        for k in [k for k, v in e['spot'].items() if v is None]:
+            e['spot'].pop(k)
     if act not in ('spot', 'standalone'):
         if act != 'new-destination':
             skipped.append((name, f'action {act}: goes in with its destination'))
@@ -102,7 +120,13 @@ lines_out = open('src/data/spots.ts').read().split('\n')
 
 
 def insert_after(pred, new_lines):
-    idx = max(i for i, l in enumerate(lines_out) if pred(l))
+    hits = [i for i, l in enumerate(lines_out) if pred(l)]
+    if hits:
+        idx = hits[-1]
+    else:
+        # A destination with no spots yet: put its block just above the standalone section (or the closing bracket).
+        marks = [i for i, l in enumerate(lines_out) if 'Standalone spots' in l]
+        idx = (marks[0] - 1) if marks else max(i for i, l in enumerate(lines_out) if l.strip() == '];') - 1
     lines_out[idx + 1:idx + 1] = new_lines
 
 

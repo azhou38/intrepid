@@ -859,6 +859,40 @@ export const DESTINATIONS: Destination[] = [
     bestMonths: [6, 7, 8, 9],
     bestTimeBlurb: '{months} bring the driest weather, calmest seas, and clearest reef visibility.',
   },
+  {
+    id: 'blue-mountains', name: "Blue Mountains", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 50,
+    continent: 'Oceania', coordinates: { latitude: -33.63059, longitude: 150.30665 },
+    category: 'park', icon: "⛰️", rank: 2,
+    tagline: "World Heritage sandstone cliffs, waterfalls and the Three Sisters, a train ride west of Sydney.",
+    description: "Katoomba, the main base for this national park, is 103 km west of Sydney, and the park is a plateau of sandstone cliffs and forested valleys, part of the Greater Blue Mountains Area that UNESCO inscribed in 2000. The Three Sisters at Echo Point are the best-known sight, and the nearby towns of Leura, Wentworth Falls, Blackheath and Mount Victoria give access to waterfalls, the Grose Valley lookouts and over 140 km of walking tracks. Visitors arrive by road or by train from Sydney Central, which takes about two hours.",
+    whyVisit: ["See the Three Sisters from Echo Point, Katoomba's main lookout over the Jamison Valley", "Ride Scenic World's cableway and 52-degree railway down into the valley", "Walk to waterfalls beneath the cliffs, with 140 km of tracks to choose from"],
+    whyVisitPhotos: ["Echo Point, Katoomba.jpg", "Katoomba (AU), Scenic World, Scenic Cableway -- 2019 -- 1913.jpg", "Upper Wentworth Falls 3, NSW, Australia - Nov 2008.jpg"],
+    highlights: ["Three Sisters views", "Scenic World rides", "Waterfalls below cliffs"],
+    goodToKnow: [
+      { icon: "🚧", title: "Check track closures", detail: "Tracks close often and some for long periods, including part of National Pass after a landslide and the Govetts descent at Blackheath; check the NPWS alerts page before you set out." },
+      { icon: "🚆", title: "Trains and buses", detail: "Trains from Sydney Central run to Katoomba and Leura without reservations and take about two hours; local bus 686 links Katoomba station, Echo Point and Scenic World, but Wentworth Falls and Leura Cascades need a bus, taxi or car." },
+      { icon: "🌫️", title: "Dress for fog, set your GPS", detail: "The mountains can be up to 10 C colder than the coast and fog can hide the views all day in cold, wet weather; set your GPS to 'Echo Point, Katoomba', since 'Blue Mountains' routes to unsealed roads." },
+    ],
+    bestMonths: [3, 4, 5],
+    bestTimeBlurb: "Come in {months}, when the days are cool enough for the cliff walks and the autumn colour is out at Mount Wilson and Blackheath.",
+  },
+  {
+    id: 'warrumbungle', name: "Warrumbungle National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 60,
+    continent: 'Oceania', coordinates: { latitude: -31.28637, longitude: 148.99753 },
+    category: 'park', icon: "🌌", rank: 4,
+    tagline: "Spires, bluffs and dark night skies in the weathered core of a volcano near Coonabarabran.",
+    description: "Warrumbungle National Park covers 23,311 ha of the Warrumbungle Range, the eroded remnant of a volcano near Coonabarabran, about 550 km north-west of Sydney. Walkers come for formations such as Belougery Spire, Crater Bluff and the Breadknife, which towers 90 m above the valley floor and is the park's most recognisable feature. The park was added to the National Heritage List in 2006, and in 2016 it became Australia's first certified Dark Sky Park. About 80% of it burned in January 2013, and walking tracks, campgrounds and visitor sites have since been rebuilt.",
+    whyVisit: ["Walk the Breadknife and Grand High Tops", "See the Milky Way over the range at night", "Take in volcanic landforms the National Heritage listing calls unrivalled in Australia"],
+    whyVisitPhotos: ["The Breadknife as seen from Grand High Tops track.jpg", "Moonset in Warrumbungle National Park.jpg", "Crater Bluff, Warrumbungle National Park.jpg"],
+    highlights: ["Grand High Tops", "Night skies", "Volcanic landforms"],
+    goodToKnow: [
+      { icon: "🎒", title: "Pack for the High Tops", detail: "Bring water, a hat, sunscreen and food, and borrow a free locator beacon at the visitor centre for the High Tops loop." },
+      { icon: "🔭", title: "Observatory is a day visit", detail: "Siding Spring Observatory is open to visitors by day only, 8:30 am to 4 pm; for night viewing book a Coonabarabran Stargazing tour." },
+      { icon: "🚗", title: "Fee and roads", detail: "Entry is $8 per vehicle per day. The road from Coonabarabran is about 35 km to the visitor centre; the west approach via Coonamble has unsealed sections." },
+    ],
+    bestMonths: [9, 10, 11],
+    bestTimeBlurb: "{months} bring a moderate climate and spring wildflowers, good for the High Tops walk and camping under the stars; summer often tops 30C with thunderstorms, and winter nights drop below freezing.",
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {

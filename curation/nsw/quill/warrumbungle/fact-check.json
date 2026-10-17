@@ -1,0 +1,155 @@
+{
+  "id": "warrumbungle",
+  "checked": "2026-10-17",
+  "sources_loaded": [
+    "NPWS park page", "NPWS Breadknife and Grand High Tops walk", "NPWS visitor-info",
+    "sidingspringobservatory.org.au (home, /visitors)", "rsaa.anu.edu.au/observatories/siding-spring-observatory",
+    "Wikipedia Warrumbungle National Park", "Wikivoyage Warrumbungle National Park",
+    "darksky.org/news/first-dark-sky-park-in-australia-designated"
+  ],
+  "decisions": {
+    "dark_sky": "SUPPORTED. DarkSky International news item 'First Dark Sky Park in Australia Designated' is dated 4 July 2016 and names Warrumbungle as Australia's first IDA International Dark Sky Park; Wikipedia says 'certified 4 July 2016'. Safe wording: 'In 2016 ... first certified/designated'. Use the exact date only as 'designated 4 July 2016' (the 4 July is the announcement date).",
+    "national_heritage": "SUPPORTED by Wikipedia only (twice: 'added ... December 2006'). The DCCEEW place page did not load, so the primary government source was not seen. Year-only '2006' is low risk.",
+    "breadknife": "SUPPORTED. NPWS park page: 'towers 90m above the valley floor' and 'easily the most recognisable feature within the park'. Keep 'above the valley floor'; do not say 90 m tall rock or 'fin' height as a fact beyond that. The word 'fin' in a reason is a description, not sourced; acceptable.",
+    "walk": "SUPPORTED. NPWS walk page: 14.5km loop, 5 - 6hrs, Grade 4; shorter 12.5km return via Dagda Shortcut; starts at Pincham carpark; follows Spirey Creek; Belougery Spire, Bress Peak, Crater Bluff; Dows Camp for Bluff Mountain; free PLB hire at Warrumbungle Visitor Centre. Spot visit hours should be 5-6 (not 4-6): NPWS gives 5-6 hrs for the full loop.",
+    "fee": "SUPPORTED. NPWS park page and walk page both: 'Park entry fees: $8 per vehicle per day.' It is a park entry fee per vehicle, not a charge for the walk or per person. Spot cost 8/8 AUD is acceptable only if the app copy says per vehicle (bio/tip); otherwise the per-person reading is wrong. The tip variant 1 wording is right.",
+    "ticketUrl_siding_spring": "Both load (HTTP 200). sidingspringobservatory.org.au title 'Siding Spring Observatory', is SSO's own site with 'Information for Visitors', Dark Sky Park and Tours pages, and is the page that carries the public opening hours and tour contact. rsaa.anu.edu.au/observatories/siding-spring-observatory is the ANU Research School of Astronomy and Astrophysics page; RSAA operates the research telescopes, so it is the owner's institutional page, but it is a research-school page with a visitors summary, not the visitor site. DECISION: use https://www.sidingspringobservatory.org.au/ (or deeper https://www.sidingspringobservatory.org.au/visitors, which loaded and is the page that states hours). Homepage is safest per WRITING.md; /visitors is also verified.",
+    "siding_spring_cost": "NOT CONFIRMED PAID OR FREE. Neither the visitors page nor the homepage lists a price. RSAA says the Anglo-Australian Telescope has 'a free public viewing gallery' and a hands-on exhibition, cafe and gift shop. The Exploratory price is not stated anywhere loaded (sidingspringexploratory.com.au does not load). Guided tours via Coonabarabran Stargazing are separate and priced by that operator (its site did not load). Safest: do not set costMin/costMax, and either omit free or set free:true only if the owner accepts 'free AAT gallery, site entry not charged on the visitors page'. Recommendation: leave cost unset and put 'AAT Visitor Gallery is free' nowhere beyond the bio; flag for owner.",
+    "coonabarabran_distance": "Sourced figures differ because they measure different things. 27 km: Wikivoyage and the operator page give Siding Spring Observatory as 27 km west of Coonabarabran (RSAA says 28 km); Wikipedia gives 27 km of sealed John Renshaw Parkway from Coonabarabran side to the park (not stated to the visitor centre). 35 km: NPWS visitor-info directions say 'approx. 35km' along Timor Road/John Renshaw Parkway to the park, then 300 m to the visitor centre. So: observatory 27 km (operator), visitor centre about 35 km (NPWS). Use the NPWS figure for 'to the park' and the operator figure only for the observatory. 'About 30 km' is not a sourced number and mixes the two; replace it."
+  },
+  "items": [
+    {
+      "path": "tagline.variants[0]",
+      "text": "The eroded remains of a volcano near Coonabarabran, and Australia's first Dark Sky Park.",
+      "status": "ok"
+    },
+    {
+      "path": "tagline.variants[1]",
+      "text": "Volcanic spires and unpolluted night skies in the Warrumbungle Range, 550 km north-west of Sydney.",
+      "status": "ok",
+      "note": "550 km is Wikipedia 'approximately 550 kilometres'. 'Unpolluted' is a paraphrase of NPWS 'zero light pollution'; acceptable but stronger than attribution. Prefer variant 0 or 2."
+    },
+    {
+      "path": "tagline.variants[2]",
+      "text": "A National Heritage-listed volcanic range where the Breadknife rises 90 m from the valley floor.",
+      "status": "ok",
+      "note": "Listing is of the park; 'range' is fine. Repeats the 90 m figure that description may also use; pick one place for it."
+    },
+    {
+      "path": "description.variants[0]",
+      "text": "Warrumbungle National Park covers 23,311 ha of the Warrumbungle Range, the eroded remnant of a volcano near Coonabarabran, about 550 km north-west of Sydney. Walkers come for formations such as Belougery Spire, Crater Bluff and the Breadknife, which towers 90 m above the valley floor and is the park's most recognisable feature. The volcanic landforms were added to the National Heritage List in 2006, and in 2016 the park became Australia's first certified Dark Sky Park. About 80% of it burned in January 2013, and walking tracks, campgrounds and visitor sites have since been rebuilt.",
+      "status": "fix",
+      "fix": "Sentence 3: Wikipedia says the park was added to the National Heritage List, in recognition of its volcanic landforms among other values; it was not only 'the volcanic landforms'. Corrected: 'The park was added to the National Heritage List in 2006, and in 2016 it became Australia's first certified Dark Sky Park.' All other figures check out (23,311 ha, 550 km, 90 m, 80% in January 2013, NPWS rebuilt tracks/campgrounds/visitor sites). 'eroded remnant of a volcano' is Wikipedia 'remnants of a volcano'; ok. This is the preferred description variant after the fix.",
+      "corrected_text": "Warrumbungle National Park covers 23,311 ha of the Warrumbungle Range, the eroded remnant of a volcano near Coonabarabran, about 550 km north-west of Sydney. Walkers come for formations such as Belougery Spire, Crater Bluff and the Breadknife, which towers 90 m above the valley floor and is the park's most recognisable feature. The park was added to the National Heritage List in 2006, and in 2016 it became Australia's first certified Dark Sky Park. About 80% of it burned in January 2013, and walking tracks, campgrounds and visitor sites have since been rebuilt."
+    },
+    {
+      "path": "description.variants[1]",
+      "text": "... reserved as a national park in 1953 ... There is no food for sale inside, so visitors bring their own.",
+      "status": "fix",
+      "fix": "Two errors. (1) Wikipedia says the area was 'first proclaimed as a reserve' in 1953 and that NPWS took over management in 1967; it does not say it became a national park in 1953. (2) 'No food for sale inside' appears in no loaded source (Wikipedia, Wikivoyage, NPWS park or visitor-info pages): unsupported. Do not use this variant; if used, say 'first reserved in 1953' and drop the food sentence."
+    },
+    {
+      "path": "description.variants[2]",
+      "text": "... The sealed road in from Coonabarabran is about 30 km.",
+      "status": "fix",
+      "fix": "'about 30 km' is not a sourced figure (27 km is the observatory, 35 km is NPWS to the park/visitor centre). Also 'park's managers describe as having zero light pollution' is fine (NPWS wording, attributed). Siding Spring 'stands on the park boundary partly because of those dark skies' is Wikipedia ('constructed on the boundary of the park partly because the park provided a light-free environment'), ok. Replace last sentence with 'The sealed road in from Coonabarabran is about 35 km to the visitor centre.' (NPWS says the 35 km follows Timor Road/John Renshaw Parkway; Wikipedia calls the Coonabarabran access sealed.)",
+      "corrected_text": "The road in from Coonabarabran is about 35 km to the visitor centre."
+    },
+    {
+      "path": "whyVisit.variants[0]",
+      "status": "ok",
+      "note": "Reason 1 basis: NPWS park page 'recognised as one of the best walks in NSW'; 14.5 km Grade 4 loop; Belougery Spire and Crater Bluff. Reason 2: certified 4 July 2016 (DarkSky news dated 4 July 2016). Reason 3: Wikipedia ok. Photos unresolved per draft photo_status; not a fact issue."
+    },
+    {
+      "path": "whyVisit.variants[1]",
+      "status": "ok",
+      "note": "'Whitegum, Fans Horizon and Grand High Tops are NPWS-listed lookouts' confirmed (NPWS page lists Whitegum lookout, Fans Horizon lookout, Grand High Tops lookout). 'Zero light pollution' is NPWS wording; keep attributed. 5-6 hrs and 14.5 km confirmed."
+    },
+    {
+      "path": "whyVisit.variants[2]",
+      "status": "fix",
+      "fix": "Reason 3 'volcanic landforms found nowhere else in Australia' overstates: the listing wording is 'bold volcanic landforms that are unrivalled anywhere else in Australia' (Wikipedia). 'Unrivalled' is not 'found nowhere else'. Use: 'Take in volcanic landforms the National Heritage listing calls unrivalled in Australia'. Reason 2 'Visit Siding Spring and then stargaze' conflicts with the operator saying SSO is not open at night; basis text is right but the reason reads as if you can stargaze at SSO. Reason 1: Breadknife 90 m ok; 'Fans Horizon track is a shorter option from the same car park' confirmed (starts at Pincham carpark).",
+      "corrected_text": "Take in volcanic landforms the National Heritage listing calls unrivalled in Australia"
+    },
+    {
+      "path": "goodToKnow.variants[0]",
+      "status": "fix",
+      "fix": "Tip 1 ok ($8 per vehicle per day; always open but may close for poor weather or fire danger). Tip 2 ok (8:30-4:00, cafe/Exploratory closed Tuesdays; night viewing via Coonabarabran Stargazing: the operator page says guided tours are available through them, day and night). Tip 3: 'No food is sold in the park' is unsupported by any loaded source; PLB is free at the visitor centre (confirmed). Corrected tip 3: 'Bring water, a hat, sunscreen and food, and borrow a free locator beacon at the visitor centre for the High Tops loop.' (water/hat/sunscreen: NPWS walk page.) Also add 'Check the observatory Facebook page for current hours' only if wanted; the operator says ALWAYS check Facebook for up-to-date hours.",
+      "corrected_text": "Bring water, a hat, sunscreen and food, and borrow a free locator beacon at the visitor centre for the High Tops loop."
+    },
+    {
+      "path": "goodToKnow.variants[1]",
+      "status": "ok",
+      "note": "Tip 1: 5-6 hrs Grade 4; 12.5 km return via Dagda Shortcut confirmed. Tip 2: NPWS visitor-info: summer often exceeds 30C; winter drops below freezing at night. Tip 3: closes during Extreme Fire Danger and catastrophic weather; caravans not allowed on the road due to its narrowness (operator, verbatim). Cleanest of the three."
+    },
+    {
+      "path": "goodToKnow.variants[2]",
+      "status": "fix",
+      "fix": "Tip 1 uses 'about 30 km' (unsourced; use 35 km to the visitor centre per NPWS) and 'the west approach via Coonamble has unsealed sections': Wikipedia and NPWS say some gravel/unsealed; ok. Tip 2 ok: 9am-4pm daily, closed Christmas Day, star charts (NPWS). Tip 3 ok: cafe and Exploratory closed Tuesdays; AAT Visitor Gallery open 7 days.",
+      "corrected_text": "The road from Coonabarabran is about 35 km to the visitor centre; the west approach via Coonamble has unsealed sections."
+    },
+    {
+      "path": "bestMonths + bestTimeBlurb",
+      "status": "ok",
+      "note": "[9,10,11] is an inference from NPWS: spring wildflowers/wattle, 'more moderate climate' (NPWS says early spring specifically); NPWS names no month list. Acceptable as a guide-consensus judgement but flag as inferred. Variant 2 'December to February is the wettest' confirmed ('It rains most from December to February'). Variant 1 'summer often tops 30C ... thunderstorms' confirmed ('Thunderstorms are comm...' truncated in cache, consistent). 'Wattle' confirmed."
+    },
+    {
+      "path": "spots.warrumbungle-1.bio",
+      "status": "ok",
+      "note": "Preferred: variant 0 ('A 14.5 km Grade 4 loop from Pincham car park, climbing past Belougery Spire and Crater Bluff to the Grand High Tops and views of Bluff Mountain.'). All checked. Variant 1: Spirey Creek, 90 m Breadknife, 12.5 km Dagda return confirmed, but the NPWS page does not literally say the walk goes to the Breadknife foot; it says close-up views of 'Belougery Spire, Bress Peak and Crater Bluff' on the walk page and 'close up views of the park's iconic rock formations' on the park page, so 'following Spirey Creek to the 90 m Breadknife' is not directly sourced (avoid). Variant 2 ok (wildflowers in spring, wedge-tailed eagles confirmed), but 'day-long loop' vs 5-6 h is loose."
+    },
+    {
+      "path": "spots.warrumbungle-1.fields",
+      "status": "fix",
+      "fix": "visitHoursMin/Max 5/6 (NPWS 5 - 6 hrs). costMin 8, costMax 8, currency AUD is the per-vehicle park entry fee (NPWS: 'Park entry fees apply' on the walk page); keep, with the fee stated per vehicle in the park tips. ticketUrl: the NPWS park page is fine; better to use the walk page https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/breadknife-and-grand-high-tops-walk (loaded, title names the walk) since the spot is the walk. Hours 'Daylight hours' unsourced but generic; NPWS says the park is always open, so 'Open 24 hours' is the other sourced option; leave 'Daylight hours' as a safety qualifier.",
+      "corrected_fields": {
+        "visitHoursMin": 5,
+        "visitHoursMax": 6,
+        "costMin": 8,
+        "costMax": 8,
+        "currency": "AUD",
+        "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/breadknife-and-grand-high-tops-walk"
+      }
+    },
+    {
+      "path": "spots.warrumbungle-2.bio",
+      "status": "fix",
+      "fix": "Variant 0: 'a working research observatory on Mt Woorut, opened in 1965 on the park's eastern edge, with a public Exploratory, a cafe and the AAT Visitor Gallery open by day' ok (1965 from Wikipedia 'officially opened'; Mt Woorut, café, Exploratory, AAT Visitor Gallery from operator). Note the Exploratory and cafe are closed Tuesdays. Variant 1: '1160 m Mt Woorut' is operator '~1160m' (RSAA says 1164 m), so say 'about 1160 m'; 'built beside the park partly for its dark skies' is Wikipedia. Variant 2: 'at the end of Observatory Road' confirmed; 'welcomes visitors by day only' confirmed; 'night viewing is through a Coonabarabran Stargazing tour' is not stated: the operator says Coonabarabran Stargazing runs tours 'during the day and at night' and that SSO is not open at night for public viewing. So the Coonabarabran Stargazing tours exist at night, but it does not say they are at SSO. Rewrite if used. Recommended text keeps variant 0.",
+      "corrected_text": "A working research observatory on Mt Woorut, opened in 1965 on the park's eastern edge, with a hands-on Exploratory, a cafe and a free AAT Visitor Gallery to visit by day."
+    },
+    {
+      "path": "spots.warrumbungle-2.fields",
+      "status": "fix",
+      "fix": "hours '8:30 AM - 4:00 PM' ok (open 7 days, operator says ALWAYS check Facebook for current hours; also closes on extreme fire danger). Do not set closedDays (cafe/Exploratory only close Tuesdays; site open). Cost: no price anywhere on the loaded operator pages. RSAA says the AAT public viewing gallery is free. Do not publish free:true or a cost unless the owner accepts that; leave unset and flag. ticketUrl: sidingspringobservatory.org.au is the observatory's own visitor site; rsaa.anu.edu.au is the ANU research school's page (operator of the telescopes) and says only 'Please visit the Siding Spring Observatory webpage'. Use sidingspringobservatory.org.au.",
+      "corrected_fields": {
+        "hours": "8:30 AM – 4:00 PM",
+        "visitHoursMin": 1.5,
+        "visitHoursMax": 3,
+        "ticketUrl": "https://www.sidingspringobservatory.org.au/",
+        "free": "unset (not confirmed either way; AAT Visitor Gallery stated free by RSAA, rest unknown)",
+        "costMin": "unset",
+        "costMax": "unset"
+      }
+    },
+    {
+      "path": "spots.warrumbungle-3.bio",
+      "status": "fix",
+      "fix": "Variant 0 says 'about 30 km east' (unsourced; 35 km per NPWS). Variant 1: 'where stargazing tours depart' is not sourced: unsupported, cut. Variant 2: 'Siding Spring Observatory 27 km to the west' is operator-sourced and correct (the observatory is west of Coonabarabran). 'gateway town', 'closest town to the craggy peaks and spires of the Warrumbungle Ranges' is NPWS wording, supported. Preferred corrected text: 'The closest town to the Warrumbungles, about 35 km from the park visitor centre and 27 km from Siding Spring Observatory.'",
+      "corrected_text": "The closest town to the Warrumbungles, about 35 km from the park visitor centre by road and 27 km from Siding Spring Observatory."
+    },
+    {
+      "path": "spots.warrumbungle-3.fields",
+      "status": "ok",
+      "note": "free true, hours Open 24 hours, no ticketUrl: ok for a town. Coordinates (-31.27236, 149.28062) per Wikivoyage; not re-verified here."
+    }
+  ],
+  "unverified_after_check": [
+    "National Heritage listing date: Wikipedia only; DCCEEW page did not load.",
+    "Siding Spring entry price and Exploratory/cafe charges: not stated on loaded pages.",
+    "Coonabarabran Stargazing tour details and price: the operator domain tried (coonabarabranstargazing.com.au) returned 404; tour location (SSO vs elsewhere) not confirmed.",
+    "'No food sold in the park': no source loaded states it; cut or reword.",
+    "Visitor centre hours (9-4, closed Christmas Day) are from the NPWS page as of now; Wikivoyage's 2021 noon-1pm closure not repeated.",
+    "Best months [9,10,11] are an inference from NPWS seasonal text, not a named list.",
+    "Alerts: NPWS shows 4 current alerts (closed areas, safety alerts, other planned events) that were not read; the park may have closures right now."
+  ]
+}

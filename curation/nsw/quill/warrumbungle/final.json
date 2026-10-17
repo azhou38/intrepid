@@ -1,0 +1,67 @@
+{
+  "destination": {
+    "id": "warrumbungle",
+    "name": "Warrumbungle National Park",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Sydney",
+    "continent": "Oceania",
+    "coordinates": { "latitude": -31.28637, "longitude": 148.99753 },
+    "category": "park",
+    "defaultZoomSpanKm": 60,
+    "rank": 4,
+    "icon": "🌌",
+    "tagline": "Spires, bluffs and dark night skies in the weathered core of a volcano near Coonabarabran.",
+    "description": "Warrumbungle National Park covers 23,311 ha of the Warrumbungle Range, the eroded remnant of a volcano near Coonabarabran, about 550 km north-west of Sydney. Walkers come for formations such as Belougery Spire, Crater Bluff and the Breadknife, which towers 90 m above the valley floor and is the park's most recognisable feature. The park was added to the National Heritage List in 2006, and in 2016 it became Australia's first certified Dark Sky Park. About 80% of it burned in January 2013, and walking tracks, campgrounds and visitor sites have since been rebuilt.",
+    "whyVisit": [
+      "Walk the Breadknife and Grand High Tops",
+      "See the Milky Way over the range at night",
+      "Take in volcanic landforms the National Heritage listing calls unrivalled in Australia"
+    ],
+    "highlights": ["Grand High Tops", "Night skies", "Volcanic landforms"],
+    "goodToKnow": [
+      { "icon": "🎒", "title": "Pack for the High Tops", "detail": "Bring water, a hat, sunscreen and food, and borrow a free locator beacon at the visitor centre for the High Tops loop." },
+      { "icon": "🔭", "title": "Observatory is a day visit", "detail": "Siding Spring Observatory is open to visitors by day only, 8:30 am to 4 pm; for night viewing book a Coonabarabran Stargazing tour." },
+      { "icon": "🚗", "title": "Fee and roads", "detail": "Entry is $8 per vehicle per day. The road from Coonabarabran is about 35 km to the visitor centre; the west approach via Coonamble has unsealed sections." }
+    ],
+    "bestMonths": [9, 10, 11],
+    "bestTimeBlurb": "{months} bring a moderate climate and spring wildflowers, good for the High Tops walk and camping under the stars; summer often tops 30C with thunderstorms, and winter nights drop below freezing."
+  },
+  "spots": {
+    "warrumbungle-1": {
+      "bio": "A 14.5 km Grade 4 loop from Pincham car park, climbing past Belougery Spire and Crater Bluff to the Grand High Tops and views of Bluff Mountain.",
+      "hours": "Daylight hours",
+      "visitHoursMin": 5,
+      "visitHoursMax": 6,
+      "costMin": 8,
+      "costMax": 8,
+      "currency": "AUD",
+      "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/breadknife-and-grand-high-tops-walk"
+    },
+    "warrumbungle-2": {
+      "bio": "A working research observatory on Mt Woorut, opened in 1965 on the park's eastern edge, with a hands-on Exploratory, a cafe and a free AAT Visitor Gallery to visit by day.",
+      "hours": "8:30 AM – 4:00 PM",
+      "visitHoursMin": 1.5,
+      "visitHoursMax": 3,
+      "ticketUrl": "https://www.sidingspringobservatory.org.au/"
+    },
+    "warrumbungle-3": {
+      "bio": "The closest town to the Warrumbungles, about 35 km from the park visitor centre by road and 27 km from Siding Spring Observatory.",
+      "hours": "Open 24 hours",
+      "visitHoursMin": 1,
+      "visitHoursMax": 2,
+      "free": true
+    }
+  },
+  "whyVisitPhotos_note": "Photos agreed by both judges, in reason order: why1 the Breadknife seen from the Grand High Tops track; why2 'Moonset in Warrumbungle National Park'; why3 Crater Bluff. Header: 'Warumbungles National Park.jpg'. Exact Commons file names for why1 and why3 are for the photo step; not written here.",
+  "notes": [
+    "Tagline is new (not a draft variant) so it does not repeat 'Dark Sky Park' or the 550 km/90 m figures used in the description; all content is from sourced facts (volcano remnant, spires, dark skies, Coonabarabran).",
+    "Description: variant 0 with sentence 3 per the fact-check (park, not only the landforms, National Heritage listed in 2006).",
+    "Reason 2 is worded around night skies and the Milky Way, matching the moonset night photo, and does not imply stargazing at the observatory; 'Dark Sky Park' is left to the description. Reason 3 is the fact-check wording. Highlights: one per reason.",
+    "goodToKnow[0] is the fact-check corrected tip; [1] is draft variant 0 tip 2 kept (fact-check ok; Coonabarabran Stargazing runs day and night tours, but where they run is unconfirmed); [2] uses 35 km to the visitor centre and carries the $8 per vehicle per day entry fee, since tip 0 was replaced.",
+    "warrumbungle-1: $8 is the per-vehicle park entry fee, not per person, and is stated per vehicle only in goodToKnow[2]; the spot cost field is 8 AUD as the fact-check allows. Hours 'Daylight hours' kept as a safety qualifier although NPWS says the park is always open.",
+    "warrumbungle-2: free and costMin/costMax deliberately unset (no price on the loaded operator pages; RSAA says only the AAT gallery is free). The bio's 'free AAT Visitor Gallery' is RSAA-sourced; the Exploratory and cafe close Tuesdays. closedDays not set. Owner to confirm the entry price.",
+    "warrumbungle-3: corrected bio from the fact-check. Coordinates not re-verified.",
+    "Unverified: National Heritage 2006 date is Wikipedia only; bestMonths [9,10,11] is inferred from NPWS seasonal text; park alerts and visitor centre hours not rechecked; Siding Spring opening hours should be checked on its Facebook page per the operator."
+  ]
+}

@@ -1,0 +1,465 @@
+{
+ "region": "nsw-northern-rivers",
+ "inside_destinations": {
+  "count": 38,
+  "detail": {
+   "byron-bay": 14,
+   "ballina": 5,
+   "tweed-heads": 8,
+   "lismore": 4,
+   "yamba": 4,
+   "bundjalung-national-park": 3
+  },
+  "held_not_counted": "The Farm (byron-bay-15)"
+ },
+ "standalone": {
+  "count": 3,
+  "names": [
+   "Border Ranges National Park",
+   "Yuraygir National Park",
+   "Grafton"
+  ],
+  "held_not_counted": "Grafton Regional Gallery"
+ },
+ "new_destinations": {
+  "count": 6,
+  "proposals": [
+   {
+    "id": "byron-bay",
+    "name": "Byron Bay",
+    "rank": 2,
+    "spots": 14
+   },
+   {
+    "id": "ballina",
+    "name": "Ballina",
+    "rank": 5,
+    "spots": 5
+   },
+   {
+    "id": "tweed-heads",
+    "name": "Tweed Heads",
+    "rank": 4,
+    "spots": 8
+   },
+   {
+    "id": "lismore",
+    "name": "Lismore",
+    "rank": 5,
+    "spots": 4
+   },
+   {
+    "id": "yamba",
+    "name": "Yamba",
+    "rank": 4,
+    "spots": 4
+   },
+   {
+    "id": "bundjalung-national-park",
+    "name": "Bundjalung National Park",
+    "rank": 5,
+    "spots": 3
+   }
+  ]
+ },
+ "lowest_kept": [
+  {
+   "name": "Lennox Point",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "The Big Prawn",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Cape Byron Walk",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Main Beach, Byron Bay",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Wategos Beach",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "The Pass",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Tallow Beach",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Belongil Beach",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Seven Mile Beach",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Lake Ainsworth",
+   "views": 0,
+   "counted_sources": 2
+  }
+ ],
+ "lowest_kept_views": 0,
+ "stronger_left_out": [
+  {
+   "name": "Mount Warning",
+   "views": 28324,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Same mountain as Wollumbin National Park (kept); summit track closed per NPWS, so visitors only reach the foot and Lyrebird track. Near-duplicate; mention Mount Warning in the park bio."
+  },
+  {
+   "name": "Casino",
+   "views": 24429,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Wikivoyage Casino says there is very little to do and it is not on tourists' radar; the other source only lists it as a town. No visitor draw."
+  },
+  {
+   "name": "Splendour in the Grass",
+   "views": 13590,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Splendour in the Grass: annual music festival, ephemeral."
+  },
+  {
+   "name": "Kyogle",
+   "views": 11899,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Wikivoyage Kyogle lists only a general town lookout and the Border Ranges NP (already a spot); nothing to do in town."
+  },
+  {
+   "name": "New Italy",
+   "views": 6400,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Left as review: New Italy: roadside heritage stop with one counted source; case for a quirky roadside stop, against a short visit."
+  },
+  {
+   "name": "Ocean Shores",
+   "views": 5145,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Visit Byron describes golf course, club and shops; the bat colony is a minor sunset note. Suburb, not a stop."
+  },
+  {
+   "name": "Wooli",
+   "views": 4910,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Left as review: Small seaside hamlet at the Yuraygir walk; one counted source, marginal draw."
+  },
+  {
+   "name": "Federal",
+   "views": 3302,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Federal: tiny hinterland village (store and cafe); a business, no distinct draw."
+  },
+  {
+   "name": "Woodburn",
+   "views": 3288,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Woodburn: one counted source, small riverside village with no distinct draw."
+  },
+  {
+   "name": "Woodford Island",
+   "views": 2894,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Woodford Island: river island with a golf course; no visitor activity beyond driving through."
+  },
+  {
+   "name": "Brooms Head",
+   "views": 2799,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Left as review: Small seaside hamlet at the Yuraygir walk; one counted source, marginal draw."
+  },
+  {
+   "name": "Ulmarra",
+   "views": 2769,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Left as review: Ulmarra: historic river village, one counted source; the draw is mostly the pub."
+  },
+  {
+   "name": "Clunes",
+   "views": 2715,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Clunes: hamlet known for local clay artists; local-leaning, no distinct draw."
+  },
+  {
+   "name": "MardiGrass",
+   "views": 2059,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "MardiGrass: annual festival, ephemeral."
+  },
+  {
+   "name": "Mount Chincogan",
+   "views": 1792,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Left as review: Mount Chincogan: volcanic peak with Aboriginal significance, two counted sources; mainly a backdrop with little visitor access."
+  },
+  {
+   "name": "Eltham",
+   "views": 1041,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Eltham: pub and village gallery only; no distinct draw."
+  },
+  {
+   "name": "Mount Jerusalem National Park",
+   "views": 1028,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Left as review: National park named by NPWS only; small visitor draw."
+  },
+  {
+   "name": "Mallanganee National Park",
+   "views": 540,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Mallanganee NP: source itself says not a notable visitor draw."
+  },
+  {
+   "name": "Tyagarah Nature Reserve",
+   "views": 538,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Tyagarah Nature Reserve: coastal heath reserve with a trail; local use, little draw."
+  },
+  {
+   "name": "Nymboida National Park",
+   "views": 512,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Left as review: Nymboida NP: NPWS names it for rivers and canoeing, but access is remote and visitation rare."
+  },
+  {
+   "name": "Cape Byron State Conservation Area",
+   "views": 0,
+   "counted_sources": 3,
+   "verdict": "reject",
+   "reason": "Cape Byron State Conservation Area: contains Cape Byron Lighthouse and Cape Byron Walk, both listed; near-duplicate/larger envelope of those spots."
+  },
+  {
+   "name": "Clarkes Beach",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Left as review: Clarkes Beach: two counted sources but near-duplicate of Main Beach/The Pass stretch."
+  },
+  {
+   "name": "Protesters Falls",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Left as review: Protesters Falls: rainforest falls named by two counted sources; walk access and history make it arguable."
+  },
+  {
+   "name": "Rummery Park",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Rummery Park: campground and trail base in Nightcap NP, which is listed; part of larger spot."
+  },
+  {
+   "name": "Woody Head",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Woody Head: campground and cabins in Bundjalung NP (listed); accommodation, part of larger spot."
+  },
+  {
+   "name": "Maclean Lookout",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Left as review: Maclean Lookout: two counted sources but a short lookout stop."
+  },
+  {
+   "name": "Grafton Jacaranda Festival",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Grafton Jacaranda Festival: annual festival, ephemeral; belongs in best-time text."
+  },
+  {
+   "name": "Koala Care Centre",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Left as review: Koala Care Centre: two counted sources, but tours-based and rehabilitation facility; limited public access."
+  },
+  {
+   "name": "Mullumbimby Farmers Market",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Weekly farmers market (Friday only): ephemeral."
+  },
+  {
+   "name": "Channon Craft Market",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Monthly craft market: ephemeral."
+  },
+  {
+   "name": "Byron Bay Circus Arts",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Byron Bay Circus Arts: a trapeze school/operator, not a place to visit."
+  }
+ ],
+ "stronger_left_out_note": "Lowest kept score is 0 views, so every non-kept candidate with any views is technically stronger; listed here are all non-kept candidates with 500+ English Wikipedia views or 2+ counted sources, each with its verdict and a concrete What-qualifies reason (others are in verdicts.json). No stronger place is left out for want of a destination.",
+ "strongest_outsiders": [
+  {
+   "name": "Border Ranges National Park",
+   "action": "standalone",
+   "views": 2284,
+   "counted_sources": 3,
+   "nearest_destination_km": [
+    "tweed-heads",
+    58.0
+   ]
+  },
+  {
+   "name": "Yuraygir National Park",
+   "action": "standalone",
+   "views": 1053,
+   "counted_sources": 3,
+   "nearest_destination_km": [
+    "yamba",
+    42.5
+   ]
+  },
+  {
+   "name": "Grafton",
+   "action": "standalone",
+   "views": 36691,
+   "counted_sources": 2,
+   "nearest_destination_km": [
+    "yamba",
+    47.0
+   ]
+  },
+  {
+   "name": "Casino",
+   "action": "reject",
+   "views": 24429,
+   "counted_sources": 2,
+   "nearest_destination_km": [
+    "lismore",
+    24.7
+   ]
+  },
+  {
+   "name": "Kyogle",
+   "action": "reject",
+   "views": 11899,
+   "counted_sources": 2,
+   "nearest_destination_km": [
+    "lismore",
+    34.7
+   ]
+  },
+  {
+   "name": "New Italy",
+   "action": "review",
+   "views": 6400,
+   "counted_sources": 1,
+   "nearest_destination_km": [
+    "bundjalung-national-park",
+    11.7
+   ]
+  },
+  {
+   "name": "Ulmarra",
+   "action": "review",
+   "views": 2769,
+   "counted_sources": 1,
+   "nearest_destination_km": [
+    "yamba",
+    36.1
+   ]
+  },
+  {
+   "name": "Mount Jerusalem National Park",
+   "action": "review",
+   "views": 1028,
+   "counted_sources": 1,
+   "nearest_destination_km": [
+    "byron-bay",
+    31.3
+   ]
+  },
+  {
+   "name": "Wooli",
+   "action": "review",
+   "views": 4910,
+   "counted_sources": 1,
+   "nearest_destination_km": [
+    "yamba",
+    48.2
+   ]
+  },
+  {
+   "name": "Brooms Head",
+   "action": "review",
+   "views": 2799,
+   "counted_sources": 1,
+   "nearest_destination_km": [
+    "yamba",
+    19.1
+   ]
+  },
+  {
+   "name": "Mount Chincogan",
+   "action": "review",
+   "views": 1792,
+   "counted_sources": 2,
+   "nearest_destination_km": [
+    "byron-bay",
+    18.1
+   ]
+  }
+ ],
+ "benchmark": {
+  "applicable": "Northern Rivers has none of the NZ benchmark places; analogues checked",
+  "passed": true,
+  "results": {
+   "Weekly markets rejected (Nelson Market analogue)": "Yamba, Murwillumbah, Mullumbimby, Lismore farmers markets and Lennox Head Markets rejected",
+   "Festivals rejected": "Splendour in the Grass, MardiGrass, Grafton Jacaranda Festival rejected as ephemeral",
+   "Pub/business not a spot": "Ulmarra Hotel, Nimbin Candle Factory, Lord Byron Distillery rejected",
+   "Gateway village whose draw is beyond it (Pipiriki analogue)": "Brooms Head and Wooli (Yuraygir walk hamlets) and Ulmarra sent to review, not kept",
+   "Long feature not under the neighbour (Ninety Mile Beach analogue)": "Seven Mile Beach placed at Lennox Head under Ballina, Tallow Beach at its Arakwal access, Rail Trail at Murwillumbah end, Yuraygir Coastal Walk at Angourie",
+   "Part of a larger spot folded in": "Mount Warning folded into Wollumbin NP; Lyrebird Track, Tweed Range Scenic Drive, Iluka Bluff, Woody Head, Ten Mile Beach rejected as parts of kept parks",
+   "Operator in place of the place (TSS Earnslaw analogue)": "Julian Rocks is the spot (dive boat only in the bio); Koala Care Centre sent to review",
+   "Quirky roadside icon kept (Ohakune Carrot analogue)": "The Big Prawn kept",
+   "Strong places present": "Byron Bay, Cape Byron Lighthouse and Walk, Julian Rocks, Nimbin, Minyon Falls, Wollumbin, Yuraygir, Bundjalung all kept"
+  }
+ }
+}
