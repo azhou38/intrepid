@@ -2346,7 +2346,10 @@ const destItems = useMemo((): DestItem[] =>
       (must.has(sp.id) ? -2_000_000 : 0) + (visitIndex.isSpotVisited(sp.id) ? -1_000_000 : 0)
       + (SPOT_IMPORTANCE.get(sp.id) ?? 0) * 1000 - (prev.has(sp.id) ? 500 : 0) + (SPOT_ORDER.get(sp.id) ?? 0);
     const sorted = [...visibleSpots].sort((x, y) => rank(x) - rank(y));
-    const pxPerDegLng = SCREEN_W_GLOBAL / pillVisibleLngDelta;
+    // Planned at the zoom the camera is heading to, not the one the last render saw: a close plans at its target view and a
+    // pinch-out at its predicted zoom (planZoom / pillPlanLngDelta), so pins that won't fit there turn into dots while the
+    // camera is still moving out, instead of piling up and only collapsing once it settles.
+    const pxPerDegLng = SCREEN_W_GLOBAL / pillPlanLngDelta;
     type Box = { l: number; r: number; t: number; b: number };
     const overlaps = (a: Box, b: Box) => a.l < b.r && a.r > b.l && a.t < b.b && a.b > b.t;
     const taken: Box[] = [];
@@ -2368,13 +2371,13 @@ const destItems = useMemo((): DestItem[] =>
       // A spot revealed ahead of its destination's own default zoom (an outlying one, see SPOT_REVEAL_ZOOM_BY_ID) is on the
       // map while that destination's own pin still is, so it shows only as a dot until the destination hands over: the
       // destination leads, and the spot grows its photo only once the camera has reached the destination's view.
-      const beforeOwnZoom = !isPastDestDefaultZoom(spotParentKey(sp), handoffZoom);
+      const beforeOwnZoom = !isPastDestDefaultZoom(spotParentKey(sp), planZoom);
       if (!must.has(sp.id) && (beforeOwnZoom || pins.length >= MAX_SPOT_PINS || taken.some(t => overlaps(t, box)))) { dots.push(sp); continue; }
       pins.push(sp); taken.push(box);
     }
     prevPinIdsRef.current = new Set(pins.map(sp => sp.id));
     return { pinSpots: pins, dotSpots: dots };
-  }, [visibleSpots, selectedSpot, nearCtx, visitIndex, pillVisibleLngDelta, destPinPlan, handoffZoom]);
+  }, [visibleSpots, selectedSpot, nearCtx, visitIndex, pillPlanLngDelta, destPinPlan, planZoom]);
   const stableDotSpots = useStableList(dotSpots, s => s.id);
   const spotDotsGeoJSON = useMemo((): GeoJSON.FeatureCollection<GeoJSON.Point> => ({
     type: 'FeatureCollection',
