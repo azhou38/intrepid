@@ -792,6 +792,17 @@ function getCountryPillCutoffLngDelta(countryCode: string): number {
   return lngSpan * 1.35 * 1.1;
 }
 
+// Whether `dest` still counts as inside its country's own view at a live visible span of `lngDelta` (the pill scale):
+// up to the country's pill cutoff for its least prominent destinations, and a little further out for each more prominent
+// rank tier, so zooming out past a country hands its destinations back to the global rank gates a tier at a time instead
+// of all in the frame the country's label appears. Judged on the LIVE zoom (the one the pill itself uses), never the
+// velocity-predicted one, which jumps about during a pinch and made destinations flash in and out near the cutoff.
+const PILL_HANDOFF_STAGGER: Record<number, number> = { 1: 1.75, 2: 1.75, 3: 1.45, 4: 1.2, 5: 1 };
+function inCountryView(dest: Destination, lngDelta: number, visited: boolean): boolean {
+  const effRank = Math.max(1, dest.rank - (visited ? 1 : 0));
+  return lngDelta < getCountryPillCutoffLngDelta(dest.countryCode) * (PILL_HANDOFF_STAGGER[effRank] ?? 1);
+}
+
 type DestItem = { type: 'pin'; dest: Destination };
 
 type MapStyleKey = 'standard' | 'satellite';
@@ -1710,14 +1721,16 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
       // Eligible if: it's the selected destination; or in the selected country (always shown);
       // or within the current rank tier (or saved, which is always shown); or a rank-1 anchor
       // worldwide while drilled into a country/destination (so every country pill can form).
-      const rankOk = d.rank <= visibleRank || saved;
+      // Inside its country's own view (see inCountryView) a destination is eligible whatever the global rank tier, the
+      // same rule that lets it promote to a photo there.
+      const rankOk = d.rank <= visibleRank || saved || inCountryView(d, pillVisibleLngDelta, saved);
       const anchorRank1 = (selectedCountry || selectedDest) && d.rank === 1;
       if (!(isSelected || inSelectedCountry || rankOk || anchorRank1)) continue;
       results.push(d);
       added.add(d.id);
     }
     return results;
-  }, [visibleRank, visitIndex, selectedCountry, selectedDest]);
+  }, [visibleRank, visitIndex, selectedCountry, selectedDest, pillVisibleLngDelta]);
 
   // NOTE: there is deliberately NO viewport-bounds culling of the render set. There are only
   // ~45 destinations total, so rendering every eligible one (Mapbox natively clips whatever
@@ -1952,7 +1965,7 @@ const destItems = useMemo((): DestItem[] =>
       // pill was already gone (e.g. Los Angeles/Grand Canyon still dots with the western
       // US filling the screen). Eligibility (visibleRank/saved) and the photo-vs-photo and
       // pill collision rules still apply on top.
-      if (pillPlanLngDelta < getCountryPillCutoffLngDelta(d.countryCode)) return true;
+      if (inCountryView(d, pillVisibleLngDelta, visitIndex.isDestVisited(d.id))) return true;
       const effRank = Math.max(1, d.rank - (visitIndex.isDestVisited(d.id) ? 1 : 0));
       return panLatDelta <= (PROMOTE_LATDELTA_BY_RANK[effRank] ?? 2.5);
     };
@@ -2069,7 +2082,7 @@ const destItems = useMemo((): DestItem[] =>
     // Pure function of zoom (planLngDelta) + eligible set + selection + saved state +
     // the (equally pan-invariant) country pill plan.
     // No camera centre → recompute produces an identical plan while panning at fixed zoom.
-  }, [eligibleDests, planLngDelta, pillPlanLngDelta, planCountry, planDest, selectedSpot, visitIndex, countryPills]);
+  }, [eligibleDests, planLngDelta, pillPlanLngDelta, pillVisibleLngDelta, planCountry, planDest, selectedSpot, visitIndex, countryPills]);
 
   // Stamps are rendered via CircleLayer (not MarkerView) so Mapbox renders all of them
   // regardless of proximity. Every filter-passing destination gets a stamp — INCLUDING ones
