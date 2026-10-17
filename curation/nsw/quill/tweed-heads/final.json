@@ -1,0 +1,90 @@
+{
+  "destination": {
+    "id": "tweed-heads",
+    "name": "Tweed Heads",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Sydney",
+    "continent": "Oceania",
+    "coordinates": { "latitude": -28.1766, "longitude": 153.5407 },
+    "category": "city",
+    "defaultZoomSpanKm": 50,
+    "rank": 4,
+    "icon": "🌋",
+    "tagline": "The northernmost town in New South Wales, on the Queensland border and the Tweed River mouth.",
+    "description": "At the mouth of the Tweed River, Tweed Heads is the northernmost town in New South Wales and the twin of Coolangatta across the state line. Cedar cutters were the first Europeans to live in the Tweed Valley, in 1844, and the district later turned to dairying, sugar cane, bananas and fishing. Today the draws are the border headlands, the Tweed coast beaches and, about 30 km inland by road, Murwillumbah and the caldera that surrounds Wollumbin. The 1994 film Muriel's Wedding used Tweed Heads as the fictional town of Porpoise Spit.",
+    "whyVisit": [
+      "See Wollumbin rise from the Tweed Valley caldera",
+      "Visit the Tweed Regional Gallery and Margaret Olley Art Centre",
+      "Ride the Northern Rivers Rail Trail"
+    ],
+    "highlights": ["Wollumbin caldera", "Free art gallery", "24 km rail trail"],
+    "goodToKnow": [
+      {
+        "icon": "🚧",
+        "title": "Wollumbin summit closed",
+        "detail": "Wollumbin's summit track is closed, and NPWS will decide its future with Aboriginal custodians. The park stays open for the Lyrebird rainforest walk, picnic areas and camping at Breakfast Creek, so check park alerts before driving out."
+      },
+      {
+        "icon": "🕐",
+        "title": "Clocks change at the border",
+        "detail": "Queensland does not observe daylight saving, so in summer the clocks change an hour across the border from Tweed Heads to Coolangatta. NSW venues such as the Tweed Regional Gallery run on NSW time."
+      },
+      {
+        "icon": "🚲",
+        "title": "Rail trail logistics",
+        "detail": "The rail trail's open Tweed section is 24 km one way, from Murwillumbah Railway Station to Crabbes Creek, so plan a return shuttle or bike hire; the trail website lists both."
+      }
+    ],
+    "bestMonths": [4, 5, 9, 10],
+    "bestTimeBlurb": "Autumn and spring, {months}, are warm and good for walking and riding; humpback whales pass the headlands from June to early November.",
+    "seasonalTags": [
+      { "tag": "wildlife-migration", "months": [6, 7, 8, 9, 10], "strength": 0.5 }
+    ]
+  },
+  "spots": {
+    "tweed-heads-1": {
+      "bio": "The Tweed Shire seat on the Tweed River, with the start of the Northern Rivers Rail Trail, the nearest town to Wollumbin and the Tweed Regional Gallery just outside.",
+      "hours": "Open 24 hours",
+      "free": true
+    },
+    "tweed-heads-2": {
+      "bio": "A World Heritage rainforest park around Wollumbin (Mount Warning), the 1,157 m remnant vent of an ancient volcano and a sacred place for the Bundjalung nation; the summit track is closed, but the short Lyrebird track from Mount Warning Road leads to a rainforest lookout.",
+      "hours": "Daylight; entrance gate may close from 5 PM in winter and 6 PM in summer, reopening at 7 AM",
+      "free": true,
+      "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/wollumbin-national-park"
+    },
+    "tweed-heads-4": {
+      "bio": "The Captain Cook Memorial Light on the Point Danger headland where the NSW-Queensland border meets the sea, with parkland and sea views (the tower is closed to the public).",
+      "hours": "Open 24 hours",
+      "free": true
+    },
+    "tweed-heads-6": {
+      "bio": "A free contemporary art gallery just outside Murwillumbah, home to the Margaret Olley Art Centre, a re-creation of her Sydney workspace, with a guided tour daily at 11:30 am.",
+      "hours": "10:00 AM – 4:00 PM",
+      "closedDays": [1, 2],
+      "free": true,
+      "ticketUrl": "https://gallery.tweed.nsw.gov.au/"
+    },
+    "tweed-heads-7": {
+      "bio": "A rail trail whose open Murwillumbah to Crabbes Creek section is 24 km, for walkers and riders, with bike hire and shuttles along the way.",
+      "hours": "Daylight; no set hours (sunrise to sunset recommended)",
+      "free": true,
+      "ticketUrl": "https://www.northernriversrailtrail.com.au/"
+    },
+    "tweed-heads-8": {
+      "bio": "A surf beach on the Tweed coast with Norries Headland beside it, both popular with visitors, and a good surf break to the north of the headland.",
+      "hours": "Open 24 hours",
+      "free": true
+    }
+  },
+  "notes": [
+    "Tagline 3, description B with the 1844 and 30 km-by-road fixes (variant C's unsourced 'quieter alternative' clause not used), whyVisit variant 1 reworded for photographable subjects (reason 1 is the mountain over the valley; reason 2 names the Olley Art Centre but does not claim a studio photo), blurb 1 with the fact-check fix ('June to early November').",
+    "goodToKnow: v1 tips 1-3 unchanged; the 30 km by-road figure stays in the description only, to avoid repeating it. Dropped the gallery Christmas closure and the stale hours tip. The 'Murwillumbah starts both gallery and trail' claim is not used.",
+    "Seasonal tag uses the existing 'wildlife-migration' kind with explicit months 6-10 and strength 0.5, matching Byron Bay. Blurb says early November loosely; whale months are Gold Coast figures, not Tweed-specific.",
+    "Murwillumbah bio drops the unsupported Border Ranges and heritage wharf; the wharf photo is still the spot photo for Lens to confirm. Wollumbin uses the fact-check bio (the Mount Warning Road lookout is NPWS-sourced); the word 'climb' is not used anywhere.",
+    "No repetition with the Byron Bay draft: it does not reuse the whale, lighthouse-walk or patrolled-beach phrasing.",
+    "Unchanged spots (not listed): tweed-heads-3 Kingscliff, tweed-heads-5 Fingal Head.",
+    "Header and whyVisitPhotos are held for the owner and not set here. Unverified: the NPWS local alerts (including a 15-26 Oct 2026 alert) should be re-read before publishing; the rail trail 'free' status rests on the council's 'free to explore'; gallery and park hours are as fetched in the fact-check."
+  ]
+}

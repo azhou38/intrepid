@@ -1,0 +1,258 @@
+{
+ "destination": "tweed-heads",
+ "checked": "2026-10-17",
+ "preferred_variants": {
+  "tagline": 3,
+  "description": "B (with fixes) or A",
+  "whyVisit": 1,
+  "goodToKnow": [
+   "v1 tips 1-3 (fix 3)",
+   "or v2 tip 1 + v3 tip 2"
+  ],
+  "bestTimeBlurb": 1,
+  "seasonalTags": 1
+ },
+ "destination_claims": [
+  {
+   "item": "tagline: northernmost town in NSW, Queensland border, Tweed River mouth",
+   "status": "ok",
+   "source": "https://en.wikipedia.org/wiki/Tweed_Heads",
+   "note": "Wikipedia: 'northernmost town in New South Wales', at the mouth of the Tweed River, next to the Queensland border."
+  },
+  {
+   "item": "tagline/desc: twin of Coolangatta",
+   "status": "ok",
+   "source": "https://en.wikipedia.org/wiki/Tweed_Heads ; https://en.wikivoyage.org/wiki/Tweed_Heads",
+   "note": "Wikipedia: adjacent to its 'twin town' of Coolangatta; Wikivoyage: buildings and roads span the border."
+  },
+  {
+   "item": "desc A: Gold Coast 34 km, Byron Bay 66 km, Brisbane 103 km",
+   "status": "ok",
+   "source": "https://en.wikipedia.org/wiki/Tweed_Heads",
+   "note": "Infobox distances. Note these are the infobox figures; the drive to Brisbane is about 65 min (Wikivoyage)."
+  },
+  {
+   "item": "desc A/C: Wollumbin 1,157 m, remnant central vent of an ancient volcano, caldera",
+   "status": "ok",
+   "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/wollumbin-national-park",
+   "note": "NPWS: 'rises ... to a height of 1,157 metres ... remnant central vent of an ancient volcano ... viewed from ... the surrounding massive crater (caldera)'."
+  },
+  {
+   "item": "desc B: 'Cedar cutters settled the river in 1844'",
+   "status": "fix",
+   "source": "https://en.wikipedia.org/wiki/Tweed_Heads",
+   "note": "Wikipedia: cedar cutters in 1844 were the 'first European to live in the Tweed Valley'. 'Settled the river' overstates it (they were transient loggers).",
+   "fix": "Cedar cutters were the first Europeans to live in the Tweed Valley, in 1844, and the district later turned to dairying, sugar cane, bananas and fishing."
+  },
+  {
+   "item": "desc B: dairying, sugar cane, bananas, fishing",
+   "status": "ok",
+   "source": "https://en.wikipedia.org/wiki/Tweed_Heads",
+   "note": "Stated in History section."
+  },
+  {
+   "item": "desc B: 'Muriel's Wedding' used Tweed Heads as fictional Porpoise Spit (1994)",
+   "status": "ok",
+   "source": "https://en.wikipedia.org/wiki/Tweed_Heads",
+   "note": "Wikipedia: 'location of fictional town Porpoise Spit in the 1994 movie Muriel's Wedding'. Wikipedia-only (no second source); safe to keep, drop if the owner wants a second source."
+  },
+  {
+   "item": "desc B / tip v3-3: Murwillumbah '23 km inland by road'",
+   "status": "fix",
+   "source": "https://en.wikipedia.org/wiki/Murwillumbah ; https://en.wikivoyage.org/wiki/Murwillumbah",
+   "note": "23 km is the straight-line distance computed from coordinates (placement.json). By road it is about 30 km: Wikipedia Murwillumbah infobox '31 km SW of Tweed Heads'; Wikivoyage 32.8 km from Gold Coast Airport via M1 and Tweed Valley Way.",
+   "fix": "Murwillumbah ... about 30 km inland by road"
+  },
+  {
+   "item": "desc C: Tweed Shire seat is Murwillumbah",
+   "status": "ok",
+   "source": "https://en.wikivoyage.org/wiki/Tweed_Heads",
+   "note": "Wikivoyage: Tweed Shire 'headquartered in Murwillumbah'."
+  },
+  {
+   "item": "desc C: lighthouses at Point Danger and Fingal Head",
+   "status": "ok",
+   "source": "https://en.wikipedia.org/wiki/Point_Danger_Light ; https://en.wikipedia.org/wiki/Fingal_Head,_New_South_Wales",
+   "note": "Both lighthouses exist (1971 and 1878)."
+  },
+  {
+   "item": "desc C: old railway from Murwillumbah is now a 24 km rail trail",
+   "status": "ok",
+   "source": "https://www.northernriversrailtrail.com.au/plan/frequently-asked-questions",
+   "note": "Trail site: Murwillumbah to Crabbes Creek section is 24 km (Wikipedia says 23 km; use the operator figure). The line ran on to Casino, so 'the first 24 km of the old railway' is more exact."
+  },
+  {
+   "item": "desc C: 'quieter alternative base to the Gold Coast'",
+   "status": "cut",
+   "source": "https://en.wikivoyage.org/wiki/Tweed_Heads",
+   "note": "Unsourced marketing claim; no source calls it quieter.",
+   "fix": "End on: 'The Gold Coast is 34 km north.'"
+  },
+  {
+   "item": "whyVisit v1: Wollumbin caldera / free art gallery / 24 km rail trail",
+   "status": "ok",
+   "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/wollumbin-national-park ; https://gallery.tweed.nsw.gov.au/visit/contact-us-visiting ; https://www.northernriversrailtrail.com.au/plan/frequently-asked-questions",
+   "note": "Peak is viewed from around the caldera rim, so 'Look into the caldera' is loose but defensible; gallery entry free; trail 24 km."
+  },
+  {
+   "item": "whyVisit v2: 'Step into Margaret Olley's studio'",
+   "status": "fix",
+   "source": "https://en.wikivoyage.org/wiki/Murwillumbah",
+   "note": "It is a re-creation of her Sydney workspace, not her studio.",
+   "fix": "Step into a re-creation of Margaret Olley's studio"
+  },
+  {
+   "item": "goodToKnow: Wollumbin summit track closed",
+   "status": "ok",
+   "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/wollumbin-national-park/local-alerts",
+   "note": "Read the alert detail now (last reviewed Sat 3 Oct 2026): 'summit track and the summit are closed until further notice. Parking at Korrumbyn Creek and Breakfast Creek is limited. Korrumbyn Creek picnic area, Lyrebird walking track, and visitor facilities at Breakfast Creek remain open.' Main park page: decisions on the future of the track rest with NPWS 'in accordance with the wishes of Aboriginal custodians'. Also an alert applies from 15 Oct 2026 to 26 Oct 2026 (a separate alert on the local-alerts page; check before publishing)."
+  },
+  {
+   "item": "goodToKnow: daylight saving across the border",
+   "status": "ok",
+   "source": "https://en.wikivoyage.org/wiki/Tweed_Heads ; https://gallery.tweed.nsw.gov.au/visit/contact-us-visiting",
+   "note": "Wikivoyage: NSW has daylight saving, Queensland does not. Gallery page: 'operates on DST (1 hour ahead of Qld during daylight savings)'."
+  },
+  {
+   "item": "goodToKnow v1-3: rail trail open Tweed section 24 km one way, Murwillumbah station to Crabbes Creek, hire and shuttles",
+   "status": "ok",
+   "source": "https://www.northernriversrailtrail.com.au/plan/frequently-asked-questions ; https://www.northernriversrailtrail.com.au/plan/need-to-know",
+   "note": "'Tweed section 24 km'; Murwillumbah station is the start (Wikipedia Murwillumbah). Bike hire and shuttles listed on the trail site."
+  },
+  {
+   "item": "goodToKnow v2: Gold Coast Airport about 5 km, Brisbane about 65 min, not 24-hour",
+   "status": "ok",
+   "source": "https://en.wikivoyage.org/wiki/Tweed_Heads",
+   "note": "Wikivoyage: airport 'in Coolangatta, about 5 km from Tweed Heads', 'not a 24-hr airport'; Brisbane 'comfortable 65 minutes drive ... Pacific Motorway'."
+  },
+  {
+   "item": "goodToKnow v2: Gallery Wed-Sun 10-4, 11:30 tour, closes Christmas week",
+   "status": "fix",
+   "source": "https://gallery.tweed.nsw.gov.au/visit/contact-us-visiting",
+   "note": "Hours and tour confirmed. The holiday line reads 'Closed Wednesday 23 December to Sunday 27 December. Re-opening Wednesday 30 December' with no year (those dates match 2020), so 'Christmas week' is stale/unreliable.",
+   "fix": "The Tweed Regional Gallery is open Wednesday to Sunday, 10 am to 4 pm, and entry is free, with a guided tour at 11:30 am."
+  },
+  {
+   "item": "goodToKnow v3: 'start of both the rail trail and the gallery visit'",
+   "status": "fix",
+   "source": "https://en.wikipedia.org/wiki/Murwillumbah ; https://gallery.tweed.nsw.gov.au/visit/contact-us-visiting",
+   "note": "The rail trail starts at Murwillumbah station, but the Gallery is at 2 Mistral Rd, South Murwillumbah, outside the town centre ('just outside Murwillumbah').",
+   "fix": "Murwillumbah is about 30 km inland by road along the Tweed Valley Way, the old Pacific Highway, and is where the rail trail starts."
+  },
+  {
+   "item": "bestMonths 4,5,9,10 / blurb v1, v2",
+   "status": "ok",
+   "source": "https://www.skyscanner.com.au/destinations/advice/gold-coast-winter-whale-watching-guide",
+   "note": "Approximate: Gold Coast shoulder-season advice, not Tweed-specific. 'June to November' whales matches Skyscanner 'June to early November' (Gold Coast); say 'June to early November' for precision. Blurb v3 'whales pass Point Danger' and 'thinner crowds' are inference: use v1 or v2.",
+   "fix": "Autumn and spring, {months}, are warm and good for walking and riding; humpback whales pass the headlands from June to early November."
+  },
+  {
+   "item": "seasonalTags: whale migration months 6-11",
+   "status": "ok",
+   "source": "https://www.skyscanner.com.au/destinations/advice/gold-coast-winter-whale-watching-guide ; https://www.visitnsw.com/things-to-do/tours/blue-seafaris/whale-watching-tweed-heads",
+   "note": "Season June to early November (Gold Coast); VisitNSW confirms Tweed Heads is on the 'Humpback Highway' but gives no months. Window is the broad regional one; OK."
+  }
+ ],
+ "spots": [
+  {
+   "id": "tweed-heads-1",
+   "name": "Murwillumbah",
+   "status": "fix",
+   "source": "https://en.wikivoyage.org/wiki/Murwillumbah ; https://en.wikipedia.org/wiki/Murwillumbah",
+   "note": "'Border Ranges' and 'heritage wharf' are unsupported: no visitor source ties Murwillumbah to the Border Ranges as a gateway (Wikipedia only lists Border Ranges in a nav box) and the wharf appears only in a Commons file name ('Skinner Lowes Wharf ... Murwillumbah Heritage Wharf'); no guide names it as a stop. Supported: Tweed Shire seat, on the Tweed River, near Mount Warning (Wikipedia), Gallery and Museum (Wikivoyage See), station is the start of the rail trail (Wikipedia).",
+   "fields": {
+    "bio": "The Tweed Shire seat on the Tweed River, with the Tweed Regional Gallery and the start of the Northern Rivers Rail Trail, and the nearest town to Wollumbin.",
+    "hours": "Open 24 hours",
+    "free": true
+   },
+   "photo_note": "The photo is the heritage wharf; it still shows Murwillumbah but is not mentioned in the bio now. Lens may wish to confirm it is acceptable as the town's photo."
+  },
+  {
+   "id": "tweed-heads-2",
+   "name": "Wollumbin National Park",
+   "status": "fix",
+   "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/wollumbin-national-park ; https://www.nationalparks.nsw.gov.au/visit-a-park/parks/wollumbin-national-park/local-alerts ; https://en.wikivoyage.org/wiki/Murwillumbah",
+   "note": "The researcher's claim that 'entered from Mount Warning Road' and 'lookout' are unsourced is wrong: NPWS says the Lyrebird track 'leads from Mount Warning Road across Breakfast Creek to a lookout surrounded by rainfore[st]' and the gate is on Mount Warning Road. The existing bio is accurate; keep it, or use the Bundjalung-aware variant. Summit track closed 'until further notice' (alert reviewed 3 Oct 2026). Gate: 'may also be closed from 5pm in winter and 6pm in summer ... reopen at 7am' (NPWS) so existing hours are right. Wikivoyage lists it 'Free'.",
+   "fields": {
+    "bio": "A World Heritage rainforest park around Wollumbin (Mount Warning), the 1,157 m remnant vent of an ancient volcano and a sacred place for the Bundjalung nation; the summit track is closed, but the short Lyrebird track from Mount Warning Road leads to a rainforest lookout.",
+    "hours": "Daylight; entrance gate may close from 5 PM in winter and 6 PM in summer, reopening at 7 AM",
+    "free": true,
+    "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/wollumbin-national-park"
+   }
+  },
+  {
+   "id": "tweed-heads-3",
+   "name": "Kingscliff",
+   "status": "ok",
+   "source": "https://en.wikipedia.org/wiki/Kingscliff,_New_South_Wales ; https://en.wikivoyage.org/wiki/Tweed_Heads",
+   "note": "Beach and Cudgen Creek mouth (swimming spot) both supported; cafe strip on Marine Parade. Bio fine; 'free: true' and 24 hours fine for a beach town. No single official site, no ticketUrl."
+  },
+  {
+   "id": "tweed-heads-4",
+   "name": "Point Danger Lighthouse",
+   "status": "fix",
+   "source": "https://en.wikipedia.org/wiki/Point_Danger_Light ; https://en.wikivoyage.org/wiki/Tweed_Heads",
+   "note": "Real, 1971 Captain Cook Memorial Light, on the headland between Coolangatta and Tweed Heads; site accessible but 'the tower is closed to the public' (Wikipedia); Wikivoyage lists parkland, barbecue areas and sea views with whales in winter. Bio omits that you cannot go in. Caution: Wikipedia's infobox lists the location as Queensland, so 'at the end of Tweed Heads' is imprecise; the headland straddles the border. Coordinates -28.165, 153.5508 match Wikipedia.",
+   "fields": {
+    "bio": "The Captain Cook Memorial Light on the Point Danger headland where the NSW-Queensland border meets the sea, with parkland and sea views (the tower is closed to the public).",
+    "hours": "Open 24 hours",
+    "free": true
+   }
+  },
+  {
+   "id": "tweed-heads-5",
+   "name": "Fingal Head",
+   "status": "ok",
+   "source": "https://en.wikipedia.org/wiki/Fingal_Head,_New_South_Wales ; https://en.wikivoyage.org/wiki/Tweed_Heads",
+   "note": "Village about 5 km south of the border; 1878 round sandstone lighthouse, 7 m tower; beaches and walking tracks; Cook Island offshore. Bio accurate. Optional improvement: 'A headland and village south of the NSW-Queensland border ...'."
+  },
+  {
+   "id": "tweed-heads-6",
+   "name": "Tweed Regional Gallery and Margaret Olley Art Centre",
+   "status": "fix",
+   "source": "https://gallery.tweed.nsw.gov.au/visit/contact-us-visiting ; https://gallery.tweed.nsw.gov.au/Home ; https://en.wikivoyage.org/wiki/Murwillumbah",
+   "note": "Confirmed on the official page: 'Gallery opening hours: 10 am - 4 pm, Wednesday to Sunday. Closed Monday and Tuesday.' 'Entry is free.' 'Daily guided tours start at 11:30 am' (45-55 min). Cafe (Apex Dining) 10-4 Wed-Fri, 9-4 weekends. Gallery is at 2 Mistral Rd, Murwillumbah South. Homepage https://gallery.tweed.nsw.gov.au/ redirects to /Home with title 'Home | Tweed Regional Gallery': names the gallery, so ticketUrl is verified. Olley centre is 'a re-creation of her Sydney workspace' (Wikivoyage). The christmas closure on the page (23-27 Dec, no year) looks stale: do not add specialClosures.",
+   "fields": {
+    "bio": "A free contemporary art gallery just outside Murwillumbah, home to the Margaret Olley Art Centre, a re-creation of her Sydney workspace, with a guided tour daily at 11:30 am.",
+    "hours": "10:00 AM - 4:00 PM",
+    "closedDays": [
+     1,
+     2
+    ],
+    "free": true,
+    "ticketUrl": "https://gallery.tweed.nsw.gov.au/"
+   }
+  },
+  {
+   "id": "tweed-heads-7",
+   "name": "Northern Rivers Rail Trail",
+   "status": "fix",
+   "source": "https://www.northernriversrailtrail.com.au/plan/frequently-asked-questions ; https://www.tweed.nsw.gov.au/community/recreation-outdoors/northern-rivers-rail-trail ; https://www.northernriversrailtrail.com.au/",
+   "note": "24 km Murwillumbah to Crabbes Creek confirmed (trail site; Wikipedia says 23 km). Bike hire and shuttles confirmed. Free: no entry charge anywhere; the FAQ 'Is the Rail Trail free to use?' answers only 'We ask guests to support the rail trail and trail experiences, products and services', and the Tweed council says 'Visitors of all ages and abilities are free to explore'; so free: true is safe. Hours: FAQ says 'We recommend you use the Trail between sunrise and sunset. As community open space, there are no set open or closed hours', so 'Open 24 hours' is wrong. Homepage loads, title 'Northern Rivers Rail Trail ...'; homepage text is dated (2023 event) but the site is live and official.",
+   "fields": {
+    "bio": "A rail trail whose open Murwillumbah to Crabbes Creek section is 24 km, for walkers and riders, with bike hire and shuttles along the way.",
+    "hours": "Daylight; no set hours (sunrise to sunset recommended)",
+    "free": true,
+    "ticketUrl": "https://www.northernriversrailtrail.com.au/"
+   }
+  },
+  {
+   "id": "tweed-heads-8",
+   "name": "Cabarita Beach",
+   "status": "fix",
+   "source": "https://en.wikipedia.org/wiki/Cabarita_Beach,_New_South_Wales ; https://en.wikivoyage.org/wiki/Tweed_Heads",
+   "note": "Wikipedia: 'The beach itself, as well as the nearby Norries Headland, are popular tourist attractions. The surfing spot to the north of the headland is also very popular.' The hotel (opened 1960, rebuilt) is not a reason to visit and 'beachside' is only the suburb's description. Wikivoyage: surf beach.",
+   "fields": {
+    "bio": "A surf beach on the Tweed coast with Norries Headland beside it, both popular with visitors, and a good surf break to the north of the headland.",
+    "hours": "Open 24 hours",
+    "free": true
+   }
+  }
+ ],
+ "open_items": [
+  "Point Danger lighthouse sits on the border; Wikipedia's infobox says Queensland. The owner/placement may want to decide whether it is a Tweed Heads spot; the headland is reached from Tweed Heads (Wikivoyage lists it under Tweed Heads).",
+  "Wollumbin local-alerts page also shows a second alert (15-26 Oct 2026) that was not read in detail; re-read before publishing.",
+  "Rail trail 'free' rests on absence of any fee plus the council's 'free to explore'; the operator never says 'free' outright.",
+  "Whale months are Gold Coast figures, not Tweed-specific; bestMonths are approximate."
+ ]
+}
