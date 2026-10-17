@@ -2391,6 +2391,9 @@ const destItems = useMemo((): DestItem[] =>
     const taken: Box[] = [];
     // Destination photo pins on screen, with the name hanging below each (same footprint spotLabelPlan avoids).
     for (const id of destPinPlan.photoIds) {
+      // A destination whose pin is hidden because the camera is inside it (its spot pins have taken over) is no obstacle:
+      // it is still in the photo plan, and its invisible pin used to keep the spot at its centre (Auckland's Sky Tower) small.
+      if (hiddenDestIds.has(id)) continue;
       const d = DESTINATIONS.find(dd => dd.id === id);
       if (!d) continue;
       const m = mercatorPx(d.coordinates.longitude, d.coordinates.latitude, pxPerDegLng);
@@ -2413,7 +2416,7 @@ const destItems = useMemo((): DestItem[] =>
     }
     prevPinIdsRef.current = new Set(pins.map(sp => sp.id));
     return { pinSpots: pins, dotSpots: dots };
-  }, [visibleSpots, selectedSpot, nearCtx, visitIndex, pinPlanLngDelta, destPinPlan, handoffZoom]);
+  }, [visibleSpots, selectedSpot, nearCtx, visitIndex, pinPlanLngDelta, destPinPlan, handoffZoom, hiddenDestIds]);
   const stableDotSpots = useStableList(dotSpots, s => s.id);
   const spotDotsGeoJSON = useMemo((): GeoJSON.FeatureCollection<GeoJSON.Point> => ({
     type: 'FeatureCollection',
@@ -2484,6 +2487,9 @@ const destItems = useMemo((): DestItem[] =>
     // centred on its coordinate with its name hanging below (about 90px wide, up to two 13px lines).
     const destBlocks: Rect[] = [];
     for (const id of destPinPlan.photoIds) {
+      // A destination whose pin is hidden because the camera is inside it (its spot pins have taken over) is no obstacle:
+      // it is still in the photo plan, and its invisible pin used to keep the spot at its centre (Auckland's Sky Tower) small.
+      if (hiddenDestIds.has(id)) continue;
       const d = DESTINATIONS.find(dd => dd.id === id);
       if (!d) continue;
       const m = mercatorPx(d.coordinates.longitude, d.coordinates.latitude, pxPerDegLng);
@@ -2546,7 +2552,7 @@ const destItems = useMemo((): DestItem[] =>
     spotLabelHitRef.current = { pxPerDegLng, rects: hitRects };
     prevSpotLabelPlanRef.current = plan;
     return plan;
-  }, [renderedSpots, pinPlanLngDelta, selectedSpot, savedSpots, visitIndex, destPinPlan]);
+  }, [renderedSpots, pinPlanLngDelta, selectedSpot, savedSpots, visitIndex, destPinPlan, hiddenDestIds]);
 
   // Spot pins in depth order: northernmost first, southernmost last. MarkerViews stack by when they
   // were mounted, so mounting in this order puts a pin that is lower on the map in front of any pin
