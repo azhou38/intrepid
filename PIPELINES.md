@@ -36,7 +36,7 @@ Benchmark: the full list in `COVERAGE.md` → "Finding what is missing" (Red Roc
    - Unsplash/Pexels only for headline destinations (their location tags are unreliable); tourism-board and Google Places photos are out (copyright / terms).
    - Cloud runs may hit Wikimedia 429s (see the rate-limit probe); run the Commons-heavy steps with backoff, or locally.
 3. **Judge** — views the image, scores the checks with reasons.
-4. **Second judge** — re-scores finalists blind; disagreement means reject or ask a human.
+4. **Second judge** — re-scores, blind, only the slots where the first judge proposed a new file; disagreement means the slot stays as it is and goes to the owner. A keep-current needs no second judge (nothing changes).
 5. **Technical check (script)** — licence, size, manifest.
 Benchmark: Clyde, Hamilton, Blue Lake, the 1913 Government Gardens and the archive Blue Lake photo must all be rejected.
 
@@ -48,11 +48,20 @@ Benchmark: Clyde, Hamilton, Blue Lake, the 1913 Government Gardens and the archi
 4. **Editor** — style, repetition within and across entries.
 5. **Reconciler** — couple the three reasons to their photos with Pipeline B.
 
+## Cost and speed
+The agents judge; scripts do everything else, and nothing is judged twice. (Wellington's first region pass used ~2.5M agent tokens, most of it on items that ended up unchanged.)
+- **Scripts do the mechanical work.** `scripts/curation/score-candidates.ts` (Atlas: page views, coordinates, redirects, disambiguation pages, already-in-the-app matches), `scripts/curation/lint-entries.ts` (Quill: ticketUrl loads and names the place, paid spots without a link, bio voice and length, photo titles that won't resolve, destination field counts), `scripts/photo-prefilter.ts` and `scripts/curation/lens-triage.ts` (Lens).
+- **Triage before any agent.** Lens works only `search` and `confirm` slots (`lens-triage.ts`); Quill only the entries `lint-entries.ts` flags, or the owner names; the Atlas skeptic only keeps, reviews and rejects that rest on "no counted source".
+- **Second judge only on proposed changes** (Pipeline B step 4).
+- **Cheaper models for mechanical roles**: `model: haiku` in `coverage-enumerator` and `reconciler`; the judging, writing and fact-checking roles keep the session's model.
+- **Short role briefs.** Each `.claude/agents/*.md` carries a checklist of the rules its role needs; the guides stay the authority and are opened only for a case a checklist doesn't settle. Keep the checklists in step when a guide changes.
+- **Cache between steps and runs.** Agents fetch pages with `npx tsx scripts/curation/fetch.ts <url>` (cache in `.cache/curation/http/`, not committed; 14 days, failures 1 day; captcha walls reported as BLOCKED), and the scripts use the same cache. Accepted photos are recorded per slot in `scripts/curation/photo-verdicts.json` (`scripts/curation/record-verdicts.ts`, or `--owner` for a photo the owner supplied); `lens-triage.ts` skips them on every later run.
+
 ## Build order
 Pipeline B first (most objective checks), then A, then C.
 
 ## What is implemented
-- **Scripts (deterministic):** `scripts/photo-prefilter.ts` (Pipeline B step 1 and the technical check; hard fails plus colour "review" flags, cached per file in `scripts/prefilter-cache.json`) and `scripts/curation-backlog.ts` (weakest-first ranking and the next batch of 5). Existing: `check-destination-headers.ts`, `audit-spot-coordinates.ts`, `build-image-manifest.ts`.
+- **Scripts (deterministic):** the `scripts/curation/` tools in "Cost and speed"; `scripts/photo-prefilter.ts` (Pipeline B step 1 and the technical check; hard fails plus colour "review" flags, cached per file in `scripts/prefilter-cache.json`) and `scripts/curation-backlog.ts` (weakest-first ranking and the next batch of 5). Existing: `check-destination-headers.ts`, `audit-spot-coordinates.ts`, `build-image-manifest.ts`.
 - **Roles:** one subagent per role in `.claude/agents/` (`image-searcher`, `image-judge`, `coverage-enumerator`, `coverage-recall-checker`, `coverage-proposer`, `coverage-skeptic`, `spot-researcher`, `copy-writer`, `fact-checker`, `copy-editor`, `reconciler`). They point at the guides and add no rules of their own.
 - **Orchestration:** one prompt per pipeline in `.claude/routines/` (`b-imagery.md`, `a-coverage.md`, `c-writing.md`). A cloud routine's prompt is just "follow `.claude/routines/<file>`", so changing a pipeline is a normal pull request.
 - **Pre-filter findings are inputs, not verdicts.** A hard fail is objective (an archive date, a map or flag category, too small, one photo used for two places); a few can be false positives (a flags category on a Times Square photo), so the judges look at them. "Review" flags are colour heuristics that a sunset can trip.

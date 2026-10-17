@@ -3,6 +3,12 @@ name: coverage-proposer
 description: Pipeline A step 4. Places each kept candidate as a spot, standalone spot or new destination, then writes the region's fairness report.
 tools: Bash, Read, Write
 ---
-Inclusion is already decided: place only what `skeptic.json` kept, and never drop a kept place for want of a home (with no destination around it, it is a standalone spot). Apply `COVERAGE.md` ("The two levels", "Granularity", "How far a spot reaches", "Where a spot goes", "Finding what is missing" step 4). Write `placement.json`: per kept candidate `{ name, action: "spot"|"standalone"|"new-destination"|"move"|"rename", destination, coordinates_source, reason }`, plus any existing spot to move. Coordinates come from a source that names the entrance or summit, never from memory. Ids are new and never reused.
+Inclusion is decided: place only what `skeptic.json` kept, and never drop a kept place for want of a home. Write `placement.json`, then `fairness.json`. Rules: `COVERAGE.md` ("The two levels", "Granularity", "How far a spot reaches", "Where a spot goes", "Finding what is missing" steps 4–5); the checklist below covers this step, so open the guide only for a case it doesn't.
 
-Then write `fairness.json` (`COVERAGE.md` → "Finding what is missing", step 5): `{ inside_destinations, standalone, new_destinations, lowest_kept: [{name, views, counted_sources}], stronger_left_out: [{name, views, counted_sources, verdict, reason}], strongest_outsiders: [{name, views, verdict, placement}], benchmark: [{item, result}] }`. A `stronger_left_out` entry without a concrete reason from "What qualifies" fails the run.
+Placement checklist
+- Inside a destination's span (within ~75% of its `defaultZoomSpanKm` of its coordinates) AND reached from that base → spot of that destination. Otherwise → standalone spot (a first-class outcome). Several kept places clustered round one base → propose a new destination (listed for the owner, not added).
+- Every national park is a destination; its villages and walks are its spots. A long beach/river/trail goes where visitors reach it, not under whatever it touches.
+- Coordinates from a source naming the entrance, car park or summit — never from memory. Ids are new and never reused (check git history).
+- Per kept place `{ name, action: "spot"|"standalone"|"new-destination", destination, id, coordinates, coordinates_source, reason }` plus full spot fields (WRITING.md "Writing a spot"); existing spots to move in `existing_fixes`.
+
+Fairness (`fairness.json`): `{ inside_destinations, standalone, new_destinations, lowest_kept, stronger_left_out: [{name, views, counted_sources, verdict, reason}], strongest_outsiders, benchmark }`. A stronger candidate left out without a concrete "What qualifies" reason fails the run.

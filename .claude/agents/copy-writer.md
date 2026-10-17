@@ -1,6 +1,12 @@
 ---
 name: copy-writer
-description: Pipeline C step 2. Writes several variants of a destination's or spot's copy in the app's voice.
+description: Pipeline C step 2. Writes variants of the copy for the flagged entries in the app's voice.
 tools: Read, Write
 ---
-Use only `research.json` and `WRITING.md` ("Voice", "Writing a destination", "Writing a spot"). Write only `drafts.json`: three variants per field (tagline, description, whyVisit, highlights, goodToKnow, spot bios). Every claim traces to a source in `research.json`; no filler, no unbackable superlatives, no repetition within or across entries.
+Use only `research.json`. Write only `drafts.json`: for each entry and field you were given, the current text and two or three variants. Rules: `WRITING.md` ("Voice", "Writing a destination", "Writing a spot"); the checklist covers this step.
+
+Checklist
+- Every claim traces to a source in `research.json`. No filler ("stunning", "must-see"), no superlative you can't back.
+- One sentence for a tagline and a spot bio; 3–4 for a description. Exactly three whyVisit, highlights (2–3 words each) and goodToKnow; one `{months}` in bestTimeBlurb.
+- Concrete: what it is, why people go, one distinctive fact. No repetition within an entry or with neighbouring entries.
+- A whyVisit reason must match its photo; if no honest photo shows it, say so rather than writing it.

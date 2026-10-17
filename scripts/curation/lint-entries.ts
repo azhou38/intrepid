@@ -1,0 +1,106 @@
+// Quill's triage (PIPELINES.md → "Cost and speed"): the objective checks on destinations and spots, so the writing
+// pipeline researches and rewrites only the entries that fail one, instead of every entry in a region.
+//
+//   npx tsx scripts/curation/lint-entries.ts (--region <id> | --dest <id> [--dest <id> …]) [--json out.json] [--offline]
+//
+// Spots
+//   ticketUrl   loads, isn't a captcha wall, and its title or heading names the place (WRITING.md → ticketUrl);
+//               "blocked" means it needs a real browser, not that it's wrong
+//   no-ticket   charges (costMin > 0) but has no ticketUrl
+//   bio         more than one sentence, or marketing words (WRITING.md → "Voice")
+//   wiki        its photo title (wiki, else name) is missing on Wikipedia, a disambiguation page, or a redirect —
+//               only for spots whose photo comes from that lookup (no override, no supplied photo)
+// Destinations
+//   shape       not exactly three whyVisit / highlights / goodToKnow, or bestTimeBlurb without exactly one {months}
+//   voice       marketing words in tagline or description
+// With --offline only the checks that need no network run (shape, voice, bio, no-ticket).
+// Fetches go through the shared cache (http-cache.ts). Prints one line per failing entry; --json writes them all.
+import { readFileSync, writeFileSync } from 'node:fs';
+import { cachedGet, cachedJson, htmlTitle, looksBlocked } from './http-cache';
+import { DESTINATIONS } from '../../src/data/destinations';
+import { SPOTS, spotPhotoTitle } from '../../src/data/spots';
+import { WIKI_IMAGE_OVERRIDES } from '../../src/data/imageOverrides';
+
+const EXTERNAL = JSON.parse(readFileSync('src/data/externalPhotos.json', 'utf8')) as Record<string, unknown>;
+
+const args = process.argv.slice(2);
+const all = (f: string) => args.flatMap((a, i) => (a === f ? [args[i + 1]] : []));
+const one = (f: string) => all(f)[0];
+const offline = args.includes('--offline');
+
+const regions = JSON.parse(readFileSync('scripts/coverage-regions.json', 'utf8'));
+// Keyed by country code ({ NZ: [ { id, name, destinations, standalone }, … ] }); regions are searched across all of them.
+const regionList: any[] = Object.entries(regions).filter(([k]) => !k.startsWith('_')).flatMap(([, v]) => v as any[]);
+let destIds = new Set(all('--dest'));
+let standaloneIds = new Set<string>();
+const regionId = one('--region');
+if (regionId) {
+  const r = regionList.find(x => x.id === regionId);
+  if (!r) { console.error(`no region ${regionId} in scripts/coverage-regions.json`); process.exit(1); }
+  destIds = new Set(r.destinations); standaloneIds = new Set(r.standalone ?? []);
+}
+if (!destIds.size && !standaloneIds.size) { console.error('usage: lint-entries.ts (--region <id> | --dest <id> …) [--json out.json] [--offline]'); process.exit(1); }
+
+const MARKETING = /\b(stunning|breathtaking|must[- ]see|must[- ]visit|world[- ]class|iconic|unforgettable|hidden gem|picturesque|nestled|paradise|best in the world|bucket[- ]list|jaw[- ]dropping|awe[- ]inspiring|spectacular)\b/i;
+const norm = (s: string) => s.normalize('NFKD').replace(/[̀-ͯ]/g, '').toLowerCase();
+const STOP = new Set(['the', 'of', 'and', 'at', 'on', 'in', 'a', 'to', 'new', 'zealand', 'park', 'museum', 'beach', 'track', 'walk', 'national', 'reserve', 'regional', 'house', 'garden', 'gardens', 'island', 'bay', 'mount', 'lake']);
+const sentences = (s: string) => s.split(/(?<=[.!?])\s+(?=[A-Z0-9"'“‘(])/).filter(x => x.trim()).length;
+
+type Issue = { kind: 'spot' | 'destination'; id: string; name: string; checks: { check: string; detail: string }[] };
+const issues: Issue[] = [];
+const add = (it: Issue, check: string, detail: string) => it.checks.push({ check, detail });
+
+async function checkTicket(name: string, wiki: string | undefined, url: string): Promise<string | null> {
+  const r = await cachedGet(url);
+  if (r.status === 0) return `unreachable (${r.body.slice(0, 80)})`;
+  if (looksBlocked(r)) return `blocked (${r.status}) — check in a real browser`;
+  if (r.status >= 400) return `dead (${r.status})`;
+  const head = norm(htmlTitle(r.body) + ' ' + (r.body.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i)?.[1] ?? '').replace(/<[^>]+>/g, ' '));
+  const words = [...new Set(norm(`${name} ${wiki ?? ''}`).split(/[^a-z0-9]+/).filter(w => w.length > 2 && !STOP.has(w)))];
+  if (words.length && !words.some(w => head.includes(w))) return `title doesn't name the place ("${htmlTitle(r.body).slice(0, 70)}")`;
+  return null;
+}
+async function checkWiki(title: string): Promise<string | null> {
+  const d = await cachedJson<any>(`https://en.wikipedia.org/w/api.php?action=query&format=json&redirects=1&prop=pageprops&ppprop=disambiguation&titles=${encodeURIComponent(title)}`, 30);
+  if (!d) return null;   // network trouble: no verdict
+  const page: any = Object.values(d.query?.pages ?? {})[0];
+  if (!page || page.missing !== undefined) return 'no Wikipedia article (photo lookup will fall back to search)';
+  if (page.pageprops && 'disambiguation' in page.pageprops) return 'a disambiguation page — set `wiki` to the exact article';
+  const to = d.query?.redirects?.[0]?.to;
+  if (to && norm(to) !== norm(title)) return `redirects to "${to}" — set \`wiki\` to it, or check it's this place`;
+  return null;
+}
+
+(async () => {
+  for (const d of DESTINATIONS.filter(x => destIds.has(x.id))) {
+    const it: Issue = { kind: 'destination', id: d.id, name: d.name, checks: [] };
+    if ((d.whyVisit?.length ?? 0) !== 3) add(it, 'shape', `${d.whyVisit?.length ?? 0} whyVisit (needs 3)`);
+    if ((d.highlights?.length ?? 0) !== 3) add(it, 'shape', `${d.highlights?.length ?? 0} highlights (needs 3)`);
+    if ((d.goodToKnow?.length ?? 0) !== 3) add(it, 'shape', `${d.goodToKnow?.length ?? 0} goodToKnow (needs 3)`);
+    if (((d.bestTimeBlurb ?? '').match(/\{months\}/g) ?? []).length !== 1) add(it, 'shape', 'bestTimeBlurb needs exactly one {months}');
+    for (const [f, v] of [['tagline', d.tagline], ['description', d.description]] as const) {
+      const m = (v ?? '').match(MARKETING); if (m) add(it, 'voice', `${f}: "${m[0]}"`);
+    }
+    if (it.checks.length) issues.push(it);
+  }
+  const spots = SPOTS.filter(s => (s.destinationId && destIds.has(s.destinationId)) || (!s.destinationId && standaloneIds.has(s.id)));
+  let n = 0;
+  for (const s of spots) {
+    const it: Issue = { kind: 'spot', id: s.id, name: s.name, checks: [] };
+    if (sentences(s.bio) > 1) add(it, 'bio', 'more than one sentence');
+    const m = s.bio.match(MARKETING); if (m) add(it, 'bio', `marketing word "${m[0]}"`);
+    if ((s.costMin ?? 0) > 0 && !s.ticketUrl) add(it, 'no-ticket', 'charges but has no ticketUrl');
+    if (!offline) {
+      if (s.ticketUrl) { const t = await checkTicket(s.name, s.wiki, s.ticketUrl); if (t) add(it, 'ticketUrl', t); }
+      // Only matters when the photo comes from the Wikipedia lookup: a hand-picked or supplied photo doesn't use the title.
+      const key = spotPhotoTitle(s);
+      if (!WIKI_IMAGE_OVERRIDES[key] && !EXTERNAL[key]) { const w = await checkWiki(key); if (w) add(it, 'wiki', w); }
+    }
+    if (it.checks.length) issues.push(it);
+    if (++n % 10 === 0) console.error(`… ${n}/${spots.length} spots`);
+  }
+  for (const it of issues) console.log(`${it.kind} ${it.id} (${it.name}): ${it.checks.map(c => `${c.check}: ${c.detail}`).join('; ')}`);
+  console.log(`${issues.length} of ${spots.length + [...destIds].length} entries need attention`);
+  const out = one('--json');
+  if (out) writeFileSync(out, JSON.stringify({ generated: new Date().toISOString(), scope: regionId ? { region: regionId } : { destinations: [...destIds] }, issues }, null, 1) + '\n');
+})();

@@ -2,7 +2,16 @@
 name: coverage-enumerator
 description: Pipeline A step 1. Builds a scored candidate list for one region from sources, not memory, covering the land between destinations as fully as the destinations.
 tools: Bash, Read, Write, WebFetch, WebSearch
+model: haiku
 ---
-Follow `COVERAGE.md` → "Finding what is missing", steps 1–2. Input: a region from `scripts/coverage-regions.json`. Output: write only `curation/<branch>/region-<id>/candidates.json`: `[{ name, wiki, coordinates, coordinates_source, views, counted_sources: [url], other_sources: [url], note }]`.
+Build `curation/<branch>/region-<id>/candidates.json` for ONE region (`scripts/coverage-regions.json`): `[{ name, wiki, coordinates, coordinates_source, views, counted_sources: [url], other_sources: [url], note }]`. Rules: `COVERAGE.md` → "Finding what is missing" steps 1–2; the checklist below covers what this step needs, so open the guide only for a case it doesn't.
 
-Cover the **whole region**: every town's and park's Wikivoyage listings, the region's DOC (or agency) places, the regional tourism board's highlights, Wikipedia's attraction, beach, walk and park categories for the region, OSM attractions and viewpoints with a Wikipedia link anywhere in it. Do **not** start from our destinations or read `src/data/destinations.ts`: the land between destinations must be searched as hard as the land inside them. `views` is 12 months of English Wikipedia page views (0 with no article or when the title only redirects to a broader article). `counted_sources` are visitor-oriented sources as defined in "What qualifies". Prefer recall: list every place with at least one source naming it as somewhere to go. Do not filter here.
+Checklist
+- Sources, not memory, across the WHOLE region (not just around our destinations — do not read `src/data/destinations.ts`): every town's and park's Wikivoyage See/Do; the agency's places (DOC: `doc.govt.nz/sitemap.xml`); the regional tourism board's highlights; Wikipedia attraction/beach/walk/park/lake/island categories; OSM attractions and viewpoints with a Wikipedia link.
+- List every place at least one source names as somewhere to go. Don't filter (operators, weekly markets, districts included, with a `note` saying what they are); the next steps judge.
+- `counted_sources` = visitor-oriented only: Wikivoyage listing, DOC/agency visitor page, tourism board, guidebook. Wikipedia, OSM, Commons, heritage registers go in `other_sources`.
+- `note` starts with what kind of place it is.
+
+Do NOT look up page views, coordinates or whether a place is already in the app by hand: write the names, `wiki` titles and sources, then run `npx tsx scripts/curation/score-candidates.ts <candidates.json>`, which fills in `views`, `coordinates` (from Wikipedia where you had none), `redirect_to`, `disambiguation` and `existing_spot`. Then fix only what it can't: set `views` to 0 where `redirect_to` is a broader article (COVERAGE.md), give a disambiguated `wiki` title where `disambiguation` is true, and find coordinates (OSM, DOC) for any still without.
+
+Fetch source pages with `npx tsx scripts/curation/fetch.ts <url>` (shared cache: a page any step or earlier run fetched costs nothing; it marks captcha walls as BLOCKED). Use WebFetch only if that fails for a reason other than a block.
