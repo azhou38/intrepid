@@ -212,7 +212,6 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Wilkies Pools": "Wilkies Pools, New Zealand (3).JPG",
   "Bridge to Nowhere": "Bridge to Nowhere (25430934253).jpg",
   "The Esplanade": "Victoria Esplanade playground and railway track.jpg",
-  "Mount Victoria (Wellington hill)": "Wellington Centennial Memorial and lookout - Mount Victoria.jpg",
   "Wellington Botanic Garden": "Wellington Botanical Gardens Rose Garden.jpg",
   "Wellington Waterfront": "Whairepo Lagoon from Frank Kits park.jpg",
   "Wellington Zoo": "Lion, Wellington.jpg",
