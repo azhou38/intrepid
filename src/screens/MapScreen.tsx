@@ -963,8 +963,8 @@ function nearContextFor(anchor: Spot): NearContext {
 // than SPOT_EARLY_MAX_LEVELS zoom levels early. Otherwise zooming in on a destination left its outlying spots (often
 // off-screen at its default view) invisible until the very end. The destination pin itself still hands over at its own
 // default zoom; until then it and these outlying spot pins show together.
-const SPOT_EARLY_SEPARATION_PX = 90;
-const SPOT_EARLY_MAX_LEVELS = 2;
+const SPOT_EARLY_SEPARATION_PX = 160;
+const SPOT_EARLY_MAX_LEVELS = 1;
 const SPOT_REVEAL_ZOOM_BY_ID: Record<string, number> = (() => {
   const out: Record<string, number> = {};
   const destById = new Map(DESTINATIONS.map(d => [d.id, d]));
