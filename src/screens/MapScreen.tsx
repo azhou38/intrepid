@@ -835,6 +835,61 @@ const DEST_SYMBOL_STYLE: any = {
 };
 const CAMERA_DEFAULT_SETTINGS = { centerCoordinate: [10, 20] as [number, number], zoomLevel: 1 };
 
+// Destination photo pins leave the native layer by being dropped from its data, which Mapbox draws instantly — fine when
+// one or two go, but at some zooms (the country-label threshold) every pin leaves in the same frame and the map jumps to
+// dots. This keeps the pins that just left on a layer of their own, beneath the live one and out of collision and taps,
+// and fades that layer out. Its own small component, so the fade's state changes don't re-render MapScreen.
+const DEST_PIN_EXIT_MS = 220;
+const DestPinExitFade = memo(function DestPinExitFade({ shape }: { shape: GeoJSON.FeatureCollection<GeoJSON.Point> }) {
+  const prevRef = useRef<Map<string, GeoJSON.Feature<GeoJSON.Point>>>(new Map());
+  const [exiting, setExiting] = useState<GeoJSON.Feature<GeoJSON.Point>[]>([]);
+  // 'show': opaque at once (no transition); 'fade': transitions to transparent over DEST_PIN_EXIT_MS.
+  const [phase, setPhase] = useState<'show' | 'fade'>('fade');
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const rafRef = useRef<number | null>(null);
+  useLayoutEffect(() => {
+    const now = new Map<string, GeoJSON.Feature<GeoJSON.Point>>();
+    for (const f of shape.features) now.set(f.properties?.id as string, f);
+    const gone: GeoJSON.Feature<GeoJSON.Point>[] = [];
+    for (const [id, f] of prevRef.current) if (!now.has(id)) gone.push(f);
+    prevRef.current = now;
+    // A pin that comes back is live again, so it leaves the fading layer.
+    setExiting(cur => {
+      const keep = cur.filter(f => !now.has(f.properties?.id as string));
+      if (!gone.length) return keep.length === cur.length ? cur : keep;
+      const ids = new Set(gone.map(f => f.properties?.id as string));
+      return [...keep.filter(f => !ids.has(f.properties?.id as string)), ...gone];
+    });
+    if (!gone.length) return;
+    setPhase('show');
+    if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
+    rafRef.current = requestAnimationFrame(() => { rafRef.current = null; setPhase('fade'); });
+    if (timerRef.current) clearTimeout(timerRef.current);
+    timerRef.current = setTimeout(() => { timerRef.current = null; setExiting([]); }, DEST_PIN_EXIT_MS + 120);
+  }, [shape]);
+  useEffect(() => () => {
+    if (timerRef.current) clearTimeout(timerRef.current);
+    if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
+  }, []);
+  const exitShape = useMemo(() => ({ type: 'FeatureCollection' as const, features: exiting }), [exiting]);
+  const style = useMemo(() => {
+    const opacity = phase === 'show' ? 1 : 0;
+    const transition = { duration: phase === 'show' ? 0 : DEST_PIN_EXIT_MS, delay: 0 };
+    return {
+      ...DEST_SYMBOL_STYLE,
+      iconAllowOverlap: true, iconIgnorePlacement: true, textAllowOverlap: true, textIgnorePlacement: true,
+      iconOpacity: opacity, textOpacity: opacity,
+      iconOpacityTransition: transition, textOpacityTransition: transition,
+    };
+  }, [phase]);
+  return (
+    <MapboxGL.ShapeSource id="destPhotosExiting" shape={exitShape}>
+      <MapboxGL.SymbolLayer id="destPhotoSymbolsExiting" belowLayerID="destPhotoSymbols" style={style} />
+    </MapboxGL.ShapeSource>
+  );
+});
+
+
 // Layer pill sizing — a single continuous capsule (see the JSX comment above its render
 // block), so its fully-open height is a pure function of these rather than measured,
 // letting the grow/shrink animation target an exact pixel value instead of an unmeasured
@@ -4597,6 +4652,7 @@ const destItems = useMemo((): DestItem[] =>
             <MapboxGL.SymbolLayer id="destPhotoSymbols" aboveLayerID="destStampCircles" style={DEST_SYMBOL_STYLE} />
           </MapboxGL.ShapeSource>
         )}
+        {nativeDestPins && <DestPinExitFade shape={nativeDestPins.shape} />}
 
         {/* Collapsed spot pins: a small photo-less pin for every revealed spot beyond the MAX_SPOT_PINS that
             hold a full photo pin. A native layer (no MarkerView per spot), drawn beneath the destination
