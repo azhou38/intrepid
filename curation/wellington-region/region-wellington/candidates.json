@@ -1,156 +1,5755 @@
 {
  "region": "wellington",
- "step": "enumerate+score (partial: Wikivoyage Wellington-region pages and Wikipedia benchmark titles only; DOC, Wikipedia categories and OSM not yet searched)",
- "scoring": "wikipedia_views_12m = English Wikipedia per-article views, 2025-09 to 2026-08; 0 dropped",
+ "step": "enumerate+score (full pass: Wikivoyage Wellington-region pages and Wikipedia benchmark titles from the earlier partial pass, plus DOC Wellington/Kāpiti and Wairarapa places-to-go (sitemap-derived), WellingtonNZ, Destination Wairarapa (wairarapanz.com catalogue) and Visit Kāpiti, a Wikipedia category crawl of the region, and OSM (Overpass) attractions/viewpoints/wikipedia-tagged features; blind verdicts are step 3, not done here)",
+ "scoring": "views = English Wikipedia per-article views (all-access, user), 2025-10 to 2026-09 (12 months); 0 with no article or when the title only redirects to a broader article. counted_sources = visitor-oriented sources only (Wikivoyage, DOC, WellingtonNZ, Destination Wairarapa, Visit Kapiti); Wikipedia and OSM are in other_sources and not counted. Coordinates from Wikipedia, Wikivoyage listing or OSM (Overpass/Nominatim) as recorded per entry; null where no source coordinate was found.",
  "sources": [
-  "https://en.wikivoyage.org/wiki/Wellington",
-  "https://en.wikivoyage.org/wiki/Wairarapa",
-  "https://en.wikivoyage.org/wiki/Porirua",
-  "https://en.wikivoyage.org/wiki/Paraparaumu",
-  "https://en.wikivoyage.org/wiki/Waikanae",
-  "https://en.wikivoyage.org/wiki/Masterton",
-  "https://en.wikivoyage.org/wiki/Martinborough",
+  "https://admin.wellingtonnz.com/sitemap.xml",
+  "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_the_Wellington_Region",
+  "https://en.wikivoyage.org/wiki/Carterton",
+  "https://en.wikivoyage.org/wiki/Greater_Wellington",
+  "https://en.wikivoyage.org/wiki/Hutt_Valley",
+  "https://en.wikivoyage.org/wiki/Kapiti_Coast",
   "https://en.wikivoyage.org/wiki/Lower_Hutt",
-  "https://en.wikivoyage.org/wiki/Upper_Hutt",
+  "https://en.wikivoyage.org/wiki/Martinborough",
+  "https://en.wikivoyage.org/wiki/Masterton",
+  "https://en.wikivoyage.org/wiki/Mount_Victoria",
+  "https://en.wikivoyage.org/wiki/Otaki",
   "https://en.wikivoyage.org/wiki/Paekakariki",
-  "https://en.wikivoyage.org/wiki/Mount_Victoria"
+  "https://en.wikivoyage.org/wiki/Paraparaumu",
+  "https://en.wikivoyage.org/wiki/Porirua",
+  "https://en.wikivoyage.org/wiki/Upper_Hutt",
+  "https://en.wikivoyage.org/wiki/Waikanae",
+  "https://en.wikivoyage.org/wiki/Wairarapa",
+  "https://en.wikivoyage.org/wiki/Wellington",
+  "https://en.wikivoyage.org/wiki/Wellington/City",
+  "https://en.wikivoyage.org/wiki/Wellington/Lower_Hutt",
+  "https://en.wikivoyage.org/wiki/Wellington/Upper_Hutt",
+  "https://nominatim.openstreetmap.org/search",
+  "https://overpass-api.de/api/interpreter (bbox -41.7,174.55,-40.55,176.4)",
+  "https://wairarapanz.com/collections/coastal-regions",
+  "https://wairarapanz.com/collections/see-and-do",
+  "https://wairarapanz.com/collections/wairarapa-coast",
+  "https://wairarapanz.com/collections/wairarapa-swimming-and-surfing-spots",
+  "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wairarapa/",
+  "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/",
+  "https://www.doc.govt.nz/sitemap.xml",
+  "https://www.visitkapiti.co.nz/see-and-do/",
+  "https://www.visitkapiti.co.nz/see-and-do/beaches/",
+  "https://www.visitkapiti.co.nz/see-and-do/tracks-and-trails/",
+  "https://www.wellingtonnz.com/visit/hutt-valley",
+  "https://www.wellingtonnz.com/visit/kapiti-coast",
+  "https://www.wellingtonnz.com/visit/porirua",
+  "https://www.wellingtonnz.com/visit/see-and-do",
+  "https://www.wellingtonnz.com/visit/wairarapa"
  ],
  "candidates": [
   {
-   "name": "Zealandia",
-   "wikipedia_views_12m": 359762
+   "name": "Weta Workshop",
+   "wiki": "Wētā Workshop",
+   "coordinates": {
+    "lat": -41.30582,
+    "lng": 174.82346
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Wellington/City",
+   "views": 77140,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City",
+    "https://www.wellingtonnz.com/visit/see-and-do/weta-workshop-experiences-and-weta-cave"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Wētā_Workshop",
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_Wellington_City",
+    "https://en.wikipedia.org/wiki/Category:Miramar_Peninsula"
+   ],
+   "note": "studio tour"
+  },
+  {
+   "name": "Sky Stadium (Wellington Regional Stadium)",
+   "wiki": "Wellington Regional Stadium",
+   "coordinates": {
+    "lat": -41.27306,
+    "lng": 174.78583
+   },
+   "coordinates_source": "wikipedia:Wellington Regional Stadium",
+   "views": 64849,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Wellington_Regional_Stadium",
+    "https://en.wikipedia.org/wiki/Category:Wellington_Phoenix_FC"
+   ],
+   "note": "stadium"
+  },
+  {
+   "name": "Masterton",
+   "wiki": "Masterton",
+   "coordinates": {
+    "lat": -40.97,
+    "lng": 175.65
+   },
+   "coordinates_source": "wikipedia:Masterton",
+   "views": 28899,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Masterton"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Masterton",
+    "https://en.wikipedia.org/wiki/Category:Masterton_District",
+    "https://en.wikipedia.org/wiki/Category:Masterton"
+   ],
+   "note": "town"
+  },
+  {
+   "name": "Porirua",
+   "wiki": "Porirua",
+   "coordinates": {
+    "lat": -41.13333,
+    "lng": 174.85
+   },
+   "coordinates_source": "wikipedia:Porirua",
+   "views": 27631,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/Porirua",
+    "https://www.wellingtonnz.com/visit/porirua"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Porirua",
+    "https://en.wikipedia.org/wiki/Category:Porirua"
+   ],
+   "note": "city"
   },
   {
    "name": "Te Papa",
-   "wikipedia_views_12m": 18776
+   "wiki": "Te Papa",
+   "coordinates": {
+    "lat": -41.2906,
+    "lng": 174.7819
+   },
+   "coordinates_source": "wikipedia:Te Papa",
+   "views": 18843,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City",
+    "https://www.wellingtonnz.com/visit/see-and-do/museum-of-new-zealand-te-papa-tongarewa",
+    "https://www.wellingtonnz.com/visit/see-and-do/top-10-wellington-must-dos"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Te_Papa",
+    "https://en.wikipedia.org/wiki/Category:Museums_in_Wellington_City",
+    "https://en.wikipedia.org/wiki/Category:Wellington_Waterfront",
+    "https://www.openstreetmap.org/way/190557095"
+   ],
+   "note": "museum; earlier partial pass listed this as: Te Papa Tongarewa (1,702 views)"
+  },
+  {
+   "name": "Basin Reserve",
+   "wiki": "Basin Reserve",
+   "coordinates": {
+    "lat": -41.30028,
+    "lng": 174.78028
+   },
+   "coordinates_source": "wikipedia:Basin Reserve",
+   "views": 17103,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Basin_Reserve",
+    "https://en.wikipedia.org/wiki/Category:Heritage_New_Zealand_Category_2_historic_places_in_the_Wellington_Region"
+   ],
+   "note": "cricket ground"
+  },
+  {
+   "name": "Premier House",
+   "wiki": "Premier House",
+   "coordinates": {
+    "lat": -41.27678,
+    "lng": 174.77078
+   },
+   "coordinates_source": "wikipedia:Premier House",
+   "views": 15154,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Premier_House",
+    "https://en.wikipedia.org/wiki/Category:Buildings_and_structures_in_Wellington_City",
+    "https://en.wikipedia.org/wiki/Category:Heritage_New_Zealand_Category_1_historic_places_in_the_Wellington_Region",
+    "https://www.openstreetmap.org/way/645163925"
+   ],
+   "note": "historic house; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Paraparaumu",
+   "wiki": "Paraparaumu",
+   "coordinates": {
+    "lat": -40.91444,
+    "lng": 175.00556
+   },
+   "coordinates_source": "wikipedia:Paraparaumu",
+   "views": 14061,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Paraparaumu",
+    "https://www.wellingtonnz.com/visit/kapiti-coast/paraparaumu"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Paraparaumu",
+    "https://en.wikipedia.org/wiki/Category:Kāpiti_Coast_District",
+    "https://en.wikipedia.org/wiki/Category:Paraparaumu"
+   ],
+   "note": "town"
+  },
+  {
+   "name": "Supreme Court of New Zealand",
+   "wiki": "Supreme Court of New Zealand",
+   "coordinates": {
+    "lat": -41.28019,
+    "lng": 174.77691
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/62153142",
+   "views": 12911,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Supreme_Court_of_New_Zealand"
+   ],
+   "note": "civic building"
+  },
+  {
+   "name": "New Zealand Parliament Buildings",
+   "wiki": "New Zealand Parliament Buildings",
+   "coordinates": {
+    "lat": -41.278,
+    "lng": 174.777
+   },
+   "coordinates_source": "wikipedia:New Zealand Parliament Buildings",
+   "views": 11884,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City",
+    "https://www.wellingtonnz.com/visit/see-and-do/new-zealand-parliament-tours"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/New_Zealand_Parliament_Buildings",
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_Wellington_City",
+    "https://en.wikipedia.org/wiki/Category:Buildings_and_structures_in_Wellington_City"
+   ],
+   "note": "parliament/tours"
+  },
+  {
+   "name": "Kāpiti Island",
+   "wiki": "Kapiti Island",
+   "coordinates": {
+    "lat": -40.855,
+    "lng": 174.915
+   },
+   "coordinates_source": "wikipedia:Kapiti Island",
+   "views": 10703,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Kapiti_Coast",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/kapiti-island-nature-reserve/",
+    "https://www.wellingtonnz.com/visit/see-and-do/kapiti-island",
+    "https://www.visitkapiti.co.nz/see-and-do/nature-and-outdoors/"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Kapiti_Island",
+    "https://en.wikipedia.org/wiki/Category:Protected_areas_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Kapiti_Island"
+   ],
+   "note": "island nature reserve"
+  },
+  {
+   "name": "Martinborough",
+   "wiki": "Martinborough",
+   "coordinates": {
+    "lat": -41.21889,
+    "lng": 175.45917
+   },
+   "coordinates_source": "wikipedia:Martinborough",
+   "views": 10579,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Martinborough"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Martinborough",
+    "https://en.wikipedia.org/wiki/Category:South_Wairarapa_District"
+   ],
+   "note": "wine town"
   },
   {
    "name": "Wellington Cable Car",
-   "wikipedia_views_12m": 11173
+   "wiki": "Wellington Cable Car",
+   "coordinates": {
+    "lat": -41.28535,
+    "lng": 174.76782
+   },
+   "coordinates_source": "wikipedia:Wellington Cable Car",
+   "views": 10444,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City",
+    "https://www.wellingtonnz.com/visit/see-and-do/wellington-cable-car",
+    "https://www.wellingtonnz.com/visit/see-and-do/top-10-wellington-must-dos"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Wellington_Cable_Car",
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_Wellington_City",
+    "https://en.wikipedia.org/wiki/Category:Wellington_City"
+   ],
+   "note": "funicular attraction"
   },
   {
-   "name": "Kapiti Island",
-   "wikipedia_views_12m": 11039
+   "name": "Petone",
+   "wiki": "Petone",
+   "coordinates": {
+    "lat": -41.225,
+    "lng": 174.878
+   },
+   "coordinates_source": "wikipedia:Petone",
+   "views": 9764,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/Lower_Hutt",
+    "https://www.wellingtonnz.com/visit/hutt-valley/petone"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Petone"
+   ],
+   "note": "seaside suburb"
   },
   {
    "name": "Kāpiti Coast District",
-   "wikipedia_views_12m": 9615
+   "wiki": "Kāpiti Coast District",
+   "coordinates": {
+    "lat": -40.844,
+    "lng": 175.186
+   },
+   "coordinates_source": "wikipedia:Kāpiti Coast District",
+   "views": 9497,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Kapiti_Coast",
+    "https://www.wellingtonnz.com/visit/kapiti-coast"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Kāpiti_Coast_District",
+    "https://en.wikipedia.org/wiki/Category:Landforms_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Kāpiti_Coast_District"
+   ],
+   "note": "district (not a place; listed for completeness)"
   },
   {
-   "name": "Castlepoint",
-   "wikipedia_views_12m": 6923
+   "name": "Zealandia",
+   "wiki": "Zealandia (wildlife sanctuary)",
+   "coordinates": {
+    "lat": -41.29444,
+    "lng": 174.75
+   },
+   "coordinates_source": "wikipedia:Zealandia (wildlife sanctuary)",
+   "views": 9470,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City",
+    "https://www.wellingtonnz.com/visit/see-and-do/zealandia-te-mara-a-tane",
+    "https://www.wellingtonnz.com/visit/see-and-do/top-10-wellington-must-dos",
+    "https://www.wellingtonnz.com/visit/see-and-do/nature-experiences"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Zealandia_(wildlife_sanctuary)",
+    "https://en.wikipedia.org/wiki/Category:Protected_areas_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Parks_in_Wellington_City",
+    "https://www.openstreetmap.org/node/1690510529"
+   ],
+   "note": "wildlife sanctuary"
   },
   {
-   "name": "Oriental Bay",
-   "wikipedia_views_12m": 4281
+   "name": "Featherston prisoner of war camp",
+   "wiki": "Featherston prisoner of war camp",
+   "coordinates": {
+    "lat": -41.11861,
+    "lng": 175.35607
+   },
+   "coordinates_source": "wikipedia:Featherston prisoner of war camp",
+   "views": 9417,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Featherston_prisoner_of_war_camp",
+    "https://en.wikipedia.org/wiki/Category:South_Wairarapa_District",
+    "https://en.wikipedia.org/wiki/Category:Featherston,_New_Zealand",
+    "https://www.openstreetmap.org/node/10538667558"
+   ],
+   "note": "historic site (memorial); no counted source found: named only by Wikipedia category / OSM (not counted)"
   },
   {
-   "name": "Wellington Botanic Garden",
-   "wikipedia_views_12m": 3980
-  },
-  {
-   "name": "Plimmerton",
-   "wikipedia_views_12m": 3385
-  },
-  {
-   "name": "Wellington Museum",
-   "wikipedia_views_12m": 3267
-  },
-  {
-   "name": "Lyall Bay",
-   "wikipedia_views_12m": 2860
-  },
-  {
-   "name": "Cape Palliser",
-   "wikipedia_views_12m": 2489
-  },
-  {
-   "name": "Days Bay",
-   "wikipedia_views_12m": 2184
-  },
-  {
-   "name": "Lake Ferry",
-   "wikipedia_views_12m": 1946
-  },
-  {
-   "name": "Paraparaumu Beach",
-   "wikipedia_views_12m": 1928
-  },
-  {
-   "name": "Pariwhero / Red Rocks",
-   "wikipedia_views_12m": 1922
-  },
-  {
-   "name": "Te Papa Tongarewa",
-   "wikipedia_views_12m": 1702
-  },
-  {
-   "name": "Battle Hill Farm Forest Park",
-   "wikipedia_views_12m": 998
-  },
-  {
-   "name": "Pencarrow Lighthouse",
-   "wikipedia_views_12m": 868
-  },
-  {
-   "name": "Ōtaki River",
-   "wikipedia_views_12m": 787
-  },
-  {
-   "name": "Mount Victoria, Wellington",
-   "wikipedia_views_12m": 510
-  },
-  {
-   "name": "Putangirua Pinnacles",
-   "wikipedia_views_12m": 334
-  },
-  {
-   "name": "Carter Observatory",
-   "wikipedia_views_12m": 311
-  },
-  {
-   "name": "Queen Elizabeth Park",
-   "wikipedia_views_12m": 270
-  },
-  {
-   "name": "Matiu/Somes Island",
-   "wikipedia_views_12m": 254
-  },
-  {
-   "name": "Waikanae Beach",
-   "wikipedia_views_12m": 200
-  },
-  {
-   "name": "Tongue Point",
-   "wikipedia_views_12m": 158
-  },
-  {
-   "name": "Rimutaka Rail Trail",
-   "wikipedia_views_12m": 124
-  },
-  {
-   "name": "Pauatahanui Inlet",
-   "wikipedia_views_12m": 121
-  },
-  {
-   "name": "Mount Holdsworth",
-   "wikipedia_views_12m": 81
+   "name": "Government House Wellington",
+   "wiki": "Government House, Wellington",
+   "coordinates": {
+    "lat": -41.30611,
+    "lng": 174.78108
+   },
+   "coordinates_source": "wikipedia:Government House, Wellington",
+   "views": 9410,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Government_House,_Wellington",
+    "https://en.wikipedia.org/wiki/Category:Buildings_and_structures_in_Wellington_City",
+    "https://en.wikipedia.org/wiki/Category:Heritage_New_Zealand_Category_1_historic_places_in_the_Wellington_Region"
+   ],
+   "note": "historic residence; no counted source found: named only by Wikipedia category / OSM (not counted)"
   },
   {
    "name": "Ōtaki",
-   "wikipedia_views_12m": 80
+   "wiki": "Ōtaki, New Zealand",
+   "coordinates": {
+    "lat": -40.753,
+    "lng": 175.14
+   },
+   "coordinates_source": "wikipedia:Ōtaki, New Zealand",
+   "views": 9281,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Otaki",
+    "https://www.wellingtonnz.com/visit/kapiti-coast/otaki"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Ōtaki,_New_Zealand",
+    "https://en.wikipedia.org/wiki/Category:Kāpiti_Coast_District",
+    "https://en.wikipedia.org/wiki/Category:Ōtaki,_New_Zealand"
+   ],
+   "note": "town"
   },
   {
-   "name": "Nga Manu Nature Reserve",
-   "wikipedia_views_12m": 31
+   "name": "Greytown",
+   "wiki": "Greytown, New Zealand",
+   "coordinates": {
+    "lat": -41.08,
+    "lng": 175.461
+   },
+   "coordinates_source": "wikipedia:Greytown, New Zealand",
+   "views": 9252,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/trails/greytown-to-woodside-trail"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Greytown,_New_Zealand",
+    "https://en.wikipedia.org/wiki/Category:Greytown,_New_Zealand"
+   ],
+   "note": "heritage town"
   },
   {
-   "name": "Pukaha Mount Bruce",
-   "wikipedia_views_12m": 30
+   "name": "Waikanae",
+   "wiki": "Waikanae",
+   "coordinates": {
+    "lat": -40.875,
+    "lng": 175.06389
+   },
+   "coordinates_source": "wikipedia:Waikanae",
+   "views": 8888,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Waikanae",
+    "https://www.wellingtonnz.com/visit/kapiti-coast/waikanae"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Waikanae",
+    "https://en.wikipedia.org/wiki/Category:Kāpiti_Coast_District",
+    "https://en.wikipedia.org/wiki/Category:Waikanae"
+   ],
+   "note": "town"
   },
   {
-   "name": "Makara Beach",
-   "wikipedia_views_12m": 26
+   "name": "Carterton",
+   "wiki": "Carterton, New Zealand",
+   "coordinates": {
+    "lat": -41.025,
+    "lng": 175.5275
+   },
+   "coordinates_source": "wikipedia:Carterton, New Zealand",
+   "views": 7511,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Carterton"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Carterton,_New_Zealand",
+    "https://en.wikipedia.org/wiki/Category:Wairarapa",
+    "https://en.wikipedia.org/wiki/Category:Carterton_District"
+   ],
+   "note": "town"
+  },
+  {
+   "name": "Paekākāriki",
+   "wiki": "Paekākāriki",
+   "coordinates": {
+    "lat": -40.983,
+    "lng": 174.954
+   },
+   "coordinates_source": "wikipedia:Paekākāriki",
+   "views": 7042,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Paekākāriki",
+    "https://www.wellingtonnz.com/visit/kapiti-coast/paekakariki"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Paekākāriki",
+    "https://en.wikipedia.org/wiki/Category:Kāpiti_Coast_District",
+    "https://en.wikipedia.org/wiki/Category:Paekākāriki"
+   ],
+   "note": "coastal village"
+  },
+  {
+   "name": "Featherston",
+   "wiki": "Featherston, New Zealand",
+   "coordinates": {
+    "lat": -41.11667,
+    "lng": 175.31667
+   },
+   "coordinates_source": "wikipedia:Featherston, New Zealand",
+   "views": 6999,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wairarapa"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Featherston,_New_Zealand",
+    "https://en.wikipedia.org/wiki/Category:South_Wairarapa_District",
+    "https://en.wikipedia.org/wiki/Category:Featherston,_New_Zealand"
+   ],
+   "note": "town"
+  },
+  {
+   "name": "Castlepoint",
+   "wiki": "Castlepoint",
+   "coordinates": {
+    "lat": -40.89861,
+    "lng": 176.22056
+   },
+   "coordinates_source": "wikipedia:Castlepoint",
+   "views": 6795,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wairarapa/places/castlepoint-scenic-reserve/",
+    "https://wairarapanz.com/products/castlepoint",
+    "https://www.wellingtonnz.com/visit/trails/castlepoint-lighthouse-walk"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Castlepoint",
+    "https://en.wikipedia.org/wiki/Category:Masterton_District"
+   ],
+   "note": "coastal village/reef"
+  },
+  {
+   "name": "National Library of New Zealand",
+   "wiki": "National Library of New Zealand",
+   "coordinates": {
+    "lat": -41.27661,
+    "lng": 174.77837
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Wellington/City",
+   "views": 6488,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City",
+    "https://www.wellingtonnz.com/visit/see-and-do/he-tohu-at-national-library-of-new-zealand"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/National_Library_of_New_Zealand",
+    "https://en.wikipedia.org/wiki/Category:Buildings_and_structures_in_Wellington_City",
+    "https://en.wikipedia.org/wiki/Category:Libraries_in_Wellington"
+   ],
+   "note": "library/exhibition"
+  },
+  {
+   "name": "Old St Paul's",
+   "wiki": "Old St Paul's, Wellington",
+   "coordinates": {
+    "lat": -41.27626,
+    "lng": 174.78039
+   },
+   "coordinates_source": "wikipedia:Old St Paul's, Wellington",
+   "views": 6309,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Old_St_Paul's,_Wellington",
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_Wellington_City",
+    "https://en.wikipedia.org/wiki/Category:Religious_buildings_and_structures_in_Wellington_City"
+   ],
+   "note": "historic church"
+  },
+  {
+   "name": "Ōtari-Wilton's Bush",
+   "wiki": "Ōtari-Wilton's Bush",
+   "coordinates": {
+    "lat": -41.26733,
+    "lng": 174.75863
+   },
+   "coordinates_source": "wikipedia:Ōtari-Wilton's Bush",
+   "views": 6119,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City",
+    "https://www.wellingtonnz.com/visit/trails/otari-wiltons-bush",
+    "https://www.wellingtonnz.com/visit/see-and-do/hidden-wellington-experiences"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Ōtari-Wilton's_Bush",
+    "https://en.wikipedia.org/wiki/Category:Protected_areas_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Parks_in_Wellington_City",
+    "https://www.openstreetmap.org/way/1259560429"
+   ],
+   "note": "native botanic garden/reserve"
+  },
+  {
+   "name": "Cuba Street",
+   "wiki": "Cuba Street",
+   "coordinates": {
+    "lat": -41.2935,
+    "lng": 174.7756
+   },
+   "coordinates_source": "wikipedia:Cuba Street",
+   "views": 6005,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/see-and-do/top-10-wellington-must-dos"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Cuba_Street",
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_Wellington_City",
+    "https://en.wikipedia.org/wiki/Category:Streets_in_Wellington_City"
+   ],
+   "note": "street/precinct"
+  },
+  {
+   "name": "Pukerua Bay",
+   "wiki": "Pukerua Bay",
+   "coordinates": {
+    "lat": -41.03333,
+    "lng": 174.88333
+   },
+   "coordinates_source": "wikipedia:Pukerua Bay",
+   "views": 5976,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Pukerua_Bay",
+    "https://en.wikipedia.org/wiki/Category:Bays_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Suburbs_of_Porirua"
+   ],
+   "note": "coastal village; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "SS Penguin wreck site",
+   "wiki": "SS Penguin",
+   "coordinates": {
+    "lat": -41.35,
+    "lng": 174.66
+   },
+   "coordinates_source": "wikipedia:SS Penguin",
+   "views": 5953,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/SS_Penguin",
+    "https://en.wikipedia.org/wiki/Category:Cook_Strait_ferries",
+    "https://en.wikipedia.org/wiki/Category:Wellington_Harbour"
+   ],
+   "note": "shipwreck memorial; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Matiu/Somes Island",
+   "wiki": "Matiu / Somes Island",
+   "coordinates": {
+    "lat": -41.25825,
+    "lng": 174.86539
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Wellington/Lower_Hutt",
+   "views": 5852,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City",
+    "https://en.wikivoyage.org/wiki/Wellington/Lower_Hutt",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/matiu-somes-island/",
+    "https://www.wellingtonnz.com/visit/see-and-do/nature-experiences"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Matiu_/_Somes_Island",
+    "https://en.wikipedia.org/wiki/Category:Protected_areas_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Parks_in_the_Wellington_Region"
+   ],
+   "note": "island"
+  },
+  {
+   "name": "HMNZS Wellington dive wreck",
+   "wiki": "HMNZS Wellington (F69)",
+   "coordinates": {
+    "lat": -41.353,
+    "lng": 174.78
+   },
+   "coordinates_source": "wikipedia:HMNZS Wellington (F69)",
+   "views": 5781,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/HMNZS_Wellington_(F69)",
+    "https://www.openstreetmap.org/node/9231686991"
+   ],
+   "note": "dive wreck"
+  },
+  {
+   "name": "Quasi (sculpture)",
+   "wiki": "Quasi (sculpture)",
+   "coordinates": {
+    "lat": -41.28841,
+    "lng": 174.7772
+   },
+   "coordinates_source": "wikipedia:Quasi (sculpture)",
+   "views": 5744,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Quasi_(sculpture)",
+    "https://en.wikipedia.org/wiki/Category:Outdoor_sculptures_in_Wellington_City"
+   ],
+   "note": "public art; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Old Government Buildings",
+   "wiki": "Old Government Buildings, Wellington",
+   "coordinates": {
+    "lat": -41.27948,
+    "lng": 174.77797
+   },
+   "coordinates_source": "wikipedia:Old Government Buildings, Wellington",
+   "views": 5721,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Old_Government_Buildings,_Wellington",
+    "https://en.wikipedia.org/wiki/Category:Buildings_and_structures_in_Wellington_City",
+    "https://en.wikipedia.org/wiki/Category:Wellington_Central,_Wellington"
+   ],
+   "note": "historic building"
+  },
+  {
+   "name": "Pūtangirua Pinnacles",
+   "wiki": "Pūtangirua Pinnacles",
+   "coordinates": {
+    "lat": -41.4467,
+    "lng": 175.2467
+   },
+   "coordinates_source": "wikipedia:Pūtangirua Pinnacles",
+   "views": 5544,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wairarapa",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wairarapa/places/putangirua-pinnacles-scenic-reserve/",
+    "https://www.wellingtonnz.com/visit/trails/putangirua-pinnacles-track",
+    "https://wairarapanz.com/products/putangirua-pinnacles"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Pūtangirua_Pinnacles",
+    "https://en.wikipedia.org/wiki/Category:Rock_formations_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:South_Wairarapa_District",
+    "https://www.openstreetmap.org/way/331959003"
+   ],
+   "note": "geological formation/walk"
+  },
+  {
+   "name": "Mount Victoria Tunnel",
+   "wiki": "Mount Victoria Tunnel",
+   "coordinates": {
+    "lat": -41.30292,
+    "lng": 174.78768
+   },
+   "coordinates_source": "wikipedia:Mount Victoria Tunnel",
+   "views": 5111,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Mount_Victoria_Tunnel",
+    "https://en.wikipedia.org/wiki/Category:Buildings_and_structures_in_Wellington_City",
+    "https://en.wikipedia.org/wiki/Category:Transport_buildings_and_structures_in_the_Wellington_Region"
+   ],
+   "note": "road tunnel (walk/cycle); no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Wellington Zoo",
+   "wiki": "Wellington Zoo",
+   "coordinates": {
+    "lat": -41.3225,
+    "lng": 174.785
+   },
+   "coordinates_source": "wikipedia:Wellington Zoo",
+   "views": 5022,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/see-and-do/wellington-zoo",
+    "https://www.wellingtonnz.com/visit/see-and-do/nature-experiences"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Wellington_Zoo",
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_Wellington_City",
+    "https://en.wikipedia.org/wiki/Category:Buildings_and_structures_in_Wellington_City",
+    "https://www.openstreetmap.org/relation/12750214"
+   ],
+   "note": "zoo"
+  },
+  {
+   "name": "Mana Island",
+   "wiki": "Mana Island (New Zealand)",
+   "coordinates": {
+    "lat": -41.0876,
+    "lng": 174.7815
+   },
+   "coordinates_source": "wikipedia:Mana Island (New Zealand)",
+   "views": 4634,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/mana-island-scientific-reserve/"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Mana_Island_(New_Zealand)",
+    "https://en.wikipedia.org/wiki/Category:Protected_areas_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Islands_of_the_Wellington_Region"
+   ],
+   "note": "island sanctuary"
+  },
+  {
+   "name": "Mount Victoria Lookout",
+   "wiki": "Mount Victoria (Wellington hill)",
+   "coordinates": {
+    "lat": -41.29611,
+    "lng": 174.79417
+   },
+   "coordinates_source": "wikipedia:Mount Victoria (Wellington hill)",
+   "views": 4564,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Mount_Victoria_(Wellington_hill)",
+    "https://en.wikipedia.org/wiki/Category:Parks_in_Wellington_City",
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_Wellington_City",
+    "https://www.openstreetmap.org/node/170485240"
+   ],
+   "note": "hill/viewpoint; earlier partial pass listed this as: Mount Victoria, Wellington (510 views)"
+  },
+  {
+   "name": "Oriental Bay",
+   "wiki": "Oriental Bay",
+   "coordinates": {
+    "lat": -41.29167,
+    "lng": 174.79444
+   },
+   "coordinates_source": "wikipedia:Oriental Bay",
+   "views": 4215,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Oriental_Bay",
+    "https://en.wikipedia.org/wiki/Category:Beaches_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_Wellington_City"
+   ],
+   "note": "beach/promenade"
+  },
+  {
+   "name": "Island Bay",
+   "wiki": "Island Bay",
+   "coordinates": {
+    "lat": -41.33773,
+    "lng": 174.77231
+   },
+   "coordinates_source": "wikipedia:Island Bay",
+   "views": 4160,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Island_Bay",
+    "https://en.wikipedia.org/wiki/Category:Bays_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Cook_Strait"
+   ],
+   "note": "beach/suburb; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Lambton Quay",
+   "wiki": "Lambton Quay",
+   "coordinates": {
+    "lat": -41.28162,
+    "lng": 174.77604
+   },
+   "coordinates_source": "wikipedia:Lambton Quay",
+   "views": 4111,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Lambton_Quay",
+    "https://en.wikipedia.org/wiki/Category:Streets_in_Wellington_City",
+    "https://en.wikipedia.org/wiki/Category:Wellington_Central,_Wellington"
+   ],
+   "note": "street; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Rimutaka Incline",
+   "wiki": "Rimutaka Incline",
+   "coordinates": {
+    "lat": -41.15277,
+    "lng": 175.19545
+   },
+   "coordinates_source": "wikipedia:Rimutaka Incline",
+   "views": 4086,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Hutt_Valley"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Rimutaka_Incline",
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_the_Wellington_Region"
+   ],
+   "note": "historic railway/trail"
+  },
+  {
+   "name": "Miramar Peninsula",
+   "wiki": "Miramar Peninsula",
+   "coordinates": {
+    "lat": -41.32,
+    "lng": 174.823
+   },
+   "coordinates_source": "wikipedia:Miramar Peninsula",
+   "views": 4083,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/plan-your-trip/your-guide-to-miramar-peninsula"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Miramar_Peninsula",
+    "https://en.wikipedia.org/wiki/Category:Landforms_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Wellington_Harbour"
+   ],
+   "note": "peninsula"
+  },
+  {
+   "name": "Shelly Bay",
+   "wiki": "Shelly Bay",
+   "coordinates": {
+    "lat": -41.296,
+    "lng": 174.819
+   },
+   "coordinates_source": "wikipedia:Shelly Bay",
+   "views": 3903,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Shelly_Bay",
+    "https://en.wikipedia.org/wiki/Category:Miramar_Peninsula",
+    "https://en.wikipedia.org/wiki/Category:Suburbs_of_Wellington_City",
+    "https://www.openstreetmap.org/node/2104958671"
+   ],
+   "note": "bay/historic; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Wellington Botanic Garden",
+   "wiki": "Wellington Botanic Garden",
+   "coordinates": {
+    "lat": -41.2829,
+    "lng": 174.766
+   },
+   "coordinates_source": "wikipedia:Wellington Botanic Garden",
+   "views": 3815,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City",
+    "https://www.wellingtonnz.com/visit/see-and-do/wellington-botanic-garden-ki-paekaka",
+    "https://www.wellingtonnz.com/visit/see-and-do/top-10-wellington-must-dos"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Wellington_Botanic_Garden",
+    "https://en.wikipedia.org/wiki/Category:Protected_areas_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Parks_in_Wellington_City",
+    "https://www.openstreetmap.org/way/20266439"
+   ],
+   "note": "garden"
+  },
+  {
+   "name": "Wellington Cathedral of St Paul",
+   "wiki": "Wellington Cathedral of St Paul",
+   "coordinates": {
+    "lat": -41.2763,
+    "lng": 174.7774
+   },
+   "coordinates_source": "wikipedia:Wellington Cathedral of St Paul",
+   "views": 3738,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Wellington_Cathedral_of_St_Paul",
+    "https://en.wikipedia.org/wiki/Category:Religious_buildings_and_structures_in_Wellington_City"
+   ],
+   "note": "church"
+  },
+  {
+   "name": "Kaitoke Regional Park",
+   "wiki": "Kaitoke Regional Park",
+   "coordinates": {
+    "lat": -41.04959,
+    "lng": 175.17912
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/node/2982507190",
+   "views": 3676,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Hutt_Valley",
+    "https://www.wellingtonnz.com/visit/trails/kaitoke-regional-park/swingbridge-track"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Kaitoke_Regional_Park",
+    "https://en.wikipedia.org/wiki/Category:Regional_parks_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Hutt_Valley",
+    "https://www.openstreetmap.org/node/2982507190"
+   ],
+   "note": "regional park"
+  },
+  {
+   "name": "Seatoun",
+   "wiki": "Seatoun",
+   "coordinates": {
+    "lat": -41.323,
+    "lng": 174.833
+   },
+   "coordinates_source": "wikipedia:Seatoun",
+   "views": 3674,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Seatoun",
+    "https://en.wikipedia.org/wiki/Category:Miramar_Peninsula",
+    "https://en.wikipedia.org/wiki/Category:Suburbs_of_Wellington_City"
+   ],
+   "note": "beach suburb; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Tītahi Bay",
+   "wiki": "Tītahi Bay",
+   "coordinates": {
+    "lat": -41.1,
+    "lng": 174.83333
+   },
+   "coordinates_source": "wikipedia:Tītahi Bay",
+   "views": 3628,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Tītahi_Bay",
+    "https://en.wikipedia.org/wiki/Category:Bays_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Suburbs_of_Porirua"
+   ],
+   "note": "beach; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Wellington Central Library (Te Matapihi)",
+   "wiki": "Wellington Central Library",
+   "coordinates": {
+    "lat": -41.2882,
+    "lng": 174.7768
+   },
+   "coordinates_source": "wikipedia:Wellington Central Library",
+   "views": 3512,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Wellington_Central_Library",
+    "https://en.wikipedia.org/wiki/Category:Buildings_and_structures_in_Wellington_City",
+    "https://en.wikipedia.org/wiki/Category:Libraries_in_Wellington"
+   ],
+   "note": "library"
+  },
+  {
+   "name": "Ngawi",
+   "wiki": "Ngawi, New Zealand",
+   "coordinates": {
+    "lat": -41.5876,
+    "lng": 175.23475
+   },
+   "coordinates_source": "wikipedia:Ngawi, New Zealand",
+   "views": 3429,
+   "counted_sources": [
+    "https://wairarapanz.com/products/ngawi"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Ngawi,_New_Zealand",
+    "https://en.wikipedia.org/wiki/Category:South_Wairarapa_District"
+   ],
+   "note": "fishing village (bulldozers)"
+  },
+  {
+   "name": "Eastbourne",
+   "wiki": "Eastbourne, New Zealand",
+   "coordinates": {
+    "lat": -41.3,
+    "lng": 174.9
+   },
+   "coordinates_source": "wikipedia:Eastbourne, New Zealand",
+   "views": 3405,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/hutt-valley/eastbourne-and-days-bay"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Eastbourne,_New_Zealand"
+   ],
+   "note": "seaside village"
+  },
+  {
+   "name": "Plimmerton Beach",
+   "wiki": "Plimmerton",
+   "coordinates": {
+    "lat": -41.08333,
+    "lng": 174.86667
+   },
+   "coordinates_source": "wikipedia:Plimmerton",
+   "views": 3362,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/Porirua"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Plimmerton",
+    "https://en.wikipedia.org/wiki/Category:Suburbs_of_Porirua",
+    "https://www.openstreetmap.org/way/208193803"
+   ],
+   "note": "beach/village"
+  },
+  {
+   "name": "Peka Peka Beach",
+   "wiki": "Peka Peka",
+   "coordinates": {
+    "lat": -40.8327,
+    "lng": 175.0581
+   },
+   "coordinates_source": "wikipedia:Peka Peka",
+   "views": 3328,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Peka_Peka",
+    "https://en.wikipedia.org/wiki/Category:Beaches_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Kāpiti_Coast_District",
+    "https://www.openstreetmap.org/way/1009038013"
+   ],
+   "note": "beach; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Mount Kaukau",
+   "wiki": "Mount Kaukau",
+   "coordinates": {
+    "lat": -41.23147,
+    "lng": 174.77799
+   },
+   "coordinates_source": "wikipedia:Mount Kaukau",
+   "views": 3297,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Mount_Kaukau",
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_Wellington_City",
+    "https://en.wikipedia.org/wiki/Category:Mountains_of_the_Wellington_Region",
+    "https://www.openstreetmap.org/node/3659565906"
+   ],
+   "note": "hill/viewpoint"
+  },
+  {
+   "name": "Wellington Museum",
+   "wiki": "Wellington Museum",
+   "coordinates": {
+    "lat": -41.2853,
+    "lng": 174.7781
+   },
+   "coordinates_source": "wikipedia:Wellington Museum",
+   "views": 3291,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City",
+    "https://www.wellingtonnz.com/visit/see-and-do/wellington-museum"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Wellington_Museum",
+    "https://en.wikipedia.org/wiki/Category:Museums_in_Wellington_City",
+    "https://en.wikipedia.org/wiki/Category:Wellington_Waterfront",
+    "https://www.openstreetmap.org/way/250856271"
+   ],
+   "note": "museum"
+  },
+  {
+   "name": "SS Hikitia",
+   "wiki": "Hikitia",
+   "coordinates": {
+    "lat": -41.28932,
+    "lng": 174.78046
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/264055222",
+   "views": 3287,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Hikitia",
+    "https://en.wikipedia.org/wiki/Category:Wellington_Waterfront",
+    "https://en.wikipedia.org/wiki/Category:Buildings_and_structures_in_Wellington_City",
+    "https://www.openstreetmap.org/way/264055222"
+   ],
+   "note": "heritage floating crane; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Castle Point Lighthouse",
+   "wiki": "Castle Point Lighthouse",
+   "coordinates": {
+    "lat": -40.90042,
+    "lng": 176.23144
+   },
+   "coordinates_source": "wikipedia:Castle Point Lighthouse",
+   "views": 3081,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/plan-your-trip/top-things-to-see-and-do-in-wairarapa"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Castle_Point_Lighthouse",
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Buildings_and_structures_in_the_Wairarapa",
+    "https://www.openstreetmap.org/node/1052815291"
+   ],
+   "note": "lighthouse"
+  },
+  {
+   "name": "Riversdale Beach",
+   "wiki": "Riversdale Beach",
+   "coordinates": {
+    "lat": -41.0874,
+    "lng": 176.0727
+   },
+   "coordinates_source": "wikipedia:Riversdale Beach",
+   "views": 3079,
+   "counted_sources": [
+    "https://wairarapanz.com/products/riversdale"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Riversdale_Beach",
+    "https://en.wikipedia.org/wiki/Category:Masterton_District",
+    "https://en.wikipedia.org/wiki/Category:Wairarapa",
+    "https://www.openstreetmap.org/way/203314009"
+   ],
+   "note": "beach"
+  },
+  {
+   "name": "Bucket Fountain",
+   "wiki": "Bucket Fountain",
+   "coordinates": {
+    "lat": -41.29226,
+    "lng": 174.77629
+   },
+   "coordinates_source": "wikipedia:Bucket Fountain",
+   "views": 3048,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Bucket_Fountain",
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_Wellington_City",
+    "https://en.wikipedia.org/wiki/Category:Outdoor_sculptures_in_Wellington_City"
+   ],
+   "note": "quirky landmark"
+  },
+  {
+   "name": "Te Ngākau Civic Square",
+   "wiki": "Te Ngākau Civic Square",
+   "coordinates": {
+    "lat": -41.28884,
+    "lng": 174.77714
+   },
+   "coordinates_source": "wikipedia:Te Ngākau Civic Square",
+   "views": 3019,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Te_Ngākau_Civic_Square",
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_Wellington_City",
+    "https://en.wikipedia.org/wiki/Category:Wellington_City"
+   ],
+   "note": "civic square; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Wellington Blown Away sign",
+   "wiki": "Wellington Blown Away sign",
+   "coordinates": {
+    "lat": -41.31508,
+    "lng": 174.8112
+   },
+   "coordinates_source": "wikipedia:Wellington Blown Away sign",
+   "views": 2944,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Wellington_Blown_Away_sign",
+    "https://en.wikipedia.org/wiki/Category:Miramar_Peninsula",
+    "https://en.wikipedia.org/wiki/Category:Wellington_City"
+   ],
+   "note": "quirky landmark; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Lake Wairarapa",
+   "wiki": "Lake Wairarapa",
+   "coordinates": {
+    "lat": -41.21667,
+    "lng": 175.25
+   },
+   "coordinates_source": "wikipedia:Lake Wairarapa",
+   "views": 2902,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Lake_Wairarapa",
+    "https://en.wikipedia.org/wiki/Category:Lakes_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Wetlands_of_the_Wellington_Region"
+   ],
+   "note": "lake; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Mount Cook (Wellington)",
+   "wiki": "Mount Cook, Wellington",
+   "coordinates": {
+    "lat": -41.30176,
+    "lng": 174.77403
+   },
+   "coordinates_source": "wikipedia:Mount Cook, Wellington",
+   "views": 2858,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Mount_Cook,_Wellington",
+    "https://en.wikipedia.org/wiki/Category:Suburbs_of_Wellington_City"
+   ],
+   "note": "suburb/hill; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Zephyrometer",
+   "wiki": "Zephyrometer",
+   "coordinates": {
+    "lat": -41.31194,
+    "lng": 174.79611
+   },
+   "coordinates_source": "wikipedia:Zephyrometer",
+   "views": 2841,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Zephyrometer",
+    "https://en.wikipedia.org/wiki/Category:Outdoor_sculptures_in_Wellington_City"
+   ],
+   "note": "public art; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Lyall Bay",
+   "wiki": "Lyall Bay",
+   "coordinates": {
+    "lat": -41.32999,
+    "lng": 174.79351
+   },
+   "coordinates_source": "wikipedia:Lyall Bay",
+   "views": 2839,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Lyall_Bay",
+    "https://en.wikipedia.org/wiki/Category:Beaches_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Bays_of_the_Wellington_Region",
+    "https://www.openstreetmap.org/relation/9590387"
+   ],
+   "note": "beach; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Karori Cemetery",
+   "wiki": "Karori Cemetery",
+   "coordinates": {
+    "lat": -41.275,
+    "lng": 174.75
+   },
+   "coordinates_source": "wikipedia:Karori Cemetery",
+   "views": 2816,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Karori_Cemetery",
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_Wellington_City"
+   ],
+   "note": "cemetery"
+  },
+  {
+   "name": "Raumati Beach",
+   "wiki": "Raumati Beach",
+   "coordinates": {
+    "lat": -40.91872,
+    "lng": 174.98114
+   },
+   "coordinates_source": "wikipedia:Raumati Beach",
+   "views": 2678,
+   "counted_sources": [
+    "https://www.visitkapiti.co.nz/see-and-do/beaches/",
+    "https://en.wikivoyage.org/wiki/Kapiti_Coast"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Raumati_Beach",
+    "https://en.wikipedia.org/wiki/Category:Beaches_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Kāpiti_Coast_District",
+    "https://www.openstreetmap.org/way/1009038014"
+   ],
+   "note": "beach"
+  },
+  {
+   "name": "St Mary of the Angels",
+   "wiki": "St Mary of the Angels, Wellington",
+   "coordinates": {
+    "lat": -41.28877,
+    "lng": 174.77387
+   },
+   "coordinates_source": "wikipedia:St Mary of the Angels, Wellington",
+   "views": 2516,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/St_Mary_of_the_Angels,_Wellington",
+    "https://en.wikipedia.org/wiki/Category:Buildings_and_structures_in_Wellington_City",
+    "https://en.wikipedia.org/wiki/Category:Heritage_New_Zealand_Category_1_historic_places_in_the_Wellington_Region"
+   ],
+   "note": "church"
+  },
+  {
+   "name": "Southward Car Museum",
+   "wiki": "Southward Car Museum",
+   "coordinates": {
+    "lat": -40.89404,
+    "lng": 175.02922
+   },
+   "coordinates_source": "wikipedia:Southward Car Museum",
+   "views": 2509,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Paraparaumu",
+    "https://en.wikivoyage.org/wiki/Greater_Wellington",
+    "https://www.wellingtonnz.com/visit/see-and-do/southward-car-museum",
+    "https://www.visitkapiti.co.nz/see-and-do/art-culture-and-heritage/"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Southward_Car_Museum",
+    "https://en.wikipedia.org/wiki/Category:Museums_in_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Kāpiti_Coast_District",
+    "https://www.openstreetmap.org/way/333398320"
+   ],
+   "note": "museum"
+  },
+  {
+   "name": "Wrights Hill Fortress",
+   "wiki": "Wrights Hill Fortress",
+   "coordinates": {
+    "lat": -41.2961,
+    "lng": 174.739
+   },
+   "coordinates_source": "wikipedia:Wrights Hill Fortress",
+   "views": 2469,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Wrights_Hill_Fortress",
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Buildings_and_structures_in_Wellington_City"
+   ],
+   "note": "historic site/viewpoint"
+  },
+  {
+   "name": "Rangiātea Church",
+   "wiki": "Rangiātea Church",
+   "coordinates": {
+    "lat": -40.75003,
+    "lng": 175.13764
+   },
+   "coordinates_source": "wikipedia:Rangiātea Church",
+   "views": 2432,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Otaki"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Rangiātea_Church",
+    "https://en.wikipedia.org/wiki/Category:Buildings_and_structures_in_the_Kāpiti_Coast_District",
+    "https://en.wikipedia.org/wiki/Category:Ōtaki,_New_Zealand"
+   ],
+   "note": "historic church"
+  },
+  {
+   "name": "New Zealand Police Museum",
+   "wiki": "Royal New Zealand Police College",
+   "coordinates": {
+    "lat": -41.12043,
+    "lng": 174.86024
+   },
+   "coordinates_source": "wikipedia:Royal New Zealand Police College",
+   "views": 2339,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/Porirua",
+    "https://www.wellingtonnz.com/visit/see-and-do/new-zealand-police-museum"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Royal_New_Zealand_Police_College",
+    "https://en.wikipedia.org/wiki/Category:Buildings_and_structures_in_Porirua",
+    "https://www.openstreetmap.org/node/1392132419"
+   ],
+   "note": "museum"
+  },
+  {
+   "name": "Stonehenge Aotearoa",
+   "wiki": "Stonehenge Aotearoa",
+   "coordinates": {
+    "lat": -41.0998,
+    "lng": 175.5796
+   },
+   "coordinates_source": "wikipedia:Stonehenge Aotearoa",
+   "views": 2174,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wairarapa",
+    "https://en.wikivoyage.org/wiki/Carterton",
+    "https://wairarapanz.com/products/stonehenge-aotearoa"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Stonehenge_Aotearoa",
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Buildings_and_structures_in_the_Wairarapa",
+    "https://www.openstreetmap.org/way/1236727425"
+   ],
+   "note": "astronomical replica"
+  },
+  {
+   "name": "Days Bay",
+   "wiki": "Days Bay",
+   "coordinates": {
+    "lat": -41.2816,
+    "lng": 174.9068
+   },
+   "coordinates_source": "wikipedia:Days Bay",
+   "views": 2130,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/hutt-valley"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Days_Bay",
+    "https://en.wikipedia.org/wiki/Category:Bays_of_the_Wellington_Region"
+   ],
+   "note": "beach"
+  },
+  {
+   "name": "Pāuatahanui",
+   "wiki": "Pāuatahanui",
+   "coordinates": {
+    "lat": -41.1,
+    "lng": 174.91667
+   },
+   "coordinates_source": "wikipedia:Pāuatahanui",
+   "views": 2062,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Pāuatahanui",
+    "https://en.wikipedia.org/wiki/Category:Suburbs_of_Porirua"
+   ],
+   "note": "village; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Massey Memorial",
+   "wiki": "Massey Memorial",
+   "coordinates": {
+    "lat": -41.28528,
+    "lng": 174.82611
+   },
+   "coordinates_source": "wikipedia:Massey Memorial",
+   "views": 2041,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Massey_Memorial",
+    "https://en.wikipedia.org/wiki/Category:Miramar_Peninsula",
+    "https://en.wikipedia.org/wiki/Category:Buildings_and_structures_in_Wellington_City",
+    "https://www.openstreetmap.org/way/103733974"
+   ],
+   "note": "monument/viewpoint"
+  },
+  {
+   "name": "City to Sea Bridge",
+   "wiki": "City to Sea Bridge",
+   "coordinates": {
+    "lat": -41.28878,
+    "lng": 174.77859
+   },
+   "coordinates_source": "wikipedia:City to Sea Bridge",
+   "views": 2016,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/City_to_Sea_Bridge",
+    "https://en.wikipedia.org/wiki/Category:Wellington_Waterfront",
+    "https://en.wikipedia.org/wiki/Category:Buildings_and_structures_in_Wellington_City"
+   ],
+   "note": "public art/bridge; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Breaker Bay",
+   "wiki": "Breaker Bay",
+   "coordinates": {
+    "lat": -41.32988,
+    "lng": 174.83229
+   },
+   "coordinates_source": "wikipedia:Breaker Bay",
+   "views": 2004,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Breaker_Bay",
+    "https://en.wikipedia.org/wiki/Category:Beaches_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Bays_of_the_Wellington_Region"
+   ],
+   "note": "beach; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Lake Ferry",
+   "wiki": "Lake Ferry",
+   "coordinates": {
+    "lat": -41.39421,
+    "lng": 175.14374
+   },
+   "coordinates_source": "wikipedia:Lake Ferry",
+   "views": 1951,
+   "counted_sources": [
+    "https://wairarapanz.com/products/lake-ferry"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Lake_Ferry",
+    "https://en.wikipedia.org/wiki/Category:South_Wairarapa_District"
+   ],
+   "note": "village/lake"
+  },
+  {
+   "name": "Pariwhero / Red Rocks",
+   "wiki": "Pariwhero / Red Rocks",
+   "coordinates": {
+    "lat": -41.359,
+    "lng": 174.725
+   },
+   "coordinates_source": "wikipedia:Pariwhero / Red Rocks",
+   "views": 1934,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City",
+    "https://www.wellingtonnz.com/visit/trails/waimapihi-reserve-brooklyn-turbine-and-te-kopahou-reserve/red-rocks-coastal-walk"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Pariwhero_/_Red_Rocks",
+    "https://en.wikipedia.org/wiki/Category:Protected_areas_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Rock_formations_of_the_Wellington_Region"
+   ],
+   "note": "coastal walk/seal colony"
+  },
+  {
+   "name": "Paraparaumu Beach",
+   "wiki": "Paraparaumu Beach",
+   "coordinates": {
+    "lat": -40.89378,
+    "lng": 174.97944
+   },
+   "coordinates_source": "wikipedia:Paraparaumu Beach",
+   "views": 1912,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Paraparaumu",
+    "https://www.visitkapiti.co.nz/see-and-do/beaches/"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Paraparaumu_Beach",
+    "https://en.wikipedia.org/wiki/Category:Beaches_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Kāpiti_Coast_District",
+    "https://www.openstreetmap.org/way/1009038015"
+   ],
+   "note": "beach"
+  },
+  {
+   "name": "Te Horo Beach",
+   "wiki": "Te Horo",
+   "coordinates": {
+    "lat": -40.8,
+    "lng": 175.1
+   },
+   "coordinates_source": "wikipedia:Te Horo",
+   "views": 1910,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Kapiti_Coast",
+    "https://www.visitkapiti.co.nz/see-and-do/beaches/"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Te_Horo",
+    "https://en.wikipedia.org/wiki/Category:Beaches_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Kāpiti_Coast_District",
+    "https://www.openstreetmap.org/way/208193799"
+   ],
+   "note": "beach"
+  },
+  {
+   "name": "Katherine Mansfield House & Garden",
+   "wiki": "Katherine Mansfield House and Garden",
+   "coordinates": {
+    "lat": -41.27016,
+    "lng": 174.77982
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/343355722",
+   "views": 1859,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City",
+    "https://www.wellingtonnz.com/visit/see-and-do/katherine-mansfield-house-and-garden"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Katherine_Mansfield_House_and_Garden",
+    "https://en.wikipedia.org/wiki/Category:Museums_in_Wellington_City",
+    "https://en.wikipedia.org/wiki/Category:Buildings_and_structures_in_Wellington_City"
+   ],
+   "note": "historic house museum"
+  },
+  {
+   "name": "Futuna Chapel",
+   "wiki": "Futuna Chapel",
+   "coordinates": {
+    "lat": -41.2818,
+    "lng": 174.7387
+   },
+   "coordinates_source": "wikipedia:Futuna Chapel",
+   "views": 1835,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Futuna_Chapel",
+    "https://en.wikipedia.org/wiki/Category:Heritage_New_Zealand_Category_1_historic_places_in_the_Wellington_Region"
+   ],
+   "note": "architecture; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Fort Ballance",
+   "wiki": "Fort Ballance",
+   "coordinates": {
+    "lat": -41.29463,
+    "lng": 174.83443
+   },
+   "coordinates_source": "wikipedia:Fort Ballance",
+   "views": 1830,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Fort_Ballance",
+    "https://en.wikipedia.org/wiki/Category:Miramar_Peninsula",
+    "https://en.wikipedia.org/wiki/Category:Buildings_and_structures_in_Wellington_City",
+    "https://www.openstreetmap.org/way/895400049"
+   ],
+   "note": "historic fort; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Evans Bay",
+   "wiki": "Evans Bay",
+   "coordinates": {
+    "lat": -41.31111,
+    "lng": 174.80556
+   },
+   "coordinates_source": "wikipedia:Evans Bay",
+   "views": 1802,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Evans_Bay",
+    "https://en.wikipedia.org/wiki/Category:Bays_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Wellington_Harbour",
+    "https://www.openstreetmap.org/relation/9590181"
+   ],
+   "note": "bay; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Wellington South Coast (Owhiro Bay)",
+   "wiki": "Ōwhiro Bay",
+   "coordinates": {
+    "lat": -41.344,
+    "lng": 174.759
+   },
+   "coordinates_source": "wikipedia:Ōwhiro Bay",
+   "views": 1775,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/see-and-do/hidden-wellington-experiences"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Ōwhiro_Bay",
+    "https://en.wikipedia.org/wiki/Category:Bays_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Suburbs_of_Wellington_City"
+   ],
+   "note": "bay"
+  },
+  {
+   "name": "Silver Stream Railway",
+   "wiki": "Silver Stream Railway",
+   "coordinates": {
+    "lat": -41.15086,
+    "lng": 174.99495
+   },
+   "coordinates_source": "wikipedia:Silver Stream Railway",
+   "views": 1714,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/Upper_Hutt"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Silver_Stream_Railway",
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Upper_Hutt",
+    "https://www.openstreetmap.org/way/709886856"
+   ],
+   "note": "heritage railway"
+  },
+  {
+   "name": "Paekākāriki Escarpment Track",
+   "wiki": "Escarpment Track",
+   "coordinates": {
+    "lat": -41.01556,
+    "lng": 174.91889
+   },
+   "coordinates_source": "wikipedia:Escarpment Track",
+   "views": 1683,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Paekākāriki",
+    "https://www.wellingtonnz.com/visit/trails/escarpment-track",
+    "https://www.visitkapiti.co.nz/see-and-do/tracks-and-trails/"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Escarpment_Track",
+    "https://en.wikipedia.org/wiki/Category:Hiking_and_tramping_tracks_in_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Kāpiti_Coast_District"
+   ],
+   "note": "walking track"
+  },
+  {
+   "name": "Statue of Our Lady of Lourdes (Paraparaumu)",
+   "wiki": "Our Lady of Lourdes (Kāpiti Coast)",
+   "coordinates": {
+    "lat": -40.91728,
+    "lng": 175.01087
+   },
+   "coordinates_source": "wikipedia:Our Lady of Lourdes (Kāpiti Coast)",
+   "views": 1647,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Paraparaumu"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Our_Lady_of_Lourdes_(Kāpiti_Coast)",
+    "https://en.wikipedia.org/wiki/Category:Kāpiti_Coast_District",
+    "https://en.wikipedia.org/wiki/Category:Paraparaumu"
+   ],
+   "note": "religious statue"
+  },
+  {
+   "name": "Tararua Forest Park",
+   "wiki": "Tararua Forest Park",
+   "coordinates": {
+    "lat": -40.83,
+    "lng": 175.39
+   },
+   "coordinates_source": "wikipedia:Tararua Forest Park",
+   "views": 1592,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/tararua-forest-park/",
+    "https://www.wellingtonnz.com/visit/wairarapa"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Tararua_Forest_Park",
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Protected_areas_of_the_Wellington_Region",
+    "https://www.openstreetmap.org/relation/18290086"
+   ],
+   "note": "forest park"
+  },
+  {
+   "name": "Old Bank Arcade",
+   "wiki": "Old Bank Arcade",
+   "coordinates": {
+    "lat": -41.28607,
+    "lng": 174.77629
+   },
+   "coordinates_source": "wikipedia:Old Bank Arcade",
+   "views": 1575,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/see-and-do/hidden-wellington-experiences"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Old_Bank_Arcade",
+    "https://en.wikipedia.org/wiki/Category:Buildings_and_structures_in_Wellington_City",
+    "https://en.wikipedia.org/wiki/Category:Wellington_Central,_Wellington"
+   ],
+   "note": "heritage arcade with shipwreck display"
+  },
+  {
+   "name": "Steam Incorporated",
+   "wiki": "Steam Incorporated",
+   "coordinates": {
+    "lat": -40.98621,
+    "lng": 174.95714
+   },
+   "coordinates_source": "wikipedia:Steam Incorporated",
+   "views": 1550,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Steam_Incorporated",
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Kāpiti_Coast_District"
+   ],
+   "note": "heritage steam locomotives (Paekākāriki); no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Mākara Beach",
+   "wiki": "Mākara Beach",
+   "coordinates": {
+    "lat": -41.22083,
+    "lng": 174.71389
+   },
+   "coordinates_source": "wikipedia:Mākara Beach",
+   "views": 1535,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/makara-beach-area/",
+    "https://www.wellingtonnz.com/visit/trails/makara-walkway"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Mākara_Beach",
+    "https://en.wikipedia.org/wiki/Category:Beaches_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Bays_of_the_Wellington_Region"
+   ],
+   "note": "beach"
+  },
+  {
+   "name": "Palliser Bay",
+   "wiki": "Palliser Bay",
+   "coordinates": {
+    "lat": -41.41667,
+    "lng": 175.08333
+   },
+   "coordinates_source": "wikipedia:Palliser Bay",
+   "views": 1447,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Palliser_Bay",
+    "https://en.wikipedia.org/wiki/Category:Bays_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Cook_Strait",
+    "https://www.openstreetmap.org/relation/9589544"
+   ],
+   "note": "bay; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Remutaka Rail Trail",
+   "wiki": "Remutaka Rail Trail",
+   "coordinates": {
+    "lat": -41.12757,
+    "lng": 175.22939
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/relation/9415758",
+   "views": 1407,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/remutaka-forest-park/things-to-do/tracks/remutaka-rail-trail/",
+    "https://www.wellingtonnz.com/visit/trails/remutaka-cycle-trail/hutt-river-trail-section"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Remutaka_Rail_Trail",
+    "https://en.wikipedia.org/wiki/Category:Hiking_and_tramping_tracks_in_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Pākuratahi_Forest",
+    "https://www.openstreetmap.org/relation/9415758"
+   ],
+   "note": "rail trail; earlier partial pass listed this as: Rimutaka Rail Trail (124 views)"
+  },
+  {
+   "name": "City Gallery Wellington",
+   "wiki": "City Gallery Wellington",
+   "coordinates": {
+    "lat": -41.28838,
+    "lng": 174.77731
+   },
+   "coordinates_source": "wikipedia:City Gallery Wellington",
+   "views": 1402,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City",
+    "https://www.wellingtonnz.com/visit/see-and-do/city-gallery-wellington"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/City_Gallery_Wellington",
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_Wellington_City",
+    "https://en.wikipedia.org/wiki/Category:Wellington_Central,_Wellington"
+   ],
+   "note": "gallery"
+  },
+  {
+   "name": "Takapūwāhia Marae",
+   "wiki": "Takapūwāhia",
+   "coordinates": {
+    "lat": -41.13333,
+    "lng": 174.83333
+   },
+   "coordinates_source": "wikipedia:Takapūwāhia",
+   "views": 1357,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/Porirua"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Takapūwāhia",
+    "https://en.wikipedia.org/wiki/Category:Suburbs_of_Porirua"
+   ],
+   "note": "marae"
+  },
+  {
+   "name": "Aotea Lagoon",
+   "wiki": "Aotea Lagoon",
+   "coordinates": {
+    "lat": -41.11971,
+    "lng": 174.85699
+   },
+   "coordinates_source": "wikipedia:Aotea Lagoon",
+   "views": 1322,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Aotea_Lagoon",
+    "https://en.wikipedia.org/wiki/Category:Parks_in_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Landforms_of_the_Wellington_Region"
+   ],
+   "note": "park; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Cape Palliser Lighthouse",
+   "wiki": "Cape Palliser Lighthouse",
+   "coordinates": {
+    "lat": -41.61192,
+    "lng": 175.28994
+   },
+   "coordinates_source": "wikipedia:Cape Palliser Lighthouse",
+   "views": 1321,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wairarapa"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Cape_Palliser_Lighthouse",
+    "https://en.wikipedia.org/wiki/Category:Buildings_and_structures_in_the_Wairarapa",
+    "https://en.wikipedia.org/wiki/Category:South_Wairarapa_District",
+    "https://www.openstreetmap.org/way/856645636"
+   ],
+   "note": "lighthouse"
+  },
+  {
+   "name": "Pukeahu National War Memorial Park",
+   "wiki": "Pukeahu National War Memorial Park",
+   "coordinates": {
+    "lat": -41.2989,
+    "lng": 174.7772
+   },
+   "coordinates_source": "wikipedia:Pukeahu National War Memorial Park",
+   "views": 1300,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City",
+    "https://www.wellingtonnz.com/visit/see-and-do/pukeahu-national-war-memorial-park"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Pukeahu_National_War_Memorial_Park",
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_Wellington_City"
+   ],
+   "note": "memorial park"
+  },
+  {
+   "name": "Fernside Homestead",
+   "wiki": "Fernside Homestead",
+   "coordinates": {
+    "lat": -41.10294,
+    "lng": 175.36506
+   },
+   "coordinates_source": "wikipedia:Fernside Homestead",
+   "views": 1293,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Fernside_Homestead",
+    "https://en.wikipedia.org/wiki/Category:Buildings_and_structures_in_the_Wairarapa",
+    "https://en.wikipedia.org/wiki/Category:Featherston,_New_Zealand",
+    "https://www.openstreetmap.org/way/1023804534"
+   ],
+   "note": "historic homestead; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Te Ahumairangi Hill",
+   "wiki": "Te Ahumairangi Hill",
+   "coordinates": {
+    "lat": -41.27399,
+    "lng": 174.76419
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/node/915413650",
+   "views": 1285,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Te_Ahumairangi_Hill",
+    "https://en.wikipedia.org/wiki/Category:Wellington_City",
+    "https://www.openstreetmap.org/node/915413650"
+   ],
+   "note": "hill/viewpoint; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Cape Terawhiti",
+   "wiki": "Cape Terawhiti",
+   "coordinates": {
+    "lat": -41.28437,
+    "lng": 174.61327
+   },
+   "coordinates_source": "wikipedia:Cape Terawhiti",
+   "views": 1260,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Cape_Terawhiti",
+    "https://en.wikipedia.org/wiki/Category:Headlands_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Cook_Strait",
+    "https://www.openstreetmap.org/node/1987967562"
+   ],
+   "note": "cape; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Baring Head / Ōrua-pouanui",
+   "wiki": "Baring Head",
+   "coordinates": {
+    "lat": -41.41667,
+    "lng": 174.86667
+   },
+   "coordinates_source": "wikipedia:Baring Head",
+   "views": 1218,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Baring_Head",
+    "https://en.wikipedia.org/wiki/Category:East_Harbour_Regional_Park",
+    "https://en.wikipedia.org/wiki/Category:Headlands_of_the_Wellington_Region",
+    "https://www.openstreetmap.org/node/9307563836"
+   ],
+   "note": "headland; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Pauatahanui Inlet (Porirua Harbour)",
+   "wiki": "Porirua Harbour",
+   "coordinates": {
+    "lat": -41.08333,
+    "lng": 174.85
+   },
+   "coordinates_source": "wikipedia:Porirua Harbour",
+   "views": 1192,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/Porirua"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Porirua_Harbour",
+    "https://en.wikipedia.org/wiki/Category:Landforms_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Porirua",
+    "https://www.openstreetmap.org/relation/10480713"
+   ],
+   "note": "harbour/estuary; earlier partial pass listed this as: Pauatahanui Inlet (121 views)"
+  },
+  {
+   "name": "Space Place at Carter Observatory",
+   "wiki": "Space Place at Carter Observatory",
+   "coordinates": {
+    "lat": -41.28437,
+    "lng": 174.76697
+   },
+   "coordinates_source": "wikipedia:Space Place at Carter Observatory",
+   "views": 1182,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City",
+    "https://www.wellingtonnz.com/visit/see-and-do/space-place"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Space_Place_at_Carter_Observatory",
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_Wellington_City",
+    "https://en.wikipedia.org/wiki/Category:Buildings_and_structures_in_Wellington_City"
+   ],
+   "note": "observatory/planetarium; earlier partial pass listed this as: Carter Observatory (311 views)"
+  },
+  {
+   "name": "Tīnui",
+   "wiki": "Tīnui",
+   "coordinates": {
+    "lat": -40.87778,
+    "lng": 176.07222
+   },
+   "coordinates_source": "wikipedia:Tīnui",
+   "views": 1182,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Tīnui",
+    "https://en.wikipedia.org/wiki/Category:Masterton_District",
+    "https://en.wikipedia.org/wiki/Category:Wairarapa"
+   ],
+   "note": "village (Tinui Taipos / Mt Maunsell); no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Wellington Naturist Club",
+   "wiki": "Wellington Naturist Club",
+   "coordinates": {
+    "lat": -41.09278,
+    "lng": 175.13417
+   },
+   "coordinates_source": "wikipedia:Wellington Naturist Club",
+   "views": 1164,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Wellington_Naturist_Club",
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_the_Wellington_Region"
+   ],
+   "note": "naturist club grounds; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Turakirae Head Scientific Reserve",
+   "wiki": "Turakirae Head",
+   "coordinates": {
+    "lat": -41.4339,
+    "lng": 174.9181
+   },
+   "coordinates_source": "wikipedia:Turakirae Head",
+   "views": 1114,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/turakirae-head-scientific-reserve/"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Turakirae_Head",
+    "https://en.wikipedia.org/wiki/Category:Headlands_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Cook_Strait",
+    "https://www.openstreetmap.org/node/1987970461"
+   ],
+   "note": "coastal reserve"
+  },
+  {
+   "name": "Karaka Bays",
+   "wiki": "Karaka Bays",
+   "coordinates": {
+    "lat": -41.30333,
+    "lng": 174.83111
+   },
+   "coordinates_source": "wikipedia:Karaka Bays",
+   "views": 1110,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Karaka_Bays",
+    "https://en.wikipedia.org/wiki/Category:Miramar_Peninsula",
+    "https://en.wikipedia.org/wiki/Category:Suburbs_of_Wellington_City"
+   ],
+   "note": "bay; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Steeple Rock",
+   "wiki": "Steeple Rock",
+   "coordinates": {
+    "lat": -41.32397,
+    "lng": 174.84129
+   },
+   "coordinates_source": "wikipedia:Steeple Rock",
+   "views": 1083,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Steeple_Rock",
+    "https://en.wikipedia.org/wiki/Category:Rock_formations_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Wellington_Harbour"
+   ],
+   "note": "sea stack; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Ōtaki Beach",
+   "wiki": "Ōtaki Beach",
+   "coordinates": {
+    "lat": -40.743,
+    "lng": 175.119
+   },
+   "coordinates_source": "wikipedia:Ōtaki Beach",
+   "views": 1082,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Kapiti_Coast",
+    "https://www.visitkapiti.co.nz/see-and-do/beaches/"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Ōtaki_Beach",
+    "https://en.wikipedia.org/wiki/Category:Beaches_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Kāpiti_Coast_District",
+    "https://www.openstreetmap.org/relation/2799955"
+   ],
+   "note": "beach"
+  },
+  {
+   "name": "Raumati Village",
+   "wiki": "Raumati South",
+   "coordinates": {
+    "lat": -40.93627,
+    "lng": 174.97741
+   },
+   "coordinates_source": "wikipedia:Raumati South",
+   "views": 1080,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/kapiti-coast/raumati"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Raumati_South",
+    "https://en.wikipedia.org/wiki/Category:Kāpiti_Coast_District"
+   ],
+   "note": "village"
+  },
+  {
+   "name": "Houghton Bay",
+   "wiki": "Houghton Bay",
+   "coordinates": {
+    "lat": -41.342,
+    "lng": 174.785
+   },
+   "coordinates_source": "wikipedia:Houghton Bay",
+   "views": 1075,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Houghton_Bay",
+    "https://en.wikipedia.org/wiki/Category:Beaches_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Bays_of_the_Wellington_Region",
+    "https://www.openstreetmap.org/node/6231675185"
+   ],
+   "note": "beach; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Whitireia Park",
+   "wiki": "Whitireia Park",
+   "coordinates": {
+    "lat": -41.10136,
+    "lng": 174.84955
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/relation/13593794",
+   "views": 1020,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Whitireia_Park",
+    "https://en.wikipedia.org/wiki/Category:Parks_in_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Headlands_of_the_Wellington_Region",
+    "https://www.openstreetmap.org/relation/13593794"
+   ],
+   "note": "coastal park; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Ruamāhanga River",
+   "wiki": "Ruamāhanga River",
+   "coordinates": {
+    "lat": -41.3711,
+    "lng": 175.1403
+   },
+   "coordinates_source": "wikipedia:Ruamāhanga River",
+   "views": 1012,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Ruamāhanga_River",
+    "https://en.wikipedia.org/wiki/Category:Rivers_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Wellington_Region_river_stubs"
+   ],
+   "note": "river; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Mount Hector",
+   "wiki": "Mount Hector (New Zealand)",
+   "coordinates": {
+    "lat": -40.95,
+    "lng": 175.28333
+   },
+   "coordinates_source": "wikipedia:Mount Hector (New Zealand)",
+   "views": 1007,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Mount_Hector_(New_Zealand)",
+    "https://en.wikipedia.org/wiki/Category:Mountains_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Kāpiti_Coast_District",
+    "https://www.openstreetmap.org/node/7929995912"
+   ],
+   "note": "peak; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Star Safari (Wairarapa Dark Sky Reserve)",
+   "wiki": "Wairarapa Dark Sky Reserve",
+   "coordinates": {
+    "lat": -41.1425,
+    "lng": 175.5178
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/node/12616843213",
+   "views": 1006,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/plan-your-trip/top-things-to-see-and-do-in-wairarapa",
+    "https://wairarapanz.com/products/star-safari"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Wairarapa_Dark_Sky_Reserve",
+    "https://en.wikipedia.org/wiki/Category:Wairarapa"
+   ],
+   "note": "dark sky stargazing"
+  },
+  {
+   "name": "Mount Holdsworth",
+   "wiki": "Mount Holdsworth, New Zealand",
+   "coordinates": {
+    "lat": -40.893,
+    "lng": 175.527
+   },
+   "coordinates_source": "wikipedia:Mount Holdsworth, New Zealand",
+   "views": 1004,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Masterton",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/tararua-forest-park/holdsworth-area/"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Mount_Holdsworth,_New_Zealand",
+    "https://en.wikipedia.org/wiki/Category:Carterton_District",
+    "https://www.openstreetmap.org/node/2933603304"
+   ],
+   "note": "peak/trailhead"
+  },
+  {
+   "name": "Battle Hill Farm Forest Park",
+   "wiki": "Battle Hill Farm Forest Park",
+   "coordinates": {
+    "lat": -41.0599,
+    "lng": 174.9365
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Wellington/Porirua",
+   "views": 999,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/Porirua",
+    "https://www.wellingtonnz.com/visit/porirua"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Battle_Hill_Farm_Forest_Park",
+    "https://en.wikipedia.org/wiki/Category:Regional_parks_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Paekākāriki",
+    "https://www.openstreetmap.org/way/1249292616"
+   ],
+   "note": "regional park/historic battle site"
+  },
+  {
+   "name": "Belmont Regional Park",
+   "wiki": "Belmont Regional Park",
+   "coordinates": {
+    "lat": -41.17291,
+    "lng": 174.89769
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/relation/9645301",
+   "views": 992,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/Lower_Hutt",
+    "https://www.wellingtonnz.com/visit/trails/belmont-regional-park"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Belmont_Regional_Park",
+    "https://en.wikipedia.org/wiki/Category:Regional_parks_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Lower_Hutt",
+    "https://www.openstreetmap.org/relation/9645301"
+   ],
+   "note": "regional park"
+  },
+  {
+   "name": "Thistle Inn",
+   "wiki": "Thistle Inn",
+   "coordinates": {
+    "lat": -41.2777,
+    "lng": 174.7796
+   },
+   "coordinates_source": "wikipedia:Thistle Inn",
+   "views": 987,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Thistle_Inn",
+    "https://en.wikipedia.org/wiki/Category:Hotels_in_Wellington_City",
+    "https://en.wikipedia.org/wiki/Category:Heritage_New_Zealand_Category_1_historic_places_in_the_Wellington_Region"
+   ],
+   "note": "historic pub; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Dowse Art Museum",
+   "wiki": "Dowse Art Museum",
+   "coordinates": {
+    "lat": -41.2118,
+    "lng": 174.9043
+   },
+   "coordinates_source": "wikipedia:Dowse Art Museum",
+   "views": 973,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/Lower_Hutt",
+    "https://www.wellingtonnz.com/visit/see-and-do/the-dowse-art-museum"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Dowse_Art_Museum",
+    "https://en.wikipedia.org/wiki/Category:Museums_in_Lower_Hutt",
+    "https://www.openstreetmap.org/way/167957697"
+   ],
+   "note": "gallery"
+  },
+  {
+   "name": "Pirinoa",
+   "wiki": "Pirinoa",
+   "coordinates": {
+    "lat": -41.35273,
+    "lng": 175.20553
+   },
+   "coordinates_source": "wikipedia:Pirinoa",
+   "views": 956,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Pirinoa",
+    "https://en.wikipedia.org/wiki/Category:South_Wairarapa_District"
+   ],
+   "note": "village; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Worser Bay",
+   "wiki": "Worser Bay",
+   "coordinates": {
+    "lat": -41.31667,
+    "lng": 174.83333
+   },
+   "coordinates_source": "wikipedia:Worser Bay",
+   "views": 952,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Worser_Bay",
+    "https://en.wikipedia.org/wiki/Category:Beaches_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Bays_of_the_Wellington_Region",
+    "https://www.openstreetmap.org/way/1014940366"
+   ],
+   "note": "beach; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Waitangi Park",
+   "wiki": "Waitangi Park",
+   "coordinates": {
+    "lat": -41.2914,
+    "lng": 174.78494
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/153924707",
+   "views": 947,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Waitangi_Park",
+    "https://en.wikipedia.org/wiki/Category:Parks_in_Wellington_City",
+    "https://en.wikipedia.org/wiki/Category:Wellington_Waterfront",
+    "https://www.openstreetmap.org/way/153924707"
+   ],
+   "note": "park; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Fell Locomotive Museum",
+   "wiki": "Fell Locomotive Museum",
+   "coordinates": {
+    "lat": -41.118,
+    "lng": 175.3279
+   },
+   "coordinates_source": "wikipedia:Fell Locomotive Museum",
+   "views": 946,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wairarapa",
+    "https://wairarapanz.com/products/fell-locomotive-museum"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Fell_Locomotive_Museum",
+    "https://en.wikipedia.org/wiki/Category:Museums_in_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Buildings_and_structures_in_the_Wairarapa",
+    "https://www.openstreetmap.org/way/307693452"
+   ],
+   "note": "museum"
+  },
+  {
+   "name": "Baring Head Lighthouse",
+   "wiki": "Baring Head Lighthouse",
+   "coordinates": {
+    "lat": -41.40806,
+    "lng": 174.87111
+   },
+   "coordinates_source": "wikipedia:Baring Head Lighthouse",
+   "views": 938,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Baring_Head_Lighthouse",
+    "https://en.wikipedia.org/wiki/Category:East_Harbour_Regional_Park",
+    "https://en.wikipedia.org/wiki/Category:Cook_Strait",
+    "https://www.openstreetmap.org/node/1052817586"
+   ],
+   "note": "lighthouse; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Mokopuna Island",
+   "wiki": "Mokopuna Island",
+   "coordinates": {
+    "lat": -41.25,
+    "lng": 174.86667
+   },
+   "coordinates_source": "wikipedia:Mokopuna Island",
+   "views": 934,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Mokopuna_Island",
+    "https://en.wikipedia.org/wiki/Category:Wellington_Harbour",
+    "https://en.wikipedia.org/wiki/Category:Islands_of_the_Wellington_Region"
+   ],
+   "note": "island; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Mount Matthews",
+   "wiki": "Mount Matthews",
+   "coordinates": {
+    "lat": -41.35,
+    "lng": 175.01667
+   },
+   "coordinates_source": "wikipedia:Mount Matthews",
+   "views": 926,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/remutaka-forest-park/things-to-do/tracks/mt-matthews/"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Mount_Matthews",
+    "https://en.wikipedia.org/wiki/Category:Mountains_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:South_Wairarapa_District"
+   ],
+   "note": "peak/track"
+  },
+  {
+   "name": "Nairn Street Cottage",
+   "wiki": "Nairn Street Cottage",
+   "coordinates": {
+    "lat": -41.2993,
+    "lng": 174.7699
+   },
+   "coordinates_source": "wikipedia:Nairn Street Cottage",
+   "views": 909,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City",
+    "https://www.wellingtonnz.com/visit/see-and-do/nairn-street-cottage"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Nairn_Street_Cottage",
+    "https://en.wikipedia.org/wiki/Category:Museums_in_Wellington_City",
+    "https://en.wikipedia.org/wiki/Category:Heritage_New_Zealand_Category_1_historic_places_in_the_Wellington_Region",
+    "https://www.openstreetmap.org/way/264854202"
+   ],
+   "note": "historic house museum"
+  },
+  {
+   "name": "Turnbull House",
+   "wiki": "Turnbull House",
+   "coordinates": {
+    "lat": -41.2791,
+    "lng": 174.77643
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Wellington/City",
+   "views": 899,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Turnbull_House",
+    "https://en.wikipedia.org/wiki/Category:Buildings_and_structures_in_Wellington_City",
+    "https://en.wikipedia.org/wiki/Category:Heritage_New_Zealand_Category_1_historic_places_in_the_Wellington_Region",
+    "https://www.openstreetmap.org/way/62197397"
+   ],
+   "note": "historic building"
+  },
+  {
+   "name": "Aorangi Forest Park",
+   "wiki": "Aorangi Forest Park",
+   "coordinates": {
+    "lat": -41.4211,
+    "lng": 175.3624
+   },
+   "coordinates_source": "wikipedia:Aorangi Forest Park",
+   "views": 854,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wairarapa/places/aorangi-forest-park/",
+    "https://wairarapanz.com/products/aorangi-forest-park"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Aorangi_Forest_Park",
+    "https://en.wikipedia.org/wiki/Category:Protected_areas_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:South_Wairarapa_District",
+    "https://www.openstreetmap.org/relation/18289080"
+   ],
+   "note": "forest park"
+  },
+  {
+   "name": "Pencarrow Lighthouse",
+   "wiki": "Pencarrow Lighthouse",
+   "coordinates": {
+    "lat": -41.35885,
+    "lng": 174.85011
+   },
+   "coordinates_source": "wikipedia:Pencarrow Lighthouse",
+   "views": 852,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/trails/east-harbour-regional-park/lighthouse-track"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Pencarrow_Lighthouse",
+    "https://en.wikipedia.org/wiki/Category:East_Harbour_Regional_Park",
+    "https://en.wikipedia.org/wiki/Category:Cook_Strait"
+   ],
+   "note": "lighthouse"
+  },
+  {
+   "name": "Wellington Town Belt",
+   "wiki": "Wellington Town Belt",
+   "coordinates": {
+    "lat": -41.27851,
+    "lng": 174.76793
+   },
+   "coordinates_source": "wikipedia:Wellington Town Belt",
+   "views": 845,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Wellington_Town_Belt",
+    "https://en.wikipedia.org/wiki/Category:Parks_in_Wellington_City",
+    "https://en.wikipedia.org/wiki/Category:Wellington_City"
+   ],
+   "note": "green belt; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Pencarrow Coast Road",
+   "wiki": "Pencarrow Head",
+   "coordinates": {
+    "lat": -41.3594,
+    "lng": 174.8482
+   },
+   "coordinates_source": "wikipedia:Pencarrow Head",
+   "views": 822,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/trails/east-harbour-regional-park/pencarrow-coast-road"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Pencarrow_Head",
+    "https://en.wikipedia.org/wiki/Category:East_Harbour_Regional_Park",
+    "https://en.wikipedia.org/wiki/Category:Headlands_of_the_Wellington_Region",
+    "https://www.openstreetmap.org/node/6474563927"
+   ],
+   "note": "coastal cycling/walking route"
+  },
+  {
+   "name": "Lobster Loos",
+   "wiki": "Lobster loos",
+   "coordinates": {
+    "lat": -41.28378,
+    "lng": 174.77837
+   },
+   "coordinates_source": "wikipedia:Lobster loos",
+   "views": 821,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Lobster_loos",
+    "https://en.wikipedia.org/wiki/Category:Wellington_Waterfront",
+    "https://en.wikipedia.org/wiki/Category:Buildings_and_structures_in_Wellington_City"
+   ],
+   "note": "quirky public toilets; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Brancepeth Station",
+   "wiki": "Brancepeth Station",
+   "coordinates": {
+    "lat": -41.0468,
+    "lng": 175.8284
+   },
+   "coordinates_source": "wikipedia:Brancepeth Station",
+   "views": 815,
+   "counted_sources": [
+    "https://wairarapanz.com/products/brancepeth-homestead"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Brancepeth_Station",
+    "https://en.wikipedia.org/wiki/Category:Wairarapa",
+    "https://en.wikipedia.org/wiki/Category:Heritage_New_Zealand_Category_1_historic_places_in_the_Wellington_Region"
+   ],
+   "note": "historic station/homestead"
+  },
+  {
+   "name": "Gear Homestead",
+   "wiki": "Gear Homestead",
+   "coordinates": {
+    "lat": -41.12399,
+    "lng": 174.85188
+   },
+   "coordinates_source": "wikipedia:Gear Homestead",
+   "views": 805,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/Porirua"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Gear_Homestead",
+    "https://en.wikipedia.org/wiki/Category:Buildings_and_structures_in_Porirua",
+    "https://en.wikipedia.org/wiki/Category:Heritage_New_Zealand_Category_2_historic_places_in_the_Wellington_Region",
+    "https://www.openstreetmap.org/way/886783704"
+   ],
+   "note": "historic homestead"
+  },
+  {
+   "name": "Queen Elizabeth Park",
+   "wiki": "Queen Elizabeth Park, Kāpiti Coast",
+   "coordinates": {
+    "lat": -40.9495,
+    "lng": 175.6686
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Masterton",
+   "views": 794,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/Paraparaumu",
+    "https://en.wikivoyage.org/wiki/Kapiti_Coast",
+    "https://en.wikivoyage.org/wiki/Paekākāriki",
+    "https://www.visitkapiti.co.nz/see-and-do/nature-and-outdoors/"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Queen_Elizabeth_Park,_Kāpiti_Coast",
+    "https://en.wikipedia.org/wiki/Category:Regional_parks_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Wetlands_of_the_Wellington_Region"
+   ],
+   "note": "regional park"
+  },
+  {
+   "name": "Remutaka Forest Park",
+   "wiki": "Remutaka Forest Park",
+   "coordinates": {
+    "lat": -41.36,
+    "lng": 175
+   },
+   "coordinates_source": "wikipedia:Remutaka Forest Park",
+   "views": 793,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/remutaka-forest-park/"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Remutaka_Forest_Park",
+    "https://en.wikipedia.org/wiki/Category:Protected_areas_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Parks_in_the_Wellington_Region",
+    "https://www.openstreetmap.org/relation/13266222"
+   ],
+   "note": "forest park"
+  },
+  {
+   "name": "Hau Nui Wind Farm",
+   "wiki": "Hau Nui Wind Farm",
+   "coordinates": {
+    "lat": -41.36167,
+    "lng": 175.48389
+   },
+   "coordinates_source": "wikipedia:Hau Nui Wind Farm",
+   "views": 788,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Hau_Nui_Wind_Farm",
+    "https://en.wikipedia.org/wiki/Category:Buildings_and_structures_in_the_Wairarapa",
+    "https://en.wikipedia.org/wiki/Category:South_Wairarapa_District"
+   ],
+   "note": "wind farm; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Percy Scenic Reserve",
+   "wiki": "Percy Scenic Reserve",
+   "coordinates": {
+    "lat": -41.2125,
+    "lng": 174.875
+   },
+   "coordinates_source": "wikipedia:Percy Scenic Reserve",
+   "views": 774,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/see-and-do/things-to-do-hutt-valley"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Percy_Scenic_Reserve",
+    "https://en.wikipedia.org/wiki/Category:Lower_Hutt"
+   ],
+   "note": "scenic reserve"
+  },
+  {
+   "name": "Ōtaki River",
+   "wiki": "Ōtaki River",
+   "coordinates": {
+    "lat": -40.75863,
+    "lng": 175.10417
+   },
+   "coordinates_source": "wikipedia:Ōtaki River",
+   "views": 750,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/trails/otaki-river-trail"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Ōtaki_River",
+    "https://en.wikipedia.org/wiki/Category:Rivers_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Kāpiti_Coast_District"
+   ],
+   "note": "river (Ōtaki Gorge, Ōtaki River Trail)"
+  },
+  {
+   "name": "Karehana Bay",
+   "wiki": "Karehana Bay",
+   "coordinates": {
+    "lat": -41.074,
+    "lng": 174.86
+   },
+   "coordinates_source": "wikipedia:Karehana Bay",
+   "views": 741,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Karehana_Bay",
+    "https://en.wikipedia.org/wiki/Category:Bays_of_the_Wellington_Region"
+   ],
+   "note": "beach; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Lake Ōnoke",
+   "wiki": "Lake Ōnoke",
+   "coordinates": {
+    "lat": -41.38056,
+    "lng": 175.13139
+   },
+   "coordinates_source": "wikipedia:Lake Ōnoke",
+   "views": 736,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Lake_Ōnoke",
+    "https://en.wikipedia.org/wiki/Category:Lakes_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:South_Wairarapa_District"
+   ],
+   "note": "coastal lake; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Tararua Southern Crossing",
+   "wiki": "Southern Crossing",
+   "coordinates": {
+    "lat": -40.874,
+    "lng": 175.235
+   },
+   "coordinates_source": "wikipedia:Southern Crossing",
+   "views": 729,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/tararua-forest-park/things-to-do/tracks/tararua-southern-crossing/"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Southern_Crossing",
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Hiking_and_tramping_tracks_in_the_Wellington_Region"
+   ],
+   "note": "multi-day tramp"
+  },
+  {
+   "name": "Waikanae River",
+   "wiki": "Waikanae River",
+   "coordinates": {
+    "lat": -40.87455,
+    "lng": 174.99985
+   },
+   "coordinates_source": "wikipedia:Waikanae River",
+   "views": 729,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Waikanae_River",
+    "https://en.wikipedia.org/wiki/Category:Rivers_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Kāpiti_Coast_District"
+   ],
+   "note": "river/estuary walks; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Toi Mahara Gallery",
+   "wiki": "Toi Mahara",
+   "coordinates": {
+    "lat": -40.87634,
+    "lng": 175.06436
+   },
+   "coordinates_source": "wikipedia:Toi Mahara",
+   "views": 697,
+   "counted_sources": [
+    "https://www.visitkapiti.co.nz/see-and-do/art-culture-and-heritage/"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Toi_Mahara",
+    "https://en.wikipedia.org/wiki/Category:Kāpiti_Coast_District",
+    "https://en.wikipedia.org/wiki/Category:Buildings_and_structures_in_the_Kāpiti_Coast_District"
+   ],
+   "note": "gallery"
+  },
+  {
+   "name": "Upper Hutt Blockhouse",
+   "wiki": "Upper Hutt Blockhouse",
+   "coordinates": {
+    "lat": -41.12923,
+    "lng": 175.05174
+   },
+   "coordinates_source": "wikipedia:Upper Hutt Blockhouse",
+   "views": 684,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Upper_Hutt_Blockhouse",
+    "https://en.wikipedia.org/wiki/Category:Buildings_and_structures_in_Upper_Hutt",
+    "https://en.wikipedia.org/wiki/Category:Heritage_New_Zealand_Category_1_historic_places_in_the_Wellington_Region",
+    "https://www.openstreetmap.org/way/62154591"
+   ],
+   "note": "historic blockhouse; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Evans Bay Patent Slip",
+   "wiki": "Evans Bay Patent Slip",
+   "coordinates": {
+    "lat": -41.30419,
+    "lng": 174.80206
+   },
+   "coordinates_source": "wikipedia:Evans Bay Patent Slip",
+   "views": 675,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Evans_Bay_Patent_Slip",
+    "https://en.wikipedia.org/wiki/Category:Wellington_Harbour",
+    "https://en.wikipedia.org/wiki/Category:Heritage_New_Zealand_Category_2_historic_places_in_the_Wellington_Region"
+   ],
+   "note": "heritage slipway; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "New Zealand Portrait Gallery",
+   "wiki": "New Zealand Portrait Gallery",
+   "coordinates": {
+    "lat": -41.28348,
+    "lng": 174.77824
+   },
+   "coordinates_source": "wikipedia:New Zealand Portrait Gallery",
+   "views": 665,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City",
+    "https://www.wellingtonnz.com/visit/see-and-do/hidden-wellington-experiences"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/New_Zealand_Portrait_Gallery",
+    "https://en.wikipedia.org/wiki/Category:Wellington_Waterfront",
+    "https://www.openstreetmap.org/way/153924615"
+   ],
+   "note": "gallery"
+  },
+  {
+   "name": "Colonial Knob (Rangituhi)",
+   "wiki": "Rangituhi / Colonial Knob",
+   "coordinates": {
+    "lat": -41.15361,
+    "lng": 174.80389
+   },
+   "coordinates_source": "wikipedia:Rangituhi / Colonial Knob",
+   "views": 660,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/Porirua",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/colonial-knob-scenic-reserve/",
+    "https://www.wellingtonnz.com/visit/trails/nga-ara-o-rangituhi/rangituhi-colonial-knob-walkway"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Rangituhi_/_Colonial_Knob",
+    "https://en.wikipedia.org/wiki/Category:Mountains_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Porirua"
+   ],
+   "note": "hill/walkway"
+  },
+  {
+   "name": "First State House (12 Fife Lane)",
+   "wiki": "12 Fife Lane",
+   "coordinates": {
+    "lat": -41.32437,
+    "lng": 174.81746
+   },
+   "coordinates_source": "wikipedia:12 Fife Lane",
+   "views": 646,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/12_Fife_Lane",
+    "https://en.wikipedia.org/wiki/Category:Miramar_Peninsula",
+    "https://en.wikipedia.org/wiki/Category:Buildings_and_structures_in_Wellington_City",
+    "https://www.openstreetmap.org/way/383222252"
+   ],
+   "note": "historic house; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Queen Elizabeth Park (Masterton)",
+   "wiki": "Queen Elizabeth Park, Masterton",
+   "coordinates": {
+    "lat": -40.94992,
+    "lng": 175.66656
+   },
+   "coordinates_source": "wikipedia:Queen Elizabeth Park, Masterton",
+   "views": 630,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Masterton"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Queen_Elizabeth_Park,_Masterton",
+    "https://en.wikipedia.org/wiki/Category:Parks_in_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Masterton"
+   ],
+   "note": "park"
+  },
+  {
+   "name": "Wairarapa Moana Wetlands",
+   "wiki": "Wairarapa Moana Wetlands",
+   "coordinates": {
+    "lat": -41.23399,
+    "lng": 175.19309
+   },
+   "coordinates_source": "wikipedia:Wairarapa Moana Wetlands",
+   "views": 625,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wairarapa/places/wairarapa-moana-wetlands/",
+    "https://wairarapanz.com/products/lake-wairarapa-wairarapa-moana"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Wairarapa_Moana_Wetlands",
+    "https://en.wikipedia.org/wiki/Category:Parks_in_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Wetlands_of_the_Wellington_Region"
+   ],
+   "note": "wetlands"
+  },
+  {
+   "name": "Ngā Manu Nature Reserve",
+   "wiki": "Ngā Manu Nature Reserve",
+   "coordinates": {
+    "lat": -40.861,
+    "lng": 175.0605
+   },
+   "coordinates_source": "wikipedia:Ngā Manu Nature Reserve",
+   "views": 618,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Waikanae",
+    "https://www.wellingtonnz.com/visit/see-and-do/nga-manu-kapiti-coasts-nature-reserve",
+    "https://www.wellingtonnz.com/visit/see-and-do/nature-experiences"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Ngā_Manu_Nature_Reserve",
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Wetlands_of_the_Wellington_Region"
+   ],
+   "note": "nature reserve/aviary"
+  },
+  {
+   "name": "Akatarawa Forest",
+   "wiki": "Akatarawa Forest",
+   "coordinates": {
+    "lat": -41.04094,
+    "lng": 175.037
+   },
+   "coordinates_source": "wikipedia:Akatarawa Forest",
+   "views": 608,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Akatarawa_Forest",
+    "https://en.wikipedia.org/wiki/Category:Akatarawa_Forest",
+    "https://en.wikipedia.org/wiki/Category:Regional_parks_of_the_Wellington_Region"
+   ],
+   "note": "forest park; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Petone Settlers Museum",
+   "wiki": "Petone Settlers Museum",
+   "coordinates": {
+    "lat": -41.22927,
+    "lng": 174.88018
+   },
+   "coordinates_source": "wikipedia:Petone Settlers Museum",
+   "views": 598,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/Lower_Hutt",
+    "https://www.wellingtonnz.com/visit/see-and-do/things-to-do-hutt-valley"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Petone_Settlers_Museum",
+    "https://en.wikipedia.org/wiki/Category:Museums_in_Lower_Hutt",
+    "https://en.wikipedia.org/wiki/Category:Lower_Hutt",
+    "https://www.openstreetmap.org/way/212948138"
+   ],
+   "note": "museum"
+  },
+  {
+   "name": "Dominion Observatory",
+   "wiki": "Dominion Observatory, Wellington",
+   "coordinates": {
+    "lat": -41.28414,
+    "lng": 174.76822
+   },
+   "coordinates_source": "wikipedia:Dominion Observatory, Wellington",
+   "views": 596,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/wellington-central-area/"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Dominion_Observatory,_Wellington",
+    "https://en.wikipedia.org/wiki/Category:Buildings_and_structures_in_Wellington_City",
+    "https://en.wikipedia.org/wiki/Category:Heritage_New_Zealand_Category_1_historic_places_in_the_Wellington_Region"
+   ],
+   "note": "historic observatory"
+  },
+  {
+   "name": "Te Kopahou Reserve",
+   "wiki": "Te Kopahou Reserve",
+   "coordinates": {
+    "lat": -41.3406,
+    "lng": 174.7231
+   },
+   "coordinates_source": "wikipedia:Te Kopahou Reserve",
+   "views": 596,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/trails/waimapihi-reserve-brooklyn-turbine-and-te-kopahou-reserve"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Te_Kopahou_Reserve",
+    "https://en.wikipedia.org/wiki/Category:Parks_in_Wellington_City",
+    "https://en.wikipedia.org/wiki/Category:Wellington_City"
+   ],
+   "note": "reserve/walks"
+  },
+  {
+   "name": "Mount Crawford",
+   "wiki": "Mount Crawford (New Zealand)",
+   "coordinates": {
+    "lat": -41.29445,
+    "lng": 174.8285
+   },
+   "coordinates_source": "wikipedia:Mount Crawford (New Zealand)",
+   "views": 581,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Mount_Crawford_(New_Zealand)",
+    "https://en.wikipedia.org/wiki/Category:Mountains_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Wellington_City"
+   ],
+   "note": "hill; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Princess Bay",
+   "wiki": "Princess Bay",
+   "coordinates": {
+    "lat": -41.34443,
+    "lng": 174.78807
+   },
+   "coordinates_source": "wikipedia:Princess Bay",
+   "views": 572,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Princess_Bay",
+    "https://en.wikipedia.org/wiki/Category:Beaches_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Bays_of_the_Wellington_Region",
+    "https://www.openstreetmap.org/node/5367352004"
+   ],
+   "note": "beach; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Staglands Wildlife Reserve",
+   "wiki": "Staglands Wildlife Reserve",
+   "coordinates": {
+    "lat": -40.9874,
+    "lng": 175.1233
+   },
+   "coordinates_source": "wikipedia:Staglands Wildlife Reserve",
+   "views": 567,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Hutt_Valley",
+    "https://en.wikivoyage.org/wiki/Wellington/Upper_Hutt",
+    "https://www.wellingtonnz.com/visit/see-and-do/staglands-wildlife-reserve",
+    "https://www.wellingtonnz.com/visit/see-and-do/things-to-do-hutt-valley"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Staglands_Wildlife_Reserve",
+    "https://en.wikipedia.org/wiki/Category:Upper_Hutt",
+    "https://www.openstreetmap.org/way/1246221711"
+   ],
+   "note": "wildlife park"
+  },
+  {
+   "name": "Pūkaha Mount Bruce National Wildlife Centre",
+   "wiki": "Pūkaha National Wildlife Centre",
+   "coordinates": {
+    "lat": -40.7211,
+    "lng": 175.6399
+   },
+   "coordinates_source": "wikipedia:Pūkaha National Wildlife Centre",
+   "views": 563,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wairarapa",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wairarapa/places/pukaha-mount-bruce-wildlife-centre/",
+    "https://www.wellingtonnz.com/visit/see-and-do/pukaha-national-wildlife-centre",
+    "https://www.wellingtonnz.com/visit/wairarapa",
+    "https://wairarapanz.com/products/pukaha-national-wildlife-centre-self-guided-entry"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Pūkaha_National_Wildlife_Centre",
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Protected_areas_of_the_Wellington_Region",
+    "https://www.openstreetmap.org/way/1075469997"
+   ],
+   "note": "wildlife centre; earlier partial pass listed this as: Pukaha Mount Bruce (30 views)"
+  },
+  {
+   "name": "Pātaka Art + Museum",
+   "wiki": "Pātaka Art + Museum",
+   "coordinates": {
+    "lat": -41.13164,
+    "lng": 174.83961
+   },
+   "coordinates_source": "wikipedia:Pātaka Art + Museum",
+   "views": 528,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/Porirua",
+    "https://www.wellingtonnz.com/visit/see-and-do/pataka-art-museum",
+    "https://www.wellingtonnz.com/visit/porirua"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Pātaka_Art_+_Museum",
+    "https://en.wikipedia.org/wiki/Category:Porirua",
+    "https://www.openstreetmap.org/node/195201821"
+   ],
+   "note": "museum/gallery"
+  },
+  {
+   "name": "Bolton Street Memorial Park",
+   "wiki": "Bolton Street Cemetery",
+   "coordinates": {
+    "lat": -41.27889,
+    "lng": 174.77306
+   },
+   "coordinates_source": "wikipedia:Bolton Street Cemetery",
+   "views": 511,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Bolton_Street_Cemetery",
+    "https://en.wikipedia.org/wiki/Category:Parks_in_Wellington_City",
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_Wellington_City"
+   ],
+   "note": "cemetery/heritage park"
+  },
+  {
+   "name": "The White Swan Hotel (Greytown)",
+   "wiki": "The White Swan Hotel, Greytown",
+   "coordinates": {
+    "lat": -41.0808,
+    "lng": 175.4601
+   },
+   "coordinates_source": "wikipedia:The White Swan Hotel, Greytown",
+   "views": 504,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/trails/greytown-to-woodside-trail"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/The_White_Swan_Hotel,_Greytown",
+    "https://en.wikipedia.org/wiki/Category:Buildings_and_structures_in_the_Wairarapa",
+    "https://en.wikipedia.org/wiki/Category:South_Wairarapa_District",
+    "https://www.openstreetmap.org/way/974046186"
+   ],
+   "note": "historic hotel"
+  },
+  {
+   "name": "Taputeranga Marine Reserve",
+   "wiki": "Taputeranga Marine Reserve",
+   "coordinates": {
+    "lat": -41.35317,
+    "lng": 174.76337
+   },
+   "coordinates_source": "wikipedia:Taputeranga Marine Reserve",
+   "views": 502,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/taputeranga-marine-reserve/"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Taputeranga_Marine_Reserve",
+    "https://en.wikipedia.org/wiki/Category:Protected_areas_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Wellington_City",
+    "https://www.openstreetmap.org/relation/2883352"
+   ],
+   "note": "marine reserve"
+  },
+  {
+   "name": "Pāuatahanui Wildlife Reserve",
+   "wiki": "Pāuatahanui Wildlife Reserve",
+   "coordinates": {
+    "lat": -41.10246,
+    "lng": 174.91436
+   },
+   "coordinates_source": "wikipedia:Pāuatahanui Wildlife Reserve",
+   "views": 500,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/pauatahanui-wildlife-reserve/"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Pāuatahanui_Wildlife_Reserve",
+    "https://en.wikipedia.org/wiki/Category:Protected_areas_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Landforms_of_the_Wellington_Region",
+    "https://www.openstreetmap.org/relation/18194546"
+   ],
+   "note": "wildlife reserve"
+  },
+  {
+   "name": "Bartons Bush (Trentham Memorial Park)",
+   "wiki": "Barton's Bush",
+   "coordinates": {
+    "lat": -41.1308,
+    "lng": 175.02915
+   },
+   "coordinates_source": "wikipedia:Barton's Bush",
+   "views": 493,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/Upper_Hutt"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Barton's_Bush",
+    "https://en.wikipedia.org/wiki/Category:Parks_in_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Upper_Hutt"
+   ],
+   "note": "native bush remnant"
+  },
+  {
+   "name": "East Harbour Regional Park",
+   "wiki": "East Harbour Regional Park",
+   "coordinates": {
+    "lat": -41.27971,
+    "lng": 174.93197
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/relation/18664645",
+   "views": 489,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/trails/east-harbour-regional-park"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/East_Harbour_Regional_Park",
+    "https://en.wikipedia.org/wiki/Category:East_Harbour_Regional_Park",
+    "https://en.wikipedia.org/wiki/Category:Regional_parks_of_the_Wellington_Region"
+   ],
+   "note": "regional park"
+  },
+  {
+   "name": "Cannon Point Walkway",
+   "wiki": "Cannon Point Walkway",
+   "coordinates": {
+    "lat": -41.0883,
+    "lng": 175.0644
+   },
+   "coordinates_source": "wikipedia:Cannon Point Walkway",
+   "views": 456,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/trails/cannon-point-walkway"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Cannon_Point_Walkway",
+    "https://en.wikipedia.org/wiki/Category:Akatarawa_Forest",
+    "https://en.wikipedia.org/wiki/Category:Hiking_and_tramping_tracks_in_the_Wellington_Region"
+   ],
+   "note": "walking track"
+  },
+  {
+   "name": "Sinclair Head / Te Rimurapa",
+   "wiki": "Sinclair Head",
+   "coordinates": {
+    "lat": -41.3625,
+    "lng": 174.71667
+   },
+   "coordinates_source": "wikipedia:Sinclair Head",
+   "views": 451,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Sinclair_Head",
+    "https://en.wikipedia.org/wiki/Category:Headlands_of_the_Wellington_Region",
+    "https://www.openstreetmap.org/node/7016702532"
+   ],
+   "note": "headland/coast; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Kāpiti Marine Reserve",
+   "wiki": "Kapiti Marine Reserve",
+   "coordinates": {
+    "lat": -40.8811,
+    "lng": 174.9489
+   },
+   "coordinates_source": "wikipedia:Kapiti Marine Reserve",
+   "views": 435,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/kapiti-marine-reserve/"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Kapiti_Marine_Reserve",
+    "https://en.wikipedia.org/wiki/Category:Protected_areas_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Kapiti_Island",
+    "https://www.openstreetmap.org/relation/2883511"
+   ],
+   "note": "marine reserve"
+  },
+  {
+   "name": "Te Raekaihau Point",
+   "wiki": "Te Raekaihau Point",
+   "coordinates": {
+    "lat": -41.34556,
+    "lng": 174.79056
+   },
+   "coordinates_source": "wikipedia:Te Raekaihau Point",
+   "views": 419,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Te_Raekaihau_Point",
+    "https://en.wikipedia.org/wiki/Category:Headlands_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Wellington_City",
+    "https://www.openstreetmap.org/node/1987969089"
+   ],
+   "note": "headland; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Tauwharenīkau River",
+   "wiki": "Tauwharenīkau River",
+   "coordinates": {
+    "lat": -41.18333,
+    "lng": 175.3
+   },
+   "coordinates_source": "wikipedia:Tauwharenīkau River",
+   "views": 418,
+   "counted_sources": [
+    "https://wairarapanz.com/products/tauwharenikau-river"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Tauwharenīkau_River",
+    "https://en.wikipedia.org/wiki/Category:Rivers_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Wellington_Region_river_stubs"
+   ],
+   "note": "river/swimming"
+  },
+  {
+   "name": "Wainuiomata Regional Park",
+   "wiki": "Wainuiomata Regional Park",
+   "coordinates": {
+    "lat": -41.2792,
+    "lng": 174.9844
+   },
+   "coordinates_source": "wikipedia:Wainuiomata Regional Park",
+   "views": 416,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/hutt-valley/wainuiomata"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Wainuiomata_Regional_Park",
+    "https://en.wikipedia.org/wiki/Category:Regional_parks_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Lower_Hutt"
+   ],
+   "note": "regional park"
+  },
+  {
+   "name": "Kau Point Battery",
+   "wiki": "Kau Point Battery",
+   "coordinates": {
+    "lat": -41.289,
+    "lng": 174.831
+   },
+   "coordinates_source": "wikipedia:Kau Point Battery",
+   "views": 414,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Kau_Point_Battery",
+    "https://en.wikipedia.org/wiki/Category:Miramar_Peninsula",
+    "https://en.wikipedia.org/wiki/Category:Buildings_and_structures_in_Wellington_City",
+    "https://www.openstreetmap.org/node/6717968767"
+   ],
+   "note": "historic battery; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Makara Peak Mountain Bike Park",
+   "wiki": "Mākara Peak Mountain Bike Park",
+   "coordinates": {
+    "lat": -41.29695,
+    "lng": 174.72224
+   },
+   "coordinates_source": "wikipedia:Mākara Peak Mountain Bike Park",
+   "views": 397,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City",
+    "https://www.wellingtonnz.com/visit/trails/makara-peak-mountain-bike-park"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Mākara_Peak_Mountain_Bike_Park",
+    "https://en.wikipedia.org/wiki/Category:Sport_in_Wellington_City"
+   ],
+   "note": "mountain bike park"
+  },
+  {
+   "name": "Trentham Memorial Park",
+   "wiki": "Trentham Memorial Park",
+   "coordinates": {
+    "lat": -41.132,
+    "lng": 175.029
+   },
+   "coordinates_source": "wikipedia:Trentham Memorial Park",
+   "views": 397,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Trentham_Memorial_Park",
+    "https://en.wikipedia.org/wiki/Category:Parks_in_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Upper_Hutt"
+   ],
+   "note": "park; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Pukeamoamo / Mitre",
+   "wiki": "Pukeamoamo / Mitre",
+   "coordinates": {
+    "lat": -40.8,
+    "lng": 175.45
+   },
+   "coordinates_source": "wikipedia:Pukeamoamo / Mitre",
+   "views": 394,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Pukeamoamo_/_Mitre",
+    "https://en.wikipedia.org/wiki/Category:Mountains_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Carterton_District",
+    "https://www.openstreetmap.org/node/2933603303"
+   ],
+   "note": "peak; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Cobblestones Museum",
+   "wiki": "Cobblestones Museum",
+   "coordinates": {
+    "lat": -41.08531,
+    "lng": 175.4556
+   },
+   "coordinates_source": "wikipedia:Cobblestones Museum",
+   "views": 394,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/plan-your-trip/top-things-to-see-and-do-in-wairarapa",
+    "https://wairarapanz.com/products/cobblestones-museum"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Cobblestones_Museum",
+    "https://en.wikipedia.org/wiki/Category:Museums_in_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Buildings_and_structures_in_the_Wairarapa",
+    "https://www.openstreetmap.org/way/787835444"
+   ],
+   "note": "museum"
+  },
+  {
+   "name": "Ōtaki Forks",
+   "wiki": "Ōtaki Forks",
+   "coordinates": {
+    "lat": -40.868,
+    "lng": 175.235
+   },
+   "coordinates_source": "wikipedia:Ōtaki Forks",
+   "views": 392,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Kapiti_Coast",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/tararua-forest-park/otaki-forks-area/"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Ōtaki_Forks",
+    "https://en.wikipedia.org/wiki/Category:Kāpiti_Coast_District"
+   ],
+   "note": "trailhead/gorge"
+  },
+  {
+   "name": "Taupō Swamp",
+   "wiki": "Taupō Swamp",
+   "coordinates": {
+    "lat": -41.08333,
+    "lng": 174.86667
+   },
+   "coordinates_source": "wikipedia:Taupō Swamp",
+   "views": 389,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Taupō_Swamp",
+    "https://en.wikipedia.org/wiki/Category:Wetlands_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Porirua"
+   ],
+   "note": "wetland; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Pencarrow Lakes",
+   "wiki": "Lake Kohangapiripiri",
+   "coordinates": {
+    "lat": -41.361,
+    "lng": 174.8569
+   },
+   "coordinates_source": "wikipedia:Lake Kohangapiripiri",
+   "views": 386,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/pencarrow-lakes/"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Lake_Kohangapiripiri",
+    "https://en.wikipedia.org/wiki/Category:East_Harbour_Regional_Park",
+    "https://en.wikipedia.org/wiki/Category:Lakes_of_the_Wellington_Region"
+   ],
+   "note": "lakes/wetland"
+  },
+  {
+   "name": "Aston Norwood Gardens",
+   "wiki": "Aston Norwood Gardens",
+   "coordinates": {
+    "lat": -41.08139,
+    "lng": 175.20667
+   },
+   "coordinates_source": "wikipedia:Aston Norwood Gardens",
+   "views": 381,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/see-and-do/things-to-do-hutt-valley"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Aston_Norwood_Gardens",
+    "https://en.wikipedia.org/wiki/Category:Gardens_in_the_Wellington_Region"
+   ],
+   "note": "garden"
+  },
+  {
+   "name": "Boom Rock",
+   "wiki": "Boom Rock",
+   "coordinates": {
+    "lat": -41.17653,
+    "lng": 174.73917
+   },
+   "coordinates_source": "wikipedia:Boom Rock",
+   "views": 374,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Boom_Rock",
+    "https://en.wikipedia.org/wiki/Category:Islands_of_the_Wellington_Region"
+   ],
+   "note": "coastal rock formation; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Te Wharewaka o Pōneke",
+   "wiki": "Te Wharewaka o Pōneke",
+   "coordinates": {
+    "lat": -41.28922,
+    "lng": 174.77975
+   },
+   "coordinates_source": "wikipedia:Te Wharewaka o Pōneke",
+   "views": 333,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/see-and-do/wharewaka-o-poneke"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Te_Wharewaka_o_Pōneke",
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_Wellington_City",
+    "https://en.wikipedia.org/wiki/Category:Wellington_Waterfront"
+   ],
+   "note": "cultural venue/waterfront"
+  },
+  {
+   "name": "St Alban's Church, Pāuatahanui",
+   "wiki": "St Alban's Church, Pauatahanui",
+   "coordinates": {
+    "lat": -41.10694,
+    "lng": 174.91778
+   },
+   "coordinates_source": "wikipedia:St Alban's Church, Pauatahanui",
+   "views": 325,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/St_Alban's_Church,_Pauatahanui",
+    "https://en.wikipedia.org/wiki/Category:Buildings_and_structures_in_Porirua",
+    "https://en.wikipedia.org/wiki/Category:Heritage_New_Zealand_Category_2_historic_places_in_the_Wellington_Region"
+   ],
+   "note": "historic church; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Wairarapa Railway Restoration Society (Carterton Station)",
+   "wiki": "Wairarapa Railway Restoration Society",
+   "coordinates": {
+    "lat": -41.0217,
+    "lng": 175.5234
+   },
+   "coordinates_source": "wikipedia:Wairarapa Railway Restoration Society",
+   "views": 325,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Wairarapa_Railway_Restoration_Society",
+    "https://en.wikipedia.org/wiki/Category:Museums_in_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Carterton,_New_Zealand",
+    "https://www.openstreetmap.org/way/374045237"
+   ],
+   "note": "heritage railway station; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "New Zealand Olympic Museum",
+   "wiki": "New Zealand Olympic Museum",
+   "coordinates": {
+    "lat": -41.28518,
+    "lng": 174.77839
+   },
+   "coordinates_source": "wikipedia:New Zealand Olympic Museum",
+   "views": 289,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/New_Zealand_Olympic_Museum",
+    "https://en.wikipedia.org/wiki/Category:Museums_in_Wellington_City"
+   ],
+   "note": "museum; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Raumati Marine Gardens",
+   "wiki": "Raumati Marine Gardens",
+   "coordinates": {
+    "lat": -40.9183,
+    "lng": 174.9799
+   },
+   "coordinates_source": "wikipedia:Raumati Marine Gardens",
+   "views": 282,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Paraparaumu"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Raumati_Marine_Gardens",
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Parks_in_the_Wellington_Region",
+    "https://www.openstreetmap.org/way/149724919"
+   ],
+   "note": "garden/park"
+  },
+  {
+   "name": "Longbush Cottage Gardens",
+   "wiki": "Longbush Cottage",
+   "coordinates": {
+    "lat": -41.1687,
+    "lng": 175.5946
+   },
+   "coordinates_source": "wikipedia:Longbush Cottage",
+   "views": 262,
+   "counted_sources": [
+    "https://wairarapanz.com/products/longbush-cottage-gardens"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Longbush_Cottage",
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Gardens_in_the_Wellington_Region"
+   ],
+   "note": "garden/historic cottage"
+  },
+  {
+   "name": "Fort Parramatta",
+   "wiki": "Fort Parramatta",
+   "coordinates": {
+    "lat": -41.09896,
+    "lng": 174.86635
+   },
+   "coordinates_source": "wikipedia:Fort Parramatta",
+   "views": 238,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Fort_Parramatta",
+    "https://en.wikipedia.org/wiki/Category:Buildings_and_structures_in_Porirua",
+    "https://en.wikipedia.org/wiki/Category:Paremata"
+   ],
+   "note": "historic fort ruin; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Paekākāriki Station Museum",
+   "wiki": "Paekakariki Station Precinct Trust",
+   "coordinates": {
+    "lat": -40.9872,
+    "lng": 174.9543
+   },
+   "coordinates_source": "wikipedia:Paekakariki Station Precinct Trust",
+   "views": 233,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Paekākāriki"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Paekakariki_Station_Precinct_Trust",
+    "https://en.wikipedia.org/wiki/Category:Museums_in_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Kāpiti_Coast_District"
+   ],
+   "note": "museum"
+  },
+  {
+   "name": "Papakōwhai Homestead",
+   "wiki": "Papakowhai Homestead",
+   "coordinates": {
+    "lat": -41.11564,
+    "lng": 174.85976
+   },
+   "coordinates_source": "wikipedia:Papakowhai Homestead",
+   "views": 211,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Papakowhai_Homestead",
+    "https://en.wikipedia.org/wiki/Category:Buildings_and_structures_in_Porirua",
+    "https://en.wikipedia.org/wiki/Category:Heritage_New_Zealand_Category_1_historic_places_in_the_Wellington_Region"
+   ],
+   "note": "historic homestead; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Karapoti Gorge",
+   "wiki": "Karapoti Gorge",
+   "coordinates": {
+    "lat": -41.05825,
+    "lng": 175.09245
+   },
+   "coordinates_source": "wikipedia:Karapoti Gorge",
+   "views": 196,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/trails/karapoti-challenge-course"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Karapoti_Gorge",
+    "https://en.wikipedia.org/wiki/Category:Akatarawa_Forest",
+    "https://en.wikipedia.org/wiki/Category:Rock_formations_of_the_Wellington_Region"
+   ],
+   "note": "gorge/mountain bike course"
+  },
+  {
+   "name": "Ōtaki Museum",
+   "wiki": "Ōtaki Museum",
+   "coordinates": {
+    "lat": -40.75268,
+    "lng": 175.13908
+   },
+   "coordinates_source": "wikipedia:Ōtaki Museum",
+   "views": 155,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Otaki"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Ōtaki_Museum",
+    "https://en.wikipedia.org/wiki/Category:Museums_in_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Ōtaki,_New_Zealand",
+    "https://www.openstreetmap.org/way/960095665"
+   ],
+   "note": "museum"
+  },
+  {
+   "name": "Te Raukura ki Kāpiti",
+   "wiki": "Te Raukura ki Kāpiti",
+   "coordinates": {
+    "lat": -40.92083,
+    "lng": 174.98417
+   },
+   "coordinates_source": "wikipedia:Te Raukura ki Kāpiti",
+   "views": 138,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Paraparaumu"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Te_Raukura_ki_Kāpiti",
+    "https://en.wikipedia.org/wiki/Category:Buildings_and_structures_in_the_Kāpiti_Coast_District"
+   ],
+   "note": "civic/cultural centre"
+  },
+  {
+   "name": "Cape Palliser",
+   "wiki": "Cape Palliser / Mātakitaki-a-Kupe",
+   "coordinates": {
+    "lat": -41.612,
+    "lng": 175.273
+   },
+   "coordinates_source": "wikipedia:Cape Palliser / Mātakitaki-a-Kupe",
+   "views": 78,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wairarapa",
+    "https://wairarapanz.com/products/cape-palliser"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Cape_Palliser_/_Mātakitaki-a-Kupe",
+    "https://en.wikipedia.org/wiki/Category:Headlands_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:Cook_Strait",
+    "https://www.openstreetmap.org/node/1987970978"
+   ],
+   "note": "cape/lighthouse/seal colony"
+  },
+  {
+   "name": "Ngā Rā-a-Kupe",
+   "wiki": "Ngā Rā-a-Kupe",
+   "coordinates": {
+    "lat": -41.60448,
+    "lng": 175.26616
+   },
+   "coordinates_source": "wikipedia:Ngā Rā-a-Kupe",
+   "views": 52,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Ngā_Rā-a-Kupe",
+    "https://en.wikipedia.org/wiki/Category:Rock_formations_of_the_Wellington_Region",
+    "https://en.wikipedia.org/wiki/Category:South_Wairarapa_District"
+   ],
+   "note": "rock formation; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Cable Car Museum",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.28535,
+    "lng": 174.76782
+   },
+   "coordinates_source": "wikipedia:Wellington Cable Car",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Category:Heritage_New_Zealand_Category_2_historic_places_in_the_Wellington_Region",
+    "https://www.openstreetmap.org/way/252061659"
+   ],
+   "note": "museum; wikipedia title \"Cable Car Winding House\" only redirects to the broader article \"Wellington Cable Car\": views counted as 0"
+  },
+  {
+   "name": "Brooklyn Wind Turbine",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.311,
+    "lng": 174.7451
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Wellington/City",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City",
+    "https://www.wellingtonnz.com/visit/trails/waimapihi-reserve-brooklyn-turbine-and-te-kopahou-reserve/brooklyn-wind-turbine"
+   ],
+   "other_sources": [
+    "https://www.openstreetmap.org/node/172485632"
+   ],
+   "note": "viewpoint/landmark"
+  },
+  {
+   "name": "Holocaust Centre of New Zealand",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.29723,
+    "lng": 174.77236
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Wellington/City",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City"
+   ],
+   "other_sources": [
+    "https://www.openstreetmap.org/node/2628264189"
+   ],
+   "note": "museum"
+  },
+  {
+   "name": "National Tattoo Museum of New Zealand",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.29416,
+    "lng": 174.77248
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Wellington/City",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City"
+   ],
+   "other_sources": [],
+   "note": "museum"
+  },
+  {
+   "name": "Plimmer's Ark",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.28588,
+    "lng": 174.77624
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/node/7012936145",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City"
+   ],
+   "other_sources": [],
+   "note": "heritage display; no English Wikipedia article at \"Plimmer's Ark\""
+  },
+  {
+   "name": "Frank Kitts Park",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.2872,
+    "lng": 174.779
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Wellington/City",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City"
+   ],
+   "other_sources": [],
+   "note": "waterfront park"
+  },
+  {
+   "name": "Art Deco Heritage Trail",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.2889,
+    "lng": 174.7772
+   },
+   "coordinates_source": "approximate: central Wellington (trail covers the CBD); no source coordinate",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City"
+   ],
+   "other_sources": [],
+   "note": "walking trail"
+  },
+  {
+   "name": "Skyline Walkway",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.2723,
+    "lng": 174.7048
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Wellington/City",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City",
+    "https://www.wellingtonnz.com/visit/trails/skyline-walkway"
+   ],
+   "other_sources": [
+    "https://www.openstreetmap.org/relation/9286961"
+   ],
+   "note": "walking track"
+  },
+  {
+   "name": "The Enormous Crocodile",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.29066,
+    "lng": 174.78292
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Wellington/City",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/City"
+   ],
+   "other_sources": [],
+   "note": "public art"
+  },
+  {
+   "name": "Harbourside Market",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.2913,
+    "lng": 174.7833
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/node/6091848775",
+   "views": 0,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/see-and-do/harbourside-market"
+   ],
+   "other_sources": [],
+   "note": "weekly market (event-style); no English Wikipedia article at \"Harbourside Market\"; weekly/event-style: fails permanent-venue test"
+  },
+  {
+   "name": "Wellington Writers Walk",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.2865,
+    "lng": 174.779
+   },
+   "coordinates_source": "approximate: Wellington waterfront (walk runs along it); no source coordinate",
+   "views": 0,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/see-and-do/hidden-wellington-experiences"
+   ],
+   "other_sources": [],
+   "note": "public art trail"
+  },
+  {
+   "name": "Roseneath Park Slide",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": "not found (no source coordinate; resolve in step 3)",
+   "views": 0,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/see-and-do/hidden-wellington-experiences"
+   ],
+   "other_sources": [],
+   "note": "playground/quirky"
+  },
+  {
+   "name": "Seal Coast Safari",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": "not found (no source coordinate; resolve in step 3)",
+   "views": 0,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/see-and-do/nature-experiences"
+   ],
+   "other_sources": [],
+   "note": "tour operator (south coast seals); operator, not a place (A spot is a place)"
+  },
+  {
+   "name": "Taputeranga Island",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.33773,
+    "lng": 174.77231
+   },
+   "coordinates_source": "wikipedia:Island Bay",
+   "views": 0,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Category:Islands_of_the_Wellington_Region"
+   ],
+   "note": "island; wikipedia title \"Taputeranga Island\" only redirects to the broader article \"Island Bay\": views counted as 0; no counted source found: named only by Wikipedia category / OSM (not counted)"
+  },
+  {
+   "name": "Wellington Waterfront",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.2865,
+    "lng": 174.779
+   },
+   "coordinates_source": "wikivoyage:Wellington/City (Frank Kitts Park / waterfront, approximate)",
+   "views": 0,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/see-and-do/top-10-wellington-must-dos"
+   ],
+   "other_sources": [],
+   "note": "waterfront"
+  },
+  {
+   "name": "Southern Walkway",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.31696,
+    "lng": 174.78501
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/relation/9420111",
+   "views": 0,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/trails/southern-walkway"
+   ],
+   "other_sources": [
+    "https://www.openstreetmap.org/relation/9420111"
+   ],
+   "note": "walking track"
+  },
+  {
+   "name": "Northern Walkway",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.25521,
+    "lng": 174.77914
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/relation/6826736",
+   "views": 0,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/trails/northern-walkway"
+   ],
+   "other_sources": [
+    "https://www.openstreetmap.org/relation/6826736"
+   ],
+   "note": "walking track"
+  },
+  {
+   "name": "Mākara Walkway",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.22446,
+    "lng": 174.70059
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/relation/17534026",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/makara-beach-area/things-to-do/makara-walkway/",
+    "https://www.wellingtonnz.com/visit/trails/makara-walkway"
+   ],
+   "other_sources": [
+    "https://www.openstreetmap.org/relation/17534026"
+   ],
+   "note": "walking track"
+  },
+  {
+   "name": "Eastbourne beaches",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.2998,
+    "lng": 174.8979
+   },
+   "coordinates_source": "wikipedia:Eastbourne, New Zealand (town centre)",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/Lower_Hutt"
+   ],
+   "other_sources": [],
+   "note": "beaches"
+  },
+  {
+   "name": "Wild Coast Track (Turakirae)",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.43789,
+    "lng": 174.91825
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/node/1987970461",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/turakirae-head-scientific-reserve/things-to-do/wild-coast-track/"
+   ],
+   "other_sources": [],
+   "note": "walking track"
+  },
+  {
+   "name": "Petone Beach",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.22525,
+    "lng": 174.86274
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/749138049",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/Lower_Hutt"
+   ],
+   "other_sources": [],
+   "note": "beach"
+  },
+  {
+   "name": "Korokoro Dam / Korokoro Stream walk",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.19768,
+    "lng": 174.87454
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/102754699",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/Lower_Hutt"
+   ],
+   "other_sources": [],
+   "note": "walking track"
+  },
+  {
+   "name": "Hutt River Trail",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.10403,
+    "lng": 175.09172
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/36332236",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/Lower_Hutt",
+    "https://www.wellingtonnz.com/visit/trails/hutt-river-trail"
+   ],
+   "other_sources": [
+    "https://www.openstreetmap.org/way/36332236"
+   ],
+   "note": "river trail"
+  },
+  {
+   "name": "Whirinaki Whare Taonga",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.12628,
+    "lng": 175.0671
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/1013429347",
+   "views": 0,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/see-and-do/things-to-do-hutt-valley"
+   ],
+   "other_sources": [],
+   "note": "museum/art"
+  },
+  {
+   "name": "Brewtown Upper Hutt",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.13028,
+    "lng": 175.06907
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/1444827434",
+   "views": 0,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/see-and-do/brewtown-upper-hutt"
+   ],
+   "other_sources": [],
+   "note": "brewery precinct"
+  },
+  {
+   "name": "Wellington Rafting (Hutt River)",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": "not found (no source coordinate; resolve in step 3)",
+   "views": 0,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/see-and-do/wellington-rafting"
+   ],
+   "other_sources": [],
+   "note": "rafting operator; operator, not a place (A spot is a place)"
+  },
+  {
+   "name": "Harcourt Park",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.10171,
+    "lng": 175.09403
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/100892869",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/Upper_Hutt"
+   ],
+   "other_sources": [],
+   "note": "park"
+  },
+  {
+   "name": "California Park / Wellington Fault",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.10505,
+    "lng": 175.08769
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/150175396",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/Upper_Hutt"
+   ],
+   "other_sources": [],
+   "note": "fault feature"
+  },
+  {
+   "name": "Tunnel Gully",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.1039,
+    "lng": 175.1534
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/371534950 (Tunnel Gully Picnic Area)",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Hutt_Valley",
+    "https://en.wikivoyage.org/wiki/Wellington/Upper_Hutt",
+    "https://www.wellingtonnz.com/visit/trails/tunnel-gully/tanes-track"
+   ],
+   "other_sources": [],
+   "note": "recreation area/walks; no English Wikipedia article at \"Tunnel Gully\""
+  },
+  {
+   "name": "Rimutaka Hill Trig / Summit Lookout",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": "not found (no source coordinate; resolve in step 3)",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Hutt_Valley",
+    "https://en.wikivoyage.org/wiki/Wellington/Upper_Hutt"
+   ],
+   "other_sources": [],
+   "note": "viewpoint"
+  },
+  {
+   "name": "Catchpool Valley / Catchpool Loop Walk",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.3514,
+    "lng": 174.9234
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/162155340",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/remutaka-forest-park/things-to-do/tracks/catchpool-loop-walk/"
+   ],
+   "other_sources": [],
+   "note": "walk"
+  },
+  {
+   "name": "Orongorongo Track",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.34499,
+    "lng": 174.95382
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/relation/11774020",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/remutaka-forest-park/things-to-do/tracks/orongorongo-track/",
+    "https://www.wellingtonnz.com/visit/trails/orongorongo-track"
+   ],
+   "other_sources": [
+    "https://www.openstreetmap.org/relation/11774020"
+   ],
+   "note": "walking track"
+  },
+  {
+   "name": "Nga Taonga Nature Walk",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.3498,
+    "lng": 174.92421
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/163559422",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/remutaka-forest-park/things-to-do/tracks/nga-taonga-nature-walk/",
+    "https://www.wellingtonnz.com/visit/trails/nga-taonga-nature-walk"
+   ],
+   "other_sources": [],
+   "note": "walk"
+  },
+  {
+   "name": "Whakanui Track",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.30152,
+    "lng": 174.9868
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/relation/11772724",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/remutaka-forest-park/things-to-do/tracks/whakanui-track/"
+   ],
+   "other_sources": [
+    "https://www.openstreetmap.org/relation/11772724"
+   ],
+   "note": "walking track"
+  },
+  {
+   "name": "Five Mile Loop Track",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.3484,
+    "lng": 174.9298
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/87905502",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/remutaka-forest-park/things-to-do/tracks/five-mile-loop-track/"
+   ],
+   "other_sources": [],
+   "note": "walk"
+  },
+  {
+   "name": "Big Bend Track",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.33362,
+    "lng": 174.99078
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/relation/11769351",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/remutaka-forest-park/things-to-do/tracks/big-bend-track/"
+   ],
+   "other_sources": [
+    "https://www.openstreetmap.org/relation/11769351"
+   ],
+   "note": "walk"
+  },
+  {
+   "name": "Butcher Track",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.35423,
+    "lng": 174.93751
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/41789557",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/remutaka-forest-park/things-to-do/tracks/butcher-track/"
+   ],
+   "other_sources": [],
+   "note": "walk"
+  },
+  {
+   "name": "Tawa Grove",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.35226,
+    "lng": 174.91125
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/234729485",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/remutaka-forest-park/things-to-do/tracks/tawa-grove/"
+   ],
+   "other_sources": [],
+   "note": "walk"
+  },
+  {
+   "name": "Papatahi Crossing",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.32505,
+    "lng": 175.07732
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/234729484",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/remutaka-forest-park/things-to-do/tracks/papatahi-crossing/"
+   ],
+   "other_sources": [],
+   "note": "walking track"
+  },
+  {
+   "name": "McKerrow Track",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.31501,
+    "lng": 174.97164
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/87906840",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/remutaka-forest-park/things-to-do/tracks/mckerrow-track/"
+   ],
+   "other_sources": [],
+   "note": "walking track"
+  },
+  {
+   "name": "Remutaka Cycle Trail",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.10781,
+    "lng": 175.1365
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/854439544",
+   "views": 0,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/wairarapa",
+    "https://www.wellingtonnz.com/visit/hutt-valley",
+    "https://wairarapanz.com/products/remutaka-cycle-trail"
+   ],
+   "other_sources": [],
+   "note": "cycle trail (Great Ride)"
+  },
+  {
+   "name": "Stansborough Mill",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": "not found (no source coordinate; resolve in step 3)",
+   "views": 0,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/shopping/stansborough-mill"
+   ],
+   "other_sources": [],
+   "note": "mill/shop; no English Wikipedia article at \"Stansborough\""
+  },
+  {
+   "name": "Adrenalin Forest",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.12398,
+    "lng": 174.85153
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/953615409",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wellington/Porirua",
+    "https://www.wellingtonnz.com/visit/see-and-do/adrenalin-forest"
+   ],
+   "other_sources": [],
+   "note": "aerial adventure park"
+  },
+  {
+   "name": "Te Onepoto Loop Track",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.10096,
+    "lng": 174.8572
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/relation/17767420",
+   "views": 0,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/porirua"
+   ],
+   "other_sources": [
+    "https://www.openstreetmap.org/relation/17767420"
+   ],
+   "note": "walk"
+  },
+  {
+   "name": "Wellington Tramway Museum",
+   "wiki": null,
+   "coordinates": {
+    "lat": -40.9693,
+    "lng": 174.9805
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Paraparaumu",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Paraparaumu"
+   ],
+   "other_sources": [
+    "https://www.openstreetmap.org/way/345800616"
+   ],
+   "note": "museum/heritage tram"
+  },
+  {
+   "name": "Paekākāriki Beach",
+   "wiki": null,
+   "coordinates": {
+    "lat": -40.97444,
+    "lng": 174.95527
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/200242132",
+   "views": 0,
+   "counted_sources": [
+    "https://www.visitkapiti.co.nz/see-and-do/beaches/"
+   ],
+   "other_sources": [
+    "https://www.openstreetmap.org/way/200242132"
+   ],
+   "note": "beach"
+  },
+  {
+   "name": "Marine Memorial (US Marines, Queen Elizabeth Park)",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": "not found (no source coordinate; resolve in step 3)",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Paekākāriki"
+   ],
+   "other_sources": [],
+   "note": "memorial"
+  },
+  {
+   "name": "Whareroa Farm",
+   "wiki": null,
+   "coordinates": {
+    "lat": -40.97938,
+    "lng": 174.98868
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/727441847",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/whareroa-farm/"
+   ],
+   "other_sources": [],
+   "note": "farm park/walks; no English Wikipedia article at \"Whareroa Farm\""
+  },
+  {
+   "name": "Waikanae Beach",
+   "wiki": null,
+   "coordinates": {
+    "lat": -40.875,
+    "lng": 175.06389
+   },
+   "coordinates_source": "wikipedia:Waikanae",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Waikanae",
+    "https://www.visitkapiti.co.nz/see-and-do/beaches/"
+   ],
+   "other_sources": [
+    "https://www.openstreetmap.org/way/208193795"
+   ],
+   "note": "beach; wikipedia title \"Waikanae Beach\" only redirects to the broader article \"Waikanae\": views counted as 0"
+  },
+  {
+   "name": "Waikanae Estuary Scientific Reserve",
+   "wiki": null,
+   "coordinates": {
+    "lat": -40.87739,
+    "lng": 175.01193
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/1241708406",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Kapiti_Coast",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/waikanae-area/"
+   ],
+   "other_sources": [],
+   "note": "estuary reserve"
+  },
+  {
+   "name": "Kāpiti Coast Museum (Waikanae)",
+   "wiki": null,
+   "coordinates": {
+    "lat": -40.87795,
+    "lng": 175.06707
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/333201753",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Waikanae"
+   ],
+   "other_sources": [],
+   "note": "museum"
+  },
+  {
+   "name": "Hemi Matenga Scenic Reserve",
+   "wiki": null,
+   "coordinates": {
+    "lat": -40.8697,
+    "lng": 175.088
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/relation/18235540",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Kapiti_Coast",
+    "https://www.wellingtonnz.com/visit/trails/hemi-matenga-scenic-reserve",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/waikanae-area/"
+   ],
+   "other_sources": [],
+   "note": "scenic reserve/walks"
+  },
+  {
+   "name": "Kohekohe Walk",
+   "wiki": null,
+   "coordinates": {
+    "lat": -40.87888,
+    "lng": 175.07768
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/892432036",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/waikanae-area/things-to-do/kohekohe-walk/",
+    "https://www.wellingtonnz.com/visit/trails/hemi-matenga-scenic-reserve/kohekohe-walk"
+   ],
+   "other_sources": [],
+   "note": "walk"
+  },
+  {
+   "name": "Parata Track",
+   "wiki": null,
+   "coordinates": {
+    "lat": -40.88083,
+    "lng": 175.08193
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/200097355",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/waikanae-area/things-to-do/parata-track/"
+   ],
+   "other_sources": [],
+   "note": "walking track"
+  },
+  {
+   "name": "Te Au Track",
+   "wiki": null,
+   "coordinates": {
+    "lat": -40.86947,
+    "lng": 175.08923
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/200097353",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/waikanae-area/things-to-do/te-au-track/"
+   ],
+   "other_sources": [],
+   "note": "walking track"
+  },
+  {
+   "name": "Mangaone Walkway",
+   "wiki": null,
+   "coordinates": {
+    "lat": -40.85885,
+    "lng": 175.15238
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/relation/17794690",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/waikanae-area/things-to-do/mangaone-walkway/"
+   ],
+   "other_sources": [
+    "https://www.openstreetmap.org/relation/17794690"
+   ],
+   "note": "walkway"
+  },
+  {
+   "name": "Waikanae Link Track",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": "not found (no source coordinate; resolve in step 3)",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/waikanae-area/things-to-do/waikanae-link-track/",
+    "https://www.wellingtonnz.com/visit/trails/waikanae-link-track"
+   ],
+   "other_sources": [],
+   "note": "walking track"
+  },
+  {
+   "name": "Coast 35",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": "not found (no source coordinate; resolve in step 3)",
+   "views": 0,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/trails/coast35"
+   ],
+   "other_sources": [],
+   "note": "coastal trail"
+  },
+  {
+   "name": "Ōtaki River Trail",
+   "wiki": null,
+   "coordinates": {
+    "lat": -40.7625,
+    "lng": 175.12572
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/relation/19135827",
+   "views": 0,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/trails/otaki-river-trail"
+   ],
+   "other_sources": [
+    "https://www.openstreetmap.org/relation/19135827"
+   ],
+   "note": "river trail"
+  },
+  {
+   "name": "Waiopehu Track",
+   "wiki": null,
+   "coordinates": {
+    "lat": -40.70263,
+    "lng": 175.35434
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/233688847",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/tararua-forest-park/things-to-do/tracks/waiopehu-track-poads-road-to-waiopehu-hut/"
+   ],
+   "other_sources": [],
+   "note": "walking track; DOC lists it under Wellington/Kāpiti but the coordinates fall just north of the regional boundary (Horowhenua)"
+  },
+  {
+   "name": "Field Hut and Table Top",
+   "wiki": null,
+   "coordinates": {
+    "lat": -40.9078,
+    "lng": 175.2562
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/842687539 (Field Hut)",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/tararua-forest-park/things-to-do/tracks/field-hut-and-table-top/"
+   ],
+   "other_sources": [],
+   "note": "walking track"
+  },
+  {
+   "name": "Tararua Northern Crossing",
+   "wiki": null,
+   "coordinates": {
+    "lat": -40.7357,
+    "lng": 175.4065
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/233688822 (Dora Track / Northern Crossing)",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/tararua-forest-park/things-to-do/tracks/tararua-northern-crossing/"
+   ],
+   "other_sources": [],
+   "note": "multi-day tramp"
+  },
+  {
+   "name": "Tararua Main Range Traverse",
+   "wiki": null,
+   "coordinates": {
+    "lat": -40.79076,
+    "lng": 175.43594
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/443033742",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/tararua-forest-park/things-to-do/tracks/tararua-main-range-traverse/"
+   ],
+   "other_sources": [],
+   "note": "multi-day tramp"
+  },
+  {
+   "name": "Ohau Gorge Track",
+   "wiki": null,
+   "coordinates": {
+    "lat": -40.6672,
+    "lng": 175.3749
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/1259265849 (Ōhau Gorge valley)",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/tararua-forest-park/things-to-do/tracks/ohau-gorge-track/"
+   ],
+   "other_sources": [],
+   "note": "walking track; DOC lists it under Wellington/Kāpiti but the coordinates fall just north of the regional boundary (Horowhenua)"
+  },
+  {
+   "name": "Kapakapanui Track",
+   "wiki": null,
+   "coordinates": {
+    "lat": -40.91523,
+    "lng": 175.1241
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/1246223368",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/tararua-forest-park/things-to-do/tracks/kapakapanui-track/"
+   ],
+   "other_sources": [],
+   "note": "walking track"
+  },
+  {
+   "name": "Waiotauru Track to Historic Mill",
+   "wiki": null,
+   "coordinates": {
+    "lat": -40.9232,
+    "lng": 175.1891
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/233688849",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/tararua-forest-park/things-to-do/tracks/waiotauru-track-to-historic-mill/"
+   ],
+   "other_sources": [],
+   "note": "walking track"
+  },
+  {
+   "name": "Poads Road to Ōtaki Forks Track",
+   "wiki": null,
+   "coordinates": {
+    "lat": -40.6605,
+    "lng": 175.3589
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/851920742 (Poads Road End)",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/tararua-forest-park/things-to-do/tracks/poads-road-to-otaki-forks-track/"
+   ],
+   "other_sources": [],
+   "note": "walking track; DOC lists it under Wellington/Kāpiti but the coordinates fall just north of the regional boundary (Horowhenua)"
+  },
+  {
+   "name": "Kiriwhakapapa Loop",
+   "wiki": null,
+   "coordinates": {
+    "lat": -40.811,
+    "lng": 175.5779
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/node/7855572721",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/tararua-forest-park/things-to-do/tracks/kiriwhakapapa-loop/",
+    "https://wairarapanz.com/products/kiriwhakapapa-loop"
+   ],
+   "other_sources": [],
+   "note": "walk"
+  },
+  {
+   "name": "Gentle Annie Track",
+   "wiki": null,
+   "coordinates": {
+    "lat": -40.90333,
+    "lng": 175.45436
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/443040368",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/tararua-forest-park/things-to-do/tracks/gentle-annie-track/",
+    "https://www.wellingtonnz.com/visit/trails/gentle-annie-track",
+    "https://wairarapanz.com/products/gentle-annie-loop-track"
+   ],
+   "other_sources": [],
+   "note": "walk"
+  },
+  {
+   "name": "Donnelly Flat Loop Walk",
+   "wiki": null,
+   "coordinates": {
+    "lat": -40.9007,
+    "lng": 175.469
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/node/10677199702",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/tararua-forest-park/things-to-do/tracks/donnelly-flat-loop-walk/",
+    "https://www.wellingtonnz.com/visit/trails/donnelly-flat-loop-walk"
+   ],
+   "other_sources": [],
+   "note": "walk"
+  },
+  {
+   "name": "Rocky Lookout",
+   "wiki": null,
+   "coordinates": {
+    "lat": -40.90287,
+    "lng": 175.45376
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/node/5297962525",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/tararua-forest-park/things-to-do/tracks/rocky-lookout/",
+    "https://www.wellingtonnz.com/visit/trails/rocky-lookout"
+   ],
+   "other_sources": [
+    "https://www.openstreetmap.org/node/5297962525"
+   ],
+   "note": "viewpoint walk"
+  },
+  {
+   "name": "Mount Holdsworth Jumbo Circuit",
+   "wiki": null,
+   "coordinates": {
+    "lat": -40.90643,
+    "lng": 175.47668
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/1024171577",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Masterton",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/tararua-forest-park/things-to-do/tracks/mt-holdsworth-jumbo-circuit/",
+    "https://www.wellingtonnz.com/visit/trails/mount-holdsworth-jumbo-circuit"
+   ],
+   "other_sources": [],
+   "note": "tramp"
+  },
+  {
+   "name": "Holdsworth to Powell Hut",
+   "wiki": null,
+   "coordinates": {
+    "lat": -40.88475,
+    "lng": 175.42418
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/846024106",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/tararua-forest-park/things-to-do/tracks/holdsworth-roadend-to-powell-hut-mount-holdsworth/",
+    "https://www.wellingtonnz.com/visit/trails/holdsworth-roadend-to-powell-hutmount-holdsworth"
+   ],
+   "other_sources": [],
+   "note": "walking track"
+  },
+  {
+   "name": "Holdsworth to Kaitoke Track",
+   "wiki": null,
+   "coordinates": {
+    "lat": -40.90643,
+    "lng": 175.47668
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/1024171577",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/tararua-forest-park/things-to-do/tracks/holdsworth-kaitoke-track/",
+    "https://www.wellingtonnz.com/visit/trails/holdsworth-to-kaitoke-track"
+   ],
+   "other_sources": [],
+   "note": "multi-day tramp"
+  },
+  {
+   "name": "Atiwhakatu Track",
+   "wiki": null,
+   "coordinates": {
+    "lat": -40.84544,
+    "lng": 175.46697
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/443042053",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/tararua-forest-park/things-to-do/tracks/atiwhakatu-track/",
+    "https://www.wellingtonnz.com/visit/wairarapa"
+   ],
+   "other_sources": [],
+   "note": "walking track"
+  },
+  {
+   "name": "Mitre Flats / Mitre Peak Track",
+   "wiki": null,
+   "coordinates": {
+    "lat": -40.83053,
+    "lng": 175.47876
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/846045361",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/tararua-forest-park/things-to-do/tracks/mitre-peak-track/"
+   ],
+   "other_sources": [],
+   "note": "tramp"
+  },
+  {
+   "name": "Waiohine Gorge",
+   "wiki": null,
+   "coordinates": {
+    "lat": -40.99565,
+    "lng": 175.38797
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/1565074485",
+   "views": 0,
+   "counted_sources": [
+    "https://wairarapanz.com/products/waiohine-gorge",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wellington-kapiti/places/tararua-forest-park/"
+   ],
+   "other_sources": [],
+   "note": "gorge/swimming"
+  },
+  {
+   "name": "Tauwharenīkau Trail",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.08858,
+    "lng": 175.36533
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/relation/17357140",
+   "views": 0,
+   "counted_sources": [
+    "https://wairarapanz.com/products/tauwharenikau-trail",
+    "https://www.wellingtonnz.com/visit/wairarapa"
+   ],
+   "other_sources": [
+    "https://www.openstreetmap.org/relation/17357140"
+   ],
+   "note": "trail"
+  },
+  {
+   "name": "Totara Flats",
+   "wiki": null,
+   "coordinates": {
+    "lat": -40.9327,
+    "lng": 175.4031
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/914282165 (Totara Flats Hut)",
+   "views": 0,
+   "counted_sources": [
+    "https://wairarapanz.com/products/totara-flats"
+   ],
+   "other_sources": [],
+   "note": "flats/tramp"
+  },
+  {
+   "name": "Bucks Road Campsite (Tararua)",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.06572,
+    "lng": 175.35372
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/1022695952",
+   "views": 0,
+   "counted_sources": [
+    "https://wairarapanz.com/products/bucks-road-campsite"
+   ],
+   "other_sources": [],
+   "note": "campsite/swimming"
+  },
+  {
+   "name": "Pinnacles Ridge Track",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.4468,
+    "lng": 175.24677
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/331959003",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wairarapa/places/putangirua-pinnacles-scenic-reserve/things-to-do/pinnacles-ridge-track/"
+   ],
+   "other_sources": [],
+   "note": "walking track"
+  },
+  {
+   "name": "Castlepoint Lighthouse Walk",
+   "wiki": null,
+   "coordinates": {
+    "lat": -40.90045,
+    "lng": 176.23146
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/node/1052815291",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wairarapa/places/castlepoint-scenic-reserve/things-to-do/lighthouse-walk/",
+    "https://www.wellingtonnz.com/visit/trails/castlepoint-lighthouse-walk",
+    "https://www.wellingtonnz.com/visit/plan-your-trip/top-things-to-see-and-do-in-wairarapa"
+   ],
+   "other_sources": [],
+   "note": "walk"
+  },
+  {
+   "name": "Deliverance Cove",
+   "wiki": null,
+   "coordinates": {
+    "lat": -40.90709,
+    "lng": 176.2232
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/relation/13723013",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wairarapa/places/castlepoint-scenic-reserve/things-to-do/deliverance-cove-track/",
+    "https://wairarapanz.com/products/deliverance-cove"
+   ],
+   "other_sources": [],
+   "note": "cove/walk"
+  },
+  {
+   "name": "Honeycomb Rock",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.36012,
+    "lng": 175.81048
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/node/619736995",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wairarapa/places/honeycomb-rock-area/",
+    "https://wairarapanz.com/products/honeycomb-rock"
+   ],
+   "other_sources": [
+    "https://www.openstreetmap.org/node/619736995"
+   ],
+   "note": "coastal rock formation; no English Wikipedia article at \"Honeycomb Rock\""
+  },
+  {
+   "name": "Tora",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.46555,
+    "lng": 175.49074
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/node/9231598060",
+   "views": 0,
+   "counted_sources": [
+    "https://wairarapanz.com/products/tora"
+   ],
+   "other_sources": [],
+   "note": "coastal settlement; no English Wikipedia article at \"Tora, New Zealand\""
+  },
+  {
+   "name": "Tora Coastal Walk",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.46555,
+    "lng": 175.49074
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/node/9231598060",
+   "views": 0,
+   "counted_sources": [
+    "https://wairarapanz.com/products/tora-coastal-walk"
+   ],
+   "other_sources": [],
+   "note": "walk"
+  },
+  {
+   "name": "White Rock",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.5686,
+    "lng": 175.3967
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/node/332323692",
+   "views": 0,
+   "counted_sources": [
+    "https://wairarapanz.com/products/white-rock"
+   ],
+   "other_sources": [
+    "https://www.openstreetmap.org/node/332323692"
+   ],
+   "note": "coast; no English Wikipedia article at \"White Rock, New Zealand\""
+  },
+  {
+   "name": "Aorangi Crossing",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.52211,
+    "lng": 175.26697
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/relation/12120473",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wairarapa/places/aorangi-forest-park/things-to-do/aorangi-crossing/"
+   ],
+   "other_sources": [
+    "https://www.openstreetmap.org/relation/12120473"
+   ],
+   "note": "tramp"
+  },
+  {
+   "name": "Te Kopi Homestead",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.44479,
+    "lng": 175.21901
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/1083352509",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wairarapa/places/aorangi-forest-park/things-to-do/te-kopi-homestead/"
+   ],
+   "other_sources": [],
+   "note": "historic homestead/accommodation"
+  },
+  {
+   "name": "Carter Scenic Reserve",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.06272,
+    "lng": 175.60295
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/relation/18235543",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wairarapa/places/carter-scenic-reserve/",
+    "https://wairarapanz.com/products/carter-scenic-reserve"
+   ],
+   "other_sources": [],
+   "note": "scenic reserve; no English Wikipedia article at \"Carter Scenic Reserve\""
+  },
+  {
+   "name": "Kahikatea Walk (Carter Scenic Reserve)",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.06272,
+    "lng": 175.60295
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/relation/18235543",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wairarapa/places/carter-scenic-reserve/things-to-do/kahikatea-walk/"
+   ],
+   "other_sources": [],
+   "note": "walk"
+  },
+  {
+   "name": "Pūkaha: Te Arapiki o Tawhaki",
+   "wiki": null,
+   "coordinates": {
+    "lat": -40.74499,
+    "lng": 175.64049
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/node/2305545902",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/wairarapa/places/pukaha-mount-bruce-wildlife-centre/things-to-do/te-arapiki-o-tawhaki/"
+   ],
+   "other_sources": [],
+   "note": "walk"
+  },
+  {
+   "name": "Aratoi Wairarapa Museum of Art and History",
+   "wiki": null,
+   "coordinates": {
+    "lat": -40.94855,
+    "lng": 175.66518
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Masterton",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Masterton",
+    "https://www.wellingtonnz.com/visit/plan-your-trip/top-things-to-see-and-do-in-wairarapa",
+    "https://wairarapanz.com/products/aratoi-wairarapa-museum-of-art-and-history"
+   ],
+   "other_sources": [
+    "https://www.openstreetmap.org/way/1263607823"
+   ],
+   "note": "museum; no English Wikipedia article at \"Aratoi\""
+  },
+  {
+   "name": "The Wool Shed National Museum of Sheep and Shearing",
+   "wiki": null,
+   "coordinates": {
+    "lat": -40.94897,
+    "lng": 175.6647
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Masterton",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Masterton",
+    "https://wairarapanz.com/products/the-wool-shed-national-museum-of-sheep-and-shearing"
+   ],
+   "other_sources": [
+    "https://www.openstreetmap.org/way/1153427491"
+   ],
+   "note": "museum"
+  },
+  {
+   "name": "Henley Lake",
+   "wiki": null,
+   "coordinates": {
+    "lat": -40.95057,
+    "lng": 175.68412
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/relation/1622818",
+   "views": 0,
+   "counted_sources": [
+    "https://wairarapanz.com/products/henley-lake"
+   ],
+   "other_sources": [],
+   "note": "lake/park"
+  },
+  {
+   "name": "Whakapuni Station & Gardens",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.3526,
+    "lng": 175.5473
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/node/10703817988 (Whakapuni locality; garden location unverified)",
+   "views": 0,
+   "counted_sources": [
+    "https://wairarapanz.com/products/whakapuni-station-gardens"
+   ],
+   "other_sources": [],
+   "note": "garden"
+  },
+  {
+   "name": "Greytown to Woodside Trail",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.0825,
+    "lng": 175.435
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/313501860",
+   "views": 0,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/trails/greytown-to-woodside-trail",
+    "https://wairarapanz.com/products/greytown-woodside-trail"
+   ],
+   "other_sources": [],
+   "note": "trail"
+  },
+  {
+   "name": "Featherston Heritage Museum",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": "not found (no source coordinate; resolve in step 3)",
+   "views": 0,
+   "counted_sources": [
+    "https://wairarapanz.com/products/featherston-heritage-museum"
+   ],
+   "other_sources": [],
+   "note": "museum"
+  },
+  {
+   "name": "Martinborough wine region (cellar doors)",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.2189,
+    "lng": 175.4592
+   },
+   "coordinates_source": "wikivoyage:Martinborough page centre",
+   "views": 0,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/wairarapa",
+    "https://www.wellingtonnz.com/visit/plan-your-trip/top-things-to-see-and-do-in-wairarapa",
+    "https://wairarapanz.com/products/martinborough-wine-tours"
+   ],
+   "other_sources": [],
+   "note": "wine region"
+  },
+  {
+   "name": "Marty Mural Trail",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.2189,
+    "lng": 175.4592
+   },
+   "coordinates_source": "wikivoyage:Martinborough page centre (trail is in the town)",
+   "views": 0,
+   "counted_sources": [
+    "https://wairarapanz.com/products/marty-mural-trail"
+   ],
+   "other_sources": [],
+   "note": "public art trail"
+  },
+  {
+   "name": "Palliser Estate",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.21151,
+    "lng": 175.44151
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/1026028570",
+   "views": 0,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/wairarapa",
+    "https://wairarapanz.com/products/palliser-estate"
+   ],
+   "other_sources": [],
+   "note": "winery"
+  },
+  {
+   "name": "Ata Rangi",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.21585,
+    "lng": 175.46798
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/1027567142",
+   "views": 0,
+   "counted_sources": [
+    "https://www.wellingtonnz.com/visit/wairarapa",
+    "https://wairarapanz.com/products/ata-rangi"
+   ],
+   "other_sources": [],
+   "note": "winery"
+  },
+  {
+   "name": "Kahutara Taxidermy Museum",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": "not found (no source coordinate; resolve in step 3)",
+   "views": 0,
+   "counted_sources": [
+    "https://wairarapanz.com/products/kahutara-taxidermy-museum"
+   ],
+   "other_sources": [],
+   "note": "museum"
+  },
+  {
+   "name": "Middleton Model Railway",
+   "wiki": null,
+   "coordinates": {
+    "lat": -40.69339,
+    "lng": 175.64644
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/node/6245636598",
+   "views": 0,
+   "counted_sources": [
+    "https://wairarapanz.com/products/middleton-model-railway"
+   ],
+   "other_sources": [
+    "https://www.openstreetmap.org/node/6245636598"
+   ],
+   "note": "museum"
+  },
+  {
+   "name": "Pōhatu Farm",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": "not found (no source coordinate; resolve in step 3)",
+   "views": 0,
+   "counted_sources": [
+    "https://wairarapanz.com/products/pohatu-farm"
+   ],
+   "other_sources": [],
+   "note": "farm walk"
+  },
+  {
+   "name": "Rewa Rewa Station",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": "not found (no source coordinate; resolve in step 3)",
+   "views": 0,
+   "counted_sources": [
+    "https://wairarapanz.com/products/rewa-rewa-station"
+   ],
+   "other_sources": [],
+   "note": "station walk"
+  },
+  {
+   "name": "Kawakawa Station Walk",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.5494,
+    "lng": 175.2277
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/node/5653415005 (Kawakawa Station)",
+   "views": 0,
+   "counted_sources": [
+    "https://wairarapanz.com/products/kawakawa-station-walk"
+   ],
+   "other_sources": [],
+   "note": "walk"
+  },
+  {
+   "name": "The Last Resort Walk",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": "not found (no source coordinate; resolve in step 3)",
+   "views": 0,
+   "counted_sources": [
+    "https://wairarapanz.com/products/the-last-resort-walk-wairarapa"
+   ],
+   "other_sources": [],
+   "note": "walk"
+  },
+  {
+   "name": "Double Bridges (Ruamāhanga)",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": "not found (no source coordinate; resolve in step 3)",
+   "views": 0,
+   "counted_sources": [
+    "https://wairarapanz.com/products/double-bridges"
+   ],
+   "other_sources": [],
+   "note": "swimming spot"
+  },
+  {
+   "name": "Goose Neck",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": "not found (no source coordinate; resolve in step 3)",
+   "views": 0,
+   "counted_sources": [
+    "https://wairarapanz.com/products/goose-neck"
+   ],
+   "other_sources": [],
+   "note": "swimming spot"
+  },
+  {
+   "name": "Morisons Bush",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.1197,
+    "lng": 175.4378
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/node/7855634937 (Morison Bush)",
+   "views": 0,
+   "counted_sources": [
+    "https://wairarapanz.com/collections/see-and-do"
+   ],
+   "other_sources": [],
+   "note": "bush reserve/swimming"
+  },
+  {
+   "name": "Kokotau Reserve",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.0785,
+    "lng": 175.563
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/node/14250257816",
+   "views": 0,
+   "counted_sources": [
+    "https://wairarapanz.com/products/kokotau-reserve"
+   ],
+   "other_sources": [],
+   "note": "reserve/swimming"
+  },
+  {
+   "name": "Gladstone Public Reserve",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": "not found (no source coordinate; resolve in step 3)",
+   "views": 0,
+   "counted_sources": [
+    "https://wairarapanz.com/products/gladstone-public-reserve"
+   ],
+   "other_sources": [],
+   "note": "swimming spot"
+  },
+  {
+   "name": "Lansdowne Recreational Trail",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": "not found (no source coordinate; resolve in step 3)",
+   "views": 0,
+   "counted_sources": [
+    "https://wairarapanz.com/products/lansdowne-recreational-trail"
+   ],
+   "other_sources": [],
+   "note": "trail"
+  },
+  {
+   "name": "Featherston Reserves Walkway",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": "not found (no source coordinate; resolve in step 3)",
+   "views": 0,
+   "counted_sources": [
+    "https://wairarapanz.com/products/featherston-reserves-walkway"
+   ],
+   "other_sources": [],
+   "note": "walkway"
+  },
+  {
+   "name": "Rewanui Forest Park",
+   "wiki": null,
+   "coordinates": {
+    "lat": -40.93108,
+    "lng": 175.90811
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/way/339695574",
+   "views": 0,
+   "counted_sources": [
+    "https://wairarapanz.com/products/rewanui-forest-park",
+    "https://www.wellingtonnz.com/visit/wairarapa"
+   ],
+   "other_sources": [],
+   "note": "forest park"
+  },
+  {
+   "name": "Palliser Vineyard Walk",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": "not found (no source coordinate; resolve in step 3)",
+   "views": 0,
+   "counted_sources": [
+    "https://wairarapanz.com/products/palliser-vineyard-walk"
+   ],
+   "other_sources": [],
+   "note": "walk"
+  },
+  {
+   "name": "The Cliffs (Wairarapa swimming spot)",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.0511,
+    "lng": 175.6352
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/node/1695391814 (name match only; unverified it is the swimming spot)",
+   "views": 0,
+   "counted_sources": [
+    "https://wairarapanz.com/products/the-cliffs"
+   ],
+   "other_sources": [],
+   "note": "swimming spot"
+  },
+  {
+   "name": "Tongue Point",
+   "wiki": null,
+   "coordinates": {
+    "lat": -41.34117,
+    "lng": 174.65986
+   },
+   "coordinates_source": "osm:https://www.openstreetmap.org/node/9307563849",
+   "views": 0,
+   "counted_sources": [],
+   "other_sources": [],
+   "note": "headland (Wellington south coast); no dedicated English Wikipedia article (title redirects/does not exist); no counted source found: named only by Wikipedia category / OSM (not counted)"
   }
  ]
 }

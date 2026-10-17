@@ -1,0 +1,1162 @@
+{
+ "region": "wellington",
+ "inside_destinations": {
+  "new_spots": 27,
+  "existing_kept": 15,
+  "total": 42,
+  "by_destination": {
+   "wellington": "10 existing + 20 new",
+   "wairarapa": "5 existing + 7 new"
+  }
+ },
+ "standalone": 5,
+ "new_destinations": {
+  "proposed": 1,
+  "name": "Kāpiti Coast",
+  "spots_placed_with_it": 11,
+  "held_for_photo": 4
+ },
+ "held_no_photo": 10,
+ "lowest_kept": [
+  {
+   "name": "Waikanae Beach",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Aratoi Wairarapa Museum of Art and History",
+   "views": 0,
+   "counted_sources": 3
+  },
+  {
+   "name": "Wellington Waterfront",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Cobblestones Museum",
+   "views": 394,
+   "counted_sources": 2
+  },
+  {
+   "name": "Makara Peak Mountain Bike Park",
+   "views": 397,
+   "counted_sources": 2
+  },
+  {
+   "name": "Pātaka Art + Museum",
+   "views": 528,
+   "counted_sources": 3
+  },
+  {
+   "name": "Pūkaha Mount Bruce National Wildlife Centre",
+   "views": 563,
+   "counted_sources": 5
+  }
+ ],
+ "stronger_left_out": [
+  {
+   "name": "Sky Stadium (Wellington Regional Stadium)",
+   "views": 64849,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Event stadium: visitors go for matches, not to visit the venue; no reason to stop for half an hour outside events."
+  },
+  {
+   "name": "Basin Reserve",
+   "views": 17103,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Cricket ground: seen from outside or at matches; no standing visitor experience."
+  },
+  {
+   "name": "Premier House",
+   "views": 15154,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Premier House is the Prime Minister's official residence, no public access; no counted visitor source (only a wikipedia category or osm); "
+  },
+  {
+   "name": "Supreme Court of New Zealand",
+   "views": 12911,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Supreme Court building seen from the street (exterior-only civic building)."
+  },
+  {
+   "name": "Kāpiti Coast District",
+   "views": 9497,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Local-government district, not a place (listed for completeness)."
+  },
+  {
+   "name": "Featherston prisoner of war camp",
+   "views": 9417,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Minor memorial to a WWII prisoner-of-war camp site; no counted visitor source (only a wikipedia category or osm); "
+  },
+  {
+   "name": "Government House Wellington",
+   "views": 9410,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Official governor-general residence, grounds not routinely open to the public; no counted visitor source (only a wikipedia category or osm); "
+  },
+  {
+   "name": "Carterton",
+   "views": 7511,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Wikivoyage has a Carterton chapter; hub on SH2 with Stonehenge Aotearoa, Gladstone wineries and gardens nearby. Against: few sights of its own; its draws are kept as separate spots."
+  },
+  {
+   "name": "Featherston",
+   "views": 6999,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Wikivoyage names it; gateway to the Rimutaka Incline with the Fell Locomotive Museum. Against: little beyond the museum, which is kept separately; a town stop only."
+  },
+  {
+   "name": "National Library of New Zealand",
+   "views": 6488,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "A research library and civic building; the free exhibition is a short stop."
+  },
+  {
+   "name": "Old St Paul's",
+   "views": 6309,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Wikivoyage names it, free and open daily, the interior (native timbers) is the visit and it hosts concerts. Against: a church, one counted source, usually a 20-minute look."
+  },
+  {
+   "name": "Pukerua Bay",
+   "views": 5976,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a coastal commuter village with no attraction named."
+  },
+  {
+   "name": "SS Penguin wreck site",
+   "views": 5953,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Shipwreck memorial/dive site off the coast; no counted visitor source (only a wikipedia category or osm); no public access to the wreck."
+  },
+  {
+   "name": "HMNZS Wellington dive wreck",
+   "views": 5781,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Divers only; no visitor-oriented source confirmed."
+  },
+  {
+   "name": "Quasi (sculpture)",
+   "views": 5744,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a public sculpture, minor."
+  },
+  {
+   "name": "Old Government Buildings",
+   "views": 5721,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Wikivoyage lists it; one of the world's largest wooden buildings, with a visitor centre on the ground floor. Against: mainly an exterior sight with a short stop inside."
+  },
+  {
+   "name": "Mount Victoria Tunnel",
+   "views": 5111,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a road tunnel with a footpath; no draw."
+  },
+  {
+   "name": "Mana Island",
+   "views": 4634,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "No visitor-oriented source confirmed, and access is limited to volunteer trips."
+  },
+  {
+   "name": "Island Bay",
+   "views": 4160,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a residential suburb; its dive wreck is listed separately."
+  },
+  {
+   "name": "Lambton Quay",
+   "views": 4111,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a shopping street."
+  },
+  {
+   "name": "Miramar Peninsula",
+   "views": 4083,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A peninsula/suburb, not a distinct place; its sights (Weta, Shelly Bay) are listed separately."
+  },
+  {
+   "name": "Shelly Bay",
+   "views": 3903,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a bay/former base, no visitor offer named."
+  },
+  {
+   "name": "Wellington Cathedral of St Paul",
+   "views": 3738,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A local church; no counted source found naming it."
+  },
+  {
+   "name": "Seatoun",
+   "views": 3674,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a beach suburb."
+  },
+  {
+   "name": "Tītahi Bay",
+   "views": 3628,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a local beach."
+  },
+  {
+   "name": "Wellington Central Library (Te Matapihi)",
+   "views": 3512,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Closed (building under reconstruction as Te Matapihi) and a library."
+  },
+  {
+   "name": "Ngawi",
+   "views": 3429,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Wairarapa tourism names the fishing village; its bulldozers hauling boats are a quirky roadside icon on the Cape Palliser road. Against: one counted source and a photo stop of ten minutes."
+  },
+  {
+   "name": "Eastbourne",
+   "views": 3405,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Wikivoyage and WellingtonNZ name it; ferry-reached harbour village and the start for Days Bay and Pencarrow. Against: its draws (Days Bay, Pencarrow) are separate spots; near-duplicate."
+  },
+  {
+   "name": "Plimmerton Beach",
+   "views": 3362,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Wikivoyage and WellingtonNZ mention Plimmerton as a seaside village with cafes and swimming. Against: a commuter beach with no distinct attraction."
+  },
+  {
+   "name": "Peka Peka Beach",
+   "views": 3328,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a local beach."
+  },
+  {
+   "name": "SS Hikitia",
+   "views": 3287,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a heritage crane with no public access."
+  },
+  {
+   "name": "Castle Point Lighthouse",
+   "views": 3081,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "The lighthouse is part of Castlepoint, already a spot; near-duplicate."
+  },
+  {
+   "name": "Riversdale Beach",
+   "views": 3079,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: named in Wairarapa tourism's swimming and surfing collection; long surf beach. Against: mostly baches, one tourism source."
+  },
+  {
+   "name": "Bucket Fountain",
+   "views": 3048,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A five-minute photo stop that belongs to Cuba Street, which is kept."
+  },
+  {
+   "name": "Te Ngākau Civic Square",
+   "views": 3019,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a civic square."
+  },
+  {
+   "name": "Wellington Blown Away sign",
+   "views": 2944,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a roadside sign."
+  },
+  {
+   "name": "Lake Wairarapa",
+   "views": 2902,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); the lake is covered by the Wairarapa Moana Wetlands candidate; no distinct visitor place."
+  },
+  {
+   "name": "Mount Cook (Wellington)",
+   "views": 2858,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a suburb/hill."
+  },
+  {
+   "name": "Zephyrometer",
+   "views": 2841,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a public wind sculpture, minor."
+  },
+  {
+   "name": "Lyall Bay",
+   "views": 2839,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a surf beach and airport suburb; no counted visitor source names it as a stop."
+  },
+  {
+   "name": "Karori Cemetery",
+   "views": 2816,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Cemetery; one counted source but only a local interest/heritage stop with no draw for a visitor."
+  },
+  {
+   "name": "St Mary of the Angels",
+   "views": 2516,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A local church; exterior seen only unless in service."
+  },
+  {
+   "name": "Wrights Hill Fortress",
+   "views": 2469,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Wikivoyage lists it; WWII gun emplacements and tunnels under a hill with city views. Against: public opening is only on set days."
+  },
+  {
+   "name": "Rangiātea Church",
+   "views": 2432,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Wikivoyage and WellingtonNZ name it; historic Māori Anglican church, rebuilt after a 1995 fire. Against: a church whose interior is open by arrangement and a short stop."
+  },
+  {
+   "name": "New Zealand Police Museum",
+   "views": 2339,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "For: free, open, indoor museum with real exhibits. Against: niche museum inside the Police College grounds; only WellingtonNZ names it that I could confirm; friend test fails."
+  },
+  {
+   "name": "Pāuatahanui",
+   "views": 2062,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a village."
+  },
+  {
+   "name": "Massey Memorial",
+   "views": 2041,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A minor memorial; the view does not justify a stop on its own."
+  },
+  {
+   "name": "City to Sea Bridge",
+   "views": 2016,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a footbridge/public art."
+  },
+  {
+   "name": "Breaker Bay",
+   "views": 2004,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a small beach."
+  },
+  {
+   "name": "Lake Ferry",
+   "views": 1951,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Wikivoyage and Wairarapa tourism name it; lakeside village at the Lake Wairarapa outlet with a historic pub and the fishing. Against: a pub stop, no distinct attraction."
+  },
+  {
+   "name": "Te Horo Beach",
+   "views": 1910,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "For: Visit Kapiti's beaches page names it. Against: a quiet strip of baches with nothing to do beyond the beach; the neighbouring beaches cover the coast."
+  },
+  {
+   "name": "Futuna Chapel",
+   "views": 1835,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); an architectural chapel with limited access."
+  },
+  {
+   "name": "Fort Ballance",
+   "views": 1830,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a ruined fort."
+  },
+  {
+   "name": "Evans Bay",
+   "views": 1802,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a harbour bay."
+  },
+  {
+   "name": "Wellington South Coast (Owhiro Bay)",
+   "views": 1775,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Bay on the south coast, covered by the Red Rocks and Taputeranga marine reserve candidates."
+  },
+  {
+   "name": "Silver Stream Railway",
+   "views": 1714,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Wikivoyage lists the heritage railway; the ride is the attraction. Against: runs only on Sundays and some holidays; one counted source."
+  },
+  {
+   "name": "Statue of Our Lady of Lourdes (Paraparaumu)",
+   "views": 1647,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Minor religious statue/roadside monument."
+  },
+  {
+   "name": "Old Bank Arcade",
+   "views": 1575,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A shop arcade; the shipwreck display is a minor exhibit."
+  },
+  {
+   "name": "Steam Incorporated",
+   "views": 1550,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); heritage locomotive society, not a visitor site."
+  },
+  {
+   "name": "Palliser Bay",
+   "views": 1447,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); bay."
+  },
+  {
+   "name": "Remutaka Rail Trail",
+   "views": 1407,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Same place as Rimutaka Incline (Remutaka Rail Trail); duplicate."
+  },
+  {
+   "name": "Takapūwāhia Marae",
+   "views": 1357,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A working marae open by arrangement, not a place a visitor can walk into."
+  },
+  {
+   "name": "Aotea Lagoon",
+   "views": 1322,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a local park."
+  },
+  {
+   "name": "Fernside Homestead",
+   "views": 1293,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a homestead."
+  },
+  {
+   "name": "Te Ahumairangi Hill",
+   "views": 1285,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a city hill."
+  },
+  {
+   "name": "Cape Terawhiti",
+   "views": 1260,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a cape with no visitor offer."
+  },
+  {
+   "name": "Baring Head / Ōrua-pouanui",
+   "views": 1218,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "For: Greater Wellington's East Harbour Regional Park page names it as one of three areas; a walk to a lighthouse on a wild headland. Against: remote, lighthouse not open, and no guidebook source found."
+  },
+  {
+   "name": "Pauatahanui Inlet (Porirua Harbour)",
+   "views": 1192,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Inlet is covered by Pāuatahanui Wildlife Reserve and the Inlet as an area; near-duplicate."
+  },
+  {
+   "name": "Tīnui",
+   "views": 1182,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a village."
+  },
+  {
+   "name": "Wellington Naturist Club",
+   "views": 1164,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); private club grounds."
+  },
+  {
+   "name": "Karaka Bays",
+   "views": 1110,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a small bay."
+  },
+  {
+   "name": "Steeple Rock",
+   "views": 1083,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a sea stack."
+  },
+  {
+   "name": "Raumati Village",
+   "views": 1080,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A village strip; Raumati Beach is listed."
+  },
+  {
+   "name": "Houghton Bay",
+   "views": 1075,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a small beach."
+  },
+  {
+   "name": "Whitireia Park",
+   "views": 1020,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a local park."
+  },
+  {
+   "name": "Ruamāhanga River",
+   "views": 1012,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a river."
+  },
+  {
+   "name": "Mount Hector",
+   "views": 1007,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a peak in Tararua Forest Park."
+  },
+  {
+   "name": "Star Safari (Wairarapa Dark Sky Reserve)",
+   "views": 1006,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "A tour operator, not a place; the dark sky belongs in the Wairarapa description."
+  },
+  {
+   "name": "Battle Hill Farm Forest Park",
+   "views": 999,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "For: regional park with an 1846 battle site, farm and bush walks. Against: only WellingtonNZ confirmed; low profile, local-use park."
+  },
+  {
+   "name": "Thistle Inn",
+   "views": 987,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a historic pub."
+  },
+  {
+   "name": "Pirinoa",
+   "views": 956,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a village."
+  },
+  {
+   "name": "Worser Bay",
+   "views": 952,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a small beach."
+  },
+  {
+   "name": "Waitangi Park",
+   "views": 947,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a local park."
+  },
+  {
+   "name": "Baring Head Lighthouse",
+   "views": 938,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Part of Baring Head, which goes to review; restricted-access lighthouse."
+  },
+  {
+   "name": "Mokopuna Island",
+   "views": 934,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); an island in the harbour with no public access."
+  },
+  {
+   "name": "Mount Matthews",
+   "views": 926,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A peak inside Remutaka Forest Park, which is kept; no visitor source for it alone."
+  },
+  {
+   "name": "Nairn Street Cottage",
+   "views": 909,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "For: Wikivoyage lists it as a see; one of the oldest Wellington cottages, open to visit. Against: tiny, very limited opening days, 20 to 30 minute visit."
+  },
+  {
+   "name": "Turnbull House",
+   "views": 899,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "An office building with limited access; only a heritage listing."
+  },
+  {
+   "name": "Wellington Town Belt",
+   "views": 845,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a green belt."
+  },
+  {
+   "name": "Pencarrow Coast Road",
+   "views": 822,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "The route to Pencarrow Lighthouse, which is the spot; near-duplicate."
+  },
+  {
+   "name": "Lobster Loos",
+   "views": 821,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); public toilets."
+  },
+  {
+   "name": "Brancepeth Station",
+   "views": 815,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A working farm station with limited access; no counted source confirmed."
+  },
+  {
+   "name": "Gear Homestead",
+   "views": 805,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A homestead that is largely a function venue."
+  },
+  {
+   "name": "Hau Nui Wind Farm",
+   "views": 788,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a wind farm."
+  },
+  {
+   "name": "Percy Scenic Reserve",
+   "views": 774,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A local reserve; no counted source found."
+  },
+  {
+   "name": "Ōtaki River",
+   "views": 750,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A river; its gorge and trail are separate candidates."
+  },
+  {
+   "name": "Karehana Bay",
+   "views": 741,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a small beach."
+  },
+  {
+   "name": "Lake Ōnoke",
+   "views": 736,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a coastal lake."
+  },
+  {
+   "name": "Waikanae River",
+   "views": 729,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a river."
+  },
+  {
+   "name": "Toi Mahara Gallery",
+   "views": 697,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A small community gallery with one local source; friend test fails."
+  },
+  {
+   "name": "Upper Hutt Blockhouse",
+   "views": 684,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a blockhouse."
+  },
+  {
+   "name": "Evans Bay Patent Slip",
+   "views": 675,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a slipway."
+  },
+  {
+   "name": "New Zealand Portrait Gallery",
+   "views": 665,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "For: free, waterfront, Wikivoyage names it. Against: a small gallery in a shed on Shed 11; short visit; friend test fails."
+  },
+  {
+   "name": "First State House (12 Fife Lane)",
+   "views": 646,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a state house."
+  },
+  {
+   "name": "Queen Elizabeth Park (Masterton)",
+   "views": 630,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A local town park; the larger Queen Elizabeth Park in Kāpiti is the draw."
+  },
+  {
+   "name": "Wairarapa Moana Wetlands",
+   "views": 625,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "For: Wairarapa's largest wetland with bird-watching and walks. Against: only one tourism mention found, no clear single visitor point; low profile."
+  },
+  {
+   "name": "Akatarawa Forest",
+   "views": 608,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a forest."
+  },
+  {
+   "name": "Dominion Observatory",
+   "views": 596,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Historic observatory building, not open to visitors."
+  },
+  {
+   "name": "Te Kopahou Reserve",
+   "views": 596,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A local council reserve; no counted source found naming it."
+  },
+  {
+   "name": "Mount Crawford",
+   "views": 581,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a hill."
+  },
+  {
+   "name": "Princess Bay",
+   "views": 572,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a beach."
+  },
+  {
+   "name": "Bolton Street Memorial Park",
+   "views": 511,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Wikivoyage names it; historic cemetery with a heritage trail through bush in the city centre. Against: a cemetery; close to the near-benchmark of a local memorial."
+  },
+  {
+   "name": "The White Swan Hotel (Greytown)",
+   "views": 504,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A historic hotel venue, not a visit."
+  },
+  {
+   "name": "Taputeranga Marine Reserve",
+   "views": 502,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "An activity zone overlapping Pariwhero / Red Rocks; no counted source found."
+  },
+  {
+   "name": "Pāuatahanui Wildlife Reserve",
+   "views": 500,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Local bird-watching reserve; no counted source found."
+  },
+  {
+   "name": "Bartons Bush (Trentham Memorial Park)",
+   "views": 493,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small bush remnant in a park."
+  },
+  {
+   "name": "East Harbour Regional Park",
+   "views": 489,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A park whose parts (Pencarrow Lighthouse, Baring Head) are judged individually; near-duplicate."
+  },
+  {
+   "name": "Cannon Point Walkway",
+   "views": 456,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A local walk with no counted source found."
+  },
+  {
+   "name": "Sinclair Head / Te Rimurapa",
+   "views": 451,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a headland on the road."
+  },
+  {
+   "name": "Kāpiti Marine Reserve",
+   "views": 435,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Marine reserve around Kāpiti Island, part of the island; duplicate."
+  },
+  {
+   "name": "Te Raekaihau Point",
+   "views": 419,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a headland."
+  },
+  {
+   "name": "Tauwharenīkau River",
+   "views": 418,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A swimming river with one source; local."
+  },
+  {
+   "name": "Wainuiomata Regional Park",
+   "views": 416,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A local park with no counted source found."
+  },
+  {
+   "name": "Kau Point Battery",
+   "views": 414,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a historic battery."
+  },
+  {
+   "name": "Trentham Memorial Park",
+   "views": 397,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a local park."
+  },
+  {
+   "name": "Pukeamoamo / Mitre",
+   "views": 394,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a peak."
+  },
+  {
+   "name": "Ōtaki Forks",
+   "views": 392,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "For: Wikivoyage calls it a main entrance to Tararua Forest Park, with gorge swimming and short walks. Against: a trailhead of a park already kept; near-duplicate of Tararua Forest Park."
+  },
+  {
+   "name": "Taupō Swamp",
+   "views": 389,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a wetland."
+  },
+  {
+   "name": "Pencarrow Lakes",
+   "views": 386,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Lakes along the Pencarrow route; part of the Pencarrow Coast Road."
+  },
+  {
+   "name": "Aston Norwood Gardens",
+   "views": 381,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Private garden open on a few days; no counted source found."
+  },
+  {
+   "name": "Boom Rock",
+   "views": 374,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a rock formation."
+  },
+  {
+   "name": "Te Wharewaka o Pōneke",
+   "views": 333,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A cultural venue/cafe on the waterfront rather than a distinct attraction."
+  },
+  {
+   "name": "St Alban's Church, Pāuatahanui",
+   "views": 325,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a local church."
+  },
+  {
+   "name": "Wairarapa Railway Restoration Society (Carterton Station)",
+   "views": 325,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a station."
+  },
+  {
+   "name": "New Zealand Olympic Museum",
+   "views": 289,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); a museum."
+  },
+  {
+   "name": "Raumati Marine Gardens",
+   "views": 282,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A local garden/park."
+  },
+  {
+   "name": "Longbush Cottage Gardens",
+   "views": 262,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Private garden open by appointment."
+  },
+  {
+   "name": "Fort Parramatta",
+   "views": 238,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); fort ruin."
+  },
+  {
+   "name": "Paekākāriki Station Museum",
+   "views": 233,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small volunteer-run museum open limited days."
+  },
+  {
+   "name": "Papakōwhai Homestead",
+   "views": 211,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); homestead."
+  },
+  {
+   "name": "Karapoti Gorge",
+   "views": 196,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Known for a race course, not for a visit."
+  },
+  {
+   "name": "Ōtaki Museum",
+   "views": 155,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A small local museum; one source; friend test fails."
+  },
+  {
+   "name": "Te Raukura ki Kāpiti",
+   "views": 138,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A civic/cultural centre."
+  },
+  {
+   "name": "Cape Palliser",
+   "views": 78,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "The cape and seal colony are covered by Cape Palliser Lighthouse, already a spot; near-duplicate."
+  },
+  {
+   "name": "Ngā Rā-a-Kupe",
+   "views": 52,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source (only a Wikipedia category or OSM); rock formation."
+  }
+ ],
+ "strongest_outsiders": [
+  {
+   "name": "Kāpiti Island",
+   "views": 10703,
+   "verdict": "keep",
+   "placement": "new-destination -> kapiti-coast (PROPOSED, not in app)"
+  },
+  {
+   "name": "Ōtaki",
+   "views": 9281,
+   "verdict": "keep",
+   "placement": "held (no accepted photo); would be Kāpiti Coast proposed"
+  },
+  {
+   "name": "Pukerua Bay",
+   "views": 5976,
+   "verdict": "reject",
+   "placement": "not placed: reject - No counted visitor source (only a Wikipedia category or OSM); a coastal commuter village with no attraction named."
+  },
+  {
+   "name": "Plimmerton Beach",
+   "views": 3362,
+   "verdict": "review",
+   "placement": "not placed: review - For: Wikivoyage and WellingtonNZ mention Plimmerton as a seaside village with cafes and swimming. Against: a commuter be"
+  },
+  {
+   "name": "Peka Peka Beach",
+   "views": 3328,
+   "verdict": "reject",
+   "placement": "not placed: reject - No counted visitor source (only a Wikipedia category or OSM); a local beach."
+  },
+  {
+   "name": "Rangiātea Church",
+   "views": 2432,
+   "verdict": "review",
+   "placement": "not placed: review - For: Wikivoyage and WellingtonNZ name it; historic Māori Anglican church, rebuilt after a 1995 fire. Against: a church w"
+  },
+  {
+   "name": "Paraparaumu Beach",
+   "views": 1912,
+   "verdict": "keep",
+   "placement": "new-destination -> kapiti-coast (PROPOSED, not in app)"
+  },
+  {
+   "name": "Te Horo Beach",
+   "views": 1910,
+   "verdict": "review",
+   "placement": "not placed: review - For: Visit Kapiti's beaches page names it. Against: a quiet strip of baches with nothing to do beyond the beach; the nei"
+  },
+  {
+   "name": "Pauatahanui Inlet (Porirua Harbour)",
+   "views": 1192,
+   "verdict": "reject",
+   "placement": "not placed: reject - Inlet is covered by Pāuatahanui Wildlife Reserve and the Inlet as an area; near-duplicate."
+  },
+  {
+   "name": "Ōtaki Beach",
+   "views": 1082,
+   "verdict": "keep",
+   "placement": "new-destination -> kapiti-coast (PROPOSED, not in app)"
+  }
+ ],
+ "benchmark": [
+  {
+   "item": "Pariwhero / Red Rocks as a Wellington spot",
+   "result": "PASS: kept (2 counted sources, 1,934 views), placed as spot of Wellington (wellington-N), ~13 km from centre, photo accepted"
+  },
+  {
+   "item": "Kapiti Island standalone or part of a new Kāpiti Coast destination",
+   "result": "PASS: kept (4 counted sources, 10,703 views), placed in proposed Kāpiti Coast destination (fallback standalone if declined), photo accepted"
+  },
+  {
+   "item": "Other benchmark items (Lake Coleridge, Sumner, Hump Ridge, Ninety Mile Beach, Ohakune Carrot ...)",
+   "result": "N/A: not in the Wellington region"
+  },
+  {
+   "item": "Negative benchmarks / TSS Earnslaw in this region",
+   "result": "PASS: Sky Stadium, Basin Reserve, Premier House, Supreme Court, National Library, Old Bank Arcade rejected; no vehicle/operator spots (Star Safari rejected as operator)"
+  },
+  {
+   "item": "Gateway village whose draw is the journey beyond it to review",
+   "result": "PASS (analogue): Featherston, Carterton, Eastbourne, Ngawi kept as review, not kept outright"
+  }
+ ],
+ "notes": [
+  "Lowest kept spots have 0 views but 1-3 counted sources (no Wikipedia article for Waikanae Beach, Wellington Waterfront, Aratoi), so views alone make most left-out items \"stronger\". All 145 left-out/reviewed candidates with views above the lowest nonzero kept spot are listed; each carries its verdict reason from \"What qualifies\" (no counted source, no public access, event/venue, duplicate, once-weekly, minor memorial, or marginal review).",
+  "Review verdicts (marginal) need owner approval; none was dropped for placement reasons."
+ ]
+}
