@@ -2334,7 +2334,7 @@ const destItems = useMemo((): DestItem[] =>
   // spot and a near carousel's spots first, then visited ones, then the most important by their place in their
   // destination's list) and a spot keeps its photo pin only if it still has room: its pin must not overlap a pin already
   // placed or a destination's photo pin and name on screen, and no more than MAX_SPOT_PINS pins draw at once. A spot
-  // that fails either test becomes a dot, which sits under the pins and lives exactly as long as the pin would have. The
+  // that fails either test — or is revealed before its destination's own zoom, see beforeOwnZoom — becomes a dot, which sits under the pins and lives exactly as long as the pin would have. The
   // spots already holding a pin get a small head start so zooming doesn't swap pins and dots back and forth.
   const prevPinIdsRef = useRef<Set<string>>(new Set());
   const { pinSpots, dotSpots } = useMemo(() => {
@@ -2365,12 +2365,16 @@ const destItems = useMemo((): DestItem[] =>
       const x = m.x, y = -m.y;
       // The pin's footprint: the bubble plus the tail hanging to the coordinate, with a little air around it.
       const box: Box = { l: x - SPOT_PIN_SIZE / 2 - 2, r: x + SPOT_PIN_SIZE / 2 + 2, t: y - SPOT_PIN_SIZE - 10 - 2, b: y + 2 };
-      if (!must.has(sp.id) && (pins.length >= MAX_SPOT_PINS || taken.some(t => overlaps(t, box)))) { dots.push(sp); continue; }
+      // A spot revealed ahead of its destination's own default zoom (an outlying one, see SPOT_REVEAL_ZOOM_BY_ID) is on the
+      // map while that destination's own pin still is, so it shows only as a dot until the destination hands over: the
+      // destination leads, and the spot grows its photo only once the camera has reached the destination's view.
+      const beforeOwnZoom = !isPastDestDefaultZoom(spotParentKey(sp), handoffZoom);
+      if (!must.has(sp.id) && (beforeOwnZoom || pins.length >= MAX_SPOT_PINS || taken.some(t => overlaps(t, box)))) { dots.push(sp); continue; }
       pins.push(sp); taken.push(box);
     }
     prevPinIdsRef.current = new Set(pins.map(sp => sp.id));
     return { pinSpots: pins, dotSpots: dots };
-  }, [visibleSpots, selectedSpot, nearCtx, visitIndex, pillVisibleLngDelta, destPinPlan]);
+  }, [visibleSpots, selectedSpot, nearCtx, visitIndex, pillVisibleLngDelta, destPinPlan, handoffZoom]);
   const stableDotSpots = useStableList(dotSpots, s => s.id);
   const spotDotsGeoJSON = useMemo((): GeoJSON.FeatureCollection<GeoJSON.Point> => ({
     type: 'FeatureCollection',
