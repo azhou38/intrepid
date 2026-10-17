@@ -1652,6 +1652,11 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // otherwise read as already past the destination's default zoom, flash its pin in and its spot pins out, then undo it
   // when the gesture settled.
   const handoffZoom = planZoomTarget !== null ? Math.min(camZoom, planZoomTarget) : camZoom;
+  // How much wider the view a close is flying to is than the one the camera reports right now (1 when no close is under
+  // way). The viewport spot query and the spot pin plan scale the live bounds by it, so they work in the target view from
+  // the first frame: the bounds lag the camera, and a close used to show only the few spots inside the old zoomed-in view
+  // as dots at first, the rest arriving as the bounds caught up.
+  const closeViewScale = planZoomTarget !== null ? Math.pow(2, Math.max(0, camZoom - handoffZoom)) : 1;
   // While such a close is under way, pins that leave fade out quickly (see FadePin) instead of lingering.
   closeFade.fast = planZoomTarget !== null;
   // The bounds-derived span lags the same way, so it's ignored while looking ahead.
@@ -2307,7 +2312,8 @@ const destItems = useMemo((): DestItem[] =>
 
     const others: Spot[] = [];
     {
-      const { latitude, longitude, latitudeDelta, longitudeDelta } = region;
+      const { latitude, longitude } = region;
+      const latitudeDelta = region.latitudeDelta * closeViewScale, longitudeDelta = region.longitudeDelta * closeViewScale;
       const pad = 0.15;
       const minLat = latitude - latitudeDelta * (0.5 + pad);
       const maxLat = latitude + latitudeDelta * (0.5 + pad);
@@ -2332,7 +2338,7 @@ const destItems = useMemo((): DestItem[] =>
     if (nearCtx) for (const sp of nearCtx.spots) if (!result.some(r => r.id === sp.id)) result.push(sp);
     if (selectedSpot && !result.some(sp => sp.id === selectedSpot.id)) result.push(selectedSpot);
     return result;
-  }, [region, handoffZoom, selectedSpot, selectedDest, spotsInDest, nearCtx]);
+  }, [region, handoffZoom, closeViewScale, selectedSpot, selectedDest, spotsInDest, nearCtx]);
   // Exit-fade tracking for spot pins (same treatment as pills/photos): pins leaving the
   // set linger for PIN_EXIT_MS fading out, new ones mount at 0 and fade in.
   // Which revealed spots get a full photo pin and which collapse to a dot. Spots are taken in priority order (the selected
@@ -2342,12 +2348,14 @@ const destItems = useMemo((): DestItem[] =>
   // that fails either test — or is revealed before its destination's own zoom, see beforeOwnZoom — becomes a dot, which sits under the pins and lives exactly as long as the pin would have. The
   // spots already holding a pin get a small head start so zooming doesn't swap pins and dots back and forth.
   const prevPinIdsRef = useRef<Set<string>>(new Set());
-  // The visible span the spot pin/dot plan works in: the close's target view while one is under way (planRegionLng is
-  // Infinity then, so only the target zoom counts), otherwise the live view.
+  // The visible span the spot pin/dot plan works in: the live view, or during a close the live view scaled out to the
+  // close's target zoom (closeViewScale). Measured the same way before and after the camera settles, so the plan doesn't
+  // shift once more when the close ends (it used to drop the bounds during a close and use them again after, which
+  // gave a few more pins their photo a beat after the camera had stopped).
   const pinPlanLngDelta = useMemo(() => Math.min(
-    planRegionLng,
+    region.longitudeDelta * closeViewScale,
     SCREEN_W_GLOBAL * 360 / (256 * Math.pow(2, handoffZoom)),
-  ), [planRegionLng, handoffZoom]);
+  ), [region.longitudeDelta, closeViewScale, handoffZoom]);
   const { pinSpots, dotSpots } = useMemo(() => {
     const must = new Set<string>();
     if (selectedSpot) must.add(selectedSpot.id);
