@@ -115,7 +115,6 @@ import CountrySheet from '../components/Map/CountrySheet';
 import ExploreSheet from '../components/Map/ExploreSheet';
 import { thumbCache, photoCache, fetchWikiThumbnail, prefetchWikiThumbnail, HEADER_PX } from '../utils/photoCache';
 import DestPinImages, { DEST_PIN_SIZE, destPinImageName, type DestPinImageSpec } from '../components/Map/DestPinImages';
-import DestPinLayers from '../components/Map/DestPinLayers';
 import SpotPinImages, { SPOT_MINI_PIN_UNVISITED, SPOT_MINI_PIN_VISITED } from '../components/Map/SpotPinImages';
 
 const VISITED_COLOR  = '#10B981';
@@ -814,11 +813,8 @@ const MAP_TYPES: { key: MapStyleKey; label: string }[] = [
 // (textOptional), and returns once there is room. Mapbox fades both in and out as placements change.
 const DEST_SYMBOL_STYLE: any = {
   iconImage: ['get', 'img'],
-  // The pins themselves are never hidden by Mapbox: which destinations have room for a photo is decided in destPinPlan, on
-  // a pan-invariant projection. Mapbox's own collision pass only weighs symbols that are on screen, so as a pin scrolled
-  // off the edge the neighbour it had been hiding faded in (and back out as it returned) — pins fading on a plain pan.
-  iconAllowOverlap: true,
-  iconIgnorePlacement: true,
+  iconAllowOverlap: false,
+  iconIgnorePlacement: false,
   iconPadding: 0,
   symbolSortKey: ['get', 'sort'],
   textField: ['get', 'label'],
@@ -1920,7 +1916,6 @@ const destItems = useMemo((): DestItem[] =>
   // STAMP_PX must exceed the photo pin diameter (37pt) so two photo pins never overlap —
   // also reused as the minimum spacing between any two promoted photo markers below.
   const STAMP_PX = 44;  // 20% smaller than the original 55, kept proportional to PIN_SIZE
-  const NATIVE_PIN_SPACING_PX = DEST_PIN_SIZE + 8;
 
   // Rects of the visible destination name labels, read by the map's onPress (written by destPinPlan below).
   const destLabelHitRef = useRef<{ pxPerDegLng: number; rects: { id: string; rect: { l: number; r: number; t: number; b: number } }[] }>({ pxPerDegLng: 1, rects: [] });
@@ -1931,9 +1926,7 @@ const destItems = useMemo((): DestItem[] =>
     // runs ~2x deeper than reality, so two pins the plan thought 60pt apart were really 30pt apart and overlapped; Mapbox
     // then hid one of them natively — instantly, with no fade. Tested at real distances the plan resolves the overlap
     // itself (the loser becomes a dot, through the normal cross-fade). The promotion GATES below stay on planLngDelta.
-    // From the camera zoom alone (or a close's target, via handoffZoom): pan-invariant, and free of the velocity
-    // prediction's jitter mid-pinch. Native pins are now spaced by this plan, so it must not move under a pan.
-    const pxPerDegLng = SCREEN_W / (SCREEN_W_GLOBAL * 360 / (256 * Math.pow(2, handoffZoom)));
+    const pxPerDegLng = SCREEN_W / pillPlanLngDelta;
 
     // Plan over the pan-invariant ELIGIBLE set (not the viewport-culled render set), so the
     // greedy collision resolution sees a stable roster while panning.
@@ -2027,12 +2020,9 @@ const destItems = useMemo((): DestItem[] =>
         // ever placed in the fixed priority order, the lower-priority one is the one that
         // stays a stamp. STAMP_PX (44) > photo diameter (37) so photos never overlap.
         let collides = false;
-        // Native pins are spaced here as well (Mapbox no longer hides them, see DEST_SYMBOL_STYLE), wide enough apart for
-        // the pin images that they never overlap.
-        const minPx = NATIVE_DEST_PINS ? NATIVE_PIN_SPACING_PX : STAMP_PX;
-        for (const o of placed) {
+        if (!NATIVE_DEST_PINS) for (const o of placed) {
           const dx = p.x - o.x, dy = p.y - o.y;
-          if (dx * dx + dy * dy < minPx * minPx) { collides = true; break; }
+          if (dx * dx + dy * dy < STAMP_PX * STAMP_PX) { collides = true; break; }
         }
         if (collides) continue;
       }
@@ -2092,7 +2082,7 @@ const destItems = useMemo((): DestItem[] =>
     // Pure function of zoom (planLngDelta) + eligible set + selection + saved state +
     // the (equally pan-invariant) country pill plan.
     // No camera centre → recompute produces an identical plan while panning at fixed zoom.
-  }, [eligibleDests, planLngDelta, pillPlanLngDelta, handoffZoom, planCountry, planDest, selectedSpot, visitIndex, countryPills]);
+  }, [eligibleDests, planLngDelta, pillPlanLngDelta, planCountry, planDest, selectedSpot, visitIndex, countryPills]);
 
   // Stamps are rendered via CircleLayer (not MarkerView) so Mapbox renders all of them
   // regardless of proximity. Every filter-passing destination gets a stamp — INCLUDING ones
@@ -4302,14 +4292,6 @@ const destItems = useMemo((): DestItem[] =>
     return { shape: { type: 'FeatureCollection' as const, features }, specs: destPinSpecListRef.current };
   }, [promotedDests, visitIndex, visitedSpotCountByDest, destPinPlan]);
 
-  // A tap on a destination photo pin (DestPinLayers' main layer): reopens the destination already selected, else opens it.
-  const onDestPhotoPress = useCallback((e: any) => {
-    const id = e.features[0]?.properties?.id as string | undefined;
-    if (!id) return;
-    const dest = DESTINATIONS.find(d => d.id === id);
-    if (dest && !pressBlocked()) { if (selectedDestRef.current?.id === dest.id) handleResetToDest(); else handleMarkerPress(dest); }
-  }, [handleMarkerPress, handleResetToDest, pressBlocked]);
-
   // Which sliding sheet is mounted right now. When it changes from one level to another, the incoming sheet is a
   // replacement for the one that was showing and starts where that one rested (see sheetPose) rather than from below
   // the screen. Read during render (the ref is only advanced after the commit), so it is a stable answer for the
@@ -4629,7 +4611,18 @@ const destItems = useMemo((): DestItem[] =>
 
         {nativeDestPins && <DestPinImages specs={nativeDestPins.specs} />}
         {nativeDestPins && (
-          <DestPinLayers shape={nativeDestPins.shape} style={DEST_SYMBOL_STYLE} onPress={onDestPhotoPress} />
+          <MapboxGL.ShapeSource
+            id="destPhotos"
+            shape={nativeDestPins.shape}
+            onPress={(e) => {
+              const id = e.features[0]?.properties?.id as string | undefined;
+              if (!id) return;
+              const dest = DESTINATIONS.find(d => d.id === id);
+              if (dest && !pressBlocked()) { if (selectedDestRef.current?.id === dest.id) handleResetToDest(); else handleMarkerPress(dest); }
+            }}
+          >
+            <MapboxGL.SymbolLayer id="destPhotoSymbols" aboveLayerID="destStampCircles" style={DEST_SYMBOL_STYLE} />
+          </MapboxGL.ShapeSource>
         )}
 
         {/* Collapsed spot pins: a small photo-less pin for every revealed spot beyond the MAX_SPOT_PINS that
