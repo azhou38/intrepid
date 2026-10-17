@@ -1544,7 +1544,7 @@ function SpotAbout({ spot, tabbed, nearbySpots, onSelectNearby, onExplore, nearb
             <Pressable style={st.linksRow} onPress={() => Linking.openURL(spot.ticketUrl!)}>
               {ticketFaviconUri && !faviconFailed
                 ? <Image source={{ uri: ticketFaviconUri }} style={st.siteFavicon} onError={() => setFaviconFailed(true)} />
-                : <View style={st.siteFavicon}><Globe size={18} color="#6B7280" /></View>}
+                : <View style={st.siteFavicon}><Globe size={18} color="#2563EB" /></View>}
               <View style={st.siteText}>
                 <Text style={st.siteEyebrow}>OFFICIAL SITE</Text>
                 <Text style={st.siteName} numberOfLines={1}>{spot.name}</Text>
