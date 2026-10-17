@@ -792,17 +792,6 @@ function getCountryPillCutoffLngDelta(countryCode: string): number {
   return lngSpan * 1.35 * 1.1;
 }
 
-// Whether `dest` still counts as inside its country's own view at a live visible span of `lngDelta` (the pill scale):
-// up to the country's pill cutoff for its least prominent destinations, and a little further out for each more prominent
-// rank tier, so zooming out past a country hands its destinations back to the global rank gates a tier at a time instead
-// of all in the frame the country's label appears. Judged on the LIVE zoom (the one the pill itself uses), never the
-// velocity-predicted one, which jumps about during a pinch and made destinations flash in and out near the cutoff.
-const PILL_HANDOFF_STAGGER: Record<number, number> = { 1: 1.75, 2: 1.75, 3: 1.45, 4: 1.2, 5: 1 };
-function inCountryView(dest: Destination, lngDelta: number, visited: boolean): boolean {
-  const effRank = Math.max(1, dest.rank - (visited ? 1 : 0));
-  return lngDelta < getCountryPillCutoffLngDelta(dest.countryCode) * (PILL_HANDOFF_STAGGER[effRank] ?? 1);
-}
-
 type DestItem = { type: 'pin'; dest: Destination };
 
 type MapStyleKey = 'standard' | 'satellite';
@@ -1670,10 +1659,8 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   const closeViewScale = planZoomTarget !== null ? Math.pow(2, Math.max(0, camZoom - handoffZoom)) : 1;
   // While such a close is under way, pins that leave fade out quickly (see FadePin) instead of lingering.
   closeFade.fast = planZoomTarget !== null;
-  // The pin plan's spans come from the camera zoom alone. The bounds-derived span both lags and, on the globe, changes as
-  // the camera pans north or south at a fixed zoom, which made the photo/dot plan shift under a pan. Capped at the whole
-  // world for the zoom-0 start.
-  const planRegionLng = 360;
+  // The bounds-derived span lags the same way, so it's ignored while looking ahead.
+  const planRegionLng = planZoomTarget !== null ? Infinity : region.longitudeDelta;
   const planLngDelta = useMemo(() => Math.min(
     planRegionLng,
     SCREEN_W_GLOBAL * 360 / (512 * Math.pow(2, planZoom)),
@@ -1690,12 +1677,10 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // destination dot/photo logic deliberately stays on planLngDelta's scale: its thresholds
   // were tuned against that scale and read well in practice (recalibrating them made dots
   // appear far too late — e.g. none at France's default view).
-  // From the camera zoom alone (capped at the whole world): the globe's bounds-derived span changes as the camera pans
-  // north or south at a fixed zoom, which made country pills (and the photo pins they block) come and go under a pan.
   const pillVisibleLngDelta = useMemo(() => Math.min(
-    360,
+    region.longitudeDelta,
     SCREEN_W_GLOBAL * 360 / (256 * Math.pow(2, camZoom)),
-  ), [camZoom]);
+  ), [region.longitudeDelta, camZoom]);
 
   // Pan-invariant: derived from longitudeDelta (see panInvariantLatDelta) so panning north/
   // south never flips the rank tier — which would otherwise reshuffle eligibleDests and the
@@ -1710,10 +1695,6 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // greedy collision resolution sees the same destinations every frame during a pan and can
   // never flip a visible pin's state just because an off-screen neighbour scrolled in or out
   // of a viewport-culled candidate list (the root cause of the pan glitching).
-  // The live visible span from the camera's zoom alone (pill scale) — pan-invariant, unlike pillVisibleLngDelta, whose
-  // bounds term shifts as the globe pans north or south at a fixed zoom. What inCountryView is judged on, so panning never
-  // changes which destinations are inside their country's view.
-  const liveZoomLngDelta = useMemo(() => SCREEN_W_GLOBAL * 360 / (256 * Math.pow(2, camZoom)), [camZoom]);
   const eligibleDests = useMemo(() => {
     const results: Destination[] = [];
     const added = new Set<string>();
@@ -1729,16 +1710,14 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
       // Eligible if: it's the selected destination; or in the selected country (always shown);
       // or within the current rank tier (or saved, which is always shown); or a rank-1 anchor
       // worldwide while drilled into a country/destination (so every country pill can form).
-      // Inside its country's own view (see inCountryView) a destination is eligible whatever the global rank tier, the
-      // same rule that lets it promote to a photo there.
-      const rankOk = d.rank <= visibleRank || saved || inCountryView(d, liveZoomLngDelta, saved);
+      const rankOk = d.rank <= visibleRank || saved;
       const anchorRank1 = (selectedCountry || selectedDest) && d.rank === 1;
       if (!(isSelected || inSelectedCountry || rankOk || anchorRank1)) continue;
       results.push(d);
       added.add(d.id);
     }
     return results;
-  }, [visibleRank, visitIndex, selectedCountry, selectedDest, liveZoomLngDelta]);
+  }, [visibleRank, visitIndex, selectedCountry, selectedDest]);
 
   // NOTE: there is deliberately NO viewport-bounds culling of the render set. There are only
   // ~45 destinations total, so rendering every eligible one (Mapbox natively clips whatever
@@ -1924,7 +1903,6 @@ const destItems = useMemo((): DestItem[] =>
   // STAMP_PX must exceed the photo pin diameter (37pt) so two photo pins never overlap —
   // also reused as the minimum spacing between any two promoted photo markers below.
   const STAMP_PX = 44;  // 20% smaller than the original 55, kept proportional to PIN_SIZE
-  const NATIVE_PIN_SPACING_PX = DEST_PIN_SIZE + 10;
 
   // Rects of the visible destination name labels, read by the map's onPress (written by destPinPlan below).
   const destLabelHitRef = useRef<{ pxPerDegLng: number; rects: { id: string; rect: { l: number; r: number; t: number; b: number } }[] }>({ pxPerDegLng: 1, rects: [] });
@@ -1974,7 +1952,7 @@ const destItems = useMemo((): DestItem[] =>
       // pill was already gone (e.g. Los Angeles/Grand Canyon still dots with the western
       // US filling the screen). Eligibility (visibleRank/saved) and the photo-vs-photo and
       // pill collision rules still apply on top.
-      if (inCountryView(d, liveZoomLngDelta, visitIndex.isDestVisited(d.id))) return true;
+      if (pillPlanLngDelta < getCountryPillCutoffLngDelta(d.countryCode)) return true;
       const effRank = Math.max(1, d.rank - (visitIndex.isDestVisited(d.id) ? 1 : 0));
       return panLatDelta <= (PROMOTE_LATDELTA_BY_RANK[effRank] ?? 2.5);
     };
@@ -2029,14 +2007,9 @@ const destItems = useMemo((): DestItem[] =>
         // ever placed in the fixed priority order, the lower-priority one is the one that
         // stays a stamp. STAMP_PX (44) > photo diameter (37) so photos never overlap.
         let collides = false;
-        // Native pins are spaced here too, on this pan-invariant projection, rather than left to Mapbox's own collision pass:
-        // that one runs in screen space, and on the globe the screen distance between two places changes as the camera pans,
-        // so which of two close pins kept its photo changed with a pan at an unchanged zoom. Wide enough apart for the pin
-        // images (DEST_PIN_SIZE plus their padding) that Mapbox has nothing left to resolve.
-        const minPx = NATIVE_DEST_PINS ? NATIVE_PIN_SPACING_PX : STAMP_PX;
-        for (const o of placed) {
+        if (!NATIVE_DEST_PINS) for (const o of placed) {
           const dx = p.x - o.x, dy = p.y - o.y;
-          if (dx * dx + dy * dy < minPx * minPx) { collides = true; break; }
+          if (dx * dx + dy * dy < STAMP_PX * STAMP_PX) { collides = true; break; }
         }
         if (collides) continue;
       }
@@ -2096,7 +2069,7 @@ const destItems = useMemo((): DestItem[] =>
     // Pure function of zoom (planLngDelta) + eligible set + selection + saved state +
     // the (equally pan-invariant) country pill plan.
     // No camera centre → recompute produces an identical plan while panning at fixed zoom.
-  }, [eligibleDests, planLngDelta, pillPlanLngDelta, liveZoomLngDelta, planCountry, planDest, selectedSpot, visitIndex, countryPills]);
+  }, [eligibleDests, planLngDelta, pillPlanLngDelta, planCountry, planDest, selectedSpot, visitIndex, countryPills]);
 
   // Stamps are rendered via CircleLayer (not MarkerView) so Mapbox renders all of them
   // regardless of proximity. Every filter-passing destination gets a stamp — INCLUDING ones
