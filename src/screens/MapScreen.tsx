@@ -2359,7 +2359,7 @@ const destItems = useMemo((): DestItem[] =>
   // destination's list) and a spot keeps its photo pin only if it still has room: its pin must not overlap a pin already
   // placed or a destination's photo pin and name on screen, and no more than MAX_SPOT_PINS pins draw at once. A spot
   // that fails either test — or is revealed before its destination's own zoom, see beforeOwnZoom — becomes a dot, which sits under the pins and lives exactly as long as the pin would have. The
-  // spots already holding a pin get a small head start so zooming doesn't swap pins and dots back and forth.
+  // spots already holding a pin are placed before any newcomer, so zooming never swaps pins and small pins back and forth.
   const prevPinIdsRef = useRef<Set<string>>(new Set());
   // The visible span the spot pin/dot plan works in: the live view, or during a close the live view scaled out to the
   // close's target zoom (closeViewScale). Measured the same way before and after the camera settles, so the plan doesn't
@@ -2374,9 +2374,12 @@ const destItems = useMemo((): DestItem[] =>
     if (selectedSpot) must.add(selectedSpot.id);
     if (nearCtx) for (const sp of nearCtx.spots) must.add(sp.id);
     const prev = prevPinIdsRef.current;
+    // A spot that already has its photo pin is placed before every newcomer, so a more important spot coming into view
+    // (or being revealed by the zoom) never takes a neighbour's photo only to hand it back a level later: it stays a
+    // small pin until there is room for it too. Among themselves, and among newcomers, the usual priority applies.
     const rank = (sp: Spot) =>
-      (must.has(sp.id) ? -2_000_000 : 0) + (visitIndex.isSpotVisited(sp.id) ? -1_000_000 : 0)
-      + (SPOT_IMPORTANCE.get(sp.id) ?? 0) * 1000 - (prev.has(sp.id) ? 500 : 0) + (SPOT_ORDER.get(sp.id) ?? 0);
+      (must.has(sp.id) ? -4_000_000 : 0) + (prev.has(sp.id) ? -2_000_000 : 0) + (visitIndex.isSpotVisited(sp.id) ? -1_000_000 : 0)
+      + (SPOT_IMPORTANCE.get(sp.id) ?? 0) * 1000 + (SPOT_ORDER.get(sp.id) ?? 0);
     const sorted = [...visibleSpots].sort((x, y) => rank(x) - rank(y));
     // A close plans at the view it is flying to (handoffZoom holds that target), so pins that won't fit there turn into
     // dots while the camera is still moving out instead of piling up and collapsing once it settles. A pinch plans at the
@@ -4269,8 +4272,20 @@ const destItems = useMemo((): DestItem[] =>
   // Pin images are grow-only: once registered, an image stays mounted, so a symbol never loses its image mid-fade.
   const destPinSpecsRef = useRef<Map<string, DestPinImageSpec>>(new Map());
   const destPinSpecListRef = useRef<DestPinImageSpec[]>([]);
+  // When each destination got its photo pin, as a batch number: Mapbox resolves overlapping pins by symbolSortKey, and with
+  // the plain priority a destination newly given a photo by the zoom won its neighbour's place, which then came back a
+  // level later. Pins that got their photo earlier sort first, so a newcomer only shows once there is room for it; within
+  // a batch the plan's priority decides, and the selected destination always comes first.
+  const destPhotoSinceRef = useRef<{ seq: number; since: Map<string, number> }>({ seq: 0, since: new Map() });
   const nativeDestPins = useMemo(() => {
     if (!NATIVE_DEST_PINS) return null;
+    const book = destPhotoSinceRef.current;
+    const live = new Set(promotedDests.map(d => d.id));
+    for (const id of [...book.since.keys()]) if (!live.has(id)) book.since.delete(id);
+    let fresh = false;
+    for (const d of promotedDests) if (!book.since.has(d.id)) { if (!fresh) { book.seq += 1; fresh = true; } book.since.set(d.id, book.seq); }
+    const destSortKey = (id: string) =>
+      planDest?.id === id ? -1 : (book.since.get(id) ?? book.seq) * 100_000 + (destPinPlan.priority.get(id) ?? 9999);
     const specs = destPinSpecsRef.current;
     let added = false;
     const features: GeoJSON.Feature<GeoJSON.Point>[] = [];
@@ -4285,12 +4300,12 @@ const destItems = useMemo((): DestItem[] =>
         type: 'Feature',
         id: dest.id,
         geometry: { type: 'Point', coordinates: [dest.coordinates.longitude, dest.coordinates.latitude] },
-        properties: { id: dest.id, img, label: dest.name, sort: destPinPlan.priority.get(dest.id) ?? 9999 },
+        properties: { id: dest.id, img, label: dest.name, sort: destSortKey(dest.id) },
       });
     }
     if (added) destPinSpecListRef.current = [...specs.values()];
     return { shape: { type: 'FeatureCollection' as const, features }, specs: destPinSpecListRef.current };
-  }, [promotedDests, visitIndex, visitedSpotCountByDest, destPinPlan]);
+  }, [promotedDests, visitIndex, visitedSpotCountByDest, destPinPlan, planDest]);
 
   // Which sliding sheet is mounted right now. When it changes from one level to another, the incoming sheet is a
   // replacement for the one that was showing and starts where that one rested (see sheetPose) rather than from below
