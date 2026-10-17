@@ -100,6 +100,8 @@ const PEEK_Y = Math.max(COLLAPSED_Y, (H - BOTTOM_TAB_H) - PEEK_STRIP_H);
 const CARD_W    = W - 64;
 const CARD_GAP  = 12;
 const CARD_SNAP = CARD_W + CARD_GAP;
+// Cards either side of the active one that are rendered for real (see the carousel's map below).
+const CAROUSEL_WINDOW = 3;
 const SIDE_PAD  = (W - CARD_W) / 2;
 
 // "Explore nearby" grid card — same square SpotCard, same width formula, as the destination
@@ -1257,6 +1259,13 @@ isVisited ? (
             onMomentumScrollEnd={e => handleCarouselSettle(e.nativeEvent.contentOffset.x)}
           >
             {extendedSpots.map((item, i) => (
+              // Only the cards near the active one are real; the rest are same-sized blank cards. A big destination
+              // (Wellington: 30 spots, 32 cards with the loop clones) used to mount every card at once — each with its
+              // own photo fetch and gradient — on the tap that opens the sheet, which is what held the sheet back.
+              // The two ends stay real too, so the loop's clone hand-off never lands on a blank card.
+              Math.abs(i - (activeIndex + loopOffset)) > CAROUSEL_WINDOW && i > 1 && i < extendedSpots.length - 2 ? (
+                <View key={`${item.spot.id}-${i}`} style={[st.card, st.cardShadowUnvisited, st.cardPlaceholder, { width: CARD_W, marginRight: CARD_GAP, height: '100%' }]} />
+              ) : (
               <CarouselCard
                 key={`${item.spot.id}-${i}`}
                 spot={item.spot}
@@ -1288,6 +1297,7 @@ isVisited ? (
                   Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
                 }}
               />
+              )
             ))}
           </GHScrollView>
 
@@ -1637,6 +1647,8 @@ const st = StyleSheet.create({
   // left a hairline of the card's white background showing at each corner, since the inner
   // rect (inset by the border) needs a slightly smaller radius to sit flush inside it.
   cardInner: { borderRadius: 16.5, overflow: 'hidden' },
+  // Stand-in for a card outside CAROUSEL_WINDOW: the card's frame with the photo area's dark fill.
+  cardPlaceholder: { backgroundColor: '#111827', overflow: 'hidden' },
   cardImageWrap: { width: '100%', flex: 1, backgroundColor: '#111827' },
   // Smooth gradient (matches the full-screen hero's own scrim) behind the bottom-left text
   // overlay, tall enough to cover the name block so it stays legible over any

@@ -1,4 +1,4 @@
-import React, { useRef, useState, useMemo, useCallback, useEffect, useLayoutEffect } from 'react';
+import React, { memo, useRef, useState, useMemo, useCallback, useEffect, useLayoutEffect } from 'react';
 import { unstable_batchedUpdates, View, StyleSheet, Pressable, Text, Dimensions, Animated, Platform, TextInput, Image, Easing as RNEasing, Keyboard, ScrollView } from 'react-native';
 import Reanimated, { useSharedValue, useAnimatedStyle, useAnimatedReaction, runOnJS, withTiming, Easing } from 'react-native-reanimated';
 import Svg, { Rect, Path, Circle } from 'react-native-svg';
@@ -262,14 +262,17 @@ const SPOT_ORDER = new Map(SPOTS.map((sp, i) => [sp.id, i]));
 // un-truncated) label renders, which requires knowing that width; onLayout measures it after
 // the first frame and anchorX corrects itself from a pin-only fallback. That one-frame
 // correction lands inside the existing FadePin fade-in, so it isn't visible in practice.
-function SpotMarker({ spot, isVisited, isSelected, exiting, isSatellite, labelSide, instant, onPress }: {
+// Memoized: with a stable onPress (taking the spot) and a stable coordinate, a pin re-renders only when its own look
+// changes — not on every camera frame, which used to push a new coordinate to every spot MarkerView natively each time.
+const SpotMarker = memo(function SpotMarker({ spot, isVisited, isSelected, exiting, isSatellite, labelSide, instant, onPress }: {
   spot: Spot; isVisited: boolean; isSelected: boolean; exiting: boolean; isSatellite: boolean;
   // Which side of the pin the name sits on, or 'none' to leave it off (see spotLabelPlan).
   labelSide: 'left' | 'right' | 'none';
   instant?: boolean;
-  onPress: () => void;
+  onPress: (spot: Spot) => void;
 }) {
   const cacheKey = `spotpin_${spot.id}`;
+  const coordinate = useMemo(() => [spot.coordinates.longitude, spot.coordinates.latitude] as [number, number], [spot.coordinates.longitude, spot.coordinates.latitude]);
   const [photoUrl, setPhotoUrl] = useState<string | null>(thumbCache.get(cacheKey) ?? null);
   const photoWasCachedRef = useRef(thumbCache.has(cacheKey));   // see DestPin
   useEffect(() => {
@@ -337,8 +340,8 @@ function SpotMarker({ spot, isVisited, isSelected, exiting, isSatellite, labelSi
 
   return (
     <MapboxGL.MarkerView
-      coordinate={[spot.coordinates.longitude, spot.coordinates.latitude]}
-      anchor={{ x: 0.5, y: 1 }}
+      coordinate={coordinate}
+      anchor={SPOT_PIN_ANCHOR}
       // MarkerView defaults to allowOverlap={false}: Mapbox then HIDES any marker that collides
       // with another one on screen. Zooming out brings pills/photos/other spots onto the selected
       // spot, and it was being dropped by that collision pass — the "sometimes disappears while
@@ -348,7 +351,7 @@ function SpotMarker({ spot, isVisited, isSelected, exiting, isSatellite, labelSi
       {/* Spot pins only ever appear/disappear through the destination handoff (or the zoom
           threshold beside it), so they always take the gentler handoff fade. */}
       <FadePin exiting={exiting} instant={instant} slow>
-        <Pressable disabled={exiting} onPress={onPress} hitSlop={6}>
+        <Pressable disabled={exiting} onPress={() => onPress(spot)} hitSlop={6}>
           <View style={styles.spotMarkerRow}>
             <View style={styles.spotPinWrap}>
               <Svg
@@ -380,7 +383,8 @@ function SpotMarker({ spot, isVisited, isSelected, exiting, isSatellite, labelSi
       </FadePin>
     </MapboxGL.MarkerView>
   );
-}
+});
+const SPOT_PIN_ANCHOR = { x: 0.5, y: 1 };
 
 const pinSt = StyleSheet.create({
   stampWrap: { alignItems: 'center', justifyContent: 'center' },
@@ -3152,6 +3156,8 @@ const destItems = useMemo((): DestItem[] =>
     // sluggish the combined transition reads.
     fitSpotView(spot, 'easeTo', 280);
   }, [showBreadcrumb, fitSpotView, spotFocusId, dropCountryIfForeign]);
+  // Stable for the memoized SpotMarker pins (a two-finger gesture landing on a pin isn't a tap).
+  const onSpotPinPress = useCallback((spot: Spot) => { if (pressBlocked()) return; handleSpotPress(spot); }, [pressBlocked, handleSpotPress]);
 
   // Fired as the user swipes the spot carousel. Follows the focused spot with the map
   // (pan + pin highlight) WITHOUT touching spotFocusId, so the carousel isn't reset.
@@ -4625,7 +4631,7 @@ const destItems = useMemo((): DestItem[] =>
               exiting={exiting}
               isSatellite={mapType === 'satellite'}
               labelSide={spotLabelPlan.get(spot.id) ?? 'left'}
-              onPress={() => { if (pressBlocked()) return; handleSpotPress(spot); }}
+              onPress={onSpotPinPress}
             />
           );
         })}
@@ -4645,7 +4651,7 @@ const destItems = useMemo((): DestItem[] =>
             instant
             isSatellite={mapType === 'satellite'}
             labelSide={spotLabelPlan.get(selectedSpot.id) ?? 'left'}
-            onPress={() => handleSpotPress(selectedSpot)}
+            onPress={handleSpotPress}
           />
         )}
 
