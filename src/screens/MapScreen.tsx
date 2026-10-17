@@ -115,6 +115,7 @@ import CountrySheet from '../components/Map/CountrySheet';
 import ExploreSheet from '../components/Map/ExploreSheet';
 import { thumbCache, photoCache, fetchWikiThumbnail, prefetchWikiThumbnail, HEADER_PX } from '../utils/photoCache';
 import DestPinImages, { DEST_PIN_SIZE, destPinImageName, type DestPinImageSpec } from '../components/Map/DestPinImages';
+import SpotPinImages, { SPOT_MINI_PIN_UNVISITED, SPOT_MINI_PIN_VISITED } from '../components/Map/SpotPinImages';
 
 const VISITED_COLOR  = '#10B981';
 const EXPLORE_COLOR  = '#6366F1';
@@ -1001,8 +1002,6 @@ const SPOT_IMPORTANCE = (() => {
   return out;
 })();
 const SPOT_BY_ID = new Map(SPOTS.map(sp => [sp.id, sp]));
-const SPOT_DOT_RADIUS = 6.5;
-const SPOT_DOT_CORE_RADIUS = 3.2;
 const MIN_SPOT_REVEAL_ZOOM = Math.min(...Object.values(SPOT_REVEAL_ZOOM_BY_ID));
 function isSpotRevealed(sp: Spot, zoom: number): boolean {
   const level = SPOT_REVEAL_ZOOM_BY_ID[sp.id];
@@ -2383,7 +2382,7 @@ const destItems = useMemo((): DestItem[] =>
     type: 'FeatureCollection',
     features: stableDotSpots.map(sp => ({
       type: 'Feature',
-      properties: { id: sp.id, color: visitIndex.isSpotVisited(sp.id) ? VISITED_COLOR : '#1E293B' },
+      properties: { id: sp.id, img: visitIndex.isSpotVisited(sp.id) ? SPOT_MINI_PIN_VISITED : SPOT_MINI_PIN_UNVISITED },
       geometry: { type: 'Point', coordinates: [sp.coordinates.longitude, sp.coordinates.latitude] },
     })),
   }), [stableDotSpots, visitIndex]);
@@ -4563,9 +4562,10 @@ const destItems = useMemo((): DestItem[] =>
           </MapboxGL.ShapeSource>
         )}
 
-        {/* Collapsed spot pins: a small photo-less dot for every revealed spot beyond the MAX_SPOT_PINS that
+        {/* Collapsed spot pins: a small photo-less pin for every revealed spot beyond the MAX_SPOT_PINS that
             hold a full photo pin. A native layer (no MarkerView per spot), drawn beneath the destination
             stamps and photo pins, and present for exactly as long as the full pin would have been. */}
+        <SpotPinImages />
         <MapboxGL.ShapeSource
           id="spotDots"
           shape={spotDotsGeoJSON}
@@ -4576,24 +4576,16 @@ const destItems = useMemo((): DestItem[] =>
             if (spot && !pressBlocked()) handleSpotPress(spot);
           }}
         >
-          {/* A mini version of the spot pin: its white bubble with the photo collapsed to a coloured core. Larger and
-              white-ringed, so it reads as a spot and not as one of the small solid grey destination dots. */}
-          <MapboxGL.CircleLayer
-            id="spotDotRing"
+          {/* A small version of the spot pin (SpotPinImages): the same teardrop and white bubble with the photo
+              collapsed to a coloured core, its tip on the coordinate. Reads as a spot, never as a destination dot. */}
+          <MapboxGL.SymbolLayer
+            id="spotMiniPins"
             belowLayerID="destStampCircles"
             style={{
-              circleRadius: SPOT_DOT_RADIUS,
-              circleColor: 'white',
-              circleStrokeWidth: 1,
-              circleStrokeColor: 'rgba(15,23,42,0.35)',
-            }}
-          />
-          <MapboxGL.CircleLayer
-            id="spotDotCore"
-            aboveLayerID="spotDotRing"
-            style={{
-              circleRadius: SPOT_DOT_CORE_RADIUS,
-              circleColor: ['get', 'color'] as any,
+              iconImage: ['get', 'img'] as any,
+              iconAnchor: 'bottom',
+              iconAllowOverlap: true,
+              iconIgnorePlacement: true,
             }}
           />
         </MapboxGL.ShapeSource>
