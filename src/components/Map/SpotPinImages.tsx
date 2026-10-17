@@ -1,6 +1,6 @@
 import React, { memo, useEffect, useRef } from 'react';
 import { View, StyleSheet } from 'react-native';
-import Svg, { Circle, Path } from 'react-native-svg';
+import Svg, { Path } from 'react-native-svg';
 import MapboxGL from '@rnmapbox/maps';
 
 // The collapsed form of a spot pin: the photo pin's exact teardrop (SpotMarker in MapScreen) made small and
@@ -16,7 +16,9 @@ export const SPOT_MINI_PIN_VISITED = 'spotmini:1';
 // the tangent lines from the tip to the bubble's circle, so the outline is one smooth teardrop.
 const R = 5;                     // bubble radius
 const TAIL_L = 4;                // how far the tip hangs below the bubble
-const W = R * 2, H = R * 2 + TAIL_L;
+const BORDER = 1.5;              // white outline around the whole teardrop
+const P = BORDER / 2 + 0.5;      // padding so the outline isn't clipped by the image edge
+const W = R * 2 + P * 2, H = R * 2 + TAIL_L + P * 2;
 const TIP_D = R + TAIL_L;
 const TAN_Y = (R * R) / TIP_D;
 const TAN_X = R * Math.sqrt(1 - (R * R) / (TIP_D * TIP_D));
@@ -35,11 +37,16 @@ const MiniPin = memo(function MiniPin({ name, visited }: { name: string; visited
     <MapboxGL.Image name={name} ref={imageRef as any}>
       <View collapsable={false} style={st.box}>
         <Svg width={W} height={H}>
+          {/* One closed outline (tail edges, then the arc over the top) so the white border runs round the whole
+              teardrop without a seam where the tail meets the bubble. */}
           <Path
-            d={`M ${R} ${R} L ${R - TAN_X} ${R + TAN_Y} L ${R} ${R + TIP_D} L ${R + TAN_X} ${R + TAN_Y} Z`}
+            d={`M ${P + R - TAN_X} ${P + R + TAN_Y} L ${P + R} ${P + R + TIP_D} L ${P + R + TAN_X} ${P + R + TAN_Y} `
+              + `A ${R} ${R} 0 1 0 ${P + R - TAN_X} ${P + R + TAN_Y} Z`}
             fill={visited ? VISITED_COLOR : BODY}
+            stroke="white"
+            strokeWidth={BORDER}
+            strokeLinejoin="round"
           />
-          <Circle cx={R} cy={R} r={R} fill={visited ? VISITED_COLOR : BODY} />
         </Svg>
       </View>
     </MapboxGL.Image>
