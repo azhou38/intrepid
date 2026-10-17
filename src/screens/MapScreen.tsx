@@ -982,6 +982,26 @@ const SPOT_REVEAL_ZOOM_BY_ID: Record<string, number> = (() => {
   }
   return out;
 })();
+// At most this many spots draw as full photo pins at once; the rest of the revealed spots collapse to a small
+// photo-less dot (SpotDots below) that lives exactly as long as the full pin would have — same reveal zoom, same
+// viewport — so the map never loses a spot, it only stops paying for a photo MarkerView on every one of them.
+const MAX_SPOT_PINS = 25;
+// A standalone spot has no list to rank in; it ranks like a destination's third spot, so it neither crowds out a
+// destination's headline spots nor is the first to lose its pin.
+const STANDALONE_IMPORTANCE = 2;
+// How important a spot is within its own destination (or STANDALONE_IMPORTANCE when standalone): its place in that destination's list, which
+// is ordered by importance. Ranking pins by this spreads the full pins across destinations instead of letting whichever
+// destination comes first in the data take them all.
+const SPOT_IMPORTANCE = (() => {
+  const seen = new Map<string, number>(), out = new Map<string, number>();
+  for (const sp of SPOTS) {
+    const k = spotParentKey(sp), n = seen.get(k) ?? 0;
+    out.set(sp.id, sp.destinationId ? n : STANDALONE_IMPORTANCE); seen.set(k, n + 1);
+  }
+  return out;
+})();
+const SPOT_BY_ID = new Map(SPOTS.map(sp => [sp.id, sp]));
+const SPOT_DOT_RADIUS = 5.5;
 const MIN_SPOT_REVEAL_ZOOM = Math.min(...Object.values(SPOT_REVEAL_ZOOM_BY_ID));
 function isSpotRevealed(sp: Spot, zoom: number): boolean {
   const level = SPOT_REVEAL_ZOOM_BY_ID[sp.id];
@@ -2309,7 +2329,31 @@ const destItems = useMemo((): DestItem[] =>
   }, [region, handoffZoom, selectedSpot, selectedDest, spotsInDest, nearCtx]);
   // Exit-fade tracking for spot pins (same treatment as pills/photos): pins leaving the
   // set linger for PIN_EXIT_MS fading out, new ones mount at 0 and fade in.
-  const renderedSpots = useExitingItems(useStableList(visibleSpots, s => s.id), s => s.id, HANDOFF_FADE_MS);
+  // Full photo pins for the highest-priority spots in view (the selected spot and a near carousel's spots always among
+  // them, then visited ones, then the most important by their place in their destination's list); everything else that
+  // is revealed becomes a dot. Ranked on static data only, so panning never reshuffles which spots hold a pin.
+  const { pinSpots, dotSpots } = useMemo(() => {
+    if (visibleSpots.length <= MAX_SPOT_PINS) return { pinSpots: visibleSpots, dotSpots: [] as Spot[] };
+    const must = new Set<string>();
+    if (selectedSpot) must.add(selectedSpot.id);
+    if (nearCtx) for (const sp of nearCtx.spots) must.add(sp.id);
+    const rank = (sp: Spot) =>
+      (must.has(sp.id) ? -2_000_000 : 0) + (visitIndex.isSpotVisited(sp.id) ? -1_000_000 : 0)
+      + (SPOT_IMPORTANCE.get(sp.id) ?? 0) * 1000 + (SPOT_ORDER.get(sp.id) ?? 0);
+    const sorted = [...visibleSpots].sort((x, y) => rank(x) - rank(y));
+    const k = Math.max(MAX_SPOT_PINS, must.size);
+    return { pinSpots: sorted.slice(0, k), dotSpots: sorted.slice(k) };
+  }, [visibleSpots, selectedSpot, nearCtx, visitIndex]);
+  const stableDotSpots = useStableList(dotSpots, s => s.id);
+  const spotDotsGeoJSON = useMemo((): GeoJSON.FeatureCollection<GeoJSON.Point> => ({
+    type: 'FeatureCollection',
+    features: stableDotSpots.map(sp => ({
+      type: 'Feature',
+      properties: { id: sp.id, color: visitIndex.isSpotVisited(sp.id) ? VISITED_COLOR : '#374151' },
+      geometry: { type: 'Point', coordinates: [sp.coordinates.longitude, sp.coordinates.latitude] },
+    })),
+  }), [stableDotSpots, visitIndex]);
+  const renderedSpots = useExitingItems(useStableList(pinSpots, s => s.id), s => s.id, HANDOFF_FADE_MS);
 
   // Which side of each spot pin its name goes on — or none. Names default to the LEFT of the pin;
   // when that would run into another pin or an already-placed name the label flips to the right, and
@@ -4484,6 +4528,31 @@ const destItems = useMemo((): DestItem[] =>
             <MapboxGL.SymbolLayer id="destPhotoSymbols" aboveLayerID="destStampCircles" style={DEST_SYMBOL_STYLE} />
           </MapboxGL.ShapeSource>
         )}
+
+        {/* Collapsed spot pins: a small photo-less dot for every revealed spot beyond the MAX_SPOT_PINS that
+            hold a full photo pin. A native layer (no MarkerView per spot), drawn beneath the destination
+            stamps and photo pins, and present for exactly as long as the full pin would have been. */}
+        <MapboxGL.ShapeSource
+          id="spotDots"
+          shape={spotDotsGeoJSON}
+          hitbox={{ width: 28, height: 28 }}
+          onPress={(e) => {
+            const id = e.features[0]?.properties?.id as string | undefined;
+            const spot = id ? SPOT_BY_ID.get(id) : undefined;
+            if (spot && !pressBlocked()) handleSpotPress(spot);
+          }}
+        >
+          <MapboxGL.CircleLayer
+            id="spotDotCircles"
+            belowLayerID="destStampCircles"
+            style={{
+              circleRadius: SPOT_DOT_RADIUS,
+              circleColor: ['get', 'color'] as any,
+              circleStrokeWidth: 2,
+              circleStrokeColor: 'white',
+            }}
+          />
+        </MapboxGL.ShapeSource>
 
         {/* All MarkerViews require the map style to be loaded before Mapbox can
             project coordinates to screen positions. Gate on mapReady. */}
