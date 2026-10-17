@@ -1706,6 +1706,10 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // greedy collision resolution sees the same destinations every frame during a pan and can
   // never flip a visible pin's state just because an off-screen neighbour scrolled in or out
   // of a viewport-culled candidate list (the root cause of the pan glitching).
+  // The live visible span from the camera's zoom alone (pill scale) — pan-invariant, unlike pillVisibleLngDelta, whose
+  // bounds term shifts as the globe pans north or south at a fixed zoom. What inCountryView is judged on, so panning never
+  // changes which destinations are inside their country's view.
+  const liveZoomLngDelta = useMemo(() => SCREEN_W_GLOBAL * 360 / (256 * Math.pow(2, camZoom)), [camZoom]);
   const eligibleDests = useMemo(() => {
     const results: Destination[] = [];
     const added = new Set<string>();
@@ -1723,14 +1727,14 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
       // worldwide while drilled into a country/destination (so every country pill can form).
       // Inside its country's own view (see inCountryView) a destination is eligible whatever the global rank tier, the
       // same rule that lets it promote to a photo there.
-      const rankOk = d.rank <= visibleRank || saved || inCountryView(d, pillVisibleLngDelta, saved);
+      const rankOk = d.rank <= visibleRank || saved || inCountryView(d, liveZoomLngDelta, saved);
       const anchorRank1 = (selectedCountry || selectedDest) && d.rank === 1;
       if (!(isSelected || inSelectedCountry || rankOk || anchorRank1)) continue;
       results.push(d);
       added.add(d.id);
     }
     return results;
-  }, [visibleRank, visitIndex, selectedCountry, selectedDest, pillVisibleLngDelta]);
+  }, [visibleRank, visitIndex, selectedCountry, selectedDest, liveZoomLngDelta]);
 
   // NOTE: there is deliberately NO viewport-bounds culling of the render set. There are only
   // ~45 destinations total, so rendering every eligible one (Mapbox natively clips whatever
@@ -1965,7 +1969,7 @@ const destItems = useMemo((): DestItem[] =>
       // pill was already gone (e.g. Los Angeles/Grand Canyon still dots with the western
       // US filling the screen). Eligibility (visibleRank/saved) and the photo-vs-photo and
       // pill collision rules still apply on top.
-      if (inCountryView(d, pillVisibleLngDelta, visitIndex.isDestVisited(d.id))) return true;
+      if (inCountryView(d, liveZoomLngDelta, visitIndex.isDestVisited(d.id))) return true;
       const effRank = Math.max(1, d.rank - (visitIndex.isDestVisited(d.id) ? 1 : 0));
       return panLatDelta <= (PROMOTE_LATDELTA_BY_RANK[effRank] ?? 2.5);
     };
@@ -2082,7 +2086,7 @@ const destItems = useMemo((): DestItem[] =>
     // Pure function of zoom (planLngDelta) + eligible set + selection + saved state +
     // the (equally pan-invariant) country pill plan.
     // No camera centre → recompute produces an identical plan while panning at fixed zoom.
-  }, [eligibleDests, planLngDelta, pillPlanLngDelta, pillVisibleLngDelta, planCountry, planDest, selectedSpot, visitIndex, countryPills]);
+  }, [eligibleDests, planLngDelta, pillPlanLngDelta, liveZoomLngDelta, planCountry, planDest, selectedSpot, visitIndex, countryPills]);
 
   // Stamps are rendered via CircleLayer (not MarkerView) so Mapbox renders all of them
   // regardless of proximity. Every filter-passing destination gets a stamp — INCLUDING ones
