@@ -1,9 +1,13 @@
 # Routine: Pipeline A — coverage
 
-Run by the scheduled cloud routine "Intrepid coverage". Rules: `COVERAGE.md`. Conventions: `PIPELINES.md`. Do not merge anything.
+Run by the scheduled cloud routine "Intrepid coverage". Rules: `COVERAGE.md` (read "Finding what is missing" first: coverage runs per region, judges inclusion blind to placement, and reports fairness). Conventions: `PIPELINES.md`. Do not merge anything.
 
-1. `npm ci --ignore-scripts`; take the next batch of 5 from `npx tsx scripts/curation-backlog.ts --batch 5` (or the countries/destinations the routine's prompt names).
-2. Per destination, in `curation/<branch>/<destination-id>/`: `coverage-enumerator` → `candidates.json`; `coverage-recall-checker` → `gaps.json`; `coverage-proposer` → `proposal.json`; `coverage-skeptic` → `skeptic.json`.
-3. Apply only the items the skeptic kept, per `WRITING.md` (ids never reused, standalone fields, names, coordinates from a source). New spots need a photo and an official site: run the imagery and research steps for them (`image-searcher` + `image-judge`, `spot-researcher`). Run `npx tsc --noEmit`, `npx tsx scripts/audit-spot-coordinates.ts --dest <id>`, `npx tsx scripts/check-destination-headers.ts`, `npx tsx scripts/photo-prefilter.ts`, `npx tsx scripts/build-image-manifest.ts`. One commit per destination.
-4. Check the benchmark in `COVERAGE.md` → "Finding what is missing" for any NZ area in the batch; a run that misses it fails and opens no pull request.
-5. One pull request through the REST API assigned to `azhou38`, body = the evidence table (candidate, source, decision, reason) and what could not be verified. Then the push notification.
+1. `npm ci --ignore-scripts`; take the first region marked `NO PASS` from `npx tsx scripts/curation-backlog.ts --country <CC>` (or the region the routine's prompt names). One region per run and per pull request.
+2. In `curation/<branch>/region-<id>/`, in this order (job prompts in `.claude/routines/jobs/`):
+   - `coverage-enumerator` → `candidates.json` (`jobA-region.md`): the whole region from sources, each candidate scored, no destination information.
+   - `coverage-recall-checker` → `verdicts.json` (`jobA-region.md`): keep / reject / review for every new candidate and every existing spot in the region, blind to placement.
+   - `coverage-skeptic` → `skeptic.json` (`jobA-skeptic.md`): challenges the verdicts on the same blind terms; checks photos.
+   - `coverage-proposer` → `placement.json` and `fairness.json` (`jobA-place.md`): places what was kept, then writes the fairness report.
+3. Reject the run (no pull request; say why) if `fairness.json` shows a candidate scoring above the lowest-scoring kept spot left out without a concrete reason from "What qualifies", or if the benchmark in `COVERAGE.md` fails for this region.
+4. Apply only what the skeptic kept and the proposer placed, per `WRITING.md` (ids never reused, standalone fields, names, coordinates from a source). Add every new standalone spot to its region in `scripts/coverage-regions.json`. New spots need a photo and an official site: run the imagery and research steps for them (`image-searcher` + `image-judge`, `spot-researcher`); a standalone spot gets exactly the same photo search as a destination spot. Run `npx tsc --noEmit`, `npx tsx scripts/audit-spot-coordinates.ts --country <CC>`, `npx tsx scripts/check-destination-headers.ts`, `npx tsx scripts/photo-prefilter.ts`, `npx tsx scripts/build-image-manifest.ts`. One commit per destination touched, and one for the region's standalone spots.
+5. One pull request through the REST API assigned to `azhou38`. Body: the fairness report first (inside/standalone split, strongest outsiders and what happened to each, lowest-scoring kept spots), then the evidence table (candidate, score, sources, verdict, placement, reason), the review list, and what could not be verified. Then the push notification.

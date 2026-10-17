@@ -1,0 +1,21 @@
+{
+ "_note": "Coverage regions (COVERAGE.md -> Finding what is missing). A region pass covers all of a region's land, between destinations as well as in them. Every destination and every standalone spot of a listed country must appear in exactly one region; scripts/curation-backlog.ts reports any that do not. A destination whose span crosses a border is listed where most of it lies. New Zealand uses its regional-council regions, with Nelson and Tasman as one, plus the Chatham Islands.",
+ "NZ": [
+  { "id": "northland", "name": "Northland", "destinations": ["bay-of-islands", "whangarei", "cape-reinga", "waipoua-forest"], "standalone": ["kauri-museum"] },
+  { "id": "auckland", "name": "Auckland", "destinations": ["auckland", "waiheke-island", "great-barrier-island", "matakana"], "standalone": [] },
+  { "id": "waikato", "name": "Waikato", "destinations": ["coromandel", "hamilton", "raglan", "waitomo", "taupo"], "standalone": [] },
+  { "id": "bay-of-plenty", "name": "Bay of Plenty", "destinations": ["tauranga", "whakatane", "rotorua", "te-urewera"], "standalone": [] },
+  { "id": "gisborne", "name": "Gisborne", "destinations": ["gisborne", "east-cape"], "standalone": [] },
+  { "id": "hawkes-bay", "name": "Hawke's Bay", "destinations": ["napier"], "standalone": [] },
+  { "id": "taranaki", "name": "Taranaki", "destinations": ["new-plymouth", "egmont"], "standalone": [] },
+  { "id": "manawatu-whanganui", "name": "Manawatū-Whanganui", "destinations": ["tongariro", "whanganui", "whanganui-national-park", "palmerston-north"], "standalone": [] },
+  { "id": "wellington", "name": "Wellington", "destinations": ["wellington", "wairarapa"], "standalone": [] },
+  { "id": "nelson-tasman", "name": "Nelson Tasman", "destinations": ["nelson", "abel-tasman", "golden-bay", "kahurangi", "nelson-lakes"], "standalone": [] },
+  { "id": "marlborough", "name": "Marlborough", "destinations": ["marlborough-sounds", "blenheim"], "standalone": [] },
+  { "id": "west-coast", "name": "West Coast", "destinations": ["westland-tai-poutini", "hokitika", "paparoa", "greymouth", "westport"], "standalone": [] },
+  { "id": "canterbury", "name": "Canterbury", "destinations": ["christchurch", "akaroa", "kaikoura", "hanmer-springs", "arthurs-pass", "lake-tekapo", "aoraki-mount-cook", "timaru"], "standalone": ["kura-tawhiti-castle-hill", "cave-stream", "lewis-pass", "birdlings-flat"] },
+  { "id": "otago", "name": "Otago", "destinations": ["queenstown", "wanaka", "dunedin", "oamaru", "central-otago", "mount-aspiring", "catlins"], "standalone": ["glenorchy"] },
+  { "id": "southland", "name": "Southland", "destinations": ["fiordland", "stewart-island", "invercargill"], "standalone": ["hump-ridge-track", "clifden-suspension-bridge"] },
+  { "id": "chatham-islands", "name": "Chatham Islands", "destinations": ["chatham-islands"], "standalone": [] }
+ ]
+}

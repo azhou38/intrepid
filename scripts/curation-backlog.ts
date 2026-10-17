@@ -3,10 +3,15 @@
 //
 //   npx tsx scripts/curation-backlog.ts [--country NZ] [--batch 5] [--skip id,id] [--prefilter out.json] [--json out.json]
 //
+// Regions first (COVERAGE.md → "Finding what is missing"): for a country listed in scripts/coverage-regions.json it prints
+// each region's spots inside destinations vs standalone, whether the region has had a region pass (a committed
+// curation/<branch>/region-<id>/fairness.json), and any destination or standalone spot not assigned to a region. A region
+// with no pass is ahead of every destination in the backlog, since its in-between land has never been searched.
+//
 // Data-only signals (no network): spots per destination, a header still in HEADER_REVIEW_BACKLOG, why-visit photos
 // missing, paid spots with no official site (`ticketUrl`), spots that look standalone-by-mistake. With --prefilter (the
 // --json output of scripts/photo-prefilter.ts) a photo that fails the pre-filter adds to its destination's score.
-import { readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { DESTINATIONS } from '../src/data/destinations';
 import { SPOTS } from '../src/data/spots';
 import { HEADER_REVIEW_BACKLOG } from './destination-header-policy';
@@ -21,6 +26,30 @@ const spotKeys = new Map<string, string[]>();                 // photo key → d
 for (const s of SPOTS) {
   const id = s.destinationId; if (!id) continue;
   for (const k of [s.wiki ?? s.name]) spotKeys.set(k, [...(spotKeys.get(k) ?? []), id]);
+}
+
+// Regions: coverage status and the in-destination / standalone split.
+type Region = { id: string; name: string; destinations: string[]; standalone: string[] };
+const regionsByCountry: Record<string, Region[]> = existsSync('scripts/coverage-regions.json')
+  ? JSON.parse(readFileSync('scripts/coverage-regions.json', 'utf8')) : {};
+const passed = new Set<string>();
+if (existsSync('curation')) for (const branch of readdirSync('curation')) {
+  if (!existsSync(`curation/${branch}`) || branch.startsWith('.')) continue;
+  for (const dir of readdirSync(`curation/${branch}`)) if (dir.startsWith('region-') && existsSync(`curation/${branch}/${dir}/fairness.json`)) passed.add(dir.slice(7));
+}
+for (const [cc, regions] of Object.entries(regionsByCountry)) {
+  if (cc.startsWith('_') || (country && cc !== country)) continue;
+  const destIds = new Set(DESTINATIONS.filter(d => d.countryCode === cc).map(d => d.id));
+  const standaloneIds = new Set(SPOTS.filter(s => !s.destinationId && s.countryCode === cc).map(s => s.id));
+  const assigned = new Set(regions.flatMap(r => [...r.destinations, ...r.standalone]));
+  console.log(`Coverage regions, ${cc} (${regions.filter(r => passed.has(r.id)).length} of ${regions.length} have had a region pass):`);
+  for (const r of [...regions].sort((a, b) => Number(passed.has(a.id)) - Number(passed.has(b.id)))) {
+    const inDest = SPOTS.filter(s => s.destinationId && r.destinations.includes(s.destinationId)).length;
+    console.log(`  ${passed.has(r.id) ? 'done   ' : 'NO PASS'}  ${r.name}: ${inDest} spots in ${r.destinations.length} destinations, ${r.standalone.length} standalone`);
+  }
+  const loose = [...destIds, ...standaloneIds].filter(id => !assigned.has(id));
+  if (loose.length) console.log(`  Not assigned to a region (add to scripts/coverage-regions.json): ${loose.join(', ')}`);
+  console.log('');
 }
 
 const rows = DESTINATIONS.filter(d => !country || d.countryCode === country).map(d => {
