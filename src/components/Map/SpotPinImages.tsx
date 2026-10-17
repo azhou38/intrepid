@@ -1,21 +1,26 @@
 import React, { memo, useEffect, useRef } from 'react';
 import { View, StyleSheet } from 'react-native';
+import Svg, { Circle, Path } from 'react-native-svg';
 import MapboxGL from '@rnmapbox/maps';
 
-// The collapsed form of a spot pin: the same teardrop silhouette and white bubble as the photo pin (SpotMarker in
-// MapScreen), made small, with the photo collapsed to a coloured core. Drawn by a native symbol layer (no MarkerView per
+// The collapsed form of a spot pin: the photo pin's exact teardrop (SpotMarker in MapScreen) at half the size, with
+// black where the photo would be. Drawn by a native symbol layer (no MarkerView per
 // spot), so it needs style images; like DestPinImages, each is a small React Native view that rnmapbox snapshots into
 // the map style. The image's bottom edge is the pin's tip, so the layer anchors it at the bottom on the coordinate.
 
 export const SPOT_MINI_PIN_UNVISITED = 'spotmini:0';
 export const SPOT_MINI_PIN_VISITED = 'spotmini:1';
 
-const W = 20, H = 26;            // the image box; its bottom-centre is the tip
-const BUBBLE = 16;               // the white bubble
-const CORE = 7;                  // the coloured core standing in for the photo
-const TAIL = 9;                  // the square rotated 45° into the tail (diagonal ≈ 12.7)
-const RING = 'rgba(15,23,42,0.35)';
-const CORE_COLOR = '#1E293B';
+// Half the photo pin's size (SpotMarker: a 28pt bubble, 10pt tail, 2pt ring), same geometry: the tail's two edges are
+// the tangent lines from the tip to the bubble's circle, so the outline is one smooth teardrop.
+const R = 7;                     // bubble radius
+const TAIL_L = 5;                // how far the tip hangs below the bubble
+const RING_W = 1.5;              // the white (or visited green) ring, as on the photo pin
+const W = R * 2, H = R * 2 + TAIL_L;
+const TIP_D = R + TAIL_L;
+const TAN_Y = (R * R) / TIP_D;
+const TAN_X = R * Math.sqrt(1 - (R * R) / (TIP_D * TIP_D));
+const BODY = '#111111';          // where the photo would be
 const VISITED_COLOR = '#10B981';
 
 const MiniPin = memo(function MiniPin({ name, visited }: { name: string; visited: boolean }) {
@@ -29,10 +34,14 @@ const MiniPin = memo(function MiniPin({ name, visited }: { name: string; visited
   return (
     <MapboxGL.Image name={name} ref={imageRef as any}>
       <View collapsable={false} style={st.box}>
-        <View collapsable={false} style={st.tail} />
-        <View collapsable={false} style={st.bubble}>
-          <View collapsable={false} style={[st.core, { backgroundColor: visited ? VISITED_COLOR : CORE_COLOR }]} />
-        </View>
+        <Svg width={W} height={H}>
+          <Path
+            d={`M ${R} ${R} L ${R - TAN_X} ${R + TAN_Y} L ${R} ${R + TIP_D} L ${R + TAN_X} ${R + TAN_Y} Z`}
+            fill={visited ? VISITED_COLOR : 'white'}
+          />
+          <Circle cx={R} cy={R} r={R} fill={visited ? VISITED_COLOR : 'white'} />
+          <Circle cx={R} cy={R} r={R - RING_W} fill={BODY} />
+        </Svg>
       </View>
     </MapboxGL.Image>
   );
@@ -47,16 +56,6 @@ export default memo(function SpotPinImages() {
   );
 });
 
-const tailCentreY = H - (TAIL * Math.SQRT2) / 2;
 const st = StyleSheet.create({
   box: { width: W, height: H },
-  tail: {
-    position: 'absolute', left: (W - TAIL) / 2, top: tailCentreY - TAIL / 2, width: TAIL, height: TAIL,
-    backgroundColor: 'white', borderWidth: 1, borderColor: RING, transform: [{ rotate: '45deg' }],
-  },
-  bubble: {
-    position: 'absolute', left: (W - BUBBLE) / 2, top: 1, width: BUBBLE, height: BUBBLE, borderRadius: BUBBLE / 2,
-    backgroundColor: 'white', borderWidth: 1, borderColor: RING, alignItems: 'center', justifyContent: 'center',
-  },
-  core: { width: CORE, height: CORE, borderRadius: CORE / 2 },
 });
