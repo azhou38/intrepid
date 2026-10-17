@@ -1,10 +1,10 @@
 import React, { memo, useEffect, useRef } from 'react';
 import { View, StyleSheet } from 'react-native';
-import Svg, { Path } from 'react-native-svg';
+import Svg, { Circle, Path } from 'react-native-svg';
 import MapboxGL from '@rnmapbox/maps';
 
 // The collapsed form of a spot pin: the photo pin's exact teardrop (SpotMarker in MapScreen) made small and
-// white with a faint dark outline (green once visited). Drawn by a native symbol layer (no MarkerView per
+// white with a faint dark outline and a black centre dot (green once visited). Drawn by a native symbol layer (no MarkerView per
 // spot), so it needs style images; like DestPinImages, each is a small React Native view that rnmapbox snapshots into
 // the map style. The image's bottom edge is the pin's tip, so the layer anchors it at the bottom on the coordinate.
 
@@ -24,6 +24,8 @@ const TAN_Y = (R * R) / TIP_D;
 const TAN_X = R * Math.sqrt(1 - (R * R) / (TIP_D * TIP_D));
 const BODY = 'white';            // the whole pin
 const OUTLINE = 'rgba(0,0,0,0.35)';
+const DOT_R = 2;                 // the black dot at the bubble's centre
+const DOT = '#111111';
 const VISITED_COLOR = '#10B981';
 
 const MiniPin = memo(function MiniPin({ name, visited }: { name: string; visited: boolean }) {
@@ -48,6 +50,7 @@ const MiniPin = memo(function MiniPin({ name, visited }: { name: string; visited
             strokeWidth={BORDER}
             strokeLinejoin="round"
           />
+          <Circle cx={P + R} cy={P + R} r={DOT_R} fill={DOT} />
         </Svg>
       </View>
     </MapboxGL.Image>
