@@ -1,0 +1,199 @@
+{
+  "destination": "blue-mountains",
+  "step": "Quill step 2 drafts (copy only; all from research.json)",
+  "fixed_fields": { "rank": 2, "defaultZoomSpanKm": 50, "bestMonths": [3, 4, 5] },
+  "tagline": {
+    "current": null,
+    "variants": [
+      "World Heritage sandstone cliffs, waterfalls and the Three Sisters, a train ride west of Sydney.",
+      "Cliff-edge lookouts and more than 140 km of tracks above the Jamison and Grose valleys.",
+      "Sydney's nearest wilderness of sandstone escarpments, eucalypt valleys and waterfalls."
+    ],
+    "claims": {
+      "World Heritage": "research what_it_is (Wikipedia, NPWS: UNESCO Greater Blue Mountains Area, inscribed 2000)",
+      "train ride west of Sydney": "Wikivoyage Blue Mountains/Leura/Katoomba: trains from Sydney Central, about 2 h",
+      "140 km of tracks": "NPWS park page",
+      "Jamison / Grose valleys": "Wikivoyage; NPWS (Grose Valley wilderness)",
+      "nearest wilderness": "SOFTENED RISK: 'Sydney's doorstep' is Wikipedia/NPWS wording; variant 3 says nearest, which research does not strictly prove. Prefer variants 1 or 2."
+    }
+  },
+  "description": {
+    "current": null,
+    "variants": [
+      "Blue Mountains National Park covers about 2,680 km2 of sandstone plateau, cut by deep valleys, on Sydney's western edge, and is the most central of the eight protected areas in the World Heritage-listed Greater Blue Mountains Area. Most visitors base themselves in Katoomba, about 103 km west of Sydney, where Echo Point looks across the Jamison Valley to the Three Sisters rock formation and Scenic World runs railway and cable rides into the rainforest below the cliffs. More than 140 km of tracks lead along the rim and down to waterfalls, with Leura, Wentworth Falls, Blackheath and Mount Victoria all a short drive or train ride away. Some tracks are closed for long periods, so check the NPWS alerts before choosing a walk.",
+      "Set 103 km west of Sydney, this national park is a plateau of sandstone cliffs and forested valleys, part of the Greater Blue Mountains Area that UNESCO inscribed in 2000. The Three Sisters at Echo Point in Katoomba are the best-known sight, and the nearby towns of Leura, Wentworth Falls, Blackheath and Mount Victoria give access to waterfalls, the Grose Valley lookouts and over 140 km of walking tracks. Visitors arrive by road or by train from Sydney Central, which takes about two hours. Track closures after landslides and storms are common, so the NPWS alerts page is worth reading first.",
+      "The Blue Mountains are a World Heritage-listed stretch of sandstone cliffs, canyons and waterfalls managed as a 2,680 km2 national park by NSW National Parks and Wildlife Service. Katoomba is the usual base, with the Three Sisters and Echo Point, Scenic World's railway and skyway, and a cliff-top track network that links Wentworth Falls, Leura and Katoomba. Blackheath, about 15 minutes' drive north, looks over the Grose Valley, a declared wilderness area. The district is a day trip from Sydney, though the train takes about two hours each way."
+    ],
+    "claims": {
+      "2,679.54 km2": "Wikipedia Blue Mountains National Park (rounded to 2,680)",
+      "most central of eight protected areas; inscribed 2000": "Wikipedia; research what_it_is",
+      "103 km west, Katoomba base": "research what_it_is (Wikipedia/Wikivoyage)",
+      "Echo Point / Three Sisters / Jamison Valley": "Wikivoyage Blue Mountains; NPWS",
+      "Scenic World railway, skyway, rainforest": "scenicworld.com.au",
+      "140 km of tracks": "NPWS",
+      "Leura, Wentworth Falls, Blackheath, Mount Victoria": "research what_it_is; Mount Victoria/Blackheath ~15 min drive",
+      "Grose Valley declared wilderness area": "NPWS",
+      "cliff-top walk linking Wentworth Falls, Leura, Katoomba": "NPWS Grand Cliff Top Walk, 19 km",
+      "train about 2 hours": "Wikivoyage Leura (about 2 h, depending on delays). Variant 3 says 'each way': implied, soften if desired.",
+      "closures common": "NPWS local alerts (research goodToKnow_candidates)",
+      "avoided": "visitor numbers (conflicting 5.2m/8.4m); 'after landslides and storms' in variant 2 rests only on the National Pass landslide, so storms may be cut"
+    }
+  },
+  "whyVisit": {
+    "current": null,
+    "variants": [
+      [
+        "See the Three Sisters from Echo Point: Katoomba's main lookout over the Jamison Valley",
+        "Ride into the valley at Scenic World, which markets its Scenic Railway as the world's steepest passenger railway",
+        "Walk the rim and waterfalls: Wentworth Falls, Leura Cascades and the Grose Valley cliffs"
+      ],
+      [
+        "Stand at Echo Point for the Three Sisters rock formation and the Jamison Valley below",
+        "Take the Scenic Railway, Skyway or Cableway at Scenic World, 52 degrees down by the operator's account",
+        "Follow tracks along the cliff edge to waterfalls, with 140 km to choose from"
+      ],
+      [
+        "Look across the Jamison Valley to the Three Sisters",
+        "Drop through rainforest on the Scenic Railway, a 52-degree incline",
+        "Walk cliff-top tracks to waterfalls and Grose Valley lookouts"
+      ]
+    ],
+    "claims": {
+      "Echo Point, Three Sisters, Jamison Valley": "Wikivoyage; NPWS; Wikipedia ('most popular attraction near Katoomba')",
+      "world's steepest": "OPERATOR'S OWN CLAIM (scenicworld.com.au 'markets'); always attributed in variant 1, dropped in 3. Do not state as fact.",
+      "52 degree incline, Skyway, Cableway, Walkway": "scenicworld.com.au",
+      "140 km tracks": "NPWS",
+      "Wentworth Falls / Leura Cascades / Grose lookouts": "NPWS (Wentworth Falls lookouts, walks, waterfalls); Wikivoyage Grose Valley views; Leura Cascades is a placed spot"
+    },
+    "photo_notes": {
+      "1_echo_point": "Honest photo exists if it differs from header and Echo Point spot photo (spot uses 'Australia new Katoomba the three sisters.jpg'; header candidate is a Jamison Valley view). Needs a third distinct Three Sisters file; not verified by me.",
+      "2_scenic_world": "Spot photo is the Skyway; use a railway or cableway file here. None verified. Reasons 2 variants name three rides so the photo may show any; variant 3 is railway-only and needs a railway photo.",
+      "3_walks": "Wentworth Falls or Grand Canyon photo. The reason is specific enough to match a waterfall or cliff-edge track photo; if only a view of the falls exists, use variant 1/3 wording ('waterfalls'). If no honest cliff-edge walking photo exists, say so: do not claim 'cliff-edge' with a pure waterfall photo.",
+      "walk_closures": "Reason 3 names no specific walk, so it cannot promise a closed one."
+    }
+  },
+  "highlights": {
+    "current": null,
+    "variants": [
+      ["Three Sisters views", "Scenic World rides", "Cliff-top waterfalls"],
+      ["Echo Point lookout", "Valley railway rides", "Waterfall walks"],
+      ["Jamison Valley outlook", "Rainforest railway", "Rim tracks"]
+    ]
+  },
+  "goodToKnow": {
+    "current": null,
+    "variants": [
+      [
+        "Tracks close often and some for long periods, including part of National Pass after a landslide and the Govetts descent at Blackheath; check the NPWS alerts page before you set out.",
+        "Trains from Sydney Central run to Katoomba and Leura without reservations and take about two hours; local bus 686 links Katoomba station, Echo Point and Scenic World, but Wentworth Falls, Leura Cascades and Govetts Leap need a bus, taxi or car.",
+        "The mountains can be up to 10 C colder than the coast and fog can hide the views all day in cold, wet weather; set your GPS to 'Echo Point, Katoomba', since 'Blue Mountains' routes to unsealed roads."
+      ],
+      [
+        "Several walks are shut with no reopening date, among them parts of National Pass and Lower Fern Bower; the NPWS alerts page is the current list.",
+        "Without a car, take the train to Katoomba (about two hours from Sydney Central, no seat booking) and the 686 bus to Echo Point and Scenic World; check the timetable and Opal fares on transport.nsw.gov.au.",
+        "Parking at Echo Point is paid (Wikivoyage gives about $8 an hour); parking free at Scenic World and walking is the suggested alternative. Fog is common over the valley in winter, so check the forecast and search 'Echo Point, Katoomba' on GPS."
+      ]
+    ],
+    "claims": {
+      "closures": "NPWS local-alerts page read 16 Oct 2026. Govetts descent, National Pass part, Lower Fern Bower named per the lead's instruction ('check the NPWS alerts'). NO dates are written, so they cannot go stale. Variant 2 names Lower Fern Bower; its closure ends 30 Oct 2026, so prefer variant 1 (which omits it) to avoid a stale claim.",
+      "trains roughly hourly, no reservations, ~2 h": "Wikivoyage Blue Mountains, Leura, Katoomba. Not checked on transport.nsw.gov.au.",
+      "bus 686 every 30 min, Opal": "Wikivoyage; frequency omitted from copy because unverified",
+      "Wentworth Falls, Leura Cascades, Govetts Leap need bus/taxi/car": "Wikivoyage Blue Mountains",
+      "up to 10 C colder; fog": "Wikivoyage Blue Mountains; Wikipedia Echo Point caption",
+      "GPS tip": "Wikivoyage Blue Mountains",
+      "Echo Point parking about $8/hour": "Wikivoyage, undated; flagged unverified in research. Drop if price must be current.",
+      "free parking at Scenic World": "Wikivoyage suggestion"
+    }
+  },
+  "bestTimeBlurb": {
+    "current": null,
+    "variants": [
+      "Autumn ({months}) brings cooler walking weather, quieter trails and changing leaf colour around Mount Wilson, Leura and Blackheath; winter is cold with fog, and summer weekends fill the Wentworth Falls car parks.",
+      "Come in {months}, when the days are cool enough for the cliff walks and the autumn colour is out at Mount Wilson and in the Leura and Blackheath gardens.",
+      "{months} is the pick for walking: cooler air and autumn colour, while winter can bring fog over the valleys and snow only a day or two every year or two."
+    ],
+    "claims": {
+      "autumn cooler, quieter trails, colour": "Secret Sydney 20 Apr 2026 (secretsydney.com/blue-mountains-national-park-autumn)",
+      "Mount Wilson autumn colours": "Wikivoyage Blue Mountains (private botanic gardens)",
+      "colour at Leura/Blackheath": "Secret Sydney (per research; page partly unloaded). Variant 2 'gardens' wording is looser; Leura/Blackheath colour is lightly sourced.",
+      "winter cold, fog; snow one or two days every one or two years": "Wikivoyage Blue Mountains climate; Wikipedia Echo Point caption (fog)",
+      "summer weekends fill Wentworth Falls car parks": "Wikivoyage",
+      "avoided": "peak colour dates (late Apr to mid May) and spring: unverified. Yulefest (July) is an event, left out of the blurb; add only if the owner wants a seasonal tag (secretsydney.com/blue-mountains-yulefest-2026)."
+    }
+  },
+  "bestMonths": { "value": [3, 4, 5], "source": "Secret Sydney (autumn only); lead's instruction" },
+  "spot_bios": {
+    "placed_spots_reviewed": 18,
+    "rewrite": [
+      {
+        "id": "blue-mountains-4",
+        "name": "Govett's Leap",
+        "current": "Blackheath's most visited lookout, over the Grose Valley, with walking tracks down from the rim.",
+        "problem": "'Most visited' is unsupported; 'walking tracks down' promises the Govetts descent, which NPWS lists as closed.",
+        "variants": [
+          "A Blackheath lookout over the sheer sandstone cliffs of the Grose Valley, a declared wilderness area; the walk down is closed, so check the NPWS alerts.",
+          "A cliff-top lookout at Blackheath with sweeping views of the Grose Valley wilderness.",
+          "Blackheath's lookout over the hazy Grose Valley and its sandstone cliffs, with the descent track currently closed."
+        ],
+        "sources": "NPWS park page ('sweeping views of sheer sandstone cliffs and hazy blue Grose Valley declared wilderness area from Govetts Leap'); NPWS alerts (Govetts descent closed). Variant 2 has no closure text so it will not go stale; prefer it if the bio should not carry a temporary closure."
+      },
+      {
+        "id": "blue-mountains-3",
+        "name": "Wentworth Falls",
+        "current": "The largest waterfall in Blue Mountains National Park, with a lookout and walks down into the valley.",
+        "problem": "'Largest waterfall in the park' is not in research; 'walks down into the valley' includes the National Pass, partly closed after a landslide.",
+        "variants": [
+          "A waterfall on the Wentworth Falls rim with lookouts and walks; part of the National Pass is closed after a landslide, so check the NPWS alerts.",
+          "Waterfalls and clifftop lookouts above the valley at Wentworth Falls, the start of the Grand Cliff Top Walk to Leura and Katoomba.",
+          "A lookout and walking-track hub at Wentworth Falls, where the falls drop into the valley; some valley tracks are closed, so check the NPWS alerts."
+        ],
+        "sources": "NPWS park page (Wentworth Falls: lookouts, walks and waterfalls; Grand Cliff Top Walk 19 km, Wentworth Falls to Leura to Katoomba); NPWS alerts and Wikivoyage (National Pass closed due to rockfall). 'Start of the Grand Cliff Top Walk' in variant 2 is NPWS's wording."
+      },
+      {
+        "id": "blue-mountains-6",
+        "name": "Leura Cascades",
+        "current": "A waterfall and fern-gully walk near Leura, with the Fern Bower track and Wedding Veil Falls.",
+        "problem": "Lower Fern Bower track is closed per NPWS (until 30 Oct 2026); 'Wedding Veil Falls' has no source in research.",
+        "variants": [
+          "A waterfall and fern-gully walk near Leura; the Lower Fern Bower track is closed, so check the NPWS alerts.",
+          "Cascades in a fern gully near Leura, reached on a short walk from the rim.",
+          "A fern-gully waterfall at Leura, with the Fern Bower track currently closed in part."
+        ],
+        "sources": "NPWS alerts (Lower Fern Bower closed until 30 Oct 2026; the date is left out of copy). 'Short walk from the rim' in variant 2 is not sourced in research; cut if not verified. Variant 1 carries a closure that will end soon, so choose variant 2 (check the walk claim) after 30 Oct."
+      },
+      {
+        "id": "blue-mountains-2",
+        "name": "Scenic World",
+        "current": "A Katoomba valley attraction with the steepest railway, the Scenic Skyway and boardwalks through the rainforest below the cliffs.",
+        "problem": "'Steepest railway' is the operator's own claim stated as fact.",
+        "variants": [
+          "A Katoomba attraction whose Scenic Railway, billed by the operator as the world's steepest passenger railway, drops 52 degrees into the rainforest, plus a Skyway, Cableway and Walkway.",
+          "Katoomba's cliff-side rides: the Scenic Railway down a 52-degree incline, the Skyway over the Jamison Valley and a Walkway through the rainforest below.",
+          "A Katoomba cliff-and-valley attraction with the Scenic Railway, Skyway, Cableway and rainforest Walkway."
+        ],
+        "sources": "scenicworld.com.au. Also flagged for the lead: the placement entry says free: true and hours '10 AM-4 PM (Sat-Sun 9-5)', while the operator site shows 9 AM-5 PM and charged tickets ($64/$120 seen, products unverified). Not changed here, since cost and hours are outside copy."
+      }
+    ],
+    "untouched": [
+      "blue-mountains-1 Echo Point (Wikivoyage/NPWS support it)",
+      "blue-mountains-5 Katoomba ('largest Blue Mountains town' is not in research: consider checking; left as is)",
+      "blue-mountains-7 Katoomba Falls",
+      "blue-mountains-8 Blackheath",
+      "blue-mountains-9 Blue Mountains Botanic Garden",
+      "blue-mountains-10 Norman Lindsay Gallery and Museum",
+      "blue-mountains-11 Grand Canyon Track (NPWS: descends into a canyon; Evans Lookout start; not listed closed in the alert text I read, confirm on alerts page; the 6.3 km figure is not in research)",
+      "blue-mountains-12 Evans Lookout",
+      "blue-mountains-13 Blue Gum Forest",
+      "blue-mountains-14 Giant Stairway (Wikivoyage: descends beside the Three Sisters; Honeymoon Bridge on a side route is closed, bio unaffected)",
+      "blue-mountains-15 Ruined Castle (closures not checked)",
+      "blue-mountains-16 Leura",
+      "blue-mountains-17 Mount Victoria",
+      "blue-mountains-18 Mount Solitary"
+    ]
+  },
+  "open_questions": [
+    "Echo Point bio and the destination copy avoid visitor numbers as asked.",
+    "Closure wording deliberately omits dates; Lower Fern Bower ends 30 Oct 2026, Mt Hay Road 17 Dec 2026, Jenolan 31 Dec 2026. Jenolan is not used as a reason.",
+    "Photos for the three whyVisit reasons were not checked by me (no network use); see photo_notes."
+  ]
+}

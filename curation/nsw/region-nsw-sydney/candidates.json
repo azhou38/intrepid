@@ -1,0 +1,5616 @@
+{
+ "region": "nsw-sydney",
+ "step": "enumerate (Atlas step 1, Greater Sydney region pass): Wikivoyage Sydney, its district pages and sub-pages (CBD, Rocks, Darling Harbour, City South/East, Harbour Islands, Eastern suburbs, Northern Beaches, Manly, Upper/Lower North Shore, Macquarie Park, Inner West, Parramatta, Outer West, Olympic Park, South West, Macarthur, St George & Sutherland Shire, Cronulla, Hills & Hawkesbury); NSW National Parks pages for Sydney parks; Destination NSW (sydney.com) top attractions; Wikipedia tourist attraction, parks, museums, landmarks, nature reserves, beaches and islands categories; OSM (Overpass) attractions with Wikipedia tags. Blind verdicts are step 3, not done here.",
+ "scoring": "views, redirect and coordinates from score-candidates.ts; counted_sources are visitor-oriented only (Wikivoyage, NSW National Parks, Destination NSW); Wikipedia, OSM and category listings are in other_sources.",
+ "sources": [
+  "https://en.wikivoyage.org/wiki/Sydney",
+  "https://en.wikivoyage.org/wiki/Sydney/Bondi_Beach",
+  "https://en.wikivoyage.org/wiki/Sydney/City_Centre",
+  "https://en.wikivoyage.org/wiki/Sydney/City_East",
+  "https://en.wikivoyage.org/wiki/Sydney/City_South",
+  "https://en.wikivoyage.org/wiki/Sydney/Cronulla",
+  "https://en.wikivoyage.org/wiki/Sydney/Darling_Harbour",
+  "https://en.wikivoyage.org/wiki/Sydney/Eastern_suburbs",
+  "https://en.wikivoyage.org/wiki/Sydney/Harbour_Islands",
+  "https://en.wikivoyage.org/wiki/Sydney/Hills_District",
+  "https://en.wikivoyage.org/wiki/Sydney/Inner_West",
+  "https://en.wikivoyage.org/wiki/Sydney/Lower_North_Shore",
+  "https://en.wikivoyage.org/wiki/Sydney/Macarthur",
+  "https://en.wikivoyage.org/wiki/Sydney/Macquarie_Park",
+  "https://en.wikivoyage.org/wiki/Sydney/Manly",
+  "https://en.wikivoyage.org/wiki/Sydney/Maroubra",
+  "https://en.wikivoyage.org/wiki/Sydney/Northern_Beaches",
+  "https://en.wikivoyage.org/wiki/Sydney/Outer_West",
+  "https://en.wikivoyage.org/wiki/Sydney/Parramatta",
+  "https://en.wikivoyage.org/wiki/Sydney/South_West",
+  "https://en.wikivoyage.org/wiki/Sydney/St_George_and_Sutherland_Shire",
+  "https://en.wikivoyage.org/wiki/Sydney/Sydney_Olympic_Park",
+  "https://en.wikivoyage.org/wiki/Sydney/The_Rocks",
+  "https://en.wikivoyage.org/wiki/Sydney/Upper_North_Shore",
+  "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/berowra-valley-national-park",
+  "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/cattai-national-park",
+  "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/dharawal-national-park",
+  "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/dharug-national-park",
+  "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/garigal-national-park",
+  "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/georges-river-national-park",
+  "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/heathcote-national-park",
+  "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/kamay-botany-bay-national-park",
+  "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/ku-ring-gai-chase-national-park",
+  "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/lane-cove-national-park",
+  "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/malabar-headland-national-park",
+  "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/royal-national-park",
+  "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/sydney-harbour-national-park",
+  "https://www.sydney.com/destinations/sydney/sydney-city/sydney-harbour",
+  "https://www.sydney.com/things-to-do/attractions"
+ ],
+ "candidates": [
+  {
+   "name": "Sydney Opera House",
+   "wiki": "Sydney Opera House",
+   "coordinates": {
+    "lat": -33.8571,
+    "lng": 151.2152
+   },
+   "coordinates_source": "OSM:tourism=attraction en:Sydney Opera House",
+   "views": 439300,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_Centre",
+    "https://www.sydney.com/things-to-do/attractions"
+   ],
+   "other_sources": [],
+   "note": "landmark: UNESCO performing arts venue with guided tours and forecourt views",
+   "existing_spot": "sydney-1"
+  },
+  {
+   "name": "Sydney Harbour Bridge",
+   "wiki": "Sydney Harbour Bridge",
+   "coordinates": {
+    "lat": -33.8529,
+    "lng": 151.2095
+   },
+   "coordinates_source": "OSM:attraction en:Sydney Harbour Bridge",
+   "views": 220170,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_Centre",
+    "https://www.sydney.com/things-to-do/attractions"
+   ],
+   "other_sources": [],
+   "note": "landmark: steel arch bridge, free pedestrian walkway; BridgeClimb operates on it",
+   "existing_spot": "sydney-2"
+  },
+  {
+   "name": "BridgeClimb Sydney",
+   "wiki": "BridgeClimb Sydney",
+   "views": 4642,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/The_Rocks",
+    "https://www.sydney.com/things-to-do/attractions"
+   ],
+   "other_sources": [],
+   "note": "operator: guided climb of the Harbour Bridge arch (fold into Sydney Harbour Bridge)",
+   "coordinates": {
+    "lat": -33.8523063,
+    "lng": 151.2107871
+   },
+   "coordinates_source": "wikipedia:BridgeClimb Sydney",
+   "existing_spot": "sydney-2"
+  },
+  {
+   "name": "Circular Quay",
+   "wiki": "Circular Quay",
+   "coordinates": {
+    "lat": -33.8612,
+    "lng": 151.2112
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_Centre",
+   "views": 41412,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_Centre",
+    "https://www.sydney.com/destinations/sydney/sydney-city/sydney-harbour"
+   ],
+   "other_sources": [],
+   "note": "transport hub and waterfront promenade at the harbour ferry wharves"
+  },
+  {
+   "name": "Royal Botanic Garden, Sydney",
+   "wiki": "Royal Botanic Garden, Sydney",
+   "views": 13302,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_Centre",
+    "https://www.sydney.com/things-to-do/attractions"
+   ],
+   "other_sources": [],
+   "note": "garden: botanic garden on the harbour with walks and Mrs Macquarie's Chair",
+   "coordinates": {
+    "lat": -33.86388889,
+    "lng": 151.21694444
+   },
+   "coordinates_source": "wikipedia:Royal Botanic Garden, Sydney"
+  },
+  {
+   "name": "Art Gallery of New South Wales",
+   "wiki": "Art Gallery of New South Wales",
+   "coordinates": {
+    "lat": -33.8686,
+    "lng": 151.2175
+   },
+   "coordinates_source": "OSM:gallery en:Art Gallery of New South Wales",
+   "views": 38594,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_Centre",
+    "https://www.sydney.com/things-to-do/attractions"
+   ],
+   "other_sources": [],
+   "note": "museum: state art gallery, free general admission"
+  },
+  {
+   "name": "Sydney Tower",
+   "wiki": "Sydney Tower",
+   "coordinates": {
+    "lat": -33.87053,
+    "lng": 151.20904
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_Centre",
+   "views": 51501,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_Centre",
+    "https://www.sydney.com/things-to-do/attractions"
+   ],
+   "other_sources": [],
+   "note": "landmark: 309 m observation tower with the Sydney Tower Eye deck"
+  },
+  {
+   "name": "St Mary's Cathedral",
+   "wiki": "St Mary's Cathedral, Sydney",
+   "coordinates": {
+    "lat": -33.871188,
+    "lng": 151.21318
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_Centre",
+   "views": 40529,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_Centre"
+   ],
+   "other_sources": [],
+   "note": "religious: Catholic cathedral with visitor access to the nave"
+  },
+  {
+   "name": "Queen Victoria Building",
+   "wiki": "Queen Victoria Building",
+   "coordinates": {
+    "lat": -33.87182,
+    "lng": 151.20671
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_Centre",
+   "views": 36682,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_Centre"
+   ],
+   "other_sources": [],
+   "note": "historic: Romanesque 1896 arcade with clock, now a shopping centre"
+  },
+  {
+   "name": "The Strand Arcade",
+   "wiki": "The Strand Arcade",
+   "coordinates": {
+    "lat": -33.8695,
+    "lng": 151.2076
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_Centre",
+   "views": 5067,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_Centre"
+   ],
+   "other_sources": [],
+   "note": "historic: Victorian shopping arcade (1891)"
+  },
+  {
+   "name": "Powerhouse Museum",
+   "wiki": "Powerhouse Museum",
+   "coordinates": {
+    "lat": -33.8792,
+    "lng": 151.1993
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_South",
+   "views": 15871,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_South",
+    "https://en.wikivoyage.org/wiki/Sydney/City_Centre"
+   ],
+   "other_sources": [],
+   "note": "museum: technology and design museum at Ultimo; WV lists it closed for refurbishment (since Feb 2024)"
+  },
+  {
+   "name": "Trim the Cat Statue",
+   "wiki": "Trim (cat)",
+   "coordinates": {
+    "lat": -33.866341,
+    "lng": 151.212754
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_Centre",
+   "views": 14398,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_Centre"
+   ],
+   "other_sources": [],
+   "note": "statue: bronze statue of Trim the cat (Matthew Flinders' companion)"
+  },
+  {
+   "name": "Museum of Sydney",
+   "wiki": "Museum of Sydney",
+   "coordinates": {
+    "lat": -33.863612,
+    "lng": 151.211541
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_Centre",
+   "views": 6530,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_Centre"
+   ],
+   "other_sources": [],
+   "note": "museum: Sydney history museum on the site of the first Government House"
+  },
+  {
+   "name": "Hyde Park Barracks",
+   "wiki": "Hyde Park Barracks, Sydney",
+   "coordinates": {
+    "lat": -33.86957,
+    "lng": 151.21275
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_Centre",
+   "views": 12633,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_Centre"
+   ],
+   "other_sources": [],
+   "note": "museum: convict-built barracks, now a museum with tours"
+  },
+  {
+   "name": "State Library of New South Wales",
+   "wiki": "State Library of New South Wales",
+   "coordinates": {
+    "lat": -33.866093,
+    "lng": 151.213284
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_Centre",
+   "views": 16013,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_Centre"
+   ],
+   "other_sources": [],
+   "note": "museum: state library with exhibition spaces and the Mitchell Library reading room"
+  },
+  {
+   "name": "Government House, Sydney",
+   "wiki": "Government House, Sydney",
+   "coordinates": {
+    "lat": -33.860252,
+    "lng": 151.215154
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_Centre",
+   "views": 13867,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_Centre"
+   ],
+   "other_sources": [],
+   "note": "heritage house: Government House and its gardens in the Royal Botanic Garden"
+  },
+  {
+   "name": "Reserve Bank of Australia Museum",
+   "wiki": "Reserve Bank of Australia Museum",
+   "coordinates": {
+    "lat": -33.868055,
+    "lng": 151.211615
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_Centre",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_Centre"
+   ],
+   "other_sources": [],
+   "note": "museum: banknote museum in the Reserve Bank headquarters"
+  },
+  {
+   "name": "Justice and Police Museum",
+   "wiki": "Justice and Police Museum",
+   "coordinates": {
+    "lat": -33.862236,
+    "lng": 151.212323
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_Centre",
+   "views": 1624,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_Centre"
+   ],
+   "other_sources": [],
+   "note": "museum: former police station and courthouse restored to the 1890s"
+  },
+  {
+   "name": "Anzac Memorial",
+   "wiki": "Anzac Memorial",
+   "coordinates": {
+    "lat": -33.875722,
+    "lng": 151.210944
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_Centre",
+   "views": 8706,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_Centre"
+   ],
+   "other_sources": [],
+   "note": "monument: large WWI memorial with Hall of Memory in Hyde Park"
+  },
+  {
+   "name": "Customs House, Sydney",
+   "wiki": "Customs House, Sydney",
+   "coordinates": {
+    "lat": -33.86203,
+    "lng": 151.210885
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_Centre",
+   "views": 5991,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_Centre"
+   ],
+   "other_sources": [],
+   "note": "heritage building: 1845 Customs House with free public exhibition and library"
+  },
+  {
+   "name": "Hyde Park",
+   "wiki": "Hyde Park, Sydney",
+   "coordinates": {
+    "lat": -33.8736,
+    "lng": 151.2113
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_Centre",
+   "views": 12255,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_Centre"
+   ],
+   "other_sources": [],
+   "note": "park: formal city park, Archibald Fountain and Anzac Memorial"
+  },
+  {
+   "name": "The Domain",
+   "wiki": "The Domain, Sydney",
+   "coordinates": {
+    "lat": -33.86904,
+    "lng": 151.215
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_Centre",
+   "views": 13168,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_Centre"
+   ],
+   "other_sources": [],
+   "note": "park: harbourside parkland with Speakers' Corner and Mrs Macquarie's Chair views"
+  },
+  {
+   "name": "Mrs Macquarie's Chair",
+   "wiki": "Mrs Macquarie's Chair",
+   "coordinates": {
+    "lat": -33.859562,
+    "lng": 151.222254
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_Centre",
+   "views": 13607,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_Centre",
+    "https://www.sydney.com/things-to-do/attractions"
+   ],
+   "other_sources": [],
+   "note": "viewpoint: sandstone seat cut into the rock above Farm Cove with Opera House and Bridge views"
+  },
+  {
+   "name": "Sydney Observatory",
+   "wiki": "Sydney Observatory",
+   "coordinates": {
+    "lat": -33.85958,
+    "lng": 151.2046
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/The_Rocks",
+   "views": 6900,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/The_Rocks"
+   ],
+   "other_sources": [],
+   "note": "museum: Australia's oldest observatory with telescopes and planetarium"
+  },
+  {
+   "name": "Carols in the Domain",
+   "wiki": "Carols in the Domain",
+   "views": 12939,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_Centre"
+   ],
+   "other_sources": [],
+   "note": "event: annual Christmas carols concert; not a permanent spot (rule 4)"
+  },
+  {
+   "name": "Central Station, Sydney",
+   "wiki": "Central railway station, Sydney",
+   "coordinates": {
+    "lat": -33.882789,
+    "lng": 151.206548
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_South",
+   "views": 44459,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_South"
+   ],
+   "other_sources": [],
+   "note": "landmark: heritage railway station, Sydney's busiest"
+  },
+  {
+   "name": "Chinatown, Sydney",
+   "wiki": "Chinatown, Sydney",
+   "coordinates": {
+    "lat": -33.878029,
+    "lng": 151.203981
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_South",
+   "views": 10298,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_South"
+   ],
+   "other_sources": [],
+   "note": "district: Chinatown along Dixon Street with restaurants and shops"
+  },
+  {
+   "name": "The Goods Line",
+   "wiki": "The Goods Line",
+   "coordinates": {
+    "lat": -33.880884,
+    "lng": 151.199106
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_South",
+   "views": 3831,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_South"
+   ],
+   "other_sources": [],
+   "note": "park: elevated linear park on a former railway goods line"
+  },
+  {
+   "name": "White Rabbit Gallery",
+   "wiki": "White Rabbit Gallery",
+   "coordinates": {
+    "lat": -33.886466,
+    "lng": 151.20023
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_South",
+   "views": 2787,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_South"
+   ],
+   "other_sources": [],
+   "note": "gallery: contemporary Chinese art gallery in Chippendale"
+  },
+  {
+   "name": "Paddy's Markets",
+   "wiki": "Paddy's Markets",
+   "coordinates": {
+    "lat": -33.87968,
+    "lng": 151.2033
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_South",
+   "views": 4327,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_South"
+   ],
+   "other_sources": [],
+   "note": "market: indoor market hall at Haymarket (Wed-Sun per WV hours)"
+  },
+  {
+   "name": "The Rocks",
+   "wiki": "The Rocks, Sydney",
+   "views": 21487,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/The_Rocks",
+    "https://www.sydney.com/things-to-do/attractions"
+   ],
+   "other_sources": [],
+   "note": "district: historic precinct where Europeans first settled in 1788; cobbled lanes, museums and weekend markets",
+   "redirect_to": "The Rocks, New South Wales",
+   "coordinates": {
+    "lat": -33.85985,
+    "lng": 151.20901
+   },
+   "coordinates_source": "wikipedia:The Rocks, New South Wales"
+  },
+  {
+   "name": "Cadmans Cottage",
+   "wiki": "Cadmans Cottage",
+   "coordinates": {
+    "lat": -33.85889,
+    "lng": 151.20917
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/The_Rocks",
+   "views": 4701,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/The_Rocks"
+   ],
+   "other_sources": [],
+   "note": "heritage house: 1816 cottage, Sydney Harbour NPWS visitor centre"
+  },
+  {
+   "name": "Argyle Cut",
+   "wiki": "Argyle Cut",
+   "coordinates": {
+    "lat": -33.8588,
+    "lng": 151.2066
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/The_Rocks",
+   "views": 2449,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/The_Rocks"
+   ],
+   "other_sources": [],
+   "note": "historic: sandstone road cutting (1843-67) linking Argyle Street"
+  },
+  {
+   "name": "Garrison Church",
+   "wiki": "Garrison Church, Sydney",
+   "coordinates": {
+    "lat": -33.8584,
+    "lng": 151.206
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/The_Rocks",
+   "views": 3848,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/The_Rocks"
+   ],
+   "other_sources": [],
+   "note": "religious: Holy Trinity, the colony's first military church"
+  },
+  {
+   "name": "Museum of Contemporary Art Australia",
+   "wiki": "Museum of Contemporary Art Australia",
+   "coordinates": {
+    "lat": -33.86002,
+    "lng": 151.209
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/The_Rocks",
+   "views": 7216,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/The_Rocks"
+   ],
+   "other_sources": [],
+   "note": "gallery: contemporary Australian art museum in a 1930s deco building"
+  },
+  {
+   "name": "Susannah Place Museum",
+   "wiki": "Susannah Place",
+   "coordinates": {
+    "lat": -33.86009,
+    "lng": 151.20738
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/The_Rocks",
+   "views": 2325,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/The_Rocks"
+   ],
+   "other_sources": [],
+   "note": "museum: row of four 1844 terraces run by Sydney Living Museums"
+  },
+  {
+   "name": "National Trust Centre",
+   "wiki": "National Trust Centre, Sydney",
+   "coordinates": {
+    "lat": -33.8613,
+    "lng": 151.2046
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/The_Rocks",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/The_Rocks"
+   ],
+   "other_sources": [],
+   "note": "heritage building: former military hospital, National Trust headquarters with gallery"
+  },
+  {
+   "name": "Pylon Lookout",
+   "wiki": "Sydney Harbour Bridge",
+   "views": 220170,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/The_Rocks"
+   ],
+   "other_sources": [],
+   "note": "viewpoint: climb to the Southeast Bridge pylon lookout (entry from the bridge approach)",
+   "coordinates": {
+    "lat": -33.85222222,
+    "lng": 151.21055556
+   },
+   "coordinates_source": "wikipedia:Sydney Harbour Bridge",
+   "existing_spot": "sydney-2"
+  },
+  {
+   "name": "Marrinawi Cove",
+   "wiki": "Marrinawi Cove",
+   "coordinates": {
+    "lat": -33.85556,
+    "lng": 151.20192
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/The_Rocks",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/The_Rocks"
+   ],
+   "other_sources": [],
+   "note": "beach: free harbour swimming cove with shark netting and showers"
+  },
+  {
+   "name": "Old Coroner's Court, The Rocks",
+   "wiki": "Old Coroner's Court, The Rocks",
+   "views": 669,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_Sydney"
+   ],
+   "note": "heritage building: Wikipedia category listing only",
+   "coordinates": {
+    "lat": -33.8585,
+    "lng": 151.2093
+   },
+   "coordinates_source": "wikipedia:Old Coroner's Court, The Rocks"
+  },
+  {
+   "name": "Darling Harbour",
+   "wiki": "Darling Harbour",
+   "coordinates": {
+    "lat": -33.8676,
+    "lng": 151.1996
+   },
+   "coordinates_source": "OSM:attraction en:Darling Harbour",
+   "views": 20626,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Darling_Harbour",
+    "https://en.wikivoyage.org/wiki/Sydney"
+   ],
+   "other_sources": [],
+   "note": "district: waterfront leisure precinct with museums, aquariums and the harbour promenade"
+  },
+  {
+   "name": "Pyrmont Bridge",
+   "wiki": "Pyrmont Bridge",
+   "coordinates": {
+    "lat": -33.8706,
+    "lng": 151.201
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Darling_Harbour",
+   "views": 8463,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Darling_Harbour"
+   ],
+   "other_sources": [],
+   "note": "landmark: 1902 swing bridge across Cockle Bay"
+  },
+  {
+   "name": "Chinese Garden of Friendship",
+   "wiki": "Chinese Garden of Friendship",
+   "coordinates": {
+    "lat": -33.8767,
+    "lng": 151.2021
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Darling_Harbour",
+   "views": 5133,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Darling_Harbour"
+   ],
+   "other_sources": [],
+   "note": "garden: Ming-style garden in Darling Harbour"
+  },
+  {
+   "name": "Australian National Maritime Museum",
+   "wiki": "Australian National Maritime Museum",
+   "coordinates": {
+    "lat": -33.8692,
+    "lng": 151.199
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Darling_Harbour",
+   "views": 10578,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Darling_Harbour",
+    "https://www.sydney.com/things-to-do/attractions"
+   ],
+   "other_sources": [],
+   "note": "museum: maritime museum with HMAS Vampire and HMB Endeavour replica"
+  },
+  {
+   "name": "Sydney Heritage Fleet",
+   "wiki": "Sydney Heritage Fleet",
+   "coordinates": {
+    "lat": -33.8699,
+    "lng": 151.199
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Darling_Harbour",
+   "views": 1663,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Darling_Harbour"
+   ],
+   "other_sources": [],
+   "note": "museum: historic vessels including the barque James Craig, moored at Darling Harbour"
+  },
+  {
+   "name": "Tumbalong Park",
+   "wiki": "Tumbalong Park",
+   "coordinates": {
+    "lat": -33.87577,
+    "lng": 151.20158
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Darling_Harbour",
+   "views": 2031,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Darling_Harbour"
+   ],
+   "other_sources": [],
+   "note": "park: open space and stage in Darling Harbour"
+  },
+  {
+   "name": "SEA LIFE Sydney Aquarium",
+   "wiki": "Sea Life Sydney Aquarium",
+   "coordinates": {
+    "lat": -33.8695,
+    "lng": 151.2021
+   },
+   "coordinates_source": "OSM:aquarium en:Sea Life Sydney Aquarium",
+   "views": 8054,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Darling_Harbour"
+   ],
+   "other_sources": [],
+   "note": "aquarium: ticketed aquarium with penguins, platypus and sharks"
+  },
+  {
+   "name": "WILD LIFE Sydney Zoo",
+   "wiki": "Wild Life Sydney",
+   "coordinates": {
+    "lat": -33.8693,
+    "lng": 151.2019
+   },
+   "coordinates_source": "OSM:zoo en:Wild Life Sydney",
+   "views": 3433,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Darling_Harbour"
+   ],
+   "other_sources": [],
+   "note": "zoo: wildlife zoo in Darling Harbour"
+  },
+  {
+   "name": "Madame Tussauds Sydney",
+   "wiki": "Madame Tussauds Sydney",
+   "coordinates": {
+    "lat": -33.8697,
+    "lng": 151.20161
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Darling_Harbour",
+   "views": 4104,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Darling_Harbour"
+   ],
+   "other_sources": [],
+   "note": "entertainment: waxworks attraction in Darling Harbour"
+  },
+  {
+   "name": "Crown Sydney Sky Deck",
+   "wiki": "Crown Sydney",
+   "coordinates": {
+    "lat": -33.87356,
+    "lng": 151.20175
+   },
+   "coordinates_source": "wikivoyage marker:https://en.wikivoyage.org/wiki/Sydney/Darling_Harbour",
+   "views": 34150,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Darling_Harbour"
+   ],
+   "other_sources": [],
+   "note": "viewpoint: 83rd-floor observation deck in the Crown Sydney tower (WV: free guided tours)"
+  },
+  {
+   "name": "The Star, Sydney",
+   "wiki": "The Star, Sydney",
+   "coordinates": {
+    "lat": -33.8685,
+    "lng": 151.1958
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Darling_Harbour",
+   "views": 17804,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Darling_Harbour"
+   ],
+   "other_sources": [],
+   "note": "venue: casino and entertainment complex"
+  },
+  {
+   "name": "IMAX Sydney",
+   "wiki": "IMAX Sydney",
+   "views": 22296,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Darling_Harbour"
+   ],
+   "other_sources": [],
+   "note": "entertainment: IMAX cinema in Darling Harbour",
+   "coordinates": {
+    "lat": -33.877898,
+    "lng": 151.199573
+   },
+   "coordinates_source": "wikipedia:IMAX Sydney"
+  },
+  {
+   "name": "Darling Harbour Carousel",
+   "wiki": "Darling Harbour Carousel",
+   "coordinates": {
+    "lat": -33.8742,
+    "lng": 151.201
+   },
+   "coordinates_source": "OSM:attraction en:Darling Harbour Carousel",
+   "views": 8837,
+   "counted_sources": [],
+   "other_sources": [
+    "https://www.openstreetmap.org/"
+   ],
+   "note": "entertainment: carousel ride; OSM and Wikipedia only"
+  },
+  {
+   "name": "Sydney Fish Market",
+   "wiki": "Sydney Fish Market",
+   "views": 14409,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney",
+    "https://www.sydney.com/things-to-do/attractions"
+   ],
+   "other_sources": [],
+   "note": "market: daily fish market at Pyrmont, open every day with seafood restaurants",
+   "coordinates": {
+    "lat": -33.87274167,
+    "lng": 151.19215833
+   },
+   "coordinates_source": "wikipedia:Sydney Fish Market"
+  },
+  {
+   "name": "Glebe Markets",
+   "wiki": "Glebe Markets",
+   "coordinates": {
+    "lat": -33.8831866,
+    "lng": 151.1910216
+   },
+   "coordinates_source": "wikivoyage marker:https://en.wikivoyage.org/wiki/Sydney/Inner_West",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Inner_West"
+   ],
+   "other_sources": [],
+   "note": "market: weekly Saturday market in Glebe (not permanent)"
+  },
+  {
+   "name": "Rozelle Markets",
+   "wiki": "Rozelle Markets",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Inner_West"
+   ],
+   "other_sources": [],
+   "note": "market: weekend market in Rozelle (Saturday and Sunday only)"
+  },
+  {
+   "name": "Brewery Yard Markets",
+   "wiki": "Brewery Yard",
+   "coordinates": {
+    "lat": -33.885259,
+    "lng": 151.200426
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_South",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_South"
+   ],
+   "other_sources": [],
+   "note": "market: weekend market at Central Park in Chippendale"
+  },
+  {
+   "name": "Elizabeth Bay House",
+   "wiki": "Elizabeth Bay House",
+   "coordinates": {
+    "lat": -33.870113,
+    "lng": 151.226504
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_East",
+   "views": 4663,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_East"
+   ],
+   "other_sources": [],
+   "note": "heritage house: 1839 colonial mansion with harbour views, open to visitors"
+  },
+  {
+   "name": "Australian Museum",
+   "wiki": "Australian Museum",
+   "coordinates": {
+    "lat": -33.8743,
+    "lng": 151.213
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_East",
+   "views": 16455,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_East",
+    "https://en.wikivoyage.org/wiki/Sydney/City_Centre"
+   ],
+   "other_sources": [],
+   "note": "museum: natural history and Indigenous cultures museum"
+  },
+  {
+   "name": "National Art School Gallery",
+   "wiki": "National Art School",
+   "coordinates": {
+    "lat": -33.879169,
+    "lng": 151.218778
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_East",
+   "views": 5078,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_East"
+   ],
+   "other_sources": [],
+   "note": "gallery: gallery in the sandstone Darlinghurst Gaol precinct"
+  },
+  {
+   "name": "Sydney Jewish Museum",
+   "wiki": "Sydney Jewish Museum",
+   "coordinates": {
+    "lat": -33.87903,
+    "lng": 151.22015
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_East",
+   "views": 3284,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_East"
+   ],
+   "other_sources": [],
+   "note": "museum: Holocaust and Jewish history museum"
+  },
+  {
+   "name": "Darlinghurst Gaol",
+   "wiki": "Darlinghurst Gaol",
+   "coordinates": {
+    "lat": -33.879722,
+    "lng": 151.218611
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_East",
+   "views": 6858,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_East"
+   ],
+   "other_sources": [],
+   "note": "heritage building: 1822 sandstone gaol, now the National Institute of Dramatic Art; tours vary"
+  },
+  {
+   "name": "El Alamein Fountain",
+   "wiki": "El Alamein Fountain",
+   "coordinates": {
+    "lat": -33.872895,
+    "lng": 151.22497
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_East",
+   "views": 5275,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_East"
+   ],
+   "other_sources": [],
+   "note": "monument: 1961 fountain by Robert Woodward in Kings Cross"
+  },
+  {
+   "name": "Paddington Reservoir Gardens",
+   "wiki": "Paddington Reservoir",
+   "coordinates": {
+    "lat": -33.8737,
+    "lng": 151.225
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_East",
+   "views": 3523,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_East"
+   ],
+   "other_sources": [],
+   "note": "park: former reservoir turned into terraced gardens"
+  },
+  {
+   "name": "Moore Park",
+   "wiki": "Moore Park, New South Wales",
+   "views": 13976,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_East",
+    "https://en.wikivoyage.org/wiki/Sydney/Eastern_suburbs"
+   ],
+   "other_sources": [],
+   "note": "park: 115 ha open park with sports fields near the Entertainment Quarter",
+   "coordinates": {
+    "lat": -33.89666667,
+    "lng": 151.22
+   },
+   "coordinates_source": "wikipedia:Moore Park, New South Wales"
+  },
+  {
+   "name": "Rushcutters Bay Park",
+   "wiki": "Rushcutters Bay",
+   "coordinates": {
+    "lat": -33.874608,
+    "lng": 151.231018
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_East",
+   "views": 6547,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_East",
+    "https://en.wikivoyage.org/wiki/Sydney/Eastern_suburbs"
+   ],
+   "other_sources": [],
+   "note": "park: harbourside park and bay with walks and picnic areas"
+  },
+  {
+   "name": "Embarkation Park",
+   "wiki": "Embarkation Park",
+   "coordinates": {
+    "lat": -33.868558,
+    "lng": 151.223236
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_East",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_East"
+   ],
+   "other_sources": [],
+   "note": "viewpoint: park with views of the CBD skyline and harbour"
+  },
+  {
+   "name": "Beare Park",
+   "wiki": "Beare Park",
+   "coordinates": {
+    "lat": -33.870248,
+    "lng": 151.229103
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_East",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_East"
+   ],
+   "other_sources": [],
+   "note": "park: harbourside picnic park on Elizabeth Bay"
+  },
+  {
+   "name": "Green Park",
+   "wiki": "Green Park, Sydney",
+   "coordinates": {
+    "lat": -33.87948,
+    "lng": 151.220377
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_East",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_East"
+   ],
+   "other_sources": [],
+   "note": "park: small park in Woolloomooloo"
+  },
+  {
+   "name": "Andrew (Boy) Charlton Pool",
+   "wiki": "Andrew (Boy) Charlton Pool",
+   "coordinates": {
+    "lat": -33.8633,
+    "lng": 151.222
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_East",
+   "views": 3153,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_East"
+   ],
+   "other_sources": [],
+   "note": "beach: 50 m harbourside public pool at Woolloomooloo Bay"
+  },
+  {
+   "name": "Entertainment Quarter",
+   "wiki": "The Entertainment Quarter",
+   "coordinates": {
+    "lat": -33.89456,
+    "lng": 151.22547
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_East",
+   "views": 3592,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_East"
+   ],
+   "other_sources": [],
+   "note": "venue: entertainment precinct at Moore Park with cinemas, bars and weekend markets"
+  },
+  {
+   "name": "Oxford St Rock and Roll Walk of Fame",
+   "wiki": "Oxford Street",
+   "views": 53935,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_East"
+   ],
+   "other_sources": [],
+   "note": "walk: self-guided podcast walk along Oxford Street",
+   "coordinates": {
+    "lat": 51.51527778,
+    "lng": -0.14194444
+   },
+   "coordinates_source": "wikipedia:Oxford Street"
+  },
+  {
+   "name": "Hordern Pavilion",
+   "wiki": "Hordern Pavilion",
+   "coordinates": {
+    "lat": -33.8939,
+    "lng": 151.224
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_East",
+   "views": 17088,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_East"
+   ],
+   "other_sources": [],
+   "note": "venue: concert hall in Moore Park"
+  },
+  {
+   "name": "Oxford Art Factory",
+   "wiki": "Oxford Art Factory",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/City_East"
+   ],
+   "other_sources": [],
+   "note": "venue: music venue for indie gigs",
+   "coordinates": {
+    "lat": -33.8779851,
+    "lng": 151.2137927
+   },
+   "coordinates_source": "OSM (Nominatim) amenity/nightclub"
+  },
+  {
+   "name": "Sydney Cricket Ground",
+   "wiki": "Sydney Cricket Ground",
+   "views": 90653,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_Sydney"
+   ],
+   "note": "venue: cricket and football stadium; tours of the SCG Museum",
+   "coordinates": {
+    "lat": -33.89166667,
+    "lng": 151.22472222
+   },
+   "coordinates_source": "wikipedia:Sydney Cricket Ground"
+  },
+  {
+   "name": "Centennial Park",
+   "wiki": "Centennial Park (Sydney)",
+   "views": 2446,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Eastern_suburbs"
+   ],
+   "other_sources": [],
+   "note": "park: 220 ha parkland with cycling and horse-riding tracks",
+   "coordinates": {
+    "lat": -33.9,
+    "lng": 151.23333333
+   },
+   "coordinates_source": "wikipedia:Centennial Park (Sydney)"
+  },
+  {
+   "name": "Historic Waverley Cemetery",
+   "wiki": "Waverley Cemetery",
+   "views": 9640,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Eastern_suburbs"
+   ],
+   "other_sources": [],
+   "note": "historic: clifftop cemetery with Walter Burley Griffin mausoleum and coastal views",
+   "coordinates": {
+    "lat": -33.907287,
+    "lng": 151.264197
+   },
+   "coordinates_source": "wikipedia:Waverley Cemetery"
+  },
+  {
+   "name": "Bondi Beach",
+   "wiki": "Bondi Beach",
+   "coordinates": {
+    "lat": -33.8924,
+    "lng": 151.2781
+   },
+   "coordinates_source": "OSM:beach en:Bondi Beach",
+   "views": 502501,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Bondi_Beach",
+    "https://www.sydney.com/things-to-do/attractions",
+    "https://en.wikivoyage.org/wiki/Sydney"
+   ],
+   "other_sources": [],
+   "note": "beach: Sydney's most famous surf beach with Icebergs pool and cafes",
+   "existing_spot": "sydney-3"
+  },
+  {
+   "name": "Bondi to Coogee Coastal Walk",
+   "wiki": "Bondi to Coogee coastal walk",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney",
+    "https://www.sydney.com/things-to-do/attractions"
+   ],
+   "other_sources": [],
+   "note": "walk: 6 km clifftop coastal walk linking Bondi, Tamarama, Bronte and Coogee"
+  },
+  {
+   "name": "Bondi Icebergs",
+   "wiki": "Bondi Icebergs",
+   "views": 8057,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Bondi_Beach",
+    "https://www.sydney.com/things-to-do/attractions"
+   ],
+   "other_sources": [],
+   "note": "venue: ocean pool and clubhouse at the south end of Bondi with dining",
+   "redirect_to": "Bondi Icebergs Club",
+   "coordinates": {
+    "lat": -33.895134,
+    "lng": 151.27434
+   },
+   "coordinates_source": "wikipedia:Bondi Icebergs Club"
+  },
+  {
+   "name": "Tamarama Beach",
+   "wiki": "Tamarama Beach",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Eastern_suburbs"
+   ],
+   "other_sources": [],
+   "note": "beach: small surf beach between Bondi and Bronte",
+   "redirect_to": "Tamarama",
+   "coordinates": {
+    "lat": -33.89805556,
+    "lng": 151.26805556
+   },
+   "coordinates_source": "wikipedia:Tamarama"
+  },
+  {
+   "name": "Bronte Beach",
+   "wiki": "Bronte Beach",
+   "coordinates": {
+    "lat": -33.9036,
+    "lng": 151.2686
+   },
+   "coordinates_source": "OSM:beach en:Bronte Beach",
+   "views": 7474,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Eastern_suburbs"
+   ],
+   "other_sources": [],
+   "note": "beach: surf beach with ocean baths and the Bronte Park walk"
+  },
+  {
+   "name": "Clovelly Beach",
+   "wiki": "Clovelly Beach",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Eastern_suburbs"
+   ],
+   "other_sources": [],
+   "note": "beach: sheltered wave-free swimming beach",
+   "redirect_to": "Clovelly, New South Wales",
+   "coordinates": {
+    "lat": -33.9121,
+    "lng": 151.2629
+   },
+   "coordinates_source": "wikipedia:Clovelly, New South Wales"
+  },
+  {
+   "name": "Coogee Beach",
+   "wiki": "Coogee, New South Wales",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Eastern_suburbs",
+    "https://en.wikivoyage.org/wiki/Sydney"
+   ],
+   "other_sources": [],
+   "note": "beach: surf beach with the Coogee to Bondi walk and pools",
+   "coordinates": {
+    "lat": -33.9208335,
+    "lng": 151.2579154
+   },
+   "coordinates_source": "OSM (Nominatim) natural/beach"
+  },
+  {
+   "name": "Maroubra Beach",
+   "wiki": "Maroubra Beach",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Maroubra",
+    "https://en.wikivoyage.org/wiki/Sydney/Eastern_suburbs"
+   ],
+   "other_sources": [],
+   "note": "beach: surf beach at the southern eastern suburbs",
+   "redirect_to": "Maroubra, New South Wales",
+   "coordinates": {
+    "lat": -33.94944444,
+    "lng": 151.24361111
+   },
+   "coordinates_source": "wikipedia:Maroubra, New South Wales"
+  },
+  {
+   "name": "Malabar Beach",
+   "wiki": "Malabar Beach",
+   "coordinates": {
+    "lat": -33.95554,
+    "lng": 151.25075
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Maroubra",
+   "views": 1690,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Eastern_suburbs"
+   ],
+   "other_sources": [],
+   "note": "beach: small beach beside Malabar Headland"
+  },
+  {
+   "name": "Little Bay Beach",
+   "wiki": "Little Bay Beach",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Eastern_suburbs"
+   ],
+   "other_sources": [],
+   "note": "beach: quiet beach at Little Bay",
+   "coordinates": {
+    "lat": -33.9785234,
+    "lng": 151.2516335
+   },
+   "coordinates_source": "OSM (Nominatim) natural/beach"
+  },
+  {
+   "name": "Frenchmans Beach",
+   "wiki": "Frenchmans Beach",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Eastern_suburbs"
+   ],
+   "other_sources": [],
+   "note": "beach: small beach at La Perouse",
+   "coordinates": {
+    "lat": -33.9851919,
+    "lng": 151.2313464
+   },
+   "coordinates_source": "OSM (Nominatim) natural/beach"
+  },
+  {
+   "name": "Congwong Beach",
+   "wiki": "Congwong Beach",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Eastern_suburbs"
+   ],
+   "other_sources": [],
+   "note": "beach: beach at La Perouse",
+   "coordinates": {
+    "lat": -33.9890247,
+    "lng": 151.2350415
+   },
+   "coordinates_source": "OSM (Nominatim) natural/beach"
+  },
+  {
+   "name": "Malabar Headland National Park",
+   "wiki": "Malabar Headland National Park",
+   "views": 1276,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Maroubra",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/malabar-headland-national-park"
+   ],
+   "other_sources": [],
+   "note": "national park: coastal walks and cliff views between Maroubra and Malabar",
+   "redirect_to": "Malabar Headland",
+   "coordinates": {
+    "lat": -33.9584,
+    "lng": 151.263
+   },
+   "coordinates_source": "wikipedia:Malabar Headland"
+  },
+  {
+   "name": "Watsons Bay",
+   "wiki": "Watsons Bay",
+   "views": 14204,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Eastern_suburbs"
+   ],
+   "other_sources": [],
+   "note": "suburb: harbourside village at South Head with fish restaurants and beaches",
+   "coordinates": {
+    "lat": -33.84275,
+    "lng": 151.28125
+   },
+   "coordinates_source": "wikipedia:Watsons Bay"
+  },
+  {
+   "name": "The Gap, Sydney",
+   "wiki": "The Gap, Sydney",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Eastern_suburbs"
+   ],
+   "other_sources": [],
+   "note": "viewpoint: cliff lookout at South Head above the Pacific",
+   "coordinates": {
+    "lat": -33.8456856,
+    "lng": 151.2852282
+   },
+   "coordinates_source": "OSM (Nominatim) leisure/park"
+  },
+  {
+   "name": "Nielsen Park",
+   "wiki": "Nielsen Park",
+   "coordinates": {
+    "lat": -33.8508,
+    "lng": 151.266767
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Eastern_suburbs",
+   "views": 6343,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Eastern_suburbs",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/sydney-harbour-national-park"
+   ],
+   "other_sources": [],
+   "note": "park: harbourside park with a beach and picnic grounds within Sydney Harbour National Park"
+  },
+  {
+   "name": "Vaucluse House",
+   "wiki": "Vaucluse House",
+   "views": 8922,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Eastern_suburbs"
+   ],
+   "other_sources": [],
+   "note": "heritage house: 1803 Vaucluse House museum with gardens",
+   "coordinates": {
+    "lat": -33.855512,
+    "lng": 151.2736407
+   },
+   "coordinates_source": "wikipedia:Vaucluse House"
+  },
+  {
+   "name": "Vaucluse Bay Range Front Light",
+   "wiki": "Vaucluse Bay Range Front Light",
+   "coordinates": {
+    "lat": -33.849558,
+    "lng": 151.273919
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Eastern_suburbs",
+   "views": 388,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Eastern_suburbs"
+   ],
+   "other_sources": [],
+   "note": "lighthouse: range light viewed from the street; hard to visit"
+  },
+  {
+   "name": "Vaucluse Bay Range Rear Light",
+   "wiki": "Vaucluse Bay Range Rear Light",
+   "coordinates": {
+    "lat": -33.8582,
+    "lng": 151.272939
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Eastern_suburbs",
+   "views": 329,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Eastern_suburbs"
+   ],
+   "other_sources": [],
+   "note": "lighthouse: active range light on Vaucluse Bay"
+  },
+  {
+   "name": "Lindesay",
+   "wiki": "Lindesay, Darling Point",
+   "coordinates": {
+    "lat": -33.8676,
+    "lng": 151.2399
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Eastern_suburbs",
+   "views": 1529,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Eastern_suburbs"
+   ],
+   "other_sources": [],
+   "note": "heritage house: 1830s Darling Point residence with interior collections"
+  },
+  {
+   "name": "Bronte House",
+   "wiki": "Bronte House",
+   "coordinates": {
+    "lat": -33.9023,
+    "lng": 151.264
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Eastern_suburbs",
+   "views": 2348,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Eastern_suburbs"
+   ],
+   "other_sources": [],
+   "note": "heritage house: historic house above Bronte Beach"
+  },
+  {
+   "name": "McKell Park",
+   "wiki": "McKell Park",
+   "coordinates": {
+    "lat": -33.867,
+    "lng": 151.2395
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Eastern_suburbs",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Eastern_suburbs"
+   ],
+   "other_sources": [],
+   "note": "park: small park at the Darling Point ferry wharf"
+  },
+  {
+   "name": "Bass and Flinders Memorial",
+   "wiki": "Bass and Flinders Memorial",
+   "coordinates": {
+    "lat": -34.072688,
+    "lng": 151.15439
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Cronulla",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Cronulla"
+   ],
+   "other_sources": [],
+   "note": "monument: memorial to Bass and Flinders at Port Hacking"
+  },
+  {
+   "name": "La Perouse",
+   "wiki": "La Perouse, New South Wales",
+   "views": 27592,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney",
+    "https://en.wikivoyage.org/wiki/Sydney/Eastern_suburbs"
+   ],
+   "other_sources": [],
+   "note": "suburb: headland village at Kamay Botany Bay with museum and Bare Island access",
+   "coordinates": {
+    "lat": -33.99305556,
+    "lng": 151.24333333
+   },
+   "coordinates_source": "wikipedia:La Perouse, New South Wales"
+  },
+  {
+   "name": "Bare Island",
+   "wiki": "Bare Island (New South Wales)",
+   "views": 9228,
+   "counted_sources": [],
+   "other_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/kamay-botany-bay-national-park"
+   ],
+   "note": "heritage: 1880s fort reached by footbridge in Kamay Botany Bay NP (access varies)",
+   "coordinates": {
+    "lat": -33.99222222,
+    "lng": 151.23111111
+   },
+   "coordinates_source": "wikipedia:Bare Island (New South Wales)"
+  },
+  {
+   "name": "Snake Man of La Perouse",
+   "wiki": "Snake Man of La Perouse",
+   "views": 2325,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_Sydney"
+   ],
+   "note": "statue: Wikipedia category listing only",
+   "coordinates": {
+    "lat": -33.9881,
+    "lng": 151.2339
+   },
+   "coordinates_source": "wikipedia:Snake Man of La Perouse"
+  },
+  {
+   "name": "Fort Denison",
+   "wiki": "Fort Denison",
+   "views": 17590,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Harbour_Islands",
+    "https://www.sydney.com/destinations/sydney/sydney-city/sydney-harbour"
+   ],
+   "other_sources": [],
+   "note": "island: Pinchgut sandstone fort with ferry tours from Circular Quay",
+   "coordinates": {
+    "lat": -33.8549,
+    "lng": 151.2255
+   },
+   "coordinates_source": "wikipedia:Fort Denison"
+  },
+  {
+   "name": "Cockatoo Island",
+   "wiki": "Cockatoo Island",
+   "views": 20470,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Harbour_Islands"
+   ],
+   "other_sources": [],
+   "note": "island: UNESCO convict and industrial site, tours and camping, ferry from Circular Quay",
+   "coordinates": {
+    "lat": -33.8475,
+    "lng": 151.1725
+   },
+   "coordinates_source": "wikipedia:Cockatoo Island"
+  },
+  {
+   "name": "Garden Island",
+   "wiki": "Garden Island (New South Wales)",
+   "views": 7160,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Harbour_Islands"
+   ],
+   "other_sources": [],
+   "note": "island: naval base; museum and cafe open to public in working hours",
+   "coordinates": {
+    "lat": -33.86602,
+    "lng": 151.22538
+   },
+   "coordinates_source": "wikipedia:Garden Island (New South Wales)"
+  },
+  {
+   "name": "Shark Island",
+   "wiki": "Shark Island (Sydney)",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Harbour_Islands",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/sydney-harbour-national-park"
+   ],
+   "other_sources": [],
+   "note": "island: picnic island within Sydney Harbour National Park"
+  },
+  {
+   "name": "Clark Island",
+   "wiki": "Clark Island (New South Wales)",
+   "views": 1768,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Harbour_Islands",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/sydney-harbour-national-park"
+   ],
+   "other_sources": [],
+   "note": "island: picnic island in Sydney Harbour National Park",
+   "coordinates": {
+    "lat": -33.86277778,
+    "lng": 151.24111111
+   },
+   "coordinates_source": "wikipedia:Clark Island, New South Wales"
+  },
+  {
+   "name": "Rodd Island",
+   "wiki": "Rodd Island",
+   "views": 2094,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Harbour_Islands",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/sydney-harbour-national-park"
+   ],
+   "other_sources": [],
+   "note": "island: picnic island in Sydney Harbour National Park",
+   "coordinates": {
+    "lat": -33.86361111,
+    "lng": 151.15333333
+   },
+   "coordinates_source": "wikipedia:Rodd Island"
+  },
+  {
+   "name": "Goat Island",
+   "wiki": "Goat Island (Port Jackson)",
+   "views": 7080,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/sydney-harbour-national-park",
+    "https://en.wikivoyage.org/wiki/Sydney/Harbour_Islands"
+   ],
+   "other_sources": [],
+   "note": "island: convict-era island; tours run by NPWS (WV says closed)",
+   "coordinates": {
+    "lat": -33.8521,
+    "lng": 151.1966
+   },
+   "coordinates_source": "wikipedia:Goat Island (Port Jackson)"
+  },
+  {
+   "name": "Spectacle Island (Port Jackson)",
+   "wiki": "Spectacle Island (Port Jackson)",
+   "views": 8814,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_Sydney"
+   ],
+   "note": "island: harbour island, restricted access; Wikipedia only",
+   "coordinates": {
+    "lat": -33.849,
+    "lng": 151.164
+   },
+   "coordinates_source": "wikipedia:Spectacle Island (Port Jackson)"
+  },
+  {
+   "name": "Snapper Island",
+   "wiki": "Snapper Island (New South Wales)",
+   "views": 2732,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_Sydney"
+   ],
+   "note": "island: harbour island; Wikipedia only",
+   "coordinates": {
+    "lat": -33.8522,
+    "lng": 151.1669
+   },
+   "coordinates_source": "wikipedia:Snapper Island (New South Wales)"
+  },
+  {
+   "name": "Sydney Harbour National Park",
+   "wiki": "Sydney Harbour National Park",
+   "views": 2929,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/sydney-harbour-national-park"
+   ],
+   "other_sources": [],
+   "note": "national park: harbour islands, headlands and foreshore walks",
+   "coordinates": {
+    "lat": -33.79666667,
+    "lng": 151.29166667
+   },
+   "coordinates_source": "wikipedia:Sydney Harbour National Park"
+  },
+  {
+   "name": "Bradleys Head",
+   "wiki": "Bradleys Head",
+   "coordinates": {
+    "lat": -33.8525,
+    "lng": 151.246
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney",
+   "views": 2768,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/sydney-harbour-national-park"
+   ],
+   "other_sources": [],
+   "note": "headland: harbour promontory reached from Taronga Zoo wharf with walks and views"
+  },
+  {
+   "name": "Middle Head",
+   "wiki": "Middle Head",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Manly",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/sydney-harbour-national-park"
+   ],
+   "other_sources": [],
+   "note": "headland: bushland walk past coastal artillery fortifications",
+   "redirect_to": "Sydney Heads",
+   "coordinates": {
+    "lat": -33.836772,
+    "lng": 151.281052
+   },
+   "coordinates_source": "wikipedia:Sydney Heads"
+  },
+  {
+   "name": "North Head",
+   "wiki": "North Head, New South Wales",
+   "coordinates": {
+    "lat": -33.823,
+    "lng": 151.3007
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Manly",
+   "views": 894,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Manly",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/sydney-harbour-national-park"
+   ],
+   "other_sources": [],
+   "note": "headland: clifftop walks and views over the Pacific; whale watching"
+  },
+  {
+   "name": "Chowder Bay",
+   "wiki": "Chowder Bay",
+   "views": 0,
+   "counted_sources": [],
+   "other_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/sydney-harbour-national-park"
+   ],
+   "note": "bay: harbour bay with old naval installations (NPWS)",
+   "redirect_to": "Clifton Gardens, New South Wales",
+   "coordinates": {
+    "lat": -33.84211,
+    "lng": 151.24755
+   },
+   "coordinates_source": "wikipedia:Clifton Gardens, New South Wales"
+  },
+  {
+   "name": "Georges Head",
+   "wiki": "Georges Head",
+   "views": 0,
+   "counted_sources": [],
+   "other_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/sydney-harbour-national-park"
+   ],
+   "note": "headland: lookout over the harbour mouth (NPWS)",
+   "coordinates": {
+    "lat": -33.837615,
+    "lng": 151.260845
+   },
+   "coordinates_source": "OSM (Nominatim) natural/cape"
+  },
+  {
+   "name": "Dobroyd Head",
+   "wiki": "Dobroyd Head",
+   "views": 845,
+   "counted_sources": [],
+   "other_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/sydney-harbour-national-park"
+   ],
+   "note": "headland: clifftop lookout and walks (NPWS)",
+   "coordinates": {
+    "lat": -33.81,
+    "lng": 151.27333333
+   },
+   "coordinates_source": "wikipedia:Dobroyd Head"
+  },
+  {
+   "name": "South Head",
+   "wiki": "South Head, New South Wales",
+   "views": 5892,
+   "counted_sources": [],
+   "other_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/sydney-harbour-national-park"
+   ],
+   "note": "headland: heritage headland at the harbour entrance (NPWS)",
+   "coordinates": {
+    "lat": -33.8329686,
+    "lng": 151.2804991
+   },
+   "coordinates_source": "OSM (Nominatim) natural/cape",
+   "redirect_to": "Sydney Heads"
+  },
+  {
+   "name": "Quarantine Station",
+   "wiki": "Q Station",
+   "coordinates": {
+    "lat": -33.8179,
+    "lng": 151.2961
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Manly",
+   "views": 9741,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Manly"
+   ],
+   "other_sources": [],
+   "note": "heritage site: former quarantine station, day and night tours (bookings)",
+   "redirect_to": "North Head Quarantine Station"
+  },
+  {
+   "name": "Manly Beach",
+   "wiki": "Manly Beach",
+   "coordinates": {
+    "lat": -33.797,
+    "lng": 151.2885
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Manly",
+   "views": 17639,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Manly",
+    "https://en.wikivoyage.org/wiki/Sydney"
+   ],
+   "other_sources": [],
+   "note": "beach: ocean beach with the Corso and harbour beach"
+  },
+  {
+   "name": "Manly Art Gallery and Museum",
+   "wiki": "Manly Art Gallery & Museum",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Manly"
+   ],
+   "other_sources": [],
+   "note": "museum: local history and art museum"
+  },
+  {
+   "name": "Shelly Beach (Manly)",
+   "wiki": "Shelly Beach (Manly)",
+   "views": 6408,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Manly"
+   ],
+   "other_sources": [],
+   "note": "beach: sheltered beach used for diving and snorkelling",
+   "coordinates": {
+    "lat": -33.80053056,
+    "lng": 151.29779444
+   },
+   "coordinates_source": "wikipedia:Shelly Beach (Manly)"
+  },
+  {
+   "name": "Cabbage Tree Bay",
+   "wiki": "Cabbage Tree Bay",
+   "coordinates": {
+    "lat": -33.8005,
+    "lng": 151.2979
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Manly",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Manly"
+   ],
+   "other_sources": [],
+   "note": "beach: small sheltered bay beside Manly with aquatic reserve"
+  },
+  {
+   "name": "Manly to Spit Bridge Walk",
+   "wiki": "Manly Scenic Walkway",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney"
+   ],
+   "other_sources": [],
+   "note": "walk: harbourside walk from Manly to Spit Bridge",
+   "coordinates": {
+    "lat": -33.8013673,
+    "lng": 151.2690255
+   },
+   "coordinates_source": "OSM (Nominatim) highway/track"
+  },
+  {
+   "name": "Whitehall, Manly",
+   "wiki": "Whitehall, Manly",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Manly"
+   ],
+   "other_sources": [],
+   "note": "heritage house: Victorian Gothic estate of Edmund Barton (exterior)"
+  },
+  {
+   "name": "International College of Management, Manly",
+   "wiki": "St Patrick's Seminary, Manly",
+   "views": 9210,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Manly"
+   ],
+   "other_sources": [],
+   "note": "heritage building: former seminary dominating Manly skyline (exterior)",
+   "redirect_to": "St Patrick's Seminary",
+   "coordinates": {
+    "lat": -33.8039884,
+    "lng": 151.2938692
+   },
+   "coordinates_source": "wikipedia:St Patrick's Seminary"
+  },
+  {
+   "name": "Manly Ocean Adventures",
+   "wiki": "Manly Ocean Adventures",
+   "coordinates": {
+    "lat": -33.80027,
+    "lng": 151.28527
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Manly",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Manly"
+   ],
+   "other_sources": [],
+   "note": "operator: offshore boat tours from Manly wharf"
+  },
+  {
+   "name": "Royal National Park",
+   "wiki": "Royal National Park",
+   "views": 14486,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/royal-national-park",
+    "https://en.wikivoyage.org/wiki/Sydney"
+   ],
+   "other_sources": [],
+   "note": "national park: Australia's second-oldest national park with coast and bush walks",
+   "coordinates": {
+    "lat": -34.11830832,
+    "lng": 151.06378565
+   },
+   "coordinates_source": "wikipedia:Royal National Park"
+  },
+  {
+   "name": "Figure Eight Pool",
+   "wiki": "Figure Eight Pool",
+   "views": 0,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/royal-national-park"
+   ],
+   "other_sources": [],
+   "note": "rock pool: tidal ocean pool in Royal National Park"
+  },
+  {
+   "name": "Wedding Cake Rock",
+   "wiki": "Wedding Cake Rock",
+   "views": 4591,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/royal-national-park"
+   ],
+   "other_sources": [],
+   "note": "landmark: layered sandstone rock on the Coast Track",
+   "coordinates": {
+    "lat": -34.10966667,
+    "lng": 151.15241667
+   },
+   "coordinates_source": "wikipedia:Wedding Cake Rock"
+  },
+  {
+   "name": "Coast Track",
+   "wiki": "Coast Track",
+   "views": 0,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/royal-national-park"
+   ],
+   "other_sources": [],
+   "note": "walk: 26 km coastal track from Otford to Bundeena in Royal National Park"
+  },
+  {
+   "name": "Uloola Falls",
+   "wiki": "Uloola Falls",
+   "views": 0,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/royal-national-park"
+   ],
+   "other_sources": [],
+   "note": "waterfall: falls on a walk in Royal National Park",
+   "coordinates": {
+    "lat": -34.1082321,
+    "lng": 151.0385016
+   },
+   "coordinates_source": "OSM (Nominatim) waterway/waterfall"
+  },
+  {
+   "name": "Werrong Beach",
+   "wiki": "Werrong Beach",
+   "views": 0,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/royal-national-park"
+   ],
+   "other_sources": [],
+   "note": "beach: remote beach in Royal National Park"
+  },
+  {
+   "name": "Providential Point",
+   "wiki": "Providential Point",
+   "views": 0,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/royal-national-park"
+   ],
+   "other_sources": [],
+   "note": "viewpoint: coastal lookout in Royal National Park",
+   "coordinates": {
+    "lat": -34.1397314,
+    "lng": 151.1206946
+   },
+   "coordinates_source": "OSM (Nominatim) tourism/viewpoint"
+  },
+  {
+   "name": "Bundeena",
+   "wiki": "Bundeena, New South Wales",
+   "views": 9352,
+   "counted_sources": [],
+   "other_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/royal-national-park"
+   ],
+   "note": "village: ferry village at the edge of Royal National Park",
+   "redirect_to": "Bundeena",
+   "coordinates": {
+    "lat": -34.08806111,
+    "lng": 151.15406111
+   },
+   "coordinates_source": "wikipedia:Bundeena"
+  },
+  {
+   "name": "Ku-ring-gai Chase National Park",
+   "wiki": "Ku-ring-gai Chase National Park",
+   "views": 12309,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/ku-ring-gai-chase-national-park",
+    "https://en.wikivoyage.org/wiki/Sydney/Upper_North_Shore"
+   ],
+   "other_sources": [],
+   "note": "national park: harbour bays, bushwalks and Barrenjoey area",
+   "coordinates": {
+    "lat": -33.6282265,
+    "lng": 151.2293535
+   },
+   "coordinates_source": "OSM (Nominatim) leisure/nature_reserve"
+  },
+  {
+   "name": "Bobbin Head",
+   "wiki": "Bobbin Head",
+   "views": 1078,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/ku-ring-gai-chase-national-park"
+   ],
+   "other_sources": [],
+   "note": "picnic area: boatshed, picnic grounds and cruises on Cowan Creek",
+   "redirect_to": "Bobbin Head, New South Wales",
+   "coordinates": {
+    "lat": -33.660116,
+    "lng": 151.159145
+   },
+   "coordinates_source": "wikipedia:Bobbin Head, New South Wales"
+  },
+  {
+   "name": "West Head",
+   "wiki": "West Head",
+   "views": 555,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/ku-ring-gai-chase-national-park"
+   ],
+   "other_sources": [],
+   "note": "viewpoint: headland lookout over Pittwater and Hawkesbury",
+   "coordinates": {
+    "lat": -41.214,
+    "lng": 174.316
+   },
+   "coordinates_source": "wikipedia:West Head"
+  },
+  {
+   "name": "Apple Tree Bay",
+   "wiki": "Apple Tree Bay",
+   "views": 0,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/ku-ring-gai-chase-national-park"
+   ],
+   "other_sources": [],
+   "note": "bay: picnic and walking bay on Pittwater",
+   "coordinates": {
+    "lat": -33.6515751,
+    "lng": 151.1569617
+   },
+   "coordinates_source": "OSM (Nominatim) natural/bay"
+  },
+  {
+   "name": "Akuna Bay",
+   "wiki": "Akuna Bay",
+   "views": 1101,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/ku-ring-gai-chase-national-park"
+   ],
+   "other_sources": [],
+   "note": "bay: boat ramp and picnic area on Akuna Bay",
+   "coordinates": {
+    "lat": -33.64444444,
+    "lng": 151.23638889
+   },
+   "coordinates_source": "wikipedia:Akuna Bay"
+  },
+  {
+   "name": "Barrenjoey Lighthouse",
+   "wiki": "Barrenjoey Lighthouse",
+   "coordinates": {
+    "lat": -33.5804,
+    "lng": 151.329
+   },
+   "coordinates_source": "OSM:cape en:Barrenjoey, New South Wales",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Northern_Beaches"
+   ],
+   "other_sources": [],
+   "note": "lighthouse: Palm Beach lighthouse reached by a headland walk"
+  },
+  {
+   "name": "Palm Beach, New South Wales",
+   "wiki": "Palm Beach, New South Wales",
+   "views": 28470,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Northern_Beaches"
+   ],
+   "other_sources": [],
+   "note": "beach: long beach at the northern tip of the Northern Beaches",
+   "coordinates": {
+    "lat": -33.6,
+    "lng": 151.32277778
+   },
+   "coordinates_source": "wikipedia:Palm Beach, New South Wales"
+  },
+  {
+   "name": "Whale Beach",
+   "wiki": "Whale Beach, New South Wales",
+   "views": 5841,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Northern_Beaches"
+   ],
+   "other_sources": [],
+   "note": "beach: peaceful beach with rose-gold sand and cliffs",
+   "coordinates": {
+    "lat": -33.61269,
+    "lng": 151.32736
+   },
+   "coordinates_source": "wikipedia:Whale Beach, New South Wales"
+  },
+  {
+   "name": "Avalon Beach",
+   "wiki": "Avalon Beach",
+   "views": 2313,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Northern_Beaches"
+   ],
+   "other_sources": [],
+   "note": "beach: Northern Beaches surf beach",
+   "coordinates": {
+    "lat": -33.63358,
+    "lng": 151.33257
+   },
+   "coordinates_source": "wikipedia:Avalon Beach"
+  },
+  {
+   "name": "Bilgola Beach",
+   "wiki": "Bilgola Beach",
+   "views": 4238,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Northern_Beaches"
+   ],
+   "other_sources": [],
+   "note": "beach: Northern Beaches beach",
+   "coordinates": {
+    "lat": -33.64565,
+    "lng": 151.31782
+   },
+   "coordinates_source": "wikipedia:Bilgola Beach"
+  },
+  {
+   "name": "Newport Beach",
+   "wiki": "Newport Beach, New South Wales",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Northern_Beaches"
+   ],
+   "other_sources": [],
+   "note": "beach: Northern Beaches beach",
+   "redirect_to": "Newport, New South Wales",
+   "coordinates": {
+    "lat": -33.6564,
+    "lng": 151.3137
+   },
+   "coordinates_source": "wikipedia:Newport, New South Wales"
+  },
+  {
+   "name": "Mona Vale Beach",
+   "wiki": "Mona Vale Beach",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Northern_Beaches"
+   ],
+   "other_sources": [],
+   "note": "beach: long surf beach with car park access",
+   "coordinates": {
+    "lat": -33.682969,
+    "lng": 151.311833
+   },
+   "coordinates_source": "OSM (Nominatim) natural/beach"
+  },
+  {
+   "name": "Warriewood Beach",
+   "wiki": "Warriewood Beach",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Northern_Beaches"
+   ],
+   "other_sources": [],
+   "note": "beach: calm picturesque beach between headlands",
+   "redirect_to": "Warriewood",
+   "coordinates": {
+    "lat": -33.69378,
+    "lng": 151.30464
+   },
+   "coordinates_source": "wikipedia:Warriewood"
+  },
+  {
+   "name": "Narrabeen Beach",
+   "wiki": "Narrabeen Beach",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Northern_Beaches"
+   ],
+   "other_sources": [],
+   "note": "beach: surf beach hosting professional surf events",
+   "coordinates": {
+    "lat": -33.7175118,
+    "lng": 151.3000718
+   },
+   "coordinates_source": "OSM (Nominatim) natural/beach"
+  },
+  {
+   "name": "Collaroy Beach",
+   "wiki": "Collaroy Beach",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Northern_Beaches"
+   ],
+   "other_sources": [],
+   "note": "beach: calm beach good for learning to surf",
+   "coordinates": {
+    "lat": -33.7278815,
+    "lng": 151.3004089
+   },
+   "coordinates_source": "OSM (Nominatim) natural/beach"
+  },
+  {
+   "name": "Dee Why Beach",
+   "wiki": "Dee Why Beach",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Northern_Beaches"
+   ],
+   "other_sources": [],
+   "note": "beach: busy surf beach with cafes and Dee Why Lagoon",
+   "coordinates": {
+    "lat": -33.7507413,
+    "lng": 151.2985454
+   },
+   "coordinates_source": "OSM (Nominatim) natural/beach"
+  },
+  {
+   "name": "Dee Why Lagoon",
+   "wiki": "Dee Why Lagoon",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Northern_Beaches"
+   ],
+   "other_sources": [],
+   "note": "nature reserve: lagoon and wetland for migratory birds",
+   "redirect_to": "Dee Why",
+   "coordinates": {
+    "lat": -33.7544,
+    "lng": 151.2854
+   },
+   "coordinates_source": "wikipedia:Dee Why"
+  },
+  {
+   "name": "North Curl Curl Beach",
+   "wiki": "North Curl Curl Beach",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Northern_Beaches"
+   ],
+   "other_sources": [],
+   "note": "beach: popular beach with cliff playground and cafe"
+  },
+  {
+   "name": "South Curl Curl Beach",
+   "wiki": "South Curl Curl Beach",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Northern_Beaches"
+   ],
+   "other_sources": [],
+   "note": "beach: larger beach with rock pool"
+  },
+  {
+   "name": "Freshwater Beach",
+   "wiki": "Freshwater Beach",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Northern_Beaches"
+   ],
+   "other_sources": [],
+   "note": "beach: surf beach at Harbord",
+   "coordinates": {
+    "lat": -33.7820926,
+    "lng": 151.2905805
+   },
+   "coordinates_source": "OSM (Nominatim) natural/beach"
+  },
+  {
+   "name": "Long Reef Beach",
+   "wiki": "Long Reef Beach",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Northern_Beaches"
+   ],
+   "other_sources": [],
+   "note": "beach: headland beach with Long Reef Aquatic Reserve"
+  },
+  {
+   "name": "Garigal National Park",
+   "wiki": "Garigal National Park",
+   "views": 1854,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Northern_Beaches",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/garigal-national-park"
+   ],
+   "other_sources": [],
+   "note": "national park: sandstone bushland, waterfalls and Middle Harbour views",
+   "coordinates": {
+    "lat": -33.6995965,
+    "lng": 151.2372539
+   },
+   "coordinates_source": "OSM (Nominatim) leisure/nature_reserve"
+  },
+  {
+   "name": "Natural Bridge (Davidson Park)",
+   "wiki": "Natural Bridge (Davidson Park)",
+   "views": 0,
+   "counted_sources": [],
+   "other_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/garigal-national-park"
+   ],
+   "note": "waterfall: natural rock bridge in Garigal NP (NPWS)"
+  },
+  {
+   "name": "Berowra Valley National Park",
+   "wiki": "Berowra Valley National Park",
+   "coordinates": {
+    "lat": -33.64,
+    "lng": 151.09
+   },
+   "coordinates_source": "WV listing:https://en.wikivoyage.org/wiki/Sydney/Upper_North_Shore",
+   "views": 1070,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Upper_North_Shore",
+    "https://en.wikivoyage.org/wiki/Sydney/Hills_District",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/berowra-valley-national-park"
+   ],
+   "other_sources": [],
+   "note": "national park: valley bushland with Great North Walk and Berowra Creek"
+  },
+  {
+   "name": "Lane Cove National Park",
+   "wiki": "Lane Cove National Park",
+   "views": 2827,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Macquarie_Park",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/lane-cove-national-park"
+   ],
+   "other_sources": [],
+   "note": "national park: bushland on the Lane Cove River with walks and canoeing",
+   "coordinates": {
+    "lat": -33.763201,
+    "lng": 151.1060698
+   },
+   "coordinates_source": "OSM (Nominatim) leisure/nature_reserve"
+  },
+  {
+   "name": "Woolwich Lookout and Clarks Point Reserve",
+   "wiki": "Clarks Point Reserve",
+   "coordinates": {
+    "lat": -33.8419,
+    "lng": 151.1716
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Macquarie_Park",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Macquarie_Park"
+   ],
+   "other_sources": [],
+   "note": "viewpoint: harbour picnic grounds with views of the bridge"
+  },
+  {
+   "name": "Ryde River Walk",
+   "wiki": "Ryde River Walk",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Macquarie_Park"
+   ],
+   "other_sources": [],
+   "note": "walk: riverside walk from Gladesville Bridge to Ryde Bridge"
+  },
+  {
+   "name": "Great North Walk",
+   "wiki": "Great North Walk",
+   "views": 7854,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Macquarie_Park",
+    "https://en.wikivoyage.org/wiki/Sydney/Hills_District"
+   ],
+   "other_sources": [],
+   "note": "walk: 250 km multi-day trail from Sydney to Newcastle; day sections",
+   "coordinates": {
+    "lat": -33.7219255,
+    "lng": 151.0603935
+   },
+   "coordinates_source": "OSM (Nominatim) highway/track"
+  },
+  {
+   "name": "Macquarie Ice Rink",
+   "wiki": "Macquarie Ice Rink",
+   "coordinates": {
+    "lat": -33.77707,
+    "lng": 151.1193
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Macquarie_Park",
+   "views": 4508,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Macquarie_Park"
+   ],
+   "other_sources": [],
+   "note": "venue: ice rink at Macquarie"
+  },
+  {
+   "name": "Heathcote National Park",
+   "wiki": "Heathcote National Park",
+   "views": 1618,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/St_George_and_Sutherland_Shire",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/heathcote-national-park"
+   ],
+   "other_sources": [],
+   "note": "national park: heath and waterholes near Waterfall, bushwalks and mountain biking",
+   "coordinates": {
+    "lat": -34.13027778,
+    "lng": 150.97138889
+   },
+   "coordinates_source": "wikipedia:Heathcote National Park"
+  },
+  {
+   "name": "Dharawal National Park",
+   "wiki": "Dharawal National Park",
+   "views": 1470,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Macarthur",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/dharawal-national-park"
+   ],
+   "other_sources": [],
+   "note": "national park: waterfalls, rock pools and bushland near Helensburgh",
+   "coordinates": {
+    "lat": -34.20333333,
+    "lng": 150.86083333
+   },
+   "coordinates_source": "wikipedia:Dharawal National Park"
+  },
+  {
+   "name": "Georges River National Park",
+   "wiki": "Georges River National Park",
+   "views": 1454,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/georges-river-national-park"
+   ],
+   "other_sources": [],
+   "note": "national park: river park with picnic grounds and Yeramba Lagoon track",
+   "coordinates": {
+    "lat": -33.98277778,
+    "lng": 151.02083333
+   },
+   "coordinates_source": "wikipedia:Georges River National Park"
+  },
+  {
+   "name": "Kamay Botany Bay National Park",
+   "wiki": "Kamay Botany Bay National Park",
+   "coordinates": {
+    "lat": -34.020556,
+    "lng": 151.224722
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Eastern_suburbs",
+   "views": 2926,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Eastern_suburbs",
+    "https://en.wikivoyage.org/wiki/Sydney/St_George_and_Sutherland_Shire",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/kamay-botany-bay-national-park"
+   ],
+   "other_sources": [],
+   "note": "national park: Kurnell and La Perouse headlands, Captain Cook landing and Bare Island"
+  },
+  {
+   "name": "Captain Cook's Landing Place",
+   "wiki": "Captain Cook's Landing Place",
+   "coordinates": {
+    "lat": -34.0315,
+    "lng": 151.172
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/St_George_and_Sutherland_Shire",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/St_George_and_Sutherland_Shire"
+   ],
+   "other_sources": [],
+   "note": "landmark: rock where Cook landed in 1770, within Kamay Botany Bay NP"
+  },
+  {
+   "name": "Cape Solander",
+   "wiki": "Cape Solander",
+   "views": 2295,
+   "counted_sources": [],
+   "other_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/kamay-botany-bay-national-park"
+   ],
+   "note": "headland: whale-watching headland at Kurnell (NPWS)",
+   "coordinates": {
+    "lat": -34.0164,
+    "lng": 151.2317
+   },
+   "coordinates_source": "wikipedia:Cape Solander"
+  },
+  {
+   "name": "Boat Harbour (Kurnell)",
+   "wiki": "Boat Harbour (Kurnell)",
+   "coordinates": {
+    "lat": -34.0374,
+    "lng": 151.193
+   },
+   "coordinates_source": "OSM:beach en:Boat Harbour (Kurnell)",
+   "views": 3464,
+   "counted_sources": [],
+   "other_sources": [],
+   "note": "beach: Kurnell beach; OSM and Wikipedia only"
+  },
+  {
+   "name": "Towra Point Nature Reserve",
+   "wiki": "Towra Point Nature Reserve",
+   "coordinates": {
+    "lat": -34.0063,
+    "lng": 151.165
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/St_George_and_Sutherland_Shire",
+   "views": 1281,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/St_George_and_Sutherland_Shire"
+   ],
+   "other_sources": [],
+   "note": "nature reserve: wetland for migratory birds on Botany Bay"
+  },
+  {
+   "name": "Cronulla Beach",
+   "wiki": "Cronulla Beach",
+   "coordinates": {
+    "lat": -34.0516578,
+    "lng": 151.1516857
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Cronulla",
+   "views": 4031,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Cronulla",
+    "https://en.wikivoyage.org/wiki/Sydney"
+   ],
+   "other_sources": [],
+   "note": "beach: surf beaches at Cronulla with esplanade and surf schools"
+  },
+  {
+   "name": "Wanda Beach",
+   "wiki": "Wanda Beach",
+   "coordinates": {
+    "lat": -34.0424,
+    "lng": 151.1635
+   },
+   "coordinates_source": "OSM:beach en:Wanda Beach",
+   "views": 4311,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Cronulla"
+   ],
+   "other_sources": [],
+   "note": "beach: surf beach at north Cronulla with surfboard hire"
+  },
+  {
+   "name": "Elouera Beach",
+   "wiki": "Elouera Beach",
+   "coordinates": {
+    "lat": -34.0465,
+    "lng": 151.1594
+   },
+   "coordinates_source": "OSM:beach en:Elouera Beach",
+   "views": 1076,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Cronulla"
+   ],
+   "other_sources": [],
+   "note": "beach: surf beach in Cronulla"
+  },
+  {
+   "name": "Gunnamatta Bay",
+   "wiki": "Gunnamatta Bay",
+   "coordinates": {
+    "lat": -34.0597,
+    "lng": 151.1467
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Cronulla",
+   "views": 2282,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Cronulla"
+   ],
+   "other_sources": [],
+   "note": "beach: protected bay beach with netted swimming area"
+  },
+  {
+   "name": "Cronulla State Park",
+   "wiki": "Cronulla sand dunes",
+   "coordinates": {
+    "lat": -34.0335,
+    "lng": 151.1784
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Cronulla",
+   "views": 6415,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Cronulla"
+   ],
+   "other_sources": [],
+   "note": "nature reserve: 15,000-year-old coastal sand dune"
+  },
+  {
+   "name": "Oatley Park",
+   "wiki": "Oatley Park, New South Wales",
+   "coordinates": {
+    "lat": -33.9819,
+    "lng": 151.06
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/St_George_and_Sutherland_Shire",
+   "views": 1519,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/St_George_and_Sutherland_Shire"
+   ],
+   "other_sources": [],
+   "note": "park: bushland remnant with walks"
+  },
+  {
+   "name": "E.G. Waterhouse National Camellia Garden",
+   "wiki": "E.G. Waterhouse National Camellia Garden",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/St_George_and_Sutherland_Shire"
+   ],
+   "other_sources": [],
+   "note": "garden: camellia garden with waterfalls and duck pond"
+  },
+  {
+   "name": "Joseph Banks Native Plants Reserve",
+   "wiki": "Joseph Banks Native Plants Reserve",
+   "coordinates": {
+    "lat": -34.021111,
+    "lng": 151.084722
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/St_George_and_Sutherland_Shire",
+   "views": 284,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/St_George_and_Sutherland_Shire"
+   ],
+   "other_sources": [],
+   "note": "garden: native plant reserve with walks and water views"
+  },
+  {
+   "name": "Hazelhurst Regional Gallery",
+   "wiki": "Hazelhurst Regional Gallery and Arts Centre",
+   "coordinates": {
+    "lat": -34.0329,
+    "lng": 151.0822
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/St_George_and_Sutherland_Shire",
+   "views": 523,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/St_George_and_Sutherland_Shire"
+   ],
+   "other_sources": [],
+   "note": "gallery: regional art gallery in gardens at Gymea"
+  },
+  {
+   "name": "Sydney Tramway Museum",
+   "wiki": "Sydney Tramway Museum",
+   "coordinates": {
+    "lat": -34.0446,
+    "lng": 151.052
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/St_George_and_Sutherland_Shire",
+   "views": 4435,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/St_George_and_Sutherland_Shire"
+   ],
+   "other_sources": [],
+   "note": "museum: tram museum with tram rides to Royal National Park"
+  },
+  {
+   "name": "Como Pleasure Grounds",
+   "wiki": "Como Pleasure Grounds",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/St_George_and_Sutherland_Shire"
+   ],
+   "other_sources": [],
+   "note": "park: historic recreation ground on the Georges River",
+   "coordinates": {
+    "lat": -33.997571,
+    "lng": 151.0699379
+   },
+   "coordinates_source": "OSM (Nominatim) leisure/park"
+  },
+  {
+   "name": "Peace Park/Japanese Garden (Sutherland)",
+   "wiki": "Peace Park, Sutherland",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/St_George_and_Sutherland_Shire"
+   ],
+   "other_sources": [],
+   "note": "garden: small Japanese garden in Sutherland"
+  },
+  {
+   "name": "Sutherland Shire Dive Sites (Shiprock Point)",
+   "wiki": "Shiprock Point",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/St_George_and_Sutherland_Shire"
+   ],
+   "other_sources": [],
+   "note": "dive site: marine reserve at Shiprock Point, Dolans Bay"
+  },
+  {
+   "name": "Luna Park Sydney",
+   "wiki": "Luna Park Sydney",
+   "coordinates": {
+    "lat": -33.847557,
+    "lng": 151.210066
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Lower_North_Shore",
+   "views": 53675,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Lower_North_Shore",
+    "https://en.wikivoyage.org/wiki/Sydney"
+   ],
+   "other_sources": [],
+   "note": "entertainment: heritage amusement park on the harbour with the grinning face entrance"
+  },
+  {
+   "name": "Taronga Zoo",
+   "wiki": "Taronga Zoo",
+   "coordinates": {
+    "lat": -33.8438,
+    "lng": 151.2417
+   },
+   "coordinates_source": "OSM:zoo en:Taronga Zoo",
+   "views": 51670,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney",
+    "https://en.wikivoyage.org/wiki/Sydney/Lower_North_Shore"
+   ],
+   "other_sources": [],
+   "note": "zoo: harbourside zoo reached by ferry from Circular Quay"
+  },
+  {
+   "name": "North Sydney Olympic Pool",
+   "wiki": "North Sydney Olympic Pool",
+   "coordinates": {
+    "lat": -33.849571,
+    "lng": 151.211718
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Lower_North_Shore",
+   "views": 8156,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Lower_North_Shore"
+   ],
+   "other_sources": [],
+   "note": "venue: outdoor harbour pool opened 1936 under the Harbour Bridge"
+  },
+  {
+   "name": "Blues Point Reserve",
+   "wiki": "Blues Point Reserve",
+   "coordinates": {
+    "lat": -33.8506,
+    "lng": 151.2037
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Lower_North_Shore",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Lower_North_Shore"
+   ],
+   "other_sources": [],
+   "note": "park: small harbour reserve with views of the Bridge"
+  },
+  {
+   "name": "Sawmillers Reserve",
+   "wiki": "Sawmillers Reserve",
+   "coordinates": {
+    "lat": -33.845588,
+    "lng": 151.201805
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Lower_North_Shore",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Lower_North_Shore"
+   ],
+   "other_sources": [],
+   "note": "park: small hidden harbour reserve for picnics"
+  },
+  {
+   "name": "Balls Head Reserve",
+   "wiki": "Balls Head Reserve",
+   "coordinates": {
+    "lat": -33.8471,
+    "lng": 151.1971
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Lower_North_Shore",
+   "views": 1995,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Lower_North_Shore"
+   ],
+   "other_sources": [],
+   "note": "park: harbour headland reserve with picnic area and views"
+  },
+  {
+   "name": "Bradfield Park",
+   "wiki": "Bradfield Park",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Lower_North_Shore"
+   ],
+   "other_sources": [],
+   "note": "park: park at the Harbour Bridge's northern approach",
+   "redirect_to": "Bradfield, New South Wales (1924–1977)",
+   "coordinates": {
+    "lat": -33.7755,
+    "lng": 151.1484
+   },
+   "coordinates_source": "wikipedia:Bradfield, New South Wales (1924–1977)"
+  },
+  {
+   "name": "Berry Island Reserve",
+   "wiki": "Berry Island Reserve",
+   "coordinates": {
+    "lat": -33.8395,
+    "lng": 151.1889
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Lower_North_Shore",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Lower_North_Shore"
+   ],
+   "other_sources": [],
+   "note": "park: harbour reserve on former island near Wollstonecraft"
+  },
+  {
+   "name": "Cremorne Reserve",
+   "wiki": "Cremorne Reserve",
+   "coordinates": {
+    "lat": -33.8483,
+    "lng": 151.2324
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Lower_North_Shore",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Lower_North_Shore"
+   ],
+   "other_sources": [],
+   "note": "park: small waterfront park near Cremorne Wharf"
+  },
+  {
+   "name": "Headland Park, Mosman",
+   "wiki": "Headland Park, Mosman",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Lower_North_Shore"
+   ],
+   "other_sources": [],
+   "note": "park: bushwalking clifftop park at Middle Head road",
+   "coordinates": {
+    "lat": -33.8326066,
+    "lng": 151.2580479
+   },
+   "coordinates_source": "OSM (Nominatim) leisure/park"
+  },
+  {
+   "name": "Mosman Harbourside Walks",
+   "wiki": "Mosman",
+   "views": 14919,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Lower_North_Shore"
+   ],
+   "other_sources": [],
+   "note": "walk: shoreline walking trails in Mosman",
+   "coordinates": {
+    "lat": -33.829075,
+    "lng": 151.24409
+   },
+   "coordinates_source": "wikipedia:Mosman"
+  },
+  {
+   "name": "Tambourine Bay Reserve",
+   "wiki": "Tambourine Bay",
+   "views": 569,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Lower_North_Shore"
+   ],
+   "other_sources": [],
+   "note": "park: bay reserve with barbecues",
+   "coordinates": {
+    "lat": -33.83333333,
+    "lng": 151.15
+   },
+   "coordinates_source": "wikipedia:Tambourine Bay"
+  },
+  {
+   "name": "Wendy Whiteley's Secret Garden",
+   "wiki": "Wendy Whiteley's Secret Garden",
+   "coordinates": {
+    "lat": -33.844,
+    "lng": 151.208
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Lower_North_Shore",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Lower_North_Shore",
+    "https://www.sydney.com/destinations/sydney/sydney-city/sydney-harbour"
+   ],
+   "other_sources": [],
+   "note": "garden: former rail yard turned into a hidden garden at Lavender Bay"
+  },
+  {
+   "name": "Lavender Bay Circuit Walk",
+   "wiki": "Lavender Bay",
+   "views": 5641,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Lower_North_Shore"
+   ],
+   "other_sources": [],
+   "note": "walk: circuit walk around Lavender Bay and Milsons Point",
+   "coordinates": {
+    "lat": -33.84428,
+    "lng": 151.20388
+   },
+   "coordinates_source": "wikipedia:Lavender Bay"
+  },
+  {
+   "name": "Balmoral Beach",
+   "wiki": "Balmoral Beach",
+   "coordinates": {
+    "lat": -33.826152,
+    "lng": 151.252042
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Lower_North_Shore",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Lower_North_Shore"
+   ],
+   "other_sources": [],
+   "note": "beach: family beach with swimming enclosure and bathers pavilion",
+   "redirect_to": "Balmoral, New South Wales"
+  },
+  {
+   "name": "Chinamans Beach",
+   "wiki": "Chinamans Beach",
+   "coordinates": {
+    "lat": -33.8143874,
+    "lng": 151.2472268
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Lower_North_Shore",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Lower_North_Shore"
+   ],
+   "other_sources": [],
+   "note": "beach: small sheltered harbour beach for picnics"
+  },
+  {
+   "name": "Cobblers Beach",
+   "wiki": "Cobblers Beach",
+   "coordinates": {
+    "lat": -33.8259986,
+    "lng": 151.2541545
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Lower_North_Shore",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Lower_North_Shore",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/sydney-harbour-national-park"
+   ],
+   "other_sources": [],
+   "note": "beach: clothing-optional harbour beach in Sydney Harbour NP"
+  },
+  {
+   "name": "Rose Seidler House",
+   "wiki": "Rose Seidler House",
+   "coordinates": {
+    "lat": -33.70977,
+    "lng": 151.14209
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Upper_North_Shore",
+   "views": 16739,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Upper_North_Shore"
+   ],
+   "other_sources": [],
+   "note": "heritage house: Harry Seidler's first building, open for tours"
+  },
+  {
+   "name": "Ku-ring-gai Wildflower Garden",
+   "wiki": "Ku-ring-gai Wildflower Garden",
+   "coordinates": {
+    "lat": -33.701914,
+    "lng": 151.174466
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Upper_North_Shore",
+   "views": 428,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Upper_North_Shore"
+   ],
+   "other_sources": [],
+   "note": "garden: bushland garden with gullies, ponds and waterfalls"
+  },
+  {
+   "name": "Lindfield Rocks",
+   "wiki": "Lindfield Rocks",
+   "coordinates": {
+    "lat": -33.7684,
+    "lng": 151.1788
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Upper_North_Shore",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Upper_North_Shore"
+   ],
+   "other_sources": [],
+   "note": "climbing: oldest bouldering site in Sydney"
+  },
+  {
+   "name": "Seven Little Australians Park",
+   "wiki": "Seven Little Australians Park",
+   "coordinates": {
+    "lat": -33.7652,
+    "lng": 151.16789
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Upper_North_Shore",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Upper_North_Shore"
+   ],
+   "other_sources": [],
+   "note": "park: hidden bush park popular for hiking"
+  },
+  {
+   "name": "Dural Lane Murals",
+   "wiki": "Dural Lane Murals",
+   "coordinates": {
+    "lat": -33.704,
+    "lng": 151.095
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Upper_North_Shore",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Upper_North_Shore"
+   ],
+   "other_sources": [],
+   "note": "public art: murals of early 20th-century Hornsby"
+  },
+  {
+   "name": "Hornsby Water Clock",
+   "wiki": "Hornsby Water Clock",
+   "coordinates": {
+    "lat": -33.704,
+    "lng": 151.101
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Upper_North_Shore",
+   "views": 2689,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Upper_North_Shore"
+   ],
+   "other_sources": [],
+   "note": "landmark: water clock on Hornsby (WV listing only)"
+  },
+  {
+   "name": "Annie Wyatt House",
+   "wiki": "Annie Wyatt House",
+   "coordinates": {
+    "lat": -33.752802,
+    "lng": 151.155853
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Upper_North_Shore",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Upper_North_Shore"
+   ],
+   "other_sources": [],
+   "note": "heritage house: cottage of National Trust founder Annie Wyatt"
+  },
+  {
+   "name": "Koala Park Sanctuary",
+   "wiki": "Koala Park Sanctuary",
+   "coordinates": {
+    "lat": -33.7422,
+    "lng": 151.0443
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Hills_District",
+   "views": 2401,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Hills_District",
+    "https://www.sydney.com/things-to-do/attractions"
+   ],
+   "other_sources": [],
+   "note": "zoo: koala sanctuary and kangaroo feeding at Dural"
+  },
+  {
+   "name": "Cumberland State Forest",
+   "wiki": "Cumberland State Forest (New South Wales)",
+   "coordinates": {
+    "lat": -33.74,
+    "lng": 151.0376
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Hills_District",
+   "views": 938,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Hills_District"
+   ],
+   "other_sources": [],
+   "note": "nature reserve: eucalypt forest walks with information centre"
+  },
+  {
+   "name": "Muru Mittigar",
+   "wiki": "Muru Mittigar",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Hills_District"
+   ],
+   "other_sources": [],
+   "note": "cultural centre: Aboriginal cultural education centre with tours"
+  },
+  {
+   "name": "Museums Discovery Centre",
+   "wiki": "Museums Discovery Centre",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Hills_District"
+   ],
+   "other_sources": [],
+   "note": "museum: historic objects discovery centre (WV: temporarily closed)",
+   "redirect_to": "Powerhouse Museum",
+   "coordinates": {
+    "lat": -33.877898,
+    "lng": 151.199573
+   },
+   "coordinates_source": "wikipedia:Powerhouse Museum"
+  },
+  {
+   "name": "Ambarwell Studio & Gallery",
+   "wiki": "Ambarwell Studio & Gallery",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Hills_District"
+   ],
+   "other_sources": [],
+   "note": "gallery: pottery studio and gallery in a 120-year-old building"
+  },
+  {
+   "name": "Marramarra National Park",
+   "wiki": "Marramarra National Park",
+   "views": 831,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Hills_District"
+   ],
+   "other_sources": [],
+   "note": "national park: Hawkesbury River bushland (WV listed)",
+   "coordinates": {
+    "lat": -33.525,
+    "lng": 151.05777778
+   },
+   "coordinates_source": "wikipedia:Marramarra National Park"
+  },
+  {
+   "name": "Cattai National Park",
+   "wiki": "Cattai National Park",
+   "views": 700,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Hills_District",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/cattai-national-park"
+   ],
+   "other_sources": [],
+   "note": "national park: Hawkesbury River farm and canoeing area with historic sites",
+   "coordinates": {
+    "lat": -33.54722222,
+    "lng": 150.89694444
+   },
+   "coordinates_source": "wikipedia:Cattai National Park"
+  },
+  {
+   "name": "Scheyville National Park",
+   "wiki": "Scheyville National Park",
+   "views": 2338,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Hills_District"
+   ],
+   "other_sources": [],
+   "note": "national park: former migrant camp land on the Hawkesbury (WV listed)",
+   "coordinates": {
+    "lat": -33.60666667,
+    "lng": 150.88888889
+   },
+   "coordinates_source": "wikipedia:Scheyville National Park"
+  },
+  {
+   "name": "Dharug National Park",
+   "wiki": "Dharug National Park",
+   "views": 943,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/dharug-national-park"
+   ],
+   "other_sources": [],
+   "note": "national park: Hawkesbury bushland with the World Heritage Old Great North Road",
+   "coordinates": {
+    "lat": -33.3796685,
+    "lng": 151.0646321
+   },
+   "coordinates_source": "OSM (Nominatim) leisure/nature_reserve"
+  },
+  {
+   "name": "Old Great North Road",
+   "wiki": "Old Great North Road",
+   "views": 0,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/dharug-national-park"
+   ],
+   "other_sources": [],
+   "note": "historic: convict-built road, World Heritage walk in Dharug NP",
+   "coordinates": {
+    "lat": -33.3698702,
+    "lng": 150.9854292
+   },
+   "coordinates_source": "OSM (Nominatim) highway/track"
+  },
+  {
+   "name": "Wisemans Ferry",
+   "wiki": "Wisemans Ferry",
+   "views": 2635,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney"
+   ],
+   "other_sources": [],
+   "note": "village: Hawkesbury River ferry crossing and gateway to Dharug NP",
+   "coordinates": {
+    "lat": -33.379181,
+    "lng": 150.988895
+   },
+   "coordinates_source": "wikipedia:Wisemans Ferry"
+  },
+  {
+   "name": "Dangar Island",
+   "wiki": "Dangar Island",
+   "views": 11353,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Category:Islands_of_New_South_Wales"
+   ],
+   "note": "island: Hawkesbury river island, residential (Wikipedia only)",
+   "coordinates": {
+    "lat": -33.53861111,
+    "lng": 151.23888889
+   },
+   "coordinates_source": "wikipedia:Dangar Island"
+  },
+  {
+   "name": "Sydney Olympic Park",
+   "wiki": "Sydney Olympic Park",
+   "views": 34433,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Sydney_Olympic_Park"
+   ],
+   "other_sources": [],
+   "note": "precinct: 2000 Olympics site with parklands, aquatic centre and Cathy Freeman Park",
+   "coordinates": {
+    "lat": -33.8475,
+    "lng": 151.065
+   },
+   "coordinates_source": "wikipedia:Sydney Olympic Park"
+  },
+  {
+   "name": "Brickpit Ring Walk",
+   "wiki": "State Brickworks Homebush Bay",
+   "coordinates": {
+    "lat": -33.8409,
+    "lng": 151.0716
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Sydney_Olympic_Park",
+   "views": 2307,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Sydney_Olympic_Park"
+   ],
+   "other_sources": [],
+   "note": "walk: brickpit ring walk around former industrial pits",
+   "redirect_to": "Brickpit Ring Walk"
+  },
+  {
+   "name": "Newington Armory",
+   "wiki": "Newington Armory",
+   "coordinates": {
+    "lat": -33.825578,
+    "lng": 151.064394
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Sydney_Olympic_Park",
+   "views": 2402,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Sydney_Olympic_Park"
+   ],
+   "other_sources": [],
+   "note": "heritage building: 1880s armoury, mostly closed to public"
+  },
+  {
+   "name": "Bicentennial Park, Sydney Olympic Park",
+   "wiki": "Bicentennial Park, Sydney Olympic Park",
+   "coordinates": {
+    "lat": -33.8479,
+    "lng": 151.0787
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Sydney_Olympic_Park",
+   "views": 1429,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Sydney_Olympic_Park"
+   ],
+   "other_sources": [],
+   "note": "park: wetland park with walks and bike paths"
+  },
+  {
+   "name": "Cathy Freeman Park",
+   "wiki": "Cathy Freeman Park",
+   "coordinates": {
+    "lat": -33.8467,
+    "lng": 151.065
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Sydney_Olympic_Park",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Sydney_Olympic_Park"
+   ],
+   "other_sources": [],
+   "note": "park: Olympic cauldron fountain park"
+  },
+  {
+   "name": "Sydney Showground",
+   "wiki": "Sydney Showground (Olympic Park)",
+   "coordinates": {
+    "lat": -33.846883,
+    "lng": 151.067542
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Sydney_Olympic_Park",
+   "views": 6631,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Sydney_Olympic_Park"
+   ],
+   "other_sources": [],
+   "note": "venue: exhibition halls used for the Royal Easter Show"
+  },
+  {
+   "name": "Sydney Olympic Park Aquatic Centre",
+   "wiki": "Sydney Olympic Park Aquatic Centre",
+   "coordinates": {
+    "lat": -33.8504,
+    "lng": 151.0678
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Sydney_Olympic_Park",
+   "views": 3825,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Sydney_Olympic_Park"
+   ],
+   "other_sources": [],
+   "note": "venue: Olympic pool complex open for public swims"
+  },
+  {
+   "name": "Old Government House, Parramatta",
+   "wiki": "Old Government House, Parramatta",
+   "coordinates": {
+    "lat": -33.8122,
+    "lng": 150.9973
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Parramatta",
+   "views": 7346,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Parramatta"
+   ],
+   "other_sources": [],
+   "note": "heritage house: UNESCO World Heritage colonial governors' residence"
+  },
+  {
+   "name": "Elizabeth Farm",
+   "wiki": "Elizabeth Farm",
+   "coordinates": {
+    "lat": -33.8213,
+    "lng": 151.018
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Parramatta",
+   "views": 8162,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Parramatta"
+   ],
+   "other_sources": [],
+   "note": "heritage house: oldest surviving European building in Australia (1793 start)"
+  },
+  {
+   "name": "Experiment Farm Cottage",
+   "wiki": "Experiment Farm Cottage",
+   "coordinates": {
+    "lat": -33.8201,
+    "lng": 151.013
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Parramatta",
+   "views": 2200,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Parramatta"
+   ],
+   "other_sources": [],
+   "note": "heritage house: first private farm cottage in Australia"
+  },
+  {
+   "name": "Hambledon Cottage",
+   "wiki": "Hambledon Cottage",
+   "coordinates": {
+    "lat": -33.81896,
+    "lng": 151.014856
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Parramatta",
+   "views": 932,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Parramatta"
+   ],
+   "other_sources": [],
+   "note": "heritage house: 1824 cottage ornee by John Macarthur"
+  },
+  {
+   "name": "Brislington House",
+   "wiki": "Brislington, Parramatta",
+   "coordinates": {
+    "lat": -33.813,
+    "lng": 151.0021
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Parramatta",
+   "views": 606,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Parramatta"
+   ],
+   "other_sources": [],
+   "note": "museum: 1821 house with medical and nursing history museum"
+  },
+  {
+   "name": "Lancer Barracks",
+   "wiki": "Lancer Barracks",
+   "coordinates": {
+    "lat": -33.817158,
+    "lng": 151.006636
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Parramatta",
+   "views": 2552,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Parramatta"
+   ],
+   "other_sources": [],
+   "note": "heritage building: army barracks with Linden House Museum"
+  },
+  {
+   "name": "Parramatta Town Hall",
+   "wiki": "Parramatta Town Hall",
+   "views": 917,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Parramatta"
+   ],
+   "other_sources": [],
+   "note": "civic building: Victorian town hall (exterior)",
+   "coordinates": {
+    "lat": -33.81583333,
+    "lng": 151.00361111
+   },
+   "coordinates_source": "wikipedia:Parramatta Town Hall"
+  },
+  {
+   "name": "Perth House",
+   "wiki": "Perth House",
+   "coordinates": {
+    "lat": -33.815,
+    "lng": 151.0077
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Parramatta",
+   "views": 630,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Parramatta"
+   ],
+   "other_sources": [],
+   "note": "heritage cafe: 1831 house now a cafe"
+  },
+  {
+   "name": "Parramatta Park",
+   "wiki": "Parramatta Park, New South Wales",
+   "coordinates": {
+    "lat": -33.7985,
+    "lng": 150.99291
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Parramatta",
+   "views": 1858,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Parramatta"
+   ],
+   "other_sources": [],
+   "note": "park: historic park with Tudor gatehouses and Governor's Bath House"
+  },
+  {
+   "name": "Lake Parramatta",
+   "wiki": "Lake Parramatta",
+   "coordinates": {
+    "lat": -33.7902,
+    "lng": 151.0076
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Parramatta",
+   "views": 3276,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Parramatta"
+   ],
+   "other_sources": [],
+   "note": "lake: dam lake for canoeing and barbecues"
+  },
+  {
+   "name": "St John's Cemetery",
+   "wiki": "St John's Cemetery",
+   "coordinates": {
+    "lat": -33.816922,
+    "lng": 150.998936
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Parramatta",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Parramatta"
+   ],
+   "other_sources": [],
+   "note": "historic: Australia's oldest Christian cemetery"
+  },
+  {
+   "name": "St Patrick's Cathedral, Parramatta",
+   "wiki": "St Patrick's Cathedral, Parramatta",
+   "coordinates": {
+    "lat": -33.8088,
+    "lng": 151.004
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Parramatta",
+   "views": 3041,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Parramatta"
+   ],
+   "other_sources": [],
+   "note": "religious: Catholic cathedral of the Parramatta diocese"
+  },
+  {
+   "name": "St John's Cathedral, Parramatta",
+   "wiki": "St John's Cathedral, Parramatta",
+   "coordinates": {
+    "lat": -33.8159,
+    "lng": 151.003
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Parramatta",
+   "views": 3430,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Parramatta"
+   ],
+   "other_sources": [],
+   "note": "religious: Anglican cathedral begun under Governor Macquarie"
+  },
+  {
+   "name": "Lennox Bridge, Parramatta",
+   "wiki": "Lennox Bridge, Parramatta",
+   "coordinates": {
+    "lat": -33.8107,
+    "lng": 151.005
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Parramatta",
+   "views": 1763,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Parramatta"
+   ],
+   "other_sources": [],
+   "note": "historic: one of Australia's oldest bridges (1836)"
+  },
+  {
+   "name": "Gallipoli Mosque",
+   "wiki": "Auburn Gallipoli Mosque",
+   "coordinates": {
+    "lat": -33.865556,
+    "lng": 151.023611
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Parramatta",
+   "views": 4582,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Parramatta"
+   ],
+   "other_sources": [],
+   "note": "religious: Ottoman-style mosque at Auburn"
+  },
+  {
+   "name": "Sri Mandir Temple",
+   "wiki": "Sri Mandir",
+   "coordinates": {
+    "lat": -33.86797,
+    "lng": 151.02242
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Parramatta",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Parramatta"
+   ],
+   "other_sources": [],
+   "note": "religious: first Hindu temple in Australia (1977)"
+  },
+  {
+   "name": "Parramatta Heritage Centre",
+   "wiki": "Parramatta Heritage Centre",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Parramatta"
+   ],
+   "other_sources": [],
+   "note": "museum: Burramatta Aboriginal exhibition and local history",
+   "coordinates": {
+    "lat": -33.8103777,
+    "lng": 151.0049613
+   },
+   "coordinates_source": "OSM (Nominatim) information/office"
+  },
+  {
+   "name": "Japanese Garden, Auburn",
+   "wiki": "Auburn Botanic Gardens",
+   "coordinates": {
+    "lat": -33.858749,
+    "lng": 151.016717
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Parramatta",
+   "views": 2218,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Parramatta"
+   ],
+   "other_sources": [],
+   "note": "garden: Japanese garden at Auburn"
+  },
+  {
+   "name": "Harris Park Heritage Walk",
+   "wiki": "Harris Park",
+   "views": 8435,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Parramatta"
+   ],
+   "other_sources": [],
+   "note": "walk: heritage walk past Experiment Farm and Elizabeth Farm",
+   "coordinates": {
+    "lat": -33.82481,
+    "lng": 151.00521
+   },
+   "coordinates_source": "wikipedia:Harris Park"
+  },
+  {
+   "name": "Queens Wharf Reserve",
+   "wiki": "Queens Wharf Reserve",
+   "coordinates": {
+    "lat": -33.815278,
+    "lng": 151.017778
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Parramatta",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Parramatta"
+   ],
+   "other_sources": [],
+   "note": "park: site where Governor Phillip first landed in Parramatta"
+  },
+  {
+   "name": "Prince Alfred Park",
+   "wiki": "Prince Alfred Park",
+   "coordinates": {
+    "lat": -33.8068,
+    "lng": 151.0012
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Parramatta",
+   "views": 1327,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Parramatta"
+   ],
+   "other_sources": [],
+   "note": "park: former site of the colony's first gaol"
+  },
+  {
+   "name": "CommBank Stadium",
+   "wiki": "CommBank Stadium",
+   "coordinates": {
+    "lat": -33.808056,
+    "lng": 150.999722
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Parramatta",
+   "views": 52720,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Parramatta"
+   ],
+   "other_sources": [],
+   "note": "venue: rugby league and football stadium",
+   "redirect_to": "Western Sydney Stadium"
+  },
+  {
+   "name": "Rosehill Gardens Racecourse",
+   "wiki": "Rosehill Gardens Racecourse",
+   "views": 4324,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Parramatta"
+   ],
+   "other_sources": [],
+   "note": "venue: racecourse, home of the Golden Slipper (race days only)",
+   "coordinates": {
+    "lat": -33.82416667,
+    "lng": 151.02666667
+   },
+   "coordinates_source": "wikipedia:Rosehill Gardens Racecourse"
+  },
+  {
+   "name": "Parramatta Raceway",
+   "wiki": "Parramatta Raceway",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Parramatta"
+   ],
+   "other_sources": [],
+   "note": "venue: motor sport venue for monster trucks"
+  },
+  {
+   "name": "Murugan Temple, Mays Hill",
+   "wiki": "Murugan Temple, Mays Hill",
+   "coordinates": {
+    "lat": -33.8199,
+    "lng": 150.9841
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Parramatta",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Parramatta"
+   ],
+   "other_sources": [],
+   "note": "religious: Tamil Hindu temple at Mays Hill"
+  },
+  {
+   "name": "All Saints Church, Parramatta",
+   "wiki": "All Saints Church, Parramatta",
+   "coordinates": {
+    "lat": -33.8095,
+    "lng": 151.0091
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Parramatta",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Parramatta"
+   ],
+   "other_sources": [],
+   "note": "religious: 1847 Victorian Gothic church (exterior)"
+  },
+  {
+   "name": "Leigh Memorial Church",
+   "wiki": "Leigh Memorial Church",
+   "coordinates": {
+    "lat": -33.8156,
+    "lng": 151.0044
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Parramatta",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Parramatta"
+   ],
+   "other_sources": [],
+   "note": "religious: 1885 Methodist church (exterior)"
+  },
+  {
+   "name": "Our Lady of Lebanon Church",
+   "wiki": "Our Lady of Lebanon Church",
+   "coordinates": {
+    "lat": -33.8205,
+    "lng": 151.0148
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Parramatta",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Parramatta"
+   ],
+   "other_sources": [],
+   "note": "religious: Maronite church (exterior)"
+  },
+  {
+   "name": "Bernie Banton Bridge",
+   "wiki": "Bernie Banton Bridge",
+   "coordinates": {
+    "lat": -33.81094,
+    "lng": 151.00303
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Parramatta",
+   "views": 568,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Parramatta"
+   ],
+   "other_sources": [],
+   "note": "bridge: pedestrian footbridge over the Parramatta River"
+  },
+  {
+   "name": "Gasworks Bridge",
+   "wiki": "Gasworks Bridge",
+   "coordinates": {
+    "lat": -33.8151,
+    "lng": 151.01244
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Parramatta",
+   "views": 1044,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Parramatta"
+   ],
+   "other_sources": [],
+   "note": "bridge: 1885 bridge on Macarthur Street"
+  },
+  {
+   "name": "The Bay Run",
+   "wiki": "The Bay Run",
+   "views": 5055,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Inner_West"
+   ],
+   "other_sources": [],
+   "note": "walk: 7 km car-free circuit track around Iron Cove",
+   "coordinates": {
+    "lat": -33.863538,
+    "lng": 151.15355
+   },
+   "coordinates_source": "wikipedia:The Bay Run"
+  },
+  {
+   "name": "Glebe Foreshore Parks",
+   "wiki": "Federal Park, Glebe",
+   "coordinates": {
+    "lat": -33.872028,
+    "lng": 151.179383
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Inner_West",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Inner_West"
+   ],
+   "other_sources": [],
+   "note": "park: four harbourside parks along Glebe foreshore"
+  },
+  {
+   "name": "Ballast Point Park",
+   "wiki": "Ballast Point Park",
+   "views": 1197,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Inner_West"
+   ],
+   "other_sources": [],
+   "note": "park: former industrial site with harbour views",
+   "coordinates": {
+    "lat": 27.889,
+    "lng": -82.481
+   },
+   "coordinates_source": "wikipedia:Ballast Point Park"
+  },
+  {
+   "name": "Birchgrove Park",
+   "wiki": "Birchgrove Park",
+   "coordinates": {
+    "lat": -33.8496,
+    "lng": 151.1817
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Inner_West",
+   "views": 1291,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Inner_West"
+   ],
+   "other_sources": [],
+   "note": "park: harbourside park with Birchgrove Oval"
+  },
+  {
+   "name": "Camperdown Memorial Rest Park",
+   "wiki": "Camperdown Memorial Rest Park",
+   "coordinates": {
+    "lat": -33.894993,
+    "lng": 151.179657
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Inner_West",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Inner_West"
+   ],
+   "other_sources": [],
+   "note": "park: park with street art behind King Street"
+  },
+  {
+   "name": "Sydney Park",
+   "wiki": "Sydney Park",
+   "coordinates": {
+    "lat": -33.907865,
+    "lng": 151.18236
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Inner_West",
+   "views": 4569,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Inner_West"
+   ],
+   "other_sources": [],
+   "note": "park: 40 ha former brick pit park at Newtown"
+  },
+  {
+   "name": "Iloura Reserve",
+   "wiki": "Iloura Reserve",
+   "coordinates": {
+    "lat": -33.8582,
+    "lng": 151.196211
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Inner_West",
+   "views": 489,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Inner_West"
+   ],
+   "other_sources": [],
+   "note": "viewpoint: sweeping views of the city and Harbour Bridge"
+  },
+  {
+   "name": "Nicholson Museum of Antiquities",
+   "wiki": "Nicholson Museum",
+   "coordinates": {
+    "lat": -33.8864,
+    "lng": 151.1887
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Inner_West",
+   "views": 2845,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Inner_West"
+   ],
+   "other_sources": [],
+   "note": "museum: Australia's largest collection of antiquities at Sydney University"
+  },
+  {
+   "name": "Macleay Museum",
+   "wiki": "Macleay Museum",
+   "coordinates": {
+    "lat": -33.8852,
+    "lng": 151.188
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Inner_West",
+   "views": 1214,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Inner_West"
+   ],
+   "other_sources": [],
+   "note": "museum: natural history museum of the University of Sydney"
+  },
+  {
+   "name": "University Art Collection",
+   "wiki": "University of Sydney",
+   "views": 145230,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Inner_West"
+   ],
+   "other_sources": [],
+   "note": "museum: university art collection (about 2,000 works)",
+   "coordinates": {
+    "lat": -33.8875,
+    "lng": 151.19
+   },
+   "coordinates_source": "wikipedia:University of Sydney"
+  },
+  {
+   "name": "Boomalli Gallery",
+   "wiki": "Boomalli Aboriginal Artists Co-operative",
+   "views": 818,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Inner_West"
+   ],
+   "other_sources": [],
+   "note": "gallery: Aboriginal artists' co-operative gallery",
+   "redirect_to": "Boomalli Aboriginal Artists Cooperative"
+  },
+  {
+   "name": "Enmore Theatre",
+   "wiki": "Enmore Theatre",
+   "coordinates": {
+    "lat": -33.8989,
+    "lng": 151.1741
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Inner_West",
+   "views": 9203,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Inner_West"
+   ],
+   "other_sources": [],
+   "note": "venue: live music theatre"
+  },
+  {
+   "name": "New Theatre",
+   "wiki": "New Theatre (Sydney)",
+   "coordinates": {
+    "lat": -33.8937,
+    "lng": 151.1836
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Inner_West",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Inner_West"
+   ],
+   "other_sources": [],
+   "note": "venue: theatre company venue in Newtown"
+  },
+  {
+   "name": "Palace Cinema, Norton Street",
+   "wiki": "Palace Cinema, Norton Street",
+   "coordinates": {
+    "lat": -33.8874,
+    "lng": 151.1575
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Inner_West",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Inner_West"
+   ],
+   "other_sources": [],
+   "note": "venue: independent cinema in Leichhardt"
+  },
+  {
+   "name": "Annandale Hotel",
+   "wiki": "Annandale Hotel",
+   "coordinates": {
+    "lat": -33.8875,
+    "lng": 151.1717
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Inner_West",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Inner_West"
+   ],
+   "other_sources": [],
+   "note": "venue: pub music venue"
+  },
+  {
+   "name": "Leichhardt Library",
+   "wiki": "Leichhardt Library",
+   "coordinates": {
+    "lat": -33.886886,
+    "lng": 151.157582
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Inner_West",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Inner_West"
+   ],
+   "other_sources": [],
+   "note": "civic building: public library"
+  },
+  {
+   "name": "Glebe Point",
+   "wiki": "Glebe Point",
+   "views": 0,
+   "counted_sources": [],
+   "other_sources": [
+    "https://www.openstreetmap.org/"
+   ],
+   "note": "headland: OSM point only",
+   "redirect_to": "Port Jackson",
+   "coordinates": {
+    "lat": -33.85833333,
+    "lng": 151.23333333
+   },
+   "coordinates_source": "wikipedia:Port Jackson"
+  },
+  {
+   "name": "Penrith Beach",
+   "wiki": "Penrith Beach",
+   "coordinates": {
+    "lat": -33.69482,
+    "lng": 150.67694
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Outer_West",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Outer_West"
+   ],
+   "other_sources": [],
+   "note": "beach: artificial Nepean River beach at Penrith",
+   "redirect_to": "Western Sydney Lakes"
+  },
+  {
+   "name": "Sydney International Regatta Centre",
+   "wiki": "Sydney International Regatta Centre",
+   "coordinates": {
+    "lat": -33.725,
+    "lng": 150.681
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Outer_West",
+   "views": 3159,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Outer_West"
+   ],
+   "other_sources": [],
+   "note": "venue: 2000 Olympic rowing and canoe venue, public paddling"
+  },
+  {
+   "name": "Penrith Whitewater Stadium",
+   "wiki": "Penrith Whitewater Stadium",
+   "coordinates": {
+    "lat": -33.72,
+    "lng": 150.683
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Outer_West",
+   "views": 2153,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Outer_West"
+   ],
+   "other_sources": [],
+   "note": "venue: slalom whitewater course from the 2000 Olympics"
+  },
+  {
+   "name": "Penrith Museum of Printing",
+   "wiki": "Penrith Museum of Printing",
+   "coordinates": {
+    "lat": -33.757,
+    "lng": 150.688
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Outer_West",
+   "views": 325,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Outer_West"
+   ],
+   "other_sources": [],
+   "note": "museum: letterpress printing museum"
+  },
+  {
+   "name": "Museum of Fire",
+   "wiki": "Museum of Fire",
+   "coordinates": {
+    "lat": -33.74956,
+    "lng": 150.69212
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Outer_West",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Outer_West"
+   ],
+   "other_sources": [],
+   "note": "museum: firefighting vehicles and equipment museum",
+   "redirect_to": "Museum of Scottish Fire Heritage"
+  },
+  {
+   "name": "Knapsack Viaduct",
+   "wiki": "Lapstone Zig Zag",
+   "coordinates": {
+    "lat": -33.759,
+    "lng": 150.64
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Outer_West",
+   "views": 2712,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Outer_West"
+   ],
+   "other_sources": [],
+   "note": "historic: 1867 railway viaduct on the Lapstone Zig Zag"
+  },
+  {
+   "name": "Lapstone Zig Zag",
+   "wiki": "Lapstone Zig Zag",
+   "coordinates": {
+    "lat": -33.7621,
+    "lng": 150.6391
+   },
+   "coordinates_source": "OSM:attraction en:Lapstone Zig Zag",
+   "views": 2712,
+   "counted_sources": [],
+   "other_sources": [],
+   "note": "historic: railway zig zag, OSM and Wikipedia"
+  },
+  {
+   "name": "Featherdale Wildlife Park",
+   "wiki": "Featherdale Wildlife Park",
+   "coordinates": {
+    "lat": -33.7658,
+    "lng": 150.8842
+   },
+   "coordinates_source": "OSM:zoo en:Featherdale Wildlife Park",
+   "views": 5968,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Outer_West"
+   ],
+   "other_sources": [],
+   "note": "zoo: wildlife park with koalas and kangaroo feeding at Doonside"
+  },
+  {
+   "name": "South Creek Park",
+   "wiki": "South Creek Park",
+   "coordinates": {
+    "lat": -33.766,
+    "lng": 150.766
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Outer_West",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Outer_West"
+   ],
+   "other_sources": [],
+   "note": "park: creekside park with Bennett's Wagons"
+  },
+  {
+   "name": "Pinegrove Memorial Park",
+   "wiki": "Pinegrove Memorial Park",
+   "coordinates": {
+    "lat": -33.7891,
+    "lng": 150.8471
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Outer_West",
+   "views": 1286,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Outer_West"
+   ],
+   "other_sources": [],
+   "note": "cemetery: memorial park with children's memorial garden"
+  },
+  {
+   "name": "Chipping Norton Lake",
+   "wiki": "Chipping Norton Lake",
+   "coordinates": {
+    "lat": -33.902,
+    "lng": 150.9586
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/South_West",
+   "views": 2555,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/South_West"
+   ],
+   "other_sources": [],
+   "note": "lake: Sydney's largest undammed lake, parks and picnic areas"
+  },
+  {
+   "name": "Lions Lookout",
+   "wiki": "Lions Lookout",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/South_West"
+   ],
+   "other_sources": [],
+   "note": "viewpoint: lookout near Mount Pritchard with city views"
+  },
+  {
+   "name": "Sugarloaf Ridge and Moonrise Lookout",
+   "wiki": "Western Sydney Parklands",
+   "views": 2627,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/South_West"
+   ],
+   "other_sources": [],
+   "note": "viewpoint: picnic lookout in the Western Sydney Parklands",
+   "coordinates": {
+    "lat": -33.8393,
+    "lng": 150.8595
+   },
+   "coordinates_source": "wikipedia:Western Sydney Parklands"
+  },
+  {
+   "name": "Western Sydney Parklands",
+   "wiki": "Western Sydney Parklands",
+   "views": 2627,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/South_West"
+   ],
+   "other_sources": [],
+   "note": "park: large parkland corridor in Western Sydney",
+   "coordinates": {
+    "lat": -33.8393,
+    "lng": 150.8595
+   },
+   "coordinates_source": "wikipedia:Western Sydney Parklands"
+  },
+  {
+   "name": "Bland's Oak",
+   "wiki": "Bland Oak",
+   "views": 1739,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/South_West"
+   ],
+   "other_sources": [],
+   "note": "tree: one of Sydney's largest live oaks, planted in the 1830s",
+   "coordinates": {
+    "lat": -33.8797,
+    "lng": 150.9617
+   },
+   "coordinates_source": "wikipedia:Bland Oak"
+  },
+  {
+   "name": "Fairfield City Museum & Gallery",
+   "wiki": "Fairfield City Museum and Gallery",
+   "coordinates": {
+    "lat": -33.854,
+    "lng": 150.942
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/South_West",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/South_West"
+   ],
+   "other_sources": [],
+   "note": "museum: museum and gallery of Fairfield's heritage"
+  },
+  {
+   "name": "Fairfield Park",
+   "wiki": "Fairfield Park Precinct",
+   "views": 545,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/South_West"
+   ],
+   "other_sources": [],
+   "note": "park: bushland, walks and creek bridge",
+   "coordinates": {
+    "lat": -33.8744,
+    "lng": 150.9595
+   },
+   "coordinates_source": "wikipedia:Fairfield Park Precinct"
+  },
+  {
+   "name": "Assyrian Genocide Monument",
+   "wiki": "Assyrian Genocide Monument",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/South_West"
+   ],
+   "other_sources": [],
+   "note": "monument: memorial (minor)"
+  },
+  {
+   "name": "TreeTops Adventure",
+   "wiki": "TreeTops Adventure",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/South_West"
+   ],
+   "other_sources": [],
+   "note": "operator: high ropes course at Fairfield (operator)"
+  },
+  {
+   "name": "Campbelltown Arts Centre",
+   "wiki": "Campbelltown Arts Centre",
+   "coordinates": {
+    "lat": -34.07294,
+    "lng": 150.80874
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Macarthur",
+   "views": 673,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Macarthur"
+   ],
+   "other_sources": [],
+   "note": "gallery: art gallery and performance studio with Japanese garden"
+  },
+  {
+   "name": "Australian Botanic Garden Mount Annan",
+   "wiki": "Australian Botanic Garden Mount Annan",
+   "coordinates": {
+    "lat": -34.0701,
+    "lng": 150.767
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Macarthur",
+   "views": 2878,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Macarthur"
+   ],
+   "other_sources": [],
+   "note": "garden: native plant botanic garden with visitor centre"
+  },
+  {
+   "name": "NSW Rail Museum",
+   "wiki": "NSW Rail Museum",
+   "coordinates": {
+    "lat": -34.2075,
+    "lng": 150.5686
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Macarthur",
+   "views": 5240,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Macarthur"
+   ],
+   "other_sources": [],
+   "note": "museum: heritage steam trains and rail museum at Thirlmere"
+  },
+  {
+   "name": "Mawson Park, Campbelltown",
+   "wiki": "Mawson Park",
+   "coordinates": {
+    "lat": -34.06594,
+    "lng": 150.81599
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Macarthur",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Macarthur"
+   ],
+   "other_sources": [],
+   "note": "park: park with war memorials"
+  },
+  {
+   "name": "Campbelltown Heritage and Cultural Walk",
+   "wiki": "Campbelltown, New South Wales",
+   "views": 27325,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Macarthur"
+   ],
+   "other_sources": [],
+   "note": "walk: self-guided heritage walk through Campbelltown",
+   "coordinates": {
+    "lat": -34.06666667,
+    "lng": 150.81666667
+   },
+   "coordinates_source": "wikipedia:Campbelltown, New South Wales"
+  },
+  {
+   "name": "Ultimate Paintball",
+   "wiki": "Ultimate Paintball",
+   "views": 978,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Macarthur"
+   ],
+   "other_sources": [],
+   "note": "operator: 120-acre paintball park"
+  },
+  {
+   "name": "Sydney Baháʼí Temple",
+   "wiki": "Sydney Baháʼí Temple",
+   "views": 4282,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Sydney_Baháʼí_Temple"
+   ],
+   "note": "religious: Bahá'í House of Worship in Ingleside with visitor centre",
+   "coordinates": {
+    "lat": -33.6855,
+    "lng": 151.2587
+   },
+   "coordinates_source": "wikipedia:Sydney Baháʼí Temple"
+  },
+  {
+   "name": "Sydney Zoo",
+   "wiki": "Sydney Zoo",
+   "views": 11674,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Sydney_Zoo"
+   ],
+   "note": "zoo: wildlife zoo at Eastern Creek",
+   "coordinates": {
+    "lat": -33.79111111,
+    "lng": 150.86694444
+   },
+   "coordinates_source": "wikipedia:Sydney Zoo"
+  },
+  {
+   "name": "Zambi Wildlife Retreat",
+   "wiki": "Zambi Wildlife Retreat",
+   "views": 1030,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Zambi_Wildlife_Retreat"
+   ],
+   "note": "wildlife: small wildlife retreat at Wallacia",
+   "coordinates": {
+    "lat": -33.86972222,
+    "lng": 150.67
+   },
+   "coordinates_source": "wikipedia:Zambi Wildlife Retreat"
+  },
+  {
+   "name": "Sydney Action Park",
+   "wiki": "Sydney Action Park",
+   "views": 4296,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Sydney_Action_Park"
+   ],
+   "note": "entertainment: go-karts and amusement park at Blacktown",
+   "coordinates": {
+    "lat": -33.80878889,
+    "lng": 150.91108889
+   },
+   "coordinates_source": "wikipedia:Sydney Action Park"
+  },
+  {
+   "name": "Sydney Bus Museum",
+   "wiki": "Sydney Bus Museum",
+   "views": 1175,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Sydney_Bus_Museum"
+   ],
+   "note": "museum: bus museum at Enfield",
+   "coordinates": {
+    "lat": -33.8763595,
+    "lng": 151.1586325
+   },
+   "coordinates_source": "OSM (Nominatim) tourism/museum"
+  },
+  {
+   "name": "NSW Schoolhouse Museum",
+   "wiki": "NSW Schoolhouse Museum",
+   "views": 383,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/NSW_Schoolhouse_Museum"
+   ],
+   "note": "museum: 1870s schoolhouse museum",
+   "coordinates": {
+    "lat": -33.794633,
+    "lng": 151.121475
+   },
+   "coordinates_source": "wikipedia:NSW Schoolhouse Museum"
+  },
+  {
+   "name": "Sydney Mint",
+   "wiki": "Sydney Mint",
+   "views": 4625,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Sydney_Mint"
+   ],
+   "note": "museum: former colonial mint building (tours)",
+   "coordinates": {
+    "lat": -33.8689,
+    "lng": 151.2125
+   },
+   "coordinates_source": "wikipedia:Sydney Mint"
+  },
+  {
+   "name": "Mary MacKillop Place Museum",
+   "wiki": "Mary MacKillop Memorial Chapel and Museum",
+   "views": 0,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Mary_MacKillop_Memorial_Chapel_and_Museum"
+   ],
+   "note": "museum: museum and chapel in North Sydney",
+   "coordinates": {
+    "lat": -33.838744,
+    "lng": 151.2047103
+   },
+   "coordinates_source": "OSM (Nominatim) tourism/museum"
+  },
+  {
+   "name": "Valley Heights Locomotive Depot Heritage Museum",
+   "wiki": "Valley Heights Locomotive Depot Heritage Museum",
+   "views": 1977,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Valley_Heights_Locomotive_Depot_Heritage_Museum"
+   ],
+   "note": "museum: locomotive depot museum in the Blue Mountains foothills",
+   "redirect_to": "Valley Heights Rail Museum",
+   "coordinates": {
+    "lat": -33.7028,
+    "lng": 150.581
+   },
+   "coordinates_source": "wikipedia:Valley Heights Rail Museum"
+  },
+  {
+   "name": "Balaka Falls",
+   "wiki": "Balaka Falls",
+   "views": 843,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Balaka_Falls"
+   ],
+   "note": "waterfall: waterfall in Castlereagh Nature Reserve",
+   "coordinates": {
+    "lat": -33.778889,
+    "lng": 151.033056
+   },
+   "coordinates_source": "wikipedia:Balaka Falls"
+  },
+  {
+   "name": "Boothtown Aqueduct",
+   "wiki": "Boothtown Aqueduct",
+   "views": 5827,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Boothtown_Aqueduct"
+   ],
+   "note": "historic: 1830s aqueduct in Sydney's north-west",
+   "coordinates": {
+    "lat": -33.8308994,
+    "lng": 150.9380898
+   },
+   "coordinates_source": "OSM (Nominatim) highway/cycleway"
+  },
+  {
+   "name": "Calmsley Hill City Farm",
+   "wiki": "Calmsley Hill City Farm",
+   "views": 80,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Calmsley_Hill_City_Farm"
+   ],
+   "note": "farm: working farm in Horsley Park",
+   "coordinates": {
+    "lat": -33.86872,
+    "lng": 150.85973
+   },
+   "coordinates_source": "wikipedia:Calmsley Hill City Farm"
+  },
+  {
+   "name": "Curlew Camp",
+   "wiki": "Curlew Camp",
+   "views": 995,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Curlew_Camp"
+   ],
+   "note": "heritage: former Aboriginal and military site (Wikipedia listing)",
+   "coordinates": {
+    "lat": -33.84333333,
+    "lng": 151.23777778
+   },
+   "coordinates_source": "wikipedia:Curlew Camp"
+  },
+  {
+   "name": "Disney Studios Australia",
+   "wiki": "Disney Studios Australia",
+   "views": 21440,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Disney_Studios_Australia"
+   ],
+   "note": "entertainment: former film studio at Sydney Olympic Park, closed",
+   "coordinates": {
+    "lat": -33.89202,
+    "lng": 151.22851
+   },
+   "coordinates_source": "wikipedia:Disney Studios Australia"
+  },
+  {
+   "name": "El Caballo Blanco",
+   "wiki": "El Caballo Blanco, Sydney",
+   "views": 6051,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/El_Caballo_Blanco,_Sydney"
+   ],
+   "note": "statue: sculpture of a horse in Sydney",
+   "coordinates": {
+    "lat": -34.009732,
+    "lng": 150.775357
+   },
+   "coordinates_source": "wikipedia:El Caballo Blanco, Sydney"
+  },
+  {
+   "name": "Handa Opera on Sydney Harbour",
+   "wiki": "Handa Opera on Sydney Harbour",
+   "views": 1951,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Handa_Opera_on_Sydney_Harbour"
+   ],
+   "note": "show: seasonal floating opera event",
+   "coordinates": {
+    "lat": -33.8611416,
+    "lng": 151.2210701
+   },
+   "coordinates_source": "OSM (Nominatim) amenity/theatre"
+  },
+  {
+   "name": "Manly Waterworks",
+   "wiki": "Manly Waterworks",
+   "views": 2949,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Manly_Waterworks"
+   ],
+   "note": "heritage: 1880s waterworks at Manly",
+   "coordinates": {
+    "lat": -33.799097,
+    "lng": 151.280924
+   },
+   "coordinates_source": "wikipedia:Manly Waterworks"
+  },
+  {
+   "name": "Port Jackson",
+   "wiki": "Port Jackson",
+   "views": 71885,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Port_Jackson"
+   ],
+   "note": "harbour: Sydney Harbour (natural harbour)",
+   "coordinates": {
+    "lat": -33.85833333,
+    "lng": 151.23333333
+   },
+   "coordinates_source": "wikipedia:Port Jackson"
+  },
+  {
+   "name": "Royal Clock",
+   "wiki": "Royal Clock",
+   "views": 3241,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Royal_Clock"
+   ],
+   "note": "clock: landmark clock (Wikipedia listing)",
+   "coordinates": {
+    "lat": -33.872041,
+    "lng": 151.206713
+   },
+   "coordinates_source": "wikipedia:Royal Clock"
+  },
+  {
+   "name": "Sydney Cove",
+   "wiki": "Sydney Cove",
+   "views": 27984,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Sydney_Cove"
+   ],
+   "note": "historic: site of the 1788 British landing",
+   "coordinates": {
+    "lat": -33.85861111,
+    "lng": 151.21166667
+   },
+   "coordinates_source": "wikipedia:Sydney Cove"
+  },
+  {
+   "name": "Sydney Sailors' Home",
+   "wiki": "Sydney Sailors' Home",
+   "views": 947,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Sydney_Sailors'_Home"
+   ],
+   "note": "heritage: 1880s sailors' home in The Rocks",
+   "coordinates": {
+    "lat": -33.8587,
+    "lng": 151.2093
+   },
+   "coordinates_source": "wikipedia:Sydney Sailors' Home"
+  },
+  {
+   "name": "Victoria Barracks, Sydney",
+   "wiki": "Victoria Barracks, Sydney",
+   "views": 15719,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Victoria_Barracks,_Sydney"
+   ],
+   "note": "heritage: Georgian barracks in Paddington (tours by appointment)",
+   "coordinates": {
+    "lat": -33.885905,
+    "lng": 151.223137
+   },
+   "coordinates_source": "wikipedia:Victoria Barracks, Sydney"
+  },
+  {
+   "name": "Walsh Bay",
+   "wiki": "Walsh Bay",
+   "views": 1748,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Walsh_Bay"
+   ],
+   "note": "precinct: harbourside wharves with theatre and restaurants",
+   "redirect_to": "Walsh Bay Wharves Precinct",
+   "coordinates": {
+    "lat": -33.8569,
+    "lng": 151.205
+   },
+   "coordinates_source": "wikipedia:Walsh Bay Wharves Precinct"
+  },
+  {
+   "name": "Wild Cat Conservation Centre",
+   "wiki": "Wild Cat Conservation Centre",
+   "views": 581,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Wild_Cat_Conservation_Centre"
+   ],
+   "note": "wildlife: cat conservation centre (Wikipedia listing)",
+   "coordinates": {
+    "lat": -33.530946,
+    "lng": 150.847221
+   },
+   "coordinates_source": "wikipedia:Wild Cat Conservation Centre"
+  },
+  {
+   "name": "Ultimo Power Station",
+   "wiki": "Ultimo Power Station",
+   "views": 1389,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Ultimo_Power_Station"
+   ],
+   "note": "heritage: former power station that is now Powerhouse Museum site"
+  },
+  {
+   "name": "Garden Palace",
+   "wiki": "Garden Palace",
+   "views": 13198,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Garden_Palace"
+   ],
+   "note": "historic: site of the 1879 exhibition palace (demolished)",
+   "coordinates": {
+    "lat": -33.8646,
+    "lng": 151.21293
+   },
+   "coordinates_source": "wikipedia:Garden Palace"
+  },
+  {
+   "name": "Prospect Hill",
+   "wiki": "Prospect Hill (New South Wales)",
+   "views": 3685,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Prospect_Hill_(New_South_Wales)"
+   ],
+   "note": "hill: viewpoint on Prospect Hill with volcanic history",
+   "coordinates": {
+    "lat": -33.81456,
+    "lng": 150.92672
+   },
+   "coordinates_source": "wikipedia:Prospect Hill (New South Wales)"
+  },
+  {
+   "name": "Prospect Nature Reserve",
+   "wiki": "Prospect Nature Reserve",
+   "views": 1279,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Prospect_Nature_Reserve"
+   ],
+   "note": "nature reserve: bushland reserve on Prospect Hill",
+   "coordinates": {
+    "lat": -33.8111,
+    "lng": 150.8864
+   },
+   "coordinates_source": "wikipedia:Prospect Nature Reserve"
+  },
+  {
+   "name": "Bents Basin State Conservation Area",
+   "wiki": "Bents Basin State Conservation Area",
+   "views": 1629,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Bents_Basin_State_Conservation_Area"
+   ],
+   "note": "nature reserve: Nepean River gorge area near Wallacia",
+   "coordinates": {
+    "lat": -33.932,
+    "lng": 150.635
+   },
+   "coordinates_source": "wikipedia:Bents Basin State Conservation Area"
+  },
+  {
+   "name": "Rouse Hill House",
+   "wiki": "Rouse Hill House",
+   "views": 2107,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Rouse_Hill_House"
+   ],
+   "note": "heritage house: 1816 house in Rouse Hill",
+   "coordinates": {
+    "lat": -33.67581586,
+    "lng": 150.90762831
+   },
+   "coordinates_source": "wikipedia:Rouse Hill House"
+  },
+  {
+   "name": "Eryldene, Gordon",
+   "wiki": "Eryldene",
+   "views": 778,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Eryldene"
+   ],
+   "note": "heritage house: house and gardens in Gordon",
+   "redirect_to": "Eryldene, Gordon",
+   "coordinates": {
+    "lat": -33.758,
+    "lng": 151.1576
+   },
+   "coordinates_source": "wikipedia:Eryldene, Gordon"
+  },
+  {
+   "name": "Glenalvon House",
+   "wiki": "Glenalvon House",
+   "views": 655,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Glenalvon_House"
+   ],
+   "note": "heritage house: colonial house in Sydney",
+   "coordinates": {
+    "lat": -34.0675,
+    "lng": 150.8149
+   },
+   "coordinates_source": "wikipedia:Glenalvon House"
+  },
+  {
+   "name": "Carss Cottage",
+   "wiki": "Carss Cottage",
+   "views": 612,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Carss_Cottage"
+   ],
+   "note": "heritage house: cottage in Sydney's suburbs",
+   "coordinates": {
+    "lat": -33.9906,
+    "lng": 151.1204
+   },
+   "coordinates_source": "wikipedia:Carss Cottage"
+  },
+  {
+   "name": "Chau Chak Wing Museum",
+   "wiki": "Chau Chak Wing Museum",
+   "views": 4726,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Chau_Chak_Wing_Museum"
+   ],
+   "note": "museum: University of Sydney museum",
+   "coordinates": {
+    "lat": -33.8853,
+    "lng": 151.1905
+   },
+   "coordinates_source": "wikipedia:Chau Chak Wing Museum"
+  },
+  {
+   "name": "Museum of Chinese in Australia",
+   "wiki": "Museum of Chinese in Australia",
+   "views": 194,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Museum_of_Chinese_in_Australia"
+   ],
+   "note": "museum: Chinese Australian history museum",
+   "coordinates": {
+    "lat": -33.8799089,
+    "lng": 151.2055113
+   },
+   "coordinates_source": "wikipedia:Museum of Chinese in Australia"
+  },
+  {
+   "name": "Merchant's House, Sydney",
+   "wiki": "Merchant's House, Sydney",
+   "views": 807,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Merchant's_House,_Sydney"
+   ],
+   "note": "heritage house: 1841 merchant's house in The Rocks",
+   "coordinates": {
+    "lat": -33.8577,
+    "lng": 151.2086
+   },
+   "coordinates_source": "wikipedia:Merchant's House, Sydney"
+  },
+  {
+   "name": "Qtopia Sydney",
+   "wiki": "Qtopia Sydney",
+   "views": 1162,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Qtopia_Sydney"
+   ],
+   "note": "museum: Telstra museum of communications",
+   "coordinates": {
+    "lat": -33.8797,
+    "lng": 151.2172
+   },
+   "coordinates_source": "wikipedia:Qtopia Sydney"
+  },
+  {
+   "name": "Raphael Mackeller Stores",
+   "wiki": "Raphael Mackeller Stores",
+   "views": 299,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Raphael_Mackeller_Stores"
+   ],
+   "note": "heritage: stores building",
+   "coordinates": {
+    "lat": -33.8589,
+    "lng": 151.2087
+   },
+   "coordinates_source": "wikipedia:Raphael Mackeller Stores"
+  },
+  {
+   "name": "Royal Australian Navy Heritage Centre",
+   "wiki": "Royal Australian Navy Heritage Centre",
+   "views": 1594,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Royal_Australian_Navy_Heritage_Centre"
+   ],
+   "note": "museum: navy heritage centre on Garden Island",
+   "coordinates": {
+    "lat": -33.859493,
+    "lng": 151.230004
+   },
+   "coordinates_source": "wikipedia:Royal Australian Navy Heritage Centre"
+  },
+  {
+   "name": "Earth Exchange, Sydney",
+   "wiki": "Earth Exchange",
+   "views": 0,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Earth_Exchange"
+   ],
+   "note": "museum: Earth science exhibit"
+  },
+  {
+   "name": "Edge of the Trees",
+   "wiki": "Edge of the Trees",
+   "views": 944,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Edge_of_the_Trees"
+   ],
+   "note": "museum: Edge of the Trees at Hornsby",
+   "coordinates": {
+    "lat": -33.86363,
+    "lng": 151.21131
+   },
+   "coordinates_source": "wikipedia:Edge of the Trees"
+  },
+  {
+   "name": "Don Bank Museum",
+   "wiki": "Don Bank Museum",
+   "views": 465,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Don_Bank_Museum"
+   ],
+   "note": "museum: Don Bank Museum at Hunters Hill",
+   "redirect_to": "Don Bank",
+   "coordinates": {
+    "lat": -33.8377,
+    "lng": 151.2052
+   },
+   "coordinates_source": "wikipedia:Don Bank"
+  },
+  {
+   "name": "City of Canada Bay Museum",
+   "wiki": "Canada Bay Museum",
+   "views": 0,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Canada_Bay_Museum"
+   ],
+   "note": "museum: Canada Bay local history museum",
+   "coordinates": {
+    "lat": -33.8553114,
+    "lng": 151.1044875
+   },
+   "coordinates_source": "OSM (Nominatim) tourism/museum"
+  },
+  {
+   "name": "Tulkiyan",
+   "wiki": "Tulkiyan",
+   "views": 970,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Tulkiyan"
+   ],
+   "note": "heritage house: heritage house at Mosman",
+   "coordinates": {
+    "lat": -33.7578,
+    "lng": 151.154
+   },
+   "coordinates_source": "wikipedia:Tulkiyan"
+  },
+  {
+   "name": "Vienna, Hunters Hill",
+   "wiki": "Vienna, Hunters Hill",
+   "views": 495,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Vienna,_Hunters_Hill"
+   ],
+   "note": "heritage house: Vienna house museum at Hunters Hill",
+   "coordinates": {
+    "lat": -33.8346,
+    "lng": 151.1547
+   },
+   "coordinates_source": "wikipedia:Vienna, Hunters Hill"
+  },
+  {
+   "name": "Sandgate, Randwick",
+   "wiki": "Sandgate, Randwick",
+   "views": 346,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Sandgate,_Randwick"
+   ],
+   "note": "heritage house: Sandgate house, Randwick",
+   "coordinates": {
+    "lat": -33.916,
+    "lng": 151.2404
+   },
+   "coordinates_source": "wikipedia:Sandgate, Randwick"
+  },
+  {
+   "name": "Manse, Mount Druitt",
+   "wiki": "The Manse, Mount Druitt",
+   "views": 700,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/The_Manse,_Mount_Druitt"
+   ],
+   "note": "heritage house: historic manse at Mount Druitt",
+   "coordinates": {
+    "lat": -33.7701,
+    "lng": 150.8135
+   },
+   "coordinates_source": "wikipedia:The Manse, Mount Druitt"
+  },
+  {
+   "name": "Old Mining Museum Building",
+   "wiki": "Old Mining Museum Building",
+   "views": 984,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Old_Mining_Museum_Building"
+   ],
+   "note": "museum: old mining museum building",
+   "coordinates": {
+    "lat": -33.8566,
+    "lng": 151.2085
+   },
+   "coordinates_source": "wikipedia:Old Mining Museum Building"
+  },
+  {
+   "name": "Anzac Bridge",
+   "wiki": "ANZAC Bridge",
+   "views": 12774,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/ANZAC_Bridge"
+   ],
+   "note": "bridge: cable-stayed bridge (OSM and Wikipedia)",
+   "coordinates": {
+    "lat": -33.86934,
+    "lng": 151.18578
+   },
+   "coordinates_source": "wikipedia:Anzac Bridge"
+  },
+  {
+   "name": "Coca-Cola Billboard",
+   "wiki": "Coca-Cola billboard",
+   "views": 5559,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Coca-Cola_billboard"
+   ],
+   "note": "landmark: Coca-Cola billboard on Kings Cross/ Oxford Street (OSM and Wikipedia only)",
+   "coordinates": {
+    "lat": -33.87525833,
+    "lng": 151.22223333
+   },
+   "coordinates_source": "wikipedia:Coca-Cola billboard"
+  },
+  {
+   "name": "Man O' War Steps",
+   "wiki": "Man O'War Steps",
+   "views": 2986,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Man_O'War_Steps"
+   ],
+   "note": "historic: sandstone steps at The Rocks/Circular Quay",
+   "coordinates": {
+    "lat": -33.8579,
+    "lng": 151.2158
+   },
+   "coordinates_source": "wikipedia:Man O'War Steps"
+  },
+  {
+   "name": "Devonshire Street Tunnel",
+   "wiki": "Devonshire Street Tunnel",
+   "views": 3031,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Devonshire_Street_Tunnel"
+   ],
+   "note": "public art: pedestrian tunnel artwork (OSM and Wikipedia)",
+   "coordinates": {
+    "lat": -33.88527778,
+    "lng": 151.20666667
+   },
+   "coordinates_source": "wikipedia:Devonshire Street Tunnel"
+  },
+  {
+   "name": "Halo",
+   "wiki": "Halo (sculpture)",
+   "views": 1206,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Halo_(sculpture)"
+   ],
+   "note": "public art: sculpture (OSM and Wikipedia)",
+   "coordinates": {
+    "lat": -33.88561139,
+    "lng": 151.20029028
+   },
+   "coordinates_source": "wikipedia:Halo (sculpture)"
+  },
+  {
+   "name": "Forgotten Songs",
+   "wiki": "Forgotten Songs",
+   "views": 1368,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Forgotten_Songs"
+   ],
+   "note": "public art: sculpture (OSM and Wikipedia)",
+   "coordinates": {
+    "lat": -33.8671837,
+    "lng": 151.2078262
+   },
+   "coordinates_source": "OSM (Nominatim) tourism/artwork"
+  },
+  {
+   "name": "Queen Victoria Statue",
+   "wiki": "Statue of Queen Victoria, Sydney",
+   "views": 4716,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Statue_of_Queen_Victoria,_Sydney"
+   ],
+   "note": "statue: statue of Queen Victoria outside Queen Victoria Building (OSM only)",
+   "coordinates": {
+    "lat": -33.872718,
+    "lng": 151.206851
+   },
+   "coordinates_source": "wikipedia:Statue of Queen Victoria, Sydney"
+  },
+  {
+   "name": "Sydney Cove West Archaeological Precinct",
+   "wiki": "Sydney Cove West Archaeological Precinct",
+   "views": 801,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Sydney_Cove_West_Archaeological_Precinct"
+   ],
+   "note": "archaeology: precinct of colonial remains at Sydney Cove",
+   "coordinates": {
+    "lat": -33.8602,
+    "lng": 151.2091
+   },
+   "coordinates_source": "wikipedia:Sydney Cove West Archaeological Precinct"
+  },
+  {
+   "name": "Yininmadyemi - Thou didst let fall",
+   "wiki": "Yininmadyemi - Thou didst let fall",
+   "views": 1338,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Yininmadyemi_-_Thou_didst_let_fall"
+   ],
+   "note": "public art: sculpture (OSM and Wikipedia)",
+   "coordinates": {
+    "lat": -33.8752461,
+    "lng": 151.2100507
+   },
+   "coordinates_source": "OSM (Nominatim) tourism/artwork"
+  },
+  {
+   "name": "Old Lilyvale tunnels",
+   "wiki": "Lilyvale railway tunnels",
+   "views": 373,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Lilyvale_railway_tunnels"
+   ],
+   "note": "historic: railway tunnels (OSM)",
+   "coordinates": {
+    "lat": -34.1892,
+    "lng": 151.0032
+   },
+   "coordinates_source": "wikipedia:Lilyvale railway tunnels"
+  },
+  {
+   "name": "Yaralla Estate",
+   "wiki": "Yaralla Estate",
+   "views": 4637,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Yaralla_Estate"
+   ],
+   "note": "heritage: Yaralla estate at Concord",
+   "coordinates": {
+    "lat": -33.83996111,
+    "lng": 151.09893889
+   },
+   "coordinates_source": "wikipedia:Yaralla Estate"
+  },
+  {
+   "name": "Tempe House",
+   "wiki": "Tempe House and St Magdalenes Chapel",
+   "views": 1423,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Tempe_House_and_St_Magdalenes_Chapel"
+   ],
+   "note": "heritage: colonial house and chapel at Tempe",
+   "coordinates": {
+    "lat": -33.9294,
+    "lng": 151.1556
+   },
+   "coordinates_source": "wikipedia:Tempe House and St Magdalenes Chapel"
+  },
+  {
+   "name": "Sydney Olympic Cauldron",
+   "wiki": "2000 Summer Olympics cauldron",
+   "views": 3248,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/2000_Summer_Olympics_cauldron"
+   ],
+   "note": "monument: Olympic cauldron (OSM)",
+   "coordinates": {
+    "lat": -33.8455559,
+    "lng": 151.0657177
+   },
+   "coordinates_source": "OSM (Nominatim) amenity/fountain"
+  },
+  {
+   "name": "Hayes Street Beach",
+   "wiki": "Neutral Bay Beach",
+   "views": 1034,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Neutral_Bay_Beach"
+   ],
+   "note": "beach: small harbour beach at Neutral Bay (OSM)"
+  },
+  {
+   "name": "Homebush Bay",
+   "wiki": "Homebush Bay",
+   "views": 4861,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Homebush_Bay"
+   ],
+   "note": "bay: bay at Sydney Olympic Park (OSM)",
+   "coordinates": {
+    "lat": -33.8287,
+    "lng": 151.08088
+   },
+   "coordinates_source": "wikipedia:Homebush Bay"
+  },
+  {
+   "name": "White Bay",
+   "wiki": "White Bay (New South Wales)",
+   "views": 3037,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/White_Bay_(New_South_Wales)"
+   ],
+   "note": "bay: harbour bay and cruise terminal (OSM)",
+   "coordinates": {
+    "lat": -33.864,
+    "lng": 151.184
+   },
+   "coordinates_source": "wikipedia:White Bay (New South Wales)"
+  },
+  {
+   "name": "Cockle Bay",
+   "wiki": "Cockle Bay (Sydney)",
+   "views": 1987,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Cockle_Bay_(Sydney)"
+   ],
+   "note": "bay: harbour bay at Darling Harbour (OSM)",
+   "coordinates": {
+    "lat": -33.8718,
+    "lng": 151.2007
+   },
+   "coordinates_source": "wikipedia:Cockle Bay (Sydney)"
+  },
+  {
+   "name": "Blackwattle Bay",
+   "wiki": "Blackwattle Bay",
+   "views": 3347,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Blackwattle_Bay"
+   ],
+   "note": "bay: inner harbour bay at Glebe (OSM)",
+   "coordinates": {
+    "lat": -33.872564,
+    "lng": 151.188912
+   },
+   "coordinates_source": "wikipedia:Blackwattle Bay"
+  },
+  {
+   "name": "Rozelle Bay",
+   "wiki": "Rozelle Bay",
+   "views": 995,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Rozelle_Bay"
+   ],
+   "note": "bay: inner harbour bay (OSM)",
+   "coordinates": {
+    "lat": -33.86666667,
+    "lng": 151.18333333
+   },
+   "coordinates_source": "wikipedia:Rozelle Bay"
+  },
+  {
+   "name": "Dolans Bay",
+   "wiki": "Dolans Bay",
+   "views": 409,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Dolans_Bay"
+   ],
+   "note": "bay: Dolans Bay marine reserve (OSM)",
+   "coordinates": {
+    "lat": -34.06527778,
+    "lng": 151.13472222
+   },
+   "coordinates_source": "wikipedia:Dolans Bay"
+  },
+  {
+   "name": "Burraneer Bay",
+   "wiki": "Burraneer Bay",
+   "views": 653,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Burraneer_Bay"
+   ],
+   "note": "bay: Port Hacking bay (OSM)",
+   "coordinates": {
+    "lat": -34.06527778,
+    "lng": 151.13472222
+   },
+   "coordinates_source": "wikipedia:Burraneer Bay"
+  },
+  {
+   "name": "Gymea Bay",
+   "wiki": "Gymea Bay",
+   "views": 576,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Gymea_Bay"
+   ],
+   "note": "bay: Gymea Bay (OSM)",
+   "coordinates": {
+    "lat": -34.04861111,
+    "lng": 151.10111111
+   },
+   "coordinates_source": "wikipedia:Gymea Bay"
+  },
+  {
+   "name": "Bate Bay",
+   "wiki": "Bate Bay",
+   "views": 3830,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Bate_Bay"
+   ],
+   "note": "bay: Bate Bay (OSM)",
+   "coordinates": {
+    "lat": -34.045,
+    "lng": 151.176
+   },
+   "coordinates_source": "wikipedia:Bate Bay"
+  },
+  {
+   "name": "Prospect Hill Lookout",
+   "wiki": "Prospect Hill (New South Wales)",
+   "views": 3685,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Prospect_Hill_(New_South_Wales)"
+   ],
+   "note": "viewpoint: Prospect Hill (OSM)",
+   "coordinates": {
+    "lat": -33.81456,
+    "lng": 150.92672
+   },
+   "coordinates_source": "wikipedia:Prospect Hill (New South Wales)"
+  },
+  {
+   "name": "Lucasville railway station",
+   "wiki": "Lucasville railway station",
+   "views": 651,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Lucasville_railway_station"
+   ],
+   "note": "transport: railway station (OSM)",
+   "coordinates": {
+    "lat": -33.7611812,
+    "lng": 150.6390519
+   },
+   "coordinates_source": "wikipedia:Lucasville railway station"
+  }
+ ]
+}

@@ -1,0 +1,2965 @@
+{
+ "region": "nsw-blue-mountains-central-west",
+ "step": "enumerate (Atlas step 1): Wikivoyage region and town pages, NSW National Parks sitemap and park pages, Visit Cowra and Visit Mudgee Region homepages, Wikipedia category crawl (Blue Mountains, Central West, caves, mountains), OSM Overpass attractions/viewpoints with a Wikipedia link; blind verdicts are a later step",
+ "scoring": "views and Wikipedia coordinates filled by score-candidates.ts; counted_sources = visitor-oriented sources (Wikivoyage, NSW Parks visitor pages, tourism boards); Wikipedia and OSM in other_sources",
+ "sources": [
+  "https://en.wikivoyage.org/wiki/Blue_Mountains",
+  "https://en.wikivoyage.org/wiki/Katoomba",
+  "https://en.wikivoyage.org/wiki/Leura",
+  "https://en.wikivoyage.org/wiki/Wentworth_Falls",
+  "https://en.wikivoyage.org/wiki/Blackheath",
+  "https://en.wikivoyage.org/wiki/Mount_Victoria",
+  "https://en.wikivoyage.org/wiki/Lithgow",
+  "https://en.wikivoyage.org/wiki/Oberon",
+  "https://en.wikivoyage.org/wiki/Jenolan_Caves",
+  "https://en.wikivoyage.org/wiki/Kanangra-Boyd_National_Park",
+  "https://en.wikivoyage.org/wiki/Wollemi_National_Park",
+  "https://en.wikivoyage.org/wiki/Warrumbungle_National_Park",
+  "https://en.wikivoyage.org/wiki/Coonabarabran",
+  "https://en.wikivoyage.org/wiki/Orange_(New_South_Wales)",
+  "https://en.wikivoyage.org/wiki/Mudgee",
+  "https://en.wikivoyage.org/wiki/Gulgong",
+  "https://en.wikivoyage.org/wiki/Dubbo",
+  "https://en.wikivoyage.org/wiki/Parkes",
+  "https://en.wikivoyage.org/wiki/Forbes",
+  "https://en.wikivoyage.org/wiki/Cowra",
+  "https://en.wikivoyage.org/wiki/Canowindra",
+  "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)",
+  "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/blue-mountains-national-park",
+  "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/warrumbungle-national-park",
+  "https://www.visitcowra.com.au/",
+  "https://www.visitmudgeeregion.com.au/"
+ ],
+ "candidates": [
+  {
+   "name": "Echo Point",
+   "coordinates": {
+    "lat": -33.732101,
+    "lng": 150.312121
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Katoomba",
+   "views": 7377,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Katoomba",
+    "https://en.wikivoyage.org/wiki/Blue_Mountains"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Echo_Point,_New_South_Wales"
+   ],
+   "note": "lookout: main viewpoint over the Three Sisters and Jamison Valley (Katoomba)"
+  },
+  {
+   "name": "Three Sisters",
+   "wiki": null,
+   "coordinates": {
+    "lat": -33.73536,
+    "lng": 150.31496
+   },
+   "coordinates_source": "osm (Nominatim): Three Sisters",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Katoomba",
+    "https://en.wikivoyage.org/wiki/Blue_Mountains"
+   ],
+   "other_sources": [],
+   "note": "rock formation: the Three Sisters, seen from Echo Point, with the Giant Stairway down into the valley",
+   "views": 0
+  },
+  {
+   "name": "Scenic World",
+   "wiki": "Scenic World",
+   "coordinates": {
+    "lat": -33.728407,
+    "lng": 150.300996
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Katoomba",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Katoomba"
+   ],
+   "other_sources": [],
+   "note": "attraction: Scenic Railway (steepest railway), Scenic Skyway and valley boardwalks; ticketed",
+   "views": 9678
+  },
+  {
+   "name": "Katoomba Falls",
+   "coordinates": {
+    "lat": -33.7275,
+    "lng": 150.3047
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Katoomba",
+   "views": 1819,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Katoomba"
+   ],
+   "other_sources": [],
+   "note": "waterfall: Katoomba Falls on Cliff Drive",
+   "wiki": "Katoomba Falls"
+  },
+  {
+   "name": "Giant Stairway",
+   "coordinates": {
+    "lat": -33.73525,
+    "lng": 150.31549
+   },
+   "coordinates_source": "osm (Nominatim): Giant Stairway",
+   "views": 0,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/blue-mountains-national-park"
+   ],
+   "other_sources": [],
+   "note": "walking track: Giant Stairway descending into the Jamison Valley at the Three Sisters"
+  },
+  {
+   "name": "Mount Solitary",
+   "wiki": "Mount Solitary",
+   "coordinates": {
+    "lat": -33.78333333,
+    "lng": 150.31666667
+   },
+   "coordinates_source": "wikipedia:Mount Solitary",
+   "views": 1857,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Katoomba"
+   ],
+   "other_sources": [],
+   "note": "mountain: walking destination in the Jamison Valley (multi-hour walk)"
+  },
+  {
+   "name": "Ruined Castle",
+   "wiki": null,
+   "coordinates": {
+    "lat": -33.76331,
+    "lng": 150.29418
+   },
+   "coordinates_source": "osm (Nominatim): Ruined Castle",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Katoomba",
+    "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/ruined-castle-walking-track"
+   ],
+   "other_sources": [],
+   "note": "eroded mountain formation; walk into the valley from Katoomba",
+   "views": 0
+  },
+  {
+   "name": "The Edge Cinema",
+   "coordinates": {
+    "lat": -33.710573,
+    "lng": 150.314902
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Katoomba",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Katoomba"
+   ],
+   "other_sources": [],
+   "note": "cinema: giant-screen film about the Blue Mountains (Katoomba)"
+  },
+  {
+   "name": "Varuna, The Writers' House",
+   "wiki": "Varuna, The Writers' House",
+   "coordinates": {
+    "lat": -33.722219,
+    "lng": 150.303984
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Katoomba",
+   "views": 923,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Katoomba"
+   ],
+   "other_sources": [],
+   "note": "writers' retreat on Cascade St: not a public visitor attraction"
+  },
+  {
+   "name": "Hydro Majestic",
+   "wiki": "Hydro Majestic Hotel",
+   "coordinates": {
+    "lat": -33.675667,
+    "lng": 150.280806
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Katoomba",
+   "views": 12056,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Katoomba"
+   ],
+   "other_sources": [],
+   "note": "historic hotel at Medlow Bath with Megalong Valley views; visitors come for high tea and the view"
+  },
+  {
+   "name": "Explorers Tree",
+   "wiki": "Explorers tree",
+   "coordinates": {
+    "lat": -33.7036,
+    "lng": 150.291
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Katoomba",
+   "views": 1559,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Katoomba"
+   ],
+   "other_sources": [],
+   "note": "historic site: platform where the 1813 explorers carved their initials; tree removed"
+  },
+  {
+   "name": "Megalong Australian Heritage Farm",
+   "coordinates": null,
+   "coordinates_source": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Blue_Mountains"
+   ],
+   "other_sources": [],
+   "note": "farm: horse riding, 4WD, petting farm and walks in the Megalong Valley"
+  },
+  {
+   "name": "Mount Victoria Museum",
+   "coordinates": {
+    "lat": -33.5877,
+    "lng": 150.2568
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Mount_Victoria",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Mount_Victoria"
+   ],
+   "other_sources": [],
+   "note": "museum: local history museum at Mount Victoria station; limited opening hours"
+  },
+  {
+   "name": "Mount Wilson",
+   "wiki": "Mount Wilson, New South Wales",
+   "coordinates": {
+    "lat": -33.51666667,
+    "lng": 150.36666667
+   },
+   "coordinates_source": "wikipedia:Mount Wilson, New South Wales",
+   "views": 5809,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Blue_Mountains"
+   ],
+   "other_sources": [],
+   "note": "village: private botanic gardens at Mount Wilson known for autumn colour"
+  },
+  {
+   "name": "Blue Mountains Botanic Garden",
+   "wiki": "Blue Mountains Botanic Garden",
+   "coordinates": {
+    "lat": -33.539,
+    "lng": 150.422
+   },
+   "coordinates_source": "osm:Blue Mountains Botanic Garden",
+   "views": 1301,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Blue_Mountains_Botanic_Garden"
+   ],
+   "note": "garden: Blue Mountains Botanic Garden at Mount Tomah (OSM attraction)"
+  },
+  {
+   "name": "Olympian Rock",
+   "coordinates": {
+    "lat": -33.7258,
+    "lng": 150.3282
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Leura",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Leura"
+   ],
+   "other_sources": [],
+   "note": "lookout: Olympian Rock lookout at the end of Leura Mall, quieter than Echo Point"
+  },
+  {
+   "name": "Sublime Point Lookout",
+   "wiki": "Sublime Point",
+   "coordinates": {
+    "lat": -33.7375,
+    "lng": 150.3385
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Leura",
+   "views": 825,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Leura",
+    "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/sublime-point-lookout-leura"
+   ],
+   "other_sources": [],
+   "note": "lookout: panoramic Jamison Valley view, 10-minute walk from Sublime Point Road"
+  },
+  {
+   "name": "Elysian Lookout",
+   "coordinates": null,
+   "coordinates_source": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Leura"
+   ],
+   "other_sources": [],
+   "note": "lookout: short walk east of Olympian Rock"
+  },
+  {
+   "name": "Leura Cascades",
+   "wiki": null,
+   "coordinates": {
+    "lat": -33.72154,
+    "lng": 150.32228
+   },
+   "coordinates_source": "osm (Nominatim): Leura Cascades",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Blue_Mountains",
+    "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/leura-cascades-fern-bower"
+   ],
+   "other_sources": [],
+   "note": "waterfall: Leura Cascades and Fern Bower walk (Wedding Veil Falls)",
+   "views": 0
+  },
+  {
+   "name": "Federal Pass",
+   "coordinates": {
+    "lat": -33.72175,
+    "lng": 150.31839
+   },
+   "coordinates_source": "osm (Nominatim): Federal Pass",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Blue_Mountains"
+   ],
+   "other_sources": [],
+   "note": "walk: Federal Pass track below Leura cliffs, with Wedding Veil Falls"
+  },
+  {
+   "name": "Gordon Falls",
+   "wiki": "Gordon Falls",
+   "coordinates": {
+    "lat": 45.78416667,
+    "lng": -65.09444444
+   },
+   "coordinates_source": "wikipedia:Gordon Falls",
+   "views": 1219,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/gordon-falls-to-katoomba-walk"
+   ],
+   "other_sources": [],
+   "note": "waterfall and lookout: Gordon Falls, walk to Katoomba"
+  },
+  {
+   "name": "Prince Henry Cliff Walk",
+   "coordinates": {
+    "lat": -33.72134,
+    "lng": 150.32166
+   },
+   "coordinates_source": "osm (Nominatim): Prince Henry Cliff Walk",
+   "views": 0,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/prince-henry-cliff-walk"
+   ],
+   "other_sources": [],
+   "note": "walk: cliff-top walk between Katoomba and Leura"
+  },
+  {
+   "name": "Leura",
+   "wiki": "Leura, New South Wales",
+   "coordinates": {
+    "lat": -33.711877,
+    "lng": 150.330461
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Leura",
+   "views": 1692,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Leura"
+   ],
+   "other_sources": [],
+   "note": "town: small village known for shops, cafes and craft (Leura Mall)",
+   "redirect_to": "Leura"
+  },
+  {
+   "name": "Katoomba",
+   "wiki": "Katoomba",
+   "coordinates": {
+    "lat": -33.712,
+    "lng": 150.312
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Katoomba",
+   "views": 30346,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Katoomba"
+   ],
+   "other_sources": [],
+   "note": "town: largest Blue Mountains town and gateway to Echo Point and Scenic World"
+  },
+  {
+   "name": "Medlow Bath",
+   "wiki": "Medlow Bath, New South Wales",
+   "coordinates": {
+    "lat": -33.666667,
+    "lng": 150.28333
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Blue_Mountains",
+   "views": 3986,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Blue_Mountains"
+   ],
+   "other_sources": [],
+   "note": "village: home of the Hydro Majestic on the Megalong Valley edge"
+  },
+  {
+   "name": "Wentworth Falls",
+   "wiki": "Wentworth Falls",
+   "coordinates": {
+    "lat": -33.72802,
+    "lng": 150.3741
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Wentworth_Falls",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wentworth_Falls",
+    "https://en.wikivoyage.org/wiki/Blue_Mountains"
+   ],
+   "other_sources": [],
+   "note": "waterfall: largest waterfall in the Blue Mountains National Park, with the lookout and walks (Wikipedia title redirects to the village article, so views counted as 0)",
+   "redirect_to": "Wentworth Falls, New South Wales"
+  },
+  {
+   "name": "National Pass",
+   "coordinates": {
+    "lat": -33.72802,
+    "lng": 150.3741
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Wentworth_Falls",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wentworth_Falls",
+    "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/national-pass"
+   ],
+   "other_sources": [],
+   "note": "walk: cliff-ledge track from Wentworth Falls, the best one-day walk in the Blue Mountains (currently closed for rockfall per Wikivoyage)"
+  },
+  {
+   "name": "Wentworth Falls Lake",
+   "coordinates": {
+    "lat": -33.709878,
+    "lng": 150.376418
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Wentworth_Falls",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wentworth_Falls"
+   ],
+   "other_sources": [],
+   "note": "picnic lake: picnic and swimming spot near the village, free electric barbecues"
+  },
+  {
+   "name": "Darwin's Walk",
+   "coordinates": null,
+   "coordinates_source": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wentworth_Falls"
+   ],
+   "other_sources": [],
+   "note": "walk: about 2 hours from Wentworth Falls station to the falls, Charles Darwin's route"
+  },
+  {
+   "name": "Wentworth Pass Loop",
+   "coordinates": null,
+   "coordinates_source": null,
+   "views": 0,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/wentworth-pass-loop-walking-track"
+   ],
+   "other_sources": [],
+   "note": "walk: loop track to the base of Wentworth Falls (swimming)"
+  },
+  {
+   "name": "Overcliff Undercliff Track",
+   "coordinates": null,
+   "coordinates_source": null,
+   "views": 0,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/overcliffundercliff-track"
+   ],
+   "other_sources": [],
+   "note": "walk: cliff-base walk between Wentworth Falls and Leura"
+  },
+  {
+   "name": "Federal Falls Walk",
+   "coordinates": null,
+   "coordinates_source": null,
+   "views": 0,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/federal-falls-walking-track"
+   ],
+   "other_sources": [],
+   "note": "walk: track to Federal Falls near Leura"
+  },
+  {
+   "name": "Lawson",
+   "wiki": "Lawson, New South Wales",
+   "coordinates": {
+    "lat": -33.71944444,
+    "lng": 150.42972222
+   },
+   "coordinates_source": "wikipedia:Lawson, New South Wales",
+   "views": 4684,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Blue_Mountains"
+   ],
+   "other_sources": [],
+   "note": "village: small mid-mountains town near Wentworth Falls"
+  },
+  {
+   "name": "Wentworth Falls (village)",
+   "wiki": "Wentworth Falls, New South Wales",
+   "coordinates": {
+    "lat": -33.716,
+    "lng": 150.366
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Blue_Mountains",
+   "views": 13386,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Blue_Mountains"
+   ],
+   "other_sources": [],
+   "note": "town: village near the falls; base for B&Bs and bushwalks"
+  },
+  {
+   "name": "Govett's Leap",
+   "wiki": null,
+   "coordinates": {
+    "lat": -33.627997,
+    "lng": 150.311487
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Blackheath",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Blackheath",
+    "https://en.wikivoyage.org/wiki/Blue_Mountains",
+    "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/govetts-leap-lookout"
+   ],
+   "other_sources": [],
+   "note": "lookout: most visited Blackheath lookout over the Grose Valley, with walking tracks down",
+   "views": 0
+  },
+  {
+   "name": "Evans Lookout",
+   "wiki": "Evans Lookout",
+   "coordinates": {
+    "lat": -33.646681,
+    "lng": 150.324994
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Blackheath",
+   "views": 580,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Blackheath"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Evans_Lookout"
+   ],
+   "note": "lookout: Grose Valley view and start of the Grand Canyon walk"
+  },
+  {
+   "name": "Perry's Lookdown",
+   "wiki": "Perry's Lookdown",
+   "coordinates": {
+    "lat": -33.59965,
+    "lng": 150.346717
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Blackheath",
+   "views": 202,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Blackheath"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Perry%27s_Lookdown"
+   ],
+   "note": "lookout: Perrys Lookdown over the Megalong and Grose valleys"
+  },
+  {
+   "name": "Blue Gum Forest",
+   "wiki": "Blue Gum Forest",
+   "coordinates": {
+    "lat": -33.6075,
+    "lng": 150.358
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Blackheath",
+   "views": 1756,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Blackheath",
+    "https://www.nationalparks.nsw.gov.au/things-to-do/historic-buildings-places/blue-gum-forest"
+   ],
+   "other_sources": [],
+   "note": "nature reserve: Blue Gum Forest in the Grose Valley, reached on the descent from Perrys Lookdown"
+  },
+  {
+   "name": "Grand Canyon Track",
+   "coordinates": {
+    "lat": -33.6271,
+    "lng": 150.2778
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Blackheath",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Blackheath",
+    "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/grand-canyon-track"
+   ],
+   "other_sources": [],
+   "note": "walk: 6.3 km loop from Evans Lookout through rainforest and banksia scrub into the Grand Canyon"
+  },
+  {
+   "name": "Rodriguez Pass",
+   "coordinates": {
+    "lat": -33.6341,
+    "lng": 150.33371
+   },
+   "coordinates_source": "osm (Nominatim): Rodriguez Pass",
+   "views": 0,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/rodriguez-pass-walking-track"
+   ],
+   "other_sources": [],
+   "note": "walk: challenging Grose Valley descent from Govett's Leap to Evans Lookout"
+  },
+  {
+   "name": "Pierces Pass to Blue Gum Forest",
+   "coordinates": null,
+   "coordinates_source": null,
+   "views": 0,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/pierces-pass-to-blue-gum-forest-walking-track"
+   ],
+   "other_sources": [],
+   "note": "walk: Grose Valley track to Blue Gum Forest"
+  },
+  {
+   "name": "Dardanelles Pass Loop",
+   "coordinates": null,
+   "coordinates_source": null,
+   "views": 0,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/dardanelles-pass-loop-walking-track"
+   ],
+   "other_sources": [],
+   "note": "walk: loop track near Mount Victoria / Blackheath"
+  },
+  {
+   "name": "Blackheath Heritage Centre",
+   "wiki": null,
+   "coordinates": {
+    "lat": -33.6328,
+    "lng": 150.2852
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Blackheath",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Blackheath"
+   ],
+   "other_sources": [],
+   "note": "visitor centre: National Parks Blue Mountains Heritage Centre by Govett's Leap Road",
+   "views": 0
+  },
+  {
+   "name": "Blackheath Gardens",
+   "coordinates": {
+    "lat": -33.6328,
+    "lng": 150.2852
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Blackheath",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Blackheath"
+   ],
+   "other_sources": [],
+   "note": "municipal park: small garden near the Blackheath station, autumn colour (local park)"
+  },
+  {
+   "name": "Blackheath Pool",
+   "coordinates": {
+    "lat": -33.63428,
+    "lng": 150.28952
+   },
+   "coordinates_source": "osm (Nominatim): Blackheath Pool",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Blackheath"
+   ],
+   "other_sources": [],
+   "note": "swimming pool: Memorial Park pool in Blackheath, open in summer"
+  },
+  {
+   "name": "Blackheath",
+   "wiki": "Blackheath, New South Wales",
+   "coordinates": {
+    "lat": -33.6311,
+    "lng": 150.2911
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Blackheath",
+   "views": 11660,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Blackheath"
+   ],
+   "other_sources": [],
+   "note": "town: mountain town between Medlow Bath and Mount Victoria, base for Grose Valley walks"
+  },
+  {
+   "name": "Mount Victoria",
+   "wiki": "Mount Victoria, New South Wales",
+   "coordinates": {
+    "lat": -33.5833,
+    "lng": 150.25
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Blue_Mountains",
+   "views": 7229,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Mount_Victoria"
+   ],
+   "other_sources": [],
+   "note": "village: westernmost Blue Mountains town with heritage hotel and walks (script name-match to wellington-4 is a different place; cleared) (NSW town; not the Wellington suburb)"
+  },
+  {
+   "name": "Prime Ministers' Corridor of Oaks",
+   "wiki": "Prime Ministers' Corridor of Oaks",
+   "coordinates": {
+    "lat": -33.69509,
+    "lng": 150.53934
+   },
+   "coordinates_source": "osm (Nominatim): Prime Ministers' Corridor of Oaks",
+   "views": 1113,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Blue_Mountains"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Prime_Ministers%27_Corridor_of_Oaks"
+   ],
+   "note": "monument: oak trees planted by Australian Prime Ministers at Faulconbridge"
+  },
+  {
+   "name": "Sir Henry Parkes Grave",
+   "coordinates": {
+    "lat": -33.69733,
+    "lng": 150.53498
+   },
+   "coordinates_source": "osm (Nominatim): Sir Henry Parkes Grave",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Blue_Mountains"
+   ],
+   "other_sources": [],
+   "note": "monument: grave of Sir Henry Parkes at Faulconbridge"
+  },
+  {
+   "name": "Norman Lindsay Gallery and Museum",
+   "wiki": "Norman Lindsay Gallery and Museum",
+   "coordinates": {
+    "lat": -33.6793,
+    "lng": 150.5612
+   },
+   "coordinates_source": "wikipedia:Norman Lindsay Gallery and Museum",
+   "views": 5444,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Blue_Mountains"
+   ],
+   "other_sources": [],
+   "note": "gallery: Norman Lindsay Gallery in Springwood, a Blue Mountains museum"
+  },
+  {
+   "name": "Mount Piddington",
+   "wiki": "Mount Piddington",
+   "coordinates": {
+    "lat": -33.6,
+    "lng": 150.258
+   },
+   "coordinates_source": "osm:Mount Piddington",
+   "views": 1031,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Mount_Piddington"
+   ],
+   "note": "viewpoint peak: lookout peak above Mount Victoria (OSM)"
+  },
+  {
+   "name": "Mount York",
+   "wiki": "Mount York",
+   "coordinates": {
+    "lat": -33.54833333,
+    "lng": 150.21777778
+   },
+   "coordinates_source": "wikipedia:Mount York",
+   "views": 1283,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Mount_York"
+   ],
+   "note": "lookout: Mount York, where the 1813 explorers crossed the range (Mount York Road)"
+  },
+  {
+   "name": "Mount Hay",
+   "wiki": "Mount Hay (New South Wales)",
+   "coordinates": {
+    "lat": -33.621,
+    "lng": 150.41
+   },
+   "coordinates_source": "osm:Mount Hay",
+   "views": 882,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Mount_Hay_(New_South_Wales)"
+   ],
+   "note": "peak: Mount Hay lookout near Leura (OSM peak with Wikipedia link)"
+  },
+  {
+   "name": "Mount Banks",
+   "wiki": "Mount Banks",
+   "coordinates": {
+    "lat": -33.587,
+    "lng": 150.37
+   },
+   "coordinates_source": "osm:Mount Banks",
+   "views": 1288,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Mount_Banks"
+   ],
+   "note": "peak: peak with lookout in the Blue Mountains (OSM)"
+  },
+  {
+   "name": "Mount Boyce",
+   "wiki": "Mount Boyce",
+   "coordinates": {
+    "lat": -33.616,
+    "lng": 150.266
+   },
+   "coordinates_source": "osm:Mount Boyce",
+   "views": 991,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Mount_Boyce"
+   ],
+   "note": "peak: Mount Boyce, Blue Mountains viewpoint peak (OSM)"
+  },
+  {
+   "name": "One Tree Hill",
+   "wiki": "One Tree Hill (Blue Mountains)",
+   "coordinates": {
+    "lat": -33.595,
+    "lng": 150.257
+   },
+   "coordinates_source": "osm:One Tree Hill",
+   "views": 810,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/One_Tree_Hill_(Blue_Mountains)"
+   ],
+   "note": "hill: One Tree Hill above Mount Victoria (OSM peak with Wikipedia link) (script name-match to auckland-17 is a different place; cleared)"
+  },
+  {
+   "name": "Lennox Bridge",
+   "wiki": "Lennox Bridge, Glenbrook",
+   "coordinates": {
+    "lat": -33.754,
+    "lng": 150.632
+   },
+   "coordinates_source": "osm:Lennox Bridge",
+   "views": 2432,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Lennox_Bridge,_Glenbrook"
+   ],
+   "note": "heritage bridge: 1833 bridge on the Mitchell's Pass road at Glenbrook; seen from the road"
+  },
+  {
+   "name": "Mitchell's Pass",
+   "coordinates": {
+    "lat": -33.754,
+    "lng": 150.632
+   },
+   "coordinates_source": "osm:Mitchells Pass",
+   "views": 1450,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Mitchell%27s_Causeway"
+   ],
+   "note": "historic road: Mitchell's Pass and causeway on the old Great Western road",
+   "wiki": "Michell's Pass"
+  },
+  {
+   "name": "Lapstone Zig Zag",
+   "wiki": "Lapstone Zig Zag",
+   "coordinates": {
+    "lat": -33.762,
+    "lng": 150.639
+   },
+   "coordinates_source": "osm:Lapstone Zig Zag",
+   "views": 2712,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Lapstone_Zig_Zag"
+   ],
+   "note": "historic road: Lapstone Zig Zag, the 1832 road descending the mountains (OSM attraction)"
+  },
+  {
+   "name": "Nepean Gorge",
+   "wiki": "Nepean Gorge",
+   "coordinates": {
+    "lat": -33.816,
+    "lng": 150.619
+   },
+   "coordinates_source": "osm:Nepean Gorge",
+   "views": 304,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Nepean_Gorge"
+   ],
+   "note": "gorge: river gorge near Glenbrook (OSM attraction)"
+  },
+  {
+   "name": "Valley Heights Locomotive Depot Heritage Museum",
+   "wiki": "Valley Heights Locomotive Depot Heritage Museum",
+   "coordinates": {
+    "lat": -33.703,
+    "lng": 150.58
+   },
+   "coordinates_source": "osm:Valley Heights Locomotive Depot Heritage Museum",
+   "views": 1977,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Valley_Heights_Locomotive_Depot_Heritage_Museum"
+   ],
+   "note": "museum: railway heritage museum at Valley Heights (OSM museum)",
+   "redirect_to": "Valley Heights Rail Museum"
+  },
+  {
+   "name": "Zambi Wildlife Retreat",
+   "wiki": "Zambi Wildlife Retreat",
+   "coordinates": {
+    "lat": -33.869,
+    "lng": 150.67
+   },
+   "coordinates_source": "osm:Zambi Wildlife Retreat",
+   "views": 1030,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Zambi_Wildlife_Retreat"
+   ],
+   "note": "wildlife: animal encounter retreat (OSM zoo with Wikipedia link); operator-run"
+  },
+  {
+   "name": "Woodford Academy",
+   "wiki": "Woodford Academy",
+   "coordinates": {
+    "lat": -33.733,
+    "lng": 150.474
+   },
+   "coordinates_source": "osm:Woodford Academy",
+   "views": 958,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Woodford_Academy"
+   ],
+   "note": "heritage building: historic academy building at Woodford; exterior only"
+  },
+  {
+   "name": "Former Katoomba Post Office",
+   "wiki": "Katoomba Post Office",
+   "coordinates": {
+    "lat": -33.714,
+    "lng": 150.311
+   },
+   "coordinates_source": "osm:Former Katoomba Post Office",
+   "views": 368,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Katoomba_Post_Office"
+   ],
+   "note": "civic building: former post office in Katoomba (heritage, exterior)"
+  },
+  {
+   "name": "Davisville",
+   "wiki": "Davisville, Wentworth Falls",
+   "coordinates": {
+    "lat": -33.714,
+    "lng": 150.372
+   },
+   "coordinates_source": "osm:Davisville",
+   "views": 286,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Davisville,_Wentworth_Falls"
+   ],
+   "note": "heritage house: historic house at Wentworth Falls (OSM building)"
+  },
+  {
+   "name": "Weatherboard Inn Archaeological Site",
+   "wiki": "Weatherboard Inn archaelological site",
+   "coordinates": {
+    "lat": -33.707,
+    "lng": 150.374
+   },
+   "coordinates_source": "osm:Weatherboard Inn Archaeological Site",
+   "views": 439,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Weatherboard_Inn_archaelological_site"
+   ],
+   "note": "archaeological site: remains of an 1830s inn near Wentworth Falls (OSM)"
+  },
+  {
+   "name": "Glenbrook",
+   "wiki": "Glenbrook, New South Wales",
+   "coordinates": {
+    "lat": -33.766667,
+    "lng": 150.619444
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Blue_Mountains",
+   "views": 6380,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Blue_Mountains"
+   ],
+   "other_sources": [],
+   "note": "town: entry point to the Blue Mountains National Park"
+  },
+  {
+   "name": "Springwood",
+   "wiki": "Springwood, New South Wales",
+   "coordinates": {
+    "lat": -33.7,
+    "lng": 150.56
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Blue_Mountains",
+   "views": 7859,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Blue_Mountains"
+   ],
+   "other_sources": [],
+   "note": "town: Blue Mountains town known for its small galleries"
+  },
+  {
+   "name": "Bell",
+   "wiki": "Bell, New South Wales",
+   "coordinates": {
+    "lat": -33.500833,
+    "lng": 150.394722
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Blue_Mountains",
+   "views": 2486,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Blue_Mountains"
+   ],
+   "other_sources": [],
+   "note": "village: small town with the Mount Wilson road junction and railway station"
+  },
+  {
+   "name": "Lithgow",
+   "wiki": "Lithgow, New South Wales",
+   "coordinates": {
+    "lat": -33.4833,
+    "lng": 150.15
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Lithgow",
+   "views": 30999,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lithgow"
+   ],
+   "other_sources": [],
+   "note": "town: coal and rail town at the foot of the Blue Mountains; gateway to Zig Zag Railway"
+  },
+  {
+   "name": "Rydal",
+   "wiki": "Rydal, New South Wales",
+   "coordinates": {
+    "lat": -33.481667,
+    "lng": 150.034444
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Blue_Mountains",
+   "views": 6990,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Blue_Mountains"
+   ],
+   "other_sources": [],
+   "note": "town: small railway town known for its daffodil show"
+  },
+  {
+   "name": "Tarana",
+   "wiki": "Tarana, New South Wales",
+   "coordinates": {
+    "lat": -33.5167,
+    "lng": 149.917
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Blue_Mountains",
+   "views": 2367,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Blue_Mountains"
+   ],
+   "other_sources": [],
+   "note": "village: railway crossroads town on the Oberon line"
+  },
+  {
+   "name": "Zig Zag Railway",
+   "wiki": "Zig Zag Railway",
+   "coordinates": {
+    "lat": -33.4774,
+    "lng": 150.2212
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Lithgow",
+   "views": 14172,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lithgow"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Zig_Zag_Railway"
+   ],
+   "note": "heritage railway: restored 1900s zig-zag railway between Lithgow and Clarence (WV says the historic rail section)"
+  },
+  {
+   "name": "Small Arms Factory Museum",
+   "wiki": "Lithgow Small Arms Factory",
+   "coordinates": {
+    "lat": -33.487572,
+    "lng": 150.139729
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Lithgow",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lithgow"
+   ],
+   "other_sources": [],
+   "note": "museum: Lithgow Small Arms Factory museum (historic site) (Wikipedia title redirects to the Lithgow Arms manufacturer article, a broader article: views 0)",
+   "redirect_to": "Lithgow Arms"
+  },
+  {
+   "name": "Blast Furnace Park",
+   "wiki": null,
+   "coordinates": {
+    "lat": -33.4751,
+    "lng": 150.1704
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Lithgow",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lithgow"
+   ],
+   "other_sources": [],
+   "note": "park: former Lithgow blast furnace converted to a park with signed walks",
+   "views": 0
+  },
+  {
+   "name": "Lost City",
+   "wiki": null,
+   "coordinates": {
+    "lat": -33.40719,
+    "lng": 150.15933
+   },
+   "coordinates_source": "osm (Nominatim): Lost City",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lithgow"
+   ],
+   "other_sources": [],
+   "note": "rock formations: Lost City formations reached by fire trails above Lithgow",
+   "views": 0
+  },
+  {
+   "name": "Lake Lyell",
+   "wiki": null,
+   "coordinates": {
+    "lat": -33.50594,
+    "lng": 150.06306
+   },
+   "coordinates_source": "osm (Nominatim): Lake Lyell",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lithgow"
+   ],
+   "other_sources": [],
+   "note": "recreation lake: Lake Lyell recreational area near Lithgow, swimming and walking",
+   "views": 0
+  },
+  {
+   "name": "Blue Mountains SpaRadise",
+   "coordinates": {
+    "lat": -33.51099,
+    "lng": 150.08292
+   },
+   "coordinates_source": "osm (Nominatim): Blue Mountains SpaRadise",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lithgow"
+   ],
+   "other_sources": [],
+   "note": "day spa: spa with day visit sessions near Lithgow"
+  },
+  {
+   "name": "Jannei Goat Dairy",
+   "coordinates": {
+    "lat": -33.37038,
+    "lng": 150.07315
+   },
+   "coordinates_source": "osm (Nominatim): Jannei Goat Dairy",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lithgow"
+   ],
+   "other_sources": [],
+   "note": "farm: goat dairy and farm shop at Lidsdale"
+  },
+  {
+   "name": "Ironfest",
+   "coordinates": {
+    "lat": -33.48069,
+    "lng": 150.14259
+   },
+   "coordinates_source": "osm (Nominatim): Lithgow showground (Wikivoyage venue)",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lithgow"
+   ],
+   "other_sources": [],
+   "note": "annual event: steam and engineering festival at Lithgow showground (April); event, not a permanent spot"
+  },
+  {
+   "name": "Jenolan Caves",
+   "wiki": "Jenolan Caves",
+   "coordinates": {
+    "lat": -33.820238,
+    "lng": 150.021498
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Jenolan_Caves",
+   "views": 12622,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Jenolan_Caves",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/jenolan-karst-conservation-reserve"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Jenolan_Caves"
+   ],
+   "note": "show caves: ten show caves with guided tours (Imperial, Orient, Lucas and others), Caves House and Blue Lake; closed to the public after 2024 flood damage per Wikivoyage"
+  },
+  {
+   "name": "Blue Lake (Jenolan)",
+   "coordinates": {
+    "lat": -33.81985,
+    "lng": 150.02522
+   },
+   "coordinates_source": "osm (Nominatim): Blue Lake (Jenolan)",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Jenolan_Caves"
+   ],
+   "other_sources": [],
+   "note": "lake: man-made dam lake at Jenolan with platypus; part of the Jenolan reserve"
+  },
+  {
+   "name": "Grand Arch (Jenolan)",
+   "wiki": null,
+   "coordinates": {
+    "lat": -33.81924,
+    "lng": 150.02313
+   },
+   "coordinates_source": "osm (Nominatim): Grand Arch (Jenolan)",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Jenolan_Caves"
+   ],
+   "other_sources": [],
+   "note": "natural arch: ~130 m arch on the road into the Jenolan reserve",
+   "views": 0
+  },
+  {
+   "name": "Kanangra Walls",
+   "wiki": "Kanangra Walls",
+   "coordinates": {
+    "lat": -33.9839,
+    "lng": 150.1228
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Kanangra-Boyd_National_Park",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Kanangra-Boyd_National_Park",
+    "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/kanangraboyd-lookout"
+   ],
+   "other_sources": [],
+   "note": "cliffs and waterfall: Kanangra Walls lookout, abseiling area, in Kanangra-Boyd National Park (Wikipedia title redirects to Kanangra-Boyd National Park, so views counted as 0)",
+   "redirect_to": "Kanangra-Boyd National Park"
+  },
+  {
+   "name": "Kanangra-Boyd National Park",
+   "wiki": "Kanangra-Boyd National Park",
+   "coordinates": {
+    "lat": -33.937778,
+    "lng": 150.090833
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Kanangra-Boyd_National_Park",
+   "views": 3852,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Kanangra-Boyd_National_Park",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/kanangraboyd-national-park"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Kanangra-Boyd_National_Park"
+   ],
+   "note": "national park: 66,681 ha park with the Kanangra Walls, Thurat Spires and Boyd River"
+  },
+  {
+   "name": "Thurat Spires",
+   "coordinates": {
+    "lat": -33.973585,
+    "lng": 150.118682
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Kanangra-Boyd_National_Park",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Kanangra-Boyd_National_Park"
+   ],
+   "other_sources": [],
+   "note": "rock spires: Thurat Spires lookout in Kanangra-Boyd"
+  },
+  {
+   "name": "Mount Cloudmaker",
+   "coordinates": {
+    "lat": -33.9452,
+    "lng": 150.1813
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Kanangra-Boyd_National_Park",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Kanangra-Boyd_National_Park"
+   ],
+   "other_sources": [],
+   "note": "lookout peak in Kanangra-Boyd"
+  },
+  {
+   "name": "Black Banksia Falls",
+   "coordinates": {
+    "lat": -33.945386,
+    "lng": 150.009072
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Kanangra-Boyd_National_Park",
+   "views": 177,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Kanangra-Boyd_National_Park"
+   ],
+   "other_sources": [],
+   "note": "waterfall in Kanangra-Boyd National Park"
+  },
+  {
+   "name": "Blue Mountains National Park",
+   "wiki": "Blue Mountains National Park",
+   "coordinates": {
+    "lat": -33.967778,
+    "lng": 150.304167
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Blue_Mountains",
+   "views": 15082,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Blue_Mountains",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/blue-mountains-national-park"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Blue_Mountains_National_Park"
+   ],
+   "note": "national park: the state's most visited national park, part of the Greater Blue Mountains World Heritage Area"
+  },
+  {
+   "name": "Gardens of Stone National Park",
+   "wiki": "Gardens of Stone National Park",
+   "coordinates": {
+    "lat": -33.154619,
+    "lng": 150.040969
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Blue_Mountains",
+   "views": 1567,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Blue_Mountains"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Gardens_of_Stone_National_Park"
+   ],
+   "note": "national park: Newnes Plateau cliffs and sandstone pagodas"
+  },
+  {
+   "name": "Newnes Plateau Cliffs",
+   "coordinates": null,
+   "coordinates_source": null,
+   "views": 0,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/things-to-do/adventure-sports-experiences/the-newnes-plateau-cliffs"
+   ],
+   "other_sources": [],
+   "note": "cliffs: Newnes Plateau cliffs in Gardens of Stone, quiet alternative to the main Blue Mountains lookouts"
+  },
+  {
+   "name": "Newnes Industrial Ruins",
+   "wiki": "Newnes, New South Wales",
+   "coordinates": {
+    "lat": -33.1782,
+    "lng": 150.2368
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Wollemi_National_Park",
+   "views": 3362,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wollemi_National_Park",
+    "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/newnes-industrial-ruins-walk"
+   ],
+   "other_sources": [],
+   "note": "historic ruins: remains of the 1900s oil-shale works at Newnes, reached by walk"
+  },
+  {
+   "name": "Glow Worm Tunnel",
+   "wiki": "Glowworm Tunnel",
+   "coordinates": {
+    "lat": -33.2479,
+    "lng": 150.2236
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Wollemi_National_Park",
+   "views": 2590,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wollemi_National_Park",
+    "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/glow-worm-tunnel-via-wolgan-valley-loop"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Glowworm_Tunnel"
+   ],
+   "note": "tunnel: disused railway tunnel with glow worms, reached by a flat walk from the car park"
+  },
+  {
+   "name": "Pagoda Lookout",
+   "coordinates": {
+    "lat": -32.8354,
+    "lng": 150.1973
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Wollemi_National_Park",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wollemi_National_Park"
+   ],
+   "other_sources": [],
+   "note": "lookout: Pagoda Lookout in Wollemi National Park"
+  },
+  {
+   "name": "Dunns Swamp",
+   "coordinates": {
+    "lat": -32.83364,
+    "lng": 150.20734
+   },
+   "coordinates_source": "osm (Nominatim): Dunns Swamp",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wollemi_National_Park"
+   ],
+   "other_sources": [],
+   "note": "swamp and campground: easy walks and canoeing in Wollemi"
+  },
+  {
+   "name": "Wollemi National Park",
+   "wiki": "Wollemi National Park",
+   "coordinates": {
+    "lat": -32.873889,
+    "lng": 150.492222
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Wollemi_National_Park",
+   "views": 11548,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wollemi_National_Park",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/wollemi-national-park"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Wollemi_National_Park"
+   ],
+   "note": "national park: largest wilderness area in NSW, home of the Wollemi pine; no entry fee"
+  },
+  {
+   "name": "Jenolan River Walk",
+   "coordinates": null,
+   "coordinates_source": null,
+   "views": 0,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/jenolan-river-walking-track"
+   ],
+   "other_sources": [],
+   "note": "walk: river walk in the Jenolan reserve"
+  },
+  {
+   "name": "Breadknife and Grand High Tops Walk",
+   "coordinates": {
+    "lat": -31.3326,
+    "lng": 148.995823
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Warrumbungle_National_Park",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Warrumbungle_National_Park",
+    "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/breadknife-and-grand-high-tops-walk"
+   ],
+   "other_sources": [],
+   "note": "walk: walk to the Breadknife and Grand High Tops, with views of the Warrumbungle volcanic peaks"
+  },
+  {
+   "name": "Oberon",
+   "wiki": "Oberon, New South Wales",
+   "coordinates": {
+    "lat": -33.716667,
+    "lng": 149.866667
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Blue_Mountains",
+   "views": 16834,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Oberon",
+    "https://en.wikivoyage.org/wiki/Blue_Mountains"
+   ],
+   "other_sources": [],
+   "note": "town: small town in the western falls of the Blue Mountains, known for autumn colour"
+  },
+  {
+   "name": "Oberon Dam",
+   "coordinates": {
+    "lat": -33.666147,
+    "lng": 149.779167
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Oberon",
+   "views": 651,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Oberon"
+   ],
+   "other_sources": [],
+   "note": "dam and lake: Oberon Dam reservoir near Oberon"
+  },
+  {
+   "name": "Mayfield Garden",
+   "wiki": "Mayfield Garden",
+   "coordinates": {
+    "lat": -33.666147,
+    "lng": 149.779167
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Oberon",
+   "views": 2063,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Oberon"
+   ],
+   "other_sources": [],
+   "note": "garden: privately owned cool-climate garden near Oberon"
+  },
+  {
+   "name": "Oberon Museum",
+   "coordinates": {
+    "lat": -33.70095,
+    "lng": 149.853889
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Oberon",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Oberon"
+   ],
+   "other_sources": [],
+   "note": "museum: small local history museum in Oberon"
+  },
+  {
+   "name": "Oberon Tarana Rail Trail",
+   "coordinates": null,
+   "coordinates_source": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Oberon"
+   ],
+   "other_sources": [],
+   "note": "rail trail: walking and cycling trail on the old railway between Oberon and Tarana"
+  },
+  {
+   "name": "Hartley Historic Site",
+   "wiki": "Hartley, New South Wales",
+   "coordinates": {
+    "lat": -33.55,
+    "lng": 150.18333333
+   },
+   "coordinates_source": "wikipedia:Hartley, New South Wales",
+   "views": 2895,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/things-to-do/historic-buildings-places/hartley-courthouse"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Hartley,_New_South_Wales"
+   ],
+   "note": "historic village: 1800s Hartley village preserved by NSW Parks, courthouse and buildings"
+  },
+  {
+   "name": "Hartley",
+   "wiki": "Hartley, New South Wales",
+   "coordinates": {
+    "lat": -33.55,
+    "lng": 150.18333333
+   },
+   "coordinates_source": "wikipedia:Hartley, New South Wales",
+   "views": 2895,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Hartley,_New_South_Wales"
+   ],
+   "note": "historic village: preserved 19th-century village at Hartley (see Hartley Historic Site)"
+  },
+  {
+   "name": "Bathurst",
+   "wiki": "Bathurst, New South Wales",
+   "coordinates": {
+    "lat": -33.419519,
+    "lng": 149.576697
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)",
+   "views": 71978,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)"
+   ],
+   "other_sources": [],
+   "note": "city: one of the first settlements west of the Great Dividing Range; regional base"
+  },
+  {
+   "name": "Dubbo",
+   "wiki": "Dubbo",
+   "coordinates": {
+    "lat": -32.252893,
+    "lng": 148.620066
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)",
+   "views": 77593,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Dubbo",
+    "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)"
+   ],
+   "other_sources": [],
+   "note": "city: regional hub at the crossroads of the Newell and Mitchell Highways; base for Western Plains Zoo"
+  },
+  {
+   "name": "Taronga Western Plains Zoo",
+   "wiki": "Western Plains Zoo",
+   "coordinates": {
+    "lat": -32.27858,
+    "lng": 148.58176
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Dubbo",
+   "views": 6346,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Dubbo"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Western_Plains_Zoo"
+   ],
+   "note": "zoo: open-range zoo outside Dubbo, one of the finest zoos in NSW",
+   "redirect_to": "Taronga Western Plains Zoo"
+  },
+  {
+   "name": "Dundullimal Homestead",
+   "wiki": "Dundullimal Homestead",
+   "coordinates": {
+    "lat": -32.2847,
+    "lng": 148.604
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Dubbo",
+   "views": 1531,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Dubbo"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Dundullimal_Homestead"
+   ],
+   "note": "homestead: Dubbo's oldest building, c.1840 farmhouse open for tours"
+  },
+  {
+   "name": "Old Dubbo Gaol",
+   "wiki": "Old Dubbo Gaol",
+   "coordinates": {
+    "lat": -32.2459,
+    "lng": 148.6022
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Dubbo",
+   "views": 1908,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Dubbo"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Old_Dubbo_Gaol"
+   ],
+   "note": "museum: former gaol (1859-1966) now a museum"
+  },
+  {
+   "name": "Dubbo Observatory",
+   "coordinates": {
+    "lat": -32.293799,
+    "lng": 148.58542
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Dubbo",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Dubbo"
+   ],
+   "other_sources": [],
+   "note": "observatory: stargazing observatory about 15 km from Dubbo"
+  },
+  {
+   "name": "Royal Flying Doctor Service Dubbo Visitor Experience",
+   "coordinates": {
+    "lat": -32.21628,
+    "lng": 148.57153
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Dubbo",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Dubbo"
+   ],
+   "other_sources": [],
+   "note": "visitor experience: Royal Flying Doctor Service visitor centre in Dubbo"
+  },
+  {
+   "name": "Orange",
+   "wiki": "Orange, New South Wales",
+   "coordinates": {
+    "lat": -33.2868,
+    "lng": 149.1036
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Orange_(New_South_Wales)",
+   "views": 80538,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Orange_(New_South_Wales)"
+   ],
+   "other_sources": [],
+   "note": "city: Central West city known as Australia's Colour City, base for the wine and orchard district"
+  },
+  {
+   "name": "Cook Park",
+   "wiki": "Cook Park, Orange",
+   "coordinates": {
+    "lat": -33.2831,
+    "lng": 149.0877
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Orange_(New_South_Wales)",
+   "views": 813,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Orange_(New_South_Wales)"
+   ],
+   "other_sources": [],
+   "note": "park: large heritage park with European trees, spectacular in autumn (local park)"
+  },
+  {
+   "name": "Orange Botanic Gardens",
+   "wiki": null,
+   "coordinates": {
+    "lat": -33.2566,
+    "lng": 149.0955
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Orange_(New_South_Wales)",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Orange_(New_South_Wales)"
+   ],
+   "other_sources": [],
+   "note": "garden: 17-hectare botanic garden with summer concerts",
+   "views": 0
+  },
+  {
+   "name": "Mount Canobolas",
+   "wiki": "Mount Canobolas",
+   "coordinates": {
+    "lat": -33.3442,
+    "lng": 148.982
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Orange_(New_South_Wales)",
+   "views": 5553,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Orange_(New_South_Wales)",
+    "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Mount_Canobolas"
+   ],
+   "note": "mountain: highest point west of the Great Dividing Range (1395 m) with summit views and day walks"
+  },
+  {
+   "name": "Orange Regional Art Gallery",
+   "wiki": null,
+   "coordinates": {
+    "lat": -33.2814,
+    "lng": 149.1037
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Orange_(New_South_Wales)",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Orange_(New_South_Wales)"
+   ],
+   "other_sources": [],
+   "note": "gallery: free regional art gallery in Civic Square",
+   "views": 0
+  },
+  {
+   "name": "Banjo Paterson Memorial Park",
+   "wiki": null,
+   "coordinates": {
+    "lat": -33.258,
+    "lng": 149.1355
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Orange_(New_South_Wales)",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Orange_(New_South_Wales)"
+   ],
+   "other_sources": [],
+   "note": "memorial park: Narambla homestead, birthplace of poet A. B. 'Banjo' Paterson",
+   "views": 0
+  },
+  {
+   "name": "Lake Canobolas",
+   "wiki": "Lake Canobolas",
+   "coordinates": {
+    "lat": -33.30472222,
+    "lng": 149.02777778
+   },
+   "coordinates_source": "wikipedia:Lake Canobolas",
+   "views": 1339,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Orange_(New_South_Wales)"
+   ],
+   "other_sources": [],
+   "note": "recreation lake: old water-supply dam with swimming, walks and a deer park, 15 km west of Orange"
+  },
+  {
+   "name": "Ophir Reserve",
+   "wiki": null,
+   "coordinates": {
+    "lat": -33.16961,
+    "lng": 149.23897
+   },
+   "coordinates_source": "osm (Nominatim): Ophir Reserve",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Orange_(New_South_Wales)"
+   ],
+   "other_sources": [],
+   "note": "reserve: site of Australia's first payable gold discovery; gold panning and picnic area",
+   "views": 0
+  },
+  {
+   "name": "Orange Adventure Playground",
+   "coordinates": {
+    "lat": -33.2566,
+    "lng": 149.0955
+   },
+   "coordinates_source": "wikivoyage: placed at the adjacent Botanic Gardens (Wikivoyage: right next to the Botanic Garden)",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Orange_(New_South_Wales)"
+   ],
+   "other_sources": [],
+   "note": "playground: large free adventure playground beside the Botanic Gardens (children's play)"
+  },
+  {
+   "name": "Highland Heritage Estate",
+   "wiki": null,
+   "coordinates": {
+    "lat": -33.3167,
+    "lng": 149.1467
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Orange_(New_South_Wales)",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Orange_(New_South_Wales)"
+   ],
+   "other_sources": [],
+   "note": "winery: cellar door and restaurant on the Mitchell Highway, specialises in dessert wines and Riesling",
+   "views": 0
+  },
+  {
+   "name": "Orange wine region",
+   "coordinates": {
+    "lat": -33.4,
+    "lng": 149.1
+   },
+   "coordinates_source": "wikipedia:Orange wine region",
+   "views": 848,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)"
+   ],
+   "other_sources": [],
+   "note": "wine region: cellar doors and orchards around Orange, visited for its wineries and cool-climate produce"
+  },
+  {
+   "name": "Mudgee",
+   "wiki": "Mudgee",
+   "coordinates": {
+    "lat": -32.59067,
+    "lng": 149.58396
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Mudgee",
+   "views": 40116,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Mudgee",
+    "https://www.visitmudgeeregion.com.au/"
+   ],
+   "other_sources": [],
+   "note": "town: historic country town in the wine region, base for Mudgee wineries"
+  },
+  {
+   "name": "Colonial Inn Museum",
+   "wiki": null,
+   "coordinates": {
+    "lat": -32.59,
+    "lng": 149.585
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Mudgee",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Mudgee"
+   ],
+   "other_sources": [],
+   "note": "museum: Mudgee Museum in the Colonial Inn, 126 Market Street",
+   "views": 0
+  },
+  {
+   "name": "Mudgee wine region",
+   "wiki": "Mudgee wine region",
+   "coordinates": {
+    "lat": -32.5,
+    "lng": 149.8
+   },
+   "coordinates_source": "wikipedia:Mudgee wine region",
+   "views": 768,
+   "counted_sources": [
+    "https://www.visitmudgeeregion.com.au/",
+    "https://en.wikivoyage.org/wiki/Mudgee"
+   ],
+   "other_sources": [],
+   "note": "wine region: cellar doors and wineries around Mudgee, visited for wine and food"
+  },
+  {
+   "name": "Louee Enduro and Motocross",
+   "coordinates": null,
+   "coordinates_source": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Mudgee"
+   ],
+   "other_sources": [],
+   "note": "motocross venue: motorbike park about 20 minutes from Mudgee (operator-run venue)"
+  },
+  {
+   "name": "Freeflight Motorcycle Park",
+   "coordinates": null,
+   "coordinates_source": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Mudgee"
+   ],
+   "other_sources": [],
+   "note": "motorcycle park: motocross venue about 20 minutes north of Gulgong (operator-run venue)"
+  },
+  {
+   "name": "Gulgong",
+   "wiki": "Gulgong, New South Wales",
+   "coordinates": {
+    "lat": -32.37081,
+    "lng": 149.447879
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)",
+   "views": 14648,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Gulgong",
+    "https://www.visitmudgeeregion.com.au/"
+   ],
+   "other_sources": [],
+   "note": "town: historic heritage gold-mining village, birthplace of poet Henry Lawson",
+   "redirect_to": "Gulgong"
+  },
+  {
+   "name": "Gulgong Pioneers' Museum",
+   "coordinates": {
+    "lat": -32.3611,
+    "lng": 149.5344
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Gulgong",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Gulgong"
+   ],
+   "other_sources": [],
+   "note": "museum: Gulgong Pioneers' Museum on Herbert Street"
+  },
+  {
+   "name": "Henry Lawson Centre",
+   "wiki": null,
+   "coordinates": {
+    "lat": -32.36298,
+    "lng": 149.53146
+   },
+   "coordinates_source": "osm (Nominatim): Henry Lawson Centre",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Gulgong"
+   ],
+   "other_sources": [],
+   "note": "museum: centre on the old Salvation Army hall, Gulgong, dedicated to poet Henry Lawson",
+   "views": 0
+  },
+  {
+   "name": "Hill End",
+   "wiki": "Hill End, New South Wales",
+   "coordinates": {
+    "lat": -33.035359,
+    "lng": 149.437987
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)",
+   "views": 9390,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)",
+    "https://www.nationalparks.nsw.gov.au/conservation-programs/hill-end-historic-site-buildings-conservation"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Hill_End,_New_South_Wales"
+   ],
+   "note": "historic gold town: Hill End historic site, former gold-mining town with preserved buildings"
+  },
+  {
+   "name": "Kandos",
+   "wiki": "Kandos, New South Wales",
+   "coordinates": {
+    "lat": -32.85,
+    "lng": 149.966667
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)",
+   "views": 8826,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)",
+    "https://www.visitmudgeeregion.com.au/"
+   ],
+   "other_sources": [],
+   "note": "town: cement town near Rylstone, included in the Visit Mudgee region"
+  },
+  {
+   "name": "Rylstone",
+   "wiki": "Rylstone, New South Wales",
+   "coordinates": {
+    "lat": -32.8,
+    "lng": 149.96666667
+   },
+   "coordinates_source": "wikipedia:Rylstone, New South Wales",
+   "views": 8447,
+   "counted_sources": [
+    "https://www.visitmudgeeregion.com.au/"
+   ],
+   "other_sources": [],
+   "note": "town: small town in the Visit Mudgee region with heritage buildings (Rylstone and Kandos)"
+  },
+  {
+   "name": "Capertee Valley",
+   "wiki": "Capertee Valley",
+   "coordinates": {
+    "lat": -33.04833333,
+    "lng": 150.13444444
+   },
+   "coordinates_source": "wikipedia:Capertee Valley",
+   "views": 12883,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/things-to-do/historic-buildings-places/capertee-woolshed-ruins"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Capertee_Valley"
+   ],
+   "note": "valley: Capertee Valley, a deep gorge lookout area near Glen Davis"
+  },
+  {
+   "name": "Burrendong Dam",
+   "wiki": "Burrendong Dam",
+   "coordinates": {
+    "lat": -32.66777778,
+    "lng": 149.10694444
+   },
+   "coordinates_source": "wikipedia:Burrendong Dam",
+   "views": 2615,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Burrendong_Dam"
+   ],
+   "note": "dam and lake: Lake Burrendong reservoir, boating and fishing near Wellington"
+  },
+  {
+   "name": "Wellington Caves",
+   "wiki": "Wellington Caves",
+   "coordinates": {
+    "lat": -32.62083333,
+    "lng": 148.93805556
+   },
+   "coordinates_source": "wikipedia:Wellington Caves",
+   "views": 2625,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Wellington_Caves"
+   ],
+   "note": "caves: Wellington Caves, a cave system near Wellington with guided tours"
+  },
+  {
+   "name": "Abercrombie Caves",
+   "wiki": "Abercrombie Caves",
+   "coordinates": {
+    "lat": -33.91143889,
+    "lng": 149.35938056
+   },
+   "coordinates_source": "wikipedia:Abercrombie Caves",
+   "views": 1795,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Abercrombie_Caves"
+   ],
+   "note": "caves: Abercrombie Caves, cave system in Abercrombie River National Park"
+  },
+  {
+   "name": "Abercrombie River National Park",
+   "wiki": "Abercrombie River National Park",
+   "coordinates": {
+    "lat": -34.09388889,
+    "lng": 149.7075
+   },
+   "coordinates_source": "wikipedia:Abercrombie River National Park",
+   "views": 1263,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Abercrombie_River_National_Park"
+   ],
+   "note": "national park: canyon and river park with caves"
+  },
+  {
+   "name": "Coolah Tops National Park",
+   "wiki": "Coolah Tops National Park",
+   "coordinates": {
+    "lat": -31.75083333,
+    "lng": 150.07138889
+   },
+   "coordinates_source": "wikipedia:Coolah Tops National Park",
+   "views": 807,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Coolah_Tops_National_Park"
+   ],
+   "note": "national park: tall-forest park with lookouts on the Coolah Tops"
+  },
+  {
+   "name": "Goobang National Park",
+   "wiki": "Goobang National Park",
+   "coordinates": {
+    "lat": -32.68555556,
+    "lng": 148.33611111
+   },
+   "coordinates_source": "wikipedia:Goobang National Park",
+   "views": 943,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Goobang_National_Park"
+   ],
+   "note": "national park: rugged park near Parkes with lookouts"
+  },
+  {
+   "name": "Weddin Mountains National Park",
+   "wiki": "Weddin Mountains National Park",
+   "coordinates": {
+    "lat": -33.97219444,
+    "lng": 148.02311111
+   },
+   "coordinates_source": "wikipedia:Weddin Mountains National Park",
+   "views": 890,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/weddin-mountains-national-park"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Weddin_Mountains_National_Park"
+   ],
+   "note": "national park: mountain park near Grenfell"
+  },
+  {
+   "name": "Conimbla National Park",
+   "wiki": "Conimbla National Park",
+   "coordinates": {
+    "lat": -33.74833333,
+    "lng": 148.43916667
+   },
+   "coordinates_source": "wikipedia:Conimbla National Park",
+   "views": 439,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Conimbla_National_Park"
+   ],
+   "note": "national park: volcanic plug and cliff park near Canowindra and Cowra (Wikipedia only)"
+  },
+  {
+   "name": "Warrumbungle National Park",
+   "wiki": "Warrumbungle National Park",
+   "coordinates": {
+    "lat": -31.292222,
+    "lng": 149.008056
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Coonabarabran",
+   "views": 4276,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Warrumbungle_National_Park",
+    "https://en.wikivoyage.org/wiki/Coonabarabran",
+    "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/warrumbungle-national-park"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Warrumbungle_National_Park"
+   ],
+   "note": "national park: Australia's first dark-sky park, Breadknife and volcanic peaks"
+  },
+  {
+   "name": "Siding Spring Observatory",
+   "wiki": "Siding Spring Observatory",
+   "coordinates": {
+    "lat": -31.272,
+    "lng": 149.0616
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Warrumbungle_National_Park",
+   "views": 6799,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Warrumbungle_National_Park",
+    "https://en.wikivoyage.org/wiki/Coonabarabran"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Siding_Spring_Observatory"
+   ],
+   "note": "observatory: Siding Spring Observatory, Australian National University's observatory near Coonabarabran (tours limited)"
+  },
+  {
+   "name": "Grand High Tops",
+   "coordinates": {
+    "lat": -31.3326,
+    "lng": 148.995823
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Warrumbungle_National_Park",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Warrumbungle_National_Park"
+   ],
+   "other_sources": [],
+   "note": "lookout: Grand High Tops lookout over the Warrumbungle volcanic remains"
+  },
+  {
+   "name": "Whitegum Lookout",
+   "coordinates": {
+    "lat": -31.292496,
+    "lng": 149.038819
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Warrumbungle_National_Park",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Warrumbungle_National_Park"
+   ],
+   "other_sources": [],
+   "note": "lookout: lookout over the Warrumbungle volcanic landscape"
+  },
+  {
+   "name": "Bluff Mountain Lookout",
+   "coordinates": {
+    "lat": -31.328796,
+    "lng": 148.977531
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Warrumbungle_National_Park",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Warrumbungle_National_Park",
+    "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/bluff-mountain-lookout"
+   ],
+   "other_sources": [],
+   "note": "lookout: lookout over the volcanic peaks and domes of the Warrumbungles"
+  },
+  {
+   "name": "Fans Horizon",
+   "coordinates": {
+    "lat": -31.3026,
+    "lng": 148.9858
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Warrumbungle_National_Park",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Warrumbungle_National_Park"
+   ],
+   "other_sources": [],
+   "note": "lookout: Fans Horizon lookout on the Warrumbungle spires"
+  },
+  {
+   "name": "Febar Tor",
+   "coordinates": {
+    "lat": -31.31371,
+    "lng": 148.99928
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Warrumbungle_National_Park",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Warrumbungle_National_Park"
+   ],
+   "other_sources": [],
+   "note": "lookout: rock tor viewpoint on the Goulds Circuit track"
+  },
+  {
+   "name": "Coonabarabran",
+   "wiki": "Coonabarabran",
+   "coordinates": {
+    "lat": -31.27236,
+    "lng": 149.28062
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Coonabarabran",
+   "views": 20657,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Coonabarabran"
+   ],
+   "other_sources": [],
+   "note": "town: gateway town for the Warrumbungles and Siding Spring Observatory"
+  },
+  {
+   "name": "Crystal Kingdom Museum",
+   "wiki": null,
+   "coordinates": {
+    "lat": -31.267174,
+    "lng": 149.276488
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Coonabarabran",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Coonabarabran"
+   ],
+   "other_sources": [],
+   "note": "museum: crystal and mineral museum in Coonabarabran",
+   "views": 0
+  },
+  {
+   "name": "Cowra",
+   "wiki": "Cowra",
+   "coordinates": {
+    "lat": -33.818333,
+    "lng": 148.657778
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)",
+   "views": 28549,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Cowra",
+    "https://www.visitcowra.com.au/"
+   ],
+   "other_sources": [],
+   "note": "town: Wiradjuri country town on the Lachlan River; site of the 1944 POW breakout"
+  },
+  {
+   "name": "Cowra Japanese Garden and Cultural Centre",
+   "wiki": "Cowra Japanese Garden and Cultural Centre",
+   "coordinates": {
+    "lat": -33.826656,
+    "lng": 148.698248
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Cowra",
+   "views": 1968,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Cowra",
+    "https://www.visitcowra.com.au/"
+   ],
+   "other_sources": [],
+   "note": "garden: Japanese garden and cultural centre in Cowra, open daily 8:30 AM to 5 PM"
+  },
+  {
+   "name": "Cowra Breakout",
+   "wiki": "Cowra breakout",
+   "coordinates": {
+    "lat": -33.811283,
+    "lng": 148.704445
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Cowra",
+   "views": 37883,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Cowra",
+    "https://www.visitcowra.com.au/"
+   ],
+   "other_sources": [],
+   "note": "historic site: POW camp site of the 1944 Cowra breakout (Sakura Avenue)"
+  },
+  {
+   "name": "Japanese and Australian War Cemeteries Cowra",
+   "wiki": null,
+   "coordinates": {
+    "lat": -33.801707,
+    "lng": 148.691651
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Cowra",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Cowra"
+   ],
+   "other_sources": [],
+   "note": "cemetery: Japanese and Australian war cemeteries in Cowra",
+   "views": 0
+  },
+  {
+   "name": "Cowra POW Hologram Theatre",
+   "coordinates": null,
+   "coordinates_source": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Cowra",
+    "https://www.visitcowra.com.au/"
+   ],
+   "other_sources": [],
+   "note": "theatre: POW hologram show at the Cowra Visitor Information Centre"
+  },
+  {
+   "name": "Lachlan Valley Railway Society",
+   "coordinates": {
+    "lat": -33.840756,
+    "lng": 148.69745
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Cowra",
+   "views": 2882,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Cowra"
+   ],
+   "other_sources": [],
+   "note": "rail society: restoring a passenger train for tourist use in Cowra (Wikipedia article Lachlan Valley Railway is the society itself)",
+   "wiki": "Lachlan Valley Railway"
+  },
+  {
+   "name": "Wyangala Dam",
+   "wiki": "Wyangala Dam",
+   "coordinates": {
+    "lat": -33.973011,
+    "lng": 148.950577
+   },
+   "coordinates_source": "wikipedia:Wyangala Dam",
+   "views": 3931,
+   "counted_sources": [
+    "https://www.visitcowra.com.au/"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Wyangala_Dam"
+   ],
+   "note": "dam and lake: Wyangala Dam lake near Cowra, Visit Cowra highlight"
+  },
+  {
+   "name": "Cowra wine region",
+   "coordinates": {
+    "lat": -33.7,
+    "lng": 148.6
+   },
+   "coordinates_source": "wikipedia:Cowra wine region",
+   "views": 239,
+   "counted_sources": [
+    "https://www.visitcowra.com.au/",
+    "https://en.wikivoyage.org/wiki/Cowra"
+   ],
+   "other_sources": [],
+   "note": "wine region: Cowra Wine Region cellar doors"
+  },
+  {
+   "name": "Canowindra",
+   "wiki": "Canowindra",
+   "coordinates": {
+    "lat": -33.566667,
+    "lng": 148.666667
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)",
+   "views": 14795,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Canowindra"
+   ],
+   "other_sources": [],
+   "note": "town: historic town on the Lachlan River, home of the Age of Fishes fossils"
+  },
+  {
+   "name": "Age of Fishes Museum",
+   "wiki": "Age of Fishes Museum",
+   "coordinates": {
+    "lat": -33.5623,
+    "lng": 148.6601
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Canowindra",
+   "views": 833,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Canowindra"
+   ],
+   "other_sources": [],
+   "note": "museum: museum of Devonian fish fossils, open daily except Christmas and ANZAC morning"
+  },
+  {
+   "name": "Canowindra Historical Society and Museum",
+   "coordinates": {
+    "lat": -33.5629,
+    "lng": 148.6601
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Canowindra",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Canowindra"
+   ],
+   "other_sources": [],
+   "note": "museum: small local historical society museum on Gaskill Street"
+  },
+  {
+   "name": "Gaskill Street",
+   "wiki": null,
+   "coordinates": {
+    "lat": -33.5629,
+    "lng": 148.6601
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Canowindra",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Canowindra"
+   ],
+   "other_sources": [],
+   "note": "heritage street: 500 m stretch of heritage-listed buildings and verandahs (Wikivoyage walk)",
+   "views": 0
+  },
+  {
+   "name": "Canowindra International Balloon Challenge",
+   "coordinates": {
+    "lat": -33.555,
+    "lng": 148.6722
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Canowindra",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Canowindra"
+   ],
+   "other_sources": [],
+   "note": "annual event: balloon festival in late April to early May; event, not a permanent spot"
+  },
+  {
+   "name": "Balloon Joy Flights",
+   "coordinates": {
+    "lat": -33.4994,
+    "lng": 148.6345
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Canowindra",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Canowindra"
+   ],
+   "other_sources": [],
+   "note": "operator: hot-air balloon flights from Canowindra (operator, not a place)"
+  },
+  {
+   "name": "Parkes",
+   "wiki": "Parkes, New South Wales",
+   "coordinates": {
+    "lat": -33.133,
+    "lng": 148.176
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Parkes",
+   "views": 29436,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Parkes"
+   ],
+   "other_sources": [],
+   "note": "town: Central West town renamed after Sir Henry Parkes; gateway to the Parkes Observatory"
+  },
+  {
+   "name": "Parkes Radio Telescope",
+   "wiki": "Parkes Observatory",
+   "coordinates": {
+    "lat": -32.999053,
+    "lng": 148.264537
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Parkes",
+   "views": 33171,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Parkes"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Parkes_Observatory"
+   ],
+   "note": "observatory: the Dish radio telescope, first to detect signals from the Moon in 1969 (The Dish)"
+  },
+  {
+   "name": "Elvis Museum Parkes",
+   "coordinates": {
+    "lat": -33.11967,
+    "lng": 148.17604
+   },
+   "coordinates_source": "osm (Nominatim): Elvis Museum Parkes",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Parkes"
+   ],
+   "other_sources": [],
+   "note": "museum: Elvis-themed museum beside the Parkes visitor information centre"
+  },
+  {
+   "name": "Memorial Hill Lookout",
+   "coordinates": {
+    "lat": -33.134211,
+    "lng": 148.182969
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Parkes",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Parkes"
+   ],
+   "other_sources": [],
+   "note": "lookout: Memorial Hill lookout over Parkes, memorial to Sir Henry Parkes"
+  },
+  {
+   "name": "Old Parkes Post Office",
+   "coordinates": {
+    "lat": -33.136323,
+    "lng": 148.176552
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Parkes",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Parkes"
+   ],
+   "other_sources": [],
+   "note": "historic building: old post office in Parkes (exterior)"
+  },
+  {
+   "name": "Sir Henry Parkes Statue",
+   "coordinates": {
+    "lat": -33.137477,
+    "lng": 148.174648
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Parkes",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Parkes"
+   ],
+   "other_sources": [],
+   "note": "monument: statue of Sir Henry Parkes in Parkes"
+  },
+  {
+   "name": "Forbes",
+   "wiki": "Forbes, New South Wales",
+   "coordinates": {
+    "lat": -33.383333,
+    "lng": 148.016667
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Forbes",
+   "views": 23429,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Forbes"
+   ],
+   "other_sources": [],
+   "note": "town: Lachlan River town with bushranger history (Ben Hall)"
+  },
+  {
+   "name": "Lake Forbes",
+   "coordinates": {
+    "lat": -33.389468,
+    "lng": 148.007829
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Forbes",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Forbes"
+   ],
+   "other_sources": [],
+   "note": "billabong: town lake billabong used for recreation and dragon boat racing"
+  },
+  {
+   "name": "McFeeters Motor Museum",
+   "wiki": null,
+   "coordinates": {
+    "lat": -33.392249,
+    "lng": 148.005184
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Forbes",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Forbes"
+   ],
+   "other_sources": [],
+   "note": "museum: private collection of motor vehicles in Forbes",
+   "views": 0
+  },
+  {
+   "name": "Ben Hall Shooting Site",
+   "wiki": null,
+   "coordinates": {
+    "lat": -33.230124,
+    "lng": 147.900998
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Forbes",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Forbes"
+   ],
+   "other_sources": [],
+   "note": "historic site: where the bushranger Ben Hall was shot, a corner of a farm with placards (wiki title Ben Hall is a disambiguation page for the bushranger; no article for the site, views 0)"
+  },
+  {
+   "name": "Forbes Historical Museum",
+   "coordinates": {
+    "lat": -33.383328,
+    "lng": 148.010153
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Forbes",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Forbes"
+   ],
+   "other_sources": [],
+   "note": "museum: local history museum in Forbes (short opening hours)"
+  },
+  {
+   "name": "Manna Mountain",
+   "coordinates": {
+    "lat": -33.407431,
+    "lng": 147.332063
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Forbes",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Forbes"
+   ],
+   "other_sources": [],
+   "note": "hill: prominent ridge west of Forbes"
+  },
+  {
+   "name": "Escort Rock",
+   "wiki": "Escort Rock",
+   "coordinates": {
+    "lat": -33.403,
+    "lng": 148.412
+   },
+   "coordinates_source": "osm:Escort Rock",
+   "views": 13910,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Escort_Rock"
+   ],
+   "note": "rock: Escort Rock (OSM attraction with Wikipedia link), in the Central West"
+  },
+  {
+   "name": "Blayney",
+   "wiki": "Blayney, New South Wales",
+   "coordinates": {
+    "lat": -33.533333,
+    "lng": 149.25
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)",
+   "views": 9025,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)"
+   ],
+   "other_sources": [],
+   "note": "town: farming town and agricultural centre"
+  },
+  {
+   "name": "Carcoar",
+   "wiki": "Carcoar",
+   "coordinates": {
+    "lat": -33.611037,
+    "lng": 149.140362
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)",
+   "views": 8330,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)"
+   ],
+   "other_sources": [],
+   "note": "village: heritage village considered lost to time"
+  },
+  {
+   "name": "Millthorpe",
+   "wiki": "Millthorpe, New South Wales",
+   "coordinates": {
+    "lat": -33.448333,
+    "lng": 149.184444
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)",
+   "views": 7157,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)"
+   ],
+   "other_sources": [],
+   "note": "village: small heritage village near Orange"
+  },
+  {
+   "name": "Condobolin",
+   "wiki": "Condobolin",
+   "coordinates": {
+    "lat": -33.088611,
+    "lng": 147.149444
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)",
+   "views": 13848,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)"
+   ],
+   "other_sources": [],
+   "note": "town: Central West farming town on the Lachlan"
+  },
+  {
+   "name": "Coolah",
+   "wiki": "Coolah",
+   "coordinates": {
+    "lat": -31.797376,
+    "lng": 149.696201
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)",
+   "views": 6017,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)"
+   ],
+   "other_sources": [],
+   "note": "town: town at the foot of the Coolah Tops",
+   "redirect_to": "Coolah, New South Wales"
+  },
+  {
+   "name": "Gilgandra",
+   "wiki": "Gilgandra",
+   "coordinates": {
+    "lat": -31.7,
+    "lng": 148.666667
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)",
+   "views": 13296,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)"
+   ],
+   "other_sources": [],
+   "note": "town: crossroads town of three highways",
+   "redirect_to": "Gilgandra, New South Wales"
+  },
+  {
+   "name": "Grenfell",
+   "wiki": "Grenfell, New South Wales",
+   "coordinates": {
+    "lat": -33.903495,
+    "lng": 148.062032
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)",
+   "views": 13061,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)"
+   ],
+   "other_sources": [],
+   "note": "town: Henry Lawson birthplace town, home of the Chrysler Museum"
+  },
+  {
+   "name": "Grenfell Chrysler Museum",
+   "coordinates": null,
+   "coordinates_source": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)"
+   ],
+   "other_sources": [],
+   "note": "museum: Chrysler car collection museum in Grenfell"
+  },
+  {
+   "name": "Grenfell Fossil Site",
+   "wiki": "Grenfell fossil site",
+   "coordinates": {
+    "lat": -33.9,
+    "lng": 148.15
+   },
+   "coordinates_source": "wikipedia:Grenfell fossil site",
+   "views": 426,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Grenfell_fossil_site"
+   ],
+   "note": "fossil site: Early Cretaceous fossil site near Grenfell (Wikipedia only)"
+  },
+  {
+   "name": "Stuart Town",
+   "wiki": "Stuart Town, New South Wales",
+   "coordinates": {
+    "lat": -32.781667,
+    "lng": 149.067778
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)",
+   "views": 2979,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)"
+   ],
+   "other_sources": [],
+   "note": "village: small Central West village"
+  },
+  {
+   "name": "West Wyalong",
+   "wiki": "West Wyalong",
+   "coordinates": {
+    "lat": -33.812117,
+    "lng": 147.098165
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)",
+   "views": 17432,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)"
+   ],
+   "other_sources": [],
+   "note": "town: farming town in the Riverina edge of the Central West"
+  },
+  {
+   "name": "Lake Cargelligo",
+   "wiki": "Lake Cargelligo",
+   "coordinates": {
+    "lat": -33.2982,
+    "lng": 146.3737
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)",
+   "views": 47613,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)"
+   ],
+   "other_sources": [],
+   "note": "town: town on Lake Cargelligo, the west of the region",
+   "redirect_to": "Lake Cargelligo, New South Wales"
+  },
+  {
+   "name": "Lucknow",
+   "wiki": "Lucknow, New South Wales",
+   "coordinates": {
+    "lat": -33.346389,
+    "lng": 149.161667
+   },
+   "coordinates_source": "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)",
+   "views": 3099,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)"
+   ],
+   "other_sources": [],
+   "note": "village: small village near Orange and Millthorpe"
+  },
+  {
+   "name": "Ben Chifley Dam",
+   "wiki": "Ben Chifley Dam",
+   "coordinates": {
+    "lat": -33.55611111,
+    "lng": 149.63666667
+   },
+   "coordinates_source": "wikipedia:Ben Chifley Dam",
+   "views": 891,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Ben_Chifley_Dam"
+   ],
+   "note": "dam: reservoir near Bathurst (Wikipedia only)"
+  },
+  {
+   "name": "Blue Mountains",
+   "wiki": "Blue Mountains (New South Wales)",
+   "coordinates": {
+    "lat": -33.718056,
+    "lng": 150.310556
+   },
+   "coordinates_source": "wikivoyage listing: https://en.wikivoyage.org/wiki/Blue_Mountains",
+   "views": 106172,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Blue_Mountains",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/blue-mountains-national-park"
+   ],
+   "other_sources": [],
+   "note": "region: the Blue Mountains as a whole, the mountain range and towns west of Sydney (a destination-level region, not a single place)"
+  },
+  {
+   "name": "Hillside Harvest",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Orange_(New_South_Wales)"
+   ],
+   "other_sources": [],
+   "note": "orchard: fruit orchard and roadside stall at Borenore, near Orange (cherries and apples in season)"
+  },
+  {
+   "name": "Thornbrook Orchard",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Orange_(New_South_Wales)"
+   ],
+   "other_sources": [],
+   "note": "orchard: fruit orchard at Nashdale near Orange, open daily for picking and sales (seasonal fruit)"
+  }
+ ]
+}

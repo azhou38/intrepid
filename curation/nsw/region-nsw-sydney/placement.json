@@ -1,0 +1,3229 @@
+{
+ "region": "nsw-sydney",
+ "sydney_span_rule": "75% of defaultZoomSpanKm 40 = 30 km from -33.8688,151.2093",
+ "placements": [
+  {
+   "name": "Circular Quay",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-4",
+   "coordinates": {
+    "latitude": -33.8612,
+    "longitude": 151.2112
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_Centre",
+   "distance_from_sydney_km": 0.9,
+   "reason": "Ferry hub and harbour promenade with Opera House and Bridge views; two counted sources.",
+   "spot": {
+    "name": "Circular Quay",
+    "icon": "🚢",
+    "category": "landmark",
+    "bio": "The harbourfront ferry hub between the Opera House and the Rocks, where Sydney's ferries, cafés and promenade meet.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 1.0,
+    "visitHoursMax": 2.0,
+    "free": true
+   },
+   "photo": {
+    "file": "Circular Quay from Sydney Harbour Bridge (2015-02-08).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Circular_Quay_from_Sydney_Harbour_Bridge_(2015-02-08).jpg",
+    "width": 5486,
+    "height": 2457
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 41412,
+    "counted_sources": 2
+   }
+  },
+  {
+   "name": "Royal Botanic Garden, Sydney",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-5",
+   "coordinates": {
+    "latitude": -33.86388889,
+    "longitude": 151.21694444
+   },
+   "coordinates_source": "wikipedia:Royal Botanic Garden, Sydney",
+   "distance_from_sydney_km": 0.9,
+   "reason": "Verdict reason text is a copy of Circular Quay; verdict stands (Lonely Planet and WV).",
+   "spot": {
+    "name": "Royal Botanic Garden",
+    "icon": "🌿",
+    "category": "nature",
+    "bio": "Harbourside botanic garden with walks around Farm Cove and views of the Opera House and Harbour Bridge.",
+    "hours": "Daylight hours",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3.0,
+    "wiki": "Royal Botanic Garden, Sydney",
+    "free": true,
+    "ticketUrl": "https://www.botanicgardens.org.au/"
+   },
+   "photo": {
+    "file": "Sydney (AU), Royal Botanic Gardens -- 2019 -- 3082.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Sydney_(AU),_Royal_Botanic_Gardens_--_2019_--_3082.jpg",
+    "width": 6720,
+    "height": 4480
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 13302,
+    "counted_sources": 2
+   }
+  },
+  {
+   "name": "The Rocks",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-6",
+   "coordinates": {
+    "latitude": -33.85985,
+    "longitude": 151.20901
+   },
+   "coordinates_source": "wikipedia:The Rocks, New South Wales",
+   "distance_from_sydney_km": 1.0,
+   "reason": "Historic first-settlement precinct, two counted sources.",
+   "spot": {
+    "name": "The Rocks",
+    "icon": "🏘️",
+    "category": "historic",
+    "bio": "The historic precinct where Europeans first settled in 1788, with cobbled lanes, pubs and museums beneath the Harbour Bridge.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 2.0,
+    "visitHoursMax": 4.0,
+    "wiki": "The Rocks, Sydney",
+    "free": true,
+    "ticketUrl": "https://www.therocks.com/"
+   },
+   "photo": {
+    "file": "Sydney (AU), The Rocks -- 2019 -- 2133.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Sydney_(AU),_The_Rocks_--_2019_--_2133.jpg",
+    "width": 6720,
+    "height": 3780
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 21487,
+    "counted_sources": 2
+   }
+  },
+  {
+   "name": "Darling Harbour",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-7",
+   "coordinates": {
+    "latitude": -33.8676,
+    "longitude": 151.1996
+   },
+   "coordinates_source": "OSM:attraction en:Darling Harbour",
+   "distance_from_sydney_km": 0.9,
+   "reason": "Darling Harbour waterfront precinct, two counted sources.",
+   "spot": {
+    "name": "Darling Harbour",
+    "icon": "🎡",
+    "category": "entertainment",
+    "bio": "A waterfront leisure precinct of museums, an aquarium, restaurants and a harbour promenade west of the city centre.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 2.0,
+    "visitHoursMax": 5.0,
+    "free": true,
+    "ticketUrl": "https://www.darlingharbour.com/"
+   },
+   "photo": {
+    "file": "Sydney (AU), Darling Harbour -- 2019 -- 2064-9.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Sydney_(AU),_Darling_Harbour_--_2019_--_2064-9.jpg",
+    "width": 10701,
+    "height": 5498
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 20626,
+    "counted_sources": 2
+   }
+  },
+  {
+   "name": "Taronga Zoo",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-8",
+   "coordinates": {
+    "latitude": -33.8438,
+    "longitude": 151.2417
+   },
+   "coordinates_source": "OSM:zoo en:Taronga Zoo",
+   "distance_from_sydney_km": 4.1,
+   "reason": "Harbourside zoo reached by ferry; two counted sources.",
+   "spot": {
+    "name": "Taronga Zoo",
+    "icon": "🦒",
+    "category": "entertainment",
+    "bio": "A hillside zoo on the north shore of the harbour, reached by a short ferry from Circular Quay.",
+    "hours": "Hours vary; check the operator",
+    "visitHoursMin": 3.0,
+    "visitHoursMax": 5.0,
+    "ticketUrl": "https://www.taronga.org.au/sydney-zoo"
+   },
+   "photo": {
+    "file": "2022-06-25 Giraffes in Taronga Zoo.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:2022-06-25_Giraffes_in_Taronga_Zoo.jpg",
+    "width": 4032,
+    "height": 3024
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 51670,
+    "counted_sources": 2
+   }
+  },
+  {
+   "name": "Art Gallery of New South Wales",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-9",
+   "coordinates": {
+    "latitude": -33.8686,
+    "longitude": 151.2175
+   },
+   "coordinates_source": "OSM:gallery en:Art Gallery of New South Wales",
+   "distance_from_sydney_km": 0.8,
+   "reason": "State art gallery with free general admission; two counted sources.",
+   "spot": {
+    "name": "Art Gallery of New South Wales",
+    "icon": "🖼️",
+    "category": "museum",
+    "bio": "The state art gallery in the Domain, with free general admission to its collection of Australian, Indigenous and European art.",
+    "hours": "Hours vary; check the operator",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3.0,
+    "free": true,
+    "ticketUrl": "https://www.artgallery.nsw.gov.au/"
+   },
+   "photo": {
+    "file": "Sydney (AU), Art Gallery of New South Wales -- 2019 -- 3103.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Sydney_(AU),_Art_Gallery_of_New_South_Wales_--_2019_--_3103.jpg",
+    "width": 6702,
+    "height": 3770
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 38594,
+    "counted_sources": 2
+   }
+  },
+  {
+   "name": "Sydney Tower",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-10",
+   "coordinates": {
+    "latitude": -33.87053,
+    "longitude": 151.20904
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_Centre",
+   "distance_from_sydney_km": 0.2,
+   "reason": "309 m observation tower with a viewing deck; two counted sources.",
+   "spot": {
+    "name": "Sydney Tower",
+    "icon": "🗼",
+    "category": "landmark",
+    "bio": "A 309 m observation tower in the city centre whose Sydney Tower Eye deck looks over the harbour and city.",
+    "hours": "Hours vary; check the operator",
+    "visitHoursMin": 1.0,
+    "visitHoursMax": 1.5,
+    "ticketUrl": "https://www.sydneytowereye.com.au/"
+   },
+   "photo": {
+    "file": "Sydney Tower March 2022.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Sydney_Tower_March_2022.jpg",
+    "width": 4000,
+    "height": 6000
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 51501,
+    "counted_sources": 2
+   }
+  },
+  {
+   "name": "Manly Beach",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-11",
+   "coordinates": {
+    "latitude": -33.797,
+    "longitude": 151.2885
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Manly",
+   "distance_from_sydney_km": 10.8,
+   "reason": "Ocean beach with the Corso, Manly's main draw; two counted sources.",
+   "spot": {
+    "name": "Manly Beach",
+    "icon": "🏖️",
+    "category": "beach",
+    "bio": "An ocean surf beach reached by ferry from Circular Quay, backed by the pedestrian Corso and a sheltered harbour beach.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 3.0,
+    "visitHoursMax": 6.0,
+    "free": true
+   },
+   "photo": {
+    "file": "Manly Beach 001.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Manly_Beach_001.jpg",
+    "width": 2048,
+    "height": 1365
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 17639,
+    "counted_sources": 2
+   }
+  },
+  {
+   "name": "Watsons Bay",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-12",
+   "coordinates": {
+    "latitude": -33.84275,
+    "longitude": 151.28125
+   },
+   "coordinates_source": "wikipedia:Watsons Bay",
+   "distance_from_sydney_km": 7.2,
+   "reason": "Harbourside village at South Head with beaches and fish restaurants; named by Wikivoyage.",
+   "spot": {
+    "name": "Watsons Bay",
+    "icon": "⛵",
+    "category": "landmark",
+    "bio": "A harbourside village at South Head with fish restaurants, a harbour beach and the cliffs of The Gap close by.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 2.0,
+    "visitHoursMax": 4.0,
+    "free": true
+   },
+   "photo": {
+    "file": "Sydney (AU), Watsons Bay -- 2019 -- 2295.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Sydney_(AU),_Watsons_Bay_--_2019_--_2295.jpg",
+    "width": 6634,
+    "height": 3732
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Boats in the bay with city skyline; village not visible but classic view.",
+   "score": {
+    "views": 14204,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "Mrs Macquarie's Chair",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-13",
+   "coordinates": {
+    "latitude": -33.859562,
+    "longitude": 151.222254
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_Centre",
+   "distance_from_sydney_km": 1.6,
+   "reason": "Viewpoint on Farm Cove with the Opera House and Bridge; two counted sources; distinct named stop.",
+   "spot": {
+    "name": "Mrs Macquarie's Chair",
+    "icon": "🪑",
+    "category": "viewpoint",
+    "bio": "A sandstone seat cut into the rock above Farm Cove, with classic views of the Opera House and Harbour Bridge.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1.0,
+    "free": true
+   },
+   "photo": {
+    "file": "Mrs Macquarie's Chair, Mrs Macquaries Point, Sydney (483345) (9442941632).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Mrs_Macquarie's_Chair,_Mrs_Macquaries_Point,_Sydney_(483345)_(9442941632).jpg",
+    "width": 4000,
+    "height": 2248
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 13607,
+    "counted_sources": 2
+   }
+  },
+  {
+   "name": "Sydney Harbour National Park",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-14",
+   "coordinates": {
+    "latitude": -33.833,
+    "longitude": 151.257
+   },
+   "coordinates_source": "skeptic corrected: Georges Heights land point; candidate centroid at sea",
+   "distance_from_sydney_km": 5.9,
+   "reason": "Park-level pin: candidate coordinate is at sea off Manly; use a land point. Parent of Bradleys/Middle/North Head/South Head.",
+   "spot": {
+    "name": "Sydney Harbour National Park",
+    "icon": "🏝️",
+    "category": "nature",
+    "bio": "Harbour islands, headlands and foreshore walks, from Nielsen Park to North Head, protected as a national park inside the city.",
+    "hours": "Daylight hours",
+    "visitHoursMin": 3.0,
+    "visitHoursMax": 6.0,
+    "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/sydney-harbour-national-park"
+   },
+   "photo": {
+    "file": "Collins Beach, Sydney Harbour National Park.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Collins_Beach,_Sydney_Harbour_National_Park.jpg",
+    "width": 5184,
+    "height": 3456
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 2929,
+    "counted_sources": 2
+   }
+  },
+  {
+   "name": "Bondi to Coogee Coastal Walk",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-15",
+   "coordinates": {
+    "latitude": -33.8947,
+    "longitude": 151.2741
+   },
+   "coordinates_source": "skeptic corrected: start at Notts Avenue, Bondi (OSM)",
+   "distance_from_sydney_km": 6.6,
+   "reason": "Clifftop coastal walk linking Bondi, Tamarama, Bronte, Clovelly and Coogee; two counted sources. Its own spot, distinct from the beaches.",
+   "spot": {
+    "name": "Bondi to Coogee coastal walk",
+    "icon": "🥾",
+    "category": "hike",
+    "bio": "A roughly 6 km clifftop walk linking Bondi, Tamarama, Bronte and Coogee beaches.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 2.0,
+    "visitHoursMax": 3.5,
+    "free": true
+   },
+   "photo": {
+    "file": "Waverley Cemetery and the boardwalk for the Bondi to Coogee Coastal Walk in July 2018.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Waverley_Cemetery_and_the_boardwalk_for_the_Bondi_to_Coogee_Coastal_Walk_in_July_2018.jpg",
+    "width": 4608,
+    "height": 3456
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Boardwalk beside Waverley Cemetery on the walk.",
+   "score": {
+    "views": 0,
+    "counted_sources": 2
+   }
+  },
+  {
+   "name": "Cockatoo Island",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-16",
+   "coordinates": {
+    "latitude": -33.8475,
+    "longitude": 151.1725
+   },
+   "coordinates_source": "wikipedia:Cockatoo Island",
+   "distance_from_sydney_km": 4.1,
+   "reason": "UNESCO convict and industrial site with tours and camping; named by Wikivoyage.",
+   "spot": {
+    "name": "Cockatoo Island",
+    "icon": "🏝️",
+    "category": "historic",
+    "bio": "A UNESCO-listed convict and shipbuilding island in the harbour, with tours and camping, reached by ferry from Circular Quay.",
+    "hours": "Hours vary; check the operator",
+    "visitHoursMin": 3.0,
+    "visitHoursMax": 5.0,
+    "ticketUrl": "https://www.cockatooisland.gov.au/en/"
+   },
+   "photo": {
+    "file": "Cockatoo Island, Sydney Harbour (15463614273).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Cockatoo_Island,_Sydney_Harbour_(15463614273).jpg",
+    "width": 3840,
+    "height": 2160
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 20470,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "Fort Denison",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-17",
+   "coordinates": {
+    "latitude": -33.8549,
+    "longitude": 151.2255
+   },
+   "coordinates_source": "wikipedia:Fort Denison",
+   "distance_from_sydney_km": 2.2,
+   "reason": "Ferry tours only; hours qualifier.",
+   "spot": {
+    "name": "Fort Denison",
+    "icon": "🏰",
+    "category": "historic",
+    "bio": "The Pinchgut sandstone fort on a small island in the harbour, visited on a ferry tour from Circular Quay.",
+    "hours": "Ferry tours only",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 2.0
+   },
+   "photo": {
+    "file": "Fort Denison 10.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Fort_Denison_10.JPG",
+    "width": 2592,
+    "height": 1944
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 17590,
+    "counted_sources": 2
+   }
+  },
+  {
+   "name": "Luna Park Sydney",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-18",
+   "coordinates": {
+    "latitude": -33.847557,
+    "longitude": 151.210066
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Lower_North_Shore",
+   "distance_from_sydney_km": 2.4,
+   "reason": "Heritage amusement park on the harbour with its iconic face entrance; two counted sources.",
+   "spot": {
+    "name": "Luna Park Sydney",
+    "icon": "🎢",
+    "category": "entertainment",
+    "bio": "A heritage amusement park on the north shore of the harbour, entered through a grinning giant face.",
+    "hours": "Hours vary; check the operator",
+    "visitHoursMin": 2.0,
+    "visitHoursMax": 4.0
+   },
+   "photo": {
+    "file": "2014-07-06 Luna Park Sydney 9.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:2014-07-06_Luna_Park_Sydney_9.jpg",
+    "width": 4927,
+    "height": 3456
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 53675,
+    "counted_sources": 2
+   }
+  },
+  {
+   "name": "Queen Victoria Building",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-19",
+   "coordinates": {
+    "latitude": -33.87182,
+    "longitude": 151.20671
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_Centre",
+   "distance_from_sydney_km": 0.4,
+   "reason": "Historic Romanesque arcade the guide names as a place to visit; open daily to browse and see the clock.",
+   "spot": {
+    "name": "Queen Victoria Building",
+    "icon": "🏛️",
+    "category": "historic",
+    "bio": "An 1898 Romanesque arcade in the city centre, with a stained-glass dome and clock, now a shopping centre.",
+    "hours": "Hours vary; check the operator",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1.5,
+    "free": true
+   },
+   "photo": {
+    "file": "Sydney (AU), Queen Victoria Building -- 2019 -- 3580.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Sydney_(AU),_Queen_Victoria_Building_--_2019_--_3580.jpg",
+    "width": 5539,
+    "height": 4154
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 36682,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "Hyde Park Barracks",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-20",
+   "coordinates": {
+    "latitude": -33.86957,
+    "longitude": 151.21275
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_Centre",
+   "distance_from_sydney_km": 0.3,
+   "reason": "Confirmed: WV daily 10-6, museum with entry.",
+   "spot": {
+    "name": "Hyde Park Barracks",
+    "icon": "⛓️",
+    "category": "museum",
+    "bio": "Convict-built barracks on Macquarie Street, now a museum of convict life with tours.",
+    "hours": "10:00 AM – 6:00 PM",
+    "visitHoursMin": 1.0,
+    "visitHoursMax": 2.0,
+    "wiki": "Hyde Park Barracks, Sydney"
+   },
+   "photo": {
+    "file": "Hyde Park Barracks1.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Hyde_Park_Barracks1.jpg",
+    "width": 4128,
+    "height": 3096
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 12633,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "Australian National Maritime Museum",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-21",
+   "coordinates": {
+    "latitude": -33.8692,
+    "longitude": 151.199
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Darling_Harbour",
+   "distance_from_sydney_km": 1.0,
+   "reason": "Maritime museum with HMAS Vampire and Endeavour replica; two counted sources.",
+   "spot": {
+    "name": "Australian National Maritime Museum",
+    "icon": "⚓",
+    "category": "museum",
+    "bio": "A harbourside maritime museum at Darling Harbour with the destroyer HMAS Vampire and a replica of HMB Endeavour.",
+    "hours": "Hours vary; check the operator",
+    "visitHoursMin": 2.0,
+    "visitHoursMax": 3.0,
+    "ticketUrl": "https://www.sea.museum/en/home"
+   },
+   "photo": {
+    "file": "Sydney (AU), Australian National Maritime Museum -- 2019 -- 2089.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Sydney_(AU),_Australian_National_Maritime_Museum_--_2019_--_2089.jpg",
+    "width": 6720,
+    "height": 3780
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 10578,
+    "counted_sources": 2
+   }
+  },
+  {
+   "name": "SEA LIFE Sydney Aquarium",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-22",
+   "coordinates": {
+    "latitude": -33.8695,
+    "longitude": 151.2021
+   },
+   "coordinates_source": "OSM:aquarium en:Sea Life Sydney Aquarium",
+   "distance_from_sydney_km": 0.7,
+   "reason": "Paid aquarium attraction listed by Wikivoyage; clear multi-hour visit.",
+   "spot": {
+    "name": "Sea Life Sydney Aquarium",
+    "icon": "🐧",
+    "category": "entertainment",
+    "bio": "A ticketed aquarium at Darling Harbour with penguins, platypus and sharks.",
+    "hours": "Hours vary; check the operator",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 2.5
+   },
+   "photo": {
+    "file": "Sydney Sea Life Aquarium (32423380775).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Sydney_Sea_Life_Aquarium_(32423380775).jpg",
+    "width": 1024,
+    "height": 768
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Interior tank; 1024 px (>=960).",
+   "score": {
+    "views": 8054,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "Australian Museum",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-23",
+   "coordinates": {
+    "latitude": -33.8743,
+    "longitude": 151.213
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_East",
+   "distance_from_sydney_km": 0.7,
+   "reason": "Natural history and Indigenous cultures museum; two counted sources.",
+   "spot": {
+    "name": "Australian Museum",
+    "icon": "🦴",
+    "category": "museum",
+    "bio": "Australia's first museum, with natural history and Indigenous cultures galleries beside Hyde Park.",
+    "hours": "Hours vary; check the operator",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3.0,
+    "ticketUrl": "https://australian.museum/"
+   },
+   "photo": {
+    "file": "AustralianMuseum.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:AustralianMuseum.jpg",
+    "width": 2570,
+    "height": 1705
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 16455,
+    "counted_sources": 2
+   }
+  },
+  {
+   "name": "Museum of Contemporary Art Australia",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-24",
+   "coordinates": {
+    "latitude": -33.86002,
+    "longitude": 151.209
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/The_Rocks",
+   "distance_from_sydney_km": 1.0,
+   "reason": "Contemporary art museum in a deco building, free entry; named by Wikivoyage.",
+   "spot": {
+    "name": "Museum of Contemporary Art Australia",
+    "icon": "🎨",
+    "category": "museum",
+    "bio": "A contemporary art museum in a 1930s art-deco building on Circular Quay.",
+    "hours": "Hours vary; check the operator",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 2.5,
+    "ticketUrl": "https://www.mca.com.au/"
+   },
+   "photo": {
+    "file": "Museum of Contemporary Art Australia, Sydney, 2023.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Museum_of_Contemporary_Art_Australia,_Sydney,_2023.jpg",
+    "width": 3233,
+    "height": 2762
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 7216,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "Sydney Fish Market",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-25",
+   "coordinates": {
+    "latitude": -33.87274167,
+    "longitude": 151.19215833
+   },
+   "coordinates_source": "wikipedia:Sydney Fish Market",
+   "distance_from_sydney_km": 1.6,
+   "reason": "Market moved to a new Blackwattle Bay building (2026); confirm coordinates and hours.",
+   "spot": {
+    "name": "Sydney Fish Market",
+    "icon": "🐟",
+    "category": "market",
+    "bio": "A working fish market at Pyrmont open every day, with seafood stalls and restaurants (moved to a new Blackwattle Bay building in 2026).",
+    "hours": "Hours vary; check the operator",
+    "visitHoursMin": 1.0,
+    "visitHoursMax": 2.0,
+    "free": true,
+    "ticketUrl": "https://www.sydneyfishmarket.com.au/"
+   },
+   "photo": {
+    "file": "Sydney Fish Market north.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Sydney_Fish_Market_north.jpg",
+    "width": 3015,
+    "height": 2261
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Passes but weak: new market building with cars and crowd in foreground.",
+   "score": {
+    "views": 14409,
+    "counted_sources": 2
+   }
+  },
+  {
+   "name": "Coogee Beach",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-26",
+   "coordinates": {
+    "latitude": -33.9208335,
+    "longitude": 151.2579154
+   },
+   "coordinates_source": "OSM (Nominatim) natural/beach",
+   "distance_from_sydney_km": 7.3,
+   "reason": "Surf beach with ocean pools and walk, two counted sources.",
+   "spot": {
+    "name": "Coogee Beach",
+    "icon": "🏖️",
+    "category": "beach",
+    "bio": "A surf beach at the southern end of the Bondi to Coogee walk, with ocean pools and cafés.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 2.0,
+    "visitHoursMax": 4.0,
+    "wiki": "Coogee, New South Wales",
+    "free": true
+   },
+   "photo": {
+    "file": "Coogee Beach NSW.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Coogee_Beach_NSW.jpg",
+    "width": 4032,
+    "height": 3024
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Slightly hazy; file name and EXIF confirm Coogee NSW (not WA).",
+   "score": {
+    "views": 0,
+    "counted_sources": 2
+   }
+  },
+  {
+   "name": "Bronte Beach",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-27",
+   "coordinates": {
+    "latitude": -33.9036,
+    "longitude": 151.2686
+   },
+   "coordinates_source": "OSM:beach en:Bronte Beach",
+   "distance_from_sydney_km": 6.7,
+   "reason": "Second-tier beach on the Bondi to Coogee walk, named by Wikivoyage.",
+   "spot": {
+    "name": "Bronte Beach",
+    "icon": "🏄",
+    "category": "beach",
+    "bio": "A surf beach with ocean baths and a grassy park, on the Bondi to Coogee walk.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 2.0,
+    "visitHoursMax": 3.0,
+    "free": true
+   },
+   "photo": {
+    "file": "2022-10-22 Bronte Beach 04.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:2022-10-22_Bronte_Beach_04.jpg",
+    "width": 4032,
+    "height": 3024
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 7474,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "Bondi Icebergs",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-28",
+   "coordinates": {
+    "latitude": -33.895134,
+    "longitude": 151.27434
+   },
+   "coordinates_source": "wikipedia:Bondi Icebergs Club",
+   "distance_from_sydney_km": 6.7,
+   "reason": "Famous ocean pool and clubhouse at Bondi with its own identity; two counted sources.",
+   "spot": {
+    "name": "Bondi Icebergs",
+    "icon": "🏊",
+    "category": "entertainment",
+    "bio": "A clifftop ocean pool and club at the south end of Bondi Beach, with a restaurant overlooking the water.",
+    "hours": "Hours vary; check the operator",
+    "visitHoursMin": 1.0,
+    "visitHoursMax": 2.0,
+    "ticketUrl": "https://icebergs.com.au/"
+   },
+   "photo": {
+    "file": "Icebergs Club and Bondi Beach.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Icebergs_Club_and_Bondi_Beach.JPG",
+    "width": 2048,
+    "height": 1360
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 8057,
+    "counted_sources": 2
+   }
+  },
+  {
+   "name": "Tamarama Beach",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-29",
+   "coordinates": {
+    "latitude": -33.9005,
+    "longitude": 151.2706
+   },
+   "coordinates_source": "skeptic corrected: suburb centroid, OSM beach",
+   "distance_from_sydney_km": 6.7,
+   "reason": "Second-tier beach on the Bondi to Coogee walk, named by Wikivoyage.",
+   "spot": {
+    "name": "Tamarama Beach",
+    "icon": "🏖️",
+    "category": "beach",
+    "bio": "A small surf beach in a cove between Bondi and Bronte.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 1.0,
+    "visitHoursMax": 2.0,
+    "wiki": "Tamarama",
+    "free": true
+   },
+   "photo": {
+    "file": "Tamarama Beach Sydney 2019 03.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Tamarama_Beach_Sydney_2019_03.jpg",
+    "width": 3008,
+    "height": 2000
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 0,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "Centennial Park",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-30",
+   "coordinates": {
+    "latitude": -33.9,
+    "longitude": 151.23333333
+   },
+   "coordinates_source": "wikipedia:Centennial Park (Sydney)",
+   "distance_from_sydney_km": 4.1,
+   "reason": "Two counted sources (WV list, Lonely Planet top-21 \"run or horse ride around Centennial Park\"); 189 ha historic park with ponds, cycling and riding, a half-day stop.",
+   "spot": {
+    "name": "Centennial Park",
+    "icon": "🌳",
+    "category": "nature",
+    "bio": "A 189 ha historic parkland with ponds, cycling and horse-riding tracks.",
+    "hours": "Daylight hours",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3.0,
+    "wiki": "Centennial Park (Sydney)",
+    "free": true,
+    "ticketUrl": "https://www.centennialparklands.com.au/"
+   },
+   "photo": {
+    "file": "Centennial park in Sydney (19).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Centennial_park_in_Sydney_(19).jpg",
+    "width": 3648,
+    "height": 2736
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 2446,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "North Head",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-31",
+   "coordinates": {
+    "latitude": -33.823,
+    "longitude": 151.3007
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Manly",
+   "distance_from_sydney_km": 9.9,
+   "reason": "Harbour headland with walks and views, two counted sources.",
+   "spot": {
+    "name": "North Head",
+    "icon": "🔭",
+    "category": "viewpoint",
+    "bio": "A headland at the harbour entrance with clifftop walks, lookouts over the Pacific and whale watching.",
+    "hours": "Daylight hours",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3.0,
+    "wiki": "North Head, New South Wales",
+    "free": true
+   },
+   "photo": {
+    "file": "North Head Cliff Tops.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:North_Head_Cliff_Tops.jpg",
+    "width": 4032,
+    "height": 3024
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 894,
+    "counted_sources": 2
+   }
+  },
+  {
+   "name": "Quarantine Station",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-32",
+   "coordinates": {
+    "latitude": -33.8179,
+    "longitude": 151.2961
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Manly",
+   "distance_from_sydney_km": 9.8,
+   "reason": "Heritage site with day and night tours; named by Wikivoyage.",
+   "spot": {
+    "name": "Quarantine Station",
+    "icon": "🏥",
+    "category": "historic",
+    "bio": "A former quarantine station on North Head, visited on day and night heritage tours.",
+    "hours": "Tours by booking",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3.0,
+    "wiki": "Q Station",
+    "ticketUrl": "https://qstation.com.au/"
+   },
+   "photo": {
+    "file": "(1)Quarantine Station.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:(1)Quarantine_Station.jpg",
+    "width": 3910,
+    "height": 2597
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 9741,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "Manly to Spit Bridge Walk",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-33",
+   "coordinates": {
+    "latitude": -33.7998,
+    "longitude": 151.2844
+   },
+   "coordinates_source": "skeptic corrected: trailhead Manly Wharf (OSM); candidate was mid-track",
+   "distance_from_sydney_km": 10.3,
+   "reason": "Well-known harbourside walk from Manly to Spit Bridge; named by Wikivoyage.",
+   "spot": {
+    "name": "Manly to Spit Bridge Walk",
+    "icon": "🥾",
+    "category": "hike",
+    "bio": "A harbourside bush walk from Manly Wharf to Spit Bridge.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 3.0,
+    "visitHoursMax": 5.0,
+    "wiki": "Manly Scenic Walkway",
+    "free": true
+   },
+   "photo": {
+    "file": "external: Openverse \"The Manly To Spit Walk, Sydney\" by MD111 (flickr, CC BY-SA 2.0)",
+    "page": "https://commons.wikimedia.org/wiki/File:external%3A_Openverse_%22The_Manly_To_Spit_Walk,_Sydney%22_by_MD111_(flickr,_CC_BY-SA_2.0)",
+    "width": 1024,
+    "height": 768
+   },
+   "photo_verdict": "accept",
+   "photo_note": "No Commons photo exists. Characteristic stepped bush stretch of the walk, dark; needs download to assets/photos plus externalPhotos.json entry. Alternative: flickr \"Where am I?\" harbour view in same set.",
+   "score": {
+    "views": 0,
+    "counted_sources": 1
+   },
+   "status": "needs_external_photo - do not add until photo is in place"
+  },
+  {
+   "name": "Chinatown, Sydney",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-34",
+   "coordinates": {
+    "latitude": -33.878029,
+    "longitude": 151.203981
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_South",
+   "distance_from_sydney_km": 1.1,
+   "reason": "Dixon Street Chinatown is a standard guidebook stop for eating and browsing; one counted source.",
+   "spot": {
+    "name": "Chinatown",
+    "icon": "🏮",
+    "category": "landmark",
+    "bio": "The Dixon Street district of Asian restaurants and shops in Haymarket.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 1.0,
+    "visitHoursMax": 2.0,
+    "wiki": "Chinatown, Sydney",
+    "free": true
+   },
+   "photo": {
+    "file": "The Sydney Chinatown in Dixon Street.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:The_Sydney_Chinatown_in_Dixon_Street.jpg",
+    "width": 2302,
+    "height": 1536
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 10298,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "Anzac Memorial",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-35",
+   "coordinates": {
+    "latitude": -33.875722,
+    "longitude": 151.210944
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_Centre",
+   "distance_from_sydney_km": 0.8,
+   "reason": "Not a minor memorial: art-deco Hall of Memory with museum exhibition, open daily.",
+   "spot": {
+    "name": "Anzac Memorial",
+    "icon": "🕊️",
+    "category": "monument",
+    "bio": "An art-deco war memorial in Hyde Park with a Hall of Memory and a museum exhibition, open daily.",
+    "hours": "Hours vary; check the operator",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1.5,
+    "ticketUrl": "https://www.anzacmemorial.nsw.gov.au/"
+   },
+   "photo": {
+    "file": "ANZAC Memorial Hyde Park 001.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:ANZAC_Memorial_Hyde_Park_001.jpg",
+    "width": 6016,
+    "height": 4016
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 8706,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "Sydney Observatory",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-36",
+   "coordinates": {
+    "latitude": -33.85958,
+    "longitude": 151.2046
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/The_Rocks",
+   "distance_from_sydney_km": 1.1,
+   "reason": "Australia's oldest observatory with telescope and planetarium sessions; named by Wikivoyage; on Observatory Hill.",
+   "spot": {
+    "name": "Sydney Observatory",
+    "icon": "🔭",
+    "category": "museum",
+    "bio": "Australia's oldest observatory, on Observatory Hill, with telescopes and a planetarium.",
+    "hours": "Hours vary; check the operator",
+    "visitHoursMin": 1.0,
+    "visitHoursMax": 2.0,
+    "ticketUrl": "https://powerhouse.com.au/visit/sydney-observatory"
+   },
+   "photo": {
+    "file": "SydneyObservatory1 gobeirne.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:SydneyObservatory1_gobeirne.jpg",
+    "width": 3072,
+    "height": 2304
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 6900,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "Walsh Bay",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-37",
+   "coordinates": {
+    "latitude": -33.8569,
+    "longitude": 151.205
+   },
+   "coordinates_source": "wikipedia:Walsh Bay Wharves Precinct",
+   "distance_from_sydney_km": 1.4,
+   "reason": "Two counted sources (sydney.com iconic-places list, Lonely Planet) name the heritage wharves; walkable precinct to Barangaroo. Recall checker had 0 sources.",
+   "spot": {
+    "name": "Walsh Bay",
+    "icon": "🎭",
+    "category": "landmark",
+    "bio": "A precinct of heritage harbour wharves with a theatre and restaurants, walkable to Barangaroo.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 1.0,
+    "visitHoursMax": 2.0,
+    "wiki": "Walsh Bay Wharves Precinct",
+    "free": true
+   },
+   "photo": {
+    "file": "Sydney Millers Point Walsh Bay Wharves Precinct The eastern pier.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Sydney_Millers_Point_Walsh_Bay_Wharves_Precinct_The_eastern_pier.jpg",
+    "width": 5832,
+    "height": 3808
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 1748,
+    "counted_sources": 0
+   }
+  },
+  {
+   "name": "Chinese Garden of Friendship",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-38",
+   "coordinates": {
+    "latitude": -33.8767,
+    "longitude": 151.2021
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Darling_Harbour",
+   "distance_from_sydney_km": 1.1,
+   "reason": "Ming-style garden with tea house, a named stop in Darling Harbour.",
+   "spot": {
+    "name": "Chinese Garden of Friendship",
+    "icon": "🏯",
+    "category": "nature",
+    "bio": "A Ming-style Chinese garden at Darling Harbour.",
+    "hours": "Hours vary; check the operator",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1.0
+   },
+   "photo": {
+    "file": "2022-10-15 Chinese Garden of Friendship, Sydney 3.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:2022-10-15_Chinese_Garden_of_Friendship,_Sydney_3.jpg",
+    "width": 4032,
+    "height": 3024
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 5133,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "White Rabbit Gallery",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-39",
+   "coordinates": {
+    "latitude": -33.886466,
+    "longitude": 151.20023
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_South",
+   "distance_from_sydney_km": 2.1,
+   "reason": "Free contemporary Chinese art gallery named by Wikivoyage; an hour or more of viewing.",
+   "spot": {
+    "name": "White Rabbit Gallery",
+    "icon": "🐇",
+    "category": "museum",
+    "bio": "A private gallery of contemporary Chinese art in Chippendale.",
+    "hours": "Hours vary; check the operator",
+    "visitHoursMin": 1.0,
+    "visitHoursMax": 2.0,
+    "ticketUrl": "https://whiterabbitcollection.org/"
+   },
+   "photo": {
+    "file": "White Rabbit gallery December 2025.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:White_Rabbit_gallery_December_2025.jpg",
+    "width": 4608,
+    "height": 3456
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 2787,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "Wendy Whiteley's Secret Garden",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-40",
+   "coordinates": {
+    "latitude": -33.844,
+    "longitude": 151.208
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Lower_North_Shore",
+   "distance_from_sydney_km": 2.8,
+   "reason": "Hidden harbour garden at Lavender Bay; two counted sources.",
+   "spot": {
+    "name": "Wendy Whiteley's Secret Garden",
+    "icon": "🌺",
+    "category": "nature",
+    "bio": "A hidden garden grown on a former rail yard at Lavender Bay, with harbour views.",
+    "hours": "Daylight hours",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1.0,
+    "free": true
+   },
+   "photo": {
+    "file": "(1)Wendy Whiteleys Garden 025.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:(1)Wendy_Whiteleys_Garden_025.jpg",
+    "width": 2992,
+    "height": 2000
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 0,
+    "counted_sources": 2
+   }
+  },
+  {
+   "name": "Vaucluse House",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-41",
+   "coordinates": {
+    "latitude": -33.855512,
+    "longitude": 151.2736407
+   },
+   "coordinates_source": "wikipedia:Vaucluse House",
+   "distance_from_sydney_km": 6.1,
+   "reason": "1803 house museum with gardens, open to the public; named by Wikivoyage.",
+   "spot": {
+    "name": "Vaucluse House",
+    "icon": "🏡",
+    "category": "historic",
+    "bio": "An 1803 harbourside mansion with gardens, now a house museum.",
+    "hours": "Hours vary; check the operator",
+    "visitHoursMin": 1.0,
+    "visitHoursMax": 2.0
+   },
+   "photo": {
+    "file": "AUS-sydney-vaucluse.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:AUS-sydney-vaucluse.jpg",
+    "width": 1215,
+    "height": 807
+   },
+   "photo_verdict": "accept",
+   "photo_note": "1215 px, from Wikivoyage shared; passes.",
+   "score": {
+    "views": 8922,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "Nielsen Park",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-42",
+   "coordinates": {
+    "latitude": -33.8508,
+    "longitude": 151.266767
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Eastern_suburbs",
+   "distance_from_sydney_km": 5.7,
+   "reason": "Harbour park with beach in Sydney Harbour National Park; two counted sources.",
+   "spot": {
+    "name": "Nielsen Park",
+    "icon": "🏖️",
+    "category": "nature",
+    "bio": "A harbourside park with a sheltered beach and picnic grounds in Sydney Harbour National Park.",
+    "hours": "Daylight hours",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3.0,
+    "free": true
+   },
+   "photo": {
+    "file": "(1)Nielsen Park Sydney.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:(1)Nielsen_Park_Sydney.jpg",
+    "width": 4798,
+    "height": 3023
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 6343,
+    "counted_sources": 2
+   }
+  },
+  {
+   "name": "The Gap, Sydney",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-43",
+   "coordinates": {
+    "latitude": -33.8456856,
+    "longitude": 151.2852282
+   },
+   "coordinates_source": "OSM (Nominatim) leisure/park",
+   "distance_from_sydney_km": 7.5,
+   "reason": "Famous cliff lookout over the Pacific at South Head; distinct named viewpoint.",
+   "spot": {
+    "name": "The Gap",
+    "icon": "🌊",
+    "category": "viewpoint",
+    "bio": "A cliff lookout at South Head above the Pacific.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1.0,
+    "wiki": "The Gap, Sydney",
+    "free": true
+   },
+   "photo": {
+    "file": "The Gap, Watsons Bay, Sydney, 2021.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:The_Gap,_Watsons_Bay,_Sydney,_2021.jpg",
+    "width": 5408,
+    "height": 3605
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 0,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "South Head",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-44",
+   "coordinates": {
+    "latitude": -33.8329686,
+    "longitude": 151.2804991
+   },
+   "coordinates_source": "OSM (Nominatim) natural/cape",
+   "distance_from_sydney_km": 7.7,
+   "reason": "NPWS Sydney Harbour NP page lists South Head (View), Hornby Lighthouse and the South Head Heritage Trail; a named headland, not rejected.",
+   "spot": {
+    "name": "South Head",
+    "icon": "🏝️",
+    "category": "viewpoint",
+    "bio": "A heritage headland at the harbour entrance, with Hornby Lighthouse and the South Head Heritage Trail.",
+    "hours": "Daylight hours",
+    "visitHoursMin": 1.0,
+    "visitHoursMax": 2.0,
+    "wiki": "South Head, New South Wales",
+    "free": true
+   },
+   "photo": {
+    "file": "AUS Sydney, Woollahra, Hornby Lighthouse 005.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:AUS_Sydney,_Woollahra,_Hornby_Lighthouse_005.jpg",
+    "width": 3997,
+    "height": 2997
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 5892,
+    "counted_sources": 0
+   }
+  },
+  {
+   "name": "Bradleys Head",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-45",
+   "coordinates": {
+    "latitude": -33.8525,
+    "longitude": 151.246
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney",
+   "distance_from_sydney_km": 3.8,
+   "reason": "Harbour headland with walks and views, two counted sources.",
+   "spot": {
+    "name": "Bradleys Head",
+    "icon": "⚓",
+    "category": "viewpoint",
+    "bio": "A harbour promontory reached from Taronga Zoo wharf, with walks and city views.",
+    "hours": "Daylight hours",
+    "visitHoursMin": 1.0,
+    "visitHoursMax": 2.5,
+    "free": true
+   },
+   "photo": {
+    "file": "Bradleys Head Lighthouse Sydney.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Bradleys_Head_Lighthouse_Sydney.jpg",
+    "width": 2990,
+    "height": 1994
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 2768,
+    "counted_sources": 2
+   }
+  },
+  {
+   "name": "Middle Head",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-46",
+   "coordinates": {
+    "latitude": -33.8258,
+    "longitude": 151.2671
+   },
+   "coordinates_source": "skeptic corrected: candidate was Sydney Heads/South Head; OSM cape Middle Head",
+   "distance_from_sydney_km": 7.2,
+   "reason": "Harbour headland with walks and views, two counted sources.",
+   "spot": {
+    "name": "Middle Head",
+    "icon": "🔫",
+    "category": "historic",
+    "bio": "A bushland headland walk past coastal artillery fortifications.",
+    "hours": "Daylight hours",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3.0,
+    "free": true
+   },
+   "photo": {
+    "file": "View south from Gunners Barracks, Middle Head, Sydney, NSW 06.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:View_south_from_Gunners_Barracks,_Middle_Head,_Sydney,_NSW_06.jpg",
+    "width": 2016,
+    "height": 1512
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 0,
+    "counted_sources": 2
+   }
+  },
+  {
+   "name": "Chowder Bay",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-47",
+   "coordinates": {
+    "latitude": -33.84211,
+    "longitude": 151.24755
+   },
+   "coordinates_source": "wikipedia:Clifton Gardens, New South Wales",
+   "distance_from_sydney_km": 4.6,
+   "reason": "NPWS lists the Bradleys Head to Chowder Bay walk; WV Harbour Islands/Lower North Shore name the Chowder Bay naval site, beach and cafes.",
+   "spot": {
+    "name": "Chowder Bay",
+    "icon": "⛵",
+    "category": "beach",
+    "bio": "A harbour bay with a beach, cafés and former naval installations, on the Bradleys Head to Chowder Bay walk.",
+    "hours": "Daylight hours",
+    "visitHoursMin": 1.0,
+    "visitHoursMax": 2.0,
+    "free": true
+   },
+   "photo": {
+    "file": "Chowderbay-forts0001.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Chowderbay-forts0001.JPG",
+    "width": 3072,
+    "height": 1462
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 0,
+    "counted_sources": 0
+   }
+  },
+  {
+   "name": "Balmoral Beach",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-48",
+   "coordinates": {
+    "latitude": -33.826152,
+    "longitude": 151.252042
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Lower_North_Shore",
+   "distance_from_sydney_km": 6.2,
+   "reason": "Harbour beach with swimming enclosure and bathers' pavilion, a second-tier stop named by Wikivoyage.",
+   "spot": {
+    "name": "Balmoral Beach",
+    "icon": "🏖️",
+    "category": "beach",
+    "bio": "A sheltered family beach with a swimming enclosure and a bathers' pavilion.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3.0,
+    "free": true
+   },
+   "photo": {
+    "file": "Balmoral Beach in Sydney, Australia 2017.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Balmoral_Beach_in_Sydney,_Australia_2017.jpg",
+    "width": 4032,
+    "height": 3024
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 0,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "Shelly Beach (Manly)",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-49",
+   "coordinates": {
+    "latitude": -33.80053056,
+    "longitude": 151.29779444
+   },
+   "coordinates_source": "wikipedia:Shelly Beach (Manly)",
+   "distance_from_sydney_km": 11.2,
+   "reason": "Sheltered snorkelling and diving beach at Manly; named by Wikivoyage.",
+   "spot": {
+    "name": "Shelly Beach",
+    "icon": "🤿",
+    "category": "beach",
+    "bio": "A sheltered beach near Manly used for diving and snorkelling.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3.0,
+    "wiki": "Shelly Beach (Manly)",
+    "free": true
+   },
+   "photo": {
+    "file": "Looking over Shelly Beach and Cabbage Tree Bay in Sydney.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Looking_over_Shelly_Beach_and_Cabbage_Tree_Bay_in_Sydney.jpg",
+    "width": 5418,
+    "height": 2769
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 6408,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "Clovelly Beach",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-50",
+   "coordinates": {
+    "latitude": -33.9135,
+    "longitude": 151.2664
+   },
+   "coordinates_source": "skeptic corrected: candidate was suburb centroid; OSM beach",
+   "distance_from_sydney_km": 7.2,
+   "reason": "Second-tier beach on the Bondi to Coogee walk, named by Wikivoyage.",
+   "spot": {
+    "name": "Clovelly Beach",
+    "icon": "🏊",
+    "category": "beach",
+    "bio": "A sheltered, wave-free swimming beach in a long inlet.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3.0,
+    "free": true
+   },
+   "photo": {
+    "file": "Clovelly 2.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Clovelly_2.JPG",
+    "width": 2560,
+    "height": 1920
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 0,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "Maroubra Beach",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-51",
+   "coordinates": {
+    "latitude": -33.9496,
+    "longitude": 151.2567
+   },
+   "coordinates_source": "skeptic corrected: candidate 1 km inland; OSM beach",
+   "distance_from_sydney_km": 10.0,
+   "reason": "Surf beach with ocean pools and walk, two counted sources.",
+   "spot": {
+    "name": "Maroubra Beach",
+    "icon": "🏄",
+    "category": "beach",
+    "bio": "A broad surf beach in the southern eastern suburbs.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3.0,
+    "free": true
+   },
+   "photo": {
+    "file": "Maroubra Beach May 2023.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Maroubra_Beach_May_2023.jpg",
+    "width": 4608,
+    "height": 3456
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 0,
+    "counted_sources": 2
+   }
+  },
+  {
+   "name": "Malabar Headland National Park",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-52",
+   "coordinates": {
+    "latitude": -33.9584,
+    "longitude": 151.263
+   },
+   "coordinates_source": "wikipedia:Malabar Headland",
+   "distance_from_sydney_km": 11.1,
+   "reason": "National park with coastal walks, two counted sources.",
+   "spot": {
+    "name": "Malabar Headland National Park",
+    "icon": "🌊",
+    "category": "nature",
+    "bio": "Coastal walks and cliff views on a headland between Maroubra and Malabar.",
+    "hours": "Daylight hours",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3.0,
+    "free": true,
+    "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/malabar-headland-national-park"
+   },
+   "photo": {
+    "file": "Malabar Headland.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Malabar_Headland.jpg",
+    "width": 4032,
+    "height": 3024
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 1276,
+    "counted_sources": 2
+   }
+  },
+  {
+   "name": "Kamay Botany Bay National Park",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-53",
+   "coordinates": {
+    "latitude": -34.020556,
+    "longitude": 151.224722
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Eastern_suburbs",
+   "distance_from_sydney_km": 16.9,
+   "reason": "Parent park of La Perouse, Bare Island, Cape Solander; placement decides later.",
+   "spot": {
+    "name": "Kamay Botany Bay National Park",
+    "icon": "🌿",
+    "category": "nature",
+    "bio": "The headlands of Kurnell and La Perouse at Botany Bay, site of Captain Cook's 1770 landing.",
+    "hours": "Daylight hours",
+    "visitHoursMin": 2.0,
+    "visitHoursMax": 4.0,
+    "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/kamay-botany-bay-national-park"
+   },
+   "photo": {
+    "file": "2022-10-02 Kamay Botany Bay National Park.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:2022-10-02_Kamay_Botany_Bay_National_Park.jpg",
+    "width": 4032,
+    "height": 3024
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 2926,
+    "counted_sources": 3
+   }
+  },
+  {
+   "name": "La Perouse",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-54",
+   "coordinates": {
+    "latitude": -33.99305556,
+    "longitude": 151.24333333
+   },
+   "coordinates_source": "wikipedia:La Perouse, New South Wales",
+   "distance_from_sydney_km": 14.2,
+   "reason": "Headland village on Botany Bay with Bare Island and Aboriginal heritage, two counted sources.",
+   "spot": {
+    "name": "La Perouse",
+    "icon": "🏝️",
+    "category": "landmark",
+    "bio": "A headland village at Kamay Botany Bay with a museum and access to Bare Island.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 2.0,
+    "visitHoursMax": 3.0,
+    "wiki": "La Perouse, New South Wales",
+    "free": true
+   },
+   "photo": {
+    "file": "La Perouse 3.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:La_Perouse_3.JPG",
+    "width": 2560,
+    "height": 1920
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 27592,
+    "counted_sources": 2
+   }
+  },
+  {
+   "name": "Bare Island",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-55",
+   "coordinates": {
+    "latitude": -33.99222222,
+    "longitude": 151.23111111
+   },
+   "coordinates_source": "wikipedia:Bare Island (New South Wales)",
+   "distance_from_sydney_km": 13.9,
+   "reason": "NPWS Kamay Botany Bay page (\"pay to tour Bare Island\") and WV Eastern suburbs name the fort; footbridge access, tours; distinct from La Perouse village.",
+   "spot": {
+    "name": "Bare Island",
+    "icon": "🏰",
+    "category": "historic",
+    "bio": "An 1880s fort on an island reached by footbridge at La Perouse, with guided tours.",
+    "hours": "Tours by booking",
+    "visitHoursMin": 1.0,
+    "visitHoursMax": 2.0,
+    "wiki": "Bare Island (New South Wales)"
+   },
+   "photo": {
+    "file": "Bare island fort La Perouse.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Bare_island_fort_La_Perouse.jpg",
+    "width": 3834,
+    "height": 2534
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 9228,
+    "counted_sources": 0
+   }
+  },
+  {
+   "name": "Cape Solander",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-56",
+   "coordinates": {
+    "latitude": -34.0164,
+    "longitude": 151.2317
+   },
+   "coordinates_source": "wikipedia:Cape Solander",
+   "distance_from_sydney_km": 16.5,
+   "reason": "NPWS Kamay page names it for whale watching; WV St George lists the cliff walk. Two counted sources.",
+   "spot": {
+    "name": "Cape Solander",
+    "icon": "🐋",
+    "category": "viewpoint",
+    "bio": "A Kurnell headland lookout known for whale watching and its cliff walk.",
+    "hours": "Daylight hours",
+    "visitHoursMin": 1.0,
+    "visitHoursMax": 2.0
+   },
+   "photo": {
+    "file": "Cape Solander Lookout.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Cape_Solander_Lookout.jpg",
+    "width": 2700,
+    "height": 1800
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 2295,
+    "counted_sources": 0
+   }
+  },
+  {
+   "name": "Cronulla Beach",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-57",
+   "coordinates": {
+    "latitude": -34.0516578,
+    "longitude": 151.1516857
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Cronulla",
+   "distance_from_sydney_km": 21.0,
+   "reason": "Cronulla surf beaches with esplanade; two counted sources.",
+   "spot": {
+    "name": "Cronulla Beach",
+    "icon": "🏄",
+    "category": "beach",
+    "bio": "A string of surf beaches with an esplanade and surf schools, reached by train from the city.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 2.0,
+    "visitHoursMax": 4.0,
+    "free": true
+   },
+   "photo": {
+    "file": "South Cronulla Beach.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:South_Cronulla_Beach.JPG",
+    "width": 2491,
+    "height": 1840
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 4031,
+    "counted_sources": 2
+   }
+  },
+  {
+   "name": "Narrabeen Beach",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-58",
+   "coordinates": {
+    "latitude": -33.7175118,
+    "longitude": 151.3000718
+   },
+   "coordinates_source": "OSM (Nominatim) natural/beach",
+   "distance_from_sydney_km": 18.8,
+   "reason": "Second-tier Northern Beaches beach named by Wikivoyage with a distinct character (pool, lagoon, headland or surf).",
+   "spot": {
+    "name": "Narrabeen Beach",
+    "icon": "🏄",
+    "category": "beach",
+    "bio": "A long surf beach that hosts professional surf events.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3.0,
+    "free": true
+   },
+   "photo": {
+    "file": "Narrabeen beach (15795528935).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Narrabeen_beach_(15795528935).jpg",
+    "width": 2560,
+    "height": 1710
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 0,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "Collaroy Beach",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-59",
+   "coordinates": {
+    "latitude": -33.7278815,
+    "longitude": 151.3004089
+   },
+   "coordinates_source": "OSM (Nominatim) natural/beach",
+   "distance_from_sydney_km": 17.8,
+   "reason": "Second-tier Northern Beaches beach named by Wikivoyage with a distinct character (pool, lagoon, headland or surf).",
+   "spot": {
+    "name": "Collaroy Beach",
+    "icon": "🏖️",
+    "category": "beach",
+    "bio": "A calm beach good for learning to surf.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3.0,
+    "free": true
+   },
+   "photo": {
+    "file": "Collaroy.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Collaroy.JPG",
+    "width": 2304,
+    "height": 1728
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 0,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "Dee Why Beach",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-60",
+   "coordinates": {
+    "latitude": -33.7507413,
+    "longitude": 151.2985454
+   },
+   "coordinates_source": "OSM (Nominatim) natural/beach",
+   "distance_from_sydney_km": 15.5,
+   "reason": "Second-tier Northern Beaches beach named by Wikivoyage with a distinct character (pool, lagoon, headland or surf).",
+   "spot": {
+    "name": "Dee Why Beach",
+    "icon": "🏖️",
+    "category": "beach",
+    "bio": "A busy surf beach with cafés beside Dee Why Lagoon.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3.0,
+    "free": true
+   },
+   "photo": {
+    "file": "Dee Why Beach.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Dee_Why_Beach.JPG",
+    "width": 3675,
+    "height": 2522
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 0,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "North Curl Curl Beach",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-61",
+   "coordinates": {
+    "latitude": -33.77,
+    "longitude": 151.2958
+   },
+   "coordinates_source": "skeptic corrected: OSM Curl Curl Beach",
+   "distance_from_sydney_km": 13.6,
+   "reason": "Second-tier Northern Beaches beach named by Wikivoyage with a distinct character (pool, lagoon, headland or surf).",
+   "spot": {
+    "name": "Curl Curl Beach",
+    "icon": "🏖️",
+    "category": "beach",
+    "bio": "A popular beach with a cliff playground and café.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3.0,
+    "wiki": "North Curl Curl Beach",
+    "free": true
+   },
+   "photo": {
+    "file": "CurlCurl Beach.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:CurlCurl_Beach.jpg",
+    "width": 1760,
+    "height": 1168
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Curl Curl Beach overview from the hill; covers both ends.",
+   "score": {
+    "views": 0,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "Freshwater Beach",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-62",
+   "coordinates": {
+    "latitude": -33.7820926,
+    "longitude": 151.2905805
+   },
+   "coordinates_source": "OSM (Nominatim) natural/beach",
+   "distance_from_sydney_km": 12.2,
+   "reason": "Second-tier Northern Beaches beach named by Wikivoyage with a distinct character (pool, lagoon, headland or surf).",
+   "spot": {
+    "name": "Freshwater Beach",
+    "icon": "🏄",
+    "category": "beach",
+    "bio": "A surf beach at Harbord.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3.0,
+    "free": true
+   },
+   "photo": {
+    "file": "Freshwater Beach.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Freshwater_Beach.jpg",
+    "width": 2048,
+    "height": 1536
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 0,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "Long Reef Beach",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-63",
+   "coordinates": {
+    "latitude": -33.7443,
+    "longitude": 151.3078
+   },
+   "coordinates_source": "skeptic corrected: OSM Long Reef Beach",
+   "distance_from_sydney_km": 16.6,
+   "reason": "Second-tier Northern Beaches beach named by Wikivoyage with a distinct character (pool, lagoon, headland or surf).",
+   "spot": {
+    "name": "Long Reef Beach",
+    "icon": "🏖️",
+    "category": "beach",
+    "bio": "A headland beach beside the Long Reef Aquatic Reserve.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3.0,
+    "free": true
+   },
+   "photo": {
+    "file": "Long Reef from Dee Why.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Long_Reef_from_Dee_Why.jpg",
+    "width": 4833,
+    "height": 3021
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Headland and surf seen from Dee Why; weak but passes.",
+   "score": {
+    "views": 0,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "Great North Walk",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-64",
+   "coordinates": {
+    "latitude": -33.7219255,
+    "longitude": 151.0603935
+   },
+   "coordinates_source": "OSM (Nominatim) highway/track",
+   "distance_from_sydney_km": 21.4,
+   "reason": "Multi-day trail from Sydney to Newcastle with day sections; two counted sources.",
+   "spot": {
+    "name": "Great North Walk",
+    "icon": "🥾",
+    "category": "hike",
+    "bio": "A 250 km multi-day trail from Sydney to Newcastle, walked in day sections.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 3.0,
+    "visitHoursMax": 8.0,
+    "free": true
+   },
+   "photo": {
+    "file": "Great North Walk, Berowra Trail (13813336955).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Great_North_Walk,_Berowra_Trail_(13813336955).jpg",
+    "width": 3920,
+    "height": 2940
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 7854,
+    "counted_sources": 2
+   }
+  },
+  {
+   "name": "Lane Cove National Park",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-65",
+   "coordinates": {
+    "latitude": -33.763201,
+    "longitude": 151.1060698
+   },
+   "coordinates_source": "OSM (Nominatim) leisure/nature_reserve",
+   "distance_from_sydney_km": 15.1,
+   "reason": "National park with bushland and waterfalls, two counted sources.",
+   "spot": {
+    "name": "Lane Cove National Park",
+    "icon": "🛶",
+    "category": "nature",
+    "bio": "Bushland along the Lane Cove River with walks and canoeing.",
+    "hours": "Daylight hours",
+    "visitHoursMin": 2.0,
+    "visitHoursMax": 5.0,
+    "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/lane-cove-national-park"
+   },
+   "photo": {
+    "file": "Lane Cove River.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Lane_Cove_River.jpg",
+    "width": 2256,
+    "height": 1496
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 2827,
+    "counted_sources": 2
+   }
+  },
+  {
+   "name": "Garigal National Park",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-66",
+   "coordinates": {
+    "latitude": -33.6995965,
+    "longitude": 151.2372539
+   },
+   "coordinates_source": "OSM (Nominatim) leisure/nature_reserve",
+   "distance_from_sydney_km": 19.0,
+   "reason": "National park with bushland and waterfalls, two counted sources.",
+   "spot": {
+    "name": "Garigal National Park",
+    "icon": "🌲",
+    "category": "nature",
+    "bio": "Sandstone bushland with waterfalls and Middle Harbour views on the north side of the city.",
+    "hours": "Daylight hours",
+    "visitHoursMin": 2.0,
+    "visitHoursMax": 5.0,
+    "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/garigal-national-park"
+   },
+   "photo": {
+    "file": "Garigal National Park.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Garigal_National_Park.jpg",
+    "width": 1600,
+    "height": 1200
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 1854,
+    "counted_sources": 2
+   }
+  },
+  {
+   "name": "Berowra Valley National Park",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-67",
+   "coordinates": {
+    "latitude": -33.64,
+    "longitude": 151.09
+   },
+   "coordinates_source": "WV listing:https://en.wikivoyage.org/wiki/Sydney/Upper_North_Shore",
+   "distance_from_sydney_km": 27.7,
+   "reason": "National park with bushland and waterfalls, two counted sources.",
+   "spot": {
+    "name": "Berowra Valley National Park",
+    "icon": "🥾",
+    "category": "nature",
+    "bio": "Valley bushland along Berowra Creek, crossed by the Great North Walk.",
+    "hours": "Daylight hours",
+    "visitHoursMin": 2.0,
+    "visitHoursMax": 5.0,
+    "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/berowra-valley-national-park"
+   },
+   "photo": {
+    "file": "Sunset - Berowra Valley national park (4).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Sunset_-_Berowra_Valley_national_park_(4).jpg",
+    "width": 4000,
+    "height": 2519
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 1070,
+    "counted_sources": 3
+   }
+  },
+  {
+   "name": "Sydney Olympic Park",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-68",
+   "coordinates": {
+    "latitude": -33.8475,
+    "longitude": 151.065
+   },
+   "coordinates_source": "wikipedia:Sydney Olympic Park",
+   "distance_from_sydney_km": 13.5,
+   "reason": "2000 Olympic site with parklands and walks; named by Wikivoyage.",
+   "spot": {
+    "name": "Sydney Olympic Park",
+    "icon": "🏟️",
+    "category": "landmark",
+    "bio": "The 2000 Olympics site, now parkland with sports venues and walks.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 2.0,
+    "visitHoursMax": 5.0,
+    "ticketUrl": "https://www.sydneyolympicpark.nsw.gov.au/"
+   },
+   "photo": {
+    "file": "Australia Stadium.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Australia_Stadium.jpg",
+    "width": 2092,
+    "height": 1106
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 34433,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "Brickpit Ring Walk",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-69",
+   "coordinates": {
+    "latitude": -33.8409,
+    "longitude": 151.0716
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Sydney_Olympic_Park",
+   "distance_from_sydney_km": 13.1,
+   "reason": "Part of Sydney Olympic Park but a named 30-60 min walk; keep, flag overlap.",
+   "spot": {
+    "name": "Brickpit Ring Walk",
+    "icon": "🧱",
+    "category": "hike",
+    "bio": "An elevated walkway around the former State Brickworks pit in Sydney Olympic Park.",
+    "hours": "Hours vary; check the operator",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1.0,
+    "wiki": "State Brickworks Homebush Bay",
+    "free": true
+   },
+   "photo": {
+    "file": "Homebush Bay Brick Pit.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Homebush_Bay_Brick_Pit.JPG",
+    "width": 2560,
+    "height": 1920
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Shows the brickpit with the elevated ring visible; acceptable.",
+   "score": {
+    "views": 2307,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "Old Government House, Parramatta",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-70",
+   "coordinates": {
+    "latitude": -33.8122,
+    "longitude": 150.9973
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Parramatta",
+   "distance_from_sydney_km": 20.6,
+   "reason": "UNESCO World Heritage colonial governors' residence, open for visits.",
+   "spot": {
+    "name": "Old Government House",
+    "icon": "🏛️",
+    "category": "historic",
+    "bio": "A UNESCO World Heritage colonial governors' residence in Parramatta Park.",
+    "hours": "Hours vary; check the operator",
+    "visitHoursMin": 1.0,
+    "visitHoursMax": 2.0,
+    "wiki": "Old Government House, Parramatta",
+    "ticketUrl": "https://www.nationaltrust.org.au/places/old-government-house/"
+   },
+   "photo": {
+    "file": "Old Government House - Parramatta Park, Parramatta, NSW (7822321952).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Old_Government_House_-_Parramatta_Park,_Parramatta,_NSW_(7822321952).jpg",
+    "width": 3648,
+    "height": 2736
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 7346,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "Elizabeth Farm",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-71",
+   "coordinates": {
+    "latitude": -33.8213,
+    "longitude": 151.018
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Parramatta",
+   "distance_from_sydney_km": 18.4,
+   "reason": "Oldest surviving European building in Australia, museum open to the public.",
+   "spot": {
+    "name": "Elizabeth Farm",
+    "icon": "🏡",
+    "category": "historic",
+    "bio": "A homestead begun in 1793, the oldest surviving European building in Australia.",
+    "hours": "Hours vary; check the operator",
+    "visitHoursMin": 1.0,
+    "visitHoursMax": 2.0
+   },
+   "photo": {
+    "file": "Elizabeth Farm-3.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Elizabeth_Farm-3.jpg",
+    "width": 2304,
+    "height": 1536
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Wikipedia lead image, the homestead verandah.",
+   "score": {
+    "views": 8162,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "The Bay Run",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-72",
+   "coordinates": {
+    "latitude": -33.863538,
+    "longitude": 151.15355
+   },
+   "coordinates_source": "wikipedia:The Bay Run",
+   "distance_from_sydney_km": 5.2,
+   "reason": "7 km car-free circuit around Iron Cove, a popular named walk.",
+   "spot": {
+    "name": "The Bay Run",
+    "icon": "🏃",
+    "category": "hike",
+    "bio": "A 7 km car-free circuit track around Iron Cove.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 1.0,
+    "visitHoursMax": 2.0,
+    "free": true
+   },
+   "photo": {
+    "file": "Iron Cove Creek Bridge.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Iron_Cove_Creek_Bridge.jpg",
+    "width": 4032,
+    "height": 3024
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Iron Cove Creek footbridge on the run; the Wikipedia lead BAY RUN INNERWEST.jpg is blurry and rejected.",
+   "score": {
+    "views": 5055,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "Koala Park Sanctuary",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-73",
+   "coordinates": {
+    "latitude": -33.7422,
+    "longitude": 151.0443
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Hills_District",
+   "distance_from_sydney_km": 20.8,
+   "reason": "Koala sanctuary with kangaroo feeding; two counted sources.",
+   "spot": {
+    "name": "Koala Park Sanctuary",
+    "icon": "🐨",
+    "category": "entertainment",
+    "bio": "A koala sanctuary at Dural with kangaroo feeding.",
+    "hours": "Hours vary; check the operator",
+    "visitHoursMin": 2.0,
+    "visitHoursMax": 3.0,
+    "ticketUrl": "https://koalapark-sanctuary.com.au/"
+   },
+   "photo": {
+    "file": "Koala park sanctuary, Sydney, Australia (43539305).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Koala_park_sanctuary,_Sydney,_Australia_(43539305).jpg",
+    "width": 2048,
+    "height": 1536
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 2401,
+    "counted_sources": 2
+   }
+  },
+  {
+   "name": "Figure Eight Pool",
+   "action": "spot-of-proposed-destination",
+   "destination": "royal-national-park",
+   "id": "royal-national-park-1",
+   "coordinates": {
+    "latitude": -34.187,
+    "longitude": 151.0437
+   },
+   "coordinates_source": "skeptic corrected: approx, Burning Palms Beach (OSM); pool is on the rock platform at its south end, confirm with audit script",
+   "distance_from_sydney_km": 38.5,
+   "reason": "Well-known tidal rock pool in Royal National Park, a walk destination; named by Wikivoyage.",
+   "spot": {
+    "name": "Figure Eight Pool",
+    "icon": "🌊",
+    "category": "nature",
+    "bio": "A tidal rock pool on a rock platform at the south end of Burning Palms Beach, reached by a coastal walk.",
+    "hours": "Tides permitting",
+    "visitHoursMin": 4.0,
+    "visitHoursMax": 6.0,
+    "free": true
+   },
+   "photo": {
+    "file": "Figure Eight Pool.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Figure_Eight_Pool.jpg",
+    "width": 3632,
+    "height": 5456
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 0,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "Wedding Cake Rock",
+   "action": "spot-of-proposed-destination",
+   "destination": "royal-national-park",
+   "id": "royal-national-park-2",
+   "coordinates": {
+    "latitude": -34.10966667,
+    "longitude": 151.15241667
+   },
+   "coordinates_source": "wikipedia:Wedding Cake Rock",
+   "distance_from_sydney_km": 27.3,
+   "reason": "NPWS Royal NP page lists it as a View attraction, WV also; the rock is fenced off but the viewing area and walk are an established named stop.",
+   "spot": {
+    "name": "Wedding Cake Rock",
+    "icon": "🍰",
+    "category": "viewpoint",
+    "bio": "A layered white sandstone outcrop on the Coast Track, viewed from a fenced lookout.",
+    "hours": "Daylight hours",
+    "visitHoursMin": 2.0,
+    "visitHoursMax": 3.0
+   },
+   "photo": {
+    "file": "Wedding Cake Rock in Royal National Park.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Wedding_Cake_Rock_in_Royal_National_Park.jpg",
+    "width": 4608,
+    "height": 3072
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 4591,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "Coast Track",
+   "action": "spot-of-proposed-destination",
+   "destination": "royal-national-park",
+   "id": "royal-national-park-3",
+   "coordinates": {
+    "latitude": -34.0827,
+    "longitude": 151.151
+   },
+   "coordinates_source": "skeptic corrected: trailhead at Bundeena Wharf (OSM)",
+   "distance_from_sydney_km": 24.4,
+   "reason": "26 km coastal track of Royal National Park; a hike in its own right.",
+   "spot": {
+    "name": "Coast Track",
+    "icon": "🥾",
+    "category": "hike",
+    "bio": "A 26 km coastal track from Otford to Bundeena through Royal National Park.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 6.0,
+    "visitHoursMax": 10.0
+   },
+   "photo": {
+    "file": "Royal National Park Coast Track - panoramio.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Royal_National_Park_Coast_Track_-_panoramio.jpg",
+    "width": 2048,
+    "height": 1536
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 0,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "West Head",
+   "action": "spot-of-proposed-destination",
+   "destination": "ku-ring-gai-chase",
+   "id": "ku-ring-gai-chase-1",
+   "coordinates": {
+    "latitude": -33.5791,
+    "longitude": 151.3092
+   },
+   "coordinates_source": "skeptic corrected: candidate was in New Zealand (-41.2,174.3); OSM West Head Lookout",
+   "distance_from_sydney_km": 33.5,
+   "reason": "Headland lookout over Pittwater and the Hawkesbury in Ku-ring-gai Chase; named by Wikivoyage.",
+   "spot": {
+    "name": "West Head",
+    "icon": "🔭",
+    "category": "viewpoint",
+    "bio": "A headland lookout over Pittwater and the Hawkesbury.",
+    "hours": "Daylight hours",
+    "visitHoursMin": 1.0,
+    "visitHoursMax": 2.0
+   },
+   "photo": {
+    "file": "View from West Head Lookout.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:View_from_West_Head_Lookout.jpg",
+    "width": 4000,
+    "height": 3000
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 555,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "Bobbin Head",
+   "action": "spot-of-proposed-destination",
+   "destination": "ku-ring-gai-chase",
+   "id": "ku-ring-gai-chase-2",
+   "coordinates": {
+    "latitude": -33.660116,
+    "longitude": 151.159145
+   },
+   "coordinates_source": "wikipedia:Bobbin Head, New South Wales",
+   "distance_from_sydney_km": 23.7,
+   "reason": "Cowan Creek picnic grounds, boatshed and cruises in Ku-ring-gai Chase; named by Wikivoyage.",
+   "spot": {
+    "name": "Bobbin Head",
+    "icon": "🛥️",
+    "category": "nature",
+    "bio": "A boatshed and picnic area on Cowan Creek with cruises.",
+    "hours": "Daylight hours",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3.0
+   },
+   "photo": {
+    "file": "Bobbin head-1w.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Bobbin_head-1w.jpg",
+    "width": 1200,
+    "height": 792
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 1078,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "Barrenjoey Lighthouse",
+   "action": "spot-of-proposed-destination",
+   "destination": "ku-ring-gai-chase",
+   "id": "ku-ring-gai-chase-3",
+   "coordinates": {
+    "latitude": -33.5804,
+    "longitude": 151.329
+   },
+   "coordinates_source": "OSM:cape en:Barrenjoey, New South Wales",
+   "distance_from_sydney_km": 33.9,
+   "reason": "Lighthouse at Palm Beach reached by a headland walk; named by Wikivoyage.",
+   "spot": {
+    "name": "Barrenjoey Lighthouse",
+    "icon": "🗼",
+    "category": "landmark",
+    "bio": "A lighthouse at the top of Barrenjoey Head, reached by a headland walk from Palm Beach.",
+    "hours": "Daylight hours",
+    "visitHoursMin": 2.0,
+    "visitHoursMax": 3.0,
+    "free": true
+   },
+   "photo": {
+    "file": "Barrenjoey Head Lighthouse 22042014.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Barrenjoey_Head_Lighthouse_22042014.jpg",
+    "width": 4272,
+    "height": 2848
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 0,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "Palm Beach, New South Wales",
+   "action": "spot-of-proposed-destination",
+   "destination": "ku-ring-gai-chase",
+   "id": "ku-ring-gai-chase-4",
+   "coordinates": {
+    "latitude": -33.6,
+    "longitude": 151.32277778
+   },
+   "coordinates_source": "wikipedia:Palm Beach, New South Wales",
+   "distance_from_sydney_km": 31.7,
+   "reason": "Northern tip of the Northern Beaches, famed beach; named by Wikivoyage.",
+   "spot": {
+    "name": "Palm Beach",
+    "icon": "🏖️",
+    "category": "beach",
+    "bio": "A long beach at the northern tip of the Northern Beaches.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 2.0,
+    "visitHoursMax": 4.0,
+    "wiki": "Palm Beach, New South Wales",
+    "free": true
+   },
+   "photo": {
+    "file": "Palm Beach NSW.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Palm_Beach_NSW.jpg",
+    "width": 2272,
+    "height": 1704
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 28470,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "Whale Beach",
+   "action": "spot-of-proposed-destination",
+   "destination": "ku-ring-gai-chase",
+   "id": "ku-ring-gai-chase-5",
+   "coordinates": {
+    "latitude": -33.61269,
+    "longitude": 151.32736
+   },
+   "coordinates_source": "wikipedia:Whale Beach, New South Wales",
+   "distance_from_sydney_km": 30.5,
+   "reason": "Second-tier Northern Beaches beach named by Wikivoyage with a distinct character (pool, lagoon, headland or surf).",
+   "spot": {
+    "name": "Whale Beach",
+    "icon": "🏖️",
+    "category": "beach",
+    "bio": "A quiet beach with pale sand backed by cliffs.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3.0,
+    "wiki": "Whale Beach, New South Wales",
+    "free": true
+   },
+   "photo": {
+    "file": "Whale Beach - panoramio (3).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Whale_Beach_-_panoramio_(3).jpg",
+    "width": 2048,
+    "height": 1536
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 5841,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "Avalon Beach",
+   "action": "spot-of-proposed-destination",
+   "destination": "ku-ring-gai-chase",
+   "id": "ku-ring-gai-chase-6",
+   "coordinates": {
+    "latitude": -33.63358,
+    "longitude": 151.33257
+   },
+   "coordinates_source": "wikipedia:Avalon Beach",
+   "distance_from_sydney_km": 28.5,
+   "reason": "Second-tier Northern Beaches beach named by Wikivoyage with a distinct character (pool, lagoon, headland or surf).",
+   "spot": {
+    "name": "Avalon Beach",
+    "icon": "🏄",
+    "category": "beach",
+    "bio": "A Northern Beaches surf beach.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3.0,
+    "free": true
+   },
+   "photo": {
+    "file": "Avalon,new south wales.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Avalon,new_south_wales.jpg",
+    "width": 1981,
+    "height": 1651
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 2313,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "Bilgola Beach",
+   "action": "spot-of-proposed-destination",
+   "destination": "ku-ring-gai-chase",
+   "id": "ku-ring-gai-chase-7",
+   "coordinates": {
+    "latitude": -33.64565,
+    "longitude": 151.31782
+   },
+   "coordinates_source": "wikipedia:Bilgola Beach",
+   "distance_from_sydney_km": 26.8,
+   "reason": "Second-tier Northern Beaches beach named by Wikivoyage with a distinct character (pool, lagoon, headland or surf).",
+   "spot": {
+    "name": "Bilgola Beach",
+    "icon": "🏖️",
+    "category": "beach",
+    "bio": "A small Northern Beaches beach below steep bush.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3.0,
+    "free": true
+   },
+   "photo": {
+    "file": "Bilgola Beach - panoramio.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Bilgola_Beach_-_panoramio.jpg",
+    "width": 2048,
+    "height": 1536
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 4238,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "Wisemans Ferry",
+   "action": "spot-of-proposed-destination",
+   "destination": "dharug-national-park",
+   "id": "dharug-national-park-1",
+   "coordinates": {
+    "latitude": -33.379181,
+    "longitude": 150.988895
+   },
+   "coordinates_source": "wikipedia:Wisemans Ferry",
+   "distance_from_sydney_km": 58.1,
+   "reason": "Hawkesbury River ferry-crossing village and gateway to Dharug NP; second-tier village named by Wikivoyage.",
+   "spot": {
+    "name": "Wisemans Ferry",
+    "icon": "⛴️",
+    "category": "landmark",
+    "bio": "A Hawkesbury River ferry crossing and gateway to Dharug National Park.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 1.0,
+    "visitHoursMax": 3.0,
+    "free": true
+   },
+   "photo": {
+    "file": "Wisemans Ferry.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Wisemans_Ferry.jpg",
+    "width": 1600,
+    "height": 1066
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 2635,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "Cattai National Park",
+   "action": "spot-of-proposed-destination",
+   "destination": "dharug-national-park",
+   "id": "dharug-national-park-2",
+   "coordinates": {
+    "latitude": -33.54722222,
+    "longitude": 150.89694444
+   },
+   "coordinates_source": "wikipedia:Cattai National Park",
+   "distance_from_sydney_km": 46.0,
+   "reason": "National park with bushland and waterfalls, two counted sources.",
+   "spot": {
+    "name": "Cattai National Park",
+    "icon": "🛶",
+    "category": "nature",
+    "bio": "A Hawkesbury River farm and canoeing area with historic sites.",
+    "hours": "Daylight hours",
+    "visitHoursMin": 2.0,
+    "visitHoursMax": 5.0,
+    "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/cattai-national-park"
+   },
+   "photo": {
+    "file": "Cattai national park view from cattai wharf.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Cattai_national_park_view_from_cattai_wharf.jpg",
+    "width": 2048,
+    "height": 1536
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 700,
+    "counted_sources": 2
+   }
+  },
+  {
+   "name": "Featherdale Wildlife Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "featherdale-wildlife-park",
+   "coordinates": {
+    "latitude": -33.7658,
+    "longitude": 150.8842
+   },
+   "coordinates_source": "OSM:zoo en:Featherdale Wildlife Park",
+   "distance_from_sydney_km": 32.1,
+   "reason": "Wildlife park with koalas and kangaroo feeding; named by Wikivoyage.",
+   "spot": {
+    "name": "Featherdale Wildlife Park",
+    "icon": "🦘",
+    "category": "entertainment",
+    "bio": "A wildlife park at Doonside with koalas and kangaroo feeding.",
+    "hours": "Hours vary; check the operator",
+    "visitHoursMin": 2.0,
+    "visitHoursMax": 4.0,
+    "ticketUrl": "https://www.featherdale.com.au/",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   },
+   "photo": {
+    "file": "A koala at Featherdale Wildlife Park 2025 (17).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:A_koala_at_Featherdale_Wildlife_Park_2025_(17).jpg",
+    "width": 7008,
+    "height": 4672
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 5968,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "Australian Botanic Garden Mount Annan",
+   "action": "standalone",
+   "destination": null,
+   "id": "australian-botanic-garden-mount-annan",
+   "coordinates": {
+    "latitude": -34.0701,
+    "longitude": 150.767
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Macarthur",
+   "distance_from_sydney_km": 46.5,
+   "reason": "Native plant botanic garden with visitor centre; named by Wikivoyage.",
+   "spot": {
+    "name": "Australian Botanic Garden Mount Annan",
+    "icon": "🌱",
+    "category": "nature",
+    "bio": "A native-plant botanic garden with a visitor centre, south-west of the city.",
+    "hours": "Hours vary; check the operator",
+    "visitHoursMin": 2.0,
+    "visitHoursMax": 4.0,
+    "ticketUrl": "https://www.botanicgardens.org.au/australian-botanic-garden-mount-annan",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   },
+   "photo": {
+    "file": "Australian Botanic Garden Mount Annan.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Australian_Botanic_Garden_Mount_Annan.jpg",
+    "width": 4096,
+    "height": 3072
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 2878,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "NSW Rail Museum",
+   "action": "standalone",
+   "destination": null,
+   "id": "nsw-rail-museum",
+   "coordinates": {
+    "latitude": -34.2075,
+    "longitude": 150.5686
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/Macarthur",
+   "distance_from_sydney_km": 70.0,
+   "reason": "Heritage steam trains and rail museum; named by Wikivoyage; open to visitors.",
+   "spot": {
+    "name": "NSW Rail Museum",
+    "icon": "🚂",
+    "category": "museum",
+    "bio": "A heritage steam train and rail museum at Thirlmere.",
+    "hours": "Hours vary; check the operator",
+    "visitHoursMin": 2.0,
+    "visitHoursMax": 4.0,
+    "ticketUrl": "https://www.nswrailmuseum.com.au/",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   },
+   "photo": {
+    "file": "New South Wales Z19 class locomotive No.1905 - NSWRTM Thirlmere NSW - January 2009.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:New_South_Wales_Z19_class_locomotive_No.1905_-_NSWRTM_Thirlmere_NSW_-_January_2009.jpg",
+    "width": 2369,
+    "height": 2114
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 5240,
+    "counted_sources": 1
+   }
+  },
+  {
+   "name": "Heathcote National Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "heathcote-national-park",
+   "coordinates": {
+    "latitude": -34.13027778,
+    "longitude": 150.97138889
+   },
+   "coordinates_source": "wikipedia:Heathcote National Park",
+   "distance_from_sydney_km": 36.4,
+   "reason": "National park with bushland and waterfalls, two counted sources.",
+   "spot": {
+    "name": "Heathcote National Park",
+    "icon": "🥾",
+    "category": "nature",
+    "bio": "Heath and waterholes near Waterfall with bushwalks and mountain biking.",
+    "hours": "Daylight hours",
+    "visitHoursMin": 2.0,
+    "visitHoursMax": 5.0,
+    "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/heathcote-national-park",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   },
+   "photo": {
+    "file": "Heathcote National Park 8.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Heathcote_National_Park_8.jpg",
+    "width": 3072,
+    "height": 2304
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 1618,
+    "counted_sources": 2
+   }
+  },
+  {
+   "name": "Dharawal National Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "dharawal-national-park",
+   "coordinates": {
+    "latitude": -34.20333333,
+    "longitude": 150.86083333
+   },
+   "coordinates_source": "wikipedia:Dharawal National Park",
+   "distance_from_sydney_km": 49.1,
+   "reason": "National park with bushland and waterfalls, two counted sources.",
+   "spot": {
+    "name": "Dharawal National Park",
+    "icon": "💧",
+    "category": "nature",
+    "bio": "Waterfalls, rock pools and bushland near Helensburgh.",
+    "hours": "Daylight hours",
+    "visitHoursMin": 2.0,
+    "visitHoursMax": 5.0,
+    "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/dharawal-national-park",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   },
+   "photo": {
+    "file": "Dharawal National Park.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Dharawal_National_Park.jpg",
+    "width": 4608,
+    "height": 3072
+   },
+   "photo_verdict": "accept",
+   "photo_note": "Right place per file page/categories, shows the named thing, current colour photo, >=960px, not in imageOverrides/manifest.",
+   "score": {
+    "views": 1470,
+    "counted_sources": 2
+   }
+  },
+  {
+   "name": "Royal National Park",
+   "action": "new-destination",
+   "destination": "royal-national-park",
+   "id": "royal-national-park",
+   "coordinates": {
+    "latitude": -34.11830832,
+    "longitude": 151.06378565
+   },
+   "coordinates_source": "wikipedia:Royal National Park",
+   "distance_from_sydney_km": 30.8,
+   "reason": "Australia's second-oldest national park with coast and bush walks; two counted sources.",
+   "proposal": {
+    "name": "Royal National Park",
+    "category": "park",
+    "note": "Destination centre = park pin; needs full destination entry, header (>=2000px), 3 why-visit photos per WRITING.md/IMAGES.md before adding."
+   },
+   "header_candidate": {
+    "file": "Garie Beach, Royal National Park.jpg",
+    "width": 2365,
+    "height": 1774
+   },
+   "score": {
+    "views": 14486,
+    "counted_sources": 2
+   }
+  },
+  {
+   "name": "Ku-ring-gai Chase National Park",
+   "action": "new-destination",
+   "destination": "ku-ring-gai-chase",
+   "id": "ku-ring-gai-chase",
+   "coordinates": {
+    "latitude": -33.6282265,
+    "longitude": 151.2293535
+   },
+   "coordinates_source": "OSM (Nominatim) leisure/nature_reserve",
+   "distance_from_sydney_km": 26.8,
+   "reason": "National park with harbour bays and walks, two counted sources.",
+   "proposal": {
+    "name": "Ku-ring-gai Chase National Park",
+    "category": "park",
+    "note": "Destination centre = park pin; needs full destination entry, header (>=2000px), 3 why-visit photos per WRITING.md/IMAGES.md before adding."
+   },
+   "header_candidate": {
+    "file": "Towlers Bay AL.jpg",
+    "width": 3036,
+    "height": 2277
+   },
+   "score": {
+    "views": 12309,
+    "counted_sources": 2
+   }
+  },
+  {
+   "name": "Dharug National Park",
+   "action": "new-destination",
+   "destination": "dharug-national-park",
+   "id": "dharug-national-park",
+   "coordinates": {
+    "latitude": -33.3796685,
+    "longitude": 151.0646321
+   },
+   "coordinates_source": "OSM (Nominatim) leisure/nature_reserve",
+   "distance_from_sydney_km": 56.0,
+   "reason": "World Heritage convict-built road and national park on the Hawkesbury; named by Wikivoyage.",
+   "proposal": {
+    "name": "Dharug National Park",
+    "category": "park",
+    "note": "Destination centre = park pin; needs full destination entry, header (>=2000px), 3 why-visit photos per WRITING.md/IMAGES.md before adding."
+   },
+   "header_candidate": {
+    "file": "Mogo Creek.jpg",
+    "width": 4608,
+    "height": 2592
+   },
+   "score": {
+    "views": 943,
+    "counted_sources": 1
+   }
+  }
+ ],
+ "existing_fixes": [
+  {
+   "id": "sydney-2",
+   "field": "bio",
+   "new": "The \"Coathanger\", a steel arch with a free pedestrian walkway, a BridgeClimb over the top and a pylon lookout (the skeptic folded Pylon Lookout in here).",
+   "reason": "Pylon Lookout is a sub-part of the Harbour Bridge, not a separate spot."
+  },
+  {
+   "id": "sydney-3",
+   "field": "photo override (WIKI_IMAGE_OVERRIDES key \"Bondi Beach\")",
+   "new": "Sydney (AU), Bondi Beach -- 2019 -- 2354.jpg (6720x4480)",
+   "reason": "Existing Bondi from above.jpg is a drone-style aerial (fails check 4)."
+  },
+  {
+   "id": "sydney-1",
+   "field": "none",
+   "new": null,
+   "reason": "Existing Opera House kept; accepted photo Sydney Australia. (21339175489).jpg 3201x1965 (name \"Opera House\", wiki \"Sydney Opera House\" if the shown name changes)."
+  },
+  {
+   "id": "sydney",
+   "field": "defaultZoomSpanKm",
+   "new": 40,
+   "reason": "Keep 40: all placed Sydney spots are within 30 km; widening to hold Palm Beach/Royal NP would balloon it, so they go to proposed destinations."
+  }
+ ],
+ "held_no_photo": [
+  {
+   "name": "Paddy's Markets",
+   "coordinates": {
+    "latitude": -33.87968,
+    "longitude": 151.2033
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Sydney/City_South",
+   "reason": "Commons has only trams, the monorail stop and the Market City entrance. Openverse (flickr, 1024px, BY/BY-SA) has dim interior shots with crowds only; held for owner. No passing photo.",
+   "hours_note": "Wed-Sun 9-5 (skeptic, Wikivoyage)",
+   "proposed_destination": "sydney"
+  }
+ ],
+ "needs_external_photo": [
+  {
+   "name": "Manly to Spit Bridge Walk",
+   "id": "sydney-33",
+   "photo": {
+    "file": "external: Openverse \"The Manly To Spit Walk, Sydney\" by MD111 (flickr, CC BY-SA 2.0)",
+    "page": "https://commons.wikimedia.org/wiki/File:external%3A_Openverse_%22The_Manly_To_Spit_Walk,_Sydney%22_by_MD111_(flickr,_CC_BY-SA_2.0)",
+    "width": 1024,
+    "height": 768
+   },
+   "todo": "Download the Openverse flickr photo (MD111, CC BY-SA 2.0, 1024x768) to assets/photos/, commit, add externalPhotos.json entry pinned to the 40-char SHA; spot is otherwise fully placed as sydney spot."
+  }
+ ],
+ "notes": [
+  "Urban national parks inside the Sydney span (Sydney Harbour NP, Kamay Botany Bay NP, Garigal, Lane Cove, Berowra Valley) are placed as Sydney spots because a destination for each would overlap Sydney (COVERAGE no-overlap rule); owner may prefer to promote them (Sydney Harbour NP and Kamay each have 3+ sibling spots).",
+  "Heathcote and Dharawal National Parks are standalone: single kept places each, no sibling spots, outside Sydney span; promote if review spots (Bundeena, Georges River NP) are approved.",
+  "Dharug National Park proposal is thin (Wisemans Ferry, Cattai NP kept; Old Great North Road, Marramarra NP, Scheyville NP are in review).",
+  "Ku-ring-gai proposal also holds the Pittwater beaches (Palm Beach, Whale, Avalon, Bilgola) and Barrenjoey, which no other base fits; owner may split.",
+  "Ticket URLs left out (unverified or blocked): Queen Victoria Building (403), Luna Park (429), Chinese Garden (no load), Sea Life (no load), Hyde Park Barracks, Vaucluse House, Elizabeth Farm (mhnsw.au deep links 404), Fort Denison (NPWS 404), Great North Walk, Bare Island, Cape Solander. Hours/costs: none sourced numerically; hours are qualifiers, free:true only for open-access beaches, headlands, walks, streets and parks; paid-attraction prices omitted (not sourced).",
+  "Coordinates use candidate/OSM/Wikipedia points; several are suburb or park centroids (Watsons Bay, La Perouse, Chinatown, Cronulla, Great North Walk, Figure Eight Pool approximate): run scripts/audit-spot-coordinates.ts after adding.",
+  "Names: North Curl Curl Beach shown as \"Curl Curl Beach\" (South Curl Curl rejected as the same beach); wiki title unverified."
+ ]
+}

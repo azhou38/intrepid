@@ -1,0 +1,533 @@
+{
+ "region": "nsw-sydney",
+ "inside_destinations": {
+  "count": 73,
+  "detail": "70 new Sydney spots + existing sydney-1..3 (Paddy's Markets held for photo, not counted)"
+ },
+ "standalone": {
+  "count": 5,
+  "names": [
+   "Featherdale Wildlife Park",
+   "Australian Botanic Garden Mount Annan",
+   "NSW Rail Museum",
+   "Heathcote National Park",
+   "Dharawal National Park"
+  ]
+ },
+ "new_destinations": {
+  "count": 3,
+  "proposals": [
+   {
+    "id": "royal-national-park",
+    "name": "Royal National Park",
+    "spots": 3
+   },
+   {
+    "id": "ku-ring-gai-chase",
+    "name": "Ku-ring-gai Chase National Park",
+    "spots": 7
+   },
+   {
+    "id": "dharug-national-park",
+    "name": "Dharug National Park",
+    "spots": 2
+   }
+  ],
+  "spots_in_proposed": 12
+ },
+ "lowest_kept": [
+  {
+   "name": "Chowder Bay",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "Tamarama Beach",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Clovelly Beach",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "The Gap, Sydney",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Manly to Spit Bridge Walk",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Figure Eight Pool",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Coast Track",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Barrenjoey Lighthouse",
+   "views": 0,
+   "counted_sources": 1
+  }
+ ],
+ "lowest_kept_views": 0,
+ "stronger_left_out": [
+  {
+   "name": "Pylon Lookout",
+   "views": 220170,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Sub-part of the Harbour Bridge (sydney-2): the pylon lookout is an experience on the same structure; fold into its bio."
+  },
+  {
+   "name": "University Art Collection",
+   "views": 145230,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Closed to visitors or merged into another museum."
+  },
+  {
+   "name": "Sydney Cricket Ground",
+   "views": 90653,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Stadium, racecourse or sports venue only."
+  },
+  {
+   "name": "Port Jackson",
+   "views": 71885,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Minor roadside or infrastructure item with no distinct draw."
+  },
+  {
+   "name": "Oxford St Rock and Roll Walk of Fame",
+   "views": 53935,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Vague walking route or street, no distinct place."
+  },
+  {
+   "name": "CommBank Stadium",
+   "views": 52720,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Stadium, racecourse or sports venue only."
+  },
+  {
+   "name": "Central Station, Sydney",
+   "views": 44459,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Transport hub with no half-hour draw beyond its architecture."
+  },
+  {
+   "name": "St Mary's Cathedral",
+   "views": 40529,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Correction: WV mentions it only in transport notes, no counted listing found. Case for: major cathedral open daily. Against: church, no counted source."
+  },
+  {
+   "name": "Crown Sydney Sky Deck",
+   "views": 34150,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "One free 8am weekday tour for 10 people, tickets gone in minutes (WV): effectively no public access."
+  },
+  {
+   "name": "Sydney Cove",
+   "views": 27984,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Minor sub-part of The Rocks (kept)."
+  },
+  {
+   "name": "Campbelltown Heritage and Cultural Walk",
+   "views": 27325,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Vague walking route or street, no distinct place."
+  },
+  {
+   "name": "IMAX Sydney",
+   "views": 22296,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Cinema, theatre, music venue or similar venue only."
+  },
+  {
+   "name": "Disney Studios Australia",
+   "views": 21440,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Closed to visitors or merged into another museum."
+  },
+  {
+   "name": "The Star, Sydney",
+   "views": 17804,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Casino complex (rule 2)."
+  },
+  {
+   "name": "Hordern Pavilion",
+   "views": 17088,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Cinema, theatre, music venue or similar venue only."
+  },
+  {
+   "name": "Rose Seidler House",
+   "views": 16739,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Case for: Harry Seidler's modernist house, open for tours. Against: open Sundays only, one source."
+  },
+  {
+   "name": "State Library of New South Wales",
+   "views": 16013,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Library or civic building seen from outside (rule 2)."
+  },
+  {
+   "name": "Powerhouse Museum",
+   "views": 15871,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Closed to visitors (refurbishment since Feb 2024)."
+  },
+  {
+   "name": "Victoria Barracks, Sydney",
+   "views": 15719,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Exterior-only heritage building, church or place of worship."
+  },
+  {
+   "name": "Mosman Harbourside Walks",
+   "views": 14919,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Vague walking route or street, no distinct place."
+  },
+  {
+   "name": "Trim the Cat Statue",
+   "views": 14398,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Minor memorial, statue or plaque (rule 3)."
+  },
+  {
+   "name": "Moore Park",
+   "views": 13976,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Small local park or garden, not a tourist stop."
+  },
+  {
+   "name": "Government House, Sydney",
+   "views": 13867,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Case for: Government House and gardens open to public, Wikivoyage lists. Against: house open limited days, one source."
+  },
+  {
+   "name": "Garden Palace",
+   "views": 13198,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Closed to visitors or merged into another museum."
+  },
+  {
+   "name": "The Domain",
+   "views": 13168,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Near-duplicate or part of a kept spot: The Domain is covered by Royal Botanic Garden and Mrs Macquarie's Chair."
+  },
+  {
+   "name": "Carols in the Domain",
+   "views": 12939,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Not a permanent spot: festival or event."
+  },
+  {
+   "name": "Anzac Bridge",
+   "views": 12774,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Minor roadside or infrastructure item with no distinct draw."
+  },
+  {
+   "name": "Hyde Park",
+   "views": 12255,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Case for: central park with the Archibald Fountain and Anzac Memorial. Against: ordinary city park, one source."
+  },
+  {
+   "name": "Sydney Zoo",
+   "views": 11674,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "No visitor-oriented source found by me; large zoo at Eastern Creek. Keep in review."
+  },
+  {
+   "name": "Dangar Island",
+   "views": 11353,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Residential island, Wikipedia-only."
+  },
+  {
+   "name": "Historic Waverley Cemetery",
+   "views": 9640,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Case for: clifftop cemetery with Burley Griffin mausoleum and coastal views on the Bondi walk. Against: cemetery, one source."
+  },
+  {
+   "name": "Bundeena",
+   "views": 9352,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Gateway ferry village (Pipiriki benchmark): NPWS lists Bundeena walks, WV only the ferry. Review."
+  },
+  {
+   "name": "International College of Management, Manly",
+   "views": 9210,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Exterior-only heritage building, church or place of worship."
+  },
+  {
+   "name": "Enmore Theatre",
+   "views": 9203,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Cinema, theatre, music venue or similar venue only."
+  },
+  {
+   "name": "Darling Harbour Carousel",
+   "views": 8837,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Part of a larger kept spot (Darling Harbour)."
+  },
+  {
+   "name": "Spectacle Island (Port Jackson)",
+   "views": 8814,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Restricted harbour island, no public access."
+  },
+  {
+   "name": "Pyrmont Bridge",
+   "views": 8463,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Part of a larger kept spot (Darling Harbour)."
+  },
+  {
+   "name": "Harris Park Heritage Walk",
+   "views": 8435,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Case for: heritage walk linking Elizabeth Farm and Experiment Farm. Against: one source, sights already covered."
+  },
+  {
+   "name": "North Sydney Olympic Pool",
+   "views": 8156,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Case for: iconic 1936 harbour pool under the Bridge. Against: working public pool, one source."
+  },
+  {
+   "name": "Garden Island",
+   "views": 7160,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Naval base, restricted access."
+  },
+  {
+   "name": "Goat Island",
+   "views": 7080,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Case for: convict-era island with NPWS tours. Against: Wikivoyage says closed, access via tours only."
+  },
+  {
+   "name": "Darlinghurst Gaol",
+   "views": 6858,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Exterior-only heritage building, church or place of worship."
+  },
+  {
+   "name": "Sydney Showground",
+   "views": 6631,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Stadium, racecourse or sports venue only."
+  },
+  {
+   "name": "Rushcutters Bay Park",
+   "views": 6547,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Small local park or garden, not a tourist stop."
+  },
+  {
+   "name": "Museum of Sydney",
+   "views": 6530,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Case for: history museum on the First Government House site. Against: one source, mid-size museum."
+  },
+  {
+   "name": "Cronulla State Park",
+   "views": 6415,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small local park or garden, not a tourist stop."
+  },
+  {
+   "name": "El Caballo Blanco",
+   "views": 6051,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Minor roadside or infrastructure item with no distinct draw."
+  },
+  {
+   "name": "Customs House, Sydney",
+   "views": 5991,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Library or civic building seen from outside (rule 2)."
+  },
+  {
+   "name": "Boothtown Aqueduct",
+   "views": 5827,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Minor roadside or infrastructure item with no distinct draw."
+  },
+  {
+   "name": "Lavender Bay Circuit Walk",
+   "views": 5641,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Case for: Lavender Bay circuit walk, Wikivoyage lists. Against: short stroll duplicating the Secret Garden and the harbour foreshore."
+  },
+  {
+   "name": "Coca-Cola Billboard",
+   "views": 5559,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Minor roadside or infrastructure item with no distinct draw."
+  },
+  {
+   "name": "El Alamein Fountain",
+   "views": 5275,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Minor memorial, statue or plaque (rule 3)."
+  },
+  {
+   "name": "National Art School Gallery",
+   "views": 5078,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Case for: gallery in the Darlinghurst Gaol precinct. Against: one source, small."
+  },
+  {
+   "name": "The Strand Arcade",
+   "views": 5067,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Shopping arcade, 20-minute browse; only a shopping mention in LP."
+  }
+ ],
+ "stronger_left_out_note": "Threshold: every non-kept candidate with 5,000+ English Wikipedia views (lowest kept score is 0 views, so all 1+ view candidates are technically stronger; the rest are small local parks/venues/memorials recorded with reasons in verdicts.json and skeptic.json). Each has a concrete What-qualifies reason.",
+ "strongest_outsiders": [
+  {
+   "name": "Palm Beach, New South Wales",
+   "action": "spot-of-proposed-destination",
+   "views": 28470,
+   "counted_sources": 1,
+   "distance_km": 31.7
+  },
+  {
+   "name": "Royal National Park",
+   "action": "new-destination",
+   "views": 14486,
+   "counted_sources": 2,
+   "distance_km": 30.8
+  },
+  {
+   "name": "Ku-ring-gai Chase National Park",
+   "action": "new-destination",
+   "views": 12309,
+   "counted_sources": 2,
+   "distance_km": 26.8
+  },
+  {
+   "name": "Featherdale Wildlife Park",
+   "action": "standalone",
+   "views": 5968,
+   "counted_sources": 1,
+   "distance_km": 32.1
+  },
+  {
+   "name": "Whale Beach",
+   "action": "spot-of-proposed-destination",
+   "views": 5841,
+   "counted_sources": 1,
+   "distance_km": 30.5
+  },
+  {
+   "name": "NSW Rail Museum",
+   "action": "standalone",
+   "views": 5240,
+   "counted_sources": 1,
+   "distance_km": 70.0
+  },
+  {
+   "name": "Wedding Cake Rock",
+   "action": "spot-of-proposed-destination",
+   "views": 4591,
+   "counted_sources": 1,
+   "distance_km": 27.3
+  },
+  {
+   "name": "Bilgola Beach",
+   "action": "spot-of-proposed-destination",
+   "views": 4238,
+   "counted_sources": 1,
+   "distance_km": 26.8
+  }
+ ],
+ "benchmark": {
+  "applicable": "Sydney region has no NZ benchmark places; analogues checked",
+  "results": {
+   "Weekly/weekend markets rejected (Nelson Market analogue)": "Glebe, Rozelle, Brewery Yard markets rejected",
+   "Civic buildings/churches rejected (Tūranga analogue)": "State Library, Customs House, Parramatta Town Hall, churches rejected",
+   "Minor memorials rejected (Bridge of Remembrance analogue)": "Trim the Cat, El Alamein Fountain, Bass and Flinders Memorial rejected",
+   "Operator in place of place (TSS Earnslaw analogue)": "BridgeClimb rejected; Pylon Lookout folded into sydney-2",
+   "Gateway village whose draw is beyond it (Pipiriki analogue)": "Bundeena sent to review, not kept",
+   "Long feature not under the neighbour (Ninety Mile Beach analogue)": "Great North Walk and Coast Track placed at their Sydney/Bundeena access points; Bondi to Coogee Walk at Notts Ave",
+   "Strong places present": "Opera House, Harbour Bridge, Bondi, Manly, Taronga, Royal NP, Ku-ring-gai Chase all kept"
+  },
+  "passed": true
+ }
+}

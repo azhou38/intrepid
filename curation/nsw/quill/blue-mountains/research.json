@@ -1,0 +1,100 @@
+{
+  "destination": "blue-mountains",
+  "name": "Blue Mountains National Park",
+  "step": "Quill step 1 research (facts only, no copy)",
+  "fetched": "2026-10-17",
+  "what_it_is": {
+    "fact": "World Heritage-listed national park (2,679.54 km2, managed by NSW National Parks and Wildlife Service) on Sydney's doorstep; nearest city Katoomba. It is the most central of eight protected areas in the UNESCO Greater Blue Mountains Area (inscribed 2000). Katoomba is about 103 km / ~1h50 by road west of Sydney. Visitor district centres on Katoomba, with Echo Point, Scenic World, Wentworth Falls and Leura within a few km; Blackheath and Mount Victoria are ~15 min drive away. Over 140 km of tracks and trails.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Blue_Mountains_National_Park",
+      "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/blue-mountains-national-park",
+      "https://en.wikivoyage.org/wiki/Blue_Mountains"
+    ],
+    "extra": "Wikipedia gives 8,438,671 visits (2018 figure in infobox); Secret Sydney (Apr 2026) says it sees more foot traffic than any of the state's 200-plus parks. Wikivoyage warns not to type 'Blue Mountains' into a GPS: it routes to the park centroid on unpaved roads; use 'Echo Point, Katoomba'."
+  },
+  "proposed_fields": {
+    "id": "blue-mountains",
+    "country": "Australia", "countryCode": "AU", "continent": "Oceania", "timezone": "Australia/Sydney",
+    "category": "park",
+    "rank": 2,
+    "rank_reason": "COVERAGE.md table: 'country highlight a guidebook gives top billing' (Christchurch/Abel Tasman tier). NPWS and Wikivoyage lead with it; most-visited NSW park; Sydney's headline day trip. Not rank 1 (not on most whole-country itineraries like Uluru/Great Barrier Reef). Judgement call.",
+    "icon": "🏔️",
+    "coordinates": {"latitude": -33.63059, "longitude": 150.30665, "note": "placement.json hub (between Blackheath -33.631,150.291 and the Grose rim). Katoomba town centre is -33.712,150.312 (Wikivoyage); either is a visitor hub. Placement centre is closer to the middle of the spot set; keep it. Do NOT use Wikipedia's park centroid -33.62,150.46."},
+    "coordinates_sources": ["curation/nsw/region-nsw-blue-mountains-central-west/placement.json (skeptic correction)", "https://en.wikivoyage.org/wiki/Katoomba", "https://en.wikivoyage.org/wiki/Blackheath"],
+    "defaultZoomSpanKm": 50,
+    "span_check": "Placement proposed 60. Computed distances from centre (-33.63059,150.30665) to placed spots: Norman Lindsay Gallery (-33.6793,150.5612) ~24 km (furthest); Mount Solitary ~17 km; Blue Mountains Botanic Garden ~15 km; Wentworth Falls ~13 km; Ruined Castle ~16 km; Mount Victoria ~7 km; Katoomba/Echo Point/Scenic World ~10-12 km; all others <15 km. 75% of 50 km = 37.5 km, so 50 contains all with margin (60 also works, 45 km). Recommend 50; 60 acceptable. (Computed by me, equirectangular approximation.)"
+  },
+  "category_note": "park: national park; header must be a wide landscape (IMAGES.md). Placement candidate header: Commons 'Blue Mountains National Park (AU), Jamison Valley -- 2019 -- 1900.jpg' (6720x4480) - not verified by me.",
+  "whyVisit_candidates": [
+    {
+      "reason": "Echo Point and the Three Sisters over the Jamison Valley",
+      "facts": "Echo Point is the most popular attraction near Katoomba, a major lookout over the Jamison Valley and the Three Sisters; the park is 'renowned for the Three Sisters rock formation'. Parking at Echo Point is paid (about $8/hour per Wikivoyage); Wikivoyage suggests parking free at Scenic World and walking.",
+      "photo_hint": "Placement accepted Commons 'Australia new Katoomba the three sisters.jpg' (sunrise, Echo Point) for the Echo Point spot; why-visit photo must differ from the header and the spot photo.",
+      "sources": ["https://en.wikivoyage.org/wiki/Blue_Mountains", "https://en.wikipedia.org/wiki/Blue_Mountains_National_Park", "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/blue-mountains-national-park"]
+    },
+    {
+      "reason": "Ride the Scenic Railway and Skyway at Scenic World",
+      "facts": "Scenic World (Katoomba) markets the Scenic Railway as the world's steepest passenger railway, a 52 degree incline into the rainforest; also Scenic Skyway over the Jamison Valley, Scenic Cableway and Scenic Walkway. Hours on its site: 9 AM - 5 PM. Ticket prices seen on its homepage: $64 and $120 (which products these map to NOT verified; check the tickets page before using). 'World's steepest' is the operator's own claim: attribute or soften.",
+      "photo_hint": "Placement accepted Commons 'Katoomba (AU), Scenic World, Scenic Skyway -- 2019 -- 1872.jpg' for the Scenic World spot (so use a different file here, e.g. the railway).",
+      "sources": ["https://www.scenicworld.com.au/"]
+    },
+    {
+      "reason": "Walk the cliff-edge tracks and waterfalls (Wentworth Falls, Grand Canyon, Giant Stairway)",
+      "facts": "NPWS: 140 km of tracks; Wentworth Falls has lookouts, walks and waterfalls; the Grand Canyon descends into a canyon; Grand Cliff Top Walk is 19 km Wentworth Falls to Leura to Katoomba over 2 days. Wikivoyage: Giant Stairway descends beside the Three Sisters; valley floor walk ~2 km to Scenic World, then back up on the Scenic Railway (loop via Prince Henry Cliff Walk). Caution: several of these are currently closed (see tips); the Giant Stairway/Echo Point loop and Grand Canyon from Evans Lookout are not listed as closed in the NPWS alert text I read, but confirm on the alerts page before writing a specific walk into copy.",
+      "photo_hint": "Wentworth Falls or Grand Canyon (rainforest canyon); distinct from Echo Point photo.",
+      "sources": ["https://www.nationalparks.nsw.gov.au/visit-a-park/parks/blue-mountains-national-park", "https://en.wikivoyage.org/wiki/Blue_Mountains"]
+    }
+  ],
+  "whyVisit_alternates": "Govetts Leap / Grose Valley wilderness cliffs at Blackheath (NPWS: 'sweeping views of sheer sandstone cliffs and hazy blue Grose Valley declared wilderness area from Govetts Leap'; Wikivoyage: 'fantastic views over the Grose Valley'). Use if the walks reason is too tied to closed tracks. NOTE: Govetts descent is currently closed (valley access from Blackheath via Horse Track), but the lookout itself is not listed as closed.",
+  "goodToKnow_candidates": [
+    {
+      "tip": "Track and area closures are common and some are long-term: Jenolan Karst Conservation Reserve (incl. Caves Visitor Precinct) and the Six Foot Track boundary are closed until 31 Dec 2026; part of National Pass (west of Wentworth Falls middle crossing) is closed after a major landslide with no reopening date; Honeymoon Bridge, Lindeman Pass (part), Roberts Pass, Wentworth Pass, Slack Stairs, Valley of the Waters below Sylvia Falls and Govetts descent are closed; Lower Fern Bower track closed until 30 Oct 2026; Mt Hay Road and its tracks closed 9 June - 17 Dec 2026. Check NPWS alerts before setting out.",
+      "note": "Closure dates are as of 16 Oct 2026 and change; copy should say 'check the NPWS alerts page' rather than hard-code dates that will go stale. Do not list Jenolan as a reason to visit. Also: Wikivoyage's own 'National Pass closed due to rockfall' matches the NPWS partial closure; the full loop is not walkable.",
+      "sources": ["https://www.nationalparks.nsw.gov.au/visit-a-park/parks/blue-mountains-national-park/local-alerts", "https://en.wikivoyage.org/wiki/Blue_Mountains"]
+    },
+    {
+      "tip": "Trains from Sydney Central run roughly hourly (half-hourly in peak) to the mountains, no seat reservations, and take about 2 hours to Leura/Katoomba; most towns are linked by rail but Wentworth Falls, Leura Cascades, Govetts Leap and others need a bus, taxi or car. Local bus 686 links Katoomba station, Echo Point and Scenic World every 30 minutes and takes Opal; Opal daily cap means local buses may cost nothing extra on a day trip from Sydney.",
+      "unverified": "Exact current train time and Opal cap were NOT checked on transport.nsw.gov.au (the page fetched was a generic homepage). Wikivoyage Leura says 'about a 2-hour train trip, depending on delays' and Katoomba 'usually hourly' (Wikivoyage text dated 2026 for fares). Verify on transport.nsw.gov.au before shipping a number.",
+      "sources": ["https://en.wikivoyage.org/wiki/Blue_Mountains", "https://en.wikivoyage.org/wiki/Leura", "https://en.wikivoyage.org/wiki/Katoomba"]
+    },
+    {
+      "tip": "Check the weather before choosing the day: the mountains can be up to 10 C colder than the coast, and on cold rainy winter days fog can hide the views all day (Wikipedia's Echo Point caption notes fog over the Jamison Valley is a common feature). Also, GPS: search 'Echo Point, Katoomba' not 'Blue Mountains'.",
+      "sources": ["https://en.wikivoyage.org/wiki/Blue_Mountains", "https://en.wikipedia.org/wiki/Blue_Mountains_National_Park"]
+    }
+  ],
+  "goodToKnow_other_options": [
+    "Carry supplies and tell someone your route: some cliff walks have no mobile coverage and people have died after losing the trail; free personal locator beacons from Katoomba Police for remote walks (Wikivoyage Blue Mountains, Stay safe).",
+    "Fire bans: NPWS page shows 'Fire bans' among the park's alerts (Oct 2026); bushfire danger in summer is a real recurring pattern but I did not find a sourced description beyond the alert header."
+  ],
+  "seasons": {
+    "bestMonths_proposed": [3, 4, 5],
+    "bestMonths_note": "Only autumn (Mar-May) is supported by sources I read. Secret Sydney (20 Apr 2026): autumn brings cooler weather, quieter trails and changing colour. The search summary cited a guide putting peak foliage late April to mid-May, and Mount Wilson/Blackheath/Leura estates for colour, but I did not load that page (Traveller article would not yield text; championtraveler.com not fetched). Wikivoyage Blue Mountains: Mount Wilson (private botanic gardens known for autumn colours) and Oberon known for autumn colours. Spring (Sep-Nov) is plausible but unsourced here: UNVERIFIED, so left out of bestMonths_proposed; owner may add [9,10,11].",
+    "bestTimeBlurb_source": "https://secretsydney.com/blue-mountains-national-park-autumn/ and https://en.wikivoyage.org/wiki/Blue_Mountains (climate). Draft basis only: autumn ({months}) for cooler walking weather and colour in the Mount Wilson, Leura and Blackheath area; winter is cold with fog and snow only once or twice every year or two (Wikivoyage: 'one or two days of snow every one or two years'); summer weekends fill car parks at Wentworth Falls (Wikivoyage).",
+    "seasonalTags": "Yulefest (Christmas-in-July) is a real annual pattern: Secret Sydney says it is held throughout July 2026 across Katoomba, Leura, Blackheath, Mount Victoria with festive menus at hotels and restaurants. Another listing gave July/August (unverified, from a search snippet). Suggest a seasonalTag for July only if the owner wants it; per COVERAGE.md it is an event, so mention in best-time text rather than as a spot. Source: https://secretsydney.com/blue-mountains-yulefest-2026/",
+    "hemisphere": "Southern: summer Dec-Feb, autumn Mar-May, winter Jun-Aug, spring Sep-Nov."
+  },
+  "official_site": {
+    "ticketUrl_for_destination": "not applicable (destinations have no ticketUrl)",
+    "park_page": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/blue-mountains-national-park",
+    "park_page_verified": "Loaded; title 'Blue Mountains National Park | NSW National Parks'; it names the park and the Three Sisters. Wikipedia's infobox website field is an older nationalparks.nsw.gov.au path for the same park.",
+    "alerts_page": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/blue-mountains-national-park/local-alerts",
+    "scenic_world_site": "https://www.scenicworld.com.au/ (title 'Scenic World | Blue Mountains Attractions, Katoomba'; names the place; for the Scenic World spot, not this destination)"
+  },
+  "spot_flags_noticed_while_researching": [
+    "Govett's Leap spot: Govetts descent currently closed; bio should not promise a walk down. Lookout itself not listed closed.",
+    "Wentworth Falls spot: Wikivoyage's National Pass closure and the NPWS 'part closed' alert mean a bio mentioning the National Pass walk must say it is partly closed.",
+    "Leura Cascades spot (bio mentions Fern Bower track and Wedding Veil Falls): Lower Fern Bower track closed until 30 Oct 2026 per NPWS.",
+    "Ruined Castle and Giant Stairway: not checked for closures beyond the park alerts text above (Honeymoon Bridge on the Three Sisters Track/Giant Stairs side route is closed).",
+    "Echo Point: Wikivoyage also says to expect paid parking there (about $8/hour)."
+  ],
+  "unverified": [
+    "Scenic World ticket prices ($64, $120) and which product each is; hours '9 AM - 5 PM' read from site header text, with no seasonal variation checked.",
+    "Train journey time and frequency from the operator (transport.nsw.gov.au); figures are Wikivoyage's. Opal cap claim is Wikivoyage's.",
+    "Spring as a good season; peak autumn colour dates (late Apr - mid May) came from a search summary of a third-party guide, not a page I loaded.",
+    "Yulefest dates: July 2026 per Secret Sydney; a second source said July/August.",
+    "Echo Point parking price ($8/hour) is Wikivoyage's, undated.",
+    "Jenolan reopening: NPWS says closed to 31 Dec 2026; I did not load the Jenolan Caves operator site (fetch hung), so the operator's own status is unchecked.",
+    "Visitor figure 8.4 million is Wikipedia's 2018 infobox number; Wikipedia body also gives 5.2 million in 2016: conflicting, so avoid a visitor number in copy.",
+    "Photo candidates are from placement.json, not re-checked by me."
+  ]
+}

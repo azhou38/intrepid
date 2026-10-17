@@ -1,0 +1,129 @@
+{
+  "destination": "blue-mountains",
+  "step": "Quill step 3 fact-check",
+  "checked": "2026-10-17",
+  "summary": "Numbers, World Heritage claim and ticketUrls hold. Two of the lead's flags turned out differently: Scenic World hours in placement.json are CORRECT (operator weekly schedule is Mon-Fri 10-4, Sat-Sun 9-5; the 9-5 seen earlier is the Saturday header), and both 'largest town' (Wikivoyage Katoomba) and '6.3 km' (NPWS) are sourced. Real fixes: Scenic World free:true and cost; Grand Canyon Track start point; Echo Point parking figure; Leura 'colour' and 'short walk' claims.",
+  "numbers": [
+    { "item": "2,680 km2", "status": "ok", "evidence": "Wikipedia infobox area 2,679.54 km2 (NSW OEH ref); rounds to 2,680." },
+    { "item": "More than/over 140 km of tracks", "status": "ok", "evidence": "NPWS park page: 'over 140km of tracks and trails'." },
+    { "item": "103 km from Sydney", "status": "ok", "evidence": "Wikivoyage Blue Mountains: 'Sydney to Katoomba is 103 km' (road, ~1h50). Keep 'west of Sydney' as road distance to Katoomba; Wikivoyage Katoomba says 'around 100 km'." },
+    { "item": "Train about two hours", "status": "ok", "evidence": "Wikivoyage Katoomba: hourly from Central 'taking about 2 hr'; Leura: 'about a 2-hour train trip, depending on delays'. Not checked on transport.nsw.gov.au (stays Wikivoyage-sourced). Description variant 3 'each way' is unsourced by Wikivoyage; use variants 1 or 2 wording or drop 'each way'." },
+    { "item": "World Heritage / inscribed 2000 / most central of eight protected areas", "status": "ok", "evidence": "Wikipedia: one of eight protected areas inscribed in 2000 as the Greater Blue Mountains Area, 'most central of the eight'. NPWS: 'World Heritage-listed Blue Mountains National Park'." },
+    { "item": "Hourly Sydney trains, no reservations", "status": "ok", "evidence": "Wikivoyage Blue Mountains: every hour (half hour in peak), no seating reservations." },
+    { "item": "Grand Cliff Top Walk 19 km Wentworth Falls to Leura to Katoomba", "status": "ok", "evidence": "NPWS: 'hiking 19km from Wentworth Falls to Leura, then on to Katoomba over 2 days'." },
+    { "item": "Scenic Railway 52 degrees", "status": "ok", "evidence": "scenicworld.com.au: '52 degree incline'; Wikivoyage Katoomba agrees (128% gradient). 'World's steepest' is the operator's claim on its site (Wikipedia also repeats it); keep it attributed." },
+    { "item": "Blackheath/Mount Victoria about 15 minutes' drive", "status": "ok", "evidence": "Wikivoyage Blue Mountains: 'only around 15 minutes drive from Katoomba'. Say from Katoomba, not just 'north'." },
+    { "item": "Echo Point parking about $8/hour", "status": "fix", "fix": "Cut the dollar figure. Wikivoyage Blue Mountains says $8/hr; Wikivoyage Katoomba says $5/hr (updated 2015). Conflicting and undated. Write 'parking at Echo Point is paid and limited; parking at Scenic World is free and an easy walk away'." }
+  ],
+  "tagline": {
+    "preferred": 1,
+    "items": [
+      { "variant": 1, "status": "ok", "text": "World Heritage sandstone cliffs, waterfalls and the Three Sisters, a train ride west of Sydney." },
+      { "variant": 2, "status": "ok", "text": "Cliff-edge lookouts and more than 140 km of tracks above the Jamison and Grose valleys." },
+      { "variant": 3, "status": "cut", "fix": "'Sydney's nearest wilderness' is not proven by any source (NPWS says 'right on Sydney's doorstep'). Do not use." }
+    ]
+  },
+  "description": {
+    "preferred": 2,
+    "items": [
+      { "variant": 1, "status": "fix", "fix": "Says 'Most visitors base themselves in Katoomba' (Wikivoyage: 'main base for travellers', ok) and Scenic World 'railway and cable rides' (ok). 'Track alerts' ok. Acceptable as is." },
+      { "variant": 2, "status": "fix", "text": "Set 103 km west of Sydney, this national park is a plateau of sandstone cliffs and forested valleys, part of the Greater Blue Mountains Area that UNESCO inscribed in 2000. The Three Sisters at Echo Point in Katoomba are the best-known sight, and the nearby towns of Leura, Wentworth Falls, Blackheath and Mount Victoria give access to waterfalls, the Grose Valley lookouts and over 140 km of walking tracks. Visitors arrive by road or by train from Sydney Central, which takes about two hours. Track closures are common, so the NPWS alerts page is worth reading first.", "fix": "Only change: cut 'after landslides and storms' (only a landslide at National Pass is sourced; 'storms' is not) and say 'Track closures are common'. 'Katoomba, 103 km' is the road distance to Katoomba, not to the park centre; fine as 'the park is 103 km west' only loosely, so prefer 'Katoomba, the park's main base, is 103 km west of Sydney' if a tighter wording is wanted. Everything else ok." },
+      { "variant": 3, "status": "fix", "fix": "Drop 'each way' (not in Wikivoyage; only a visitor review on the operator's site). 'Grose Valley, a declared wilderness area' ok (NPWS). 'declared' fine. 'The district is a day trip from Sydney' ok (NPWS: 'popular day trip from Sydney')." }
+    ]
+  },
+  "whyVisit": {
+    "preferred": 1,
+    "items": [
+      { "variant": 1, "status": "ok", "note": "Attributed 'markets its Scenic Railway as the world's steepest'. Reason 1 'Katoomba's main lookout' is supported (Wikipedia/Wikivoyage: most popular near Katoomba). Reason 3 ok." },
+      { "variant": 2, "status": "fix", "fix": "'52 degrees down by the operator's account' reads oddly; the 52-degree figure is also stated by Wikivoyage, so drop 'by the operator's account'. '140 km' ok." },
+      { "variant": 3, "status": "ok", "note": "No claims beyond sourced ones." }
+    ]
+  },
+  "highlights": { "status": "ok", "note": "No factual claims. Variant 1 preferred." },
+  "goodToKnow": {
+    "preferred": 1,
+    "items": [
+      { "tip": "closures (v1 tip 1)", "status": "ok", "evidence": "NPWS local alerts 16-17 Oct 2026: part of National Pass (west of Wentworth Falls middle crossing) closed after landslide; Govetts descent closed; many other tracks closed. No dates written." },
+      { "tip": "trains and bus 686 (v1 tip 2)", "status": "ok", "evidence": "Wikivoyage Blue Mountains/Katoomba/Leura: Central to Katoomba/Leura about 2 h, no reservations; bus 686 Katoomba station - Echo Point - Scenic World; Wentworth Falls and Leura Cascades need taxi/bus/car (Govetts Leap: Wikivoyage Blue Mountains lists Wentworth Falls and Leura Cascades only; Govetts Leap being car/bus-only is inferred, being at Blackheath 2 km from the station). Fix: either cut 'Govetts Leap' from that list or keep as an inference; safest is 'Wentworth Falls and Leura Cascades'." },
+      { "tip": "cold, fog, GPS (v1 tip 3)", "status": "ok", "evidence": "Wikivoyage Blue Mountains: up to 10 C colder than the coast; GPS 'Blue Mountains' routes to unsealed roads; Echo Point caption notes fog." },
+      { "tip": "v2 tip 3 Echo Point parking about $8/hour", "status": "fix", "fix": "See numbers: conflicting $8 vs $5, undated. Cut the figure. 'Free at Scenic World' is Wikivoyage's suggestion ('large free multi-storey car parks') and is ok; reviews on the operator site also say free on-site parking." },
+      { "tip": "v2 tip 1 Lower Fern Bower", "status": "cut", "fix": "Lower Fern Bower closure ends 30 Oct 2026; use variant 1 tip 1." }
+    ]
+  },
+  "bestTimeBlurb": {
+    "preferred": 2,
+    "items": [
+      { "variant": 1, "status": "fix", "fix": "Secret Sydney names Mount Wilson and Blackheath for autumn colour (peak foliage April to early May), not Leura. Replace 'Mount Wilson, Leura and Blackheath' with 'Mount Wilson and Blackheath'. Note: Secret Sydney (20 Apr 2026) says Mount Wilson Road was closed to general traffic until further notice; the NPWS alerts list Mt Hay Road closure, not Mount Wilson, so avoid promising Mount Wilson access. 'Summer weekends fill the Wentworth Falls car parks' ok (Wikivoyage)." },
+      { "variant": 2, "status": "fix", "text": "Come in {months}, when the days are cool enough for the cliff walks and the autumn colour is out at Mount Wilson and Blackheath.", "fix": "Cut 'Leura gardens' (unsourced); Mount Wilson per above. 'Cool enough for cliff walks' ok (Secret Sydney: crisp air suits challenging tracks)." },
+      { "variant": 3, "status": "ok", "note": "Snow 'one or two days every one or two years' is Wikivoyage's wording; ok. Fog in winter ok." }
+    ],
+    "bestMonths": { "status": "ok", "value": [3, 4, 5], "evidence": "Secret Sydney: 'Best time to visit: March to May'." }
+  },
+  "spot_bios": [
+    {
+      "id": "blue-mountains-4", "name": "Govett's Leap", "preferred_variant": 2, "status": "ok",
+      "text": "A cliff-top lookout at Blackheath with sweeping views of the Grose Valley wilderness.",
+      "evidence": "NPWS: 'sweeping views of sheer sandstone cliffs and hazy blue Grose Valley declared wilderness area from Govetts Leap, in Blackheath'. NPWS alerts list Govetts descent closed and the lookout not closed. Note NPWS spells it 'Govetts Leap'; the app name 'Govett's Leap' matches Wikipedia, so leave it."
+    },
+    {
+      "id": "blue-mountains-3", "name": "Wentworth Falls", "preferred_variant": 2, "status": "ok",
+      "text": "Waterfalls and clifftop lookouts above the valley at Wentworth Falls, the start of the Grand Cliff Top Walk to Leura and Katoomba.",
+      "evidence": "NPWS: Wentworth Falls 'lookouts, walks and waterfalls'; Grand Cliff Top Walk 19 km from Wentworth Falls to Leura to Katoomba. Original 'largest waterfall in the park' is unsourced, cut as the writer proposed."
+    },
+    {
+      "id": "blue-mountains-6", "name": "Leura Cascades", "status": "fix",
+      "text": "A fern-gully waterfall walk at Leura Cascades, with the Fern Bower circuit partly closed, so check the NPWS alerts.",
+      "fix": "Variant 2's 'reached on a short walk from the rim' is not in any source; cut it. 'Cascades in a fern gully' is only supported loosely (NPWS alerts name 'Leura Cascades Fern Bower circuit'; fern gully is not stated on a page I loaded). Safest sourced wording: 'Waterfalls on the Leura Cascades Fern Bower circuit near Leura; part of the circuit is closed for repairs, so check the NPWS alerts.' The closure ends 30 Oct 2026; after that drop the closure clause: 'Waterfalls on the Leura Cascades and Fern Bower circuit near Leura.' Wedding Veil Falls: unsourced, cut."
+    },
+    {
+      "id": "blue-mountains-2", "name": "Scenic World", "preferred_variant": 3, "status": "ok",
+      "text": "A Katoomba cliff-and-valley attraction with the Scenic Railway, Skyway, Cableway and rainforest Walkway.",
+      "evidence": "scenicworld.com.au lists Railway (52 degree incline), Skyway, Cableway, Walkway. If the 'world's steepest' phrasing is used (variants 1/2) it must stay attributed to the operator; variant 3 avoids it."
+    },
+    {
+      "id": "blue-mountains-5", "name": "Katoomba", "status": "ok",
+      "text": "The largest Blue Mountains town and the gateway to Echo Point and Scenic World.",
+      "evidence": "Wikivoyage Katoomba: 'the largest and best-known town in the Blue Mountains... main gateway to the two most popular tourist spots at Echo Point and Scenic World'. Keep as is."
+    },
+    {
+      "id": "blue-mountains-11", "name": "Grand Canyon Track", "status": "fix",
+      "text": "A 6.3 km loop from the Grand Canyon car park near Blackheath that descends through rainforest along Greaves Creek and climbs out at Evans Lookout.",
+      "fix": "6.3 km loop is sourced (NPWS Grand Canyon track page: Distance 6.3km loop, Grade 3). But the bio says 'from Evans Lookout' and NPWS says walkers 'set out from Grand Canyon carpark' and 'ascend at Evans lookout'. Also 'banksia scrub' is NPWS 'banksia and mountain devil' (ok), 'through rainforest' ok. Not listed closed in the alerts text (the alerts page only lists 'Grand Canyon track' among place filters, not as a closure). Note Evans Lookout spot bio 'also the start of the Grand Canyon walk' is similarly backwards; use 'where the Grand Canyon walk climbs out'."
+    },
+    {
+      "id": "blue-mountains-12", "name": "Evans Lookout", "status": "fix",
+      "text": "A Grose Valley lookout above Blackheath, where the Grand Canyon walk climbs out.",
+      "fix": "NPWS describes Evans Lookout as an accessible spot with iconic views and 'the starting point for several walks', and the Grand Canyon loop as setting out from the Grand Canyon car park and ascending at Evans lookout. 'The start of the Grand Canyon walk' is therefore not right."
+    }
+  ],
+  "spot_fields": {
+    "blue-mountains-2": {
+      "name": "Scenic World",
+      "free": false,
+      "costMin": 64,
+      "costMax": 70,
+      "currency": "AUD",
+      "hours": "10:00 AM – 4:00 PM (Sat–Sun 9:00 AM – 5:00 PM)",
+      "hours_status": "ok as in placement.json",
+      "evidence": "scenicworld.com.au and /tickets show the weekly schedule Mon-Fri 10 AM-4 PM, Sat-Sun 9 AM-5 PM (the 'Opening Hours: 9 AM - 5 PM' header text at the top of the page is a Saturday, 17 Oct 2026). Wikivoyage Katoomba agrees. Do NOT change hours to 9-5 daily. Cost: homepage 'Day Pass, Adults from $64'; Wikivoyage Katoomba: $64 on weekdays, $70 on weekends and school holidays (updated May 2026). The $120 on the homepage is the Annual Pass, not a day ticket; the day ticket price covers Railway, Skyway and Cableway ('one ticket for all three' per reviewer). costMax 70 is from Wikivoyage, not the operator; the operator confirms only 'from $64'. Unverified: Unlimited Discovery pass price.",
+      "ticketUrl": "https://www.scenicworld.com.au/",
+      "ticketUrl_status": "ok (HTTP 200, title 'Scenic World | Blue Mountains Attractions, Katoomba')"
+    },
+    "blue-mountains-11": {
+      "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/blue-mountains-national-park",
+      "ticketUrl_status": "ok (200, title 'Blue Mountains National Park | NSW National Parks'). A tighter deep link also loads: https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/grand-canyon-track (200, title 'Grand Canyon track | NSW National Parks'); optional.",
+      "hours": "Daylight hours", "free": true
+    }
+  },
+  "ticketUrls": [
+    { "url": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/blue-mountains-national-park", "status": "ok", "evidence": "200; title 'Blue Mountains National Park | NSW National Parks'; text names Three Sisters, Katoomba, Govetts Leap." },
+    { "url": "https://www.scenicworld.com.au/", "status": "ok", "evidence": "200; title 'Scenic World | Blue Mountains Attractions, Katoomba'." },
+    { "url": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/blue-mountains-national-park/local-alerts", "status": "ok", "evidence": "200; used as source only." },
+    { "url": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/leura-cascades-fern-bower-walking-track", "status": "unsupported", "fix": "Guessed URL for Leura Cascades; returns 404. Do not use as ticketUrl; use the park page above." }
+  ],
+  "not_rechecked": [
+    "Photos (not in scope).",
+    "Blackheath, Botanic Garden, Norman Lindsay, Katoomba Falls, Giant Stairway, Ruined Castle, Mount Victoria, Mount Solitary, Blue Gum Forest bios and hours were not in drafts and were not verified.",
+    "Transport NSW train time and Opal cap (only Wikivoyage)."
+  ]
+}

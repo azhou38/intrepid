@@ -1,0 +1,96 @@
+{
+  "destination": "cowra",
+  "name": "Cowra",
+  "country": "Australia", "countryCode": "AU", "continent": "Oceania", "timezone": "Australia/Sydney",
+  "what_it_is": {
+    "fact": "Town of about 8,250 people (Wikipedia; WV says ~10,000) on the Lachlan River in the Central West of NSW, ~310 km west of Sydney and 189 km north of Canberra, at the junction of the Mid-Western Highway, Olympic Highway and Lachlan Valley Way. Site of a WWII POW camp and the 1944 Breakout; Japanese garden and Japanese war cemetery draw visitors. Cowra wine region (40+ vineyards around Cowra, Billimari and Canowindra) per Wikivoyage.",
+    "sources": ["https://en.wikipedia.org/wiki/Cowra", "https://en.wikivoyage.org/wiki/Cowra"]
+  },
+  "coordinates": {
+    "value": {"latitude": -33.835, "longitude": 148.6925},
+    "note": "Wikivoyage centre; matches placement.json. Visitor Information Centre is at Olympic Park, Mid-Western Highway (WV: +61 2 6342 4333).",
+    "source": "https://en.wikivoyage.org/wiki/Cowra"
+  },
+  "category": "city",
+  "rank": {"value": 5, "reason": "Sizable regional town / local base; Japanese Garden is a regional draw but not a country highlight (COVERAGE.md rank 5 'local base'; rank 4 is arguable given the garden and Breakout story)."},
+  "defaultZoomSpanKm": {
+    "value": 50,
+    "reason": "Spots: Garden (-33.8267,148.6982) ~1.2 km from centre; Breakout/POW site (-33.8113,148.7044) ~3 km; Canowindra (-33.5667,148.6667) ~30 km north (Wikipedia: 32 km N of Cowra). 75% of 50 = 37.5 km, so Canowindra fits; 40 would also fit (30 km) but 50 leaves margin.",
+    "source": "distances computed from coordinates in placement.json / https://en.wikipedia.org/wiki/Canowindra"
+  },
+  "whyVisit_candidates": [
+    {
+      "reason": "Stroll Australia's largest Japanese garden",
+      "facts": [
+        "Cowra Japanese Garden and Cultural Centre bills itself 'the largest Japanese garden in the Southern Hemisphere', 12.5 acres (operator claim, attribute if used).",
+        "Designed by Japanese architect Ken Nakajima as a kaiyu-shiki strolling garden; symbolises reconciliation and peace after WWII.",
+        "Cultural Centre with artworks and artefacts, gift shop and cafe; cherry blossoms in spring, autumn colour (Koyo Matsuri), misty winter."
+      ],
+      "sources": ["https://www.cowragarden.com.au/", "https://en.wikivoyage.org/wiki/Cowra"],
+      "photo_hint": "Commons: Cowra Japanese Garden and Australian bush (3380052178).jpg (skeptic-accepted as the spot photo; use a different file for the reason, since three whyVisit photos must differ from the spot-free header rule only for header)."
+    },
+    {
+      "reason": "Walk the site of the 1944 Cowra Breakout",
+      "facts": [
+        "On 5 August 1944, 1,104 Japanese POWs escaped from the Cowra camp: the largest prison escape of WWII; 4 Australians and 231 Japanese died. Leaders ordered no attacks on civilians; none were hurt.",
+        "POW Camp Site, Sakura Avenue, open all hours, free (WV). Japanese War Cemetery on Doncaster Drive (-33.8017,148.6917) is the only Japanese war cemetery in Australia, ceded to Japan 1963; Australian cemetery beside it (WV).",
+        "POW Theatre hologram ('Clare') in the Cowra Visitor Information Centre, 9AM-5PM, donation (WV, may be dated)."
+      ],
+      "sources": ["https://en.wikipedia.org/wiki/Cowra_breakout", "https://en.wikivoyage.org/wiki/Cowra"],
+      "photo_hint": "Commons: Graves at the Japanese War Cemetery, Cowra August 2020.jpg (skeptic accepted for the spot; weak). Sakura Avenue or the camp-site file would be a distinct choice for whyVisit; unchecked."
+    },
+    {
+      "reason": "See 360-million-year-old fish fossils in Canowindra",
+      "facts": [
+        "Canowindra, ~32 km north of Cowra on the Belubula River, is a historic township; curving Gaskill Street is partly an urban conservation area and 34 buildings/features are on the NSW State Heritage Register.",
+        "A 1955 roadworks find uncovered a Devonian (>360 Ma) slab of 114 fish fossils; the Age of Fishes Museum displays the finds. Operator page: open 10am-3.45pm Thursday to Monday, closed Tue/Wed, open 7 days in NSW school holidays.",
+        "Wikipedia calls Canowindra the 'Ballooning Capital of Australia'; balloon flights run at sunrise and the last hour before sunset during the April Balloon Challenge."
+      ],
+      "sources": ["https://en.wikipedia.org/wiki/Canowindra", "https://www.ageoffishes.org.au/"],
+      "note": "Recommended third reason is the Age of Fishes/Canowindra town (a year-round draw), with ballooning as a seasonal addition, not the reason itself. Age of Fishes Museum is held pending photo in placement.json, so the reason's photo must be a Canowindra view or fossil photo (Commons, unverified)."
+    }
+  ],
+  "alternative_reason": "Cowra wine region (40+ vineyards, Chardonnay since the 1970s) per WV, but skeptic rejected it as a spot; usable as a short sentence in the description only.",
+  "goodToKnow_candidates": [
+    {"tip": "Garden entry is $22 adult, $17 concession/local, $12 child, $52 family; open 8:30am-5pm daily; festival-day prices differ. Not a flat garden (mobility), dogs on a lead welcome except during Sakura Matsuri.", "source": "https://www.cowragarden.com.au/"},
+    {"tip": "Public transport is thin: WV lists two NSW TrainLink coach services a day from Bathurst/Lithgow and no airport in town (nearest scheduled flights Orange, Parkes, Bathurst); plan to drive, ~1.5 h from Bathurst or Orange, with Canowindra reached by car. (WV timetable dated, so say 'coach only' not times.)", "source": "https://en.wikivoyage.org/wiki/Cowra"},
+    {"tip": "Age of Fishes Museum in Canowindra is closed Tuesday and Wednesday outside NSW school holidays (open Thu-Mon 10am-3.45pm), so time the Canowindra day accordingly; book accommodation early for festival weekends (Sakura Matsuri late Sept, Balloon Challenge April).", "source": "https://www.ageoffishes.org.au/"}
+  ],
+  "seasonal": {
+    "sakura_matsuri": {
+      "fact": "Annual one-day festival at the Cowra Japanese Garden marking the cherry blossom: Sat 26 Sep 2026, Sat 27 Sep 2025, Sat 28 Sep 2024 (late September, a Saturday). Blossoms usually flower from mid/late September to mid-October (search summary; weather-dependent). 2027 date not found.",
+      "sources": ["https://www.cowragarden.com.au/about-1", "https://www.trybooking.com/events/landing/1376770"]
+    },
+    "koyo_matsuri": {"fact": "Autumn leaf festival at the garden exists (listed as 'Koyo Matsuri 2026' in site navigation); dates not fetched.", "source": "https://www.cowragarden.com.au/"},
+    "canowindra_balloon_challenge": {
+      "fact": "Canowindra International Balloon Challenge, billed as Australia's largest ballooning event, held each April; 2026 edition 11-19 April, community glow 18 April. 2020 cancelled (COVID), 2021 ran 26 Apr-1 May.",
+      "sources": ["https://en.wikipedia.org/wiki/Canowindra", "https://canowindrachallenge.org.au/", "https://www.cabonne.nsw.gov.au/Recreation/Whats-On/Canowindra-Balloon-Challenge-Week"]
+    }
+  },
+  "bestMonths": {
+    "value": [3, 4, 5, 9, 10, 11],
+    "reasoning": "Own inference, not a travel-guide consensus: southern-hemisphere autumn (Mar-May; April balloons) and spring (Sep-Nov; cherry blossom late Sep-Oct). Climate per Wikipedia: max ~32C in high summer, ~14C mid-winter with frequent frost and even snow, rainfall ~598 mm spread through the year. No guidebook best-time statement found.",
+    "source": "https://en.wikipedia.org/wiki/Cowra"
+  },
+  "bestTimeBlurb_basis": "Draft idea: 'Visit in {months}: cherry blossom and Sakura Matsuri fill the garden in late September, and April brings the Canowindra balloons, while summer is hot and winters have frequent frosts.' Climate facts from Wikipedia; festival facts above.",
+  "seasonalTags_suggested": [
+    {"label": "Sakura Matsuri cherry blossom", "months": [9, 10], "explicit_months_note": "late Sep to mid Oct; explicit months (do not flip)"},
+    {"label": "Canowindra Balloon Challenge", "months": [4]}
+  ],
+  "spots_for_context": {
+    "cowra-1": "Cowra Japanese Garden and Cultural Centre; ticketUrl https://www.cowragarden.com.au/ (title 'Cowra Japanese Garden', verified). NB placement bio/price: operator page now lists adults $22 (WV's $9.50 is dated) - consistent with placement costMin 22. Address 1 Ken Nakajima Place; 6341 2233.",
+    "cowra-2": "Cowra Breakout / POW Camp Site, Sakura Avenue, all hours, free (WV).",
+    "cowra-3": "Canowindra; Age of Fishes Museum held pending photo."
+  },
+  "unverified": [
+    "Rank 5 vs 4 is a judgement call.",
+    "bestMonths is own inference from climate and festival dates; no guide gives a best-time.",
+    "Koyo Matsuri and Winter Wanderlust dates not checked.",
+    "Sakura Matsuri 2027 date and exact blossom window not confirmed (blossom window from a web-search summary, not a fetched page).",
+    "Hologram theatre hours/donation are from WV (updated date unknown); not verified on the visitor centre page.",
+    "'Largest Japanese garden in the Southern Hemisphere' is the operator's own claim.",
+    "Wikipedia population 8,254 vs WV ~10,000; use 'about 8,000'.",
+    "Header and whyVisit photos not selected: skeptic found no passing Commons town view of Cowra. Needs a header from Commons/other (IMAGES.md); Canowindra and fossil photos unchecked.",
+    "canowindrabc.com.au and Cowra Council/visitor centre pages not fetched (one fetch failed); visitnsw Sakura link 404."
+  ]
+}

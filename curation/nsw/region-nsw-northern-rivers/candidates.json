@@ -1,0 +1,2455 @@
+{
+ "region": "nsw-northern-rivers",
+ "step": "enumerate+score (Atlas step 1, Northern Rivers: Queensland border to the Clarence; Wikivoyage region, town and See/Do pages, NSW NPWS park pages, Visit NSW and Visit Byron Bay tourism pages, Tweed Shire holidays page, OSM Overpass lighthouse/attraction nodes, Wikipedia shire and category pages; blind verdicts are step 3, not done here)",
+ "scoring": "views = English Wikipedia per-article views (all-access, user), 12 months, filled by score-candidates.ts; 0 with no article or when the title only redirects to a broader article. counted_sources = visitor-oriented sources only (Wikivoyage, NSW National Parks, Visit NSW, Visit Byron Bay, Tweed Shire); Wikipedia and OSM are in other_sources and not counted. Coordinates from the listing or OSM where given, else from Wikipedia via score-candidates.ts; null where no source coordinate was found.",
+ "sources": [
+  "https://en.wikivoyage.org/wiki/Northern_Rivers",
+  "https://en.wikivoyage.org/wiki/Byron_Bay",
+  "https://en.wikivoyage.org/wiki/Tweed_Heads",
+  "https://en.wikivoyage.org/wiki/Murwillumbah",
+  "https://en.wikivoyage.org/wiki/Ballina_(New_South_Wales)",
+  "https://en.wikivoyage.org/wiki/Lismore_(New_South_Wales)",
+  "https://en.wikivoyage.org/wiki/Nimbin",
+  "https://en.wikivoyage.org/wiki/Bangalow",
+  "https://en.wikivoyage.org/wiki/Mullumbimby",
+  "https://en.wikivoyage.org/wiki/Lennox_Head",
+  "https://en.wikivoyage.org/wiki/Evans_Head",
+  "https://en.wikivoyage.org/wiki/Yamba",
+  "https://en.wikivoyage.org/wiki/Grafton_(New_South_Wales)",
+  "https://en.wikivoyage.org/wiki/Maclean",
+  "https://en.wikivoyage.org/wiki/Kyogle",
+  "https://en.wikivoyage.org/wiki/Casino_(New_South_Wales)",
+  "https://www.visitnsw.com/destinations/north-coast/northern-rivers",
+  "https://www.visitnsw.com/destinations/north-coast/clarence-valley/yamba",
+  "https://www.visitnsw.com/destinations/north-coast/clarence-valley/iluka",
+  "https://www.visitnsw.com/destinations/north-coast/clarence-valley/grafton",
+  "https://www.visitnsw.com/destinations/north-coast/clarence-valley/maclean",
+  "https://www.visitbyronbay.com/surrounding-towns-villages",
+  "https://www.visitbyronbay.com/beaches-of-byron",
+  "https://www.visitbyronbay.com/national-parks",
+  "https://www.visitbyronbay.com/suggested-walks-activities",
+  "https://www.visitbyronbay.com/free-activities",
+  "https://www.visitbyronbay.com/activities-tours",
+  "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/wollumbin-national-park",
+  "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/nightcap-national-park",
+  "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/yuraygir-national-park",
+  "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/bundjalung-national-park",
+  "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/border-ranges-national-park",
+  "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/walgun-cape-byron-state-conservation-area",
+  "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_the_Northern_Rivers",
+  "https://en.wikipedia.org/wiki/Category:Byron_Shire",
+  "https://en.wikipedia.org/wiki/Category:Tweed_Shire",
+  "https://en.wikipedia.org/wiki/Category:Ballina_Shire",
+  "https://en.wikipedia.org/wiki/Category:Clarence_Valley_Council",
+  "OSM Overpass: named tourism/natural/historic/lighthouse nodes in bbox -29.7,152.85,-28.1,153.7"
+ ],
+ "candidates": [
+  {
+   "name": "Byron Bay",
+   "wiki": "Byron Bay",
+   "coordinates": {
+    "lat": -28.644744,
+    "lng": 153.621376
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Northern_Rivers",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Byron_Bay",
+    "https://en.wikivoyage.org/wiki/Northern_Rivers",
+    "https://www.visitbyronbay.com/surrounding-towns-villages"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Byron_Bay"
+   ],
+   "note": "town (destination-level base): Byron Bay township, beachfront tourist town",
+   "views": 112501
+  },
+  {
+   "name": "Ballina",
+   "wiki": "Ballina, New South Wales",
+   "coordinates": {
+    "lat": -28.868089,
+    "lng": 153.556738
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Northern_Rivers",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Ballina_(New_South_Wales)",
+    "https://en.wikivoyage.org/wiki/Northern_Rivers"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Ballina,_New_South_Wales"
+   ],
+   "note": "town (regional centre and airport gateway): Ballina",
+   "views": 32514
+  },
+  {
+   "name": "Lismore",
+   "wiki": "Lismore, New South Wales",
+   "coordinates": {
+    "lat": -28.812069,
+    "lng": 153.287676
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Northern_Rivers",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lismore_(New_South_Wales)",
+    "https://en.wikivoyage.org/wiki/Northern_Rivers",
+    "https://www.visitnsw.com/destinations/north-coast/northern-rivers"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Lismore,_New_South_Wales"
+   ],
+   "note": "town (regional hub, largest town in the Northern Rivers): Lismore",
+   "views": 45913
+  },
+  {
+   "name": "Tweed Heads",
+   "wiki": "Tweed Heads",
+   "coordinates": {
+    "lat": -28.176633,
+    "lng": 153.540718
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Northern_Rivers",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Tweed_Heads",
+    "https://en.wikivoyage.org/wiki/Northern_Rivers"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Tweed_Heads,_New_South_Wales"
+   ],
+   "note": "town (border twin town with Coolangatta, Queensland): Tweed Heads",
+   "views": 40094
+  },
+  {
+   "name": "Murwillumbah",
+   "wiki": "Murwillumbah",
+   "coordinates": {
+    "lat": -28.333,
+    "lng": 153.383
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Northern_Rivers",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Murwillumbah",
+    "https://en.wikivoyage.org/wiki/Northern_Rivers"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Murwillumbah"
+   ],
+   "note": "town (Tweed Shire seat, gateway to Wollumbin and Border Ranges): Murwillumbah",
+   "views": 34825
+  },
+  {
+   "name": "Nimbin",
+   "wiki": "Nimbin, New South Wales",
+   "coordinates": {
+    "lat": -28.579283,
+    "lng": 153.230391
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Northern_Rivers",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Nimbin",
+    "https://en.wikivoyage.org/wiki/Northern_Rivers",
+    "https://www.visitbyronbay.com/surrounding-towns-villages"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Nimbin,_New_South_Wales"
+   ],
+   "note": "town (alternative-culture village in the hinterland): Nimbin",
+   "views": 41372
+  },
+  {
+   "name": "Bangalow",
+   "wiki": "Bangalow",
+   "coordinates": {
+    "lat": -28.684816,
+    "lng": 153.515309
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Northern_Rivers",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Bangalow",
+    "https://en.wikivoyage.org/wiki/Northern_Rivers",
+    "https://www.visitbyronbay.com/surrounding-towns-villages"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Bangalow,_New_South_Wales"
+   ],
+   "note": "village (nineteenth-century streetscape, hinterland): Bangalow",
+   "views": 7971
+  },
+  {
+   "name": "Mullumbimby",
+   "wiki": "Mullumbimby",
+   "coordinates": {
+    "lat": -28.55,
+    "lng": 153.5
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Northern_Rivers",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Mullumbimby",
+    "https://en.wikivoyage.org/wiki/Northern_Rivers",
+    "https://www.visitbyronbay.com/surrounding-towns-villages"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Mullumbimby"
+   ],
+   "note": "town (hinterland village under Mount Chincogan): Mullumbimby",
+   "views": 52209
+  },
+  {
+   "name": "Lennox Head",
+   "wiki": "Lennox Head",
+   "coordinates": {
+    "lat": -28.8,
+    "lng": 153.583333
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Northern_Rivers",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lennox_Head",
+    "https://en.wikivoyage.org/wiki/Northern_Rivers",
+    "https://www.visitbyronbay.com/surrounding-towns-villages"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Lennox_Head,_New_South_Wales"
+   ],
+   "note": "village (surf village on Seven Mile Beach): Lennox Head",
+   "views": 15462,
+   "redirect_to": "Lennox Head, New South Wales"
+  },
+  {
+   "name": "Evans Head",
+   "wiki": "Evans Head, New South Wales",
+   "coordinates": {
+    "lat": -29.116667,
+    "lng": 153.433333
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Northern_Rivers",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Evans_Head",
+    "https://en.wikivoyage.org/wiki/Northern_Rivers",
+    "https://www.visitnsw.com/destinations/north-coast/northern-rivers"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Evans_Head,_New_South_Wales"
+   ],
+   "note": "town (small coastal town, Bundjalung NP gateway): Evans Head",
+   "views": 9715
+  },
+  {
+   "name": "Iluka",
+   "wiki": "Iluka, New South Wales",
+   "coordinates": {
+    "lat": -29.406667,
+    "lng": 153.351111
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Northern_Rivers",
+   "counted_sources": [
+    "https://www.visitnsw.com/destinations/north-coast/clarence-valley/iluka",
+    "https://en.wikivoyage.org/wiki/Northern_Rivers"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Iluka,_New_South_Wales"
+   ],
+   "note": "village (fishing village across the Clarence from Yamba, UNESCO rainforest): Iluka",
+   "views": 8257
+  },
+  {
+   "name": "Yamba",
+   "wiki": "Yamba, New South Wales",
+   "coordinates": {
+    "lat": -29.43631,
+    "lng": 153.330331
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Northern_Rivers",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Yamba",
+    "https://www.visitnsw.com/destinations/north-coast/clarence-valley/yamba"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Yamba,_New_South_Wales"
+   ],
+   "note": "town (beach town at the Clarence River mouth, surf and prawns): Yamba",
+   "views": 24250
+  },
+  {
+   "name": "Grafton",
+   "wiki": "Grafton, New South Wales",
+   "coordinates": {
+    "lat": -29.681667,
+    "lng": 152.934444
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Northern_Rivers",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Grafton_(New_South_Wales)",
+    "https://www.visitnsw.com/destinations/north-coast/clarence-valley/grafton"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Grafton,_New_South_Wales"
+   ],
+   "note": "city (Clarence Valley regional city, jacaranda avenues): Grafton",
+   "views": 36691
+  },
+  {
+   "name": "Maclean",
+   "wiki": "Maclean, New South Wales",
+   "coordinates": {
+    "lat": -29.456667,
+    "lng": 153.201111
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Northern_Rivers",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Maclean",
+    "https://www.visitnsw.com/destinations/north-coast/clarence-valley/maclean"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Maclean,_New_South_Wales"
+   ],
+   "note": "town (Scottish-heritage river town on the Clarence): Maclean",
+   "views": 12441
+  },
+  {
+   "name": "Casino",
+   "wiki": "Casino, New South Wales",
+   "coordinates": {
+    "lat": -28.858461,
+    "lng": 153.039279
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Northern_Rivers",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Casino_(New_South_Wales)",
+    "https://en.wikivoyage.org/wiki/Northern_Rivers"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Casino,_New_South_Wales"
+   ],
+   "note": "town (inland town, beef capital, on the rail trail): Casino",
+   "views": 24429
+  },
+  {
+   "name": "Kyogle",
+   "wiki": "Kyogle",
+   "coordinates": {
+    "lat": -28.6254,
+    "lng": 153.0026
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Northern_Rivers",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Kyogle",
+    "https://en.wikivoyage.org/wiki/Northern_Rivers"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Kyogle"
+   ],
+   "note": "town (rainforest gateway town to Border Ranges): Kyogle",
+   "views": 11899
+  },
+  {
+   "name": "Woodburn",
+   "wiki": "Woodburn, New South Wales",
+   "coordinates": {
+    "lat": -29.081667,
+    "lng": 153.334444
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Northern_Rivers",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Northern_Rivers"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Woodburn,_New_South_Wales"
+   ],
+   "note": "village (small riverside town on the Richmond): Woodburn",
+   "views": 3288
+  },
+  {
+   "name": "Brunswick Heads",
+   "wiki": "Brunswick Heads",
+   "coordinates": {
+    "lat": -28.53333333,
+    "lng": 153.55
+   },
+   "coordinates_source": "wikipedia:Brunswick Heads",
+   "counted_sources": [
+    "https://www.visitbyronbay.com/surrounding-towns-villages"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Brunswick_Heads,_New_South_Wales"
+   ],
+   "note": "village (river-mouth village, Byron Shire): Brunswick Heads; Visit Byron calls it one of the gems of the far north coast",
+   "views": 5856
+  },
+  {
+   "name": "Ocean Shores",
+   "wiki": "Ocean Shores, New South Wales",
+   "coordinates": {
+    "lat": -28.522,
+    "lng": 153.54
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Northern_Rivers",
+   "counted_sources": [
+    "https://www.visitbyronbay.com/surrounding-towns-villages",
+    "https://en.wikivoyage.org/wiki/Northern_Rivers"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Ocean_Shores,_New_South_Wales"
+   ],
+   "note": "village (golf course town, flying-fox colony at sunset): Ocean Shores",
+   "views": 5145
+  },
+  {
+   "name": "Federal",
+   "wiki": "Federal, New South Wales",
+   "coordinates": {
+    "lat": -28.65083333,
+    "lng": 153.45527778
+   },
+   "coordinates_source": "wikipedia:Federal, New South Wales",
+   "counted_sources": [
+    "https://www.visitbyronbay.com/surrounding-towns-villages"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Federal,_New_South_Wales"
+   ],
+   "note": "village (small hinterland village with a general store and a Japanese cafe): Federal",
+   "views": 3302
+  },
+  {
+   "name": "Eltham",
+   "wiki": "Eltham, New South Wales",
+   "coordinates": {
+    "lat": -28.75948,
+    "lng": 153.40949
+   },
+   "coordinates_source": "osm (Overpass name match, see sources)",
+   "counted_sources": [
+    "https://www.visitbyronbay.com/surrounding-towns-villages"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Eltham,_New_South_Wales"
+   ],
+   "note": "village (hinterland village with a classic country pub and village gallery): Eltham",
+   "views": 1041
+  },
+  {
+   "name": "Clunes",
+   "wiki": "Clunes, New South Wales",
+   "coordinates": {
+    "lat": -28.73333333,
+    "lng": 153.4
+   },
+   "coordinates_source": "wikipedia:Clunes, New South Wales",
+   "counted_sources": [
+    "https://www.visitbyronbay.com/free-activities"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Clunes,_New_South_Wales"
+   ],
+   "note": "village (hinterland village known for its clay artists): Clunes",
+   "views": 2715
+  },
+  {
+   "name": "New Italy",
+   "wiki": "New Italy, New South Wales",
+   "coordinates": {
+    "lat": -29.15,
+    "lng": 153.2833
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Northern_Rivers",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Northern_Rivers"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/New_Italy,_New_South_Wales"
+   ],
+   "note": "village (Italian-settler village, roadside stop): New Italy",
+   "views": 6400
+  },
+  {
+   "name": "Ulmarra",
+   "wiki": "Ulmarra",
+   "coordinates": {
+    "lat": -29.63333333,
+    "lng": 153.03333333
+   },
+   "coordinates_source": "wikipedia:Ulmarra",
+   "counted_sources": [
+    "https://www.visitnsw.com/destinations/north-coast/clarence-valley/grafton"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Ulmarra"
+   ],
+   "note": "village (historic river village near Grafton, with the Ulmarra Hotel and its beer garden): Ulmarra",
+   "views": 2769
+  },
+  {
+   "name": "Angourie",
+   "wiki": "Angourie, New South Wales",
+   "coordinates": {
+    "lat": -29.47916667,
+    "lng": 153.35944444
+   },
+   "coordinates_source": "wikipedia:Angourie, New South Wales",
+   "counted_sources": [
+    "https://www.visitnsw.com/destinations/north-coast/clarence-valley/yamba"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Angourie,_New_South_Wales"
+   ],
+   "note": "village (surf village and point, south of Yamba): Angourie",
+   "views": 8826
+  },
+  {
+   "name": "Brooms Head",
+   "wiki": "Brooms Head, New South Wales",
+   "coordinates": {
+    "lat": -29.6083,
+    "lng": 153.3358
+   },
+   "coordinates_source": "wikipedia:Brooms Head, New South Wales",
+   "counted_sources": [
+    "https://www.visitnsw.com/destinations/north-coast/clarence-valley/yamba"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Brooms_Head,_New_South_Wales"
+   ],
+   "note": "village (seaside village on the Yuraygir coastal walk): Brooms Head",
+   "views": 2799
+  },
+  {
+   "name": "Wooli",
+   "wiki": "Wooli, New South Wales",
+   "coordinates": {
+    "lat": -29.86666667,
+    "lng": 153.26666667
+   },
+   "coordinates_source": "wikipedia:Wooli, New South Wales",
+   "counted_sources": [
+    "https://www.visitnsw.com/destinations/north-coast/clarence-valley/yamba"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Wooli,_New_South_Wales"
+   ],
+   "note": "village (hamlet at the end of the Yuraygir coastal walk, Wooli Wooli oysters): Wooli",
+   "views": 4910
+  },
+  {
+   "name": "Kingscliff",
+   "wiki": "Kingscliff, New South Wales",
+   "coordinates": {
+    "lat": -28.25638889,
+    "lng": 153.57805556
+   },
+   "coordinates_source": "wikipedia:Kingscliff, New South Wales",
+   "counted_sources": [
+    "https://www.visitnsw.com/destinations/north-coast/northern-rivers"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Kingscliff,_New_South_Wales"
+   ],
+   "note": "town (coastal Tweed town with beach and Kingscliff visitor centre): Kingscliff",
+   "views": 11463
+  },
+  {
+   "name": "Cabarita Beach",
+   "wiki": "Cabarita Beach, New South Wales",
+   "coordinates": {
+    "lat": -28.3293,
+    "lng": 153.56979
+   },
+   "coordinates_source": "wikipedia:Cabarita Beach, New South Wales",
+   "counted_sources": [
+    "https://www.visitnsw.com/destinations/north-coast/northern-rivers"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Cabarita_Beach,_New_South_Wales"
+   ],
+   "note": "beach (surf beach and beachside hotel, Tweed coast): Cabarita Beach",
+   "views": 6314
+  },
+  {
+   "name": "Cape Byron Lighthouse",
+   "wiki": "Cape Byron Light",
+   "coordinates": {
+    "lat": -28.6386,
+    "lng": 153.6363
+   },
+   "coordinates_source": "osm:Cape Byron Lighthouse",
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/walgun-cape-byron-state-conservation-area",
+    "https://www.visitbyronbay.com/suggested-walks-activities",
+    "https://en.wikivoyage.org/wiki/Byron_Bay"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Cape_Byron_Lighthouse"
+   ],
+   "note": "landmark (lighthouse on Australia's most easterly point, lawn and maritime museum, visitors walk up): Cape Byron Lighthouse",
+   "views": 4966
+  },
+  {
+   "name": "Cape Byron State Conservation Area",
+   "wiki": "Cape Byron State Conservation Area",
+   "coordinates": {
+    "lat": -28.639674,
+    "lng": 153.6331
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Northern_Rivers",
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/walgun-cape-byron-state-conservation-area",
+    "https://en.wikivoyage.org/wiki/Byron_Bay",
+    "https://www.visitbyronbay.com/national-parks"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Cape_Byron_State_Conservation_Area"
+   ],
+   "note": "park (state conservation area around Cape Byron, lighthouse, walking tracks, Cape Cafe): Cape Byron State Conservation Area",
+   "views": 0,
+   "redirect_to": "Cape Byron"
+  },
+  {
+   "name": "Cape Byron Walk",
+   "wiki": "Cape Byron Walk",
+   "coordinates": {
+    "lat": -28.6386,
+    "lng": 153.6363
+   },
+   "coordinates_source": "approximate: Cape Byron Lighthouse (walk loop start/end)",
+   "counted_sources": [
+    "https://www.visitbyronbay.com/suggested-walks-activities",
+    "https://www.visitbyronbay.com/free-activities"
+   ],
+   "other_sources": [],
+   "note": "walk (4 km loop through rainforest, past beaches and clifftops to the lighthouse): Cape Byron Lighthouse Walk",
+   "views": 0
+  },
+  {
+   "name": "Palm Valley Walk",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.63685,
+    "lng": 153.62874
+   },
+   "coordinates_source": "approximate: The Pass car park area (OSM The Pass viewpoint)",
+   "counted_sources": [
+    "https://www.visitbyronbay.com/suggested-walks-activities"
+   ],
+   "other_sources": [],
+   "note": "walk (700 m wheelchair-accessible palm rainforest walk at The Pass): Palm Valley Walk",
+   "views": 0
+  },
+  {
+   "name": "Arakwal National Park",
+   "wiki": "Arakwal National Park",
+   "coordinates": {
+    "lat": -28.66027778,
+    "lng": 153.62111111
+   },
+   "coordinates_source": "wikipedia:Arakwal National Park",
+   "counted_sources": [
+    "https://www.visitbyronbay.com/national-parks",
+    "https://www.visitbyronbay.com/suggested-walks-activities"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Arakwal_National_Park"
+   ],
+   "note": "park (national park behind Tallow Beach, 2 km from Byron Bay, 2.15 hr return trail): Arakwal National Park",
+   "views": 973
+  },
+  {
+   "name": "Main Beach, Byron Bay",
+   "wiki": "Main Beach, Byron Bay",
+   "coordinates": {
+    "lat": -28.64077,
+    "lng": 153.61494
+   },
+   "coordinates_source": "osm (Overpass name match, see sources)",
+   "counted_sources": [
+    "https://www.visitbyronbay.com/beaches-of-byron",
+    "https://en.wikivoyage.org/wiki/Byron_Bay"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Byron_Bay"
+   ],
+   "note": "beach (main town beach, patrolled, in front of the township): Main Beach",
+   "views": 0
+  },
+  {
+   "name": "The Pass",
+   "wiki": "The Pass, Byron Bay",
+   "coordinates": {
+    "lat": -28.63685,
+    "lng": 153.62874
+   },
+   "coordinates_source": "osm (Overpass name match, see sources)",
+   "counted_sources": [
+    "https://www.visitbyronbay.com/beaches-of-byron",
+    "https://en.wikivoyage.org/wiki/Byron_Bay"
+   ],
+   "other_sources": [],
+   "note": "beach (surf break and surfers' lookout at the end of Clarkes Beach): The Pass",
+   "views": 0
+  },
+  {
+   "name": "Clarkes Beach",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.6385,
+    "lng": 153.623
+   },
+   "coordinates_source": "approximate: between Main Beach and The Pass (OSM point positions)",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Byron_Bay",
+    "https://www.visitbyronbay.com/beaches-of-byron"
+   ],
+   "other_sources": [],
+   "note": "beach (sheltered family beach east of Main Beach): Clarkes Beach",
+   "views": 0,
+   "redirect_to": "Clarke's Beach"
+  },
+  {
+   "name": "Wategos Beach",
+   "wiki": "Wategos Beach",
+   "coordinates": {
+    "lat": -28.63555,
+    "lng": 153.63393
+   },
+   "coordinates_source": "osm (Overpass name match, see sources)",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Byron_Bay",
+    "https://www.visitbyronbay.com/beaches-of-byron"
+   ],
+   "other_sources": [],
+   "note": "beach (sheltered surf beach behind Cape Byron headland, longboard breaks): Wategos Beach",
+   "views": 0
+  },
+  {
+   "name": "Tallow Beach",
+   "wiki": "Tallow Beach",
+   "coordinates": {
+    "lat": -28.66946,
+    "lng": 153.62387
+   },
+   "coordinates_source": "osm (Overpass name match, see sources)",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Byron_Bay",
+    "https://www.visitbyronbay.com/beaches-of-byron"
+   ],
+   "other_sources": [],
+   "note": "beach (long south-facing beach from Byron to Broken Head, reached through Arakwal NP): Tallow Beach",
+   "views": 0
+  },
+  {
+   "name": "Belongil Beach",
+   "wiki": "Belongil Beach",
+   "coordinates": {
+    "lat": -28.61548,
+    "lng": 153.59025
+   },
+   "coordinates_source": "osm (Overpass name match, see sources)",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Byron_Bay",
+    "https://www.visitbyronbay.com/beaches-of-byron"
+   ],
+   "other_sources": [],
+   "note": "beach (dog-friendly beach towards Brunswick Heads, clothes-optional north of Belongil Creek, the wreck of the Wollongbar): Belongil Beach",
+   "views": 0
+  },
+  {
+   "name": "Broken Head Nature Reserve",
+   "wiki": "Broken Head Nature Reserve",
+   "coordinates": {
+    "lat": -28.71666667,
+    "lng": 153.61666667
+   },
+   "coordinates_source": "wikipedia:Broken Head Nature Reserve",
+   "counted_sources": [
+    "https://www.visitbyronbay.com/national-parks",
+    "https://www.visitbyronbay.com/suggested-walks-activities"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Broken_Head_Nature_Reserve"
+   ],
+   "note": "park (nature reserve with cliffs, rainforest and Kings Beach): Broken Head Nature Reserve",
+   "views": 803
+  },
+  {
+   "name": "Kings Beach",
+   "wiki": "Kings Beach, Byron Bay",
+   "coordinates": {
+    "lat": -28.7092,
+    "lng": 153.61784
+   },
+   "coordinates_source": "osm (Overpass name match, see sources)",
+   "counted_sources": [
+    "https://www.visitbyronbay.com/beaches-of-byron"
+   ],
+   "other_sources": [],
+   "note": "beach (cove within Broken Head Nature Reserve, reached by headland walk): Kings Beach",
+   "views": 0
+  },
+  {
+   "name": "Seven Mile Beach",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.76,
+    "lng": 153.59
+   },
+   "coordinates_source": "approximate: midpoint of Seven Mile Beach between Broken Head and Lennox Head (Wikipedia article was the Shoalhaven beach, rejected)",
+   "counted_sources": [
+    "https://www.visitbyronbay.com/beaches-of-byron",
+    "https://en.wikivoyage.org/wiki/Lennox_Head"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Seven_Mile_Beach,_New_South_Wales"
+   ],
+   "note": "beach (wide ocean beach from Broken Head to Lennox Head, horse riding and surfing): Seven Mile Beach",
+   "views": 0
+  },
+  {
+   "name": "Lake Ainsworth",
+   "wiki": "Lake Ainsworth",
+   "coordinates": {
+    "lat": -28.8,
+    "lng": 153.58333333
+   },
+   "coordinates_source": "wikipedia:Lennox Head, New South Wales",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lennox_Head",
+    "https://www.visitbyronbay.com/surrounding-towns-villages"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Lake_Ainsworth"
+   ],
+   "note": "lake (freshwater dune lake with tea-tree-stained water, Lennox Head): Lake Ainsworth",
+   "views": 0,
+   "redirect_to": "Lennox Head, New South Wales"
+  },
+  {
+   "name": "Lennox Point",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.8,
+    "lng": 153.58333333
+   },
+   "coordinates_source": "wikipedia:Lennox Head, New South Wales",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lennox_Head"
+   ],
+   "other_sources": [],
+   "note": "headland (headland with a famous right-hand break, hang-gliding launch, lookout and coastal walk): Lennox Point",
+   "views": 0,
+   "redirect_to": "Lennox Head, New South Wales"
+  },
+  {
+   "name": "Lennox Head Heath",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.79,
+    "lng": 153.58
+   },
+   "coordinates_source": "approximate: north of Lennox Head village behind Lake Ainsworth (Wikivoyage Lennox Head)",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lennox_Head"
+   ],
+   "other_sources": [],
+   "note": "nature (coastal heath behind Lake Ainsworth, birdwatching and spring wildflowers): Lennox Head Heath",
+   "views": 0
+  },
+  {
+   "name": "Lennox Head Bora Ring",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.8,
+    "lng": 153.575
+   },
+   "coordinates_source": "approximate: western outskirts of Lennox Head, 100 m west of Gibbons Street (Wikivoyage)",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lennox_Head"
+   ],
+   "other_sources": [],
+   "note": "historic (Bundjalung ceremonial ring of raised sand on cleared land west of town, surrounded by housing): Lennox Head Bora Ring",
+   "views": 0
+  },
+  {
+   "name": "Flat Rock",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.8432,
+    "lng": 153.6072
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Ballina_(New_South_Wales)",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Ballina_(New_South_Wales)"
+   ],
+   "other_sources": [],
+   "note": "headland (marine pools at low tide and popular surf break, Skennars Head): Flat Rock",
+   "views": 0
+  },
+  {
+   "name": "Lighthouse Beach, Ballina",
+   "wiki": "Lighthouse Beach, New South Wales",
+   "coordinates": {
+    "lat": -28.8697,
+    "lng": 153.5928
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Ballina_(New_South_Wales)",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Ballina_(New_South_Wales)"
+   ],
+   "other_sources": [],
+   "note": "beach (southern-most patrolled ocean beach off East Ballina): Lighthouse Beach",
+   "views": 452
+  },
+  {
+   "name": "Shelly Beach, Ballina",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.8614,
+    "lng": 153.5995
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Ballina_(New_South_Wales)",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Ballina_(New_South_Wales)"
+   ],
+   "other_sources": [],
+   "note": "beach (middle of the East Ballina ocean beaches, patrolled in season): Shelly Beach",
+   "views": 0
+  },
+  {
+   "name": "Angels Beach",
+   "wiki": "Angels Beach",
+   "coordinates": {
+    "lat": -28.8515,
+    "lng": 153.6055
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Ballina_(New_South_Wales)",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Ballina_(New_South_Wales)"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Angels_Beach"
+   ],
+   "note": "beach (longer northern East Ballina beach, patrolled at the Flat Rocks end): Angels Beach",
+   "views": 487
+  },
+  {
+   "name": "Sharpes Beach",
+   "wiki": "Sharpes Beach",
+   "coordinates": {
+    "lat": -28.8343,
+    "lng": 153.6065
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Ballina_(New_South_Wales)",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Ballina_(New_South_Wales)"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Sharpes_Beach"
+   ],
+   "note": "beach (beach at Skennars Head north of Ballina): Sharpes Beach",
+   "views": 0
+  },
+  {
+   "name": "The Big Prawn",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.8637,
+    "lng": 153.5326
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Ballina_(New_South_Wales)",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Ballina_(New_South_Wales)"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Big_Prawn"
+   ],
+   "note": "landmark (giant prawn sculpture beside the road into Ballina, a big thing): The Big Prawn",
+   "views": 0,
+   "redirect_to": "Ballina, New South Wales"
+  },
+  {
+   "name": "Ballina War Memorial Pool",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.8737,
+    "lng": 153.5654
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Ballina_(New_South_Wales)",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Ballina_(New_South_Wales)"
+   ],
+   "other_sources": [],
+   "note": "entertainment (50 m and 25 m public swimming pools, Ballina): Ballina War Memorial Pool",
+   "views": 0
+  },
+  {
+   "name": "Ballina Waterslides",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.8737,
+    "lng": 153.5654
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Ballina_(New_South_Wales)",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Ballina_(New_South_Wales)"
+   ],
+   "other_sources": [],
+   "note": "entertainment (two tower waterslides inside Ballina War Memorial Pool, weekends and school holidays): Ballina Waterslides",
+   "views": 0
+  },
+  {
+   "name": "Richmond River Lighthouse",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.867,
+    "lng": 153.5919
+   },
+   "coordinates_source": "osm:Richmond River Lighthouse",
+   "counted_sources": [],
+   "other_sources": [
+    "OSM Overpass: man_made=lighthouse, Richmond River Lighthouse"
+   ],
+   "note": "landmark (lighthouse at the Richmond River mouth, OSM only, no visitor source): Richmond River Lighthouse",
+   "views": 0
+  },
+  {
+   "name": "Fingal Head Lighthouse",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.2,
+    "lng": 153.5708
+   },
+   "coordinates_source": "osm:Fingal Head Lighthouse",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Tweed_Heads"
+   ],
+   "other_sources": [
+    "OSM Overpass: man_made=lighthouse, Fingal Head Lighthouse"
+   ],
+   "note": "landmark (lighthouse at Fingal Head, a short walk from parking, named in Canberra Airport and Jetstar guides): Fingal Head Lighthouse",
+   "views": 0
+  },
+  {
+   "name": "Point Danger Lighthouse",
+   "wiki": "Point Danger Light",
+   "coordinates": {
+    "lat": -28.165,
+    "lng": 153.5508
+   },
+   "coordinates_source": "osm:Point Danger Lighthouse",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Tweed_Heads"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Point_Danger_Light",
+    "OSM Overpass: man_made=lighthouse, Point Danger Lighthouse"
+   ],
+   "note": "landmark (lighthouse at Point Danger on the Queensland border, Tweed Heads): Point Danger Lighthouse",
+   "views": 2081
+  },
+  {
+   "name": "Fingal Head",
+   "wiki": "Fingal Head, New South Wales",
+   "coordinates": {
+    "lat": -28.20194,
+    "lng": 153.55985
+   },
+   "coordinates_source": "osm (Overpass name match, see sources)",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Tweed_Heads"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Fingal_Head,_New_South_Wales"
+   ],
+   "note": "beach (headland and village at the NSW-Queensland border, lighthouse and beach): Fingal Head",
+   "views": 11093
+  },
+  {
+   "name": "Duranbah Beach",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.1674,
+    "lng": 153.5518
+   },
+   "coordinates_source": "wikipedia:Duranbah Beach",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Tweed_Heads"
+   ],
+   "other_sources": [],
+   "note": "beach (Tweed coast beach named by Canberra Airport and Jetstar guides): Duranbah Beach",
+   "views": 0
+  },
+  {
+   "name": "Dreamtime Beach",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.22113,
+    "lng": 153.56838
+   },
+   "coordinates_source": "osm (Overpass name match, see sources)",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Tweed_Heads"
+   ],
+   "other_sources": [],
+   "note": "beach (Tweed coast beach near Fingal Head, named by Jetstar and Canberra Airport guides; weak source): Dreamtime Beach",
+   "views": 0
+  },
+  {
+   "name": "Tropical Fruit World",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.305,
+    "lng": 153.5225
+   },
+   "coordinates_source": "wikipedia:Duranbah, New South Wales",
+   "counted_sources": [
+    "https://www.visitnsw.com/destinations/north-coast/northern-rivers"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Tropical_Fruit_World"
+   ],
+   "note": "attraction (tropical fruit farm and tasting venue at Duranbah): Tropical Fruit World",
+   "views": 0,
+   "redirect_to": "Duranbah, New South Wales"
+  },
+  {
+   "name": "Minyon Falls",
+   "wiki": "Minyon Falls",
+   "coordinates": {
+    "lat": -28.611735,
+    "lng": 153.390158
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Byron_Bay",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Byron_Bay",
+    "https://www.visitbyronbay.com/suggested-walks-activities",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/nightcap-national-park"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Minyon_Falls"
+   ],
+   "note": "waterfall (about 100 m waterfall in Nightcap NP, lookout and base walks): Minyon Falls",
+   "views": 4134
+  },
+  {
+   "name": "Protesters Falls",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.54388889,
+    "lng": 153.29305556
+   },
+   "coordinates_source": "wikipedia:Nightcap National Park",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Northern_Rivers",
+    "https://en.wikivoyage.org/wiki/Byron_Bay"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Protesters_Falls"
+   ],
+   "note": "waterfall (rainforest waterfall in the Terania Creek area, named in Wikivoyage Byron Bay): Protesters Falls",
+   "views": 0,
+   "redirect_to": "Nightcap National Park"
+  },
+  {
+   "name": "Wanganui Falls",
+   "wiki": "Wanganui Falls",
+   "coordinates": null,
+   "coordinates_source": null,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Byron_Bay"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Wanganui_Falls"
+   ],
+   "note": "waterfall (waterfall off Wilsons Creek, scenic drive): Wanganui Falls",
+   "views": 0
+  },
+  {
+   "name": "Killen Falls",
+   "wiki": "Killen Falls",
+   "coordinates": {
+    "lat": -28.76937,
+    "lng": 153.52311
+   },
+   "coordinates_source": "osm (Overpass name match, see sources)",
+   "counted_sources": [
+    "https://www.visitbyronbay.com/suggested-walks-activities"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Killen_Falls"
+   ],
+   "note": "waterfall (rainforest falls at Tintenbar with a walk behind the water): Killen Falls",
+   "views": 0
+  },
+  {
+   "name": "Condong Falls",
+   "wiki": "",
+   "coordinates": null,
+   "coordinates_source": null,
+   "counted_sources": [
+    "https://www.visitbyronbay.com/suggested-walks-activities"
+   ],
+   "other_sources": [],
+   "note": "waterfall (falls on the Minyon Falls trail, scrambling last 100 m, minor): Condong Falls",
+   "views": 0
+  },
+  {
+   "name": "Rummery Park",
+   "wiki": "Rummery Park",
+   "coordinates": null,
+   "coordinates_source": null,
+   "counted_sources": [
+    "https://www.visitbyronbay.com/suggested-walks-activities",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/nightcap-national-park"
+   ],
+   "other_sources": [],
+   "note": "campground (campground and rainforest walk base in Nightcap NP): Rummery Park",
+   "views": 0
+  },
+  {
+   "name": "Nightcap National Park",
+   "wiki": "Nightcap National Park",
+   "coordinates": {
+    "lat": -28.548333,
+    "lng": 153.334444
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Northern_Rivers",
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/nightcap-national-park",
+    "https://en.wikivoyage.org/wiki/Northern_Rivers",
+    "https://www.visitbyronbay.com/national-parks"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Nightcap_National_Park"
+   ],
+   "note": "park (World Heritage rainforest park between Lismore and Nimbin, falls and walks): Nightcap National Park",
+   "views": 2214
+  },
+  {
+   "name": "Mount Jerusalem National Park",
+   "wiki": "Mount Jerusalem National Park",
+   "coordinates": {
+    "lat": -28.48444444,
+    "lng": 153.35777778
+   },
+   "coordinates_source": "wikipedia:Mount Jerusalem National Park",
+   "counted_sources": [
+    "https://www.visitbyronbay.com/national-parks"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Mount_Jerusalem_National_Park"
+   ],
+   "note": "park (national park covering three river systems, walking trails): Mount Jerusalem National Park",
+   "views": 1028
+  },
+  {
+   "name": "Mebbin National Park",
+   "wiki": "Mebbin National Park",
+   "coordinates": {
+    "lat": -28.4469,
+    "lng": 153.17
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Northern_Rivers",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Northern_Rivers"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Mebbin_National_Park"
+   ],
+   "note": "park (small World Heritage park in the Tweed hinterland): Mebbin National Park",
+   "views": 396
+  },
+  {
+   "name": "Mallanganee National Park",
+   "wiki": "Mallanganee National Park",
+   "coordinates": {
+    "lat": -28.919167,
+    "lng": 152.753611
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Northern_Rivers",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Northern_Rivers"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Mallanganee_National_Park"
+   ],
+   "note": "park (World Heritage park west of Kyogle, not a notable visitor draw): Mallanganee National Park",
+   "views": 540
+  },
+  {
+   "name": "Border Ranges National Park",
+   "wiki": "Border Ranges National Park",
+   "coordinates": {
+    "lat": -28.359722,
+    "lng": 152.986111
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Northern_Rivers",
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/border-ranges-national-park",
+    "https://en.wikivoyage.org/wiki/Northern_Rivers",
+    "https://en.wikivoyage.org/wiki/Kyogle"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Border_Ranges_National_Park"
+   ],
+   "note": "park (World Heritage rainforest park with crater escarpment lookouts, Tweed Range Scenic Drive): Border Ranges National Park",
+   "views": 2284
+  },
+  {
+   "name": "Tweed Range Scenic Drive",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.4,
+    "lng": 153.05
+   },
+   "coordinates_source": "approximate: rough centre of the Tweed Range scenic route (OSM route segments, not a point)",
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/border-ranges-national-park"
+   ],
+   "other_sources": [],
+   "note": "scenic drive (touring route through Border Ranges NP with lookouts, part of the Rainforest Way): Tweed Range Scenic Drive",
+   "views": 0
+  },
+  {
+   "name": "Palm Forest Walk",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.3597,
+    "lng": 152.9861
+   },
+   "coordinates_source": "approximate: Border Ranges NP centre",
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/border-ranges-national-park"
+   ],
+   "other_sources": [],
+   "note": "walk (short subtropical rainforest track in Border Ranges NP): Palm Forest Walk",
+   "views": 0
+  },
+  {
+   "name": "Wollumbin National Park",
+   "wiki": "Wollumbin National Park",
+   "coordinates": {
+    "lat": -28.38739,
+    "lng": 153.253112
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Murwillumbah",
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/wollumbin-national-park",
+    "https://en.wikivoyage.org/wiki/Murwillumbah",
+    "https://en.wikivoyage.org/wiki/Northern_Rivers"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Wollumbin_National_Park"
+   ],
+   "note": "park (World Heritage national park around the Wollumbin caldera, Mount Warning Road entrance): Wollumbin National Park",
+   "views": 1127
+  },
+  {
+   "name": "Mount Warning",
+   "wiki": "Mount Warning",
+   "coordinates": {
+    "lat": -28.387057,
+    "lng": 153.32604
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Northern_Rivers",
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/wollumbin-national-park",
+    "https://en.wikivoyage.org/wiki/Murwillumbah"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Mount_Warning"
+   ],
+   "note": "mountain (Wollumbin volcanic plug, summit track currently closed, viewed from the caldera): Mount Warning (Wollumbin)",
+   "views": 28324
+  },
+  {
+   "name": "Lyrebird Track",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.398,
+    "lng": 153.28397
+   },
+   "coordinates_source": "osm (Overpass name match, see sources)",
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/wollumbin-national-park"
+   ],
+   "other_sources": [],
+   "note": "walk (short rainforest walk across Breakfast Creek to a lookout, Wollumbin NP): Lyrebird Track",
+   "views": 0
+  },
+  {
+   "name": "Nymboida National Park",
+   "wiki": "Nymboida National Park",
+   "coordinates": {
+    "lat": -29.64416667,
+    "lng": 152.41805556
+   },
+   "coordinates_source": "wikipedia:Nymboida National Park",
+   "counted_sources": [
+    "https://www.visitnsw.com/destinations/north-coast/clarence-valley/grafton"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Nymboida_National_Park"
+   ],
+   "note": "park (wild rivers, gorges and rainforest; river canoeing and 4WD from Grafton): Nymboida National Park",
+   "views": 512
+  },
+  {
+   "name": "Bundjalung National Park",
+   "wiki": "Bundjalung National Park",
+   "coordinates": {
+    "lat": -29.2475,
+    "lng": 153.32861111
+   },
+   "coordinates_source": "wikipedia:Bundjalung National Park",
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/bundjalung-national-park",
+    "https://www.visitnsw.com/destinations/north-coast/clarence-valley/iluka"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Bundjalung_National_Park"
+   ],
+   "note": "park (coastal park from Iluka to Evans Head, Ten Mile Beach, Woody Head cabins, Evans River): Bundjalung National Park",
+   "views": 1316
+  },
+  {
+   "name": "Ten Mile Beach",
+   "wiki": "",
+   "coordinates": {
+    "lat": -29.30683,
+    "lng": 153.35272
+   },
+   "coordinates_source": "osm (Overpass name match, see sources)",
+   "counted_sources": [
+    "https://www.visitnsw.com/destinations/north-coast/clarence-valley/iluka"
+   ],
+   "other_sources": [],
+   "note": "beach (4WD beach north from Shark Bay through Bundjalung NP): Ten Mile Beach",
+   "views": 0
+  },
+  {
+   "name": "Woody Head",
+   "wiki": "Woody Head",
+   "coordinates": {
+    "lat": -29.36736,
+    "lng": 153.37422
+   },
+   "coordinates_source": "osm (Overpass name match, see sources)",
+   "counted_sources": [
+    "https://www.visitnsw.com/destinations/north-coast/clarence-valley/iluka",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/bundjalung-national-park"
+   ],
+   "other_sources": [],
+   "note": "camping (campground and cabins on the Bundjalung NP coast): Woody Head",
+   "views": 0
+  },
+  {
+   "name": "Yuraygir National Park",
+   "wiki": "Yuraygir National Park",
+   "coordinates": {
+    "lat": -29.815,
+    "lng": 153.267778
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Yamba",
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/yuraygir-national-park",
+    "https://en.wikivoyage.org/wiki/Yamba",
+    "https://www.visitnsw.com/destinations/north-coast/clarence-valley/yamba"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Yuraygir_National_Park"
+   ],
+   "note": "park (state's longest undeveloped coastline, 65 km coastal walk, between Yamba and Coffs Harbour): Yuraygir National Park",
+   "views": 1053
+  },
+  {
+   "name": "Yuraygir Coastal Walk",
+   "wiki": "",
+   "coordinates": {
+    "lat": -29.43,
+    "lng": 153.38
+   },
+   "coordinates_source": "approximate: Yamba end of the walk (Wikivoyage Yamba)",
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/yuraygir-national-park",
+    "https://www.visitnsw.com/destinations/north-coast/clarence-valley/yamba"
+   ],
+   "other_sources": [],
+   "note": "walk (65 km, four-day multi-day coastal walk from Yamba to Red Rock through Yuraygir NP): Yuraygir Coastal Walk",
+   "views": 0,
+   "redirect_to": "Yuraygir National Park"
+  },
+  {
+   "name": "Iluka Nature Reserve",
+   "wiki": "Iluka Nature Reserve",
+   "coordinates": {
+    "lat": -29.40388889,
+    "lng": 153.36222222
+   },
+   "coordinates_source": "wikipedia:Iluka Nature Reserve",
+   "counted_sources": [
+    "https://www.visitnsw.com/destinations/north-coast/clarence-valley/iluka"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Iluka_Nature_Reserve"
+   ],
+   "note": "park (nature reserve in the Gondwana rainforest at Iluka, World Heritage listed): Iluka Nature Reserve",
+   "views": 589
+  },
+  {
+   "name": "Iluka Bluff Lookout",
+   "wiki": "",
+   "coordinates": {
+    "lat": -29.39785,
+    "lng": 153.37161
+   },
+   "coordinates_source": "osm (Overpass name match, see sources)",
+   "counted_sources": [
+    "https://www.visitnsw.com/destinations/north-coast/clarence-valley/iluka"
+   ],
+   "other_sources": [],
+   "note": "viewpoint (lookout at the top of the Iluka Rainforest Walking Track, whale and dolphin spotting): Iluka Bluff Lookout",
+   "views": 0
+  },
+  {
+   "name": "Iluka Rainforest Walking Track",
+   "wiki": "",
+   "coordinates": {
+    "lat": -29.3977,
+    "lng": 153.36772
+   },
+   "coordinates_source": "osm (Overpass name match, see sources)",
+   "counted_sources": [
+    "https://www.visitnsw.com/destinations/north-coast/clarence-valley/iluka"
+   ],
+   "other_sources": [],
+   "note": "walk (2.6 km track through prehistoric rainforest to Iluka Bluff): Iluka Rainforest Walking Track",
+   "views": 0
+  },
+  {
+   "name": "Bluff Beach",
+   "wiki": "",
+   "coordinates": {
+    "lat": -29.38927,
+    "lng": 153.37017
+   },
+   "coordinates_source": "osm (Overpass name match, see sources)",
+   "counted_sources": [
+    "https://www.visitnsw.com/destinations/north-coast/clarence-valley/iluka"
+   ],
+   "other_sources": [],
+   "note": "beach (sheltered beach below Iluka Bluff, picnic tables): Bluff Beach",
+   "views": 0
+  },
+  {
+   "name": "Frazers Reef",
+   "wiki": "",
+   "coordinates": {
+    "lat": -29.38521,
+    "lng": 153.37175
+   },
+   "coordinates_source": "osm (Overpass name match, see sources)",
+   "counted_sources": [
+    "https://www.visitnsw.com/destinations/north-coast/clarence-valley/iluka"
+   ],
+   "other_sources": [],
+   "note": "beach (secluded beach for swimming and snorkelling north of Iluka, Bundjalung NP): Frazers Reef",
+   "views": 0
+  },
+  {
+   "name": "Shark Bay",
+   "wiki": "",
+   "coordinates": {
+    "lat": -29.41,
+    "lng": 153.36
+   },
+   "coordinates_source": "approximate: Iluka end of Bundjalung NP (Wikipedia coordinates were for Shark Bay, Western Australia; replaced)",
+   "counted_sources": [
+    "https://www.visitnsw.com/destinations/north-coast/clarence-valley/iluka"
+   ],
+   "other_sources": [],
+   "note": "beach (southern Bundjalung NP beach, 4WD access onto the sand at low tide): Shark Bay",
+   "views": 0
+  },
+  {
+   "name": "Iluka Beach",
+   "wiki": "",
+   "coordinates": {
+    "lat": -29.41033,
+    "lng": 153.36668
+   },
+   "coordinates_source": "osm (Overpass name match, see sources)",
+   "counted_sources": [
+    "https://www.visitnsw.com/destinations/north-coast/clarence-valley/iluka"
+   ],
+   "other_sources": [],
+   "note": "beach (surf and fishing beach beside the Iluka breakwall): Iluka Beach",
+   "views": 0
+  },
+  {
+   "name": "Yamba Lighthouse",
+   "wiki": "Yamba Lighthouse",
+   "coordinates": {
+    "lat": -29.4325,
+    "lng": 153.364
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Yamba",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Yamba",
+    "https://www.visitnsw.com/destinations/north-coast/clarence-valley/yamba"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Yamba_Lighthouse"
+   ],
+   "note": "landmark (lighthouse on Pilot Hill with ocean views, start of the Yuraygir coastal walk): Yamba Lighthouse",
+   "views": 0
+  },
+  {
+   "name": "Yamba Main Beach",
+   "wiki": "",
+   "coordinates": {
+    "lat": -29.43527,
+    "lng": 153.36448
+   },
+   "coordinates_source": "osm (Overpass name match, see sources)",
+   "counted_sources": [
+    "https://www.visitnsw.com/destinations/north-coast/clarence-valley/yamba"
+   ],
+   "other_sources": [],
+   "note": "beach (main Yamba beach with a scenic ocean pool): Yamba Main Beach",
+   "views": 0
+  },
+  {
+   "name": "Turners Beach",
+   "wiki": "",
+   "coordinates": {
+    "lat": -29.42976,
+    "lng": 153.36389
+   },
+   "coordinates_source": "osm (Overpass name match, see sources)",
+   "counted_sources": [
+    "https://www.visitnsw.com/destinations/north-coast/clarence-valley/yamba"
+   ],
+   "other_sources": [],
+   "note": "beach (Yamba beach between the breakwall and Angourie): Turners Beach",
+   "views": 0
+  },
+  {
+   "name": "Pippi Beach",
+   "wiki": "",
+   "coordinates": {
+    "lat": -29.44618,
+    "lng": 153.36659
+   },
+   "coordinates_source": "osm (Overpass name match, see sources)",
+   "counted_sources": [
+    "https://www.visitnsw.com/destinations/north-coast/clarence-valley/yamba"
+   ],
+   "other_sources": [],
+   "note": "beach (Yamba swimming beach named by Visit NSW): Pippi Beach",
+   "views": 0
+  },
+  {
+   "name": "Angourie Point",
+   "wiki": "",
+   "coordinates": {
+    "lat": -29.47916667,
+    "lng": 153.35944444
+   },
+   "coordinates_source": "wikipedia:Angourie, New South Wales",
+   "counted_sources": [
+    "https://www.visitnsw.com/destinations/north-coast/clarence-valley/yamba"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Angourie_Point"
+   ],
+   "note": "beach (National Surfing Reserve point break south of Yamba): Angourie Point",
+   "views": 0,
+   "redirect_to": "Angourie, New South Wales"
+  },
+  {
+   "name": "Pinnacle Rock",
+   "wiki": "",
+   "coordinates": {
+    "lat": -29.4553,
+    "lng": 153.2155
+   },
+   "coordinates_source": "approximate: Maclean Lookout (Pinnacle Rock is beyond it on the road)",
+   "counted_sources": [
+    "https://www.visitnsw.com/destinations/north-coast/clarence-valley/maclean"
+   ],
+   "other_sources": [],
+   "note": "landmark (balancing rock formation and Aboriginal heritage site in rainforest above Maclean): Pinnacle Rock",
+   "views": 0
+  },
+  {
+   "name": "Maclean Lookout",
+   "wiki": "",
+   "coordinates": {
+    "lat": -29.4553,
+    "lng": 153.2155
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Maclean",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Maclean",
+    "https://www.visitnsw.com/destinations/north-coast/clarence-valley/maclean"
+   ],
+   "other_sources": [
+    "OSM Overpass"
+   ],
+   "note": "viewpoint (lookout over the Clarence River islands and farmland, 2 km from Maclean): Maclean Lookout",
+   "views": 0
+  },
+  {
+   "name": "Maclean District Museum",
+   "wiki": "",
+   "coordinates": {
+    "lat": -29.4605,
+    "lng": 153.2022
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Maclean",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Maclean"
+   ],
+   "other_sources": [],
+   "note": "museum (local history museum with artifacts from the Clarence, limited opening days): Maclean District Museum",
+   "views": 0
+  },
+  {
+   "name": "Woodford Island",
+   "wiki": "Woodford Island",
+   "coordinates": {
+    "lat": -29.51666667,
+    "lng": 153.13333333
+   },
+   "coordinates_source": "wikipedia:Woodford Island",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Maclean",
+    "https://www.visitnsw.com/destinations/north-coast/clarence-valley/maclean"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Woodford_Island"
+   ],
+   "note": "island (largest river island in the Southern Hemisphere, between Grafton and Maclean, golf course): Woodford Island",
+   "views": 2894
+  },
+  {
+   "name": "Grafton Bridge",
+   "wiki": "",
+   "coordinates": {
+    "lat": -29.6868,
+    "lng": 152.933
+   },
+   "coordinates_source": "approximate: Clarence River crossing at Grafton (Wikipedia article was the Auckland bridge, rejected)",
+   "counted_sources": [
+    "https://www.visitnsw.com/destinations/north-coast/clarence-valley/grafton"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Grafton_Bridge"
+   ],
+   "note": "landmark (1932 dual-level railway and road bridge over the Clarence, the Bendy Bridge): Grafton Bridge",
+   "views": 0
+  },
+  {
+   "name": "Grafton Regional Gallery",
+   "wiki": "",
+   "coordinates": {
+    "lat": -29.689,
+    "lng": 152.93
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Grafton_(New_South_Wales)",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Grafton_(New_South_Wales)",
+    "https://www.visitnsw.com/destinations/north-coast/clarence-valley/grafton"
+   ],
+   "other_sources": [],
+   "note": "museum (regional art gallery in Prentice House, over 40 exhibitions a year): Grafton Regional Art Gallery",
+   "views": 0
+  },
+  {
+   "name": "Grafton Heritage Trail",
+   "wiki": "",
+   "coordinates": {
+    "lat": -29.689,
+    "lng": 152.93
+   },
+   "coordinates_source": "approximate: Grafton town centre (Grafton Regional Gallery point)",
+   "counted_sources": [
+    "https://www.visitnsw.com/destinations/north-coast/clarence-valley/grafton"
+   ],
+   "other_sources": [],
+   "note": "walk (self-guided walk past Grafton Gaol, Christ Church Cathedral and Schaeffer House): Grafton Heritage Trail",
+   "views": 0
+  },
+  {
+   "name": "Clarence River Historical Society",
+   "wiki": "",
+   "coordinates": {
+    "lat": -29.689,
+    "lng": 152.93
+   },
+   "coordinates_source": "approximate: Grafton town centre (Schaeffer House, Grafton)",
+   "counted_sources": [
+    "https://www.visitnsw.com/destinations/north-coast/clarence-valley/grafton"
+   ],
+   "other_sources": [],
+   "note": "museum (historical society in Schaeffer House, a Federation homestead, Grafton): Clarence River Historical Society",
+   "views": 0
+  },
+  {
+   "name": "Grafton Jacaranda Festival",
+   "wiki": "",
+   "coordinates": {
+    "lat": -29.689,
+    "lng": 152.93
+   },
+   "coordinates_source": "approximate: Grafton town centre (festival, not a point)",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Grafton_(New_South_Wales)",
+    "https://www.visitnsw.com/destinations/north-coast/clarence-valley/grafton"
+   ],
+   "other_sources": [],
+   "note": "festival (annual October to November festival; not a permanent spot, belongs in Grafton's best-time text): Grafton Jacaranda Festival",
+   "views": 0
+  },
+  {
+   "name": "Ulmarra Hotel",
+   "wiki": "",
+   "coordinates": {
+    "lat": -29.631,
+    "lng": 153.02775
+   },
+   "coordinates_source": "osm (Overpass name match, see sources)",
+   "counted_sources": [
+    "https://www.visitnsw.com/destinations/north-coast/clarence-valley/grafton"
+   ],
+   "other_sources": [],
+   "note": "venue (century-old hotel with a large beer garden, just outside Grafton; a pub, not an attraction): Ulmarra Hotel",
+   "views": 0
+  },
+  {
+   "name": "Evans Head Heritage Aviation Museum",
+   "wiki": "",
+   "coordinates": {
+    "lat": -29.102488,
+    "lng": 153.421418
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Evans_Head",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Evans_Head"
+   ],
+   "other_sources": [],
+   "note": "museum (heritage aviation museum with an F-111 at Memorial Airport, Evans Head): F111 Museum (Evans Head Heritage Aviation Museum)",
+   "views": 0
+  },
+  {
+   "name": "Byron Bay Wildlife Sanctuary",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.75023,
+    "lng": 153.53332
+   },
+   "coordinates_source": "osm (Overpass name match, see sources)",
+   "counted_sources": [
+    "https://www.visitbyronbay.com/suggested-walks-activities"
+   ],
+   "other_sources": [],
+   "note": "wildlife (interactive eco sanctuary with wildlife experiences, operator): Byron Bay Wildlife Sanctuary",
+   "views": 0
+  },
+  {
+   "name": "Crystal Castle and Shambhala Gardens",
+   "wiki": "Crystal Castle and Shambhala Gardens",
+   "coordinates": {
+    "lat": -28.5914,
+    "lng": 153.464939
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Mullumbimby",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Mullumbimby",
+    "https://www.visitbyronbay.com/activities-tours"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Crystal_Castle_and_Shambhala_Gardens"
+   ],
+   "note": "attraction (crystal collection and gardens in the hinterland at Montecollum, open daily): Crystal Castle and Shambhala Gardens",
+   "views": 1580
+  },
+  {
+   "name": "Mount Chincogan",
+   "wiki": "Mount Chincogan",
+   "coordinates": {
+    "lat": -28.529444,
+    "lng": 153.490278
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Mullumbimby",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Mullumbimby",
+    "https://www.visitbyronbay.com/surrounding-towns-villages"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Mount_Chincogan"
+   ],
+   "note": "mountain (volcanic plug above Mullumbimby, Traditional Aboriginal site): Mount Chincogan",
+   "views": 1792
+  },
+  {
+   "name": "Heritage Park, Mullumbimby",
+   "wiki": "Brunswick Valley Heritage Park",
+   "coordinates": {
+    "lat": -28.55,
+    "lng": 153.5
+   },
+   "coordinates_source": "approximate: Mullumbimby town centre (Mill Street park)",
+   "counted_sources": [
+    "https://www.visitbyronbay.com/surrounding-towns-villages"
+   ],
+   "other_sources": [],
+   "note": "nature (park planted with over 300 native rainforest species, Mill Street): Heritage Park, Mullumbimby",
+   "views": 271
+  },
+  {
+   "name": "Nimbin Candle Factory",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.579283,
+    "lng": 153.230391
+   },
+   "coordinates_source": "approximate: Nimbin town centre (Wikivoyage Nimbin)",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Nimbin"
+   ],
+   "other_sources": [],
+   "note": "shop (candle factory in Nimbin's alternative village, a visitor stop and business): Nimbin Candle Factory",
+   "views": 0
+  },
+  {
+   "name": "Nimbin Hemp Museum",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.579283,
+    "lng": 153.230391
+   },
+   "coordinates_source": "approximate: Nimbin town centre (Wikivoyage Nimbin)",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Nimbin"
+   ],
+   "other_sources": [],
+   "note": "museum (gold-coin donation museum on hemp in Nimbin, town murals): Nimbin Hemp Museum",
+   "views": 0
+  },
+  {
+   "name": "Lismore Regional Gallery",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.80967,
+    "lng": 153.2793
+   },
+   "coordinates_source": "osm (Overpass name match, see sources)",
+   "counted_sources": [
+    "https://www.visitbyronbay.com/surrounding-towns-villages",
+    "https://www.visitnsw.com/destinations/north-coast/northern-rivers"
+   ],
+   "other_sources": [],
+   "note": "museum (regional art gallery in Lismore): Lismore Regional Gallery",
+   "views": 0
+  },
+  {
+   "name": "Heritage Park Miniature Train, Lismore",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.812069,
+    "lng": 153.287676
+   },
+   "coordinates_source": "approximate: Lismore town centre (Heritage Park is next to the visitor centre)",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lismore_(New_South_Wales)"
+   ],
+   "other_sources": [],
+   "note": "entertainment (miniature train and playground beside the Lismore visitor centre, weekends and school holidays): Heritage Park Miniature Train",
+   "views": 0
+  },
+  {
+   "name": "Koala Care Centre",
+   "wiki": "Koala Care Centre",
+   "coordinates": {
+    "lat": -28.812069,
+    "lng": 153.287676
+   },
+   "coordinates_source": "approximate: Lismore town centre (Rifle Range Road address not geocoded)",
+   "counted_sources": [
+    "https://www.visitbyronbay.com/",
+    "https://en.wikivoyage.org/wiki/Lismore_(New_South_Wales)"
+   ],
+   "other_sources": [],
+   "note": "wildlife (koala rehabilitation centre and educational tours in Lismore): Koala Care Centre",
+   "views": 0
+  },
+  {
+   "name": "Tweed Regional Gallery and Margaret Olley Art Centre",
+   "wiki": "Tweed Regional Gallery",
+   "coordinates": {
+    "lat": -28.347856,
+    "lng": 153.400235
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Murwillumbah",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Murwillumbah",
+    "https://www.visitbyronbay.com/free-activities"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Tweed_Regional_Gallery"
+   ],
+   "note": "museum (contemporary art gallery and Margaret Olley recreated studio, Murwillumbah): Tweed Regional Gallery",
+   "views": 649
+  },
+  {
+   "name": "Tweed Regional Museum",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.3256,
+    "lng": 153.3953
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Murwillumbah",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Murwillumbah"
+   ],
+   "other_sources": [],
+   "note": "museum (regional museum of 10,000 objects and 8,000 photographs, Murwillumbah, limited hours): Tweed Regional Museum",
+   "views": 0
+  },
+  {
+   "name": "World Heritage Rainforest Centre",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.3297,
+    "lng": 153.4027
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Murwillumbah",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Murwillumbah"
+   ],
+   "other_sources": [],
+   "note": "visitor centre (Murwillumbah visitor centre with a rainforest interpretive centre and theatrette): World Heritage Rainforest Centre",
+   "views": 0
+  },
+  {
+   "name": "Kyogle Lookout",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.6272,
+    "lng": 153.0059
+   },
+   "coordinates_source": "wikivoyage listing:https://en.wikivoyage.org/wiki/Kyogle",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Kyogle"
+   ],
+   "other_sources": [],
+   "note": "viewpoint (general lookout over Kyogle): Kyogle Lookout",
+   "views": 0
+  },
+  {
+   "name": "Northern Rivers Rail Trail",
+   "wiki": "Northern Rivers Rail Trail",
+   "coordinates": {
+    "lat": -28.6,
+    "lng": 153.2
+   },
+   "coordinates_source": "approximate centroid of OSM trail segments between Casino and Murwillumbah (not a point on the trail)",
+   "counted_sources": [
+    "https://www.visitbyronbay.com/activities-tours",
+    "https://www.visitbyronbay.com/suggested-walks-activities"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Northern_Rivers_Rail_Trail"
+   ],
+   "note": "trail (rail trail between Casino and Murwillumbah, e-bike and shuttle hire from Byron): Northern Rivers Rail Trail",
+   "views": 1143
+  },
+  {
+   "name": "Byron Bay Farmers Market",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.6447,
+    "lng": 153.6214
+   },
+   "coordinates_source": "approximate: town centre of the market town (venue point not located)",
+   "counted_sources": [
+    "https://www.visitbyronbay.com/free-activities"
+   ],
+   "other_sources": [],
+   "note": "market (weekly Thursday morning farmers market at the Byron Markets): Byron Bay Farmers Market",
+   "views": 0
+  },
+  {
+   "name": "Byron Bay Community Market",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.6447,
+    "lng": 153.6214
+   },
+   "coordinates_source": "approximate: town centre of the market town (venue point not located)",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lennox_Head"
+   ],
+   "other_sources": [],
+   "note": "market (monthly first-Sunday community market, Buttler St Reserve): Byron Bay Community Market",
+   "views": 0
+  },
+  {
+   "name": "Mullumbimby Farmers Market",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.546747,
+    "lng": 153.488179
+   },
+   "coordinates_source": "approximate: town centre of the market town (venue point not located)",
+   "counted_sources": [
+    "https://www.visitbyronbay.com/free-activities",
+    "https://en.wikivoyage.org/wiki/Mullumbimby"
+   ],
+   "other_sources": [],
+   "note": "market (weekly Friday farmers market under the fig trees in Mullumbimby): Mullumbimby Farmers Market",
+   "views": 0
+  },
+  {
+   "name": "Channon Craft Market",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.6,
+    "lng": 153.5
+   },
+   "coordinates_source": "approximate: town centre of the market town (venue point not located)",
+   "counted_sources": [
+    "https://www.visitbyronbay.com/free-activities",
+    "https://en.wikivoyage.org/wiki/Byron_Bay"
+   ],
+   "other_sources": [],
+   "note": "market (monthly second-Sunday craft market at The Channon): Channon Craft Market",
+   "views": 0
+  },
+  {
+   "name": "Bangalow Farmers Market",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.6859,
+    "lng": 153.5279
+   },
+   "coordinates_source": "approximate: town centre of the market town (venue point not located)",
+   "counted_sources": [
+    "https://www.visitbyronbay.com/surrounding-towns-villages"
+   ],
+   "other_sources": [],
+   "note": "market (Saturday morning farmers market behind the Bangalow Hotel): Bangalow Farmers Market",
+   "views": 0
+  },
+  {
+   "name": "Lennox Head Markets",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.8,
+    "lng": 153.5833
+   },
+   "coordinates_source": "approximate: town centre of the market town (venue point not located)",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lennox_Head"
+   ],
+   "other_sources": [],
+   "note": "market (second and fifth Sunday market near Lake Ainsworth): Lennox Head Markets",
+   "views": 0
+  },
+  {
+   "name": "Ballina Markets",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.868089,
+    "lng": 153.556738
+   },
+   "coordinates_source": "approximate: town centre of the market town (venue point not located)",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lennox_Head"
+   ],
+   "other_sources": [],
+   "note": "market (third-Sunday market at the Circus Ground, Ballina): Ballina Markets",
+   "views": 0
+  },
+  {
+   "name": "Lismore Farmers Market",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.812069,
+    "lng": 153.287676
+   },
+   "coordinates_source": "approximate: town centre of the market town (venue point not located)",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lismore_(New_South_Wales)"
+   ],
+   "other_sources": [],
+   "note": "market (Saturday morning farmers market at Lismore Showground): Lismore Farmers Market",
+   "views": 0
+  },
+  {
+   "name": "Grafton Farmers Market",
+   "wiki": "",
+   "coordinates": {
+    "lat": -29.689,
+    "lng": 152.93
+   },
+   "coordinates_source": "approximate: Grafton town centre (Prince Street market)",
+   "counted_sources": [
+    "https://www.visitnsw.com/destinations/north-coast/clarence-valley/grafton"
+   ],
+   "other_sources": [],
+   "note": "market (weekly Thursday farmers market on Prince Street, Grafton): Grafton Farmers Market",
+   "views": 0
+  },
+  {
+   "name": "Yamba Farmers and Producers Market",
+   "wiki": "",
+   "coordinates": {
+    "lat": -29.43631,
+    "lng": 153.330331
+   },
+   "coordinates_source": "approximate: town centre of the market town (venue point not located)",
+   "counted_sources": [
+    "https://www.visitnsw.com/destinations/north-coast/clarence-valley/yamba"
+   ],
+   "other_sources": [],
+   "note": "market (weekly Wednesday farmers and producers market in Yamba): Yamba Farmers and Producers Market",
+   "views": 0
+  },
+  {
+   "name": "Murwillumbah Farmers Market",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.333,
+    "lng": 153.383
+   },
+   "coordinates_source": "approximate: town centre of the market town (venue point not located)",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Murwillumbah"
+   ],
+   "other_sources": [],
+   "note": "market (weekly Wednesday farmers market in Murwillumbah, named by third-party guides): Murwillumbah Farmers Market",
+   "views": 0
+  },
+  {
+   "name": "MardiGrass",
+   "wiki": "MardiGrass",
+   "coordinates": {
+    "lat": -28.579283,
+    "lng": 153.230391
+   },
+   "coordinates_source": "approximate: Nimbin town centre (festival, not a point)",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Nimbin"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/MardiGrass"
+   ],
+   "note": "festival (annual cannabis-law reform festival held in Nimbin, first weekend of May; not a permanent spot): MardiGrass",
+   "views": 2059
+  },
+  {
+   "name": "Splendour in the Grass",
+   "wiki": "Splendour in the Grass",
+   "coordinates": {
+    "lat": -28.6447,
+    "lng": 153.6214
+   },
+   "coordinates_source": "approximate: Byron Bay town centre (festival held at North Byron Parklands, not geocoded)",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Byron_Bay"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Splendour_in_the_Grass"
+   ],
+   "note": "festival (annual July music festival near Byron Bay; not a permanent spot): Splendour in the Grass",
+   "views": 13590
+  },
+  {
+   "name": "East Coast Blues and Roots Music Festival",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.6447,
+    "lng": 153.6214
+   },
+   "coordinates_source": "approximate: Byron Bay town centre (festival, not a point)",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Byron_Bay"
+   ],
+   "other_sources": [],
+   "note": "festival (annual Easter music festival in Byron Bay; not a permanent spot): East Coast Blues and Roots Music Festival",
+   "views": 0,
+   "redirect_to": "Byron Bay Bluesfest"
+  },
+  {
+   "name": "Byron Bay Circus Arts",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.6447,
+    "lng": 153.6214
+   },
+   "coordinates_source": "approximate: Byron Bay town centre (Centennial Circuit venue not geocoded)",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Byron_Bay",
+    "https://www.visitbyronbay.com/activities-tours"
+   ],
+   "other_sources": [],
+   "note": "operator (circus arts and flying trapeze school on Centennial Circuit): Byron Bay Circus Arts",
+   "views": 0
+  },
+  {
+   "name": "Lord Byron Distillery",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.63721,
+    "lng": 153.58632
+   },
+   "coordinates_source": "osm (Overpass name match, see sources)",
+   "counted_sources": [
+    "https://www.visitbyronbay.com/activities-tours"
+   ],
+   "other_sources": [],
+   "note": "operator (craft distillery with guided tours and tastings; a business, not a public attraction): Lord Byron Distillery",
+   "views": 0
+  },
+  {
+   "name": "The Farm, Byron Bay",
+   "wiki": "The Farm, Byron Bay",
+   "coordinates": {
+    "lat": -28.6447,
+    "lng": 153.6214
+   },
+   "coordinates_source": "approximate: Byron Bay town centre (farm location not geocoded)",
+   "counted_sources": [
+    "https://www.visitbyronbay.com/free-activities",
+    "https://www.visitnsw.com/destinations/north-coast/northern-rivers"
+   ],
+   "other_sources": [],
+   "note": "attraction (working regenerative farm with walkways and tours, a Byron Bay food-and-farm stop): The Farm",
+   "views": 0
+  },
+  {
+   "name": "Julian Rocks",
+   "wiki": "Nguthungulli Julian Rocks Nature Reserve",
+   "coordinates": {
+    "lat": -28.6115,
+    "lng": 153.629
+   },
+   "coordinates_source": "osm:Nguthungulli Julian Rocks Nature Reserve",
+   "counted_sources": [
+    "https://www.visitbyronbay.com/activities-tours",
+    "https://en.wikivoyage.org/wiki/Byron_Bay"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Nguthungulli_Julian_Rocks_Nature_Reserve"
+   ],
+   "note": "marine reserve (snorkelling and diving reef five minutes off Byron Bay, reached by dive operator boat): Julian Rocks",
+   "views": 813
+  },
+  {
+   "name": "Byron Bay Lighthouse Sunrise Tour",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.6386,
+    "lng": 153.6363
+   },
+   "coordinates_source": "approximate: Cape Byron Lighthouse (tour destination)",
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/walgun-cape-byron-state-conservation-area"
+   ],
+   "other_sources": [],
+   "note": "operator (guided sunrise tour to the lighthouse; a tour, not a place): Byron Bay Lighthouse Sunrise Tour",
+   "views": 0
+  },
+  {
+   "name": "Cosy Corner",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.64228,
+    "lng": 153.63497
+   },
+   "coordinates_source": "osm (Overpass name match, see sources)",
+   "counted_sources": [
+    "https://www.visitbyronbay.com/beaches-of-byron"
+   ],
+   "other_sources": [],
+   "note": "beach (surf break on the south side of Cape Byron, a minor beach): Cosy Corner",
+   "views": 0
+  },
+  {
+   "name": "Tyagarah Nature Reserve",
+   "wiki": "Tyagarah Nature Reserve",
+   "coordinates": {
+    "lat": -28.60472222,
+    "lng": 153.57555556
+   },
+   "coordinates_source": "wikipedia:Tyagarah Nature Reserve",
+   "counted_sources": [
+    "https://www.visitbyronbay.com/suggested-walks-activities",
+    "https://en.wikivoyage.org/wiki/Byron_Bay"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Tyagarah_Nature_Reserve"
+   ],
+   "note": "park (coastal heath reserve with a trail behind Brunswick Heads beach to Tyagarah Beach): Tyagarah Nature Reserve",
+   "views": 538
+  },
+  {
+   "name": "Victoria Park Nature Reserve",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.90166667,
+    "lng": 153.41087467
+   },
+   "coordinates_source": "wikipedia:Victoria Park Nature Reserve",
+   "counted_sources": [
+    "https://www.visitbyronbay.com/suggested-walks-activities"
+   ],
+   "other_sources": [],
+   "note": "park (nature reserve with a short rainforest boardwalk, 46 km from Byron Bay): Victoria Park Nature Reserve",
+   "views": 0
+  },
+  {
+   "name": "Brooms Head Surf Beach",
+   "wiki": "",
+   "coordinates": {
+    "lat": -29.6,
+    "lng": 153.1
+   },
+   "coordinates_source": "approximate: Brooms Head village (not geocoded)",
+   "counted_sources": [
+    "https://www.visitnsw.com/destinations/north-coast/clarence-valley/yamba"
+   ],
+   "other_sources": [],
+   "note": "beach (surf beach at Brooms Head on the Yuraygir coast, minor): Brooms Head Surf Beach",
+   "views": 0
+  },
+  {
+   "name": "Lennox Head Lookout",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.8,
+    "lng": 153.583333
+   },
+   "coordinates_source": "approximate: Lennox Head village (Lennox Point not geocoded)",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lennox_Head"
+   ],
+   "other_sources": [],
+   "note": "viewpoint (lookout at the end of the Lennox Point walk, hang-glider launch): Lennox Head Lookout",
+   "views": 0
+  },
+  {
+   "name": "Lennox Head Heritage Walk",
+   "wiki": "",
+   "coordinates": {
+    "lat": -28.8,
+    "lng": 153.583333
+   },
+   "coordinates_source": "approximate: Lennox Head village centre",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lennox_Head"
+   ],
+   "other_sources": [],
+   "note": "walk (heritage walk in Lennox Head, minor): Lennox Head Heritage Walk",
+   "views": 0
+  }
+ ]
+}

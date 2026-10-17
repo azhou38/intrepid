@@ -1,0 +1,88 @@
+{
+  "destination": "cowra",
+  "checked": "2026-10-17",
+  "verified_figures": {
+    "breakout": "Wikipedia Cowra breakout: 5 August 1944, 1,104 Japanese POWs escaped (the 1,104/1,104 in research is consistent; use 1,104). 'Largest prison escape of WWII' is in the lead. 'During the escape and ensuing manhunt, four Australian soldiers and 231 Japanese prisoners were killed and 108 wounded', so the deaths include the round-up, not only the night. Leaders ordered no attacks on civilians; none were hurt.",
+    "garden": "cowragarden.com.au (fetched 17 Oct 2026): adults $22, concession/local/student $17, child 5-12 $12, under 5 free, family $52, 8.30am-5.00pm, festival prices differ. The site's own words: 'the largest Japanese garden in the Southern Hemisphere. Spanning 12.5 acres', so the operator attribution is correct. Wikivoyage's $9.50 and its garden-address 'Binni Creek Road' are dated; ignore.",
+    "distances": "From the destination centre (-33.835, 148.6925): garden 1.1 km, camp site 2.9 km, Japanese cemetery 3.7 km, Canowindra 29.9 km straight line (Wikipedia infobox: 32 km N of Cowra, by road). The 4 km in placement.json is wrong; the 1.2 km in research is close (1.1). Camp site to cemetery is about 1.6 km (the draft's 'about 1 km' is low).",
+    "sakura": "cowragarden.com.au/about-1: Sakura Matsuri was Saturday 26 Sep 2026 and has already happened (page now says thank you). Late September holds; 27 Sep 2025 and 28 Sep 2024 come from research (trybooking), not re-fetched. 2027 date not published. The page says 'cherry blossoms in spring' only; the mid-Sep to mid-Oct window is unverified.",
+    "balloons": "Wikipedia Canowindra: the Canowindra International Balloon Challenge takes place in April; 'Ballooning Capital of Australia' is there. Confirmed.",
+    "age_of_fishes": "ageoffishes.org.au (fetched): open 10am-3.45pm Thursday to Monday, closed Tuesday and Wednesday, open 7 days in NSW school holidays. Confirmed. Wikipedia Canowindra: road worker find in 1955, slab packed with 114 fish, late Devonian. The museum's own timeline says about 360 million years ago.",
+    "canowindra_river": "Wikipedia Canowindra: 'situated on the Belubula River'. Lachlan is wrong for Canowindra. Cowra is the Lachlan town.",
+    "climate": "Wikipedia Cowra climate table (Cowra Airport): mean daily maximum Jan 32.2C, Jul 13.7C. So '32C' is a summer average, not a peak: record highs reach 46.6C and the text says frequent 40C+ days in summer."
+  },
+  "items": [
+    {"field": "tagline", "variant": 1, "status": "ok", "fix": null, "note": "Lachlan River, garden, 1944 breakout all supported. Preferred."},
+    {"field": "tagline", "variant": 2, "status": "fix", "fix": "Where a Japanese garden and a Japanese war cemetery mark the 1944 prisoner-of-war breakout.", "note": "'Mark a breakout' is loose for a garden; the garden is reconciliation after WWII, not a breakout marker. Use variant 1 or 3 instead."},
+    {"field": "tagline", "variant": 3, "status": "ok", "fix": null, "note": "Supported."},
+    {"field": "description", "variant": 1, "status": "fix", "fix": "Cowra is a town of about 8,000 people on the Lachlan River, around 310 km west of Sydney. During the Second World War it held a prisoner-of-war camp, and on 5 August 1944 more than a thousand Japanese prisoners broke out; the camp site and the Japanese war cemetery beside the town are why many visitors come. The Japanese garden, designed by Ken Nakajima as a strolling garden, symbolises reconciliation and peace after the war. Cowra is also the base for a wine region of over 40 vineyards around Cowra, Billimari and Canowindra.", "note": "Cut 'The town's response was a Japanese garden': no source links the garden to the Breakout (it says reconciliation after WWII; Wikivoyage adds 'and after the local conflict', but that is thin). 'The sites left from that night' reworded to 'camp site'. 310 km is by road (Wikipedia) so 'around 310 km' is fine. Population: Wikipedia 8,254, 'about 8,000' is acceptable. Nakajima is on the garden site's address and Wikivoyage; kaiyu-shiki is Wikivoyage."},
+    {"field": "description", "variant": 2, "status": "fix", "fix": "Cowra sits on the Lachlan River in the Central West, 310 km west of Sydney and 189 km north of Canberra (both by road), where the Mid-Western Highway, Olympic Highway and Lachlan Valley Way meet. It is best known for two things from the Second World War: the 1944 prisoner-of-war breakout, and the Japanese garden, designed to symbolise reconciliation and peace. The Japanese war cemetery on Doncaster Drive is the only one in Australia. Beyond the town, over 40 vineyards around Cowra, Billimari and Canowindra make it a wine base, and Canowindra lies 32 km north.", "note": "Original said the garden AND cemetery 'stand for peace'; only the garden is sourced that way. Other facts (310 km, 189 km, three highways, only Japanese war cemetery, 40+ vineyards, 32 km) verified. Preferred variant, with this fix."},
+    {"field": "description", "variant": 3, "status": "fix", "fix": "Cowra is a Lachlan River town of around 8,000 where the Mid-Western Highway, Olympic Highway and Lachlan Valley Way meet. It was the site of a Second World War prisoner-of-war camp, and the breakout of 5 August 1944 is the largest prison escape of the war. Visitors can walk the camp site, visit the Japanese and Australian war cemeteries on Doncaster Drive, and stroll the 12.5-acre Japanese garden, which its operator calls the largest in the Southern Hemisphere. Cherry blossom fills the garden in spring, and April brings the Balloon Challenge to Canowindra, 32 km north.", "note": "'Side by side' is loose (WV lists both on Doncaster Drive; fine to say 'on'). The garden's 12.5 acres is an operator figure, so attribute alongside the superlative or drop the number. Cherry blossom in spring is on the garden's own site."},
+    {"field": "whyVisit.reason1", "variant": 1, "status": "ok", "fix": null, "note": "Preferred. 'Designed for peace' loosely paraphrases 'symbolises reconciliation and peace'; acceptable."},
+    {"field": "whyVisit.reason1", "variant": 2, "status": "ok", "fix": null, "note": "Attributed to operator, wording matches the site."},
+    {"field": "whyVisit.reason1", "variant": 3, "status": "ok", "fix": null, "note": "Cultural Centre, gift shop and cafe are on the site nav."},
+    {"field": "whyVisit.reason2", "variant": 1, "status": "ok", "fix": null, "note": "Preferred; camp site, Sakura Avenue, free, all hours (Wikivoyage)."},
+    {"field": "whyVisit.reason2", "variant": 2, "status": "ok", "fix": null, "note": "1,104 and date verified. 'Broke out in 1944' fine. Keep the figure as 'more than a thousand' if the reason must stay short."},
+    {"field": "whyVisit.reason2", "variant": 3, "status": "ok", "fix": null, "note": "'Australia's only Japanese war cemetery' verified in Wikivoyage."},
+    {"field": "whyVisit.reason3", "variant": "age_of_fishes", "status": "ok", "fix": null, "note": "Facts verified (1955, 114 fish, Devonian). Wikipedia says 'late Devonian'; museum says about 360 million years. Reason is conditional on a photo and on the museum being added; museum is held, so this reason points at a place not in the app."},
+    {"field": "whyVisit.reason3", "variant": "historic_canowindra", "status": "ok", "fix": null, "note": "Belubula, Gaskill Street conservation area, 34 State Heritage Register buildings/features all verified. Needs a distinct photo."},
+    {"field": "whyVisit.reason3", "variant": "balloons", "status": "ok", "fix": null, "note": "Verified, but seasonal and the reason is an event, which COVERAGE.md says belongs in tips, not as a spot reason. Weakest option."},
+    {"field": "highlights", "status": "ok", "fix": null, "note": "All phrases map to sourced facts. Use the pairing that matches the chosen reason 3."},
+    {"field": "goodToKnow", "variant": 1, "tip": 1, "status": "ok", "fix": "The Japanese Garden costs $22 for adults ($17 concession or local, $12 child, $52 family) and opens 8:30 am to 5 pm daily; prices differ on festival days.", "note": "Verified on 17 Oct 2026. Prices are the operator's current list."},
+    {"field": "goodToKnow", "variant": 1, "tip": 2, "status": "fix", "fix": "Plan to drive: public transport is two NSW TrainLink coach services a day from Bathurst or Lithgow, the nearest airports with scheduled flights are Orange, Parkes and Bathurst, and Canowindra needs a car.", "note": "'No airport in town' is an inference from Wikivoyage's list; stated as nearest airports instead. Coach count is from a Wikivoyage section with timetable details that may be dated, hedge with 'Wikivoyage lists'. 'Canowindra reached by car' is inference, not sourced."},
+    {"field": "goodToKnow", "variant": 1, "tip": 3, "status": "fix", "fix": "Book early for festival weekends: the Sakura Matsuri falls on a Saturday in late September and the Canowindra Balloon Challenge runs in April.", "note": "Both verified; 'book early' is advice, not a sourced fact. The 2026 Matsuri was 26 Sep, already past."},
+    {"field": "goodToKnow", "variant": 2, "tip": 1, "status": "ok", "fix": null, "note": "Garden site: 'not a flat garden', dogs on a leash welcome, dogs not permitted on Sakura Matsuri day. A pushable wheelchair is available."},
+    {"field": "goodToKnow", "variant": 2, "tip": 2, "status": "fix", "fix": "Scheduled flights serve Orange, Parkes and Bathurst, not Cowra; Bathurst or Orange is about 1.5 hours' drive, and Canberra about 2 hours.", "note": "Wikivoyage gives 1.5 h from Bathurst and via Blayney/Canowindra for Orange. 'Not Cowra' inferred."},
+    {"field": "goodToKnow", "variant": 2, "tip": 3, "status": "ok", "fix": null, "note": "Museum hours verified; keep only if the museum is added. Otherwise cut."},
+    {"field": "bestMonths", "status": "ok", "fix": null, "note": "Own inference; mark approximate. Supported by climate table (Jan mean max 32.2C, Jul 13.7C)."},
+    {"field": "bestTimeBlurb", "variant": 1, "status": "fix", "fix": "Visit in {months}: cherry blossom and the Sakura Matsuri fill the garden in late September, April brings balloons to Canowindra, while summer days average about 32C and winters bring frequent frosts.", "note": "'Summer can reach 32C' understated; Jan mean max is 32.2C and 40C+ days are frequent per Wikipedia. Festival fills the garden 'on the day' is fine. Preferred."},
+    {"field": "bestTimeBlurb", "variant": 2, "status": "fix", "fix": "Mild autumn and spring days in {months} suit the garden and the camp-site walk, with cherry blossom in spring and the Canowindra balloons in April.", "note": "'From late September' blossom start is unverified (search summary). Mean maxima: Apr 23.6C, Oct 22.7C: 'mild' is fair."},
+    {"field": "bestTimeBlurb", "variant": 3, "status": "fix", "fix": "Plan for {months}, when the garden has blossom or autumn colour and Canowindra hosts its April balloon event; winter days average about 14C, with frequent frost.", "note": "Autumn colour is on the garden site; Koyo Matsuri dates were not fetched. Mid-winter 13.7-14.7C verified; 'about 14C' ok."},
+    {"field": "seasonalTags", "label": "Sakura Matsuri cherry blossom", "status": "fix", "fix": "{\"label\": \"Sakura Matsuri cherry blossom\", \"months\": [9]}", "note": "Only the festival (late September, Saturday) is verified. October is on a web-search summary only; use [9] or keep [9, 10] flagged unverified. Note festivals normally belong in text, not as a spot."},
+    {"field": "seasonalTags", "label": "Canowindra Balloon Challenge", "status": "ok", "fix": null, "note": "April verified (Wikipedia). 2026 dates 11-19 April are from research (cabonne/canowindrachallenge), not re-fetched; do not put dates in the data."},
+    {"field": "cowra-1.bio", "variant": 1, "status": "ok", "fix": null, "note": "Preferred. Kaiyu-shiki, Nakajima, reconciliation, cultural centre, shop, cafe all sourced. Add nothing else."},
+    {"field": "cowra-1.bio", "variant": 2, "status": "ok", "fix": null, "note": "Operator claim attributed correctly; 'cultural centre of artworks and artefacts' per research from the site."},
+    {"field": "cowra-1.bio", "variant": 3, "status": "fix", "fix": "A Japanese strolling garden just north of Cowra's centre, known for cherry blossom in spring and autumn colour.", "note": "'Edge of Cowra' relied on the 1.2 vs 4 km conflict. Resolved: 1.1 km from the centre point, so it is close to town; 4 km is wrong. Blossom and autumn colour both on the garden site."},
+    {"field": "cowra-2.bio", "variant": 1, "status": "ok", "fix": null, "note": "Preferred. 1,104 and 5 Aug 1944 verified. 'Nearby' cemeteries is correct (about 1.6 km away)."},
+    {"field": "cowra-2.bio", "variant": 2, "status": "fix", "fix": "The camp site of the largest prison escape of the Second World War, in which four Australians and 231 Japanese were killed, now a free walk along Sakura Avenue.", "note": "'died' covers the manhunt too; 'killed' matches the source. Deaths happened during the escape and round-up, not at the site alone."},
+    {"field": "cowra-2.bio", "variant": 3, "status": "fix", "fix": "The 1944 Breakout site, with Australia's only Japanese war cemetery, ceded to Japan in 1963, about 1.6 km away.", "note": "'Beside' is wrong: the camp-site coordinates are about 1.6 km from the cemetery (the draft said about 1 km). 'Ceded 1963' and 'only one' verified."},
+    {"field": "cowra-3.bio", "variant": 1, "status": "ok", "fix": "A historic township 32 km north of Cowra on the Belubula River, with curving Gaskill Street partly an urban conservation area and 34 buildings or features on the NSW State Heritage Register.", "note": "Preferred. Verified; this is also the correction to the current placement bio."},
+    {"field": "cowra-3.bio", "variant": 2, "status": "ok", "fix": null, "note": "Verified; seasonal event, weaker year-round."},
+    {"field": "cowra-3.bio", "variant": 3, "status": "fix", "fix": "A town north of Cowra where a road worker's find in 1955 uncovered a Devonian slab of 114 fish fossils, shown at the Age of Fishes Museum.", "note": "Wikipedia says a road worker's discovery; 'roadworks' fine either way. Museum is a separate place not in the app (held)."},
+    {"field": "cowra-3.current", "status": "fix", "fix": "A historic township on the Belubula River with curving Gaskill Street, 32 km north of Cowra.", "note": "Current placement bio 'Lachlan River town' is wrong: Canowindra is on the Belubula."}
+  ],
+  "corrected_spot_fields": {
+    "cowra-1": {
+      "bio": "A kaiyu-shiki strolling garden designed by Ken Nakajima to symbolise reconciliation and peace after the Second World War, with a cultural centre, gift shop and cafe.",
+      "hours": "8:30 AM – 5:00 PM",
+      "costMin": 22,
+      "costMax": 22,
+      "currency": "AUD",
+      "ticketUrl": "https://www.cowragarden.com.au/",
+      "ticketUrl_check": "Page title 'Cowra Japanese Garden', fetched 17 Oct 2026: ok.",
+      "coordinates": "-33.826656, 148.698248 (Wikivoyage; 1.1 km from Cowra centre)",
+      "placement_reason_correction": "'4 km from Cowra' is wrong: 1.1 km."
+    },
+    "cowra-2": {
+      "bio": "The site of the prisoner-of-war camp from which 1,104 Japanese prisoners broke out on 5 August 1944, with Sakura Avenue and the Japanese and Australian war cemeteries nearby.",
+      "hours": "Open 24 hours",
+      "hours_note": "Wikivoyage: POW Camp Site, Sakura Avenue 'All hours'. 'Daylight hours' in placement is not sourced.",
+      "free": true,
+      "placement_reason_correction": "'5 km north-east' is wrong: camp site is 2.9 km from the centre point, cemeteries 3.7 km.",
+      "ticketUrl": "omit (no single official site; ticketUrl not checked because none exists)"
+    },
+    "cowra-3": {
+      "bio": "A historic township 32 km north of Cowra on the Belubula River, with curving Gaskill Street partly an urban conservation area and 34 buildings or features on the NSW State Heritage Register.",
+      "hours": "Open 24 hours",
+      "free": true,
+      "note": "Wikipedia gives 32 km by road; coordinates distance is 29.9 km, fits the 50 km span's 75% (37.5 km)."
+    }
+  },
+  "cannot_verify": [
+    "Blossom window mid-September to mid-October (search summary only; garden site says 'spring').",
+    "Sakura Matsuri 2027 date; Koyo Matsuri dates.",
+    "Two coach services a day from Bathurst/Lithgow and the hologram theatre (Wikivoyage, dated sections).",
+    "Sakura Matsuri 2025/2024 dates (research cites trybooking; not re-fetched).",
+    "bestMonths is own inference, no guide gives a best time."
+  ]
+}

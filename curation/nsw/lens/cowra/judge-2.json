@@ -1,0 +1,175 @@
+{
+ "header": {
+  "candidates": [
+   {
+    "file": "Lachlan River, looking downstream, at Cowra.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Plain river bank, not a townscape or spectacular view"
+   },
+   {
+    "file": "Lachlan River, looking upstream, at Cowra.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Plain river bank, not a townscape or spectacular view"
+   },
+   {
+    "file": "Cowra Japanese Garden (3379217011).jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Lovely but shows the garden, not the town in its landscape; kept for why1"
+   },
+   {
+    "file": "Lachlan River bridge at Cowra (3379985056).jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Real Cowra rooftops but only 1425 px wide (<2000) and portrait; fails size"
+   }
+  ],
+  "choice": "none: no honest Cowra header"
+ },
+ "why1_japanese_garden": {
+  "candidates": [
+   {
+    "file": "Cowra Japanese Garden (3379217011).jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Garden ponds, pavilion and planting, 2002 px, 4:3; clearly the Japanese Garden"
+   },
+   {
+    "file": "07. Japanese Garden Pano, Cowra, NSW, 22.09.2006.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Good garden view but aspect 2.3 crops poorly"
+   },
+   {
+    "file": "Cowra Japanese Gardens Carp.JPG",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Koi close-up, not the garden itself"
+   }
+  ],
+  "choice": "Cowra Japanese Garden (3379217011).jpg"
+ },
+ "why2_breakout": {
+  "candidates": [
+   {
+    "file": "Cowra Japanese War Cemetery 004.JPG",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Japanese War Cemetery memorial stone with offering, respectful, 3872 px; ties to the Breakout dead"
+   },
+   {
+    "file": "Cowra Japanese War Cemetery 002.JPG",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Acceptable alternative but less recognisable; second choice"
+   },
+   {
+    "file": "Cowra Japanese War Cemetery Entry.JPG",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Entrance with lanterns and name plate; acceptable runner-up"
+   },
+   {
+    "file": "Cowra POW Camp Sign.JPG",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Sign is the subject; weak scenery"
+   },
+   {
+    "file": "Cowra POW Camp Ruins 001.JPG",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Empty field, nothing recognisable"
+   }
+  ],
+  "choice": "Cowra Japanese War Cemetery 004.JPG"
+ },
+ "why3_canowindra": {
+  "candidates": [
+   {
+    "file": "Canowindra, New South Wales, 2023, 39.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Ordinary street scene"
+   },
+   {
+    "file": "Canowindra, New South Wales, 2023, 21.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Ordinary street scene"
+   },
+   {
+    "file": "BalloonsOverCanowindra.JPG",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "File page: balloons over Canowindra, 2011 championships, category Canowindra NSW; shows the town and balloons, 4928 px"
+   },
+   {
+    "file": "Balloon shadow 2.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Confirmed Canowindra but a shadow over fields; less recognisable, runner-up"
+   },
+   {
+    "file": "Canowindra, New South Wales, 2023, 06.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Single building, not a reason to visit"
+   }
+  ],
+  "choice": "BalloonsOverCanowindra.JPG"
+ }
+}

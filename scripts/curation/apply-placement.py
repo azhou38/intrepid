@@ -1,0 +1,124 @@
+#!/usr/bin/env python3
+"""Applies a region's placement.json (Atlas step 5) to src/data: its new spots and their photos.
+
+  python3 scripts/curation/apply-placement.py curation/<branch>/region-<id>/placement.json [--dry-run] [--currency AUD]
+
+Adds, to src/data/spots.ts, every placement whose `action` is
+  "spot"        and whose `destination` already exists in src/data/destinations.ts  → after that destination's last spot
+  "standalone"                                                                      → at the end of the standalone section
+and writes each one's accepted photo into WIKI_IMAGE_OVERRIDES (keyed by wiki title, else name). It skips:
+  - spots of a PROPOSED destination (`spot-of-proposed-destination`, or a destination not in destinations.ts yet): they go
+    in with the destination, when it is written (Quill + Lens);
+  - placements flagged `status` (held: needs an external photo, no photo, …) and any entry without an accepted photo;
+  - a spot whose id is already in spots.ts or in git history (ids are never reused).
+A cost in the entry gets the currency (default AUD; pass --currency). The destination and standalone fields follow
+WRITING.md. Run, then: build-image-manifest.ts, tsc, audit-spot-coordinates.ts, photo-prefilter.ts. Prints what it added
+and what it skipped and why.
+"""
+import json, re, subprocess, sys
+
+args = sys.argv[1:]
+if not args or args[0].startswith('--'):
+    sys.exit(__doc__)
+path = args[0]
+dry = '--dry-run' in args
+currency = args[args.index('--currency') + 1] if '--currency' in args else 'AUD'
+
+place = json.load(open(path))
+spots_src = open('src/data/spots.ts').read()
+dest_src = open('src/data/destinations.ts').read()
+dest_ids = set(re.findall(r"^\s*id: '([a-z0-9-]+)', name: ", dest_src, re.M))
+ids_now = set(re.findall(r"id: ['\"]([^'\"]+)['\"]", spots_src))
+hist = subprocess.run("git log -p -- src/data/spots.ts | grep -o \"id: ['\\\"][a-z0-9-]*['\\\"]\"", shell=True, capture_output=True, text=True).stdout
+ids_ever = ids_now | set(re.findall(r"id: ['\"]([^'\"]+)['\"]", hist))
+
+q = lambda s: json.dumps(s, ensure_ascii=False)
+
+
+def spot_line(sid, dest, e):
+    s = e['spot']
+    c = e['coordinates']
+    f = [f"id: '{sid}'"]
+    if dest:
+        f.append(f"destinationId: '{dest}'")
+    else:
+        f.append(f"country: {q(s['country'])}, countryCode: {q(s['countryCode'])}, continent: {q(s['continent'])}, timezone: {q(s['timezone'])}")
+    f.append(f"name: {q(s['name'])}")
+    if s.get('wiki'):
+        f.append(f"wiki: {q(s['wiki'])}")
+    f.append(f"icon: {q(s['icon'])}")
+    f.append(f"coordinates: {{ latitude: {c['latitude']}, longitude: {c['longitude']} }}")
+    f.append(f"category: '{s['category']}'")
+    f.append(f"bio: {q(s['bio'])}")
+    f.append(f"hours: {q(s['hours'])}")
+    f.append(f"visitHoursMin: {s['visitHoursMin']}, visitHoursMax: {s['visitHoursMax']}")
+    if s.get('free'):
+        f.append('free: true')
+    elif s.get('costMin') is not None:
+        f.append(f"costMin: {s['costMin']}, costMax: {s.get('costMax', s['costMin'])}, currency: '{s.get('currency') or currency}'")
+    if s.get('ticketUrl'):
+        f.append(f"ticketUrl: {q(s['ticketUrl'])}")
+    return '  { ' + ', '.join(f) + ' },'
+
+
+def set_override(key, file):
+    p = 'src/data/imageOverrides.ts'
+    s = open(p).read()
+    k, v = q(key), q(file)
+    pat = re.compile(r'^  ' + re.escape(k) + r': .*,$', re.M)
+    if pat.search(s):
+        s = pat.sub(lambda m: f'  {k}: {v},', s, 1)
+    else:
+        i = s.index('};', s.index('export const WIKI_IMAGE_OVERRIDES'))
+        s = s[:i] + f'  {k}: {v},\n' + s[i:]
+    open(p, 'w').write(s)
+
+
+added, skipped = [], []
+by_dest = {}
+standalone = []
+for e in place['placements']:
+    act, dest, sid = e.get('action'), e.get('destination'), e.get('id')
+    name = e.get('name')
+    if act not in ('spot', 'standalone'):
+        if act != 'new-destination':
+            skipped.append((name, f'action {act}: goes in with its destination'))
+        continue
+    if e.get('status'):
+        skipped.append((name, e['status'])); continue
+    if act == 'spot' and dest not in dest_ids:
+        skipped.append((name, f'destination {dest} is not in the app yet')); continue
+    if not e.get('photo') or e.get('photo_verdict') not in (None, 'accept'):
+        skipped.append((name, 'no accepted photo')); continue
+    if sid in ids_now:
+        skipped.append((name, f'id {sid} already in spots.ts')); continue
+    if sid in ids_ever:
+        skipped.append((name, f'id {sid} was used before (git history)')); continue
+    if 'spot' not in e:
+        skipped.append((name, 'no full spot entry')); continue
+    (standalone if act == 'standalone' else by_dest.setdefault(dest, [])).append(e)
+
+lines_out = open('src/data/spots.ts').read().split('\n')
+
+
+def insert_after(pred, new_lines):
+    idx = max(i for i, l in enumerate(lines_out) if pred(l))
+    lines_out[idx + 1:idx + 1] = new_lines
+
+
+for dest, es in by_dest.items():
+    es.sort(key=lambda e: int(e['id'].rsplit('-', 1)[-1]) if e['id'].rsplit('-', 1)[-1].isdigit() else 10**6)
+    insert_after(lambda l, d=dest: f"destinationId: '{d}'" in l and l.lstrip().startswith('{ id:'), [spot_line(e['id'], dest, e) for e in es])
+    added += [(e['id'], e['name']) for e in es]
+if standalone:
+    insert_after(lambda l: l.lstrip().startswith('{ id:') and 'country:' in l and 'destinationId' not in l, [spot_line(e['id'], None, e) for e in standalone])
+    added += [(e['id'], e['name']) for e in standalone]
+
+if not dry:
+    open('src/data/spots.ts', 'w').write('\n'.join(lines_out))
+    for e in [x for es in by_dest.values() for x in es] + standalone:
+        set_override(e['spot'].get('wiki') or e['spot']['name'], e['photo']['file'])
+
+print(f"{'would add' if dry else 'added'} {len(added)} spots; skipped {len(skipped)}")
+for n, why in skipped:
+    print(f'  skipped {n}: {why}')

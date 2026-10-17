@@ -1,0 +1,182 @@
+{
+  "destination": "dubbo",
+  "step": "Quill step 2",
+  "sources_key": {
+    "R": "curation/nsw/quill/dubbo/research.json",
+    "P": "curation/nsw/region-nsw-blue-mountains-central-west/placement.json",
+    "WP-Dubbo": "https://en.wikipedia.org/wiki/Dubbo",
+    "WV-Dubbo": "https://en.wikivoyage.org/wiki/Dubbo",
+    "Zoo": "https://www.taronga.org.au/dubbo-zoo/plan/visitor-information (and /ticket-prices)",
+    "Gaol": "https://www.olddubbogaol.com.au/",
+    "Caves": "https://www.wellingtoncaves.com.au/ and https://en.wikipedia.org/wiki/Wellington_Caves"
+  },
+  "tagline": {
+    "current": null,
+    "variants": [
+      "A Central West city with an open-range zoo, a 19th-century gaol and limestone caves within a day trip.",
+      "The Orana region's largest city, best known for Taronga Western Plains Zoo.",
+      "Open-range zoo, old gaol and underground caves around the NSW Central West's crossroads city."
+    ],
+    "claims": "Zoo open-range: Zoo/WP Taronga Western Plains Zoo. Gaol 1859-1966: Gaol. Caves day trip: WV-Dubbo. Largest centre in Orana: WP-Dubbo."
+  },
+  "description": {
+    "current": null,
+    "variants": [
+      {
+        "text": "Dubbo is a city of 43,516 people (2021) at the junction of the Newell, Mitchell and Golden highways, about 400 km by road from Sydney, and the largest population centre in the Orana region. Most visitors come for Taronga Western Plains Zoo, which opened in 1977 on 300 ha and uses concealed moats rather than fences. In town, Old Dubbo Gaol, an official gaol from 1859 to 1966, is now a museum. Wellington Caves, 51 km south-east, are the usual day trip.",
+        "claims": "43,516 (June 2021), three highways, ~400 km, largest in Orana: WP-Dubbo, WV-Dubbo (R what_it_is). Zoo 1977, 300 ha, moats: WP Taronga Western Plains Zoo (R whyVisit_candidates[0]). Gaol 1859-1966: Gaol. Caves 51 km great-circle (R defaultZoomSpanKm); 'south-east' derived from coordinates in P (-32.62, 148.94 vs -32.26, 148.60) - direction not in a source text, drop if unwanted."
+      },
+      {
+        "text": "Dubbo sits where the Newell, Mitchell and Golden highways meet in the NSW Central West, about 400 km from Sydney, and with 43,516 residents it is the largest centre in Orana. The draw is Taronga Western Plains Zoo, a 300 ha open-range zoo that opened in 1977 and has a breeding program for rare black rhinos. The city also has Old Dubbo Gaol, a museum in a gaol that held prisoners from 1859 to 1966, and the Royal Flying Doctor Service visitor experience at the airport. Wellington Caves, 51 km away, can be done as a half-day trip.",
+        "claims": "As above; black rhino breeding program: WV-Dubbo (R). RFDS at the airport: P dubbo-4 and WV-Dubbo. Half-day with the drive: R goodToKnow_candidates[2] (Caves site)."
+      },
+      {
+        "text": "A regional hub of 43,516 people, Dubbo is the largest city in NSW's Orana region and lies at the crossing of three highways, about 400 km west of Sydney. Visitors come mainly for the zoo, where elephants, giraffes and black rhinos live in open enclosures bounded by concealed moats. The old gaol in the centre, open as a museum with guided and self-guided tours, and the limestone caves at Wellington fill out a second day.",
+        "claims": "'west of Sydney': WV-Dubbo tip (R goodToKnow_candidates[0]). Elephants, giraffes, black rhinos: WV-Dubbo. Moats: WP zoo. Gaol tours guided/self-guided: Gaol. Caves limestone karst: WP Wellington Caves."
+      }
+    ]
+  },
+  "whyVisit": {
+    "current": null,
+    "variants": [
+      {
+        "reasons": [
+          "Cycle or drive round an open-range zoo of 300 ha, where concealed moats stand in for fences",
+          "Step inside Old Dubbo Gaol, an official gaol from 1859 to 1966 that now runs guided and self-guided tours",
+          "Go underground at Wellington Caves, where a diprotodon and giant kangaroo bones were found in 1830"
+        ],
+        "highlights": ["Open-range zoo", "Old gaol museum", "Wellington Caves"],
+        "claims": "Reason 1: WP zoo, WV-Dubbo (bike, electric cart, pedal boat hire). Reason 2: Gaol. Reason 3: WP Wellington Caves (fossils 1830).",
+        "photo_match": "1: Giraffes at Taronga Western Plains Zoo.jpg shows giraffes in the zoo, not cycling or a moat; honest for 'open-range zoo' but would not show 'cycle', so the reason leads with the zoo, not the bikes. 2: Old Dubbo Gaol, NSW, 2021, 09.jpg shows the gaol (skeptic accepted). 3: Wellington Caves, Wellington, NSW, 2022, 17.jpg shows the caves (portrait; skeptic accepted). Reason 3 asserts fossils, which the photo does not show - the photo shows the cave, which the reason's first clause names."
+      },
+      {
+        "reasons": [
+          "See elephants, giraffes and black rhinos in an open-range zoo with no fences",
+          "Tour a former gaol that held prisoners until 1966",
+          "Take a guided tour through Wellington Caves, limestone karst 51 km from town"
+        ],
+        "highlights": ["Zoo with giraffes", "Historic gaol tours", "Limestone cave tours"],
+        "claims": "1: WV-Dubbo animals; moats replace fences: WP zoo. 2: Gaol 1859-1966. 3: Caves tours of three cave sites (Caves); 51 km (R)."
+        ,
+        "photo_match": "1: giraffes photo directly shows a named animal in the reason. 2 and 3 as above."
+      },
+      {
+        "reasons": [
+          "Hire a bike or electric cart to tour Taronga Western Plains Zoo",
+          "Walk the cells of Old Dubbo Gaol, now a museum with theatrical performances and immersive displays",
+          "Descend into Wellington Caves, with tours of three cave sites"
+        ],
+        "highlights": ["Bike round zoo", "Gaol cells", "Cave tours"],
+        "claims": "1: Zoo (bike/cart hire, R goodToKnow_candidates[1]). 2: Gaol (operator describes performances and immersive displays; 'cells' is not in research - drop 'cells' if unwanted). 3: Caves.",
+        "photo_match": "Reason 1 (bike hire) is NOT shown by the giraffe photo: no honest photo of cycling is in research. Prefer variant 1 or 2 unless a bike photo is sourced. Reason 2: photo is the gaol exterior/grounds, not cells or performances - 'cells' may not be visible."
+      }
+    ],
+    "note": "Strongest first: zoo, gaol, caves per brief. Gaol's 'Gold, Cultural Tourism' NSW Tourism Award is an operator claim only; left out."
+  },
+  "goodToKnow": {
+    "current": null,
+    "variants": [
+      {
+        "tips": [
+          "No car needed to reach Dubbo: an XPT train runs daily from Sydney, usually arriving 2-3 PM, and the zoo is a 5 km taxi or bus ride from town.",
+          "Book zoo tickets online, where an adult is from $51.30 against $57.00 at the gate. The zoo is open every day of the year, with the Zoo Circuit running 9:00 AM-4:00 PM.",
+          "Summer highs often pass 40 C, so visit the zoo early or outside summer; Wellington Caves tours run 9:00 AM-4:15 PM and must be booked, so allow a half day with the drive."
+        ],
+        "claims": "Tip 1: WV-Dubbo, WP-Dubbo (R goodToKnow_candidates[0]); 'zoo 5 km' - R says taxi/bus ride of 5 km (note P says zoo is 3 km; R's 5 km kept as the source text; reconcile before ship). Tip 2: Zoo ticket-prices page; open 365 days, Zoo Circuit hours: Zoo visitor-information page. Tip 3: WP-Dubbo summer temps; Caves site (hours, booking)."
+      },
+      {
+        "tips": [
+          "Daily XPT trains from Sydney usually arrive 2-3 PM, which makes Dubbo one of the few regional NSW towns practical without a car.",
+          "Hire bikes, electric carts or pedal boats at the zoo, and buy tickets online: from $51.30 for an adult versus $57.00 at the gate.",
+          "January's mean maximum is 33.6 C and highs often exceed 40 C; in winter mornings can drop below zero. Book Wellington Caves tours in advance."
+        ],
+        "claims": "Tip 1: WV-Dubbo (R). Tip 2: Zoo pages, WV-Dubbo. Tip 3: WP-Dubbo climate (Jan mean max 33.6, frost and subzero mornings); Caves site (tours booked)."
+      },
+      {
+        "tips": [
+          "Fly from Sydney with Regional Express or QantasLink, or take the daily XPT train; the drive is around 4 hours.",
+          "The zoo is 300 ha and open daily, with the Zoo Circuit 9:00 AM-4:00 PM and the Savannah Visitor Plaza from 8:30 AM; the Tracker Riley Cycleway runs from town.",
+          "Wellington Caves are 51 km off the Mitchell Highway; book tours through the caves' site and allow a half day."
+        ],
+        "claims": "Tip 1: WV-Dubbo. Tip 2: Zoo visitor-information, WV-Dubbo (cycleway). Tip 3: Caves site, R."
+      }
+    ],
+    "unverified": "Cave tour prices and any free entry could not be fetched (R unverified[0]); no tip states a cave price."
+  },
+  "bestMonths": {
+    "value": [3, 4, 5, 9, 10, 11],
+    "source": "WP-Dubbo climate data (Jan mean max 33.6, Mar 29.2, Apr 24.8, May 20.0, Jun 16.4, Jul 15.7 C). Derived from climate, not a guidebook statement (R bestMonths.note)."
+  },
+  "bestTimeBlurb": {
+    "current": null,
+    "variants": [
+      "{months} give mild days for the open-range zoo and the cave tours; summer can pass 40 C and winter mornings are frosty.",
+      "Go in {months}, when daytime highs are comfortable for a day at the zoo; January averages 33.6 C and often tops 40 C.",
+      "{months} avoid both the summer heat and the winter frosts, which suits walking round the zoo and the gaol grounds."
+    ],
+    "claims": "R bestTimeBlurb_basis; WP-Dubbo climate. Variant 3 'gaol grounds' - research gives no outdoor detail for the gaol; swap to 'zoo' only if unwanted. Exactly one {months} in each."
+  },
+  "spotBios": [
+    {
+      "name": "Taronga Western Plains Zoo",
+      "id": "dubbo-1",
+      "variants": [
+        "An open-range zoo on 300 ha outside Dubbo, opened in 1977, where concealed moats replace fences and bikes, electric carts and pedal boats can be hired.",
+        "A 300 ha open-range zoo that opened in 1977, with elephants, giraffes and a breeding program for rare black rhinos.",
+        "Taronga's open-range zoo near Dubbo, toured by bike, electric cart or car around enclosures bounded by concealed moats."
+      ],
+      "claims": "WP Taronga Western Plains Zoo (opening 28 Feb 1977, 300 ha, concealed moats); WV-Dubbo (animals, hire). 'Car' touring: not in research - variant 3 drops from sources; remove 'or car' if unwanted.",
+      "hours": "9:00 AM - 4:00 PM (Zoo Circuit; open every day). Source: Zoo visitor-information. Replaces 'Daytime hours'.",
+      "cost": { "free": false, "costMin": 51.3, "costMax": 57, "currency": "AUD", "note": "Adult $57.00 at the gate, from $51.30 online. Replaces free:true. Source: Zoo ticket-prices page." },
+      "ticketUrl": "https://www.taronga.org.au/dubbo-zoo (checked: title 'Visit Taronga Western Plains Zoo | Dubbo Zoo NSW')"
+    },
+    {
+      "name": "Old Dubbo Gaol",
+      "id": "dubbo-2",
+      "variants": [
+        "An official gaol from 1859 to 1966, now a museum with theatrical performances, immersive displays and guided or self-guided tours.",
+        "A former gaol, in use from 1859 to 1966, that visitors now tour as a museum at 90 Macquarie Street.",
+        "A museum in Dubbo's old gaol, open seven days, with guided and self-guided tours and immersive displays."
+      ],
+      "claims": "Gaol site and R (1859-1966, performances, immersive displays, guided/self-guided; 90 Macquarie St; 7 days).",
+      "hours": "9:00 AM - 5:00 PM daily, closed Christmas Day. Source: Gaol.",
+      "cost": { "free": false, "costMin": 24.5, "costMax": 24.5, "currency": "AUD", "note": "Adult $24.50 (child $9). Source: Gaol." },
+      "ticketUrl": "https://www.olddubbogaol.com.au/ (checked: title 'Old Dubbo Gaol')"
+    },
+    {
+      "name": "Wellington Caves",
+      "id": "dubbo-3",
+      "variants": [
+        "Limestone caves 51 km from Dubbo where a diprotodon and giant kangaroo bones were found in 1830, with tours of three cave sites.",
+        "A limestone cave system near Wellington with tours of three cave sites, a visitor centre and Discovery Lab; Cathedral Cave tours began about 1885.",
+        "Cave tours near Wellington, including a phosphate mine reopened to visitors in 1996."
+      ],
+      "claims": "WP Wellington Caves (1830 fossils, 1885 Cathedral Cave tours, 1996 phosphate mine); Caves site (three cave sites, visitor centre, Discovery Lab); 51 km: R.",
+      "hours": "9:00 AM - 4:15 PM daily, except Christmas Day. Source: Caves site.",
+      "cost": { "free": false, "note": "Tours are booked and paid, so placement.json free:true is wrong. No price could be fetched (R unverified[0]): leave costMin/costMax out and flag, do not invent." },
+      "ticketUrl": "https://www.wellingtoncaves.com.au/ (checked: title 'Wellington Caves and Holiday Park')",
+      "coordinates_note": "Wikipedia coordinates -32.62083, 148.93806 kept from P; operator address 101 Caves Road, Apsley not verified against the car park (R)."
+    },
+    {
+      "name": "Royal Flying Doctor Service Dubbo Visitor Experience",
+      "id": "dubbo-4",
+      "variants": [
+        "The Royal Flying Doctor Service visitor centre at Dubbo airport, on Judy Jakins Drive.",
+        "A visitor centre at Dubbo airport run by the Royal Flying Doctor Service, open seven days.",
+        "The Royal Flying Doctor Service's Dubbo visitor experience, beside the airport at 21 Judy Jakins Drive."
+      ],
+      "claims": "WV-Dubbo (21 Judy Jakins Dr, hours; updated July 2021) and P dubbo-4 (airport). Research holds no description of the exhibits, so the bio stays factual and thin; do not add content.",
+      "hours": "Mon-Fri 9:00 AM - 5:00 PM, Sat 9:00 AM - 4:00 PM, Sun 9:00 AM - 3:00 PM (Wikivoyage 2021, operator page not loaded - approximate).",
+      "cost": { "note": "Not known; P has free:true but R has no price or free statement. Flag unverified." },
+      "ticketUrl": "none found (R unverified[1])"
+    }
+  ],
+  "flags": [
+    "Distance conflict: P says Wellington Caves 33 km from Dubbo; R computes 51 km great-circle (and sets span 70 km on that). Drafts use R's 51 km.",
+    "Distance conflict: R tip says the zoo is a 5 km taxi or bus ride; R defaultZoomSpanKm reason and P say 3 km.",
+    "Cave prices, RFDS price and operator hours unverified.",
+    "Best months derived from climate data only.",
+    "whyVisit photos: zoo photo shows giraffes, not cycling; no honest photo exists in research for a bike or moat reason.",
+    "Dubbo header needs a non-Commons photo (R unverified[4])."
+  ]
+}

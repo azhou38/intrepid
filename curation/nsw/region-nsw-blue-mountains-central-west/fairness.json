@@ -1,0 +1,528 @@
+{
+ "region": "nsw-blue-mountains-central-west",
+ "inside_destinations": 37,
+ "standalone": 1,
+ "new_destinations": [
+  {
+   "id": "blue-mountains",
+   "name": "Blue Mountains National Park",
+   "spots": 18,
+   "held_spots_pending_photo": [
+    "Sublime Point Lookout"
+   ]
+  },
+  {
+   "id": "lithgow",
+   "name": "Lithgow",
+   "spots": 2,
+   "held_spots_pending_photo": []
+  },
+  {
+   "id": "wollemi",
+   "name": "Wollemi National Park",
+   "spots": 1,
+   "held_spots_pending_photo": [
+    "Glow Worm Tunnel"
+   ]
+  },
+  {
+   "id": "kanangra-boyd",
+   "name": "Kanangra-Boyd National Park",
+   "spots": 1,
+   "held_spots_pending_photo": []
+  },
+  {
+   "id": "gardens-of-stone",
+   "name": "Gardens of Stone National Park",
+   "spots": 0,
+   "held_spots_pending_photo": []
+  },
+  {
+   "id": "bathurst",
+   "name": "Bathurst",
+   "spots": 0,
+   "held_spots_pending_photo": []
+  },
+  {
+   "id": "orange",
+   "name": "Orange",
+   "spots": 2,
+   "held_spots_pending_photo": [
+    "Millthorpe"
+   ]
+  },
+  {
+   "id": "mudgee",
+   "name": "Mudgee",
+   "spots": 1,
+   "held_spots_pending_photo": [
+    "Rylstone"
+   ]
+  },
+  {
+   "id": "dubbo",
+   "name": "Dubbo",
+   "spots": 4,
+   "held_spots_pending_photo": []
+  },
+  {
+   "id": "warrumbungle",
+   "name": "Warrumbungle National Park",
+   "spots": 3,
+   "held_spots_pending_photo": []
+  },
+  {
+   "id": "cowra",
+   "name": "Cowra",
+   "spots": 3,
+   "held_spots_pending_photo": [
+    "Age of Fishes Museum"
+   ]
+  },
+  {
+   "id": "parkes",
+   "name": "Parkes",
+   "spots": 2,
+   "held_spots_pending_photo": []
+  },
+  {
+   "id": "abercrombie-river",
+   "name": "Abercrombie River National Park",
+   "spots": 0,
+   "held_spots_pending_photo": []
+  },
+  {
+   "id": "coolah-tops",
+   "name": "Coolah Tops National Park",
+   "spots": 0,
+   "held_spots_pending_photo": []
+  },
+  {
+   "id": "weddin-mountains",
+   "name": "Weddin Mountains National Park",
+   "spots": 0,
+   "held_spots_pending_photo": []
+  }
+ ],
+ "lowest_kept": [
+  {
+   "name": "Giant Stairway",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Royal Flying Doctor Service Dubbo Visitor Experience",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Wentworth Falls",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Leura Cascades",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Grand Canyon Track",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Ruined Castle",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Kanangra Walls",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Breadknife and Grand High Tops Walk",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Govett's Leap",
+   "views": 0,
+   "counted_sources": 3
+  },
+  {
+   "name": "Evans Lookout",
+   "views": 580,
+   "counted_sources": 1
+  }
+ ],
+ "kept_counts": {
+  "kept_total": 59,
+  "placed_spots": 38,
+  "destination_candidates_with_photo": 11,
+  "held_no_photo": 10
+ },
+ "stronger_left_out": [
+  {
+   "name": "Gilgandra",
+   "views": 13296,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "What qualifies 3: farming town with nothing distinctive."
+  },
+  {
+   "name": "Grenfell",
+   "views": 13061,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "What qualifies 3: a car museum, station ruins and an obelisk; nothing distinctive."
+  },
+  {
+   "name": "Capertee Valley",
+   "views": 12883,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies 1: the cited source names the neighbouring park, none names the valley itself; pin better at Pearsons Lookout. Review."
+  },
+  {
+   "name": "Jenolan Caves",
+   "views": 12622,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "What qualifies 2: the precinct is closed to the public (road repairs, reopening early 2027). Strong draw, add when it reopens."
+  },
+  {
+   "name": "Hydro Majestic",
+   "views": 12056,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies 2: a hotel; WV lists it for tea and views, but it is a venue (hotel) not a visitor draw in itself. Sent to review, not dropped."
+  },
+  {
+   "name": "Blayney",
+   "views": 9025,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "What qualifies 3: only a small lookout and boardwalk; nothing distinctive."
+  },
+  {
+   "name": "Kandos",
+   "views": 8826,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "What qualifies 2: WV lists only a museum open Wed-Sun. Review."
+  },
+  {
+   "name": "Springwood",
+   "views": 7859,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies 3: nothing for the town itself in WV; the Norman Lindsay Gallery is kept separately."
+  },
+  {
+   "name": "Glenbrook",
+   "views": 6380,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Gateway village whose draw is the park beyond it (Pipiriki benchmark): review, not kept outright."
+  },
+  {
+   "name": "Coolah",
+   "views": 6017,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "What qualifies 3: farming town with nothing distinctive."
+  },
+  {
+   "name": "Mount Wilson",
+   "views": 5809,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies 2: the gardens are private and open seasonally. Review."
+  },
+  {
+   "name": "Lawson",
+   "views": 4684,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies 1 and 3: only a region bullet, no See items."
+  },
+  {
+   "name": "Wyangala Dam",
+   "views": 3931,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies 3: a recreation lake with one source. Review."
+  },
+  {
+   "name": "Mayfield Garden",
+   "views": 2063,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies 1 and 2: one counted source and a large paid private garden. Review."
+  },
+  {
+   "name": "Abercrombie Caves",
+   "views": 1795,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies 1 and 2: one source, remote NPWS caves. Review."
+  },
+  {
+   "name": "Dundullimal Homestead",
+   "views": 1531,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies 2: limited tour hours. Review."
+  },
+  {
+   "name": "Mount York",
+   "views": 1283,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "What qualifies 1 and 3: no counted source, roadside lookout/memorial."
+  },
+  {
+   "name": "Gordon Falls",
+   "views": 1219,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "What qualifies 3: minor falls on the Prince Henry Cliff Walk; candidate coordinates are wrong (Canada)."
+  },
+  {
+   "name": "Prime Ministers' Corridor of Oaks",
+   "views": 1113,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "What qualifies 3: roadside oak avenue/memorial planting."
+  },
+  {
+   "name": "Goobang National Park",
+   "views": 943,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "National park by rule but rarely visited with one source; review."
+  },
+  {
+   "name": "Orange wine region",
+   "views": 848,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies 3: overlaps Orange (wine region vs main town); no overlapping destinations."
+  },
+  {
+   "name": "Cook Park",
+   "views": 813,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "What qualifies 3: ordinary city park."
+  },
+  {
+   "name": "Mudgee wine region",
+   "views": 768,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "What qualifies 3: overlaps Mudgee (no overlapping destinations)."
+  },
+  {
+   "name": "Conimbla National Park",
+   "views": 439,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "National park by rule but rarely visited, no counted source beyond the NPWS page; review."
+  },
+  {
+   "name": "Cowra wine region",
+   "views": 239,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "What qualifies 3: part of Cowra town as a draw."
+  },
+  {
+   "name": "Perry's Lookdown",
+   "views": 202,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies 3: minor lookout that is the start of the Blue Gum Forest descent (part of a larger spot). Review."
+  },
+  {
+   "name": "Three Sisters",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "What qualifies 3: same viewpoint visit as Echo Point; folded into that spot (not left out of the app)."
+  },
+  {
+   "name": "National Pass",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "What qualifies 2: the cliff-ledge section is closed (rockfall); only the upper loop is open and it overlaps Wentworth Falls. Add when reopened."
+  },
+  {
+   "name": "Cowra POW Hologram Theatre",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "What qualifies 3: a show inside the visitor centre, part of the Cowra Breakout spot."
+  }
+ ],
+ "held_no_photo_kept_candidates": [
+  {
+   "name": "Sublime Point Lookout",
+   "views": 825,
+   "counted_sources": 2,
+   "verdict": "keep (held)",
+   "reason": "Kept on inclusion; no accepted photo found (skeptic photo_verdict none), so it is not added until a photo exists. Not a \"What qualifies\" exclusion."
+  },
+  {
+   "name": "Glow Worm Tunnel",
+   "views": 2590,
+   "counted_sources": 2,
+   "verdict": "keep (held)",
+   "reason": "Kept on inclusion; no accepted photo found (skeptic photo_verdict none), so it is not added until a photo exists. Not a \"What qualifies\" exclusion."
+  },
+  {
+   "name": "Lithgow",
+   "views": 30999,
+   "counted_sources": 1,
+   "verdict": "keep (held)",
+   "reason": "Kept on inclusion; no accepted photo found (skeptic photo_verdict none), so it is not added until a photo exists. Not a \"What qualifies\" exclusion."
+  },
+  {
+   "name": "Oberon",
+   "views": 16834,
+   "counted_sources": 2,
+   "verdict": "keep (held)",
+   "reason": "Kept on inclusion; no accepted photo found (skeptic photo_verdict none), so it is not added until a photo exists. Not a \"What qualifies\" exclusion."
+  },
+  {
+   "name": "Dubbo",
+   "views": 77593,
+   "counted_sources": 2,
+   "verdict": "keep (held)",
+   "reason": "Kept on inclusion; no accepted photo found (skeptic photo_verdict none), so it is not added until a photo exists. Not a \"What qualifies\" exclusion."
+  },
+  {
+   "name": "Orange",
+   "views": 80538,
+   "counted_sources": 1,
+   "verdict": "keep (held)",
+   "reason": "Kept on inclusion; no accepted photo found (skeptic photo_verdict none), so it is not added until a photo exists. Not a \"What qualifies\" exclusion."
+  },
+  {
+   "name": "Cowra",
+   "views": 28549,
+   "counted_sources": 2,
+   "verdict": "keep (held)",
+   "reason": "Kept on inclusion; no accepted photo found (skeptic photo_verdict none), so it is not added until a photo exists. Not a \"What qualifies\" exclusion."
+  },
+  {
+   "name": "Rylstone",
+   "views": 8447,
+   "counted_sources": 1,
+   "verdict": "keep (held)",
+   "reason": "Kept on inclusion; no accepted photo found (skeptic photo_verdict none), so it is not added until a photo exists. Not a \"What qualifies\" exclusion."
+  },
+  {
+   "name": "Millthorpe",
+   "views": 7157,
+   "counted_sources": 1,
+   "verdict": "keep (held)",
+   "reason": "Kept on inclusion; no accepted photo found (skeptic photo_verdict none), so it is not added until a photo exists. Not a \"What qualifies\" exclusion."
+  },
+  {
+   "name": "Age of Fishes Museum",
+   "views": 833,
+   "counted_sources": 1,
+   "verdict": "keep (held)",
+   "reason": "Kept on inclusion; no accepted photo found (skeptic photo_verdict none), so it is not added until a photo exists. Not a \"What qualifies\" exclusion."
+  }
+ ],
+ "strongest_outsiders": [
+  {
+   "name": "Capertee Valley",
+   "views": 12883,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies 1: the cited source names the neighbouring park, none names the valley itself; pin better at Pearsons Lookout. Review."
+  },
+  {
+   "name": "Jenolan Caves",
+   "views": 12622,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "What qualifies 2: the precinct is closed to the public (road repairs, reopening early 2027). Strong draw, add when it reopens."
+  },
+  {
+   "name": "Hydro Majestic",
+   "views": 12056,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies 2: a hotel; WV lists it for tea and views, but it is a venue (hotel) not a visitor draw in itself. Sent to review, not dropped."
+  },
+  {
+   "name": "Kandos",
+   "views": 8826,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "What qualifies 2: WV lists only a museum open Wed-Sun. Review."
+  },
+  {
+   "name": "Springwood",
+   "views": 7859,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies 3: nothing for the town itself in WV; the Norman Lindsay Gallery is kept separately."
+  },
+  {
+   "name": "Glenbrook",
+   "views": 6380,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Gateway village whose draw is the park beyond it (Pipiriki benchmark): review, not kept outright."
+  },
+  {
+   "name": "Mount Wilson",
+   "views": 5809,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies 2: the gardens are private and open seasonally. Review."
+  },
+  {
+   "name": "Wyangala Dam",
+   "views": 3931,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies 3: a recreation lake with one source. Review."
+  },
+  {
+   "name": "Hill End (kept, standalone)",
+   "views": 9390,
+   "counted_sources": 2,
+   "verdict": "keep",
+   "reason": "62 km from Bathurst; the only kept place outside every proposed span."
+  }
+ ],
+ "benchmark": {
+  "note": "The NZ benchmark list (Red Rocks, Kapiti, Lake Coleridge, Sumner, etc.) is New Zealand specific and does not apply to this NSW region; the generic checks below do.",
+  "negative_benchmarks_respected": [
+   "Hydro Majestic (a hotel, like a venue) sent to review, not kept",
+   "Mount York (roadside lookout/memorial, no counted source) rejected",
+   "Cook Park (ordinary city park) rejected",
+   "Small town museums (Colonial Inn, Crystal Kingdom, Mount Victoria Museum) rejected",
+   "Gateway village Glenbrook (draw is the park beyond it) sent to review like Pipiriki"
+  ],
+  "vehicle_rule": "Zig Zag Railway is kept as the place (the Zig Zag at Clarence), not as a ride; Scenic World is a place with its own boardwalks.",
+  "recurring_events": "no festival, once-a-week market or event was kept; Hill End, Gulgong etc. are permanent places.",
+  "parks": "every national park (Blue Mountains, Wollemi, Kanangra-Boyd, Gardens of Stone, Warrumbungle, Abercrombie River, Coolah Tops, Weddin Mountains) is proposed as a destination; Goobang and Conimbla are in review as rarely visited.",
+  "status": "pass"
+ },
+ "summary_five_lines": [
+  "Placed 38 spots: 37 under 15 proposed destinations (none exists in the app yet) and 1 standalone (Hill End); 10 kept places held for no photo; 11 kept parks/cities become proposed destinations.",
+  "Lowest kept: views 0 with 1 counted source (Giant Stairway, RFDS Dubbo Visitor Experience); Wellington Caves and Blue Mountains Botanic Garden score 0 counted sources but were upgraded on Wikivoyage and operator pages.",
+  "Every higher-scoring candidate left out has a concrete reason: 27 in review (closed Jenolan Caves and National Pass, hotel Hydro Majestic, private Mount Wilson gardens, no source naming Capertee Valley, rarely visited parks) and rejects (overlap, nothing distinctive, minor memorial).",
+  "Strongest outsiders: Jenolan Caves (12,622 views, closed until early 2027), Capertee Valley (12,883, no source names it), Kandos (8,826, museum only), Hydro Majestic (12,056, hotel); none lacks a \"What qualifies\" reason.",
+  "Benchmark: negative benchmarks respected; NZ positive benchmarks do not apply; recommendation accept."
+ ]
+}

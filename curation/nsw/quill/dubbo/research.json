@@ -1,0 +1,107 @@
+{
+  "destination": "dubbo",
+  "name": "Dubbo",
+  "country": "Australia",
+  "countryCode": "AU",
+  "continent": "Oceania",
+  "timezone": "Australia/Sydney",
+  "what_it_is": {
+    "fact": "Dubbo is a city of 43,516 people (June 2021) in the Orana region of the NSW Central West, at the intersection of the Newell, Mitchell and Golden highways, about 400 km by road from Sydney. It is the largest population centre in Orana.",
+    "sources": ["https://en.wikipedia.org/wiki/Dubbo", "https://en.wikivoyage.org/wiki/Dubbo"]
+  },
+  "coordinates": {
+    "latitude": -32.2569,
+    "longitude": 148.6011,
+    "source": "https://en.wikivoyage.org/wiki/Dubbo (geo -32.2569444, 148.601111; matches the skeptic's corrected pin)"
+  },
+  "defaultZoomSpanKm": {
+    "value": 70,
+    "reason": "Wellington Caves is 51 km (great-circle) from the centre; 75% of 70 is 52.5 km, so it fits. Zoo is 3 km, Old Dubbo Gaol in town, RFDS visitor centre at the airport ~5 km."
+  },
+  "category": "city",
+  "rank": {
+    "value": 4,
+    "reason": "COVERAGE.md table: worth a detour if nearby. A regional hub with one headline attraction (the zoo), Wikivoyage 'usable' city article; not a country highlight (not 2-3). Could be argued 5 (regional base on the road to the outback) but the zoo draws trips of its own."
+  },
+  "spots_placed": [
+    "Taronga Western Plains Zoo (dubbo-1)",
+    "Old Dubbo Gaol (dubbo-2)",
+    "Wellington Caves (dubbo-3)",
+    "Royal Flying Doctor Service Dubbo Visitor Experience (dubbo-4)"
+  ],
+  "whyVisit_candidates": [
+    {
+      "reason": "Cycle or drive round an open-range zoo",
+      "fact": "Taronga Western Plains Zoo opened on 28 Feb 1977 on 300 ha of woodland and irrigated grassland; it is open-range with concealed moats instead of fences. Wikivoyage lists elephants, giraffes and rare black rhinos (a breeding program). Bike, electric cart and pedal boat hire is on site.",
+      "sources": ["https://en.wikipedia.org/wiki/Taronga_Western_Plains_Zoo", "https://en.wikivoyage.org/wiki/Dubbo", "https://www.taronga.org.au/dubbo-zoo"],
+      "photo_candidate": "Giraffes at Taronga Western Plains Zoo.jpg (accepted by skeptic.json, 2700 px)"
+    },
+    {
+      "reason": "Step inside a 19th-century gaol",
+      "fact": "Old Dubbo Gaol was an official gaol from 1859 to 1966 and is now a museum; the operator describes theatrical performances and immersive displays, with guided and self-guided tours. It won Gold, Cultural Tourism, at the NSW Tourism Awards (operator's claim).",
+      "sources": ["https://www.olddubbogaol.com.au/", "https://en.wikivoyage.org/wiki/Dubbo"],
+      "photo_candidate": "Old Dubbo Gaol, NSW, 2021, 09.jpg (accepted by skeptic.json, 3572 px)"
+    },
+    {
+      "reason": "Go underground at Wellington Caves",
+      "fact": "Limestone karst caves 8 km south of Wellington, with tours of three cave sites, a visitor centre and Discovery Lab (operator). Fossil bones of a diprotodon and giant kangaroo were found in the caves in 1830; tours of Cathedral Cave began about 1885; the phosphate mine reopened for tours in 1996. Wikivoyage lists Wellington Caves as a Dubbo day trip.",
+      "sources": ["https://en.wikipedia.org/wiki/Wellington_Caves", "https://www.wellingtoncaves.com.au/", "https://en.wikivoyage.org/wiki/Dubbo"],
+      "photo_candidate": "Wellington Caves, Wellington, NSW, 2022, 17.jpg (accepted by skeptic.json, portrait 2891x3855)"
+    }
+  ],
+  "goodToKnow_candidates": [
+    {
+      "tip": "Getting there: Dubbo is about a 4-hour drive west of Sydney (roughly 400 km by road). An XPT train runs daily from Sydney, usually arriving 2-3 PM, and Dubbo is one of the few regional NSW towns practical without a car because stays are walkable from the station and the zoo is a 5 km taxi or bus ride. Regional Express and QantasLink fly from Sydney.",
+      "sources": ["https://en.wikivoyage.org/wiki/Dubbo", "https://en.wikipedia.org/wiki/Dubbo"]
+    },
+    {
+      "tip": "Zoo logistics: it is 300 ha, open every day of the year; Zoo Circuit 9:00 AM-4:00 PM, Savannah Visitor Plaza 8:30 AM-4:00 PM. Hire bikes, electric carts or pedal boats on site (a cycleway, the Tracker Riley Cycleway, runs from town); buy tickets online, where an adult is listed from $51.30 against $57.00 at the gate.",
+      "sources": ["https://www.taronga.org.au/dubbo-zoo/plan/visitor-information", "https://www.taronga.org.au/dubbo-zoo/plan/visitor-information/ticket-prices", "https://en.wikivoyage.org/wiki/Dubbo"]
+    },
+    {
+      "tip": "Heat and day trips: summer highs often exceed 40 C (Jan mean max 33.6 C), so do the zoo early or in cooler months. Wellington Caves are 51 km away off the Mitchell Highway, tours run 9:00 AM-4:15 PM daily; book tours via the caves site and allow a half day with the drive.",
+      "sources": ["https://en.wikipedia.org/wiki/Dubbo", "https://www.wellingtoncaves.com.au/"]
+    }
+  ],
+  "bestMonths": {
+    "value": [3, 4, 5, 9, 10, 11],
+    "basis": "Southern-hemisphere autumn and spring. Wikipedia climate: summers warm to hot with highs often above 40 C; winters cool, frost, subzero mornings; Jan mean max 33.6, Feb 32.1, Mar 29.2, Apr 24.8, May 20.0, Jun 16.4, Jul 15.7 C; wettest month January (58.7 mm), mild year-round rainfall; 148.6 clear days a year.",
+    "source": "https://en.wikipedia.org/wiki/Dubbo",
+    "note": "No guidebook or tourism-board best-time statement was fetched; the months are derived from the climate data (unverified as 'guidebook consensus')."
+  },
+  "bestTimeBlurb_basis": "Autumn and spring ({months}) give mild days for the open-range zoo and the cave tours; summer can pass 40 C and winter mornings are frosty. Source for climate: https://en.wikipedia.org/wiki/Dubbo",
+  "spot_corrections_for_later_steps": [
+    {
+      "spot": "Taronga Western Plains Zoo",
+      "issue": "placement.json has free:true and hours 'Daytime hours'. Operator: adult $57.00 (from $51.30 online), Zoo Circuit 9:00 AM-4:00 PM, open 365 days. Wikivoyage's $45 and 9-5 are out of date.",
+      "source": "https://www.taronga.org.au/dubbo-zoo/plan/visitor-information/ticket-prices",
+      "ticketUrl_checked": "https://www.taronga.org.au/dubbo-zoo loads, title 'Visit Taronga Western Plains Zoo | Dubbo Zoo NSW'"
+    },
+    {
+      "spot": "Old Dubbo Gaol",
+      "facts": "Open 7 days 9am-5pm, closed Christmas Day; $24.50 adult, $9 child; 90 Macquarie St. Matches placement.json.",
+      "source": "https://www.olddubbogaol.com.au/",
+      "ticketUrl_checked": "https://www.olddubbogaol.com.au/ loads, title 'Old Dubbo Gaol'"
+    },
+    {
+      "spot": "Wellington Caves",
+      "facts": "Open 7 days 9am-4:15pm except Christmas Day; Caves Rd, off Mitchell Highway ~9 km south of Wellington. Tours are booked and paid; placement.json says free:true, which is likely wrong. No tour price could be fetched (guessed deep links 404).",
+      "source": "https://www.wellingtoncaves.com.au/",
+      "ticketUrl_checked": "https://www.wellingtoncaves.com.au/ loads, title 'Wellington Caves and Holiday Park'",
+      "coordinates_note": "Wikipedia coords -32.62083, 148.93806 (the caves group); operator address is 101 Caves Road, Apsley - not verified against the car park."
+    },
+    {
+      "spot": "Royal Flying Doctor Service Dubbo Visitor Experience",
+      "facts": "Wikivoyage (updated Jul 2021): 21 Judy Jakins Dr, Mon-Fri 9AM-5PM, Sat 9AM-4PM, Sun 9AM-3PM. Operator page not fetched.",
+      "source": "https://en.wikivoyage.org/wiki/Dubbo"
+    }
+  ],
+  "unverified": [
+    "Cave tour prices and whether any entry is free (operator booking pages not reachable by script; deep links 404).",
+    "RFDS Dubbo hours and price (from a 2021 Wikivoyage edit; operator page not loaded); no ticketUrl found.",
+    "Best months are derived from climate data, not a travel-guide statement.",
+    "Rank 4 is a judgement against the COVERAGE.md table.",
+    "Dubbo has no Commons ground-level cityscape that passes (skeptic.json): header needs a non-Commons photo per IMAGES.md.",
+    "Wikivoyage Dubbo article itself is only 'usable'; the Understand section is empty."
+  ]
+}

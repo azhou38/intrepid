@@ -1,0 +1,308 @@
+{
+ "id": "warrumbungle",
+ "name": "Warrumbungle National Park",
+ "step": "Quill step 2 drafts (new destination: no current text exists)",
+ "source_key": {
+  "R:what_where": "research.json facts.what_where (Wikipedia, NPWS park page, Wikivoyage)",
+  "R:formations": "facts.formations (Wikipedia, NPWS)",
+  "R:walk": "facts.walk (NPWS Breadknife and Grand High Tops walk page)",
+  "R:observatory": "facts.observatory (sidingspringobservatory.org.au/visitors, Wikipedia, Wikivoyage)",
+  "R:dark_sky": "facts.dark_sky (NPWS park page)",
+  "R:fire": "facts.fire_2013 (Wikipedia, NPWS)",
+  "R:visitor_centre": "facts.visitor_centre (NPWS park page)",
+  "R:get_in": "facts.get_in (Wikipedia, NPWS visitor info, Wikivoyage)",
+  "R:tips": "goodToKnow_candidates (NPWS, Wikivoyage, operator page)",
+  "R:best": "bestMonths_note and bestTimeBlurb_source (NPWS visitor info)"
+ },
+ "tagline": {
+  "current": null,
+  "variants": [
+   {
+    "text": "The eroded remains of a volcano near Coonabarabran, and Australia's first Dark Sky Park.",
+    "sources": ["R:what_where"]
+   },
+   {
+    "text": "Volcanic spires and unpolluted night skies in the Warrumbungle Range, 550 km north-west of Sydney.",
+    "sources": ["R:what_where", "R:dark_sky"]
+   },
+   {
+    "text": "A National Heritage-listed volcanic range where the Breadknife rises 90 m from the valley floor.",
+    "sources": ["R:what_where", "R:formations"]
+   }
+  ]
+ },
+ "description": {
+  "current": null,
+  "variants": [
+   {
+    "text": "Warrumbungle National Park covers 23,311 ha of the Warrumbungle Range, the eroded remnant of a volcano near Coonabarabran, about 550 km north-west of Sydney. Walkers come for formations such as Belougery Spire, Crater Bluff and the Breadknife, which towers 90 m above the valley floor and is the park's most recognisable feature. The volcanic landforms were added to the National Heritage List in 2006, and in 2016 the park became Australia's first certified Dark Sky Park. About 80% of it burned in January 2013, and walking tracks, campgrounds and visitor sites have since been rebuilt.",
+    "sources": ["R:what_where", "R:formations", "R:fire"]
+   },
+   {
+    "text": "The Warrumbungle Range is what remains of an ancient volcano, reserved as a national park in 1953 and covering 23,311 ha near Coonabarabran. Its spires and bluffs, among them Belougery Spire, Bluff Mountain and Mount Exmouth (the tallest peak), were National Heritage listed in 2006 for volcanic landforms described as unrivalled in Australia. Siding Spring Observatory sits on the park's eastern edge, and the International Dark-Sky Association certified the park itself on 4 July 2016. There is no food for sale inside, so visitors bring their own.",
+    "sources": ["R:what_where", "R:formations", "R:observatory", "R:get_in"]
+   },
+   {
+    "text": "Rising out of the plains about 550 km north-west of Sydney, the Warrumbungles are the weathered core of a volcano, with 23,311 ha protected as a national park. Day walkers head for the Breadknife and Grand High Tops, while others come to camp under skies the park's managers describe as having zero light pollution. Siding Spring Observatory, opened in 1965, stands on the park boundary partly because of those dark skies. The sealed road in from Coonabarabran is about 30 km.",
+    "sources": ["R:what_where", "R:walk", "R:dark_sky", "R:observatory", "R:get_in"]
+   }
+  ],
+  "note": "Variant 3 'about 30 km' follows the get_in note (27 vs 35 km differ). 'zero light pollution' is NPWS wording and is attributed, not asserted. Avoid reusing the 90 m Breadknife figure in the spot bio."
+ },
+ "whyVisit": {
+  "current": null,
+  "variants": [
+   {
+    "reasons": [
+     {
+      "text": "Walk the Breadknife and Grand High Tops",
+      "highlight": "Grand High Tops",
+      "basis": "NPWS regards it as one of the best walks in NSW; a 14.5 km Grade 4 loop past Belougery Spire and Crater Bluff.",
+      "sources": ["R:walk"]
+     },
+     {
+      "text": "Stargaze in Australia's first Dark Sky Park",
+      "highlight": "Dark Sky Park",
+      "basis": "Certified 4 July 2016; NPWS promotes stargazing and camping under the stars.",
+      "sources": ["R:what_where", "R:dark_sky"]
+     },
+     {
+      "text": "See the remains of an ancient volcano",
+      "highlight": "Volcanic spires",
+      "basis": "The range is the eroded remnant of a volcano; National Heritage listed.",
+      "sources": ["R:what_where", "R:formations"]
+     }
+    ]
+   },
+   {
+    "reasons": [
+     {
+      "text": "Climb to the High Tops on a Grade 4 loop",
+      "highlight": "High Tops loop",
+      "basis": "14.5 km, 5-6 hrs, passing Belougery Spire, Bress Peak, Crater Bluff; views of Bluff Mountain from Dows Camp.",
+      "sources": ["R:walk"]
+     },
+     {
+      "text": "Camp under skies with zero light pollution",
+      "highlight": "Camping under stars",
+      "basis": "NPWS wording 'zero light pollution'; star charts sold at the visitor centre.",
+      "sources": ["R:dark_sky", "R:visitor_centre"]
+     },
+     {
+      "text": "Look up at the weathered core of a volcano",
+      "highlight": "Ancient volcano",
+      "basis": "Remnants of a volcano; Whitegum, Fans Horizon and Grand High Tops are NPWS-listed lookouts.",
+      "sources": ["R:what_where", "R:formations"]
+     }
+    ]
+   },
+   {
+    "reasons": [
+     {
+      "text": "Hike to the Breadknife, a 90 m rock fin",
+      "highlight": "Breadknife walk",
+      "basis": "NPWS calls it the park's most recognisable feature at 90 m above the valley floor; Fans Horizon track is a shorter option from the same car park.",
+      "sources": ["R:formations", "R:walk"]
+     },
+     {
+      "text": "Visit Siding Spring and then stargaze",
+      "highlight": "Siding Spring telescopes",
+      "basis": "Observatory open daily 8:30 am-4 pm but not at night; the park is certified Dark Sky. Night viewing via Coonabarabran Stargazing tour.",
+      "sources": ["R:observatory", "R:what_where"]
+     },
+     {
+      "text": "Take in volcanic landforms found nowhere else in Australia",
+      "highlight": "Heritage-listed landforms",
+      "basis": "National Heritage listing cites volcanic landforms 'unrivalled anywhere else in Australia' (wording from the listing; keep attributed).",
+      "sources": ["R:what_where"]
+     }
+    ]
+   }
+  ],
+  "photo_status": [
+   "Reason 1 (Breadknife/High Tops): research candidate 'The Breadknife, Warrumbungle National Park.jpg' is already the photo for spot warrumbungle-1; per research do not reuse it for the card. Photo step must pick another honest Breadknife or Grand High Tops walk photo; none is confirmed.",
+   "Reason 2 (Dark Sky stargazing): NO confirmed photo. The Commons night-sky file at Dows Camp was not found or checked and the Siding Spring photo is unverified. If no honest night-sky photo of the park exists, rewrite this reason (IMAGES.md) rather than ship a mismatch. Note: variants 2/3 of reason 2 depend on this too.",
+   "Reason 3 (volcanic landscape): 'Crater Bluff-Belougery Spire-Breadknife, Warrumbungle National Park NSW Oct 2020.jpg' (6720x4480, skeptic-accepted, from White Gum lookout) matches; it is also a header candidate, so it must not be both header and card."
+  ]
+ },
+ "goodToKnow": {
+  "current": null,
+  "variants": [
+   {
+    "tips": [
+     {
+      "text": "Entry is $8 per vehicle per day, and the park can close for poor weather or fire danger, so check NPWS alerts before driving out.",
+      "sources": ["R:tips"]
+     },
+     {
+      "text": "Siding Spring Observatory is open to visitors by day only, 8:30 am-4 pm; for night viewing book a Coonabarabran Stargazing tour.",
+      "sources": ["R:observatory", "R:tips"]
+     },
+     {
+      "text": "No food is sold in the park, so bring water, a hat, sunscreen and food, and borrow a free locator beacon at the visitor centre for the High Tops loop.",
+      "sources": ["R:get_in", "R:walk", "R:tips"]
+     }
+    ]
+   },
+   {
+    "tips": [
+     {
+      "text": "Allow 5-6 hours for the Grade 4 High Tops loop, or take the 12.5 km return via the Dagda Shortcut.",
+      "sources": ["R:walk"]
+     },
+     {
+      "text": "Summers often top 30C and winter nights drop below freezing, so pack for the season.",
+      "sources": ["R:tips"]
+     },
+     {
+      "text": "The observatory closes on extreme fire-danger days, and caravans cannot use its narrow access road.",
+      "sources": ["R:observatory"]
+     }
+    ]
+   },
+   {
+    "tips": [
+     {
+      "text": "The sealed road from Coonabarabran is about 30 km; the west approach via Coonamble has unsealed sections.",
+      "sources": ["R:get_in"]
+     },
+     {
+      "text": "The visitor centre is open 9am-4pm daily except Christmas Day and sells star charts.",
+      "sources": ["R:visitor_centre", "R:dark_sky"]
+     },
+     {
+      "text": "Siding Spring's cafe and Exploratory are closed on Tuesdays, though the AAT Visitor Gallery opens seven days.",
+      "sources": ["R:observatory"]
+     }
+    ]
+   }
+  ],
+  "caveats": [
+   "Visitor centre hours: NPWS says 9-4 daily; Wikivoyage (2021) said closed 12-1; unverified now.",
+   "Specific park closures or alerts were not read (research unverified list); the 'check alerts' tip is generic."
+  ]
+ },
+ "bestMonths": [9, 10, 11],
+ "bestMonths_note": "Source-backed set only. Autumn (4, 5) is an inference with no named source, so it is left out as instructed.",
+ "bestTimeBlurb": {
+  "current": null,
+  "variants": [
+   {
+    "text": "{months} bring a moderate climate and spring wildflowers, good for the High Tops walk and camping under the stars; summer often tops 30C with thunderstorms, and winter nights drop below freezing.",
+    "sources": ["R:best", "R:walk", "R:tips"]
+   },
+   {
+    "text": "Come in {months} for wattle and wildflowers and mild days on the tracks; December to February is the wettest stretch and winter is cold at night.",
+    "sources": ["R:best"]
+   },
+   {
+    "text": "{months} suit walking and camping: spring is moderate, summer brings heat and storms, and winter frosts follow.",
+    "sources": ["R:best"]
+   }
+  ],
+  "note": "Each variant contains exactly one {months}. 'Wattle' is from the NPWS early-spring note in bestMonths_note. Seasonal tags omitted (none sourced)."
+ },
+ "spots": [
+  {
+   "id": "warrumbungle-1",
+   "name": "Breadknife and Grand High Tops Walk",
+   "bio_variants": [
+    {
+     "text": "A 14.5 km Grade 4 loop from Pincham car park, climbing past Belougery Spire and Crater Bluff to the Grand High Tops and views of Bluff Mountain.",
+     "sources": ["R:walk"]
+    },
+    {
+     "text": "The park's signature walk, following Spirey Creek to the 90 m Breadknife and the volcanic peaks of the High Tops, with a shorter 12.5 km return via the Dagda Shortcut.",
+     "sources": ["R:walk", "R:formations"]
+    },
+    {
+     "text": "A day-long loop to the Breadknife and the Grand High Tops, with spring wildflowers and wedge-tailed eagles along the way.",
+     "sources": ["R:walk"]
+    }
+   ],
+   "fields": {
+    "hours": "Daylight hours",
+    "visitHoursMin": 4,
+    "visitHoursMax": 6,
+    "costMin": 8,
+    "costMax": 8,
+    "currency": "AUD",
+    "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/warrumbungle-national-park",
+    "source": "placement.json warrumbungle-1 entry; $8 per vehicle park fee per NPWS (research tips)"
+   },
+   "flags": [
+    "Placement visit time 4-6 h; NPWS suggests 5-6 h. Consider 5-6 for the 14.5 km loop.",
+    "Placement coordinates are the visitor-centre point (-31.28637, 148.99752), not Pincham car park; coordinate audit may want the trailhead."
+   ]
+  },
+  {
+   "id": "warrumbungle-2",
+   "name": "Siding Spring Observatory",
+   "bio_variants": [
+    {
+     "text": "A working research observatory on Mt Woorut, opened in 1965 on the park's eastern edge, with a public Exploratory, a cafe and the AAT Visitor Gallery open by day.",
+     "sources": ["R:observatory"]
+    },
+    {
+     "text": "Telescopes on the 1160 m Mt Woorut, built beside the park partly for its dark skies, with a daytime visitor gallery, cafe and Exploratory.",
+     "sources": ["R:observatory"]
+    },
+    {
+     "text": "A research observatory at the end of Observatory Road that welcomes visitors by day only; night viewing is through a Coonabarabran Stargazing tour.",
+     "sources": ["R:observatory"]
+    }
+   ],
+   "fields": {
+    "hours": "8:30 AM – 4:00 PM",
+    "closedDays": "none for the site; cafe and Exploratory closed Tuesdays (not a site-wide closure, so do not set closedDays)",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3,
+    "cost": "UNVERIFIED. placement.json says free: true, but the operator visitor page states no price and the cafe or Exploratory may charge. Leave free unconfirmed until checked; do not publish as free.",
+    "ticketUrl": "https://www.sidingspringobservatory.org.au/",
+    "ticketUrl_status": "Operator site loads and its title is 'Siding Spring Observatory' (research). Prefer this over the placement.json rsaa.anu.edu.au link, which was not loaded. Only the homepage was verified; the /visitors page was read for hours.",
+    "source": "hours from sidingspringobservatory.org.au/visitors via research facts.observatory; visit hours from placement.json"
+   },
+   "flags": [
+    "Placement hours were 'Daytime hours'; research gives 8:30 am-4:00 pm, used here.",
+    "'AAT' is not expanded in research.json, so the bio keeps the operator's abbreviation.",
+    "Wikivoyage mentions school-holiday tours and an October Open Day (2021); the operator wording is used instead."
+   ]
+  },
+  {
+   "id": "warrumbungle-3",
+   "name": "Coonabarabran",
+   "bio_variants": [
+    {
+     "text": "The nearest town to the park, about 30 km east on a sealed road, and the base for Siding Spring Observatory tours.",
+     "sources": ["R:get_in", "R:observatory"]
+    },
+    {
+     "text": "A town on the park's eastern side where stargazing tours depart and the sealed road in to the Warrumbungles begins.",
+     "sources": ["R:observatory", "R:get_in"]
+    },
+    {
+     "text": "The gateway town for the Warrumbungles, with Siding Spring Observatory 27 km to the west.",
+     "sources": ["R:observatory"]
+    }
+   ],
+   "fields": {
+    "hours": "Open 24 hours",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": true,
+    "source": "placement.json warrumbungle-3 entry; no ticketUrl (town)"
+   },
+   "flags": [
+    "Variant 2: 'where stargazing tours depart' is an inference from the Coonabarabran Stargazing operator name; research does not say where tours leave from. Drop it if unconfirmed.",
+    "Distance to the park varies (27 vs ~35 km by road), so variant 1 says 'about 30 km'; variant 3's 27 km is the Siding Spring figure, 'west of Coonabarabran' per operator page.",
+    "No source in research.json describes a reason to visit the town beyond being the gateway; it stays a gateway spot per placement (rank low)."
+   ]
+  }
+ ],
+ "unverified_summary": [
+  "Siding Spring entry fee (free not confirmed) and ticketUrl (homepage only checked).",
+  "Night-sky why-visit photo has no confirmed Commons file.",
+  "Autumn months omitted; bestMonths [9,10,11] is the source-backed set.",
+  "Park alerts and visitor centre hours may have changed."
+ ]
+}
