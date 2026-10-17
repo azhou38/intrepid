@@ -115,6 +115,7 @@ import CountrySheet from '../components/Map/CountrySheet';
 import ExploreSheet from '../components/Map/ExploreSheet';
 import { thumbCache, photoCache, fetchWikiThumbnail, prefetchWikiThumbnail, HEADER_PX } from '../utils/photoCache';
 import DestPinImages, { DEST_PIN_SIZE, destPinImageName, type DestPinImageSpec } from '../components/Map/DestPinImages';
+import DestPinLayers from '../components/Map/DestPinLayers';
 import SpotPinImages, { SPOT_MINI_PIN_UNVISITED, SPOT_MINI_PIN_VISITED } from '../components/Map/SpotPinImages';
 
 const VISITED_COLOR  = '#10B981';
@@ -4301,6 +4302,14 @@ const destItems = useMemo((): DestItem[] =>
     return { shape: { type: 'FeatureCollection' as const, features }, specs: destPinSpecListRef.current };
   }, [promotedDests, visitIndex, visitedSpotCountByDest, destPinPlan]);
 
+  // A tap on a destination photo pin (DestPinLayers' main layer): reopens the destination already selected, else opens it.
+  const onDestPhotoPress = useCallback((e: any) => {
+    const id = e.features[0]?.properties?.id as string | undefined;
+    if (!id) return;
+    const dest = DESTINATIONS.find(d => d.id === id);
+    if (dest && !pressBlocked()) { if (selectedDestRef.current?.id === dest.id) handleResetToDest(); else handleMarkerPress(dest); }
+  }, [handleMarkerPress, handleResetToDest, pressBlocked]);
+
   // Which sliding sheet is mounted right now. When it changes from one level to another, the incoming sheet is a
   // replacement for the one that was showing and starts where that one rested (see sheetPose) rather than from below
   // the screen. Read during render (the ref is only advanced after the commit), so it is a stable answer for the
@@ -4620,18 +4629,7 @@ const destItems = useMemo((): DestItem[] =>
 
         {nativeDestPins && <DestPinImages specs={nativeDestPins.specs} />}
         {nativeDestPins && (
-          <MapboxGL.ShapeSource
-            id="destPhotos"
-            shape={nativeDestPins.shape}
-            onPress={(e) => {
-              const id = e.features[0]?.properties?.id as string | undefined;
-              if (!id) return;
-              const dest = DESTINATIONS.find(d => d.id === id);
-              if (dest && !pressBlocked()) { if (selectedDestRef.current?.id === dest.id) handleResetToDest(); else handleMarkerPress(dest); }
-            }}
-          >
-            <MapboxGL.SymbolLayer id="destPhotoSymbols" aboveLayerID="destStampCircles" style={DEST_SYMBOL_STYLE} />
-          </MapboxGL.ShapeSource>
+          <DestPinLayers shape={nativeDestPins.shape} style={DEST_SYMBOL_STYLE} onPress={onDestPhotoPress} />
         )}
 
         {/* Collapsed spot pins: a small photo-less pin for every revealed spot beyond the MAX_SPOT_PINS that
