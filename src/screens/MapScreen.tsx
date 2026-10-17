@@ -974,7 +974,10 @@ function nearContextFor(anchor: Spot): NearContext {
 // beforeOwnZoom in the pin plan), so it no longer competes with the destination's photo pin.
 const SPOT_EARLY_SEPARATION_PX = 80;
 const SPOT_EARLY_MAX_LEVELS = 2.5;
-const SPOT_REVEAL_ZOOM_BY_ID: Record<string, number> = (() => {
+// The zoom from which each spot is on the map, and the (later) zoom from which it may show its photo, both by how far the
+// spot sits from its destination's pin on screen: far-out spots come early, and each at its own zoom rather than all at
+// the destination's.
+function earlySpotZoomTable(separationPx: number, maxLevels: number): Record<string, number> {
   const out: Record<string, number> = {};
   const destById = new Map(DESTINATIONS.map(d => [d.id, d]));
   for (const sp of SPOTS) {
@@ -986,11 +989,19 @@ const SPOT_REVEAL_ZOOM_BY_ID: Record<string, number> = (() => {
     const a = mercatorPx(sp.coordinates.longitude, sp.coordinates.latitude, 1);
     const b = mercatorPx(d.coordinates.longitude, d.coordinates.latitude, 1);
     const deg = Math.hypot(a.x - b.x, a.y - b.y);
-    const sepZoom = deg > 0 ? Math.log2((SPOT_EARLY_SEPARATION_PX * 360) / (512 * deg)) : Infinity;
-    out[sp.id] = Math.min(base, Math.max(base - SPOT_EARLY_MAX_LEVELS, sepZoom));
+    const sepZoom = deg > 0 ? Math.log2((separationPx * 360) / (512 * deg)) : Infinity;
+    out[sp.id] = Math.min(base, Math.max(base - maxLevels, sepZoom));
   }
   return out;
-})();
+}
+const SPOT_REVEAL_ZOOM_BY_ID = earlySpotZoomTable(SPOT_EARLY_SEPARATION_PX, SPOT_EARLY_MAX_LEVELS);
+// A revealed spot shows as a small pin until this zoom, then may take its photo (room permitting). Stricter than the
+// reveal — well clear of the destination's pin, and at most SPOT_PHOTO_EARLY_MAX_LEVELS early — so the destination still
+// leads at a wide view, while its outlying spots gain their photos one by one on the way in instead of all in the frame
+// the destination hands over.
+const SPOT_PHOTO_EARLY_SEPARATION_PX = 150;
+const SPOT_PHOTO_EARLY_MAX_LEVELS = 1.5;
+const SPOT_PHOTO_ZOOM_BY_ID = earlySpotZoomTable(SPOT_PHOTO_EARLY_SEPARATION_PX, SPOT_PHOTO_EARLY_MAX_LEVELS);
 // At most this many spots draw as full photo pins at once; the rest of the revealed spots collapse to a small
 // photo-less dot (SpotDots below) that lives exactly as long as the full pin would have — same reveal zoom, same
 // viewport — so the map never loses a spot, it only stops paying for a photo MarkerView on every one of them.
@@ -2409,10 +2420,11 @@ const destItems = useMemo((): DestItem[] =>
       const x = m.x, y = -m.y;
       // The pin's footprint: the bubble plus the tail hanging to the coordinate, with a little air around it.
       const box: Box = { l: x - SPOT_PIN_SIZE / 2 - 2, r: x + SPOT_PIN_SIZE / 2 + 2, t: y - SPOT_PIN_SIZE - 10 - 2, b: y + 2 };
-      // A spot revealed ahead of its destination's own default zoom (an outlying one, see SPOT_REVEAL_ZOOM_BY_ID) is on the
-      // map while that destination's own pin still is, so it shows only as a dot until the destination hands over: the
-      // destination leads, and the spot grows its photo only once the camera has reached the destination's view.
-      const beforeOwnZoom = !isPastDestDefaultZoom(spotParentKey(sp), handoffZoom);
+      // A spot revealed ahead of its destination's own default zoom (an outlying one, see SPOT_REVEAL_ZOOM_BY_ID) stays a
+      // small pin until its own photo zoom (SPOT_PHOTO_ZOOM_BY_ID): the destination leads at a wide view, and its outlying
+      // spots take their photos one by one, by how far out they are, rather than all at the destination's zoom.
+      const photoZoom = SPOT_PHOTO_ZOOM_BY_ID[sp.id];
+      const beforeOwnZoom = photoZoom !== undefined && handoffZoom < photoZoom - ZOOM_EPSILON;
       if (!must.has(sp.id) && (beforeOwnZoom || pins.length >= MAX_SPOT_PINS || taken.some(t => overlaps(t, box)))) { dots.push(sp); continue; }
       pins.push(sp); taken.push(box);
     }
