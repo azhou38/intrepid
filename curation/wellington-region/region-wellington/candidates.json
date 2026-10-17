@@ -1,0 +1,156 @@
+{
+ "region": "wellington",
+ "step": "enumerate+score (partial: Wikivoyage Wellington-region pages and Wikipedia benchmark titles only; DOC, Wikipedia categories and OSM not yet searched)",
+ "scoring": "wikipedia_views_12m = English Wikipedia per-article views, 2025-09 to 2026-08; 0 dropped",
+ "sources": [
+  "https://en.wikivoyage.org/wiki/Wellington",
+  "https://en.wikivoyage.org/wiki/Wairarapa",
+  "https://en.wikivoyage.org/wiki/Porirua",
+  "https://en.wikivoyage.org/wiki/Paraparaumu",
+  "https://en.wikivoyage.org/wiki/Waikanae",
+  "https://en.wikivoyage.org/wiki/Masterton",
+  "https://en.wikivoyage.org/wiki/Martinborough",
+  "https://en.wikivoyage.org/wiki/Lower_Hutt",
+  "https://en.wikivoyage.org/wiki/Upper_Hutt",
+  "https://en.wikivoyage.org/wiki/Paekakariki",
+  "https://en.wikivoyage.org/wiki/Mount_Victoria"
+ ],
+ "candidates": [
+  {
+   "name": "Zealandia",
+   "wikipedia_views_12m": 359762
+  },
+  {
+   "name": "Te Papa",
+   "wikipedia_views_12m": 18776
+  },
+  {
+   "name": "Wellington Cable Car",
+   "wikipedia_views_12m": 11173
+  },
+  {
+   "name": "Kapiti Island",
+   "wikipedia_views_12m": 11039
+  },
+  {
+   "name": "Kāpiti Coast District",
+   "wikipedia_views_12m": 9615
+  },
+  {
+   "name": "Castlepoint",
+   "wikipedia_views_12m": 6923
+  },
+  {
+   "name": "Oriental Bay",
+   "wikipedia_views_12m": 4281
+  },
+  {
+   "name": "Wellington Botanic Garden",
+   "wikipedia_views_12m": 3980
+  },
+  {
+   "name": "Plimmerton",
+   "wikipedia_views_12m": 3385
+  },
+  {
+   "name": "Wellington Museum",
+   "wikipedia_views_12m": 3267
+  },
+  {
+   "name": "Lyall Bay",
+   "wikipedia_views_12m": 2860
+  },
+  {
+   "name": "Cape Palliser",
+   "wikipedia_views_12m": 2489
+  },
+  {
+   "name": "Days Bay",
+   "wikipedia_views_12m": 2184
+  },
+  {
+   "name": "Lake Ferry",
+   "wikipedia_views_12m": 1946
+  },
+  {
+   "name": "Paraparaumu Beach",
+   "wikipedia_views_12m": 1928
+  },
+  {
+   "name": "Pariwhero / Red Rocks",
+   "wikipedia_views_12m": 1922
+  },
+  {
+   "name": "Te Papa Tongarewa",
+   "wikipedia_views_12m": 1702
+  },
+  {
+   "name": "Battle Hill Farm Forest Park",
+   "wikipedia_views_12m": 998
+  },
+  {
+   "name": "Pencarrow Lighthouse",
+   "wikipedia_views_12m": 868
+  },
+  {
+   "name": "Ōtaki River",
+   "wikipedia_views_12m": 787
+  },
+  {
+   "name": "Mount Victoria, Wellington",
+   "wikipedia_views_12m": 510
+  },
+  {
+   "name": "Putangirua Pinnacles",
+   "wikipedia_views_12m": 334
+  },
+  {
+   "name": "Carter Observatory",
+   "wikipedia_views_12m": 311
+  },
+  {
+   "name": "Queen Elizabeth Park",
+   "wikipedia_views_12m": 270
+  },
+  {
+   "name": "Matiu/Somes Island",
+   "wikipedia_views_12m": 254
+  },
+  {
+   "name": "Waikanae Beach",
+   "wikipedia_views_12m": 200
+  },
+  {
+   "name": "Tongue Point",
+   "wikipedia_views_12m": 158
+  },
+  {
+   "name": "Rimutaka Rail Trail",
+   "wikipedia_views_12m": 124
+  },
+  {
+   "name": "Pauatahanui Inlet",
+   "wikipedia_views_12m": 121
+  },
+  {
+   "name": "Mount Holdsworth",
+   "wikipedia_views_12m": 81
+  },
+  {
+   "name": "Ōtaki",
+   "wikipedia_views_12m": 80
+  },
+  {
+   "name": "Nga Manu Nature Reserve",
+   "wikipedia_views_12m": 31
+  },
+  {
+   "name": "Pukaha Mount Bruce",
+   "wikipedia_views_12m": 30
+  },
+  {
+   "name": "Makara Beach",
+   "wikipedia_views_12m": 26
+  }
+ ]
+}
