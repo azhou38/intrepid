@@ -1932,8 +1932,6 @@ const destItems = useMemo((): DestItem[] =>
     // destination flipping to a photo at one shared threshold. Saved destinations get a
     // one-tier head start: a place you've marked matters more to you than its global rank.
     const PROMOTE_LATDELTA_BY_RANK: Record<number, number> = { 1: 24, 2: 14, 3: 9, 4: 5, 5: 2.5 };
-    // How far past a country's pill cutoff (as a multiple of its span) each rank keeps the in-country photo bypass.
-    const PILL_HANDOFF_STAGGER: Record<number, number> = { 1: 2.2, 2: 1.8, 3: 1.45, 4: 1.2, 5: 1 };
     const panLatDelta = panInvariantLatDelta(planLngDelta);
     // While a country is drilled into (explicitly, or implicitly via a selected
     // destination), its own destinations bypass the rank gates within the country's own
@@ -1954,12 +1952,8 @@ const destItems = useMemo((): DestItem[] =>
       // pill was already gone (e.g. Los Angeles/Grand Canyon still dots with the western
       // US filling the screen). Eligibility (visibleRank/saved) and the photo-vs-photo and
       // pill collision rules still apply on top.
-      // Staggered by rank on the way back out: past the cutoff the least prominent destinations drop to dots first and
-      // each more prominent tier holds its photo a little further out (PILL_HANDOFF_STAGGER, a multiple of the cutoff
-      // span). With one shared cutoff every destination in the country lost its photo in the same frame — the native pin
-      // layer drops removed pins instantly, so the whole map jumped to dots right as the country's label appeared.
+      if (pillPlanLngDelta < getCountryPillCutoffLngDelta(d.countryCode)) return true;
       const effRank = Math.max(1, d.rank - (visitIndex.isDestVisited(d.id) ? 1 : 0));
-      if (pillPlanLngDelta < getCountryPillCutoffLngDelta(d.countryCode) * (PILL_HANDOFF_STAGGER[effRank] ?? 1)) return true;
       return panLatDelta <= (PROMOTE_LATDELTA_BY_RANK[effRank] ?? 2.5);
     };
 
