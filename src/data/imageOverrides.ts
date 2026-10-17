@@ -303,7 +303,6 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Air Force Museum of New Zealand": "RNZAFmuseumwigram.jpg",
   "Christchurch Adventure Park": "Christchurch_Adventure_Park_Village.jpg",
   "Birdlings Flat": "Birdling's_Flat_02.jpg",
-  "Porirua": "Papakowhai_suburb_of_Porirua,_North_Island,_New_Zealand.JPG",
   "Ōtari-Wilton's Bush": "Otari_Native_Botanic_Garden_(6709125829).jpg",
   "Matiu / Somes Island": "MatiuSomes_Island.JPG",
   "Oriental Bay": "Quartier_Oriental_Bay.jpg",
