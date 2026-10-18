@@ -32,12 +32,14 @@ Benchmark: the full list in `COVERAGE.md` → "Finding what is missing" (Red Roc
 1. **Pre-filter (script)** — `IMAGES.md` → "Automatic pre-filter", over every photo in the app.
 2. **Searcher** — region-qualified queries, Commons categories, geosearch near the coordinates.
    - Commons first (its licence data is clean and the app hot-links its thumbnails); prefer Featured, Quality and Valued images.
+   - **Non-Commons search is mandatory, not optional:** every rejected or empty slot gets the fallback below in the same run, and the passing photo is downloaded, committed and registered (`IMAGES.md` → "When Commons has no suitable photo"). Queue *all* rejects (`scripts/curation/build-search-queue.py`), not just the first groups judged.
    - **Fallback when Commons has nothing usable:** use the order in `IMAGES.md` → "When Commons has no suitable photo" (openly licensed first: `scripts/openverse-search.py`, DOC images labelled Creative Commons; then official and tourism-organisation photos, a copyright risk to flag; blogs last). A spot is never dropped or left with a wrong photo for want of a Commons file.
    - Unsplash/Pexels only for headline destinations (their location tags are unreliable); tourism-board and Google Places photos are out (copyright / terms).
    - Cloud runs may hit Wikimedia 429s (see the rate-limit probe); run the Commons-heavy steps with backoff, or locally.
 3. **Judge** — views the image, scores the checks with reasons.
 4. **Second judge** — re-scores, blind, only the slots where the first judge proposed a new file; disagreement means the slot stays as it is and goes to the owner. A keep-current needs no second judge (nothing changes).
 5. **Technical check (script)** — licence, size, manifest.
+6. **Report** — the final report lists, under "Photos still missing", every slot for which no passing photo was found in any tier (Commons, openly licensed, official, blogs), with the current failing photo and what was tried.
 Benchmark: Clyde, Hamilton, Blue Lake, the 1913 Government Gardens and the archive Blue Lake photo must all be rejected.
 
 ## Pipeline C — writing
