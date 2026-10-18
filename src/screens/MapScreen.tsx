@@ -4034,24 +4034,17 @@ const destItems = useMemo((): DestItem[] =>
       }
     }
 
-    // South-limit glide-back: let the user freely drag as far south as they want (so they
-    // can actually see how much of Antarctica there is while their finger is down) — but
-    // the instant they release, ease back to the limit. Keyed off isGestureActive rather
-    // than onMapIdle so it fires on the very next camera-changed event after release,
-    // not after waiting for any momentum/deceleration glide to finish first.
-    // -60 keeps southern South America (Cape Horn ≈ -56°) comfortably in view while
-    // trimming Antarctica to only its northernmost strip. Only the south edge is clamped;
-    // the north cap and longitude (center[0], passed through) are untouched.
-    // isGestureActive:false alone doesn't mean "the user just released" — our own animations
-    // report it too — so skip while one of those is in flight (programmaticCameraMoveRef).
+    // South-limit glide-back: only when the user has dragged the map's CENTRE past SOUTH_LIMIT, i.e. into Antarctica —
+    // on release the centre eases back to the limit. Anything else settles exactly where the user leaves it. (It used to
+    // fire whenever the view's south EDGE passed the limit, read from the reported bounds, so zooming in or out around
+    // New Zealand, whose globe view shows Antarctica at the bottom, nudged the camera north after every release.)
+    // isGestureActive:false alone doesn't mean "the user just released" — our own animations report it too — so skip
+    // while one of those is in flight (programmaticCameraMoveRef).
     const SOUTH_LIMIT = -60;
     if (!selectedCountryRef.current && !isGestureActive && !southCorrectingRef.current
-        && !programmaticCameraMoveRef.current && bounds.sw[1] < SOUTH_LIMIT) {
+        && !programmaticCameraMoveRef.current && center[1] < SOUTH_LIMIT) {
       southCorrectingRef.current = true;
-      const toMercY = (lt: number) => Math.log(Math.tan(Math.PI / 4 + lt * Math.PI / 360));
-      const fromMercY = (y: number) => (2 * Math.atan(Math.exp(y)) - Math.PI / 2) * 180 / Math.PI;
-      const span = toMercY(Math.min(bounds.ne[1], 85.05)) - toMercY(Math.max(bounds.sw[1], -85.05));
-      const targetCenterLat = Math.min(fromMercY(toMercY(SOUTH_LIMIT) + span / 2), 80);
+      const targetCenterLat = SOUTH_LIMIT;
       cameraRef.current?.setCamera({
         centerCoordinate: [center[0], targetCenterLat],
         animationDuration: 300,
