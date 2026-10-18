@@ -6,7 +6,7 @@
 // Spots
 //   ticketUrl   loads, isn't a captcha wall, and its title or heading names the place (WRITING.md → ticketUrl);
 //               "blocked" means it needs a real browser, not that it's wrong
-//   no-ticket   charges (costMin > 0) but has no ticketUrl
+//   no-ticket   charges (costMin > 0) but has no ticketUrl, or has no cost at all and isn't free (never researched)
 //   bio         more than one sentence, marketing words (WRITING.md → "Voice"), or longer than the carousel card's three
 //               lines (bio-fit.py, measured in the card's own font)
 //   wiki        its photo title (wiki, else name) is missing on Wikipedia, a disambiguation page, or a redirect —
@@ -105,6 +105,8 @@ async function checkWiki(title: string): Promise<string | null> {
     const m = s.bio.match(MARKETING); if (m) add(it, 'bio', `marketing word "${m[0]}"`);
     const tl = tooLong.get(s.id); if (tl) add(it, 'bio', `${tl.lines} lines on the carousel card (max 3): cut ~${tl.cut} characters`);
     if ((s.costMin ?? 0) > 0 && !s.ticketUrl) add(it, 'no-ticket', 'charges but has no ticketUrl');
+    // Neither priced nor free: the cost was never researched (Sea Life Sydney shipped this way, with no link either).
+    if (!s.free && s.costMin == null) add(it, 'no-ticket', 'no cost and not free: research the price and the official site');
     if (!offline) {
       if (s.ticketUrl) { const t = await checkTicket(s.name, s.wiki, s.ticketUrl); if (t) add(it, 'ticketUrl', t); }
       // Only matters when the photo comes from the Wikipedia lookup: a hand-picked or supplied photo doesn't use the title.
