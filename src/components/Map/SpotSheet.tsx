@@ -25,7 +25,7 @@ import * as Haptics from 'expo-haptics';
 import { useStore, useVisitIndex } from '../../store';
 import type { Destination, Visit } from '../../types';
 import type { Spot } from '../../data/spots';
-import { DAY_NAMES, hoursForDay, formatSpotCost, formatVisitTime, spotCostTone, visitTimeTone, getSpotOpenStatus, specialClosureOn, spotCountry, spotCountryCode, spotDestination, spotPhotoTitle, zonedNowForSpot } from '../../data/spots';
+import { DAY_NAMES, hoursForDay, formatSpotCost, splitSpotCost, formatVisitTime, spotCostTone, visitTimeTone, getSpotOpenStatus, specialClosureOn, spotCountry, spotCountryCode, spotDestination, spotPhotoTitle, zonedNowForSpot } from '../../data/spots';
 import { photoCache, thumbCache, getOrFetchWikiThumbnail, HEADER_PX } from '../../utils/photoCache';
 import { buildThumbUrl, type ManifestEntry } from '../../utils/imageUrl';
 import spotGalleries from '../../data/spotGalleries.json';
@@ -234,6 +234,30 @@ function CarouselCard({ spot, isActive, onPress, onAddVisit, gradId }: {
         </View>
       </View>
     </Pressable>
+  );
+}
+
+// The at-a-glance cost. When the price does not fit its column on one line ("AUD 150 – 260"), the currency code goes on
+// its own line above the numbers. Decided by measuring: an invisible single-line copy gives the text's natural width, and
+// the column's own layout gives the room it has.
+function CostValue({ spot }: { spot: Spot }) {
+  const full = formatSpotCost(spot);
+  const parts = splitSpotCost(spot);
+  const [textW, setTextW] = useState(0);
+  const [colW, setColW] = useState(0);
+  const split = !!parts && textW > 0 && colW > 0 && textW > colW;
+  return (
+    <View style={st.costValWrap} onLayout={e => setColW(e.nativeEvent.layout.width)}>
+      <Text style={[st.glanceVal, st.costMeasure]} numberOfLines={1} onLayout={e => setTextW(e.nativeEvent.layout.width)}>{full}</Text>
+      {split ? (
+        <>
+          <Text style={st.glanceVal} numberOfLines={1}>{parts!.code}</Text>
+          <Text style={st.glanceVal} numberOfLines={1}>{parts!.amount}</Text>
+        </>
+      ) : (
+        <Text style={st.glanceVal} numberOfLines={1}>{full}</Text>
+      )}
+    </View>
   );
 }
 
@@ -1483,7 +1507,7 @@ function SpotAbout({ spot, tabbed, nearbySpots, onSelectNearby, onExplore, nearb
             <View style={[st.glanceIconCircle, { backgroundColor: GLANCE_TONE[spotCostTone(spot)].bg }]}>
               <Ticket size={20} color={GLANCE_TONE[spotCostTone(spot)].fg} />
             </View>
-            <Text style={st.glanceVal} numberOfLines={1}>{formatSpotCost(spot)}</Text>
+            <CostValue spot={spot} />
             <Text style={st.glanceLbl}>Cost (Adult)</Text>
           </View>
           <View style={st.glanceDivider} />
@@ -1828,6 +1852,9 @@ const st = StyleSheet.create({
   glanceIconCircle: { width: 44, height: 44, borderRadius: 22, alignItems: 'center', justifyContent: 'center', marginBottom: 4 },
   glanceVal: { fontSize: 16, fontWeight: '700', color: '#111827', lineHeight: 22 },
   glanceLbl: { fontSize: 12, color: '#9CA3AF', fontWeight: '500' },
+  costValWrap: { alignSelf: 'stretch', alignItems: 'center' },
+  // Off-screen, unconstrained copy of the one-line price, only to measure its natural width.
+  costMeasure: { position: 'absolute', opacity: 0, left: -10000, width: undefined },
   // Collapsed hours row — white card, light gray border (not joined to the week list below it,
   // which only exists as a separate card while open — see SpotAbout's own comment).
   hoursCard: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: 'white',

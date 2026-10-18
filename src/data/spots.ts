@@ -287,6 +287,17 @@ export function formatSpotCost(spot: Spot): string {
   return `${fmt.prefix ?? ''}${spot.costMin} – ${spot.costMax}`;
 }
 
+// The same price as formatSpotCost split into its currency code and the numbers, for a column too narrow for one line
+// ("AUD" over "150 – 260"). Null when there is no code to split off: free, or a symbol currency ($, €, £, ¥).
+export function splitSpotCost(spot: Spot): { code: string; amount: string } | null {
+  if (spot.free || spot.costMin == null) return null;
+  const fmt = CURRENCY_FORMAT[spot.currency ?? 'USD'] ?? CURRENCY_FORMAT.USD;
+  const code = (fmt.suffix ?? (fmt.prefix && /^[A-Z]{3} $/.test(fmt.prefix) ? fmt.prefix : '')).trim();
+  if (!code) return null;
+  const amount = spot.costMax == null || spot.costMax === spot.costMin ? `${spot.costMin}` : `${spot.costMin} – ${spot.costMax}`;
+  return { code, amount };
+}
+
 export const SPOTS: Spot[] = [
   // NYC
   { id: 'nyc-1', destinationId: 'nyc', name: 'Times Square', icon: '🎭', coordinates: { latitude: 40.7580, longitude: -73.9855 }, category: 'landmark', bio: 'The dazzling neon heart of Manhattan, where Broadway meets a million lights and the crowds never thin.', hours: 'Open 24 hours', visitHoursMin: 1, visitHoursMax: 1.5, free: true, ticketUrl: 'https://www.timessquarenyc.org' },
