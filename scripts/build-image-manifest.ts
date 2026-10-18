@@ -197,7 +197,7 @@ async function main() {
   // What decides each key's photo: an override file, a named file, or the article's default lead image.
   const sigOf = (key: string): string => {
     if (key.startsWith('File:')) return 'f';
-    const o = overrides[lookups.get(key)!.title];
+    const o = overrides[lookups.get(key)?.title ?? key];
     return o ? `o:${o}` : 'd';
   };
   const OUT = process.env.MANIFEST_OUT ?? resolvePath(process.cwd(), 'src/data/imageManifest.json');

@@ -1,0 +1,509 @@
+[
+ {
+  "slot": "dest:blenheim:why2",
+  "accept": "Cloudy Bay Cellar Door in Marlborough (4671508402).jpg",
+  "candidate_index": 0,
+  "checks": {
+   "right_place": "pass",
+   "shows_named_thing": "pass",
+   "spectacular_wide": "pass",
+   "real_colour_photo": "pass"
+  },
+  "reason": "Cloudy Bay cellar door barrel hall, file title/categories name Cloudy Bay Vineyards, Marlborough; real colour photo, 3008 px. Not spectacular but shows the cellar-door wine experience; accepted for a why-visit about wine (confirm reason wording is cellar doors/wine).",
+  "hero_crop": "ok",
+  "dark": false,
+  "licence_author": "CC BY 2.0; edwin.11"
+ },
+ {
+  "slot": "spot:blenheim-3",
+  "accept": "external:https://live.staticflickr.com/188/401706230_80e93b8059_b.jpg",
+  "candidate_index": 0,
+  "checks": {
+   "right_place": "pass",
+   "shows_named_thing": "pass",
+   "spectacular_wide": "pass",
+   "real_colour_photo": "pass"
+  },
+  "reason": "Wither Hills tawny hillside with lone tree and grazing horses (Flickr title names Wither Hills, Marlborough, 24 Feb 2007); shows the hills, not vineyards. Saturated but not HDR. Candidate 1 is dominated by vines (the original failure). 1024 px >= 960. Flickr page licence not re-opened; taken from candidate file.",
+  "hero_crop": "ok",
+  "dark": false,
+  "licence_author": "CC BY 2.0; PhillipC"
+ },
+ {
+  "slot": "spot:blenheim-7",
+  "accept": "Brancott Estate.jpg",
+  "candidate_index": 0,
+  "checks": {
+   "right_place": "pass",
+   "shows_named_thing": "pass",
+   "spectacular_wide": "pass",
+   "real_colour_photo": "pass"
+  },
+  "reason": "Brancott Estate lead image: vineyard rows with Wairau hills, categories Brancott Estate / Vineyards in Marlborough. 10234x2993 strip, but the square crop at centre shows the vine rows cleanly.",
+  "hero_crop": "ok",
+  "dark": false,
+  "licence_author": "CC BY-SA 4.0; Olivier Lemoine (https://Photo-Terroir.fr)"
+ },
+ {
+  "slot": "spot:marlborough-sounds-10",
+  "accept": "external:https://live.staticflickr.com/2550/4163225849_eaaf711eb8_b.jpg",
+  "candidate_index": 0,
+  "checks": {
+   "right_place": "pass",
+   "shows_named_thing": "pass",
+   "spectacular_wide": "pass",
+   "real_colour_photo": "pass"
+  },
+  "reason": "WEAK accept: Nydia Track (Flickr title 'Mountain Bike The Nydia Track', trail mown through grass, bush hill). Plain, sky washed out, no landmark, but is the track and only Nydia-specific image. Replace if anything better appears.",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.6
+  },
+  "dark": false,
+  "licence_author": "CC BY 2.0; TRAILSOURCE.COM"
+ },
+ {
+  "slot": "spot:auckland-5",
+  "accept": "Mount Eden crater with Auckland CBD and Rangitoto skyline.jpg",
+  "candidate_index": 0,
+  "checks": {
+   "right_place": "pass",
+   "shows_named_thing": "pass",
+   "spectacular_wide": "pass",
+   "real_colour_photo": "pass"
+  },
+  "reason": "Mount Eden crater bowl with Sky Tower/CBD and Rangitoto beyond; crater is the subject and fills the crop; 2300 px CC BY-SA 3.0. Best of three (1 is mostly city; 2 portrait with crater cut).",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.6
+  },
+  "dark": false,
+  "licence_author": "CC BY-SA 3.0; Avenue"
+ },
+ {
+  "slot": "spot:auckland-9",
+  "accept": "Oceanarium tunnel at Kelly Tarlton's Sea Life Aquarium, Auckland, New Zealand.jpg",
+  "candidate_index": 0,
+  "checks": {
+   "right_place": "pass",
+   "shows_named_thing": "pass",
+   "spectacular_wide": "pass",
+   "real_colour_photo": "pass"
+  },
+  "reason": "Oceanarium tunnel at Kelly Tarlton's (title and category name the aquarium); recognisable attraction interior, CC0 2022. Dark on purpose (aquarium); no exterior exists. Penguin colony (cand 2) is a fallback.",
+  "hero_crop": "ok",
+  "dark": true,
+  "licence_author": "CC0; Jonathan Harker"
+ },
+ {
+  "slot": "spot:auckland-13",
+  "accept": "MOTAT Aviation Hall, Auckland, New Zealand.jpg",
+  "candidate_index": 0,
+  "checks": {
+   "right_place": "pass",
+   "shows_named_thing": "pass",
+   "spectacular_wide": "pass",
+   "real_colour_photo": "pass"
+  },
+  "reason": "MOTAT Aviation Hall exterior with MOTAT lettering, overcast but clear; CC0 2022. Tram (cand 3) is a livelier alternative but the hall is fine.",
+  "hero_crop": "ok",
+  "dark": false,
+  "licence_author": "CC0; Jonathan Harker"
+ },
+ {
+  "slot": "dest:matakana:header",
+  "accept": "Tawharanui.jpg",
+  "candidate_index": 0,
+  "checks": {
+   "right_place": "pass",
+   "shows_named_thing": "pass",
+   "spectacular_wide": "pass",
+   "real_colour_photo": "pass"
+  },
+  "reason": "Tawharanui Anchor Bay beach with Hauturu on horizon: Matakana coast (Beaches of the Auckland Region, Tawharanui Regional Park). Coast rather than the village, and only moderately spectacular, but real, clean, 2848 px (>=2000) PD, aspect 1.33. Accept only if Tawharanui is within the Matakana destination; else hold.",
+  "hero_crop": "ok",
+  "dark": false,
+  "licence_author": "Public domain; Brendon Peat at en.wikipedia"
+ },
+ {
+  "slot": "spot:raglan-3",
+  "accept": "external:https://live.staticflickr.com/7270/7868639024_e72a03ac9a_b.jpg",
+  "candidate_index": 0,
+  "checks": {
+   "right_place": "pass",
+   "shows_named_thing": "pass",
+   "spectacular_wide": "pass",
+   "real_colour_photo": "pass"
+  },
+  "reason": "Karioi ridge from Raglan viewpoint, sunny, mountain recognisable but small above a pebble-paved foreground; Flickr title 'Raglan', CC BY 2.0 (itravelNZ). Candidate 2 is cloud-covered and dull. Use subject point so the ridge is in crop.",
+  "hero_crop": {
+   "x": 0.3,
+   "y": 0.33
+  },
+  "dark": false,
+  "licence_author": "CC BY 2.0; Natalia Volna (itravelNZ)"
+ },
+ {
+  "slot": "dest:waitomo:header",
+  "accept": "Waikato hills 3.jpg",
+  "candidate_index": 1,
+  "checks": {
+   "right_place": "pass",
+   "shows_named_thing": "pass",
+   "spectacular_wide": "pass",
+   "real_colour_photo": "pass"
+  },
+  "reason": "WEAK accept, hold if better exists: Waikato hills with karst outcrops, bush and poplars under blue sky near Waitomo (Cloudyskye, geotagged by candidate notes). 4128x3096. No caves/village; best landscape of the two (cand 0 is cows in foreground). Page has no description, location rests on geotag/series.",
+  "hero_crop": "ok",
+  "dark": false,
+  "licence_author": "CC BY-SA 3.0; Cloudyskye"
+ },
+ {
+  "slot": "spot:coromandel-17",
+  "accept": "external:https://thewaterworks.co.nz/wp-content/uploads/sites/397/2022/11/The-Waterworks_Park-Area_Banner.jpg",
+  "candidate_index": 0,
+  "checks": {
+   "right_place": "pass",
+   "shows_named_thing": "pass",
+   "spectacular_wide": "pass",
+   "real_colour_photo": "pass"
+  },
+  "reason": "The Waterworks lily pond, water clock and wheel in garden park; real colour photo from operator banner, 2500x1200 (aspect 2.08 outside header range but this is a spot). NOT FREELY LICENSED: All rights reserved; tier 2, flag permission risk.",
+  "hero_crop": "ok",
+  "dark": false,
+  "licence_author": "All rights reserved (operator photo); The Waterworks"
+ },
+ {
+  "slot": "spot:coromandel-18",
+  "accept": "external:https://live.staticflickr.com/7070/6989718475_75d12616f4_b.jpg",
+  "candidate_index": 0,
+  "checks": {
+   "right_place": "pass",
+   "shows_named_thing": "pass",
+   "spectacular_wide": "pass",
+   "real_colour_photo": "pass"
+  },
+  "reason": "Ocean Beach, Tairua: surf and sand with Mt Paku behind; real photo with mild cross-process tint. Check Flickr page confirms Tairua (title 'Die Moepse von Tairua').",
+  "hero_crop": {
+   "x": 0.65,
+   "y": 0.5
+  },
+  "dark": false,
+  "licence_author": "CC BY 2.0; daspunkt"
+ },
+ {
+  "slot": "spot:hamilton-8",
+  "accept": "Kaka in Maungatautari Ecological Island.JPG",
+  "candidate_index": 0,
+  "checks": {
+   "right_place": "pass",
+   "shows_named_thing": "pass",
+   "spectacular_wide": "pass",
+   "real_colour_photo": "pass"
+  },
+  "reason": "Kaka in Maungatautari Ecological Island (category Maungatautari); wildlife is the draw. Crop shows two kaka but the scene is shaded and the subject small. Below brightness floor (p40 0.11, mean 0.24): brighten.",
+  "hero_crop": {
+   "x": 0.4,
+   "y": 0.7
+  },
+  "dark": true,
+  "licence_author": "CC BY-SA 3.0; Jeanaux"
+ },
+ {
+  "slot": "spot:hamilton-9",
+  "accept": "St John's church in Te Awamutu.jpg",
+  "candidate_index": 0,
+  "checks": {
+   "right_place": "pass",
+   "shows_named_thing": "pass",
+   "spectacular_wide": "pass",
+   "real_colour_photo": "pass"
+  },
+  "reason": "St John's Anglican church, Te Awamutu, 2017, clear and recognisable, though tone-mapped/HDR-looking. Accept only if the spot is that church (confirm bio).",
+  "hero_crop": "ok",
+  "dark": false,
+  "licence_author": "CC BY-SA 4.0; Krzysztof Golik"
+ },
+ {
+  "slot": "spot:mount-te-aroha",
+  "accept": "external:https://live.staticflickr.com/2560/3999249594_b5399d000d_b.jpg",
+  "candidate_index": 0,
+  "checks": {
+   "right_place": "pass",
+   "shows_named_thing": "pass",
+   "spectacular_wide": "pass",
+   "real_colour_photo": "pass"
+  },
+  "reason": "Summit ridge with transmitter mast, snow-dusted ('Snow on Mt Te Aroha'), mountain central in crop; 1024x626. Brightness p40 0.25 ok.",
+  "hero_crop": "ok",
+  "dark": false,
+  "licence_author": "CC BY 2.0; kiwinz"
+ },
+ {
+  "slot": "spot:timber-trail",
+  "accept": "115m Bog Creek suspension bridge.JPG",
+  "candidate_index": 0,
+  "checks": {
+   "right_place": "pass",
+   "shows_named_thing": "pass",
+   "spectacular_wide": "pass",
+   "real_colour_photo": "pass"
+  },
+  "reason": "115 m Bog Creek suspension bridge through forest on the Timber Trail (category Timber trail); bridge in centre-left of crop. Cand 2 (trail with km post) is plainer.",
+  "hero_crop": {
+   "x": 0.55,
+   "y": 0.4
+  },
+  "dark": false,
+  "licence_author": "CC BY-SA 3.0; Johnragla"
+ },
+ {
+  "slot": "spot:tirau-giant-dog-and-sheep",
+  "accept": "Tirau (3).jpg",
+  "candidate_index": 0,
+  "checks": {
+   "right_place": "pass",
+   "shows_named_thing": "pass",
+   "spectacular_wide": "pass",
+   "real_colour_photo": "pass"
+  },
+  "reason": "Giant corrugated-iron dog (i-SITE), square, sharp; sheep not shown, but dog is the icon. Cand 1 shows both but the sheep is cut in a square crop and it is HDR-ish.",
+  "hero_crop": "ok",
+  "dark": false,
+  "licence_author": "CC BY-SA 4.0; Remi Jouan"
+ },
+ {
+  "slot": "dest:bay-of-islands:why3",
+  "accept": "Hat Island (Left, in distance) Mahenotiti Island (Centre) and Te Ao Island (Right) as viewed from Urupukapuka..jpg",
+  "candidate_index": 0,
+  "checks": {
+   "right_place": "pass",
+   "shows_named_thing": "pass",
+   "spectacular_wide": "pass",
+   "real_colour_photo": "pass"
+  },
+  "reason": "Blue bay and islands viewed from Urupukapuka, bright, 4000x2252, CC BY-SA 4.0, no people. Different file from the one used for bay-of-islands-6.",
+  "hero_crop": "ok",
+  "dark": false,
+  "licence_author": "CC BY-SA 4.0; Petersmeter"
+ },
+ {
+  "slot": "spot:bay-of-islands-6",
+  "accept": "Bay of Islands - panoramio - AwOiSoAk KaOsIoWa (1).jpg",
+  "candidate_index": 0,
+  "checks": {
+   "right_place": "pass",
+   "shows_named_thing": "pass",
+   "spectacular_wide": "pass",
+   "real_colour_photo": "pass"
+  },
+  "reason": "Urupukapuka Island headlands and coves seen from Waewaetorea; the island is the middle subject, bright, 2816x1872 CC BY-SA 3.0. Distinct from why3 pick.",
+  "hero_crop": "ok",
+  "dark": false,
+  "licence_author": "CC BY-SA 3.0; AwOiSoAk KaOsIoWa"
+ },
+ {
+  "slot": "spot:cape-reinga-4",
+  "accept": "external:https://www.flickr.com/photos/40456023@N03/8167814758",
+  "candidate_index": 2,
+  "checks": {
+   "right_place": "pass",
+   "shows_named_thing": "pass",
+   "spectacular_wide": "pass",
+   "real_colour_photo": "pass"
+  },
+  "reason": "PREFER cand 2 over recommended: DOC photo of Kapowairua (Spirits Bay) bay, beach and campsite, bright and recognisable (DOC Flickr, CC BY 2.0 confirmed on page). Cand 0 is a stormy beach with little to identify it as Spirits Bay. 1024x768.",
+  "hero_crop": {
+   "x": 0.6,
+   "y": 0.5
+  },
+  "dark": false,
+  "licence_author": "CC BY 2.0 (Department of Conservation, per Openverse); Department of Conservation"
+ },
+ {
+  "slot": "dest:napier:header",
+  "accept": "View of Napier.jpg",
+  "candidate_index": 0,
+  "checks": {
+   "right_place": "pass",
+   "shows_named_thing": "pass",
+   "spectacular_wide": "pass",
+   "real_colour_photo": "pass"
+  },
+  "reason": "Elevated view over the Art Deco centre with Marine Parade and Hawke Bay behind; town in its setting, 3715x2477, CC BY 2.0. Palm frames left edge; fine.",
+  "hero_crop": "ok",
+  "dark": false,
+  "licence_author": "CC BY 2.0; itravelNZ"
+ },
+ {
+  "slot": "spot:napier-6",
+  "accept": "Ahuriri from Bluff Hill Lookout, March 2026.jpg",
+  "candidate_index": 0,
+  "checks": {
+   "right_place": "pass",
+   "shows_named_thing": "pass",
+   "spectacular_wide": "pass",
+   "real_colour_photo": "pass"
+  },
+  "reason": "View over Ahuriri, harbour and bay from Bluff Hill Lookout, March 2026, CC BY 4.0, 4896x3672, bright and clear.",
+  "hero_crop": "ok",
+  "dark": false,
+  "licence_author": "CC BY 4.0; Jakob (TheLoyalOrder)"
+ },
+ {
+  "slot": "spot:gisborne-2",
+  "accept": "Tolaga Bay Wharf.jpg",
+  "candidate_index": 0,
+  "checks": {
+   "right_place": "pass",
+   "shows_named_thing": "pass",
+   "spectacular_wide": "pass",
+   "real_colour_photo": "pass"
+  },
+  "reason": "Tolaga Bay wharf running out to sea with Mitre Rocks, blue sky; centred, CC BY-SA 3.0, 2048x1536.",
+  "hero_crop": "ok",
+  "dark": false,
+  "licence_author": "CC BY-SA 3.0; Ulrich Lange"
+ },
+ {
+  "slot": "spot:east-cape-3",
+  "accept": "external:https://www.flickr.com/photos/26223114@N02/39740087514",
+  "candidate_index": 0,
+  "checks": {
+   "right_place": "pass",
+   "shows_named_thing": "pass",
+   "spectacular_wide": "pass",
+   "real_colour_photo": "pass"
+  },
+  "reason": "Largest pohutukawa tree at Te Araroa (Flickr description: 'pohutukawa tree on the beach front in Te Araroa ... largest'), CC BY-SA 2.0 confirmed. Whole crown fits in the square only with x 0.65; slightly dark (p40 0.18) so brighten.",
+  "hero_crop": {
+   "x": 0.65,
+   "y": 0.5
+  },
+  "dark": true,
+  "licence_author": "CC BY-SA 2.0; 4nitsirk"
+ },
+ {
+  "slot": "spot:gisborne-11",
+  "accept": "Gisborne NZ Sunrise Waikanae Beach.jpg",
+  "candidate_index": 0,
+  "checks": {
+   "right_place": "pass",
+   "shows_named_thing": "pass",
+   "spectacular_wide": "pass",
+   "real_colour_photo": "pass"
+  },
+  "reason": "Sunrise over Waikanae Beach, Gisborne (category Waikanae Beach, Gisborne), 1500x1125 CC BY-SA 4.0. Dark foreground is sunrise on purpose.",
+  "hero_crop": "ok",
+  "dark": false,
+  "licence_author": "CC BY-SA 4.0; Ray Sheldrake (GisborneSpecials.co.nz)"
+ },
+ {
+  "slot": "dest:gisborne:header",
+  "accept": "none",
+  "checks": {},
+  "reason": "Reject all. Cand 0/1 are Young Nick's Head across mudflat (a cape, not Gisborne, with tyre tracks/driftwood echo of the rejected header); cand 2 is a statue subject. A city header needs the town in its setting; none exists at >=2000 px.",
+  "hero_crop": null,
+  "dark": false,
+  "licence_author": null
+ },
+ {
+  "slot": "spot:tongariro-8",
+  "accept": "none",
+  "checks": {},
+  "reason": "Reject cand 0: it is the Tongariro River, not the National Trout Centre the spot names (check 2); plain river, nothing recognisable.",
+  "hero_crop": null,
+  "dark": false,
+  "licence_author": null
+ },
+ {
+  "slot": "spot:blenheim-6",
+  "accept": "none",
+  "checks": {},
+  "reason": "No candidate (Highfield Estate); hold for tier-2 photo.",
+  "hero_crop": null,
+  "dark": false,
+  "licence_author": null
+ },
+ {
+  "slot": "spot:marfells-beach",
+  "accept": "none",
+  "checks": {},
+  "reason": "No candidate; hold.",
+  "hero_crop": null,
+  "dark": false,
+  "licence_author": null
+ },
+ {
+  "slot": "spot:rainbow-ski-area",
+  "accept": "none",
+  "checks": {},
+  "reason": "No candidate; troops photos rejected.",
+  "hero_crop": null,
+  "dark": false,
+  "licence_author": null
+ },
+ {
+  "slot": "dest:matakana:why1",
+  "accept": "none",
+  "checks": {},
+  "reason": "No candidate; the reason is a weekly market (not a permanent spot), rewrite the reason rather than find a photo.",
+  "hero_crop": null,
+  "dark": false,
+  "licence_author": null
+ },
+ {
+  "slot": "spot:chatham-islands-6",
+  "accept": "none",
+  "checks": {},
+  "reason": "No candidate (people on marae steps rejected).",
+  "hero_crop": null,
+  "dark": false,
+  "licence_author": null
+ },
+ {
+  "slot": "spot:new-plymouth-8",
+  "accept": "none",
+  "checks": {},
+  "reason": "No candidate found.",
+  "hero_crop": null,
+  "dark": false,
+  "licence_author": null
+ },
+ {
+  "slot": "spot:new-plymouth-14",
+  "accept": "none",
+  "checks": {},
+  "reason": "No candidate found.",
+  "hero_crop": null,
+  "dark": false,
+  "licence_author": null
+ },
+ {
+  "slot": "spot:new-plymouth-15",
+  "accept": "none",
+  "checks": {},
+  "reason": "No candidate found.",
+  "hero_crop": null,
+  "dark": false,
+  "licence_author": null
+ },
+ {
+  "slot": "spot:new-plymouth-9",
+  "accept": "none",
+  "checks": {},
+  "reason": "Reject fallback: generic Coastal Walkway file, not shown to be East End Beach (check 1/2).",
+  "hero_crop": null,
+  "dark": false,
+  "licence_author": null
+ },
+ {
+  "slot": "spot:new-plymouth-10",
+  "accept": "none",
+  "checks": {},
+  "reason": "Reject fallback: seawall and Sugar Loaf Islands, not Ngamotu Beach itself (check 2).",
+  "hero_crop": null,
+  "dark": false,
+  "licence_author": null
+ }
+]

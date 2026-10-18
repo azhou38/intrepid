@@ -1318,7 +1318,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'Sunny vineyards that made New Zealand Sauvignon Blanc famous.',
     description: "Blenheim is the hub of Marlborough, New Zealand's largest wine region and the place that put its zesty Sauvignon Blanc on the world map. Sunny days and cool nights on the Wairau Plains suit well over a hundred wineries, many with cellar doors and vineyard restaurants, best explored by bike or on a tasting tour. It is also home to the Omaka Aviation Heritage Centre, which houses rare First and Second World War aircraft.",
     whyVisit: ['World-famous Sauvignon Blanc', 'Cellar doors by bike', 'Omaka aviation museum'],
-    whyVisitPhotos: ["Autumn in the Awatere Valley.jpg", "Cloudy Bay Cellar Door in Marlborough (4671490362).jpg", "Nieuport 24 at Omaka Aviation Heritage Centre's 'Knights of the Sky' exhibition.jpg"],
+    whyVisitPhotos: ["Autumn in the Awatere Valley.jpg", "Cloudy Bay Cellar Door in Marlborough (4671508402).jpg", "Nieuport 24 at Omaka Aviation Heritage Centre's 'Knights of the Sky' exhibition.jpg"],
     highlights: ['Sauvignon Blanc', 'Cellar doors', 'Aviation museum'],
     goodToKnow: [
       { icon: '🚲', title: 'Cycle between wineries', detail: 'The valley floor is flat, and bike hire with winery maps is easy to find in Renwick and Blenheim.' },
@@ -1514,7 +1514,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "144 islands, dolphin cruises and the birthplace of modern New Zealand.",
     description: "The Bay of Islands is a drowned valley of about 144 islands, sheltered bays and white-shell beaches on the Northland coast. Paihia and Russell are the bases for dolphin cruises and the Hole in the Rock, while the Waitangi Treaty Grounds mark where the founding agreement between Māori and the Crown was signed in 1840. Kerikeri, inland, has the country's oldest stone building.",
     whyVisit: ["Cruise to the Hole in the Rock", "Waitangi, where NZ began", "Kayak and sail the islands"],
-    whyVisitPhotos: [",00 0664 Bay of Island (Neuseeland) - Hole in the Rock.jpg", "00 27 0577 Waitangi, New Zealand - Treaty House.jpg", "Urupukapuka Island (52735059736).jpg"],
+    whyVisitPhotos: [",00 0664 Bay of Island (Neuseeland) - Hole in the Rock.jpg", "00 27 0577 Waitangi, New Zealand - Treaty House.jpg", "Hat Island (Left, in distance) Mahenotiti Island (Centre) and Te Ao Island (Right) as viewed from Urupukapuka..jpg"],
     highlights: ['Island cruises', 'Waitangi', 'Historic Russell'],
     goodToKnow: [
       { icon: '⛴️', title: 'Cross to Russell by ferry', detail: 'A short passenger ferry links Paihia and Russell, and is the best way to reach the town.' },
@@ -1528,7 +1528,7 @@ export const DESTINATIONS: Destination[] = [
     id: 'whangarei', name: 'Whangārei', country: 'New Zealand', countryCode: 'NZ', timezone: 'Pacific/Auckland', defaultZoomSpanKm: 70,
     continent: 'Oceania', coordinates: { latitude: -35.7251, longitude: 174.3237 },
     category: 'city', icon: '🌿', rank: 5,
-    tagline: "Northland's main city, with a waterfall, clock museum and a gateway to world-class diving.",
+    tagline: "Northland's main city, with a waterfall, a clock museum and the departure point for Poor Knights dive and snorkel trips.",
     description: "Whangārei is Northland's largest city, set around a sheltered harbour. It has the Hundertwasser Art Centre, a pretty town basin and Whangārei Falls just outside the centre. The Tutukaka Coast to the east is the departure point for dive trips to the Poor Knights Islands.",
     whyVisit: ["Hundertwasser Art Centre", "Dive the Poor Knights Islands", "Waterfalls and coastal walks"],
     whyVisitPhotos: ["Hundertwasser Art Centre.jpg", "Archway Island south of Aorangi Island 1.jpg", "Whangarei Falls .jpg"],
@@ -1542,7 +1542,7 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: '{months} give the warmest, driest weather and the best diving visibility.',
   },
   {
-    id: 'cape-reinga', name: 'Cape Reinga', country: 'New Zealand', countryCode: 'NZ', timezone: 'Pacific/Auckland', defaultZoomSpanKm: 150,
+    id: 'cape-reinga', name: 'Cape Reinga', country: 'New Zealand', countryCode: 'NZ', timezone: 'Pacific/Auckland', defaultZoomSpanKm: 50,
     continent: 'Oceania', coordinates: { latitude: -34.4285, longitude: 172.6780 },
     category: 'landmark', icon: '🗼', rank: 3,
     tagline: "The wild tip of the North Island, where the Tasman Sea meets the Pacific.",
