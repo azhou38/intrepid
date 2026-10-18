@@ -8,7 +8,7 @@ import type { Destination } from '../../types';
 import { thumbCache, getOrFetchWikiThumbnail } from '../../utils/photoCache';
 import { useDestinationClimate } from '../../utils/climateApi';
 import { formatBestMonthsShort } from '../../utils/travelData';
-import { CARD_SCRIM_FADE } from './cardScrim';
+import { CARD_SCRIM_ABOVE } from './cardScrim';
 
 // Text area under the image, sized for the wrapped reasons.
 export const CARD_BOTTOM_H = 58;
@@ -70,7 +70,7 @@ function DestinationCard({ dest, isVisited, onPress, width = DEST_CARD_W, showCo
 
   // The scrim reaches as high as the text does: base height, or the text block's height plus its lift and some fade.
   const [infoH, setInfoH] = useState(0);
-  const gradH = Math.max(72, infoH + 16 + CARD_SCRIM_FADE);
+  const gradH = Math.max(60, infoH + 16 + CARD_SCRIM_ABOVE * 3);
 
   return (
     // Shadow color reflects visited status — same green as the "Visited" tag itself when

@@ -30,7 +30,7 @@ import { photoCache, thumbCache, getOrFetchWikiThumbnail, HEADER_PX } from '../.
 import { buildThumbUrl, type ManifestEntry } from '../../utils/imageUrl';
 import spotGalleries from '../../data/spotGalleries.json';
 import CircleFlag from '../CircleFlag';
-import { CARD_SCRIM_FADE, cardScrimStops } from './cardScrim';
+import { CARD_SCRIM_FADE, CARD_SCRIM_ABOVE, cardScrimStops } from './cardScrim';
 import GoogleRating from './GoogleRating';
 import spotRatings from '../../data/spotRatings.json';
 import { fitNameFontSize } from '../../utils/fitNameFontSize';
@@ -153,7 +153,7 @@ function CarouselCard({ spot, isActive, onPress, onAddVisit, gradId }: {
   // The black scrim is as tall as the text block it sits behind — its measured height (nameH, the whole overlay: name,
   // time/cost and description), the overlay's bottom inset, and a short fade above the first line — so a card with a
   // short description gets a short scrim and one with a long description a tall one.
-  const scrimH = nameH + CARD_INFO_BOTTOM + CARD_SCRIM_FADE;
+  const scrimH = nameH + CARD_INFO_BOTTOM + CARD_SCRIM_ABOVE;
 
   const isVisited  = useVisitIndex().isSpotVisited(spot.id);
 

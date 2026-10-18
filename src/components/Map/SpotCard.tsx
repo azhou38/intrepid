@@ -4,7 +4,7 @@ import { Check, Clock } from 'lucide-react-native';
 import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'react-native-svg';
 import FadeInImage from './FadeInImage';
 import { styles } from './DestinationCard';
-import { CARD_SCRIM_FADE, cardScrimStops } from './cardScrim';
+import { CARD_SCRIM_FADE, CARD_SCRIM_ABOVE, cardScrimStops } from './cardScrim';
 import { fitNameSize } from '../../utils/fitNameFontSize';
 import { titleStatGap } from '../../utils/titleStatGap';
 import { formatSpotCost, formatVisitTime, spotPhotoTitle, type Spot } from '../../data/spots';
@@ -53,7 +53,7 @@ function SpotCard({ spot, onPress, width }: {
   const [infoH, setInfoH] = useState(0);
   // As tall as the name / time / cost block it sits behind (plus its 16 px bottom inset and a soft edge), so the name is on
   // solid shading however many lines it wraps to — see cardScrim.
-  const gradH = infoH + 16 + CARD_SCRIM_FADE;
+  const gradH = infoH + 16 + CARD_SCRIM_ABOVE;
 
   return (
     // Shadow color reflects visited status — same green as the "Visited" tag itself when
