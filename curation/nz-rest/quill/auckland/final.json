@@ -1,0 +1,883 @@
+{
+ "spots": {
+  "matakana-6": {
+   "name": "Warkworth",
+   "wiki": "Warkworth, New Zealand",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "A town on the Mahurangi River in the Matakana area, north of Auckland.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": {
+    "latitude": -36.39767,
+    "longitude": 174.66585
+   },
+   "notes": [
+    "HELD for photo. Pin unchanged (0 m from OSM town node). Bio drops 'base for trips to Matakana and Kawau Island' (not read in a fetched page). One counted source (Wikivoyage). No ticketUrl: a town with no steward."
+   ]
+  },
+  "auckland-23": {
+   "name": "Rainbow's End",
+   "wiki": "Rainbow's End (theme park)",
+   "icon": "🎢",
+   "category": "entertainment",
+   "bio": "A Manukau theme park with over 20 rides, including Fear Fall and the Enchanted Forest Log Flume.",
+   "hours": "10:00 AM – 5:00 PM",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "costMin": 79.9,
+   "costMax": 79.9,
+   "currency": "NZD",
+   "ticketUrl": "https://rainbowsend.co.nz/",
+   "coordinates": {
+    "latitude": -36.99428,
+    "longitude": 174.88353
+   },
+   "notes": [
+    "HELD for photo. $79.90 is the adult Superpass (ages 14+; child $71.90, senior $39.95). Open days vary by season: in school term to 29 Nov Mon and Fri close 4 PM and Tue-Thu are closed; 7 days from 30 Nov 2026, so no closedDays recorded. Pin unchanged (55 m from OSM). ticketUrl title checked."
+   ]
+  },
+  "auckland-24": {
+   "name": "Tiritiri Matangi Island",
+   "icon": "🦜",
+   "category": "nature",
+   "bio": "A pest-free open sanctuary where takahē and kōkako live, reached by public ferry from Auckland, Wednesday to Sunday.",
+   "hours": "Ferries Wednesday to Sunday",
+   "visitHoursMin": 4,
+   "visitHoursMax": 6,
+   "closedDays": [
+    1,
+    2
+   ],
+   "costMin": 110,
+   "costMax": 110,
+   "currency": "NZD",
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/auckland/places/tiritiri-matangi-island/",
+   "coordinates": {
+    "latitude": -36.60586,
+    "longitude": 174.88797
+   },
+   "notes": [
+    "HELD for photo. $110 is the Explore Group adult return (child $55); guided-walk add-on (about $10) not priced here. Ferry Wed-Fri 9:00 AM from the Viaduct (island 2:40 PM back), Sat/Sun/holidays 8:30 AM; books out Nov-Apr. Pin moved 676 m from the island centroid to the wharf (OSM ferry terminal). ticketUrl is the DOC page, title checked."
+   ]
+  },
+  "auckland-25": {
+   "name": "Kumeu",
+   "icon": "🍷",
+   "category": "entertainment",
+   "bio": "A West Auckland village at the centre of a wine district, with cellar doors.",
+   "hours": "Daytime; cellar-door hours differ",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -36.76667,
+    "longitude": 174.56667
+   },
+   "notes": [
+    "HELD for photo. Hours are a judgement for a district (each winery sets its own); the source that names wineries as a visitor draw was not read. Pin unchanged (1.3 km from the OSM winery cluster; village-scale point). No ticketUrl: no steward (the northwestcountry.co.nz directory is a business listing). Bio drops 'cafes' (unsourced)."
+   ]
+  },
+  "auckland-26": {
+   "name": "Howick Historical Village",
+   "icon": "🏚️",
+   "category": "historic",
+   "bio": "A village of relocated historic buildings in Pakuranga, telling the Fencible story, with Live Days.",
+   "hours": "10:00 AM – 4:00 PM",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "closedDays": [
+    1
+   ],
+   "costMin": 16,
+   "costMax": 16,
+   "currency": "NZD",
+   "ticketUrl": "https://www.historicalvillage.org.nz/",
+   "coordinates": {
+    "latitude": -36.9074,
+    "longitude": 174.9027
+   },
+   "notes": [
+    "Adult $16 (child 5-15 $8, family $44, seniors/students $14; Live Days priced separately). Open Tuesday to Sunday, last admission 3 PM; closed Good Friday, Christmas Eve, Christmas Day, Boxing Day and New Year's Day (specialClosures not expressible; Good Friday is movable). Bio drops the park name and '1840s-1880s' (not read). Pin unchanged (47 m). ticketUrl: official site, title checked."
+   ]
+  },
+  "auckland-27": {
+   "name": "Motutapu Island",
+   "icon": "🏝️",
+   "category": "nature",
+   "bio": "An island joined to Rangitoto by a causeway, with coastal walks, a homestead and birdlife; ferry service is limited.",
+   "hours": "Daytime ferries",
+   "visitHoursMin": 3,
+   "visitHoursMax": 5,
+   "costMin": 40,
+   "costMax": 40,
+   "currency": "NZD",
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/auckland/places/motutapu-island-recreation-reserve/",
+   "coordinates": {
+    "latitude": -36.76714,
+    "longitude": 174.93302
+   },
+   "notes": [
+    "UNVERIFIED COST: $40 is an estimate that mirrors the existing Rangitoto ferry entry; no public Motutapu fare was found (Red Boats list $40 pp but with a $1,600 minimum charter; Fullers360 page is captcha-blocked). Check the fare in a browser before shipping. 'Beaches' dropped (not on the DOC page). Pin moved 2.4 km from mid-island to the Home Bay wharf (OSM ferry terminal). ticketUrl is the DOC page, title checked."
+   ]
+  },
+  "auckland-28": {
+   "name": "Mangere Mountain",
+   "icon": "⛰️",
+   "category": "viewpoint",
+   "bio": "A 105 m volcanic cone and former pā site in Māngere with a summit walk.",
+   "hours": "7:00 AM – 7:00 PM",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": "https://maunga.nz/maunga/te-pane-o-mataoho-te-ara-pueru",
+   "coordinates": {
+    "latitude": -36.9481,
+    "longitude": 174.7831
+   },
+   "notes": [
+    "Hours are winter; summer is 7 AM to 8:30 PM (Tupuna Maunga Authority). Pin unchanged (11 m from OSM peak). Bio: 'pā' is the maunga.nz Pa section, not read in detail; the placement's 'Manukau views' dropped (not read). ticketUrl is the Tupuna Maunga Authority page, title checked."
+   ]
+  },
+  "rotoroa-island": {
+   "name": "Rotoroa Island",
+   "icon": "🏝️",
+   "category": "nature",
+   "bio": "A predator-free Hauraki Gulf island sanctuary with walking tracks and a museum, reached by ferry.",
+   "hours": "Ferry days; about 4.5 hours ashore",
+   "visitHoursMin": 3,
+   "visitHoursMax": 5,
+   "costMin": 110,
+   "costMax": 110,
+   "currency": "NZD",
+   "ticketUrl": "https://www.rotoroa.org.nz/",
+   "coordinates": {
+    "latitude": -36.81785,
+    "longitude": 175.19389
+   },
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "notes": [
+    "HELD for photo. $110 is the Explore Group adult return (child $55). Wed-Sun and holidays to 23 Oct 2026, daily Mon-Fri from 24 Oct; departs Viaduct 9:15 AM. Bio drops 'once a rehabilitation centre' and 'beaches' from the research new_bio (neither read in a fetched page). Pin moved 559 m from the centroid to the Rotoroa Island Wharf (OSM). ticketUrl: Rotoroa Island Trust, title checked."
+   ]
+  },
+  "auckland-29": {
+   "name": "Mount Victoria",
+   "wiki": "Mount Victoria, Auckland",
+   "icon": "⛰️",
+   "category": "viewpoint",
+   "bio": "A 66 m volcanic hill in Devonport, a former pā with terraces and kūmara pits still visible.",
+   "hours": "7:00 AM – 7:00 PM",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "free": true,
+   "ticketUrl": "https://maunga.nz/maunga/takarunga",
+   "coordinates": {
+    "latitude": -36.8266,
+    "longitude": 174.79877
+   },
+   "notes": [
+    "HELD for photo. Summer hours 7 AM to 8:30 PM. Pin unchanged (20 m from OSM volcano). Check it is not a near-duplicate of the Devonport spot's bio, which mentions Mount Victoria. ticketUrl is the Tupuna Maunga Authority page (Takarunga), title checked."
+   ]
+  },
+  "auckland-30": {
+   "name": "Maraetai Beach",
+   "wiki": "Maraetai",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A public beach at Maraetai on Auckland's eastern coast.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -36.8798,
+    "longitude": 175.04277
+   },
+   "notes": [
+    "Pin moved 158 m onto the OSM beach way. Bio drops 'pōhutukawa-lined' (not read in a source). Free and 24 h are judgement. No ticketUrl: public beach, no single steward."
+   ]
+  },
+  "auckland-31": {
+   "name": "Motuihe Island",
+   "icon": "🏝️",
+   "category": "nature",
+   "bio": "A recreation-reserve island with sheltered beaches and bush walks, reached by seasonal ferry from Auckland.",
+   "hours": "Daytime ferries (summer)",
+   "visitHoursMin": 3,
+   "visitHoursMax": 5,
+   "costMin": 40,
+   "costMax": 40,
+   "currency": "NZD",
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/auckland/places/motuihe-island-recreation-reserve/",
+   "coordinates": {
+    "latitude": -36.80597,
+    "longitude": 174.93486
+   },
+   "notes": [
+    "UNVERIFIED COST: $40 is an estimate (no public Motuihe fare found; the Red Boats Motuihe page is a 404). Ferries are seasonal (DOC: over the summer months); the wharf is drop-off only. Bio uses the research new_bio, but 'sheltered beaches' is not on the pages read (DOC names Ocean Beach). Pin moved 1.2 km from mid-island to the OSM pier. ticketUrl is the DOC page, title checked."
+   ]
+  },
+  "auckland-32": {
+   "name": "Bethells Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A west-coast beach at Te Henga in Waitākere Ranges Regional Park, reached by Bethells Road.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.aucklandcouncil.govt.nz/en/parks-recreation/find-park-beach/park-detail/208.html",
+   "coordinates": {
+    "latitude": -36.89108,
+    "longitude": 174.44887
+   },
+   "notes": [
+    "Pin moved 241 m to the OSM Bethells Beach car park. Bio drops 'black-sand', 'dunes and surf' (not read). Free and 24 h are judgement. ticketUrl is the council Te Henga page (optional), title checked."
+   ]
+  },
+  "whatipu": {
+   "name": "Whatipu",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A beach at the Manukau Harbour entrance in the Waitākere Ranges, with Te Ana Ru cave a 20-minute walk from the car park.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.aucklandcouncil.govt.nz/en/parks-recreation/find-park-beach/park-detail/3482.html",
+   "coordinates": {
+    "latitude": -37.03958,
+    "longitude": 174.50696
+   },
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "notes": [
+    "STANDALONE. Pin moved 2.6 km from the dunes to the road end (OSM information point). The road is narrow and rough (council). Free and 24 h are judgement. ticketUrl is the council Whatipu page, title checked."
+   ]
+  },
+  "auckland-33": {
+   "name": "Shakespear Regional Park",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "A regional park at the tip of the Whangaparāoa peninsula with a pest-proof open sanctuary and a 5 km path.",
+   "hours": "Daylight; vehicle gate locks at 7 PM (9 PM in summer)",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.aucklandcouncil.govt.nz/en/parks-recreation/find-park-beach/park-detail/226.html",
+   "coordinates": {
+    "latitude": -36.608,
+    "longitude": 174.823
+   },
+   "notes": [
+    "Gate times are from the Shakespear Open Sanctuary Society, not the council page body. The 5 km path is the council Akl Paths Shakespear Tiritiri Path from Te Haruhi Bay. Pink Beach boardwalk out of service. Pin unchanged (park centroid 394 m away). ticketUrl is the council page, title checked."
+   ]
+  },
+  "auckland-34": {
+   "name": "New Zealand Maritime Museum",
+   "icon": "⚓",
+   "category": "museum",
+   "bio": "A museum of New Zealand's maritime history on Hobson's Wharf, with heritage sailings on the Waitematā.",
+   "hours": "10:00 AM – 5:00 PM",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2.5,
+   "costMin": 24,
+   "costMax": 24,
+   "currency": "NZD",
+   "ticketUrl": "https://www.maritimemuseum.co.nz/",
+   "coordinates": {
+    "latitude": -36.84153,
+    "longitude": 174.7634
+   },
+   "notes": [
+    "Adult $24 (senior/student $19, child $12; free for Auckland residents); heritage sailings with entry $63. Open daily except Christmas Day, final entry 4 PM (specialClosures not expressible). Bio drops 'America's Cup yachts' (not read). Pin moved 87 m onto the OSM museum. ticketUrl title checked."
+   ]
+  },
+  "auckland-35": {
+   "name": "Kitekite Falls",
+   "icon": "💧",
+   "category": "nature",
+   "bio": "A 40 m, three-tier waterfall on Glen Esk Stream near Piha, reached by the Kitekite track, with a pool at its base.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": {
+    "latitude": -36.96082,
+    "longitude": 174.48972
+   },
+   "notes": [
+    "Pin unchanged (1 m from OSM waterfall). Kitekite track status under kauri-dieback rules NOT confirmed; check the council open-track list. No ticketUrl: the only candidate (council Piha page) does not name Kitekite. Free and 24 h are judgement."
+   ]
+  },
+  "auckland-36": {
+   "name": "Auckland Botanic Gardens",
+   "icon": "🌺",
+   "category": "nature",
+   "bio": "Botanic gardens at Manurewa in South Auckland, with a visitor centre and cafe, open daily.",
+   "hours": "8:00 AM – 8:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": true,
+   "ticketUrl": "https://www.aucklandcouncil.govt.nz/en/parks-recreation/find-park-beach/park-detail/206.html",
+   "coordinates": {
+    "latitude": -37.01366,
+    "longitude": 174.90749
+   },
+   "notes": [
+    "Hours are Oct-Mar; April-September gates close 6 PM. 'Free' is inferred (the council page lists no fee). Pin moved 86 m to the OSM main car park. ticketUrl is the council page, title checked."
+   ]
+  },
+  "great-barrier-island-5": {
+   "name": "Tryphena",
+   "wiki": "Tryphena, New Zealand",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "The island's main ferry landing and village, with a store, cafes, a pub and a beach.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "coordinates": {
+    "latitude": -36.30324,
+    "longitude": 175.49183
+   },
+   "notes": [
+    "HELD for photo. Beach in the bio is the placement's; Wikivoyage names the ferry landing, store, cafes and pub. Pin moved 579 m to the OSM village node (village is spread out; either is fine). No ticketUrl: a village with no steward."
+   ]
+  },
+  "auckland-37": {
+   "name": "Stardome Observatory & Planetarium",
+   "wiki": "Stardome Observatory",
+   "icon": "🔭",
+   "category": "entertainment",
+   "bio": "A planetarium and observatory on the Maungakiekie One Tree Hill Domain, with fulldome shows year-round.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -36.90598,
+    "longitude": 174.77674
+   },
+   "notes": [
+    "HELD: hours and admission unread (stardome.org.nz is a client-rendered site, ticketUrl BLOCKED, so no ticketUrl) and held for photo. Do not ship without a real hours range and price, read in a real browser. Pin unchanged (32 m from OSM planetarium). 'Daily shows' dropped (not confirmed)."
+   ]
+  },
+  "auckland-38": {
+   "name": "Torpedo Bay Navy Museum",
+   "icon": "🚢",
+   "category": "museum",
+   "bio": "The National Museum of the Royal New Zealand Navy, in a Devonport foreshore boatshed; free for NZ residents.",
+   "hours": "10:00 AM – 5:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 15,
+   "costMax": 15,
+   "currency": "NZD",
+   "ticketUrl": "https://navymuseum.co.nz/",
+   "coordinates": {
+    "latitude": -36.8287,
+    "longitude": 174.8093
+   },
+   "notes": [
+    "$15 is the international-visitor adult price; NZ residents free. Open daily; closed Good Friday, Christmas Day and Boxing Day (specialClosures not expressible). Pin unchanged (18 m). ticketUrl title checked."
+   ]
+  },
+  "matakana-7": {
+   "name": "Pakiri",
+   "icon": "🏇",
+   "category": "beach",
+   "bio": "A long beach north of Matakana, beside Pakiri Regional Park.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -36.26417,
+    "longitude": 174.72722
+   },
+   "notes": [
+    "Bio drops 'known for horse riding' and surf (not read). The beach is long (about 7 km by the researcher's measure); the pin is the Pakiri village-side access, 1.8 km from the OSM beach centroid, accepted as an access point. No ticketUrl (optional council Pakiri Regional Park page 223 exists)."
+   ]
+  },
+  "matakana-8": {
+   "name": "Wenderholm Regional Park",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "A regional park on the Puhoi River mouth, the first in the Auckland region, with the Couldrey House homestead.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.aucklandcouncil.govt.nz/en/parks-recreation/find-park-beach/park-detail/3411.html",
+   "coordinates": {
+    "latitude": -36.537,
+    "longitude": 174.71
+   },
+   "notes": [
+    "Pedestrian access 24 h; vehicle gate seasonal. Boat-ramp pontoon closed for repair to end 2026; part of the Perimeter Path closed (council). Park was closed in Dec 2024; the current page shows partial closures only. Pin unchanged (661 m from the OSM viewpoint). 'First regional park' and the homestead are Wikipedia/search, not the council page. ticketUrl title checked."
+   ]
+  },
+  "hunua-falls": {
+   "name": "Hunua Falls",
+   "icon": "💧",
+   "category": "nature",
+   "bio": "A waterfall in the Hūnua Ranges Regional Park, with a car park and lookout nearby.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": "https://www.aucklandcouncil.govt.nz/en/parks-recreation/find-park-beach/park-detail/213.html",
+   "coordinates": {
+    "latitude": -37.06861,
+    "longitude": 175.08972
+   },
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "notes": [
+    "STANDALONE. Bio drops 'swimming hole' (not confirmed) and gate times are not read. Some park tracks closed or detoured, kauri-dieback rules apply. Pin unchanged (19 m from OSM waterfall; car park 230 m north-west). ticketUrl is the council park page, which names the falls in captions."
+   ]
+  },
+  "auckland-39": {
+   "name": "Arataki Visitor Centre",
+   "icon": "🏛️",
+   "category": "nature",
+   "bio": "Auckland Council's Waitākere visitor centre on Scenic Drive, with an 11 m kauri pou at the entrance.",
+   "hours": "9:00 AM – 5:00 PM",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": "https://www.aucklandcouncil.govt.nz/en/parks-recreation/find-park-beach/park-detail/204.html",
+   "coordinates": {
+    "latitude": -36.94703,
+    "longitude": 174.60634
+   },
+   "notes": [
+    "Open every day except Christmas Day and Boxing Day (specialClosures not expressible). 'Free' is inferred (no fee on the page). Bio drops 'Māori carvings and ranges views' (not read). Pin unchanged (9 m). ticketUrl title checked."
+   ]
+  },
+  "great-barrier-island-6": {
+   "name": "Port Fitzroy",
+   "icon": "⚓",
+   "category": "historic",
+   "bio": "Great Barrier's small harbour settlement, with a general store and burger bar by the wharf.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "coordinates": {
+    "latitude": -36.1648,
+    "longitude": 175.3616
+   },
+   "notes": [
+    "Wikivoyage: the ferry runs once a week and the Old Lady Track is 1 h each way; the bio drops the track and Glenfern mentions. Pin unchanged (37 m from OSM ferry terminal). No ticketUrl: a settlement with no steward."
+   ]
+  },
+  "auckland-40": {
+   "name": "Long Bay Regional Park",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A seaside regional park beside the Long Bay-Okura Marine Reserve, with a beach and a working farm.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.aucklandcouncil.govt.nz/en/parks-recreation/find-park-beach/park-detail/215.html",
+   "coordinates": {
+    "latitude": -36.68456,
+    "longitude": 174.7407
+   },
+   "notes": [
+    "Pin moved 909 m from Torbay housing to the OSM Long Bay beach node. Check Safeswim for water quality (council). Free and 24 h are judgement. ticketUrl is the council page, title checked."
+   ]
+  },
+  "waiheke-island-6": {
+   "name": "Palm Beach",
+   "wiki": "Palm Beach, New Zealand",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A sheltered beach on Waiheke's north shore.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -36.77967,
+    "longitude": 175.04468
+   },
+   "notes": [
+    "Bio drops 'similar to Oneroa' and the research's 'short bus ride from Oneroa' (both unsourced). A visitor source naming Palm Beach as a stop was NOT confirmed (only an OSM natural=beach node), so this is marginal. Pin moved 91 m onto the OSM beach. No ticketUrl: public beach."
+   ]
+  },
+  "auckland-41": {
+   "name": "Mercer Bay Loop Track",
+   "wiki": "Mercer Bay",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 2.5 km clifftop loop walk at Piha with views of the Te Ahua headland.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "coordinates": {
+    "latitude": -36.97014,
+    "longitude": 174.46792
+   },
+   "notes": [
+    "HELD for photo. Track may be closed or restricted (kauri dieback, cliff safety): NOT checked. Pin moved 985 m from the headland to the OSM Log Race Road trailhead car park. No ticketUrl: no track page found. Free and 24 h are judgement."
+   ]
+  },
+  "matakana-9": {
+   "name": "Mahurangi Regional Park",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "A coastal regional park near Warkworth on the Mahurangi Harbour, with a working farm.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 4,
+   "free": true,
+   "ticketUrl": "https://www.aucklandcouncil.govt.nz/en/parks-recreation/find-park-beach/park-detail/216.html",
+   "coordinates": {
+    "latitude": -36.50951,
+    "longitude": 174.72157
+   },
+   "notes": [
+    "KEPT, NOT HELD, per instruction, but VEHICLE ACCESS IS CLOSED until 19 December 2026 (slip on Mahurangi West Road; boat access only), so a visitor cannot drive in at present. Revisit before shipping: hold, or ship after reopening. Pin moved 196 m to the park entrance (192 Ngarewa Drive). ticketUrl is the Mahurangi West council page (a partial match for West and East sections), title checked."
+   ]
+  },
+  "great-barrier-island-7": {
+   "name": "Harataonga Beach",
+   "wiki": "Harataonga",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A bay at the end of Harataonga Road with a DOC campsite, snorkelling and the start of the coastal walkway.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -36.1717,
+    "longitude": 175.4798
+   },
+   "notes": [
+    "HELD for photo. Bio is the research new_bio; the placement's 'reached by coastal walk from Whangapoua' is wrong (the walkway is about 5 h one way; the beach is also reached by road). Pin unchanged (98 m from the OSM campsite). No ticketUrl: the DOC page is the campsite's."
+   ]
+  },
+  "great-barrier-island-8": {
+   "name": "Awana Beach",
+   "wiki": "Awana Bay",
+   "icon": "🏄",
+   "category": "beach",
+   "bio": "One of the island's most popular places to surf, on the east coast.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -36.2107,
+    "longitude": 175.4788
+   },
+   "notes": [
+    "HELD for photo. Pin is the Wikivoyage access point, 324 m from the OSM bay node, kept. No ticketUrl: no steward."
+   ]
+  },
+  "great-barrier-island-9": {
+   "name": "Whangapoua Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A long sandy beach with the graves of the 1894 SS Wairarapa shipwreck victims at its northern end.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -36.1221,
+    "longitude": 175.42
+   },
+   "notes": [
+    "HELD for photo. Pin kept (359 m from the OSM graves walkway, at the north end). The DOC graves-track page (15-30 min) is not linked: it is the track's, not the beach's."
+   ]
+  },
+  "great-barrier-island-10": {
+   "name": "Kaitoke Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A long sandy east-coast beach with consistent surf and mermaid pools at the southern end.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -36.2515,
+    "longitude": 175.47974
+   },
+   "notes": [
+    "HELD for photo. Pin is the Wikivoyage access point, 942 m from the beach centroid, kept. No ticketUrl: no steward."
+   ]
+  },
+  "parakai-springs": {
+   "name": "Parakai Springs",
+   "icon": "♨️",
+   "category": "entertainment",
+   "bio": "Natural thermal pools at Parakai in the Kaipara district.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -36.6606,
+    "longitude": 174.4332
+   },
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "notes": [
+    "HELD for photo. STANDALONE. HELD: hours and price unread, ticketUrl BLOCKED (kaipatikihotsprings.co.nz bot wall) and held for photo. parakaisprings.co.nz redirects there, so the venue may now trade as Kaipatiki Hot Springs: confirm the name, hours and adult price in a real browser; rename if so. Pin unchanged (146 m from OSM water park)."
+   ]
+  },
+  "auckland-42": {
+   "name": "Auckland Fish Market",
+   "icon": "🐟",
+   "category": "market",
+   "bio": "A seafood market and food hall at 22 Jellicoe Street in Wynyard Quarter, with a fishmonger and eateries.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "coordinates": {
+    "latitude": -36.84131,
+    "longitude": 174.75628
+   },
+   "notes": [
+    "HELD for photo. Hours unread and no official site found (aucklandfishmarket domains do not load; sanford.co.nz/afm is another business): no hours or ticketUrl. Free is an assumption for a market hall. Bio drops 'daily' (unsourced). Pin unchanged (4 m). The owner may still judge it a near-duplicate of the Wynyard Quarter spot."
+   ]
+  },
+  "auckland-43": {
+   "name": "Otuataua Stonefields",
+   "icon": "🪨",
+   "category": "historic",
+   "bio": "A historic reserve of Māori stonefield gardens on a low volcano near Auckland Airport.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": {
+    "latitude": -36.9838,
+    "longitude": 174.7542
+   },
+   "notes": [
+    "Bio drops 'free walk' (not read). Gate hours not read. Pin unchanged (239 m from the OSM car park; accepted). No ticketUrl: the council page was not found."
+   ]
+  },
+  "auckland-44": {
+   "name": "Cheltenham Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A public beach at Devonport, with a council reserve behind it.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": {
+    "latitude": -36.82221,
+    "longitude": 174.80887
+   },
+   "notes": [
+    "Bio drops 'tidal family beach looking out to Rangitoto' (not read in a source). Pin moved 103 m onto the OSM beach. No ticketUrl: public beach (council Cheltenham Beach Reserve page 461 exists)."
+   ]
+  },
+  "auckland-45": {
+   "name": "Waitākere Ranges",
+   "wiki": "Waitākere Ranges Regional Park",
+   "icon": "🌳",
+   "category": "nature",
+   "bio": "A regional park of forested ranges west of Auckland; many tracks are closed for kauri dieback, so check open tracks.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "free": true,
+   "ticketUrl": "https://www.aucklandcouncil.govt.nz/en/parks-recreation/find-park-beach/park-detail/204.html",
+   "coordinates": {
+    "latitude": -36.96667,
+    "longitude": 174.51667
+   },
+   "notes": [
+    "Bio does not promise waterfalls or bush walks: large sections are closed (council). Pin unchanged. ticketUrl is the Arataki page, the park's visitor entry (weak match; same URL as Arataki Visitor Centre)."
+   ]
+  },
+  "auckland-46": {
+   "name": "Tāmaki Drive Coastal Path",
+   "icon": "🚶",
+   "category": "hike",
+   "bio": "A waterfront path along the Waitematā shore from the city to Mission Bay, for walking and cycling.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -36.85091,
+    "longitude": 174.8163
+   },
+   "notes": [
+    "PHOTO CONCERN (not held by the placement): the accepted file shows the Orākei marina from Tāmaki Drive, not the path. Weak on check 2; a shot of the shared path at Okahu Bay or Mission Bay would pass better. Pin moved 1.6 km from Hobson Bay to Okahu Bay (OSM beach way beside the path). Mission Bay end is the placement's. No ticketUrl: a path with no steward."
+   ]
+  },
+  "auckland-47": {
+   "name": "Coast to Coast Walkway",
+   "icon": "🚶",
+   "category": "hike",
+   "bio": "A 16 km walkway from Te Wero Bridge in Viaduct Harbour across the isthmus to Taumanu Reserve at Onehunga.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 4,
+   "visitHoursMax": 6,
+   "free": true,
+   "coordinates": {
+    "latitude": -36.8413,
+    "longitude": 174.7601
+   },
+   "notes": [
+    "HELD: the accepted photo is a Maungawhau (Mount Eden) skyline taken from the summit, which fails check 2 for this spot and duplicates Mount Eden; needs a photo of the walkway itself. Pin unchanged (5 m from OSM Wynyard Crossing bridge; do not use -36.8435). About 5 h end to end (AucklandNZ). No ticketUrl: a public route, no steward."
+   ]
+  },
+  "waiheke-island-7": {
+   "name": "Cactus Bay",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A beach on Waiheke's eastern shore, reachable only by boat or kayak.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -36.7676,
+    "longitude": 175.1314
+   },
+   "notes": [
+    "HELD, and removal recommended: Wikivoyage (updated 2017) says land access was blocked by a private landowner, so most visitors cannot go there. Fails 'a visitor can actually do something there'. Pin unchanged (57 m)."
+   ]
+  },
+  "waiheke-island-8": {
+   "name": "Cable Bay Walk",
+   "wiki": "Cable Bay, New Zealand",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A coastal walk from the Matiatia ferry to Cable Bay on Waiheke.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -36.78049,
+    "longitude": 174.99205
+   },
+   "notes": [
+    "HELD: the only counted source is the Wikivoyage Cable Bay winery listing ('follow walking track from Matiatia ferry'); no walk length or time was sourced, and the placement point was the winery. Pin set to the Matiatia wharf walk start (-36.78049, 174.99205); the Cable Bay beach end is -36.80322, 174.98869. Free and times are placeholders to replace once a walk page is found."
+   ]
+  },
+  "great-barrier-island-11": {
+   "name": "Glenfern Sanctuary",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "A fenced forest sanctuary at Port Fitzroy with a 2 km loop through native bush; free, open sunrise to sunset.",
+   "hours": "Sunrise to sunset",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.glenfern.org.nz/",
+   "coordinates": {
+    "latitude": -36.1614,
+    "longitude": 175.3622
+   },
+   "notes": [
+    "HELD for photo. Free and sunrise-to-sunset are from the Glenfern Sanctuary Trust; Wikivoyage's 'daily from 10 AM' is superseded. Pin kept at the address (400 m east of the OSM reserve centroid). ticketUrl title checked ('Glenfern Sanctuary | Great Barrier Island | Accommodation')."
+   ]
+  },
+  "great-barrier-island-12": {
+   "name": "Ruahine Lookout Track",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A three-hour return walk from the end of Cape Barrier Road to the 402 m Ruahine lookout.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 3,
+   "visitHoursMax": 4,
+   "free": true,
+   "coordinates": {
+    "latitude": -36.3438,
+    "longitude": 175.5217
+   },
+   "notes": [
+    "HELD for photo. '402 m' is Wikivoyage (OSM peak has no elevation). Pin moved 233 m to the OSM track start at the Cape Barrier Road end. No ticketUrl: no DOC page found. Free is judgement."
+   ]
+  },
+  "matakana-10": {
+   "name": "Sculptureum",
+   "icon": "🗿",
+   "category": "entertainment",
+   "bio": "A sculpture gallery with gardens at Omaha Flats near Matakana.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -36.34339,
+    "longitude": 174.73775
+   },
+   "notes": [
+    "HELD: site unconfirmed. sculptureum.co.nz is a parked domain and the estate is listed for sale (Sotheby's page, 38-40 Omaha Flats Road, six galleries, 1.5 km of paths), so it may not be open to visitors. No hours, cost or ticketUrl. Also held for photo. Pin moved 59 m onto the OSM gallery."
+   ]
+  },
+  "matakana-11": {
+   "name": "Sheepworld",
+   "icon": "🐑",
+   "category": "entertainment",
+   "bio": "A sheep-show farm park on State Highway 1 north of Warkworth.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -36.3713,
+    "longitude": 174.62984
+   },
+   "notes": [
+    "HELD for photo. Not verified to still operate; hours, price and an official site not found (sheepworld.co.nz does not connect). 'Daily shows' dropped. Pin unchanged (9 m from OSM attraction)."
+   ]
+  }
+ },
+ "existing_fixes": {},
+ "held": [
+  "matakana-6",
+  "auckland-23",
+  "auckland-24",
+  "auckland-25",
+  "rotoroa-island",
+  "auckland-29",
+  "great-barrier-island-5",
+  "auckland-37",
+  "auckland-41",
+  "great-barrier-island-7",
+  "great-barrier-island-8",
+  "great-barrier-island-9",
+  "great-barrier-island-10",
+  "parakai-springs",
+  "auckland-42",
+  "auckland-47",
+  "waiheke-island-7",
+  "waiheke-island-8",
+  "great-barrier-island-11",
+  "great-barrier-island-12",
+  "matakana-10",
+  "matakana-11"
+ ],
+ "notes": [
+  "Removals for the owner, NOT expressed as fixes (ids never reused): Cable Bay Vineyards (waiheke-island-2, a single winery venue) and Matiatia (waiheke-island-5, a ferry wharf). Their replacement, Cable Bay Walk (waiheke-island-8), is itself HELD: its only source is the winery listing.",
+  "Windy Canyon (great-barrier-island-4): NO coordinate move. The placement proposed (-36.2105, 175.4653) from Wikipedia, but research found that point is at Awana/Medlands, about 5 km away; the shipped point (-36.17, 175.4371) is 4 m from the OSM Windy Canyon car park. existing_fixes is therefore empty. Ponsonby (auckland-19) stays in place until the owner decides (review, not removed).",
+  "Held for a reason other than photo: Cable Bay Walk (winery listing only), Cactus Bay (no land access), Sculptureum (site unconfirmed, estate for sale), Coast to Coast Walkway (accepted photo is a Maungawhau skyline, fails check 2), Stardome and Parakai Springs (hours and price unreadable, sites BLOCKED). Every other held spot is held for photo only (placement status 'held: needs a photo'); their sourced fields are ready. Held spots with no hours or cost (Stardome, Parakai Springs, Auckland Fish Market, Sculptureum, Sheepworld) cannot be added until those are read in a real browser.",
+  "Mahurangi Regional Park (matakana-9) is NOT held, but vehicle access is closed until 19 December 2026; decide whether to ship it before then.",
+  "Motutapu Island and Motuihe Island: the $40 cost is an unverified estimate (no public fare found; Fullers360 is captcha-blocked, the Red Boats Motuihe page is a 404). Check before shipping. Auckland-46 (Tamaki Drive) photo shows the marina, not the path; not held by the placement.",
+  "Not held and ready for Pipeline C photo check: Howick Historical Village, Motutapu, Mangere Mountain, Maraetai Beach, Motuihe, Bethells Beach, Whatipu, Shakespear, Maritime Museum, Kitekite Falls, Auckland Botanic Gardens, Torpedo Bay Navy Museum, Pakiri, Wenderholm, Hunua Falls, Arataki, Port Fitzroy, Long Bay, Palm Beach, Mahurangi, Otuataua, Cheltenham Beach, Waitakere Ranges, Tamaki Drive. Standalone: whatipu, hunua-falls (ready), rotoroa-island, parakai-springs (held). No new destination proposed; the owner may widen Auckland defaultZoomSpanKm from 40 to about 50 so Piha (33 km), Whatipu (32 km) and Muriwai sit inside 75% of the span.",
+  "NOT EXPRESSIBLE in apply-region: (1) specialClosures (not in FIELDS): add Christmas Day by hand to Maritime Museum, Arataki (Christmas and Boxing Day), Navy Museum (Christmas, Boxing Day, Good Friday), Howick Historical Village (Dec 24-26, Jan 1, Good Friday, ANZAC morning) and Tiritiri/Rainbow's End seasonal days. (2) Existing-spot removals (waiheke-island-2, -5). (3) Seasonal hours as text only: Rainbow's End term-time closures, Mangere/Mount Victoria summer 8:30 PM close, Auckland Botanic Gardens winter 6 PM close, Rotoroa ferry timetable change on 24 Oct. (4) Coordinates for spots with coordinates set here (pin moves are applied through the placement coordinates, which final.json overrides). (5) Notes and 'unverified' lists are not written to src/data. (6) Hours/cost left empty for held spots whose entry would fail the 'missing' check."
+ ]
+}

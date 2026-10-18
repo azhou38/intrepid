@@ -1,0 +1,562 @@
+{
+ "spots": {
+  "invercargill-5": {
+   "name": "Bluff",
+   "wiki": "Bluff, New Zealand",
+   "icon": "⚓",
+   "category": "landmark",
+   "bio": "The southernmost settlement on mainland New Zealand, known for Bluff oysters and the ferry to Stewart Island.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -46.6,
+    "longitude": 168.3333
+   },
+   "notes": [
+    "HELD for photo. Bio from Wikivoyage (southernmost settlement on the mainland; ferry; oysters) and the Bluff community site. Pin is the Wikipedia town point, about 1 km from the ferry terminal; unchanged. No ticketUrl: a town with no single steward (bluff.co.nz is a community site). Open 24 hours and visit time are judgement."
+   ]
+  },
+  "invercargill-6": {
+   "name": "Oreti Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A 26 km beach west of Invercargill where Burt Munro practised his record-breaking Indian motorbike.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": {
+    "latitude": -46.43878,
+    "longitude": 168.23053
+   },
+   "notes": [
+    "HELD for photo. Bio per research (drops surf, Stewart Island views and driving on the sand: blogs only). NO COUNTED SOURCE: Wikivoyage Invercargill/Bluff/Southland and southlandnz.com do not mention it; only Wikipedia (not counted) and travel blogs. Kept in the placement as a Burt Munro site; the owner should confirm it clears 'What qualifies' rule 1. Pin is the Sandy Point access node (3 m). No ticketUrl: public beach."
+   ]
+  },
+  "invercargill-7": {
+   "name": "Classic Motorcycle Mecca",
+   "icon": "🏍️",
+   "category": "museum",
+   "bio": "A three-floor museum of more than 300 classic motorcycles, with a Burt Munro tribute display and a cafe.",
+   "hours": "10:00 AM – 5:00 PM",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2.5,
+   "costMin": 35,
+   "costMax": 35,
+   "currency": "NZD",
+   "specialClosures": [
+    {
+     "month": 12,
+     "day": 25,
+     "reason": "Christmas Day"
+    }
+   ],
+   "ticketUrl": "https://www.motorcyclemecca.nz/",
+   "coordinates": {
+    "latitude": -46.4132,
+    "longitude": 168.3491
+   },
+   "notes": [
+    "Open daily 10-5, last entry 4 pm, closed Christmas Day (operator site and FAQ). Adult $35 is from the Kotuia museums directory (a copy of the operator's listing); the operator's own admissions page renders prices by script and was UNREADABLE, so confirm $35 in a browser. Wikivoyage's $25 is 2017 and stale. Child $20, senior/NZ student $30, family $70. Pin unchanged (3 m from OSM museum node). ticketUrl title checked."
+   ]
+  },
+  "invercargill-8": {
+   "name": "Riverton",
+   "wiki": "Riverton / Aparima",
+   "icon": "🌊",
+   "category": "landmark",
+   "bio": "A seaside town on the Aparima estuary, called the Riviera of the South, with a heritage museum and a giant pāua shell.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -46.35,
+    "longitude": 168.0167
+   },
+   "notes": [
+    "Bio per research (drops cafes, galleries and rocky coast: not in sources). Pin unchanged (296 m from the OSM town node). No ticketUrl: a town; the tourism sites are regional bodies. Open 24 hours and visit time are judgement for a town."
+   ]
+  },
+  "invercargill-9": {
+   "name": "Bluff Hill Lookout",
+   "wiki": "Bluff Hill / Motupōhue",
+   "icon": "🔭",
+   "category": "viewpoint",
+   "bio": "A viewing platform on the summit of Bluff Hill, a short drive or walk from town, with views of Stewart Island on a clear day.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": true,
+   "ticketUrl": "https://bluff.co.nz/walking-tracks/",
+   "coordinates": {
+    "latitude": -46.61495,
+    "longitude": 168.33878
+   },
+   "notes": [
+    "HELD for photo. Bio from Wikivoyage and the Bluff community site. ticketUrl is the Bluff community walking-tracks page (loaded, title 'Walking Tracks – Bluff'; says the tracks are jointly managed by Invercargill City Council and DOC): it is not the steward's own page, so the owner may prefer DOC's generic Invercargill-area page or none. The wiki title 'Bluff Hill / Motupōhue' is UNVERIFIED: confirm the article exists (not Napier's Bluff Hill) before relying on it. Pin is the OSM viewpoint node (6 m)."
+   ]
+  },
+  "invercargill-10": {
+   "name": "Foveaux Walkway",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 6.6 km coastal walkway from Stirling Point to Ocean Beach, about 2.5 hours, with views to Stewart Island.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": true,
+   "ticketUrl": "https://bluff.co.nz/walking-tracks/",
+   "coordinates": {
+    "latitude": -46.6133,
+    "longitude": 168.3568
+   },
+   "notes": [
+    "HELD for photo. PIN NOT RESOLVED: the walkway starts at Stirling Point, so this pin is 53 m from the existing Stirling Point spot (invercargill-4) and the two stack. Research found no coordinate for a separate trailhead (Lookout Point and the Ocean Beach / SH1 end are named but not given a point), so it is held rather than nudged; a point on the Ocean Beach Track end or Lookout Point needs an OSM node. Views to Stewart Island are from DOC's Ocean Beach Track page, not the walkway page. ticketUrl as for Bluff Hill Lookout (no DOC page called Foveaux Walkway). Route crosses private farmland; no dogs beyond the turnstile."
+   ]
+  },
+  "fiordland-19": {
+   "name": "Lake Te Anau",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "The South Island's largest lake, 65 km long, with the town of Te Anau on its shore and the Fiordland visitor centre.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/places-to-go/lake-te-anau-area/",
+   "coordinates": {
+    "latitude": -45.4144,
+    "longitude": 167.7225
+   },
+   "notes": [
+    "Bio from Wikivoyage (largest in the South Island, second in NZ), Wikipedia (65 km) and DOC. The pin is 400 m from the Te Anau town spot (fiordland-9) and about 90 m from the shore, so the pins nearly coincide: the research said consider the mid-point or leave, and no better visitor point was sourced, so unchanged. Not checked against Mapbox water. DOC page title checked."
+   ]
+  },
+  "fiordland-20": {
+   "name": "Lake Manapouri",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "A lake in Fiordland National Park ringed by mountains, crossed by boat to West Arm on the way to Doubtful Sound.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/places-to-go/lake-manapouri-area/",
+   "coordinates": {
+    "latitude": -45.527,
+    "longitude": 167.4809
+   },
+   "notes": [
+    "Bio per research. Pin kept (on the lake, 3.7 km from the OSM centroid). Visit time is judgement; most visitors cross on the Doubtful Sound trip. DOC page title checked."
+   ]
+  },
+  "fiordland-21": {
+   "name": "Dusky Track",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A remote 84 km, eight to ten day tramp from Lake Hauroko to Lake Manapouri, for experienced, well-equipped walkers.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 192,
+   "visitHoursMax": 240,
+   "costMin": 15,
+   "costMax": 135,
+   "currency": "NZD",
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/things-to-do/tracks/dusky-track/",
+   "coordinates": {
+    "latitude": -45.8306,
+    "longitude": 167.1454
+   },
+   "notes": [
+    "Not free: no entry fee, cost is hut tickets. Range is the Standard hut fee of $15 per adult per night (read on the Mason Bay Hut page; DOC lists Dusky huts as Standard but no Dusky hut page was read) times up to 9 nights. Visit hours are days x 24 (8-10 days). Pin is the Lake Hauroko (southern) trailhead, reached by boat; unchanged. DOC page title checked."
+   ]
+  },
+  "fiordland-22": {
+   "name": "Te Anau Bird Sanctuary",
+   "icon": "🦜",
+   "category": "nature",
+   "bio": "A free DOC sanctuary on the lakeshore where you can see takahē, pateke and other rare birds, a short walk from town.",
+   "hours": "Daylight hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/places-to-go/lake-te-anau-area/punanga-manu-o-te-anau-te-anau-bird-sanctuary/",
+   "coordinates": {
+    "latitude": -45.433,
+    "longitude": 167.7133
+   },
+   "notes": [
+    "HELD for photo. Bio per research. DOC says some species have been relocated and future options are being explored, so the species list may change. Open and free during daylight (DOC). Pin unchanged (39 m from OSM way). DOC page title checked."
+   ]
+  },
+  "stewart-island-6": {
+   "name": "North West Circuit",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 125 km, nine to eleven day loop around Stewart Island/Rakiura's northern coast, for experienced trampers.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 216,
+   "visitHoursMax": 264,
+   "costMin": 15,
+   "costMax": 135,
+   "currency": "NZD",
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/southland/places/stewart-island-rakiura/rakiura-national-park/things-to-do/north-west-circuit-stewart-island-rakiura/",
+   "coordinates": {
+    "latitude": -46.858,
+    "longitude": 168.1214
+   },
+   "notes": [
+    "Not free: hut-fee range. Standard huts $15 per adult per night x about 9 nights; the Great Walk huts and campsites on the route (Port William, North Arm, Maori Beach) are $22-$66 tiers and must be booked, so the true maximum is higher (approximate). Pin moved 15 km from Freshwater Hut (a mid-route hut) to Lee Bay, DOC's official entrance (OSM bay node); exact car park not located; 5.8 km from the Rakiura Track pin. Bio is new (placement had none): 125 km and 9-11 days from DOC. DOC page title checked."
+   ]
+  },
+  "stewart-island-7": {
+   "name": "Southern Circuit",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 71.5 km loop of four to six days in Rakiura National Park, most easily started by water taxi at Freshwater Landing.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 96,
+   "visitHoursMax": 144,
+   "costMin": 15,
+   "costMax": 75,
+   "currency": "NZD",
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/southland/places/stewart-island-rakiura/rakiura-national-park/things-to-do/southern-circuit-stewart-island-rakiura/",
+   "coordinates": {
+    "latitude": -46.8982,
+    "longitude": 168.1264
+   },
+   "notes": [
+    "Not free: Standard huts $15 per adult per night x 4-6 nights (approximate). Pin is the Rakiura National Park Visitor Centre in Oban (5 m); many walkers start at Freshwater Landing by water taxi instead. DOC page title checked."
+   ]
+  },
+  "catlins-7": {
+   "name": "Waipapa Point Lighthouse",
+   "icon": "🗼",
+   "category": "landmark",
+   "bio": "A short walk to an 1884 lighthouse built after the SS Tararua wreck, with sea lions often on the beach.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/catlins-coastal-area/things-to-do/waipapa-point-coastal-walk/",
+   "coordinates": {
+    "latitude": -46.66006,
+    "longitude": 168.84705
+   },
+   "notes": [
+    "Bio per research. The tower cannot be entered (Maritime NZ); the DOC walk is 700 m return, about 30 minutes. Keep 10 m from sea lions. DOC gives no opening times, so 24 hours is assumed for the open reserve. DOC page title checked."
+   ]
+  },
+  "catlins-8": {
+   "name": "Florence Hill Lookout",
+   "icon": "🔭",
+   "category": "viewpoint",
+   "bio": "A roadside lookout over the curved sweep of Tautuku Bay and its peninsula, 3 km from Papatowai.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "coordinates": {
+    "latitude": -46.57441,
+    "longitude": 169.45934
+   },
+   "notes": [
+    "RENAMED from 'Florence Hill Lookouts' (sources say one lookout and singular; id unchanged). Bio per research. No ticketUrl: roadside lookout, no steward page found. Visit time is judgement."
+   ]
+  },
+  "catlins-9": {
+   "name": "Surat Bay",
+   "icon": "🦭",
+   "category": "beach",
+   "bio": "A beach where New Zealand sea lions rest among the dunes, reached on a 20-minute return walk at low tide.",
+   "hours": "Low tide access",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/catlins-coastal-area/things-to-do/surat-bay-beach-walk/",
+   "coordinates": {
+    "latitude": -46.4735,
+    "longitude": 169.7163
+   },
+   "notes": [
+    "HELD for photo. Pin moved 1.4 km from the bay centroid to the DOC track entrance at the end of Surat Bay Road (DOC GPS -46.473518, 169.716341); the OSM beach way (-46.47763,169.72978) is the alternative if the owner prefers the sea-lion beach. Access only at low tide (DOC). DOC page title checked."
+   ]
+  },
+  "mavora-lakes": {
+   "name": "Mavora Lakes",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "Two lakes among mountains, forest and tussock in a conservation park, 1.5 hours from Te Anau along gravel roads.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/southland/places/mavora-lakes-conservation-park/",
+   "coordinates": {
+    "latitude": -45.2719,
+    "longitude": 168.1748
+   },
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "notes": [
+    "STANDALONE. Pin moved 11 km from a point off both lakes to the DOC campsite between them (OSM way 785271113). No entry fee found on DOC; campsite fees not checked. Visit time is judgement. Bio: 39 km of gravel off SH94, 1.5 h from Te Anau (DOC). DOC page title checked."
+   ]
+  },
+  "around-the-mountains-cycle-trail": {
+   "name": "Around the Mountains Cycle Trail",
+   "icon": "🚴",
+   "category": "hike",
+   "bio": "A 186 km, three to five day Great Ride from Kingston or Walter Peak through Mavora Lakes, Mossburn and Athol.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 72,
+   "visitHoursMax": 120,
+   "free": true,
+   "ticketUrl": "https://www.aroundthemountains.co.nz/",
+   "coordinates": {
+    "latitude": -45.3333,
+    "longitude": 168.7167
+   },
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "notes": [
+    "STANDALONE. Riding is free; the Walter Peak boat, bike hire and accommodation are extra and were not priced. Pin is Kingston (a trail start, the Wikipedia point, 1.4 km from the OSM Kingston lookout); it is on the Otago side of the Southland line. Duration 3-5 days is Wikipedia. Official trail site title checked ('Home - Around the Mountains')."
+   ]
+  },
+  "south-coast-track": {
+   "name": "South Coast Track",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 61 km coastal track from Rarakau to Big River; the 20 km walk to Port Craig makes an easy overnight trip.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 24,
+   "visitHoursMax": 96,
+   "costMin": 15,
+   "costMax": 60,
+   "currency": "NZD",
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/things-to-do/tracks/south-coast-track/",
+   "coordinates": {
+    "latitude": -46.2226,
+    "longitude": 167.3614
+   },
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "notes": [
+    "HELD for photo. STANDALONE. Not free: hut-fee range. Wairaurahiri and Waitutu huts are Standard ($15 per adult per night elsewhere in Southland); Port Craig School Hut is Serviced and Port Craig Lodge is private, and their prices were NOT READ, so $60 is an estimate. Pin moved to Port Craig School Hut (OSM -46.22255,167.36141) as the research recommends: the real trailhead is the Rarakau car park, which is the Hump Ridge Track pin (0 m, would stack). Placement bio 'linking ... Lake Hauroko' was wrong (not on the track). Visit hours 24-96 (1-4 days). DOC page title checked."
+   ]
+  },
+  "colac-bay": {
+   "name": "Colac Bay",
+   "icon": "🏄",
+   "category": "beach",
+   "bio": "A surf beach and village on the Southern Scenic Route, rated one of New Zealand's top surfing spots.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": {
+    "latitude": -46.3661,
+    "longitude": 167.881
+   },
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "proposed_destination": "tuatapere",
+   "notes": [
+    "HELD for photo. STANDALONE (proposed_destination tuatapere, which is itself a review verdict; stays standalone if declined). Pin moved 1.6 km to the beachfront at the picnic area (existing pin was inland). Surf claim from Southland NZ. No ticketUrl: public beach and village."
+   ]
+  },
+  "gemstone-beach": {
+   "name": "Gemstone Beach",
+   "icon": "💎",
+   "category": "beach",
+   "bio": "A shingle beach near Orepuki scattered with garnet, jasper, quartz and nephrite pebbles for visitors to hunt.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "coordinates": {
+    "latitude": -46.27652,
+    "longitude": 167.72965
+   },
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "proposed_destination": "tuatapere",
+   "notes": [
+    "HELD for photo. STANDALONE (proposed_destination tuatapere; standalone if declined). Bio drops 'agate' (sources name garnet, jasper, quartz and nephrite). Stone list is from Trip Ideas (not an official source). Swimming not recommended there; best at low tide. Pin unchanged (4 m from OSM). No ticketUrl: public beach."
+   ]
+  },
+  "te-waewae-bay": {
+   "name": "Te Waewae Bay",
+   "icon": "🐬",
+   "category": "nature",
+   "bio": "A 27 km bay on the Southern Scenic Route where you may spot Hector's dolphins from McCracken's Rest.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "free": true,
+   "coordinates": {
+    "latitude": -46.2282,
+    "longitude": 167.6689
+   },
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "proposed_destination": "tuatapere",
+   "notes": [
+    "STANDALONE (proposed_destination tuatapere; standalone if declined). Pin moved 11 km from the bay centroid in open water to McCracken's Rest viewpoint on SH99 (OSM node, -46.22823,167.66887). Dolphin pod size is a tourism-board claim, so the bio says 'may spot'. No ticketUrl: no single steward."
+   ]
+  },
+  "hokonui-heritage-centre": {
+   "name": "Old Hokonui Museum & Distillery",
+   "icon": "🥃",
+   "category": "museum",
+   "bio": "A museum and working distillery telling the story of Southland's illicit whisky, with a free moonshine sample.",
+   "hours": "9:00 AM – 5:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "closedDays": [
+    0
+   ],
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "NZD",
+   "ticketUrl": "https://www.oldhokonui-museum-distillery.nz/",
+   "coordinates": {
+    "latitude": -46.09729,
+    "longitude": 168.94585
+   },
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "proposed_destination": "gore",
+   "notes": [
+    "HELD for photo. STANDALONE (proposed_destination gore). Spot NAME changed from 'Hokonui Heritage Centre' to the operator's current name; id slug unchanged. $10 is for visitors 18 and over and includes the moonshine sample; under 18 free; guided tours $20. Hours are Mon-Fri 9-5; Saturday is only 10 am-2 pm and it is closed all public holidays (closedDays holds Sunday only). Gore Historical Museum is not on the operator's site, so it is dropped from the bio. Pin moved 4 m. Operator page title checked."
+   ]
+  },
+  "eastern-southland-gallery": {
+   "name": "Eastern Southland Gallery",
+   "icon": "🖼️",
+   "category": "museum",
+   "bio": "A gallery in a former Carnegie Library in Gore, home to the Ralph Hotere Gallery and the John Money Wing.",
+   "hours": "10:00 AM – 4:30 PM",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "specialClosures": [
+    {
+     "month": 12,
+     "day": 25,
+     "reason": "Christmas Day"
+    },
+    {
+     "month": 12,
+     "day": 26,
+     "reason": "Boxing Day"
+    },
+    {
+     "month": 1,
+     "day": 1,
+     "reason": "New Year's Day"
+    }
+   ],
+   "ticketUrl": "https://www.esgallery.co.nz/",
+   "coordinates": {
+    "latitude": -46.098,
+    "longitude": 168.94602
+   },
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "proposed_destination": "gore",
+   "notes": [
+    "STANDALONE (proposed_destination gore). Hours are Mon-Fri 10-4:30; Saturday 10:30-4 in summer only (winter Saturday not stated); Sunday and public holidays 1-4 pm; also closed Good Friday (movable, not encoded). Admission free, donations appreciated. Pin unchanged (2 m). Operator page title checked."
+   ]
+  },
+  "brown-trout-statue": {
+   "name": "Brown Trout Statue",
+   "icon": "🐟",
+   "category": "landmark",
+   "bio": "A leaping brown trout sculpture on Gore's main road, put up by the Lions Club in 1989 and named Trevor.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": true,
+   "coordinates": {
+    "latitude": -46.09861,
+    "longitude": 168.94727
+   },
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "proposed_destination": "gore",
+   "notes": [
+    "STANDALONE (proposed_destination gore). Statue height omitted: sources conflict (9 m on Wikivoyage, 3.6 m on a web summary). 'Leaping' is from the placement/research bio, not a read page. No ticketUrl: council-owned statue. Pin unchanged (6 m)."
+   ]
+  }
+ },
+ "existing_fixes": {
+  "invercargill-1": {
+   "bio": "Burt Munro's 1920 Indian Scout, the Munro Special, stands in a working hardware store with a free vintage collection.",
+   "hours": "9:00 AM – 4:00 PM",
+   "free": true,
+   "coordinates": {
+    "latitude": -46.4077,
+    "longitude": 168.3465
+   },
+   "notes": "Bio names the Burt Munro display, not the shop. Free (operator: 'completely free to see'; over one hundred motorcycles, cars and engines, so 'hundreds' is dropped). Hours: the old 7:30 AM is not on the operator page; store hours are Mon-Fri 8-5:30, Sat 9-4, Sun 10-4, and some public holidays closed (Waitangi Day, Easter Monday, King's Birthday, Matariki, Labour Day), so 9-4 is the span common to every day. Pin moved 540 m to the OSM hardware node on Dee Street. ticketUrl unchanged (title checked)."
+  },
+  "fiordland-4": {
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/places-to-go/milford-road-milford-sound-area/",
+   "notes": "Kept: three counted sources now recorded (DOC Milford Road page, Wikivoyage Milford Road, Wikivoyage Fiordland). ticketUrl is the DOC Milford Road / Milford Sound area page (title checked). Bio unchanged."
+  },
+  "fiordland-18": {
+   "bio": "One of New Zealand's tallest waterfalls, dropping 580 m in three leaps, a side trip off the Milford Track.",
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/things-to-do/tracks/milford-track/",
+   "notes": "Kept. Bio drops the unverified '90-minute' side walk. ticketUrl is the DOC MILFORD TRACK page (it names the falls as a side trip), not the Milford Road page: the falls are reached only on the track (Great Walk season, bookings required), so a Milford Road link would be wrong; swap if the owner wants the road page. Pin unchanged (47 m)."
+  },
+  "stewart-island-5": {
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/southland/places/stewart-island-rakiura/rakiura-national-park",
+   "coordinates": {
+    "latitude": -46.9265,
+    "longitude": 167.7801
+   },
+   "notes": "Pin moved 1.1 km to Mason Bay Hut, where the walk from Freshwater Landing arrives (OSM way; the beach airstrip at -46.92756,167.763 is the fly-in alternative). Bio UNCHANGED: its '20 km' and daytime kiwi claims are not in any page read and need a source (DOC page gives sand dune system, Island Hill homestead built 1884); the owner should source or cut them. ticketUrl is the DOC Rakiura National Park page (title checked)."
+  }
+ },
+ "held": [
+  "invercargill-5",
+  "invercargill-6",
+  "invercargill-9",
+  "invercargill-10",
+  "fiordland-22",
+  "catlins-9",
+  "south-coast-track",
+  "colac-bay",
+  "gemstone-beach",
+  "hokonui-heritage-centre"
+ ],
+ "notes": [
+  "Monkey Creek (fiordland-16): left as is, no fix expressed. OWNER DECISION: two counted sources now exist (Wikivoyage Milford Road, DOC Milford Road page naming whio at Monkey Creek), the bar for a marginal pull-out, but it is a short roadside stop and kea are mostly at Homer Tunnel per DOC. Remove or keep after a guide check.",
+  "Held for photo per the placement: Bluff, Oreti Beach, Bluff Hill Lookout, Foveaux Walkway, Te Anau Bird Sanctuary, Surat Bay, South Coast Track, Colac Bay, Gemstone Beach, Old Hokonui Museum & Distillery. Foveaux Walkway is also held for an unresolved pin.",
+  "Oreti Beach has no counted source (see its note); it is held for its photo anyway and the owner should decide whether it stays.",
+  "Proposed destinations (not written as spots of themselves; each needs a description, three reasons with photos, tips, best months and a header): Gore (Old Hokonui Museum & Distillery, Eastern Southland Gallery, Brown Trout Statue) and Tuatapere (Colac Bay, Gemstone Beach, Te Waewae Bay, plus existing Hump Ridge Track and Clifden Suspension Bridge). Tuatapere itself is a review verdict; if declined, all stay standalone. Every one carries the four standalone fields so it works either way.",
+  "Renames: hokonui-heritage-centre -> 'Old Hokonui Museum & Distillery' and catlins-8 -> 'Florence Hill Lookout'; ids unchanged.",
+  "Costs: tramps (Dusky, North West Circuit, Southern Circuit, South Coast) are hut-fee ranges in NZD, not free; Standard huts $15 per adult per night, upper bounds approximate. Classic Motorcycle Mecca $35 is from the Kotuia directory (operator page unreadable).",
+  "Unverified: wiki title 'Bluff Hill / Motupōhue'; South Coast Track upper hut cost; Great Walk hut tiers on the NW Circuit; no ticketUrl for Bluff, Riverton, Florence Hill, Colac Bay, Gemstone Beach, Te Waewae Bay, Oreti Beach and Brown Trout Statue (no steward). Bluff Hill and Foveaux use the bluff.co.nz community page, not an official steward page."
+ ]
+}

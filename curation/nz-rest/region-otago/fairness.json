@@ -1,0 +1,1524 @@
+{
+ "region": "otago",
+ "inside_destinations": 48,
+ "standalone": 5,
+ "new_destinations": 1,
+ "new_destinations_proposed": [
+  "Glenorchy"
+ ],
+ "existing_kept_unchanged": 47,
+ "covered_by_existing_destination": [
+  "Wānaka",
+  "Lake Wakatipu",
+  "Lake Wānaka",
+  "Waipapa Point",
+  "Florence Hill Lookouts",
+  "Surat Bay"
+ ],
+ "lowest_kept": [
+  {
+   "name": "dunedin-16 St Clair Beach",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "dunedin-18 Dunedin Prison",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "dunedin-20 The Organ Pipes",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "central-otago-11 Clock on the Hill",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "central-otago-13 Bannockburn Sluicings Track",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "central-otago-14 Hayes Engineering Works",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "queenstown-16 Kiwi Birdlife Park",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "queenstown-19 Lakes District Museum",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "wanaka-12 Diamond Lake",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "catlins-11 Matai Falls",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "catlins-12 Jacks Blowhole Track",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "dunedin-1 Dunedin Railway Station",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "queenstown-3 Shotover Jet",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "mount-aspiring-2 Blue Pools Track",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "wanaka-5 Mount Iron Track",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "queenstown-9 Gibbston Valley",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "dunedin-4 Penguin Place",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "central-otago-4 Cromwell Heritage Precinct",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "queenstown-2 Kawarau Gorge Suspension Bridge",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "oamaru-7 Vanished World Centre",
+   "views": 0,
+   "counted_sources": 2
+  }
+ ],
+ "stronger_left_out": [
+  {
+   "name": "Cinema Paradiso",
+   "views": 310261,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Cinema venue."
+  },
+  {
+   "name": "Janet Frame House",
+   "views": 56374,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Resolved: Opens only by arrangement through a trust; narrow audience."
+  },
+  {
+   "name": "University of Otago",
+   "views": 54266,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Stays review. For: Wikivoyage names the oldest NZ university and its historic campus is walkable. Against: working campus with mostly exterior buildings; museum is separate."
+  },
+  {
+   "name": "Forsyth Barr Stadium",
+   "views": 27709,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Stadium visited for matches and events only."
+  },
+  {
+   "name": "Old National Bank",
+   "views": 27212,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Heritage bank building visitors see only from the street; exterior-only."
+  },
+  {
+   "name": "TSS Earnslaw",
+   "views": 19231,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A steamship is a vehicle; the place is Walter Peak High Country Farm (existing queenstown-4)."
+  },
+  {
+   "name": "Highlands Motorsport Park",
+   "views": 13305,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Resolved: Track days and events, no counted source."
+  },
+  {
+   "name": "Balclutha",
+   "views": 11144,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Stays review. For: Clutha district hub and Catlins gateway. Against: one source, mostly a service town."
+  },
+  {
+   "name": "Ranfurly",
+   "views": 10667,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Stays review. For: Maniototo hub on the Rail Trail, Art Deco heritage; 10k views. Against: one source, small service town."
+  },
+  {
+   "name": "Otago Peninsula",
+   "views": 8725,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "A region rather than a place; its sights are judged individually (albatross, penguins, Larnach, Sandfly Bay)."
+  },
+  {
+   "name": "Mount Aspiring / Tititea",
+   "views": 8443,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Peak part of the national park; seen, not visited."
+  },
+  {
+   "name": "Palmerston",
+   "views": 8310,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small SH1 service town; no distinct visitor draw."
+  },
+  {
+   "name": "Lake Ōhau Village",
+   "views": 6771,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Out of region: Lake Ohau belongs to Canterbury."
+  },
+  {
+   "name": "Lawrence",
+   "views": 6341,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Stays review. For: historic gold-rush town where Otago's rush began. Against: one source, thin things to do; Gabriels Gully is the draw."
+  },
+  {
+   "name": "Mount Aspiring National Park",
+   "views": 6325,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "A national park is a destination in its own right; judged at destination level, not a spot."
+  },
+  {
+   "name": "Kingston",
+   "views": 6065,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Stays review. For: Kingston village at the southern end of Lake Wakatipu, home of the Kingston Flyer. Against: one source, small village."
+  },
+  {
+   "name": "Roxburgh",
+   "views": 6036,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small fruit-growing town; no distinct draw."
+  },
+  {
+   "name": "Warbirds Over Wanaka",
+   "views": 5874,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Festival or annual airshow; an event."
+  },
+  {
+   "name": "St Bathans",
+   "views": 5770,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Resolved: Near-duplicate of the kept Blue Lake (same village); fold Vulcan Hotel into that bio."
+  },
+  {
+   "name": "Otago Harbour",
+   "views": 5620,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; local inlet, suburb, remote beach or water body not named by a visitor guide."
+  },
+  {
+   "name": "Lake Onslow",
+   "views": 5229,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia-only lake or reservoir with no counted visitor source."
+  },
+  {
+   "name": "Middlemarch",
+   "views": 4767,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Stays review. For: Middlemarch, Rail Trail Dunedin-end town with two sources. Against: small town; the trail is the draw."
+  },
+  {
+   "name": "Kinloch",
+   "views": 4677,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Downgraded: the candidate is matched to the wrong place. Its coordinates (-38.65, 175.92) and 4,677 views are Kinloch near Lake Taupo; the Otago Kinloch is a tiny lakehead settlement (lodge, Greenstone/Caples access). Gateway village whose draw is the track beyond it (Pipiriki case). Needs its own source and real coordinates (about -44.85, 168.33, verify)."
+  },
+  {
+   "name": "Macandrew Bay",
+   "views": 4611,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; local inlet, suburb, remote beach or water body not named by a visitor guide."
+  },
+  {
+   "name": "First Church",
+   "views": 4565,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Church or cathedral visited as a building; fails the church/exterior-only rule."
+  },
+  {
+   "name": "Owaka",
+   "views": 4423,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Stays review. For: Owaka is the Catlins service town and museum stop. Against: one source, small town."
+  },
+  {
+   "name": "Fort Taiaroa",
+   "views": 3983,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Gun emplacement visited as part of the Taiaroa Head tour; part of the Royal Albatross Centre spot."
+  },
+  {
+   "name": "St. Paul's Cathedral",
+   "views": 3957,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Church or cathedral visited as a building; fails the church/exterior-only rule."
+  },
+  {
+   "name": "Karitane",
+   "views": 3591,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Settlement; its Huriawa walk is judged separately."
+  },
+  {
+   "name": "Cargill's Castle",
+   "views": 3517,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Wikivoyage notes the ruins have no public access until stabilisation; closed."
+  },
+  {
+   "name": "Nevis Bungy",
+   "views": 3506,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Commercial bungy operator; not a place."
+  },
+  {
+   "name": "Dunedin Town Hall",
+   "views": 3374,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Civic building seen from the Octagon; exterior-only (council hall)."
+  },
+  {
+   "name": "Kaka Point Bush Walk",
+   "views": 3348,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Village bush walk; part of the Nugget Point area."
+  },
+  {
+   "name": "Lake Benmore",
+   "views": 3295,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Resolved: Hydro reservoir with access on the Canterbury side; one source."
+  },
+  {
+   "name": "Mount Cargill",
+   "views": 3280,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; hill with road lookout."
+  },
+  {
+   "name": "The Maniototo",
+   "views": 3266,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "A basin region, not a place."
+  },
+  {
+   "name": "Glenorchy Air",
+   "views": 3226,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Tour or flight operator; not a place."
+  },
+  {
+   "name": "Duntroon",
+   "views": 3146,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Village; its draws (Vanished World, Elephant Rocks) are separate spots."
+  },
+  {
+   "name": "Danseys Pass",
+   "views": 3132,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Resolved: One thin source for a small local site/walk with little to do; part of a larger kept place or a short local stroll."
+  },
+  {
+   "name": "SS Tararua Wreck",
+   "views": 2977,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wreck memorial at Waipapa Point; part of that spot."
+  },
+  {
+   "name": "Mount Earnslaw",
+   "views": 2925,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source, a private business/exterior, or a peak only seen from elsewhere."
+  },
+  {
+   "name": "Kakanui",
+   "views": 2462,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small coastal settlement; no distinct draw."
+  },
+  {
+   "name": "Warrington",
+   "views": 2361,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; local inlet, suburb, remote beach or water body not named by a visitor guide."
+  },
+  {
+   "name": "Hampden",
+   "views": 2298,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small settlement or mining area; no distinct visitor draw."
+  },
+  {
+   "name": "Knox Church",
+   "views": 2270,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Church or cathedral visited as a building; fails the church/exterior-only rule."
+  },
+  {
+   "name": "Whareakeake",
+   "views": 2236,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; local inlet, suburb, remote beach or water body not named by a visitor guide."
+  },
+  {
+   "name": "St Joseph's Cathedral",
+   "views": 2215,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Church or cathedral visited as a building; fails the church/exterior-only rule."
+  },
+  {
+   "name": "Millbrook Resort",
+   "views": 2211,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Resort and golf course."
+  },
+  {
+   "name": "Cromwell Gorge",
+   "views": 2163,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Resolved: A scenic drive, not a stop; Lake Dunstan and Dunstan Trail cover it."
+  },
+  {
+   "name": "New Zealand Sports Hall of Fame",
+   "views": 2110,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Museum inside Dunedin Railway Station; part of a larger spot already listed."
+  },
+  {
+   "name": "Brighton",
+   "views": 1970,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; local inlet, suburb, remote beach or water body not named by a visitor guide."
+  },
+  {
+   "name": "Eichardt's Private Hotel",
+   "views": 1949,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source, a private business/exterior, or a peak only seen from elsewhere."
+  },
+  {
+   "name": "Cecil Peak",
+   "views": 1922,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source, a private business/exterior, or a peak only seen from elsewhere."
+  },
+  {
+   "name": "Platypus (submarine)",
+   "views": 1914,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source and not an open visitor attraction in the region."
+  },
+  {
+   "name": "Josephine (locomotive)",
+   "views": 1859,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Locomotive exhibit at the station; part of a larger spot, no counted source."
+  },
+  {
+   "name": "Taieri Mouth",
+   "views": 1800,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small village; one source, no distinct draw."
+  },
+  {
+   "name": "Signal Hill",
+   "views": 1799,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Stays review. Well-known lookout over the city and harbour with a road to the top, 1,799 views, but Wikivoyage Dunedin has no Signal Hill listing, so no counted source. Promote to keep if DCC or Lonely Planet names it; otherwise a roadside lookout."
+  },
+  {
+   "name": "Omarama Clay Cliffs",
+   "views": 1766,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Out of region: Omarama Clay Cliffs belong to Canterbury."
+  },
+  {
+   "name": "Herbert",
+   "views": 1753,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small settlement or mining area; no distinct visitor draw."
+  },
+  {
+   "name": "Lake Waihola",
+   "views": 1741,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Resolved: One thin source for a small local site/walk with little to do; part of a larger kept place or a short local stroll."
+  },
+  {
+   "name": "Lake Alta Track",
+   "views": 1661,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Resolved: Short ski-field access track, one source."
+  },
+  {
+   "name": "Lake Mahinerangi",
+   "views": 1611,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia-only lake or reservoir with no counted visitor source."
+  },
+  {
+   "name": "Meridian Mall, Dunedin",
+   "views": 1531,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source and not a visitor sight (rail line / precinct / casino / mall / research library)."
+  },
+  {
+   "name": "Pisa Range Tracks",
+   "views": 1521,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Backcountry range tracks; one thin source."
+  },
+  {
+   "name": "Saddle Hill",
+   "views": 1510,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; rural hill."
+  },
+  {
+   "name": "Ocean Beach Railway",
+   "views": 1484,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source and not a visitor sight (rail line / precinct / casino / mall / research library)."
+  },
+  {
+   "name": "North Dunedin",
+   "views": 1468,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Student-housing district; a stroll past buildings, not a distinct place to visit."
+  },
+  {
+   "name": "Moana Pool",
+   "views": 1458,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Local public pool; not a visitor draw."
+  },
+  {
+   "name": "Cascade Saddle Route",
+   "views": 1334,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Resolved: Experienced-only alpine route, one source."
+  },
+  {
+   "name": "Rock and Pillar Range",
+   "views": 1301,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Backcountry range; not a day stop."
+  },
+  {
+   "name": "Poolburn Reservoir",
+   "views": 1300,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia-only reservoir or wetland; no counted source."
+  },
+  {
+   "name": "Hocken Collections",
+   "views": 1283,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source and not a visitor sight (rail line / precinct / casino / mall / research library)."
+  },
+  {
+   "name": "Taieri Gorge Railway",
+   "views": 1282,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Resolved: Operator ride (vehicle, not a place); departs from the already-kept Dunedin Railway Station, which carries it in its bio."
+  },
+  {
+   "name": "Boulder Beach",
+   "views": 1236,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; local inlet, suburb, remote beach or water body not named by a visitor guide."
+  },
+  {
+   "name": "Grand Casino Dunedin",
+   "views": 1234,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source and not a visitor sight (rail line / precinct / casino / mall / research library)."
+  },
+  {
+   "name": "Blueskin Bay",
+   "views": 1216,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A bay/water body; no distinct visit."
+  },
+  {
+   "name": "Ōhau Skifield",
+   "views": 1204,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Out of region: Ohau Skifield is Canterbury."
+  },
+  {
+   "name": "Porpoise Bay",
+   "views": 1187,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Part of Curio Bay (existing catlins-5 spot); near-duplicate."
+  },
+  {
+   "name": "Rialto Cinema",
+   "views": 1148,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Cinema venue; screenings are the event, not a place to visit."
+  },
+  {
+   "name": "Ross Creek Reservoir",
+   "views": 1078,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia-only reservoir or wetland; no counted source."
+  },
+  {
+   "name": "Sutton Salt Lake",
+   "views": 1059,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Resolved: About a 20-minute stop, one source."
+  },
+  {
+   "name": "Law Courts",
+   "views": 1045,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Civic courts building seen from the street; access only for hearings."
+  },
+  {
+   "name": "Long Beach",
+   "views": 1021,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Resolved: One source, a stroll with nothing to do beyond; also mis-matched to Bay of Islands."
+  },
+  {
+   "name": "Victory Beach",
+   "views": 1019,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; local inlet, suburb, remote beach or water body not named by a visitor guide."
+  },
+  {
+   "name": "Maungatua",
+   "views": 1005,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; rural hill."
+  },
+  {
+   "name": "Toko Mouth",
+   "views": 999,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia-only estuary beach."
+  },
+  {
+   "name": "Smaills Beach",
+   "views": 984,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; local inlet, suburb, remote beach or water body not named by a visitor guide."
+  },
+  {
+   "name": "Invincible Snowfields",
+   "views": 981,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Remote ski field; no counted source."
+  },
+  {
+   "name": "Roaring Billy Falls Walk",
+   "views": 942,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Stays review, paired with Fantail Falls Walk (same DOC short-walk set)."
+  },
+  {
+   "name": "Puketapu",
+   "views": 915,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia-only peak or bay; no counted source."
+  },
+  {
+   "name": "Great Moss Swamp",
+   "views": 878,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia-only reservoir or wetland; no counted source."
+  },
+  {
+   "name": "Flagstaff",
+   "views": 874,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; rural hill."
+  },
+  {
+   "name": "Warehouse Precinct",
+   "views": 870,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source and not a visitor sight (rail line / precinct / casino / mall / research library)."
+  },
+  {
+   "name": "Queenstown Police Station",
+   "views": 868,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source, a private business/exterior, or a peak only seen from elsewhere."
+  },
+  {
+   "name": "Dunedin Cenotaph",
+   "views": 853,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Minor memorial or street sculpture; no counted source."
+  },
+  {
+   "name": "Dunedin Town Belt",
+   "views": 844,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; urban green belt, not a tourist stop."
+  },
+  {
+   "name": "Sunshine Bay",
+   "views": 820,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source, a private business/exterior, or a peak only seen from elsewhere."
+  },
+  {
+   "name": "Mount Brewster",
+   "views": 816,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia-only peak or bay; no counted source."
+  },
+  {
+   "name": "Tomahawk Beach",
+   "views": 803,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; local inlet, suburb, remote beach or water body not named by a visitor guide."
+  },
+  {
+   "name": "Dunedin Museum of Natural Mystery",
+   "views": 800,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Resolved: Small private three-room museum, one source, limited opening."
+  },
+  {
+   "name": "Fantail Falls Walk",
+   "views": 788,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Stays review: DOC names the Haast Highway short walks (Blue Pools, Thunder Creek, Fantail, Roaring Billy) together; 10-minute stops, so keep or drop with Roaring Billy as a pair, consistent with Thunder Creek (kept)."
+  },
+  {
+   "name": "Leith Saddle Track",
+   "views": 772,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Local track in the hills, one thin DOC source, nothing distinct."
+  },
+  {
+   "name": "Papanui Inlet",
+   "views": 737,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; local inlet, suburb, remote beach or water body not named by a visitor guide."
+  },
+  {
+   "name": "Glenfalloch Woodland Garden",
+   "views": 734,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Stays review. For: Wikivoyage names the woodland garden on the Peninsula road. Against: single source, small garden."
+  },
+  {
+   "name": "Hoopers Inlet",
+   "views": 690,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; local inlet, suburb, remote beach or water body not named by a visitor guide."
+  },
+  {
+   "name": "Dunstan Trail",
+   "views": 685,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Stays review: Cromwell-Clyde cycle trail through Cromwell Gorge scenery; I could not confirm a counted source (NZ Cycle Trail/Otago trails page) in this pass. Keep if the nzcycletrail.com page lists it, as Roxburgh Gorge was."
+  },
+  {
+   "name": "Alexandra Bridges",
+   "views": 680,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Bridge piers beside a river walk; minor."
+  },
+  {
+   "name": "Ocean Beach",
+   "views": 642,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Near-duplicate of St Kilda/St Clair Beach (the same Ocean Beach); no counted source of its own. Wrongly matched to whangarei-10."
+  },
+  {
+   "name": "Cargill Monument",
+   "views": 636,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Minor memorial or street sculpture; no counted source."
+  },
+  {
+   "name": "Queens Gardens",
+   "views": 633,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; ordinary city park."
+  },
+  {
+   "name": "Lake Roxburgh",
+   "views": 608,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Dam reservoir and shore walkway; no distinct draw."
+  },
+  {
+   "name": "Sullivans Dam",
+   "views": 598,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia-only reservoir or wetland; no counted source."
+  },
+  {
+   "name": "Stuart Memorial",
+   "views": 573,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Minor memorial or street sculpture; no counted source."
+  },
+  {
+   "name": "Trotters Gorge",
+   "views": 564,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Stays review. For: Trotters Gorge walk with swimming hole and caves, one source. Against: one source, rural, little visitor infrastructure."
+  },
+  {
+   "name": "Pounawea Nature Walks",
+   "views": 531,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Local Catlins track with one thin source; no distinct draw."
+  },
+  {
+   "name": "Lake Waipori",
+   "views": 522,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia-only lake or reservoir with no counted visitor source."
+  },
+  {
+   "name": "Gasworks Museum",
+   "views": 485,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Stays review. For: Wikivoyage names this 1863 gasworks museum with working displays. Against: tiny, limited opening days, one source."
+  },
+  {
+   "name": "Swampy Summit",
+   "views": 483,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; rural hill."
+  },
+  {
+   "name": "Alexandra Blossom Festival",
+   "views": 468,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Annual festival; an event."
+  },
+  {
+   "name": "Butchers Dam",
+   "views": 443,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Local reservoir loop walk; one thin source."
+  },
+  {
+   "name": "Bethune's Gully",
+   "views": 418,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; local gully reserve."
+  },
+  {
+   "name": "Toroa (sculpture)",
+   "views": 414,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Minor memorial or street sculpture; no counted source."
+  },
+  {
+   "name": "Lake Wilkie",
+   "views": 413,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia-only lake or reservoir with no counted visitor source."
+  },
+  {
+   "name": "Catlins Conservation Park",
+   "views": 412,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "A conservation park area, not a place."
+  },
+  {
+   "name": "Tara-māhitihiti / Mid Dome",
+   "views": 410,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia-only peak or bay; no counted source."
+  },
+  {
+   "name": "Isthmus Peak Track",
+   "views": 408,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Stays review. For: Isthmus Peak track with Wanaka/Hawea views. Against: one source, long hard climb similar to Roys Peak."
+  },
+  {
+   "name": "Blue Oyster Art Project Space",
+   "views": 393,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small contemporary art project space with changing shows; minor, one source, no lasting draw."
+  },
+  {
+   "name": "Landslip Hill",
+   "views": 385,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia-only peak or bay; no counted source."
+  },
+  {
+   "name": "Mount Watkin / Hikaroroa",
+   "views": 383,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia-only peak or bay; no counted source."
+  },
+  {
+   "name": "Lake Tuakitoto",
+   "views": 380,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia-only lake or reservoir with no counted visitor source."
+  },
+  {
+   "name": "Bowen Peak",
+   "views": 351,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source, a private business/exterior, or a peak only seen from elsewhere."
+  },
+  {
+   "name": "Lake Johnson",
+   "views": 327,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia-only lake or reservoir with no counted visitor source."
+  },
+  {
+   "name": "Hāwea Conservation Park",
+   "views": 321,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A conservation park area."
+  },
+  {
+   "name": "Molyneux Bay",
+   "views": 321,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia-only peak or bay; no counted source."
+  },
+  {
+   "name": "Lake Tatawai",
+   "views": 314,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia-only lake or reservoir with no counted visitor source."
+  },
+  {
+   "name": "Lake Harris",
+   "views": 313,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia-only lake or reservoir with no counted visitor source."
+  },
+  {
+   "name": "Mount MacKenzie / Pakihiwitahi",
+   "views": 253,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia-only peak or bay; no counted source."
+  },
+  {
+   "name": "Mount Pye",
+   "views": 234,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia-only peak or bay; no counted source."
+  },
+  {
+   "name": "Greenland Reservoir",
+   "views": 222,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia-only lake or reservoir with no counted visitor source."
+  },
+  {
+   "name": "Outram Glen",
+   "views": 192,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small local glen; one thin source, no distinct draw for a visitor."
+  },
+  {
+   "name": "Manorburn Reservoir",
+   "views": 190,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia-only reservoir or wetland; no counted source."
+  }
+ ],
+ "left_out_zero_views_rejected": [
+  "Art Station",
+  "Ocho Chocolate",
+  "Old Bank of New Zealand",
+  "Arc Cafe",
+  "Fletcher House",
+  "Ōtākou Marae",
+  "St Clair Hot Salt Water Pool",
+  "Turnstile Building of former Carisbrook Stadium",
+  "Highcliff Track",
+  "Blackhead Beach",
+  "Second Beach",
+  "Mapoutahi Track",
+  "Careys Creek Track",
+  "Chalkies Track",
+  "Grahams Bush Track",
+  "Chick's Hotel",
+  "Iona Church",
+  "Holy Trinity Anglican Church",
+  "Municipal Building, Port Chalmers",
+  "St Mary, Star of the Sea Church",
+  "Scott Memorial",
+  "Port Chalmers Regional Maritime Museum",
+  "Goat Island (Rakiri)",
+  "Hotere Garden Oputare",
+  "Lady Thorn Rhododendron Dell",
+  "Quarantine Island (Kamau Taurua)",
+  "Port to Port",
+  "Waitaki Museum",
+  "Oamaru Town Lookout",
+  "Whitestone City",
+  "Whitestone Cheese Factory",
+  "Totara Estate",
+  "Steampunk NZ Festival",
+  "Victorian Heritage Celebrations",
+  "Trotters Cave Walk",
+  "East of Eden Walking Tour",
+  "Waitaki Whitestone UNESCO Global Geopark",
+  "Huriawa Pā Walk",
+  "Hawksbury Lagoon and Beach Walk",
+  "Glide Omarama",
+  "The Wrinkly Rams",
+  "Waitaki Valley",
+  "Ōtematata / Benmore",
+  "Maheno",
+  "Macraes Flat",
+  "Pomahaka Riverside Route",
+  "Nobbies Track",
+  "Former Goldfields (Cromwell)",
+  "Mt Difficulty Track",
+  "Ranfurly Art Deco Gallery",
+  "Milton Information Centre and Museum",
+  "Glow Worms (Milton)",
+  "Tokomairiro Heritage Trail",
+  "Lake Roxburgh Walkway",
+  "Cairnmuir Hill Track",
+  "Earnscleugh Tailings Track",
+  "Shek Harn Historic Reserve",
+  "Blue Lake Loop Track",
+  "Lindis Peak Track",
+  "Heyward Point Track",
+  "Aramoana Saltmarsh Walk",
+  "Taieri River Track",
+  "Government Track",
+  "Munros Gully Track",
+  "Otago Dam Track",
+  "Queenstown Arts Centre",
+  "Ivan Clarke Gallery",
+  "Kawarau Bridge Bungy",
+  "The Ledge Bungy",
+  "Mad Dog Riverboarding",
+  "NZONE Skydive",
+  "HeliWorks",
+  "Glacier Southern Lakes Helicopters",
+  "Appellation Central Wine Tours",
+  "Queenstown Wine Trail",
+  "Off the Rails",
+  "Queenstown Garden Tours",
+  "Lake Hayes Walkway",
+  "St Paul's Anglican Church, Arrowtown",
+  "Motatapu Track",
+  "Bob's Cove Track",
+  "Mt Crichton Loop Track",
+  "Peregrine Loop Track",
+  "Oxenbridge Tunnel Track",
+  "Lake Dispute Walkway",
+  "Arawata Bridle Track",
+  "Seven Mile Point Track",
+  "Shotover River Jetboats",
+  "Kayak Kinloch",
+  "Dart River Jet Safaris",
+  "Bennetts Bluff Viewpoint Walk",
+  "Glenorchy Walkway",
+  "Diamond Creek Track",
+  "Invincible Gold Mine Track",
+  "Earnslaw Burn Track",
+  "Routeburn Nature Walk",
+  "Steele Creek Track",
+  "Gillespie Pass Circuit",
+  "Haast Pass Lookout Track",
+  "Makarora Bush Walk",
+  "Cameron Lookout Walk",
+  "Kea Basin Track",
+  "French Ridge Track",
+  "West Matukituki Track",
+  "Glacier Burn Track",
+  "Brewster Track",
+  "Makarora Track",
+  "Liverpool Track",
+  "Wilkin Valley Tracks",
+  "Kitchener Track to Aspiring Flats",
+  "Wanaka Beer Works",
+  "World of Deer",
+  "Deep Canyon",
+  "The Sauna Wānaka",
+  "Harris Mountains Heliski",
+  "Skydive Lake Wānaka",
+  "Festival of Colour",
+  "Skyline Track",
+  "Minaret Burn Track",
+  "Deans Bank Track",
+  "Newcastle Track",
+  "Upper Clutha River Track",
+  "Hawea River Track",
+  "Craig Burn Track",
+  "Butterfields Wetland Walk",
+  "Grandview Ridge Track",
+  "Lake Wānaka Lookout Track",
+  "Lake Hāwea Track",
+  "Grandview Mountain Track",
+  "Kidds Bush Nature Walk",
+  "Roaring Meg Pack Track",
+  "Little Criffel Track",
+  "Obelisk Loop Track",
+  "Sisters Track",
+  "Potters Track",
+  "Prospect Hill Track",
+  "Old Woman and Old Man Range",
+  "Flat Top Hill Tracks",
+  "Silverpeaks Circuit Track",
+  "Quartz Reef Point Walk",
+  "Lauder Basin Tracks",
+  "Dingle Burn Track",
+  "Te Kere Haka Track",
+  "Shirt Tail Track",
+  "Crystal Battery Track",
+  "Mt Rosa Track",
+  "Wentworth Track",
+  "Nevis Valley Tracks",
+  "Bendigo Historic Reserve",
+  "Macraes Flat Tracks",
+  "Owaka Museum and Catlins Information Centre",
+  "Waikawa Museum and Information Centre",
+  "Catlins Mohua Park",
+  "Barrs Falls",
+  "Awakiki Bush Track",
+  "Catlins River Wisp Loop Track",
+  "Thisbe Valley Track",
+  "Forest Walk (Catlins)",
+  "Cardrona Hotel",
+  "Waikouaiti"
+ ],
+ "strongest_outsiders": {
+  "kept_outside_every_span": [
+   {
+    "name": "Lindis Pass",
+    "views": 8236,
+    "kept_as": "standalone"
+   },
+   {
+    "name": "Paradise",
+    "views": 6112,
+    "kept_as": "standalone (proposed glenorchy)"
+   },
+   {
+    "name": "Gabriels Gully",
+    "views": 2990,
+    "kept_as": "standalone"
+   },
+   {
+    "name": "Alps 2 Ocean Cycle Trail",
+    "views": 1223,
+    "kept_as": "standalone"
+   },
+   {
+    "name": "Greenstone and Caples Tracks",
+    "views": 0,
+    "kept_as": "standalone (proposed glenorchy)"
+   }
+  ],
+  "left_out_or_review_outside_spans": [
+   {
+    "name": "Palmerston",
+    "views": 8310,
+    "verdict": "reject",
+    "reason": "Small SH1 service town; no distinct visitor draw."
+   },
+   {
+    "name": "Lawrence",
+    "views": 6341,
+    "verdict": "review",
+    "reason": "Stays review. For: historic gold-rush town where Otago's rush began. Against: one source, thin things to do; Gabriels Gully is the draw."
+   },
+   {
+    "name": "Middlemarch",
+    "views": 4767,
+    "verdict": "review",
+    "reason": "Stays review. For: Middlemarch, Rail Trail Dunedin-end town with two sources. Against: small town; the trail is the draw."
+   },
+   {
+    "name": "Karitane",
+    "views": 3591,
+    "verdict": "reject",
+    "reason": "Settlement; its Huriawa walk is judged separately."
+   },
+   {
+    "name": "Lake Benmore",
+    "views": 3295,
+    "verdict": "reject",
+    "reason": "Resolved: Hydro reservoir with access on the Canterbury side; one source."
+   },
+   {
+    "name": "Danseys Pass",
+    "views": 3132,
+    "verdict": "reject",
+    "reason": "Resolved: One thin source for a small local site/walk with little to do; part of a larger kept place or a short local stroll."
+   },
+   {
+    "name": "Platypus (submarine)",
+    "views": 1914,
+    "verdict": "reject",
+    "reason": "No counted source and not an open visitor attraction in the region."
+   },
+   {
+    "name": "Taieri Mouth",
+    "views": 1800,
+    "verdict": "reject",
+    "reason": "Small village; one source, no distinct draw."
+   },
+   {
+    "name": "Lake Waihola",
+    "views": 1741,
+    "verdict": "reject",
+    "reason": "Resolved: One thin source for a small local site/walk with little to do; part of a larger kept place or a short local stroll."
+   },
+   {
+    "name": "Lake Mahinerangi",
+    "views": 1611,
+    "verdict": "reject",
+    "reason": "Wikipedia-only lake or reservoir with no counted visitor source."
+   },
+   {
+    "name": "Sutton Salt Lake",
+    "views": 1059,
+    "verdict": "reject",
+    "reason": "Resolved: About a 20-minute stop, one source."
+   },
+   {
+    "name": "Maungatua",
+    "views": 1005,
+    "verdict": "reject",
+    "reason": "No counted source; rural hill."
+   },
+   {
+    "name": "Toko Mouth",
+    "views": 999,
+    "verdict": "reject",
+    "reason": "Wikipedia-only estuary beach."
+   },
+   {
+    "name": "Puketapu",
+    "views": 915,
+    "verdict": "reject",
+    "reason": "Wikipedia-only peak or bay; no counted source."
+   },
+   {
+    "name": "Dunstan Trail",
+    "views": 685,
+    "verdict": "review",
+    "reason": "Stays review: Cromwell-Clyde cycle trail through Cromwell Gorge scenery; I could not confirm a counted source (NZ Cycle Trail/Otago trails page) in this pass. Keep if the nzcycletrail.com page lists i"
+   }
+  ]
+ },
+ "benchmark": {
+  "applicable_to_otago": "Paradise: kept as a standalone spot at -44.724695,168.363148 (Glenorchy-area, in the proposed Glenorchy destination). St Kilda Beach: kept as dunedin-17 (own OSM beach, not the shared Ocean Beach point; held for a photo). Wānaka and Lake Wakatipu not made spots of themselves. TSS Earnslaw not proposed: Walter Peak High Country Farm (queenstown-4) is kept. Shotover Jet kept per skeptic. Other benchmarks (Red Rocks, Kapiti Island, Lake Coleridge, Sumner, Godley Head, Lyttelton, Birdlings Flat, Hump Ridge Track, Ohakune Carrot, Ninety Mile Beach) belong to other regions; Ninety Mile Beach, Hump Ridge Track already shipped. Negative benchmarks in Otago: none present; Dunedin Town Hall exterior, University of Otago (review), Gasworks Museum (review) held out.",
+  "catlins_overlap": "Waipapa Point, Florence Hill Lookouts and Surat Bay are not duplicated here (region-southland catlins-7/8/9); Tunnel Hill and Waipohatu Waterfalls Track are not in the Southland placement and are placed here as catlins-13/14 with a conflict note on Tunnel Hill."
+ },
+ "review_list_for_owner": [
+  {
+   "name": "University of Otago",
+   "views": 54266,
+   "counted_sources": 1,
+   "case": "Stays review. For: Wikivoyage names the oldest NZ university and its historic campus is walkable. Against: working campus with mostly exterior buildings; museum is separate."
+  },
+  {
+   "name": "Gasworks Museum",
+   "views": 485,
+   "counted_sources": 1,
+   "case": "Stays review. For: Wikivoyage names this 1863 gasworks museum with working displays. Against: tiny, limited opening days, one source."
+  },
+  {
+   "name": "Glenfalloch Woodland Garden",
+   "views": 734,
+   "counted_sources": 1,
+   "case": "Stays review. For: Wikivoyage names the woodland garden on the Peninsula road. Against: single source, small garden."
+  },
+  {
+   "name": "Signal Hill",
+   "views": 1799,
+   "counted_sources": 0,
+   "case": "Stays review. Well-known lookout over the city and harbour with a road to the top, 1,799 views, but Wikivoyage Dunedin has no Signal Hill listing, so no counted source. Promote to keep if DCC or Lonely Planet names it; otherwise a roadside lookout."
+  },
+  {
+   "name": "Quarantine Island (Kamau Taurua)",
+   "views": 0,
+   "counted_sources": 1,
+   "case": "Stays review. For: Wikivoyage names Quarantine Island (Kamau Taurua) as a harbour island with heritage buildings. Against: boat-only access, single source."
+  },
+  {
+   "name": "Totara Estate",
+   "views": 0,
+   "counted_sources": 1,
+   "case": "Stays review. For: Totara Estate is a Heritage NZ/Waitaki site, first frozen meat export. Against: one source, limited opening, niche."
+  },
+  {
+   "name": "Trotters Gorge",
+   "views": 564,
+   "counted_sources": 1,
+   "case": "Stays review. For: Trotters Gorge walk with swimming hole and caves, one source. Against: one source, rural, little visitor infrastructure."
+  },
+  {
+   "name": "Ranfurly",
+   "views": 10667,
+   "counted_sources": 1,
+   "case": "Stays review. For: Maniototo hub on the Rail Trail, Art Deco heritage; 10k views. Against: one source, small service town."
+  },
+  {
+   "name": "Middlemarch",
+   "views": 4767,
+   "counted_sources": 2,
+   "case": "Stays review. For: Middlemarch, Rail Trail Dunedin-end town with two sources. Against: small town; the trail is the draw."
+  },
+  {
+   "name": "Lawrence",
+   "views": 6341,
+   "counted_sources": 1,
+   "case": "Stays review. For: historic gold-rush town where Otago's rush began. Against: one source, thin things to do; Gabriels Gully is the draw."
+  },
+  {
+   "name": "Balclutha",
+   "views": 11144,
+   "counted_sources": 1,
+   "case": "Stays review. For: Clutha district hub and Catlins gateway. Against: one source, mostly a service town."
+  },
+  {
+   "name": "Dunstan Trail",
+   "views": 685,
+   "counted_sources": 0,
+   "case": "Stays review: Cromwell-Clyde cycle trail through Cromwell Gorge scenery; I could not confirm a counted source (NZ Cycle Trail/Otago trails page) in this pass. Keep if the nzcycletrail.com page lists it, as Roxburgh Gorge was."
+  },
+  {
+   "name": "Motatapu Track",
+   "views": 0,
+   "counted_sources": 1,
+   "case": "Stays review. For: multi-day Motatapu Track between Arrowtown and Wanaka. Against: one source, private-land track with fees."
+  },
+  {
+   "name": "Kinloch",
+   "views": 4677,
+   "counted_sources": 1,
+   "case": "Downgraded: the candidate is matched to the wrong place. Its coordinates (-38.65, 175.92) and 4,677 views are Kinloch near Lake Taupo; the Otago Kinloch is a tiny lakehead settlement (lodge, Greenstone/Caples access). Gateway village whose draw is the track beyond it (Pipiriki case). Needs its own source and real coordinates (about -44.85, 168.33, verify)."
+  },
+  {
+   "name": "Gillespie Pass Circuit",
+   "views": 0,
+   "counted_sources": 1,
+   "case": "Stays review. For: Gillespie Pass Circuit is a known multi-day route. Against: one source, backcountry."
+  },
+  {
+   "name": "Fantail Falls Walk",
+   "views": 788,
+   "counted_sources": 1,
+   "case": "Stays review: DOC names the Haast Highway short walks (Blue Pools, Thunder Creek, Fantail, Roaring Billy) together; 10-minute stops, so keep or drop with Roaring Billy as a pair, consistent with Thunder Creek (kept)."
+  },
+  {
+   "name": "Roaring Billy Falls Walk",
+   "views": 942,
+   "counted_sources": 1,
+   "case": "Stays review, paired with Fantail Falls Walk (same DOC short-walk set)."
+  },
+  {
+   "name": "Isthmus Peak Track",
+   "views": 408,
+   "counted_sources": 1,
+   "case": "Stays review. For: Isthmus Peak track with Wanaka/Hawea views. Against: one source, long hard climb similar to Roys Peak."
+  },
+  {
+   "name": "Kingston",
+   "views": 6065,
+   "counted_sources": 1,
+   "case": "Stays review. For: Kingston village at the southern end of Lake Wakatipu, home of the Kingston Flyer. Against: one source, small village."
+  },
+  {
+   "name": "Owaka",
+   "views": 4423,
+   "counted_sources": 1,
+   "case": "Stays review. For: Owaka is the Catlins service town and museum stop. Against: one source, small town."
+  },
+  {
+   "name": "Cardrona Hotel",
+   "views": 0,
+   "counted_sources": 1,
+   "case": "Decision: stays review. For: 1863 hotel open daily, the Crown Range stop beside the Bra Fence, half an hour for a drink and photos. Against: single pub venue, only one source and I could not find a counted visitor listing (Wikivoyage has no Cardrona page). Keep only if a Lonely Planet or newzealand.com listing is confirmed; otherwise reject."
+  }
+ ]
+}
