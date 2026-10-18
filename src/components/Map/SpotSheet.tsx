@@ -34,6 +34,7 @@ import { CARD_SCRIM_FADE, CARD_SCRIM_ABOVE, cardScrimStops } from './cardScrim';
 import GoogleRating from './GoogleRating';
 import spotRatings from '../../data/spotRatings.json';
 import { fitNameFontSize } from '../../utils/fitNameFontSize';
+import { HERO_FOCUS } from '../../data/imageOverrides';
 import { titleStatGap } from '../../utils/titleStatGap';
 import FadeInImage from './FadeInImage';
 import SpotCard from './SpotCard';
@@ -1080,7 +1081,11 @@ isVisited ? (
         {/* ── HERO PHOTO — a fixed layer BEHIND the scroll content (Spotify-style): scrolling slides the header text
             and then the content over it while the photo stays put, dimming as it is covered. */}
         <View pointerEvents="none" style={[st.heroBackdrop, { height: HERO_H - insets.bottom }]}>
-              <EntityPhoto cacheKey={activePhotoKey} cache={photoCache} load={loadActivePhoto} />
+              <EntityPhoto
+                cacheKey={activePhotoKey} cache={photoCache} load={loadActivePhoto}
+                focusX={HERO_FOCUS[spotPhotoTitle(activeSpot)]?.x} focusY={HERO_FOCUS[spotPhotoTitle(activeSpot)]?.y}
+                frame={{ w: W, h: HERO_H - insets.bottom }}
+              />
               <View pointerEvents="none" style={st.heroScrim} />
               <View pointerEvents="none" style={st.gradWrap}>
                 <Svg style={StyleSheet.absoluteFill}>

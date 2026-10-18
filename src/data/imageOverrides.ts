@@ -18,6 +18,16 @@ export const PHOTO_FOCUS_Y: Record<string, number> = {
   "Venice Gondola Grand Canal.jpg": 0.3,
 };
 
+// Framing of a spot's photo in the FULL-SCREEN hero of its sheet, keyed by the place's photo key (spotPhotoTitle: its `wiki`
+// title, else its name). The hero is nearly square (full screen width by about half the screen height), so a landscape photo
+// shows only the middle ~55% of its width and a very wide one less: a subject that sits off to one side is cut out and the hero
+// shows empty sky or ground. x / y are 0..1 like PHOTO_FOCUS_Y (x: 0 keeps the photo's left edge in view, 1 its right; y: 0
+// its top, 1 its bottom; both default to 0.5, the plain centre crop). IMAGES.md ("The hero crop") says when a photo needs one.
+export const HERO_FOCUS: Record<string, { x?: number; y?: number }> = {
+  // The dome stands at the far left of a wide photo; centred, the hero showed only blue sky.
+  "Siding Spring Observatory": { x: 0.05 },
+};
+
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   // Downtown skyline in front of the snow-capped San Gabriel Mountains — the city, not the Hollywood sign.
   "Los Angeles": "LA Skyline Mountains2.jpg",

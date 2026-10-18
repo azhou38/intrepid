@@ -97,6 +97,16 @@ Every spot photo in the app is checked, not only the ones given an override: the
 - **Size:** at least **1280px wide** where possible.
 - A standalone spot (one with no destination) follows the same rules.
 
+## The hero crop (spot photos)
+
+A spot's photo is shown, among other places, as the HERO of its full-screen sheet: full screen width by about half the screen height (aspect ~0.95, nearly square), cover-fitted. That crop, not the whole file, is what the visitor sees first, so a photo has to work in it, not only as a thumbnail or in the contact sheet.
+
+- **Landscape photos show a middle slice.** 16:9 shows the middle 53% of the width, 3:2 63%, 2:1 48%, 3:1 32%; a portrait photo shows a middle slice of its height. Anything outside that slice is cut off.
+- **The named object must be inside the crop and recognisable there**: not cut by an edge, and not dwarfed by sky, water or ground (the Siding Spring Observatory dome stood at the far left of a wide photo and the hero showed only blue sky). Ask the check-2 question again on the crop: shown the crop with no caption, would a visitor say "that's the X"?
+- **Look at it, don't assume.** `python3 scripts/curation/hero-crop.py <960 px thumbnail URL or file>` writes the crop and prints the slice it shows (`--sheet out.jpg` puts several side by side; Read the image). Every spot photo a judge or the skeptic accepts is checked this way when its aspect is wider than 1.3 or narrower than 0.7, or whenever the object is not clearly central.
+- **An off-centre subject is fixed, not rejected**, if it fits in the crop at a different position: find the `x` (0 = left edge of the photo in view, 1 = right) and/or `y` that puts it in the middle of the crop, check it with `--x/--y`, and record it as `HERO_FOCUS` in `src/data/imageOverrides.ts`, keyed by the photo key (`spotPhotoTitle`: the spot's `wiki` title, else its name). A subject wider than the crop's slice (a long panorama of a building) cannot be fixed that way: choose another photo.
+- Judges record the verdict and any focus in their output (`hero_crop: "ok" | {x, y} | "fail: <why>"`), and the reconciler writes the `HERO_FOCUS` entries.
+
 ## Choosing
 
 1. **Search Commons** for the place or reason, preferring featured, quality or valued images and files named for the subject. Open each candidate and look at it.

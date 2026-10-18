@@ -16,7 +16,7 @@ import FadeInImage from './FadeInImage';
 // this small component, so a photo arriving re-renders only the photo, never the sheet around it.
 export default function EntityPhoto({
   cacheKey, cache, load, instant, scrim, placeholderColor, resizeMode = 'cover', style = StyleSheet.absoluteFill,
-  focusY, frame,
+  focusX, focusY, frame,
 }: {
   cacheKey: string;                                   // identifies the entity (and is the photoCache key)
   cache: Map<string, string>;
@@ -30,6 +30,9 @@ export default function EntityPhoto({
   // 0.5 (the default, what plain 'cover' does) its middle. Needs `frame`, the box the photo fills, to place it.
   // The photo waits for its own dimensions before appearing, so it never jumps from centred to framed.
   focusY?: number;
+  // The same for a photo wider than its frame (a landscape photo in a portrait hero shows only a middle slice of its width): 0 keeps
+  // its left edge in view, 1 its right, 0.5 (default) its middle.
+  focusX?: number;
   frame?: { w: number; h: number };
 }) {
   const cached = cache.get(cacheKey) ?? null;
@@ -41,7 +44,7 @@ export default function EntityPhoto({
   const meta = useRef({ key: cacheKey, hit: cached !== null });
   if (meta.current.key !== cacheKey) meta.current = { key: cacheKey, hit: cached !== null };
 
-  const framed = focusY !== undefined && !!frame;
+  const framed = (focusY !== undefined || focusX !== undefined) && !!frame;
   const [natural, setNatural] = useState<{ url: string; w: number; h: number } | null>(null);
   useEffect(() => {
     if (!framed || !url || natural?.url === url) return;
@@ -70,7 +73,7 @@ export default function EntityPhoto({
     const scale = Math.max(frame!.w / natural.w, frame!.h / natural.h);
     const w = natural.w * scale;
     const h = natural.h * scale;
-    imageStyle = { position: 'absolute', width: w, height: h, left: (frame!.w - w) / 2, top: (frame!.h - h) * focusY! };
+    imageStyle = { position: 'absolute', width: w, height: h, left: (frame!.w - w) * (focusX ?? 0.5), top: (frame!.h - h) * (focusY ?? 0.5) };
   }
   return (
     <>

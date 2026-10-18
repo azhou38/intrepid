@@ -67,6 +67,24 @@ def spot_line(sid, dest, e):
     return '  { ' + ', '.join(f) + ' },'
 
 
+def set_hero_focus(key, focus):
+    """A judge's `hero_crop: {x, y}` (IMAGES.md "The hero crop") → HERO_FOCUS in imageOverrides.ts."""
+    p = 'src/data/imageOverrides.ts'
+    s = open(p).read()
+    k = q(key)
+    parts = ', '.join(f'{a}: {focus[a]}' for a in ('x', 'y') if focus.get(a) is not None)
+    line = f'  {k}: {{ {parts} }},'
+    pat = re.compile(r'^  ' + re.escape(k) + r': \{.*\},$', re.M)
+    anchor = s.index('export const HERO_FOCUS')
+    end = s.index('};', anchor)
+    block = s[anchor:end]
+    if pat.search(block):
+        block = pat.sub(lambda m: line, block, 1)
+    else:
+        block += line + '\n'
+    open(p, 'w').write(s[:anchor] + block + s[end:])
+
+
 def set_override(key, file):
     p = 'src/data/imageOverrides.ts'
     s = open(p).read()
@@ -142,6 +160,9 @@ if not dry:
     open('src/data/spots.ts', 'w').write('\n'.join(lines_out))
     for e in [x for es in by_dest.values() for x in es] + standalone:
         set_override(e['spot'].get('wiki') or e['spot']['name'], e['photo']['file'])
+        hc = e['photo'].get('hero_crop')
+        if isinstance(hc, dict):
+            set_hero_focus(e['spot'].get('wiki') or e['spot']['name'], hc)
 
 print(f"{'would add' if dry else 'added'} {len(added)} spots; skipped {len(skipped)}")
 for n, why in skipped:

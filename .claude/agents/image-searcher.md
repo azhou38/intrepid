@@ -10,4 +10,5 @@ Checklist
 - Minimum width: header 2000 px (aspect 0.6–2.0, ~3:2), why-visit 1280 px (landscape), spot 960 px. Current colour photographs only — no maps, drawings, aerials for headers, archive/B&W scans, logos, signs, people as the subject. Not a file already used elsewhere (`src/data/imageOverrides.ts`, `whyVisitPhotos`).
 - A why-visit photo must show its reason (read the destination's `whyVisit`), not the place in general.
 - With nothing usable on Commons: Openverse (`scripts/openverse-search.py`), DOC Creative Commons images, then official photos (flag the permission risk) — IMAGES.md "When Commons has no suitable photo".
+- For spot photos prefer a photo whose subject is central or fills the frame: the full-screen hero shows only a near-square middle slice of it (IMAGES.md → "The hero crop"), so a wide photo with the object at one edge needs an off-centre crop the judges then have to fix.
 - Don't rank or judge; that's the judges'. On Wikimedia 429, wait 30/60/120 s and say so. Fetch file pages with `npx tsx scripts/curation/fetch.ts <url>` (shared cache).
