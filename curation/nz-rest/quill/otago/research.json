@@ -1,0 +1,2307 @@
+{
+ "region": "otago",
+ "generated": "2026-10-18",
+ "entries": [
+  {
+   "id": "dunedin-11",
+   "name": "Speight's Brewery",
+   "kind": "new",
+   "category": "entertainment",
+   "facts": [
+    {
+     "claim": "Brewery tour: Adult $45, Child $25, Tour & Meal $79. Tours Mon-Thu 12pm, 2pm, 4pm; Fri-Sat 12pm, 2pm, 4pm, 6pm; Sun 12pm, 2pm, 4pm. Shop and Ale House 10am-5pm (to 6pm Fri-Sat). Closed Waitangi Day, ANZAC Day, Easter and Christmas.",
+     "source": "https://www.speights.co.nz/the-brewery/"
+    },
+    {
+     "claim": "Wikivoyage Dunedin lists Speight's Brewery with the official site speights.co.nz.",
+     "source": "https://en.wikivoyage.org/wiki/Dunedin"
+    },
+    {
+     "claim": "OSM building (brewery) 'Speights Brewery' on Rattray Street.",
+     "source": "https://www.openstreetmap.org/way/158697800"
+    }
+   ],
+   "hours": "Tours 12:00 PM - 4:00 PM daily (6:00 PM Fri-Sat)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "costMin": 45,
+   "costMax": 45,
+   "currency": "NZD",
+   "ticketUrl": "https://www.speights.co.nz/the-brewery/",
+   "ticketUrl_note": "Loaded; title 'Brewery Tour - Speight's'. Operator's own site (homepage www.speights.co.nz also loads).",
+   "coordinates_check": {
+    "current": {
+     "latitude": -45.8767,
+     "longitude": 170.50009
+    },
+    "source_point": [
+     -45.87628,
+     170.50023
+    ],
+    "source": "OSM way 158697800 building=brewery 'Speights Brewery' (Photon)",
+    "ok": true,
+    "distance_m": 50
+   },
+   "suggested_bio": "A working brewery in central Dunedin, visited on guided tours at set times each day.",
+   "unverified": [
+    "Tour length (1 hr) is from the placement, not read on the page; visit time is a judgement.",
+    "Bio 'guided tours at set times each day' is supported by the tour times."
+   ]
+  },
+  {
+   "id": "dunedin-12",
+   "name": "Dunedin Public Art Gallery",
+   "kind": "new",
+   "category": "museum",
+   "facts": [
+    {
+     "claim": "Operator site banner: OPEN 10am - 5pm Daily [Closed Christmas Day].",
+     "source": "https://dunedin.art.museum/"
+    },
+    {
+     "claim": "Council fees schedule 2025/26 lists gallery admission as free (special exhibitions may charge). Search snippet of the council page; the page itself is behind a Cloudflare wall.",
+     "source": "https://www.dunedin.govt.nz/council/annual-and-long-term-plans/9-year-plan-2025-2034/schedule-of-fees-and-charges-2025-26/f-and-cs-2025-26-adopted/2025-26-fees-adopted/creative-and-cultural-vibrancy/dunedin-public-art-gallery"
+    },
+    {
+     "claim": "Wikipedia: holds works including Rita Angus, Colin McCahon and Ralph Hotere; OSM gallery way matches the placement point to 2 m.",
+     "source": "https://en.wikipedia.org/wiki/Dunedin_Public_Art_Gallery"
+    }
+   ],
+   "hours": "10:00 AM - 5:00 PM",
+   "specialClosures": [
+    "12-25"
+   ],
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": "https://dunedin.art.museum/",
+   "ticketUrl_note": "Loaded; title 'Dunedin Public Art Gallery | Dunedin Public Art Gallery'. Gallery's own site (www. redirects here).",
+   "coordinates_check": {
+    "current": {
+     "latitude": -45.8745,
+     "longitude": 170.5027
+    },
+    "source_point": [
+     -45.8745,
+     170.50273
+    ],
+    "source": "OSM tourism=gallery way 381871952",
+    "ok": true,
+    "distance_m": 2
+   },
+   "suggested_bio": "Dunedin's public art gallery beside the Octagon, with New Zealand and international collections.",
+   "unverified": [
+    "Free entry rests on the 2025/26 fees schedule (search snippet) and a 2026 city guide; a 2025 report discussed charging international visitors, outcome not found. Special exhibitions can charge.",
+    "closedDays none; Christmas Day closed (specialClosures 12-25)."
+   ]
+  },
+  {
+   "id": "dunedin-13",
+   "name": "Dunedin Botanic Garden",
+   "kind": "new",
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "NZ Garden Trust: open every day dawn to dusk, entry is free; Information Centre daily 10am-4pm (closed Christmas Day and Boxing Day); Winter Glass House 10am-4pm.",
+     "source": "https://www.gardens.org.nz/visit/dunedin-botanic-garden"
+    },
+    {
+     "claim": "Wikipedia: OSM leisure=park relation 'Dunedin Botanic Garden' at the placement point (5 m).",
+     "source": "https://www.openstreetmap.org/relation/21297294"
+    }
+   ],
+   "hours": "Open dawn to dusk (glasshouse 10:00 AM - 4:00 PM)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": true,
+   "ticketUrl": "https://dunedinbotanicgarden.co.nz/",
+   "ticketUrl_note": "BLOCKED: the garden's own site (Dunedin City Council) is behind a Cloudflare 'Just a moment' wall, so its title could not be checked. Orchestrator to confirm in a real browser; https://www.gardens.org.nz/visit/dunedin-botanic-garden (NZ Garden Trust, loads) is the fallback but is not the operator.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -45.8586,
+     "longitude": 170.5221
+    },
+    "source_point": [
+     -45.85864,
+     170.52207
+    ],
+    "source": "OSM leisure=park relation 21297294",
+    "ok": true,
+    "distance_m": 5
+   },
+   "suggested_bio": "A garden dating from the 1860s, with a Winter Garden glasshouse and an aviary, free to enter.",
+   "unverified": [
+    "ticketUrl BLOCKED (see note).",
+    "Garden size (30 ha) and 1860s date are from the placement bio, not re-read."
+   ]
+  },
+  {
+   "id": "dunedin-14",
+   "name": "The Octagon",
+   "kind": "new",
+   "category": "landmark",
+   "facts": [
+    {
+     "claim": "Wikivoyage Dunedin lists the Octagon as the city's central square.",
+     "source": "https://en.wikivoyage.org/wiki/Dunedin"
+    },
+    {
+     "claim": "OSM place=square way 'The Octagon' 48 m from the placement point.",
+     "source": "https://www.openstreetmap.org/way/772999262"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A public square with no single steward (Dunedin City Council); none.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -45.8741,
+     "longitude": 170.503
+    },
+    "source_point": [
+     -45.87407,
+     170.50361
+    ],
+    "source": "OSM place=square way 772999262",
+    "ok": true,
+    "distance_m": 48
+   },
+   "unverified": [
+    "Visit time is a judgement."
+   ]
+  },
+  {
+   "id": "dunedin-15",
+   "name": "Orokonui EcoSanctuary",
+   "kind": "new",
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "Open Thursday to Monday 9:30am-4:30pm (last entry to sanctuary 3:30pm); closed Tuesday and Wednesday; Horopito Cafe 10am-3pm.",
+     "source": "https://orokonui.nz/visit/"
+    },
+    {
+     "claim": "Sanctuary entry: Adults $27, Children $13, Family (2 adults, 3 children) $65. Guided tours cost more (listed at Adults $65 / Children $32.50 and $95 / $65 on the same page).",
+     "source": "https://orokonui.nz/visit/"
+    },
+    {
+     "claim": "Wikivoyage Dunedin and Port Chalmers both list Orokonui, official site orokonui.nz.",
+     "source": "https://en.wikivoyage.org/wiki/Dunedin"
+    }
+   ],
+   "hours": "9:30 AM - 4:30 PM (closed Tue, Wed)",
+   "closedDays": [
+    2,
+    3
+   ],
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "costMin": 27,
+   "costMax": 27,
+   "currency": "NZD",
+   "ticketUrl": "https://orokonui.nz/",
+   "ticketUrl_note": "Loaded; title 'Home - Orokonui Ecosanctuary'. Operator's own site (linked from Wikivoyage).",
+   "coordinates_check": {
+    "current": {
+     "latitude": -45.77675,
+     "longitude": 170.60366
+    },
+    "source_point": [
+     -45.77675,
+     170.60366
+    ],
+    "source": "OSM information office node 1905022126 (visitor centre)",
+    "ok": true,
+    "distance_m": 1
+   },
+   "suggested_bio": "A predator-fenced wildlife sanctuary near Port Chalmers with self-guided walks and guided tours.",
+   "unverified": [
+    "Which of the two $65/$95 price rows is the guided tour was not tied to a tour name in the extracted text; $27 is the adult entry."
+   ]
+  },
+  {
+   "id": "dunedin-16",
+   "name": "St Clair Beach",
+   "kind": "new",
+   "category": "beach",
+   "facts": [
+    {
+     "claim": "Wikivoyage Dunedin lists St Clair Beach as the city's surf beach with a sea wall and cafes (as cited by the placement).",
+     "source": "https://en.wikivoyage.org/wiki/Dunedin"
+    },
+    {
+     "claim": "OSM natural=beach relation 7783052 (Saint Clair Beach).",
+     "source": "https://www.openstreetmap.org/relation/7783052"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Public beach with no single steward; none.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -45.9121,
+     "longitude": 170.4905
+    },
+    "source_point": [
+     -45.91235,
+     170.48812
+    ],
+    "source": "OSM Beach Street (Photon, 282 m); beach relation 7783052 per placement",
+    "ok": true,
+    "distance_m": 282
+   },
+   "unverified": [
+    "Visit time judgement."
+   ]
+  },
+  {
+   "id": "dunedin-19",
+   "name": "Dunedin Chinese Garden",
+   "kind": "new",
+   "category": "landmark",
+   "facts": [
+    {
+     "claim": "Dunedin City Council fees 2026/27 (search snippet): open 10am-5pm daily, closed Christmas Day; adult admission $13.50; under-13s with an adult free. 2025/26 was $13.00. Council page is behind Cloudflare.",
+     "source": "https://www.dunedin.govt.nz/services/fees-and-charges/chinese-garden"
+    },
+    {
+     "claim": "Wikipedia: Lan Yuan was created with Dunedin City Council and the Shanghai Municipal Government support, cost $7 million, 'New Zealand's only authentic Chinese garden'.",
+     "source": "https://en.wikipedia.org/wiki/Dunedin_Chinese_Garden"
+    }
+   ],
+   "hours": "10:00 AM - 5:00 PM",
+   "specialClosures": [
+    "12-25"
+   ],
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "costMin": 13.5,
+   "costMax": 13.5,
+   "currency": "NZD",
+   "ticketUrl": "https://dunedinchinesegarden.com/",
+   "ticketUrl_note": "BLOCKED: operator site returns a Cloudflare 'Just a moment' wall (403). Orchestrator to check in a real browser; the Wikivoyage Dunedin entry gives this URL.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -45.8782,
+     "longitude": 170.5055
+    },
+    "source_point": [
+     -45.8782,
+     170.5054
+    ],
+    "source": "Wikipedia coordinates 45.8782S 170.5054E; placement says OSM within 10 m",
+    "ok": true,
+    "distance_m": 10
+   },
+   "suggested_bio": "Lan Yuan, a Chinese scholar's garden built with Shanghai's help in the city's Community Gardens.",
+   "unverified": [
+    "ticketUrl BLOCKED (see note); hours and price are from a search snippet of the council fees page, not the operator page.",
+    "Bio 'built in Shanghai and reassembled' not found in sources read; Wikipedia says created with the Shanghai Municipal Government. Suggested bio avoids it."
+   ]
+  },
+  {
+   "id": "dunedin-20",
+   "name": "The Organ Pipes",
+   "kind": "new",
+   "category": "hike",
+   "facts": [
+    {
+     "claim": "DOC (via Grahams Bush Walkway page): the Organ Pipes Track links with Grahams Bush Walkway and the summit of Mount Cargill; a small car park on Mount Cargill Road (via North Road) serves it.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/dunedin-area/things-to-do/grahams-bush-track/"
+    },
+    {
+     "claim": "DOC Dunedin walks leaflet / search: Organ Pipes Track about 20 min and 1 km one way from Mt Cargill Rd, a steep zigzag climb through bush to jointed basalt columns.",
+     "source": "https://www.doc.govt.nz/globalassets/documents/parks-and-recreation/tracks-and-walks/otago/dunedin-walks.pdf"
+    },
+    {
+     "claim": "OSM natural=rock 'Organ Pipes' and tourism=viewpoint 'Top of Organ Pipes' 33 m away.",
+     "source": "https://www.openstreetmap.org/node/1905034068"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "No DOC page of its own found (the earlier guessed path 404s); only the Dunedin walks leaflet PDF and the Grahams Bush page mention it. None recorded.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -45.80801,
+     "longitude": 170.56684
+    },
+    "source_point": [
+     -45.80801,
+     170.56684
+    ],
+    "source": "OSM natural=rock node 1905034068",
+    "ok": true,
+    "distance_m": 0
+   },
+   "unverified": [
+    "Hours 'Open 24 hours' is a judgement for an open track; steep and slippery sections - check DOC."
+   ]
+  },
+  {
+   "id": "dunedin-21",
+   "name": "Port Chalmers",
+   "kind": "new",
+   "category": "landmark",
+   "facts": [
+    {
+     "claim": "Wikivoyage Port Chalmers page exists and lists Orokonui; Wikipedia: Port Chalmers is Dunedin's main seaport, cruise ships call there (104 vessels in 2018-19), with Goat Island/Rakiriri and Quarantine Island in the harbour.",
+     "source": "https://en.wikipedia.org/wiki/Port_Chalmers"
+    },
+    {
+     "claim": "OSM place=quarter node for Port Chalmers 404 m from the placement point.",
+     "source": "https://www.openstreetmap.org/node/243637230"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A town with no single steward; none.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -45.8178,
+     "longitude": 170.6188
+    },
+    "source_point": [
+     -45.81511,
+     170.62231
+    ],
+    "source": "OSM place=quarter node 243637230",
+    "ok": false,
+    "distance_m": 404,
+    "suggested": {
+     "latitude": -45.81511,
+     "longitude": 170.62231
+    }
+   },
+   "suggested_bio": "Dunedin's harbour town, with a maritime museum, Goat Island views and a working port.",
+   "unverified": [
+    "Placement bio names 'galleries ... the Hotere Garden': not found in the Wikipedia page read; the Wikipedia text says artists, jewellers, sculptors and writers live there. Suggested bio is the safer wording."
+   ]
+  },
+  {
+   "id": "dunedin-22",
+   "name": "Allans Beach",
+   "kind": "new",
+   "category": "beach",
+   "facts": [
+    {
+     "claim": "DOC: about a 5-minute walk through dunes from the car park (10 min listed return) to a white sand beach; sea lions, fur seals, seabirds and occasionally penguins; dogs on a lead; carpark at the end of Allans Beach Road.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/otago-peninsula-area/things-to-do/allans-beach-walking-track/"
+    },
+    {
+     "claim": "OSM natural=beach relation 'Allans Beach' at the placement point.",
+     "source": "https://www.openstreetmap.org/relation/3738583"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/otago-peninsula-area/things-to-do/allans-beach-walking-track/",
+   "ticketUrl_note": "Loaded; title 'Allans Beach Walking Track: Otago peninsula area, Otago region'. DOC is the managing agency for the access track.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -45.8664,
+     "longitude": 170.6699
+    },
+    "source_point": [
+     -45.86641,
+     170.66987
+    ],
+    "source": "OSM natural=beach relation 3738583",
+    "ok": true,
+    "distance_m": 2
+   },
+   "suggested_bio": "A white-sand beach on the Otago Peninsula, reached by a short dune walk, where sea lions often rest.",
+   "unverified": [
+    "Placement bio 'sheltered' not in DOC text read (DOC warns of strong wind and currents); suggest 'A white-sand beach on the Otago Peninsula, reached by a short walk through dunes, with sea lions and seabirds.'"
+   ]
+  },
+  {
+   "id": "oamaru-6",
+   "name": "Moeraki",
+   "kind": "new",
+   "category": "landmark",
+   "facts": [
+    {
+     "claim": "DOC Moeraki area: Moeraki is 40 km south of Oamaru on SH1; Katiki Point, the Moeraki Boulders and campsites are in the area.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/moeraki-area/"
+    },
+    {
+     "claim": "OSM place=village node 'Moeraki' 829 m from the placement point (the placement used the Wikipedia village point).",
+     "source": "https://www.openstreetmap.org/node/338530778"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A fishing village with no single steward; DOC's Moeraki area page is for the surrounding reserves, not the village. None.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -45.362,
+     "longitude": 170.841
+    },
+    "source_point": [
+     -45.36099,
+     170.85151
+    ],
+    "source": "OSM place=village node 338530778",
+    "ok": false,
+    "distance_m": 829,
+    "suggested": {
+     "latitude": -45.36099,
+     "longitude": 170.85151
+    }
+   },
+   "suggested_bio": "A small fishing village on Moeraki Peninsula, near the Moeraki Boulders and Kātiki Point.",
+   "unverified": [
+    "Placement bio 'a lighthouse and restaurants' is not supported by the sources read: the lighthouse is the Katiki Point lighthouse (oamaru-9), 4 km away. Suggested bio avoids both.",
+    "Moeraki Boulders are a separate spot."
+   ]
+  },
+  {
+   "id": "oamaru-7",
+   "name": "Vanished World Centre",
+   "kind": "new",
+   "category": "museum",
+   "facts": [
+    {
+     "claim": "Museum of the Vanished World, 7 Campbell Street, Duntroon: Adult (18+) $18, Child (5-17) $9, under 5 free, Family $50; Gold Card $15. Open 10am-4pm, closed Mondays May-September, closed Good Friday, Christmas Day and Boxing Day; public-holiday opening depends on volunteers.",
+     "source": "https://www.vanishedworld.co.nz/visit-our-centre"
+    },
+    {
+     "claim": "Wikivoyage Oamaru: museum of the geology and fossils of the Waitaki district, fossilised whales, dolphins, giant penguins, sharks; free self-drive Vanished World Trail.",
+     "source": "https://en.wikivoyage.org/wiki/Oamaru"
+    },
+    {
+     "claim": "OSM tourism=museum node 'Vanished World' on Middleton Street, Duntroon.",
+     "source": "https://www.openstreetmap.org/node/4164564978"
+    }
+   ],
+   "hours": "10:00 AM - 4:00 PM (closed Mon May-Sep)",
+   "specialClosures": [
+    "12-25",
+    "12-26"
+   ],
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 18,
+   "costMax": 18,
+   "currency": "NZD",
+   "ticketUrl": "https://www.vanishedworld.co.nz/",
+   "ticketUrl_note": "Loaded; title 'Fossils | Vanished World Duntroon - New Zealand' (museum page title 'Museum of the Vanished World | Vanished World'). Operator's own site, listed by Wikivoyage.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -44.855,
+     "longitude": 170.6843
+    },
+    "source_point": [
+     -44.85499,
+     170.68431
+    ],
+    "source": "OSM tourism=museum node 4164564978",
+    "ok": true,
+    "distance_m": 1
+   },
+   "suggested_bio": "Duntroon's museum of Waitaki geology and fossils, including an ancient giant penguin and fossil whales.",
+   "unverified": [
+    "Closed Mondays May-Sep is seasonal so closedDays omitted; Good Friday/Christmas/Boxing Day are movable/fixed closures (12-25, 12-26 usable as specialClosures)."
+   ]
+  },
+  {
+   "id": "oamaru-8",
+   "name": "Elephant Rocks",
+   "kind": "new",
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "tripideas.nz: the rocks are on private farmland but open to the public by a short walking track; used as a filming location for The Chronicles of Narnia (2005); on the Vanished World Trail and the Alps 2 Ocean.",
+     "source": "https://www.tripideas.nz/place/elephant-rocks"
+    },
+    {
+     "claim": "Waitaki Whitestone Geopark spans the district; Vanished World Trail has about 20 sites from Duntroon (search summary).",
+     "source": "https://www.nzgeo.com/stories/a-vanished-world/"
+    },
+    {
+     "claim": "OSM information board 167 m and car park 169 m from the placement point.",
+     "source": "https://www.openstreetmap.org/node/13610607107"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "On private farmland with no single steward's page found; newzealand.com Duntroon page is blocked (Access Denied). None.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -44.8942,
+     "longitude": 170.6565
+    },
+    "source_point": [
+     -44.89413,
+     170.65864
+    ],
+    "source": "OSM car park way 1313551711 and info board",
+    "ok": true,
+    "distance_m": 169
+   },
+   "unverified": [
+    "Counted source: only Wikivoyage/DOC-type counting came from the placement; newzealand.com Duntroon page was blocked so not re-read here.",
+    "Private land: access times/rules not found; 'Open 24 hours' is a judgement."
+   ]
+  },
+  {
+   "id": "oamaru-9",
+   "name": "Katiki Point Walk",
+   "kind": "new",
+   "category": "hike",
+   "wiki": "Kātiki Point Lighthouse",
+   "facts": [
+    {
+     "claim": "DOC Kātiki Point Walking Track: 20 min return, drive about 4 km down Lighthouse Road to the lighthouse; open 7:30am-5:30pm; keep noise to a minimum.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/moeraki-area/things-to-do/katiki-point-walking-track"
+    },
+    {
+     "claim": "DOC Moeraki area: historic Katiki Point Lighthouse, Te Raka a Hineatea pa site, yellow-eyed penguins and fur seals.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/moeraki-area/"
+    },
+    {
+     "claim": "OSM man_made=lighthouse 'Katiki Point Lighthouse' 4 m from the placement point.",
+     "source": "https://www.openstreetmap.org/node/1052817376"
+    }
+   ],
+   "hours": "7:30 AM - 5:30 PM",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/moeraki-area/things-to-do/katiki-point-walking-track",
+   "ticketUrl_note": "Loaded; title 'Kātiki Point Walking Track: Moeraki area'. DOC is the managing agency.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -45.39186,
+     "longitude": 170.86617
+    },
+    "source_point": [
+     -45.39188,
+     170.86621
+    ],
+    "source": "OSM man_made=lighthouse node 1052817376",
+    "ok": true,
+    "distance_m": 4
+   },
+   "unverified": [
+    "Gate may close before dusk per a Rankers review (waitakinz.com also says 7:30am-5:30pm)."
+   ]
+  },
+  {
+   "id": "central-otago-5",
+   "name": "Alexandra",
+   "kind": "new",
+   "category": "landmark",
+   "facts": [
+    {
+     "claim": "Wikivoyage Alexandra (New Zealand): lists the information centre (alexinfocentre.co.nz), Central Stories and the Clock On The Hill among its sights.",
+     "source": "https://en.wikivoyage.org/wiki/Alexandra_(New_Zealand)"
+    },
+    {
+     "claim": "OSM place=town node 'Alexandra' 1.17 km from the placement point, beside Central Stories (169.3918).",
+     "source": "https://www.openstreetmap.org/node/174903102"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A town with no single steward (the i-SITE alexinfocentre.co.nz is a visitor centre, not the place); none.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -45.2492,
+     "longitude": 169.3798
+    },
+    "source_point": [
+     -45.25508,
+     169.39218
+    ],
+    "source": "OSM place=town node 174903102",
+    "ok": false,
+    "distance_m": 1169,
+    "suggested": {
+     "latitude": -45.25508,
+     "longitude": 169.39218
+    }
+   },
+   "unverified": [
+    "Placement point is 1.2 km west of the town centre; suggest the OSM town node.",
+    "Visit time a judgement."
+   ]
+  },
+  {
+   "id": "central-otago-6",
+   "name": "Cromwell",
+   "kind": "new",
+   "category": "landmark",
+   "facts": [
+    {
+     "claim": "Wikipedia: Cromwell is a hub town of the Central Otago wine region, known for stone fruit; irrigation scheme from the Kawarau.",
+     "source": "https://en.wikipedia.org/wiki/Cromwell,_New_Zealand"
+    },
+    {
+     "claim": "Wikivoyage Cromwell lists Cromwell Gorge, former goldfields and Lake Dunstan as its sights.",
+     "source": "https://en.wikivoyage.org/wiki/Cromwell_(New_Zealand)"
+    },
+    {
+     "claim": "OSM place=town relation 984 m from the placement point.",
+     "source": "https://www.openstreetmap.org/relation/11282933"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A town with no single steward; none.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -45.0459,
+     "longitude": 169.1956
+    },
+    "source_point": [
+     -45.03713,
+     169.19729
+    ],
+    "source": "OSM place=town relation 11282933",
+    "ok": false,
+    "distance_m": 984,
+    "suggested": {
+     "latitude": -45.03713,
+     "longitude": 169.19729
+    }
+   },
+   "suggested_bio": "A fruit-growing town beside Lake Dunstan and a base for the Central Otago wine region.",
+   "unverified": [
+    "Placement bio 'where the Kawarau and Clutha meet' is geographically true (Lake Dunstan) but not read in a fetched source; Wikipedia supports stone fruit and the wine region. Suggested bio uses those."
+   ]
+  },
+  {
+   "id": "central-otago-8",
+   "name": "Bannockburn",
+   "kind": "new",
+   "category": "landmark",
+   "facts": [
+    {
+     "claim": "Wikipedia: Bannockburn is home to many vineyards and stonefruit orchards; a 'Wine and tourism' section; gold-sluicing history.",
+     "source": "https://en.wikipedia.org/wiki/Bannockburn,_New_Zealand"
+    },
+    {
+     "claim": "OSM place=village node 126 m from the placement point.",
+     "source": "https://www.openstreetmap.org/node/1982710337"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A locality with no single steward; none.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -45.0892,
+     "longitude": 169.1611
+    },
+    "source_point": [
+     -45.08837,
+     169.16001
+    ],
+    "source": "OSM place=village node 1982710337",
+    "ok": true,
+    "distance_m": 126
+   },
+   "unverified": [
+    "Cellar-door opening hours are per winery, not recorded."
+   ]
+  },
+  {
+   "id": "central-otago-9",
+   "name": "Central Stories",
+   "kind": "new",
+   "category": "museum",
+   "facts": [
+    {
+     "claim": "Operator site: opening hours Mon-Sun 10am-4pm, closed Good Friday and Christmas Day; ANZAC Day open 1-4pm.",
+     "source": "https://centralstories.com/"
+    },
+    {
+     "claim": "newzealand.com / Kotuia listing (search snippets): entry to the museum and gallery is by donation.",
+     "source": "https://www.kotuia.org.nz/organisation-page/org-page-3361/"
+    },
+    {
+     "claim": "Wikivoyage Alexandra lists Central Stories with url centralstories.com; OSM tourism=museum node 4 m from the placement point.",
+     "source": "https://en.wikivoyage.org/wiki/Alexandra_(New_Zealand)"
+    }
+   ],
+   "hours": "10:00 AM - 4:00 PM",
+   "specialClosures": [
+    "12-25"
+   ],
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": "https://centralstories.com/",
+   "ticketUrl_note": "Loaded; title 'Central Stories Museum and Art Gallery - Central Otago's regional Museum, Art Gallery and Gift Shop'. Operator's own site.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -45.25414,
+     "longitude": 169.39183
+    },
+    "source_point": [
+     -45.25411,
+     169.3918
+    ],
+    "source": "OSM tourism=museum node 528514980",
+    "ok": true,
+    "distance_m": 4
+   },
+   "unverified": [
+    "Free rests on a donation-entry listing (Kotuia, newzealand.com snippet); the operator page had no price text."
+   ]
+  },
+  {
+   "id": "central-otago-10",
+   "name": "Naseby",
+   "kind": "new",
+   "category": "historic",
+   "facts": [
+    {
+     "claim": "Wikipedia: Naseby's centre is a registered historic area with many heritage buildings; one of New Zealand's principal curling venues; a forest track follows an old water race.",
+     "source": "https://en.wikipedia.org/wiki/Naseby,_New_Zealand"
+    },
+    {
+     "claim": "OSM place=village node 1.36 km from the placement point (Wikipedia point is rounded).",
+     "source": "https://www.openstreetmap.org/node/354653289"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A village with no single steward; none.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -45.0167,
+     "longitude": 170.1333
+    },
+    "source_point": [
+     -45.02498,
+     170.14601
+    ],
+    "source": "OSM place=village node 354653289",
+    "ok": false,
+    "distance_m": 1358,
+    "suggested": {
+     "latitude": -45.02498,
+     "longitude": 170.14601
+    }
+   },
+   "unverified": [
+    "Placement point is the rounded Wikipedia point 1.4 km from the village: suggest the OSM node.",
+    "Counted source: not independently confirmed in the pages read (Wikipedia only); Wikivoyage Naseby page was not loadable."
+   ]
+  },
+  {
+   "id": "central-otago-12",
+   "name": "Lake Dunstan",
+   "kind": "new",
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "OSM water=reservoir relation 'Lake Dunstan'; Lake Dunstan Cycle Trail ways run along it from Cromwell.",
+     "source": "https://www.openstreetmap.org/relation/13761733"
+    },
+    {
+     "claim": "Wikivoyage Cromwell lists Lake Dunstan among its sights.",
+     "source": "https://en.wikivoyage.org/wiki/Cromwell_(New_Zealand)"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A reservoir with no single steward; none.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -45.022,
+     "longitude": 169.218
+    },
+    "source_point": [
+     -45.05246,
+     169.20119
+    ],
+    "source": "OSM reservoir relation centroid 13761733 (in water is correct for a lake)",
+    "ok": true,
+    "distance_m": 3636
+   },
+   "unverified": [
+    "Bio says 'a lake behind the Clyde Dam': not read in a fetched source; Wikipedia lists the Clyde Dam on the Clutha, consistent."
+   ]
+  },
+  {
+   "id": "central-otago-13",
+   "name": "Bannockburn Sluicings Track",
+   "kind": "new",
+   "category": "hike",
+   "facts": [
+    {
+     "claim": "DOC: 3.5 km loop, 1 hr 30 min; dams, water races, rock tailings and caves left by the goldminers, explored on foot or bike; access from Felton Road.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/bannockburn-area/things-to-do/bannockburn-sluicings-track/"
+    },
+    {
+     "claim": "OSM protected_area 'Bannockburn Sluicings Historic Reserve' at the placement point.",
+     "source": "https://www.openstreetmap.org/relation/18179877"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/bannockburn-area/things-to-do/bannockburn-sluicings-track/",
+   "ticketUrl_note": "Loaded; title 'Bannockburn Sluicings Track: Bannockburn area, Otago region'. DOC is the managing agency.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -45.08205,
+     "longitude": 169.14443
+    },
+    "source_point": [
+     -45.08205,
+     169.14443
+    ],
+    "source": "OSM Bannockburn Sluicings Historic Reserve relation 18179877",
+    "ok": true,
+    "distance_m": 0
+   },
+   "unverified": [
+    "Hours 'Open 24 hours' is a judgement for an open reserve; DOC warns of old mine shafts."
+   ]
+  },
+  {
+   "id": "queenstown-16",
+   "name": "Kiwi Birdlife Park",
+   "kind": "new",
+   "category": "entertainment",
+   "facts": [
+    {
+     "claim": "Operator site: opening hours summer 9:30am-6:30pm (last entry 5:45pm), winter 9:30am-5pm (last entry 4:15pm), 7 days, closed Christmas Day.",
+     "source": "https://kiwibird.co.nz/visit/plan-your-visit/"
+    },
+    {
+     "claim": "newzealand.com/booking listings (search snippets): adult $64, child (15 and under) $32; admission includes a self-guided audio tour, Kiwi Encounter and Conservation Show. The operator's own price page did not render prices.",
+     "source": "https://www.newzealand.com/sg/plan/business/admission/"
+    },
+    {
+     "claim": "OSM tourism=zoo way 'Kiwi Birdlife Park' 7 m from the placement point.",
+     "source": "https://www.openstreetmap.org/way/248085277"
+    }
+   ],
+   "hours": "9:30 AM - 6:30 PM (5:00 PM in winter)",
+   "specialClosures": [
+    "12-25"
+   ],
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2.5,
+   "costMin": 64,
+   "costMax": 64,
+   "currency": "NZD",
+   "ticketUrl": "https://kiwibird.co.nz/",
+   "ticketUrl_note": "Loaded; title 'Kiwi Park Queenstown | Wildlife Sanctuary'. Operator's own site; the park now brands itself 'Kiwi Park'.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -45.0274,
+     "longitude": 168.657
+    },
+    "source_point": [
+     -45.02743,
+     168.65708
+    ],
+    "source": "OSM tourism=zoo way 248085277",
+    "ok": true,
+    "distance_m": 7
+   },
+   "suggested_bio": "A wildlife park in Queenstown with kiwi encounters, native birds and a daily conservation show.",
+   "unverified": [
+    "Price $64 is from aggregator snippets (one older listing said $55; resellers $37-38 are deals): confirm on the operator site.",
+    "Name: the operator now says 'Kiwi Park Queenstown'; Wikipedia/OSM still 'Kiwi Birdlife Park'. Owner call; the placement already dropped the destination."
+   ]
+  },
+  {
+   "id": "queenstown-17",
+   "name": "Moke Lake",
+   "kind": "new",
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "DOC: Moke Lake Loop Track is a 6 km loop (2-3 hr) starting at the Moke Lake campsite; boardwalk over a wetland; DOC conservation campsite needs a booking; turn off Glenorchy Road about 6 km west of Queenstown, then about 7 km of gravel (4WD-only in winter conditions).",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/queenstown-area/things-to-do/moke-lake-loop-track/"
+    },
+    {
+     "claim": "OSM water=lake way 'Moke Lake' at the placement point.",
+     "source": "https://www.openstreetmap.org/way/8109079"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/queenstown-area/things-to-do/moke-lake-loop-track/",
+   "ticketUrl_note": "Loaded; title 'Moke Lake Loop Track: Queenstown area, Otago region'. DOC is the managing agency.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -45.00366,
+     "longitude": 168.56384
+    },
+    "source_point": [
+     -45.00366,
+     168.56384
+    ],
+    "source": "OSM lake way 8109079 (in water is correct); campsite/loop start is about 700 m SW",
+    "ok": true,
+    "distance_m": 1
+   },
+   "unverified": [
+    "Campsite fee not recorded (day visit is free)."
+   ]
+  },
+  {
+   "id": "queenstown-18",
+   "name": "Queenstown Hill",
+   "kind": "new",
+   "category": "hike",
+   "facts": [
+    {
+     "claim": "DOC Queenstown day walks brochure: Queenstown Hill Time Walk starts and finishes at Belfast Terrace, 2-3 hr, 5.4 km return, climbing about 500 m to the summit (Te Tapunui) with lake views.",
+     "source": "https://www.doc.govt.nz/globalassets/documents/parks-and-recreation/tracks-and-walks/otago/queenstown-day-walks-bike-trails-brochure.pdf"
+    },
+    {
+     "claim": "OSM natural=peak node 'Queenstown Hill' 4 m from the placement point.",
+     "source": "https://www.openstreetmap.org/node/3235799661"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "DOC has no web page for the track (the guessed path 404s); only the day walks brochure PDF. None.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -45.0087,
+     "longitude": 168.6924
+    },
+    "source_point": [
+     -45.00867,
+     168.69242
+    ],
+    "source": "OSM natural=peak node 3235799661",
+    "ok": true,
+    "distance_m": 4
+   },
+   "unverified": [
+    "The DOC brochure puts the trailhead at Belfast Terrace; the placement point is the summit (OSM peak). A summit pin is fine for a hill, trailhead point not looked up.",
+    "Hours 'Open 24 hours' judgement."
+   ]
+  },
+  {
+   "id": "queenstown-19",
+   "name": "Lakes District Museum",
+   "kind": "new",
+   "category": "museum",
+   "facts": [
+    {
+     "claim": "Operator site: open everyday 9am-5pm; Adults $14, Child (primary/high school) $6, under 5 free, Seniors (65+) $12, Student $10, Family (2 adults, 3 children) $30.",
+     "source": "https://www.lakesdistrictmuseum.nz/"
+    },
+    {
+     "claim": "OSM tourism=museum node 7 m from the placement point; Wikivoyage Arrowtown lists it.",
+     "source": "https://www.openstreetmap.org/node/776040243"
+    }
+   ],
+   "hours": "9:00 AM - 5:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "costMin": 14,
+   "costMax": 14,
+   "currency": "NZD",
+   "ticketUrl": "https://www.lakesdistrictmuseum.nz/",
+   "ticketUrl_note": "Loaded; title 'Lakes District Museum | Queenstown & Arrowtown'. Operator's own site.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -44.93854,
+     "longitude": 168.83339
+    },
+    "source_point": [
+     -44.93851,
+     168.83331
+    ],
+    "source": "OSM tourism=museum node 776040243",
+    "ok": true,
+    "distance_m": 7
+   },
+   "suggested_bio": "Arrowtown's museum and information centre, telling the story of the town and its gold rush.",
+   "unverified": [
+    "Christmas Day closure not read."
+   ]
+  },
+  {
+   "id": "wanaka-8",
+   "name": "Cardrona Alpine Resort",
+   "kind": "new",
+   "category": "entertainment",
+   "facts": [
+    {
+     "claim": "Official Cardrona & Treble Cone site: day and multi-day lift passes from $184 (adult daily price); learner pass from $99; half day from $145; sightseeing from $40. Winter season (a reseller lists 13 Jun-11 Oct 2026); summer riding returns December 2026.",
+     "source": "https://cardrona-treblecone.com/passes/lift-passes"
+    },
+    {
+     "claim": "Official site: summer mountain biking, mountain carting and lift-accessed walks at Cardrona; chairlifts McDougall's Chondola and Whitestar Express.",
+     "source": "https://cardrona-treblecone.com/summer"
+    },
+    {
+     "claim": "OSM leisure=sports_centre way 'Cardrona Alpine Resort' on Cardrona Skifield Road.",
+     "source": "https://www.openstreetmap.org/way/482928467"
+    }
+   ],
+   "hours": "Winter season (lifts roughly June-October); summer riding December-April",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "costMin": 184,
+   "costMax": 184,
+   "currency": "NZD",
+   "ticketUrl": "https://cardrona-treblecone.com/cardrona",
+   "ticketUrl_note": "Loaded; title 'Cardrona Ski Resort New Zealand ... | Cardrona & Treble Cone NZ'. Operator's own site (www.cardrona.com redirects to cardrona-treblecone.com).",
+   "coordinates_check": {
+    "current": {
+     "latitude": -44.8657,
+     "longitude": 168.9498
+    },
+    "source_point": [
+     -44.8657,
+     168.94979
+    ],
+    "source": "OSM leisure=sports_centre way 482928467 (centroid; base area on Cardrona Skifield Road)",
+    "ok": true,
+    "distance_m": 1
+   },
+   "suggested_bio": "A ski field in the Cardrona Valley with a long winter season, plus summer mountain biking and carting.",
+   "unverified": [
+    "$184 is the 'from' day/multi-day price for both mountains (dynamic pricing); daily lift hours not on the pages read.",
+    "Placement bio 'near Wanaka' is fine (about 35 km)."
+   ]
+  },
+  {
+   "id": "wanaka-9",
+   "name": "Treble Cone",
+   "kind": "new",
+   "category": "entertainment",
+   "facts": [
+    {
+     "claim": "Official Cardrona & Treble Cone Treble Cone page: 4 km groomed run, highest lifted point 1960 m; 'Winter Skiing & Summer Biking' now offered; summer opening hours listed 10:30am-3pm (weather permitting) and 11am-4pm for different offerings.",
+     "source": "https://cardrona-treblecone.com/treblecone"
+    },
+    {
+     "claim": "Lift passes from $184 per day (adult, both mountains); a reseller lists the 2026 season as 27 Jun-27 Sep.",
+     "source": "https://cardrona-treblecone.com/passes/lift-passes"
+    },
+    {
+     "claim": "OSM leisure=sports_centre node 'Treble Cone Ski Area' on Treble Cone Ski Field Access Road, 100 m from the placement point.",
+     "source": "https://www.openstreetmap.org/node/2642224977"
+    }
+   ],
+   "hours": "Winter season (lifts roughly late June-September)",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "costMin": 184,
+   "costMax": 184,
+   "currency": "NZD",
+   "ticketUrl": "https://cardrona-treblecone.com/treblecone",
+   "ticketUrl_note": "Loaded; title 'Treble Cone Ski Field - Skiing & Snowboarding | Wanaka NZ | Cardrona & Treble Cone NZ'. Operator's own site (www.treblecone.com redirects here).",
+   "coordinates_check": {
+    "current": {
+     "latitude": -44.63403,
+     "longitude": 168.89624
+    },
+    "source_point": [
+     -44.63315,
+     168.89643
+    ],
+    "source": "OSM sports_centre node 2642224977 (the access-road end; the OSM peak is 1.9 km away)",
+    "ok": true,
+    "distance_m": 98
+   },
+   "unverified": [
+    "Treble Cone-only day price not separated from the combined 'from $184'; weekday adult was $179 per a price aggregator (unverified)."
+   ]
+  },
+  {
+   "id": "wanaka-10",
+   "name": "Cardrona Bra Fence",
+   "kind": "new",
+   "category": "landmark",
+   "facts": [
+    {
+     "claim": "OSM amenity=items_collection_site 'Cardrona Bra Fence' on Cardrona Valley Road.",
+     "source": "https://www.openstreetmap.org/node/4595701789"
+    },
+    {
+     "claim": "OSM names the fence on Cardrona Valley Road; the placement records 15,093 Wikipedia views.",
+     "source": "https://www.openstreetmap.org/node/4595701789"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A roadside fence with no operator; none.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -44.8636,
+     "longitude": 169.0188
+    },
+    "source_point": [
+     -44.8636,
+     169.01882
+    ],
+    "source": "OSM node 4595701789",
+    "ok": true,
+    "distance_m": 2
+   },
+   "unverified": [
+    "Counted visitor source not located in this pass (Wikivoyage has no Cardrona page); a quirky roadside icon per COVERAGE.md.",
+    "A roadside bra fence is a quirky roadside icon, a ten-minute stop; sources for the bio's 'bras' claim: the OSM name only."
+   ]
+  },
+  {
+   "id": "wanaka-11",
+   "name": "Lake Hāwea",
+   "kind": "new",
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "OSM: Lake Hāwea water relation, township place node at -44.61267,169.26405 and lookouts on the Makarora-Lake Hāwea road.",
+     "source": "https://www.openstreetmap.org/relation/443320"
+    },
+    {
+     "claim": "Wikipedia: Lake Hāwea is a lake in the Otago region (centroid -44.500, 169.283, which is rounded and 7.5 km from OSM's centroid).",
+     "source": "https://en.wikipedia.org/wiki/Lake_Hāwea"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A lake and township with no single steward; none.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -44.5,
+     "longitude": 169.2833
+    },
+    "source_point": [
+     -44.61267,
+     169.26405
+    ],
+    "source": "OSM place=town node 176718610 (Lake Hāwea township at the southern foreshore, where visitors arrive)",
+    "ok": false,
+    "distance_m": 13000,
+    "suggested": {
+     "latitude": -44.61267,
+     "longitude": 169.26405
+    }
+   },
+   "suggested_bio": "A big glacial lake and quiet township north of Wānaka, with a lookout and lakeside walks.",
+   "unverified": [
+    "Placement point is Wikipedia's rounded lake centroid in the lake's middle; suggest the township/foreshore point (about 13 km south).",
+    "Bio 'lake and forest walks' not found in a fetched source."
+   ]
+  },
+  {
+   "id": "wanaka-12",
+   "name": "Diamond Lake",
+   "kind": "new",
+   "category": "hike",
+   "facts": [
+    {
+     "claim": "DOC Diamond Lake Loop Track: 1.5 km loop, 30-45 min from the car park, 18.5 km west of Wanaka on the Wanaka-Mt Aspiring Road; the Rocky Mountain Track (summit lookouts over Lake Wanaka, about 3 hr) starts from the same car park.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/diamond-lake-and-hospital-flat/things-to-do/diamond-lake-loop-track/"
+    },
+    {
+     "claim": "OSM amenity=parking 'Diamond Lake Carpark' at the placement point.",
+     "source": "https://www.openstreetmap.org/way/215158234"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/diamond-lake-and-hospital-flat/",
+   "ticketUrl_note": "Loaded; title 'Diamond Lake and Hospital Flat: Places to go in Otago' (the Diamond Lake Loop Track page also loads). DOC is the managing agency.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -44.65113,
+     "longitude": 168.95941
+    },
+    "source_point": [
+     -44.65113,
+     168.95941
+    ],
+    "source": "OSM Diamond Lake Carpark way 215158234",
+    "ok": true,
+    "distance_m": 0
+   },
+   "suggested_bio": "A small lake with a 1.5 km loop and tracks to lookouts over Lake Wānaka, 18 km west of town.",
+   "unverified": [
+    "Bio 'loop track and a lookout' is supported: Loop Track plus Lake Wanaka Lookout Track."
+   ]
+  },
+  {
+   "id": "wanaka-13",
+   "name": "National Transport and Toy Museum",
+   "kind": "new",
+   "category": "museum",
+   "facts": [
+    {
+     "claim": "Operator site: 8.30am-5pm daily, open every day except Christmas; Admission Adult $23, Senior 65+ $20, Child $6, under 5 free, Family $54; four buildings, 600+ vehicles, 23 aircraft, 100,000+ toys.",
+     "source": "https://www.nttmuseumwanaka.co.nz/"
+    },
+    {
+     "claim": "OSM tourism=museum node 6 m from the placement point.",
+     "source": "https://www.openstreetmap.org/node/2662602335"
+    }
+   ],
+   "hours": "8:30 AM - 5:00 PM",
+   "specialClosures": [
+    "12-25"
+   ],
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "costMin": 23,
+   "costMax": 23,
+   "currency": "NZD",
+   "ticketUrl": "https://www.nttmuseumwanaka.co.nz/",
+   "ticketUrl_note": "Loaded; title 'National Transport and Toy Museum, Wanaka NZ'. Operator's own site (www.nttmuseum.co.nz redirects here).",
+   "coordinates_check": {
+    "current": {
+     "latitude": -44.7226,
+     "longitude": 169.2398
+    },
+    "source_point": [
+     -44.72265,
+     169.23982
+    ],
+    "source": "OSM tourism=museum node 2662602335",
+    "ok": true,
+    "distance_m": 6
+   },
+   "suggested_bio": "A museum of classic cars, aircraft, trucks and toys beside Wānaka airport.",
+   "unverified": []
+  },
+  {
+   "id": "wanaka-14",
+   "name": "Warbirds and Wheels",
+   "kind": "new",
+   "category": "museum",
+   "recommend": "DROP: the attraction closed in September 2021 and the premises are not a visitor attraction (National Transport and Toy Museum, wanaka-13, is the open museum beside the airport). Remove from the placement.",
+   "facts": [
+    {
+     "claim": "Wikipedia: the Warbirds and Wheels Museum was dissolved in September 2021 after a co-owner's death and the COVID-19 drop in tourism; the museum closed.",
+     "source": "https://en.wikipedia.org/wiki/Warbirds_and_Wheels_Museum"
+    },
+    {
+     "claim": "The Wanaka App, 15 Oct 2021: 'Warbirds and Wheels museum closes after ten years'.",
+     "source": "https://wanakaapp.nz/NewsStory/warbirds-and-wheels-museum-closes-after-ten-years/6167b2e1d1ace3002bde36d0"
+    },
+    {
+     "claim": "The domain warbirdsandwheels.com now 301-redirects to an unrelated site (albertlee2020.com) and warbirdsandwheels.co.nz to a gambling portal: do NOT use as a ticketUrl.",
+     "source": "http://warbirdsandwheels.com/"
+    }
+   ],
+   "hours": null,
+   "visitHoursMin": 0,
+   "visitHoursMax": 0,
+   "ticketUrl": null,
+   "ticketUrl_note": "Do not link: the old domain is hijacked (redirects to an unrelated site). The museum no longer exists.",
+   "unverified": [
+    "Closed 2021: stale Wikivoyage listing. A search-engine snippet still lists 9-5 hours; that is old."
+   ]
+  },
+  {
+   "id": "wanaka-15",
+   "name": "Snow Farm",
+   "kind": "new",
+   "category": "entertainment",
+   "facts": [
+    {
+     "claim": "Rezdy booking page (Snow Farm's own booking system, via search): full-day trail pass and rentals from $106; three-day trail pass $155; 55 km of trails, 9am-4pm. Search results describe Snow Farm as New Zealand's cross-country ski area on Cardrona Valley Road, with snow play and snowshoeing, mountain biking and walking in summer.",
+     "source": "https://snowfarmnz.rezdy.com/400135/trail-pass-rental-combo-full-day"
+    },
+    {
+     "claim": "OSM leisure=sports_centre relation 'Snow Farm' on Snow Farm Access Rd; Snow Farm Lodge/learners area 1.2 km west at -44.87771,169.09232.",
+     "source": "https://www.openstreetmap.org/relation/19870279"
+    }
+   ],
+   "hours": "Winter season, 9:00 AM - 4:00 PM (trail pass)",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "costMin": 106,
+   "costMax": 106,
+   "currency": "NZD",
+   "ticketUrl": null,
+   "ticketUrl_note": "BLOCKED/UNRESOLVED: snowfarmnz.com loads only 'Click here to enter' and looks hijacked/parked (title 'snowfarmnz.com', no content); snowfarmnz.co.nz and www.snowfarm.co.nz fail to load from here. The real site is probably snowfarmnz.co.nz (search results point to it) - orchestrator to check in a real browser. Do not use snowfarmnz.com until verified.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -44.8787,
+     "longitude": 169.1067
+    },
+    "source_point": [
+     -44.87873,
+     169.10668
+    ],
+    "source": "OSM leisure=sports_centre relation 19870279 (Snow Farm area); lodge/learners at -44.87771,169.09232",
+    "ok": true,
+    "distance_m": 5
+   },
+   "suggested_bio": "A cross-country ski area on Cardrona Valley Road, with groomed trails, snow play and huts.",
+   "unverified": [
+    "Trail-pass-only adult price not seen on any page read: $106 is the full-day trail pass WITH rentals (Rezdy, search snippet), the three-day pass-only is $155. Use $106 as the typical adult day price or confirm on the real site.",
+    "Hours 9am-4pm are the trail-pass window on the Rezdy listing; lodge/cafe hours not found.",
+    "Placement bio 'a snow park ... snow play' is wrong: Snow Farm is a cross-country ski area; it must be rewritten."
+   ]
+  },
+  {
+   "id": "mount-aspiring-4",
+   "name": "Thunder Creek Falls",
+   "kind": "new",
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "DOC: 5 min return; car park on the Haast Highway (SH6), 50 km south of Haast township (i.e. at the Otago end of Haast Pass); toilets at Pleasant Flat Campsite 5 km north.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/mount-aspiring-national-park/things-to-do/tracks/thunder-creek-falls/"
+    },
+    {
+     "claim": "OSM waterway=waterfall node at the placement point.",
+     "source": "https://www.openstreetmap.org/node/1063575872"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/mount-aspiring-national-park/things-to-do/tracks/thunder-creek-falls/",
+   "ticketUrl_note": "Loaded; title 'Thunder Creek Falls: Mount Aspiring National Park, Otago region'. DOC is the managing agency.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -44.0384,
+     "longitude": 169.36527
+    },
+    "source_point": [
+     -44.0384,
+     169.36527
+    ],
+    "source": "OSM waterfall node 1063575872",
+    "ok": true,
+    "distance_m": 0
+   },
+   "unverified": [
+    "Fall height: a DOC brochure says 28 m, a DOC blog 96 m: bio avoids a height.",
+    "'Open 24 hours' is a judgement for a roadside walk."
+   ]
+  },
+  {
+   "id": "mount-aspiring-5",
+   "name": "Rees-Dart Track",
+   "kind": "new",
+   "category": "hike",
+   "facts": [
+    {
+     "claim": "DOC: 63 km one way, 4-5 days; the track is a circuit via Cascade Saddle. ALERT: a large slip in Dart Valley between Daleys Flat Hut and Chinamans Bluff has made the circuit impassable; 'Dart Track is closed indefinitely'. Trampers can walk Muddy Creek to Dart Hut and back via the Rees Valley, or fly over the slip (helicopter, pre-booked).",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/mount-aspiring-national-park/things-to-do/tracks/rees-dart-track/"
+    },
+    {
+     "claim": "DOC: Rees end car park at Muddy Creek, Dart end near Paradise; huts are fee-paying (Shelter Rock Hut category Serviced; no booking, first come first served).",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/mount-aspiring-national-park/things-to-do/tracks/rees-dart-track/"
+    },
+    {
+     "claim": "OSM amenity=parking 'Muddy Creek Car Park' at the placement point.",
+     "source": "https://www.openstreetmap.org/node/11762883169"
+    }
+   ],
+   "hours": "Open 24 hours (multi-day tramp)",
+   "visitHoursMin": 96,
+   "visitHoursMax": 120,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/mount-aspiring-national-park/things-to-do/tracks/rees-dart-track/",
+   "ticketUrl_note": "Loaded; title 'Rees-Dart Track: Mount Aspiring National Park, Otago region'. DOC is the managing agency.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -44.69595,
+     "longitude": 168.47001
+    },
+    "source_point": [
+     -44.69595,
+     168.47001
+    ],
+    "source": "OSM Muddy Creek Car Park node 11762883169 (Rees end)",
+    "ok": true,
+    "distance_m": 0
+   },
+   "suggested_bio": "A 4 to 5 day tramp up the Rees and down the Dart valley; the Dart section is closed after a slip, so only part can be walked.",
+   "unverified": [
+    "Cost: walking is free but DOC huts are fee-paying (price not read); set free: true only if the owner treats hut fees as optional (campers need no ticket). Typical hut fee is an owner/second-check item.",
+    "Placement bio says 'from Paradise to the Dart Glacier, a DOC Major Track': the 'Major Track' label was not on the DOC page; the circuit is currently impassable (slip). Bio should say so or the spot be held until reopened.",
+    "Visit hours are tramp days converted to hours (4-5 days)."
+   ]
+  },
+  {
+   "id": "catlins-11",
+   "name": "Matai Falls",
+   "kind": "new",
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "DOC: 1.2 km return, 40 min, through regenerating forest to a 10 m waterfall; signposted on Papatowai Highway, 18 km south of Owaka, with roadside parking.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/catlins-coastal-area/things-to-do/matai-falls-walk/"
+    },
+    {
+     "claim": "OSM: Matai Falls car park at the placement point; the waterfall node is 377 m away.",
+     "source": "https://www.openstreetmap.org/node/1063574736"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/catlins-coastal-area/things-to-do/matai-falls-walk/",
+   "ticketUrl_note": "Loaded; title 'Matai Falls Walk: Catlins coastal area, Otago region'. DOC is the managing agency.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -46.50603,
+     "longitude": 169.48585
+    },
+    "source_point": [
+     -46.50307,
+     169.48827
+    ],
+    "source": "OSM waterfall node 1063574736; placement is the car park (trailhead)",
+    "ok": true,
+    "distance_m": 377
+   },
+   "unverified": []
+  },
+  {
+   "id": "catlins-12",
+   "name": "Jacks Blowhole Track",
+   "kind": "new",
+   "category": "hike",
+   "facts": [
+    {
+     "claim": "DOC: 3 km return; the blowhole is about 10 km from Owaka via Pounawea Road, Hinahina Road and Jacks Bay Road; best on stormy days, staircase up to a platform above the blowhole.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/catlins-coastal-area/things-to-do/jacks-blowhole-track/"
+    },
+    {
+     "claim": "OSM: the car park is at the placement point; the blowhole and viewpoint are about 1.05 km away.",
+     "source": "https://www.openstreetmap.org/node/4641493089"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/catlins-coastal-area/things-to-do/jacks-blowhole-track/",
+   "ticketUrl_note": "Loaded; title 'Jacks Blowhole Track: Catlins Coastal area, Otago region'. DOC is the managing agency.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -46.49913,
+     "longitude": 169.70871
+    },
+    "source_point": [
+     -46.50619,
+     169.6994
+    ],
+    "source": "OSM blowhole node 4641493089; placement is the trailhead car park",
+    "ok": true,
+    "distance_m": 1060
+   },
+   "unverified": [
+    "A DOC media release (Oct 2024, via search) listed this track as storm-damaged and closed; the current DOC page shows no alert in the text read: confirm before shipping.",
+    "Duration not stated beyond 3 km return; visit time is a judgement."
+   ]
+  },
+  {
+   "id": "paradise",
+   "name": "Paradise",
+   "kind": "new",
+   "category": "landmark",
+   "facts": [
+    {
+     "claim": "Wikivoyage Glenorchy and the placement record Paradise as the locality where the Dart valley road ends and the Rees-Dart track begins (owner coordinates -44.724695,168.363148).",
+     "source": "https://en.wikivoyage.org/wiki/Glenorchy"
+    },
+    {
+     "claim": "OSM Glenorchy-Paradise Road ways run to the same area.",
+     "source": "https://www.openstreetmap.org/way/166235112"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A locality with no single steward; none.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -44.724695,
+     "longitude": 168.363148
+    },
+    "source_point": [
+     -44.724695,
+     168.363148
+    ],
+    "source": "owner-given coordinates (benchmark spot)",
+    "ok": true,
+    "distance_m": 0
+   },
+   "unverified": [
+    "Counted source: the placement cites Wikivoyage; the Glenorchy Wikivoyage text read did not itemise 'Paradise' in a See listing (only lodges named 'Little Paradise Lodge'), so re-confirm."
+   ]
+  },
+  {
+   "id": "greenstone-and-caples-tracks",
+   "name": "Greenstone and Caples Tracks",
+   "kind": "new",
+   "category": "hike",
+   "facts": [
+    {
+     "claim": "DOC: moderate 4-day round trip linking the Caples and Greenstone valleys by McKellar Saddle; start at the car park at the end of Greenstone Road, 86 km from Queenstown via Glenorchy; all huts have a fee.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/greenstone-and-caples-conservation-areas/things-to-do/greenstone-and-caples-tracks/"
+    },
+    {
+     "claim": "OSM amenity=parking 'Greenstone Car Park' at the placement point.",
+     "source": "https://www.openstreetmap.org/way/1311747770"
+    }
+   ],
+   "hours": "Open 24 hours (multi-day tramp)",
+   "visitHoursMin": 72,
+   "visitHoursMax": 96,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/greenstone-and-caples-conservation-areas/things-to-do/greenstone-and-caples-tracks/",
+   "ticketUrl_note": "Loaded; title 'Greenstone and Caples tracks: Greenstone & Caples Conservation Areas, Otago region'. DOC is the managing agency.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -44.93411,
+     "longitude": 168.34505
+    },
+    "source_point": [
+     -44.93411,
+     168.34505
+    ],
+    "source": "OSM Greenstone Car Park way 1311747770",
+    "ok": true,
+    "distance_m": 0
+   },
+   "unverified": [
+    "Walking is free; hut fees apply (amounts not read). 'free: true' with hut fees an owner call.",
+    "Visit hours = 3-4 days (DOC says 4 days)."
+   ]
+  },
+  {
+   "id": "lindis-pass",
+   "name": "Lindis Pass",
+   "kind": "new",
+   "category": "viewpoint",
+   "facts": [
+    {
+     "claim": "OSM: Ōmakō / Lindis Pass mountain pass node and 'Lindis Pass Summit Lookout' tourism=viewpoint 395 m from the placement point.",
+     "source": "https://www.openstreetmap.org/node/4773885821"
+    },
+    {
+     "claim": "OSM: Lindis Pass Scenic Reserve protected area on the pass.",
+     "source": "https://www.openstreetmap.org/relation/18541104"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A State Highway 8 pass; no operator. DOC has a Lindis Pass Scenic Reserve but no page was located; none.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -44.5878,
+     "longitude": 169.6478
+    },
+    "source_point": [
+     -44.58885,
+     169.64304
+    ],
+    "source": "OSM tourism=viewpoint node 4773885821 (Summit Lookout); pass node 1090739488",
+    "ok": true,
+    "distance_m": 395
+   },
+   "unverified": [
+    "Counted visitor source not located in this pass (placement cites the Wikipedia summit); a roadside stop - verify via Wikivoyage/DOC before keeping."
+   ]
+  },
+  {
+   "id": "queenstown-3",
+   "name": "Shotover Jet",
+   "kind": "existing",
+   "category": "entertainment",
+   "facts": [
+    {
+     "claim": "Individual pass: Adult $199, Child $109; family pass $507 (2 adults + 2 children). Prices valid to 30 Sep 2027. Opening hours 9am-5pm, first/last trip 9:30am / 4pm, trip length 25 min, check-in 30 min prior, departures every 30 min.",
+     "source": "https://www.shotoverjet.com/prices/individual/"
+    },
+    {
+     "claim": "FAQ: adventure lasts about 25 minutes; operates every day of the year (weather permitting) except Christmas Day; the only company permitted in the Shotover canyons.",
+     "source": "https://www.shotoverjet.com/experience/faqs/"
+    }
+   ],
+   "hours": "9:00 AM - 5:00 PM",
+   "specialClosures": [
+    "12-25"
+   ],
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "costMin": 199,
+   "costMax": 199,
+   "currency": "NZD",
+   "ticketUrl": "https://www.shotoverjet.com/",
+   "ticketUrl_note": "Loaded; title 'Best Jet Boat Ride in Queenstown | Shotover Jet'. Operator's own site.",
+   "suggested_bio": "A high-speed jet boat that spins and skims past the rock walls of the narrow Shotover River canyons.",
+   "unverified": [
+    "Existing spot has costMin/Max 159 and hours 8:30 AM - 5:30 PM: both are out of date (now $199 and 9-5)."
+   ]
+  },
+  {
+   "id": "wanaka-7",
+   "name": "Cardrona Hotel",
+   "kind": "existing",
+   "category": "historic",
+   "recommend": "Owner decision (review): keep only if a counted source is found; otherwise remove. Not removable by research alone.",
+   "facts": [
+    {
+     "claim": "Operator site: 'situated on the Crown Range Road between Queenstown and Wanaka, one of New Zealand's oldest and most iconic hotels'; open 7 days; restaurant and bar hours 11am-late (12-25 Oct 2026 schedule, seasonal).",
+     "source": "https://www.cardronahotel.co.nz/contact-us/"
+    },
+    {
+     "claim": "Hotel history page (search result): built 1863, one of only two remaining buildings from the Cardrona Valley gold-rush era.",
+     "source": "https://cardronahotel.co.nz/history/"
+    }
+   ],
+   "hours": "11:00 AM - late",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": "https://www.cardronahotel.co.nz/",
+   "ticketUrl_note": "Loaded; title 'Home - Cardrona Hotel'. Operator's own site.",
+   "unverified": [
+    "No COUNTED visitor source found (Wikivoyage has no Cardrona page; the Lonely Planet / newzealand.com / Rough Guide search found only the hotel's own site, ODT, 1News, neatplaces and blogs). Per COVERAGE.md this stays 'review': owner decision.",
+    "Existing hours 10:00 AM - 10:00 PM disagree with the hotel's 11am-late.",
+    "1News (July 2025) reported the pub was put up for sale; current ownership unchecked.",
+    "Venue is free to enter; food and drink extra."
+   ]
+  },
+  {
+   "id": "dunedin-18",
+   "name": "Dunedin Prison",
+   "kind": "new",
+   "category": "historic",
+   "facts": [
+    {
+     "claim": "Operator (Dunedin Prison Charitable Trust, site titled 'Dunedin GAOL History Unlocked'): opened 1898, closed as a Corrections facility 2007; tours 10.30am Saturday and Sunday (home page) or Saturday in summer (guided-tours page), 1 hour, Adult $15, Child $5, payable on the day.",
+     "source": "https://dunedingaol.co.nz/guided-tours/"
+    },
+    {
+     "claim": "Wikivoyage Dunedin lists Dunedin Prison with the Trust's site; OSM 'Former Dunedin Police Station & Prison' relation 6 m from the placement point.",
+     "source": "https://en.wikivoyage.org/wiki/Dunedin"
+    }
+   ],
+   "hours": "Guided tours 10:30 AM Saturday (summer)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "costMin": 15,
+   "costMax": 15,
+   "currency": "NZD",
+   "ticketUrl": "https://dunedingaol.co.nz/",
+   "ticketUrl_note": "Loaded (redirect from the Wikivoyage URL dunedinprisontrust.co.nz); title 'Dunedin GAOL History Unlocked, Dunedin, New Zealand'. Operator's own site.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -45.8758,
+     "longitude": 170.5072
+    },
+    "source_point": [
+     -45.87577,
+     170.50726
+    ],
+    "source": "OSM building relation 5683338",
+    "ok": true,
+    "distance_m": 6
+   },
+   "suggested_bio": "The 1898 prison, closed in 2007, now open for one-hour guided tours.",
+   "unverified": [
+    "Tour days conflict on the operator's own pages (Sat+Sun vs Saturday in summer): the placement bio 'set weekend times' is too specific; use the suggested bio.",
+    "The operator calls it 'Dunedin Gaol'; Wikipedia/Wikivoyage 'Dunedin Prison' (keep the placement name)."
+   ]
+  },
+  {
+   "id": "queenstown-20",
+   "name": "Macetown",
+   "kind": "new",
+   "category": "historic",
+   "held": true,
+   "facts": [
+    {
+     "claim": "DOC Macetown Historic Reserve: 15 km from Arrowtown; 4WD about 1 hr each way, walking 3-4 hr each way, mountain biking 1-2 hr each way; restored Andersons Battery, Needhams Cottage, Smiths Bakehouse; vehicle access under a locked gate with a fee-based online-permit system.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/macetown-historic-reserve/"
+    },
+    {
+     "claim": "NZFWDA managed access system (operational from 1 April 2026): standard 4WD or off-road motorcycle permit $40 per trip. Walkers and cyclists pass the gate without a permit (DOC page).",
+     "source": "https://macetown.nzfwda.org.nz/faq.html"
+    },
+    {
+     "claim": "OSM place=locality node 'Macetown'.",
+     "source": "https://www.openstreetmap.org/node/1988523178"
+    }
+   ],
+   "hours": "Daylight hours",
+   "visitHoursMin": 4,
+   "visitHoursMax": 8,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/macetown-historic-reserve/",
+   "ticketUrl_note": "Loaded; title 'Macetown Historic Reserve: Places to go in Otago'. DOC is the managing agency.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -44.86685,
+     "longitude": 168.8201
+    },
+    "source_point": [
+     -44.86685,
+     168.8201
+    ],
+    "source": "OSM place=locality node 1988523178 (the townsite; reached on foot/4WD from the Arrowtown end of Macetown Road)",
+    "ok": true,
+    "distance_m": 0
+   },
+   "suggested_bio": "The restored ruins of a gold-mining town in the Arrow valley, reached by a 4WD road, bike or long walk from Arrowtown.",
+   "unverified": [
+    "free: true is for walkers and cyclists; driving needs a $40 NZFWDA permit (search snippet; confirm). Treat as 'free to walk, permit to drive'.",
+    "Suggested bio mentions the 4WD road and walk; DOC says the drive crosses the Arrow River 23 times and is risky."
+   ]
+  },
+  {
+   "id": "catlins-13",
+   "name": "Tunnel Hill",
+   "kind": "new",
+   "category": "hike",
+   "held": true,
+   "recommend": "CONFLICT RESOLVED FOR KEEP: two counted sources name Tunnel Hill (DOC's own visitor page and Wikivoyage The Catlins 'See' listing), which meets the 'marginal needs two independent counted sources' bar. It is a 15-min walk to a distinct draw (DOC calls it the world's southernmost railway tunnel), so keep in Catlins (Otago) and let region-southland drop its review entry.",
+   "facts": [
+    {
+     "claim": "DOC Historic Railway Tunnel Walk: 15 min return; carpark and track entrance on SH92 (Southern Scenic Route), 5 km north of Owaka; 250 m tunnel from the Catlins River Branch railway, built 1890s.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/catlins-coastal-area/things-to-do/tunnel-hill-walk/"
+    },
+    {
+     "claim": "Wikivoyage The Catlins 'See': 'Walk through a 250 m disused brick-lined railway tunnel that was dug by hand in the 1890s. It is now an historic reserve. Taking a torch is recommended.'",
+     "source": "https://en.wikivoyage.org/wiki/The_Catlins"
+    },
+    {
+     "claim": "OSM highway=path 'Tunnel Hill Track' at the placement point.",
+     "source": "https://www.openstreetmap.org/way/1312146997"
+    }
+   ],
+   "hours": "Open 24 hours (bring a torch)",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/catlins-coastal-area/things-to-do/tunnel-hill-walk/",
+   "ticketUrl_note": "Loaded; title 'Historic Railway Tunnel Walk'. DOC is the managing agency.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -46.4136,
+     "longitude": 169.69605
+    },
+    "source_point": [
+     -46.4136,
+     169.69605
+    ],
+    "source": "OSM Tunnel Hill Track way 1312146997",
+    "ok": true,
+    "distance_m": 0
+   },
+   "unverified": [
+    "Wikivoyage's geo-listing links the generic Owaka walks page; the DOC page used here is the tunnel's own page."
+   ]
+  },
+  {
+   "id": "catlins-14",
+   "name": "Waipohatu Waterfalls Track",
+   "kind": "new",
+   "category": "hike",
+   "held": true,
+   "facts": [
+    {
+     "claim": "DOC: 6.5 km loop, 3 hours, rugged rainforest tramp to two waterfalls; about 70 km south-west of Invercargill, Tokanui-Haldane Road then 1 km of gravel to the carpark; a wheelchair-accessible Forest Walk shares the area.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/catlins-coastal-area/things-to-do/waipohatu-waterfalls-track/"
+    },
+    {
+     "claim": "Wikivoyage The Catlins 'See' lists Waipohatu Forest Walks: a 1 km wheelchair-standard walk and a 3-hour walk to two hidden waterfalls.",
+     "source": "https://en.wikivoyage.org/wiki/The_Catlins"
+    },
+    {
+     "claim": "OSM DOC track way at the placement point; waterfall node 1.1 km away.",
+     "source": "https://www.openstreetmap.org/way/1256015340"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2.5,
+   "visitHoursMax": 3.5,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/catlins-coastal-area/things-to-do/waipohatu-waterfalls-track/",
+   "ticketUrl_note": "Loaded; title 'Waipohatu Waterfalls Track: Waipohatu Conservation Area'. DOC is the managing agency (its URL sits under DOC's Otago > Catlins coastal area).",
+   "coordinates_check": {
+    "current": {
+     "latitude": -46.6115,
+     "longitude": 169.01096
+    },
+    "source_point": [
+     -46.60306,
+     169.01905
+    ],
+    "source": "OSM DOC track way 1256015340 (start); waterfall node 1123 m",
+    "ok": true,
+    "distance_m": 0
+   },
+   "unverified": [
+    "Two counted sources (DOC + Wikivoyage): passes the bar.",
+    "Bio 'near the Slope Point road' is supported by Wikivoyage ('turnoff for Slope Point'); wording 'Southland by region' is a placement question."
+   ]
+  },
+  {
+   "id": "catlins-10",
+   "name": "Papatowai",
+   "kind": "new",
+   "category": "landmark",
+   "held": true,
+   "facts": [
+    {
+     "claim": "DOC Papatowai walks: Old Coach Road is a flat 40-minute return walk beside the tidal Tahakopa River; Picnic Point Track through Papatowai Scenic Reserve; Papatowai campsite.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/catlins-coastal-area/things-to-do/papatowai-walks/"
+    },
+    {
+     "claim": "OSM place=hamlet node 'Papatowai' is 4.2 km north of the placement point (the placement used a rounded Wikipedia point at -46.6,169.4667).",
+     "source": "https://www.openstreetmap.org/node/268725696"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A hamlet with no single steward; the DOC walks page is for the walks, not the village. None.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -46.6,
+     "longitude": 169.4667
+    },
+    "source_point": [
+     -46.56187,
+     169.47084
+    ],
+    "source": "OSM place=hamlet node 268725696",
+    "ok": false,
+    "distance_m": 4252,
+    "suggested": {
+     "latitude": -46.56187,
+     "longitude": 169.47084
+    }
+   },
+   "suggested_bio": "A Catlins coast hamlet with riverside and bush walks, and the base for Matai Falls and the Tautuku coast.",
+   "unverified": [
+    "Move the pin 4 km north to the OSM hamlet node.",
+    "Placement bio 'walks to nearby falls and beaches' is vague; DOC lists Old Coach Road and Picnic Point at Papatowai (falls such as Matai are separate spots). Suggested bio below."
+   ]
+  },
+  {
+   "id": "alps-2-ocean-cycle-trail",
+   "name": "Alps 2 Ocean Cycle Trail",
+   "kind": "new",
+   "category": "hike",
+   "held": true,
+   "facts": [
+    {
+     "claim": "Timaru District Council (search snippet): the trail starts at White Horse Hill Campground, 2 km north of Mount Cook Village; section 1 is Aoraki/Mt Cook to Braemar Road, 35 km, with an optional helicopter crossing of the Tasman River at the rider's cost.",
+     "source": "https://timaru.govt.nz/alps2ocean/trail-map/section-1-aorakimt-cook-to-braemar-road"
+    },
+    {
+     "claim": "OSM tourism=camp_site 'White Horse Hill Campground' at -43.71823,170.09289, 100 m from the placement point.",
+     "source": "https://www.openstreetmap.org/way/768966834"
+    }
+   ],
+   "hours": "Open 24 hours (multi-day ride)",
+   "visitHoursMin": 24,
+   "visitHoursMax": 48,
+   "free": true,
+   "ticketUrl": "https://www.alps2ocean.com/",
+   "ticketUrl_note": "BLOCKED: alps2ocean.com and timaru.govt.nz/alps2ocean both return a Cloudflare 'Just a moment' wall (403). Orchestrator to confirm in a real browser that it names the trail; official site of the Alps 2 Ocean trust/Timaru DC.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -43.7192,
+     "longitude": 170.0937
+    },
+    "source_point": [
+     -43.71823,
+     170.09289
+    ],
+    "source": "OSM tourism=camp_site way 768966834 (White Horse Hill Campground, trail start)",
+    "ok": true,
+    "distance_m": 110
+   },
+   "unverified": [
+    "ticketUrl BLOCKED. Trail itself is free; helicopter/shuttle/accommodation extra.",
+    "Visit hours (24-48 = 3-6 days of riding) is a judgement from typical 4-6 day itineraries; sources not read.",
+    "The trail runs Aoraki to Oamaru (Canterbury and Otago); the placement point is the trail start (Canterbury side)."
+   ]
+  },
+  {
+   "id": "gabriels-gully",
+   "name": "Gabriels Gully",
+   "kind": "new",
+   "category": "historic",
+   "held": true,
+   "facts": [
+    {
+     "claim": "DOC: historic reserve 3 km from Lawrence, 92 km south-west of Dunedin on SH8; Gabriels Gully interpretation walk 2.8 km loop, 1 hr 30 min from the Gabriels Gully carpark; Otago Dam Track from Greys Dam; gold fossicking (hand tools) permitted; no toilets on site.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/gabriels-gully-historic-reserve/things-to-do/gabriels-gully-interpretation-walk/"
+    },
+    {
+     "claim": "DOC: the 1861 Gabriel Read gold find here began the Otago gold rush.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/gabriels-gully-historic-reserve/"
+    },
+    {
+     "claim": "OSM protected_area 'Gabriels Gully Historic Reserve' at the placement point.",
+     "source": "https://www.openstreetmap.org/relation/18179846"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/gabriels-gully-historic-reserve/",
+   "ticketUrl_note": "Loaded; title 'Gabriels Gully Historic Reserve: Places to go in Otago'. DOC is the managing agency.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -45.87973,
+     "longitude": 169.67844
+    },
+    "source_point": [
+     -45.87973,
+     169.67844
+    ],
+    "source": "OSM Gabriels Gully Historic Reserve relation 18179846",
+    "ok": true,
+    "distance_m": 0
+   },
+   "suggested_bio": "The reserve where Gabriel Read's 1861 find started the Otago gold rush, with an interpretation walk and dam track.",
+   "unverified": [
+    "Bio 'with an interpretation walk and a waterfall': the waterfall was not found on the DOC pages read; drop it.",
+    "Held for photo per placement."
+   ]
+  },
+  {
+   "id": "dunedin-10",
+   "name": "Olveston",
+   "kind": "new",
+   "category": "historic",
+   "held": true,
+   "facts": [
+    {
+     "claim": "Wikivoyage Dunedin lists Olveston with url olveston.co.nz.",
+     "source": "https://en.wikivoyage.org/wiki/Dunedin"
+    },
+    {
+     "claim": "Booking pages (BookMe, search snippet): guided tour Adult $26.00, Child $15.00 (6-16), infants 0-5 free; a travel listing gives daily tours 9:30am, 10:45am, 12pm, 1:30pm, 2:45pm, 4pm. Operator pages not readable (Cloudflare).",
+     "source": "https://marsden-viaduct.bookme.co.nz/things-to-do/dunedin/activity/olveston-historic-home-guided-tour/2264"
+    },
+    {
+     "claim": "OSM tourism=museum way 'Olveston Historic Home', 42 Royal Terrace, matches the placement to 1 m.",
+     "source": "https://www.openstreetmap.org/way/1296809403"
+    }
+   ],
+   "hours": "Guided tours 9:30 AM - 4:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 26,
+   "costMax": 26,
+   "currency": "NZD",
+   "ticketUrl": "https://olveston.co.nz/",
+   "ticketUrl_note": "BLOCKED: olveston.co.nz (also www.) returns a Cloudflare 'Just a moment' wall (403). Orchestrator to confirm in a real browser that its title names Olveston; Wikivoyage lists this domain as official.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -45.8661,
+     "longitude": 170.5025
+    },
+    "source_point": [
+     -45.86611,
+     170.50252
+    ],
+    "source": "OSM tourism=museum way 1296809403",
+    "ok": true,
+    "distance_m": 1
+   },
+   "suggested_bio": "A 1900s Edwardian family home, visited on one-hour guided tours.",
+   "unverified": [
+    "Price and tour times are from aggregators; check the operator page. BookMe also showed a $19.50 rate on some dates.",
+    "Bio '1906 ... gardens to walk': not read in a fetched source; 1906 is Olveston's build date per Wikipedia (not fetched here) - recheck.",
+    "Held for photo (brighten CC0 file) per placement."
+   ]
+  },
+  {
+   "id": "dunedin-17",
+   "name": "St Kilda Beach",
+   "kind": "new",
+   "category": "beach",
+   "held": true,
+   "facts": [
+    {
+     "claim": "OSM natural=beach way 'Saint Kilda Beach' (117358987) centroid is 700 m west of the placement point.",
+     "source": "https://www.openstreetmap.org/way/117358987"
+    },
+    {
+     "claim": "Wikivoyage Dunedin names St Kilda (and St Clair) beaches on Dunedin's south coast (as cited by the placement).",
+     "source": "https://en.wikivoyage.org/wiki/Dunedin"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Public beach with no single steward; none.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -45.9095,
+     "longitude": 170.5126
+    },
+    "source_point": [
+     -45.90949,
+     170.50377
+    ],
+    "source": "OSM natural=beach way 117358987 centroid",
+    "ok": false,
+    "distance_m": 690,
+    "suggested": {
+     "latitude": -45.90949,
+     "longitude": 170.50377
+    }
+   },
+   "unverified": [
+    "Placement says 'OSM way 117358987' but its centroid is 690 m west of the placement point: either the point was taken elsewhere on the long beach or it drifts; suggest the OSM centroid.",
+    "Held for photo per placement."
+   ]
+  },
+  {
+   "id": "dunedin-23",
+   "name": "Sandymount",
+   "kind": "new",
+   "category": "hike",
+   "held": true,
+   "facts": [
+    {
+     "claim": "DOC Sandymount Track: 1.7 km return, 30 min; gentle walk with coastal views; the reserve is a working farm (sheep, lambing Aug-Sept); track starts at the end of Sandymount Road off Highcliff Road; picnic tables at the car park; a longer 'Sandymount to Sandfly Bay' route also starts here.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/otago-peninsula-area/things-to-do/sandymount-track/"
+    },
+    {
+     "claim": "OSM natural=peak node 'Sandymount' at the placement point.",
+     "source": "https://www.openstreetmap.org/node/6594377381"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/otago-peninsula-area/things-to-do/sandymount-track/",
+   "ticketUrl_note": "Loaded; title 'Sandymount Track: Otago peninsula area, Otago region'. DOC is the managing agency.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -45.8912,
+     "longitude": 170.6724
+    },
+    "source_point": [
+     -45.89116,
+     170.67244
+    ],
+    "source": "OSM natural=peak node 6594377381",
+    "ok": true,
+    "distance_m": 5
+   },
+   "unverified": [
+    "Bio 'a peak and track on the Otago Peninsula with coastal views' is supported; the track is on a working farm.",
+    "Held for photo per placement."
+   ]
+  },
+  {
+   "id": "central-otago-7",
+   "name": "Roxburgh Gorge Trail",
+   "kind": "new",
+   "category": "hike",
+   "held": true,
+   "facts": [
+    {
+     "claim": "Clutha Gold / Otago trails site ('OFFICIAL WEBSITE'): Alexandra to Doctors Point 10 km (1-2 hr), a 13 km, 45-minute boat transfer by Clutha River Jets or Beaumont Jet (bookings essential), then Shingle Creek to Roxburgh Dam 11 km; allow 5-6 hr for the full journey (21 km riding + 13 km boat); no phone coverage at Doctors Point.",
+     "source": "https://www.cluthagold.co.nz/roxburgh-gorge-trail"
+    },
+    {
+     "claim": "Great Rides (nzcycletrail.com): Roxburgh Gorge Trail Great Ride, grade 2-3, jet boat tour through remote reaches.",
+     "source": "https://nzcycletrail.com/find-your-ride/23-great-rides/roxburgh-gorge"
+    },
+    {
+     "claim": "ODT (older, date not confirmed): the boat transfer was priced at $95 per person by both operators.",
+     "source": "https://odt.co.nz/regions/central-otago/95-boat-charge-rip"
+    }
+   ],
+   "hours": "Open 24 hours (boat transfer by booking)",
+   "visitHoursMin": 5,
+   "visitHoursMax": 6,
+   "free": true,
+   "ticketUrl": "https://www.cluthagold.co.nz/roxburgh-gorge-trail",
+   "ticketUrl_note": "Loaded; title 'Roxburgh Gorge Cycle Trail | OFFICIAL WEBSITE'. The trail's official site (Clutha Gold Trail). roxburghgorgetrail.co.nz fails to load.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -45.25401,
+     "longitude": 169.3988
+    },
+    "source_point": [
+     -45.27536,
+     169.37961
+    ],
+    "source": "OSM Roxburgh Gorge Trail cycleway way 1240649874 (trail line 2.8 km south of the Shaky Bridge trailhead); placement is the Alexandra trailhead",
+    "ok": true,
+    "distance_m": 2809
+   },
+   "suggested_bio": "A Great Ride through the Roxburgh Gorge from Alexandra to Roxburgh Dam, with a 13 km jet-boat leg in the middle.",
+   "unverified": [
+    "Cost: the trail is free but the 13 km boat transfer (about $95 pp per an older ODT article) is needed for the full trip: owner call between free:true and a $95 price.",
+    "Placement bio '34 km ... with a jet-boat return' is wrong: the boat is in the MIDDLE (13 km), not a return. Suggested bio fixes it.",
+    "Held for photo per placement."
+   ]
+  },
+  {
+   "id": "central-otago-11",
+   "name": "Clock on the Hill",
+   "kind": "new",
+   "category": "landmark",
+   "held": true,
+   "facts": [
+    {
+     "claim": "Wikivoyage Alexandra lists 'Clock On The Hill' as a sight.",
+     "source": "https://en.wikivoyage.org/wiki/Alexandra_(New_Zealand)"
+    },
+    {
+     "claim": "OSM amenity=clock node 'Alexandra clock' at -45.25615,169.40302, 290 m from the placement point.",
+     "source": "https://www.openstreetmap.org/node/7037002663"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A landmark with no operator; none.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -45.25375,
+     "longitude": 169.40125
+    },
+    "source_point": [
+     -45.25615,
+     169.40302
+    ],
+    "source": "OSM amenity=clock node 7037002663",
+    "ok": false,
+    "distance_m": 290,
+    "suggested": {
+     "latitude": -45.25615,
+     "longitude": 169.40302
+    }
+   },
+   "unverified": [
+    "Placement uses Wikivoyage's own geo tag (skeptic: ok); the OSM clock node is 290 m SSE: decide which, the hill is large.",
+    "Bio 'reached by car or a walking track': not read in a source; Wikivoyage wording not fetched in full.",
+    "Held for photo per placement."
+   ]
+  },
+  {
+   "id": "central-otago-14",
+   "name": "Hayes Engineering Works",
+   "kind": "new",
+   "category": "historic",
+   "held": true,
+   "facts": [
+    {
+     "claim": "Heritage New Zealand listing (search snippet of heritage.org.nz): open daily 9.30am-4.30pm, cafe 9.30am-3.30pm; closed June-August, ANZAC Day, Christmas Eve, Christmas Day, Boxing Day and New Year's Day; adult $12, children under 14 free; guided tours on operating days $20 adult / $10 child.",
+     "source": "https://heritage.org.nz/places/places-to-visit/otago-region/hayes-engineering"
+    },
+    {
+     "claim": "Otago Central Rail Trail listing (search snippet): open September to May, 9:30 am - 3:30 pm. Hours differ by source.",
+     "source": "https://www.otagocentralrailtrail.co.nz/explore-and-discover/things-to-do-in-central-otago/historic-sites/hayes-engineering-works/"
+    },
+    {
+     "claim": "OSM tourism=museum node 'Hayes Engineering Works Historic Place' 6 m from the placement point; Wikivoyage Ranfurly lists it.",
+     "source": "https://www.openstreetmap.org/node/1225168320"
+    }
+   ],
+   "hours": "9:30 AM - 4:30 PM (closed June-August)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 12,
+   "costMax": 12,
+   "currency": "NZD",
+   "ticketUrl": "https://www.visitheritage.co.nz/visit/otago/hayes-engineering-works-and-homestead",
+   "ticketUrl_note": "Loads (the heritage.org.nz URL redirects here) but is a script-rendered page whose title is just 'Heritage New Zealand - Welcome to Heritage New Zealand', so the place name could not be confirmed from the title: orchestrator to confirm in a real browser. HNZ is the owner/operator.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -45.011,
+     "longitude": 169.9037
+    },
+    "source_point": [
+     -45.01096,
+     169.90375
+    ],
+    "source": "OSM tourism=museum node 1225168320",
+    "ok": true,
+    "distance_m": 6
+   },
+   "suggested_bio": "An 1890s farm-machinery workshop and homestead run by Heritage New Zealand, with guided tours on operating days.",
+   "unverified": [
+    "Hours and price are from search snippets of HNZ and rail-trail pages; confirm on the live page. Tour days are Sundays in season per a snippet.",
+    "Held for photo per placement."
+   ]
+  }
+ ]
+}
