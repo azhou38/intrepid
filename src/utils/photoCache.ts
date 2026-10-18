@@ -1,4 +1,4 @@
-import { Dimensions, PixelRatio } from 'react-native';
+import { Dimensions, Image, PixelRatio } from 'react-native';
 import { WIKI_IMAGE_OVERRIDES } from '../data/imageOverrides';
 import imageManifest from '../data/imageManifest.json';
 import { buildThumbUrl, manifestKey, type ManifestEntry } from './imageUrl';
@@ -166,4 +166,26 @@ async function fetchSearchThumbnail(title: string, width: number): Promise<strin
   } catch {
     return null;
   }
+}
+
+
+/**
+ * Warms every destination's map-pin thumbnail: its URL goes into thumbCache (the key DestPinImages reads) and the bitmap into
+ * the native image cache. A destination pin is drawn into the map's style from a small view; if its photo has not been downloaded when
+ * the pin first appears, the pin is drawn with a grey placeholder and the photo pops in when it lands — which is what happened
+ * for destinations whose thumbnail nothing else had loaded yet (the Explore cards and the sheets load them for the destinations
+ * you open or scroll past). Run once the map is up, most prominent destinations first, a few at a time so it never competes
+ * with the map. Safe to call again: anything already cached is skipped.
+ */
+export function prewarmDestinationPins(dests: { id: string; name: string; rank: number }[], concurrency = 3): void {
+  const queue = [...dests].sort((a, b) => a.rank - b.rank).filter(d => !thumbCache.has(d.id));
+  const worker = async () => {
+    for (let d = queue.shift(); d; d = queue.shift()) {
+      try {
+        const url = await fetchWikiThumbnail(d.name, 120);
+        if (url) { thumbCache.set(d.id, url); await Image.prefetch(url); }
+      } catch { /* a failed warm-up just leaves the pin to load its own photo, as before */ }
+    }
+  };
+  for (let i = 0; i < concurrency; i++) void worker();
 }

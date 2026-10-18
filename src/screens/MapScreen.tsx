@@ -113,7 +113,7 @@ import { computeSearchResults, computeSuggestions, SearchResultRows, toRecentSea
 import SpotSheet from '../components/Map/SpotSheet';
 import CountrySheet from '../components/Map/CountrySheet';
 import ExploreSheet from '../components/Map/ExploreSheet';
-import { thumbCache, photoCache, fetchWikiThumbnail, prefetchWikiThumbnail, HEADER_PX } from '../utils/photoCache';
+import { thumbCache, photoCache, fetchWikiThumbnail, prefetchWikiThumbnail, prewarmDestinationPins, HEADER_PX } from '../utils/photoCache';
 import DestPinImages, { DEST_PIN_SIZE, destPinImageName, type DestPinImageSpec } from '../components/Map/DestPinImages';
 import SpotPinImages, { SPOT_MINI_PIN_UNVISITED, SPOT_MINI_PIN_VISITED } from '../components/Map/SpotPinImages';
 
@@ -4409,6 +4409,8 @@ const destItems = useMemo((): DestItem[] =>
         )}
         onDidFinishLoadingMap={() => {
           setMapReady(true);
+          // Pin photos for every destination, so a pin's photo is already there when it first appears instead of popping in.
+          prewarmDestinationPins(DESTINATIONS);
           // onDidFinishLoadingMap fires once the STYLE has loaded, but the globe's own
           // atmosphere/lighting shader keeps visibly settling for a bit after that — the
           // "shines white, then flashes" effect this delay is masking. There's no public event
