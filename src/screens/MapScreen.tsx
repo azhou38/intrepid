@@ -4044,14 +4044,26 @@ const destItems = useMemo((): DestItem[] =>
     // the north cap and longitude (center[0], passed through) are untouched.
     // isGestureActive:false alone doesn't mean "the user just released" — our own animations
     // report it too — so skip while one of those is in flight (programmaticCameraMoveRef).
+    // The view's south edge is worked out from the camera's centre and zoom (Web Mercator, the screen's height), NOT
+    // from the reported bounds: under projection="globe" those are unreliable at wider zooms, and a view of northern
+    // Norway or Iceland could report a south edge past -60, so on release the camera was pulled toward the equator.
     const SOUTH_LIMIT = -60;
+    const toMercY = (lt: number) => Math.log(Math.tan(Math.PI / 4 + Math.max(-85.05, Math.min(85.05, lt)) * Math.PI / 360));
+    const fromMercY = (y: number) => (2 * Math.atan(Math.exp(y)) - Math.PI / 2) * 180 / Math.PI;
+    // Half the screen's height as an angle of the world (radians): exact for Mercator, and for the globe the arc the
+    // half-height covers on a sphere of the same scale. Below GLOBE_FLAT_ZOOM the map is still drawn as a globe.
+    const halfView = (H / 2) * 2 * Math.PI / (512 * Math.pow(2, state.properties.zoom));
+    const GLOBE_FLAT_ZOOM = 6;
+    const onGlobe = state.properties.zoom < GLOBE_FLAT_ZOOM;
+    const halfDeg = halfView * 180 / Math.PI;
+    const southEdge = onGlobe ? center[1] - halfDeg : fromMercY(toMercY(center[1]) - halfView);
+    const targetCenterLat = onGlobe ? SOUTH_LIMIT + halfDeg : fromMercY(toMercY(SOUTH_LIMIT) + halfView);
+    // Only when a correction is possible (a view taller than everything north of the limit can't be pulled clear of it)
+    // and it moves the camera north.
     if (!selectedCountryRef.current && !isGestureActive && !southCorrectingRef.current
-        && !programmaticCameraMoveRef.current && bounds.sw[1] < SOUTH_LIMIT) {
+        && !programmaticCameraMoveRef.current && southEdge < SOUTH_LIMIT
+        && targetCenterLat <= 80 && targetCenterLat > center[1]) {
       southCorrectingRef.current = true;
-      const toMercY = (lt: number) => Math.log(Math.tan(Math.PI / 4 + lt * Math.PI / 360));
-      const fromMercY = (y: number) => (2 * Math.atan(Math.exp(y)) - Math.PI / 2) * 180 / Math.PI;
-      const span = toMercY(Math.min(bounds.ne[1], 85.05)) - toMercY(Math.max(bounds.sw[1], -85.05));
-      const targetCenterLat = Math.min(fromMercY(toMercY(SOUTH_LIMIT) + span / 2), 80);
       cameraRef.current?.setCamera({
         centerCoordinate: [center[0], targetCenterLat],
         animationDuration: 300,
