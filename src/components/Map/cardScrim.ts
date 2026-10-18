@@ -3,8 +3,9 @@
 // its bottom inset and a short soft edge — and reaches real shading by the first line of text. The shared
 // GRADIENT_STOPS fade across the whole height, which left a title on an almost clear patch.
 
-// Height (px) of the soft edge above the text block, where the scrim fades in from clear.
-export const CARD_SCRIM_FADE = 36;
+// Height (px) of the soft edge above the text block, where the scrim fades in from clear. Kept short so the shading starts
+// about where the title does, with no wide band of fade above it (the DestinationCard uses the same figure).
+export const CARD_SCRIM_FADE = 12;
 
 // The gradient for a given total height: a smooth fade from clear to ~60% black over the top CARD_SCRIM_FADE px, then on
 // to ~90% at the bottom of the card.
