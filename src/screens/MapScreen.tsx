@@ -2465,6 +2465,9 @@ const destItems = useMemo((): DestItem[] =>
   // that fails either test — or is revealed before its destination's own zoom, see beforeOwnZoom — becomes a dot, which sits under the pins and lives exactly as long as the pin would have. The
   // spots already holding a pin are placed before any newcomer, so zooming never swaps pins and small pins back and forth.
   const prevPinIdsRef = useRef<Set<string>>(new Set());
+  // TEMPORARY (dev builds only): why each revealed spot is a collapsed pin, shown on the map to diagnose pins that
+  // never take their photo on zoom-in. Remove once that is fixed.
+  const pinPlanDebugRef = useRef('');
   // The visible span the spot pin/dot plan works in: the live view, or during a close the live view scaled out to the
   // close's target zoom (closeViewScale). Measured the same way before and after the camera settles, so the plan doesn't
   // shift once more when the close ends (it used to drop the bounds during a close and use them again after, which
@@ -2515,8 +2518,10 @@ const destItems = useMemo((): DestItem[] =>
       Math.abs(sp.coordinates.latitude - region.latitude) <= vLat * (0.5 + vPad)
       && Math.abs(sp.coordinates.longitude - region.longitude) <= vLng * (0.5 + vPad);
     const pins: Spot[] = [], dots: Spot[] = [];
+    const why = { offView: 0, early: 0, cap: 0, overlapDest: 0, overlapPin: 0 };
+    const destBoxes = taken.length;
     for (const sp of sorted) {
-      if (!must.has(sp.id) && !inView(sp)) { dots.push(sp); continue; }
+      if (!must.has(sp.id) && !inView(sp)) { dots.push(sp); why.offView++; continue; }
       const m = mercatorPx(sp.coordinates.longitude, sp.coordinates.latitude, pxPerDegLng);
       const x = m.x, y = -m.y;
       // The pin's footprint: the bubble plus the tail hanging to the coordinate, with a little air around it.
@@ -2526,10 +2531,17 @@ const destItems = useMemo((): DestItem[] =>
       // spots take their photos one by one, by how far out they are, rather than all at the destination's zoom.
       const photoZoom = SPOT_PHOTO_ZOOM_BY_ID[sp.id];
       const beforeOwnZoom = photoZoom !== undefined && handoffZoom < photoZoom - ZOOM_EPSILON;
-      if (!must.has(sp.id) && (beforeOwnZoom || pins.length >= MAX_SPOT_PINS || taken.some(t => overlaps(t, box)))) { dots.push(sp); continue; }
+      if (!must.has(sp.id) && (beforeOwnZoom || pins.length >= MAX_SPOT_PINS || taken.some(t => overlaps(t, box)))) {
+        if (beforeOwnZoom) why.early++;
+        else if (pins.length >= MAX_SPOT_PINS) why.cap++;
+        else if (taken.slice(0, destBoxes).some(t => overlaps(t, box))) why.overlapDest++;
+        else why.overlapPin++;
+        dots.push(sp); continue;
+      }
       pins.push(sp); taken.push(box);
     }
     prevPinIdsRef.current = new Set(pins.map(sp => sp.id));
+    if (__DEV__) pinPlanDebugRef.current = `zoom ${camZoom.toFixed(2)} handoff ${handoffZoom.toFixed(2)} close ${closeTarget?.toFixed(2) ?? '-'}\nplanLng ${pinPlanLngDelta.toFixed(4)} regionLng ${region.longitudeDelta.toFixed(4)} scale ${closeViewScale.toFixed(2)}\nin ${visibleSpots.length} pins ${pins.length} dots ${dots.length} destBoxes ${destBoxes}\noff ${why.offView} early ${why.early} cap ${why.cap} ovDest ${why.overlapDest} ovPin ${why.overlapPin}`;
     return { pinSpots: pins, dotSpots: dots };
   }, [visibleSpots, selectedSpot, nearCtx, visitIndex, pinPlanLngDelta, destPinPlan, handoffZoom, hiddenDestIds, region, closeViewScale]);
   const stableDotSpots = useStableList(dotSpots, s => s.id);
@@ -4870,6 +4882,12 @@ const destItems = useMemo((): DestItem[] =>
 
         </>}
       </MapboxGL.MapView>
+      )}
+      {/* TEMPORARY (dev only): spot pin plan diagnostics — see pinPlanDebugRef. */}
+      {__DEV__ && (
+        <View pointerEvents="none" style={{ position: 'absolute', top: 130, left: 12, right: 12, backgroundColor: 'rgba(0,0,0,0.7)', borderRadius: 8, padding: 6 }}>
+          <Text style={{ color: '#fff', fontSize: 11, fontFamily: Platform.OS === 'ios' ? 'Menlo' : 'monospace' }}>{pinPlanDebugRef.current}</Text>
+        </View>
       )}
 
       {/* ── Search backdrop — white fill behind the focused search bar + results, so the
