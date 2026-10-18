@@ -32,6 +32,7 @@ import { destinationTripsOf, removeDestinationMessage, visitedSpotsIn } from '..
 import SpotCard from './SpotCard';
 import type { Destination, PhotoEntry, Visit, GoodToKnowTip } from '../../types';
 import { SPOTS, spotPhotoTitle, type Spot } from '../../data/spots';
+import { popularSpotsOf } from '../../data/popularSpots';
 import { photoCache, thumbCache, getOrFetchWikiThumbnail, fetchCommonsPhoto, HEADER_PX } from '../../utils/photoCache';
 import CircleFlag from '../CircleFlag';
 import { sheetPose } from './sheetPose';
@@ -470,6 +471,8 @@ function AboutPanel({
   hlScrollRef?: React.RefObject<ScrollView | null>;
   whyScrollRef?: React.RefObject<ScrollView | null>;
 }) {
+  // The spots people actually look up, most popular first: 2–10 of them depending on how popular this destination's spots are.
+  const popularSpots = useMemo(() => popularSpotsOf(spots), [spots]);
   return (
     <View style={st.aboutStack}>
       {(!!destination.whyVisit || !!destination.description) && (
@@ -498,7 +501,7 @@ function AboutPanel({
             </Pressable>
           </View>
           <ScrollView ref={hlScrollRef} horizontal showsHorizontalScrollIndicator={false} style={st.hlScroll} contentContainerStyle={st.hlRow}>
-            {spots.map(spot => (
+            {popularSpots.map(spot => (
               <SpotCard key={spot.id} spot={spot} width={GRID_CARD_W} onPress={() => onSelectSpot?.(spot)} />
             ))}
           </ScrollView>
