@@ -1,0 +1,126 @@
+{
+ "slots": {
+  "dest:greymouth:header": {
+   "candidates": [
+    {
+     "file": "Greymouth town.jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "keep",
+     "reason": "Greymouth town and Grey River from an elevated point (not a high aerial); town in setting, 5083 px."
+    }
+   ],
+   "decision": "keep-current",
+   "failed_check": null,
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "dest:greymouth:why1": {
+   "candidates": [
+    {
+     "file": "804, the retun TranzAlpine.jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "keep",
+     "reason": "TranzAlpine train crossing a river bridge with mountains."
+    }
+   ],
+   "decision": "keep-current",
+   "failed_check": null,
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "dest:greymouth:why2": {
+   "candidates": [
+    {
+     "file": "00 1221 Shantytown Heritage Park - New Zealand.jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "keep",
+     "reason": "Shantytown main street buildings; heritage village is the reason."
+    }
+   ],
+   "decision": "keep-current",
+   "failed_check": null,
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "dest:greymouth:why3": {
+   "candidates": [
+    {
+     "file": "Monteiths Brewery in Greymouth (4673825776).jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "keep",
+     "reason": "Monteith pub bar interior; shows the brewery tap-room reason."
+    }
+   ],
+   "decision": "keep-current",
+   "failed_check": null,
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "spot:greymouth-1": {
+   "candidates": [
+    {
+     "file": "Shantytown from lookout.jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "keep",
+     "reason": "Shantytown buildings from lookout; buildings sit low in the frame so a subject point is set."
+    }
+   ],
+   "decision": "keep-current",
+   "failed_check": null,
+   "hero_crop": {
+    "x": 0.6,
+    "y": 0.65
+   },
+   "dark": false
+  },
+  "spot:greymouth-2": {
+   "candidates": [
+    {
+     "file": "Monteiths Brewery MRD.jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "keep",
+     "reason": "Monteith's Brewery building with sign, Greymouth."
+    }
+   ],
+   "decision": "keep-current",
+   "failed_check": null,
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "spot:greymouth-3": {
+   "candidates": [
+    {
+     "file": "Point Elizabeth Walkway MRD 06.jpg",
+     "right_place": true,
+     "shows_named_thing": false,
+     "spectacular_wide": false,
+     "real_photograph": true,
+     "verdict": "reject",
+     "reason": "Photo is the debris-strewn beach at the trailhead (Commons says walkway starts at the beach); the walkway, forest or Point Elizabeth are not shown, so not recognisable as the named walk."
+    }
+   ],
+   "decision": "reject",
+   "failed_check": "check 2: shows the named thing",
+   "hero_crop": "ok",
+   "dark": false
+  }
+ }
+}

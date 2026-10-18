@@ -1,0 +1,818 @@
+{
+ "region": "west-coast",
+ "placements": [
+  {
+   "name": "Reefton",
+   "action": "new-destination",
+   "destination": "reefton",
+   "id": "reefton",
+   "coordinates": {
+    "latitude": -42.11527778,
+    "longitude": 171.86305556
+   },
+   "coordinates_source": "Wikipedia Reefton (town centre; a town, not an attraction)",
+   "reason": "Hub town on SH7 with its own Wikivoyage chapter (Black's Point Museum, Broadway heritage street, Powerhouse); 40+ km from every existing destination. Proposed for the owner: needs description, three reasons with photos, tips, best months and a header before it is added.",
+   "category": "city",
+   "icon": "⛏️",
+   "bio": "A historic gold town on State Highway 7 with a heritage Broadway, Black's Point Museum and the Powerhouse.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "photo": {
+    "file": "TWC Reefton • Stewart Nimmo • MRD 36.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File%3ATWC_Reefton_%E2%80%A2_Stewart_Nimmo_%E2%80%A2_MRD_36.jpg",
+    "width": 7952
+   },
+   "hero_crop": {
+    "x": 0.3,
+    "y": 0.5
+   },
+   "status": "proposed-destination: not added",
+   "coordinates_verify": "Town centre point; header needs a curated photo (the accepted photo is for the card only).",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "spots_waiting": [
+    "reefton-1"
+   ]
+  },
+  {
+   "name": "Waiuta",
+   "action": "spot",
+   "destination": "reefton",
+   "id": "reefton-1",
+   "coordinates": {
+    "latitude": -42.2928,
+    "longitude": 171.8183
+   },
+   "coordinates_source": "Wikipedia Waiuta (town site)",
+   "reason": "19 km from Reefton; DOC ghost town (Prohibition mine, ball mill).",
+   "category": "historic",
+   "icon": "👻",
+   "bio": "A gold-mining ghost town with the Prohibition mine, a ball mill and the boiler-house ruins (the Snowy Battery Track is closed because of contamination).",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "photo": {
+    "file": "Waiuta MRD 09.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File%3AWaiuta_MRD_09.jpg",
+    "width": 4032
+   },
+   "hero_crop": "centred",
+   "status": "spot-of-proposed-destination: waits on Reefton",
+   "coordinates_verify": "Town-site point; confirm car park with DOC.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "fallback_if_destination_declined": {
+    "latitude": -42.2928,
+    "longitude": 171.8183
+   }
+  },
+  {
+   "name": "Brunner Mine Historic Area",
+   "action": "spot",
+   "destination": "greymouth",
+   "id": "greymouth-4",
+   "coordinates": {
+    "latitude": -42.433601,
+    "longitude": 171.324596
+   },
+   "coordinates_source": "Wikivoyage Greymouth listing (-42.4336,171.3246), agrees with Commons photo coordinates of the site (-42.4337,171.3246)",
+   "reason": "10 km from Greymouth (inside its span); a DOC historic site visitors reach from Greymouth. Wikivoyage Greymouth + DOC.",
+   "category": "historic",
+   "icon": "⛏️",
+   "bio": "The ruins of the Brunner coal mine, where you cross a suspension bridge to coke ovens and mine remains on the Grey River gorge.",
+   "wiki": "Brunner Mine",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "photo": {
+    "file": "Brunner Mine Historic Site MRD 02.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File%3ABrunner_Mine_Historic_Site_MRD_02.jpg",
+    "width": 4032
+   },
+   "hero_crop": {
+    "x": 0.35,
+    "y": 0.5
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ]
+  },
+  {
+   "name": "West Coast Wilderness Trail",
+   "action": "spot",
+   "destination": "greymouth",
+   "id": "greymouth-5",
+   "coordinates": {
+    "latitude": -42.448,
+    "longitude": 171.215
+   },
+   "coordinates_source": "Wikipedia West Coast Wilderness Trail: Greymouth start",
+   "reason": "Long linear feature placed at its main access (Greymouth start, inside Greymouth's span, where riders base); runs on to Ross.",
+   "category": "hike",
+   "icon": "🚴",
+   "bio": "A 132 km Great Ride cycle trail from Greymouth to Ross through old gold-rush country.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "photo": {
+    "file": "West Coast Wilderness Trail 176.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File%3AWest_Coast_Wilderness_Trail_176.JPG",
+    "width": 5472
+   },
+   "hero_crop": "centred",
+   "coordinates_verify": "Pin is the Greymouth start from Wikipedia; confirm the trailhead (DOC/trail operator) before applying.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ]
+  },
+  {
+   "name": "Croesus Track",
+   "action": "spot",
+   "destination": "greymouth",
+   "id": "greymouth-6",
+   "coordinates": null,
+   "coordinates_source": "Needs the Smoke-ho car park at Blackball from DOC/OSM; the OSM figure is a mean of two segments (approximate)",
+   "reason": "Trailhead near Blackball is 19 km from Greymouth (inside its span), reached from Greymouth; the Barrytown end is on the Paparoa coast but visitors start from Blackball.",
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "A 22 km miners' track over the Paparoa Range from Blackball to Barrytown, walked in one or two days.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "photo": null,
+   "photo_note": "No scenic Commons or Openverse photo of the track itself (hut close-ups, ferns, one 2007 hut shot). Hold for a photo.",
+   "status": "held: needs a photo",
+   "provisional_coordinates": {
+    "latitude": -42.2687,
+    "longitude": 171.36405
+   },
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ]
+  },
+  {
+   "name": "Carters Beach",
+   "action": "spot",
+   "destination": "westport",
+   "id": "westport-4",
+   "coordinates": null,
+   "coordinates_source": "Wikivoyage listing point (-41.744,171.562) is a district point; needs OSM natural/beach or its Wikipedia article",
+   "reason": "3 km from Westport, a town beach reached from Westport.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A wide sand beach beside Westport for walking, swimming and surfing.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "photo": null,
+   "photo_note": "Best Commons file (low-tide shot, 4032x3024, CC BY-SA) shows the beach as a thin strip at the horizon; the hero crop is mostly blue water and fails recognisability. Needs another photo.",
+   "status": "held: needs a photo",
+   "provisional_coordinates": {
+    "latitude": -41.744,
+    "longitude": 171.562
+   },
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ]
+  },
+  {
+   "name": "Gillespies Beach",
+   "action": "spot",
+   "destination": "westland-tai-poutini",
+   "id": "westland-tai-poutini-7",
+   "coordinates": {
+    "latitude": -43.40827,
+    "longitude": 169.8285
+   },
+   "coordinates_source": "Wikivoyage Fox Glacier listing (-43.40827,169.8285)",
+   "reason": "22 km from the park centre, reached from Fox Glacier by an 11 km unsealed road.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A black-sand and quartz-pebble beach at the end of an unsealed road, with gold-dredge ruins, a seal colony and views to Aoraki / Mount Cook and Mount Tasman.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "photo": {
+    "file": "009 NZ Southern Alps mountain landscape in New Zealand seen from Gillespies Beach, West Coast - sunset light.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File%3A009_NZ_Southern_Alps_mountain_landscape_in_New_Zealand_seen_from_Gillespies_Beach%2C_West_Coast_-_sunset_light.jpg",
+    "width": 2430
+   },
+   "hero_crop": "centred",
+   "coordinates_verify": "Wikivoyage listing point; confirm against OSM natural/beach or its own Wikipedia article. Not the Gillespie Beach near Cape Foulwind.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ]
+  },
+  {
+   "name": "Roberts Point Track",
+   "action": "spot",
+   "destination": "westland-tai-poutini",
+   "id": "westland-tai-poutini-8",
+   "coordinates": {
+    "latitude": -43.4186,
+    "longitude": 170.1808
+   },
+   "coordinates_source": "Wikivoyage Franz Josef listing (-43.4186,170.1808)",
+   "reason": "8 km from Franz Josef; distinct from the valley walk (5 h 20 return tramp).",
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "A 5 h 20 return tramp with swing bridges to a viewpoint over Franz Josef Glacier.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "photo": {
+    "file": "Roberts Point Track, Franz Josef.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File%3ARoberts_Point_Track%2C_Franz_Josef.jpg",
+    "width": 5392
+   },
+   "hero_crop": "centred",
+   "coordinates_verify": "Wikivoyage listing; confirm trailhead (car park) with DOC/OSM.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ]
+  },
+  {
+   "name": "Copland Track",
+   "action": "spot",
+   "destination": "westland-tai-poutini",
+   "id": "westland-tai-poutini-9",
+   "coordinates": null,
+   "coordinates_source": "The Wikivoyage point (-43.5749,169.81) is Welcome Flat, not the trailhead; needs the Copland shelter on SH6 from DOC/OSM",
+   "reason": "25 km from the park centre, reached from Fox Glacier (Hump Ridge precedent for a promoted multi-day walk). Welcome Flat Hot Pools stays folded in.",
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "A 6 to 8 hour tramp one way up the Copland valley to the Welcome Flat hot pools, with the Alps ahead.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "photo": {
+    "file": "Copland Track, New Zealand (11).JPG",
+    "page": "https://commons.wikimedia.org/wiki/File%3ACopland_Track%2C_New_Zealand_%2811%29.JPG",
+    "width": 4000
+   },
+   "hero_crop": {
+    "x": 0.75,
+    "y": 0.5
+   },
+   "provisional_coordinates": {
+    "latitude": -43.5749,
+    "longitude": 169.81
+   },
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ]
+  },
+  {
+   "name": "Tatare Tunnels Walk",
+   "action": "spot",
+   "destination": "westland-tai-poutini",
+   "id": "westland-tai-poutini-10",
+   "coordinates": {
+    "latitude": -43.38797,
+    "longitude": 170.18488
+   },
+   "coordinates_source": "Wikivoyage Franz Josef listing (Cowan Street)",
+   "reason": "At Franz Josef; 80-minute walk to old water tunnels. Kept; held for a photo.",
+   "category": "hike",
+   "icon": "🚇",
+   "bio": "An 80-minute walk from Cowan Street to old water tunnels built for gold mining.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "photo": null,
+   "photo_note": "Only Commons file is a close-up of a stony path, no tunnels; no other free photo found. Hold for a photo.",
+   "status": "held: needs a photo",
+   "coordinates_verify": "Cowan Street is the street; confirm car park with DOC/OSM.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ]
+  },
+  {
+   "name": "Whataroa White Heron Colony",
+   "action": "spot",
+   "destination": "westland-tai-poutini",
+   "id": "westland-tai-poutini-11",
+   "coordinates": null,
+   "coordinates_source": "Reserve on the Waitangiroto River has no coordinate found; the Wikivoyage tour office (-43.2618,170.3614) is Whataroa village, not the reserve",
+   "reason": "25 km from the park centre; reached by guided tour from Whataroa. The place is the spot, the tour is how you reach it.",
+   "category": "nature",
+   "icon": "🪽",
+   "bio": "The only New Zealand breeding site of the white heron (kōtuku), reached on a guided tour from Whataroa between late October and the end of February.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "photo": null,
+   "photo_note": "Photo not searched in this pass; find one of the colony or river.",
+   "status": "held: needs a photo",
+   "provisional_coordinates": {
+    "latitude": -43.2618,
+    "longitude": 170.3614
+   },
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ]
+  },
+  {
+   "name": "Oparara Arch",
+   "action": "spot",
+   "destination": "kahurangi",
+   "id": "kahurangi-4",
+   "coordinates": {
+    "latitude": -41.1463,
+    "longitude": 172.1871
+   },
+   "coordinates_source": "Commons photo coordinates -41.1463,172.1871 (the arch); DOC Oparara car park via McCallums Mill Road ~23 km from Karamea",
+   "reason": "14 km from the park centre; Oparara Basin lies in Kahurangi National Park (a spot of the park). Overlaps existing kahurangi-2 Ōpārara Basin: owner to decide whether to merge.",
+   "category": "nature",
+   "icon": "🌉",
+   "bio": "A 35-million-year-old limestone arch about 200 m long, reached on a one-hour return walk.",
+   "wiki": "Ōpārara Arch",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "photo": {
+    "file": "Ōpārara Arch, New Zealand 05.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File%3A%C5%8Cp%C4%81rara_Arch%2C_New_Zealand_05.jpg",
+    "width": 4080
+   },
+   "hero_crop": "centred",
+   "coordinates_verify": "Photo coordinates; check against DOC car park.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "duplicate_risk": "kahurangi-2 Ōpārara Basin"
+  },
+  {
+   "name": "Moria Gate Arch and Mirror Tarn Loop",
+   "action": "spot",
+   "destination": "kahurangi",
+   "id": "kahurangi-5",
+   "coordinates": {
+    "latitude": -41.1463,
+    "longitude": 172.1871
+   },
+   "coordinates_source": "Same Oparara car park as the arch (DOC); NOT the arch itself, needs its own point from DOC/OSM",
+   "reason": "Same basin as Oparara Arch; skeptic kept both and suggests the owner may merge into one Oparara Basin spot (existing kahurangi-2).",
+   "category": "hike",
+   "icon": "🌉",
+   "bio": "A 4 km, 1 h 30 loop through old-growth forest to Moria Gate Arch and Mirror Tarn.",
+   "wiki": "Moria Gate Arch",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "photo": {
+    "file": "Moria Gate Arch SM2014.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File%3AMoria_Gate_Arch_SM2014.jpg",
+    "width": 3872
+   },
+   "hero_crop": {
+    "x": 0.65,
+    "y": 0.5
+   },
+   "coordinates_verify": "Reuses the Oparara Arch point as a placeholder; take the Moria Gate trailhead from DOC/OSM.",
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "duplicate_risk": "kahurangi-2 Ōpārara Basin; kahurangi-4"
+  },
+  {
+   "name": "Scotts Beach",
+   "action": "spot",
+   "destination": "kahurangi",
+   "id": "kahurangi-6",
+   "coordinates": {
+    "latitude": -41.0881,
+    "longitude": 172.1042
+   },
+   "coordinates_source": "Wikipedia Scotts Beach (own article); trailhead is Kohaihai",
+   "reason": "17 km from the park centre; in Kahurangi National Park, a 1-hour walk from Kohaihai at the first stretch of the Heaphy Track, reached from Karamea.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A beach on the Heaphy Track coast reached by a one-hour walk from Kohaihai.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "photo": {
+    "file": "Scotts Beach from Kohaihai Bluff (Kahurangi National Park).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File%3AScotts_Beach_from_Kohaihai_Bluff_%28Kahurangi_National_Park%29.jpg",
+    "width": 4896
+   },
+   "hero_crop": "centred",
+   "coordinates_verify": "Beach point from Wikipedia; trailhead (Kohaihai car park) from DOC/OSM.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ]
+  },
+  {
+   "name": "Old Ghost Road",
+   "action": "standalone",
+   "destination": null,
+   "id": "old-ghost-road",
+   "coordinates": {
+    "latitude": -41.7969,
+    "longitude": 172.0483
+   },
+   "coordinates_source": "DOC: Lyell Campsite is the trail start; Wikipedia Lyell -41.7969,172.0483. Mokihinui end ~-41.5517,171.99",
+   "reason": "Lyell is 37 km from Westport (outside its 26 km reach) and 68+ km from every other destination; sold by Westport outfitters but a trip of its own (Hump Ridge precedent).",
+   "category": "hike",
+   "icon": "🚵",
+   "bio": "An 85 km Great Ride and tramping route from Lyell to the Mokihinui, 4 to 5 days on foot or 2 to 3 by bike.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "photo": {
+    "file": "Old Ghost Road 2018 352.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File%3AOld_Ghost_Road_2018_352.jpg",
+    "width": 5472
+   },
+   "hero_crop": "centred",
+   "coordinates_verify": "Village point from Wikipedia; confirm Lyell trailhead with DOC.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ]
+  },
+  {
+   "name": "Lake Brunner",
+   "action": "standalone",
+   "destination": null,
+   "id": "lake-brunner",
+   "coordinates": {
+    "latitude": -42.5756,
+    "longitude": 171.4803
+   },
+   "coordinates_source": "Wikipedia Moana (visitor point on the lake; not the lake centroid at -42.6167,171.45)",
+   "reason": "26 km from Greymouth (outside its 22.5 km reach), TranzAlpine stops at Moana; a lake with its own walks.",
+   "category": "nature",
+   "icon": "🏞️",
+   "bio": "A lake with walks of 20 minutes to 8 hours around Moana, where the TranzAlpine stops.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "photo": {
+    "file": "Lake Brunner south shore MRD 01.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File%3ALake_Brunner_south_shore_MRD_01.jpg",
+    "width": 4032
+   },
+   "hero_crop": "centred",
+   "coordinates_verify": "Moana village point; confirm a lakeshore access point.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland"
+  },
+  {
+   "name": "Charming Creek Walkway",
+   "action": "standalone",
+   "destination": null,
+   "id": "charming-creek-walkway",
+   "coordinates": null,
+   "coordinates_source": "DOC lists a car park at the mine site; the Ngakawau south end (-41.6064,171.8806) is 28 km from Westport; OSM mean (-41.6042,171.9112) is approximate. Needs the car park from DOC/OSM",
+   "reason": "28 to 31 km from Westport (outside its 26 km reach), so standalone.",
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "A former mine railway walk of 5.5 km one way (2 h) to Mangatini Falls through tunnels and past mine relics; split into north and south walkways by a slip.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "photo": {
+    "file": "Charming Creek Walkway 491.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File%3ACharming_Creek_Walkway_491.jpg",
+    "width": 5472
+   },
+   "hero_crop": {
+    "x": 0.65,
+    "y": 0.5
+   },
+   "provisional_coordinates": {
+    "latitude": -41.6064,
+    "longitude": 171.8806
+   },
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland"
+  },
+  {
+   "name": "Monro Beach",
+   "action": "standalone",
+   "destination": null,
+   "id": "monro-beach",
+   "coordinates": {
+    "latitude": -43.6959,
+    "longitude": 169.2653
+   },
+   "coordinates_source": "Commons photo coordinates -43.6959,169.2653 (the beach); DOC: car park 35 km north of Haast on SH6",
+   "reason": "76 km from Westland Tai Poutini's centre, outside every span; reached from Haast.",
+   "category": "beach",
+   "icon": "🐧",
+   "bio": "A beach with sea stacks reached by a 4.7 km, 1 h 20 return track, where Fiordland crested penguins (tawaki) nest from September to November.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "photo": {
+    "file": "Monro Beach, West Coast Region, New Zealand 06.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File%3AMonro_Beach%2C_West_Coast_Region%2C_New_Zealand_06.jpg",
+    "width": 5349
+   },
+   "hero_crop": "centred",
+   "coordinates_verify": "Beach point from a photo; take the SH6 car park from DOC/OSM, and check OSM natural/beach.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland"
+  },
+  {
+   "name": "Ship Creek Walks",
+   "action": "standalone",
+   "destination": null,
+   "id": "ship-creek",
+   "coordinates": {
+    "latitude": -43.7553,
+    "longitude": 169.1486
+   },
+   "coordinates_source": "Wikipedia Ship Creek (New Zealand) -43.7553,169.1486",
+   "reason": "87 km from Westland's centre, outside every span; reached from Haast.",
+   "category": "nature",
+   "icon": "🌲",
+   "bio": "Short walks of about 20 minutes through kahikatea swamp forest and past a dune lake to a beach lookout.",
+   "wiki": "Ship Creek (New Zealand)",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "photo": {
+    "file": "TWC Ship Creek• Stewart Nimmo • MRD 9976.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File%3ATWC_Ship_Creek%E2%80%A2_Stewart_Nimmo_%E2%80%A2_MRD_9976.jpg",
+    "width": 7840
+   },
+   "hero_crop": "centred",
+   "coordinates_verify": "Article point; confirm car park with DOC/OSM.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland"
+  }
+ ],
+ "existing_fixes": [
+  {
+   "id": "kahurangi-3",
+   "name": "Karamea",
+   "issue": "Skeptic sent the gateway village Karamea to review (small museum open summer afternoons; its draws are Oparara and Heaphy). It already exists as kahurangi-3: re-judge, and either keep as a low-rank spot or remove.",
+   "action": "owner decision"
+  },
+  {
+   "id": "kahurangi-2",
+   "name": "Ōpārara Basin",
+   "issue": "Near-duplicate risk with new Oparara Arch (kahurangi-4) and Moria Gate Arch and Mirror Tarn Loop (kahurangi-5): either keep the basin as one spot and drop the two new ones, or keep the two and retire the basin (the basin's id stays if retained).",
+   "action": "owner decision"
+  },
+  {
+   "id": "lewis-pass",
+   "name": "Lewis Pass",
+   "issue": "Listed by DOC under both West Coast and Canterbury; one standalone entry exists (Canterbury region in scripts/coverage-regions.json). Do not duplicate.",
+   "action": "none"
+  },
+  {
+   "id": "kahurangi-1",
+   "name": "Heaphy Track",
+   "issue": "Kept; West Coast end is at Karamea but the spot belongs to Kahurangi. No change.",
+   "action": "none"
+  },
+  {
+   "id": "westland-tai-poutini-4",
+   "name": "Glacier Hot Pools",
+   "issue": "Kept, no change.",
+   "action": "none"
+  },
+  {
+   "id": "westland-tai-poutini-5",
+   "name": "West Coast Wildlife Centre",
+   "issue": "Kept, no change. The Tatare Tunnels candidate row pointed to this id by mistake; Tatare Tunnels is a new spot (westland-tai-poutini-10).",
+   "action": "none"
+  }
+ ],
+ "new_destinations": [
+  {
+   "id": "reefton",
+   "name": "Reefton",
+   "coordinates": {
+    "latitude": -42.11527778,
+    "longitude": 171.86305556
+   },
+   "category": "city",
+   "defaultZoomSpanKm": 40,
+   "spots": [
+    "reefton-1 Waiuta"
+   ],
+   "reason": "A sizeable settlement with its own Wikivoyage chapter and a heritage street, 40+ km from the nearest destination; Waiuta lies 19 km away. Victoria Forest Park (review) and Big River/Reefton walks fold in. Listed for the owner, not added.",
+   "needs": "description, three reasons with photos, tips, best months, header (WRITING.md)"
+  }
+ ],
+ "review_not_placed": [
+  {
+   "name": "Blackball",
+   "views": 4658,
+   "counted_sources": 0,
+   "skeptic": "For: Wikivoyage? no page (404); Wikipedia and DOC Croesus page name the village as trailhead; Museum of Working Class History, Blackball Hilton. Against: no counted visitor source for the village itself; gateway whose draw is Croesus Track. Review."
+  },
+  {
+   "name": "Charleston",
+   "views": 3781,
+   "counted_sources": 0,
+   "skeptic": "Wikivoyage Charleston (NZ) page exists (checked, it was empty in the recall). For: Constant Bay and Joyce Bay lookouts, Underworld glow-worm cave rafting, Mitchells Gully goldmine. Against: mostly operators and 15-minute loops; Constant Bay Loop was rejected. Review."
+  },
+  {
+   "name": "Lyell",
+   "views": 2244,
+   "counted_sources": 1,
+   "skeptic": "DOC Lyell area page: campsite, gold-mining walks, fossicking; also the Old Ghost Road start. Against: remote ghost settlement, part of the Old Ghost Road. Review.",
+   "note": "Start of the Old Ghost Road (old-ghost-road, standalone)"
+  },
+  {
+   "name": "Jackson Bay",
+   "views": 0,
+   "counted_sources": 1,
+   "skeptic": "DOC page opened: road end 51 km south of Haast, short walks, wharf, Craypot cafe (Wikivoyage Haast). For: end-of-the-road stop. Against: remote, coordinates missing (use Wikipedia/OSM), draw is the drive. Gateway-journey case, review."
+  },
+  {
+   "name": "Wangapeka Track",
+   "views": 939,
+   "counted_sources": 1,
+   "skeptic": "DOC, Wikipedia and Wikivoyage Karamea name it (two counted sources). For: a 59 km multi-day tramp from the Karamea end. Against: mostly in the Tasman region, not a Great Walk, few visitors. Review."
+  },
+  {
+   "name": "Haast",
+   "views": 11251,
+   "counted_sources": 1,
+   "skeptic": "For: Wikivoyage chapter, DOC Awarua/Haast Visitor Centre, jetboat safaris, last settlement before the pass. Against: its See section is generic; the draws (Ship Creek, Monro Beach, Jackson Bay) are separate spots. A gateway whose draw is the journey beyond: review (Pipiriki benchmark).",
+   "note": "If kept, a Haast destination would hold Monro Beach (monro-beach), Ship Creek (ship-creek) and Jackson Bay; those two stay standalone meanwhile."
+  },
+  {
+   "name": "Karamea",
+   "views": 6255,
+   "counted_sources": 1,
+   "skeptic": "For: Wikivoyage chapter, end-of-road village, base for Oparara, Heaphy, caves. Against: the village has only a small museum open summer afternoons; Oparara/Heaphy are spots. Gateway village, review.",
+   "note": "Already exists as kahurangi-3"
+  },
+  {
+   "name": "Ross",
+   "views": 3834,
+   "counted_sources": 1,
+   "skeptic": "For: Wikivoyage chapter, historic goldfield, gold panning. Against: the Wikivoyage page is an outline with only gold panning, one source; the recall note's heritage centre and walks are not on it. Review."
+  },
+  {
+   "name": "Murchison",
+   "views": 9773,
+   "counted_sources": 1,
+   "skeptic": "For: Wikivoyage chapter, Buller Gorge rafting base, tiny museum. Against: See section is one tiny museum; Wikivoyage does not give it a real stop. Also overlaps the Tasman region (Murchison is a Tasman-side destination candidate): decide once. Review.",
+   "note": "Decide once with Nelson-Tasman"
+  },
+  {
+   "name": "Victoria Forest Park",
+   "views": 845,
+   "counted_sources": 1,
+   "skeptic": "Downgraded from keep. For: DOC park page, 206,000 ha, mining relics. Against: a park with no single visitor point or named stop; Waiuta, Big River mine and Reefton walks are the actual stops and are judged separately. Review."
+  },
+  {
+   "name": "Tauranga Bay Fur Seal Colony",
+   "views": 0,
+   "counted_sources": 2,
+   "skeptic": "Downgraded from keep. For: Wikivoyage + DOC name it, 10-minute wheelchair track, a real wildlife stop. Against: existing Cape Foulwind spot's bio already ends at this colony, so it is a near-duplicate / part of a larger spot. Review (merge into Cape Foulwind if not kept).",
+   "note": "Merge into westport-1 Cape Foulwind if not kept"
+  },
+  {
+   "name": "Chalet Lookout Walk",
+   "views": 0,
+   "counted_sources": 1,
+   "skeptic": "Downgraded from keep. For: Wikivoyage Fox Glacier lists a 1h15 viewpoint over the glacier. Against: one source and the same glacier as the existing Fox Glacier spot; Moraine and Swing Bridge walks start at the same car park. Review."
+  },
+  {
+   "name": "Honeycomb Hill Cave",
+   "views": 1146,
+   "counted_sources": 1,
+   "skeptic": "Downgraded from keep. For: newzealand.com and Wikivoyage Karamea list guided cave tours with moa bone sites. Against: guided-only operator experience, no usable free photo found (a 1960s B&W silhouette and moa skeletons only). Review."
+  }
+ ],
+ "held": [
+  "Croesus Track",
+  "Carters Beach",
+  "Tatare Tunnels Walk",
+  "Whataroa White Heron Colony"
+ ],
+ "notes": "All entries are drafts for Pipeline C research: hours, cost, ticketUrl and visit hours are null (no source gave them). Coordinates null where a trailhead must come from DOC/OSM; provisional_coordinates shows the nearest source point (not applied)."
+}

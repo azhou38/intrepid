@@ -90,16 +90,19 @@ def set_hero_focus(key, focus):
 
 
 def set_override(key, file):
+    """Write key -> file in WIKI_IMAGE_OVERRIDES only (PHOTO_SUBJECT can hold the same key with a different meaning)."""
     p = 'src/data/imageOverrides.ts'
     s = open(p).read()
     k, v = q(key), q(file)
+    a = s.index('export const WIKI_IMAGE_OVERRIDES')
+    b = s.index('\n};', a)
+    blk = s[a:b]
     pat = re.compile(r'^  ' + re.escape(k) + r': .*,$', re.M)
-    if pat.search(s):
-        s = pat.sub(lambda m: f'  {k}: {v},', s, 1)
+    if pat.search(blk):
+        blk = pat.sub(lambda m: f'  {k}: {v},', blk, 1)
     else:
-        i = s.index('};', s.index('export const WIKI_IMAGE_OVERRIDES'))
-        s = s[:i] + f'  {k}: {v},\n' + s[i:]
-    open(p, 'w').write(s)
+        blk += f'\n  {k}: {v},'
+    open(p, 'w').write(s[:a] + blk + s[b:])
 
 
 added, skipped = [], []

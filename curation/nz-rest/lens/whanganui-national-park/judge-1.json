@@ -1,0 +1,143 @@
+{
+ "slots": {
+  "dest:whanganui-national-park:header": {
+   "candidates": [
+    {
+     "file": "Photo taken in Whanganui - panoramio - Duane Wilkins (1).jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": false,
+     "verdict": "reject",
+     "reason": "Oblique aerial (Commons: Aerial photographs of Whanganui River); headers must be ground level."
+    }
+   ],
+   "decision": "reject",
+   "failed_check": "real_photograph",
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "dest:whanganui-national-park:why1": {
+   "candidates": [
+    {
+     "file": "Whanganui Journey.jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "keep",
+     "reason": "Correct place, shows the named thing, real colour photo."
+    }
+   ],
+   "decision": "keep-current",
+   "failed_check": null,
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "dest:whanganui-national-park:why2": {
+   "candidates": [
+    {
+     "file": "Bridge to Nowhere (25430934253).jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "keep",
+     "reason": "Correct place, shows the named thing, real colour photo."
+    }
+   ],
+   "decision": "keep-current",
+   "failed_check": null,
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "dest:whanganui-national-park:why3": {
+   "candidates": [
+    {
+     "file": "external:bright-along-the-river-road-by-jacqui-mcgowan-1280.jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "keep",
+     "reason": "Correct place, shows the named thing, real colour photo."
+    }
+   ],
+   "decision": "keep-current",
+   "failed_check": null,
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "spot:whanganui-1": {
+   "candidates": [
+    {
+     "file": "Whanganui Journey.jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "keep",
+     "reason": "Correct place, shows the named thing, real colour photo."
+    }
+   ],
+   "decision": "keep-current",
+   "failed_check": null,
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "spot:whanganui-2": {
+   "candidates": [
+    {
+     "file": "Bridge to Nowhere (25430934253).jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "keep",
+     "reason": "Correct place, shows the named thing, real colour photo."
+    }
+   ],
+   "decision": "keep-current",
+   "failed_check": null,
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "spot:whanganui-national-park-1": {
+   "candidates": [
+    {
+     "file": "Pipiriki with Whanganui River - panoramio - Duane Wilkins (1).jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "keep",
+     "reason": "Aerial-style river bend at Pipiriki; acceptable for a spot."
+    }
+   ],
+   "decision": "keep-current",
+   "failed_check": null,
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "spot:whanganui-national-park-2": {
+   "candidates": [
+    {
+     "file": "Church at jerusalem.jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "keep",
+     "reason": "Commons: St Joseph's Church, Jerusalem, Wanganui River Road; steeple recognisable with y 0.35."
+    }
+   ],
+   "decision": "keep-current",
+   "failed_check": null,
+   "hero_crop": {
+    "x": 0.5,
+    "y": 0.35
+   },
+   "dark": false
+  }
+ }
+}

@@ -1,0 +1,74 @@
+{
+ "generated": "2026-10-18T03:30:10.571Z",
+ "scope": {
+  "region": "manawatu-whanganui"
+ },
+ "issues": [
+  {
+   "kind": "spot",
+   "id": "tongariro-4",
+   "name": "Tawhai Falls",
+   "checks": [
+    {
+     "check": "wiki",
+     "detail": "no Wikipedia article (photo lookup will fall back to search)"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "whanganui-3",
+   "name": "Durie Hill Elevator",
+   "checks": [
+    {
+     "check": "no-ticket",
+     "detail": "charges but has no ticketUrl"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "whanganui-6",
+   "name": "Waimarie",
+   "checks": [
+    {
+     "check": "no-ticket",
+     "detail": "no cost and not free: research the price and the official site"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "whanganui-1",
+   "name": "Whanganui Journey",
+   "checks": [
+    {
+     "check": "no-ticket",
+     "detail": "no cost and not free: research the price and the official site"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "whanganui-2",
+   "name": "Bridge to Nowhere",
+   "checks": [
+    {
+     "check": "ticketUrl",
+     "detail": "title doesn't name the place (\"Whanganui National Park: Places to go in Manawatu/Whanganui\")"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "palmerston-north-1",
+   "name": "Te Manawa",
+   "checks": [
+    {
+     "check": "wiki",
+     "detail": "a disambiguation page — set `wiki` to the exact article"
+    }
+   ]
+  }
+ ]
+}

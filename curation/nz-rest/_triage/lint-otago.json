@@ -1,0 +1,166 @@
+{
+ "generated": "2026-10-18T03:31:38.877Z",
+ "scope": {
+  "region": "otago"
+ },
+ "issues": [
+  {
+   "kind": "spot",
+   "id": "queenstown-2",
+   "name": "Kawarau Gorge Suspension Bridge",
+   "checks": [
+    {
+     "check": "ticketUrl",
+     "detail": "title doesn't name the place (\"Bungy Jumping | AKL | Taupō | Queenstown | AJ Hackett Bungy NZ\")"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "queenstown-3",
+   "name": "Shotover Jet",
+   "checks": [
+    {
+     "check": "wiki",
+     "detail": "no Wikipedia article (photo lookup will fall back to search)"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "queenstown-9",
+   "name": "Gibbston Valley",
+   "checks": [
+    {
+     "check": "wiki",
+     "detail": "no Wikipedia article (photo lookup will fall back to search)"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "queenstown-10",
+   "name": "Coronet Peak",
+   "checks": [
+    {
+     "check": "no-ticket",
+     "detail": "no cost and not free: research the price and the official site"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "queenstown-11",
+   "name": "The Remarkables",
+   "checks": [
+    {
+     "check": "no-ticket",
+     "detail": "no cost and not free: research the price and the official site"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "queenstown-13",
+   "name": "Skippers Canyon",
+   "checks": [
+    {
+     "check": "no-ticket",
+     "detail": "no cost and not free: research the price and the official site"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "queenstown-14",
+   "name": "Arrowtown Chinese Settlement",
+   "checks": [
+    {
+     "check": "no-ticket",
+     "detail": "no cost and not free: research the price and the official site"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "wanaka-2",
+   "name": "Roys Peak",
+   "checks": [
+    {
+     "check": "bio",
+     "detail": "more than one sentence"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "dunedin-1",
+   "name": "Dunedin Railway Station",
+   "checks": [
+    {
+     "check": "wiki",
+     "detail": "redirects to \"Dunedin Railways Limited\" — set `wiki` to it, or check it's this place"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "dunedin-3",
+   "name": "Royal Albatross Centre",
+   "checks": [
+    {
+     "check": "wiki",
+     "detail": "no Wikipedia article (photo lookup will fall back to search)"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "dunedin-4",
+   "name": "Penguin Place",
+   "checks": [
+    {
+     "check": "ticketUrl",
+     "detail": "unreachable (TypeError: fetch failed)"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "oamaru-2",
+   "name": "Oamaru Victorian Precinct",
+   "checks": [
+    {
+     "check": "wiki",
+     "detail": "no Wikipedia article (photo lookup will fall back to search)"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "mount-aspiring-1",
+   "name": "Rob Roy Glacier Track",
+   "checks": [
+    {
+     "check": "ticketUrl",
+     "detail": "title doesn't name the place (\"Mount Aspiring National Park: Places to go in Otago\")"
+    },
+    {
+     "check": "wiki",
+     "detail": "no Wikipedia article (photo lookup will fall back to search)"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "mount-aspiring-2",
+   "name": "Blue Pools",
+   "checks": [
+    {
+     "check": "wiki",
+     "detail": "no Wikipedia article (photo lookup will fall back to search)"
+    }
+   ]
+  }
+ ]
+}

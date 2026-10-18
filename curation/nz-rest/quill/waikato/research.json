@@ -1,0 +1,1378 @@
+{
+ "region": "waikato",
+ "researcher": "quill",
+ "date": "2026-10-17",
+ "entries": [
+  {
+   "id": "coromandel-6",
+   "name": "Thames",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Thames is an old gold-mining town on the west coast of the Coromandel Peninsula and the gateway to the peninsula; the Kauaeranga Valley hiking and camping area lies just south.",
+     "source": "https://en.wikivoyage.org/wiki/Thames"
+    },
+    {
+     "claim": "Thames is the seat of the Thames-Coromandel District Council and the largest town on the peninsula (Whitianga is second-largest).",
+     "source": "https://en.wikipedia.org/wiki/Thames,_New_Zealand"
+    },
+    {
+     "claim": "Grahamstown, the northern end of Thames, has cafes and boutique shops, a museum covering Maori times, mining and logging, and a School of Mines open Wednesday to Saturday.",
+     "source": "https://en.wikivoyage.org/wiki/Thames"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "No single steward or operator (a town or district); per WRITING.md no ticketUrl.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -37.13839,
+     "longitude": 175.5405
+    },
+    "source_point": {
+     "latitude": -37.13839,
+     "longitude": 175.5405
+    },
+    "source": "https://en.wikipedia.org/wiki/Thames,_New_Zealand (town point; the spot is the town)",
+    "ok": true
+   },
+   "category": "historic",
+   "unverified": [
+    "Museum and School of Mines hours/prices not checked (not part of the spot)."
+   ],
+   "wiki_title": "Thames, New Zealand",
+   "wiki_note": "Spot name 'Thames' resolves to River Thames; set wiki to 'Thames, New Zealand' (article exists, type standard)."
+  },
+  {
+   "id": "coromandel-7",
+   "name": "Whitianga",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Whitianga is a seaside town in the middle of Mercury Bay with a deep-water harbour from which cruising boats depart for the Mercury Bay coves and Te Whanganui-A-Hei Marine Reserve.",
+     "source": "https://en.wikivoyage.org/wiki/Whitianga"
+    },
+    {
+     "claim": "Whitianga has about 6,140 permanent residents (June 2025), the second-largest town on the peninsula behind Thames.",
+     "source": "https://en.wikipedia.org/wiki/Whitianga"
+    },
+    {
+     "claim": "Cooks Beach is across the harbour from Whitianga, reached by a short passenger ferry.",
+     "source": "https://en.wikivoyage.org/wiki/Whitianga"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "No single steward or operator (a town or district); per WRITING.md no ticketUrl.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -36.833056,
+     "longitude": 175.699722
+    },
+    "source_point": {
+     "latitude": -36.833056,
+     "longitude": 175.699722
+    },
+    "source": "https://en.wikivoyage.org/wiki/Whitianga (town point)",
+    "ok": true
+   },
+   "category": "historic",
+   "unverified": [
+    "Cruise operators and prices not researched (many operators; no ticketUrl)."
+   ]
+  },
+  {
+   "id": "coromandel-8",
+   "name": "Kauaeranga Valley",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "DOC: the Kauaeranga Valley is in Coromandel Forest Park, 13 km behind Thames; it has campsites beside the Kauaeranga River and the Pinnacles (759 m) with panoramic views.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/coromandel/places/coromandel-forest-park/kauaeranga-valley/"
+    },
+    {
+     "claim": "The Kauaeranga Visitor Centre (995C Kauaeranga Valley Road, Thames) has track, hut and campsite information and displays on kauri logging; the road is sealed to the visitor centre, then 9 km of gravel to the road end where most walks start.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/coromandel/places/coromandel-forest-park/kauaeranga-valley/"
+    },
+    {
+     "claim": "A replica kauri-driving dam is a short walk from the visitor centre; Dancing Camp is the one logging dam still substantially intact.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/coromandel/places/coromandel-forest-park/kauaeranga-valley/"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/coromandel/places/coromandel-forest-park/kauaeranga-valley/",
+   "ticketUrl_note": "Verified: DOC page (HTTP 200, title 'Kauaeranga Valley: Coromandel places to visit'). Replaces the placement's Coromandel Forest Park URL, which does not name the valley. Visitor centre hours are on a separate DOC page (not captured).",
+   "coordinates_check": {
+    "current": {
+     "latitude": -37.12127,
+     "longitude": 175.63006
+    },
+    "source_point": {
+     "latitude": -37.12127,
+     "longitude": 175.63006
+    },
+    "source": "OSM way 222189179 (Kauaeranga Visitor Centre); parking way 1126629341 at -37.12148,175.62981 agrees",
+    "ok": true
+   },
+   "category": "nature",
+   "unverified": [
+    "Visitor centre opening hours; campsite fees."
+   ],
+   "wiki_title": "Kauaeranga Valley"
+  },
+  {
+   "id": "coromandel-9",
+   "name": "Pinnacles Track",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "DOC's Kauaeranga Kauri Trail (Pinnacles Walk) is a popular 6 km one-way, about 3 hr walk from the Kauaeranga road end to Pinnacles Hut and on to the Pinnacles summit lookout (759 m); it can be a day or overnight walk.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/coromandel/places/coromandel-forest-park/things-to-do/kauaeranga-kauri-trail/"
+    },
+    {
+     "claim": "Walk there and back on the Webb Creek Track takes 6 to 7 hr 30 min; the Webb Creek plus Billygoat circuit takes 7 to 8 hr 30 min. Pinnacles Hut to the summit is a further 40 min one way and more exposed.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/coromandel/places/coromandel-forest-park/things-to-do/kauaeranga-kauri-trail/"
+    },
+    {
+     "claim": "The track starts at the road-end car park: cross the swing bridge over the Kauaeranga River, then take the Webb Creek Track to Hydro Camp.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/coromandel/places/coromandel-forest-park/things-to-do/kauaeranga-kauri-trail/"
+    },
+    {
+     "claim": "Pinnacles Hut (80 bunks) must be booked online; DOC lists adult bunks at $30 to $40 a night depending on season (hut, not the day walk).",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/coromandel/places/coromandel-forest-park/things-to-do/pinnacles-hut/"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 6,
+   "visitHoursMax": 8,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/coromandel/places/coromandel-forest-park/things-to-do/kauaeranga-kauri-trail/",
+   "ticketUrl_note": "Verified: DOC page (HTTP 200, title 'Kauaeranga Kauri Trail: Coromandel Forest Park', heading 'Kauaeranga Kauri Trail (Pinnacles Walk)'). Replaces the placement's Pinnacles Hut page (hut booking page, not the track). Day walk is free; overnight hut is paid.",
+   "coordinates_check": {
+    "current": null,
+    "source_point": {
+     "latitude": -37.06198,
+     "longitude": 175.67088
+    },
+    "source": "OSM way 632669870 (Webb Creek Track), first node at the Kauaeranga road-end end of the track, just over the swing bridge. Not the hut (-37.04203,175.71267, OSM way 216092584). OSM node 330123959 'Billygoat Track Carpark' at -37.06842,175.66616 is ~0.8 km SW and is the Billygoat/Tarawaere Dam car park, not necessarily the road-end car park.",
+    "ok": false,
+    "note": "No coordinates in placement; use the Webb Creek Track start. DOC gives no coordinates for the trailhead, so this is OSM-derived and good to ~150 m."
+   },
+   "category": "hike",
+   "unverified": [
+    "Exact road-end car park coordinates (DOC gives none); the OSM Webb Creek first node is used instead.",
+    "Visit time: DOC says 6-7.5 hr return on Webb Creek track; placement 6-9, suggest 6-8."
+   ],
+   "bio_suggestion": "A steep DOC walk from the Kauaeranga road end up Webb Creek to Pinnacles Hut and the 759 m Pinnacles lookout, done as a long day or overnight (DOC: 6 km, about 3 hr one way)."
+  },
+  {
+   "id": "coromandel-10",
+   "name": "Pauanui",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Pauanui is a town on the east coast of the Coromandel Peninsula at the mouth of the Tairua River, on its south bank directly opposite Tairua.",
+     "source": "https://en.wikipedia.org/wiki/Pauanui"
+    },
+    {
+     "claim": "Wikivoyage: the area is a base for swimming, surfing, kayaking, sailing, fishing, diving, hiking and biking; a Tairua/Pauanui ferry runs hourly in summer.",
+     "source": "https://en.wikivoyage.org/wiki/Pauanui"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "No single steward or operator (a town or district); per WRITING.md no ticketUrl.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -37.01805556,
+     "longitude": 175.8625
+    },
+    "source_point": {
+     "latitude": -37.01805556,
+     "longitude": 175.8625
+    },
+    "source": "https://en.wikipedia.org/wiki/Pauanui (town point)",
+    "ok": true
+   },
+   "category": "beach",
+   "unverified": [
+    "Wikivoyage Pauanui has no See listing; a single counted source describes the town. Marginal-draw call stays with the owner/judge."
+   ]
+  },
+  {
+   "id": "coromandel-11",
+   "name": "Tairua",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Tairua is a small coastal town on the east coast of the Coromandel Peninsula, a popular summer holiday spot and a coffee stop on the Coromandel tourist circuit.",
+     "source": "https://en.wikivoyage.org/wiki/Tairua"
+    },
+    {
+     "claim": "Tairua lies at the mouth of the Tairua River on its north bank and on the small Paku Peninsula; 2023 population 1,630.",
+     "source": "https://en.wikipedia.org/wiki/Tairua"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "No single steward or operator (a town or district); per WRITING.md no ticketUrl.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -37.006389,
+     "longitude": 175.848889
+    },
+    "source_point": {
+     "latitude": -37.006389,
+     "longitude": 175.848889
+    },
+    "source": "https://en.wikivoyage.org/wiki/Tairua (town point)",
+    "ok": true
+   },
+   "category": "beach",
+   "unverified": []
+  },
+  {
+   "id": "coromandel-12",
+   "name": "Whangamatā",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Whangamata is a beachside town on the Coromandel Peninsula and, per Wikivoyage, one of the country's top surfing locations, with beach breaks and a bar break.",
+     "source": "https://en.wikivoyage.org/wiki/Whangamata"
+    },
+    {
+     "claim": "Whangamatā is on the southeast coast of the peninsula, 30 km north of Waihi.",
+     "source": "https://en.wikipedia.org/wiki/Whangamatā"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "No single steward or operator (a town or district); per WRITING.md no ticketUrl.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -37.2,
+     "longitude": 175.86666667
+    },
+    "source_point": {
+     "latitude": -37.2,
+     "longitude": 175.86666667
+    },
+    "source": "https://en.wikipedia.org/wiki/Whangamatā (town point)",
+    "ok": true
+   },
+   "category": "beach",
+   "unverified": []
+  },
+  {
+   "id": "coromandel-13",
+   "name": "Buffalo Beach",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Buffalo Beach is a 3 km sandy beach adjacent to Whitianga, safe for swimming, named after HMS Buffalo, wrecked there in 1840.",
+     "source": "https://en.wikivoyage.org/wiki/Whitianga"
+    },
+    {
+     "claim": "An HMS Buffalo memorial and anchor stand on Buffalo Beach Rd near Halligan Rd (-36.8254, 175.7026).",
+     "source": "https://en.wikivoyage.org/wiki/Whitianga"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Beach; no steward.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -36.82598,
+     "longitude": 175.70319
+    },
+    "source_point": {
+     "latitude": -36.82598,
+     "longitude": 175.70319
+    },
+    "source": "OSM natural/beach way 90878845 (Nominatim lookup centroid -36.82598,175.70319); Wikivoyage memorial point -36.8254,175.7026 is 60 m away",
+    "ok": true
+   },
+   "category": "beach",
+   "unverified": [
+    "Wikipedia has no 'Buffalo Beach' article (404): photo lookup will fall back to search, so give it a WIKI_IMAGE_OVERRIDES entry."
+   ],
+   "wiki_title": null
+  },
+  {
+   "id": "coromandel-14",
+   "name": "Cooks Beach",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Cooks Beach is a town on a three-kilometre white-sand beach on the Coromandel Peninsula, east of Hahei's Cathedral Cove side and across Mercury Bay from Whitianga; Shakespeare Cliff scenic reserve has a lookout.",
+     "source": "https://en.wikipedia.org/wiki/Cooks_Beach"
+    },
+    {
+     "claim": "Wikivoyage: 3 km white sand beach suitable for swimming, reached from Whitianga by a short passenger ferry.",
+     "source": "https://en.wikivoyage.org/wiki/Whitianga"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Beach; no steward.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -36.83808,
+     "longitude": 175.742443
+    },
+    "source_point": {
+     "latitude": -36.83394,
+     "longitude": 175.73599
+    },
+    "source": "OSM natural/beach way 87923734 'Cooks Beach' (centroid via Nominatim lookup). The current point is the Wikivoyage listing, which sits at the village shops (Cooks Beach Store -36.83883,175.74187), ~700 m from the beach.",
+    "ok": false,
+    "note": "Move to the OSM beach centroid."
+   },
+   "category": "beach",
+   "unverified": [],
+   "wiki_title": "Cooks Beach"
+  },
+  {
+   "id": "coromandel-15",
+   "name": "Paku",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Wikivoyage: walk to the summit of this volcanic peak, once a Maori pa site, for a view of the Pacific, Tairua Harbour and the Coromandel Ranges (Tirinui Cres, Tairua).",
+     "source": "https://en.wikivoyage.org/wiki/Tairua"
+    },
+    {
+     "claim": "OSM has the Paku Summit Walkway (ways 203184877 and 590344236) with interpretation boards on the farming and geology of Paku Hill.",
+     "source": "https://www.openstreetmap.org/way/203184877"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Council-managed reserve with no official page found; no ticketUrl.",
+   "coordinates_check": {
+    "current": null,
+    "source_point": {
+     "latitude": -37.00048,
+     "longitude": 175.86606
+    },
+    "source": "OSM natural/peak node 1074288373 'Paku' (Nominatim/Photon). Walkway start (first node of way 203184877) -37.00107,175.86676 is ~70 m away. The Wikivoyage point -37.0008,175.8674 is within ~70 m too, so it was not in the harbour as the placement feared.",
+    "ok": false,
+    "note": "Use the OSM peak node."
+   },
+   "category": "hike",
+   "unverified": [
+    "Walk time/length not sourced (placement 1-2 hr)."
+   ],
+   "wiki_title": null,
+   "wiki_note": "'Paku' on Wikipedia is a disambiguation page; there is no own article, so the spot needs a WIKI_IMAGE_OVERRIDES photo."
+  },
+  {
+   "id": "coromandel-16",
+   "name": "Opoutere Beach",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "DOC: Opoutere Beach Track is a 1.4 km return easy short walk to over 5 km of unspoilt white sand beside Wharekawa Harbour; the area is home to endangered sea birds including the New Zealand dotterel.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/coromandel/places/tairua-area/tracks/opoutere-beach-track/"
+    },
+    {
+     "claim": "DOC: dogs and vehicles are prohibited, the beach has dangerous rips, and fenced-off areas protect nesting eggs.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/coromandel/places/tairua-area/tracks/opoutere-beach-track/"
+    },
+    {
+     "claim": "The car park is about 4 km down Opoutere Road from the SH25 turnoff, 11 km north of Whangamata.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/coromandel/places/tairua-area/tracks/opoutere-beach-track/"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/coromandel/places/tairua-area/tracks/opoutere-beach-track/",
+   "ticketUrl_note": "Verified: DOC page (HTTP 200, title 'Opoutere Beach Track: Tairua area, Coromandel').",
+   "coordinates_check": {
+    "current": {
+     "latitude": -37.1059,
+     "longitude": 175.88689
+    },
+    "source_point": {
+     "latitude": -37.1059,
+     "longitude": 175.8869
+    },
+    "source": "OSM natural/beach way 894154647 (Nominatim lookup centroid -37.1058971,175.8868938)",
+    "ok": true
+   },
+   "category": "beach",
+   "unverified": [
+    "DOC notes a partial track closure for unsafe trees that does not affect beach access."
+   ],
+   "wiki_title": "Opoutere",
+   "wiki_note": "'Opoutere Beach' redirects to the Opoutere article (a locality and beach); set wiki to 'Opoutere' or leave as-is and check the photo.",
+   "bio_suggestion": "A 5 km stretch of white sand and dotterel habitat reached by a short DOC track near Opoutere, with strong rips."
+  },
+  {
+   "id": "coromandel-17",
+   "name": "The Waterworks",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "The Waterworks is a family park of 70+ water-powered, recycled-material attractions with swimming holes, jumping boards and a water slide, on five acres of native bush at 471 The 309 Road, 7 km from Coromandel town.",
+     "source": "https://thewaterworks.co.nz/"
+    },
+    {
+     "claim": "Official hours: peak season 10am to 6pm, off season 10am to 4pm (check their calendar for current opening days).",
+     "source": "https://thewaterworks.co.nz/"
+    },
+    {
+     "claim": "Official tickets: adult (16+) $28, child (4-15) $23, senior and student $23; buying online takes 10% off.",
+     "source": "https://thewaterworks.co.nz/tickets/"
+    },
+    {
+     "claim": "Wikivoyage Coromandel Town lists it on the 309 Road, 7 km from Coromandel town.",
+     "source": "https://en.wikivoyage.org/wiki/Coromandel_Town"
+    }
+   ],
+   "hours": "10:00 AM – 6:00 PM peak season, 10:00 AM – 4:00 PM off season",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 28,
+   "costMax": 28,
+   "currency": "NZD",
+   "ticketUrl": "https://thewaterworks.co.nz/",
+   "ticketUrl_note": "Verified: official site (HTTP 200, title 'The Waterworks – Best Family Attractions in Coromandel, NZ'; redirects from www to the bare domain).",
+   "coordinates_check": {
+    "current": {
+     "latitude": -36.81651,
+     "longitude": 175.5386
+    },
+    "source_point": {
+     "latitude": -36.81651,
+     "longitude": 175.5386
+    },
+    "source": "OSM node 567549237 (tourism/attraction, The Waterworks, 471 The 309 Road)",
+    "ok": true
+   },
+   "category": "entertainment",
+   "unverified": [
+    "Which months count as peak vs off season on the official site (third-party listings say Nov-Apr and May-Oct).",
+    "Opening days: official page defers to a calendar."
+   ],
+   "held": true,
+   "wiki_title": null,
+   "wiki_note": "No Wikipedia article ('The Waterworks' on Wikipedia is a 1994 novel): do NOT use it; needs a hand-picked photo."
+  },
+  {
+   "id": "coromandel-18",
+   "name": "Ocean Beach (Tairua)",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Wikivoyage Tairua: Ocean Beach (Ocean Beach Rd) is great for surfing and soaking up the sun.",
+     "source": "https://en.wikivoyage.org/wiki/Tairua"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Beach; no steward.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -36.99103,
+     "longitude": 175.85792
+    },
+    "source_point": {
+     "latitude": -36.99103,
+     "longitude": 175.85792
+    },
+    "source": "OSM natural/beach way 90257426 (Nominatim lookup centroid -36.9910282,175.8579210)",
+    "ok": true
+   },
+   "category": "beach",
+   "unverified": [
+    "Single counted source; marginal draw."
+   ],
+   "held": true,
+   "wiki_title": null
+  },
+  {
+   "id": "hamilton-5",
+   "name": "Cambridge",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Cambridge is a town of 22,700 on the Waikato River, 24 km southeast of Hamilton, known as the 'Town of Trees and Champions'.",
+     "source": "https://en.wikipedia.org/wiki/Cambridge,_New_Zealand"
+    },
+    {
+     "claim": "Wikivoyage: a tree-lined town with a very English feel, with the Waikato River dividing central Cambridge from Leamington.",
+     "source": "https://en.wikivoyage.org/wiki/Cambridge_(New_Zealand)"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "No single steward or operator (a town or district); per WRITING.md no ticketUrl.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -37.88333333,
+     "longitude": 175.46666667
+    },
+    "source_point": {
+     "latitude": -37.88333333,
+     "longitude": 175.46666667
+    },
+    "source": "https://en.wikipedia.org/wiki/Cambridge,_New_Zealand (town point)",
+    "ok": true
+   },
+   "category": "historic",
+   "unverified": [
+    "Bio says 'heritage buildings' and 'close to the Maungatautari sanctuary': Wikivoyage supports the English feel and lists the sanctuary under Cambridge; no heritage-building source captured, so reword to 'tree-lined'."
+   ],
+   "wiki_title": "Cambridge, New Zealand",
+   "wiki_note": "Spot name 'Cambridge' resolves to Cambridge, England; set wiki to 'Cambridge, New Zealand'.",
+   "bio_suggestion": "A tree-lined Waikato River town with a very English feel, near the Maungatautari sanctuary."
+  },
+  {
+   "id": "hamilton-6",
+   "name": "Hakarimata Summit Track",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "DOC: Hakarimata Summit Track climbs to the summit (374 m) with a tower giving views to the coast, across the Waikato Basin and to Ruapehu; 2 km return, about 3 hr, easy to intermediate; part of Te Araroa.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/waikato/places/hakarimata-scenic-reserve/tracks/hakarimata-summit-track"
+    },
+    {
+     "claim": "It is a 335 m climb from Brownlee Avenue with 1,349 steps; the track is reached via the Waterworks Walk, which starts on Brownlee Avenue about 1 km north of Ngaruawahia.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/waikato/places/hakarimata-scenic-reserve/tracks/hakarimata-summit-track"
+    },
+    {
+     "claim": "DOC warns of falling rocks on the narrow Waterworks Walk section and says to scrub boots for kauri dieback.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/waikato/places/hakarimata-scenic-reserve/tracks/hakarimata-summit-track"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/waikato/places/hakarimata-scenic-reserve/tracks/hakarimata-summit-track",
+   "ticketUrl_note": "Verified: DOC track page (HTTP 200, title 'Hakarimata Summit track: Hakarimata Scenic Reserve, Waikato region'). Replaces the reserve page, which does not name the track.",
+   "coordinates_check": {
+    "current": null,
+    "source_point": {
+     "latitude": -37.66301,
+     "longitude": 175.14189
+    },
+    "source": "OSM way 150856504 Waterworks Walk, last node at the Brownlee Avenue end (Brownlee Ave way 87862609 at -37.6623,175.1419). The summit track (OSM way 150831967) branches from the same walk at -37.6638,175.1325 and runs ~1 km west.",
+    "ok": false,
+    "note": "Use the Brownlee Avenue trailhead."
+   },
+   "category": "hike",
+   "unverified": [
+    "DOC gives no car-park coordinates; point is the end of the OSM walk at Brownlee Avenue (good to ~150 m)."
+   ],
+   "wiki_title": null,
+   "wiki_note": "No own article (Wikipedia 'Hakarimata Range' covers the range); needs an override photo."
+  },
+  {
+   "id": "hamilton-7",
+   "name": "Mount Pirongia",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Mount Pirongia is an extinct stratovolcano rising to 959 m in the Waikato; Pirongia Forest Park is 25 km southeast of Hamilton.",
+     "source": "https://en.wikipedia.org/wiki/Mount_Pirongia"
+    },
+    {
+     "claim": "DOC Tirohanga Track: 6.5 km, 3 to 5 hr one way, advanced tramping track from Corcoran Road car park over Ruapane Trig (723 m) to the Pirongia summit (959 m), with climbing chains on difficult parts; Taranaki and Ruapehu are visible on a clear day.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/waikato/places/pirongia-forest-park/things-to-do/tirohanga-track/"
+    },
+    {
+     "claim": "DOC: water is difficult to find on the high-level tracks, especially in summer, and many tracks are muddy after rain.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/waikato/places/pirongia-forest-park/"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 6,
+   "visitHoursMax": 10,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/waikato/places/pirongia-forest-park/",
+   "ticketUrl_note": "Verified: DOC park page (HTTP 200, title 'Pirongia Forest Park: Places to go in the Waikato region'). A track page (Tirohanga Track) also exists at the same site if a more specific link is wanted.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -37.991077,
+     "longitude": 175.089243
+    },
+    "source_point": {
+     "latitude": -37.991077,
+     "longitude": 175.089243
+    },
+    "source": "https://en.wikipedia.org/wiki/Mount_Pirongia (summit point)",
+    "ok": true,
+    "note": "Summit pin; trailheads (Corcoran Rd, Grey Rd) are several km away and DOC gives no coordinates."
+   },
+   "category": "hike",
+   "unverified": [
+    "Visit hours: DOC gives 3-5 hr one way, so a summit return is ~6-10 hr; placement says 4-8, suggest 6-10."
+   ],
+   "wiki_title": "Mount Pirongia"
+  },
+  {
+   "id": "hamilton-8",
+   "name": "Maungatautari",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Sanctuary Mountain Maungatautari is New Zealand's largest pest-proof fenced eco-sanctuary around the extinct Maungatautari volcano near Cambridge; the visitor centre is at 99 Tari Road, Pukeatua, and the Southern Enclosure (Te Tui a Tane) is where passes and guided tours are sold.",
+     "source": "https://www.sanctuarymountain.co.nz/experiences/"
+    },
+    {
+     "claim": "Official hours: visitor centre 9am to 4pm daily, last entry 4pm, closed only on 25 December; day passes must be collected by 4pm.",
+     "source": "https://www.sanctuarymountain.co.nz/contact-us/"
+    },
+    {
+     "claim": "Official experiences page: Day Pass into the Sanctuary from $34 per adult; guided tours from $50 to $72 per adult and include the pass.",
+     "source": "https://www.sanctuarymountain.co.nz/experiences/"
+    },
+    {
+     "claim": "No dogs, no bikes, and a biosecurity check/clean/close routine at the pest-proof gates; the site promotes kaka, takahe and tuatara.",
+     "source": "https://www.sanctuarymountain.co.nz/walking-and-hiking-trails/"
+    },
+    {
+     "claim": "Wikipedia: the 797 m mountain is an extinct stratovolcano and the site of the sanctuary.",
+     "source": "https://en.wikipedia.org/wiki/Maungatautari"
+    }
+   ],
+   "hours": "9:00 AM – 4:00 PM",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "costMin": 34,
+   "costMax": 34,
+   "currency": "NZD",
+   "ticketUrl": "https://www.sanctuarymountain.co.nz/",
+   "ticketUrl_note": "Verified: official site (HTTP 200, titled 'Walking/Hiking Trails at Sanctuary Mountain Maungatautari' / 'Contact Us | Sanctuary Mountain Maungatautari').",
+   "coordinates_check": {
+    "current": null,
+    "source_point": {
+     "latitude": -38.0560053,
+     "longitude": 175.5603532
+    },
+    "source": "OSM way 760469534 'Sanctuary Mountain Maungatautari Visitor Centre', Tari Road, Pukeatua (Photon); Nominatim's Maungatautari Ecological Island Trust node is at -38.0555,175.5613. The Wikipedia point (-38.01887,175.57579) is the summit, ~4 km north.",
+    "ok": false,
+    "note": "Pin at the visitor centre/entrance, not the summit."
+   },
+   "category": "nature",
+   "unverified": [
+    "Day Pass price is 'From $34' on the official page; third-party listings show $30 to $32 (older)."
+   ],
+   "held": true,
+   "wiki_title": "Maungatautari",
+   "bio_suggestion": "A volcanic mountain fenced as a predator-free ecological island near Cambridge, where visitors can see native birds such as kaka and takahe."
+  },
+  {
+   "id": "hamilton-9",
+   "name": "Te Awamutu",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Te Awamutu is a Waipa District service town about 30 km south of Hamilton on State Highway 3, often called the Rose Town of New Zealand for its rose gardens in the town centre.",
+     "source": "https://en.wikivoyage.org/wiki/Te_Awamutu"
+    },
+    {
+     "claim": "Te Awamutu Museum (55 Rickett Road, established 1935) holds the large carved Maori post Te Uenuku; Mon-Fri 10am-4pm, Sat 10am-2pm per Wikivoyage.",
+     "source": "https://en.wikivoyage.org/wiki/Te_Awamutu"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "No single steward or operator (a town or district); per WRITING.md no ticketUrl. (The museum is run by council; not researched as its own spot.)",
+   "coordinates_check": {
+    "current": {
+     "latitude": -38.01666667,
+     "longitude": 175.31666667
+    },
+    "source_point": {
+     "latitude": -38.01666667,
+     "longitude": 175.31666667
+    },
+    "source": "https://en.wikipedia.org/wiki/Te_Awamutu (town point)",
+    "ok": true
+   },
+   "category": "historic",
+   "unverified": [
+    "Museum hours are from a Wikivoyage listing, not the museum's own site."
+   ],
+   "held": true,
+   "wiki_title": "Te Awamutu"
+  },
+  {
+   "id": "raglan-5",
+   "name": "Whale Bay",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Wikivoyage Raglan lists Whale Bay with Manu Bay as one of the area's surf beaches.",
+     "source": "https://en.wikivoyage.org/wiki/Raglan"
+    },
+    {
+     "claim": "Travel guides place Whale Bay about 1.5 km west of Manu Bay on the north side of Mount Karioi; public access is from the east end, with parking via Calvert Road off Wainui Road, and much of the bay is private land. Access is over exposed rock, for experienced surfers.",
+     "source": "https://tripideas.nz/place/whale-bay-raglan"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Surf bay; no steward.",
+   "coordinates_check": {
+    "current": null,
+    "source_point": {
+     "latitude": -37.82355,
+     "longitude": 174.80307
+    },
+    "source": "OSM leisure/park way 264243201 'Whale Bay Reserve' (Photon/Nominatim lookup, the reserve at the east/access end, on land). OSM natural/bay node 6680861427 'Whale Bay' is at -37.82398,174.79853 (~400 m west, on the coast).",
+    "ok": false,
+    "note": "Use the reserve point as the standing point; the bay node is the alternative."
+   },
+   "category": "beach",
+   "unverified": [
+    "Public access and parking details are from a travel-guide page (tripideas.nz) only; access across rocks/private land should be checked with DOC or Waikato District Council."
+   ],
+   "wiki_title": null,
+   "wiki_note": "Wikipedia 'Whale Bay' is a disambiguation page and 'Whale Bay, New Zealand' redirects to Raglan; no own article, so it needs an override photo.",
+   "bio_suggestion": "A surf bay 1.5 km west of Manu Bay on the Raglan coast, reached over rocks from its eastern end."
+  },
+  {
+   "id": "waitomo-6",
+   "name": "Te Kuiti Sheep Shearing Statue",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Wikipedia: Te Kuiti, the 'Shearing Capital of the World', contains the world's largest shearer, a seven-metre-high statue.",
+     "source": "https://en.wikipedia.org/wiki/Te_Kūiti"
+    },
+    {
+     "claim": "OSM has the artwork 'Shearer' on Lawrence Street, Te Kuiti (node 1577832655).",
+     "source": "https://www.openstreetmap.org/node/1577832655"
+    },
+    {
+     "claim": "Wikivoyage Te Kuiti: the town hosts the Great New Zealand Muster and Running of the Sheep each April, and the National Shearing Championships.",
+     "source": "https://en.wikivoyage.org/wiki/Te_Kuiti"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Public statue; no steward found.",
+   "coordinates_check": {
+    "current": null,
+    "source_point": {
+     "latitude": -38.33705,
+     "longitude": 175.1684
+    },
+    "source": "OSM tourism/artwork node 1577832655 'Shearer', Lawrence Street, Te Kuiti (Photon + Nominatim lookup)",
+    "ok": false,
+    "note": "Use the OSM artwork point (not the town point -38.3333,175.1667)."
+   },
+   "category": "monument",
+   "unverified": [
+    "Wikipedia does not name the statue as a separate article; the 'world's largest shearer' claim is from the Te Kuiti article, which is Wikipedia not a visitor source."
+   ],
+   "wiki_title": null
+  },
+  {
+   "id": "waitomo-7",
+   "name": "The Big Apple",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Wikipedia: The Big Apple is a 7.5 m statue of an apple on State Highway 3 between Otorohanga and Te Kuiti, with a restaurant, cafe and conference facility; opened as a restaurant in 1995 and bought by Tourism Holdings in 2015.",
+     "source": "https://en.wikipedia.org/wiki/The_Big_Apple_(Waitomo)"
+    },
+    {
+     "claim": "Wikipedia gives its coordinates as -38.2444, 175.1826; OSM has the artwork (node 11749827269) at Hangatiki, SH3 at -38.24444, 175.18261.",
+     "source": "https://www.openstreetmap.org/node/11749827269"
+    },
+    {
+     "claim": "Wikivoyage's Waitomo Caves entry for The Big Apple has NO coordinates; the point -38.260375, 175.110424 in the placement belongs to the neighbouring Huhu Cafe listing, 10 Waitomo Caves Rd.",
+     "source": "https://en.wikivoyage.org/wiki/Waitomo_Caves"
+    },
+    {
+     "claim": "SH37 (the spur to the caves) begins at Hangatiki on SH3, about 7 km from Waitomo Caves.",
+     "source": "https://en.wikipedia.org/wiki/State_Highway_37_(New_Zealand)"
+    }
+   ],
+   "hours": "Unverified (cafe hours not found; the statue is visible from the highway)",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "No official site found: Wikipedia lists none, searches found only directories, and the owner (thl) page is not specific. Left null rather than guessing a domain.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -38.260375,
+     "longitude": 175.110424
+    },
+    "source_point": {
+     "latitude": -38.24444,
+     "longitude": 175.18261
+    },
+    "source": "Wikipedia (-38.2444, 175.1826) and OSM node 11749827269 agree at Hangatiki on SH3. Wikivoyage's cafe point actually belongs to Huhu Cafe in Waitomo Caves village, 6 km west. The Wikipedia/OSM point is right.",
+    "ok": false,
+    "note": "MOVE to -38.24444, 175.18261."
+   },
+   "category": "landmark",
+   "unverified": [
+    "Cafe opening hours and whether the cafe is still trading (latest source found is 2015 for ownership)."
+   ],
+   "wiki_title": "The Big Apple (Waitomo)"
+  },
+  {
+   "id": "taupo-7",
+   "name": "Lake Taupō",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Lake Taupō is a large crater lake in the caldera of Taupō Volcano, 616 km2, the largest lake in New Zealand by surface area.",
+     "source": "https://en.wikipedia.org/wiki/Lake_Taupō"
+    },
+    {
+     "claim": "Wikivoyage Taupo covers cruising, fishing, sailing and skydiving from the town on the lake's northeastern shore.",
+     "source": "https://en.wikivoyage.org/wiki/Taupo"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Lake with many operators and the council; no single official site, so none.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -38.80694444,
+     "longitude": 175.90777778
+    },
+    "source_point": {
+     "latitude": -38.80694444,
+     "longitude": 175.90777778
+    },
+    "source": "https://en.wikipedia.org/wiki/Lake_Taupō (lake centre, in the water, correct for a lake)",
+    "ok": true
+   },
+   "category": "nature",
+   "unverified": [],
+   "wiki_title": "Lake Taupō"
+  },
+  {
+   "id": "tongariro-7",
+   "name": "Turangi",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Turangi is a town of about 3,840 at the south end of Lake Taupo, built for the Tongariro hydro scheme and well known for trout fishing; it calls itself the trout fishing capital of the world.",
+     "source": "https://en.wikipedia.org/wiki/Tūrangi"
+    },
+    {
+     "claim": "Wikivoyage Turangi: the Tongariro River provides trout fishing all year (best August-October); the Tongariro River Trail (15 km) runs from town.",
+     "source": "https://en.wikivoyage.org/wiki/Turangi"
+    },
+    {
+     "claim": "Turangi is 50 km southwest of Taupo.",
+     "source": "https://en.wikipedia.org/wiki/Tūrangi"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "No single steward or operator (a town or district); per WRITING.md no ticketUrl.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -38.98888889,
+     "longitude": 175.80833333
+    },
+    "source_point": {
+     "latitude": -38.98888889,
+     "longitude": 175.80833333
+    },
+    "source": "https://en.wikipedia.org/wiki/Tūrangi (town point)",
+    "ok": true
+   },
+   "category": "historic",
+   "unverified": [
+    "Bio icon/category is a fishing rod but category 'historic'; consider 'nature' if the judge prefers."
+   ],
+   "wiki_title": "Tūrangi"
+  },
+  {
+   "id": "tongariro-8",
+   "name": "Tongariro National Trout Centre",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "The Tongariro National Trout Centre is a charitable trust, not DOC-run: museum, native freshwater aquarium, historic trout hatchery with underwater viewing chamber, wild trout stream, at 257 State Highway 1, Turangi.",
+     "source": "https://www.lovetaupo.com/en/operators/tongariro-national-trout-centre.amp.html"
+    },
+    {
+     "claim": "Official site: Adult $22, open 10am to 3pm; Kids Fishing 10am-2pm runs on school holidays only.",
+     "source": "https://troutcentre.com/"
+    },
+    {
+     "claim": "The destination listing gives 10am-3pm, 7 days, closed Mondays during winter except public holidays; adult $22, child $12.",
+     "source": "https://www.lovetaupo.com/en/operators/tongariro-national-trout-centre.amp.html"
+    },
+    {
+     "claim": "Wikivoyage (2018): 3 km south of town on the Tongariro River Trail; adult $20, child $10 (outdated).",
+     "source": "https://en.wikivoyage.org/wiki/Turangi"
+    }
+   ],
+   "hours": "10:00 AM – 3:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 22,
+   "costMax": 22,
+   "currency": "NZD",
+   "ticketUrl": "https://troutcentre.com/",
+   "ticketUrl_note": "Verified: official site (HTTP 200, title 'Tongariro National Trout Centre – Tongariro National Troutcentre'); www.troutcentre.com does not resolve, use the bare domain.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -39.0189,
+     "longitude": 175.8087
+    },
+    "source_point": {
+     "latitude": -39.02018,
+     "longitude": 175.81014
+    },
+    "source": "OSM tourism/museum way 186994810 (Photon); Wikivoyage -39.0189,175.8087 is ~170 m away",
+    "ok": true
+   },
+   "category": "entertainment",
+   "unverified": [
+    "Monday winter closure comes from the Taupo destination listing, not the official site."
+   ],
+   "held": true,
+   "wiki_title": null,
+   "bio_suggestion": "A charitable-trust trout hatchery, museum and freshwater aquarium beside the Tongariro River, open daily 10am to 3pm. (The placement bio says 'DOC-run free': both are wrong; adult entry is $22.)",
+   "bio_issue": "Placement bio and free:true are wrong: it is not DOC-run and charges $22 (official site)."
+  },
+  {
+   "id": "port-waikato",
+   "name": "Port Waikato",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Port Waikato is a town on the south bank of the Waikato River at its outflow into the Tasman Sea, a well-known surfing and whitebaiting destination and holiday spot with fishing from the rocks, surf beach and dunes.",
+     "source": "https://en.wikipedia.org/wiki/Port_Waikato"
+    },
+    {
+     "claim": "Sunset Beach at Port Waikato has suffered coastal erosion; a car park above the beach was closed in July 2024 after 2 m of cliff was lost.",
+     "source": "https://en.wikipedia.org/wiki/Port_Waikato"
+    },
+    {
+     "claim": "OSM: Sunset Beach (natural/beach way 352184569), with Sunset Beach Surf Life Saving Club and lifeguard service on Ocean View Road/Centreway Road.",
+     "source": "https://www.openstreetmap.org/way/352184569"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Beach/settlement; no single steward.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -37.39,
+     "longitude": 174.729
+    },
+    "source_point": {
+     "latitude": -37.3975,
+     "longitude": 174.71158
+    },
+    "source": "OSM Sunset Beach Lifeguard Service way 416970729 (-37.39750,174.71158) and surf club way 416970622; beach way centroid 352184569 is -37.38409,174.70662 (1.5 km N, mid-beach). The current point is the estuary settlement, ~1.8 km east of the beach.",
+    "ok": false,
+    "note": "Move to the Sunset Beach access/lifeguard point; beach centroid is the alternative."
+   },
+   "category": "beach",
+   "unverified": [
+    "No visitor-guide source captured beyond Wikipedia and the placement's cited WaikatoNZ listing (not re-fetched)."
+   ],
+   "wiki_title": "Port Waikato"
+  },
+  {
+   "id": "te-aroha",
+   "name": "Te Aroha",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Te Aroha is a town of about 3,900 at the foot of 952 m Mount Te Aroha, the highest point of the Kaimai Range, 53 km northeast of Hamilton.",
+     "source": "https://en.wikipedia.org/wiki/Te_Aroha"
+    },
+    {
+     "claim": "The Mokena Hou geyser, said to be the only natural soda-water geyser in the world, lies on the lower slopes; the geyser complex is the most intact Edwardian spa in New Zealand.",
+     "source": "https://en.wikipedia.org/wiki/Te_Aroha"
+    },
+    {
+     "claim": "Te Aroha Mineral Spas (private wooden tubs in the Domain, bookings essential) draw water from the Mokena Geyser; third-party listings give adult prices of roughly $24-43 and 10am-9pm hours.",
+     "source": "https://www.tearohamineralspas.co.nz/"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "The spot is the town and Domain (free to walk). The paid spa is a separate operator, https://www.tearohamineralspas.co.nz/ (verified HTTP 200, title 'Home', names Te Aroha Mineral Spas); not used as ticketUrl because the spot is the town. Add it only if the bio is narrowed to the spa.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -37.53333333,
+     "longitude": 175.71666667
+    },
+    "source_point": {
+     "latitude": -37.54369,
+     "longitude": 175.71622
+    },
+    "source": "Wikipedia town point is the town centre. The Domain/geyser (OSM natural/geyser node 5288634922 'Mokena Geyser') is at -37.54369,175.71622, ~1.2 km south-southwest, where the bio's Hot Springs Domain is.",
+    "ok": false,
+    "note": "Optional: pin the Domain (geyser) rather than the town centre to match the bio."
+   },
+   "category": "historic",
+   "unverified": [
+    "Spa prices/hours are third-party only (official spa pages have none)."
+   ],
+   "wiki_title": "Te Aroha"
+  },
+  {
+   "id": "mount-te-aroha",
+   "name": "Mount Te Aroha",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "DOC Te Aroha Summit Track: 3.9 km one way, about 3 hr one way, advanced tramping track climbing almost 1 km from Te Aroha Domain (Whitaker St) to the top of Mt Te Aroha, with 360-degree views across Waikato and Bay of Plenty; Ruapehu, Ngauruhoe and Taranaki are visible on a clear day.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/kaimai-mamaku-conservation-park/things-to-do/tracks/te-aroha-summit-track/"
+    },
+    {
+     "claim": "DOC: no water on the track (carry 2-3 L), alpine weather and cold at the summit, no dogs, no mountain biking.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/kaimai-mamaku-conservation-park/things-to-do/tracks/te-aroha-summit-track/"
+    },
+    {
+     "claim": "Wikipedia: Mount Te Aroha is 952 m, the highest point of the Kaimai Range; Wikidata Q31459573 places it at -37.533778, 175.742333.",
+     "source": "https://en.wikipedia.org/wiki/Te_Aroha"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 5,
+   "visitHoursMax": 7,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/kaimai-mamaku-conservation-park/things-to-do/tracks/te-aroha-summit-track/",
+   "ticketUrl_note": "Verified: DOC page (HTTP 200, title 'Te Aroha Summit Track: Kaimai Mamaku Conservation Park'). It is filed under Bay of Plenty on DOC but the mountain is in Waikato.",
+   "coordinates_check": {
+    "current": null,
+    "source_point": {
+     "latitude": -37.534,
+     "longitude": 175.7414
+    },
+    "source": "OSM way 47099171 'Te Aroha Summit Track', summit-end node -37.53402,175.74139; Wikidata Q31459573 summit -37.533778,175.742333 agrees to ~90 m. The trailhead (Domain, Whitaker St) is -37.54066,175.72162 and is only ~1.3 km from the Te Aroha town pin.",
+    "ok": false,
+    "note": "Pin the summit so it is distinct from the town spot."
+   },
+   "category": "hike",
+   "unverified": [
+    "Visit hours: 3 hr one way means about 5-7 hr return; placement says 3-5, suggest 5-7."
+   ],
+   "held": true,
+   "wiki_title": null,
+   "verdict": "DISTINCT DRAW, KEEP (standalone): a 952 m DOC summit track (advanced, 5-7 hr return) is a separate activity from the spa-town visit and has its own counted source (DOC). Pin the summit, not the Domain, so it is not a duplicate of the town pin. 'Mount Te Aroha' is only a redirect to the Te Aroha article, so it needs an override photo (held for photo).",
+   "bio_suggestion": "A steep DOC summit track from Te Aroha Domain to the 952 m top of the Kaimai Range, with 360-degree views over Waikato and the Bay of Plenty."
+  },
+  {
+   "id": "hauraki-rail-trail",
+   "name": "Hauraki Rail Trail",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Official site: 160 km of scenic trails, free to ride, one of the 23 Nga Haerenga Great Rides of New Zealand.",
+     "source": "https://www.haurakirailtrail.co.nz/"
+    },
+    {
+     "claim": "Wikipedia and Wikivoyage give 197 km from Kaiaua in the north to Matamata, via Paeroa with branches to Waihi (Karangahake Gorge tunnel) and Te Aroha; the official site says 160 km. The bio's 197 km conflicts with the operator.",
+     "source": "https://en.wikipedia.org/wiki/Hauraki_Rail_Trail"
+    },
+    {
+     "claim": "Wikivoyage Thames lists the trail with a point at -37.14613, 175.54515.",
+     "source": "https://en.wikivoyage.org/wiki/Thames"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 8,
+   "free": true,
+   "ticketUrl": "https://www.haurakirailtrail.co.nz/",
+   "ticketUrl_note": "Verified: official site (HTTP 200, title 'Hauraki Rail Trail | Free to Ride - Explore 160km of scenic trails...'). The placement's blank ticketUrl should be this.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -37.14613,
+     "longitude": 175.54515
+    },
+    "source_point": {
+     "latitude": -37.14613,
+     "longitude": 175.54515
+    },
+    "source": "https://en.wikivoyage.org/wiki/Thames (Thames start of the trail)",
+    "ok": true
+   },
+   "category": "hike",
+   "unverified": [
+    "Length: 160 km (operator) vs 197 km (Wikipedia, Wikivoyage); rewrite bio without a single contested figure, e.g. 'about 160 km'."
+   ],
+   "wiki_title": "Hauraki Rail Trail",
+   "bio_suggestion": "A Great Ride cycle trail of about 160 km along former rail lines through the Hauraki Plains, Karangahake Gorge and Te Aroha, with Thames as one start point."
+  },
+  {
+   "id": "timber-trail",
+   "name": "Timber Trail",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "DOC: the Timber Trail Pureora to Ongarue is an 85 km one-way, 2 to 3 day Grade 3 trail through Pureora Forest Park on old bush tramways, with 35 bridges including 8 large suspension bridges (longest 141 m) and the Ongarue Spiral; part of Te Araroa.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/waikato/places/pureora-forest-park/things-to-do/the-timber-trail-pureora-ongarue/"
+    },
+    {
+     "claim": "It begins on Barryville Road about 200 m from the DOC Pureora Field Base, across from the Timber Trail car park, and is reached off SH30 between Te Kuiti and Mangakino; most riders go north to south.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/waikato/places/pureora-forest-park/things-to-do/the-timber-trail-pureora-ongarue/"
+    },
+    {
+     "claim": "The DOC page lists no fee for the trail itself; the day-trip options include an 8 km Pureora Village to Pureora Maunga section and a 5 km crawler tractor loop.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/waikato/places/pureora-forest-park/things-to-do/the-timber-trail-pureora-ongarue/"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 6,
+   "visitHoursMax": 24,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/waikato/places/pureora-forest-park/things-to-do/the-timber-trail-pureora-ongarue/",
+   "ticketUrl_note": "Verified: DOC page (HTTP 200, title 'The Timber Trail - Pureora - Ongarue: Pureora Forest Park, Waikato region').",
+   "coordinates_check": {
+    "current": null,
+    "source_point": {
+     "latitude": -38.51361,
+     "longitude": 175.55701
+    },
+    "source": "OSM way 558279200 'Timber Trail', first node (shared with the Totara Walk), Barryville Road, Pureora (Nominatim lookup: first node -38.5136117, 175.5570114). OSM tags the area Waitomo District/Manawatu-Whanganui but DOC files it under Waikato. The earlier OSM point -38.5151,175.5695 is a mid-segment 1.3 km east.",
+    "ok": false,
+    "note": "Use the Pureora start node."
+   },
+   "category": "hike",
+   "unverified": [
+    "Huts/campsites along the trail are paid separately (not researched)."
+   ],
+   "held": true,
+   "wiki_title": "Timber Trail",
+   "bio_suggestion": "An 85 km, 2-3 day cycle and walking trail through Pureora Forest Park on a former logging tramway, from Pureora to Ongarue, with 35 bridges."
+  },
+  {
+   "id": "tirau-giant-dog-and-sheep",
+   "name": "Tirau Giant Dog and Sheep",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Wikipedia: Tirau is characterised by corrugated-iron artworks; the information centre is shaped like a giant dog and the neighbouring building like a sheep, both completely made of corrugated iron.",
+     "source": "https://en.wikipedia.org/wiki/Tīrau"
+    },
+    {
+     "claim": "Wikivoyage Matamata lists the giant dog and sheep metal structure at the Tirau visitor centre at -37.9769, 175.75632.",
+     "source": "https://en.wikivoyage.org/wiki/Matamata"
+    },
+    {
+     "claim": "OSM: Tirau i-SITE Visitor Centre, Main Road (way 332808516) at -37.97691, 175.75640.",
+     "source": "https://www.openstreetmap.org/way/332808516"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Roadside landmark / information centre; no distinct official page found, so none.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -37.9769,
+     "longitude": 175.75632
+    },
+    "source_point": {
+     "latitude": -37.97691,
+     "longitude": 175.7564
+    },
+    "source": "OSM way 332808516 Tirau i-SITE (matches Wikivoyage point within 10 m)",
+    "ok": true
+   },
+   "category": "landmark",
+   "unverified": [
+    "i-SITE opening hours not checked; the exterior is viewable any time."
+   ],
+   "held": true,
+   "wiki_title": null,
+   "wiki_note": "No own article; 'Tīrau' covers the town. Needs an override photo."
+  },
+  {
+   "id": "coromandel-1",
+   "name": "Cathedral Cove",
+   "kind": "existing",
+   "facts": [
+    {
+     "claim": "DOC's Mautohe Cathedral Cove Track: 5 km return, about 1 hr 30 min, easy to intermediate; starts at the top of Grange Road, Hahei (no parking there; Hahei Visitor Car Park has free parking and a shuttle runs to the entrance, 30 min walk otherwise) and ends at the rock archway at Mares Leg Cove.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/coromandel/places/hahei-area/tracks/mautohe-cathedral-cove-walk/"
+    },
+    {
+     "claim": "DOC warns not to visit during or after heavy rain (high landslide risk); the track reopened 1 Dec 2024 and again on 31 Jan 2026 after a weather closure.",
+     "source": "https://www.1news.co.nz/2026/01/31/popular-cathedral-cove-doc-track-to-reopen/"
+    },
+    {
+     "claim": "Wikipedia: 'Cathedral Cove' redirects to 'Whanganui A Hei (Cathedral Cove) Marine Reserve', whose article is about the marine reserve (840 ha), not the arch.",
+     "source": "https://en.wikipedia.org/wiki/Whanganui_A_Hei_(Cathedral_Cove)_Marine_Reserve"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/coromandel/places/hahei-area/tracks/mautohe-cathedral-cove-walk/",
+   "ticketUrl_note": "Verified: DOC page (HTTP 200, title 'Mautohe Cathedral Cove Track: Hahei area, Coromandel'). Currently no ticketUrl in spots.ts.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -36.82709,
+     "longitude": 175.7896
+    },
+    "source_point": {
+     "latitude": -36.82715,
+     "longitude": 175.78963
+    },
+    "source": "OSM natural/bay node 1052610247 'Cathedral Cove'; beach way 90699216 at -36.8275,175.7894",
+    "ok": true
+   },
+   "category": "beach",
+   "unverified": [
+    "Shuttle (Park & Ride) fare not captured; the walk is free."
+   ],
+   "wiki_title": "Whanganui A Hei (Cathedral Cove) Marine Reserve",
+   "wiki_fix": "Set `wiki: 'Whanganui A Hei (Cathedral Cove) Marine Reserve'` (the redirect target) to silence the lint, but that article is about the marine reserve, so check its lead photo shows the arch; otherwise keep the name and use a WIKI_IMAGE_OVERRIDES photo of the arch. DOC now names the place 'Mautohe Cathedral Cove'; the shown name can stay."
+  },
+  {
+   "id": "coromandel-2",
+   "name": "Hot Water Beach",
+   "kind": "existing",
+   "facts": [
+    {
+     "claim": "Wikipedia (article title 'Hot Water Beach'): a beach on the east coast of the Coromandel Peninsula about 12 km southeast of Whitianga, where underground hot springs filter up through the sand between the tide lines; about 700,000 visitors a year.",
+     "source": "https://en.wikipedia.org/wiki/Hot_Water_Beach"
+    },
+    {
+     "claim": "Wikivoyage Hahei: the road to Hot Water Beach turns off the main road at Whenuakite.",
+     "source": "https://en.wikivoyage.org/wiki/Hahei"
+    }
+   ],
+   "hours": "Tides permitting",
+   "visitHoursMin": 2,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Public beach; no single steward found (not DOC). Leave without ticketUrl.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -36.88981,
+     "longitude": 175.82357
+    },
+    "source_point": {
+     "latitude": -36.88167,
+     "longitude": 175.82
+    },
+    "source": "https://en.wikipedia.org/wiki/Hot_Water_Beach (article point)",
+    "ok": true,
+    "note": "~950 m from the Wikipedia point; the current point is likely the south end/Hot Water Beach Road end where the springs are. Not changed; the beach is ~1 km long."
+   },
+   "category": "beach",
+   "unverified": [
+    "Best tide window (about two hours either side of low tide) not sourced here."
+   ],
+   "wiki_title": "Hot Water Beach",
+   "wiki_fix": "The lint is right: 'Hot Water Beach, New Zealand' has no article. The correct title is exactly 'Hot Water Beach' (it is the NZ beach; checked its summary). Change `wiki: 'Hot Water Beach, New Zealand'` to `wiki: 'Hot Water Beach'` or drop the field (name already matches)."
+  },
+  {
+   "id": "waitomo-4",
+   "name": "Marokopa Falls",
+   "kind": "existing",
+   "facts": [
+    {
+     "claim": "DOC Marokopa Falls Walk: 600-700 m return, about 20 min, easy short walk to the 35 m high Marokopa Falls.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/waikato/places/waitomo-area/tracks/marokopa-falls-walk/"
+    },
+    {
+     "claim": "The falls are 31 km west of Waitomo on Te Anga Road with a small car park at the trailhead.",
+     "source": "https://www.doc.govt.nz/link/aeef8ed279dd401aa15fd18b660eda3e.aspx"
+    },
+    {
+     "claim": "OSM has the waterfall node at -38.26164, 174.85196 and the viewpoint at -38.26132, 174.85071.",
+     "source": "https://www.openstreetmap.org/node/2293252859"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/waikato/places/waitomo-area/tracks/marokopa-falls-walk/",
+   "ticketUrl_note": "Verified: DOC page (HTTP 200, title 'Marokopa Falls Walk: Waitomo area, Waikato region'). Currently no ticketUrl in spots.ts.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -38.2616,
+     "longitude": 174.852
+    },
+    "source_point": {
+     "latitude": -38.26164,
+     "longitude": 174.85196
+    },
+    "source": "OSM waterway/waterfall node 2293252859",
+    "ok": true
+   },
+   "category": "nature",
+   "unverified": [],
+   "wiki_title": null,
+   "wiki_fix": "There is no Wikipedia article for the falls: 'Marokopa Falls' only redirects to 'Marokopa River' (an article about the river, ~40 km long). Do not set wiki to the river unless its lead photo is wanted; use a hand-picked WIKI_IMAGE_OVERRIDES entry keyed 'Marokopa Falls'."
+  }
+ ]
+}

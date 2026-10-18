@@ -1,0 +1,350 @@
+{
+ "spots": {
+  "napier-8": {
+   "name": "Faraday Museum of Technology",
+   "icon": "⚙️",
+   "category": "museum",
+   "bio": "A volunteer-run technology museum with hands-on exhibits of applied science.",
+   "hours": "9:30 AM – 3:30 PM",
+   "closedDays": [
+    0,
+    2,
+    4
+   ],
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 12,
+   "costMax": 12,
+   "currency": "NZD",
+   "ticketUrl": "https://www.faradaymuseum.co.nz/",
+   "coordinates": {
+    "latitude": -39.4940373,
+    "longitude": 176.9054643
+   },
+   "notes": [
+    "HELD: museum is closed for urgent maintenance, no reopening date. Days (Mon/Wed/Fri/Sat) are from Napier i-SITE; the museum's own page not parsed. 'Former powerhouse' dropped as unsourced. No English Wikipedia article: wiki omitted. Adult $12 (operator)."
+   ]
+  },
+  "napier-9": {
+   "name": "Sugar Loaf (Pukekura)",
+   "icon": "⛰️",
+   "category": "hike",
+   "bio": "A 127 m hill above Taradale, climbed for 360-degree views across Napier and the Heretaunga Plains.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": {
+    "latitude": -39.52327,
+    "longitude": 176.83939
+   },
+   "notes": [
+    "No ticketUrl: council reserve, no steward page found. Open hours assumed (reserve). Pin is the summit; entry via Cumberland Rise."
+   ]
+  },
+  "napier-10": {
+   "name": "Westshore Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A beach reserve just north of Napier's centre for swimming, surfing and fishing, patrolled in summer.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": {
+    "latitude": -39.47525,
+    "longitude": 176.88229
+   },
+   "notes": [
+    "No Wikipedia article for the beach (only the suburb): wiki omitted. No ticketUrl (public beach). Pin moved to Westshore Beach Reserve."
+   ]
+  },
+  "napier-11": {
+   "name": "Church Road Winery",
+   "icon": "🍷",
+   "category": "historic",
+   "bio": "A winery founded in 1897, with cellar-door tastings and an underground museum in barrel halls and caves.",
+   "hours": "10:30 AM – 4:30 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 25,
+   "costMax": 45,
+   "currency": "NZD",
+   "ticketUrl": "https://church-road.com/",
+   "coordinates": {
+    "latitude": -39.52488,
+    "longitude": 176.84503
+   },
+   "notes": [
+    "'One of the oldest wineries' cut: only 1897 is sourced. Closing time 4:30 PM is an assumption (last tasting 4:00 PM). Standard tastings $25-$45; premium experiences cost more. No Wikipedia article: wiki omitted."
+   ]
+  },
+  "napier-12": {
+   "name": "Waipātiki Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A broad golden beach with native bush behind, 11 km off SH2 north of Napier, patrolled in summer.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": true,
+   "ticketUrl": "https://www.hastingsdc.govt.nz/hastings/beaches/waipatiki-beach/",
+   "coordinates": {
+    "latitude": -39.30049,
+    "longitude": 176.97557
+   },
+   "notes": [
+    "Pin moved from the rounded Wikipedia village point to the beach-front car park. Patrol mid-Dec to late Jan."
+   ]
+  },
+  "napier-13": {
+   "name": "Lake Tūtira",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "A lake and regional park north of Napier, with walking tracks that look to the Kaweka Range.",
+   "hours": "Daylight; Walkway closed for lambing 1 Aug – 30 Sep",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.hbrc.govt.nz/hawkes-bay/regional-parks/tutira-regional-park/",
+   "coordinates": {
+    "latitude": -39.22985,
+    "longitude": 176.90085
+   },
+   "notes": [
+    "Campground fees apply (not read directly); spot recorded free. Area north of the campground reported closed for forestry (unconfirmed). Pin moved to the campsite where the tracks start."
+   ]
+  },
+  "napier-14": {
+   "name": "Ocean Spa",
+   "icon": "♨️",
+   "category": "entertainment",
+   "bio": "Council-run heated pools, spa pools and a steam room on Marine Parade.",
+   "hours": "5:30 AM – 9:30 PM (Sun 7:30 AM – 9:30 PM)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 20,
+   "costMax": 20,
+   "currency": "NZD",
+   "ticketUrl": "https://www.oceanspanapier.co.nz/",
+   "coordinates": {
+    "latitude": -39.48633,
+    "longitude": 176.91991
+   },
+   "notes": [
+    "HELD: no accepted photo. 'Sea-water' removed: pools are heated and chlorinated. Adult $20 from the operator table (headers read from text). Public sauna closed for maintenance. No Wikipedia article: wiki omitted."
+   ]
+  },
+  "napier-15": {
+   "name": "Ōtātara Pā",
+   "icon": "🏛️",
+   "category": "historic",
+   "bio": "One of the largest pā complexes in New Zealand, with terraces and storage pits and views to Cape Kidnappers.",
+   "hours": "Daylight",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/hawkes-bay/places/napier-area/otatara-pa-historic-reserve/",
+   "coordinates": {
+    "latitude": -39.54991,
+    "longitude": 176.83512
+   },
+   "notes": [
+    "HELD: no accepted photo. 'Largest that can be visited' corrected to 'one of the largest'. DOC publishes no hours or fee. Pin moved to the DOC entrance. No Wikipedia article: wiki omitted."
+   ]
+  },
+  "napier-16": {
+   "name": "Mission Estate Winery",
+   "icon": "🍷",
+   "category": "historic",
+   "bio": "New Zealand's oldest surviving winemaking concern, founded in 1851 by French missionaries, with tastings.",
+   "hours": "9:00 AM – 5:00 PM (Sun 10:00 AM – 4:30 PM)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 15,
+   "costMax": 20,
+   "currency": "NZD",
+   "ticketUrl": "https://www.missionestate.co.nz/",
+   "coordinates": {
+    "latitude": -39.51887,
+    "longitude": 176.84436
+   },
+   "notes": [
+    "HELD: no accepted photo. 'Former seminary' dropped (not sourced from the site). Tastings $15 self-guided, $20 hosted. Check whether wiki 'Mission Estate Winery' article exists before adding wiki (not researched)."
+   ]
+  },
+  "te-urewera-5": {
+   "name": "Panekire Bluffs",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A Great Walk climb up the bluffs above Lake Waikaremoana, reaching Bald Knob (1155 m) in three hours.",
+   "hours": "Daylight; Panekire Hut needs a booking",
+   "visitHoursMin": 4,
+   "visitHoursMax": 8,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/east-coast/places/te-urewera/things-to-do/tracks/panekire-bluffs/",
+   "coordinates": {
+    "latitude": -38.80002,
+    "longitude": 177.1208
+   },
+   "notes": [
+    "Pin moved from Panekire Hut to the Onepoto trailhead. Visit time 4-8 h is a judgement from DOC's 1 h / 3 h one-way times. Hut $35 adult/night. No Wikipedia article: wiki omitted."
+   ]
+  },
+  "kaweka-forest-park": {
+   "name": "Kaweka Forest Park",
+   "icon": "🌲",
+   "category": "nature",
+   "bio": "Alpine shrublands and beech forest north-west of Napier, with tramping, hot springs and huts.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 3,
+   "visitHoursMax": 8,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/hawkes-bay/places/kaweka-forest-park/",
+   "coordinates": {
+    "latitude": -39.35172,
+    "longitude": 176.36385
+   },
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "notes": [
+    "Pin at the Lakes Carpark (Kuripapango Road); alternative Mangatutu Hot Springs -39.18267,176.45865. Hut fees separate. Visit time a judgement."
+   ]
+  },
+  "ruahine-forest-park": {
+   "name": "Ruahine Forest Park",
+   "icon": "🌲",
+   "category": "nature",
+   "bio": "Bush-covered ranges stretching almost 100 km, reached from road ends on the eastern side.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 3,
+   "visitHoursMax": 8,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/manawatu-whanganui/places/ruahine-forest-park/",
+   "coordinates": {
+    "latitude": -39.79736,
+    "longitude": 176.20173
+   },
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "notes": [
+    "HELD: no distinct visitor point: duplicate pin of Sunrise Track; owner to decide. Coordinates shown are that shared North Block Road end; research gives no other DOC-sourced park access point (Wakarara Road end -39.7407,176.2559 is Yeomans Track's)."
+   ]
+  },
+  "sunrise-track": {
+   "name": "Sunrise Track and Sunrise Hut",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 6.4 km benched track to a 20-bunk hut on the open tops, with views over the Hawke's Bay plains.",
+   "hours": "Daylight; hut bookings required",
+   "visitHoursMin": 4,
+   "visitHoursMax": 7,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/manawatu-whanganui/places/ruahine-forest-park/things-to-do/tracks/sunrise-track/",
+   "coordinates": {
+    "latitude": -39.79736,
+    "longitude": 176.20173
+   },
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "notes": [
+    "Free as a day walk; the hut costs $25-$28 adult per night (not in the cost field). Pin moved from the hut to the track start at North Block Road end. 2-3 h each way is from a search summary of DOC's hut page. No Wikipedia article: wiki omitted."
+   ]
+  },
+  "yeomans-track": {
+   "name": "Yeomans Track",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 17 km loop on an old log-hauling route to a 1926-1956 mill site and the park's oldest hut.",
+   "hours": "Daylight",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/manawatu-whanganui/places/ruahine-forest-park/things-to-do/tracks/yeomans-track/",
+   "coordinates": {
+    "latitude": -39.7407,
+    "longitude": 176.2559
+   },
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "notes": [
+    "HELD: reported closed since Cyclone Gabrielle per Hawke's Bay Tourism (DOC page does not say so); also no accepted photo. Pin is the Wakarara Road end; the DOC car park is unmapped. Requires crossing the Makaroro River. No Wikipedia article: wiki omitted."
+   ]
+  },
+  "wairoa-museum": {
+   "name": "Wairoa Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "A museum in a former bank building on Marine Parade, redeveloped in 2016 as Kakapa - the Pulse.",
+   "hours": "10:00 AM – 2:00 PM",
+   "closedDays": [
+    0,
+    1
+   ],
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": "https://www.wairoadc.govt.nz/our-district/wairoa-museum/",
+   "coordinates": {
+    "latitude": -39.03345,
+    "longitude": 177.42047
+   },
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "notes": [
+    "HELD: no accepted photo. needs_owner: free entry is from Wikivoyage 2018 only (council and i-SITE state no fee); marked free:true provisionally. Closed Sun, Mon and public holidays. No Wikipedia article: wiki omitted."
+   ]
+  }
+ },
+ "existing_fixes": {
+  "napier-4": {
+   "bio": "A gannet reserve on a headland, reached by a low-tide beach walk or an overland farm tour.",
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/hawkes-bay/places/cape-kidnappers-gannet-reserve/",
+   "notes": [
+    "Cost left unchanged: the $99 Gannet Safaris overland adult tour (research) may have closed/changed; owner to confirm. Tractor-trailer wording removed (operator reported closed; headline only read). Plateau track closed July to the week before Labour Weekend; beach walk is tide-dependent."
+   ]
+  },
+  "napier-7": {
+   "wiki": "MTG Hawke's Bay",
+   "free": true,
+   "remove": [
+    "costMin",
+    "costMax",
+    "currency"
+   ],
+   "hours": "9:30 AM – 5:00 PM",
+   "ticketUrl": "https://www.hawkesbaymuseum.com/",
+   "coordinates": {
+    "latitude": -39.48898,
+    "longitude": 176.91905
+   },
+   "notes": [
+    "Not renamed (now Kahukura Hawke's Bay Museum). wiki set to the research-verified article title 'MTG Hawke's Bay' (straight apostrophe); the existing name uses a curly apostrophe so the lookup failed. Exhibitions free; theatre/special events ticketed. Coordinates moved to 1 Tennyson St."
+   ]
+  }
+ },
+ "held": [
+  "napier-8",
+  "napier-14",
+  "napier-15",
+  "napier-16",
+  "ruahine-forest-park",
+  "yeomans-track",
+  "wairoa-museum"
+ ],
+ "notes": [
+  "Skipped by instruction: the 13 spots of proposed destinations hastings and central-hawkes-bay.",
+  "needs_owner: Wairoa Museum free entry (Wikivoyage 2018 only). napier-4 Cape Kidnappers cost ($99 tour) unconfirmed. Church Road closing time assumed. Splash Planet is not among these spots.",
+  "Photo-held spots (napier-14/15/16, wairoa-museum, yeomans-track) are fully written so they can be applied once photos are found."
+ ]
+}

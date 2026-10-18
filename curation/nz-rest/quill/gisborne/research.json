@@ -1,0 +1,686 @@
+{
+ "region": "gisborne",
+ "entries": [
+  {
+   "id": "gisborne-6",
+   "name": "Puhi Kai Iti / Cook Landing Site",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "DOC lists Puhi Kai Iti/Cooks Landing National Historic Reserve under Gisborne area, where the first European set foot on New Zealand soil.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/east-coast/places/gisborne-area/"
+    },
+    {
+     "claim": "Cook Monument unveiled 1906; Cook's crew sighted NZ on 7 Oct 1769 and landed two days later; reserve upgraded 2019 and renamed Puhi Kai Iti / Cook Landing National Historic Reserve.",
+     "source": "https://en.wikivoyage.org/wiki/Gisborne"
+    },
+    {
+     "claim": "OSM relation 'Puhi Kai Iti / Cook Landing National Historic Reserve' centre -38.67545,178.02525 and 'Cook Monument' node -38.67534,178.02549.",
+     "source": "https://www.openstreetmap.org/node/8041430047"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/east-coast/places/gisborne-area/",
+   "ticketUrl_note": "Verified: loads (200), title 'Gisborne area: Places to go in the East Coast region'; body names Puhi Kai Iti/Cooks Landing National Historic Reserve. DOC is the managing agency; no separate reserve page found, so the area page is the link. Hours (always open) not stated by a source: open public reserve, treat as approximate.",
+   "coordinates_check": {
+    "current": [
+     -38.6754,
+     178.0256
+    ],
+    "source_point": [
+     -38.67534,
+     178.02549
+    ],
+    "source": "OSM Cook Monument node 8041430047 / Wikipedia -38.6754,178.0256",
+    "ok": true
+   },
+   "category": "historic",
+   "unverified": [
+    "24-hour access",
+    "visit time"
+   ]
+  },
+  {
+   "id": "gisborne-7",
+   "name": "Eastwoodhill Arboretum",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Open 9am-4pm, 7 days a week, closed Christmas Day; at 2392 Wharekopae Rd, Ngatapa.",
+     "source": "https://www.eastwoodhill.org.nz/"
+    },
+    {
+     "claim": "Entry: adults $18, senior (65+) $15, child 5-16 $5, under 5 free, family $45; after-hours access not allowed.",
+     "source": "https://www.eastwoodhill.org.nz/visit-us/visitor-information/"
+    },
+    {
+     "claim": "Over 25,000 species of trees, shrubs and climbers; 25 km of trails and tracks including a steep climb up Mt Arateitei; National Arboretum of NZ.",
+     "source": "https://www.eastwoodhill.org.nz/"
+    },
+    {
+     "claim": "Wikivoyage: 35 km north-west of Gisborne, New Zealand's largest planting of North American trees, lovely in autumn.",
+     "source": "https://en.wikivoyage.org/wiki/Gisborne"
+    }
+   ],
+   "hours": "9:00 AM – 4:00 PM",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "costMin": 18,
+   "costMax": 18,
+   "currency": "NZD",
+   "ticketUrl": "https://www.eastwoodhill.org.nz/",
+   "ticketUrl_note": "Verified: operator's own site, title 'Home - Eastwoodhill Arboretum'; also listed on the regional tourism board.",
+   "coordinates_check": {
+    "current": [
+     -38.56222,
+     177.72056
+    ],
+    "source_point": [
+     -38.5638,
+     177.7197
+    ],
+    "source": "OSM node 4650449500 (tourism=attraction, wikipedia link); ~175 m from current",
+    "ok": true
+   },
+   "category": "nature",
+   "unverified": [
+    "visit time (2-4 h is an estimate; site offers 25 km of tracks)",
+    "existing bio says 'largest planting of North American trees' - Wikivoyage wording, official site says National Arboretum with 25,000 species"
+   ]
+  },
+  {
+   "id": "gisborne-8",
+   "name": "Rere Rock Slide",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Natural 60 m rock slide at about 30 degrees on the Wharekopae River, slid on boogie boards or tyres; in the AA's 101 Must-do places for Kiwis.",
+     "source": "https://en.wikipedia.org/wiki/Rere,_New_Zealand"
+    },
+    {
+     "claim": "Tourism board: 'one of our fantastic free activities and open all-year round', free parking on site, within 46 km of Gisborne, address Wharekopae Road.",
+     "source": "https://tairawhitigisborne.co.nz/listings/operator/1387/rere-rockslide"
+    },
+    {
+     "claim": "Rere Falls (5 m high, 20 m wide, can walk behind) are just around the bend on the same river; Rere Reserve has picnic area and toilets.",
+     "source": "https://en.wikipedia.org/wiki/Rere,_New_Zealand"
+    },
+    {
+     "claim": "OSM node 'Rere Falls & Rockslides' at -38.53908,177.59066; separate 'Rere Falls' node -38.53736,177.60958.",
+     "source": "https://www.openstreetmap.org/node/1063576427"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "None: free public reserve with no single operator; the tourism-board page is not an official steward site (the page's 'VISIT OUR WEBSITE' button was not followed). Tourism board says 'open all-year round' only.",
+   "wiki_title": "Rere, New Zealand (spot name 'Rere Rock Slide' has no article; 'Rere Falls' redirects to 'Rere, New Zealand#Parks'). Use wiki: 'Rere, New Zealand'.",
+   "coordinates_check": {
+    "current": [
+     -38.53908,
+     177.59066
+    ],
+    "source_point": [
+     -38.5390757,
+     177.5906623
+    ],
+    "source": "OSM node 1063576427",
+    "ok": true
+   },
+   "category": "nature",
+   "unverified": [
+    "24-hour access (tourism board says all year round)",
+    "Safety: slide is at own risk (not sourced)",
+    "Rere Falls are ~2 km east at -38.5374,177.6096 and a separate stop"
+   ]
+  },
+  {
+   "id": "gisborne-9",
+   "name": "Mōrere Springs Scenic Reserve",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Nga Hua o Mōrere hot springs at the main entrance to the scenic reserve; hours Thursday-Monday 10am-5pm, closed Tuesday and Wednesday (DOC page; DOC also says check Facebook for updates).",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/east-coast/places/morere-springs-area/nga-hua-o-morere/"
+    },
+    {
+     "claim": "Prices: adult $20, child (5-18) $12, kaumatua/senior $14; family first adult and child full price then 50%.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/east-coast/places/morere-springs-area/nga-hua-o-morere/"
+    },
+    {
+     "claim": "Reserve is on SH2, 40 km north-east of Wairoa, 52 km south of Gisborne and 15 km north of Nuhaka; 364 ha of rainforest with nikau palms, walks.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/east-coast/places/morere-springs-area/"
+    },
+    {
+     "claim": "Natural salt-water hot springs producing 250,000 L a day, piped to pools in native forest.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/east-coast/places/morere-springs-area/nga-hua-o-morere/"
+    },
+    {
+     "claim": "OSM: 'Morere Hot Springs' attraction node at -38.98668,177.79202; 'Morere Pool' way centre -38.98642,177.79158; placement point -38.98271,177.80592 is the centre of the Scenic Reserve relation (18235552), ~1.3 km east of the springs.",
+     "source": "https://www.openstreetmap.org/node/264892222"
+    }
+   ],
+   "hours": "10:00 AM – 5:00 PM",
+   "closedDays": [
+    2,
+    3
+   ],
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "costMin": 20,
+   "costMax": 20,
+   "currency": "NZD",
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/east-coast/places/morere-springs-area/nga-hua-o-morere/",
+   "ticketUrl_note": "Verified: DOC page loads (200), title 'Nga Hua o Mōrere: Places to go in East Coast'. The skeptic's candidate (morere-springs-area/) also loads and is the reserve page; the hot-springs deep link is better because the cost is the pool entry. Hours carry a 'check Facebook' caveat (a web search snippet suggested 11am-6pm from Dec 2024; the DOC page I fetched says 10-5).",
+   "wiki_title": "No article 'Mōrere Springs' (missing); 'Mōrere' exists (the village, -38.9833,177.7833). Use wiki: 'Mōrere' or omit wiki.",
+   "coordinates_check": {
+    "current": [
+     -38.98271,
+     177.80592
+    ],
+    "source_point": [
+     -38.98668,
+     177.79202
+    ],
+    "source": "OSM node 264892222 'Morere Hot Springs' (the visitor entrance/pools). MOVE to -38.98668,177.79202",
+    "ok": false
+   },
+   "category": "nature",
+   "unverified": [
+    "Reserve walks are free; the $20 is the pool entry, so the entry cost is for the pools",
+    "Opening hours may vary seasonally; DOC says to check Facebook"
+   ]
+  },
+  {
+   "id": "gisborne-10",
+   "name": "Young Nick's Head",
+   "kind": "new",
+   "held": true,
+   "facts": [
+    {
+     "claim": "A Gisborne tourism guide says public access to the headland is restricted/private land (private farmland), best treated as a viewpoint seen from Kaiti Hill, Kaiti Beach, Wainui Beach and the waterfront.",
+     "source": "https://www.gisbornenz.co.nz/post/young-nicks-head-gisborne"
+    },
+    {
+     "claim": "Wikipedia: after 2002 protests the cliffs, summit and archaeological sites were gifted into public ownership as a National Historic Reserve, the rest of the station under covenants; now Te Kuri a Paoa/Young Nick's Head National Historic Reserve. It was the first land sighted by Cook's crew on 6 Oct 1769. Article does not mention a monument, walking track or car park.",
+     "source": "https://en.wikipedia.org/wiki/Young_Nick%27s_Head"
+    },
+    {
+     "claim": "Wikipedia coordinates -38.7575,177.9712; OSM peninsula node -38.7587,177.9578 (the headland, not a visit point).",
+     "source": "https://en.wikipedia.org/wiki/Young_Nick%27s_Head"
+    }
+   ],
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "None found: no DOC visitor page located (DOC search/guess returned 404/none); no steward site.",
+   "coordinates_check": {
+    "current": [
+     -38.7587,
+     177.96
+    ],
+    "source_point": null,
+    "source": "No car park, walk start or viewpoint found in OSM/Wikipedia/DOC. Nominatim was 429 rate-limited and Overpass partial; headland points only (-38.7587,177.9578 OSM; -38.7575,177.9712 Wikipedia, 1.2 km apart).",
+    "ok": false
+   },
+   "category": "viewpoint",
+   "unverified": [
+    "Public access: tourism guide says restricted, Wikipedia says summit/cliffs are public reserve - conflicting",
+    "The bio's 'marked by a monument' is NOT supported by any source I found - remove",
+    "No car park/visit point",
+    "Recommend HOLD or send to review: fails 'a visitor can actually do something' unless access is confirmed"
+   ]
+  },
+  {
+   "id": "gisborne-11",
+   "name": "Waikanae Beach",
+   "kind": "new",
+   "held": true,
+   "facts": [
+    {
+     "claim": "Wikivoyage: Waikanae Beach is a nice beach near the middle of town, continues into Midway Beach; 10-15 min walk from the CBD.",
+     "source": "https://en.wikivoyage.org/wiki/Gisborne"
+    },
+    {
+     "claim": "OSM way 1257086370 'Waikanae Beach' natural=beach centre -38.67143,178.01371 (Midway Beach way 351390774 lies to the south-west).",
+     "source": "https://www.openstreetmap.org/way/1257086370"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "None: public beach with no steward.",
+   "coordinates_check": {
+    "current": [
+     -38.67138,
+     178.01718
+    ],
+    "source_point": [
+     -38.67143,
+     178.01371
+    ],
+    "source": "OSM natural=beach way 1257086370. MOVE: placement point is ~300 m east of the beach way centre",
+    "ok": false
+   },
+   "category": "beach",
+   "unverified": [
+    "24-hour access",
+    "visit time",
+    "Still held for a non-Commons photo"
+   ]
+  },
+  {
+   "id": "east-cape-6",
+   "name": "Anaura Bay",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "DOC: camp on a beautiful beach or walk to panoramic views on the nearby track; turn off SH35 onto Anaura Road about 67 km north of Gisborne, campsite a further 8.7 km.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/east-coast/places/anaura-bay-area/"
+    },
+    {
+     "claim": "Cook entered the bay on 21 October 1769 and Endeavour filled casks from Hawai Stream where a plaque records it.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/east-coast/places/anaura-bay-area/"
+    },
+    {
+     "claim": "Wikipedia: Cook landed at the southern end where a village and motor camp now are; a scenic reserve at the northern end has a walkway and campsite; named one of NZ's best beaches.",
+     "source": "https://en.wikipedia.org/wiki/Anaura_Bay"
+    },
+    {
+     "claim": "OSM: Anaura Bay Motor Camp (way) -38.24751,178.31661; Anaura Bay Campsite (DOC conservation campsite) -38.23336,178.30822.",
+     "source": "https://www.openstreetmap.org/way/498193877"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/east-coast/places/anaura-bay-area/",
+   "ticketUrl_note": "Verified: loads (200), title 'Anaura Bay area: Places to go on the East Coast'. DOC manages the scenic reserve, walkway and campsite.",
+   "coordinates_check": {
+    "current": [
+     -38.2476,
+     178.3159
+    ],
+    "source_point": [
+     -38.24751,
+     178.31661
+    ],
+    "source": "OSM Anaura Bay Motor Camp (on the beach, southern end) and Wikipedia; keep. No OSM natural=beach found (Overpass failed for that query); the northern DOC campsite is at -38.23336,178.30822",
+    "ok": true
+   },
+   "category": "beach",
+   "unverified": [
+    "Beach is free; camping is paid (DOC campsite and the motor camp) - fees not checked",
+    "24-hour access"
+   ]
+  },
+  {
+   "id": "te-urewera-4",
+   "name": "Lake Waikaremoana Great Walk",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "46 km one way, 3-4 days, intermediate tramping track; walked from Onepoto in the south or Hopuruahine in the north, not a circuit.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/east-coast/places/te-urewera/things-to-do/tracks/lake-waikaremoana-great-walk/"
+    },
+    {
+     "claim": "No fees to enter Te Urewera or walk a day walk on the track; per person per night: huts adult $35 (child 5-17 $18), campsites adult $19 (child $9); huts and campsites must be booked ahead; bookings open for 2026/27.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/east-coast/places/te-urewera/things-to-do/tracks/lake-waikaremoana-great-walk/"
+    },
+    {
+     "claim": "Hopuruahine Landing is the northern track end; Onepoto Shelter is the southern start. DOC lists a trail-end car park at Onepoto.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/east-coast/places/te-urewera/"
+    },
+    {
+     "claim": "OSM place node 'Hopuruahine Landing' -38.71694,177.05176; Onepoto Road centre -38.80114,177.12226 (road to the start); the exact Onepoto shelter/car-park point was not found.",
+     "source": "https://www.openstreetmap.org/node/2194171238"
+    },
+    {
+     "claim": "Wikipedia gives 44 km and season 'summer to autumn'; DOC gives 46 km.",
+     "source": "https://en.wikipedia.org/wiki/Lake_Waikaremoana_Great_Walk"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 72,
+   "visitHoursMax": 96,
+   "costMin": 57,
+   "costMax": 105,
+   "currency": "NZD",
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/east-coast/places/te-urewera/things-to-do/tracks/lake-waikaremoana-great-walk/",
+   "ticketUrl_note": "Verified: loads (200), title 'Lake Waikaremoana Great Walk: Te Urewera area tracks and walks'. The skeptic's candidate is correct.",
+   "coordinates_check": {
+    "current": [
+     -38.76667,
+     177.08333
+    ],
+    "source_point": [
+     -38.71694,
+     177.05176
+    ],
+    "source": "OSM node 2194171238 Hopuruahine Landing (DOC trailhead/track end). MOVE from the Wikipedia point on the track. Alternative southern start near the end of Onepoto Road ~[-38.8011,177.1223] (road centre, car park not pinned).",
+    "ok": false
+   },
+   "category": "hike",
+   "unverified": [
+    "Cost range = 3 nights camping ($19 x 3 = 57) to 3 nights in huts ($35 x 3 = 105) for an adult; walking only a day section is free",
+    "Season/open hours: DOC page does not state; 'Open 24 hours' is approximate",
+    "DOC notes Te Uru Taumatua is changing visitor infrastructure and huts are being removed in Te Urewera"
+   ]
+  },
+  {
+   "id": "whirinaki-conservation-park",
+   "name": "Whirinaki Te Pua-a-Tāne Conservation Park",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Park is 90 km south-east of Rotorua off Te Whaiti Rd via SH38; the most popular entrance is past Minginui village and up River Road to the River Road car park, the start of many walks.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/east-coast/places/whirinaki-te-pua-a-tane-conservation-park/"
+    },
+    {
+     "claim": "Located in the Bay of Plenty and East Coast regions; tracks, huts and campsites (overnight huts need passes); river levels rise fast in heavy rain, regular track washouts April-August; stinging nettle present.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/east-coast/places/whirinaki-te-pua-a-tane-conservation-park/"
+    },
+    {
+     "claim": "OSM node 'River Road carpark' amenity=parking at -38.67550,176.69896.",
+     "source": "https://www.openstreetmap.org/node/1676346699"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/east-coast/places/whirinaki-te-pua-a-tane-conservation-park/",
+   "ticketUrl_note": "Verified: loads (200), title 'Whirinaki Te Pua-a-Tāne Conservation Park: Places to go in the East Coast region'. DOC is the managing agency.",
+   "coordinates_check": {
+    "current": [
+     -38.66667,
+     176.68333
+    ],
+    "source_point": [
+     -38.6755,
+     176.69896
+    ],
+    "source": "OSM River Road carpark node 1676346699 (named by DOC as the start of many walks). MOVE from the park centroid",
+    "ok": false
+   },
+   "category": "nature",
+   "unverified": [
+    "Park entry is free (DOC page lists no entry fee; hut/camp fees not checked)",
+    "Visit time estimate",
+    "DOC page does not give a waterfall track name; Whirinaki Waterfall track not checked"
+   ]
+  },
+  {
+   "id": "wairoa",
+   "name": "Wairoa",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Wikipedia: Wairoa is the largest town in Wairoa District and the northernmost in Hawke's Bay, at the mouth of the Wairoa River, connected by SH2 and SH38 (to Lake Waikaremoana).",
+     "source": "https://en.wikipedia.org/wiki/Wairoa"
+    },
+    {
+     "claim": "Wikivoyage 'See': Old Portland Island Lighthouse (Marine Parade, shifted to Wairoa from Portland Island, -39.0328,177.4189) and Wairoa Museum (142 Marine Parade, Mon-Fri 10-4, first Saturday 10-noon, free entry); riverside walkway 7.7 km.",
+     "source": "https://en.wikivoyage.org/wiki/Wairoa"
+    },
+    {
+     "claim": "Wairoa i-SITE visitor site lists attractions incl. Wairoa Museum, Portland Island Lighthouse, gateway to Waikaremoana and Mahia.",
+     "source": "https://www.visitwairoa.co.nz/"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "None: a town. The Wairoa i-SITE (visitwairoa.co.nz, loads, title 'Wairoa i-SITE') is a visitor centre, not a steward of the place.",
+   "coordinates_check": {
+    "current": [
+     -39.035,
+     177.418
+    ],
+    "source_point": [
+     -39.0334,
+     177.4205
+    ],
+    "source": "Wikipedia town point; Wikivoyage museum -39.0334,177.4204 and OSM museum node -39.03345,177.42047; the town centre is fine (a town point is acceptable for a town, but a visit point would be Marine Parade by the lighthouse -39.0328,177.4189).",
+    "ok": true
+   },
+   "category": "landmark",
+   "unverified": [
+    "Category: the allowed spot categories have no 'town'; 'landmark' proposed (the allowed set is museum|landmark|monument|religious|nature|viewpoint|hike|entertainment|market|beach|historic)",
+    "Bio 'gateway' is supported by Wikipedia/SH38; no See item of the town is itself a headline attraction. Consider swapping to 'Wairoa Museum' or sending to review",
+    "Hours/visit time are generic"
+   ]
+  },
+  {
+   "id": "mahia-peninsula",
+   "name": "Māhia Peninsula",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Māhia Beach is a safe, shallow family beach good for paddle boarding and surfing, parking along the road, public toilets next to the beach by the Māhia Fishing and Boating Club; reached by SH2 to Nuhaka then straight on to Māhia.",
+     "source": "https://www.visitwairoa.co.nz/see-and-do/swimming/mahia-beach"
+    },
+    {
+     "claim": "Māhia Peninsula Scenic Reserve: 374 ha, one of the last tracts of lowland coastal forest on the East Coast; 3.5 km loop (~2.5 h), trig Te Kapu 397 m, dogs/camping prohibited, 7 km south of Māhia Beach along Kinikini Road.",
+     "source": "https://www.visitwairoa.co.nz/see-and-do/walking-and-cycling/mahia-scenic-reserve"
+    },
+    {
+     "claim": "Wikipedia: Māhia is known for surf, scuba diving, hiking and fishing; Mōrere Hot Springs 15 minutes away.",
+     "source": "https://en.wikipedia.org/wiki/M%C4%81hia_Peninsula"
+    },
+    {
+     "claim": "OSM natural=beach way 'Māhia Beach' centre -39.08051,177.87066.",
+     "source": "https://www.openstreetmap.org/way/1257086372"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "None: a peninsula with no single steward (Wairoa i-SITE site covers it, but is not an operator).",
+   "coordinates_check": {
+    "current": [
+     -39.15,
+     177.9
+    ],
+    "source_point": [
+     -39.0805,
+     177.8707
+    ],
+    "source": "OSM natural=beach way 1257086372 'Māhia Beach'. MOVE from the peninsula centroid",
+    "ok": false
+   },
+   "category": "beach",
+   "unverified": [
+    "24-hour access",
+    "Visit time",
+    "'Portland Island lighthouse' in the bio: the island is farmed private land with a derelict lighthouse site (Wairoa i-SITE) - not a visitor stop; reword"
+   ]
+  },
+  {
+   "id": "gisborne-1",
+   "name": "Titirangi / Kaiti Hill",
+   "kind": "existing",
+   "facts": [
+    {
+     "claim": "A 35 ha reserve on a former pā with views of the city, rivers and bay, walking tracks, a fitness course, picnic areas and lookouts; open all year, free parking, 2.5 km from the city centre.",
+     "source": "https://tairawhitigisborne.co.nz/listings/operator/1304/titirangi-kaiti-hill"
+    },
+    {
+     "claim": "Wikivoyage: 33 ha reserve with a Cook monument and a pōhutukawa planted by Diana, Princess of Wales; Titirangi at -38.6777,178.031.",
+     "source": "https://en.wikivoyage.org/wiki/Gisborne"
+    },
+    {
+     "claim": "The article is titled 'Titirangi (hill)' (Kaiti Hill redirects to it); 'Titirangi / Kaiti Hill' does not exist. OSM peak node -38.67753,178.03122 with that wikipedia tag.",
+     "source": "https://en.wikipedia.org/wiki/Titirangi_(hill)"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "None: public reserve, no operator. (Council owns; not verified.)",
+   "wiki_title": "Titirangi (hill)  -> set wiki: 'Titirangi (hill)'",
+   "coordinates_check": {
+    "current": [
+     -38.681,
+     178.036
+    ],
+    "source_point": [
+     -38.67753,
+     178.03122
+    ],
+    "source": "OSM peak node 10706389296 (wikipedia tag) and Wikipedia -38.678,178.031; current point is ~600 m SE on Titirangi Drive. Suggest moving to the summit.",
+    "ok": false
+   },
+   "category": "viewpoint",
+   "unverified": [
+    "Bio claim 'the site of Cook's first landing' is wrong: the landing is Puhi Kai Iti (gisborne-6) at the river mouth; Kaiti Hill has a Cook monument. Suggested bio: 'A reserve on a former pā above the city with lookouts over the bay and Tūranganui river mouth, tracks and a Cook monument.' (tourism listing + Wikivoyage). Also near-duplicate risk with gisborne-6 once added.",
+    "Marketing words: none found"
+   ]
+  },
+  {
+   "id": "gisborne-2",
+   "name": "Tolaga Bay Wharf",
+   "kind": "existing",
+   "facts": [
+    {
+     "claim": "Category One Heritage NZ site, believed to be the longest wharf of its type in the Southern Hemisphere; open to the public unless signs advise otherwise; 3.5 km from Tolaga Bay township.",
+     "source": "https://tairawhitigisborne.co.nz/listings/operator/1418/tolaga-bay-wharf"
+    },
+    {
+     "claim": "Wikipedia: the wharf (about 600 m) is the second longest in NZ after Tiwai Point (1,500 m); built 1920s, restored and re-opened 2013.",
+     "source": "https://en.wikipedia.org/wiki/Tolaga_Bay"
+    },
+    {
+     "claim": "OSM Tolaga Bay Wharf node -38.38299,178.31849 (matches current).",
+     "source": "https://www.openstreetmap.org/node/4283656489"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "None: public wharf; no operator.",
+   "wiki_title": "No article of its own (missing); it is a section of 'Tolaga Bay'. Use wiki: 'Tolaga Bay' or accept the lookup falling back to search.",
+   "coordinates_check": {
+    "current": [
+     -38.383,
+     178.3185
+    ],
+    "source_point": [
+     -38.38299,
+     178.31849
+    ],
+    "source": "OSM node 4283656489",
+    "ok": true
+   },
+   "category": "landmark",
+   "unverified": [
+    "Bio fix: '660 metres' and 'longest in the Southern Hemisphere' conflict with Wikipedia (600 m, second longest in NZ). Suggest 'A 600 m heritage wharf, among the longest in the Southern Hemisphere, with a cave walk (Cooks Cove) nearby.' - the tourism board says 'believed to be the longest wharf of its type'",
+    "Optional move to east-cape (per placement)"
+   ]
+  },
+  {
+   "id": "gisborne-5",
+   "name": "Tairāwhiti Museum",
+   "kind": "existing",
+   "facts": [
+    {
+     "claim": "Hours: Monday-Saturday 10am-4pm; Sunday and public holidays 1:30pm-4pm; closed Good Friday, Christmas Day and Boxing Day.",
+     "source": "https://tairawhitimuseum.org.nz/"
+    },
+    {
+     "claim": "Admission: adults $5; 12 and under and Friends of the Museum free; free for local residents. Free parking on Stout Street; exhibit cafe Mon-Fri 9-2.",
+     "source": "https://tairawhitimuseum.org.nz/"
+    },
+    {
+     "claim": "Wikivoyage: local museum of Māori taonga and history, basement surf/ocean exhibit incl. Cook's first landfall and the Star of Canada wheelhouse; an historic house open to the public.",
+     "source": "https://en.wikivoyage.org/wiki/Gisborne"
+    },
+    {
+     "claim": "OSM museum way -38.66369,178.02850 (matches current).",
+     "source": "https://www.openstreetmap.org/way/910782689"
+    }
+   ],
+   "hours": "10:00 AM – 4:00 PM (Sunday and public holidays 1:30 PM – 4:00 PM)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "costMin": 5,
+   "costMax": 5,
+   "currency": "NZD",
+   "ticketUrl": "https://tairawhitimuseum.org.nz/",
+   "ticketUrl_note": "Verified: operator's own site, loads (200), title 'Home - Tairawhiti Museum'. Currently MISSING from the entry: add it. Existing entry says free: true - change to NZD 5 (not free for visitors).",
+   "wiki_title": "No article 'Tairāwhiti Museum' (missing); 'Tairawhiti Museum' redirects to 'Whataupoko' (the suburb). Use no wiki, or accept the search fallback; a photo override is safer.",
+   "coordinates_check": {
+    "current": [
+     -38.66365,
+     178.0285
+    ],
+    "source_point": [
+     -38.66369,
+     178.0285
+    ],
+    "source": "OSM museum way 910782689",
+    "ok": true
+   },
+   "category": "museum",
+   "unverified": [
+    "Sunday hours differ from the weekday range in the current entry (current '10-4' has no Sunday qualifier)"
+   ]
+  },
+  {
+   "id": "te-urewera",
+   "name": "Te Urewera (destination name and description check)",
+   "kind": "existing",
+   "facts": [
+    {
+     "claim": "Te Urewera National Park was disestablished in 2014 and replaced by 'Te Urewera', a legal entity with legal personhood, governed by the Te Urewera Board (Tūhoe and Crown); the Wikipedia article title is 'Te Urewera'.",
+     "source": "https://en.wikipedia.org/wiki/Te_Urewera"
+    },
+    {
+     "claim": "DOC: Te Urewera is recognised in NZ law as a living person, governed by a board; care of tracks and facilities by Te Uru Taumatua (Ngāi Tūhoe); huts are being removed; SH38 is gravel for about 90 km between Murupara and Tuai.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/east-coast/places/te-urewera/"
+    }
+   ],
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Destination, no ticketUrl field. DOC page for reference: https://www.doc.govt.nz/parks-and-recreation/places-to-go/east-coast/places/te-urewera/ (loads, title 'Te Urewera').",
+   "coordinates_check": {
+    "current": [
+     -38.75,
+     177.15
+    ],
+    "source_point": [
+     -38.75,
+     177.15
+    ],
+    "source": "Centre at Waikaremoana visitor area; Wikipedia centroid is -38.45,177.05 (centroid, not wanted)",
+    "ok": true
+   },
+   "category": "park",
+   "unverified": [
+    "No change needed to name 'Te Urewera' or the description (it says 'legally recognised as a person'; does not call it a national park). Optional: category 'park' is fine (DOC says it meets IUCN Category II).",
+    "goodToKnow 'partly unsealed' fits DOC (about 90 km gravel on SH38); one tip could mention huts being removed and bookings through DOC"
+   ]
+  }
+ ]
+}

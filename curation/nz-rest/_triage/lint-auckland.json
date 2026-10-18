@@ -1,0 +1,41 @@
+{
+ "generated": "2026-10-18T03:29:37.434Z",
+ "scope": {
+  "region": "auckland"
+ },
+ "issues": [
+  {
+   "kind": "spot",
+   "id": "auckland-11",
+   "name": "Karekare",
+   "checks": [
+    {
+     "check": "wiki",
+     "detail": "a disambiguation page — set `wiki` to the exact article"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "auckland-13",
+   "name": "MOTAT",
+   "checks": [
+    {
+     "check": "no-ticket",
+     "detail": "no cost and not free: research the price and the official site"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "auckland-15",
+   "name": "Auckland Zoo",
+   "checks": [
+    {
+     "check": "no-ticket",
+     "detail": "no cost and not free: research the price and the official site"
+    }
+   ]
+  }
+ ]
+}

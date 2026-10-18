@@ -1,0 +1,78 @@
+{
+ "generated": "2026-10-18T03:30:17.235Z",
+ "scope": {
+  "region": "nelson-tasman"
+ },
+ "issues": [
+  {
+   "kind": "spot",
+   "id": "nelson-1",
+   "name": "Tāhunanui Beach",
+   "checks": [
+    {
+     "check": "wiki",
+     "detail": "redirects to \"Tāhunanui\" — set `wiki` to it, or check it's this place"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "nelson-4",
+   "name": "World of WearableArt and Classic Cars Museum",
+   "checks": [
+    {
+     "check": "ticketUrl",
+     "detail": "unreachable (TypeError: fetch failed)"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "golden-bay-2",
+   "name": "Wharariki Beach",
+   "checks": [
+    {
+     "check": "bio",
+     "detail": "marketing word \"iconic\""
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "nelson-lakes-1",
+   "name": "Lake Rotoiti",
+   "checks": [
+    {
+     "check": "ticketUrl",
+     "detail": "title doesn't name the place (\"Nelson Lakes National Park: Places to go in Nelson/Tasman\")"
+    },
+    {
+     "check": "wiki",
+     "detail": "a disambiguation page — set `wiki` to the exact article"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "nelson-lakes-3",
+   "name": "Lake Rotoroa",
+   "checks": [
+    {
+     "check": "wiki",
+     "detail": "a disambiguation page — set `wiki` to the exact article"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "kahurangi-1",
+   "name": "Heaphy Track",
+   "checks": [
+    {
+     "check": "ticketUrl",
+     "detail": "title doesn't name the place (\"Kahurangi National Park: Places to go in Nelson/Tasman\")"
+    }
+   ]
+  }
+ ]
+}

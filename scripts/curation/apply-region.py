@@ -205,6 +205,10 @@ for sid, fx in fixes.items():
         changed.append((sid, 'spot not found')); continue
     i, j = span
     text = spots_src[i:j]
+    _old_key = None
+    if 'wiki' in fx or 'name' in fx:
+        mw = re.search(r"\bwiki: " + STR, text); mn = re.search(r"\bname: " + STR, text)
+        _old_key = json.loads(('"' + (mw or mn).group(1)[1:-1].replace('"', '\\"') + '"')) if (mw or mn) else None
     for k, v in fx.items():
         if k in ('notes', 'note', 'source'):
             continue
@@ -219,6 +223,29 @@ for sid, fx in fixes.items():
         if k in FIELDS + ['coordinates']:
             text = set_field(text, k, v); changed.append((sid, k))
     spots_src = spots_src[:i] + text + spots_src[j:]
+    # A new wiki title or name moves the spot's photo key (spotPhotoTitle: wiki, else name): copy any override and subject
+    # point from the old key to the new one, so the spot keeps the photo a judge accepted.
+    if _old_key and not dry:
+        mw = re.search(r"\bwiki: " + STR, text); mn = re.search(r"\bname: " + STR, text)
+        _src = (mw or mn).group(1)
+        _new_key = json.loads('"' + _src[1:-1].replace('"', '\\"') + '"') if _src[0] == '"' else _src[1:-1]
+        if _new_key != _old_key:
+            io = open('src/data/imageOverrides.ts').read()
+            moved = []
+            for blk in ('export const WIKI_IMAGE_OVERRIDES', 'export const PHOTO_SUBJECT'):
+                a = io.index(blk); b = io.index('};', a)
+                part = io[a:b]
+                m = re.search(r'^  ' + re.escape(q(_old_key)) + r': (.*),$', part, re.M)
+                if m and not re.search(r'^  ' + re.escape(q(_new_key)) + r':', part, re.M):
+                    part += f'  {q(_new_key)}: {m.group(1)},\n'; moved.append(blk.split()[-1])
+                    io = io[:a] + part + io[b:]
+            open('src/data/imageOverrides.ts', 'w').write(io)
+            ext = json.load(open('src/data/externalPhotos.json'))
+            if _old_key in ext and _new_key not in ext:
+                ext[_new_key] = ext[_old_key]; moved.append('externalPhotos')
+                json.dump(ext, open('src/data/externalPhotos.json', 'w'), indent=1, ensure_ascii=False); open('src/data/externalPhotos.json', 'a').write('\n')
+            if moved:
+                changed.append((sid, f'photo key {_old_key!r} -> {_new_key!r}: copied {moved}'))
 
 print(f'existing fixes: {len(changed)} field changes')
 for c in changed:

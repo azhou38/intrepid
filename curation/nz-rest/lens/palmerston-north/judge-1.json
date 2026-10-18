@@ -1,0 +1,123 @@
+{
+ "slots": {
+  "dest:palmerston-north:header": {
+   "candidates": [
+    {
+     "file": "A splash of colour... (50819840311).jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": false,
+     "real_photograph": true,
+     "verdict": "reject",
+     "reason": "Flowerbed and road in Victoria Esplanade; a garden, not a cityscape."
+    }
+   ],
+   "decision": "reject",
+   "failed_check": "spectacular_wide",
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "dest:palmerston-north:why1": {
+   "candidates": [
+    {
+     "file": "Te Manawa Museum of Art, Science and History 06.JPG",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "keep",
+     "reason": "Correct place, shows the named thing, real colour photo."
+    }
+   ],
+   "decision": "keep-current",
+   "failed_check": null,
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "dest:palmerston-north:why2": {
+   "candidates": [
+    {
+     "file": "external:bright-victoria-esplanade-miniature-railway-ride-1280.jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "keep",
+     "reason": "Correct place, shows the named thing, real colour photo."
+    }
+   ],
+   "decision": "keep-current",
+   "failed_check": null,
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "dest:palmerston-north:why3": {
+   "candidates": [
+    {
+     "file": "New Zealand Rugby Museum 06.JPG",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "keep",
+     "reason": "Correct place, shows the named thing, real colour photo."
+    }
+   ],
+   "decision": "keep-current",
+   "failed_check": null,
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "spot:palmerston-north-1": {
+   "candidates": [
+    {
+     "file": "Te Manawa (Westgate Library and Multi-Purpose Facility) facade.jpg",
+     "right_place": false,
+     "shows_named_thing": false,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "reject",
+     "reason": "Commons: Te Manawa (Westgate) is a library in Westgate, Auckland, not Te Manawa museum in Palmerston North."
+    }
+   ],
+   "decision": "reject",
+   "failed_check": "right_place",
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "spot:palmerston-north-2": {
+   "candidates": [
+    {
+     "file": "external:bright-the-esplanade-1280.jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "keep",
+     "reason": "Correct place, shows the named thing, real colour photo."
+    }
+   ],
+   "decision": "keep-current",
+   "failed_check": null,
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "spot:palmerston-north-3": {
+   "candidates": [
+    {
+     "file": "New Zealand Rugby Museum 05.JPG",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": false,
+     "verdict": "reject",
+     "reason": "Image has a blank white wedge on the right edge from a bad perspective correction; use a clean photo."
+    }
+   ],
+   "decision": "reject",
+   "failed_check": "real_photograph",
+   "hero_crop": "ok",
+   "dark": false
+  }
+ }
+}

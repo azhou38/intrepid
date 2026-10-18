@@ -1,0 +1,123 @@
+{
+ "slots": {
+  "dest:hanmer-springs:header": {
+   "candidates": [
+    {
+     "file": "Hanmer Springs.JPG",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "keep",
+     "reason": "Hanmer Springs village among trees with mountains behind (page: town centre of Hanmer Springs); modest but wide and the town in its setting."
+    }
+   ],
+   "decision": "keep-current",
+   "failed_check": null,
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "dest:hanmer-springs:why1": {
+   "candidates": [
+    {
+     "file": "Hamner Springs (261408475).jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "keep",
+     "reason": "Open-air thermal pool with mountains behind (Commons category Hanmer Springs Hot Pools); people in the pool are incidental."
+    }
+   ],
+   "decision": "keep-current",
+   "failed_check": null,
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "dest:hanmer-springs:why2": {
+   "candidates": [
+    {
+     "file": "external:bright-hanmer-springs-conical-hill-walkway-panoramio-1280.jpg",
+     "right_place": true,
+     "shows_named_thing": false,
+     "spectacular_wide": false,
+     "real_photograph": true,
+     "verdict": "reject",
+     "reason": "Conical Hill Walkway is a plain dirt track in exotic forest: does not sell 'alpine forest walks' (check 3)."
+    }
+   ],
+   "decision": "reject",
+   "failed_check": "3",
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "dest:hanmer-springs:why3": {
+   "candidates": [
+    {
+     "file": "Auf der Fahrt nach Hanmer Springs.JPG",
+     "right_place": true,
+     "shows_named_thing": false,
+     "spectacular_wide": false,
+     "real_photograph": true,
+     "verdict": "reject",
+     "reason": "Waiau Ferry Bridge over the Waiau gorge (page confirms) but shows a bridge and river, not 'adventure on the Waiau River' (jet boat, rafting): does not show its reason."
+    }
+   ],
+   "decision": "reject",
+   "failed_check": "3 (and does not show its reason)",
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "spot:hanmer-springs-1": {
+   "candidates": [
+    {
+     "file": "Hamner Springs (261408475).jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "keep",
+     "reason": "Same thermal-pool photo as the why1 card; shows the pools with mountains behind."
+    }
+   ],
+   "decision": "keep-current",
+   "failed_check": null,
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "spot:hanmer-springs-2": {
+   "candidates": [
+    {
+     "file": "Hanmer Springs Conical Hill View - panoramio.jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "keep",
+     "reason": "View over the Hanmer basin from Conical Hill; shows the viewpoint's view."
+    }
+   ],
+   "decision": "keep-current",
+   "failed_check": null,
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "spot:hanmer-springs-3": {
+   "candidates": [
+    {
+     "file": "Waiau Ferry Bridge.jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "keep",
+     "reason": "Waiau Ferry Bridge across the gorge, centred though small; the named bridge is recognisable."
+    }
+   ],
+   "decision": "keep-current",
+   "failed_check": null,
+   "hero_crop": "ok",
+   "dark": false
+  }
+ }
+}

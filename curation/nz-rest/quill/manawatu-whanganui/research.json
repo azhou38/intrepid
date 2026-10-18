@@ -1,0 +1,1241 @@
+{
+ "region": "manawatu-whanganui",
+ "researched": "2026-10-17",
+ "method": "DOC/operator pages via scripts/curation/fetch.ts; coordinates from OSM map API, Photon and Wikipedia API; Nominatim and Overpass were rate-limited/unreachable.",
+ "entries": [
+  {
+   "id": "tongariro-7",
+   "name": "Tongariro Northern Circuit",
+   "kind": "new",
+   "wiki": "Tongariro Northern Circuit",
+   "facts": [
+    {
+     "claim": "DOC: 35.5 km one way, 3-4 days; distance cut from 44.9 km because the Whakapapa Village to Mangatepopo Hut section is closed after the 2025 Tongariro fire. The placement bio says 43 km: change it to 35.5 km.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/central-north-island/places/tongariro-national-park/things-to-do/tracks/tongariro-northern-circuit/"
+    },
+    {
+     "claim": "DOC: not operating as a Great Walk while Oturere Hut is replaced; Great Walks season 23 Oct 2026 to 30 Apr 2027 (bookings open for 2026/27). Outside the season huts are still booked at reduced cost and the track needs alpine skills.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/central-north-island/places/tongariro-national-park/things-to-do/tracks/tongariro-northern-circuit/"
+    },
+    {
+     "claim": "DOC: for 2026/27 the track starts at Mangatepopo Carpark and ends in Whakapapa Village; DOC recommends starting from Mangatepopo Carpark.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/central-north-island/places/tongariro-national-park/things-to-do/tracks/tongariro-northern-circuit/"
+    },
+    {
+     "claim": "DOC hut fees per person per night, 23 Oct to 30 Apr: adult NZ $44, adult international $66. Three huts, booking required.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/central-north-island/places/tongariro-national-park/things-to-do/tracks/tongariro-northern-circuit/"
+    }
+   ],
+   "hours": "Great Walks season 23 Oct 2026 - 30 Apr 2027",
+   "visitHoursMin": 72,
+   "visitHoursMax": 96,
+   "costMin": 44,
+   "costMax": 66,
+   "currency": "NZD",
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/central-north-island/places/tongariro-national-park/things-to-do/tracks/tongariro-northern-circuit/",
+   "ticketUrl_note": "DOC (managing agency) page, title \"Tongariro Northern Circuit: Tongariro National Park Great Walk\"; loaded OK.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -39.145667,
+     "longitude": 175.624707
+    },
+    "source_point": {
+     "latitude": -39.1444,
+     "longitude": 175.58102
+    },
+    "source": "DOC names Mangatepopo Carpark as the start; point from OSM (bicycle_parking node at the car park, matches Commons geotag -39.14438,175.58096)",
+    "distance_m": 3770,
+    "ok": false,
+    "note": "Moved from the loop centroid (about 3.4 km east, near Red Crater) to the Mangatepopo car park."
+   },
+   "category": "hike",
+   "unverified": [
+    "No coordinates are given on the DOC page; the car-park point is OSM + Commons geotag.",
+    "Cost is the per-night hut fee (adult NZ 44 / INT 66); 3 nights is typical (total about 132-198). No entry fee.",
+    "Visit hours are 3-4 days of walking (72-96 is the repo convention for multi-day)."
+   ]
+  },
+  {
+   "id": "tongariro-8",
+   "name": "Turoa Ski Area",
+   "kind": "new",
+   "wiki": "Turoa",
+   "facts": [
+    {
+     "claim": "Tūroa: 500 ha ski area on the southern slopes of Mount Ruapehu, with New Zealand's highest lifted point and biggest vertical (operator/Mt Ruapehu site).",
+     "source": "https://www.mtruapehu.com/"
+    },
+    {
+     "claim": "Operator Pure Tūroa; day pass prices listed (adult 17-64): midweek $76.30 (was $99), weekend $115.50 (was $99); youth $79 to $62.30; senior $79 to $69.30. The page marks them as spring specials, so the standard price may differ.",
+     "source": "https://www.pureturoa.nz/passes/day-multi-day-passes"
+    },
+    {
+     "claim": "2026 opening dates blog: sightseeing, sledding and beginner snow experiences from early July, early access in June. Summer offering still \"in development\".",
+     "source": "https://www.pureturoa.nz/"
+    },
+    {
+     "claim": "Wikipedia article is titled \"Turoa\" (exists, coordinates -39.30456, 175.52731).",
+     "source": "https://en.wikipedia.org/wiki/Turoa"
+    },
+    {
+     "claim": "Base building (Alpine Bar & Cafe) at -39.30472, 175.52748; Tūroa Village / free car park (OSM) at -39.30611, 175.52577.",
+     "source": "https://www.openstreetmap.org/#map=17/-39.3047/175.5275"
+    }
+   ],
+   "hours": "Winter ski season (2026 opening from early July; closing date unverified)",
+   "visitHoursMin": 3,
+   "visitHoursMax": 7,
+   "costMin": 76,
+   "costMax": 116,
+   "currency": "NZD",
+   "ticketUrl": "https://www.pureturoa.nz/",
+   "ticketUrl_note": "Operator site, title \"Tūroa Ski Area Mt Ruapehu NZ\"; operator is Pure Tūroa Ltd (named in DOC concession documents linked from Wikipedia \"Turoa\"). Loaded OK.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -39.3004,
+     "longitude": 175.54199
+    },
+    "source_point": {
+     "latitude": -39.30456,
+     "longitude": 175.52731
+    },
+    "source": "Wikipedia \"Turoa\" point + OSM (Alpine Bar & Cafe at the base -39.30472,175.52748)",
+    "distance_m": 1345,
+    "ok": false,
+    "note": "Moved about 1.3 km west from the OSM sports-centre point to the base building."
+   },
+   "category": "entertainment",
+   "unverified": [
+    "Adult price range 76-116 is the day-pass promo prices (spring special); the standard peak day-pass price is not shown on the page.",
+    "Closing date of the 2026 season and daily lift hours not found.",
+    "Visit hours are an estimate."
+   ]
+  },
+  {
+   "id": "tongariro-9",
+   "name": "Whakapapa Ski Area",
+   "kind": "new",
+   "wiki": "Whakapapa skifield",
+   "held": true,
+   "held_reason": "placement.json: held for a photo",
+   "facts": [
+    {
+     "claim": "Whakapapa 2026 winter season runs from Kings Birthday Weekend (30 May) to Labour Weekend (25 October); 12 lifts across 550 ha incl. the Sky Waka gondola.",
+     "source": "https://www.whakapapa.com/winter"
+    },
+    {
+     "claim": "Summer season 27 Oct 2026 to 30 Apr 2027: the Sky Waka gondola (12 min, climbs 390 m over 1.8 km from 1,630 m to Knoll Ridge Chalet at 2,020 m), food and marked short walks. The placement bio says \"sightseeing chairlift\": it is a gondola (Sky Waka).",
+     "source": "https://www.whakapapa.com/summer"
+    },
+    {
+     "claim": "Scenic Gondola ticket, winter 2026: adult $59 (one same-day return on the Sky Waka).",
+     "source": "https://www.whakapapa.com/passes/sightseeing-and-sledding"
+    },
+    {
+     "claim": "Wikipedia article is titled \"Whakapapa skifield\" (exists).",
+     "source": "https://en.wikipedia.org/wiki/Whakapapa_skifield"
+    },
+    {
+     "claim": "OSM \"Guest Services\" visitor centre at Top o' The Bruce -39.23724, 175.55676; Iwikau Ski Village car park -39.23687, 175.55597.",
+     "source": "https://www.openstreetmap.org/#map=17/-39.2372/175.5568"
+    }
+   ],
+   "hours": "Seasonal: winter ski 30 May - 25 Oct 2026; Sky Waka gondola in summer 27 Oct 2026 - 30 Apr 2027",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "costMin": 59,
+   "costMax": 59,
+   "currency": "NZD",
+   "ticketUrl": "https://www.whakapapa.com/",
+   "ticketUrl_note": "Operator site (Whakapapa Holdings 2024 Ltd in the footer), title \"Whakapapa\"; loaded OK. Also the umbrella site https://www.mtruapehu.com/ lists it.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -39.24834,
+     "longitude": 175.55736
+    },
+    "source_point": {
+     "latitude": -39.23724,
+     "longitude": 175.55676
+    },
+    "source": "OSM visitor centre \"Guest Services\", Top o' The Bruce (matches Wikipedia \"Whakapapa skifield\" -39.23736,175.55696)",
+    "distance_m": 1235,
+    "ok": false,
+    "note": "Moved about 1.2 km north to the Top o' The Bruce base."
+   },
+   "category": "entertainment",
+   "unverified": [
+    "$59 is the winter scenic gondola adult ticket; the summer gondola price was not on a page I could load (a search snippet cited about $39, not verified). A ski day pass price was not found.",
+    "Daily lift hours not found.",
+    "Visit hours are an estimate."
+   ]
+  },
+  {
+   "id": "tongariro-10",
+   "name": "Waitonga Falls",
+   "kind": "new",
+   "wiki": null,
+   "wiki_note": "No Wikipedia article; drop the wiki field and keep a photo override.",
+   "facts": [
+    {
+     "claim": "DOC: 39 m Waitonga Falls is Tongariro National Park's highest waterfall; 4 km return, 1 hr 20 min, easy to intermediate walking track.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/central-north-island/places/tongariro-national-park/things-to-do/tracks/waitonga-falls-track/"
+    },
+    {
+     "claim": "DOC: the track begins from the parking area 11 km up the Ohakune Mountain Road; views of Ruapehu and the Rotokawa pools.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/central-north-island/places/tongariro-national-park/things-to-do/tracks/waitonga-falls-track/"
+    },
+    {
+     "claim": "OSM: Waitonga Falls waterfall node (39 m, wikidata Q34682345) at -39.33117, 175.51010; car park \"Ohakune Mountain Rd.\" (fee=no) at -39.32947, 175.49576.",
+     "source": "https://www.openstreetmap.org/#map=16/-39.3295/175.4958"
+    },
+    {
+     "claim": "No Wikipedia article for Waitonga Falls (search and title lookup return nothing).",
+     "source": "https://en.wikipedia.org/w/index.php?search=Waitonga+Falls"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/central-north-island/places/tongariro-national-park/things-to-do/tracks/waitonga-falls-track/",
+   "ticketUrl_note": "DOC (managing agency) page, title \"Waitonga Falls Track: Tongariro National Park\"; loaded OK.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -39.33318,
+     "longitude": 175.50755
+    },
+    "source_point": {
+     "latitude": -39.32947,
+     "longitude": 175.49576
+    },
+    "source": "OSM parking way \"Ohakune Mountain Rd.\" (fee=no); DOC: track begins at the parking area 11 km up the Mountain Road",
+    "distance_m": 1095,
+    "ok": false,
+    "note": "Moved about 1.2 km west from a mid-track steps point to the car park."
+   },
+   "category": "hike",
+   "unverified": [
+    "No fee shown on the DOC page (DOC says no entry fee for the park elsewhere); treated as free.",
+    "\"Open 24 hours\" is an assumption for an open-access track."
+   ]
+  },
+  {
+   "id": "whanganui-7",
+   "name": "Whanganui Regional Museum",
+   "kind": "new",
+   "wiki": null,
+   "wiki_note": "Wikipedia article \"Whanganui Regional Museum\" exists; name matches so no wiki field needed.",
+   "facts": [
+    {
+     "claim": "Free admission, open daily 10am-4.30pm (except Good Friday and Christmas Day); in Pukenamu Queen's Park, Watt Street.",
+     "source": "https://wrm.org.nz/visit/"
+    },
+    {
+     "claim": "Collections include Taonga Maori, moa bones, historical fashion and textiles and the Gottfried Lindauer Gallery.",
+     "source": "https://wrm.org.nz/"
+    },
+    {
+     "claim": "OSM building \"Whanganui Regional Museum\" fee=no at -39.93163, 175.05187.",
+     "source": "https://www.openstreetmap.org/#map=18/-39.93163/175.05187"
+    }
+   ],
+   "hours": "10:00 AM - 4:30 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": "https://wrm.org.nz/",
+   "ticketUrl_note": "Operator site, title \"Home - Whanganui Regional Museum\"; loaded OK.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -39.9317,
+     "longitude": 175.0519
+    },
+    "source_point": {
+     "latitude": -39.93163,
+     "longitude": 175.05187
+    },
+    "source": "OSM museum building (and Wikipedia -39.9317,175.0519)",
+    "distance_m": 8,
+    "ok": true,
+    "note": "Matches."
+   },
+   "category": "museum",
+   "unverified": []
+  },
+  {
+   "id": "whanganui-8",
+   "name": "Bason Botanic Gardens",
+   "kind": "new",
+   "held": true,
+   "held_reason": "placement.json: held for a photo",
+   "facts": [
+    {
+     "claim": "Gardens open daily 8am to dusk (closing time varies through the year, e.g. 8am-5:30pm outside daylight saving, 8am-8pm from Labour Weekend); Conservatory 9am-4:30pm. 25 ha with one of the most extensive public orchid collections in NZ.",
+     "source": "https://basonbotanicgardens.org.nz/find-us/location/"
+    },
+    {
+     "claim": "Whanganui District Council describes it as indoor and outdoor gardens, bush walks and free barbecues; 552 Rapanui Road. No admission charge is stated on either page.",
+     "source": "https://www.whanganui.govt.nz/Services/Parks-and-Reserves/Find-a-Park/Bason-Botanic-Gardens"
+    },
+    {
+     "claim": "OSM: visitor car park (fee=no) at -39.8832, 174.94939; garden polygon centroid -39.88054, 174.95255.",
+     "source": "https://www.openstreetmap.org/#map=17/-39.8832/174.9494"
+    }
+   ],
+   "hours": "8:00 AM - dusk (conservatory 9:00 AM - 4:30 PM)",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2.5,
+   "free": true,
+   "ticketUrl": "https://basonbotanicgardens.org.nz/",
+   "ticketUrl_note": "Trust site, title \"Home - Bason Botanic Gardens - Whanganui\"; loaded OK.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -39.8829,
+     "longitude": 174.9514
+    },
+    "source_point": {
+     "latitude": -39.8832,
+     "longitude": 174.94939
+    },
+    "source": "OSM car park (fee=no) at the garden entrance",
+    "distance_m": 175,
+    "ok": false,
+    "note": "Moved about 170 m to the car park (Wikipedia point is inside the garden)."
+   },
+   "category": "nature",
+   "unverified": [
+    "Free is inferred: no admission charge appears on the trust or council page."
+   ]
+  },
+  {
+   "id": "whanganui-9",
+   "name": "Bushy Park",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Tarapuruhi Bushy Park forest sanctuary open 8am-8pm; entry by koha (donation); homestead by appointment only; no dogs. Over 3 hours of walking tracks; Rātānui, one of the largest northern rata trees.",
+     "source": "https://bushypark.nz/visit/"
+    },
+    {
+     "claim": "Whanganui District Council: \"The sanctuary is free to visit and can be accessed during daylight hours.\" (older wording than the sanctuary's koha/8am-8pm).",
+     "source": "https://www.whanganui.govt.nz/Services/Parks-and-Reserves/Find-a-Park/Bushy-Park-Tarapuruhi"
+    },
+    {
+     "claim": "Wikipedia article title is \"Bushy Park (New Zealand)\" (exists, -39.79733, 174.92861 = forest centroid).",
+     "source": "https://en.wikipedia.org/wiki/Bushy_Park_(New_Zealand)"
+    },
+    {
+     "claim": "OSM: \"Bushy Park Sanctuary visitor parking\" at -39.79793, 174.93071; address 791 Rangitatau East Road, Kai Iwi.",
+     "source": "https://www.openstreetmap.org/#map=17/-39.7979/174.9307"
+    }
+   ],
+   "hours": "8:00 AM - 8:00 PM",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": true,
+   "ticketUrl": "https://bushypark.nz/visit/",
+   "ticketUrl_note": "Sanctuary site, page title \"VISIT - Tarapuruhi Bushy Park\"; loaded OK. (The site home body came back empty, so the /visit/ nav page is used.) The lookalike www.bushypark.co.nz is a casino spam site: do not use it.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -39.79733333,
+     "longitude": 174.92861111
+    },
+    "source_point": {
+     "latitude": -39.79793,
+     "longitude": 174.93071
+    },
+    "source": "OSM \"Bushy Park Sanctuary visitor parking\"",
+    "distance_m": 191,
+    "ok": false,
+    "note": "Moved about 190 m from the forest centroid to the visitor car park."
+   },
+   "category": "nature",
+   "unverified": [
+    "Entry is koha (donation) so recorded as free: true; no fixed price.",
+    "Placement name should read \"Bushy Park\" with wiki \"Bushy Park (New Zealand)\"; official name is Tarapuruhi Bushy Park."
+   ]
+  },
+  {
+   "id": "whanganui-national-park-3",
+   "name": "Atene Skyline Track",
+   "kind": "new",
+   "wiki": null,
+   "wiki_note": "No Wikipedia article; keep a photo override.",
+   "facts": [
+    {
+     "claim": "DOC: 12.5 km one way, 6-8 hr, advanced tramping track; not a complete loop (extra 2 km along the road). Placement visit hours 4-6 is too short: use 6-8.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/manawatu-whanganui/places/whanganui-national-park/things-to-do/tracks/atene-skyline-track/"
+    },
+    {
+     "claim": "DOC: two entrances on Whanganui River Road, 36 km from Whanganui, less than 2 km apart; halfway campsite; views of the cut-off meander, Ruapehu and Taranaki.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/manawatu-whanganui/places/whanganui-national-park/things-to-do/tracks/atene-skyline-track/"
+    },
+    {
+     "claim": "DOC: fires not permitted; no cell coverage; no dogs. No entry fee for Whanganui National Park (DOC Whanganui Journey page).",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/manawatu-whanganui/places/whanganui-national-park/things-to-do/tracks/whanganui-journey/"
+    },
+    {
+     "claim": "No Wikipedia article for the track (only the locality \"Ātene\").",
+     "source": "https://en.wikipedia.org/wiki/%C4%80tene"
+    }
+   ],
+   "hours": "Daylight",
+   "visitHoursMin": 6,
+   "visitHoursMax": 8,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/manawatu-whanganui/places/whanganui-national-park/things-to-do/tracks/atene-skyline-track/",
+   "ticketUrl_note": "DOC page, title \"Atene Skyline Track: Whanganui National Park, Whanganui region\"; loaded OK. (The first guess .../things-to-do/atene-skyline-track/ redirects to the park page; the /tracks/ path is right.)",
+   "coordinates_check": {
+    "current": {
+     "latitude": -39.70533,
+     "longitude": 175.18072
+    },
+    "source_point": {
+     "latitude": -39.7050055,
+     "longitude": 175.1459098
+    },
+    "source": "OSM way \"Atene Skyline Track\" northern end (up-river entrance on Whanganui River Road); no car park is mapped",
+    "distance_m": 2978,
+    "ok": false,
+    "note": "Moved about 3 km west from a mid-ridge point to the track end on the River Road. Approximate: DOC gives no coordinates and OSM has no car park node."
+   },
+   "category": "hike",
+   "unverified": [
+    "Trailhead point is an OSM track end, not a surveyed car park (accuracy maybe 200-300 m).",
+    "Free: no fee on DOC pages; the halfway campsite has its own fee (not researched).",
+    "\"Daylight\" hours assumed."
+   ]
+  },
+  {
+   "id": "palmerston-north-4",
+   "name": "Manawatū Gorge",
+   "kind": "new",
+   "wiki": "Manawatū Gorge",
+   "facts": [
+    {
+     "claim": "DOC: Manawatu Gorge Track is 11.2 km one way, 3-5 hr, easy to intermediate; 4 km Tawa Loop option at the Ashhurst end.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/manawatu-whanganui/places/manawatu-gorge-scenic-reserve/things-to-do/manawatu-gorge-track/"
+    },
+    {
+     "claim": "DOC: west access is via the Tawa Loop; parking is at Western Gateway Park, 1631 Napier Road, Aokautere; car park open 5am-9pm Oct-Apr and 6am-7pm May-Sep. East (Woodville) end at Ballance Gorge Road. No dogs.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/manawatu-whanganui/places/manawatu-gorge-scenic-reserve/things-to-do/manawatu-gorge-track/"
+    },
+    {
+     "claim": "Te Āpiti site: Western Gateway car park hours Oct-Apr 5am-9pm, May-Sep 6am-7pm; gorge is 900 ha of indigenous forest between the Ruahine and Tararua Ranges.",
+     "source": "https://www.teapiti.co.nz/"
+    },
+    {
+     "claim": "Photon/OSM \"Western Gateway Car Park\" at -40.30695, 175.76893.",
+     "source": "https://www.openstreetmap.org/#map=17/-40.30695/175.76893"
+    },
+    {
+     "claim": "Wikipedia article \"Manawatū Gorge\" exists (coords -40.3184, 175.798, the gorge itself).",
+     "source": "https://en.wikipedia.org/wiki/Manawat%C5%AB_Gorge"
+    }
+   ],
+   "hours": "Car park 5:00 AM - 9:00 PM (Oct-Apr), 6:00 AM - 7:00 PM (May-Sep)",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/manawatu-whanganui/places/manawatu-gorge-scenic-reserve/things-to-do/manawatu-gorge-track/",
+   "ticketUrl_note": "DOC page, title \"Manawatu Gorge Track: Manawatu Gorge Scenic Reserve, Manawatu region\"; loaded OK. Alternative operator-run site https://www.teapiti.co.nz/ (title \"Te Āpiti Home\") also loads.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -40.3184,
+     "longitude": 175.798
+    },
+    "source_point": {
+     "latitude": -40.30695,
+     "longitude": 175.76893
+    },
+    "source": "Western Gateway Car Park (OSM via Photon), the DOC-named west access",
+    "distance_m": 2774,
+    "ok": false,
+    "note": "Moved about 3 km west from the gorge centroid to the Ashhurst-end car park."
+   },
+   "category": "hike",
+   "unverified": [
+    "Free: no fee on DOC or Te Āpiti pages (car park release fee only if locked in).",
+    "Visit hours: Tawa Loop about 4 km up to the full 3-5 hr one-way track (needs two cars).",
+    "Bio says \"Te Āpiti track\": DOC calls it Manawatu Gorge Track; Te Āpiti is the reserve/place name."
+   ]
+  },
+  {
+   "id": "palmerston-north-5",
+   "name": "Feilding",
+   "kind": "new",
+   "wiki": "Feilding",
+   "facts": [
+    {
+     "claim": "Wikivoyage lists Coach House Museum (121 South Street, daily 10am-4pm, $12), Manfeild Park motor-racing circuit and the Feilding and District Steam Rail Society (occasional trips) as things to see and do.",
+     "source": "https://en.wikivoyage.org/wiki/Feilding"
+    },
+    {
+     "claim": "OSM: Feilding Information Centre at -40.22600, 175.56357; Wikipedia town point -40.21667, 175.56667 is about 1 km NE of the centre.",
+     "source": "https://www.openstreetmap.org/#map=17/-40.226/175.5636"
+    },
+    {
+     "claim": "Wikipedia article \"Feilding\" exists.",
+     "source": "https://en.wikipedia.org/wiki/Feilding"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A town with no single steward; no official visitor site checked (Feilding i-SITE is at the OSM information point). Left null.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -40.21666667,
+     "longitude": 175.56666667
+    },
+    "source_point": {
+     "latitude": -40.226,
+     "longitude": 175.56357
+    },
+    "source": "OSM tourism=information \"Feilding Information Centre\"",
+    "distance_m": 1071,
+    "ok": false,
+    "note": "Moved about 1 km SW into the town centre."
+   },
+   "category": "historic",
+   "unverified": [
+    "Whether a whole town should be a spot is the owner's call (placement note).",
+    "The bio's \"clock tower, local museum and steam railway\" ties to Wikivoyage (museum, steam rail) and Commons photo; clock tower not source-checked.",
+    "Free assumed (the town); Coach House Museum is $12 per Wikivoyage 2020."
+   ]
+  },
+  {
+   "id": "ohakune-carrot",
+   "name": "The World's Largest Carrot",
+   "kind": "new",
+   "wiki": null,
+   "wiki_note": "No Wikipedia article titled for the Carrot (Ohakune Carrot / World's Largest Carrot are missing); it is covered inside \"Ohakune\" and \"List of New Zealand's big things\". Drop the wiki field.",
+   "facts": [
+    {
+     "claim": "Visit Ruapehu: 7.5 m model carrot, in the same spot since 1984, built for an ANZ Bank TV commercial then donated to the town; voted Landmark of the Year 2023; part of Ohakune Carrotland Adventure Park (playground, swings, pump track).",
+     "source": "https://www.visitruapehu.com/see-do/family-fun/carrotland-adventure-park"
+    },
+    {
+     "claim": "OSM: node \"Ohakune Carrot\" (tourism=sculpture, artwork_type=statue) at -39.42004, 175.40372; Carrotland Adventure Park playground nearby, off Rangataua Road (SH49).",
+     "source": "https://www.openstreetmap.org/#map=18/-39.42004/175.40372"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "BLOCKED: managing agency is Ruapehu District Council (its Carrot Park brochure is at ruapehudc.govt.nz) but that site returns an empty HTTP 202 to scripts (https://www.ruapehudc.govt.nz/repository/libraries/id:2dyphjrmg1cxby65trfv/hierarchy/sitecollectiondocuments/brochures/parks-and-rerserves/playgrounds/Carrot%20Park%20Ohakune.pdf): orchestrator to check in a browser. Fallback if council has no page: Visit Ruapehu listing (regional tourism board, not the operator).",
+   "coordinates_check": {
+    "current": {
+     "latitude": -39.42008,
+     "longitude": 175.40375
+    },
+    "source_point": {
+     "latitude": -39.42004,
+     "longitude": 175.40372
+    },
+    "source": "OpenStreetMap (api.openstreetmap.org map bbox) node tourism=sculpture \"Ohakune Carrot\"",
+    "distance_m": 5,
+    "ok": true,
+    "note": "Matches."
+   },
+   "category": "landmark",
+   "unverified": [
+    "Open 24 hours: the park is a roadside public park; no gate/hours stated.",
+    "Council ownership/management is from a search summary of the council brochure, not a page I could load."
+   ]
+  },
+  {
+   "id": "ohakune-old-coach-road",
+   "name": "Ohakune Old Coach Road",
+   "kind": "new",
+   "wiki": null,
+   "wiki_note": "No Wikipedia article.",
+   "held": true,
+   "held_reason": "placement.json: held for a photo",
+   "facts": [
+    {
+     "claim": "DOC: 15 km one way, 4 hr 30 min walk / 2 hr 20 min bike (grade 3); walk or cycle a restored 1906 coach road with cobbles, a curved tunnel and the 284 m long, 45 m high Hapuawhenua Viaduct. Part of the Mountains to Sea trail.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/central-north-island/places/tongariro-national-park/things-to-do/tracks/ohakune-old-coach-road/"
+    },
+    {
+     "claim": "DOC route: Ohakune Railway Station to Marshalls Road carpark, then the track to Hapuawhenua Viaduct (from the car park); return or carry on to Horopito. No dogs.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/central-north-island/places/tongariro-national-park/things-to-do/tracks/ohakune-old-coach-road/"
+    },
+    {
+     "claim": "OSM: parking (fee=no) at -39.39443, 175.39293 beside an \"Old Coach Road\" map board at -39.39439, 175.39222 (Marshalls Road end).",
+     "source": "https://www.openstreetmap.org/#map=17/-39.3944/175.3929"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 3,
+   "visitHoursMax": 5,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/central-north-island/places/tongariro-national-park/things-to-do/tracks/ohakune-old-coach-road/",
+   "ticketUrl_note": "DOC page, title \"Ohakune Old Coach Road: Mountain biking in Tongariro National Park, Ruapehu region\"; loaded OK.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -39.37069,
+     "longitude": 175.36917
+    },
+    "source_point": {
+     "latitude": -39.39443,
+     "longitude": 175.39293
+    },
+    "source": "OSM parking at Marshalls Road + DOC \"Marshalls Road carpark\"",
+    "distance_m": 3337,
+    "ok": false,
+    "note": "Moved about 3.5 km south-east from a path point near Taonui Viaduct to the Marshalls Road car park (nearest road start to the viaduct section)."
+   },
+   "category": "hike",
+   "unverified": [
+    "Free: no fee on the DOC page.",
+    "Visit hours: out-and-back to the Hapuawhenua Viaduct from Marshalls Road is roughly 3-5 hr; DOC gives only the full 15 km times.",
+    "Open 24 hours is an assumption for an open-access track."
+   ]
+  },
+  {
+   "id": "ohakune-dinosaur-house",
+   "name": "Dinosaur House",
+   "kind": "new",
+   "wiki": null,
+   "wiki_note": "No Wikipedia article (the museum is not in \"Raetihi\" article search).",
+   "closedDays": [
+    1
+   ],
+   "facts": [
+    {
+     "claim": "Operator: open Tuesday to Sunday 10am-4pm, closed Mondays; adult (16+) $14, senior $13, child (3-15) $12, 2 and under free; 102 Seddon Street, Raetihi, in a 1922 heritage building.",
+     "source": "https://www.dinosaurhouse.co.nz/"
+    },
+    {
+     "claim": "Visit Ruapehu: small family museum with dinosaur skeletons, life-size reconstructions and fossils; more than 100 specimens/displays.",
+     "source": "https://www.visitruapehu.com/see-do/family-fun/dinosaur-house"
+    },
+    {
+     "claim": "OSM building 102 Seddon Street, Raetihi at -39.42623, 175.27612.",
+     "source": "https://www.openstreetmap.org/#map=19/-39.42623/175.27612"
+    }
+   ],
+   "hours": "10:00 AM - 4:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 14,
+   "costMax": 14,
+   "currency": "NZD",
+   "ticketUrl": "https://www.dinosaurhouse.co.nz/",
+   "ticketUrl_note": "Operator site, title \"Dinosaur house | Raetihi | Ruapehu\", address 102 Seddon Street matches the Visit Ruapehu listing; loaded OK.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -39.42623,
+     "longitude": 175.27604
+    },
+    "source_point": {
+     "latitude": -39.42623,
+     "longitude": 175.27612
+    },
+    "source": "OpenStreetMap (api.openstreetmap.org map bbox) building 102 Seddon Street",
+    "distance_m": 7,
+    "ok": true,
+    "note": "Matches."
+   },
+   "category": "museum",
+   "unverified": [
+    "closedDays should be [1] (Monday).",
+    "Bio says \"more than 100 dinosaur skeletons and models\": Visit Ruapehu says \"more than 100 sp...\" (text cut off in my fetch); soften to \"dinosaur skeletons and life-size models\"."
+   ]
+  },
+  {
+   "id": "national-army-museum",
+   "name": "National Army Museum",
+   "kind": "new",
+   "wiki": "National Army Museum (New Zealand)",
+   "facts": [
+    {
+     "claim": "Open every day except Christmas Day, 9.00am-4.30pm; self-guided adult $15, child $5, student $10, family $35; Express Experience adult $17; Premium (1 hr tour) adult $19. Mess Tent Café 8am-4pm.",
+     "source": "https://www.armymuseum.co.nz/visit/prices-hours-guided-tours/"
+    },
+    {
+     "claim": "OSM: building \"National Army Museum\" (fee=yes, website armymuseum.co.nz) at -39.48124, 175.67008; State Highway 1, Waiouru.",
+     "source": "https://www.openstreetmap.org/#map=18/-39.48124/175.67008"
+    }
+   ],
+   "hours": "9:00 AM - 4:30 PM",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "costMin": 15,
+   "costMax": 19,
+   "currency": "NZD",
+   "ticketUrl": "https://www.armymuseum.co.nz/",
+   "ticketUrl_note": "Operator site, title \"National Army Museum Te Mata Toa | Waiouru, NZ\"; loaded OK. (nzarmymuseum.co.nz does not resolve.)",
+   "coordinates_check": {
+    "current": {
+     "latitude": -39.4804,
+     "longitude": 175.6691
+    },
+    "source_point": {
+     "latitude": -39.48124,
+     "longitude": 175.67008
+    },
+    "source": "OpenStreetMap (api.openstreetmap.org map bbox) museum building",
+    "distance_m": 126,
+    "ok": false,
+    "note": "About 110 m off; refine to the building."
+   },
+   "category": "museum",
+   "unverified": []
+  },
+  {
+   "id": "taihape",
+   "name": "Taihape",
+   "kind": "new",
+   "wiki": "Taihape",
+   "facts": [
+    {
+     "claim": "Taihape is on State Highway 1 beside the Rangitikei River and is known as the \"Gumboot Capital of the World\" (OSM alt_name); Wikipedia article \"Taihape\" exists (-39.67667, 175.79667).",
+     "source": "https://en.wikipedia.org/wiki/Taihape"
+    },
+    {
+     "claim": "OSM: Visitor Information Centre at -39.67865, 175.79970; clock tower -39.67632, 175.79871.",
+     "source": "https://www.openstreetmap.org/#map=17/-39.6787/175.7997"
+    },
+    {
+     "claim": "Wikivoyage has no Taihape page of its own (title missing).",
+     "source": "https://en.wikivoyage.org/wiki/Taihape"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A town with no single steward; none.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -39.67666667,
+     "longitude": 175.79666667
+    },
+    "source_point": {
+     "latitude": -39.67665,
+     "longitude": 175.7983
+    },
+    "source": "OpenStreetMap (api.openstreetmap.org map bbox) place=town Taihape",
+    "distance_m": 140,
+    "ok": true,
+    "note": "Matches (about 150 m)."
+   },
+   "category": "historic",
+   "unverified": [
+    "Whether a town qualifies is the owner's decision (placement note).",
+    "Visit hours estimate."
+   ]
+  },
+  {
+   "id": "taihape-gumboot",
+   "name": "Taihape Gumboot",
+   "kind": "new",
+   "wiki": null,
+   "wiki_note": "No Wikipedia article; drop the wiki field. The \"Taihape Gumboot\" name is not an article title.",
+   "facts": [
+    {
+     "claim": "Wikipedia \"List of New Zealand's big things\": the Big Gumboot is a giant corrugated-iron gumboot representing Taihape as the \"Gumboot Capital of the World\".",
+     "source": "https://en.wikipedia.org/wiki/List_of_New_Zealand%27s_big_things"
+    },
+    {
+     "claim": "OSM: sculpture \"Gumboot\" (tourism=artwork) at -39.67412, 175.79398.",
+     "source": "https://www.openstreetmap.org/#map=18/-39.67412/175.79398"
+    },
+    {
+     "claim": "No Wikipedia article for the gumboot (\"Taihape gumboot\" search returns only Taihape and \"Welly wanging\").",
+     "source": "https://en.wikipedia.org/w/index.php?search=Taihape+gumboot"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Roadside sculpture with no steward site; none.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -39.674,
+     "longitude": 175.7939
+    },
+    "source_point": {
+     "latitude": -39.67412,
+     "longitude": 175.79398
+    },
+    "source": "OpenStreetMap (api.openstreetmap.org map bbox) artwork \"Gumboot\"",
+    "distance_m": 15,
+    "ok": true,
+    "note": "Matches."
+   },
+   "category": "landmark",
+   "unverified": []
+  },
+  {
+   "id": "levin",
+   "name": "Levin",
+   "kind": "new",
+   "wiki": "Levin, New Zealand",
+   "facts": [
+    {
+     "claim": "Wikivoyage: Levin is a town of 19,000 (2022), largest in the Horowhenua District, on SH1 beneath the Tararua Ranges near Lake Horowhenua; its see/do list is thin (Te Takere library, adventure playground, pools).",
+     "source": "https://en.wikivoyage.org/wiki/Levin"
+    },
+    {
+     "claim": "Wikipedia article is titled \"Levin, New Zealand\" (exists, -40.62194, 175.28667).",
+     "source": "https://en.wikipedia.org/wiki/Levin,_New_Zealand"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A town with no single steward; none.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -40.62182,
+     "longitude": 175.28659
+    },
+    "source_point": {
+     "latitude": -40.62194,
+     "longitude": 175.28667
+    },
+    "source": "Wikipedia \"Levin, New Zealand\"",
+    "distance_m": 15,
+    "ok": true,
+    "note": "Matches."
+   },
+   "category": "historic",
+   "unverified": [
+    "Weakest keep per placement; owner may prefer to hold.",
+    "Visit hours estimate."
+   ]
+  },
+  {
+   "id": "marton",
+   "name": "Marton",
+   "kind": "new",
+   "wiki": "Marton, New Zealand",
+   "held": true,
+   "held_reason": "placement.json: held for a photo",
+   "facts": [
+    {
+     "claim": "Wikipedia article \"Marton, New Zealand\" exists (-40.06917, 175.37833); OSM town node -40.07222, 175.37920 (Māori name Tūtaenui, population 5,520).",
+     "source": "https://en.wikipedia.org/wiki/Marton,_New_Zealand"
+    },
+    {
+     "claim": "Wikivoyage has no Marton page (title missing).",
+     "source": "https://en.wikivoyage.org/wiki/Marton"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A town with no single steward; none.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -40.06916667,
+     "longitude": 175.37833333
+    },
+    "source_point": {
+     "latitude": -40.07222,
+     "longitude": 175.3792
+    },
+    "source": "OpenStreetMap (api.openstreetmap.org map bbox) place=town Marton",
+    "distance_m": 347,
+    "ok": true,
+    "note": "About 340 m; both are town points, acceptable."
+   },
+   "category": "historic",
+   "unverified": [
+    "Thin keep: skeptic noted it could go to review; no visitor-oriented source for specific things to do was found in this pass."
+   ]
+  },
+  {
+   "id": "foxton-1",
+   "name": "Te Awahou Nieuwe Stroom",
+   "kind": "new",
+   "wiki": "Te Awahou Nieuwe Stroom",
+   "proposed_destination": "foxton",
+   "facts": [
+    {
+     "claim": "Official Admissions & Hours page: Mon-Fri 9:00am-4:00pm, Sat & Sun 10:00am-3:00pm; entry by donation, free for Horowhenua residents.",
+     "source": "https://www.teawahou.com/Plan-Your-Visit/Te-Awahou-Riverside-Cultural-Park-Information/Admissions-Hours"
+    },
+    {
+     "claim": "Part of Te Awahou Riverside Cultural Park (Horowhenua District Council), with Piriharakeke Generation Inspiration Centre, Oranjehof Dutch Connection Centre, library, De Molen and the Flax Stripper Museum.",
+     "source": "https://www.teawahou.com/"
+    },
+    {
+     "claim": "OSM museum building \"Te Awahou Nieuwe Stroom\" (fee=no) at -40.47386, 175.28049; Wikipedia article exists.",
+     "source": "https://en.wikipedia.org/wiki/Te_Awahou_Nieuwe_Stroom"
+    }
+   ],
+   "hours": "9:00 AM - 4:00 PM (Sat-Sun 10:00 AM - 3:00 PM)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": "https://www.teawahou.com/",
+   "ticketUrl_note": "Council-run cultural park site, title \"Home Te Awahou Riverside Cultural Park\"; loaded OK.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -40.47383,
+     "longitude": 175.28054
+    },
+    "source_point": {
+     "latitude": -40.47386,
+     "longitude": 175.28049
+    },
+    "source": "OpenStreetMap (api.openstreetmap.org map bbox) museum building",
+    "distance_m": 5,
+    "ok": true,
+    "note": "Matches."
+   },
+   "category": "museum",
+   "unverified": [
+    "Donation basis, recorded free: true. OSM lists 9-17 weekdays/10-16 weekends; the official page is used."
+   ]
+  },
+  {
+   "id": "foxton-2",
+   "name": "De Molen",
+   "kind": "new",
+   "wiki": null,
+   "wiki_note": "The \"De Molen\" Wikipedia title is a Dutch village: do not set wiki. Use a photo override.",
+   "proposed_destination": "foxton",
+   "facts": [
+    {
+     "claim": "Operator: De Molen Windmill open 7 days 9.00am-4.00pm; self-guided tour of the upper levels $3 donation per person (family of 4 $10), guided tour $5 per person (guided tours daily 10am-3pm, booking needed, 30-45 min); Cafe De Molen 8.30am-3pm. Operated by The Foxton Windmill Charitable Trust.",
+     "source": "https://www.foxtonwindmill.co.nz/pages/tours"
+    },
+    {
+     "claim": "Part of Te Awahou Cultural Park; address 96 Main Street, Foxton.",
+     "source": "https://www.teawahou.com/Plan-Your-Visit/Te-Awahou-Riverside-Cultural-Park-Information/Admissions-Hours"
+    },
+    {
+     "claim": "OSM windmill building \"De Molen\" (7 levels) at -40.47403, 175.28096.",
+     "source": "https://www.openstreetmap.org/#map=19/-40.47403/175.28096"
+    },
+    {
+     "claim": "Wikipedia \"De Molen\" is a village in the Netherlands (-51.66, 5.05 is North Brabant): NOT this windmill. No NZ article exists; the windmill is covered under \"Foxton, New Zealand\".",
+     "source": "https://en.wikipedia.org/wiki/De_Molen"
+    }
+   ],
+   "hours": "9:00 AM - 4:00 PM",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "costMin": 3,
+   "costMax": 5,
+   "currency": "NZD",
+   "ticketUrl": "https://www.foxtonwindmill.co.nz/",
+   "ticketUrl_note": "Operator site, title \"De Molen Foxton | De Molen, Windmill, Foxton New Zealand.\"; loaded OK.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -40.47402,
+     "longitude": 175.28094
+    },
+    "source_point": {
+     "latitude": -40.47403,
+     "longitude": 175.28096
+    },
+    "source": "OpenStreetMap (api.openstreetmap.org map bbox) windmill building",
+    "distance_m": 2,
+    "ok": true,
+    "note": "Matches."
+   },
+   "category": "landmark",
+   "unverified": [
+    "Upper levels close 3.30pm per the tours page."
+   ]
+  },
+  {
+   "id": "foxton-3",
+   "name": "Foxton Beach",
+   "kind": "new",
+   "wiki": "Foxton Beach",
+   "proposed_destination": "foxton",
+   "facts": [
+    {
+     "claim": "Wikipedia article \"Foxton Beach\" exists (settlement, -40.46111, 175.22417; formerly Manawatu Heads per OSM old_name).",
+     "source": "https://en.wikipedia.org/wiki/Foxton_Beach"
+    },
+    {
+     "claim": "OSM: beachfront car parks near Marine Parade at -40.46128, 175.21949 and -40.45871, 175.21612 (the latter beside a bicycle-parking node at the shore); a beach car park with fee=no at -40.4644, 175.22417.",
+     "source": "https://www.openstreetmap.org/#map=16/-40.4613/175.2195"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A public beach with no steward site; none.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -40.46111111,
+     "longitude": 175.22416667
+    },
+    "source_point": {
+     "latitude": -40.46128,
+     "longitude": 175.21949
+    },
+    "source": "OpenStreetMap (api.openstreetmap.org map bbox) parking at the beach front, Foxton Beach",
+    "distance_m": 396,
+    "ok": false,
+    "note": "Moved about 400 m west towards the foreshore. Approximate: no natural=beach way is mapped for Foxton Beach itself."
+   },
+   "category": "beach",
+   "unverified": [
+    "Pin should be checked with scripts/audit-spot-coordinates.ts (water check) before it ships.",
+    "No source for \"kitesurfing\" in my pass; bio claim unverified.",
+    "Visit hours estimate."
+   ]
+  },
+  {
+   "id": "foxton-4",
+   "name": "Waitārere Beach",
+   "kind": "new",
+   "wiki": "Waitarere Beach",
+   "proposed_destination": "foxton",
+   "held": true,
+   "held_reason": "placement.json: held for a photo",
+   "facts": [
+    {
+     "claim": "Wikipedia article is titled \"Waitarere Beach\" (no macron); \"Waitārere Beach\" does not resolve. Coordinates -40.55, 175.2.",
+     "source": "https://en.wikipedia.org/wiki/Waitarere_Beach"
+    },
+    {
+     "claim": "OSM: surface car park at the west end of Waitarere Beach Road at -40.54926, 175.19614 (the beach side); village node -40.55069, 175.19782.",
+     "source": "https://www.openstreetmap.org/#map=17/-40.5493/175.1961"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A public beach with no steward site; none.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -40.55108,
+     "longitude": 175.20139
+    },
+    "source_point": {
+     "latitude": -40.54926,
+     "longitude": 175.19614
+    },
+    "source": "OpenStreetMap (api.openstreetmap.org map bbox) beach-end car park, Waitarere Beach Road",
+    "distance_m": 488,
+    "ok": false,
+    "note": "Moved about 480 m west to the beach-end car park (the placement point was the road)."
+   },
+   "category": "beach",
+   "unverified": [
+    "Bio claims (surf beach, fishing) have no source in my pass.",
+    "Check with the water audit before shipping."
+   ]
+  },
+  {
+   "id": "tongariro-1",
+   "name": "Tongariro Alpine Crossing",
+   "kind": "existing",
+   "facts": [
+    {
+     "claim": "DOC: 20.2 km one way (not 19.4 km), 7-8 hr Nov-Apr, 9 hr May-Oct; high fitness; bookings recommended and free; from May to October an expert-route category applies. Change the bio to 20.2 km and visit hours to 7-9.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/central-north-island/places/tongariro-national-park/things-to-do/tracks/tongariro-alpine-crossing/"
+    },
+    {
+     "claim": "DOC: the track begins at Mangatepopo car park at 1120 m (Mangatepopo Valley); ends at Ketetahi Road. Parking restrictions (4 hr maximum) at the road ends; DOC suggests a shuttle (about $40).",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/central-north-island/places/tongariro-national-park/things-to-do/tracks/tongariro-alpine-crossing/"
+    },
+    {
+     "claim": "OSM: bicycle-parking node at the Mangatepopo car park -39.14440, 175.58102; Mangatepopo Hut -39.14468, 175.59669 (DOC: 25 min walk from the car park). Matches the Commons geotag -39.14438, 175.58096.",
+     "source": "https://www.openstreetmap.org/#map=18/-39.1444/175.581"
+    }
+   ],
+   "hours": "Daylight (Labour Weekend - 30 April; winter needs alpine skills)",
+   "visitHoursMin": 7,
+   "visitHoursMax": 9,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/central-north-island/places/tongariro-national-park/things-to-do/tracks/tongariro-alpine-crossing/",
+   "ticketUrl_note": "DOC page, title \"Tongariro Alpine Crossing: Tongariro National Park, Central North Island region\"; loaded OK. Add as ticketUrl (the entry has none).",
+   "coordinates_check": {
+    "current": {
+     "latitude": -39.1397,
+     "longitude": 175.6171
+    },
+    "source_point": {
+     "latitude": -39.1444,
+     "longitude": 175.58102
+    },
+    "source": "DOC names Mangatepopo car park as the start; OSM node and Commons geotag give the point",
+    "distance_m": 3155,
+    "ok": false,
+    "note": "Confirmed: current pin is about 3 km east of the start (near Red Crater side). Move to the Mangatepopo car park."
+   },
+   "category": "hike",
+   "unverified": [
+    "DOC does not publish coordinates; the start point is OSM + Commons geotag, consistent with the DOC \"25 min to Mangatepopo Hut\" statement.",
+    "The 2025 fires affected the area around the start (rāhui over burnt areas; stay on the track)."
+   ]
+  },
+  {
+   "id": "tongariro-4",
+   "name": "Tawhai Falls",
+   "kind": "existing",
+   "wiki": null,
+   "wiki_note": "No article.",
+   "facts": [
+    {
+     "claim": "Wikipedia has no article titled \"Tawhai Falls\" (title lookup is missing; search finds only \"Whakapapa River\" and \"Tongariro National Park\").",
+     "source": "https://en.wikipedia.org/w/index.php?search=Tawhai+Falls"
+    }
+   ],
+   "category": "nature",
+   "unverified": [
+    "Fix for the wiki flag: there is no article. Remove `wiki` handling and keep a hand-picked photo override."
+   ]
+  },
+  {
+   "id": "whanganui-3",
+   "name": "Durie Hill Elevator",
+   "kind": "existing",
+   "facts": [
+    {
+     "claim": "Operator: weekdays 7:30am-6pm, weekends and public holidays 9:30am-5pm, closed Christmas Day; staff breaks 11:30-11:45am and 4:00-4:15pm; adult $2.50 each way, youth (5-18) $1, under 5s free. The data has $6 and 5:30 PM: change to costMin/costMax 2.5 and hours 7:30 AM - 6:00 PM (weekends 9:30 AM - 5:00 PM).",
+     "source": "https://www.duriehillelevator.co.nz/"
+    },
+    {
+     "claim": "213 m tunnel and 66 m elevator, opened 1919; guided tours offered.",
+     "source": "https://www.duriehillelevator.co.nz/"
+    }
+   ],
+   "hours": "7:30 AM - 6:00 PM (weekends 9:30 AM - 5:00 PM)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "costMin": 2.5,
+   "costMax": 2.5,
+   "currency": "NZD",
+   "ticketUrl": "https://www.duriehillelevator.co.nz/",
+   "ticketUrl_note": "Operator site, title \"Durie Hill Elevator\"; loaded OK. Add as ticketUrl (the lint flagged the missing link).",
+   "category": "landmark",
+   "unverified": [
+    "The $6 in the data may be a return trip plus lookout; the operator lists only one-way fares ($2.50 adult); a return is two fares (5.00).",
+    "Lookout tower hours not checked."
+   ]
+  },
+  {
+   "id": "whanganui-6",
+   "name": "Waimarie",
+   "kind": "existing",
+   "facts": [
+    {
+     "claim": "Operator site loads: title \"Waimarie | River Cruise | Paddle steamer| Whanganui River | NZ\"; bookings go through a FareHarbor embed that does not render for scripts, so prices are not on a page I could load.",
+     "source": "https://www.waimarie.co.nz/"
+    },
+    {
+     "claim": "Search snippets of the operator's event/cruise pages: 1-hour cruise adult $45 (Saturdays Jan-Mar); 2-hour event cruises adult $53-55; the riverboat museum is included with a cruise. Operator pages moved since, so these are unverified.",
+     "source": "https://www.waimarie.co.nz/events"
+    },
+    {
+     "claim": "Owner decision already recorded in placement.json: reframe as the wharf museum or remove (vehicle/operator, not a place).",
+     "source": "https://www.waimarie.co.nz/"
+    }
+   ],
+   "hours": "Daytime cruises (sailing season about September-May)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 45,
+   "costMax": 55,
+   "currency": "NZD",
+   "ticketUrl": "https://www.waimarie.co.nz/",
+   "ticketUrl_note": "Existing link is correct (operator site, title names Waimarie); keep.",
+   "category": "entertainment",
+   "unverified": [
+    "Cost 45-55 is from search snippets of the operator's pages, not a page I loaded: verify in a browser.",
+    "Season (Sept-May) from a search snippet."
+   ]
+  },
+  {
+   "id": "whanganui-1",
+   "name": "Whanganui Journey",
+   "kind": "existing",
+   "facts": [
+    {
+     "claim": "DOC: 145 km Taumarunui to Pipiriki (about 5 days) or 88 km Whakahoro to Pipiriki (about 3 days); Great Walks season 1 Oct-30 Apr, bookings open for 2026/27.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/manawatu-whanganui/places/whanganui-national-park/things-to-do/tracks/whanganui-journey/"
+    },
+    {
+     "claim": "DOC: hut fees per person per night $35 (adult NZ and INT) in the Great Walks season; no fee for entering the park. Canoe hire/guided trip prices are set by operators and are not on DOC.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/manawatu-whanganui/places/whanganui-national-park/things-to-do/tracks/whanganui-journey/"
+    }
+   ],
+   "hours": "Multi-day trips (Great Walks season 1 Oct - 30 Apr)",
+   "visitHoursMin": 72,
+   "visitHoursMax": 120,
+   "costMin": 35,
+   "costMax": 35,
+   "currency": "NZD",
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/manawatu-whanganui/places/whanganui-national-park/things-to-do/tracks/whanganui-journey/",
+   "ticketUrl_note": "Better link than the park page: DOC page title \"Whanganui Journey: Whanganui National Park, Whanganui Journey\"; loaded OK. Replace the current park-page ticketUrl.",
+   "category": "hike",
+   "unverified": [
+    "$35 is the hut fee per night only; a guided or hired-canoe trip costs much more (operator pricing not researched)."
+   ]
+  },
+  {
+   "id": "whanganui-2",
+   "name": "Bridge to Nowhere",
+   "kind": "existing",
+   "facts": [
+    {
+     "claim": "The current ticketUrl (the park page) fails the title check: its title is \"Whanganui National Park: Places to go in Manawatu/Whanganui\". DOC has a page that names the place: \"Bridge to Nowhere Walk: Whanganui National Park, Whanganui region\".",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/manawatu-whanganui/places/whanganui-national-park/things-to-do/tracks/bridge-to-nowhere-walk/"
+    },
+    {
+     "claim": "DOC: 3 km return, 1 hr 30 min; jetboat needed to the Mangapurua Landing (then a 40 min walk) or reached on foot by the Mangapurua Track from Whakahoro/Ruatiti; bridge built mid-1930s for the Mangapurua Valley soldier settlement.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/manawatu-whanganui/places/whanganui-national-park/things-to-do/tracks/bridge-to-nowhere-walk/"
+    },
+    {
+     "claim": "Visit Ruapehu lists the Whanganui River Adventures Bridge to Nowhere tour at adult $205 (child $103); a search snippet cites Bridge to Nowhere Tours at adult $190. The data has 150-200: change to 190-205.",
+     "source": "https://www.visitruapehu.com/see-and-do/ruapehu-activities/whanganui-river-adventures-3116255"
+    }
+   ],
+   "hours": "Daytime trips",
+   "visitHoursMin": 4,
+   "visitHoursMax": 6,
+   "costMin": 190,
+   "costMax": 205,
+   "currency": "NZD",
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/manawatu-whanganui/places/whanganui-national-park/things-to-do/tracks/bridge-to-nowhere-walk/",
+   "ticketUrl_note": "DOC page loaded OK and its title names the walk. Sold by many operators, so DOC (the managing agency) is the right single link.",
+   "category": "historic",
+   "unverified": [
+    "$190 for Bridge to Nowhere Tours comes from a search snippet, not a loaded page.",
+    "Operator prices vary by season/add-ons."
+   ]
+  },
+  {
+   "id": "palmerston-north-1",
+   "name": "Te Manawa",
+   "kind": "existing",
+   "wiki": "Te Manawa, Palmerston North",
+   "facts": [
+    {
+     "claim": "Wikipedia disambiguation page \"Te Manawa\" lists the museum as \"Te Manawa, Palmerston North\" (exists, -40.3579, 175.6083). Set wiki to exactly \"Te Manawa, Palmerston North\".",
+     "source": "https://en.wikipedia.org/wiki/Te_Manawa,_Palmerston_North"
+    }
+   ],
+   "category": "museum",
+   "unverified": []
+  }
+ ]
+}

@@ -1,0 +1,592 @@
+{
+ "region": "west-coast",
+ "inside_destinations": 12,
+ "standalone": 5,
+ "new_destinations": 1,
+ "spots_of_proposed_destination": 1,
+ "kept_total_new": 19,
+ "lowest_kept": [
+  {
+   "name": "Hokitika Beach",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "West Coast Wildlife Centre",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "Charming Creek Walkway",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Glacier Hot Pools",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Hokitika Glow-worm Dell",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Monro Beach",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Monteith's Brewery",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Moria Gate Arch and Mirror Tarn Loop",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Whataroa White Heron Colony",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Oparara Arch",
+   "views": 0,
+   "counted_sources": 2
+  }
+ ],
+ "lowest_kept_note": "Eight kept spots and several new ones have 0 Wikipedia views (no article or a redirect): Charming Creek, Monro Beach, Oparara Arch, Moria Gate and others stand on two counted sources or a DOC page, not views; so every left-out candidate with any views is listed below.",
+ "stronger_left_out": [
+  {
+   "name": "Hokitika",
+   "views": 31470,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Already a destination (hokitika-* spots; its header uses Hokitika River in Hokitika, which I could not reuse anyway). Do not add as a spot."
+  },
+  {
+   "name": "Greymouth",
+   "views": 27327,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Already a destination in the app (greymouth-* spots, header Greymouth town.jpg). A town is not a spot of itself; do not add. Qualifies as a place, so this is not a quality reject."
+  },
+  {
+   "name": "Westport",
+   "views": 18684,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Already a destination (westport-* spots, Cape Foulwind header). Do not add as a spot."
+  },
+  {
+   "name": "Punakaiki",
+   "views": 11771,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Confirmed: village inside Paparoa National Park (Wikivoyage chapter exists, but COVERAGE merges villages into the park); its draws (Pancake Rocks, Truman, Pororari, Cavern) are separate spots. No distinct draw of its own."
+  },
+  {
+   "name": "Haast",
+   "views": 11251,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Wikivoyage chapter, DOC Awarua/Haast Visitor Centre, jetboat safaris, last settlement before the pass. Against: its See section is generic; the draws (Ship Creek, Monro Beach, Jackson Bay) are separate spots. A gateway whose draw is the journey beyond: review (Pipiriki benchmark)."
+  },
+  {
+   "name": "Murchison",
+   "views": 9773,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Wikivoyage chapter, Buller Gorge rafting base, tiny museum. Against: See section is one tiny museum; Wikivoyage does not give it a real stop. Also overlaps the Tasman region (Murchison is a Tasman-side destination candidate): decide once. Review."
+  },
+  {
+   "name": "Kahurangi National Park",
+   "views": 7201,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Confirmed: a national park is a destination, not a spot (COVERAGE granularity). Westland and Paparoa already exist as destinations; Kahurangi too."
+  },
+  {
+   "name": "Karamea",
+   "views": 6255,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Wikivoyage chapter, end-of-road village, base for Oparara, Heaphy, caves. Against: the village has only a small museum open summer afternoons; Oparara/Heaphy are spots. Gateway village, review."
+  },
+  {
+   "name": "Granity",
+   "views": 6083,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Former mining village with a Wikivoyage listing only; nothing to see or do for half an hour."
+  },
+  {
+   "name": "Paparoa National Park",
+   "views": 5701,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Confirmed: a national park is a destination, not a spot (COVERAGE granularity). Westland and Paparoa already exist as destinations; Kahurangi too."
+  },
+  {
+   "name": "Hari Hari",
+   "views": 5656,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Reject: DOC page lists only a campsite and short walks; nothing to do for 30 minutes."
+  },
+  {
+   "name": "Haupiri",
+   "views": 4749,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Remote lake with a Wikipedia article only (hut or tramp access); no visitor source and no visitor stop."
+  },
+  {
+   "name": "Blackball",
+   "views": 4658,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "For: Wikivoyage? no page (404); Wikipedia and DOC Croesus page name the village as trailhead; Museum of Working Class History, Blackball Hilton. Against: no counted visitor source for the village itself; gateway whose draw is Croesus Track. Review."
+  },
+  {
+   "name": "Kumara",
+   "views": 4090,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source (Wikivoyage page missing, Wikipedia only); small town, no named visitor stop."
+  },
+  {
+   "name": "Ross",
+   "views": 3834,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Wikivoyage chapter, historic goldfield, gold panning. Against: the Wikivoyage page is an outline with only gold panning, one source; the recall note's heritage centre and walks are not on it. Review."
+  },
+  {
+   "name": "Charleston",
+   "views": 3781,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Wikivoyage Charleston (NZ) page exists (checked, it was empty in the recall). For: Constant Bay and Joyce Bay lookouts, Underworld glow-worm cave rafting, Mitchells Gully goldmine. Against: mostly operators and 15-minute loops; Constant Bay Loop was rejected. Review."
+  },
+  {
+   "name": "Whataroa",
+   "views": 3732,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Reject as a village: Wikivoyage outline with only tour offices; its draw is the heron colony, now a keep."
+  },
+  {
+   "name": "Otira",
+   "views": 3682,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only; village at the pass with no named visitor stop."
+  },
+  {
+   "name": "Strongman Mine",
+   "views": 3655,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only; historic mine with no visitor source."
+  },
+  {
+   "name": "Westland Tai Poutini National Park",
+   "views": 3531,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Confirmed: a national park is a destination, not a spot (COVERAGE granularity). Westland and Paparoa already exist as destinations; Kahurangi too."
+  },
+  {
+   "name": "Seaview Asylum",
+   "views": 3035,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only; access unclear, historic asylum site. (Wrongly matched hokitika-5.)"
+  },
+  {
+   "name": "Okarito Lagoon",
+   "views": 2651,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Okarito Lagoon is the setting of Okarito (existing westland-tai-poutini-6, whose bio already covers kayaking and birdwatching); near-duplicate."
+  },
+  {
+   "name": "Runanga",
+   "views": 2619,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only; no counted source; suburban town with a heritage hall."
+  },
+  {
+   "name": "Lyell",
+   "views": 2244,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "DOC Lyell area page: campsite, gold-mining walks, fossicking; also the Old Ghost Road start. Against: remote ghost settlement, part of the Old Ghost Road. Review."
+  },
+  {
+   "name": "Lake Moeraki",
+   "views": 1797,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Lake with a Wikipedia article only; no visitor source and no named visitor stop."
+  },
+  {
+   "name": "Lake Mahinapua",
+   "views": 1570,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Reject: one source, ordinary lake stop; walkway and heritage tram are minor."
+  },
+  {
+   "name": "Lake Mapourika",
+   "views": 1545,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Lake with a Wikipedia article only; no visitor source and no named visitor stop."
+  },
+  {
+   "name": "Honeycomb Hill Cave",
+   "views": 1146,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Downgraded from keep. For: newzealand.com and Wikivoyage Karamea list guided cave tours with moa bone sites. Against: guided-only operator experience, no usable free photo found (a 1960s B&W silhouette and moa skeletons only). Review."
+  },
+  {
+   "name": "Te Kopikopiko o te Waka",
+   "views": 1118,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only, no visitor source."
+  },
+  {
+   "name": "Hokitika Clock Tower",
+   "views": 1067,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Clock tower at a roundabout; exterior-only civic landmark."
+  },
+  {
+   "name": "Pike29 Memorial Track",
+   "views": 1042,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "needs_coordinates. Memorial site on the Paparoa Track route, part of a larger spot (paparoa-4)."
+  },
+  {
+   "name": "Wangapeka Track",
+   "views": 939,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "DOC, Wikipedia and Wikivoyage Karamea name it (two counted sources). For: a 59 km multi-day tramp from the Karamea end. Against: mostly in the Tasman region, not a Great Walk, few visitors. Review."
+  },
+  {
+   "name": "Hokitika Museum",
+   "views": 885,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Museum listed as closed for seismic strengthening; no counted source says it is open."
+  },
+  {
+   "name": "Victoria Forest Park",
+   "views": 845,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Downgraded from keep. For: DOC park page, 206,000 ha, mining relics. Against: a park with no single visitor point or named stop; Waiuta, Big River mine and Reefton walks are the actual stops and are judged separately. Review."
+  },
+  {
+   "name": "Lake Ianthe",
+   "views": 833,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Remote lake with a Wikipedia article only (hut or tramp access); no visitor source and no visitor stop."
+  },
+  {
+   "name": "Lake Paringa",
+   "views": 826,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Lake with a Wikipedia article only; no visitor source and no named visitor stop."
+  },
+  {
+   "name": "Lake Daniell",
+   "views": 804,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Reject: 8.4 km, 3 h one way tramp to a hut, one counted source; not a day-stop."
+  },
+  {
+   "name": "Fox Glacier",
+   "views": 689,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Confirmed as a village (the glacier is the existing spot Fox Glacier): draws are Lake Matheson, Gillespies Beach, Copland; no distinct draw."
+  },
+  {
+   "name": "History House Museum",
+   "views": 661,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Museum listed as closed for structural issues."
+  },
+  {
+   "name": "Lake Poerua",
+   "views": 632,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Remote lake with a Wikipedia article only (hut or tramp access); no visitor source and no visitor stop."
+  },
+  {
+   "name": "Blackball Museum of Working Class History",
+   "views": 611,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only; no counted source (see Blackball review)."
+  },
+  {
+   "name": "Lake Wahapo",
+   "views": 601,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Lake with a Wikipedia article only; no visitor source and no named visitor stop."
+  },
+  {
+   "name": "Cape Foulwind Lighthouse",
+   "views": 591,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Same stop as Cape Foulwind (existing westport-1), which includes the lighthouse; duplicate."
+  },
+  {
+   "name": "Left Bank Art Gallery",
+   "views": 563,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small local gallery with works for sale; shop-like."
+  },
+  {
+   "name": "Lake Browning",
+   "views": 554,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Remote lake with a Wikipedia article only (hut or tramp access); no visitor source and no visitor stop."
+  },
+  {
+   "name": "Pounamu Pathway",
+   "views": 542,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "needs_coordinates. Wikipedia only, no visitor source."
+  },
+  {
+   "name": "Lake Gault",
+   "views": 472,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Reject, agree with recall: Long walk to an ordinary lake, one source."
+  },
+  {
+   "name": "Lake Ellery",
+   "views": 470,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Remote lake reached only by a long tramp; one DOC listing for a track, no day-visit draw."
+  },
+  {
+   "name": "Historic Haast to Paringa Cattle Track",
+   "views": 464,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Long remote historic track; one DOC listing plus Wikipedia; not a day visit."
+  },
+  {
+   "name": "Inland Pack Track",
+   "views": 462,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Reject, agree with recall: Hard multi-day route for few, one source."
+  },
+  {
+   "name": "Lake Christabel",
+   "views": 456,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Remote lake with a Wikipedia article only (hut or tramp access); no visitor source and no visitor stop."
+  },
+  {
+   "name": "Big Rimu Walk",
+   "views": 424,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Reject, agree with recall: A single tree, short stop."
+  },
+  {
+   "name": "Punakaiki Marine Reserve",
+   "views": 407,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Marine reserve with no visitor stop; a designation, not a place to visit."
+  },
+  {
+   "name": "Ballroom Overhang",
+   "views": 394,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Reject, agree with recall: Long walk for a niche overhang, one source."
+  },
+  {
+   "name": "Kangaroo Lake",
+   "views": 369,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Remote lake with a Wikipedia article only (hut or tramp access); no visitor source and no visitor stop."
+  },
+  {
+   "name": "Alpine Lake",
+   "views": 356,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Remote lake with a Wikipedia article only (hut or tramp access); no visitor source and no visitor stop."
+  },
+  {
+   "name": "Westland Explorers' Monument",
+   "views": 302,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only; a monument. (Wrongly matched hokitika-5.)"
+  },
+  {
+   "name": "Lake Kaurapataka",
+   "views": 295,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Remote lake with a Wikipedia article only (hut or tramp access); no visitor source and no visitor stop."
+  },
+  {
+   "name": "Reefton School of Mines",
+   "views": 280,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only; heritage building, no counted source."
+  },
+  {
+   "name": "Kahurangi Marine Reserve",
+   "views": 253,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Marine reserve with no visitor stop; a designation, not a place to visit."
+  },
+  {
+   "name": "Blacks Point Museum",
+   "views": 249,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only; small local museum."
+  },
+  {
+   "name": "Lake Hanlon",
+   "views": 247,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Remote lake in Kahurangi reached by a two-day tramp; not a day visit."
+  },
+  {
+   "name": "Waiau Glacier Coast Marine Reserve",
+   "views": 240,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Marine reserve with no visitor stop; a designation, not a place to visit."
+  },
+  {
+   "name": "Abel Lake",
+   "views": 223,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Remote lake with a Wikipedia article only (hut or tramp access); no visitor source and no visitor stop."
+  },
+  {
+   "name": "Hautai Marine Reserve",
+   "views": 204,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Marine reserve with no visitor stop; a designation, not a place to visit."
+  },
+  {
+   "name": "Karamea Centennial Museum",
+   "views": 179,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only; local museum. (Wrongly matched kahurangi-3 by proximity.)"
+  },
+  {
+   "name": "Bridle Track",
+   "views": 173,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Part of the Denniston area (existing westport-2); not a distinct draw."
+  },
+  {
+   "name": "Okari Lagoon",
+   "views": 140,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "needs_coordinates. Wikipedia only; no visitor source."
+  }
+ ],
+ "duplicate_names_of_existing_spots_merged": [
+  "Denniston",
+  "Cape Foulwind Walkway",
+  "Pancake Rocks and Blowholes",
+  "West Coast Treetop Walkway"
+ ],
+ "strongest_outsiders": [
+  {
+   "name": "Old Ghost Road",
+   "coordinates": {
+    "latitude": -41.7969,
+    "longitude": 172.0483
+   },
+   "action": "standalone"
+  },
+  {
+   "name": "Lake Brunner",
+   "coordinates": {
+    "latitude": -42.5756,
+    "longitude": 171.4803
+   },
+   "action": "standalone"
+  },
+  {
+   "name": "Charming Creek Walkway",
+   "coordinates": {
+    "latitude": -41.6064,
+    "longitude": 171.8806
+   },
+   "action": "standalone"
+  },
+  {
+   "name": "Monro Beach",
+   "coordinates": {
+    "latitude": -43.6959,
+    "longitude": 169.2653
+   },
+   "action": "standalone"
+  },
+  {
+   "name": "Ship Creek Walks",
+   "coordinates": {
+    "latitude": -43.7553,
+    "longitude": 169.1486
+   },
+   "action": "standalone"
+  },
+  {
+   "name": "Reefton",
+   "note": "proposed destination, 40+ km from every existing one"
+  }
+ ],
+ "benchmark": "West Coast has none of the named benchmark places (those are other regions). Negative benchmarks: gateway villages whose draw is the journey beyond (Haast, Karamea, Blackball, Jackson Bay, Lyell: the Pipiriki analogue) went to review, not kept outright; civic and operator venues (Haast Visitor Centre, National Kiwi Centre, Hokitika Glass Studio, Sock World) rejected; towns that are existing destinations (Greymouth, Hokitika, Westport) and villages inside parks (Punakaiki, Franz Josef) rejected as spots. Held for a photo: Tatare Tunnels Walk, Croesus Track, Whataroa White Heron Colony, Carters Beach."
+}

@@ -1,0 +1,746 @@
+{
+ "region": "nelson-tasman",
+ "inside_destinations": {
+  "new_spots": 27,
+  "existing_kept_in_place": 25,
+  "fixed_existing": "nelson-4 renamed, 5 coordinate fixes",
+  "note": "27 new spots in existing destinations (nelson 8, abel-tasman 5, golden-bay 8, nelson-lakes 3, kahurangi 3); 2 more are contingent on the proposed Motueka and Murchison destinations"
+ },
+ "standalone": 0,
+ "new_destinations": [
+  "Motueka (1 spot: Riwaka Resurgence)",
+  "Murchison (1 spot: Maruia Falls)"
+ ],
+ "held_no_photo": [
+  "Nelson Provincial Museum (nelson-9)",
+  "Natureland (nelson-10)",
+  "Mapua (nelson-13)",
+  "Marahau (abel-tasman-8)",
+  "Abel Tasman Inland Track (abel-tasman-10)",
+  "Awaroa Inlet (abel-tasman-11)",
+  "Apple Tree Bay (abel-tasman-12)",
+  "Collingwood (golden-bay-12)",
+  "Travers-Sabine Circuit (nelson-lakes-4)",
+  "St Arnaud Range Track (nelson-lakes-5)",
+  "Rainbow Ski Area (nelson-lakes-6)",
+  "Te Puna Wai o Riuwaka Resurgence (motueka-1)"
+ ],
+ "lowest_kept": [
+  {
+   "name": "Puponga Farm Park",
+   "views": 0,
+   "counted_sources": 1,
+   "placed_as": "new"
+  },
+  {
+   "name": "Maruia Falls",
+   "views": 0,
+   "counted_sources": 1,
+   "placed_as": "new"
+  },
+  {
+   "name": "Christ Church Cathedral",
+   "views": 0,
+   "counted_sources": 1,
+   "placed_as": "existing nelson-5"
+  },
+  {
+   "name": "Cleopatra's Pool",
+   "views": 0,
+   "counted_sources": 1,
+   "placed_as": "existing abel-tasman-5"
+  },
+  {
+   "name": "Labyrinth Rocks",
+   "views": 0,
+   "counted_sources": 1,
+   "placed_as": "existing golden-bay-4"
+  },
+  {
+   "name": "Karamea",
+   "views": 0,
+   "counted_sources": 1,
+   "placed_as": "existing kahurangi-3"
+  },
+  {
+   "name": "Nelson Classic Car Museum",
+   "views": 0,
+   "counted_sources": 2,
+   "placed_as": "new"
+  },
+  {
+   "name": "Natureland",
+   "views": 0,
+   "counted_sources": 2,
+   "placed_as": "new"
+  },
+  {
+   "name": "Isel House and Park",
+   "views": 0,
+   "counted_sources": 2,
+   "placed_as": "new"
+  },
+  {
+   "name": "Motueka District Museum",
+   "views": 0,
+   "counted_sources": 2,
+   "placed_as": "new"
+  }
+ ],
+ "floor_score": {
+  "views": 0,
+  "counted_sources": 1
+ },
+ "stronger_left_out": [
+  {
+   "name": "Founders Brewery",
+   "views": 13782,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Brewery and bar at Founders Heritage Park; venue only and part of that spot."
+  },
+  {
+   "name": "Blue Lake (Tasman)",
+   "views": 12199,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: famed clarity, Wikivoyage; Wikipedia 12k views. Against: reached only on multi-day tramp (Travers-Sabine), one counted source. Wikipedia title: Blue Lake (Tasman) is a shared name; photo must be proven."
+  },
+  {
+   "name": "Golden Bay",
+   "views": 9527,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "District, not a single place; its towns and sights are judged individually."
+  },
+  {
+   "name": "Richmond",
+   "views": 7594,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Reversed from reject to review: not a sight but the region's second town (Nelson's satellite, tourism board town page with Whispering Falls, Washbourn Gardens, Old Factory Corner). COVERAGE says sizable settlements people base from earn a pin; owner to decide."
+  },
+  {
+   "name": "Harwoods Hole",
+   "views": 6225,
+   "counted_sources": 3,
+   "verdict": "reject",
+   "reason": "DOC page title: 'Harwoods Hole track no longer marked or maintained'; access is caving/expert only, so a visitor cannot just go and see it (fails 'accessible'). Three counted sources do name it; reconsider if DOC reopens a track."
+  },
+  {
+   "name": "Brightwater",
+   "views": 5829,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Village covered only by the Wakefield guide; the Rutherford memorial is a minor memorial."
+  },
+  {
+   "name": "Kaiteriteri Beach",
+   "views": 4541,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Duplicate: Kaiteriteri beach and town are one stop (abel-tasman-3 Kaiteriteri kept)."
+  },
+  {
+   "name": "Wakefield",
+   "views": 4087,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Village with no sight of its own; its only listing is the Great Taste Trail, already a spot. Gateway whose draw is elsewhere but not a stop in its own right."
+  },
+  {
+   "name": "Trafalgar Park",
+   "views": 3556,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Sports ground; match-day venue, not a visitor attraction."
+  },
+  {
+   "name": "Tasman Bay",
+   "views": 3386,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "District/bay, not a single place; its towns and sights are judged individually."
+  },
+  {
+   "name": "Upper Moutere",
+   "views": 2324,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Wine villages are a group of venues; the individual wineries (Neudorf, Mahana) are judged separately."
+  },
+  {
+   "name": "Takaka Hill",
+   "views": 2143,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "A route (the road over Takaka Hill), not a single stop; the actual stops (Harwoods Hole, Ngarua Caves, lookouts) are judged separately."
+  },
+  {
+   "name": "Riwaka",
+   "views": 2137,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Village named only as the location of the resurgence."
+  },
+  {
+   "name": "Mount Owen",
+   "views": 2050,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: DOC tracks, tourism board names it (Lord of the Rings, heli tours). Against: backcountry climb, almost entirely reached on foot with navigation; no easy stop."
+  },
+  {
+   "name": "Dun Mountain Railway",
+   "views": 1120,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only, no visitor-oriented source. needs_coordinates"
+  },
+  {
+   "name": "Pohara",
+   "views": 1080,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Wikivoyage Golden Bay lists it as a town (beach at the southern end of the bay) and the tourism board mentions it as the northern gateway lodge area. Against: beach and holiday park only, no named sight; a beach a real source names should not be lost, so left for the owner."
+  },
+  {
+   "name": "Torrent Bay",
+   "views": 1073,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Wikivoyage names the estuary village; Coast Track stop with Cleopatra's Pool side trip (existing spot). Against: part of the Coast Track spot, reached only by boat or walking."
+  },
+  {
+   "name": "Maungakura / Red Hill",
+   "views": 1007,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only, no visitor-oriented source."
+  },
+  {
+   "name": "Farewell Spit Lighthouse",
+   "views": 977,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Reached only by eco tour and Wikipedia only; part of the Farewell Spit spot."
+  },
+  {
+   "name": "Wainui Bay",
+   "views": 963,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Bay serving as access point for Wainui Falls; the falls are the draw and judged separately."
+  },
+  {
+   "name": "Whanganui Inlet",
+   "views": 926,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Wikivoyage and tourism board name it (beaches from Wainui Bay to Whanganui Inlet); remote tidal inlet with Anatori beaches. Against: no facilities, hard access, no concrete stop to name."
+  },
+  {
+   "name": "Dun Mountain",
+   "views": 836,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only, no visitor-oriented source."
+  },
+  {
+   "name": "Haulashore Island",
+   "views": 797,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Wikivoyage lists seals and a beach, walkable at low tide from the Boulder Bank. Against: one source, tide-dependent, short; no tourism-board listing."
+  },
+  {
+   "name": "Onekaka",
+   "views": 773,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Village with no distinct visitor draw of its own; the one thing people go for is the Mussel Inn, judged separately."
+  },
+  {
+   "name": "Queen Bee (ship)",
+   "views": 748,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only, no visitor-oriented source."
+  },
+  {
+   "name": "Spenser Mountains",
+   "views": 715,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only, no visitor-oriented source."
+  },
+  {
+   "name": "Mussel Inn",
+   "views": 687,
+   "counted_sources": 2,
+   "verdict": "review (demoted by owner process)",
+   "reason": "Fails 'What qualifies' test 2: a pub, brewery and music venue, i.e. a restaurant/bar venue rather than a place to see or do something. Skeptic kept it as a famous live-music venue (tourism board, Wikivoyage Golden Bay and Takaka); owner may revisit."
+  },
+  {
+   "name": "Lake Constance",
+   "views": 661,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Backcountry lake on Te Araroa, one source, not a stop."
+  },
+  {
+   "name": "Tata Islands",
+   "views": 635,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "No public access to the islands, seen from the monument; part of that stop."
+  },
+  {
+   "name": "Kahurangi Point",
+   "views": 604,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Minor DOC track, bike/walk, one source; not a distinct draw."
+  },
+  {
+   "name": "Waimea Plains",
+   "views": 591,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only, no visitor-oriented source."
+  },
+  {
+   "name": "Nelson Railway Society",
+   "views": 558,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Weekend heritage railway with no destination; the park is the spot (Founders Heritage Park)."
+  },
+  {
+   "name": "Onekaka Power Station",
+   "views": 544,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only, no visitor-oriented source."
+  },
+  {
+   "name": "Mount Franklin",
+   "views": 524,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only, no visitor-oriented source."
+  },
+  {
+   "name": "Wharariki Ecosanctuary",
+   "views": 521,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only, no visitor-oriented source."
+  },
+  {
+   "name": "Tinline Bay",
+   "views": 459,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only, no visitor-oriented source."
+  },
+  {
+   "name": "Lake Killarney",
+   "views": 447,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only, no visitor-oriented source."
+  },
+  {
+   "name": "Faerie Queene",
+   "views": 442,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only, no visitor-oriented source."
+  },
+  {
+   "name": "Wai-iti Dark Sky Park",
+   "views": 442,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only, no visitor-oriented source."
+  },
+  {
+   "name": "Onekaka Wharf and tramline",
+   "views": 432,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only, no visitor-oriented source."
+  },
+  {
+   "name": "Big Rimu Walk",
+   "views": 424,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Minor DOC track, bike/walk, one source; not a distinct draw."
+  },
+  {
+   "name": "Maniniaro / Angelus Peak",
+   "views": 421,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only, no visitor-oriented source."
+  },
+  {
+   "name": "Westhaven (Te Tai Tapu) Marine Reserve",
+   "views": 415,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only, no visitor-oriented source."
+  },
+  {
+   "name": "Langford Store",
+   "views": 401,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only, no visitor-oriented source."
+  },
+  {
+   "name": "Horoirangi Marine Reserve",
+   "views": 396,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Marine reserve with no visitor draw in sources."
+  },
+  {
+   "name": "Waimea Inlet",
+   "views": 396,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only, no visitor-oriented source."
+  },
+  {
+   "name": "Gloriana Peak",
+   "views": 348,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only, no visitor-oriented source."
+  },
+  {
+   "name": "Mangarakau Wetland",
+   "views": 332,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only, no visitor-oriented source."
+  },
+  {
+   "name": "Boulder Lake",
+   "views": 314,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only, no visitor-oriented source."
+  },
+  {
+   "name": "Lake Matiri",
+   "views": 309,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Minor lake or track in Kahurangi, one source, backcountry."
+  },
+  {
+   "name": "Druggans Dam",
+   "views": 297,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only, no visitor-oriented source."
+  },
+  {
+   "name": "Tākaka Pioneers' Memorial",
+   "views": 265,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "A pioneers memorial; minor memorial."
+  },
+  {
+   "name": "Anatoki Salmon",
+   "views": 229,
+   "counted_sources": 1,
+   "verdict": "review (demoted by owner process)",
+   "reason": "Fails test 2: an operator-run, paid catch-your-own-salmon activity at a fixed site, not a place a visitor can freely see. Skeptic flagged it marginal."
+  },
+  {
+   "name": "Sabine Valley",
+   "views": 213,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only, no visitor-oriented source."
+  },
+  {
+   "name": "Lake Sparrow",
+   "views": 187,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only, no visitor-oriented source."
+  },
+  {
+   "name": "Mount Cupola",
+   "views": 149,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only, no visitor-oriented source."
+  },
+  {
+   "name": "Seifried Estate",
+   "views": 61,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only, no visitor-oriented source."
+  },
+  {
+   "name": "Anchorage",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Duplicate of existing spot Anchorage Bay (abel-tasman-4)."
+  },
+  {
+   "name": "Gouland Downs",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Part of the Heaphy Track (existing spot)."
+  },
+  {
+   "name": "Aorere Goldfields Conservation Area",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Dispersed conservation area with no single stop to name."
+  },
+  {
+   "name": "Lake Rotoiti Circuit",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "A walk around Lake Rotoiti, already a spot; part of a larger spot."
+  },
+  {
+   "name": "Mount Robert Circuit",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Duplicate of existing spot Mount Robert (nelson-lakes-2)."
+  },
+  {
+   "name": "Kerr Bay",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Part of Lake Rotoiti (existing spot nelson-lakes-1)."
+  },
+  {
+   "name": "Nelson Lakes Shuttles",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Operator (scenic flights); the places it flies over are the spots."
+  },
+  {
+   "name": "Neudorf Vineyards",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "review (demoted by owner process)",
+   "reason": "Fails test 2: a winery tasting room is a shop/venue. Skeptic kept it as the named Moutere stop (Wikivoyage Mapua, tourism board)."
+  }
+ ],
+ "review_list": [
+  {
+   "name": "Pohara",
+   "verdict": "review",
+   "case": "For: Wikivoyage Golden Bay lists it as a town (beach at the southern end of the bay) and the tourism board mentions it as the northern gateway lodge area. Against: beach and holiday park only, no named sight; a beach a real source names should not be lost, so left for the owner."
+  },
+  {
+   "name": "Miyazu Japanese Garden",
+   "verdict": "review",
+   "case": "For: free Japanese stroll garden, Wikivoyage; tourism board runs its cherry-blossom event. Against: small city garden, one counted source, ~30 min; no tourism listing as a place found. Coordinates -41.258822, 173.299619 (Wikivoyage)."
+  },
+  {
+   "name": "Broadgreen House",
+   "verdict": "review",
+   "case": "For: Wikivoyage lists 1855 cob house with 3,000-rose garden ($7). Against: one counted source found (tourism board only has events there); a local heritage house."
+  },
+  {
+   "name": "Haulashore Island",
+   "verdict": "review",
+   "case": "For: Wikivoyage lists seals and a beach, walkable at low tide from the Boulder Bank. Against: one source, tide-dependent, short; no tourism-board listing."
+  },
+  {
+   "name": "Cable Bay Adventure Park",
+   "verdict": "review",
+   "case": "For: Wikivoyage lists flying fox, biking, quads; tourism board partner. Against: an operator-run activity venue rather than a place; the beach (Cable Bay / Rotokura, see additions) is the place. Coordinates -41.20178, 173.41259 (OSM)."
+  },
+  {
+   "name": "Motueka Sandspit",
+   "verdict": "review",
+   "case": "For: DOC area page names it, internationally recognised shorebird site. Against: one counted source, birding only, short visit, no tourism-board mention."
+  },
+  {
+   "name": "Whanganui Inlet",
+   "verdict": "review",
+   "case": "For: Wikivoyage and tourism board name it (beaches from Wainui Bay to Whanganui Inlet); remote tidal inlet with Anatori beaches. Against: no facilities, hard access, no concrete stop to name."
+  },
+  {
+   "name": "Torrent Bay",
+   "verdict": "review",
+   "case": "For: Wikivoyage names the estuary village; Coast Track stop with Cleopatra's Pool side trip (existing spot). Against: part of the Coast Track spot, reached only by boat or walking."
+  },
+  {
+   "name": "Cascade Falls",
+   "verdict": "review",
+   "case": "For: Wikivoyage and DOC name it, hidden waterfall and swimming. Against: steep 1.5 h side trip from Torrent Bay, off the main track."
+  },
+  {
+   "name": "Mount Owen",
+   "verdict": "review",
+   "case": "For: DOC tracks, tourism board names it (Lord of the Rings, heli tours). Against: backcountry climb, almost entirely reached on foot with navigation; no easy stop."
+  },
+  {
+   "name": "Kohaihai",
+   "verdict": "review",
+   "case": "For: DOC short walks area; Heaphy Track's end with a suspension bridge. Against: one counted source and mainly the track end already covered by the Heaphy spot; coordinates -41.10928, 172.10588 (OSM suspension bridge)."
+  },
+  {
+   "name": "Blue Lake (Tasman)",
+   "verdict": "review",
+   "case": "For: famed clarity, Wikivoyage; Wikipedia 12k views. Against: reached only on multi-day tramp (Travers-Sabine), one counted source. Wikipedia title: Blue Lake (Tasman) is a shared name; photo must be proven."
+  },
+  {
+   "name": "Lake Angelus",
+   "verdict": "review",
+   "case": "For: Wikivoyage says most popular hike in the park, 6 h, hut. Against: hard day hike, one source. DATA ERROR: candidate coordinates are 42.69, -83.33 (Michigan). Correct to -41.88698, 172.74607 (OSM Rotomaninitua / Lake Angelus; Angelus Hut -41.88837, 172.74866)."
+  },
+  {
+   "name": "Richmond",
+   "verdict": "review",
+   "case": "Reversed from reject to review: not a sight but the region's second town (Nelson's satellite, tourism board town page with Whispering Falls, Washbourn Gardens, Old Factory Corner). COVERAGE says sizable settlements people base from earn a pin; owner to decide."
+  },
+  {
+   "name": "Motueka Saltwater Baths",
+   "verdict": "review",
+   "case": "Reversed from reject to review: tourism board Motueka page names it ('popular destination year-round', 1926 enclosure) as a swim stop. Against: one source, a municipal pool-like venue. Coordinates not checked."
+  },
+  {
+   "name": "Janie Seddon Shipwreck",
+   "verdict": "review",
+   "case": "Addition (not in candidates): tourism board Motueka page 'iconic' last surviving military ship from both world wars, photographed from the shore. Against: seen from outside, ten-minute stop. OSM way 712699047 at -41.12364, 173.02584."
+  },
+  {
+   "name": "Brook Waimarama Sanctuary",
+   "verdict": "review",
+   "case": "Addition (not in candidates): tourism board names it twice (South Island's largest fenced sanctuary, tracks, guided and glow-worm tours, from NZ$15). Likely keep: permanent, half a day. Needs a Wikivoyage/DOC second source and a photo. Coordinates -41.31189, 173.29234 (OSM visitor centre)."
+  },
+  {
+   "name": "Cable Bay (Rotokura)",
+   "verdict": "review",
+   "case": "Addition (not in candidates): tourism board beaches page calls it a hidden gem 20 min from Nelson; the Adventure Park and Walkway candidates sit here, with the 1876 cable memorial. A beach a real source names must not be lost. Coordinates -41.16221, 173.41271 (OSM Cable Bay Cafe) or -41.16024, 173.41259 (cable memorial)."
+  },
+  {
+   "name": "Rabbit Island",
+   "verdict": "review",
+   "case": "Addition (not in candidates): tourism board beaches pages name Rabbit Island public park and beach (reached from Mapua by ferry or Richmond by road). Against: local recreation reserve; one source."
+  },
+  {
+   "name": "Whispering Falls",
+   "verdict": "review",
+   "case": "Addition (not in candidates): tourism board Richmond page, 2 h easy return walk up Aniseed Valley. Against: one source, local walk."
+  },
+  {
+   "name": "Anatoki Salmon",
+   "verdict": "review (demoted)",
+   "case": "Fails test 2: an operator-run, paid catch-your-own-salmon activity at a fixed site, not a place a visitor can freely see. Skeptic flagged it marginal."
+  },
+  {
+   "name": "Neudorf Vineyards",
+   "verdict": "review (demoted)",
+   "case": "Fails test 2: a winery tasting room is a shop/venue. Skeptic kept it as the named Moutere stop (Wikivoyage Mapua, tourism board)."
+  },
+  {
+   "name": "Mussel Inn",
+   "verdict": "review (demoted)",
+   "case": "Fails 'What qualifies' test 2: a pub, brewery and music venue, i.e. a restaurant/bar venue rather than a place to see or do something. Skeptic kept it as a famous live-music venue (tourism board, Wikivoyage Golden Bay and Takaka); owner may revisit."
+  },
+  {
+   "name": "Karamea (kahurangi-3, existing)",
+   "verdict": "flag",
+   "case": "Pipiriki-style gateway village: its draw is the Ōpārara Basin and Heaphy Track beyond it. Stays as an existing spot per owner; flagged so the owner can decide whether gateway villages stay."
+  }
+ ],
+ "strongest_outsiders": [
+  {
+   "name": "Blue Lake (Tasman)",
+   "views": 12199,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: famed clarity, Wikivoyage; Wikipedia 12k views. Against: reached only on multi-day tramp (Travers-Sabine), one counted source. Wikipedia title: Blue Lake (Tasman) is a shared name; photo must be proven."
+  },
+  {
+   "name": "Murchison",
+   "views": 9773,
+   "counted_sources": 2,
+   "verdict": "keep",
+   "reason": "Agree: Wikivoyage plus tourism board (White Water Capital)."
+  },
+  {
+   "name": "Wakefield",
+   "views": 4087,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Village with no sight of its own; its only listing is the Great Taste Trail, already a spot. Gateway whose draw is elsewhere but not a stop in its own right."
+  },
+  {
+   "name": "Maungakura / Red Hill",
+   "views": 1007,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only, no visitor-oriented source."
+  },
+  {
+   "name": "Spenser Mountains",
+   "views": 715,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only, no visitor-oriented source."
+  },
+  {
+   "name": "Lake Constance",
+   "views": 661,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Backcountry lake on Te Araroa, one source, not a stop."
+  },
+  {
+   "name": "Mount Franklin",
+   "views": 524,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only, no visitor-oriented source."
+  },
+  {
+   "name": "Faerie Queene",
+   "views": 442,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only, no visitor-oriented source."
+  },
+  {
+   "name": "Wai-iti Dark Sky Park",
+   "views": 442,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only, no visitor-oriented source."
+  },
+  {
+   "name": "Gloriana Peak",
+   "views": 348,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only, no visitor-oriented source."
+  }
+ ],
+ "benchmark": "Region benchmarks only partly apply (no Red Rocks etc.). Applicable checks pass: operator in place of a place rejected (Nelson Lakes Shuttles; Anatoki Salmon demoted); gateway village sent to review/flagged (Karamea flagged, Kohaihai and Wakefield kept out, Whanganui Inlet review); a civic/closed or memorial-type candidate (Tākaka Pioneers' Memorial) rejected; no once-a-week market kept. Ngārua Caves and Tata Beach were rescued from reject on counted tourism-board sources."
+}

@@ -1,0 +1,360 @@
+{
+ "region": "gisborne",
+ "inside_destinations": {
+  "count": 7,
+  "names": [
+   "Puhi Kai Iti / Cook Landing Site",
+   "Eastwoodhill Arboretum",
+   "Rere Rock Slide",
+   "Mōrere Springs Scenic Reserve",
+   "Young Nick's Head",
+   "Waikanae Beach",
+   "Anaura Bay",
+   "Lake Waikaremoana Great Walk"
+  ]
+ },
+ "standalone": {
+  "count": 3,
+  "names": [
+   "Whirinaki Te Pua-a-Tāne Conservation Park",
+   "Wairoa",
+   "Māhia Peninsula"
+  ]
+ },
+ "new_destinations": {
+  "count": 0,
+  "names": [],
+  "note": "Wairoa and Māhia are only two kept places 46 km apart; too few for a destination, so both stand alone."
+ },
+ "held": [
+  "Waikanae Beach (needs a photo)"
+ ],
+ "lowest_kept": [
+  {
+   "name": "Rere Rock Slide",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Waikanae Beach",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Tolaga Bay Wharf",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Tairāwhiti Museum",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Mōrere Springs Scenic Reserve",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Cooks Cove Walkway",
+   "views": 240,
+   "counted_sources": 1
+  }
+ ],
+ "lowest_kept_note": "Several kept places have views 0 because Wikipedia has no article or a redirect; they are kept on counted Wikivoyage and DOC sources, not on views.",
+ "stronger_left_out": [
+  {
+   "name": "Gisborne",
+   "views": 53158,
+   "counted_sources": 3,
+   "verdict": "already a destination",
+   "reason": "Existing destination 'gisborne'; listed so the run judged it, nothing to place."
+  },
+  {
+   "name": "Te Araroa Trail",
+   "views": 22710,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Wikivoyage page for the 3,000 km national trail. Against: a country-long linear feature, not one place in this region; it needs a single main-access point and a cross-region duplicate check; Lake Waikaremoana and Whirinaki already cover its stretch here."
+  },
+  {
+   "name": "Poverty Bay",
+   "views": 11179,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Region-scale bay; its beaches and city are the visits, not the bay as a site."
+  },
+  {
+   "name": "Rhythm & Vines",
+   "views": 7486,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Annual music festival, an event not a permanent place."
+  },
+  {
+   "name": "Whangara",
+   "views": 6838,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Film location in a small settlement on Māori land; nothing public to see or do."
+  },
+  {
+   "name": "Tolaga Bay",
+   "views": 6777,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "For: Wikivoyage and DOC name the bay and settlement. Against: its draw is the wharf and Cooks Cove, both already spots; Wikivoyage says \"small bay and settlement popular with local holiday makers\", so a near-duplicate of the wharf spot."
+  },
+  {
+   "name": "Ruatoria",
+   "views": 5602,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Service town; no sight or activity named."
+  },
+  {
+   "name": "Te Kaha",
+   "views": 5277,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Wikivoyage lists it; the main service stop on the northern coast. Against: a small settlement with no named sight or activity; Wikivoyage describes it as a fishermen/holiday community."
+  },
+  {
+   "name": "East Cape",
+   "views": 4837,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "A region/road journey rather than a single place; the places along it (lighthouse, bays) are the spots, and the cape itself is covered by East Cape Lighthouse."
+  },
+  {
+   "name": "Tikitiki",
+   "views": 3853,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Village with no draw of its own beyond its church (judged separately)."
+  },
+  {
+   "name": "Te Urewera National Park",
+   "views": 3365,
+   "counted_sources": 1,
+   "verdict": "duplicate (kept as existing destination)",
+   "reason": "Kept by the skeptic but not a new spot: the destination 'te-urewera' already exists (see existing_fixes)."
+  },
+  {
+   "name": "Mount Hikurangi",
+   "views": 3345,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: DOC names the 1,752 m sacred peak, first mainland point to see the sunrise. Against: Ngāti Porou sacred maunga with permission/guided access, long tramp, rarely visited, one source. Coords OSM -37.9189,178.0607."
+  },
+  {
+   "name": "Te Puia Springs",
+   "views": 2601,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; no visitor description of a public hot-spring venue."
+  },
+  {
+   "name": "Tuai",
+   "views": 1543,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Village with no counted source or sight. Belongs to the Hawke's Bay pass."
+  },
+  {
+   "name": "SS Talune",
+   "views": 1529,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; a wreck for divers. Belongs to the Hawke's Bay pass."
+  },
+  {
+   "name": "Waipiro Bay",
+   "views": 1516,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; small settlement."
+  },
+  {
+   "name": "Matawai",
+   "views": 1339,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small roadside township with nothing to see or do named by the guide."
+  },
+  {
+   "name": "Gisborne City Vintage Railway",
+   "views": 1026,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source (Wikipedia/OSM only)."
+  },
+  {
+   "name": "Titirangi",
+   "views": 907,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Near-duplicate of existing spot gisborne-1 (Titirangi / Kaiti Hill)."
+  },
+  {
+   "name": "Akuaku",
+   "views": 762,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; ruins with no visitor guide."
+  },
+  {
+   "name": "Mōtū",
+   "views": 760,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Gateway settlement with no sight of its own."
+  },
+  {
+   "name": "Hackfalls Arboretum",
+   "views": 588,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source (Wikipedia protected-areas list only); mostly private gardens."
+  },
+  {
+   "name": "Whakarua Park",
+   "views": 568,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Local park, no counted source."
+  },
+  {
+   "name": "St Mary's Church, Tikitiki",
+   "views": 549,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "For: celebrated carved/woven Māori Anglican war-memorial church on SH35, a classic East Cape stop. Against: no counted visitor source found, a local church, interior access not confirmed (church benchmark rejects)."
+  },
+  {
+   "name": "Harry Barker Reserve",
+   "views": 529,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Local reserve, no counted source."
+  },
+  {
+   "name": "Gisborne Botanical Gardens",
+   "views": 466,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source (Wikipedia/OSM only); ordinary city park."
+  },
+  {
+   "name": "Maungahaumia",
+   "views": 442,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; remote peak."
+  },
+  {
+   "name": "Mount Arowhana",
+   "views": 414,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; remote peak."
+  },
+  {
+   "name": "Mōkau Falls",
+   "views": 326,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source (Wikipedia category only). Belongs to the Hawke's Bay pass."
+  },
+  {
+   "name": "Papatea Bay",
+   "views": 313,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Same site as Raukokore Church; near-duplicate."
+  },
+  {
+   "name": "Whakaki Lagoon",
+   "views": 234,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; wetland with no visitor facilities named. Belongs to the Hawke's Bay pass."
+  },
+  {
+   "name": "Raukūmara Conservation Park",
+   "views": 146,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Remote 115,000 ha backcountry park with no facilities and the Wilderness Area closed to recreation; rarely visited; one source."
+  },
+  {
+   "name": "Gisborne Farmers Market",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Saturday-morning market only; weekly market fails the always-there test. needs_coordinates."
+  }
+ ],
+ "review_list": [
+  {
+   "name": "Makorori",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "For: Wikivoyage urges venturing to Wainui, Makorori or the northern bays; OSM beach. Against: only a passing mention, the same surf strip as Wainui Beach (near-duplicate), no sight of its own. Coords OSM -38.67302,178.0916."
+  },
+  {
+   "name": "Mount Hikurangi",
+   "views": 3345,
+   "counted_sources": 1,
+   "reason": "For: DOC names the 1,752 m sacred peak, first mainland point to see the sunrise. Against: Ngāti Porou sacred maunga with permission/guided access, long tramp, rarely visited, one source. Coords OSM -37.9189,178.0607."
+  },
+  {
+   "name": "Tolaga Bay",
+   "views": 6777,
+   "counted_sources": 2,
+   "reason": "For: Wikivoyage and DOC name the bay and settlement. Against: its draw is the wharf and Cooks Cove, both already spots; Wikivoyage says \"small bay and settlement popular with local holiday makers\", so a near-duplicate of the wharf spot."
+  },
+  {
+   "name": "St Mary's Church, Tikitiki",
+   "views": 549,
+   "counted_sources": 0,
+   "reason": "For: celebrated carved/woven Māori Anglican war-memorial church on SH35, a classic East Cape stop. Against: no counted visitor source found, a local church, interior access not confirmed (church benchmark rejects)."
+  },
+  {
+   "name": "Te Araroa Trail",
+   "views": 22710,
+   "counted_sources": 1,
+   "reason": "For: Wikivoyage page for the 3,000 km national trail. Against: a country-long linear feature, not one place in this region; it needs a single main-access point and a cross-region duplicate check; Lake Waikaremoana and Whirinaki already cover its stretch here."
+  },
+  {
+   "name": "Te Kaha",
+   "views": 5277,
+   "counted_sources": 1,
+   "reason": "For: Wikivoyage lists it; the main service stop on the northern coast. Against: a small settlement with no named sight or activity; Wikivoyage describes it as a fishermen/holiday community."
+  },
+  {
+   "name": "Raukokore Church",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "For: Wikivoyage names the isolated shoreline church at Papatea Bay, a photographed roadside icon (and Papatea Bay is the same place). Against: a church seen mainly from outside, ten-minute stop. Needs coordinates (OSM, not memory)."
+  }
+ ],
+ "strongest_outsiders": [
+  {
+   "name": "Whirinaki Te Pua-a-Tāne Conservation Park",
+   "views": 1867,
+   "note": "outside every destination span"
+  },
+  {
+   "name": "Wairoa",
+   "views": 11740,
+   "note": "outside every destination span"
+  },
+  {
+   "name": "Māhia Peninsula",
+   "views": 11252,
+   "note": "outside every destination span"
+  }
+ ],
+ "benchmark": "Region-level benchmarks: Gisborne has none of the national benchmark places (Red Rocks, Kapiti Island, Ohakune Carrot and so on lie in other regions). Negative benchmarks hold: no hospital, civic building, minor memorial or weekly market kept (Gisborne Farmers Market and Rhythm & Vines rejected). Pipiriki-type gateway villages (Te Kaha, Tikitiki, Ruatoria, Mōtū) rejected or sent to review."
+}

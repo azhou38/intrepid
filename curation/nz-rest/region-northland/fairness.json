@@ -1,0 +1,667 @@
+{
+ "region": "northland",
+ "score": "views = 12-month English Wikipedia page views, counted_sources = independent counted sources; ranked by (views, counted_sources)",
+ "inside_destinations": {
+  "new_spots_of_existing_destinations": 28,
+  "by_destination": {
+   "bay-of-islands": 11,
+   "whangarei": 11,
+   "cape-reinga": 0,
+   "waipoua-forest": 6
+  },
+  "existing_spots_kept_in_place": 23,
+  "also_inside_proposed_destinations": 16
+ },
+ "standalone": {
+  "new": 2,
+  "ids": [
+   "mangawhai",
+   "mangawhai-cliffs-walkway"
+  ],
+  "existing_rehomed": [
+   "cape-reinga-3 (Ninety Mile Beach)"
+  ],
+  "existing_already_standalone": [
+   "kauri-museum"
+  ]
+ },
+ "new_destinations": [
+  {
+   "id": "doubtless-bay",
+   "name": "Doubtless Bay",
+   "kept_spots": 5
+  },
+  {
+   "id": "kaitaia",
+   "name": "Kaitaia",
+   "kept_spots": 4
+  },
+  {
+   "id": "dargaville",
+   "name": "Dargaville",
+   "kept_spots": 3
+  },
+  {
+   "id": "whangaroa",
+   "name": "Whangaroa",
+   "kept_spots": 4
+  }
+ ],
+ "held_for_photo": [
+  "bay-of-islands-18 Kororipō Pā",
+  "whangarei-15 Kiwi North",
+  "whangarei-16 Smugglers Bay",
+  "whangarei-17 Mimiwhangata Coastal Park",
+  "waipoua-forest-11 Waiotemarama Falls",
+  "doubtless-bay-4 Coopers Beach",
+  "kaitaia-3 Gumdiggers Park",
+  "kaitaia-4 Rarawa Beach",
+  "dargaville-3 Kai Iwi Lakes",
+  "whangaroa-3 Tauranga Bay",
+  "whangaroa-4 Duke's Nose",
+  "mangawhai-cliffs-walkway Mangawhai Cliffs Walkway"
+ ],
+ "lowest_kept": [
+  {
+   "name": "Long Beach, Russell",
+   "views": 0,
+   "counted_sources": 1,
+   "disposition": "spot of bay-of-islands (bay-of-islands-14)"
+  },
+  {
+   "name": "Tauranga Bay",
+   "views": 0,
+   "counted_sources": 1,
+   "disposition": "spot of proposed whangaroa (whangaroa-3) - HELD for photo"
+  },
+  {
+   "name": "Maitai Bay",
+   "views": 0,
+   "counted_sources": 1,
+   "disposition": "spot of proposed doubtless-bay (doubtless-bay-5)"
+  },
+  {
+   "name": "Rarawa Beach",
+   "views": 0,
+   "counted_sources": 1,
+   "disposition": "spot of proposed kaitaia (kaitaia-4) - HELD for photo"
+  },
+  {
+   "name": "Ocean Beach, Whangārei",
+   "views": 0,
+   "counted_sources": 1,
+   "disposition": "spot of whangarei (whangarei-10)"
+  },
+  {
+   "name": "Smugglers Bay",
+   "views": 0,
+   "counted_sources": 1,
+   "disposition": "spot of whangarei (whangarei-16) - HELD for photo"
+  },
+  {
+   "name": "Mimiwhangata Coastal Park",
+   "views": 0,
+   "counted_sources": 1,
+   "disposition": "spot of whangarei (whangarei-17) - HELD for photo"
+  },
+  {
+   "name": "Whangārei Quarry Gardens",
+   "views": 0,
+   "counted_sources": 1,
+   "disposition": "spot of whangarei (whangarei-9)"
+  },
+  {
+   "name": "Claphams National Clock Museum",
+   "views": 0,
+   "counted_sources": 1,
+   "disposition": "existing spot, unchanged"
+  },
+  {
+   "name": "Kiwi North",
+   "views": 0,
+   "counted_sources": 1,
+   "disposition": "spot of whangarei (whangarei-15) - HELD for photo"
+  },
+  {
+   "name": "Mount Parihaka",
+   "views": 0,
+   "counted_sources": 1,
+   "disposition": "spot of whangarei (whangarei-7)"
+  },
+  {
+   "name": "Whangārei Town Basin",
+   "views": 0,
+   "counted_sources": 1,
+   "disposition": "spot of whangarei (whangarei-8)"
+  }
+ ],
+ "unscored_existing_kept": {
+  "names": [
+   "Piercy Island",
+   "Haruru Falls",
+   "Tapotupotu Bay",
+   "Four Sisters",
+   "Hokianga Harbour"
+  ],
+  "note": "Existing spots with no candidates.json score (the enumeration matched them to other entries); kept by the skeptic as existing spots, excluded from the lowest-score comparison."
+ },
+ "lowest_kept_score": {
+  "views": 0,
+  "counted_sources": 1
+ },
+ "stronger_left_out": [
+  {
+   "name": "Kermadec Islands",
+   "views": 43212,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Permit-only DOC visits, remote; not a visitor destination."
+  },
+  {
+   "name": "Cape Reinga / Te Rerenga Wairua",
+   "views": 20131,
+   "counted_sources": 3,
+   "verdict": "reject",
+   "reason": "Near-duplicate of the existing Cape Reinga Lighthouse spot: the headland and the lighthouse viewpoint are the same visit."
+  },
+  {
+   "name": "Waipu",
+   "views": 11711,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Waipu Museum (Scottish migration), DOC Waipu area page, a Waipu Caves base. Against: one source, small town; caves kept separately."
+  },
+  {
+   "name": "Kawakawa",
+   "views": 10634,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Town draw is the Hundertwasser Toilets and the railway, both separate spots: near-duplicate."
+  },
+  {
+   "name": "Hen and Chicken Islands",
+   "views": 9014,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; Wikipedia only. Seen from boats and dive charters."
+  },
+  {
+   "name": "Opo the Dolphin Statue",
+   "views": 8570,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Statue and pier stop within Opononi, whose existing spot already tells the Opo story; minor memorial/near-duplicate."
+  },
+  {
+   "name": "Okiato",
+   "views": 6075,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Site of the first capital marked only by a reserve and interpretation panels: nothing to do or see."
+  },
+  {
+   "name": "Kohukohu",
+   "views": 5282,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "For: two sources (Wikivoyage Kohukohu and Hokianga), historic village, car ferry to Rawene. Against: the draw is the journey (ferry, dunes road); its gallery is rejected; little to do for 30 min. Gateway village, review."
+  },
+  {
+   "name": "Karikari Peninsula",
+   "views": 4129,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "An area composed of Tokerau Beach, Maitai Bay and others, kept separately: near-duplicate."
+  },
+  {
+   "name": "Opua",
+   "views": 3383,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "One source; a marina and car-ferry terminal, nothing to do for half an hour (transit point)."
+  },
+  {
+   "name": "Ngunguru",
+   "views": 3179,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "One source; a cafe stop on an estuary village, no half-hour sight."
+  },
+  {
+   "name": "Whananaki",
+   "views": 3095,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: DOC page; one of the longest foot bridges in the southern hemisphere, Otamure Bay track. Against: one source, a brief stop."
+  },
+  {
+   "name": "Whangaroa Harbour",
+   "views": 2911,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Near-duplicate of the Whangaroa village/harbour spot judged above."
+  },
+  {
+   "name": "Whangārei Heads",
+   "views": 2688,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "An area made up of Bream Head, Mount Manaia, Smugglers Bay, Ocean Beach, judged separately: part of larger spots."
+  },
+  {
+   "name": "Christ Church, Russell",
+   "views": 2548,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Church seen from outside and the churchyard; already named in the Russell bio: exterior-only church."
+  },
+  {
+   "name": "Ngā Toki Matawhaorua",
+   "views": 2484,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia/OSM only, no counted source; the waka is an exhibit inside the Treaty Grounds spot (part of a larger spot). Existing_spot match is correct (inside bay-of-islands-1)."
+  },
+  {
+   "name": "Kawakawa Bay of Islands Vintage Railway",
+   "views": 2440,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: heritage train on the Kawakawa line. Against: one counted source; an operator/ride rather than a place (no distinct destination station), a near-neighbour of the Hundertwasser Toilets."
+  },
+  {
+   "name": "Doubtless Bay",
+   "views": 2409,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "An area whose stops (Mangonui, Coopers Beach, Rangikapiti) are kept separately: near-duplicate."
+  },
+  {
+   "name": "Bream Bay",
+   "views": 2386,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia/OSM only; no visitor source names a specific stop."
+  },
+  {
+   "name": "Hole in the Rock",
+   "views": 2350,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Confirmed: Hole in the Rock is the arch on Piercy Island (existing bay-of-islands-2), same place under two names."
+  },
+  {
+   "name": "Taipa",
+   "views": 2074,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "One source; a beach settlement on a bay whose beaches are kept separately (Coopers Beach, Mangonui): no distinct sight."
+  },
+  {
+   "name": "Omapere",
+   "views": 2037,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "One source; adjacent to Opononi and Hokianga Harbour, which are kept: near-duplicate."
+  },
+  {
+   "name": "Motuarohia (Roberton Island)",
+   "views": 1923,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: DOC recreation reserve; popular cruise stop with the Roberton Island track and snorkel trail, Bay of Islands highlight. Against: one source, boat-only, overlaps Urupukapuka."
+  },
+  {
+   "name": "Ripirō Beach",
+   "views": 1874,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia and OSM only; no visitor-oriented source names it."
+  },
+  {
+   "name": "Moturua Island",
+   "views": 1477,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "One source; boat-only island that overlaps Urupukapuka and Motuarohia."
+  },
+  {
+   "name": "Lake Ōmāpere",
+   "views": 1408,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Local lake used for swimming and boating, one source, no distinct draw."
+  },
+  {
+   "name": "Cavalli Islands",
+   "views": 1313,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "No landing; seen from Matauri Bay (kept) or by operator: the place is reached by an operator."
+  },
+  {
+   "name": "Whatuwhiwhi",
+   "views": 1257,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "One source; village on the Tokerau/Karikari beaches already kept: near-duplicate."
+  },
+  {
+   "name": "Whangārei Harbour Marine Reserve",
+   "views": 1145,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A harbour-wide marine reserve with no specific place to visit."
+  },
+  {
+   "name": "Te Waimate Mission",
+   "views": 1062,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "One source; limited opening, overlaps the Kerikeri mission sites."
+  },
+  {
+   "name": "Cape Brett Lighthouse",
+   "views": 841,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "The end point of the Cape Brett Track, part of that spot."
+  },
+  {
+   "name": "Māngungu Mission",
+   "views": 715,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Limited opening, small heritage house."
+  },
+  {
+   "name": "Mount Tutamoe",
+   "views": 653,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "One source; rarely visited summit."
+  },
+  {
+   "name": "Tokatoka Scenic Reserve",
+   "views": 591,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "One source; local reserve."
+  },
+  {
+   "name": "Lake Ngatu",
+   "views": 528,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "One source; local lake."
+  },
+  {
+   "name": "St James Church, Kerikeri",
+   "views": 520,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A wooden church seen from outside; exterior-only heritage building."
+  },
+  {
+   "name": "Butler Point Whaling Museum",
+   "views": 448,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Appointment-only, so not there whenever a visitor arrives."
+  },
+  {
+   "name": "Motukawanui Island",
+   "views": 438,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "One source; remote hut island, no visitor draw."
+  },
+  {
+   "name": "Waro Limestone Scenic Reserve",
+   "views": 435,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "One source; small roadside reserve."
+  },
+  {
+   "name": "Waewaetorea Island",
+   "views": 342,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Recreation reserve island with no visitor information; one weak source."
+  },
+  {
+   "name": "Clendon House",
+   "views": 292,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Limited opening days, small house; not there whenever a visitor arrives."
+  },
+  {
+   "name": "Matakohe Post Office",
+   "views": 130,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Heritage post office seen only from the road. Match to the Kauri Museum was by proximity and a different place."
+  },
+  {
+   "name": "Herekino Forest",
+   "views": 111,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A forest with a walkway but no specific draw."
+  },
+  {
+   "name": "Taumarumaru Scenic Reserve",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Local reserve; its pa walk duplicates Rangikapiti Pa next door."
+  },
+  {
+   "name": "Manginangina Kauri Walk",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "A walk within the Puketi and Omahuta Forests spot: part of larger spot."
+  },
+  {
+   "name": "Omahuta Kauri Sanctuary",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Part of the Puketi and Omahuta Forests candidate. needs_coordinates"
+  }
+ ],
+ "strongest_outsiders": {
+  "note": "Candidates outside the 75% reach of every EXISTING destination (bay-of-islands, whangarei, cape-reinga, waipoua-forest), strongest by views; cape-reinga is measured at the recommended 50 km span: at its current 150 km span it numerically swallows Kaitaia and Doubtless Bay, which are not reached from Cape Reinga.",
+  "top": [
+   {
+    "name": "Kermadec Islands",
+    "views": 43212,
+    "counted_sources": 1,
+    "verdict": "reject",
+    "disposition": "left out",
+    "why": "Permit-only DOC visits, remote; not a visitor destination."
+   },
+   {
+    "name": "Ninety Mile Beach",
+    "views": 20062,
+    "counted_sources": 3,
+    "verdict": "keep",
+    "disposition": "standalone (existing cape-reinga-3 re-homed)",
+    "why": "Existing; kept. Main visitor access point for placement: Ahipara (south end, 4WD/horse access) or Hukatere/Waipapakauri near Kaitaia; Te Paki Stream is only the"
+   },
+   {
+    "name": "Kaitaia",
+    "views": 17407,
+    "counted_sources": 2,
+    "verdict": "keep",
+    "disposition": "proposed destination kaitaia",
+    "why": "Kept: visitor source names it and there is something to do for a half hour or more."
+   },
+   {
+    "name": "Ahipara",
+    "views": 5691,
+    "counted_sources": 1,
+    "verdict": "keep",
+    "disposition": "spot of proposed kaitaia (kaitaia-2)",
+    "why": "Southern access point of Ninety Mile Beach."
+   },
+   {
+    "name": "Mangōnui",
+    "views": 4837,
+    "counted_sources": 3,
+    "verdict": "keep",
+    "disposition": "spot of proposed doubtless-bay (doubtless-bay-1)",
+    "why": "Kept: visitor source names it and there is something to do for a half hour or more."
+   },
+   {
+    "name": "Karikari Peninsula",
+    "views": 4129,
+    "counted_sources": 2,
+    "verdict": "reject",
+    "disposition": "left out",
+    "why": "An area composed of Tokerau Beach, Maitai Bay and others, kept separately: near-duplicate."
+   },
+   {
+    "name": "Coopers Beach",
+    "views": 2962,
+    "counted_sources": 2,
+    "verdict": "keep",
+    "disposition": "spot of proposed doubtless-bay (doubtless-bay-4) - HELD for photo",
+    "why": "Challenged as near-duplicate of Mangonui/Doubtless Bay; kept as a named beach in two sources."
+   },
+   {
+    "name": "Doubtless Bay",
+    "views": 2409,
+    "counted_sources": 2,
+    "verdict": "reject",
+    "disposition": "left out",
+    "why": "An area whose stops (Mangonui, Coopers Beach, Rangikapiti) are kept separately: near-duplicate."
+   },
+   {
+    "name": "Taipa",
+    "views": 2074,
+    "counted_sources": 1,
+    "verdict": "reject",
+    "disposition": "left out",
+    "why": "One source; a beach settlement on a bay whose beaches are kept separately (Coopers Beach, Mangonui): no distinct sight."
+   },
+   {
+    "name": "Taupō Bay",
+    "views": 2063,
+    "counted_sources": 1,
+    "verdict": "keep",
+    "disposition": "spot of proposed whangaroa (whangaroa-2)",
+    "why": "One source, second-tier beach; kept."
+   },
+   {
+    "name": "Ripirō Beach",
+    "views": 1874,
+    "counted_sources": 0,
+    "verdict": "reject",
+    "disposition": "left out",
+    "why": "Wikipedia and OSM only; no visitor-oriented source names it."
+   },
+   {
+    "name": "Whatuwhiwhi",
+    "views": 1257,
+    "counted_sources": 1,
+    "verdict": "reject",
+    "disposition": "left out",
+    "why": "One source; village on the Tokerau/Karikari beaches already kept: near-duplicate."
+   },
+   {
+    "name": "Tokerau Beach",
+    "views": 1142,
+    "counted_sources": 1,
+    "verdict": "keep",
+    "disposition": "spot of proposed doubtless-bay (doubtless-bay-2)",
+    "why": "Kept: visitor source names it and there is something to do for a half hour or more."
+   },
+   {
+    "name": "Lake Ngatu",
+    "views": 528,
+    "counted_sources": 1,
+    "verdict": "reject",
+    "disposition": "left out",
+    "why": "One source; local lake."
+   },
+   {
+    "name": "Butler Point Whaling Museum",
+    "views": 448,
+    "counted_sources": 2,
+    "verdict": "reject",
+    "disposition": "left out",
+    "why": "Appointment-only, so not there whenever a visitor arrives."
+   }
+  ]
+ },
+ "review_list": [
+  {
+   "name": "Cable Bay",
+   "views": 0,
+   "counted_sources": 1,
+   "case": "For: giant ice cream sign at the store named by the tourism board (Ohakune Carrot-type roadside icon). Against: one source, a ten-minute stop, point approximate."
+  },
+  {
+   "name": "Kohukohu",
+   "views": 5282,
+   "counted_sources": 2,
+   "case": "For: two sources (Wikivoyage Kohukohu and Hokianga), historic village, car ferry to Rawene. Against: the draw is the journey (ferry, dunes road); its gallery is rejected; little to do for 30 min. Gateway village, review."
+  },
+  {
+   "name": "Waipu",
+   "views": 11711,
+   "counted_sources": 1,
+   "case": "For: Waipu Museum (Scottish migration), DOC Waipu area page, a Waipu Caves base. Against: one source, small town; caves kept separately."
+  },
+  {
+   "name": "Whananaki",
+   "views": 3095,
+   "counted_sources": 1,
+   "case": "For: DOC page; one of the longest foot bridges in the southern hemisphere, Otamure Bay track. Against: one source, a brief stop."
+  },
+  {
+   "name": "Rangihoua Heritage Park",
+   "views": 0,
+   "counted_sources": 1,
+   "case": "For: DOC heritage park, site of the first mission station and Marsden Cross, nationally significant. Against: one counted source, few remains; the cross is itself a minor memorial."
+  },
+  {
+   "name": "Te Paki Coastal Track",
+   "views": 0,
+   "counted_sources": 1,
+   "case": "For: DOC multi-day coastal tramp (Hump Ridge-type), Te Paki reserve. Against: one counted source in the checker pack; verify DOC track page; overlaps Cape Reinga and Tapotupotu Bay."
+  },
+  {
+   "name": "Kawakawa Bay of Islands Vintage Railway",
+   "views": 2440,
+   "counted_sources": 1,
+   "case": "For: heritage train on the Kawakawa line. Against: one counted source; an operator/ride rather than a place (no distinct destination station), a near-neighbour of the Hundertwasser Toilets."
+  },
+  {
+   "name": "Motuarohia (Roberton Island)",
+   "views": 1923,
+   "counted_sources": 1,
+   "case": "For: DOC recreation reserve; popular cruise stop with the Roberton Island track and snorkel trail, Bay of Islands highlight. Against: one source, boat-only, overlaps Urupukapuka."
+  },
+  {
+   "name": "Whangamumu Whaling Station",
+   "views": 0,
+   "counted_sources": 1,
+   "case": "For: DOC page names it as a visit; ruins on a coastal walk. Against: one source, long walk to ruins; no coordinates (needs DOC/OSM)."
+  }
+ ],
+ "benchmark": {
+  "Ninety Mile Beach standalone, not under Cape Reinga": "PASS - existing_fixes re-homes cape-reinga-3 as standalone at its Ahipara end (OSM relation 2441160)",
+  "Hundertwasser Toilets present": "PASS - bay-of-islands-7, kept",
+  "Kauri Museum present": "PASS - standalone kauri-museum, kept",
+  "Hundertwasser Art Centre / Whangarei Falls etc. retained": "PASS",
+  "Gateway village whose draw is the journey sent to review (Kohukohu)": "PASS - review",
+  "Operator/vehicle not a spot (Kawakawa railway)": "PASS - review, not placed",
+  "Out of scope for this region": "Red Rocks, Kapiti Island, Lake Coleridge, Sumner/Godley Head/Lyttelton, Birdlings Flat, Paradise, Hump Ridge, St Kilda, Ohakune Carrot, TSS Earnslaw and Queen Mary Hospital/Turanga/Bridge of Remembrance are not Northland places; negative benchmarks of the kind (Christ Church Russell exterior-only, Clendon House limited opening, Butler Point by appointment, Footprints of Kupe show) were rejected."
+ },
+ "fairness_verdict": "PASS if every stronger_left_out entry carries a concrete What-qualifies reason: all do (one source with no visit, area near-duplicate, part of a larger spot, exterior-only, appointment-only, operator/show, permit-only, or no counted source)."
+}

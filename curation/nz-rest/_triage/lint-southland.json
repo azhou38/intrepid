@@ -1,0 +1,82 @@
+{
+ "generated": "2026-10-18T03:31:51.610Z",
+ "scope": {
+  "region": "southland"
+ },
+ "issues": [
+  {
+   "kind": "spot",
+   "id": "fiordland-1",
+   "name": "Milford Sound",
+   "checks": [
+    {
+     "check": "no-ticket",
+     "detail": "charges but has no ticketUrl"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "fiordland-2",
+   "name": "Doubtful Sound",
+   "checks": [
+    {
+     "check": "no-ticket",
+     "detail": "charges but has no ticketUrl"
+    },
+    {
+     "check": "wiki",
+     "detail": "redirects to \"Doubtful Sound / Patea\" — set `wiki` to it, or check it's this place"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "fiordland-5",
+   "name": "Te Anau Glowworm Caves",
+   "checks": [
+    {
+     "check": "ticketUrl",
+     "detail": "title doesn't name the place (\"RealNZ | The Most Spectacular Tours in New Zealand\")"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "fiordland-14",
+   "name": "Bowen Falls",
+   "checks": [
+    {
+     "check": "no-ticket",
+     "detail": "no cost and not free: research the price and the official site"
+    },
+    {
+     "check": "ticketUrl",
+     "detail": "title doesn't name the place (\"Milford Road/Milford Sound area: Fiordland National Park\")"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "stewart-island-2",
+   "name": "Rakiura Track",
+   "checks": [
+    {
+     "check": "ticketUrl",
+     "detail": "dead (404)"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "hump-ridge-track",
+   "name": "Hump Ridge Track",
+   "checks": [
+    {
+     "check": "no-ticket",
+     "detail": "no cost and not free: research the price and the official site"
+    }
+   ]
+  }
+ ]
+}

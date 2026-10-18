@@ -1,0 +1,524 @@
+{
+ "region": "marlborough",
+ "places": [
+  {
+   "name": "Anakiwa",
+   "action": "spot",
+   "destination": "marlborough-sounds",
+   "id": "marlborough-sounds-8",
+   "coordinates": {
+    "latitude": -41.26444444,
+    "longitude": 173.91277778
+   },
+   "coordinates_source": "wikipedia:Anakiwa (settlement coordinates; a trailhead/wharf point to be confirmed by Pipeline C)",
+   "reason": "Within ~15 km of the Sounds centre (span 60 km); reached from Picton/Havelock and as the Queen Charlotte Track end. Skeptic keep.",
+   "category": "nature",
+   "icon": "🏖️",
+   "bio": "The Grove Arm bay where the Queen Charlotte Track finishes, with swimming and a water-taxi pickup.",
+   "views": 2406,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Marlborough_Sounds"
+   ],
+   "wiki": "Anakiwa",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "photo": {
+    "file": "File:Anakiwa, New Zealand.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Anakiwa,_New_Zealand.jpg",
+    "width": 2560
+   },
+   "status": "ready for Pipeline C research",
+   "coordinates_verify": "Wikipedia settlement point; confirm track end car park / wharf."
+  },
+  {
+   "name": "Snout Walkway",
+   "action": "spot",
+   "destination": "marlborough-sounds",
+   "id": "marlborough-sounds-9",
+   "coordinates": {
+    "latitude": -41.2506,
+    "longitude": 174.0486
+   },
+   "coordinates_source": "wikivoyage:Picton (New Zealand) (named walkway point)",
+   "reason": "About 13 km from the Sounds centre; a Picton day walk. Skeptic keep.",
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "A bush-covered peninsula walk between Picton and Waikawa Bay, with free tracks from a few minutes to 3.5 hours.",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Picton_(New_Zealand)",
+    "https://en.wikivoyage.org/wiki/Marlborough_Sounds"
+   ],
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": true,
+   "costMin": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "photo": {
+    "file": "File:The Snout 01.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:The_Snout_01.jpg",
+    "width": 2994
+   },
+   "status": "ready for Pipeline C research",
+   "coordinates_verify": "Wikivoyage point; confirm trailhead (Waikawa Bay end vs Picton end)."
+  },
+  {
+   "name": "Nydia Track",
+   "action": "spot",
+   "destination": "marlborough-sounds",
+   "id": "marlborough-sounds-10",
+   "coordinates": {
+    "latitude": -41.2058817,
+    "longitude": 173.7808373
+   },
+   "coordinates_source": "osm:nominatim highway/path (a point on the path; trailhead at Kaiuma Bay to be confirmed)",
+   "reason": "About 22 km from the Sounds centre, reached from Havelock. Skeptic keep, HELD for a photo.",
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "A 2-day track between Kaiuma Bay and Duncan Bay in Tennyson Inlet, reached by water taxi or mail boat from Havelock.",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Havelock_(New_Zealand)",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/pelorus-and-kenepuru-sounds-area/things-to-do/tracks/nydia-track/"
+   ],
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "photo": null,
+   "status": "held: needs a photo",
+   "photo_note": "No passing Commons photo: only Tennyson Inlet boat views (not the track) and an Openverse TrailSource Flickr shot of a grassy hillside track (1024x768, CC BY) that is not recognisable as the Nydia Track. Needs an official/DOC photo or the owner.",
+   "coordinates_verify": "OSM path point; use the Kaiuma Bay or Duncan Bay trailhead from DOC."
+  },
+  {
+   "name": "Wairau Lagoons",
+   "action": "spot",
+   "destination": "blenheim",
+   "id": "blenheim-4",
+   "coordinates": {
+    "latitude": -41.5331544,
+    "longitude": 174.0815291
+   },
+   "coordinates_source": "osm:nominatim boundary/protected_area (centroid; walkway car park to be confirmed)",
+   "reason": "About 10 km from Blenheim's centre (span 35 km). DOC Wairau Lagoons Walkway plus Wikivoyage Wairau Bar entry. Skeptic keep.",
+   "category": "nature",
+   "icon": "🦆",
+   "bio": "A walkway and boardwalks over the salt marsh and lagoons at the Wairau River mouth, good for birdwatching.",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/blenheim-area/things-to-do/tracks/wairau-lagoons-walkway/"
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": true,
+   "costMin": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "photo": {
+    "file": "File:Wetland at Wairau Lagoons Walkway.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Wetland_at_Wairau_Lagoons_Walkway.jpg",
+    "width": 4896
+   },
+   "status": "ready for Pipeline C research",
+   "coordinates_verify": "Protected-area centroid; move to the walkway car park.",
+   "hours_source": "candidate verdict: DOC free, always open (confirm in research)"
+  },
+  {
+   "name": "Whites Bay",
+   "action": "spot",
+   "destination": "blenheim",
+   "id": "blenheim-5",
+   "coordinates": {
+    "latitude": -41.3875956,
+    "longitude": 174.058296
+   },
+   "coordinates_source": "osm:nominatim natural/bay (centroid, likely in water; replace with the beach/car park)",
+   "reason": "About 16 km from Blenheim's centre. Two counted sources (DOC Rarangi-Whites Bay track, Wikivoyage). Skeptic keep.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A sheltered bay and beach on the coast north of Blenheim with a DOC campsite, the region's best sea swimming per Wikivoyage.",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/blenheim-area/things-to-do/tracks/rarangi-baywhites-bay-track/"
+   ],
+   "wiki": "Whites Bay",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "photo": {
+    "file": "File:Whites Beach, Marlborough Region, New Zealand 06.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Whites_Beach,_Marlborough_Region,_New_Zealand_06.jpg",
+    "width": 5377
+   },
+   "status": "ready for Pipeline C research",
+   "coordinates_verify": "Candidate point is a natural/bay centroid. A beach needs an OSM natural/beach or its own Wikipedia article: look up the beach/car park point before applying."
+  },
+  {
+   "name": "Highfield Estate",
+   "action": "spot",
+   "destination": "blenheim",
+   "id": "blenheim-6",
+   "coordinates": {
+    "latitude": -41.52888,
+    "longitude": 173.83687
+   },
+   "coordinates_source": "wikivoyage:Blenheim (New Zealand) (Brookby Road winery)",
+   "reason": "About 10 km from Blenheim's centre. Wikivoyage singles out the tower view. Skeptic keep, HELD for a photo.",
+   "category": "entertainment",
+   "icon": "🍷",
+   "bio": "A Brookby Road winery whose tower looks over the lower Wairau River, with a cellar door.",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Blenheim_(New_Zealand)"
+   ],
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "photo": null,
+   "status": "held: needs a photo",
+   "photo_note": "No Commons or Openverse photo of Highfield or its tower found.",
+   "note": "Wikivoyage gave summer hours only; no times recorded."
+  },
+  {
+   "name": "Brancott Estate",
+   "action": "spot",
+   "destination": "blenheim",
+   "id": "blenheim-7",
+   "coordinates": {
+    "latitude": -41.54377,
+    "longitude": 173.84858
+   },
+   "coordinates_source": "wikivoyage:Blenheim (New Zealand) (Brancott Road visitor centre)",
+   "reason": "About 11 km from Blenheim's centre. Wikivoyage lists the visitor facility. Skeptic keep, HELD for a photo.",
+   "category": "entertainment",
+   "icon": "🍷",
+   "bio": "The flagship visitor centre where Marlborough Sauvignon Blanc began, with a restaurant, theatre and tastings.",
+   "views": 2581,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Blenheim_(New_Zealand)"
+   ],
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "photo": null,
+   "status": "held: needs a photo",
+   "photo_note": "Only Commons file is Brancott Estate.jpg, a 10234x2993 vineyard strip: the hero slice shows vine rows only, not the visitor centre, so fails check 2/crop. Needs another photo."
+  },
+  {
+   "name": "Mount Richmond Forest Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "mount-richmond-forest-park",
+   "coordinates": {
+    "latitude": -41.47,
+    "longitude": 173.35
+   },
+   "coordinates_source": "wikipedia:Mount Richmond Forest Park (park centre; a trailhead such as Pelorus Bridge/Rai Valley access to be confirmed)",
+   "reason": "About 67 km from Marlborough Sounds' centre and 51 km from Blenheim's, outside both spans (not a national park, so no destination of its own). Standalone.",
+   "category": "nature",
+   "icon": "🌲",
+   "bio": "A forest park in the Richmond Range with walks, huts and the Te Araroa route.",
+   "views": 818,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/mount-richmond-forest-park/things-to-do/tracks/forks-riverside-walk/"
+   ],
+   "wiki": "Mount Richmond Forest Park",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": true,
+   "costMin": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "photo": {
+    "file": "File:Mts Rintoul, Richmond, Fell and Fishtail from Gibbs Spur - panoramio.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Mts_Rintoul,_Richmond,_Fell_and_Fishtail_from_Gibbs_Spur_-_panoramio.jpg",
+    "width": 1024
+   },
+   "status": "ready for Pipeline C research",
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "coordinates_verify": "Park centroid; replace with a main visitor access point.",
+   "hero_note": "photo is 1024 px (below the 1280 target), sky-heavy"
+  },
+  {
+   "name": "Marfells Beach",
+   "action": "standalone",
+   "destination": null,
+   "id": "marfells-beach",
+   "coordinates": {
+    "latitude": -41.724876,
+    "longitude": 174.2057564
+   },
+   "coordinates_source": "osm:nominatim natural/beach",
+   "reason": "About 31 km from Blenheim's centre, outside its span; reached from SH1 near Seddon. Standalone. HELD for a photo.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A remote east-coast beach with a DOC campsite, the start of the route to Cape Campbell.",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/marfells-beach-area/things-to-do/tracks/marfells-beach-cape-campbell-route/"
+   ],
+   "wiki": "Marfells Beach",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "photo": null,
+   "status": "held: needs a photo",
+   "photo_note": "Commons and Openverse have no photo of Marfells Beach (only katipo/earwig/shell macros); hold for an official photo.",
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland"
+  },
+  {
+   "name": "Lake Grassmere",
+   "action": "standalone",
+   "destination": null,
+   "id": "lake-grassmere",
+   "coordinates": {
+    "latitude": -41.73333333,
+    "longitude": 174.16666667
+   },
+   "coordinates_source": "wikipedia:Lake Grassmere (lake centroid, in water; use the SH1 viewpoint)",
+   "reason": "About 30 km from Blenheim's centre, outside its span. Standalone. Skeptic upgraded from review.",
+   "category": "nature",
+   "icon": "🌸",
+   "bio": "A solar salt works beside State Highway 1 whose evaporation ponds turn pink, with birdlife.",
+   "views": 3425,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Marlborough_(New_Zealand)"
+   ],
+   "wiki": "Lake Grassmere",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": true,
+   "costMin": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "photo": {
+    "file": "File:Solar salt Grassmere.NZ (12130327085).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Solar_salt_Grassmere.NZ_(12130327085).jpg",
+    "width": 1896
+   },
+   "status": "ready for Pipeline C research",
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "coordinates_verify": "Wikipedia point is the lake; set it to the roadside lookout/pull-out on SH1."
+  },
+  {
+   "name": "Molesworth Station",
+   "action": "standalone",
+   "destination": null,
+   "id": "molesworth-station",
+   "coordinates": {
+    "latitude": -42.09024,
+    "longitude": 173.1924
+   },
+   "coordinates_source": "wikipedia:Molesworth Station (station point; Acheron Road entrance/Acheron lookout to be confirmed from DOC)",
+   "reason": "Far inland, about 75 km from Blenheim and Kaikoura; outside every span. Standalone. Skeptic keep.",
+   "category": "nature",
+   "icon": "🐄",
+   "bio": "New Zealand's largest farm, a high-country recreation reserve crossed by the Acheron Road with lookouts, huts and campsites.",
+   "views": 7017,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/molesworth-reserve/things-to-do/tracks/acheron-lookout-loop-walk/"
+   ],
+   "wiki": "Molesworth Station",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "photo": {
+    "file": "File:Molesworth east near Smokey Stream.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Molesworth_east_near_Smokey_Stream.jpg",
+    "width": 5472
+   },
+   "status": "ready for Pipeline C research",
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "coordinates_verify": "Replace with a DOC entrance or lookout point.",
+   "note": "Seasonal opening and road tolls to be researched."
+  },
+  {
+   "name": "Rainbow Skifield",
+   "action": "standalone",
+   "destination": null,
+   "id": "rainbow-ski-area",
+   "coordinates": {
+    "latitude": -41.8756,
+    "longitude": 172.86095
+   },
+   "coordinates_source": "wikipedia:Rainbow Ski Area",
+   "reason": "Roughly 75 km from Blenheim, outside its span; the nearest destination (Nelson Lakes) is judged by the app. Standalone. HELD for a photo.",
+   "category": "entertainment",
+   "icon": "⛷️",
+   "bio": "A seasonal ski field near St Arnaud in the Nelson Lakes region, listed under Marlborough.",
+   "views": 918,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Marlborough_(New_Zealand)"
+   ],
+   "wiki": "Rainbow Ski Area",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "photo": null,
+   "status": "held: needs a photo",
+   "photo_note": "No Commons or Openverse photo of Rainbow (geosearch returns only plants and satellite images).",
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "name_note": "Name shown as 'Rainbow Ski Area' to match its Wikipedia title; consider that over 'Rainbow Skifield'."
+  }
+ ],
+ "existing_fixes": [
+  {
+   "id": "blenheim-3",
+   "name": "Wither Hills Farm Park",
+   "fix": "None: skeptic downgraded to review (not removed here); listed in the review list for the owner."
+  },
+  {
+   "id": "marlborough-sounds-4",
+   "name": "Edwin Fox",
+   "fix": "Optional rename to match the candidate/Wikivoyage 'Edwin Fox Maritime Museum'? Keep the name as is (Wikipedia title 'Edwin Fox', photo key); no move needed."
+  },
+  {
+   "id": "marlborough-sounds-5",
+   "name": "Pelorus Bridge Scenic Reserve",
+   "fix": "No move: about 42 km from the Sounds centre, inside 75% of the 60 km span (45 km), but near the edge; keep, and consider widening the span or re-centring if more western spots are added. Coordinates (-41.297, 173.573) are 3-decimal; Pipeline C to confirm against DOC."
+  },
+  {
+   "id": "marlborough-sounds-1",
+   "name": "Queen Charlotte Track",
+   "fix": "No move. Coordinates (-41.16, 174.12) are a mid-track point, 2.5 km from Wikipedia's; acceptable for a linear feature."
+  }
+ ],
+ "existing_kept_unchanged": [
+  "Picton (marlborough-sounds-6)",
+  "Havelock (marlborough-sounds-7)",
+  "Queen Charlotte Track (-1)",
+  "Ship Cove (-2)",
+  "Motuara Island (-3)",
+  "Edwin Fox (-4)",
+  "Pelorus Bridge Scenic Reserve (-5)",
+  "Omaka Aviation Heritage Centre (blenheim-1)",
+  "Cloudy Bay Vineyards (blenheim-2)"
+ ],
+ "blenheim_destination": {
+  "name": "Blenheim",
+  "action": "already a destination (id blenheim)",
+  "photo_suggestion": null,
+  "note": "The skeptic accepted File:Seymour Square, Blenheim, New Zealand.jpg only as a spot-style photo; the existing destination header is 'Wairau Valley vineyards in Marlborough, New Zealand.jpg' (imageOverrides.ts) so nothing to apply."
+ },
+ "new_destinations": [],
+ "coordinate_corrections": [
+  {
+   "name": "Pollard Park",
+   "wrong": {
+    "latitude": 53.79,
+    "longitude": -1.74,
+    "where": "Barkerend, UK"
+   },
+   "correct": {
+    "latitude": -41.5073,
+    "longitude": 173.9493
+   },
+   "source": "wikivoyage:Blenheim (New Zealand)",
+   "status": "review (not placed); use the correct point if the owner approves"
+  }
+ ],
+ "ids_checked": "git history holds marlborough-sounds-1..7 and blenheim-1..3 only; new ids continue at marlborough-sounds-8 and blenheim-4. Standalone slugs checked against destinations/spots: none collide (grep of src/data)."
+}

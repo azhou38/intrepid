@@ -1,0 +1,1340 @@
+{
+ "region": "waikato",
+ "spots": [
+  {
+   "name": "Thames",
+   "action": "spot",
+   "destination": "coromandel",
+   "id": "coromandel-6",
+   "coordinates": {
+    "latitude": -37.13839,
+    "longitude": 175.5405
+   },
+   "coordinates_source": "wikipedia:Thames, New Zealand (town point; the spot is the town)",
+   "reason": "39 km from the Coromandel Peninsula centre, inside its 60 km radius; a Thames-Coromandel town and gateway, folded into the existing peninsula destination (overlap rule) rather than a second destination.",
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "A gold-rush town and the largest on the peninsula, the gateway to the Kauaeranga Valley and the Pinnacles.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 16365,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Thames_(New_Zealand)",
+    "https://en.wikivoyage.org/wiki/Coromandel_Peninsula"
+   ],
+   "photo": {
+    "file": "Thames, New Zealand.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Thames,_New_Zealand.jpg",
+    "width": 4794,
+    "licence": "CC BY 3.0"
+   },
+   "status": "ready for Pipeline C research",
+   "needs_research": [],
+   "wiki": "Thames, New Zealand",
+   "distance_km_from_destination": 39.0,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Whitianga",
+   "action": "spot",
+   "destination": "coromandel",
+   "id": "coromandel-7",
+   "coordinates": {
+    "latitude": -36.833056,
+    "longitude": 175.699722
+   },
+   "coordinates_source": "Wikivoyage Waikato listing (town point; the spot is the town)",
+   "reason": "On Mercury Bay, 4 km from the peninsula centre; the base for Cathedral Cove boats, a town that does not make a separate destination beside Coromandel Peninsula.",
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "A harbour town on Mercury Bay that is the base for boat tours to Cathedral Cove and for nearby beaches.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 12750,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Whitianga"
+   ],
+   "photo": {
+    "file": "Whitianga from Hills.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Whitianga_from_Hills.JPG",
+    "width": 2576,
+    "licence": "CC BY-SA 4.0"
+   },
+   "status": "ready for Pipeline C research",
+   "needs_research": [],
+   "wiki": "Whitianga",
+   "distance_km_from_destination": 4.5,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Kauaeranga Valley",
+   "action": "spot",
+   "destination": "coromandel",
+   "id": "coromandel-8",
+   "coordinates": {
+    "latitude": -37.12127,
+    "longitude": 175.63006
+   },
+   "coordinates_source": "OpenStreetMap way 222189179 (Kauaeranga Visitor Centre, DOC, at the valley entrance)",
+   "reason": "34 km from the peninsula centre, reached from Thames; part of Coromandel Forest Park inside the peninsula destination.",
+   "category": "nature",
+   "icon": "🌲",
+   "bio": "A forest-park valley east of Thames with campgrounds, kauri trails and a DOC visitor centre at its entrance, and the start of the route to the Pinnacles.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/coromandel/places/coromandel-forest-park/",
+   "views": 881,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Thames",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/coromandel/places/coromandel-forest-park/"
+   ],
+   "photo": {
+    "file": "Kauaeranga River at Hoffmans Pool Nature Walk.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Kauaeranga_River_at_Hoffmans_Pool_Nature_Walk.jpg",
+    "width": 3072,
+    "licence": "CC BY-SA 2.0"
+   },
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "wiki": "Kauaeranga Valley",
+   "note": "DOC Coromandel Forest Park page: https://www.doc.govt.nz/parks-and-recreation/places-to-go/coromandel/places/coromandel-forest-park/",
+   "distance_km_from_destination": 34.1,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Pinnacles Track",
+   "action": "spot",
+   "destination": "coromandel",
+   "id": "coromandel-9",
+   "coordinates": null,
+   "coordinates_source": "none yet: OSM has Pinnacles Hut (way 216092584, -37.04203, 175.71267) but that is the hut, not the trailhead; take the DOC trailhead car park at the Kauaeranga end",
+   "reason": "Starts in the Kauaeranga Valley, inside the peninsula span, reached from Thames.",
+   "category": "hike",
+   "icon": "⛰️",
+   "bio": "A steep DOC track up the Kauaeranga Valley to the Pinnacles and their hut, done as a long day or overnight walk.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 6,
+   "visitHoursMax": 9,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/coromandel/places/coromandel-forest-park/things-to-do/pinnacles-hut/",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/coromandel/places/coromandel-forest-park/things-to-do/pinnacles-hut/"
+   ],
+   "photo": {
+    "file": "View near pinnacles hut coromandel.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:View_near_pinnacles_hut_coromandel.jpg",
+    "width": 3072,
+    "licence": "CC BY-SA 3.0"
+   },
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "coordinates",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Pauanui",
+   "action": "spot",
+   "destination": "coromandel",
+   "id": "coromandel-10",
+   "coordinates": {
+    "latitude": -37.01805556,
+    "longitude": 175.8625
+   },
+   "coordinates_source": "wikipedia:Pauanui (town point; the spot is the town)",
+   "reason": "23 km from the peninsula centre on the east coast; a town spot of the peninsula.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A coastal town on Tairua Harbour with a surf beach, waterways and bush tracks.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 6274,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Pauanui"
+   ],
+   "photo": {
+    "file": "Pauanui Beach 20170812 152104.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Pauanui_Beach_20170812_152104.jpg",
+    "width": 5312,
+    "licence": "CC BY 4.0"
+   },
+   "status": "ready for Pipeline C research",
+   "needs_research": [],
+   "wiki": "Pauanui",
+   "distance_km_from_destination": 23.2,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Tairua",
+   "action": "spot",
+   "destination": "coromandel",
+   "id": "coromandel-11",
+   "coordinates": {
+    "latitude": -37.006389,
+    "longitude": 175.848889
+   },
+   "coordinates_source": "Wikivoyage Waikato listing (town point; the spot is the town)",
+   "reason": "21 km from the peninsula centre; the base for Paku and Ocean Beach.",
+   "category": "beach",
+   "icon": "🏘️",
+   "bio": "A harbour and surf town on the east coast, the base for Paku and Ocean Beach.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 5421,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Tairua"
+   ],
+   "photo": {
+    "file": "NZ110415 Mount Paku 03.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:NZ110415_Mount_Paku_03.jpg",
+    "width": 2400,
+    "licence": "CC BY-SA 3.0"
+   },
+   "status": "ready for Pipeline C research",
+   "needs_research": [],
+   "wiki": "Tairua",
+   "distance_km_from_destination": 21.5,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Whangamatā",
+   "action": "spot",
+   "destination": "coromandel",
+   "id": "coromandel-12",
+   "coordinates": {
+    "latitude": -37.2,
+    "longitude": 175.86666667
+   },
+   "coordinates_source": "wikipedia:Whangamatā (town point; the spot is the town)",
+   "reason": "42 km from the peninsula centre, inside the 60 km radius; a surf town spot of the peninsula, not a destination beside it.",
+   "category": "beach",
+   "icon": "🏄",
+   "bio": "A surf town with a long beach and a harbour, counted among the country's top surf locations by Wikivoyage.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 9624,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Whangamata"
+   ],
+   "photo": {
+    "file": "Whangamata01.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Whangamata01.jpg",
+    "width": 3456,
+    "licence": "CC BY 2.0"
+   },
+   "status": "ready for Pipeline C research",
+   "needs_research": [],
+   "wiki": "Whangamatā",
+   "distance_km_from_destination": 42.4,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Buffalo Beach",
+   "action": "spot",
+   "destination": "coromandel",
+   "id": "coromandel-13",
+   "coordinates": {
+    "latitude": -36.82598,
+    "longitude": 175.70319
+   },
+   "coordinates_source": "OpenStreetMap natural/beach way 90878845",
+   "reason": "Beside Whitianga, inside the peninsula span.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A 3 km sandy swimming beach beside Whitianga, named after HMS Buffalo, which was wrecked there in 1840.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Whitianga"
+   ],
+   "photo": {
+    "file": "Buffalo Beach, Whitianga.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Buffalo_Beach,_Whitianga.jpg",
+    "width": 1024,
+    "licence": "Public domain"
+   },
+   "status": "ready for Pipeline C research",
+   "needs_research": [],
+   "wiki": "Buffalo Beach (Whitianga)",
+   "distance_km_from_destination": 4.2,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Cooks Beach",
+   "action": "spot",
+   "destination": "coromandel",
+   "id": "coromandel-14",
+   "coordinates": {
+    "latitude": -36.83808,
+    "longitude": 175.742443
+   },
+   "coordinates_source": "Wikivoyage Whitianga listing (to be checked against an OSM natural/beach feature)",
+   "reason": "Across Mercury Bay from Whitianga, reached by ferry, inside the peninsula span.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A 3 km white-sand swimming beach across the harbour from Whitianga, reached by ferry.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 3683,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Whitianga"
+   ],
+   "photo": {
+    "file": "Cooks Beach from Shakespeare's Bluff (7087660367).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Cooks_Beach_from_Shakespeare%27s_Bluff_(7087660367).jpg",
+    "width": 2592,
+    "licence": "CC BY-SA 2.0"
+   },
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "coordinates"
+   ],
+   "wiki": "Cooks Beach",
+   "distance_km_from_destination": 1.1,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Paku",
+   "action": "spot",
+   "destination": "coromandel",
+   "id": "coromandel-15",
+   "coordinates": null,
+   "coordinates_source": "none yet: the Wikivoyage Tairua point (-37.0008, 175.8674) sits in the harbour; take the summit or track start from OSM/DOC",
+   "reason": "The Tairua headland peak, inside the peninsula span.",
+   "category": "hike",
+   "icon": "⛰️",
+   "bio": "The summit of a volcanic peak above Tairua and a former pā site, with views over the Pacific and the harbour.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Tairua"
+   ],
+   "photo": {
+    "file": "Mount Paku in Tairua.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Mount_Paku_in_Tairua.jpg",
+    "width": 4025,
+    "licence": "CC BY-SA 4.0"
+   },
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "coordinates"
+   ],
+   "hero_crop": {
+    "x": 0.45,
+    "y": 0.5
+   }
+  },
+  {
+   "name": "Opoutere Beach",
+   "action": "spot",
+   "destination": "coromandel",
+   "id": "coromandel-16",
+   "coordinates": {
+    "latitude": -37.1059,
+    "longitude": 175.88689
+   },
+   "coordinates_source": "OpenStreetMap natural/beach way 894154647",
+   "reason": "31 km from the peninsula centre on the east coast, reached from Tairua/Whangamatā.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A long east-coast beach reached by a DOC beach track near Tairua.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/coromandel/places/tairua-area/tracks/opoutere-beach-track/",
+   "views": 1100,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/coromandel/places/tairua-area/tracks/opoutere-beach-track/"
+   ],
+   "photo": {
+    "file": "Opoutere.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Opoutere.jpg",
+    "width": 5339,
+    "licence": "CC BY-SA 3.0"
+   },
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "wiki": "Opoutere",
+   "distance_km_from_destination": 33.0,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "The Waterworks",
+   "action": "spot",
+   "destination": "coromandel",
+   "id": "coromandel-17",
+   "coordinates": {
+    "latitude": -36.81651,
+    "longitude": 175.5386
+   },
+   "coordinates_source": "OpenStreetMap node 567549237 (tourism/attraction, The Waterworks)",
+   "reason": "19 km from the peninsula centre, 7 km from Coromandel town.",
+   "category": "entertainment",
+   "icon": "💧",
+   "bio": "A quirky park of water-powered inventions 7 km from Coromandel town.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Coromandel_Town"
+   ],
+   "photo": null,
+   "status": "held: needs a photo",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "wiki": "The Waterworks (Coromandel)",
+   "photo_note": "Only Commons file from the place is a cylinder-mower bicycle (Waiau Waterworks, a single exhibit); Openverse has a spider sculpture and people-on-rig. No wide view.",
+   "distance_km_from_destination": 18.9,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Ocean Beach (Tairua)",
+   "action": "spot",
+   "destination": "coromandel",
+   "id": "coromandel-18",
+   "coordinates": {
+    "latitude": -36.99103,
+    "longitude": 175.85792
+   },
+   "coordinates_source": "OpenStreetMap natural/beach way 90257426 (Tairua Ocean Beach)",
+   "reason": "Beside Tairua, inside the peninsula span.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A surf beach beside Tairua, good for surfing and sunbathing.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Tairua"
+   ],
+   "photo": null,
+   "status": "held: needs a photo",
+   "needs_research": [],
+   "photo_note": "No photo found that is demonstrably Ocean Beach rather than Tairua/Pauanui.",
+   "distance_km_from_destination": 20.3,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Cambridge",
+   "action": "spot",
+   "destination": "hamilton",
+   "id": "hamilton-5",
+   "coordinates": {
+    "latitude": -37.88333333,
+    "longitude": 175.46666667
+   },
+   "coordinates_source": "wikipedia:Cambridge, New Zealand (town point; the spot is the town)",
+   "reason": "About 20 km from Hamilton's centre, inside its 49 km radius (75% of 70 km span) and reached from Hamilton; heritage town with a Hamilton day-trip role.",
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "A leafy Waikato town of heritage buildings, close to the Maungatautari sanctuary.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 21245,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Cambridge_(New_Zealand)",
+    "https://www.waikatonz.com/places-to-go/"
+   ],
+   "photo": {
+    "file": "Cambridge clock tower.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Cambridge_clock_tower.jpg",
+    "width": 2017,
+    "licence": "CC BY 2.0"
+   },
+   "status": "ready for Pipeline C research",
+   "needs_research": [],
+   "wiki": "Cambridge, New Zealand",
+   "distance_km_from_destination": 19.6,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Hakarimata Summit Track",
+   "action": "spot",
+   "destination": "hamilton",
+   "id": "hamilton-6",
+   "coordinates": null,
+   "coordinates_source": "none yet: the Wikipedia point is the range centre; take the DOC track start in Hakarimata Scenic Reserve above Ngāruawāhia",
+   "reason": "About 19 km from Hamilton, a Hamilton day walk above Ngāruawāhia.",
+   "category": "hike",
+   "icon": "⛰️",
+   "bio": "A DOC summit track in Hakarimata Scenic Reserve above Ngāruawāhia, with a summit tower and views over the Waikato basin.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/waikato/places/hakarimata-scenic-reserve/",
+   "views": 1757,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/waikato/places/hakarimata-scenic-reserve/"
+   ],
+   "photo": {
+    "file": "Waikato basin from Hakarimata Summit.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Waikato_basin_from_Hakarimata_Summit.jpg",
+    "width": 4896,
+    "licence": "CC BY-SA 4.0"
+   },
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "coordinates",
+    "ticketUrl"
+   ],
+   "wiki": "Hakarimata Range"
+  },
+  {
+   "name": "Mount Pirongia",
+   "action": "spot",
+   "destination": "hamilton",
+   "id": "hamilton-7",
+   "coordinates": {
+    "latitude": -37.991077,
+    "longitude": 175.089243
+   },
+   "coordinates_source": "wikipedia:Mount Pirongia (summit point)",
+   "reason": "About 27 km from Hamilton; closer to Hamilton than to Raglan's 22.5 km radius limit, reached via Pirongia from Hamilton.",
+   "category": "hike",
+   "icon": "⛰️",
+   "bio": "A volcanic peak in Pirongia Forest Park with hiking tracks and summit views.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 4,
+   "visitHoursMax": 8,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/waikato/places/pirongia-forest-park/",
+   "views": 3766,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Pirongia",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/waikato/places/pirongia-forest-park/"
+   ],
+   "photo": {
+    "file": "Mount Pirongia.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Mount_Pirongia.jpg",
+    "width": 3703,
+    "licence": "CC BY 2.0"
+   },
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "wiki": "Mount Pirongia",
+   "distance_km_from_destination": 28.1,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Maungatautari",
+   "action": "spot",
+   "destination": "hamilton",
+   "id": "hamilton-8",
+   "coordinates": null,
+   "coordinates_source": "none yet: the Wikipedia point is the volcano summit; take the sanctuary visitor entrance",
+   "reason": "About 36 km from Hamilton, inside its radius; the sanctuary is reached from Cambridge/Hamilton.",
+   "category": "nature",
+   "icon": "🦜",
+   "bio": "A volcanic mountain fenced as a predator-free ecological island near Cambridge, where visitors can see native birds such as kaka.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 3387,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Cambridge_(New_Zealand)"
+   ],
+   "photo": null,
+   "status": "held: needs a photo",
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "wiki": "Maungatautari",
+   "photo_note": "No usable Commons photo: only the kaka (a bird), mushrooms/beetles, and a 640 px lead image; Openverse only a 1024 px fern. Needs the sanctuary website or a flickr CC photo."
+  },
+  {
+   "name": "Te Awamutu",
+   "action": "spot",
+   "destination": "hamilton",
+   "id": "hamilton-9",
+   "coordinates": {
+    "latitude": -38.01666667,
+    "longitude": 175.31666667
+   },
+   "coordinates_source": "wikipedia:Te Awamutu (town point; the spot is the town)",
+   "reason": "About 19 km from Hamilton, inside its radius; a town spot of Hamilton.",
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "A Waikato town known for its roses, with a local museum and the Te Uenuku carved post.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 21537,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Te_Awamutu",
+    "https://www.waikatonz.com/places-to-go/"
+   ],
+   "photo": null,
+   "status": "held: needs a photo",
+   "needs_research": [],
+   "wiki": "Te Awamutu",
+   "photo_note": "Commons/Openverse yield only churches, memorials and archive scans; no clear town photo.",
+   "distance_km_from_destination": 25.7,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Whale Bay",
+   "action": "spot",
+   "destination": "raglan",
+   "id": "raglan-5",
+   "coordinates": null,
+   "coordinates_source": "none yet: Whale Bay, New Zealand redirects to Raglan, so no own article; the Wikivoyage point is a surf-school address, not the bay; take an OSM natural/beach feature",
+   "reason": "Raglan's surf coast next to Manu Bay (raglan-1), a few km from Raglan, inside its span.",
+   "category": "beach",
+   "icon": "🏄",
+   "bio": "A surf bay near Raglan, named by Wikivoyage with Manu Bay as one of the area's surf beaches.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Raglan_(New_Zealand)"
+   ],
+   "photo": {
+    "file": "WhaleBay.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:WhaleBay.jpg",
+    "width": 994,
+    "licence": "CC BY 4.0"
+   },
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "coordinates"
+   ]
+  },
+  {
+   "name": "Te Kuiti Sheep Shearing Statue",
+   "action": "spot",
+   "destination": "waitomo",
+   "id": "waitomo-6",
+   "coordinates": null,
+   "coordinates_source": "none yet: the only point found is the Wikipedia Te Kuiti town point, which is not allowed for an attraction; take OSM or a source naming the statue",
+   "reason": "Te Kuiti is about 10 km from Waitomo, on the road to the caves, inside Waitomo's span.",
+   "category": "monument",
+   "icon": "🗿",
+   "bio": "A giant sheep-shearer statue in Te Kuiti, the sheep-shearing capital, and a photo stop on the road to Waitomo.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 12956,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Te_Kuiti"
+   ],
+   "photo": {
+    "file": "Giant sheep shearer statue in Te Kuiti.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Giant_sheep_shearer_statue_in_Te_Kuiti.jpg",
+    "width": 4160,
+    "licence": "Public domain"
+   },
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "coordinates"
+   ],
+   "hero_crop": {
+    "x": 0.5,
+    "y": 0.3
+   }
+  },
+  {
+   "name": "The Big Apple",
+   "action": "spot",
+   "destination": "waitomo",
+   "id": "waitomo-7",
+   "coordinates": {
+    "latitude": -38.260375,
+    "longitude": 175.110424
+   },
+   "coordinates_source": "Wikivoyage Waitomo listing (cafe address); Wikipedia gives a different point (-38.2444, 175.1826), so check",
+   "reason": "At Waitomo Caves, inside the Waitomo destination.",
+   "category": "landmark",
+   "icon": "🍎",
+   "bio": "A cafe topped by a giant apple statue at Waitomo Caves, a roadside photo stop.",
+   "hours": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 1770,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Waitomo"
+   ],
+   "photo": {
+    "file": "Big Apple Waitomo.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Big_Apple_Waitomo.jpg",
+    "width": 1280,
+    "licence": "CC BY-SA 3.0"
+   },
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "ticketUrl"
+   ],
+   "wiki": "The Big Apple (Waitomo)",
+   "hero_crop": {
+    "x": 0.25,
+    "y": 0.5
+   },
+   "distance_km_from_destination": 0.5,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Lake Taupō",
+   "action": "spot",
+   "destination": "taupo",
+   "id": "taupo-7",
+   "coordinates": {
+    "latitude": -38.80694444,
+    "longitude": 175.90777778
+   },
+   "coordinates_source": "wikipedia:Lake Taupō (lake centre; in the water, correct for a lake)",
+   "reason": "Lake centre about 19 km from Taupō's centre, inside its 37.5 km radius; Taupō is the lake's main base.",
+   "category": "nature",
+   "icon": "⛵",
+   "bio": "New Zealand's largest lake, the focus of Taupō's cruising, fishing, sailing and skydiving.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 54610,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Taupo"
+   ],
+   "photo": {
+    "file": "Lake Taupo Sunset2.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Lake_Taupo_Sunset2.jpg",
+    "width": 5535,
+    "licence": "CC BY-SA 2.0"
+   },
+   "status": "ready for Pipeline C research",
+   "needs_research": [],
+   "wiki": "Lake Taupō",
+   "distance_km_from_destination": 19.5,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Turangi",
+   "action": "spot",
+   "destination": "tongariro",
+   "id": "tongariro-7",
+   "coordinates": {
+    "latitude": -38.98888889,
+    "longitude": 175.80833333
+   },
+   "coordinates_source": "wikipedia:Tūrangi (town point; the spot is the town)",
+   "reason": "About 29 km from Tongariro's centre, inside its 45 km radius; the park's northern gateway town, so a spot of the park (not Taupō, whose 37.5 km radius it just misses).",
+   "category": "historic",
+   "icon": "🎣",
+   "bio": "A trout-fishing town at the south end of Lake Taupō and the northern gateway to Tongariro National Park.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 9334,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Turangi"
+   ],
+   "photo": {
+    "file": "Tongariro River (10).JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Tongariro_River_(10).JPG",
+    "width": 2592,
+    "licence": "CC BY 2.5"
+   },
+   "status": "ready for Pipeline C research",
+   "needs_research": [],
+   "wiki": "Tūrangi",
+   "distance_km_from_destination": 30.7,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Tongariro National Trout Centre",
+   "action": "spot",
+   "destination": "tongariro",
+   "id": "tongariro-8",
+   "coordinates": {
+    "latitude": -39.0189,
+    "longitude": 175.8087
+   },
+   "coordinates_source": "Wikivoyage Turangi listing (centre address)",
+   "reason": "In Turangi, a spot of Tongariro with the town.",
+   "category": "entertainment",
+   "icon": "🐟",
+   "bio": "A DOC-run free trout hatchery and freshwater aquarium beside the Tongariro River, open daily 10am to 3pm.",
+   "hours": "10:00 AM – 3:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Turangi"
+   ],
+   "photo": null,
+   "status": "held: needs a photo",
+   "needs_research": [
+    "hours"
+   ],
+   "wiki": "Tongariro National Trout Centre",
+   "photo_note": "Commons only has a hatchery pond (Feeding Pond at the Trout Hatchery, 2006) that is not a clear view of the centre; fails check 2/3.",
+   "note": "Wikivoyage Turangi: daily 10am-3pm; verify",
+   "distance_km_from_destination": 28.2,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Port Waikato",
+   "action": "standalone",
+   "destination": null,
+   "id": "port-waikato",
+   "coordinates": {
+    "latitude": -37.39,
+    "longitude": 174.729
+   },
+   "coordinates_source": "wikipedia:Port Waikato (settlement point; beach point to be checked against OSM natural/beach)",
+   "reason": "59 km from Hamilton and 44+ km from Raglan, outside every destination's span; reached on its own from Auckland/Waikato.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A coastal settlement and beach at the mouth of the Waikato River, listed by WaikatoNZ as a North Waikato place to go.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 4980,
+   "counted_sources": [
+    "https://www.waikatonz.com/places-to-go/"
+   ],
+   "photo": {
+    "file": "Sunset Beach, Port Waikato.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Sunset_Beach,_Port_Waikato.jpg",
+    "width": 5477,
+    "licence": "CC BY-SA 2.0"
+   },
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "coordinates"
+   ],
+   "wiki": "Port Waikato",
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland"
+  },
+  {
+   "name": "Te Aroha",
+   "action": "standalone",
+   "destination": null,
+   "id": "te-aroha",
+   "coordinates": {
+    "latitude": -37.53333333,
+    "longitude": 175.71666667
+   },
+   "coordinates_source": "wikipedia:Te Aroha (town point; the spot is the town)",
+   "reason": "Hauraki Plains town 48 km from Hamilton and 78 km from the Coromandel centre, with its own spa identity and reached from several bases; outside any single destination's reach, so standalone.",
+   "category": "historic",
+   "icon": "♨️",
+   "bio": "A spa town at the foot of Mount Te Aroha, known for its hot soda springs and the Hot Springs Domain.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 18266,
+   "counted_sources": [
+    "https://www.waikatonz.com/places-to-go/"
+   ],
+   "photo": {
+    "file": "Cadman Bath House (former) Te Aroha.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Cadman_Bath_House_(former)_Te_Aroha.jpg",
+    "width": 2048,
+    "licence": "CC BY-SA 3.0"
+   },
+   "status": "ready for Pipeline C research",
+   "needs_research": [],
+   "wiki": "Te Aroha",
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland"
+  },
+  {
+   "name": "Mount Te Aroha",
+   "action": "standalone",
+   "destination": null,
+   "id": "mount-te-aroha",
+   "coordinates": null,
+   "coordinates_source": "none yet: the Wikipedia point is the town; take the DOC summit track start",
+   "reason": "The summit track above Te Aroha, so standalone beside the town.",
+   "category": "hike",
+   "icon": "⛰️",
+   "bio": "A summit track above Te Aroha, listed by DOC (page filed under Bay of Plenty, peak in Waikato).",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 3,
+   "visitHoursMax": 5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/kaimai-mamaku-conservation-park/things-to-do/tracks/te-aroha-summit-track/",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/kaimai-mamaku-conservation-park/things-to-do/tracks/te-aroha-summit-track/"
+   ],
+   "photo": null,
+   "status": "held: needs a photo",
+   "needs_research": [
+    "coordinates",
+    "ticketUrl"
+   ],
+   "wiki": "Mount Te Aroha",
+   "photo_note": "No suitable Commons photo of the mountain found; boundary case, needs one.",
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "note": "Boundary and near-duplicate flag: also on the review list as a boundary case in verdicts; the skeptic kept it."
+  },
+  {
+   "name": "Hauraki Rail Trail",
+   "action": "standalone",
+   "destination": null,
+   "id": "hauraki-rail-trail",
+   "coordinates": {
+    "latitude": -37.14613,
+    "longitude": 175.54515
+   },
+   "coordinates_source": "Wikivoyage Thames listing (the Thames start of the trail)",
+   "reason": "A 197 km linear trail mostly outside the Coromandel span, reached from Thames, Paeroa, Waihi or Matamata, so standalone at its Thames start (rule for long linear features).",
+   "category": "hike",
+   "icon": "🚲",
+   "bio": "A 197 km cycle Great Ride along former rail lines from Kaiaua to Matamata, with Thames as one start point.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 8,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 1043,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Thames"
+   ],
+   "photo": {
+    "file": "Double-deck Western Portal road-rail bridge over Ohinemuri River at Karangahake.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Double-deck_Western_Portal_road-rail_bridge_over_Ohinemuri_River_at_Karangahake.jpg",
+    "width": 4896,
+    "licence": "Public domain"
+   },
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "wiki": "Hauraki Rail Trail",
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland"
+  },
+  {
+   "name": "Timber Trail",
+   "action": "standalone",
+   "destination": null,
+   "id": "timber-trail",
+   "coordinates": null,
+   "coordinates_source": "none yet: the OSM way found (-38.5150954, 175.5695040) is a trail segment; take the Pureora start car park from DOC",
+   "reason": "Pureora Forest Park, 100+ km from every Waikato destination, reached on its own from Pureora/Ongarue.",
+   "category": "hike",
+   "icon": "🚲",
+   "bio": "A multi-day cycle and walking trail through Pureora Forest Park on a former logging tramway, from Pureora to Ongarue.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 6,
+   "visitHoursMax": 24,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/waikato/places/pureora-forest-park/things-to-do/the-timber-trail-pureora-ongarue/",
+   "views": 1583,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/waikato/places/pureora-forest-park/things-to-do/the-timber-trail-pureora-ongarue/"
+   ],
+   "photo": null,
+   "status": "held: needs a photo",
+   "needs_research": [
+    "coordinates",
+    "ticketUrl"
+   ],
+   "wiki": "Timber Trail",
+   "photo_note": "Commons has only a cable-car photo and a Pureora summit view; Openverse results are close-up forest/fungus at 1024 px. Needs a DOC or tourism photo of the trail itself (suspension bridge, track).",
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland"
+  },
+  {
+   "name": "Tirau Giant Dog and Sheep",
+   "action": "standalone",
+   "destination": null,
+   "id": "tirau-giant-dog-and-sheep",
+   "coordinates": {
+    "latitude": -37.9769,
+    "longitude": 175.75632
+   },
+   "coordinates_source": "Wikivoyage Matamata listing (Tirau visitor centre)",
+   "reason": "A roadside stop on the highway about 48 km from Hamilton, reached on the drive between Hamilton and Rotorua, so standalone.",
+   "category": "landmark",
+   "icon": "🐑",
+   "bio": "A giant corrugated-metal dog and sheep at the Tirau visitor centre, a roadside photo stop on the highway.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 6202,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Matamata",
+    "https://en.wikivoyage.org/wiki/Waikato"
+   ],
+   "photo": null,
+   "status": "held: needs a photo",
+   "needs_research": [],
+   "wiki": "Tirau",
+   "photo_note": "Only Commons photo found (The dog and sheep buildings, Tirau, 3 April 2008, 3304x2045) fails the hero crop: the middle slice cuts the dog and the sheep head in half. Needs a closer photo of one or both, or a non-Commons one.",
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland"
+  }
+ ],
+ "covered_by_existing_destination": [
+  {
+   "name": "Raglan",
+   "action": "covered-by-existing-destination",
+   "destination": "raglan",
+   "reason": "Raglan is already a destination; listing it as its own spot would be a spot of itself. Its photo (Raglan wharf.jpg) is a candidate only if the destination header is ever re-picked, not applied here."
+  },
+  {
+   "name": "Hamilton",
+   "action": "covered-by-existing-destination",
+   "destination": "hamilton",
+   "reason": "Hamilton is already a destination; listing it as its own spot would be a spot of itself. Its photo (Claudlands Bridge, Hamilton, Waikato, New Zealand, 3 April 2008.jpg) is a candidate only if the destination header is ever re-picked, not applied here."
+  }
+ ],
+ "existing_keeps": [
+  {
+   "id": "coromandel-1",
+   "name": "Cathedral Cove",
+   "action": "existing-keep",
+   "reason": "Skeptic/verdict kept; stays where it is."
+  },
+  {
+   "id": "coromandel-2",
+   "name": "Hot Water Beach",
+   "action": "existing-keep",
+   "reason": "Skeptic/verdict kept; stays where it is."
+  },
+  {
+   "id": "coromandel-3",
+   "name": "Hahei",
+   "action": "existing-keep",
+   "reason": "Skeptic/verdict kept; stays where it is."
+  },
+  {
+   "id": "coromandel-4",
+   "name": "Driving Creek Railway",
+   "action": "existing-keep",
+   "reason": "Skeptic/verdict kept; stays where it is."
+  },
+  {
+   "id": "coromandel-5",
+   "name": "Coromandel",
+   "action": "existing-keep",
+   "reason": "Skeptic/verdict kept; stays where it is."
+  },
+  {
+   "id": "hamilton-1",
+   "name": "Hamilton Gardens",
+   "action": "existing-keep",
+   "reason": "Skeptic/verdict kept; stays where it is."
+  },
+  {
+   "id": "hamilton-2",
+   "name": "Hobbiton Movie Set",
+   "action": "existing-keep",
+   "reason": "Skeptic/verdict kept; stays where it is."
+  },
+  {
+   "id": "hamilton-3",
+   "name": "Waikato Museum",
+   "action": "existing-keep",
+   "reason": "Skeptic/verdict kept; stays where it is."
+  },
+  {
+   "id": "hamilton-4",
+   "name": "Hamilton Zoo",
+   "action": "existing-keep",
+   "reason": "Skeptic/verdict kept; stays where it is."
+  },
+  {
+   "id": "raglan-1",
+   "name": "Manu Bay",
+   "action": "existing-keep",
+   "reason": "Skeptic/verdict kept; stays where it is."
+  },
+  {
+   "id": "raglan-2",
+   "name": "Bridal Veil Falls",
+   "action": "existing-keep",
+   "reason": "Skeptic/verdict kept; stays where it is."
+  },
+  {
+   "id": "raglan-3",
+   "name": "Mount Karioi",
+   "action": "existing-keep",
+   "reason": "Skeptic/verdict kept; stays where it is."
+  },
+  {
+   "id": "raglan-4",
+   "name": "Ngarunui Beach",
+   "action": "existing-keep",
+   "reason": "Skeptic/verdict kept; stays where it is."
+  },
+  {
+   "id": "waitomo-1",
+   "name": "Waitomo Glowworm Caves",
+   "action": "existing-keep",
+   "reason": "Skeptic/verdict kept; stays where it is."
+  },
+  {
+   "id": "waitomo-2",
+   "name": "Ruakuri Cave",
+   "action": "existing-keep",
+   "reason": "Skeptic/verdict kept; stays where it is."
+  },
+  {
+   "id": "waitomo-3",
+   "name": "Aranui Cave",
+   "action": "existing-keep",
+   "reason": "Skeptic/verdict kept; stays where it is."
+  },
+  {
+   "id": "waitomo-4",
+   "name": "Marokopa Falls",
+   "action": "existing-keep",
+   "reason": "Skeptic/verdict kept; stays where it is."
+  },
+  {
+   "id": "waitomo-5",
+   "name": "Mangapohue Natural Bridge",
+   "action": "existing-keep",
+   "reason": "Skeptic/verdict kept; stays where it is."
+  },
+  {
+   "id": "taupo-1",
+   "name": "Huka Falls",
+   "action": "existing-keep",
+   "reason": "Skeptic/verdict kept; stays where it is."
+  },
+  {
+   "id": "taupo-2",
+   "name": "Craters of the Moon",
+   "action": "existing-keep",
+   "reason": "Skeptic/verdict kept; stays where it is."
+  },
+  {
+   "id": "taupo-3",
+   "name": "Aratiatia Rapids",
+   "action": "existing-keep",
+   "reason": "Skeptic/verdict kept; stays where it is."
+  },
+  {
+   "id": "taupo-5",
+   "name": "Orakei Korako",
+   "action": "existing-keep",
+   "reason": "Skeptic/verdict kept; stays where it is."
+  },
+  {
+   "id": "taupo-6",
+   "name": "Taupō Bungy",
+   "action": "existing-keep",
+   "reason": "Skeptic/verdict kept; stays where it is."
+  }
+ ],
+ "new_destinations": [],
+ "new_destination_note": "No new destination proposed. The Coromandel towns (Thames, Whitianga, Pauanui, Tairua, Whangamatā) all lie inside the existing Coromandel Peninsula destination's span (42 km or less from its centre against a 60 km radius), and COVERAGE.md says a region and its sub-areas must not both be destinations, so they are spots of it. Cambridge, Te Awamutu, Raglan and Hamilton are within Hamilton's or Raglan's existing spans; Turangi is within Tongariro's span. A possible later proposal would be a split of an east-coast Coromandel destination, left to the owner.",
+ "existing_fixes": [
+  {
+   "id": "hamilton-2",
+   "name": "Hobbiton Movie Set",
+   "issue": "Sits at Hinuera near Matamata about 35 km from Hamilton, reached from Hamilton, Rotorua and Matamata; inside Hamilton span so left; noted only.",
+   "action": "none"
+  }
+ ],
+ "left_to_review_list_not_placed": [
+  "Otorohanga Kiwi House",
+  "Firth Tower Museum",
+  "Coromandel Goldfield Centre and Stamper Battery",
+  "New Chums Beach",
+  "Whangapoua Beach",
+  "Matarangi",
+  "Karangahake Gorge",
+  "Waihi",
+  "Waihi Beach",
+  "Athenree Hot Springs",
+  "Pihanga",
+  "Tongariro Alpine Crossing",
+  "Mount Ngauruhoe"
+ ],
+ "held_for_photo": [
+  "The Waterworks",
+  "Ocean Beach (Tairua)",
+  "Maungatautari",
+  "Te Awamutu",
+  "Tongariro National Trout Centre",
+  "Mount Te Aroha",
+  "Timber Trail",
+  "Tirau Giant Dog and Sheep"
+ ],
+ "spot_of_proposed_destination": []
+}

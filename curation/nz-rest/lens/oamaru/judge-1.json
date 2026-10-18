@@ -1,0 +1,157 @@
+{
+ "slots": {
+  "dest:oamaru:header": {
+   "candidates": [
+    {
+     "file": "Habour St Oamaru NZ. (52101976304).jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": false,
+     "real_photograph": true,
+     "verdict": "reject",
+     "reason": "Harbour Street, a street corner of the precinct with a wall edge; not a town in its setting. Fails the header rule (street corner, no landscape)."
+    }
+   ],
+   "decision": "reject",
+   "failed_check": "3",
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "dest:oamaru:why1": {
+   "candidates": [
+    {
+     "file": "Little blue penguin walking on pond edge.jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "keep",
+     "reason": "Little blue penguin close up; shows the reason clearly."
+    }
+   ],
+   "decision": "keep-current",
+   "failed_check": null,
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "dest:oamaru:why2": {
+   "candidates": [
+    {
+     "file": "Oamaru Victoria style buildings (cropped).jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "keep",
+     "reason": "Oamaru Victorian whitestone precinct at dusk; shows the reason (also used as spot oamaru-2)."
+    }
+   ],
+   "decision": "keep-current",
+   "failed_check": null,
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "dest:oamaru:why3": {
+   "candidates": [
+    {
+     "file": "Moeraki Boulders and beach.jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "keep",
+     "reason": "Moeraki Boulders on the beach with cliff; the reason."
+    }
+   ],
+   "decision": "keep-current",
+   "failed_check": null,
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "spot:oamaru-1": {
+   "candidates": [
+    {
+     "file": "Little blue penguin walking into water.jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "keep",
+     "reason": "Little blue penguin entering the water; clear."
+    }
+   ],
+   "decision": "keep-current",
+   "failed_check": null,
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "spot:oamaru-2": {
+   "candidates": [
+    {
+     "file": "Oamaru Victoria style buildings (cropped).jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "keep",
+     "reason": "Oamaru Victorian precinct at dusk; recognisable (same file as why2)."
+    }
+   ],
+   "decision": "keep-current",
+   "failed_check": null,
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "spot:oamaru-3": {
+   "candidates": [
+    {
+     "file": "Steampunk engine in front of Steampunk HQ.jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "keep",
+     "reason": "Steampunk HQ locomotive sculpture; recognisable."
+    }
+   ],
+   "decision": "keep-current",
+   "failed_check": null,
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "spot:oamaru-4": {
+   "candidates": [
+    {
+     "file": "Moeraki Boulders.jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "keep",
+     "reason": "Moeraki Boulders in the surf; clear."
+    }
+   ],
+   "decision": "keep-current",
+   "failed_check": null,
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "spot:oamaru-5": {
+   "candidates": [
+    {
+     "file": "Bushy Beach, Oamaru.jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "keep",
+     "reason": "Bushy Beach and headland from above; scenic."
+    }
+   ],
+   "decision": "keep-current",
+   "failed_check": null,
+   "hero_crop": "ok",
+   "dark": false
+  }
+ }
+}

@@ -1,0 +1,120 @@
+{
+ "slots": {
+  "dest:timaru:header": {
+   "candidates": [
+    {
+     "file": "20250309-DJI 0056.jpg",
+     "right_place": true,
+     "shows_named_thing": false,
+     "spectacular_wide": false,
+     "real_photograph": true,
+     "verdict": "reject",
+     "reason": "Aerial of the Sacred Heart basilica and surrounding streets: a single building from the air, not the town in its setting (checks 3 and 4)."
+    }
+   ],
+   "decision": "reject",
+   "failed_check": "3",
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "dest:timaru:why3": {
+   "candidates": [
+    {
+     "file": "Timaru Botanic Garden, New Zealand.jpg",
+     "right_place": true,
+     "shows_named_thing": false,
+     "spectacular_wide": false,
+     "real_photograph": true,
+     "verdict": "reject",
+     "reason": "Pond and trees in Timaru Botanic Garden: real but flat and does not show the reason 'a stop on the way south' (checks 3 and reason)."
+    }
+   ],
+   "decision": "reject",
+   "failed_check": "3 (does not show its reason)",
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "spot:timaru-1": {
+   "candidates": [
+    {
+     "file": "external:caroline-bay.jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "keep",
+     "reason": "Caroline Bay surf beach and trees; modest, a little flat, but the named bay (external 1024 px)."
+    }
+   ],
+   "decision": "keep-current",
+   "failed_check": null,
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "spot:timaru-2": {
+   "candidates": [
+    {
+     "file": "Pearse aeroplane replica, South Canterbury Museum-1.jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "keep",
+     "reason": "Pearse monoplane replica hanging in the South Canterbury Museum; the museum's signature exhibit, interior view."
+    }
+   ],
+   "decision": "keep-current",
+   "failed_check": null,
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "spot:timaru-3": {
+   "candidates": [
+    {
+     "file": "Timaru-Stafford.St.jpg",
+     "right_place": true,
+     "shows_named_thing": false,
+     "spectacular_wide": false,
+     "real_photograph": true,
+     "verdict": "reject",
+     "reason": "Shows Stafford Street, a street scene, not the Te Ana Maori Rock Art Centre or its art (check 2)."
+    }
+   ],
+   "decision": "reject",
+   "failed_check": "2",
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "spot:timaru-4": {
+   "candidates": [
+    {
+     "file": "Aigantighe Art Gallery - 13 - House - North side.jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "keep",
+     "reason": "Aigantighe Art Gallery's historic house; recognisable building."
+    }
+   ],
+   "decision": "keep-current",
+   "failed_check": null,
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "dest:timaru:why1": {
+   "candidates": [],
+   "decision": "reject",
+   "failed_check": "no current photo (slot is empty; needs a search): Caroline Bay beach (why1) and Te Ana rock art (why2)",
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "dest:timaru:why2": {
+   "candidates": [],
+   "decision": "reject",
+   "failed_check": "no current photo (slot is empty; needs a search): Caroline Bay beach (why1) and Te Ana rock art (why2)",
+   "hero_crop": "ok",
+   "dark": false
+  }
+ }
+}

@@ -1,0 +1,1116 @@
+{
+ "region": "manawatu-whanganui",
+ "placements": [
+  {
+   "name": "Tongariro Northern Circuit",
+   "action": "spot",
+   "destination": "tongariro",
+   "id": "tongariro-7",
+   "coordinates": {
+    "latitude": -39.145667,
+    "longitude": 175.624707
+   },
+   "coordinates_source": "wikipedia:Tongariro Northern Circuit (loop centroid near Red Crater)",
+   "reason": "Inside Tongariro's span; the Great Walk loops Tongariro and Ngauruhoe from Whakapapa.",
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "A 43 km, three-to-four-day Great Walk loop around Tongariro and Ngauruhoe with huts that must be booked.",
+   "photo": {
+    "file": "Tongariro Northern Circuit, New Zealand (4).JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Tongariro_Northern_Circuit%2C_New_Zealand_%284%29.JPG",
+    "width": 3000
+   },
+   "photo_note": "Photo shows a stretch of the loop; skeptic accepted.",
+   "hours": null,
+   "cost": null,
+   "ticketUrl": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "coordinates_verify": "Loop centroid, not an access point: Pipeline C to set at the Whakapapa (Bruce Road) or Mangatepopo trailhead from DOC.",
+   "views": 1837,
+   "counted_sources": 2,
+   "status": "ready for Pipeline C research"
+  },
+  {
+   "name": "Turoa Ski Area",
+   "action": "spot",
+   "destination": "tongariro",
+   "id": "tongariro-8",
+   "coordinates": {
+    "latitude": -39.3004,
+    "longitude": 175.54199
+   },
+   "coordinates_source": "osm:photon leisure/sports_centre Tūroa Ski Area",
+   "reason": "Inside Tongariro's span (about 13 km from its centre) and in the park; reached via the Ohakune Mountain Road.",
+   "category": "entertainment",
+   "icon": "⛷️",
+   "bio": "The ski field on the southern slopes of Mount Ruapehu above Ohakune, a seasonal winter venue.",
+   "photo": {
+    "file": "TuroaView.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:TuroaView.JPG",
+    "width": 1600
+   },
+   "hours": null,
+   "cost": null,
+   "ticketUrl": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "coordinates_verify": "OSM point for the ski area; Pipeline C to check against the base-building/car park.",
+   "views": 0,
+   "counted_sources": 2,
+   "status": "ready for Pipeline C research"
+  },
+  {
+   "name": "Whakapapa Ski Area",
+   "action": "spot",
+   "destination": "tongariro",
+   "id": "tongariro-9",
+   "coordinates": {
+    "latitude": -39.24834,
+    "longitude": 175.55736
+   },
+   "coordinates_source": "osm:photon leisure/sports_centre Whakapapa Ski Area",
+   "reason": "Inside Tongariro's span, above Whakapapa Village.",
+   "category": "entertainment",
+   "icon": "🎿",
+   "bio": "The ski field on the northern slopes of Mount Ruapehu, with a sightseeing chairlift and Skyline Walk in summer.",
+   "hours": null,
+   "cost": null,
+   "ticketUrl": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "coordinates_verify": "OSM point; Pipeline C to confirm the base/lift position.",
+   "views": 0,
+   "counted_sources": 2,
+   "status": "held: needs a photo"
+  },
+  {
+   "name": "Waitonga Falls",
+   "action": "spot",
+   "destination": "tongariro",
+   "id": "tongariro-10",
+   "coordinates": {
+    "latitude": -39.33318,
+    "longitude": 175.50755
+   },
+   "coordinates_source": "osm:photon highway/steps Waitonga Falls Track (track start, not the falls)",
+   "reason": "Inside Tongariro's span and within the park; walked from the Ohakune Mountain Road.",
+   "category": "hike",
+   "icon": "💧",
+   "bio": "The park's highest waterfall, reached by a well-known walk of about 1 hour 20 minutes through forest.",
+   "photo": {
+    "file": "Waitonga Falls 4.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Waitonga_Falls_4.jpg",
+    "width": 3000
+   },
+   "hours": null,
+   "cost": null,
+   "ticketUrl": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "coordinates_verify": "OSM point is on the track; Pipeline C to take the Mountain Road car park from DOC.",
+   "views": 0,
+   "counted_sources": 0,
+   "status": "ready for Pipeline C research"
+  },
+  {
+   "name": "Whanganui Regional Museum",
+   "action": "spot",
+   "destination": "whanganui",
+   "id": "whanganui-7",
+   "coordinates": {
+    "latitude": -39.9317,
+    "longitude": 175.0519
+   },
+   "coordinates_source": "wikipedia:Whanganui Regional Museum",
+   "reason": "In the city, beside the existing Sarjeant Gallery; a distinct place.",
+   "category": "museum",
+   "icon": "🏛️",
+   "bio": "A free museum of natural and human history on Watt Street, with a regional emphasis.",
+   "photo": {
+    "file": "Whanganui Regional Museum ext 1.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Whanganui_Regional_Museum_ext_1.jpg",
+    "width": 1270
+   },
+   "hours": null,
+   "cost": null,
+   "ticketUrl": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 665,
+   "counted_sources": 1,
+   "status": "ready for Pipeline C research"
+  },
+  {
+   "name": "Bason Botanic Gardens",
+   "action": "spot",
+   "destination": "whanganui",
+   "id": "whanganui-8",
+   "coordinates": {
+    "latitude": -39.8829,
+    "longitude": 174.9514
+   },
+   "coordinates_source": "wikipedia:Bason Botanic Gardens",
+   "reason": "About 12 km from Whanganui's centre, inside its span, reached from the city.",
+   "category": "nature",
+   "icon": "🌳",
+   "bio": "Botanic gardens with indoor and outdoor gardens and bush walks west of Whanganui.",
+   "hours": null,
+   "cost": null,
+   "ticketUrl": null,
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2.5,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "coordinates_verify": "Wikipedia point; check against the gate/car park.",
+   "views": 540,
+   "counted_sources": 1,
+   "status": "held: needs a photo"
+  },
+  {
+   "name": "Bushy Park",
+   "action": "spot",
+   "destination": "whanganui",
+   "id": "whanganui-9",
+   "coordinates": {
+    "latitude": -39.79733333,
+    "longitude": 174.92861111
+   },
+   "coordinates_source": "wikipedia:Bushy Park (New Zealand)",
+   "reason": "About 23 km from Whanganui, inside its span, reached from the city.",
+   "category": "nature",
+   "icon": "🐦",
+   "bio": "A 100 ha predator-free native bird sanctuary with 3.4 km of walks and a giant rata tree.",
+   "wiki": "Bushy Park (New Zealand)",
+   "photo": {
+    "file": "Bushy Park wetland - MC3.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Bushy_Park_wetland_-_MC3.jpg",
+    "width": 5184
+   },
+   "hours": null,
+   "cost": null,
+   "ticketUrl": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "coordinates_verify": "Wikipedia point; check against the homestead/entrance.",
+   "views": 1418,
+   "counted_sources": 0,
+   "status": "ready for Pipeline C research"
+  },
+  {
+   "name": "Atene Skyline Track",
+   "action": "spot",
+   "destination": "whanganui-national-park",
+   "id": "whanganui-national-park-3",
+   "coordinates": {
+    "latitude": -39.70533,
+    "longitude": 175.18072
+   },
+   "coordinates_source": "osm:photon highway/path Atene Skyline Track",
+   "reason": "In the park, about 41 km from its centre (inside the span); a DOC-promoted 12.5 km track.",
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "A 12.5 km track through forest above the lower Whanganui River in Whanganui National Park.",
+   "photo": {
+    "file": "Atene Skyline Track - view of Ahuahu Valley, Whanganui National Park, New Zealand (22).JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Atene_Skyline_Track_-_view_of_Ahuahu_Valley%2C_Whanganui_National_Park%2C_New_Zealand_%2822%29.JPG",
+    "width": 3657
+   },
+   "hours": null,
+   "cost": null,
+   "ticketUrl": null,
+   "visitHoursMin": 4,
+   "visitHoursMax": 6,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "coordinates_verify": "OSM path point; Pipeline C to set at a DOC trailhead (Atene end).",
+   "views": 0,
+   "counted_sources": 1,
+   "status": "ready for Pipeline C research"
+  },
+  {
+   "name": "Manawatū Gorge",
+   "action": "spot",
+   "destination": "palmerston-north",
+   "id": "palmerston-north-4",
+   "coordinates": {
+    "latitude": -40.3184,
+    "longitude": 175.798
+   },
+   "coordinates_source": "wikipedia:Manawatū Gorge (gorge centroid)",
+   "reason": "About 16 km from Palmerston North, inside its span; reached from the city.",
+   "category": "hike",
+   "icon": "🌿",
+   "bio": "The gorge between Palmerston North and Hawke's Bay, walked on the Te Āpiti track with lookouts over the gorge and wind farm.",
+   "wiki": "Manawatū Gorge",
+   "photo": {
+    "file": "Manawatu River in Manawatu Gorge.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Manawatu_River_in_Manawatu_Gorge.jpg",
+    "width": 4896
+   },
+   "hours": null,
+   "cost": null,
+   "ticketUrl": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "coordinates_verify": "Gorge centroid, not an access point: Pipeline C to set at the Te Āpiti track car park (Ashhurst end).",
+   "views": 4431,
+   "counted_sources": 2,
+   "status": "ready for Pipeline C research"
+  },
+  {
+   "name": "Feilding",
+   "action": "spot",
+   "destination": "palmerston-north",
+   "id": "palmerston-north-5",
+   "coordinates": {
+    "latitude": -40.21666667,
+    "longitude": 175.56666667
+   },
+   "coordinates_source": "wikipedia:Feilding (town point)",
+   "reason": "A guidebook-chaptered town 15 km from Palmerston North, inside its span; only the Coach House Museum went to review, so too thin for a destination.",
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "An agricultural town north of Palmerston North with a clock tower, a local museum and a steam railway.",
+   "wiki": "Feilding",
+   "photo": {
+    "file": "Feilding Clocktower.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Feilding_Clocktower.jpg",
+    "width": 1935
+   },
+   "hours": null,
+   "cost": null,
+   "ticketUrl": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "coordinates_verify": "Town point; consider the town centre/clocktower. A town as a spot: owner may prefer to leave it out.",
+   "views": 14328,
+   "counted_sources": 1,
+   "status": "ready for Pipeline C research"
+  },
+  {
+   "name": "The World's Largest Carrot",
+   "action": "standalone",
+   "destination": null,
+   "id": "ohakune-carrot",
+   "coordinates": {
+    "latitude": -39.42008,
+    "longitude": 175.40375
+   },
+   "coordinates_source": "wikivoyage:Ohakune (the Carrot's own listing, 4a Rangataua Rd)",
+   "reason": "Benchmark quirky roadside icon; the centrepiece of the proposed Ohakune destination.",
+   "category": "landmark",
+   "icon": "🥕",
+   "bio": "A 7.5 m model carrot at the Ohakune Carrot Adventure Park, a roadside photo stop open all hours.",
+   "photo": {
+    "file": "DSCN4208 Ohakune Carrot.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:DSCN4208_Ohakune_Carrot.jpg",
+    "width": 3456
+   },
+   "hours": "Open 24 hours",
+   "cost": null,
+   "ticketUrl": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "coordinates_verify": "Wikivoyage listing point; check against OSM tourism/artwork. Wiki title unverified: Pipeline C to confirm the article or drop the field.",
+   "views": 0,
+   "counted_sources": 2,
+   "status": "ready for Pipeline C research",
+   "note_owner": "Placed standalone by the orchestrator: the Ohakune destination is only a proposal, and the Ohakune Carrot is a coverage benchmark. Id is a slug."
+  },
+  {
+   "name": "Ohakune Old Coach Road",
+   "action": "standalone",
+   "destination": null,
+   "id": "ohakune-old-coach-road",
+   "coordinates": {
+    "latitude": -39.37069,
+    "longitude": 175.36917
+   },
+   "coordinates_source": "osm:photon highway/path Ohakune Coach Road",
+   "reason": "About 7 km from Ohakune; DOC heritage walk and cycle trail.",
+   "category": "hike",
+   "icon": "🚲",
+   "bio": "A restored heritage coach road for walking and cycling, with cobbles, viaducts and a tunnel.",
+   "hours": null,
+   "cost": null,
+   "ticketUrl": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "coordinates_verify": "OSM path point; Pipeline C to set at the DOC Ohakune-end trailhead.",
+   "views": 0,
+   "counted_sources": 1,
+   "status": "held: needs a photo",
+   "note_owner": "Placed standalone by the orchestrator: the Ohakune destination is only a proposal, and the Ohakune Carrot is a coverage benchmark. Id is a slug."
+  },
+  {
+   "name": "Dinosaur House",
+   "action": "standalone",
+   "destination": null,
+   "id": "ohakune-dinosaur-house",
+   "coordinates": {
+    "latitude": -39.42623,
+    "longitude": 175.27604
+   },
+   "coordinates_source": "wikivoyage:Raetihi (the museum's own listing, Seddon Street)",
+   "reason": "About 13 km from Ohakune in Raetihi, reached from the Ruapehu gateway; Raetihi itself stays in review.",
+   "category": "museum",
+   "icon": "🦖",
+   "bio": "A museum of more than 100 dinosaur skeletons and models in Raetihi.",
+   "photo": {
+    "file": "DH Carnivore Room.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:DH_Carnivore_Room.jpg",
+    "width": 4160
+   },
+   "hero_crop": {
+    "x": 0.75,
+    "y": 0.4
+   },
+   "hours": null,
+   "cost": null,
+   "ticketUrl": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "coordinates_verify": "Wikivoyage listing point; check against OSM.",
+   "views": 0,
+   "counted_sources": 2,
+   "status": "ready for Pipeline C research",
+   "note_owner": "Placed standalone by the orchestrator: the Ohakune destination is only a proposal, and the Ohakune Carrot is a coverage benchmark. Id is a slug."
+  },
+  {
+   "name": "Te Awahou Nieuwe Stroom",
+   "action": "spot-of-proposed-destination",
+   "destination": "foxton",
+   "id": "foxton-1",
+   "coordinates": {
+    "latitude": -40.47383,
+    "longitude": 175.28054
+   },
+   "coordinates_source": "wikipedia:Te Awahou Nieuwe Stroom",
+   "reason": "Foxton's museum and cultural centre; headline spot of the proposed Foxton destination.",
+   "category": "museum",
+   "icon": "🏛️",
+   "bio": "A museum and cultural centre in Foxton telling Māori and Dutch heritage stories.",
+   "photo": {
+    "file": "Front Te awahou Nieuwe Stroom.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Front_Te_awahou_Nieuwe_Stroom.jpg",
+    "width": 4032
+   },
+   "hours": null,
+   "cost": null,
+   "ticketUrl": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 625,
+   "counted_sources": 1,
+   "status": "ready for Pipeline C research"
+  },
+  {
+   "name": "De Molen",
+   "action": "spot-of-proposed-destination",
+   "destination": "foxton",
+   "id": "foxton-2",
+   "coordinates": {
+    "latitude": -40.47402,
+    "longitude": 175.28094
+   },
+   "coordinates_source": "osm:photon building De Molen",
+   "reason": "Working Dutch windmill beside Te Awahou, a quirky landmark.",
+   "category": "landmark",
+   "icon": "🌬️",
+   "bio": "A working replica 17th-century Dutch windmill with a flour-milling demonstration and shop.",
+   "photo": {
+    "file": "De Molen, Foxton, New Zealand.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:De_Molen%2C_Foxton%2C_New_Zealand.jpg",
+    "width": 1968
+   },
+   "hours": null,
+   "cost": null,
+   "ticketUrl": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "coordinates_verify": "Wiki title unverified.",
+   "views": 0,
+   "counted_sources": 1,
+   "status": "ready for Pipeline C research"
+  },
+  {
+   "name": "Foxton Beach",
+   "action": "spot-of-proposed-destination",
+   "destination": "foxton",
+   "id": "foxton-3",
+   "coordinates": {
+    "latitude": -40.46111111,
+    "longitude": 175.22416667
+   },
+   "coordinates_source": "wikipedia:Foxton Beach (settlement article; no OSM natural/beach checked)",
+   "reason": "Beach settlement 7 km from Foxton; fishing and kitesurfing.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A long sandy beach five minutes from Foxton, used for fishing and kitesurfing.",
+   "wiki": "Foxton Beach",
+   "photo": {
+    "file": "Foxton Beach.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Foxton_Beach.jpg",
+    "width": 4000
+   },
+   "hours": null,
+   "cost": null,
+   "ticketUrl": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "coordinates_verify": "Point is the Foxton Beach settlement: Pipeline C must put it on the sand from OSM natural/beach.",
+   "views": 2914,
+   "counted_sources": 1,
+   "status": "ready for Pipeline C research"
+  },
+  {
+   "name": "Waitārere Beach",
+   "action": "spot-of-proposed-destination",
+   "destination": "foxton",
+   "id": "foxton-4",
+   "coordinates": {
+    "latitude": -40.55108,
+    "longitude": 175.20139
+   },
+   "coordinates_source": "osm:photon road hit Waitarere Beach Road (approx.)",
+   "reason": "Horowhenua surf beach about 11 km from Foxton; stays in the proposed Foxton group.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A surf beach on the Horowhenua coast popular for fishing.",
+   "wiki": "Waitārere Beach",
+   "hours": null,
+   "cost": null,
+   "ticketUrl": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "coordinates_verify": "Road hit, not the beach: take OSM natural/beach.",
+   "views": 0,
+   "counted_sources": 1,
+   "status": "held: needs a photo"
+  },
+  {
+   "name": "National Army Museum",
+   "action": "standalone",
+   "destination": null,
+   "id": "national-army-museum",
+   "coordinates": {
+    "latitude": -39.4804,
+    "longitude": 175.6691
+   },
+   "coordinates_source": "wikipedia:National Army Museum (New Zealand)",
+   "reason": "Waiouru, on the Desert Road about 30 km from Ohakune and 33 km from Tongariro's centre; reached on its own on the SH1 journey.",
+   "category": "museum",
+   "icon": "🎖️",
+   "bio": "The national military history museum at Waiouru, on SH1 beside the Desert Road.",
+   "wiki": "National Army Museum (New Zealand)",
+   "photo": {
+    "file": "Waiouru Army Museum 07.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Waiouru_Army_Museum_07.jpg",
+    "width": 4032
+   },
+   "hours": null,
+   "cost": null,
+   "ticketUrl": null,
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1937,
+   "counted_sources": 1,
+   "status": "ready for Pipeline C research"
+  },
+  {
+   "name": "Taihape",
+   "action": "standalone",
+   "destination": null,
+   "id": "taihape",
+   "coordinates": {
+    "latitude": -39.67666667,
+    "longitude": 175.79666667
+   },
+   "coordinates_source": "wikipedia:Taihape (town point)",
+   "reason": "Town on SH1 on the Rangitikei with a newzealand.com page; one other kept place (the Gumboot), so no destination.",
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "A town on State Highway 1 beside the Rangitikei River, known for its giant gumboot and river activities.",
+   "wiki": "Taihape",
+   "photo": {
+    "file": "Taihape, Manawatu.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Taihape%2C_Manawatu.jpg",
+    "width": 3747
+   },
+   "hours": null,
+   "cost": null,
+   "ticketUrl": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "coordinates_verify": "Town point; the town is a stop on SH1.",
+   "views": 12038,
+   "counted_sources": 1,
+   "status": "ready for Pipeline C research"
+  },
+  {
+   "name": "Taihape Gumboot",
+   "action": "standalone",
+   "destination": null,
+   "id": "taihape-gumboot",
+   "coordinates": {
+    "latitude": -39.674,
+    "longitude": 175.7939
+   },
+   "coordinates_source": "wikivoyage:Manawatu (the gumboot's own listing)",
+   "reason": "Quirky roadside icon at the northern entrance to Taihape; distinct from the town.",
+   "category": "landmark",
+   "icon": "🥾",
+   "bio": "A giant corrugated-iron gumboot at the northern entrance to Taihape on SH1, a photo stop.",
+   "photo": {
+    "file": "Taihape Gumboot 152535.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Taihape_Gumboot_152535.jpg",
+    "width": 4000
+   },
+   "hours": null,
+   "cost": null,
+   "ticketUrl": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "coordinates_verify": "Regional-page listing point; check against OSM. Wiki title unverified.",
+   "views": 0,
+   "counted_sources": 1,
+   "status": "ready for Pipeline C research"
+  },
+  {
+   "name": "Levin",
+   "action": "standalone",
+   "destination": null,
+   "id": "levin",
+   "coordinates": {
+    "latitude": -40.62182,
+    "longitude": 175.28659
+   },
+   "coordinates_source": "osm:photon place/town Levin",
+   "reason": "Horowhenua hub town; Hōkio and Waikawa stayed in review, so no destination.",
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "The Horowhenua district's main town, a base for the surrounding coastal beaches.",
+   "wiki": "Levin, New Zealand",
+   "photo": {
+    "file": "Levin, New Zealand (November 2025).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Levin%2C_New_Zealand_%28November_2025%29.jpg",
+    "width": 4160
+   },
+   "hours": null,
+   "cost": null,
+   "ticketUrl": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "coordinates_verify": "Weakest keep: Wikivoyage chapter is an outline. Town point; owner may prefer to hold.",
+   "views": 17865,
+   "counted_sources": 1,
+   "status": "ready for Pipeline C research"
+  },
+  {
+   "name": "Marton",
+   "action": "standalone",
+   "destination": null,
+   "id": "marton",
+   "coordinates": {
+    "latitude": -40.06916667,
+    "longitude": 175.37833333
+   },
+   "coordinates_source": "wikipedia:Marton, New Zealand",
+   "reason": "Largest Rangitikei town; no Wikivoyage chapter, council and newzealand.com sources only.",
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "The largest town in the Rangitikei district, with a walkway, a reservoir and parks.",
+   "wiki": "Marton, New Zealand",
+   "hours": null,
+   "cost": null,
+   "ticketUrl": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "coordinates_verify": "Thin keep: skeptic noted it could go to review.",
+   "views": 9526,
+   "counted_sources": 1,
+   "status": "held: needs a photo"
+  }
+ ],
+ "existing_fixes": [
+  {
+   "id": "tongariro-1",
+   "name": "Tongariro Alpine Crossing",
+   "fix": "coordinate check",
+   "detail": "Current -39.1397,175.6171 is about 3 km east of the Mangatepopo start point the skeptic found on a Commons geotag (-39.14438,175.58096). Not DOC-confirmed: Pipeline C to confirm against DOC and move to the start car park.",
+   "needs_research": [
+    "coordinates"
+   ]
+  },
+  {
+   "id": "whanganui-6",
+   "name": "Waimarie",
+   "fix": "review",
+   "detail": "Skeptic: a vehicle/operator, not a place. Reframe as the Taupo Quay wharf museum with the steamer in the bio, or remove. Owner decision."
+  },
+  {
+   "id": "whanganui-national-park-1",
+   "name": "Pipiriki",
+   "fix": "review",
+   "detail": "Gateway village (benchmark review): draw is the journey beyond it. Existing spot kept for now; owner decides."
+  },
+  {
+   "id": "whanganui-national-park-2",
+   "name": "Jerusalem",
+   "fix": "review",
+   "detail": "No counted visitor source found. Owner decides whether to keep."
+  },
+  {
+   "id": "tararua-forest-park",
+   "name": "Tararua Forest Park",
+   "fix": "none",
+   "detail": "Already a standalone spot in spots.ts; kept by the skeptic. Not duplicated. Overlaps the Wellington region."
+  }
+ ],
+ "new_destinations": [
+  {
+   "name": "Ohakune",
+   "id": "ohakune",
+   "coordinates": {
+    "latitude": -39.41861111,
+    "longitude": 175.39944444
+   },
+   "coordinates_source": "wikipedia:Ohakune",
+   "category": "city",
+   "photo": {
+    "file": "Ohakune from the Air - Helicopter - panoramio.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Ohakune_from_the_Air_-_Helicopter_-_panoramio.jpg",
+    "width": 2160
+   },
+   "photo_note": "An aerial: suits neither a destination header nor a spot. Header needs Pipeline C review.",
+   "spots": [
+    "ohakune-1",
+    "ohakune-2",
+    "ohakune-3"
+   ],
+   "suggested_defaultZoomSpanKm": 30,
+   "reason": "Gateway town at the foot of Ruapehu with Wikivoyage chapter and three kept places (Carrot, Old Coach Road, Dinosaur House at Raetihi). Its 30 km span overlaps Tongariro's: Turoa Ski Area and Waitonga Falls were placed in Tongariro (inside the park) instead. Owner to decide whether Ohakune stands beside Tongariro. Listed, not added.",
+   "needs": "description, three reasons with photos, tips, best months, header"
+  },
+  {
+   "name": "Foxton",
+   "id": "foxton",
+   "coordinates": {
+    "latitude": -40.47166667,
+    "longitude": 175.28583333
+   },
+   "coordinates_source": "wikipedia:Foxton, New Zealand",
+   "category": "city",
+   "photo": null,
+   "photo_note": "Skeptic found no passing photo for the town itself: held for a header.",
+   "spots": [
+    "foxton-1",
+    "foxton-2",
+    "foxton-3",
+    "foxton-4"
+   ],
+   "suggested_defaultZoomSpanKm": 30,
+   "reason": "Dutch-heritage town on the Manawatū River; four kept places (Te Awahou, De Molen, Foxton Beach, Waitārere Beach). About 30 km from Palmerston North, outside its span. Listed, not added.",
+   "needs": "description, three reasons with photos, tips, best months, header"
+  }
+ ],
+ "review_not_placed": [
+  {
+   "name": "Waimarie",
+   "verdict": "review",
+   "reason": "Wikivoyage's Do entry sells the 2-hour cruise on NZ's only coal-fired paddle steamer: that is a vehicle/operator, not a place (benchmark). Case for: the Waimarie Museum/wharf at 1A Taupo Quay is a real place (river-boat displays, open Thu-Sun 10-2 per Wikivoyage), but it is a small museum and the cr"
+  },
+  {
+   "name": "Pipiriki",
+   "verdict": "review",
+   "reason": "Benchmark gateway village: DOC names it a main gateway to the river; jet-boat departures to the Bridge to Nowhere (Wikivoyage). For: end of the river road, historic House site, access point. Against: nothing for 30 min beyond the journey beyond; Wikipedia 1.7k views. Review, as required."
+  },
+  {
+   "name": "Jerusalem",
+   "verdict": "review",
+   "reason": "Hiruharama/Jerusalem (Suzanne Aubert history, convent, church) sits on the Whanganui River Road; no counted visitor source found (DOC park page lists only Pipiriki/Ohinepane/Whakahoro; Wikivoyage Whanganui NP has no entry). Benchmark-style gateway/settlement: review."
+  },
+  {
+   "name": "Kaimanawa Forest Park",
+   "verdict": "review",
+   "reason": "Opened a source for it; recall's verdict stands: For: DOC forest park. Against: no counted source found in this enumeration, region overlap unverified (mostly Waikato/Hawke's Bay), little day-visitor use."
+  },
+  {
+   "name": "Ohinepane",
+   "verdict": "review",
+   "reason": "DOC park page names it a main gateway (canoe start); campsite only, draw is the river (benchmark). Review."
+  },
+  {
+   "name": "Whakahoro",
+   "verdict": "review",
+   "reason": "DOC names it a main gateway; campsite/bunkroom, draw is the river beyond (benchmark). No separate visitor stop found. Review."
+  },
+  {
+   "name": "Whanganui Tramways Museum",
+   "verdict": "review",
+   "reason": "Opened a source for it; recall's verdict stands: For: Wikivoyage lists it, tram rides. Against: open only Sundays and some holidays, so not there whenever you arrive; small volunteer museum."
+  },
+  {
+   "name": "Cooks Gardens",
+   "verdict": "review",
+   "reason": "Opened a source for it; recall's verdict stands: For: historic 1896 ground, site of the 1954 four-minute-mile record. Against: working sports ground, one counted source, little to do outside events."
+  },
+  {
+   "name": "Virginia Lake",
+   "verdict": "review",
+   "reason": "Recall had keep with 0 counted sources: only an AA editorial and Wikipedia. A 25-minute loop around a city lake and winter gardens is a local park unless two guides name it; one non-counted listing: downgrade to review (case for: gardens, fountain, aviary, birdlife)."
+  },
+  {
+   "name": "Paloma Gardens",
+   "verdict": "review",
+   "reason": "Opened a source for it; recall's verdict stands: needs_coordinates. For: gardens named by a guide site. Against: single non-counted source, no detail on public access."
+  },
+  {
+   "name": "Castlecliff Beach",
+   "verdict": "review",
+   "reason": "Only a pocket-guide mention (no counted source) and no usable photo found (Commons has a dim surfer shot; Openverse hits are portrait selfies). Case for: city's surf beach, second tier. Downgrade keep to review."
+  },
+  {
+   "name": "Kai Iwi Beach",
+   "verdict": "review",
+   "reason": "Opened a source for it; recall's verdict stands: For: beach and Sunset Road viewpoint named by a guide site. Against: single non-counted source, little detail."
+  },
+  {
+   "name": "Lake Westmere",
+   "verdict": "review",
+   "reason": "Opened a source for it; recall's verdict stands: For: lake with a one-hour loop walk. Against: Wikipedia and a passing guide mention only."
+  },
+  {
+   "name": "Lake Wiritoa",
+   "verdict": "review",
+   "reason": "Opened a source for it; recall's verdict stands: For: popular lake near Kai Iwi. Against: water-skiing lake, Wikipedia and a passing guide mention only."
+  },
+  {
+   "name": "Mount Cleese",
+   "verdict": "reject",
+   "reason": "Wikivoyage lists it, but it is a 45 m landscaped mound at a waste/resource-recovery park (Awapuni) with nothing to do for 30 min; Wikipedia title redirects to John Cleese (0 views). Joke landmark, not a visitor stop: reject (changed from review)."
+  },
+  {
+   "name": "Coach House Museum",
+   "verdict": "review",
+   "reason": "Wikivoyage lists it (daily 10-4, $12, agricultural history): open and a real hour, but the only source, small local museum. Case for keep if Feilding is a destination."
+  },
+  {
+   "name": "Ohakune Railway Museum",
+   "verdict": "review",
+   "reason": "Opened a source for it; recall's verdict stands: For: volunteer railway museum near the station, donation entry. Against: small, one source, limited hours."
+  },
+  {
+   "name": "Mangawhero Forest Walk",
+   "verdict": "review",
+   "reason": "Opened a source for it; recall's verdict stands: For: DOC one-hour native forest loop. Against: short, ordinary bush walk, one source."
+  },
+  {
+   "name": "Raetihi",
+   "verdict": "review",
+   "reason": "Opened a source for it; recall's verdict stands: Destination-level. For: Dinosaur House and a base for Ruapehu. Against: very small town, one source."
+  },
+  {
+   "name": "Glow Worm Grotto (Raetihi)",
+   "verdict": "review",
+   "reason": "Opened a source for it; recall's verdict stands: needs_coordinates. For: glow-worm viewing open all year. Against: single source, exact location unknown."
+  },
+  {
+   "name": "Waimarino Museum",
+   "verdict": "review",
+   "reason": "Opened a source for it; recall's verdict stands: For: museum in the old railway station with jail. Against: small local museum, one source."
+  },
+  {
+   "name": "Makotuku River Track",
+   "verdict": "review",
+   "reason": "Opened a source for it; recall's verdict stands: For: short river walk with possible glow worms. Against: minor local walk, one source."
+  },
+  {
+   "name": "Mount Tongariro",
+   "verdict": "review",
+   "reason": "Opened a source for it; recall's verdict stands: For: volcanic peak with a short side trip, Wikipedia 17k views. Against: mostly part of the Alpine Crossing, sacred to iwi."
+  },
+  {
+   "name": "Waimarino",
+   "verdict": "review",
+   "reason": "Opened a source for it; recall's verdict stands: For: gateway village on SH47 with bus services. Against: nothing to do beyond services (formerly National Park Village)."
+  },
+  {
+   "name": "Rokaiwhenua Stream Walk",
+   "verdict": "review",
+   "reason": "Opened a source for it; recall's verdict stands: For: DOC one-hour forest walk. Against: remote road end, minor, one source."
+  },
+  {
+   "name": "Rangiwahia Track",
+   "verdict": "review",
+   "reason": "Opened a source for it; recall's verdict stands: For: popular Ruahine walk. Against: only third-party source, 6-7 hour loop with little detail."
+  },
+  {
+   "name": "Ohau Gorge Track",
+   "verdict": "review",
+   "reason": "Opened a source for it; recall's verdict stands: For: DOC track in Tararua Forest Park. Against: one source, minor access track. Overlaps Wellington pass."
+  },
+  {
+   "name": "Tararua Main Range Traverse",
+   "verdict": "review",
+   "reason": "Opened a source for it; recall's verdict stands: needs_coordinates. For: DOC multi-day traverse. Against: route for experienced trampers, overlaps Wellington pass."
+  },
+  {
+   "name": "Mokai Gravity Canyon",
+   "verdict": "review",
+   "reason": "Opened a source for it; recall's verdict stands: needs_coordinates. For: bungy and swing site. Against: commercial operator reported closed for renovation, region unverified."
+  },
+  {
+   "name": "Taihape Scenic Reserve",
+   "verdict": "review",
+   "reason": "Opened a source for it; recall's verdict stands: For: bush walk by town. Against: one non-counted source, no detail."
+  },
+  {
+   "name": "Mangaweka",
+   "verdict": "review",
+   "reason": "Single non-counted guide (neatplaces) and no Wikivoyage entry; case for: roadside village under the Rangitikei cliffs on SH1 with the cantilever bridge. Downgrade keep to review (it is only a stop if driving past)."
+  },
+  {
+   "name": "Mangaweka Cantilever Bridge",
+   "verdict": "review",
+   "reason": "Opened a source for it; recall's verdict stands: For: historic bridge open to walkers. Against: short stop, one source."
+  },
+  {
+   "name": "Whitecliffs Boulders",
+   "verdict": "review",
+   "reason": "Single non-counted guide (neatplaces), reached across farmland; no photo on Commons or Openverse. Case for: distinct natural curiosity. Downgrade keep to review until a second source and a photo exist."
+  },
+  {
+   "name": "Hunterville",
+   "verdict": "review",
+   "reason": "Opened a source for it; recall's verdict stands: For: small SH1 town with lookouts and a museum. Against: one non-counted source."
+  },
+  {
+   "name": "Hunterville and Districts Settlers Museum",
+   "verdict": "review",
+   "reason": "Opened a source for it; recall's verdict stands: For: 1895 courthouse museum, gold-coin key hire. Against: small, one source, key collected from a cafe."
+  },
+  {
+   "name": "Stormy Point Lookout",
+   "verdict": "review",
+   "reason": "Opened a source for it; recall's verdict stands: For: pocket guide calls it a well-preserved sequence of river terraces. Against: 19 km detour, short viewpoint stop, one source."
+  },
+  {
+   "name": "Hautapu Trails",
+   "verdict": "review",
+   "reason": "Opened a source for it; recall's verdict stands: needs_coordinates. For: walking and MTB trails called a strong reason to stop by a regional guide. Against: single source, location unconfirmed."
+  },
+  {
+   "name": "Manawatū River Estuary",
+   "verdict": "review",
+   "reason": "Opened a source for it; recall's verdict stands: For: Ramsar wetland with birdlife. Against: one source, viewed from paths."
+  },
+  {
+   "name": "Foxton Flaxstripper Museum",
+   "verdict": "review",
+   "reason": "Opened a source for it; recall's verdict stands: For: museum of flax-stripping. Against: small, one source."
+  },
+  {
+   "name": "Nye Cottage",
+   "verdict": "review",
+   "reason": "Opened a source for it; recall's verdict stands: For: historic cottage named by a source. Against: interior access unverified."
+  },
+  {
+   "name": "Tokomaru Steam Engine Museum",
+   "verdict": "review",
+   "reason": "Opened a source for it; recall's verdict stands: For: steam engine collection. Against: Wikipedia category only, limited opening."
+  },
+  {
+   "name": "Murrayfield Clydesdales",
+   "verdict": "review",
+   "reason": "Opened a source for it; recall's verdict stands: For: farm with animal feeding. Against: commercial farm with cafe, one source."
+  },
+  {
+   "name": "Hōkio Beach",
+   "verdict": "review",
+   "reason": "Opened a source for it; recall's verdict stands: For: beach and scenic drive. Against: minor beach, thin sources."
+  },
+  {
+   "name": "Waikawa Beach",
+   "verdict": "review",
+   "reason": "Only the Horowhenua council beaches page names it; no good photo (Commons 'Waikawa beach.jpg' is a flat 1024 px dune shot). Case for: dunes, estuary, horse riding. Downgrade keep to review."
+  }
+ ],
+ "destinations_already_present": [
+  {
+   "name": "Tongariro National Park",
+   "id": "tongariro",
+   "note": "Existing destination. Skeptic photo File:Mt Ngauruhoe.JPG may duplicate the Mount Ngauruhoe spot's photo."
+  },
+  {
+   "name": "Whanganui National Park",
+   "id": "whanganui-national-park",
+   "note": "Existing destination."
+  },
+  {
+   "name": "Whanganui",
+   "id": "whanganui",
+   "note": "Existing destination."
+  },
+  {
+   "name": "Palmerston North",
+   "id": "palmerston-north",
+   "note": "Existing destination."
+  },
+  {
+   "name": "Tararua Forest Park",
+   "id": "tararua-forest-park",
+   "note": "Existing standalone spot."
+  },
+  {
+   "name": "Ohakune",
+   "note": "Not present: proposed (see new_destinations)."
+  },
+  {
+   "name": "Foxton",
+   "note": "Not present: proposed (see new_destinations)."
+  }
+ ],
+ "overlaps": [
+  {
+   "name": "Ruahine Forest Park",
+   "overlaps": "hawkes-bay",
+   "note": "Already a standalone (ruahine-forest-park) in region-hawkes-bay/placement.json: not duplicated."
+  },
+  {
+   "name": "Timber Trail",
+   "overlaps": "waikato",
+   "note": "Already standalone (timber-trail) in region-waikato/placement.json; coordinates still missing there."
+  },
+  {
+   "name": "Existing spots kept",
+   "note": "Tongariro Ngauruhoe, Ruapehu, Tawhai Falls, Whakapapa Village, Taranaki Falls, Durie Hill Elevator, Sarjeant Gallery, Whanganui Journey, Bridge to Nowhere, Te Manawa, The Esplanade, NZ Rugby Museum are existing keeps: unchanged."
+  }
+ ],
+ "id_ledger": {
+  "tongariro": "1-6 used, next 7",
+  "whanganui": "1-6 used (1,2 now in whanganui-national-park), next 7",
+  "whanganui-national-park": "-1,-2 used, next -3",
+  "palmerston-north": "1-3 used, next 4",
+  "ohakune": "new",
+  "foxton": "new"
+ }
+}

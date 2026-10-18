@@ -1,0 +1,1269 @@
+{
+ "region": "taranaki",
+ "summary_note": "Spots and standalone: new spots follow existing numbering (new-plymouth-7+, egmont-6+); ids for proposed-destination spots only become real if the owner approves the destination. Existing spots (11) were re-confirmed keep; none needs moving. Not placed: skeptic rejects (incl. the four surf breaks and Govett-Brewster), reviews (see fairness.json).",
+ "new_spots": [
+  {
+   "name": "Wind Wand",
+   "action": "spot",
+   "destination": "new-plymouth",
+   "id": "new-plymouth-7",
+   "status": "ready for Pipeline C research",
+   "coordinates": {
+    "latitude": -39.056,
+    "longitude": 174.0715
+   },
+   "coordinates_source": "Wikivoyage New Plymouth See listing (the sculpture itself)",
+   "distance_from_destination_km": 0.3,
+   "reason": "Skeptic: Unchanged from recall checker: 45 m Len Lye kinetic sculpture named by Wikivoyage and tourism board; waterfront icon. Matched by proximity to new-plymouth-5; judged as new.",
+   "icon": "🎐",
+   "category": "landmark",
+   "bio": "A 45-metre kinetic pole by Len Lye on the Coastal Walkway that sways in the wind and is lit red at night.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "visit_hours_basis": "estimate from the source note / loop length; Pipeline C to confirm",
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [],
+   "views": 3919,
+   "counted_sources": 2,
+   "counted_source_urls": [
+    "https://en.wikivoyage.org/wiki/New_Plymouth",
+    "https://www.taranaki.co.nz/visit/highlights-of-taranaki/natures-playground"
+   ],
+   "photo": {
+    "file": "File:Wind Wand, New Plymouth.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Wind_Wand,_New_Plymouth.jpg",
+    "width": 5306,
+    "height": 3624
+   },
+   "hero_crop": {
+    "x": 0.4,
+    "y": 0.5
+   },
+   "photo_reason": "The wand at dusk on the waterfront (2012); wand left of centre.",
+   "wiki": "Wind Wand"
+  },
+  {
+   "name": "Fitzroy Beach",
+   "action": "spot",
+   "destination": "new-plymouth",
+   "id": "new-plymouth-8",
+   "status": "held: needs a photo",
+   "coordinates": {
+    "latitude": -39.04213,
+    "longitude": 174.09953
+   },
+   "coordinates_source": "OSM (candidate source; confirm natural/beach in Pipeline C)",
+   "distance_from_destination_km": 2.6,
+   "reason": "Skeptic: Unchanged from recall checker: Surf beach named on two tourism board pages (2 counted sources); legendary break.",
+   "icon": "🏄",
+   "category": "beach",
+   "bio": "A surf beach just north of New Plymouth's centre on the Coastal Walkway, patrolled in summer.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "visit_hours_basis": "estimate from the source note / loop length; Pipeline C to confirm",
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [],
+   "views": 0,
+   "counted_sources": 2,
+   "counted_source_urls": [
+    "https://www.taranaki.co.nz/visit/highlights-of-taranaki/surf-highway-45",
+    "https://www.taranaki.co.nz/visit/highlights-of-taranaki/natures-playground"
+   ],
+   "photo": null,
+   "hero_crop": null,
+   "photo_reason": null,
+   "wiki": "Fitzroy Beach"
+  },
+  {
+   "name": "East End Beach",
+   "action": "spot",
+   "destination": "new-plymouth",
+   "id": "new-plymouth-9",
+   "status": "held: needs a photo",
+   "coordinates": null,
+   "coordinates_source": null,
+   "distance_from_destination_km": null,
+   "reason": "Candidate coordinates were Munjoy Hill, Maine (wrong). Take the OSM natural/beach point for East End Beach, New Plymouth (Overpass was unreachable in this run). Skeptic: Upgraded from review: Surf Highway 45 page (opened) names it as a patrolled swimming beach and kitesurfing destination, with a playground; a beach a real source names. NEEDS COORDINATES: the candidate's are wrong (Munjoy Hill, Maine); take from OSM 'East End Beach' New Plymouth (Overpass/Nominatim were unreachable here).",
+   "icon": "🪁",
+   "category": "beach",
+   "bio": "A patrolled swimming beach in New Plymouth that is also a kitesurfing spot, with a playground.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "visit_hours_basis": "estimate from the source note / loop length; Pipeline C to confirm",
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "counted_source_urls": [
+    "https://www.taranaki.co.nz/visit/highlights-of-taranaki/surf-highway-45"
+   ],
+   "photo": null,
+   "hero_crop": null,
+   "photo_reason": null
+  },
+  {
+   "name": "Ngāmotu Beach",
+   "action": "spot",
+   "destination": "new-plymouth",
+   "id": "new-plymouth-10",
+   "status": "held: needs a photo",
+   "coordinates": {
+    "latitude": -39.06006,
+    "longitude": 174.04017
+   },
+   "coordinates_source": "OSM (candidate source; confirm natural/beach in Pipeline C)",
+   "distance_from_destination_km": 3.0,
+   "reason": "Skeptic: Unchanged from recall checker: Sheltered swimming beach named on two tourism board pages (2 counted sources).",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A sheltered swimming beach beside Paritutu Rock at the port end of New Plymouth.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "visit_hours_basis": "estimate from the source note / loop length; Pipeline C to confirm",
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [],
+   "views": 0,
+   "counted_sources": 2,
+   "counted_source_urls": [
+    "https://www.taranaki.co.nz/visit/highlights-of-taranaki/surf-highway-45",
+    "https://www.taranaki.co.nz/visit/highlights-of-taranaki/natures-playground"
+   ],
+   "photo": null,
+   "hero_crop": null,
+   "photo_reason": null,
+   "wiki": "Ngāmotu Beach"
+  },
+  {
+   "name": "Sugar Loaf Islands",
+   "action": "spot",
+   "destination": "new-plymouth",
+   "id": "new-plymouth-11",
+   "status": "ready for Pipeline C research",
+   "coordinates": {
+    "latitude": -39.049444,
+    "longitude": 174.027778
+   },
+   "coordinates_source": "Wikipedia Sugar Loaf Islands (group centre, in water; correct for an island group)",
+   "distance_from_destination_km": 4.1,
+   "reason": "Viewing from the coast; boat trips are sold by many operators (no ticketUrl). Skeptic: Wikipedia and tourism board; marine-park islands seen from Paritutu and the coast. Single counted source but an obvious landmark.",
+   "icon": "🏝️",
+   "category": "nature",
+   "bio": "A marine-park group of rocky islands off New Plymouth, seen from Paritutu and the coast or on boat trips.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "visit_hours_basis": "estimate from the source note / loop length; Pipeline C to confirm",
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [],
+   "views": 2503,
+   "counted_sources": 1,
+   "counted_source_urls": [
+    "https://www.taranaki.co.nz/visit/highlights-of-taranaki/natures-playground"
+   ],
+   "photo": {
+    "file": "File:Sugarloaves, New Plymouth.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Sugarloaves,_New_Plymouth.jpg",
+    "width": 3732,
+    "height": 2483
+   },
+   "hero_crop": "ok",
+   "photo_reason": "The islands themselves, close and clear (2006); also the Wikipedia lead.",
+   "wiki": "Sugar Loaf Islands"
+  },
+  {
+   "name": "Lake Mangamahoe",
+   "action": "spot",
+   "destination": "new-plymouth",
+   "id": "new-plymouth-12",
+   "status": "ready for Pipeline C research",
+   "coordinates": {
+    "latitude": -39.1247,
+    "longitude": 174.12524
+   },
+   "coordinates_source": "OSM (candidate source)",
+   "distance_from_destination_km": 8.8,
+   "reason": "Skeptic: Tourism board natures-playground page opened: 6 km loop, lookouts over the lake to the mountain; three pages name it.",
+   "icon": "🌄",
+   "category": "nature",
+   "bio": "A lake a few minutes from New Plymouth with a 6 km loop track and lookouts that frame Mount Taranaki.",
+   "hours": null,
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2.5,
+   "visit_hours_basis": "estimate from the source note / loop length; Pipeline C to confirm",
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "NZD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 3,
+   "counted_source_urls": [
+    "https://www.taranaki.co.nz/visit/highlights-of-taranaki/top-5-hikes-in-taranaki",
+    "https://www.taranaki.co.nz/visit/highlights-of-taranaki/top-five-views",
+    "https://www.taranaki.co.nz/visit/highlights-of-taranaki/natures-playground"
+   ],
+   "photo": {
+    "file": "File:Lake Mangamahoe - 0.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Lake_Mangamahoe_-_0.jpg",
+    "width": 3390,
+    "height": 2361
+   },
+   "hero_crop": "ok",
+   "photo_reason": "Lake with Taranaki reflection framing the mountain (2022).",
+   "wiki": "Lake Mangamahoe"
+  },
+  {
+   "name": "Ōakura Beach",
+   "action": "spot",
+   "destination": "new-plymouth",
+   "id": "new-plymouth-13",
+   "status": "ready for Pipeline C research",
+   "coordinates": {
+    "latitude": -39.11585,
+    "longitude": 173.9324
+   },
+   "coordinates_source": "OSM (candidate source; confirm natural/beach in Pipeline C)",
+   "distance_from_destination_km": 14.0,
+   "reason": "The village Ōakura was rejected as a duplicate of this beach. Skeptic: Unchanged from recall checker: Popular swimming and surf beach named on two tourism board pages (2 counted sources).",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A popular black-sand swimming and surf beach at Ōakura on Surf Highway 45, with the Sugar Loaf stacks offshore.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "visit_hours_basis": "estimate from the source note / loop length; Pipeline C to confirm",
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [],
+   "views": 0,
+   "counted_sources": 2,
+   "counted_source_urls": [
+    "https://www.taranaki.co.nz/visit/highlights-of-taranaki/surf-highway-45",
+    "https://www.taranaki.co.nz/visit/highlights-of-taranaki/natures-playground"
+   ],
+   "photo": {
+    "file": "File:Oakura Beach 2019.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Oakura_Beach_2019.jpg",
+    "width": 4608,
+    "height": 3456
+   },
+   "hero_crop": "ok",
+   "photo_reason": "Black-sand beach with Sugar Loaf stacks beyond (2019); also the Wikipedia lead of Ōakura.",
+   "wiki": "Ōakura Beach"
+  },
+  {
+   "name": "Waimoku Track",
+   "action": "spot",
+   "destination": "new-plymouth",
+   "id": "new-plymouth-14",
+   "status": "held: needs a photo",
+   "coordinates": {
+    "latitude": -39.15109,
+    "longitude": 173.95101
+   },
+   "coordinates_source": "OSM way/node for the track (candidate source); trailhead is Lucy's Gully - confirm the car park point",
+   "distance_from_destination_km": 15.0,
+   "reason": "Kaitake is part of Te Papa-Kura-o-Taranaki in DOC terms but is reached from Ōakura/New Plymouth, 19 km from Egmont's centre and not via the park hub, so placed with New Plymouth. Skeptic: Unchanged from recall checker: 4-5 hour Kaitake forest walk named by DOC and the tourism board top-5 hikes (2 counted sources).",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 4-5 hour return walk through the Kaitake forest from Lucy's Gully, named by DOC and the tourism board.",
+   "hours": null,
+   "visitHoursMin": 4,
+   "visitHoursMax": 5,
+   "visit_hours_basis": "estimate from the source note / loop length; Pipeline C to confirm",
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "NZD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "counted_source_urls": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/taranaki/places/te-papa-kura-o-taranaki/things-to-do/tracks/waimoku-track",
+    "https://www.taranaki.co.nz/visit/highlights-of-taranaki/top-5-hikes-in-taranaki"
+   ],
+   "photo": null,
+   "hero_crop": null,
+   "photo_reason": null,
+   "wiki": "Waimoku Track",
+   "official_page_candidate": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/taranaki/places/te-papa-kura-o-taranaki/things-to-do/tracks/waimoku-track"
+  },
+  {
+   "name": "Pukeiti",
+   "action": "spot",
+   "destination": "new-plymouth",
+   "id": "new-plymouth-15",
+   "status": "held: needs a photo",
+   "coordinates": {
+    "latitude": -39.2006,
+    "longitude": 173.98
+   },
+   "coordinates_source": "Wikipedia Pukeiti (gardens); confirm the garden entrance",
+   "distance_from_destination_km": 18.1,
+   "reason": "Within span of both New Plymouth (18 km) and Egmont (13 km); placed with New Plymouth because visitors drive out from the city to the garden, not to a park track. Skeptic: Tourism board names the rhododendron and rainforest garden with treehouse trail; Wikipedia article; paid garden, 1-2 hours.",
+   "icon": "🌺",
+   "category": "nature",
+   "bio": "A rhododendron and native-forest garden of more than 10,000 plants on the mountain's northern slopes, with a treehouse trail and café.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "visit_hours_basis": "estimate from the source note / loop length; Pipeline C to confirm",
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "NZD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 646,
+   "counted_sources": 1,
+   "counted_source_urls": [
+    "https://www.taranaki.co.nz/visit/highlights-of-taranaki/natures-playground"
+   ],
+   "photo": null,
+   "hero_crop": null,
+   "photo_reason": null,
+   "wiki": "Pukeiti (gardens)"
+  },
+  {
+   "name": "Around the Mountain Circuit",
+   "action": "spot",
+   "destination": "egmont",
+   "id": "egmont-6",
+   "status": "ready for Pipeline C research",
+   "coordinates": {
+    "latitude": -39.31041,
+    "longitude": 174.03759
+   },
+   "coordinates_source": "OSM (candidate source)",
+   "distance_from_destination_km": 2.7,
+   "reason": "Visit hours: multi-day (days, not hours); set in Pipeline C. DOC page is the counted source and the likely ticketUrl, to be verified. Skeptic: Upgraded from review: DOC's Te Papa-Kura-o-Taranaki page lists the multi-day circuit of the mountain; a DOC-promoted multi-day walk (Hump Ridge analogue), distinct from the day walks.",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A multi-day loop of Mount Taranaki on DOC's track network, linking the park's huts and sides of the mountain.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "visit_hours_basis": "estimate from the source note / loop length; Pipeline C to confirm",
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "NZD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "counted_source_urls": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/taranaki/places/te-papa-kura-o-taranaki/things-to-do/tracks/around-the-mountain-circuit"
+   ],
+   "photo": {
+    "external": true,
+    "url": "https://live.staticflickr.com/7172/6488938137_3a0c79df02_b.jpg",
+    "page": "https://www.flickr.com/photos/40456023@N03/6488938137",
+    "width": 1024,
+    "height": 768,
+    "licence": "CC BY 2.0 (Department of Conservation, Flickr)"
+   },
+   "hero_crop": "ok",
+   "photo_reason": "Openverse/Flickr, Department of Conservation, CC BY 2.0: hiker and Taranaki beside the Pouākai/Kahui/North Egmont track sign (Egmont NP). Not Commons; official DOC image under CC BY. Needs assets/photos commit per IMAGES.md; 1024 px passes the 960 spot minimum.",
+   "official_page_candidate": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/taranaki/places/te-papa-kura-o-taranaki/things-to-do/tracks/around-the-mountain-circuit"
+  },
+  {
+   "name": "Manganui Gorge Track",
+   "action": "spot",
+   "destination": "egmont",
+   "id": "egmont-7",
+   "status": "ready for Pipeline C research",
+   "coordinates": {
+    "latitude": -39.30592,
+    "longitude": 174.09456
+   },
+   "coordinates_source": "OSM (candidate source)",
+   "distance_from_destination_km": 2.7,
+   "reason": "Skeptic: Unchanged from recall checker: Walk to a 100 m suspension bridge named by the tourism board on two pages (2 counted sources).",
+   "icon": "🌉",
+   "category": "hike",
+   "bio": "A walk to the 100 m Manganui Gorge suspension bridge, 49.5 m above the gorge floor, opened in May 2024.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "visit_hours_basis": "estimate from the source note / loop length; Pipeline C to confirm",
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "NZD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "counted_source_urls": [
+    "https://www.taranaki.co.nz/visit/highlights-of-taranaki/natures-playground",
+    "https://www.taranaki.co.nz/visit/highlights-of-taranaki/top-5-hikes-in-taranaki"
+   ],
+   "photo": {
+    "file": "File:Manganui Gorge Track 02.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Manganui_Gorge_Track_02.jpg",
+    "width": 4571,
+    "height": 2818
+   },
+   "hero_crop": "ok",
+   "photo_reason": "Track toward the mountain (2017, pre-bridge); shows the track, not the 2024 suspension bridge."
+  },
+  {
+   "name": "Manganui Ski Area",
+   "action": "spot",
+   "destination": "egmont",
+   "id": "egmont-8",
+   "status": "ready for Pipeline C research",
+   "coordinates": {
+    "latitude": -39.303694,
+    "longitude": 174.09108
+   },
+   "coordinates_source": "Wikivoyage Egmont NP / Taranaki listing (the ski area itself)",
+   "distance_from_destination_km": 2.3,
+   "reason": "Skeptic: Unchanged from recall checker: Seasonal ski field named by Wikivoyage on two pages; a seasonal venue is still a spot.",
+   "icon": "⛷️",
+   "category": "entertainment",
+   "bio": "A small seasonal ski field on the eastern slopes of the mountain, open from early June to mid-October.",
+   "hours": null,
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "visit_hours_basis": "estimate from the source note / loop length; Pipeline C to confirm",
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "NZD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 427,
+   "counted_sources": 2,
+   "counted_source_urls": [
+    "https://en.wikivoyage.org/wiki/Taranaki",
+    "https://en.wikivoyage.org/wiki/Egmont_National_Park"
+   ],
+   "photo": {
+    "file": "File:Manganui Ski Area, Mt Taranaki (52756242248).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Manganui_Ski_Area,_Mt_Taranaki_(52756242248).jpg",
+    "width": 6144,
+    "height": 3200
+   },
+   "hero_crop": "ok",
+   "photo_reason": "Mt Taranaki slopes at the ski area (2023); field buildings are tiny, so recognisable as the mountain rather than the ski field - borderline accept.",
+   "wiki": "Manganui Ski Area",
+   "photo_note": "Borderline photo: the field buildings are tiny, so it reads as the mountain more than the ski field."
+  },
+  {
+   "name": "Cape Egmont Lighthouse",
+   "action": "spot-of-proposed-destination",
+   "destination": "opunake",
+   "id": "opunake-2",
+   "status": "ready for Pipeline C research",
+   "coordinates": {
+    "latitude": -39.27624,
+    "longitude": 173.75499
+   },
+   "coordinates_source": "OSM (candidate source; at the lighthouse, Cape Road)",
+   "distance_from_destination_km": 21.4,
+   "reason": "26.8 km from Egmont's centre but reached along Surf Highway 45, not from the park hub; 36 km from New Plymouth; 21 km from Ōpunake. Skeptic: Tourism board names the 1865 lighthouse at the western tip; exterior-only but a named photographed stop in open ground. One source; marginal but kept as a landmark.",
+   "icon": "🗼",
+   "category": "landmark",
+   "bio": "An 1865 lighthouse at the most western point of Taranaki, reached down Cape Road.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "visit_hours_basis": "estimate from the source note / loop length; Pipeline C to confirm",
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [],
+   "views": 742,
+   "counted_sources": 1,
+   "counted_source_urls": [
+    "https://www.taranaki.co.nz/visit/highlights-of-taranaki/spotlight-on-south-taranaki"
+   ],
+   "photo": {
+    "file": "File:Cape Egmont Lighthouse (22099320919).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Cape_Egmont_Lighthouse_(22099320919).jpg",
+    "width": 6000,
+    "height": 4000
+   },
+   "hero_crop": {
+    "x": 0.65,
+    "y": 0.5
+   },
+   "photo_reason": "The lighthouse itself, off-centre right (2015).",
+   "wiki": "Cape Egmont Lighthouse"
+  },
+  {
+   "name": "Ōpunake Beach",
+   "action": "spot-of-proposed-destination",
+   "destination": "opunake",
+   "id": "opunake-1",
+   "status": "ready for Pipeline C research",
+   "coordinates": {
+    "latitude": -39.45879,
+    "longitude": 173.85615
+   },
+   "coordinates_source": "OSM (candidate source; confirm natural/beach in Pipeline C)",
+   "distance_from_destination_km": 0.7,
+   "reason": "Skeptic: Unchanged from recall checker: Surf beach with lifesaving patrols named on two tourism board pages (2 counted sources).",
+   "icon": "🏄",
+   "category": "beach",
+   "bio": "A black-sand surf beach at Ōpunake with a playground and lifesaving patrols in summer.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "visit_hours_basis": "estimate from the source note / loop length; Pipeline C to confirm",
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [],
+   "views": 0,
+   "counted_sources": 2,
+   "counted_source_urls": [
+    "https://www.taranaki.co.nz/visit/highlights-of-taranaki/surf-highway-45",
+    "https://www.taranaki.co.nz/visit/highlights-of-taranaki/spotlight-on-south-taranaki"
+   ],
+   "photo": {
+    "file": "File:Opunake Beach - panoramio.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Opunake_Beach_-_panoramio.jpg",
+    "width": 1024,
+    "height": 577
+   },
+   "hero_crop": "ok",
+   "photo_reason": "Black-sand surf beach and headland (2012, CC BY 3.0); only 1024 px wide, just passes 960.",
+   "photo_note": "Only 1024 px wide (just clears the 960 minimum)."
+  },
+  {
+   "name": "Stratford Glockenspiel",
+   "action": "spot-of-proposed-destination",
+   "destination": "stratford",
+   "id": "stratford-1",
+   "status": "ready for Pipeline C research",
+   "coordinates": {
+    "latitude": -39.33953,
+    "longitude": 174.28495
+   },
+   "coordinates_source": "OSM (candidate source; the clock tower)",
+   "distance_from_destination_km": 0.2,
+   "reason": "Skeptic: Unchanged from recall checker: Quirky roadside icon (Romeo and Juliet clock tower) named by Wikivoyage and tourism board.",
+   "icon": "🕰️",
+   "category": "landmark",
+   "bio": "A clock tower in Stratford's main street whose glockenspiel plays the Romeo and Juliet balcony scene at 10am, 1pm, 3pm and 7pm.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "visit_hours_basis": "estimate from the source note / loop length; Pipeline C to confirm",
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [],
+   "views": 0,
+   "counted_sources": 2,
+   "counted_source_urls": [
+    "https://www.taranaki.co.nz/visit/highlights-of-taranaki/spotlight-on-stratford",
+    "https://en.wikivoyage.org/wiki/Taranaki"
+   ],
+   "photo": {
+    "file": "File:Stratford clock tower Glockenspiel - Romeo and Juliet.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Stratford_clock_tower_Glockenspiel_-_Romeo_and_Juliet.jpg",
+    "width": 1024,
+    "height": 768
+   },
+   "hero_crop": "ok",
+   "photo_reason": "Tower top with the Romeo and Juliet figures (2011, PD-self); the figures are the attraction; 1024 px.",
+   "photo_note": "1024 px wide; the figures are the attraction."
+  },
+  {
+   "name": "Te Popo Gardens",
+   "action": "spot-of-proposed-destination",
+   "destination": "stratford",
+   "id": "stratford-2",
+   "status": "held: needs a photo",
+   "coordinates": {
+    "latitude": -39.27017,
+    "longitude": 174.36447
+   },
+   "coordinates_source": "OSM-approx (Te Popo locality, not the garden entrance)",
+   "distance_from_destination_km": 10.5,
+   "reason": "Skeptic: Two tourism board pages name the woodland garden. Coordinates are OSM-approx (Te Popo locality): verify the garden entrance.",
+   "icon": "🌳",
+   "category": "nature",
+   "bio": "A woodland garden a short drive from Stratford, with a family trail.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "visit_hours_basis": "estimate from the source note / loop length; Pipeline C to confirm",
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "NZD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "counted_source_urls": [
+    "https://www.taranaki.co.nz/visit/highlights-of-taranaki/natures-playground",
+    "https://www.taranaki.co.nz/visit/highlights-of-taranaki/spotlight-on-stratford"
+   ],
+   "photo": null,
+   "hero_crop": null,
+   "photo_reason": null,
+   "wiki": "Te Popo Gardens",
+   "coordinates_verify": true
+  },
+  {
+   "name": "Hāwera Water Tower",
+   "action": "spot-of-proposed-destination",
+   "destination": "hawera",
+   "id": "hawera-1",
+   "status": "ready for Pipeline C research",
+   "coordinates": {
+    "latitude": -39.59,
+    "longitude": 174.285
+   },
+   "coordinates_source": "Wikivoyage Hawera See listing (the tower)",
+   "distance_from_destination_km": 0.3,
+   "reason": "Skeptic: Unchanged from recall checker: 1914 tower with a 215-step climb for views, named by Wikivoyage and tourism board.",
+   "icon": "🗼",
+   "category": "viewpoint",
+   "bio": "A 1914 heritage water tower with a 215-step climb for views over the town and the mountain.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "visit_hours_basis": "estimate from the source note / loop length; Pipeline C to confirm",
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "NZD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 160,
+   "counted_sources": 2,
+   "counted_source_urls": [
+    "https://en.wikivoyage.org/wiki/Hawera",
+    "https://www.taranaki.co.nz/visit/highlights-of-taranaki/natures-playground"
+   ],
+   "photo": {
+    "file": "File:Hawera Water Tower 03.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Hawera_Water_Tower_03.jpg",
+    "width": 2691,
+    "height": 4037
+   },
+   "hero_crop": {
+    "x": 0.5,
+    "y": 0.4
+   },
+   "photo_reason": "The tower, portrait (2011); tower centred.",
+   "wiki": "Hāwera Water Tower"
+  },
+  {
+   "name": "Tawhiti Museum",
+   "action": "spot-of-proposed-destination",
+   "destination": "hawera",
+   "id": "hawera-2",
+   "status": "held: needs a photo",
+   "coordinates": {
+    "latitude": -39.5685,
+    "longitude": 174.3116
+   },
+   "coordinates_source": "Wikivoyage Hawera See listing (the museum)",
+   "distance_from_destination_km": 3.4,
+   "reason": "Skeptic: Unchanged from recall checker: Wax-scene and scale-model museum with boat ride named by Wikivoyage and tourism board.",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "A private museum near Hāwera with life-size wax scenes, scale models and a Traders and Whalers boat ride.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 3,
+   "visit_hours_basis": "estimate from the source note / loop length; Pipeline C to confirm",
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "NZD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "counted_source_urls": [
+    "https://en.wikivoyage.org/wiki/Hawera",
+    "https://www.taranaki.co.nz/visit/highlights-of-taranaki/spotlight-on-south-taranaki"
+   ],
+   "photo": null,
+   "hero_crop": null,
+   "photo_reason": null,
+   "wiki": "Tawhiti Museum"
+  },
+  {
+   "name": "Pātea",
+   "action": "spot-of-proposed-destination",
+   "destination": "hawera",
+   "id": "hawera-3",
+   "status": "held: needs a photo",
+   "coordinates": {
+    "latitude": -39.757222,
+    "longitude": 174.476667
+   },
+   "coordinates_source": "Wikivoyage Taranaki town point (town stop; no attraction coordinate)",
+   "distance_from_destination_km": 25.1,
+   "reason": "Town stop; museum and beach are separate spots. 25 km from Hāwera on SH3 (inside its 55 km span). If the owner prefers, a Pātea destination could hold hawera-3/4/5. Skeptic: Wikivoyage and South Taranaki page (opened): town stop with the museum, waka and beach; the museum and beach are also separate spots.",
+   "icon": "🏘️",
+   "category": "landmark",
+   "bio": "A South Taranaki town on the Pātea River with the Aotea waka, a museum and a beach.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "visit_hours_basis": "estimate from the source note / loop length; Pipeline C to confirm",
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [],
+   "views": 2551,
+   "counted_sources": 2,
+   "counted_source_urls": [
+    "https://en.wikivoyage.org/wiki/Taranaki",
+    "https://www.taranaki.co.nz/visit/highlights-of-taranaki/spotlight-on-south-taranaki"
+   ],
+   "photo": null,
+   "hero_crop": null,
+   "photo_reason": null,
+   "wiki": "Pātea"
+  },
+  {
+   "name": "Aotea Utanganui – Museum of South Taranaki",
+   "action": "spot-of-proposed-destination",
+   "destination": "hawera",
+   "id": "hawera-4",
+   "status": "ready for Pipeline C research",
+   "coordinates": {
+    "latitude": -39.7545,
+    "longitude": 174.4721
+   },
+   "coordinates_source": "Wikipedia article for the museum",
+   "distance_from_destination_km": 24.6,
+   "reason": "Skeptic: Unchanged from recall checker: Museum at Pātea named by Wikivoyage and the tourism board (2 counted sources).",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "The museum of South Taranaki at Pātea, beside the Aotea waka.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "visit_hours_basis": "estimate from the source note / loop length; Pipeline C to confirm",
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "NZD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 301,
+   "counted_sources": 2,
+   "counted_source_urls": [
+    "https://www.taranaki.co.nz/visit/highlights-of-taranaki/spotlight-on-south-taranaki",
+    "https://en.wikivoyage.org/wiki/Taranaki"
+   ],
+   "photo": {
+    "file": "File:Aotea Utanganui (Pātea Museum), Pātea.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Aotea_Utanganui_(Pātea_Museum),_Pātea.jpg",
+    "width": 5100,
+    "height": 2100
+   },
+   "hero_crop": "ok",
+   "photo_reason": "Whare-style museum entrance, 2.4:1 so hero shows the middle 40%, which holds the entrance (2017).",
+   "wiki": "Aotea Utanganui – Museum of South Taranaki"
+  },
+  {
+   "name": "Pātea Beach",
+   "action": "spot-of-proposed-destination",
+   "destination": "hawera",
+   "id": "hawera-5",
+   "status": "ready for Pipeline C research",
+   "coordinates": {
+    "latitude": -39.76907,
+    "longitude": 174.48766
+   },
+   "coordinates_source": "OSM-approx (Pātea beach camp, not the beach)",
+   "distance_from_destination_km": 26.7,
+   "reason": "Skeptic: Unchanged from recall checker: Beach with shipwreck and lookout named by the tourism board; second-tier beach stop. coordinates osm-approx",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A coastal beach at Pātea with a shipwreck and a lookout.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "visit_hours_basis": "estimate from the source note / loop length; Pipeline C to confirm",
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [],
+   "views": 0,
+   "counted_sources": 1,
+   "counted_source_urls": [
+    "https://www.taranaki.co.nz/visit/highlights-of-taranaki/spotlight-on-south-taranaki"
+   ],
+   "photo": {
+    "file": "File:Patea Beach, South Taranaki, New Zealand 03.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Patea_Beach,_South_Taranaki,_New_Zealand_03.JPG",
+    "width": 5184,
+    "height": 3456
+   },
+   "hero_crop": "ok",
+   "photo_reason": "Beach and the sand cliffs beyond (2016); plain but real; alternatives show a sign or a rock ledge.",
+   "coordinates_verify": true
+  },
+  {
+   "name": "Kaupokonui Beach",
+   "action": "spot-of-proposed-destination",
+   "destination": "hawera",
+   "id": "hawera-6",
+   "status": "ready for Pipeline C research",
+   "coordinates": {
+    "latitude": -39.56624,
+    "longitude": 174.05718
+   },
+   "coordinates_source": "OSM (candidate source; confirm natural/beach in Pipeline C)",
+   "distance_from_destination_km": 19.5,
+   "reason": "19.5 km from Hāwera along Surf Highway 45. Skeptic: Unchanged from recall checker: Black-sand beach with safe swimming named on two tourism board pages (2 counted sources).",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A black-sand beach with dunes, safe swimming and a campground playground, near Manaia.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "visit_hours_basis": "estimate from the source note / loop length; Pipeline C to confirm",
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [],
+   "views": 0,
+   "counted_sources": 2,
+   "counted_source_urls": [
+    "https://www.taranaki.co.nz/visit/highlights-of-taranaki/surf-highway-45",
+    "https://www.taranaki.co.nz/visit/highlights-of-taranaki/spotlight-on-south-taranaki"
+   ],
+   "photo": {
+    "external": true,
+    "url": "https://live.staticflickr.com/802/40041815685_12a8e0f7c5_b.jpg",
+    "page": "https://www.flickr.com/photos/35358887@N03/40041815685",
+    "width": 1024,
+    "height": 576,
+    "licence": "Public Domain Mark (Flickr, boretom)"
+   },
+   "hero_crop": "ok",
+   "photo_reason": "Openverse/Flickr 'Kaupokonui Beach' by boretom, public domain mark: river mouth meeting the sea below the cliff. Not Commons (Commons only has a cormorant and archive photos). Needs assets/photos commit; verify location on the Flickr page.",
+   "wiki": "Kaupokonui Beach"
+  },
+  {
+   "name": "Lake Rotokare",
+   "action": "spot-of-proposed-destination",
+   "destination": "hawera",
+   "id": "hawera-7",
+   "status": "ready for Pipeline C research",
+   "coordinates": {
+    "latitude": -39.45,
+    "longitude": 174.41
+   },
+   "coordinates_source": "Wikipedia Lake Rotokare (lake centre; confirm the reserve car park)",
+   "distance_from_destination_km": 18.9,
+   "reason": "19 km from Hāwera; reached from Eltham (rejected as a town). Skeptic: Unchanged from recall checker: Predator-free reserve with 4 km loop named by two tourism board pages (2 counted sources).",
+   "icon": "🦜",
+   "category": "nature",
+   "bio": "A 230 ha predator-free scenic reserve near Eltham with a 4 km loop track and a boardwalk.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "visit_hours_basis": "estimate from the source note / loop length; Pipeline C to confirm",
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "NZD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 875,
+   "counted_sources": 2,
+   "counted_source_urls": [
+    "https://www.taranaki.co.nz/visit/highlights-of-taranaki/natures-playground",
+    "https://www.taranaki.co.nz/visit/highlights-of-taranaki/spotlight-on-south-taranaki"
+   ],
+   "photo": {
+    "file": "File:Lake Rotokare - Taranaki.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Lake_Rotokare_-_Taranaki.jpg",
+    "width": 3696,
+    "height": 2448
+   },
+   "hero_crop": "ok",
+   "photo_reason": "Lake and bush in the reserve (2022).",
+   "wiki": "Lake Rotokare",
+   "coordinates_verify": true
+  },
+  {
+   "name": "Moki Tunnel",
+   "action": "spot-of-proposed-destination",
+   "destination": "whangamomona",
+   "id": "whangamomona-1",
+   "status": "ready for Pipeline C research",
+   "coordinates": {
+    "latitude": -39.01883,
+    "longitude": 174.80223
+   },
+   "coordinates_source": "OSM (candidate source; tunnel on SH43)",
+   "distance_from_destination_km": 15.1,
+   "reason": "Skeptic: Unchanged from recall checker: 180 m single-lane 1936 tunnel (Hobbit Hole), quirky roadside icon named on two tourism board pages.",
+   "icon": "🚇",
+   "category": "landmark",
+   "bio": "A single-lane 180 m tunnel from 1936, known as the Hobbit Hole, on the Forgotten World Highway.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "visit_hours_basis": "estimate from the source note / loop length; Pipeline C to confirm",
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [],
+   "views": 0,
+   "counted_sources": 2,
+   "counted_source_urls": [
+    "https://www.taranaki.co.nz/visit/highlights-of-taranaki/exploring-the-forgotten-world",
+    "https://www.taranaki.co.nz/visit/highlights-of-taranaki/natures-playground"
+   ],
+   "photo": {
+    "file": "File:Moki Tunnel on SH43.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Moki_Tunnel_on_SH43.jpg",
+    "width": 4282,
+    "height": 2844
+   },
+   "hero_crop": "ok",
+   "photo_reason": "Tunnel mouth centred (2011).",
+   "wiki": "Moki Tunnel"
+  },
+  {
+   "name": "Mount Damper Falls",
+   "action": "spot-of-proposed-destination",
+   "destination": "whangamomona",
+   "id": "whangamomona-2",
+   "status": "ready for Pipeline C research",
+   "coordinates": {
+    "latitude": -38.919972,
+    "longitude": 174.788417
+   },
+   "coordinates_source": "Wikipedia Mount Damper Falls (the falls)",
+   "distance_from_destination_km": 25.4,
+   "reason": "Wikipedia point is the falls; the walk starts at Moki Road - confirm the car park. Skeptic: Unchanged from recall checker: 85 m waterfall with a 30-minute walk, named on two tourism board pages (2 counted sources).",
+   "icon": "💧",
+   "category": "nature",
+   "bio": "An 85 m waterfall, the North Island's second-highest, a 30-minute walk from Moki Road.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "visit_hours_basis": "estimate from the source note / loop length; Pipeline C to confirm",
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [],
+   "views": 540,
+   "counted_sources": 2,
+   "counted_source_urls": [
+    "https://www.taranaki.co.nz/visit/highlights-of-taranaki/exploring-the-forgotten-world",
+    "https://www.taranaki.co.nz/visit/highlights-of-taranaki/natures-playground"
+   ],
+   "photo": {
+    "file": "File:Mt Damper Falls.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Mt_Damper_Falls.jpg",
+    "width": 2844,
+    "height": 4282
+   },
+   "hero_crop": {
+    "x": 0.5,
+    "y": 0.45
+   },
+   "photo_reason": "The fall in its gorge, portrait (2011), fall centred.",
+   "wiki": "Mount Damper Falls",
+   "coordinates_verify": true
+  },
+  {
+   "name": "Three Sisters and Elephant Rock",
+   "action": "standalone",
+   "destination": null,
+   "id": "three-sisters-tongaporutu",
+   "status": "ready for Pipeline C research",
+   "coordinates": {
+    "latitude": -38.818611,
+    "longitude": 174.581111
+   },
+   "coordinates_source": "Wikipedia Three Sisters and Elephant Rock (Tongapōrutu stacks)",
+   "distance_from_destination_km": null,
+   "reason": "Coastal SH3 stop 38 km from Whangamōmona and ~60 km from New Plymouth; no destination reaches it. Skeptic: Tourism board names the Tongapōrutu stacks; low-tide beach walk, about an hour. Single source but a recognised icon.",
+   "icon": "🪨",
+   "category": "nature",
+   "bio": "Sea stacks on Tongapōrutu beach, reached by wading the river at low tide and about an hour's walk.",
+   "hours": "Tides permitting",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "visit_hours_basis": "estimate from the source note / loop length; Pipeline C to confirm",
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [],
+   "views": 1150,
+   "counted_sources": 1,
+   "counted_source_urls": [
+    "https://www.taranaki.co.nz/visit/highlights-of-taranaki/natures-playground"
+   ],
+   "photo": {
+    "file": "File:Three Sisters Taranaki.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Three_Sisters_Taranaki.jpg",
+    "width": 3162,
+    "height": 2307
+   },
+   "hero_crop": {
+    "x": 0.6,
+    "y": 0.5
+   },
+   "photo_reason": "Stacks and cliffs on Tongapōrutu beach at low tide (2024); stacks right of centre.",
+   "wiki": "Three Sisters and Elephant Rock",
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland"
+  }
+ ],
+ "new_destinations": [
+  {
+   "name": "Stratford",
+   "action": "new-destination",
+   "id": "stratford",
+   "proposed_coordinates": {
+    "latitude": -39.341,
+    "longitude": 174.284
+   },
+   "coordinates_source": "Wikivoyage Taranaki (town centre)",
+   "defaultZoomSpanKm": 20,
+   "category": "city",
+   "rank": 5,
+   "spots": [
+    "stratford-1",
+    "stratford-2"
+   ],
+   "reason": "Sizeable settlement with its own tourism-board 'Spotlight on Stratford' chapter and a Wikivoyage entry; Shakespeare-themed town, gateway to the mountain's eastern side and start of the Forgotten World Highway. Kept spots: Glockenspiel, Te Popo Gardens (Taranaki Pioneer Village stays in review). Skeptic: Spotlight on Stratford page (opened): Shakespeare-themed town, gateway to the mountain and the Forgotten World Highway; Wikivoyage too.",
+   "status": "proposal for the owner; not added (needs description, three whyVisit + photos, tips, best months, header per WRITING.md)",
+   "header_candidate_photo": {
+    "file": "File:Stratford New Zealand.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Stratford_New_Zealand.jpg",
+    "width": 2496,
+    "height": 1664
+   },
+   "header_candidate_note": "Main street with the Stratford clock tower (2008); tower is the town's icon and sits in the hero slice.",
+   "hero_crop": {
+    "x": 0.55,
+    "y": 0.5
+   },
+   "views": 10531,
+   "counted_sources": 2
+  },
+  {
+   "name": "Hāwera",
+   "action": "new-destination",
+   "id": "hawera",
+   "proposed_coordinates": {
+    "latitude": -39.589,
+    "longitude": 174.282
+   },
+   "coordinates_source": "Wikivoyage Hawera (own article)",
+   "defaultZoomSpanKm": 55,
+   "category": "city",
+   "rank": 5,
+   "spots": [
+    "hawera-1",
+    "hawera-2",
+    "hawera-3",
+    "hawera-4",
+    "hawera-5",
+    "hawera-6",
+    "hawera-7"
+   ],
+   "reason": "South Taranaki hub with its own Wikivoyage article; holds seven kept places. Span 55 km so that Pātea (25 km) and Kaupokonui/Rotokare (~19 km) fall inside 75%. Skeptic: Wikivoyage Hawera has its own article; hub with Tawhiti Museum and the water tower (also spots).",
+   "status": "proposal for the owner; not added (needs description, three whyVisit + photos, tips, best months, header per WRITING.md)",
+   "header_candidate_photo": {
+    "file": "File:Hawera from the Water Tower.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Hawera_from_the_Water_Tower.jpg",
+    "width": 4282,
+    "height": 2844
+   },
+   "header_candidate_note": "Rooftop view over Hāwera toward the mountain (2011); weak but a real town view, no better Commons file (others aerial or shop fronts).",
+   "hero_crop": "ok",
+   "views": 13790,
+   "counted_sources": 2
+  },
+  {
+   "name": "Ōpunake",
+   "action": "new-destination",
+   "id": "opunake",
+   "proposed_coordinates": {
+    "latitude": -39.4525,
+    "longitude": 173.854722
+   },
+   "coordinates_source": "Wikivoyage Taranaki (town centre)",
+   "defaultZoomSpanKm": 40,
+   "category": "city",
+   "rank": 5,
+   "spots": [
+    "opunake-1",
+    "opunake-2"
+   ],
+   "reason": "Surf town named by Wikivoyage and the South Taranaki tourism page; centre of Surf Highway 45's western end. Holds its beach and Cape Egmont Lighthouse. Only two kept spots: the owner may prefer to leave Ōpunake as a spot-less settlement and make both standalone (note Ōpunake Loop Trail was rejected as a duplicate of the town visit). Skeptic: Wikivoyage and tourism board South Taranaki page name it (opened): surf town with galleries and trail. Overlaps its beach but the town visit is distinct.",
+   "status": "proposal for the owner; not added (needs description, three whyVisit + photos, tips, best months, header per WRITING.md)",
+   "header_candidate_photo": null,
+   "header_candidate_note": "Skeptic found no accepted photo: Commons has only shopfronts, an aerial and a B&W print; hold.. A header must be hand-picked per IMAGES.md anyway.",
+   "hero_crop": null,
+   "views": 7728,
+   "counted_sources": 2
+  },
+  {
+   "name": "Whangamōmona",
+   "action": "new-destination",
+   "id": "whangamomona",
+   "proposed_coordinates": {
+    "latitude": -39.14472222,
+    "longitude": 174.73583333
+   },
+   "coordinates_source": "Wikipedia Whangamōmona",
+   "defaultZoomSpanKm": 60,
+   "category": "landmark",
+   "rank": 5,
+   "spots": [
+    "whangamomona-1",
+    "whangamomona-2"
+   ],
+   "reason": "Self-declared republic village (1989) with a historic hotel on the Forgotten World Highway; the village is the hub for Moki Tunnel and Mount Damper Falls. COVERAGE.md flags a gateway village whose draw is the journey beyond it for review; the skeptic kept it as a quirky icon. Alternatively propose the destination as 'Forgotten World Highway' (owner's call). Skeptic: Forgotten World page (opened): 1895 frontier village, 1989 'republic', historic hotel; passports from the hotel; quirky icon, the hotel/Republic Day event is not the spot.",
+   "status": "proposal for the owner; not added (needs description, three whyVisit + photos, tips, best months, header per WRITING.md)",
+   "header_candidate_photo": {
+    "file": "File:Whangamomona Hotel 2010.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Whangamomona_Hotel_2010.jpg",
+    "width": 2048,
+    "height": 1536
+   },
+   "header_candidate_note": "The historic Whangamōmona Hotel, the village's icon, centred (2010).",
+   "hero_crop": "ok",
+   "views": 14090,
+   "counted_sources": 1
+  }
+ ],
+ "existing_fixes": [
+  {
+   "id": "egmont-3",
+   "name": "Dawson Falls",
+   "fix": null,
+   "note": "Existing coordinates (-39.3252, 174.1074) are right; the candidates.json point (51.97, -120.12, British Columbia) came from the wrong Wikipedia article and must not be used."
+  },
+  {
+   "id": "new-plymouth-1",
+   "name": "Pukekura Park",
+   "fix": null,
+   "note": "Placement correct. Bio mentions a lit-up summer festival (an event); consider trimming at Pipeline C."
+  }
+ ],
+ "confirmed_existing_in_place": [
+  "new-plymouth-1",
+  "new-plymouth-2",
+  "new-plymouth-3",
+  "new-plymouth-4",
+  "new-plymouth-5",
+  "new-plymouth-6",
+  "egmont-1",
+  "egmont-2",
+  "egmont-3",
+  "egmont-4",
+  "egmont-5"
+ ]
+}

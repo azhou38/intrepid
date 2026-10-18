@@ -1,0 +1,89 @@
+{
+ "generated": "2026-10-18T03:29:28.093Z",
+ "scope": {
+  "region": "northland"
+ },
+ "issues": [
+  {
+   "kind": "destination",
+   "id": "whangarei",
+   "name": "Whangārei",
+   "checks": [
+    {
+     "check": "voice",
+     "detail": "tagline: \"world-class\""
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "bay-of-islands-2",
+   "name": "Piercy Island",
+   "checks": [
+    {
+     "check": "no-ticket",
+     "detail": "charges but has no ticketUrl"
+    },
+    {
+     "check": "wiki",
+     "detail": "redirects to \"Piercy Island (New Zealand)\" — set `wiki` to it, or check it's this place"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "bay-of-islands-7",
+   "name": "Hundertwasser Toilets",
+   "checks": [
+    {
+     "check": "wiki",
+     "detail": "no Wikipedia article (photo lookup will fall back to search)"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "whangarei-3",
+   "name": "Poor Knights Islands",
+   "checks": [
+    {
+     "check": "no-ticket",
+     "detail": "charges but has no ticketUrl"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "cape-reinga-2",
+   "name": "Te Paki Sand Dunes",
+   "checks": [
+    {
+     "check": "wiki",
+     "detail": "no Wikipedia article (photo lookup will fall back to search)"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "cape-reinga-3",
+   "name": "Ninety Mile Beach",
+   "checks": [
+    {
+     "check": "wiki",
+     "detail": "a disambiguation page — set `wiki` to the exact article"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "waipoua-forest-2",
+   "name": "Te Matua Ngāhere",
+   "checks": [
+    {
+     "check": "wiki",
+     "detail": "no Wikipedia article (photo lookup will fall back to search)"
+    }
+   ]
+  }
+ ]
+}

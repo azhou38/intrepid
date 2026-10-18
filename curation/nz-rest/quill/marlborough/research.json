@@ -1,0 +1,641 @@
+{
+ "region": "marlborough",
+ "researched": "2026-10-17",
+ "entries": [
+  {
+   "id": "marlborough-sounds-8",
+   "name": "Anakiwa",
+   "kind": "new",
+   "held": false,
+   "facts": [
+    {
+     "claim": "Anakiwa is a settlement in Grove Arm at the head of Queen Charlotte Sound, at the Anakiwa end of the 73.5 km Queen Charlotte Track.",
+     "source": "https://en.wikipedia.org/wiki/Anakiwa"
+    },
+    {
+     "claim": "The Queen Charlotte Track stretches 73.5 km from Meretoto/Ship Cove to Anakiwa.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/queen-charlotte-sound-totaranui-area/things-to-do/tracks/queen-charlotte-track/"
+    },
+    {
+     "claim": "At the track end OSM maps an information shelter, toilets, car parks and a public pier (the wharf).",
+     "source": "https://www.openstreetmap.org/#map=18/-41.2640/173.9206"
+    },
+    {
+     "claim": "Anakiwa is about 26 km from Picton or 17 km from Havelock by Queen Charlotte Drive (user guide, not an official source).",
+     "source": "https://www.tripideas.nz/place/anakiwa"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "No single steward for the bay or settlement; QCTrack (https://www.qctrack.co.nz/, official Queen Charlotte Track site, title verified) belongs to the existing Queen Charlotte Track spot (marlborough-sounds-1), not Anakiwa. Leave out.",
+   "coordinates_check": {
+    "current": [
+     -41.26444444,
+     173.91277778
+    ],
+    "source_point": [
+     -41.264,
+     173.9206
+    ],
+    "source": "OSM: 'Queen Charlotte Track Anakiwa' information node (-41.26399,173.92059), car park way (-41.26411,173.92043) and pier (-41.2648,173.92016) at the track end; the Wikipedia point is the settlement ~650 m west",
+    "ok": false,
+    "note": "Move to the track-end car park/shelter."
+   },
+   "category": "nature",
+   "unverified": [
+    "Swimming and water-taxi pickup mentioned in the placement bio were not confirmed on a source page (OSM shows the public pier and ferry stop 'Anakiwa'); check before keeping 'swimming'.",
+    "Hours: open-access place, no published hours."
+   ]
+  },
+  {
+   "id": "marlborough-sounds-9",
+   "name": "Snout Walkway",
+   "kind": "new",
+   "held": false,
+   "facts": [
+    {
+     "claim": "Wikivoyage: peninsula between Picton and Waikawa Bay covered in native and exotic bush; tracks from a few minutes to 3.5 hours; free; Marlborough District Council map from the tourist information centre.",
+     "source": "https://en.wikivoyage.org/wiki/Picton_(New_Zealand)"
+    },
+    {
+     "claim": "Marlborough NZ (regional tourism board): Snout Track begins at the Snout Track car park above Endeavour Park, goes to the Queen Charlotte View Lookout, then to a picnic area at the end of the headland; about 3 h return from the end car park, at least 4 h return from Picton.",
+     "source": "https://marlboroughnz.com/explore-marlborough/see-do/walks/snout-track/"
+    },
+    {
+     "claim": "Marlborough Online: begins in Victoria Domain above Picton, runs through regenerating coastal forest to the Snout lookout at the entrance to Waikawa Bay; mid-way clearing with picnic table; allow at least an hour each way.",
+     "source": "https://www.marlboroughonline.co.nz/marlborough/information/recreation/tramping-and-walking/the-snout-walkway/"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 4,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Managed by Marlborough District Council; no council page was verified. marlboroughnz.com page (regional tourism board, title 'Snout Track | Marlborough NZ' verified) exists but is not an operator/steward site. Leave null unless the owner accepts the tourism board page.",
+   "coordinates_check": {
+    "current": [
+     -41.2506,
+     174.0486
+    ],
+    "source_point": [
+     -41.2506,
+     174.04881
+    ],
+    "source": "OSM tourism=viewpoint 'The Snout View' (-41.2506,174.0488), matches Wikivoyage",
+    "ok": true,
+    "note": "This is the headland lookout at the far end, not the trailhead. Trailhead (Snout Track car park above Endeavour Park, Victoria Domain) could not be pinned from a structured source; candidate OSM points: Queen Charlotte View viewpoint (-41.2602,174.0353). Keep the headland point unless the owner wants the trailhead."
+   },
+   "category": "hike",
+   "unverified": [
+    "Exact trailhead/car park coordinates.",
+    "Bio says 'free tracks from a few minutes to 3.5 hours': sourced from Wikivoyage; the tourism board says about 3 h return from the end car park."
+   ]
+  },
+  {
+   "id": "marlborough-sounds-10",
+   "name": "Nydia Track",
+   "kind": "new",
+   "held": true,
+   "facts": [
+    {
+     "claim": "DOC: 27 km one way, advanced tramping track, 2-day tramp (or 5-8 hr mountain bike); climbs two saddles (Nydia 347 m, Kaiuma 387 m); overnight at Nydia Bay campsite (8 non-powered/tent sites).",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/pelorus-and-kenepuru-sounds-area/things-to-do/tracks/nydia-track/"
+    },
+    {
+     "claim": "Kaiuma Bay end: from Havelock turn off at Te Hoiere Road 2 km north, then Kaiuma Bay Road for 21 km to the track start on the roadside with a large sign. Duncan Bay end: road end and car park at Duncan Bay.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/pelorus-and-kenepuru-sounds-area/things-to-do/tracks/nydia-track/"
+    },
+    {
+     "claim": "Charter launches and the mail boat run from Havelock to Shag Point, Nydia Bay or Duncan Bay.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/pelorus-and-kenepuru-sounds-area/things-to-do/tracks/nydia-track/"
+    },
+    {
+     "claim": "Dogs only with a DOC permit; track passes through private land between Kaiuma and Nydia bays.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/pelorus-and-kenepuru-sounds-area/things-to-do/tracks/nydia-track/"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 16,
+   "visitHoursMax": 20,
+   "free": true,
+   "cost_note": "DOC page lists no track fee; the Nydia Bay campsite fee was not on the page (Nydia Lodge is private, bookings required). A Havelock water taxi/mail boat is optional and priced by operators (unverified).",
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/pelorus-and-kenepuru-sounds-area/things-to-do/tracks/nydia-track/",
+   "ticketUrl_note": "DOC (managing agency) track page, loaded: title 'Nydia Track: Pelorus & Kenepuru Sounds area, Marlborough region'.",
+   "coordinates_check": {
+    "current": [
+     -41.2058817,
+     173.7808373
+    ],
+    "source_point": [
+     -41.23477,
+     173.79079
+    ],
+    "source": "OSM highway=path 'Nydia Track' southern start (-41.23477,173.79079) next to Kaiuma Bay Road, matching DOC 'Kaiuma Bay end'. Duncan Bay end car park: OSM amenity=parking (-41.11568,173.76515).",
+    "ok": false,
+    "note": "Move to the Kaiuma Bay trailhead (reached by road from Havelock); the current point is mid-track."
+   },
+   "category": "hike",
+   "unverified": [
+    "Visit hours: DOC says 2-day tramp, 9.5 hr total; range 16-20 h is a two-day estimate, not sourced.",
+    "Photo: held (no passing photo)."
+   ]
+  },
+  {
+   "id": "blenheim-4",
+   "name": "Wairau Lagoons",
+   "kind": "new",
+   "held": false,
+   "facts": [
+    {
+     "claim": "DOC: flat loop track (about 3 hr, easy to intermediate) along the lagoon shoreline with good bird watching to the rusting remains of the ship Waverley; no dogs.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/blenheim-area/things-to-do/tracks/wairau-lagoons-walkway/"
+    },
+    {
+     "claim": "Main access is from the end of Hardings Road, which leaves SH1 5 km south of Blenheim; there is a car park and information.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/blenheim-area/things-to-do/tracks/wairau-lagoons-walkway/"
+    },
+    {
+     "claim": "The lagoons formed over the last 6,500 years behind an 8 km boulder bank.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/blenheim-area/things-to-do/tracks/wairau-lagoons-walkway/"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/blenheim-area/things-to-do/tracks/wairau-lagoons-walkway/",
+   "ticketUrl_note": "DOC (managing agency) page, loaded: title 'Wairau Lagoons Walkway: Blenheim area, Marlborough region'.",
+   "coordinates_check": {
+    "current": [
+     -41.5331544,
+     174.0815291
+    ],
+    "source_point": [
+     -41.5326,
+     174.0459
+    ],
+    "source": "OSM tourism=information board (-41.53258,174.04587) at the west end of the Wairau Lagoons Walkway paths, the Hardings Road end car park/information DOC describes",
+    "ok": false,
+    "note": "Move ~3.4 km west from the protected-area centroid to the walkway car park."
+   },
+   "category": "nature",
+   "unverified": [
+    "DOC gives no opening hours; 'Open 24 hours' is open-access assumption."
+   ]
+  },
+  {
+   "id": "blenheim-5",
+   "name": "Whites Bay",
+   "kind": "new",
+   "held": false,
+   "facts": [
+    {
+     "claim": "DOC Whites Bay campsite: 30 non-powered/tent sites close to a surf beach at Pukatea/Whites Bay; walking, fishing, swimming or kayaking; no dogs; no vehicles on the beach.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/blenheim-area/things-to-do/campsites/whites-bay-campsite"
+    },
+    {
+     "claim": "Campsite fees: adult $15, child (5-17) $7.50 per night, bookings required; gate closed 9 pm-7 am from Labour Weekend to Easter.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/blenheim-area/things-to-do/campsites/whites-bay-campsite"
+    },
+    {
+     "claim": "Whites Bay is 15 km from Tuamarina, off SH1 9 km north of Blenheim; alternative access is 41 km from Picton along the unsealed Port Underwood Road.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/blenheim-area/things-to-do/tracks/rarangi-baywhites-bay-track/"
+    },
+    {
+     "claim": "Rarangi-Whites Bay Track: 2.5 km one way, about 1 hr, between Whites Bay and Rarangi.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/blenheim-area/things-to-do/tracks/rarangi-baywhites-bay-track/"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "hours_note": "Beach is open access; the campsite gate is locked 9 pm-7 am from Labour Weekend to Easter.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "cost_note": "Visiting the beach is free; only the campsite charges ($15 adult/night).",
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/blenheim-area/things-to-do/campsites/whites-bay-campsite",
+   "ticketUrl_note": "DOC (managing agency) Whites Bay campsite page, loaded: title 'Whites Bay conservation campsite: Blenheim area, Marlborough region'.",
+   "coordinates_check": {
+    "current": [
+     -41.3875956,
+     174.058296
+    ],
+    "source_point": [
+     -41.38698,
+     174.05719
+    ],
+    "source": "OSM natural=beach way 'Whites beach' (centroid -41.38698,174.05719); beach car park way at (-41.38537,174.05765); DOC campsite point -41.3829,174.0571",
+    "ok": false,
+    "note": "Current point is the natural=bay centroid. Use the beach point."
+   },
+   "category": "beach",
+   "unverified": [
+    "Wikivoyage's 'best sea swimming' claim in the bio was not re-verified; reword if kept.",
+    "'Wikipedia has no article: https://en.wikipedia.org/wiki/Whites_Bay is a 404' so the placement `wiki: Whites Bay` does not resolve; drop the wiki field and rely on an override photo."
+   ]
+  },
+  {
+   "id": "blenheim-6",
+   "name": "Highfield Estate",
+   "kind": "new",
+   "held": true,
+   "facts": [
+    {
+     "claim": "NZ Winegrowers: established 1989; Tuscan-inspired winery and tower on the Brookby Ridge with views over the Wairau Valley; tastings and lunch on the patio.",
+     "source": "https://www.nzwine.com/en/winery/highfield"
+    },
+    {
+     "claim": "Wikivoyage: 27 Brookby Rd; daily 10 AM-5 PM (summer only); the tower has a commanding view over the lower Wairau River.",
+     "source": "https://en.wikivoyage.org/wiki/Blenheim_(New_Zealand)"
+    },
+    {
+     "claim": "OSM maps 'Highfield TerraVin Estate' (shop=wine) at Brookby Road.",
+     "source": "https://www.openstreetmap.org/#map=18/-41.52855/173.83751"
+    }
+   ],
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "cost_note": "Cellar-door tasting/entry price not found on any loaded source: cost left unverified. Do not mark free.",
+   "free": null,
+   "ticketUrl": null,
+   "ticketUrl_note": "DANGER: the winery's listed domain highfield.co.nz (printed on nzwine.com and Wikivoyage) now redirects to an unrelated gambling spam site (seduniatotogrup.com). Never link it. No other official site was found. newzealand.com listing is BLOCKED (403) from scripts: https://www.newzealand.com/nz/plan/business/highfield-terravin/ , check in a real browser if desired.",
+   "coordinates_check": {
+    "current": [
+     -41.52888,
+     173.83687
+    ],
+    "source_point": [
+     -41.52855,
+     173.83751
+    ],
+    "source": "OSM shop=wine 'Highfield TerraVin Estate', Brookby Road",
+    "ok": true
+   },
+   "category": "entertainment",
+   "unverified": [
+    "Whether the cellar door and restaurant currently operate: web results conflict (a newzealand.com snippet says 10-5 daily except July; undated property articles say the cellar door and restaurant are 'not currently operating' and the assets were for sale).",
+    "Hours and price.",
+    "Recommend the owner decide whether to keep: only one counted source, status uncertain, and no photo."
+   ]
+  },
+  {
+   "id": "blenheim-7",
+   "name": "Brancott Estate",
+   "kind": "new",
+   "held": true,
+   "facts": [
+    {
+     "claim": "Wikivoyage: Brancott Estate Winery (formerly Montana Estate), 180 Brancott Rd, daily 10 AM-4:30 PM; visitor facility has a restaurant, retail store and the Brancott Theater.",
+     "source": "https://en.wikivoyage.org/wiki/Blenheim_(New_Zealand)"
+    },
+    {
+     "claim": "Lonely Planet lists Brancott Estate with a Vineyard Bike Tour ($35) and, December-March, a Falcon Encounter (adult/child $30/10); prices and dates may be out of date.",
+     "source": "https://www.lonelyplanet.com/points-of-interest/brancott-estate/1247260"
+    },
+    {
+     "claim": "OSM maps 'Brancott Estate Cellar Door' (amenity=restaurant) at 180 Brancott Rd.",
+     "source": "https://www.openstreetmap.org/#map=18/-41.54047/173.84086"
+    }
+   ],
+   "hours": "10:00 AM – 4:30 PM",
+   "hours_note": "Wikivoyage figure; undated third-party listing says restaurant 10:30-3, cellar door 10-4:30. Not from the operator.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "cost_note": "No tasting fee found on a loaded source: cost unverified. Do not mark free.",
+   "ticketUrl": "https://brancottestate.com/en-us",
+   "ticketUrl_note": "Weak: operator's brand site loads and its title names Brancott Estate ('Marlborough's First Sauvignon Blanc - Brancott Estate') but it is a wine shop with no visitor-centre, hours or booking page (/pages/visit is 404). Recommend ticketUrl null unless the owner accepts the brand homepage.",
+   "coordinates_check": {
+    "current": [
+     -41.54377,
+     173.84858
+    ],
+    "source_point": [
+     -41.54047,
+     173.84086
+    ],
+    "source": "OSM 'Brancott Estate Cellar Door', 180 Brancott Rd",
+    "ok": false,
+    "note": "Wikivoyage point is ~860 m off the cellar door."
+   },
+   "category": "entertainment",
+   "unverified": [
+    "Current hours and prices of the visitor centre (Heritage Centre) are not on any operator page I could load.",
+    "Whether the visitor centre is still open to the public."
+   ]
+  },
+  {
+   "id": "mount-richmond-forest-park",
+   "name": "Mount Richmond Forest Park",
+   "kind": "new",
+   "held": false,
+   "facts": [
+    {
+     "claim": "DOC: park between Nelson and Blenheim, 166,000 ha, the second largest forest park in New Zealand, gazetted 4 March 1977; the Richmond Range forms its backbone with peaks above 1700 m.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/mount-richmond-forest-park/"
+    },
+    {
+     "claim": "Northbank access from SH6 just north of the Wairau River Bridge (16 km from Blenheim); Top Valley has swimming holes, picnic and camping areas; Forks Walk is 4 km return (1 h 30) to Whiteheads Clearing, Riverside Walk 5 km return (2 h 30) past gold-mining remains.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/mount-richmond-forest-park/things-to-do/tracks/forks-riverside-walk/"
+    },
+    {
+     "claim": "Access roads cross forestry land and may be closed for forestry operations or fire danger.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/mount-richmond-forest-park/"
+    },
+    {
+     "claim": "Onamalutu Campsite: off SH6 west of Blenheim into Northbank Rd (~6 km), then Onamalutu Rd for 7 km; lat -41.45852, lon 173.70637.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/mount-richmond-forest-park/things-to-do/campsites/onamalutu-campsite/"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "hours_note": "Access roads can be closed by forestry operations and fire danger.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "free": true,
+   "cost_note": "No park entry fee; campsites and huts are separate (Onamalutu $15 adult/night on the DOC page).",
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/mount-richmond-forest-park/",
+   "ticketUrl_note": "DOC (managing agency) park page, loaded: title 'Mount Richmond Forest Park: Places to go in Marlborough and Nelson/Tasman'.",
+   "coordinates_check": {
+    "current": [
+     -41.47,
+     173.35
+    ],
+    "source_point": [
+     -41.45852,
+     173.70637
+    ],
+    "source": "DOC Onamalutu Campsite page (Latitude -41.45852061, Longitude 173.70636536), the nearest DOC-listed access point to Blenheim on the Northbank side; the Top Valley Forks/Riverside carpark itself has no coordinates on DOC or in OSM",
+    "ok": false,
+    "note": "Wikipedia point is a park centroid in the range. Onamalutu is a defensible Wairau-side visitor point; Mill Flat Campsite (-41.50110,173.51087, DOC) is the alternative deeper into the park. Owner to choose."
+   },
+   "category": "nature",
+   "unverified": [
+    "The exact Top Valley / Forks Walk car park coordinates.",
+    "Hours: open access, no published hours."
+   ]
+  },
+  {
+   "id": "marfells-beach",
+   "name": "Marfells Beach",
+   "kind": "new",
+   "held": true,
+   "facts": [
+    {
+     "claim": "DOC: Marfells Beach area: base at the campsite for water activities or follow the beach to Cape Campbell lighthouse; turn off SH1 onto Marfells Beach Rd 36 km south of Blenheim, then 8 km to the beach; no dogs.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/marfells-beach-area/"
+    },
+    {
+     "claim": "Marfells Beach/Cape Campbell route: unmarked, expert route, about 4 hours along the beach; the second half to the lighthouse is low tide only; above the high tide line is private land; the lighthouse (second, built 1903) is at the southernmost extreme of Cook Strait.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/marfells-beach-area/things-to-do/tracks/marfells-beach-cape-campbell-route/"
+    },
+    {
+     "claim": "Campsite: adult $15 per night, child (5-17) $7.50; campsite at lat -41.72548, lon 174.20446.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/marfells-beach-area/things-to-do/campsites/marfells-beach-campsite/"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "free": true,
+   "cost_note": "Beach is free; campsite charges $15 adult/night.",
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/marfells-beach-area/",
+   "ticketUrl_note": "DOC (managing agency) area page, loaded: title 'Marfells Beach area: Marlborough'.",
+   "coordinates_check": {
+    "current": [
+     -41.724876,
+     174.2057564
+    ],
+    "source_point": [
+     -41.72548,
+     174.20446
+    ],
+    "source": "OSM natural=beach node and DOC campsite coordinates agree within ~150 m",
+    "ok": true
+   },
+   "category": "beach",
+   "unverified": [
+    "Wikipedia has no article 'Marfells Beach' (https://en.wikipedia.org/wiki/Marfells_Beach is 404): remove the placement `wiki` field.",
+    "Photo: held."
+   ]
+  },
+  {
+   "id": "lake-grassmere",
+   "name": "Lake Grassmere",
+   "kind": "new",
+   "held": false,
+   "facts": [
+    {
+     "claim": "Wikivoyage: Lake Grassmere, where seawater is turned into huge piles of salt by the sun and evaporation; a birdwatcher's paradise; between Seddon and Ward on SH1.",
+     "source": "https://en.wikivoyage.org/wiki/Marlborough_(New_Zealand)"
+    },
+    {
+     "claim": "Wikipedia: shallow lagoon 40 km south of Blenheim, used for salt production.",
+     "source": "https://en.wikipedia.org/wiki/Lake_Grassmere"
+    },
+    {
+     "claim": "Earthcache page: the white salt piles are easily seen from SH1 at the end of summer.",
+     "source": "https://www.geocaching.com/geocache/GC1R06B"
+    },
+    {
+     "claim": "Salt works operator is Dominion Salt (lake and refinery).",
+     "source": "https://dominionsalt.co.nz/"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "hours_note": "Roadside viewing only; the working salt works is not a public attraction (no visitor page found).",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Dominion Salt (https://dominionsalt.co.nz/, title 'Dominion Salt | Life's Most Essential Mineral in the Safest Hands') is the operator but has no visitor page; not an attraction site. Leave null. newzealand.com feature https://www.newzealand.com/uk/feature/lake-grassmere-saltworks/ is BLOCKED (403) from scripts.",
+   "coordinates_check": {
+    "current": [
+     -41.73333333,
+     174.16666667
+    ],
+    "source_point": [
+     -41.7204,
+     174.1346
+    ],
+    "source": "OSM 'Salt works' way (-41.72044,174.13463) on Kaparu Road, the public road off SH1; no OSM lookout/viewpoint exists in the area",
+    "ok": false,
+    "note": "Current point is in the lake. LOW CONFIDENCE: no named SH1 lookout or pull-out found on any source."
+   },
+   "category": "nature",
+   "unverified": [
+    "Whether a formal roadside lookout exists at all; viewing is from SH1 / Kaparu Road only.",
+    "Pink ponds in summer is claimed by tourism material (newzealand.com, blocked) and Te Ara captions; not fetched.",
+    "Marginal on COVERAGE test 2 (nothing to do beyond roadside viewing): reviewer to confirm keep."
+   ]
+  },
+  {
+   "id": "molesworth-station",
+   "name": "Molesworth Station",
+   "kind": "new",
+   "held": false,
+   "facts": [
+    {
+     "claim": "DOC: Molesworth Recreation Reserve, 180,787 ha, New Zealand's largest farm, running the country's biggest beef herd (up to 10,000); Island Saddle (1347 m) is the highest point on a publicly accessed road in New Zealand.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/molesworth-reserve/"
+    },
+    {
+     "claim": "Acheron Road is open 7 am-7 pm daily from 1 October to Easter Monday or the second Monday in April, whichever is later; it can close without warning; 207 km one way; caravans, buses or vehicles over 7 m are not permitted and a trailer needs a permit.",
+     "source": "https://www.doc.govt.nz/acheron-road"
+    },
+    {
+     "claim": "The 59 km section between Molesworth Cob Cottage and Acheron Accommodation House takes at least two hours; Cob Cottage (1866) is the gateway; Molesworth Homestead Lookout Track (10 min) starts behind the cottage.",
+     "source": "https://www.doc.govt.nz/acheron-road"
+    },
+    {
+     "claim": "Acheron Lookout Loop Walk: 1 km, 20 min, starts at Acheron Accommodation House; views of the house, Clarence River and valley.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/molesworth-reserve/things-to-do/tracks/acheron-lookout-loop-walk/"
+    },
+    {
+     "claim": "Campsites: Cob Cottage (lat -42.08512, lon 173.27021) and Acheron Accommodation House (lat -42.39549, lon 172.95638), each $10 adult/night.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/molesworth-reserve/things-to-do/campsites/molesworth-cob-cottage-campsite/"
+    }
+   ],
+   "hours": "7:00 AM – 7:00 PM",
+   "hours_note": "Acheron Road only, 1 Oct to Easter Monday / second Monday in April (whichever is later); closed to vehicles otherwise. Open now (today is 17 Oct 2026).",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "free": true,
+   "cost_note": "No driving fee or toll appears on any DOC Molesworth/Acheron page loaded (an unrelated search summary also found none); only campsites charge ($10 adult/night). Permits are needed for trailers and for use outside the open period.",
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/molesworth-reserve/",
+   "ticketUrl_note": "DOC (managing agency) reserve page, loaded: title 'Molesworth Recreation Reserve: South Marlborough places to visit'. Alternative: https://www.doc.govt.nz/acheron-road (road status).",
+   "coordinates_check": {
+    "current": [
+     -42.09024,
+     173.1924
+    ],
+    "source_point": [
+     -42.08512,
+     173.27021
+    ],
+    "source": "DOC Molesworth Cob Cottage campsite page (Latitude -42.08511648, Longitude 173.27020624), DOC's 'gateway to Molesworth' on the Awatere (Blenheim) side",
+    "ok": false,
+    "note": "Wikipedia point is a station centroid ~8 km west. Acheron Accommodation House alternative for the Hanmer side: -42.39549,172.95638."
+   },
+   "category": "nature",
+   "unverified": [
+    "Whether Molesworth is better described as 'Molesworth Recreation Reserve' (DOC's name); Wikipedia article title is 'Molesworth Station' (resolves).",
+    "Hours apply to the road; the reserve itself has no gate hours elsewhere."
+   ]
+  },
+  {
+   "id": "rainbow-ski-area",
+   "name": "Rainbow Ski Area",
+   "kind": "new",
+   "held": true,
+   "facts": [
+    {
+     "claim": "Club-run ski area off SH63 near St Arnaud (1 h 20 from Blenheim, 1 h 40 from Picton); reached by a 12 km sealed Rainbow Valley Road with five fords, then an access road where carrying chains is mandatory.",
+     "source": "https://skirainbow.co.nz/getting-here/"
+    },
+    {
+     "claim": "2026 standard operating days are Saturdays and Sundays, with midweek days at the club's discretion.",
+     "source": "https://skirainbow.co.nz/price-list/"
+    },
+    {
+     "claim": "Non-member lift day pass (all lifts) adult $130, student/senior $95, youth $75; learner lifts adult $85; season pass adult $390.",
+     "source": "https://skirainbow.co.nz/price-list/"
+    },
+    {
+     "claim": "Non-skiers are asked for a suggested donation of $10 per adult and $5 per child.",
+     "source": "https://skirainbow.co.nz/getting-here/"
+    },
+    {
+     "claim": "Summer vehicle access to the lease area needs club membership and a $100 per-vehicle donation; foot and mountain bike access is permitted year-round without a permit.",
+     "source": "https://skirainbow.co.nz/summer-access/"
+    }
+   ],
+   "hours": "Weekends, ski season only",
+   "hours_note": "Season dates are not fixed; the site banner at fetch time read 'Open Sunday 13/09 - No ski operations - visitor access only'. Operating days: Saturdays and Sundays.",
+   "visitHoursMin": 4,
+   "visitHoursMax": 7,
+   "costMin": 130,
+   "costMax": 130,
+   "currency": "NZD",
+   "ticketUrl": "https://skirainbow.co.nz/",
+   "ticketUrl_note": "Operator (Rainbow Sports Club) site, loaded: title 'Home - skirainbow.co.nz'; ticket page https://skirainbow.co.nz/price-list/.",
+   "coordinates_check": {
+    "current": [
+     -41.8756,
+     172.86095
+    ],
+    "source_point": [
+     -41.8721,
+     172.857
+    ],
+    "source": "Wikipedia (-41.8756,172.86095) vs OSM leisure=sports_centre 'Rainbow Ski Area' (-41.8721,172.8570), about 500 m apart",
+    "ok": true
+   },
+   "category": "entertainment",
+   "unverified": [
+    "Season start and end dates for 2026-27.",
+    "Placement flags Rainbow as lying in the Nelson Lakes area, not Marlborough proper: check the destination/standalone decision.",
+    "Photo: held."
+   ]
+  },
+  {
+   "id": "marlborough-sounds-2",
+   "name": "Ship Cove",
+   "kind": "existing",
+   "facts": [
+    {
+     "claim": "Wikipedia 'Ship Cove' is a disambiguation page; the Marlborough Sounds article is titled 'Meretoto / Ship Cove' (the title 'Ship Cove, New Zealand' redirects to it).",
+     "source": "https://en.wikipedia.org/wiki/Ship_Cove,_New_Zealand"
+    },
+    {
+     "claim": "DOC: Meretoto/Ship Cove was James Cook's favourite New Zealand base on his three voyages and is where the Queen Charlotte Track starts.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/queen-charlotte-sound-totaranui-area/"
+    }
+   ],
+   "wiki_fix": {
+    "wiki": "Meretoto / Ship Cove",
+    "note": "Exact Wikipedia article title (spaces around the slash). Add `wiki: 'Meretoto / Ship Cove'` to the spot; the lead image is a view across the sound to Motuara Island from 2004, so check it against IMAGES.md before accepting."
+   },
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "No verified single site; the DOC area page https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/queen-charlotte-sound-totaranui-area/ (title 'Queen Charlotte Sound/Tōtaranui area: Places to go in Marlborough') covers the cove and is a possible ticketUrl if the owner wants one. Reached only by boat (water taxi/cruise) or the Queen Charlotte Track.",
+   "coordinates_check": {
+    "current": [
+     -41.09499,
+     174.23729
+    ],
+    "source_point": [
+     -41.09306,
+     174.23889
+    ],
+    "source": "Wikipedia 'Meretoto / Ship Cove' (41°05′35″S 174°14′20″E)",
+    "ok": true,
+    "note": "About 250 m from Wikipedia's point, within tolerance."
+   },
+   "category": "historic",
+   "unverified": [
+    "Bio 'Cook anchored on all three of his Pacific voyages' is consistent with DOC ('three voyages') but not independently re-verified here."
+   ]
+  },
+  {
+   "id": "blenheim",
+   "name": "Blenheim (destination, not a spot)",
+   "kind": "existing",
+   "facts": [
+    {
+     "claim": "Lint flag is on the destination description: 'world-class'. The Omaka Aviation Heritage Centre's own site says it houses rare WW1 and WW2 aircraft.",
+     "source": "https://omaka.org.nz/"
+    }
+   ],
+   "description_fix": "Replace the last sentence with: \"It is also home to the Omaka Aviation Heritage Centre, with rare WWI and WWII aircraft.\" (drops the unprovable 'world-class'; WWI-only was also inaccurate because the collection includes WWII).",
+   "unverified": [
+    "Only the lint flag was in scope; the destination was not otherwise re-researched."
+   ]
+  }
+ ]
+}

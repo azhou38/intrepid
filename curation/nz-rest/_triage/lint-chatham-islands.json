@@ -1,0 +1,41 @@
+{
+ "generated": "2026-10-18T03:31:52.965Z",
+ "scope": {
+  "region": "chatham-islands"
+ },
+ "issues": [
+  {
+   "kind": "spot",
+   "id": "chatham-islands-2",
+   "name": "Hapupu National Historic Reserve",
+   "checks": [
+    {
+     "check": "wiki",
+     "detail": "no Wikipedia article (photo lookup will fall back to search)"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "chatham-islands-3",
+   "name": "Pitt Island",
+   "checks": [
+    {
+     "check": "no-ticket",
+     "detail": "charges but has no ticketUrl"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "chatham-islands-6",
+   "name": "Kōpinga Marae",
+   "checks": [
+    {
+     "check": "wiki",
+     "detail": "no Wikipedia article (photo lookup will fall back to search)"
+    }
+   ]
+  }
+ ]
+}

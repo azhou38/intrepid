@@ -1,0 +1,256 @@
+[
+ {
+  "slot": "dest:blenheim:why2",
+  "kind": "reject",
+  "region": "marlborough",
+  "destination": "blenheim",
+  "failed_check": "3",
+  "why": "Just a courtyard and ordinary building front; not spectacular and does not show wine tasting itself."
+ },
+ {
+  "slot": "spot:blenheim-3",
+  "kind": "reject",
+  "region": "marlborough",
+  "destination": "blenheim",
+  "failed_check": "2",
+  "why": "Shows flat Wairau Valley vineyards, not the Wither Hills farm park (hills, walking tracks); wrong thing."
+ },
+ {
+  "slot": "spot:blenheim-6",
+  "kind": "held",
+  "region": "marlborough",
+  "destination": "blenheim",
+  "name": "Highfield Estate",
+  "category": "entertainment",
+  "coordinates": {
+   "latitude": -41.52855,
+   "longitude": 173.83751
+  },
+  "why": "held: needs a photo",
+  "photo_note": null
+ },
+ {
+  "slot": "spot:blenheim-7",
+  "kind": "held",
+  "region": "marlborough",
+  "destination": "blenheim",
+  "name": "Brancott Estate",
+  "category": "entertainment",
+  "coordinates": {
+   "latitude": -41.54047,
+   "longitude": 173.84086
+  },
+  "why": "held: needs a photo",
+  "photo_note": null
+ },
+ {
+  "slot": "spot:marfells-beach",
+  "kind": "held",
+  "region": "marlborough",
+  "destination": null,
+  "name": "Marfells Beach",
+  "category": "beach",
+  "coordinates": {
+   "latitude": -41.72548,
+   "longitude": 174.20446
+  },
+  "why": "held: needs a photo",
+  "photo_note": null
+ },
+ {
+  "slot": "spot:marlborough-sounds-10",
+  "kind": "held",
+  "region": "marlborough",
+  "destination": "marlborough-sounds",
+  "name": "Nydia Track",
+  "category": "hike",
+  "coordinates": {
+   "latitude": -41.23477,
+   "longitude": 173.79079
+  },
+  "why": "held: needs a photo",
+  "photo_note": null
+ },
+ {
+  "slot": "spot:rainbow-ski-area",
+  "kind": "held",
+  "region": "marlborough",
+  "destination": null,
+  "name": "Rainbow Ski Area",
+  "category": "entertainment",
+  "coordinates": {
+   "latitude": -41.8721,
+   "longitude": 172.857
+  },
+  "why": "held: needs a photo",
+  "photo_note": null
+ },
+ {
+  "slot": "spot:auckland-5",
+  "kind": "reject",
+  "region": "auckland",
+  "destination": "auckland",
+  "failed_check": "check 2 (shows the named thing)",
+  "why": "Photo is a view of the Mount Eden suburb from the summit, not the volcano cone/crater; Commons category is the suburb."
+ },
+ {
+  "slot": "spot:auckland-9",
+  "kind": "reject",
+  "region": "auckland",
+  "destination": "auckland",
+  "failed_check": "check 2 / 3 (named thing recognisable)",
+  "why": "Roadside ticket kiosk beside a road with a tiny sign; the aquarium itself is not visible."
+ },
+ {
+  "slot": "spot:auckland-13",
+  "kind": "reject",
+  "region": "auckland",
+  "destination": "auckland",
+  "failed_check": "check 2 (shows the named thing)",
+  "why": "A Hurricane fighter on a pole by a wet road; museum not shown, not recognisable as MOTAT."
+ },
+ {
+  "slot": "dest:matakana:header",
+  "kind": "reject",
+  "region": "auckland",
+  "destination": "matakana",
+  "failed_check": "check 3 (spectacular, wide)",
+  "why": "Paddock with a shed; ordinary farmland, no wine country or coast to sell the place."
+ },
+ {
+  "slot": "dest:matakana:why1",
+  "kind": "reject",
+  "region": "auckland",
+  "destination": "matakana",
+  "failed_check": "check 3 (shows its reason)",
+  "why": "Saturday farmers market seen from behind a PA speaker and stage; clutter, people, not a market worth showing (also a weekly event)."
+ },
+ {
+  "slot": "spot:raglan-3",
+  "kind": "reject",
+  "region": "waikato",
+  "destination": "raglan",
+  "failed_check": "check 1 / 2",
+  "why": "Taken from a cave at Te Maika, Kawhia (not Raglan); Karioi is a tiny distant shape through an arch."
+ },
+ {
+  "slot": "dest:waitomo:header",
+  "kind": "reject",
+  "region": "waikato",
+  "destination": "waitomo",
+  "failed_check": "check 3 (spectacular, wide)",
+  "why": "Commons title \"Agricultural Airfield\": plain pasture with a dirt strip; no caves or karst landscape, not spectacular."
+ },
+ {
+  "slot": "spot:coromandel-17",
+  "kind": "held",
+  "region": "waikato",
+  "destination": "coromandel",
+  "name": "The Waterworks",
+  "category": "entertainment",
+  "coordinates": {
+   "latitude": -36.81651,
+   "longitude": 175.5386
+  },
+  "why": "held: needs a photo",
+  "photo_note": null
+ },
+ {
+  "slot": "spot:coromandel-18",
+  "kind": "held",
+  "region": "waikato",
+  "destination": "coromandel",
+  "name": "Ocean Beach (Tairua)",
+  "category": "beach",
+  "coordinates": {
+   "latitude": -36.99103,
+   "longitude": 175.85792
+  },
+  "why": "held: needs a photo",
+  "photo_note": null
+ },
+ {
+  "slot": "spot:hamilton-8",
+  "kind": "held",
+  "region": "waikato",
+  "destination": "hamilton",
+  "name": "Maungatautari",
+  "category": "nature",
+  "coordinates": {
+   "latitude": -38.056,
+   "longitude": 175.5604
+  },
+  "why": "held: needs a photo",
+  "photo_note": null
+ },
+ {
+  "slot": "spot:hamilton-9",
+  "kind": "held",
+  "region": "waikato",
+  "destination": "hamilton",
+  "name": "Te Awamutu",
+  "category": "historic",
+  "coordinates": {
+   "latitude": -38.01666667,
+   "longitude": 175.31666667
+  },
+  "why": "held: needs a photo",
+  "photo_note": null
+ },
+ {
+  "slot": "spot:tongariro-8",
+  "kind": "held",
+  "region": "waikato",
+  "destination": "tongariro",
+  "name": "Tongariro National Trout Centre",
+  "category": "entertainment",
+  "coordinates": {
+   "latitude": -39.02018,
+   "longitude": 175.81014
+  },
+  "why": "held: needs a photo",
+  "photo_note": null
+ },
+ {
+  "slot": "spot:mount-te-aroha",
+  "kind": "held",
+  "region": "waikato",
+  "destination": null,
+  "name": "Mount Te Aroha",
+  "category": "hike",
+  "coordinates": {
+   "latitude": -37.534,
+   "longitude": 175.7414
+  },
+  "why": "held: needs a photo",
+  "photo_note": null
+ },
+ {
+  "slot": "spot:timber-trail",
+  "kind": "held",
+  "region": "waikato",
+  "destination": null,
+  "name": "Timber Trail",
+  "category": "hike",
+  "coordinates": {
+   "latitude": -38.51361,
+   "longitude": 175.55701
+  },
+  "why": "held: needs a photo",
+  "photo_note": null
+ },
+ {
+  "slot": "spot:tirau-giant-dog-and-sheep",
+  "kind": "held",
+  "region": "waikato",
+  "destination": null,
+  "name": "Tirau Giant Dog and Sheep",
+  "category": "landmark",
+  "coordinates": {
+   "latitude": -37.97691,
+   "longitude": 175.7564
+  },
+  "why": "held: needs a photo",
+  "photo_note": null
+ }
+]

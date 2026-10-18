@@ -1,0 +1,98 @@
+{
+ "group": "waitomo",
+ "generated": "2026-10-18T03:30:35.514Z",
+ "slots": [
+  {
+   "slot": "dest:waitomo:header",
+   "key": "Waitomo",
+   "current": {
+    "file": "Agricultural Airfield, Waitomo Area.jpg",
+    "source": "imageOverrides.ts"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:waitomo:why1",
+   "key": "File:Glowworm Grotto, Waitomo Glowworm Cave.jpg",
+   "current": {
+    "file": "Glowworm Grotto, Waitomo Glowworm Cave.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: dated 1970"
+   ]
+  },
+  {
+   "slot": "dest:waitomo:why2",
+   "key": "File:Spiral Entrance to the Ruakuri Cave, Waitomo, New Zealand (50801068603).jpg",
+   "current": {
+    "file": "Spiral Entrance to the Ruakuri Cave, Waitomo, New Zealand (50801068603).jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:waitomo:why3",
+   "key": "File:Marokopa Falls and tree fern stump.jpg",
+   "current": {
+    "file": "Marokopa Falls and tree fern stump.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "spot:waitomo-1",
+   "key": "Waitomo Glowworm Caves",
+   "current": {
+    "file": "'Cathedral' in Waitomo Cave.jpg",
+    "source": "imageOverrides.ts"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "spot:waitomo-2",
+   "key": "Ruakuri Cave",
+   "current": {
+    "file": "Lit up stalactites and stalagmites in Ruakuri Cave.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "spot:waitomo-3",
+   "key": "Aranui Cave",
+   "current": {
+    "file": "external:bright-aranui-cave-993.jpg",
+    "source": "externalPhotos.json"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "spot:waitomo-4",
+   "key": "Marokopa Falls",
+   "current": {
+    "file": "Marokopa Falls.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "spot:waitomo-5",
+   "key": "Mangapohue Natural Bridge",
+   "current": {
+    "file": "external:bright-mangapohue-natural-bridge-1280.jpg",
+    "source": "externalPhotos.json"
+   },
+   "status": "confirm",
+   "flags": []
+  }
+ ]
+}

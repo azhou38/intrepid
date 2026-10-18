@@ -1,0 +1,30 @@
+{
+ "generated": "2026-10-18T03:30:04.109Z",
+ "scope": {
+  "region": "hawkes-bay"
+ },
+ "issues": [
+  {
+   "kind": "spot",
+   "id": "napier-4",
+   "name": "Cape Kidnappers",
+   "checks": [
+    {
+     "check": "no-ticket",
+     "detail": "charges but has no ticketUrl"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "napier-7",
+   "name": "MTG Hawke’s Bay",
+   "checks": [
+    {
+     "check": "wiki",
+     "detail": "no Wikipedia article (photo lookup will fall back to search)"
+    }
+   ]
+  }
+ ]
+}

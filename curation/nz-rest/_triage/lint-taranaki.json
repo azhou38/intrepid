@@ -1,0 +1,41 @@
+{
+ "generated": "2026-10-18T03:30:05.109Z",
+ "scope": {
+  "region": "taranaki"
+ },
+ "issues": [
+  {
+   "kind": "spot",
+   "id": "new-plymouth-3",
+   "name": "Len Lye Centre",
+   "checks": [
+    {
+     "check": "wiki",
+     "detail": "redirects to \"Govett-Brewster Art Gallery\" — set `wiki` to it, or check it's this place"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "new-plymouth-6",
+   "name": "Coastal Walkway",
+   "checks": [
+    {
+     "check": "wiki",
+     "detail": "redirects to \"New Plymouth Coastal Walkway\" — set `wiki` to it, or check it's this place"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "egmont-2",
+   "name": "Pouakai Tarns",
+   "checks": [
+    {
+     "check": "wiki",
+     "detail": "no Wikipedia article (photo lookup will fall back to search)"
+    }
+   ]
+  }
+ ]
+}

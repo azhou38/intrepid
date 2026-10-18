@@ -1,0 +1,545 @@
+{
+ "region": "taranaki",
+ "inside_destinations": {
+  "count": 23,
+  "new_spots_in_existing_destinations": [
+   "new-plymouth-7",
+   "new-plymouth-8",
+   "new-plymouth-9",
+   "new-plymouth-10",
+   "new-plymouth-11",
+   "new-plymouth-12",
+   "new-plymouth-13",
+   "new-plymouth-14",
+   "new-plymouth-15",
+   "egmont-6",
+   "egmont-7",
+   "egmont-8"
+  ],
+  "existing_spots_reconfirmed": 11,
+  "note": "New Plymouth 9 new (7-15), Egmont 3 new (6-8)."
+ },
+ "spots_in_proposed_destinations": {
+  "count": 13,
+  "ids": [
+   "opunake-2",
+   "opunake-1",
+   "stratford-1",
+   "stratford-2",
+   "hawera-1",
+   "hawera-2",
+   "hawera-3",
+   "hawera-4",
+   "hawera-5",
+   "hawera-6",
+   "hawera-7",
+   "whangamomona-1",
+   "whangamomona-2"
+  ]
+ },
+ "standalone": {
+  "count": 1,
+  "ids": [
+   "three-sisters-tongaporutu"
+  ],
+  "note": "Three Sisters and Elephant Rock only; every other place outside both existing spans clusters round a proposed base."
+ },
+ "new_destinations": {
+  "count": 4,
+  "ids": [
+   "stratford",
+   "hawera",
+   "opunake",
+   "whangamomona"
+  ],
+  "names": [
+   "Stratford",
+   "Hāwera",
+   "Ōpunake",
+   "Whangamōmona"
+  ]
+ },
+ "held_for_photo": [
+  "Fitzroy Beach",
+  "East End Beach",
+  "Ngāmotu Beach",
+  "Waimoku Track",
+  "Pukeiti",
+  "Te Popo Gardens",
+  "Tawhiti Museum",
+  "Pātea"
+ ],
+ "lowest_kept": [
+  {
+   "name": "East End Beach",
+   "views": 0,
+   "counted_sources": 1,
+   "placement": "spot"
+  },
+  {
+   "name": "Around the Mountain Circuit",
+   "views": 0,
+   "counted_sources": 1,
+   "placement": "spot"
+  },
+  {
+   "name": "Pātea Beach",
+   "views": 0,
+   "counted_sources": 1,
+   "placement": "spot-of-proposed-destination"
+  },
+  {
+   "name": "Len Lye Centre",
+   "views": 0,
+   "counted_sources": 1,
+   "placement": "existing"
+  },
+  {
+   "name": "Fitzroy Beach",
+   "views": 0,
+   "counted_sources": 2,
+   "placement": "spot"
+  },
+  {
+   "name": "Ngāmotu Beach",
+   "views": 0,
+   "counted_sources": 2,
+   "placement": "spot"
+  },
+  {
+   "name": "Ōakura Beach",
+   "views": 0,
+   "counted_sources": 2,
+   "placement": "spot"
+  },
+  {
+   "name": "Waimoku Track",
+   "views": 0,
+   "counted_sources": 2,
+   "placement": "spot"
+  },
+  {
+   "name": "Manganui Gorge Track",
+   "views": 0,
+   "counted_sources": 2,
+   "placement": "spot"
+  },
+  {
+   "name": "Ōpunake Beach",
+   "views": 0,
+   "counted_sources": 2,
+   "placement": "spot-of-proposed-destination"
+  },
+  {
+   "name": "Stratford Glockenspiel",
+   "views": 0,
+   "counted_sources": 2,
+   "placement": "spot-of-proposed-destination"
+  },
+  {
+   "name": "Te Popo Gardens",
+   "views": 0,
+   "counted_sources": 2,
+   "placement": "spot-of-proposed-destination"
+  },
+  {
+   "name": "Tawhiti Museum",
+   "views": 0,
+   "counted_sources": 2,
+   "placement": "spot-of-proposed-destination"
+  },
+  {
+   "name": "Kaupokonui Beach",
+   "views": 0,
+   "counted_sources": 2,
+   "placement": "spot-of-proposed-destination"
+  },
+  {
+   "name": "Moki Tunnel",
+   "views": 0,
+   "counted_sources": 2,
+   "placement": "spot-of-proposed-destination"
+  },
+  {
+   "name": "Paritutu Rock",
+   "views": 0,
+   "counted_sources": 2,
+   "placement": "existing"
+  },
+  {
+   "name": "Pouakai Tarns",
+   "views": 0,
+   "counted_sources": 2,
+   "placement": "existing"
+  },
+  {
+   "name": "Pouakai Crossing",
+   "views": 0,
+   "counted_sources": 2,
+   "placement": "existing"
+  },
+  {
+   "name": "Lake Mangamahoe",
+   "views": 0,
+   "counted_sources": 3,
+   "placement": "spot"
+  },
+  {
+   "name": "Wilkies Pools",
+   "views": 0,
+   "counted_sources": 3,
+   "placement": "existing"
+  }
+ ],
+ "stronger_left_out": [
+  {
+   "name": "New Plymouth",
+   "views": 53219,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "City-level destination, not a spot; the candidate was matched by proximity to new-plymouth-5 (Puke Ariki). Its attractions are judged individually."
+  },
+  {
+   "name": "WOMAD",
+   "views": 27473,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Annual festival, not a permanent place."
+  },
+  {
+   "name": "Egmont National Park",
+   "views": 9323,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "National park, i.e. destination-level, not a spot; the mountain itself is already judged as Taranaki Maunga."
+  },
+  {
+   "name": "Festival of Lights",
+   "views": 8481,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Annual event, not a permanent place; Pukekura Park is judged as an existing spot."
+  },
+  {
+   "name": "Waitara",
+   "views": 7259,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Port town listed only in Wikivoyage region list; no named visitor attraction."
+  },
+  {
+   "name": "Inglewood",
+   "views": 5264,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Route stop on SH3 listed only by Wikivoyage; no named thing to see or do."
+  },
+  {
+   "name": "Ōakura",
+   "views": 5010,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Duplicate of Ōakura Beach: the village's draw is its beach and cafes (tourism board names it on the Surf Highway page), so the beach is the spot; the village is not a separate stop."
+  },
+  {
+   "name": "Eltham",
+   "views": 3870,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "South Taranaki page: a cheese bar (retail) and the road to Lake Rotokare, which is its own spot; no distinct draw."
+  },
+  {
+   "name": "Waverley",
+   "views": 3775,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "South Taranaki page: only a glass art studio (shop-type venue) and a beach turn-off; thin reason to stop."
+  },
+  {
+   "name": "Ōkato",
+   "views": 2074,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Opened tourism board South Taranaki page: a fish-and-chip shop and the road to Lucy's Gully; nothing to see or do for 30 minutes."
+  },
+  {
+   "name": "Govett-Brewster Art Gallery",
+   "views": 1686,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Same building complex as existing Len Lye Centre (new-plymouth-3); near-duplicate of that visit."
+  },
+  {
+   "name": "Tongapōrutu",
+   "views": 1113,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Access village for Three Sisters and Elephant Rock; the rocks are the spot."
+  },
+  {
+   "name": "Te Rere o Kapuni",
+   "views": 997,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Alternate name for Dawson Falls (egmont-3); duplicate."
+  },
+  {
+   "name": "New Plymouth Coastal Walkway",
+   "views": 975,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Near-duplicate of existing Coastal Walkway (new-plymouth-6)."
+  },
+  {
+   "name": "Moturoa Island",
+   "views": 927,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "One of the Sugar Loaf Islands; part of a larger spot, no visitor source."
+  },
+  {
+   "name": "Kaitake Range",
+   "views": 909,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Range containing the Waimoku and Sefton Ridge tracks; its walks are judged individually."
+  },
+  {
+   "name": "Pouākai Range",
+   "views": 879,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Range crossed by the Pouākai Crossing; part of a larger spot."
+  },
+  {
+   "name": "Lake Rotorangi",
+   "views": 797,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only; artificial lake with no visitor source."
+  },
+  {
+   "name": "Surf Highway 45",
+   "views": 779,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "A route, not a place; its named stops are judged separately."
+  },
+  {
+   "name": "Waiwhakaiho River",
+   "views": 742,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "River mouth, NZ Pocket Guide only; no counted source."
+  },
+  {
+   "name": "Ahukawakawa Swamp",
+   "views": 534,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Wetland on the Pouākai Crossing route; part of a larger spot."
+  },
+  {
+   "name": "Parininihi Marine Reserve",
+   "views": 332,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only; no visitor source or visitor access point."
+  },
+  {
+   "name": "Tapuae Marine Reserve",
+   "views": 332,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only; no visitor source or visitor access point."
+  },
+  {
+   "name": "New Plymouth Observatory",
+   "views": 255,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Open Tuesday evenings only; not there whenever a visitor arrives."
+  },
+  {
+   "name": "Lake Dive",
+   "views": 246,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only; no visitor source."
+  },
+  {
+   "name": "Motuotamatea",
+   "views": 212,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "One of the Sugar Loaf Islands; part of a larger spot, no visitor source."
+  },
+  {
+   "name": "Waipu Lagoons",
+   "views": 207,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only; no visitor source."
+  },
+  {
+   "name": "Motumahanga",
+   "views": 175,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "One of the Sugar Loaf Islands; part of a larger spot, no visitor source."
+  }
+ ],
+ "review_list": [
+  {
+   "name": "Tūpare",
+   "views": 493,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: historic free garden with Wikipedia article, tourism board names it. Against: one counted source, mainly seasonal bloom."
+  },
+  {
+   "name": "Pouākai Circuit",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Wikivoyage Egmont NP lists the 2-3 day circuit; multi-day walks a guide promotes qualify. Against: one source, overlaps Pouākai Crossing and Tarns already in the app."
+  },
+  {
+   "name": "Curtis Falls Track",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: DOC lists the track to a waterfall. Against: one source (DOC page fetch showed little detail), short walk within a park already covered."
+  },
+  {
+   "name": "Brooklands Zoo",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Wikivoyage lists a small free zoo, permanent, about an hour with kids. Against: one counted source, small local zoo."
+  },
+  {
+   "name": "TSB Bank Bowls New Zealand Museum",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Wikivoyage names the world's only lawn bowls museum; quirky, permanent. Against: one source, niche, small, opening unverified."
+  },
+  {
+   "name": "Hollard Gardens",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: tourism board lists it among Taranaki's gardens (Gardens of National Significance). Against: one source, small, South Taranaki."
+  },
+  {
+   "name": "Taranaki Pioneer Village",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: tourism board Stratford page names a 1850-1950 pioneer village museum, a permanent half-day visit. Against: one source, opening days unverified (may be limited days)."
+  },
+  {
+   "name": "Turuturu Mokai Pā",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Wikivoyage names the public pā reserve near Hāwera, beside Tawhiti Museum. Against: one source, small heritage site, ~20-30 minute look."
+  },
+  {
+   "name": "Te Maire Loop Track",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: tourism board names a 2-hour forest loop with a suspension bridge. Against: one source, no coordinates found, little detail."
+  },
+  {
+   "name": "Matemateaonga Track",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: multi-day backcountry track named by the tourism board (DOC-managed walkway); multi-day walks qualify. Against: one source, remote, little visitor use, no coordinates."
+  }
+ ],
+ "strongest_outsiders": [
+  {
+   "name": "Whangamōmona",
+   "views": 14090,
+   "counted_sources": 1,
+   "placement": "new-destination"
+  },
+  {
+   "name": "Hāwera",
+   "views": 13790,
+   "counted_sources": 2,
+   "placement": "new-destination"
+  },
+  {
+   "name": "Stratford",
+   "views": 10531,
+   "counted_sources": 2,
+   "placement": "new-destination"
+  },
+  {
+   "name": "Ōpunake",
+   "views": 7728,
+   "counted_sources": 2,
+   "placement": "new-destination"
+  },
+  {
+   "name": "Pātea",
+   "views": 2551,
+   "counted_sources": 2,
+   "placement": "spot-of-proposed-destination"
+  },
+  {
+   "name": "Three Sisters and Elephant Rock",
+   "views": 1150,
+   "counted_sources": 1,
+   "placement": "standalone"
+  },
+  {
+   "name": "Lake Rotokare",
+   "views": 875,
+   "counted_sources": 2,
+   "placement": "spot-of-proposed-destination"
+  },
+  {
+   "name": "Cape Egmont Lighthouse",
+   "views": 742,
+   "counted_sources": 1,
+   "placement": "spot-of-proposed-destination"
+  },
+  {
+   "name": "Mount Damper Falls",
+   "views": 540,
+   "counted_sources": 2,
+   "placement": "spot-of-proposed-destination"
+  },
+  {
+   "name": "Aotea Utanganui – Museum of South Taranaki",
+   "views": 301,
+   "counted_sources": 2,
+   "placement": "spot-of-proposed-destination"
+  }
+ ],
+ "benchmark": {
+  "applicable": "Taranaki holds none of the named benchmark places (Red Rocks, Kapiti, Coleridge, Christchurch, Glenorchy, Hump Ridge, St Kilda, Ohakune Carrot, Ninety Mile Beach, TSS Earnslaw).",
+  "negative_benchmarks_honoured": "Vehicles/operators rejected (Chaddy's Charters, Precision Helicopters, Forgotten World Adventures); minor memorials rejected (Ambury, Joshua Morgan); once-a-week/occasional venues rejected (New Plymouth Model Railway, Observatory); events rejected (WOMAD, Festival of Lights, Republic Day); local parks rejected (King Edward Park x2).",
+  "gateway_village_check": "Whangamōmona is the Pipiriki analogue (the candidate note itself says its draw is the journey beyond it). The benchmark expects such a village in review; the skeptic kept it as a quirky icon (1989 'republic', historic hotel). Placed as a proposed destination hub with Moki Tunnel and Mount Damper Falls, flagged for the owner; if the owner prefers review, the two spots become standalone.",
+  "skeptic_rejections_honoured": [
+   "Kumara Patch",
+   "Stent Road",
+   "Arawhata Road",
+   "Mangahume",
+   "Kina Road",
+   "Govett-Brewster Art Gallery"
+  ]
+ },
+ "flags_for_owner": [
+  "Ōakura village (5010 views) rejected by the skeptic as a duplicate of Ōakura Beach (kept); Waimoku is placed with New Plymouth although DOC lists Kaitake within the park.",
+  "Waitara (7259) and Inglewood (5264) left out: Wikivoyage region-list mentions only, no named thing to do (fails 'What qualifies' 1).",
+  "Cape Egmont Lighthouse is a single-source landmark kept as marginal by the skeptic.",
+  "Stratford, Hāwera, Ōpunake, Whangamōmona are proposals only; Ōpunake and Whangamōmona have just two spots each."
+ ]
+}

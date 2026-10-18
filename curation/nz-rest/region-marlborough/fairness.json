@@ -1,0 +1,665 @@
+{
+ "region": "marlborough",
+ "inside_destinations": 7,
+ "standalone": 5,
+ "new_destinations": 0,
+ "inside_destinations_detail": [
+  "Anakiwa",
+  "Snout Walkway",
+  "Nydia Track",
+  "Wairau Lagoons",
+  "Whites Bay",
+  "Highfield Estate",
+  "Brancott Estate"
+ ],
+ "standalone_detail": [
+  "Mount Richmond Forest Park",
+  "Marfells Beach",
+  "Lake Grassmere",
+  "Molesworth Station",
+  "Rainbow Skifield"
+ ],
+ "held_for_photo": [
+  "Nydia Track",
+  "Highfield Estate",
+  "Brancott Estate",
+  "Marfells Beach",
+  "Rainbow Skifield"
+ ],
+ "lowest_kept": [
+  {
+   "name": "Highfield Estate",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Blenheim_(New_Zealand)"
+   ]
+  },
+  {
+   "name": "Nydia Track",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Havelock_(New_Zealand)",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/pelorus-and-kenepuru-sounds-area/things-to-do/tracks/nydia-track/"
+   ]
+  },
+  {
+   "name": "Snout Walkway",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Picton_(New_Zealand)",
+    "https://en.wikivoyage.org/wiki/Marlborough_Sounds"
+   ]
+  },
+  {
+   "name": "Whites Bay",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/blenheim-area/things-to-do/tracks/rarangi-baywhites-bay-track/"
+   ]
+  },
+  {
+   "name": "Wairau Lagoons",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/blenheim-area/things-to-do/tracks/wairau-lagoons-walkway/"
+   ]
+  }
+ ],
+ "existing_kept_scores": [
+  {
+   "name": "Blenheim",
+   "views": 28708,
+   "counted_sources": 2
+  },
+  {
+   "name": "Picton",
+   "views": 20273,
+   "counted_sources": 2
+  },
+  {
+   "name": "Havelock",
+   "views": 7177,
+   "counted_sources": 2
+  },
+  {
+   "name": "Queen Charlotte Track",
+   "views": 3408,
+   "counted_sources": 2
+  },
+  {
+   "name": "Ship Cove",
+   "views": 1584,
+   "counted_sources": 1
+  },
+  {
+   "name": "Motuara Island",
+   "views": 1022,
+   "counted_sources": 1
+  },
+  {
+   "name": "Edwin Fox Maritime Museum",
+   "views": 5207,
+   "counted_sources": 2
+  },
+  {
+   "name": "Pelorus Bridge Scenic Reserve",
+   "views": 2445,
+   "counted_sources": 2
+  },
+  {
+   "name": "Omaka Aviation Heritage Centre",
+   "views": 3209,
+   "counted_sources": 1
+  },
+  {
+   "name": "Cloudy Bay Vineyards",
+   "views": 6647,
+   "counted_sources": 1
+  }
+ ],
+ "stronger_left_out": [
+  {
+   "name": "Marlborough Sounds",
+   "views": 18385,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "An area/destination, not a single spot; its places are the spots. Near-duplicate of the Sounds spots."
+  },
+  {
+   "name": "Marlborough Wine Region",
+   "views": 9912,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "A region, not a spot; its cellar doors are the spots. needs_coordinates"
+  },
+  {
+   "name": "D'Urville Island",
+   "views": 6773,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "DOC page covers French Pass and D'Urville Island scenic reserves; no counted source for island access (water taxi or barge) or a defined thing to do found. For: large island, lodges. Against: limited visitor infrastructure, one source."
+  },
+  {
+   "name": "French Pass",
+   "views": 6411,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: DOC lookout track over the famous tidal Te Aumiti strait; Wikivoyage Sounds describes the road route (about 2 h from SH6). Against: remote, unsealed, short walk, one DOC source."
+  },
+  {
+   "name": "Queen Charlotte Sound",
+   "views": 6076,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A sound/area crossed by cruises and track; broader than a spot. Its sights (track, Ship Cove, Motuara) are listed separately."
+  },
+  {
+   "name": "Arapaoa Island",
+   "views": 4670,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor-oriented source (Wikipedia listing only); no named reason to visit; remote or boat-only."
+  },
+  {
+   "name": "Maud Island",
+   "views": 4172,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Predator-free sanctuary closed to the public."
+  },
+  {
+   "name": "Seddon",
+   "views": 3035,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small SH1 service town; a single listing as a town with nothing named to see or do."
+  },
+  {
+   "name": "Pelorus Sound",
+   "views": 2643,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "An area; sights within it (Havelock, Nydia Track) are the spots."
+  },
+  {
+   "name": "Renwick",
+   "views": 2588,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Satellite town with no named see/do entry on its own Wikivoyage page; its cellar doors are judged separately. Nothing to do for 30 min beyond them."
+  },
+  {
+   "name": "Cloudy Bay",
+   "views": 2501,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No visitor source; coast bay, not a confirmed stop."
+  },
+  {
+   "name": "Waikawa Bay",
+   "views": 2130,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Wikivoyage describes a marina suburb of Picton; its only visitor entry is Karaka Point, a 10-minute walk. No distinct draw."
+  },
+  {
+   "name": "Okiwi Bay",
+   "views": 1613,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "The DOC page cited describes a lookout walk by Okiwi Bay campsite 30 km north of Kaikoura, while the candidate coordinates are the Pelorus-side bay: source and place do not match, and it is a short roadside walk."
+  },
+  {
+   "name": "Rai Valley",
+   "views": 1558,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rural village on a link route; Wikivoyage mentions only bacon. No half-hour draw."
+  },
+  {
+   "name": "Ward",
+   "views": 1541,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small settlement, one Wikivoyage town listing, no named draw; Ward Beach is separate and unsourced."
+  },
+  {
+   "name": "Cape Campbell Lighthouse",
+   "views": 1427,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "DOC page: reached by a 4-hour tide-dependent beach walk, access only below high tide, land above it private; the lighthouse itself cannot be visited. It is part of the Marfells Beach route spot."
+  },
+  {
+   "name": "Blackwood Bay",
+   "views": 1421,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor-oriented source (Wikipedia listing only); no named reason to visit; remote or boat-only."
+  },
+  {
+   "name": "Clifford Bay",
+   "views": 1334,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor-oriented source (Wikipedia listing only); no named reason to visit; remote or boat-only."
+  },
+  {
+   "name": "Lake Tennyson",
+   "views": 1303,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "DOC: campsite reached by a 4WD toll road with access restrictions; remote and part of the Molesworth reserve already kept."
+  },
+  {
+   "name": "Kenepuru Sound",
+   "views": 1215,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "An area/arm of the Sounds; no single named stop. One source."
+  },
+  {
+   "name": "Ward Beach",
+   "views": 1183,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No visitor-oriented source found."
+  },
+  {
+   "name": "Port Underwood",
+   "views": 1141,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor-oriented source (Wikipedia listing only); no named reason to visit; remote or boat-only."
+  },
+  {
+   "name": "Endeavour Inlet",
+   "views": 1080,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor-oriented source (Wikipedia listing only); no named reason to visit; remote or boat-only."
+  },
+  {
+   "name": "Blumine Island",
+   "views": 915,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: DOC scenic reserve with the Oruawairua track and campsite. Against: boat-only, little beyond Motuara, one source."
+  },
+  {
+   "name": "Port Gore",
+   "views": 885,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor-oriented source (Wikipedia listing only); no named reason to visit; remote or boat-only."
+  },
+  {
+   "name": "Ngākuta Bay",
+   "views": 872,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No visitor-oriented source; Wikipedia only."
+  },
+  {
+   "name": "Forsyth Island",
+   "views": 820,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor-oriented source (Wikipedia listing only); no named reason to visit; remote or boat-only."
+  },
+  {
+   "name": "Elaine Bay",
+   "views": 792,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "DOC campsite and a departure point for eco-tours; the place is Tui Nature Reserve. Remote bay, one source."
+  },
+  {
+   "name": "Penzance Bay",
+   "views": 724,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor-oriented source (Wikipedia listing only); no named reason to visit; remote or boat-only."
+  },
+  {
+   "name": "Stephens Island Lighthouse",
+   "views": 722,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "On a nature reserve closed to the public."
+  },
+  {
+   "name": "Resolution Bay",
+   "views": 705,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor-oriented source (Wikipedia listing only); no named reason to visit; remote or boat-only."
+  },
+  {
+   "name": "Cape Jackson",
+   "views": 624,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor-oriented source (Wikipedia listing only); no named reason to visit; remote or boat-only."
+  },
+  {
+   "name": "Admiralty Bay",
+   "views": 564,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor-oriented source (Wikipedia listing only); no named reason to visit; remote or boat-only."
+  },
+  {
+   "name": "West Head",
+   "views": 555,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor-oriented source (Wikipedia listing only); no named reason to visit; remote or boat-only."
+  },
+  {
+   "name": "Chetwode Islands",
+   "views": 525,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor-oriented source (Wikipedia listing only); no named reason to visit; remote or boat-only."
+  },
+  {
+   "name": "French Pass Lighthouse",
+   "views": 509,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Public access unconfirmed, no counted source."
+  },
+  {
+   "name": "Lochmara Bay",
+   "views": 477,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor-oriented source (Wikipedia listing only); no named reason to visit; remote or boat-only."
+  },
+  {
+   "name": "Long Island (Marlborough)",
+   "views": 469,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor-oriented source (Wikipedia listing only); no named reason to visit; remote or boat-only."
+  },
+  {
+   "name": "Matapara / Pickersgill Island",
+   "views": 458,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor-oriented source (Wikipedia listing only); no named reason to visit; remote or boat-only."
+  },
+  {
+   "name": "Rangitoto Islands",
+   "views": 451,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor-oriented source (Wikipedia listing only); no named reason to visit; remote or boat-only."
+  },
+  {
+   "name": "Waitaria Bay",
+   "views": 442,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor-oriented source (Wikipedia listing only); no named reason to visit; remote or boat-only."
+  },
+  {
+   "name": "Ōnahau Bay",
+   "views": 438,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor-oriented source (Wikipedia listing only); no named reason to visit; remote or boat-only."
+  },
+  {
+   "name": "Allports Island",
+   "views": 407,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor-oriented source (Wikipedia listing only); no named reason to visit; remote or boat-only."
+  },
+  {
+   "name": "Croisilles Harbour",
+   "views": 398,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor-oriented source (Wikipedia listing only); no named reason to visit; remote or boat-only."
+  },
+  {
+   "name": "Long Island-Kokomohua Marine Reserve",
+   "views": 382,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No visitor source; no-take marine reserve, boat access only."
+  },
+  {
+   "name": "Whatamangō Bay",
+   "views": 368,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor-oriented source (Wikipedia listing only); no named reason to visit; remote or boat-only."
+  },
+  {
+   "name": "Ruakākā Bay",
+   "views": 331,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor-oriented source (Wikipedia listing only); no named reason to visit; remote or boat-only."
+  },
+  {
+   "name": "Fairy Bay",
+   "views": 330,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor-oriented source (Wikipedia listing only); no named reason to visit; remote or boat-only."
+  },
+  {
+   "name": "Big Lagoon",
+   "views": 286,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor-oriented source (Wikipedia listing only); no named reason to visit; remote or boat-only."
+  },
+  {
+   "name": "Tawero Point",
+   "views": 194,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor-oriented source (Wikipedia listing only); no named reason to visit; remote or boat-only."
+  },
+  {
+   "name": "Graham River",
+   "views": 185,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor-oriented source (Wikipedia listing only); no named reason to visit; remote or boat-only."
+  },
+  {
+   "name": "Bird Island (Marlborough)",
+   "views": 90,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor-oriented source (Wikipedia listing only); no named reason to visit; remote or boat-only."
+  },
+  {
+   "name": "Greenshell Mussel Cruise",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Operator cruise, not a place; the sound or a mussel farm is the place."
+  }
+ ],
+ "review_list": [
+  {
+   "name": "French Pass",
+   "views": 6411,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: DOC lookout track over the famous tidal Te Aumiti strait; Wikivoyage Sounds describes the road route (about 2 h from SH6). Against: remote, unsealed, short walk, one DOC source."
+  },
+  {
+   "name": "D'Urville Island",
+   "views": 6773,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "DOC page covers French Pass and D'Urville Island scenic reserves; no counted source for island access (water taxi or barge) or a defined thing to do found. For: large island, lodges. Against: limited visitor infrastructure, one source."
+  },
+  {
+   "name": "Blumine Island",
+   "views": 915,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: DOC scenic reserve with the Oruawairua track and campsite. Against: boat-only, little beyond Motuara, one source."
+  },
+  {
+   "name": "Picton Heritage & Whaling Museum",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Judged as new. For: Wikivoyage Picton lists it with hours (10-4) and $5 entry, Maori and whaling artefacts. Against: small, single counted source, same harbour as Edwin Fox."
+  },
+  {
+   "name": "Mount Stokes Track",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: DOC track to the highest point in the Sounds (1203 m), spectacular views; Wikivoyage Sounds mentions the start. Against: advanced tramp, 41 km down winding Kenepuru Road, DOC is the single source; coordinates still needed (DOC/OSM)."
+  },
+  {
+   "name": "Wither Hills Farm Park",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Existing, kept as review. For: Wikivoyage Blenheim names the walk for views over the Wairau Valley and a bike park; open to the public. Against: mainly local recreation, one source."
+  },
+  {
+   "name": "Sawcut Gorge",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Wikivoyage Marlborough names it as one of the region's secrets. Against: a gorge beside an inland road with a short look, one source, no DOC visitor page found."
+  },
+  {
+   "name": "Pollard Park",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Downgraded from keep. For: Wikivoyage Blenheim says don't miss the roses and camellias. Against: a council park, one counted source, ordinary-park risk. NOTE the candidate coordinates (53.79,-1.74, Barkerend UK) are wrong; use -41.5073,173.9493 from Wikivoyage Blenheim."
+  },
+  {
+   "name": "Marlborough Museum",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Wikivoyage Blenheim lists it daily 10-4, $10, Beavertown replica village. Against: small regional history museum, one source."
+  },
+  {
+   "name": "Hunters Wines",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Wikivoyage Blenheim lists cellar door with restaurant, native garden and a famous award record. Against: one of many cellar doors, one source."
+  },
+  {
+   "name": "Nautilus Estate",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Wikivoyage Blenheim lists it, known for its sparkling wine; Against: one of many cellar doors, seasonal hours, one source."
+  },
+  {
+   "name": "Seresin Estate",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Wikivoyage Blenheim lists views over Condors Bend, organic wine and olive oil. Against: one of many cellar doors, one source."
+  },
+  {
+   "name": "Villa Maria Estate",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Wikivoyage Blenheim lists free tastings, tours by appointment, top-award winery. Against: one of many cellar doors, weekend-only winter hours, one source."
+  }
+ ],
+ "strongest_outsiders": [
+  {
+   "name": "Molesworth Station",
+   "views": 7017,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/molesworth-reserve/things-to-do/tracks/acheron-lookout-loop-walk/"
+   ],
+   "outcome": "kept as standalone"
+  },
+  {
+   "name": "Lake Grassmere",
+   "views": 3425,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Marlborough_(New_Zealand)"
+   ],
+   "outcome": "kept as standalone"
+  },
+  {
+   "name": "Rainbow Skifield",
+   "views": 918,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Marlborough_(New_Zealand)"
+   ],
+   "outcome": "kept as standalone"
+  },
+  {
+   "name": "Mount Richmond Forest Park",
+   "views": 818,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/mount-richmond-forest-park/things-to-do/tracks/forks-riverside-walk/"
+   ],
+   "outcome": "kept as standalone"
+  },
+  {
+   "name": "Marfells Beach",
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/marfells-beach-area/things-to-do/tracks/marfells-beach-cape-campbell-route/"
+   ],
+   "outcome": "kept as standalone"
+  },
+  {
+   "name": "D'Urville Island",
+   "views": 6773,
+   "verdict": "review",
+   "outcome": "left out of every span",
+   "reason": "DOC page covers French Pass and D'Urville Island scenic reserves; no counted source for island access (water taxi or barge) or a defined thing to do found. For: large island, lodges. Against: limited visitor infrastructure, one source."
+  },
+  {
+   "name": "French Pass",
+   "views": 6411,
+   "verdict": "review",
+   "outcome": "left out of every span",
+   "reason": "For: DOC lookout track over the famous tidal Te Aumiti strait; Wikivoyage Sounds describes the road route (about 2 h from SH6). Against: remote, unsealed, short walk, one DOC source."
+  },
+  {
+   "name": "Arapaoa Island",
+   "views": 4670,
+   "verdict": "reject",
+   "outcome": "left out of every span",
+   "reason": "No counted visitor-oriented source (Wikipedia listing only); no named reason to visit; remote or boat-only."
+  },
+  {
+   "name": "Maud Island",
+   "views": 4172,
+   "verdict": "reject",
+   "outcome": "left out of every span",
+   "reason": "Predator-free sanctuary closed to the public."
+  },
+  {
+   "name": "Blumine Island",
+   "views": 915,
+   "verdict": "review",
+   "outcome": "left out of every span",
+   "reason": "For: DOC scenic reserve with the Oruawairua track and campsite. Against: boat-only, little beyond Motuara, one source."
+  }
+ ],
+ "benchmark": "No benchmark place lies in Marlborough. Negative-benchmark behaviour holds: operators and vehicles rejected (Greenshell Mussel Cruise, Beachcomber Mail Boat, Tui Nature Reserve), the road (Queen Charlotte Drive) rejected, a gateway whose draw is the journey beyond sent to review (French Pass, D'Urville Island), minor memorial/civic buildings rejected (Rutherford and Pickering Memorial, Renwick Library and Museum). Ninety Mile-style long-feature rule: Queen Charlotte Track stays under the Sounds, whose span holds both ends.",
+ "notes": "Lowest-scoring kept have 0 Wikipedia views (no article) but 1-2 counted DOC/Wikivoyage sources, so 'stronger' left-outs are those with views > 0 or >= 2 sources; every one carries a concrete What-qualifies reason (area not a place, no counted source, closed to public, operator, part of larger spot, minor track). Reviews are listed for the owner and not placed."
+}

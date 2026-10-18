@@ -1,0 +1,98 @@
+{
+ "group": "chatham-islands",
+ "generated": "2026-10-18T03:30:43.668Z",
+ "slots": [
+  {
+   "slot": "dest:chatham-islands:header",
+   "key": "Chatham Islands",
+   "current": {
+    "file": "Waikato Point. Cliffs rise to about 30 metres on the west coast of the lagoon.jpg",
+    "source": "imageOverrides.ts"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:chatham-islands:why1",
+   "key": "File:Te Whanga Lagoon at Blind Jims Creek. 178m Korako is to the left, 149m Rangitihi and 188m Mt Chudleigh to the right.jpg",
+   "current": {
+    "file": "Te Whanga Lagoon at Blind Jims Creek. 178m Korako is to the left, 149m Rangitihi and 188m Mt Chudleigh to the right.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:chatham-islands:why2",
+   "key": "File:Chatham Island Tree Carving.JPG",
+   "current": {
+    "file": "Chatham Island Tree Carving.JPG",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:chatham-islands:why3",
+   "key": "File:Pterodroma magentae in New Zealand.jpg",
+   "current": {
+    "file": "external:bright-pterodroma-magentae-in-new-zealand-1280.jpg",
+    "source": "externalPhotos.json"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "spot:chatham-islands-1",
+   "key": "Te Whanga Lagoon",
+   "current": {
+    "file": "Cattle Point, Te Whanga Lagoon.jpg",
+    "source": "imageOverrides.ts"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "spot:chatham-islands-2",
+   "key": "Hapupu National Historic Reserve",
+   "current": {
+    "file": "Chatham Island Tree Carving.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "spot:chatham-islands-3",
+   "key": "Pitt Island",
+   "current": {
+    "file": "Tree on Rangihaute Rangiauria Pitt Island (52785344950).jpg",
+    "source": "imageOverrides.ts"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "spot:chatham-islands-4",
+   "key": "Waitangi, Chatham Islands",
+   "current": {
+    "file": "Chatham Island Waitangi.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "spot:chatham-islands-6",
+   "key": "Kōpinga Marae",
+   "current": {
+    "file": "Chatham Islands photo, 1910, Canterbury Museum, 2016-01-27.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: dated 1910"
+   ]
+  }
+ ]
+}

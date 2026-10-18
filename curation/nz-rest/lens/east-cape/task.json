@@ -1,0 +1,98 @@
+{
+ "group": "east-cape",
+ "generated": "2026-10-18T03:30:36.725Z",
+ "slots": [
+  {
+   "slot": "dest:east-cape:header",
+   "key": "East Cape",
+   "current": {
+    "file": "View of Hicks Bay.jpg",
+    "source": "imageOverrides.ts"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:east-cape:why1",
+   "key": "File:East Cape Lighthouse (2) (25579643847).jpg",
+   "current": {
+    "file": "East Cape Lighthouse (2) (25579643847).jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:east-cape:why2",
+   "key": "File:Dilapidated Hicks Bay Wharf.jpg",
+   "current": {
+    "file": "Dilapidated Hicks Bay Wharf.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:east-cape:why3",
+   "key": "File:Hicks Bay, East Coast, New Zealand, 13th. Dec. 2010 - Flickr - PhillipC (2).jpg",
+   "current": {
+    "file": "Hicks Bay, East Coast, New Zealand, 13th. Dec. 2010 - Flickr - PhillipC (2).jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "spot:east-cape-1",
+   "key": "East Cape Lighthouse",
+   "current": {
+    "file": "East Cape Lighthouse.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "spot:east-cape-2",
+   "key": "Hicks Bay",
+   "current": {
+    "file": "Hicks Bay, East Coast, New Zealand, 13th. Dec. 2010 - Flickr - PhillipC (2).jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "spot:east-cape-3",
+   "key": "Te Araroa Pōhutukawa",
+   "current": {
+    "file": "external:bright-te-araroa-pohutukawa-900.jpg",
+    "source": "externalPhotos.json"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: 900px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:east-cape-4",
+   "key": "Tokomaru Bay",
+   "current": {
+    "file": "Tokomaru Bay.jpg",
+    "source": "imageOverrides.ts"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "spot:east-cape-5",
+   "key": "Cooks Cove Walkway",
+   "current": {
+    "file": "Rock Cooks Cove.jpg",
+    "source": "imageOverrides.ts"
+   },
+   "status": "confirm",
+   "flags": []
+  }
+ ]
+}

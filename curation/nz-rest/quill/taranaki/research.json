@@ -1,0 +1,1350 @@
+{
+ "region": "taranaki",
+ "generated": "2026-10-18",
+ "entries": [
+  {
+   "id": "new-plymouth-7",
+   "name": "Wind Wand",
+   "kind": "new",
+   "status": "ready",
+   "facts": [
+    {
+     "claim": "48 m tall kinetic sculpture (45 m red fibreglass tube) designed by Len Lye, installed Dec 1999 with the Coastal Walkway, reinstalled June 2001; bends in the wind and lights up at night; one of New Plymouth's main icons",
+     "source": "https://en.wikipedia.org/wiki/Wind_Wand"
+    },
+    {
+     "claim": "Wikivoyage See listing: 45 m pole on the Coastal Walkway with a soft red light on top at night",
+     "source": "https://en.wikivoyage.org/wiki/New_Plymouth"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Public sculpture on the council-run Coastal Walkway; no stewarding page of its own (NPDC walkway page exists, but it is the walkway, not the sculpture). Omit.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -39.056,
+     "longitude": 174.0715
+    },
+    "source_point": {
+     "latitude": -39.05602,
+     "longitude": 174.07191
+    },
+    "source": "https://www.openstreetmap.org/node/2728516968",
+    "ok": true,
+    "note": "OSM tourism=artwork \"The Wind Wand\"; Wikipedia -39.056056,174.071736; ~20 m"
+   },
+   "category": "landmark",
+   "wiki_title": "Wind Wand",
+   "wiki_resolves": true,
+   "unverified": [
+    "Height: Wikipedia says 48 m overall, Wikivoyage 45 m (tube length); bio should say 45 m tube or 48 m, pick one."
+   ]
+  },
+  {
+   "id": "new-plymouth-8",
+   "name": "Fitzroy Beach",
+   "kind": "new",
+   "status": "held (needs photo)",
+   "facts": [
+    {
+     "claim": "Fitzroy Beach is named among legendary New Zealand surf spots on Surf Highway 45 and is popular with surf lifesaving patrols over summer",
+     "source": "https://www.taranaki.co.nz/visit/highlights-of-taranaki/surf-highway-45"
+    },
+    {
+     "claim": "Fitzroy was one of three Taranaki beaches (with Ōakura and East End) to get Blue Flag status in 2007",
+     "source": "https://en.wikipedia.org/wiki/%C5%8Cakura"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Public beach, no single steward. Omit.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -39.04213,
+     "longitude": 174.09953
+    },
+    "source_point": {
+     "latitude": -39.0416,
+     "longitude": 174.0992
+    },
+    "source": "https://www.openstreetmap.org/way/351560534",
+    "ok": true,
+    "note": "OSM natural=beach \"Fitzroy Beach\" (way spans -39.0464,174.0946 to -39.0394,174.1030); candidate is 61 m from the nearest beach node."
+   },
+   "category": "beach",
+   "wiki_title": null,
+   "wiki_resolves": false,
+   "wiki_note": "No English Wikipedia article \"Fitzroy Beach\" (checked by API). Drop `wiki`; photo needs a Commons/hand pick. Blue Flag status is 2007-era and not confirmed as current.",
+   "unverified": [
+    "Current Blue Flag status; lifeguard patrol dates (summer only per tourism board)"
+   ]
+  },
+  {
+   "id": "new-plymouth-9",
+   "name": "East End Beach",
+   "kind": "new",
+   "status": "held (needs photo)",
+   "facts": [
+    {
+     "claim": "East End Beach is a sheltered beach popular with surf lifesaving patrols over summer and is becoming known as a kite-surfing destination",
+     "source": "https://www.taranaki.co.nz/visit/highlights-of-taranaki/surf-highway-45"
+    },
+    {
+     "claim": "Named by OSM as \"Autere / East End Beach\", natural=beach in Strandon, New Plymouth",
+     "source": "https://www.openstreetmap.org/way/1257086369"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Public beach. Omit.",
+   "coordinates_check": {
+    "current": null,
+    "source_point": {
+     "latitude": -39.05032,
+     "longitude": 174.0894
+    },
+    "source": "https://www.openstreetmap.org/way/1257086369",
+    "ok": true,
+    "note": "FOUND. OSM natural=beach \"Autere / East End Beach\" (Strandon, New Plymouth). Point = middle node of the beach way (way runs -39.0471,174.0956 to -39.0503,174.0894); Nominatim centroid -39.04851,174.09116. The old candidate was Munjoy Hill, Maine (Wikipedia redirect) and must not be used."
+   },
+   "category": "beach",
+   "wiki_title": null,
+   "wiki_resolves": false,
+   "wiki_note": "\"East End Beach\" on Wikipedia redirects to Munjoy Hill, Portland, Maine: wrong place. No NZ article. Drop `wiki`; any photo lookup by name will return Maine, so a hand-picked Commons file is needed.",
+   "unverified": [
+    "Wikipedia/Commons photo for the NZ beach"
+   ]
+  },
+  {
+   "id": "new-plymouth-10",
+   "name": "Ngāmotu Beach",
+   "kind": "new",
+   "status": "held (needs photo)",
+   "facts": [
+    {
+     "claim": "Ngāmotu Beach (and Kaupokonui) offers calm, family-friendly sheltered swimming",
+     "source": "https://www.taranaki.co.nz/visit/highlights-of-taranaki/natures-playground"
+    },
+    {
+     "claim": "Ngāmotu Beach lies on the north side of Moturoa, beside Port Taranaki and the Sugar Loaf Islands",
+     "source": "https://en.wikipedia.org/wiki/Moturoa"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Public beach. Omit.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -39.06006,
+     "longitude": 174.04017
+    },
+    "source_point": {
+     "latitude": -39.0601776,
+     "longitude": 174.0402962
+    },
+    "source": "https://www.openstreetmap.org/way/351560572",
+    "ok": true,
+    "note": "OSM natural=beach \"Ngāmotu Beach\"; 17 m from candidate."
+   },
+   "category": "beach",
+   "wiki_title": null,
+   "wiki_resolves": false,
+   "wiki_note": "No article \"Ngāmotu Beach\". Drop `wiki`.",
+   "unverified": []
+  },
+  {
+   "id": "new-plymouth-11",
+   "name": "Sugar Loaf Islands",
+   "kind": "new",
+   "status": "ready",
+   "facts": [
+    {
+     "claim": "Five small uninhabited islands and several sea stacks off Port Taranaki; the largest is Moturoa Island (about 1.4 ha); named by James Cook in 1770",
+     "source": "https://en.wikipedia.org/wiki/Sugar_Loaf_Islands"
+    },
+    {
+     "claim": "DOC: Ngā Motu/Sugar Loaf Islands Marine Protected Area covers 749 ha; access to the islands themselves is by permit only",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/taranaki/places/nga-motu-sugar-loaf-islands/"
+    },
+    {
+     "claim": "Tourism board names the islands for wildlife trips (Chaddy's Charters), so a boat is how visitors get close; the islands can be viewed from the shore at Paritutu and the Coastal Walkway",
+     "source": "https://www.taranaki.co.nz/visit/highlights-of-taranaki/natures-playground"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/taranaki/places/nga-motu-sugar-loaf-islands/",
+   "ticketUrl_note": "VERIFIED: DOC page titled \"Ngā Motu/Sugar Loaf Islands Marine Protected Area\". A first guess at /sugar-loaf-islands-marine-park/ 404s; this is the right slug. Boat trips are sold by several operators, so none linked.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -39.049444,
+     "longitude": 174.027778
+    },
+    "source_point": {
+     "latitude": -39.04944444,
+     "longitude": 174.02777778
+    },
+    "source": "https://en.wikipedia.org/wiki/Sugar_Loaf_Islands",
+    "ok": true,
+    "note": "Group centre, in water: correct for an island group."
+   },
+   "category": "nature",
+   "wiki_title": "Sugar Loaf Islands",
+   "wiki_resolves": true,
+   "unverified": [
+    "Free = viewing from shore; any boat/kayak trip is a paid third-party extra and no price was verified."
+   ]
+  },
+  {
+   "id": "new-plymouth-12",
+   "name": "Lake Mangamahoe",
+   "kind": "new",
+   "status": "ready",
+   "facts": [
+    {
+     "claim": "NPDC: 6 km circuit walk, grade medium/hard, around the lake through production forest to lookouts; access from Lake Mangamahoe Road; steep undulating sections, slippery after rain",
+     "source": "https://www.npdc.govt.nz/leisure-and-culture/riding-and-walking/lake-mangamahoe"
+    },
+    {
+     "claim": "NPDC hours: 7am-6pm outside daylight saving (approx Apr-Sep), 7am-8.30pm during daylight saving (approx Oct-Mar)",
+     "source": "https://www.npdc.govt.nz/leisure-and-culture/riding-and-walking/lake-mangamahoe"
+    },
+    {
+     "claim": "Dogs banned from the lake waters and the grassland between the road and the lake, allowed on-leash elsewhere; redwoods planted 1931 on the circuit",
+     "source": "https://www.npdc.govt.nz/leisure-and-culture/riding-and-walking/lake-mangamahoe"
+    },
+    {
+     "claim": "Tourism board: 6 km loop popular for walking, running, mountain biking; scenic lake and park",
+     "source": "https://www.taranaki.co.nz/visit/highlights-of-taranaki/natures-playground"
+    }
+   ],
+   "hours": "7:00 AM – 6:00 PM (Apr–Sep), 7:00 AM – 8:30 PM (Oct–Mar)",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2.5,
+   "free": true,
+   "ticketUrl": "https://www.npdc.govt.nz/leisure-and-culture/riding-and-walking/lake-mangamahoe",
+   "ticketUrl_note": "VERIFIED: NPDC page titled \"Lake Mangamahoe\". The Natural-looking guess /parks-and-reserves/ path 404s; this is the site's own slug.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -39.1247,
+     "longitude": 174.12524
+    },
+    "source_point": {
+     "latitude": -39.12851,
+     "longitude": 174.12221
+    },
+    "source": "https://www.openstreetmap.org/way/1144637679",
+    "ok": false,
+    "note": "MOVE to the main car park (OSM amenity=parking, beside OSM public toilets at -39.1296,174.1221), 450 m from the old lakeside-ish point. Lake itself is OSM relation 4049282."
+   },
+   "category": "nature",
+   "wiki_title": null,
+   "wiki_resolves": false,
+   "wiki_note": "No English Wikipedia article \"Lake Mangamahoe\". Drop `wiki`.",
+   "unverified": [
+    "Whether the NPDC hours are gate times or advice (page lists them without saying)"
+   ]
+  },
+  {
+   "id": "new-plymouth-13",
+   "name": "Ōakura Beach",
+   "kind": "new",
+   "status": "ready",
+   "facts": [
+    {
+     "claim": "Ōakura is well known for its beach; in 2007 it became one of the first Blue Flag beaches in Oceania",
+     "source": "https://en.wikipedia.org/wiki/%C5%8Cakura"
+    },
+    {
+     "claim": "Ōakura Beach is popular with surf lifesaving patrols over summer, a black-sand beach on Surf Highway 45",
+     "source": "https://www.taranaki.co.nz/visit/highlights-of-taranaki/surf-highway-45"
+    },
+    {
+     "claim": "Named as a swimming beach among \"endless beaches\" along Surf Highway 45",
+     "source": "https://www.taranaki.co.nz/visit/highlights-of-taranaki/natures-playground"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Public beach. Omit.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -39.11585,
+     "longitude": 173.9324
+    },
+    "source_point": {
+     "latitude": -39.11669,
+     "longitude": 173.94525
+    },
+    "source": "https://www.openstreetmap.org/way/351560460",
+    "ok": false,
+    "note": "MOVE: OSM natural=beach \"Ōakura Beach\" runs ~3 km (-39.1217,173.9089 to ~173.95); the candidate is 166 m from the nearest beach node and 1.3 km west of the village access. Point given = middle node of the beach way, by Ōakura village (Nominatim centroid -39.11583,173.94536)."
+   },
+   "category": "beach",
+   "wiki_title": "Ōakura",
+   "wiki_resolves": true,
+   "wiki_note": "No article \"Ōakura Beach\" (API: missing). \"Ōakura\" is the township article; its lead photo is not necessarily the beach, so use a hand-picked Commons beach photo rather than relying on it.",
+   "unverified": [
+    "Current Blue Flag status"
+   ]
+  },
+  {
+   "id": "new-plymouth-14",
+   "name": "Waimoku Track",
+   "kind": "new",
+   "status": "held (needs photo)",
+   "facts": [
+    {
+     "claim": "DOC: from Lucy's Gully the Waimoku Track climbs through forest to Patuhā Trig (682 m): 3.5 km one way, 2 hr to the trig, advanced tramping track, views along the coast and to Taranaki Maunga; final ~100 m is an exposed rocky scramble",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/taranaki/places/te-papa-kura-o-taranaki/things-to-do/tracks/waimoku-track/"
+    },
+    {
+     "claim": "Loop option: return via Sefton Ridge Track to just below the Waimoku entrance; many Kaitake tracks are overgrown with windfalls so expect longer times",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/taranaki/places/te-papa-kura-o-taranaki/things-to-do/tracks/waimoku-track/"
+    },
+    {
+     "claim": "Access: follow SH45 5 km past Ōakura, turn left at Ahuahu Road to Lucy's Gully; DOC car park is free (OSM)",
+     "source": "https://www.openstreetmap.org/node/4489847345"
+    },
+    {
+     "claim": "Tourism board lists it among top hikes in Taranaki",
+     "source": "https://www.taranaki.co.nz/visit/highlights-of-taranaki/top-5-hikes-in-taranaki"
+    }
+   ],
+   "hours": "Daylight",
+   "visitHoursMin": 3.5,
+   "visitHoursMax": 5,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/taranaki/places/te-papa-kura-o-taranaki/things-to-do/tracks/waimoku-track/",
+   "ticketUrl_note": "VERIFIED: DOC page titled \"Waimoku Track: Te Papa-Kura-o-Taranaki\".",
+   "coordinates_check": {
+    "current": {
+     "latitude": -39.15109,
+     "longitude": 173.95101
+    },
+    "source_point": {
+     "latitude": -39.14932,
+     "longitude": 173.94198
+    },
+    "source": "https://www.openstreetmap.org/node/4489847345",
+    "ok": false,
+    "note": "MOVE to the DOC Lucy's Gully car park (OSM amenity=parking, operator DOC, fee=no). The candidate is a point 900 m up the track (OSM way 42178079)."
+   },
+   "category": "hike",
+   "wiki_title": null,
+   "wiki_resolves": false,
+   "wiki_note": "No article \"Waimoku Track\". Drop `wiki`.",
+   "unverified": [
+    "DOC gives 2 hr to the trig; visit range 3.5-5 h is round trip estimate (2 h up + descent + scramble)."
+   ]
+  },
+  {
+   "id": "new-plymouth-15",
+   "name": "Pukeiti",
+   "kind": "new",
+   "status": "held (needs photo)",
+   "facts": [
+    {
+     "claim": "Pukeiti is owned and run by Taranaki Regional Council, \"open all day, every day\" at 2290 Carrington Road; no dogs",
+     "source": "https://www.trc.govt.nz/gardens/pukeiti/"
+    },
+    {
+     "claim": "NZ Gardens Trust listing: \"open all day, every day and entry is free\"; opening hours & tariffs: open all day, every day with free entry",
+     "source": "https://www.gardens.org.nz/visit/pukeiti"
+    },
+    {
+     "claim": "Venture Taranaki listing: garden open 24 hours a day",
+     "source": "https://www.taranaki.co.nz/explore/listing/pukeiti"
+    },
+    {
+     "claim": "360 ha property with 26 ha of garden; founded 1951; one of the country's top rhododendron gardens; visitor centre and cafe",
+     "source": "https://en.wikipedia.org/wiki/Pukeiti_(gardens)"
+    },
+    {
+     "claim": "OSM garden node has access=yes, fee=no",
+     "source": "https://www.openstreetmap.org/node/1262036393"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": "https://www.trc.govt.nz/gardens/pukeiti",
+   "ticketUrl_note": "VERIFIED: Taranaki Regional Council page titled \"Pukeiti / Taranaki Regional Council\". (pukeiti.nz and pukeiti.org.nz did not load; pukeiti.com is the Rhododendron Trust's site, not the garden's operator page.)",
+   "coordinates_check": {
+    "current": {
+     "latitude": -39.2006,
+     "longitude": 173.98
+    },
+    "source_point": {
+     "latitude": -39.20104,
+     "longitude": 173.981
+    },
+    "source": "https://www.openstreetmap.org/node/1262036393",
+    "ok": true,
+    "note": "OSM leisure=garden node \"Pukeiti Rhododendron Trust\"; ~60 m from candidate."
+   },
+   "category": "nature",
+   "wiki_title": "Pukeiti (gardens)",
+   "wiki_resolves": true,
+   "wiki_note": "Plain \"Pukeiti\" is a disambiguation page; \"Pukeiti (gardens)\" is right.",
+   "unverified": [
+    "Cafe (Rainforest Eatery) days - tourism site says check website; the visitor-centre toilets are the only ones."
+   ]
+  },
+  {
+   "id": "egmont-6",
+   "name": "Around the Mountain Circuit",
+   "kind": "new",
+   "status": "ready",
+   "facts": [
+    {
+     "claim": "DOC: 52 km loop, 4-5 days, advanced tramping track/expert route, best tramped October to April; traditionally begins at the North Egmont road end",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/taranaki/places/te-papa-kura-o-taranaki/things-to-do/tracks/around-the-mountain-circuit/"
+    },
+    {
+     "claim": "Serviced DOC huts on the route (Holly Hut 32 bunks, Waiaua Gorge Hut 16, Waingongoro Hut 16); Lake Dive Hut burnt down in 2020 (camping only); unbridged rivers; experience and navigation skills needed",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/taranaki/places/te-papa-kura-o-taranaki/things-to-do/tracks/around-the-mountain-circuit/"
+    },
+    {
+     "claim": "Holly Hut fees: adult $25/night (1 May-30 Sep), $28 weekday / $32 weekend (1 Oct-30 Apr); $29/$34 in Dec-Feb; Backcountry Hut Pass accepted",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/taranaki/places/te-papa-kura-o-taranaki/things-to-do/huts/holly-hut/"
+    },
+    {
+     "claim": "Limited parking at North Egmont road end until December 2026 (new visitor centre construction)",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/taranaki/places/te-papa-kura-o-taranaki/things-to-do/tracks/around-the-mountain-circuit/"
+    }
+   ],
+   "hours": "Multi-day trips",
+   "visitHoursMin": 72,
+   "visitHoursMax": 120,
+   "costMin": 25,
+   "costMax": 34,
+   "currency": "NZD",
+   "cost_note": "The track itself is free; the cost is a serviced-hut night (DOC Holly Hut adult $25-$34). Use free:true instead if the owner prefers the track to be free (camping is possible).",
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/taranaki/places/te-papa-kura-o-taranaki/things-to-do/tracks/around-the-mountain-circuit/",
+   "ticketUrl_note": "VERIFIED: DOC page titled \"Around the Mountain Circuit: Te Papa-Kura-o-Taranaki\".",
+   "coordinates_check": {
+    "current": {
+     "latitude": -39.31041,
+     "longitude": 174.03759
+    },
+    "source_point": {
+     "latitude": -39.26974,
+     "longitude": 174.09644
+    },
+    "source": "https://www.openstreetmap.org/way/459457702",
+    "ok": false,
+    "note": "MOVE to North Egmont car park (OSM, beside the DOC North Taranaki Visitor Centre) - DOC says the circuit traditionally begins there. The old point is a spot on the loop 6 km away on the south-west flank."
+   },
+   "category": "hike",
+   "wiki_title": null,
+   "wiki_resolves": false,
+   "wiki_note": "No Wikipedia article. Leave `wiki` unset.",
+   "unverified": [
+    "Whether all sections are open: a 2023 DOC closure of the Stony River/Hangatahua section was reported by news; the DOC page fetched today shows no closure banner, but check DOC alerts.",
+    "Hut fees vary by hut and season; only Holly Hut was read."
+   ]
+  },
+  {
+   "id": "egmont-7",
+   "name": "Manganui Gorge Track",
+   "kind": "new",
+   "status": "ready",
+   "facts": [
+    {
+     "claim": "DOC: walk from the top of Plateau car park to the Manganui Gorge suspension bridge (20 min, ~900 m uphill) and a further 5-10 min (300 m) to the ski field; easy to intermediate; good views of North Taranaki and the coastline",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/taranaki/places/te-papa-kura-o-taranaki/things-to-do/tracks/manganui-gorge-track/"
+    },
+    {
+     "claim": "The bridge is 100 m long, 49.5 m above the gorge floor; balustrade panels designed by Ngāti Ruanui depict phases of avalanches; may be unsafe to cross in strong winds",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/taranaki/places/te-papa-kura-o-taranaki/things-to-do/tracks/manganui-gorge-track/"
+    },
+    {
+     "claim": "Access via Pembroke Road from Stratford to The Plateau car park (1,172 m)",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/taranaki/places/te-papa-kura-o-taranaki/things-to-do/tracks/manganui-gorge-track/"
+    },
+    {
+     "claim": "Tourism board: 100 m long Manganui Gorge Suspension Bridge, family-friendly walk with panoramic views",
+     "source": "https://www.taranaki.co.nz/visit/highlights-of-taranaki/natures-playground"
+    }
+   ],
+   "hours": "Daylight",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/taranaki/places/te-papa-kura-o-taranaki/things-to-do/tracks/manganui-gorge-track/",
+   "ticketUrl_note": "VERIFIED: DOC page titled \"Manganui Gorge Track: East Egmont area\".",
+   "coordinates_check": {
+    "current": {
+     "latitude": -39.30592,
+     "longitude": 174.09456
+    },
+    "source_point": {
+     "latitude": -39.30785,
+     "longitude": 174.09836
+    },
+    "source": "https://www.openstreetmap.org/way/212140047",
+    "ok": false,
+    "note": "MOVE to The Plateau Car Park (OSM, fee=no); DOC says the track starts at its top end. The old point is on the track ~400 m up. Track is OSM way 42178158."
+   },
+   "category": "hike",
+   "wiki_title": null,
+   "wiki_resolves": false,
+   "wiki_note": "No Wikipedia article. Leave `wiki` unset.",
+   "unverified": [
+    "Bridge opening date (a news item said May 2024) not checked against DOC.",
+    "Visit range: DOC gives ~30 min each way; 1-1.5 h round trip is our estimate."
+   ]
+  },
+  {
+   "id": "egmont-8",
+   "name": "Manganui Ski Area",
+   "kind": "new",
+   "status": "ready",
+   "facts": [
+    {
+     "claim": "Club ski field run by the Stratford Mountain Club: 3 rope tows and a T-bar, beginner-intermediate terrain over 59 ha, elevation 1,260-1,680 m, 33-bed Manganui Lodge",
+     "source": "https://en.wikipedia.org/wiki/Manganui_Ski_Area"
+    },
+    {
+     "claim": "Club prices: full-day adult $50, junior $35, half day (from 12:30pm) adult $40; learners tow free; family pass $145",
+     "source": "https://www.skitaranaki.co.nz/the-mountain/prices"
+    },
+    {
+     "claim": "No ski/board hire on the ski area; the field often loses lower-slope snow between falls and opening is posted on the snow report; reached from The Plateau car park on foot via the Manganui Gorge Track (no public transport)",
+     "source": "https://www.skitaranaki.co.nz/the-mountain/faq"
+    },
+    {
+     "claim": "Address: Upper Pembroke Road, Stratford",
+     "source": "https://www.skitaranaki.co.nz/"
+    }
+   ],
+   "hours": "Winter season, snow permitting",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "costMin": 50,
+   "costMax": 50,
+   "currency": "NZD",
+   "ticketUrl": "https://www.skitaranaki.co.nz/",
+   "ticketUrl_note": "VERIFIED: homepage titled \"Stratford Mountain Club - HOME\" and says it runs Manganui Ski Area. (manganuiskifield.co.nz / manganui.co.nz do not exist.)",
+   "coordinates_check": {
+    "current": {
+     "latitude": -39.303694,
+     "longitude": 174.09108
+    },
+    "source_point": {
+     "latitude": -39.30283,
+     "longitude": 174.08949
+    },
+    "source": "https://www.openstreetmap.org/way/771486100",
+    "ok": true,
+    "note": "OSM leisure=sports_centre \"Manganui Ski Area\" polygon centre; Wikipedia -39.303694,174.09108 (~170 m apart, both on the field)."
+   },
+   "category": "entertainment",
+   "wiki_title": "Manganui Ski Area",
+   "wiki_resolves": true,
+   "unverified": [
+    "Daily operating hours and season dates (the 2026 season is said by a third party to have opened 22 Aug; not on the club pages read).",
+    "Off-season: the Manganui Gorge Track (egmont-7) is the way in."
+   ]
+  },
+  {
+   "id": "three-sisters-tongaporutu",
+   "name": "Three Sisters and Elephant Rock",
+   "kind": "new",
+   "status": "ready",
+   "facts": [
+    {
+     "claim": "Sea stacks at the mouth of the Tongapōrutu River, reached on foot from a car park at low tide; only two of the \"sisters\" remain as of 2024 and Elephant Rock lost its \"trunk\" in 2016",
+     "source": "https://en.wikipedia.org/wiki/Three_Sisters_and_Elephant_Rock"
+    },
+    {
+     "claim": "Tourism board: access involves wading through the Tongapōrutu River, so time the visit for low tide; about an hour's drive from New Plymouth",
+     "source": "https://www.taranaki.co.nz/visit/highlights-of-taranaki/natures-playground"
+    },
+    {
+     "claim": "OSM: Three Sisters and Elephant Rock Parking (surface, gravel, fee=no) and toilets at the end of the access road",
+     "source": "https://www.openstreetmap.org/way/1265482254"
+    }
+   ],
+   "hours": "Tides permitting",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "No operator or managing-agency page found for the stacks (DOC has none; the land is not a DOC reserve per anything fetched). Omit.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -38.818611,
+     "longitude": 174.581111
+    },
+    "source_point": {
+     "latitude": -38.81718,
+     "longitude": 174.59115
+    },
+    "source": "https://www.openstreetmap.org/way/1265482254",
+    "ok": true,
+    "note": "Candidate is the Wikipedia point at the stacks on the beach (OK for a rock-stack pin); the car park is 1.1 km east at -38.81718,174.59115 if the owner prefers the visitor standing point."
+   },
+   "category": "nature",
+   "wiki_title": "Three Sisters and Elephant Rock",
+   "wiki_resolves": true,
+   "unverified": [
+    "Tide tables / safe window (a third party says about 2 h either side of low tide); not from an official page.",
+    "Land manager unknown."
+   ]
+  },
+  {
+   "id": "opunake-2",
+   "name": "Cape Egmont Lighthouse",
+   "kind": "new",
+   "status": "proposed_destination (opunake)",
+   "facts": [
+    {
+     "claim": "Lighthouse built in London in 1864/65, moved from Mana Island to Cape Egmont in 1877; automated 1986; owned and operated by Maritime New Zealand",
+     "source": "https://en.wikipedia.org/wiki/Cape_Egmont_Lighthouse"
+    },
+    {
+     "claim": "Tourism board: reached down Cape Road, at the western-most point of Taranaki with the maunga behind; the Historic Cape Light and Museum is nearby on Bayly Road",
+     "source": "https://www.taranaki.co.nz/visit/highlights-of-taranaki/spotlight-on-south-taranaki"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Maritime NZ owns it but has no visitor page; omit.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -39.27624,
+     "longitude": 173.75499
+    },
+    "source_point": {
+     "latitude": -39.27624,
+     "longitude": 173.75499
+    },
+    "source": "https://www.openstreetmap.org/node/1052815236",
+    "ok": true,
+    "note": "OSM man_made=lighthouse; exact match."
+   },
+   "category": "landmark",
+   "wiki_title": "Cape Egmont Lighthouse",
+   "wiki_resolves": true,
+   "unverified": [
+    "Whether the lighthouse can be approached closely or only viewed from the road; open daily access not stated by a source."
+   ]
+  },
+  {
+   "id": "opunake-1",
+   "name": "Ōpunake Beach",
+   "kind": "new",
+   "status": "proposed_destination (opunake)",
+   "facts": [
+    {
+     "claim": "Ōpunake beach is popular with surf lifesaving patrols over summer; beach playground in town",
+     "source": "https://www.taranaki.co.nz/visit/highlights-of-taranaki/surf-highway-45"
+    },
+    {
+     "claim": "Spotlight page names Ōpunake (galleries, cafes, Clifftop Garden and Ōpunake Loop Trail, beach playground)",
+     "source": "https://www.taranaki.co.nz/visit/highlights-of-taranaki/spotlight-on-south-taranaki"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Public beach. Omit.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -39.45879,
+     "longitude": 173.85615
+    },
+    "source_point": {
+     "latitude": -39.4588058,
+     "longitude": 173.855944
+    },
+    "source": "https://www.openstreetmap.org/way/351560573",
+    "ok": true,
+    "note": "OSM natural=beach \"Opunake Beach\"; 18 m from candidate."
+   },
+   "category": "beach",
+   "wiki_title": null,
+   "wiki_resolves": false,
+   "wiki_note": "No article \"Opunake Beach\"; \"Ōpunake\" is the town. Drop `wiki`.",
+   "unverified": []
+  },
+  {
+   "id": "stratford-1",
+   "name": "Stratford Glockenspiel",
+   "kind": "new",
+   "status": "proposed_destination (stratford)",
+   "facts": [
+    {
+     "claim": "Tourism board: one-of-a-kind in New Zealand; Romeo and Juliet emerge for the balcony scene four times a day; performs about 5 min after the hour chimes at 10am, 1pm, 3pm and 7pm",
+     "source": "https://www.taranaki.co.nz/visit/highlights-of-taranaki/spotlight-on-stratford"
+    },
+    {
+     "claim": "OSM: Stratford Clock Tower, with clock faces and mechanism from a 1924 tower",
+     "source": "https://www.openstreetmap.org/way/1018935057"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "ticketUrl": "BLOCKED",
+   "ticketUrl_blocked_url": "https://www.stratford.govt.nz/our-district/discover-stratford/glockenspiel",
+   "ticketUrl_note": "BLOCKED: Stratford District Council page returns an AWS WAF challenge (HTTP 202, empty). Orchestrator to check in a real browser. A search snippet quotes this page with the 10am/1pm/3pm/7pm times, so the URL probably exists. Te Ara's glockenspiel page (teara.govt.nz/en/interactive/25891) is also Cloudflare-blocked.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -39.33953,
+     "longitude": 174.28495
+    },
+    "source_point": {
+     "latitude": -39.33956,
+     "longitude": 174.28493
+    },
+    "source": "https://www.openstreetmap.org/way/1018935057",
+    "ok": true,
+    "note": "OSM amenity=clock \"Stratford Clock Tower\"; 4 m."
+   },
+   "category": "landmark",
+   "wiki_title": null,
+   "wiki_resolves": false,
+   "wiki_note": "No article \"Stratford Glockenspiel\"; only the town article \"Stratford, New Zealand\". Drop `wiki`.",
+   "unverified": []
+  },
+  {
+   "id": "stratford-2",
+   "name": "Te Popo Gardens",
+   "kind": "new",
+   "status": "proposed_destination (stratford); held (needs photo)",
+   "facts": [
+    {
+     "claim": "Gardens open all year daily 10am-4pm; garden entry $5/person; 34 acres of woodland and gardens, glow-worm gorge; dogs on leash; address 636 Stanley Road",
+     "source": "https://tepopo.co.nz/gardens/"
+    },
+    {
+     "claim": "Described as the biggest privately owned garden in Taranaki; also runs accommodation, campground and cafe",
+     "source": "https://tepopo.co.nz/"
+    },
+    {
+     "claim": "Tourism board names Te Popo Gardens among \"magical woodlands\" and in Stratford's must-see list",
+     "source": "https://www.taranaki.co.nz/visit/highlights-of-taranaki/natures-playground"
+    }
+   ],
+   "hours": "10:00 AM – 4:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 5,
+   "costMax": 5,
+   "currency": "NZD",
+   "ticketUrl": "https://tepopo.co.nz/gardens/",
+   "ticketUrl_note": "VERIFIED: operator's own site (WordPress), page titled \"Gardens\"; site title \"Te Popo Gardens Rural Retreat\".",
+   "coordinates_check": {
+    "current": {
+     "latitude": -39.27017,
+     "longitude": 174.36447
+    },
+    "source_point": {
+     "latitude": -39.2703,
+     "longitude": 174.36394
+    },
+    "source": "https://www.openstreetmap.org/node/5690219783",
+    "ok": true,
+    "note": "FOUND: OSM LINZ address node \"Te Popo Gardens, 636 Stanley Road\". Within 50 m of the locality node used before, so effectively the same point but now confirmed as the garden address."
+   },
+   "category": "nature",
+   "wiki_title": null,
+   "wiki_resolves": false,
+   "wiki_note": "No article \"Te Popo Gardens\" (\"Te Popo\" is the settlement). Drop `wiki`.",
+   "unverified": [
+    "Hours could change by season; the site says all year daily 10-4."
+   ]
+  },
+  {
+   "id": "hawera-1",
+   "name": "Hāwera Water Tower",
+   "kind": "new",
+   "status": "proposed_destination (hawera)",
+   "facts": [
+    {
+     "claim": "Concrete tower built after the 1912 Hāwera fire, completed 1914, 54 m tall, 215 steps; renovated 2004; owned by South Taranaki District Council",
+     "source": "https://en.wikipedia.org/wiki/H%C4%81wera_Water_Tower"
+    },
+    {
+     "claim": "Venture Taranaki listing (55 High Street): \"The tower is currently closed to the public.\"",
+     "source": "https://www.taranaki.co.nz/explore/listing/hawera-water-tower"
+    },
+    {
+     "claim": "Tourism board names the 215-stair climb as an activity",
+     "source": "https://www.taranaki.co.nz/visit/highlights-of-taranaki/natures-playground"
+    }
+   ],
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "ticketUrl": "BLOCKED",
+   "ticketUrl_blocked_url": "https://www.southtaranaki.com/our-community/hawera-water-tower",
+   "ticketUrl_note": "BLOCKED: southtaranaki.com sits behind an AWS WAF challenge (HTTP 202). A search snippet of this page said weekdays 8:30am-4:30pm, weekends/holidays 10am-2:30pm, adults $5 / children $2 / family $8, entry via the isite; a Nov 2024 council newsletter said the tower was closed during the isite move. Not verified.",
+   "cost_note": "If it reopens the snippet price is $5 adult (unverified). Closed now per tourism board.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -39.59,
+     "longitude": 174.285
+    },
+    "source_point": {
+     "latitude": -39.5901,
+     "longitude": 174.285
+    },
+    "source": "https://www.openstreetmap.org/way/1231331768",
+    "ok": true,
+    "note": "OSM man_made=water_tower; Wikipedia -39.59013,174.28509."
+   },
+   "category": "viewpoint",
+   "wiki_title": "Hāwera Water Tower",
+   "wiki_resolves": true,
+   "unverified": [
+    "Hours and price (above).",
+    "FLAG FOR THE ORCHESTRATOR: the tower is reported closed to the public, which fails \"a visitor can actually do or see something\" unless it has reopened. Hold until the council page is checked."
+   ]
+  },
+  {
+   "id": "hawera-2",
+   "name": "Tawhiti Museum",
+   "kind": "new",
+   "status": "proposed_destination (hawera); held (needs photo)",
+   "facts": [
+    {
+     "claim": "Museum of life-size figures and scale dioramas made by artist Nigel Ogle; 401 Ohangai Road, Hāwera",
+     "source": "https://www.tawhitimuseum.co.nz/"
+    },
+    {
+     "claim": "Prices: Museum adult $20, child (under 15) $7; Traders and Whalers adult $20; Bush Railway adult $10",
+     "source": "https://www.tawhitimuseum.co.nz/contact"
+    },
+    {
+     "claim": "Opening: Feb-May Fri-Mon 10am-4pm; Jun-Sep Sundays only 10am-4pm; Sep-24 Dec Fri-Mon 10am-4pm; 26 Dec-end Jan Fri-Mon (new for 2026/27); closed Tue-Thu",
+     "source": "https://www.tawhitimuseum.co.nz/contact"
+    },
+    {
+     "claim": "Tourism board calls Tawhiti Museum and the Traders & Whalers underground boat ride the crowning jewel of Hāwera",
+     "source": "https://www.taranaki.co.nz/visit/highlights-of-taranaki/spotlight-on-south-taranaki"
+    }
+   ],
+   "hours": "10:00 AM – 4:00 PM (Fri–Mon; Sundays only Jun–Aug)",
+   "closedDays": [
+    2,
+    3,
+    4
+   ],
+   "visitHoursMin": 2,
+   "visitHoursMax": 3,
+   "costMin": 20,
+   "costMax": 20,
+   "currency": "NZD",
+   "ticketUrl": "https://www.tawhitimuseum.co.nz/",
+   "ticketUrl_note": "VERIFIED: operator site, title \"Tawhiti Museum\".",
+   "coordinates_check": {
+    "current": {
+     "latitude": -39.5685,
+     "longitude": 174.3116
+    },
+    "source_point": {
+     "latitude": -39.56833,
+     "longitude": 174.31167
+    },
+    "source": "https://www.openstreetmap.org/node/1263304384",
+    "ok": true,
+    "note": "OSM tourism=museum \"Tawhiti Museum\"; 13 m."
+   },
+   "category": "museum",
+   "wiki_title": null,
+   "wiki_resolves": false,
+   "wiki_note": "No article \"Tawhiti Museum\" (API: missing). Drop `wiki`; photo needs a hand pick.",
+   "unverified": [
+    "closedDays [2,3,4] is wrong for Jun-Aug (only Sundays open); keep hours text instead of closedDays if the schema cannot express seasons."
+   ]
+  },
+  {
+   "id": "hawera-3",
+   "name": "Pātea",
+   "kind": "new",
+   "status": "proposed_destination (hawera); held (needs photo)",
+   "facts": [
+    {
+     "claim": "Third-largest town in South Taranaki District, 27 km from Hāwera on SH3, at the mouth of the Pātea River",
+     "source": "https://en.wikipedia.org/wiki/P%C4%81tea"
+    },
+    {
+     "claim": "Tourism board: the iconic Aotea Waka on the main road is a stop; Garden of Tutunui sculpture, seven pou along the golf course fence, Pātea Beach",
+     "source": "https://www.taranaki.co.nz/visit/highlights-of-taranaki/spotlight-on-south-taranaki"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A town; no one steward. Omit.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -39.757222,
+     "longitude": 174.476667
+    },
+    "source_point": {
+     "latitude": -39.7537,
+     "longitude": 174.47207
+    },
+    "source": "https://www.openstreetmap.org/way/1499842249",
+    "ok": false,
+    "note": "This is the town centre (Wikipedia). The brief says never a town point: if kept as a spot, use the Aotea Waka Memorial (OSM historic=monument, 1933, -39.75373,174.47207), the stop the tourism board names. Better: drop the spot as a duplicate of Aotea Utanganui + Pātea Beach."
+   },
+   "category": "landmark",
+   "wiki_title": "Pātea",
+   "wiki_resolves": true,
+   "unverified": [
+    "The spot is a town, not a place; recommend merging into Aotea Waka Memorial or removing."
+   ]
+  },
+  {
+   "id": "hawera-4",
+   "name": "Aotea Utanganui – Museum of South Taranaki",
+   "kind": "new",
+   "status": "proposed_destination (hawera)",
+   "facts": [
+    {
+     "claim": "Open 10am-4pm Monday to Saturday, closed Sunday, Christmas Day and Good Friday; free entry, koha/donations welcome; 127 Egmont Street, Pātea",
+     "source": "https://www.kotuia.org.nz/organisation-page/org-page-3355/"
+    },
+    {
+     "claim": "Venture Taranaki: open Monday-Saturday 10am-4pm; closed Christmas Day, Good Friday and Anzac Day",
+     "source": "https://www.taranaki.co.nz/explore/listing/aotea-utanganui-museum-of-south-taranaki"
+    },
+    {
+     "claim": "Central section is the oldest colonial building in South Taranaki; museum renovated 2008-2011",
+     "source": "https://en.wikipedia.org/wiki/Aotea_Utanganui_%E2%80%93_Museum_of_South_Taranaki"
+    }
+   ],
+   "hours": "10:00 AM – 4:00 PM",
+   "closedDays": [
+    0
+   ],
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": "BLOCKED",
+   "ticketUrl_blocked_url": "https://www.southtaranaki.com/our-facilities/aotea-utanganui-museum-of-south-taranaki",
+   "ticketUrl_note": "BLOCKED: southtaranaki.com (council) is behind an AWS WAF challenge. It is the museum's operator site (a search result lists this URL), so check in a real browser. Hours/free entry above are from Kōtuia (national museum directory) and Venture Taranaki, not the operator.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -39.7545,
+     "longitude": 174.4721
+    },
+    "source_point": {
+     "latitude": -39.75439,
+     "longitude": 174.4718
+    },
+    "source": "https://www.openstreetmap.org/way/200134029",
+    "ok": true,
+    "note": "OSM tourism=museum building; Wikipedia -39.7545,174.4721."
+   },
+   "category": "museum",
+   "wiki_title": "Aotea Utanganui – Museum of South Taranaki",
+   "wiki_resolves": true,
+   "unverified": [
+    "Anzac Day / Taranaki Anniversary closures differ between sources."
+   ]
+  },
+  {
+   "id": "hawera-5",
+   "name": "Pātea Beach",
+   "kind": "new",
+   "status": "proposed_destination (hawera)",
+   "facts": [
+    {
+     "claim": "Tourism board: find the shipwreck at the beach or turn off to the Pātea beach lookout for coastline views",
+     "source": "https://www.taranaki.co.nz/visit/highlights-of-taranaki/spotlight-on-south-taranaki"
+    },
+    {
+     "claim": "OSM natural=beach way at the river mouth/Beach Road; Patea Beach Motor Camp is a separate nearby camp site (the old candidate point)",
+     "source": "https://www.openstreetmap.org/way/662804839"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Public beach. Omit.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -39.76907,
+     "longitude": 174.48766
+    },
+    "source_point": {
+     "latitude": -39.77307,
+     "longitude": 174.48817
+    },
+    "source": "https://www.openstreetmap.org/way/662804839",
+    "ok": false,
+    "note": "MOVE: OSM natural=beach way 662804839 (13 nodes), middle node -39.77307,174.48817. The old point was Patea Beach Motor Camp (OSM way 371292835), 450 m inland-north of the beach."
+   },
+   "category": "beach",
+   "wiki_title": null,
+   "wiki_resolves": false,
+   "wiki_note": "No `wiki` was set; none exists.",
+   "unverified": []
+  },
+  {
+   "id": "hawera-6",
+   "name": "Kaupokonui Beach",
+   "kind": "new",
+   "status": "proposed_destination (hawera)",
+   "facts": [
+    {
+     "claim": "Kaupokonui Beach near Manaia: black-sand dunes, safe surf to swim in, kids playground; \"best beach in South Taranaki for a sunny-day picnic\"",
+     "source": "https://www.taranaki.co.nz/visit/highlights-of-taranaki/spotlight-on-south-taranaki"
+    },
+    {
+     "claim": "Calm, family-friendly swimming spot",
+     "source": "https://www.taranaki.co.nz/visit/highlights-of-taranaki/natures-playground"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Public beach. Omit.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -39.56624,
+     "longitude": 174.05718
+    },
+    "source_point": {
+     "latitude": -39.5665216,
+     "longitude": 174.0571691
+    },
+    "source": "https://www.openstreetmap.org/way/1499595031",
+    "ok": true,
+    "note": "OSM natural=beach \"Kaupokonui Beach\"; 31 m from candidate."
+   },
+   "category": "beach",
+   "wiki_title": null,
+   "wiki_resolves": false,
+   "wiki_note": "No article \"Kaupokonui Beach\"; \"Kaupokonui\" is a locality stub (not the beach). Drop `wiki`.",
+   "unverified": []
+  },
+  {
+   "id": "hawera-7",
+   "name": "Lake Rotokare",
+   "kind": "new",
+   "status": "proposed_destination (hawera)",
+   "facts": [
+    {
+     "claim": "Reserve \"is free to enter and open 24/7\"; 365 Sangster Road, Rawhitiroa",
+     "source": "https://www.rotokare.org.nz/tracks-facilities"
+    },
+    {
+     "claim": "Lake Walkway: 4 km track around the 17.8 ha lake, first 1 km wheelchair standard, allow 1.5-2 hours; 6 km Ridgewalk 3-5 hours along the pest-proof fence",
+     "source": "https://www.rotokare.org.nz/tracks-facilities"
+    },
+    {
+     "claim": "230 ha scenic reserve, the country's largest wetland and lake habitat inside a predator-proof fence",
+     "source": "https://en.wikipedia.org/wiki/Lake_Rotokare"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": "https://www.rotokare.org.nz/",
+   "ticketUrl_note": "VERIFIED: operator site (Rotokare Scenic Reserve Trust), title \"Rotokare Scenic Reserve\". /visit 404s; homepage used.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -39.45,
+     "longitude": 174.41
+    },
+    "source_point": {
+     "latitude": -39.45415,
+     "longitude": 174.40837
+    },
+    "source": "https://www.openstreetmap.org/way/875595043",
+    "ok": false,
+    "note": "MOVE to the reserve car park (OSM amenity=parking, beside OSM toilets -39.45443,174.40926). The old point is Wikipedia's lake centre, in the water, 500 m away."
+   },
+   "category": "nature",
+   "wiki_title": "Lake Rotokare",
+   "wiki_resolves": true,
+   "unverified": [
+    "Night kiwi-listening/after-dark access: tourism board says visit after dark; not confirmed by the reserve page."
+   ]
+  },
+  {
+   "id": "whangamomona-1",
+   "name": "Moki Tunnel",
+   "kind": "new",
+   "status": "proposed_destination (whangamomona)",
+   "facts": [
+    {
+     "claim": "Single-lane 180 m tunnel built in 1936, known locally as the \"Hobbit Hole\"; floor lowered in 1985; fossilised giant crabs in the walls",
+     "source": "https://www.taranaki.co.nz/visit/highlights-of-taranaki/exploring-the-forgotten-world"
+    },
+    {
+     "claim": "OSM tunnel way \"Moki Tunnel\" with a heritage information board on SH43",
+     "source": "https://www.openstreetmap.org/way/1005186895"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Roadside tunnel on SH43; no operator. Omit.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -39.01883,
+     "longitude": 174.80223
+    },
+    "source_point": {
+     "latitude": -39.0196464,
+     "longitude": 174.8018726
+    },
+    "source": "https://www.openstreetmap.org/way/1005186895",
+    "ok": true,
+    "note": "OSM man_made=tunnel; candidate is ~90 m from its centre, inside the tunnel length."
+   },
+   "category": "landmark",
+   "wiki_title": null,
+   "wiki_resolves": false,
+   "wiki_note": "No article \"Moki Tunnel\" (covered in \"State Highway 43 (New Zealand)\"). Drop `wiki`.",
+   "unverified": []
+  },
+  {
+   "id": "whangamomona-2",
+   "name": "Mount Damper Falls",
+   "kind": "new",
+   "status": "proposed_destination (whangamomona)",
+   "facts": [
+    {
+     "claim": "Waterfall on Mount Damper Stream, a tributary of the Tongapōrutu River",
+     "source": "https://en.wikipedia.org/wiki/Mount_Damper_Falls"
+    },
+    {
+     "claim": "Tourism board: 14 km detour along Moki Road, 30 min walk, 85 m high, \"second-highest waterfall in the North Island\"; track closed to hunters and dogs 1 Aug-31 Oct (lambing)",
+     "source": "https://www.taranaki.co.nz/visit/highlights-of-taranaki/exploring-the-forgotten-world"
+    },
+    {
+     "claim": "Venture Taranaki listing: 74 m high; firm, formed track suitable for most walkers; car park on Okau Road; about 10 min across farmland then bush to two viewing platforms",
+     "source": "https://www.taranaki.co.nz/explore/listing/mt-damper-falls-track"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "No managing-agency page found that I could load. Stratford District Council's Forgotten World Highway page (https://stratford.govt.nz/our-district/discover-stratford/forgotten-world-highway) is BLOCKED (WAF) and is the highway, not the falls. Omit unless the orchestrator finds a falls-specific page.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -38.919972,
+     "longitude": 174.788417
+    },
+    "source_point": {
+     "latitude": -38.9198978,
+     "longitude": 174.7884009
+    },
+    "source": "https://www.openstreetmap.org/node/1263356121",
+    "ok": true,
+    "note": "OSM tourism=viewpoint \"Mount Damper Falls viewing platform\"; Wikipedia point -38.919972,174.788417 is within 30 m. Car park/walk start is ~560 m SW at -38.9227,174.7844 (OSM way 110680675)."
+   },
+   "category": "nature",
+   "wiki_title": "Mount Damper Falls",
+   "wiki_resolves": true,
+   "unverified": [
+    "Height: sources give 73, 74, 85 m; walk time 15-30 min one way. Bio should avoid the height or say \"about 80 m\".",
+    "\"Closed to hunters and dogs\" 1 Aug-31 Oct is a dog ban: confirm it does not close the track to walkers."
+   ]
+  },
+  {
+   "id": "new-plymouth-3",
+   "name": "Len Lye Centre",
+   "kind": "existing",
+   "facts": [
+    {
+     "claim": "Wikipedia: \"Len Lye Centre\" redirects to \"Govett-Brewster Art Gallery\" (section Len Lye Centre); the article exists with coordinates -39.0586,174.0697",
+     "source": "https://en.wikipedia.org/wiki/Govett-Brewster_Art_Gallery"
+    },
+    {
+     "claim": "Gallery admission: visitors $17; New Plymouth District residents, under-16s and Friends free; 65+ and 16+ students $12",
+     "source": "https://govettbrewster.com/visit/plan-your-visit"
+    },
+    {
+     "claim": "Open seven days 10am-5pm; closed Christmas Day, Boxing Day and New Year's Day; address 42 Queen Street",
+     "source": "https://govettbrewster.com/visit/plan-your-visit"
+    },
+    {
+     "claim": "The Len Lye Centre side is currently closed for changeover until the exhibition \"Len Lye: Energies\" opens 5 December 2026; the Govett-Brewster side stays open",
+     "source": "https://govettbrewster.com/visit"
+    }
+   ],
+   "hours": "10:00 AM – 5:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 17,
+   "costMax": 17,
+   "currency": "NZD",
+   "ticketUrl": "https://govettbrewster.com/",
+   "ticketUrl_note": "VERIFIED: title \"Govett-Brewster Art Gallery | Len Lye Centre\".",
+   "coordinates_check": {
+    "current": {
+     "latitude": -39.05865,
+     "longitude": 174.07002
+    },
+    "source_point": {
+     "latitude": -39.05861,
+     "longitude": 174.06972
+    },
+    "source": "https://en.wikipedia.org/wiki/Govett-Brewster_Art_Gallery",
+    "ok": true
+   },
+   "category": "museum",
+   "wiki_title": "Govett-Brewster Art Gallery",
+   "wiki_resolves": true,
+   "change": [
+    "Set `wiki` to \"Govett-Brewster Art Gallery\".",
+    "COST IS WRONG: the spot has free:true, but adult admission is $17 NZD. Replace with costMin/costMax 17, currency NZD.",
+    "Add ticketUrl https://govettbrewster.com/ (spot currently has none).",
+    "Bio is fine; consider noting the Len Lye wing is shut until 5 Dec 2026."
+   ],
+   "unverified": []
+  },
+  {
+   "id": "new-plymouth-6",
+   "name": "Coastal Walkway",
+   "kind": "existing",
+   "facts": [
+    {
+     "claim": "Wikipedia article is \"New Plymouth Coastal Walkway\" (13.2 km; \"Coastal Walkway\" redirects to it); trailheads Port Taranaki and Bell Block; paved; maintained by NPDC",
+     "source": "https://en.wikipedia.org/wiki/New_Plymouth_Coastal_Walkway"
+    },
+    {
+     "claim": "NPDC: award-winning 13.2 km path from Pioneer Park at Port Taranaki to the eastern side of Bell Block Beach",
+     "source": "https://www.npdc.govt.nz/leisure-and-culture/coastal-walkway/"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "free": true,
+   "ticketUrl": "https://www.npdc.govt.nz/leisure-and-culture/coastal-walkway/",
+   "ticketUrl_note": "VERIFIED: NPDC page titled \"Coastal Walkway\".",
+   "coordinates_check": {
+    "current": {
+     "latitude": -39.0312,
+     "longitude": 174.1215
+    },
+    "source_point": {
+     "latitude": -39.05842,
+     "longitude": 174.05199
+    },
+    "source": "https://en.wikipedia.org/wiki/New_Plymouth_Coastal_Walkway",
+    "ok": false,
+    "note": "Current point is the Bell Block end, ~7 km from the centre of the route; for a long linear feature place it at the main visitor access (Wikipedia centre -39.05842,174.05199; Puke Ariki / Wind Wand stretch). Not part of the lint flag - owner's call."
+   },
+   "category": "hike",
+   "wiki_title": "New Plymouth Coastal Walkway",
+   "wiki_resolves": true,
+   "change": [
+    "Set `wiki` to \"New Plymouth Coastal Walkway\".",
+    "Bio says 13-km: NPDC says 13.2 km (fine) - Wikipedia lead says 12.7 km, so say \"about 13 km\".",
+    "Add ticketUrl (NPDC page above)."
+   ],
+   "unverified": []
+  },
+  {
+   "id": "egmont-2",
+   "name": "Pouakai Tarns",
+   "kind": "existing",
+   "facts": [
+    {
+     "claim": "No English Wikipedia article for the tarns: \"Pouakai Tarns\", \"Pouākai Tarns\" and \"Pouakai Tarn\" are all missing (API). Only the broader \"Pouākai Range\" exists (a different, larger thing), and Egmont National Park mentions the tarns.",
+     "source": "https://en.wikipedia.org/wiki/Pou%C4%81kai_Range"
+    },
+    {
+     "claim": "DOC (Pouākai Crossing page): the tarns reflect Taranaki Maunga on a clear day; stay on the boardwalks and out of the pools; about an hour past the Mangorei Track junction; Mangorei Road car park is the shortest way (about 2 h one way per tourism board)",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/taranaki/places/te-papa-kura-o-taranaki/things-to-do/tracks/pouakai-crossing/"
+    },
+    {
+     "claim": "Tourism board: Mangorei Track is a 2-hour (one-way) hike directly to the Pouākai tarn",
+     "source": "https://www.taranaki.co.nz/visit/highlights-of-taranaki/natures-playground"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 4,
+   "visitHoursMax": 6,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/taranaki/places/te-papa-kura-o-taranaki/things-to-do/tracks/pouakai-crossing/",
+   "ticketUrl_note": "VERIFIED: DOC page \"Pouākai Crossing, Te Papa-Kura-o-Taranaki\" (the tarns are a highlight of it). DOC has no separate tarns page that I found.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -39.258,
+     "longitude": 174.0
+    },
+    "source_point": null,
+    "source": null,
+    "ok": false,
+    "note": "Could not verify: no OSM tarn feature found near, and the exact tarns point was not available from a source; leave to the coordinate audit. Not moved."
+   },
+   "category": "viewpoint",
+   "wiki_title": null,
+   "wiki_resolves": false,
+   "change": [
+    "No Wikipedia article exists: remove `wiki` (there is none set today; the lint is just a heads-up that the photo lookup falls back to search). Give it a hand-picked override photo keyed \"Pouakai Tarns\" (Commons has photos of the tarns, e.g. search \"Pouakai Tarns Taranaki\").",
+    "Add ticketUrl (DOC Pouākai Crossing page).",
+    "Bio \"Small tarns beside Pouakai Hut\" - DOC says the tarns are about 1 hr past the Mangorei junction; the hut is separate. Check wording."
+   ],
+   "unverified": [
+    "Coordinates, and \"beside Pouakai Hut\" in the bio."
+   ]
+  }
+ ],
+ "notes": {
+  "also_worth_fixing_existing_unflagged": [
+   "new-plymouth-5 Puke Ariki: add ticketUrl https://pukeariki.com/ (verified, title \"Puke Ariki Museum and Libraries\"); museum is 10am-5pm daily (library 9am-5pm); spot says 9:00 AM - 5:00 PM.",
+   "egmont-1 Mount Taranaki / egmont-3 Dawson Falls / egmont-4 Wilkies Pools / egmont-5 Pouakai Crossing: no ticketUrl; DOC park page https://www.doc.govt.nz/parks-and-recreation/places-to-go/taranaki/places/te-papa-kura-o-taranaki/ (verified, title \"Te Papa-Kura-o-Taranaki: Places to go in Taranaki\"; DOC renamed the park from Egmont National Park). Wilkies Pools Loop Track page: .../things-to-do/tracks/wilkies-pools-loop-track/ (verified; 1.9 km loop, 1 hr 20 min). Pouakai Crossing: .../tracks/pouakai-crossing/ (verified; 19 km one way, 7.5-9.5 h). The guessed .../dawson-falls-walk/ 404s.",
+   "Destination egmont is named \"Egmont National Park\" in the app; DOC now calls it Te Papa-Kura-o-Taranaki."
+  ],
+  "blocked_sites": [
+   "southtaranaki.com (AWS WAF challenge, HTTP 202): Hāwera Water Tower, Aotea Utanganui",
+   "stratford.govt.nz (same): glockenspiel and Forgotten World Highway pages",
+   "teara.govt.nz (Cloudflare 403)",
+   "secure.eventfinda.co.nz (202 challenge)"
+  ],
+  "ticketUrl_not_loadable_or_nonexistent": [
+   "manganuiskifield.co.nz, manganui.co.nz, pukeiti.nz, pukeiti.org.nz, tepopogardens.co.nz: do not resolve; the working ones are listed per entry."
+  ]
+ }
+}

@@ -1,0 +1,574 @@
+{
+ "spots": {
+  "coromandel-6": {
+   "name": "Thames",
+   "wiki": "Thames, New Zealand",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "An old gold-mining town and the largest on the peninsula, the gateway to the Kauaeranga Valley.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -37.13839,
+    "longitude": 175.5405
+   },
+   "notes": [
+    "Town spot; no ticketUrl (no single steward)."
+   ]
+  },
+  "coromandel-7": {
+   "name": "Whitianga",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "A Mercury Bay harbour town where cruising boats leave for the bay's coves and Te Whanganui-A-Hei Marine Reserve.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -36.833056,
+    "longitude": 175.699722
+   },
+   "notes": []
+  },
+  "coromandel-8": {
+   "name": "Kauaeranga Valley",
+   "icon": "🌲",
+   "category": "nature",
+   "bio": "A Coromandel Forest Park valley with riverside campsites, kauri logging displays and the track to the Pinnacles.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/coromandel/places/coromandel-forest-park/kauaeranga-valley/",
+   "coordinates": {
+    "latitude": -37.12127,
+    "longitude": 175.63006
+   },
+   "notes": []
+  },
+  "coromandel-9": {
+   "name": "Pinnacles Track",
+   "icon": "⛰️",
+   "category": "hike",
+   "bio": "A DOC track of about 6 km each way from the Kauaeranga road end to Pinnacles Hut and the 759 m summit lookout.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 6,
+   "visitHoursMax": 8,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/coromandel/places/coromandel-forest-park/things-to-do/kauaeranga-kauri-trail/",
+   "coordinates": {
+    "latitude": -37.06198,
+    "longitude": 175.67088
+   },
+   "notes": [
+    "Coordinates are the OSM Webb Creek first node near the road end (DOC gives none). Visit time 6-8 from DOC 6-7.5 hr return. Hut bunks are separate."
+   ]
+  },
+  "coromandel-10": {
+   "name": "Pauanui",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A town at the mouth of the Tairua River, opposite Tairua, for swimming, surfing, kayaking and fishing.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -37.01805556,
+    "longitude": 175.8625
+   },
+   "notes": [
+    "Single counted source; marginal draw."
+   ]
+  },
+  "coromandel-11": {
+   "name": "Tairua",
+   "icon": "🏘️",
+   "category": "beach",
+   "bio": "A small town at the mouth of the Tairua River and a summer holiday spot on the Coromandel circuit.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -37.006389,
+    "longitude": 175.848889
+   },
+   "notes": []
+  },
+  "coromandel-12": {
+   "name": "Whangamatā",
+   "icon": "🏄",
+   "category": "beach",
+   "bio": "A beachside town counted among the country's top surf locations, with beach breaks and a bar break.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -37.2,
+    "longitude": 175.86666667
+   },
+   "notes": []
+  },
+  "coromandel-13": {
+   "name": "Buffalo Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A 3 km sandy swimming beach beside Whitianga, named after HMS Buffalo, wrecked there in 1840.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": {
+    "latitude": -36.82598,
+    "longitude": 175.70319
+   },
+   "notes": [
+    "No Wikipedia article of its own; needs a WIKI_IMAGE_OVERRIDES entry."
+   ]
+  },
+  "coromandel-14": {
+   "name": "Cooks Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A 3 km white-sand swimming beach across Mercury Bay from Whitianga, with a lookout at Shakespeare Cliff.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -36.83394,
+    "longitude": 175.73599
+   },
+   "notes": [
+    "Coordinates moved to the town point per research."
+   ]
+  },
+  "coromandel-15": {
+   "name": "Paku",
+   "icon": "⛰️",
+   "category": "hike",
+   "bio": "A volcanic peak and former pā site above Tairua, climbed for views of the harbour, Pacific and Coromandel Ranges.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": {
+    "latitude": -37.00048,
+    "longitude": 175.86606
+   },
+   "notes": [
+    "Walk length/time not sourced; 1-2 hr visit is an estimate."
+   ]
+  },
+  "coromandel-16": {
+   "name": "Opoutere Beach",
+   "wiki": "Opoutere",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A 1.4 km return DOC walk to over 5 km of white sand beside Wharekawa Harbour, with nesting dotterels.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/coromandel/places/tairua-area/tracks/opoutere-beach-track/",
+   "coordinates": {
+    "latitude": -37.1059,
+    "longitude": 175.8869
+   },
+   "notes": []
+  },
+  "coromandel-17": {
+   "name": "The Waterworks",
+   "icon": "💧",
+   "category": "entertainment",
+   "bio": "A family park of 70+ water-powered attractions with swimming holes and a water slide, 7 km from Coromandel town.",
+   "hours": "10:00 AM – 4:00 PM (6:00 PM in peak season)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 28,
+   "costMax": 28,
+   "currency": "NZD",
+   "ticketUrl": "https://thewaterworks.co.nz/",
+   "coordinates": {
+    "latitude": -36.81651,
+    "longitude": 175.5386
+   },
+   "notes": [
+    "Peak vs off-season months not confirmed on the official site; opening days are on its calendar. Adult NZD 28."
+   ]
+  },
+  "coromandel-18": {
+   "name": "Ocean Beach (Tairua)",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A beach on Ocean Beach Road at Tairua, recommended for surfing and sun.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -36.99103,
+    "longitude": 175.85792
+   },
+   "notes": [
+    "Single counted source (Wikivoyage); marginal draw."
+   ]
+  },
+  "hamilton-5": {
+   "name": "Cambridge",
+   "wiki": "Cambridge, New Zealand",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "A tree-lined town on the Waikato River with a very English feel, 24 km southeast of Hamilton.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -37.88333333,
+    "longitude": 175.46666667
+   },
+   "notes": [
+    "Bio avoids \"heritage buildings\" (unsourced)."
+   ]
+  },
+  "hamilton-6": {
+   "name": "Hakarimata Summit Track",
+   "icon": "⛰️",
+   "category": "hike",
+   "bio": "A 1,349-step climb to a 374 m summit tower with views to the coast and across the Waikato Basin.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/waikato/places/hakarimata-scenic-reserve/tracks/hakarimata-summit-track",
+   "coordinates": {
+    "latitude": -37.66301,
+    "longitude": 175.14189
+   },
+   "notes": []
+  },
+  "hamilton-7": {
+   "name": "Mount Pirongia",
+   "icon": "⛰️",
+   "category": "hike",
+   "bio": "An extinct volcano rising to 959 m, climbed on an advanced DOC track with views to Taranaki and Ruapehu.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 6,
+   "visitHoursMax": 10,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/waikato/places/pirongia-forest-park/",
+   "coordinates": {
+    "latitude": -37.991077,
+    "longitude": 175.089243
+   },
+   "notes": []
+  },
+  "hamilton-8": {
+   "name": "Maungatautari",
+   "icon": "🦜",
+   "category": "nature",
+   "bio": "New Zealand's largest pest-proof fenced eco-sanctuary, around an extinct volcano, promoting kaka and takahe.",
+   "hours": "9:00 AM – 4:00 PM",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "costMin": 34,
+   "costMax": 34,
+   "currency": "NZD",
+   "ticketUrl": "https://www.sanctuarymountain.co.nz/",
+   "coordinates": {
+    "latitude": -38.056,
+    "longitude": 175.5604
+   },
+   "notes": [
+    "Day pass \"from NZD 34\" (adult); guided tours NZD 50-72. Coordinates at the visitor centre (summit is 4 km north). Closed 25 Dec."
+   ]
+  },
+  "hamilton-9": {
+   "name": "Te Awamutu",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "A Waipa District town called the Rose Town of New Zealand, with a museum holding the carved post Te Uenuku.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": {
+    "latitude": -38.01666667,
+    "longitude": 175.31666667
+   },
+   "notes": [
+    "Museum hours are from Wikivoyage only, so not stated in the bio."
+   ]
+  },
+  "raglan-5": {
+   "name": "Whale Bay",
+   "icon": "🏄",
+   "category": "beach",
+   "bio": "A surf bay 1.5 km west of Manu Bay on the Raglan coast, reached over rocks from its eastern end.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -37.82355,
+    "longitude": 174.80307
+   },
+   "notes": [
+    "Access across rocks and private land from a travel-guide page only; check with DOC/council."
+   ]
+  },
+  "waitomo-6": {
+   "name": "Te Kuiti Sheep Shearing Statue",
+   "icon": "🗿",
+   "category": "monument",
+   "bio": "A seven-metre statue of a shearer in Te Kuiti, the Shearing Capital of the World.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "coordinates": {
+    "latitude": -38.33705,
+    "longitude": 175.1684
+   },
+   "notes": [
+    "World's largest shearer claim is from the Te Kuiti Wikipedia article, hence \"Shearing Capital\" wording only."
+   ]
+  },
+  "waitomo-7": {
+   "name": "The Big Apple",
+   "wiki": "The Big Apple (Waitomo)",
+   "icon": "🍎",
+   "category": "landmark",
+   "bio": "A 7.5 m apple statue on State Highway 3 near Hangatiki, with a cafe, on the way to Waitomo.",
+   "hours": "Statue visible from the road",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "coordinates": {
+    "latitude": -38.24444,
+    "longitude": 175.18261
+   },
+   "notes": [
+    "Cafe hours and whether it still trades are unverified (latest source 2015), so hours are a qualifier and the bio says only \"with a cafe\". Placement coordinates were the neighbouring Huhu Cafe; used OSM artwork point."
+   ]
+  },
+  "taupo-7": {
+   "name": "Lake Taupō",
+   "icon": "⛵",
+   "category": "nature",
+   "bio": "A crater lake in the caldera of Taupō Volcano and the largest in New Zealand, for cruising, fishing and sailing.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "free": true,
+   "coordinates": {
+    "latitude": -38.80694444,
+    "longitude": 175.90777778
+   },
+   "notes": []
+  },
+  "tongariro-7": {
+   "name": "Turangi",
+   "wiki": "Tūrangi",
+   "icon": "🎣",
+   "category": "historic",
+   "bio": "A trout-fishing town at the south end of Lake Taupō, with the 15 km Tongariro River Trail from town.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -38.98888889,
+    "longitude": 175.80833333
+   },
+   "notes": [
+    "Category kept as historic per placement."
+   ]
+  },
+  "tongariro-8": {
+   "name": "Tongariro National Trout Centre",
+   "icon": "🐟",
+   "category": "entertainment",
+   "bio": "A charitable-trust trout hatchery with a museum, freshwater aquarium and underwater viewing chamber.",
+   "hours": "10:00 AM – 3:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 22,
+   "costMax": 22,
+   "currency": "NZD",
+   "ticketUrl": "https://troutcentre.com/",
+   "coordinates": {
+    "latitude": -39.02018,
+    "longitude": 175.81014
+   },
+   "notes": [
+    "Charitable trust, not DOC-run and not free: adult NZD 22. Closed Mondays in winter per a Taupo listing, not the official site, so closedDays omitted."
+   ]
+  },
+  "port-waikato": {
+   "name": "Port Waikato",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A surf and whitebaiting town where the Waikato River meets the Tasman Sea, with a surf beach and dunes.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -37.3975,
+    "longitude": 174.71158
+   },
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "notes": [
+    "No visitor-guide source beyond Wikipedia; no ticketUrl."
+   ]
+  },
+  "te-aroha": {
+   "name": "Te Aroha",
+   "icon": "♨️",
+   "category": "historic",
+   "bio": "A town below Mount Te Aroha with the country's most intact Edwardian spa and a soda-water geyser.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -37.54369,
+    "longitude": 175.71622
+   },
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "notes": [
+    "Pinned at the Mokena Geyser. Spa prices/hours third-party only; spa operator link deliberately not used."
+   ]
+  },
+  "mount-te-aroha": {
+   "name": "Mount Te Aroha",
+   "icon": "⛰️",
+   "category": "hike",
+   "bio": "A steep DOC track from Te Aroha Domain to the 952 m top of the Kaimai Range, with 360-degree views.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 5,
+   "visitHoursMax": 7,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/kaimai-mamaku-conservation-park/things-to-do/tracks/te-aroha-summit-track/",
+   "coordinates": {
+    "latitude": -37.534,
+    "longitude": 175.7414
+   },
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "notes": [
+    "Return time 5-7 hr from DOC 3 hr one way. Summit point."
+   ]
+  },
+  "hauraki-rail-trail": {
+   "name": "Hauraki Rail Trail",
+   "icon": "🚲",
+   "category": "hike",
+   "bio": "A cycle trail of about 160 km, one of the Great Rides, passing Paeroa and the Karangahake Gorge tunnel.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 8,
+   "free": true,
+   "ticketUrl": "https://www.haurakirailtrail.co.nz/",
+   "coordinates": {
+    "latitude": -37.14613,
+    "longitude": 175.54515
+   },
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "notes": [
+    "Length: operator says about 160 km, Wikipedia 197 km; bio uses the operator figure."
+   ]
+  },
+  "timber-trail": {
+   "name": "Timber Trail",
+   "icon": "🚲",
+   "category": "hike",
+   "bio": "An 85 km, 2-3 day cycle and walking trail through Pureora Forest Park on old bush tramways, with 35 bridges.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 6,
+   "visitHoursMax": 24,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/waikato/places/pureora-forest-park/things-to-do/the-timber-trail-pureora-ongarue/",
+   "coordinates": {
+    "latitude": -38.51361,
+    "longitude": 175.55701
+   },
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "notes": [
+    "Huts/campsites are paid separately; visit 6-24 hr (2-3 days). "
+   ]
+  },
+  "tirau-giant-dog-and-sheep": {
+   "name": "Tirau Giant Dog and Sheep",
+   "icon": "🐑",
+   "category": "landmark",
+   "bio": "A corrugated-iron information centre shaped like a giant dog, beside a building shaped like a sheep.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "coordinates": {
+    "latitude": -37.97691,
+    "longitude": 175.7564
+   },
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "notes": [
+    "i-SITE opening hours not checked; exterior viewable any time."
+   ]
+  }
+ },
+ "existing_fixes": {
+  "coromandel-2": {
+   "wiki": "Hot Water Beach"
+  },
+  "coromandel-1": {
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/coromandel/places/hahei-area/tracks/mautohe-cathedral-cove-walk/",
+   "notes": "wiki redirects to the Whanganui A Hei (Cathedral Cove) Marine Reserve article, not the arch; leave wiki and rely on the photo override."
+  },
+  "waitomo-4": {
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/waikato/places/waitomo-area/tracks/marokopa-falls-walk/",
+   "wiki": null,
+   "notes": "Remove wiki: it only redirects to Marokopa River."
+  }
+ },
+ "held": [
+  "coromandel-17",
+  "coromandel-18",
+  "hamilton-8",
+  "hamilton-9",
+  "tongariro-8",
+  "mount-te-aroha",
+  "timber-trail",
+  "tirau-giant-dog-and-sheep"
+ ],
+ "notes": [
+  "Held for a photo (applied once one is found): The Waterworks, Ocean Beach (Tairua), Maungatautari, Te Awamutu, Tongariro National Trout Centre, Mount Te Aroha, Timber Trail, Tirau Giant Dog and Sheep.",
+  "Te Aroha town (existing destination-less spot is new here): no existing_fix needed; Mokena Geyser pin used directly.",
+  "No cost left unverified: all 30 have a free flag or a sourced NZD price.",
+  "Turangi: name kept as placement 'Turangi' with wiki 'Tūrangi'."
+ ]
+}

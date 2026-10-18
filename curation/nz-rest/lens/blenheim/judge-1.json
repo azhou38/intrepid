@@ -1,0 +1,126 @@
+{
+ "slots": {
+  "dest:blenheim:header": {
+   "candidates": [
+    {
+     "file": "Wairau Valley vineyards in Marlborough, New Zealand.jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "keep",
+     "reason": "Wairau Valley vineyard rows with ranges behind: wide, scenic, Blenheim's wine-country setting."
+    }
+   ],
+   "decision": "keep-current",
+   "failed_check": null,
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "dest:blenheim:why1": {
+   "candidates": [
+    {
+     "file": "Autumn in the Awatere Valley.jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "keep",
+     "reason": "Autumn vines with snowy Marlborough ranges; real colour photo of the wine country."
+    }
+   ],
+   "decision": "keep-current",
+   "failed_check": null,
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "dest:blenheim:why2": {
+   "candidates": [
+    {
+     "file": "Cloudy Bay Cellar Door in Marlborough (4671490362).jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": false,
+     "real_photograph": true,
+     "verdict": "reject",
+     "reason": "Just a courtyard and ordinary building front; not spectacular and does not show wine tasting itself."
+    }
+   ],
+   "decision": "reject",
+   "failed_check": "3",
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "dest:blenheim:why3": {
+   "candidates": [
+    {
+     "file": "Nieuport 24 at Omaka Aviation Heritage Centre's 'Knights of the Sky' exhibition.jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "keep",
+     "reason": "Nieuport 24 WWI biplane in the Omaka exhibition; clear, shows the reason."
+    }
+   ],
+   "decision": "keep-current",
+   "failed_check": null,
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "spot:blenheim-1": {
+   "candidates": [
+    {
+     "file": "Stuka replica outside of museum.jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "keep",
+     "reason": "Aircraft in front of the Omaka Aviation Heritage Centre sign; recognisable. Plane is left of centre in default crop, so set x."
+    }
+   ],
+   "decision": "keep-current",
+   "failed_check": null,
+   "hero_crop": {
+    "x": 0.55,
+    "y": 0.5
+   },
+   "dark": false
+  },
+  "spot:blenheim-2": {
+   "candidates": [
+    {
+     "file": "Cloudy Bay Vineyard.jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "keep",
+     "reason": "Vine rows with Marlborough hills; reads as the vineyard."
+    }
+   ],
+   "decision": "keep-current",
+   "failed_check": null,
+   "hero_crop": "ok",
+   "dark": false
+  },
+  "spot:blenheim-3": {
+   "candidates": [
+    {
+     "file": "Wairau Valley vineyards in the Marlborough wine region, New Zealand.jpg",
+     "right_place": true,
+     "shows_named_thing": false,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "reject",
+     "reason": "Shows flat Wairau Valley vineyards, not the Wither Hills farm park (hills, walking tracks); wrong thing."
+    }
+   ],
+   "decision": "reject",
+   "failed_check": "2",
+   "hero_crop": "n/a",
+   "dark": false
+  }
+ }
+}

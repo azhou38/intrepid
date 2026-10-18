@@ -1,0 +1,2263 @@
+{
+ "region": "northland",
+ "step": "Pipeline A placement",
+ "existing_destinations": {
+  "bay-of-islands": {
+   "centre": [
+    -35.26,
+    174.12
+   ],
+   "defaultZoomSpanKm": 60,
+   "reach_km": 45.0
+  },
+  "whangarei": {
+   "centre": [
+    -35.7251,
+    174.3237
+   ],
+   "defaultZoomSpanKm": 70,
+   "reach_km": 52.5
+  },
+  "cape-reinga": {
+   "centre": [
+    -34.4285,
+    172.678
+   ],
+   "defaultZoomSpanKm": 150,
+   "reach_km": 112.5
+  },
+  "waipoua-forest": {
+   "centre": [
+    -35.63,
+    173.54
+   ],
+   "defaultZoomSpanKm": 60,
+   "reach_km": 45.0
+  }
+ },
+ "counts": {
+  "placed": 46,
+  "spot_of_existing": 28,
+  "spot_of_proposed": 16,
+  "standalone_new": 2,
+  "held": 12,
+  "ready": 24
+ },
+ "placements": [
+  {
+   "name": "Stone Store",
+   "candidate": "Stone Store",
+   "action": "spot",
+   "destination": "bay-of-islands",
+   "id": "bay-of-islands-8",
+   "coordinates": {
+    "latitude": -35.2178,
+    "longitude": 173.9627
+   },
+   "coordinates_source": "OpenStreetMap (Nominatim) Stone Store (tourism/museum)",
+   "reason": "Inside bay-of-islands's reach (75% of its 60 km span = 45 km), 15.0 km from its centre; visitors reach it from that base.",
+   "icon": "🏛️",
+   "category": "historic",
+   "bio": "The oldest stone building in New Zealand (1832), part of the Kerikeri Mission Station, with paid entry.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "ready-for-pipeline-C",
+   "views": 3350,
+   "counted_sources": 2,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kerikeri",
+    "https://www.northlandnz.com/destinations/bay-of-islands/"
+   ],
+   "photo": {
+    "file": "Stone Store and Kemp House.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File%3AStone_Store_and_Kemp_House.jpg",
+    "width": 4800,
+    "height": 2880
+   },
+   "hero_crop": {
+    "x": 0.3,
+    "y": 0.5
+   }
+  },
+  {
+   "name": "Pompallier Mission",
+   "candidate": "Pompallier Mission",
+   "action": "spot",
+   "destination": "bay-of-islands",
+   "id": "bay-of-islands-9",
+   "coordinates": {
+    "latitude": -35.2646,
+    "longitude": 174.122
+   },
+   "coordinates_source": "Wikivoyage Russell listing",
+   "reason": "Inside bay-of-islands's reach (75% of its 60 km span = 45 km), 0.5 km from its centre; visitors reach it from that base.",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "A French Catholic mission print works on The Strand in Russell, the oldest industrial building in New Zealand, visited by guided tour.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "ready-for-pipeline-C",
+   "views": 1873,
+   "counted_sources": 3,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Russell_(New_Zealand)",
+    "https://www.northlandnz.com/destinations/bay-of-islands/",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/russell-area/"
+   ],
+   "photo": {
+    "file": "Pompallier House.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File%3APompallier_House.jpg",
+    "width": 1600,
+    "height": 1200
+   }
+  },
+  {
+   "name": "Kerikeri",
+   "candidate": "Kerikeri",
+   "action": "spot",
+   "destination": "bay-of-islands",
+   "id": "bay-of-islands-10",
+   "coordinates": {
+    "latitude": -35.224444,
+    "longitude": 173.951389
+   },
+   "coordinates_source": "Wikivoyage Northland listing",
+   "reason": "Inside bay-of-islands's reach (75% of its 60 km span = 45 km), 15.8 km from its centre; visitors reach it from that base.",
+   "icon": "🍊",
+   "category": "historic",
+   "bio": "An orchard town inland from the bay with the Stone Store mission site, Rainbow Falls and an art and craft trail.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "ready-for-pipeline-C",
+   "views": 23740,
+   "counted_sources": 2,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kerikeri",
+    "https://en.wikivoyage.org/wiki/Northland"
+   ],
+   "coordinates_note": "Point is the town's Wikipedia/Wikivoyage listing coordinate; Pipeline C to confirm a visitor point.",
+   "photo": {
+    "file": "Kerikeri River mouth.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File%3AKerikeri_River_mouth.jpg",
+    "width": 2048,
+    "height": 1536
+   }
+  },
+  {
+   "name": "Cape Brett Track",
+   "candidate": "Cape Brett Track",
+   "action": "spot",
+   "destination": "bay-of-islands",
+   "id": "bay-of-islands-11",
+   "coordinates": {
+    "latitude": -35.227,
+    "longitude": 174.268
+   },
+   "coordinates_source": "OpenStreetMap (Nominatim) Oke Bay (Rawhiti) trailhead",
+   "reason": "Inside bay-of-islands's reach (75% of its 60 km span = 45 km), 13.9 km from its centre; visitors reach it from that base.",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 16.3 km DOC track to the Cape Brett lighthouse and hut, reached by water taxi or from Oke Bay, usually a multi-day trip.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "ready-for-pipeline-C",
+   "views": 0,
+   "counted_sources": 2,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Cape_Brett",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/cape-brett-and-whangamumu-area/"
+   ],
+   "photo": {
+    "file": "Cape Brett Lighthouse, Bay of Islands, NZ as seen from bay -2 (5475729851).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File%3ACape_Brett_Lighthouse%2C_Bay_of_Islands%2C_NZ_as_seen_from_bay_-2_%285475729851%29.jpg",
+    "width": 1280,
+    "height": 853
+   },
+   "hero_crop": {
+    "x": 0.27,
+    "y": 0.5
+   }
+  },
+  {
+   "name": "Rainbow Falls",
+   "candidate": "Rainbow Falls",
+   "action": "spot",
+   "destination": "bay-of-islands",
+   "id": "bay-of-islands-12",
+   "coordinates": {
+    "latitude": -35.2142,
+    "longitude": 173.9421
+   },
+   "coordinates_source": "OpenStreetMap (Nominatim) Rainbow Falls (waterway/waterfall)",
+   "reason": "Inside bay-of-islands's reach (75% of its 60 km span = 45 km), 16.9 km from its centre; visitors reach it from that base.",
+   "icon": "💧",
+   "category": "nature",
+   "bio": "A 27 m waterfall on the Kerikeri River, reached from a car park or a 4 km walk from the Stone Store.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "ready-for-pipeline-C",
+   "views": 1069,
+   "counted_sources": 2,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kerikeri",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/kerikeri-area/"
+   ],
+   "wiki": "Rainbow Falls (Waianiwaniwa)",
+   "photo": {
+    "file": "NZ130415 Rainbow Falls 03.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File%3ANZ130415_Rainbow_Falls_03.jpg",
+    "width": 2400,
+    "height": 1600
+   }
+  },
+  {
+   "name": "Kemp House",
+   "candidate": "Kemp House",
+   "action": "spot",
+   "destination": "bay-of-islands",
+   "id": "bay-of-islands-13",
+   "coordinates": {
+    "latitude": -35.2179,
+    "longitude": 173.9627
+   },
+   "coordinates_source": "Wikivoyage Kerikeri listing (Stone Store site)",
+   "reason": "Inside bay-of-islands's reach (75% of its 60 km span = 45 km), 15.0 km from its centre; visitors reach it from that base.",
+   "icon": "🏠",
+   "category": "historic",
+   "bio": "The oldest building in New Zealand (1821-22), visited by guided tour from the Stone Store.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "ready-for-pipeline-C",
+   "views": 1222,
+   "counted_sources": 2,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kerikeri",
+    "https://www.northlandnz.com/destinations/bay-of-islands/"
+   ],
+   "photo": {
+    "file": "Kerikeri Kemp House.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File%3AKerikeri_Kemp_House.jpg",
+    "width": 993,
+    "height": 660
+   },
+   "photo_note": "Photo is 993 px wide (below the 1280 px spot guide), GFDL with no author data; acceptable per skeptic, replace if a wider one turns up."
+  },
+  {
+   "name": "Long Beach",
+   "candidate": "Long Beach, Russell",
+   "action": "spot",
+   "destination": "bay-of-islands",
+   "id": "bay-of-islands-14",
+   "coordinates": {
+    "latitude": -35.2591,
+    "longitude": 174.1329
+   },
+   "coordinates_source": "OpenStreetMap (Nominatim) Long Beach (natural/beach)",
+   "reason": "Inside bay-of-islands's reach (75% of its 60 km span = 45 km), 1.2 km from its centre; visitors reach it from that base.",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A swimming beach over the hill from Russell, reached by a forest walk.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "ready-for-pipeline-C",
+   "views": 0,
+   "counted_sources": 1,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Russell_(New_Zealand)"
+   ],
+   "photo": {
+    "file": "Long Beach (3386384014).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File%3ALong_Beach_%283386384014%29.jpg",
+    "width": 2515,
+    "height": 1850
+   },
+   "photo_key_note": "Name 'Long Beach' is ambiguous; the photo needs a WIKI_IMAGE_OVERRIDES entry keyed 'Long Beach' (no Wikipedia article)."
+  },
+  {
+   "name": "Flagstaff Hill",
+   "candidate": "Flagstaff Hill",
+   "action": "spot",
+   "destination": "bay-of-islands",
+   "id": "bay-of-islands-15",
+   "coordinates": null,
+   "coordinates_source": null,
+   "reason": "Inside bay-of-islands's reach (75% of its 60 km span = 45 km) (coordinates pending; area known to be inside); visitors reach it from that base.",
+   "icon": "🚩",
+   "category": "viewpoint",
+   "bio": "Maiki Hill above Russell, with the Te Maiki flagstaff and a DOC track up from town to a view over the bay.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "ready-for-pipeline-C",
+   "views": 1711,
+   "counted_sources": 1,
+   "sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/russell-area/"
+   ],
+   "wiki": "Flagstaff Hill (New Zealand)",
+   "candidate_point": {
+    "latitude": -35.2556,
+    "longitude": 174.1209,
+    "source": "OSM",
+    "note": "candidate point only; the skeptic could not source an entrance/car park/summit, so it is NOT used"
+   },
+   "photo": {
+    "file": "https://live.staticflickr.com/5309/5645827918_134658db1b_b.jpg",
+    "page": "https://www.flickr.com/photos/7332125@N04/5645827918",
+    "width": 1024,
+    "height": 688,
+    "external": true,
+    "licence": "CC BY 2.0 (Ronnie Macdonald, Flickr)",
+    "route": "download, resize to <=1920 px, commit as assets/photos/<name>.jpg, add an externalPhotos.json entry pinned to the full commit SHA"
+   }
+  },
+  {
+   "name": "Ruapekapeka Pā",
+   "candidate": "Battle of Ruapekapeka",
+   "action": "spot",
+   "destination": "bay-of-islands",
+   "id": "bay-of-islands-16",
+   "coordinates": {
+    "latitude": -35.4564,
+    "longitude": 174.1437
+   },
+   "coordinates_source": "OSM",
+   "reason": "Inside bay-of-islands's reach (75% of its 60 km span = 45 km), 21.9 km from its centre; visitors reach it from that base.",
+   "icon": "🛡️",
+   "category": "historic",
+   "bio": "The site of the 1846 pā battle, with earthworks and a short DOC track.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "ready-for-pipeline-C",
+   "views": 9885,
+   "counted_sources": 2,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Northland",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/ruapekapeka-pa/"
+   ],
+   "wiki": "Battle of Ruapekapeka",
+   "photo": {
+    "file": "Ruapekapeka fortification earthworks.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File%3ARuapekapeka_fortification_earthworks.jpg",
+    "width": 1920,
+    "height": 2560
+   }
+  },
+  {
+   "name": "Puketī and Ōmahuta Forests",
+   "candidate": "Puketī and Ōmahuta Forests",
+   "action": "spot",
+   "destination": "bay-of-islands",
+   "id": "bay-of-islands-17",
+   "coordinates": {
+    "latitude": -35.1935,
+    "longitude": 173.733
+   },
+   "coordinates_source": "OpenStreetMap (Nominatim) Puketī Forest (natural/wood); forest is large, point is the forest centre",
+   "reason": "Inside bay-of-islands's reach (75% of its 60 km span = 45 km), 35.9 km from its centre; visitors reach it from that base.",
+   "icon": "🌲",
+   "category": "nature",
+   "bio": "A 21,000 ha forest of kauri, kōkako and kiwi with walks and camping, including the Ōmahuta Kauri Sanctuary.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "ready-for-pipeline-C",
+   "views": 0,
+   "counted_sources": 2,
+   "sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/puketi-and-omahuta-forests/",
+    "https://en.wikivoyage.org/wiki/Northland"
+   ],
+   "coordinates_note": "Point is the forest centroid (OSM natural/wood), not an entrance; Pipeline C to replace with a DOC car park or track start.",
+   "photo": {
+    "file": "https://live.staticflickr.com/8260/8690864997_9a3be9b07d_b.jpg",
+    "page": "https://www.flickr.com/photos/66691654@N00/8690864997",
+    "width": 1024,
+    "height": 576,
+    "external": true,
+    "licence": "CC BY 2.0 (sheilaellen, Flickr)",
+    "route": "download, resize to <=1920 px, commit as assets/photos/<name>.jpg, add an externalPhotos.json entry pinned to the full commit SHA"
+   }
+  },
+  {
+   "name": "Kororipō Pā",
+   "candidate": "Kororipō Pā",
+   "action": "spot",
+   "destination": "bay-of-islands",
+   "id": "bay-of-islands-18",
+   "coordinates": {
+    "latitude": -35.2183,
+    "longitude": 173.966
+   },
+   "coordinates_source": "OpenStreetMap (Nominatim) Kororipo Pā (historic/archaeological_site)",
+   "reason": "Inside bay-of-islands's reach (75% of its 60 km span = 45 km), 14.7 km from its centre; visitors reach it from that base.",
+   "icon": "🛡️",
+   "category": "historic",
+   "bio": "A fortified pā at the head of Kerikeri Inlet linked to Hongi Hika, a short walk from the Stone Store.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "held: needs a photo",
+   "views": 0,
+   "counted_sources": 2,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kerikeri",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/kerikeri-area/"
+   ],
+   "wiki": "Kororipo Pa",
+   "photo": null,
+   "photo_reason": "No Commons or Openverse photo of the pa found (only a lithograph of Korororareka)."
+  },
+  {
+   "name": "Mount Parihaka",
+   "candidate": "Mount Parihaka",
+   "action": "spot",
+   "destination": "whangarei",
+   "id": "whangarei-7",
+   "coordinates": {
+    "latitude": -35.7127,
+    "longitude": 174.3368
+   },
+   "coordinates_source": "OpenStreetMap (Nominatim) Mount Parihaka peak",
+   "reason": "Inside whangarei's reach (75% of its 70 km span = 52 km), 1.8 km from its centre; visitors reach it from that base.",
+   "icon": "⛰️",
+   "category": "viewpoint",
+   "bio": "A reserve above Whangārei with a track and a paved road to a summit lookout and war memorial, and glow-worms at night.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "ready-for-pipeline-C",
+   "views": 0,
+   "counted_sources": 1,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Whangarei"
+   ],
+   "photo": {
+    "file": "Whangarei - Mount Parihaka.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File%3AWhangarei_-_Mount_Parihaka.jpg",
+    "width": 6000,
+    "height": 4000
+   }
+  },
+  {
+   "name": "Whangārei Town Basin",
+   "candidate": "Whangārei Town Basin",
+   "action": "spot",
+   "destination": "whangarei",
+   "id": "whangarei-8",
+   "coordinates": {
+    "latitude": -35.7251,
+    "longitude": 174.3261
+   },
+   "coordinates_source": "Wikivoyage Whangarei listing (Claphams, Town Basin)",
+   "reason": "Inside whangarei's reach (75% of its 70 km span = 52 km), 0.2 km from its centre; visitors reach it from that base.",
+   "icon": "⚓",
+   "category": "landmark",
+   "bio": "A restored waterfront on the Hātea River with museums, galleries and cafés.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "ready-for-pipeline-C",
+   "views": 0,
+   "counted_sources": 1,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Whangarei"
+   ],
+   "photo": {
+    "file": "Whangarei Town Basin Marina.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File%3AWhangarei_Town_Basin_Marina.jpg",
+    "width": 4000,
+    "height": 3000
+   }
+  },
+  {
+   "name": "Whangārei Quarry Gardens",
+   "candidate": "Whangārei Quarry Gardens",
+   "action": "spot",
+   "destination": "whangarei",
+   "id": "whangarei-9",
+   "coordinates": {
+    "latitude": -35.7128,
+    "longitude": 174.3085
+   },
+   "coordinates_source": "Wikivoyage Whangarei listing",
+   "reason": "Inside whangarei's reach (75% of its 70 km span = 52 km), 1.9 km from its centre; visitors reach it from that base.",
+   "icon": "🌺",
+   "category": "nature",
+   "bio": "A terraced subtropical garden in a former quarry, with waterfalls, a lake and a café.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "ready-for-pipeline-C",
+   "views": 0,
+   "counted_sources": 1,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Whangarei"
+   ],
+   "photo": {
+    "file": "Whangarei Quarry Gardens 02.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File%3AWhangarei_Quarry_Gardens_02.JPG",
+    "width": 3456,
+    "height": 2304
+   }
+  },
+  {
+   "name": "Ocean Beach",
+   "candidate": "Ocean Beach, Whangārei",
+   "action": "spot",
+   "destination": "whangarei",
+   "id": "whangarei-10",
+   "coordinates": {
+    "latitude": -35.8371,
+    "longitude": 174.5737
+   },
+   "coordinates_source": "OpenStreetMap (Nominatim) Ocean Beach (natural/beach)",
+   "reason": "Inside whangarei's reach (75% of its 70 km span = 52 km), 25.8 km from its centre; visitors reach it from that base.",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A big white-sand surf beach about 36 km from the centre of Whangārei, at the Whangārei Heads.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "ready-for-pipeline-C",
+   "views": 0,
+   "counted_sources": 1,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Whangarei"
+   ],
+   "photo": {
+    "file": "Ocean Beach, Northland, New Zealand.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File%3AOcean_Beach%2C_Northland%2C_New_Zealand.jpg",
+    "width": 2272,
+    "height": 1704
+   },
+   "photo_key_note": "Name 'Ocean Beach' is ambiguous; the photo needs a WIKI_IMAGE_OVERRIDES entry keyed 'Ocean Beach' (no Wikipedia article)."
+  },
+  {
+   "name": "Bream Head",
+   "candidate": "Bream Head",
+   "action": "spot",
+   "destination": "whangarei",
+   "id": "whangarei-11",
+   "coordinates": {
+    "latitude": -35.85426,
+    "longitude": 174.59132
+   },
+   "coordinates_source": "wikipedia:Bream Head",
+   "reason": "Inside whangarei's reach (75% of its 70 km span = 52 km), 28.1 km from its centre; visitors reach it from that base.",
+   "icon": "🌊",
+   "category": "nature",
+   "bio": "A scenic reserve and historic headland at the Whangārei Heads, with walks and coastal views.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "ready-for-pipeline-C",
+   "views": 1287,
+   "counted_sources": 1,
+   "sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/whangarei-heads-area/"
+   ],
+   "photo": {
+    "file": "Bream Head end.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File%3ABream_Head_end.jpg",
+    "width": 1250,
+    "height": 931
+   }
+  },
+  {
+   "name": "Matapouri",
+   "candidate": "Matapouri",
+   "action": "spot",
+   "destination": "whangarei",
+   "id": "whangarei-12",
+   "coordinates": {
+    "latitude": -35.56527778,
+    "longitude": 174.50416667
+   },
+   "coordinates_source": "wikipedia:Matapouri",
+   "reason": "Inside whangarei's reach (75% of its 70 km span = 52 km), 24.1 km from its centre; visitors reach it from that base.",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A beach village north of Whangārei, with Matapouri and nearby Sandy Bay both popular for swimming.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "ready-for-pipeline-C",
+   "views": 2559,
+   "counted_sources": 1,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Whangarei"
+   ],
+   "photo": {
+    "file": "New Zealand- Matapouri Bay.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File%3ANew_Zealand-_Matapouri_Bay.jpg",
+    "width": 4752,
+    "height": 3168
+   }
+  },
+  {
+   "name": "Waipū Caves",
+   "candidate": "Waipū Caves",
+   "action": "spot",
+   "destination": "whangarei",
+   "id": "whangarei-13",
+   "coordinates": {
+    "latitude": -35.9343,
+    "longitude": 174.3493
+   },
+   "coordinates_source": "OpenStreetMap (Nominatim) Waipū Caves (cave entrance)",
+   "reason": "Inside whangarei's reach (75% of its 70 km span = 52 km), 23.4 km from its centre; visitors reach it from that base.",
+   "icon": "🕳️",
+   "category": "nature",
+   "bio": "Limestone caves near Waipū, reached by a DOC track.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "ready-for-pipeline-C",
+   "views": 0,
+   "counted_sources": 1,
+   "sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/waipu-area/"
+   ],
+   "photo": {
+    "file": "Starburst - Feb 2026.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File%3AStarburst_-_Feb_2026.jpg",
+    "width": 6000,
+    "height": 4000
+   }
+  },
+  {
+   "name": "Uretiti Beach",
+   "candidate": "Uretiti Beach",
+   "action": "spot",
+   "destination": "whangarei",
+   "id": "whangarei-14",
+   "coordinates": {
+    "latitude": -35.95777778,
+    "longitude": 174.46583333
+   },
+   "coordinates_source": "wikipedia:Uretiti Beach",
+   "reason": "Inside whangarei's reach (75% of its 70 km span = 52 km), 28.9 km from its centre; visitors reach it from that base.",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A surf and camping beach near Waipū with a DOC campsite.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "ready-for-pipeline-C",
+   "views": 3035,
+   "counted_sources": 1,
+   "sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/waipu-area/"
+   ],
+   "photo": {
+    "file": "https://live.staticflickr.com/2858/33314290384_aae58c2581_b.jpg",
+    "page": "https://www.flickr.com/photos/149324445@N08/33314290384",
+    "width": 1024,
+    "height": 768,
+    "external": true,
+    "licence": "CC BY-SA 2.0 (flashpacker-travelguide.de, Flickr)",
+    "route": "download, resize to <=1920 px, commit as assets/photos/<name>.jpg, add an externalPhotos.json entry pinned to the full commit SHA"
+   }
+  },
+  {
+   "name": "Kiwi North",
+   "candidate": "Kiwi North",
+   "action": "spot",
+   "destination": "whangarei",
+   "id": "whangarei-15",
+   "coordinates": {
+    "latitude": -35.7423,
+    "longitude": 174.2691
+   },
+   "coordinates_source": "Wikivoyage Whangarei listing",
+   "reason": "Inside whangarei's reach (75% of its 70 km span = 52 km), 5.3 km from its centre; visitors reach it from that base.",
+   "icon": "🥝",
+   "category": "museum",
+   "bio": "Whangārei Museum, a kiwi aviary and a heritage park at Maunu.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "held: needs a photo",
+   "views": 0,
+   "counted_sources": 1,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Whangarei"
+   ],
+   "photo": null,
+   "photo_reason": "Only Clarke Homestead (5120x1344 and 3072x1261 panoramas, fail the crop) and museum-object scans."
+  },
+  {
+   "name": "Smugglers Bay",
+   "candidate": "Smugglers Bay",
+   "action": "spot",
+   "destination": "whangarei",
+   "id": "whangarei-16",
+   "coordinates": null,
+   "coordinates_source": null,
+   "reason": "Inside whangarei's reach (75% of its 70 km span = 52 km) (coordinates pending; area known to be inside); visitors reach it from that base.",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A bay at the Whangārei Heads, reached by the DOC Smugglers Bay Loop Track.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "held: needs a photo",
+   "views": 0,
+   "counted_sources": 1,
+   "sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/whangarei-heads-area/"
+   ],
+   "photo": null,
+   "photo_reason": "Smuggler S Bay Walkway photos (500px import, category Smugglers Bay (New Zealand)) look right but the description gives no place proof beyond the title; check 1 not met, so held. Candidate if the owner confirms: Smuggler S Bay Walkway 5 (80825589).jpeg."
+  },
+  {
+   "name": "Mimiwhangata Coastal Park",
+   "candidate": "Mimiwhangata Coastal Park",
+   "action": "spot",
+   "destination": "whangarei",
+   "id": "whangarei-17",
+   "coordinates": null,
+   "coordinates_source": null,
+   "reason": "Inside whangarei's reach (75% of its 70 km span = 52 km) (coordinates pending; area known to be inside); visitors reach it from that base.",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "A coastal park of beaches, dunes and a marine park with a peninsula loop walk, about an hour from Whangārei.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "held: needs a photo",
+   "views": 0,
+   "counted_sources": 1,
+   "sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/mimiwhangata-coastal-park/"
+   ],
+   "photo": null,
+   "photo_reason": "Openverse results are people on a beach and birds; no Commons photo."
+  },
+  {
+   "name": "Hokianga Sand Dunes",
+   "candidate": "Hokianga Sand Dunes",
+   "action": "spot",
+   "destination": "waipoua-forest",
+   "id": "waipoua-forest-6",
+   "coordinates": null,
+   "coordinates_source": null,
+   "reason": "Inside waipoua-forest's reach (75% of its 60 km span = 45 km) (coordinates pending; area known to be inside); visitors reach it from that base.",
+   "icon": "🏜️",
+   "category": "nature",
+   "bio": "Giant sand dunes across the harbour from Opononi, reached by ferry and a climb of about 2.5 km.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "ready-for-pipeline-C",
+   "views": 0,
+   "counted_sources": 3,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Opononi",
+    "https://en.wikivoyage.org/wiki/Kohukohu",
+    "https://en.wikivoyage.org/wiki/Hokianga"
+   ],
+   "photo": {
+    "file": "00 0460 Opononi, New Zeeland - Hokianga Harbour.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File%3A00_0460_Opononi%2C_New_Zeeland_-_Hokianga_Harbour.jpg",
+    "width": 3150,
+    "height": 2100
+   },
+   "hero_crop": {
+    "x": 0.3,
+    "y": 0.4
+   }
+  },
+  {
+   "name": "Trounson Kauri Park",
+   "candidate": "Trounson Kauri Park",
+   "action": "spot",
+   "destination": "waipoua-forest",
+   "id": "waipoua-forest-7",
+   "coordinates": {
+    "latitude": -35.7199752,
+    "longitude": 173.6493761
+   },
+   "coordinates_source": "wikipedia:Trounson Kauri Park",
+   "reason": "Inside waipoua-forest's reach (75% of its 60 km span = 45 km), 14.1 km from its centre; visitors reach it from that base.",
+   "icon": "🌳",
+   "category": "nature",
+   "bio": "A 586 ha mainland island with kauri stands, kiwi and a loop track, 40 km north of Dargaville.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "ready-for-pipeline-C",
+   "views": 595,
+   "counted_sources": 1,
+   "sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/trounson-kauri-park/"
+   ],
+   "photo": {
+    "file": "Kauri trees in Trounson park.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File%3AKauri_trees_in_Trounson_park.jpg",
+    "width": 3264,
+    "height": 2448
+   }
+  },
+  {
+   "name": "Rawene",
+   "candidate": "Rawene",
+   "action": "spot",
+   "destination": "waipoua-forest",
+   "id": "waipoua-forest-8",
+   "coordinates": {
+    "latitude": -35.396111,
+    "longitude": 173.505
+   },
+   "coordinates_source": "Wikivoyage Northland listing",
+   "reason": "Inside waipoua-forest's reach (75% of its 60 km span = 45 km), 26.2 km from its centre; visitors reach it from that base.",
+   "icon": "⛴️",
+   "category": "historic",
+   "bio": "A historic harbourside village on the Hokianga, with a car ferry across the harbour.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "ready-for-pipeline-C",
+   "views": 5193,
+   "counted_sources": 2,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Rawene",
+    "https://en.wikivoyage.org/wiki/Northland"
+   ],
+   "coordinates_note": "Point is the town's Wikipedia/Wikivoyage listing coordinate; Pipeline C to confirm a visitor point.",
+   "photo": {
+    "file": "Rawene. Hokianga Harbour. (19627875854).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File%3ARawene._Hokianga_Harbour._%2819627875854%29.jpg",
+    "width": 3282,
+    "height": 2354
+   }
+  },
+  {
+   "name": "Wairere Boulders",
+   "candidate": "Wairere Boulders",
+   "action": "spot",
+   "destination": "waipoua-forest",
+   "id": "waipoua-forest-9",
+   "coordinates": {
+    "latitude": -35.3747,
+    "longitude": 173.5963
+   },
+   "coordinates_source": "wikipedia:Wairere Boulders",
+   "reason": "Inside waipoua-forest's reach (75% of its 60 km span = 45 km), 28.8 km from its centre; visitors reach it from that base.",
+   "icon": "🪨",
+   "category": "nature",
+   "bio": "A field of basalt-flow boulders near Horeke, described as a formation unique in the world.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "ready-for-pipeline-C",
+   "views": 680,
+   "counted_sources": 2,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Northland",
+    "https://en.wikivoyage.org/wiki/Hokianga"
+   ],
+   "photo": {
+    "file": "Wairere-valley.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File%3AWairere-valley.jpg",
+    "width": 2240,
+    "height": 1680
+   }
+  },
+  {
+   "name": "Koutu Boulders",
+   "candidate": "Koutu Boulders",
+   "action": "spot",
+   "destination": "waipoua-forest",
+   "id": "waipoua-forest-10",
+   "coordinates": {
+    "latitude": -35.4635,
+    "longitude": 173.4166
+   },
+   "coordinates_source": "OpenStreetMap (Nominatim) Koutu Boulders (natural/shingle)",
+   "reason": "Inside waipoua-forest's reach (75% of its 60 km span = 45 km), 21.6 km from its centre; visitors reach it from that base.",
+   "icon": "🪨",
+   "category": "nature",
+   "bio": "Large concretions on the Hokianga shore at Koutu, billed as the biggest in the world, a short walk away.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "ready-for-pipeline-C",
+   "views": 0,
+   "counted_sources": 2,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Northland",
+    "https://en.wikivoyage.org/wiki/Hokianga"
+   ],
+   "photo": {
+    "file": "Koutu Boulders. NZ (20331782902).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File%3AKoutu_Boulders._NZ_%2820331782902%29.jpg",
+    "width": 3810,
+    "height": 2604
+   }
+  },
+  {
+   "name": "Waiotemarama Falls",
+   "candidate": "Waiotemarama Falls",
+   "action": "spot",
+   "destination": "waipoua-forest",
+   "id": "waipoua-forest-11",
+   "coordinates": null,
+   "coordinates_source": null,
+   "reason": "Inside waipoua-forest's reach (75% of its 60 km span = 45 km) (coordinates pending; area known to be inside); visitors reach it from that base.",
+   "icon": "💧",
+   "category": "nature",
+   "bio": "A waterfall reached by a bush track about 5 km from Opononi.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "held: needs a photo",
+   "views": 0,
+   "counted_sources": 2,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Opononi",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/waima-and-mataraua-forests/"
+   ],
+   "photo": null,
+   "photo_reason": "No Commons or Openverse photo."
+  },
+  {
+   "name": "Mangōnui",
+   "candidate": "Mangōnui",
+   "action": "spot-of-proposed-destination",
+   "destination": "doubtless-bay",
+   "id": "doubtless-bay-1",
+   "coordinates": {
+    "latitude": -34.9891,
+    "longitude": 173.5357
+   },
+   "coordinates_source": "Wikivoyage Coopers Beach listing",
+   "reason": "Part of the proposed doubtless-bay destination (see new_destinations); it waits on the owner approving that destination.",
+   "icon": "🎣",
+   "category": "historic",
+   "bio": "A colonial fishing village on Doubtless Bay with a waterfront heritage trail and a fish shop.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "spot-of-proposed-destination",
+   "views": 4837,
+   "counted_sources": 3,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Mangonui",
+    "https://en.wikivoyage.org/wiki/Doubtless_Bay",
+    "https://www.northlandnz.com/destinations/top-of-the-north/"
+   ],
+   "waits_on_destination": "doubtless-bay",
+   "photo": {
+    "file": "Mangonui Waterfront (3329617852).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File%3AMangonui_Waterfront_%283329617852%29.jpg",
+    "width": 2592,
+    "height": 1944
+   }
+  },
+  {
+   "name": "Tokerau Beach",
+   "candidate": "Tokerau Beach",
+   "action": "spot-of-proposed-destination",
+   "destination": "doubtless-bay",
+   "id": "doubtless-bay-2",
+   "coordinates": {
+    "latitude": -34.884,
+    "longitude": 173.371
+   },
+   "coordinates_source": "wikipedia:Tokerau Beach",
+   "reason": "Part of the proposed doubtless-bay destination (see new_destinations); it waits on the owner approving that destination.",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "An 18 km surf beach on the Karikari Peninsula.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "spot-of-proposed-destination",
+   "views": 1142,
+   "counted_sources": 1,
+   "sources": [
+    "https://www.northlandnz.com/destinations/top-of-the-north/"
+   ],
+   "waits_on_destination": "doubtless-bay",
+   "photo": {
+    "file": "Tokerau Beach.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File%3ATokerau_Beach.JPG",
+    "width": 3648,
+    "height": 2736
+   }
+  },
+  {
+   "name": "Rangikapiti Pā",
+   "candidate": "Rangikapiti Pā",
+   "action": "spot-of-proposed-destination",
+   "destination": "doubtless-bay",
+   "id": "doubtless-bay-3",
+   "coordinates": {
+    "latitude": -34.9852,
+    "longitude": 173.5246
+   },
+   "coordinates_source": "Wikivoyage Coopers Beach listing",
+   "reason": "Part of the proposed doubtless-bay destination (see new_destinations); it waits on the owner approving that destination.",
+   "icon": "🛡️",
+   "category": "historic",
+   "bio": "A former Māori pā on a hill with views over Doubtless Bay, near Coopers Beach.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "spot-of-proposed-destination",
+   "views": 0,
+   "counted_sources": 3,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Coopers_Beach",
+    "https://en.wikivoyage.org/wiki/Mangonui",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/mangonui-area/"
+   ],
+   "wiki": "Rangikapiti Pa",
+   "waits_on_destination": "doubtless-bay",
+   "coordinates_note": "Point from the Wikivoyage Coopers Beach listing; Pipeline C to confirm the track start/summit.",
+   "photo": {
+    "file": "Rangikapiti Pa as seen from George Street Mangonui.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File%3ARangikapiti_Pa_as_seen_from_George_Street_Mangonui.jpg",
+    "width": 1571,
+    "height": 823
+   },
+   "hero_crop": {
+    "x": 0.5,
+    "y": 0.5
+   }
+  },
+  {
+   "name": "Coopers Beach",
+   "candidate": "Coopers Beach",
+   "action": "spot-of-proposed-destination",
+   "destination": "doubtless-bay",
+   "id": "doubtless-bay-4",
+   "coordinates": {
+    "latitude": -34.993,
+    "longitude": 173.509
+   },
+   "coordinates_source": "wikipedia:Coopers Beach",
+   "reason": "Part of the proposed doubtless-bay destination (see new_destinations); it waits on the owner approving that destination.",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A long surf and swimming beach on Doubtless Bay.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "held: needs a photo",
+   "views": 2962,
+   "counted_sources": 2,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Doubtless_Bay",
+    "https://en.wikivoyage.org/wiki/Mangonui"
+   ],
+   "waits_on_destination": "doubtless-bay",
+   "photo": null,
+   "photo_reason": "Coopers Beach.JPG is dark, murky light; Doubtless Bay.JPG is not proven to be Coopers Beach. Nothing passes; try DOC/tourism photo."
+  },
+  {
+   "name": "Maitai Bay",
+   "candidate": "Maitai Bay",
+   "action": "spot-of-proposed-destination",
+   "destination": "doubtless-bay",
+   "id": "doubtless-bay-5",
+   "coordinates": null,
+   "coordinates_source": null,
+   "reason": "Part of the proposed doubtless-bay destination (see new_destinations); it waits on the owner approving that destination.",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A sheltered bay at the tip of the Karikari Peninsula with a headland track and a DOC campsite.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "spot-of-proposed-destination",
+   "views": 0,
+   "counted_sources": 1,
+   "sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/karikari-peninsula/"
+   ],
+   "waits_on_destination": "doubtless-bay",
+   "photo": {
+    "file": "Maitai Bay2.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File%3AMaitai_Bay2.JPG",
+    "width": 3648,
+    "height": 2736
+   }
+  },
+  {
+   "name": "Te Ahu Museum",
+   "candidate": "Te Ahu Museum",
+   "action": "spot-of-proposed-destination",
+   "destination": "kaitaia",
+   "id": "kaitaia-1",
+   "coordinates": {
+    "latitude": -35.1173,
+    "longitude": 173.268
+   },
+   "coordinates_source": "Wikivoyage Kaitaia listing",
+   "reason": "Part of the proposed kaitaia destination (see new_destinations); it waits on the owner approving that destination.",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "The Far North's regional museum in Kaitaia, with admission by donation.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "spot-of-proposed-destination",
+   "views": 0,
+   "counted_sources": 2,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kaitaia",
+    "https://www.northlandnz.com/destinations/top-of-the-north/"
+   ],
+   "waits_on_destination": "kaitaia",
+   "photo": {
+    "file": "Te Ahu, Kaitaia.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File%3ATe_Ahu%2C_Kaitaia.jpg",
+    "width": 7660,
+    "height": 5744
+   },
+   "cost_note": "Wikivoyage says admission is by donation; not recorded as free: true until Pipeline C confirms."
+  },
+  {
+   "name": "Ahipara",
+   "candidate": "Ahipara",
+   "action": "spot-of-proposed-destination",
+   "destination": "kaitaia",
+   "id": "kaitaia-2",
+   "coordinates": {
+    "latitude": -35.17138889,
+    "longitude": 173.15333333
+   },
+   "coordinates_source": "wikipedia:Ahipara",
+   "reason": "Part of the proposed kaitaia destination (see new_destinations); it waits on the owner approving that destination.",
+   "icon": "🐎",
+   "category": "beach",
+   "bio": "A village at the southern end of Ninety Mile Beach and a base for horse treks.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "spot-of-proposed-destination",
+   "views": 5691,
+   "counted_sources": 1,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kaitaia"
+   ],
+   "waits_on_destination": "kaitaia",
+   "photo": {
+    "file": "Ahipara Bay.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File%3AAhipara_Bay.jpg",
+    "width": 1024,
+    "height": 685
+   },
+   "photo_note": "Photo is 1024 px wide (below the 1280 px spot guide); acceptable per skeptic, replace if a wider one turns up."
+  },
+  {
+   "name": "Gumdiggers Park",
+   "candidate": "Gumdiggers Park",
+   "action": "spot-of-proposed-destination",
+   "destination": "kaitaia",
+   "id": "kaitaia-3",
+   "coordinates": null,
+   "coordinates_source": null,
+   "reason": "Part of the proposed kaitaia destination (see new_destinations); it waits on the owner approving that destination.",
+   "icon": "🪵",
+   "category": "museum",
+   "bio": "A kauri gum and kauri industry museum on a historic gum-digging site at Awanui.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "held: needs a photo",
+   "views": 0,
+   "counted_sources": 1,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kaitaia"
+   ],
+   "waits_on_destination": "kaitaia",
+   "photo": null,
+   "photo_reason": "No Commons or Openverse photo."
+  },
+  {
+   "name": "Rarawa Beach",
+   "candidate": "Rarawa Beach",
+   "action": "spot-of-proposed-destination",
+   "destination": "kaitaia",
+   "id": "kaitaia-4",
+   "coordinates": {
+    "latitude": -34.74166667,
+    "longitude": 173.04666667
+   },
+   "coordinates_source": "wikipedia:Ngataki",
+   "reason": "Part of the proposed kaitaia destination (see new_destinations); it waits on the owner approving that destination.",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A long beach with a coastal walk on the Aupōuri side of the Wharekāpu-Paxton Point area.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "held: needs a photo",
+   "views": 0,
+   "counted_sources": 1,
+   "sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/wharekapu-paxton-point-conservation-area/"
+   ],
+   "waits_on_destination": "kaitaia",
+   "coordinates_note": "Point is the Ngataki locality's Wikipedia coordinate, not the beach or its car park; Pipeline C to replace with the DOC access point.",
+   "photo": null,
+   "photo_reason": "Rarawa Beach morning.jpg is a dull, flat low-sun frame with no clear view; nothing else on Commons or Openverse."
+  },
+  {
+   "name": "Dargaville Museum",
+   "candidate": "Dargaville Museum",
+   "action": "spot-of-proposed-destination",
+   "destination": "dargaville",
+   "id": "dargaville-1",
+   "coordinates": {
+    "latitude": -35.959057,
+    "longitude": 173.864269
+   },
+   "coordinates_source": "Wikivoyage Dargaville listing",
+   "reason": "Part of the proposed dargaville destination (see new_destinations); it waits on the owner approving that destination.",
+   "icon": "⚓",
+   "category": "museum",
+   "bio": "A maritime and local history museum on a hill above Dargaville, home to the masts of the Rainbow Warrior.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "spot-of-proposed-destination",
+   "views": 0,
+   "counted_sources": 1,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Dargaville"
+   ],
+   "waits_on_destination": "dargaville",
+   "photo": {
+    "file": "Rainbow Warrior Masts at Dargaville Museum.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File%3ARainbow_Warrior_Masts_at_Dargaville_Museum.jpg",
+    "width": 3000,
+    "height": 4000
+   }
+  },
+  {
+   "name": "Baylys Beach",
+   "candidate": "Baylys Beach",
+   "action": "spot-of-proposed-destination",
+   "destination": "dargaville",
+   "id": "dargaville-2",
+   "coordinates": {
+    "latitude": -35.951,
+    "longitude": 173.748
+   },
+   "coordinates_source": "wikipedia:Baylys Beach",
+   "reason": "Part of the proposed dargaville destination (see new_destinations); it waits on the owner approving that destination.",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A surf beach 12 km west of Dargaville.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "spot-of-proposed-destination",
+   "views": 1365,
+   "counted_sources": 1,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Dargaville"
+   ],
+   "waits_on_destination": "dargaville",
+   "photo": {
+    "file": "Baylys's Beach, near Dargaville, North Island, New Zealand - panoramio.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File%3ABaylys%27s_Beach%2C_near_Dargaville%2C_North_Island%2C_New_Zealand_-_panoramio.jpg",
+    "width": 2592,
+    "height": 1936
+   },
+   "hero_crop": {
+    "x": 0.3,
+    "y": 0.5
+   }
+  },
+  {
+   "name": "Kai Iwi Lakes",
+   "candidate": "Kai Iwi Lakes",
+   "action": "spot-of-proposed-destination",
+   "destination": "dargaville",
+   "id": "dargaville-3",
+   "coordinates": null,
+   "coordinates_source": null,
+   "reason": "Part of the proposed dargaville destination (see new_destinations); it waits on the owner approving that destination.",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "Three dune lakes in a reserve 32 km north of Dargaville, for swimming and walks.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "held: needs a photo",
+   "views": 1934,
+   "counted_sources": 1,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Dargaville"
+   ],
+   "wiki": "Kai Iwi Lakes Reserve",
+   "waits_on_destination": "dargaville",
+   "candidate_point": {
+    "latitude": -35.8148,
+    "longitude": 173.654,
+    "source": "Wikivoyage Dargaville listing",
+    "note": "candidate point only; the skeptic could not source an entrance/car park/summit, so it is NOT used"
+   },
+   "photo": null,
+   "photo_reason": "No Commons or Openverse photo of the Kai Iwi (Northland) lakes; Commons Kai Iwi results are the Whanganui beach."
+  },
+  {
+   "name": "Matauri Bay",
+   "candidate": "Matauri Bay",
+   "action": "spot-of-proposed-destination",
+   "destination": "whangaroa",
+   "id": "whangaroa-1",
+   "coordinates": {
+    "latitude": -35.03333333,
+    "longitude": 173.9
+   },
+   "coordinates_source": "wikipedia:Matauri Bay",
+   "reason": "Part of the proposed whangaroa destination (see new_destinations); it waits on the owner approving that destination.",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A family swimming bay with views of the Cavalli Islands, north of Kerikeri.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "spot-of-proposed-destination",
+   "views": 3685,
+   "counted_sources": 2,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Whangaroa",
+    "https://en.wikivoyage.org/wiki/Kerikeri"
+   ],
+   "waits_on_destination": "whangaroa",
+   "photo": {
+    "file": "Matauri Bay 3 (5646517801).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File%3AMatauri_Bay_3_%285646517801%29.jpg",
+    "width": 5264,
+    "height": 3578
+   }
+  },
+  {
+   "name": "Taupō Bay",
+   "candidate": "Taupō Bay",
+   "action": "spot-of-proposed-destination",
+   "destination": "whangaroa",
+   "id": "whangaroa-2",
+   "coordinates": {
+    "latitude": -34.992124,
+    "longitude": 173.708853
+   },
+   "coordinates_source": "wikipedia:Taupō Bay",
+   "reason": "Part of the proposed whangaroa destination (see new_destinations); it waits on the owner approving that destination.",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A white-sand bay in the Whangaroa district with a family campground.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "spot-of-proposed-destination",
+   "views": 2063,
+   "counted_sources": 1,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Whangaroa"
+   ],
+   "waits_on_destination": "whangaroa",
+   "photo": {
+    "file": "Taupo Bay.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Taupo_Bay.jpg",
+    "width": 3072,
+    "height": 2304
+   }
+  },
+  {
+   "name": "Tauranga Bay",
+   "candidate": "Tauranga Bay",
+   "action": "spot-of-proposed-destination",
+   "destination": "whangaroa",
+   "id": "whangaroa-3",
+   "coordinates": {
+    "latitude": -35.0059,
+    "longitude": 173.7867
+   },
+   "coordinates_source": "OpenStreetMap (Nominatim) Tauranga Bay (place/hamlet)",
+   "reason": "Part of the proposed whangaroa destination (see new_destinations); it waits on the owner approving that destination.",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A white-sand beach in the Whangaroa district with a family campground.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "held: needs a photo",
+   "views": 0,
+   "counted_sources": 1,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Whangaroa"
+   ],
+   "waits_on_destination": "whangaroa",
+   "coordinates_note": "Point is an OSM place/hamlet node, not natural/beach; Pipeline C to check against the beach and campground.",
+   "photo": null,
+   "photo_reason": "Commons \"Tauranga Bay\" results are the West Coast (Buller) bay, wrong place; nothing for the Whangaroa Tauranga Bay.",
+   "photo_key_note": "Commons/Wikipedia 'Tauranga Bay' is the Buller bay; a WIKI_IMAGE_OVERRIDES entry is needed."
+  },
+  {
+   "name": "Duke's Nose",
+   "candidate": "Duke's Nose (Kaiaraara Rock)",
+   "action": "spot-of-proposed-destination",
+   "destination": "whangaroa",
+   "id": "whangaroa-4",
+   "coordinates": null,
+   "coordinates_source": null,
+   "reason": "Part of the proposed whangaroa destination (see new_destinations); it waits on the owner approving that destination.",
+   "icon": "⛰️",
+   "category": "hike",
+   "bio": "A rock formation and hike above Whangaroa Harbour on the DOC Dukes Nose-Kairaara Rocks track.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "held: needs a photo",
+   "views": 0,
+   "counted_sources": 2,
+   "sources": [
+    "https://www.northlandnz.com/destinations/top-of-the-north/",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/whangaroa-area/"
+   ],
+   "waits_on_destination": "whangaroa",
+   "photo": null,
+   "photo_reason": "No photo found (Commons search returns India and Whangaroa archive plates)."
+  },
+  {
+   "name": "Mangawhai",
+   "candidate": "Mangawhai",
+   "action": "standalone",
+   "destination": null,
+   "id": "mangawhai",
+   "coordinates": {
+    "latitude": -36.12638889,
+    "longitude": 174.57472222
+   },
+   "coordinates_source": "wikipedia:Mangawhai",
+   "reason": "Kept spot outside every destination's span or not reached from one; stands alone.",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A beach town on the Kaipara coast with a surf beach at Mangawhai Heads and the Mangawhai Cliffs walkway nearby.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "ready-for-pipeline-C",
+   "views": 10837,
+   "counted_sources": 1,
+   "sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/waipu-area/"
+   ],
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "photo": {
+    "file": "Mangawhai Heads Beach NZ. (44164103752).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File%3AMangawhai_Heads_Beach_NZ._%2844164103752%29.jpg",
+    "width": 5356,
+    "height": 3035
+   }
+  },
+  {
+   "name": "Mangawhai Cliffs Walkway",
+   "candidate": "Mangawhai Cliffs Walkway",
+   "action": "standalone",
+   "destination": null,
+   "id": "mangawhai-cliffs-walkway",
+   "coordinates": {
+    "latitude": -36.0525,
+    "longitude": 174.5885
+   },
+   "coordinates_source": "OpenStreetMap (Nominatim) Mangawhai Cliffs Walkway (highway/path)",
+   "reason": "Kept spot outside every destination's span or not reached from one; stands alone.",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A cliff-top walkway over the Mangawhai coast.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "status": "held: needs a photo",
+   "views": 0,
+   "counted_sources": 1,
+   "sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/waipu-area/"
+   ],
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "photo": null,
+   "photo_reason": "No Commons or Openverse photo of the walkway."
+  }
+ ],
+ "new_destinations": [
+  {
+   "id": "doubtless-bay",
+   "name": "Doubtless Bay",
+   "coordinates": {
+    "latitude": -34.9891,
+    "longitude": 173.5357
+   },
+   "coordinates_source": "Mangōnui, Wikivoyage Coopers Beach listing (candidates.json)",
+   "category": "beach",
+   "proposed_defaultZoomSpanKm": 50,
+   "rank_suggestion": 4,
+   "kept_spots": [
+    "doubtless-bay-1",
+    "doubtless-bay-2",
+    "doubtless-bay-3",
+    "doubtless-bay-4",
+    "doubtless-bay-5"
+   ],
+   "reason": "Five kept places (Mangōnui, Tokerau Beach, Rangikapiti Pā, Coopers Beach, Maitai Bay) cluster round one base, with Wikivoyage articles for both Mangōnui and Doubtless Bay and a Top of the North tourism-board page. The 'Doubtless Bay' area candidate was rejected as a SPOT (an area made of these stops); it is proposed here as the destination that holds them. Alternative name: Mangōnui.",
+   "overlap_check": "Numerically inside cape-reinga's current 150 km span (about 100 km from its centre) but not reached from Cape Reinga (separate base, over 1.5 h by road). No overlap once cape-reinga's span is cut to about 50 km (see existing_fixes). No overlap with bay-of-islands (over 70 km). Cable Bay stays in review.",
+   "fallback_if_declined": "Mangōnui, Tokerau Beach, Rangikapiti Pā, Coopers Beach and Maitai Bay become standalone spots under their own ids."
+  },
+  {
+   "id": "kaitaia",
+   "name": "Kaitaia",
+   "coordinates": {
+    "latitude": -35.1125,
+    "longitude": 173.2628
+   },
+   "coordinates_source": "Wikipedia Kaitaia / Wikivoyage Northland listing (candidates.json)",
+   "category": "city",
+   "proposed_defaultZoomSpanKm": 70,
+   "rank_suggestion": 5,
+   "kept_spots": [
+    "kaitaia-1",
+    "kaitaia-2",
+    "kaitaia-3",
+    "kaitaia-4"
+   ],
+   "reason": "Far North hub with its own Wikivoyage chapter and a tourism-board page, the base for Ninety Mile Beach and Cape Reinga tours (COVERAGE.md Granularity: a sizeable settlement with its own guidebook chapter). Kept places round it: Te Ahu Museum, Ahipara, Gumdiggers Park, Rarawa Beach. Ninety Mile Beach itself stays STANDALONE as the benchmark requires. The Kaitaia candidate (photo rejected, held) is the destination itself, not a spot.",
+   "overlap_check": "Inside cape-reinga's current 150 km span (about 93 km from its centre) but Kaitaia is its own base. No overlap once cape-reinga's span is cut to about 50 km.",
+   "fallback_if_declined": "Te Ahu Museum, Ahipara, Gumdiggers Park and Rarawa Beach become standalone spots; Kaitaia the town becomes a standalone spot (photo still needed)."
+  },
+  {
+   "id": "dargaville",
+   "name": "Dargaville",
+   "coordinates": {
+    "latitude": -35.9333,
+    "longitude": 173.8833
+   },
+   "coordinates_source": "Wikipedia Dargaville / Wikivoyage Northland listing (candidates.json)",
+   "category": "city",
+   "proposed_defaultZoomSpanKm": 40,
+   "rank_suggestion": 5,
+   "kept_spots": [
+    "dargaville-1",
+    "dargaville-2",
+    "dargaville-3"
+   ],
+   "reason": "Kauri Coast hub with Wikivoyage chapter-level coverage and a regional-hub role; Dargaville Museum, Baylys Beach and Kai Iwi Lakes are reached from it. The existing standalone kauri-museum (Matakohe, about 35 km south) could be re-homed here by the owner. The Dargaville candidate (photo rejected, held) is the destination itself.",
+   "overlap_check": "Dargaville is about 45 km from the waipoua-forest centre (reach 45 km); the two spans only just touch and Waipoua's own spots lie within 12 km, so waipoua-forest could be narrowed. Waipoua and Trounson stay with waipoua-forest.",
+   "fallback_if_declined": "Dargaville Museum, Baylys Beach and Kai Iwi Lakes become standalone spots; Dargaville the town becomes a standalone spot."
+  },
+  {
+   "id": "whangaroa",
+   "name": "Whangaroa",
+   "coordinates": {
+    "latitude": -35.0522,
+    "longitude": 173.7419
+   },
+   "coordinates_source": "Wikipedia Whangaroa / Wikivoyage Northland listing (candidates.json)",
+   "category": "nature",
+   "proposed_defaultZoomSpanKm": 40,
+   "rank_suggestion": 5,
+   "kept_spots": [
+    "whangaroa-1",
+    "whangaroa-2",
+    "whangaroa-3",
+    "whangaroa-4"
+   ],
+   "reason": "Harbour district with its own Wikivoyage article, a separate base between Kerikeri and Doubtless Bay; Matauri Bay, Taupō Bay, Tauranga Bay and Duke's Nose are reached from it. The Whangaroa candidate (a harbour village, kept) is the destination itself.",
+   "overlap_check": "Borderline: about 42 km from the bay-of-islands centre (reach 45 km). Visitors base at Whangaroa/Kaeo, not Paihia, so it is proposed rather than folded in; Taupō Bay (about 48 km) is outside bay-of-islands' reach anyway. Owner to decide; the fallback is standalone, not bay-of-islands.",
+   "fallback_if_declined": "Matauri Bay, Taupō Bay, Tauranga Bay and Duke's Nose become standalone spots; Whangaroa the village becomes a standalone spot."
+  }
+ ],
+ "considered_destinations": [
+  {
+   "name": "Kerikeri",
+   "verdict": "not proposed",
+   "reason": "Kerikeri is about 16 km from the Bay of Islands centre, inside its span and reached from the Paihia base; a destination would overlap bay-of-islands. Kerikeri, Stone Store, Kemp House, Rainbow Falls, Kororipō Pā and Puketī are spots of bay-of-islands."
+  },
+  {
+   "name": "Hokianga / Rawene",
+   "verdict": "not proposed",
+   "reason": "Rawene, Opononi, Hokianga Harbour and the dunes and boulders all lie within 30 km of the waipoua-forest centre and the app already files Opononi and Hokianga Harbour there; a Hokianga destination would overlap it. Owner may rename waipoua-forest (e.g. Waipoua and Hokianga) or split Hokianga out and move waipoua-forest-4/5 with it."
+  },
+  {
+   "name": "Mangawhai",
+   "verdict": "not proposed",
+   "reason": "Only two kept places (Mangawhai, Mangawhai Cliffs Walkway; Waipu is review) and Uretiti/Waipū Caves are reached from Whangārei; Mangawhai is 28 km from Matakana, outside its 22.5 km reach. Both stand alone."
+  },
+  {
+   "name": "Whangārei",
+   "verdict": "existing destination",
+   "reason": "Whangārei is the existing whangarei destination, not a spot."
+  },
+  {
+   "name": "Waipoua Forest",
+   "verdict": "existing destination",
+   "reason": "The kept 'Waipoua Forest' candidate is the existing waipoua-forest destination (with Tāne Mahuta, Te Matua Ngāhere, Four Sisters under it); not a new spot. Its accepted photo (The jungle inside Waipoua Forest.jpg) is a header candidate only."
+  }
+ ],
+ "existing_fixes": [
+  {
+   "id": "cape-reinga-3",
+   "name": "Ninety Mile Beach",
+   "fix": "re-home to STANDALONE (benchmark)",
+   "remove": [
+    "destinationId"
+   ],
+   "add": {
+    "country": "New Zealand",
+    "countryCode": "NZ",
+    "continent": "Oceania",
+    "timezone": "Pacific/Auckland"
+   },
+   "coordinates": {
+    "latitude": -35.1791,
+    "longitude": 173.1298
+   },
+   "coordinates_source": "OpenStreetMap relation 2441160 (natural/beach, Te Oneroa-a-Tōhē / Ninety Mile Beach): its southernmost point at the Ahipara end, which Wikivoyage Kaitaia and the skeptic give as the main access (Ahipara, with Hukatere/Waipapakauri by Kaitaia). Replaces the mid-beach point -34.85245,173.04593 (the relation's own centre).",
+   "keep_id": true,
+   "wiki": "Ninety Mile Beach, New Zealand",
+   "reason": "An 88 km beach reached from Ahipara, Kaitaia and coach tours; only its far northern end meets Te Paki. COVERAGE.md names it as the standalone benchmark. The Te Paki Stream end is NOT the access point. Pipeline C to run audit-spot-coordinates (the point is a polygon edge on the shore) and may move it onto the sand at the Ahipara car park or Hukatere ramp.",
+   "needs_research": [
+    "coordinates"
+   ],
+   "status": "ready-for-pipeline-C"
+  },
+  {
+   "id": "cape-reinga",
+   "name": "Cape Reinga (destination)",
+   "fix": "shrink defaultZoomSpanKm from 150 to about 50",
+   "reason": "Its remaining spots are within 15 km of its centre (Te Paki Sand Dunes 11 km, Spirits Bay 14 km). 150 km only existed to reach Ninety Mile Beach and swallows Kaitaia and Doubtless Bay, which are separate bases. Prerequisite for the Kaitaia and Doubtless Bay proposals having no overlap. Owner decision (destinations are not edited by this run)."
+  },
+  {
+   "id": "cape-reinga-2",
+   "name": "Te Paki Sand Dunes",
+   "fix": "coordinates to verify",
+   "reason": "App point -34.488,172.748 is about 6 km from the Wikipedia point -34.54,172.77; the dunes are at the Te Paki Stream (the visitor point), so the place is right but the pin needs the audit script. Placement under Cape Reinga is correct (12 km)."
+  },
+  {
+   "id": "cape-reinga-4",
+   "name": "Spirits Bay",
+   "fix": "coordinates to verify",
+   "reason": "App point -34.42637,172.86237 is about 4 km from the OSM point -34.4347,172.8193 (Kapowairua campsite area). Placement under Cape Reinga is correct."
+  },
+  {
+   "id": "waipoua-forest-1",
+   "name": "Tāne Mahuta",
+   "fix": "coordinates to refine",
+   "reason": "App point -35.6,173.53 is rounded; Wikivoyage Waipoua gives -35.601111,173.527222 (about 250 m)."
+  },
+  {
+   "id": "waipoua-forest-4",
+   "name": "Hokianga Harbour / Opononi (waipoua-forest-4, -5)",
+   "fix": "no move; note",
+   "reason": "Both sit inside waipoua-forest's reach (about 19 km). They stay, and the new Hokianga spots join them. Naming/scope of the destination is for the owner (see considered_destinations)."
+  },
+  {
+   "id": "waipoua-forest-3",
+   "name": "Four Sisters",
+   "fix": "no move; keep flagged",
+   "reason": "Skeptic kept it as the thinnest existing spot: a ten-minute roadside stop named on the DOC Waipoua page. Re-judge if the owner wants fewer weak spots."
+  },
+  {
+   "id": "kauri-museum",
+   "name": "Kauri Museum",
+   "fix": "no move; optional re-home",
+   "reason": "Stays standalone in the app (coverage-regions.json). If the owner approves the proposed dargaville destination it is about 35 km south of Dargaville, outside the 30 km reach, so it stays standalone either way."
+  },
+  {
+   "id": "bay-of-islands-7",
+   "name": "Hundertwasser Toilets",
+   "fix": "none",
+   "reason": "Present and placed correctly under bay-of-islands (Kawakawa, about 13 km from centre)."
+  },
+  {
+   "id": "bay-of-islands-1..6, whangarei-1..6, cape-reinga-1,5, waipoua-forest-2",
+   "name": "other existing spots",
+   "fix": "none",
+   "reason": "Each is inside its destination's reach and reached from that base."
+  }
+ ],
+ "already_in_app_kept_in_place": [
+  "Cape Reinga Lighthouse",
+  "Claphams National Clock Museum",
+  "Four Sisters",
+  "Haruru Falls",
+  "Hokianga Harbour",
+  "Hundertwasser Art Centre",
+  "Hundertwasser Toilets",
+  "Kauri Museum",
+  "Mount Manaia",
+  "Ninety Mile Beach",
+  "Opononi",
+  "Paihia",
+  "Piercy Island",
+  "Poor Knights Islands",
+  "Russell",
+  "Spirits Bay",
+  "Tapotupotu Bay",
+  "Te Matua Ngahere",
+  "Te Paki Sand Dunes",
+  "Tutukaka",
+  "Tāne Mahuta",
+  "Urupukapuka Island",
+  "Waitangi Treaty Grounds",
+  "Whangārei Falls"
+ ],
+ "review_not_placed": [
+  "Cable Bay",
+  "Kohukohu",
+  "Waipu",
+  "Whananaki",
+  "Rangihoua Heritage Park",
+  "Te Paki Coastal Track",
+  "Kawakawa Bay of Islands Vintage Railway",
+  "Motuarohia (Roberton Island)",
+  "Whangamumu Whaling Station"
+ ],
+ "notes": [
+  "Hours, cost, ticketUrl and visit hours are null on every new spot (no candidate source gave them) with needs_research listing them; Pipeline C researches every spot before it is applied.",
+  "Ids continue each destination's own numbering from git history (bay-of-islands to 7, whangarei to 6, cape-reinga to 5, waipoua-forest to 5, plus kauri-museum); no id was ever reused.",
+  "Held spots (status 'held: needs a photo') keep their reserved ids but are not applied until a photo is found.",
+  "Spots of proposed destinations wait on the owner approving the destination; fallbacks are listed on each destination."
+ ]
+}

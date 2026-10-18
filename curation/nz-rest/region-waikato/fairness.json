@@ -1,0 +1,1103 @@
+{
+ "region": "waikato",
+ "inside_destinations": 24,
+ "standalone": 6,
+ "new_destinations": 0,
+ "existing_kept_unchanged": 23,
+ "covered_by_existing_destination": [
+  "Raglan",
+  "Hamilton"
+ ],
+ "lowest_kept": [
+  {
+   "name": "raglan-1",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "Pinnacles Track",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Buffalo Beach",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Paku",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "The Waterworks",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Ocean Beach (Tairua)",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Whale Bay",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Tongariro National Trout Centre",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Mount Te Aroha",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "waitomo-3",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "waitomo-4",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "taupo-2",
+   "views": 0,
+   "counted_sources": 1
+  }
+ ],
+ "stronger_left_out": [
+  {
+   "name": "Hauraki Gulf",
+   "views": 25501,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Region, river or marine area, not a single stop."
+  },
+  {
+   "name": "Coromandel Peninsula",
+   "views": 21949,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Region, river or marine area, not a single stop."
+  },
+  {
+   "name": "Waikato River",
+   "views": 19292,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Region, river or marine area, not a single stop."
+  },
+  {
+   "name": "Waikato Stadium",
+   "views": 14430,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Event venue visited for matches or annual events, not a permanent visitor draw."
+  },
+  {
+   "name": "Ngāruawāhia",
+   "views": 13163,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Marae not open to casual visitors; town has no visitor stop; one source."
+  },
+  {
+   "name": "Te Kuiti",
+   "views": 12956,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Transit town; the shearer statue (kept) is the stop; one source."
+  },
+  {
+   "name": "Seddon Park",
+   "views": 10257,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Event venue visited for matches or annual events, not a permanent visitor draw."
+  },
+  {
+   "name": "Waihi",
+   "views": 10118,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Boundary case for another region; not judged on merit here. Case for: gold-mine town; against: no counted source in this region pass."
+  },
+  {
+   "name": "Waihi Beach",
+   "views": 6554,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Boundary case for another region; not judged on merit here."
+  },
+  {
+   "name": "Hamilton New Zealand Temple",
+   "views": 5966,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Temple not open to visitors; exterior only."
+  },
+  {
+   "name": "Mercury Islands",
+   "views": 5605,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Offshore islands with no public access or only Wikipedia sourcing."
+  },
+  {
+   "name": "Mount Taupiri",
+   "views": 5233,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Sacred Māori hill, Wikipedia-only, not a visitor stop."
+  },
+  {
+   "name": "Matarangi",
+   "views": 4859,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: DOC Whangapoua and Matarangi area page names the beach; sandy surf beach. Against: mostly a holiday-home estate; one source."
+  },
+  {
+   "name": "Kinloch",
+   "views": 4677,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small lakeside settlement; one source, no distinct stop."
+  },
+  {
+   "name": "Lake Karapiro",
+   "views": 4404,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Hydro lake with Wikipedia-only sourcing; no visitor stop named."
+  },
+  {
+   "name": "Pirongia",
+   "views": 4069,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Small service town; its draw is Mount Pirongia, already kept."
+  },
+  {
+   "name": "Karangahake Gorge",
+   "views": 3933,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Boundary case for another region (Bay of Plenty side); not judged on merit here. Case for: well-known gorge walk/rail-trail section with Windows Walk; against: filed elsewhere."
+  },
+  {
+   "name": "Firth of Thames",
+   "views": 3253,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Region, river or marine area, not a single stop."
+  },
+  {
+   "name": "New Chums Beach",
+   "views": 3213,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "For: famous walk-in white-sand beach (a 20-minute coastal walk from Whangapoua), regularly named as one of the best beaches; the sort of beach a guide names. Against: no counted source verified in this run (Wikipedia only); needs Wikivoyage/LP/DOC citation. Pair with Whangapoua Beach."
+  },
+  {
+   "name": "Pihanga",
+   "views": 2907,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Boundary case (Tongariro National Park edge); not judged on merit; Wikipedia only."
+  },
+  {
+   "name": "Slipper Island",
+   "views": 2643,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Offshore islands with no public access or only Wikipedia sourcing."
+  },
+  {
+   "name": "Bridal Veil Falls (Raglan)",
+   "views": 2467,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Duplicate of the existing Bridal Veil Falls spot (raglan-2)."
+  },
+  {
+   "name": "The Base",
+   "views": 2225,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Shopping mall, not an attraction."
+  },
+  {
+   "name": "Aldermen Islands",
+   "views": 2222,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Offshore islands with no public access or only Wikipedia sourcing."
+  },
+  {
+   "name": "Lake Rotoaira",
+   "views": 2053,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "DOC lists it only for fishing licences; no visitor stop."
+  },
+  {
+   "name": "Whangapoua Beach",
+   "views": 1850,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: DOC area page names it; estuary and gateway to New Chums Beach. Against: one source; quiet village beach."
+  },
+  {
+   "name": "Arapuni Suspension Bridge",
+   "views": 1806,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Short stop at one bridge, one source."
+  },
+  {
+   "name": "Kūaotunu",
+   "views": 1723,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia-only sourcing, no visitor guide names it."
+  },
+  {
+   "name": "Onemana",
+   "views": 1690,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia-only sourcing, no visitor guide names it."
+  },
+  {
+   "name": "Kopuatai Peat Dome",
+   "views": 1631,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Scientific reserve, not open to visitors."
+  },
+  {
+   "name": "Whangamarino Wetland",
+   "views": 1441,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Ramsar scientific wetland; only a short DOC walk to a redoubt; one source."
+  },
+  {
+   "name": "Cuvier Island",
+   "views": 1375,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Offshore islands with no public access or only Wikipedia sourcing."
+  },
+  {
+   "name": "Mystery Creek Events Centre",
+   "views": 1251,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Event venue visited for matches or annual events, not a permanent visitor draw."
+  },
+  {
+   "name": "Coromandel Forest Park",
+   "views": 1231,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Container park; its tracks (Pinnacles, Kauaeranga) are the spots."
+  },
+  {
+   "name": "Otama Beach",
+   "views": 1174,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia-only sourcing, no visitor guide names it."
+  },
+  {
+   "name": "Lake Ngaroto",
+   "views": 1139,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Local park, lake or trail with no visitor-oriented source naming it."
+  },
+  {
+   "name": "Waiomu",
+   "views": 971,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Duplicate of Waiomu Kauri Grove, a minor settlement."
+  },
+  {
+   "name": "Cape Colville",
+   "views": 934,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only; remote end of a gravel road, no visitor source describes a stop."
+  },
+  {
+   "name": "Waikaretu Caves",
+   "views": 888,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source and visitor access unverified."
+  },
+  {
+   "name": "Huka Prawn Park",
+   "views": 863,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Paid prawn farm/restaurant; no counted source (Wikivoyage Taupo only mentions Huka Falls Jet next to it)."
+  },
+  {
+   "name": "Gardner's Gut",
+   "views": 832,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source and visitor access unverified."
+  },
+  {
+   "name": "Lake Arapuni",
+   "views": 764,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Hydro lake with Wikipedia-only sourcing; no visitor stop named."
+  },
+  {
+   "name": "Beale Cottage",
+   "views": 671,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; small house museum, not named by any visitor guide."
+  },
+  {
+   "name": "Pirongia Forest Park",
+   "views": 657,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Container park whose draw is Mount Pirongia and its tracks; duplicate of that spot."
+  },
+  {
+   "name": "Thames School of Mines",
+   "views": 599,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small local museum, one source."
+  },
+  {
+   "name": "Mount Pureora",
+   "views": 528,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Short track inside Pureora Forest Park alongside the Timber Trail; part of a larger place."
+  },
+  {
+   "name": "Hamilton Riverside Walk",
+   "views": 484,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Local park, lake or trail with no visitor-oriented source naming it."
+  },
+  {
+   "name": "Hamilton City Libraries",
+   "views": 482,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Civic library, fails visit test."
+  },
+  {
+   "name": "Lake Kimihia",
+   "views": 480,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Local park, lake or trail with no visitor-oriented source naming it."
+  },
+  {
+   "name": "Thornton Bay",
+   "views": 468,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia-only sourcing, no visitor guide names it."
+  },
+  {
+   "name": "Victoria Battery",
+   "views": 437,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Part of Karangahake Gorge (itself a boundary case flagged for another region)."
+  },
+  {
+   "name": "Karamu Cave",
+   "views": 431,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source and visitor access unverified."
+  },
+  {
+   "name": "Rings Beach",
+   "views": 334,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Quiet residential beach, one source."
+  },
+  {
+   "name": "Hamilton Town Belt",
+   "views": 250,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Local park, lake or trail with no visitor-oriented source naming it."
+  },
+  {
+   "name": "Waitomo Caves Discovery Centre",
+   "views": 235,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Mainly a booking/information office; not a distinct draw."
+  },
+  {
+   "name": "Zeelong Tea Estate",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Mostly a shop and cafe with a short tour; one counted source. Reject (venue that is mainly shop/restaurant)."
+  },
+  {
+   "name": "Firth Tower Museum",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: 13 historic buildings, an hour or more, public; Wikivoyage Matamata lists it. Against: one source, buildings open Thu-Mon only, next to Hobbiton traffic."
+  },
+  {
+   "name": "Cambridge Museum",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small local-history museum, one source, under half an hour of interest."
+  },
+  {
+   "name": "Camjet",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Operator or tour, not a place; the place it goes to is the spot."
+  },
+  {
+   "name": "Te Awamutu Museum",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small local-history museum, one source, local interest."
+  },
+  {
+   "name": "Te Awamutu Space Centre",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Advance-booked visits only, not open when a visitor arrives."
+  },
+  {
+   "name": "Alphra Lavender Farm",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Farm shop, no counted visitor source beyond a listing; not a distinct draw."
+  },
+  {
+   "name": "Railway Villa Heritage Centre",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Tiny villa, afternoon-only, one source."
+  },
+  {
+   "name": "Raglan and District Museum",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small local-history museum, one source."
+  },
+  {
+   "name": "Te Toto Gorge",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Trailhead and coastal lookout of the Mount Karioi walk (existing raglan-3); part of a larger spot."
+  },
+  {
+   "name": "Raglan Surfing School",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Operator or tour, not a place; the place it goes to is the spot."
+  },
+  {
+   "name": "UP Surf Coaching",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Operator or tour, not a place; the place it goes to is the spot."
+  },
+  {
+   "name": "Raglan Creative Market",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Periodic market (weekly or monthly), not a permanent venue."
+  },
+  {
+   "name": "Raglan Growers Market",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Periodic market (weekly or monthly), not a permanent venue."
+  },
+  {
+   "name": "Kaniwhaniwha Caves",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Minor DOC caves inside Pirongia Forest Park, one source, little to do."
+  },
+  {
+   "name": "Centre of the North Island Walk",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Short track in Pureora Forest Park; part of a larger place, one source."
+  },
+  {
+   "name": "Hakarimata Rail Trail",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Part of Hakarimata Scenic Reserve, covered by the Hakarimata Summit Track."
+  },
+  {
+   "name": "Legendary Black Water Rafting Co",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Operator or tour, not a place; the place it goes to is the spot."
+  },
+  {
+   "name": "Piripiri Cave",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Short minor DOC walk, one source."
+  },
+  {
+   "name": "Waitomo Walkway",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Minor walkway within the Waitomo caves area; part of a larger place."
+  },
+  {
+   "name": "Wairakei Geothermal Field",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Working power-station steam field seen from the road (Wikivoyage); pull-out view; Craters of the Moon is the real stop."
+  },
+  {
+   "name": "Taupō Museum",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small local-history museum, one source."
+  },
+  {
+   "name": "Waipahihi Botanical Gardens",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Local park, one source."
+  },
+  {
+   "name": "Lions Walk",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Local walk, one source."
+  },
+  {
+   "name": "Huka Falls Jet",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Operator or tour, not a place; the place it goes to is the spot."
+  },
+  {
+   "name": "Rapids Jet",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Operator or tour, not a place; the place it goes to is the spot."
+  },
+  {
+   "name": "NZ River Jet",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Operator or tour, not a place; the place it goes to is the spot."
+  },
+  {
+   "name": "Taupō Tandem Skydiving",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Operator or tour, not a place; the place it goes to is the spot."
+  },
+  {
+   "name": "The Barbary",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Vessel or ferry, a way of getting somewhere, not a place."
+  },
+  {
+   "name": "Tongariro River Trail",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Local riverside trail, one source."
+  },
+  {
+   "name": "School of Mines Museum",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small local museum, one source."
+  },
+  {
+   "name": "Coromandel Goldfield Centre and Stamper Battery",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: working stamper battery with guided hands-on gold-milling, an hour; Wikivoyage Coromandel Town lists it. Against: one source, small, in a town already holding Driving Creek Railway and the Waterworks."
+  },
+  {
+   "name": "Kauaeranga Kauri Trail",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Short walk inside Kauaeranga Valley, one source; part of a larger spot."
+  },
+  {
+   "name": "Hoffman's Pool",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Short walk inside Kauaeranga Valley, one source; part of a larger spot."
+  },
+  {
+   "name": "Cookson Kauri Walk",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Short walk inside Kauaeranga Valley, one source; part of a larger spot."
+  },
+  {
+   "name": "Kauri Driving Dams",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Short walk inside Kauaeranga Valley, one source; part of a larger spot."
+  },
+  {
+   "name": "Waiomu Kauri Grove",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Short walk, one source."
+  },
+  {
+   "name": "Golden Crown Mine Tour",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Operator or tour, not a place; the place it goes to is the spot."
+  },
+  {
+   "name": "Thames Historical Museum",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small local museum, one source."
+  },
+  {
+   "name": "Thames Small Gauge Railway",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small ride that runs Sunday afternoons only, not available whenever a visitor arrives."
+  },
+  {
+   "name": "War Memorial Monument and Lookout",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Minor memorial."
+  },
+  {
+   "name": "Shortland Wharf",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Mudflat and mangrove view of an old wharf; 10-minute stop, one source."
+  },
+  {
+   "name": "Karaka Bird Hide",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Niche short stop, one source."
+  },
+  {
+   "name": "Thames Markets",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Periodic market (weekly or monthly), not a permanent venue."
+  },
+  {
+   "name": "Gemstone Bay Snorkel Trail",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Part of the Cathedral Cove / Hahei area and marine reserve; near-duplicate."
+  },
+  {
+   "name": "Te Pare Historic Reserve",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "15-minute walk beside Hahei; overlaps it."
+  },
+  {
+   "name": "Mercury Bay Museum",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small local museum, one source."
+  },
+  {
+   "name": "HMS Buffalo Memorial",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Minor memorial."
+  },
+  {
+   "name": "Shakespeare Cliff",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Short viewpoint stop with a memorial; one source."
+  },
+  {
+   "name": "Lonely Bay",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Overlaps Shakespeare Cliff, same stop."
+  },
+  {
+   "name": "Maramaratotara Track",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Minor bush track from a ferry landing, one source; not a distinct draw."
+  },
+  {
+   "name": "Whitianga Rock Walk",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Short coastal walk, one source."
+  },
+  {
+   "name": "The Lost Spring",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Paid spa venue; one source."
+  },
+  {
+   "name": "Scenic Cathedral Cove Cruises",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Operator or tour, not a place; the place it goes to is the spot."
+  },
+  {
+   "name": "Cooks Beach Ferry",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Vessel or ferry, a way of getting somewhere, not a place."
+  },
+  {
+   "name": "Thames Coast Road",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A drive, not a place."
+  },
+  {
+   "name": "Tairua Harbour",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Duplicate of Tairua and its beaches."
+  },
+  {
+   "name": "Pauanui Trig Track",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Local short track; Paku and Pauanui beaches cover the area."
+  },
+  {
+   "name": "Karangahake Windows Walk",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Part of Karangahake Gorge (itself a boundary case flagged for another region)."
+  },
+  {
+   "name": "Athenree Hot Springs",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Boundary case for another region; not judged on merit here."
+  },
+  {
+   "name": "Hakarimata Walkway",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Part of Hakarimata Scenic Reserve, covered by the Hakarimata Summit Track."
+  },
+  {
+   "name": "St Peter's Cathedral, Hamilton",
+   "views": null,
+   "counted_sources": null,
+   "verdict": "reject",
+   "reason": "Exterior-only church; Wikipedia category only, no visitor source."
+  },
+  {
+   "name": "Rangiriri Paddle Steamer",
+   "views": null,
+   "counted_sources": null,
+   "verdict": "reject",
+   "reason": "Wikipedia only; the surviving hull is a museum exhibit at the Waikato Museum (existing hamilton-3), part of a larger spot; visiting unverified."
+  },
+  {
+   "name": "Te Whanganui-A-Hei Marine Reserve",
+   "views": null,
+   "counted_sources": null,
+   "verdict": "reject",
+   "reason": "A marine area, not a single stop; its draw (Cathedral Cove, Hahei, Gemstone Bay snorkelling) is already covered by existing coromandel-1 and coromandel-3; the recall checker wrongly matched it to Cathedral Cove."
+  },
+  {
+   "name": "Coromandel Town",
+   "views": null,
+   "counted_sources": null,
+   "verdict": "reject",
+   "reason": "Same place as existing Coromandel (coromandel-5); duplicate."
+  }
+ ],
+ "strongest_outsiders": {
+  "kept_outside_every_span": [
+   {
+    "name": "Te Aroha",
+    "views": 18266,
+    "counted_sources": 1,
+    "kept_as": "standalone"
+   },
+   {
+    "name": "Tirau Giant Dog and Sheep",
+    "views": 6202,
+    "counted_sources": 2,
+    "kept_as": "standalone"
+   },
+   {
+    "name": "Port Waikato",
+    "views": 4980,
+    "counted_sources": 1,
+    "kept_as": "standalone"
+   },
+   {
+    "name": "Timber Trail",
+    "views": 1583,
+    "counted_sources": 1,
+    "kept_as": "standalone"
+   },
+   {
+    "name": "Hauraki Rail Trail",
+    "views": 1043,
+    "counted_sources": 1,
+    "kept_as": "standalone"
+   },
+   {
+    "name": "Mount Te Aroha",
+    "views": 0,
+    "counted_sources": 1,
+    "kept_as": "standalone"
+   }
+  ],
+  "left_out_or_review_outside_spans": [
+   {
+    "name": "Waihi",
+    "views": 10118,
+    "verdict": "review",
+    "reason": "Boundary case flagged for the Bay of Plenty pass (DOC/enumerator), not judged on merit here; gold-mine town with no counted source in this pass."
+   },
+   {
+    "name": "Waihi Beach",
+    "views": 6554,
+    "verdict": "review",
+    "reason": "Boundary case for the Bay of Plenty pass; not judged here."
+   },
+   {
+    "name": "Karangahake Gorge",
+    "views": 3933,
+    "verdict": "review",
+    "reason": "Boundary case for the Bay of Plenty pass; well-known gorge walk to be judged there."
+   },
+   {
+    "name": "Mount Taupiri",
+    "views": 5233,
+    "verdict": "reject",
+    "reason": "Sacred Māori hill, Wikipedia-only, no counted source and not a visitor stop (fails What qualifies 1 and 2)."
+   },
+   {
+    "name": "Lake Karapiro",
+    "views": 4404,
+    "verdict": "reject",
+    "reason": "Hydro lake with Wikipedia-only sourcing; no visitor stop named (fails 1)."
+   },
+   {
+    "name": "Whangamarino Wetland",
+    "views": 1441,
+    "verdict": "reject",
+    "reason": "Ramsar scientific wetland, one source, only a short DOC walk (fails 3)."
+   }
+  ]
+ },
+ "benchmark": {
+  "applicable_to_waikato": "Hobbiton (hamilton-2) and Waitomo caves kept; quirky roadside icons kept (Tirau dog and sheep, Te Kuiti shearer statue, The Big Apple), matching the Ohakune Carrot precedent; operators and vessels rejected (Huka Falls Jet, Rapids Jet, Camjet, Raglan Surfing School, The Barbary), as TSS Earnslaw was; negative benchmarks rejected (Hamilton New Zealand Temple not open, Hamilton City Libraries civic, The Base mall, Raglan and Thames weekly markets, local museums, Thames War Memorial minor memorial); gateway-journey case Turangi kept as a gateway town stop, with the Tongariro Alpine Crossing sent to review as a boundary case.",
+  "not_in_this_region": [
+   "Red Rocks",
+   "Kapiti Island",
+   "Lake Coleridge",
+   "Sumner/Godley Head/Lyttelton",
+   "Birdlings Flat",
+   "Paradise",
+   "Hump Ridge Track",
+   "St Kilda Beach",
+   "Ohakune Carrot",
+   "Ninety Mile Beach",
+   "Pipiriki"
+  ],
+  "result": "pass for the Waikato-relevant items"
+ },
+ "review_list_for_owner": [
+  {
+   "name": "Otorohanga Kiwi House",
+   "verdict": "review",
+   "views": 0,
+   "counted_sources": 0,
+   "case": "For: well-known kiwi and native-bird house, a 1-2 hour visit on the road to Waitomo, widely promoted by guides. Against: no counted source found in the pages checked (no Wikivoyage Otorohanga page; WaikatoNZ places list does not name it); needs one counted source (Lonely Planet / WaikatoNZ attraction page) before keeping."
+  },
+  {
+   "name": "Firth Tower Museum",
+   "verdict": "review",
+   "views": 0,
+   "counted_sources": 1,
+   "case": "For: 13 historic buildings, an hour or more, public; Wikivoyage Matamata lists it. Against: one source, buildings open Thu-Mon only, next to Hobbiton traffic."
+  },
+  {
+   "name": "Coromandel Goldfield Centre and Stamper Battery",
+   "verdict": "review",
+   "views": 0,
+   "counted_sources": 1,
+   "case": "For: working stamper battery with guided hands-on gold-milling, an hour; Wikivoyage Coromandel Town lists it. Against: one source, small, in a town already holding Driving Creek Railway and the Waterworks."
+  },
+  {
+   "name": "New Chums Beach",
+   "verdict": "review",
+   "views": 3213,
+   "counted_sources": 0,
+   "case": "For: famous walk-in white-sand beach (a 20-minute coastal walk from Whangapoua), regularly named as one of the best beaches; the sort of beach a guide names. Against: no counted source verified in this run (Wikipedia only); needs Wikivoyage/LP/DOC citation. Pair with Whangapoua Beach."
+  },
+  {
+   "name": "Whangapoua Beach",
+   "verdict": "review",
+   "views": 1850,
+   "counted_sources": 1,
+   "case": "For: DOC area page names it; estuary and gateway to New Chums Beach. Against: one source; quiet village beach."
+  },
+  {
+   "name": "Matarangi",
+   "verdict": "review",
+   "views": 4859,
+   "counted_sources": 1,
+   "case": "For: DOC Whangapoua and Matarangi area page names the beach; sandy surf beach. Against: mostly a holiday-home estate; one source."
+  },
+  {
+   "name": "Karangahake Gorge",
+   "verdict": "review",
+   "views": 3933,
+   "counted_sources": 1,
+   "case": "Boundary case for another region (Bay of Plenty side); not judged on merit here. Case for: well-known gorge walk/rail-trail section with Windows Walk; against: filed elsewhere."
+  },
+  {
+   "name": "Waihi",
+   "verdict": "review",
+   "views": 10118,
+   "counted_sources": 0,
+   "case": "Boundary case for another region; not judged on merit here. Case for: gold-mine town; against: no counted source in this region pass."
+  },
+  {
+   "name": "Waihi Beach",
+   "verdict": "review",
+   "views": 6554,
+   "counted_sources": 1,
+   "case": "Boundary case for another region; not judged on merit here."
+  },
+  {
+   "name": "Athenree Hot Springs",
+   "verdict": "review",
+   "views": 0,
+   "counted_sources": 1,
+   "case": "Boundary case for another region; not judged on merit here."
+  },
+  {
+   "name": "Pihanga",
+   "verdict": "review",
+   "views": 2907,
+   "counted_sources": 0,
+   "case": "Boundary case (Tongariro National Park edge); not judged on merit; Wikipedia only."
+  },
+  {
+   "name": "Tongariro Alpine Crossing",
+   "verdict": "review",
+   "views": 26637,
+   "counted_sources": 1,
+   "case": "Boundary case for another region (Tongariro); not judged on merit here (existing tongariro-1)."
+  },
+  {
+   "name": "Mount Ngauruhoe",
+   "verdict": "review",
+   "views": 37506,
+   "counted_sources": 0,
+   "case": "Boundary case for another region (Tongariro); not judged on merit here (existing tongariro-2)."
+  }
+ ]
+}

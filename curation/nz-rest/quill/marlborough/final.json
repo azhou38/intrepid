@@ -1,0 +1,275 @@
+{
+ "spots": {
+  "marlborough-sounds-8": {
+   "name": "Anakiwa",
+   "icon": "🏖️",
+   "category": "nature",
+   "bio": "The Grove Arm settlement where the 73.5 km Queen Charlotte Track ends, with a public pier and car park.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": {
+    "latitude": -41.264,
+    "longitude": 173.9206
+   },
+   "notes": [
+    "Swimming and water-taxi pickup dropped from the bio (unsourced); bio uses the OSM pier and car park.",
+    "Hours 'Open 24 hours' is an open-access assumption."
+   ],
+   "held": false
+  },
+  "marlborough-sounds-9": {
+   "name": "Snout Walkway",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A bush-covered peninsula walk from Picton to a lookout at the entrance to Waikawa Bay, with tracks up to 3.5 hours.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 4,
+   "free": true,
+   "coordinates": {
+    "latitude": -41.2506,
+    "longitude": 174.04881
+   },
+   "notes": [
+    "Coordinates are the headland lookout (OSM 'The Snout View'), not the trailhead; trailhead could not be pinned.",
+    "No ticketUrl: no steward page verified (Marlborough District Council); the tourism board page was not used."
+   ],
+   "held": false
+  },
+  "marlborough-sounds-10": {
+   "name": "Nydia Track",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 27 km, two-day tramp between Kaiuma Bay and Duncan Bay over two saddles, with a campsite at Nydia Bay.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 16,
+   "visitHoursMax": 20,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/pelorus-and-kenepuru-sounds-area/things-to-do/tracks/nydia-track/",
+   "coordinates": {
+    "latitude": -41.23477,
+    "longitude": 173.79079
+   },
+   "notes": [
+    "Held for a photo.",
+    "Visit hours 16-20 are an unsourced two-day estimate (DOC: 9.5 hr total tramping).",
+    "Cost: free per DOC (no track fee); Nydia Bay campsite fee not found."
+   ],
+   "held": true
+  },
+  "blenheim-4": {
+   "name": "Wairau Lagoons",
+   "icon": "🦆",
+   "category": "nature",
+   "bio": "A flat 3-hour loop around the lagoon shoreline to the wreck of the Waverley, good for watching birds.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/blenheim-area/things-to-do/tracks/wairau-lagoons-walkway/",
+   "coordinates": {
+    "latitude": -41.5326,
+    "longitude": 174.0459
+   },
+   "notes": [
+    "Hours 'Open 24 hours' is an open-access assumption (DOC gives none)."
+   ],
+   "held": false
+  },
+  "blenheim-5": {
+   "name": "Whites Bay",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A surf beach with a DOC campsite 9 km north of Blenheim, and a 2.5 km track on to Rarangi.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/blenheim-area/things-to-do/campsites/whites-bay-campsite",
+   "coordinates": {
+    "latitude": -41.38698,
+    "longitude": 174.05719
+   },
+   "notes": [
+    "No Wikipedia article: wiki omitted.",
+    "Beach free; DOC campsite $15 adult/night, not the spot's cost.",
+    "Dropped the unverified 'best sea swimming' claim."
+   ],
+   "held": false
+  },
+  "blenheim-6": {
+   "name": "Highfield Estate",
+   "icon": "🍷",
+   "category": "entertainment",
+   "bio": "A Tuscan-inspired winery whose tower looks over the Wairau Valley, with tastings and lunch on the patio.",
+   "hours": "10:00 AM – 5:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -41.52855,
+    "longitude": 173.83751
+   },
+   "notes": [
+    "Held for a photo.",
+    "needs_owner: cost (cellar-door price not found).",
+    "Operating status uncertain (conflicting reports that the cellar door is closed); hours 10-5 daily are Wikivoyage's summer-only figure. Recommend owner decide whether to keep.",
+    "ticketUrl left out: highfield.co.nz redirects to a gambling spam site; no other official site found."
+   ],
+   "held": true
+  },
+  "blenheim-7": {
+   "name": "Brancott Estate",
+   "icon": "🍷",
+   "category": "entertainment",
+   "bio": "A Marlborough winery with a restaurant, shop and theatre, and vineyard bike tours.",
+   "hours": "10:00 AM – 4:30 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -41.54047,
+    "longitude": 173.84086
+   },
+   "notes": [
+    "Held for a photo.",
+    "needs_owner: cost (no tasting fee found).",
+    "Hours 10-4:30 are Wikivoyage's, not the operator's; whether the visitor centre is still open is unconfirmed.",
+    "ticketUrl left out: brancottestate.com is a wine shop with no visit page (weak candidate per research).",
+    "Bio drops the unsourced seasonal falcon encounter; bike tour is from Lonely Planet (may be out of date)."
+   ],
+   "held": true
+  },
+  "mount-richmond-forest-park": {
+   "name": "Mount Richmond Forest Park",
+   "icon": "🌲",
+   "category": "nature",
+   "bio": "A 166,000 ha forest park, the second largest in New Zealand, with swimming holes and short walks at Top Valley.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/mount-richmond-forest-park/",
+   "coordinates": {
+    "latitude": -41.45852,
+    "longitude": 173.70637
+   },
+   "notes": [
+    "Coordinates are Onamalutu Campsite; Top Valley/Forks Walk car park not pinned.",
+    "Hours: open-access assumption; access roads can close for forestry or fire danger.",
+    "Bio mentions Top Valley, reached from Northbank (placement may want the park span checked)."
+   ],
+   "held": false
+  },
+  "marfells-beach": {
+   "name": "Marfells Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A beach with a DOC campsite and a low-tide route along the coast to the Cape Campbell lighthouse.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/marfells-beach-area/",
+   "coordinates": {
+    "latitude": -41.72548,
+    "longitude": 174.20446
+   },
+   "notes": [
+    "Held for a photo.",
+    "No Wikipedia article: wiki omitted.",
+    "Coordinates are the DOC campsite.",
+    "Bio says low-tide route to the lighthouse: DOC calls it an unmarked expert route."
+   ],
+   "held": true
+  },
+  "lake-grassmere": {
+   "name": "Lake Grassmere",
+   "icon": "🌸",
+   "category": "nature",
+   "bio": "A shallow lagoon where seawater is turned into salt, with the white piles visible from State Highway 1.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "coordinates": {
+    "latitude": -41.7204,
+    "longitude": 174.1346
+   },
+   "notes": [
+    "Placement caveat: marginal on COVERAGE test 2, roadside viewing only from SH1/Kaparu Road; reviewer to confirm keep.",
+    "Pink-pond claim left out (source blocked).",
+    "No ticketUrl: Dominion Salt has no visitor page."
+   ],
+   "held": false
+  },
+  "molesworth-station": {
+   "name": "Molesworth Station",
+   "icon": "🐄",
+   "category": "nature",
+   "bio": "New Zealand's largest farm, crossed in summer by the 207 km Acheron Road over Island Saddle.",
+   "hours": "7:00 AM – 7:00 PM",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/marlborough/places/molesworth-reserve/",
+   "coordinates": {
+    "latitude": -42.08512,
+    "longitude": 173.27021
+   },
+   "notes": [
+    "Coordinates are the Cob Cottage gateway on the Awatere side.",
+    "Hours apply to Acheron Road (open 1 Oct to Easter Monday / second Monday in April).",
+    "Name kept as Molesworth Station (matches Wikipedia); DOC calls it Molesworth Recreation Reserve.",
+    "Bio 'in summer' paraphrases the 1 Oct to Easter window."
+   ],
+   "held": false
+  },
+  "rainbow-ski-area": {
+   "name": "Rainbow Ski Area",
+   "icon": "⛷️",
+   "category": "entertainment",
+   "bio": "A club-run ski area near St Arnaud, open weekends in season and reached by a road with five fords.",
+   "hours": "Weekends, ski season only",
+   "visitHoursMin": 4,
+   "visitHoursMax": 7,
+   "costMin": 130,
+   "costMax": 130,
+   "currency": "NZD",
+   "ticketUrl": "https://skirainbow.co.nz/",
+   "coordinates": {
+    "latitude": -41.8721,
+    "longitude": 172.857
+   },
+   "notes": [
+    "Held for a photo.",
+    "Placement caveat: standalone spot in the Nelson Lakes area, not Marlborough proper; confirm the standalone decision and add standalone country/countryCode/continent/timezone fields (New Zealand, NZ, Oceania, Pacific/Auckland).",
+    "Cost is the adult non-member lift day pass ($130); non-skiers are asked for a $10 donation.",
+    "Season dates for 2026-27 unverified; hours are a qualifier.",
+    "Placement name was 'Rainbow Skifield'; Wikipedia/operator name 'Rainbow Ski Area' used."
+   ],
+   "held": true
+  }
+ },
+ "existing_fixes": {
+  "marlborough-sounds-2": {
+   "wiki": "Meretoto / Ship Cove",
+   "note": "Check the lead image against IMAGES.md before accepting."
+  },
+  "blenheim": {
+   "description": "Blenheim is the hub of Marlborough, New Zealand's largest wine region and the place that put its zesty Sauvignon Blanc on the world map. Sunny days and cool nights on the Wairau Plains suit well over a hundred wineries, many with cellar doors and vineyard restaurants, best explored by bike or on a tasting tour. It is also home to the Omaka Aviation Heritage Centre, which houses rare First and Second World War aircraft.",
+   "source": "https://omaka.org.nz/"
+  }
+ },
+ "held": [
+  "blenheim-6",
+  "blenheim-7",
+  "marfells-beach",
+  "marlborough-sounds-10",
+  "rainbow-ski-area"
+ ],
+ "notes": [
+  "Cost left out for blenheim-6 and blenheim-7 (needs_owner).",
+  "All bios pass bio-fit.py and contain no MARKETING words."
+ ]
+}

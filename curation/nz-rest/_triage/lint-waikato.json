@@ -1,0 +1,41 @@
+{
+ "generated": "2026-10-18T03:29:49.803Z",
+ "scope": {
+  "region": "waikato"
+ },
+ "issues": [
+  {
+   "kind": "spot",
+   "id": "coromandel-1",
+   "name": "Cathedral Cove",
+   "checks": [
+    {
+     "check": "wiki",
+     "detail": "redirects to \"Whanganui A Hei (Cathedral Cove) Marine Reserve\" — set `wiki` to it, or check it's this place"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "coromandel-2",
+   "name": "Hot Water Beach",
+   "checks": [
+    {
+     "check": "wiki",
+     "detail": "no Wikipedia article (photo lookup will fall back to search)"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "waitomo-4",
+   "name": "Marokopa Falls",
+   "checks": [
+    {
+     "check": "wiki",
+     "detail": "redirects to \"Marokopa River\" — set `wiki` to it, or check it's this place"
+    }
+   ]
+  }
+ ]
+}

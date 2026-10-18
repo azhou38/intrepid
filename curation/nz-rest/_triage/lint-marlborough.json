@@ -1,0 +1,30 @@
+{
+ "generated": "2026-10-18T03:30:20.652Z",
+ "scope": {
+  "region": "marlborough"
+ },
+ "issues": [
+  {
+   "kind": "destination",
+   "id": "blenheim",
+   "name": "Blenheim",
+   "checks": [
+    {
+     "check": "voice",
+     "detail": "description: \"world-class\""
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "marlborough-sounds-2",
+   "name": "Ship Cove",
+   "checks": [
+    {
+     "check": "wiki",
+     "detail": "a disambiguation page — set `wiki` to the exact article"
+    }
+   ]
+  }
+ ]
+}

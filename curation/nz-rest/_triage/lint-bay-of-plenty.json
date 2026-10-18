@@ -1,0 +1,63 @@
+{
+ "generated": "2026-10-18T03:29:58.088Z",
+ "scope": {
+  "region": "bay-of-plenty"
+ },
+ "issues": [
+  {
+   "kind": "spot",
+   "id": "tauranga-1",
+   "name": "Mauao",
+   "checks": [
+    {
+     "check": "wiki",
+     "detail": "redirects to \"Mount Maunganui (mountain)\" — set `wiki` to it, or check it's this place"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "whakatane-2",
+   "name": "Ōhope Beach",
+   "checks": [
+    {
+     "check": "wiki",
+     "detail": "redirects to \"Ōhope\" — set `wiki` to it, or check it's this place"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "rotorua-1",
+   "name": "Wai-O-Tapu",
+   "checks": [
+    {
+     "check": "wiki",
+     "detail": "redirects to \"Waiotapu\" — set `wiki` to it, or check it's this place"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "rotorua-5",
+   "name": "Waimangu Volcanic Valley",
+   "checks": [
+    {
+     "check": "wiki",
+     "detail": "no Wikipedia article (photo lookup will fall back to search)"
+    }
+   ]
+  },
+  {
+   "kind": "spot",
+   "id": "rotorua-6",
+   "name": "Hell's Gate Geothermal Park and Mud Spa",
+   "checks": [
+    {
+     "check": "wiki",
+     "detail": "no Wikipedia article (photo lookup will fall back to search)"
+    }
+   ]
+  }
+ ]
+}

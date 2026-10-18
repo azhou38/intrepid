@@ -1,0 +1,714 @@
+{
+ "region": "chatham-islands",
+ "generated": "2026-10-17",
+ "entries": [
+  {
+   "id": "chatham-islands-7",
+   "name": "Basalt Columns",
+   "kind": "new",
+   "held": false,
+   "facts": [
+    {
+     "claim": "Hexagonal/columnar olivine basalt at Ohira Bay on a south-facing coast of Petre Bay; formed from a ponded lava flow about 80 million years ago (Cretaceous); described as one of the most popular attractions on the islands.",
+     "source": "https://chathamislands.co.nz/see-do/attractions/basalt-columns/"
+    },
+    {
+     "claim": "On private property: access needs permission beforehand and payment of an entry fee. Ask your host/accommodation to arrange a trip, or contact Jonathon Reriti, ph 0277050073.",
+     "source": "https://chathamislands.co.nz/see-do/attractions/basalt-columns/"
+    },
+    {
+     "claim": "Wikivoyage: 'get a key from Hotel Chathams to open the gate'.",
+     "source": "https://en.wikivoyage.org/wiki/Chatham_Islands"
+    },
+    {
+     "claim": "Third-party hiking guide: access via Port Hutt Road, phone ahead and collect a gate key (many accommodation providers hold one), entry fee $25, drive to the end of the road after unlocking the gate, columns a short walk, allow at least an hour.",
+     "source": "https://extreme-pursuit.com/hiking-the-chatham-islands/"
+    },
+    {
+     "claim": "Moriori once quarried the columns for adzes; the five-sided shape inspired the design of Kopinga Marae.",
+     "source": "https://chathamislands.co.nz/see-do/attractions/basalt-columns/"
+    }
+   ],
+   "hours": "By arrangement (private land; gate key and permission needed)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "costMin": 25,
+   "costMax": 25,
+   "currency": "NZD",
+   "cost_status": "entry fee confirmed by tourism board (amount not stated); NZD 25 from one undated third-party blog; verify with Jonathon Reriti 0277050073",
+   "ticketUrl": "https://chathamislands.co.nz/see-do/attractions/basalt-columns/",
+   "ticketUrl_note": "No operator website exists (private farmland). This is Tourism Chatham Islands' own page for the attraction (loaded, title 'Basalt Columns'); it carries the landowner contact. Orchestrator may prefer null. How to book: ask accommodation host or Hotel Chatham (Wikivoyage says the gate key is held there) or phone the landowner; fee payable on arrival/permission.",
+   "coordinates_check": {
+    "current": [
+     -43.807,
+     -176.64908
+    ],
+    "source_point": [
+     -43.8070021,
+     -176.6490789
+    ],
+    "source": "OSM node 5315799275 tourism=attraction 'Basalt Columns' (via Photon); matches Wikivoyage",
+    "ok": true
+   },
+   "category": "nature",
+   "unverified": [
+    "Gate-key arrangement beyond Wikivoyage's mention of Hotel Chathams (Hotel Chatham's own pages do not mention it)",
+    "Fee amount (blog only)"
+   ]
+  },
+  {
+   "id": "chatham-islands-8",
+   "name": "Point Munning Seal Colony",
+   "kind": "new",
+   "held": true,
+   "facts": [
+    {
+     "claim": "Point Munning is part of a 47 ha conservation covenant owned by the Muirson family, with public access to watch a seal haul-out/rookery; seals present all year; also birdwatching (Pitt Island shags breed there).",
+     "source": "https://chathamislands.co.nz/see-do/attractions/point-munning/"
+    },
+    {
+     "claim": "Private land: permission beforehand and an entry fee; contact Muirson family ph 03 3050 022.",
+     "source": "https://chathamislands.co.nz/see-do/attractions/point-munning/"
+    },
+    {
+     "claim": "Go through the Murchison farm and park at the fence marking the covenant entrance; a short bush walk leads to the beach with a large seal colony; be quiet and don't get close.",
+     "source": "https://en.wikivoyage.org/wiki/Chatham_Islands"
+    },
+    {
+     "claim": "Hotel Chatham's Okawa walk (5 h one-way, guided) ends at Mission Bay, with Point Munning a further 2 km.",
+     "source": "https://www.hotelchatham.co.nz/discover/walks"
+    }
+   ],
+   "hours": "By arrangement (private land)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "costMin": null,
+   "costMax": null,
+   "currency": "NZD",
+   "cost_status": "UNVERIFIED: entry fee required but amount not published by any source found; ask Muirson family 03 3050 022. Do not publish a price; 'free' would be wrong.",
+   "ticketUrl": "https://chathamislands.co.nz/see-do/attractions/point-munning/",
+   "ticketUrl_note": "No operator site; tourism board page (loaded, title 'Point Munning') with landowner contact. Orchestrator may prefer null.",
+   "coordinates_check": {
+    "current": [
+     -43.72751,
+     -176.20684
+    ],
+    "source_point": [
+     -43.7274795,
+     -176.2068183
+    ],
+    "source": "OSM node tourism=attraction 'Seal colony' (map bbox query); cape node -43.7296,-176.2059 is 250 m south",
+    "ok": true
+   },
+   "category": "nature",
+   "unverified": [
+    "Entry fee amount",
+    "Hours/days"
+   ]
+  },
+  {
+   "id": "chatham-islands-9",
+   "name": "Admiral Gardens",
+   "kind": "new",
+   "held": true,
+   "facts": [
+    {
+     "claim": "Garden made for birds, bees and butterflies; includes Te Hau Kohaki Wetland Reserve, Ngatere Reserve coastal bush, sculptures and a dune walk to Long Beach; Kahukura Studio/shop on site; $10 pp; about 20 km from Waitangi; house, garden and studio guided or self-guided, phone ahead if guided (03 3050 448).",
+     "source": "https://chathamislands.co.nz/plan-your-visit/accommodation/admiral-garden/"
+    },
+    {
+     "claim": "Port Hutt Rd, 23 km / 50 min drive from Waitangi; book through Hotel Chathams.",
+     "source": "https://en.wikivoyage.org/wiki/Chatham_Islands"
+    },
+    {
+     "claim": "Hotel Chatham names Admiral Garden as a place to see the Chatham Islands forget-me-not en masse.",
+     "source": "https://www.hotelchatham.co.nz/discover/experience"
+    }
+   ],
+   "hours": "By arrangement (phone 03 3050 448)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "NZD",
+   "cost_status": "NZD 10 pp per tourism-board listing (undated)",
+   "ticketUrl": "https://chathamislands.co.nz/plan-your-visit/accommodation/admiral-garden/",
+   "ticketUrl_note": "No own website listed (Facebook page 'ngatereland' only). Tourism board listing (loaded, title 'Admiral Garden'). The URL sits under /accommodation/ because the owners also let a garden unit. Orchestrator may prefer null.",
+   "coordinates_check": {
+    "current": [
+     -43.804,
+     -176.6164
+    ],
+    "source_point": [
+     -43.8366889,
+     -176.551773
+    ],
+    "source": "OSM node tourism=attraction 'Admiral Garden' at the end of a dirt road off Port Hutt Road, 2.4 km from Long Beach (the dune walk destination). Wikivoyage's point is a spot along Port Hutt Rd 6+ km west, noted 'approximate'",
+    "ok": false
+   },
+   "move_to": [
+    -43.8366889,
+    -176.551773
+   ],
+   "category": "nature",
+   "unverified": [
+    "Opening days",
+    "Which of the two points is the true gate (OSM node adopted; verify)"
+   ]
+  },
+  {
+   "id": "chatham-islands-10",
+   "name": "Awatotara Bush Coastal Walk",
+   "kind": "new",
+   "held": true,
+   "facts": [
+    {
+     "claim": "Awatotara Walk: 2.5 to 3 hour walk, independent $15 pp or guided $20 pp (minimum 6 people); creek crossings; full-day guided Tuku Tour $80 pp (min 3). Tuku Tours, Tuku Rd, ph +64 3 3050351 (Liz and Bruce Tuanui).",
+     "source": "https://en.wikivoyage.org/wiki/Chatham_Islands"
+    },
+    {
+     "claim": "Track through native bush with Chatham pigeon, tui, parakeet, warblers to the rugged coastline; visits Taiko Camp and Gap Sanctuary; private land: permission beforehand and entry fee; tours by arrangement, ph 03 3050351.",
+     "source": "https://chathamislands.co.nz/see-do/attractions/awatotara-bush-coastal-walking-track/"
+    },
+    {
+     "claim": "Third-party guide: access at the southern end of Waitangi Tuku Road, permission needed (Liz or Bruce 305 0351), access charges apply; Bush to Coast (1-2 h) and Loop (2-3 h) tracks are advanced tramping.",
+     "source": "https://extreme-pursuit.com/hiking-the-chatham-islands/"
+    }
+   ],
+   "hours": "By arrangement (private land; phone 03 3050351)",
+   "visitHoursMin": 2.5,
+   "visitHoursMax": 3,
+   "costMin": 15,
+   "costMax": 20,
+   "currency": "NZD",
+   "cost_status": "Wikivoyage (updated Oct 2018): NZD 15 independent, NZD 20 guided. The tourism board states a fee but no amount, so the 15 is verified only to Wikivoyage; 2018 price may be stale.",
+   "ticketUrl": "https://chathamislands.co.nz/see-do/attractions/awatotara-bush-coastal-walking-track/",
+   "ticketUrl_note": "No operator website (email lbtuanui@farmside.co.nz only). Tourism board page (loaded, title 'Awatotara Bush Coastal Walking Track'). Orchestrator may prefer null.",
+   "coordinates_check": {
+    "current": [
+     -44.007,
+     -176.609
+    ],
+    "source_point": null,
+    "source": "Wikivoyage 'Tuku Tours' farm point. OSM has no track/trailhead for this walk in the 3 km around it (only peak Whakamarino -44.0233,-176.6150); Taiko Camp is 8 km south at -44.0750,-176.6400 (OSM) so the point is only the farm start",
+    "ok": false
+   },
+   "category": "hike",
+   "unverified": [
+    "Trailhead coordinate (farm start only)",
+    "Whether the 2018 prices still apply"
+   ]
+  },
+  {
+   "id": "chatham-islands-11",
+   "name": "German Mission House",
+   "kind": "new",
+   "held": false,
+   "facts": [
+    {
+     "claim": "Heritage New Zealand Category 1 building; built 1866-1868 by German Moravian missionaries (arrived 1843) of local stone, burnt pipi-shell mortar and akeake lintels and doors; permission from the owner is needed and a charge applies to help cover maintenance.",
+     "source": "https://chathamislands.co.nz/see-do/attractions/maunganui-stone-cottage/"
+    },
+    {
+     "claim": "Open by appointment only; contact Jymy and Tarsha Gregory-Hunt, ph 03 3050 653 or 027 3050 302, Waitangi West Road; alternative: Paddy and Wai 03 3050074. Allow time for a beach walk to basalt boulders.",
+     "source": "https://chathamislands.co.nz/see-do/attractions/maunganui-stone-cottage/"
+    },
+    {
+     "claim": "Wikivoyage: drive through the gate to the cottage; the caretaker (Helen) gives a tour for an entry fee; Waitangi West Road, ph +64 3 3050302.",
+     "source": "https://en.wikivoyage.org/wiki/Chatham_Islands"
+    },
+    {
+     "claim": "Third-party guide: ring first (Helen Bint, 305 0501), visiting days Tue-Fri, entry fee $20, about 15 min grass-track walk from the road.",
+     "source": "https://extreme-pursuit.com/hiking-the-chatham-islands/"
+    }
+   ],
+   "hours": "By appointment (Tue-Fri per one third-party source)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "costMin": 20,
+   "costMax": 20,
+   "currency": "NZD",
+   "cost_status": "Entry fee confirmed by tourism board and Wikivoyage (amount not stated); NZD 20 from one undated third-party blog",
+   "ticketUrl": "https://chathamislands.co.nz/see-do/attractions/maunganui-stone-cottage/",
+   "ticketUrl_note": "No operator site. Tourism board page (loaded, title 'Maunganui Stone Cottage'); it uses the name 'Maunganui Stone Cottage'. Orchestrator may prefer null. Booking: phone the owners/caretaker or ask accommodation host.",
+   "coordinates_check": {
+    "current": [
+     -43.7645,
+     -176.77822
+    ],
+    "source_point": [
+     -43.7645009,
+     -176.7782215
+    ],
+    "source": "OSM way 525477810 building 'Stone Cottage' (via Photon); identical to Wikivoyage",
+    "ok": true
+   },
+   "category": "historic",
+   "unverified": [
+    "Exact visiting days and fee (blog only)"
+   ]
+  },
+  {
+   "id": "chatham-islands-12",
+   "name": "Port Hutt",
+   "kind": "new",
+   "held": false,
+   "facts": [
+    {
+     "claim": "Picturesque bay in a sheltered cove of Whangaroa Harbour on the island's western side, developed as a picnic spot; American scientists observed the 1874 transit of Venus from here; relics including the trawler Thomas Currell rest in the shallows; base of a small crayfishing/pāua industry.",
+     "source": "https://chathamislands.co.nz/see-do/attractions/port-hutt/"
+    },
+    {
+     "claim": "Private land: access needs permission beforehand and an entry fee; ask your host to arrange a day trip; contact ph 03 3050011, chathamseafood@farmside.co.nz.",
+     "source": "https://chathamislands.co.nz/see-do/attractions/port-hutt/"
+    },
+    {
+     "claim": "Wikivoyage: one of the most attractive ports in New Zealand; well-sheltered harbour; historically important.",
+     "source": "https://en.wikivoyage.org/wiki/Chatham_Islands"
+    }
+   ],
+   "hours": "By arrangement (private land)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "costMin": null,
+   "costMax": null,
+   "currency": "NZD",
+   "cost_status": "UNVERIFIED: tourism board says an entry fee is payable but gives no amount; no other source found. Do not publish as free.",
+   "ticketUrl": "https://chathamislands.co.nz/see-do/attractions/port-hutt/",
+   "ticketUrl_note": "No operator/steward site. Tourism board page (loaded, title 'Port Hutt'). Orchestrator may prefer null.",
+   "coordinates_check": {
+    "current": [
+     -43.8148,
+     -176.7087
+    ],
+    "source_point": [
+     -43.8114961,
+     -176.704592
+    ],
+    "source": "OSM natural=bay 'Port Hutt (Whangaroa Harbour)'; OSM locality node -43.8149,-176.7102; Wikivoyage -43.8148,-176.7087 sits between (about 400 m from the bay centroid)",
+    "ok": true
+   },
+   "category": "landmark",
+   "unverified": [
+    "Entry fee amount",
+    "The 'interpretation shelter' in placement bio is not in the sources I read; check before keeping it"
+   ]
+  },
+  {
+   "id": "chatham-islands-13",
+   "name": "Kaingaroa",
+   "kind": "new",
+   "held": false,
+   "facts": [
+    {
+     "claim": "Small fishing village with a one-teacher school and a social clubroom; picturesque harbour used by sealers and whalers, boomed with blue cod exports around 1910 and the 1960s crayfish boom; walk to the north-western beach and along hard sandy Kaingaroa Beach; rare Chatham plants in the coastal zone; two memorials to Lieutenant Broughton's 1791 visit.",
+     "source": "https://chathamislands.co.nz/see-do/attractions/kaingaroa/"
+    },
+    {
+     "claim": "Wikivoyage: bustling little fishing village on the northern corner; residents prepare a Saturday meal at the Kaingaroa Club (event, not a spot feature).",
+     "source": "https://en.wikivoyage.org/wiki/Chatham_Islands"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "cost_status": "No charge mentioned (public village and beach)",
+   "ticketUrl": null,
+   "ticketUrl_note": "A village/beach with no single steward: omit per WRITING.md. Tourism board page exists (title 'Kaingaroa') if a link is wanted.",
+   "coordinates_check": {
+    "current": [
+     -43.733,
+     -176.2683
+    ],
+    "source_point": [
+     -43.7329932,
+     -176.268306
+    ],
+    "source": "OSM place=hamlet 'Kaingaroa'; Kaingaroa Settlement Road -43.7327,-176.2683; matches Wikivoyage",
+    "ok": true
+   },
+   "category": "beach",
+   "unverified": [
+    "Wikipedia has no article for this village ('Kaingaroa' is a disambiguation page, 'Kaingaroa, Chatham Island' does not exist), so set wiki to none and give a photo override if needed"
+   ]
+  },
+  {
+   "id": "chatham-islands-14",
+   "name": "Ocean Mail Scenic Reserve",
+   "kind": "new",
+   "held": true,
+   "facts": [
+    {
+     "claim": "831 ha of peat dome and wetland at Te Whanga Lagoon, extending over the road to include 4 km of coastal dunes; includes Lakes Wharemanu and Kaimoumi; signs and cattle stops mark each end on the north road to Kaingaroa; a vehicle track about 2 km in leads to a stile and the beach.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/chatham-islands/places/manauea-ocean-mail-scenic-reserve/"
+    },
+    {
+     "claim": "Walks: Wetland walk 15-min loop, Aster walk 20-min return, Lake walk 2 h 30 min loop; picnic area on the beach.",
+     "source": "https://en.wikivoyage.org/wiki/Chatham_Islands"
+    },
+    {
+     "claim": "Official name Manauea/Ocean Mail Scenic Reserve (DOC); tourism board uses 'Ocean Mail Scenic Reserve'.",
+     "source": "https://chathamislands.co.nz/our-islands/environment/ocean-mail-scenic-reserve/"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2.5,
+   "free": true,
+   "cost_status": "Public conservation land; no fee mentioned by DOC",
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/chatham-islands/places/manauea-ocean-mail-scenic-reserve/",
+   "ticketUrl_note": "DOC page, loaded 200, title 'Manauea/Ocean Mail Scenic Reserve: Places to go on the Chatham Islands'. Candidate slug from placement.json was right.",
+   "coordinates_check": {
+    "current": [
+     -43.7529,
+     -176.3846
+    ],
+    "source_point": [
+     -43.7461,
+     -176.3905
+    ],
+    "source": "OSM way 551363326 'Aster Walk' first node (start of the walk); toilets -43.74558,-176.39975 beside the road; reserve centroid -43.7544,-176.3866. Wikivoyage point is about 400 m from the path's far end and 1 km from its start",
+    "ok": false
+   },
+   "move_to": [
+    -43.7461,
+    -176.3905
+   ],
+   "category": "nature",
+   "unverified": [
+    "Which end of the Aster Walk is the car park; verify on a map"
+   ]
+  },
+  {
+   "id": "chatham-islands-15",
+   "name": "Nikau Bush Conservation Area",
+   "kind": "new",
+   "held": true,
+   "facts": [
+    {
+     "claim": "19 ha of lowland broadleaved forest on the north-western shore of Te Whanga Lagoon with the largest stand of nikau left on the main island; nikau flower spectacularly in December and January; fenced and regenerating since 1981.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/chatham-islands/places/nikau-bush-conservation-area/"
+    },
+    {
+     "claim": "Sign on North Road 1.5 km past Pana/Blind Jim's Creek; walk uphill 1 km along the fenceline marked with orange triangles to a stile and sign.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/chatham-islands/places/nikau-bush-conservation-area/"
+    },
+    {
+     "claim": "Two loop walks taking about 1 hour; Hotel Chatham gives about 1.5 hours.",
+     "source": "https://en.wikivoyage.org/wiki/Chatham_Islands"
+    },
+    {
+     "claim": "Hotel Chatham: Nikau Bush walking time approximately 1.5 hours.",
+     "source": "https://www.hotelchatham.co.nz/discover/walks"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "cost_status": "Public conservation land; no fee mentioned by DOC",
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/chatham-islands/places/nikau-bush-conservation-area/",
+   "ticketUrl_note": "DOC page loaded 200, title 'Nīkau Bush Conservation Area: Places to go on the Chatham Islands'.",
+   "coordinates_check": {
+    "current": [
+     -43.76417,
+     -176.56611
+    ],
+    "source_point": [
+     -43.76438,
+     -176.56426
+    ],
+    "source": "OSM toilets at the walk start beside Ribbonwood Track/service path; OSM paths 'Ribbonwood Track' and 'Nikau Track' start -43.7638,-176.5677; Wikipedia -43.76417,-176.56611 is within ~150 m of these",
+    "ok": true
+   },
+   "wiki": "Nīkau Bush Conservation Area",
+   "wiki_note": "Exact Wikipedia article title is 'Nīkau Bush Conservation Area' (macron); the name 'Nikau Bush Conservation Area' without macron has no article. Set wiki to the macron title (or rename the spot, as DOC does).",
+   "category": "nature",
+   "unverified": []
+  },
+  {
+   "id": "chatham-islands-16",
+   "name": "Chatham Islands Museum",
+   "kind": "new",
+   "held": true,
+   "facts": [
+    {
+     "claim": "Opening hours: Monday to Friday 9am to 2pm (most days). Admission $10 per adult; residents free; after-hours group bookings by appointment only. 15 Waitangi Tuku Rd, Waitangi, ph 03 3050 033 ext 3.",
+     "source": "https://chathamislandsmuseum.nz/"
+    },
+    {
+     "claim": "Whole-of-islands community museum covering natural and social history; displays of rocks, fossils (including dinosaur), rare birds, Moriori, sealer, whaler, missionary and settler items; large photograph and archive collection; open since 1979 in the Council building.",
+     "source": "https://chathamislands.co.nz/see-do/attractions/museum/"
+    },
+    {
+     "claim": "Conflict: the tourism board page says Mon-Fri 8:30am-4:30pm (except public holidays) with staff onsite till 1pm daily; the museum's own page (preferred) says 9am-2pm.",
+     "source": "https://chathamislands.co.nz/see-do/attractions/museum/"
+    }
+   ],
+   "hours": "9:00 AM - 2:00 PM",
+   "closedDays": [
+    0,
+    6
+   ],
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "NZD",
+   "cost_status": "NZD 10 per adult, museum's own site (current)",
+   "ticketUrl": "https://chathamislandsmuseum.nz/",
+   "ticketUrl_note": "Operator's own site, loaded 200, title area and text name the Chatham Islands Museum.",
+   "coordinates_check": {
+    "current": [
+     -43.95208,
+     -176.56098
+    ],
+    "source_point": [
+     -43.9520727,
+     -176.56098
+    ],
+    "source": "OSM node tourism=museum 'Chatham Islands Museum'",
+    "ok": true
+   },
+   "category": "museum",
+   "unverified": [
+    "Public-holiday closures",
+    "'Most days' wording means hours can vary"
+   ]
+  },
+  {
+   "id": "chatham-islands-17",
+   "name": "Henga Scenic Reserve",
+   "kind": "new",
+   "held": true,
+   "facts": [
+    {
+     "claim": "170 ha reserve with a huge sand-dune system, coastal forest, regenerating vegetation, limestone outcrops and views over Petre Bay; on the west coast; head north from Waitangi on North Road to a pull-off and signage; the route crosses farmland to the reserve.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/chatham-islands/places/henga-scenic-reserve/"
+    },
+    {
+     "claim": "Walk to a lookout (1 h 30 min return); loop through coastal forest 2 h 30 min; limestone outcrops about 45 min in; shorter 30 min bush walk; tracks easy and signposted; toilet at the start; about 15 minutes' drive from Waitangi; Henga Lodge guests can walk in from the lodge (private land, fee).",
+     "source": "https://chathamislands.co.nz/our-islands/environment/henga-scenic-reserve/"
+    },
+    {
+     "claim": "Third-party guide: public access is via North Road, the track starts through farmland, with a toilet near the loop start.",
+     "source": "https://extreme-pursuit.com/hiking-the-chatham-islands/"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2.5,
+   "free": true,
+   "cost_status": "Public reserve; no fee for DOC access (fee only for Henga Lodge private route)",
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/chatham-islands/places/henga-scenic-reserve/",
+   "ticketUrl_note": "DOC page loaded 200, title 'Henga Scenic Reserve: Places to go on the Chatham Islands'.",
+   "coordinates_check": {
+    "current": [
+     -43.84733,
+     -176.54788
+    ],
+    "source_point": [
+     -43.8869696,
+     -176.5366179
+    ],
+    "source": "OSM way 56648691 highway=path foot=yes: its first node meets North Road (way 679142168) and the path runs 4 km NW through the reserve to the dunes. Consistent with DOC's pull-off on North Road and 'across farmland', and 7 km (about 15 min) from Waitangi per the tourism site. Reserve polygon (OSM relation 18220090) lies -43.8455 to -43.8615, centroid -43.8535,-176.5595. Current point is Henga Lodge (private)",
+    "ok": false
+   },
+   "move_to": [
+    -43.88697,
+    -176.53662
+   ],
+   "category": "nature",
+   "unverified": [
+    "The exact DOC sign/pull-off was not located; the path start on North Road is inferred from OSM geometry (medium confidence)",
+    "The Hotel Chatham 'Henga walk' (1.5 h loop) is a guided walk over private land, so keep it separate"
+   ]
+  },
+  {
+   "id": "chatham-islands-2",
+   "name": "Hapupu National Historic Reserve",
+   "kind": "existing",
+   "facts": [
+    {
+     "claim": "DOC: visitors are limited to local whanau; other visitors must book a guided tour with DOC-approved operators. Stay on tracks, do not touch the trees, stand 2 m away.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/chatham-islands/places/hapupu-jm-barker-historic-reserve"
+    },
+    {
+     "claim": "Wikivoyage: only accessible with concessionaire guides from either Hotel Chathams or Awarakau Farmstays.",
+     "source": "https://en.wikivoyage.org/wiki/Chatham_Islands"
+    },
+    {
+     "claim": "Tourism board: public access, but guided trips recommended; short bush walk about 20 minutes, longer walk with the coastal section about 40 minutes.",
+     "source": "https://chathamislands.co.nz/our-islands/culture-history/hapupu/"
+    },
+    {
+     "claim": "Hotel Chatham: walk of only about 10 minutes past the kopi rakau momori; Hotel Chatham's guided sightseeing tours are DOC approved.",
+     "source": "https://www.hotelchatham.co.nz/discover/walks"
+    },
+    {
+     "claim": "One of three national historic reserves (DOC, Wikipedia); the tourism board says one of only two.",
+     "source": "https://en.wikipedia.org/wiki/H%C4%81p%C5%ABp%C5%AB_/_J_M_Barker_Historic_Reserve"
+    }
+   ],
+   "hours": "Guided visits by arrangement (book via Hotel Chatham or Awarakau Lodge)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "cost_status": "NO price found in any source. Current data says free: true and 'Open 24 hours', which contradicts DOC (guided booking required). Change hours; remove free:true unless a guide fee is confirmed; ask Hotel Chatham (03 3050 048) for a tour price.",
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/chatham-islands/places/hapupu-jm-barker-historic-reserve",
+   "ticketUrl_note": "DOC page, loaded 200, title 'Hāpūpū/J.M. Barker Historic Reserve: Places to go on the Chatham Islands'. The slug .../hapupu-national-historic-reserve/ 404s; use jm-barker slug.",
+   "wiki": "Hāpūpū / J M Barker Historic Reserve",
+   "wiki_note": "Lint says 'no Wikipedia article' for the current name; the exact article title is 'Hāpūpū / J M Barker Historic Reserve' (coords -43.8003,-176.3528). Set wiki to that, or rename the spot to it.",
+   "coordinates_check": {
+    "current": [
+     -43.80202,
+     -176.35277
+    ],
+    "source_point": [
+     -43.8020242,
+     -176.3527733
+    ],
+    "source": "OSM protected_area 'Hāpūpū / J M Barker Historic Reserve'; Wikipedia -43.8003,-176.3528",
+    "ok": true
+   },
+   "category": "historic",
+   "unverified": [
+    "Guided-tour price",
+    "Whether DOC's 'limited to local whanau' or the tourism board's 'public access' is current"
+   ]
+  },
+  {
+   "id": "chatham-islands-3",
+   "name": "Pitt Island",
+   "kind": "existing",
+   "facts": [
+    {
+     "claim": "Visiting Pitt Island is by guided access only, so all trips must be prearranged; access by boat or plane; only accommodation is Flowerpot Bay Lodge; Mt Hakepa has 360-degree views and bronze sculptures, called the first inhabited place to welcome the new day.",
+     "source": "https://chathamislands.co.nz/our-islands/regions/pitt-island/"
+    },
+    {
+     "claim": "Flowerpot Adventures 'Original Pitt Island Day Tour' 2026-27: RRP NZD 495 per person, includes the Cessna flight or boat, 4x4 coach tour and lunch at Flowerpot Bay Lodge; min 8 people (they combine bookings); first plane 9:00 am, back at Chatham about 4:30 pm; 25 min flight; book direct.",
+     "source": "https://www.flowerpotlodge.co.nz/the-original-pitt-island-day-tour"
+    },
+    {
+     "claim": "Hotel Chatham day tour: up to NZD 500 per person for a group of 4 to 5, includes return airport transfers and lunch at Flower Pot Lodge.",
+     "source": "https://www.hotelchatham.co.nz/discover/experience"
+    },
+    {
+     "claim": "Wikipedia article 'Pitt Island' exists (redirect from Rangiauria), coords -44.2875,-176.22.",
+     "source": "https://en.wikipedia.org/wiki/Pitt_Island"
+    }
+   ],
+   "hours": "Guided day tours by arrangement (flights depart about 9:00 AM, return about 4:30 PM)",
+   "visitHoursMin": 7,
+   "visitHoursMax": 8,
+   "costMin": 495,
+   "costMax": 500,
+   "currency": "NZD",
+   "cost_status": "Replace current 150-250: operator 2026-27 price is NZD 495 (Flowerpot) / up to 500 (Hotel Chatham), both include the flight",
+   "ticketUrl": "https://chathamislands.co.nz/our-islands/regions/pitt-island/",
+   "ticketUrl_note": "Lint flag 'charges but no ticketUrl'. The day tour is sold by two operators (Flowerpot Adventures, Hotel Chatham) plus Air Chathams, so per WRITING.md the island has no single steward and a null is defensible; if a link is wanted the tourism-board region page (loaded, title 'Pitt Island') is the neutral one. Operator alternative: https://www.flowerpotlodge.co.nz/the-original-pitt-island-day-tour (loaded, title 'Pitt Island Day Tour').",
+   "coordinates_check": {
+    "current": [
+     -44.2882,
+     -176.2213
+    ],
+    "source_point": [
+     -44.2881536,
+     -176.2213429
+    ],
+    "source": "OSM relation 5978532 place=island 'Pitt Island (Rangiauria)'; Wikipedia -44.2875,-176.22. Mount Hakepa (OSM peak 'Hakepa') is at -44.2672,-176.1783 if a viewpoint spot is wanted",
+    "ok": true
+   },
+   "category": "nature",
+   "unverified": []
+  },
+  {
+   "id": "chatham-islands-4",
+   "name": "Waitangi",
+   "kind": "existing",
+   "facts": [
+    {
+     "claim": "Tikitiki Hill Conservation Area: 10-minute return walk with great views of the Waitangi wharf, township and harbour.",
+     "source": "https://en.wikivoyage.org/wiki/Chatham_Islands"
+    },
+    {
+     "claim": "DOC: Tikitiki Hill Conservation Area looks out over Petre Bay, on the hill behind Hanson Point, reached from the end of Waitangi Wharf Owenga Road.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/chatham-islands/places/tikitiki-hill-conservation-area"
+    },
+    {
+     "claim": "Wikipedia article title 'Waitangi, Chatham Islands' exists (coords -43.9514,-176.5611); OSM place=village -43.9512,-176.5610.",
+     "source": "https://en.wikipedia.org/wiki/Waitangi,_Chatham_Islands"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "cost_status": "No charge (town)",
+   "ticketUrl": null,
+   "ticketUrl_note": "Town; no steward. Omit.",
+   "coordinates_check": {
+    "current": [
+     -43.95073,
+     -176.56073
+    ],
+    "source_point": [
+     -43.9511999,
+     -176.561027
+    ],
+    "source": "OSM place=village 'Waitangi'; Wikipedia -43.9514,-176.5611 (about 100 m off)",
+    "ok": true
+   },
+   "category": "historic",
+   "unverified": [
+    "Tikitiki Hill OSM peak is at -43.9451,-176.5706 vs Wikivoyage -43.94579,-176.5623, about 700 m apart; the walk is confirmed but the exact lookout point is not"
+   ],
+   "tikitiki_confirmed": true
+  },
+  {
+   "id": "chatham-islands-6",
+   "name": "Kōpinga Marae",
+   "kind": "existing",
+   "facts": [
+    {
+     "claim": "Wikivoyage (updated Oct 2018): tours on Wednesdays at 10:00 am; Owenga Road; ph +64 3305 0450.",
+     "source": "https://en.wikivoyage.org/wiki/Chatham_Islands"
+    },
+    {
+     "claim": "Tourism board: visitors are welcome to visit and hear the history and Moriori culture but must first book as part of a scheduled group tour; the marae is also the Trust's office so staff cannot receive unscheduled visitors; ph 03 3050 450.",
+     "source": "https://chathamislands.co.nz/our-islands/culture-history/kopinga-marae/"
+    },
+    {
+     "claim": "Hokotehi Moriori Trust's own page: opened January 2005, the only Moriori marae, pentagonal design inspired by basalt columns, welcomes visitors with a hokomaurahiri; page lists accommodation and event hire with a BOOK NOW button; no tour price published.",
+     "source": "https://www.moriori.co.nz/kopinga-marae/"
+    }
+   ],
+   "hours": "Guided group tours by booking (Wednesdays 10:00 AM per Wikivoyage, 2018)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "cost_status": "UNVERIFIED: no tour fee published by the marae, tourism board or Wikivoyage. Current free:true is unsupported; the tour is likely part of a paid scheduled group tour (cost unknown). Phone 03 3050 450 / office@kopinga.co.nz.",
+   "ticketUrl": "https://www.moriori.co.nz/kopinga-marae/",
+   "ticketUrl_note": "Hokotehi Moriori Trust (the steward) page for the marae, loaded 200, heading 'Kōpinga Marae'. The tourism board's listed site kōpinga.co.nz does not resolve.",
+   "wiki": null,
+   "wiki_note": "No Wikipedia article exists ('Kōpinga Marae' and 'Kopinga Marae' both missing). Photo needs an override or the Moriori article is not a substitute.",
+   "coordinates_check": {
+    "current": [
+     -43.9676,
+     -176.5151
+    ],
+    "source_point": [
+     -43.9675924,
+     -176.5151
+    ],
+    "source": "OSM amenity=marae 'Kōpinga Marae'",
+    "ok": true
+   },
+   "category": "historic",
+   "unverified": [
+    "Tour price",
+    "Whether the Wednesday 10:00 tour still runs (2018 listing)"
+   ]
+  }
+ ]
+}
