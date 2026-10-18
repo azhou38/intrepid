@@ -1,0 +1,690 @@
+{
+ "spots": {
+  "christchurch-27": {
+   "name": "Taylors Mistake",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A surf beach and bay of 27 baches at the start of the coastal walk to Godley Head.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": {
+    "latitude": -43.58337,
+    "longitude": 172.77678
+   },
+   "notes": [
+    "Pin moved 100 m to the OSM natural=beach way. Bio drops 'sheltered' (placement claim, not in a source read). No ticketUrl: public beach in a council reserve, council site is behind an Incapsula wall. Hours and visit time are judgement."
+   ]
+  },
+  "christchurch-28": {
+   "name": "Summit Road",
+   "icon": "🛣️",
+   "category": "viewpoint",
+   "bio": "The Port Hills crest road, with views over Christchurch, Lyttelton Harbour, Pegasus Bay and the Southern Alps.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": {
+    "latitude": -43.59454,
+    "longitude": 172.74911
+   },
+   "notes": [
+    "Pin is the OSM tourism=viewpoint at Evans Pass beside the free car parks (60 m from the Wikivoyage point), so a named visitor point, not a point on the road. Placement wiki 'Summit Road, Christchurch' dropped: no article was confirmed and the placement shows 0 views. Add a wiki title only if one exists. No ticketUrl: public road with no steward."
+   ]
+  },
+  "christchurch-29": {
+   "name": "Willowbank Wildlife Reserve",
+   "icon": "🥝",
+   "category": "entertainment",
+   "bio": "A wildlife park of New Zealand species, with kiwi viewing and guided tours.",
+   "hours": "9:30 AM – 5:00 PM",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "costMin": 36.5,
+   "costMax": 36.5,
+   "currency": "NZD",
+   "specialClosures": [
+    {
+     "month": 12,
+     "day": 25,
+     "reason": "Christmas Day"
+    }
+   ],
+   "ticketUrl": "https://willowbank.co.nz/",
+   "coordinates": {
+    "latitude": -43.46375,
+    "longitude": 172.5941
+   },
+   "notes": [
+    "HELD for photo (Commons has none). Bio drops the Ko Tāne Māori village claim (not on the operator pages read). $36.50 is the adult price (child $13, family $93). Pin moved 110 m to the OSM zoo way at 60 Hussey Road. Visit time is judgement."
+   ]
+  },
+  "christchurch-30": {
+   "name": "Mona Vale",
+   "wiki": "Mona Vale, Christchurch",
+   "icon": "🌷",
+   "category": "historic",
+   "bio": "Gardens beside the Avon with rose and iris beds, picnic lawns and a homestead, on a 1 km walk of about 20 minutes.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": {
+    "latitude": -43.5233,
+    "longitude": 172.60852
+   },
+   "notes": [
+    "ticketUrl OMITTED: the steward page https://ccc.govt.nz/parks-and-gardens/gardens-and-heritage-parks/mona-vale is BLOCKED (Incapsula wall), so its title was never checked. Check it in a real browser and add it only if it names Mona Vale.",
+    "Bio drops 'Elizabethan-style' (not in a source read). Hours 'Open 24 hours' is judgement (one source says 7am to sunset). Homestead/cafe hours and the 2024 reopening of the homestead are unconfirmed. Pin is the OSM homestead cafe (15 m). wiki 'Mona Vale, Christchurch' comes from the placement and was not re-checked."
+   ]
+  },
+  "christchurch-31": {
+   "name": "Christchurch Tram Ride",
+   "wiki": "Christchurch tramway system",
+   "icon": "🚋",
+   "category": "entertainment",
+   "bio": "A 50-minute heritage tram loop around the central city, hop-on hop-off on a day ticket.",
+   "hours": "8:30 AM – 6:30 PM (summer); 9:00 AM – 5:00 PM (winter, from 1 May)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 42,
+   "costMax": 42,
+   "currency": "NZD",
+   "ticketUrl": "https://www.christchurchattractions.nz/christchurch-tram/",
+   "coordinates": {
+    "latitude": -43.53088,
+    "longitude": 172.63568
+   },
+   "notes": [
+    "OWNER CALL: a vehicle ride with no named end point (COVERAGE: keep only if the ride is the attraction). Not marked held. $42 adult day ticket (child $10, family $99). Hours pattern read from the operator ('from 28 September' summer, 'from 1 May' winter, no year). Pin is the OSM stop-1 ticket shop (250 m from the placement point)."
+   ]
+  },
+  "christchurch-32": {
+   "name": "Quake City",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "A museum on the 2010–11 Christchurch earthquakes, run by Canterbury Museum.",
+   "hours": "10:00 AM – 5:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "costMin": 25,
+   "costMax": 25,
+   "currency": "NZD",
+   "specialClosures": [
+    {
+     "month": 12,
+     "day": 25,
+     "reason": "Christmas Day"
+    }
+   ],
+   "ticketUrl": "https://quakecity.co.nz/",
+   "coordinates": {
+    "latitude": -43.52859,
+    "longitude": 172.63344
+   },
+   "notes": [
+    "HELD for photo per placement. $25 adult; children under 15 with an adult free. Visit time is judgement."
+   ]
+  },
+  "akaroa-9": {
+   "name": "Flea Bay (Pōhatu)",
+   "wiki": "Pohatu Marine Reserve",
+   "icon": "🐧",
+   "category": "nature",
+   "bio": "A marine reserve bay with the mainland's largest little penguin colony, reached by a 4WD-only gravel road.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/banks-peninsula-area/pohatu-marine-reserve/",
+   "coordinates": {
+    "latitude": -43.86806,
+    "longitude": 173.00468
+   },
+   "notes": [
+    "HELD for photo per placement. Flea Bay Road is tagged 4WD only and access discouraged; most visitors come on the Pohatu Penguins tour or the Banks Peninsula Track. Pin is the OSM road end at the beach (the bay centroid is in the water). Hours and visit time are judgement (penguins come ashore at dusk). wiki is the placement's, not re-checked."
+   ]
+  },
+  "hanmer-springs-5": {
+   "name": "Hanmer Forest Park",
+   "icon": "🌲",
+   "category": "hike",
+   "bio": "A forest park above the town with walking and cycling tracks, including a 2.1 km walk to a 41 m waterfall.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/hanmer-forest-park/",
+   "coordinates": {
+    "latitude": -42.5039,
+    "longitude": 172.84338
+   },
+   "notes": [
+    "Pin MOVED from (-42.5226,172.829), which was copied from the thermal pools 2.9 km away, to the OSM Waterfall Car Park at the end of Mullans Road. Bio drops the sculpture walk and 'mountain-bike' (not on the DOC pages). Category hike per research. Free because DOC mentions no fee."
+   ]
+  },
+  "timaru-5": {
+   "name": "Timaru Botanic Gardens",
+   "icon": "🌳",
+   "category": "nature",
+   "bio": "Gardens established in 1864, entered through the 1935 Gloucester Gates and rated five stars by the Gardens Trust.",
+   "hours": "Open 24 hours (pedestrians); vehicle gates 8:00 AM – dusk",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": {
+    "latitude": -44.41024,
+    "longitude": 171.254
+   },
+   "notes": [
+    "ticketUrl OMITTED: the council page https://www.timaru.govt.nz/community/recreation/gardens/timaru-botanic-gardens is BLOCKED (403 captcha), unchecked. Confirm in a real browser. Hours come from a search summary of that page. Bio drops 'pond and lawns' (not in a source read)."
+   ]
+  },
+  "lake-tekapo-6": {
+   "name": "Mount John Walkway",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A lakeshore climb above Lake Tekapo to the Mount John summit, 3 hours round the 8.9 km loop.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 3,
+   "visitHoursMax": 4,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/lake-tekapo-area/things-to-do/tekapo-mt-john-walkway/",
+   "coordinates": {
+    "latitude": -43.99478,
+    "longitude": 170.46088
+   },
+   "notes": [
+    "Bio is the research rewrite; the placement said two hours, DOC gives 3 hr for the 8.9 km loop. Visit time set to 3-4 h from DOC (research said 2-3). Pin is Tekapo Springs, which DOC names as the trailhead. The summit road, cafe and observatory are run by Earth & Sky (road fee) and are not covered."
+   ]
+  },
+  "mount-hutt": {
+   "name": "Mount Hutt",
+   "icon": "⛷️",
+   "category": "entertainment",
+   "bio": "A ski field above Methven, with lift access from 9 am to 4 pm in the winter season.",
+   "hours": "9:00 AM – 4:00 PM (winter season, roughly late June – October)",
+   "visitHoursMin": 4,
+   "visitHoursMax": 8,
+   "costMin": 109,
+   "costMax": 180,
+   "currency": "NZD",
+   "ticketUrl": "https://www.mthutt.co.nz/",
+   "coordinates": {
+    "latitude": -43.49583,
+    "longitude": 171.53927
+   },
+   "proposed_destination": "methven",
+   "notes": [
+    "Spot of PROPOSED Methven. Pin moved 3.3 km from the mountain to the OSM base-area car park. Day pass $109-180 is from third-party aggregators (the operator shop is client-rendered): check in a browser. Season dates not confirmed for 2027."
+   ]
+  },
+  "opuke-thermal-pools": {
+   "name": "Ōpuke Thermal Pools",
+   "icon": "♨️",
+   "category": "entertainment",
+   "bio": "Hot pools near Methven, with mountain-sourced water warmed by the sun and separate family and adults-only zones.",
+   "hours": "10:00 AM – 7:00 PM (Discovery pools, daily)",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "costMin": 33,
+   "costMax": 33,
+   "currency": "NZD",
+   "specialClosures": [
+    {
+     "month": 12,
+     "day": 25,
+     "reason": "Christmas Day"
+    },
+    {
+     "month": 12,
+     "day": 26,
+     "reason": "Boxing Day"
+    }
+   ],
+   "ticketUrl": "https://opuke.nz/",
+   "coordinates": {
+    "latitude": -43.62305,
+    "longitude": 171.64765
+   },
+   "proposed_destination": "methven",
+   "notes": [
+    "Spot of PROPOSED Methven. HELD for photo per placement. Bio corrected: the pools are solar-heated, not natural geothermal ('Natural thermal pools' in the placement was wrong). $33 is a third-party adult figure for the 2-hour Discovery entry (listings $25-33 by date); operator prices sit in its booking engine. Tranquility and Serenity are adults-only (R18) with later Fri-Sat hours."
+   ]
+  },
+  "rakaia-gorge": {
+   "name": "Rakaia Gorge",
+   "icon": "🌉",
+   "category": "nature",
+   "bio": "A gorge on the Rakaia River with a bridge viewpoint and a 10.4 km DOC walkway along the rim.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/mount-hutt-area/things-to-do/rakaia-gorge-walkway/",
+   "coordinates": {
+    "latitude": -43.51765,
+    "longitude": 171.65769
+   },
+   "proposed_destination": "methven",
+   "notes": [
+    "Spot of PROPOSED Methven. Pin MOVED 14 km from Methven's centre (the placement point) to the gorge-bridge viewpoint beside the free car park. Walkway is 3-4 h return across private farmland; short-stop visitors use the viewpoint, hence 0.5-3 h. Bio drops 'old bridges' as a headline (an old bridge exists in OSM only)."
+   ]
+  },
+  "mount-somers": {
+   "name": "Mount Somers",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A foothill range with the Mount Somers Track, 3.5 hours from the Sharplin Falls car park to Pinnacles Hut.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 8,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/mount-somers-area/",
+   "coordinates": {
+    "latitude": -43.62786,
+    "longitude": 171.41792
+   },
+   "proposed_destination": "methven",
+   "notes": [
+    "Spot of PROPOSED Methven. Pin MOVED 11 km from the summit to the Sharplin Falls car park, the DOC trailhead. Bio does not promise the Sharplin Falls walk: its status is unclear (an old DOC post says closed after slips, a Nov 2025 release says a new walk was built). Pinnacles Hut is booked and paid (not priced)."
+   ]
+  },
+  "lake-coleridge": {
+   "name": "Lake Coleridge",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "A high-country lake 90 minutes' drive west of Christchurch, beside Peak Hill and the Harper Valley Track.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -43.3681,
+    "longitude": 171.53034
+   },
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "notes": [
+    "STANDALONE. Pin MOVED 10 km from the lake centroid to Lake Coleridge Village on the shore (whether it is on the water or 200 m inland was not checked with a water layer). Bio drops 'known for fishing' (not on the DOC page). No ticketUrl: no DOC page for the lake itself."
+   ]
+  },
+  "waipara-valley": {
+   "name": "Waipara Valley",
+   "icon": "🍷",
+   "category": "nature",
+   "bio": "A wine region about an hour north of Christchurch, known for Pinot Noir, Chardonnay and Riesling.",
+   "hours": "Cellar doors, late morning to about 5 PM (varies by winery)",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": true,
+   "coordinates": {
+    "latitude": -43.04278,
+    "longitude": 172.78862
+   },
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "notes": [
+    "STANDALONE. Pin MOVED 3.7 km from the village to Waipara Springs winery, in the middle of the cellar-door cluster on the Waipara Wine Trail. free:true means no entry charge only; tastings cost extra. Hours are per winery (single listings: 11 am-4 pm, to about 5 pm). No ticketUrl: many wineries and no official regional site. Only the newzealand.com summary supports it as a counted source."
+   ]
+  },
+  "peel-forest-park": {
+   "name": "Peel Forest Park",
+   "wiki": "Peel Forest",
+   "icon": "🌲",
+   "category": "nature",
+   "bio": "A podocarp forest reserve with a 45-minute walk to Emily Falls, 9.5 km north of Geraldine.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/peel-forest-park-scenic-reserve/",
+   "coordinates": {
+    "latitude": -43.90117,
+    "longitude": 171.23425
+   },
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "notes": [
+    "STANDALONE. Pin MOVED 3 km from the settlement to the OSM DOC board at the Emily Falls trailhead junction. Bio drops 'old-growth' and 'campsite' as headline facts. The DOC campground has a fee and closes 1 May to 15 Oct; not the spot's cost. wiki is the placement's."
+   ]
+  },
+  "little-river-rail-trail": {
+   "name": "Little River Rail Trail",
+   "icon": "🚲",
+   "category": "hike",
+   "bio": "A 65 km cycleway and walkway to Little River along the old railway line, in eight sections.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 8,
+   "free": true,
+   "ticketUrl": "https://littlerivertrail.kiwi.nz/",
+   "coordinates": {
+    "latitude": -43.77054,
+    "longitude": 172.79035
+   },
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "notes": [
+    "STANDALONE. Pin moved 1.5 km to the old Little River station at the Banks Peninsula end. Visit time is judgement (most visitors ride a section). Dogs are banned on two sections. Guardian is the Rod Donald Banks Peninsula Trust."
+   ]
+  },
+  "mount-sunday": {
+   "name": "Mount Sunday",
+   "icon": "🎬",
+   "category": "hike",
+   "bio": "The hill used as Edoras in The Two Towers, reached by a 1.5 km, 30-minute track off Hakatere Potts Road.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/hakatere-conservation-park/things-to-do/tracks/mount-sunday-track/",
+   "coordinates": {
+    "latitude": -43.54731,
+    "longitude": 170.9078
+   },
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "notes": [
+    "STANDALONE. Pin moved 1.1 km from the summit to the OSM car park at the track start. No dogs. The track is 30 min one way."
+   ]
+  },
+  "mount-dobson": {
+   "name": "Mount Dobson",
+   "icon": "⛷️",
+   "category": "entertainment",
+   "bio": "A ski field above Fairlie, open from about late June to late September.",
+   "hours": "Winter season, roughly late June – late September",
+   "visitHoursMin": 4,
+   "visitHoursMax": 8,
+   "costMin": 118,
+   "costMax": 140,
+   "currency": "NZD",
+   "ticketUrl": "https://mtdobson.co.nz/",
+   "coordinates": {
+    "latitude": -43.94367,
+    "longitude": 170.664
+   },
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "notes": [
+    "STANDALONE. Day pass $118-140 is third-party (the operator table is client-rendered). Daily lift hours were NOT found (the site banner was a stale 'Winter 2025' notice), so hours are the season only: research needed. Pin moved 900 m to the OSM ski-area base."
+   ]
+  },
+  "ski-roundhill": {
+   "name": "Ski Roundhill",
+   "wiki": "Roundhill Ski Area",
+   "icon": "⛷️",
+   "category": "entertainment",
+   "bio": "A ski area near Lake Tekapo, open from late June to September.",
+   "hours": "Winter season, 27 June – 20 September 2026 (daily hours not confirmed)",
+   "visitHoursMin": 4,
+   "visitHoursMax": 8,
+   "costMin": 125,
+   "costMax": 125,
+   "currency": "NZD",
+   "ticketUrl": "https://www.roundhill.co.nz/",
+   "coordinates": {
+    "latitude": -43.82555,
+    "longitude": 170.65635
+   },
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "notes": [
+    "STANDALONE. HELD for photo per placement. Bio drops 'views over Lake Tekapo' (unsourced). Wiki set to the real article, Roundhill Ski Area. $125 and lift hours 08:30-16:30 are third-party; season dates are the 2026 season. Owner may rename to 'Roundhill Ski Area'."
+   ]
+  },
+  "fairlie": {
+   "name": "Fairlie",
+   "wiki": "Fairlie, New Zealand",
+   "icon": "🏘️",
+   "category": "landmark",
+   "bio": "A small Mackenzie town on the road to the ski fields and Mount Cook.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "coordinates": {
+    "latitude": -44.09758,
+    "longitude": 170.82894
+   },
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "notes": [
+    "STANDALONE. HELD (placement held for photo; no visitor source for a draw was read, the case rests on one Wikivoyage listing). The bio is the placement's and was not checked against a source. No ticketUrl: fairlienz.com is a community resource centre, not an official town site."
+   ]
+  },
+  "twizel-river-trail": {
+   "name": "Twizel River Trail",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 12 km grade 2 track along the Twizel River, 4 hours one way, mostly over private land by public easement.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/twizel-area/things-to-do/twizel-river-trail/",
+   "coordinates": {
+    "latitude": -44.25833,
+    "longitude": 170.10616
+   },
+   "proposed_destination": "twizel",
+   "notes": [
+    "Spot of PROPOSED Twizel. HELD for photo per placement. Pin moved 900 m from Twizel's centre to the first node of the OSM Twizel River Track. No dogs; lower sections often flood. Visit 2-6 h is judgement for a partial out-and-back."
+   ]
+  },
+  "lake-benmore": {
+   "name": "Lake Benmore",
+   "icon": "🏞️",
+   "category": "lake",
+   "bio": "A lake with the 4 km, 1 h 40 min Benmore Peninsula Walk starting beside the dam.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/lake-benmore-and-lake-aviemore-area/",
+   "coordinates": {
+    "latitude": -44.5616,
+    "longitude": 170.19459
+   },
+   "proposed_destination": "twizel",
+   "notes": [
+    "Spot of PROPOSED Twizel. Pin MOVED 16 km from a lake centroid to the car park at the dam where the DOC walk starts. The dam is about 35 km from Twizel and closer to Otematata/Omarama; inside the proposed 80 km span, but the owner may prefer standalone. Bio drops 'boating, fishing' (not on the DOC page read)."
+   ]
+  },
+  "omarama": {
+   "name": "Omarama",
+   "icon": "🏘️",
+   "category": "landmark",
+   "bio": "A village on State Highway 8 in the Waitaki Valley, with a gliding club.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "coordinates": {
+    "latitude": -44.48788,
+    "longitude": 169.9656
+   },
+   "proposed_destination": "twizel",
+   "notes": [
+    "Spot of PROPOSED Twizel. HELD for photo per placement. The gliding claim rests only on the Omarama Gliding Club site title. No ticketUrl: omarama.com is the gliding club, not the town."
+   ]
+  },
+  "omarama-clay-cliffs": {
+   "name": "Omarama Clay Cliffs",
+   "icon": "🏔️",
+   "category": "nature",
+   "bio": "Eroded clay pinnacles on private land, reached by an unsealed road with a $5 per vehicle honesty-box fee.",
+   "hours": "Daylight hours (no fixed hours found)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "costMin": 5,
+   "costMax": 5,
+   "currency": "NZD",
+   "coordinates": {
+    "latitude": -44.48879,
+    "longitude": 169.87214
+   },
+   "proposed_destination": "twizel",
+   "notes": [
+    "Spot of PROPOSED Twizel. $5 per vehicle, cash at the gate, per Waitaki District tourism and OSM. ticketUrl OMITTED: no working official site found (claycliffs.co.nz and claycliffs.nz do not resolve; newzealand.com mentions one but blocks scripts, 403). Hours not found. 4WD recommended or walk the last stretch. Pin is the OSM car park where the fee is paid (400 m from the cliffs)."
+   ]
+  }
+ },
+ "existing_fixes": {
+  "christchurch-11": {
+   "bio": "The 1876 time-signal tower, rebuilt in 2018 after earthquake damage; the grounds are open to visit.",
+   "hours": "Grounds open daily",
+   "free": true,
+   "notes": "Research bio; drops 'ball dropped daily at 1 PM' (not confirmed as running). Free and 'tower itself closed' are from the Kotuia directory, not the Heritage NZ page body; '2018' comes from skeptic notes (Kotuia says 'reconstructed'). ticketUrl and pin unchanged (pin 5 m from the OSM tower)."
+  },
+  "christchurch-16": {
+   "hours": "Ferry 10:15 AM from Lyttelton (also 12:15 PM Dec–Mar); last return about 3:30 PM",
+   "costMin": 45,
+   "costMax": 45,
+   "currency": "NZD",
+   "notes": "$45 is the Black Cat return ferry, the only way to the island (child $22, family $110). Sailings change by date: check Black Cat. DOC link unchanged."
+  },
+  "christchurch-22": {
+   "costMin": 39.5,
+   "costMax": 39.5,
+   "currency": "NZD",
+   "specialClosures": [
+    {
+     "month": 12,
+     "day": 25,
+     "reason": "Christmas Day"
+    }
+   ],
+   "notes": "Adult (16+) $39.50, child $12.50, family $91.50. Hours and link already right."
+  },
+  "christchurch-24": {
+   "hours": "10:00 AM – 4:30 PM (Thu–Sun; daily in school holidays)",
+   "costMin": 20,
+   "costMax": 20,
+   "currency": "NZD",
+   "specialClosures": [
+    {
+     "month": 12,
+     "day": 25,
+     "reason": "Christmas Day"
+    },
+    {
+     "month": 1,
+     "day": 1,
+     "reason": "New Year's Day"
+    }
+   ],
+   "notes": "Adult $20 (child $15, family $60). Open Thu-Sun and daily in school holidays, so closedDays [1,2,3] is deliberately NOT set (wrong in holidays). Bio's 'on operating days' is not on the admission page."
+  },
+  "christchurch-26": {
+   "costMin": 35,
+   "costMax": 35,
+   "currency": "NZD",
+   "notes": "$35 is the sightseeing (chairlift) pass, adult inferred from a flattened table; bike and zipline tickets cost more. Hours stay the placeholder 'Seasonal hours': the 2026-27 hours are in a news post that could not be read. Needs a browser."
+  },
+  "akaroa-6": {
+   "costMin": 220,
+   "costMax": 450,
+   "currency": "NZD",
+   "notes": "Prices are third-party newzealand.com listings ($220 for the 2-day option, to $450), not the operator page; check bankstrack.rezdy.com. Hours (1 Oct - 30 Apr) and link unchanged."
+  },
+  "timaru-3": {
+   "hours": "Tue–Fri 10:00 AM – 3:00 PM; Sat 9:00 AM – 2:00 PM",
+   "closedDays": [
+    0,
+    1
+   ],
+   "free": false,
+   "costMin": 20,
+   "costMax": 20,
+   "currency": "NZD",
+   "notes": "free:true is WRONG: the centre sells entry. $20 centre-only is UNVERIFIED (Eventfinda/newzealand.com summary; prices sit behind the booking cart; tours up to $130). Hours from the operator. ticketUrl already right."
+  },
+  "timaru-4": {
+   "hours": "Tue–Fri 10:00 AM – 4:00 PM; Sat–Sun 12:00 PM – 4:00 PM",
+   "closedDays": [
+    1
+   ],
+   "specialClosures": [
+    {
+     "month": 12,
+     "day": 25,
+     "reason": "Christmas Day"
+    },
+    {
+     "month": 12,
+     "day": 26,
+     "reason": "Boxing Day"
+    }
+   ],
+   "notes": "Free entry and hours from a search summary of the gallery's own site. ticketUrl https://www.aigantighe.co.nz/ is BLOCKED (403 'Just a moment') and unchecked: not added. Confirm in a real browser."
+  },
+  "aoraki-mount-cook-4": {
+   "hours": "8:15 AM – 8:00 PM (seasonal)",
+   "costMin": 30,
+   "costMax": 30,
+   "currency": "NZD",
+   "ticketUrl": "https://www.hermitage.co.nz/experience/the-sir-edmund-hillary-alpine-centre/",
+   "notes": "Adult from $30 (child from $16, family from $75), replacing $20 and 7 am-8 pm. Hours are seasonal and change. The new link replaces the Hermitage homepage, whose title did not name the centre."
+  },
+  "aoraki-mount-cook-2": {
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/aoraki-mount-cook-national-park/things-to-do/tracks/tasman-glacier-view-track/",
+   "notes": "Link changed from the park things-to-do page to the Tasman Glacier View Track page (1.5 km return, 30 min, loaded, names the glacier). Boat trips on Tasman Lake are separate paid tours, not priced."
+  },
+  "arthurs-pass-2": {
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/arthurs-pass-national-park/things-to-do/tracks/avalanche-peak-route/",
+   "notes": "Link changed to the Avalanche Peak Route page (loaded). DOC gives 3-4 h to the summit; existing visit time 6-8 h left to the owner."
+  },
+  "arthurs-pass-3": {
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/arthurs-pass-national-park/things-to-do/tracks/devils-punchbowl-walking-track/",
+   "notes": "Link changed to the Devils Punchbowl Walking Track page (loaded). Guessed '.../devils-punchbowl-falls-track/' redirects to the park page."
+  },
+  "kura-tawhiti-castle-hill": {
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/kura-tawhiti-castle-hill/",
+   "notes": "Link added: DOC page for the conservation area (loaded, names the place). Free is 'no fee mentioned'."
+  },
+  "kaikoura-9": {
+   "hours": "9:00 AM – 5:00 PM (listings differ)",
+   "free": true,
+   "notes": "Free recommended (no admission, roadside icon); crayfish prices not found. Existing hours '10-3' disagree with listings (9-5, some later closing). Link unchanged (loaded)."
+  }
+ },
+ "held": [
+  "christchurch-29",
+  "christchurch-32",
+  "akaroa-9",
+  "opuke-thermal-pools",
+  "ski-roundhill",
+  "fairlie",
+  "twizel-river-trail",
+  "omarama"
+ ],
+ "notes": [
+  "Proposed destinations Methven and Twizel: their spots carry proposed_destination (mount-hutt, opuke-thermal-pools, rakaia-gorge, mount-somers -> methven; twizel-river-trail, lake-benmore, omarama, omarama-clay-cliffs -> twizel). apply-region skips them; fallback is standalone with the four standalone fields. 'methven' and 'twizel' are NOT written as spots of themselves; both need description, three reasons with photos, tips, best months and a header. If the owner declines the destinations, add the four fields to those eight. Placement lists Omarama and Lake Benmore as members of Twizel; Lake Benmore's dam is nearer Otematata/Omarama.",
+  "Held ids are listed in 'held' (not a key on the spot, as in Northland). Held = no Commons photo per placement. Held but sourced: all fields are filled for them.",
+  "NOT EXPRESSIBLE in apply-region: (1) specialClosures for new and existing spots (not in FIELDS): add Christmas/Boxing/New Year closures by hand to Willowbank, Quake City, Opuke, Orana, Ferrymead and Aigantighe. (2) Ferrymead's Thu-Sun-or-daily-in-school-holidays pattern (closedDays would be wrong in holidays; text only). (3) Te Ana (Timaru) turning free:true into a priced entry: set free false/remove it by hand, since apply-region only writes costs. (4) Standalone spots get the four standalone fields on their entry; proposed-destination spots do not (hand-add on fallback). (5) Seasonal pricing/hours (Tram summer/winter, Hillary Centre seasonal, ski seasons) exist only as hours text. (6) Placing new standalone spots in the 'Standalone spots' section and adding any ids to HEADER/other lists. (7) Spots left with unresolved ticketUrl: Mona Vale, Timaru Botanic Gardens, Aigantighe (BLOCKED, see notes), Omarama Clay Cliffs (none found).",
+  "Coordinates: every moved spot uses the research-corrected point. Biggest corrections: Rakaia Gorge (14 km), Lake Benmore (16 km), Lake Coleridge (10 km), Mount Somers (11 km), Mount Hutt (3.3 km), Hanmer Forest Park (2.9 km, was copied from the thermal pools), Peel Forest (3 km), Waipara (3.7 km). Run audit-spot-coordinates --country NZ after applying.",
+  "Unverified: all open-access hours are judgement; Opuke $33, Mount Hutt/Mount Dobson/Roundhill day passes, Te Ana Timaru $20, Banks Peninsula Track $220-450 and Clay Cliffs $5 are third-party or secondary figures; Fairlie's bio and the Mona Vale, Pohatu and Peel Forest wiki titles were not checked against sources.",
+  "Left as is, owner decision (placement reviews): Akaroa Lighthouse (no data change, free exterior), Akaroa Harbour (cost 95-195 not re-verified, no ticketUrl by design: many operators), Te Ana - The Caves in Kaikoura (price, hours and official site not found, 'reopened late 2025' unverified; do not use the Timaru Te Ana pages), Whale Watch Kaikoura, TranzAlpine, Dark Sky Project, Sheepdog Statue.",
+  "Existing-spot flags not turned into fixes: Avalanche Peak visit time; Christchurch Tram Ride is a vehicle spot (owner call)."
+ ]
+}

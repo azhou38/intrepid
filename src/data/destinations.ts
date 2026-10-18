@@ -1008,7 +1008,7 @@ export const DESTINATIONS: Destination[] = [
     continent: 'Oceania', coordinates: { latitude: -43.7340, longitude: 170.0960 },
     category: 'mountain', icon: '🏔️', rank: 2,
     tagline: "New Zealand's highest peak, ringed by glaciers and ice-blue lakes.",
-    description: "Aoraki / Mount Cook, at 3,724 m, is New Zealand's highest mountain and the heart of a national park where more than a third of the land is permanent snow and ice. Easy, spectacular trails like the Hooker Valley Track lead to iceberg-strewn glacial lakes, and scenic flights land on the vast Tasman Glacier. The approach along Lake Pukaki is one of the country's great drives.",
+    description: "Aoraki / Mount Cook, at 3,724 m, is New Zealand's highest mountain and the heart of a national park where more than a third of the land is permanent snow and ice. Easy trails like the Hooker Valley Track lead to iceberg-strewn glacial lakes, and scenic flights land on the vast Tasman Glacier. The approach along Lake Pukaki is one of the country's great drives.",
     whyVisit: ["New Zealand's highest mountain", 'The Hooker Valley Track', 'Glaciers and iceberg lakes'],
     whyVisitPhotos: ["Hooker Valley towards Aoraki Mount Cook at sunset.jpg", "NZ Hooker Valley track.jpg", "Icebergs in Hooker Glacier Lake in front of Aoraki Mount Cook.jpg"],
     highlights: ['Aoraki / Mount Cook', 'Hooker Valley', 'Glacier lakes'],

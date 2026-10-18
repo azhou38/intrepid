@@ -88,6 +88,7 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number }> = {
   "Cape Brett Track": { x: 0.27, y: 0.5 },
   "Mount Eden": { x: 0.5, y: 0.6 },
   "Timber Trail": { x: 0.55, y: 0.4 },
+  "Omarama Clay Cliffs": { x: 0.65, y: 0.5 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -647,4 +648,22 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Tolaga Bay Wharf": "Tolaga Bay Wharf.jpg",
   "Timber Trail": "115m Bog Creek suspension bridge.JPG",
   "Tirau Giant Dog and Sheep": "Tirau (3).jpg",
+  "Taylors Mistake": "Taylors Mistake MRD 01.jpg",
+  "Summit Road": "Summit Road, Mount Cavendish 01.jpg",
+  "Mona Vale, Christchurch": "Mona Vale Homestead. Christchurch. (9582248646).jpg",
+  "Christchurch tramway system": "Trams Christchurch and Regent Theatre.jpg",
+  "Hanmer Forest Park": "Hanmer Forest Sculpture Walk MRD 11.jpg",
+  "Timaru Botanic Gardens": "Timaru Botanic Garden, New Zealand.jpg",
+  "Mount John Walkway": "Mt. John Walkway - 2013.04 - panoramio (1).jpg",
+  "Mount Hutt": "Mount Hutt, Canterbury, New Zealand.jpg",
+  "Rakaia Gorge": "Rakaia Gorge Bridge No. 1.jpg",
+  "Mount Somers": "Mount Somers 23 Feb MRD 08.jpg",
+  "Lake Coleridge": "Lake Coleridge New Zealand (2168055700).jpg",
+  "Waipara Valley": "Waipara Valley from Black Estate JK01.jpg",
+  "Peel Forest": "Emily Falls (landscape).jpg",
+  "Little River Rail Trail": "Little River Rail Trail 010.JPG",
+  "Mount Sunday": "Mount Sunday MRD 02.jpg",
+  "Mount Dobson": "Mount Dobson 27.jpg",
+  "Lake Benmore": "Lake Benmore.jpg",
+  "Omarama Clay Cliffs": "Clay Cliffs (14425344992).jpg",
 };
