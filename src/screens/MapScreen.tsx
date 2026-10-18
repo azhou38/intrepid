@@ -1701,14 +1701,29 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // still zoomed-in map.
   const planZoomTargetRef = useRef<number | null>(null);
   if (selectedCountry || selectedDest) planZoomTargetRef.current = null;
-  const planZoomTarget = planZoomTargetRef.current;
+  let planZoomTarget = planZoomTargetRef.current;
   // The same look-ahead for closing a spot back INTO its destination (the "‹ Destination" back), which keeps the
   // destination selected and so can't use planZoomTarget (cleared above while one is selected). Spot pins, dots and names
   // plan at the destination's default view from the first frame of the zoom-out instead of bunching up at the old zoom.
   // Cleared on the first idle, a user gesture or a safety timer, like planZoomTarget.
   const spotCloseTargetRef = useRef<number | null>(null);
   const spotCloseTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const closeTarget = planZoomTarget ?? spotCloseTargetRef.current;
+  // A close only ever zooms OUT to its target, so once the camera has reached it, or is zooming in, the close is over:
+  // drop the target here rather than trusting the idle event, gesture or timer to clear it. A target left behind froze
+  // the spot pin plan at the destination's default view (handoffZoom pinned to it, closeViewScale cancelling the live
+  // zoom), so zooming in on a selected destination never gave its collapsed spot pins their photos.
+  const lastCamZoomRef = useRef(camZoom);
+  {
+    const zoomingIn = camZoom > lastCamZoomRef.current + 0.01;
+    lastCamZoomRef.current = camZoom;
+    const arrived = (t: number | null) => t !== null && (camZoom <= t + 0.05 || zoomingIn);
+    if (arrived(spotCloseTargetRef.current)) {
+      spotCloseTargetRef.current = null;
+      if (spotCloseTimerRef.current) { clearTimeout(spotCloseTimerRef.current); spotCloseTimerRef.current = null; }
+    }
+    if (arrived(planZoomTargetRef.current)) { planZoomTargetRef.current = null; planZoomTarget = null; }
+  }
+  const closeTarget = planZoomTargetRef.current ?? spotCloseTargetRef.current;
   // Pin planning runs ahead of the (heavy, laggy) per-frame renders.
   // - A close that flies to a known wider view plans AT that view from its first frame (planZoomTarget): the spot pins
   //   and photo pins the wider view doesn't have start leaving at once, and no intermediate zoom's pin set (many photo
