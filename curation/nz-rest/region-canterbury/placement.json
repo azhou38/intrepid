@@ -1,0 +1,1960 @@
+{
+ "region": "canterbury",
+ "spots": [
+  {
+   "name": "Taylors Mistake",
+   "action": "spot",
+   "destination": "christchurch",
+   "id": "christchurch-27",
+   "coordinates": {
+    "latitude": -43.5833,
+    "longitude": 172.7755
+   },
+   "coordinates_source": "wikipedia:Taylors Mistake (article of the bay itself; check against OSM natural/beach with the audit script)",
+   "reason": "12.6 km from the Christchurch centre inside its 75% span; reached from the city over the Port Hills, start of the Godley Head loop already in the app.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A sheltered surf beach and bay settlement at the start of the coastal walk to Godley Head.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 4551,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch"
+   ],
+   "photo": {
+    "file": "Taylors Mistake MRD 01.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Taylors_Mistake_MRD_01.jpg",
+    "width": 4032,
+    "licence": "CC BY 4.0"
+   },
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "distance_km_from_destination": 12.6,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Summit Road",
+   "action": "spot",
+   "destination": "christchurch",
+   "id": "christchurch-28",
+   "coordinates": {
+    "latitude": -43.5941,
+    "longitude": 172.7486
+   },
+   "coordinates_source": "Wikivoyage listing for the road (a point on the road, not a named car park or viewpoint)",
+   "reason": "11.4 km from the centre, inside the span, reached from the city; the road absorbs Sign of the Kiwi, Sign of the Takahe, Crater Rim Walkway and Victoria Park (all rejected as parts of it).",
+   "category": "viewpoint",
+   "icon": "🛣️",
+   "bio": "The Port Hills crest drive and ride, with views over the city, harbour and Southern Alps.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch"
+   ],
+   "photo": {
+    "file": "Summit Road, Mount Cavendish 01.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Summit_Road%2C_Mount_Cavendish_01.jpg",
+    "width": 3441,
+    "licence": "CC BY 2.0"
+   },
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ],
+   "status": "ready for Pipeline C research",
+   "wiki": "Summit Road, Christchurch",
+   "note": "Long linear feature: pick one visitor access point (a named viewpoint or car park) from OSM/Wikivoyage, not a point on the road.",
+   "distance_km_from_destination": 11.4,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Willowbank Wildlife Reserve",
+   "action": "spot",
+   "destination": "christchurch",
+   "id": "christchurch-29",
+   "coordinates": {
+    "latitude": -43.4628,
+    "longitude": 172.594
+   },
+   "coordinates_source": "Wikivoyage listing (Christchurch), own geo tag; confirm entrance",
+   "reason": "8.4 km north-west of the centre inside the span; reached from the city.",
+   "category": "entertainment",
+   "icon": "🥝",
+   "bio": "A wildlife park of New Zealand species, with kiwi viewing and the Ko Tāne Māori village.",
+   "hours": null,
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 2514,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch"
+   ],
+   "photo": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "status": "held: needs a photo",
+   "distance_km_from_destination": 8.4,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Mona Vale",
+   "action": "spot",
+   "destination": "christchurch",
+   "id": "christchurch-30",
+   "coordinates": {
+    "latitude": -43.5232,
+    "longitude": 172.6086
+   },
+   "coordinates_source": "Skeptic check: matches the Mona Vale homestead (Wikivoyage listing, own geo tag)",
+   "reason": "2.5 km from the centre, central-city garden attraction.",
+   "category": "historic",
+   "icon": "🌷",
+   "bio": "An Elizabethan-style homestead set in riverside gardens beside the Avon, free to wander.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 1942,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch"
+   ],
+   "photo": {
+    "file": "Mona Vale Homestead. Christchurch. (9582248646).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Mona_Vale_Homestead._Christchurch._%289582248646%29.jpg",
+    "width": 2000,
+    "licence": "CC0"
+   },
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "wiki": "Mona Vale, Christchurch",
+   "distance_km_from_destination": 2.4,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Christchurch Tram Ride",
+   "action": "spot",
+   "destination": "christchurch",
+   "id": "christchurch-31",
+   "coordinates": {
+    "latitude": -43.5306,
+    "longitude": 172.6389
+   },
+   "coordinates_source": "Wikivoyage listing (Christchurch), own geo tag; the loop has no single entrance, use a stop",
+   "reason": "Central city. Kept under the COVERAGE.md carve-out: the loop is the attraction and has no distinct end place. Not the same as New Regent Street (christchurch-6); the candidate file mislabelled it as that.",
+   "category": "entertainment",
+   "icon": "🚋",
+   "bio": "A 50-minute heritage tram loop around the central city, hop-on hop-off on a day pass.",
+   "hours": null,
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 7576,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch"
+   ],
+   "photo": {
+    "file": "Trams Christchurch and Regent Theatre.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Trams_Christchurch_and_Regent_Theatre.jpg",
+    "width": 2400,
+    "licence": "CC0"
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "wiki": "Christchurch tramway system",
+   "distance_km_from_destination": 0.3,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Quake City",
+   "action": "spot",
+   "destination": "christchurch",
+   "id": "christchurch-32",
+   "coordinates": {
+    "latitude": -43.5286,
+    "longitude": 172.6334
+   },
+   "coordinates_source": "Wikivoyage listing (Christchurch), own geo tag; skeptic: Canterbury Museum lists it at 299 Durham St North",
+   "reason": "Central city, inside the span. Wikivoyage lists daily 10-5 and $20 (Jan 2024): verify hours, price and that it is still open.",
+   "category": "museum",
+   "icon": "🏛️",
+   "bio": "A museum on the 2010–11 Christchurch earthquakes, run by Canterbury Museum.",
+   "hours": "10:00 AM – 5:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": 20,
+   "costMax": 20,
+   "currency": "NZD",
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Christchurch"
+   ],
+   "photo": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "held: needs a photo",
+   "distance_km_from_destination": 0.4,
+   "inside_75pct_span": true,
+   "hours_note": "Wikivoyage figure, unverified (set null if research disagrees)"
+  },
+  {
+   "name": "Flea Bay (Pōhatu)",
+   "action": "spot",
+   "destination": "akaroa",
+   "id": "akaroa-9",
+   "coordinates": {
+    "latitude": -43.868,
+    "longitude": 173.004
+   },
+   "coordinates_source": "Wikivoyage Akaroa listing (centre of the bay area); needs the Flea Bay / Pōhatu car park or beach point from OSM/DOC",
+   "reason": "7.7 km from Akaroa centre, inside its 15 km radius, reached from Akaroa. Renamed per the skeptic: Wikivoyage Akaroa names Flea Bay (Pōhatu). Note: not hours-open-24 verified; confirm access and colony viewing rules.",
+   "category": "nature",
+   "icon": "🐧",
+   "bio": "A penguin bay and marine reserve reached by a rough road from Akaroa, passed by the Banks Peninsula Track.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 161,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Akaroa"
+   ],
+   "photo": null,
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ],
+   "status": "held: needs a photo",
+   "wiki": "Pohatu Marine Reserve",
+   "distance_km_from_destination": 7.7,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Hanmer Forest Park",
+   "action": "spot",
+   "destination": "hanmer-springs",
+   "id": "hanmer-springs-5",
+   "coordinates": {
+    "latitude": -42.5226,
+    "longitude": 172.829
+   },
+   "coordinates_source": "APPROXIMATE: copied from the thermal pools; use a DOC trailhead",
+   "reason": "At the edge of Hanmer Springs, inside the span; two sources.",
+   "category": "nature",
+   "icon": "🌲",
+   "bio": "A forest park above the town with walking and mountain-bike tracks, including a sculpture walk.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Hanmer_Springs",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/hanmer-forest-park/"
+   ],
+   "photo": {
+    "file": "Hanmer Forest Sculpture Walk MRD 11.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Hanmer_Forest_Sculpture_Walk_MRD_11.jpg",
+    "width": 3024,
+    "licence": "unrecorded: read on the Commons file page",
+    "note": "skeptic did not open the file page: check the four checks and licence before applying"
+   },
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "status": "ready for Pipeline C research",
+   "distance_km_from_destination": 0.1,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Timaru Botanic Gardens",
+   "action": "spot",
+   "destination": "timaru",
+   "id": "timaru-5",
+   "coordinates": {
+    "latitude": -44.4102,
+    "longitude": 171.2533
+   },
+   "coordinates_source": "Wikivoyage listing (Timaru), own geo tag",
+   "reason": "1.5 km from the Timaru centre.",
+   "category": "nature",
+   "icon": "🌳",
+   "bio": "Botanic gardens with a pond and lawns, free to walk.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Timaru"
+   ],
+   "photo": {
+    "file": "Timaru Botanic Garden, New Zealand.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Timaru_Botanic_Garden%2C_New_Zealand.jpg",
+    "width": 5472,
+    "licence": "unrecorded: read on the Commons file page",
+    "note": "skeptic did not open the file page: check the four checks and licence before applying"
+   },
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "distance_km_from_destination": 1.5,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Mount John Walkway",
+   "action": "spot",
+   "destination": "lake-tekapo",
+   "id": "lake-tekapo-6",
+   "coordinates": {
+    "latitude": -43.9957,
+    "longitude": 170.4612
+   },
+   "coordinates_source": "Wikivoyage listing (Lake Tekapo), own geo tag; confirm trailhead on the lakeshore",
+   "reason": "1.6 km from Tekapo village; a walk distinct from the observatory spot (lake-tekapo-2). The candidate file wrongly linked it to lake-tekapo-4 (Tekapo Springs).",
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "A two-hour climb from the lakeshore to the Mount John summit, with views over Lake Tekapo and the Mackenzie Basin.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 3.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lake_Tekapo",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/lake-tekapo-area/things-to-do/tekapo-mt-john-walkway/"
+   ],
+   "photo": {
+    "file": "Mt. John Walkway - 2013.04 - panoramio (1).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Mt._John_Walkway_-_2013.04_-_panoramio_%281%29.jpg",
+    "width": 3242,
+    "licence": "CC BY 3.0"
+   },
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "distance_km_from_destination": 1.6,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Methven",
+   "action": "new-destination",
+   "destination": "methven",
+   "id": "methven",
+   "coordinates": {
+    "latitude": -43.6333,
+    "longitude": 171.65
+   },
+   "coordinates_source": "Wikipedia: Methven, New Zealand (town point; the destination is the town)",
+   "reason": "Wikivoyage chapter; five kept places cluster round it (Mount Hutt 21 km, Ōpuke 1 km, Rakaia Gorge, Mount Somers 23 km). Proposed as a new destination for the owner, not added.",
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "A ski and adventure town, the base for Mount Hutt, Rakaia Gorge and the Ōpuke thermal pools.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 14385,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Methven"
+   ],
+   "photo": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "status": "held: needs a photo",
+   "wiki": "Methven, New Zealand",
+   "distance_km_from_destination": 0.0,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Mount Hutt",
+   "action": "standalone",
+   "destination": null,
+   "id": "mount-hutt",
+   "coordinates": {
+    "latitude": -43.4667,
+    "longitude": 171.5333
+   },
+   "coordinates_source": "wikipedia:Mount Hutt (mountain point; use the ski-area base or access-road car park)",
+   "reason": "Two counted sources, seasonal permanent venue. 21 km from Methven; spot of the proposed Methven destination, standalone until it is approved.",
+   "category": "entertainment",
+   "icon": "⛷️",
+   "bio": "A ski field above Methven, open in the winter season.",
+   "hours": null,
+   "visitHoursMin": 3,
+   "visitHoursMax": 8,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 8797,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Methven",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/mount-hutt-area/"
+   ],
+   "photo": {
+    "file": "Mount Hutt, Canterbury, New Zealand.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Mount_Hutt%2C_Canterbury%2C_New_Zealand.jpg",
+    "width": 3072,
+    "licence": "CC BY 3.0"
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "status": "ready for Pipeline C research",
+   "proposed_destination": "methven",
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland"
+  },
+  {
+   "name": "Ōpuke Thermal Pools",
+   "action": "standalone",
+   "destination": null,
+   "id": "opuke-thermal-pools",
+   "coordinates": {
+    "latitude": -43.6232,
+    "longitude": 171.6477
+   },
+   "coordinates_source": "Wikivoyage listing (Methven), own geo tag",
+   "reason": "1 km from Methven; spot of the proposed Methven destination, standalone until approved.",
+   "category": "entertainment",
+   "icon": "♨️",
+   "bio": "Natural thermal pools near Methven, for a soak.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Methven"
+   ],
+   "photo": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "held: needs a photo",
+   "proposed_destination": "methven",
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland"
+  },
+  {
+   "name": "Rakaia Gorge",
+   "action": "standalone",
+   "destination": null,
+   "id": "rakaia-gorge",
+   "coordinates": {
+    "latitude": -43.6333,
+    "longitude": 171.65
+   },
+   "coordinates_source": "APPROXIMATE: copied from Methven; use the DOC Rakaia Gorge Walkway start / OSM",
+   "reason": "DOC walkway page. Spot of the proposed Methven destination, standalone until approved. Skeptic photo accepted (Rakaia Gorge 500.jpg rejected: it is the Waimakariri Gorge).",
+   "category": "nature",
+   "icon": "🌉",
+   "bio": "A roadside gorge on the Rakaia River with a DOC walkway, old bridges and river views.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/mount-hutt-area/things-to-do/rakaia-gorge-walkway/"
+   ],
+   "photo": {
+    "file": "Rakaia Gorge Bridge No. 1.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Rakaia_Gorge_Bridge_No._1.jpg",
+    "width": 4032,
+    "licence": "unrecorded: read on the Commons file page"
+   },
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ],
+   "status": "ready for Pipeline C research",
+   "proposed_destination": "methven",
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland"
+  },
+  {
+   "name": "Mount Somers",
+   "action": "standalone",
+   "destination": null,
+   "id": "mount-somers",
+   "coordinates": {
+    "latitude": -43.7256,
+    "longitude": 171.4
+   },
+   "coordinates_source": "wikipedia:Mount Somers (mountain point); use a Mount Somers Walkway / Sharplin Falls trailhead from DOC",
+   "reason": "DOC area page. 23 km from Methven; spot of the proposed Methven destination, standalone until approved.",
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "A range with walks, huts and waterfalls, including the Mount Somers Walkway and Sharplin Falls.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 3934,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/mount-somers-area/"
+   ],
+   "photo": {
+    "file": "Mount Somers 23 Feb MRD 08.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Mount_Somers_23_Feb_MRD_08.jpg",
+    "width": 4032,
+    "licence": "CC BY 4.0"
+   },
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ],
+   "status": "ready for Pipeline C research",
+   "proposed_destination": "methven",
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland"
+  },
+  {
+   "name": "Lake Coleridge",
+   "action": "standalone",
+   "destination": null,
+   "id": "lake-coleridge",
+   "coordinates": {
+    "latitude": -43.2833,
+    "longitude": 171.5
+   },
+   "coordinates_source": "wikipedia:Lake Coleridge (lake centroid; use the village / lakeshore access point from OSM)",
+   "reason": "Benchmark standalone: 41 km from Methven, outside every span and outside the proposed Methven radius. WEAK SOURCING: no counted See/Do source (Wikipedia only; Wikivoyage has no page, DOC and Selwyn pages unreachable). Skeptic kept it as a benchmark; the owner may want to confirm.",
+   "category": "nature",
+   "icon": "🏞️",
+   "bio": "A high-country lake of the Rakaia system in the foothills of the Southern Alps, known for fishing.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 4404,
+   "counted_sources": [],
+   "photo": {
+    "file": "Lake Coleridge New Zealand (2168055700).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Lake_Coleridge_New_Zealand_%282168055700%29.jpg",
+    "width": 3072,
+    "licence": "CC BY 2.0"
+   },
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ],
+   "status": "ready for Pipeline C research",
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland"
+  },
+  {
+   "name": "Waipara Valley",
+   "action": "standalone",
+   "destination": null,
+   "id": "waipara-valley",
+   "coordinates": {
+    "latitude": -43.0667,
+    "longitude": 172.75
+   },
+   "coordinates_source": "Wikipedia: Waipara (approximate for the valley); use a cellar-door cluster point",
+   "reason": "53 km from Christchurch, 61 km from Hanmer Springs: outside every span; reached on its own as a wine-region day trip.",
+   "category": "nature",
+   "icon": "🍷",
+   "bio": "A North Canterbury wine region of vineyards and cellar doors, north of Christchurch.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Waipara"
+   ],
+   "photo": {
+    "file": "Waipara Valley from Black Estate JK01.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Waipara_Valley_from_Black_Estate_JK01.jpg",
+    "width": 1000,
+    "licence": "unrecorded: read on the Commons file page",
+    "note": "skeptic did not open the file page: check the four checks and licence before applying"
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "status": "ready for Pipeline C research",
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland"
+  },
+  {
+   "name": "Peel Forest Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "peel-forest-park",
+   "coordinates": {
+    "latitude": -43.9167,
+    "longitude": 171.2667
+   },
+   "coordinates_source": "wikipedia:Peel Forest (settlement point); use the DOC Peel Forest visitor / Emily Falls car park",
+   "reason": "53 km from Timaru, outside its span; reached via Geraldine or Rangitata, not from a base we list.",
+   "category": "nature",
+   "icon": "🌲",
+   "bio": "Old-growth podocarp forest with waterfalls such as Emily Falls, and a campsite.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 2560,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/peel-forest-park-scenic-reserve/"
+   ],
+   "photo": {
+    "file": "Emily Falls (landscape).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Emily_Falls_%28landscape%29.jpg",
+    "width": 5121,
+    "licence": "CC BY-SA 4.0"
+   },
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ],
+   "status": "ready for Pipeline C research",
+   "wiki": "Peel Forest",
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland"
+  },
+  {
+   "name": "Little River Rail Trail",
+   "action": "standalone",
+   "destination": null,
+   "id": "little-river-rail-trail",
+   "coordinates": {
+    "latitude": -43.7667,
+    "longitude": 172.7833
+   },
+   "coordinates_source": "wikipedia:Little River Rail Trail (a point on the trail); use the Little River station end",
+   "reason": "15.4 km from Akaroa and 26 km from Christchurch, outside both spans; a linear trail placed at its Little River end.",
+   "category": "hike",
+   "icon": "🚲",
+   "bio": "A cycle trail along the old Little River railway line on Banks Peninsula.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 483,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/lake-ellesmere-te-waihora-area/things-to-do/christchurch-little-river-rail-trail/"
+   ],
+   "photo": {
+    "file": "Little River Rail Trail 010.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Little_River_Rail_Trail_010.JPG",
+    "width": 5472,
+    "licence": "CC BY-SA 4.0"
+   },
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ],
+   "status": "ready for Pipeline C research",
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland"
+  },
+  {
+   "name": "Mount Sunday",
+   "action": "standalone",
+   "destination": null,
+   "id": "mount-sunday",
+   "coordinates": {
+    "latitude": -43.548,
+    "longitude": 170.893
+   },
+   "coordinates_source": "wikipedia:Mount Sunday (hill point); use the Hakatere Potts Road car park / walking start",
+   "reason": "DOC Hakatere Conservation Park page names it; skeptic changed review to keep. 61 km from Fairlie, outside every span.",
+   "category": "landmark",
+   "icon": "🎬",
+   "bio": "The Rangitata hill that played Edoras in the Lord of the Rings films, reached along the Hakatere Potts Road.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 11372,
+   "counted_sources": [],
+   "photo": {
+    "file": "Mount Sunday MRD 02.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Mount_Sunday_MRD_02.jpg",
+    "width": 4032,
+    "licence": "CC BY 4.0"
+   },
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ],
+   "status": "ready for Pipeline C research",
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland"
+  },
+  {
+   "name": "Mount Dobson",
+   "action": "standalone",
+   "destination": null,
+   "id": "mount-dobson",
+   "coordinates": {
+    "latitude": -43.936,
+    "longitude": 170.67
+   },
+   "coordinates_source": "wikipedia:Mount Dobson (mountain point); use the ski-area base",
+   "reason": "Two sources, seasonal permanent venue. 22 km from Fairlie; outside every listed destination span.",
+   "category": "entertainment",
+   "icon": "⛷️",
+   "bio": "A ski field above Fairlie, open in the winter season.",
+   "hours": null,
+   "visitHoursMin": 3,
+   "visitHoursMax": 8,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 1532,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Fairlie",
+    "https://en.wikivoyage.org/wiki/Lake_Tekapo"
+   ],
+   "photo": {
+    "file": "Mount Dobson 27.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Mount_Dobson_27.jpg",
+    "width": 4080,
+    "licence": "CC BY-SA 4.0"
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "status": "ready for Pipeline C research",
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland"
+  },
+  {
+   "name": "Ski Roundhill",
+   "action": "standalone",
+   "destination": null,
+   "id": "ski-roundhill",
+   "coordinates": {
+    "latitude": -43.8257,
+    "longitude": 170.6558
+   },
+   "coordinates_source": "wikipedia:Roundhill Ski Area",
+   "reason": "Two sources, seasonal permanent venue. 33 km from Fairlie and 24 km from Tekapo village: outside both spans.",
+   "category": "entertainment",
+   "icon": "⛷️",
+   "bio": "A ski area with views over Lake Tekapo, open in the winter season.",
+   "hours": null,
+   "visitHoursMin": 3,
+   "visitHoursMax": 8,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 1481,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lake_Tekapo",
+    "https://en.wikivoyage.org/wiki/Fairlie"
+   ],
+   "photo": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "held: needs a photo",
+   "wiki": "Roundhill Ski Area",
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland"
+  },
+  {
+   "name": "Fairlie",
+   "action": "standalone",
+   "destination": null,
+   "id": "fairlie",
+   "coordinates": {
+    "latitude": -44.0983,
+    "longitude": 170.8292
+   },
+   "coordinates_source": "wikipedia:Fairlie, New Zealand (town point; the spot is the town)",
+   "reason": "Wikivoyage chapter, low-rank base. Mount Dobson, Ski Roundhill (and review-listed Fox Peak) are the only cluster, too thin to propose a destination yet.",
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "A small Mackenzie town on the road to the ski fields and Mount Cook.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 10590,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Fairlie"
+   ],
+   "photo": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "status": "held: needs a photo",
+   "wiki": "Fairlie, New Zealand",
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland"
+  },
+  {
+   "name": "Twizel",
+   "action": "new-destination",
+   "destination": "twizel",
+   "id": "twizel",
+   "coordinates": {
+    "latitude": -44.25,
+    "longitude": 170.1
+   },
+   "coordinates_source": "wikipedia:Twizel (town point)",
+   "reason": "Wikivoyage chapter; five kept places cluster round it (River Trail, Lake Benmore 21 km, Omarama 28 km, Clay Cliffs 32 km). 56 km from the Aoraki park centre, no overlap. Proposed as a new destination for the owner.",
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "A hydro town in the Mackenzie Basin and the service base for Aoraki / Mount Cook.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 23886,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Twizel"
+   ],
+   "photo": {
+    "file": "Twizel landscape.NZ.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Twizel_landscape.NZ.jpg",
+    "width": 2400,
+    "licence": "CC0"
+   },
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "distance_km_from_destination": 0.0,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Twizel River Trail",
+   "action": "standalone",
+   "destination": null,
+   "id": "twizel-river-trail",
+   "coordinates": {
+    "latitude": -44.25,
+    "longitude": 170.1
+   },
+   "coordinates_source": "APPROXIMATE: copied from Twizel; use the real trailhead from DOC/OSM",
+   "reason": "Wikivoyage plus DOC. Spot of proposed Twizel, standalone until approved.",
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "A 12 km, four-hour walk along the Twizel River.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 3,
+   "visitHoursMax": 4.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Twizel",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/twizel-area/things-to-do/twizel-river-trail/"
+   ],
+   "photo": null,
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ],
+   "status": "held: needs a photo",
+   "proposed_destination": "twizel",
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland"
+  },
+  {
+   "name": "Lake Benmore",
+   "action": "standalone",
+   "destination": null,
+   "id": "lake-benmore",
+   "coordinates": {
+    "latitude": -44.415,
+    "longitude": 170.2206
+   },
+   "coordinates_source": "wikipedia:Lake Benmore (lake centroid; use a shore access or dam viewpoint)",
+   "reason": "DOC area page and Wikivoyage. Spot of proposed Twizel, standalone until approved.",
+   "category": "nature",
+   "icon": "🏞️",
+   "bio": "A hydro lake with boating, fishing and a peninsula walk.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 3295,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/lake-benmore-and-lake-aviemore-area/"
+   ],
+   "photo": {
+    "file": "Lake Benmore.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Lake_Benmore.jpg",
+    "width": 1600,
+    "licence": "Public domain"
+   },
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ],
+   "status": "ready for Pipeline C research",
+   "proposed_destination": "twizel",
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland"
+  },
+  {
+   "name": "Omarama",
+   "action": "standalone",
+   "destination": null,
+   "id": "omarama",
+   "coordinates": {
+    "latitude": -44.4833,
+    "longitude": 169.9667
+   },
+   "coordinates_source": "wikipedia:Omarama (town point; the spot is the town)",
+   "reason": "Wikivoyage chapter. Spot of proposed Twizel, standalone until approved.",
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "A gliding town on State Highway 8 in the Waitaki Valley.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 11820,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/omarama-area/"
+   ],
+   "photo": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "status": "held: needs a photo",
+   "proposed_destination": "twizel",
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland"
+  },
+  {
+   "name": "Omarama Clay Cliffs",
+   "action": "standalone",
+   "destination": null,
+   "id": "omarama-clay-cliffs",
+   "coordinates": {
+    "latitude": -44.4889,
+    "longitude": 169.8667
+   },
+   "coordinates_source": "wikipedia:Omarama Clay Cliffs; use the car park at the end of the access road",
+   "reason": "Wikivoyage names it; toll per vehicle. Spot of proposed Twizel, standalone until approved. Skeptic suggests a hero_crop {x:0.65,y:0.5}.",
+   "category": "landmark",
+   "icon": "🏔️",
+   "bio": "Eroded clay pinnacles reached by a private road with a per-vehicle toll, popular for photography and walks.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 1766,
+   "counted_sources": [],
+   "photo": {
+    "file": "Clay Cliffs (14425344992).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Clay_Cliffs_%2814425344992%29.jpg",
+    "width": 4272,
+    "licence": "CC BY-SA 2.0"
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "status": "ready for Pipeline C research",
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "hero_crop": {
+    "x": 0.65,
+    "y": 0.5
+   }
+  }
+ ],
+ "covered_by_existing_destination": [
+  {
+   "name": "Akaroa",
+   "action": "covered-by-existing-destination",
+   "destination": "akaroa",
+   "reason": "Already a destination; listing it as its own spot would be a spot of itself (skeptic override)."
+  },
+  {
+   "name": "Lake Tekapo",
+   "action": "covered-by-existing-destination",
+   "destination": "lake-tekapo",
+   "reason": "Already a destination; listing it as its own spot would be a spot of itself (skeptic override)."
+  },
+  {
+   "name": "Aoraki / Mount Cook National Park",
+   "action": "covered-by-existing-destination",
+   "destination": "aoraki-mount-cook",
+   "reason": "Already a destination; listing it as its own spot would be a spot of itself (skeptic override)."
+  },
+  {
+   "name": "Hanmer Springs",
+   "action": "covered-by-existing-destination",
+   "destination": "hanmer-springs",
+   "reason": "Already a destination; listing it as its own spot would be a spot of itself (skeptic override)."
+  },
+  {
+   "name": "Kaikoura",
+   "action": "covered-by-existing-destination",
+   "destination": "kaikoura",
+   "reason": "Already a destination; listing it as its own spot would be a spot of itself (skeptic override)."
+  },
+  {
+   "name": "Arthur's Pass",
+   "action": "covered-by-existing-destination",
+   "destination": "arthurs-pass",
+   "reason": "Already a destination; listing it as its own spot would be a spot of itself (skeptic override)."
+  },
+  {
+   "name": "Arthur's Pass National Park",
+   "action": "covered-by-existing-destination",
+   "destination": "arthurs-pass",
+   "reason": "Already a destination; listing it as its own spot would be a spot of itself (skeptic override)."
+  },
+  {
+   "name": "Timaru",
+   "action": "covered-by-existing-destination",
+   "destination": "timaru",
+   "reason": "Already a destination; listing it as its own spot would be a spot of itself (skeptic override)."
+  }
+ ],
+ "existing_keeps": [
+  {
+   "id": "christchurch-1",
+   "name": "Christchurch Botanic Gardens",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "christchurch-2",
+   "name": "Avon River / Ōtākaro",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "christchurch-3",
+   "name": "Christchurch Art Gallery",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "christchurch-4",
+   "name": "The Arts Centre",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "christchurch-5",
+   "name": "Cardboard Cathedral",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "christchurch-6",
+   "name": "New Regent Street",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "christchurch-7",
+   "name": "Riverside Market",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "christchurch-8",
+   "name": "International Antarctic Centre",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "christchurch-9",
+   "name": "Christchurch Gondola",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "christchurch-10",
+   "name": "Lyttelton",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "christchurch-11",
+   "name": "Lyttelton Timeball Station",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "christchurch-12",
+   "name": "Sumner Beach",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "christchurch-13",
+   "name": "Godley Head",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "christchurch-14",
+   "name": "Bridle Path",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "christchurch-15",
+   "name": "Corsair Bay",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "christchurch-16",
+   "name": "Ōtamahua / Quail Island",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "christchurch-17",
+   "name": "Hagley Park",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "christchurch-19",
+   "name": "Canterbury Earthquake National Memorial",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "christchurch-21",
+   "name": "New Brighton Pier",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "christchurch-22",
+   "name": "Orana Wildlife Park",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "christchurch-23",
+   "name": "Riccarton House and Bush",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "christchurch-24",
+   "name": "Ferrymead Heritage Park",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "christchurch-25",
+   "name": "Air Force Museum of New Zealand",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "christchurch-26",
+   "name": "Christchurch Adventure Park",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "akaroa-1",
+   "name": "Akaroa Harbour",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "akaroa-2",
+   "name": "The Giant's House",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "akaroa-4",
+   "name": "Akaroa Museum",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "akaroa-5",
+   "name": "Akaroa Head",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "akaroa-6",
+   "name": "Banks Peninsula Track",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "akaroa-7",
+   "name": "Hinewai Reserve",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "akaroa-8",
+   "name": "Okains Bay Museum",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "kaikoura-2",
+   "name": "Kaikōura Peninsula Walkway",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "kaikoura-3",
+   "name": "Ohau Point",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "kaikoura-4",
+   "name": "Fyffe House",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "kaikoura-5",
+   "name": "Mount Fyffe",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "kaikoura-6",
+   "name": "Te Ana – The Caves",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "kaikoura-7",
+   "name": "Kaikōura Museum",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "kaikoura-8",
+   "name": "Point Kean",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "kaikoura-9",
+   "name": "Nin's Bin",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "hanmer-springs-1",
+   "name": "Hanmer Springs Thermal Pools",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "hanmer-springs-2",
+   "name": "Conical Hill",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "hanmer-springs-3",
+   "name": "Waiau Ferry Bridge",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "arthurs-pass-2",
+   "name": "Avalanche Peak",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "arthurs-pass-3",
+   "name": "Devils Punchbowl Falls",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "lake-tekapo-1",
+   "name": "Church of the Good Shepherd",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "lake-tekapo-2",
+   "name": "Mount John University Observatory",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "lake-tekapo-4",
+   "name": "Tekapo Springs",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "aoraki-mount-cook-1",
+   "name": "Hooker Valley Track",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "aoraki-mount-cook-2",
+   "name": "Tasman Glacier",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "aoraki-mount-cook-3",
+   "name": "Mueller Hut",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "aoraki-mount-cook-4",
+   "name": "Sir Edmund Hillary Alpine Centre",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "aoraki-mount-cook-5",
+   "name": "Lake Pukaki",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "aoraki-mount-cook-6",
+   "name": "Kea Point",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "aoraki-mount-cook-7",
+   "name": "Sealy Tarns",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "aoraki-mount-cook-8",
+   "name": "Red Tarns",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "timaru-1",
+   "name": "Caroline Bay",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "timaru-2",
+   "name": "South Canterbury Museum",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "timaru-3",
+   "name": "Te Ana Māori Rock Art Centre",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "timaru-4",
+   "name": "Aigantighe Art Gallery",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "kura-tawhiti-castle-hill",
+   "name": "Kura Tāwhiti / Castle Hill",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "cave-stream",
+   "name": "Cave Stream Scenic Reserve",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "lewis-pass",
+   "name": "Lewis Pass",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "birdlings-flat",
+   "name": "Birdlings Flat",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  }
+ ],
+ "new_destinations": [
+  {
+   "id": "methven",
+   "name": "Methven",
+   "rank": 5,
+   "coordinates": {
+    "latitude": -43.6333,
+    "longitude": 171.65
+   },
+   "suggested_defaultZoomSpanKm": 50,
+   "category": "city",
+   "spots": [
+    "mount-hutt",
+    "opuke-thermal-pools",
+    "rakaia-gorge",
+    "mount-somers"
+   ],
+   "photo": "none: Commons Methven pictures are over-saturated street scenes or Methven in Scotland (held)",
+   "case": "Wikivoyage chapter; base for Mount Hutt skiing, Rakaia Gorge, thermal pools and Mount Somers walks. Lake Coleridge (41 km) stays standalone.",
+   "status": "proposal only, needs description, reasons with photos, tips, best months, header"
+  },
+  {
+   "id": "twizel",
+   "name": "Twizel",
+   "rank": 5,
+   "coordinates": {
+    "latitude": -44.25,
+    "longitude": 170.1
+   },
+   "suggested_defaultZoomSpanKm": 80,
+   "category": "city",
+   "spots": [
+    "twizel-river-trail",
+    "lake-benmore",
+    "omarama",
+    "omarama-clay-cliffs"
+   ],
+   "photo": "Twizel landscape.NZ.jpg (weak: setting view, CC0, 2400 px)",
+   "case": "Wikivoyage chapter; hydro town and Aoraki gateway with Benmore, Omarama and the Clay Cliffs round it. Lake Ōhau (review) would join if approved.",
+   "status": "proposal only, needs description, reasons with photos, tips, best months, header"
+  }
+ ],
+ "new_destination_note": "Two new destinations proposed for the owner (Methven, Twizel); their spots are placed as standalone with proposed_destination set so none is lost if the proposals are declined. Fairlie, Mount Dobson and Ski Roundhill are too thin a cluster to propose (Fox Peak is only in review); Fairlie stays a standalone town spot. Waipara Valley, Peel Forest Park, Little River Rail Trail, Mount Sunday and Lake Coleridge are outside every span. Existing destinations needed no span change.",
+ "spot_of_proposed_destination": [
+  {
+   "id": "mount-hutt",
+   "name": "Mount Hutt",
+   "proposed_destination": "methven"
+  },
+  {
+   "id": "opuke-thermal-pools",
+   "name": "Ōpuke Thermal Pools",
+   "proposed_destination": "methven"
+  },
+  {
+   "id": "rakaia-gorge",
+   "name": "Rakaia Gorge",
+   "proposed_destination": "methven"
+  },
+  {
+   "id": "mount-somers",
+   "name": "Mount Somers",
+   "proposed_destination": "methven"
+  },
+  {
+   "id": "twizel-river-trail",
+   "name": "Twizel River Trail",
+   "proposed_destination": "twizel"
+  },
+  {
+   "id": "lake-benmore",
+   "name": "Lake Benmore",
+   "proposed_destination": "twizel"
+  },
+  {
+   "id": "omarama",
+   "name": "Omarama",
+   "proposed_destination": "twizel"
+  }
+ ],
+ "existing_fixes": [
+  {
+   "id": "christchurch-11",
+   "name": "Lyttelton Timeball Station",
+   "issue": "Skeptic resolved to keep: the tower was rebuilt July 2017-Nov 2018 and the area reopened (grounds only). Current bio still says \"destroyed in the 2011 earthquake\", which reads as if it were gone.",
+   "action": "edit-bio",
+   "new_bio": "The 1876 time-signal tower, rebuilt in 2018 after earthquake damage; the grounds are open to visit.",
+   "note": "Run python3 scripts/curation/bio-fit.py --text on it; drop the \"ball dropped daily at 1 PM\" clause (the ball drops are not confirmed as running)."
+  },
+  {
+   "id": "aoraki-mount-cook-4",
+   "name": "Sir Edmund Hillary Alpine Centre",
+   "issue": "Skeptic kept: Wikivoyage lists it daily 8:30-8 ($25) and the Hermitage site lists it. Existing hours 7:00 AM - 8:00 PM and $20 disagree.",
+   "action": "research-hours-and-cost"
+  },
+  {
+   "id": "timaru-4",
+   "name": "Aigantighe Art Gallery",
+   "issue": "Skeptic kept as a free regional gallery; check cost is free.",
+   "action": "none-unless-research-disagrees"
+  },
+  {
+   "id": "kaikoura-1",
+   "name": "Whale Watch Kaikōura",
+   "issue": "Operator, not a place (review). Owner call on a place-named replacement.",
+   "action": "owner-decision (review)"
+  },
+  {
+   "id": "arthurs-pass-1",
+   "name": "TranzAlpine",
+   "issue": "A train: a vehicle. Review; keep only if the ride is treated as the attraction.",
+   "action": "owner-decision (review)"
+  },
+  {
+   "id": "lake-tekapo-3",
+   "name": "Dark Sky Project",
+   "issue": "Operator whose tours go to the observatory spot already listed; review.",
+   "action": "owner-decision (review)"
+  },
+  {
+   "id": "lake-tekapo-5",
+   "name": "Sheepdog Statue",
+   "issue": "Part of the church spot, a 5-minute look; review.",
+   "action": "owner-decision (review)"
+  },
+  {
+   "id": "akaroa-3",
+   "name": "Akaroa Lighthouse",
+   "issue": "Small building seen from outside, no counted source; review.",
+   "action": "owner-decision (review)"
+  }
+ ],
+ "left_to_review_list_not_placed": [
+  "Whale Watch Kaikōura",
+  "Ravenscar House Museum",
+  "Christ's College",
+  "Fox Peak",
+  "Tekapo Peninsula Walkway",
+  "Lake Ōhau",
+  "Lake Ellesmere",
+  "Craigieburn Forest Park",
+  "Geraldine"
+ ],
+ "held_for_photo": [
+  "Willowbank Wildlife Reserve",
+  "Quake City",
+  "Flea Bay (Pōhatu)",
+  "Methven",
+  "Ōpuke Thermal Pools",
+  "Ski Roundhill",
+  "Fairlie",
+  "Twizel River Trail",
+  "Omarama"
+ ],
+ "quill_research": [
+  {
+   "id": "christchurch-27",
+   "name": "Taylors Mistake",
+   "needs_research": [
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "christchurch-28",
+   "name": "Summit Road",
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "id": "christchurch-29",
+   "name": "Willowbank Wildlife Reserve",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "id": "christchurch-30",
+   "name": "Mona Vale",
+   "needs_research": [
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "christchurch-31",
+   "name": "Christchurch Tram Ride",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "christchurch-32",
+   "name": "Quake City",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "akaroa-9",
+   "name": "Flea Bay (Pōhatu)",
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "id": "hanmer-springs-5",
+   "name": "Hanmer Forest Park",
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "id": "timaru-5",
+   "name": "Timaru Botanic Gardens",
+   "needs_research": [
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "lake-tekapo-6",
+   "name": "Mount John Walkway",
+   "needs_research": [
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "methven",
+   "name": "Methven",
+   "needs_research": [
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "mount-hutt",
+   "name": "Mount Hutt",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "id": "opuke-thermal-pools",
+   "name": "Ōpuke Thermal Pools",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "rakaia-gorge",
+   "name": "Rakaia Gorge",
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "id": "mount-somers",
+   "name": "Mount Somers",
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "id": "lake-coleridge",
+   "name": "Lake Coleridge",
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "id": "waipara-valley",
+   "name": "Waipara Valley",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "id": "peel-forest-park",
+   "name": "Peel Forest Park",
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "id": "little-river-rail-trail",
+   "name": "Little River Rail Trail",
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "id": "mount-sunday",
+   "name": "Mount Sunday",
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "id": "mount-dobson",
+   "name": "Mount Dobson",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "id": "ski-roundhill",
+   "name": "Ski Roundhill",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "fairlie",
+   "name": "Fairlie",
+   "needs_research": [
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "twizel",
+   "name": "Twizel",
+   "needs_research": [
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "twizel-river-trail",
+   "name": "Twizel River Trail",
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "id": "lake-benmore",
+   "name": "Lake Benmore",
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "id": "omarama",
+   "name": "Omarama",
+   "needs_research": [
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "omarama-clay-cliffs",
+   "name": "Omarama Clay Cliffs",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ]
+  }
+ ]
+}

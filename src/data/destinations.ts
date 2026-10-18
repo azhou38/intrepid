@@ -1190,7 +1190,7 @@ export const DESTINATIONS: Destination[] = [
     continent: 'Oceania', coordinates: { latitude: -42.1, longitude: 171.34 },
     category: 'park', icon: '🥞', rank: 3,
     tagline: 'Pancake-stacked limestone, roaring blowholes and a Great Walk on the wild West Coast.',
-    description: 'Paparoa National Park is best known for the Pancake Rocks at Punakaiki, layered limestone formations that look like giant stacks of pancakes. At high tide with a westerly swell, the sea surges through the blowholes in spectacular plumes. Behind the coast lie limestone canyons, caves and the Paparoa Track Great Walk.',
+    description: "Paparoa National Park is best known for the Pancake Rocks at Punakaiki, layered limestone formations that look like giant stacks of pancakes. At high tide with a south-westerly swell, the sea surges through the blowholes and throws up tall walls of spray. Behind the coast lie limestone canyons, caves and the Paparoa Track Great Walk.",
     whyVisit: ['Pancake Rocks & blowholes', 'Limestone river canyons', 'The Paparoa Track'],
     whyVisitPhotos: ["Punakaiki blow holes. (53094420216).jpg", "Pororari River MRD 04.jpg", "Paparoa Track.jpg"],
     highlights: ['Pancake Rocks', 'Limestone canyons', 'Paparoa Track'],

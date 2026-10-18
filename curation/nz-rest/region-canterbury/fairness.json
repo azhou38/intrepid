@@ -1,0 +1,898 @@
+{
+ "region": "canterbury",
+ "inside_destinations": 10,
+ "standalone": 16,
+ "new_destinations": 2,
+ "new_destinations_proposed": [
+  "Methven",
+  "Twizel"
+ ],
+ "existing_kept_unchanged": 63,
+ "covered_by_existing_destination": [
+  "Akaroa",
+  "Lake Tekapo",
+  "Aoraki / Mount Cook National Park",
+  "Hanmer Springs",
+  "Kaikoura",
+  "Arthur's Pass",
+  "Arthur's Pass National Park",
+  "Timaru"
+ ],
+ "lowest_kept": [
+  {
+   "name": "Hanmer Forest Park",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Mount John Walkway",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Quake City",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Rakaia Gorge",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Summit Road",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Timaru Botanic Gardens",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Twizel River Trail",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Waipara Valley",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Ōpuke Thermal Pools",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "christchurch-14 Bridle Path",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "christchurch-15 Corsair Bay",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "christchurch-23 Riccarton House and Bush",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "akaroa-1 Akaroa Harbour",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "akaroa-4 Akaroa Museum",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "akaroa-5 Akaroa Head",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "akaroa-6 Banks Peninsula Track",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "akaroa-7 Hinewai Reserve",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "akaroa-8 Okains Bay Museum",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "kaikoura-2 Kaikōura Peninsula Walkway",
+   "views": 0,
+   "counted_sources": 1
+  }
+ ],
+ "stronger_left_out": [
+  {
+   "name": "Christ Church Cathedral, Christchurch",
+   "views": 26257,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Under reconstruction, no interior access, exterior only; revisit when it reopens."
+  },
+  {
+   "name": "Banks Peninsula",
+   "views": 25712,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A whole peninsula/region, not one place; its stops are listed separately."
+  },
+  {
+   "name": "Richard Pearse Memorial",
+   "views": 24312,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Minor memorial to an aviation pioneer; needs_coordinates."
+  },
+  {
+   "name": "Christ's College",
+   "views": 12417,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Wikivoyage, 80-min tours, 12k views. Against: one weekday 10AM tour, term time only."
+  },
+  {
+   "name": "Lake Ōhau",
+   "views": 6771,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "For: large Mackenzie lake with village and ski area, 6.8k views. Against: Wikipedia only (Wikivoyage and DOC pages 404). Same profile as Lake Coleridge."
+  },
+  {
+   "name": "Amberley",
+   "views": 5765,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Wikivoyage page lists no sights; passing stop."
+  },
+  {
+   "name": "Canterbury Museum",
+   "views": 5240,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Closed until mid-2029 for rebuilding; no public access."
+  },
+  {
+   "name": "Bridge of Remembrance",
+   "views": 5171,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Minor war memorial arch; no activity."
+  },
+  {
+   "name": "Cheviot",
+   "views": 4731,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Small farming town, Wikipedia only; nothing to see for half an hour."
+  },
+  {
+   "name": "Lake Ellesmere",
+   "views": 4561,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Upgraded from reject-lean: DOC Lake Ellesmere (Te Waihora) area page is a counted source. Against: a huge wetland with no single stop; Birdlings Flat and the rail trail already cover access."
+  },
+  {
+   "name": "Christchurch Town Hall",
+   "views": 4428,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Civic concert hall; venue for performances, not a sightseeing stop."
+  },
+  {
+   "name": "Cathedral Square",
+   "views": 3971,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Public square; Wikipedia only, no counted source; the draw is the cathedral, not the square."
+  },
+  {
+   "name": "Lake Ruataniwha",
+   "views": 3945,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Regatta lake, nothing to do on a day visit; viewable from Twizel."
+  },
+  {
+   "name": "Re:START Mall",
+   "views": 3866,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Shopping and dining precinct built from containers; a retail venue."
+  },
+  {
+   "name": "Ripapa Island",
+   "views": 3670,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "No regular public landing; access only on occasional trips, not there whenever a visitor arrives."
+  },
+  {
+   "name": "Christchurch Casino",
+   "views": 3489,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Casino is a venue (dress code, gambling/restaurant), not a sightseeing stop."
+  },
+  {
+   "name": "Paua House",
+   "views": 3408,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Private house decorated with paua shells, a shop-style roadside curiosity; Wikipedia only and no longer a reliable visit."
+  },
+  {
+   "name": "Weka Pass Railway",
+   "views": 2713,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Heritage excursion train that runs only on the first and third Sundays; the ride is the attraction and it is not there whenever a visitor arrives."
+  },
+  {
+   "name": "Sign of the Takahe",
+   "views": 2602,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Restaurant/function venue, part of the Summit Road/walkway spot."
+  },
+  {
+   "name": "Victoria Park",
+   "views": 2553,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Port Hills park along the Summit Road walkway; covered by Summit Road, not a distinct draw."
+  },
+  {
+   "name": "National Railway Museum of New Zealand",
+   "views": 2533,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Museum within the Ferrymead Heritage Park site, already a spot; Wikipedia only, no counted source."
+  },
+  {
+   "name": "Pegasus Bay",
+   "views": 2364,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Bay named only as a view from the Port Hills; a viewing area, not a stop."
+  },
+  {
+   "name": "Victoria Clock Tower",
+   "views": 2220,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Clock tower seen from outside; minor."
+  },
+  {
+   "name": "Sacred Heart Basilica, Timaru",
+   "views": 2173,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Church exterior; Wikivoyage listing has no description."
+  },
+  {
+   "name": "Victoria Square",
+   "views": 2141,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Public square, Wikipedia only; no visitor-oriented source; minor."
+  },
+  {
+   "name": "Tūranga",
+   "views": 2106,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Civic library, a public building seen from the street (negative benchmark)."
+  },
+  {
+   "name": "Riccarton House",
+   "views": 2055,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Same site as the existing Riccarton House and Bush spot; near-duplicate."
+  },
+  {
+   "name": "Whakamana Cannabis Museum",
+   "views": 2055,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Small private museum; Wikipedia only; no coordinates found (needs_coordinates)"
+  },
+  {
+   "name": "Isaac Theatre Royal",
+   "views": 1983,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Theatre venue, shows only; no sightseeing visit."
+  },
+  {
+   "name": "Te Pae Christchurch Convention Centre",
+   "views": 1883,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Convention centre; a conference building."
+  },
+  {
+   "name": "Canterbury Provincial Council Buildings",
+   "views": 1819,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Civic heritage building, exterior only."
+  },
+  {
+   "name": "Diminish and Ascend",
+   "views": 1386,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Public sculpture seen in passing; Wikipedia only; minor."
+  },
+  {
+   "name": "Rangitata Diversion Race",
+   "views": 1316,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Irrigation canal infrastructure; not a visitor attraction."
+  },
+  {
+   "name": "Lake Heron",
+   "views": 1308,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "High-country lake, Wikipedia only; no visitor-oriented source."
+  },
+  {
+   "name": "Twelve Local Heroes",
+   "views": 1259,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Public sculpture/memorial seen in passing; Wikipedia only; minor."
+  },
+  {
+   "name": "Cracroft Reserve",
+   "views": 1204,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Local reserve; no guide names it."
+  },
+  {
+   "name": "Christchurch Municipal Chambers",
+   "views": 1139,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Council civic building, exterior only."
+  },
+  {
+   "name": "Latimer Square",
+   "views": 1101,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Local city square; no visitor source."
+  },
+  {
+   "name": "Lake Roto Kohatu",
+   "views": 1093,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Small local lake; Wikipedia only."
+  },
+  {
+   "name": "Waiau River Jet Boating",
+   "views": 1050,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Operator: jet-boat rides; the Waiau gorge bridge is already a spot."
+  },
+  {
+   "name": "Craigieburn Forest Park",
+   "views": 1026,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: DOC park on the Arthur's Pass road with walks, campsites and ski fields. Against: a large area, one source."
+  },
+  {
+   "name": "Linwood Cemetery",
+   "views": 985,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Heritage cemetery; Wikipedia only, not a tourist attraction."
+  },
+  {
+   "name": "Korowai / Torlesse Tussocklands Park",
+   "views": 932,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Large area with no single stop, one source."
+  },
+  {
+   "name": "Deans Cottage",
+   "views": 930,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Part of the Riccarton House and Bush complex, already a spot."
+  },
+  {
+   "name": "Halswell Quarry Park",
+   "views": 903,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Local park; no guide names it."
+  },
+  {
+   "name": "Motunau Island",
+   "views": 887,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "DOC seabird island with no public landing."
+  },
+  {
+   "name": "Statue of James Cook",
+   "views": 784,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Minor statue in Victoria Square; no half-hour visit."
+  },
+  {
+   "name": "Hakatere Conservation Park",
+   "views": 752,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Backcountry DOC park; no day-visit draw, one source."
+  },
+  {
+   "name": "Kennedy's Bush Scenic Reserve",
+   "views": 732,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Local scenic reserve; no counted source."
+  },
+  {
+   "name": "Washdyke Lagoon",
+   "views": 681,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Birdwatching lagoon beside industrial land; minor, one source."
+  },
+  {
+   "name": "Centre of Contemporary Art",
+   "views": 660,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small gallery, dead-link single listing."
+  },
+  {
+   "name": "Cranmer Square",
+   "views": 657,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Local square; no visitor source."
+  },
+  {
+   "name": "Ravenscar House Museum",
+   "views": 655,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "For: Canterbury Museum site lists it as open at 52 Rolleston Ave, Wikipedia article. Against: no guide source found."
+  },
+  {
+   "name": "Lake Sumner Forest Park",
+   "views": 641,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Backcountry area, not a half-hour stop."
+  },
+  {
+   "name": "Yaldhurst Museum",
+   "views": 627,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Closed since Covid per Wikivoyage; no public access."
+  },
+  {
+   "name": "Ahuriri Conservation Park",
+   "views": 626,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Backcountry DOC park; no day-visit draw, one source."
+  },
+  {
+   "name": "Oxford Forest Conservation Area",
+   "views": 579,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "DOC forest with huts; local, one source."
+  },
+  {
+   "name": "Travis Wetland",
+   "views": 509,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Local wetland reserve; Wikipedia only, no visitor source."
+  },
+  {
+   "name": "Canterbury Pioneer Women's Memorial",
+   "views": 438,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Minor memorial; Wikipedia only."
+  },
+  {
+   "name": "Fox Peak",
+   "views": 438,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Wikivoyage Fairlie names the ski area. Against: one source, small field."
+  },
+  {
+   "name": "Christchurch 360 Trail",
+   "views": 425,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "A route circling the city rather than one place; Wikipedia only."
+  },
+  {
+   "name": "Ruataniwha Conservation Park",
+   "views": 303,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Backcountry DOC park; no day-visit draw, one source."
+  },
+  {
+   "name": "Te Kahui Kaupeka Conservation Park",
+   "views": 251,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Backcountry DOC park with huts; no day-visit draw, one source."
+  },
+  {
+   "name": "Jollies Bush",
+   "views": 226,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Local bush reserve; no counted source."
+  },
+  {
+   "name": "Tekapo Peninsula Walkway",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Wikivoyage 1.5-2h walk. Against: one source, coordinates approximate."
+  }
+ ],
+ "left_out_zero_views_rejected": [
+  "Punting on the Avon",
+  "Antigua Boatsheds",
+  "St Michael and All Angels Church",
+  "Teece Museum of Classical Antiquities",
+  "Crater Rim Walkway",
+  "Awaroa-Godley Head Loop Track",
+  "New Brighton",
+  "Akaroa Harbour Dolphin Cruises",
+  "Montgomery Peak Walk",
+  "Nikau Palm Gully Scenic Reserve Walk",
+  "Giant Totara Walk",
+  "Te Ara Pataka",
+  "Kaituna Valley Scenic Reserve Walk",
+  "Okuti Valley Scenic Reserve Walk",
+  "Hay Scenic Reserve Walk",
+  "Ellangowan Scenic Reserve Walk",
+  "Saddle Hill Summit Track",
+  "Scott's Saddle Track",
+  "Te Awa Awa Walk",
+  "Parkbrae Estate",
+  "Dark Sky Project Tours",
+  "Cowans Hill Track",
+  "Pukaki Kettle Hole Track",
+  "Marker Bay Track",
+  "Pukaki Boulders Track",
+  "Tasman River Tracks",
+  "Tasman Glacier View Track",
+  "Ball Pass Crossing",
+  "Glencoe Walk",
+  "Lake Ruataniwha Viewpoint",
+  "Pyramid Track",
+  "Benmore Peninsula Walk",
+  "Wairepo Kettleholes Track",
+  "Waterfall Track (Hanmer)",
+  "Mount Isobel Track",
+  "Woodlands Walk",
+  "Queen Mary Hospital",
+  "South Bay Beach (Kaikōura)",
+  "Dolphin Encounter Kaikoura",
+  "Swim With Seals Kaikoura",
+  "St Paul's Church, Glenmark",
+  "Weka Pass Historic Reserve",
+  "Mingha-Deception Route",
+  "Balmoral Fire Lookout",
+  "Manuka Bay Lookout Track",
+  "Otipua Wetland",
+  "Trevor Griffiths Rose Garden",
+  "Caroline Bay Soundshell",
+  "Caroline Bay Carnival",
+  "CBay Aquatic Centre",
+  "Centennial Park, Timaru",
+  "Theatre Royal, Timaru",
+  "Timaru Shipwreck Memorial",
+  "McAtamney Gallery",
+  "Emily Falls Track",
+  "Big Tree Walk",
+  "Acland Falls Track",
+  "Orari Gorge Track",
+  "Kakahu Bush Tracks",
+  "Harts Creek Track",
+  "Glentui Loop Track",
+  "Ashley Gorge Loop Track",
+  "Mount Grey Track",
+  "Mount Nimrod Track",
+  "Cotons Cob Cottage Historic Reserve",
+  "Peak Hill Conservation Area",
+  "St James Conservation Area",
+  "Lindis Conservation Area",
+  "Gamack Conservation Area",
+  "Godley Peaks Conservation Area",
+  "Lochinvar Forest Conservation Area",
+  "Puketeraki Forest Conservation Area",
+  "Pioneer Park Conservation Area",
+  "Kirkliston Range Conservation Area",
+  "Hunters Hills Area",
+  "Otukaikino Walk",
+  "Mount Thomas Forest Conservation Area",
+  "Hanmer Forest Park Jollies Pass Track",
+  "Cave Stream Loop Walk",
+  "Caving at Cave Stream"
+ ],
+ "strongest_outsiders": {
+  "kept_outside_every_span": [
+   {
+    "name": "Omarama",
+    "views": 11820,
+    "counted_sources": 1,
+    "kept_as": "standalone (proposed twizel)"
+   },
+   {
+    "name": "Mount Sunday",
+    "views": 11372,
+    "counted_sources": 0,
+    "kept_as": "standalone"
+   },
+   {
+    "name": "Fairlie",
+    "views": 10590,
+    "counted_sources": 1,
+    "kept_as": "standalone"
+   },
+   {
+    "name": "Mount Hutt",
+    "views": 8797,
+    "counted_sources": 2,
+    "kept_as": "standalone (proposed methven)"
+   },
+   {
+    "name": "Lake Coleridge",
+    "views": 4404,
+    "counted_sources": 0,
+    "kept_as": "standalone"
+   },
+   {
+    "name": "Mount Somers",
+    "views": 3934,
+    "counted_sources": 1,
+    "kept_as": "standalone (proposed methven)"
+   },
+   {
+    "name": "Lake Benmore",
+    "views": 3295,
+    "counted_sources": 1,
+    "kept_as": "standalone (proposed twizel)"
+   },
+   {
+    "name": "Peel Forest Park",
+    "views": 2560,
+    "counted_sources": 1,
+    "kept_as": "standalone"
+   },
+   {
+    "name": "Omarama Clay Cliffs",
+    "views": 1766,
+    "counted_sources": 0,
+    "kept_as": "standalone"
+   },
+   {
+    "name": "Mount Dobson",
+    "views": 1532,
+    "counted_sources": 2,
+    "kept_as": "standalone"
+   },
+   {
+    "name": "Ski Roundhill",
+    "views": 1481,
+    "counted_sources": 2,
+    "kept_as": "standalone"
+   },
+   {
+    "name": "Little River Rail Trail",
+    "views": 483,
+    "counted_sources": 1,
+    "kept_as": "standalone"
+   },
+   {
+    "name": "Ōpuke Thermal Pools",
+    "views": 0,
+    "counted_sources": 1,
+    "kept_as": "standalone (proposed methven)"
+   },
+   {
+    "name": "Rakaia Gorge",
+    "views": 0,
+    "counted_sources": 1,
+    "kept_as": "standalone (proposed methven)"
+   },
+   {
+    "name": "Waipara Valley",
+    "views": 0,
+    "counted_sources": 1,
+    "kept_as": "standalone"
+   },
+   {
+    "name": "Twizel River Trail",
+    "views": 0,
+    "counted_sources": 2,
+    "kept_as": "standalone (proposed twizel)"
+   }
+  ],
+  "left_out_or_review_outside_spans": [
+   {
+    "name": "Banks Peninsula",
+    "views": 25712,
+    "counted_sources": 1,
+    "verdict": "reject",
+    "reason": "A whole peninsula/region, not one place; its stops are listed separately."
+   },
+   {
+    "name": "Richard Pearse Memorial",
+    "views": 24312,
+    "counted_sources": 1,
+    "verdict": "reject",
+    "reason": "Minor memorial to an aviation pioneer; needs_coordinates."
+   },
+   {
+    "name": "Lake Ōhau",
+    "views": 6771,
+    "counted_sources": 0,
+    "verdict": "review",
+    "reason": "For: large Mackenzie lake with village and ski area, 6.8k views. Against: Wikipedia only (Wikivoyage and DOC pages 404). Same profile as Lake Coleridge."
+   },
+   {
+    "name": "Amberley",
+    "views": 5765,
+    "counted_sources": 1,
+    "verdict": "reject",
+    "reason": "Wikivoyage page lists no sights; passing stop."
+   },
+   {
+    "name": "Cheviot",
+    "views": 4731,
+    "counted_sources": 0,
+    "verdict": "reject",
+    "reason": "Small farming town, Wikipedia only; nothing to see for half an hour."
+   },
+   {
+    "name": "Lake Ellesmere",
+    "views": 4561,
+    "counted_sources": 1,
+    "verdict": "review",
+    "reason": "Upgraded from reject-lean: DOC Lake Ellesmere (Te Waihora) area page is a counted source. Against: a huge wetland with no single stop; Birdlings Flat and the rail trail already cover access."
+   },
+   {
+    "name": "Lake Ruataniwha",
+    "views": 3945,
+    "counted_sources": 1,
+    "verdict": "reject",
+    "reason": "Regatta lake, nothing to do on a day visit; viewable from Twizel."
+   },
+   {
+    "name": "Craigieburn Forest Park",
+    "views": 1026,
+    "counted_sources": 1,
+    "verdict": "review",
+    "reason": "For: DOC park on the Arthur's Pass road with walks, campsites and ski fields. Against: a large area, one source."
+   },
+   {
+    "name": "Fox Peak",
+    "views": 438,
+    "counted_sources": 1,
+    "verdict": "review",
+    "reason": "For: Wikivoyage Fairlie names the ski area. Against: one source, small field."
+   }
+  ]
+ },
+ "benchmark": {
+  "applicable_to_canterbury": "Lake Coleridge proposed standalone (kept as a benchmark despite weak sourcing: Wikipedia only, owner to confirm); Sumner Beach, Godley Head, Lyttelton and Birdlings Flat are existing and kept unchanged (christchurch-12, -13, -10, birdlings-flat); Taylors Mistake added; Paradise, St Kilda, Red Rocks etc. belong to other regions; negative benchmarks rejected: Queen Mary Hospital and Tūranga are rejected where listed in the verdicts, Canterbury Museum is closed to 2029, Christ Church Cathedral exterior only, Christchurch Town Hall and Cathedral Square civic, Bridge of Remembrance minor memorial, Sign of the Takahe a function venue, vehicles/operators handled (TranzAlpine and Whale Watch left in review, not newly added).",
+  "not_in_this_region": [
+   "Red Rocks",
+   "Kapiti Island",
+   "Paradise",
+   "Hump Ridge Track",
+   "St Kilda Beach",
+   "Ohakune Carrot",
+   "Ninety Mile Beach",
+   "Pipiriki"
+  ],
+  "result": "pass for the Canterbury-relevant items"
+ },
+ "review_list_for_owner": [
+  {
+   "name": "Whale Watch Kaikōura",
+   "views": 0,
+   "counted_sources": 0,
+   "case": "Case for: the town headline draw and only whale-boat operator. Against: an operator; the place (Kaikōura Canyon waters) has no landing. Owner call on a place-named replacement such as Kaikōura whale watching."
+  },
+  {
+   "name": "Ravenscar House Museum",
+   "views": 655,
+   "counted_sources": 0,
+   "case": "For: Canterbury Museum site lists it as open at 52 Rolleston Ave, Wikipedia article. Against: no guide source found."
+  },
+  {
+   "name": "Christ's College",
+   "views": 12417,
+   "counted_sources": 1,
+   "case": "For: Wikivoyage, 80-min tours, 12k views. Against: one weekday 10AM tour, term time only."
+  },
+  {
+   "name": "Fox Peak",
+   "views": 438,
+   "counted_sources": 1,
+   "case": "For: Wikivoyage Fairlie names the ski area. Against: one source, small field."
+  },
+  {
+   "name": "Tekapo Peninsula Walkway",
+   "views": 0,
+   "counted_sources": 1,
+   "case": "For: Wikivoyage 1.5-2h walk. Against: one source, coordinates approximate."
+  },
+  {
+   "name": "Lake Ōhau",
+   "views": 6771,
+   "counted_sources": 0,
+   "case": "For: large Mackenzie lake with village and ski area, 6.8k views. Against: Wikipedia only (Wikivoyage and DOC pages 404). Same profile as Lake Coleridge."
+  },
+  {
+   "name": "Lake Ellesmere",
+   "views": 4561,
+   "counted_sources": 1,
+   "case": "Upgraded from reject-lean: DOC Lake Ellesmere (Te Waihora) area page is a counted source. Against: a huge wetland with no single stop; Birdlings Flat and the rail trail already cover access."
+  },
+  {
+   "name": "Craigieburn Forest Park",
+   "views": 1026,
+   "counted_sources": 1,
+   "case": "For: DOC park on the Arthur's Pass road with walks, campsites and ski fields. Against: a large area, one source."
+  },
+  {
+   "name": "Geraldine",
+   "views": 15191,
+   "counted_sources": 1,
+   "case": "Recall claimed a Wikivoyage chapter; none exists (page 404), only McAtamney Gallery under Canterbury. For: Wikipedia 15k views, South Canterbury town. Against: no counted source."
+  },
+  {
+   "name": "Lake Coleridge",
+   "views": 4404,
+   "counted_sources": 0,
+   "case": "Kept as a benchmark standalone, but sourced from Wikipedia only; owner may want to confirm. Benchmark, kept. No counted See/Do source found: Wikivoyage has no page and lists only Lake Coleridge Lodge under Methven Sleep; DOC pages 404; Selwyn site blocked. Source is Wikipedia only, so owner may want to confirm."
+  }
+ ]
+}

@@ -1,0 +1,2360 @@
+{
+ "region": "northland",
+ "generated": "2026-10-17",
+ "entries": [
+  {
+   "id": "bay-of-islands-8",
+   "name": "Stone Store",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "The Stone Store is the oldest stone building in New Zealand (construction began 1832); the Mission Station is open daily except 25 Dec, Nov-Apr 10AM-5PM, May-Oct 10AM-4PM.",
+     "source": "https://en.wikivoyage.org/wiki/Kerikeri"
+    },
+    {
+     "claim": "Heritage New Zealand runs the Kerikeri Mission Station (Stone Store and Kemp House); its page is titled \"Visit Kerikeri Mission Station | Stone Store and Kemp House\".",
+     "source": "https://www.visitheritage.co.nz/visit/northland/kerikeri-mission-station"
+    },
+    {
+     "claim": "A Bay of Islands listing gives daily 10AM-5PM, closed Christmas Day and ANZAC morning, entry fees apply, accompanied under-18s and Heritage NZ members free.",
+     "source": "https://bay-of-islands.co.nz/tours-activites/kerikeri-mission-station/"
+    }
+   ],
+   "hours": "10:00 AM – 5:00 PM (Nov–Apr); 10:00 AM – 4:00 PM (May–Oct)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 10,
+   "costMax": 20,
+   "currency": "NZD",
+   "ticketUrl": "https://www.visitheritage.co.nz/visit/northland/kerikeri-mission-station",
+   "ticketUrl_note": "Heritage NZ is the steward. The page loads (title names the place) but its body is client-rendered, so hours and prices could not be read from it.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.2178,
+     "longitude": 173.9627
+    },
+    "source_point": {
+     "latitude": -35.21778,
+     "longitude": 173.96268
+    },
+    "source": "OpenStreetMap (Photon) Stone Store, tourism=museum, Kerikeri Road",
+    "ok": true,
+    "distance_m": 3
+   },
+   "category": "historic",
+   "unverified": [
+    "Adult price: a search-engine summary of the Heritage NZ page gave guided tour plus museum $20 and self-guided garden $10; the page itself could not be read. Other listings give $10-$15. Check in a browser.",
+    "Hours from Wikivoyage (updated 2017) and a Bay of Islands listing, not the Heritage page body.",
+    "Bio says \"with paid entry\": only the shop is free; museum entry is paid per the search summary."
+   ],
+   "closedDays": null,
+   "specialClosures": [
+    "12-25"
+   ],
+   "bio_ok": true
+  },
+  {
+   "id": "bay-of-islands-13",
+   "name": "Kemp House",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "The wooden Mission House (Kemp House), built 1821-22 for Rev John Butler, is described as the oldest building in New Zealand.",
+     "source": "https://en.wikivoyage.org/wiki/Kerikeri"
+    },
+    {
+     "claim": "Kemp House is on the same Heritage NZ page and ticket as the Stone Store (\"Kerikeri Mission Station | Stone Store and Kemp House\").",
+     "source": "https://www.visitheritage.co.nz/visit/northland/kerikeri-mission-station"
+    },
+    {
+     "claim": "Kemp House is entered by guided tour only because the building is fragile (from a search-engine summary of the Heritage NZ page).",
+     "source": "https://www.visitheritage.co.nz/visit/northland/kerikeri-mission-station"
+    },
+    {
+     "claim": "The Wikipedia article for the house is titled \"Kemp House\" (coordinates -35.21752, 173.96232).",
+     "source": "https://en.wikipedia.org/wiki/Kemp_House"
+    }
+   ],
+   "hours": "10:00 AM – 5:00 PM (Nov–Apr); 10:00 AM – 4:00 PM (May–Oct)",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "costMin": 10,
+   "costMax": 20,
+   "currency": "NZD",
+   "ticketUrl": "https://www.visitheritage.co.nz/visit/northland/kerikeri-mission-station",
+   "ticketUrl_note": "Same steward and page as the Stone Store (one ticket, 60 m apart). Title verified; body client-rendered.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.2179,
+     "longitude": 173.9627
+    },
+    "source_point": {
+     "latitude": -35.21752,
+     "longitude": 173.96232
+    },
+    "source": "Wikipedia \"Kemp House\" coordinates; OSM Mission House museum (-35.2175,173.96231)",
+    "ok": true,
+    "distance_m": 55,
+    "note": "Placement used the Stone Store point; Wikipedia point is 56 m away."
+   },
+   "category": "historic",
+   "unverified": [
+    "Prices as for Stone Store (unverified).",
+    "Near-duplicate risk: Kemp House and the Stone Store share one site, one ticket and 60 m. Owner may prefer one combined spot \"Kerikeri Mission Station\"."
+   ],
+   "specialClosures": [
+    "12-25"
+   ]
+  },
+  {
+   "id": "bay-of-islands-9",
+   "name": "Pompallier Mission",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Pompallier Mission, The Strand, Russell: erected 1841-42 as a print works and tannery, the oldest industrial building in New Zealand; open Nov-Apr 10AM-5PM, May-Oct 10AM-4PM; $10.",
+     "source": "https://en.wikivoyage.org/wiki/Russell_(New_Zealand)"
+    },
+    {
+     "claim": "Pompallier House is owned and managed by Heritage New Zealand and open to the public; it is New Zealand's oldest Roman Catholic building, oldest rammed earth building and oldest industrial building.",
+     "source": "https://en.wikipedia.org/wiki/Pompallier_House"
+    },
+    {
+     "claim": "Heritage NZ page titled \"Visit Pompallier Mission and Printery | Bay of Islands Attraction\".",
+     "source": "https://www.visitheritage.co.nz/visit/northland/pompallier-mission-and-printery"
+    }
+   ],
+   "hours": "10:00 AM – 5:00 PM (Nov–Apr); 10:00 AM – 4:00 PM (May–Oct)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "costMin": 10,
+   "costMax": 20,
+   "currency": "NZD",
+   "ticketUrl": "https://www.visitheritage.co.nz/visit/northland/pompallier-mission-and-printery",
+   "ticketUrl_note": "Heritage NZ is the steward. Title verified; page body is client-rendered.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.2646,
+     "longitude": 174.122
+    },
+    "source_point": {
+     "latitude": -35.26451,
+     "longitude": 174.12181
+    },
+    "source": "OpenStreetMap (Photon) Pompallier French Catholic Mission, tourism=museum, The Strand; Wikipedia -35.2646,174.122",
+    "ok": true,
+    "distance_m": 20
+   },
+   "category": "museum",
+   "unverified": [
+    "Adult price conflicts: Wikivoyage and a search summary of the Heritage page say $10; a newzealand.com listing (blocked, seen via search summary) says guided tour $20. Range 10-20 is a placeholder until checked.",
+    "Tours are daily on the hour in summer per a search summary; printery is by guided tour only."
+   ],
+   "specialClosures": [
+    "12-25"
+   ]
+  },
+  {
+   "id": "bay-of-islands-10",
+   "name": "Kerikeri",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Kerikeri is described as the \"Cradle of the Nation\", the site of the first permanent mission station in the country, with some of the most historic buildings in New Zealand.",
+     "source": "https://en.wikivoyage.org/wiki/Kerikeri"
+    },
+    {
+     "claim": "Wikivoyage lists the Stone Store, Rainbow Falls, Rewa's Village and Kororipo Pa under See; the town itself has no beach.",
+     "source": "https://en.wikivoyage.org/wiki/Kerikeri"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A town with no single steward; no official site to link.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.224444,
+     "longitude": 173.951389
+    },
+    "source_point": {
+     "latitude": -35.22726,
+     "longitude": 173.94911
+    },
+    "source": "OpenStreetMap (Photon) place=town Kerikeri",
+    "ok": true,
+    "distance_m": 375,
+    "note": "Wikipedia/Wikivoyage point is 376 m from the OSM town node; both are in the town."
+   },
+   "category": "historic",
+   "unverified": [
+    "Bio claims an \"art and craft trail\": not seen in sources I read (Wikivoyage lists Art at Wharepuke gallery only). Cut or source it.",
+    "Overlaps Stone Store / Kemp House / Rainbow Falls / Kororipo spots; the town spot is mostly an umbrella."
+   ]
+  },
+  {
+   "id": "bay-of-islands-11",
+   "name": "Cape Brett Track",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Cape Brett Track: 16.3 km one way, 8 hr, advanced tramping track through bush with cliff edges; 23-bunk hut at the cape.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/cape-brett-and-whangamumu-area/things-to-do/cape-brett-track/"
+    },
+    {
+     "claim": "Fees: Adult (18+) $50, child/youth 5-17 $20, infant free, for the first ~10 km across private Te Rawhiti 3B2 Ahu Whenua Trust land; no charge on the 6 km public-land section.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/cape-brett-and-whangamumu-area/things-to-do/cape-brett-track/"
+    },
+    {
+     "claim": "The track begins at Oke Bay, Rawhiti; the Oke Bay entrance is tidal (avoid within an hour of high tide); access also by water taxi to Deep Water Cove or Cape Brett.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/cape-brett-and-whangamumu-area/things-to-do/cape-brett-track/"
+    }
+   ],
+   "hours": "Daylight; Oke Bay entrance is tidal",
+   "visitHoursMin": 8,
+   "visitHoursMax": 20,
+   "costMin": 50,
+   "costMax": 50,
+   "currency": "NZD",
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/cape-brett-and-whangamumu-area/things-to-do/cape-brett-track/",
+   "ticketUrl_note": "DOC is the managing agency; page loaded and titled \"Cape Brett Track: Cape Brett, Northland\".",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.227,
+     "longitude": 174.268
+    },
+    "source_point": {
+     "latitude": -35.2279929,
+     "longitude": 174.2634079
+    },
+    "source": "OpenStreetMap API way 103777127 \"Cape Brett Track\" first node at Oke Bay; DOC says the track begins at Oke Bay, Rawhiti",
+    "ok": false,
+    "distance_m": 431,
+    "note": "Placement point is the Oke Bay place node, which sits in the bay water (nearest OSM coastline is ~0.4 km W). Move to the track start."
+   },
+   "category": "hike",
+   "unverified": [
+    "\"Usually a multi-day trip\" in the bio is not stated by DOC (8 hr one way, hut for the night); say \"8 hours one way, with an overnight hut\".",
+    "Visit hours 8-20 is derived from DOC's 8 hr one way; hut price not read.",
+    "DOC says the Oke Bay staircase/route was re-routed on trust land and upgrade works were scheduled May 2026 (search summary of a DOC OIA response): check current status."
+   ]
+  },
+  {
+   "id": "bay-of-islands-12",
+   "name": "Rainbow Falls",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Rainbow Falls Walk: 400 m one way, 10 min, wheelchair-accessible short walk from the car park at the end of Rainbow Falls Road to viewing points over the falls on the Kerikeri River; swimming not recommended.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/kerikeri-area/things-to-do/rainbow-falls-walk/"
+    },
+    {
+     "claim": "The Maori name Waianiwaniwa means \"Waters of the Rainbow\"; the 4-km stroll from the Stone Store to the falls suits most people.",
+     "source": "https://en.wikivoyage.org/wiki/Kerikeri"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/kerikeri-area/things-to-do/rainbow-falls-walk/",
+   "ticketUrl_note": "DOC walk page loaded; title \"Rainbow Falls Walk: Kerikeri area, Northland\".",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.2142,
+     "longitude": 173.9421
+    },
+    "source_point": {
+     "latitude": -35.21422,
+     "longitude": 173.9421
+    },
+    "source": "OpenStreetMap (Photon) Rainbow Falls, waterway=waterfall; car park -35.21423,173.94409",
+    "ok": true,
+    "distance_m": 2
+   },
+   "category": "nature",
+   "unverified": [
+    "Opening hours are not stated on the DOC page (open-access reserve); \"Open 24 hours\" is an assumption.",
+    "Bio says \"27 m\": no source read; DOC gives no height. Cut or source."
+   ]
+  },
+  {
+   "id": "bay-of-islands-14",
+   "name": "Long Beach",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Swimming is better at Long Beach, over the hill, than the town beach at Russell; there is a 1-km forest walk from Wellington Street; public toilets at a coffee cart in summer.",
+     "source": "https://en.wikivoyage.org/wiki/Russell_(New_Zealand)"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Beach with no single steward; no official site.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.2591,
+     "longitude": 174.1329
+    },
+    "source_point": {
+     "latitude": -35.25908,
+     "longitude": 174.1329
+    },
+    "source": "OpenStreetMap (Photon) Long Beach, natural=beach",
+    "ok": true,
+    "distance_m": 2
+   },
+   "category": "beach",
+   "unverified": [
+    "Wikivoyage Russell listing is the only counted source found; marginal on COVERAGE.md \"two independent sources\" if the owner re-judges."
+   ]
+  },
+  {
+   "id": "bay-of-islands-15",
+   "name": "Flagstaff Hill",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Flagstaff Hill Loop Track: 2.5 km loop, 30 min, from the northern end of The Strand through regenerating scrub to Te Maiki/Flagstaff Hill, \"one of New Zealand's most iconic historic sites\"; separate high-tide route; no freedom camping.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/russell-area/things-to-do/flagstaff-hill-track/"
+    },
+    {
+     "claim": "A driveway off Flagstaff Road leads to a carpark with paths to the hill and a sundial; summit has 360-degree views over the Bay of Islands (DOC history page, via search summary).",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/russell-area/heritage-sites/flagstaff-hill-historic-reserve/te-maikiflagstaff-hill/"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/russell-area/things-to-do/flagstaff-hill-track/",
+   "ticketUrl_note": "DOC page loaded; title \"Flagstaff Hill Track: Russell area, Northland\".",
+   "coordinates_check": {
+    "current": null,
+    "source_point": {
+     "latitude": -35.2549063,
+     "longitude": 174.1199699
+    },
+    "source": "OpenStreetMap (Nominatim/Photon) \"Flagstaff Hill Lookout\", tourism=viewpoint, Tapeka Road; reserve polygons -35.2559,174.1208",
+    "ok": true,
+    "note": "Placement had no coordinates; use the OSM lookout."
+   },
+   "category": "viewpoint",
+   "unverified": [
+    "Hours not stated by DOC; \"Open 24 hours\" assumed.",
+    "Bio says \"Maiki Hill ... with the Te Maiki flagstaff\": fine, but DOC writes Te Maiki/Flagstaff Hill."
+   ]
+  },
+  {
+   "id": "bay-of-islands-16",
+   "name": "Ruapekapeka Pā",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Ruapekapeka Pā, a Tohu Whenua heritage site, is where the 1845-46 northern war culminated; DOC calls it New Zealand's best preserved land-war battlefield. Access: SH1 35 km north of Whangārei, then 4 km of narrow unsealed Ruapekapeka Road; carpark 300 m past the Kawakawa Road intersection; no eating or drinking on the site.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/ruapekapeka-pa/"
+    },
+    {
+     "claim": "Reserve of 9.5 ha managed jointly by DOC and Te Ruapekapeka Trust (DOC search summary).",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/ruapekapeka-pa/"
+    },
+    {
+     "claim": "The Wikipedia article is \"Battle of Ruapekapeka\" (Ruapekapeka redirects to it).",
+     "source": "https://en.wikipedia.org/wiki/Battle_of_Ruapekapeka"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/ruapekapeka-pa/",
+   "ticketUrl_note": "DOC page loaded; title \"Ruapekapeka Pā: Places to go in Northland\".",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.4564,
+     "longitude": 174.1437
+    },
+    "source_point": {
+     "latitude": -35.45318,
+     "longitude": 174.14164
+    },
+    "source": "OpenStreetMap (Photon) Ruapekapeka Pā, historic=archaeological_site; Ruapekapeka parking -35.45251,174.14116",
+    "ok": false,
+    "distance_m": 404,
+    "note": "Placement point is ~0.4 km SSE of the site; use the pā (or the car park)."
+   },
+   "category": "historic",
+   "unverified": [
+    "Opening hours not stated by DOC; \"Open 24 hours\" assumed (it is a wāhi tapu site: confirm access times).",
+    "Bio says \"short DOC track\": DOC page does not describe a track; a site guide PDF exists (not read)."
+   ]
+  },
+  {
+   "id": "bay-of-islands-17",
+   "name": "Puketī and Ōmahuta Forests",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Puketī-Ōmahuta forest tract is more than 21,000 ha (DOC administers 16,210.7 ha), second largest but most intact forested habitat in the Eastern Northland Ecological Region; home to North Island brown kiwi and kōkako.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/puketi-and-omahuta-forests/"
+    },
+    {
+     "claim": "Recommended entry is from SH10 ~600 m north of Waipapa, along Pungaere Road (~15 km, part gravel) then ~2 km to the Puketī recreation area; some tracks permanently closed for kauri dieback; Apple Tree Dam campsite closed.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/puketi-and-omahuta-forests/"
+    },
+    {
+     "claim": "Omahuta Kauri Sanctuary walk and Puketī Nature Trail are the day walks (Puketī Nature Trail is an easy loop through kauri forest).",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/puketi-and-omahuta-forests/things-to-do/puketi-nature-trail/"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/puketi-and-omahuta-forests/",
+   "ticketUrl_note": "DOC page loaded; title \"Puketī and Ōmahuta Forests: Bay of Islands places to visit\".",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.1935,
+     "longitude": 173.733
+    },
+    "source_point": {
+     "latitude": -35.21172,
+     "longitude": 173.79329
+    },
+    "source": "OpenStreetMap (Photon) Puketi Recreation Area Campsite / Puketi Forest Hut (-35.21177,173.79264), the end of Pungaere Road that DOC recommends",
+    "ok": false,
+    "distance_m": 5841,
+    "note": "Placement is the forest centroid (OSM natural=wood), ~6 km W of the visitor entrance."
+   },
+   "category": "nature",
+   "unverified": [
+    "Forest is huge; one pin at the recreation area covers the Puketī Nature Trail but not Ōmahuta Kauri Sanctuary (-35.2410,173.6287, ~14 km west). Owner may want a second spot for Ōmahuta.",
+    "Hours not stated by DOC."
+   ]
+  },
+  {
+   "id": "bay-of-islands-18",
+   "name": "Kororipō Pā",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Kororipo Heritage Park (Tohu Whenua site) at the head of the Kerikeri inlet: Hongi Hika's fortress and the trading meeting place of Māori and Europeans; reached by car (Landing Road) or a ~20 min walk from Kerikeri.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/kerikeri-area/kororipo-heritage-park/"
+    },
+    {
+     "claim": "Kororipō Pā Historic Walk: 20 min, from the red Waharoa up a gentle grass slope to the pā and a viewing platform, finishing on Kerikeri Road opposite the Stone Store.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/kerikeri-area/things-to-do/kororipo-pa-historic-walk/"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/kerikeri-area/kororipo-heritage-park/",
+   "ticketUrl_note": "DOC page loaded; title \"Kororipo Heritage Park: Places to go in Kerikeri\".",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.2183,
+     "longitude": 173.966
+    },
+    "source_point": {
+     "latitude": -35.21827,
+     "longitude": 173.96601
+    },
+    "source": "OpenStreetMap (Photon) Kororipo Pā, historic=archaeological_site / Kororipo Pā Historic Reserve",
+    "ok": true,
+    "distance_m": 3
+   },
+   "category": "historic",
+   "unverified": [
+    "HELD in placement (needs a photo).",
+    "Hours not stated by DOC."
+   ],
+   "held": true
+  },
+  {
+   "id": "whangarei-7",
+   "name": "Mount Parihaka",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Parihaka Scenic Reserve: an ancient volcano and once reputedly the site of the largest pā in New Zealand; a viewing platform at the 241 m summit gives panoramic views over the city and harbour; a World War II memorial glows red at night; three walking tracks to the summit.",
+     "source": "https://www.wdc.govt.nz/Community/Facilities/Parks-and-recreation/Parks-and-reserves/Parihaka"
+    },
+    {
+     "claim": "Vehicle access to the summit via Memorial Drive is closed (Cyclone Gabrielle damage); walkers and cyclists can pass a gate ~800 m below the lower carpark; no dogs on the summit tracks; Drummond Track starts in Mair Park (40 min one way).",
+     "source": "https://www.wdc.govt.nz/Community/Facilities/Parks-and-recreation/Parks-and-reserves/Parihaka"
+    },
+    {
+     "claim": "Wikivoyage: the hike from Mair Park takes ~30 min each way; the reserve has several glow-worm spots at night.",
+     "source": "https://en.wikivoyage.org/wiki/Whangarei"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.wdc.govt.nz/Community/Facilities/Parks-and-recreation/Parks-and-reserves/Parihaka",
+   "ticketUrl_note": "Whangarei District Council page loaded; title \"Parihaka Scenic Reserve - Whangarei District Council\".",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.7127,
+     "longitude": 174.3368
+    },
+    "source_point": {
+     "latitude": -35.712828,
+     "longitude": 174.336701
+    },
+    "source": "Whangarei District Council page gives -35.712828, 174.336701; OSM natural=peak -35.71270,174.33677",
+    "ok": true,
+    "distance_m": 17
+   },
+   "category": "viewpoint",
+   "unverified": [
+    "Bio says \"a track and a paved road to a summit lookout\": WDC says the top of Memorial Drive is closed to ordinary vehicles; rewrite to walking tracks.",
+    "Wikipedia has no Mount Parihaka article (the title redirects to Whangārei): no `wiki` field; photo is from Commons per placement."
+   ],
+   "bio_note": "Suggested: \"An extinct volcano above the city with a pā site, a war memorial that glows red at night and a lookout reached by three bush tracks.\" Facts: WDC page."
+  },
+  {
+   "id": "whangarei-8",
+   "name": "Whangārei Town Basin",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "The area around the marina and Hundertwasser Art Centre is locally called the Town Basin: a pleasant place to stroll with restaurants, weekend craft markets and visiting yachts.",
+     "source": "https://en.wikivoyage.org/wiki/Whangarei"
+    },
+    {
+     "claim": "Claphams National Clock Museum, Town Basin, Dent St, daily 9AM-4:30PM, is listed in the same precinct.",
+     "source": "https://en.wikivoyage.org/wiki/Whangarei"
+    },
+    {
+     "claim": "WhangareiNZ.com (the district tourism site) has a page titled \"The Town Basin\".",
+     "source": "https://www.whangareinz.com/Discover/Destinations/The-Town-Basin"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.whangareinz.com/Discover/Destinations/The-Town-Basin",
+   "ticketUrl_note": "A precinct with no single steward. Candidate only: the district tourism board's page (title \"The Town Basin | WhangareiNZ.com\") loaded. Leave out if the owner wants a steward only.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.7251,
+     "longitude": 174.3261
+    },
+    "source_point": {
+     "latitude": -35.72386,
+     "longitude": 174.32652
+    },
+    "source": "OpenStreetMap (Photon) Town Basin Marina, leisure=marina; Wikivoyage Claphams -35.7251,174.3261",
+    "ok": true,
+    "distance_m": 143
+   },
+   "category": "landmark",
+   "unverified": [
+    "Overlaps existing whangarei-1 (Hundertwasser Art Centre) and whangarei-6 (Claphams Clocks), which sit on the Town Basin; near-duplicate risk.",
+    "Craft markets are weekend-only (event rule): not a reason to keep."
+   ]
+  },
+  {
+   "id": "whangarei-9",
+   "name": "Whangārei Quarry Gardens",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Whangarei Quarry Gardens, 37A Russell Rd: daily 9AM-5PM, Quail Cafe Wed-Sun 9AM-3PM; terraced amphitheatre of subtropical plantings with a lake fed by two waterfalls; entry by donation.",
+     "source": "https://en.wikivoyage.org/wiki/Whangarei"
+    },
+    {
+     "claim": "Whangārei District Council page: open to the public with native and exotic plants; entry is by donation, proceeds buy plants and equipment.",
+     "source": "https://www.wdc.govt.nz/Community/Facilities/Parks-and-recreation/Parks-and-reserves/Whangarei-Quarry-Gardens"
+    }
+   ],
+   "hours": "9:00 AM – 5:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": "https://www.wdc.govt.nz/Community/Facilities/Parks-and-recreation/Parks-and-reserves/Whangarei-Quarry-Gardens",
+   "ticketUrl_note": "Council page loaded; title \"Whangārei Quarry Gardens - Whangarei District Council\". The gardens' own trust site could not be loaded (whangareiquarrygardens.org.nz, quarrygardens.org.nz both failed).",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.7128,
+     "longitude": 174.3085
+    },
+    "source_point": {
+     "latitude": -35.71379,
+     "longitude": 174.30655
+    },
+    "source": "OpenStreetMap (Photon) Whangarei Quarry Gardens, leisure=garden (centroid); Wikivoyage -35.7128,174.3085 (37A Russell Rd)",
+    "ok": true,
+    "distance_m": 208,
+    "note": "Two sources 200 m apart; keep either."
+   },
+   "category": "nature",
+   "unverified": [
+    "Hours from Wikivoyage (updated Feb 2024) and a search summary of the gardens' own site (gates locked at 5pm); council page does not state hours.",
+    "\"free: true\" with a donation box (gold coin); nothing is charged."
+   ]
+  },
+  {
+   "id": "whangarei-10",
+   "name": "Ocean Beach",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Ocean Beach (36 km from the town centre) is a lovely big white sand beach, normally with decent surf.",
+     "source": "https://en.wikivoyage.org/wiki/Whangarei"
+    },
+    {
+     "claim": "Ocean Beach car park on Ranui Road is the start of the Te Whara Track (7.5 km, 5-6 hr one way) to Urquharts Bay.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/whangarei-heads-area/things-to-do/te-whara-track/"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A beach with no single steward (DOC page covers Bream Head, not the beach itself).",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.8371,
+     "longitude": 174.5737
+    },
+    "source_point": {
+     "latitude": -35.8371,
+     "longitude": 174.57369
+    },
+    "source": "OpenStreetMap (Photon) Ocean Beach, natural=beach, way 218925316; car park -35.83941,174.57244",
+    "ok": true,
+    "distance_m": 1
+   },
+   "category": "beach",
+   "unverified": [
+    "Two OSM beaches are named Ocean Beach (this one at Whangārei Heads and one at -35.809,174.557): this is the one by the Te Whara car park."
+   ]
+  },
+  {
+   "id": "whangarei-11",
+   "name": "Bream Head",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Bream Head Scenic Reserve (557 ha per DOC summaries): premier coastal forest reserve and kiwi sanctuary; Te Whara ridge peaks Te Whara 476 m and Matariki/Mt Lion 371 m; no dogs or open fires.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/whangarei-heads-area/bream-head-scenic-reserve/"
+    },
+    {
+     "claim": "Te Whara Track: 7.5 km, 5-6 hr one way, challenging, from Ocean Beach car park or Urquharts Bay car park; Smugglers Bay Loop 3 km, 1 hr 30.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/whangarei-heads-area/things-to-do/te-whara-track/"
+    },
+    {
+     "claim": "Wikipedia: Bream Head is a promontory at the end of a 30 km peninsula; the Te Whara Track is at least 700 years old.",
+     "source": "https://en.wikipedia.org/wiki/Bream_Head"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/whangarei-heads-area/bream-head-scenic-reserve/",
+   "ticketUrl_note": "DOC page loaded; title \"Bream Head Scenic Reserve: Whangarei area places to visit\".",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.85426,
+     "longitude": 174.59132
+    },
+    "source_point": {
+     "latitude": -35.85367,
+     "longitude": 174.59057
+    },
+    "source": "OpenStreetMap (Photon) Manaia / Bream Head, natural=cape; peak -35.85463,174.5782",
+    "ok": true,
+    "distance_m": 94,
+    "note": "Cape point is precise but is the far tip; walkers stand on Te Whara Track, so the pin is a landmark rather than a visitor point."
+   },
+   "category": "nature",
+   "unverified": [
+    "Hours not stated by DOC.",
+    "Overlaps Smugglers Bay (whangarei-16, held), Ocean Beach (whangarei-10), Mount Manaia (existing): all trails of the same reserve area."
+   ]
+  },
+  {
+   "id": "whangarei-12",
+   "name": "Matapouri",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Matapouri and Sandy Bay (36 km from town centre) are listed as beaches; \"an archetypal Kiwi bach settlement\" (WDC 2010), 7 km north of Tutukaka.",
+     "source": "https://en.wikivoyage.org/wiki/Whangarei"
+    },
+    {
+     "claim": "Matapouri is a coastal settlement on the Tutukaka Coast, 35 km north-east of Whangārei.",
+     "source": "https://en.wikipedia.org/wiki/Matapouri"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A beach village; no steward.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.56527778,
+     "longitude": 174.50416667
+    },
+    "source_point": {
+     "latitude": -35.56286,
+     "longitude": 174.50712
+    },
+    "source": "OpenStreetMap (Photon) Matapouri Beach, natural=beach; village node -35.5664,174.50307",
+    "ok": false,
+    "distance_m": 379,
+    "note": "Wikipedia point is the village (~0.4 km inland of the beach); move to the beach."
+   },
+   "category": "beach",
+   "unverified": []
+  },
+  {
+   "id": "whangarei-13",
+   "name": "Waipū Caves",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Waipū Caves Track: 2 km one way (1 hr 30 min return) through karst limestone landscape; the track starts at the Whangarei District Council reserve by the cave entrance (toilets there) off Waipū Caves Road, and does not lead to the caves, which are directly across the reserve.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/waipu-area/things-to-do/waipu-caves-track/"
+    },
+    {
+     "claim": "DOC search summary: wet, slippery conditions and flash-flood risk; the inner cave is for experienced cavers; glow-worms.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/waipu-area/things-to-do/waipu-caves-track/"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/waipu-area/things-to-do/waipu-caves-track/",
+   "ticketUrl_note": "DOC page loaded; title \"Waipū Caves Track: Waipu area, Northland region\". Council owns the cave reserve; no better steward page found.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.9343,
+     "longitude": 174.3493
+    },
+    "source_point": {
+     "latitude": -35.9343,
+     "longitude": 174.3493
+    },
+    "source": "Placement (Nominatim cave entrance); OSM Waipū Caves Track path -35.92333,174.35004; reserve centroid -35.92734,174.34884",
+    "ok": true,
+    "distance_m": 0,
+    "note": "Not independently re-found (no OSM cave node returned by Photon); consistent with DOC description of the entrance across the council reserve."
+   },
+   "category": "nature",
+   "unverified": [
+    "Bio says \"reached by a DOC track\": DOC says the track does not lead to the caves. Rewrite: \"Limestone caves with glow-worms beside a small council reserve; a separate DOC track climbs the ridge above.\"",
+    "Hours not stated; torch/caving gear advice not verified."
+   ]
+  },
+  {
+   "id": "whangarei-14",
+   "name": "Uretiti Beach",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Uretiti Beach is a stretch of beach between Ruakākā and Waipu on Bream Bay, served by a DOC campground; popular for swimming, surfing and fishing.",
+     "source": "https://en.wikipedia.org/wiki/Uretiti_Beach"
+    },
+    {
+     "claim": "DOC Uretiti Beach campsite: turn off SH1 5 km north of Waipu (34 km south of Whangārei); adult $18, child $9 per night; beach driving rules changed in places around Northland.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/waipu-area/things-to-do/uretiti-beach-campsite/"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/waipu-area/things-to-do/uretiti-beach-campsite/",
+   "ticketUrl_note": "DOC campsite page loaded; title \"Uretiti Beach conservation campsite: Waipu, Northland region\". Day visits are not charged on the page; camping is $18/night.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.95777778,
+     "longitude": 174.46583333
+    },
+    "source_point": {
+     "latitude": -35.9318,
+     "longitude": 174.46019
+    },
+    "source": "OpenStreetMap (Photon) Uretiti Beach DOC Entrance Car Park, W785279208; campsite -35.93453,174.4593",
+    "ok": false,
+    "distance_m": 2933,
+    "note": "Wikipedia point is ~3 km south of the DOC entrance and campsite; beach polygon centroid -35.94867,174.46439. Pin the DOC entrance car park."
+   },
+   "category": "beach",
+   "unverified": [
+    "\"free: true\" is for day visits (DOC page lists only camping fees).",
+    "Bio is fine; Wikipedia notes a clothing-optional section (not in bio)."
+   ]
+  },
+  {
+   "id": "whangarei-15",
+   "name": "Kiwi North",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Kiwi North (Whangarei Museum, Kiwi House and Heritage Park): open 7 days 10AM-4PM; adult $20 (Whangārei resident) / $25 (visitor); 2 adults + 3 children $45 / $65.",
+     "source": "https://kiwinorth.co.nz/"
+    },
+    {
+     "claim": "500 State Highway 14, Maunu, 5 km from the city; kiwi aviary and heritage park of historic buildings.",
+     "source": "https://en.wikivoyage.org/wiki/Whangarei"
+    }
+   ],
+   "hours": "10:00 AM – 4:00 PM",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "costMin": 25,
+   "costMax": 25,
+   "currency": "NZD",
+   "ticketUrl": "https://kiwinorth.co.nz/",
+   "ticketUrl_note": "Official site loaded; title \"Top Whangarei Attractions - Whangarei Museum and Heritage Park\".",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.7423,
+     "longitude": 174.2691
+    },
+    "source_point": {
+     "latitude": -35.74234,
+     "longitude": 174.26944
+    },
+    "source": "OpenStreetMap (Photon) Kiwi House building, SH14 (theme_park node -35.74131,174.26919)",
+    "ok": true,
+    "distance_m": 31
+   },
+   "category": "museum",
+   "unverified": [
+    "The site carries a stale \"Visitor Update\" about a 5-17 Aug closure (undated year) and a \"Visitor Update: exciting changes\" note: confirm it is open before applying.",
+    "Closed 25-26 Dec per a search summary of the site; Wikivoyage says 25 Dec.",
+    "HELD in placement (needs a photo)."
+   ],
+   "held": true,
+   "specialClosures": [
+    "12-25",
+    "12-26"
+   ]
+  },
+  {
+   "id": "whangarei-16",
+   "name": "Smugglers Bay",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Smugglers Bay Loop Track: 3 km loop, 1 hr 30, from the Urquharts Bay car park around Busby Head to Smugglers Bay and back; WWII and historic Māori sites; area is grazed, cattle may be on the track.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/whangarei-heads-area/things-to-do/smugglers-bay-loop-track/"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2.5,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/whangarei-heads-area/things-to-do/smugglers-bay-loop-track/",
+   "ticketUrl_note": "DOC page loaded; title \"Smugglers Bay Loop Track: Bream Head Scenic Reserve, Whangarei Heads area, Northland\".",
+   "coordinates_check": {
+    "current": null,
+    "source_point": {
+     "latitude": -35.85567,
+     "longitude": 174.53276
+    },
+    "source": "OpenStreetMap (Photon) Smugglers Bay Beach, natural=beach, way 867576022; Smugglers Bay bay -35.85862,174.5358",
+    "ok": true,
+    "note": "Placement had no coordinates. Walk start (Urquharts Bay car park) is ~1 km north."
+   },
+   "category": "beach",
+   "unverified": [
+    "HELD in placement (needs a photo).",
+    "Near-duplicate of the Smugglers Bay Loop inside Bream Head (whangarei-11)."
+   ],
+   "held": true
+  },
+  {
+   "id": "whangarei-17",
+   "name": "Mimiwhangata Coastal Park",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Mimiwhangata Coastal Park is on Northland's east coast ~48 km (about an hour) from Whangārei and 52 km from Russell; road is unsealed and winding after Teal Bay; no cellphone coverage, no pets, no fires, no boat launching (dinghies may be hand-launched).",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/mimiwhangata-coastal-park/"
+    },
+    {
+     "claim": "The 2000 ha Mimiwhangata Marine Park is part of the park; marine life may not be taken. Campsite bookings required 22 Oct-30 Apr and closed 1 May-21 Oct (search summary of DOC).",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/mimiwhangata-coastal-park/"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/mimiwhangata-coastal-park/",
+   "ticketUrl_note": "DOC page loaded; title \"Mimiwhangata Coastal Park: Whangārei area places to visit\".",
+   "coordinates_check": {
+    "current": null,
+    "source_point": {
+     "latitude": -35.4416,
+     "longitude": 174.4129
+    },
+    "source": "OpenStreetMap (Photon/OSM API) Waikahoa Bay information board (-35.44162,174.41292) beside the Waikahoa Bay campsite, toilets and car park (-35.44155,174.41493); OSM \"Peninsula Loop Walk\" path (-35.4392,174.4203)",
+    "ok": true,
+    "note": "Placement had no coordinates. Mimiwhangata Bay (-35.434,174.408) is a water node: do not use it."
+   },
+   "category": "nature",
+   "unverified": [
+    "Bio mentions a peninsula loop walk: OSM has a \"Peninsula Loop Walk\" path, but the DOC page does not mention it.",
+    "No day-entry fee on DOC page; camping costs not read.",
+    "HELD in placement (needs a photo)."
+   ],
+   "held": true
+  },
+  {
+   "id": "waipoua-forest-6",
+   "name": "Hokianga Sand Dunes",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Sand dunes: take the Hokianga Express ferry across the harbour and climb the dune towards the east (2.5 km); ask the skipper for directions.",
+     "source": "https://en.wikivoyage.org/wiki/Opononi"
+    },
+    {
+     "claim": "The dunes can only be accessed by boat; Hokianga Express Charters leave on the hour from Ōpononi Wharf and supply boogie boards.",
+     "source": "https://www.aa.co.nz/travel/editorial/ride-the-monster-dunes-in-opononi/"
+    },
+    {
+     "claim": "Wikivoyage Hokianga: sand dunes are \"fantastic sandstone sculptures on top of dune\", accessed from Opononi or Kohukohu.",
+     "source": "https://en.wikivoyage.org/wiki/Hokianga"
+    }
+   ],
+   "hours": "Daytime boats (on the hour)",
+   "visitHoursMin": 2,
+   "visitHoursMax": 3,
+   "ticketUrl": null,
+   "ticketUrl_note": "Dunes themselves have no steward. Operator is Hokianga Express Charters; its hokianga.com page 404s (https://www.hokianga.com/activities/adventure/hokianga-express-charters), so no verified link.",
+   "coordinates_check": {
+    "current": null,
+    "source_point": {
+     "latitude": -35.51276,
+     "longitude": 173.36063
+    },
+    "source": "OpenStreetMap (Photon) North Head Sand Dunes, relation 2442889 centroid; Ōpononi wharf area -35.5352,173.3874",
+    "ok": true,
+    "note": "Placement had no coordinates. Dunes are across the harbour from Ōpononi."
+   },
+   "category": "nature",
+   "unverified": [
+    "COST NOT FOUND: the boat fare could not be found (no source gave a price). The dunes are free; the boat is the cost. Needs a price from the operator or the owner.",
+    "Overlaps waipoua-forest-4 \"Hokianga Harbour\", whose bio already describes the north-head dunes reached by ferry or boat. One of the two should go.",
+    "Hours \"on the hour\" per AA; season and last departure not found."
+   ],
+   "cost_note": "boat fare unknown"
+  },
+  {
+   "id": "waipoua-forest-7",
+   "name": "Trounson Kauri Park",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Trounson Kauri Park is 38-40 km north of Dargaville; Loop Track is 1.6 km, 40 min, boardwalk and metal path, wheelchair accessible; no dogs or hunting; highest-density North Island brown kiwi population in Northland.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/trounson-kauri-park/things-to-do/trounson-kauri-park-loop-track/"
+    },
+    {
+     "claim": "Most of the forest was gifted to the Crown by James Trounson and officially opened in 1921; DOC page for the park.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/trounson-kauri-park/"
+    },
+    {
+     "claim": "Campground $20 adult per night; loop walk can be done \"by day or night\".",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/trounson-kauri-park/things-to-do/trounson-kauri-park-campground/"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/trounson-kauri-park/",
+   "ticketUrl_note": "DOC page loaded; title \"Trounson Kauri Park: Kauri Coast places to visit\".",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.7199752,
+     "longitude": 173.6493761
+    },
+    "source_point": {
+     "latitude": -35.71995,
+     "longitude": 173.64935
+    },
+    "source": "OpenStreetMap API: toilets node 4098263417 at the day car park, with parking way 116810944 (-35.71948,173.64867)",
+    "ok": true,
+    "distance_m": 4
+   },
+   "category": "nature",
+   "unverified": [
+    "Bio says 586 ha: confirmed only via DOC search summary (\"586-hectare reserve\").",
+    "Hours not stated; \"Open 24 hours\" assumed."
+   ]
+  },
+  {
+   "id": "waipoua-forest-8",
+   "name": "Rawene",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Rawene is a picturesque village on a peninsula jutting into the Hokianga Harbour; the hourly vehicle ferry runs to Kohukohu.",
+     "source": "https://en.wikivoyage.org/wiki/Rawene"
+    },
+    {
+     "claim": "Clendon House (14 Parnell St, house of Captain James Clendon, 1869) and the Mangrove Boardwalk are the See listings.",
+     "source": "https://en.wikivoyage.org/wiki/Rawene"
+    },
+    {
+     "claim": "Rawene is a town on the south side of the Hokianga harbour; a car ferry links it to Kohukohu.",
+     "source": "https://en.wikipedia.org/wiki/Rawene"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A village with no single steward. Clendon House is Heritage NZ-run (could be its own spot).",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.396111,
+     "longitude": 173.505
+    },
+    "source_point": {
+     "latitude": -35.3998,
+     "longitude": 173.50606
+    },
+    "source": "OpenStreetMap (Photon) place=village Rawene; Clendon House -35.39304,173.50527; Mangrove Boardwalk -35.39814,173.50557",
+    "ok": true,
+    "distance_m": 421,
+    "note": "Wikipedia/Wikivoyage point is on the waterfront near the ferry, 420 m from the village node; both are in the village. Keep."
+   },
+   "category": "historic",
+   "unverified": [
+    "Clendon House hours from Wikivoyage: 10AM-4PM, Nov-Apr Sat-Sun, May-Oct Sun (seasonal, limited) - not read from an operator."
+   ]
+  },
+  {
+   "id": "waipoua-forest-9",
+   "name": "Wairere Boulders",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Wairere Boulders: open every day, daylight hours; entrance (walks, hiking, bouldering, per 24 hours) adult $15, school children $5, pre-school free, family $35; walks of one to three hours.",
+     "source": "https://www.wairereboulders.co.nz/"
+    },
+    {
+     "claim": "Wikivoyage: an enormous basalt flow near Horeke; at the end of McDonnell Road.",
+     "source": "https://en.wikivoyage.org/wiki/Hokianga"
+    }
+   ],
+   "hours": "Daylight hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "costMin": 15,
+   "costMax": 15,
+   "currency": "NZD",
+   "ticketUrl": "https://www.wairereboulders.co.nz/",
+   "ticketUrl_note": "Official site loaded; title \"Home |Wairere Boulders - Geological Nature Reserve, Hokianga, New Zealand\".",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.3747,
+     "longitude": 173.5963
+    },
+    "source_point": {
+     "latitude": -35.37497,
+     "longitude": 173.59878
+    },
+    "source": "OpenStreetMap (Photon) Wairere Boulders information office, McDonnell Road (attraction node -35.37514,173.59941)",
+    "ok": false,
+    "distance_m": 227,
+    "note": "Wikipedia point is ~0.25 km from the entrance office; use the entrance."
+   },
+   "category": "nature",
+   "unverified": [
+    "Bio says \"described as a formation unique in the world\": this is a promotional phrase on the operator/Wikivoyage; rewrite plainly (\"a field of basalt boulders in a bush valley\")."
+   ]
+  },
+  {
+   "id": "waipoua-forest-10",
+   "name": "Koutu Boulders",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Koutu: large concretions (boulders) on the shore; \"biggest concretions in the world at Koutu\"; reached via Koutu Loop Road off SH12.",
+     "source": "https://en.wikivoyage.org/wiki/Hokianga"
+    }
+   ],
+   "hours": "Tides permitting",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "No steward found for the shore site.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.4635,
+     "longitude": 173.4166
+    },
+    "source_point": {
+     "latitude": -35.46354,
+     "longitude": 173.41663
+    },
+    "source": "OpenStreetMap (Photon) Koutu Boulders, natural=shingle; attraction -35.4657,173.41683; Waione Road parking -35.46823,173.41847",
+    "ok": true,
+    "distance_m": 5,
+    "note": "Wikivoyage point (-35.476,173.411) is ~1.5 km south; keep the OSM point."
+   },
+   "category": "nature",
+   "unverified": [
+    "Access, any landowner fee and hours were not found; \"free\" is an assumption.",
+    "\"biggest in the world\" is Wikivoyage's phrasing; the bio should avoid it."
+   ]
+  },
+  {
+   "id": "waipoua-forest-11",
+   "name": "Waiotemarama Falls",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Waiotemarama Waterfall Walk: 546 m to the waterfall return on the same track, 30 mins, easy; the waterfall drops 20 m; rough and extremely slippery in wet weather; from SH12 take Waiotemarama Gorge Road 6 km (from north) to the signposted start.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/waima-and-mataraua-forests/things-to-do/waiotemarama-waterfall-walk/"
+    },
+    {
+     "claim": "Wikivoyage Opononi: the bush track at Waiotemarama Falls is 5 km from Opononi.",
+     "source": "https://en.wikivoyage.org/wiki/Opononi"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/waima-and-mataraua-forests/things-to-do/waiotemarama-waterfall-walk/",
+   "ticketUrl_note": "DOC page loaded; title \"Waiotemarama Waterfall Walk: Waima Forest, Northland\". (The URL ending -loop-track returns 404.)",
+   "coordinates_check": {
+    "current": null,
+    "source_point": {
+     "latitude": -35.53332,
+     "longitude": 173.43795
+    },
+    "source": "OpenStreetMap (Photon) Waiotemarama Track Car Park, W1295979065, on Waiotemarama Gorge Road",
+    "ok": true,
+    "note": "Placement had no coordinates. Walk is 546 m: waterfall is ~0.3-0.5 km from this car park (unnamed OSM waterfall node -35.5314,173.4404)."
+   },
+   "category": "nature",
+   "unverified": [
+    "HELD in placement (needs a photo).",
+    "Hours not stated by DOC.",
+    "Bio says \"about 5 km from Opononi\": Wikivoyage says 5 km; DOC road distances put the start ~10 km from SH12 junction. Reword as \"a 30-minute walk up Waiotemarama Gorge Road\"."
+   ],
+   "held": true
+  },
+  {
+   "id": "doubtless-bay-1",
+   "name": "Mangōnui",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Heritage Trail of Mangonui: 3-km walk round historic sites, leaflet $1 from the info centre at 126 Waterfront Dr; Mangonui Fish Shop is built on stilts over the harbour.",
+     "source": "https://en.wikivoyage.org/wiki/Mangonui"
+    },
+    {
+     "claim": "Mangōnui is a settlement on the west side of Mangōnui Harbour, the easternmost of the Taipa-Mangōnui string of settlements.",
+     "source": "https://en.wikipedia.org/wiki/Mang%C5%8Dnui"
+    },
+    {
+     "claim": "Doubtless Bay Information Centre, 126 Waterfront Dr: Nov-Apr Mon-Sat 9:30AM-4PM, rest of year Mon-Sat 10AM-3PM (updated Jan 2019).",
+     "source": "https://en.wikivoyage.org/wiki/Doubtless_Bay"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A village with no single steward.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.9891,
+     "longitude": 173.5357
+    },
+    "source_point": {
+     "latitude": -34.98949,
+     "longitude": 173.53636
+    },
+    "source": "OpenStreetMap (Photon) Mangōnui Courthouse Historic Reserve; Wikivoyage Mangonui Craft Market -34.9891,173.5357; village node -34.9929,173.5323",
+    "ok": true,
+    "distance_m": 74
+   },
+   "category": "historic",
+   "unverified": [
+    "Bio says \"a fish shop\": Wikivoyage warns the fish-shop food is \"ordinary\"; avoid implying it is the draw.",
+    "Craft market is Saturday-only (event rule)."
+   ],
+   "proposed_destination": "doubtless-bay"
+  },
+  {
+   "id": "doubtless-bay-2",
+   "name": "Tokerau Beach",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Tokerau Beach is an 18-km beach on the northwestern side of Doubtless Bay on the Karikari Peninsula.",
+     "source": "https://en.wikipedia.org/wiki/Tokerau_Beach"
+    },
+    {
+     "claim": "Karikari Peninsula was formerly an island, joined to the mainland by the formation of Tokerau Beach; vehicle access to beaches has changed in places around Northland.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/karikari-peninsula/"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A beach with no single steward.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.884,
+     "longitude": 173.371
+    },
+    "source_point": {
+     "latitude": -34.88736,
+     "longitude": 173.37154
+    },
+    "source": "OpenStreetMap (Photon) Tokerau Beach, natural=beach; Tokerau Beach village node -34.88304,173.37133",
+    "ok": true,
+    "distance_m": 377,
+    "note": "Wikipedia point is the village at the beach edge (124 m from the OSM coastline)."
+   },
+   "category": "beach",
+   "unverified": [
+    "Bio says \"surf beach\": not stated in sources read.",
+    "Single source for visitor interest is the Northland tourism listing (northlandnz.com), which I did not read."
+   ],
+   "proposed_destination": "doubtless-bay"
+  },
+  {
+   "id": "doubtless-bay-3",
+   "name": "Rangikapiti Pā",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Rangikapiti Pa, Rangikapiti Rd, Coopers Beach: site of a former Māori pā with great views.",
+     "source": "https://en.wikivoyage.org/wiki/Doubtless_Bay"
+    },
+    {
+     "claim": "DOC: pā sites are publicly accessible; Rangikapiti and Taumarumaru are the most popular.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/mangonui-area/"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/mangonui-area/",
+   "ticketUrl_note": "DOC page loaded; title \"Mangōnui area: Places to go in Northland\" and a \"Rangikapiti Pā\" section. Not a page for the pā alone.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.9852,
+     "longitude": 173.5246
+    },
+    "source_point": {
+     "latitude": -34.98464,
+     "longitude": 173.52541
+    },
+    "source": "OpenStreetMap (Photon) Rangikapiti Pā viewpoint / summit survey mark (node 2184875911, -34.98464,173.52541); Wikivoyage -34.9852,173.5246",
+    "ok": true,
+    "distance_m": 97,
+    "note": "Placement (Wikivoyage) is 97 m from the summit; fine, OSM summit is the better pin."
+   },
+   "category": "historic",
+   "unverified": [
+    "Walk length and time not found (OSM names a \"Rangikapiti Pa Summit Track\").",
+    "Hours not stated."
+   ],
+   "proposed_destination": "doubtless-bay"
+  },
+  {
+   "id": "doubtless-bay-4",
+   "name": "Coopers Beach",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Coopers Beach is a settlement on the southern side of Doubtless Bay on SH10; Coopers Beach beach views from the Rangikapiti Pa site; Taumarumaru Scenic Reserve is reached from the sand at the western end of the beach.",
+     "source": "https://en.wikivoyage.org/wiki/Doubtless_Bay"
+    },
+    {
+     "claim": "Coopers Beach is one of the Taipa-Mangōnui string of settlements.",
+     "source": "https://en.wikipedia.org/wiki/Coopers_Beach"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A beach with no single steward.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.993,
+     "longitude": 173.509
+    },
+    "source_point": {
+     "latitude": -34.9922,
+     "longitude": 173.5098
+    },
+    "source": "OpenStreetMap parking nodes 3702790733-3702791072 at Coopers Beach (-34.9917 to -34.9926, 173.5097-173.5099)",
+    "ok": true,
+    "distance_m": 115,
+    "note": "Placement is ~100 m from the beach car park; beach polygon centroid is 1 km east."
+   },
+   "category": "beach",
+   "unverified": [
+    "HELD in placement (needs a photo).",
+    "Thin: beach with a village; WV only mentions it incidentally. Weakest spot of the proposed destination."
+   ],
+   "held": true,
+   "proposed_destination": "doubtless-bay"
+  },
+  {
+   "id": "doubtless-bay-5",
+   "name": "Maitai Bay",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Maitai Bay campsite: beachfront DOC campsite on the outer Karikari Peninsula, ~44 km northeast of Kaitaia, 2 km of gravel; white sand beach with rocks at either end to snorkel; $18/adult/night, first come first served.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/karikari-peninsula/things-to-do/maitai-bay-campsite/"
+    },
+    {
+     "claim": "Maitai Bay Headland Track: 3.45 km return, 1.5 hr, from the campsite over farmland and manuka to headland views of Waikato Bay and Maitai Bay.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/karikari-peninsula/things-to-do/maitai-bay-headland-track/"
+    },
+    {
+     "claim": "A rāhui since 2017 restricts all fishing/taking of seafood at the bay; snorkelling allowed (search summary of the DOC campsite page).",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/karikari-peninsula/things-to-do/maitai-bay-campsite/"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/karikari-peninsula/things-to-do/maitai-bay-campsite/",
+   "ticketUrl_note": "DOC campsite page loaded; title \"Maitai Bay conservation campsite: Karikari Peninsula, Northland region\".",
+   "coordinates_check": {
+    "current": null,
+    "source_point": {
+     "latitude": -34.83024,
+     "longitude": 173.409605
+    },
+    "source": "OpenStreetMap API: parking way 202773319 at Maitai Bay (first node -34.83024,173.40961); campsite way 885030012 -34.8302,173.4080; Merita Beach -34.8295,173.4115",
+    "ok": true,
+    "note": "Placement had no coordinates. Photon \"Maitai Bay\" bay node (-34.82478,173.41076) is water."
+   },
+   "category": "beach",
+   "unverified": [
+    "\"free\": day use has no fee on the DOC page; camping is $18/night.",
+    "No Wikipedia article (Matai Bay redirects to Karikari Peninsula): photo is from Commons per placement."
+   ],
+   "proposed_destination": "doubtless-bay"
+  },
+  {
+   "id": "kaitaia-1",
+   "name": "Te Ahu Museum",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Te Ahu Museum (formerly Far North Regional Museum), 30A South Rd at Matthews Ave: Winter 10:30AM-4:30PM, Summer 8:30AM-4:30PM; admission by donation.",
+     "source": "https://en.wikivoyage.org/wiki/Kaitaia"
+    },
+    {
+     "claim": "Museum site: open Monday to Saturday, Saturday 9AM-1PM; museum entry by donation.",
+     "source": "https://teahumuseum.nz/"
+    }
+   ],
+   "hours": "10:30 AM – 4:30 PM (winter); 8:30 AM – 4:30 PM (summer)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": "https://teahumuseum.nz/",
+   "ticketUrl_note": "Official site loaded; title \"Te Ahu Museum\".",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.1173,
+     "longitude": 173.268
+    },
+    "source_point": {
+     "latitude": -35.11722,
+     "longitude": 173.26845
+    },
+    "source": "OpenStreetMap (Photon) Te Ahu Centre building, Matthews Avenue; Wikivoyage -35.1173,173.268",
+    "ok": true,
+    "distance_m": 42
+   },
+   "category": "museum",
+   "unverified": [
+    "Saturday opening (9AM-1PM per the museum) conflicts with Wikivoyage/Northland listings that show weekdays only; closedDays is either [0] or [0,6].",
+    "Season dates for summer/winter hours not given."
+   ],
+   "closedDays": [
+    0
+   ],
+   "proposed_destination": "kaitaia"
+  },
+  {
+   "id": "kaitaia-2",
+   "name": "Ahipara",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Ahipara is a town at the southern end of Ninety Mile Beach, 14 km from Kaitaia, with the Tauroa Peninsula to the west and Ahipara Bay to the northwest.",
+     "source": "https://en.wikipedia.org/wiki/Ahipara"
+    },
+    {
+     "claim": "Ninety Mile Beach's southern end is 13 km (12 minutes) from Kaitaia at Ahipara; Ahipara is one of the places to drive on to the beach.",
+     "source": "https://en.wikivoyage.org/wiki/Ninety_Mile_Beach"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A town; no single steward.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.17138889,
+     "longitude": 173.15333333
+    },
+    "source_point": {
+     "latitude": -35.1713,
+     "longitude": 173.15343
+    },
+    "source": "OpenStreetMap (Photon) place=town Ahipara; the beach access is the car park at the end of the road (-35.17778,173.13448)",
+    "ok": true,
+    "distance_m": 13,
+    "note": "Town point is ~0.7 km from the Ahipara Bay shore; for a beach pin use the access car park."
+   },
+   "category": "beach",
+   "unverified": [
+    "Bio says \"a base for horse treks\": not found in sources read."
+   ],
+   "proposed_destination": "kaitaia"
+  },
+  {
+   "id": "kaitaia-3",
+   "name": "Gumdiggers Park",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Gumdiggers Park, 171 Heath Road, Awanui: open Monday to Sunday 9AM-5PM, last entry 4:30PM; 25 km north of Kaitaia.",
+     "source": "https://www.gumdiggerspark.co.nz/"
+    },
+    {
+     "claim": "Admission: adults $15, children 5-16 $7 (under 5 free), family (2 adults + 2 or more children) $35.",
+     "source": "https://www.gumdiggerspark.co.nz/prices.html"
+    },
+    {
+     "claim": "Displays: an authentic gumfield over 100 years old, buried ancient kauri forests, kauri gum, an eco trail.",
+     "source": "https://www.gumdiggerspark.co.nz/"
+    }
+   ],
+   "hours": "9:00 AM – 5:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 15,
+   "costMax": 15,
+   "currency": "NZD",
+   "ticketUrl": "https://www.gumdiggerspark.co.nz/",
+   "ticketUrl_note": "Official site loaded; title \"Gum Diggers Park - Ancient Buried Kauri forest and Gum-Digging site North of Kaitaia NZ\".",
+   "coordinates_check": {
+    "current": null,
+    "source_point": {
+     "latitude": -34.96443,
+     "longitude": 173.2069
+    },
+    "source": "OpenStreetMap (Photon) Gumdigger Village, tourism=attraction, Heath Road; Gumdiggers Park nature_reserve centroid -34.96387,173.20691",
+    "ok": true,
+    "note": "Placement had no coordinates."
+   },
+   "category": "museum",
+   "unverified": [
+    "HELD in placement (needs a photo).",
+    "Closed 25 Dec per Wikivoyage (not on the site)."
+   ],
+   "held": true,
+   "proposed_destination": "kaitaia",
+   "specialClosures": [
+    "12-25"
+   ]
+  },
+  {
+   "id": "kaitaia-4",
+   "name": "Rarawa Beach",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Rarawa Beach Walk: 20 min on a short track from the campground or the day-visitor parking to the beach; Rarawa is ~45 min north of Kaitaia.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/wharekapu-paxton-point-conservation-area/things-to-do/rarawa-beach-walk/"
+    },
+    {
+     "claim": "Rarawa Beach campsite: $18/adult/night; SH1 about 54 km north of Kaitaia then 4 km of gravel on Rarawa Beach Road; popular surf break, exposed beach may be dangerous.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/wharekapu-paxton-point-conservation-area/things-to-do/rarawa-beach-campsite/"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/wharekapu-paxton-point-conservation-area/things-to-do/rarawa-beach-walk/",
+   "ticketUrl_note": "DOC page loaded; title \"Rarawa Beach Walk: Te Paki, Northland\". (Campsite page is the search-engine-listed URL, not fetched.)",
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.74166667,
+     "longitude": 173.04666667
+    },
+    "source_point": {
+     "latitude": -34.71651,
+     "longitude": 173.07694
+    },
+    "source": "OpenStreetMap (Photon) Rarawa Beach, natural=beach, way 183364573; day-visitor parking -34.72375,173.08229; campsite -34.72559,173.08263",
+    "ok": false,
+    "distance_m": 3934,
+    "note": "Placement is the Ngataki village point on Wikipedia, 3.9 km from the beach."
+   },
+   "category": "beach",
+   "unverified": [
+    "HELD in placement (needs a photo).",
+    "DOC page: not currently taking campsite bookings (search summary); irrelevant to day visits."
+   ],
+   "held": true,
+   "proposed_destination": "kaitaia"
+  },
+  {
+   "id": "dargaville-1",
+   "name": "Dargaville Museum",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Dargaville Museum: November to March 9AM-5PM, April to October 9AM-4PM; closed Christmas Day and till 1PM on ANZAC Day.",
+     "source": "https://www.dargavillemuseum.co.nz/"
+    },
+    {
+     "claim": "Admission: adults $15, NZ Goldcard seniors $12, children 5-16 $5, NZ students $12, family $35, tour guide $12 (book ahead).",
+     "source": "https://www.dargavillemuseum.co.nz/"
+    },
+    {
+     "claim": "Also known as Dargaville Maritime Museum, 32 Mount Wesley Coast Rd; Wikivoyage lists adult $12 (older figure).",
+     "source": "https://en.wikivoyage.org/wiki/Dargaville"
+    }
+   ],
+   "hours": "9:00 AM – 5:00 PM (Nov–Mar); 9:00 AM – 4:00 PM (Apr–Oct)",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2.5,
+   "costMin": 15,
+   "costMax": 15,
+   "currency": "NZD",
+   "ticketUrl": "https://www.dargavillemuseum.co.nz/",
+   "ticketUrl_note": "Official site loaded; title \"Museum in Dargaville - Dargaville Museum, New Zealand\".",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.959057,
+     "longitude": 173.864269
+    },
+    "source_point": {
+     "latitude": -35.95907,
+     "longitude": 173.86396
+    },
+    "source": "OpenStreetMap (Photon) Dargaville Maritime Museum, tourism=museum, Mount Wesley Coast Road",
+    "ok": true,
+    "distance_m": 28
+   },
+   "category": "museum",
+   "unverified": [
+    "Bio claims \"home to the masts of the Rainbow Warrior\": no text source read; the placement photo file is \"Rainbow Warrior Masts at Dargaville Museum.jpg\". Check on the museum site."
+   ],
+   "proposed_destination": "dargaville",
+   "specialClosures": [
+    "12-25"
+   ]
+  },
+  {
+   "id": "dargaville-2",
+   "name": "Baylys Beach",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Baylys Beach is 12 km west of Dargaville.",
+     "source": "https://en.wikivoyage.org/wiki/Dargaville"
+    },
+    {
+     "claim": "Baylys Beach is a beach and settlement on the west coast; the beach is north of the settlement, Ripirō Beach on the south; Dargaville is 13 km east.",
+     "source": "https://en.wikipedia.org/wiki/Baylys_Beach"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A beach with no single steward.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.951,
+     "longitude": 173.748
+    },
+    "source_point": {
+     "latitude": -35.9495,
+     "longitude": 173.7386
+    },
+    "source": "OpenStreetMap (Photon) Baylys Beach, natural=beach, way 1136390353 (centroid ~59 m from coastline); village node -35.94949,173.74628",
+    "ok": false,
+    "distance_m": 862,
+    "note": "Placement is the holiday park (-35.95117,173.74771), ~0.8 km inland of the beach."
+   },
+   "category": "beach",
+   "unverified": [
+    "Wikipedia/WV say little about the beach itself; one counted source (Wikivoyage) only."
+   ],
+   "proposed_destination": "dargaville"
+  },
+  {
+   "id": "dargaville-3",
+   "name": "Kai Iwi Lakes",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Kai Iwi Lakes (Taharoa Domain): 538 ha reserve ~35 km from Dargaville with white-sand freshwater dune lakes; swimming, kayaking, fishing; two campgrounds on the Lake Taharoa foreshore; managed by Kaipara District Council.",
+     "source": "https://www.kaipara.govt.nz/kai-iwi-lakes"
+    },
+    {
+     "claim": "Wikivoyage: Kai Iwi Lakes, 32 km north of Dargaville, three freshwater dune lakes.",
+     "source": "https://en.wikivoyage.org/wiki/Dargaville"
+    },
+    {
+     "claim": "Day visitors pay no entry (travel-guide sources via search summary; the council page does not say).",
+     "source": "https://www.kaipara.govt.nz/kai-iwi-lakes"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": true,
+   "ticketUrl": "https://www.kaipara.govt.nz/kai-iwi-lakes",
+   "ticketUrl_note": "Council page loaded; title \"Kai Iwi Lakes (Taharoa Domain), Kaipara District Council\".",
+   "coordinates_check": {
+    "current": null,
+    "source_point": {
+     "latitude": -35.8071,
+     "longitude": 173.6619
+    },
+    "source": "OpenStreetMap API: Pine Beach (natural=beach way 414354939 -35.80711,173.66187) with parking, toilets and picnic tables on Lake Taharoa; Promenade Point campsite -35.80586,173.63767",
+    "ok": true,
+    "note": "Placement had no coordinates. Wikipedia/Wikivoyage point (-35.8148,173.654) falls in Lake Taharoa; do not use."
+   },
+   "category": "nature",
+   "unverified": [
+    "\"free\" for day visits is not stated on the council page (travel guides only); camping fees apply.",
+    "HELD in placement (needs a photo).",
+    "Dogs and fires not permitted (council notice via search summary)."
+   ],
+   "held": true,
+   "proposed_destination": "dargaville"
+  },
+  {
+   "id": "whangaroa-1",
+   "name": "Matauri Bay",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Matauri Bay is a bay 30 km north of Kerikeri with over a kilometre of white sand and clear water; popular with surfers, divers and holidaymakers.",
+     "source": "https://en.wikipedia.org/wiki/Matauri_Bay"
+    },
+    {
+     "claim": "The Rainbow Warrior lies off Matauri Bay with a memorial on a nearby pā.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/whangaroa-area/"
+    },
+    {
+     "claim": "Matauri Bay, Tauranga Bay and Taupo Bay have family campgrounds (Wikivoyage Whangaroa); Matauri Bay boasts impressive views of the Cavalli Islands (Wikivoyage Kerikeri).",
+     "source": "https://en.wikivoyage.org/wiki/Whangaroa"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A beach; DOC Whangaroa area page mentions the memorial but is not a page for the bay.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.03333333,
+     "longitude": 173.9
+    },
+    "source_point": {
+     "latitude": -35.03107,
+     "longitude": 173.91235
+    },
+    "source": "OpenStreetMap (Photon) Matauri Bay Beach Carpark, amenity=parking; Rainbow Warrior Memorial -35.02688,173.91752",
+    "ok": false,
+    "distance_m": 1152,
+    "note": "Wikipedia point is 1.2 km from the coast (inland hill west of the bay)."
+   },
+   "category": "beach",
+   "unverified": [
+    "Rainbow Warrior memorial (-35.02688,173.91752) could be mentioned in the bio."
+   ],
+   "proposed_destination": "whangaroa"
+  },
+  {
+   "id": "whangaroa-2",
+   "name": "Taupō Bay",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Taupō Bay is a bay and village with a 1.5-km-wide white sand beach and about 40 permanent residents.",
+     "source": "https://en.wikipedia.org/wiki/Taup%C5%8D_Bay"
+    },
+    {
+     "claim": "Matauri Bay, Tauranga Bay and Taupo Bay have family campgrounds and are popular in summer.",
+     "source": "https://en.wikivoyage.org/wiki/Whangaroa"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A beach; no single steward.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.992124,
+     "longitude": 173.708853
+    },
+    "source_point": {
+     "latitude": -34.9911,
+     "longitude": 173.7093
+    },
+    "source": "OpenStreetMap (Photon) Taupo Bay Reserve, leisure=park (121 m)",
+    "ok": true,
+    "distance_m": 121
+   },
+   "category": "beach",
+   "unverified": [],
+   "proposed_destination": "whangaroa"
+  },
+  {
+   "id": "whangaroa-3",
+   "name": "Tauranga Bay",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Tauranga Bay Holiday Park, 51 Tauranga Bay Rd: cabins and campsites beside the beach.",
+     "source": "https://en.wikivoyage.org/wiki/Whangaroa"
+    },
+    {
+     "claim": "Matauri Bay, Tauranga Bay and Taupo Bay have family campgrounds and are popular spots in summer.",
+     "source": "https://en.wikivoyage.org/wiki/Whangaroa"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A beach; no single steward.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.0059,
+     "longitude": 173.7867
+    },
+    "source_point": {
+     "latitude": -35.0052,
+     "longitude": 173.78625
+    },
+    "source": "OpenStreetMap (Photon) Tauranga Bay Reserve, leisure=park (88 m); hamlet node -35.0059,173.7867; bay node -35.00338,173.78108 is water",
+    "ok": true,
+    "distance_m": 88,
+    "note": "Placement is the hamlet node; the reserve beside it is the beach point."
+   },
+   "category": "beach",
+   "unverified": [
+    "HELD in placement (needs a photo).",
+    "Only source is a Wikivoyage accommodation line: thin; one counted source."
+   ],
+   "held": true,
+   "proposed_destination": "whangaroa"
+  },
+  {
+   "id": "whangaroa-4",
+   "name": "Duke's Nose",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Dukes Nose (Kaiaraara Rocks) Track: 45 min one way, intermediate tramping track with views over Whangaroa Harbour; starts behind Lane Cove Hut and day shelter, Pekapeka Bay; reach it by the Wairakau Stream Track or by boat; summit has vertical drop-offs and no barriers.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/whangaroa-area/things-to-do/dukes-nose-kairaara-rocks-track/"
+    },
+    {
+     "claim": "Wairakau Stream Track: two-hour, 5.6-km hike one way from Campbell Rd, Totara North, to Lane Cove Hut.",
+     "source": "https://en.wikivoyage.org/wiki/Whangaroa"
+    }
+   ],
+   "hours": "Daylight",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2.5,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/whangaroa-area/things-to-do/dukes-nose-kairaara-rocks-track/",
+   "ticketUrl_note": "DOC page loaded; title \"Dukes Nose (Kaiaraara Rocks) Track: Whangaroa, Northland\".",
+   "coordinates_check": {
+    "current": null,
+    "source_point": {
+     "latitude": -35.01307,
+     "longitude": 173.7346
+    },
+    "source": "OpenStreetMap (Photon) Dukes Nose / Kairara Rock viewpoint, node 5125758121; Lane Cove Hut -35.01229,173.73092 (track start)",
+    "ok": true,
+    "note": "Placement had no coordinates. Pin is the summit; start is ~0.4 km west by air."
+   },
+   "category": "hike",
+   "unverified": [
+    "HELD in placement (needs a photo).",
+    "Not reachable on foot without ~2 h (Wairakau Stream Track) or a boat: access is a friction point for \"friend test\"."
+   ],
+   "held": true,
+   "proposed_destination": "whangaroa"
+  },
+  {
+   "id": "mangawhai",
+   "name": "Mangawhai",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Mangawhai township sits at the south-west of Mangawhai Harbour; Mangawhai Heads is 5 km north-east on the lower harbour.",
+     "source": "https://en.wikipedia.org/wiki/Mangawhai"
+    },
+    {
+     "claim": "DOC: the Waipū sandspit and Mangawhai sand dunes are dominant features; Mangawhai is a breeding ground for the critically endangered tara-iti/NZ fairy tern.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/waipu-area/"
+    },
+    {
+     "claim": "Mangawhai Heads car park (end of Wintle Street) is the start of the Mangawhai Cliffs Walkway; free parking, very busy Nov-Apr; free summer bus from Mangawhai.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/waipu-area/things-to-do/mangawhai-cliffs-walkway/"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 4,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A town; no single steward (no verified tourism-board page found).",
+   "coordinates_check": {
+    "current": {
+     "latitude": -36.12638889,
+     "longitude": 174.57472222
+    },
+    "source_point": {
+     "latitude": -36.09479,
+     "longitude": 174.5872
+    },
+    "source": "OpenStreetMap (Photon) place=town Mangawhai Heads; Mangawhai township node -36.12561,174.57593",
+    "ok": false,
+    "distance_m": 3688,
+    "note": "Placement is the harbourside township; the surf beach and Cliffs Walkway start are at Mangawhai Heads 5 km NE. Decide which the spot means; bio says Heads."
+   },
+   "category": "beach",
+   "unverified": [
+    "Bio says \"surf beach at Mangawhai Heads\": no source read says \"surf\".",
+    "Overlaps mangawhai-cliffs-walkway (same area)."
+   ]
+  },
+  {
+   "id": "mangawhai-cliffs-walkway",
+   "name": "Mangawhai Cliffs Walkway",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Mangawhai Cliffs Walkway: 8.4 km return, 2-3 hr return; from Mangawhai Heads car park follow the beach north 1.2 km (20 min) to the walkway sign; crosses private land; no dogs; beach return loop only at low and mid tide.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/waipu-area/things-to-do/mangawhai-cliffs-walkway/"
+    },
+    {
+     "claim": "Access from Mangawhai Heads car park at the end of Wintle Street: free parking, busy Nov-Apr, managed by Kaipara District Council.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/waipu-area/things-to-do/mangawhai-cliffs-walkway/"
+    }
+   ],
+   "hours": "Daylight; beach return at low/mid tide only",
+   "visitHoursMin": 2,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/waipu-area/things-to-do/mangawhai-cliffs-walkway/",
+   "ticketUrl_note": "DOC page loaded; title \"Mangawhai Cliffs Walkway: Waipu, Northland\".",
+   "coordinates_check": {
+    "current": {
+     "latitude": -36.0525,
+     "longitude": 174.5885
+    },
+    "source_point": {
+     "latitude": -36.05251,
+     "longitude": 174.58845
+    },
+    "source": "OpenStreetMap (Photon) Mangawhai Cliffs Walkway path, way 200404432",
+    "ok": true,
+    "distance_m": 5,
+    "note": "Pin is on the walkway; visitors start at Mangawhai Heads car park (end of Wintle St, ~-36.082,174.59, ~3.5 km south). Acceptable."
+   },
+   "category": "hike",
+   "unverified": [
+    "HELD in placement (needs a photo).",
+    "Free: DOC page shows no fee; earlier private-land fee not mentioned."
+   ],
+   "held": true
+  },
+  {
+   "id": "cape-reinga-3",
+   "name": "Ninety Mile Beach",
+   "kind": "existing",
+   "facts": [
+    {
+     "claim": "The beach is 88 km long, from near Tauroa Point (west of Ahipara Bay) to Tiriparepa / Scott Point 5 km south of Cape Reinga; it is officially a public highway; dual name Te-Oneroa-a-Tōhē / Ninety Mile Beach.",
+     "source": "https://en.wikipedia.org/wiki/Ninety_Mile_Beach,_New_Zealand"
+    },
+    {
+     "claim": "\"The easiest place to drive onto the beach is at Waipapakauri, towards the southern end, but north of Kaitaia. Other places to drive onto the beach are Ahipara (southern end), Hukatere Hill and Te Paki Stream.\"",
+     "source": "https://en.wikivoyage.org/wiki/Ninety_Mile_Beach"
+    },
+    {
+     "claim": "Wikivoyage Northland lists \"Ninety Mile Beach\" at -35.0398, 173.1684 (the Waipapakauri access); coach tours to Cape Reinga run along the beach (Wikivoyage Kaitaia, Cape Reinga).",
+     "source": "https://en.wikivoyage.org/wiki/Northland"
+    },
+    {
+     "claim": "Close to the northern end the Te Paki Stream joins the beach; DOC: Te Paki Stream is open to 4WD only.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/te-paki-recreation-reserve/te-paki-sand-dunes/"
+    },
+    {
+     "claim": "OSM coastline vertex at the Waipapakauri ramp (-35.039127, 173.167475) lies within 30 m of the \"Ninety Mile Beach Road\" sand track start (-35.03945, 173.16818); OSM coastline vertex at Ahipara's south end (-35.178774, 173.129899) is the shoreline at the placement point.",
+     "source": "https://api.openstreetmap.org/api/0.6/way/225901247/full.json"
+    }
+   ],
+   "hours": "Tides permitting",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Public highway with no single steward (Te Oneroa-a-Tōhē Board co-governs it); sold-by-many coach tours. No official site to link.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.85245,
+     "longitude": 173.04593
+    },
+    "source_point": {
+     "latitude": -35.0398,
+     "longitude": 173.1684
+    },
+    "source": "Wikivoyage Northland and Ninety Mile Beach: Waipapakauri is the easiest drive-on access; OSM coastline vertex (-35.039127,173.167475) and sand track start (-35.0394508,173.1681833) confirm the point is on the shoreline",
+    "ok": false,
+    "distance_m": 23635,
+    "note": "MAIN VISITOR ACCESS = Waipapakauri ramp (-35.0398, 173.1684): the easiest drive-on point per Wikivoyage, and the point Wikivoyage Northland itself pins. Current app point (-34.85245, 173.04593) is the OSM beach-relation centroid, ~100 m offshore (nearest OSM coastline node -34.8541625, 173.0464121). Placement's Ahipara point (-35.1791, 173.1298) is a coastline vertex (shoreline); the real Ahipara access is the road-end car park with toilets at (-35.17778, 173.13448) (OSM way 310006059 / node 3155643511). Hukatere access: OSM viewpoint \"Ninety Mile Beach (Access by car)\" (-34.89881, 173.08426), Hukatere Rd. Te Paki Stream (north end) is the other busy access for tours (-34.5246,172.7731 at the dunes end)."
+   },
+   "category": "beach",
+   "unverified": [
+    "Which access is \"main\" is a judgement: Wikivoyage names Waipapakauri easiest; Ahipara is the town; Te Paki Stream is where coach tours leave the beach (claim from a search summary of Te Ara / a walking guide; Te Ara page is Cloudflare-blocked, https://teara.govt.nz/en/1966/ninety-mile-beach).",
+    "Tide times/4WD advice not re-verified; bio's \"used as a road at low tide by tours and 4WD vehicles\" is consistent with Wikivoyage."
+   ],
+   "wiki_title": "Ninety Mile Beach, New Zealand",
+   "wiki_note": "\"Ninety Mile Beach\" is a disambiguation page. The article is \"Ninety Mile Beach, New Zealand\" (redirect from \"Te Oneroa-a-Tōhē\"; verified via the MediaWiki API).",
+   "bio_note": "Grammar: \"An 88-km stretch ...\", not \"A 88-km\". Suggested: \"An 88-km beach on the Aupōuri Peninsula that is legally a road, driven at low tide by 4WDs and tour buses to Te Paki and Cape Reinga.\""
+  },
+  {
+   "id": "cape-reinga-2",
+   "name": "Te Paki Sand Dunes",
+   "kind": "existing",
+   "facts": [
+    {
+     "claim": "Giant dunes about 150 m high in the Te Paki Recreation Reserve; turn off SH1 onto Te Paki Stream Road and drive 3 km to the end; use the car park; no dogs; people have been seriously injured and one has died sandboarding.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/te-paki-recreation-reserve/te-paki-sand-dunes/"
+    },
+    {
+     "claim": "Wikipedia article is titled \"Te Paki Sand Dunes\" (capital S and D); coordinates -34.54, 172.77 (rounded).",
+     "source": "https://en.wikipedia.org/wiki/Te_Paki_Sand_Dunes"
+    },
+    {
+     "claim": "OSM \"Te Paki Dunes\" tourism=attraction at the end of Te Paki Stream Road (-34.52456, 172.77309); DOC-style visitor board \"Te Paki Stream\" (-34.52458, 172.77355).",
+     "source": "https://photon.komoot.io/api/?q=Te+Paki+Dunes"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/te-paki-recreation-reserve/te-paki-sand-dunes/",
+   "ticketUrl_note": "DOC page loaded; title \"Te Paki sand dunes: Te Paki Recreation Reserve, Northland region\". Existing spot has no ticketUrl; add this.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.488,
+     "longitude": 172.748
+    },
+    "source_point": {
+     "latitude": -34.52456,
+     "longitude": 172.77309
+    },
+    "source": "OpenStreetMap (Photon) Te Paki Dunes, tourism=attraction, Te Paki Stream Road (also the Te Paki Stream board -34.52458,172.77355)",
+    "ok": false,
+    "distance_m": 4670,
+    "note": "Current point is ~4.6 km NNW of the dunes (and ~6 km from the rounded Wikipedia point). Move to the OSM dunes point at the end of Te Paki Stream Road."
+   },
+   "category": "nature",
+   "unverified": [
+    "Hours: DOC states none; \"Open 24 hours\" stays an assumption.",
+    "Lint \"no Wikipedia article\" is a case error: set `wiki` to \"Te Paki Sand Dunes\" (current `wiki: 'Te Paki sand dunes'` has the wrong case and does not resolve). Article exists."
+   ],
+   "wiki_title": "Te Paki Sand Dunes",
+   "wiki_note": "Current `wiki` value has lowercase \"sand dunes\" and does not resolve; the article is \"Te Paki Sand Dunes\".",
+   "bio_note": "Add the safety fact if the owner wants: sandboarding here has caused serious injuries (DOC)."
+  },
+  {
+   "id": "cape-reinga-4",
+   "name": "Spirits Bay",
+   "kind": "existing",
+   "facts": [
+    {
+     "claim": "Kapowairua (Spirits Bay) DOC campsite with lagoon and beach; adult $18, child $9 per night.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/te-paki-recreation-reserve/things-to-do/campsites/kapowairua-spirits-bay-campsite/"
+    },
+    {
+     "claim": "OSM Kapowairua (Spirits Bay) Campsite, tourism=camp_site, Spirits Bay Road (-34.42664, 172.86257).",
+     "source": "https://api.openstreetmap.org/api/0.6/node/1225217810.json"
+    },
+    {
+     "claim": "The Spirits Bay water node / Wikipedia point sit mid-bay (-34.4347,172.8193 OSM relation; -34.44,172.82 Wikipedia).",
+     "source": "https://en.wikipedia.org/wiki/Spirits_Bay"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/te-paki-recreation-reserve/",
+   "ticketUrl_note": "DOC Te Paki Recreation Reserve page loaded; title \"Te Paki Recreation Reserve: Places to go in Northland\". Existing spot has no ticketUrl; the Kapowairua campsite page (title \"Kapowairua (Spirits Bay) conservation campsite: Te Paki, Northland region\") also loads.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.42637,
+     "longitude": 172.86237
+    },
+    "source_point": {
+     "latitude": -34.42664,
+     "longitude": 172.86257
+    },
+    "source": "OpenStreetMap (Photon) Kapowairua (Spirits Bay) Campsite, N1225217810",
+    "ok": true,
+    "distance_m": 35,
+    "note": "Current point is 30 m from the campsite on the beach side. The ~4 km \"OSM mismatch\" is the bay centroid in the water; do NOT move."
+   },
+   "category": "beach",
+   "unverified": [
+    "Bio's spirit-journey line: DOC applies it to Cape Reinga (\"the point from which wairua return\"); the Spirits Bay wording is from tradition but I read no source for it."
+   ]
+  },
+  {
+   "id": "waipoua-forest-1",
+   "name": "Tāne Mahuta",
+   "kind": "existing",
+   "facts": [
+    {
+     "claim": "Tāne Mahuta Walk: open 9 am to 4 pm daily, gate locked when closed; 5 min one way; wheelchair and buggy accessible; New Zealand's largest known living kauri.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/waipoua-forest/things-to-do/tane-mahuta-walk/"
+    },
+    {
+     "claim": "Wikipedia coordinates -35.60111, 173.52722; OSM natural=tree \"Tāne Mahuta\" -35.60097, 173.52743; car park -35.60056, 173.52810.",
+     "source": "https://en.wikipedia.org/wiki/T%C4%81ne_Mahuta"
+    }
+   ],
+   "hours": "9:00 AM – 4:00 PM",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/waipoua-forest/things-to-do/tane-mahuta-walk/",
+   "ticketUrl_note": "DOC page loaded; title \"Tāne Mahuta Walk: Waipoua Forest, Northland\". Existing spot has no ticketUrl; add.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.6,
+     "longitude": 173.53
+    },
+    "source_point": {
+     "latitude": -35.60097,
+     "longitude": 173.52743
+    },
+    "source": "OpenStreetMap (Photon) Tāne Mahuta, natural=tree, N683216135; Wikipedia -35.60111,173.52722",
+    "ok": false,
+    "distance_m": 256,
+    "note": "Current point is ~0.25 km east of the tree. Move to the OSM tree."
+   },
+   "category": "nature",
+   "unverified": [
+    "HOURS CHANGE: current \"Open 24 hours\" is wrong; DOC says open 9 am - 4 pm daily (gate locked when the track is closed).",
+    "Bio \"about 2,000 years old and over 50 m\": not on the DOC walk page (DOC blog/Wikipedia would be needed); keep \"largest known living kauri\"."
+   ],
+   "hours_fix": true
+  },
+  {
+   "id": "waipoua-forest-2",
+   "name": "Te Matua Ngāhere",
+   "kind": "existing",
+   "facts": [
+    {
+     "claim": "Te Matua Ngahere Walk: 20 min one way, open 9 am to 4 pm daily, gate locked when closed; DOC calls it the second largest living kauri in New Zealand; from the Kauri walks car park, 4 km from the Tāne Mahuta car park.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/waipoua-forest/things-to-do/te-matua-ngahere-walk/"
+    },
+    {
+     "claim": "Wikipedia article \"Te Matua Ngahere\" (no macron) exists; coordinates -35.6075, 173.52861.",
+     "source": "https://en.wikipedia.org/wiki/Te_Matua_Ngahere"
+    },
+    {
+     "claim": "DOC page: Four Sisters and Yakas Kauri walks (same car park) are currently closed; a DOC release of March 2026 says Kauri Walks (Te Matua Ngahere) and the Four Sisters are expected to reopen in October 2026.",
+     "source": "https://www.doc.govt.nz/news/media-releases/2026-media-releases/waipoua-forest-embarks-on-bold-kauri-walks-expansion-to-enhance-visitor-experience-and-protect-trees/"
+    }
+   ],
+   "hours": "9:00 AM – 4:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/waipoua-forest/things-to-do/te-matua-ngahere-walk/",
+   "ticketUrl_note": "DOC page loaded; title \"Te Matua Ngahere Walk: Waipoua Forest, Northland\". Existing spot has no ticketUrl; add.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.6075,
+     "longitude": 173.5291
+    },
+    "source_point": {
+     "latitude": -35.60754,
+     "longitude": 173.52907
+    },
+    "source": "OpenStreetMap (Photon) \"Father of the Forest\" natural=tree, N554797517",
+    "ok": true,
+    "distance_m": 5
+   },
+   "category": "nature",
+   "unverified": [
+    "HOURS CHANGE: current \"Open 24 hours\" is wrong; DOC says 9 am - 4 pm daily.",
+    "The release says the walk may be closed or reopening in October 2026: confirm status. Bio's \"widest girth in the country\" is not on the DOC walk page (DOC says second largest living kauri; girth is by another source)."
+   ],
+   "hours_fix": true,
+   "wiki_title": "Te Matua Ngahere",
+   "wiki_note": "Lint says \"Te Matua Ngāhere\" (with macron) has no article. The article is \"Te Matua Ngahere\"; set `wiki: 'Te Matua Ngahere'`.",
+   "bio_note": "Suggested: \"The second largest living kauri in New Zealand, estimated at over 2,000 years old, seen from a viewing platform at the end of a 20-minute bush walk.\" (DOC: second largest; age is from a DOC blog search summary.)"
+  },
+  {
+   "id": "waipoua-forest-3",
+   "name": "Four Sisters",
+   "kind": "existing",
+   "facts": [
+    {
+     "claim": "DOC: Four Sisters and Yakas Kauri walks are currently closed (Te Matua Ngahere page); a March 2026 DOC release expects Kauri Walks and the Four Sisters to reopen in October 2026.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/waipoua-forest/things-to-do/te-matua-ngahere-walk/"
+    }
+   ],
+   "hours": "Closed until reopening (DOC expected Oct 2026)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/waipoua-forest/",
+   "ticketUrl_note": "Not flagged by the lint. DOC Waipoua Forest page loaded; title \"Waipoua Forest: Places to go in Northland\". Reported because the existing \"Open 24 hours\" is wrong while the walk is closed.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.608,
+     "longitude": 173.532
+    },
+    "source_point": {
+     "latitude": -35.608,
+     "longitude": 173.532
+    },
+    "source": "Not re-checked (no OSM point found); placement notes it as the thinnest existing spot",
+    "ok": true,
+    "distance_m": 0
+   },
+   "category": "nature",
+   "unverified": [
+    "Closure status as of today is unknown; check DOC. \"Beside the road\" in the bio is not what DOC describes (separate walk from the Kauri walks car park)."
+   ]
+  },
+  {
+   "id": "bay-of-islands-2",
+   "name": "Piercy Island",
+   "kind": "existing",
+   "facts": [
+    {
+     "claim": "Explore Group \"Hole in the Rock Cruise\" (Discover the Bay): 4.5 hours, adult $215 (child $107.50).",
+     "source": "https://www.exploregroup.co.nz/bay-of-islands/discover-the-bay/"
+    },
+    {
+     "claim": "Explore Group \"Ocean Adventure\" fast boat to Cape Brett, the Hole in the Rock and Cathedral Cave: from $119; Hole in the Rock and Cathedral Cave trip adult $170 (child $85); 1-1.5 hr.",
+     "source": "https://www.exploregroup.co.nz/bay-of-islands/ocean-adventure/"
+    },
+    {
+     "claim": "Piercy Island (Motukōkako) is Māori freehold land; the 60-foot (18 m) Hole in the Rock is at sea level; many tourist operators run boats; there has been a long-running dispute over tour operators not sharing takings with the owners.",
+     "source": "https://en.wikipedia.org/wiki/Piercy_Island_(New_Zealand)"
+    }
+   ],
+   "hours": "Daytime cruises",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 4.5,
+   "costMin": 170,
+   "costMax": 215,
+   "currency": "NZD",
+   "ticketUrl": null,
+   "ticketUrl_note": "Sold by many operators (Explore Group, plus others) on land the iwi own; no steward page. Per the checklist, leave ticketUrl out. If the owner prefers a link, https://www.exploregroup.co.nz/bay-of-islands/discover-the-bay/ (title \"Hole in the Rock Cruise | Bay of Islands | Explore Group NZ\") loaded, but it is one operator among several.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.16498,
+     "longitude": 174.33963
+    },
+    "source_point": {
+     "latitude": -35.16498,
+     "longitude": 174.33963
+    },
+    "source": "OpenStreetMap (Photon) Motukōkako Island / Piercy Island place=island; Hole in the Rock attraction -35.16566,174.33906",
+    "ok": true,
+    "distance_m": 0
+   },
+   "category": "nature",
+   "unverified": [
+    "Cost: the app has $125; Explore Group currently lists $170-$215 for adults (Wikivoyage's $95 is old). Only one operator checked; other operators may be cheaper.",
+    "Lint \"no-ticket\" will stay unless the owner allows a no-link exception for many-operator cruises."
+   ],
+   "wiki_title": "Piercy Island (New Zealand)",
+   "wiki_note": "Set `wiki: 'Piercy Island (New Zealand)'` (article exists; \"Piercy Island\" redirects there)."
+  },
+  {
+   "id": "bay-of-islands-7",
+   "name": "Hundertwasser Toilets",
+   "kind": "existing",
+   "facts": [
+    {
+     "claim": "Wikipedia article is titled \"Hundertwasser Toilets\" (capital T), at 60 Gillies Street, Kawakawa; completed 1999; coordinates -35.37996, 174.06698.",
+     "source": "https://en.wikipedia.org/wiki/Hundertwasser_Toilets"
+    },
+    {
+     "claim": "Far North District Council owns and manages the toilets; Heritage NZ lists them Category 1; the council has briefly closed them for leak repairs (e.g. 23-26 Jan 2025). (Council pages seen via search; fndc.govt.nz is Cloudflare-blocked.)",
+     "source": "https://www.heritage.org.nz/list-details/9867/Hundertwasser-Public-Toilets"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A free public toilet; steward is Far North District Council, whose news pages are BLOCKED (Cloudflare \"Just a moment...\"): https://www.fndc.govt.nz/Whats-New/Latest-news/news-items/2025/january/hundertwasser-toilets-temporary-closure . No visitor page needed; recommend no ticketUrl.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.3799,
+     "longitude": 174.067
+    },
+    "source_point": {
+     "latitude": -35.37995556,
+     "longitude": 174.06697778
+    },
+    "source": "Wikipedia \"Hundertwasser Toilets\" coordinates; OSM W511748290 -35.37993,174.06702",
+    "ok": true,
+    "distance_m": 6
+   },
+   "category": "landmark",
+   "unverified": [
+    "Hours \"Open 24 hours\" is unverified: council pages (blocked) did not state hours; toilets close for repairs at times.",
+    "Lint \"no Wikipedia article\" is a case error: existing `wiki: 'Hundertwasser toilets'` (lowercase t) is missing; the article is \"Hundertwasser Toilets\", which equals the spot name, so the `wiki` field can simply be removed."
+   ],
+   "blocked_urls": [
+    "https://www.fndc.govt.nz/Whats-New/Latest-news/news-items/2025/january/hundertwasser-toilets-temporary-closure"
+   ],
+   "wiki_title": "Hundertwasser Toilets",
+   "wiki_note": "Delete the `wiki` field (name matches the article) or set it to \"Hundertwasser Toilets\"."
+  },
+  {
+   "id": "whangarei-3",
+   "name": "Poor Knights Islands",
+   "kind": "existing",
+   "facts": [
+    {
+     "claim": "Poor Knights Islands Marine Reserve is ~22 km off the Northland east coast, reached by boat, main launch Tutukaka Marina; landing is banned, no fishing, no feeding fish.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/poor-knights-islands-marine-reserve/"
+    },
+    {
+     "claim": "Dive! Tutukaka (Perfect Day Ocean Cruise): \"Join the boat trip - Snorkeler / Passenger\" $299 with snorkel gear included; two guided dives with full gear $399; discover scuba $499.",
+     "source": "https://www.diving.co.nz/"
+    },
+    {
+     "claim": "WhangareiNZ.com (district tourism): \"Jacques Cousteau and Ellis Emmett ... both rated the Poor Knights Marine Reserve as providing some of the best diving in the world\"; ~23 km north-east of Whangārei; remnants of an eroded volcano rim.",
+     "source": "https://www.whangareinz.com/Discover/Destinations/Poor-Knights-Islands"
+    }
+   ],
+   "hours": "Daytime tours",
+   "visitHoursMin": 5,
+   "visitHoursMax": 8,
+   "costMin": 299,
+   "costMax": 399,
+   "currency": "NZD",
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/poor-knights-islands-marine-reserve/",
+   "ticketUrl_note": "DOC (managing agency) page loaded; title \"Poor Knights Islands Marine Reserve: Places to go in Northland\". Trips are sold by many operators; the DOC page is the steward link.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.4688,
+     "longitude": 174.73876
+    },
+    "source_point": {
+     "latitude": -35.47174,
+     "longitude": 174.73925
+    },
+    "source": "OpenStreetMap (Photon) Poor Knights Islands place=archipelago (node 3454964254); Nature Reserve relation -35.48103,174.74112",
+    "ok": true,
+    "distance_m": 330,
+    "note": "Within 350 m; islands are the target, trips leave from Tutukaka Marina."
+   },
+   "category": "nature",
+   "unverified": [
+    "Price: operator sites differ ($255 on a rates page dated July 2025, $299 on the home page); only Dive! Tutukaka checked; Dive Now lists $229-$359.",
+    "Bio claim \"rated among the world's best dive sites\" is attributed by the tourism board to Cousteau and Emmett; better to cut it or attribute it."
+   ],
+   "bio_note": "Suggested: \"A marine reserve of volcanic islands 22 km off the coast, with sea caves and arches, reached by boat from Tutukaka and visited to snorkel and dive.\" Facts: DOC, WhangareiNZ.com."
+  },
+  {
+   "id": "whangarei",
+   "name": "Whangārei (destination)",
+   "kind": "existing",
+   "facts": [
+    {
+     "claim": "The Poor Knights Islands are reached by boat from Tutukaka Marina (22 km offshore).",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/northland/places/poor-knights-islands-marine-reserve/"
+    },
+    {
+     "claim": "WhangareiNZ.com describes the Poor Knights as providing \"outstanding world class scuba and snorkel diving\" in its own marketing copy; the lint flags \"world-class\" in the destination tagline.",
+     "source": "https://www.whangareinz.com/Discover/Destinations/Poor-Knights-Islands"
+    }
+   ],
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "ticketUrl": null,
+   "ticketUrl_note": "Destination tagline, not a spot.",
+   "coordinates_check": {
+    "current": null,
+    "source_point": null,
+    "source": null,
+    "ok": true
+   },
+   "category": "city",
+   "unverified": [],
+   "tagline_fix": "Replace the tagline \"Northland's main city, with a waterfall, clock museum and a gateway to world-class diving.\" with: \"Northland's main city, with a waterfall, a clock museum and the departure point for Poor Knights dive and snorkel trips.\""
+  }
+ ]
+}
