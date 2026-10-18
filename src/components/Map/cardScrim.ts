@@ -4,11 +4,11 @@
 // GRADIENT_STOPS fade across the whole height, which left a title on an almost clear patch.
 
 // Height (px) of the soft edge, where the scrim fades in from clear to ~60% black.
-export const CARD_SCRIM_FADE = 36;
-// How far (px) the scrim reaches above the text block it sits behind. The fade itself keeps CARD_SCRIM_FADE of softness, but
-// it now starts at about the title's top edge and eases in across the title, rather than finishing above it and leaving a
-// hard edge of shading just over the first line.
-export const CARD_SCRIM_ABOVE = 4;
+export const CARD_SCRIM_FADE = 60;
+// How far (px) the scrim reaches above the text block it sits behind. The fade is long (CARD_SCRIM_FADE), so it changes slowly:
+// it begins a little above the title and eases in across it, reaching strong shading only partway down the title block,
+// rather than finishing above the title and leaving a hard edge over the first line.
+export const CARD_SCRIM_ABOVE = 24;
 
 // The gradient for a given total height: a smooth fade from clear to ~60% black over the top CARD_SCRIM_FADE px, then on
 // to ~90% at the bottom of the card.
