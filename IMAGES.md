@@ -18,6 +18,7 @@ There are three kinds of photo, each with its own rule:
 - **Never** a different place with a similar name. Check the file's page, not just its name.
 - **Pass the four checks below.** They are the mistakes that have actually shipped.
 - **No people as the subject**, no watermarks, no text overlaid, no extreme filters or HDR.
+- **Bright enough to read** at card size: see "Brightness" below. A dark photo is brightened, not shipped dark.
 - **Free licence only.** Commons files carry one; the build records the author and licence in the manifest. (The app doesn't display credits yet; keep to Commons so they can be shown later.)
 - **Sharp at the size it's shown.** The app requests photos at about 1.5× the screen's pixel width (up to 1920px) for headers and 960px for cards, so a file narrower than the minimum below looks soft.
 
@@ -106,6 +107,16 @@ A spot's photo is shown, among other places, as the HERO of its full-screen shee
 - **Look at it, don't assume.** `python3 scripts/curation/hero-crop.py <960 px thumbnail URL or file>` writes the crop and prints the slice it shows (`--sheet out.jpg` puts several side by side; Read the image). Every spot photo a judge or the skeptic accepts is checked this way when its aspect is wider than 1.3 or narrower than 0.7, or whenever the object is not clearly central.
 - **An off-centre subject is fixed, not rejected**, if it fits in the crop at a different position: find the `x` (0 = left edge of the photo in view, 1 = right) and/or `y` that puts it in the middle of the crop, check it with `--x/--y`, and record it as `HERO_FOCUS` in `src/data/imageOverrides.ts`, keyed by the photo key (`spotPhotoTitle`: the spot's `wiki` title, else its name). A subject wider than the crop's slice (a long panorama of a building) cannot be fixed that way: choose another photo.
 - Judges record the verdict and any focus in their output (`hero_crop: "ok" | {x, y} | "fail: <why>"`), and the reconciler writes the `HERO_FOCUS` entries.
+
+## Brightness
+
+Every header, why-visit and spot photo must be bright enough that its subject reads at card size, under the cards' dark text scrim. A photo can be too dark even when its average looks fine: Mount Solitary's bright sky hid a near-black mountain and forest, the very subject.
+
+- **The floor:** in the centre square the app shows, the 40th-percentile luminance is at least **0.22** and the mean at least **0.30** (0–1). The 40th percentile is what catches a dark subject under a bright sky. `python3 scripts/curation/photo-brightness.py` measures every photo in the manifest, darkest first.
+- **Below the floor, brighten it** rather than ship it dark or reject an otherwise right photo: `scripts/curation/brighten.py` applies a gamma lift that raises shadows and mid-tones and leaves highlights (the sky) nearly where they were, aiming for a 40th percentile of 0.26 and a mean of 0.36. Look at the result next to the original before keeping it.
+- **Dark on purpose stays dark:** night skylines, glow-worm caves and other caves, sunsets and dusk, the Milky Way, auroras. Brightening those turns black sky grey and shows noise. Leave them, and say so in the run's report.
+- **How a brightened photo is served:** `python3 scripts/curation/brighten-apply.py make keys.json` writes the lifted copy at every width the app requests (`assets/photos/thumbs/bright-<slug>-<w>.jpg`, up to 1920 px for a destination header and 1280 otherwise). Commit and push those files, then `brighten-apply.py link keys.json` points `src/data/externalPhotos.json` at that commit (the original credit, marked "brightened for the app", which CC BY-SA requires), and `build-image-manifest.ts` picks them up.
+- **Replacing a brightened photo:** its `externalPhotos.json` entry wins over any override, so remove that entry when the slot gets a new photo, then measure the new one.
 
 ## Choosing
 
