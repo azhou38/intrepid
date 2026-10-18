@@ -743,14 +743,13 @@ function destPannedAway(
 const PROMOTE_LATDELTA_BY_RANK: Record<number, number> = { 1: 24, 2: 14, 3: 9, 4: 5, 5: 2.5 };
 // The Mapbox zoom at which the plan's pan-invariant latDelta (planLngDelta's 512 px convention) equals `latDelta`.
 const zoomForPanLatDelta = (latDelta: number) => Math.log2((SCREEN_ASPECT * SCREEN_W_GLOBAL * 360) / (512 * latDelta));
-// A rank gate is a native, zoom-tied fade rather than a data change: Mapbox shows a symbol added to its data at once,
-// with no fade (it skips the fade for freshly reloaded data), which is how rank-gated pins used to pop in and out.
-// So a rank-gated pin joins the layer DEST_GATE_LEAD zoom levels before its gate, fully transparent, and its opacity
-// ramps from 0 to 1 over [gate − DEST_GATE_FADE_FROM, gate − DEST_GATE_FADE_TO] as the camera zooms: in on the way in,
-// out on the way out, and gone from the data only once it is invisible again.
-const DEST_GATE_LEAD = 0.7;
-const DEST_GATE_FADE_FROM = 0.5;
-const DEST_GATE_FADE_TO = 0.05;
+// A gate (a rank's, or a country's cutoff) is decided at one zoom, but crossing it never adds or removes pins from the
+// layer's data: Mapbox shows a symbol added to its data at once, with no fade (it skips the fade for freshly reloaded
+// data), which is how gated pins used to pop in and out. A gated pin joins the layer DEST_GATE_LEAD zoom levels before
+// its gate, hidden, its tier's layer turns it on with a brief fade as the camera crosses the gate (destTierStyle), and
+// it leaves the data only once it has faded out again on the way back. One level gives a fast pinch out time to finish
+// the fade before the pin is removed.
+const DEST_GATE_LEAD = 1.0;
 // Fade tiers: `r<rank>` for a rank gate (PROMOTE_LATDELTA_BY_RANK), `c<countryCode>` for a country's own cutoff (its
 // pill disappears there and all its destinations become candidates at once — see destPinPlan's in-country bypass),
 // '' for a pin that is not gated (selected, or its selected country's own) and is always opaque. Each tier's gate zoom:
@@ -772,34 +771,38 @@ const destGateZooms = (): Record<string, number> => {
   }
   return (destGateZoomCache = out);
 };
-// Opacity of a pin of fade tier `tier` at camera zoom `z`. Mirrors destGateOpacityExpr.
-const destGateOpacity = (tier: string, z: number) => {
+// Whether a tier's pins show at camera zoom `z`: a cliff at its gate zoom ('' — not gated — always shows). The decision
+// is binary so a pin never rests half-faded; only the change is animated, by the tier's own layer (destTierStyle).
+const destGateOn = (tier: string, z: number) => {
   const g = tier ? destGateZooms()[tier] : undefined;
-  if (g === undefined) return 1;
-  const a = g - DEST_GATE_FADE_FROM, b = g - DEST_GATE_FADE_TO;
-  return Math.max(0, Math.min(1, (z - a) / (b - a)));
+  return g === undefined || z >= g;
 };
-// The same ramp as a Mapbox expression: linear in zoom, with a stop at every tier's ramp ends, and at each stop the
-// opacity of every tier (so between stops each tier interpolates exactly along its own ramp).
-let destGateOpacityCache: any = null;
-const destGateOpacityExpr = (): any => {
-  if (destGateOpacityCache) return destGateOpacityCache;
+// One symbol layer per fade tier, each with a CONSTANT opacity (0 or 1) that flips when the camera crosses the tier's
+// gate and is animated by Mapbox over DEST_GATE_FADE_MS. (Mapbox animates a style change only for a constant value, not
+// a data-driven or zoom-interpolated one, which left pins resting half-faded between zooms.) Ordered for collisions:
+// Mapbox places the TOP layer's symbols first, so tiers that switch on at wider zooms sit above later ones and a pin
+// that is still hidden (it joins its layer DEST_GATE_LEAD early) can never push out one that is showing; '' is on top.
+const DEST_GATE_FADE_MS = 250;
+const destTierOrder = (): string[] => {
   const gz = destGateZooms();
-  const tiers = Object.keys(gz);
-  const stops = [...new Set(tiers.flatMap(t => [gz[t] - DEST_GATE_FADE_FROM, gz[t] - DEST_GATE_FADE_TO])
-    .map(z => Math.round(z * 1000) / 1000))].sort((x, y) => x - y);
-  const expr: any[] = ['interpolate', ['linear'], ['zoom']];
-  for (const z of stops) {
-    const m: any[] = ['match', ['get', 'tier']];
-    for (const t of tiers) m.push(t, Math.round(destGateOpacity(t, z) * 1000) / 1000);
-    m.push(1);
-    expr.push(z, m);
-  }
-  return (destGateOpacityCache = expr);
+  // Bottom → top: latest gate first, ungated last.
+  return [...Object.keys(gz).sort((x, y) => gz[y] - gz[x]), ''];
 };
-let destSymbolStyleCache: any = null;
-const destSymbolStyle = () =>
-  destSymbolStyleCache ?? (destSymbolStyleCache = { ...DEST_SYMBOL_STYLE, iconOpacity: destGateOpacityExpr(), textOpacity: destGateOpacityExpr() });
+const destTierStyleCache = new Map<string, any>();
+const destTierStyle = (tier: string, on: boolean) => {
+  const key = `${tier}|${on ? 1 : 0}`;
+  let st = destTierStyleCache.get(key);
+  if (!st) {
+    st = {
+      ...DEST_SYMBOL_STYLE,
+      iconOpacity: on ? 1 : 0, textOpacity: on ? 1 : 0,
+      iconOpacityTransition: { duration: DEST_GATE_FADE_MS, delay: 0 },
+      textOpacityTransition: { duration: DEST_GATE_FADE_MS, delay: 0 },
+    };
+    destTierStyleCache.set(key, st);
+  }
+  return st;
+};
 
 // How many zoom levels out from a destination's settled home view counts as "zoomed out" for
 // its return arrow — log2(1.6), i.e. the same 1.6× visible-span threshold this used to express
@@ -2067,7 +2070,7 @@ const destItems = useMemo((): DestItem[] =>
     // destination flipping to a photo at one shared threshold. Saved destinations get a
     // one-tier head start: a place you've marked matters more to you than its global rank.
     // (PROMOTE_LATDELTA_BY_RANK, module level.) A rank-gated pin joins DEST_GATE_LEAD zoom levels early, transparent,
-    // and fades in natively across its gate (destGateOpacityExpr); fadeTier records which ramp each pin follows.
+    // and fades in when the camera crosses its gate (destGateOn, destTierStyle); fadeTier records each pin's tier.
     const gateLead = Math.pow(2, DEST_GATE_LEAD);
     const fadeTier = new Map<string, string>();
     const panLatDelta = panInvariantLatDelta(planLngDelta);
@@ -4798,15 +4801,23 @@ const destItems = useMemo((): DestItem[] =>
             id="destPhotos"
             shape={nativeDestPins.shape}
             onPress={(e) => {
-              // Skip a pin that is still (nearly) transparent ahead of its gate (see destGateOpacityExpr).
-              const hit = e.features.find(f => destGateOpacity(String(f.properties?.tier ?? ''), camZoomRef.current) > 0.5);
+              // Skip a pin that is hidden ahead of its gate (see destGateOn).
+              const hit = e.features.find(f => destGateOn(String(f.properties?.tier ?? ''), camZoomRef.current));
               const id = hit?.properties?.id as string | undefined;
               if (!id) return;
               const dest = DESTINATIONS.find(d => d.id === id);
               if (dest && !pressBlocked()) { if (selectedDestRef.current?.id === dest.id) handleResetToDest(); else handleMarkerPress(dest); }
             }}
           >
-            <MapboxGL.SymbolLayer id="destPhotoSymbols" aboveLayerID="destStampCircles" style={destSymbolStyle()} />
+            {destTierOrder().map((tier, i, all) => (
+              <MapboxGL.SymbolLayer
+                key={tier || 'ungated'}
+                id={`destPhotoSymbols-${tier || 'ungated'}`}
+                aboveLayerID={i === 0 ? 'destStampCircles' : `destPhotoSymbols-${all[i - 1] || 'ungated'}`}
+                filter={['==', ['get', 'tier'], tier]}
+                style={destTierStyle(tier, destGateOn(tier, camZoom))}
+              />
+            ))}
           </MapboxGL.ShapeSource>
         )}
 
