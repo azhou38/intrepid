@@ -61,6 +61,10 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number }> = {
   "Walsh Bay Wharves Precinct": { x: 0.65 },
   "Warrumbungle National Park": { x: 0.75 },
   "Whakapapa Village": { x: 0.35 },
+  "Omaka Aviation Heritage Centre": { x: 0.55 },
+  "Havelock": { x: 0.6 },
+  "Orakei Korako": { x: 0.65 },
+  "Kawau Island": { x: 0.4 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -495,4 +499,11 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Hill End, New South Wales": "Hill End Vista 001.JPG",
   // The canyon walls themselves (the article image was two photos side by side).
   "Windy Canyon": "Windy Canyon Great Barrier Island.jpg",
+  "Anakiwa": "Anakiwa, New Zealand.jpg",
+  "Snout Walkway": "The Snout 01.jpg",
+  "Wairau Lagoons": "Wetland at Wairau Lagoons Walkway.jpg",
+  "Whites Bay": "Whites Beach, Marlborough Region, New Zealand 06.jpg",
+  "Mount Richmond Forest Park": "Mts Rintoul, Richmond, Fell and Fishtail from Gibbs Spur - panoramio.jpg",
+  "Lake Grassmere": "Solar salt Grassmere.NZ (12130327085).jpg",
+  "Molesworth Station": "Molesworth east near Smokey Stream.jpg",
 };

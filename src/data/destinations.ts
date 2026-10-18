@@ -1316,7 +1316,7 @@ export const DESTINATIONS: Destination[] = [
     continent: 'Oceania', coordinates: { latitude: -41.5134, longitude: 173.9612 },
     category: 'city', icon: '🍇', rank: 3,
     tagline: 'Sunny vineyards that made New Zealand Sauvignon Blanc famous.',
-    description: "Blenheim is the hub of Marlborough, New Zealand's largest wine region and the place that put its zesty Sauvignon Blanc on the world map. Sunny days and cool nights on the Wairau Plains suit well over a hundred wineries, many with cellar doors and vineyard restaurants, best explored by bike or on a tasting tour. It is also the home of a world-class WWI aviation museum.",
+    description: "Blenheim is the hub of Marlborough, New Zealand's largest wine region and the place that put its zesty Sauvignon Blanc on the world map. Sunny days and cool nights on the Wairau Plains suit well over a hundred wineries, many with cellar doors and vineyard restaurants, best explored by bike or on a tasting tour. It is also home to the Omaka Aviation Heritage Centre, which houses rare First and Second World War aircraft.",
     whyVisit: ['World-famous Sauvignon Blanc', 'Cellar doors by bike', 'Omaka aviation museum'],
     whyVisitPhotos: ["Autumn in the Awatere Valley.jpg", "Cloudy Bay Cellar Door in Marlborough (4671490362).jpg", "Nieuport 24 at Omaka Aviation Heritage Centre's 'Knights of the Sky' exhibition.jpg"],
     highlights: ['Sauvignon Blanc', 'Cellar doors', 'Aviation museum'],
