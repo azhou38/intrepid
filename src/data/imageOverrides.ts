@@ -89,6 +89,9 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number }> = {
   "Mount Eden": { x: 0.5, y: 0.6 },
   "Timber Trail": { x: 0.55, y: 0.4 },
   "Omarama Clay Cliffs": { x: 0.65, y: 0.5 },
+  "North West Circuit": { x: 0.35, y: 0.6 },
+  "Eastern Southland Gallery": { x: 0.5, y: 0.45 },
+  "Brown Trout Statue": { x: 0.4, y: 0.4 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -699,4 +702,18 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Palm Beach, New Zealand": "Palm Beach and Thompson Point.jpg",
   "Whatipu": "Whatipu - Manukau Heads.jpg",
   "Hunua Falls": "Hunua Falls.jpg",
+  "Classic Motorcycle Mecca": "A row of Brough Superiors.jpg",
+  "Riverton / Aparima": "00 1444 New Zealand, South Island - Riverton.jpg",
+  "Lake Te Anau": "LakeTeAnauNov182024.jpg",
+  "Lake Manapouri": "Lake Manapouri towards Holmwood Island.jpg",
+  "Dusky Track": "Dusky Track Between Lake Roe and Loch Maree.JPG",
+  "North West Circuit": "North West Circuit Track through grass northeast of Big Sandhill (near Mason Bay).jpg",
+  "Southern Circuit": "Stewart Island (Southern Circuit).jpg",
+  "Waipapa Point Lighthouse": "Waipapa Point Lighthouse, Otara (10213794756).jpg",
+  "Florence Hill Lookout": "View from Florence Hill lookout over Tautuku Bay.jpg",
+  "Mavora Lakes": "North Mavora Lake towards southwest with snow-covered Livingstone Mountains in the background.jpg",
+  "Around the Mountains Cycle Trail": "Cycle Trail, Tom's Hill, Athol.jpg",
+  "Te Waewae Bay": "Pláž Te Waewae Bay, Pahia Hill - panoramio.jpg",
+  "Eastern Southland Gallery": "The Old Public Library (Gore).jpg",
+  "Brown Trout Statue": "NZ140315 Gore Trout.jpg",
 };
