@@ -718,6 +718,44 @@ const PROGRAMMATIC_CAMERA_BUFFER_MS = 100;
 const SCREEN_ASPECT = H / SCREEN_W_GLOBAL;
 const panInvariantLatDelta = (longitudeDelta: number) => longitudeDelta * SCREEN_ASPECT;
 
+// Rank-staggered photo gates (pan-invariant latDelta): rank 1 destinations get their photo pin first, at the widest
+// zoom, each lower rank deeper in (see destPinPlan).
+const PROMOTE_LATDELTA_BY_RANK: Record<number, number> = { 1: 24, 2: 14, 3: 9, 4: 5, 5: 2.5 };
+// The Mapbox zoom at which the plan's pan-invariant latDelta (planLngDelta's 512 px convention) equals `latDelta`.
+const zoomForPanLatDelta = (latDelta: number) => Math.log2((SCREEN_ASPECT * SCREEN_W_GLOBAL * 360) / (512 * latDelta));
+// A rank gate is a native, zoom-tied fade rather than a data change: Mapbox shows a symbol added to its data at once,
+// with no fade (it skips the fade for freshly reloaded data), which is how rank-gated pins used to pop in and out.
+// So a rank-gated pin joins the layer DEST_GATE_LEAD zoom levels before its gate, fully transparent, and its opacity
+// ramps from 0 to 1 over [gate − DEST_GATE_FADE_FROM, gate − DEST_GATE_FADE_TO] as the camera zooms: in on the way in,
+// out on the way out, and gone from the data only once it is invisible again.
+const DEST_GATE_LEAD = 0.7;
+const DEST_GATE_FADE_FROM = 0.5;
+const DEST_GATE_FADE_TO = 0.05;
+const DEST_GATE_ZOOM: Record<number, number> = Object.fromEntries(
+  Object.entries(PROMOTE_LATDELTA_BY_RANK).map(([r, l]) => [Number(r), zoomForPanLatDelta(l)]));
+// Opacity of a pin of fade tier `tier` (0 = not rank-gated: always opaque) at camera zoom `z`. Mirrors DEST_GATE_OPACITY.
+const destGateOpacity = (tier: number, z: number) => {
+  const g = DEST_GATE_ZOOM[tier];
+  if (!tier || g === undefined) return 1;
+  const a = g - DEST_GATE_FADE_FROM, b = g - DEST_GATE_FADE_TO;
+  return Math.max(0, Math.min(1, (z - a) / (b - a)));
+};
+// The same ramp as a Mapbox expression: linear in zoom, with a stop at every tier's ramp ends, and at each stop the
+// opacity of every tier (so between stops each tier interpolates exactly along its own ramp).
+const DEST_GATE_OPACITY: any = (() => {
+  const tiers = Object.keys(DEST_GATE_ZOOM).map(Number);
+  const stops = [...new Set(tiers.flatMap(t => [DEST_GATE_ZOOM[t] - DEST_GATE_FADE_FROM, DEST_GATE_ZOOM[t] - DEST_GATE_FADE_TO])
+    .map(z => Math.round(z * 1000) / 1000))].sort((x, y) => x - y);
+  const expr: any[] = ['interpolate', ['linear'], ['zoom']];
+  for (const z of stops) {
+    const m: any[] = ['match', ['get', 'tier']];
+    for (const t of tiers) m.push(t, Math.round(destGateOpacity(t, z) * 1000) / 1000);
+    m.push(1);
+    expr.push(z, m);
+  }
+  return expr;
+})();
+
 // How many zoom levels out from a destination's settled home view counts as "zoomed out" for
 // its return arrow — log2(1.6), i.e. the same 1.6× visible-span threshold this used to express
 // as a latitudeDelta ratio. Measured on the camera's zoom LEVEL rather than its reported bounds:
@@ -832,6 +870,8 @@ const DEST_SYMBOL_STYLE: any = {
   textAllowOverlap: false,
   textIgnorePlacement: false,
   textPadding: 1,
+  iconOpacity: DEST_GATE_OPACITY,
+  textOpacity: DEST_GATE_OPACITY,
 };
 const CAMERA_DEFAULT_SETTINGS = { centerCoordinate: [10, 20] as [number, number], zoomLevel: 1 };
 
@@ -1723,6 +1763,13 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     () => DEST_COUNTRY_CODES.filter(c => pillPlanLngDelta < getCountryPillCutoffLngDelta(c)).join(','),
     [pillPlanLngDelta]);
   const insideCountries = useMemo(() => new Set(insideCountriesKey ? insideCountriesKey.split(',') : []), [insideCountriesKey]);
+  // The deepest rank whose photo pins have joined the layer at this zoom (DEST_GATE_LEAD ahead of its gate).
+  const gateRank = useMemo(() => {
+    const lat = panInvariantLatDelta(planLngDelta) / Math.pow(2, DEST_GATE_LEAD);
+    let r = 0;
+    for (const [k, l] of Object.entries(PROMOTE_LATDELTA_BY_RANK)) if (lat <= l) r = Math.max(r, Number(k));
+    return r;
+  }, [planLngDelta]);
   const eligibleDests = useMemo(() => {
     const results: Destination[] = [];
     const added = new Set<string>();
@@ -1738,7 +1785,8 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
       // Eligible if: it's the selected destination; or in the selected country (always shown);
       // or within the current rank tier (or saved, which is always shown); or a rank-1 anchor
       // worldwide while drilled into a country/destination (so every country pill can form).
-      const rankOk = d.rank <= visibleRank || saved;
+      // gateRank: also eligible from the moment its photo pin joins the layer, transparent, ahead of its gate.
+      const rankOk = d.rank <= visibleRank || Math.max(1, d.rank - (saved ? 1 : 0)) <= gateRank || saved;
       const anchorRank1 = (selectedCountry || selectedDest) && d.rank === 1;
       // Inside a country's own view (its pill has gone) every one of its destinations is a candidate at once, whatever
       // its rank: the native pin layer then reveals each one by collision as room opens up, which Mapbox fades in.
@@ -1750,7 +1798,7 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
       added.add(d.id);
     }
     return results;
-  }, [visibleRank, visitIndex, selectedCountry, selectedDest, insideCountries]);
+  }, [visibleRank, gateRank, visitIndex, selectedCountry, selectedDest, insideCountries]);
 
   // NOTE: there is deliberately NO viewport-bounds culling of the render set. There are only
   // ~45 destinations total, so rendering every eligible one (Mapbox natively clips whatever
@@ -1970,7 +2018,10 @@ const destItems = useMemo((): DestItem[] =>
     // reveals photos in order of prominence (Apple/Google Maps-style), instead of every
     // destination flipping to a photo at one shared threshold. Saved destinations get a
     // one-tier head start: a place you've marked matters more to you than its global rank.
-    const PROMOTE_LATDELTA_BY_RANK: Record<number, number> = { 1: 24, 2: 14, 3: 9, 4: 5, 5: 2.5 };
+    // (PROMOTE_LATDELTA_BY_RANK, module level.) A rank-gated pin joins DEST_GATE_LEAD zoom levels early, transparent,
+    // and fades in natively across its gate (DEST_GATE_OPACITY); fadeTier records which ramp each pin follows.
+    const gateLead = Math.pow(2, DEST_GATE_LEAD);
+    const fadeTier = new Map<string, number>();
     const panLatDelta = panInvariantLatDelta(planLngDelta);
     // While a country is drilled into (explicitly, or implicitly via a selected
     // destination), its own destinations bypass the rank gates within the country's own
@@ -1993,7 +2044,9 @@ const destItems = useMemo((): DestItem[] =>
       // pill collision rules still apply on top.
       if (pillPlanLngDelta < getCountryPillCutoffLngDelta(d.countryCode)) return true;
       const effRank = Math.max(1, d.rank - (visitIndex.isDestVisited(d.id) ? 1 : 0));
-      return panLatDelta <= (PROMOTE_LATDELTA_BY_RANK[effRank] ?? 2.5);
+      if (panLatDelta > (PROMOTE_LATDELTA_BY_RANK[effRank] ?? 2.5) * gateLead) return false;
+      fadeTier.set(d.id, effRank);
+      return true;
     };
 
     // Deterministic, pan-invariant priority: selected destination first; then (while a
@@ -2061,7 +2114,7 @@ const destItems = useMemo((): DestItem[] =>
     ordered.forEach((d, i) => priority.set(d.id, i));
     if (NATIVE_DEST_PINS) {
       destLabelHitRef.current = { pxPerDegLng, rects: [] };   // names are native symbols: they take taps themselves
-      return { photoIds, positions, labelHiddenIds: new Set<string>(), priority };
+      return { photoIds, positions, labelHiddenIds: new Set<string>(), priority, fadeTier };
     }
 
     // Name labels. A label is hidden when its text box would overlap another placed destination's circle or an
@@ -2104,7 +2157,7 @@ const destItems = useMemo((): DestItem[] =>
     geo.forEach((g, id) => { if (!labelHiddenIds.has(id)) labelRects.push({ id, rect: g }); });
     destLabelHitRef.current = { pxPerDegLng, rects: labelRects };
 
-    return { photoIds, positions, labelHiddenIds, priority };
+    return { photoIds, positions, labelHiddenIds, priority, fadeTier };
     // Pure function of zoom (planLngDelta) + eligible set + selection + saved state +
     // the (equally pan-invariant) country pill plan.
     // No camera centre → recompute produces an identical plan while panning at fixed zoom.
@@ -4333,7 +4386,7 @@ const destItems = useMemo((): DestItem[] =>
         type: 'Feature',
         id: dest.id,
         geometry: { type: 'Point', coordinates: [dest.coordinates.longitude, dest.coordinates.latitude] },
-        properties: { id: dest.id, img, label: dest.name, sort: destSortKey(dest.id) },
+        properties: { id: dest.id, img, label: dest.name, sort: destSortKey(dest.id), tier: destPinPlan.fadeTier.get(dest.id) ?? 0 },
       });
     }
     // Register the pin image of every destination that could be promoted soon (eligible now, or one rank tier deeper)
@@ -4679,7 +4732,9 @@ const destItems = useMemo((): DestItem[] =>
             id="destPhotos"
             shape={nativeDestPins.shape}
             onPress={(e) => {
-              const id = e.features[0]?.properties?.id as string | undefined;
+              // Skip a pin that is still (nearly) transparent ahead of its rank gate (see DEST_GATE_OPACITY).
+              const hit = e.features.find(f => destGateOpacity(Number(f.properties?.tier ?? 0), camZoomRef.current) > 0.5);
+              const id = hit?.properties?.id as string | undefined;
               if (!id) return;
               const dest = DESTINATIONS.find(d => d.id === id);
               if (dest && !pressBlocked()) { if (selectedDestRef.current?.id === dest.id) handleResetToDest(); else handleMarkerPress(dest); }
