@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { View, Image, StyleSheet, type StyleProp, type ImageStyle } from 'react-native';
+import { View, StyleSheet, type StyleProp, type ImageStyle } from 'react-native';
 import FadeInImage from './FadeInImage';
+import type { Subject } from '../../utils/subjectCrop';
 
 // A photo that always belongs to the entity it was asked about.
 //
@@ -16,7 +17,7 @@ import FadeInImage from './FadeInImage';
 // this small component, so a photo arriving re-renders only the photo, never the sheet around it.
 export default function EntityPhoto({
   cacheKey, cache, load, instant, scrim, placeholderColor, resizeMode = 'cover', style = StyleSheet.absoluteFill,
-  focusX, focusY, frame,
+  subject,
 }: {
   cacheKey: string;                                   // identifies the entity (and is the photoCache key)
   cache: Map<string, string>;
@@ -26,14 +27,8 @@ export default function EntityPhoto({
   placeholderColor?: string;                          // solid fill while there's no photo yet
   resizeMode?: 'cover' | 'contain';
   style?: StyleProp<ImageStyle>;
-  // Vertical framing of a 'cover' crop, for a photo taller than its frame: 0 keeps its top in view, 1 its bottom,
-  // 0.5 (the default, what plain 'cover' does) its middle. Needs `frame`, the box the photo fills, to place it.
-  // The photo waits for its own dimensions before appearing, so it never jumps from centred to framed.
-  focusY?: number;
-  // The same for a photo wider than its frame (a landscape photo in a portrait hero shows only a middle slice of its width): 0 keeps
-  // its left edge in view, 1 its right, 0.5 (default) its middle.
-  focusX?: number;
-  frame?: { w: number; h: number };
+  // Where the photo's subject sits (utils/subjectCrop): the 'cover' crop is placed to keep it near the middle.
+  subject?: Subject;
 }) {
   const cached = cache.get(cacheKey) ?? null;
   const [loaded, setLoaded] = useState<{ key: string; url: string } | null>(null);
@@ -43,15 +38,6 @@ export default function EntityPhoto({
   // not replay a fade the user never waited through. Recomputed (idempotently) whenever the entity changes.
   const meta = useRef({ key: cacheKey, hit: cached !== null });
   if (meta.current.key !== cacheKey) meta.current = { key: cacheKey, hit: cached !== null };
-
-  const framed = (focusY !== undefined || focusX !== undefined) && !!frame;
-  const [natural, setNatural] = useState<{ url: string; w: number; h: number } | null>(null);
-  useEffect(() => {
-    if (!framed || !url || natural?.url === url) return;
-    let stale = false;
-    Image.getSize(url, (w, h) => { if (!stale) setNatural({ url, w, h }); }, () => {});
-    return () => { stale = true; };
-  }, [framed, url]);
 
   useEffect(() => {
     if (cache.has(cacheKey)) return;
@@ -65,20 +51,10 @@ export default function EntityPhoto({
     : null;
   if (!url) return placeholder;
 
-  // Framed: size the image to exactly the 'cover' size itself and offset it, so `focusY` picks which part of the
-  // overflow stays in view (the frame's own overflow:'hidden' does the clipping).
-  let imageStyle: StyleProp<ImageStyle> = style;
-  if (framed) {
-    if (natural?.url !== url) return placeholder;
-    const scale = Math.max(frame!.w / natural.w, frame!.h / natural.h);
-    const w = natural.w * scale;
-    const h = natural.h * scale;
-    imageStyle = { position: 'absolute', width: w, height: h, left: (frame!.w - w) * (focusX ?? 0.5), top: (frame!.h - h) * (focusY ?? 0.5) };
-  }
   return (
     <>
       {/* keyed by entity: a fresh instance (and fresh fade state) per photo, never one image swapped in place */}
-      <FadeInImage key={cacheKey} instant={instant ?? meta.current.hit} source={{ uri: url }} style={imageStyle} resizeMode={resizeMode} />
+      <FadeInImage key={cacheKey} instant={instant ?? meta.current.hit} source={{ uri: url }} style={style} resizeMode={resizeMode} subject={resizeMode === 'cover' ? subject : undefined} />
       {scrim ? <View pointerEvents="none" style={[StyleSheet.absoluteFill, { backgroundColor: scrim }]} /> : null}
     </>
   );

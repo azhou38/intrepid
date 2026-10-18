@@ -68,14 +68,15 @@ def spot_line(sid, dest, e):
 
 
 def set_hero_focus(key, focus):
-    """A judge's `hero_crop: {x, y}` (IMAGES.md "The hero crop") → HERO_FOCUS in imageOverrides.ts."""
+    """A judge's `hero_crop: {x, y}` (where the subject sits in the photo; IMAGES.md "Keeping the subject in the crop")
+    → PHOTO_SUBJECT in imageOverrides.ts."""
     p = 'src/data/imageOverrides.ts'
     s = open(p).read()
     k = q(key)
     parts = ', '.join(f'{a}: {focus[a]}' for a in ('x', 'y') if focus.get(a) is not None)
     line = f'  {k}: {{ {parts} }},'
     pat = re.compile(r'^  ' + re.escape(k) + r': \{.*\},$', re.M)
-    anchor = s.index('export const HERO_FOCUS')
+    anchor = s.index('export const PHOTO_SUBJECT')
     end = s.index('};', anchor)
     block = s[anchor:end]
     if pat.search(block):

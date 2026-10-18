@@ -109,6 +109,7 @@ import { SPOTS, STANDALONE_SPOT_SPAN_KM, spotPhotoTitle, spotCountry, spotCountr
 import DestinationSheet from '../components/Map/DestinationSheet';
 import CircleFlag from '../components/CircleFlag';
 import PinPhoto from '../components/Map/PinPhoto';
+import { photoSubject } from '../utils/subjectCrop';
 import { computeSearchResults, computeSuggestions, SearchResultRows, toRecentSearch, type SearchResult } from '../components/Map/SearchResults';
 import SpotSheet from '../components/Map/SpotSheet';
 import CountrySheet from '../components/Map/CountrySheet';
@@ -192,6 +193,7 @@ function DestPin({ dest, spotCount, isVisited, isSelected, pinState, hideLabel =
             {photoUrl && (
               <PinPhoto
                 instant={photoWasCachedRef.current}
+                subject={photoSubject(dest.name)}
                 source={{ uri: photoUrl }}
                 style={StyleSheet.absoluteFill as any}
                 resizeMode="cover"
@@ -370,6 +372,7 @@ const SpotMarker = memo(function SpotMarker({ spot, isVisited, isSelected, exiti
                   {photoUrl && (
                     <PinPhoto
                       instant={photoWasCachedRef.current}
+                      subject={photoSubject(spotPhotoTitle(spot))}
                       source={{ uri: photoUrl }}
                       style={StyleSheet.absoluteFill as any}
                       resizeMode="cover"

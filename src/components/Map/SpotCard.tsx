@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Pressable } from 'react-native';
 import { Check, Clock } from 'lucide-react-native';
 import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'react-native-svg';
 import FadeInImage from './FadeInImage';
+import { photoSubject } from '../../utils/subjectCrop';
 import { styles } from './DestinationCard';
 import { CARD_SCRIM_FADE, CARD_SCRIM_ABOVE, cardScrimStops } from './cardScrim';
 import { fitNameSize } from '../../utils/fitNameFontSize';
@@ -74,6 +75,7 @@ function SpotCard({ spot, onPress, width }: {
           {photoUrl && (
             <FadeInImage
               instant={photoWasCachedRef.current}
+              subject={photoSubject(spotPhotoTitle(spot))}
               source={{ uri: photoUrl }}
               style={StyleSheet.absoluteFill}
               resizeMode="cover"

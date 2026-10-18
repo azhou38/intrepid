@@ -1,5 +1,7 @@
 import React, { memo, useEffect, useRef, useState } from 'react';
-import { View, Image, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
+import PinPhoto from './PinPhoto';
+import { photoSubject } from '../../utils/subjectCrop';
 import MapboxGL from '@rnmapbox/maps';
 import type { Destination } from '../../types';
 import { thumbCache, fetchWikiThumbnail } from '../../utils/photoCache';
@@ -53,7 +55,7 @@ const DestPinImage = memo(function DestPinImage({ spec }: { spec: DestPinImageSp
     <MapboxGL.Image name={name} ref={imageRef as any}>
       <View collapsable={false} style={st.box}>
         <View collapsable={false} style={[st.disc, { borderColor: ring }, selected && st.discSelected]}>
-          {url && <Image source={{ uri: url }} style={st.photo} onLoad={snap} resizeMode="cover" />}
+          {url && <PinPhoto instant subject={photoSubject(dest.name)} source={{ uri: url }} style={st.photo} onLoad={snap} resizeMode="cover" />}
         </View>
         {badge > 0 && (
           <View collapsable={false} style={st.badge}>

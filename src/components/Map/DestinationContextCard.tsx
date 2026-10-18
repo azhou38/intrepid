@@ -1,3 +1,5 @@
+import FadeInImage from './FadeInImage';
+import { photoSubject } from '../../utils/subjectCrop';
 import React, { useRef, useEffect, useState } from 'react';
 import {
   View, Text, Pressable, StyleSheet, Animated, PanResponder, Image, Dimensions,
@@ -135,7 +137,7 @@ export default function DestinationContextCard({ destination, savedEntry, visibl
         {/* Photo thumbnail */}
         <View style={[st.thumb, { backgroundColor: color + '22' }]}>
           {photoUrl
-            ? <Image source={{ uri: photoUrl }} style={st.thumbImg} resizeMode="cover" />
+            ? <FadeInImage instant subject={photoSubject(destination.name)} source={{ uri: photoUrl }} style={st.thumbImg} resizeMode="cover" />
             : <Text style={st.thumbIcon}>{destination.icon ?? '📍'}</Text>}
         </View>
 

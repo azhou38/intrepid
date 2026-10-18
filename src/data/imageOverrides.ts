@@ -9,23 +9,58 @@
 // panorama (or, for nature destinations, a wide landscape) — never one building, attraction or an aerial
 // view. See IMAGES.md ("Headers") and scripts/destination-header-policy.ts, which
 // enforces it.
-// Vertical framing for specific Commons photos shown in a wider-than-tall card (the About tab's "Why visit"
-// cards), keyed by Commons file name: 0 crops toward the photo's top, 0.5 is the default centre crop, 1 its
-// bottom. For photos whose default centre crop lands on the wrong part — see EntityPhoto's `focusY`.
-export const PHOTO_FOCUS_Y: Record<string, number> = {
-  // Centred, the crop landed on the statue's midsection; keep the head and torso in view instead.
-  "Michelangelo's David 2015.jpg": 0.1,
-  "Venice Gondola Grand Canal.jpg": 0.3,
-};
-
-// Framing of a spot's photo in the FULL-SCREEN hero of its sheet, keyed by the place's photo key (spotPhotoTitle: its `wiki`
-// title, else its name). The hero is nearly square (full screen width by about half the screen height), so a landscape photo
-// shows only the middle ~55% of its width and a very wide one less: a subject that sits off to one side is cut out and the hero
-// shows empty sky or ground. x / y are 0..1 like PHOTO_FOCUS_Y (x: 0 keeps the photo's left edge in view, 1 its right; y: 0
-// its top, 1 its bottom; both default to 0.5, the plain centre crop). IMAGES.md ("The hero crop") says when a photo needs one.
-export const HERO_FOCUS: Record<string, { x?: number; y?: number }> = {
-  // The dome stands at the far left of a wide photo; centred, the hero showed only blue sky.
-  "Siding Spring Observatory": { x: 0.05 },
+// Where the subject sits in photos whose plain centre crop would cut it off or bury it at an edge (utils/subjectCrop):
+// every crop of the photo (sheet heroes, cards, pins, why-visit cards) is placed so this point is as near its middle as
+// the photo allows. x: 0 = the photo's left edge … 1 = right edge; y: 0 = top … 1 = bottom; either defaults to 0.5.
+// Keyed like the image manifest: a destination's name (its header), a spot's photo key (spotPhotoTitle: its `wiki` title,
+// else its name), `File:<Commons file>` for a why-visit photo. IMAGES.md ("Keeping the subject in the crop") says when.
+export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number }> = {
+  "Aarhus Cathedral": { y: 0.35 },
+  "Akaroa Head": { x: 0.35 },
+  "Banks Track": { x: 0.7 },
+  "Big Ben": { y: 0.3 },
+  "Cape Palliser Lighthouse": { y: 0.4 },
+  "Cape Reinga Lighthouse": { y: 0.4 },
+  "Cardboard Cathedral": { x: 0.38 },
+  "Cardrona Hotel": { x: 0.62 },
+  "Cathedral Caves": { x: 0.3 },
+  "Cathedral Cove": { x: 0.72 },
+  "Clifden Suspension Bridge": { x: 0.6 },
+  "Dunedin Railway Station": { x: 0.6 },
+  "Durie Hill Elevator": { x: 0.68 },
+  "East Cape Lighthouse": { y: 0.35 },
+  "Echo Point, New South Wales": { x: 0.25 },
+  "Eiffel Tower": { y: 0.35 },
+  "Empire State Building": { y: 0.3 },
+  "File:00 1555 Pohutu Geyser in Whakarewarewa (Whaka), New Zealand.jpg": { y: 0.4 },
+  "File:Captain Cook at Gisborne.jpg": { y: 0.3 },
+  "File:Cupola di santa maria del fiore dal campanile di giotto, 01.JPG": { y: 0.4 },
+  "File:Eiffel Tower at night 20071222-3.jpg": { y: 0.4 },
+  "File:Michelangelo's David 2015.jpg": { y: 0.3 },
+  "File:Sagrada Familia 03.jpg": { y: 0.35 },
+  "File:Upper Wentworth Falls 3, NSW, Australia - Nov 2008.jpg": { y: 0.35 },
+  "Florence Cathedral": { x: 0.62 },
+  "Jerusalem, New Zealand": { y: 0.35 },
+  "Kapiti Island": { x: 0.35 },
+  "Lyttelton Timeball Station": { x: 0.33 },
+  "Mount John University Observatory": { x: 0.35 },
+  "Mount Kaukau": { x: 0.3 },
+  "New Zealand Parliament Buildings": { x: 0.25 },
+  "Nin's Bin": { x: 0.68 },
+  "Okains Bay Museum": { x: 0.4 },
+  "Old Town Square": { x: 0.7 },
+  "Otago Museum": { x: 0.38 },
+  "Pencarrow Lighthouse": { y: 0.35 },
+  "Puzzling World": { x: 0.25 },
+  "Ruined Castle": { x: 0.3 },
+  "Siding Spring Observatory": { x: 0.15 },
+  "South Head, New South Wales": { x: 0.2 },
+  "Taranaki Falls": { x: 0.7 },
+  "Van Gogh Museum": { x: 0.35 },
+  "Venice": { x: 0.65 },
+  "Walsh Bay Wharves Precinct": { x: 0.65 },
+  "Warrumbungle National Park": { x: 0.75 },
+  "Whakapapa Village": { x: 0.35 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -137,7 +172,8 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Farewell Spit": "Farewell Spit overview from hills near Puponga.jpg",
   "Labyrinth Rocks": "Labyrinth rocks park.jpg",
   "Havelock": "Havelock from Lookout.JPG",
-  "Motuara Island": "Motuara Island,Queen Charlotte Sound.jpg",
+  // The island from its lookout tower, over its forest and the sound (the old photo was a catamaran at the jetty).
+  "Motuara Island": "Motuara 2.jpg",
   "Pelorus Bridge Scenic Reserve": "Pelorus River (at Pelorus Bridge) - panoramio (2).jpg",
   "Picton": "Harbour of Picton in late afternoon sun.jpg",
   "Cloudy Bay Vineyards": "Cloudy Bay Vineyard.jpg",
@@ -217,7 +253,8 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Tokomaru Bay": "Tokomaru Bay.jpg",
   "Cooks Cove Walkway": "Rock Cooks Cove.jpg",
   "Paritutu Rock": "Paritutu Rock, New Plymouth.jpg",
-  "Mount Taranaki": "North Summit Track (Mt Taranaki) (52763938245).jpg",
+  // The cone itself (the old photo was a hillside on the summit track, with no mountain in view).
+  "Mount Taranaki": "Mt. Egmont (Taranaki) - New Zealand.jpg",
   "Pouakai Crossing": "Pouakai Hut, Egmont National Park, New Zealand 24.jpg",
   "Wilkies Pools": "Wilkies Pools, New Zealand (3).JPG",
   "Bridge to Nowhere": "Bridge to Nowhere (25430934253).jpg",
@@ -431,7 +468,8 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Blue Mountains": "The typical blue haze in the Jamison Valley behand the Three Sister.jpeg",
   "Echo Point, New South Wales": "Australia new Katoomba the three sisters.jpg",
   "Scenic World": "Katoomba (AU), Scenic World, Scenic Skyway -- 2019 -- 1872.jpg",
-  "Wentworth Falls": "Wentworth Falls, Blue Mountains, New South Wales (483632) (9443349440).jpg",
+  // The falls themselves, top to bottom (the old panorama showed a thin ribbon at the far left of the cliffs).
+  "Wentworth Falls": "Blue Mountains - Wentworth Falls - First Landing (6599354795).jpg",
   "Govett's Leap": "Govetts leap (50659742287).jpg",
   "Katoomba": "Katoomba 3.jpg",
   "Leura Cascades": "Leura Cascades.jpg",
@@ -455,4 +493,6 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Yuraygir National Park": "Angourie Back Beach.jpg",
   "Grafton, New South Wales": "Grafton Clarence River-1 (30437650822).jpg",
   "Hill End, New South Wales": "Hill End Vista 001.JPG",
+  // The canyon walls themselves (the article image was two photos side by side).
+  "Windy Canyon": "Windy Canyon Great Barrier Island.jpg",
 };

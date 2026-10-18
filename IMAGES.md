@@ -84,7 +84,7 @@ One photo per reason, three per destination, in the same order as `whyVisit`.
 
 - **It must show that reason**, not the place in general. "Punting on the Avon" is a punt on the Avon; "Meet the cheeky kea" is a kea. If no good photo of the reason exists, rewrite the reason (see `WRITING.md`) rather than settling for a vague one.
 - **Three different photos**, no repeats within a destination, and none of them the header.
-- **Shape:** the cards are about 1.6:1 landscape, centre-cropped. Prefer a landscape file with the subject near the centre. If the default crop cuts off the subject (a tall statue, a bird high in the frame), set `PHOTO_FOCUS_Y` for that file in `imageOverrides.ts` (0 = crop toward the top, 0.5 = centre, 1 = bottom).
+- **Shape:** the cards are about 1.6:1 landscape, centre-cropped. Prefer a landscape file with the subject near the centre. If the default crop cuts off the subject (a tall statue, a bird high in the frame), give the file a subject point in `PHOTO_SUBJECT` (see "Keeping the subject in the crop").
 - **Size:** at least **1280px wide**. A ground-level view is preferred; an aerial is acceptable here only when the reason is itself about the view from above.
 - Store the three Commons file names in `whyVisitPhotos`, in order.
 
@@ -98,15 +98,14 @@ Every spot photo in the app is checked, not only the ones given an override: the
 - **Size:** at least **1280px wide** where possible.
 - A standalone spot (one with no destination) follows the same rules.
 
-## The hero crop (spot photos)
+## Keeping the subject in the crop
 
-A spot's photo is shown, among other places, as the HERO of its full-screen sheet: full screen width by about half the screen height (aspect ~0.95, nearly square), cover-fitted. That crop, not the whole file, is what the visitor sees first, so a photo has to work in it, not only as a thumbnail or in the contact sheet.
+Every photo is shown cropped, never whole: a spot's full-screen hero and a destination header are nearly square, the carousel and list cards are square, the map pins are circles, and the why-visit cards are about 1.6:1. A landscape photo in a square crop shows only a middle slice of its width (16:9 → 53%, 3:2 → 63%, 2:1 → 48%, 3:1 → 32%), and a portrait one a middle slice of its height. **The named object must be inside every crop, recognisable, and as near the middle as the photo allows**: not cut by an edge, not a sliver at one side, not lost in sky or ground. Wentworth Falls shipped as a wide cliff panorama with the falls a thin ribbon at the far left; Siding Spring Observatory's dome sat outside the crop, which showed blue sky; Big Ben, the Eiffel Tower and several lighthouses lost their tops.
 
-- **Landscape photos show a middle slice.** 16:9 shows the middle 53% of the width, 3:2 63%, 2:1 48%, 3:1 32%; a portrait photo shows a middle slice of its height. Anything outside that slice is cut off.
-- **The named object must be inside the crop and recognisable there**: not cut by an edge, and not dwarfed by sky, water or ground (the Siding Spring Observatory dome stood at the far left of a wide photo and the hero showed only blue sky). Ask the check-2 question again on the crop: shown the crop with no caption, would a visitor say "that's the X"?
-- **Look at it, don't assume.** `python3 scripts/curation/hero-crop.py <960 px thumbnail URL or file>` writes the crop and prints the slice it shows (`--sheet out.jpg` puts several side by side; Read the image). Every spot photo a judge or the skeptic accepts is checked this way when its aspect is wider than 1.3 or narrower than 0.7, or whenever the object is not clearly central.
-- **An off-centre subject is fixed, not rejected**, if it fits in the crop at a different position: find the `x` (0 = left edge of the photo in view, 1 = right) and/or `y` that puts it in the middle of the crop, check it with `--x/--y`, and record it as `HERO_FOCUS` in `src/data/imageOverrides.ts`, keyed by the photo key (`spotPhotoTitle`: the spot's `wiki` title, else its name). A subject wider than the crop's slice (a long panorama of a building) cannot be fixed that way: choose another photo.
-- Judges record the verdict and any focus in their output (`hero_crop: "ok" | {x, y} | "fail: <why>"`), and the reconciler writes the `HERO_FOCUS` entries.
+- **Look at it, don't assume.** `python3 scripts/curation/hero-crop.py <960 px thumbnail URL or file> [--x X --y Y]` writes the crop the app shows and prints the slice; `--sheet out.jpg` puts several side by side (Read the image). Check every photo whose aspect is outside 0.8–1.25 (outside 1.3–2.0 for a why-visit photo), and any photo whose subject is not clearly central.
+- **An off-centre subject is fixed, not rejected**, with a subject point: where the subject sits in the photo, `x` (0 = left edge … 1 = right edge) and/or `y` (0 = top … 1 = bottom). Record it in `PHOTO_SUBJECT` in `src/data/imageOverrides.ts`, keyed like the manifest: a destination's name for its header, a spot's photo key (`spotPhotoTitle`: its `wiki` title, else its name) for a spot, `File:<name>` for a why-visit photo. Every crop of that photo (hero, cards, pins, why-visit card) is then placed so that point is as near the middle as the photo allows (`src/utils/subjectCrop.ts`). Check it with `hero-crop.py --x/--y`. A tall subject (a tower, a lighthouse, a statue) usually needs `y` near its top so the top is not cut.
+- **When no subject point can fix it, choose another photo**: the subject is a thin sliver of a wide panorama (Wentworth Falls), or wider than the crop's slice, or the photo shows something else altogether (a boat for an island, a street for a museum, a collage). A photo that is the wrong subject fails check 2 whatever its crop.
+- Judges record the verdict and any subject point in their output (`hero_crop: "ok" | {x, y} | "fail: <why>"`), and the reconciler writes the `PHOTO_SUBJECT` entries.
 
 ## Brightness
 

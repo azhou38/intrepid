@@ -34,7 +34,7 @@ import { CARD_SCRIM_FADE, CARD_SCRIM_ABOVE, cardScrimStops } from './cardScrim';
 import GoogleRating from './GoogleRating';
 import spotRatings from '../../data/spotRatings.json';
 import { fitNameFontSize } from '../../utils/fitNameFontSize';
-import { HERO_FOCUS } from '../../data/imageOverrides';
+import { photoSubject } from '../../utils/subjectCrop';
 import { titleStatGap } from '../../utils/titleStatGap';
 import FadeInImage from './FadeInImage';
 import SpotCard from './SpotCard';
@@ -175,7 +175,7 @@ function CarouselCard({ spot, isActive, onPress, onAddVisit, gradId }: {
             own row below, so the card doesn't grow overall despite the extra image height. */}
         <View style={st.cardImageWrap}>
           {thumb && (
-            <FadeInImage instant={thumbWasCachedRef.current} source={{ uri: thumb }} style={StyleSheet.absoluteFill} resizeMode="cover" />
+            <FadeInImage instant={thumbWasCachedRef.current} subject={photoSubject(spotPhotoTitle(spot))} source={{ uri: thumb }} style={StyleSheet.absoluteFill} resizeMode="cover" />
           )}
           {/* Replaces the old always-present bookmark — a green tag only when actually
               visited, matching the "Visited" status pills used elsewhere in the app. */}
@@ -1083,8 +1083,7 @@ isVisited ? (
         <View pointerEvents="none" style={[st.heroBackdrop, { height: HERO_H - insets.bottom }]}>
               <EntityPhoto
                 cacheKey={activePhotoKey} cache={photoCache} load={loadActivePhoto}
-                focusX={HERO_FOCUS[spotPhotoTitle(activeSpot)]?.x} focusY={HERO_FOCUS[spotPhotoTitle(activeSpot)]?.y}
-                frame={{ w: W, h: HERO_H - insets.bottom }}
+                subject={photoSubject(spotPhotoTitle(activeSpot))}
               />
               <View pointerEvents="none" style={st.heroScrim} />
               <View pointerEvents="none" style={st.gradWrap}>
@@ -1328,7 +1327,7 @@ isVisited ? (
           style={[st.peekStrip, peekOpacityStyle]}
         >
           <Pressable style={StyleSheet.absoluteFill} onPress={() => { if (isPressBlocked?.()) return; snapToCollapsedRef.current(); }}>
-            <EntityPhoto instant placeholderColor="#111827" cacheKey={activePhotoKey} cache={photoCache} load={loadActivePhoto} />
+            <EntityPhoto instant placeholderColor="#111827" cacheKey={activePhotoKey} cache={photoCache} load={loadActivePhoto} subject={photoSubject(spotPhotoTitle(activeSpot))} />
             <View pointerEvents="none" style={st.peekScrim} />
             <View pointerEvents="none" style={st.peekPillRow}>
               <View style={st.peekPill} />

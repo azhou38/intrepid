@@ -4,6 +4,7 @@ import { Check } from 'lucide-react-native';
 import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'react-native-svg';
 import CircleFlag from '../CircleFlag';
 import FadeInImage from './FadeInImage';
+import { photoSubject } from '../../utils/subjectCrop';
 import type { Destination } from '../../types';
 import { thumbCache, getOrFetchWikiThumbnail } from '../../utils/photoCache';
 import { useDestinationClimate } from '../../utils/climateApi';
@@ -94,6 +95,7 @@ function DestinationCard({ dest, isVisited, onPress, width = DEST_CARD_W, showCo
         {photoUrl && (
           <FadeInImage
             instant={photoWasCachedRef.current}
+            subject={photoSubject(dest.name)}
             source={{ uri: photoUrl }}
             style={StyleSheet.absoluteFill}
             resizeMode="cover"

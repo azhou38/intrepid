@@ -37,7 +37,7 @@ import { photoCache, thumbCache, getOrFetchWikiThumbnail, fetchCommonsPhoto, HEA
 import CircleFlag from '../CircleFlag';
 import { sheetPose } from './sheetPose';
 import EntityPhoto from './EntityPhoto';
-import { PHOTO_FOCUS_Y } from '../../data/imageOverrides';
+import { photoSubject } from '../../utils/subjectCrop';
 import ClimateDetailModal from './ClimateDetailModal';
 import { MONTHS_SHORT } from '../../utils/travelData';
 import { getCrowdMeta } from '../../utils/climateApi';
@@ -273,8 +273,7 @@ function WhyVisitCarousel({ destination, scrollRef }: {
                 cache={photoCache}
                 load={() => fetchCommonsPhoto(file, 960)}
                 placeholderColor="#E5E7EB"
-                focusY={PHOTO_FOCUS_Y[file]}
-                frame={{ w: WHY_CARD_W, h: WHY_CARD_H }}
+                subject={photoSubject(`File:${file}`)}
               />
             )}
             {/* Caption on its own translucent dark strip across the bottom of the photo, whose top
@@ -646,6 +645,7 @@ function DestinationSheet({
           cacheKey={`pick_spot_${spot.id}`}
           cache={thumbCache}
           load={() => getOrFetchWikiThumbnail(`pick_spot_${spot.id}`, thumbCache, spotPhotoTitle(spot), 300)}
+          subject={photoSubject(spotPhotoTitle(spot))}
           placeholderColor="#F3F4F6"
         />
       ),
@@ -1438,6 +1438,7 @@ function DestinationSheet({
                 cacheKey={destination.id}
                 cache={photoCache}
                 load={() => getOrFetchWikiThumbnail(destination.id, photoCache, destination.name, HEADER_PX)}
+                subject={photoSubject(destination.name)}
               />
 
               {/* Ambient scrim so text is always legible */}
@@ -1696,6 +1697,7 @@ function DestinationSheet({
               cacheKey={destination.id}
               cache={photoCache}
               load={() => getOrFetchWikiThumbnail(destination.id, photoCache, destination.name, HEADER_PX)}
+              subject={photoSubject(destination.name)}
             />
             <View pointerEvents="none" style={st.peekScrim} />
             <View pointerEvents="none" style={st.peekPillRow}>

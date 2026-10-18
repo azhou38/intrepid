@@ -1,3 +1,5 @@
+import FadeInImage from './FadeInImage';
+import { photoSubject } from '../../utils/subjectCrop';
 import React, { useEffect, useState } from 'react';
 import { View, Text, Image, Pressable, StyleSheet } from 'react-native';
 import { X } from 'lucide-react-native';
@@ -144,7 +146,7 @@ function SearchResultThumb({ name, icon, cacheKey, size }: {
   return (
     <View style={[st.thumb, { width: size, height: size, borderRadius: size * 0.28 }]}>
       {photoUrl
-        ? <Image source={{ uri: photoUrl }} style={StyleSheet.absoluteFill as any} resizeMode="cover" />
+        ? <FadeInImage instant subject={photoSubject(name)} source={{ uri: photoUrl }} style={StyleSheet.absoluteFill as any} resizeMode="cover" />
         : <Text style={{ fontSize: size * 0.55 }}>{icon}</Text>}
     </View>
   );
