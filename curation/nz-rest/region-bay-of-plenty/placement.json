@@ -1,0 +1,1472 @@
+{
+ "region": "bay-of-plenty",
+ "spots": [
+  {
+   "name": "The Elms",
+   "action": "spot",
+   "destination": "tauranga",
+   "id": "tauranga-6",
+   "coordinates": {
+    "latitude": -37.6767,
+    "longitude": 176.168
+   },
+   "coordinates_source": "Wikivoyage listing (Tauranga) with its own geo tag; confirm the entrance on The Strand side",
+   "reason": "Inside Tauranga, 1.3 km from the centre; two counted sources (Wikivoyage, tourism board). Public guided tours, so it passes the access test.",
+   "category": "historic",
+   "icon": "⛪",
+   "bio": "An 1847 mission station and garden, with guided tours of the mission house.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Tauranga",
+    "https://bayofplentynz.com/places/tauranga/"
+   ],
+   "photo": {
+    "file": "The Mission House at The Elms - Formerly the Te Papa Mission Station.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:The_Mission_House_at_The_Elms_-_Formerly_the_Te_Papa_Mission_Station.jpg",
+    "width": 8640,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_needs_brightening": true,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "held: needs a photo (accepted photo needs brightening)",
+   "wiki": "The Elms, Tauranga",
+   "distance_km_from_destination": 1.3,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Papamoa Beach",
+   "action": "spot",
+   "destination": "tauranga",
+   "id": "tauranga-7",
+   "coordinates": {
+    "latitude": -37.69727,
+    "longitude": 176.28483
+   },
+   "coordinates_source": "Wikipedia (Papamoa suburb point); not a beach access",
+   "reason": "About 10 km from the Tauranga centre, inside its span; reached from Tauranga. Two counted sources (Wikivoyage Whakatane and Te Puke).",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A long surf and swimming beach on the coast east of Mount Maunganui.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 11545,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Whakatane",
+    "https://en.wikivoyage.org/wiki/Te_Puke"
+   ],
+   "photo": null,
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ],
+   "status": "held: needs a photo",
+   "wiki": "Papamoa",
+   "note": "Point is the suburb, not the sand: take OSM natural/beach or a named domain/beach access (Papamoa Domain).",
+   "distance_km_from_destination": 10.6,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Kaiate Falls",
+   "action": "spot",
+   "destination": "tauranga",
+   "id": "tauranga-8",
+   "coordinates": {
+    "latitude": -37.76001,
+    "longitude": 176.24139
+   },
+   "coordinates_source": "Skeptic-corrected OSM waterfall node; candidate point was the Kaiate Falls hamlet",
+   "reason": "About 11 km from the centre, inside the span. Wikivoyage names it among Tauranga falls. HELD: accepted photo needs brightening.",
+   "category": "nature",
+   "icon": "💧",
+   "bio": "A waterfall near Tauranga, reached by a short walk.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Tauranga"
+   ],
+   "photo": {
+    "file": "Lower Kaiate Falls.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Lower_Kaiate_Falls.jpg",
+    "width": 5616,
+    "licence": "CC BY-SA 2.0"
+   },
+   "photo_needs_brightening": true,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "status": "held: needs a photo (accepted photo needs brightening)",
+   "distance_km_from_destination": 10.5,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Maketū",
+   "action": "spot",
+   "destination": "tauranga",
+   "id": "tauranga-9",
+   "coordinates": {
+    "latitude": -37.75826,
+    "longitude": 176.45403
+   },
+   "coordinates_source": "OSM place/town node (Maketu); settlement centre, not a named beach or landing point",
+   "reason": "About 26 km from the Tauranga centre, inside its 30 km span (75% of 40 km), though near the edge; also reached from Te Puke and Rotorua (45 km, outside). Two counted sources.",
+   "category": "historic",
+   "icon": "🛶",
+   "bio": "A seaside settlement at the landing place of a waka, with a sandy inlet and cliffed coast.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 4406,
+   "counted_sources": [
+    "https://bayofplentynz.com/places/explore-the-bay/maketu/",
+    "https://en.wikivoyage.org/wiki/Whakatane"
+   ],
+   "photo": {
+    "file": "Maketu Beach, Bay of Plenty, New Zealand, 2 April 2008 (2381575915).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Maketu_Beach,_Bay_of_Plenty,_New_Zealand,_2_April_2008_(2381575915).jpg",
+    "width": 3872,
+    "licence": "CC BY 2.0"
+   },
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ],
+   "status": "ready for Pipeline C research",
+   "note": "Near the span edge; if the owner prefers, make it standalone.",
+   "distance_km_from_destination": 26.6,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Katikati Bird Gardens",
+   "action": "spot",
+   "destination": "tauranga",
+   "id": "tauranga-10",
+   "coordinates": {
+    "latitude": -37.5835,
+    "longitude": 175.9418
+   },
+   "coordinates_source": "Wikivoyage listing (Tauranga) with its own geo tag",
+   "reason": "About 23 km from the centre, inside the span; Wikivoyage Tauranga and the tourism board list it. HELD: no accepted photo.",
+   "category": "nature",
+   "icon": "🦜",
+   "bio": "Formal and wetland gardens on the harbour edge, with native birds, a cafe and golf-cart tours.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Tauranga"
+   ],
+   "photo": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "held: needs a photo",
+   "distance_km_from_destination": 22.8,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Moutohorā (Whale Island)",
+   "action": "spot",
+   "destination": "whakatane",
+   "id": "whakatane-4",
+   "coordinates": {
+    "latitude": -37.85343,
+    "longitude": 176.96949
+   },
+   "coordinates_source": "Wikipedia (Moutohora Island, island point); landing is by guided boat from Whakatāne",
+   "reason": "11 km offshore of Whakatāne, inside its span and reached from there. Two counted sources (Wikivoyage, DOC).",
+   "category": "nature",
+   "icon": "🏝️",
+   "bio": "A wildlife sanctuary island of birds, fur seals and a hot-water beach, reached by boat tour from Whakatāne.",
+   "hours": "Guided tours only",
+   "visitHoursMin": 3,
+   "visitHoursMax": 5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 3365,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Whakatane",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/whakatane-area/moutohora-whale-island-wildlife-management-reserve/"
+   ],
+   "photo": {
+    "file": "Moutohora Island from southeast.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Moutohora_Island_from_southeast.jpg",
+    "width": 4800,
+    "licence": "Public domain"
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "wiki": "Moutohora Island",
+   "distance_km_from_destination": 11.2,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Ōhiwa Harbour",
+   "action": "spot",
+   "destination": "whakatane",
+   "id": "whakatane-5",
+   "coordinates": {
+    "latitude": -37.9893,
+    "longitude": 177.1615
+   },
+   "coordinates_source": "Skeptic-set point at the harbour edge by the Ōhiwa holiday park (OSM bay centroid is in the water)",
+   "reason": "15 km from the Whakatāne centre, inside the span. Wikivoyage Whakatane names it.",
+   "category": "nature",
+   "icon": "🌊",
+   "bio": "A harbour east of Whakatāne with birdlife and sea kayak tours.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 508,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Whakatane"
+   ],
+   "photo": {
+    "file": "Ohiwa Harbour 303.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Ohiwa_Harbour_303.jpg",
+    "width": 4752,
+    "licence": "CC BY 2.0"
+   },
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ],
+   "status": "ready for Pipeline C research",
+   "distance_km_from_destination": 15.5,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Ōpōtiki",
+   "action": "spot",
+   "destination": "whakatane",
+   "id": "whakatane-6",
+   "coordinates": {
+    "latitude": -38.00424,
+    "longitude": 177.28713
+   },
+   "coordinates_source": "Wikipedia/OSM town centre",
+   "reason": "26 km from Whakatāne, inside its 52 km span; a town that does not make destination status (small, no cluster of kept spots) is a spot of the destination it serves. Two counted sources.",
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "A harbour town and the gateway to the Motu Trail, the Waioeka Gorge and the East Cape road.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 17553,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Opotiki",
+    "https://en.wikivoyage.org/wiki/Bay_of_Plenty"
+   ],
+   "photo": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "status": "held: needs a photo",
+   "distance_km_from_destination": 26.6,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Whakarewarewa Thermal Village",
+   "action": "spot",
+   "destination": "rotorua",
+   "id": "rotorua-11",
+   "coordinates": {
+    "latitude": -38.16124,
+    "longitude": 176.25659
+   },
+   "coordinates_source": "Wikivoyage listing with its own geo tag",
+   "reason": "3 km from the Rotorua centre. Distinct from Te Puia (separate entrance and operator). Wikivoyage.",
+   "category": "historic",
+   "icon": "♨️",
+   "bio": "A living Māori village among geothermal features, with self-guided and guided walks.",
+   "hours": null,
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 6564,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Rotorua"
+   ],
+   "photo": {
+    "file": "2018-12-30 150558 Whakarewarewa Thermal Village anagoria.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:2018-12-30_150558_Whakarewarewa_Thermal_Village_anagoria.jpg",
+    "width": 4032,
+    "licence": "CC BY-SA 3.0"
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "wiki": "Whakarewarewa",
+   "distance_km_from_destination": 2.8,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Kuirau Park",
+   "action": "spot",
+   "destination": "rotorua",
+   "id": "rotorua-12",
+   "coordinates": {
+    "latitude": -38.1348,
+    "longitude": 176.2461
+   },
+   "coordinates_source": "Wikivoyage listing with its own geo tag",
+   "reason": "Central Rotorua, 0.5 km from the centre. Wikivoyage; open 24 hours.",
+   "category": "nature",
+   "icon": "♨️",
+   "bio": "A free city park of steaming vents, boiling mud pools and hot footbaths beside the centre.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Rotorua"
+   ],
+   "photo": {
+    "file": "Kuirau Park in Rotorua 02.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Kuirau_Park_in_Rotorua_02.jpg",
+    "width": 3556,
+    "licence": "CC BY-SA 4.0"
+   },
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "distance_km_from_destination": 0.4,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Buried Village (Te Wairoa)",
+   "action": "spot",
+   "destination": "rotorua",
+   "id": "rotorua-13",
+   "coordinates": {
+    "latitude": -38.21194,
+    "longitude": 176.36353
+   },
+   "coordinates_source": "Wikivoyage listing with its own geo tag",
+   "reason": "13 km from the centre, inside the span. Wikivoyage with price. HELD: accepted photo needs brightening.",
+   "category": "historic",
+   "icon": "🌋",
+   "bio": "The village buried by the 1886 Tarawera eruption, with a museum and guided tours.",
+   "hours": null,
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 3473,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Rotorua"
+   ],
+   "photo": {
+    "file": "NZL-rotorua-te-wairoa-buried-village.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:NZL-rotorua-te-wairoa-buried-village.jpg",
+    "width": 1215,
+    "licence": "CC BY-SA 3.0"
+   },
+   "photo_needs_brightening": true,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "held: needs a photo (accepted photo needs brightening)",
+   "wiki": "Te Wairoa, New Zealand",
+   "distance_km_from_destination": 13.0,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Agrodome",
+   "action": "spot",
+   "destination": "rotorua",
+   "id": "rotorua-14",
+   "coordinates": {
+    "latitude": -38.085481,
+    "longitude": 176.190189
+   },
+   "coordinates_source": "Wikivoyage listing with its own geo tag",
+   "reason": "8 km from the centre. Wikivoyage lists hours (daily 9-5) and a price; skeptic resolved review to keep (close call, one source). HELD: no photo.",
+   "category": "entertainment",
+   "icon": "🐑",
+   "bio": "A farm show with sheep and alpacas, and farm tours; the National Kiwi Hatchery is on site.",
+   "hours": "9:00 AM – 5:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 1797,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Rotorua"
+   ],
+   "photo": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "held: needs a photo",
+   "distance_km_from_destination": 7.7,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Okere Falls",
+   "action": "spot",
+   "destination": "rotorua",
+   "id": "rotorua-15",
+   "coordinates": {
+    "latitude": -38.01433,
+    "longitude": 176.3455
+   },
+   "coordinates_source": "Wikipedia (Okere Falls, waterfall point)",
+   "reason": "16 km from the centre. Two counted sources (Wikivoyage, DOC).",
+   "category": "nature",
+   "icon": "💧",
+   "bio": "Kaituna River falls at the outflow of Lake Rotoiti, with a short walk and a Māori cultural site.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 3353,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Rotorua",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/okere-falls-scenic-reserve/"
+   ],
+   "photo": {
+    "file": "Okere Falls (Kaituna River).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Okere_Falls_(Kaituna_River).jpg",
+    "width": 4896,
+    "licence": "CC BY 3.0"
+   },
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ],
+   "status": "ready for Pipeline C research",
+   "note": "Wikipedia point is the falls; take the Okere Falls Scenic Reserve car park/start of the track.",
+   "distance_km_from_destination": 16.0,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Tarawera Falls",
+   "action": "spot",
+   "destination": "rotorua",
+   "id": "rotorua-16",
+   "coordinates": {
+    "latitude": -38.163,
+    "longitude": 176.52
+   },
+   "coordinates_source": "Wikipedia (Tarawera Falls, rounded to 3 dp)",
+   "reason": "24 km from the centre, inside the 37 km span; DOC track page. Road access needs a permit.",
+   "category": "nature",
+   "icon": "💧",
+   "bio": "A waterfall at the end of the Tarawera Falls track through the Tarawera forest.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 2100,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/lake-tarawera-scenic-reserve/things-to-do/tarawera-falls-track/"
+   ],
+   "photo": {
+    "file": "Tarawera Falls with rainbow.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Tarawera_Falls_with_rainbow.jpg",
+    "width": 3264,
+    "licence": "CC BY 3.0"
+   },
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ],
+   "status": "ready for Pipeline C research",
+   "note": "Rounded coordinates; take the track start/car park from DOC.",
+   "distance_km_from_destination": 23.8,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Mokoia Island",
+   "action": "spot",
+   "destination": "rotorua",
+   "id": "rotorua-17",
+   "coordinates": {
+    "latitude": -38.08125,
+    "longitude": 176.28441
+   },
+   "coordinates_source": "Wikipedia (Mokoia Island, island centroid; boat landing is on the island)",
+   "reason": "6 km from the centre; reached by boat from Rotorua. Wikipedia and tourism sources.",
+   "category": "nature",
+   "icon": "🏝️",
+   "bio": "An island in Lake Rotorua with a walk and historic Māori sites, reached by boat tour.",
+   "hours": "Guided tours only",
+   "visitHoursMin": 3,
+   "visitHoursMax": 5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 4987,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Rotorua"
+   ],
+   "photo": {
+    "file": "Mokoia Island in Lake Rotorua.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Mokoia_Island_in_Lake_Rotorua.jpg",
+    "width": 1024,
+    "licence": "Public domain"
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "distance_km_from_destination": 6.9,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Rainbow Mountain (Maunga Kākaramea)",
+   "action": "spot",
+   "destination": "rotorua",
+   "id": "rotorua-18",
+   "coordinates": {
+    "latitude": -38.31948,
+    "longitude": 176.38862
+   },
+   "coordinates_source": "Wikipedia (Maunga Kākaramea summit); trailhead not found",
+   "reason": "24 km from the centre, inside the span. Two counted sources (Wikivoyage, DOC).",
+   "category": "hike",
+   "icon": "⛰️",
+   "bio": "A summit walk past steaming craters and coloured rock to wide views south of Rotorua.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 3.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 1228,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Rotorua",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/maunga-kakaramea-and-waiotapu-scenic-reserves/"
+   ],
+   "photo": {
+    "file": "Rainbow Mountain Scenic Reserve kz11.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Rainbow_Mountain_Scenic_Reserve_kz11.jpg",
+    "width": 4608,
+    "licence": "CC BY-SA 4.0"
+   },
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ],
+   "status": "ready for Pipeline C research",
+   "wiki": "Maunga Kākaramea",
+   "note": "Summit point; use the DOC trailhead car park on SH5.",
+   "distance_km_from_destination": 23.7,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Kerosene Creek",
+   "action": "spot",
+   "destination": "rotorua",
+   "id": "rotorua-19",
+   "coordinates": {
+    "latitude": -38.33562,
+    "longitude": 176.38638
+   },
+   "coordinates_source": "OSM tourism/attraction node (Wikipedia: Hakereteke Stream)",
+   "reason": "25 km from the centre, inside the span. Wikivoyage. HELD: accepted photo needs brightening.",
+   "category": "nature",
+   "icon": "♨️",
+   "bio": "A free, naturally hot stream and small waterfall for open-air bathing in the forest.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 2540,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Rotorua"
+   ],
+   "photo": {
+    "file": "Kerosene Creek, Geothermal Hot Waterfall (31904686743).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Kerosene_Creek,_Geothermal_Hot_Waterfall_(31904686743).jpg",
+    "width": 1600,
+    "licence": "CC BY 2.0"
+   },
+   "photo_needs_brightening": true,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "status": "held: needs a photo (accepted photo needs brightening)",
+   "wiki": "Hakereteke Stream",
+   "distance_km_from_destination": 25.1,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Sulphur Bay (Motutara)",
+   "action": "spot",
+   "destination": "rotorua",
+   "id": "rotorua-20",
+   "coordinates": {
+    "latitude": -38.13677,
+    "longitude": 176.26745
+   },
+   "coordinates_source": "OSM Te Kaunanga / Sulphur Bay; the candidate point (-19.5, 169.4) was Sulphur Bay in Vanuatu and is replaced",
+   "reason": "2 km from the centre. Two counted sources (Wikivoyage, DOC). HELD: no accepted photo; article is Sulphur Bay (check the Rotorua one).",
+   "category": "nature",
+   "icon": "♨️",
+   "bio": "A lakeshore boardwalk past steaming vents and hot springs, with waterbirds.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 6931,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Rotorua",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/sulphur-bay-wildlife-refuge/"
+   ],
+   "photo": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "status": "held: needs a photo",
+   "wiki": "Sulphur Bay",
+   "note": "Candidate coordinate was in Vanuatu; the OSM point replaces it. Photo lookup of \"Sulphur Bay\" must not resolve to the Vanuatu article.",
+   "distance_km_from_destination": 1.6,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Lake Ōkataina",
+   "action": "spot",
+   "destination": "rotorua",
+   "id": "rotorua-21",
+   "coordinates": {
+    "latitude": -38.1167,
+    "longitude": 176.4167
+   },
+   "coordinates_source": "Wikipedia (lake centroid); lake centre, not an access point",
+   "reason": "About 14 km from the centre; DOC page. HELD: no accepted photo.",
+   "category": "nature",
+   "icon": "🏞️",
+   "bio": "A lake in a DOC scenic reserve, with walking tracks and mountain-bike routes.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 1580,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/lake-okataina-scenic-reserve/"
+   ],
+   "photo": null,
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ],
+   "status": "held: needs a photo",
+   "note": "Centroid in the water; take the Okataina Road end / DOC access point.",
+   "distance_km_from_destination": 14.8,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Wairere Falls",
+   "action": "standalone",
+   "destination": null,
+   "id": "wairere-falls",
+   "coordinates": {
+    "latitude": -37.73758,
+    "longitude": 175.86225
+   },
+   "coordinates_source": "OSM trailhead car park (Wairere Falls Track); falls at -37.734, 175.88",
+   "reason": "Falls are in the Waikato district near Matamata. Straight-line they are 27 km from Tauranga and 52 km from Hamilton, both at the edge of those spans, but across the Kaimai ridge (about an hour's drive from either) and neither city is the base for them. Visitors come from Matamata, Tauranga and Hamilton, so no one base owns it: standalone. FLAG for the Waikato pass.",
+   "category": "nature",
+   "icon": "💧",
+   "bio": "A 153 m waterfall in the Kaimai Range, reached by a DOC walking track.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 3,
+   "visitHoursMax": 4,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 2503,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Tauranga",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/kaimai-mamaku-conservation-park/things-to-do/tracks/wairere-falls-track/"
+   ],
+   "photo": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "status": "held: needs a photo",
+   "note": "Region overlap with Waikato; check the Waikato pass has not also placed it. Two counted sources (Wikivoyage, DOC).",
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "nearest_destinations_km": [
+    [
+     27.2,
+     "tauranga"
+    ],
+    [
+     51.6,
+     "hamilton"
+    ]
+   ]
+  },
+  {
+   "name": "Waihi Beach",
+   "action": "standalone",
+   "destination": null,
+   "id": "waihi-beach",
+   "coordinates": {
+    "latitude": -37.42901,
+    "longitude": 175.96075
+   },
+   "coordinates_source": "Skeptic-set point in the town; Wikipedia centre is -37.40, 175.93",
+   "reason": "Over 40 km from Tauranga and outside every span, reached on its own. Two counted sources. Spot of the proposed Waihi destination, standalone until approved. HELD: no accepted photo.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A small beach town on a 9 km white-sand beach, with walks to Orokawa Bay.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 6554,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Waihi_Beach",
+    "https://en.wikivoyage.org/wiki/Bay_of_Plenty"
+   ],
+   "photo": null,
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ],
+   "status": "held: needs a photo",
+   "note": "Take OSM natural/beach for the beach itself.",
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "nearest_destinations_km": [
+    [
+     34.0,
+     "tauranga"
+    ],
+    [
+     69.2,
+     "coromandel"
+    ]
+   ],
+   "proposed_destination": "waihi"
+  },
+  {
+   "name": "Orokawa Bay",
+   "action": "standalone",
+   "destination": null,
+   "id": "orokawa-bay",
+   "coordinates": {
+    "latitude": -37.38389,
+    "longitude": 175.93876
+   },
+   "coordinates_source": "Skeptic point; no source named an access point (the walk starts at the north end of Waihi Beach)",
+   "reason": "45 km from Tauranga, outside every span. Two counted sources (Wikivoyage, DOC). Proposed Waihi spot.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A pōhutukawa-lined bay on a coastal walk from the north end of Waihi Beach.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 3.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Waihi_Beach",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/orokawa-scenic-reserve/"
+   ],
+   "photo": {
+    "file": "View over Orokawa Bay.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:View_over_Orokawa_Bay.jpg",
+    "width": 4896,
+    "licence": "Public domain"
+   },
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ],
+   "status": "ready for Pipeline C research",
+   "note": "Walk from Waihi Beach; the track start is the visitor point, the bay itself is the end of the walk.",
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "nearest_destinations_km": [
+    [
+     39.3,
+     "tauranga"
+    ],
+    [
+     63.8,
+     "coromandel"
+    ]
+   ],
+   "proposed_destination": "waihi"
+  },
+  {
+   "name": "Karangahake Gorge",
+   "action": "standalone",
+   "destination": null,
+   "id": "karangahake-gorge",
+   "coordinates": {
+    "latitude": -37.423676,
+    "longitude": 175.725514
+   },
+   "coordinates_source": "Wikipedia (Karangahake Gorge); DOC page for the walks",
+   "reason": "In the Waikato region (Hauraki), 49 km from Tauranga and 56 km from Hamilton: outside both spans. Reached on its own on SH2 and the Hauraki Rail Trail, near Waihi. Proposed Waihi spot. FLAG for the Waikato pass.",
+   "category": "historic",
+   "icon": "⛏️",
+   "bio": "A gold-mining gorge with mining remains and river walkways, including the Windows Walk.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 3933,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/kaimai-mamaku-conservation-park/karangahake-gorge/"
+   ],
+   "photo": {
+    "file": "Overbridge To Karangahake Gorge Tunnel.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Overbridge_To_Karangahake_Gorge_Tunnel.jpg",
+    "width": 1600,
+    "licence": "Public domain"
+   },
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ],
+   "status": "ready for Pipeline C research",
+   "note": "Region overlap with Waikato; the Hauraki Rail Trail (standalone) passes through it.",
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "nearest_destinations_km": [
+    [
+     48.7,
+     "tauranga"
+    ],
+    [
+     56.4,
+     "hamilton"
+    ]
+   ],
+   "proposed_destination": "waihi"
+  },
+  {
+   "name": "Motu Trail",
+   "action": "standalone",
+   "destination": null,
+   "id": "motu-trail",
+   "coordinates": {
+    "latitude": -38.0028,
+    "longitude": 177.28742
+   },
+   "coordinates_source": "Skeptic point at Ōpōtiki (bike hire/trailhead); the trail itself runs from Matawai to Ōpōtiki",
+   "reason": "A long linear feature: main visitor access is at Ōpōtiki, and visitors base in Ōpōtiki, not Whakatāne, so it stands alone at Ōpōtiki. Two counted sources. HELD: no accepted photo.",
+   "category": "hike",
+   "icon": "🚴",
+   "bio": "A Great Ride cycle trail between Matawai and Ōpōtiki, with a dunes trail near Ōpōtiki.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 3,
+   "visitHoursMax": 8,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Opotiki",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/east-coast/places/opotiki-area/things-to-do/pakihi-track/"
+   ],
+   "photo": null,
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ],
+   "status": "held: needs a photo",
+   "note": "Keep at the Ōpōtiki trailhead; do not use a point on the line.",
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland",
+   "nearest_destinations_km": [
+    [
+     26.6,
+     "whakatane"
+    ],
+    [
+     84.0,
+     "te-urewera"
+    ]
+   ]
+  }
+ ],
+ "covered_by_existing_destination": [
+  {
+   "name": "Tauranga",
+   "action": "covered-by-existing-destination",
+   "destination": "tauranga",
+   "reason": "Already a destination; a destination cannot be a spot of itself (skeptic)."
+  },
+  {
+   "name": "Mount Maunganui",
+   "action": "covered-by-existing-destination",
+   "destination": "tauranga",
+   "reason": "Sub-area of the Tauranga destination; its draws (Mauao, Main Beach) are already spots (skeptic)."
+  },
+  {
+   "name": "Rotorua",
+   "action": "covered-by-existing-destination",
+   "destination": "rotorua",
+   "reason": "Already a destination (skeptic)."
+  },
+  {
+   "name": "Whakatāne",
+   "action": "covered-by-existing-destination",
+   "destination": "whakatane",
+   "reason": "Already a destination (skeptic)."
+  },
+  {
+   "name": "Whirinaki Te Pua-a-Tāne Conservation Park",
+   "action": "covered-by-existing-destination",
+   "destination": "whirinaki-conservation-park",
+   "reason": "Already shipped as a standalone spot (whirinaki-conservation-park, from the earlier Waikato/Gisborne audit); keep unchanged, no new id."
+  }
+ ],
+ "existing_keeps": [
+  {
+   "id": "tauranga-1",
+   "name": "Mauao",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "tauranga-2",
+   "name": "Mount Maunganui Main Beach",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "tauranga-3",
+   "name": "McLaren Falls Park",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "tauranga-5",
+   "name": "Tauranga Historic Village",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "whakatane-2",
+   "name": "Ōhope Beach",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "whakatane-3",
+   "name": "Kohi Point Scenic Reserve",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "rotorua-1",
+   "name": "Wai-O-Tapu",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "rotorua-2",
+   "name": "Te Puia",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "rotorua-3",
+   "name": "Whakarewarewa Forest",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "rotorua-4",
+   "name": "Polynesian Spa",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "rotorua-5",
+   "name": "Waimangu Volcanic Valley",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "rotorua-6",
+   "name": "Hell's Gate Geothermal Park and Mud Spa",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "rotorua-7",
+   "name": "Blue Lake",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "rotorua-8",
+   "name": "Government Gardens",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "rotorua-9",
+   "name": "Skyline Rotorua",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "rotorua-10",
+   "name": "Lake Tarawera",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "te-urewera-1",
+   "name": "Lake Waikaremoana",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "te-urewera-2",
+   "name": "Aniwaniwa Falls",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  },
+  {
+   "id": "te-urewera-3",
+   "name": "Lake Waikareiti",
+   "action": "existing-keep",
+   "reason": "Verdict/skeptic kept; stays where it is."
+  }
+ ],
+ "new_destinations": [
+  {
+   "id": "waihi",
+   "name": "Waihi",
+   "rank": 5,
+   "coordinates": {
+    "latitude": -37.3917,
+    "longitude": 175.8397
+   },
+   "suggested_defaultZoomSpanKm": 50,
+   "category": "city",
+   "spots": [
+    "waihi-beach",
+    "orokawa-bay",
+    "karangahake-gorge"
+   ],
+   "photo": "none yet",
+   "case": "Wikivoyage chapters for Waihi and Waihi Beach; the beach, the Orokawa walk and the Karangahake Gorge (Hauraki Rail Trail, Te Aroha nearby) give three kept spots in a 20 km cluster outside the Tauranga and Coromandel spans. Waihi town centre coordinates are approximate and need a source.",
+   "status": "proposal only, needs description, reasons with photos, tips, best months, header. Straddles Bay of Plenty and Waikato: coordinate with the Waikato pass."
+  }
+ ],
+ "new_destination_note": "Waihi is the only proposal; its three spots are placed standalone with proposed_destination set so none is lost if declined. Papamoa, Kaiate Falls, Maketū and Katikati Bird Gardens fit Tauranga's 30 km (75%) span with no span change. Wairere Falls is standalone (Waikato side of the Kaimai, no single base). No other cluster is thick enough (Ōpōtiki + Motu Trail are two).",
+ "spot_of_proposed_destination": [
+  {
+   "id": "waihi-beach",
+   "name": "Waihi Beach",
+   "proposed_destination": "waihi"
+  },
+  {
+   "id": "orokawa-bay",
+   "name": "Orokawa Bay",
+   "proposed_destination": "waihi"
+  },
+  {
+   "id": "karangahake-gorge",
+   "name": "Karangahake Gorge",
+   "proposed_destination": "waihi"
+  }
+ ],
+ "existing_fixes": [
+  {
+   "id": "rotorua-8",
+   "name": "Government Gardens",
+   "issue": "Bio sells the Rotorua Museum, which is closed for strengthening to about 2027-28 (skeptic: gardens are open daily and free).",
+   "action": "edit-bio",
+   "new_bio": "Lakeside gardens of Tudor-style buildings and lawns, open daily and free; the museum inside is closed.",
+   "note": "Run python3 scripts/curation/bio-fit.py --text on it. Check the photo is not the museum interior or a pre-2000 view (Rotorua shipped with a 1913 view before)."
+  },
+  {
+   "id": "rotorua-9",
+   "name": "Skyline Rotorua",
+   "issue": "Bio centres the gondola (a vehicle). The spot is the Mount Ngongotahā viewpoint (skeptic).",
+   "action": "edit-bio",
+   "new_bio": "The Mount Ngongotahā lookout above Lake Rotorua, reached by gondola, with a luge ride down.",
+   "note": "Run bio-fit.py. Keep the gondola as a mention only; ticketUrl stays the operator."
+  },
+  {
+   "id": "whakatane-1",
+   "name": "Whakaari / White Island",
+   "issue": "Verdict reject: landings suspended since the December 2019 eruption; seen only from flights and cruises, with the island itself closed to visitors (85,092 views, 2 counted sources, but no public access). No skeptic override.",
+   "action": "remove",
+   "note": "Propose removal for the owner to approve. Its id is never reused. Mention the island in the Whakatāne description/tips instead. Revisit if landings resume."
+  },
+  {
+   "id": "tauranga-5",
+   "name": "Tauranga Historic Village",
+   "issue": "Verdict review resolved to keep by the skeptic (Wikivoyage lists it; free to walk, heritage buildings and studios, 30+ min).",
+   "action": "none",
+   "note": "Optional bio note that shops trade Tue-Sat 10-3."
+  },
+  {
+   "id": "whakatane-3",
+   "name": "Kohi Point Scenic Reserve",
+   "issue": "Verdict review resolved to keep (DOC-promoted walk); the longer Ngā Tapuwae o Toi walk is rejected as its duplicate.",
+   "action": "none"
+  },
+  {
+   "id": "rotorua-6",
+   "name": "Hell's Gate Geothermal Park and Mud Spa",
+   "issue": "Verdict review resolved to keep; counted source is guidebooks/tourism, not Wikivoyage.",
+   "action": "none",
+   "note": "Coordinates are rounded to 2 dp; check at audit."
+  },
+  {
+   "id": "whirinaki-conservation-park",
+   "name": "Whirinaki Te Pua-a-Tāne Conservation Park",
+   "issue": "Already a standalone spot; accepted photo Whirinaki Forest Iconic Waterfall.jpg (CC BY 2.0, 2736 px portrait) offered by this run, and the candidate trailhead point (Minginui, -38.64043, 176.70515) is 4 km from the shipped point (-38.6755, 176.69896).",
+   "action": "review-photo-and-coordinates"
+  }
+ ],
+ "left_to_review_list_not_placed": [
+  "Katikati",
+  "Tūhua (Mayor Island)",
+  "Waikite Valley Thermal Pools",
+  "Mount Tarawera"
+ ],
+ "held_for_photo": [
+  "The Elms",
+  "Papamoa Beach",
+  "Kaiate Falls",
+  "Katikati Bird Gardens",
+  "Ōpōtiki",
+  "Buried Village (Te Wairoa)",
+  "Agrodome",
+  "Kerosene Creek",
+  "Sulphur Bay (Motutara)",
+  "Lake Ōkataina",
+  "Wairere Falls",
+  "Waihi Beach",
+  "Motu Trail"
+ ],
+ "quill_research": [
+  {
+   "id": "tauranga-6",
+   "name": "The Elms",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "tauranga-7",
+   "name": "Papamoa Beach",
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "id": "tauranga-8",
+   "name": "Kaiate Falls",
+   "needs_research": [
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "tauranga-9",
+   "name": "Maketū",
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "id": "tauranga-10",
+   "name": "Katikati Bird Gardens",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "whakatane-4",
+   "name": "Moutohorā (Whale Island)",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "whakatane-5",
+   "name": "Ōhiwa Harbour",
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "id": "whakatane-6",
+   "name": "Ōpōtiki",
+   "needs_research": [
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "rotorua-11",
+   "name": "Whakarewarewa Thermal Village",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "rotorua-12",
+   "name": "Kuirau Park",
+   "needs_research": [
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "rotorua-13",
+   "name": "Buried Village (Te Wairoa)",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "rotorua-14",
+   "name": "Agrodome",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "rotorua-15",
+   "name": "Okere Falls",
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "id": "rotorua-16",
+   "name": "Tarawera Falls",
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "id": "rotorua-17",
+   "name": "Mokoia Island",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "rotorua-18",
+   "name": "Rainbow Mountain (Maunga Kākaramea)",
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "id": "rotorua-19",
+   "name": "Kerosene Creek",
+   "needs_research": [
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "rotorua-20",
+   "name": "Sulphur Bay (Motutara)",
+   "needs_research": [
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "rotorua-21",
+   "name": "Lake Ōkataina",
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "id": "wairere-falls",
+   "name": "Wairere Falls",
+   "needs_research": [
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "waihi-beach",
+   "name": "Waihi Beach",
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "id": "orokawa-bay",
+   "name": "Orokawa Bay",
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "id": "karangahake-gorge",
+   "name": "Karangahake Gorge",
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "id": "motu-trail",
+   "name": "Motu Trail",
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ]
+  }
+ ]
+}

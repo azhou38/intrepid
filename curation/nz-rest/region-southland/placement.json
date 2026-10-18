@@ -1,0 +1,1456 @@
+{
+ "region": "southland",
+ "spots": [
+  {
+   "name": "Bluff",
+   "action": "spot",
+   "destination": "invercargill",
+   "id": "invercargill-5",
+   "coordinates": {
+    "latitude": -46.6,
+    "longitude": 168.3333
+   },
+   "coordinates_source": "wikipedia:Bluff, New Zealand (town article)",
+   "reason": "About 25 km south of the Invercargill centre, inside its 75% span (33.75 km) and reached from the city; Stirling Point is already its spot. Gateway to Stewart Island.",
+   "category": "landmark",
+   "icon": "⚓",
+   "bio": "The southernmost mainland port, known for Bluff oysters and the ferry to Stewart Island.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 21939,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Bluff",
+    "https://en.wikivoyage.org/wiki/Southland",
+    "https://southlandnz.com/things-to-do/"
+   ],
+   "photo": null,
+   "held": "needs a photo",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "status": "held: needs a photo",
+   "wiki": "Bluff, New Zealand"
+  },
+  {
+   "name": "Oreti Beach",
+   "action": "spot",
+   "destination": "invercargill",
+   "id": "invercargill-6",
+   "coordinates": {
+    "latitude": -46.4388,
+    "longitude": 168.2305
+   },
+   "coordinates_source": "OSM tourism=viewpoint 'Oreti Beach' (Sandy Point access); Wikipedia centroid is -46.4019,168.132",
+   "reason": "About 16 km from the centre, inside the span, 15 minutes from the city. Long beach: pinned at its main access point, not the centroid.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "Southland's long, flat surf beach, open to driving, with views of Stewart Island on clear days.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 2019,
+   "counted_sources": [],
+   "photo": null,
+   "held": "needs a photo",
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ],
+   "status": "held: needs a photo"
+  },
+  {
+   "name": "Classic Motorcycle Mecca",
+   "action": "spot",
+   "destination": "invercargill",
+   "id": "invercargill-7",
+   "coordinates": {
+    "latitude": -46.4132,
+    "longitude": 168.3491
+   },
+   "coordinates_source": "OSM node tourism=museum 'Classic Motorcycles Mecca'",
+   "reason": "2 km from the centre, inside the span. Two-floor ticketed museum (Wikivoyage Invercargill).",
+   "category": "museum",
+   "icon": "🏍️",
+   "bio": "A two-floor museum of old and new motorcycles, part of Invercargill's Burt Munro heritage.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": 25,
+   "costMax": 25,
+   "currency": "NZD",
+   "ticketUrl": null,
+   "views": 750,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Invercargill"
+   ],
+   "photo": {
+    "file": "A row of Brough Superiors.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:A_row_of_Brough_Superiors.jpg",
+    "width": 4032,
+    "licence": "CC BY-SA 4.0"
+   },
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "note": "Cost $25 from Wikivoyage; verify."
+  },
+  {
+   "name": "Riverton",
+   "action": "spot",
+   "destination": "invercargill",
+   "id": "invercargill-8",
+   "coordinates": {
+    "latitude": -46.35,
+    "longitude": 168.0167
+   },
+   "coordinates_source": "wikipedia:Riverton / Aparima (town article)",
+   "reason": "About 27 km west of the Invercargill centre, inside the 33.75 km span and reached from Invercargill along the Southern Scenic Route.",
+   "category": "landmark",
+   "icon": "🌊",
+   "bio": "A seaside town on the Aparima estuary with cafes, galleries and a rocky coast on the Southern Scenic Route.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 6348,
+   "counted_sources": [
+    "https://southlandnz.com/places-to-visit/western-southland/"
+   ],
+   "photo": {
+    "file": "00 1444 New Zealand, South Island - Riverton.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:00_1444_New_Zealand,_South_Island_-_Riverton.jpg",
+    "width": 3300,
+    "licence": "CC BY-SA 4.0"
+   },
+   "needs_research": [
+    "ticketUrl",
+    "hours"
+   ],
+   "status": "ready for Pipeline C research",
+   "wiki": "Riverton / Aparima"
+  },
+  {
+   "name": "Bluff Hill Lookout",
+   "action": "spot",
+   "destination": "invercargill",
+   "id": "invercargill-9",
+   "coordinates": {
+    "latitude": -46.6149,
+    "longitude": 168.3388
+   },
+   "coordinates_source": "OSM node tourism=viewpoint 'Bluff Hill Lookout' (-46.61495,168.33878)",
+   "reason": "About 24 km from the centre, inside the span, above Bluff. Not Napier's Bluff Hill Lookout.",
+   "category": "viewpoint",
+   "icon": "🔭",
+   "bio": "Motupohue's summit lookout, with views over Foveaux Strait to Stewart Island.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Bluff"
+   ],
+   "photo": null,
+   "held": "needs a photo",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "status": "held: needs a photo",
+   "wiki": "Bluff Hill / Motupōhue",
+   "note": "Name collides with Napier's Bluff Hill Lookout: confirm the wiki title and photo are Southland's."
+  },
+  {
+   "name": "Foveaux Walkway",
+   "action": "spot",
+   "destination": "invercargill",
+   "id": "invercargill-10",
+   "coordinates": {
+    "latitude": -46.6133,
+    "longitude": 168.3568
+   },
+   "coordinates_source": "OSM way 1152771832 'Foveaux Walkway' at the Stirling Point end (-46.61325,168.3568); candidate point -46.5979,168.3195 was mid-track",
+   "reason": "About 24 km from the centre, inside the span; starts at Stirling Point, which is already a spot.",
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "A 2.5-hour coastal walk from Stirling Point along Bluff's western shore.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/southland/places/invercargill-area/foveaux-walkway/"
+   ],
+   "photo": null,
+   "held": "needs a photo",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "status": "held: needs a photo",
+   "note": "Confirm the DOC track page for the ticketUrl."
+  },
+  {
+   "name": "Lake Te Anau",
+   "action": "spot",
+   "destination": "fiordland",
+   "id": "fiordland-19",
+   "coordinates": {
+    "latitude": -45.4144,
+    "longitude": 167.7225
+   },
+   "coordinates_source": "OSM way 981891076 'Lake Te Anau' at the Te Anau lakefront (not the Wikipedia centroid, which is in the water)",
+   "reason": "Reached from Te Anau, 0 km from the park's lake base, inside the 105 km span.",
+   "category": "nature",
+   "icon": "🏞️",
+   "bio": "The South Island's largest lake, with lakefront walks and cruises towards the western fiords.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 8947,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Te_Anau",
+    "https://en.wikivoyage.org/wiki/Fiordland_National_Park"
+   ],
+   "photo": {
+    "file": "LakeTeAnauNov182024.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:LakeTeAnauNov182024.jpg",
+    "width": 5960,
+    "licence": "CC BY-SA 4.0"
+   },
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "note": "Distinct from the Te Anau town spot (fiordland-9)."
+  },
+  {
+   "name": "Lake Manapouri",
+   "action": "spot",
+   "destination": "fiordland",
+   "id": "fiordland-20",
+   "coordinates": {
+    "latitude": -45.527,
+    "longitude": 167.4809
+   },
+   "coordinates_source": "OSM relation 2786702 centroid (in water); pin should move to a shore point",
+   "reason": "About 55 km from the park centre, inside the span; the start of the Doubtful Sound crossing.",
+   "category": "nature",
+   "icon": "🏞️",
+   "bio": "A deep, island-dotted lake ringed by mountains, crossed by boat on the way to Doubtful Sound.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 6670,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Manapouri",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/places-to-go/lake-manapouri-area/"
+   ],
+   "photo": {
+    "file": "Lake Manapouri towards Holmwood Island.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Lake_Manapouri_towards_Holmwood_Island.jpg",
+    "width": 4890,
+    "licence": "Public domain"
+   },
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ],
+   "status": "ready for Pipeline C research",
+   "note": "Pin must be the lake shore, not Manapouri town (fiordland-13)."
+  },
+  {
+   "name": "Dusky Track",
+   "action": "spot",
+   "destination": "fiordland",
+   "id": "fiordland-21",
+   "coordinates": {
+    "latitude": -45.8306,
+    "longitude": 167.1454
+   },
+   "coordinates_source": "OSM node 'Hauroko Burn Hut' (DOC hut, near the Lake Hauroko end); a true trailhead point is still needed",
+   "reason": "About 97 km from the park centre, inside the 105 km span; a Fiordland National Park track.",
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "A remote 8 to 10 day tramp from Lake Hauroko to Dusky Sound, for experienced, well-equipped walkers.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/things-to-do/tracks/dusky-track/"
+   ],
+   "photo": {
+    "file": "Dusky Track Between Lake Roe and Loch Maree.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Dusky_Track_Between_Lake_Roe_and_Loch_Maree.JPG",
+    "width": 3072,
+    "licence": "CC BY-SA 3.0"
+   },
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ],
+   "status": "ready for Pipeline C research",
+   "visit_days_note": "multi-day; set visitHoursMin/Max in research",
+   "note": "Huts need DOC passes; check cost."
+  },
+  {
+   "name": "Te Anau Bird Sanctuary",
+   "action": "spot",
+   "destination": "fiordland",
+   "id": "fiordland-22",
+   "coordinates": {
+    "latitude": -45.433,
+    "longitude": 167.7133
+   },
+   "coordinates_source": "OSM way 1330766851 'Te Anau Bird Sanctuary / Punanga Manu o Te Anau' (DOC)",
+   "reason": "About 2 km from Te Anau, inside the span.",
+   "category": "nature",
+   "icon": "🦜",
+   "bio": "A DOC-run sanctuary of takahē and other native birds by the lake, a short walk from town.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Te_Anau",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/places-to-go/lake-te-anau-area/punanga-manu-o-te-anau-te-anau-bird-sanctuary/"
+   ],
+   "photo": null,
+   "held": "needs a photo",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "status": "held: needs a photo"
+  },
+  {
+   "name": "North West Circuit",
+   "action": "spot",
+   "destination": "stewart-island",
+   "id": "stewart-island-6",
+   "coordinates": {
+    "latitude": -46.8682,
+    "longitude": 167.9198
+   },
+   "coordinates_source": "OSM Freshwater Landing point given in skeptic.json (-46.8682482,167.9198088); DOC starts the walk at Lee Bay (shared with Rakiura Track), so this is a distinct point on the circuit",
+   "reason": "About 16 km from the island centre, inside the 34 km span; a 125 km circuit, its own spot and not the Rakiura Track.",
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "A 125 km, nine to eleven day circuit of Stewart Island's northern coast, for experienced trampers.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 1128,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Stewart_Island",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/southland/places/stewart-island-rakiura/rakiura-national-park/things-to-do/north-west-circuit-stewart-island-rakiura/"
+   ],
+   "photo": {
+    "file": "North West Circuit Track through grass northeast of Big Sandhill (near Mason Bay).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:North_West_Circuit_Track_through_grass_northeast_of_Big_Sandhill_(near_Mason_Bay).jpg",
+    "width": 6240,
+    "licence": "Public domain"
+   },
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ],
+   "status": "ready for Pipeline C research",
+   "hero_crop": {
+    "x": 0.35,
+    "y": 0.6
+   },
+   "note": "Huts and passes cost money: research cost."
+  },
+  {
+   "name": "Southern Circuit",
+   "action": "spot",
+   "destination": "stewart-island",
+   "id": "stewart-island-7",
+   "coordinates": {
+    "latitude": -46.8982,
+    "longitude": 168.1264
+   },
+   "coordinates_source": "OSM way 228365516 Rakiura National Park Visitor Centre, Oban (from skeptic.json)",
+   "reason": "The walk starts in Oban, inside the destination.",
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "A 71.5 km, four to six day tramp round Stewart Island's southern coast, from Oban or by boat to Freshwater.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Stewart_Island",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/southland/places/stewart-island-rakiura/rakiura-national-park/things-to-do/southern-circuit-stewart-island-rakiura/"
+   ],
+   "photo": {
+    "file": "Stewart Island (Southern Circuit).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Stewart_Island_(Southern_Circuit).jpg",
+    "width": 3264,
+    "licence": "CC BY-SA 2.0"
+   },
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "note": "Huts and passes cost money: research cost."
+  },
+  {
+   "name": "Waipapa Point Lighthouse",
+   "action": "spot",
+   "destination": "catlins",
+   "id": "catlins-7",
+   "coordinates": {
+    "latitude": -46.66,
+    "longitude": 168.847
+   },
+   "coordinates_source": "OSM node man_made=lighthouse (-46.6600622,168.8470512)",
+   "reason": "About 49 km from the Catlins centre, inside its 52.5 km (75% of 70) span; the western gateway to the Catlins on the Southern Scenic Route.",
+   "category": "landmark",
+   "icon": "🗼",
+   "bio": "An 1884 lighthouse built after the SS Tararua wreck, with sea lions on the nearby beach.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 911,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Catlins",
+    "https://southlandnz.com/places-to-visit/the-catlins/"
+   ],
+   "photo": {
+    "file": "Waipapa Point Lighthouse, Otara (10213794756).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Waipapa_Point_Lighthouse,_Otara_(10213794756).jpg",
+    "width": 3972,
+    "licence": "CC BY 2.0"
+   },
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research"
+  },
+  {
+   "name": "Florence Hill Lookouts",
+   "action": "spot",
+   "destination": "catlins",
+   "id": "catlins-8",
+   "coordinates": {
+    "latitude": -46.5744,
+    "longitude": 169.4593
+   },
+   "coordinates_source": "OSM node tourism=viewpoint 'Florence Hill Lookout'",
+   "reason": "About 7 km from the Catlins centre, on the main road.",
+   "category": "viewpoint",
+   "icon": "🔭",
+   "bio": "Two roadside lookouts over Tautuku Bay and its peninsula.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Catlins",
+    "https://southlandnz.com/places-to-visit/the-catlins/"
+   ],
+   "photo": {
+    "file": "View from Florence Hill lookout over Tautuku Bay.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:View_from_Florence_Hill_lookout_over_Tautuku_Bay.jpg",
+    "width": 4896,
+    "licence": "Public domain"
+   },
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research"
+  },
+  {
+   "name": "Surat Bay",
+   "action": "spot",
+   "destination": "catlins",
+   "id": "catlins-9",
+   "coordinates": {
+    "latitude": -46.4813,
+    "longitude": 169.7313
+   },
+   "coordinates_source": "OSM node natural=bay 'Surat Bay' (bay centroid; check the beach access)",
+   "reason": "About 25 km from the Catlins centre, inside the span.",
+   "category": "beach",
+   "icon": "🦭",
+   "bio": "A beach with a colony of New Zealand sea lions among the dunes, 20 to 30 minutes' walk return.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Catlins"
+   ],
+   "photo": null,
+   "held": "needs a photo",
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ],
+   "status": "held: needs a photo"
+  },
+  {
+   "name": "Mavora Lakes",
+   "action": "standalone",
+   "destination": null,
+   "id": "mavora-lakes",
+   "coordinates": {
+    "latitude": -45.3665,
+    "longitude": 168.1184
+   },
+   "coordinates_source": "OSM survey point 'Mavora Lakes' (-45.36653,168.11838); Wikipedia centroid -45.2556,168.168",
+   "reason": "About 60 km from the Fiordland centre but outside the national park (Mavora Lakes Conservation Park, Te Wahipounamu), reached via Mossburn, not from a park base.",
+   "category": "nature",
+   "icon": "🏞️",
+   "bio": "Twin lakes ringed by tussock and beech in a conservation park, with camping and walking tracks.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 6,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 2521,
+   "counted_sources": [
+    "https://southlandnz.com/places-to-visit/northern-southland/",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/southland/places/mavora-lakes-conservation-park/"
+   ],
+   "photo": {
+    "file": "North Mavora Lake towards southwest with snow-covered Livingstone Mountains in the background.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:North_Mavora_Lake_towards_southwest_with_snow-covered_Livingstone_Mountains_in_the_background.jpg",
+    "width": 4896,
+    "licence": "Public domain"
+   },
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ],
+   "status": "ready for Pipeline C research",
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland"
+  },
+  {
+   "name": "Around the Mountains Cycle Trail",
+   "action": "standalone",
+   "destination": null,
+   "id": "around-the-mountains-cycle-trail",
+   "coordinates": {
+    "latitude": -45.3333,
+    "longitude": 168.7167
+   },
+   "coordinates_source": "wikipedia:Around the Mountains Cycle Trail (centroid at Athol); a start point (Walter Peak / Athol) is needed",
+   "reason": "Runs from Walter Peak to Kingston and Mossburn; no destination holds it.",
+   "category": "hike",
+   "icon": "🚴",
+   "bio": "A multi-day cycle trail through the Southern Lakes high country, from Walter Peak to Kingston and Athol.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 587,
+   "counted_sources": [
+    "https://southlandnz.com/things-to-do/",
+    "https://southlandnz.com/places-to-visit/central-southland/"
+   ],
+   "photo": {
+    "file": "Cycle Trail, Tom's Hill, Athol.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Cycle_Trail,_Tom's_Hill,_Athol.jpg",
+    "width": 2592,
+    "licence": "CC BY-SA 3.0"
+   },
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ],
+   "status": "ready for Pipeline C research",
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland"
+  },
+  {
+   "name": "South Coast Track",
+   "action": "standalone",
+   "destination": null,
+   "id": "south-coast-track",
+   "coordinates": {
+    "latitude": -46.1481,
+    "longitude": 167.4595
+   },
+   "coordinates_source": "OSM way 503705694 'South Coast Track' at the Hump Ridge end (Rarakau); DOC to confirm trailhead (the candidate's -43.4,146.2 was the Tasmanian track)",
+   "reason": "About 130 km from the Fiordland centre, outside its span; links Hump Ridge with Lake Hauroko and has no base.",
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "A DOC multi-day coastal tramp through Fiordland's south, linking Port Craig and Waitutu with Lake Hauroko.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 1608,
+   "counted_sources": [
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/things-to-do/tracks/south-coast-track/"
+   ],
+   "photo": null,
+   "held": "needs a photo",
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ],
+   "status": "held: needs a photo",
+   "note": "Not the Tasmanian South Coast Track.",
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland"
+  },
+  {
+   "name": "Colac Bay",
+   "action": "standalone",
+   "destination": null,
+   "id": "colac-bay",
+   "coordinates": {
+    "latitude": -46.359,
+    "longitude": 167.8999
+   },
+   "coordinates_source": "OSM place node 'Colac Bay'",
+   "reason": "About 37 km from Invercargill, outside its 33.75 km span, on the Southern Scenic Route.",
+   "category": "beach",
+   "icon": "🏄",
+   "bio": "A surf beach and village on the Southern Scenic Route, one of Southland's best-known surf spots.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 2132,
+   "counted_sources": [
+    "https://southlandnz.com/places-to-visit/western-southland/"
+   ],
+   "photo": null,
+   "held": "needs a photo",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "status": "held: needs a photo",
+   "proposed_destination": "tuatapere",
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland"
+  },
+  {
+   "name": "Gemstone Beach",
+   "action": "standalone",
+   "destination": null,
+   "id": "gemstone-beach",
+   "coordinates": {
+    "latitude": -46.2765,
+    "longitude": 167.7296
+   },
+   "coordinates_source": "OSM node tourism=attraction 'Gemstone Beach'",
+   "reason": "49 km from Invercargill, outside every span.",
+   "category": "beach",
+   "icon": "💎",
+   "bio": "A shingle beach near Orepuki where visitors hunt for agate and other gemstones.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://southlandnz.com/places-to-visit/western-southland/"
+   ],
+   "photo": null,
+   "held": "needs a photo",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "status": "held: needs a photo",
+   "proposed_destination": "tuatapere",
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland"
+  },
+  {
+   "name": "Te Waewae Bay",
+   "action": "standalone",
+   "destination": null,
+   "id": "te-waewae-bay",
+   "coordinates": {
+    "latitude": -46.2353,
+    "longitude": 167.5252
+   },
+   "coordinates_source": "OSM relation 9573839 centroid (bay); a headland lookout point is needed",
+   "reason": "About 70 km west of Invercargill, outside every span; viewed from the Southern Scenic Route headlands.",
+   "category": "nature",
+   "icon": "🐬",
+   "bio": "A wide bay along the Southern Scenic Route, home to one of the largest groups of Hector's dolphins.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 1097,
+   "counted_sources": [
+    "https://southlandnz.com/places-to-visit/western-southland/"
+   ],
+   "photo": {
+    "file": "Pláž Te Waewae Bay, Pahia Hill - panoramio.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Pl%C3%A1%C5%BE_Te_Waewae_Bay,_Pahia_Hill_-_panoramio.jpg",
+    "width": 2592,
+    "licence": "CC BY 3.0"
+   },
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ],
+   "status": "ready for Pipeline C research",
+   "proposed_destination": "tuatapere",
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland"
+  },
+  {
+   "name": "Hokonui Heritage Centre",
+   "action": "standalone",
+   "destination": null,
+   "id": "hokonui-heritage-centre",
+   "coordinates": {
+    "latitude": -46.0973,
+    "longitude": 168.9459
+   },
+   "coordinates_source": "OSM node tourism=museum 'Hokonui Moonshine Museum' (-46.0972934,168.9458511)",
+   "reason": "Gore is about 60 km from Invercargill, outside its span. Spot of proposed Gore, standalone until approved.",
+   "category": "museum",
+   "icon": "🥃",
+   "bio": "The Hokonui Moonshine Museum and Gore Historical Museum, telling the story of Southland's illicit whisky.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Gore",
+    "https://southlandnz.com/places-to-visit/gore-district/"
+   ],
+   "photo": null,
+   "held": "needs a photo",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "held: needs a photo",
+   "proposed_destination": "gore",
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland"
+  },
+  {
+   "name": "Eastern Southland Gallery",
+   "action": "standalone",
+   "destination": null,
+   "id": "eastern-southland-gallery",
+   "coordinates": {
+    "latitude": -46.098,
+    "longitude": 168.946
+   },
+   "coordinates_source": "OSM node tourism=gallery (-46.0979982,168.9460165)",
+   "reason": "Gore, outside every span. Spot of proposed Gore.",
+   "category": "museum",
+   "icon": "🖼️",
+   "bio": "A free gallery in a former Carnegie library, with the Ralph Hotere and John Money collections.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 384,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Gore",
+    "https://southlandnz.com/places-to-visit/gore-district/"
+   ],
+   "photo": {
+    "file": "The Old Public Library (Gore).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:The_Old_Public_Library_(Gore).jpg",
+    "width": 4000,
+    "licence": "CC BY-SA 2.0"
+   },
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "proposed_destination": "gore",
+   "hero_crop": {
+    "x": 0.5,
+    "y": 0.45
+   },
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland"
+  },
+  {
+   "name": "Brown Trout Statue",
+   "action": "standalone",
+   "destination": null,
+   "id": "brown-trout-statue",
+   "coordinates": {
+    "latitude": -46.0986,
+    "longitude": 168.9472
+   },
+   "coordinates_source": "Wikivoyage Gore listing; confirm on OSM",
+   "reason": "Gore, outside every span. Spot of proposed Gore. Roadside icon in the Ohakune Carrot class.",
+   "category": "landmark",
+   "icon": "🐟",
+   "bio": "A 9 m brown trout sculpture at the entrance to Gore, the self-styled brown trout fishing capital.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Gore"
+   ],
+   "photo": {
+    "file": "NZ140315 Gore Trout.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:NZ140315_Gore_Trout.jpg",
+    "width": 2000,
+    "licence": "CC BY-SA 3.0"
+   },
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ],
+   "status": "ready for Pipeline C research",
+   "proposed_destination": "gore",
+   "hero_crop": {
+    "x": 0.4,
+    "y": 0.4
+   },
+   "country": "New Zealand",
+   "countryCode": "NZ",
+   "continent": "Oceania",
+   "timezone": "Pacific/Auckland"
+  }
+ ],
+ "covered_by_existing_destination": [
+  {
+   "name": "Invercargill",
+   "action": "covered-by-existing-destination",
+   "destination": "invercargill",
+   "reason": "Already a destination or its own spot; listing it again would be a spot of itself."
+  },
+  {
+   "name": "Oban",
+   "action": "covered-by-existing-destination",
+   "destination": "stewart-island",
+   "reason": "Already a destination or its own spot; listing it again would be a spot of itself."
+  },
+  {
+   "name": "Te Anau",
+   "action": "covered-by-existing-destination",
+   "destination": "fiordland (fiordland-9 existing spot)",
+   "reason": "Already a destination or its own spot; listing it again would be a spot of itself."
+  },
+  {
+   "name": "Manapouri",
+   "action": "covered-by-existing-destination",
+   "destination": "fiordland (fiordland-13 existing spot)",
+   "reason": "Already a destination or its own spot; listing it again would be a spot of itself."
+  }
+ ],
+ "existing_keeps": [
+  {
+   "id": "fiordland-13",
+   "name": "Manapouri"
+  },
+  {
+   "id": "fiordland-9",
+   "name": "Te Anau"
+  },
+  {
+   "id": "invercargill-3",
+   "name": "Queens Park"
+  },
+  {
+   "id": "invercargill-2",
+   "name": "Bill Richardson Transport World"
+  },
+  {
+   "id": "invercargill-1",
+   "name": "E Hayes and Sons"
+  },
+  {
+   "id": "invercargill-4",
+   "name": "Stirling Point"
+  },
+  {
+   "id": "catlins-6",
+   "name": "Slope Point"
+  },
+  {
+   "id": "hump-ridge-track",
+   "name": "Hump Ridge Track"
+  },
+  {
+   "id": "fiordland-5",
+   "name": "Te Ana-au Caves"
+  },
+  {
+   "id": "fiordland-7",
+   "name": "Kepler Track"
+  },
+  {
+   "id": "fiordland-6",
+   "name": "Milford Track"
+  },
+  {
+   "id": "fiordland-8",
+   "name": "Routeburn Track"
+  },
+  {
+   "id": "fiordland-11",
+   "name": "Routeburn Track Key Summit Track"
+  },
+  {
+   "id": "fiordland-15",
+   "name": "Hollyford Track"
+  },
+  {
+   "id": "fiordland-3",
+   "name": "Mirror Lakes"
+  },
+  {
+   "id": "fiordland-17",
+   "name": "Lake Gunn"
+  },
+  {
+   "id": "fiordland-12",
+   "name": "Lake Marian"
+  },
+  {
+   "id": "fiordland-10",
+   "name": "The Chasm"
+  },
+  {
+   "id": "fiordland-4",
+   "name": "Homer Tunnel"
+  },
+  {
+   "id": "fiordland-1",
+   "name": "Milford Sound"
+  },
+  {
+   "id": "fiordland-14",
+   "name": "Bowen Falls"
+  },
+  {
+   "id": "fiordland-18",
+   "name": "Sutherland Falls"
+  },
+  {
+   "id": "fiordland-2",
+   "name": "Doubtful Sound"
+  },
+  {
+   "id": "catlins-5",
+   "name": "Curio Bay"
+  },
+  {
+   "id": "catlins-3",
+   "name": "Cathedral Caves"
+  },
+  {
+   "id": "catlins-4",
+   "name": "McLean Falls"
+  },
+  {
+   "id": "catlins-2",
+   "name": "Purakaunui Falls"
+  },
+  {
+   "id": "catlins-1",
+   "name": "Nugget Point"
+  },
+  {
+   "id": "stewart-island-4",
+   "name": "Observation Rock"
+  },
+  {
+   "id": "stewart-island-1",
+   "name": "Ulva Island"
+  },
+  {
+   "id": "stewart-island-2",
+   "name": "Rakiura Track"
+  },
+  {
+   "id": "stewart-island-5",
+   "name": "Mason Bay"
+  },
+  {
+   "id": "clifden-suspension-bridge",
+   "name": "Clifden Suspension Bridge"
+  }
+ ],
+ "new_destinations": [
+  {
+   "id": "gore",
+   "name": "Gore",
+   "action": "new-destination",
+   "rank": 5,
+   "coordinates": {
+    "latitude": -46.0992,
+    "longitude": 168.9464
+   },
+   "coordinates_source": "Wikivoyage Southland region page (town point; confirm on Wikipedia Gore, New Zealand)",
+   "suggested_defaultZoomSpanKm": 25,
+   "category": "city",
+   "spots": [
+    "hokonui-heritage-centre",
+    "eastern-southland-gallery",
+    "brown-trout-statue"
+   ],
+   "views": 25986,
+   "counted_sources": 3,
+   "photo": "none: only an ordinary main street on Commons (held)",
+   "case": "Southland's second town (Wikivoyage chapter, 3 counted sources) with a museum, a gallery and the brown trout icon; about 60 km from Invercargill.",
+   "status": "proposal only, needs description, reasons with photos, tips, best months, header"
+  },
+  {
+   "id": "tuatapere",
+   "name": "Tuatapere",
+   "action": "new-destination",
+   "rank": 5,
+   "coordinates": {
+    "latitude": -46.13,
+    "longitude": 167.69
+   },
+   "coordinates_source": "base for the Southern Scenic Route's west leg; confirm on OSM place node (not taken from a source here)",
+   "suggested_defaultZoomSpanKm": 60,
+   "category": "city",
+   "spots": [
+    "hump-ridge-track",
+    "clifden-suspension-bridge",
+    "te-waewae-bay",
+    "gemstone-beach",
+    "colac-bay"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "photo": "none (town was review, photo not sought)",
+   "case": "Five kept places round one base, but Tuatapere itself is a REVIEW verdict (a services stop whose draw is the journey beyond), so the proposal depends on the owner approving it. If declined, all five stay as they are (two existing standalone, three new standalone).",
+   "status": "proposal only, needs the owner's decision on Tuatapere, then description, reasons with photos, tips, best months, header"
+  }
+ ],
+ "new_destination_note": "Two new destinations proposed for the owner: Gore (town with museum, gallery and the Brown Trout icon, standalone spots until approved) and Tuatapere (depends on the Tuatapere review verdict; clusters Hump Ridge, Clifden Bridge, Te Waewae Bay, Gemstone Beach, Colac Bay). Bluff is kept as a spot of Invercargill, not a destination: it is 25 km from the centre, inside its span, and a Bluff destination would overlap Invercargill. Riverton is inside Invercargill's span and a spot of it. Catlins spots Nugget Point, Curio Bay, Cathedral Caves, McLean Falls, Purakaunui Falls and Slope Point already exist (catlins-1 to 6) and are not duplicated; Waipapa Point Lighthouse, Florence Hill Lookouts and Surat Bay are new. Ids continue from the git-history maximum: invercargill-4, fiordland-18, stewart-island-5, catlins-6.",
+ "spot_of_proposed_destination": [
+  {
+   "id": "colac-bay",
+   "name": "Colac Bay",
+   "proposed_destination": "tuatapere"
+  },
+  {
+   "id": "gemstone-beach",
+   "name": "Gemstone Beach",
+   "proposed_destination": "tuatapere"
+  },
+  {
+   "id": "te-waewae-bay",
+   "name": "Te Waewae Bay",
+   "proposed_destination": "tuatapere"
+  },
+  {
+   "id": "hokonui-heritage-centre",
+   "name": "Hokonui Heritage Centre",
+   "proposed_destination": "gore"
+  },
+  {
+   "id": "eastern-southland-gallery",
+   "name": "Eastern Southland Gallery",
+   "proposed_destination": "gore"
+  },
+  {
+   "id": "brown-trout-statue",
+   "name": "Brown Trout Statue",
+   "proposed_destination": "gore"
+  },
+  {
+   "id": "hump-ridge-track",
+   "name": "Hump Ridge Track",
+   "proposed_destination": "tuatapere",
+   "existing": true
+  },
+  {
+   "id": "clifden-suspension-bridge",
+   "name": "Clifden Suspension Bridge",
+   "proposed_destination": "tuatapere",
+   "existing": true
+  }
+ ],
+ "existing_fixes": [
+  {
+   "id": "fiordland-18",
+   "name": "Sutherland Falls",
+   "issue": "Skeptic kept: NZ's tallest falls on Wikivoyage and DOC lists, a signed side trip off the Milford Track, not a duplicate of it.",
+   "action": "none",
+   "note": "OSM waterfall point -44.8006584,167.7294898 is within the existing coordinates; keep."
+  },
+  {
+   "id": "fiordland-16",
+   "name": "Monkey Creek",
+   "issue": "Skeptic: review. Short roadside pull-out, no counted source, no guide singles it out.",
+   "action": "owner-decision (review)",
+   "note": "Do not remove automatically; the owner decides after a guide check."
+  },
+  {
+   "id": "invercargill-1",
+   "name": "E Hayes and Sons",
+   "issue": "Skeptic kept: a hardware store, but the free Burt Munro Indian display is the Wikivoyage-named draw.",
+   "action": "edit-bio-if-needed",
+   "note": "Make sure the bio names the Burt Munro Indian display, not the shop; free: true."
+  },
+  {
+   "id": "fiordland-4",
+   "name": "Homer Tunnel",
+   "issue": "Skeptic kept as an obvious Milford Road icon with no counted source in the data (Wikipedia and Wikivoyage/DOC mention).",
+   "action": "none-unless-research-disagrees",
+   "note": "Research a counted source (DOC Milford Road page) during Pipeline C."
+  },
+  {
+   "id": "stewart-island-5",
+   "name": "Mason Bay",
+   "issue": "Coordinates were an approximate access point from OSM Nominatim.",
+   "action": "check-coordinates",
+   "note": "Run the coordinate audit; a long beach pinned at its visitor access point."
+  },
+  {
+   "id": "fiordland-8",
+   "name": "Routeburn Track",
+   "issue": "Shared with Otago/Queenstown; the Wikipedia point (-44.727,168.170) lies on the Otago side and differs from the existing coordinates.",
+   "action": "none",
+   "note": "Keep the existing fiordland-8 pin; do not duplicate in Otago."
+  }
+ ],
+ "left_to_review_list_not_placed": [
+  "Tuatapere",
+  "Demolition World",
+  "Te Unua Museum of Southland",
+  "Anderson Park",
+  "Waituna Lagoon",
+  "Lake Hauroko",
+  "Dusky Sound",
+  "Tunnel Hill",
+  "Owaka Museum and Catlins Information Centre",
+  "Monkey Island (Te Puka a Takitimu)",
+  "Gertrude Saddle Route",
+  "Monkey Creek"
+ ],
+ "held_for_photo": [
+  "Bluff",
+  "Oreti Beach",
+  "Bluff Hill Lookout",
+  "Foveaux Walkway",
+  "Te Anau Bird Sanctuary",
+  "Surat Bay",
+  "South Coast Track",
+  "Colac Bay",
+  "Gemstone Beach",
+  "Hokonui Heritage Centre"
+ ],
+ "quill_research": [
+  {
+   "id": "invercargill-5",
+   "name": "Bluff",
+   "needs_research": [
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "invercargill-6",
+   "name": "Oreti Beach",
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "id": "invercargill-7",
+   "name": "Classic Motorcycle Mecca",
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "invercargill-8",
+   "name": "Riverton",
+   "needs_research": [
+    "ticketUrl",
+    "hours"
+   ]
+  },
+  {
+   "id": "invercargill-9",
+   "name": "Bluff Hill Lookout",
+   "needs_research": [
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "invercargill-10",
+   "name": "Foveaux Walkway",
+   "needs_research": [
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "fiordland-19",
+   "name": "Lake Te Anau",
+   "needs_research": [
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "fiordland-20",
+   "name": "Lake Manapouri",
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "id": "fiordland-21",
+   "name": "Dusky Track",
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "id": "fiordland-22",
+   "name": "Te Anau Bird Sanctuary",
+   "needs_research": [
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "stewart-island-6",
+   "name": "North West Circuit",
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "id": "stewart-island-7",
+   "name": "Southern Circuit",
+   "needs_research": [
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "catlins-7",
+   "name": "Waipapa Point Lighthouse",
+   "needs_research": [
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "catlins-8",
+   "name": "Florence Hill Lookouts",
+   "needs_research": [
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "catlins-9",
+   "name": "Surat Bay",
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "id": "mavora-lakes",
+   "name": "Mavora Lakes",
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "id": "around-the-mountains-cycle-trail",
+   "name": "Around the Mountains Cycle Trail",
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "id": "south-coast-track",
+   "name": "South Coast Track",
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "id": "colac-bay",
+   "name": "Colac Bay",
+   "needs_research": [
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "gemstone-beach",
+   "name": "Gemstone Beach",
+   "needs_research": [
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "te-waewae-bay",
+   "name": "Te Waewae Bay",
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "id": "hokonui-heritage-centre",
+   "name": "Hokonui Heritage Centre",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "eastern-southland-gallery",
+   "name": "Eastern Southland Gallery",
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "brown-trout-statue",
+   "name": "Brown Trout Statue",
+   "needs_research": [
+    "ticketUrl",
+    "coordinates"
+   ]
+  }
+ ]
+}

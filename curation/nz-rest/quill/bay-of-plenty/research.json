@@ -1,0 +1,1283 @@
+{
+ "region": "bay-of-plenty",
+ "generated": "2026-10-18",
+ "entries": [
+  {
+   "id": "tauranga-6",
+   "name": "The Elms",
+   "kind": "new",
+   "category": "historic",
+   "held": true,
+   "wiki": "The Elms, Tauranga",
+   "facts": [
+    {
+     "claim": "Operator site: open 11am-3pm Tuesday to Saturday, closed Sundays and Mondays; guided tours 11am-3pm without pre-booking.",
+     "source": "https://theelms.org.nz/plan-your-visit/"
+    },
+    {
+     "claim": "Admission $20 adult (grounds plus guided tour of the House and Library); child up to 18 free; 50% off for Tauranga residents.",
+     "source": "https://theelms.org.nz/plan-your-visit/"
+    },
+    {
+     "claim": "Wikivoyage Tauranga lists The Elms (Te Papa Tauranga) with official site theelms.org.nz.",
+     "source": "https://en.wikivoyage.org/wiki/Tauranga"
+    }
+   ],
+   "hours": "11:00 AM – 3:00 PM",
+   "closedDays": [
+    0,
+    1
+   ],
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 20,
+   "costMax": 20,
+   "currency": "NZD",
+   "ticketUrl": "https://theelms.org.nz/plan-your-visit/",
+   "ticketUrl_note": "Loaded; title 'The Elms | Te Papa Tauranga - Plan your visit'. Homepage https://theelms.org.nz/ is the Wikivoyage link.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -37.6767,
+     "longitude": 176.168
+    },
+    "source_point": [
+     -37.6767,
+     176.16772
+    ],
+    "source": "OSM leisure=park/tourism=museum way 58872638 (Photon)",
+    "ok": true,
+    "distance_m": 24
+   },
+   "new_bio": "An 1847 mission station and garden; guided tours of the mission house run Tuesday to Saturday.",
+   "unverified": [
+    "1847 date comes from the placement, not a page I read. Photo needs brightening (placement)."
+   ]
+  },
+  {
+   "id": "tauranga-7",
+   "name": "Papamoa Beach",
+   "kind": "new",
+   "category": "beach",
+   "held": true,
+   "wiki": "Papamoa",
+   "facts": [
+    {
+     "claim": "Wikipedia: Pāpāmoa is a Tauranga suburb about 11 km from the city centre, bordered east by the Kaituna River.",
+     "source": "https://en.wikipedia.org/wiki/Papamoa"
+    },
+    {
+     "claim": "Wikivoyage Te Puke: 'Go swimming on the local beaches at Papamoa, or Maketu'.",
+     "source": "https://en.wikivoyage.org/wiki/Te_Puke"
+    },
+    {
+     "claim": "OSM: Pāpāmoa Domain (leisure=park) sits at the beach end of Domain Road; the shipped point is the OSM place=suburb node, not a beach access.",
+     "source": "https://www.openstreetmap.org/way/365457457"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Public beach in council reserves, no single steward with a visitor page found; none.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -37.69727,
+     "longitude": 176.28483
+    },
+    "source_point": [
+     -37.69698,
+     176.28576
+    ],
+    "source": "OSM leisure=park way 365457457 'Pāpāmoa Domain' (Photon); current is a place=suburb node",
+    "ok": false,
+    "distance_m": 88,
+    "recommended": {
+     "latitude": -37.69698,
+     "longitude": 176.28576
+    }
+   },
+   "unverified": [
+    "Free and 24h are judgement for a public beach. Bio 'long surf and swimming beach' not read in a fetched source (Wikivoyage says swim at the beaches)."
+   ]
+  },
+  {
+   "id": "tauranga-8",
+   "name": "Kaiate Falls",
+   "kind": "new",
+   "category": "nature",
+   "held": true,
+   "facts": [
+    {
+     "claim": "Wikivoyage Tauranga names Kaiate Falls among the Tauranga region's waterfalls.",
+     "source": "https://en.wikivoyage.org/wiki/Tauranga"
+    },
+    {
+     "claim": "OSM waterway=waterfall node at -37.76001,176.24139; Kaiate Falls Carpark (amenity=parking) at -37.76060,176.24169.",
+     "source": "https://www.openstreetmap.org/node/6167792396"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Tauranga City Council has no page I could find: guessed /Parks-and-recreation paths return the generic index; left out rather than guess.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -37.76001,
+     "longitude": 176.24139
+    },
+    "source_point": [
+     -37.76001,
+     176.24139
+    ],
+    "source": "OSM waterway=waterfall node; car park 71 m away",
+    "ok": true,
+    "distance_m": 0
+   },
+   "unverified": [
+    "Free, 24h and walk length not read on an operator page. Bio 'short walk' unsourced."
+   ]
+  },
+  {
+   "id": "tauranga-9",
+   "name": "Maketū",
+   "kind": "new",
+   "category": "historic",
+   "facts": [
+    {
+     "claim": "Wikipedia: Maketu is a small town on the Western Bay of Plenty coast, 38 km from Tauranga and 56 km from Rotorua.",
+     "source": "https://en.wikipedia.org/wiki/Maketu"
+    },
+    {
+     "claim": "Wikivoyage Te Puke suggests swimming at Maketu beach; lists Seaside Cafe & Restaurant at 2 Townpoint Rd.",
+     "source": "https://en.wikivoyage.org/wiki/Te_Puke"
+    },
+    {
+     "claim": "OSM: place=town node at -37.75826,176.45403; historic archaeological_site (pa) 'Maketū' at -37.75653,176.46087.",
+     "source": "https://www.openstreetmap.org/node/11681315713"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A settlement with no single steward; none.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -37.75826,
+     "longitude": 176.45403
+    },
+    "source_point": [
+     -37.75653,
+     176.46087
+    ],
+    "source": "OSM town node (matches) and pa site 630 m east; town centre kept as the settlement point",
+    "ok": true,
+    "distance_m": 5
+   },
+   "new_bio_note": "The 'landing place of a waka' claim is not in any page I fetched (Wikipedia summary does not say it); cut or source it from the Wikipedia article before keeping. Suggested: 'A small coastal town at the mouth of the Maketū estuary, 38 km from Tauranga, with a beach.'",
+   "unverified": [
+    "Waka landing claim unsourced; 'cliffed coast' unsourced."
+   ]
+  },
+  {
+   "id": "tauranga-10",
+   "name": "Katikati Bird Gardens",
+   "kind": "new",
+   "category": "nature",
+   "held": true,
+   "facts": [
+    {
+     "claim": "Operator contact page: open 10am-4.30pm; winter 2026 (from May) weekends and school holidays only, also King's Birthday and Matariki; closed Christmas Day; 263 Walker Road East, Aongatete.",
+     "source": "https://www.birdgardens.co.nz/contact"
+    },
+    {
+     "claim": "Entry: adults $13, seniors and students $12, children $8, family $36; golf cart $30 per half hour.",
+     "source": "https://www.birdgardens.co.nz/entry-prices"
+    },
+    {
+     "claim": "About: gardens created in 1976 on ten acres at the edge of Tauranga harbour; about 1.5 km of paths, garden and aviary tour 45-60 min, cafe.",
+     "source": "https://www.birdgardens.co.nz/about"
+    },
+    {
+     "claim": "Wikivoyage Tauranga lists it with url birdgardens.co.nz.",
+     "source": "https://en.wikivoyage.org/wiki/Tauranga"
+    }
+   ],
+   "hours": "10:00 AM – 4:30 PM",
+   "specialClosures": [
+    "12-25"
+   ],
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 13,
+   "costMax": 13,
+   "currency": "NZD",
+   "ticketUrl": "https://www.birdgardens.co.nz/",
+   "ticketUrl_note": "Loaded; title 'Things to do | Katikati Bird Gardens'.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -37.5835,
+     "longitude": 175.9418
+    },
+    "source_point": [
+     -37.58355,
+     175.94257
+    ],
+    "source": "OSM tourism=attraction way 142996034",
+    "ok": true,
+    "distance_m": 68
+   },
+   "new_bio": "Ten acres of gardens and wetland on the harbour edge, with free-roaming birds, aviaries and a cafe; open weekends only in winter.",
+   "unverified": [
+    "Golf-cart tours exist but only for limited mobility per the site; drop 'golf-cart tours' from the placement bio."
+   ]
+  },
+  {
+   "id": "whakatane-4",
+   "name": "Moutohorā (Whale Island)",
+   "kind": "new",
+   "category": "nature",
+   "held": true,
+   "wiki": "Moutohora Island",
+   "facts": [
+    {
+     "claim": "DOC: 143 ha wildlife management reserve; public access restricted to permit holders and approved tour parties led by concessionaires; hot springs in Sulphur Valley and bays; tuatara, kiwi and saddleback introduced.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/whakatane-area/moutohora-whale-island-wildlife-management-reserve"
+    },
+    {
+     "claim": "The operator site moutohora.co.nz shows a maintenance page; the whakatane.com tour page is blocked (403). Operator status unconfirmed (a search summary said the tour boat was being sold).",
+     "source": "https://www.moutohora.co.nz/"
+    }
+   ],
+   "hours": "Guided tours only; check with operator",
+   "visitHoursMin": 3,
+   "visitHoursMax": 4,
+   "costMin": 149,
+   "costMax": 169,
+   "currency": "NZD",
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/whakatane-area/moutohora-whale-island-wildlife-management-reserve",
+   "ticketUrl_note": "DOC page loaded and names the place; sold by several concessionaires so the managing agency is the right link. Operator link BLOCKED: https://www.whakatane.com/see-and-do/moutohora-island-sanctuary-tour (403); orchestrator may check in a browser.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -37.85343,
+     "longitude": 176.96949
+    },
+    "source_point": [
+     -37.85343,
+     176.96949
+    ],
+    "source": "OSM place=island relation 15465016",
+    "ok": true,
+    "distance_m": 0
+   },
+   "new_bio": "A pest-free wildlife reserve island off Whakatāne with seals and a hot-water beach, visited only on permitted boat tours.",
+   "unverified": [
+    "Price 149-169 is from search-result summaries of operator listings, not a page I loaded; tours may be paused while the boat changes hands. Recommend hold until the operator is confirmed."
+   ]
+  },
+  {
+   "id": "whakatane-5",
+   "name": "Ōhiwa Harbour",
+   "kind": "new",
+   "category": "nature",
+   "wiki": "Ōhiwa Harbour",
+   "facts": [
+    {
+     "claim": "Wikipedia: natural harbour between Ōhope and Ōhiwa in the Bay of Plenty.",
+     "source": "https://en.wikipedia.org/wiki/%C5%8Chiwa_Harbour"
+    },
+    {
+     "claim": "DOC lists Tauwhare Pā short walk with panoramic views over Ōhiwa Harbour (Wainui Road, Ōhope) and the harbour's estuarine wetlands as feeding grounds for migratory shorebirds.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/whakatane-area/tauwhare-pa-scenic-reserve/"
+    },
+    {
+     "claim": "OSM: place=village Ōhiwa at -37.98876,177.15937; information board at -37.98866,177.15915; viewpoint bench at -37.99197,177.16399; natural=bay centroid is in the water at -38.011,177.128.",
+     "source": "https://www.openstreetmap.org/node/6371141069"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "No single steward or official visitor page found (DOC has no Ōhiwa Harbour page; kayak tours are sold by operators); none.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -37.9893,
+     "longitude": 177.1615
+    },
+    "source_point": [
+     -37.98866,
+     177.15915
+    ],
+    "source": "OSM information board at Ōhiwa village on the harbour edge; the bay centroid is in water",
+    "ok": true,
+    "distance_m": 200,
+    "recommended": {
+     "latitude": -37.98866,
+     "longitude": 177.15915
+    }
+   },
+   "unverified": [
+    "Bio 'sea kayak tours' is not from a page I read."
+   ]
+  },
+  {
+   "id": "whakatane-6",
+   "name": "Ōpōtiki",
+   "kind": "new",
+   "category": "historic",
+   "held": true,
+   "facts": [
+    {
+     "claim": "Wikipedia: town in the eastern Bay of Plenty, seat of Ōpōtiki District Council.",
+     "source": "https://en.wikipedia.org/wiki/%C5%8Cp%C5%8Dtiki"
+    },
+    {
+     "claim": "Wikivoyage Opotiki lists Opotiki Museum, the Motu Trail Cycleway and the Information Centre.",
+     "source": "https://en.wikivoyage.org/wiki/Opotiki"
+    },
+    {
+     "claim": "OSM place=town node at -38.00424,177.28713.",
+     "source": "https://www.openstreetmap.org/node/438960507"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Wikivoyage's visitor site opotikinz.co.nz returned a bot challenge (202) with no readable content; not recorded. No council visitor page verified.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -38.00424,
+     "longitude": 177.28713
+    },
+    "source_point": [
+     -38.00424,
+     177.28713
+    ],
+    "source": "OSM town node / Wikipedia",
+    "ok": true,
+    "distance_m": 0
+   },
+   "unverified": [
+    "Gateway-to-Waioeka-Gorge/East Cape claim in the bio is not from a fetched page."
+   ]
+  },
+  {
+   "id": "rotorua-11",
+   "name": "Whakarewarewa Thermal Village",
+   "kind": "new",
+   "category": "historic",
+   "wiki": "Whakarewarewa",
+   "facts": [
+    {
+     "claim": "Operator: open 7 days 8.30am-4pm; last tickets 3pm guided village tour, 3.15pm self-guided geothermal trails.",
+     "source": "https://whakarewarewa.com/"
+    },
+    {
+     "claim": "Prices: self-guided geothermal trails adult $42, child (5-15) $21; guided village tour adult $55, child $27.50; under 5 free.",
+     "source": "https://whakarewarewa.com/"
+    },
+    {
+     "claim": "Home of the Tūhourangi Ngāti Wāhiao people, sharing their way of life with visitors for over two hundred years.",
+     "source": "https://whakarewarewa.com/"
+    }
+   ],
+   "hours": "8:30 AM – 4:00 PM",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "costMin": 42,
+   "costMax": 55,
+   "currency": "NZD",
+   "ticketUrl": "https://whakarewarewa.com/",
+   "ticketUrl_note": "Loaded; title 'New Zealand's Iconic Living Maori Village In Rotorua | Whakarewarewa'. Wikivoyage's official link.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -38.16124,
+     "longitude": 176.25659
+    },
+    "source_point": [
+     -38.16105,
+     176.25646
+    ],
+    "source": "OSM tourism=attraction 'Whakarewarewa Living village' node 567543789",
+    "ok": true,
+    "distance_m": 24
+   },
+   "new_bio": "A living Māori village of the Tūhourangi Ngāti Wāhiao people on a geothermal plateau, with guided tours and self-guided trails.",
+   "unverified": [
+    "Cost is a range across self-guided and guided adult tickets."
+   ]
+  },
+  {
+   "id": "rotorua-12",
+   "name": "Kuirau Park",
+   "kind": "new",
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "RotoruaNZ: free geothermal public park with crater lake, mud pools, hot springs and a free thermal footbath; corner of Pukuatua and Ranolf streets; free parking; Saturday farmers' market 6am-1pm.",
+     "source": "https://www.rotoruanz.com/visit/things-to-do/kuirau-park"
+    },
+    {
+     "claim": "Wikivoyage Rotorua lists Kuirau Park Thermal Pools with the same page.",
+     "source": "https://en.wikivoyage.org/wiki/Rotorua"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Steward is Rotorua Lakes Council (site returned a 202 challenge, unreadable). The tourism-board page https://www.rotoruanz.com/visit/things-to-do/kuirau-park loaded and names the park; a free park needs no link, orchestrator may use it or omit.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -38.1348,
+     "longitude": 176.2461
+    },
+    "source_point": [
+     -38.13298,
+     176.24378
+    ],
+    "source": "OSM leisure=park way 28917557 centroid",
+    "ok": true,
+    "distance_m": 286
+   },
+   "unverified": [
+    "24h opening is judgement for an open park."
+   ]
+  },
+  {
+   "id": "rotorua-13",
+   "name": "Buried Village (Te Wairoa)",
+   "kind": "new",
+   "category": "historic",
+   "held": true,
+   "wiki": "Te Wairoa, New Zealand",
+   "facts": [
+    {
+     "claim": "Operator: open 10am-4pm Wednesday to Sunday, last entry 3.45pm.",
+     "source": "https://www.buriedvillage.co.nz/what-to-expect/entry-prices-opening-hours"
+    },
+    {
+     "claim": "Admission: NZ resident adult $25, international adult $30, teenager 13-17 $10, child 0-12 free with paying adult.",
+     "source": "https://www.buriedvillage.co.nz/what-to-expect/entry-prices-opening-hours"
+    },
+    {
+     "claim": "Excavated sites of the village destroyed in the 1886 Mt Tarawera eruption (more than 150 lives lost in the region), a museum, and the Te Wairoa Falls trail.",
+     "source": "https://www.buriedvillage.co.nz/"
+    }
+   ],
+   "hours": "10:00 AM – 4:00 PM",
+   "closedDays": [
+    1,
+    2
+   ],
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "costMin": 25,
+   "costMax": 30,
+   "currency": "NZD",
+   "ticketUrl": "https://www.buriedvillage.co.nz/",
+   "ticketUrl_note": "Loaded; title 'Buried Village Rotorua New Zealand Attractions'. Wikivoyage's official link.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -38.21194,
+     "longitude": 176.36353
+    },
+    "source_point": [
+     -38.21199,
+     176.36351
+    ],
+    "source": "OSM tourism=museum node 2180974297",
+    "ok": true,
+    "distance_m": 10
+   },
+   "unverified": [
+    "Photo needs brightening (placement)."
+   ]
+  },
+  {
+   "id": "rotorua-14",
+   "name": "Agrodome",
+   "kind": "new",
+   "category": "entertainment",
+   "held": true,
+   "facts": [
+    {
+     "claim": "Operator: open 9am-5pm 7 days; Farm Experience (show plus tour) adult $68, child (3-15) $35, infant free, family $169; allow 2.5 hours.",
+     "source": "https://www.agrodome.co.nz/visitor-info/hours-and-prices/"
+    },
+    {
+     "claim": "Farm show times 9:30am, 11:00am, 2:30pm; farm tours 10:40am to 3:40pm.",
+     "source": "https://www.agrodome.co.nz/visitor-info/hours-and-prices/"
+    },
+    {
+     "claim": "National Kiwi Hatchery is on site; combined visit by reservation.",
+     "source": "https://www.agrodome.co.nz/visitor-info/hours-and-prices/"
+    }
+   ],
+   "hours": "9:00 AM – 5:00 PM",
+   "visitHoursMin": 2,
+   "visitHoursMax": 3,
+   "costMin": 68,
+   "costMax": 68,
+   "currency": "NZD",
+   "ticketUrl": "https://www.agrodome.co.nz/",
+   "ticketUrl_note": "Loaded; title 'Unique New Zealand Farm Experience | Agrodome Rotorua'.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -38.085481,
+     "longitude": 176.190189
+    },
+    "source_point": [
+     -38.08614,
+     176.19297
+    ],
+    "source": "OSM tourism=attraction ways W801581626 and W801581616 (313 m)",
+    "ok": true,
+    "distance_m": 254
+   },
+   "unverified": [
+    "Placement hours/price fields were empty; the $68 is the combined show+tour."
+   ]
+  },
+  {
+   "id": "rotorua-15",
+   "name": "Okere Falls",
+   "kind": "new",
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "DOC Ōkere Falls Track: 1.2 km, 30 min one way, easy; lookout by Hinemoa's steps over rafters on the highest commercially rafted waterfall in the world; trout pool; picnic area and toilets; 21 km from Rotorua on Trout Pool Road off SH33; Tutea Falls platform closed.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/okere-falls-scenic-reserve/things-to-do/okere-falls-track/"
+    },
+    {
+     "claim": "OSM: Ōkere Falls Car Park (amenity=parking) at -38.01439,176.34395; Trout Pool Car Park at -38.00824,176.34242.",
+     "source": "https://www.openstreetmap.org/way/552582526"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/okere-falls-scenic-reserve/",
+   "ticketUrl_note": "DOC reserve page loaded; title 'Ōkere Falls Scenic Reserve: Places to go in the Bay of Plenty region'.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -38.01433,
+     "longitude": 176.3455
+    },
+    "source_point": [
+     -38.01439,
+     176.34395
+    ],
+    "source": "OSM main car park; Wikipedia town point matches the shipped value",
+    "ok": true,
+    "distance_m": 135
+   },
+   "new_bio": "Kaituna River falls on a 30-minute DOC walk to a lookout over rafters dropping the highest commercially rafted waterfall.",
+   "unverified": [
+    "24h opening is judgement; DOC gives none."
+   ]
+  },
+  {
+   "id": "rotorua-16",
+   "name": "Tarawera Falls",
+   "kind": "new",
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "DOC Tarawera Outlet to Falls Track: 5 km, 2 hr one way; river disappears underground and re-emerges through the falls in a rhyolite cliff; falls viewing area with seat.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/lake-tarawera-scenic-reserve/things-to-do/tarawera-outlet-to-falls-track/"
+    },
+    {
+     "claim": "Car access is from Kawerau via private forestry roads; a permit from Kawerau isite is required and access is only Saturdays, Sundays and public holidays; the Waterfall Road carpark is a 20 minute walk from the falls.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/lake-tarawera-scenic-reserve/things-to-do/tarawera-outlet-to-falls-track/"
+    },
+    {
+     "claim": "OSM: Tarawera Falls waterfall node -38.16304,176.52044; tourism=information on Waterfall Road at -38.15633,176.52018.",
+     "source": "https://www.openstreetmap.org/node/3782824299"
+    }
+   ],
+   "hours": "Daylight; vehicle access weekends and public holidays by permit",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/lake-tarawera-scenic-reserve/things-to-do/tarawera-outlet-to-falls-track/",
+   "ticketUrl_note": "DOC track page loaded and names Tarawera Falls.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -38.163,
+     "longitude": 176.52
+    },
+    "source_point": [
+     -38.16304,
+     176.52044
+    ],
+    "source": "OSM waterfall node; viewing area at the base of the falls. Car park (information node) is 700 m north.",
+    "ok": true,
+    "distance_m": 40
+   },
+   "new_bio": "A waterfall where the Tarawera River bursts from a rhyolite cliff, reached by a short walk from a permit-only forest car park.",
+   "unverified": [
+    "Permit price not found (Kawerau isite/DOC page gives none), so the walk is recorded free; a driving permit may cost. Check before keeping free:true. Short-walk length from the car park not stated beyond '20 minutes past the falls'."
+   ]
+  },
+  {
+   "id": "rotorua-17",
+   "name": "Mokoia Island",
+   "kind": "new",
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "OSM place=island relation 5482819 in Lake Rotorua.",
+     "source": "https://www.openstreetmap.org/relation/5482819"
+    },
+    {
+     "claim": "Frommer's (dated) described Mokoia Island Experiences' 2.5 hr tour at NZ$75 adult; that operator's domain mokoiaisland.co.nz no longer resolves.",
+     "source": "https://www.frommers.com/destinations/rotorua/organized-tours/"
+    },
+    {
+     "claim": "Lakeland Queen's own page says it passes Mokoia Island but does not land there.",
+     "source": "https://www.lakelandqueen.com/"
+    }
+   ],
+   "hours": "Guided tours only; operator unconfirmed",
+   "visitHoursMin": 2.5,
+   "visitHoursMax": 4,
+   "costMin": 75,
+   "costMax": 75,
+   "currency": "NZD",
+   "ticketUrl": null,
+   "ticketUrl_note": "Only operator found (Wai Ora Experiences, mokoiaisland.co.nz) is unreachable (DNS fails); no verified current operator page. Recommend hold.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -38.08125,
+     "longitude": 176.28441
+    },
+    "source_point": [
+     -38.08039,
+     176.28834
+    ],
+    "source": "OSM island relation centroid",
+    "ok": true,
+    "distance_m": 357
+   },
+   "unverified": [
+    "Operator, price and whether landings currently run are all unverified (price from a dated guidebook). Recommend holding this spot."
+   ]
+  },
+  {
+   "id": "rotorua-18",
+   "name": "Rainbow Mountain (Maunga Kākaramea)",
+   "kind": "new",
+   "category": "hike",
+   "wiki": "Maunga Kākaramea",
+   "facts": [
+    {
+     "claim": "DOC Te Tihi o Ruru (Summit) Track: 2.5 km, 1 hr 30 min one way, advanced tramping track, 360-degree views.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/maunga-kakaramea-and-waiotapu-scenic-reserves/things-to-do/maunga-kakaramea-summit-track/"
+    },
+    {
+     "claim": "DOC reserve page: accessed from SH5; parking, picnic facilities and toilets at the base just past the SH38 turn; 'mountain of coloured earth'.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/maunga-kakaramea-and-waiotapu-scenic-reserves/"
+    },
+    {
+     "claim": "OSM: car park (30 spaces, fee=no) -38.31539,176.37569 with toilets and picnic site; summit natural=peak -38.31927,176.38824.",
+     "source": "https://www.openstreetmap.org/node/1315861499"
+    }
+   ],
+   "hours": "Daylight",
+   "visitHoursMin": 2,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/maunga-kakaramea-and-waiotapu-scenic-reserves/",
+   "ticketUrl_note": "DOC reserve page loaded; title names Maunga Kākaramea.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -38.31948,
+     "longitude": 176.38862
+    },
+    "source_point": [
+     -38.31539,
+     176.37569
+    ],
+    "source": "OSM peak is the summit (Wikipedia point matches it); visitors start at the base car park 1.1 km west",
+    "ok": false,
+    "distance_m": 1170,
+    "recommended": {
+     "latitude": -38.31539,
+     "longitude": 176.37569
+    }
+   },
+   "new_bio": "A summit walk of 1 hr 30 min each way past steaming ground and coloured rock to 360-degree views south of Rotorua.",
+   "unverified": [
+    "Crater-lake walk not detailed here."
+   ]
+  },
+  {
+   "id": "rotorua-19",
+   "name": "Kerosene Creek",
+   "kind": "new",
+   "category": "nature",
+   "held": true,
+   "wiki": "Hakereteke Stream",
+   "facts": [
+    {
+     "claim": "DOC calls it Te Ranga (Kerosene Creek), a naturally warm creek good for a soak, and the start of the Te Ara Ahi trail; reached from SH5 south of Rotorua.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/maunga-kakaramea-and-waiotapu-scenic-reserves/"
+    },
+    {
+     "claim": "OSM: tourism=attraction fee=no at -38.33562,176.38638; hot-spring stream pool 7 m away with warning not to put heads underwater; free car park (15 spaces) at -38.33431,176.38630.",
+     "source": "https://www.openstreetmap.org/node/2881830843"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/maunga-kakaramea-and-waiotapu-scenic-reserves/",
+   "ticketUrl_note": "DOC reserve page loaded; it covers the reserves and mentions Te Ranga (Kerosene Creek) on sub-pages but its own title does not name Kerosene Creek, so treat as optional.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -38.33562,
+     "longitude": 176.38638
+    },
+    "source_point": [
+     -38.33562,
+     176.38638
+    ],
+    "source": "OSM tourism=attraction node",
+    "ok": true,
+    "distance_m": 0
+   },
+   "new_bio": "A free, naturally warm stream and small waterfall for soaking, with a car park off State Highway 5.",
+   "unverified": [
+    "24h opening is judgement; DOC gives no hours."
+   ]
+  },
+  {
+   "id": "rotorua-20",
+   "name": "Sulphur Bay (Motutara)",
+   "kind": "new",
+   "category": "nature",
+   "held": true,
+   "wiki": "Sulphur Bay",
+   "facts": [
+    {
+     "claim": "DOC: 145 ha wildlife refuge at the south-east corner of Lake Rotorua; threatened birds such as dabchick, banded dotterel and black-billed gull; free parking at Government Gardens or the Lakefront; a walkway starts at Motutara Point.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/sulphur-bay-wildlife-refuge/"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/sulphur-bay-wildlife-refuge/",
+   "ticketUrl_note": "DOC page loaded; title 'Sulphur Bay Wildlife Refuge: Places to go in the Bay of Plenty'.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -38.13677,
+     "longitude": 176.26745
+    },
+    "source_point": [
+     -38.13677,
+     176.26745
+    ],
+    "source": "OSM natural=bay Te Kaunanga / Sulphur Bay centroid (in the lake); Motutara Point cape -38.12979,176.26497",
+    "ok": true,
+    "distance_m": 0
+   },
+   "unverified": [
+    "Steaming vents/boardwalk in the placement bio are not on the DOC page I read; the DOC page speaks of birds and a walkway. Rewrite around the refuge and birds."
+   ]
+  },
+  {
+   "id": "rotorua-21",
+   "name": "Lake Ōkataina",
+   "kind": "new",
+   "category": "nature",
+   "held": true,
+   "facts": [
+    {
+     "claim": "DOC: scenic reserve with walking and mountain-bike trips; Lake Ōkataina Road off SH30 about 30 minutes from Rotorua; no dogs, horses or bikes in the reserve per DOC rules listed; managed by DOC for Ngāti Tarāwhai.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/lake-okataina-scenic-reserve/"
+    },
+    {
+     "claim": "OSM car parks and slipway at the north end of the lake at -38.1005,176.4305; lake relation centroid -38.12778,176.40216.",
+     "source": "https://www.openstreetmap.org/way/673128960"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/lake-okataina-scenic-reserve/",
+   "ticketUrl_note": "DOC page loaded; title names Lake Ōkataina Scenic Reserve.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -38.1167,
+     "longitude": 176.4167
+    },
+    "source_point": [
+     -38.10074,
+     176.43065
+    ],
+    "source": "OSM car parks at the lake's shore; Wikipedia point is a rounded lake centre, 1.9 km away",
+    "ok": false,
+    "distance_m": 1900,
+    "recommended": {
+     "latitude": -38.10074,
+     "longitude": 176.43065
+    }
+   },
+   "new_bio": "A forest-ringed lake in a DOC scenic reserve with walking tracks, including the Western and Eastern Ōkataina walkways.",
+   "unverified": [
+    "Placement bio says mountain-bike routes; DOC text says bikes are not permitted in the reserve but the Western Walkway is shared per a search summary I could not confirm. Drop 'mountain-bike' from the bio unless sourced. Eastern Walkway status after a 2021 slip unchecked."
+   ]
+  },
+  {
+   "id": "wairere-falls",
+   "name": "Wairere Falls",
+   "kind": "new",
+   "category": "nature",
+   "held": true,
+   "facts": [
+    {
+     "claim": "DOC: 5 km return, 3-4 hr; falls drop 153 m; 45 min to lower lookout, 90 min more to top platform; Goodwin Road off Te Aroha-Okauia road.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/kaimai-mamaku-conservation-park/things-to-do/tracks/wairere-falls-track/"
+    },
+    {
+     "claim": "CLOSED: track, car park and toilets closed since 7 September 2026 for construction, planned full reopening by end of November 2026.",
+     "source": "https://www.doc.govt.nz/news/media-releases/2026-media-releases/ignoring-closure-will-shut-wairere-falls-for-longer"
+    },
+    {
+     "claim": "OSM Wairere Falls Car Park (parking) at -37.73758,175.86225 matches the shipped point.",
+     "source": "https://www.openstreetmap.org/way/563754076"
+    }
+   ],
+   "hours": "Daylight",
+   "visitHoursMin": 3,
+   "visitHoursMax": 4,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/kaimai-mamaku-conservation-park/things-to-do/tracks/wairere-falls-track/",
+   "ticketUrl_note": "DOC track page loaded; title names Wairere Falls Track.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -37.73758,
+     "longitude": 175.86225
+    },
+    "source_point": [
+     -37.73758,
+     175.86225
+    ],
+    "source": "OSM car park way 563754076 (trailhead)",
+    "ok": true,
+    "distance_m": 0
+   },
+   "new_bio": "A 153 m waterfall in the Kaimai Range, reached by a 3-4 hour return DOC track with a lookout part-way up.",
+   "unverified": [
+    "Closed until about end November 2026: mention in the summary; it will reopen."
+   ]
+  },
+  {
+   "id": "waihi-beach",
+   "name": "Waihi Beach",
+   "kind": "new",
+   "category": "beach",
+   "held": true,
+   "wiki": "Waihi Beach",
+   "facts": [
+    {
+     "claim": "Wikipedia: coastal town 10 km east of Waihi; the main beach is 10 km long.",
+     "source": "https://en.wikipedia.org/wiki/Waihi_Beach"
+    },
+    {
+     "claim": "Wikivoyage Waihi Beach lists the Waihi Beach Info Centre and the Orokawa Scenic Reserve walk.",
+     "source": "https://en.wikivoyage.org/wiki/Waihi_Beach"
+    },
+    {
+     "claim": "OSM natural=beach way 352184362 'Waihi Beach' runs from -37.394 to -37.464, so its vertex at the shipped point is the south part; the beach end of Wilson Road in town is at -37.41213,175.94686.",
+     "source": "https://www.openstreetmap.org/way/352184362"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Public beach town with no single steward; none.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -37.42901,
+     "longitude": 175.96075
+    },
+    "source_point": [
+     -37.41213,
+     175.94686
+    ],
+    "source": "OSM beach-way vertex nearest the town centre (town place node -37.41179,175.94325)",
+    "ok": false,
+    "distance_m": 2200,
+    "recommended": {
+     "latitude": -37.41213,
+     "longitude": 175.94686
+    }
+   },
+   "new_bio_note": "Placement says '9 km' beach; Wikipedia says 10 km. Use 10 km.",
+   "unverified": [
+    "Free and 24h are judgement."
+   ]
+  },
+  {
+   "id": "orokawa-bay",
+   "name": "Orokawa Bay",
+   "kind": "new",
+   "category": "beach",
+   "facts": [
+    {
+     "claim": "DOC Orokawa Bay Track: 3 km, 45 min one way from the northern end of Waihi Beach, easy to intermediate; pōhutukawa-lined beach; not safe for swimming; may be impassable at high tide; no dogs.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/orokawa-scenic-reserve/things-to-do/orokawa-bay-track/"
+    },
+    {
+     "claim": "OSM natural=beach way 352184434 'Orokawa Bay Beach' at -37.38389,175.93876; track start -37.38871,175.94088.",
+     "source": "https://www.openstreetmap.org/way/352184434"
+    }
+   ],
+   "hours": "Daylight; tide permitting",
+   "visitHoursMin": 2,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/orokawa-scenic-reserve/things-to-do/orokawa-bay-track/",
+   "ticketUrl_note": "DOC page loaded; title 'Orokawa Bay Track: Orokawa Scenic Reserve'.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -37.38389,
+     "longitude": 175.93876
+    },
+    "source_point": [
+     -37.38389,
+     175.93876
+    ],
+    "source": "OSM beach way node",
+    "ok": true,
+    "distance_m": 0
+   },
+   "new_bio": "A pōhutukawa-lined bay at the end of a 45-minute DOC coastal walk from the north end of Waihi Beach.",
+   "unverified": []
+  },
+  {
+   "id": "karangahake-gorge",
+   "name": "Karangahake Gorge",
+   "kind": "new",
+   "category": "historic",
+   "facts": [
+    {
+     "claim": "DOC: Karangahake Gorge combines gold-mining history and natural beauty with a variety of walks; contaminated soil warning.",
+     "source": "https://www.doc.govt.nz/karangahake"
+    },
+    {
+     "claim": "Windows Walk: 2.5 km return, 1 hr, easy; suspension bridge, Talisman battery, tunnel with four 'windows' over the gorge; torch recommended.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/kaimai-mamaku-conservation-park/things-to-do/tracks/karangahake-windows-walk/"
+    },
+    {
+     "claim": "Historic Walkway: 1100 m rail tunnel loop 45 min return, or to Waikino 4 hr return; part of the Hauraki Rail Trail.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/bay-of-plenty/places/kaimai-mamaku-conservation-park/things-to-do/tracks/karangahake-gorge-historic-walkway/"
+    },
+    {
+     "claim": "OSM: natural=valley node -37.42319,175.72510; Windows Walk attraction -37.42630,175.72323.",
+     "source": "https://www.openstreetmap.org/node/11933015394"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/karangahake",
+   "ticketUrl_note": "DOC page loaded; title 'Karangahake Gorge: Places to go in Kaimai Conservation Park, Bay of Plenty region'.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -37.423676,
+     "longitude": 175.725514
+    },
+    "source_point": [
+     -37.42319,
+     175.7251
+    ],
+    "source": "OSM natural=valley node; walks start within about 400 m",
+    "ok": true,
+    "distance_m": 65
+   },
+   "new_bio": "A gold-mining gorge with a 1.1 km rail tunnel, mining ruins and DOC walks including the one-hour Windows Walk.",
+   "unverified": [
+    "24h opening judgement."
+   ]
+  },
+  {
+   "id": "motu-trail",
+   "name": "Motu Trail",
+   "kind": "new",
+   "category": "hike",
+   "held": true,
+   "wiki": "Motu Trails",
+   "facts": [
+    {
+     "claim": "Operator: a Great Ride of Ngā Haerenga; Dunes Trail (9 km, 2-3 hr, grade 2), Pakihi Track (20 km, 3-6 hr, grade 4), Motu Road Trail (67 km, 1-2 days, grade 3) and Rere Falls Trail, between Ōpōtiki and Tairāwhiti/Gisborne.",
+     "source": "https://www.motutrails.co.nz/experience/explore-the-trails"
+    },
+    {
+     "claim": "OSM: Motu Trails Freedom Bike Hire on St John Street, Ōpōtiki, at the shipped point.",
+     "source": "https://www.openstreetmap.org/node/5623933688"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 24,
+   "free": true,
+   "ticketUrl": "https://www.motutrails.co.nz/",
+   "ticketUrl_note": "Loaded; title 'Home - Motu Trails'.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -38.0028,
+     "longitude": 177.28742
+    },
+    "source_point": [
+     -38.0028,
+     177.28742
+    ],
+    "source": "OSM bicycle_rental in Ōpōtiki; trail hub 160 m from the Ōpōtiki spot, so the two pins nearly coincide",
+    "ok": true,
+    "distance_m": 0
+   },
+   "new_bio": "A Great Ride of cycle trails from Ōpōtiki, from the 9 km Dunes Trail to the 67 km Motu Road Trail.",
+   "new_bio_note": "Placement bio says 'between Matawai and Ōpōtiki'; the operator site names Ōpōtiki to Tairāwhiti/Gisborne and does not say Matawai.",
+   "unverified": [
+    "Free: no fee mentioned on the pages read, only a donation link."
+   ]
+  },
+  {
+   "id": "rotorua-8",
+   "name": "Government Gardens",
+   "kind": "existing",
+   "category": "historic",
+   "facts": [
+    {
+     "claim": "OSM leisure=park way 137198217 at the shipped point (0 m).",
+     "source": "https://www.openstreetmap.org/way/137198217"
+    },
+    {
+     "claim": "Rotorua Lakes Council page returned an unreadable 202 challenge; the museum's closure and the gardens' free access come from the placement/skeptic notes, not a page I read.",
+     "source": "https://www.rotorualakescouncil.nz/"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Council steward page unreadable; none recorded. No ticket needed.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -38.13473,
+     "longitude": 176.25792
+    },
+    "source_point": [
+     -38.13473,
+     176.25792
+    ],
+    "source": "OSM leisure=park",
+    "ok": true,
+    "distance_m": 0
+   },
+   "new_bio": "Lakeside gardens of Tudor-style buildings and lawns, open daily and free; the museum inside is closed.",
+   "unverified": [
+    "Museum closure to about 2027-28 is unverified by me; reword to 'Rotorua Museum building is closed' only after the council or museum page confirms."
+   ]
+  },
+  {
+   "id": "rotorua-9",
+   "name": "Skyline Rotorua",
+   "kind": "existing",
+   "category": "entertainment",
+   "facts": [
+    {
+     "claim": "Operator: gondola open 9am-8pm, luge 9am-6pm on the day read.",
+     "source": "https://rotorua.skyline.co.nz/opening-hours/"
+    },
+    {
+     "claim": "Packages: gondola plus 2 luge rides adult $82, plus 3 rides $88, plus 5 rides $98 (child $54-70). Gondola-only price not shown.",
+     "source": "https://rotorua.skyline.co.nz/things-to-do/gondola-rotorua/"
+    },
+    {
+     "claim": "OSM aerialway stations at -38.11466,176.21334 and -38.11431,176.21300 and a viewpoint at -38.11473,176.21118.",
+     "source": "https://www.openstreetmap.org/node/1151557761"
+    }
+   ],
+   "hours": "9:00 AM – 8:00 PM",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2.5,
+   "costMin": 82,
+   "costMax": 98,
+   "currency": "NZD",
+   "ticketUrl": "https://rotorua.skyline.co.nz/",
+   "ticketUrl_note": "Existing link; loaded, title 'Skyline Rotorua | Experience the Iconic Gondola & Luge'.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -38.11284,
+     "longitude": 176.2156
+    },
+    "source_point": [
+     -38.11431,
+     176.213
+    ],
+    "source": "OSM upper gondola station / viewpoint area, about 290 m west-south-west",
+    "ok": true,
+    "distance_m": 286
+   },
+   "new_bio": "The Mount Ngongotahā lookout above Lake Rotorua, reached by gondola, with a luge ride down.",
+   "unverified": [
+    "Gondola hours vary by day (shipped 9-9 is not what the site shows today). Gondola-only price not found, so the cost range is the packages."
+   ]
+  },
+  {
+   "id": "whirinaki-conservation-park",
+   "name": "Whirinaki Te Pua-a-Tāne Conservation Park",
+   "kind": "existing",
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "DOC park page loaded, title names the park; walks, huts and campsites brochures.",
+     "source": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/east-coast/places/whirinaki-te-pua-a-tane-conservation-park/"
+    },
+    {
+     "claim": "OSM: River Road carpark (parking, 10 spaces, fee=no) at -38.67550,176.69898, exactly the shipped point; Whirinaki Waterfall Loop Track starts beside it. The placement's Minginui point (-38.64043,176.70515) is a village, not a trailhead.",
+     "source": "https://www.openstreetmap.org/node/1676346699"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "free": true,
+   "ticketUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/east-coast/places/whirinaki-te-pua-a-tane-conservation-park/",
+   "ticketUrl_note": "Existing link kept; loaded.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -38.6755,
+     "longitude": 176.69896
+    },
+    "source_point": [
+     -38.6755,
+     176.69898
+    ],
+    "source": "OSM River Road carpark",
+    "ok": true,
+    "distance_m": 2
+   },
+   "unverified": [
+    "Photo offer (Whirinaki Forest Iconic Waterfall.jpg) not assessed by me."
+   ]
+  },
+  {
+   "id": "rotorua-6",
+   "name": "Hell's Gate Geothermal Park and Mud Spa",
+   "kind": "existing",
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "Operator: open daily 10am-9pm except Christmas; walk is 1-1.5 hr.",
+     "source": "https://www.hellsgate.co.nz/contact"
+    },
+    {
+     "claim": "Prices: geothermal walk adult $45; mud bath and spa adult $90; walk plus mud and spa 'Experience' adult $115.",
+     "source": "https://www.hellsgate.co.nz/book"
+    },
+    {
+     "claim": "OSM tourism=attraction node 'Hell's Gate' at 351 State Highway 30 with website hellsgate.co.nz.",
+     "source": "https://www.openstreetmap.org/node/939092111"
+    }
+   ],
+   "hours": "10:00 AM – 9:00 PM",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "costMin": 45,
+   "costMax": 115,
+   "currency": "NZD",
+   "ticketUrl": "https://www.hellsgate.co.nz/",
+   "ticketUrl_note": "Existing link kept; loaded, title 'Mud Bath & Spas, Rotorua, New Zealand | Hell's Gate, Rotorua'.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -38.05,
+     "longitude": 176.36
+    },
+    "source_point": [
+     -38.06441,
+     176.3607
+    ],
+    "source": "OSM tourism=attraction at 351 SH30; current point is rounded and 1.6 km north",
+    "ok": false,
+    "distance_m": 1600,
+    "recommended": {
+     "latitude": -38.06441,
+     "longitude": 176.3607
+    }
+   },
+   "unverified": [
+    "Last-entry times (walk 5:30pm, spa 7:30pm) per the FAQ."
+   ]
+  },
+  {
+   "id": "rotorua-1",
+   "name": "Wai-O-Tapu",
+   "kind": "existing",
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "Operator: open 7 days 8:30am-4:30pm, last admission 3pm; Lady Knox geyser 10.15am daily; closed Christmas Day.",
+     "source": "https://www.waiotapu.co.nz/plan-your-visit/"
+    },
+    {
+     "claim": "OSM entrance (fee=yes) at 201 Waiotapu Loop Road, -38.35585,176.36755.",
+     "source": "https://www.openstreetmap.org/node/1563538654"
+    }
+   ],
+   "hours": "8:30 AM – 4:30 PM",
+   "specialClosures": [
+    "12-25"
+   ],
+   "visitHoursMin": 2,
+   "visitHoursMax": 3,
+   "costMin": 40,
+   "costMax": 40,
+   "currency": "NZD",
+   "ticketUrl": "https://www.waiotapu.co.nz/",
+   "ticketUrl_note": "Existing link kept; loaded, title 'Wai-O-Tapu Thermal Wonderland, Rotorua, New Zealand'.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -38.359,
+     "longitude": 176.367
+    },
+    "source_point": [
+     -38.35585,
+     176.36755
+    ],
+    "source": "OSM entrance node",
+    "ok": false,
+    "distance_m": 353,
+    "recommended": {
+     "latitude": -38.35585,
+     "longitude": 176.36755
+    }
+   },
+   "unverified": [
+    "Current admission price not readable (booking widget is script-rendered); $40 kept from the shipped entry and unverified. Shipped hours of 5pm closing are wrong: 4:30pm."
+   ]
+  }
+ ]
+}

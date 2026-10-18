@@ -1,0 +1,884 @@
+{
+ "region": "southland",
+ "inside_destinations": 15,
+ "standalone": 9,
+ "new_destinations": 2,
+ "new_destinations_proposed": [
+  "Gore",
+  "Tuatapere"
+ ],
+ "existing_kept_unchanged": 33,
+ "covered_by_existing_destination": [
+  "Invercargill",
+  "Oban",
+  "Te Anau",
+  "Manapouri"
+ ],
+ "lowest_kept": [
+  {
+   "name": "Bluff Hill Lookout",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Foveaux Walkway",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Dusky Track",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Surat Bay",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Gemstone Beach",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Brown Trout Statue",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Te Anau Bird Sanctuary",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Southern Circuit",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Florence Hill Lookouts",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Hokonui Heritage Centre",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Eastern Southland Gallery",
+   "views": 384,
+   "counted_sources": 2
+  },
+  {
+   "name": "Around the Mountains Cycle Trail",
+   "views": 587,
+   "counted_sources": 2
+  }
+ ],
+ "stronger_left_out": [
+  {
+   "name": "Auckland Islands",
+   "views": 85043,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Subantarctic: permit-only, reached only by expedition cruise, not open to ordinary visitors."
+  },
+  {
+   "name": "Campbell Island",
+   "views": 45864,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Subantarctic: permit-only, reached only by expedition cruise, not open to ordinary visitors."
+  },
+  {
+   "name": "Antipodes Islands",
+   "views": 41712,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Subantarctic: permit-only, reached only by expedition cruise, not open to ordinary visitors."
+  },
+  {
+   "name": "Bounty Islands",
+   "views": 15425,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Subantarctic: permit-only, reached only by expedition cruise, not open to ordinary visitors."
+  },
+  {
+   "name": "The Catlins",
+   "views": 12679,
+   "counted_sources": 3,
+   "verdict": "reject",
+   "reason": "A region/destination (already in the app), not a spot."
+  },
+  {
+   "name": "Manapouri Power Station",
+   "views": 10478,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Industrial site passed on the Doubtful Sound trip, not a separate stop."
+  },
+  {
+   "name": "Lumsden",
+   "views": 9155,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small service town or hamlet with no distinct visitor draw; roadside stopover only."
+  },
+  {
+   "name": "Codfish Island (Whenua Hou)",
+   "views": 8713,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Permit-only or remote with no ordinary public access."
+  },
+  {
+   "name": "Snares Islands",
+   "views": 8607,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Subantarctic: permit-only, reached only by expedition cruise, not open to ordinary visitors."
+  },
+  {
+   "name": "Lake Hauroko",
+   "views": 8210,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "FOR: New Zealand's deepest lake, DOC walks, the Hump Ridge and South Coast access. AGAINST: one source, long gravel access, little for a short visit. Left as review."
+  },
+  {
+   "name": "Winton",
+   "views": 6731,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "One source, a central Southland service town with no named sight; fails the distinct-draw test."
+  },
+  {
+   "name": "Otautau",
+   "views": 6559,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small service town or hamlet with no distinct visitor draw; roadside stopover only."
+  },
+  {
+   "name": "Mitre Peak",
+   "views": 6541,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Seen as part of Milford Sound, which is already listed; near-duplicate."
+  },
+  {
+   "name": "Mataura",
+   "views": 6514,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "One counted source, a small service town; trout fishing is a service and the local museum is minor. Nothing to do for 30 minutes that a traveller would detour for."
+  },
+  {
+   "name": "Tuatapere",
+   "views": 5349,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "FOR: gateway village for Hump Ridge and the Wairaurahiri jet-boat, 'sausage capital' icon, Southland NZ-named. AGAINST: one source, mostly a services stop; its draw is the journey beyond (same case as Pipiriki). Left as review."
+  },
+  {
+   "name": "Dusky Sound",
+   "views": 5273,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "FOR: Tamatea/Dusky Sound is a major fiord with Cook-era history, Wikivoyage-named. AGAINST: reached only by expedition cruise, flight or the multi-day Dusky Track, so not open at will. Left as review."
+  },
+  {
+   "name": "Stewart Island Flights",
+   "views": 3463,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Operator or vehicle, not a place: the place it goes to is the spot."
+  },
+  {
+   "name": "Milford Road",
+   "views": 2998,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "A route, not a place; its stops are separate spots."
+  },
+  {
+   "name": "Mossburn",
+   "views": 2988,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Small service town or hamlet with no distinct visitor draw; roadside stopover only."
+  },
+  {
+   "name": "Garston",
+   "views": 2798,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small service town or hamlet with no distinct visitor draw; roadside stopover only."
+  },
+  {
+   "name": "Lady Bowen Falls",
+   "views": 2427,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Duplicate of the existing Bowen Falls (fiordland-14); same place under a name variant."
+  },
+  {
+   "name": "Southern Scenic Route",
+   "views": 2422,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "A touring route, not a place."
+  },
+  {
+   "name": "Orepuki",
+   "views": 2357,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small service town or hamlet with no distinct visitor draw; roadside stopover only."
+  },
+  {
+   "name": "Wilmot Pass",
+   "views": 2158,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Permit-only road/route to Doubtful Sound, not a stop."
+  },
+  {
+   "name": "Riversdale",
+   "views": 2134,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small service town or hamlet with no distinct visitor draw; roadside stopover only."
+  },
+  {
+   "name": "Mataura River",
+   "views": 2121,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Linear river; fishing is a service, not a place to stop."
+  },
+  {
+   "name": "McKinnon Pass",
+   "views": 2109,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Pass on the Milford Track, part of that Great Walk."
+  },
+  {
+   "name": "Athol",
+   "views": 2092,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small service town or hamlet with no distinct visitor draw; roadside stopover only."
+  },
+  {
+   "name": "Kepler Challenge",
+   "views": 2048,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Festival or annual event, not a permanent venue."
+  },
+  {
+   "name": "Waikaia",
+   "views": 1644,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "One source, tiny former goldmining town with a thin visit; not worth a detour."
+  },
+  {
+   "name": "Port Pegasus",
+   "views": 1485,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Permit-only or remote with no ordinary public access."
+  },
+  {
+   "name": "Takitimu Mountains",
+   "views": 1308,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Backcountry range or forest area, not a visitor stop."
+  },
+  {
+   "name": "Port Craig",
+   "views": 1275,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Remote former sawmill on the Hump Ridge route; part of that track, no normal access."
+  },
+  {
+   "name": "Lake Monowai",
+   "views": 1233,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "One source, hydro lake on the Borland Road used mostly by locals and trampers; part of the Monowai/Borland area."
+  },
+  {
+   "name": "Lake Poteriteri",
+   "views": 1210,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Remote Fiordland lake, Wikipedia category only, no visitor source."
+  },
+  {
+   "name": "St Mary's Basilica, Invercargill",
+   "views": 1193,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Church, exterior only."
+  },
+  {
+   "name": "Puysegur Point Lighthouse",
+   "views": 999,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Remote lighthouse reached by long walk; no visitor source."
+  },
+  {
+   "name": "Pearl Harbour",
+   "views": 797,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Transport landing, a way to Milford Track/Doubtful Sound."
+  },
+  {
+   "name": "Lake McKerrow",
+   "views": 790,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Remote Fiordland lake, Wikipedia category only, no visitor source."
+  },
+  {
+   "name": "Tautuku Peninsula",
+   "views": 785,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Seen from Florence Hill Lookouts; near-duplicate."
+  },
+  {
+   "name": "Paterson Inlet",
+   "views": 778,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Water area; Ulva Island within it is the spot."
+  },
+  {
+   "name": "Civic Theatre (Invercargill)",
+   "views": 758,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Heritage theatre open only for performances; exterior/civic building. Note: candidates.json matches it to invercargill-1, which is E Hayes and Sons, so treated as not existing."
+  },
+  {
+   "name": "Hollyford Valley",
+   "views": 728,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Valley/area or short walk with no distinct single draw; covered by Hollyford Track / Humboldt Falls."
+  },
+  {
+   "name": "Mount Luxmore",
+   "views": 717,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Part of the Kepler Track already listed."
+  },
+  {
+   "name": "Waituna Lagoon",
+   "views": 665,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "FOR: DOC loop walk and birdlife in a Ramsar wetland. AGAINST: one source, flat lagoon with a modest payoff; Awarua-Waituna Wetlands is the same place. Left as review."
+  },
+  {
+   "name": "Green Lake",
+   "views": 636,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Minor local walk or access road, part of the Monowai/Borland area; one source."
+  },
+  {
+   "name": "Anderson Park",
+   "views": 604,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "FOR: gardens plus Anderson Park Art Gallery, a free half-day. AGAINST: Wikipedia category only, no counted source; Wikivoyage Invercargill does not list it. Hold for a Southland NZ or guidebook check."
+  },
+  {
+   "name": "Awarua Waituna Wetlands",
+   "views": 599,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Same wetland as the Waituna Lagoon loop; near-duplicate, covered by that candidate."
+  },
+  {
+   "name": "Humboldt Falls",
+   "views": 597,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "One source, short roadside walk, minor beside Lake Marian, The Chasm and Mirror Lakes."
+  },
+  {
+   "name": "Invercargill Brewery",
+   "views": 572,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Brewery/venue with no counted source and no confirmed tour; shop/bar."
+  },
+  {
+   "name": "Wairaurahiri River",
+   "views": 556,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Linear river; jet-boat operators are not spots."
+  },
+  {
+   "name": "Clifden Caves",
+   "views": 534,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "One source, remote unlit caves needing gear and care; not a casual visitor stop."
+  },
+  {
+   "name": "Lake Alabaster",
+   "views": 534,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Remote Fiordland lake, Wikipedia category only, no visitor source."
+  },
+  {
+   "name": "Helena Falls",
+   "views": 531,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Falls seen on a cruise as part of the sound, not a separate stop."
+  },
+  {
+   "name": "Routeburn Classic",
+   "views": 506,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Festival or annual event, not a permanent venue."
+  },
+  {
+   "name": "Te Unua Museum of Southland",
+   "views": 468,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "FOR: Southland's regional museum, reopened 2024, tuatara and local history, a real half-day indoor stop that any guide covers. AGAINST: no counted source could be confirmed from here (Wikivoyage Invercargill does not name it; southlandnz.com returns 403 to scripts), and Wikipedia alone does not count. Likely keep once the tourism page is opened in a browser."
+  },
+  {
+   "name": "Eyre Mountains",
+   "views": 435,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Backcountry range or forest area, not a visitor stop."
+  },
+  {
+   "name": "Bluff Maritime Museum",
+   "views": 427,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "One source, small local museum; the oyster and whaling story does not justify a trip beyond Bluff itself, which is already kept."
+  },
+  {
+   "name": "Lake Fergus",
+   "views": 414,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Remote Fiordland lake, Wikipedia category only, no visitor source."
+  },
+  {
+   "name": "Sutherland Sound",
+   "views": 372,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Remote marine reserve or duplicate of Milford Sound; no visitor draw of its own."
+  },
+  {
+   "name": "Turnbull Thomson Park",
+   "views": 370,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Ordinary city park, no visitor source."
+  },
+  {
+   "name": "Lake Innes",
+   "views": 290,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Remote Fiordland lake, Wikipedia category only, no visitor source."
+  },
+  {
+   "name": "Lake Alice (Southland)",
+   "views": 230,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Remote Fiordland lake, Wikipedia category only, no visitor source."
+  }
+ ],
+ "left_out_zero_views_rejected": [
+  "Burt Munro Statue",
+  "Bank Corner",
+  "Southland Fire Service Museum",
+  "Victoria Railway Hotel",
+  "First Church Invercargill",
+  "Demolition World",
+  "Awarua Communications Museum",
+  "Ocean Beach Track",
+  "Kingswood Bush Scenic Reserve",
+  "Seaward Downs Loop Track",
+  "Glory Track",
+  "Lake Hauroko Lookout Track",
+  "Lake Monowai Peninsula Lookout Track",
+  "Borland Road",
+  "Real Journeys Te Anau Caves boat",
+  "Cruise Te Anau",
+  "Luxmore Cave",
+  "Iris Burn Falls",
+  "Hidden Falls Track",
+  "Lake Marian Falls Track",
+  "Stirling Falls",
+  "Milford Foreshore Walk",
+  "Milford Sound Lookout Track",
+  "Piopiotahi Marine Reserve",
+  "Milford Deep Underwater Observatory",
+  "Mitre Peak Cruises",
+  "Southern Discoveries",
+  "Cruise Milford NZ",
+  "Fiordland Cruises",
+  "RealNZ Doubtful Sound cruise",
+  "Go Orange Kayak",
+  "Rosco's Milford Sound Kayaks",
+  "Catlins Mohua Park",
+  "Curio Bay Petrified Forest Walk",
+  "Curio Bay Penguin Walk",
+  "Matai Falls",
+  "Waipohatu Forest Walks",
+  "Catlins River Walk",
+  "Tunnel Hill",
+  "Roaring Bay",
+  "Owaka Museum and Catlins Information Centre",
+  "Waikawa Museum and Information Centre",
+  "Hands of Fame",
+  "Gore Visitor Centre",
+  "Hokonui Fashion Awards",
+  "Bayleys Tussock Country Music Festival",
+  "Bluff Oyster and Food Festival",
+  "Riverton Heritage Harvest Festival",
+  "Revitalize Music Festival",
+  "Niagara Falls Bluegrass and Roots Festival",
+  "Te Anau Ukulele Festival",
+  "Stabicraft Te Anau Manapouri Fishing Classic",
+  "Men's Muster Fiordland",
+  "Meridian Hydro Half Marathon",
+  "Rakiura Challenge Trail Run",
+  "Rakiura National Park Visitor Centre",
+  "Rakiura Museum",
+  "Moturau Moana Native Gardens",
+  "Lee Bay Chain Sculpture",
+  "Ackers Cottage",
+  "Māori Beach Sawmill",
+  "Ulva Island Walking Tracks",
+  "Freshwater Landing",
+  "Fern Gully",
+  "Horseshoe Bay (Oban)",
+  "Glory Cove Scenic Reserve",
+  "Stewart Island Experience ferry",
+  "Ulva's Guided Walks",
+  "Sails Ulva Island Tours",
+  "Lo Loma Fishing Charters",
+  "Rakiura Charters and Water Taxi",
+  "Kiwi Wilderness Walks",
+  "Wairaurahiri Jet",
+  "McCracken's Rest",
+  "Monkey Island (Te Puka a Takitimu)",
+  "Cosy Nook",
+  "Welcome Rock",
+  "The Coffee Bomb, Garston",
+  "Perenuka Mountain Bike Park",
+  "Mores Scenic Reserve Lookout",
+  "Forest Hill Scenic Reserve",
+  "Mavora Greenstone Walkway",
+  "Waikaia Forest",
+  "Titan Rocks Track",
+  "Waikaia River Track",
+  "Aparima River Track",
+  "Longwood Forest Conservation Area",
+  "Dean Forest Big Totara Walk",
+  "Forks Flat Track",
+  "Derek Turnbull Track",
+  "Richardsons Track",
+  "Richard Henry's House Site",
+  "Tarawera Silver Mine and Smelter",
+  "Astronomers Point",
+  "Island Hill Run and Homestead",
+  "Te Anau Downs",
+  "Te Anau Wildlife Centre",
+  "Te Anau DOC Visitor Centre",
+  "Te Anau Downs Ferry",
+  "Gertrude Saddle Route",
+  "Tutoko Valley Route",
+  "Falls Creek Route",
+  "Moraine Creek Route",
+  "Deadmans Track",
+  "Pass Creek Track",
+  "Pyke Big Bay Route",
+  "Rodger Inlet Track",
+  "Dore Pass Route",
+  "Mistake Creek Track",
+  "Hut Creek Track",
+  "East Eglinton Track",
+  "Boyd Creek Track",
+  "Lake Mistletoe Track",
+  "Wilderness Lookout Walk",
+  "Upukerora River Track",
+  "Visitor Centre to Te Anau Bird Sanctuary Walk",
+  "Visitor Centre to Ivon Wilson Recreation Reserve Walk",
+  "Kepler Track Carpark to Dock Bay and Brod Bay",
+  "Kepler Track Carpark to Rainbow Reach",
+  "Frasers Beach Track",
+  "Pearl Harbour Return via Circle Track",
+  "Pearl Harbour to Hope Arm Track",
+  "Monument Track",
+  "Stockyard Cove Track",
+  "Old Doubtful Sound Track",
+  "Brasell Point Nature Walk",
+  "George Sound Route",
+  "Burnt Ridge Track",
+  "Eldrig Peak Route",
+  "Mt Burns Tarns Track",
+  "North Borland Track",
+  "South Borland Track",
+  "Borland Nature Walk",
+  "Teal Bay to South Coast Track",
+  "Lake Hauroko to Teal Bay Hut Track",
+  "Percy Pass",
+  "Routeburn Track Lake Howden Track",
+  "Routeburn Track Earland Falls Track",
+  "Lake Gunn Nature Walk",
+  "Mirror Lakes Walk",
+  "Ngahere Ara Track",
+  "Piano Flat Creek Loop Track",
+  "Middle Ridge Track",
+  "Whisky Creek Track",
+  "Grants Knob Track",
+  "Dolamore Track",
+  "Pourakino Picnic Area Loop Track",
+  "Long Hilly Round Hill Walking Track",
+  "Turnbulls Tramping Track",
+  "Princhester Saddle Route",
+  "Upper Aparima Spence Burn Route",
+  "Oban Day Walks",
+  "Rakiura Day Walks",
+  "Monkey Creek"
+ ],
+ "strongest_outsiders": {
+  "kept_outside_every_span": [
+   {
+    "name": "Mavora Lakes",
+    "views": 2521,
+    "counted_sources": 2,
+    "kept_as": "standalone"
+   },
+   {
+    "name": "Colac Bay",
+    "views": 2132,
+    "counted_sources": 1,
+    "kept_as": "standalone (proposed tuatapere)"
+   },
+   {
+    "name": "South Coast Track",
+    "views": 1608,
+    "counted_sources": 1,
+    "kept_as": "standalone"
+   },
+   {
+    "name": "Te Waewae Bay",
+    "views": 1097,
+    "counted_sources": 1,
+    "kept_as": "standalone (proposed tuatapere)"
+   },
+   {
+    "name": "Around the Mountains Cycle Trail",
+    "views": 587,
+    "counted_sources": 2,
+    "kept_as": "standalone"
+   },
+   {
+    "name": "Eastern Southland Gallery",
+    "views": 384,
+    "counted_sources": 2,
+    "kept_as": "standalone (proposed gore)"
+   },
+   {
+    "name": "Gemstone Beach",
+    "views": 0,
+    "counted_sources": 1,
+    "kept_as": "standalone (proposed tuatapere)"
+   },
+   {
+    "name": "Hokonui Heritage Centre",
+    "views": 0,
+    "counted_sources": 2,
+    "kept_as": "standalone (proposed gore)"
+   },
+   {
+    "name": "Brown Trout Statue",
+    "views": 0,
+    "counted_sources": 1,
+    "kept_as": "standalone (proposed gore)"
+   }
+  ],
+  "left_out_or_review_outside_spans": [
+   {
+    "name": "Lake Hauroko",
+    "views": 8210,
+    "counted_sources": 1,
+    "verdict": "review",
+    "reason": "FOR: New Zealand's deepest lake, DOC walks, the Hump Ridge and South Coast access. AGAINST: one source, long gravel access, little for a short visit. Left as review."
+   },
+   {
+    "name": "Winton",
+    "views": 6731,
+    "counted_sources": 1,
+    "verdict": "reject",
+    "reason": "One source, a central Southland service town with no named sight; fails the distinct-draw test."
+   },
+   {
+    "name": "Mataura",
+    "views": 6514,
+    "counted_sources": 1,
+    "verdict": "reject",
+    "reason": "One counted source, a small service town; trout fishing is a service and the local museum is minor. Nothing to do for 30 minutes that a traveller would detour for."
+   },
+   {
+    "name": "Tuatapere",
+    "views": 5349,
+    "counted_sources": 1,
+    "verdict": "review",
+    "reason": "FOR: gateway village for Hump Ridge and the Wairaurahiri jet-boat, 'sausage capital' icon, Southland NZ-named. AGAINST: one source, mostly a services stop; its draw is the journey beyond (same case as Pipiriki). Left as review."
+   },
+   {
+    "name": "Dusky Sound",
+    "views": 5273,
+    "counted_sources": 1,
+    "verdict": "review",
+    "reason": "FOR: Tamatea/Dusky Sound is a major fiord with Cook-era history, Wikivoyage-named. AGAINST: reached only by expedition cruise, flight or the multi-day Dusky Track, so not open at will. Left as review."
+   },
+   {
+    "name": "Waikaia",
+    "views": 1644,
+    "counted_sources": 1,
+    "verdict": "reject",
+    "reason": "One source, tiny former goldmining town with a thin visit; not worth a detour."
+   },
+   {
+    "name": "Lake Monowai",
+    "views": 1233,
+    "counted_sources": 1,
+    "verdict": "reject",
+    "reason": "One source, hydro lake on the Borland Road used mostly by locals and trampers; part of the Monowai/Borland area."
+   },
+   {
+    "name": "Waituna Lagoon",
+    "views": 665,
+    "counted_sources": 1,
+    "verdict": "review",
+    "reason": "FOR: DOC loop walk and birdlife in a Ramsar wetland. AGAINST: one source, flat lagoon with a modest payoff; Awarua-Waituna Wetlands is the same place. Left as review."
+   }
+  ]
+ },
+ "benchmark": {
+  "applicable_to_southland": "Hump Ridge Track kept (existing standalone hump-ridge-track, benchmark, 2 counted sources); Stirling Point kept (invercargill-4). Pipiriki-type gateway Tuatapere sent to review, not kept. North West Circuit is its own spot, not the Rakiura Track. TSS Earnslaw not proposed. Sutherland Falls kept, Monkey Creek review, E Hayes kept, Homer Tunnel kept.",
+  "not_in_this_region": [
+   "Red Rocks",
+   "Kapiti Island",
+   "Lake Coleridge",
+   "Sumner Beach",
+   "Godley Head",
+   "Lyttelton",
+   "Birdlings Flat",
+   "Paradise",
+   "St Kilda Beach",
+   "Ohakune Carrot",
+   "Ninety Mile Beach"
+  ]
+ },
+ "review_list_for_owner": [
+  {
+   "name": "Tuatapere",
+   "views": 5349,
+   "counted_sources": 1,
+   "case": "FOR: gateway village for Hump Ridge and the Wairaurahiri jet-boat, 'sausage capital' icon, Southland NZ-named. AGAINST: one source, mostly a services stop; its draw is the journey beyond (same case as Pipiriki). Left as review."
+  },
+  {
+   "name": "Demolition World",
+   "views": 0,
+   "counted_sources": 1,
+   "case": "FOR: Wikivoyage 'to be believed' junk village, $2 entry, quirky-icon standard. AGAINST: a private demolition yard, closed Sundays, one source, a short look. Left as review."
+  },
+  {
+   "name": "Te Unua Museum of Southland",
+   "views": 468,
+   "counted_sources": 0,
+   "case": "FOR: Southland's regional museum, reopened 2024, tuatara and local history, a real half-day indoor stop that any guide covers. AGAINST: no counted source could be confirmed from here (Wikivoyage Invercargill does not name it; southlandnz.com returns 403 to scripts), and Wikipedia alone does not count. Likely keep once the tourism page is opened in a browser."
+  },
+  {
+   "name": "Anderson Park",
+   "views": 604,
+   "counted_sources": 0,
+   "case": "FOR: gardens plus Anderson Park Art Gallery, a free half-day. AGAINST: Wikipedia category only, no counted source; Wikivoyage Invercargill does not list it. Hold for a Southland NZ or guidebook check."
+  },
+  {
+   "name": "Waituna Lagoon",
+   "views": 665,
+   "counted_sources": 1,
+   "case": "FOR: DOC loop walk and birdlife in a Ramsar wetland. AGAINST: one source, flat lagoon with a modest payoff; Awarua-Waituna Wetlands is the same place. Left as review."
+  },
+  {
+   "name": "Lake Hauroko",
+   "views": 8210,
+   "counted_sources": 1,
+   "case": "FOR: New Zealand's deepest lake, DOC walks, the Hump Ridge and South Coast access. AGAINST: one source, long gravel access, little for a short visit. Left as review."
+  },
+  {
+   "name": "Dusky Sound",
+   "views": 5273,
+   "counted_sources": 1,
+   "case": "FOR: Tamatea/Dusky Sound is a major fiord with Cook-era history, Wikivoyage-named. AGAINST: reached only by expedition cruise, flight or the multi-day Dusky Track, so not open at will. Left as review."
+  },
+  {
+   "name": "Tunnel Hill",
+   "views": 0,
+   "counted_sources": 1,
+   "case": "FOR: a 250 m hand-dug 1890s railway tunnel you can walk through, quirky heritage stop. AGAINST: one source, short visit. Left as review."
+  },
+  {
+   "name": "Owaka Museum and Catlins Information Centre",
+   "views": 0,
+   "counted_sources": 1,
+   "case": "FOR: the Catlins' main museum (Wahi Kahuika), an indoor stop on the Catlins route. AGAINST: one source, small-town museum. Left as review."
+  },
+  {
+   "name": "Monkey Island (Te Puka a Takitimu)",
+   "views": 0,
+   "counted_sources": 1,
+   "case": "FOR: a named tidal island you can walk to at low tide, photographed on the Southern Scenic Route; commons has photos. AGAINST: one source, short stop, no coordinates in candidates. Left as review."
+  },
+  {
+   "name": "Gertrude Saddle Route",
+   "views": 0,
+   "counted_sources": 1,
+   "case": "FOR: well-known DOC day route above the Milford Road with big alpine views. AGAINST: steep, exposed route for experienced walkers, one source, no coordinates. Left as review."
+  },
+  {
+   "name": "Monkey Creek",
+   "views": 0,
+   "counted_sources": 0,
+   "case": "FOR: a Milford Road stop known for drinkable water. AGAINST: a short roadside pull-out, no counted source in the data, and no guide singles it out by name here. Left as review for the guide check."
+  }
+ ]
+}

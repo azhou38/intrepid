@@ -1,0 +1,1487 @@
+{
+ "region": "auckland",
+ "inside_destinations": 42,
+ "standalone": 4,
+ "new_destinations": 0,
+ "new_destinations_proposed": [],
+ "existing_kept_unchanged": 32,
+ "covered_by_existing_destination": [
+  "Matakana"
+ ],
+ "lowest_kept": [
+  {
+   "name": "Takapuna Beach",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "Parakai Springs",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Auckland Fish Market",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Otuataua Stonefields",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Cheltenham Beach",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Tāmaki Drive Coastal Path",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Cactus Bay",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Cable Bay Walk",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Glenfern Sanctuary",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Ruahine Lookout Track",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Sculptureum",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Sheepworld",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Mission Bay",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Wynyard Quarter",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Onetangi",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Oneroa",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Stony Batter Historic Reserve",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Aotea Track",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Kaitoke Hot Springs",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Cape Rodney-Okakari Point Marine Reserve",
+   "views": 0,
+   "counted_sources": 1
+  }
+ ],
+ "stronger_left_out": [
+  {
+   "name": "Eden Park",
+   "views": 101060,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Stadium; visited for matches and events, not a standing draw."
+  },
+  {
+   "name": "Wētā Workshop Unleashed",
+   "views": 77140,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Wellington attraction (Wētā Workshop), mislisted in the Auckland enumeration and already in the app as wellington-6; not in this region."
+  },
+  {
+   "name": "Waiheke Island",
+   "views": 57176,
+   "counted_sources": 3,
+   "verdict": "reject",
+   "reason": "Already a destination (waiheke-island), not a spot."
+  },
+  {
+   "name": "Navigation Homes Stadium",
+   "views": 53079,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Stadium; visited for matches and events, not a standing draw."
+  },
+  {
+   "name": "Auckland Region (Wikipedia area)",
+   "views": 49321,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Umbrella for the region or a volcanic field, not a stop."
+  },
+  {
+   "name": "Great Barrier Island",
+   "views": 40186,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Already a destination (great-barrier-island), not a spot."
+  },
+  {
+   "name": "Auckland Bridge Climb",
+   "views": 31990,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: signature Auckland activity on the Harbour Bridge (31990 views). Against: an operator, not a place; the bridge is covered by the same entry. If kept, name the spot Auckland Harbour Bridge and put the climb and SkyPath in the bio; the bridge itself has no walk-in access."
+  },
+  {
+   "name": "Auckland Harbour Bridge",
+   "views": 31990,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Same place as the Bridge Climb entry; keep one. Merged into Auckland Bridge Climb review."
+  },
+  {
+   "name": "Auckland Volcanic Field",
+   "views": 27484,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Umbrella for the region or a volcanic field, not a stop."
+  },
+  {
+   "name": "Ponsonby",
+   "views": 18316,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: dining strip named by Wikivoyage and AucklandNZ. Against: a suburb street, one source; close to a K Road-style neighbourhood entry. Friend test: only if nearby."
+  },
+  {
+   "name": "Orewa",
+   "views": 11392,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "For: large Hibiscus Coast beach town. Against: no counted source, suburban."
+  },
+  {
+   "name": "Waiuku",
+   "views": 11102,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: AucklandNZ lists the town, 11102 views. Against: one source, small town."
+  },
+  {
+   "name": "Kingseat Hospital",
+   "views": 10222,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Former hospital with doubtful or no public access."
+  },
+  {
+   "name": "Queen Street",
+   "views": 9427,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Main shopping street; no attraction beyond shops and cafes, and it overlaps Karangahape Road."
+  },
+  {
+   "name": "Kaipara Harbour",
+   "views": 9370,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Large harbour, not a stop; its cruise operators are not spots."
+  },
+  {
+   "name": "Whangaparāoa Peninsula",
+   "views": 8960,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Peninsula region, not a stop; named only by Wikipedia."
+  },
+  {
+   "name": "Rākino Island",
+   "views": 8814,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "For: 8814 views, reached by ferry, a Hauraki Gulf island with a public landing. Against: no counted source."
+  },
+  {
+   "name": "Helensville",
+   "views": 8773,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Kaipara town with museums, Parakai Springs next door. Against: one source, small town."
+  },
+  {
+   "name": "St Patrick's Cathedral",
+   "views": 8573,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Active church; interior and exterior visit only, falls under the 'churches' fail."
+  },
+  {
+   "name": "Gibbs Farm",
+   "views": 7651,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Private sculpture park open once a month; not there when a visitor arrives."
+  },
+  {
+   "name": "Howick",
+   "views": 7619,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Suburb of Howick, near-duplicate of Howick Historical Village's area; only AucklandNZ lists it."
+  },
+  {
+   "name": "Auckland Town Hall",
+   "views": 7601,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Civic building and performance venue; visited from the pavement or for shows only."
+  },
+  {
+   "name": "Little Barrier Island",
+   "views": 7584,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Permit-only scientific reserve, no general public access."
+  },
+  {
+   "name": "Kohimarama",
+   "views": 7179,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Only a Wikipedia listing; suburban beach."
+  },
+  {
+   "name": "Goat Island (Auckland)",
+   "views": 5676,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Tiny island listed only in a Wikipedia category; no visitor access or reason."
+  },
+  {
+   "name": "Beachlands",
+   "views": 5199,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: beach and coastal walk on Wikivoyage. Against: suburban beach, one source. A named beach, so not rejected."
+  },
+  {
+   "name": "Holy Trinity Cathedral",
+   "views": 4848,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Active church; interior and exterior visit only, falls under the 'churches' fail."
+  },
+  {
+   "name": "Pakatoa Island",
+   "views": 4822,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Private island or resort; no public access, no counted source."
+  },
+  {
+   "name": "Snells Beach",
+   "views": 4764,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Only a Wikipedia listing; suburban beach."
+  },
+  {
+   "name": "Ponui Island",
+   "views": 4573,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Private island or resort; no public access, no counted source."
+  },
+  {
+   "name": "Browns Bay",
+   "views": 4558,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Only a Wikipedia listing; suburban beach."
+  },
+  {
+   "name": "Clevedon",
+   "views": 4312,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: vineyard village on AucklandNZ. Against: its market is weekly (ephemeral) and one source."
+  },
+  {
+   "name": "Cornwall Park",
+   "views": 4118,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Near-duplicate: Cornwall Park is already covered by One Tree Hill, whose bio names it."
+  },
+  {
+   "name": "Red Beach",
+   "views": 4040,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Only a Wikipedia listing; suburban beach."
+  },
+  {
+   "name": "Footrot Flats Fun Park",
+   "views": 3844,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; status unclear."
+  },
+  {
+   "name": "Albert Park",
+   "views": 3802,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "City park beside a spot already in the app; one source."
+  },
+  {
+   "name": "Aotea Square",
+   "views": 3788,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A square used for events and markets; no standalone draw."
+  },
+  {
+   "name": "Motukorea",
+   "views": 3708,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; no visitor reason named."
+  },
+  {
+   "name": "Waiwera",
+   "views": 3678,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "For: thermal pools and beach, 3678 views. Against: spa status unchecked, no counted source."
+  },
+  {
+   "name": "Milford Beach",
+   "views": 3652,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Only a Wikipedia listing; suburban beach."
+  },
+  {
+   "name": "Bucklands Beach",
+   "views": 3648,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: beach with coastal walk on Wikivoyage. Against: suburban beach, one source."
+  },
+  {
+   "name": "Aotea Centre",
+   "views": 3408,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Civic building and performance venue; visited from the pavement or for shows only."
+  },
+  {
+   "name": "Pah Homestead",
+   "views": 3234,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Local arts centre in a homestead, one source."
+  },
+  {
+   "name": "Torbay",
+   "views": 3145,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Only a Wikipedia listing; suburban beach."
+  },
+  {
+   "name": "Karioitahi Beach",
+   "views": 2948,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "For: west-coast dune beach, known for beach landsailing. Against: only a Wikipedia listing; no photo passes."
+  },
+  {
+   "name": "Stanmore Bay",
+   "views": 2859,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Only a Wikipedia listing; suburban beach."
+  },
+  {
+   "name": "Hunua Ranges",
+   "views": 2737,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "For: large regional park with walks and dams, high page views. Against: overlaps Hunua Falls; no counted source in the enumeration. If Hunua Falls is kept this is a park spot either way; owner to decide whether to list the park too."
+  },
+  {
+   "name": "Eastern Beach",
+   "views": 2662,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Only a Wikipedia listing; suburban beach."
+  },
+  {
+   "name": "Mokohinau Islands",
+   "views": 2624,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Tiny island listed only in a Wikipedia category; no visitor access or reason."
+  },
+  {
+   "name": "Long Bay",
+   "views": 2620,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Only a Wikipedia listing; suburban beach."
+  },
+  {
+   "name": "St Matthew's Church",
+   "views": 2564,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Active church; interior and exterior visit only, falls under the 'churches' fail."
+  },
+  {
+   "name": "Shelly Beach",
+   "views": 2535,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Only a Wikipedia listing; suburban beach."
+  },
+  {
+   "name": "Scenic Drive",
+   "views": 2519,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A route through the Waitākere Ranges, part of that park and Arataki; a drive, not a stop."
+  },
+  {
+   "name": "The Noises",
+   "views": 2263,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Tiny island listed only in a Wikipedia category; no visitor access or reason."
+  },
+  {
+   "name": "Colin Maiden Park",
+   "views": 2218,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Local park or reserve named only by a Wikipedia list, no visitor-oriented source."
+  },
+  {
+   "name": "Symonds Street Cemetery",
+   "views": 2148,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; local gallery or museum not named by any visitor guide."
+  },
+  {
+   "name": "The Charlotte Museum",
+   "views": 2143,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; local gallery or museum not named by any visitor guide."
+  },
+  {
+   "name": "Cockle Bay",
+   "views": 2118,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Only a Wikipedia listing; suburban beach."
+  },
+  {
+   "name": "Āwhitu Peninsula",
+   "views": 2113,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: coastal views and lighthouse on AucklandNZ. Against: a peninsula, not a defined stop."
+  },
+  {
+   "name": "Victoria Park, Auckland",
+   "views": 2097,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Local park or reserve named only by a Wikipedia list, no visitor-oriented source."
+  },
+  {
+   "name": "Whakamana Cannabis Museum",
+   "views": 2055,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; local gallery or museum not named by any visitor guide."
+  },
+  {
+   "name": "Murrays Bay",
+   "views": 2030,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Only a Wikipedia listing; suburban beach."
+  },
+  {
+   "name": "Ōwairaka / Mount Albert",
+   "views": 2010,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: volcanic cone on AucklandNZ, 2010 views. Against: one source, a local suburban hill beside Mount Eden and One Tree Hill already kept."
+  },
+  {
+   "name": "Tūpuna Maunga o Tāmaki Makaurau",
+   "views": 1906,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Umbrella for all the maunga, not one place; no coordinates."
+  },
+  {
+   "name": "Pigeon Mountain",
+   "views": 1783,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Local volcanic cone or park with only a Wikipedia listing."
+  },
+  {
+   "name": "Karamuramu Island",
+   "views": 1736,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Tiny island listed only in a Wikipedia category; no visitor access or reason."
+  },
+  {
+   "name": "Highwic",
+   "views": 1706,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small house museum open limited days, one source."
+  },
+  {
+   "name": "Pōhutukawa Bay",
+   "views": 1684,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Only a Wikipedia listing; suburban beach."
+  },
+  {
+   "name": "Domain Wintergardens",
+   "views": 1672,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Part of the Auckland Domain, which is already a spot."
+  },
+  {
+   "name": "Parnell Rose Gardens",
+   "views": 1667,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rose garden in a suburb, no counted source."
+  },
+  {
+   "name": "Goat Island Marine Discovery Centre",
+   "views": 1661,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Near-duplicate of the Cape Rodney-Okakari Point Marine Reserve spot (Goat Island)."
+  },
+  {
+   "name": "Westhaven Marina",
+   "views": 1641,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Marina and gateway to the bridge climb; no visitor draw of its own."
+  },
+  {
+   "name": "Lopdell House",
+   "views": 1544,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Same building as Te Uru Waitākere Contemporary Gallery, and no counted source names it as a stop."
+  },
+  {
+   "name": "Pakihi Island",
+   "views": 1523,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Tiny island listed only in a Wikipedia category; no visitor access or reason."
+  },
+  {
+   "name": "Cornwallis",
+   "views": 1509,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Only a Wikipedia listing; suburban beach."
+  },
+  {
+   "name": "Myers Park",
+   "views": 1501,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small CBD route between Queen Street and K Road; ordinary city park."
+  },
+  {
+   "name": "Mathesons Bay",
+   "views": 1493,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Only a Wikipedia listing; suburban beach."
+  },
+  {
+   "name": "Keith Hay Park",
+   "views": 1491,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Local park or reserve named only by a Wikipedia list, no visitor-oriented source."
+  },
+  {
+   "name": "Motukaraka Island",
+   "views": 1445,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Tiny island listed only in a Wikipedia category; no visitor access or reason."
+  },
+  {
+   "name": "Manly",
+   "views": 1386,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Only a Wikipedia listing; suburban beach."
+  },
+  {
+   "name": "Takanini Gurdwara",
+   "views": 1329,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; local gallery or museum not named by any visitor guide."
+  },
+  {
+   "name": "Waiake",
+   "views": 1329,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Only a Wikipedia listing; suburban beach."
+  },
+  {
+   "name": "Victoria Park Market",
+   "views": 1281,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Mostly shops, one source."
+  },
+  {
+   "name": "Arkles Bay",
+   "views": 1261,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Only a Wikipedia listing; suburban beach."
+  },
+  {
+   "name": "Alexandra Park",
+   "views": 1233,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Racecourse or event ground; event venue."
+  },
+  {
+   "name": "Western Park, Auckland",
+   "views": 1217,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Local park or reserve named only by a Wikipedia list, no visitor-oriented source."
+  },
+  {
+   "name": "Algies Bay",
+   "views": 1195,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Only a Wikipedia listing; suburban beach."
+  },
+  {
+   "name": "Western Springs Reserve",
+   "views": 1173,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Part of the Auckland Zoo and MOTAT spots."
+  },
+  {
+   "name": "Newmarket Park",
+   "views": 1133,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Local park or reserve named only by a Wikipedia list, no visitor-oriented source."
+  },
+  {
+   "name": "Dingle Dell",
+   "views": 1130,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Local park or reserve named only by a Wikipedia list, no visitor-oriented source."
+  },
+  {
+   "name": "Mount Hobson / Hirakimatā",
+   "views": 1111,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Summit on the Aotea Track, already a spot; part of a larger spot."
+  },
+  {
+   "name": "Anawhata",
+   "views": 1106,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Remote beach with only a Wikipedia listing."
+  },
+  {
+   "name": "Army Bay",
+   "views": 1088,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Only a Wikipedia listing; suburban beach."
+  },
+  {
+   "name": "Barry Curtis Park",
+   "views": 1083,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Local park or reserve named only by a Wikipedia list, no visitor-oriented source."
+  },
+  {
+   "name": "Whites Beach",
+   "views": 1074,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Only a Wikipedia listing; suburban beach."
+  },
+  {
+   "name": "Woodhill Forest",
+   "views": 1050,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A sport venue in plantation forest; one source."
+  },
+  {
+   "name": "The Cloud",
+   "views": 1029,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Racecourse or event ground; event venue."
+  },
+  {
+   "name": "Butterfly Creek",
+   "views": 1003,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small, open Wed-Sun only, one source."
+  },
+  {
+   "name": "Lloyd Elsmore Park",
+   "views": 993,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Local park or reserve named only by a Wikipedia list, no visitor-oriented source."
+  },
+  {
+   "name": "Beehive Island / Taungamaro Island",
+   "views": 988,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Tiny island listed only in a Wikipedia category; no visitor access or reason."
+  },
+  {
+   "name": "Ewelme Cottage",
+   "views": 975,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small house museum open limited days, one source."
+  },
+  {
+   "name": "Shelly Park",
+   "views": 936,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Only a Wikipedia listing; suburban beach."
+  },
+  {
+   "name": "Monte Cecilia Park",
+   "views": 926,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Local park or reserve named only by a Wikipedia list, no visitor-oriented source."
+  },
+  {
+   "name": "Motukawao Islands",
+   "views": 911,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Tiny island listed only in a Wikipedia category; no visitor access or reason."
+  },
+  {
+   "name": "Mount Auckland (Atuanui)",
+   "views": 892,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Remote hill, rarely visited."
+  },
+  {
+   "name": "Motuora Island",
+   "views": 828,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: DOC island sanctuary with kiwi release and a ferry. Against: limited landing access, one source; no photo passes."
+  },
+  {
+   "name": "Gribblehirst Park",
+   "views": 815,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Local park or reserve named only by a Wikipedia list, no visitor-oriented source."
+  },
+  {
+   "name": "Kinder House",
+   "views": 773,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small house museum open limited days, one source."
+  },
+  {
+   "name": "Freyberg Place",
+   "views": 754,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Local park or reserve named only by a Wikipedia list, no visitor-oriented source."
+  },
+  {
+   "name": "Kirk's Bush",
+   "views": 719,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Local park or reserve named only by a Wikipedia list, no visitor-oriented source."
+  },
+  {
+   "name": "Gus Fisher Gallery",
+   "views": 712,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; local gallery or museum not named by any visitor guide."
+  },
+  {
+   "name": "Parrs Park",
+   "views": 706,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Local park or reserve named only by a Wikipedia list, no visitor-oriented source."
+  },
+  {
+   "name": "Auckland Showgrounds",
+   "views": 700,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Racecourse or event ground; event venue."
+  },
+  {
+   "name": "Te Uru Waitākere Contemporary Gallery",
+   "views": 689,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Local gallery, one source."
+  },
+  {
+   "name": "Basque Park",
+   "views": 688,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Local park or reserve named only by a Wikipedia list, no visitor-oriented source."
+  },
+  {
+   "name": "Aiguilles Island",
+   "views": 687,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Tiny island listed only in a Wikipedia category; no visitor access or reason."
+  },
+  {
+   "name": "Waipaparoa / Howick Beach",
+   "views": 672,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Only a Wikipedia listing; suburban beach."
+  },
+  {
+   "name": "Frank Sargeson House",
+   "views": 639,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; local gallery or museum not named by any visitor guide."
+  },
+  {
+   "name": "Tahuna Torea Nature Reserve",
+   "views": 639,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Local park or reserve named only by a Wikipedia list, no visitor-oriented source."
+  },
+  {
+   "name": "Matakatia",
+   "views": 632,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Only a Wikipedia listing; suburban beach."
+  },
+  {
+   "name": "Kaikōura Island",
+   "views": 612,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Tiny island listed only in a Wikipedia category; no visitor access or reason."
+  },
+  {
+   "name": "Alice Eaves Scenic Reserve",
+   "views": 593,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Short local bush walk, one source."
+  },
+  {
+   "name": "Goldie Bush Scenic Reserve",
+   "views": 569,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Local park or reserve named only by a Wikipedia list, no visitor-oriented source."
+  },
+  {
+   "name": "Fowlds Park",
+   "views": 538,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Local park or reserve named only by a Wikipedia list, no visitor-oriented source."
+  },
+  {
+   "name": "Blackpool Beach",
+   "views": 538,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Waiheke kayaking beach on Wikivoyage. Against: small beach, one source."
+  },
+  {
+   "name": "Rosedale Park",
+   "views": 528,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Local park or reserve named only by a Wikipedia list, no visitor-oriented source."
+  },
+  {
+   "name": "Murphy's Bush",
+   "views": 507,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Local park or reserve named only by a Wikipedia list, no visitor-oriented source."
+  },
+  {
+   "name": "Churchill Park",
+   "views": 504,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Local park or reserve named only by a Wikipedia list, no visitor-oriented source."
+  },
+  {
+   "name": "Te Toi Uku – Crown Lynn & Clayworks Museum",
+   "views": 502,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; local gallery or museum not named by any visitor guide."
+  },
+  {
+   "name": "Blandford Park",
+   "views": 474,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Local park or reserve named only by a Wikipedia list, no visitor-oriented source."
+  },
+  {
+   "name": "Objectspace",
+   "views": 473,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; local gallery or museum not named by any visitor guide."
+  },
+  {
+   "name": "Muriwai Regional Park",
+   "views": 461,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Part of the Muriwai area; pine forest with local tracks, no source."
+  },
+  {
+   "name": "Whangaparapara",
+   "views": 448,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Little in the village itself; one source."
+  },
+  {
+   "name": "Tarahiki Island",
+   "views": 448,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Tiny island listed only in a Wikipedia category; no visitor access or reason."
+  },
+  {
+   "name": "Papakura Museum",
+   "views": 438,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small local museum."
+  },
+  {
+   "name": "Te Tuhi",
+   "views": 437,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; local gallery or museum not named by any visitor guide."
+  },
+  {
+   "name": "Albany Lakes Civic Park",
+   "views": 424,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Local park or reserve named only by a Wikipedia list, no visitor-oriented source."
+  },
+  {
+   "name": "Horuhoru Rock (Gannet Rock)",
+   "views": 424,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Tiny island listed only in a Wikipedia category; no visitor access or reason."
+  },
+  {
+   "name": "Te Haupa Island",
+   "views": 413,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Tiny island listed only in a Wikipedia category; no visitor access or reason."
+  },
+  {
+   "name": "McNicol Homestead",
+   "views": 410,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small homestead museum open weekends only."
+  },
+  {
+   "name": "Ahaaha Rocks",
+   "views": 404,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Tiny island listed only in a Wikipedia category; no visitor access or reason."
+  },
+  {
+   "name": "Takangaroa Island",
+   "views": 404,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Tiny island listed only in a Wikipedia category; no visitor access or reason."
+  },
+  {
+   "name": "St Johns Bush",
+   "views": 384,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Local park or reserve named only by a Wikipedia list, no visitor-oriented source."
+  },
+  {
+   "name": "Duders Beach",
+   "views": 380,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Only a Wikipedia listing; suburban beach."
+  },
+  {
+   "name": "Kotanui Island / Frenchmans Cap",
+   "views": 380,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Tiny island listed only in a Wikipedia category; no visitor access or reason."
+  },
+  {
+   "name": "Broken Islands / Pig Islands",
+   "views": 373,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Tiny island listed only in a Wikipedia category; no visitor access or reason."
+  },
+  {
+   "name": "Awana Bay",
+   "views": 352,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Near-duplicate of Awana Beach."
+  },
+  {
+   "name": "Warkworth Museum",
+   "views": 331,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small local museum, one source."
+  },
+  {
+   "name": "Okura Bush Scenic Reserve",
+   "views": 309,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Local park or reserve named only by a Wikipedia list, no visitor-oriented source."
+  },
+  {
+   "name": "Puke-i-Āki-Rangi",
+   "views": 279,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Local volcanic cone or park with only a Wikipedia listing."
+  },
+  {
+   "name": "Challenger Island / Little Kawau Island",
+   "views": 266,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Tiny island listed only in a Wikipedia category; no visitor access or reason."
+  },
+  {
+   "name": "Winstones Cove",
+   "views": 249,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Only a Wikipedia listing; suburban beach."
+  },
+  {
+   "name": "Kahakaha / Frenchmans Cap",
+   "views": 212,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Tiny island listed only in a Wikipedia category; no visitor access or reason."
+  },
+  {
+   "name": "Palmers Beach",
+   "views": 164,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Walk-in end of Kaitoke Beach; part of that beach."
+  },
+  {
+   "name": "Archway Island",
+   "views": 158,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Tiny island listed only in a Wikipedia category; no visitor access or reason."
+  }
+ ],
+ "left_out_zero_views_rejected": [
+  "The Lighthouse / Tū Whenua-a-Kura",
+  "Silo Park",
+  "Te Komititanga",
+  "The Civic",
+  "Alberton",
+  "Auckland Whale & Dolphin Safari",
+  "Auckland Sea Kayaks",
+  "Wynyard Loop tram",
+  "All Blacks Experience",
+  "Te Ipu kōrero ki Maungawhau",
+  "Rangitoto Summit Track",
+  "Rangitoto Lava Caves",
+  "Rangitoto Crater Rim Track",
+  "Kawau Island Mansion House",
+  "Hauraki Gulf Marine Park",
+  "Oneroa Beach",
+  "Little Oneroa Beach",
+  "Little Palm Beach",
+  "Surfdale Beach",
+  "Onetangi Beach",
+  "Connells Bay Sculpture Park",
+  "Waiheke Island Historic Village",
+  "Whittaker's Music Museum",
+  "Waiheke Community Art Gallery",
+  "Alison Park Sculpture",
+  "Te Ara Hura walks",
+  "Batch Winery",
+  "Goldie Estate",
+  "Jurassic Ridge",
+  "Kennedy Point Vineyard",
+  "Man O' War Vineyards",
+  "Mudbrick Vineyard",
+  "Passage Rock",
+  "Peacock Sky",
+  "Tantalus Estate",
+  "Fullers Taste of Waiheke Tour",
+  "Waiheke Jazz, Art & Music Festival",
+  "Milk, Honey and Grain Museum",
+  "Aotea Arts and History Village",
+  "Okiwi Park",
+  "Okupu Beach",
+  "Te Ahumatā White Cliffs",
+  "Station Rock Lookout",
+  "Harataonga Coastal Walk",
+  "Kowhai Track",
+  "Kauri Falls",
+  "Good Heavens Dark Sky Experience",
+  "Shrin Yogu",
+  "Crazy Horse Trike Tour",
+  "Matakana Coastal Walks",
+  "McCahon House",
+  "West Wave Pool",
+  "Lion Rock",
+  "North Piha Beach",
+  "Muriwai Gannet Colony",
+  "Maori Bay",
+  "Helensville Railway Museum",
+  "Helensville Pioneer Museum",
+  "Henderson Valley wineries",
+  "Skydive Auckland",
+  "Wero Whitewater Park",
+  "Half Moon Bay",
+  "Hobsonville Point Coastal Walkway",
+  "Devonport Museum",
+  "Devonport Beach",
+  "Narrow Neck Beach",
+  "Te Araroa Trail North Shore section",
+  "Kennedy Park to Castor Bay Path",
+  "Chelsea Bay",
+  "Harbourside Art Trail",
+  "Matakatia Bay",
+  "Big Manly Beach",
+  "Little Manly Beach",
+  "Tindalls Beach",
+  "Mayne Islands",
+  "Cable Bay Vineyards",
+  "Matiatia"
+ ],
+ "strongest_outsiders": {
+  "kept_outside_every_span": [
+   {
+    "name": "Rotoroa Island",
+    "views": 4138,
+    "counted_sources": 1,
+    "kept_as": "standalone"
+   },
+   {
+    "name": "Whatipu",
+    "views": 3175,
+    "counted_sources": 0,
+    "kept_as": "standalone"
+   },
+   {
+    "name": "Hunua Falls",
+    "views": 1240,
+    "counted_sources": 0,
+    "kept_as": "standalone"
+   },
+   {
+    "name": "Parakai Springs",
+    "views": 0,
+    "counted_sources": 1,
+    "kept_as": "standalone"
+   }
+  ],
+  "left_out_outside_every_span": [
+   {
+    "name": "Orewa",
+    "views": 11392,
+    "counted_sources": 0,
+    "verdict": "review",
+    "reason": "For: large Hibiscus Coast beach town. Against: no counted source, suburban."
+   },
+   {
+    "name": "Waiuku",
+    "views": 11102,
+    "counted_sources": 1,
+    "verdict": "review",
+    "reason": "For: AucklandNZ lists the town, 11102 views. Against: one source, small town."
+   },
+   {
+    "name": "Rākino Island",
+    "views": 8814,
+    "counted_sources": 0,
+    "verdict": "review",
+    "reason": "For: 8814 views, reached by ferry, a Hauraki Gulf island with a public landing. Against: no counted source."
+   },
+   {
+    "name": "Helensville",
+    "views": 8773,
+    "counted_sources": 1,
+    "verdict": "review",
+    "reason": "For: Kaipara town with museums, Parakai Springs next door. Against: one source, small town."
+   },
+   {
+    "name": "Clevedon",
+    "views": 4312,
+    "counted_sources": 1,
+    "verdict": "review",
+    "reason": "For: vineyard village on AucklandNZ. Against: its market is weekly (ephemeral) and one source."
+   },
+   {
+    "name": "Waiwera",
+    "views": 3678,
+    "counted_sources": 0,
+    "verdict": "review",
+    "reason": "For: thermal pools and beach, 3678 views. Against: spa status unchecked, no counted source."
+   },
+   {
+    "name": "Karioitahi Beach",
+    "views": 2948,
+    "counted_sources": 0,
+    "verdict": "review",
+    "reason": "For: west-coast dune beach, known for beach landsailing. Against: only a Wikipedia listing; no photo passes."
+   },
+   {
+    "name": "Hunua Ranges",
+    "views": 2737,
+    "counted_sources": 0,
+    "verdict": "review",
+    "reason": "For: large regional park with walks and dams, high page views. Against: overlaps Hunua Falls; no counted source in the enumeration. If Hunua Falls is kept this is a park spot either way; owner to decide whether to list the park too."
+   },
+   {
+    "name": "Āwhitu Peninsula",
+    "views": 2113,
+    "counted_sources": 1,
+    "verdict": "review",
+    "reason": "For: coastal views and lighthouse on AucklandNZ. Against: a peninsula, not a defined stop."
+   }
+  ]
+ },
+ "benchmark": {
+  "applicable_to_auckland": "No named benchmark place lies in Auckland. Behaviour checks: vehicle/operator rule applied (Auckland Bridge Climb sent to review as an operator, to be named Auckland Harbour Bridge if kept; ferries not spots, their islands are); weekly markets rejected (Clevedon market is the stated reason Clevedon is review); civic/house museums rejected (Kinder House, Highwic, Alberton, Ewelme Cottage); long linear features have no single access point (Te Araroa North Shore section rejected) while the two named paths are kept with approximate coordinates flagged; Rangitoto already in the app, Waiheke/Great Barrier/Matakana remain destinations and are not duplicated as spots.",
+  "negative_benchmarks": "Not applicable in this region.",
+  "notes": "Lowest kept all sit at 0 views, so every rejected candidate with any views is listed in stronger_left_out with its concrete 'What qualifies' reason; none is excluded for placement."
+ },
+ "review_list_for_owner": [
+  {
+   "name": "Auckland Bridge Climb",
+   "views": 31990,
+   "counted_sources": 1,
+   "case": "For: signature Auckland activity on the Harbour Bridge (31990 views). Against: an operator, not a place; the bridge is covered by the same entry. If kept, name the spot Auckland Harbour Bridge and put the climb and SkyPath in the bio; the bridge itself has no walk-in access."
+  },
+  {
+   "name": "All Blacks Experience",
+   "views": 0,
+   "counted_sources": 1,
+   "case": "For: paid interactive museum, daily. Against: one source, a commercial attraction; judge on page and price."
+  },
+  {
+   "name": "Ōwairaka / Mount Albert",
+   "views": 2010,
+   "counted_sources": 1,
+   "case": "For: volcanic cone on AucklandNZ, 2010 views. Against: one source, a local suburban hill beside Mount Eden and One Tree Hill already kept."
+  },
+  {
+   "name": "Motuora Island",
+   "views": 828,
+   "counted_sources": 1,
+   "case": "For: DOC island sanctuary with kiwi release and a ferry. Against: limited landing access, one source; no photo passes."
+  },
+  {
+   "name": "Rākino Island",
+   "views": 8814,
+   "counted_sources": 0,
+   "case": "For: 8814 views, reached by ferry, a Hauraki Gulf island with a public landing. Against: no counted source."
+  },
+  {
+   "name": "Blackpool Beach",
+   "views": 538,
+   "counted_sources": 1,
+   "case": "For: Waiheke kayaking beach on Wikivoyage. Against: small beach, one source."
+  },
+  {
+   "name": "Helensville",
+   "views": 8773,
+   "counted_sources": 1,
+   "case": "For: Kaipara town with museums, Parakai Springs next door. Against: one source, small town."
+  },
+  {
+   "name": "Clevedon",
+   "views": 4312,
+   "counted_sources": 1,
+   "case": "For: vineyard village on AucklandNZ. Against: its market is weekly (ephemeral) and one source."
+  },
+  {
+   "name": "Wero Whitewater Park",
+   "views": 0,
+   "counted_sources": 1,
+   "case": "For: AucklandNZ lists it, paid rafting venue. Against: one source, operator-run facility; no photo passes (only aerial)."
+  },
+  {
+   "name": "Āwhitu Peninsula",
+   "views": 2113,
+   "counted_sources": 1,
+   "case": "For: coastal views and lighthouse on AucklandNZ. Against: a peninsula, not a defined stop."
+  },
+  {
+   "name": "Waiuku",
+   "views": 11102,
+   "counted_sources": 1,
+   "case": "For: AucklandNZ lists the town, 11102 views. Against: one source, small town."
+  },
+  {
+   "name": "Karioitahi Beach",
+   "views": 2948,
+   "counted_sources": 0,
+   "case": "For: west-coast dune beach, known for beach landsailing. Against: only a Wikipedia listing; no photo passes."
+  },
+  {
+   "name": "Bucklands Beach",
+   "views": 3648,
+   "counted_sources": 1,
+   "case": "For: beach with coastal walk on Wikivoyage. Against: suburban beach, one source."
+  },
+  {
+   "name": "Beachlands",
+   "views": 5199,
+   "counted_sources": 1,
+   "case": "For: beach and coastal walk on Wikivoyage. Against: suburban beach, one source. A named beach, so not rejected."
+  },
+  {
+   "name": "Hunua Ranges",
+   "views": 2737,
+   "counted_sources": 0,
+   "case": "For: large regional park with walks and dams, high page views. Against: overlaps Hunua Falls; no counted source in the enumeration. If Hunua Falls is kept this is a park spot either way; owner to decide whether to list the park too."
+  },
+  {
+   "name": "Orewa",
+   "views": 11392,
+   "counted_sources": 0,
+   "case": "For: large Hibiscus Coast beach town. Against: no counted source, suburban."
+  },
+  {
+   "name": "Waiwera",
+   "views": 3678,
+   "counted_sources": 0,
+   "case": "For: thermal pools and beach, 3678 views. Against: spa status unchecked, no counted source."
+  },
+  {
+   "name": "Ponsonby",
+   "views": 18316,
+   "counted_sources": 1,
+   "case": "For: dining strip named by Wikivoyage and AucklandNZ. Against: a suburb street, one source; close to a K Road-style neighbourhood entry. Friend test: only if nearby."
+  }
+ ]
+}

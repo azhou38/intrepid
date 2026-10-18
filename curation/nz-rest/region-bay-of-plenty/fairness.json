@@ -1,0 +1,571 @@
+{
+ "region": "bay-of-plenty",
+ "inside_destinations": 19,
+ "standalone": 5,
+ "new_destinations": 1,
+ "new_destinations_proposed": [
+  "Waihi"
+ ],
+ "existing_kept_unchanged": 19,
+ "existing_removal_proposed": [
+  "whakatane-1"
+ ],
+ "held_for_photo": 13,
+ "covered_by_existing_destination": [
+  "Tauranga",
+  "Mount Maunganui",
+  "Rotorua",
+  "Whakatāne",
+  "Whirinaki Te Pua-a-Tāne Conservation Park"
+ ],
+ "lowest_kept": [
+  {
+   "name": "tauranga-5 Tauranga Historic Village",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "whakatane-3 Kohi Point Scenic Reserve",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "rotorua-6 Hell's Gate Geothermal Park and Mud Spa",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "te-urewera-2 Aniwaniwa Falls",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "rotorua-1 Wai-O-Tapu",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "rotorua-2 Te Puia",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "rotorua-3 Whakarewarewa Forest",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "rotorua-8 Government Gardens",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "rotorua-9 Skyline Rotorua",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Katikati Bird Gardens",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Kaiate Falls",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Kuirau Park",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "tauranga-2 Mount Maunganui Main Beach",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "whakatane-2 Ōhope Beach",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "The Elms",
+   "views": 0,
+   "counted_sources": 2
+  }
+ ],
+ "stronger_left_out": [
+  {
+   "name": "Whakaari / White Island (existing whakatane-1)",
+   "views": 85092,
+   "counted_sources": 2,
+   "verdict": "reject (propose removal)",
+   "reason": "Existing: Landings suspended since the Dec 2019 eruption; the island is seen only from flights and boat cruises outside the exclusion zone, so a visitor cannot go there. Flag: reject or hold as inaccessible (the existing bio says so)."
+  },
+  {
+   "name": "Mount Tarawera",
+   "views": 27293,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "For: the 1886 eruption volcano, 27k views, famous summit rim and Wikivoyage mention of tours. Against: access only by guided tour over Māori-owned land; no counted page retrieved. Existing Lake Tarawera covers the area. Close call."
+  },
+  {
+   "name": "Katikati",
+   "views": 20521,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "For: 'Mural Town', Katikati Bird Gardens base, tourism-board town. Against: I could not retrieve a counted source naming the town itself (Wikivoyage page empty for me); the bird gardens are the draw and are already kept."
+  },
+  {
+   "name": "Te Urewera National Park",
+   "views": 13085,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A destination in the app already; not a spot of itself (near-duplicate)."
+  },
+  {
+   "name": "Te Puke",
+   "views": 12060,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Town whose Wikivoyage listings are operators (Kiwi360, Comvita, a golf course), not a place; nothing for a visitor to stop for in the town itself."
+  },
+  {
+   "name": "Kawerau",
+   "views": 11991,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Mill town with no visitor-guide chapter or sight; only a permit office for Tarawera forest."
+  },
+  {
+   "name": "Pōhutu Geyser",
+   "views": 7479,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Feature of Te Puia (existing rotorua-2); part of a larger spot, wiki only."
+  },
+  {
+   "name": "Lake Rotorua",
+   "views": 7473,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Near-duplicate of Sulphur Bay, Mokoia and the lakefront. Resolved from review."
+  },
+  {
+   "name": "Redwoods Forest",
+   "views": 7318,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "The redwood grove in Whakarewarewa Forest; near-duplicate of existing Whakarewarewa Forest (rotorua-3), whose bio already names the redwoods."
+  },
+  {
+   "name": "Matakana Island",
+   "views": 6902,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Mostly private land, boat only. Resolved from review."
+  },
+  {
+   "name": "Lady Knox Geyser",
+   "views": 6456,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Feature inside Wai-O-Tapu (existing rotorua-1), erupting daily at 10:15; part of a larger spot."
+  },
+  {
+   "name": "Motiti Island",
+   "views": 6091,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Inhabited island where visitors are asked not to land; seen only from cruises."
+  },
+  {
+   "name": "Ōmokoroa",
+   "views": 5803,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Commuter settlement with a cycleway; one source and nothing a visitor would travel for."
+  },
+  {
+   "name": "Champagne Pool",
+   "views": 4945,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Feature of Wai-O-Tapu (existing rotorua-1); part of a larger spot. Candidate was mis-linked to rotorua-1 but is not a separate spot."
+  },
+  {
+   "name": "Lake Rotomahana",
+   "views": 4375,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Boat cruise and lake are part of Waimangu Volcanic Valley (existing rotorua-5)."
+  },
+  {
+   "name": "Pukehina",
+   "views": 4134,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "One source; small beach settlement. Resolved from review."
+  },
+  {
+   "name": "Lake Rotoiti",
+   "views": 3988,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "One source; wrongly linked to Nelson's lake. Resolved from review."
+  },
+  {
+   "name": "Matatā Lagoon",
+   "views": 3220,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Mainly a campsite and fishing spot. Resolved from review."
+  },
+  {
+   "name": "Rotorua Museum",
+   "views": 2657,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Closed for earthquake strengthening since 2016; its site says reopening is expected 2027-28."
+  },
+  {
+   "name": "Gate Pā",
+   "views": 2513,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "One source; interpretation reserve, short visit. Resolved from review."
+  },
+  {
+   "name": "Lake Rotoma",
+   "views": 2321,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "One source, local lake. Resolved from review."
+  },
+  {
+   "name": "Lake Ōkareka",
+   "views": 2306,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "One source, local lake. Resolved from review."
+  },
+  {
+   "name": "Lake Waikaremoana Great Walk",
+   "views": 2255,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Duplicate of existing Lake Waikaremoana spot (te-urewera-1), which already covers the walk. Resolved from review."
+  },
+  {
+   "name": "Lake Rotokākahi (Green Lake)",
+   "views": 1911,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Tapu lake in private Māori ownership; no public access and no guide source."
+  },
+  {
+   "name": "Waihi-Waikino Goldfields Railway",
+   "views": 1790,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; ride is the attraction with no named destination. Resolved from review."
+  },
+  {
+   "name": "Hamurana Springs",
+   "views": 1484,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Only Wikipedia; Wikivoyage entry for Hamurana is a restaurant. Resolved from review."
+  },
+  {
+   "name": "Tauranga Harbour",
+   "views": 1386,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "The harbour as a whole is not a placeable visit; its things (beaches, islands, boat trips) are separate entries."
+  },
+  {
+   "name": "Athenree Hot Springs",
+   "views": 1276,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "One source; holiday-park pools. Resolved from review."
+  },
+  {
+   "name": "Lake Rerewhakaaitu",
+   "views": 1254,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rural recreation-reserve lake with campsites; one source and little to do."
+  },
+  {
+   "name": "Wingspan National Bird of Prey Centre",
+   "views": 1085,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "One source; small centre. Resolved from review."
+  },
+  {
+   "name": "Motu River Jet Boat Tours",
+   "views": 1035,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Operator, not a place."
+  },
+  {
+   "name": "Blue Baths",
+   "views": 893,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Heritage bathhouse in Government Gardens; part of that spot and the building has been closed since 2016-2022 and not a standalone visit."
+  },
+  {
+   "name": "Owharoa Falls",
+   "views": 795,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Short roadside-style stop. Resolved from review."
+  },
+  {
+   "name": "Kaharoa Conservation Area",
+   "views": 588,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Forest for kōkako with a track; the track is the visit and is a duplicate of Kaharoa Kōkako Track; local conservation area."
+  },
+  {
+   "name": "Papamoa Hills Regional Park",
+   "views": 573,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Regional park with no visitor-guide source; local use."
+  },
+  {
+   "name": "Waikite Valley Thermal Pools",
+   "views": 487,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Wikivoyage Rotorua lists it with a URL; natural-source soaking pools, an hour or more. Against: one source, 25 min south of Rotorua, commercial pools like Polynesian Spa."
+  },
+  {
+   "name": "Victoria Battery",
+   "views": 437,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Candidate coordinate is in Spain (sign flipped), one source, and it is a short stop in the Karangahake/Waihi area. Resolved from review."
+  },
+  {
+   "name": "Kaimai-Mamaku Conservation Park",
+   "views": 421,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Large conservation park whose named tracks and falls are the actual spots; too broad to be one place."
+  },
+  {
+   "name": "Te Paepae o Aotea (Volkner Rocks) Marine Reserve",
+   "views": 410,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Divers by charter only. Resolved from review."
+  },
+  {
+   "name": "Tauranga Art Gallery",
+   "views": 288,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "One source; small regional gallery. Resolved from review."
+  }
+ ],
+ "left_out_zero_views_rejected": [
+  "Te Puna",
+  "Mission Cemetery",
+  "Durham Redoubt",
+  "Monmouth Redoubt",
+  "Southern Waterfront Boardwalk",
+  "Marshalls Animal Park",
+  "Te Puna Quarry Park",
+  "Whataroa Falls",
+  "Omanawa Falls",
+  "Pilot Bay",
+  "Tūhua (Mayor Island)",
+  "Comvita Honey Tour",
+  "Kiwifruit Country",
+  "Golf Te Puke",
+  "William Wright Falls",
+  "Orokawa Scenic Reserve",
+  "Karangahake Windows Walk",
+  "Aongatete Nature Trail",
+  "Kaimai Heritage Trail",
+  "Kaimai Summit Loop Track",
+  "Te Aroha Summit Track",
+  "Otanewainuku Forest",
+  "Mangorewa Ecological Area",
+  "Whakatāne Library and Exhibition Centre",
+  "Whakatāne Gardens",
+  "Diveworks Dolphin and Seal Encounters",
+  "KG Kayaks",
+  "Ōhope Scenic Reserve",
+  "Nga Tapuwae o Toi Walkway",
+  "Tauwhare Pā Scenic Reserve",
+  "White Pine Bush Track",
+  "Ōpōtiki Museum",
+  "Opotiki Rodeo",
+  "Waiotahi Beach",
+  "Hukutaia Domain",
+  "Tirohanga Dunes Trail",
+  "Pakihi Track",
+  "Waioeka Gorge Scenic Reserve",
+  "National Kiwi Hatchery",
+  "aMaze Me",
+  "Mount Ngongotaha",
+  "Twin Streams (The Bridge)",
+  "Rotorua Walkway",
+  "Waiotapu Boardwalk",
+  "Maunga Kākaramea Crater Lake Walk",
+  "Kaharoa Kōkako Track",
+  "Panekire Bluffs",
+  "Lake Kaitawa Fairy Springs Track",
+  "Ruapani Circuit Track",
+  "Te Urewera Visitor Centre at Te Kura Whenua",
+  "Whirinaki Track",
+  "Waiatiu Falls Track",
+  "Te Pua-a-Tāne Circuit"
+ ],
+ "strongest_outsiders": {
+  "kept_outside_every_span": [
+   {
+    "name": "Waihi Beach",
+    "views": 6554,
+    "counted_sources": 2,
+    "kept_as": "standalone (proposed waihi)",
+    "nearest_destinations_km": [
+     [
+      34.0,
+      "tauranga"
+     ],
+     [
+      69.2,
+      "coromandel"
+     ]
+    ]
+   },
+   {
+    "name": "Karangahake Gorge",
+    "views": 3933,
+    "counted_sources": 1,
+    "kept_as": "standalone (proposed waihi)",
+    "nearest_destinations_km": [
+     [
+      48.7,
+      "tauranga"
+     ],
+     [
+      56.4,
+      "hamilton"
+     ]
+    ]
+   },
+   {
+    "name": "Wairere Falls",
+    "views": 2503,
+    "counted_sources": 2,
+    "kept_as": "standalone",
+    "nearest_destinations_km": [
+     [
+      27.2,
+      "tauranga"
+     ],
+     [
+      51.6,
+      "hamilton"
+     ]
+    ]
+   },
+   {
+    "name": "Orokawa Bay",
+    "views": 0,
+    "counted_sources": 2,
+    "kept_as": "standalone (proposed waihi)",
+    "nearest_destinations_km": [
+     [
+      39.3,
+      "tauranga"
+     ],
+     [
+      63.8,
+      "coromandel"
+     ]
+    ]
+   },
+   {
+    "name": "Motu Trail",
+    "views": 0,
+    "counted_sources": 2,
+    "kept_as": "standalone",
+    "nearest_destinations_km": [
+     [
+      26.6,
+      "whakatane"
+     ],
+     [
+      84.0,
+      "te-urewera"
+     ]
+    ]
+   }
+  ],
+  "left_out_outside_every_span": "Each left-out candidate above was judged on What qualifies blind to placement; none was left out for lacking a destination. Strongest outside any span by views: Mount Tarawera (27,293, review: a mountain with a closed/permit-only summit and no counted source, owner call), Katikati town (20,521, review), Matakana Island, Te Urewera National Park (inside the Te Urewera destination)."
+ },
+ "benchmark": {
+  "applicable_to_bay_of_plenty": "Rotorua Museum rejected (closed for strengthening to about 2027-28; exterior only), the same shape as the Queen Mary Hospital negative benchmark. Vehicles and operators rejected (Comvita Honey Tour, KG Kayaks, Diveworks, Motu River Jet Boat Tours, Golf Te Puke). Whakaari / White Island (landings suspended since 2019) rejected. Gateway towns whose draw is the journey beyond (Ōpōtiki, for the Motu Trail) kept at low rank as spots, with the trail standalone. Single geysers/pools inside a park (Pōhutu, Lady Knox, Champagne Pool) rejected as parts of Te Puia and Wai-O-Tapu, as the Crater Rim Walkway was part of Summit Road.",
+  "not_in_this_region": [
+   "Red Rocks",
+   "Kapiti Island",
+   "Lake Coleridge",
+   "Sumner Beach",
+   "Godley Head",
+   "Lyttelton",
+   "Birdlings Flat",
+   "Paradise",
+   "Hump Ridge Track",
+   "St Kilda Beach",
+   "Ohakune Carrot",
+   "Ninety Mile Beach",
+   "Pipiriki",
+   "TSS Earnslaw / Walter Peak"
+  ],
+  "result": "pass for the Bay of Plenty-relevant items; no strong outsider was dropped without a concrete What-qualifies reason."
+ },
+ "review_list_for_owner": [
+  {
+   "name": "Katikati",
+   "views": 20521,
+   "counted_sources": 0,
+   "case": "For: 'Mural Town', Katikati Bird Gardens base, tourism-board town. Against: I could not retrieve a counted source naming the town itself (Wikivoyage page empty for me); the bird gardens are the draw and are already kept."
+  },
+  {
+   "name": "Tūhua (Mayor Island)",
+   "views": 0,
+   "counted_sources": 2,
+   "case": "For: two counted sources, volcanic island with marine reserve and DOC-style camping. Against: landing needs permission and a charter; effectively dive and fishing trips. Left for the owner."
+  },
+  {
+   "name": "Waikite Valley Thermal Pools",
+   "views": 487,
+   "counted_sources": 1,
+   "case": "For: Wikivoyage Rotorua lists it with a URL; natural-source soaking pools, an hour or more. Against: one source, 25 min south of Rotorua, commercial pools like Polynesian Spa."
+  },
+  {
+   "name": "Mount Tarawera",
+   "views": 27293,
+   "counted_sources": 0,
+   "case": "For: the 1886 eruption volcano, 27k views, famous summit rim and Wikivoyage mention of tours. Against: access only by guided tour over Māori-owned land; no counted page retrieved. Existing Lake Tarawera covers the area. Close call."
+  }
+ ],
+ "flags": [
+  "Wairere Falls and Karangahake Gorge lie in the Waikato region: placed standalone here, cross-check with the Waikato pass so neither is added twice.",
+  "Sulphur Bay: the candidate coordinate was in Vanuatu (-19.5, 169.4); fixed to Rotorua, and the photo lookup must not resolve to the Vanuatu article.",
+  "Whirinaki is already a standalone spot; not re-added."
+ ]
+}

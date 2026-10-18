@@ -666,4 +666,13 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Mount Dobson": "Mount Dobson 27.jpg",
   "Lake Benmore": "Lake Benmore.jpg",
   "Omarama Clay Cliffs": "Clay Cliffs (14425344992).jpg",
+  "Maketū": "Maketu Beach, Bay of Plenty, New Zealand, 2 April 2008 (2381575915).jpg",
+  "Ōhiwa Harbour": "Ohiwa Harbour 303.jpg",
+  "Whakarewarewa": "2018-12-30 150558 Whakarewarewa Thermal Village anagoria.jpg",
+  "Kuirau Park": "Kuirau Park in Rotorua 02.jpg",
+  "Okere Falls": "Okere Falls (Kaituna River).jpg",
+  "Tarawera Falls": "Tarawera Falls with rainbow.jpg",
+  "Maunga Kākaramea": "Rainbow Mountain Scenic Reserve kz11.jpg",
+  "Orokawa Bay": "View over Orokawa Bay.jpg",
+  "Karangahake Gorge": "Overbridge To Karangahake Gorge Tunnel.jpg",
 };
