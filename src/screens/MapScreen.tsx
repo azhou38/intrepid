@@ -4323,9 +4323,23 @@ const destItems = useMemo((): DestItem[] =>
         properties: { id: dest.id, img, label: dest.name, sort: destSortKey(dest.id) },
       });
     }
+    // Register the pin image of every destination that could be promoted soon (eligible now, or one rank tier deeper)
+    // BEFORE its symbol enters the data. A symbol whose image is not registered yet is placed invisibly: Mapbox runs
+    // its fade with nothing to draw, and the pin then pops in at full opacity when the snapshot lands. Inside a
+    // country every destination is promoted the moment it becomes eligible (the in-country bypass), so rank-4 pins
+    // such as Whanganui, Kāpiti Coast and Wairarapa used to arrive that way while earlier-registered ones faded in.
+    const warm = new Map<string, Destination>();
+    for (const d of eligibleDests) warm.set(d.id, d);
+    for (const d of DESTINATIONS) if (d.rank <= visibleRank + 1) warm.set(d.id, d);
+    for (const dest of warm.values()) {
+      const visited = visitIndex.isDestVisited(dest.id);
+      const badge = visited ? (visitedSpotCountByDest[dest.id] ?? 0) : 0;
+      const img = destPinImageName(dest.id, visited, badge, false);
+      if (!specs.has(img)) { specs.set(img, { name: img, dest, visited, badge, selected: false }); added = true; }
+    }
     if (added) destPinSpecListRef.current = [...specs.values()];
     return { shape: { type: 'FeatureCollection' as const, features }, specs: destPinSpecListRef.current };
-  }, [promotedDests, visitIndex, visitedSpotCountByDest, destPinPlan, planDest]);
+  }, [promotedDests, visitIndex, visitedSpotCountByDest, destPinPlan, planDest, eligibleDests, visibleRank]);
 
   // Which sliding sheet is mounted right now. When it changes from one level to another, the incoming sheet is a
   // replacement for the one that was showing and starts where that one rested (see sheetPose) rather than from below
