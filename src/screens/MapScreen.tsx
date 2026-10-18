@@ -1068,6 +1068,8 @@ const SPOT_PHOTO_ZOOM_BY_ID = earlySpotZoomTable(SPOT_PHOTO_EARLY_SEPARATION_PX,
 // photo-less dot (SpotDots below) that lives exactly as long as the full pin would have — same reveal zoom, same
 // viewport — so the map never loses a spot, it only stops paying for a photo MarkerView on every one of them.
 const MAX_SPOT_PINS = 25;
+// TEMPORARY: the on-map spot pin plan readout (see pinPlanDebugRef), in every build until the collapsed-pin bug is fixed.
+const SHOW_PIN_PLAN_DEBUG = true;
 // A standalone spot has no list to rank in; it ranks like a destination's third spot, so it neither crowds out a
 // destination's headline spots nor is the first to lose its pin.
 const STANDALONE_IMPORTANCE = 2;
@@ -2541,7 +2543,7 @@ const destItems = useMemo((): DestItem[] =>
       pins.push(sp); taken.push(box);
     }
     prevPinIdsRef.current = new Set(pins.map(sp => sp.id));
-    if (__DEV__) pinPlanDebugRef.current = `zoom ${camZoom.toFixed(2)} handoff ${handoffZoom.toFixed(2)} close ${closeTarget?.toFixed(2) ?? '-'}\nplanLng ${pinPlanLngDelta.toFixed(4)} regionLng ${region.longitudeDelta.toFixed(4)} scale ${closeViewScale.toFixed(2)}\nin ${visibleSpots.length} pins ${pins.length} dots ${dots.length} destBoxes ${destBoxes}\noff ${why.offView} early ${why.early} cap ${why.cap} ovDest ${why.overlapDest} ovPin ${why.overlapPin}`;
+    if (SHOW_PIN_PLAN_DEBUG) pinPlanDebugRef.current = `zoom ${camZoom.toFixed(2)} handoff ${handoffZoom.toFixed(2)} close ${closeTarget?.toFixed(2) ?? '-'}\nplanLng ${pinPlanLngDelta.toFixed(4)} regionLng ${region.longitudeDelta.toFixed(4)} scale ${closeViewScale.toFixed(2)}\nin ${visibleSpots.length} pins ${pins.length} dots ${dots.length} destBoxes ${destBoxes}\noff ${why.offView} early ${why.early} cap ${why.cap} ovDest ${why.overlapDest} ovPin ${why.overlapPin}`;
     return { pinSpots: pins, dotSpots: dots };
   }, [visibleSpots, selectedSpot, nearCtx, visitIndex, pinPlanLngDelta, destPinPlan, handoffZoom, hiddenDestIds, region, closeViewScale]);
   const stableDotSpots = useStableList(dotSpots, s => s.id);
@@ -4884,8 +4886,8 @@ const destItems = useMemo((): DestItem[] =>
       </MapboxGL.MapView>
       )}
       {/* TEMPORARY (dev only): spot pin plan diagnostics — see pinPlanDebugRef. */}
-      {__DEV__ && (
-        <View pointerEvents="none" style={{ position: 'absolute', top: 130, left: 12, right: 12, backgroundColor: 'rgba(0,0,0,0.7)', borderRadius: 8, padding: 6 }}>
+      {SHOW_PIN_PLAN_DEBUG && (
+        <View pointerEvents="none" style={{ position: 'absolute', top: 120, left: 12, right: 12, backgroundColor: 'rgba(0,0,0,0.8)', borderRadius: 8, padding: 6, zIndex: 9999, elevation: 50 }}>
           <Text style={{ color: '#fff', fontSize: 11, fontFamily: Platform.OS === 'ios' ? 'Menlo' : 'monospace' }}>{pinPlanDebugRef.current}</Text>
         </View>
       )}
