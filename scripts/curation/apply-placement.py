@@ -14,6 +14,7 @@ and writes each one's accepted photo into WIKI_IMAGE_OVERRIDES (keyed by wiki ti
   - spots of a PROPOSED destination (`spot-of-proposed-destination`, or a destination not in destinations.ts yet): they go
     in with the destination, when it is written (Quill + Lens);
   - placements flagged `status` (held: needs an external photo, no photo, …) and any entry without an accepted photo;
+  - a draft that Pipeline C has not researched: `needs_research` left, placeholder hours, or no cost and not free;
   - a spot whose id is already in spots.ts or in git history (ids are never reused).
 A cost in the entry gets the currency (default AUD; pass --currency). The destination and standalone fields follow
 WRITING.md. Run, then: build-image-manifest.ts, tsc, audit-spot-coordinates.ts, photo-prefilter.ts. Prints what it added
@@ -133,6 +134,16 @@ for e in place['placements']:
         skipped.append((name, f'id {sid} was used before (git history)')); continue
     if 'spot' not in e:
         skipped.append((name, 'no full spot entry')); continue
+    # A placement entry is a draft until Pipeline C has researched it (PIPELINES.md): no hours placeholder, a cost or
+    # `free`, and a ticketUrl decision. Sea Life Sydney went in with none of these.
+    sp = e['spot']
+    gaps = list(e.get('needs_research') or [])
+    if not sp.get('hours') or 'check the operator' in str(sp.get('hours')).lower():
+        gaps.append('hours')
+    if not sp.get('free') and sp.get('costMin') is None:
+        gaps.append('cost')
+    if gaps:
+        skipped.append((name, f"not researched yet ({', '.join(sorted(set(gaps)))}): run Pipeline C, or --overrides with its final.json")); continue
     (standalone if act == 'standalone' else by_dest.setdefault(dest, [])).append(e)
 
 lines_out = open('src/data/spots.ts').read().split('\n')

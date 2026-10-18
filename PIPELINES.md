@@ -41,8 +41,11 @@ Benchmark: the full list in `COVERAGE.md` → "Finding what is missing" (Red Roc
 Benchmark: Clyde, Hamilton, Blue Lake, the 1913 Government Gardens and the archive Blue Lake photo must all be rejected.
 
 ## Pipeline C — writing
+**Every new spot goes through Pipeline C before it is applied**, whether it belongs to a new destination or an existing one. Atlas's placement entries are drafts: the proposer fills in what its sources gave, and leaves the rest empty for research, never with a placeholder. Sydney's 70 new spots were applied straight from placement, without research: 44 had no link, and spots such as Sea Life Sydney had no price and "Hours vary; check the operator" for hours. A spot is applied only when it has researched hours, a cost (`free: true` or a price) and a `ticketUrl` decision: a verified link, or a stated reason for none (many operators sell it; no single steward).
 1. **Researcher** — facts with source links.
    - Includes each spot's official site (`WRITING.md` → `ticketUrl`): found from the operator, loaded and checked, deep links taken from the site's own navigation. A spot with an official site and no `ticketUrl` is a failed check.
+   - Includes each spot's cost: the adult price from the operator's own page, or `free: true`. Never left empty.
+   - A site that blocks scripts is reported `BLOCKED` with its URL, not dropped: whoever runs the pipeline checks it in a real browser (the in-app browser) before the spot is applied.
 2. **Writer** — several variants in the app's voice (`WRITING.md` → "Voice").
 3. **Fact-checker** — every claim against the sources; cut or flag the unverifiable.
 4. **Editor** — style, repetition within and across entries.
@@ -50,8 +53,8 @@ Benchmark: Clyde, Hamilton, Blue Lake, the 1913 Government Gardens and the archi
 
 ## Cost and speed
 The agents judge; scripts do everything else, and nothing is judged twice. (Wellington's first region pass used ~2.5M agent tokens, most of it on items that ended up unchanged.)
-- **Scripts do the mechanical work.** `scripts/curation/score-candidates.ts` (Atlas: page views, coordinates, redirects, disambiguation pages, already-in-the-app matches), `scripts/curation/lint-entries.ts` (Quill: ticketUrl loads and names the place, paid spots without a link, bio voice and length, photo titles that won't resolve, destination field counts), `scripts/photo-prefilter.ts` and `scripts/curation/lens-triage.ts` (Lens).
-- **Triage before any agent.** Lens works only `search` and `confirm` slots (`lens-triage.ts`); Quill only the entries `lint-entries.ts` flags, or the owner names; the Atlas skeptic only keeps, reviews and rejects that rest on "no counted source".
+- **Scripts do the mechanical work.** `scripts/curation/score-candidates.ts` (Atlas: page views, coordinates, redirects, disambiguation pages, already-in-the-app matches), `scripts/curation/lint-entries.ts` (Quill: ticketUrl loads and names the place, paid spots without a link, spots with no cost that are not free, bio voice and length, photo titles that won't resolve, destination field counts), `scripts/photo-prefilter.ts` and `scripts/curation/lens-triage.ts` (Lens).
+- **Triage before any agent.** Lens works only `search` and `confirm` slots (`lens-triage.ts`); Quill only the entries `lint-entries.ts` flags, or the owner names, and every new spot from Atlas (it has never been researched, so a clean lint proves nothing about it); the Atlas skeptic only keeps, reviews and rejects that rest on "no counted source".
 - **Second judge only on proposed changes** (Pipeline B step 4).
 - **Cheaper models for mechanical roles**: `model: haiku` in `coverage-enumerator` and `reconciler`; the judging, writing and fact-checking roles keep the session's model.
 - **Short role briefs.** Each `.claude/agents/*.md` carries a checklist of the rules its role needs; the guides stay the authority and are opened only for a case a checklist doesn't settle. Keep the checklists in step when a guide changes.
