@@ -2490,8 +2490,18 @@ const destItems = useMemo((): DestItem[] =>
       const nameW = Math.min(90, d.name.length * 6.3), nameH = d.name.length * 6.3 > 90 ? 26 : 13;
       taken.push({ l: x - Math.max(R, nameW / 2), r: x + Math.max(R, nameW / 2), t: y - R, b: y + R + 4 + nameH });
     }
+    // Only spots in (or just around) the view compete for photo pins. A selected destination feeds ALL its spots into
+    // visibleSpots (so panning never reshuffles its set), and before this its most important spots took the
+    // MAX_SPOT_PINS photos wherever they were: zoomed into one corner of Sydney, the cap was spent on spots off-screen and
+    // the ones in view stayed small pins. Off-view spots are collapsed pins (invisible there anyway, and cheap); one gets
+    // its photo as it comes within the margin, before it reaches the screen.
+    const vLat = region.latitudeDelta * closeViewScale, vLng = region.longitudeDelta * closeViewScale, vPad = 0.15;
+    const inView = (sp: Spot) =>
+      Math.abs(sp.coordinates.latitude - region.latitude) <= vLat * (0.5 + vPad)
+      && Math.abs(sp.coordinates.longitude - region.longitude) <= vLng * (0.5 + vPad);
     const pins: Spot[] = [], dots: Spot[] = [];
     for (const sp of sorted) {
+      if (!must.has(sp.id) && !inView(sp)) { dots.push(sp); continue; }
       const m = mercatorPx(sp.coordinates.longitude, sp.coordinates.latitude, pxPerDegLng);
       const x = m.x, y = -m.y;
       // The pin's footprint: the bubble plus the tail hanging to the coordinate, with a little air around it.
@@ -2506,7 +2516,7 @@ const destItems = useMemo((): DestItem[] =>
     }
     prevPinIdsRef.current = new Set(pins.map(sp => sp.id));
     return { pinSpots: pins, dotSpots: dots };
-  }, [visibleSpots, selectedSpot, nearCtx, visitIndex, pinPlanLngDelta, destPinPlan, handoffZoom, hiddenDestIds]);
+  }, [visibleSpots, selectedSpot, nearCtx, visitIndex, pinPlanLngDelta, destPinPlan, handoffZoom, hiddenDestIds, region, closeViewScale]);
   const stableDotSpots = useStableList(dotSpots, s => s.id);
   const spotDotsGeoJSON = useMemo((): GeoJSON.FeatureCollection<GeoJSON.Point> => ({
     type: 'FeatureCollection',
