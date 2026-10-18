@@ -721,6 +721,23 @@ const PROGRAMMATIC_CAMERA_BUFFER_MS = 100;
 const SCREEN_ASPECT = H / SCREEN_W_GLOBAL;
 const panInvariantLatDelta = (longitudeDelta: number) => longitudeDelta * SCREEN_ASPECT;
 
+// Whether the camera (centre lat/lng, span latDelta × lngDelta) has panned away from a destination's home view. With a spot
+// open the camera is framed on that spot (tight, and shifted up by the sheet), which for a spot near the edge of the
+// destination reads as far from the home CENTRE even though the user is well inside the destination. So while the open
+// spot is still on screen (its pin within 0.6 of a screen of the centre), the camera has not been panned away; a real pan
+// past that still is. Shared by the unthrottled camera-changed path and the showDestReturnPrompt memo, so they agree.
+function destPannedAway(
+  lat: number, lng: number, latDelta: number, lngDelta: number,
+  home: { latitude: number; longitude: number; latitudeDelta: number; longitudeDelta: number },
+  spot: { coordinates: { latitude: number; longitude: number } } | null,
+): boolean {
+  if (spot
+    && Math.abs(lat - spot.coordinates.latitude) < latDelta * 0.6
+    && Math.abs(lng - spot.coordinates.longitude) < lngDelta * 0.6) return false;
+  return Math.abs(lat - home.latitude) > home.latitudeDelta * 0.45
+    || Math.abs(lng - home.longitude) > home.longitudeDelta * 0.45;
+}
+
 // Rank-staggered photo gates (pan-invariant latDelta): rank 1 destinations get their photo pin first, at the widest
 // zoom, each lower rank deeper in (see destPinPlan).
 const PROMOTE_LATDELTA_BY_RANK: Record<number, number> = { 1: 24, 2: 14, 3: 9, 4: 5, 5: 2.5 };
@@ -1629,17 +1646,7 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     // guard every other programmatic camera move in this file already uses.
     if (!selectedDest || !destHomeRegion || suppressDestReturnPromptRef.current) return false;
     const zoomedOut = camZoom < destHomeZoomRef.current - DEST_ZOOMED_OUT_LEVELS;
-    // With a spot open the camera is framed on that spot (tight zoom, and shifted up by the sheet at bottom-screen), which for
-    // a spot near the edge of the destination's home view reads as "panned away" from the home CENTRE even though the user is
-    // well inside the destination — the return arrow then showed after swiping the sheet down. So while the camera is still
-    // on the spot (its pin within 0.6 of a screen of the centre), it has not been panned away; a real pan past that still offers the way back.
-    if (selectedSpot && !zoomedOut
-      && Math.abs(region.latitude  - selectedSpot.coordinates.latitude)  < region.latitudeDelta  * 0.6
-      && Math.abs(region.longitude - selectedSpot.coordinates.longitude) < region.longitudeDelta * 0.6) return false;
-    const pannedAway =
-      Math.abs(region.latitude  - destHomeRegion.latitude)  > destHomeRegion.latitudeDelta  * 0.45 ||
-      Math.abs(region.longitude - destHomeRegion.longitude) > destHomeRegion.longitudeDelta * 0.45;
-    return zoomedOut || pannedAway;
+    return zoomedOut || destPannedAway(region.latitude, region.longitude, region.latitudeDelta, region.longitudeDelta, destHomeRegion, selectedSpot);
   }, [selectedDest, destHomeRegion, region, camZoom, selectedSpot]);
 
   useEffect(() => {
@@ -4039,8 +4046,9 @@ const destItems = useMemo((): DestItem[] =>
     // — from misreading the spot carousel's own per-spot fitSpotView reframing as a user pan.
     if (selectedDestRef.current && dh && !suppressDestReturnPromptRef.current) {
       const zoomedOut  = state.properties.zoom < destHomeZoomRef.current - DEST_ZOOMED_OUT_LEVELS;
-      const pannedAway = Math.abs(lat - dh.latitude)  > dh.latitudeDelta  * 0.45 ||
-                         Math.abs(lng - dh.longitude) > dh.longitudeDelta * 0.45;
+      // The same rule as showDestReturnPrompt (destPannedAway): this path used to lack its "open spot still on screen"
+      // exception, and since it runs on every camera frame it showed the arrow over a spot near the destination's edge.
+      const pannedAway = destPannedAway(lat, lng, latDelta, lngDelta, dh, selectedSpotRef.current);
       animatePrompt(zoomedOut || pannedAway, destReturnPromptVisibleRef, destReturnPromptProgress);
     } else {
       animatePrompt(false, destReturnPromptVisibleRef, destReturnPromptProgress);
