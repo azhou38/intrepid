@@ -75,13 +75,21 @@ const SNAP_CONFIG = { duration: 280, easing: Easing.out(Easing.cubic) };
 // spring this used before switching to Reanimated): no overshoot on switching or settling.
 const TAB_SLIDE_CONFIG = { duration: 220, easing: Easing.out(Easing.cubic) };
 const HERO_H      = Math.round(H * 0.52);
-const GRAD_H_TOTAL = 400;
+// Only as tall as the title block it sits behind: at 400 (on a ~410 pt hero, with a flat 18% black layer over the
+// whole photo as well) it darkened nearly the entire photo, so a photo brightened to the floor (IMAGES.md "Brightness")
+// still read as dark in the hero — Mount Solitary's forest was almost black.
+const GRAD_H_TOTAL = 300;
 // Matches DestinationSheet's own hero gradient exactly (t^1.8 × 0.94 curve, sampled at 13
 // points) — a real SVG gradient rather than a flat-opacity stripe, which used to band
 // visibly where the flat rect's edge cut off.
 const GRADIENT_STOPS = Array.from({ length: 13 }, (_, i) => {
   const t = i / 12;
-  return { offset: t, opacity: +(t ** 1.8 * 0.94).toFixed(4) };
+  return { offset: t, opacity: +(t ** 1.5 * 0.92).toFixed(4) };
+});
+// The top fade: 0.4 black at the very top, gone by its bottom edge.
+const TOP_FADE_STOPS = Array.from({ length: 7 }, (_, i) => {
+  const t = i / 6;
+  return { offset: t, opacity: +((1 - t) ** 1.6 * 0.4).toFixed(4) };
 });
 // Collapsed (bottom-screen carousel) always sits at exactly the screen's vertical midpoint —
 // a fixed height, not one that hugs the carousel's own content — so its bottom edge stays
@@ -1085,7 +1093,18 @@ isVisited ? (
                 cacheKey={activePhotoKey} cache={photoCache} load={loadActivePhoto}
                 subject={photoSubject(spotPhotoTitle(activeSpot))}
               />
-              <View pointerEvents="none" style={st.heroScrim} />
+              <View pointerEvents="none" style={[st.heroTopFade, { height: insets.top + 80 }]}>
+                <Svg style={StyleSheet.absoluteFill}>
+                  <Defs>
+                    <SvgLinearGradient id="spotHeroTopGrad" x1="0" y1="0" x2="0" y2="1">
+                      {TOP_FADE_STOPS.map(({ offset, opacity }) => (
+                        <Stop key={offset} offset={offset} stopColor="#000" stopOpacity={opacity} />
+                      ))}
+                    </SvgLinearGradient>
+                  </Defs>
+                  <Rect x="0" y="0" width="100%" height="100%" fill="url(#spotHeroTopGrad)" />
+                </Svg>
+              </View>
               <View pointerEvents="none" style={st.gradWrap}>
                 <Svg style={StyleSheet.absoluteFill}>
                   <Defs>
@@ -1716,7 +1735,8 @@ const st = StyleSheet.create({
 
   // Hero
   hero: { width: '100%', height: HERO_H, overflow: 'hidden', justifyContent: 'flex-end' },
-  heroScrim: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.18)' },
+  // Behind the status bar and the top buttons only (a flat layer over the whole photo used to darken all of it).
+  heroTopFade: { position: 'absolute', top: 0, left: 0, right: 0 },
   gradWrap: { position: 'absolute', left: 0, right: 0, bottom: 0, height: GRAD_H_TOTAL },
   heroTopRow: { position: 'absolute', left: 14, right: 14,
                 flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', zIndex: 10 },

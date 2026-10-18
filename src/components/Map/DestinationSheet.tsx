@@ -91,13 +91,21 @@ const QUICK_CONFIG = { duration: 150, easing: Easing.out(Easing.cubic) };
 // be. Each strip was a solid fill, so the "gradient" was really 200 discrete steps and the
 // edges between them read as horizontal banding — most visible across smooth areas of a photo
 // like sky. An SVG gradient is interpolated per-pixel on the GPU, so it's genuinely smooth.
-const GRAD_H_TOTAL = 400;
-// The original t^1.8 × 0.94 curve, sampled. SVG interpolates LINEARLY between stops, so the
+// Only as tall as the title block it sits behind: at 400 (on a ~410 pt hero, with a flat 18% black layer over the
+// whole photo as well) it darkened nearly the entire photo, so a photo brightened to the floor (IMAGES.md "Brightness")
+// still read as dark in the hero — Mount Solitary's forest was almost black.
+const GRAD_H_TOTAL = 300;
+// A t^1.5 × 0.92 curve, sampled. SVG interpolates LINEARLY between stops, so the
 // curve needs enough samples to trace it — 13 makes the piecewise error imperceptible, while
 // the fill between them is still smoothly interpolated.
 const GRADIENT_STOPS = Array.from({ length: 13 }, (_, i) => {
   const t = i / 12;
-  return { offset: t, opacity: +(t ** 1.8 * 0.94).toFixed(4) };
+  return { offset: t, opacity: +(t ** 1.5 * 0.92).toFixed(4) };
+});
+// The top fade: 0.4 black at the very top, gone by its bottom edge.
+const TOP_FADE_STOPS = Array.from({ length: 7 }, (_, i) => {
+  const t = i / 6;
+  return { offset: t, opacity: +((1 - t) ** 1.6 * 0.4).toFixed(4) };
 });
 
 
@@ -1442,7 +1450,18 @@ function DestinationSheet({
               />
 
               {/* Ambient scrim so text is always legible */}
-              <View pointerEvents="none" style={st.heroScrim} />
+              <View pointerEvents="none" style={[st.heroTopFade, { height: insets.top + 80 }]}>
+                <Svg style={StyleSheet.absoluteFill}>
+                  <Defs>
+                    <SvgLinearGradient id="destHeroTopGrad" x1="0" y1="0" x2="0" y2="1">
+                      {TOP_FADE_STOPS.map(({ offset, opacity }) => (
+                        <Stop key={offset} offset={offset} stopColor="#000" stopOpacity={opacity} />
+                      ))}
+                    </SvgLinearGradient>
+                  </Defs>
+                  <Rect x="0" y="0" width="100%" height="100%" fill="url(#destHeroTopGrad)" />
+                </Svg>
+              </View>
 
               {/* Gradient: darkens toward the bottom */}
               <View pointerEvents="none" style={st.gradWrap}>
@@ -1802,7 +1821,8 @@ const st = StyleSheet.create({
   tabCornerFill: { position:'absolute', left:0, right:0, height: 24, backgroundColor:'white' },
   compactBarFixed: { position: 'absolute', top: 0, left: 0, right: 0, zIndex: 3 },
   compactBarTitle: { height: 36, lineHeight: 36, fontSize: 16, fontWeight: '700', color: '#111827' },
-  heroScrim: { position:'absolute', top:0, left:0, right:0, bottom:0, backgroundColor:'rgba(0,0,0,0.18)' },
+  // Behind the status bar and the top buttons only (a flat layer over the whole photo used to darken all of it).
+  heroTopFade: { position: 'absolute', top: 0, left: 0, right: 0 },
   gradWrap:{ position:'absolute', left:0, right:0, bottom:0, height: GRAD_H_TOTAL },
 
   // Top row — uses Animated.View so it can share the same style pipeline as the rest
