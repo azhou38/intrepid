@@ -879,6 +879,8 @@ function SatelliteSwatch({ size = 26 }: { size?: number }) {
 }
 
 
+const DEST_COUNTRY_CODES = [...new Set(DESTINATIONS.map(d => d.countryCode))];
+
 function getVisibleRank(latDelta: number): number {
   if (latDelta > 50) return 1;
   if (latDelta > 20) return 2;
@@ -1715,6 +1717,12 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // greedy collision resolution sees the same destinations every frame during a pan and can
   // never flip a visible pin's state just because an off-screen neighbour scrolled in or out
   // of a viewport-culled candidate list (the root cause of the pan glitching).
+  // Countries whose own default view the camera is inside (the same pill cutoff destPinPlan's in-country bypass uses).
+  // Keyed by a string so it only changes when a country crosses its cutoff, not on every camera frame.
+  const insideCountriesKey = useMemo(
+    () => DEST_COUNTRY_CODES.filter(c => pillPlanLngDelta < getCountryPillCutoffLngDelta(c)).join(','),
+    [pillPlanLngDelta]);
+  const insideCountries = useMemo(() => new Set(insideCountriesKey ? insideCountriesKey.split(',') : []), [insideCountriesKey]);
   const eligibleDests = useMemo(() => {
     const results: Destination[] = [];
     const added = new Set<string>();
@@ -1732,12 +1740,17 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
       // worldwide while drilled into a country/destination (so every country pill can form).
       const rankOk = d.rank <= visibleRank || saved;
       const anchorRank1 = (selectedCountry || selectedDest) && d.rank === 1;
-      if (!(isSelected || inSelectedCountry || rankOk || anchorRank1)) continue;
+      // Inside a country's own view (its pill has gone) every one of its destinations is a candidate at once, whatever
+      // its rank: the native pin layer then reveals each one by collision as room opens up, which Mapbox fades in.
+      // A pin added to the layer's data instead appears instantly (Mapbox skips the fade for symbols in freshly
+      // reloaded data), which is how rank-4 pins (Whanganui, Kāpiti Coast, Wairarapa) used to pop in mid-zoom.
+      const insideCountry = insideCountries.has(d.countryCode);
+      if (!(isSelected || inSelectedCountry || rankOk || anchorRank1 || insideCountry)) continue;
       results.push(d);
       added.add(d.id);
     }
     return results;
-  }, [visibleRank, visitIndex, selectedCountry, selectedDest]);
+  }, [visibleRank, visitIndex, selectedCountry, selectedDest, insideCountries]);
 
   // NOTE: there is deliberately NO viewport-bounds culling of the render set. There are only
   // ~45 destinations total, so rendering every eligible one (Mapbox natively clips whatever
