@@ -1,61 +1,84 @@
 {
-  "destination": {
-    "id": "blue-mountains",
-    "name": "Blue Mountains",
-    "country": "Australia",
-    "countryCode": "AU",
-    "timezone": "Australia/Sydney",
-    "continent": "Oceania",
-    "coordinates": { "latitude": -33.63059, "longitude": 150.30665 },
-    "category": "park",
-    "defaultZoomSpanKm": 50,
-    "rank": 2,
-    "icon": "⛰️",
-    "tagline": "World Heritage sandstone cliffs, waterfalls and the Three Sisters, a train ride west of Sydney.",
-    "description": "Katoomba, the main base for this national park, is 103 km west of Sydney, and the park is a plateau of sandstone cliffs and forested valleys, part of the Greater Blue Mountains Area that UNESCO inscribed in 2000. The Three Sisters at Echo Point are the best-known sight, and the nearby towns of Leura, Wentworth Falls, Blackheath and Mount Victoria give access to waterfalls, the Grose Valley lookouts and over 140 km of walking tracks. Visitors arrive by road or by train from Sydney Central, which takes about two hours.",
-    "whyVisit": [
-      "See the Three Sisters from Echo Point, Katoomba's main lookout over the Jamison Valley",
-      "Ride Scenic World's cableway and 52-degree railway down into the valley",
-      "Walk to waterfalls beneath the cliffs, with 140 km of tracks to choose from"
-    ],
-    "highlights": ["Three Sisters views", "Scenic World rides", "Waterfalls below cliffs"],
-    "goodToKnow": [
-      { "icon": "🚧", "title": "Check track closures", "detail": "Tracks close often and some for long periods, including part of National Pass after a landslide and the Govetts descent at Blackheath; check the NPWS alerts page before you set out." },
-      { "icon": "🚆", "title": "Trains and buses", "detail": "Trains from Sydney Central run to Katoomba and Leura without reservations and take about two hours; local bus 686 links Katoomba station, Echo Point and Scenic World, but Wentworth Falls and Leura Cascades need a bus, taxi or car." },
-      { "icon": "🌫️", "title": "Dress for fog, set your GPS", "detail": "The mountains can be up to 10 C colder than the coast and fog can hide the views all day in cold, wet weather; set your GPS to 'Echo Point, Katoomba', since 'Blue Mountains' routes to unsealed roads." }
-    ],
-    "bestMonths": [3, 4, 5],
-    "bestTimeBlurb": "Come in {months}, when the days are cool enough for the cliff walks and the autumn colour is out at Mount Wilson and Blackheath."
+ "destination": {
+  "id": "blue-mountains",
+  "name": "Blue Mountains",
+  "country": "Australia",
+  "countryCode": "AU",
+  "timezone": "Australia/Sydney",
+  "continent": "Oceania",
+  "coordinates": {
+   "latitude": -33.63059,
+   "longitude": 150.30665
   },
-  "spots": {
-    "blue-mountains-4": {
-      "bio": "A cliff-top lookout at Blackheath with sweeping views of the Grose Valley wilderness."
-    },
-    "blue-mountains-3": {
-      "bio": "Waterfalls and clifftop lookouts above the valley at Wentworth Falls, the start of the Grand Cliff Top Walk to Leura and Katoomba."
-    },
-    "blue-mountains-6": {
-      "bio": "Waterfalls on the Leura Cascades and Fern Bower circuit near Leura; part of the circuit is closed for repairs, so check the NPWS alerts."
-    },
-    "blue-mountains-2": {
-      "bio": "A Katoomba cliff-and-valley attraction with the Scenic Railway, Skyway, Cableway and rainforest Walkway.",
-      "free": false,
-      "costMin": 64,
-      "costMax": 70,
-      "currency": "AUD"
-    },
-    "blue-mountains-11": {
-      "bio": "A 6.3 km loop from the Grand Canyon car park near Blackheath that descends through rainforest along Greaves Creek and climbs out at Evans Lookout."
-    },
-    "blue-mountains-12": {
-      "bio": "A Grose Valley lookout above Blackheath, where the Grand Canyon walk climbs out."
-    }
+  "category": "park",
+  "defaultZoomSpanKm": 50,
+  "rank": 2,
+  "icon": "⛰️",
+  "tagline": "World Heritage sandstone cliffs, waterfalls and the Three Sisters, a train ride west of Sydney.",
+  "description": "Katoomba, the main base for this national park, is 103 km west of Sydney, and the park is a plateau of sandstone cliffs and forested valleys, part of the Greater Blue Mountains Area that UNESCO inscribed in 2000. The Three Sisters at Echo Point are the best-known sight, and the nearby towns of Leura, Wentworth Falls, Blackheath and Mount Victoria give access to waterfalls, the Grose Valley lookouts and over 140 km of walking tracks. Visitors arrive by road or by train from Sydney Central, which takes about two hours.",
+  "whyVisit": [
+   "See the Three Sisters from Echo Point",
+   "Ride Scenic World into the Jamison Valley",
+   "Walk to waterfalls beneath the cliffs"
+  ],
+  "highlights": [
+   "Three Sisters views",
+   "Scenic World rides",
+   "Waterfalls below cliffs"
+  ],
+  "goodToKnow": [
+   {
+    "icon": "🚧",
+    "title": "Check track closures",
+    "detail": "Tracks close often and some for long periods, including part of National Pass after a landslide and the Govetts descent at Blackheath; check the NPWS alerts page before you set out."
+   },
+   {
+    "icon": "🚆",
+    "title": "Trains and buses",
+    "detail": "Trains from Sydney Central run to Katoomba and Leura without reservations and take about two hours; local bus 686 links Katoomba station, Echo Point and Scenic World, but Wentworth Falls and Leura Cascades need a bus, taxi or car."
+   },
+   {
+    "icon": "🌫️",
+    "title": "Dress for fog, set your GPS",
+    "detail": "The mountains can be up to 10 C colder than the coast and fog can hide the views all day in cold, wet weather; set your GPS to 'Echo Point, Katoomba', since 'Blue Mountains' routes to unsealed roads."
+   }
+  ],
+  "bestMonths": [
+   3,
+   4,
+   5
+  ],
+  "bestTimeBlurb": "Come in {months}, when the days are cool enough for the cliff walks and the autumn colour is out at Mount Wilson and Blackheath."
+ },
+ "spots": {
+  "blue-mountains-4": {
+   "bio": "A cliff-top lookout at Blackheath with sweeping views of the Grose Valley wilderness."
   },
-  "notes": [
-    "Used: tagline 1, description 2 (cut 'after landslides and storms'; closure sentence also dropped because goodToKnow tip 1 already covers closures), whyVisit 1 reworded to match photos (Echo Point/Three Sisters; Scenic World cableway; waterfalls beneath cliffs), highlights 1 adjusted ('Waterfalls below cliffs'), goodToKnow 1 with Govetts Leap removed from the transport tip (only Wentworth Falls and Leura Cascades are sourced), bestTimeBlurb 2 with Mount Wilson and Blackheath, no Leura.",
-    "Cut: tagline 3, the $8 Echo Point parking figure, 'world's steepest' (dropped rather than attributed), Wedding Veil Falls, 'short walk from the rim'.",
-    "Leura Cascades bio carries a closure that ends 30 Oct 2026; after that change it to 'Waterfalls on the Leura Cascades and Fern Bower circuit near Leura.'",
-    "Scenic World hours unchanged (10 AM-4 PM weekdays, 9 AM-5 PM Sat-Sun). costMax 70 is from Wikivoyage; the operator confirms only 'from $64'. ticketUrl https://www.scenicworld.com.au/ verified.",
-    "Not supplied here: whyVisitPhotos and header (handled by the photo step). No seasonalTags proposed (Yulefest is an event, left out). Neighbouring Australian destinations were not compared for phrasing."
-  ]
+  "blue-mountains-3": {
+   "bio": "Waterfalls and clifftop lookouts above the valley at Wentworth Falls, the start of the Grand Cliff Top Walk to Leura and Katoomba."
+  },
+  "blue-mountains-6": {
+   "bio": "Waterfalls on the Leura Cascades and Fern Bower circuit near Leura; part of the circuit is closed for repairs, so check the NPWS alerts."
+  },
+  "blue-mountains-2": {
+   "bio": "A Katoomba cliff-and-valley attraction with the Scenic Railway, Skyway, Cableway and rainforest Walkway.",
+   "free": false,
+   "costMin": 64,
+   "costMax": 70,
+   "currency": "AUD"
+  },
+  "blue-mountains-11": {
+   "bio": "A 6.3 km loop from the Grand Canyon car park near Blackheath that descends through rainforest along Greaves Creek and climbs out at Evans Lookout."
+  },
+  "blue-mountains-12": {
+   "bio": "A Grose Valley lookout above Blackheath, where the Grand Canyon walk climbs out."
+  }
+ },
+ "notes": [
+  "Used: tagline 1, description 2 (cut 'after landslides and storms'; closure sentence also dropped because goodToKnow tip 1 already covers closures), whyVisit 1 reworded to match photos (Echo Point/Three Sisters; Scenic World cableway; waterfalls beneath cliffs), highlights 1 adjusted ('Waterfalls below cliffs'), goodToKnow 1 with Govetts Leap removed from the transport tip (only Wentworth Falls and Leura Cascades are sourced), bestTimeBlurb 2 with Mount Wilson and Blackheath, no Leura.",
+  "Cut: tagline 3, the $8 Echo Point parking figure, 'world's steepest' (dropped rather than attributed), Wedding Veil Falls, 'short walk from the rim'.",
+  "Leura Cascades bio carries a closure that ends 30 Oct 2026; after that change it to 'Waterfalls on the Leura Cascades and Fern Bower circuit near Leura.'",
+  "Scenic World hours unchanged (10 AM-4 PM weekdays, 9 AM-5 PM Sat-Sun). costMax 70 is from Wikivoyage; the operator confirms only 'from $64'. ticketUrl https://www.scenicworld.com.au/ verified.",
+  "Not supplied here: whyVisitPhotos and header (handled by the photo step). No seasonalTags proposed (Yulefest is an event, left out). Neighbouring Australian destinations were not compared for phrasing."
+ ]
 }

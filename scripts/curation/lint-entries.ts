@@ -12,7 +12,7 @@
 //   wiki        its photo title (wiki, else name) is missing on Wikipedia, a disambiguation page, or a redirect —
 //               only for spots whose photo comes from that lookup (no override, no supplied photo)
 // Destinations
-//   shape       not exactly three whyVisit / highlights / goodToKnow, or bestTimeBlurb without exactly one {months}
+//   shape       not exactly three whyVisit / highlights / goodToKnow, a whyVisit reason outside 2–8 words, or bestTimeBlurb without exactly one {months}
 //   voice       marketing words in tagline or description
 // With --offline only the checks that need no network run (shape, voice, bio, no-ticket).
 // Fetches go through the shared cache (http-cache.ts). Prints one line per failing entry; --json writes them all.
@@ -77,6 +77,10 @@ async function checkWiki(title: string): Promise<string | null> {
   for (const d of DESTINATIONS.filter(x => destIds.has(x.id))) {
     const it: Issue = { kind: 'destination', id: d.id, name: d.name, checks: [] };
     if ((d.whyVisit?.length ?? 0) !== 3) add(it, 'shape', `${d.whyVisit?.length ?? 0} whyVisit (needs 3)`);
+    for (const w of d.whyVisit ?? []) {
+      const n = w.trim().split(/\s+/).length;
+      if (n < 2 || n > 8) add(it, 'shape', `whyVisit "${w}" is ${n} words (needs 2–8)`);
+    }
     if ((d.highlights?.length ?? 0) !== 3) add(it, 'shape', `${d.highlights?.length ?? 0} highlights (needs 3)`);
     if ((d.goodToKnow?.length ?? 0) !== 3) add(it, 'shape', `${d.goodToKnow?.length ?? 0} goodToKnow (needs 3)`);
     if (((d.bestTimeBlurb ?? '').match(/\{months\}/g) ?? []).length !== 1) add(it, 'shape', 'bestTimeBlurb needs exactly one {months}');

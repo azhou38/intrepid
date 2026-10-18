@@ -1,65 +1,102 @@
 {
-  "destination": {
-    "id": "cowra",
-    "name": "Cowra",
-    "country": "Australia",
-    "countryCode": "AU",
-    "timezone": "Australia/Sydney",
-    "continent": "Oceania",
-    "coordinates": { "latitude": -33.835, "longitude": 148.6925 },
-    "category": "city",
-    "defaultZoomSpanKm": 50,
-    "rank": 5,
-    "icon": "🌸",
-    "tagline": "A Lachlan River town with a Japanese garden and the site of a wartime prisoner breakout.",
-    "description": "Cowra sits on the Lachlan River in the Central West, 310 km west of Sydney and 189 km north of Canberra (both by road), where the Mid-Western Highway, Olympic Highway and Lachlan Valley Way meet. It is best known for two things from the Second World War: the 1944 prisoner-of-war breakout, and the Japanese garden, designed to symbolise reconciliation and peace. The Japanese war cemetery on Doncaster Drive is the only one in Australia. Beyond the town, over 40 vineyards around Cowra, Billimari and Canowindra make it a wine base, and Canowindra lies 32 km north.",
-    "whyVisit": [
-      "Walk a 12.5-acre Japanese strolling garden",
-      "Pay respects at the Japanese war cemetery, ceded to Japan in 1963",
-      "Look up in Canowindra, a self-styled ballooning capital"
-    ],
-    "whyVisitPhotos_note": "Photos are held for the owner and are not in this file. Agreed by both judges: why1 Cowra Japanese Garden (pond, pavilion, planting); why2 Japanese War Cemetery (memorial stone with an offering); why3 balloons over Canowindra (2011 Australian Hot Air Balloon Championships). No honest header photo yet.",
-    "highlights": ["Japanese strolling garden", "Japanese war cemetery", "Balloon country"],
-    "goodToKnow": [
-      { "icon": "🎟️", "title": "Garden entry and hours", "detail": "The Japanese Garden costs $22 for adults ($17 concession or local, $12 child, $52 family) and opens 8:30 am to 5 pm daily; prices differ on festival days." },
-      { "icon": "🚗", "title": "Plan to drive", "detail": "Scheduled flights serve Orange, Parkes and Bathurst, not Cowra, and Bathurst is about 1.5 hours' drive away. The camp site and cemeteries are a few kilometres out of town, and Canowindra is 32 km north." },
-      { "icon": "🐕", "title": "Garden is not flat", "detail": "Paths in the garden are uneven, so mobility can be a factor, and dogs on a lead are welcome except on Sakura Matsuri day." }
-    ],
-    "bestMonths": [3, 4, 5, 9, 10, 11],
-    "bestTimeBlurb": "Visit in {months}: cherry blossom and the Sakura Matsuri fill the garden in late September, April brings the Balloon Challenge to Canowindra, while summer days average about 32C and winters bring frequent frosts.",
-    "seasonalTags": [
-      { "tag": "cherry-blossom", "months": [9] },
-      { "tag": "major-festival", "months": [4], "strength": 0.4 }
+ "destination": {
+  "id": "cowra",
+  "name": "Cowra",
+  "country": "Australia",
+  "countryCode": "AU",
+  "timezone": "Australia/Sydney",
+  "continent": "Oceania",
+  "coordinates": {
+   "latitude": -33.835,
+   "longitude": 148.6925
+  },
+  "category": "city",
+  "defaultZoomSpanKm": 50,
+  "rank": 5,
+  "icon": "🌸",
+  "tagline": "A Lachlan River town with a Japanese garden and the site of a wartime prisoner breakout.",
+  "description": "Cowra sits on the Lachlan River in the Central West, 310 km west of Sydney and 189 km north of Canberra (both by road), where the Mid-Western Highway, Olympic Highway and Lachlan Valley Way meet. It is best known for two things from the Second World War: the 1944 prisoner-of-war breakout, and the Japanese garden, designed to symbolise reconciliation and peace. The Japanese war cemetery on Doncaster Drive is the only one in Australia. Beyond the town, over 40 vineyards around Cowra, Billimari and Canowindra make it a wine base, and Canowindra lies 32 km north.",
+  "whyVisit": [
+   "Walk a 12.5-acre Japanese strolling garden",
+   "Visit the Japanese War Cemetery",
+   "Look up in Canowindra, a self-styled ballooning capital"
+  ],
+  "whyVisitPhotos_note": "Photos are held for the owner and are not in this file. Agreed by both judges: why1 Cowra Japanese Garden (pond, pavilion, planting); why2 Japanese War Cemetery (memorial stone with an offering); why3 balloons over Canowindra (2011 Australian Hot Air Balloon Championships). No honest header photo yet.",
+  "highlights": [
+   "Japanese strolling garden",
+   "Japanese war cemetery",
+   "Balloon country"
+  ],
+  "goodToKnow": [
+   {
+    "icon": "🎟️",
+    "title": "Garden entry and hours",
+    "detail": "The Japanese Garden costs $22 for adults ($17 concession or local, $12 child, $52 family) and opens 8:30 am to 5 pm daily; prices differ on festival days."
+   },
+   {
+    "icon": "🚗",
+    "title": "Plan to drive",
+    "detail": "Scheduled flights serve Orange, Parkes and Bathurst, not Cowra, and Bathurst is about 1.5 hours' drive away. The camp site and cemeteries are a few kilometres out of town, and Canowindra is 32 km north."
+   },
+   {
+    "icon": "🐕",
+    "title": "Garden is not flat",
+    "detail": "Paths in the garden are uneven, so mobility can be a factor, and dogs on a lead are welcome except on Sakura Matsuri day."
+   }
+  ],
+  "bestMonths": [
+   3,
+   4,
+   5,
+   9,
+   10,
+   11
+  ],
+  "bestTimeBlurb": "Visit in {months}: cherry blossom and the Sakura Matsuri fill the garden in late September, April brings the Balloon Challenge to Canowindra, while summer days average about 32C and winters bring frequent frosts.",
+  "seasonalTags": [
+   {
+    "tag": "cherry-blossom",
+    "months": [
+     9
     ]
-  },
-  "spots": {
-    "cowra-1": {
-      "bio": "A kaiyu-shiki strolling garden designed by Ken Nakajima, 1.1 km north of Cowra's centre, with a cultural centre, gift shop and cafe.",
-      "hours": "8:30 AM – 5:00 PM",
-      "costMin": 22,
-      "costMax": 22,
-      "currency": "AUD",
-      "ticketUrl": "https://www.cowragarden.com.au/"
-    },
-    "cowra-2": {
-      "bio": "The site of the prisoner-of-war camp from which 1,104 Japanese prisoners broke out on 5 August 1944, 2.9 km from the centre, with Sakura Avenue and the Japanese and Australian war cemeteries about 1.6 km away.",
-      "hours": "Open 24 hours",
-      "free": true
-    },
-    "cowra-3": {
-      "bio": "A historic township 32 km north of Cowra on the Belubula River, with curving Gaskill Street partly an urban conservation area and 34 buildings or features on the NSW State Heritage Register.",
-      "hours": "Open 24 hours",
-      "free": true
-    }
-  },
-  "notes": [
-    "Tagline: draft variant 1. Description: variant 2 with the fact-check fix (only the garden is described as symbolising peace; 'over 40' vineyards).",
-    "Reasons: 1 uses the operator-sourced 12.5 acres (cowragarden.com.au) without the 'largest' claim; 2 is the cemetery (ceded to Japan 1963, Wikivoyage), written as paying respects, and 'only one in Australia' is left to the description to avoid repetition; 3 is Canowindra (Wikipedia: 'Ballooning Capital of Australia', hence 'self-styled'). Age of Fishes museum not mentioned anywhere as it is not in the app.",
-    "Balloon Challenge appears only in bestTimeBlurb and as a seasonalTag (April); the Sakura Matsuri is in the blurb and the cherry-blossom tag (month 9 only; October unverified). The balloon tag uses 'major-festival' with strength 0.4: check against the SeasonalSignal type if a different tag kind is preferred.",
-    "goodToKnow: dropped the unsourced 'two coach services a day' and the Age of Fishes closure tip. The mobility/dogs tip is from the garden site; 'uneven paths' is a paraphrase of 'not a flat garden' and may be softened.",
-    "The bestMonths are own inference (no guide gives a best time); mark approximate. Summer figure is the January mean maximum 32.2C (Wikipedia).",
-    "Spots: cowra-1 bio uses the fact-check distance (1.1 km, not 4 km); cowra-2 hours 'Open 24 hours' per Wikivoyage (not 'daylight hours'); cowra-3 corrected from Lachlan to Belubula River. cowra-2 and cowra-3 have no ticketUrl (no single official site).",
-    "Not verifiable: blossom window beyond 'spring', Sakura Matsuri 2027 date, hours/prices are the operator's figures as at 17 Oct 2026.",
-    "No header or whyVisit photos: both left for the owner; whyVisitPhotos field intentionally omitted."
+   },
+   {
+    "tag": "major-festival",
+    "months": [
+     4
+    ],
+    "strength": 0.4
+   }
   ]
+ },
+ "spots": {
+  "cowra-1": {
+   "bio": "A kaiyu-shiki strolling garden designed by Ken Nakajima, 1.1 km north of Cowra's centre, with a cultural centre, gift shop and cafe.",
+   "hours": "8:30 AM – 5:00 PM",
+   "costMin": 22,
+   "costMax": 22,
+   "currency": "AUD",
+   "ticketUrl": "https://www.cowragarden.com.au/"
+  },
+  "cowra-2": {
+   "bio": "The site of the prisoner-of-war camp from which 1,104 Japanese prisoners broke out on 5 August 1944, 2.9 km from the centre, with Sakura Avenue and the Japanese and Australian war cemeteries about 1.6 km away.",
+   "hours": "Open 24 hours",
+   "free": true
+  },
+  "cowra-3": {
+   "bio": "A historic township 32 km north of Cowra on the Belubula River, with curving Gaskill Street partly an urban conservation area and 34 buildings or features on the NSW State Heritage Register.",
+   "hours": "Open 24 hours",
+   "free": true
+  }
+ },
+ "notes": [
+  "Tagline: draft variant 1. Description: variant 2 with the fact-check fix (only the garden is described as symbolising peace; 'over 40' vineyards).",
+  "Reasons: 1 uses the operator-sourced 12.5 acres (cowragarden.com.au) without the 'largest' claim; 2 is the cemetery (ceded to Japan 1963, Wikivoyage), written as paying respects, and 'only one in Australia' is left to the description to avoid repetition; 3 is Canowindra (Wikipedia: 'Ballooning Capital of Australia', hence 'self-styled'). Age of Fishes museum not mentioned anywhere as it is not in the app.",
+  "Balloon Challenge appears only in bestTimeBlurb and as a seasonalTag (April); the Sakura Matsuri is in the blurb and the cherry-blossom tag (month 9 only; October unverified). The balloon tag uses 'major-festival' with strength 0.4: check against the SeasonalSignal type if a different tag kind is preferred.",
+  "goodToKnow: dropped the unsourced 'two coach services a day' and the Age of Fishes closure tip. The mobility/dogs tip is from the garden site; 'uneven paths' is a paraphrase of 'not a flat garden' and may be softened.",
+  "The bestMonths are own inference (no guide gives a best time); mark approximate. Summer figure is the January mean maximum 32.2C (Wikipedia).",
+  "Spots: cowra-1 bio uses the fact-check distance (1.1 km, not 4 km); cowra-2 hours 'Open 24 hours' per Wikivoyage (not 'daylight hours'); cowra-3 corrected from Lachlan to Belubula River. cowra-2 and cowra-3 have no ticketUrl (no single official site).",
+  "Not verifiable: blossom window beyond 'spring', Sakura Matsuri 2027 date, hours/prices are the operator's figures as at 17 Oct 2026.",
+  "No header or whyVisit photos: both left for the owner; whyVisitPhotos field intentionally omitted."
+ ]
 }

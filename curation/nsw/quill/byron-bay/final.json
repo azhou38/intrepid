@@ -1,68 +1,105 @@
 {
-  "destination": {
-    "id": "byron-bay",
-    "name": "Byron Bay",
-    "country": "Australia",
-    "countryCode": "AU",
-    "timezone": "Australia/Sydney",
-    "continent": "Oceania",
-    "coordinates": { "latitude": -28.6431, "longitude": 153.615 },
-    "category": "beach",
-    "defaultZoomSpanKm": 40,
-    "rank": 2,
-    "icon": "🏄",
-    "tagline": "A surf town on the north coast, built around a headland lighthouse and a long run of beaches.",
-    "description": "Byron Bay is a beachside town of 6,330 people (2021 census) in the far north-east corner of New South Wales, 772 km north of Sydney and 165 km south of Brisbane. Cape Byron, the headland beside it, is the easternmost point of mainland Australia. People come for the surf beaches, diving at Julian Rocks, whale watching and a wellness and alternative scene. The traditional name for the place is Cavvanbah, \"meeting place\".",
-    "whyVisit": [
-      "Walk the clifftop track to Cape Byron Lighthouse",
-      "Swim or surf at Wategos and Main Beach",
-      "Visit the Shambhala Gardens stupa and the hinterland villages"
-    ],
-    "highlights": ["Lighthouse walk", "Wategos Beach", "Hinterland villages"],
-    "goodToKnow": [
-      {
-        "icon": "🅿️",
-        "title": "Lighthouse parking",
-        "detail": "Parking at the lighthouse is paid and capped at one hour per vehicle per day ($10 an hour, NPWS), so many people park at the start of the track and walk the beach, about 20 minutes to the lighthouse."
-      },
-      {
-        "icon": "🚗",
-        "title": "Getting in and out",
-        "detail": "Ewingsdale Road into town is slow in school holidays and summer; Wikivoyage suggests leaving the M1 at the Lennox Head exit (Ross Lane) and coming in from the south. Trains from Sydney stop at Casino, with a coach on to Byron; the nearest airports are Ballina Byron Gateway (about 30 minutes) and Gold Coast (about an hour)."
-      },
-      {
-        "icon": "🚩",
-        "title": "Patrolled beaches",
-        "detail": "Main, Clarkes and Wategos beaches are patrolled year-round (VisitNSW), so swim between the flags at one of those; winter days reach only about 19 C."
-      }
-    ],
-    "bestMonths": [9, 10, 11],
-    "bestTimeBlurb": "Come in {months}: September is the driest month (47 mm), whale watching is at its best in September and October, and summer afternoons are still weeks away.",
-    "seasonalTags": [
-      { "tag": "wildlife-migration", "months": [6, 7, 8, 9, 10], "strength": 0.5 }
-    ]
+ "destination": {
+  "id": "byron-bay",
+  "name": "Byron Bay",
+  "country": "Australia",
+  "countryCode": "AU",
+  "timezone": "Australia/Sydney",
+  "continent": "Oceania",
+  "coordinates": {
+   "latitude": -28.6431,
+   "longitude": 153.615
   },
-  "spots": {
-    "byron-bay-1": { "hours": "Lawn 8:00 AM - sunset; museum 10:00 AM - 4:00 PM" },
-    "byron-bay-2": { "hours": "Open 24 hours; may close for weather or fire danger" },
-    "byron-bay-4": { "bio": "A beach on the north side of Cape Byron with a longboard following, where common dolphins are not uncommon among the surfers." },
-    "byron-bay-5": { "bio": "A long-board surf break at the end of Clarkes Beach, which VisitNSW names among Australia's most famous surf breaks." },
-    "byron-bay-7": { "hours": "10:00 AM - 5:00 PM (last entry 4:00 PM); closed Good Friday, Christmas Day and Boxing Day" },
-    "byron-bay-9": { "bio": "A hinterland village founded in the 1880s, with a historic main street of cafes and boutique shops." },
-    "byron-bay-11": { "bio": "A long beach running south from Cape Byron towards Broken Head, reached through Arakwal National Park, for swimming, birdwatching and whale watching." },
-    "byron-bay-12": {
-      "bio": "A small national park behind Tallow Beach, jointly managed by the Bundjalung of Byron Bay (Arakwal) people and NPWS, with 3 km of beach backed by dunes and coastal heath.",
-      "hours": "Always open; may close for storm or fire danger"
-    },
-    "byron-bay-13": { "hours": "Always open; may close for poor weather or fire danger" }
-  },
-  "notes": [
-    "Cut: 2 million visitors figure, Bluesfest, Wategos Christmas-only patrols, 'no train', 'sheltered', 'surfers lookout', 'southern end of Clarkes', 'south-facing', 'well-preserved nineteenth-century main street'.",
-    "Seasonal tag uses the existing kind 'wildlife-migration' with explicit months 6-10 (Wild Byron June to October); strength 0.5 because whales are not the main draw. Reason 3 is the hinterland (no honest Julian Rocks or whale photo); Julian Rocks and whales stay in the description, bestTimeBlurb and spots.",
-    "Reason 3 is worded around the Shambhala Gardens stupa photo; Crystal Castle and Bangalow/Mullumbimby are spots, so the reason names the gardens and villages generally.",
-    "Spot hours/costs taken from fact-check fields; Crystal Castle and Broken Head cost left omitted (adult price not on cached page; the $4/vehicle/hour fee is not a ticket). Byron Bay (headline) hours for byron-bay-2 are optional from fact-check.",
-    "Untouched spot bios (3, 6, 8, 10, 14) passed fact-check; byron-bay-15 The Farm is held with no photo and has no text here.",
-    "Tweed Heads neighbour draft checked: no shared phrasing (it uses Gold Coast distances, Wollumbin, daylight saving; none reused). Tip 'ticketUrl' values per fact-check are unchanged.",
-    "Unverified: $10 an hour lighthouse parking and entry fees are as fetched by fact-check in 2026 and may change; header remains held for the owner; whyVisitPhotos are not set here."
+  "category": "beach",
+  "defaultZoomSpanKm": 40,
+  "rank": 2,
+  "icon": "🏄",
+  "tagline": "A surf town on the north coast, built around a headland lighthouse and a long run of beaches.",
+  "description": "Byron Bay is a beachside town of 6,330 people (2021 census) in the far north-east corner of New South Wales, 772 km north of Sydney and 165 km south of Brisbane. Cape Byron, the headland beside it, is the easternmost point of mainland Australia. People come for the surf beaches, diving at Julian Rocks, whale watching and a wellness and alternative scene. The traditional name for the place is Cavvanbah, \"meeting place\".",
+  "whyVisit": [
+   "Walk the clifftop track to Cape Byron Lighthouse",
+   "Swim or surf at Wategos and Main Beach",
+   "Visit the hinterland villages and stupa"
+  ],
+  "highlights": [
+   "Lighthouse walk",
+   "Wategos Beach",
+   "Hinterland villages"
+  ],
+  "goodToKnow": [
+   {
+    "icon": "🅿️",
+    "title": "Lighthouse parking",
+    "detail": "Parking at the lighthouse is paid and capped at one hour per vehicle per day ($10 an hour, NPWS), so many people park at the start of the track and walk the beach, about 20 minutes to the lighthouse."
+   },
+   {
+    "icon": "🚗",
+    "title": "Getting in and out",
+    "detail": "Ewingsdale Road into town is slow in school holidays and summer; Wikivoyage suggests leaving the M1 at the Lennox Head exit (Ross Lane) and coming in from the south. Trains from Sydney stop at Casino, with a coach on to Byron; the nearest airports are Ballina Byron Gateway (about 30 minutes) and Gold Coast (about an hour)."
+   },
+   {
+    "icon": "🚩",
+    "title": "Patrolled beaches",
+    "detail": "Main, Clarkes and Wategos beaches are patrolled year-round (VisitNSW), so swim between the flags at one of those; winter days reach only about 19 C."
+   }
+  ],
+  "bestMonths": [
+   9,
+   10,
+   11
+  ],
+  "bestTimeBlurb": "Come in {months}: September is the driest month (47 mm), whale watching is at its best in September and October, and summer afternoons are still weeks away.",
+  "seasonalTags": [
+   {
+    "tag": "wildlife-migration",
+    "months": [
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "strength": 0.5
+   }
   ]
+ },
+ "spots": {
+  "byron-bay-1": {
+   "hours": "Lawn 8:00 AM - sunset; museum 10:00 AM - 4:00 PM"
+  },
+  "byron-bay-2": {
+   "hours": "Open 24 hours; may close for weather or fire danger"
+  },
+  "byron-bay-4": {
+   "bio": "A beach on the north side of Cape Byron with a longboard following, where common dolphins are not uncommon among the surfers."
+  },
+  "byron-bay-5": {
+   "bio": "A long-board surf break at the end of Clarkes Beach, which VisitNSW names among Australia's most famous surf breaks."
+  },
+  "byron-bay-7": {
+   "hours": "10:00 AM - 5:00 PM (last entry 4:00 PM); closed Good Friday, Christmas Day and Boxing Day"
+  },
+  "byron-bay-9": {
+   "bio": "A hinterland village founded in the 1880s, with a historic main street of cafes and boutique shops."
+  },
+  "byron-bay-11": {
+   "bio": "A long beach running south from Cape Byron towards Broken Head, reached through Arakwal National Park, for swimming, birdwatching and whale watching."
+  },
+  "byron-bay-12": {
+   "bio": "A small national park behind Tallow Beach, jointly managed by the Bundjalung of Byron Bay (Arakwal) people and NPWS, with 3 km of beach backed by dunes and coastal heath.",
+   "hours": "Always open; may close for storm or fire danger"
+  },
+  "byron-bay-13": {
+   "hours": "Always open; may close for poor weather or fire danger"
+  }
+ },
+ "notes": [
+  "Cut: 2 million visitors figure, Bluesfest, Wategos Christmas-only patrols, 'no train', 'sheltered', 'surfers lookout', 'southern end of Clarkes', 'south-facing', 'well-preserved nineteenth-century main street'.",
+  "Seasonal tag uses the existing kind 'wildlife-migration' with explicit months 6-10 (Wild Byron June to October); strength 0.5 because whales are not the main draw. Reason 3 is the hinterland (no honest Julian Rocks or whale photo); Julian Rocks and whales stay in the description, bestTimeBlurb and spots.",
+  "Reason 3 is worded around the Shambhala Gardens stupa photo; Crystal Castle and Bangalow/Mullumbimby are spots, so the reason names the gardens and villages generally.",
+  "Spot hours/costs taken from fact-check fields; Crystal Castle and Broken Head cost left omitted (adult price not on cached page; the $4/vehicle/hour fee is not a ticket). Byron Bay (headline) hours for byron-bay-2 are optional from fact-check.",
+  "Untouched spot bios (3, 6, 8, 10, 14) passed fact-check; byron-bay-15 The Farm is held with no photo and has no text here.",
+  "Tweed Heads neighbour draft checked: no shared phrasing (it uses Gold Coast distances, Wollumbin, daylight saving; none reused). Tip 'ticketUrl' values per fact-check are unchanged.",
+  "Unverified: $10 an hour lighthouse parking and entry fees are as fetched by fact-check in 2026 and may change; header remains held for the owner; whyVisitPhotos are not set here."
+ ]
 }

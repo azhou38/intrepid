@@ -865,7 +865,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'park', icon: "⛰️", rank: 2,
     tagline: "World Heritage sandstone cliffs, waterfalls and the Three Sisters, a train ride west of Sydney.",
     description: "Katoomba, the main base for this national park, is 103 km west of Sydney, and the park is a plateau of sandstone cliffs and forested valleys, part of the Greater Blue Mountains Area that UNESCO inscribed in 2000. The Three Sisters at Echo Point are the best-known sight, and the nearby towns of Leura, Wentworth Falls, Blackheath and Mount Victoria give access to waterfalls, the Grose Valley lookouts and over 140 km of walking tracks. Visitors arrive by road or by train from Sydney Central, which takes about two hours.",
-    whyVisit: ["See the Three Sisters from Echo Point, Katoomba's main lookout over the Jamison Valley", "Ride Scenic World's cableway and 52-degree railway down into the valley", "Walk to waterfalls beneath the cliffs, with 140 km of tracks to choose from"],
+    whyVisit: ["See the Three Sisters from Echo Point", "Ride Scenic World into the Jamison Valley", "Walk to waterfalls beneath the cliffs"],
     whyVisitPhotos: ["Echo Point, Katoomba.jpg", "Katoomba (AU), Scenic World, Scenic Cableway -- 2019 -- 1913.jpg", "Upper Wentworth Falls 3, NSW, Australia - Nov 2008.jpg"],
     highlights: ["Three Sisters views", "Scenic World rides", "Waterfalls below cliffs"],
     goodToKnow: [
@@ -882,7 +882,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'park', icon: "🌌", rank: 4,
     tagline: "Spires, bluffs and dark night skies in the weathered core of a volcano near Coonabarabran.",
     description: "Warrumbungle National Park covers 23,311 ha of the Warrumbungle Range, the eroded remnant of a volcano near Coonabarabran, about 550 km north-west of Sydney. Walkers come for formations such as Belougery Spire, Crater Bluff and the Breadknife, which towers 90 m above the valley floor and is the park's most recognisable feature. The park was added to the National Heritage List in 2006, and in 2016 it became Australia's first certified Dark Sky Park. About 80% of it burned in January 2013, and walking tracks, campgrounds and visitor sites have since been rebuilt.",
-    whyVisit: ["Walk the Breadknife and Grand High Tops", "See the Milky Way over the range at night", "Take in volcanic landforms the National Heritage listing calls unrivalled in Australia"],
+    whyVisit: ["Walk the Breadknife and Grand High Tops", "See the Milky Way over the range", "Explore heritage-listed volcanic landforms"],
     whyVisitPhotos: ["The Breadknife as seen from Grand High Tops track.jpg", "Moonset in Warrumbungle National Park.jpg", "Crater Bluff, Warrumbungle National Park.jpg"],
     highlights: ["Grand High Tops", "Night skies", "Volcanic landforms"],
     goodToKnow: [
@@ -1888,7 +1888,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'nature', icon: '🍇', rank: 4,
     tagline: "Pinot noir country over the Remutaka Range from Wellington, running down to Cape Palliser.",
     description: "The Wairarapa is the south-eastern corner of the North Island, separated from the Wellington area by the Remutaka Range and popular with Wellington day-trippers. The Remutaka and Tararua ranges shelter it from the prevailing westerlies, giving a warm, dry climate, and wine centres on Martinborough, where pinot noir and sauvignon blanc are the two main varieties. Masterton is the largest town, with Carterton, Greytown and Featherston strung along the way. More than 1,000 people commute 'through the hill' to Wellington each day.",
-    whyVisit: ["Taste pinot noir among Martinborough's vineyards", "Walk to the Putangirua Pinnacles, filmed as the Paths of the Dead", "Climb to Cape Palliser's lighthouse at the North Island's southern tip"],
+    whyVisit: ["Taste pinot noir among Martinborough's vineyards", "Walk the Pinnacles, the Paths of the Dead", "Climb to Cape Palliser Lighthouse"],
     whyVisitPhotos: ["ext-martinborough-vineyards.jpg", "Afternoon view over Putangirua Pinnacles area.jpg", "Cape Palliser Lighthouse (5) (31979245466).jpg"],
     highlights: ["Pinot noir", "Paths of the Dead", "Lighthouse climb"],
     goodToKnow: [{ icon: "🚆", title: "Trains stop at Masterton", detail: "The Wairarapa Line runs 91 km from Wellington to Masterton, with five services each way Monday to Thursday, six on Fridays, and only two at weekends and on public holidays. There is no train to Martinborough; Metlink bus 200 runs there from Masterton and Featherston, but not on Sundays or public holidays." }, { icon: "🚲", title: "Hire a bike, not a car", detail: "Martinborough's vineyards lie in ribbons around the north and east of town, and the Martinborough Wine Centre hires cycles (bookings essential), which avoids drinking and driving." }, { icon: "🦭", title: "Give seals 20 metres", detail: "DOC advises staying at least 20 metres from fur seals, which have sharp teeth and move quickly if threatened. Keep dogs leashed and away, and never get between a seal and the sea." }],
@@ -1901,7 +1901,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'beach', icon: '🏝️', rank: 4,
     tagline: "Wellington's west-coast day trip, where the sun sets into the Tasman.",
     description: "The Kāpiti Coast runs from Paekākāriki in the south to Ōtaki, the northernmost point of the Wellington Region, between the Tasman Sea and the mountains. Its beach towns lie about 50–60 km north of Wellington and face Kāpiti Island, a 19.65 km² predator-free island that gave the district its name. Paraparaumu is the biggest town and commercial centre, and the Kapiti Line train from Wellington takes about an hour to reach it. Queen Elizabeth Park holds the last area of natural dunes on the coast.",
-    whyVisit: ["Spend a day on Kāpiti Island, where takahē, kōkako and hihi live wild", "Cross two swing bridges on the Escarpment Track above the coast", "Walk the beaches and dunes that look across to the island"],
+    whyVisit: ["See takahē and hihi on Kāpiti Island", "Cross the Escarpment Track's swing bridges", "Walk the dunes facing Kāpiti Island"],
     whyVisitPhotos: ["Takahe2.jpg", "ext-paekakariki-escarpment-track.jpg", "Kapiti Island (165463619).jpg"],
     highlights: ["Island birdlife", "Swing bridges", "Beaches and dunes"],
     goodToKnow: [
