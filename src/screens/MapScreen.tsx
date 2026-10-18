@@ -1068,11 +1068,6 @@ const SPOT_PHOTO_ZOOM_BY_ID = earlySpotZoomTable(SPOT_PHOTO_EARLY_SEPARATION_PX,
 // photo-less dot (SpotDots below) that lives exactly as long as the full pin would have — same reveal zoom, same
 // viewport — so the map never loses a spot, it only stops paying for a photo MarkerView on every one of them.
 const MAX_SPOT_PINS = 25;
-// When a camera frame is worth a re-render (see handleCameraChanged): a zoom change of this many levels, or a move of
-// this fraction of the view, at most every this many ms.
-const CAMERA_COMMIT_ZOOM = 0.04;
-const CAMERA_COMMIT_MOVE = 0.03;
-const CAMERA_COMMIT_MIN_MS = 50;
 // A standalone spot has no list to rank in; it ranks like a destination's third spot, so it neither crowds out a
 // destination's headline spots nor is the first to lose its pin.
 const STANDALONE_IMPORTANCE = 2;
@@ -3927,28 +3922,6 @@ const destItems = useMemo((): DestItem[] =>
 
   // Fires continuously while the camera moves — update region live so markers
   // appear/fade during the gesture rather than only after it settles.
-  // The camera as last reported, and as last committed to React state (see handleCameraChanged's commit rule).
-  const pendingCameraRef = useRef<{ lat: number; lng: number; latDelta: number; lngDelta: number; zoom: number } | null>(null);
-  const committedCameraRef = useRef<{ lat: number; lng: number; latDelta: number; lngDelta: number; zoom: number } | null>(null);
-  const cameraTrailTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const lastCameraRenderMsRef = useRef(0);
-  const cameraCommitAtRef = useRef(0);
-  const commitCamera = useCallback(() => {
-    const c = pendingCameraRef.current;
-    if (!c) return;
-    if (cameraTrailTimerRef.current) { clearTimeout(cameraTrailTimerRef.current); cameraTrailTimerRef.current = null; }
-    const now = Date.now();
-    lastCameraTimeRef.current = now;
-    cameraCommitAtRef.current = now;
-    committedCameraRef.current = c;
-    const v = zoomSampleRef.current?.v ?? 0;
-    // One batched update: the region and the zoom always change together (one render, not two).
-    unstable_batchedUpdates(() => {
-      setRegion({ latitude: c.lat, longitude: c.lng, latitudeDelta: c.latDelta, longitudeDelta: c.lngDelta });
-      setCamZoom(c.zoom);
-      setZoomOutLead(Math.max(0, Math.min(PLAN_LEAD_MAX_ZOOM, -v * PLAN_LAG_SEC)));
-    });
-  }, []);
   const handleCameraChanged = useCallback((state: {
     properties: {
       center: [number, number];
@@ -4106,48 +4079,42 @@ const destItems = useMemo((): DestItem[] =>
       animatePrompt(false, destReturnPromptVisibleRef, destReturnPromptProgress);
     }
 
-    // The zoom velocity is sampled on every event (cheap, refs only), so the look-ahead stays accurate however rarely the
-    // state below is committed.
+    // Throttle the region-state updates — tightened from the original 24ms (~40fps) to 3ms.
+    // 3ms is below any real display's frame interval (even 120Hz is ~8.3ms/frame), so this no
+    // longer meaningfully throttles at all — in practice every camera-changed event Mapbox
+    // actually fires gets through, capped only by however often the native side emits them.
+    // Everything that decides which pins/pills are even in the plan (visibleSpots,
+    // destPinPlan, activeStampTier's culling) is derived from this React state, one commit
+    // behind the actual gesture — during a fast pinch that lag is what made pin fades start
+    // late even though the fade animation itself (FadePin's own fixed-duration timing) was
+    // unchanged. Tighter throttling doesn't touch that duration, only how promptly the
+    // decision to start it can react. The batched update below (a single render for both
+    // region and zoom) is what makes going this tight safe rather than doubling render cost —
+    // if this ever shows up as jank on lower-end devices, that batching is the first place to
+    // look before backing the number off again.
     const now = Date.now();
-    {
+    if (now - lastCameraTimeRef.current < 3) return;
+    lastCameraTimeRef.current = now;
+
+    // One batched update: the region and the zoom always change together, and applying them separately renders the
+    // whole (large) screen twice per camera frame — which is what made pins react late on a fast pinch.
+    unstable_batchedUpdates(() => {
+      setRegion({
+        latitude:       lat,
+        longitude:      lng,
+        latitudeDelta:  latDelta,
+        longitudeDelta: lngDelta,
+      });
+      setCamZoom(state.properties.zoom);
+      // Smoothed zoom velocity (levels/sec) from successive events -> predicted outward travel over the render lag.
       const prev = zoomSampleRef.current, z = state.properties.zoom;
       let v = 0;
       if (prev && now > prev.t) v = 0.5 * prev.v + 0.5 * ((z - prev.z) / ((now - prev.t) / 1000));
       zoomSampleRef.current = { z, t: now, v };
-    }
+      setZoomOutLead(Math.max(0, Math.min(PLAN_LEAD_MAX_ZOOM, -v * PLAN_LAG_SEC)));
+    });
     camZoomRef.current = state.properties.zoom;
-    pendingCameraRef.current = { lat, lng, latDelta, lngDelta, zoom: state.properties.zoom };
-
-    // Committing the camera to React state re-renders this whole screen: every pin, spot and label plan and every
-    // marker. It used to happen on nearly every camera frame (a 3 ms throttle), which in a destination with many spots
-    // kept the JS thread busy for as long as the map moved, so everything else waiting on it (the sheet dropping to its
-    // strip, a tapped pin's sheet, the back arrow, grid view) queued behind those renders for seconds. Now a frame is
-    // committed only when it changes something the plans can see (zoom by CAMERA_COMMIT_ZOOM, or the centre/span by
-    // CAMERA_COMMIT_MOVE of the view), at most every CAMERA_COMMIT_MIN_MS and never closer than twice the last render
-    // took, so the thread always has room left over. A trailing commit lands the final position; idle commits too.
-    const last = committedCameraRef.current;
-    const moved = !last
-      || Math.abs(state.properties.zoom - last.zoom) >= CAMERA_COMMIT_ZOOM
-      || Math.abs(lat - last.lat) >= last.latDelta * CAMERA_COMMIT_MOVE
-      || Math.abs(lng - last.lng) >= last.lngDelta * CAMERA_COMMIT_MOVE;
-    const gap = Math.max(CAMERA_COMMIT_MIN_MS, lastCameraRenderMsRef.current * 2);
-    if (moved && now - lastCameraTimeRef.current >= gap) {
-      commitCamera();
-    } else if (!cameraTrailTimerRef.current) {
-      cameraTrailTimerRef.current = setTimeout(() => {
-        cameraTrailTimerRef.current = null;
-        commitCamera();
-      }, gap);
-    }
   }, [returnPromptProgress, destReturnPromptProgress, mapGestureAtSV, releaseHeldSelection]);
-
-  // How long the last camera commit took to render (commit → effect), which spaces the next one (see commitCamera).
-  useEffect(() => {
-    if (cameraCommitAtRef.current) {
-      lastCameraRenderMsRef.current = Math.min(400, Date.now() - cameraCommitAtRef.current);
-      cameraCommitAtRef.current = 0;
-    }
-  }, [region]);
 
   const handleMapIdle = useCallback((state: {
     properties: {
@@ -4175,8 +4142,6 @@ const destItems = useMemo((): DestItem[] =>
     // instead of idle — by the time onMapIdle fires here, the glide-back has already
     // finished and the region below is normally already back within bounds.
 
-    if (cameraTrailTimerRef.current) { clearTimeout(cameraTrailTimerRef.current); cameraTrailTimerRef.current = null; }
-    committedCameraRef.current = { lat: newRegion.latitude, lng: newRegion.longitude, latDelta: newRegion.latitudeDelta, lngDelta: newRegion.longitudeDelta, zoom: state.properties.zoom };
     setRegion(newRegion);
     setCamZoom(state.properties.zoom);
     zoomSampleRef.current = null;

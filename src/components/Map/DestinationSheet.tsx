@@ -439,26 +439,10 @@ function WhenToVisitCard({ destination, onOpenClimateDetail }: {
 // ── Spots panel — full grid of a destination's spots, with a
 // button that jumps into the sliding spot carousel (SpotSheet, via onSelectSpot), which
 // already receives the destination's full spot list regardless of which spot is passed.
-// How many grid cards render with the sheet, and how many more each following frame. A destination with many spots
-// (Sydney's 72) used to build every card — each with its own gradient, text fitting and photo fetch — before the sheet
-// could appear, so "Grid view" took seconds; now the first screenful comes with the sheet and the rest follow in batches.
-const GRID_FIRST_BATCH = 8;
-const GRID_BATCH = 8;
-
 function SpotsPanel({ spots, onSelectSpot }: {
   spots: typeof SPOTS;
   onSelectSpot?: (spot: Spot) => void;
 }) {
-  const [shown, setShown] = useState(Math.min(spots.length, GRID_FIRST_BATCH));
-  useEffect(() => {
-    if (shown >= spots.length) return;
-    const t = setTimeout(() => setShown(n => Math.min(spots.length, n + GRID_BATCH)), 16);
-    return () => clearTimeout(t);
-  }, [shown, spots.length]);
-  // One stable press handler per spot, so a re-render of the grid doesn't re-render every (memoized) card.
-  const onSelectRef = useRef(onSelectSpot);
-  onSelectRef.current = onSelectSpot;
-  const pressHandlers = useMemo(() => new globalThis.Map<string, () => void>(spots.map(sp => [sp.id, () => { onSelectRef.current?.(sp); }])), [spots]);
   return (
     <View style={{ gap: 16 }}>
       {spots.length > 0 && (
@@ -470,8 +454,8 @@ function SpotsPanel({ spots, onSelectSpot }: {
 
       {spots.length > 0 ? (
         <View style={st.spotsGrid}>
-          {spots.slice(0, shown).map(spot => (
-            <SpotCard key={spot.id} spot={spot} width={GRID_CARD_W} onPress={pressHandlers.get(spot.id)!} />
+          {spots.map(spot => (
+            <SpotCard key={spot.id} spot={spot} width={GRID_CARD_W} onPress={() => onSelectSpot?.(spot)} />
           ))}
         </View>
       ) : (
