@@ -3,11 +3,15 @@
 // no word broken across lines — React Native wraps at spaces and only splits a word mid-way when the word alone is wider
 // than the line, so every word must fit on one line as well as the whole name fitting in `maxLines`. Glyph width is
 // estimated at `glyphEm` (default 0.58em, a little wide for serif bold with its letterSpacing, so a rare wide word errs towards shrinking; the narrow grid cards pass a tighter 0.53 so their names are not shrunk more than they need to be).
-export function fitNameFontSize(name: string, max: number, min: number, maxWidth: number, maxLines = 2, glyphEm = 0.58): number {
+// `wordEm` is the glyph width used only to decide whether a single word fits on a line (default `glyphEm`): packing words
+// into lines can run a little tight, but a word that overflows is split mid-word, so a card can pass a wider (safer) figure
+// there and have a long single word (Coonabarabran) shrink just enough to stay whole on one line.
+export function fitNameFontSize(name: string, max: number, min: number, maxWidth: number, maxLines = 2, glyphEm = 0.58, wordEm = glyphEm): number {
   const words = name.split(/\s+/).filter(Boolean);
   for (let size = max; size >= min; size -= 0.5) {
     const perLine = Math.floor(maxWidth / (size * glyphEm));
-    if (words.some(w => w.length > perLine)) continue;                      // a word alone would split across lines
+    const wordsPerLine = Math.floor(maxWidth / (size * wordEm));
+    if (words.some(w => w.length > wordsPerLine)) continue;                 // a word alone would split across lines
     let lines = 1, cur = 0;
     for (const w of words) {
       if (cur === 0) cur = w.length;
@@ -23,10 +27,10 @@ export function fitNameFontSize(name: string, max: number, min: number, maxWidth
 // and never so many that it swallows a small card. Two lines while the font stays at `comfort` or larger; else three lines
 // while that keeps it at `comfort - 2` or larger; else four lines, with the font held to `comfort` (at four lines a name
 // could otherwise grow large enough to fill the card). Never an ellipsis and never a word broken across lines.
-export function fitNameSize(name: string, max: number, min: number, maxWidth: number, comfort: number, glyphEm = 0.58): number {
-  const two = fitNameFontSize(name, max, min, maxWidth, 2, glyphEm);
+export function fitNameSize(name: string, max: number, min: number, maxWidth: number, comfort: number, glyphEm = 0.58, wordEm = glyphEm): number {
+  const two = fitNameFontSize(name, max, min, maxWidth, 2, glyphEm, wordEm);
   if (two >= comfort) return two;
-  const three = fitNameFontSize(name, max, min, maxWidth, 3, glyphEm);
+  const three = fitNameFontSize(name, max, min, maxWidth, 3, glyphEm, wordEm);
   if (three >= comfort - 2) return three;
-  return Math.min(comfort, fitNameFontSize(name, max, min, maxWidth, 4, glyphEm));
+  return Math.min(comfort, fitNameFontSize(name, max, min, maxWidth, 4, glyphEm, wordEm));
 }

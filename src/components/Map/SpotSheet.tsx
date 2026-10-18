@@ -1047,7 +1047,12 @@ isVisited ? (
             // One tab is no tab bar: an unvisited spot has only About, so no "About" label or underline is drawn. What
             // stays is the bar's shape — the white, round-topped edge that tucks over the hero's bottom and is what the
             // ScrollView pins (stickyHeaderIndices) — as a slim cap with nothing in it.
-            <View style={[st.tabBar, st.tabBarCap, pinned && st.tabBarPinned]} />
+            // Once the sheet is scrolled and the bar is pinned under the title bar, the same hairline a destination's pinned
+            // bar has closes it off. The cap is one element inline and pinned, so the line fades in with the title bar
+            // (compactBarStyle) rather than being there while the cap still tucks over the hero.
+            <View style={[st.tabBar, st.tabBarCap, pinned && st.tabBarPinned]}>
+              <Reanimated.View pointerEvents="none" style={[st.tabCapBorder, compactBarStyle]} />
+            </View>
           )
   );
 
@@ -1757,6 +1762,8 @@ const st = StyleSheet.create({
             borderBottomWidth: 1, borderBottomColor: '#D1D5DB', zIndex: 1, overflow: 'hidden' },
   // No tab bar for a single tab: the same white round-topped edge, but only tall enough to be a cap, with no hairline.
   tabBarCap: { height: 24, borderBottomWidth: 0 },
+  // The destination tab bar's hairline (borderBottomWidth 1, #D1D5DB), for the cap that has no tab bar: faded in with the title bar.
+  tabCapBorder: { position: 'absolute', left: 0, right: 0, bottom: 0, height: 1, backgroundColor: '#D1D5DB' },
   tabBtn: { flex: 1, paddingVertical: 15, alignItems: 'center' },
   tabDivider: { width: StyleSheet.hairlineWidth, marginVertical: 14, backgroundColor: '#E5E7EB' },
   tabBtnTxt: { fontSize: 15, fontWeight: '600', color: '#9CA3AF' },

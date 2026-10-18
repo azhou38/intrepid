@@ -46,7 +46,9 @@ function SpotCard({ spot, onPress, width }: {
   // Full size while the name fits on two lines; once it is on track to need a third, the font shrinks just enough to fit on
   // two (down to 11) with no word split across lines, rather than the card filling with a tall title. Text width: the card minus its 10 px side insets and border.
   // Two lines while the font stays at 16 or more; a longer name takes a third line rather than shrink further.
-  const nameSize = fitNameSize(spot.name, 23, 11, width - 23, 16, 0.53);
+  // Words are measured at 0.62em, wider than the 0.53 used for packing lines: a long single word (Coonabarabran) that doesn't quite fit
+  // otherwise wraps its last letter onto the next line. It shrinks the least that keeps the whole word on one line instead.
+  const nameSize = fitNameSize(spot.name, 23, 11, width - 23, 16, 0.53, 0.62);
 
   const [infoH, setInfoH] = useState(0);
   // As tall as the name / time / cost block it sits behind (plus its 16 px bottom inset and a soft edge), so the name is on
