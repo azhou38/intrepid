@@ -7,7 +7,8 @@
 //   ticketUrl   loads, isn't a captcha wall, and its title or heading names the place (WRITING.md → ticketUrl);
 //               "blocked" means it needs a real browser, not that it's wrong
 //   no-ticket   charges (costMin > 0) but has no ticketUrl
-//   bio         more than one sentence, or marketing words (WRITING.md → "Voice")
+//   bio         more than one sentence, marketing words (WRITING.md → "Voice"), or longer than the carousel card's three
+//               lines (bio-fit.py, measured in the card's own font)
 //   wiki        its photo title (wiki, else name) is missing on Wikipedia, a disambiguation page, or a redirect —
 //               only for spots whose photo comes from that lookup (no override, no supplied photo)
 // Destinations
@@ -16,6 +17,7 @@
 // With --offline only the checks that need no network run (shape, voice, bio, no-ticket).
 // Fetches go through the shared cache (http-cache.ts). Prints one line per failing entry; --json writes them all.
 import { readFileSync, writeFileSync } from 'node:fs';
+import { spawnSync } from 'node:child_process';
 import { cachedGet, cachedJson, htmlTitle, looksBlocked } from './http-cache';
 import { DESTINATIONS } from '../../src/data/destinations';
 import { SPOTS, spotPhotoTitle } from '../../src/data/spots';
@@ -84,11 +86,20 @@ async function checkWiki(title: string): Promise<string | null> {
     if (it.checks.length) issues.push(it);
   }
   const spots = SPOTS.filter(s => (s.destinationId && destIds.has(s.destinationId)) || (!s.destinationId && standaloneIds.has(s.id)));
+  // Bios that would run past the carousel card's three lines, measured in the card's font by bio-fit.py.
+  const tooLong = new Map<string, { lines: number; cut: number }>();
+  if (spots.length) {
+    const tmp = `${process.env.TMPDIR ?? '/tmp'}/bio-fit-${process.pid}.json`;
+    const r = spawnSync('python3', ['scripts/curation/bio-fit.py', '--ids', spots.map(s => s.id).join(','), '--json', tmp], { encoding: 'utf8' });
+    if (r.status === 0 || r.status === 1) for (const f of JSON.parse(readFileSync(tmp, 'utf8'))) tooLong.set(f.id, f);
+    else console.error(`bio-fit.py did not run (${(r.stderr || '').trim().split('\n').pop()}): bio length not checked`);
+  }
   let n = 0;
   for (const s of spots) {
     const it: Issue = { kind: 'spot', id: s.id, name: s.name, checks: [] };
     if (sentences(s.bio) > 1) add(it, 'bio', 'more than one sentence');
     const m = s.bio.match(MARKETING); if (m) add(it, 'bio', `marketing word "${m[0]}"`);
+    const tl = tooLong.get(s.id); if (tl) add(it, 'bio', `${tl.lines} lines on the carousel card (max 3): cut ~${tl.cut} characters`);
     if ((s.costMin ?? 0) > 0 && !s.ticketUrl) add(it, 'no-ticket', 'charges but has no ticketUrl');
     if (!offline) {
       if (s.ticketUrl) { const t = await checkTicket(s.name, s.wiki, s.ticketUrl); if (t) add(it, 'ticketUrl', t); }
