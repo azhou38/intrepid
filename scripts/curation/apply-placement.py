@@ -63,6 +63,8 @@ def spot_line(sid, dest, e):
         f.append('free: true')
     elif s.get('costMin') is not None:
         f.append(f"costMin: {s['costMin']}, costMax: {s.get('costMax', s['costMin'])}, currency: '{s.get('currency') or currency}'")
+    if s.get('closedDays'):
+        f.append(f"closedDays: [{', '.join(str(d) for d in s['closedDays'])}]")
     if s.get('ticketUrl'):
         f.append(f"ticketUrl: {q(s['ticketUrl'])}")
     return '  { ' + ', '.join(f) + ' },'

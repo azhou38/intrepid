@@ -7,6 +7,7 @@
 //   views          English Wikipedia page views over the last 12 full months (0 with no article)
 //   redirect_to    set when the title only redirects; COVERAGE.md counts that as 0 views when the target is a broader
 //                  article — `views` here is the target's, so the agent zeroes it when the target is broader
+//   existing_spot_by_proximity true when the existing_spot match is by 300 m distance only (judge it as a new place unless it really is the same)
 //   disambiguation true when the title is a disambiguation page (the agent must pick the right article)
 //   coordinates    from Wikipedia when the candidate has none ({ lat, lng }), with coordinates_source
 //   existing_spot  the id of a spot already in the app with the same name or wiki title, or within 300 m
@@ -68,15 +69,20 @@ async function views(title: string): Promise<number> {
     if (info) {
       c.views = await views(info.title);
       if (info.redirect && norm(info.redirect) !== norm(title)) c.redirect_to = info.redirect; else delete c.redirect_to;
-      if (info.disambiguation) c.disambiguation = true;
+      if (info.disambiguation) c.disambiguation = true; else delete c.disambiguation;   // a flag from an earlier run must not outlive a corrected title
       if (!coordOf(c) && info.coords) { c.coordinates = info.coords; c.coordinates_source = `wikipedia:${info.title}`; }
     } else {
-      c.views = 0;
+      c.views = 0; delete c.disambiguation;
     }
     const here = coordOf(c);
     const match = byName.get(norm(c.name)) ?? (c.wiki ? byName.get(norm(c.wiki)) : undefined)
       ?? (here ? SPOTS.find(sp => km(here, { lat: sp.coordinates.latitude, lng: sp.coordinates.longitude }) < 0.3)?.id : undefined);
-    if (match) c.existing_spot = match; else delete c.existing_spot;
+    if (match) {
+      c.existing_spot = match;
+      // A match by name is the same place; one by distance alone is only a pointer (the placement runs found many wrong ones).
+      const byNm = byName.get(norm(c.name)) !== undefined || (c.wiki ? byName.get(norm(c.wiki)) !== undefined : false);
+      if (byNm) delete c.existing_spot_by_proximity; else c.existing_spot_by_proximity = true;
+    } else { delete c.existing_spot; delete c.existing_spot_by_proximity; }
     if (n % 25 === 0) console.error(`… ${n}/${list.length}`);
   }
   writeFileSync(file, JSON.stringify(raw, null, 1) + '\n');
