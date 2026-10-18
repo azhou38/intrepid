@@ -2249,14 +2249,18 @@ const destItems = useMemo((): DestItem[] =>
       if (radius === undefined) continue;
       const dLat = d.coordinates.latitude - region.latitude;
       const dLng = (d.coordinates.longitude - region.longitude) * cosLat;
-      if (Math.hypot(dLat, dLng) < radius) ids.add(d.id);
+      // Only once its spots are on the map (from its own default zoom — see visibleSpots): a destination with a small
+      // span (Hanmer Springs, 15 km) was hidden as soon as the camera was over it at the coarse SPOT_THRESHOLD, well
+      // before its spots appeared, leaving a zoom band with neither its pin nor its spots.
+      if (Math.hypot(dLat, dLng) < radius && isPastDestDefaultZoom(d.id, handoffZoom)) ids.add(d.id);
     }
     // The SELECTED destination is hidden for as long as its spot pins are showing, wherever the
     // camera is: it now opts out of Mapbox's marker collision (so it can persist zooming out), and
-    // that same collision pass used to be what quietly hid it once its spots overlapped it.
-    if (planDest && DEST_SPOT_RADIUS[planDest.id] !== undefined) ids.add(planDest.id);
+    // that same collision pass used to be what quietly hid it once its spots overlapped it. Its spots show from its own
+    // default zoom, so zoomed out beyond that its pin comes back rather than leaving the area empty.
+    if (planDest && DEST_SPOT_RADIUS[planDest.id] !== undefined && isPastDestDefaultZoom(planDest.id, handoffZoom)) ids.add(planDest.id);
     return ids;
-  }, [region.latitude, region.longitude, region.latitudeDelta, planDest]);
+  }, [region.latitude, region.longitude, region.latitudeDelta, planDest, handoffZoom]);
   const zoomedIntoDestIds = useStableSet(zoomedIntoDestIdsRaw);
 
   // Destinations the camera is at or past the own default view for (the depth
