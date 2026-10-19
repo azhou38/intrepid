@@ -66,6 +66,7 @@ Every new destination needs a hand-picked header and three "Why visit" photos, r
 - `npx tsx scripts/check-destination-headers.ts` passes (or lists only destinations whose photos you are about to add).
 - Ids unique across the file; every spot has a `destinationId` that exists or the four standalone fields; no two spots share a name.
 - Each destination has enough surrounding spots to justify being a destination (see "The two levels" in `COVERAGE.md`); lone attractions are listed as standalone spots, not promoted.
+- Every spot you added or moved has a pin from `python3 scripts/curation/resolve-pin.py` (HIGH or MEDIUM, with `coordinates_source` recorded); `lint-entries.ts` shows no `pin` line for it (no round coordinates).
 - `python3 scripts/curation/check-pin-elevation.py --ids <the hill, peak, lookout and summit spots you added or moved>` flags none (a hill pinned on the flat is wrong), or each flag has a recorded reason.
 - `scripts/verify-coordinates.ts` run for the area when you have network access; coordinates look right on a map (a swapped sign puts a New Zealand spot in the Atlantic); every spot is within its destination's span (otherwise it is standalone, or the span is wrong).
 - Every destination has exactly three `whyVisit`, three `highlights`, three `goodToKnow`; each `bestTimeBlurb` has one `{months}`.

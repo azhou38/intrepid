@@ -7,6 +7,7 @@
 //   ticketUrl   loads, isn't a captcha wall, and its title or heading names the place (WRITING.md → ticketUrl);
 //               "blocked" means it needs a real browser, not that it's wrong
 //   no-ticket   charges (costMin > 0) but has no ticketUrl, or has no cost at all and isn't free (never researched)
+//   pin         round coordinates (three decimals or fewer): a point written from memory, not taken from a map feature
 //   bio         more than one sentence, marketing words (WRITING.md → "Voice"), or longer than the carousel card's three
 //               lines (bio-fit.py, measured in the card's own font)
 //   wiki        its photo title (wiki, else name) is missing on Wikipedia, a disambiguation page, or a redirect —
@@ -104,6 +105,10 @@ async function checkWiki(title: string): Promise<string | null> {
     if (sentences(s.bio) > 1) add(it, 'bio', 'more than one sentence');
     const m = s.bio.match(MARKETING); if (m) add(it, 'bio', `marketing word "${m[0]}"`);
     const tl = tooLong.get(s.id); if (tl) add(it, 'bio', `${tl.lines} lines on the carousel card (max 3): cut ~${tl.cut} characters`);
+    // A pin written from memory is round (-39.0640, 174.0400: Paritutu Rock and Pouakai Tarns shipped that way, 1.5 and 5 km off).
+    // Real points from a map feature have five or more decimal places.
+    const dec = (v: number) => (String(v).split('.')[1] ?? '').length;
+    if (s.coordinates && dec(s.coordinates.latitude) <= 3 && dec(s.coordinates.longitude) <= 3) add(it, 'pin', `round coordinates (${s.coordinates.latitude}, ${s.coordinates.longitude}): a memory pin; run scripts/curation/resolve-pin.py`);
     if ((s.costMin ?? 0) > 0 && !s.ticketUrl) add(it, 'no-ticket', 'charges but has no ticketUrl');
     // Neither priced nor free: the cost was never researched (Sea Life Sydney shipped this way, with no link either).
     if (!s.free && s.costMin == null) add(it, 'no-ticket', 'no cost and not free: research the price and the official site');

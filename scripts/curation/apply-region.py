@@ -96,6 +96,9 @@ for e in place[key]:
         entry['photo']['hero_crop'] = hc
     if not entry['coordinates']:
         skipped.append((sid, name, 'no coordinates')); continue
+    _dec = lambda v: len(str(v).split('.')[1]) if '.' in str(v) else 0
+    if '--allow-round' not in args and _dec(entry['coordinates']['latitude']) <= 3 and _dec(entry['coordinates']['longitude']) <= 3:
+        skipped.append((sid, name, 'round coordinates: a memory pin. Run scripts/curation/resolve-pin.py and use a real point (or --allow-round)')); continue
     norm.append(entry)
 
 print(f'{region}: {len(norm)} spots ready to add; {len(skipped)} not added')

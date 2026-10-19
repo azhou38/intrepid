@@ -1,13 +1,13 @@
 /**
  * Stricter spot-coordinate audit than verify-coordinates.ts. Needs network access.
  *
- *   npx tsx scripts/audit-spot-coordinates.ts [--country NZ] [--dest rotorua] [--max-m 250] [--json out.json]
+ *   npx tsx scripts/audit-spot-coordinates.ts [--country NZ] [--dest rotorua] [--max-m 100] [--json out.json]
  *
  * For every spot it gathers two independent references and checks the point itself:
  *   - the coordinates of the spot's Wikipedia article (looked up by the spot's name, redirects followed);
  *   - OpenStreetMap's best match for the name near the spot's destination, with its feature type;
  *   - whether the current point lies in water on the map itself (Mapbox Streets' water layer) — a spot drawn in the sea.
- * It flags a spot whose point is in water, or more than --max-m (default 250 m) from a reference. A flag is a prompt to
+ * It flags a spot whose point is in water, or more than --max-m (default 100 m) from a reference. A flag is a prompt to
  * look at a map: a reference can itself be a centroid (a bay's centre is in the sea, a park's in its middle).
  */
 import { readFileSync, writeFileSync } from 'fs';
@@ -16,7 +16,7 @@ import { SPOTS, spotCountryCode, spotPhotoTitle } from '../src/data/spots';
 
 const arg = (f: string) => { const i = process.argv.indexOf(f); return i > 0 ? process.argv[i + 1] : undefined; };
 const country = arg('--country'), destFilter = arg('--dest'), jsonOut = arg('--json');
-const maxM = Number(arg('--max-m') ?? 250);
+const maxM = Number(arg('--max-m') ?? 100);
 const UA = { 'User-Agent': 'intrepid-coordinate-audit (azhou38/intrepid)' };
 const sleep = (ms: number) => new Promise(r => setTimeout(r, ms));
 const metres = (a: [number, number], b: [number, number]) => {
