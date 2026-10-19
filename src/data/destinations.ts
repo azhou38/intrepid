@@ -8,7 +8,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🗽', rank: 1,
     tagline: 'The city that never sleeps, where eight million stories unfold at once.',
     description: 'New York City is the cultural, financial, and media capital of the world. From the neon glow of Times Square to the serenity of Central Park, every neighborhood pulses with its own distinct energy. The skyline alone is worth the trip.',
-    whyVisit: ['Iconic skyline & culture', 'World-class arts & dining', 'Stories in every neighborhood'],
+    whyVisit: ['See the Manhattan skyline from Governors Island', 'Browse the Metropolitan Museum of Art', "Wander Greenwich Village's historic streets"],
     whyVisitPhotos: ["Lower Manhattan from Governors Island August 2017 panorama.jpg", "Metropolitan Museum of Art (The Met) - Central Park, NYC.jpg", "Comfortably settled, 48 West 12th Street (1854), Greenwich Village, New York - Flickr - Spencer Means.jpg"],
     highlights: ['Skyline & culture', 'Arts & dining', 'Neighborhoods'],
     goodToKnow: [
@@ -26,7 +26,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🎬', rank: 1,
     tagline: 'Where dreams are manufactured and year-round sunshine is guaranteed.',
     description: 'Los Angeles is a sprawling metropolis of creativity, surf culture, and reinvention. Hollywood\'s golden legacy meets world-class beaches and a food scene shaped by every culture on Earth. The city thrives on the belief that anything is possible.',
-    whyVisit: ['Year-round sunshine & beaches', 'Hollywood & creative energy', 'Incredible food from everywhere'],
+    whyVisit: ['Stroll the Santa Monica Pier', 'See the Hollywood Sign', 'Eat your way through Grand Central Market'],
     whyVisitPhotos: ["Santa Monica pier (32613513350).jpg", "Hollywood Sign (Zuschnitt).jpg", "Los Angeles, Grand Central Market - panoramio.jpg"],
     highlights: ['Sunshine & beaches', 'Hollywood', 'Global food'],
     goodToKnow: [
@@ -44,7 +44,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'park', icon: '🏜️', rank: 1,
     tagline: 'A mile-deep masterpiece carved by five million years of river and time.',
     description: 'The Grand Canyon is one of Earth\'s most spectacular natural wonders — a vast chasm 277 miles long, up to 18 miles wide, and a mile deep. Carved by the Colorado River over millions of years, its layered red rock walls read like pages from a geological encyclopedia.',
-    whyVisit: ["One of Earth's seven wonders", 'Epic rim trails & vistas', 'A billion years of geology'],
+    whyVisit: ['See the canyon at Powell Point', 'Hike the Bright Angel Trail', 'Look into the canyon from Grandview Point'],
     whyVisitPhotos: ["Grand Canyon Powell Point Evening Light 02 2013.jpg", "Grand Canyon National Park, Winter hikers on Bright Angel Trail 2699 - Flickr - Grand Canyon NPS.jpg", "View from Grandview Point (53910533991).jpg"],
     highlights: ['Seven wonders', 'Rim trails', 'Ancient geology'],
     goodToKnow: [
@@ -65,7 +65,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🗼', rank: 1,
     tagline: 'The city of light, love, and the finest pastries on the planet.',
     description: 'Paris is arguably the world\'s most beautiful city — a harmonious blend of grand Haussmann boulevards, iconic monuments, and intimate neighborhood cafés. The Eiffel Tower glitters at night, the Louvre holds a lifetime of art, and every arrondissement offers its own distinct personality.',
-    whyVisit: ['Eiffel Tower at night', "World's greatest art museums", 'Unmatched café culture'],
+    whyVisit: ['See the Eiffel Tower at night', 'Explore the Louvre', 'Linger at a Paris café'],
     whyVisitPhotos: ["Eiffel Tower at night 20071222-3.jpg", "Louvre (Ank kumar Infosys) 05.jpg", "Cafe, Place Colette, Paris 2010.jpg"],
     highlights: ['Eiffel Tower', 'Art museums', 'Café culture'],
     goodToKnow: [
@@ -83,7 +83,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'beach', icon: '🌊', rank: 2,
     tagline: "The French Riviera's sparkling queen of sun, sea, and art de vivre.",
     description: "Nice is the jewel of the French Riviera — a city where Italian architecture meets French sophistication along the legendary Promenade des Anglais. The old town's tangle of ochre streets, the Matisse Museum, and beaches that glow amber at sunset make Nice one of Europe's most seductive coastal cities.",
-    whyVisit: ['Legendary Promenade des Anglais', 'Stunning Riviera coastline', 'Vibrant old town & markets'],
+    whyVisit: ['Stroll the Promenade des Anglais', 'Visit Villefranche-sur-Mer on the Riviera', 'Browse the Cours Saleya market'],
     whyVisitPhotos: ["Promenade des Anglais (Nice), France.jpg", "Villefranche-sur-Mer.jpg", "Cours Saleya market fruit stalls Nice 2026.JPG"],
     highlights: ['Promenade des Anglais', 'Riviera coast', 'Old town markets'],
     goodToKnow: [
@@ -101,7 +101,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🥐', rank: 2,
     tagline: "France's gastronomic capital where every meal is a reason to stay longer.",
     description: "Lyon is the undisputed culinary capital of France — a city of traboules (hidden passages), Renaissance architecture, and more bouchons per square mile than anywhere else. Two rivers frame its historic peninsula, and its UNESCO-listed old quarters have layers of history that reward every curious wanderer.",
-    whyVisit: ["France's undisputed food capital", 'UNESCO-listed Renaissance old town', 'Hidden traboules & river views'],
+    whyVisit: ['Eat at a traditional Lyon bouchon', "Wander Vieux Lyon's Renaissance old town", "Explore Lyon's hidden traboules"],
     whyVisitPhotos: ["Bouchon rue Mercière - La Mère Cottivet 02.jpg", "Vieuxlyon saintjean toits.jpg", "Escalier dans une traboule de Tournus.jpg"],
     highlights: ['Food capital', 'Renaissance old town', 'Traboules'],
     goodToKnow: [
@@ -120,7 +120,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🎡', rank: 1,
     tagline: "An empire's capital that reinvented itself as the world's cultural crossroads.",
     description: 'London is a city where medieval castles stand beside glass towers and black cabs navigate streets laid out centuries before the car existed. Its world-class museums are free, its theatre scene rivals Broadway, and its food now reflects every culture on the globe.',
-    whyVisit: ['Millennia of living history', 'Free world-class museums', 'Iconic theatre & arts'],
+    whyVisit: ['Explore the Tower of London', 'Tour the British Museum', 'See a show at the Lyceum Theatre'],
     whyVisitPhotos: ["Tower of London viewed from the River Thames.jpg", "British Museum Dome.jpg", "The Lyceum Theatre, London - 2024-12-17.jpg"],
     highlights: ['Living history', 'Free museums', 'Theatre & arts'],
     goodToKnow: [
@@ -138,7 +138,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🏴', rank: 1,
     tagline: "A castle on volcanic rock, cobblestoned wynds, and Scotland's brooding soul.",
     description: "Edinburgh is one of Europe's most dramatic cities — a medieval Old Town of narrow closes and towering tenements facing a Georgian New Town across a glacial valley. The castle looms over everything, Arthur's Seat rises above the city like a sleeping giant, and the Royal Mile pulses with history, whisky, and festivals.",
-    whyVisit: ["Edinburgh Castle & Arthur's Seat", "World's largest arts festival", 'Moody medieval Old Town'],
+    whyVisit: ['Visit Edinburgh Castle', 'Watch Fringe performers on the Royal Mile', 'Wander the medieval Old Town'],
     whyVisitPhotos: ["Castle, City of Edinburgh (IMG 20190628 180330).jpg", "Edinburgh fringe royal mile street performance.jpg", "Edinburgh Victora Street 20211019.jpg"],
     highlights: ["Castle & Arthur's Seat", 'Arts festival', 'Medieval Old Town'],
     goodToKnow: [
@@ -157,7 +157,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🏟️', rank: 1,
     tagline: 'The Eternal City, where 2,000 years of history waits around every corner.',
     description: 'Rome is a city where you stumble upon ancient ruins while grabbing coffee. The Colosseum, Roman Forum, and Pantheon stand remarkably intact alongside Baroque fountains and Renaissance basilicas. Add gelato, pasta, and evening aperitivo hour, and Rome becomes nearly impossible to leave.',
-    whyVisit: ['Ancient ruins still standing', 'Gelato & pasta perfection', 'Grand piazzas & fountains'],
+    whyVisit: ['Explore the Colosseum', 'Eat gelato in Rome', 'See the Trevi Fountain'],
     whyVisitPhotos: ["Rome Colosseum exterior 2.jpg", "DivinaGelatoNOLAJune2008.jpg", "Fontaine Trevi - Rome.jpg"],
     highlights: ['Ancient ruins', 'Gelato & pasta', 'Piazzas & fountains'],
     goodToKnow: [
@@ -175,7 +175,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🎨', rank: 1,
     tagline: "The cradle of the Renaissance, where Michelangelo's David still stops you cold.",
     description: "Florence is the city that ignited the Renaissance and hasn't stopped producing beauty since. Michelangelo's David, Botticelli's Birth of Venus, and Brunelleschi's cathedral dome are all here — surrounded by one of the world's greatest concentrations of medieval architecture, artisan workshops, and trattorias.",
-    whyVisit: ["Michelangelo's David in person", "Uffizi: world's finest Renaissance art", "Brunelleschi's breathtaking dome"],
+    whyVisit: ["See Michelangelo's David", 'Tour the Uffizi Gallery', "See Brunelleschi's dome from Giotto's campanile"],
     whyVisitPhotos: ["Michelangelo's David 2015.jpg", "Uffizi Gallery, Florence-2.jpg", "Cupola di santa maria del fiore dal campanile di giotto, 01.JPG"],
     highlights: ["Michelangelo's David", 'Uffizi art', "Brunelleschi's dome"],
     goodToKnow: [
@@ -193,7 +193,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🚤', rank: 1,
     tagline: "A city built on water, defying physics and logic for a thousand years.",
     description: "Venice is simply unlike any other place on Earth. Built on 118 islands connected by 400 bridges, its entire transportation network runs on canals. The Grand Canal sweeps past Gothic palazzos, gondoliers navigate silent backwaters, and St. Mark's Square floods at high tide without losing any of its splendor.",
-    whyVisit: ["Grand Canal & gondola rides", "St. Mark's Basilica & Piazza", "The world's most unique city"],
+    whyVisit: ['Ride a gondola on the Grand Canal', "Visit St. Mark's Basilica and Piazza", 'Float past the Rialto Bridge'],
     whyVisitPhotos: ["Venice Gondola Grand Canal.jpg", "Venice, Piazza San Marco (from Museo Correr).jpg", "The Grand Canal, Gondola near Rialto Bridge - Venice, Italy - panoramio.jpg"],
     highlights: ['Grand Canal', "St. Mark's Basilica", 'Unique city'],
     goodToKnow: [
@@ -215,7 +215,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🦎', rank: 1,
     tagline: "Gaudí's living canvas where architecture, beaches, and Mediterranean life meet.",
     description: 'Barcelona is a city of architectural wonder, golden beaches, and a culinary culture stretching from market stalls to Michelin stars. Antoni Gaudí\'s organic masterpieces — Sagrada Família, Park Güell, and Casa Batlló — make Barcelona visually unlike any other city on Earth.',
-    whyVisit: ["Gaudí's surreal masterworks", 'Beautiful Mediterranean coast', 'Vibrant tapas & nightlife'],
+    whyVisit: ["See Gaudí's Sagrada Família", 'Swim at Barceloneta Beach', 'Sample tapas in Barcelona'],
     whyVisitPhotos: ["Sagrada Familia 03.jpg", "Platja de la Barceloneta 02.jpg", "Concurso-de-tapas-sandoval-de-la-reina-2022-e.jpg"],
     highlights: ['Gaudí', 'Mediterranean coast', 'Tapas & nightlife'],
     goodToKnow: [
@@ -233,7 +233,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '💃', rank: 1,
     tagline: "Spain's beating heart: art, football, flamenco, and dinner at midnight.",
     description: "Madrid is Europe's highest capital and its most passionate — a city where the Prado houses Velázquez and Goya, Real Madrid fills 80,000 seats, and tapas bars don't fill up until 11pm. The Retiro Park, Gran Via, and a nightlife scene that runs until dawn make Madrid one of Europe's most vital cities.",
-    whyVisit: ['Prado: Velázquez & Goya masterworks', 'Best tapas & nightlife in Europe', 'Retiro Park & Royal Palace'],
+    whyVisit: ['See Velázquez and Goya at the Prado', 'Sample tapas around Madrid', "Stroll Retiro Park's Crystal Palace"],
     whyVisitPhotos: ["Diego Velazquez - Museo del Prado - Madrid 03.jpg", "( Tapas in Spain, Madrid ).jpg", "Madrid's own Crystal Palace (33640858703).jpg"],
     highlights: ['Prado', 'Tapas & nightlife', 'Retiro & Royal Palace'],
     goodToKnow: [
@@ -252,7 +252,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🌷', rank: 1,
     tagline: 'A city of canals, bicycles, and a quiet genius for beauty and tolerance.',
     description: "Amsterdam's 17th-century canal ring is a UNESCO World Heritage Site, lined with narrow merchant houses that lean gently toward the water. Its extraordinary museums — Rijksmuseum, Van Gogh, Anne Frank's house — sit alongside a laid-back café culture that makes visitors want to stay forever.",
-    whyVisit: ['Fairy-tale canal views', 'Exceptional art museums', 'Charming cycling culture'],
+    whyVisit: ["Walk beside Amsterdam's canal houses", 'Tour the Rijksmuseum', 'Cycle through Amsterdam'],
     whyVisitPhotos: ["Colorful windows and canal houses at blue hour with water reflection in Damrak Amsterdam Netherlands.jpg", "Gallery of Honour in Rijksmuseum (01).jpg", "Amsterdam bicycles (48015340003).jpg"],
     highlights: ['Canals', 'Art museums', 'Cycling culture'],
     goodToKnow: [
@@ -271,7 +271,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🐻', rank: 1,
     tagline: "Europe's most reinvented city, where history, art, and nightlife collide.",
     description: "Berlin is a city still assembling itself — raw, creative, and deeply shaped by its divided past. The Brandenburg Gate, Berlin Wall remnants, and Holocaust Memorial carry weight few cities can match, while its world-class museum island, vibrant art scene, and legendary techno clubs make it the most culturally electric city in Europe.",
-    whyVisit: ['Brandenburg Gate & Wall history', "Europe's greatest clubbing scene", 'Museum Island & world-class art'],
+    whyVisit: ['Walk through the Brandenburg Gate', 'See Berghain, the club building', 'Explore Museum Island'],
     whyVisitPhotos: ["Brandenburger Tor morgens.jpg", "Berghain in October 2014.jpg", "Museumsinsel and Bode-Museum, West view 20130724 1.jpg"],
     highlights: ['Brandenburg Gate', 'Clubbing scene', 'Museum Island'],
     goodToKnow: [
@@ -289,7 +289,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🍺', rank: 1,
     tagline: "Bavarian grandeur: beer halls, baroque palaces, and Alps on the horizon.",
     description: "Munich is Germany's most livable and beautiful city — a place where baroque churches and royal palaces line broad boulevards, and the Alps shimmer on the horizon on clear days. The Marienplatz, English Garden, and Hofbräuhaus deliver authentic Bavarian culture, and Oktoberfest draws six million visitors each autumn.",
-    whyVisit: ['Legendary Oktoberfest & beer halls', 'Baroque palaces & English Garden', 'Alps day trips from the city'],
+    whyVisit: ['Drink beer at the Hofbräuhaus', 'Tour Nymphenburg Palace', 'Take a day trip to the Alps'],
     whyVisitPhotos: ["Munich - Hofbräuhaus am Platzl - 0810.jpg", "Schloss Nymphenburg internal view.jpg", "Mountains above Schwangau in Bavaria.jpg"],
     highlights: ['Oktoberfest', 'Baroque palaces', 'Alps day trips'],
     goodToKnow: [
@@ -311,7 +311,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🛤️', rank: 1,
     tagline: "Seven hills, yellow trams, fado music, and the best pastéis de nata on Earth.",
     description: "Lisbon is Europe's oldest capital and one of its most charming — a hilly, sun-drenched city of yellow trams, azulejo-tiled facades, and sweeping viewpoints called miradouros. The Alfama district's Moorish-era streets echo with fado music, and the Belém waterfront houses the monuments of Portugal's Age of Discovery.",
-    whyVisit: ['Iconic yellow trams & miradouros', 'Alfama fado & Moorish quarter', "Belém Tower & Age of Discovery"],
+    whyVisit: ['Ride tram 28 through Lisbon', "Wander Alfama's old Moorish quarter", 'Visit Belém Tower'],
     whyVisitPhotos: ["Number 28 tram, Calçada de São Francisco, Lisbon, Portugal julesvernex2.jpg", "Alfama Rooftops and Tagus River View, Lisbon (54733698959).jpg", "Belem Tower - April 2019 (2).jpg"],
     highlights: ['Yellow trams', 'Alfama fado', 'Belém Tower'],
     goodToKnow: [
@@ -329,7 +329,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🍷', rank: 2,
     tagline: "Port wine, azulejo art, and a riverside soul that wins everyone over.",
     description: "Porto is Portugal's second city and arguably its most beautiful. The Ribeira district — a UNESCO World Heritage Site — tumbles down to the Douro River in a cascade of medieval houses. The city's famous port wine cellars line the opposite bank, while azulejo-covered churches and a stunning bookshop compete for attention.",
-    whyVisit: ['Ribeira: UNESCO riverside quarter', 'Port wine tasting & cellars', 'Stunning azulejo-tiled churches'],
+    whyVisit: ['Stroll the Ribeira riverside quarter', 'Taste port wine in the cellars', 'See azulejo-tiled churches'],
     whyVisitPhotos: ["Porto (53558020294).jpg", "Wine barrels at Quinta dos Corvos (26474221639).jpg", "Azulejo facade of the Capela das Almas in Porto (3).jpg"],
     highlights: ['Ribeira quarter', 'Port wine', 'Azulejo churches'],
     goodToKnow: [
@@ -348,7 +348,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🏔️', rank: 2,
     tagline: "Switzerland's financial capital, where lake views meet world-class culture.",
     description: "Zurich combines alpine scenery, pristine lake swimming, and one of Europe's highest concentrations of museums and galleries. The medieval Altstadt climbs both banks of the Limmat River, and on clear days the Alps shimmer across Lake Zurich. The city consistently ranks as one of the world's most livable.",
-    whyVisit: ['Stunning lake & Alps views', 'Vibrant Altstadt & art scene', 'World-class food & chocolate'],
+    whyVisit: ['See Lake Zurich and the Alps', "Wander Zurich's Altstadt", 'Taste Swiss chocolate'],
     whyVisitPhotos: ["Lake Zurich 6.jpg", "Zürich view Quaibrücke 20200702.jpg", "Chocolate on shop display at Interlaken, Switzerland.jpg"],
     highlights: ['Lake & Alps views', 'Altstadt & art', 'Food & chocolate'],
     goodToKnow: [
@@ -366,7 +366,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'mountain', icon: '⛷️', rank: 1,
     tagline: "Between two lakes, beneath the Eiger, Mönch, and Jungfrau: pure Swiss drama.",
     description: "Interlaken sits in a valley between Lakes Thun and Brienz, framed by the Eiger, Mönch, and Jungfrau peaks. It's the gateway to the Bernese Oberland — a paradise for skiers, hikers, and paragliders. The Jungfraujoch, at 11,332 feet, is Europe's highest railway station.",
-    whyVisit: ['Eiger & Jungfrau peak views', 'Skiing, hiking & paragliding', "Europe's highest railway station"],
+    whyVisit: ['See the Eiger and Jungfrau', 'Paraglide above the Swiss Alps', 'Ride the Jungfraubahn railway'],
     whyVisitPhotos: ["Jungfrau from Kleine Scheidegg.jpg", "Paragliding Switzerland (14675995339).jpg", "Jungfraubahn with Eiger.jpg"],
     highlights: ['Eiger & Jungfrau', 'Skiing & hiking', 'Highest railway'],
     goodToKnow: [
@@ -388,7 +388,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🎶', rank: 1,
     tagline: "The city that gave the world Mozart, Klimt, Freud, and the waltz.",
     description: "Vienna is Europe's most imperial city — a grand Habsburg capital of ring-road boulevards, Baroque palaces, and coffeehouses frozen in beautiful amber. Schönbrunn and Belvedere palaces, the Kunsthistorisches Museum, and the Vienna Philharmonic make it a cultural heavyweight, and the pastries in any Kaffeehaus will ruin you for dessert forever.",
-    whyVisit: ['Habsburg palaces & imperial grandeur', 'Mozart, Beethoven & the Philharmonic', 'World-famous Kaffeehaus culture'],
+    whyVisit: ['Tour Schönbrunn Palace', 'See opera at the Vienna State Opera', 'Linger in a Viennese Kaffeehaus'],
     whyVisitPhotos: ["Schloss Schönbrunn Wien 2014 (Zuschnitt 1).jpg", "20180109 Vienna State Opera at blue hour 850 9387.jpg", "Cafe Central in Vienna interior near entrance.JPG"],
     highlights: ['Habsburg palaces', 'Classical music', 'Kaffeehaus culture'],
     goodToKnow: [
@@ -406,7 +406,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🎵', rank: 2,
     tagline: "Mozart's birthplace: a baroque gem nestled between the Alps and the Salzach.",
     description: "Salzburg is one of Europe's most perfectly preserved Baroque cities — a compact, UNESCO-listed masterpiece tucked between dramatic Alpine peaks and the Salzach River. The hilltop Hohensalzburg Fortress lords over a city of Baroque churches, grand squares, and the birthplace of Wolfgang Amadeus Mozart.",
-    whyVisit: ["Mozart's birthplace & heritage", 'Hohensalzburg Fortress views', 'Sound of Music filming locations'],
+    whyVisit: ["Visit Mozart's birthplace", 'Climb to Hohensalzburg Fortress', 'Visit Mirabell Palace'],
     whyVisitPhotos: ["Salzburg, Getreidegasse 9, Mozarts Geburtshaus.jpg", "Festung Hohensalzburg von Nordost.jpg", "Schloss Mirabell in Salzburg.jpg"],
     highlights: ["Mozart's birthplace", 'Hohensalzburg Fortress', 'Sound of Music'],
     goodToKnow: [
@@ -425,7 +425,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🍺', rank: 1,
     tagline: "The best-preserved medieval city in Europe, mirrored in glass-still canals.",
     description: "Bruges is a perfectly preserved medieval gem — a city of Gothic belfries, chocolate shops, horse-drawn carriages, and canals so still they act as perfect mirrors. The Markt and Burg squares are surrounded by Flemish Gothic architecture virtually unchanged since the 15th century, earning Bruges its title as the Venice of the North.",
-    whyVisit: ["Europe's finest medieval city center", 'Glass-still canals & belfry views', 'World-class Belgian chocolate & beer'],
+    whyVisit: ["Wander Bruges' medieval Markt square", 'See the Belfry from Rozenhoedkaai', 'Shop for chocolate in Bruges'],
     whyVisitPhotos: ["Brugge Markt Noordzijde R01.jpg", "Rozenhoedkaai (canal) and Belfry of Bruges, Bruges, Belgium (Ank Kumar, Infosys Limited) 05.jpg", "Montrofenestro de ĉokolada butiko en strato Katelijnestraat (Bruĝo) 01.jpg"],
     highlights: ['Medieval center', 'Canals & belfry', 'Chocolate & beer'],
     goodToKnow: [
@@ -443,7 +443,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🇪🇺', rank: 2,
     tagline: "The capital of Europe: grand boulevards, Art Nouveau, and the world's best beer.",
     description: "Brussels is the political heart of Europe and one of its most underrated cities. The Grand-Place — perhaps the world's most beautiful town square — is ringed by gilded guildhalls that take your breath away. Art Nouveau architecture dots every neighborhood, and Belgian cuisine punches well above the country's size.",
-    whyVisit: ['Grand-Place: most beautiful square in Europe', 'Art Nouveau architecture tour', 'Belgian beer culture & cuisine'],
+    whyVisit: ['See the Grand-Place at twilight', 'Spot Art Nouveau facades', 'Taste Belgian beer at a brewery'],
     whyVisitPhotos: ["Grand Place 1-7 during civil twilight, Brussels (DSCF1982).jpg", "Façade Art Nouveau, rue Gambetta.jpg", "Belgium Peak Beer tasters at the brewery, Waimes, 2023.jpg"],
     highlights: ['Grand-Place', 'Art Nouveau', 'Belgian beer'],
     goodToKnow: [
@@ -462,7 +462,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🍀', rank: 1,
     tagline: "Pubs, poets, and the craic: Ireland's capital on the Liffey.",
     description: "Dublin is one of Europe's most welcoming and character-filled capitals — a city of Georgian squares, literary pubs, Viking history, and the warmest conversation you'll have anywhere. Trinity College's Book of Kells, the Guinness Storehouse, and Temple Bar draw millions, but the real Dublin is found in a neighborhood pub on a rainy evening.",
-    whyVisit: ['Trinity College & Book of Kells', 'Legendary pub culture & craic', 'Literary history: Joyce, Beckett & Wilde'],
+    whyVisit: ['See the Book of Kells at Trinity', 'Drink in Temple Bar pubs', 'Visit the Dublin Writers Museum'],
     whyVisitPhotos: ["Long Room Interior, Trinity College Dublin, Ireland - Diliff.jpg", "2008-05-23 The Temple Bar, Dublin, Ireland.jpg", "Dublin Writers Museum - 20190810163731.jpg"],
     highlights: ['Book of Kells', 'Pub culture', 'Literary history'],
     goodToKnow: [
@@ -480,7 +480,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'nature', icon: '🌊', rank: 1,
     tagline: "700 feet of sheer Atlantic drama, where Ireland falls into the sea.",
     description: "The Cliffs of Moher plunge 700 feet into the Atlantic Ocean along eight miles of Ireland's Wild Atlantic Way. On clear days the Aran Islands and Connemara mountains are visible from the clifftops, and the raw power of the ocean crashing below is viscerally unforgettable.",
-    whyVisit: ['700-foot Atlantic cliffs', "Wild Atlantic Way highlight", 'Aran Islands views on clear days'],
+    whyVisit: ['Walk along the Atlantic cliffs', 'Drive the Wild Atlantic Way', 'Gaze across to the Aran Islands'],
     whyVisitPhotos: ["Ireland Cliffs of Moher BW 2025-09-11 14-48-01.jpg", "Wild Atlantic Way from the Sky Road, Co. Galway - geograph.org.uk - 7838312.jpg", "Looking down from the high cliffs of Dún Aonghasa, Inishmore, Aran Islands.jpg"],
     highlights: ['Atlantic cliffs', 'Wild Atlantic Way', 'Aran Islands views'],
     goodToKnow: [
@@ -499,7 +499,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '👑', rank: 1,
     tagline: "Built on 14 islands where Lake Mälaren meets the Baltic: Scandinavia's capital.",
     description: "Stockholm is one of the world's most beautiful capitals — a city spread across 14 islands where freshwater meets saltwater, and medieval streets give way to Royal palaces and cutting-edge design. The Gamla Stan old town is a jewel of medieval Scandinavian architecture, while the Vasa Museum's 17th-century warship is one of the world's most extraordinary artifacts.",
-    whyVisit: ['Gamla Stan: medieval island old town', "Vasa Museum: 17th-century warship", 'Design, innovation & Nordic cuisine'],
+    whyVisit: ["Wander Gamla Stan's old town", 'See the Vasa warship', 'Sample a Swedish smörgåsbord'],
     whyVisitPhotos: ["Stortorget i Gamla Stan i Stockholm-2.JPG", "Stern of the Vasa ship, Vasa Museum, Stockholm, Sweden julesvernex2.jpg", "Swedish buffet-Smörgåsbord-01.jpg"],
     highlights: ['Gamla Stan', 'Vasa Museum', 'Nordic design'],
     goodToKnow: [
@@ -517,7 +517,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🦞', rank: 3,
     tagline: "Sweden's seafood capital where the archipelago begins and canals cut through.",
     description: "Gothenburg is Sweden's laid-back second city — a harbor town of canals, Art Nouveau architecture, and the country's best seafood. The fish market at Feskekörka (the Fish Church) is legendary, the archipelago stretches westward into the North Sea, and Liseberg amusement park is one of Europe's finest.",
-    whyVisit: ["Sweden's best seafood & fish market", 'Island archipelago day trips', 'Relaxed canal-town atmosphere'],
+    whyVisit: ['Eat seafood at Feskekôrka fish market', 'Sail to the island archipelago', "Stroll Gothenburg's canals"],
     whyVisitPhotos: ["Oysters at restaurant Gabriel in Feskekorka Fish Market (6488625173).jpg", "Vinga.jpg", "Göteborg Stora hamnkanalen, 20140420, bild 1.jpg"],
     highlights: ['Seafood market', 'Archipelago trips', 'Canal-town calm'],
     goodToKnow: [
@@ -536,7 +536,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🌊', rank: 1,
     tagline: "Norway's gateway to the fjords, ringed by seven mountains and colored wharves.",
     description: "Bergen is Norway's second city and its most charming — a UNESCO-listed Hanseatic wharf town surrounded by seven mountains. The colorful wooden Bryggen buildings have stood since the 14th century, and from here the world's most spectacular fjords — Hardanger and Sognefjord — fan out in every direction.",
-    whyVisit: ['Bryggen: UNESCO Hanseatic wharf', "Gateway to Norway's greatest fjords", 'Seven mountains & stunning harbor'],
+    whyVisit: ['Walk the Bryggen wharf', 'Cruise the Nærøyfjord', 'See the harbour from Fløyen'],
     whyVisitPhotos: ["Bryggen waterfront reflections at night Bergen Norway.jpg", "Nærøyfjord-cruise-view.jpg", "Vista de Bergen desde la montaña Fløyen, Noruega, 2019-09-08, DD 48.jpg"],
     highlights: ['Bryggen wharf', 'Fjord gateway', 'Seven mountains'],
     goodToKnow: [
@@ -557,7 +557,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'nature', icon: '⛰️', rank: 1,
     tagline: "The world's most dramatic coastline: glacial walls plunging into mirror-still water.",
     description: "The Norwegian fjords are among the world's most magnificent natural landscapes — ancient glacial valleys carved miles deep into mountains, now filled by impossibly still seawater. Sognefjord, Geirangerfjord, and Hardangerfjord are UNESCO-listed and simply defy superlatives.",
-    whyVisit: ["World's most dramatic fjord scenery", 'UNESCO World Heritage Site', 'Kayaking, hiking & waterfall chasing'],
+    whyVisit: ['See Geirangerfjord from above', 'Visit Geirangerfjord and Nærøyfjord', 'See the Seven Sisters waterfalls'],
     whyVisitPhotos: ["Geirangerfjord from Ørnesvingen, 2013 June.jpg", "West Norwegian Fjords – Geirangerfjord and Nærøyfjord-113748.jpg", "0626 The seven sisters - De syv søstrene - Geiranger Fjord water falls V-P.jpg"],
     highlights: ['Dramatic scenery', 'UNESCO site', 'Kayaking & hiking'],
     goodToKnow: [
@@ -576,7 +576,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🧜', rank: 1,
     tagline: "The world's most livable city: bikes, Noma, and Tivoli after dark.",
     description: "Copenhagen is Scandinavia's brightest star — a city of coloured canal houses, world-leading restaurants, ancient castles, and more bicycles than people. The Tivoli Gardens opened in 1843 and still enchant. Nyhavn's painted warehouses are iconic, and the New Nordic food movement made this one of the world's great dining cities.",
-    whyVisit: ['Nyhavn & coloured canal houses', 'World-class New Nordic dining', 'Tivoli Gardens & cycling culture'],
+    whyVisit: ["Stroll Nyhavn's coloured canal houses", 'Dine on New Nordic cuisine', 'Wander Tivoli Gardens'],
     whyVisitPhotos: ["Nyhavn, Copenhagen, 20220618 1728 7354.jpg", "Dish of greens. Some of the vegetables are grilled. Some are fresh. And others have been lightly salted. The plate beneath has been brushed with a paste made of dry scallops. (19259696676).jpg", "Fountain in Tivoli Gardens, Copenhagen, 20220618 1307 7156.jpg"],
     highlights: ['Nyhavn', 'New Nordic dining', 'Tivoli & cycling'],
     goodToKnow: [
@@ -594,7 +594,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🎨', rank: 3,
     tagline: "Denmark's student city: a compact, creative harbor town with a rainbow panorama.",
     description: "Aarhus is Denmark's second city — younger, hipper, and more affordable than Copenhagen. The ARoS Art Museum's iconic rainbow panorama walkway is one of Scandinavia's great contemporary art experiences, and the cobblestone Latin Quarter around the cathedral hums with cafés, boutiques, and some of Denmark's best restaurants.",
-    whyVisit: ["ARoS Museum's rainbow panorama", 'Vibrant Latin Quarter & cathedral', 'Dynamic student city energy'],
+    whyVisit: ['Visit ARoS and its rainbow panorama', 'Explore the Latin Quarter and cathedral', 'See student life around Aarhus University'],
     whyVisitPhotos: ["ARoS \"Your rainbow\" panorama under construction.jpg", "Volden ved aften.JPG", "Exam time queue university library Aarhus 02.jpg"],
     highlights: ['ARoS Museum', 'Latin Quarter', 'Student energy'],
     goodToKnow: [
@@ -613,7 +613,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🦌', rank: 2,
     tagline: "Finland's design capital: sea, sauna, and neoclassical grandeur on the Baltic.",
     description: "Helsinki occupies a peninsula jutting into the Baltic, giving it a waterfront character unlike any other Nordic capital. Neoclassical Senate Square, the striking Helsinki Cathedral, and the market halls reflect the city's architectural ambition. Finnish design is everywhere, and the sauna culture is not optional.",
-    whyVisit: ['Helsinki Cathedral & Senate Square', 'Finnish design & Marimekko', 'Island fortress Suomenlinna'],
+    whyVisit: ['See Helsinki Cathedral on Senate Square', 'Shop Finnish design at Marimekko', 'Explore Suomenlinna island fortress'],
     whyVisitPhotos: ["Helsinki Senate Square and Helsinki Cathedral in May 2026.jpg", "Maila Isola's 'Marimekko Unikko' flying on Finnair Airbus.jpg", "Suomenlinna.jpg"],
     highlights: ['Senate Square', 'Finnish design', 'Suomenlinna'],
     goodToKnow: [
@@ -631,7 +631,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'nature', icon: '🎄', rank: 2,
     tagline: "Santa's hometown on the Arctic Circle, where the Northern Lights dance overhead.",
     description: "Rovaniemi sits exactly on the Arctic Circle — the official hometown of Santa Claus and gateway to Finland's Lapland wilderness. In winter, the Northern Lights arc above the frozen Ounasjoki River, reindeer pull sleds through snow-laden forests, and glass igloos let you sleep under the aurora.",
-    whyVisit: ['Northern Lights in winter', 'Reindeer safaris & glass igloos', 'Santa Village on the Arctic Circle'],
+    whyVisit: ['Watch the Northern Lights in winter', 'Go on a reindeer safari', 'Visit Santa Claus Village on the Arctic Circle'],
     whyVisitPhotos: ["Aurora borealis over grillkota, Naamijoki, Pello.jpg", "Reindeer Sleigh Ride-Lapland.jpg", "Santa Claus Village (5306867729).jpg"],
     highlights: ['Northern Lights', 'Reindeer safaris', 'Santa Village'],
     goodToKnow: [
@@ -653,8 +653,8 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🌌', rank: 1,
     tagline: "The world's northernmost capital: geothermal, geologic, and gloriously remote.",
     description: "Reykjavik is the world's northernmost national capital and one of its most extraordinary — a small, colorful city where geothermal energy heats everything, the Hallgrímskirkja towers over brightly painted houses, and the Northern Lights appear overhead in winter. Iceland's dramatic landscapes begin just outside the city.",
-    whyVisit: ['Northern Lights & midnight sun', "Gateway to Iceland's volcanic wonders", 'Hallgrímskirkja & colorful cityscape'],
-    whyVisitPhotos: ["Church of light.jpg", "001 Volcano eruption of Litli-Hrútur in Iceland in 2023 Photo by Giles Laurent.jpg", "Hallgrímskirkja.jpeg"],
+    whyVisit: ['Chase the Northern Lights', "See Iceland's volcanoes erupt", 'See Hallgrímskirkja above the colourful city'],
+    whyVisitPhotos: ["Aurora Borealis outside Reykjavik (2).JPG", "001 Volcano eruption of Litli-Hrútur in Iceland in 2023 Photo by Giles Laurent.jpg", "Hallgrímskirkja.jpeg"],
     highlights: ['Northern Lights', 'Volcanic gateway', 'Hallgrímskirkja'],
     goodToKnow: [
       { icon: '🍷', title: 'Buy alcohol at duty-free', detail: 'Alcohol is heavily taxed — buying at the airport duty-free on arrival saves real money.' },
@@ -674,7 +674,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'nature', icon: '⚡', rank: 1,
     tagline: "Geysers, the world's oldest parliament, and a waterfall you can walk behind.",
     description: "Iceland's Golden Circle is a 186-mile loop from Reykjavik packed with natural wonders. Þingvellir National Park is where the American and Eurasian tectonic plates meet and the world's oldest parliament was established. Strokkur erupts every few minutes, and Gullfoss waterfall plunges into a canyon of glacial fury.",
-    whyVisit: ['Strokkur geyser erupts every 5 minutes', 'Þingvellir: walk between tectonic plates', 'Gullfoss: the Golden Waterfall'],
+    whyVisit: ['Watch Strokkur geyser erupt', 'Walk between tectonic plates at Þingvellir', 'See Gullfoss, the Golden Waterfall'],
     whyVisitPhotos: ["Strokkur, Área geotérmica de Geysir, Suðurland, Islandia, 2014-08-16, DD 086.JPG", "Cañón Silfra, Parque Nacional de Þingvellir, Suðurland, Islandia, 2014-08-16, DD 055.JPG", "Gullfoss, Suðurland, Islandia, 2014-08-16, DD 119.JPG"],
     highlights: ['Strokkur geyser', 'Þingvellir', 'Gullfoss waterfall'],
     goodToKnow: [
@@ -694,7 +694,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🏛️', rank: 1,
     tagline: "Where Western civilization was born, atop a rocky hill that still stuns.",
     description: "Athens is where democracy, philosophy, drama, and architecture were invented — and the Acropolis still presides over the city with the authority of 2,500 years. Modern Athens buzzes beneath it: a city of street art, rooftop bars, and the world's greatest concentration of classical ruins in a sprawling, chaotic, irresistible metropolis.",
-    whyVisit: ['The Acropolis & Parthenon', 'Birthplace of Western civilization', 'Ancient ruins meets vibrant city life'],
+    whyVisit: ['Climb the Acropolis to the Parthenon', 'Explore the Temple of Hephaestus', 'Dine on Mnisikleous Street'],
     whyVisitPhotos: ["Parthenon - facade ouest.jpg", "Temple of Hephaestus from ancient agora Athens.jpg", "Restaurants on Mnisikleous Street in Athens, 20240601 0917 0009.jpg"],
     highlights: ['Acropolis', 'Western civilization', 'Ancient ruins & city life'],
     goodToKnow: [
@@ -712,7 +712,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'island', icon: '🌊', rank: 2,
     tagline: "Greece's most glamorous island: windmills, whitewash, and electric nightlife.",
     description: "Mykonos is the glamour capital of the Greek islands — a dazzling white maze of Cycladic architecture, famous windmills, and turquoise harbors. Chora's labyrinthine lanes hide boutiques, bars, and seafood tavernas that overflow until sunrise. The beaches range from peaceful to Europe's wildest parties.",
-    whyVisit: ['Iconic windmills & whitewashed lanes', 'Crystal-clear Aegean beaches', 'Electric nightlife & dining'],
+    whyVisit: ["See Mykonos' windmills and whitewashed lanes", 'Swim at Aegean beaches', 'Dine at Little Venice'],
     whyVisitPhotos: ["Mykonos 06 2017 3621.jpg", "North beach - Mykonos, Greece - 1997.jpg", "Mykonos, little venice 04.JPG"],
     highlights: ['Windmills', 'Aegean beaches', 'Nightlife & dining'],
     goodToKnow: [
@@ -732,7 +732,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🕰️', rank: 1,
     tagline: 'A fairy-tale skyline that survived two world wars nearly untouched.',
     description: 'Prague is perhaps Europe\'s most perfectly preserved medieval city, its Gothic spires and Baroque palaces reflected in the Vltava River below. The astronomical clock still marks the hours in the Old Town Square, and the hilltop castle complex offers sweeping views over a thousand years of Czech history.',
-    whyVisit: ["Europe's finest medieval city", 'Old town streets unchanged', 'Legendary Czech beer culture'],
+    whyVisit: ['Climb Petřín Tower for city views', 'Wander Old Town Square', 'Drink Pilsner Urquell'],
     whyVisitPhotos: ["Prague 07-2016 View from Petrinska Tower img2.jpg", "Prague, Old Town Square, COVID.jpg", "Pilsner Urquell mug.jpg"],
     highlights: ['Medieval city', 'Old town streets', 'Czech beer'],
     goodToKnow: [
@@ -750,7 +750,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'beach', icon: '🌅', rank: 1,
     tagline: 'A crescent of volcanic cliffs, blue domes, and legendary Aegean sunsets.',
     description: 'Santorini is the remnant of a catastrophic volcanic eruption that created one of the world\'s most dramatic landscapes. Whitewashed villages cling to caldera cliffs above the deep Aegean, and the sunsets over Oia are so famous they draw travelers from every corner of the globe.',
-    whyVisit: ['World-famous Aegean sunsets', 'Iconic blue-domed villages', 'Volcanic cliffs & beaches'],
+    whyVisit: ['Watch the sunset at Oia', "See Oia's blue-domed churches", 'Visit Red Beach below volcanic cliffs'],
     whyVisitPhotos: ["Oia, Santorini sunset.jpg", "1000 Three domes of Oia in Santorini Photo by Giles Laurent.jpg", "Red Beach in Santorini.jpg"],
     highlights: ['Aegean sunsets', 'Blue-domed villages', 'Volcanic cliffs'],
     goodToKnow: [
@@ -771,7 +771,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '⛩️', rank: 1,
     tagline: 'The future and the ancient past, coexisting perfectly in the world\'s largest city.',
     description: 'Tokyo is a city of extraordinary contradictions — ancient temples nestled between gleaming skyscrapers, vending machines selling everything imaginable, and a food culture so refined it has more Michelin stars than any other city on Earth. Its punctual trains and deep attention to detail make it unlike any other metropolis.',
-    whyVisit: ['Future meets ancient tradition', "World's greatest food city", 'Safe, vibrant & electric'],
+    whyVisit: ['Visit Sensō-ji Temple in Asakusa', 'Slurp ramen on Tokyo Ramen Street', 'Cross Shibuya Scramble Crossing'],
     whyVisitPhotos: ["Senso-ji Temple @ Asakusa (13824517393).jpg", "Shoyu Ramen @ Shichisai @ Tokyo Ramen Street (13165344585).jpg", "Tokyo Shibuya Scramble Crossing 2018-10-09.jpg"],
     highlights: ['Old meets new', 'Best food city', 'Safe & electric'],
     goodToKnow: [
@@ -790,7 +790,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🍵', rank: 1,
     tagline: 'A thousand temples and the quiet, unhurried heart of traditional Japan.',
     description: "Kyoto was Japan's imperial capital for over a millennium, and its cultural legacy is staggering — 17 UNESCO World Heritage Sites, over 1,600 Buddhist temples, and 400 Shinto shrines. The Fushimi Inari shrine's tunnel of torii gates and Arashiyama's bamboo groves are among Asia's most beautiful sights.",
-    whyVisit: ['Over 1,600 temples to explore', 'Iconic torii gate tunnels', 'Cherry blossoms in spring'],
+    whyVisit: ['Visit Kinkaku-ji, the Golden Pavilion', "Walk Fushimi Inari's torii tunnels", 'See cherry blossoms in spring'],
     whyVisitPhotos: ["Golden Pavilion Kinkaku-ji 2024.jpg", "Fushimi Inari Taisha tunnel droit.jpg", "Cherry blossom @ Kyoto - panoramio (1).jpg"],
     highlights: ['1,600 temples', 'Torii tunnels', 'Cherry blossoms'],
     goodToKnow: [
@@ -809,7 +809,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🏯', rank: 2,
     tagline: "Japan's kitchen and its most deliciously chaotic city.",
     description: "Osaka is Japan's culinary capital and its most boisterous city — a place where locals say you'll eat yourself broke. Dotonbori's neon-lit canal, Osaka Castle's towering keep, and the labyrinthine Kuromon Market give the city an energy all its own. It's louder, friendlier, and hungrier than Tokyo.",
-    whyVisit: ['World-class street food scene', 'Dazzling Dotonbori nightlife', 'Osaka Castle & historic sites'],
+    whyVisit: ['Eat street food in Osaka', 'Stroll Dotonbori at night', 'Visit Osaka Castle'],
     whyVisitPhotos: ["Osakajo, Chuo Ward, Osaka, Osaka Prefecture 540-0002, Japan - panoramio - jetsun (3).jpg", "Glico signs in Dotonbori at night,18th August 2014.JPG", "Osaka Castle, Keep tower, South view 20190415 1.jpg"],
     highlights: ['Street food', 'Dotonbori nightlife', 'Osaka Castle'],
     goodToKnow: [
@@ -829,7 +829,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🎭', rank: 1,
     tagline: 'Opera sails, a harbour bridge, and the world\'s most beautiful city beaches.',
     description: "Sydney is one of the world's most livable and beautiful cities. Its harbour — bridged by one of engineering's great achievements and anchored by the iconic Opera House — is simply stunning. Bondi Beach's surf culture, the Blue Mountains nearby, and a restaurant scene drawing on the world's most diverse immigrant population make Sydney endlessly rewarding.",
-    whyVisit: ['Iconic Opera House harbour', 'World-famous Bondi Beach', 'The perfect outdoor lifestyle'],
+    whyVisit: ['See the Sydney Opera House on the harbour', 'Swim at Bondi Beach', 'Walk the Bondi coastal path'],
     whyVisitPhotos: ["Sydney Opera House - Dec 2008.jpg", "Sydney (AU), Bondi Beach -- 2019 -- 2354.jpg", "Bondi coastal walk - panoramio.jpg"],
     highlights: ['Opera House', 'Bondi Beach', 'Outdoor lifestyle'],
     goodToKnow: [
@@ -847,7 +847,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'nature', icon: '🐠', rank: 1,
     tagline: 'The world\'s largest living structure, visible from outer space.',
     description: 'The Great Barrier Reef stretches 1,400 miles along Australia\'s northeast coast — the world\'s largest coral reef system and one of the seven natural wonders of the world. Over 1,500 fish species, 4,000 mollusc species, and 600 coral types create an underwater ecosystem of breathtaking complexity.',
-    whyVisit: ["World's largest reef system", 'Over 1,500 fish species', 'Ultimate diving paradise'],
+    whyVisit: ['See the reef system from above', 'Spot clownfish among reef fish', 'Dive the Great Barrier Reef'],
     whyVisitPhotos: ["Aerial View of Great Barrier Reef (Ank Kumar) 02.jpg", "Amphiprion ocellaris (Clown anemonefish) by Nick Hobgood.jpg", "Caesio teres and Caesio caerulaurea.jpg"],
     highlights: ['Largest reef', '1,500 fish species', 'Diving paradise'],
     goodToKnow: [
@@ -901,7 +901,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🚋', rank: 2,
     tagline: 'A garden city reborn, with street art, trams and the Southern Alps on its doorstep.',
     description: "Christchurch is the South Island's largest city and the gateway to its wild south. Rebuilt after the 2010–11 earthquakes, it pairs leafy heritage — the Botanic Gardens, punts gliding down the Avon and the restored Arts Centre — with bold new architecture, laneway bars and a thriving street-art scene. Akaroa, the Port Hills and the Alps are all within easy reach.",
-    whyVisit: ['Punting on the Avon River', 'Bold post-quake rebuild & street art', 'Gateway to the Southern Alps'],
+    whyVisit: ['Punting on the Avon River', 'Explore the post-quake rebuild and street art', 'See the Southern Alps from Christchurch'],
     whyVisitPhotos: ["Avon River - Christchurch Botanic Gardens - Christchurch, NZ - DSC00948.jpg", "Christchurch ReStart Container Shops 1.jpg", "Southern Alps from Christchurch Airport - panoramio.jpg"],
     highlights: ['Avon punts', 'Street art', 'Alps gateway'],
     goodToKnow: [
@@ -919,7 +919,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '⛵', rank: 3,
     tagline: 'A French-flavoured harbour village in the crater of an ancient volcano.',
     description: "Akaroa sits on a sheltered harbour carved from an extinct volcano on Banks Peninsula, 80 km from Christchurch. Founded by French settlers in 1840, its streets still carry French names, and its calm waters are home to the world's smallest dolphin, the endemic Hector's. Cafés, galleries and craggy peninsula walks make it a favourite escape.",
-    whyVisit: ["Swim with rare Hector's dolphins", 'French colonial heritage', 'Volcanic harbour scenery'],
+    whyVisit: ["Swim with rare Hector's dolphins", "Explore Akaroa's French colonial heritage", "Look over Akaroa's volcanic harbour"],
     whyVisitPhotos: ["Hectors Dolphin near Akaroa.jpg", "Langlois-Eteveneaux Cottage, Akaroa (c.1843).jpg", "Onawe Peninsula by Tomas Sobek.jpg"],
     highlights: ["Hector's dolphins", 'French heritage', 'Volcanic harbour'],
     goodToKnow: [
@@ -937,7 +937,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'nature', icon: '🐋', rank: 2,
     tagline: 'Where snow-capped mountains plunge straight into a sea full of whales.',
     description: "Kaikōura is one of the few places on Earth where giant sperm whales can be seen year-round, drawn by a deep submarine canyon just offshore. The Seaward Kaikōura Range rises straight from the coast, framing a town known for its wildlife — fur seals, dusky dolphins and albatross — and its crayfish (kōura in Māori, which gives the town its name).",
-    whyVisit: ['Year-round sperm whale watching', 'Mountains meeting the sea', 'Seals, dolphins & albatross'],
+    whyVisit: ['Watch sperm whales year-round', 'See mountains meet the sea', 'Spot seals, dolphins and albatross'],
     whyVisitPhotos: ["Destination Kaikoura-513967-whale-tail.jpg", "Seascape. Kaikoura. NZ (14544544353).jpg", "Anim1772 - Flickr - NOAA Photo Library.jpg"],
     highlights: ['Whale watching', 'Mountains & sea', 'Marine wildlife'],
     goodToKnow: [
@@ -955,7 +955,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'nature', icon: '♨️', rank: 4,
     tagline: 'An alpine spa village of hot pools, forest trails and jet boats.',
     description: 'Hanmer Springs is a small alpine village in North Canterbury, built around natural thermal springs first noted by Europeans in 1859. Its open-air thermal pools, steaming beneath the mountains, are the main draw, but the village also has forest walks, mountain biking, and jet-boating and bungy on the nearby Waiau River.',
-    whyVisit: ['Open-air thermal pools', 'Alpine forest walks', 'Adventure on the Waiau River'],
+    whyVisit: ['Soak in open-air thermal pools', "Walk Hanmer's forest trails", 'Try adventure sports on the Waiau River'],
     whyVisitPhotos: ["Hamner Springs (261408475).jpg", "Hanmer Forest Sculpture Walk MRD 05.jpg", "Auf der Fahrt nach Hanmer Springs.JPG"],
     highlights: ['Thermal pools', 'Forest walks', 'River adventures'],
     goodToKnow: [
@@ -973,7 +973,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'park', icon: '🏔️', rank: 3,
     tagline: 'Rugged alpine passes, braided rivers and the cheeky kea.',
     description: "Arthur's Pass National Park straddles the Southern Alps on the road between Canterbury and the West Coast. Its small village is a base for alpine day hikes like Avalanche Peak, waterfall walks and river valleys, and it's the scenic high point of the TranzAlpine train. Watch for the kea, the world's only alpine parrot — as clever as it is mischievous.",
-    whyVisit: ['Ride the TranzAlpine train', 'Alpine day hikes', 'Meet the cheeky kea'],
+    whyVisit: ['Ride the TranzAlpine train', 'Hike alpine day trails', 'Meet the cheeky kea'],
     whyVisitPhotos: ["Return TranzAlpine at Otira in unexpected sun (49407823601).jpg", "Black Range from the track to Avalanche Peak, Arthur's Pass National Park, New Zealand.jpg", "Wild Kea at the peak of the Arthur's Pass (Unsplash).jpg"],
     highlights: ['TranzAlpine', 'Alpine hikes', 'Kea parrots'],
     goodToKnow: [
@@ -991,7 +991,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'lake', icon: '🌌', rank: 2,
     tagline: 'A turquoise glacial lake beneath one of the darkest night skies on Earth.',
     description: "Lake Tekapo's milky-turquoise water, coloured by fine glacial 'rock flour', sits on the edge of the high Mackenzie Basin with the Southern Alps behind it. It lies within the Aoraki Mackenzie International Dark Sky Reserve, one of the world's best places for stargazing, and in late spring its shores blaze with purple, pink and blue lupins.",
-    whyVisit: ['Turquoise glacial lake', 'World-class stargazing', 'Summer lupin fields'],
+    whyVisit: ["See Lake Tekapo's turquoise water", 'Stargaze by the Church of the Good Shepherd', 'See summer lupins by the lake'],
     whyVisitPhotos: ["Lake Tekapo Canterbury NZ.jpg", "Church of the Good Shepherd on the shores of Lake Tekapo (ann19065a).jpg", "Russel lupins Lake Tekapo. (52603471079).jpg"],
     highlights: ['Turquoise lake', 'Stargazing', 'Lupin fields'],
     goodToKnow: [
@@ -1009,7 +1009,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'mountain', icon: '🏔️', rank: 2,
     tagline: "New Zealand's highest peak, ringed by glaciers and ice-blue lakes.",
     description: "Aoraki / Mount Cook, at 3,724 m, is New Zealand's highest mountain and the heart of a national park where more than a third of the land is permanent snow and ice. Easy trails like the Hooker Valley Track lead to iceberg-strewn glacial lakes, and scenic flights land on the vast Tasman Glacier. The approach along Lake Pukaki is one of the country's great drives.",
-    whyVisit: ["New Zealand's highest mountain", 'The Hooker Valley Track', 'Glaciers and iceberg lakes'],
+    whyVisit: ['See Aoraki Mount Cook at sunset', 'Walk the Hooker Valley Track', 'See icebergs in Hooker Glacier Lake'],
     whyVisitPhotos: ["Hooker Valley towards Aoraki Mount Cook at sunset.jpg", "NZ Hooker Valley track.jpg", "Icebergs in Hooker Glacier Lake in front of Aoraki Mount Cook.jpg"],
     highlights: ['Aoraki / Mount Cook', 'Hooker Valley', 'Glacier lakes'],
     goodToKnow: [
@@ -1027,7 +1027,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🪂', rank: 1,
     tagline: 'The adventure capital of the world, on a lake beneath the Remarkables.',
     description: "Queenstown sits on the shore of glacial Lake Wakatipu, hemmed in by the jagged Remarkables — a setting that turned a gold-rush town into the world's adventure capital. Commercial bungy jumping began here, and jet boats, skydives and ski fields keep the adrenaline flowing, while vineyards, Arrowtown's heritage streets and Glenorchy's Lord of the Rings scenery offer a slower pace.",
-    whyVisit: ['Birthplace of commercial bungy', 'Lake Wakatipu & the Remarkables', 'Gateway to Milford Sound'],
+    whyVisit: ['Bungy off the Kawarau Gorge Bridge', 'See the Remarkables over Lake Wakatipu', 'Take a day trip to Milford Sound'],
     whyVisitPhotos: ["NZ200315 Kawarau Gorge Bridge 04.jpg", "Queenstown-Lakes 24.jpg", "Milford Sound in Fiordland National Park 04.jpg"],
     highlights: ['Bungy & jet boats', 'Lake Wakatipu', 'Milford gateway'],
     goodToKnow: [
@@ -1046,7 +1046,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'lake', icon: '🌳', rank: 2,
     tagline: "Queenstown's laid-back neighbour, with a lake, a famous tree and big mountains.",
     description: "Wānaka is a relaxed lakeside town on the edge of Mount Aspiring National Park. Its lakefront willow, 'That Wānaka Tree', growing out of the water, is one of the most photographed sights in the country, while Roys Peak delivers a famous summit view. In winter, the Cardrona and Treble Cone ski fields are close by.",
-    whyVisit: ['That Wānaka Tree', 'Roys Peak summit view', 'Gateway to Mount Aspiring'],
+    whyVisit: ['See That Wānaka Tree', 'Hike to the Roys Peak summit', 'Explore Lake Wānaka and Mount Aspiring'],
     whyVisitPhotos: ["Wānaka, Part I - Wanaka9347.jpg", "Wanaka, New Zealand, view 2.jpg", "00 1316 Lake Wanaka - New Zealand.jpg"],
     highlights: ['Wānaka Tree', 'Roys Peak', 'Mount Aspiring'],
     goodToKnow: [
@@ -1065,7 +1065,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'park', icon: '🏞️', rank: 1,
     tagline: "Sheer fiords, thundering waterfalls and New Zealand's Great Walks.",
     description: "Fiordland is New Zealand's largest national park, a wilderness of glacier-carved fiords, rainforest and granite peaks in the island's far southwest. Milford Sound — with Mitre Peak rising from black water and waterfalls pouring off its cliffs — is the country's most famous sight, while remote Doubtful Sound offers deep silence. Te Anau is the base for cruises, glowworm caves and three Great Walks.",
-    whyVisit: ['Cruise Milford Sound', 'Remote Doubtful Sound', 'Three Great Walks'],
+    whyVisit: ['Cruise Milford Sound', 'Cruise Doubtful Sound', "Hike Fiordland's Great Walks"],
     whyVisitPhotos: ["Milford Sound, Mitre Peak, ships 2016-01-31.jpg", "Doubtful Sound - Patea - DoubtfulSound9081.jpg", "Milford Track Mackinnon Pass Track 2.jpg"],
     highlights: ['Milford Sound', 'Doubtful Sound', 'Great Walks'],
     goodToKnow: [
@@ -1083,7 +1083,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🐧', rank: 3,
     tagline: 'A Scottish-rooted university city with albatross and penguins next door.',
     description: "Dunedin — from the Gaelic name for Edinburgh — wears its Scottish heritage in grand Victorian stone buildings like its ornate Railway Station. It's a lively student city with a strong café and music scene, at the head of the Otago Peninsula, home to the world's only mainland breeding colony of royal albatross, yellow-eyed penguins and fur seals.",
-    whyVisit: ['Royal albatross colony', 'Victorian Scottish heritage', 'Penguins on the Otago Peninsula'],
+    whyVisit: ['Watch royal albatrosses on the peninsula', "Explore Dunedin's Victorian Scottish heritage", 'Spot yellow-eyed penguins on Otago Peninsula'],
     whyVisitPhotos: ["Northern royal albatross,( Diomedea sanfordi,) (31759302480).jpg", "00 1513 Dunedin (New Zealand) - Railway Station.jpg", "Yellow-Eyed Penguins in Dunedin, NZ.jpg"],
     highlights: ['Royal albatross', 'Victorian heritage', 'Penguins'],
     goodToKnow: [
@@ -1101,7 +1101,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '⚙️', rank: 4,
     tagline: 'Victorian whitestone streets, steampunk and little blue penguins.',
     description: "Oamaru's harbourside Victorian Precinct, built from creamy local limestone, is among the best-preserved historic streetscapes in New Zealand — and the self-proclaimed steampunk capital of the world. Each evening little blue penguins, the world's smallest, come ashore at the town's colony, and the spherical Moeraki Boulders lie a short drive south.",
-    whyVisit: ['Little blue penguin parade', 'Victorian whitestone precinct', 'The Moeraki Boulders'],
+    whyVisit: ['Watch little blue penguins come ashore', "Wander Oamaru's Victorian whitestone precinct", 'See the Moeraki Boulders'],
     whyVisitPhotos: ["Little blue penguin walking on pond edge.jpg", "Oamaru Victoria style buildings (cropped).jpg", "Moeraki Boulders and beach.jpg"],
     highlights: ['Blue penguins', 'Victorian precinct', 'Moeraki Boulders'],
     goodToKnow: [
@@ -1119,7 +1119,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'nature', icon: '🌊', rank: 3,
     tagline: 'A wild southern coast of waterfalls, sea lions and forest.',
     description: "The Catlins is a remote, beautiful stretch of the South Island's southeast coast between Dunedin and Invercargill. Native forest runs down to empty beaches where sea lions sprawl on the sand, waterfalls like Purakaunui and McLean tumble through the bush, and at Curio Bay a 180-million-year-old petrified forest emerges at low tide.",
-    whyVisit: ['Forest waterfalls', 'Sea lions & penguins', 'Petrified forest at Curio Bay'],
+    whyVisit: ['Walk to Purakaunui Falls', 'Spot sea lions and penguins', 'See the petrified forest at Curio Bay'],
     whyVisitPhotos: ["Purakaunui Falls.jpg", "Hooker's sea lion.jpg", "Petrified Forest, Curio Bay (16538895762).jpg"],
     highlights: ['Waterfalls', 'Sea lions', 'Petrified forest'],
     goodToKnow: [
@@ -1137,7 +1137,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'island', icon: '🥝', rank: 3,
     tagline: "New Zealand's wild third island, where kiwi roam the beaches.",
     description: "Stewart Island / Rakiura, across Foveaux Strait from Bluff, is almost entirely national park — a quiet world of bush, birdsong and empty bays with one small village, Oban. It's one of the best places in the country to see wild kiwi, and predator-free Ulva Island is a sanctuary for rare native birds. Rakiura means 'glowing skies', a nod to its southern auroras.",
-    whyVisit: ['See kiwi in the wild', 'Ulva Island bird sanctuary', 'The Rakiura Track'],
+    whyVisit: ['See kiwi in the wild', 'Visit Ulva Island bird sanctuary', 'Walk the Rakiura Track'],
     whyVisitPhotos: ["Apteryx australis lawryi - Genevieve Early - 473849803.jpeg", "Gallirallus australis (Weka) on Ulva Island, New Zealand 03.jpg", "Maori Beach, Rakiura Track, Stewart Island (16538845902).jpg"],
     highlights: ['Wild kiwi', 'Ulva Island', 'Rakiura Track'],
     goodToKnow: [
@@ -1155,7 +1155,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'park', icon: '🧊', rank: 1,
     tagline: 'Rainforest glaciers that tumble almost to the sea.',
     description: 'Westland Tai Poutini National Park runs from the Southern Alps to the Tasman Sea, and its two headline glaciers, Franz Josef and Fox, descend almost to sea level through temperate rainforest. Heli-hikes land on the ice, valley walks lead toward the glacier faces, and at dawn Lake Matheson mirrors Aoraki / Mount Cook in its still, dark water. The villages of Franz Josef and Fox Glacier are the bases.',
-    whyVisit: ['Heli-hike on a glacier', 'Glaciers in the rainforest', 'Mirror views at Lake Matheson'],
+    whyVisit: ['Heli-hike on a glacier', 'Walk toward glaciers in the rainforest', 'See mirror reflections at Lake Matheson'],
     whyVisitPhotos: ["FGG Fox-glacier-heli-hike-group-helicopter 01.jpg", "Franz Josef Glacier 14.jpg", "Lake Matheson reflection of Mount Tasman and Aoraki Mount Cook.jpg"],
     highlights: ['Glacier heli-hikes', 'Rainforest ice', 'Lake Matheson'],
     goodToKnow: [
@@ -1173,7 +1173,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '💚', rank: 4,
     tagline: 'A wild-west beach town of greenstone carving and sunsets.',
     description: "Hokitika was a booming gold-rush port in the 1860s and is now the West Coast's arts hub, known for its pounamu (greenstone) carving studios. Driftwood sculptures line its wild beach at sunset, and the startlingly blue Hokitika Gorge and the Treetop Walk through rimu forest are short drives away.",
-    whyVisit: ['Pounamu greenstone carving', 'The turquoise Hokitika Gorge', 'Driftwood beach sunsets'],
+    whyVisit: ['See pounamu greenstone carving', 'Walk to the turquoise Hokitika Gorge', 'Watch sunset on the driftwood beach'],
     whyVisitPhotos: ["Pounamu Hook1.jpg", "Hokitika River and Hokitika Gorge upstream from swingbridge.jpg", "Hokitika sunset.jpg"],
     highlights: ['Pounamu', 'Hokitika Gorge', 'Beach sunsets'],
     goodToKnow: [
@@ -1191,7 +1191,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'park', icon: '🥞', rank: 3,
     tagline: 'Pancake-stacked limestone, roaring blowholes and a Great Walk on the wild West Coast.',
     description: "Paparoa National Park is best known for the Pancake Rocks at Punakaiki, layered limestone formations that look like giant stacks of pancakes. At high tide with a south-westerly swell, the sea surges through the blowholes and throws up tall walls of spray. Behind the coast lie limestone canyons, caves and the Paparoa Track Great Walk.",
-    whyVisit: ['Pancake Rocks & blowholes', 'Limestone river canyons', 'The Paparoa Track'],
+    whyVisit: ['See Pancake Rocks and blowholes', 'Explore limestone river canyons', 'Walk the Paparoa Track'],
     whyVisitPhotos: ["Punakaiki blow holes. (53094420216).jpg", "Pororari River MRD 04.jpg", "Paparoa Track.jpg"],
     highlights: ['Pancake Rocks', 'Limestone canyons', 'Paparoa Track'],
     goodToKnow: [
@@ -1209,7 +1209,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🍺', rank: 5,
     tagline: "The West Coast's largest town, at the end of the TranzAlpine line.",
     description: "Greymouth is the West Coast's biggest town, where the Grey River meets the Tasman Sea. It's the western terminus of the TranzAlpine train from Christchurch and a handy base for exploring the coast, with the recreated gold-rush town of Shantytown, Monteith's original brewery and the Point Elizabeth Walkway close by.",
-    whyVisit: ['End of the TranzAlpine', 'A recreated gold-rush town', "Monteith's original brewery"],
+    whyVisit: ['Ride the TranzAlpine to Greymouth', 'Explore Shantytown gold-rush village', "Tour Monteith's original brewery"],
     whyVisitPhotos: ["804, the retun TranzAlpine.jpg", "00 1221 Shantytown Heritage Park - New Zealand.jpg", "Monteiths Brewery in Greymouth (4673825776).jpg"],
     highlights: ['TranzAlpine', 'Shantytown', "Monteith's"],
     goodToKnow: [
@@ -1227,7 +1227,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🦭', rank: 5,
     tagline: 'Seal colonies, coal heritage and the gateway to the Buller Gorge.',
     description: "Westport, at the mouth of the Buller River, is the gateway to the northern West Coast. Fur seals crowd the rocks at nearby Cape Foulwind, the Denniston Plateau tells the story of the region's daring coal-mining past, and the Buller Gorge winds inland toward Nelson.",
-    whyVisit: ['Cape Foulwind seal colony', 'Coal-mining heritage', 'Gateway to the Buller Gorge'],
+    whyVisit: ['Visit the Cape Foulwind seal colony', "Explore Denniston's coal-mining heritage", 'Drive through the Buller Gorge'],
     whyVisitPhotos: ["Tauranga Bay Seal Colony, New Zealand (6).JPG", "Denniston Incline 001.jpg", "Lower Buller Gorge, South Island NZ.jpg"],
     highlights: ['Seal colony', 'Mining heritage', 'Buller Gorge'],
     goodToKnow: [
@@ -1245,7 +1245,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🎨', rank: 3,
     tagline: "A sunny city of artists, craft beer and beaches.",
     description: "Nelson is one of New Zealand's sunniest places — a laid-back city of artists, craft breweries and heritage cottages at the top of the South Island. It's the gateway to three national parks, Abel Tasman, Kahurangi and Nelson Lakes, while Tāhunanui Beach, the Saturday market and the region's vineyards and orchards fill the days in town.",
-    whyVisit: ["One of NZ's sunniest cities", 'Arts, crafts & craft beer', 'Gateway to three national parks'],
+    whyVisit: ["Relax in Nelson's sunshine at Ruby Bay", 'Browse arts, crafts and craft beer', 'Day-trip to Lake Rotoiti'],
     whyVisitPhotos: ["Ruby Bay.jpg", "The Suter Art Gallery, Nelson.jpg", "Lake Rotoiti at Nelson Lakes National Park.jpg"],
     highlights: ['Sunshine', 'Arts & craft beer', 'National parks'],
     goodToKnow: [
@@ -1263,7 +1263,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'park', icon: '🏖️', rank: 2,
     tagline: 'Golden beaches and turquoise bays along a coastal Great Walk.',
     description: "Abel Tasman is New Zealand's smallest national park and one of its most loved — a coast of golden sand beaches, granite headlands and clear turquoise bays. The Abel Tasman Coast Track, one of the Great Walks, winds through forest above the sea, and water taxis make it easy to walk or kayak any section, from half a day to five days.",
-    whyVisit: ['Golden sand beaches', 'The Abel Tasman Coast Track', 'Sea kayaking with seals'],
+    whyVisit: ['Relax on golden sand beaches', 'Walk the Abel Tasman Coast Track', 'Kayak with seals'],
     whyVisitPhotos: ["Cove north of Anapai Bay.jpg", "View south towards Anapai Bay.jpg", "Sea Kayaking Abel Tasman National Park.jpg"],
     highlights: ['Golden beaches', 'Coast Track', 'Sea kayaking'],
     goodToKnow: [
@@ -1281,7 +1281,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'nature', icon: '🐚', rank: 4,
     tagline: 'A remote, sun-soaked corner of springs, sand spits and rock arches.',
     description: "Over the winding Tākaka Hill, Golden Bay feels like a world apart — an artsy, unhurried region of beaches, limestone landscapes and wilderness. Te Waikoropupū Springs hold some of the clearest fresh water ever measured, Farewell Spit curves 30 km into the sea, and windswept Wharariki Beach, with its rock arches, is one of the country's most dramatic.",
-    whyVisit: ['Crystal-clear Te Waikoropupū Springs', 'Wild Wharariki Beach', 'Farewell Spit'],
+    whyVisit: ["See Te Waikoropupū Springs' clear water", 'Walk to Wharariki Beach', 'Explore Farewell Spit'],
     whyVisitPhotos: ["Clear waters of Te Waikoropupu Springs.jpg", "Surf crashing against rocks east of Wharariki Beach.jpg", "Farewell Spit overview from hills near Puponga.jpg"],
     highlights: ['Pupu Springs', 'Wharariki Beach', 'Farewell Spit'],
     goodToKnow: [
@@ -1299,7 +1299,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'nature', icon: '⛵', rank: 3,
     tagline: 'A maze of drowned valleys, quiet coves and coastal tracks.',
     description: "The Marlborough Sounds are a vast network of sea-drowned river valleys at the top of the South Island, with a fifth of New Zealand's coastline folded into their bays and forested ridges. Most visitors arrive by ferry into Picton, then explore by boat, kayak or on foot along the Queen Charlotte Track, staying in lodges reachable only by water.",
-    whyVisit: ['The Queen Charlotte Track', 'Kayaking quiet coves', 'A scenic ferry arrival'],
+    whyVisit: ['Walk the Queen Charlotte Track', "Kayak the Sounds' quiet coves", 'Arrive in Picton by ferry'],
     whyVisitPhotos: ["Queen Charlotte Track (3380053425).jpg", "Portage Bay NZ 02.jpg", "View of Picton from the ferry.jpg"],
     highlights: ['Queen Charlotte Track', 'Kayaking', 'Ferry arrival'],
     goodToKnow: [
@@ -1317,7 +1317,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🍇', rank: 3,
     tagline: 'Sunny vineyards that made New Zealand Sauvignon Blanc famous.',
     description: "Blenheim is the hub of Marlborough, New Zealand's largest wine region and the place that put its zesty Sauvignon Blanc on the world map. Sunny days and cool nights on the Wairau Plains suit well over a hundred wineries, many with cellar doors and vineyard restaurants, best explored by bike or on a tasting tour. It is also home to the Omaka Aviation Heritage Centre, which houses rare First and Second World War aircraft.",
-    whyVisit: ['World-famous Sauvignon Blanc', 'Cellar doors by bike', 'Omaka aviation museum'],
+    whyVisit: ['Taste Sauvignon Blanc in Marlborough', 'Cycle between Marlborough cellar doors', 'Visit the Omaka Aviation Heritage Centre'],
     whyVisitPhotos: ["Autumn in the Awatere Valley.jpg", "Cloudy Bay Cellar Door in Marlborough (4671508402).jpg", "Nieuport 24 at Omaka Aviation Heritage Centre's 'Knights of the Sky' exhibition.jpg"],
     highlights: ['Sauvignon Blanc', 'Cellar doors', 'Aviation museum'],
     goodToKnow: [
@@ -1336,7 +1336,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'park', icon: '🏞️', rank: 4,
     tagline: 'Alpine lakes, beech forest and the famous Lake Rotoiti jetty.',
     description: "Nelson Lakes National Park marks the northern end of the Southern Alps, centred on two glacial lakes, Rotoiti and Rotoroa, ringed by beech forest and mountains. From the small village of St Arnaud, short walks and the Mount Robert ridge reach big alpine views, and Lake Rotoiti's jetty is one of the South Island's most photographed spots.",
-    whyVisit: ['The Lake Rotoiti jetty', 'Alpine ridge walks', 'Quiet beech forest'],
+    whyVisit: ['Stroll to the Lake Rotoiti jetty', 'Hike alpine ridges', 'Wander quiet beech forest'],
     whyVisitPhotos: ["View of Lake Rotoiti from Kerr Bay in St Arnaud (4672173842).jpg", "Nelson Lakes National Park XVI.jpg", "Trail in Nelson Lakes NP 03.jpg"],
     highlights: ['Lake Rotoiti', 'Alpine walks', 'Beech forest'],
     goodToKnow: [
@@ -1354,7 +1354,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'nature', icon: '🚵', rank: 4,
     tagline: 'Gold-rush villages, rail-trail cycling and big-sky country.',
     description: "Central Otago is a dry, sun-baked interior of tussock ranges, schist tors and gold-rush history. The Otago Central Rail Trail, New Zealand's original Great Ride, follows an old railway line through tunnels and over viaducts between historic villages, and the region's Pinot Noir and summer stone fruit are among the best in the country.",
-    whyVisit: ['Cycle the Otago Central Rail Trail', 'Gold-rush heritage villages', 'Pinot Noir and summer fruit'],
+    whyVisit: ['Cycle the Otago Central Rail Trail', 'Explore gold-rush heritage villages', 'Taste Pinot Noir and summer fruit'],
     whyVisitPhotos: ["Otago Central Rail Trail 20170101.jpg", "Vulcan Hotel towards Public Hall and Post Office.jpg", "016 Central Otago wine region - vineyard in Gibbston Valley in South Island, New Zealand.jpg"],
     highlights: ['Rail Trail', 'Gold-rush villages', 'Pinot Noir'],
     goodToKnow: [
@@ -1372,9 +1372,9 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🏍️', rank: 5,
     tagline: "The country's southernmost city, gateway to Bluff and Stewart Island.",
     description: "Invercargill, near the foot of the South Island, is a broad, friendly city of Victorian and Art Deco buildings. It's the hometown of Burt Munro of The World's Fastest Indian fame, whose motorcycle is on show at E Hayes hardware store, and the gateway to Bluff — where State Highway 1 ends at Stirling Point — and to Stewart Island.",
-    whyVisit: ["Burt Munro's World's Fastest Indian", "Bluff's Stirling Point signpost", 'Gateway to Stewart Island'],
+    whyVisit: ["See Burt Munro's World's Fastest Indian", "Photograph Bluff's Stirling Point signpost", 'Watch the sunrise at Bluff'],
     whyVisitPhotos: ["Burt Munro Special - streamline.jpg", "Lands End Signpost - panoramio.jpg", "Sunrise in Bluff NZ - panoramio.jpg"],
-    highlights: ['Burt Munro', 'Stirling Point', 'Stewart Island'],
+    highlights: ['Burt Munro', 'Stirling Point', 'Bluff sunrise'],
     goodToKnow: [
       { icon: '🦪', title: 'Eat Bluff oysters in season', detail: 'Bluff oysters are in season from roughly March to August, celebrated at the Bluff Oyster Festival in May.' },
       { icon: '🧥', title: 'Expect cool, windy days', detail: "Invercargill is one of New Zealand's coolest cities — bring layers year-round." },
@@ -1390,7 +1390,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'park', icon: '🥾', rank: 3,
     tagline: "New Zealand's second-largest national park, home to the Heaphy Track and limestone arches.",
     description: 'Kahurangi is a vast wilderness of marble mountains, beech forest and wild coast at the top of the South Island. The Heaphy Track, the longest of the Great Walks, crosses it from Golden Bay to the West Coast, while on the Karamea side the Ōpārara Basin hides huge limestone arches, caves and ancient forest.',
-    whyVisit: ['Walk the Heaphy Track', 'The Ōpārara limestone arches', 'Remote, uncrowded wilderness'],
+    whyVisit: ['Walk the Heaphy Track', 'Walk beneath the Ōpārara limestone arches', 'Explore remote, uncrowded wilderness'],
     whyVisitPhotos: ["Heaphy Track - coastal section.jpg", "Moria Gate Arch SM2014.jpg", "Kahurangi National Park, New Zealand.jpg"],
     highlights: ['Heaphy Track', 'Ōpārara Arches', 'Wilderness'],
     goodToKnow: [
@@ -1408,7 +1408,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'park', icon: '🏔️', rank: 3,
     tagline: 'Glaciers, swing-bridge gorges and the pyramid peak of Tititea.',
     description: 'Mount Aspiring National Park protects a wide swathe of the Southern Alps, crowned by the pyramid peak of Tititea / Mount Aspiring. Day visitors reach it from Wānaka and the Haast Pass road, with the Rob Roy Glacier walk in the Matukituki Valley and the glacier-blue Blue Pools among the favourites. The Routeburn and other multi-day tracks start from its edges.',
-    whyVisit: ['The Rob Roy Glacier walk', 'Blue Pools on the Haast Pass road', 'Alpine peaks and valleys'],
+    whyVisit: ['Hike to Rob Roy Glacier', 'Walk to the Blue Pools', 'Explore alpine peaks and valleys'],
     whyVisitPhotos: ["Rob Roy Glacier, Mt Aspiring, New Zealand - panoramio.jpg", "Blue Pools Track kz03.jpg", "Matukituki River West Branch upstream from swingbridge.jpg"],
     highlights: ['Rob Roy Glacier', 'Blue Pools', 'Alpine valleys'],
     goodToKnow: [
@@ -1426,7 +1426,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '⚓', rank: 4,
     tagline: "South Canterbury's port city, with a sheltered beach and a Māori rock art centre.",
     description: "Timaru is South Canterbury's main city, a working port with Edwardian architecture and a calmer pace than the tourist hubs inland. Caroline Bay is a sandy city beach with a summer carnival tradition, and the town has a good regional museum and a Māori rock art centre. It makes a natural stop between Christchurch and Dunedin or the Mackenzie Country.",
-    whyVisit: ['Caroline Bay beach', 'Māori rock art at Te Ana', 'A stop on the way south'],
+    whyVisit: ['Stroll Caroline Bay beach', 'See Māori rock art at Te Ana', 'Wander Timaru Botanic Garden'],
     whyVisitPhotos: ["ext-dest-timaru-why1.jpg", "ext-dest-timaru-why2.jpg", "Timaru Botanic Garden, New Zealand.jpg"],
     highlights: ['Caroline Bay', 'Rock art', 'Port city'],
     goodToKnow: [
@@ -1445,7 +1445,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🏙️', rank: 1,
     tagline: "The City of Sails, spread across volcanic cones and two harbours.",
     description: "Auckland is New Zealand's largest city, built across an isthmus of dormant volcanoes between the Waitematā and Manukau harbours. The Sky Tower dominates a compact waterfront centre, while ferries run to Rangitoto's volcanic cone and the wine islands of the Hauraki Gulf. West-coast black-sand surf beaches and rainforest ranges sit less than an hour from downtown.",
-    whyVisit: ["Sky Tower and harbour views", "Ferry to Rangitoto's volcano", "Wild west-coast beaches"],
+    whyVisit: ['See the Sky Tower over the harbour', 'Take the ferry to Rangitoto volcano', 'Walk wild west-coast beaches'],
     whyVisitPhotos: ["The Westhaven Bay harbor, sailboats and the Skytower, Auckland - 0301.jpg", "Goodbye Rangitoto (8470891372).jpg", "Lion Rock, Piha Beach.jpg"],
     highlights: ['Sky Tower', 'Rangitoto Island', 'Piha beach'],
     goodToKnow: [
@@ -1462,7 +1462,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'island', icon: '🍷', rank: 3,
     tagline: "A 40-minute ferry from Auckland to vineyards, olive groves and sheltered beaches.",
     description: "Waiheke is the most popular island of the Hauraki Gulf, covered in boutique vineyards that produce some of New Zealand's best red wines. Sandy bays such as Onetangi and Oneroa face the gulf, and a network of coastal walks links the headlands. Most visitors come over for the day, though a night or two lets you see the island at its quietest.",
-    whyVisit: ["Vineyards with sea views", "Long sandy beaches", "Sheltered coves and bays"],
+    whyVisit: ['Taste wine among Waiheke vineyards', "Walk Onetangi's long sandy beach", "Explore Waiheke's sheltered coves and bays"],
     whyVisitPhotos: ["Waiheke View Marsanne Block.jpg", "Waiheke Island Onetangi Beach.jpg", "Waiheke Island landscape.jpg"],
     highlights: ["Wineries", "Beaches", "Sheltered bays"],
     goodToKnow: [
@@ -1479,7 +1479,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'island', icon: '🏝️', rank: 5,
     tagline: "A remote, off-grid island of bush walks and hot springs in the outer Hauraki Gulf.",
     description: "Great Barrier Island, or Aotea, lies about 90 km north-east of Auckland and has no mains electricity or reticulated water. Most of it is conservation land, crossed by the Aotea Track, with hot springs, surf beaches and some of the darkest skies in the country. Ferries and flights run from Auckland.",
-    whyVisit: ["Rugged coastal scenery", "Soak in bush hot springs", "Medlands and Pa beaches"],
+    whyVisit: ['Explore the rugged coast', 'Soak in bush hot springs', 'Visit Medlands and Pa beaches'],
     whyVisitPhotos: ["Waterfall Bay Great Barrier Island Rose-Noëlle.jpg", "Great Barrier Island Hot Pools I.jpg", "Medlands Beach, Great Barrier Island.jpg"],
     highlights: ["Rugged coast", "Hot springs", "Beaches"],
     goodToKnow: [
@@ -1496,7 +1496,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🧺', rank: 5,
     tagline: "A farmers' market village north of Auckland, near a famous marine reserve.",
     description: "Matakana is a small country village an hour north of Auckland, known for its Saturday farmers' market, wineries and cinema. The coast nearby has white-sand beaches, the Goat Island marine reserve for snorkelling, and Kawau Island across the water. It makes an easy day or overnight trip from the city.",
-    whyVisit: ["Saturday farmers' market", "Snorkel at Goat Island", "Quiet northern beaches"],
+    whyVisit: ["Browse the Saturday farmers' market", 'Snorkel at Goat Island', 'Relax on quiet northern beaches'],
     whyVisitPhotos: ["Matakana Markets.jpg", "Goat Island Marine Reserve.JPG", "Tawharanui.jpg"],
     highlights: ['Farmers market', 'Marine reserve', 'Beaches'],
     goodToKnow: [
@@ -1513,7 +1513,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'nature', icon: '⛵', rank: 2,
     tagline: "144 islands, dolphin cruises and the birthplace of modern New Zealand.",
     description: "The Bay of Islands is a drowned valley of about 144 islands, sheltered bays and white-shell beaches on the Northland coast. Paihia and Russell are the bases for dolphin cruises and the Hole in the Rock, while the Waitangi Treaty Grounds mark where the founding agreement between Māori and the Crown was signed in 1840. Kerikeri, inland, has the country's oldest stone building.",
-    whyVisit: ["Cruise to the Hole in the Rock", "Waitangi, where NZ began", "Kayak and sail the islands"],
+    whyVisit: ['Cruise to the Hole in the Rock', 'Visit the Waitangi Treaty Grounds', 'Kayak and sail the islands'],
     whyVisitPhotos: [",00 0664 Bay of Island (Neuseeland) - Hole in the Rock.jpg", "00 27 0577 Waitangi, New Zealand - Treaty House.jpg", "Hat Island (Left, in distance) Mahenotiti Island (Centre) and Te Ao Island (Right) as viewed from Urupukapuka..jpg"],
     highlights: ['Island cruises', 'Waitangi', 'Historic Russell'],
     goodToKnow: [
@@ -1530,7 +1530,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🌿', rank: 5,
     tagline: "Northland's main city, with a waterfall, a clock museum and the departure point for Poor Knights dive and snorkel trips.",
     description: "Whangārei is Northland's largest city, set around a sheltered harbour. It has the Hundertwasser Art Centre, a pretty town basin and Whangārei Falls just outside the centre. The Tutukaka Coast to the east is the departure point for dive trips to the Poor Knights Islands.",
-    whyVisit: ["Hundertwasser Art Centre", "Dive the Poor Knights Islands", "Waterfalls and coastal walks"],
+    whyVisit: ['Tour the Hundertwasser Art Centre', 'Dive the Poor Knights Islands', 'Walk waterfalls and coastal paths'],
     whyVisitPhotos: ["Hundertwasser Art Centre.jpg", "Archway Island south of Aorangi Island 1.jpg", "Whangarei Falls .jpg"],
     highlights: ['Art Centre', 'Diving', 'Waterfalls'],
     goodToKnow: [
@@ -1564,7 +1564,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'park', icon: '🌳', rank: 4,
     tagline: "Home of Tāne Mahuta, the largest living kauri tree.",
     description: "Waipoua Forest is the largest remaining tract of native kauri forest in New Zealand, on Northland's Kauri Coast. Tāne Mahuta, the largest known living kauri, stands a short walk from the road, and Te Matua Ngāhere is the second largest. The nearby Hokianga Harbour has huge sand dunes and the villages of Opononi and Omapere.",
-    whyVisit: ["See Tāne Mahuta, lord of the forest", "Ancient kauri walks", "Hokianga Harbour sand dunes"],
+    whyVisit: ['See Tāne Mahuta, lord of the forest', 'Walk among ancient kauri', "Explore Hokianga Harbour's sand dunes"],
     whyVisitPhotos: ["Tane Mahuta, 2016-01-22-2.jpg", "Te Matua Ngahere with damage 2008.jpg", "00 0460 Opononi, New Zeeland - Hokianga Harbour.jpg"],
     highlights: ['Tāne Mahuta', 'Kauri forest', 'Hokianga Harbour'],
     goodToKnow: [
@@ -1581,7 +1581,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'nature', icon: '🏖️', rank: 3,
     tagline: "Pōhutukawa-fringed beaches, a sea arch and a hot spring in the sand.",
     description: "The Coromandel Peninsula is a rugged, forested peninsula east of Auckland, ringed by white-sand beaches and old gold-mining towns. Cathedral Cove's sea arch and Hot Water Beach, where you dig your own thermal pool at low tide, are its two headline stops. Coromandel Town and Whitianga make good bases, and the east coast is lined with red-flowering pōhutukawa in summer.",
-    whyVisit: ["Cathedral Cove sea arch", "Dig a pool at Hot Water Beach", "Scenic coastal drives"],
+    whyVisit: ["Walk to Cathedral Cove's sea arch", 'Dig a pool at Hot Water Beach', 'Drive the scenic coast road'],
     whyVisitPhotos: ["Cathedral cove Beach.JPG", "Hot Water Beach kz4.jpg", "Cook's Bay near Whitianga, New Zealand.jpg"],
     highlights: ['Cathedral Cove', 'Hot Water Beach', 'Coastal drives'],
     goodToKnow: [
@@ -1598,7 +1598,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🌸', rank: 4,
     tagline: "A river city known for its themed gardens and the nearby Hobbiton Movie Set.",
     description: "Hamilton is the largest inland city in New Zealand, on the banks of the Waikato River. Hamilton Gardens is a collection of themed gardens that is one of the country's most visited attractions, and the Waikato Museum sits on the riverfront. The Hobbiton Movie Set, the Lord of the Rings and Hobbit location, is about an hour away near Matamata.",
-    whyVisit: ["Themed Hamilton Gardens", "Visit Hobbiton", "Riverside walks"],
+    whyVisit: ['Wander the themed Hamilton Gardens', 'Tour the Hobbiton movie set', "Walk Hamilton's riverside paths"],
     whyVisitPhotos: ["Hamilton Gardens - Indian Char Bagh Garden.JPG", "Hobbiton Movie Set, Matamata.jpg", "Cobham Bridge, Hamilton.jpg"],
     highlights: ['Hamilton Gardens', 'Hobbiton', 'Waikato River'],
     goodToKnow: [
@@ -1615,7 +1615,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🏄', rank: 4,
     tagline: "A laid-back surf town on the west coast, with black-sand beaches and a waterfall.",
     description: "Raglan is a small harbourside town on the Waikato's west coast, famous for its long left-hand surf breaks at Manu Bay and Whale Bay. Black-sand beaches, the 55-metre Bridal Veil Falls and the forested peak of Mount Karioi surround it. The town itself has cafés, craft shops and a relaxed, arty feel.",
-    whyVisit: ["Surf the left-hand breaks", "Bridal Veil Falls", "A relaxed harbour town"],
+    whyVisit: ['Surf the left-hand breaks', 'See Bridal Veil Falls', "Wander Raglan's relaxed harbour"],
     whyVisitPhotos: ["Surfing the sea at dusk (Unsplash).jpg", "Bridal Veil Falls, Waikato, New Zealand.jpg", "Raglan wharf and pontoon from the east in 2023.jpg"],
     highlights: ["Surfing", "Bridal Veil Falls", "Harbour town"],
     goodToKnow: [
@@ -1632,7 +1632,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'nature', icon: '🦠', rank: 3,
     tagline: "Limestone caves lit by thousands of glow-worms.",
     description: "Waitomo is a limestone region of caves, sinkholes and underground rivers in the King Country. Its glowworm caves, where thousands of tiny larvae light the ceilings like a starry sky, are among the most popular attractions in the North Island. Visitors can float through the dark on boats or go black-water rafting and abseiling for more adventure.",
-    whyVisit: ["Glowworm Caves by boat", "Explore Ruakuri Cave", "Marokopa Falls"],
+    whyVisit: ['Float through glowworm caves by boat', 'Explore Ruakuri Cave', 'See Marokopa Falls'],
     whyVisitPhotos: ["Glowworm Grotto, Waitomo Glowworm Cave.jpg", "Spiral Entrance to the Ruakuri Cave, Waitomo, New Zealand (50801068603).jpg", "Marokopa Falls and tree fern stump.jpg"],
     highlights: ["Glowworm Caves", "Ruakuri Cave", "Marokopa Falls"],
     goodToKnow: [
@@ -1649,7 +1649,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🏖️', rank: 4,
     tagline: "A sunny harbour city with a volcanic cone and a long surf beach.",
     description: "Tauranga is the main city of the Bay of Plenty, one of the sunniest parts of New Zealand. Mount Maunganui, a volcanic cone known as Mauao, rises beside a long beach and offers an easy summit walk. The harbour, hot pools and nearby waterfalls make it a good base for a few days on the coast.",
-    whyVisit: ["Climb Mauao for the view", "Mount Maunganui beach", "McLaren Falls Park"],
+    whyVisit: ['Climb Mauao for the view', 'Walk Mount Maunganui beach', 'Wander McLaren Falls Park'],
     whyVisitPhotos: ["Mount Maunganui Main Beach, 2013 (04).jpg", "Mount Maunganui main beach in Tauranga, New Zealand.jpg", "Trees in autumn colors in McLaren Falls Park.jpg"],
     highlights: ["Mauao summit", "Beach", "McLaren Falls"],
     goodToKnow: [
@@ -1666,7 +1666,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🌋', rank: 5,
     tagline: "A sunny coast town facing Whakaari / White Island's steaming volcano.",
     description: "Whakatāne is a laid-back town on the eastern Bay of Plenty, with a long beach, a river mouth and a strong Māori heritage. Offshore lies Whakaari / White Island, an active marine volcano that can be seen from the coast. Ōhope Beach and a clifftop walkway give the town a relaxed, outdoorsy feel.",
-    whyVisit: ["View Whakaari / White Island", "Ōhope beach and coastal walks", "River and coastal walks"],
+    whyVisit: ['View Whakaari / White Island', 'Walk Ōhope Beach and coastal paths', 'Walk river and coastal paths'],
     whyVisitPhotos: ["Whakaari - White Island Volcano in New Zealand 20061112 B.jpg", "Ohope Beach morning.jpg", "Whakatane River, from the River Edge Walkway.jpg"],
     highlights: ["White Island", "Ōhope Beach", "River walks"],
     goodToKnow: [
@@ -1683,9 +1683,9 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '♨️', rank: 1,
     tagline: "Geysers, boiling mud, Māori culture and giant redwoods.",
     description: "Rotorua sits on the Pacific Ring of Fire, where steaming vents, geysers and bubbling mud pools surround a lakeside town. It is one of the best places in New Zealand to experience Māori culture, from living villages to evening hāngī feasts. Giant redwoods, mountain biking, lake cruises and thermal baths fill out the visit.",
-    whyVisit: ["Geysers and boiling mud", "Māori culture and hāngī", "Redwoods and mountain biking"],
+    whyVisit: ['Watch geysers erupt and mud boil', 'See the Champagne Pool at Wai-O-Tapu', 'Cycle through the redwoods'],
     whyVisitPhotos: ["00 1555 Pohutu Geyser in Whakarewarewa (Whaka), New Zealand.jpg", "ChampagnePool-Wai-O-Tapu rotated MC.jpg", "Redwoods Forest Rotorua 37.jpg"],
-    highlights: ['Geothermal parks', 'Māori culture', 'Redwoods'],
+    highlights: ['Geothermal parks', 'Champagne Pool', 'Redwoods'],
     goodToKnow: [
       { icon: '👃', title: 'Expect a sulphur smell', detail: 'The rotten-egg scent is from the geothermal activity and fades quickly once you are used to it.' },
       { icon: '🎟️', title: 'Book cultural evenings', detail: 'Hāngī and performance evenings sell out in summer, so reserve a few days ahead.' },
@@ -1700,7 +1700,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'lake', icon: '🌊', rank: 2,
     tagline: "A lakeside town beside a huge crater lake, thundering falls and steaming vents.",
     description: "Taupō sits on the shore of Lake Taupō, New Zealand's largest lake, formed by one of the biggest volcanic eruptions in history. Huka Falls, the Craters of the Moon steam field and Aratiatia Rapids lie just north of town. Adventure sports from skydiving to bungy, and the lake itself, fill the days.",
-    whyVisit: ["Huka Falls and the Waikato River", "Craters of the Moon steam field", "Aratiatia Rapids"],
+    whyVisit: ['See Huka Falls on the Waikato River', 'Explore Craters of the Moon steam field', 'Watch the Aratiatia Rapids'],
     whyVisitPhotos: ["Huka Falls - Wairakei, NZ - DSC06186.jpg", "Craters of the Moon, Taupo - panoramio.jpg", "NZ090415 Aratiatia Rapids 01.jpg"],
     highlights: ["Huka Falls", "Steam field", "Aratiatia Rapids"],
     goodToKnow: [
@@ -1717,7 +1717,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'park', icon: '🌋', rank: 1,
     tagline: "New Zealand's oldest national park and the home of the Tongariro Alpine Crossing.",
     description: "Tongariro National Park is a dual World Heritage site, protecting three active volcanoes: Ruapehu, Ngāuruhoe and Tongariro. Its Tongariro Alpine Crossing is regularly rated one of the best one-day walks in the world, passing steaming vents and bright crater lakes. Ruapehu has North Island's main ski fields in winter.",
-    whyVisit: ["Tongariro Alpine Crossing", "Volcanic crater lakes", "Mount Ngauruhoe, or Mount Doom"],
+    whyVisit: ['Walk the Tongariro Alpine Crossing', 'See the volcanic crater lakes', 'Look up at Mount Ngauruhoe'],
     whyVisitPhotos: ["Emerald Lakes, NZ.jpg", "Crater Lake, Ruapehu, New Zealand 15.JPG", "Mount Ngauruhoe 04.jpg"],
     highlights: ["Alpine Crossing", "Crater lakes", "Mount Doom"],
     goodToKnow: [
@@ -1735,7 +1735,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'park', icon: '🏞️', rank: 4,
     tagline: "A remote forest homeland of the Tūhoe people, with a Great Walk around Lake Waikaremoana.",
     description: "Te Urewera is a large, mountainous forest in the North Island's east, legally recognised as a person and cared for by the Tūhoe people. Lake Waikaremoana, 'the sea of rippling waters', is circled by a Great Walk of about three to four days. Waterfalls and short bush walks are accessible near the lake's visitor area.",
-    whyVisit: ["Great Walk round Lake Waikaremoana", "Aniwaniwa Falls", "Remote native forest"],
+    whyVisit: ['Walk the Lake Waikaremoana Great Walk', 'See Aniwaniwa Falls', 'Hike through remote native forest'],
     whyVisitPhotos: ["New Zealand, Great Walk Lake Waikaremoana (4).JPG", "ext-aniwaniwa-falls.jpg", "Up Dam Track looking North2.jpg"],
     highlights: ['Great Walk', 'Waterfalls', 'Native forest'],
     goodToKnow: [
@@ -1752,7 +1752,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🎷', rank: 3,
     tagline: "The Art Deco capital of the world, on the doorstep of Hawke's Bay wine country.",
     description: "Napier was rebuilt in the Art Deco style after a 1931 earthquake flattened the town, and its streets are now one of the best-preserved Art Deco collections in the world. A seafront promenade, an aquarium and a hilltop lookout fill the centre, while Hawke's Bay's wineries, orchards and Cape Kidnappers gannet colony are within an hour's drive.",
-    whyVisit: ["Art Deco streets and architecture", "Hawke's Bay wineries", "Gannets at Cape Kidnappers"],
+    whyVisit: ["Wander Napier's Art Deco streets", "Taste wine at Hawke's Bay wineries", 'Watch gannets at Cape Kidnappers'],
     whyVisitPhotos: ["Napier, Part II- Art Deco - Napier9529.jpg", "HB Vineyard autumn.JPG", "Gannet colony at Cape Kidnappers.jpg"],
     highlights: ['Art Deco', 'Wineries', 'Gannet colony'],
     goodToKnow: [
@@ -1769,7 +1769,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🌅', rank: 4,
     tagline: "The first city in the world to see the sunrise, with a pioneering history and surf beaches.",
     description: "Gisborne, or Tūranga-nui-a-Kiwa, lies on a sunny bay near the International Date Line and is one of the first places on Earth to see each new day. Captain Cook first landed in New Zealand at nearby Kaiti Beach in 1769. The region is known for its Chardonnay, long surf beaches and strong Māori culture.",
-    whyVisit: ["First sunrise of the day", "Cook's first landing site", "Surf beaches like Wainui"],
+    whyVisit: ['Watch the first sunrise of the day', "Visit Cook's first landing site", 'Surf beaches like Wainui'],
     whyVisitPhotos: ["Gisborne NZ Sunrise Waikanae Beach.jpg", "Captain Cook at Gisborne.jpg", "Wainui Beach looking south.jpg"],
     highlights: ["Sunrise", "Cook landing", "Surf beaches"],
     goodToKnow: [
@@ -1786,7 +1786,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'nature', icon: '🌄', rank: 4,
     tagline: "A remote coastal drive to the easternmost lighthouse in New Zealand.",
     description: "The East Cape is the North Island's remote north-east corner, with a long coastal loop through small Māori communities, pōhutukawa-lined beaches and quiet bays. East Cape Lighthouse stands on a headland reached by a steep staircase, and is one of the first places in the world to see sunrise. The road, State Highway 35, makes a scenic multi-day drive.",
-    whyVisit: ["East Cape Lighthouse sunrise", "Historic coastal wharves", "Quiet bays like Hicks Bay"],
+    whyVisit: ['Watch sunrise at East Cape Lighthouse', 'See historic coastal wharves', 'Wander quiet bays like Hicks Bay'],
     whyVisitPhotos: ["East Cape Lighthouse (2) (25579643847).jpg", "Dilapidated Hicks Bay Wharf.jpg", "Hicks Bay, East Coast, New Zealand, 13th. Dec. 2010 - Flickr - PhillipC (2).jpg"],
     highlights: ["Lighthouse", "Old wharves", "Quiet bays"],
     goodToKnow: [
@@ -1803,7 +1803,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🌺', rank: 4,
     tagline: "A coastal city beneath a volcano, with gardens, art and a seafront walkway.",
     description: "New Plymouth is the main city of Taranaki, with Mount Taranaki rising behind it. The Coastal Walkway links the Te Rewa Rewa Bridge, black-sand beaches and the city centre, and Pukekura Park is a Victorian-era garden with lakes. The Len Lye Centre and Govett-Brewster Art Gallery give the city an unusually strong arts scene.",
-    whyVisit: ["The Coastal Walkway", "Pukekura Park gardens", "Len Lye Centre"],
+    whyVisit: ['Walk the Coastal Walkway', "Stroll Pukekura Park's gardens", 'See kinetic art at the Len Lye Centre'],
     whyVisitPhotos: ["Te Rewa Rewa Bridge, New Plymouth (14155038182).jpg", "Pukekura20101002.jpg", "Len Lye Centre in November 2018 551.jpg"],
     highlights: ['Coastal Walkway', 'Pukekura Park', 'Modern art'],
     goodToKnow: [
@@ -1820,7 +1820,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'park', icon: '🗻', rank: 3,
     tagline: "A near-perfect volcanic cone rising from the Taranaki plains.",
     description: "Egmont National Park is centred on Mount Taranaki (Mount Egmont), a 2,518-metre dormant volcano whose symmetrical cone rises straight from the surrounding farmland. Tracks range from short walks to waterfalls to the Pouakai Crossing and the full Around the Mountain Circuit. In clear weather the mountain reflects in the Pouakai Tarns.",
-    whyVisit: ["Mount Taranaki summit and views", "The Pouakai Range", "Waterfalls in the bush"],
+    whyVisit: ['Climb Mount Taranaki for summit views', 'Hike the Pouakai Range', 'Walk to waterfalls in the bush'],
     whyVisitPhotos: ["Mount Taranaki, New Zealand (05) - Northern Road to the top.JPG", "Pouakai Range, New Zealand, February 2016 05.JPG", "Dawson Falls, New Zealand.jpg"],
     highlights: ["Mount Taranaki", "Pouakai Range", "Waterfalls"],
     goodToKnow: [
@@ -1837,7 +1837,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🛶', rank: 4,
     tagline: "A river city with an arts scene and gateway to the Whanganui River Journey.",
     description: "Whanganui is a historic river city, with an arts community, a restored paddle steamer and the quirky Durie Hill Elevator. Its neoclassical Sarjeant Gallery has been restored and extended, and the city is the gateway to the river and Whanganui National Park upriver.",
-    whyVisit: ["The Sarjeant Gallery", "The Waimarie paddle steamer", "The Durie Hill Elevator"],
+    whyVisit: ['Visit the Sarjeant Gallery', 'Cruise on the Waimarie paddle steamer', 'Ride the Durie Hill Elevator'],
     whyVisitPhotos: ["Whanganui, New Zealand, Sarjeant Gallery (1).JPG", "Waimarie paddle steamer on Whanganui River, Whanganui.jpg", "Durie Hill Elevator Building - Wanganui.JPG"],
     highlights: ["Sarjeant Gallery", "Paddle steamer", "Durie Hill"],
     goodToKnow: [
@@ -1854,7 +1854,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'park', icon: '🛶', rank: 3,
     tagline: "A remote river-valley park of native bush, with a Great Walk by canoe and a bridge that leads nowhere.",
     description: "Whanganui National Park, established in 1986, covers 742 km² of native bush bordering the Whanganui River in the central North Island. The river itself is a Great Walk, the five-day Whanganui Journey by canoe or kayak from Taumarunui to Pipiriki. Deep in the bush stands the Bridge to Nowhere, built in 1936 for farm settlements that failed. The Department of Conservation calls it the national park most closely tied to human settlement, with Māori pā sites and mission settlements along the river.",
-    whyVisit: ["Paddle the Whanganui Journey", "The Bridge to Nowhere", "River Road and Jerusalem"],
+    whyVisit: ['Paddle the Whanganui Journey', 'Walk to the Bridge to Nowhere', 'Drive River Road to Jerusalem'],
     whyVisitPhotos: ["Whanganui Journey.jpg", "Bridge to Nowhere (25430934253).jpg", "Along the River Road by Jacqui McGowan.jpg"],
     highlights: ["Great Walk by canoe", "Bridge to Nowhere", "River Road drive"],
     goodToKnow: [
@@ -1871,7 +1871,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🏉', rank: 5,
     tagline: "A university city and regional hub with museums, gardens and rugby history.",
     description: "Palmerston North is the main city of the Manawatū, a regional hub with a large university and a relaxed, student-friendly feel. The Te Manawa museum complex, the Esplanade gardens and the New Zealand Rugby Museum are its main visitor draws. It is a convenient stop between Wellington and the central North Island.",
-    whyVisit: ["Te Manawa museum and gallery", "The Esplanade gardens", "New Zealand Rugby Museum"],
+    whyVisit: ['Explore Te Manawa museum and gallery', 'Stroll the Esplanade gardens', 'Visit the New Zealand Rugby Museum'],
     whyVisitPhotos: ["Te Manawa Museum of Art, Science and History 06.JPG", "Victoria Esplanade miniature railway ride.jpg", "New Zealand Rugby Museum 06.JPG"],
     highlights: ['Te Manawa', 'Esplanade', 'Rugby Museum'],
     goodToKnow: [
@@ -1918,7 +1918,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🚋', rank: 1,
     tagline: "The world's southernmost capital of a sovereign state.",
     description: "Wellington has been New Zealand's capital since 1865. Limited land between harbour and hills makes it denser than most New Zealand cities, and the Golden Mile from the railway station to Courtenay Place is easy to walk. Beyond the main sights, Weta Workshop runs tours of its film-effects studio in Miramar, and Cuba Street is the bohemian strip of cafés, bars and music venues.",
-    whyVisit: ["Te Papa, the national museum", "Cable car above the city", "Zealandia's valley and reservoir"],
+    whyVisit: ['Explore Te Papa, the national museum', 'Ride the cable car above the city', "Walk through Zealandia's valley"],
     whyVisitPhotos: ["Exterior of Te Papa, 2016-01-25.jpg", "Wellington Cable Car Cityscape.jpg", "20170409 Zealandia 013-Pano (cropped).jpg"],
     highlights: ['Te Papa', 'Cable car', 'Zealandia'],
     goodToKnow: [{ icon: "🌬️", title: "Pack for wind", detail: "Wellington is nicknamed Windy Wellington, with an average wind speed of 27 km/h, so pack a windproof layer in every season." }, { icon: "🚌", title: "Tag off the bus", detail: "Metlink buses and trains take Snapper or contactless cards. Tag on and off buses, or you are charged the full route fare." }, { icon: "🎟️", title: "Te Papa charges visitors", detail: "Te Papa is free for New Zealanders and people living in New Zealand but costs NZ$35 for international visitors aged 16 and over, and some exhibitions charge extra." }],
@@ -1931,7 +1931,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'island', icon: '🦀', rank: 5,
     tagline: "Remote islands 800 km east of the mainland, among the first places on Earth to see the dawn.",
     description: "The Chatham Islands are a remote group in the Pacific about 800 km east of Christchurch. Home to the Moriori and Māori, they have their own time zone, a rugged coast, a large lagoon and rare birds such as the Chatham Island taiko. The main island is reached by a two-hour flight from Wellington, Christchurch or Auckland.",
-    whyVisit: ["Remote, rarely visited landscape", "Moriori tree carvings at Hapupu", "Rare endemic birds"],
+    whyVisit: ['Explore remote, rarely visited landscapes', 'See Moriori tree carvings at Hapupu', 'Spot rare endemic birds'],
     whyVisitPhotos: ["Te Whanga Lagoon at Blind Jims Creek. 178m Korako is to the left, 149m Rangitihi and 188m Mt Chudleigh to the right.jpg", "Chatham Island Tree Carving.JPG", "Pterodroma magentae in New Zealand.jpg"],
     highlights: ['Remote islands', 'Moriori heritage', 'Rare birds'],
     goodToKnow: [
