@@ -59,7 +59,7 @@ Before anyone (or any model) looks at a candidate, reject it by metadata and pix
 
 What survives goes on to the four checks.
 
-Each of the three why-visit photos is checked on its own: a destination is not done until every one passes. When one bad photo turns up, **audit the rest of that destination and its neighbours**: bad picks come from the same batch and share the same mistake.
+Each why-visit photo (one per reason, two to four) is checked on its own: a destination is not done until every one passes. When one bad photo turns up, **audit the rest of that destination and its neighbours**: bad picks come from the same batch and share the same mistake.
 
 ## Headers
 
@@ -85,7 +85,7 @@ The first impression of the place, so never left to whatever photo leads its Wik
 One photo per reason, three per destination, in the same order as `whyVisit`.
 
 - **It must show that reason**, not the place in general. "Punting on the Avon" is a punt on the Avon; "Meet the cheeky kea" is a kea. If no good photo of the reason exists, rewrite the reason (see `WRITING.md`) rather than settling for a vague one.
-- **Three different photos** within the card row. A why-visit photo **may also be the destination's header, or a spot's photo in that destination**, when it is the best photo of the thing: the Waitomo "Float through glowworm caves by boat" photo is the Waitomo header, a why-visit photo and the Waitomo Glowworm Caves spot's photo, because it beats the alternatives for all three. Do not pick a worse photo to avoid a repeat. (The same file for two different destinations is still a failure.)
+- **Different photos** within the card row (one per reason, two to four). A why-visit photo **may also be the destination's header, or a spot's photo in that destination**, when it is the best photo of the thing: the Waitomo "Float through glowworm caves by boat" photo is the Waitomo header, a why-visit photo and the Waitomo Glowworm Caves spot's photo, because it beats the alternatives for all three. Do not pick a worse photo to avoid a repeat. (The same file for two different destinations is still a failure.)
 - **Shape:** the cards are about 1.6:1 landscape, centre-cropped. Prefer a landscape file with the subject near the centre. If the default crop cuts off the subject (a tall statue, a bird high in the frame), give the file a subject point in `PHOTO_SUBJECT` (see "Keeping the subject in the crop").
 - **Size:** at least **1280px wide**. A ground-level view is preferred; an aerial is acceptable here only when the reason is itself about the view from above.
 - Store the three Commons file names in `whyVisitPhotos`, in order.
@@ -169,7 +169,7 @@ Every photo must show something the others and the spot's own photo do not. Reje
 
 ## When Commons has no suitable photo
 
-**Default to non-Commons imagery whenever Commons cannot give a spot or destination enough good photos.** "Enough" means the spot has a header or three why-visit photos (for a destination) or a spot photo, and for a gallery at least two photos that pass every rule below. A spot with no good Commons photo is never dropped, left with a wrong or archive photo, or left without a gallery for want of a Commons file. Use these in order:
+**Default to non-Commons imagery whenever Commons cannot give a spot or destination enough good photos.** "Enough" means the spot has a photo, or a destination has a header and a why-visit photo for each of its reasons (two to four) or a spot photo, and for a gallery at least two photos that pass every rule below. A spot with no good Commons photo is never dropped, left with a wrong or archive photo, or left without a gallery for want of a Commons file. Use these in order:
 
 1. **Openly licensed** (CC0, public domain, CC BY, CC BY-SA): Openverse (`scripts/openverse-search.py`, which indexes Flickr and others), DOC images that DOC labels "Creative Commons", Unsplash, Pexels. Keep the credit.
 2. **Official or tourism-organisation photos** (DOC, regional tourism boards, the operator or steward of the place). Not openly licensed, so a copyright risk for a published app. Use them, record the owner and source page in the credit, and flag in the pull request that permission should be sought.

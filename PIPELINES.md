@@ -52,7 +52,7 @@ Benchmark: Clyde, Hamilton, Blue Lake, the 1913 Government Gardens and the archi
 2. **Writer** — several variants in the app's voice (`WRITING.md` → "Voice").
 3. **Fact-checker** — every claim against the sources; cut or flag the unverifiable.
 4. **Editor** — style, repetition within and across entries.
-5. **Reconciler** — couple the three reasons to their photos with Pipeline B.
+5. **Reconciler** — couple each reason (two to four, by the destination's popularity) to its photo with Pipeline B.
 
 ## The run's final report (Atlas, Lens and Quill, every run)
 **Nothing a run decided on its own is left silent.** Every run, of any pipeline, ends with a report to the owner that lists each of the following by name, with the reason. A thing that is not in the report did not happen. Do not summarise these away as "a few" or "some".

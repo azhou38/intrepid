@@ -330,13 +330,14 @@ function applyPicks(picks: Picks) {
   ov = ov.slice(0, start) + body + ov.slice(end);
   writeFileSync(overridesPath, ov);
 
-  // Why-visit photos → whyVisitPhotos on the destination, only once all three are picked.
+  // Why-visit photos → whyVisitPhotos on the destination, only once every reason (two to four) has its photo.
   const destPath = resolvePath(ROOT, 'src/data/destinations.ts');
   let ds = readFileSync(destPath, 'utf8');
   const skipped: string[] = [];
   for (const [id, byIndex] of Object.entries(picks.why)) {
-    const files = [0, 1, 2].map(i => byIndex[i]);
-    if (files.some(f => !f)) { skipped.push(id); continue; }
+    const nPicked = Object.keys(byIndex).length;   // one photo per reason: two to four
+    const files = Array.from({ length: nPicked }, (_, i) => byIndex[i]);
+    if (nPicked < 2 || files.some(f => !f)) { skipped.push(id); continue; }
     const at = ds.indexOf(`id: '${id}'`);
     if (at < 0) { skipped.push(id); continue; }
     const next = ds.indexOf("id: '", at + 5);
@@ -352,7 +353,7 @@ function applyPicks(picks: Picks) {
 
   console.log(`Applied ${Object.keys(picks.headers).length} headers, ${Object.keys(picks.spots).length} spot photos, ` +
     `${Object.keys(picks.why).length - skipped.length} why-visit sets.`);
-  if (skipped.length) console.log(`Skipped why-visit photos (need all three picked): ${skipped.join(', ')}`);
+  if (skipped.length) console.log(`Skipped why-visit photos (every reason needs its photo picked): ${skipped.join(', ')}`);
   console.log('Next: npx tsx scripts/check-destination-headers.ts && npx tsx scripts/build-image-manifest.ts');
 }
 

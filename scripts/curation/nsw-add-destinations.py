@@ -42,7 +42,7 @@ for did in (ids or list(judged)):
     if bad or MK.search(json.dumps(d)): STAGE['skipped'].append((did, f'copy rules after rewrite: {bad}')); continue
     hdr = j['header'].get('choice')
     picks = {'header': nm(hdr) if ok(hdr) else None, 'why': [nm(w['choice']) for w in why]}
-    if len(set(picks['why'])) != 3: STAGE['skipped'].append((did, 'why photos repeat')); continue
+    if len(set(picks['why'])) != len(picks['why']) or not 2 <= len(picks['why']) <= 4: STAGE['skipped'].append((did, 'why photos repeat')); continue
     if dry: STAGE['added'].append(did); continue
     t = tempfile.NamedTemporaryFile('w', suffix='.json', delete=False); json.dump({'destination': d}, t, ensure_ascii=False); t.close()
     tp = tempfile.NamedTemporaryFile('w', suffix='.json', delete=False); json.dump(picks, tp); tp.close()

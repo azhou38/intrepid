@@ -4,7 +4,7 @@
   python3 scripts/curation/apply-destination.py curation/<branch>/quill/<id>/final.json --picks picks.json [--dry-run]
 
 final.json: { destination: { id, name, country, countryCode, timezone, continent, coordinates, category, defaultZoomSpanKm,
-              rank, icon, tagline, description, whyVisit[3], highlights[3], goodToKnow[3 {icon,title,detail}], bestMonths,
+              rank, icon, tagline, description, whyVisit[2-4 by popularity], highlights[one per reason], goodToKnow[3 {icon,title,detail}], bestMonths,
               bestTimeBlurb, seasonalTags? }, spots, notes }
 picks.json:  { "header": "<Commons file>", "why": ["<file>", "<file>", "<file>"] }   (files agreed by both judges)
 
@@ -24,11 +24,15 @@ picks = json.load(open(args[args.index('--picks') + 1])) if '--picks' in args el
 dry = '--dry-run' in args
 
 no_header = '--allow-no-header' in args   # no passing header exists in any tier: still add the destination, with NO_PHOTO (the owner is asked for one)
-if (not picks.get('header') and not no_header) or len(picks.get('why', [])) != 3 or not all(picks['why']):
-    sys.exit(f"refusing: {d['id']} needs an accepted header and three why-visit photos (picks.json); have {picks}")
-for k in ('whyVisit', 'highlights', 'goodToKnow'):
-    if len(d.get(k, [])) != 3:
-        sys.exit(f'refusing: {k} must have exactly three entries')
+n_why = len(d.get('whyVisit', []))
+if not 2 <= n_why <= 4:
+    sys.exit(f'refusing: whyVisit must have two to four reasons (4 for the most popular, 3 average, 2 less popular); have {n_why}')
+if (not picks.get('header') and not no_header) or len(picks.get('why', [])) != n_why or not all(picks['why']):
+    sys.exit(f"refusing: {d['id']} needs an accepted header and one why-visit photo per reason ({n_why}) (picks.json); have {picks}")
+if len(d.get('highlights', [])) != n_why:
+    sys.exit(f'refusing: highlights must have one entry per reason ({n_why})')
+if len(d.get('goodToKnow', [])) != 3:
+    sys.exit('refusing: goodToKnow must have exactly three entries')
 if d['bestTimeBlurb'].count('{months}') != 1:
     sys.exit('refusing: bestTimeBlurb needs exactly one {months}')
 

@@ -14,7 +14,7 @@
 //   wiki        its photo title (wiki, else name) is missing on Wikipedia, a disambiguation page, or a redirect —
 //               only for spots whose photo comes from that lookup (no override, no supplied photo)
 // Destinations
-//   shape       not exactly three whyVisit / highlights / goodToKnow, a whyVisit reason outside 2–8 words, or bestTimeBlurb without exactly one {months}
+//   shape       whyVisit not two to four (or highlights / whyVisitPhotos not matching its count), goodToKnow not exactly three, a whyVisit reason outside 2–8 words, or bestTimeBlurb without exactly one {months}
 //   voice       marketing words in tagline or description
 // With --offline only the checks that need no network run (shape, voice, bio, no-ticket).
 // Fetches go through the shared cache (http-cache.ts). Prints one line per failing entry; --json writes them all.
@@ -79,14 +79,16 @@ async function checkWiki(title: string): Promise<string | null> {
 (async () => {
   for (const d of DESTINATIONS.filter(x => destIds.has(x.id))) {
     const it: Issue = { kind: 'destination', id: d.id, name: d.name, checks: [] };
-    if ((d.whyVisit?.length ?? 0) !== 3) add(it, 'shape', `${d.whyVisit?.length ?? 0} whyVisit (needs 3)`);
+    const nWhy = d.whyVisit?.length ?? 0;   // 2–4 by popularity (WRITING.md): the rank sets the target, the lint only enforces the range and that every reason has its highlight and photo
+    if (nWhy < 2 || nWhy > 4) add(it, 'shape', `${nWhy} whyVisit (needs 2–4)`);
+    if (d.whyVisitPhotos && d.whyVisitPhotos.length !== nWhy) add(it, 'shape', `${d.whyVisitPhotos.length} whyVisitPhotos for ${nWhy} whyVisit`);
     for (const w of d.whyVisit ?? []) {
       const n = w.trim().split(/\s+/).length;
       if (n < 2 || n > 8) add(it, 'shape', `whyVisit "${w}" is ${n} words (needs 2–8)`);
       // A reason is an action and its subject, never a bare name ("Len Lye Centre", "Tongariro Alpine Crossing").
       if (!/^(See|Visit|Walk|Hike|Cross|Climb|Swim|Soak|Taste|Sail|Cruise|Explore|Watch|Spot|Meet|Ride|Paddle|Kayak|Dive|Snorkel|Wander|Stroll|Sip|Eat|Try|Hunt|Ski|Soar|Fly|Drive|Join|Feed|Stay|Discover|Relax|Trek|Camp|Float|Raft|Bungy|Gaze|Admire|Browse|Tour|Cycle|Bike|Surf|Fish|Dine|Shop|Roam|Find|Enjoy|Experience|Take|Hear|Step|Stand|Ascend|Descend|Sample|Look|Spend|Go|Board|Paraglide|Zipline|Scramble|Marvel|Sandboard|Dig|Punt|View|Photograph|Pan|Learn|Feel|Taste|Cheer|Shelter|Pause|Pass|Reach|Follow|Hunt|Scale|Wade|Bathe|Ramble|Savour|Sunbathe|Stargaze|Whale-watch|Heli-hike|Stop)\b/i.test(w.trim())) add(it, 'shape', `whyVisit "${w}" does not start with an action (e.g. "Walk the…", "See the…")`);
     }
-    if ((d.highlights?.length ?? 0) !== 3) add(it, 'shape', `${d.highlights?.length ?? 0} highlights (needs 3)`);
+    if ((d.highlights?.length ?? 0) !== nWhy) add(it, 'shape', `${d.highlights?.length ?? 0} highlights (needs one per whyVisit: ${nWhy})`);
     if ((d.goodToKnow?.length ?? 0) !== 3) add(it, 'shape', `${d.goodToKnow?.length ?? 0} goodToKnow (needs 3)`);
     if (((d.bestTimeBlurb ?? '').match(/\{months\}/g) ?? []).length !== 1) add(it, 'shape', 'bestTimeBlurb needs exactly one {months}');
     for (const [f, v] of [['tagline', d.tagline], ['description', d.description]] as const) {

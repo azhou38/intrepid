@@ -4,7 +4,7 @@
 //   npx tsx scripts/curation/lens-triage.ts (--region <id> | --dest <id> …) --out curation/<branch>/lens
 //        [--prefilter prefilter.json] [--flag <slot> …]
 //
-// Slots: a destination's header (`dest:<id>:header`), its why-visit photos (`dest:<id>:why1`…`why3`) and each of its
+// Slots: a destination's header (`dest:<id>:header`), its why-visit photos (`dest:<id>:why1`…`why4`) and each of its
 // spots (`spot:<id>`); a region's standalone spots go in a `standalone` group. Each slot gets a status:
 //   search   no photo, the pre-filter fails or flags it, or it's named with --flag → the searcher finds candidates
 //   confirm  a photo nobody has judged yet → one judge looks at the current photo only, and only a rejection leads
