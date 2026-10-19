@@ -5348,6 +5348,7 @@ const destItems = useMemo((): DestItem[] =>
           focusSpotId={spotFocusId}
           destination={nearCtx ? null : spotDestination(selectedSpot) ?? null}
           nearLabel={nearCtx ? (nearCtx.district ?? nearCtx.near?.name) : undefined}
+          nearEyebrow={nearCtx?.district ? 'SPOTS' : 'NEAR'}
           onClose={handleCloseSpot}
           onExpand={handleSheetExpand}
           onCollapse={handleCloseSheet}
