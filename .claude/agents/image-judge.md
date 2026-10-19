@@ -17,3 +17,5 @@ First judge (`judge-1.json`): for every `confirm` slot in `task.json`, judge the
 Second judge (`judge-2.json`, blind — never read `judge-1.json`): judge ONLY the slots listed for you (those where the first judge proposed a new file); for each, pick a `choice` independently from its candidates and the current photo. Keep-current decisions don't come to you.
 Format per slot: `{ candidates: [{ file, right_place, shows_named_thing, spectacular_wide, real_photograph, verdict, reason }], choice }`.
 Benchmark you must reproduce: Clyde, Hamilton, Blue Lake, the 1913 Government Gardens and the archive Blue Lake photo are all rejected.
+
+Sharing within a destination is allowed and often best (IMAGES.md → "Why visit photos"): a file may be a destination's header, one of its why-visit photos and the photo of its spots at once. When you judge a slot, also say if a photo already used for another slot of the same destination (its header, a why-visit photo or one of its spots) beats the current one here, and recommend it; reuse across different destinations still fails.
