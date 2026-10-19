@@ -789,13 +789,14 @@ const destTierOrder = (): string[] => {
   return [...Object.keys(gz).sort((x, y) => gz[y] - gz[x]), ''];
 };
 const destTierStyleCache = new Map<string, any>();
-const destTierStyle = (tier: string, on: boolean) => {
-  const key = `${tier}|${on ? 1 : 0}`;
+// `on`: the tier's photo gate is crossed; `labelOn`: the name's own gate (a bucket of destLabelGates) is crossed too.
+const destTierStyle = (tier: string, on: boolean, labelOn: boolean = on) => {
+  const key = `${tier}|${on ? 1 : 0}|${labelOn ? 1 : 0}`;
   let st = destTierStyleCache.get(key);
   if (!st) {
     st = {
       ...DEST_SYMBOL_STYLE,
-      iconOpacity: on ? 1 : 0, textOpacity: on ? 1 : 0,
+      iconOpacity: on ? 1 : 0, textOpacity: on && labelOn ? 1 : 0,
       iconOpacityTransition: { duration: DEST_GATE_FADE_MS, delay: 0 },
       textOpacityTransition: { duration: DEST_GATE_FADE_MS, delay: 0 },
     };
@@ -803,6 +804,69 @@ const destTierStyle = (tier: string, on: boolean) => {
   }
   return st;
 };
+
+// ── Destination name gates ────────────────────────────────────────────────────────────────────────────────────────────
+// A destination's name is shown from ONE zoom upward, decided ahead of time, so it fades in once and then stays instead of
+// being placed and dropped by Mapbox's frame-by-frame collision as neighbours' pins and names come and go (Abel Tasman
+// National Park's name faded in and out repeatedly while zooming in). Zooming in only moves neighbours apart, so the gate
+// is the last zoom at which the name would still touch something: a neighbour's photo pin that is already showing there,
+// or the name of a destination that comes before it in priority. Pins and names have fixed on-screen sizes, so the test
+// at zoom z only needs the pair's separation, which scales with 2^z.
+const LABEL_GATE_STEP = 0.05;
+const LABEL_BUCKET = 0.5;   // gates are rounded UP to this grid, so a layer per bucket carries the names that share it
+const labelBox = (name: string) => {
+  const CHW = 6.3, MAXW = 90, LH = 13, perLine = Math.floor(MAXW / CHW);
+  let lines = 1, cur = 0;
+  for (const w of name.split(/\s+/)) {
+    if (cur === 0) cur = w.length;
+    else if (cur + 1 + w.length <= perLine) cur += 1 + w.length;
+    else { lines++; cur = w.length; }
+    while (cur > perLine) { lines++; cur -= perLine; }
+  }
+  return { w: Math.min(MAXW, Math.min(name.length, perLine) * CHW + 2), h: lines * LH };
+};
+function computeDestLabelGates(isVisited: (id: string) => boolean, selectedCC: string | undefined): Map<string, number> {
+  const gz = destGateZooms();
+  const R0 = DEST_PIN_SIZE / 2;
+  type Item = { id: string; gate: number; x: number; y: number; w: number; h: number; order: number };
+  const items: Item[] = DESTINATIONS.map(d => {
+    const m = mercatorPx(d.coordinates.longitude, d.coordinates.latitude, 1);
+    const eff = Math.max(1, d.rank - (isVisited(d.id) ? 1 : 0));
+    const own = selectedCC && d.countryCode === selectedCC;
+    const g = own ? 2 : Math.min(gz[`r${eff}`] ?? Infinity, gz[`c${d.countryCode}`] ?? Infinity);
+    const b = labelBox(d.name);
+    return { id: d.id, gate: Number.isFinite(g) ? g : 2, x: m.x, y: -m.y, w: b.w, h: b.h, order: eff * 1000 };
+  });
+  items.sort((a, b) => a.gate - b.gate || a.order - b.order || (a.id < b.id ? -1 : 1));
+  const labelGate = new Map<string, number>();
+  const placed: Item[] = [];
+  for (const d of items) {
+    let last = -Infinity;
+    for (let z = d.gate; z <= d.gate + 9; z += LABEL_GATE_STEP) {
+      const s = (512 * Math.pow(2, z)) / 360;
+      const l = -d.w / 2, r = d.w / 2, t = R0 + 4, b = R0 + 4 + d.h;   // the name box, relative to its own pin
+      let hit = false;
+      for (const n of items) {
+        if (n === d) continue;
+        const dx = (n.x - d.x) * s, dy = (n.y - d.y) * s;
+        if (Math.abs(dx) > 300 || Math.abs(dy) > 300) continue;
+        // n's photo pin (square of R0 + 2 around its point) once it shows
+        if (n.gate <= z && l < dx + R0 + 2 && r > dx - R0 - 2 && t < dy + R0 + 2 && b > dy - R0 - 2) { hit = true; break; }
+      }
+      if (!hit) for (const m of placed) {
+        const mz = labelGate.get(m.id)!;
+        if (mz > z) continue;
+        const dx = (m.x - d.x) * s, dy = (m.y - d.y) * s;
+        if (l < dx + m.w / 2 && r > dx - m.w / 2 && t < dy + R0 + 4 + m.h && b > dy + R0 + 4) { hit = true; break; }
+      }
+      if (hit) last = z;
+    }
+    const lg = Math.max(d.gate, last === -Infinity ? d.gate : last + LABEL_GATE_STEP);
+    labelGate.set(d.id, Math.ceil(lg / LABEL_BUCKET - 1e-9) * LABEL_BUCKET);
+    placed.push(d);
+  }
+  return labelGate;
+}
 
 // How many zoom levels out from a destination's settled home view counts as "zoomed out" for
 // its return arrow — log2(1.6), i.e. the same 1.6× visible-span threshold this used to express
@@ -914,9 +978,13 @@ const DEST_SYMBOL_STYLE: any = {
   textHaloColor: 'rgba(0,0,0,0.6)',
   textHaloWidth: 1.2,
   textHaloBlur: 0.4,
+  // A name is shown or hidden by its OWN precomputed zoom gate (destLabelGates, one layer per gate bucket), never by Mapbox's
+  // per-frame collision: the collision test faded a name out and back in several times during one zoom (Abel Tasman
+  // National Park flickered as Nelson's pin and Kahurangi's name came and went). textOptional keeps a name tied to its own
+  // photo (no photo, no name); it neither blocks nor is blocked by other symbols.
   textOptional: true,
-  textAllowOverlap: false,
-  textIgnorePlacement: false,
+  textAllowOverlap: true,
+  textIgnorePlacement: true,
   textPadding: 1,
 };
 const CAMERA_DEFAULT_SETTINGS = { centerCoordinate: [10, 20] as [number, number], zoomLevel: 1 };
@@ -4434,6 +4502,11 @@ const destItems = useMemo((): DestItem[] =>
   // level later. Pins that got their photo earlier sort first, so a newcomer only shows once there is room for it; within
   // a batch the plan's priority decides, and the selected destination always comes first.
   const destPhotoSinceRef = useRef<{ seq: number; since: Map<string, number> }>({ seq: 0, since: new Map() });
+  // Each destination's name gate (see computeDestLabelGates): recomputed only when a visit changes a destination's tier or a
+  // country is selected (its destinations show without a rank gate).
+  const destLabelGates = useMemo(
+    () => computeDestLabelGates(id => visitIndex.isDestVisited(id), selectedCountry?.countryCode ?? selectedDest?.countryCode),
+    [visitIndex, selectedCountry, selectedDest]);
   const nativeDestPins = useMemo(() => {
     if (!NATIVE_DEST_PINS) return null;
     const book = destPhotoSinceRef.current;
@@ -4457,7 +4530,7 @@ const destItems = useMemo((): DestItem[] =>
         type: 'Feature',
         id: dest.id,
         geometry: { type: 'Point', coordinates: [dest.coordinates.longitude, dest.coordinates.latitude] },
-        properties: { id: dest.id, img, label: dest.name, sort: destSortKey(dest.id), tier: destPinPlan.fadeTier.get(dest.id) ?? '' },
+        properties: { id: dest.id, img, label: dest.name, sort: destSortKey(dest.id), tier: destPinPlan.fadeTier.get(dest.id) ?? '', lb: destLabelGates.get(dest.id) ?? 99 },
       });
     }
     // Register the pin image of every destination that could be promoted soon (eligible now, or one rank tier deeper)
@@ -4476,7 +4549,24 @@ const destItems = useMemo((): DestItem[] =>
     }
     if (added) destPinSpecListRef.current = [...specs.values()];
     return { shape: { type: 'FeatureCollection' as const, features }, specs: destPinSpecListRef.current };
-  }, [promotedDests, visitIndex, visitedSpotCountByDest, destPinPlan, planDest, eligibleDests, visibleRank]);
+  }, [promotedDests, visitIndex, visitedSpotCountByDest, destPinPlan, planDest, eligibleDests, visibleRank, destLabelGates]);
+  // One symbol layer per (photo tier, name-gate bucket) present in the data. Within a tier the layers are stacked so the
+  // pins that sort first (the placement priority above) sit on top and are placed first, as they did in a single layer.
+  const destSymbolLayers = useMemo(() => {
+    if (!nativeDestPins) return [];
+    const best = new Map<string, { tier: string; lb: number; sort: number }>();
+    for (const f of nativeDestPins.shape.features) {
+      const tier = String(f.properties?.tier ?? ''), lb = Number(f.properties?.lb ?? 99), sort = Number(f.properties?.sort ?? 0);
+      const k = `${tier}|${lb}`, cur = best.get(k);
+      if (!cur || sort < cur.sort) best.set(k, { tier, lb, sort });
+    }
+    const out: { id: string; tier: string; lb: number }[] = [];
+    for (const tier of destTierOrder()) {   // bottom → top
+      const ls = [...best.values()].filter(v => v.tier === tier).sort((a, b) => b.sort - a.sort);   // highest sort key first = bottom
+      for (const v of ls) out.push({ id: `destPhotoSymbols-${tier || 'ungated'}-${v.lb}`, tier, lb: v.lb });
+    }
+    return out;
+  }, [nativeDestPins]);
 
   // Which sliding sheet is mounted right now. When it changes from one level to another, the incoming sheet is a
   // replacement for the one that was showing and starts where that one rested (see sheetPose) rather than from below
@@ -4811,13 +4901,13 @@ const destItems = useMemo((): DestItem[] =>
               if (dest && !pressBlocked()) { if (selectedDestRef.current?.id === dest.id) handleResetToDest(); else handleMarkerPress(dest); }
             }}
           >
-            {destTierOrder().map((tier, i, all) => (
+            {destSymbolLayers.map((l, i, all) => (
               <MapboxGL.SymbolLayer
-                key={tier || 'ungated'}
-                id={`destPhotoSymbols-${tier || 'ungated'}`}
-                aboveLayerID={i === 0 ? 'destStampCircles' : `destPhotoSymbols-${all[i - 1] || 'ungated'}`}
-                filter={['==', ['get', 'tier'], tier]}
-                style={destTierStyle(tier, destGateOn(tier, camZoom))}
+                key={l.id}
+                id={l.id}
+                aboveLayerID={i === 0 ? 'destStampCircles' : all[i - 1].id}
+                filter={['all', ['==', ['get', 'tier'], l.tier], ['==', ['get', 'lb'], l.lb]] as any}
+                style={destTierStyle(l.tier, destGateOn(l.tier, camZoom), camZoom >= l.lb - 1e-6)}
               />
             ))}
           </MapboxGL.ShapeSource>
