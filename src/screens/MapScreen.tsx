@@ -221,6 +221,7 @@ function DestPin({ dest, spotCount, isVisited, isSelected, pinState, hideLabel =
 }
 
 const SPOT_PIN_SIZE = 28;
+const SPOT_PIN_RIM = 'rgba(0,0,0,0.22)';   // the faint dark rim around a photo spot pin
 const SPOT_PIN_SIZE_SELECTED = 40;
 
 const SPOT_LABEL_GAP = 6;
@@ -359,12 +360,22 @@ const SpotMarker = memo(function SpotMarker({ spot, isVisited, isSelected, exiti
         <Pressable disabled={exiting} onPress={() => onPress(spot)} hitSlop={6}>
           <View style={styles.spotMarkerRow}>
             <View style={styles.spotPinWrap}>
+              {/* A faint dark rim around the whole pin (bubble and tail), 1 px outside the white or green ring, so a white pin
+                  keeps its edge against a pale map. */}
+              <View
+                pointerEvents="none"
+                style={{ position: 'absolute', top: -1, left: -1, width: bubbleSize + 2, height: bubbleSize + 2, borderRadius: (bubbleSize + 2) / 2, backgroundColor: SPOT_PIN_RIM }}
+              />
               <Svg
-                width={pinR * 2} height={pinR * 2 + tailL}
-                style={{ position: 'absolute', top: 0, left: 0 }}
+                width={pinR * 2 + 2} height={pinR * 2 + tailL + 2}
+                style={{ position: 'absolute', top: -1, left: -1 }}
               >
                 <Path
-                  d={`M ${pinR} ${pinR} L ${pinR - tanX} ${pinR + tanY} L ${pinR} ${pinR + tipD} L ${pinR + tanX} ${pinR + tanY} Z`}
+                  d={`M ${pinR + 1} ${pinR + 1} L ${pinR + 1 - tanX} ${pinR + 1 + tanY} L ${pinR + 1} ${pinR + 1 + tipD} L ${pinR + 1 + tanX} ${pinR + 1 + tanY} Z`}
+                  fill={SPOT_PIN_RIM} stroke={SPOT_PIN_RIM} strokeWidth={2} strokeLinejoin="round"
+                />
+                <Path
+                  d={`M ${pinR + 1} ${pinR + 1} L ${pinR + 1 - tanX} ${pinR + 1 + tanY} L ${pinR + 1} ${pinR + 1 + tipD} L ${pinR + 1 + tanX} ${pinR + 1 + tanY} Z`}
                   fill={ringColor}
                 />
               </Svg>
