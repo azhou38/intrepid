@@ -113,7 +113,7 @@ for f in sorted(glob.glob('curation/nz-rest/lens/judge-2-C*.json')):
                 new = 'whyVisitPhotos: [' + ', '.join(jq(a) for a in arr) + ']'
                 dest = dest[:m.start()] + re.sub(r'whyVisitPhotos: \[.*?\]', lambda _: new, dest[m.start():m.end()], 1, flags=re.S) + dest[m.end():]
             ext.pop(k, None)   # the new external entry is written by `link`
-            if key and isinstance(hc, dict): set_in('PHOTO_SUBJECT', k, '{ ' + ', '.join(f'{a}: {hc[a]}' for a in ('x', 'y') if hc.get(a) is not None) + ' }')
+            if key and isinstance(hc, dict): set_in('PHOTO_SUBJECT', k, '{ ' + ', '.join(f'{a}: {hc[a]}' for a in ('x', 'y', 'zoom') if hc.get(a) is not None) + ' }')
             if key: ov = re.sub(r'^  ' + re.escape(jq(k)) + r': "[^"]*",\n', '', ov, flags=re.M) if False else ov
         else:
             fn = re.sub(r'^File:', '', acc)
@@ -125,7 +125,7 @@ for f in sorted(glob.glob('curation/nz-rest/lens/judge-2-C*.json')):
             else:
                 set_in('WIKI_IMAGE_OVERRIDES', key, jq(fn))
                 ext.pop(key, None)
-                if isinstance(hc, dict): set_in('PHOTO_SUBJECT', key, '{ ' + ', '.join(f'{a}: {hc[a]}' for a in ('x', 'y') if hc.get(a) is not None) + ' }')
+                if isinstance(hc, dict): set_in('PHOTO_SUBJECT', key, '{ ' + ', '.join(f'{a}: {hc[a]}' for a in ('x', 'y', 'zoom') if hc.get(a) is not None) + ' }')
             if r.get('needs_brighten'): report.setdefault('brighten_commons', []).append(key or fn)
         if r.get('copyright_risk'): report['copyright_risk'].append((slot, r.get('page')))
         report['applied'] += 1

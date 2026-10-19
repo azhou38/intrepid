@@ -76,7 +76,7 @@ def set_hero_focus(key, focus):
     p = 'src/data/imageOverrides.ts'
     s = open(p).read()
     k = q(key)
-    parts = ', '.join(f'{a}: {focus[a]}' for a in ('x', 'y') if focus.get(a) is not None)
+    parts = ', '.join(f'{a}: {focus[a]}' for a in ('x', 'y', 'zoom') if focus.get(a) is not None)
     line = f'  {k}: {{ {parts} }},'
     pat = re.compile(r'^  ' + re.escape(k) + r': \{.*\},$', re.M)
     anchor = s.index('export const PHOTO_SUBJECT')
