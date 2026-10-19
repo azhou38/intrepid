@@ -36,6 +36,7 @@ import { popularSpotsOf } from '../../data/popularSpots';
 import { photoCache, thumbCache, getOrFetchWikiThumbnail, fetchCommonsPhoto, HEADER_PX } from '../../utils/photoCache';
 import CircleFlag from '../CircleFlag';
 import { sheetPose } from './sheetPose';
+import { CARD_SCRIM_ABOVE, cardScrimStops } from './cardScrim';
 import EntityPhoto from './EntityPhoto';
 import { photoSubject } from '../../utils/subjectCrop';
 import ClimateDetailModal from './ClimateDetailModal';
@@ -212,14 +213,6 @@ const WHY_VIEW_W = W;
 // beside it.
 const WHY_CARD_W = Math.round((WHY_VIEW_W - WHY_INSET) * 0.85);
 const WHY_CARD_H = Math.round(WHY_CARD_W * 0.62); // rectangular
-const WHY_STRIP_OPACITY = 0.68; // caption strip's black
-const WHY_STRIP_FADE_H = 48;    // how far the strip's top edge fades up into the photo
-// Eased (smoothstep) ramp from clear to the strip's opacity — a plain two-stop linear ramp leaves a
-// visible line where it meets the solid strip, while easing in and out blends at both ends.
-const STRIP_FADE_STOPS = Array.from({ length: 11 }, (_, i) => {
-  const t = i / 10;
-  return { offset: `${t}`, opacity: WHY_STRIP_OPACITY * t * t * (3 - 2 * t) };
-});
 // Snap stops: the first card at rest (left-aligned at the inset), the last flush to the right
 // edge, and every card in between centered in the row.
 function whySnapOffsets(count: number): number[] {
@@ -248,6 +241,36 @@ function centeredOrder(count: number): number[] {
   return slots;
 }
 
+// A "Why visit" card: the photo, then a black scrim sized to the caption it sits behind — the same principle as the spot cards
+// (cardScrim): as tall as the caption's measured height, its bottom inset and a soft edge above, easing in gradually instead of a
+// fixed strip with a fixed-height fade. A one-line caption gets a shorter scrim than a three-line one.
+const WHY_CAPTION_BOTTOM = 14;
+function WhyCard({ id, reason, children }: { id: string; reason: string; children?: React.ReactNode }) {
+  const [captionH, setCaptionH] = useState(0);
+  const gradH = captionH + WHY_CAPTION_BOTTOM + CARD_SCRIM_ABOVE;
+  return (
+    <View style={st.whyCard}>
+      {children}
+      <View pointerEvents="none" style={[st.whyScrim, { height: gradH }]}>
+        {/* keyed by its height: react-native-svg keeps its first size when the wrapper later grows */}
+        <Svg key={gradH} style={StyleSheet.absoluteFill}>
+          <Defs>
+            <SvgLinearGradient id={`whyGrad-${id}`} x1="0" y1="0" x2="0" y2="1">
+              {cardScrimStops(gradH).map(({ offset, opacity }) => (
+                <Stop key={offset} offset={offset} stopColor="#000" stopOpacity={opacity} />
+              ))}
+            </SvgLinearGradient>
+          </Defs>
+          <Rect x="0" y="0" width="100%" height="100%" fill={`url(#whyGrad-${id})`} />
+        </Svg>
+      </View>
+      <View pointerEvents="none" style={st.whyCaptionBox} onLayout={e => setCaptionH(e.nativeEvent.layout.height)}>
+        <Text style={st.whyCaption} numberOfLines={3}>{reason}</Text>
+      </View>
+    </View>
+  );
+}
+
 function WhyVisitCarousel({ destination, scrollRef }: {
   destination: Destination;
   scrollRef?: React.RefObject<ScrollView | null>;
@@ -274,7 +297,7 @@ function WhyVisitCarousel({ destination, scrollRef }: {
         const reason = reasons[i];
         const file = destination.whyVisitPhotos?.[i];
         return (
-          <View key={i} style={st.whyCard}>
+          <WhyCard key={i} id={`${destination.id}-${i}`} reason={reason}>
             {file && (
               <EntityPhoto
                 cacheKey={`why_${destination.id}_${i}`}
@@ -284,25 +307,7 @@ function WhyVisitCarousel({ destination, scrollRef }: {
                 subject={photoSubject(`File:${file}`)}
               />
             )}
-            {/* Caption on its own translucent dark strip across the bottom of the photo, whose top
-                edge fades up into the image rather than cutting across it. Explicit numeric Svg size —
-                percentage sizing inside react-native-svg has fallen short of its container before. */}
-            <View pointerEvents="none" style={st.whyCaptionStrip}>
-              <View style={st.whyStripFade}>
-                <Svg width={WHY_CARD_W} height={WHY_STRIP_FADE_H}>
-                  <Defs>
-                    <SvgLinearGradient id={`whyStrip-${destination.id}-${i}`} x1="0" y1="0" x2="0" y2="1">
-                      {STRIP_FADE_STOPS.map(({ offset, opacity }) => (
-                        <Stop key={offset} offset={offset} stopColor="#000" stopOpacity={opacity} />
-                      ))}
-                    </SvgLinearGradient>
-                  </Defs>
-                  <Rect x="0" y="0" width={WHY_CARD_W} height={WHY_STRIP_FADE_H} fill={`url(#whyStrip-${destination.id}-${i})`} />
-                </Svg>
-              </View>
-              <Text style={st.whyCaption} numberOfLines={3}>{reason}</Text>
-            </View>
-          </View>
+          </WhyCard>
         );
       })}
     </ScrollView>
@@ -1962,9 +1967,8 @@ const st = StyleSheet.create({
   whyRow:        { gap:WHY_GAP, paddingHorizontal:WHY_INSET },
   whyCard:       { width:WHY_CARD_W, height:WHY_CARD_H, borderRadius:12, overflow:'hidden', backgroundColor:'#E5E7EB',
                    borderWidth:1, borderColor:'#D1D5DB' },
-  whyCaptionStrip: { position:'absolute', left:0, right:0, bottom:0,
-                     paddingHorizontal:12, paddingTop:8, paddingBottom:14, backgroundColor:`rgba(0,0,0,${WHY_STRIP_OPACITY})` },
-  whyStripFade:  { position:'absolute', left:0, right:0, top:-WHY_STRIP_FADE_H, height:WHY_STRIP_FADE_H },
+  whyScrim:      { position:'absolute', left:0, right:0, bottom:0 },
+  whyCaptionBox: { position:'absolute', left:12, right:12, bottom:WHY_CAPTION_BOTTOM },
   // Same size/line height as the description below (aboutTxt), just bold and white.
   whyCaption:    { fontSize:15.5, fontWeight:'700', color:'white', lineHeight:25 },
 
