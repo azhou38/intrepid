@@ -81,6 +81,8 @@ async function checkWiki(title: string): Promise<string | null> {
     for (const w of d.whyVisit ?? []) {
       const n = w.trim().split(/\s+/).length;
       if (n < 2 || n > 8) add(it, 'shape', `whyVisit "${w}" is ${n} words (needs 2–8)`);
+      // A reason is an action and its subject, never a bare name ("Len Lye Centre", "Tongariro Alpine Crossing").
+      if (!/^(See|Visit|Walk|Hike|Cross|Climb|Swim|Soak|Taste|Sail|Cruise|Explore|Watch|Spot|Meet|Ride|Paddle|Kayak|Dive|Snorkel|Wander|Stroll|Sip|Eat|Try|Hunt|Ski|Soar|Fly|Drive|Join|Feed|Stay|Discover|Relax|Trek|Camp|Float|Raft|Bungy|Gaze|Admire|Browse|Tour|Cycle|Bike|Surf|Fish|Dine|Shop|Roam|Find|Enjoy|Experience|Take|Hear|Step|Stand|Ascend|Descend|Sample|Look|Spend|Go|Board|Paraglide|Zipline|Scramble|Marvel|Sandboard|Dig|Punt|View|Photograph|Pan|Learn|Feel|Taste|Cheer|Shelter|Pause|Pass|Reach|Follow|Hunt|Scale|Wade|Bathe|Ramble|Savour|Sunbathe|Stargaze|Whale-watch|Heli-hike|Stop)/i.test(w.trim())) add(it, 'shape', `whyVisit "${w}" does not start with an action (e.g. "Walk the…", "See the…")`);
     }
     if ((d.highlights?.length ?? 0) !== 3) add(it, 'shape', `${d.highlights?.length ?? 0} highlights (needs 3)`);
     if ((d.goodToKnow?.length ?? 0) !== 3) add(it, 'shape', `${d.goodToKnow?.length ?? 0} goodToKnow (needs 3)`);
