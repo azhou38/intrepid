@@ -809,9 +809,9 @@ const destTierStyle = (tier: string, on: boolean, labelOn: boolean = on, gated =
     st = {
       ...DEST_SYMBOL_STYLE,
       iconOpacity: on ? 1 : 0, textOpacity: on && labelOn ? 1 : 0,
-      // Only paint properties (opacity) change here. textIgnorePlacement / textAllowOverlap are LAYOUT properties: flipping one when a
-      // name's gate was crossed made Mapbox re-lay out the whole source, and every destination pin vanished for a few frames
-      // (and the pins skipped their fade at the country cutoff). They stay as DEST_SYMBOL_STYLE sets them.
+      // A gated name takes part in collision (so it keeps lower-priority pins off it) only once it is shown; before that it
+      // neither blocks nor is blocked. The fallback layer keeps Mapbox's ordinary per-frame behaviour.
+      ...(gated ? { textAllowOverlap: false, textIgnorePlacement: !(on && labelOn) } : { textAllowOverlap: false, textIgnorePlacement: false }),
       iconOpacityTransition: { duration: DEST_GATE_FADE_MS, delay: 0 },
       textOpacityTransition: { duration: DEST_GATE_FADE_MS, delay: 0 },
     };
@@ -1027,8 +1027,8 @@ const DEST_SYMBOL_STYLE: any = {
   textHaloWidth: 1.2,
   textHaloBlur: 0.4,
   // A name is shown from its own precomputed zoom gate (destLabelGates; one layer per tier and gate bucket, see
-  // destSymbolLayersStatic): before it the name is transparent, after it it shows; it takes part in collision
-  // throughout (layout properties never change at run time), so nothing placed after it can push it out. textOptional keeps a name tied to its own photo.
+  // destSymbolLayersStatic): before it is the name is hidden and takes no part in collision, after it the name takes part
+  // like any symbol but nothing placed after it can push it out. textOptional keeps a name tied to its own photo.
   textOptional: true,
   textAllowOverlap: false,
   textIgnorePlacement: false,
