@@ -1065,14 +1065,16 @@ const SPOT_EARLY_MAX_LEVELS = 2.5;
 // The zoom from which each spot is on the map, and the (later) zoom from which it may show its photo, both by how far the
 // spot sits from its destination's pin on screen: far-out spots come early, and each at its own zoom rather than all at
 // the destination's.
-function earlySpotZoomTable(separationPx: number, maxLevels: number): Record<string, number> {
+function earlySpotZoomTable(separationPx: number, maxLevels: number, standaloneEarlyLevels = 0): Record<string, number> {
   const out: Record<string, number> = {};
   const destById = new Map(DESTINATIONS.map(d => [d.id, d]));
   for (const sp of SPOTS) {
     const base = DEST_ZOOM_LEVEL_BY_ID[spotParentKey(sp)];
     if (base === undefined) continue;
     const d = sp.destinationId ? destById.get(sp.destinationId) : undefined;
-    if (!d) { out[sp.id] = base; continue; }
+    // A standalone spot has no destination pin to stay clear of: its small collapsed pin is on the map `standaloneEarlyLevels`
+    // before its photo pin (the photo table passes 0), so zooming in never goes from nothing to a full photo pin.
+    if (!d) { out[sp.id] = sp.destinationId ? base : base - standaloneEarlyLevels; continue; }
     // Separation in Web-Mercator degrees, so it converts to on-screen points at any zoom: 512 * 2^z / 360 per degree.
     const a = mercatorPx(sp.coordinates.longitude, sp.coordinates.latitude, 1);
     const b = mercatorPx(d.coordinates.longitude, d.coordinates.latitude, 1);
@@ -1082,7 +1084,10 @@ function earlySpotZoomTable(separationPx: number, maxLevels: number): Record<str
   }
   return out;
 }
-const SPOT_REVEAL_ZOOM_BY_ID = earlySpotZoomTable(SPOT_EARLY_SEPARATION_PX, SPOT_EARLY_MAX_LEVELS);
+// Standalone spots (Lake Coleridge, Castle Hill, Mount Hutt, Monro Beach ...) show their collapsed pin this many levels
+// before their photo pin, as an outlying destination spot does; without it they went from nothing to a photo pin.
+const STANDALONE_EARLY_LEVELS = 2;
+const SPOT_REVEAL_ZOOM_BY_ID = earlySpotZoomTable(SPOT_EARLY_SEPARATION_PX, SPOT_EARLY_MAX_LEVELS, STANDALONE_EARLY_LEVELS);
 // A revealed spot shows as a small pin until this zoom, then may take its photo (room permitting). Stricter than the
 // reveal — well clear of the destination's pin, and at most SPOT_PHOTO_EARLY_MAX_LEVELS early — so the destination still
 // leads at a wide view, while its outlying spots gain their photos one by one on the way in instead of all in the frame
