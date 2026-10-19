@@ -982,6 +982,7 @@ function SpotSheet({
   };
 
   const handleCarouselSettle = (offsetX: number) => {
+    carouselReleasedRef.current = false;
     const extIdx = Math.round(offsetX / CARD_SNAP);
     // Landed on the leading clone (a copy of the last spot) — silently jump to the real
     // last card's position, which looks identical, completing the wrap-around.
@@ -1008,7 +1009,22 @@ function SpotSheet({
   // nearest where the release velocity would carry it), so the counter and the map follow the card as it slides instead of waiting
   // for the slide to finish (onMomentumScrollEnd). The settle handler above still corrects a prediction that turns out wrong,
   // and the loop's clone cards are left to it.
+  // After the release the slide carries on by itself; the card the scroll position is nearest to is the one it is going to,
+  // so each scroll event of that phase also moves the active spot when the nearest card changes. This does not depend on the
+  // release-velocity guess below (which can miss), so the counter and the map follow the slide every time.
+  const carouselReleasedRef = useRef(false);
+  const handleCarouselScroll = (offsetX: number) => {
+    if (!carouselReleasedRef.current) return;
+    const extIdx = Math.round(offsetX / CARD_SNAP);
+    if (loopOffset && (extIdx <= 0 || extIdx >= extendedSpots.length - 1)) return;
+    const idx = Math.max(0, Math.min(spots.length - 1, extIdx - loopOffset));
+    if (idx === activeIndex) return;
+    setActiveIndex(idx);
+    Haptics.selectionAsync();
+    onActiveSpotChange?.(spots[idx]);
+  };
   const handleCarouselRelease = (offsetX: number, velocityX: number) => {
+    carouselReleasedRef.current = true;
     // iOS "fast" deceleration (0.99/ms) carries a release at v pt/ms about 99·v pt further.
     const projected = offsetX + velocityX * 99;
     const extIdx = Math.round(projected / CARD_SNAP);
@@ -1328,6 +1344,10 @@ isVisited ? (
             decelerationRate="fast"
             style={{ flex: 1 }}
             contentContainerStyle={{ paddingHorizontal: SIDE_PAD, paddingTop: 8, paddingBottom: 4 }}
+            scrollEventThrottle={16}
+            onScrollBeginDrag={() => { carouselReleasedRef.current = false; }}
+            onScroll={e => handleCarouselScroll(e.nativeEvent.contentOffset.x)}
+            onMomentumScrollBegin={() => { carouselReleasedRef.current = true; }}
             onScrollEndDrag={e => handleCarouselRelease(e.nativeEvent.contentOffset.x, e.nativeEvent.velocity?.x ?? 0)}
             onMomentumScrollEnd={e => handleCarouselSettle(e.nativeEvent.contentOffset.x)}
           >
