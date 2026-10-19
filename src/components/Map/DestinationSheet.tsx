@@ -245,9 +245,12 @@ function centeredOrder(count: number): number[] {
 // (cardScrim): as tall as the caption's measured height, its bottom inset and a soft edge above, easing in gradually instead of a
 // fixed strip with a fixed-height fade. A one-line caption gets a shorter scrim than a three-line one.
 const WHY_CAPTION_BOTTOM = 14;
+// Extra height (px) the Why-visit scrim reaches above the caption beyond the spot cards' CARD_SCRIM_ABOVE: the soft edge is the same
+// CARD_SCRIM_FADE long, it just begins higher, so the shaded area is taller and the photo darkens further up the card.
+const WHY_SCRIM_EXTRA = 48;
 function WhyCard({ id, reason, children }: { id: string; reason: string; children?: React.ReactNode }) {
   const [captionH, setCaptionH] = useState(0);
-  const gradH = captionH + WHY_CAPTION_BOTTOM + CARD_SCRIM_ABOVE;
+  const gradH = captionH + WHY_CAPTION_BOTTOM + CARD_SCRIM_ABOVE + WHY_SCRIM_EXTRA;
   return (
     <View style={st.whyCard}>
       {children}
