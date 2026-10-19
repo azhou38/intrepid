@@ -1,0 +1,465 @@
+[
+ {
+  "slot": "spot:bay-of-islands-14",
+  "name": "Long Beach",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Passes the four checks; shows the named place, real colour photo, adequate size.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:bay-of-islands-16",
+  "name": "Ruapekapeka Pā",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Grassed earthworks of the pa (description confirms); plain but the real subject.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:whangarei-7",
+  "name": "Mount Parihaka",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "View from the summit lookout over Whangarei; visitors come for it.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:whangarei-8",
+  "name": "Whangārei Town Basin",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Passes the four checks; shows the named place, real colour photo, adequate size.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:whangarei-9",
+  "name": "Whangārei Quarry Gardens",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Passes the four checks; shows the named place, real colour photo, adequate size.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:whangarei-10",
+  "name": "Ocean Beach",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Passes the four checks; shows the named place, real colour photo, adequate size.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:whangarei-11",
+  "name": "Bream Head",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Passes the four checks; shows the named place, real colour photo, adequate size.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:whangarei-12",
+  "name": "Matapouri",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Passes the four checks; shows the named place, real colour photo, adequate size.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:whangarei-13",
+  "name": "Waipū Caves",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Glowworm cave, dark on purpose.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:waipoua-forest-7",
+  "name": "Trounson Kauri Park",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Category Trounson Kauri Park; two kauri. p40 0.21 marginally under floor.",
+  "hero_crop": "ok",
+  "needs_brighten": true,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:waipoua-forest-8",
+  "name": "Rawene",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Passes the four checks; shows the named place, real colour photo, adequate size.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:waipoua-forest-9",
+  "name": "Wairere Boulders",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Boulder valley from the platform; p40 0.21 marginally under floor.",
+  "hero_crop": "ok",
+  "needs_brighten": true,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:waipoua-forest-10",
+  "name": "Koutu Boulders",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Passes the four checks; shows the named place, real colour photo, adequate size.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:mangawhai",
+  "name": "Mangawhai",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Passes the four checks; shows the named place, real colour photo, adequate size.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:dunedin-11",
+  "name": "Speight's Brewery",
+  "decision": "reject",
+  "failed_check": "2/3",
+  "reason": "Street corner with traffic light and sun flare dominating; brewery barely readable.",
+  "hero_crop": "fail: see replacement",
+  "needs_brighten": false,
+  "replacement": {
+   "source": "commons",
+   "file_or_local_path": "New Zealand Breweries Ltd (Speight's Building), Dunedin, New Zealand.jpg",
+   "licence": "CC BY-SA 4.0",
+   "author": "Ulrich Lange",
+   "page": "https://commons.wikimedia.org/wiki/File:New_Zealand_Breweries_Ltd_(Speight%27s_Building),_Dunedin,_New_Zealand.jpg",
+   "width": 5184,
+   "height": 3888,
+   "hero_crop": {
+    "x": 0.45,
+    "y": 0.5
+   },
+   "copyright_risk": false
+  },
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:dunedin-12",
+  "name": "Dunedin Public Art Gallery",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Gallery frontage from a portrait file; crop at y 0.62 shows sign and facade.",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.62
+  },
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:dunedin-13",
+  "name": "Dunedin Botanic Garden",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Passes the four checks; shows the named place, real colour photo, adequate size.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:dunedin-14",
+  "name": "The Octagon",
+  "decision": "reject",
+  "failed_check": "1/2",
+  "reason": "White villa on a lawn, not The Octagon plaza; not recognisable as the named place.",
+  "hero_crop": "fail: see replacement",
+  "needs_brighten": false,
+  "replacement": {
+   "source": "commons",
+   "file_or_local_path": "The Octagon, Dunedin City, Otago.jpg",
+   "licence": "CC BY-SA 4.0",
+   "author": "AnnWoolliams",
+   "page": "https://commons.wikimedia.org/wiki/File:The_Octagon,_Dunedin_City,_Otago.jpg",
+   "width": 3113,
+   "height": 2508,
+   "hero_crop": {
+    "x": 0.35,
+    "y": 0.5
+   },
+   "copyright_risk": false
+  },
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:dunedin-15",
+  "name": "Orokonui EcoSanctuary",
+  "decision": "reject",
+  "failed_check": "2",
+  "reason": "Only the visitor-centre building; the sanctuary (bush, hillside) is the named thing. Weak but real; replacement shows the sanctuary bush.",
+  "hero_crop": "fail: see replacement",
+  "needs_brighten": false,
+  "replacement": {
+   "source": "commons",
+   "file_or_local_path": "Native bush at Orokonui Ecosanctuary towards Mopanui.jpg",
+   "licence": "Public domain",
+   "author": "Pseudopanax (English Wikipedia)",
+   "page": "https://commons.wikimedia.org/wiki/File:Native_bush_at_Orokonui_Ecosanctuary_towards_Mopanui.jpg",
+   "width": 4896,
+   "height": 3264,
+   "hero_crop": {
+    "x": 0.5,
+    "y": 0.4
+   },
+   "copyright_risk": false
+  },
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:dunedin-16",
+  "name": "St Clair Beach",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Passes the four checks; shows the named place, real colour photo, adequate size.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:dunedin-18",
+  "name": "Dunedin Prison",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Former prison building (the attraction); cars at front but acceptable.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:dunedin-19",
+  "name": "Dunedin Chinese Garden",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Passes the four checks; shows the named place, real colour photo, adequate size.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:dunedin-20",
+  "name": "The Organ Pipes",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Passes the four checks; shows the named place, real colour photo, adequate size.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:dunedin-21",
+  "name": "Port Chalmers",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Passes the four checks; shows the named place, real colour photo, adequate size.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:dunedin-22",
+  "name": "Allans Beach",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Passes the four checks; shows the named place, real colour photo, adequate size.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:oamaru-6",
+  "name": "Moeraki",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Passes the four checks; shows the named place, real colour photo, adequate size.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:oamaru-7",
+  "name": "Vanished World Centre",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Passes the four checks; shows the named place, real colour photo, adequate size.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:oamaru-8",
+  "name": "Elephant Rocks",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Passes the four checks; shows the named place, real colour photo, adequate size.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:oamaru-9",
+  "name": "Katiki Point Walk",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Katiki lighthouse; subject right of centre.",
+  "hero_crop": {
+   "x": 0.82,
+   "y": 0.4
+  },
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:central-otago-5",
+  "name": "Alexandra",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Passes the four checks; shows the named place, real colour photo, adequate size.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:central-otago-6",
+  "name": "Cromwell",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Passes the four checks; shows the named place, real colour photo, adequate size.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:central-otago-8",
+  "name": "Bannockburn",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Passes the four checks; shows the named place, real colour photo, adequate size.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:central-otago-9",
+  "name": "Central Stories",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Waterwheel and museum building, acceptable.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:central-otago-10",
+  "name": "Naseby",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Historic Naseby streetscape with former post office.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:central-otago-12",
+  "name": "Lake Dunstan",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Passes the four checks; shows the named place, real colour photo, adequate size.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:central-otago-13",
+  "name": "Bannockburn Sluicings Track",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Passes the four checks; shows the named place, real colour photo, adequate size.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:queenstown-16",
+  "name": "Kiwi Birdlife Park",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Park entrance building; weak but accepted, no better confirmed photo of the park itself (kea candidates not proven to be this park's setting).",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:queenstown-17",
+  "name": "Moke Lake",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Panorama 2.3:1; lake and peaks fit the square crop.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ }
+]

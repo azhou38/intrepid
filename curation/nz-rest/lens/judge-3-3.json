@@ -1,0 +1,484 @@
+[
+ {
+  "slot": "spot:whanganui-national-park-3",
+  "name": "Atene Skyline Track",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Real colour view over the Ahuahu Valley from the track; shows the walk setting.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:palmerston-north-4",
+  "name": "Manawatū Gorge",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "River winding through the gorge, with the old rail line; clearly the gorge.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:palmerston-north-5",
+  "name": "Feilding",
+  "decision": "reject",
+  "failed_check": "2 (town not building)",
+  "reason": "Close-up of the clock tower against sky: a single building, not Feilding in its setting. Tower is the landmark, but a tight shot of it is not the town.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": {
+   "source": "commons",
+   "file_or_local_path": "Feilding Clock Tower 2026.jpg",
+   "licence": "CC BY-SA 4.0",
+   "author": "Commons user (Idio...), 2026-10-08",
+   "page": "https://commons.wikimedia.org/wiki/File:Feilding_Clock_Tower_2026.jpg",
+   "width": 3120,
+   "height": 4160,
+   "hero_crop": {
+    "x": 0.5,
+    "y": 0.4
+   },
+   "copyright_risk": "none; marginal improvement: tower on its roundabout with street/sky around. Commons has no wide Feilding townscape."
+  },
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:ohakune-carrot",
+  "name": "The World's Largest Carrot",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Ohakune Carrot, centred, portrait; dramatic sky.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:ohakune-dinosaur-house",
+  "name": "Dinosaur House",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Interior dinosaur room, but visitors come for the dinosaur displays inside the house; categorised Raetihi/museums. Weak but recognisable.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:national-army-museum",
+  "name": "National Army Museum",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Museum entrance with cannons; recognisable.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:taihape",
+  "name": "Taihape",
+  "decision": "reject",
+  "failed_check": "2 (town not building)",
+  "reason": "Shopfront row (Bonds Jewellers) - single building / street corner, not Taihape in its setting.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": {
+   "source": "commons",
+   "file_or_local_path": "Taihape from Mt Stewart reserve.jpg",
+   "licence": "CC0",
+   "author": "MurielMary",
+   "page": "https://commons.wikimedia.org/wiki/File:Taihape_from_Mt_Stewart_reserve.jpg",
+   "width": 1080,
+   "height": 512,
+   "hero_crop": {
+    "x": 0.3,
+    "y": 0.6,
+    "zoom": 1.3
+   },
+   "copyright_risk": "none; wide 2.1:1 so only the town-in-hills left part shows in the square"
+  },
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:taihape-gumboot",
+  "name": "Taihape Gumboot",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Taihape gumboot sculpture with Taihape sign; boot cut at left edge in a centre crop.",
+  "hero_crop": {
+   "x": 0.42,
+   "y": 0.4
+  },
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:levin",
+  "name": "Levin",
+  "decision": "reject",
+  "failed_check": "2/3 (empty road, street corner)",
+  "reason": "Mostly an empty tarmac road with a clock tower tiny in the distance; not Levin in its setting.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": {
+   "source": "commons",
+   "file_or_local_path": "NZL-levin-hauptstr.jpg",
+   "licence": "CC BY-SA 3.0",
+   "author": "Wikimedia Commons user (see page)",
+   "page": "https://commons.wikimedia.org/wiki/File:NZL-levin-hauptstr.jpg",
+   "width": 1336,
+   "height": 887,
+   "hero_crop": "ok",
+   "copyright_risk": "none; main-street view with clocktower, 2009; no Levin panorama exists on Commons"
+  },
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:marlborough-sounds-8",
+  "name": "Anakiwa",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Anakiwa village and bay under hills, own-description matches.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:marlborough-sounds-9",
+  "name": "Snout Walkway",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "The Snout headland near Picton (coordinates confirmed); small marker on point.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:blenheim-4",
+  "name": "Wairau Lagoons",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Boardwalk across Wairau Lagoons wetland.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:blenheim-6",
+  "name": "Whites Bay",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Whites Bay beach/stream with rocky point; acceptable.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:mount-richmond-forest-park",
+  "name": "Mount Richmond Forest Park",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Kahurangi/Richmond peaks panorama, 1024 px wide (>=960).",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:lake-grassmere",
+  "name": "Lake Grassmere",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Pink salt pans at Lake Grassmere, distinctive.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:molesworth-station",
+  "name": "Molesworth Station",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Molesworth hills with road and ranges.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:nelson-7",
+  "name": "Founders Heritage Park",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Founders Heritage Park street with windmill and chapel; 1024 px wide.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:nelson-8",
+  "name": "Melrose House",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Melrose House exterior.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:nelson-11",
+  "name": "Isel House and Park",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Isel House exterior with garden.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:nelson-12",
+  "name": "Boulder Bank",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Nelson Boulder Bank lighthouse on the shingle.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:nelson-14",
+  "name": "Great Taste Trail",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Great Taste Trail bridge on the trail.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:abel-tasman-9",
+  "name": "Wainui Falls",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Wainui Falls clear.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:golden-bay-7",
+  "name": "Cape Farewell",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Cape Farewell cliffs and arch at lookout; arch sits right of centre.",
+  "hero_crop": {
+   "x": 0.65,
+   "y": 0.5
+  },
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:golden-bay-8",
+  "name": "Puponga Farm Park",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Puponga Farm Park view over Golden Bay (category Pūponga Farm Park); 1600 px, a bit snapshot-like but the right place.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:golden-bay-9",
+  "name": "Rawhiti Cave",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Rawhiti Cave stalactites at mouth with viewing platform; dark on purpose (cave).",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:golden-bay-10",
+  "name": "Ligar Bay",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Ligar Bay beach and hills; lots of water in the lower half.",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.35,
+   "zoom": 1.4
+  },
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:golden-bay-11",
+  "name": "Abel Tasman Monument",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Abel Tasman Monument obelisk.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:golden-bay-13",
+  "name": "Tata Beach",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Tata Beach, Golden Bay; real colour photo (film-look, contrail).",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:golden-bay-14",
+  "name": "Ngārua Caves",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Ngārua Caves formations; cave, dark on purpose.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:kahurangi-4",
+  "name": "Wangapeka Track",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Wangapeka valley and Mt Patriarch.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:kahurangi-5",
+  "name": "Mount Arthur",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Description: Mount Arthur from the Tablelands, Kahurangi. Peaks sit in the upper third over tussock.",
+  "hero_crop": {
+   "x": 0.45,
+   "y": 0.3,
+   "zoom": 1.6
+  },
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:kahurangi-6",
+  "name": "Cobb Valley",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Cobb Reservoir.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:bay-of-islands-8",
+  "name": "Stone Store",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Stone Store (with Kemp House) across the Kerikeri Basin.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:bay-of-islands-9",
+  "name": "Pompallier Mission",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Real photo of Pompallier House (file page confirms) though partly screened by garden planting; Commons has no better image (searched whole of Commons).",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:bay-of-islands-10",
+  "name": "Kerikeri",
+  "decision": "reject",
+  "failed_check": "2 (basin not town)",
+  "reason": "Shows the Kerikeri Basin rapids and Stone Store, a duplicate of the Stone Store spot, not Kerikeri town.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": {
+   "source": "commons",
+   "file_or_local_path": "00 0589 Neuseeland - Kerikeri.jpg",
+   "licence": "CC BY-SA 4.0",
+   "author": "W. Bulach",
+   "page": "https://commons.wikimedia.org/wiki/File:00_0589_Neuseeland_-_Kerikeri.jpg",
+   "width": 3168,
+   "height": 2112,
+   "hero_crop": "ok",
+   "copyright_risk": "none; main street with palms and clock tower, 2009"
+  },
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:bay-of-islands-11",
+  "name": "Cape Brett Track",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Cape Brett lighthouse on the headland; sky washed out, 1280 px.",
+  "hero_crop": {
+   "x": 0.55,
+   "y": 0.55
+  },
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:bay-of-islands-12",
+  "name": "Rainbow Falls",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Rainbow Falls.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:bay-of-islands-13",
+  "name": "Kemp House",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Kemp House front, 993 px wide (>=960).",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ }
+]

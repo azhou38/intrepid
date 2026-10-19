@@ -1,0 +1,509 @@
+[
+ {
+  "slot": "spot:queenstown-18",
+  "name": "Queenstown Hill",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Queenstown Hill seen from Moonlight Track; hill is the subject, real colour photo.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:queenstown-19",
+  "name": "Lakes District Museum",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Lakes District Museum building (Arrowtown), right place per categories.",
+  "hero_crop": {
+   "x": 0.6,
+   "y": 0.5
+  },
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:wanaka-8",
+  "name": "Cardrona Alpine Resort",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Cardrona ski slopes in snow, recognisable resort terrain.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:wanaka-9",
+  "name": "Treble Cone",
+  "decision": "reject",
+  "failed_check": "2 (shows the named thing)",
+  "reason": "Current shows a car park/base huts with an orange cone, not the ski field itself.",
+  "hero_crop": "n/a (see replacement)",
+  "needs_brighten": false,
+  "replacement": {
+   "source": "commons",
+   "file_or_local_path": "Trebleconeview.jpg",
+   "licence": "Public domain",
+   "author": "Maelgwn",
+   "page": "https://commons.wikimedia.org/wiki/File:Trebleconeview.jpg",
+   "width": 2032,
+   "height": 1354,
+   "hero_crop": {
+    "x": 0.35,
+    "y": 0.6
+   },
+   "copyright_risk": false
+  },
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:wanaka-10",
+  "name": "Cardrona Bra Fence",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Bra fence itself, real photo; fence sits low under sky so zoom.",
+  "hero_crop": {
+   "x": 0.45,
+   "y": 0.72,
+   "zoom": 1.3
+  },
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:wanaka-11",
+  "name": "Lake Hāwea",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Lake Hawea, Quality image.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:wanaka-12",
+  "name": "Diamond Lake",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Diamond Lake near Wanaka from the bluff.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:wanaka-13",
+  "name": "National Transport and Toy Museum",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Museum collection (cars, fire trucks) is the attraction.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:wanaka-15",
+  "name": "Snow Farm",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Meadow Hut in the Snow Farm in winter.",
+  "hero_crop": {
+   "x": 0.6,
+   "y": 0.5
+  },
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:mount-aspiring-4",
+  "name": "Thunder Creek Falls",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Thunder Creek Falls clear and central.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:mount-aspiring-5",
+  "name": "Rees-Dart Track",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Rees Track stretch with peaks; characteristic stretch.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:catlins-11",
+  "name": "Matai Falls",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Matai Falls; falls right of centre.",
+  "hero_crop": {
+   "x": 0.72,
+   "y": 0.5
+  },
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:catlins-12",
+  "name": "Jacks Blowhole Track",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Jacks Blowhole chasm; portrait, recognisable.",
+  "hero_crop": {
+   "x": 0.45,
+   "y": 0.4
+  },
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:paradise",
+  "name": "Paradise",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Paradise valley with Diamond Lake (Glenorchy) and Paradise Paddock; right place.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:greenstone-and-caples-tracks",
+  "name": "Greenstone and Caples Tracks",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Greenstone Valley, categories confirm.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:lindis-pass",
+  "name": "Lindis Pass",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Lindis Pass tussock valley, categories confirm.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:invercargill-7",
+  "name": "Classic Motorcycle Mecca",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Brough Superiors inside Classic Motorcycle Mecca, categories confirm.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:invercargill-8",
+  "name": "Riverton",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Riverton harbour with town behind; acceptable as the town in its setting.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:fiordland-19",
+  "name": "Lake Te Anau",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Lake Te Anau drone view.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:fiordland-20",
+  "name": "Lake Manapouri",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Lake Manapouri panorama (2.26:1); zoom to avoid thin slice.",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.5,
+   "zoom": 1.3
+  },
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:fiordland-21",
+  "name": "Dusky Track",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Dusky Track tarns between Lake Roe and Loch Maree.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:stewart-island-6",
+  "name": "North West Circuit",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Track near Big Sandhill; characteristic stretch, modest.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:stewart-island-7",
+  "name": "Southern Circuit",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Southern Circuit tarn scene; modest but accepted.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:catlins-7",
+  "name": "Waipapa Point Lighthouse",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Waipapa Point Lighthouse, clear.",
+  "hero_crop": {
+   "x": 0.62,
+   "y": 0.45
+  },
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:mavora-lakes",
+  "name": "Mavora Lakes",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "North Mavora Lake with Livingstone Mountains.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:around-the-mountains-cycle-trail",
+  "name": "Around the Mountains Cycle Trail",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Around the Mountains cycle trail near Athol.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:te-waewae-bay",
+  "name": "Te Waewae Bay",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Te Waewae Bay beach and coast.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:eastern-southland-gallery",
+  "name": "Eastern Southland Gallery",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Eastern Southland Gallery building (portrait); slightly under mean floor (0.29) so brighten.",
+  "hero_crop": "ok",
+  "needs_brighten": true,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:brown-trout-statue",
+  "name": "Brown Trout Statue",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Brown trout statue in Gore; statue upper left so crop.",
+  "hero_crop": {
+   "x": 0.3,
+   "y": 0.4,
+   "zoom": 1.2
+  },
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:new-plymouth-7",
+  "name": "Wind Wand",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Wind Wand at dusk; thin subject, zoom to keep line in frame.",
+  "hero_crop": {
+   "x": 0.42,
+   "y": 0.5,
+   "zoom": 1.1
+  },
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:new-plymouth-11",
+  "name": "Sugar Loaf Islands",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Sugar Loaf Islands, grey light but clear.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:new-plymouth-12",
+  "name": "Lake Mangamahoe",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Lake Mangamahoe with Taranaki.",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:new-plymouth-13",
+  "name": "Ōakura Beach",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Oakura Beach, dull light but recognisable beach (weak).",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:egmont-7",
+  "name": "Manganui Gorge Track",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Gravel Manganui Gorge Track in Egmont NP; the track is the named thing, so kept (Track 05 shows the lodge ridge if a nicer one is wanted).",
+  "hero_crop": "ok",
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:egmont-8",
+  "name": "Manganui Ski Area",
+  "decision": "reject",
+  "failed_check": "4/watermark + 2",
+  "reason": "Photo is Mt Taranaki from the plateau with a signature watermark; ski area barely identifiable.",
+  "hero_crop": "n/a (see replacement)",
+  "needs_brighten": false,
+  "replacement": {
+   "source": "commons",
+   "file_or_local_path": "Manganui Lodge in Egmont NP 02.jpg",
+   "licence": "CC BY-SA 4.0",
+   "author": "Krzysztof Golik",
+   "page": "https://commons.wikimedia.org/wiki/File:Manganui_Lodge_in_Egmont_NP_02.jpg",
+   "width": 3027,
+   "height": 2189,
+   "hero_crop": {
+    "x": 0.42,
+    "y": 0.85,
+    "zoom": 1.2
+   },
+   "copyright_risk": false
+  },
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:three-sisters-tongaporutu",
+  "name": "Three Sisters and Elephant Rock",
+  "decision": "reject",
+  "failed_check": "2 (shows the named thing)",
+  "reason": "Sea stacks are tiny specks at the far end of an overcast beach under a large cliff; subject not recognisable at thumbnail size.",
+  "hero_crop": "n/a (see replacement)",
+  "needs_brighten": false,
+  "replacement": {
+   "source": "openverse",
+   "file_or_local_path": "/private/tmp/claude-501/-Users-alexzhou-Developer-mobile-wellington/16edc52c-57b1-4c22-8c60-6565c530b9eb/scratchpad/ovw/elephant.jpg",
+   "licence": "CC BY 2.0",
+   "author": "Natalia Volna itravelNZ@ travel app",
+   "page": "https://www.flickr.com/photos/65041041@N08/6380181669",
+   "width": 1024,
+   "height": 681,
+   "hero_crop": {
+    "x": 0.6,
+    "y": 0.5
+   },
+   "copyright_risk": false,
+   "note": "Elephant Rock; alt for the Three Sisters stacks: Andrea Schaffer CC BY 2.0 https://www.flickr.com/photos/49021451@N00/23882894765 (1024x442, crop x .65), saved as three-sisters.jpg in same folder. Commons has no good Three Sisters photo."
+  },
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:coromandel-6",
+  "name": "Thames",
+  "decision": "keep-current",
+  "failed_check": null,
+  "reason": "Thames main street from hill with Firth behind; town in setting (borderline, 2.35:1 so crop left).",
+  "hero_crop": {
+   "x": 0.3,
+   "y": 0.5
+  },
+  "needs_brighten": false,
+  "replacement": null,
+  "replacement_none_reason": null
+ },
+ {
+  "slot": "spot:coromandel-7",
+  "name": "Whitianga",
+  "decision": "reject",
+  "failed_check": "2 + 3 + 4 (small hazy town, spectacular/wide)",
+  "reason": "Whitianga is a few pixels of buildings across a hazy valley in a 2004 photo; not the town in its setting.",
+  "hero_crop": "n/a (see replacement)",
+  "needs_brighten": false,
+  "replacement": {
+   "source": "commons",
+   "file_or_local_path": "Whitianga Harbour, Whitianga Pier.jpg",
+   "licence": "CC BY 3.0",
+   "author": "Ulrich Lange, Bochum, Germany",
+   "page": "https://commons.wikimedia.org/wiki/File:Whitianga_Harbour,_Whitianga_Pier.jpg",
+   "width": 3072,
+   "height": 2048,
+   "hero_crop": {
+    "x": 0.6,
+    "y": 0.45
+   },
+   "copyright_risk": false,
+   "note": "Ferry Landing pier waterfront across the harbour, palms and hills; waterfront view of Whitianga, not a wide panorama"
+  },
+  "replacement_none_reason": null
+ }
+]
