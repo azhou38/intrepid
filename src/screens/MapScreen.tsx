@@ -357,6 +357,7 @@ const SpotMarker = memo(function SpotMarker({ spot, isVisited, isSelected, exiti
       {/* A close that zooms out to a known view (closeFade.fast) clears them with the short close fade instead, so they're
           gone before the wider view crowds them; read when `exiting` flips, which is what re-renders this memoized pin. */}
       <FadePin exiting={exiting} instant={instant} slow={!closeFade.fast}>
+        <Animated.View style={{ opacity: spotPinsCloseOpacity }}>
         <Pressable disabled={exiting} onPress={() => onPress(spot)} hitSlop={6}>
           <View style={styles.spotMarkerRow}>
             <View style={styles.spotPinWrap}>
@@ -397,6 +398,7 @@ const SpotMarker = memo(function SpotMarker({ spot, isVisited, isSelected, exiti
             {labelEl}
           </View>
         </Pressable>
+        </Animated.View>
       </FadePin>
     </MapboxGL.MarkerView>
   );
@@ -476,6 +478,13 @@ const HANDOFF_FADE_MS = 170;
 
 // Set by MapScreen while a close is zooming out to a known view: pins leaving the plan then use a short fade.
 const closeFade = { fast: false };
+// Every spot pin's opacity is also multiplied by this one native-driven value. A close that zooms out to a wider view
+// (beginClosePlan) fades it to 0 in the press handler itself, on the UI thread, before React has re-rendered anything:
+// the per-pin exit fades only start once the (heavy) render that drops the pins lands, which on a destination with dozens of
+// spots was a third of a second into the zoom-out, so the pins bunched up and then left one batch at a time. It comes back
+// to 1 once the close is over (the pins that left are unmounted by then; any that belong to the wider view fade back in).
+const spotPinsCloseOpacity = new Animated.Value(1);
+const SPOT_PINS_CLOSE_FADE_MS = 110;
 const CLOSE_EXIT_MS = 90;
 function FadePin({ exiting, instant, slow, children }: { exiting: boolean; instant?: boolean; slow?: boolean; children: React.ReactNode }) {
   // `instant`: mounts fully opaque (no fade-in) — for a duplicate that sits exactly over an
@@ -1885,6 +1894,11 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     if (arrived(planZoomTargetRef.current)) { planZoomTargetRef.current = null; planZoomTarget = null; }
   }
   const closeTarget = planZoomTargetRef.current ?? spotCloseTargetRef.current;
+  // A zoom-out close is over (arrived, a gesture, a new selection or its safety timer): bring the spot pins back.
+  const planCloseActive = planZoomTargetRef.current !== null;
+  useEffect(() => {
+    if (!planCloseActive) Animated.timing(spotPinsCloseOpacity, { toValue: 1, duration: 160, useNativeDriver: true }).start();
+  }, [planCloseActive]);
   // Pin planning runs ahead of the (heavy, laggy) per-frame renders.
   // - A close that flies to a known wider view plans AT that view from its first frame (planZoomTarget): the spot pins
   //   and photo pins the wider view doesn't have start leaving at once, and no intermediate zoom's pin set (many photo
@@ -2049,6 +2063,7 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // keeps the old behaviour (hold, then release at idle).
   const beginClosePlan = useCallback((targetZoom: number, durationMs: number) => {
     if (targetZoom >= camZoomRef.current - ZOOM_EPSILON) return;
+    Animated.timing(spotPinsCloseOpacity, { toValue: 0, duration: SPOT_PINS_CLOSE_FADE_MS, useNativeDriver: true }).start();
     planZoomTargetRef.current = targetZoom;
     heldSelRef.current = { country: null, dest: null };
     if (planZoomTimerRef.current) clearTimeout(planZoomTimerRef.current);
