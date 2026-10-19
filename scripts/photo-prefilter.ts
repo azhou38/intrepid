@@ -10,7 +10,8 @@
 //   • black-and-white or sepia (mean colour saturation, and the share of the colour that is one hue);
 //   • below the minimum width for its role (header 2000 px, why-visit 1280 px, spot 960 px) or, for a header, outside
 //     the aspect range;
-//   • the same file used for two different places.
+//   • the same file used for two different DESTINATIONS' places. One destination's own header, why-visit photos and spots may share
+//     a file on purpose (the best photo of the Waitomo glowworm caves is the Waitomo header, a why-visit photo and the spot's).
 // What survives still has to pass the four checks by eye. Results are cached per file in scripts/prefilter-cache.json
 // (a Commons file never changes), so only new photos cost a download; --refresh recomputes everything.
 // --strict exits non-zero when anything fails, for use as a CI check. Needs network access.
@@ -19,6 +20,7 @@ import { resolve as resolvePath } from 'node:path';
 import jpeg from 'jpeg-js';
 import { BAD_CATEGORY, BAD_TITLE, colourStats } from './photo-checks';
 import { DESTINATIONS } from '../src/data/destinations';
+import { SPOTS, spotPhotoTitle } from '../src/data/spots';
 import { ALL_COUNTRIES } from '../src/data/countries';
 import { buildThumbUrl, type ManifestEntry } from '../src/utils/imageUrl';
 import { HEADER_MIN_WIDTH, HEADER_ASPECT_MIN, HEADER_ASPECT_MAX } from './destination-header-policy';
@@ -115,13 +117,19 @@ async function main() {
   // C. Judge every photo. `fails` are objective (a flag, a map, an archive date, too small, reused); `review` are colour
   // heuristics that a sunset or a misty blue scene can trip, so a person or the judges look at them.
   type Row = { key: string; file: string; role: string; reasons: string[]; review: string[] };
+  // A photo key's destination family: a destination's name, or a spot's photo key, both map to the destination (a standalone
+  // spot is its own family), so a destination's header, why-visit photos and spots may share a file.
+  const familyOf = new Map<string, string>();
+  for (const d of DESTINATIONS) familyOf.set(d.name, d.id);
+  for (const sp of SPOTS) familyOf.set(spotPhotoTitle(sp), sp.destinationId ?? sp.id);
+  const family = (k: string) => familyOf.get(k) ?? k;
   const rows: Row[] = [];
   const unmeasured: string[] = [];
   const base = (k: string) => k.split('|')[0];
   let skipped = 0;
   for (const [file, usedBy] of byFile) {
     const info = cache[file];
-    const places = [...new Set(usedBy.filter(k => role(k) !== 'why' && role(k) !== 'country').map(base))];
+    const places = [...new Set(usedBy.filter(k => role(k) !== 'why' && role(k) !== 'country').map(k => family(base(k))))];
     for (const key of usedBy) {
       const r = role(key);
       if (r === 'country') { skipped++; continue; }          // country sheets use the flag on purpose
@@ -141,7 +149,7 @@ async function main() {
       if (info.w < minW) reasons.push(`${info.w}px wide, minimum ${minW} for a ${r}`);
       const aspect = info.w / info.h;
       if (r === 'header' && (aspect < HEADER_ASPECT_MIN || aspect > HEADER_ASPECT_MAX)) reasons.push(`aspect ${aspect.toFixed(2)} outside ${HEADER_ASPECT_MIN}–${HEADER_ASPECT_MAX}`);
-      if (r !== 'why' && places.length > 1 && places.includes(base(key))) reasons.push(`also used for ${places.filter(p => p !== base(key)).join(', ')}`);
+      if (r !== 'why' && places.length > 1 && places.includes(family(base(key)))) reasons.push(`also used for ${places.filter(p => p !== family(base(key))).join(', ')}`);
       if (reasons.length || review.length) rows.push({ key, file, role: r, reasons, review });
     }
   }

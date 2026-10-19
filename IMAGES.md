@@ -55,7 +55,7 @@ Before anyone (or any model) looks at a candidate, reject it by metadata and pix
 - date taken before about 2000, or no date and an archive source (national libraries, museums, Library of Congress, "The Commons" uploads);
 - Commons categories such as "Historical images", "Black and white photographs", "Photographs by [archive]", "Maps of", "Drawings of";
 - low colour saturation (a black-and-white or sepia scan);
-- under the minimum size, outside the aspect range, or already used for another place in the app.
+- under the minimum size, outside the aspect range, or already used for a different destination's place (one destination's header, why-visit photos and spots may share a file).
 
 What survives goes on to the four checks.
 
@@ -85,7 +85,7 @@ The first impression of the place, so never left to whatever photo leads its Wik
 One photo per reason, three per destination, in the same order as `whyVisit`.
 
 - **It must show that reason**, not the place in general. "Punting on the Avon" is a punt on the Avon; "Meet the cheeky kea" is a kea. If no good photo of the reason exists, rewrite the reason (see `WRITING.md`) rather than settling for a vague one.
-- **Three different photos**, no repeats within a destination, and none of them the header.
+- **Three different photos** within the card row. A why-visit photo **may also be the destination's header, or a spot's photo in that destination**, when it is the best photo of the thing: the Waitomo "Float through glowworm caves by boat" photo is the Waitomo header, a why-visit photo and the Waitomo Glowworm Caves spot's photo, because it beats the alternatives for all three. Do not pick a worse photo to avoid a repeat. (The same file for two different destinations is still a failure.)
 - **Shape:** the cards are about 1.6:1 landscape, centre-cropped. Prefer a landscape file with the subject near the centre. If the default crop cuts off the subject (a tall statue, a bird high in the frame), give the file a subject point in `PHOTO_SUBJECT` (see "Keeping the subject in the crop").
 - **Size:** at least **1280px wide**. A ground-level view is preferred; an aerial is acceptable here only when the reason is itself about the view from above.
 - Store the three Commons file names in `whyVisitPhotos`, in order.
