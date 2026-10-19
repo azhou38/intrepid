@@ -67,7 +67,9 @@ for e in place[key]:
     if ('held' in st or sid in held_ids) and not (photoless and sid not in non_photo_holds):
         skipped.append((sid, name, 'held: ' + (st or 'see final.json'))); continue
     ph = e.get('photo') or {}
-    nophoto = not ph.get('file') or ph.get('external')
+    # A photo the skeptic or enumerator merely proposed is NOT applied: only a photo the image-judge accepted (photo_verdict 'accept', set
+    # by the Lens judges) goes in. Turangi shipped a riverbank as a town's photo because proposed photos were applied unjudged.
+    nophoto = not ph.get('file') or ph.get('external') or e.get('photo_verdict') != 'accept'
     if nophoto and not photoless:
         skipped.append((sid, name, 'no accepted Commons photo' + (' (external photo not yet committed)' if ph.get('external') else ''))); continue
     q = final['spots'].get(sid)

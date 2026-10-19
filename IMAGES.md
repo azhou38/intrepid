@@ -24,6 +24,8 @@ There are three kinds of photo, each with its own rule:
 
 ## The four checks
 
+**Applies to every photo, including those of newly added spots.** A photo an earlier step (the enumerator, skeptic or proposer) picked is only a candidate until the image-judge has accepted it; nothing is applied on a search ranking, a file name or a contact-sheet glance.
+
 Run all four on every photo: headers, why-visit photos and spot overrides alike. **One failure rejects the photo.** Look at the image itself by opening the file's Commons page. A file name, a search ranking or a matching Wikipedia title proves nothing.
 
 1. **It is the right place.** If the name is vague, shared, or also a person, film, band, ship or a place in another country (Clyde, Hanmer, Blue Lake, and so on), the photo must be proven to be the local place.

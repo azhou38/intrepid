@@ -29,6 +29,7 @@ Benchmark: the full list in `COVERAGE.md` → "Finding what is missing" (Red Roc
    - Output per region in `curation/<branch>/region-<id>/`: `candidates.json`, `verdicts.json`, `skeptic.json`, `placement.json`, `fairness.json`. `scripts/curation-backlog.ts` counts a region as covered once its `fairness.json` is committed.
 
 ## Pipeline B — imagery
+**Every photo that goes into the app is judged by Lens, including the photos of new spots.** A photo proposed by Atlas (the enumerator, the skeptic or the proposer) is a candidate, not an accepted photo: the new spot goes in, but its photo is applied only after the image-judge has looked at it against the four checks, the crop and the brightness floor (`photo_verdict: accept`). `apply-region.py` does not apply a photo without that verdict. Turangi, a town, shipped with a photo of a riverbank because new-spot photos were applied from the skeptic's pick unjudged; the judge is where "the photo shows the named thing" is enforced.
 1. **Pre-filter (script)** — `IMAGES.md` → "Automatic pre-filter", over every photo in the app.
 2. **Searcher** — region-qualified queries, Commons categories, geosearch near the coordinates.
    - Commons first (its licence data is clean and the app hot-links its thumbnails); prefer Featured, Quality and Valued images.
