@@ -13,7 +13,7 @@
 // portrait, with the subject near the centre — a very wide panorama strip loses most of its view.
 
 import { DESTINATIONS } from '../src/data/destinations';
-import { WIKI_IMAGE_OVERRIDES } from '../src/data/imageOverrides';
+import { NO_PHOTO, WIKI_IMAGE_OVERRIDES } from '../src/data/imageOverrides';
 
 // Header files narrower than this look soft on a phone at full sheet width.
 export const HEADER_MIN_WIDTH = 2000;
@@ -38,7 +38,7 @@ export function checkCuratedHeaders(): { errors: string[]; warnings: string[] } 
   const overrides = WIKI_IMAGE_OVERRIDES as Record<string, string>;
   const ids = new Set(DESTINATIONS.map(d => d.id));
   for (const d of DESTINATIONS) {
-    const curated = !!overrides[d.name];
+    const curated = !!overrides[d.name] || NO_PHOTO.has(d.name);   // NO_PHOTO: no passing header exists; the owner is asked for one (IMAGES.md)
     if (!curated && !HEADER_REVIEW_BACKLOG.has(d.id)) {
       errors.push(`${d.name} (${d.id}) has no hand-picked header image — add one to WIKI_IMAGE_OVERRIDES in `
         + `src/data/imageOverrides.ts (see IMAGES.md, "Headers").`);

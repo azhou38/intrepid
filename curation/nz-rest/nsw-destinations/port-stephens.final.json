@@ -1,0 +1,90 @@
+{
+  "destination": {
+    "id": "port-stephens",
+    "name": "Port Stephens",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Sydney",
+    "continent": "Oceania",
+    "coordinates": {
+      "latitude": -32.715,
+      "longitude": 152.15111111
+    },
+    "category": "beach",
+    "defaultZoomSpanKm": 15,
+    "rank": 3,
+    "icon": "🐬",
+    "tagline": "A bay and peninsula of white-sand beaches, big sand dunes and whale and dolphin cruises, north of Newcastle.",
+    "description": "Port Stephens is a bay and peninsula 30 minutes' drive from Newcastle Airport, with Nelson Bay as its hub and surf beaches at Anna Bay, One Mile and Fingal Bay. The Stockton Bight dunes cover 72 sq km and were used for scenes in Mad Max. Cruises leave Nelson Bay marina for resident dolphins from late November to May and humpback whales from May to November. Tomaree National Park covers the vegetated parts of the peninsula.",
+    "whyVisit": [
+      "Sandboard down Stockton Beach's dunes",
+      "Climb Tomaree Head for harbour views",
+      "Sail to Point Stephens Lighthouse"
+    ],
+    "highlights": [
+      "Sand dune tours",
+      "Tomaree Head summit",
+      "Fingal Island lighthouse"
+    ],
+    "goodToKnow": [
+      {
+        "icon": "🔥",
+        "title": "Dunes get very hot",
+        "detail": "Wikivoyage says the dunes can reach 50C or more in summer, so winter, ideally after rain, is the better time for a sandboarding or 4WD tour."
+      },
+      {
+        "icon": "⛵",
+        "title": "Lighthouse by boat",
+        "detail": "Point Stephens Lighthouse is visited by guided boat tour, about $120, and Wikivoyage calls a boat safer than walking across Fingal Spit; dates come from the operator."
+      },
+      {
+        "icon": "🚌",
+        "title": "Getting there",
+        "detail": "Newcastle Airport is about a 30-minute drive, and the 130 bus from Newcastle runs roughly hourly, though a car is the best way around the peninsula."
+      }
+    ],
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "bestTimeBlurb": "Visit in {months}: dolphins are easiest to see from late November to May, and humpback whales pass from May to November.",
+    "seasonalTags": [
+      {
+        "tag": "wildlife-migration",
+        "months": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "strength": 0.5
+      }
+    ]
+  },
+  "picks": {
+    "header": "View from Tomaree Head Summit.jpg",
+    "header_note": "5184 px; the Mount Tomaree member photo, a summit view over the bay and peninsula. Judge to confirm it is a wide landscape. Alternative: Shoal Bay NSW.jpg (3264).",
+    "why": [
+      "Stockton Beach (8333174474).jpg",
+      "View from Tomaree Head Summit.jpg",
+      "Point Stephens Lighthouse.jpg"
+    ],
+    "why_note": "Widths 3264, 5184, 3968, one per reason in order. Nelson Bay (1024 px) has no passing photo for a cruise reason; the Stockton photo shows the beach and dunes, so confirm dunes are visible."
+  },
+  "sources": [
+    "https://en.wikivoyage.org/wiki/Port_Stephens"
+  ],
+  "notes": [
+    "Span 15 km is the brief value; Stockton Beach and Anna Bay are about 11 km from the centre, on the edge of 75% of the span, so the orchestrator may want to widen.",
+    "Cruise prices not stated because they are operator-specific.",
+    "bestMonths are inferred from the Wikivoyage wildlife seasons; sources give no overall best month."
+  ]
+}

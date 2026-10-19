@@ -1,0 +1,550 @@
+{
+ "lithgow": {
+  "header": {
+   "choice": "Lost City at Gardens of Stone Conservation Area.jpg",
+   "weak": true,
+   "weak_reason": "Shows Gardens of Stone pagodas, not the town; no town view available; represents the area",
+   "hero_crop": {
+    "x": 0.4,
+    "y": 0.5
+   },
+   "dark": false,
+   "width": 4096,
+   "licence": "CC BY-SA 4.0",
+   "place_proof": "Description: Lost City pagodas in Gardens of Stone NP; photographed 2025"
+  },
+  "why": [
+   {
+    "choice": "The old Lithgow zigzag, now part of the Zig Zag Railway.jpg",
+    "weak": true,
+    "hero_crop": "ok",
+    "dark": false,
+    "width": 4320,
+    "licence": "CC BY-SA 4.0",
+    "place_proof": "Description: cuttings and viaducts on the Zig Zag Railway near Lithgow; category Lithgow Zig Zag",
+    "reason_rewrite": "See the Zig Zag Railway viaducts",
+    "highlight_rewrite": "Rail viaducts",
+    "weak_reason": "track not train"
+   },
+   {
+    "choice": "Lost City at Gardens of Stone Conservation Area.jpg",
+    "weak": false,
+    "hero_crop": {
+     "x": 0.4,
+     "y": 0.5
+    },
+    "dark": false,
+    "width": 4096,
+    "licence": "CC BY-SA 4.0",
+    "place_proof": "Gardens of Stone pagodas",
+    "reason_rewrite": null,
+    "highlight_rewrite": null
+   },
+   {
+    "choice": "Glow Worm Tunnel - panoramio.jpg",
+    "weak": true,
+    "hero_crop": "ok",
+    "dark": false,
+    "width": 4288,
+    "licence": "CC BY 3.0",
+    "place_proof": "Category Glowworm Tunnel; entrance with sign",
+    "reason_rewrite": null,
+    "highlight_rewrite": null
+   }
+  ]
+ },
+ "lord-howe-island": {
+  "header": {
+   "choice": "Lord Howe Island from Mount Eliza.JPG",
+   "weak": false,
+   "weak_reason": "",
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 3968,
+   "licence": "CC BY-SA 3.0",
+   "place_proof": "Category Lord Howe Island; island, lagoon and Mounts Lidgbird/Gower wide"
+  },
+  "why": [
+   {
+    "choice": "Mount Gower, Lord Howe Island, NSW, Australia.jpg",
+    "weak": true,
+    "hero_crop": "ok",
+    "dark": false,
+    "width": 2448,
+    "licence": "CC BY-SA 4.0",
+    "place_proof": "Category Mount Gower; coords -31.513",
+    "reason_rewrite": null,
+    "highlight_rewrite": null
+   },
+   {
+    "choice": "Lord Howe Island from Mount Eliza.JPG",
+    "weak": false,
+    "hero_crop": "ok",
+    "dark": false,
+    "width": 3968,
+    "licence": "CC BY-SA 3.0",
+    "place_proof": "Category Lord Howe Island; view from Mount Eliza",
+    "reason_rewrite": "Look across the lagoon from Mount Eliza",
+    "highlight_rewrite": "Mount Eliza view"
+   },
+   {
+    "choice": "Lord Howe - Goat House.jpg",
+    "weak": true,
+    "hero_crop": {
+     "x": 0.3,
+     "y": 0.45,
+     "zoom": 1.5
+    },
+    "dark": false,
+    "width": 4416,
+    "licence": "CC BY 2.0",
+    "place_proof": "Description: Lord Howe island from Goat House Cave; coords -31.562",
+    "reason_rewrite": "Look over the island from Goat House Cave",
+    "highlight_rewrite": "Goat House view"
+   }
+  ]
+ },
+ "macarthur": {
+  "header": {
+   "choice": "Picton, New South Wales.jpg",
+   "weak": true,
+   "weak_reason": "Town seen over rooftops from a hill; ordinary, not spectacular, and Picton is one of three towns",
+   "hero_crop": {
+    "x": 0.5,
+    "y": 0.5
+   },
+   "dark": false,
+   "width": 4032,
+   "licence": "CC BY-SA 4.0",
+   "place_proof": "Category Picton, New South Wales; 2025 photo of the town"
+  },
+  "why": [
+   {
+    "choice": "none: St John's lychgate photo carries a photographer watermark and is a church building; Mawson Park is a war memorial plaque; no Camden streetscape >=1280 px",
+    "weak": false,
+    "hero_crop": "ok",
+    "dark": false,
+    "width": 0,
+    "licence": "",
+    "place_proof": "",
+    "reason_rewrite": null,
+    "highlight_rewrite": null
+   },
+   {
+    "choice": "Picton, New South Wales.jpg",
+    "weak": true,
+    "hero_crop": "ok",
+    "dark": false,
+    "width": 4032,
+    "licence": "CC BY-SA 4.0",
+    "place_proof": "Category Picton, New South Wales",
+    "reason_rewrite": "Look over Picton from the hill",
+    "highlight_rewrite": "Picton views",
+    "weak_reason": "Victoria Bridge not shown; town view"
+   },
+   {
+    "choice": "Thirlmere Lake, Thirlmere National Park - panoramio.jpg",
+    "weak": false,
+    "hero_crop": "ok",
+    "dark": false,
+    "width": 2158,
+    "licence": "CC BY 3.0",
+    "place_proof": "Category Thirlmere Lakes National Park; coords -34.23",
+    "reason_rewrite": null,
+    "highlight_rewrite": null
+   }
+  ]
+ },
+ "merimbula": {
+  "header": {
+   "choice": "Merimbula Sound.jpg",
+   "weak": false,
+   "weak_reason": "",
+   "hero_crop": {
+    "x": 0.5,
+    "y": 0.45
+   },
+   "dark": false,
+   "width": 3264,
+   "licence": "CC BY 2.0",
+   "place_proof": "Category Merimbula, New South Wales; lake entrance, sand spit and town across"
+  },
+  "why": [
+   {
+    "choice": "Bournda Bournda-Island.JPG",
+    "weak": true,
+    "hero_crop": {
+     "x": 0.5,
+     "y": 0.45
+    },
+    "dark": false,
+    "width": 1971,
+    "licence": "CC BY-SA 3.0",
+    "place_proof": "Category Bournda National Park; Bournda Island",
+    "reason_rewrite": "Look out to Bournda Island",
+    "highlight_rewrite": "Bournda Island"
+   },
+   {
+    "choice": "MimosaRock.JPG",
+    "weak": false,
+    "hero_crop": {
+     "x": 0.7,
+     "y": 0.45
+    },
+    "dark": false,
+    "width": 2560,
+    "licence": "CC BY-SA 3.0",
+    "place_proof": "Description: Mimosa Rock in Mimosa Rocks National Park",
+    "reason_rewrite": null,
+    "highlight_rewrite": null
+   },
+   {
+    "choice": "Old Wharf Tathra.NSW. (21031327415).jpg",
+    "weak": false,
+    "hero_crop": {
+     "x": 0.4,
+     "y": 0.5
+    },
+    "dark": false,
+    "width": 4000,
+    "licence": "CC0",
+    "place_proof": "Category Tathra Wharf; coords -36.725",
+    "reason_rewrite": null,
+    "highlight_rewrite": null
+   }
+  ]
+ },
+ "morton": {
+  "header": {
+   "choice": "FitzroyFalls.jpg",
+   "weak": true,
+   "weak_reason": "Close view of falls and cliff rather than wide park landscape",
+   "hero_crop": {
+    "x": 0.3,
+    "y": 0.5
+   },
+   "dark": false,
+   "width": 3347,
+   "licence": "CC BY-SA 3.0",
+   "place_proof": "Category Fitzroy Falls; 81 m falls Southern Highlands"
+  },
+  "why": [
+   {
+    "choice": "FitzroyFalls.jpg",
+    "weak": false,
+    "hero_crop": {
+     "x": 0.3,
+     "y": 0.5
+    },
+    "dark": false,
+    "width": 3347,
+    "licence": "CC BY-SA 3.0",
+    "place_proof": "Category Fitzroy Falls",
+    "reason_rewrite": null,
+    "highlight_rewrite": null
+   },
+   {
+    "choice": "2023-10-28 View from Belmore Falls Lookout.jpg",
+    "weak": false,
+    "hero_crop": "ok",
+    "dark": false,
+    "width": 4032,
+    "licence": "CC BY-SA 4.0",
+    "place_proof": "Category Belmore Falls; coords -34.642",
+    "reason_rewrite": null,
+    "highlight_rewrite": null
+   },
+   {
+    "choice": "MK-02323 Hampden Bridge (Kangaroo Valley).jpg",
+    "weak": false,
+    "hero_crop": "ok",
+    "dark": false,
+    "width": 2783,
+    "licence": "CC BY-SA 3.0",
+    "place_proof": "Category Hampden Bridge, Kangaroo Valley; coords -34.727",
+    "reason_rewrite": null,
+    "highlight_rewrite": null
+   }
+  ]
+ },
+ "mount-kaputar-national-park": {
+  "header": {
+   "choice": "Camels Hump and the big lava flow from Mitchell Dyke in Mt Kaputar National park, NSW.jpg",
+   "weak": false,
+   "weak_reason": "",
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 4416,
+   "licence": "CC BY-SA 4.0",
+   "place_proof": "Category Mount Kaputar National Park; coords -30.304"
+  },
+  "why": [
+   {
+    "choice": "Mount Kaputar National Park, Narrabri, NSW. Sawn-rocks 01.jpg",
+    "weak": false,
+    "hero_crop": {
+     "x": 0.5,
+     "y": 0.6
+    },
+    "dark": false,
+    "width": 4320,
+    "licence": "CC BY-SA 4.0",
+    "place_proof": "Category Sawn Rocks (NSW); coords -30.2906",
+    "reason_rewrite": null,
+    "highlight_rewrite": null
+   },
+   {
+    "choice": "Mount Kaputar National Park 01.jpg",
+    "weak": true,
+    "hero_crop": {
+     "x": 0.5,
+     "y": 0.5
+    },
+    "dark": false,
+    "width": 3840,
+    "licence": "CC0",
+    "place_proof": "Category Mount Kaputar; volcanic peaks",
+    "reason_rewrite": "Look across the Nandewar Range's volcanic peaks",
+    "highlight_rewrite": "Volcanic peaks"
+   },
+   {
+    "choice": "Yulludundia Crater - panoramio.jpg",
+    "weak": true,
+    "hero_crop": "ok",
+    "dark": false,
+    "width": 2560,
+    "licence": "CC BY 3.0",
+    "place_proof": "Categories Mount Kaputar National Park, Volcanic craters of Australia; coords -30.285",
+    "reason_rewrite": "See the Yulludundia volcanic crater",
+    "highlight_rewrite": "Volcanic crater"
+   }
+  ]
+ },
+ "murramarang": {
+  "header": {
+   "choice": "Murramarang National Park 05.jpg",
+   "weak": true,
+   "weak_reason": "Generic coastal view; no named feature",
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 6480,
+   "licence": "CC0",
+   "place_proof": "Category Murramarang National Park (Wiki Loves Earth 2016); rocky beach under forested headland"
+  },
+  "why": [
+   {
+    "choice": "Pebbly Beach Escape kangaroo basking.jpg",
+    "weak": true,
+    "hero_crop": {
+     "x": 0.2,
+     "y": 0.55,
+     "zoom": 1.6
+    },
+    "dark": false,
+    "width": 4032,
+    "licence": "CC BY-SA 4.0",
+    "place_proof": "Category Pebbly Beach (Shoalhaven), Animals of Murramarang NP; coords -35.608",
+    "reason_rewrite": null,
+    "highlight_rewrite": null,
+    "weak_reason": "kangaroo small in frame"
+   },
+   {
+    "choice": "Murramarang National Park 05.jpg",
+    "weak": true,
+    "hero_crop": "ok",
+    "dark": false,
+    "width": 6480,
+    "licence": "CC0",
+    "place_proof": "Category Murramarang National Park",
+    "reason_rewrite": null,
+    "highlight_rewrite": null,
+    "weak_reason": "coastal scene, no walk visible"
+   },
+   {
+    "choice": "Pretty Beach February 2015.jpg",
+    "weak": true,
+    "hero_crop": {
+     "x": 0.5,
+     "y": 0.6
+    },
+    "dark": false,
+    "width": 4608,
+    "licence": "CC BY-SA 4.0",
+    "place_proof": "Description: Pretty Beach near Kioloa; coords -35.569",
+    "reason_rewrite": "Walk down to Pretty Beach",
+    "highlight_rewrite": "Pretty Beach",
+    "weak_reason": "no tents visible"
+   }
+  ]
+ },
+ "narooma": {
+  "header": {
+   "choice": "Narooma 2013 - panoramio.jpg",
+   "weak": false,
+   "weak_reason": "",
+   "hero_crop": {
+    "x": 0.4,
+    "y": 0.5
+   },
+   "dark": false,
+   "width": 4288,
+   "licence": "CC BY 3.0",
+   "place_proof": "Category Narooma, New South Wales; Glasshouse Rocks beach, coords -36.228"
+  },
+  "why": [
+   {
+    "choice": "Bermagui Blue Pool.jpg",
+    "weak": false,
+    "hero_crop": {
+     "x": 0.4,
+     "y": 0.55
+    },
+    "dark": false,
+    "width": 5184,
+    "licence": "CC BY-SA 4.0",
+    "place_proof": "Category Blue Pool, Bermagui",
+    "reason_rewrite": null,
+    "highlight_rewrite": null
+   },
+   {
+    "choice": "Central Tilba NSW. Australia. (22785067302).jpg",
+    "weak": true,
+    "hero_crop": {
+     "x": 0.7,
+     "y": 0.4
+    },
+    "dark": false,
+    "width": 4000,
+    "licence": "CC0",
+    "place_proof": "Category Tilba, New South Wales; coords -36.313",
+    "reason_rewrite": null,
+    "highlight_rewrite": null
+   },
+   {
+    "choice": "Mystery Bay, Eurobodalla National Park, New South Wales, Australia 01.jpg",
+    "weak": true,
+    "hero_crop": "ok",
+    "dark": false,
+    "width": 6480,
+    "licence": "CC0",
+    "place_proof": "Category Eurobodalla National Park",
+    "reason_rewrite": "Walk Eurobodalla National Park's beach",
+    "highlight_rewrite": "Eurobodalla beach",
+    "weak_reason": "beach only; no camping or surf shown"
+   }
+  ]
+ },
+ "new-england-national-park": {
+  "header": {
+   "choice": "Point Lookout, New England National Park.jpg",
+   "weak": true,
+   "weak_reason": "Hazy ranges, no focal point",
+   "hero_crop": {
+    "x": 0.5,
+    "y": 0.5
+   },
+   "dark": false,
+   "width": 5760,
+   "licence": "CC BY-SA 4.0",
+   "place_proof": "Category New England National Park; escarpment ranges"
+  },
+  "why": [
+   {
+    "choice": "Point Lookout, New England National Park.jpg",
+    "weak": true,
+    "hero_crop": "ok",
+    "dark": false,
+    "width": 5760,
+    "licence": "CC BY-SA 4.0",
+    "place_proof": "Category New England National Park",
+    "reason_rewrite": null,
+    "highlight_rewrite": null
+   },
+   {
+    "choice": "Ebor Falls Snapshot.jpg",
+    "weak": false,
+    "hero_crop": {
+     "x": 0.55,
+     "y": 0.5
+    },
+    "dark": false,
+    "width": 4032,
+    "licence": "CC BY-SA 4.0",
+    "place_proof": "Category Ebor Falls; description Ebor Falls 2020",
+    "reason_rewrite": null,
+    "highlight_rewrite": null
+   },
+   {
+    "choice": "Cunnawarra NP-1 NSW, Australia.jpg",
+    "weak": true,
+    "hero_crop": "ok",
+    "dark": false,
+    "width": 4032,
+    "licence": "CC BY 4.0",
+    "place_proof": "Category Cunnawarra National Park",
+    "reason_rewrite": "Look over Cunnawarra's forested ranges",
+    "highlight_rewrite": "Cunnawarra views",
+    "weak_reason": "Cathedral Rock photo has a Flickr watermark; hazy generic view"
+   }
+  ]
+ },
+ "newcastle": {
+  "header": {
+   "choice": "Newcastle Beach.jpg",
+   "weak": false,
+   "weak_reason": "High-rise view over rooftops to harbour; Newcastle Beach.jpg (CC0, 3648 px, beach with city skyline) is a better town-in-setting shot if the header pool may be widened",
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 3648,
+   "licence": "CC0",
+   "place_proof": "orchestrator swap: member-pool photo, beach with the city skyline; judged better than the harbour high-rise view"
+  },
+  "why": [
+   {
+    "choice": "Newcastle Ocean Baths, December 2025 01.jpg",
+    "weak": false,
+    "hero_crop": {
+     "x": 0.5,
+     "y": 0.7,
+     "zoom": 1.6
+    },
+    "dark": false,
+    "width": 4032,
+    "licence": "CC BY-SA 4.0",
+    "place_proof": "Category Newcastle Ocean Baths; coords -32.929",
+    "reason_rewrite": null,
+    "highlight_rewrite": null
+   },
+   {
+    "choice": "Nobbys Lighthouse, December 2025 03.jpg",
+    "weak": true,
+    "hero_crop": {
+     "x": 0.35,
+     "y": 0.45
+    },
+    "dark": false,
+    "width": 4032,
+    "licence": "CC BY-SA 4.0",
+    "place_proof": "Category Nobbys Head Light; coords -32.9195",
+    "reason_rewrite": null,
+    "highlight_rewrite": null,
+    "weak_reason": "headland path, breakwater not clearly shown"
+   },
+   {
+    "choice": "Fort Scratchley in Newcastle.jpg",
+    "weak": true,
+    "hero_crop": {
+     "x": 0.5,
+     "y": 0.5
+    },
+    "dark": false,
+    "width": 2710,
+    "licence": "CC BY-SA 2.5",
+    "place_proof": "Category Fort Scratchley",
+    "reason_rewrite": "Explore Fort Scratchley",
+    "highlight_rewrite": "Fort Scratchley",
+    "weak_reason": "fort exterior, tunnels not shown"
+   }
+  ]
+ }
+}

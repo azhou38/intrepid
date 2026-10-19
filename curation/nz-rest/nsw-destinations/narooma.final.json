@@ -1,0 +1,78 @@
+{
+  "destination": {
+    "id": "narooma",
+    "name": "Narooma",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Sydney",
+    "continent": "Oceania",
+    "coordinates": {
+      "latitude": -36.2,
+      "longitude": 150.13333
+    },
+    "category": "city",
+    "defaultZoomSpanKm": 35,
+    "rank": 4,
+    "icon": "🦭",
+    "tagline": "Far South Coast fishing town, boat base for the seals of Montague Island.",
+    "description": "Narooma is a town of about 8,500 on the Princes Highway, where Wagonga Inlet meets the ocean. Barunguba Montague Island, a short boat trip offshore, has hundreds of seals and more than 90 bird species, and Wikivoyage notes the largest penguin colony in NSW. Around the town, the heritage village of Central Tilba, Bermagui's rock pool and surf beaches, and Eurobodalla National Park fill out a longer stay.",
+    "whyVisit": [
+      "Swim in Blue Pool at Bermagui",
+      "Wander colourful Central Tilba",
+      "Camp and surf in Eurobodalla National Park"
+    ],
+    "highlights": [
+      "Blue Pool",
+      "Central Tilba",
+      "Eurobodalla coast"
+    ],
+    "goodToKnow": [
+      {
+        "icon": "🛥️",
+        "title": "Montague Island is boat-only",
+        "detail": "Tours depend on weather and run about $100–165; the reserve is closed during August. Seals are best seen from late winter to early December."
+      },
+      {
+        "icon": "🕘",
+        "title": "Tilba shops keep short hours",
+        "detail": "Central Tilba is easily covered on foot, with shops open roughly 9:00 AM – 4:00 PM."
+      },
+      {
+        "icon": "🌊",
+        "title": "Bar crossing is hazardous",
+        "detail": "Wikivoyage warns the bar at Narooma is the most dangerous boat crossing in NSW; skippers must call Coastal Patrol first."
+      }
+    ],
+    "bestMonths": [
+      9,
+      10,
+      11,
+      12,
+      1,
+      2
+    ],
+    "bestTimeBlurb": "{months} suit Montague Island seals, birds and passing whales, then summer beach weather."
+  },
+  "picks": {
+    "header": null,
+    "header_note": "No member photo shows Narooma itself (Mystery Bay, Bermagui and Central Tilba photos are other places); header needs search.",
+    "why": [
+      "Bermagui Blue Pool.jpg",
+      "Central Tilba NSW. Australia. (22785067302).jpg",
+      "Mystery Bay, Eurobodalla National Park, New South Wales, Australia 01.jpg"
+    ],
+    "why_note": "Montague Island (the headline reason) has a Commons photo of only 1200 px: a wider photo would let it lead the three reasons. Mount Dromedary member (narooma-2) uses Bermagui Beach 01.JPG, the same file as Bermagui: wrong photo, needs fixing. Blue Pool 5184 px is \"Bermagui Blue Pool\"."
+  },
+  "sources": [
+    "https://en.wikivoyage.org/wiki/Narooma",
+    "https://en.wikivoyage.org/wiki/Eurobodalla",
+    "https://en.wikipedia.org/wiki/Narooma,_New_South_Wales",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/barunguba-montague-island-nature-reserve",
+    "briefs/batch-6.json"
+  ],
+  "notes": [
+    "bestMonths from NPWS (seals late winter to early December, whales spring migration) and Wikivoyage; unverified otherwise.",
+    "Span 35 km as per brief; Bermagui and Camel Rock lie at the south edge.",
+    "Brief: narooma town spot removed on add."
+  ]
+}

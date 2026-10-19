@@ -1,0 +1,71 @@
+{
+ "destination": {
+  "id": "ballina",
+  "name": "Ballina",
+  "country": "Australia",
+  "countryCode": "AU",
+  "timezone": "Australia/Sydney",
+  "continent": "Oceania",
+  "coordinates": {
+   "latitude": -28.86574,
+   "longitude": 153.56595
+  },
+  "category": "city",
+  "defaultZoomSpanKm": 20,
+  "rank": 5,
+  "icon": "🦐",
+  "tagline": "A Richmond River port town whose best-known landmark is a giant prawn.",
+  "description": "Ballina sits at the mouth of the Richmond River in the Northern Rivers, where settlers formed a settlement in 1842 and the Richmond River Light has been lit since 1880. Its best-known landmark is the Big Prawn, and its urban area runs north to the surf village of Lennox Head. Lennox Point has a long right-hand break, and Seven Mile Beach and Lake Ainsworth fill out the coast. In 1973 the Las Balsas rafts from Ecuador were towed into Ballina, and one is kept at the Ballina Naval & Maritime Museum.",
+  "whyVisit": [
+   "Watch surfers from Pat Morton Lookout",
+   "Walk Seven Mile Beach",
+   "Photograph the Big Prawn"
+  ],
+  "highlights": [
+   "Lennox Point surf",
+   "Seven Mile Beach",
+   "Giant prawn"
+  ],
+  "goodToKnow": [
+   {
+    "icon": "🏄",
+    "title": "Beginner water at Lake Ainsworth",
+    "detail": "The tea-tree-stained dune lake beside Lennox Head has sheltered water that suits beginner windsurfers, while Seven Mile Beach is better known for body surfing and kite surfing."
+   },
+   {
+    "icon": "🦐",
+    "title": "The prawn is at Bunnings",
+    "detail": "The Big Prawn is a giant concrete and fibreglass prawn beside the Bunnings car park entrance, so it is a quick photo stop rather than a half-day outing."
+   },
+   {
+    "icon": "✈️",
+    "title": "Fly into Ballina Byron Gateway",
+    "detail": "The regional airport, about 34 km east of Lismore, serves the Northern Rivers now that Lismore has no passenger flights."
+   }
+  ],
+  "bestMonths": [
+   4,
+   5,
+   9,
+   10
+  ],
+  "bestTimeBlurb": "Autumn and spring, {months}, are the milder months for beach walks and surf checks along the Ballina coast."
+ },
+ "picks": {
+  "header": "Seven Mile Beach and Lennox Head.jpg",
+  "header_note": "2400 px aerial-style coast view of Lennox Head and Seven Mile Beach, the destination's landscape; judge to confirm.",
+  "why": [
+   "Pat Morton Lookout Dec 2024-3.jpg",
+   "Seven Mile Beach and Lennox Head.jpg",
+   "The Big Prawn Bunnings Ballina NSW L1010612.jpg"
+  ],
+  "why_note": "All three Commons, widths 4624, 2400, 8368; Big Prawn photo very wide (8368 px), check crop."
+ },
+ "sources": [
+  "https://en.wikipedia.org/wiki/Ballina,_New_South_Wales",
+  "curation/nz-rest/nsw-destinations/briefs/batch-4.json"
+ ],
+ "notes": [
+  "Reasons 1 and 2 are Lennox Head spot and Seven Mile Beach spot. The 'beginner' and 'stand' tips come from member bios. Season months are a guess for mild weather: no climate source fetched (unverified). Ballina is not in src/data/destinations.ts."
+ ]
+}

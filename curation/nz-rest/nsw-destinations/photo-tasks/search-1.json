@@ -1,0 +1,237 @@
+[
+ {
+  "id": "albury",
+  "name": "Albury",
+  "category": "city",
+  "centre": {
+   "latitude": -36.0737,
+   "longitude": 146.9135
+  },
+  "span_km": 15,
+  "need_header": true,
+  "current_header": null,
+  "header_note": "No member photo qualifies: Hume Dam (4272 px) shows the lake and dam, not Albury, and Murray Art Museum Albury is a building. Needs a town or Murray River view of Albury.",
+  "reasons": [
+   "Visit the free Murray Art Museum",
+   "Walk across the Hume Dam wall",
+   "Kayak or swim on Lake Hume"
+  ],
+  "need_why": true,
+  "current_why": null,
+  "why_note": "Only two member spots have photos >=1280 px Commons files (Murray Art Museum Albury, Hume Dam). Reason 3 (Lake Hume kayak/swim, from Wikivoyage Do) needs a photo.",
+  "member_pool_commons_ge_1280": [
+   {
+    "spot": "murray-art-museum-albury",
+    "file": "Murray Art Museum Albury, 2022, 02.jpg",
+    "width": 3934
+   },
+   {
+    "spot": "hume-dam",
+    "file": "Full Lake Hume looking towards the dam wall in November 2010.jpg",
+    "width": 4272
+   }
+  ]
+ },
+ {
+  "id": "armidale",
+  "name": "Armidale",
+  "category": "city",
+  "centre": {
+   "latitude": -30.513916,
+   "longitude": 151.658902
+  },
+  "span_km": 45,
+  "need_header": true,
+  "current_header": null,
+  "header_note": "No member photo shows Armidale itself (NERAM 1500 px wide; Uralla and Guyra photos are other towns); needs a header search.",
+  "reasons": [
+   "Tour Saumarez Homestead's furnished rooms",
+   "Browse the collections at NERAM",
+   "Explore heritage Uralla on the highway"
+  ],
+  "need_why": false,
+  "current_why": [
+   "Picking Garden Saumarez Homestead.jpg",
+   "E. New England Regional Art Museum (NERAM).jpg",
+   "Uralla, New South Wales, 2021, 10.jpg"
+  ],
+  "why_note": "All three are Commons files >=1280 px (3264, 1500, 4030). Uralla photo must be checked as an actual street/heritage view.",
+  "member_pool_commons_ge_1280": [
+   {
+    "spot": "new-england-regional-art-museum",
+    "file": "E. New England Regional Art Museum (NERAM).jpg",
+    "width": 1500
+   },
+   {
+    "spot": "saumarez-homestead",
+    "file": "Picking Garden Saumarez Homestead.jpg",
+    "width": 3264
+   },
+   {
+    "spot": "uralla",
+    "file": "Uralla, New South Wales, 2021, 10.jpg",
+    "width": 4030
+   },
+   {
+    "spot": "the-big-lamb",
+    "file": "BigLamb Guyra.jpg",
+    "width": 2569
+   }
+  ]
+ },
+ {
+  "id": "batemans-bay",
+  "name": "Batemans Bay",
+  "category": "city",
+  "centre": {
+   "latitude": -35.70806,
+   "longitude": 150.17444
+  },
+  "span_km": 15,
+  "need_header": true,
+  "current_header": null,
+  "header_note": "Only Mogo village photo (1760 px, cafes) exists; no wide Batemans Bay view. Header needs search.",
+  "reasons": [
+   "See red pandas at Mogo Wildlife Park",
+   "Browse cafes and shops in Mogo",
+   "Look over the Clyde from Holmes Lookout"
+  ],
+  "need_why": true,
+  "current_why": null,
+  "why_note": "Only one member spot has a qualifying Commons photo (Mogo, 1760 px; Mogo Wildlife Park has no photo; Holmes Lookout is not a member spot). Photos needed for the zoo and Holmes Lookout.",
+  "member_pool_commons_ge_1280": [
+   {
+    "spot": "batemans-bay-2",
+    "file": "Mogo Village Cafes.jpg",
+    "width": 1760
+   }
+  ]
+ },
+ {
+  "id": "bathurst",
+  "name": "Bathurst",
+  "category": "city",
+  "centre": {
+   "latitude": -33.42,
+   "longitude": 149.57777778
+  },
+  "span_km": 15,
+  "need_header": false,
+  "current_header": "Mount Panorama Pit Straight and Pit Lane 2015.JPG",
+  "header_note": "3456 px (qualifies on width) but shows the pit straight, not the city; judge to decide. No town panorama is in the pool, so it needs a search.",
+  "reasons": [
+   "Drive the Mount Panorama circuit",
+   "Explore the National Motor Racing Museum",
+   "See fossils at the Fossil and Mineral Museum"
+  ],
+  "need_why": true,
+  "current_why": null,
+  "why_note": "Reason 1 = mount-panorama-circuit (3456), 2 = national-motor-racing-museum (1200 px, below 1280: FAILS), 3 = fossil museum (3968). So only 2 qualify: why = null; reason 2 needs a photo of the motor racing museum.",
+  "member_pool_commons_ge_1280": [
+   {
+    "spot": "mount-panorama-circuit",
+    "file": "Mount Panorama Pit Straight and Pit Lane 2015.JPG",
+    "width": 3456
+   },
+   {
+    "spot": "australian-fossil-and-mineral-museum",
+    "file": "Australian Fossil & Mineral Museum, Bathurst.jpg",
+    "width": 3968
+   }
+  ]
+ },
+ {
+  "id": "beowa",
+  "name": "Beowa National Park",
+  "category": "park",
+  "centre": {
+   "latitude": -37.165,
+   "longitude": 150.00111
+  },
+  "span_km": 20,
+  "need_header": true,
+  "current_header": null,
+  "header_note": "Only two members (Green Cape 1920 px, Boyds Tower 5176 px, a tower close-up); no wide landscape of the park; header needs search.",
+  "reasons": [
+   "Tour Green Cape Lighthouse",
+   "Walk the Light to Light track",
+   "Watch whales from the headlands"
+  ],
+  "need_why": true,
+  "current_why": null,
+  "why_note": "Only two member spots with Commons photos; third reason (whale watching from headlands) has no member spot or photo and needs search.",
+  "member_pool_commons_ge_1280": [
+   {
+    "spot": "beowa-1",
+    "file": "Green Cape Lighthouse (12534013823).jpg",
+    "width": 1920
+   },
+   {
+    "spot": "beowa-2",
+    "file": "Ben Boyd Tower (honorary lighthouse) (12537814013).jpg",
+    "width": 5176
+   }
+  ]
+ },
+ {
+  "id": "brewarrina",
+  "name": "Brewarrina",
+  "category": "city",
+  "centre": {
+   "latitude": -29.96244,
+   "longitude": 146.86112
+  },
+  "span_km": 15,
+  "need_header": false,
+  "current_header": "Brewarrina fish traps 2023.jpg",
+  "header_note": "4080 px view of the traps on the Barwon riverbed; judge to confirm.",
+  "reasons": [
+   "Walk beside Baiame's Ngunnhu fish traps",
+   "Learn at the Aboriginal Culture Museum",
+   "Join a guided Aboriginal cultural tour"
+  ],
+  "need_why": true,
+  "current_why": null,
+  "why_note": "Only the fish traps (4080) have a pool photo; the museum has none and no third member spot exists. Need photos for reasons 2 and 3 (museum, cultural tour).",
+  "member_pool_commons_ge_1280": [
+   {
+    "spot": "brewarrina-aboriginal-fish-traps",
+    "file": "Brewarrina fish traps 2023.jpg",
+    "width": 4080
+   }
+  ]
+ },
+ {
+  "id": "budderoo",
+  "name": "Budderoo National Park",
+  "category": "park",
+  "centre": {
+   "latitude": -34.63,
+   "longitude": 150.69
+  },
+  "span_km": 15,
+  "need_header": false,
+  "current_header": "Carrington Falls.jpg",
+  "header_note": "Candidate 3648 px: Carrington Falls, the park's waterfall landscape; judge to confirm it shows the falls and gorge wide.",
+  "reasons": [
+   "Walk the Minnamurra Rainforest boardwalks",
+   "See Carrington Falls from its lookouts",
+   "Hike the Cascades at Macquarie Pass"
+  ],
+  "need_why": true,
+  "current_why": null,
+  "why_note": "Minnamurra Rainforest photo is external (1280 px, not Commons) and not eligible; Carrington Falls (3648) and Macquarie Pass Cascades (1620) qualify. Reason 1 (Minnamurra boardwalks) needs a Commons photo >=1280.",
+  "member_pool_commons_ge_1280": [
+   {
+    "spot": "budderoo-2",
+    "file": "Carrington Falls.jpg",
+    "width": 3648
+   },
+   {
+    "spot": "budderoo-3",
+    "file": "Macquarie Pass Cascades.jpg",
+    "width": 1620
+   }
+  ]
+ }
+]

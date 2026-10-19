@@ -1,0 +1,97 @@
+{
+  "destination": {
+    "id": "cowra",
+    "name": "Cowra",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Sydney",
+    "continent": "Oceania",
+    "coordinates": {
+      "latitude": -33.83388889,
+      "longitude": 148.7
+    },
+    "category": "city",
+    "defaultZoomSpanKm": 45,
+    "rank": 5,
+    "icon": "🌸",
+    "tagline": "A Lachlan River town where a Japanese garden stands near the site of a 1944 prisoner-of-war breakout.",
+    "description": "Cowra sits on the Lachlan River in the Central West, 310 km west of Sydney by road, and has about 8,250 people. During the Second World War it held a prisoner-of-war camp, and on 5 August 1944 1,104 Japanese prisoners broke out, which Wikipedia calls the largest prison escape of the war. The Japanese War Cemetery on Doncaster Drive is the only one in Australia, and the Japanese garden was designed as a strolling garden symbolising reconciliation and peace. Canowindra, 32 km north, is a heritage township that calls itself the Balloon Capital of Australia.",
+    "whyVisit": [
+      "Stroll Cowra Japanese Garden",
+      "Walk the Cowra Breakout camp site",
+      "Explore Canowindra's heritage Gaskill Street"
+    ],
+    "highlights": [
+      "Japanese strolling garden",
+      "Breakout camp site",
+      "Heritage Canowindra"
+    ],
+    "goodToKnow": [
+      {
+        "icon": "🎟️",
+        "title": "Garden entry and hours",
+        "detail": "Cowra Japanese Garden is $22 for adults ($17 concession, $12 child, $52 family) and opens 8:30 am to 5 pm daily, with different prices on festival days."
+      },
+      {
+        "icon": "🚗",
+        "title": "Plan to drive",
+        "detail": "Scheduled flights serve Orange, Parkes and Bathurst rather than Cowra, and the coaches from Bathurst and Lithgow need a reserved seat, so a car is easiest for the camp site, cemeteries and Canowindra."
+      },
+      {
+        "icon": "🐟",
+        "title": "Age of Fishes opening days",
+        "detail": "The Age of Fishes Museum in Canowindra opens 10 am to 3:45 pm Thursday to Monday, and daily in NSW school holidays, so it is shut on Tuesday and Wednesday in term."
+      }
+    ],
+    "bestMonths": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "bestTimeBlurb": "Visit in {months}: the garden holds its Sakura Matsuri cherry-blossom day in late September, Canowindra hosts a balloon challenge in April, and summer days average about 32C with frequent 40C-plus heat.",
+    "seasonalTags": [
+      {
+        "tag": "cherry-blossom",
+        "months": [
+          9
+        ],
+        "strength": 0.6
+      },
+      {
+        "tag": "major-festival",
+        "months": [
+          4
+        ],
+        "strength": 0.4
+      }
+    ]
+  },
+  "picks": {
+    "header": null,
+    "header_note": "No member photo is a Cowra town or river view: Japanese Garden (2002 px) is a garden close view, Breakout and Canowindra are site/street views. Needs a header search (Cowra Lachlan River / town view).",
+    "why": [
+      "Cowra Japanese Garden (3379217011).jpg",
+      "Cowra Breakout 3.jpg",
+      "CanowindraGaskillSt.JPG"
+    ],
+    "why_note": "All three >= 1280 px (2002, 2988, 3872), one per reason, order matches whyVisit. Judge to confirm each shows the thing (the garden itself; the camp site, not a grave; Gaskill Street)."
+  },
+  "sources": [
+    "https://en.wikivoyage.org/wiki/Cowra",
+    "https://en.wikipedia.org/wiki/Cowra",
+    "https://en.wikipedia.org/wiki/Cowra_breakout",
+    "https://en.wikipedia.org/wiki/Canowindra",
+    "https://www.cowragarden.com.au/",
+    "https://www.ageoffishes.org.au/",
+    "curation/nsw/quill/cowra/final.json (draft, facts re-checked)"
+  ],
+  "notes": [
+    "Sakura Matsuri was 26 Sep 2026 and has passed; 2027 date unpublished; blossom window beyond late September unverified.",
+    "Balloon challenge April per Wikipedia Canowindra; Garden prices from operator site as fact-checked 17 Oct 2026 in the earlier draft (matches the brief $22).",
+    "bestMonths are inference from events and climate; no guide gives a best time.",
+    "Wikivoyage Cowra lists an old $9.50 garden price; ignored."
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "destination": {
+    "id": "morton",
+    "name": "Morton National Park",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Sydney",
+    "continent": "Oceania",
+    "coordinates": {
+      "latitude": -34.6483,
+      "longitude": 150.4824
+    },
+    "category": "park",
+    "defaultZoomSpanKm": 15,
+    "rank": 4,
+    "icon": "💧",
+    "tagline": "Waterfall lookouts and gorges in the Southern Highlands and Shoalhaven escarpment.",
+    "description": "Morton National Park covers 199,745 hectares of the Southern Highlands, South Coast and Illawarra, about 170 km south-southwest of Sydney. NPWS describes imposing gorges alongside pockets of rainforest, with picnic areas and lookouts. The visitor base is Fitzroy Falls, where a boardwalk leads to a fall of 81 m into Yarrunga Valley, and the enclosed Kangaroo Valley lies close by with its 1898 suspension bridge.",
+    "whyVisit": [
+      "See Fitzroy Falls from the boardwalk",
+      "Look over Kangaroo Valley from Belmore Falls",
+      "Cross historic Hampden Bridge"
+    ],
+    "highlights": [
+      "Fitzroy Falls boardwalk",
+      "Belmore Falls lookouts",
+      "Hampden Bridge"
+    ],
+    "goodToKnow": [
+      {
+        "icon": "🎟️",
+        "title": "Fitzroy Falls has an entry fee",
+        "detail": "The Fitzroy Falls lookout is listed at about $4 entry; the Fitzroy Falls Visitor Centre is the park base. Check NPWS for current fees."
+      },
+      {
+        "icon": "⚠️",
+        "title": "Belmore Falls base is closed",
+        "detail": "The walking track gives lookouts over Kangaroo Valley and the falls, but the base of the falls is permanently closed."
+      },
+      {
+        "icon": "🚗",
+        "title": "Bring a car",
+        "detail": "Kangaroo Valley has no train service; a bus links Nowra and Moss Vale, and Wikivoyage names a car as the best way to reach the sights away from the village."
+      }
+    ],
+    "bestMonths": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "bestTimeBlurb": "{months} bring mild weather for lookout walks, avoiding the heat of summer."
+  },
+  "picks": {
+    "header": "FitzroyFalls.jpg",
+    "header_note": "Fitzroy Falls photo (3347 px) is the park's headline landscape; judge to confirm it shows the falls and valley wide.",
+    "why": [
+      "FitzroyFalls.jpg",
+      "2023-10-28 View from Belmore Falls Lookout.jpg",
+      "MK-02323 Hampden Bridge (Kangaroo Valley).jpg"
+    ],
+    "why_note": "All three are Commons, widths 3347/4032/2783."
+  },
+  "sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/morton-national-park",
+    "https://en.wikivoyage.org/wiki/Morton_National_Park",
+    "https://en.wikipedia.org/wiki/Morton_National_Park",
+    "https://en.wikipedia.org/wiki/Fitzroy_Falls,_New_South_Wales",
+    "briefs/batch-6.json"
+  ],
+  "notes": [
+    "bestMonths are a judgement from Wikivoyage/NPWS silence on seasons (no climate section on the Kangaroo Valley page): unverified.",
+    "Kangaroo Valley (morton-3) has only an external photo (1023 px) so is not used for a why photo.",
+    "Centre kept from brief (near Fitzroy Falls)."
+  ]
+}

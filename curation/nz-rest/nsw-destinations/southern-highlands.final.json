@@ -1,0 +1,74 @@
+{
+ "destination": {
+  "id": "southern-highlands",
+  "country": "Australia",
+  "countryCode": "AU",
+  "timezone": "Australia/Sydney",
+  "continent": "Oceania",
+  "name": "Southern Highlands",
+  "coordinates": {
+   "latitude": -34.4679,
+   "longitude": 150.4161
+  },
+  "category": "nature",
+  "defaultZoomSpanKm": 30,
+  "rank": 4,
+  "icon": "🍂",
+  "tagline": "Cool-climate villages and gardens in the hills southwest of Sydney.",
+  "description": "The Southern Highlands is a run of country towns and villages about 80 minutes by car from Sydney, popular for weekends away. Bowral has Corbett Gardens and the cricket museum attached to Bradman Oval, Berrima is a Georgian sandstone village with a courthouse and district museum, and Mount Gibraltar above Mittagong is an extinct volcano with a rim walk. It is cooler than Sydney and has more distinct seasons, with leaves falling in autumn.",
+  "whyVisit": [
+   "Wander Berrima's Georgian sandstone village",
+   "Stroll Corbett Gardens in Bowral",
+   "Walk Mount Gibraltar's rim lookouts"
+  ],
+  "highlights": [
+   "Berrima village",
+   "Corbett Gardens",
+   "Gibraltar lookouts"
+  ],
+  "goodToKnow": [
+   {
+    "icon": "🚗",
+    "title": "Drive from Sydney",
+    "detail": "Allow about 80 minutes to Bowral; weekday and Friday afternoons add 30 to 45 minutes. Trains run on the Southern Highlands Line, but most services end at Campbelltown."
+   },
+   {
+    "icon": "🏏",
+    "title": "Bradman Museum hours",
+    "detail": "The cricket museum on St Jude Street, Bowral is open 9:00 AM to 4:00 PM, and a walking tour from it passes sites linked to Don Bradman."
+   },
+   {
+    "icon": "🚲",
+    "title": "Cycling Mittagong to Bowral",
+    "detail": "Bowral and Moss Vale are linked by a riverside cycleway, but Mittagong to Bowral is harder: the four-lane road past Mount Gibraltar is the only route that avoids going over it."
+   }
+  ],
+  "bestMonths": [
+   3,
+   4,
+   5,
+   9,
+   10
+  ],
+  "bestTimeBlurb": "{months} suit the highlands: leaves fall in autumn, spring is cooler than Sydney, and the gardens are in flower."
+ },
+ "picks": {
+  "header": "Bowral NSW 2576, Australia - panoramio (135).jpg",
+  "header_note": "Mount Gibraltar view over the highlands, 2700 px, landscape; a judge should confirm it reads as the area (it is also a why photo).",
+  "why": [
+   "Berrima NSW 2577, Australia - panoramio (4).jpg",
+   "2022-10-01 Corbett Gardens, Bowral, NSW 1.jpg",
+   "Bowral NSW 2576, Australia - panoramio (135).jpg"
+  ],
+  "why_note": "Berrima shows the main street with cafes (not the courthouse); Corbett Gardens shows tulips; all >=1280 Commons. Bradman Museum photo is external 1024 so not used."
+ },
+ "sources": [
+  "https://en.wikivoyage.org/wiki/Southern_Highlands_(New_South_Wales)",
+  "member bios in briefs/batch-7.json"
+ ],
+ "notes": [
+  "Not in src/data/destinations.ts. Bowral-centre point from brief; Wikivoyage Bowral point matches (-34.4679,150.4161).",
+  "Best months: Wikivoyage says cooler spring and autumn leaf fall; garden-flower claim rests on the Corbett Gardens tulip photo caption only, spring months are approximate.",
+  "Big Potato (Robertson) and Bradman Museum not used for reasons: potato is a roadside stop, museum photo is external."
+ ]
+}

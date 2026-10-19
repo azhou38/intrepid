@@ -1,0 +1,75 @@
+{
+ "destination": {
+  "id": "kosciuszko",
+  "country": "Australia",
+  "countryCode": "AU",
+  "timezone": "Australia/Sydney",
+  "continent": "Oceania",
+  "name": "Kosciuszko National Park",
+  "coordinates": {
+   "latitude": -36.4562,
+   "longitude": 148.2707
+  },
+  "category": "park",
+  "defaultZoomSpanKm": 75,
+  "rank": 2,
+  "icon": "🏔️",
+  "tagline": "Mainland Australia's highest peaks, with snow resorts in winter and alpine walks in summer.",
+  "description": "Kosciuszko National Park covers about 6,900 square kilometres in the south-east of New South Wales and contains Mount Kosciuszko, the highest peak on the Australian mainland. The mountains are typically under metres-deep snow for up to four months of the year, and Thredbo, Perisher and Charlotte Pass ski resorts lie within the park. In summer many thousands walk to the summit, 6 km from the Thredbo chairlift or 9 km from Charlotte Pass. Charlotte Pass recorded Australia's lowest temperature, -23 degrees Celsius, in June 1994.",
+  "whyVisit": [
+   "Walk to Mount Kosciuszko's summit",
+   "Ride Thredbo's chairlift into the alpine",
+   "Base yourself beside Lake Jindabyne"
+  ],
+  "highlights": [
+   "Summit walk",
+   "Thredbo chairlift",
+   "Lake Jindabyne"
+  ],
+  "goodToKnow": [
+   {
+    "icon": "⛓️",
+    "title": "Snow chains in winter",
+    "detail": "2WD vehicles must carry chains on the Alpine Way, Kosciuszko Road and Guthega Road in winter, and some rental companies forbid taking cars past Jindabyne."
+   },
+   {
+    "icon": "🥾",
+    "title": "Summit walk is seasonal",
+    "detail": "The track to the top is snowbound from June to October, and Charlotte Pass has no car access in those months; summer chairlifts at Thredbo run November to April."
+   },
+   {
+    "icon": "🎟️",
+    "title": "Park entry fee",
+    "detail": "A park entry fee applies, about $17 to $29 a day depending on season; check NPWS before you go."
+   }
+  ],
+  "bestMonths": [
+   12,
+   1,
+   2,
+   3
+  ],
+  "bestTimeBlurb": "{months} are the walking months, when the summit tracks are clear of snow; the ski season runs through winter instead."
+ },
+ "picks": {
+  "header": "Kosciuszko NP Mount Kosciuszko seen from Kosciuszko lookout.jpg",
+  "header_note": "6000 px, 3:2, Main Range landscape; judge to confirm summit is centred.",
+  "why": [
+   "Kosciuszko NP Mount Kosciuszko seen from Kosciuszko lookout.jpg",
+   "Kosciuszko NP Thredbo Village seen from the bottom of the bobsled lift.jpg",
+   "Lake Jindabyne 1.jpg"
+  ],
+  "why_note": "Thredbo photo is the village (not the chairlift); Blue Lake photo is external 1024 so not used."
+ },
+ "sources": [
+  "https://en.wikipedia.org/wiki/Kosciuszko_National_Park",
+  "https://en.wikivoyage.org/wiki/Snowy_Mountains",
+  "member bios in briefs/batch-7.json"
+ ],
+ "notes": [
+  "Not in destinations.ts. Fee range from brief member cost (17-29 AUD); verify at NPWS.",
+  "Centre from brief; Wikipedia park centroid is further north (-36.07).",
+  "Lake Eucumbene is ~55 km from centre, near the edge of the 75% span.",
+  "Park region has a brief tag town_spot_removed_on_add: kosciuszko-national-park."
+ ]
+}

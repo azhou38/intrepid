@@ -1,0 +1,77 @@
+{
+  "destination": {
+    "id": "jervis-bay",
+    "name": "Jervis Bay",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Sydney",
+    "continent": "Oceania",
+    "coordinates": {
+      "latitude": -35.06528,
+      "longitude": 150.73472
+    },
+    "category": "beach",
+    "defaultZoomSpanKm": 15,
+    "rank": 3,
+    "icon": "🏖️",
+    "tagline": "White-sand beaches, dolphins and a national park on a protected bay.",
+    "description": "Jervis Bay is described by Wikivoyage as one of the most beautiful parts of the NSW South Coast and an extremely popular summer destination. Hyams Beach is known for fine, squeaky quartz sand, and Booderee National Park covers most of the Jervis Bay Territory, which is administered separately from New South Wales. Huskisson is the largest town and the base for cruises that watch dolphins, and whales from June to November.",
+    "whyVisit": [
+      "Swim at white Hyams Beach",
+      "Explore Booderee National Park's beaches",
+      "Drive to Beecroft Peninsula's lighthouse"
+    ],
+    "highlights": [
+      "Hyams Beach",
+      "Booderee beaches",
+      "Beecroft Peninsula"
+    ],
+    "goodToKnow": [
+      {
+        "icon": "🎟️",
+        "title": "Booderee has its own fee",
+        "detail": "Booderee is in the Jervis Bay Territory, so it charges a separate entry fee (about $20 per the brief) and NSW national park passes are not valid there."
+      },
+      {
+        "icon": "📅",
+        "title": "Book ahead for summer",
+        "detail": "Wikivoyage warns accommodation can be fully booked months before Christmas and New Year, and the bay is very busy at peak times."
+      },
+      {
+        "icon": "🪖",
+        "title": "Beecroft opens at set times",
+        "detail": "Beecroft Peninsula is a military range open Fri 12:00 PM – 6:00 PM, weekends to 6:00 PM, and school and most public holidays; the lighthouse is at the end of a gravel road."
+      }
+    ],
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "bestTimeBlurb": "{months} are the warm swimming months, though Christmas and New Year are the busiest weeks."
+  },
+  "picks": {
+    "header": "Murrays Beach, Booderee National Park.jpg",
+    "header_note": "Murrays Beach photo (5121 px) is a wide Jervis Bay beach landscape; judge to confirm. Hyams Beach 002.jpg (2500 px) is the alternative.",
+    "why": [
+      "Hyams Beach 002.jpg",
+      "Murrays Beach, Booderee National Park.jpg",
+      "Beecroft Peninsula, Jervis Bay Territory 01.jpg"
+    ],
+    "why_note": "All Commons, widths 2500/5121/6480. Judge to confirm the Beecroft photo shows the peninsula or lighthouse; Huskisson (3072 px) is a fallback."
+  },
+  "sources": [
+    "https://en.wikivoyage.org/wiki/Jervis_Bay",
+    "https://en.wikivoyage.org/wiki/Shoalhaven",
+    "https://en.wikipedia.org/wiki/Hyams_Beach",
+    "https://en.wikipedia.org/wiki/Booderee_National_Park_and_Botanic_Gardens",
+    "briefs/batch-6.json"
+  ],
+  "notes": [
+    "bestMonths from Wikivoyage (summer destination) and brief; whale season June–November is Wikivoyage.",
+    "Wikivoyage lists Booderee at $11 per vehicle (2017); the brief's $20 is newer so used.",
+    "Brief: jervis-bay town spot removed on add."
+  ]
+}

@@ -1,0 +1,72 @@
+{
+ "destination": {
+  "id": "kinchega-national-park",
+  "name": "Kinchega National Park",
+  "country": "Australia",
+  "countryCode": "AU",
+  "timezone": "Australia/Sydney",
+  "continent": "Oceania",
+  "coordinates": {
+   "latitude": -32.498333,
+   "longitude": 142.334444
+  },
+  "category": "park",
+  "defaultZoomSpanKm": 20,
+  "rank": 5,
+  "icon": "🦢",
+  "tagline": "An outback national park on the Darling River with lake birdlife and an old woolshed.",
+  "description": "Kinchega National Park covers 44,259 hectares on the Darling River beside the town of Menindee, 111 km south-east of Broken Hill. NPWS describes river red gums rising from the water of the Menindee lake system, with a wide array of birdlife. The park's woolshed dates from 1875, and six million sheep were sheared there in 97 years. The park is managed with the Menindee Aboriginal Elders Council under a joint management program.",
+  "whyVisit": [
+   "Watch sunset over Menindee Lakes",
+   "Tour the Kinchega Woolshed",
+   "Spot birdlife among river red gums"
+  ],
+  "highlights": [
+   "Lake sunsets",
+   "1875 woolshed",
+   "Lake birdlife"
+  ],
+  "goodToKnow": [
+   {
+    "icon": "💵",
+    "title": "Entry fee in coins",
+    "detail": "Park entry is 8 dollars per vehicle per day, paid by envelope at a pay-and-display point, so bring the correct coins."
+   },
+   {
+    "icon": "🌧️",
+    "title": "Lakes may be low",
+    "detail": "The Menindee Lakes fill only after months of rain in southern Queensland, so check conditions before planning around the water."
+   },
+   {
+    "icon": "🐑",
+    "title": "Woolshed tours are seasonal",
+    "detail": "Woolshed tours run in Easter, winter and spring school holidays; the park itself is open daily."
+   }
+  ],
+  "bestMonths": [
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ],
+  "bestTimeBlurb": "Summers here are hot semi-arid, so the cooler months, {months}, suit camping and walking; woolshed tours run in Easter, winter and spring school holidays."
+ },
+ "picks": {
+  "header": "Sunset Menindee Lakes - Flickr - Rmonty119.jpg",
+  "header_note": "2332 px sunset over Menindee Lakes, the park's landscape.",
+  "why": null,
+  "why_note": "Only two member spots; Menindee Lakes (2332) has a Commons photo, the woolshed (2832) too, but the third reason (birdlife among river red gums) has no member spot of its own, so a third photo needs a search."
+ },
+ "sources": [
+  "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/kinchega-national-park",
+  "https://en.wikipedia.org/wiki/Kinchega_National_Park",
+  "https://en.wikipedia.org/wiki/Menindee",
+  "curation/nz-rest/nsw-destinations/briefs/batch-4.json"
+ ],
+ "notes": [
+  "Timezone: set to Australia/Sydney per Wikivoyage ('all other towns operate on AEST'); owner may check, since Menindee may follow Broken Hill time. 'Hot semi-arid' summers are not sourced for Kinchega itself (unverified). Not in destinations.ts."
+ ]
+}

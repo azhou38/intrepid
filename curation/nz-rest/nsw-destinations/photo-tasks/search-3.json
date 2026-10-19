@@ -1,0 +1,284 @@
+[
+ {
+  "id": "hawkesbury",
+  "name": "Hawkesbury",
+  "category": "city",
+  "centre": {
+   "latitude": -33.61361111,
+   "longitude": 150.81166667
+  },
+  "span_km": 20,
+  "need_header": true,
+  "current_header": null,
+  "header_note": "No member photo is both 2000 px or wider and a landscape: Windsor (4000 px) is a church, Cattai and Scheyville are 2048 px views (qualify on width, but are the wharf and a swamp, not the district). Needs search for a Hawkesbury River landscape header.",
+  "reasons": [
+   "See Windsor’s colonial buildings",
+   "Canoe the river at Cattai",
+   "Watch birds at Longneck Lagoon"
+  ],
+  "need_why": false,
+  "current_why": [
+   "St Matthews Anglican Church, Windsor, New South Wales 03.jpg",
+   "Cattai national park view from cattai wharf.jpg",
+   "Scheyville national park longneck lagoon north swamp.jpg"
+  ],
+  "why_note": "Reason 1 = windsor (4000 px), 2 = cattai-national-park (2048; canoeing is in the bio but the photo is the wharf view), 3 = scheyville (2048; the lagoon). Judge: the Windsor photo is a church, which may fail 'shows the thing'; Longneck boardwalk currently closed.",
+  "member_pool_commons_ge_1280": [
+   {
+    "spot": "windsor",
+    "file": "St Matthews Anglican Church, Windsor, New South Wales 03.jpg",
+    "width": 4000
+   },
+   {
+    "spot": "cattai-national-park",
+    "file": "Cattai national park view from cattai wharf.jpg",
+    "width": 2048
+   },
+   {
+    "spot": "scheyville-national-park",
+    "file": "Scheyville national park longneck lagoon north swamp.jpg",
+    "width": 2048
+   }
+  ]
+ },
+ {
+  "id": "hay",
+  "name": "Hay",
+  "category": "city",
+  "centre": {
+   "latitude": -34.5043,
+   "longitude": 144.8431
+  },
+  "span_km": 15,
+  "need_header": true,
+  "current_header": null,
+  "header_note": "No member photo qualifies: all three are building shots. Needs a town or Murrumbidgee river view of Hay.",
+  "reasons": [
+   "Watch live shearing at ShearOutback",
+   "Explore Hay Gaol's windmills and bark canoe",
+   "Learn the Dunera Boys' story"
+  ],
+  "need_why": false,
+  "current_why": [
+   "Shear Outback, Hay, NSW, 2022, 05.jpg",
+   "HayGaol.JPG",
+   "Dunera Museum, Hay, NSW, 2022, 13.jpg"
+  ],
+  "why_note": "All three widths >=1280 (3726, 2272, 4032). Judge should check they show each place and are suitable; Hay Gaol is 2272 px.",
+  "member_pool_commons_ge_1280": [
+   {
+    "spot": "shearoutback",
+    "file": "Shear Outback, Hay, NSW, 2022, 05.jpg",
+    "width": 3726
+   },
+   {
+    "spot": "hay-gaol",
+    "file": "HayGaol.JPG",
+    "width": 2272
+   },
+   {
+    "spot": "dunera-museum",
+    "file": "Dunera Museum, Hay, NSW, 2022, 13.jpg",
+    "width": 4032
+   }
+  ]
+ },
+ {
+  "id": "hunter-valley",
+  "name": "Hunter Valley",
+  "category": "nature",
+  "centre": {
+   "latitude": -32.79833333,
+   "longitude": 151.28444444
+  },
+  "span_km": 45,
+  "need_header": true,
+  "current_header": null,
+  "header_note": "No member photo shows the valley landscape at >= 2000 px: Pokolbin vineyard photo is 1422 px; the rest are gardens, towns or a waterfall. Needs a header search (vineyards with the Brokenback Range).",
+  "reasons": [
+   "Taste wine at Pokolbin cellar doors",
+   "Walk through Hunter Valley Gardens",
+   "Hike to waterfalls in Watagans National Park"
+  ],
+  "need_why": false,
+  "current_why": [
+   "Hunter Valley Means Vineyards.jpg",
+   "Hunter Valley Gardens.jpg",
+   "Secret Falls, Watagans National Park.jpg"
+  ],
+  "why_note": "Widths 1422, 5183, 5760, all >= 1280. Reason 3 pairs the Watagans photo (Secret Falls) with a reason about waterfalls; bio mentions Gap Creek Falls, so judge to confirm it fits.",
+  "member_pool_commons_ge_1280": [
+   {
+    "spot": "hunter-valley-gardens",
+    "file": "Hunter Valley Gardens.jpg",
+    "width": 5183
+   },
+   {
+    "spot": "pokolbin",
+    "file": "Hunter Valley Means Vineyards.jpg",
+    "width": 1422
+   },
+   {
+    "spot": "cessnock",
+    "file": "Vincent Street viewed from Maitland and Wollombi Road intersection in Cessnock.jpg",
+    "width": 5244
+   },
+   {
+    "spot": "morpeth-nsw",
+    "file": "Morpeth Bridge over the Hunter River (2).jpg",
+    "width": 3000
+   },
+   {
+    "spot": "maitland-nsw",
+    "file": "PLJohnson Maitland, NSW, Heritage Mall..jpg",
+    "width": 2288
+   },
+   {
+    "spot": "wollombi",
+    "file": "Wollombi Hotel - panoramio.jpg",
+    "width": 2592
+   },
+   {
+    "spot": "watagans-national-park",
+    "file": "Secret Falls, Watagans National Park.jpg",
+    "width": 5760
+   }
+  ]
+ },
+ {
+  "id": "inverell",
+  "name": "Inverell",
+  "category": "city",
+  "centre": {
+   "latitude": -29.77372,
+   "longitude": 151.11119
+  },
+  "span_km": 55,
+  "need_header": false,
+  "current_header": "Copeton Dam Storage.jpg",
+  "header_note": "3102 px lake view; the lake is a draw but not the town, judge to decide.",
+  "reasons": [
+   "Fish and boat on Lake Copeton",
+   "Walk the Myall Creek memorial boulders",
+   "Tour the Inverell Pioneer Village"
+  ],
+  "need_why": true,
+  "current_why": null,
+  "why_note": "Only Copeton Dam has a Commons photo >=1280 (Myall Creek is external 1024 px). Reasons 2 and 3 need photos; Pioneer Village is a Wikivoyage item, not a member.",
+  "member_pool_commons_ge_1280": [
+   {
+    "spot": "copeton-dam",
+    "file": "Copeton Dam Storage.jpg",
+    "width": 3102
+   }
+  ]
+ },
+ {
+  "id": "junee",
+  "name": "Junee",
+  "category": "city",
+  "centre": {
+   "latitude": -34.8698,
+   "longitude": 147.5845
+  },
+  "span_km": 45,
+  "need_header": true,
+  "current_header": null,
+  "header_note": "No member photo >=2000 px shows the town; the only >=2000 px photos are the factory building and Bethungra Spiral. Needs a Junee town view.",
+  "reasons": [
+   "Explore the Junee Roundhouse locomotives",
+   "Tour Junee's licorice and chocolate factory",
+   "See the Bethungra Spiral rail loop"
+  ],
+  "need_why": false,
+  "current_why": [
+   "Junee Roundhouse Museum.jpg",
+   "Junee Liquorice Factory.JPG",
+   "BethungraSpiral.jpg"
+  ],
+  "why_note": "Widths 1600, 2816, 1951, all >=1280. Judge to confirm each shows the place.",
+  "member_pool_commons_ge_1280": [
+   {
+    "spot": "junee-roundhouse-museum",
+    "file": "Junee Roundhouse Museum.jpg",
+    "width": 1600
+   },
+   {
+    "spot": "junee-licorice-and-chocolate-factory",
+    "file": "Junee Liquorice Factory.JPG",
+    "width": 2816
+   },
+   {
+    "spot": "bethungra-spiral",
+    "file": "BethungraSpiral.jpg",
+    "width": 1951
+   }
+  ]
+ },
+ {
+  "id": "kanangra-boyd-national-park",
+  "name": "Kanangra-Boyd National Park",
+  "category": "park",
+  "centre": {
+   "latitude": -33.984886,
+   "longitude": 150.111245
+  },
+  "span_km": 30,
+  "need_header": false,
+  "current_header": "Kanangra Boyd National Park NSW.jpg",
+  "header_note": "3264 px, park landscape file; judge must confirm it shows the cliffs/gorge wide (title is the park, not a close-up).",
+  "reasons": [
+   "Look over Kanangra Walls' sandstone cliffs",
+   "Visit Jenolan Caves once it reopens",
+   "Camp among snow gums at Boyd River"
+  ],
+  "need_why": true,
+  "current_why": null,
+  "why_note": "Only 2 members (Kanangra Walls, Jenolan Caves) have a Commons photo >= 1280; the third reason (Boyd River camping) has no member spot or photo. Reason 2 (Jenolan) also depends on the caves reopening. Needs search for Boyd River photo, or rewrite reasons to the two spots.",
+  "member_pool_commons_ge_1280": [
+   {
+    "spot": "kanangra-walls",
+    "file": "Kanangra Boyd National Park NSW.jpg",
+    "width": 3264
+   },
+   {
+    "spot": "jenolan-caves",
+    "file": "Jenolan Caves 02.jpg",
+    "width": 4288
+   }
+  ]
+ },
+ {
+  "id": "kinchega-national-park",
+  "name": "Kinchega National Park",
+  "category": "park",
+  "centre": {
+   "latitude": -32.498333,
+   "longitude": 142.334444
+  },
+  "span_km": 20,
+  "need_header": false,
+  "current_header": "Sunset Menindee Lakes - Flickr - Rmonty119.jpg",
+  "header_note": "2332 px sunset over Menindee Lakes, the park's landscape.",
+  "reasons": [
+   "Watch sunset over Menindee Lakes",
+   "Tour the Kinchega Woolshed",
+   "Spot birdlife among river red gums"
+  ],
+  "need_why": true,
+  "current_why": null,
+  "why_note": "Only two member spots; Menindee Lakes (2332) has a Commons photo, the woolshed (2832) too, but the third reason (birdlife among river red gums) has no member spot of its own, so a third photo needs a search.",
+  "member_pool_commons_ge_1280": [
+   {
+    "spot": "menindee-lakes",
+    "file": "Sunset Menindee Lakes - Flickr - Rmonty119.jpg",
+    "width": 2332
+   },
+   {
+    "spot": "kinchega-woolshed",
+    "file": "Kinchega Woolshed (10641718584).jpg",
+    "width": 2832
+   }
+  ]
+ }
+]

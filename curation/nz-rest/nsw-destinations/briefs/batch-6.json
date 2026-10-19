@@ -1,0 +1,554 @@
+[
+ {
+  "id": "morton",
+  "name": "Morton National Park",
+  "region": "nsw-south-coast",
+  "centre": {
+   "latitude": -34.6483,
+   "longitude": 150.4824
+  },
+  "defaultZoomSpanKm": 15,
+  "category_hint": "park",
+  "rank_hint": null,
+  "np_exception": false,
+  "town_spot_removed_on_add": [],
+  "members": [
+   {
+    "id": "morton-1",
+    "name": "Fitzroy Falls",
+    "category": "'nature'",
+    "bio": "Falls dropping over 80 m into Yarrunga Valley, seen from an accessible boardwalk near the visitor centre.",
+    "hours": "Open 24 hours",
+    "cost": "4-4 'AUD'",
+    "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/fitzroy-falls-lookout",
+    "photo_file": "FitzroyFalls.jpg",
+    "photo_width": 3347,
+    "photo_external": false
+   },
+   {
+    "id": "morton-2",
+    "name": "Belmore Falls",
+    "category": "'nature'",
+    "bio": "Short walking track to lookouts over Kangaroo Valley and the falls; the base is permanently closed.",
+    "hours": "Open 24 hours",
+    "cost": "free",
+    "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/belmore-falls-walking-track",
+    "photo_file": "2023-10-28 View from Belmore Falls Lookout.jpg",
+    "photo_width": 4032,
+    "photo_external": false
+   },
+   {
+    "id": "morton-3",
+    "name": "Kangaroo Valley",
+    "category": "'historic'",
+    "bio": "Enclosed valley village of about 900 with antique shops and historic buildings, near Hampden Bridge.",
+    "hours": "Open 24 hours",
+    "cost": "free",
+    "ticketUrl": null,
+    "photo_file": "external:Kangaroo Valley, New South Wales",
+    "photo_width": 1023,
+    "photo_external": true
+   },
+   {
+    "id": "morton-4",
+    "name": "Hampden Bridge",
+    "category": "'historic'",
+    "bio": "Heritage suspension bridge over the Kangaroo River, opened in 1898 as the second built in NSW.",
+    "hours": "Open 24 hours",
+    "cost": "free",
+    "ticketUrl": null,
+    "photo_file": "MK-02323 Hampden Bridge (Kangaroo Valley).jpg",
+    "photo_width": 2783,
+    "photo_external": false
+   }
+  ]
+ },
+ {
+  "id": "nowra",
+  "name": "Nowra",
+  "region": "nsw-south-coast",
+  "centre": {
+   "latitude": -34.87412,
+   "longitude": 150.60047
+  },
+  "defaultZoomSpanKm": 25,
+  "category_hint": "city",
+  "rank_hint": null,
+  "np_exception": false,
+  "town_spot_removed_on_add": [
+   "nowra"
+  ],
+  "members": [
+   {
+    "id": "nowra-1",
+    "name": "Fleet Air Arm Museum",
+    "category": "'museum'",
+    "bio": "Australian naval aviation story told in a hangar-style hall at HMAS Albatross, overlooking the runway.",
+    "hours": "Fri–Sun and public holidays 10:00 AM – 4:00 PM",
+    "cost": "free",
+    "ticketUrl": null,
+    "photo_file": "Replica of McDonnell Douglas A-4G Skyhawk 882 at the Fleet Air Arm Museum in February 2015.jpg",
+    "photo_width": 4608,
+    "photo_external": false
+   },
+   {
+    "id": "nowra-2",
+    "name": "Berry",
+    "category": "'historic'",
+    "bio": "Elegant village with a heritage main street, antiques, a historic museum and the Berry Donut Van.",
+    "hours": "Open 24 hours",
+    "cost": "free",
+    "ticketUrl": null,
+    "photo_file": "Berry, New South Wales.jpg",
+    "photo_width": 5184,
+    "photo_external": false
+   },
+   {
+    "id": "nowra-3",
+    "name": "Seven Mile Beach National Park",
+    "category": "'nature'",
+    "bio": "Park between Shoalhaven Heads and Gerroa for swimming, fishing, picnics and the Sand Track walk.",
+    "hours": "Open 24 hours",
+    "cost": "free",
+    "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/seven-mile-beach-national-park",
+    "photo_file": "Beach Walk, Seven Mile Beach National Park, Shoalhaven, Australia.jpg",
+    "photo_width": 4000,
+    "photo_external": false
+   }
+  ]
+ },
+ {
+  "id": "jervis-bay",
+  "name": "Jervis Bay",
+  "region": "nsw-south-coast",
+  "centre": {
+   "latitude": -35.06528,
+   "longitude": 150.73472
+  },
+  "defaultZoomSpanKm": 15,
+  "category_hint": "beach",
+  "rank_hint": null,
+  "np_exception": false,
+  "town_spot_removed_on_add": [
+   "jervis-bay"
+  ],
+  "members": [
+   {
+    "id": "jervis-bay-1",
+    "name": "Booderee National Park",
+    "category": "'nature'",
+    "bio": "Park managed jointly with the Wreck Bay Aboriginal Community, with beaches, botanic gardens and a lighthouse.",
+    "hours": "Open daily (check Parks Australia for gate and alert notices)",
+    "cost": "20-20 'AUD'",
+    "ticketUrl": "https://booderee.gov.au/",
+    "photo_file": "Murrays Beach, Booderee National Park.jpg",
+    "photo_width": 5121,
+    "photo_external": false
+   },
+   {
+    "id": "jervis-bay-2",
+    "name": "Hyams Beach",
+    "category": "'beach'",
+    "bio": "Village beach on Jervis Bay beside Booderee National Park, with white sand and safe swimming.",
+    "hours": "Open 24 hours",
+    "cost": "free",
+    "ticketUrl": null,
+    "photo_file": "Hyams Beach 002.jpg",
+    "photo_width": 2500,
+    "photo_external": false
+   },
+   {
+    "id": "jervis-bay-3",
+    "name": "Huskisson",
+    "category": "'historic'",
+    "bio": "Jervis Bay's largest town, a base for dolphin and whale-watching cruises (whales June to November).",
+    "hours": "Open 24 hours",
+    "cost": "free",
+    "ticketUrl": null,
+    "photo_file": "Huskisson NSW 2540, Jervis Bay - Uc - panoramio.jpg",
+    "photo_width": 3072,
+    "photo_external": false
+   },
+   {
+    "id": "jervis-bay-4",
+    "name": "Beecroft Peninsula",
+    "category": "'nature'",
+    "bio": "Military range peninsula open at set times, with Point Perpendicular Lighthouse at the end of a gravel road.",
+    "hours": "Fri 12:00 PM – 6:00 PM, weekends to 6:00 PM, school and most public holidays",
+    "cost": "free",
+    "ticketUrl": null,
+    "photo_file": "Beecroft Peninsula, Jervis Bay Territory 01.jpg",
+    "photo_width": 6480,
+    "photo_external": false
+   }
+  ]
+ },
+ {
+  "id": "ulladulla",
+  "name": "Ulladulla",
+  "region": "nsw-south-coast",
+  "centre": {
+   "latitude": -35.34861,
+   "longitude": 150.46778
+  },
+  "defaultZoomSpanKm": 25,
+  "category_hint": "city",
+  "rank_hint": null,
+  "np_exception": false,
+  "town_spot_removed_on_add": [
+   "ulladulla"
+  ],
+  "members": [
+   {
+    "id": "ulladulla-1",
+    "name": "Pigeon House Mountain",
+    "category": "'nature'",
+    "bio": "Steep walk with ladders near the summit, to Budawang cliffs and views as far as Jervis Bay.",
+    "hours": "7:00 AM – 7:00 PM",
+    "cost": "free",
+    "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/pigeon-house-mountain-didthul-walking-track",
+    "photo_file": "Pigeon House Mountain.jpg",
+    "photo_width": 2592,
+    "photo_external": false
+   },
+   {
+    "id": "ulladulla-2",
+    "name": "Mollymook Beach",
+    "category": "'beach'",
+    "bio": "Beach beside Ulladulla, a 45-minute walk from town, with a public golf course popular with visitors.",
+    "hours": "Open 24 hours",
+    "cost": "free",
+    "ticketUrl": null,
+    "photo_file": "external:Mollymook Beach",
+    "photo_width": 1024,
+    "photo_external": true
+   }
+  ]
+ },
+ {
+  "id": "murramarang",
+  "name": "Murramarang National Park",
+  "region": "nsw-south-coast",
+  "centre": {
+   "latitude": -35.60111,
+   "longitude": 150.33111
+  },
+  "defaultZoomSpanKm": 15,
+  "category_hint": "park",
+  "rank_hint": null,
+  "np_exception": false,
+  "town_spot_removed_on_add": [],
+  "members": [
+   {
+    "id": "murramarang-1",
+    "name": "Pebbly Beach",
+    "category": "'beach'",
+    "bio": "Murramarang beach with a picnic area, campground and shacks, where kangaroos may be seen on the sand.",
+    "hours": "Open 24 hours",
+    "cost": "8-8 'AUD'",
+    "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/murramarang-national-park",
+    "photo_file": "Pebbly Beach Escape kangaroo basking.jpg",
+    "photo_width": 4032,
+    "photo_external": false
+   },
+   {
+    "id": "murramarang-2",
+    "name": "Murramarang South Coast Walk",
+    "category": "'hike'",
+    "bio": "A 34 km, three-day coastal walk between Ulladulla and Batemans Bay, over rock platforms at low tide.",
+    "hours": "Open 24 hours",
+    "cost": "8-8 'AUD'",
+    "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/murramarang-south-coast-walk",
+    "photo_file": "Murramarang National Park 05.jpg",
+    "photo_width": 6480,
+    "photo_external": false
+   }
+  ]
+ },
+ {
+  "id": "batemans-bay",
+  "name": "Batemans Bay",
+  "region": "nsw-south-coast",
+  "centre": {
+   "latitude": -35.70806,
+   "longitude": 150.17444
+  },
+  "defaultZoomSpanKm": 15,
+  "category_hint": "city",
+  "rank_hint": null,
+  "np_exception": false,
+  "town_spot_removed_on_add": [
+   "batemans-bay"
+  ],
+  "members": [
+   {
+    "id": "batemans-bay-1",
+    "name": "Mogo Wildlife Park",
+    "category": "'entertainment'",
+    "bio": "Zoo near Batemans Bay with red pandas, snow leopards and black-and-white ruffed lemurs.",
+    "hours": "9:00 AM – 4:00 PM",
+    "cost": "42-42 'AUD'",
+    "ticketUrl": "https://mogowildlifepark.com.au/",
+    "photo_file": null,
+    "photo_width": null,
+    "photo_external": null
+   },
+   {
+    "id": "batemans-bay-2",
+    "name": "Mogo",
+    "category": "'historic'",
+    "bio": "Gold-rush village on the Princes Highway, 9 km south of Batemans Bay, with cafes and pie shops.",
+    "hours": "Open 24 hours",
+    "cost": "free",
+    "ticketUrl": null,
+    "photo_file": "Mogo Village Cafes.jpg",
+    "photo_width": 1760,
+    "photo_external": false
+   }
+  ]
+ },
+ {
+  "id": "narooma",
+  "name": "Narooma",
+  "region": "nsw-south-coast",
+  "centre": {
+   "latitude": -36.2,
+   "longitude": 150.13333
+  },
+  "defaultZoomSpanKm": 35,
+  "category_hint": "city",
+  "rank_hint": null,
+  "np_exception": false,
+  "town_spot_removed_on_add": [
+   "narooma"
+  ],
+  "members": [
+   {
+    "id": "narooma-1",
+    "name": "Barunguba Montague Island",
+    "category": "'nature'",
+    "bio": "Island reserve off Narooma with hundreds of seals and 90-plus bird species, reached only by tour boat.",
+    "hours": "Boat tours only, weather permitting",
+    "cost": "100-165 'AUD'",
+    "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/barunguba-montague-island-nature-reserve",
+    "photo_file": "Montague Island and lighthouse from the west.jpg",
+    "photo_width": 1200,
+    "photo_external": false
+   },
+   {
+    "id": "narooma-2",
+    "name": "Mount Dromedary",
+    "category": "'nature'",
+    "bio": "Mountain of spiritual significance to Aboriginal people, with mining-road walks and coastal lake views.",
+    "hours": "Open daily (check NPWS alerts)",
+    "cost": "free",
+    "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/gulaga-national-park",
+    "photo_file": "Bermagui Beach 01.JPG",
+    "photo_width": 2816,
+    "photo_external": false
+   },
+   {
+    "id": "narooma-3",
+    "name": "Central Tilba",
+    "category": "'historic'",
+    "bio": "Preserved hill village with colourful houses, boutiques and a cheese dairy, easily covered on foot.",
+    "hours": "Open 24 hours (shops roughly 9:00 AM – 4:00 PM)",
+    "cost": "free",
+    "ticketUrl": null,
+    "photo_file": "Central Tilba NSW. Australia. (22785067302).jpg",
+    "photo_width": 4000,
+    "photo_external": false
+   },
+   {
+    "id": "narooma-4",
+    "name": "Bermagui",
+    "category": "'historic'",
+    "bio": "Fishing and surfing town on the far south coast, near Blue Pool and Camel Rock beach.",
+    "hours": "Open 24 hours",
+    "cost": "free",
+    "ticketUrl": null,
+    "photo_file": "Bermagui Beach 01.JPG",
+    "photo_width": 2816,
+    "photo_external": false
+   },
+   {
+    "id": "narooma-5",
+    "name": "Eurobodalla National Park",
+    "category": "'nature'",
+    "bio": "Coastal park with camping, 1080 Beach surfing, Brou Lake fishing and the 14 km Bingi Dreaming track.",
+    "hours": "Open 24 hours",
+    "cost": "free",
+    "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/eurobodalla-national-park",
+    "photo_file": "Mystery Bay, Eurobodalla National Park, New South Wales, Australia 01.jpg",
+    "photo_width": 6480,
+    "photo_external": false
+   },
+   {
+    "id": "narooma-6",
+    "name": "Blue Pool",
+    "category": "'nature'",
+    "bio": "Two rock pools below a cliff, one shallow and sheltered, with views to Montague Island and free entry.",
+    "hours": "Open 24 hours",
+    "cost": "free",
+    "ticketUrl": null,
+    "photo_file": "Bermagui Blue Pool.jpg",
+    "photo_width": 5184,
+    "photo_external": false
+   },
+   {
+    "id": "narooma-7",
+    "name": "Camel Rock Beach",
+    "category": "'beach'",
+    "bio": "Well-known surf beach reached along Moorheads and Haywards beaches from Bermagui, good for photographs.",
+    "hours": "Open 24 hours",
+    "cost": "free",
+    "ticketUrl": null,
+    "photo_file": "Camel Rock, New South Wales.jpg",
+    "photo_width": 4080,
+    "photo_external": false
+   },
+   {
+    "id": "narooma-8",
+    "name": "Wallaga Lake",
+    "category": "'nature'",
+    "bio": "Lake of Aboriginal significance for kayaking, windsurfing and black swans, with boats for hire.",
+    "hours": "Open 24 hours",
+    "cost": "free",
+    "ticketUrl": null,
+    "photo_file": "Wallaga Lake at Sunset 1.jpg",
+    "photo_width": 3264,
+    "photo_external": false
+   }
+  ]
+ },
+ {
+  "id": "merimbula",
+  "name": "Merimbula",
+  "region": "nsw-south-coast",
+  "centre": {
+   "latitude": -36.89806,
+   "longitude": 149.90111
+  },
+  "defaultZoomSpanKm": 35,
+  "category_hint": "city",
+  "rank_hint": null,
+  "np_exception": false,
+  "town_spot_removed_on_add": [
+   "merimbula"
+  ],
+  "members": [
+   {
+    "id": "merimbula-1",
+    "name": "Tathra",
+    "category": "'historic'",
+    "bio": "Seaside town with a hotel and cafes, where Mimosa Rocks National Park starts at the end of its beach.",
+    "hours": "Open 24 hours",
+    "cost": "free",
+    "ticketUrl": null,
+    "photo_file": "Tathra Beach.JPG",
+    "photo_width": 4912,
+    "photo_external": false
+   },
+   {
+    "id": "merimbula-2",
+    "name": "Bega",
+    "category": "'historic'",
+    "bio": "Inland dairy town on the Sapphire Coast, home of the modest Bega Cheese Heritage Centre.",
+    "hours": "Open 24 hours",
+    "cost": "free",
+    "ticketUrl": null,
+    "photo_file": "Carp Street, Bega, NSW, 2023.jpg",
+    "photo_width": 4032,
+    "photo_external": false
+   },
+   {
+    "id": "merimbula-3",
+    "name": "Mimosa Rocks National Park",
+    "category": "'nature'",
+    "bio": "Headlands, beaches and lagoons running about 16 km north from Tathra, with winter whale watching.",
+    "hours": "Open 24 hours",
+    "cost": "free",
+    "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/mimosa-rocks-national-park",
+    "photo_file": "MimosaRock.JPG",
+    "photo_width": 2560,
+    "photo_external": false
+   },
+   {
+    "id": "merimbula-4",
+    "name": "Bournda National Park",
+    "category": "'nature'",
+    "bio": "Park with the Kangarutha walking track, Wine Glass Bay, lagoon kayaking and Wallagoot Lake swimming.",
+    "hours": "Open 24 hours",
+    "cost": "8-8 'AUD'",
+    "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/bournda-national-park",
+    "photo_file": "Bournda Bournda-Island.JPG",
+    "photo_width": 1971,
+    "photo_external": false
+   },
+   {
+    "id": "merimbula-5",
+    "name": "Tathra Wharf and Museum",
+    "category": "'historic'",
+    "bio": "Tathra's heritage wharf, last used by a ship in 1954, with a small museum beside it open weekends.",
+    "hours": "Wharf: open 24 hours; museum Sat–Sun 10:00 AM – 3:00 PM",
+    "cost": "4-4 'AUD'",
+    "ticketUrl": "https://tathrawharfmuseum.org/",
+    "photo_file": "Old Wharf Tathra.NSW. (21031327415).jpg",
+    "photo_width": 4000,
+    "photo_external": false
+   },
+   {
+    "id": "merimbula-6",
+    "name": "Bega Cheese Heritage Centre",
+    "category": "'museum'",
+    "bio": "Small museum of Bega's cheese and dairy history, with a cafe, tasting area and river verandah.",
+    "hours": "Mon–Fri 9:00 AM – 5:00 PM; Sat–Sun 9:00 AM – 4:00 PM (winter hours)",
+    "cost": "free",
+    "ticketUrl": "https://heritagecentre.com.au/",
+    "photo_file": "Bega Cheese Factory.jpg",
+    "photo_width": 1024,
+    "photo_external": false
+   }
+  ]
+ },
+ {
+  "id": "beowa",
+  "name": "Beowa National Park",
+  "region": "nsw-south-coast",
+  "centre": {
+   "latitude": -37.165,
+   "longitude": 150.00111
+  },
+  "defaultZoomSpanKm": 20,
+  "category_hint": "park",
+  "rank_hint": null,
+  "np_exception": false,
+  "town_spot_removed_on_add": [],
+  "members": [
+   {
+    "id": "beowa-1",
+    "name": "Green Cape Lighthouse",
+    "category": "'landmark'",
+    "bio": "NSW's southernmost lighthouse, entered only on guided tours on set dates, with open grounds.",
+    "hours": "Grounds open 24 hours; lighthouse tours on set dates (10:00 AM)",
+    "cost": "8-8 'AUD'",
+    "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/historic-buildings-places/green-cape-lighthouse",
+    "photo_file": "Green Cape Lighthouse (12534013823).jpg",
+    "photo_width": 1920,
+    "photo_external": false
+   },
+   {
+    "id": "beowa-2",
+    "name": "Light to Light Walk",
+    "category": "'hike'",
+    "bio": "A 32 km, three-day coastal walk from Boyds Tower to Green Cape Lighthouse with beachside campgrounds.",
+    "hours": "Open 24 hours",
+    "cost": "115-115 'AUD'",
+    "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/light-to-light-walk",
+    "photo_file": "Ben Boyd Tower (honorary lighthouse) (12537814013).jpg",
+    "photo_width": 5176,
+    "photo_external": false
+   }
+  ]
+ }
+]

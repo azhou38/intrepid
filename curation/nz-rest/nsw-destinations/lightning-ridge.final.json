@@ -1,0 +1,71 @@
+{
+ "destination": {
+  "id": "lightning-ridge",
+  "name": "Lightning Ridge",
+  "country": "Australia",
+  "countryCode": "AU",
+  "timezone": "Australia/Sydney",
+  "continent": "Oceania",
+  "coordinates": {
+   "latitude": -29.379963,
+   "longitude": 147.924151
+  },
+  "category": "city",
+  "defaultZoomSpanKm": 15,
+  "rank": 4,
+  "icon": "💎",
+  "tagline": "An opal-mining town where free artesian pools and underground mine tours are the draw.",
+  "description": "Lightning Ridge is an outback town and a centre of black opal mining, with a first shaft dug in 1905. Tourism is now as big an industry as mining, with galleries and jewellery shops along the main street. Visitors soak in the Bore Baths, which draw warm water from about 900 m underground, tour the opal tunnels and see a house built of bottles. Wikivoyage warns that it can be very hot in summertime.",
+  "whyVisit": [
+   "Soak in the free Bore Baths",
+   "Visit the Bottle House museum",
+   "Walk through an underground opal tunnel"
+  ],
+  "highlights": [
+   "Artesian bore baths",
+   "Bottle house",
+   "Opal tunnel"
+  ],
+  "goodToKnow": [
+   {
+    "icon": "🏨",
+    "title": "Easter books out",
+    "detail": "The Easter festival and races fill hotels, and Wikivoyage advises booking around a year ahead."
+   },
+   {
+    "icon": "🚕",
+    "title": "No public transport",
+    "detail": "The town has no public transport and no taxi service, though the Bowling Club runs a transfer service and many hotels help with pickups."
+   },
+   {
+    "icon": "🌡️",
+    "title": "Summer heat",
+    "detail": "Wikivoyage warns of exposure in the heat of summer, and the Bore Baths are open around the clock, so go early or late in the day."
+   }
+  ],
+  "bestMonths": [
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ],
+  "bestTimeBlurb": "Wikivoyage warns of exposure in the summer heat, so {months} are the comfortable months for fossicking and mine tours."
+ },
+ "picks": {
+  "header": "Bore Baths - panoramio.jpg",
+  "header_note": "2048 px; pool scene, may not show the town in its landscape. Judge to confirm or search.",
+  "why": null,
+  "why_note": "Only Bore Baths (2048) and Bottle House (2592) have Commons photos at 1280 or wider; The Big Opal photo is external. Need a Commons or other photo for the third reason (Big Opal tunnel)."
+ },
+ "sources": [
+  "https://en.wikivoyage.org/wiki/Lightning_Ridge",
+  "https://en.wikipedia.org/wiki/Lightning_Ridge,_New_South_Wales",
+  "curation/nz-rest/nsw-destinations/briefs/batch-4.json"
+ ],
+ "notes": [
+  "Third reason depends on an external-only photo. Months inferred from the heat warning (unverified). Not in destinations.ts."
+ ]
+}

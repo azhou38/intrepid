@@ -1,0 +1,70 @@
+{
+ "destination": {
+  "id": "wagga-wagga",
+  "name": "Wagga Wagga",
+  "country": "Australia",
+  "countryCode": "AU",
+  "timezone": "Australia/Sydney",
+  "continent": "Oceania",
+  "coordinates": {
+   "latitude": -35.1082,
+   "longitude": 147.3598
+  },
+  "category": "city",
+  "defaultZoomSpanKm": 15,
+  "rank": 5,
+  "icon": "🐦",
+  "tagline": "The largest inland city in New South Wales, on the Murrumbidgee River.",
+  "description": "Wagga Wagga is a city of about 57,000 on the Murrumbidgee River, midway between Sydney and Melbourne, and the Wiradjuri word is taken to mean 'the place where crows assemble in large numbers'. Charles Sturt was the first European to see the site, in 1829. The Botanic Gardens hold a rainforest gully, a succulent garden and a free zoo and aviary, and the Wiradjuri Walking Track circles much of the city for about 42 km. The city is also an army and air-force garrison town, with a base at Kapooka.",
+  "whyVisit": [
+   "Stroll the Botanic Gardens rainforest gully",
+   "Walk the Wiradjuri Walking Track",
+   "Ride the Willans Hill Miniature Railway"
+  ],
+  "highlights": [
+   "Rainforest gully",
+   "River walking track",
+   "Miniature railway"
+  ],
+  "goodToKnow": [
+   {
+    "icon": "🦜",
+    "title": "Zoo and aviary days",
+    "detail": "The free zoo and aviary open Thursday to Monday, 9:00 AM to 4:00 PM."
+   },
+   {
+    "icon": "🚂",
+    "title": "Miniature railway Sundays",
+    "detail": "Wikivoyage lists the Willans Hill Miniature Railway as running on the first and third Sunday of each month, about 2 dollars a ride; check before going."
+   },
+   {
+    "icon": "🗺️",
+    "title": "Maps at the visitor centre",
+    "detail": "Track maps are available at the Visitor Information Centre, 183 Tarcutta Street, open daily."
+   }
+  ],
+  "bestMonths": [
+   3,
+   4,
+   5,
+   9,
+   10,
+   11
+  ],
+  "bestTimeBlurb": "Autumn and spring, {months}, are the mild months for the riverside walking tracks and the gardens."
+ },
+ "picks": {
+  "header": null,
+  "header_note": "No member photo at 2000 px or wider shows the city: Botanic Gardens is 1500 px, the Wiradjuri track photo is fallen eucalyptus limbs (3648 px, not a landscape). Needs a header search.",
+  "why": null,
+  "why_note": "Only two member spots; Botanic Gardens (1500) and Wiradjuri track photos pass 1280 but the third reason (miniature railway) is part of the gardens and needs its own photo."
+ },
+ "sources": [
+  "https://en.wikivoyage.org/wiki/Wagga_Wagga",
+  "https://en.wikipedia.org/wiki/Wagga_Wagga",
+  "curation/nz-rest/nsw-destinations/briefs/batch-4.json"
+ ],
+ "notes": [
+  "Months are the guide-consensus mild seasons, not sourced from a climate page (unverified). Wiradjuri photo is a poor fit for its reason; flag for a better photo. Not in destinations.ts. Visitor centre hours from Wikivoyage (2021)."
+ ]
+}

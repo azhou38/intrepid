@@ -1,0 +1,427 @@
+{
+ "tenterfield": {
+  "header": {
+   "choice": "Bald Rock NP NSW 1.jpg",
+   "weak": true,
+   "weak_reason": "Shows the area's main landscape (granite dome), not the town; no Commons town view offered",
+   "hero_crop": {
+    "x": 0.4,
+    "y": 0.5,
+    "zoom": 1
+   },
+   "dark": false,
+   "width": 2048,
+   "licence": "CC BY 2.0",
+   "place_proof": "File categories Bald Rock National Park; coords -28.8588,152.0326 (about 20 km north of Tenterfield)"
+  },
+  "why": [
+   {
+    "choice": "Bald Rock NP NSW 1.jpg",
+    "weak": false,
+    "hero_crop": {
+     "x": 0.4,
+     "y": 0.5,
+     "zoom": 1
+    },
+    "dark": false,
+    "width": 2048,
+    "licence": "CC BY 2.0",
+    "place_proof": "Bald Rock National Park category",
+    "reason_rewrite": null,
+    "highlight_rewrite": null
+   },
+   {
+    "choice": "Tenterfield School of Arts 001.JPG",
+    "weak": false,
+    "hero_crop": "ok",
+    "dark": false,
+    "width": 5725,
+    "licence": "CC BY 3.0",
+    "place_proof": "Description and geotag -29.0557,152.0187 in Tenterfield; the building is the attraction",
+    "reason_rewrite": null,
+    "highlight_rewrite": null
+   },
+   {
+    "choice": "Boonoo Boonoo Falls 2.jpg",
+    "weak": true,
+    "hero_crop": {
+     "x": 0.3,
+     "y": 0.5,
+     "zoom": 1
+    },
+    "dark": false,
+    "width": 3264,
+    "licence": "CC BY-SA 4.0",
+    "place_proof": "Description: cascading section of Boonoo Boonoo Falls from the lookout platform",
+    "reason_rewrite": null,
+    "highlight_rewrite": null
+   }
+  ]
+ },
+ "tweed-heads": {
+  "header": {
+   "choice": "Cabarita Beach - panoramio.jpg",
+   "weak": true,
+   "weak_reason": "Shows the Tweed coast beach, not Tweed Heads town; Wollumbin option is aspect 2.06 (fails) and no town view offered",
+   "hero_crop": {
+    "x": 0.6,
+    "y": 0.55,
+    "zoom": 1.3
+   },
+   "dark": false,
+   "width": 3264,
+   "licence": "CC BY-SA 3.0",
+   "place_proof": "Geotag -28.336,153.577 (Cabarita Beach, Tweed Shire coast, ~20 km south)"
+  },
+  "why": [
+   {
+    "choice": "Mt Warning as seen from Pinnacle Lookout in the NSW Border Ranges.jpg",
+    "weak": true,
+    "hero_crop": {
+     "x": 0.5,
+     "y": 0.45,
+     "zoom": 1
+    },
+    "dark": false,
+    "width": 4032,
+    "licence": "CC BY-SA 4.0",
+    "place_proof": "Title/description: Mt Warning (Wollumbin) from Pinnacle Lookout; caldera rim",
+    "reason_rewrite": "See Wollumbin rising above the caldera",
+    "highlight_rewrite": "Wollumbin view"
+   },
+   {
+    "choice": "Tweed Regional Gallery 01.jpeg",
+    "weak": false,
+    "hero_crop": "ok",
+    "dark": false,
+    "width": 3264,
+    "licence": "CC BY-SA 4.0",
+    "place_proof": "Description Tweed Regional Gallery Murwillumbah South; geotag -28.349,153.400; the gallery houses the Margaret Olley Art Centre",
+    "reason_rewrite": null,
+    "highlight_rewrite": null
+   },
+   {
+    "choice": "Fingal Head Lighthouse, Fingal Head, New South Wales 05.jpg",
+    "weak": true,
+    "hero_crop": "ok",
+    "dark": false,
+    "width": 4032,
+    "licence": "CC BY-SA 4.0",
+    "place_proof": "Title and description Fingal Head Lighthouse, Fingal Head NSW",
+    "reason_rewrite": "Visit the Fingal Head lighthouse",
+    "highlight_rewrite": "Fingal Head"
+   }
+  ]
+ },
+ "ulladulla": {
+  "header": {
+   "choice": "Ulladulla harbour February 2015.jpg",
+   "weak": false,
+   "weak_reason": "",
+   "hero_crop": {
+    "x": 0.5,
+    "y": 0.6,
+    "zoom": 1.4
+   },
+   "dark": false,
+   "width": 4381,
+   "licence": "CC BY-SA 4.0",
+   "place_proof": "Description Ulladulla harbour; geotag -35.357,150.475 (harbour)"
+  },
+  "why": [
+   {
+    "choice": "Pigeon House Mountain.jpg",
+    "weak": false,
+    "hero_crop": {
+     "x": 0.75,
+     "y": 0.45,
+     "zoom": 1.3
+    },
+    "dark": true,
+    "width": 2592,
+    "licence": "CC BY-SA 3.0",
+    "place_proof": "Description: Pigeon House Mountain NSW from the walking track halfway up; category Pigeon House Mountain",
+    "reason_rewrite": null,
+    "highlight_rewrite": null
+   },
+   {
+    "choice": "Mollymook from Bannister Head.jpg",
+    "weak": true,
+    "hero_crop": {
+     "x": 0.5,
+     "y": 0.55,
+     "zoom": 1
+    },
+    "dark": false,
+    "width": 3264,
+    "licence": "CC BY-SA 3.0",
+    "place_proof": "Description: looking south over Mollymook from Bannister Headland; geotag -35.334,150.469",
+    "reason_rewrite": null,
+    "highlight_rewrite": null
+   },
+   {
+    "choice": "Ulladulla harbour February 2015.jpg",
+    "weak": true,
+    "hero_crop": {
+     "x": 0.5,
+     "y": 0.6,
+     "zoom": 1.4
+    },
+    "dark": false,
+    "width": null,
+    "licence": "(as chosen)",
+    "place_proof": "orchestrator fill: header/pool photo, reason rewritten to match",
+    "reason_rewrite": "Look over Ulladulla Harbour",
+    "highlight_rewrite": "Harbour views"
+   }
+  ]
+ },
+ "wagga-wagga": {
+  "header": {
+   "choice": "Murrumbidgee River - July 2010.jpg",
+   "weak": true,
+   "weak_reason": "River red gums on the Murrumbidgee, not a town view; no city view offered",
+   "hero_crop": {
+    "x": 0.5,
+    "y": 0.5,
+    "zoom": 1
+   },
+   "dark": false,
+   "width": 3648,
+   "licence": "CC BY-SA 2.5 au",
+   "place_proof": "Description Murrumbidgee River at Wagga Wagga; geotag -35.110,147.374"
+  },
+  "why": [
+   {
+    "choice": "Wagga Wagga Botanic Gardens 1.jpg",
+    "weak": true,
+    "hero_crop": {
+     "x": 0.45,
+     "y": 0.5,
+     "zoom": 1
+    },
+    "dark": false,
+    "width": 1500,
+    "licence": "CC BY 3.0",
+    "place_proof": "Category Wagga Wagga Botanic Gardens; geotag -35.1316,147.3659",
+    "reason_rewrite": "Stroll through Wagga Wagga Botanic Gardens",
+    "highlight_rewrite": "Botanic gardens"
+   },
+   {
+    "choice": "Murrumbidgee River in Wagga Wagga 01.jpg",
+    "weak": true,
+    "hero_crop": {
+     "x": 0.6,
+     "y": 0.5,
+     "zoom": 1
+    },
+    "dark": false,
+    "width": 3072,
+    "licence": "CC BY 2.0",
+    "place_proof": "Title and description Murrumbidgee River in Wagga Wagga; Wiradjuri track runs beside this river (file 'Fallen limbs' on the track geotag -35.1065,147.3767)",
+    "reason_rewrite": "Walk beside the Murrumbidgee River",
+    "highlight_rewrite": "Riverside walks"
+   },
+   {
+    "choice": "Willians Hill miniature railway line in the Wagga Wagga Botanic Gardens.jpg",
+    "weak": false,
+    "hero_crop": {
+     "x": 0.5,
+     "y": 0.55,
+     "zoom": 1
+    },
+    "dark": false,
+    "width": 5712,
+    "licence": "CC BY-SA 3.0 au",
+    "place_proof": "Title: Willans Hill miniature railway line in the Wagga Wagga Botanic Gardens (2026)",
+    "reason_rewrite": null,
+    "highlight_rewrite": null
+   }
+  ]
+ },
+ "wentworth": {
+  "header": {
+   "choice": "WentworthTwoRivers.JPG",
+   "weak": false,
+   "weak_reason": "",
+   "hero_crop": {
+    "x": 0.5,
+    "y": 0.5,
+    "zoom": 1
+   },
+   "dark": false,
+   "width": 3872,
+   "licence": "CC BY-SA 3.0",
+   "place_proof": "Categories Confluences of rivers in Australia, Darling River; description: Murray and Darling confluence at Wentworth"
+  },
+  "why": [
+   {
+    "choice": "WentworthTwoRivers.JPG",
+    "weak": false,
+    "hero_crop": {
+     "x": 0.5,
+     "y": 0.5,
+     "zoom": 1
+    },
+    "dark": false,
+    "width": 3872,
+    "licence": "CC BY-SA 3.0",
+    "place_proof": "Description: confluence of the Murray and Darling at Wentworth",
+    "reason_rewrite": null,
+    "highlight_rewrite": null
+   },
+   {
+    "choice": "Perry Sandhills near Wentworth, New South Wales 2648 2025-02-16 15-20-50.jpg",
+    "weak": true,
+    "hero_crop": {
+     "x": 0.5,
+     "y": 0.55,
+     "zoom": 1
+    },
+    "dark": false,
+    "width": 4032,
+    "licence": "CC0",
+    "place_proof": "Description: Perry Sandhills off Renmark Road, west of Wentworth",
+    "reason_rewrite": null,
+    "highlight_rewrite": null
+   },
+   {
+    "choice": "WentworthGaol2009.JPG",
+    "weak": false,
+    "hero_crop": {
+     "x": 0.5,
+     "y": 0.5,
+     "zoom": 1
+    },
+    "dark": false,
+    "width": 3872,
+    "licence": "CC BY-SA 3.0",
+    "place_proof": "Description: the old Wentworth Gaol at Wentworth NSW; category Wentworth Aug 2009",
+    "reason_rewrite": null,
+    "highlight_rewrite": null
+   }
+  ]
+ },
+ "wollongong": {
+  "header": {
+   "choice": "View from Sublime Point Lookout.jpg",
+   "weak": true,
+   "weak_reason": "Northern suburbs and escarpment from a lookout rather than the city centre; Mt Keira view of the centre is hazy and mostly roofs",
+   "hero_crop": {
+    "x": 0.6,
+    "y": 0.65,
+    "zoom": 1.3
+   },
+   "dark": false,
+   "width": 4000,
+   "licence": "CC0",
+   "place_proof": "Description: Sublime Point Lookout, Illawarra Escarpment near Austinmer; shows northern Wollongong suburbs, coast and escarpment"
+  },
+  "why": [
+   {
+    "choice": "Sea Cliff Bridge from below.jpg",
+    "weak": false,
+    "hero_crop": {
+     "x": 0.5,
+     "y": 0.45,
+     "zoom": 1
+    },
+    "dark": false,
+    "width": 4000,
+    "licence": "CC BY-SA 4.0",
+    "place_proof": "Title Sea Cliff Bridge; cliffs and curving deck visible",
+    "reason_rewrite": null,
+    "highlight_rewrite": null
+   },
+   {
+    "choice": "Nan Tien Temple front.jpg",
+    "weak": false,
+    "hero_crop": {
+     "x": 0.5,
+     "y": 0.5,
+     "zoom": 1
+    },
+    "dark": false,
+    "width": 1280,
+    "licence": "CC BY 2.0",
+    "place_proof": "Category Nan Tien Temple; stitched temple front (2.09 aspect panorama)",
+    "reason_rewrite": null,
+    "highlight_rewrite": null
+   },
+   {
+    "choice": "View from Sublime Point Lookout.jpg",
+    "weak": false,
+    "hero_crop": {
+     "x": 0.6,
+     "y": 0.65,
+     "zoom": 1.3
+    },
+    "dark": false,
+    "width": 4000,
+    "licence": "CC0",
+    "place_proof": "Description: View from Sublime Point Lookout on the Illawarra Escarpment",
+    "reason_rewrite": null,
+    "highlight_rewrite": null
+   }
+  ]
+ },
+ "yamba": {
+  "header": {
+   "choice": "Angourie Beach.jpg",
+   "weak": true,
+   "weak_reason": "Shows Angourie cove, not the town of Yamba; only option, place proof is title only",
+   "hero_crop": {
+    "x": 0.5,
+    "y": 0.6,
+    "zoom": 1.3
+   },
+   "dark": false,
+   "width": 5669,
+   "licence": "CC BY 2.0",
+   "place_proof": "Title/description Angourie beach; no categories or geotag, place from title only"
+  },
+  "why": [
+   {
+    "choice": "Angourie Beach.jpg",
+    "weak": true,
+    "hero_crop": {
+     "x": 0.5,
+     "y": 0.6,
+     "zoom": 1.3
+    },
+    "dark": false,
+    "width": 5669,
+    "licence": "CC BY 2.0",
+    "place_proof": "Title Angourie beach (point is at south end)",
+    "reason_rewrite": null,
+    "highlight_rewrite": null
+   },
+   {
+    "choice": "Iluka Bluff - panoramio (1).jpg",
+    "weak": true,
+    "hero_crop": {
+     "x": 0.5,
+     "y": 0.5,
+     "zoom": 1
+    },
+    "dark": false,
+    "width": 3582,
+    "licence": "CC BY 3.0",
+    "place_proof": "Title Iluka Bluff; geotag -29.396,153.374 (Iluka)",
+    "reason_rewrite": null,
+    "highlight_rewrite": null
+   },
+   {
+    "choice": "River Street, Maclean, New South Wales, 2021, 21.jpg",
+    "weak": true,
+    "hero_crop": "ok",
+    "dark": false,
+    "width": null,
+    "licence": "(as chosen)",
+    "place_proof": "orchestrator fill: header/pool photo, reason rewritten to match",
+    "reason_rewrite": "Stroll River Street in Maclean",
+    "highlight_rewrite": "Maclean streets"
+   }
+  ]
+ }
+}

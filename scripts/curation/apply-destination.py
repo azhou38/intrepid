@@ -23,7 +23,8 @@ d = final['destination']
 picks = json.load(open(args[args.index('--picks') + 1])) if '--picks' in args else {}
 dry = '--dry-run' in args
 
-if not picks.get('header') or len(picks.get('why', [])) != 3 or not all(picks['why']):
+no_header = '--allow-no-header' in args   # no passing header exists in any tier: still add the destination, with NO_PHOTO (the owner is asked for one)
+if (not picks.get('header') and not no_header) or len(picks.get('why', [])) != 3 or not all(picks['why']):
     sys.exit(f"refusing: {d['id']} needs an accepted header and three why-visit photos (picks.json); have {picks}")
 for k in ('whyVisit', 'highlights', 'goodToKnow'):
     if len(d.get(k, [])) != 3:
@@ -84,12 +85,17 @@ if not dry:
     open('src/data/destinations.ts', 'w').write('\n'.join(L))
     p = 'src/data/imageOverrides.ts'
     s = open(p).read()
-    k, v = q(d['name']), q(picks['header'])
-    pat = re.compile(r'^  ' + re.escape(k) + r': .*,$', re.M)
-    if pat.search(s):
-        s = pat.sub(lambda m: f'  {k}: {v},', s, 1)
+    k = q(d['name'])
+    if picks.get('header'):
+        v = q(picks['header'])
+        pat = re.compile(r'^  ' + re.escape(k) + r': .*,$', re.M)
+        if pat.search(s):
+            s = pat.sub(lambda m: f'  {k}: {v},', s, 1)
+        else:
+            i = s.index('};', s.index('export const WIKI_IMAGE_OVERRIDES'))
+            s = s[:i] + f'  {k}: {v},\n' + s[i:]
     else:
-        i = s.index('};', s.index('export const WIKI_IMAGE_OVERRIDES'))
-        s = s[:i] + f'  {k}: {v},\n' + s[i:]
+        i = s.index(']);', s.index('export const NO_PHOTO'))
+        s = s[:i] + f'  {k},\n' + s[i:]
     open(p, 'w').write(s)
 print(f"{'would add' if dry else 'added'} destination {d['id']} ({d['name']}) after line {at}")

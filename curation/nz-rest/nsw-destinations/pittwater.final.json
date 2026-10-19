@@ -1,0 +1,74 @@
+{
+ "destination": {
+  "id": "pittwater",
+  "name": "Pittwater",
+  "country": "Australia",
+  "countryCode": "AU",
+  "timezone": "Australia/Sydney",
+  "continent": "Oceania",
+  "coordinates": {
+   "latitude": -33.59119,
+   "longitude": 151.32529
+  },
+  "category": "beach",
+  "defaultZoomSpanKm": 15,
+  "rank": 4,
+  "icon": "⛵",
+  "tagline": "A drowned-valley estuary north of Sydney, with Palm Beach at its mouth and a lighthouse and lookout on either side.",
+  "description": "Pittwater is an estuary about 40 km north of the Sydney CBD that flows north into Broken Bay between West Head and Barrenjoey Head, less than 1 km from the Tasman Sea. Its eastern shore is suburban and its western side is mostly Ku-ring-gai Chase National Park. Visitors come for the surf beaches at Palm Beach and Whale Beach, the 1881 sandstone lighthouse on Barrenjoey Head and the lookout at West Head. Barrenjoey Lighthouse and the Summer Bay Surf Club near it will be familiar to viewers of Home and Away.",
+  "whyVisit": [
+   "Walk up to Barrenjoey Lighthouse",
+   "Look over Broken Bay from West Head",
+   "Spend a day on Palm Beach"
+  ],
+  "highlights": [
+   "Lighthouse walk",
+   "Broken Bay view",
+   "Palm Beach"
+  ],
+  "goodToKnow": [
+   {
+    "icon": "🥾",
+    "title": "Barrenjoey walk times",
+    "detail": "The lighthouse is a walk of about 30 minutes each way from Governor Phillip Park, with no vehicle access, and its interior opens only on guided Sunday tours."
+   },
+   {
+    "icon": "🚗",
+    "title": "West Head vehicle fee",
+    "detail": "Entry to West Head is $12 per vehicle per day, and its gates close at 6 PM (8:30 PM in daylight saving)."
+   },
+   {
+    "icon": "🅿️",
+    "title": "Parking at Palm Beach",
+    "detail": "The walk to the lighthouse starts from the Governor Phillip Park car park, where parking is paid; NPWS advises skipping the walk in strong winds, heavy rain or extreme heat."
+   }
+  ],
+  "bestMonths": [
+   11,
+   12,
+   1,
+   2,
+   3
+  ],
+  "bestTimeBlurb": "{months} suit beach days at Palm Beach and Whale Beach, while whale watching from Barrenjoey Head runs from May to September."
+ },
+ "picks": {
+  "header": "View from West Head Lookout.jpg",
+  "header_note": "West Head view across Pittwater to Barrenjoey, 4000 px wide; shows the estuary in its landscape. Judge to confirm crop and that it is a landscape not a close-up.",
+  "why": [
+   "Barrenjoey Head Lighthouse 22042014.jpg",
+   "View from West Head Lookout.jpg",
+   "Palm Beach NSW.jpg"
+  ],
+  "why_note": "Reason 1 = barrenjoey-lighthouse (4272 px), 2 = west-head-ku-ring-gai (4000), 3 = palm-beach (2272). Whale Beach (2048) is the spare. Judge to confirm each shows the subject."
+ },
+ "sources": [
+  "https://en.wikipedia.org/wiki/Pittwater",
+  "https://www.nationalparks.nsw.gov.au/things-to-do/historic-buildings-places/barrenjoey-lighthouse",
+  "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/west-head-lookout"
+ ],
+ "notes": [
+  "Wikivoyage has no Pittwater page, so facts are from Wikipedia and NPWS. bestMonths is an inference (summer beach season; whale season from NPWS); no guide gives Pittwater months.",
+  "Not already in destinations.ts."
+ ]
+}

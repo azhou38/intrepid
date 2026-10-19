@@ -1,0 +1,90 @@
+{
+ "destination": {
+  "id": "yamba",
+  "name": "Yamba",
+  "country": "Australia",
+  "countryCode": "AU",
+  "timezone": "Australia/Sydney",
+  "continent": "Oceania",
+  "coordinates": {
+   "latitude": -29.44,
+   "longitude": 153.35944
+  },
+  "category": "city",
+  "defaultZoomSpanKm": 25,
+  "rank": 4,
+  "icon": "🏄",
+  "tagline": "A Clarence River mouth town known for the surf break at Angourie.",
+  "description": "Yamba is a fishing and tourism town at the mouth of the Clarence River, with eleven beaches within its postcode and a surf club formed in 1908, one of the oldest in the world. Angourie Point to the south is a National Surfing Reserve beside the freshwater Angourie Pools. Across the river, Iluka has a World Heritage littoral rainforest, and Maclean upriver bills itself as the Scottish Town. Whales pass Lovers Point Rock Wall between May and October.",
+  "whyVisit": [
+   "Surf at Angourie Point",
+   "Explore Iluka across the Clarence River",
+   "Spot tartan power poles in Maclean"
+  ],
+  "highlights": [
+   "Angourie surf break",
+   "Iluka village",
+   "Scottish town"
+  ],
+  "goodToKnow": [
+   {
+    "icon": "⛴️",
+    "title": "Two ways to Iluka",
+    "detail": "Iluka is reached by the shuttle ferry across the Clarence River from Yamba or by the motorway."
+   },
+   {
+    "icon": "🐋",
+    "title": "Whale season",
+    "detail": "Between May and October whales can be seen passing Lovers Point Rock Wall at the northern tip of Pippi Beach."
+   },
+   {
+    "icon": "🌳",
+    "title": "Check NPWS alerts for Iluka",
+    "detail": "Iluka Nature Reserve is open daily, but check NPWS alerts before visiting the rainforest."
+   }
+  ],
+  "bestMonths": [
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ],
+  "bestTimeBlurb": "Whales pass the headlands from May to October, so {months} are the months to come for the coast; beaches suit summer.",
+  "seasonalTags": [
+   {
+    "tag": "wildlife-migration",
+    "months": [
+     5,
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "strength": 0.5
+   }
+  ]
+ },
+ "picks": {
+  "header": "Angourie Beach.jpg",
+  "header_note": "5669 px beach view at Angourie, the surf point south of Yamba; judge to confirm it shows the surf break and not just sand.",
+  "why": [
+   "Angourie Beach.jpg",
+   "Iluka Bluff - panoramio (1).jpg",
+   "River Street, Maclean, New South Wales, 2021, 21.jpg"
+  ],
+  "why_note": "All Commons, widths 5669, 3582, 3026. Iluka Nature Reserve photo external (1280), unused."
+ },
+ "sources": [
+  "https://en.wikivoyage.org/wiki/Yamba",
+  "https://en.wikipedia.org/wiki/Yamba,_New_South_Wales",
+  "https://en.wikipedia.org/wiki/Iluka_Nature_Reserve",
+  "https://en.wikipedia.org/wiki/Maclean,_New_South_Wales",
+  "curation/nz-rest/nsw-destinations/briefs/batch-4.json"
+ ],
+ "notes": [
+  "Whale months from Wikipedia (May to October). Best months chosen to match; summer beach season not sourced (unverified). Reason 3 is about Maclean's tartan poles from the member bio. Not in destinations.ts."
+ ]
+}

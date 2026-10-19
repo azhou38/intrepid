@@ -1,0 +1,251 @@
+[
+ {
+  "id": "cowra",
+  "name": "Cowra",
+  "category": "city",
+  "centre": {
+   "latitude": -33.83388889,
+   "longitude": 148.7
+  },
+  "span_km": 45,
+  "need_header": true,
+  "current_header": null,
+  "header_note": "No member photo is a Cowra town or river view: Japanese Garden (2002 px) is a garden close view, Breakout and Canowindra are site/street views. Needs a header search (Cowra Lachlan River / town view).",
+  "reasons": [
+   "Stroll Cowra Japanese Garden",
+   "Walk the Cowra Breakout camp site",
+   "Explore Canowindra's heritage Gaskill Street"
+  ],
+  "need_why": false,
+  "current_why": [
+   "Cowra Japanese Garden (3379217011).jpg",
+   "Cowra Breakout 3.jpg",
+   "CanowindraGaskillSt.JPG"
+  ],
+  "why_note": "All three >= 1280 px (2002, 2988, 3872), one per reason, order matches whyVisit. Judge to confirm each shows the thing (the garden itself; the camp site, not a grave; Gaskill Street).",
+  "member_pool_commons_ge_1280": [
+   {
+    "spot": "cowra-japanese-garden",
+    "file": "Cowra Japanese Garden (3379217011).jpg",
+    "width": 2002
+   },
+   {
+    "spot": "cowra-breakout-site",
+    "file": "Cowra Breakout 3.jpg",
+    "width": 2988
+   },
+   {
+    "spot": "canowindra",
+    "file": "CanowindraGaskillSt.JPG",
+    "width": 3872
+   }
+  ]
+ },
+ {
+  "id": "dharug-national-park",
+  "name": "Dharug National Park",
+  "category": "park",
+  "centre": {
+   "latitude": -33.379181,
+   "longitude": 150.988895
+  },
+  "span_km": 15,
+  "need_header": false,
+  "current_header": "Hawkins Lookout Reserve.jpg",
+  "header_note": "4032 px; Wisemans Ferry member photo, probably a Hawkesbury River view from a lookout. Judge must confirm it is a wide river landscape and not a roadside shot.",
+  "reasons": [
+   "Walk the convict-built Old Great North Road",
+   "Cross the Hawkesbury on the Wisemans Ferry",
+   "Camp at Ten Mile Hollow"
+  ],
+  "need_why": true,
+  "current_why": null,
+  "why_note": "Only 2 members (Great North Road 3008 px, Wisemans Ferry 4032 px) have photos, no spot for reason 3 (Ten Mile Hollow camping) and reason 2 uses the ferry. Need a third photo or rewrite to two reasons.",
+  "member_pool_commons_ge_1280": [
+   {
+    "spot": "great-north-road-nsw",
+    "file": "Cutting devine hill.jpg",
+    "width": 3008
+   },
+   {
+    "spot": "wisemans-ferry",
+    "file": "Hawkins Lookout Reserve.jpg",
+    "width": 4032
+   }
+  ]
+ },
+ {
+  "id": "dubbo",
+  "name": "Dubbo",
+  "category": "city",
+  "centre": {
+   "latitude": -32.25694444,
+   "longitude": 148.60111111
+  },
+  "span_km": 70,
+  "need_header": true,
+  "current_header": null,
+  "header_note": "No Dubbo landscape or townscape in the pool; the giraffe zoo photo (3721 px) is an animal, not the place.",
+  "reasons": [
+   "See giraffes at the open-range zoo",
+   "Tour Old Dubbo Gaol",
+   "Take a guided tour of Wellington Caves"
+  ],
+  "need_why": false,
+  "current_why": [
+   "2020-10-08 Giraffe (Giraffa camelopardalis) in Taronga Western Plains Zoo 1.jpg",
+   "Old Dubbo Gaol, NSW, 2021, 09.jpg",
+   "Wellington Caves, Wellington, NSW, 2022, 29.jpg"
+  ],
+  "why_note": "Reason 1 = taronga-western-plains-zoo (3721), 2 = old-dubbo-gaol (3572), 3 = wellington-caves (4032). RFDS (4032) is the spare. Judge: the Wellington Caves photo must show the cave, not a building.",
+  "member_pool_commons_ge_1280": [
+   {
+    "spot": "taronga-western-plains-zoo",
+    "file": "2020-10-08 Giraffe (Giraffa camelopardalis) in Taronga Western Plains Zoo 1.jpg",
+    "width": 3721
+   },
+   {
+    "spot": "old-dubbo-gaol",
+    "file": "Old Dubbo Gaol, NSW, 2021, 09.jpg",
+    "width": 3572
+   },
+   {
+    "spot": "rfds-visitor-experience-dubbo",
+    "file": "Royal Flying Doctor Service Visitor Experience at Dubbo Airport.jpg",
+    "width": 4032
+   },
+   {
+    "spot": "wellington-caves",
+    "file": "Wellington Caves, Wellington, NSW, 2022, 29.jpg",
+    "width": 4032
+   }
+  ]
+ },
+ {
+  "id": "glen-innes",
+  "name": "Glen Innes",
+  "category": "city",
+  "centre": {
+   "latitude": -29.73679,
+   "longitude": 151.73841
+  },
+  "span_km": 55,
+  "need_header": true,
+  "current_header": null,
+  "header_note": "Standing Stones (2100 px) is a monument, Kings Plains is another place; neither shows the town in its landscape.",
+  "reasons": [
+   "Walk among the Australian Standing Stones",
+   "Walk to Kings Plains Falls after rain",
+   "Fossick for gemstones near town"
+  ],
+  "need_why": true,
+  "current_why": null,
+  "why_note": "Only Standing Stones and Kings Plains have Commons photos >=1280. Reason 3 (fossicking) needs a photo.",
+  "member_pool_commons_ge_1280": [
+   {
+    "spot": "australian-standing-stones",
+    "file": "Australian Standing Stones Glen Innes-1 (33594752084).jpg",
+    "width": 2100
+   },
+   {
+    "spot": "kings-plains-national-park",
+    "file": "Kings Plains National Park 02.jpg",
+    "width": 3648
+   }
+  ]
+ },
+ {
+  "id": "goulburn",
+  "name": "Goulburn",
+  "category": "city",
+  "centre": {
+   "latitude": -34.7547,
+   "longitude": 149.7186
+  },
+  "span_km": 40,
+  "need_header": true,
+  "current_header": null,
+  "header_note": "No member photo shows the town: Big Merino is a statue close-up and Bungonia is a gorge 20 km out. Needs search (Goulburn skyline or Rocky Hill / Belmore Park view, >=2000 px).",
+  "reasons": [
+   "See the Big Merino up close",
+   "Look into Bungonia Gorge from the Lookdown",
+   "Cave or canyon at Bungonia"
+  ],
+  "need_why": true,
+  "current_why": null,
+  "why_note": "Only two member spots. Big Merino has a >=1280 Commons photo; Bungonia lookdown5.jpg 3008 px also qualifies. A third distinct reason needs a third spot or reasons 2 and 3 share Bungonia; needs search for a Bungonia slot-canyon/cave photo.",
+  "member_pool_commons_ge_1280": [
+   {
+    "spot": "big-merino",
+    "file": "Big Merino Goulburn 2011.jpg",
+    "width": 3216
+   },
+   {
+    "spot": "bungonia-national-park",
+    "file": "Bungonia lookdown5.jpg",
+    "width": 3008
+   }
+  ]
+ },
+ {
+  "id": "griffith",
+  "name": "Griffith",
+  "category": "city",
+  "centre": {
+   "latitude": -34.289,
+   "longitude": 146.054
+  },
+  "span_km": 30,
+  "need_header": true,
+  "current_header": null,
+  "header_note": "Only Pioneer Park Museum photo (5264 px) qualifies and it is a horse-trough detail, not a town view. Needs a Griffith town or vineyard landscape.",
+  "reasons": [
+   "Walk the ridges of Cocoparra National Park",
+   "Trace irrigation history at Pioneer Park Museum",
+   "Taste Italian food and local wine"
+  ],
+  "need_why": true,
+  "current_why": null,
+  "why_note": "Cocoparra photo is 1200 px (<1280). Reason 3 (Italian food and wine, Wikivoyage Do/Eat) is not a member spot and has no photo. Reason 1 needs a >=1280 Cocoparra photo.",
+  "member_pool_commons_ge_1280": [
+   {
+    "spot": "griffith-pioneer-park-museum",
+    "file": "Bills Horse Trough at Griffith Pioneer Park Museum 2026-04-03.jpg",
+    "width": 5264
+   }
+  ]
+ },
+ {
+  "id": "gundagai",
+  "name": "Gundagai",
+  "category": "city",
+  "centre": {
+   "latitude": -35.0654,
+   "longitude": 148.1086
+  },
+  "span_km": 15,
+  "need_header": true,
+  "current_header": null,
+  "header_note": "No qualifying member photo shows the town; Dog on the Tuckerbox (1536) and Rusconi (2048) are both under 2000 px or an interior/monument. Needs a Gundagai town or Murrumbidgee view >=2000 px.",
+  "reasons": [
+   "See the Dog on the Tuckerbox",
+   "Visit Rusconi's miniature marble cathedral",
+   "Walk Gundagai's historic buildings trail"
+  ],
+  "need_why": true,
+  "current_why": null,
+  "why_note": "Only two member spots (Dog on the Tuckerbox 1536 px, Rusconi 2048 px, both Commons >=1280). Reason 3 (Architectural Heritage Walk, Wikivoyage; free self-guided tour) needs a photo.",
+  "member_pool_commons_ge_1280": [
+   {
+    "spot": "dog-on-the-tuckerbox",
+    "file": "DogonTuckerbox.jpg",
+    "width": 1536
+   },
+   {
+    "spot": "rusconis-marble-cathedral",
+    "file": "Gundagai Rusconi's Marble Masterpiece 006.jpg",
+    "width": 2048
+   }
+  ]
+ }
+]
