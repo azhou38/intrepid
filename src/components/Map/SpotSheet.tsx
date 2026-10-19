@@ -1004,6 +1004,22 @@ function SpotSheet({
     onActiveSpotChange?.(spots[idx]);
   };
 
+  // The moment the finger lifts, the card the swipe will land on is already known (the scroll view's own snap picks the interval
+  // nearest where the release velocity would carry it), so the counter and the map follow the card as it slides instead of waiting
+  // for the slide to finish (onMomentumScrollEnd). The settle handler above still corrects a prediction that turns out wrong,
+  // and the loop's clone cards are left to it.
+  const handleCarouselRelease = (offsetX: number, velocityX: number) => {
+    // iOS "fast" deceleration (0.99/ms) carries a release at v pt/ms about 99·v pt further.
+    const projected = offsetX + velocityX * 99;
+    const extIdx = Math.round(projected / CARD_SNAP);
+    if (loopOffset && (extIdx <= 0 || extIdx >= extendedSpots.length - 1)) return;
+    const idx = Math.max(0, Math.min(spots.length - 1, extIdx - loopOffset));
+    if (idx === activeIndex) return;
+    setActiveIndex(idx);
+    Haptics.selectionAsync();
+    onActiveSpotChange?.(spots[idx]);
+  };
+
   // "Explore nearby" (SpotAbout, below) taps a sibling spot in this same destination — same
   // "jump the carousel to a given real index" mechanics as a direct tap on a carousel card
   // (see the CarouselCard onPress below), just keyed by id instead of by extendedSpots index.
@@ -1312,6 +1328,7 @@ isVisited ? (
             decelerationRate="fast"
             style={{ flex: 1 }}
             contentContainerStyle={{ paddingHorizontal: SIDE_PAD, paddingTop: 8, paddingBottom: 4 }}
+            onScrollEndDrag={e => handleCarouselRelease(e.nativeEvent.contentOffset.x, e.nativeEvent.velocity?.x ?? 0)}
             onMomentumScrollEnd={e => handleCarouselSettle(e.nativeEvent.contentOffset.x)}
           >
             {extendedSpots.map((item, i) => (
