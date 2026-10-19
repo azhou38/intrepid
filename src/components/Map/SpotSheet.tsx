@@ -267,8 +267,8 @@ interface Props {
   focusSpotId: string;
   // The spots' destination — null for a STANDALONE spot, which has none. The sheet then names only the spot's country.
   destination?: Destination | null;
-  // A standalone spot's carousel is the spot plus its neighbours (see MapScreen's near context): the heading then
-  // reads "NEAR" over this name — the nearest destination — instead of "SPOTS" over a destination or country.
+  // A standalone spot's carousel is every spot in its second-level administrative division (see MapScreen's near
+  // context): the heading reads "SPOTS" over this name (the district) instead of a destination or country.
   nearLabel?: string;
   // `toCollapsed` is true when this fires from a swipe-down while the carousel itself was
   // collapsed (bottom-screen), so the caller can land the destination sheet underneath in
@@ -1278,7 +1278,7 @@ isVisited ? (
           {/* Heading — indicates you're browsing the spots within this destination */}
           <View style={st.carHeader}>
             <View style={{ flex: 1 }}>
-              <Text style={st.carEyebrow}>{nearLabel ? 'NEAR' : 'SPOTS'}</Text>
+              <Text style={st.carEyebrow}>SPOTS</Text>
               <Text style={st.carDest}>{nearLabel ?? (destination ? destination.name : spotCountry(activeSpot))}</Text>
             </View>
             {spots.length > 1 && <Text style={st.carCounter}>{activeIndex + 1} / {spots.length}</Text>}

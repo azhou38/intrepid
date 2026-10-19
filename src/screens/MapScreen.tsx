@@ -105,6 +105,7 @@ import type { Destination, CountryCluster } from '../types';
 import type GeoJSON from 'geojson';
 import { getCountryRegion, getCountryBounds, getCountryCenter, getCountryPopularity } from '../utils/countryBounds';
 import { DESTINATIONS } from '../data/destinations';
+import spotDistricts from '../data/spotDistricts.json';
 import { SPOTS, STANDALONE_SPOT_SPAN_KM, spotPhotoTitle, spotCountry, spotCountryCode, spotDestination, type Spot } from '../data/spots';
 import DestinationSheet from '../components/Map/DestinationSheet';
 import CircleFlag from '../components/CircleFlag';
@@ -1129,18 +1130,33 @@ function isPastDestDefaultZoom(destId: string, camZoom: number): boolean {
 // The key a spot's pin handoff is tracked under: its destination's id, or its own id when standalone.
 const spotParentKey = (s: Spot) => s.destinationId ?? s.id;
 
-// A standalone spot's carousel ("near" context): the spot itself, then any other standalone spots within
-// NEAR_RADIUS_KM, nearest first — never a destination's spots, which belong to that destination's own carousel.
-// Labelled with the nearest destination ("NEAR / Queenstown").
+// A standalone spot's carousel (its "near" context): the spot itself, then EVERY other spot in the same second-level
+// administrative division (src/data/spotDistricts.json, from OpenStreetMap: a New Zealand district or city council area,
+// a county elsewhere), nearest first, destination spots included. Labelled with the division ("SPOTS / Selwyn District").
+// A spot with no recorded division falls back to the standalone spots within NEAR_RADIUS_KM.
 const NEAR_RADIUS_KM = 40;
 const NEAR_MAX_SPOTS = 10;
+// Only the anchor and this many of its nearest neighbours get a full photo pin while the carousel is open (a district can
+// hold dozens of spots); the rest keep their ordinary pins or dots, and each gets its pin when its card is selected.
+const NEAR_PINNED_SPOTS = 12;
+const SPOT_DISTRICTS = spotDistricts as Record<string, { d: string; c: string; r?: string }>;
+const districtKey = (id: string) => { const x = SPOT_DISTRICTS[id]; return x ? `${x.c}|${x.d}` : null; };
 const kmBetween = (a: { latitude: number; longitude: number }, b: { latitude: number; longitude: number }) => {
   const r = Math.PI / 180, dl = (b.latitude - a.latitude) * r, dn = (b.longitude - a.longitude) * r;
   const x = Math.sin(dl / 2) ** 2 + Math.cos(a.latitude * r) * Math.cos(b.latitude * r) * Math.sin(dn / 2) ** 2;
   return 12742 * Math.asin(Math.sqrt(x));
 };
-type NearContext = { anchor: Spot; spots: Spot[]; near?: Destination };
+type NearContext = { anchor: Spot; spots: Spot[]; near?: Destination; district?: string };
 function nearContextFor(anchor: Spot): NearContext {
+  const key = districtKey(anchor.id);
+  if (key) {
+    const others = SPOTS
+      .filter(s => s.id !== anchor.id && districtKey(s.id) === key)
+      .map(s => ({ s, km: kmBetween(anchor.coordinates, s.coordinates) }))
+      .sort((a, b) => a.km - b.km)
+      .map(o => o.s);
+    return { anchor, spots: [anchor, ...others], district: SPOT_DISTRICTS[anchor.id].d };
+  }
   let near: Destination | undefined, best = Infinity;
   for (const d of DESTINATIONS) {
     const km = kmBetween(anchor.coordinates, d.coordinates);
@@ -2621,7 +2637,7 @@ const destItems = useMemo((): DestItem[] =>
   const { pinSpots, dotSpots } = useMemo(() => {
     const must = new Set<string>();
     if (selectedSpot) must.add(selectedSpot.id);
-    if (nearCtx) for (const sp of nearCtx.spots) must.add(sp.id);
+    if (nearCtx) for (const sp of nearCtx.spots.slice(0, NEAR_PINNED_SPOTS + 1)) must.add(sp.id);
     const prev = prevPinIdsRef.current;
     // A spot that already has its photo pin is placed before every newcomer, so a more important spot coming into view
     // (or being revealed by the zoom) never takes a neighbour's photo only to hand it back a level later: it stays a
@@ -5320,7 +5336,7 @@ const destItems = useMemo((): DestItem[] =>
           spots={carouselSpots}
           focusSpotId={spotFocusId}
           destination={nearCtx ? null : spotDestination(selectedSpot) ?? null}
-          nearLabel={nearCtx?.near?.name}
+          nearLabel={nearCtx ? (nearCtx.district ?? nearCtx.near?.name) : undefined}
           onClose={handleCloseSpot}
           onExpand={handleSheetExpand}
           onCollapse={handleCloseSheet}

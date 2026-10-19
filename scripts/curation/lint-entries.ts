@@ -7,6 +7,7 @@
 //   ticketUrl   loads, isn't a captcha wall, and its title or heading names the place (WRITING.md → ticketUrl);
 //               "blocked" means it needs a real browser, not that it's wrong
 //   no-ticket   charges (costMin > 0) but has no ticketUrl, or has no cost at all and isn't free (never researched)
+//   district    no entry in src/data/spotDistricts.json (the standalone-spot carousel needs it)
 //   pin         round coordinates (three decimals or fewer): a point written from memory, not taken from a map feature
 //   bio         fewer than 10 words, more than one sentence, marketing words (WRITING.md → "Voice"), or longer than the carousel card's three
 //               lines (bio-fit.py, measured in the card's own font)
@@ -24,6 +25,7 @@ import { DESTINATIONS } from '../../src/data/destinations';
 import { SPOTS, spotPhotoTitle } from '../../src/data/spots';
 import { WIKI_IMAGE_OVERRIDES } from '../../src/data/imageOverrides';
 
+const spotDistricts = JSON.parse(readFileSync('src/data/spotDistricts.json', 'utf8').toString()) as Record<string, unknown>;
 const EXTERNAL = JSON.parse(readFileSync('src/data/externalPhotos.json', 'utf8')) as Record<string, unknown>;
 
 const args = process.argv.slice(2);
@@ -109,6 +111,8 @@ async function checkWiki(title: string): Promise<string | null> {
     if (nWords < 10) add(it, 'bio', `only ${nWords} words (min 10): say what it is, where, and why it is worth a stop`);
     const m = s.bio.match(MARKETING); if (m) add(it, 'bio', `marketing word "${m[0]}"`);
     const tl = tooLong.get(s.id); if (tl) add(it, 'bio', `${tl.lines} lines on the carousel card (max 3): cut ~${tl.cut} characters`);
+    // The standalone-spot carousel lists every spot of the same second-level division (src/data/spotDistricts.json).
+    if (!spotDistricts[s.id]) add(it, 'district', 'no entry in src/data/spotDistricts.json: run scripts/curation/build-spot-districts.py --only ' + s.id);
     // A pin written from memory is round (-39.0640, 174.0400: Paritutu Rock and Pouakai Tarns shipped that way, 1.5 and 5 km off).
     // Real points from a map feature have five or more decimal places.
     const dec = (v: number) => (String(v).split('.')[1] ?? '').length;
