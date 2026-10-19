@@ -298,7 +298,7 @@ export function splitSpotCost(spot: Spot): { code: string; amount: string } | nu
   return { code, amount };
 }
 
-export const SPOTS: Spot[] = [
+const DESTINATION_SPOTS: Spot[] = [
   // NYC
   { id: 'nyc-1', destinationId: 'nyc', name: 'Times Square', icon: '🎭', coordinates: { latitude: 40.7580, longitude: -73.9855 }, category: 'landmark', bio: 'The dazzling neon heart of Manhattan, where Broadway meets a million lights and the crowds never thin.', hours: 'Open 24 hours', visitHoursMin: 1, visitHoursMax: 1.5, free: true, ticketUrl: 'https://www.timessquarenyc.org' },
   { id: 'nyc-2', destinationId: 'nyc', name: 'Central Park', icon: '🌳', coordinates: { latitude: 40.7851, longitude: -73.9683 }, category: 'nature', bio: '843 acres of meadows, lakes, and wooded paths carved into the middle of the city grid.', hours: '6:00 AM – 1:00 AM', visitHoursMin: 2, visitHoursMax: 3, free: true, ticketUrl: 'https://www.centralparknyc.org' },
@@ -1264,6 +1264,10 @@ export const SPOTS: Spot[] = [
   { id: 'warrumbungle-1', destinationId: 'warrumbungle', name: "Breadknife and Grand High Tops Walk", icon: "🥾", coordinates: { latitude: -31.28637, longitude: 148.99752 }, category: 'hike', bio: "A 14.5 km Grade 4 loop from Pincham car park past Belougery Spire and Crater Bluff to the Grand High Tops.", hours: "Daylight hours", visitHoursMin: 5, visitHoursMax: 6, costMin: 8, costMax: 8, currency: 'AUD', ticketUrl: "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/breadknife-and-grand-high-tops-walk" },
   { id: 'warrumbungle-2', destinationId: 'warrumbungle', name: "Siding Spring Observatory", icon: "🔭", coordinates: { latitude: -31.272, longitude: 149.0616 }, category: 'landmark', bio: "A working research observatory on Mt Woorut, opened in 1965, with a hands-on Exploratory and a free visitor gallery.", hours: "8:30 AM – 4:00 PM", visitHoursMin: 1.5, visitHoursMax: 3, free: true, ticketUrl: "https://www.sidingspringobservatory.org.au/" },
   { id: 'warrumbungle-3', destinationId: 'warrumbungle', name: "Coonabarabran", icon: "🏘️", coordinates: { latitude: -31.27236, longitude: 149.28062 }, category: 'landmark', bio: "The closest town to the Warrumbungles, about 35 km from the park visitor centre and 27 km from Siding Spring.", hours: "Open 24 hours", visitHoursMin: 1, visitHoursMax: 2, free: true },
+];
+
+// A separate array keeps TypeScript from building one huge union over every spot literal (TS2590).
+const STANDALONE_SPOTS: Spot[] = [
   // ── Standalone spots (no destination) ──────────────────────────────────────────
   // Places with no appropriate destination to sit under, or too few neighbouring spots to be one — see COVERAGE.md.
   { id: 'glenorchy', country: 'New Zealand', countryCode: 'NZ', continent: 'Oceania', timezone: 'Pacific/Auckland', name: 'Glenorchy', icon: '🏔️', coordinates: { latitude: -44.8500, longitude: 168.3870 }, category: 'nature', bio: 'A tiny village at the head of Lake Wakatipu, beneath the peaks and valleys used as Middle-earth in The Lord of the Rings.', hours: 'Open 24 hours', visitHoursMin: 2, visitHoursMax: 4, free: true },
@@ -1736,3 +1740,5 @@ export const SPOTS: Spot[] = [
   { id: 'abercrombie-river-national-park', country: "Australia", countryCode: "AU", continent: "Oceania", timezone: "Australia/Sydney", name: "Abercrombie River National Park", icon: "🛶", coordinates: { latitude: -34.1933184, longitude: 149.7439645 }, category: 'nature', bio: "River park for swimming, canoeing and river hikes, with Bummaroo Ford reached by 2WD.", hours: "Open 24 hours (may close for poor weather or fire danger)", visitHoursMin: 2, visitHoursMax: 6, free: true, ticketUrl: "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/abercrombie-river-national-park" },
   { id: 'wollemi-national-park', country: "Australia", countryCode: "AU", continent: "Oceania", timezone: "Australia/Sydney", name: "Wollemi National Park", icon: "🌳", coordinates: { latitude: -32.835385, longitude: 150.1970612 }, category: 'nature', bio: "Largest declared Wilderness Area in NSW, with camping, swimming and canoe tours at Gunguddy near Mudgee.", hours: "Open 24 hours (may close for poor weather or fire danger)", visitHoursMin: 2, visitHoursMax: 6, free: true, ticketUrl: "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/wollemi-national-park" },
 ];
+
+export const SPOTS: Spot[] = [...DESTINATION_SPOTS, ...STANDALONE_SPOTS];
