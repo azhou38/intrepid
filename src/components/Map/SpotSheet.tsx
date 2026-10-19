@@ -248,7 +248,9 @@ function CostValue({ spot }: { spot: Spot }) {
   const split = !!parts && textW > 0 && colW > 0 && textW > colW;
   return (
     <View style={st.costValWrap} onLayout={e => setColW(e.nativeEvent.layout.width)}>
-      <Text style={[st.glanceVal, st.costMeasure]} numberOfLines={1} onLayout={e => setTextW(e.nativeEvent.layout.width)}>{full}</Text>
+      {/* The measuring copy is laid out in a wide box so its line is its natural width; that width comes from onTextLayout (a Text's
+          own onLayout is clamped to the column, which is why a long price was truncated to "NZD 159 –…" and never split). */}
+      <Text style={[st.glanceVal, st.costMeasure]} numberOfLines={1} onTextLayout={e => setTextW(e.nativeEvent.lines[0]?.width ?? 0)}>{full}</Text>
       {split ? (
         <>
           <Text style={st.glanceVal} numberOfLines={1}>{parts!.code}</Text>
@@ -1853,8 +1855,8 @@ const st = StyleSheet.create({
   glanceVal: { fontSize: 16, fontWeight: '700', color: '#111827', lineHeight: 22 },
   glanceLbl: { fontSize: 12, color: '#9CA3AF', fontWeight: '500' },
   costValWrap: { alignSelf: 'stretch', alignItems: 'center' },
-  // Off-screen, unconstrained copy of the one-line price, only to measure its natural width.
-  costMeasure: { position: 'absolute', opacity: 0, left: -10000, width: undefined },
+  // Invisible copy of the one-line price in a wide box (600 pt), only to measure its natural width via onTextLayout.
+  costMeasure: { position: 'absolute', opacity: 0, left: 0, top: 0, width: 600 },
   // Collapsed hours row — white card, light gray border (not joined to the week list below it,
   // which only exists as a separate card while open — see SpotAbout's own comment).
   hoursCard: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: 'white',
