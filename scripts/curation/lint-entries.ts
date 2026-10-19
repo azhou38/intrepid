@@ -8,7 +8,7 @@
 //               "blocked" means it needs a real browser, not that it's wrong
 //   no-ticket   charges (costMin > 0) but has no ticketUrl, or has no cost at all and isn't free (never researched)
 //   pin         round coordinates (three decimals or fewer): a point written from memory, not taken from a map feature
-//   bio         more than one sentence, marketing words (WRITING.md → "Voice"), or longer than the carousel card's three
+//   bio         fewer than 10 words, more than one sentence, marketing words (WRITING.md → "Voice"), or longer than the carousel card's three
 //               lines (bio-fit.py, measured in the card's own font)
 //   wiki        its photo title (wiki, else name) is missing on Wikipedia, a disambiguation page, or a redirect —
 //               only for spots whose photo comes from that lookup (no override, no supplied photo)
@@ -103,6 +103,8 @@ async function checkWiki(title: string): Promise<string | null> {
   for (const s of spots) {
     const it: Issue = { kind: 'spot', id: s.id, name: s.name, checks: [] };
     if (sentences(s.bio) > 1) add(it, 'bio', 'more than one sentence');
+    const nWords = s.bio.trim().split(/\s+/).filter(Boolean).length;
+    if (nWords < 10) add(it, 'bio', `only ${nWords} words (min 10): say what it is, where, and why it is worth a stop`);
     const m = s.bio.match(MARKETING); if (m) add(it, 'bio', `marketing word "${m[0]}"`);
     const tl = tooLong.get(s.id); if (tl) add(it, 'bio', `${tl.lines} lines on the carousel card (max 3): cut ~${tl.cut} characters`);
     // A pin written from memory is round (-39.0640, 174.0400: Paritutu Rock and Pouakai Tarns shipped that way, 1.5 and 5 km off).
