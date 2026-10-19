@@ -418,6 +418,12 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "Yamba": { x: 0.5, y: 0.6, zoom: 1.3 },
   "File:Angourie Beach.jpg": { x: 0.5, y: 0.6, zoom: 1.3 },
   "File:Iluka Bluff - panoramio (1).jpg": { x: 0.5, y: 0.5, zoom: 1 },
+  "File:Urunga Lagoon from Boardwalk (5-1-2025).jpg": { x: 0.5, y: 0.5 },
+  "South West Rocks": { x: 0.72, y: 0.6 },
+  "Forster": { x: 0.5, y: 0.7, zoom: 1.6 },
+  "File:Overlook of Hat Head National Park.jpg": { x: 0.62, y: 0.5 },
+  "File:Forster (16004773437).jpg": { x: 0.5, y: 0.7, zoom: 1.6 },
+  "File:Seal Rocks.jpg": { x: 0.6, y: 0.5 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -1546,6 +1552,16 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Wentworth": "WentworthTwoRivers.JPG",
   "Yamba": "Angourie Beach.jpg",
   "Kinchega National Park": "Sunset Menindee Lakes - Flickr - Rmonty119.jpg",
+  "Dorrigo National Park": "View from Skywalk lookout at Dorrigo National Park on 2025 ASBS Conference field trip 6 Nov 20256 Nov 2025 02.jpg",
+  "Taree": "Pacific Hwy bridge Taree.jpg",
+  "Nambucca Heads": "Private jetties near the mouth of the Nambucca River, NSW.jpg",
+  "Barrington Tops National Park": "Barrington Tops National Park, view from Honeysuckle Walk.jpg",
+  "Coffs Harbour": "Muttonbird Island.jpg",
+  "Port Macquarie": "2020-12-23 Flynn's Beach, New South Wales 3.jpg",
+  "South West Rocks": "Arakoon National Park.JPG",
+  "Forster": "Forster (16004773437).jpg",
+  "Myall Lakes National Park": "Myall Lakes National Park.jpg",
+
 };
 
 /**

@@ -1,0 +1,91 @@
+{
+ "destination": {
+  "id": "myall-lakes-national-park",
+  "country": "Australia",
+  "countryCode": "AU",
+  "timezone": "Australia/Sydney",
+  "continent": "Oceania",
+  "name": "Myall Lakes National Park",
+  "coordinates": {
+   "latitude": -32.50802,
+   "longitude": 152.30465
+  },
+  "category": "park",
+  "defaultZoomSpanKm": 35,
+  "rank": 4,
+  "icon": "🏞️",
+  "tagline": "A coastal park of beaches, dunes and one of the state's largest lake systems, north of Port Stephens.",
+  "description": "Myall Lakes National Park covers 448 square kilometres of lakes, 40 km of beaches and rolling sand dunes, and includes Broughton Island. The fishing village of Seal Rocks sits on its coast beside Sugarloaf Point Lighthouse, a tower with an external stairway built in 1875. Walks run from rainforest headlands to Dark Point, a Worimi gathering place for at least 4,000 years. It is one of the most visited parks in New South Wales.",
+  "whyVisit": [
+   "See Sugarloaf Point Lighthouse above Seal Rocks",
+   "Spend a day on Seal Rocks' beaches",
+   "Walk Treachery Headland to lighthouse views"
+  ],
+  "highlights": [
+   "Sugarloaf Point Lighthouse",
+   "Seal Rocks beaches",
+   "Treachery Headland walk"
+  ],
+  "goodToKnow": [
+   {
+    "icon": "🚗",
+    "title": "Drive in; entry fees apply",
+    "detail": "There are no buses into the park, and a per-vehicle entry fee applies. Check the NPWS page for current prices."
+   },
+   {
+    "icon": "⛴️",
+    "title": "Mind the Bombah Point ferry",
+    "detail": "The quickest route from the Pacific Highway uses a cable ferry across Two Mile Lake, so allow for it. Seal Rocks Road avoids the ferry."
+   },
+   {
+    "icon": "🪶",
+    "title": "Respect Dark Point",
+    "detail": "Dark Point is a sacred Worimi place. 4WDs are allowed on the beach near it only under conditions, so stay on marked tracks."
+   }
+  ],
+  "bestMonths": [
+   10,
+   11,
+   12,
+   1,
+   2,
+   3
+  ],
+  "bestTimeBlurb": "Beaches and lakes are at their best in {months}; whale-watching from the dunes and headlands runs May to November instead.",
+  "seasonalTags": [
+   {
+    "months": [
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11
+    ],
+    "strength": 0.5,
+    "tag": "wildlife-migration"
+   }
+  ]
+ },
+ "name_evidence": "Wikivoyage \"Myall Lakes National Park\" (Mid-North Coast) and Wikipedia \"Myall Lakes National Park\"; NPWS names it Myall Lakes National Park. A national park name, passes.",
+ "picks": {
+  "header": null,
+  "header_note": "Only candidate is Seal Rocks.jpg (5184x2314, aspect 2.24, a beach view); too wide for a near-square header crop, so none offered.",
+  "why": [
+   "Sugarloaf Point Lighthouse cropped.jpg",
+   "Seal Rocks.jpg",
+   "Treachery Beach And Headland NSW Australia.jpg"
+  ],
+  "why_note": "All three Commons, widths 2846 / 5184 / 3210. Number One Beach and Dark Point have no pool photo; Yacaaba is external. Seal Rocks image is 2.24:1 so may need a subject point."
+ },
+ "sources": [
+  "https://en.wikivoyage.org/wiki/Myall_Lakes_National_Park",
+  "https://en.wikipedia.org/wiki/Myall_Lakes_National_Park"
+ ],
+ "notes": [
+  "Wikivoyage fee figures are dated; goodToKnow avoids stating a price.",
+  "Centre is the brief's, spans the member spots from Hawks Nest to Seal Rocks.",
+  "Whale-watching May-Nov is from Wikivoyage; the tag is a hedge at 0.5 strength, remove if unwanted."
+ ]
+}

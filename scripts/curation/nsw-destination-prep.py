@@ -34,7 +34,9 @@ def pool(sid):
     return {'file': f or ('external:' + k), 'width': e.get('ow'), 'credit': cr.get('by') if isinstance(cr, dict) else None, 'external': k in ext}
 def dist(a, b, c, d):
     return math.hypot((a - c) * 111.0, (b - d) * 111.0 * math.cos(math.radians(a)))
-dests = json.load(open('curation/nz-rest/nsw-destinations/manifest.json'))
+import sys
+only = set(sys.argv[sys.argv.index('--only') + 1].split(',')) if '--only' in sys.argv else None   # --only a,b: add just these to final-manifest.json (earlier ones are kept: their members have already moved)
+dests = [d for d in json.load(open('curation/nz-rest/nsw-destinations/manifest.json')) if not only or d['id'] in only]
 seen = {}; out = []; dropped = []
 for d in dests:
     mem = []
@@ -58,6 +60,10 @@ for d in dests:
     d['pool'] = {m: pool(m) for m in d['members']}
     seen[d['id']] = 1
     out = [x for x in out if x['id'] != d['id']] + [d]
+if only:
+    old = json.load(open('curation/nz-rest/nsw-destinations/final-manifest.json'))
+    keep = [d for d in old['destinations'] if d['id'] not in {o['id'] for o in out}]
+    out = keep + out; dropped = old['dropped'] + dropped
 json.dump({'destinations': out, 'dropped': dropped}, open('curation/nz-rest/nsw-destinations/final-manifest.json', 'w'), indent=1, ensure_ascii=False)
 print(len(out), 'destinations;', len(dropped), 'dropped:', [x['id'] for x in dropped])
 for d in out:

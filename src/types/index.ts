@@ -106,12 +106,12 @@ export interface Destination {
   rank: 1 | 2 | 3 | 4 | 5;
   tagline?: string;
   description?: string;
-  whyVisit?: [string, string, string];
+  whyVisit?: string[];   // two to four reasons, by the destination's popularity (WRITING.md)
   // One Wikimedia Commons file name (no "File:" prefix) per whyVisit item — a specific photo hand-
   // picked to show exactly that reason (e.g. the Eiffel Tower AT NIGHT), shown beside it in the
   // About tab's "Why visit" card. Pre-resolved into imageManifest.json under "File:<name>" (see
   // scripts/build-image-manifest.ts), so it loads with no lookup — see fetchCommonsPhoto.
-  whyVisitPhotos?: [string, string, string];
+  whyVisitPhotos?: string[];   // one per whyVisit item
   // Up to three short (2–3 word) phrases, one per whyVisit item, for space-tight surfaces like
   // the Explore cards ("Hot springs · Nordic cafés · Northern lights").
   highlights?: string[];

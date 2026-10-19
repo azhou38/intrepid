@@ -32,9 +32,14 @@ for did in (ids or list(judged)):
     j = judged.get(did)
     if not j: STAGE['skipped'].append((did, 'not judged')); continue
     fin = json.load(open(base + did + '.final.json')); d = fin['destination']
+    for t in d.get('seasonalTags', []):   # writers sometimes wrote `kind` for `tag`
+        if 'kind' in t: t['tag'] = t.pop('kind')
     why = j['why']
     if not all(ok(w.get('choice')) for w in why):
         STAGE['skipped'].append((did, 'a why-visit slot has no photo: ' + '; '.join(str(w.get('choice'))[:70] for w in why if not ok(w.get('choice'))))); continue
+    adds = [a for a in j.get('add_reasons', []) if ok(a.get('choice'))]
+    for a in adds:   # the judge may add reasons (max four in all) when a good photo supports one
+        d['whyVisit'].append(a['reason']); d['highlights'].append(a['highlight']); why.append({**a, 'choice': a['choice']})
     for i, w in enumerate(why):
         if w.get('reason_rewrite'): d['whyVisit'][i] = w['reason_rewrite']
         if w.get('highlight_rewrite'): d['highlights'][i] = w['highlight_rewrite']
