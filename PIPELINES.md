@@ -53,6 +53,14 @@ Benchmark: Clyde, Hamilton, Blue Lake, the 1913 Government Gardens and the archi
 4. **Editor** — style, repetition within and across entries.
 5. **Reconciler** — couple the three reasons to their photos with Pipeline B.
 
+## The run's final report (Atlas, Lens and Quill, every run)
+**Nothing a run decided on its own is left silent.** Every run, of any pipeline, ends with a report to the owner that lists each of the following by name, with the reason. A thing that is not in the report did not happen. Do not summarise these away as "a few" or "some".
+- **Left out or not added**, and why: a place rejected or sent to review (with the case for and against), a spot or destination skipped for any reason (a name that collides with an existing spot, a missing price, hours or link, a closed or no-access site, a destination not in the app, a tool limit), and anything held back. A held item says exactly what unblocks it.
+- **Added or kept but weak**: a photo the judges called weak (what is wrong with it), a place kept on one counted source, a pin set from an approximate source, a price or hours taken from a snippet, aggregator or a single old page, a bio claim that could not be re-read. Name each one and what would fix it.
+- **Needs the owner**: photos still missing (a section of its own, `IMAGES.md`), official or operator photos used without permission (copyright risk), links that were BLOCKED and need a real browser, new destinations proposed, existing spots removed, renamed or moved, and every decision the run made that the owner might want reversed.
+- **Not verified**: what was not checked (a coordinate audit that was not run, a file page not opened, a price not found) and what would verify it.
+Pipeline-specific items: Atlas also reports the benchmark result, the strongest candidates left out, and the standalone/inside-destination counts; Lens reports every photo slot's outcome (changed, kept, weak, none); Quill reports every spot skipped by the lint and every `ticketUrl` it could not verify.
+
 ## Cost and speed
 The agents judge; scripts do everything else, and nothing is judged twice. (Wellington's first region pass used ~2.5M agent tokens, most of it on items that ended up unchanged.)
 - **Scripts do the mechanical work.** `scripts/curation/score-candidates.ts` (Atlas: page views, coordinates, redirects, disambiguation pages, already-in-the-app matches), `scripts/curation/lint-entries.ts` (Quill: ticketUrl loads and names the place, paid spots without a link, spots with no cost that are not free, bio voice and length, photo titles that won't resolve, destination field counts), `scripts/photo-prefilter.ts` and `scripts/curation/lens-triage.ts` (Lens).
