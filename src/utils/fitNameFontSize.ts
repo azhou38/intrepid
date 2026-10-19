@@ -51,3 +51,44 @@ export function breakNameLines(name: string, size: number, maxWidth: number, gly
   if (cur) lines.push(cur);
   return lines.join('\n');
 }
+
+// ── Exact-width version (Playfair Display Bold, the card titles' font) ─────────────────────────────────────────────────
+// The estimates above use one average glyph width, which is a few percent off in either direction for any given name
+// (Whakarewarewa Forest came out 1 pt smaller than its card allowed). These use the font's real advance widths.
+import { PLAYFAIR_BOLD_EM, PLAYFAIR_BOLD_DEFAULT_EM } from './playfairBoldWidths';
+const textEm = (s: string) => { let t = 0; for (const ch of s) t += PLAYFAIR_BOLD_EM[ch] ?? PLAYFAIR_BOLD_DEFAULT_EM; return t; };
+// The width in points of `s` at `size` with the title's letter spacing (negative: it tightens every glyph).
+const textWidth = (s: string, size: number, letterSpacing: number) => textEm(s) * size + letterSpacing * s.length;
+const SAFETY = 0.985;   // 1.5% under the box, so rounding in the native layout never tips a line over
+
+function packExact(name: string, size: number, maxWidth: number, ls: number): string[] | null {
+  const lines: string[] = [];
+  let cur = '';
+  for (const w of name.split(/\s+/).filter(Boolean)) {
+    if (textWidth(w, size, ls) > maxWidth * SAFETY) return null;               // a word alone would split
+    const t = cur ? cur + ' ' + w : w;
+    if (!cur || textWidth(t, size, ls) <= maxWidth * SAFETY) cur = t;
+    else { lines.push(cur); cur = w; }
+  }
+  if (cur) lines.push(cur);
+  return lines;
+}
+// Same line policy as fitNameSize (two lines while the font stays at `comfort` or more, else three while it stays at
+// `comfort - 2`, else four with the font held to `comfort`), but sized by real text width.
+export function fitNameSizeExact(name: string, max: number, min: number, maxWidth: number, comfort: number, letterSpacing = -0.2): number {
+  const best = (maxLines: number) => {
+    for (let size = max; size >= min; size -= 0.5) {
+      const l = packExact(name, size, maxWidth, letterSpacing);
+      if (l && l.length <= maxLines) return size;
+    }
+    return min;
+  };
+  const two = best(2);
+  if (two >= comfort) return two;
+  const three = best(3);
+  if (three >= comfort - 2) return three;
+  return Math.min(comfort, best(4));
+}
+export function breakNameLinesExact(name: string, size: number, maxWidth: number, letterSpacing = -0.2): string {
+  return (packExact(name, size, maxWidth, letterSpacing) ?? name.split(/\s+/)).join('\n');
+}

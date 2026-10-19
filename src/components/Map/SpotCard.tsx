@@ -6,7 +6,7 @@ import FadeInImage from './FadeInImage';
 import { photoSubject } from '../../utils/subjectCrop';
 import { styles } from './DestinationCard';
 import { CARD_SCRIM_FADE, CARD_SCRIM_ABOVE, cardScrimStops } from './cardScrim';
-import { fitNameSize, breakNameLines } from '../../utils/fitNameFontSize';
+import { fitNameSizeExact, breakNameLinesExact } from '../../utils/fitNameFontSize';
 import { titleStatGap } from '../../utils/titleStatGap';
 import { formatSpotCost, formatVisitTime, spotPhotoTitle, type Spot } from '../../data/spots';
 import { useVisitIndex } from '../../store';
@@ -49,7 +49,7 @@ function SpotCard({ spot, onPress, width }: {
   // Two lines while the font stays at 16 or more; a longer name takes a third line rather than shrink further.
   // Words are measured at 0.62em, wider than the 0.53 used for packing lines: a long single word (Coonabarabran) that doesn't quite fit
   // otherwise wraps its last letter onto the next line. It shrinks the least that keeps the whole word on one line instead.
-  const nameSize = fitNameSize(spot.name, 23, 11, width - 23, 19, 0.53, 0.62);
+  const nameSize = fitNameSizeExact(spot.name, 23, 11, width - 20, 19, -0.2);
 
   const [infoH, setInfoH] = useState(0);
   // As tall as the name / time / cost block it sits behind (plus its 16 px bottom inset and a soft edge), so the name is on
@@ -95,7 +95,7 @@ function SpotCard({ spot, onPress, width }: {
             </Svg>
           </View>
           <View pointerEvents="none" style={[styles.cardImageInfo, local.imageInfo]} onLayout={e => setInfoH(e.nativeEvent.layout.height)}>
-            <Text style={[styles.cardName, { fontSize: nameSize, lineHeight: Math.round(nameSize * 1.14), marginBottom: titleStatGap(nameSize, 1.14, 6.5) }]}>{breakNameLines(spot.name, nameSize, width - 23, 0.53)}</Text>
+            <Text style={[styles.cardName, { fontSize: nameSize, lineHeight: Math.round(nameSize * 1.14), marginBottom: titleStatGap(nameSize, 1.14, 6.5) }]}>{breakNameLinesExact(spot.name, nameSize, width - 20, -0.2)}</Text>
             <View style={local.metaRow}>
               <Clock size={11} color="rgba(255,255,255,0.9)" strokeWidth={2.5} />
               <Text style={local.metaTxt}>{formatVisitTime(spot.visitHoursMin, spot.visitHoursMax)}</Text>
