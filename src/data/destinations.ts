@@ -824,7 +824,7 @@ export const DESTINATIONS: Destination[] = [
 
   // ── OCEANIA ────────────────────────────────────────────────────────────────
   {
-    id: 'sydney', name: 'Sydney', country: 'Australia', countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 40,
+    id: 'sydney', name: 'Sydney', country: 'Australia', countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 50,
     continent: 'Oceania', coordinates: { latitude: -33.8688, longitude: 151.2093 },
     category: 'city', icon: '🎭', rank: 1,
     tagline: 'Opera sails, a harbour bridge, and the world\'s most beautiful city beaches.',
@@ -1558,23 +1558,6 @@ export const DESTINATIONS: Destination[] = [
     ],
     bestMonths: [12, 1, 2, 3],
     bestTimeBlurb: "Come in {months}: summer is the most comfortable season on the tablelands per Wikivoyage, with the cold winters behind you.",
-  },
-  {
-    id: 'pittwater', name: "Pittwater", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 15,
-    continent: 'Oceania', coordinates: { latitude: -33.59119, longitude: 151.32529 },
-    category: 'beach', icon: "⛵", rank: 4,
-    tagline: "A drowned-valley estuary north of Sydney, with Palm Beach at its mouth and a lighthouse and lookout on either side.",
-    description: "Pittwater is an estuary about 40 km north of the Sydney CBD that flows north into Broken Bay between West Head and Barrenjoey Head, less than 1 km from the Tasman Sea. Its eastern shore is suburban and its western side is mostly Ku-ring-gai Chase National Park. Visitors come for the surf beaches at Palm Beach and Whale Beach, the 1881 sandstone lighthouse on Barrenjoey Head and the lookout at West Head. Barrenjoey Lighthouse and the Summer Bay Surf Club near it will be familiar to viewers of Home and Away.",
-    whyVisit: ["Walk up to Barrenjoey Lighthouse", "Look over Broken Bay from West Head", "Spend a day on Palm Beach"],
-    whyVisitPhotos: ["Barrenjoey Head Lighthouse 22042014.jpg", "View from West Head Lookout.jpg", "Palm Beach NSW.jpg"],
-    highlights: ["Lighthouse walk", "Broken Bay view", "Palm Beach"],
-    goodToKnow: [
-      { icon: "🥾", title: "Barrenjoey walk times", detail: "The lighthouse is a walk of about 30 minutes each way from Governor Phillip Park, with no vehicle access, and its interior opens only on guided Sunday tours." },
-      { icon: "🚗", title: "West Head vehicle fee", detail: "Entry to West Head is $12 per vehicle per day, and its gates close at 6 PM (8:30 PM in daylight saving)." },
-      { icon: "🅿️", title: "Parking at Palm Beach", detail: "The walk to the lighthouse starts from the Governor Phillip Park car park, where parking is paid; NPWS advises skipping the walk in strong winds, heavy rain or extreme heat." },
-    ],
-    bestMonths: [11, 12, 1, 2, 3],
-    bestTimeBlurb: "{months} suit beach days at Palm Beach and Whale Beach, while whale watching from Barrenjoey Head runs from May to September.",
   },
   {
     id: 'port-stephens', name: "Port Stephens", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 15,
