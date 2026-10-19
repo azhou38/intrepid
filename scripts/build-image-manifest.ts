@@ -343,6 +343,19 @@ async function main() {
   );
   const sigs = Object.fromEntries(Object.keys(sorted).map(k => [k, sigOf(k)]));
   writeFileSync(SIGS, JSON.stringify(sigs, null, 1) + '\n');
+  // Every width the app may request (THUMB_STEPS up to the photo's own width) must exist behind an external photo's thumbnail
+  // template: Cave Stream's hero was blank because a 1920 px request hit a 404 (the repo had thumbs only up to 1280).
+  {
+    const ext = JSON.parse(readFileSync(resolvePath(process.cwd(), 'src/data/externalPhotos.json'), 'utf8')) as Record<string, { t?: string; ow: number }>;
+    const bad: string[] = [];
+    for (const [k, e] of Object.entries(ext)) {
+      const m = e.t?.match(/\/assets\/photos\/thumbs\/(.+)-\{w\}\.jpg$/);
+      if (!m) continue;
+      const missing = THUMB_STEPS.filter(w => w <= e.ow && !existsSync(resolvePath(process.cwd(), `assets/photos/thumbs/${m[1]}-${w}.jpg`)));
+      if (missing.length) bad.push(`${k} (${missing.join(', ')})`);
+    }
+    if (bad.length) console.log(`\nExternal photos missing thumbnail widths (blank images at those sizes): ${bad.join('; ')}`);
+  }
   console.log(`\nDone in ${Math.round((Date.now() - started) / 1000)}s. Wrote ${Object.keys(entries).length} of ${keys.length} entries `
     + `(${reused.size} reused, ${Object.keys(entries).length - reused.size} looked up).`);
   console.log(`No photo found for ${missing.length}:`, missing);
