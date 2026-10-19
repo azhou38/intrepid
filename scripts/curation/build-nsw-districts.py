@@ -15,9 +15,12 @@ src = open('src/data/spots.ts').read()
 URL = 'https://portal.spatial.nsw.gov.au/server/rest/services/NSW_Administrative_Boundaries_Theme/MapServer/8/query?geometry={lon},{lat}&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=lganame&returnGeometry=false&f=json'
 rows = []
 for l in src.split('\n'):
-    if not l.lstrip().startswith('{ id:') or 'countryCode: "AU"' not in l and "countryCode: 'AU'" not in l:
+    if not l.lstrip().startswith('{ id:'):
         continue
-    m = re.search(r"\{ id: ['\"]([^'\"]+)['\"]", l); c = re.search(r"latitude: (-?[\d.]+), longitude: (-?[\d.]+)", l)
+    m = re.search(r"\{ id: ['\"]([^'\"]+)['\"]", l)
+    if not m or not (only and m.group(1) in only) and 'countryCode: "AU"' not in l and "countryCode: 'AU'" not in l:
+        continue   # (a spot of the Sydney destination carries no country on its line: --only names it)
+    c = re.search(r"latitude: (-?[\d.]+), longitude: (-?[\d.]+)", l)
     if m and c:
         rows.append((m.group(1), float(c.group(1)), float(c.group(2))))
 n = 0
