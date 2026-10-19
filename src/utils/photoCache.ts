@@ -1,5 +1,5 @@
 import { Dimensions, Image, PixelRatio } from 'react-native';
-import { WIKI_IMAGE_OVERRIDES } from '../data/imageOverrides';
+import { NO_PHOTO, WIKI_IMAGE_OVERRIDES } from '../data/imageOverrides';
 import imageManifest from '../data/imageManifest.json';
 import { buildThumbUrl, manifestKey, type ManifestEntry } from './imageUrl';
 
@@ -43,6 +43,7 @@ export const thumbCache = new Map<string, string>();
  * result search ranks first.
  */
 export async function fetchWikiThumbnail(title: string, width: number, context?: string): Promise<string | null> {
+  if (NO_PHOTO.has(title)) return null;   // deliberately photoless: see NO_PHOTO
   const known = MANIFEST[manifestKey(title, context)];
   if (known) return buildThumbUrl(known, width);
 

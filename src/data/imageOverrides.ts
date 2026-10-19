@@ -299,7 +299,7 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "Patonga, New South Wales": { x: 0.6, y: 0.7, zoom: 1.6 },
   "Wamberal": { x: 0.4, y: 0.6, zoom: 1.0 },
   "Little Beach": { x: 0.5, y: 0.6, zoom: 1.2 },
-  "Tallow Beach": { x: 0.4, y: 0.85, zoom: 1.8 },
+  "Tallow Beach, Bouddi": { x: 0.4, y: 0.85, zoom: 1.8 },
   "Wyrrabalong National Park": { x: 0.5, y: 0.6, zoom: 1.3 },
   "Patonga to Pearl Beach Walking Track": { x: 0.3, y: 0.5, zoom: 1.3 },
   "Woy Woy": { x: 0.6, y: 0.5, zoom: 1.0 },
@@ -1187,7 +1187,8 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Cape Byron Light": "Cape Byron Lighthouse (26742976849).jpg",
   "Wategos Beach": "2020-12-19 Wategos Beach, Byron Bay NSW 02.jpg",
   "The Pass": "Cape Byron Marine Protected area.jpg",
-  "Tallow Beach": "Box Head (15776285310).jpg",
+  "Tallow Beach, Bouddi": "Box Head (15776285310).jpg",
+  "Tallow Beach": "Broken Head From Tallow Beach October 2008.jpg",
   "Brunswick Heads": "Brunswick Heads swimming hole.JPG",
   "Lennox Head, New South Wales": "Pat Morton Lookout Dec 2024-3.jpg",
   "The Big Prawn": "The Big Prawn Bunnings Ballina NSW L1010612.jpg",
@@ -1411,7 +1412,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Arrawarra Beach": "Arrawarra Beach close to the Ocean.jpg",
   "Sea Acres National Park": "Coastline of Sea Acres National Park, Port Macquarie NSW.JPG",
   "Tacking Point Lighthouse": "Tacking Point Lighthouse qtl1b.jpg",
-  "Shelly Beach": "Shelly Beach on the Wednesday, 6th August 2008 at 11-58am. - panoramio.jpg",
+  "Shelly Beach, Port Macquarie": "Shelly Beach on the Wednesday, 6th August 2008 at 11-58am. - panoramio.jpg",
   "Flynns Beach": "2020-12-23 Flynn's Beach, New South Wales 3.jpg",
   "Town Beach": "Town Beach - panoramio.jpg",
   "Skywalk": "Skywalk (50227539572).jpg",
@@ -1446,3 +1447,30 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Antarctic Beech Forest Walking Track": "Beech Walk track, Gloucester Tops.jpg",
   "Kempsey": "Kempsey Hotel, Kempsey, NSW..jpg",
 };
+
+/**
+ * Photo keys (spotPhotoTitle) that deliberately have NO photo: no photo passed the four checks in any tier, so the app shows
+ * none instead of the article's lead image or a search hit, which for these names is another place (Number One Beach → a
+ * beach in Brazil, Horton Falls → Sri Lanka). Neither scripts/build-image-manifest.ts nor the live lookup resolves them.
+ * Remove a key when its photo is supplied (an override or externalPhotos.json entry).
+ */
+export const NO_PHOTO: ReadonlySet<string> = new Set([
+  "Transit Hill",
+  "Yerranderie",
+  "Brewarrina Aboriginal Culture Museum",
+  "Horton Falls National Park",
+  "Pilliga Hot Artesian Bore Baths",
+  "Tropical Fruit World",
+  "Mogo Wildlife Park",
+  "Big Playable Guitar",
+  "Tumbarumba to Rosewood Rail Trail",
+  "Orange wine region",
+  "Plane on a Stick",
+  "Abercrombie River National Park",
+  "Woolgoolga",
+  "Guru Nanak Sikh Temple",
+  "Shelly Beach, Forster",
+  "Number One Beach",
+  "Dark Point Walking Track",
+  "Captain Cook Lookout",
+]);
