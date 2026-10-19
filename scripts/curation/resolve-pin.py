@@ -6,15 +6,20 @@
 --lat/--lon is only a hint (a town or a rough pin): candidates are searched within 8 km of it. Candidates, each with its source
 and OSM feature type:
   osm      OpenStreetMap features whose name shares a word with the spot, of the type the category implies (peak/viewpoint for a
-           hill or lookout, beach for a beach, waterfall, trailhead or car park for a walk, the building for a museum, ...)
+           hill or lookout, beach for a beach, waterfall, the MIDPOINT of the route for a trail, track or hike (not its trailhead), the building for a museum, ...)
   photon   the Photon geocoder biased to the hint (fallback when Overpass is down)
   wiki     the spot's English Wikipedia coordinates (often rounded to the town: a reference, not a pin)
   commons  geotagged Commons files near the hint whose title shares a word with the spot
 Prints the recommended point and a confidence: HIGH when two independent sources agree within 100 m, MEDIUM for one precise OSM
-feature, LOW otherwise (then do not guess: leave the spot unpinned for the owner, or pin the agency's trailhead and say so).
+feature, LOW otherwise (then do not guess: leave the spot unpinned for the owner, or pin the midpoint of the agency's route and say so).
 A recommended point has at least 5 decimal places; a spot written with round coordinates (-39.0640, 174.0400) is a memory pin.
 """
-import json, math, re, subprocess, sys, time, urllib.parse
+import json, math, re, subprocess, sys, time, unicodedata, urllib.parse
+
+
+def fold(t):
+    return ''.join(c for c in unicodedata.normalize('NFKD', t or '') if not unicodedata.combining(c)).lower()
+
 
 a = sys.argv[1:]
 opt = lambda f, d=None: a[a.index(f) + 1] if f in a else d
@@ -39,7 +44,7 @@ TYPES = {   # category -> Overpass selectors that name the thing itself
 GENERIC = {'the', 'and', 'of', 'track', 'walk', 'trail', 'reserve', 'park', 'national', 'scenic', 'walkway', 'rock', 'rocks', 'hill', 'hills',
            'mount', 'peak', 'point', 'head', 'bay', 'beach', 'falls', 'lake', 'lakes', 'tarns', 'tarn', 'river', 'island', 'lookout', 'summit',
            'museum', 'gardens', 'garden', 'valley', 'forest', 'conservation', 'area', 'historic', 'heritage', 'centre', 'center', 'caves', 'cave'}
-allw = {w.lower() for w in re.findall(r"[A-Za-zĀ-ſ']{3,}", name)}
+allw = {fold(w) for w in re.findall(r"[A-Za-zĀ-ſ']{3,}", name)}
 words = (allw - GENERIC) or allw   # a distinctive word must match ('Paritutu'), so 'Fishing Rock' cannot stand in for 'Paritutu Rock'
 
 
@@ -73,7 +78,7 @@ def search(selectors):
     o = get('https://overpass-api.de/api/interpreter', ('data=' + urllib.parse.quote(q)).encode())
     found = []
     for e in (o or {}).get('elements', []):
-        t = e.get('tags', {}); n = (t.get('name') or t.get('name:en') or '').lower()
+        t = e.get('tags', {}); n = fold(t.get('name') or t.get('name:en') or '')
         hit = [w for w in words if w in n]
         if not hit: continue
         la, lo = (e['lat'], e['lon']) if 'lat' in e else (e['center']['lat'], e['center']['lon'])
@@ -82,15 +87,39 @@ def search(selectors):
     return o, found
 
 
+EXTRA = {'water': ['natural=water'], 'waterfall': ['waterway=waterfall'], 'beach': ['natural=beach'], 'bay': ['natural=bay'], 'peak': ['natural=peak'], 'viewpoint': ['tourism=viewpoint'], 'cave': ['natural=cave_entrance']}
+sels = list(dict.fromkeys(sels + [x for w in allw if w in {'tarns', 'tarn', 'lake', 'lakes', 'falls', 'beach', 'bay', 'mount', 'peak', 'hill', 'summit', 'lookout', 'cave', 'caves'}
+                                   for x in EXTRA.get({'tarns': 'water', 'tarn': 'water', 'lake': 'water', 'lakes': 'water', 'falls': 'waterfall', 'beach': 'beach', 'bay': 'bay', 'mount': 'peak', 'peak': 'peak', 'hill': 'peak', 'summit': 'peak', 'lookout': 'viewpoint', 'cave': 'cave', 'caves': 'cave'}[w], [])]))
 o, found = search(sels)
 if o is not None and not found:
     o, found = search(ALL)   # the category may not name the feature type (Pouakai Tarns are natural=water, not a viewpoint)
 cands += found
+# A trail or hike is pinned roughly at the CENTRE of the route (halfway along its length), not at the trailhead.
+if cat == 'hike' or re.search(r'\b(Track|Walk|Walkway|Trail|Circuit|Crossing|Route)\b', name, re.I):
+    tq = '[out:json][timeout:40];(way["highway"~"path|track|footway|steps"](around:8000,%s,%s);rel["route"~"hiking|foot"](around:8000,%s,%s););out geom tags 400;' % (lat0, lon0, lat0, lon0)
+    to = get('https://overpass-api.de/api/interpreter', ('data=' + urllib.parse.quote(tq)).encode())
+    for e in (to or {}).get('elements', []):
+        t = e.get('tags', {}); n = fold(t.get('name') or '')
+        if not [w for w in words if w in n]: continue
+        pts = []
+        if e['type'] == 'way':
+            pts = [(g['lat'], g['lon']) for g in e.get('geometry', [])]
+        else:
+            for m in e.get('members', []):
+                pts += [(g['lat'], g['lon']) for g in m.get('geometry', [])] if m.get('geometry') else []
+        if len(pts) < 2: continue
+        seg = [dist(*pts[i], *pts[i + 1]) for i in range(len(pts) - 1)]; half = sum(seg) / 2; acc = 0
+        for i, d in enumerate(seg):
+            if acc + d >= half:
+                f = (half - acc) / d if d else 0
+                mid = (pts[i][0] + f * (pts[i + 1][0] - pts[i][0]), pts[i][1] + f * (pts[i + 1][1] - pts[i][1])); break
+            acc += d
+        cands.append({'src': 'osm', 'name': t.get('name'), 'type': f'trail midpoint ({sum(seg)/1000:.1f} km)', 'lat': mid[0], 'lon': mid[1], 'match': 1.0})
 if o is None:
     p = get('https://photon.komoot.io/api/?limit=8&lat=%s&lon=%s&q=%s' % (lat0, lon0, urllib.parse.quote(name)))
     for f in (p or {}).get('features', []):
         pr = f['properties']; lo, la = f['geometry']['coordinates']
-        if dist(lat0, lon0, la, lo) < 8000 and words & {w.lower() for w in re.findall(r"\w{3,}", pr.get('name', ''))}:
+        if dist(lat0, lon0, la, lo) < 8000 and words & {fold(w) for w in re.findall(r"\w{3,}", pr.get('name', ''))}:
             cands.append({'src': 'photon', 'name': pr.get('name'), 'type': f"{pr.get('osm_key')}={pr.get('osm_value')}", 'lat': la, 'lon': lo, 'match': 0.6})
 if wiki or name:
     w = get('https://en.wikipedia.org/w/api.php?action=query&prop=coordinates&format=json&titles=' + urllib.parse.quote(wiki or name))
@@ -98,13 +127,17 @@ if wiki or name:
         for c in pg.get('coordinates', []):
             cands.append({'src': 'wiki', 'name': pg['title'], 'type': 'article', 'lat': c['lat'], 'lon': c['lon'], 'match': 1.0})
 g = get(f'https://commons.wikimedia.org/w/api.php?action=query&list=geosearch&gscoord={lat0}|{lon0}&gsradius=8000&gslimit=100&gsnamespace=6&format=json')
-files = [x for x in (g or {}).get('query', {}).get('geosearch', []) if words & {w.lower() for w in re.findall(r"\w{3,}", x['title'])}]
+files = [x for x in (g or {}).get('query', {}).get('geosearch', []) if words & {fold(w) for w in re.findall(r"\w{3,}", x['title'])}]
 if files:
     la = sorted(x['lat'] for x in files)[len(files) // 2]; lo = sorted(x['lon'] for x in files)[len(files) // 2]
     cands.append({'src': 'commons', 'name': f'{len(files)} geotagged files', 'type': 'photo median', 'lat': la, 'lon': lo, 'match': 0.5})
 for c in cands:
     c['from_hint_m'] = round(dist(lat0, lon0, c['lat'], c['lon']))
-cands.sort(key=lambda c: (c['src'] != 'osm', -c['match'], c['from_hint_m']))
+KIND_OF = {'tarns': 'water', 'tarn': 'water', 'lake': 'water', 'lakes': 'water', 'falls': 'waterfall', 'beach': 'beach', 'bay': 'bay', 'mount': 'peak',
+           'peak': 'peak', 'hill': 'peak', 'summit': 'peak', 'lookout': 'viewpoint', 'museum': 'museum', 'caves': 'cave', 'cave': 'cave'}
+want = {KIND_OF[w] for w in allw if w in KIND_OF}
+kind_ok = lambda c: not want or any(k in str(c['type']) or k in fold(c.get('name') or '') for k in want)   # 'Pouakai Tarns' wants water/attraction, not the peak 'Pouakai'
+cands.sort(key=lambda c: (c['src'] != 'osm', not kind_ok(c), not str(c['type']).startswith('trail midpoint') if (cat == 'hike') else False, -c['match'], c['from_hint_m']))
 best = next((c for c in cands if c['src'] in ('osm', 'photon')), None) or next((c for c in cands if c['src'] == 'commons'), None)   # photo median: approximate, LOW
 agree = [c for c in cands if best and c is not best and dist(best['lat'], best['lon'], c['lat'], c['lon']) <= 100]
 conf = 'LOW'
