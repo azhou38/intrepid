@@ -14,7 +14,7 @@
 // the photo allows. x: 0 = the photo's left edge … 1 = right edge; y: 0 = top … 1 = bottom; either defaults to 0.5.
 // Keyed like the image manifest: a destination's name (its header), a spot's photo key (spotPhotoTitle: its `wiki` title,
 // else its name), `File:<Commons file>` for a why-visit photo. IMAGES.md ("Keeping the subject in the crop") says when.
-export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number }> = {
+export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: number }> = {
   "Aarhus Cathedral": { y: 0.35 },
   "Akaroa Head": { x: 0.35 },
   "Banks Track": { x: 0.7 },
@@ -107,6 +107,7 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number }> = {
   "New Zealand Rugby Museum": { x: 0.3, y: 0.5 },
   "Sir Edmund Hillary Alpine Centre": { x: 0.45, y: 0.5 },
   "Sandymount": { x: 0.7, y: 0.5 },
+  "Tapotupotu Bay": { x: 0.6, y: 0.95, zoom: 1.8 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
