@@ -1,0 +1,822 @@
+{
+ "region": "nsw-lord-howe-island",
+ "spots": [
+  {
+   "name": "Ball's Pyramid",
+   "action": "standalone",
+   "destination": null,
+   "id": "balls-pyramid",
+   "coordinates": {
+    "latitude": -31.75416667,
+    "longitude": 159.25166667
+   },
+   "coordinates_source": "wikipedia:Ball's Pyramid (offshore stack)",
+   "reason": "29 km from the island's centre, outside its 15 km span (about 11 km radius); the span would have to balloon to hold it. It has no landing and is reached only by boat or dive trip from Lord Howe, so it is standalone whether or not the island destination is accepted; the island's bio/tips should mention the boat trips.",
+   "category": "nature",
+   "icon": "🌊",
+   "bio": "The world's tallest sea stack, 23 km offshore, seen on boat tours from the island and reached by dive trips.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 119740,
+   "counted_sources": [
+    "https://lordhoweisland.info/natural-attractions/natural-treasures/",
+    "https://lordhoweisland.info/experiences/snorkeling-and-diving/",
+    "https://en.wikivoyage.org/wiki/Lord_Howe_Island"
+   ],
+   "photo": {
+    "file": "Balls Pyramid, Lord Howe Marine Park 1008.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Balls_Pyramid,_Lord_Howe_Marine_Park_1008.jpg",
+    "width": 5000,
+    "height": 3750,
+    "licence": "to confirm on file page",
+    "photo_verdict": "candidate",
+    "skeptic_photo_verdict": "accept",
+    "skeptic_note": "Colour 2014 sea-level view of the stack with surf, subject centred, strong; p40 0.40 mean 0.52. Licence not read (API errored): Lens to confirm."
+   },
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Lord_Howe",
+   "coordinates_note": "Wikipedia sea-stack point, correct for an offshore feature.",
+   "ticketUrl_note": "Sold by many operators (boat tour, dive trip): likely no single ticketUrl.",
+   "wiki": "Ball's Pyramid"
+  },
+  {
+   "name": "Mount Gower",
+   "action": "spot",
+   "destination": "lord-howe-island",
+   "id": "lord-howe-island-1",
+   "coordinates": {
+    "latitude": -31.58238,
+    "longitude": 159.07883
+   },
+   "coordinates_source": "osm natural=peak (Mount Gower node 391694667) + Photon; guide route midpoint -31.5725,159.07417 in notes",
+   "reason": "Within the island's 15 km span and reached from its only base, Lord Howe Island. If the owner declines the new destination it stands alone. Guided climb only, so cost and operator need research.",
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "The island's 875 m summit, climbed on an 8-hour guided walk with rope-assisted sections and cloud-forest views.",
+   "hours": null,
+   "visitHoursMin": 6,
+   "visitHoursMax": 8,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 3374,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lord_Howe_Island",
+    "https://lordhoweisland.info/natural-attractions/natural-treasures/",
+    "https://lordhoweisland.info/experiences/hiking-and-day-walks/",
+    "https://www.lhib.nsw.gov.au/visitors/walking-tracks"
+   ],
+   "photo": {
+    "file": "Mount Gower, Lord Howe Island, NSW, Australia.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Mount_Gower,_Lord_Howe_Island,_NSW,_Australia.jpg",
+    "width": 2448,
+    "height": 3264,
+    "licence": "CC BY-SA 4.0 (Wiki Loves Earth, to confirm)",
+    "photo_verdict": "candidate",
+    "skeptic_photo_verdict": "accept",
+    "skeptic_note": "Colour 2018 view over the lagoon to Lidgbird and Gower; portrait, peaks in the middle third so the square crop keeps them; p40 0.40 mean 0.44. Lens to confirm the peak at right is Gower. Alternative: Lord Howe Island view to Mount Gower.JPG (2048x1536, peaks small at left).",
+    "hero_crop": {
+     "x": 0.5,
+     "y": 0.4
+    }
+   },
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "standalone_fallback": {
+    "action": "standalone",
+    "destination": null,
+    "id": "mount-gower",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Lord_Howe"
+   },
+   "coordinates_note": "Summit pin per peak rule. Guide route midpoint -31.5725,159.07417 if the owner prefers a route pin."
+  },
+  {
+   "name": "Ned's Beach",
+   "action": "spot",
+   "destination": "lord-howe-island",
+   "id": "lord-howe-island-2",
+   "coordinates": {
+    "latitude": -31.51764,
+    "longitude": 159.06414
+   },
+   "coordinates_source": "osm natural=beach (Neds Beach way 157694811); Photon agrees",
+   "reason": "Within the island's 15 km span and reached from its only base, Lord Howe Island. If the owner declines the new destination it stands alone.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "The island's snorkelling beach, where you wade in to hand-feed fish, with the Malabar track starting from its end.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lord_Howe_Island",
+    "https://lordhoweisland.info/natural-attractions/natural-treasures/",
+    "https://lordhoweisland.info/experiences/hiking-and-day-walks/",
+    "https://www.lhib.nsw.gov.au/visitors/walking-tracks"
+   ],
+   "photo": {
+    "file": "Neds Beach.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Neds_Beach.jpg",
+    "width": 2096,
+    "height": 1179,
+    "licence": "to confirm",
+    "photo_verdict": "candidate",
+    "skeptic_photo_verdict": "accept",
+    "skeptic_note": "Colour 2015 beach with shelter in the foreground; saturated, slightly HDR-looking and the shelter takes the left third, so Lens should compare Lord Howe Island Ned's Beach.jpg (road and beach, duller). p40 0.55 mean 0.59. Weak accept.",
+    "hero_crop": {
+     "x": 0.6,
+     "y": 0.5
+    }
+   },
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "standalone_fallback": {
+    "action": "standalone",
+    "destination": null,
+    "id": "neds-beach",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Lord_Howe"
+   }
+  },
+  {
+   "name": "Malabar Hill",
+   "action": "spot",
+   "destination": "lord-howe-island",
+   "id": "lord-howe-island-3",
+   "coordinates": {
+    "latitude": -31.51267,
+    "longitude": 159.06113
+   },
+   "coordinates_source": "osm natural=peak Malabar Hill (391923657)",
+   "reason": "Within the island's 15 km span and reached from its only base, Lord Howe Island. If the owner declines the new destination it stands alone.",
+   "category": "viewpoint",
+   "icon": "⛰️",
+   "bio": "A ridge-top walk above Ned's Beach with cliff views and red-tailed tropicbirds; the island's most popular walk.",
+   "hours": null,
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lord_Howe_Island",
+    "https://lordhoweisland.info/natural-attractions/natural-treasures/",
+    "https://lordhoweisland.info/experiences/hiking-and-day-walks/",
+    "https://www.lhib.nsw.gov.au/visitors/walking-tracks"
+   ],
+   "photo": {
+    "file": "Malabar Hill (32388672630).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Malabar_Hill_(32388672630).jpg",
+    "width": 1024,
+    "height": 768,
+    "licence": "CC BY 2.0 (David Stanley)",
+    "photo_verdict": "candidate",
+    "skeptic_photo_verdict": "accept",
+    "skeptic_note": "Colour 2016 view along the ridge to the headland and North Bay, geotagged 400 m west of the summit on the ridge; shows the walk's view, clear. p40 0.43. Alternative Lord Howe Island Malabar Hill.jpg (2912x1936, bay from above, undated)."
+   },
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "standalone_fallback": {
+    "action": "standalone",
+    "destination": null,
+    "id": "malabar-hill",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Lord_Howe"
+   },
+   "wiki": "Malabar Hill, Lord Howe Island",
+   "coordinates_note": "Summit pin; Ned's Beach to summit route midpoint would be -31.51856,159.06190."
+  },
+  {
+   "name": "Old Settlement Beach",
+   "action": "spot",
+   "destination": "lord-howe-island",
+   "id": "lord-howe-island-4",
+   "coordinates": {
+    "latitude": -31.52015,
+    "longitude": 159.05775
+   },
+   "coordinates_source": "osm natural=beach (Old Settlement Beach way 157694823)",
+   "reason": "Within the island's 15 km span and reached from its only base, Lord Howe Island. If the owner declines the new destination it stands alone.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A southern beach of weather-sculpted sandstone rocks where green turtles graze; the Max Nichols track starts here.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lord_Howe_Island",
+    "https://lordhoweisland.info/natural-attractions/natural-treasures/",
+    "https://lordhoweisland.info/experiences/hiking-and-day-walks/",
+    "https://www.lhib.nsw.gov.au/visitors/walking-tracks"
+   ],
+   "photo": {
+    "file": null,
+    "photo_verdict": "needs search outside Commons",
+    "skeptic_photo_verdict": "reject",
+    "skeptic_note": "Commons has Green Turtle near Settlement Beach (a turtle head in water, fails check 2) and Old Settlement Beach (32564834385) (steps and lagoon view, beach not shown). Nothing passes; search outside Commons (Openverse/tourism board) per IMAGES.md."
+   },
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "standalone_fallback": {
+    "action": "standalone",
+    "destination": null,
+    "id": "old-settlement-beach",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Lord_Howe"
+   }
+  },
+  {
+   "name": "Blinky Beach",
+   "action": "spot",
+   "destination": "lord-howe-island",
+   "id": "lord-howe-island-5",
+   "coordinates": {
+    "latitude": -31.53823,
+    "longitude": 159.08192
+   },
+   "coordinates_source": "osm tourism=attraction 'Surfing' on natural=beach way 32424463 (Blinky Beach); Photon beach point -31.54046,159.08225 is 250 m south",
+   "reason": "Within the island's 15 km span and reached from its only base, Lord Howe Island. If the owner declines the new destination it stands alone.",
+   "category": "beach",
+   "icon": "🏄",
+   "bio": "A west-coast surf and swim beach reached on foot from Transit Hill or Lagoon Road, with a picnic area.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://lordhoweisland.info/natural-attractions/natural-treasures/",
+    "https://lordhoweisland.info/experiences/hiking-and-day-walks/",
+    "https://www.lhib.nsw.gov.au/visitors/walking-tracks"
+   ],
+   "photo": {
+    "file": "Blinky Beach - panoramio.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Blinky_Beach_-_panoramio.jpg",
+    "width": 1024,
+    "height": 768,
+    "licence": "CC BY 3.0 (David Stanley)",
+    "photo_verdict": "candidate",
+    "skeptic_photo_verdict": "accept",
+    "skeptic_note": "Colour 2016, named Blinky Beach, in Commons Beaches of Lord Howe Island; beach and bay with Lidgbird behind, clear. 1024 px wide passes the 960 minimum. Geotag is 500 m off the beach, so Lens to confirm it is Blinky and not another west-coast beach. p40 0.40."
+   },
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "standalone_fallback": {
+    "action": "standalone",
+    "destination": null,
+    "id": "blinky-beach",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Lord_Howe"
+   }
+  },
+  {
+   "name": "North Bay",
+   "action": "spot",
+   "destination": "lord-howe-island",
+   "id": "lord-howe-island-6",
+   "coordinates": {
+    "latitude": -31.51865,
+    "longitude": 159.04359
+   },
+   "coordinates_source": "osm natural=beach 'North Beach' way 157694817 centroid; track end -31.5165,159.0448",
+   "reason": "Within the island's 15 km span and reached from its only base, Lord Howe Island. If the owner declines the new destination it stands alone.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A secluded north-coast bay reached on foot or by boat, with snorkelling, a wreck and a picnic area.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://lordhoweisland.info/natural-attractions/natural-treasures/",
+    "https://lordhoweisland.info/experiences/hiking-and-day-walks/",
+    "https://www.lhib.nsw.gov.au/visitors/walking-tracks"
+   ],
+   "photo": {
+    "file": "Lord Howe Island from Mount Eliza.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Lord_Howe_Island_from_Mount_Eliza.JPG",
+    "width": 3968,
+    "height": 2976,
+    "licence": "CC BY-SA 3.0",
+    "photo_verdict": "candidate",
+    "skeptic_photo_verdict": "review",
+    "skeptic_note": "Candidate only: 2013 colour view from Mount Eliza down on a bay with a sand spit and Lidgbird behind; Mount Eliza overlooks North Bay but the file says only 'view of the island', so check 1 is unproven and the beach is small in frame. Lord Howe Island North Bay.jpg (a sandy shore, undated, Lidgbird at right) probably is not North Bay (it faces north). Lens must decide; p40 0.31 mean 0.42."
+   },
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "standalone_fallback": {
+    "action": "standalone",
+    "destination": null,
+    "id": "north-bay-lord-howe",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Lord_Howe"
+   },
+   "wiki": "North Bay",
+   "coordinates_note": "OSM names the beach 'North Beach'; same place as the tourism board's North Bay. Approximate centroid."
+  },
+  {
+   "name": "Intermediate Hill",
+   "action": "spot",
+   "destination": "lord-howe-island",
+   "id": "lord-howe-island-7",
+   "coordinates": {
+    "latitude": -31.54973,
+    "longitude": 159.08735
+   },
+   "coordinates_source": "osm natural=peak + tourism=viewpoint platform (way 473451312)",
+   "reason": "Within the island's 15 km span and reached from its only base, Lord Howe Island. If the owner declines the new destination it stands alone.",
+   "category": "viewpoint",
+   "icon": "⛰️",
+   "bio": "A 250 m summit on the coastal track with a viewing platform and views to Ball's Pyramid.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lord_Howe_Island",
+    "https://lordhoweisland.info/experiences/hiking-and-day-walks/",
+    "https://www.lhib.nsw.gov.au/visitors/walking-tracks"
+   ],
+   "photo": {
+    "file": "Intermediate Hill - panoramio.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Intermediate_Hill_-_panoramio.jpg",
+    "width": 1024,
+    "height": 768,
+    "licence": "CC BY 3.0 (David Stanley)",
+    "photo_verdict": "candidate",
+    "skeptic_photo_verdict": "accept",
+    "skeptic_note": "Colour 2016 view from the hill toward the south-east coast; the lookout view is the attraction. Geotag -31.5516,159.0875 is on the hill. p40 0.35 mean 0.50."
+   },
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "standalone_fallback": {
+    "action": "standalone",
+    "destination": null,
+    "id": "intermediate-hill-lord-howe",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Lord_Howe"
+   }
+  },
+  {
+   "name": "Transit Hill",
+   "action": "spot",
+   "destination": "lord-howe-island",
+   "id": "lord-howe-island-8",
+   "coordinates": {
+    "latitude": -31.5345,
+    "longitude": 159.07794
+   },
+   "coordinates_source": "osm natural=peak Transit Hill (391843021); platform node -31.53443,159.07814",
+   "reason": "Within the island's 15 km span and reached from its only base, Lord Howe Island. If the owner declines the new destination it stands alone.",
+   "category": "viewpoint",
+   "icon": "⛰️",
+   "bio": "A central summit with a 360-degree lookout platform, reached by an easy 1.2 km walk through palm forest.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://lordhoweisland.info/experiences/hiking-and-day-walks/",
+    "https://lordhoweisland.info/natural-attractions/natural-treasures/",
+    "https://www.lhib.nsw.gov.au/visitors/walking-tracks"
+   ],
+   "photo": {
+    "file": null,
+    "photo_verdict": "needs search outside Commons",
+    "skeptic_photo_verdict": "reject",
+    "skeptic_note": "No Transit Hill photo on Commons (Overlooking Lord Howe Island.JPG, 6000x4000, 2013, may be from it but is unlabelled). Search outside Commons."
+   },
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "standalone_fallback": {
+    "action": "standalone",
+    "destination": null,
+    "id": "transit-hill-lord-howe",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Lord_Howe"
+   }
+  },
+  {
+   "name": "Erscott's Hole",
+   "action": "spot",
+   "destination": "lord-howe-island",
+   "id": "lord-howe-island-9",
+   "coordinates": {
+    "latitude": -31.54639,
+    "longitude": 159.06083
+   },
+   "coordinates_source": "LOW: geotag of Commons file 'Greyhead Surgeonfish, Erscott's Hole' (iNaturalist, 2019); lagoon off the airport",
+   "reason": "Within the island's 15 km span and reached from its only base, Lord Howe Island. If the owner declines the new destination it stands alone. HOLD: OSM has no feature; pin is the geotag of one iNaturalist file in the lagoon, while sources place the site off the airport or in a groyne. Needs the owner or an operator's map before it is applied.",
+   "category": "nature",
+   "icon": "🤿",
+   "bio": "A lagoon reef off the airport with staghorn coral and tame fish, snorkelled from shore or by glass-bottom boat.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lord_Howe_Island",
+    "https://lordhoweisland.info/natural-attractions/natural-treasures/"
+   ],
+   "photo": {
+    "file": null,
+    "photo_verdict": "needs search outside Commons",
+    "skeptic_photo_verdict": "reject",
+    "skeptic_note": "Commons has only fish and shark close-ups (Carcharhinus galapagensis erscotts hole.jpg, Greyhead Surgeonfish) which fail check 3. Search outside Commons (tourism board, glass-bottom boat operators)."
+   },
+   "status": "HELD for owner: pin is LOW confidence",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "standalone_fallback": {
+    "action": "standalone",
+    "destination": null,
+    "id": "erscotts-hole",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Lord_Howe"
+   },
+   "coordinates_confidence": "LOW",
+   "hold_for_owner": true
+  },
+  {
+   "name": "Muttonbird Point",
+   "action": "spot",
+   "destination": "lord-howe-island",
+   "id": "lord-howe-island-10",
+   "coordinates": {
+    "latitude": -31.54652,
+    "longitude": 159.09169
+   },
+   "coordinates_source": "osm tourism=viewpoint Mutton Bird Point Viewing Platform (391696307); Photon locality agrees within 100 m",
+   "reason": "Within the island's 15 km span and reached from its only base, Lord Howe Island. If the owner declines the new destination it stands alone.",
+   "category": "viewpoint",
+   "icon": "🐦",
+   "bio": "A headland lookout on the coastal track over a seabird colony, with a blowhole nearby.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://lordhoweisland.info/experiences/hiking-and-day-walks/",
+    "https://www.lhib.nsw.gov.au/visitors/walking-tracks"
+   ],
+   "photo": {
+    "file": "Mutton Bird Point (32519532420).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Mutton_Bird_Point_(32519532420).jpg",
+    "width": 1024,
+    "height": 768,
+    "licence": "CC BY 2.0 (David Stanley)",
+    "photo_verdict": "candidate",
+    "skeptic_photo_verdict": "accept",
+    "skeptic_note": "Colour 2016 headland and seabird rock, geotagged on the platform (-31.54664,159.09163), clearly the named point; p40 0.41 mean 0.46."
+   },
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "standalone_fallback": {
+    "action": "standalone",
+    "destination": null,
+    "id": "muttonbird-point",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Lord_Howe"
+   },
+   "wiki": "Mutton Bird Point"
+  },
+  {
+   "name": "Goat House Cave",
+   "action": "spot",
+   "destination": "lord-howe-island",
+   "id": "lord-howe-island-11",
+   "coordinates": {
+    "latitude": -31.55302,
+    "longitude": 159.08575
+   },
+   "coordinates_source": "midpoint of OSM path/track ways routed from Lagoon Road to the cave entrance (2.5 km); cave node natural=cave_entrance -31.56271,159.08812",
+   "reason": "Within the island's 15 km span and reached from its only base, Lord Howe Island. If the owner declines the new destination it stands alone.",
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "A steep, rope-assisted 2.1 km climb on Smoking Tree Ridge to a cave with a sweeping view over the island.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://lordhoweisland.info/experiences/hiking-and-day-walks/",
+    "https://www.lhib.nsw.gov.au/visitors/walking-tracks"
+   ],
+   "photo": {
+    "file": "Lord Howe - Goat House.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Lord_Howe_-_Goat_House.jpg",
+    "width": 4416,
+    "height": 3312,
+    "licence": "CC BY 2.0",
+    "photo_verdict": "candidate",
+    "skeptic_photo_verdict": "accept",
+    "skeptic_note": "Colour 2014 view of the island from the cave, geotagged at the cave; a sweeping view, not the cave itself, which suits a hike. Lens: check 2 is a view from the spot. p40 0.26 (near the floor) mean 0.44. Alternative View from Goat House Cave (2448x2448, 2018, CC BY-SA 4.0, includes a hiker)."
+   },
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "standalone_fallback": {
+    "action": "standalone",
+    "destination": null,
+    "id": "goat-house-cave",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Lord_Howe"
+   },
+   "coordinates_note": "Route midpoint per hike rule; cave node natural=cave_entrance -31.56271,159.08812."
+  },
+  {
+   "name": "Lord Howe Island Museum",
+   "action": "spot",
+   "destination": "lord-howe-island",
+   "id": "lord-howe-island-12",
+   "coordinates": {
+    "latitude": -31.52791,
+    "longitude": 159.06655
+   },
+   "coordinates_source": "osm tourism=museum (391878208); Wikivoyage -31.527987,159.0665",
+   "reason": "Within the island's 15 km span and reached from its only base, Lord Howe Island. If the owner declines the new destination it stands alone.",
+   "category": "museum",
+   "icon": "🏛️",
+   "bio": "The island's small museum and visitor centre, with local history and world-heritage exhibits, open daily.",
+   "hours": "9:00 AM – 3:00 PM",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lord_Howe_Island",
+    "https://lordhoweisland.info/about/island-directory/"
+   ],
+   "photo": {
+    "file": "Lord Howe Museum (32861092495).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Lord_Howe_Museum_(32861092495).jpg",
+    "width": 1024,
+    "height": 768,
+    "licence": "to confirm (David Stanley series, CC BY 2.0 likely)",
+    "photo_verdict": "candidate",
+    "skeptic_photo_verdict": "accept",
+    "skeptic_note": "Colour 2016 museum interior with a whaleboat and flying-boat model; no exterior on Commons, interior is the visit. File page could not be read: Lens to confirm licence and that it is this museum. p40 0.49."
+   },
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "standalone_fallback": {
+    "action": "standalone",
+    "destination": null,
+    "id": "lord-howe-island-museum",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Lord_Howe"
+   },
+   "hours_source": "Wikivoyage Lord Howe Island listing (daily; entry by donation)",
+   "cost_note": "Wikivoyage: entry by donation; confirm whether to mark free."
+  },
+  {
+   "name": "Lagoon Beach",
+   "action": "spot",
+   "destination": "lord-howe-island",
+   "id": "lord-howe-island-13",
+   "coordinates": {
+    "latitude": -31.52919,
+    "longitude": 159.06546
+   },
+   "coordinates_source": "osm natural=beach way 157694680 centroid; existing pin on the way",
+   "reason": "Within the island's 15 km span and reached from its only base, Lord Howe Island. If the owner declines the new destination it stands alone.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "The township's lagoon shore, a sandy stroll, swim and snorkel beach lined with banyans and pandanus.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://lordhoweisland.info/experiences/hiking-and-day-walks/",
+    "https://www.lhib.nsw.gov.au/visitors/walking-tracks"
+   ],
+   "photo": {
+    "file": null,
+    "photo_verdict": "needs search outside Commons",
+    "skeptic_photo_verdict": "reject",
+    "skeptic_note": "Only Commons lagoon file is a generic Lord Howe Island Lagoon.jpg (vivid rocks and turquoise, not tied to this beach). Search outside Commons."
+   },
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "standalone_fallback": {
+    "action": "standalone",
+    "destination": null,
+    "id": "lagoon-beach-lord-howe",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Lord_Howe"
+   },
+   "wiki": "Lagoon Beach",
+   "confidence_note": "Low confidence: incidental mention by two counted sources; resolved from review to keep by the skeptic."
+  }
+ ],
+ "new_destinations": [
+  {
+   "name": "Lord Howe Island",
+   "id": "lord-howe-island",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Lord_Howe",
+   "category": "island",
+   "coordinates": {
+    "latitude": -31.5395,
+    "longitude": 159.0705
+   },
+   "coordinates_source": "approximate township centre between the museum (OSM -31.52791,159.06655) and Lagoon Beach; to be confirmed in Pipeline C",
+   "defaultZoomSpanKm": 15,
+   "access": "By plane (Sydney, Brisbane, Port Macquarie); no other access",
+   "rank_suggestion": 4,
+   "kept_spots": [
+    "Mount Gower",
+    "Ned's Beach",
+    "Malabar Hill",
+    "Old Settlement Beach",
+    "Blinky Beach",
+    "North Bay",
+    "Intermediate Hill",
+    "Transit Hill",
+    "Erscott's Hole",
+    "Muttonbird Point",
+    "Goat House Cave",
+    "Lord Howe Island Museum",
+    "Lagoon Beach"
+   ],
+   "note": "Proposal only, listed for the owner, not added. It needs description, three reasons with photos, tips, best months and a header (WRITING.md). IANA zone Australia/Lord_Howe confirmed (UTC+10:30, DST +11). Fifteen kept places is enough to fill a visit; the island is a UNESCO World Heritage Area with its own accommodation and tourism infrastructure."
+  }
+ ],
+ "if_destination_declined": "Every entry has standalone_fallback (id, country Australia, AU, Oceania, Australia/Lord_Howe); Ball's Pyramid is standalone either way. Without the destination the map would show 13 standalone pins on an 11 km island, and the country sheet still needs another AU destination (Sydney exists).",
+ "review_not_placed": [
+  {
+   "name": "Middle Beach",
+   "views": 0,
+   "counted_sources": 2,
+   "case": "Both counted sources only name it as the Clear Place walk start; neighbours Lagoon Beach 900 m away. Skeptic would drop it unless the owner wants township beaches. Pin if kept: -31.5247,159.07456 (OSM natural=beach way 157694803)."
+  },
+  {
+   "name": "Admiralty Islands",
+   "views": 1884,
+   "counted_sources": 1,
+   "case": "Tourism board dedicated page (about 25 dive sites, 15 min by boat), Wikivoyage mentions; no landing, operator dive/boat trips only. Skeptic leans keep. Pin if kept: -31.50469,159.0681 (OSM Sugarloaf Island coastline midpoint). Would sit as a spot of the island if approved; photo candidate Admiralty Group off Ned's Beach (Commons)."
+  }
+ ],
+ "held_for_owner": [
+  "Erscott's Hole"
+ ],
+ "photos_needing_search_outside_commons": [
+  "Old Settlement Beach",
+  "Transit Hill",
+  "Erscott's Hole",
+  "Lagoon Beach"
+ ],
+ "existing_fixes": []
+}

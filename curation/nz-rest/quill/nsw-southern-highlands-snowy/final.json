@@ -1,0 +1,508 @@
+{
+ "spots": {
+  "bowral": {
+   "name": "Bowral",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Highlands hub town with Corbett Gardens, main-street cafes and a trail past Don Bradman's childhood homes.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": { "latitude": -34.467914, "longitude": 150.416146 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "No ticketUrl: a town with no single steward; visitsouthernhighlands.com.au is a tourism board.",
+     "Bio avoids 'Bradman's hometown' (research bio_fix): Wikivoyage describes the Bradman Trail past his childhood homes, school and church. Tulip Time (late Sept-early Oct) is an event, so it is not in the bio.",
+     "Pin is the Wikivoyage town-centre geo (research LOW from resolve-pin, which offered the railway station 1.1 km away); fine for a town.",
+     "No wiki set: 'Bowral' not checked as the article title. Photo candidate is Corbett Gardens (seasonal tulips)."
+   ]
+  },
+  "berrima": {
+   "name": "Berrima",
+   "icon": "🏛️",
+   "category": "historic",
+   "bio": "Georgian sandstone village on the old Hume Highway, with a courthouse, district museum, galleries and cafes.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": { "latitude": -34.489005, "longitude": 150.336151 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "No ticketUrl: a village with no single steward. Walking the village is free; Courthouse (daily 10-4, adult $9) and District Museum (Wed-Sun 10-4, adult $5) are Wikivoyage 2015 figures, unverified, so left out of the bio.",
+     "Pin HIGH, moved 208 m from the placement's Wikivoyage geo (Photon locality plus Commons median of 55 files).",
+     "No wiki set: placement suggested 'Berrima, New South Wales' but research did not confirm the title."
+   ]
+  },
+  "bradman-museum": {
+   "name": "Bradman Museum",
+   "icon": "🏏",
+   "category": "museum",
+   "bio": "Cricket museum and hall of fame at Bradman Oval, St Jude Street, Bowral.",
+   "hours": "9:00 AM – 4:00 PM",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "costMin": 30,
+   "costMax": 30,
+   "currency": "AUD",
+   "ticketUrl": "https://www.bradman.com.au/",
+   "coordinates": { "latitude": -34.4830902, "longitude": 150.4244408 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "Operator: open daily 9-4; closed Good Friday and Christmas Day. Adult $30 (child 5-17 $16.50, concession $23.50, family $77). The old bradman.org.au domain does not resolve; bradman.com.au loaded.",
+     "Pin MEDIUM (OSM tourism=museum); Wikivoyage listing is 70 m away. Visit duration is an estimate.",
+     "Bio kept to what is sourced (name, setting, address) so it does not repeat Bowral's Bradman Trail line. No Commons photo of the museum (only a statue and the oval)."
+   ]
+  },
+  "mount-gibraltar": {
+   "name": "Mount Gibraltar",
+   "icon": "⛰️",
+   "category": "viewpoint",
+   "bio": "Extinct volcano above Mittagong with a rim walk and lookouts over the Southern Highlands.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "coordinates": { "latitude": -34.4654047, "longitude": 150.42803 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "Free per the NSW Government listing (Mount Gibraltar Heritage Reserve, 250 Oxley Drive, Mittagong). 'Open 24 hours' is an unverified qualifier (no gate, no stated hours).",
+     "Walk times (short walks 10-45 min, rim track about 25 min) came from a search summary, not a loaded page. No ticketUrl: council-run, no council page found.",
+     "Pin HIGH (OSM natural=peak). Commons search returns only mislabelled Bowral files, so the photo needs a search outside Commons."
+   ]
+  },
+  "mittagong": {
+   "name": "Mittagong",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Highlands town at the foot of Mount Gibraltar, known for its antique and second-hand shops.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": { "latitude": -34.4500664, "longitude": 150.4473469 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "No ticketUrl: a town. Pin is the OSM place=town node (research LOW from resolve-pin; kept as the town point).",
+     "No wiki set: placement suggested 'Mittagong, New South Wales', unconfirmed. Visit duration is an estimate. No usable Commons photo."
+   ]
+  },
+  "robertson": {
+   "name": "Big Potato",
+   "icon": "🥔",
+   "category": "landmark",
+   "bio": "Giant potato on the Illawarra Highway at Robertson, repainted in 2025 for the 30th anniversary of Babe.",
+   "hours": "Visible from the road at any time",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": true,
+   "coordinates": { "latitude": -34.589184, "longitude": 150.59812 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "Id stays 'robertson' (the standalone fallback). Named 'Big Potato' because the potato is the place; the village is not the spot.",
+     "No wiki set: the placement's 'Robertson, New South Wales' is the village article, not the potato, and no Big Potato article was confirmed. Photo key therefore falls back to the name 'Big Potato' and needs an override (candidate: Big Potato Babe Edition 2025.jpg).",
+     "Facts from the NSW Government listing and VisitNSW: built 1977, about 10 m long; 2025 'Pig Potato' repaint marks Babe's 30th anniversary (filmed on local farms). Free is unverified (no explicit statement; roadside).",
+     "No ticketUrl: roadside icon with no official page. Pin HIGH (OSM attraction plus Commons median)."
+   ]
+  },
+  "bundanoon": {
+   "name": "Bundanoon",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Small gateway village to Morton National Park's Gullies walks, with cafes and a railway station.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": { "latitude": -34.655954, "longitude": 150.299514 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "Free: the village has no charge. Entering Morton National Park at Bundanoon is $8 per vehicle per day (NPWS; Wikivoyage's $7 is stale), a candidate tip.",
+     "No ticketUrl: a village. Pin HIGH (OSM railway=stop, 40 m from the Wikivoyage geo; moved 45 m from placement).",
+     "The Gullies circuit is held (no pin), so the bio names the walks only generally. No usable Commons photo."
+   ]
+  },
+  "mount-kosciuszko": {
+   "name": "Mount Kosciuszko",
+   "icon": "🏔️",
+   "category": "hike",
+   "bio": "Australia's highest mainland peak at 2228 m, reached by a 13 km return walk from the Thredbo chairlift.",
+   "hours": "Daylight hours; summit walk snowbound June to October",
+   "visitHoursMin": 4,
+   "visitHoursMax": 5,
+   "costMin": 17,
+   "costMax": 29,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/kosciuszko-walk-thredbo-to-mount-kosciuszko",
+   "coordinates": { "latitude": -36.4558303, "longitude": 148.2635105 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "Per vehicle park fee: Kosciuszko National Park entry $17 per vehicle per day, $29 in winter peak (Friday of June long weekend to Monday of October long weekend); motorcycles $7/$12. Not a per-person price. The Thredbo scenic chairlift is extra (price not found).",
+     "NPWS: Thredbo route 13 km return, 4-5 hours, Grade 3, from the top of the Kosciuszko Express Chairlift (15 min ride); generally snowbound in winter (June to October). Thredbo summer lifts run November to April; a chairlift maintenance notice (13 Oct-14 Nov, year not shown) was seen in a snippet. The Charlotte Pass and Main Range approaches are longer and not priced.",
+     "Pin HIGH (OSM natural=peak, Wikipedia 9 m): the summit itself, not the route midpoint, per the peak rule. Photo candidate needs hero_crop x 0.55, y 0.6, zoom 1.4.",
+     "No wiki set: 'Mount Kosciuszko' was not checked as an article title (Wikipedia source URL used it)."
+   ]
+  },
+  "thredbo": {
+   "name": "Thredbo",
+   "icon": "🎿",
+   "category": "entertainment",
+   "bio": "Alpine village and ski resort with summer chairlift access to walks and the Kosciuszko summit track.",
+   "hours": "Village open all year; summer lifts November to April",
+   "visitHoursMin": 2,
+   "visitHoursMax": 8,
+   "costMin": 17,
+   "costMax": 29,
+   "currency": "AUD",
+   "ticketUrl": "https://www.thredbo.com.au/",
+   "coordinates": { "latitude": -36.5047751, "longitude": 148.3057091 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "Per vehicle park fee: $17 per vehicle per day, $29 in winter peak, charged on the Alpine Way (NPWS). Walking the village is otherwise free; lifts are separate operator products (scenic lift price not found). Whether the gate always applies on arrival from Jindabyne is not verified.",
+     "Winter season dates were not loaded; summer lifts 'action from November to April' (Thredbo summer passes page).",
+     "Pin HIGH (OSM place=locality plus Wikipedia). Visit duration is an estimate."
+   ]
+  },
+  "charlotte-pass": {
+   "name": "Charlotte Pass",
+   "icon": "🏔️",
+   "category": "hike",
+   "bio": "Alpine resort village below Mount Kosciuszko, a summer walking base reached by oversnow transport in winter.",
+   "hours": "Lookout open all year; no car access June to October",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "costMin": 17,
+   "costMax": 29,
+   "currency": "AUD",
+   "ticketUrl": "https://charlottepass.com.au/",
+   "coordinates": { "latitude": -36.4313727, "longitude": 148.3286811 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "Per vehicle park fee: $17 per vehicle per day, $29 in winter peak; the lookout itself is free to stand at.",
+     "Seasonal access (NPWS): Kosciuszko Road is closed between Perisher and Charlotte Pass from the June long weekend to the October long weekend and there is no car access to the resort in winter; park free at Bullocks Flat Skitube, ride to Perisher Valley, then oversnow transport (price not found). In summer you drive to the end of Kosciuszko Road for the Mount Kosciuszko summit walk and the Main Range walk.",
+     "Pin HIGH (OSM Charlotte Pass Lookout/saddle plus Commons median 52 m); the resort village is about 250-300 m south-east at -36.43278, 148.33162. ticketUrl is the resort operator (loaded); NPWS lookout page also loads.",
+     "Photo candidate (Charlotte Pass 2008.jpg) needs hero_crop x 0.55, y 0.65, zoom 1.3."
+   ]
+  },
+  "blue-lake": {
+   "name": "Blue Lake",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "One of mainland Australia's four glacial lakes, seen from a lookout on the Main Range walk.",
+   "hours": "Summer only; snowbound June to October",
+   "visitHoursMin": 7,
+   "visitHoursMax": 9,
+   "costMin": 17,
+   "costMax": 29,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/blue-lake-lookout",
+   "coordinates": { "latitude": -36.4038172, "longitude": 148.3147127 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "Per vehicle park fee: $17 per vehicle per day, $29 in winter peak, to reach Charlotte Pass by car in summer; the lookout itself is free.",
+     "NPWS: Blue Lake is one of only 4 glacial lakes on mainland Australia (Ramsar-listed 1996); paths to the lake itself are closed, so you see it from the lookout. Reached on the Main Range walk, a 22 km loop of 7-9 hours, Grade 4, from Charlotte Pass; snowbound June to October. The lookout is about 5 km from Charlotte Pass (search summary).",
+     "Pin is the OSM lake centroid (MEDIUM, correct for a lake); the lookout, the visitor standing point, is at -36.40755, 148.30644, 700 m west. Owner may prefer the lookout.",
+     "Photo key: the name 'Blue Lake' is ambiguous (Blue Lake exists in Rotorua and elsewhere). Placement suggested wiki 'Blue Lake (New South Wales)', unconfirmed, so none set; a hand-picked photo override is needed. Commons colour options are 3:1 panoramas or a sepia postcard."
+   ]
+  },
+  "jindabyne": {
+   "name": "Jindabyne",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Lakeside town below the snowline on Lake Jindabyne, the main base for the Snowy Mountains.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": { "latitude": -36.41783, "longitude": 148.61206 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "No ticketUrl: a town; the Snowy Region Visitor Centre (NPWS) is in Jindabyne but is not the town's site. Free: the town has no charge.",
+     "Pin is the Wikivoyage Jindabyne geo, 5 dp (LOW from resolve-pin, which returned a cemetery; kept as the town point). Visit duration is an estimate.",
+     "Photo candidate: Lake Jindabyne 1.jpg (lake with the ranges behind). No wiki set. Lake Jindabyne itself is in the review list, not a separate spot."
+   ]
+  },
+  "lake-eucumbene": {
+   "name": "Lake Eucumbene",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "Large Snowy Scheme reservoir near Adaminaby, popular for fishing and boating.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": { "latitude": -36.0716008, "longitude": 148.6626691 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "No wiki set: Wikipedia redirects 'Lake Eucumbene' to the Eucumbene Dam article, so the default photo and page views belong to the dam. Photo key is the name 'Lake Eucumbene'; it needs a hand-picked override (candidate: Lake Eucumber Apr 2012.JPG, a typo in the file name).",
+     "Free: no charge to visit the shore; a fishing licence is separate. 'Open 24 hours' is an unverified qualifier. No ticketUrl: Snowy Hydro reservoir with no single visitor page. Only source is the NPWS Kosciuszko page; no access points were loaded.",
+     "Pin is the OSM reservoir centroid (MEDIUM; the lake is 145 km2 and the centroid is in water). Providence Portal and Old Adaminaby access points were not resolved."
+   ]
+  },
+  "big-merino": {
+   "name": "Big Merino",
+   "icon": "🐑",
+   "category": "landmark",
+   "bio": "Three-storey concrete and steel merino ram called Rambo, 15 m high and built in 1985, in Goulburn.",
+   "hours": "Statue visible from the road at any time",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "free": true,
+   "ticketUrl": "https://www.thebigmerino.com.au/",
+   "coordinates": { "latitude": -34.7725796, "longitude": 149.6914489 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "NSW Government listing: free entry, 1 Sowerby Street, 15.2 m high, 18 m long, built 1985. Shop and gallery purchases are separate.",
+     "Shop/gallery opening hours were not verified: the operator site is script-rendered; a council snippet said 8:30 AM - 5:00 PM, older sources 9-5. Hours therefore describe only the statue.",
+     "Pin HIGH (OSM building plus Commons median 40 m). ticketUrl loads (title 'Home | The Big Merino')."
+   ]
+  },
+  "bungonia-national-park": {
+   "name": "Bungonia National Park",
+   "icon": "🥾",
+   "category": "nature",
+   "bio": "Limestone gorge park with a slot canyon, the Lookdown lookout, caving and canyoning near Marulan.",
+   "hours": "Park always open; office 9:00 AM – 4:00 PM",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "costMin": 8,
+   "costMax": 8,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/bungonia-national-park",
+   "coordinates": { "latitude": -34.795914, "longitude": 150.018966 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "Per vehicle park fee: $8 per vehicle per day, paid at the park office machines (NPWS). Park always open but may close for high fire danger; office 9-4 daily, closed Christmas Day.",
+     "Pin is the Commons geotag median of 26 files near the Lookdown and campground (placement); the OSM reserve centroid is 400 m away. Visit duration is an estimate.",
+     "National park: under the every-park-is-a-destination rule the owner decides destination or spot; it is kept here as the Goulburn-fallback standalone."
+   ]
+  },
+  "goulburn-city": {
+   "name": "Goulburn",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Regional city on the Hume Highway with a heritage streetscape and railway history.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": { "latitude": -34.754722, "longitude": 149.718611 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "No ticketUrl: a city; visitgoulburn.com.au did not respond and goulburnnsw.com.au is a tourism site. Visitor Information Centre Mon-Fri 9-5, weekends and holidays 10-4 (Wikivoyage, undated).",
+     "Weak standalone case: research flags a 'town with a heritage streetscape' if the Goulburn destination is declined. Pin is the Wikivoyage city-centre geo (LOW from resolve-pin; Photon is 270 m away).",
+     "No wiki set: placement suggested 'Goulburn, New South Wales', unconfirmed. Id stays 'goulburn-city' so it cannot collide with the destination id 'goulburn'."
+   ]
+  },
+  "yarrangobilly-caves": {
+   "name": "Yarrangobilly Caves",
+   "icon": "🦇",
+   "category": "nature",
+   "bio": "Limestone show caves in northern Kosciuszko National Park, from self-guided South Glory to guided North Glory.",
+   "hours": "Visitor centre 9:00 AM – 5:00 PM; Jersey Cave closed to 24 Dec 2026",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "costMin": 22,
+   "costMax": 38,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/yarrangobilly-area",
+   "coordinates": { "latitude": -35.7252179, "longitude": 148.49157 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "Cost by cave (adult): South Glory self-guided $22, Jillabenan and Jersey guided $26, North Glory guided $38 (includes South Glory), plus $4 per vehicle park entry. Castle Cave price and guided tour times were not read.",
+     "Hours: visitor centre 9-5 daily, closed Christmas Day; South Glory Cave self-guided 9:30 AM - 4:00 PM. Jersey Cave is closed 12 October to 24 December 2026. Guided caves run on set days (times shown when booking); extra tours in NSW school holidays.",
+     "Access: 6 km of graded gravel (2WD ok, not caravans); NPWS recommends snow chains in winter. Caves run 10 C (South Glory) to 15 C. Visit time: South Glory 30-40 min, North Glory about 1 hr 30 min.",
+     "Pin HIGH (OSM place=locality plus Wikipedia). 84 km from the Kosciuszko centre, so standalone. Photo candidate (Glory Hole Cave) shows one cave and passes brightness narrowly."
+   ]
+  },
+  "yarrangobilly-thermal-pool": {
+   "name": "Yarrangobilly Thermal Pool",
+   "icon": "♨️",
+   "category": "nature",
+   "bio": "Spring-fed pool kept at 27 C year-round, reached by a steep 700 m walk from the caves.",
+   "hours": "Sunrise to sunset",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "costMin": 4,
+   "costMax": 4,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/swimming-spots/yarrangobilly-caves-thermal-pool",
+   "coordinates": { "latitude": -35.7309762, "longitude": 148.4859419 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "$4 is the per vehicle park entry at Yarrangobilly; the pool itself is free. NPWS: open sunrise to sunset, 20 m long, 2.5 m deep, 27 C all year including in snow; no showers, no pets, hard accessibility.",
+     "The unsourced 'half-hour swim' of the placement bio is dropped. Walk of 700 m, very steep, 15-30 min each way is from a search summary of the walk page, which was not loaded.",
+     "Pin HIGH (Photon swimming_pool plus Commons). Owner may fold this into the Yarrangobilly Caves spot; NPWS names it separately."
+   ]
+  },
+  "cooma": {
+   "name": "Cooma",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Monaro regional town and gateway to the Snowies, with the Snowy Hydro Discovery Centre 2 km north.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": { "latitude": -36.2359015, "longitude": 149.1263121 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "No ticketUrl: a town. Pin is Photon place=town (LOW from resolve-pin; kept as the town point). Visit duration is an estimate.",
+     "Placement bio called it a 'budget base'; that is dropped as unsourced. No usable Commons photo (street shots and a civic courthouse)."
+   ]
+  },
+  "snowy-hydro-discovery-centre": {
+   "name": "Snowy Hydro Discovery Centre",
+   "icon": "⚡",
+   "category": "museum",
+   "bio": "Free museum on the Snowy Scheme with interactive exhibits, 2 km north of Cooma.",
+   "hours": "Mon–Fri 8:00 AM – 4:30 PM; Sat–Sun 9:00 AM – 2:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": "https://www.snowyhydro.com.au/visit/snowy-hydro-discovery-centre/",
+   "coordinates": { "latitude": -36.2193355, "longitude": 149.1334102 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "Free per the NSW Government listing; the operator page loaded does not state a price. Closed Anzac Day and Christmas Day; Christmas Eve 8-12; Boxing Day and New Year's Day 9-2.",
+     "Guided sessions are booked by phone (1800 623 776) at 10:30, 11:30 and 2:30 on weekdays and 10:30 and 12:30 on weekends, a candidate tip.",
+     "Pin MEDIUM (OSM tourism=museum; resolve-pin LOW). No Commons photo of the centre."
+   ]
+  },
+  "big-trout": {
+   "name": "Big Trout",
+   "icon": "🐟",
+   "category": "landmark",
+   "bio": "Leaping trout sculpture 10 m high, built in 1973 on Baker Street in Adaminaby.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": true,
+   "coordinates": { "latitude": -35.99727222, "longitude": 148.77453889 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "NSW Government listing: free entry, 10 m high, about 2.5 tonnes, built 1973 by Andy Lomnici, 52 km north-west of Cooma. 'Open 24 hours' is an unverified qualifier for a roadside sculpture.",
+     "No ticketUrl: owned by Snowy Monaro Regional Council (public art page loads), no visitor operator.",
+     "No wiki set: placement suggested 'Big Trout, Adaminaby', unconfirmed; set it if the article is confirmed. Pin HIGH (Wikipedia 8 dp plus Commons median 35 m)."
+   ]
+  },
+  "tumut": {
+   "name": "Tumut",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "River town and northern gateway to Kosciuszko National Park on the Riverina border.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": { "latitude": -35.3015747, "longitude": 148.2226744 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "No ticketUrl: a town. Pin is Photon place=town (LOW from resolve-pin; kept as the town point). Visit duration is an estimate.",
+     "Weak as a spot (a gateway town); no Commons photo found."
+   ]
+  },
+  "braidwood": {
+   "name": "Braidwood",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Town of mostly 1850s buildings, nationally listed as a whole, a heritage stop south of Goulburn.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": { "latitude": -35.4388907, "longitude": 149.7955552 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "No ticketUrl: a town. Braidwood Museum Fri-Sat 11-2, adult $5 (Wikivoyage, June 2023), optional and left out of the bio.",
+     "The '1850s' and 'nationally listed' wording comes from the placement bio; the research did not re-verify it.",
+     "No wiki set: placement suggested 'Braidwood, New South Wales', unconfirmed. Pin is Photon place=locality (LOW from resolve-pin; the Wikivoyage 3 dp value was rejected)."
+   ]
+  },
+  "wombeyan-caves": {
+   "name": "Wombeyan Caves",
+   "icon": "🦇",
+   "category": "nature",
+   "bio": "Limestone show caves and a self-guided Fig Tree Cave walk in a karst reserve, reached via Taralga.",
+   "hours": "Fig Tree Cave 9:00 AM – 3:30 PM; office 9:00 AM – 4:30 PM",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "costMin": 20,
+   "costMax": 20,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/wombeyan-karst-conservation-reserve",
+   "coordinates": { "latitude": -34.3084619, "longitude": 149.9688296 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "Access: NPWS says Wombeyan Caves Road access via Mittagong is closed until further notice, so the only way in is via Taralga. The placement's 'reached by road from Mittagong' is wrong and was not used. Recheck before applying. No petrol in the reserve.",
+     "Cost: Fig Tree Cave self-guided adult $20 (child/pensioner $13, senior $17, family $50); no reserve entry fee listed. Guided-tour prices (a snippet said two-cave combo from $33) were not read. Self-guided cave out by 4:15 PM; office closed Christmas Day; reserve always open. Fire-ban alert was live when fetched.",
+     "Pin MEDIUM (OSM place=locality near the visitor centre); the Commons median is 450 m away. Region fit (outside the Southern Highlands per most guides) is the proposer's. No usable Commons photo (tiny, dark or archive black-and-white)."
+   ]
+  },
+  "kosciuszko-national-park": {
+   "name": "Kosciuszko National Park",
+   "icon": "🏔️",
+   "category": "nature",
+   "bio": "NSW's largest national park, spanning ski resorts, alpine walks, a glacial lake and limestone caves.",
+   "hours": "Open all year; some roads and trails close for weather",
+   "visitHoursMin": 3,
+   "visitHoursMax": 8,
+   "costMin": 17,
+   "costMax": 29,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/kosciuszko-national-park",
+   "coordinates": { "latitude": -36.456194, "longitude": 148.270742 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "Standalone fallback if the owner declines the proposed Kosciuszko National Park destination (every national park is a destination by rule); it overlaps Mount Kosciuszko, Thredbo, Charlotte Pass, Blue Lake and Yarrangobilly, so apply it only if the destination is declined.",
+     "Per vehicle park fee: $17 per vehicle per day, $29 in winter peak; $4 per vehicle at Yarrangobilly Caves only. Kosciuszko Road is shut between Perisher and Charlotte Pass in winter.",
+     "Pin is the Commons geotag median of 63 files on the Main Range (LOW from resolve-pin; a visual centre, not a visitor entrance). Owner to confirm."
+   ]
+  }
+ },
+ "existing_fixes": [],
+ "held": [
+  {
+   "id": "the-gullies",
+   "name": "The Gullies",
+   "reason": "LOW pin: resolve-pin found no feature and there is no OSM route; the only point is the Wikivoyage Bundanoon listing (-34.677315, 150.296537). Fairy Bower Falls (OSM) is 700 m east at -34.67828, 150.30681. Needs the NPWS Gullies circuit midpoint from the NPWS map.",
+   "facts": "Morton National Park walk reached from Bundanoon; NPWS park entry $8 per vehicle per day in the Bundanoon area. Counted sources: Wikivoyage Bundanoon, NPWS Morton page. Category hike, icon 🥾, visit 2-4 h (estimate). Draft bio: 'Gorge lookouts and a half-day circuit in Morton National Park, reached from Bundanoon since the late 1800s.' (the 'late 1800s' claim is unverified, so drop it). Not researched for hours or ticketUrl. No Commons photo (Fairy Bower creek snaps only)."
+  },
+  {
+   "id": "snowies-alpine-walk",
+   "name": "Snowies Alpine Walk",
+   "reason": "LOW pin: the only point is an OSM path beside Charlotte Pass (-36.4297743, 148.3247325), which stands in for the midpoint of a 56 km route; the relation geometry was unavailable. Needs the NPWS route midpoint.",
+   "facts": "NPWS (Kosciuszko National Park page): a 56 km, four-day walk linking Guthega, Charlotte Pass, Perisher Valley and Bullocks Hut. Category hike, icon 🥾, visit 72-96 h (placement). One counted source (NPWS). Hours, cost and ticketUrl not researched. No Commons photo. Draft bio: 'A 56 km, four-day walk linking Guthega, Charlotte Pass, Perisher Valley and Bullocks Hut.'"
+  },
+  {
+   "id": "thirlmere-lakes-national-park",
+   "name": "Thirlmere Lakes National Park",
+   "reason": "No pin: OSM reserve centroid (-34.234249, 150.530339), Wikipedia (-34.225556, 150.538611) and the Commons median (-34.224755, 150.544108) disagree by 500 m or more, and the lakes lie about 2 km north-east of the centroid. Owner to supply the Couridjah / Oaks Fire Road access point or the lake walking track midpoint from the NPWS map.",
+   "facts": "Five freshwater lakes near Picton with a 6 km lake walking track and picnic areas (placement; counted sources Wikivoyage Southern Highlands and NPWS Thirlmere Lakes page). Category nature, icon 🏞️. Not researched for hours, cost or ticketUrl. Photo candidate: 2020-08-01 Lake Couridjah 1.jpg (Commons, CC BY-SA 4.0, passes). The bio's 'World Heritage' wording is unverified here. NSW Rail Museum at Thirlmere is an existing spot and is not touched."
+  },
+  {
+   "id": "perisher",
+   "name": "Perisher",
+   "reason": "No verified adult price (a spot without cost is unfinished). The Perisher ticket shop shows only the 2027 Epic Australia Pass ($1,169); a search snippet gave an undated '$49 adult' that is not credible for a day ticket.",
+   "facts": "ticketUrl https://www.perisher.com.au/ (loaded, title 'Perisher Australia's Largest and Favourite Ski and Snowboard Resort'). Hours: ski season only; winter 2026 ended 25 September 2026; closed in summer; lift tickets not on sale between seasons. Pin -36.3961667, 148.408582 (OSM landuse=winter_sports, MEDIUM; resolve-pin LOW). Category entertainment, icon ⛷️, visit 2-8 h (estimate). Draft bio: 'Australia's largest ski resort, based at Perisher Valley with Smiggin Holes, Guthega and Blue Cow.' Park entry $17-$29 per vehicle also applies (NPWS). Summer use of Perisher Valley not found. wiki suggestion 'Perisher Ski Resort', unconfirmed. No Commons photo (a sign, a snow field, a 1024 px image)."
+  },
+  {
+   "id": "selwyn-snow-resort",
+   "name": "Selwyn Snow Resort",
+   "reason": "No verified adult price: no loaded page gives a lift price (a webstore snippet showed an undated $119 adult one-day, stamped about 16,000 days old).",
+   "facts": "ticketUrl https://selwynsnow.com.au/ (loaded, title 'Selwyn Snow Resort | Your Mountain Playground Awaits'). Homepage says 'CLOSED FOR 2026'; snow season only; Selwyn Centre cafe open some weekends. Pin -35.9087845, 148.4516989 (OSM landuse=winter_sports, MEDIUM; resolve-pin LOW). Category entertainment, icon ⛷️, visit 2-8 h (estimate). Draft bio: 'A small family ski resort at the northern end of Kosciuszko National Park, open in the snow season.' 'Mount Selwyn' on Wikipedia points to a Canadian mountain, so the photo needs an override; no Commons photo. One counted source (Wikivoyage Kosciuszko National Park)."
+  }
+ ],
+ "notes": [
+  "Owned by the south coast pass and NOT written here: Morton National Park, Fitzroy Falls, Belmore Falls, Kangaroo Valley, Hampden Bridge, Carrington Falls, Pigeon House Mountain, Macquarie Pass.",
+  "Written: 25 spots. Held: The Gullies, Snowies Alpine Walk, Thirlmere Lakes National Park (no pin), Perisher and Selwyn Snow Resort (no verified adult price).",
+  "No shell was available, so bio-fit.py was NOT run. Every bio was counted by hand at about 70-110 characters and all have at least 10 words. The tightest (near 105-110) are Berrima, Bowral, Charlotte Pass, Yarrangobilly Caves, Mount Kosciuszko and Robertson's Big Potato. Run `python3 scripts/curation/bio-fit.py` before applying.",
+  "Per vehicle park fee spots (costMin/costMax are the NPWS Kosciuszko vehicle entry, $17 normally and $29 in winter peak, not a per-person price): Mount Kosciuszko, Thredbo, Charlotte Pass, Blue Lake, Kosciuszko National Park. Per vehicle $8 at Bungonia; $4 at Yarrangobilly Thermal Pool (the Yarrangobilly Caves $22-$38 is by cave, adult, plus $4 per vehicle).",
+  "No wiki field is set on any spot: research did not confirm any Wikipedia title. Unconfirmed placement suggestions: 'Berrima, New South Wales', 'Mittagong, New South Wales', 'Blue Lake (New South Wales)', 'Goulburn, New South Wales', 'Braidwood, New South Wales', 'Big Trout, Adaminaby', 'Perisher Ski Resort' (held). Big Potato (id robertson) and Lake Eucumbene (a redirect to the Eucumbene Dam article) need photo overrides keyed by their names.",
+  "Seasonal access recorded in hours: Charlotte Pass (no car access June to October), Mount Kosciuszko and Blue Lake (snowbound June to October), Yarrangobilly Jersey Cave (closed to 24 December 2026). Wombeyan: access only via Taralga because the Mittagong road is closed.",
+  "Weakest cases: Tumut and Cooma (gateway towns), Goulburn (heritage streetscape), Bundanoon (gateway village). Kosciuszko National Park and Bungonia National Park are standalone fallbacks for proposed destinations; the Kosciuszko one should be applied only if its destination is declined.",
+  "Unverified: visit durations marked as estimates in each entry, Big Merino shop hours, 'Open 24 hours' qualifiers for open towns, roadside icons and Mount Gibraltar, Berrima venue prices (2015), Thredbo and Charlotte Pass lift or oversnow prices.",
+  "Photos not handled here. Candidates without a Commons photo that passes: Bradman Museum, Mount Gibraltar, Mittagong, Bundanoon, Blue Lake, Goulburn, Cooma, Snowy Hydro Discovery Centre, Tumut, Wombeyan Caves. Big Potato's candidate is the 2025 Babe repaint."
+ ]
+}

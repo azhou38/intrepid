@@ -1,0 +1,911 @@
+{
+ "spots": {
+  "big-banana": {
+   "name": "Big Banana",
+   "icon": "🍌",
+   "category": "entertainment",
+   "bio": "Opened in 1964 as Australia's original Big Thing, a giant banana beside a fun park, cafe and gift shop.",
+   "hours": "Daily from 9:00 AM; closed Christmas Day",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": "https://bigbanana.com/",
+   "coordinates": { "latitude": -30.27479, "longitude": 153.1339 },
+   "notes": [
+    "Free: the banana photo, cafe and gift shop need no ticket; rides are paid (Go Bananas Fun Pass from A$53.50). Operator FAQ gives 9 am opening and per-ride session times; the 5 PM close in research-a was Wikivoyage's, so hours state only the opening.",
+    "Opening date 22 Dec 1964 and 'original Big Thing' from Wikivoyage Coffs Harbour.",
+    "No wiki set: placement suggested 'Big Banana' but the title was not confirmed in research (same as name, so not needed if it is the article)."
+   ]
+  },
+  "muttonbird-island": {
+   "name": "Muttonbird Island",
+   "icon": "🐦",
+   "category": "nature",
+   "bio": "Nature-reserve island reached by a breakwall, where wedge-tailed shearwaters nest from about November.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/muttonbird-island-nature-reserve",
+   "coordinates": { "latitude": -30.30502, "longitude": 153.15169 },
+   "notes": [
+    "NPWS names it Giidany Miirlarl Nature Reserve; always open but may close for weather or fire. Walk is 10-20 minutes, steep, no shade (Wikivoyage).",
+    "No entry fee on the NPWS page (treated as free); the 'Muttonbirds by Moonlight' tour price was not checked.",
+    "Pin is the island centroid (HIGH by OSM); the walk starts at the breakwall near -30.3038,153.1445."
+   ]
+  },
+  "park-beach": {
+   "name": "Park Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "The main surf beach in Coffs, just north of the Coffs Creek mouth, where swimming can be rough.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": { "latitude": -30.28868, "longitude": 153.13957 },
+   "notes": [
+    "No ticketUrl: public beach. Patrol times not checked.",
+    "Pin is the OSM natural=beach feature; resolve-pin said LOW only because Wikipedia's point is 2 km inland and wrong."
+   ]
+  },
+  "bongil-bongil-national-park": {
+   "name": "Bongil Bongil National Park",
+   "icon": "🐨",
+   "category": "nature",
+   "bio": "Coastal park near Coffs Harbour with one of NSW's largest koala populations, for walking, paddling and fishing.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/bongil-bongil-national-park",
+   "coordinates": { "latitude": -30.40172, "longitude": 153.0698 },
+   "notes": [
+    "Free: the NPWS page shows no entry fee (other parks nearby do). Always open but may close for weather or fire.",
+    "Pin is the OSM Bongil Beach Trail visitor access; the tool returned only a park centroid (LOW) 1.2 km away. Owner to confirm.",
+    "Photo is a weak pass (pale, undated)."
+   ]
+  },
+  "woolgoolga": {
+   "name": "Woolgoolga",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Relaxed coastal town nicknamed 'Woopi', with long sandy beaches and a strong Sikh heritage.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": { "latitude": -30.11083, "longitude": 153.20001 },
+   "notes": [
+    "No ticketUrl: town with no single steward.",
+    "No wiki set: placement suggested 'Woolgoolga, New South Wales' but research did not confirm the article title. Check it before adding.",
+    "Overlaps its own spots (Woolgoolga Beach, Guru Nanak Sikh Temple); town-level spot."
+   ]
+  },
+  "guru-nanak-sikh-temple": {
+   "name": "Guru Nanak Sikh Temple",
+   "icon": "🛕",
+   "category": "religious",
+   "bio": "One of regional Australia's largest Sikh temples, open to visitors with shoes off and head covered inside.",
+   "hours": "9:00 AM – 6:00 PM",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "coordinates": { "latitude": -30.11712, "longitude": 153.1928 },
+   "notes": [
+    "No ticketUrl: no official temple site found; the heritage-walk and Wikivoyage pages are not the steward.",
+    "Hours (9-6, seven days) come from the community Woolgoolga Heritage Walk site, not the temple; one older guide says weekends only. Phone (02) 6654 0099 to confirm. Admission assumed free; no price source.",
+    "Review-grade: place of worship with one counted source (Wikivoyage Woolgoolga). Pin LOW by tool; kept at the Wikivoyage listing geotag, 40 m from the OSM point.",
+    "No photo: the one Commons file is a sign."
+   ]
+  },
+  "woolgoolga-beach": {
+   "name": "Woolgoolga Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Wide, clean beach below a headland with views up and down the coast, best at sunrise.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": { "latitude": -30.10491, "longitude": 153.19965 },
+   "notes": [
+    "No ticketUrl: public beach.",
+    "Pin is the OSM natural=beach point; the Wikivoyage listing is 700 m north along the same long beach."
+   ]
+  },
+  "arrawarra-beach": {
+   "name": "Arrawarra Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Quiet beach just north of Woolgoolga, known for uncrowded sand and consistent surf.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": { "latitude": -30.05889, "longitude": 153.19791 },
+   "notes": [
+    "No ticketUrl: public beach.",
+    "Marginal: a single counted source (Wikivoyage Woolgoolga). Pin is OSM natural=beach; tool LOW only because the Commons median is 309 m away."
+   ]
+  },
+  "coffs-coast-wildlife-sanctuary": {
+   "name": "Coffs Coast Wildlife Sanctuary",
+   "icon": "🦭",
+   "category": "entertainment",
+   "bio": "Not-for-profit rescue and release sanctuary on Orlando Street with dolphins, penguins, sea lions and turtles.",
+   "hours": "9:00 AM – 3:00 PM",
+   "visitHoursMin": 2,
+   "visitHoursMax": 3,
+   "costMin": 52,
+   "costMax": 52,
+   "currency": "AUD",
+   "ticketUrl": "https://www.coffscoastwildlifesanctuary.org.au/",
+   "coordinates": { "latitude": -30.29831, "longitude": 153.136689 },
+   "notes": [
+    "Operator: open daily 9 am-3 pm, cafe to 2 pm; adult day ticket A$52, family A$152.50. Owner decision: A$52 adult, 9-3 daily.",
+    "Pin LOW: the Wikivoyage 'Dolphin Marine Magic' geotag for the same Orlando St site, 60-130 m from the tool's two weak points; the operator gives an address only. Owner to check on a map.",
+    "The former Dolphin Marine Magic link is from the skeptic note, not the operator page, so the bio does not say 'formerly'. Wikivoyage's old listing (A$27, 9-4) is out of date.",
+    "Visit duration is an estimate."
+   ]
+  },
+  "sea-acres-national-park": {
+   "name": "Sea Acres National Park",
+   "icon": "🌳",
+   "category": "nature",
+   "bio": "Coastal rainforest with a 1.3 km boardwalk loop from the Rainforest Centre and ranger-led Aboriginal culture tours.",
+   "hours": "9:00 AM – 4:30 PM",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.25,
+   "costMin": 9,
+   "costMax": 9,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/sea-acres-national-park",
+   "coordinates": { "latitude": -31.46158, "longitude": 152.93 },
+   "notes": [
+    "Hours are the Sea Acres Rainforest Centre's (9-4:30 daily, closed Christmas Day); the park is always open but may close for weather or fire.",
+    "A$9 is the adult boardwalk fee (child 5, family 20, concession 7), kept out of the bio. NPWS shows a 'Closed areas' alert on the boardwalk page: check before visiting.",
+    "Pin is the Rainforest Centre visitor entrance (Wikivoyage and placement agree); tool LOW only because of the OSM park centroid."
+   ]
+  },
+  "tacking-point-lighthouse": {
+   "name": "Tacking Point Lighthouse",
+   "icon": "🗼",
+   "category": "landmark",
+   "bio": "An 1879 lighthouse reserve with 180-degree ocean views, whale-watching lookouts and an accessible walkway.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "ticketUrl": "https://www.pmhc.nsw.gov.au/Places/Sport-Recreation/Parks-and-Reserves/Tacking-Point-Lighthouse-Reserve",
+   "coordinates": { "latitude": -31.47561, "longitude": 152.93726 },
+   "notes": [
+    "The tower itself is closed to the public (Lighthouses of Australia), so the bio describes the reserve, not the interior.",
+    "'Open 24 hours' is inferred from an open public reserve; no stated hours were found. Council is the steward."
+   ]
+  },
+  "port-macquarie-coastal-walk": {
+   "name": "Port Macquarie Coastal Walk",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 9 km one-way coastal walk linking Westport Park, beaches and headlands to Tacking Point Lighthouse.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 3,
+   "visitHoursMax": 4,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/port-macquarie-coastal-walk",
+   "coordinates": { "latitude": -31.45519, "longitude": 152.93213 },
+   "notes": [
+    "NPWS: 9 km one way, Grade 4, 3-4 hours; four sections (Westport to Town Beach 2 km, to Flynns Beach 2.2 km, to Shelly Beach 2.2 km, to Tacking Point 2.7 km). Whales May to November.",
+    "NPWS shows Safety and Closed-areas alerts; the Sea Acres section can close and is closed to dogs.",
+    "Pin is the proposer's midpoint of OSM route relation 14223022 (resolve-pin LOW); consistent with the walk's halfway. Owner to spot-check.",
+    "Overlaps Town Beach, Flynns Beach, Shelly Beach and Tacking Point as spots; they are stops on the route, kept as separate places."
+   ]
+  },
+  "shelly-beach-port-macquarie": {
+   "name": "Shelly Beach",
+   "icon": "🤿",
+   "category": "beach",
+   "bio": "Beach next to Sea Acres, with waves at the north end and a semi-protected rock pool for snorkelling.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": { "latitude": -31.45507, "longitude": 152.93194 },
+   "notes": [
+    "No wiki set: placement's 'Shelly Beach, Port Macquarie' is not a real Wikipedia article (no article exists for either beach; bare 'Shelly Beach' is a disambiguation page). Use it only as a unique photo key in WIKI_IMAGE_OVERRIDES if the owner wants, not as an article title.",
+    "Different place from the Forster-area Shelly Beach (id shelly-beach-forster).",
+    "Wikivoyage: barbecue areas, no food stores, parking hard. Pin is OSM natural=beach; Wikivoyage geotag is 370 m north-east on the same beach."
+   ]
+  },
+  "flynns-beach": {
+   "name": "Flynns Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Resort-precinct surf beach with summer patrols, Norfolk pine shade and a cafe.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": { "latitude": -31.44298, "longitude": 152.92643 },
+   "notes": [
+    "No ticketUrl: public beach. Parking is hard in summer (Wikivoyage).",
+    "No wiki set: placement suggested 'Flynns Beach' (same as name), not confirmed in research."
+   ]
+  },
+  "town-beach": {
+   "name": "Town Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Port Macquarie's most central beach, with a patrolled, family-friendly south end and a beachfront cafe.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": { "latitude": -31.42851, "longitude": 152.91819 },
+   "notes": [
+    "No ticketUrl: public beach. The north end has currents and submerged rocks (Wikivoyage), a candidate tip.",
+    "Pin is OSM natural=beach; the Wikivoyage geotag is within 250 m."
+   ]
+  },
+  "roto-house": {
+   "name": "Roto House",
+   "icon": "🏠",
+   "category": "historic",
+   "bio": "An 1891 red-mahogany house of 11 rooms built by surveyor John Flynn, with picnic lawns and a cafe.",
+   "hours": "10:00 AM – 4:30 PM",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/historic-buildings-places/roto-house",
+   "coordinates": { "latitude": -31.44261, "longitude": 152.91937 },
+   "notes": [
+    "Hours are Wikivoyage's (closed Christmas Day, Easter Sunday and Anzac Day morning); the NPWS page gives no house hours. No admission price found (treated as free).",
+    "The placement bio's 'free guided tours' is dropped: no source supports it.",
+    "No photo on Commons. Next to the Koala Hospital (held for price)."
+   ]
+  },
+  "billabong-zoo": {
+   "name": "Billabong Zoo",
+   "icon": "🦘",
+   "category": "entertainment",
+   "bio": "Koala and wildlife park of more than 80 species and 200 animals, with free zoo talks through the day.",
+   "hours": "9:00 AM – 5:00 PM",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "costMin": 49,
+   "costMax": 49,
+   "currency": "AUD",
+   "ticketUrl": "https://www.billabongzoo.com.au/",
+   "coordinates": { "latitude": -31.45785, "longitude": 152.82017 },
+   "notes": [
+    "Operator: open every day except Christmas Day. Adult A$49 (child 3-14 A$32, pensioner A$45, family A$149).",
+    "Visit duration is an estimate. Pin is OSM tourism=zoo, 129 m from Wikipedia's point."
+   ]
+  },
+  "skywalk": {
+   "name": "Skywalk",
+   "icon": "🌿",
+   "category": "viewpoint",
+   "bio": "Elevated lookout in Dorrigo National Park with views over rainforest and the Bellinger Valley to the coast.",
+   "hours": "5:00 AM – 10:00 PM",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/skywalk-lookout",
+   "coordinates": { "latitude": -30.3636, "longitude": 152.72981 },
+   "notes": [
+    "NPWS: open during the day, closing between 10 pm and 5 am. Dorrigo Rainforest Centre is 9-4:30 (Sep-May), 9-3:30 (Jun-Aug), closed Christmas Day.",
+    "No fee on the NPWS page; Wikivoyage (2021) mentions a A$2 donation at the rainforest centre, unconfirmed.",
+    "Pin HIGH (OSM viewpoint equals Wikivoyage geotag). The photo needs brightening (p40 0.12)."
+   ]
+  },
+  "wonga-walk": {
+   "name": "Wonga Walk",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 5.8 km rainforest loop past Tristania and Crystal Shower falls, allow two to three hours.",
+   "hours": "Daylight; visitor centre 9 AM – 4:30 PM (to 3:30 PM Jun–Aug)",
+   "visitHoursMin": 2,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/wonga-walk",
+   "coordinates": { "latitude": -30.37616, "longitude": 152.7294 },
+   "notes": [
+    "NPWS: Grade 3 (hard), 5.8 km loop (about 6 km on OSM). Collect a map at the Dorrigo Rainforest Centre.",
+    "A 2025 closure of the Tristania Falls sections is reported as ended; read the NPWS alert before going.",
+    "Crystal Shower Falls is not a separate spot: it is part of this circuit (owner decision).",
+    "Pin is the midpoint of OSM hiking route relation 6265960 (proposer computation; resolve-pin timed out). The placement photo is Crystal Shower Falls and needs brightening."
+   ]
+  },
+  "dangar-falls": {
+   "name": "Dangar Falls",
+   "icon": "💧",
+   "category": "nature",
+   "bio": "A 30 m cascade across the Bielsdown River 1.2 km north of Dorrigo, a popular photography spot.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "free": true,
+   "coordinates": { "latitude": -30.32326, "longitude": 152.71426 },
+   "notes": [
+    "No ticketUrl: council land, no steward page. Viewing platform and 24-hour access assumed, so the bio does not mention a platform.",
+    "Wikipedia notes fatal accidents at the waterhole and council signs warn against jumping: a safety tip for the owner.",
+    "Pin HIGH (OSM waterfall within 20 m of Wikipedia). Photo: use Dorrigo's falls, not Armidale's Dangars Falls."
+   ]
+  },
+  "dorrigo": {
+   "name": "Dorrigo",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Small plateau town on Waterfall Way, 30 minutes from Bellingen and an hour from Coffs Harbour.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": { "latitude": -30.33997, "longitude": 152.71203 },
+   "notes": [
+    "No ticketUrl: town with no single steward. Marginal as a spot (a gateway town; Dangar Falls and the park are the draws).",
+    "No wiki set: placement suggested 'Dorrigo, New South Wales', unconfirmed.",
+    "No town photo on Commons."
+   ]
+  },
+  "bellingen": {
+   "name": "Bellingen",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Pretty arts-and-crafts town of about 13,000 in a green valley, with a Waterfall Way visitor centre.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": { "latitude": -30.45105, "longitude": 152.89708 },
+   "notes": [
+    "No ticketUrl: town. Markets run only on set days, so they are not a spot and are left out of the bio.",
+    "No wiki set: placement suggested 'Bellingen, New South Wales'; the skeptic asked for a disambiguation check that research did not do.",
+    "Photo must be brightened (centre-square p40 0.10)."
+   ]
+  },
+  "trial-bay-gaol": {
+   "name": "Trial Bay Gaol",
+   "icon": "🏛️",
+   "category": "historic",
+   "bio": "Ruined 1886 gaol built to house labourers on a breakwater, now with a museum, in Arakoon National Park.",
+   "hours": "9:00 AM – 4:30 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "costMin": 11,
+   "costMax": 11,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/historic-buildings-places/trial-bay-gaol",
+   "coordinates": { "latitude": -30.87753, "longitude": 153.07019 },
+   "notes": [
+    "NPWS: self-guided entry adult A$11, concession A$8, family A$30; closed Christmas Day; allow about 1 hour. The Arakoon NP page lists no separate vehicle fee.",
+    "Pin HIGH (OSM tourism=historic plus Wikipedia within 40 m). Wikipedia title matches the name, so no wiki field."
+   ]
+  },
+  "smoky-cape-lighthouse": {
+   "name": "Smoky Cape Lighthouse",
+   "icon": "🗼",
+   "category": "landmark",
+   "bio": "1891 lighthouse 111 m above the sea, the highest lighthouse light in NSW, with ranger-led tours.",
+   "hours": "Open 24 hours (park may close for weather or fire)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "costMin": 8,
+   "costMax": 8,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/historic-buildings-places/smoky-cape-lighthouse",
+   "coordinates": { "latitude": -30.92285, "longitude": 153.08749 },
+   "notes": [
+    "A$8 is the Hat Head National Park entry per vehicle per day, not per adult (kept out of the bio). Tour prices and times were not fetched.",
+    "'Open 24 hours' refers to the park; whether the lighthouse grounds are open round the clock is not stated. NPWS shows a 'Closed areas' alert.",
+    "Pin HIGH (OSM lighthouse within 13 m of Wikipedia)."
+   ]
+  },
+  "arakoon-national-park": {
+   "name": "Arakoon National Park",
+   "icon": "🌊",
+   "category": "nature",
+   "bio": "Park around Trial Bay with beachside camping, rocky fishing shores, swimming beaches and July-August whale watching.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/arakoon-national-park",
+   "coordinates": { "latitude": -30.88349, "longitude": 153.07466 },
+   "notes": [
+    "No park entry fee on the NPWS page; Trial Bay Gaol charges separately (A$11).",
+    "Near-duplicate risk with Trial Bay Gaol (about 500 m apart): the owner may fold them. Pin is the OSM reserve point beside Trial Bay (LOW by tool, centroid); the visitor area is within 500 m."
+   ]
+  },
+  "hat-head-national-park": {
+   "name": "Hat Head National Park",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "Beaches, dunes, rainforest and wetlands near South West Rocks, with beach camping.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "costMin": 8,
+   "costMax": 8,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/hat-head-national-park",
+   "coordinates": { "latitude": -31.0510798, "longitude": 153.0486667 },
+   "notes": [
+    "A$8 per vehicle per day (NPWS); always open but may close for weather or fire. NPWS shows a 'Closed areas' alert.",
+    "Pin: research-b's Hat Head Beach feature at the village (a visitor point, moved 3.7 km from the placement's park centroid); Photon only, MEDIUM-equivalent. It replaces the placement's coordinates.",
+    "Smoky Cape Lighthouse is its own spot, so it is kept out of this bio. The placement photo is a 3:1 panorama."
+   ]
+  },
+  "booti-booti-national-park": {
+   "name": "Booti Booti National Park",
+   "icon": "🌴",
+   "category": "nature",
+   "bio": "Peninsula between ocean and Wallis Lake with beaches, rainforest, an 8 km loop walk and winter whales.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "costMin": 8,
+   "costMax": 8,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/booti-booti-national-park",
+   "coordinates": { "latitude": -32.310421, "longitude": 152.518994 },
+   "notes": [
+    "A$8 per vehicle per day (NPWS); always open but may close for weather or fire. The Booti walking track is an 8 km loop.",
+    "Pin is the NPWS office at The Ruins campground (Photon, MEDIUM-equivalent), replacing the placement's Wikipedia centroid, which is in the lake.",
+    "Cape Hawke Lookout, Elizabeth Beach and Shelly Beach are inside the park and are their own spots. No usable Commons photo (cone shells only)."
+   ]
+  },
+  "cape-hawke-lookout": {
+   "name": "Cape Hawke Lookout",
+   "icon": "🔭",
+   "category": "viewpoint",
+   "bio": "A 500 m rainforest climb of about 420 steps to an 8.4 m tower with coast views and whale watching.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "costMin": 8,
+   "costMax": 8,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/cape-hawke-lookout",
+   "coordinates": { "latitude": -32.21659, "longitude": 152.562967 },
+   "notes": [
+    "NPWS lookout page: 'Park entry fees apply' (A$8 per vehicle per day). The lookout page gives no hours; Booti Booti is always open.",
+    "Visit time is an estimate from the 500 m / 420-step climb each way. Pin HIGH (OSM viewpoint, Wikivoyage 170 m)."
+   ]
+  },
+  "bennetts-head-lookout": {
+   "name": "Bennetts Head Lookout",
+   "icon": "🔭",
+   "category": "viewpoint",
+   "bio": "Wheelchair-accessible headland lookout in Forster, a whale-watching post from May to November.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "coordinates": { "latitude": -32.182304, "longitude": 152.533975 },
+   "notes": [
+    "No ticketUrl: open lookout; Barrington Coast is a tourism directory, not the steward. No charge stated.",
+    "Pin HIGH-equivalent (OSM viewpoint and Wikivoyage within 15 m)."
+   ]
+  },
+  "boomerang-beach": {
+   "name": "Boomerang Beach",
+   "icon": "🏄",
+   "category": "beach",
+   "bio": "Boomerang-shaped beach with rock-ledge waves, rock pools at low tide and the Pacific Palms area's best surf.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": { "latitude": -32.339956, "longitude": 152.543302 },
+   "notes": [
+    "No ticketUrl: public beach. Sources conflict on patrols (unpatrolled vs summer patrols), so the bio omits them.",
+    "Pin HIGH (OSM natural=beach)."
+   ]
+  },
+  "blueys-beach": {
+   "name": "Blueys Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Long, shallow beach with a headland view to Seal Rocks, beside a village of cafes and a visitor centre.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": { "latitude": -32.352565, "longitude": 152.53656 },
+   "notes": [
+    "No ticketUrl: public beach. Not patrolled (Barrington Coast); the visitor centre is volunteer-run.",
+    "Pin MEDIUM-equivalent (one OSM beach feature)."
+   ]
+  },
+  "elizabeth-beach": {
+   "name": "Elizabeth Beach",
+   "icon": "👨‍👩‍👧",
+   "category": "beach",
+   "bio": "Calm north-facing family beach patrolled in summer, where the Booti walking track starts.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "costMin": 8,
+   "costMax": 8,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/picnic-areas/elizabeth-beach-picnic-area",
+   "coordinates": { "latitude": -32.329512, "longitude": 152.536454 },
+   "notes": [
+    "Sources conflict on cost: NPWS says park entry fees apply (A$8 per vehicle per day); a nsw.gov.au listing says free entry. NPWS (the managing agency) used. Owner to confirm.",
+    "ticketUrl is the NPWS picnic-area page; it names the beach but is not a separate beach page. Inside Booti Booti NP (always open).",
+    "Pin MEDIUM-equivalent (one OSM beach feature)."
+   ]
+  },
+  "diamond-beach": {
+   "name": "Diamond Beach",
+   "icon": "🐬",
+   "category": "beach",
+   "bio": "Six-kilometre beach between Taree and Forster for fishing, surfing and long walks, with dolphins often offshore.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": { "latitude": -32.03811, "longitude": 152.54286 },
+   "notes": [
+    "No ticketUrl: public beach. Dog-friendly and horse riding allowed (Barrington Coast), candidate tips.",
+    "Pin is the OSM node by Diamond Beach Field on a 6 km beach; Wikipedia's point is 730 m away in the village."
+   ]
+  },
+  "shelly-beach-forster": {
+   "name": "Shelly Beach",
+   "icon": "🌴",
+   "category": "beach",
+   "bio": "North-facing beach in Booti Booti National Park, reached by an 800 m rainforest walk, and clothing-optional.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 8,
+   "costMax": 8,
+   "currency": "AUD",
+   "coordinates": { "latitude": -32.329091, "longitude": 152.54539 },
+   "notes": [
+    "No wiki set: no Wikipedia article exists for this beach, and the bare title 'Shelly Beach' is a disambiguation page. If the owner wants a unique photo key, it must be set up in WIKI_IMAGE_OVERRIDES, not as an article title. Different place from the Port Macquarie Shelly Beach.",
+    "A$8 per vehicle applies inside Booti Booti NP; whether walk-in visitors from Lakeside Crescent are charged was not verified. Owner to confirm or switch to free.",
+    "No ticketUrl: no NPWS page for this beach; the park page belongs to the Booti Booti spot. Pin MEDIUM-equivalent (OSM beach plus Commons geotag at 119 m)."
+   ]
+  },
+  "sugarloaf-point-lighthouse": {
+   "name": "Sugarloaf Point Lighthouse",
+   "icon": "🗼",
+   "category": "landmark",
+   "bio": "1875 lighthouse above Seal Rocks, one of two Australian towers with an external stairway.",
+   "hours": "Sunrise to sunset",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "costMin": 8,
+   "costMax": 8,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/historic-buildings-places/sugarloaf-point-lighthouse",
+   "coordinates": { "latitude": -32.44101, "longitude": 152.539116 },
+   "notes": [
+    "NPWS: park entry fees apply (A$8 per vehicle per day, Myall Lakes); may close for weather or fire. Barrington Coast: easy 800 m walk from the Boat Beach car park, steep final climb. Whale-watching post.",
+    "Keepers' cottages are holiday accommodation; no lighthouse tour found.",
+    "Pin HIGH (OSM lighthouse, Wikivoyage 190 m)."
+   ]
+  },
+  "seal-rocks": {
+   "name": "Seal Rocks",
+   "icon": "🌊",
+   "category": "nature",
+   "bio": "Remote fishing village in Myall Lakes National Park with five beaches, a blowhole and good surf.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": { "latitude": -32.436191, "longitude": 152.529931 },
+   "notes": [
+    "No ticketUrl: a village, no single steward. Category changed from the placement's 'historic' (wrong for a village).",
+    "Overlaps Sugarloaf Point Lighthouse and Number One Beach, its main sights; the owner may keep only the sights. Wikivoyage is the only counted source.",
+    "Free: the village has no gate; the NPWS A$8 applies at Sugarloaf Point. Whether the Boat Beach car parks charge is not verified. Pin is the OSM village locality (MEDIUM-equivalent)."
+   ]
+  },
+  "number-one-beach": {
+   "name": "Number One Beach",
+   "icon": "🏄",
+   "category": "beach",
+   "bio": "First beach into Seal Rocks, sheltered for swimming, with small learner waves and a point break at its end.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.midcoast.nsw.gov.au/Services/Facilities-and-venues/Find-a-Facility/Outdoor-Facilities/Number-One-Beach-Reserve",
+   "coordinates": { "latitude": -32.42865, "longitude": 152.51947 },
+   "notes": [
+    "ticketUrl is the MidCoast Council reserve page; it has a separate fees section (not opened) that may relate to bookings.",
+    "Pin is the OSM beach way (MEDIUM-equivalent); the Wikivoyage listing is 480 m away near the village entrance."
+   ]
+  },
+  "treachery-headland-walking-track": {
+   "name": "Treachery Headland Walking Track",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 2 km return walk through coastal rainforest to a grassy headland with views of Sugarloaf Point Lighthouse.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.25,
+   "costMin": 8,
+   "costMax": 8,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/treachery-headland-walking-track",
+   "coordinates": { "latitude": -32.445765, "longitude": 152.518598 },
+   "notes": [
+    "NPWS: Grade 4, 45 min to 1 h 15 min; park entry fees apply (A$8 per vehicle per day, Myall Lakes).",
+    "Pin is LOW: the Wikivoyage listing geotag, not a route midpoint; needs the OSM route midpoint or the NPWS route map. OSM 'Treachery Beach Access' is at -32.4483,152.5114.",
+    "Kept after the verdict-keep (two counted sources); the skeptic never saw it and there is no photo candidate."
+   ]
+  },
+  "yacaaba-headland-walking-track": {
+   "name": "Yacaaba Headland Walking Track",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Steep 7 km return climb above Hawks Nest to headland views of Port Stephens, Seal Rocks and the coast.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2.5,
+   "visitHoursMax": 3.5,
+   "costMin": 8,
+   "costMax": 8,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/yacaaba-headland-walking-track",
+   "coordinates": { "latitude": -32.69802, "longitude": 152.19627 },
+   "notes": [
+    "NPWS: Grade 4, 2 h 30 to 3 h 30; park entry fees apply (A$8 per vehicle per day, Myall Lakes).",
+    "The NPWS page shows a 'Closed areas' alert whose contents were not read: check before listing as open.",
+    "Pin is the midpoint of only 1.2 km of the 3.5 km one-way OSM way (MEDIUM-equivalent); the summit is 430 m east. Recheck against the full route."
+   ]
+  },
+  "dark-point-walking-track": {
+   "name": "Dark Point Walking Track",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 2 km return walk behind the dunes to Dark Point, a Worimi gathering place for at least 4,000 years.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.25,
+   "costMin": 8,
+   "costMax": 8,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/dark-point-walking-track",
+   "coordinates": { "latitude": -32.596589, "longitude": 152.269309 },
+   "notes": [
+    "NPWS: Grade 5, 45 min to 1 h 15 min, starts at the car park on Mungo Brush Road; park entry fees apply (A$8 per vehicle per day, Myall Lakes). Cultural site: visitors should not remove relics.",
+    "Pin MEDIUM: the Wikivoyage listing geotag, within about 100 m of the car-park-to-point midpoint; no OSM route way was fetched.",
+    "The track and the Aboriginal Place are one spot. The skeptic never saw it; no photo candidate."
+   ]
+  },
+  "big-oyster": {
+   "name": "Big Oyster",
+   "icon": "🦪",
+   "category": "landmark",
+   "bio": "A roadside giant oyster, once a restaurant and shop, now the upper floor of a Taree car dealership.",
+   "hours": "Visible from the road at any time",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": true,
+   "coordinates": { "latitude": -31.899883, "longitude": 152.48854 },
+   "notes": [
+    "No ticketUrl: roadside landmark on a private dealership; exterior only. Wikivoyage: 'no actual oysters to be found'. 98 vs 100 Manning River Drive varies by source.",
+    "Pin HIGH-equivalent (Commons geotag and Wikivoyage within 15 m); moved 188 m from the placement road point."
+   ]
+  },
+  "crowdy-bay-national-park": {
+   "name": "Crowdy Bay National Park",
+   "icon": "🦘",
+   "category": "nature",
+   "bio": "Coastal park between Port Macquarie and Taree with beach camping, headland lookouts and dune walks.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "costMin": 8,
+   "costMax": 8,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/crowdy-bay-national-park",
+   "coordinates": { "latitude": -31.7359482, "longitude": 152.7913131 },
+   "notes": [
+    "A$8 per vehicle per day (NPWS); always open but may close for weather or fire.",
+    "Pin is Kylies Beach campground (Photon, MEDIUM-equivalent), moved 11 km from the placement's Wikipedia centroid. Mermaid lookout is at -31.7211231,152.8004695. The 'crowd-free' wording of the research draft is dropped as unsourced marketing.",
+    "National park: the every-park-is-a-destination rule means the owner decides destination or spot."
+   ]
+  },
+  "old-bar": {
+   "name": "Old Bar",
+   "icon": "🏄",
+   "category": "beach",
+   "bio": "Surf village near Taree with a summer-patrolled beach, kite-boarding and a 2.5 km path to Wallabi Point.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": { "latitude": -31.9719868, "longitude": 152.5914366 },
+   "notes": [
+    "No ticketUrl: village and public beach. Wikivoyage has no own Old Bar page (redirects to Taree).",
+    "No wiki set: research-b mentions 'Old Bar, New South Wales' but did not confirm it as the article title.",
+    "Pin moved 1.0 km onto the sand (OSM beach way) from the placement's town centroid because the category is beach."
+   ]
+  },
+  "big-axe": {
+   "name": "Big Axe",
+   "icon": "🪓",
+   "category": "landmark",
+   "bio": "Giant roadside axe at Kew, first built in 1979 for a local axeman and the timber trade, rebuilt in 2017.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": true,
+   "coordinates": { "latitude": -31.6350453, "longitude": 152.7221778 },
+   "notes": [
+    "No ticketUrl: roadside sculpture with no official site. Beside the volunteer-run iKew Visitor Information Centre (reported 10am-4pm, undated).",
+    "Only counted source is Wikivoyage Mid-North Coast; the 1979 and 2017 dates are from Land of the Bigs (not counted); size is reported as 8 or 9 m, so no height is given.",
+    "Pin MEDIUM-equivalent (OSM attraction node)."
+   ]
+  },
+  "urunga": {
+   "name": "Urunga",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Town where the Bellinger and Kalang rivers reach the sea, beside Hungry Head Beach to the south.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": { "latitude": -30.498339, "longitude": 153.016629 },
+   "notes": [
+    "No ticketUrl: town. Weak as a separate spot: its draws (the boardwalk, held, and Hungry Head Beach) are their own places. Category 'historic' kept as for the other town spots.",
+    "Bio avoids the boardwalk because it is only partly open in 2026 (see held)."
+   ]
+  },
+  "hungry-head-beach": {
+   "name": "Hungry Head Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Largely untouched beach south of Urunga, with lifeguards at the car-accessible southern end.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": { "latitude": -30.531342, "longitude": 153.0252797 },
+   "notes": [
+    "No ticketUrl: public beach. One counted source (Wikivoyage Urunga); the northern end is reached on foot via the boardwalk, which is partly closed, and has no facilities.",
+    "Pin is the OSM beach way; the Wikivoyage listing is 2 km away mid-beach."
+   ]
+  },
+  "captain-cook-lookout": {
+   "name": "Captain Cook Lookout",
+   "icon": "🔭",
+   "category": "viewpoint",
+   "bio": "Clifftop lookout at the end of Parkes Street over the Nambucca River mouth, good for whales and dolphins.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "coordinates": { "latitude": -30.64568, "longitude": 153.01665 },
+   "notes": [
+    "No ticketUrl: council land, no steward page. Rotary Lookout on the same street is a near-duplicate and was not added.",
+    "Lonely Planet page seen only as a search result. Pin HIGH-equivalent (OSM viewpoint and Wikivoyage within 40 m)."
+   ]
+  },
+  "antarctic-beech-forest-walking-track": {
+   "name": "Antarctic Beech Forest Walking Track",
+   "icon": "🌲",
+   "category": "hike",
+   "bio": "A 2.5 km loop through snow gum woodland and Antarctic beech rainforest, with mossy cascades and a gorge.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/antarctic-beech-forest-walking-track",
+   "coordinates": { "latitude": -32.08849, "longitude": 151.59649 },
+   "notes": [
+    "NPWS: Grade 3, 1 h to 1 h 30. Free by absence: Barrington Tops is not a fee-collecting park (Wikivoyage) and the NPWS pages list no fee; camping is charged separately. The road to Gloucester Tops can be impassable in wet weather.",
+    "NPWS says 2.5 km; the placement said 1.5 km, so NPWS is used. Wikivoyage gives 20 or 90 minutes for the short and long walk.",
+    "Pin HIGH (route midpoint within 40 m of resolve-pin)."
+   ]
+  },
+  "careys-peak-lookout": {
+   "name": "Careys Peak Lookout",
+   "icon": "🏔️",
+   "category": "viewpoint",
+   "bio": "A 14 km return track along the escarpment to a lookout over the Barrington wilderness and Hunter Valley.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 5,
+   "visitHoursMax": 7,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/careys-peak-walking-track",
+   "coordinates": { "latitude": -32.0532954, "longitude": 151.4551592 },
+   "notes": [
+    "Free by absence: Barrington Tops is not a fee-collecting park (Wikivoyage); NPWS lists no fee. Barrington trail is open to vehicles only 1 Oct to 31 May. NPWS shows a safety alert whose contents were not read.",
+    "Visit time is an estimate: the NPWS page says '12hrs - 1 day' for 14 km return, which looks wrong and was not used. The 1,544 m summit height (Wikivoyage) is left out of the bio.",
+    "Pin HIGH-equivalent (OSM peak within 10 m of Wikivoyage)."
+   ]
+  },
+  "kempsey": {
+   "name": "Kempsey",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Macleay Valley river town, birthplace of Slim Dusty and of Akubra hats, with a local museum.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": { "latitude": -31.081944, "longitude": 152.835 },
+   "notes": [
+    "No ticketUrl: town; the museum has no official site (MGNSW directory only). Kempsey Museum is 10am-4pm daily, closed Good Friday and Christmas Day; its entry (an undated A$4) was not verified.",
+    "Weak town spot (the skeptic verdict was review). Stronger unplaced candidates: Slim Dusty Centre and Wigay Aboriginal Cultural Park (not researched).",
+    "Pin moved 734 m from the placement to the town centre (Wikivoyage and Wikipedia within 230 m). Aboriginal art gallery claim from the research draft is dropped from the bio."
+   ]
+  },
+  "crescent-head": {
+   "name": "Crescent Head",
+   "icon": "🏄",
+   "category": "beach",
+   "bio": "Surf village with a National Surfing Reserve and a long-running longboard point break.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": { "latitude": -31.190883, "longitude": 152.98265 },
+   "notes": [
+    "No ticketUrl: village and reserve; the visitor sites are tourism boards. nsw.gov.au lists free entry. Wikivoyage has no Crescent Head page; two counted sources are the NSW Government listing and Macleay Valley Coast.",
+    "The Little Nobby walk is left out: it came from a search snippet, not a loaded page. Pin MEDIUM-equivalent (OSM cape)."
+   ]
+  },
+  "limeburners-creek-national-park": {
+   "name": "Limeburners Creek National Park",
+   "icon": "🏕️",
+   "category": "nature",
+   "bio": "Remote park between Crescent Head and Port Macquarie with surf breaks, beaches and Point Plomer camping.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "costMin": 8,
+   "costMax": 8,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/limeburners-creek-national-park",
+   "coordinates": { "latitude": -31.314908, "longitude": 152.9754159 },
+   "notes": [
+    "A$8 per vehicle per day (NPWS); always open but may close for weather or fire. One counted source.",
+    "Pin is Point Plomer, the main visitor area (Photon, MEDIUM-equivalent), not the park centroid.",
+    "National park: the owner decides destination or spot."
+   ]
+  }
+ },
+ "existing_fixes": [],
+ "held": [
+  {
+   "id": "port-macquarie-koala-hospital",
+   "name": "Port Macquarie Koala Hospital",
+   "reason": "needs_owner: price unconfirmed. Entry fee since 16 Sep 2024, but no operator or tourism page states the amount; research-a's A$12.50 comes from visitor reviews in search snippets. Hospital reopened Monday 7 September 2026 after a A$10.7 million redevelopment, so the written spot is complete except the price. Add costMin/costMax once the operator confirms.",
+   "facts": "154 Lord Street, open daily 8:30 AM - 4:00 PM except Christmas Day (Koala Conservation Australia). Visitors see resident koalas, exhibits and the clinic. ticketUrl https://koalaconservationaustralia.org.au/pages/koala-hospital (loaded; ticket shop deep links 404). Pin -31.44306,152.91952 (OSM animal_shelter, next to Roto House). Draft bio: 'Working koala hospital on Lord Street, reopened in 2026, where visitors see resident koalas and the clinic.' Category nature, icon 🐨, visit 0.5-1.5 h. No photo on Commons (koala foetus only). Do not call it 'daily viewing of patients'."
+  },
+  {
+   "id": "urunga-boardwalk",
+   "name": "Urunga Boardwalk",
+   "reason": "Only partly open in 2026 and research-b did not confirm it is open: the nsw.gov.au listing says 850 m plus an 80 m section and a fishing platform are open with full completion due in 2026; VisitNSW says about 200 m with intermittent closures. Check the current state before listing.",
+   "facts": "Free, category hike, icon 🌿, pin -30.50084,153.02745 (route midpoint of OSM ways, MEDIUM-equivalent; OSM also has a 'closed' interpretive boardwalk way 190 m away). No ticketUrl found (council news page only). Hours 'Open access'. Draft bio: 'Riverside and lagoon boardwalk at Urunga toward Hungry Head, opening in stages during a 2026 rebuild.' Counted sources: Wikivoyage Urunga, nsw.gov.au listing."
+  },
+  {
+   "id": "glenifer-road-swimming-hole",
+   "name": "Glenifer Road Swimming Hole",
+   "reason": "Held by owner decision: no usable pin (the placement point is an approximate road point about 3 km from Gleniffer Hall; resolve-pin's hit was a different swimming hole 6 km away), one counted source (Wikivoyage Bellingen tip), access may cross private land and the river has had fatalities. Source spells it 'Glenifer', the road is Gleniffer Road."
+  }
+ ],
+ "notes": [
+  "52 spots written, all standalone fallbacks keyed by the research ids. Owner decisions applied: Crystal Shower Falls rejected (part of the Wonga Walk; not written); Glenifer Road Swimming Hole held; Coffs Coast Wildlife Sanctuary A$52 adult, 9 AM - 3 PM daily. Yuraygir National Park is an existing spot and was not rewritten.",
+  "Also held: Port Macquarie Koala Hospital (price unconfirmed) and Urunga Boardwalk (partly open in 2026). Neither is among the 52.",
+  "Timezone omitted on every spot (default Australia/Sydney). No shell was available, so bio-fit.py was NOT run: every bio was counted by hand at about 75-110 characters. The tightest are Boomerang Beach, Booti Booti National Park, Sea Acres National Park, Smoky Cape Lighthouse, Cape Hawke Lookout, Careys Peak Lookout and the Coffs Coast Wildlife Sanctuary. Run `python3 scripts/curation/bio-fit.py` before applying.",
+  "No wiki field is set on any spot: research confirmed no disambiguated Wikipedia titles. Unconfirmed candidates are 'Woolgoolga, New South Wales', 'Dorrigo, New South Wales', 'Bellingen, New South Wales' and 'Old Bar, New South Wales'. 'Shelly Beach, Port Macquarie' from the placement is not a real article, so both Shelly Beach spots (shelly-beach-port-macquarie, shelly-beach-forster) have no wiki and need distinct photo keys if the owner wants them.",
+  "Research disagreements resolved: Hat Head, Booti Booti and Crowdy Bay use research-b's visitor-point pins instead of the placement's park centroids. Antarctic Beech loop is 2.5 km (NPWS), not the placement's 1.5 km. Wonga Walk is 5.8 km, two to three hours (not 'two-hour'). Kempsey, Old Bar, Seal Rocks and Hat Head bios were rewritten from the research drafts; Seal Rocks category changed from historic to nature.",
+  "Bio facts dropped: Roto House 'free guided tours'; Tacking Point tower is closed to the public (bio describes the reserve); Sea Acres boardwalk A$9 and the Smoky Cape per-vehicle fee are kept out of bios (cost fields only).",
+  "Per-vehicle fee spots (A$8 per vehicle per day, entered as costMin/costMax 8): Smoky Cape, Hat Head, Booti Booti, Cape Hawke, Elizabeth Beach, Shelly Beach (Forster; walk-in charge unverified), Sugarloaf Point, Treachery, Yacaaba, Dark Point, Crowdy Bay, Limeburners Creek. Sea Acres A$9 is the adult boardwalk fee.",
+  "LOW-pin spots needing an owner map check: Coffs Coast Wildlife Sanctuary (Wikivoyage geotag), Guru Nanak Sikh Temple (Wikivoyage geotag), Treachery Headland Walking Track (Wikivoyage geotag, not a midpoint), Bongil Bongil National Park (visitor access point), Arakoon National Park (reserve point), Port Macquarie Coastal Walk (proposer midpoint). Yacaaba's pin is the midpoint of a partial way.",
+  "Hours not verified from the operator: Big Banana closing time, Roto House (Wikivoyage), Guru Nanak Sikh Temple (heritage-walk site), Smoky Cape grounds. Visit durations are estimates except where a source gives them.",
+  "Photos not handled here. Notes: Skywalk, Wonga Walk and Bellingen photos need brightening; Hat Head photo is a 3:1 panorama; Guru Nanak Sikh Temple, Roto House, Port Macquarie Coastal Walk, Park Beach, Woolgoolga, Dorrigo, Booti Booti and Billabong Zoo have no suitable Commons photo."
+ ]
+}

@@ -1,0 +1,346 @@
+{
+ "region": "nsw-outback-far-west",
+ "inside_destinations": 0,
+ "inside_existing_destinations": 0,
+ "spots_of_proposed_destinations": 20,
+ "standalone": 3,
+ "standalone_if_all_proposals_declined": 34,
+ "new_destinations": 11,
+ "new_destinations_list": [
+  "broken-hill",
+  "lightning-ridge",
+  "mungo-national-park",
+  "kinchega-national-park",
+  "mutawintji-national-park",
+  "sturt-national-park",
+  "gundabooka-national-park",
+  "paroo-darling-national-park",
+  "toorale-national-park",
+  "cobar",
+  "brewarrina"
+ ],
+ "lowest_kept": [
+  {
+   "name": "Mundi Mundi Lookout",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Pro Hart Gallery and Sculpture Park",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Line of Lode Miners Memorial",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Royal Flying Doctor Service Bruce Langford Visitor Centre",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Living Desert Sculptures",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Daydream Mine",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Lightning Ridge Bore Baths",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "The Big Opal",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Chambers of the Black Hand",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Lightning Ridge Bottle House",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Mutawintji Historic Site",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Great Cobar Heritage Centre",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Fort Bourke Hill Lookout",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Brewarrina Aboriginal Culture Museum",
+   "views": 0,
+   "counted_sources": 1
+  }
+ ],
+ "stronger_left_out": [
+  {
+   "name": "Dingo Fence",
+   "views": 77602,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A 5,614 km linear feature with no single public site in NSW: NPWS only mentions it along the Sturt boundary and Cameron Corner. Name it in the Sturt and Cameron Corner bios; if a signed viewing point turns up, re-judge."
+  },
+  {
+   "name": "Lake Mungo",
+   "views": 28949,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Part of a larger spot (Mungo National Park); not a separate draw. Mungo National Park (the proposed destination) is the place; the lake bed is its landscape."
+  },
+  {
+   "name": "Wilcannia",
+   "views": 21749,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "One counted source (Wikivoyage) calls it very small; Visit NSW has no listing. Heritage precinct and old theatre are seen from the street with nothing to do for 30 minutes."
+  },
+  {
+   "name": "Balranald",
+   "views": 13841,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Overlaps nsw-riverina-murray (Murrumbidgee town). Wikivoyage x2 and Visit NSW. Reconcile there: decide one owner of Balranald, Yanga and the Mungo gateway. Not a Far West pin until then."
+  },
+  {
+   "name": "Wentworth",
+   "views": 13530,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Belongs to Riverina-Murray (Murray-Darling junction, Old Wentworth Gaol); judge there. Note for reconciliation."
+  },
+  {
+   "name": "Tibooburra",
+   "views": 11775,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Case for: the only town for hundreds of km, base for Sturt National Park, Wikivoyage lists stone buildings and pub. Against: one counted source and the draw is the park and Cameron Corner (gateway pattern). Keep as a low-rank gateway only if the owner wants a base for Sturt; otherwise fold into Sturt National Park."
+  },
+  {
+   "name": "Menindee",
+   "views": 9713,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Case for: Wikivoyage base and gateway for Kinchega and the Menindee Lakes, with Visit NSW area page. Against: a very small town whose draw is the lakes and park beyond (Pipiriki pattern), exterior heritage only, limited services. Fold into a proposed Kinchega/Menindee Lakes destination as a spot rather than its own pin."
+  },
+  {
+   "name": "Willandra Lakes Region",
+   "views": 6761,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Area designation overlapping Mungo National Park; near-duplicate."
+  },
+  {
+   "name": "Pooncarie",
+   "views": 3991,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Tiny Darling River hamlet; Wikivoyage lists little to see; just a gateway to Mungo."
+  },
+  {
+   "name": "White Cliffs Solar Power Station",
+   "views": 1577,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Non-operational relic, view-only and short."
+  },
+  {
+   "name": "Yanga National Park",
+   "views": 1520,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Overlaps nsw-riverina-murray; NPWS plus Wikivoyage both count, woolsheds and wetlands, minutes from Balranald. Likely keep, but decide with the Riverina pass."
+  },
+  {
+   "name": "Broken Hill Trades Hall",
+   "views": 1153,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Exterior-only heritage building."
+  },
+  {
+   "name": "Broken Hill Women's Memorial",
+   "views": 352,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Minor memorial."
+  },
+  {
+   "name": "Courthouse Museum",
+   "views": 330,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Tiny venue (free artefacts in a courthouse); under 30 min and minor."
+  },
+  {
+   "name": "Mungo Walls of China Guided Tour",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Operator/NPWS tour, not a place; the place is Mungo National Park."
+  }
+ ],
+ "strongest_outsiders": {
+  "kept_outside_every_span": [
+   {
+    "name": "Broken Hill",
+    "views": 101286,
+    "counted_sources": 2,
+    "kept_as": "new-destination"
+   },
+   {
+    "name": "Lightning Ridge",
+    "views": 45508,
+    "counted_sources": 2,
+    "kept_as": "new-destination"
+   },
+   {
+    "name": "Bourke",
+    "views": 29975,
+    "counted_sources": 2,
+    "kept_as": "standalone"
+   },
+   {
+    "name": "Cobar",
+    "views": 29723,
+    "counted_sources": 2,
+    "kept_as": "new-destination"
+   },
+   {
+    "name": "Brewarrina Aboriginal Fish Traps",
+    "views": 14240,
+    "counted_sources": 1,
+    "kept_as": "spot of proposed brewarrina"
+   },
+   {
+    "name": "Brewarrina",
+    "views": 12753,
+    "counted_sources": 2,
+    "kept_as": "new-destination"
+   },
+   {
+    "name": "White Cliffs",
+    "views": 10213,
+    "counted_sources": 2,
+    "kept_as": "standalone"
+   },
+   {
+    "name": "Silverton",
+    "views": 10107,
+    "counted_sources": 1,
+    "kept_as": "spot of proposed broken-hill"
+   },
+   {
+    "name": "Mungo National Park",
+    "views": 8839,
+    "counted_sources": 2,
+    "kept_as": "new-destination"
+   },
+   {
+    "name": "Menindee Lakes",
+    "views": 6641,
+    "counted_sources": 2,
+    "kept_as": "spot of proposed kinchega-national-park"
+   }
+  ],
+  "left_out_or_review_outside_spans": [
+   {
+    "name": "Dingo Fence",
+    "views": 77602,
+    "counted_sources": 1,
+    "verdict": "reject",
+    "reason": "A 5,614 km linear feature with no single public site in NSW: NPWS only mentions it along the Sturt boundary and Cameron Corner. Name it in the Sturt and Cameron Corner bios; if a signed viewing point turns up, re-judge."
+   },
+   {
+    "name": "Lake Mungo",
+    "views": 28949,
+    "counted_sources": 2,
+    "verdict": "reject",
+    "reason": "Part of a larger spot (Mungo National Park); not a separate draw. Mungo National Park (the proposed destination) is the place; the lake bed is its landscape."
+   },
+   {
+    "name": "Wilcannia",
+    "views": 21749,
+    "counted_sources": 1,
+    "verdict": "reject",
+    "reason": "One counted source (Wikivoyage) calls it very small; Visit NSW has no listing. Heritage precinct and old theatre are seen from the street with nothing to do for 30 minutes."
+   },
+   {
+    "name": "Balranald",
+    "views": 13841,
+    "counted_sources": 2,
+    "verdict": "review",
+    "reason": "Overlaps nsw-riverina-murray (Murrumbidgee town). Wikivoyage x2 and Visit NSW. Reconcile there: decide one owner of Balranald, Yanga and the Mungo gateway. Not a Far West pin until then."
+   },
+   {
+    "name": "Wentworth",
+    "views": 13530,
+    "counted_sources": 1,
+    "verdict": "reject",
+    "reason": "Belongs to Riverina-Murray (Murray-Darling junction, Old Wentworth Gaol); judge there. Note for reconciliation."
+   },
+   {
+    "name": "Tibooburra",
+    "views": 11775,
+    "counted_sources": 1,
+    "verdict": "review",
+    "reason": "Case for: the only town for hundreds of km, base for Sturt National Park, Wikivoyage lists stone buildings and pub. Against: one counted source and the draw is the park and Cameron Corner (gateway pattern). Keep as a low-rank gateway only if the owner wants a base for Sturt; otherwise fold into Sturt National Park."
+   },
+   {
+    "name": "Menindee",
+    "views": 9713,
+    "counted_sources": 2,
+    "verdict": "review",
+    "reason": "Case for: Wikivoyage base and gateway for Kinchega and the Menindee Lakes, with Visit NSW area page. Against: a very small town whose draw is the lakes and park beyond (Pipiriki pattern), exterior heritage only, limited services. Fold into a proposed Kinchega/Menindee Lakes destination as a spot rather than its own pin."
+   },
+   {
+    "name": "Willandra Lakes Region",
+    "views": 6761,
+    "counted_sources": 1,
+    "verdict": "reject",
+    "reason": "Area designation overlapping Mungo National Park; near-duplicate."
+   }
+  ]
+ },
+ "benchmark": {
+  "applicable": "Pipiriki pattern: gateway towns whose draw is the park or lakes beyond (Menindee, Tibooburra) sent to review, not kept outright; Wilcannia (exterior-only heritage streetscape) rejected like the negative benchmarks; quirky icon Cobar Big Beer Can rejected on the same ten-minute-stop test the Ohakune Carrot clears only with a guide naming it (one source here); operators (Walls of China Guided Tour, Silver City Scenic Flights, Cameron Corner Store) rejected as TSS Earnslaw was; Dingo Fence (77602 views) rejected as a 5,614 km linear feature with no single NSW visitor point (Ninety Mile Beach rule: placed where visitors reach it, here named in Sturt/Cameron Corner bios).",
+  "not_in_this_region": [
+   "Red Rocks",
+   "Kapiti Island",
+   "Lake Coleridge",
+   "Sumner",
+   "Godley Head",
+   "Lyttelton",
+   "Birdlings Flat",
+   "Paradise",
+   "Hump Ridge Track",
+   "St Kilda Beach",
+   "Ohakune Carrot",
+   "Ninety Mile Beach",
+   "Pipiriki"
+  ],
+  "result": "pass for the Far West-relevant items"
+ },
+ "notes": [
+  "minimum kept score is 0 views / 1 counted source, so every left-out candidate with any page views or 2+ counted sources is listed with its reason; none is a strong outsider dropped without a What-qualifies reason.",
+  "Placement never decided inclusion: every verdict above is on What qualifies alone."
+ ]
+}

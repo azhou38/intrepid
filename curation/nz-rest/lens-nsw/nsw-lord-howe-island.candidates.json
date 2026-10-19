@@ -1,0 +1,89 @@
+{
+ "spot:neds-beach": [
+  {
+   "tier": "commons",
+   "file_or_url": "Neds Beach - panoramio.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Neds_Beach_-_panoramio.jpg",
+   "width": 1024,
+   "licence": "CC BY 3.0 (David Stanley)",
+   "credit": "CC BY 3.0 (David Stanley)",
+   "local": null,
+   "why": "Elevated view over the whole sweep of Ned's Beach, reef and turquoise water; geotag 300 m from pin; description names Ned's Beach; 1024 px so modest resolution; centred subject.",
+   "copyright_risk": false
+  },
+  {
+   "tier": "commons",
+   "file_or_url": "Lord Howe Island Ned's Beach.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Lord_Howe_Island_Ned's_Beach.jpg",
+   "width": 2973,
+   "licence": "CC BY 2.5 (Fanny Schertzer)",
+   "credit": "CC BY 2.5 (Fanny Schertzer)",
+   "local": null,
+   "why": "Ned's Beach from the coast road, grassy foreground, 2:1 wide so needs x-offset crop (beach in upper left half); geotag 140 m from pin; overcast sky.",
+   "copyright_risk": false
+  }
+ ],
+ "spot:old-settlement-beach": [
+  {
+   "tier": "commons",
+   "file_or_url": "Old Settlement Beach (32564834385).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Old_Settlement_Beach_(32564834385).jpg",
+   "width": 1024,
+   "licence": "CC BY 2.0 (David Stanley)",
+   "credit": "CC BY 2.0 (David Stanley)",
+   "local": null,
+   "why": "Description names Old Settlement Beach (start of North Bay trail), view over the lagoon to Lidgbird and Gower; 1024 px; the beach itself is small in frame.",
+   "copyright_risk": false
+  },
+  {
+   "tier": "openly-licensed",
+   "file_or_url": "https://live.staticflickr.com/753/32403922560_9d9b2f9d39_b.jpg",
+   "page": "https://www.flickr.com/photos/79721788@N00/32403922560",
+   "width": 1024,
+   "licence": "CC BY 2.0",
+   "credit": "David Stanley (Flickr)",
+   "local": "/private/tmp/claude-501/-Users-alexzhou-Developer-mobile-wellington/16edc52c-57b1-4c22-8c60-6565c530b9eb/scratchpad/dl/old0.jpg",
+   "why": "Old Settlement Valley (same photographer) green valley running down to the beach at left; beach a small sliver, so weaker than the Commons one.",
+   "copyright_risk": false
+  }
+ ],
+ "spot:transit-hill-lord-howe": [],
+ "spot:lagoon-beach-lord-howe": [
+  {
+   "tier": "commons",
+   "file_or_url": "Lord Howe Island Lagoon.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Lord_Howe_Island_Lagoon.jpg",
+   "width": 2304,
+   "licence": "CC BY-SA 4.0 (Rocketrod58, Wiki Loves Earth 2016)",
+   "credit": "CC BY-SA 4.0 (Rocketrod58, Wiki Loves Earth 2016)",
+   "local": null,
+   "why": "Turquoise lagoon, rocky shore and sand with Mount Lidgbird behind; categorised Beaches of Lord Howe Island; no geotag so match to Lagoon Beach is plausible not proven; saturated colours (same author as the rejected Ned's shot), square 2304 px.",
+   "copyright_risk": false
+  },
+  {
+   "tier": "commons",
+   "file_or_url": "81. Lidgbird and Gower.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:81._Lidgbird_and_Gower.jpg",
+   "width": 4288,
+   "licence": "CC BY-SA 4.0 (BriMiDra, Wiki Loves Monuments 2017)",
+   "credit": "CC BY-SA 4.0 (BriMiDra, Wiki Loves Monuments 2017)",
+   "local": null,
+   "why": "Lidgbird and Gower across the lagoon from the beach road with boats and bikes; categorised Beaches of Lord Howe Island; shaded foreground, no geotag so unproven as Lagoon Beach.",
+   "copyright_risk": false
+  },
+  {
+   "tier": "commons",
+   "file_or_url": "Lord Howe Lagoon - panoramio.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Lord_Howe_Lagoon_-_panoramio.jpg",
+   "width": 1024,
+   "licence": "CC BY 3.0 (David Stanley)",
+   "credit": "CC BY 3.0 (David Stanley)",
+   "local": null,
+   "why": "Boats anchored in the lagoon off the west coast, Lidgbird and Gower beyond; geotag 550 m from pin; 1024 px.",
+   "copyright_risk": false
+  }
+ ],
+ "_tried": {
+  "spot:transit-hill-lord-howe": "Commons text search ('Transit Hill' Lord Howe), geosearch 1 km (only Blinky Beach panoramio, used by another slot, and wildlife), category Lord Howe Island; Openverse (only 'Clouds from Transit Hill' by patchtok, almost certainly Wellington, unverifiable; herbarium scans); Wikivoyage Lord Howe Island (no mention); lordhoweisland.info search (empty response). Nothing found at any tier."
+ }
+}

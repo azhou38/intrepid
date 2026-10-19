@@ -1,0 +1,535 @@
+{
+ "region": "nsw-new-england-north-west",
+ "inside_destinations": 23,
+ "standalone": 7,
+ "new_destinations": 9,
+ "inside_existing_destinations": 0,
+ "held_for_pin": 5,
+ "note": "inside_destinations counts spots inside the 9 PROPOSED destinations (none of the region lies in an existing one); the 9 places that become destinations themselves are counted in new_destinations. 44 kept = 23 + 7 + 9 + 5 held.",
+ "lowest_kept": [
+  {
+   "name": "Australian Country Music Hall of Fame",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "Australian Standing Stones",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Green Gully walk",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Moree Artesian Aquatic Centre",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Mount Yarrowyck Nature Reserve",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Myall Creek Massacre Memorial Site",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Pilliga Hot Artesian Bore Baths",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Pilliga Sandstone Caves",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Sawn Rocks",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Sir Henry Parkes School of Arts",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "The Big Lamb",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Gibraltar-Washpool World Heritage walk",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Horton Falls National Park",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Kings Plains National Park",
+   "views": 495,
+   "counted_sources": 1
+  },
+  {
+   "name": "Cunnawarra National Park",
+   "views": 512,
+   "counted_sources": 2
+  }
+ ],
+ "lowest_score_note": "Many kept places score 0 views (no English Wikipedia article or a redirect); they pass on counted sources (Wikivoyage, NPWS, Visit NSW, tourism boards), not on views. Every candidate scoring above 0 that was not kept is listed below with its reason.",
+ "stronger_left_out": [
+  {
+   "name": "Walcha",
+   "views": 16260,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Pipiriki-type gateway: the draw (Apsley Falls, Green Gully, Oxley Wild Rivers) is beyond the town; Wikivoyage lists it with 15 see/do items but the town itself is a 30-minute stop. Owner call; if kept, low rank, near Apsley Falls."
+  },
+  {
+   "name": "Guyra",
+   "views": 10163,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small highland town; its sights (Big Lamb) are kept separately and nothing else singled out beyond local museums. A town page alone is one counted source."
+  },
+  {
+   "name": "Mungindi",
+   "views": 10154,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Border village; the history park and weir are minor and Queensland-side sites are out of region."
+  },
+  {
+   "name": "Bingara",
+   "views": 10052,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Heritage gold town with 37 Wikivoyage listings (Roxy Theatre, Gwydir River, Fossickers Way); one counted source, small. Keep case: second-tier heritage town a guide names; reject case: short visit. Owner call."
+  },
+  {
+   "name": "Quirindi",
+   "views": 9204,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small town with little to do; Burning Mountain and Werris Creek are judged separately; one counted source."
+  },
+  {
+   "name": "Manilla",
+   "views": 8752,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small town, one counted source, no distinct 30-minute draw."
+  },
+  {
+   "name": "Nundle",
+   "views": 6645,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Gateway-type heritage village (Hanging Rock, fossicking, woollen mill); 16 Wikivoyage listings but all minor and one counted source. Case for: a destination of character in the Peel valley; against: short visit."
+  },
+  {
+   "name": "Warialda",
+   "views": 6640,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small country town with no distinct visitor draw."
+  },
+  {
+   "name": "Bicentennial National Trail",
+   "views": 6518,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A 5,330 km route, not a place a visitor can do for half an hour; passes many parks."
+  },
+  {
+   "name": "Tamworth Country Music Festival",
+   "views": 6238,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Annual festival, not a permanent spot."
+  },
+  {
+   "name": "Barraba",
+   "views": 6187,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Gateway to Horton Falls and Kaputar; Wikivoyage has 74 listings but the sights are silo art and small museums, rejected separately. Benchmark-style gateway: owner call."
+  },
+  {
+   "name": "Tingha",
+   "views": 5783,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Tiny village; its only sights are a shop and a park."
+  },
+  {
+   "name": "Emmaville",
+   "views": 5252,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Tiny mining village; only the small museum, judged separately."
+  },
+  {
+   "name": "Ebor",
+   "views": 3909,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Village that only gateways to Ebor Falls, which is judged separately."
+  },
+  {
+   "name": "Bundarra",
+   "views": 3751,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small village with no distinct visitor draw; its sights are minor."
+  },
+  {
+   "name": "Guy Fawkes River National Park",
+   "views": 1595,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Single NPWS source, wilderness for experienced walkers only, no easy half-hour experience; marginal sources not met."
+  },
+  {
+   "name": "Keepit Dam",
+   "views": 1509,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Recreational reservoir, one source."
+  },
+  {
+   "name": "Round Mountain",
+   "views": 1508,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Peak near Ebor with no visitor-oriented source."
+  },
+  {
+   "name": "AgQuip",
+   "views": 1391,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Annual event, not a permanent spot."
+  },
+  {
+   "name": "Chaffey Dam",
+   "views": 1310,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Recreational reservoir."
+  },
+  {
+   "name": "Split Rock Dam",
+   "views": 1291,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Recreational reservoir."
+  },
+  {
+   "name": "Black Mountain",
+   "views": 1139,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small village with a railway station; minor."
+  },
+  {
+   "name": "Pindari Dam",
+   "views": 858,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Recreational reservoir, one source, nothing distinct from Copeton."
+  },
+  {
+   "name": "Warra National Park",
+   "views": 596,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "NPWS page is a stub (no visitor content); only OSM/Wikipedia otherwise."
+  },
+  {
+   "name": "Armidale Central Park",
+   "views": 523,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Ordinary local town park."
+  },
+  {
+   "name": "Mummel Gulf National Park",
+   "views": 516,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Remote, 4WD, one counted source (NPWS)."
+  },
+  {
+   "name": "Nymboida National Park",
+   "views": 512,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Single NPWS source; river canoeing is run by operators from the Clarence side; one source."
+  },
+  {
+   "name": "Chaelundi National Park",
+   "views": 498,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Outside region (Mid North Coast / Ebor-Dorrigo side) and no visitor-oriented source."
+  },
+  {
+   "name": "Nowendoc National Park",
+   "views": 495,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Single NPWS source (picnic, bush camping), remote; marginal bar of two sources not met."
+  },
+  {
+   "name": "Basket Swamp National Park",
+   "views": 479,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "NPWS page is a stub with no visitor content; Wikivoyage Tenterfield alone is one source."
+  },
+  {
+   "name": "Barool National Park",
+   "views": 472,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "NPWS page is a stub; no counted visitor source."
+  },
+  {
+   "name": "Little Llangothlin Nature Reserve",
+   "views": 393,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small remote reserve, one source."
+  },
+  {
+   "name": "Capoompeta National Park",
+   "views": 377,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "NPWS page is a stub with no visitor facilities; no counted visitor source."
+  },
+  {
+   "name": "Butterleaf National Park",
+   "views": 361,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "NPWS page is a stub; no visitor content or facilities."
+  },
+  {
+   "name": "Boundary Falls",
+   "views": 342,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Falls and picnic area within Gibraltar Range National Park; part of a larger spot."
+  },
+  {
+   "name": "Mann River Nature Reserve",
+   "views": 299,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small nature reserve, one source, little to do."
+  },
+  {
+   "name": "Phoenix Foundry",
+   "views": 298,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "By appointment only."
+  }
+ ],
+ "strongest_outsiders": {
+  "kept_outside_every_span": [
+   {
+    "name": "Moree",
+    "views": 37864,
+    "counted_sources": 1,
+    "kept_as": "standalone"
+   },
+   {
+    "name": "Gunnedah",
+    "views": 30131,
+    "counted_sources": 1,
+    "kept_as": "standalone"
+   },
+   {
+    "name": "Paul Wild Observatory",
+    "views": 5177,
+    "counted_sources": 1,
+    "kept_as": "standalone"
+   },
+   {
+    "name": "Warrabah National Park",
+    "views": 835,
+    "counted_sources": 2,
+    "kept_as": "standalone"
+   },
+   {
+    "name": "Kwiambal National Park",
+    "views": 542,
+    "counted_sources": 2,
+    "kept_as": "standalone"
+   },
+   {
+    "name": "Moree Artesian Aquatic Centre",
+    "views": 0,
+    "counted_sources": 1,
+    "kept_as": "standalone"
+   },
+   {
+    "name": "Pilliga Hot Artesian Bore Baths",
+    "views": 0,
+    "counted_sources": 1,
+    "kept_as": "standalone"
+   }
+  ],
+  "left_out_or_review_outside_spans": [
+   {
+    "name": "Walcha",
+    "views": 16260,
+    "counted_sources": 1,
+    "verdict": "review",
+    "reason": "Pipiriki-type gateway: the draw (Apsley Falls, Green Gully, Oxley Wild Rivers) is beyond the town; Wikivoyage lists it with 15 see/do items but the town itself is a 30-minute stop. Owner call; if kept, low rank, near Apsley Falls."
+   },
+   {
+    "name": "Guyra",
+    "views": 10163,
+    "counted_sources": 1,
+    "verdict": "reject",
+    "reason": "Small highland town; its sights (Big Lamb) are kept separately and nothing else singled out beyond local museums. A town page alone is one counted source."
+   },
+   {
+    "name": "Mungindi",
+    "views": 10154,
+    "counted_sources": 1,
+    "verdict": "reject",
+    "reason": "Border village; the history park and weir are minor and Queensland-side sites are out of region."
+   },
+   {
+    "name": "Bingara",
+    "views": 10052,
+    "counted_sources": 1,
+    "verdict": "review",
+    "reason": "Heritage gold town with 37 Wikivoyage listings (Roxy Theatre, Gwydir River, Fossickers Way); one counted source, small. Keep case: second-tier heritage town a guide names; reject case: short visit. Owner call."
+   },
+   {
+    "name": "Quirindi",
+    "views": 9204,
+    "counted_sources": 1,
+    "verdict": "reject",
+    "reason": "Small town with little to do; Burning Mountain and Werris Creek are judged separately; one counted source."
+   },
+   {
+    "name": "Manilla",
+    "views": 8752,
+    "counted_sources": 1,
+    "verdict": "reject",
+    "reason": "Small town, one counted source, no distinct 30-minute draw."
+   },
+   {
+    "name": "Nundle",
+    "views": 6645,
+    "counted_sources": 1,
+    "verdict": "review",
+    "reason": "Gateway-type heritage village (Hanging Rock, fossicking, woollen mill); 16 Wikivoyage listings but all minor and one counted source. Case for: a destination of character in the Peel valley; against: short visit."
+   },
+   {
+    "name": "Warialda",
+    "views": 6640,
+    "counted_sources": 1,
+    "verdict": "reject",
+    "reason": "Small country town with no distinct visitor draw."
+   },
+   {
+    "name": "Bicentennial National Trail",
+    "views": 6518,
+    "counted_sources": 1,
+    "verdict": "reject",
+    "reason": "A 5,330 km route, not a place a visitor can do for half an hour; passes many parks."
+   },
+   {
+    "name": "Barraba",
+    "views": 6187,
+    "counted_sources": 1,
+    "verdict": "review",
+    "reason": "Gateway to Horton Falls and Kaputar; Wikivoyage has 74 listings but the sights are silo art and small museums, rejected separately. Benchmark-style gateway: owner call."
+   },
+   {
+    "name": "Guy Fawkes River National Park",
+    "views": 1595,
+    "counted_sources": 1,
+    "verdict": "reject",
+    "reason": "Single NPWS source, wilderness for experienced walkers only, no easy half-hour experience; marginal sources not met."
+   }
+  ]
+ },
+ "benchmark": {
+  "applicable": [
+   "Hump Ridge precedent: Green Gully Track and the Gibraltar-Washpool walk are kept and held for a route-midpoint pin, not dropped.",
+   "Pipiriki/gateway-journey benchmark: Walcha, Barraba, Nundle and Bingara (draw lies beyond the town) are sent to review, not placed; Ebor village was rejected (gateway to Ebor Falls, which is kept).",
+   "Ohakune Carrot precedent: The Big Lamb (Guyra) is kept as a roadside icon and placed in Armidale's span.",
+   "Ninety Mile Beach precedent (long feature not under its neighbour): Wollomombi and Apsley go to Oxley Wild Rivers, not the nearby city; Kwiambal/Warrabah, reached on their own, stand alone.",
+   "Operator/vehicle test: no vehicle or operator kept; Tamworth Country Music Festival rejected as an annual event, as the negative benchmarks require."
+  ],
+  "not_in_this_region": [
+   "Red Rocks",
+   "Kapiti Island",
+   "Lake Coleridge",
+   "Sumner/Godley Head/Lyttelton",
+   "Birdlings Flat",
+   "Paradise",
+   "St Kilda Beach",
+   "Ninety Mile Beach as such",
+   "TSS Earnslaw/Walter Peak",
+   "Queen Mary Hospital",
+   "Turanga",
+   "Bridge of Remembrance"
+  ],
+  "result": "pass for the items relevant to this region"
+ },
+ "review_list_for_owner": [
+  {
+   "name": "Walcha",
+   "views": 16260,
+   "counted_sources": 1,
+   "case": "Pipiriki-type gateway: the draw (Apsley Falls, Green Gully, Oxley Wild Rivers) is beyond the town; Wikivoyage lists it with 15 see/do items but the town itself is a 30-minute stop. Owner call; if kept, low rank, near Apsley Falls."
+  },
+  {
+   "name": "Bingara",
+   "views": 10052,
+   "counted_sources": 1,
+   "case": "Heritage gold town with 37 Wikivoyage listings (Roxy Theatre, Gwydir River, Fossickers Way); one counted source, small. Keep case: second-tier heritage town a guide names; reject case: short visit. Owner call."
+  },
+  {
+   "name": "Nundle",
+   "views": 6645,
+   "counted_sources": 1,
+   "case": "Gateway-type heritage village (Hanging Rock, fossicking, woollen mill); 16 Wikivoyage listings but all minor and one counted source. Case for: a destination of character in the Peel valley; against: short visit."
+  },
+  {
+   "name": "Barraba",
+   "views": 6187,
+   "counted_sources": 1,
+   "case": "Gateway to Horton Falls and Kaputar; Wikivoyage has 74 listings but the sights are silo art and small museums, rejected separately. Benchmark-style gateway: owner call."
+  },
+  {
+   "name": "Moree (as a destination)",
+   "case": "Currently two standalone spots (Moree, Moree Artesian Aquatic Centre); promote to a destination if the owner wants a Moree pin with its baths as a spot."
+  },
+  {
+   "name": "Gunnedah (as a destination)",
+   "case": "Standalone town spot; no kept neighbour to make a destination."
+  },
+  {
+   "name": "National parks folded or standalone (np_exception)",
+   "case": "See placement.json np_exceptions: Cathedral Rock, Cunnawarra, Kings Plains, Washpool, Bald Rock, Boonoo Boonoo, Horton Falls folded into a neighbouring destination; Kwiambal and Warrabah standalone."
+  }
+ ]
+}

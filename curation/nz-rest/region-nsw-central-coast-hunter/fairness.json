@@ -1,0 +1,684 @@
+{
+ "region": "nsw-central-coast-hunter",
+ "inside_destinations": 0,
+ "inside_existing_destinations": 0,
+ "inside_proposed_destinations": 68,
+ "of_which_in_destinations_proposed_by_other_regions": 2,
+ "standalone": 2,
+ "new_destinations": 5,
+ "destination_self_places": [
+  "Port Stephens",
+  "Dharug National Park"
+ ],
+ "standalone_if_all_proposals_declined": 72,
+ "existing_kept_unchanged": 1,
+ "existing_kept_note": "Great North Walk is sydney-64: skipped.",
+ "covered_by_other_region": [
+  "Barrington Tops National Park",
+  "Careys Peak (= mid-north-coast barrington-tops-national-park-2)"
+ ],
+ "lowest_kept": [
+  {
+   "name": "Bathers Way",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Blacksmiths Beach",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Bulgandry Art Site",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Devils Hole Lookout",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Fly Point",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Gan Gan Lookout",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Gloucester Falls",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Little Beach (Bouddi)",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Maitland Bay",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Merewether Ocean Baths",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Mount Sugarloaf Lookout",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Mount Tomaree",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Newcastle Beach",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Newcastle Foreshore",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Patonga to Pearl Beach Walking Track",
+   "views": 0,
+   "counted_sources": 1
+  }
+ ],
+ "lowest_kept_note": "Many kept places tie at 0 views with 1 counted source (beaches, walks, lookouts); every left-out candidate with any views is therefore listed as stronger.",
+ "stronger_left_out": [
+  {
+   "name": "Central Coast Stadium",
+   "views": 22584,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Sports stadium (venue/events), no visitor draw."
+  },
+  {
+   "name": "Christ Church Cathedral",
+   "views": 5999,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Church/cathedral, fails the building rule even with a Wikivoyage listing."
+  },
+  {
+   "name": "Lindeman's",
+   "views": 3615,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Winery brand, Wikipedia only; no coordinates."
+  },
+  {
+   "name": "Wondabyne",
+   "views": 2632,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Reject: a rail halt reached only by train or track with nothing to see at the station; the draw is the walk to Patonga, already covered by the Great North Walk entry."
+  },
+  {
+   "name": "Brumlow Top",
+   "views": 2019,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Peak with only OSM and Wikipedia support, no visitor track named."
+  },
+  {
+   "name": "Hunter Valley Steamfest",
+   "views": 1897,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Festival (Steamfest), an event. No coordinates."
+  },
+  {
+   "name": "Cintra House",
+   "views": 1869,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Heritage residence with no confirmed public access (exterior only). No coordinates."
+  },
+  {
+   "name": "Mount Yengo",
+   "views": 1699,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Reject: part of Yengo NP, sacred site with restricted access; the park is kept instead."
+  },
+  {
+   "name": "Walka Water Works",
+   "views": 1484,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Reject: modest local park and heritage pumphouse, one source."
+  },
+  {
+   "name": "Wyndham Estate",
+   "views": 1402,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Individual winery, Wikipedia/OSM only; covered by the wine area."
+  },
+  {
+   "name": "Tascott",
+   "views": 1331,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Quiet suburb, Wikivoyage names no specific sight."
+  },
+  {
+   "name": "Hunter Valley Wildlife Park",
+   "views": 1179,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Reject: no counted source found (not in Wikivoyage's Cessnock or Pokolbin pages, Visit NSW has only a category listing); Wikipedia only. Revisit if a tourism-board page lists it."
+  },
+  {
+   "name": "Surfest",
+   "views": 813,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Festival or event, not a permanent place."
+  },
+  {
+   "name": "Miss Porter's House",
+   "views": 688,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Open only one afternoon a month, so not there whenever a visitor arrives."
+  },
+  {
+   "name": "Mount Royal National Park",
+   "views": 688,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Reject: remote, little visitor infrastructure; NPWS lists one walk and a campground only. The owner could revisit, since every national park is nominally a destination."
+  },
+  {
+   "name": "Werakata National Park",
+   "views": 643,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Reject: woodland with a picnic area and a mountain-bike loop only, nothing a visitor travels for."
+  },
+  {
+   "name": "Fishermans Bay",
+   "views": 556,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Picnic foreshore at Nelson Bay, not a distinct draw."
+  },
+  {
+   "name": "South Sea Islands Museum",
+   "views": 441,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Reject: small local museum with limited opening, one source."
+  },
+  {
+   "name": "Mount Allyn",
+   "views": 326,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Peak with only OSM and Wikipedia support, no visitor track named."
+  },
+  {
+   "name": "Maitland Regional Art Gallery",
+   "views": 308,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Reject: ordinary regional gallery, one source."
+  }
+ ],
+ "tied_with_lowest_left_out": [
+  {
+   "name": "Edogawa Commemorative Garden",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Stays review. For: free Japanese garden in Gosford, Wikivoyage lists it, a 30-40 minute stop. Against: one counted source, a modest civic garden beside the regional gallery. Owner call."
+  },
+  {
+   "name": "Gosford Regional Gallery",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Reject: ordinary regional gallery, one source, on the same site as Edogawa Garden."
+  },
+  {
+   "name": "Central Coast Marine Discovery Centre",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Reject: small marine-science education centre, one source."
+  },
+  {
+   "name": "Australian Rainforest Sanctuary at the Forest of Tranquility",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Reject: one source, little profile, limited opening."
+  },
+  {
+   "name": "Glenworth Valley Outdoor Adventures",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Stays review. For: Wikivoyage lists the valley as a place for horse riding, kayaking and quad bikes; a half-day visit. Against: one source and it is mostly a bookable operator; the valley itself has no public access without a booking."
+  },
+  {
+   "name": "Central Coast Reef and Game Fishing Charters",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Charter operator, not a place. No coordinates."
+  },
+  {
+   "name": "Mooney Mooney Nature Walk",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Reject: short local walk, one NPWS mention, no coordinates."
+  },
+  {
+   "name": "Wondabyne to Patonga Walking Track",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Reject: a stage of the Great North Walk (already an existing spot) between a rail halt and Patonga; near-duplicate."
+  },
+  {
+   "name": "Allen Strom Lookout",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Minor lookout on the Bouddi Coastal Walk, part of a larger spot."
+  },
+  {
+   "name": "Bullimah Lookout",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Minor lookout on the Bouddi tracks, part of a larger spot."
+  },
+  {
+   "name": "Gerrin Point Lookout",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Minor lookout on the Bouddi tracks, part of a larger spot."
+  },
+  {
+   "name": "Marie Byles Lookout",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Minor lookout on the Bouddi tracks, part of a larger spot."
+  },
+  {
+   "name": "Mount Bouddi Walking Track",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Section of the Bouddi walking network, part of Bouddi Coastal Walk/park."
+  },
+  {
+   "name": "Swansea Channel",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Fishing spot under a bridge, no distinct visit; one source."
+  },
+  {
+   "name": "Lake Macquarie Variety Playground",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Local playground in Speers Point Park, not a travel draw."
+  },
+  {
+   "name": "Strike Charlestown",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Entertainment venue (bowling/ games centre), plain commercial venue. No coordinates."
+  },
+  {
+   "name": "The Lock-Up Cultural Centre",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Reject: small gallery in an old lock-up, one source."
+  },
+  {
+   "name": "King Edward Park",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Stays review. For: Wikivoyage lists the clifftop park, with Bogey Hole, ANZAC Walk and Bathers Way beside it; a pleasant stop. Against: one source and it largely overlaps those spots; no clear photo of the park on Commons."
+  },
+  {
+   "name": "Newcastle Regional Library",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Library, civic building. No coordinates."
+  },
+  {
+   "name": "Soldiers Baths",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Reject: minor bath in the Newcastle baths cluster, one source."
+  },
+  {
+   "name": "Tyrrell's",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Individual winery, covered by the Pokolbin wine area. No coordinates."
+  },
+  {
+   "name": "Hot-air Ballooning Hunter Valley",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Balloon tour operator, not a place."
+  },
+  {
+   "name": "Gone Walkabout Safaris",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Tour operator. No coordinates."
+  },
+  {
+   "name": "Boutique Wine Tours",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Tour operator. No coordinates."
+  },
+  {
+   "name": "Aussie Wine Tours",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Tour operator. No coordinates."
+  },
+  {
+   "name": "Cessnock Heritage Walk",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Reject: town route with no stop point, one source."
+  },
+  {
+   "name": "Buttai Barn",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Barn used for bush dances, an event venue not a standing attraction."
+  },
+  {
+   "name": "Maitland Park",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Ordinary local sports park."
+  },
+  {
+   "name": "Morpeth Jazz Festival",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Festival, an event."
+  },
+  {
+   "name": "Bitter & Twisted Boutique Beer Festival",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Beer festival, an event."
+  },
+  {
+   "name": "Dungog Museum",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Reject: small town museum, one source."
+  },
+  {
+   "name": "Gloucester Tops",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "An area of Barrington Tops park, part of a larger spot."
+  },
+  {
+   "name": "Shark Island (Port Stephens)",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Reject: tide-dependent, one source, no coordinates."
+  },
+  {
+   "name": "Tomaree Head Summit Walk",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Near-duplicate of Mount Tomaree (same summit, same coordinates)."
+  },
+  {
+   "name": "Fort Tomaree",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Reject: part of the Mount Tomaree summit walk."
+  },
+  {
+   "name": "Birubi Point Aboriginal Place",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Reject: program-based storytelling site with no verifiable point or standing visit; the headland is covered by Anna Bay and One Mile Beach."
+  },
+  {
+   "name": "Birubi Point to One Mile Beach Walking Track",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Short walking track between two places already listed; part of the Tomaree Coastal Walk. No coordinates."
+  },
+  {
+   "name": "Shoal Bay to Fingal Bay Walking Track",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Track section of the Tomaree Coastal Walk, part of a larger spot. No coordinates."
+  },
+  {
+   "name": "Halifax Park",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Shore dive site with no distinct visit; no coordinates."
+  },
+  {
+   "name": "Irukandji Shark & Ray Encounters",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Operator-run animal encounters rather than a standing place."
+  },
+  {
+   "name": "Sand Dune Safaris",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Sand dune tour operator, not a place."
+  },
+  {
+   "name": "Moonshadow-TQC Cruises",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Cruise operator; the destination is the bay."
+  },
+  {
+   "name": "Imagine Cruises",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Cruise operator. No coordinates."
+  },
+  {
+   "name": "Port Stephens-Great Lakes Marine Park",
+   "views": 0,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Reject: a large protected area, not a place; Wikipedia only."
+  },
+  {
+   "name": "Mattara Festival",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Festival or event, not a permanent place."
+  },
+  {
+   "name": "This Is Not Art Festival",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Festival or event, not a permanent place."
+  },
+  {
+   "name": "Jazz in the Vines",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Festival or event, not a permanent place."
+  },
+  {
+   "name": "A Day on the Green",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Festival or event, not a permanent place."
+  },
+  {
+   "name": "Central Coast Oyster Festival",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Festival or event, not a permanent place."
+  },
+  {
+   "name": "The Entrance Winter Blues & Jazz Festival",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Festival or event, not a permanent place."
+  },
+  {
+   "name": "Spike Fest",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Festival or event, not a permanent place."
+  }
+ ],
+ "strongest_outsiders": [
+  {
+   "name": "Maitland",
+   "views": 32503,
+   "counted_sources": 1,
+   "outcome": "kept; outside Sydney and every other existing destination span, placed in a proposed destination"
+  },
+  {
+   "name": "Cessnock",
+   "views": 23166,
+   "counted_sources": 1,
+   "outcome": "kept; outside Sydney and every other existing destination span, placed in a proposed destination"
+  },
+  {
+   "name": "Dungog",
+   "views": 15862,
+   "counted_sources": 1,
+   "outcome": "kept; outside Sydney and every other existing destination span, placed in a proposed destination"
+  },
+  {
+   "name": "Woy Woy",
+   "views": 15855,
+   "counted_sources": 1,
+   "outcome": "kept; outside Sydney and every other existing destination span, placed in a proposed destination"
+  },
+  {
+   "name": "Nelson Bay",
+   "views": 15290,
+   "counted_sources": 2,
+   "outcome": "kept; outside Sydney and every other existing destination span, placed in a proposed destination"
+  },
+  {
+   "name": "Lake Macquarie",
+   "views": 12294,
+   "counted_sources": 1,
+   "outcome": "kept; outside Sydney and every other existing destination span, placed in a proposed destination"
+  },
+  {
+   "name": "Australian Reptile Park",
+   "views": 11776,
+   "counted_sources": 1,
+   "outcome": "kept; outside Sydney and every other existing destination span, placed in a proposed destination"
+  },
+  {
+   "name": "Port Stephens",
+   "views": 11157,
+   "counted_sources": 1,
+   "outcome": "kept; outside Sydney and every other existing destination span, placed in a proposed destination"
+  },
+  {
+   "name": "Stockton Beach",
+   "views": 7198,
+   "counted_sources": 2,
+   "outcome": "kept; outside Sydney and every other existing destination span, placed in a proposed destination"
+  },
+  {
+   "name": "Maitland Gaol",
+   "views": 6910,
+   "counted_sources": 1,
+   "outcome": "kept; outside Sydney and every other existing destination span, placed in a proposed destination"
+  },
+  {
+   "name": "Morpeth",
+   "views": 6361,
+   "counted_sources": 1,
+   "outcome": "kept; outside Sydney and every other existing destination span, placed in a proposed destination"
+  },
+  {
+   "name": "Pokolbin",
+   "views": 6352,
+   "counted_sources": 2,
+   "outcome": "kept; outside Sydney and every other existing destination span, placed in a proposed destination"
+  }
+ ],
+ "national_parks_left_out_note": "Mount Royal National Park and Werakata National Park were rejected (remote or only a picnic area and a bike loop; one source each). COVERAGE.md makes every national park a destination, so the owner should confirm the exclusion on the \"What qualifies\" ground (2: nothing a visitor travels for), not on placement.",
+ "review_list_for_owner": [
+  "Edogawa Commemorative Garden",
+  "Glenworth Valley Outdoor Adventures",
+  "King Edward Park"
+ ],
+ "marginal_kept_for_owner": [
+  "Bathers Way",
+  "Patonga to Pearl Beach Walking Track"
+ ],
+ "benchmark": "No NZ benchmark place lies in this region. Region-relevant checks: operators and vehicles rejected (Irukandji Shark & Ray Encounters, Sand Dune Safaris, Moonshadow-TQC Cruises, Imagine Cruises, Hot-air Ballooning, wine tour operators, Central Coast reef charters) in favour of the places (Stockton Beach, Port Stephens, Pokolbin); festivals and annual events rejected (Surfest, Mattara, This Is Not Art, Jazz in the Vines, A Day on the Green, Steamfest, Morpeth Jazz Festival and others); a cathedral, a library, a stadium and a sports park rejected as civic or venue buildings (Christ Church Cathedral, Newcastle Regional Library, Central Coast Stadium, Maitland Park); Miss Porter's House rejected as open one afternoon a month; Wondabyne (rail halt whose draw is the walk beyond it) rejected, not kept, as the gateway-journey case."
+}

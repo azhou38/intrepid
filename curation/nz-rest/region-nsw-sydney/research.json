@@ -1,0 +1,1628 @@
+{
+ "region": "nsw-sydney",
+ "researcher": "quill",
+ "date": "2026-10-19",
+ "scope": "sydney-74..81 (added to Sydney) plus the STANDALONE fallbacks of the proposed destinations pittwater, hawkesbury, penrith, macarthur, royal-national-park (placed ids kept in 'id'; the fallback id is in 'standalone_id'), Brooklyn (central-coast-22 -> brooklyn) and Yerranderie. Captain Cook's Landing Place (merge) and the review list skipped.",
+ "entries": [
+  {
+   "id": "sydney-74",
+   "name": "WILD LIFE Sydney Zoo",
+   "kind": "new",
+   "destination": "sydney",
+   "category": "entertainment",
+   "facts": [
+    {
+     "claim": "Official opening times: 10am to 5pm, last entry 4pm (the page shows 'today'; the RAA listing says 9:30am in NSW school holidays, not on the official page).",
+     "source": "https://www.wildlifesydney.com.au/plan-your-day/before-you-visit/opening-hours/"
+    },
+    {
+     "claim": "Official price table: adult general admission $39 booked online in advance, $49 on the day (child $26 online / $36 on the day).",
+     "source": "https://www.wildlifesydney.com.au/tickets-passes/price-table/"
+    },
+    {
+     "claim": "Exhibits named on the official site include Kangaroo Walkabout, Devil's Den, Koala Rooftop, Wallaby Cliffs and the Daintree Walkthrough.",
+     "source": "https://www.wildlifesydney.com.au/"
+    }
+   ],
+   "hours": "10:00 AM – 5:00 PM (last entry 4:00 PM)",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "costMin": 39,
+   "costMax": 49,
+   "currency": "AUD",
+   "ticketUrl": "https://www.wildlifesydney.com.au/",
+   "ticketUrl_note": "Verified: official site loaded (HTTP 200, title 'WILD LIFE Sydney Zoo - Official Website').",
+   "unverified": [
+    "School-holiday opening time (9:30am) is from a third-party (RAA) listing only."
+   ],
+   "wiki_title": "Wild Life Sydney",
+   "wiki_note": "Wikipedia article 'Wild Life Sydney' exists; the spot name differs in capitalisation, so set wiki to that title.",
+   "coordinates_check": {
+    "placement": {
+     "latitude": -33.86931,
+     "longitude": 151.20228
+    },
+    "new": {
+     "latitude": -33.869312,
+     "longitude": 151.202282
+    },
+    "moved_m": 0,
+    "source": "resolve-pin HIGH: OSM tourism=zoo 'WILD LIFE Sydney Zoo' via Photon (0 m) and Commons geotag median 12 m"
+   },
+   "coordinates": {
+    "latitude": -33.869312,
+    "longitude": 151.202282
+   },
+   "coordinates_source": "resolve-pin HIGH: OSM tourism=zoo 'WILD LIFE Sydney Zoo' via Photon (0 m) and Commons geotag median 12 m"
+  },
+  {
+   "id": "sydney-75",
+   "name": "Parramatta",
+   "kind": "new",
+   "destination": "sydney",
+   "category": "historic",
+   "facts": [
+    {
+     "claim": "Parramatta is commonly regarded as the second CBD of metropolitan Sydney and is a major transport hub for Western Sydney with a ferry wharf at Charles Street Weir.",
+     "source": "https://en.wikipedia.org/wiki/Parramatta"
+    },
+    {
+     "claim": "Wikivoyage's Parramatta guide lists Old Government House, Elizabeth Farm, Experiment Farm Cottage, Hambledon Cottage, Lancer Barracks and Parramatta Park as sights.",
+     "source": "https://en.wikivoyage.org/wiki/Sydney/Parramatta"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A city centre with no single steward or operator; no ticketUrl.",
+   "unverified": [],
+   "wiki_title": "Parramatta",
+   "coordinates_check": {
+    "placement": {
+     "latitude": -33.81472222,
+     "longitude": 151.00166667
+    },
+    "new": {
+     "latitude": -33.813984,
+     "longitude": 151.002666
+    },
+    "moved_m": 124,
+    "source": "resolve-pin: OSM place=suburb 'Parramatta' via Photon (124 m from the Wikipedia point; Commons geotag median 126 m away). The spot is the town, so the town-centre point is right; tool confidence LOW only because the sources are town points."
+   },
+   "coordinates": {
+    "latitude": -33.813984,
+    "longitude": 151.002666
+   },
+   "coordinates_source": "resolve-pin: OSM place=suburb 'Parramatta' via Photon (124 m from the Wikipedia point; Commons geotag median 126 m away). The spot is the town, so the town-centre point is right; tool confidence LOW only because the sources are town points."
+  },
+  {
+   "id": "sydney-76",
+   "name": "Ku-ring-gai Chase National Park",
+   "kind": "new",
+   "destination": "sydney",
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "NPWS: Ku-ring-gai Chase National Park is always open but may close in poor weather or fire danger; West Head gates close 6pm to 6am (8:30pm to 6am in daylight saving).",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/ku-ring-gai-chase-national-park"
+    },
+    {
+     "claim": "NPWS park entry fee: $12 per vehicle per day (vehicles over 8 seats $4.40 per adult, $2.20 per child); a per-vehicle fee, not per person.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/ku-ring-gai-chase-national-park"
+    },
+    {
+     "claim": "NPWS calls it Australia's second-oldest national park, in Sydney's north, with Bobbin Head picnic area, bushwalks, cycling, fishing and Aboriginal sites such as The Basin.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/ku-ring-gai-chase-national-park"
+    },
+    {
+     "claim": "Live NPWS alerts (7-12 Oct 2026): Kalkari Lookout and Upper Gledhills Falls closed, Berowra walking track partly closed, 1080 fox baiting 1 Aug 2026 to 31 Jan 2027; no park-wide closure.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/ku-ring-gai-chase-national-park/local-alerts"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "costMin": 12,
+   "costMax": 12,
+   "currency": "AUD",
+   "cost_note": "NPWS vehicle entry fee, $12 per vehicle per day; not per person. Free on foot or by ferry/boat.",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/ku-ring-gai-chase-national-park",
+   "ticketUrl_note": "Verified: NPWS managing-agency page (HTTP 200, title 'Ku-ring-gai Chase National Park | NSW National Parks').",
+   "bio_issue": "'boat-only coves' is not stated on the NPWS park page (The Basin has a ferry/boat landing fee); suggested: 'A large national park on Broken Bay and the Hawkesbury with bushwalks, Aboriginal rock art and waterside picnic areas.'",
+   "unverified": [
+    "Whether the 'boat-only coves' claim holds (not found on NPWS page)."
+   ],
+   "coordinates_check": {
+    "placement": {
+     "latitude": -33.628226,
+     "longitude": 151.229354
+    },
+    "new": {
+     "latitude": -33.644197,
+     "longitude": 151.236592
+    },
+    "moved_m": 1898,
+    "source": "OSM leisure=marina way 'd'Albora Marinas Akuna Bay' (Overpass, way 1353573956 centre), NPWS lists 'Akuna Bay' picnic area and 'Dalbora Akuna Bay' boating facility in the park; park hub chosen so the pin does not sit on Bobbin Head (sydney-77) or West Head. MEDIUM. The park polygon centroid (-33.6282, 151.2268) is 2.1 km away."
+   },
+   "coordinates": {
+    "latitude": -33.644197,
+    "longitude": 151.236592
+   },
+   "coordinates_source": "OSM leisure=marina way 'd'Albora Marinas Akuna Bay' (Overpass, way 1353573956 centre), NPWS lists 'Akuna Bay' picnic area and 'Dalbora Akuna Bay' boating facility in the park; park hub chosen so the pin does not sit on Bobbin Head (sydney-77) or West Head. MEDIUM. The park polygon centroid (-33.6282, 151.2268) is 2.1 km away."
+  },
+  {
+   "id": "sydney-77",
+   "name": "Bobbin Head",
+   "kind": "new",
+   "destination": "sydney",
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "NPWS: Bobbin Head is a large waterfront picnic area in the west of Ku-ring-gai Chase with barbecues, a playground, Bobbin Head Inn Cafe, Waterside Bistro, Empire Marina, a mangrove boardwalk and Bobbin Head Visitor Centre.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/picnic-areas/bobbin-head"
+    },
+    {
+     "claim": "Bobbin Head Visitor Centre contact hours: 10am to 4pm daily (9am to 4pm in summer school holidays, closed 12pm to 12:30pm); closed Christmas Day.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/ku-ring-gai-chase-national-park"
+    },
+    {
+     "claim": "Park entry fees apply at Bobbin Head ($12 per vehicle per day); Kimport hires 2- and 4-seater pedal boats here.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/picnic-areas/bobbin-head"
+    }
+   ],
+   "hours": "Open 24 hours (Visitor Centre 10:00 AM – 4:00 PM daily)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "costMin": 12,
+   "costMax": 12,
+   "currency": "AUD",
+   "cost_note": "NPWS vehicle entry fee, $12 per vehicle per day; not per person.",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/picnic-areas/bobbin-head",
+   "ticketUrl_note": "Verified: NPWS page (HTTP 200, title 'Bobbin Head | NSW National Parks').",
+   "unverified": [
+    "Whether the picnic area itself has opening hours (the park is always open; only the visitor centre's hours are stated)."
+   ],
+   "wiki_title": "Bobbin Head, New South Wales",
+   "coordinates_check": {
+    "placement": {
+     "latitude": -33.659548,
+     "longitude": 151.1588
+    },
+    "new": {
+     "latitude": -33.659478,
+     "longitude": 151.158857
+    },
+    "moved_m": 9,
+    "source": "resolve-pin HIGH: OSM tourism=information 'Bobbin Head Visitor Centre' via Photon (55 m); within 8 m of the placement point, replacing the tool's LOW road match ('Bobbin Head Road')"
+   },
+   "coordinates": {
+    "latitude": -33.659478,
+    "longitude": 151.158857
+   },
+   "coordinates_source": "resolve-pin HIGH: OSM tourism=information 'Bobbin Head Visitor Centre' via Photon (55 m); within 8 m of the placement point, replacing the tool's LOW road match ('Bobbin Head Road')"
+  },
+  {
+   "id": "sydney-78",
+   "name": "Rose Seidler House",
+   "kind": "new",
+   "destination": "sydney",
+   "category": "museum",
+   "facts": [
+    {
+     "claim": "Museums of History NSW: Rose Seidler House, 71 Clissold Road, Wahroonga, designed by Harry Seidler for his parents and completed in 1950; open Sundays 10am to 4pm, closed Christmas Day.",
+     "source": "https://mhnsw.au/visit-us/rose-seidler-house/plan-your-visit/"
+    },
+    {
+     "claim": "Museum entry is free; pre-booking tickets online is recommended (groups over 20 must book).",
+     "source": "https://mhnsw.au/visit-us/rose-seidler-house/plan-your-visit/"
+    },
+    {
+     "claim": "A separate curator-led tour of Rose Seidler House and Julian Rose House was $50 per adult in the 2024 Sydney Open Series (not the standard entry).",
+     "source": "https://www.nationaltrust.org.au/ahf_event/curator-led-tour-of-rose-seidler-house-julian-rose-house/"
+    }
+   ],
+   "hours": "Sundays 10:00 AM – 4:00 PM",
+   "closedDays": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": "https://mhnsw.au/visit-us/rose-seidler-house/",
+   "ticketUrl_note": "Verified: official page of the steward, Museums of History NSW (HTTP 200, title 'Rose Seidler House'; the old sydneylivingmuseums.com.au URL redirects here).",
+   "bio_issue": "Bio omits that it is open Sundays only; suggested: \"Harry Seidler's 1950 modernist house in Wahroonga, open to visitors on Sundays as a house museum.\"",
+   "unverified": [
+    "Whether a Christmas Day closure should be a specialClosure entry (stated on the page as 'Closed Christmas Day')."
+   ],
+   "coordinates_check": {
+    "placement": {
+     "latitude": -33.70977,
+     "longitude": 151.14209
+    },
+    "new": {
+     "latitude": -33.709737,
+     "longitude": 151.141889
+    },
+    "moved_m": 19,
+    "source": "resolve-pin HIGH: OSM historic=house 'Rose Seidler House' via Photon (19 m), Wikipedia article point (19 m) and Commons median (25 m) agree"
+   },
+   "coordinates": {
+    "latitude": -33.709737,
+    "longitude": 151.141889
+   },
+   "coordinates_source": "resolve-pin HIGH: OSM historic=house 'Rose Seidler House' via Photon (19 m), Wikipedia article point (19 m) and Commons median (25 m) agree"
+  },
+  {
+   "id": "sydney-79",
+   "name": "Parramatta Park",
+   "kind": "new",
+   "destination": "sydney",
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "Greater Sydney Parklands (steward): Parramatta Park is at Pitt St and Macquarie St, on the western edge of the CBD; pedestrian access 24 hours a day, 7 days a week (vehicle gate hours on a separate page).",
+     "source": "https://www.greatersydneyparklands.nsw.gov.au/parramatta-park/plan-your-visit-parramatta-park"
+    },
+    {
+     "claim": "Wikivoyage: includes the Tudor Gatehouses, Governor's Bath House, Old Dairy and Boer War Memorial, a cycling track and walks; Old Government House (UNESCO World Heritage) is inside the park.",
+     "source": "https://en.wikivoyage.org/wiki/Sydney/Parramatta"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.greatersydneyparklands.nsw.gov.au/parramatta-park",
+   "ticketUrl_note": "Verified: steward's page (HTTP 200, title 'Parramatta Park | Greater Sydney Parklands'); the old parrapark.com.au redirects to it.",
+   "unverified": [
+    "Vehicle gate hours (page says 'Learn more', not captured); 24 hours applies to pedestrians only."
+   ],
+   "wiki_title": "Parramatta Park, New South Wales",
+   "coordinates_check": {
+    "placement": {
+     "latitude": -33.80819,
+     "longitude": 150.99913
+    },
+    "new": {
+     "latitude": -33.8138424,
+     "longitude": 150.9975345
+    },
+    "moved_m": 646,
+    "source": "OSM historic=building 'Macquarie Street Gatehouse' (Overpass way 412919809; the park's Macquarie St/Pitt St main entrance), Wikipedia 'Parramatta Park, New South Wales' point 35 m away. HIGH. The tool's park centroid (-33.8082, 150.9991) is 620 m north."
+   },
+   "coordinates": {
+    "latitude": -33.8138424,
+    "longitude": 150.9975345
+   },
+   "coordinates_source": "OSM historic=building 'Macquarie Street Gatehouse' (Overpass way 412919809; the park's Macquarie St/Pitt St main entrance), Wikipedia 'Parramatta Park, New South Wales' point 35 m away. HIGH. The tool's park centroid (-33.8082, 150.9991) is 620 m north."
+  },
+  {
+   "id": "sydney-80",
+   "name": "Mona Vale Beach",
+   "kind": "new",
+   "destination": "sydney",
+   "category": "beach",
+   "facts": [
+    {
+     "claim": "Wikivoyage: a long golden sandy beach with good surfing and swimming, car parking near the beach and flagged areas with lifesaver patrols through the summer; rougher surf than Warriewood.",
+     "source": "https://en.wikivoyage.org/wiki/Sydney/Northern_Beaches"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Public beach with no single steward; no ticketUrl.",
+   "unverified": [
+    "Patrol dates and times not checked (Wikivoyage says 'through the summer')."
+   ],
+   "wiki_note": "'Mona Vale Beach' has no article of its own (it falls under Mona Vale, New South Wales); the photo needs a hand-picked override.",
+   "coordinates_check": {
+    "placement": {
+     "latitude": -33.68297,
+     "longitude": 151.31183
+    },
+    "new": {
+     "latitude": -33.682969,
+     "longitude": 151.311833
+    },
+    "moved_m": 0,
+    "source": "resolve-pin MEDIUM: OSM natural=beach 'Mona Vale Beach' (node/way centre, Photon and Overpass way 13858412 agree within 30 m); Commons median is 820 m north (car-park end), so tool says LOW"
+   },
+   "coordinates": {
+    "latitude": -33.682969,
+    "longitude": 151.311833
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM natural=beach 'Mona Vale Beach' (node/way centre, Photon and Overpass way 13858412 agree within 30 m); Commons median is 820 m north (car-park end), so tool says LOW"
+  },
+  {
+   "id": "sydney-81",
+   "name": "Warriewood Beach",
+   "kind": "new",
+   "destination": "sydney",
+   "category": "beach",
+   "facts": [
+    {
+     "claim": "Wikivoyage: a small, picturesque beach protected by headlands, calmer than Mona Vale; reached by walking down a trail from the top or by a small car park beside the beach; a walking trail on the southern headland gives views.",
+     "source": "https://en.wikivoyage.org/wiki/Sydney/Northern_Beaches"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Public beach with no single steward; no ticketUrl.",
+   "unverified": [],
+   "wiki_note": "'Warriewood Beach' redirects to Warriewood (suburb); views belong to the broader article; hand-pick a photo.",
+   "coordinates_check": {
+    "placement": {
+     "latitude": -33.69073,
+     "longitude": 151.30867
+    },
+    "new": {
+     "latitude": -33.690735,
+     "longitude": 151.308667
+    },
+    "moved_m": 1,
+    "source": "resolve-pin HIGH: OSM natural=beach 'Warriewood Beach' via Photon (1 m) and Overpass way 4044016 (centre within 40 m)"
+   },
+   "coordinates": {
+    "latitude": -33.690735,
+    "longitude": 151.308667
+   },
+   "coordinates_source": "resolve-pin HIGH: OSM natural=beach 'Warriewood Beach' via Photon (1 m) and Overpass way 4044016 (centre within 40 m)"
+  },
+  {
+   "id": "pittwater-1",
+   "name": "Palm Beach",
+   "kind": "fallback-standalone",
+   "standalone_id": "palm-beach",
+   "category": "beach",
+   "facts": [
+    {
+     "claim": "Wikivoyage lists Palm Beach Ferries running Palm Beach to Ettalong and Pittwater ferry services to Great Mackerel Beach; Palm Beach is at the northern end of the Northern Beaches towards Barrenjoey Point and Broken Bay.",
+     "source": "https://en.wikivoyage.org/wiki/Sydney/Northern_Beaches"
+    },
+    {
+     "claim": "NPWS: Palm Beach is the base for the Barrenjoey Lighthouse walk (paid parking at Governor Phillip Park).",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/historic-buildings-places/barrenjoey-lighthouse"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Public beach and village with no single steward; no ticketUrl.",
+   "unverified": [
+    "Wikivoyage's Northern Beaches page has no dedicated Palm Beach entry: the placement's single counted source says little beyond the beach's position; the beach description rests on Wikipedia/NPWS context."
+   ],
+   "wiki_title": "Palm Beach, New South Wales",
+   "coordinates_check": {
+    "placement": {
+     "latitude": -33.59119,
+     "longitude": 151.32529
+    },
+    "new": {
+     "latitude": -33.591189,
+     "longitude": 151.325293
+    },
+    "moved_m": 0,
+    "source": "OSM natural=beach node 'Palm Beach' via Photon (0 m from placement); the OSM beach relation 2978551 has its bbox centre 190 m east in the water, the Wikipedia article point (-33.600, 151.3228) is the suburb 1 km south. MEDIUM; tool LOW because Commons median is 668 m north. A 2 km beach pinned at the north end near Barrenjoey Rd/Governor Phillip Park."
+   },
+   "coordinates": {
+    "latitude": -33.591189,
+    "longitude": 151.325293
+   },
+   "coordinates_source": "OSM natural=beach node 'Palm Beach' via Photon (0 m from placement); the OSM beach relation 2978551 has its bbox centre 190 m east in the water, the Wikipedia article point (-33.600, 151.3228) is the suburb 1 km south. MEDIUM; tool LOW because Commons median is 668 m north. A 2 km beach pinned at the north end near Barrenjoey Rd/Governor Phillip Park."
+  },
+  {
+   "id": "pittwater-2",
+   "name": "Barrenjoey Lighthouse",
+   "kind": "fallback-standalone",
+   "standalone_id": "barrenjoey-lighthouse",
+   "category": "historic",
+   "facts": [
+    {
+     "claim": "NPWS: Barrenjoey Lighthouse, built 1881 from sandstone quarried on site, stands 91 m above sea level at Barrenjoey Head; no vehicle access (paid parking at Governor Phillip Park); about 30 minutes each way on Barrenjoey track (1 km) or the steeper Smugglers track; the inside is accessible only by guided tour but you can walk around the outside.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/historic-buildings-places/barrenjoey-lighthouse"
+    },
+    {
+     "claim": "NPWS: park entry fees do not apply at this location.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/historic-buildings-places/barrenjoey-lighthouse"
+    },
+    {
+     "claim": "NPWS guided tours generally run every Sunday at 11am, 12pm, 1pm, 2pm and 3pm (30 minutes); adult $15, concession $13, child $11, 10% discount for 4+; 1.1 km walk with steep sections.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/guided-tours/barrenjoey-lighthouse-tour"
+    },
+    {
+     "claim": "NPWS local alerts for the lighthouse (reviewed 14 Oct 2026): no current alerts in the area.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/historic-buildings-places/barrenjoey-lighthouse/local-alerts"
+    }
+   ],
+   "hours": "Walk open daily; interior by Sunday tour 11:00 AM – 3:00 PM",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": true,
+   "cost_note": "Walking up and viewing the outside is free (no NPWS park entry fee here). The optional Sunday interior tour is $15 adult. Street parking at Governor Phillip Park is paid.",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/historic-buildings-places/barrenjoey-lighthouse",
+   "ticketUrl_note": "Verified: NPWS page (HTTP 200, title 'Barrenjoey Lighthouse | NSW National Parks'); the tour booking is on the NPWS 'Barrenjoey Lighthouse tour' page.",
+   "bio_issue": "Bio says '30 to 40 minute walk'; NPWS says about 30 minutes each way. Suggested: 'An 1881 sandstone lighthouse on Barrenjoey Head, reached by a 30-minute walk from Palm Beach.'",
+   "unverified": [
+    "Parking fee amount (NPWS says only 'paid parking')."
+   ],
+   "wiki_title": "Barrenjoey Head Lighthouse",
+   "coordinates_check": {
+    "placement": {
+     "latitude": -33.580189,
+     "longitude": 151.329826
+    },
+    "new": {
+     "latitude": -33.580189,
+     "longitude": 151.329826
+    },
+    "moved_m": 0,
+    "source": "resolve-pin: OSM man_made=lighthouse 'Barrenjoey Lighthouse' via Photon (0 m from placement); Commons geotag median 112 m away. The lighthouse is a precise feature; tool LOW only because the median is just over 100 m. MEDIUM."
+   },
+   "coordinates": {
+    "latitude": -33.580189,
+    "longitude": 151.329826
+   },
+   "coordinates_source": "resolve-pin: OSM man_made=lighthouse 'Barrenjoey Lighthouse' via Photon (0 m from placement); Commons geotag median 112 m away. The lighthouse is a precise feature; tool LOW only because the median is just over 100 m. MEDIUM."
+  },
+  {
+   "id": "pittwater-3",
+   "name": "West Head",
+   "kind": "fallback-standalone",
+   "standalone_id": "west-head-ku-ring-gai",
+   "category": "viewpoint",
+   "facts": [
+    {
+     "claim": "NPWS: West Head lookout is regarded as one of Sydney's best, with views of Broken Bay, Pittwater, Barrenjoey Headland and Lighthouse, and across the Hawkesbury to Lion Island and Patonga; a large sandstone viewing area with interpretive signs; the Aboriginal Heritage walk (rock art and engravings) and Resolute picnic area are nearby.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/west-head-lookout"
+    },
+    {
+     "claim": "NPWS: gates to West Head are open 6am to 8:30pm during daylight saving and 6am to 6pm the rest of the year; park entry fees apply ($12 per vehicle per day).",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/west-head-lookout"
+    },
+    {
+     "claim": "NPWS local alerts (reviewed 7 Oct 2026): only a 1080 fox-baiting notice (1 Aug 2026 to 31 Jan 2027); no road or lookout closure. An earlier closure of the lookout area (24 Nov 2025 to 2 Feb 2026, slope instability) has ended.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/west-head-lookout/local-alerts"
+    }
+   ],
+   "hours": "6:00 AM – 6:00 PM (until 8:30 PM in daylight saving)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "costMin": 12,
+   "costMax": 12,
+   "currency": "AUD",
+   "cost_note": "NPWS vehicle entry fee, $12 per vehicle per day; not per person.",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/west-head-lookout",
+   "ticketUrl_note": "Verified: NPWS page (HTTP 200, title 'West Head lookout | NSW National Parks').",
+   "unverified": [
+    "The 2025-26 closure end is inferred from the current alert list showing no closure (alert page does not say 'reopened')."
+   ],
+   "wiki_title": "West Head, New South Wales",
+   "wiki_note": "'West Head' on Wikipedia resolves to a New Zealand place (-41.2, 174.3); use a specific title or a hand-picked photo.",
+   "coordinates_check": {
+    "placement": {
+     "latitude": -33.580148,
+     "longitude": 151.308383
+    },
+    "new": {
+     "latitude": -33.57914,
+     "longitude": 151.309244
+    },
+    "moved_m": 138,
+    "source": "resolve-pin MEDIUM: OSM tourism=viewpoint 'West Head Lookout' via Photon; Commons median is 142 m away (the placement point, ~130 m from the viewpoint). The lookout is a single viewpoint node."
+   },
+   "coordinates": {
+    "latitude": -33.57914,
+    "longitude": 151.309244
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM tourism=viewpoint 'West Head Lookout' via Photon; Commons median is 142 m away (the placement point, ~130 m from the viewpoint). The lookout is a single viewpoint node."
+  },
+  {
+   "id": "pittwater-4",
+   "name": "Whale Beach",
+   "kind": "fallback-standalone",
+   "standalone_id": "whale-beach",
+   "category": "beach",
+   "facts": [
+    {
+     "claim": "Wikivoyage: a peaceful beach with a smaller rose-gold sand beach between two cliff faces; hosts the Big Swim every January since 1974.",
+     "source": "https://en.wikivoyage.org/wiki/Sydney/Northern_Beaches"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Public beach with no single steward; no ticketUrl.",
+   "unverified": [
+    "'Patrolled' (surf life saving club exists in OSM; patrol dates not checked)."
+   ],
+   "wiki_title": "Whale Beach, New South Wales",
+   "coordinates_check": {
+    "placement": {
+     "latitude": -33.61075,
+     "longitude": 151.33156
+    },
+    "new": {
+     "latitude": -33.610754,
+     "longitude": 151.331556
+    },
+    "moved_m": 1,
+    "source": "resolve-pin HIGH: OSM natural=beach 'Whale Beach' via Photon (1 m), Overpass way 4335014 (centre within 20 m), Whale Beach Reserve 36 m"
+   },
+   "coordinates": {
+    "latitude": -33.610754,
+    "longitude": 151.331556
+   },
+   "coordinates_source": "resolve-pin HIGH: OSM natural=beach 'Whale Beach' via Photon (1 m), Overpass way 4335014 (centre within 20 m), Whale Beach Reserve 36 m"
+  },
+  {
+   "id": "hawkesbury-1",
+   "name": "Windsor",
+   "kind": "fallback-standalone",
+   "standalone_id": "windsor",
+   "category": "historic",
+   "facts": [
+    {
+     "claim": "Wikipedia: Windsor is a historic town on the Hawkesbury River 56 km north-west of the Sydney CBD where many of the oldest surviving European buildings in Australia stand; settled c.1791 as Green Hills; Governor Macquarie ordered its church (St Matthew's, by Francis Greenway), school-house, gaol and the Macquarie Arms inn.",
+     "source": "https://en.wikipedia.org/wiki/Windsor,_New_South_Wales"
+    },
+    {
+     "claim": "Wikivoyage: the Hawkesbury Museum's Heritage Highlights pamphlet works as a 90-minute walking tour of 19th-century buildings; Hawkesbury Regional Museum (8 Baker St) is free, 10am to 4pm daily except Tuesday.",
+     "source": "https://en.wikivoyage.org/wiki/Windsor_(New_South_Wales)"
+    },
+    {
+     "claim": "Thompson Square Conservation Area is on the NSW State Heritage Register (listed in the Wikipedia heritage list).",
+     "source": "https://en.wikipedia.org/wiki/Windsor,_New_South_Wales"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A town with no single steward; no ticketUrl.",
+   "unverified": [
+    "'Georgian buildings' wording not checked verbatim (sources say colonial/Greenway)."
+   ],
+   "wiki_title": "Windsor, New South Wales",
+   "coordinates_check": {
+    "placement": {
+     "latitude": -33.61361111,
+     "longitude": 150.81166667
+    },
+    "new": {
+     "latitude": -33.605534,
+     "longitude": 150.821953
+    },
+    "moved_m": 1309,
+    "source": "OSM place=town 'Windsor' via Photon, corroborated by Wikivoyage's Hawkesbury Regional Museum listing (-33.604, 150.822) 150 m away; chosen over the Wikipedia/station point (-33.6138, 150.8111), which is the railway station 1.3 km south-west of the colonial centre (Thompson Square). MEDIUM."
+   },
+   "coordinates": {
+    "latitude": -33.605534,
+    "longitude": 150.821953
+   },
+   "coordinates_source": "OSM place=town 'Windsor' via Photon, corroborated by Wikivoyage's Hawkesbury Regional Museum listing (-33.604, 150.822) 150 m away; chosen over the Wikipedia/station point (-33.6138, 150.8111), which is the railway station 1.3 km south-west of the colonial centre (Thompson Square). MEDIUM."
+  },
+  {
+   "id": "hawkesbury-2",
+   "name": "Cattai National Park",
+   "kind": "fallback-standalone",
+   "standalone_id": "cattai-national-park",
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "NPWS: open 8am to 6pm May to August and 8am to 8pm September to April; park entry $8 per vehicle per day (motorbikes included), pay machines on site or the Park'nPay app.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/cattai-national-park"
+    },
+    {
+     "claim": "NPWS: two parts, the popular Cattai Farm area on the Hawkesbury River (camping, canoeing, barbecues, bike riding; an intact First Fleet settler land grant with historic sites) and the quieter Mitchell Park.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/cattai-national-park"
+    },
+    {
+     "claim": "Wikipedia: includes Hope Farm, where a stone windmill (Hope Farm Mill, probably c.1806) is believed to be the oldest industrial site in Australia; Cattai Homestead was built around 1820.",
+     "source": "https://en.wikipedia.org/wiki/Cattai_National_Park"
+    },
+    {
+     "claim": "NPWS alert (reviewed 16 Oct 2026): park closed weekdays 12 to 23 October 2026 for an aerial pest control operation.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/cattai-national-park/local-alerts"
+    }
+   ],
+   "hours": "8:00 AM – 8:00 PM (Sep–Apr); 8:00 AM – 6:00 PM (May–Aug)",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 4,
+   "costMin": 8,
+   "costMax": 8,
+   "currency": "AUD",
+   "cost_note": "NPWS vehicle entry fee, $8 per vehicle per day; not per person.",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/cattai-national-park",
+   "ticketUrl_note": "Verified: NPWS page (HTTP 200, title 'Cattai National Park | NSW National Parks').",
+   "bio_issue": "'the 1821 Cattai Farm and windmill ruins': sources say homestead c.1820 and windmill c.1806 at Hope Farm, and a windmill that is not described as ruins. Suggested: \"A Hawkesbury River park with Cattai Farm's old homestead and Hope Farm's early windmill, plus camping and canoeing.\"",
+   "unverified": [
+    "Weekday closure 12-23 Oct 2026 is temporary (aerial pest control)."
+   ],
+   "coordinates_check": {
+    "placement": {
+     "latitude": -33.54722222,
+     "longitude": 150.89694444
+    },
+    "new": {
+     "latitude": -33.562697,
+     "longitude": 150.918812
+    },
+    "moved_m": 2658,
+    "source": "OSM tourism=information board named 'Cattai National Park' (Photon/Overpass node 4241143619, with Field Study Centre 700 m and park-map boards at the same Cattai Ridge Rd entrance area); the Wikipedia centroid (-33.5472, 150.8969) is the Mitchell Park/Hope Farm side 2.7 km away. MEDIUM."
+   },
+   "coordinates": {
+    "latitude": -33.562697,
+    "longitude": 150.918812
+   },
+   "coordinates_source": "OSM tourism=information board named 'Cattai National Park' (Photon/Overpass node 4241143619, with Field Study Centre 700 m and park-map boards at the same Cattai Ridge Rd entrance area); the Wikipedia centroid (-33.5472, 150.8969) is the Mitchell Park/Hope Farm side 2.7 km away. MEDIUM."
+  },
+  {
+   "id": "hawkesbury-3",
+   "name": "Scheyville National Park",
+   "kind": "fallback-standalone",
+   "standalone_id": "scheyville-national-park",
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "NPWS: open 8am to 6pm May to August and 8am to 8pm September to April; protects remnants of a cooperative farm and the post-WWII Scheyville migrant camp; the Migrant Heritage walk is an easy stroll around original camp structures and the Longneck Lagoon walking track is a wetland bird walk.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/scheyville-national-park"
+    },
+    {
+     "claim": "The NPWS page lists no park entry fee for Scheyville (the Cattai, Ku-ring-gai and Royal pages list fees).",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/scheyville-national-park"
+    },
+    {
+     "claim": "NPWS alert (reviewed 21 Sep 2026): Longneck Boardwalk closed for flood damage; the rest of the Longneck walking track is open.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/scheyville-national-park/local-alerts"
+    },
+    {
+     "claim": "Wikipedia: 920 ha, about 40 km north-west of the Sydney CBD, listed on the NSW State Heritage Register in 2010.",
+     "source": "https://en.wikipedia.org/wiki/Scheyville_National_Park"
+    }
+   ],
+   "hours": "8:00 AM – 8:00 PM (Sep–Apr); 8:00 AM – 6:00 PM (May–Aug)",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": true,
+   "cost_note": "No entry fee is listed on the NPWS page; confirm at the park before relying on this.",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/scheyville-national-park",
+   "ticketUrl_note": "Verified: NPWS page (HTTP 200, title 'Scheyville National Park | NSW National Parks').",
+   "unverified": [
+    "That no entry fee applies (inferred from the page listing none)."
+   ],
+   "wiki_note": "Bio mentions 'horse-riding trails'; not found on the NPWS page, only on the placement's Wikivoyage source.",
+   "coordinates_check": {
+    "placement": {
+     "latitude": -33.60666667,
+     "longitude": 150.88888889
+    },
+    "new": {
+     "latitude": -33.6088876,
+     "longitude": 150.8873724
+    },
+    "moved_m": 284,
+    "source": "OSM tourism=picnic_site (Overpass node 5065707185) beside the park's southern parking and memorial, within 70 m of the Commons geotag median (-33.6093, 150.8881) and 260 m from the Wikipedia centroid. HIGH (two sources). Longneck Lagoon (north end, -33.5777, 150.8926) is 3.5 km away."
+   },
+   "coordinates": {
+    "latitude": -33.6088876,
+    "longitude": 150.8873724
+   },
+   "coordinates_source": "OSM tourism=picnic_site (Overpass node 5065707185) beside the park's southern parking and memorial, within 70 m of the Commons geotag median (-33.6093, 150.8881) and 260 m from the Wikipedia centroid. HIGH (two sources). Longneck Lagoon (north end, -33.5777, 150.8926) is 3.5 km away."
+  },
+  {
+   "id": "penrith-1",
+   "name": "Penrith Whitewater Stadium",
+   "kind": "fallback-standalone",
+   "standalone_id": "penrith-whitewater-stadium",
+   "category": "entertainment",
+   "facts": [
+    {
+     "claim": "NSW Office of Sport (operator): built for the Sydney 2000 Olympics, a 320 m man-made river with Grade 3 whitewater rapids; whitewater rafting, kayak instruction, whitewater paddling and flatwater kayak hire; a new cafe (Sorelle) trades from 21 October 2026.",
+     "source": "https://www.sport.nsw.gov.au/penrithwhitewater"
+    },
+    {
+     "claim": "Guided rafting is from $135 per person (minimum age 12; raft, equipment, instruction and guide included; wetsuit hire $15); bookings are essential and rafting needs arrival 30 minutes before the start time.",
+     "source": "https://www.sport.nsw.gov.au/penrithwhitewater/whitewater-rafting"
+    },
+    {
+     "claim": "Wikivoyage: at McCarthy's Lane, Cranebrook, the only man-made whitewater course of its kind in the Southern Hemisphere; rafting season noted as September to July.",
+     "source": "https://en.wikivoyage.org/wiki/Sydney/Outer_West"
+    }
+   ],
+   "hours": "Booked sessions only (no fixed public hours)",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "costMin": 135,
+   "costMax": 135,
+   "currency": "AUD",
+   "cost_note": "Guided rafting from $135 per person (adult; minimum age 12).",
+   "ticketUrl": "https://www.sport.nsw.gov.au/penrithwhitewater",
+   "ticketUrl_note": "Verified: operator page (HTTP 200, title 'Penrith Whitewater Stadium | NSW Government'); the old penrithwhitewater.com.au redirects here.",
+   "unverified": [
+    "Session times and the August maintenance closure (Wikivoyage 'September to July') not confirmed on the operator page.",
+    "Bio says 'open to the public for rafting and kayaking': true for booked sessions only, there is no drop-in access."
+   ],
+   "coordinates_check": {
+    "placement": {
+     "latitude": -33.720658,
+     "longitude": 150.684341
+    },
+    "new": {
+     "latitude": -33.720658,
+     "longitude": 150.684341
+    },
+    "moved_m": 0,
+    "source": "resolve-pin HIGH: OSM leisure=water_park 'Penrith Whitewater Stadium' via Photon (0 m), Wikipedia point 80 m away"
+   },
+   "coordinates": {
+    "latitude": -33.720658,
+    "longitude": 150.684341
+   },
+   "coordinates_source": "resolve-pin HIGH: OSM leisure=water_park 'Penrith Whitewater Stadium' via Photon (0 m), Wikipedia point 80 m away"
+  },
+  {
+   "id": "penrith-2",
+   "name": "Sydney Zoo",
+   "kind": "fallback-standalone",
+   "standalone_id": "sydney-zoo-bungarribee",
+   "category": "entertainment",
+   "facts": [
+    {
+     "claim": "Official site: open every day 9am to 5pm; children under 3 free; booking online is recommended but tickets can be bought at the gate; day pass can be upgraded to an annual pass for $40 (Unlimited) or $60 (Platinum).",
+     "source": "https://sydneyzoo.com/visit/opening-hours"
+    },
+    {
+     "claim": "Zoo areas named on the official site: Africa, Asia, Australia, Aquarium, Primates and a Reptile & Nocturnal House, with encounters including elephant, giraffe, lion, tiger and koala; a Family Bundle of 2 adults and 2 kids is $110.",
+     "source": "https://sydneyzoo.com/"
+    },
+    {
+     "claim": "Wikipedia: in Bungarribee, Western Sydney Parklands.",
+     "source": "https://en.wikipedia.org/wiki/Sydney_Zoo"
+    }
+   ],
+   "hours": "9:00 AM – 5:00 PM",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "costMin": 45,
+   "costMax": 55,
+   "currency": "AUD",
+   "cost_note": "UNVERIFIED APPROXIMATION: the official booking page is script-rendered and shows no adult price in text. A May 2024 third-party page copied from the official site listed $44.99 and $54.99 per adult; resellers list $36 to $55. Needs a real-browser check of https://sydneyzoo.com/tickets.",
+   "ticketUrl": "https://sydneyzoo.com/",
+   "ticketUrl_note": "Verified: official site (HTTP 200, title 'Sydney Zoo'); tickets at https://sydneyzoo.com/tickets.",
+   "bio_issue": "Bio says 'walk-through zoo ... with walk-through safari-style exhibits' (repeats 'walk-through', unsourced). Suggested: 'A zoo in the Western Sydney Parklands at Bungarribee with African, Asian and Australian animals and an aquarium.'",
+   "unverified": [
+    "Adult day-pass price (official page not machine-readable).",
+    "Whether it is currently 'Sydney Zoo' or rebranded: the site still uses that name."
+   ],
+   "wiki_title": "Sydney Zoo",
+   "coordinates_check": {
+    "placement": {
+     "latitude": -33.79111111,
+     "longitude": 150.86694444
+    },
+    "new": {
+     "latitude": -33.789644,
+     "longitude": 150.867597
+    },
+    "moved_m": 174,
+    "source": "resolve-pin HIGH: OSM building 'Sydney Zoo Entrance' via Photon (placement was the Wikipedia point, 165 m away); Commons median 100 m from it; zoo node -33.7885, 150.8661"
+   },
+   "coordinates": {
+    "latitude": -33.789644,
+    "longitude": 150.867597
+   },
+   "coordinates_source": "resolve-pin HIGH: OSM building 'Sydney Zoo Entrance' via Photon (placement was the Wikipedia point, 165 m away); Commons median 100 m from it; zoo node -33.7885, 150.8661"
+  },
+  {
+   "id": "penrith-3",
+   "name": "Warragamba Dam",
+   "kind": "fallback-standalone",
+   "standalone_id": "warragamba-dam",
+   "category": "landmark",
+   "facts": [
+    {
+     "claim": "Visit Wollondilly (council tourism): Visitor Centre open Saturday to Wednesday 10am to 4pm during NSW school terms and 7 days a week 10am to 4pm in school holidays (closed Good Friday and Christmas Day); grounds 8am to 5pm weekdays and 8am to 6pm weekends and public holidays in daylight saving.",
+     "source": "https://www.visitwollondilly.com.au/experience/outdoors-and-wildlife/warragamba-dam"
+    },
+    {
+     "claim": "Wikipedia: concrete gravity dam creating Lake Burragorang, Sydney's primary water-supply reservoir, 65 km west of the CBD; opened 1960; owned by WaterNSW.",
+     "source": "https://en.wikipedia.org/wiki/Warragamba_Dam"
+    },
+    {
+     "claim": "Web search snippets of WaterNSW material (not loadable here) say entry to the grounds and Visitor Centre is free and the dam wall walk is open to pedestrians only on weekends and public holidays, 10am to 4pm; weekdays it is a working dam.",
+     "source": "https://www.waternsw.com.au/supply/visit/warragamba-dam"
+    }
+   ],
+   "hours": "Grounds 8:00 AM – 5:00 PM; Visitor Centre 10:00 AM – 4:00 PM (school terms Sat–Wed, daily in school holidays)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "cost_note": "Free entry per WaterNSW snippets only (official page BLOCKED); unverified.",
+   "ticketUrl": "https://www.waternsw.com.au/supply/visit/warragamba-dam",
+   "ticketUrl_note": "BLOCKED: WaterNSW answers 403 'Just a moment...' (captcha) to scripts. URL taken from Visit Wollondilly's own listing. Check in a real browser that the page names Warragamba Dam and confirms weekday access, hours and free entry before applying.",
+   "BLOCKED": "https://www.waternsw.com.au/supply/visit/warragamba-dam",
+   "unverified": [
+    "Weekday visitor-centre access: Visit Wollondilly says Sat-Wed in school terms (so Thursday/Friday closed in term), search snippets say daily 10-4: conflict unresolved without the WaterNSW page.",
+    "Dam wall walk weekends-only (snippet), grounds-only on weekdays.",
+    "Free entry (snippet)."
+   ],
+   "wiki_title": "Warragamba Dam",
+   "coordinates_check": {
+    "placement": {
+     "latitude": -33.883061,
+     "longitude": 150.596193
+    },
+    "new": {
+     "latitude": -33.883061,
+     "longitude": 150.596193
+    },
+    "moved_m": 0,
+    "source": "resolve-pin HIGH: OSM waterway=dam 'Warragamba Dam' via Photon (0 m), Wikipedia point 59 m away; the visitor centre is 395 m south-east (-33.8864, 150.5977)"
+   },
+   "coordinates": {
+    "latitude": -33.883061,
+    "longitude": 150.596193
+   },
+   "coordinates_source": "resolve-pin HIGH: OSM waterway=dam 'Warragamba Dam' via Photon (0 m), Wikipedia point 59 m away; the visitor centre is 395 m south-east (-33.8864, 150.5977)"
+  },
+  {
+   "id": "penrith",
+   "name": "Penrith",
+   "kind": "fallback-standalone",
+   "standalone_id": "penrith",
+   "category": "historic",
+   "placement_id": "penrith (if_declined_standalone)",
+   "facts": [
+    {
+     "claim": "Wikipedia: Penrith is a suburb in Outer Western Sydney 55 km west of the Sydney CBD on the eastern bank of the Nepean River, at the edge of the Cumberland Plain, and the administrative centre of the City of Penrith.",
+     "source": "https://en.wikipedia.org/wiki/Penrith,_New_South_Wales"
+    },
+    {
+     "claim": "Wikivoyage (Outer West): Penrith and Blacktown are the centres for Outer Western Sydney business and nightlife; sights include the Museum of Fire (adults $12), Penrith Museum of Printing, Penrith Beach (Pondi, free) and Penrith Whitewater Stadium.",
+     "source": "https://en.wikivoyage.org/wiki/Sydney/Outer_West"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A city with no single steward; no ticketUrl. (Wikivoyage 'Penrith' is the English Cumbria town, not this one.)",
+   "unverified": [
+    "Whether Penrith clears the 'worth a detour' bar on its own (placement already flagged it as the proposed destination's base)."
+   ],
+   "wiki_title": "Penrith, New South Wales",
+   "coordinates_check": {
+    "placement": {
+     "latitude": -33.75111111,
+     "longitude": 150.69416667
+    },
+    "new": {
+     "latitude": -33.751195,
+     "longitude": 150.694171
+    },
+    "moved_m": 9,
+    "source": "resolve-pin HIGH: OSM place=suburb/town 'Penrith' via Photon (27 m from the Wikipedia point; Commons median 236 m). Town-centre point; the spot is the city."
+   },
+   "coordinates": {
+    "latitude": -33.751195,
+    "longitude": 150.694171
+   },
+   "coordinates_source": "resolve-pin HIGH: OSM place=suburb/town 'Penrith' via Photon (27 m from the Wikipedia point; Commons median 236 m). Town-centre point; the spot is the city."
+  },
+  {
+   "id": "macarthur-1",
+   "name": "Camden",
+   "kind": "fallback-standalone",
+   "standalone_id": "camden",
+   "category": "historic",
+   "facts": [
+    {
+     "claim": "Wikipedia: Camden is a historic town 65 km south-west of the Sydney CBD, named by John Macarthur's Camden Park estate (Cowpastures); it keeps a country character on the edge of Sydney's urban sprawl.",
+     "source": "https://en.wikipedia.org/wiki/Camden,_New_South_Wales"
+    },
+    {
+     "claim": "Wikivoyage lists Camden Museum (40 John St, Thu-Sun 11am to 4pm, free).",
+     "source": "https://en.wikivoyage.org/wiki/Camden_(New_South_Wales)"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A town with no single steward; no ticketUrl.",
+   "unverified": [
+    "'Argyle Street cafes' (bio) not stated on the Wikivoyage/Wikipedia pages fetched."
+   ],
+   "wiki_title": "Camden, New South Wales",
+   "coordinates_check": {
+    "placement": {
+     "latitude": -34.05444444,
+     "longitude": 150.69583333
+    },
+    "new": {
+     "latitude": -34.053232,
+     "longitude": 150.69617
+    },
+    "moved_m": 138,
+    "source": "OSM place=town 'Camden' via Photon (138 m from the Wikipedia point; Commons median 135 m away). Town centre; the spot is the town. Tool LOW only because sources are town points."
+   },
+   "coordinates": {
+    "latitude": -34.053232,
+    "longitude": 150.69617
+   },
+   "coordinates_source": "OSM place=town 'Camden' via Photon (138 m from the Wikipedia point; Commons median 135 m away). Town centre; the spot is the town. Tool LOW only because sources are town points."
+  },
+  {
+   "id": "macarthur-2",
+   "name": "Campbelltown",
+   "kind": "fallback-standalone",
+   "standalone_id": "campbelltown",
+   "category": "historic",
+   "facts": [
+    {
+     "claim": "Wikipedia: Campbelltown is a suburb of Outer South Western Sydney 57 km south-west of the CBD and the administrative centre of the City of Campbelltown.",
+     "source": "https://en.wikipedia.org/wiki/Campbelltown,_New_South_Wales"
+    },
+    {
+     "claim": "Wikivoyage's Macarthur page lists Campbelltown Arts Centre (free; gallery, performance studio and Japanese garden with teahouse) and two council self-guided heritage walks.",
+     "source": "https://en.wikivoyage.org/wiki/Sydney/Macarthur"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A city centre with no single steward; no ticketUrl.",
+   "unverified": [
+    "Whether Campbelltown stands alone as a visitor draw (marginal; sources are a regional hub description)."
+   ],
+   "wiki_title": "Campbelltown, New South Wales",
+   "coordinates_check": {
+    "placement": {
+     "latitude": -34.06666667,
+     "longitude": 150.81666667
+    },
+    "new": {
+     "latitude": -34.064279,
+     "longitude": 150.813868
+    },
+    "moved_m": 370,
+    "source": "resolve-pin HIGH: OSM railway=stop 'Campbelltown' via Photon (370 m from the Wikipedia point); station chosen as the town-centre point"
+   },
+   "coordinates": {
+    "latitude": -34.064279,
+    "longitude": 150.813868
+   },
+   "coordinates_source": "resolve-pin HIGH: OSM railway=stop 'Campbelltown' via Photon (370 m from the Wikipedia point); station chosen as the town-centre point"
+  },
+  {
+   "id": "macarthur-3",
+   "name": "Picton",
+   "kind": "fallback-standalone",
+   "standalone_id": "picton",
+   "category": "historic",
+   "facts": [
+    {
+     "claim": "Wikivoyage: Picton is a town at the northern edge of the Southern Highlands with a charming town centre of shops and cafes along Argyle St; listed sights include the Mushroom Tunnel, Victoria Bridge and the historic George IV Inn.",
+     "source": "https://en.wikivoyage.org/wiki/Picton_(New_South_Wales)"
+    },
+    {
+     "claim": "Wikipedia: Victoria Bridge, a timber trestle bridge over Stonequarry Creek opened 1897, and the Picton Railway Viaduct.",
+     "source": "https://en.wikipedia.org/wiki/Picton,_New_South_Wales"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A town with no single steward; no ticketUrl.",
+   "unverified": [],
+   "wiki_title": "Picton, New South Wales",
+   "coordinates_check": {
+    "placement": {
+     "latitude": -34.18333333,
+     "longitude": 150.6
+    },
+    "new": {
+     "latitude": -34.178696,
+     "longitude": 150.612342
+    },
+    "moved_m": 1247,
+    "source": "resolve-pin HIGH: OSM railway=stop 'Picton' via Photon; the placement's Wikipedia point (-34.1833, 150.6) is 1.2 km west of the town centre. Wikivoyage's Victoria Bridge (-34.1803, 150.6106) and Mushroom Tunnel (-34.1727, 150.606) are within 700 m."
+   },
+   "coordinates": {
+    "latitude": -34.178696,
+    "longitude": 150.612342
+   },
+   "coordinates_source": "resolve-pin HIGH: OSM railway=stop 'Picton' via Photon; the placement's Wikipedia point (-34.1833, 150.6) is 1.2 km west of the town centre. Wikivoyage's Victoria Bridge (-34.1803, 150.6106) and Mushroom Tunnel (-34.1727, 150.606) are within 700 m."
+  },
+  {
+   "id": "macarthur-4",
+   "name": "Thirlmere Lakes National Park",
+   "kind": "fallback-standalone",
+   "standalone_id": "thirlmere-lakes-national-park",
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "NPWS: open 5:30am to 8pm in daylight saving and 5:30am to 6pm the rest of the year; part of the Greater Blue Mountains Area World Heritage Property; five freshwater lakes; a 6 km walking track starts at Couridjah picnic area; no swimming or canoeing when lake levels are low.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/thirlmere-lakes-national-park"
+    },
+    {
+     "claim": "The NPWS page lists no park entry fee.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/thirlmere-lakes-national-park"
+    },
+    {
+     "claim": "NPWS alerts (reviewed Sept to Oct 2026): Lake Couridjah picnic precinct closed 18 May to 30 Nov 2026 for upgrade works; Pumphouse Road closed to vehicles until further notice; Werri Berri barbecue closed for repairs; park fire ban.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/thirlmere-lakes-national-park/local-alerts"
+    }
+   ],
+   "hours": "5:30 AM – 8:00 PM (daylight saving); 5:30 AM – 6:00 PM otherwise",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": true,
+   "cost_note": "No entry fee is listed on the NPWS page.",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/thirlmere-lakes-national-park",
+   "ticketUrl_note": "Verified: NPWS page (HTTP 200, title 'Thirlmere Lakes National Park | NSW National Parks').",
+   "unverified": [
+    "That no entry fee applies (inferred from the page listing none)."
+   ],
+   "coordinates_check": {
+    "placement": {
+     "latitude": -34.22555556,
+     "longitude": 150.53861111
+    },
+    "new": {
+     "latitude": -34.22136,
+     "longitude": 150.541961
+    },
+    "moved_m": 559,
+    "source": "resolve-pin MEDIUM: OSM tourism=picnic_site 'Werri-Berri Picnic Area' via Photon (the open picnic area; Lake Couridjah precinct is closed), 370 m from the Commons median and 430 m from the Wikipedia centroid"
+   },
+   "coordinates": {
+    "latitude": -34.22136,
+    "longitude": 150.541961
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM tourism=picnic_site 'Werri-Berri Picnic Area' via Photon (the open picnic area; Lake Couridjah precinct is closed), 370 m from the Commons median and 430 m from the Wikipedia centroid"
+  },
+  {
+   "id": "royal-national-park-1",
+   "name": "Audley",
+   "kind": "fallback-standalone",
+   "standalone_id": "audley",
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "NPWS: Royal National Park is open 7am to 8:30pm; the Royal National Park Visitor Centre at 2 Lady Carrington Drive, Audley is open 8:30am to 4:30pm daily (closed Christmas Day).",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/visitor-centres/royal-national-park-visitor-centre"
+    },
+    {
+     "claim": "NPWS: Audley Boatshed (operating since 1893) hires canoes, kayaks and rowboats on the Hacking River, 10am to 5pm Tuesday to Sunday (closed Monday unless a public holiday); Audley Dance Hall Cafe is nearby.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/canoeing-paddling-experiences/audley-boatshed"
+    },
+    {
+     "claim": "NPWS park entry fee: $12 per vehicle per day (vehicles over 8 seats $4.40 per adult, $2.20 per child); the fee is per vehicle, not per person, and does not apply to people arriving on foot or by ferry.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/royal-national-park"
+    },
+    {
+     "claim": "NPWS alert (reviewed 16 Oct 2026): some Royal National Park areas, including Wattamolla and Garie picnic areas, the Audley precinct trails and picnic flats, Garawarra Farm and Lady Carrington Drive, are closed between sunset and sunrise Monday to Thursday (excluding school holidays) from 6 July to 18 December 2026 for deer control.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/wedding-cake-rock/local-alerts"
+    },
+    {
+     "claim": "NPWS alert: Varneys Bridge at Audley closed to vehicles 19 to 21 October 2026 (pedestrians allowed), cutting vehicle access to Wattle Forest and Currawong Flat picnic areas.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/royal-national-park/local-alerts"
+    }
+   ],
+   "hours": "7:00 AM – 8:30 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "costMin": 12,
+   "costMax": 12,
+   "currency": "AUD",
+   "cost_note": "NPWS vehicle entry fee, $12 per vehicle per day; not per person. Boat hire is extra (price not checked).",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/visitor-centres/royal-national-park-visitor-centre",
+   "ticketUrl_note": "Verified: NPWS page (HTTP 200, title 'Royal National Park Visitor Centre | NSW National Parks'; names Audley in its address).",
+   "unverified": [
+    "Boatshed hire prices.",
+    "Whether the trails and picnic flats at Audley are closed at night Monday-Thursday (deer control until 18 Dec 2026): hours above are daytime."
+   ],
+   "wiki_title": "Audley, New South Wales",
+   "coordinates_check": {
+    "placement": {
+     "latitude": -34.074196,
+     "longitude": 151.055502
+    },
+    "new": {
+     "latitude": -34.074196,
+     "longitude": 151.055502
+    },
+    "moved_m": 0,
+    "source": "resolve-pin HIGH: OSM amenity=boat_rental 'Audley Boatshed' via Photon (0 m), Commons median 98 m, Wikivoyage Audley Boat Shed (-34.0744, 151.0551) 30 m"
+   },
+   "coordinates": {
+    "latitude": -34.074196,
+    "longitude": 151.055502
+   },
+   "coordinates_source": "resolve-pin HIGH: OSM amenity=boat_rental 'Audley Boatshed' via Photon (0 m), Commons median 98 m, Wikivoyage Audley Boat Shed (-34.0744, 151.0551) 30 m"
+  },
+  {
+   "id": "royal-national-park-2",
+   "name": "Wattamolla Beach",
+   "kind": "fallback-standalone",
+   "standalone_id": "wattamolla-beach",
+   "category": "beach",
+   "facts": [
+    {
+     "claim": "NPWS: Wattamolla picnic area is a popular family spot for swimming, fishing, snorkelling and bushwalking, with a calm lagoon, a waterfall (do not jump from the top: many injuries) and picnic areas under cabbage tree palms; bring drinking water.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/picnic-areas/wattamolla-picnic-area"
+    },
+    {
+     "claim": "NPWS park entry fee: $12 per vehicle per day (vehicles over 8 seats $4.40 per adult, $2.20 per child); the fee is per vehicle, not per person, and does not apply to people arriving on foot or by ferry.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/royal-national-park"
+    },
+    {
+     "claim": "NPWS alert (reviewed 16 Oct 2026): some Royal National Park areas, including Wattamolla and Garie picnic areas, the Audley precinct trails and picnic flats, Garawarra Farm and Lady Carrington Drive, are closed between sunset and sunrise Monday to Thursday (excluding school holidays) from 6 July to 18 December 2026 for deer control.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/wedding-cake-rock/local-alerts"
+    }
+   ],
+   "hours": "7:00 AM – 8:30 PM",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 4,
+   "costMin": 12,
+   "costMax": 12,
+   "currency": "AUD",
+   "cost_note": "NPWS vehicle entry fee, $12 per vehicle per day; not per person.",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/picnic-areas/wattamolla-picnic-area",
+   "ticketUrl_note": "Verified: NPWS page (HTTP 200, title 'Wattamolla picnic area | NSW National Parks').",
+   "unverified": [
+    "Park can reach capacity and close on summer weekends (Wikivoyage); not checked live.",
+    "Daytime hours; Wattamolla is closed sunset to sunrise Mon-Thu until 18 Dec 2026 (deer control)."
+   ],
+   "wiki_title": "Wattamolla",
+   "coordinates_check": {
+    "placement": {
+     "latitude": -34.137514,
+     "longitude": 151.117467
+    },
+    "new": {
+     "latitude": -34.137514,
+     "longitude": 151.117467
+    },
+    "moved_m": 0,
+    "source": "OSM natural=beach 'Wattamolla Beach' via Photon (0 m) and Overpass relation 17190703 (centre 47 m away); Commons median 246 m west. MEDIUM; tool LOW only on the Commons offset"
+   },
+   "coordinates": {
+    "latitude": -34.137514,
+    "longitude": 151.117467
+   },
+   "coordinates_source": "OSM natural=beach 'Wattamolla Beach' via Photon (0 m) and Overpass relation 17190703 (centre 47 m away); Commons median 246 m west. MEDIUM; tool LOW only on the Commons offset"
+  },
+  {
+   "id": "royal-national-park-3",
+   "name": "Bundeena to Otford Coast Track",
+   "kind": "fallback-standalone",
+   "standalone_id": "royal-coast-track",
+   "category": "hike",
+   "facts": [
+    {
+     "claim": "NPWS: The Coast Track is an iconic 27 km multi-day walk between Bundeena and Otford in Royal National Park, suggested over 2 days (Day 1 Bundeena to Garie Beach 17 km, at least 7 hours; Day 2 Garie to Otford 10 km, about 3 hours), Grade 4; park entry fees apply.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/the-coast-track"
+    },
+    {
+     "claim": "Overnight stays are at Garie Beach campground by advance booking only; humpback whale watching May to October; shorter sections can start at Bundeena, Wattamolla, Garie Beach, Garawarra Farm or Otford.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/the-coast-track"
+    },
+    {
+     "claim": "NPWS alert: coastal areas between Garie Beach and Figure 8 Pools and Garawarra Farm are closed sunset to sunrise Monday to Thursday (excluding school holidays) until 18 Dec 2026 (deer control).",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/the-coast-track/local-alerts"
+    }
+   ],
+   "hours": "7:00 AM – 8:30 PM (daytime walking)",
+   "visitHoursMin": 4,
+   "visitHoursMax": 10,
+   "costMin": 12,
+   "costMax": 12,
+   "currency": "AUD",
+   "cost_note": "NPWS vehicle entry fee applies only if you drive into the park ($12 per vehicle per day); walking in from Bundeena or Otford station does not pass a fee station.",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/the-coast-track",
+   "ticketUrl_note": "Verified: NPWS page (HTTP 200, title 'The Coast Track | NSW National Parks').",
+   "bio_issue": "Bio says '26 km'; NPWS says 27 km (OSM route sums to 25.3 km). Suggested: 'A 27 km coastal walk from Bundeena to Otford, passing most of the park's beaches and cliffs.'",
+   "unverified": [
+    "Track length (NPWS 27 km vs OSM 25.3 km)."
+   ],
+   "coordinates_check": {
+    "placement": {
+     "latitude": -34.142944,
+     "longitude": 151.114459
+    },
+    "new": {
+     "latitude": -34.153731,
+     "longitude": 151.097826
+    },
+    "moved_m": 1945,
+    "source": "Route midpoint: OSM hiking relation 4609482 'The Coast Track' (NPWS-operated) joined in order, 25.3 km Bundeena to Otford, halfway point; an OSM 'Coast Track' information board (Photon, -34.15419, 151.09696) sits 90 m away. HIGH. The placement point was a Commons photo-median proxy 1.4 km north-east."
+   },
+   "coordinates": {
+    "latitude": -34.153731,
+    "longitude": 151.097826
+   },
+   "coordinates_source": "Route midpoint: OSM hiking relation 4609482 'The Coast Track' (NPWS-operated) joined in order, 25.3 km Bundeena to Otford, halfway point; an OSM 'Coast Track' information board (Photon, -34.15419, 151.09696) sits 90 m away. HIGH. The placement point was a Commons photo-median proxy 1.4 km north-east."
+  },
+  {
+   "id": "royal-national-park-4",
+   "name": "Garie Beach",
+   "kind": "fallback-standalone",
+   "standalone_id": "garie-beach",
+   "category": "beach",
+   "facts": [
+    {
+     "claim": "NPWS: Garie Beach is a picnic area good for swimming, whale watching, fishing, surfing and walking; park entry fees apply; the Coast Track's Garie Beach campground (booked in advance) is nearby.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/picnic-areas/garie-beach-picnic-area"
+    },
+    {
+     "claim": "NPWS park entry fee: $12 per vehicle per day (vehicles over 8 seats $4.40 per adult, $2.20 per child); the fee is per vehicle, not per person, and does not apply to people arriving on foot or by ferry.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/royal-national-park"
+    },
+    {
+     "claim": "NPWS alert (reviewed 16 Oct 2026): some Royal National Park areas, including Wattamolla and Garie picnic areas, the Audley precinct trails and picnic flats, Garawarra Farm and Lady Carrington Drive, are closed between sunset and sunrise Monday to Thursday (excluding school holidays) from 6 July to 18 December 2026 for deer control.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/wedding-cake-rock/local-alerts"
+    }
+   ],
+   "hours": "7:00 AM – 8:30 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "costMin": 12,
+   "costMax": 12,
+   "currency": "AUD",
+   "cost_note": "NPWS vehicle entry fee, $12 per vehicle per day; not per person.",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/picnic-areas/garie-beach-picnic-area",
+   "ticketUrl_note": "Verified: NPWS page (HTTP 200, title 'Garie Beach picnic area | NSW National Parks').",
+   "bio_issue": "'patrolled on summer weekends' and 'the start of the walk to Figure Eight Pools' are not on the NPWS page (NPWS places Figure Eight Pools beyond Burning Palms; it is a review-list item). Suggested: 'A road-access surf beach and picnic area on the Coast Track, with its own surf club.'",
+   "unverified": [
+    "Patrol days (a surf life saving club exists in OSM; roster not checked).",
+    "Garie is closed sunset to sunrise Mon-Thu until 18 Dec 2026 (deer control)."
+   ],
+   "coordinates_check": {
+    "placement": {
+     "latitude": -34.17013,
+     "longitude": 151.06811
+    },
+    "new": {
+     "latitude": -34.17013,
+     "longitude": 151.06811
+    },
+    "moved_m": 0,
+    "source": "OSM natural=beach 'Garie Beach' via Photon (0 m); Overpass way 23140813 centre 85 m away; Garie Surf Life Saving Club 40 m. MEDIUM; Commons median 119 m"
+   },
+   "coordinates": {
+    "latitude": -34.17013,
+    "longitude": 151.06811
+   },
+   "coordinates_source": "OSM natural=beach 'Garie Beach' via Photon (0 m); Overpass way 23140813 centre 85 m away; Garie Surf Life Saving Club 40 m. MEDIUM; Commons median 119 m"
+  },
+  {
+   "id": "royal-national-park-5",
+   "name": "Wedding Cake Rock",
+   "kind": "fallback-standalone",
+   "standalone_id": "wedding-cake-rock",
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "NPWS: Wedding Cake Rock is very fragile and unstable and has a fence around it; stay behind the fenced areas (standing or sitting on the rock or cliff edges is a very high safety risk); allow at least 1 hour each way on a rough, steep, rocky track from Bundeena; the track is closed during total fire bans.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/wedding-cake-rock"
+    },
+    {
+     "claim": "NPWS live alerts (reviewed 16 Oct 2026): no closure of the lookout or the track; only the night-time deer-control closure list (Mon-Thu, until 18 Dec 2026) and Skylight Cave (a separate nearby cave) permanently closed. Open for viewing from the fenced area.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/wedding-cake-rock/local-alerts"
+    },
+    {
+     "claim": "Park entry fees apply if parking in Royal National Park ($12 per vehicle).",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/wedding-cake-rock"
+    }
+   ],
+   "hours": "Daytime viewing (park open 7:00 AM – 8:30 PM); closed in total fire bans",
+   "visitHoursMin": 2,
+   "visitHoursMax": 3.5,
+   "costMin": 12,
+   "costMax": 12,
+   "currency": "AUD",
+   "cost_note": "NPWS vehicle entry fee applies only if you park in the park; walking from Bundeena does not pass a fee station. If you arrive on foot via Bundeena it is free.",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/wedding-cake-rock",
+   "ticketUrl_note": "Verified: NPWS page (HTTP 200, title 'Wedding Cake Rock | NSW National Parks').",
+   "bio_issue": "Bio says 'viewed from a fenced platform'; NPWS says the rock itself is fenced and you view from behind the fence. Suggested: 'A white sandstone block on the Coast Track, an hour's walk from Bundeena, viewed from behind a safety fence.'",
+   "unverified": [
+    "visitHours 2-3.5 assumes the 1 h each way from Bundeena plus time at the rock."
+   ],
+   "coordinates_check": {
+    "placement": {
+     "latitude": -34.109487,
+     "longitude": 151.151984
+    },
+    "new": {
+     "latitude": -34.109487,
+     "longitude": 151.151984
+    },
+    "moved_m": 0,
+    "source": "resolve-pin HIGH: OSM natural=rock 'Wedding Cake Rock' via Photon (0 m), Commons median 6 m, Wikipedia 45 m"
+   },
+   "coordinates": {
+    "latitude": -34.109487,
+    "longitude": 151.151984
+   },
+   "coordinates_source": "resolve-pin HIGH: OSM natural=rock 'Wedding Cake Rock' via Photon (0 m), Commons median 6 m, Wikipedia 45 m"
+  },
+  {
+   "id": "royal-national-park-6",
+   "name": "Bundeena",
+   "kind": "fallback-standalone",
+   "standalone_id": "bundeena",
+   "category": "historic",
+   "facts": [
+    {
+     "claim": "Wikivoyage: Bundeena is reached by an hourly ferry from Cronulla, has a nice beach by the wharf and cafes, is surrounded by but not in Royal National Park, and is an access point to the northern end of the Coast Track (15 minutes' walk from the wharf to the park).",
+     "source": "https://en.wikivoyage.org/wiki/Royal_National_Park"
+    },
+    {
+     "claim": "NPWS: the Coast Track starts at the track head on Beachcomber Avenue, Bundeena.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/the-coast-track"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A village with no single steward; no ticketUrl.",
+   "bio_issue": "'Jibbon Beach' is not in the sources fetched; suggested: 'A village on Port Hacking reached by Cronulla ferry, with a bay beach, cafes and the northern end of the Coast Track.'",
+   "unverified": [
+    "Jibbon Beach (bio)."
+   ],
+   "wiki_title": "Bundeena",
+   "wiki_note": "The placement/Wikipedia title 'Bundeena, New South Wales' redirects to 'Bundeena'",
+   "coordinates_check": {
+    "placement": {
+     "latitude": -34.0827,
+     "longitude": 151.1506
+    },
+    "new": {
+     "latitude": -34.082715,
+     "longitude": 151.15067
+    },
+    "moved_m": 7,
+    "source": "resolve-pin HIGH: OSM amenity=ferry_terminal 'Bundeena' via Photon (7 m from placement), Commons median 22 m (91 files); the Wikipedia point (-34.088, 151.154) is 680 m south"
+   },
+   "coordinates": {
+    "latitude": -34.082715,
+    "longitude": 151.15067
+   },
+   "coordinates_source": "resolve-pin HIGH: OSM amenity=ferry_terminal 'Bundeena' via Photon (7 m from placement), Commons median 22 m (91 files); the Wikipedia point (-34.088, 151.154) is 680 m south"
+  },
+  {
+   "id": "royal-national-park-7",
+   "name": "Burning Palms Beach",
+   "kind": "fallback-standalone",
+   "standalone_id": "burning-palms-beach",
+   "category": "beach",
+   "facts": [
+    {
+     "claim": "NPWS: the Coast Track passes Burning Palms Beach on Day 2 (Garie Beach to Otford), with a side track from Garawarra Farm car park; Figure Eight Pools lies a short walk south and is safe only at low tide.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/the-coast-track"
+    },
+    {
+     "claim": "Wikivoyage: about two hours' walk from Otford station to Burning Palms.",
+     "source": "https://en.wikivoyage.org/wiki/Royal_National_Park"
+    },
+    {
+     "claim": "NPWS park entry fee: $12 per vehicle per day (vehicles over 8 seats $4.40 per adult, $2.20 per child); the fee is per vehicle, not per person, and does not apply to people arriving on foot or by ferry.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/royal-national-park"
+    },
+    {
+     "claim": "NPWS alert: Garawarra Farm and the coastal areas between Garie Beach and Figure 8 Pools are closed sunset to sunrise Mon-Thu until 18 Dec 2026 (deer control).",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/the-coast-track/local-alerts"
+    }
+   ],
+   "hours": "7:00 AM – 8:30 PM (daytime walking)",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "costMin": 12,
+   "costMax": 12,
+   "currency": "AUD",
+   "cost_note": "NPWS vehicle entry fee applies if you drive to Garawarra Farm or another entry ($12 per vehicle per day); on foot from Otford station there is no fee station.",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/royal-national-park",
+   "ticketUrl_note": "Verified: NPWS managing-agency page for the park (HTTP 200, title 'Royal National Park | NSW National Parks'); NPWS has no page titled for Burning Palms Beach (its Coast Track page covers it).",
+   "unverified": [
+    "'Rock pools' and steepness of the walk in the bio are from general knowledge/Wikivoyage, not re-read on the NPWS page."
+   ],
+   "coordinates_check": {
+    "placement": {
+     "latitude": -34.186968,
+     "longitude": 151.043675
+    },
+    "new": {
+     "latitude": -34.186968,
+     "longitude": 151.043675
+    },
+    "moved_m": 0,
+    "source": "resolve-pin HIGH: OSM natural=beach 'Burning Palms Beach' via Photon (0 m), Overpass way 40800824 centre 40 m, Commons median 84 m"
+   },
+   "coordinates": {
+    "latitude": -34.186968,
+    "longitude": 151.043675
+   },
+   "coordinates_source": "resolve-pin HIGH: OSM natural=beach 'Burning Palms Beach' via Photon (0 m), Overpass way 40800824 centre 40 m, Commons median 84 m"
+  },
+  {
+   "id": "royal-national-park",
+   "name": "Royal National Park",
+   "kind": "fallback-standalone",
+   "standalone_id": "royal-national-park",
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "Wikipedia: Royal National Park was proclaimed on 26 April 1879, the world's second-oldest national park.",
+     "source": "https://en.wikipedia.org/wiki/Royal_National_Park"
+    },
+    {
+     "claim": "NPWS: open 7am to 8:30pm (may close for weather or fire danger); entry $12 per vehicle per day; Visitor Centre at Audley open 8:30am to 4:30pm daily.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/royal-national-park"
+    },
+    {
+     "claim": "NPWS things to do include the Coast Track, Wattamolla, Wedding Cake Rock, Audley boatshed and heritage tour, and kayak tours from Bundeena.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/royal-national-park"
+    },
+    {
+     "claim": "NPWS alert (reviewed 16 Oct 2026): some Royal National Park areas, including Wattamolla and Garie picnic areas, the Audley precinct trails and picnic flats, Garawarra Farm and Lady Carrington Drive, are closed between sunset and sunrise Monday to Thursday (excluding school holidays) from 6 July to 18 December 2026 for deer control.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/wedding-cake-rock/local-alerts"
+    }
+   ],
+   "hours": "7:00 AM – 8:30 PM",
+   "visitHoursMin": 3,
+   "visitHoursMax": 8,
+   "costMin": 12,
+   "costMax": 12,
+   "currency": "AUD",
+   "cost_note": "NPWS vehicle entry fee, $12 per vehicle per day; not per person.",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/royal-national-park",
+   "ticketUrl_note": "Verified: NPWS page (HTTP 200, title 'Royal National Park | NSW National Parks').",
+   "unverified": [],
+   "wiki_title": "Royal National Park",
+   "coordinates_check": {
+    "placement": {
+     "latitude": -34.074196,
+     "longitude": 151.055502
+    },
+    "new": {
+     "latitude": -34.074196,
+     "longitude": 151.055502
+    },
+    "moved_m": 0,
+    "source": "resolve-pin HIGH: OSM amenity=boat_rental 'Audley Boatshed' (the park's main visitor hub, same as Audley spot); Royal NP Visitor Centre 100 m away. Pin overlaps the Audley fallback by design; if both become standalone, one should move (e.g. the park spot to the visitor centre)."
+   },
+   "coordinates": {
+    "latitude": -34.074196,
+    "longitude": 151.055502
+   },
+   "coordinates_source": "resolve-pin HIGH: OSM amenity=boat_rental 'Audley Boatshed' (the park's main visitor hub, same as Audley spot); Royal NP Visitor Centre 100 m away. Pin overlaps the Audley fallback by design; if both become standalone, one should move (e.g. the park spot to the visitor centre)."
+  },
+  {
+   "id": "central-coast-22",
+   "name": "Brooklyn",
+   "kind": "fallback-standalone",
+   "standalone_id": "brooklyn",
+   "category": "historic",
+   "facts": [
+    {
+     "claim": "Wikivoyage: a small fishing town and boating hub on the south bank of the Hawkesbury River, one of the northernmost parts of Sydney, with Ku-ring-gai Chase National Park to the south; a key stopover on the Great North Walk; the ferry to Dangar Island leaves hourly.",
+     "source": "https://en.wikivoyage.org/wiki/Brooklyn_(New_South_Wales)"
+    },
+    {
+     "claim": "Wikipedia: population 737 (2021), on the Pacific Highway, surrounded by Muogamarra Nature Reserve.",
+     "source": "https://en.wikipedia.org/wiki/Brooklyn,_New_South_Wales"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A town with no single steward; no ticketUrl.",
+   "bio_issue": "Bio says 'the start of the Great North Walk'; Wikivoyage calls it 'a key stopover on the Great North Walk'. Suggested: 'A Hawkesbury River fishing town with the ferry to Dangar Island and a stopover on the Great North Walk.'",
+   "unverified": [
+    "Still marginal as a stop (placement flagged it as borderline; owner call)."
+   ],
+   "wiki_title": "Brooklyn, New South Wales",
+   "coordinates_check": {
+    "placement": {
+     "latitude": -33.54833333,
+     "longitude": 151.21777778
+    },
+    "new": {
+     "latitude": -33.547928,
+     "longitude": 151.226018
+    },
+    "moved_m": 765,
+    "source": "OSM place=town 'Brooklyn' via Photon (766 m from the Wikipedia point, which sits on the Hawkesbury); Wikivoyage's Hawkesbury River Station listing (-33.547004, 151.226739) is 100 m away and Commons median 200 m. HIGH (two sources) for the town centre."
+   },
+   "coordinates": {
+    "latitude": -33.547928,
+    "longitude": 151.226018
+   },
+   "coordinates_source": "OSM place=town 'Brooklyn' via Photon (766 m from the Wikipedia point, which sits on the Hawkesbury); Wikivoyage's Hawkesbury River Station listing (-33.547004, 151.226739) is 100 m away and Commons median 200 m. HIGH (two sources) for the town centre."
+  },
+  {
+   "id": "yerranderie",
+   "name": "Yerranderie",
+   "kind": "fallback-standalone",
+   "standalone_id": "yerranderie",
+   "category": "historic",
+   "facts": [
+    {
+     "claim": "NPWS: Yerranderie Regional Park protects a former silver-mining settlement turned ghost town; getting there means following 76 km of dirt road from Oberon; visitors walk the main street and historic buildings, take short bushwalks and visit the mine fields (a bridge crosses a large shaft); camping and cottages are bookable.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/yerranderie-regional-park"
+    },
+    {
+     "claim": "NPWS access: no access from Sydney's west through the Burragorang Valley (Sydney water catchment restrictions); access is via Oberon or Goulburn, over the Oberon-Colong stock route, and a low-range 4WD is required on the Jenolan-Kowmung route; not reachable by public transport.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/yerranderie-regional-park/visitor-info"
+    },
+    {
+     "claim": "Wikipedia: once a silver-mining town of about 2,000 people, mining collapsed in 1927; accessible mainly by a 4WD dirt road from Oberon (70 km); donated to NPWS by owner Valerie Lhuede.",
+     "source": "https://en.wikipedia.org/wiki/Yerranderie"
+    },
+    {
+     "claim": "NPWS alerts: Post Office Lodge closed for restoration until October 2027; fire ban for Kanangra Reserves from 1 Oct 2026.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/yerranderie-regional-park/local-alerts"
+    }
+   ],
+   "hours": "Open daily; unsealed road, 4WD advised; check NPWS alerts",
+   "visitHoursMin": 3,
+   "visitHoursMax": 8,
+   "free": true,
+   "cost_note": "No park entry fee is listed on the NPWS page (accommodation and camping are bookable and priced separately).",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/yerranderie-regional-park",
+   "ticketUrl_note": "Verified: NPWS page (HTTP 200, title 'Yerranderie Regional Park | NSW National Parks').",
+   "bio_issue": "Bio omits that access is by 4WD-class dirt road only; suggested: 'A former silver-mining ghost town reached by 76 km of dirt road, with its main street and mine relics to explore.'",
+   "unverified": [
+    "Whether an entry fee applies (none listed)."
+   ],
+   "wiki_title": "Yerranderie",
+   "coordinates_check": {
+    "placement": {
+     "latitude": -34.119157,
+     "longitude": 150.219816
+    },
+    "new": {
+     "latitude": -34.119157,
+     "longitude": 150.219816
+    },
+    "moved_m": 0,
+    "source": "OSM place=hamlet 'Yerranderie' (Overpass node 113238407, Photon 0 m); Wikipedia point 401 m away; OSM historic ruins and mine nodes cluster within 300 m. MEDIUM."
+   },
+   "coordinates": {
+    "latitude": -34.119157,
+    "longitude": 150.219816
+   },
+   "coordinates_source": "OSM place=hamlet 'Yerranderie' (Overpass node 113238407, Photon 0 m); Wikipedia point 401 m away; OSM historic ruins and mine nodes cluster within 300 m. MEDIUM."
+  }
+ ]
+}

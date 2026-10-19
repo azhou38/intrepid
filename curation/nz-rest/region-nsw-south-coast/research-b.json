@@ -1,0 +1,1642 @@
+{
+ "region": "nsw-south-coast",
+ "part": "b",
+ "generated": "2026-10-18",
+ "entries": [
+  {
+   "id": "jervis-bay-1",
+   "name": "Booderee National Park",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Booderee National Park is Aboriginal land managed jointly by Parks Australia and the Wreck Bay Aboriginal Community; a park pass is required.",
+     "source": "https://booderee.gov.au/"
+    },
+    {
+     "claim": "A 1-day vehicle (including motorcycle) pass is $20 ($10 concession); multi-day and annual passes are $80 and $110 per the same page. The entry station is currently closed; passes are sold online, at the visitor centre or from a van at the Jervis Bay Supermarket.",
+     "source": "https://booderee.gov.au/plan/park-passes-permits/"
+    },
+    {
+     "claim": "The park site lists beaches, Booderee Botanic Gardens, Cape St George lighthouse, walks and half-day and full-day itineraries.",
+     "source": "https://booderee.gov.au/"
+    },
+    {
+     "claim": "NSW national parks passes are not valid in Booderee and Wreck Bay village is an Aboriginal settlement closed to the public.",
+     "source": "https://en.wikivoyage.org/wiki/Jervis_Bay"
+    }
+   ],
+   "hours": "Open daily (check Parks Australia for gate and alert notices)",
+   "visitHoursMin": 4,
+   "visitHoursMax": 8,
+   "costMin": 20,
+   "costMax": 20,
+   "currency": "AUD",
+   "ticketUrl": "https://booderee.gov.au/",
+   "ticketUrl_note": "Parks Australia's own park site; page title 'Booderee National Park | Parks Australia' (parksaustralia.gov.au/booderee redirects there).",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.12,
+     "longitude": 150.681
+    },
+    "resolved": {
+     "latitude": -35.121427,
+     "longitude": 150.682008
+    },
+    "source": "Photon/OSM tourism=information 'Booderee National Park' (Village Road visitor point, matches the Wikivoyage listing); resolve-pin LOW (single source)",
+    "confidence": "LOW",
+    "distance_m_from_placement": 183
+   },
+   "category": "nature",
+   "closedDays": null,
+   "specialClosures": [],
+   "unverified": [
+    "Opening hours: no hours found on the pages read; Wikivoyage gives the Botanic Gardens 9AM-4PM (2017).",
+    "Visit length 4-8 h is an estimate from the half-day/full-day itineraries, not a stated time.",
+    "Pin: the park is large; the point is the visitor-information node on Village Road, not a centroid. Resolve-pin gave LOW because only Photon matched."
+   ],
+   "bio_ok": true,
+   "cost_note": "$20 per vehicle, 1-day pass (booderee.gov.au passes page); concession $10; NSW passes not valid."
+  },
+  {
+   "id": "jervis-bay-2",
+   "name": "Hyams Beach",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Hyams Beach is a village beach on Jervis Bay; Wikipedia calls the 'whitest sand in the world' / 'whitest in Australia' claim a myth that began with a store billboard (Australia's whitest beaches are Lucky Bay and Hellfire Bay near Esperance).",
+     "source": "https://en.wikipedia.org/wiki/Hyams_Beach"
+    },
+    {
+     "claim": "Wikivoyage still reports a Guinness-record claim for Hyams Beach; Guinness has no whitest-sand category (travel press).",
+     "source": "https://en.wikivoyage.org/wiki/Jervis_Bay"
+    },
+    {
+     "claim": "Hyams Beach lies beside Booderee National Park, which has its own pass.",
+     "source": "https://en.wikivoyage.org/wiki/Jervis_Bay"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "A public beach with no single steward; no official site to link.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.11332,
+     "longitude": 150.69864
+    },
+    "resolved": {
+     "latitude": -35.11332,
+     "longitude": 150.69864
+    },
+    "source": "OSM natural/beach way 5874312 (placement); Photon natural=beach 'Hyams Beach' is 291 m away on the same long beach",
+    "confidence": "MEDIUM",
+    "distance_m_from_placement": 0
+   },
+   "category": "beach",
+   "closedDays": null,
+   "specialClosures": [],
+   "unverified": [
+    "Parking charges/limits at Hyams Beach not found in any source."
+   ],
+   "bio_ok": false,
+   "bio_note": "Draft bio says 'with a Guinness record for the whitest beach in the world': Wikipedia says the whitest-sand claim is a myth and Guinness has no such category. Rewrite, e.g. 'fine white-sand beach on Jervis Bay, long marketed as the whitest in the world (a claim Wikipedia calls a myth)'."
+  },
+  {
+   "id": "jervis-bay-3",
+   "name": "Huskisson",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Huskisson is the largest town in the Jervis Bay area; in summer visitors are about two-thirds of the population.",
+     "source": "https://en.wikivoyage.org/wiki/Jervis_Bay"
+    },
+    {
+     "claim": "Dolphin Explorer Cruises and DolphinWild run dolphin and whale-watching cruises from Huskisson; whale season is June to November.",
+     "source": "https://en.wikivoyage.org/wiki/Jervis_Bay"
+    },
+    {
+     "claim": "Jervis Bay Maritime Museum, 11 Dent St, Daily 10AM-4PM, $10 (updated Jan 2017); Husky Ferry to Myola $15 return (2016).",
+     "source": "https://en.wikivoyage.org/wiki/Jervis_Bay"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "A town with no single steward; cruises and the museum are separate operators.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.03849,
+     "longitude": 150.67071
+    },
+    "resolved": {
+     "latitude": -35.038488,
+     "longitude": 150.670708
+    },
+    "source": "OSM place=locality Huskisson (Photon); Commons geotag median 57 m away (25 files)",
+    "confidence": "HIGH",
+    "distance_m_from_placement": 0
+   },
+   "category": "historic",
+   "closedDays": null,
+   "specialClosures": [],
+   "unverified": [
+    "Cruise and museum prices/hours are from Wikivoyage 2016-17 and not checked against operators."
+   ],
+   "bio_ok": true
+  },
+  {
+   "id": "jervis-bay-4",
+   "name": "Beecroft Peninsula",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "About 4200 ha of Beecroft Peninsula is a live-firing Defence range; public access is restricted at certain times.",
+     "source": "https://en.wikipedia.org/wiki/Beecroft_Peninsula"
+    },
+    {
+     "claim": "Wikivoyage: Beecroft Peninsula is a military range open to the public, with Point Perpendicular lighthouse reached by about 9 km of gravel road from the range entrance, and Gosangs Tunnel (a 40-minute walk).",
+     "source": "https://en.wikivoyage.org/wiki/Jervis_Bay"
+    },
+    {
+     "claim": "Defence page (search-engine summary, page itself timed out when fetched): open Friday 12-6pm and weekends until 6pm, plus NSW school holidays and most public holidays; camping $15 per site per night. Check the Defence Facebook page for closures.",
+     "source": "https://www.defence.gov.au/about/locations-property/beecroft-weapons-range-peninsula"
+    }
+   ],
+   "hours": "Fri 12:00 PM – 6:00 PM, weekends to 6:00 PM, school and most public holidays (range closed when firing)",
+   "visitHoursMin": 3,
+   "visitHoursMax": 5,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "Managed by the Department of Defence; its page (defence.gov.au beecroft-weapons-range-peninsula) timed out when loaded, so it is not linked.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.04349,
+     "longitude": 150.80521
+    },
+    "resolved": {
+     "latitude": -35.093841,
+     "longitude": 150.804365
+    },
+    "source": "Photon/OSM man_made=lighthouse 'Old Point Perpendicular Lighthouse' (the peninsula's named visitor stop in Wikivoyage); replaces the locality centroid",
+    "confidence": "MEDIUM",
+    "distance_m_from_placement": 5599
+   },
+   "category": "nature",
+   "closedDays": null,
+   "specialClosures": [],
+   "unverified": [
+    "Hours and 'free day entry' come from a search-engine summary of the Defence page, not a loaded page; no day-entry fee was found, only camping fees.",
+    "Lighthouse building itself is not open to the public (summary).",
+    "Pin moved 5.7 km from the placement point (peninsula locality centroid) to the lighthouse."
+   ],
+   "bio_ok": true,
+   "blocked_urls": [
+    "https://www.defence.gov.au/about/locations-property/beecroft-weapons-range-peninsula (timed out via fetch.ts and WebFetch; check in a real browser)"
+   ]
+  },
+  {
+   "id": "ulladulla-1",
+   "name": "Pigeon House Mountain",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Pigeon House Mountain Didthul walking track near Ulladulla, in the southern section of Morton National Park, is steep with ladders near the summit; best walked in dry weather; the NPWS page lists 7.1 km return, Grade 4 (a search summary of the same page reported 5 km return, 2.5-3.5 h; the figure conflicts).",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/pigeon-house-mountain-didthul-walking-track"
+    },
+    {
+     "claim": "Hours 7am to 7pm daily on the NPWS page. Park entry fees apply only at Fitzroy Falls ($4/vehicle) and the Bundanoon area ($8/vehicle), so none at Pigeon House.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/pigeon-house-mountain-didthul-walking-track"
+    },
+    {
+     "claim": "Views over the Budawang Wilderness cliffs and gorges, on clear days as far as Jervis Bay and Bermagui.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/pigeon-house-mountain-didthul-walking-track"
+    }
+   ],
+   "hours": "7:00 AM – 7:00 PM",
+   "visitHoursMin": 2.5,
+   "visitHoursMax": 3.5,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/pigeon-house-mountain-didthul-walking-track",
+   "ticketUrl_note": "NPWS (managing agency) walking-track page; loads and is titled 'Pigeon House Mountain Didthul walking track'.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.34928889,
+     "longitude": 150.26498333
+    },
+    "resolved": {
+     "latitude": -35.349294,
+     "longitude": 150.264964
+    },
+    "source": "Photon/OSM natural=peak and tourism=viewpoint 'Pigeon House Mountain' (same node), Wikipedia -35.349289,150.264983 (2 m)",
+    "confidence": "HIGH",
+    "distance_m_from_placement": 2
+   },
+   "category": "nature",
+   "closedDays": null,
+   "specialClosures": [],
+   "unverified": [
+    "Distance conflict: 7.1 km return on the fetched page vs 5 km in a search summary; time 2.5-3.5 h is from the search summary only.",
+    "A search report says the track was closed after storm damage in 2025 and reopened around Feb 2026: check NPWS alerts.",
+    "Pin is the summit; the walk starts at the picnic area. Placement id sits outside any destination if Morton is declined; bio is a summit walk, so a summit pin is as the rule for peaks."
+   ],
+   "bio_ok": true,
+   "cost_note": "Free: NPWS fees apply only at Fitzroy Falls and Bundanoon."
+  },
+  {
+   "id": "ulladulla-2",
+   "name": "Mollymook Beach",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Mollymook has a public golf course popular with visitors; Ulladulla and Mollymook are a popular holiday destination with ocean beaches within walking distance (Ulladulla to Mollymook about 45 minutes on foot).",
+     "source": "https://en.wikivoyage.org/wiki/Ulladulla"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "A public beach; no single steward.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.33261,
+     "longitude": 150.47848
+    },
+    "resolved": {
+     "latitude": -35.33261,
+     "longitude": 150.47848
+    },
+    "source": "OSM natural/beach way 95783344 (placement); Photon natural=beach 'Mollymook Beach' 295 m away on the same 2 km beach",
+    "confidence": "MEDIUM",
+    "distance_m_from_placement": 0
+   },
+   "category": "beach",
+   "closedDays": null,
+   "specialClosures": [],
+   "unverified": [
+    "Bio calls it a 'pleasant beach' beside the public golf course: only Wikivoyage's one-line mention; consider a second counted source."
+   ],
+   "bio_ok": true
+  },
+  {
+   "id": "murramarang-1",
+   "name": "Pebbly Beach",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Murramarang National Park is always open (may close for weather or fire danger); entry $8 per vehicle per day, pay machines take cash and cards.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/murramarang-national-park"
+    },
+    {
+     "claim": "Pebbly Beach has a picnic area with facilities and campground/shacks ('Pebbly Beach shacks'); the park's beach kangaroos are a feature of the Murramarang South Coast Walk.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/murramarang-south-coast-walk"
+    },
+    {
+     "claim": "The park is a rare place where spotted gums grow down to the ocean and eastern grey kangaroos are seen.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/murramarang-national-park"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "costMin": 8,
+   "costMax": 8,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/murramarang-national-park",
+   "ticketUrl_note": "NPWS park page (loads; title 'Murramarang National Park | NSW National Parks'); no separate Pebbly Beach page found (guessed attractions URL 404s).",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.60972,
+     "longitude": 150.32789
+    },
+    "resolved": {
+     "latitude": -35.60972,
+     "longitude": 150.32789
+    },
+    "source": "OSM natural/beach way 12591715 (placement); Photon natural=beach 'Pebbly Beach' 101 m away",
+    "confidence": "MEDIUM",
+    "distance_m_from_placement": 0
+   },
+   "category": "beach",
+   "closedDays": null,
+   "specialClosures": [],
+   "unverified": [
+    "Kangaroos on the sand: the NPWS walk page says 'famous beach kangaroos might be there'; not guaranteed."
+   ],
+   "bio_ok": true,
+   "cost_note": "$8 per vehicle per day park entry."
+  },
+  {
+   "id": "murramarang-2",
+   "name": "Murramarang South Coast Walk",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Murramarang South Coast Walk: 34 km one way over 3 days between Ulladulla and Batemans Bay, Grade 4; day sections 10 km (3-6 h), 8 km (2.5-3.5 h), 16 km (6-8 h) on the NPWS page.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/murramarang-south-coast-walk"
+    },
+    {
+     "claim": "Prices vary by package (campground or cabin experience); park entry is $8 per vehicle per day.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/murramarang-south-coast-walk"
+    },
+    {
+     "claim": "Walk the rock platforms at low tide; Durras Lake crossing may need a kayak transfer.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/murramarang-south-coast-walk"
+    },
+    {
+     "claim": "OSM hiking relation 'Murramarang South Coast Walk' (relation 2702047); way lengths sum to 34.5 km.",
+     "source": "https://www.openstreetmap.org/relation/2702047"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 11.5,
+   "visitHoursMax": 17.5,
+   "costMin": 8,
+   "costMax": 8,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/murramarang-south-coast-walk",
+   "ticketUrl_note": "NPWS walk page (loads; title 'Murramarang South Coast Walk | NSW National Parks').",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.69355,
+     "longitude": 150.29459
+    },
+    "resolved": {
+     "latitude": -35.663752,
+     "longitude": 150.296957
+    },
+    "source": "Midpoint along OSM hiking relation 2702047 (ways ordered north-south, 34.5 km total); resolve-pin.py gave no result (Overpass down), computed from maps.mail.ru Overpass mirror",
+    "confidence": "MEDIUM",
+    "distance_m_from_placement": 3320
+   },
+   "category": "hike",
+   "closedDays": null,
+   "specialClosures": [],
+   "unverified": [
+    "No price for the walk's camping/cabin packages was readable; $8 is the park vehicle fee only. Camping/cabin cost is extra.",
+    "visitHours 11.5-17.5 is the sum of the three NPWS day times (walking only, over 3 days).",
+    "Midpoint is a computed point on the ordered ways; confirm it sits on the track in a map."
+   ],
+   "bio_ok": true,
+   "cost_note": "Park entry $8 per vehicle; campground and cabin packages priced separately (not found)."
+  },
+  {
+   "id": "batemans-bay-1",
+   "name": "Mogo Wildlife Park",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Mogo Wildlife Park, 222 Tomakin Rd: Daily 9AM-4PM; exotic endangered species such as red panda, snow leopard and black-and-white ruffed lemur.",
+     "source": "https://en.wikivoyage.org/wiki/Mogo"
+    },
+    {
+     "claim": "The park's own site shows hours 9AM-4PM daily, 9am-2pm Christmas Day, and a Buy Tickets button; the ticket pages on its site did not state a price.",
+     "source": "https://mogowildlifepark.com.au/"
+    },
+    {
+     "claim": "Reseller listings and a 2024 local article give adult general admission about $42 (child $28).",
+     "source": "https://region.com.au/events/mogo-wildlife-park-2024-community-day"
+    }
+   ],
+   "hours": "9:00 AM – 4:00 PM",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "costMin": 42,
+   "costMax": 42,
+   "currency": "AUD",
+   "ticketUrl": "https://mogowildlifepark.com.au/",
+   "ticketUrl_note": "Operator's own site; title 'Home - Mogo Wildlife Park' (moved from mogozoo domain; /tickets and /plan-your-visit guesses 404, so the homepage is linked).",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.7952,
+     "longitude": 150.1585
+    },
+    "resolved": {
+     "latitude": -35.795547,
+     "longitude": 150.158668
+    },
+    "source": "Photon/OSM tourism=zoo 'Mogo Wildlife Park' (Wikipedia -35.7954,150.1592 within 50 m; Wikivoyage listing -35.7952,150.1585)",
+    "confidence": "HIGH",
+    "distance_m_from_placement": 41
+   },
+   "category": "entertainment",
+   "closedDays": null,
+   "specialClosures": [
+    "12-25"
+   ],
+   "unverified": [
+    "Adult price $42 comes from resellers and a 2024 article, not the operator page (the ticket flow is script-rendered). Check on the site."
+   ],
+   "bio_ok": true,
+   "cost_note": "About $42 adult general admission (unverified, reseller/2024 article).",
+   "note_christmas": "Open 9am-2pm on Christmas Day per site."
+  },
+  {
+   "id": "batemans-bay-2",
+   "name": "Mogo",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Mogo is a small town of 322 (2016) along the Princes Highway, 9 km south of Batemans Bay, established during the gold rush; its attractions are outside the town centre.",
+     "source": "https://en.wikivoyage.org/wiki/Mogo"
+    },
+    {
+     "claim": "Wikivoyage lists Mogo Wildlife Park, Eurobodalla Regional Botanic Garden (Wed-Sun 9AM-4PM) and Mossy Point Boat Shed near the town, plus cafes and pie shops on Sydney Street.",
+     "source": "https://en.wikivoyage.org/wiki/Mogo"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "A village with no single steward.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.78333333,
+     "longitude": 150.13333333
+    },
+    "resolved": {
+     "latitude": -35.783022,
+     "longitude": 150.142608
+    },
+    "source": "Photon/OSM place=locality 'Mogo' (village node); replaces the Wikipedia town point; resolve-pin top hit was a creek",
+    "confidence": "MEDIUM",
+    "distance_m_from_placement": 837
+   },
+   "category": "historic",
+   "closedDays": null,
+   "specialClosures": [],
+   "unverified": [
+    "Draft bio says 'restored gold-mining village ... arts and crafts shops': Wikivoyage says only 'established during the gold rush' and lists cafes; the restored/crafts claim is not in the sources I read."
+   ],
+   "bio_ok": false,
+   "bio_note": "Cut 'restored' and 'arts and crafts' or find a source; keep 'gold-rush village on the Princes Highway with cafes and the wildlife park nearby'."
+  },
+  {
+   "id": "narooma-1",
+   "name": "Barunguba Montague Island",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Barunguba Montague Island is home to hundreds of seals and more than 90 bird species, with cultural significance to the Yuin people; a minimum age of 5 applies and it is reachable only on tours by NPWS-contracted commercial operators.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/barunguba-montague-island-nature-reserve"
+    },
+    {
+     "claim": "Seals are visible late winter to early December; whales in spring on their southern migration; two lighthouse keeper's cottages offer overnight stays.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/barunguba-montague-island-nature-reserve"
+    },
+    {
+     "claim": "Operator listings (search summary): Narooma Charters about $130 per adult for a 3-4 hour island tour, snorkel tours from $140, other operators $100-165, 2.5-4.5 hours.",
+     "source": "https://naroomacharters.rezdy.com/66188/montague-island-tour-with-optional-snorkelling-8-00am-4-5-hrs-landing-on-island"
+    }
+   ],
+   "hours": "Boat tours only (daily, weather permitting)",
+   "visitHoursMin": 3,
+   "visitHoursMax": 4.5,
+   "costMin": 100,
+   "costMax": 165,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/barunguba-montague-island-nature-reserve",
+   "ticketUrl_note": "NPWS (managing agency) reserve page; loads and is titled 'Barunguba Montague Island Nature Reserve'. Tours are sold by several operators, so no operator link.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -36.25108,
+     "longitude": 150.22661
+    },
+    "resolved": {
+     "latitude": -36.251084,
+     "longitude": 150.226606
+    },
+    "source": "Photon/OSM place=island 'Barunguba Montague Island' (resolve-pin HIGH, within 5 m of placement)",
+    "confidence": "HIGH",
+    "distance_m_from_placement": 1
+   },
+   "category": "nature",
+   "closedDays": null,
+   "specialClosures": [],
+   "unverified": [
+    "Tour prices are from operator listings via a search summary and the Eurobodalla tourism guide; confirm with an operator.",
+    "Hours: no fixed hours (tour dependent)."
+   ],
+   "bio_ok": true,
+   "cost_note": "Typical adult tour AUD 100-165; Narooma Charters 3-4 h tour about $130."
+  },
+  {
+   "id": "narooma-2",
+   "name": "Mount Dromedary",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Gulaga National Park (Gulaga / Mount Dromedary): the mountain and landscape have great spiritual significance to local Aboriginal people, particularly women; the park was handed back to its traditional owners (Yuin) in May 2006.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/gulaga-national-park"
+    },
+    {
+     "claim": "Activities: Gulaga creation (Aboriginal culture) experience, or walk the old mining access roads for views over the coastal lakes. Access from Tilba Tilba or off Punkalla Road at Central Tilba, 10 km north of Bermagui.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/gulaga-national-park"
+    },
+    {
+     "claim": "Wikivoyage Narooma lists Mount Dromedary under See.",
+     "source": "https://en.wikivoyage.org/wiki/Narooma"
+    }
+   ],
+   "hours": "Open daily (check NPWS alerts)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/gulaga-national-park",
+   "ticketUrl_note": "NPWS park page; loads and is titled 'Gulaga National Park | NSW National Parks'.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -36.3,
+     "longitude": 150.03333333
+    },
+    "resolved": {
+     "latitude": -36.30628,
+     "longitude": 150.028313
+    },
+    "source": "Photon/OSM natural=peak 'Mount Dromedary / Gulaga'; Wikipedia -36.3,150.0333 is a rounded reference",
+    "confidence": "MEDIUM",
+    "distance_m_from_placement": 831
+   },
+   "category": "nature",
+   "closedDays": null,
+   "specialClosures": [],
+   "unverified": [
+    "No park entry fee appears on the NPWS page (treated as free).",
+    "Hours not stated; the NPWS page gives none. Summit walk length/time not found (the page names mining roads, not a summit track): visit time is an estimate.",
+    "Check cultural access guidance from NPWS/Aboriginal owners before a summit climb."
+   ],
+   "bio_ok": true,
+   "bio_note": "Draft bio is fine but mention the NPWS name Gulaga National Park; keep access-rule reminder."
+  },
+  {
+   "id": "narooma-3",
+   "name": "Central Tilba",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Central Tilba is a beautifully preserved rural village nestled on a hill, with under 400 people, colourful houses and boutiques; it is easily covered on foot and parking fills up at lunchtime.",
+     "source": "https://en.wikivoyage.org/wiki/Tilba"
+    },
+    {
+     "claim": "Tilba Dairy, 37 Bate St, 9AM-4PM daily, makes cheese; Tilba Teapot Cafe Wed-Mon 9AM-2PM; Dromedary Hotel is an 1895 country pub.",
+     "source": "https://en.wikivoyage.org/wiki/Tilba"
+    }
+   ],
+   "hours": "Open 24 hours (shops roughly 9:00 AM – 4:00 PM)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "A heritage village with no single steward; its shops and dairy are separate businesses.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -36.31666667,
+     "longitude": 150.06666667
+    },
+    "resolved": {
+     "latitude": -36.312692,
+     "longitude": 150.074543
+    },
+    "source": "Photon/OSM place=locality 'Central Tilba'; replaces the rounded Wikipedia point (-36.31667,150.06667, 500 m west); resolve-pin top hit was the school",
+    "confidence": "MEDIUM",
+    "distance_m_from_placement": 833
+   },
+   "category": "historic",
+   "closedDays": null,
+   "specialClosures": [],
+   "unverified": [
+    "Shop hours are Wikivoyage (2024) and not checked with the businesses."
+   ],
+   "bio_ok": true
+  },
+  {
+   "id": "narooma-4",
+   "name": "Bermagui",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Bermagui: a fishing and surfing town; Wikivoyage lists Blue Pool, Camel Rock Surf Beach, Wallaga Lake and long beaches under See.",
+     "source": "https://en.wikivoyage.org/wiki/Bermagui"
+    },
+    {
+     "claim": "The draft bio mentions deep-sea game fishing and the Four Winds Festival; the festival is an annual event, not a spot feature.",
+     "source": "https://en.wikivoyage.org/wiki/Bermagui"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "A town with no single steward.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -36.42786,
+     "longitude": 150.0774
+    },
+    "resolved": {
+     "latitude": -36.427862,
+     "longitude": 150.077395
+    },
+    "source": "Photon/OSM place=locality 'Bermagui' (matches placement point)",
+    "confidence": "MEDIUM",
+    "distance_m_from_placement": 0
+   },
+   "category": "historic",
+   "closedDays": null,
+   "specialClosures": [],
+   "unverified": [
+    "Game-fishing claim not re-read on the Bermagui page in detail; the Four Winds Festival is an event and should be cut from the bio (COVERAGE.md: events are not spots)."
+   ],
+   "bio_ok": false,
+   "bio_note": "Drop the Four Winds Festival; say 'fishing and surfing town on the Far South Coast with Blue Pool and Camel Rock beaches nearby'."
+  },
+  {
+   "id": "narooma-5",
+   "name": "Eurobodalla National Park",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Eurobodalla National Park is always open (may close for weather or fire danger); offers camping, walking, surfing, fishing and whale watching; 1080 Beach for surfing, Brou Lake for fishing and the 14 km Bingi Dreaming track along the coast.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/eurobodalla-national-park"
+    },
+    {
+     "claim": "No park entry fee line appears on the NPWS page.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/eurobodalla-national-park"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/eurobodalla-national-park",
+   "ticketUrl_note": "NPWS park page; loads, title 'Eurobodalla National Park | NSW National Parks'.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -36.13055556,
+     "longitude": 150.11555556
+    },
+    "resolved": {
+     "latitude": -36.129226,
+     "longitude": 150.123752
+    },
+    "source": "Photon/OSM amenity=parking 'Brou Lake Day Use' (NPWS day-use area named on the park page); replaces the park centroid (resolve-pin HIGH was the centroid)",
+    "confidence": "MEDIUM",
+    "distance_m_from_placement": 751
+   },
+   "category": "nature",
+   "closedDays": null,
+   "specialClosures": [],
+   "unverified": [
+    "Entry treated as free because the NPWS page lists no fee; confirm on NPWS.",
+    "Pin is the Brou Lake day-use car park: the park is fragmented along ~40 km of coast; confirm this is the visitors' main point, or use 1080 Beach car park (-36.318971,150.125322)."
+   ],
+   "bio_ok": true
+  },
+  {
+   "id": "narooma-6",
+   "name": "Blue Pool",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Blue Pool: two natural rock pools at the base of the cliff on Scenic Drive, shallow and sheltered one and a deeper one; views to Montague Island; free to enter; shower and toilet block in the car park; parking quite limited.",
+     "source": "https://en.wikivoyage.org/wiki/Bermagui"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "A public rock pool; no single steward.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -36.42958,
+     "longitude": 150.08381
+    },
+    "resolved": {
+     "latitude": -36.429523,
+     "longitude": 150.084208
+    },
+    "source": "OSM leisure=swimming_pool 'Bermagui Blue Pool' (Photon); Wikivoyage listing -36.42958,150.08381 is 35 m away",
+    "confidence": "HIGH",
+    "distance_m_from_placement": 36
+   },
+   "category": "nature",
+   "closedDays": null,
+   "specialClosures": [],
+   "unverified": [
+    "Tide and swell dependence is not sourced; the pool is best at low-moderate surf."
+   ],
+   "bio_ok": true
+  },
+  {
+   "id": "narooma-7",
+   "name": "Camel Rock Beach",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Camel Rock Surf Beach is a well-known surfing spot with wonderful photographic opportunities; Moorheads and Haywards beaches run from Bermagui to Camel Rock; campervan overnight parking is tolerated near the beach.",
+     "source": "https://en.wikivoyage.org/wiki/Bermagui"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "A public beach; no single steward.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -36.37589,
+     "longitude": 150.08034
+    },
+    "resolved": {
+     "latitude": -36.37589,
+     "longitude": 150.08034
+    },
+    "source": "OSM natural/beach way 664606755 (placement, unnamed beach beside Camel Rock); Photon natural=rock 'Camel Rock' is 300 m south at -36.378539,150.080362",
+    "confidence": "MEDIUM",
+    "distance_m_from_placement": 0
+   },
+   "category": "beach",
+   "closedDays": null,
+   "specialClosures": [],
+   "unverified": [
+    "Beach way is unnamed in OSM; Camel Rock itself is 300 m away. Either point is on the beach frontage."
+   ],
+   "bio_ok": true
+  },
+  {
+   "id": "narooma-8",
+   "name": "Wallaga Lake",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Wallaga Lake: an area of outstanding natural beauty with special significance for the local Aboriginal people; kayaking, windsurfing and black swans.",
+     "source": "https://en.wikivoyage.org/wiki/Bermagui"
+    },
+    {
+     "claim": "Wallaga Lake areas are best accessed by boat; hire boats from Regatta Point or Beauty Point.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/gulaga-national-park"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "A lake with no single steward; boat hire is by separate businesses.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -36.365,
+     "longitude": 150.055
+    },
+    "resolved": {
+     "latitude": -36.370082,
+     "longitude": 150.066334
+    },
+    "source": "Photon/OSM natural=cape 'Regatta Point' (NPWS names Regatta Point as the boat-hire access); replaces the lake centroid -36.365,150.055",
+    "confidence": "MEDIUM",
+    "distance_m_from_placement": 1162
+   },
+   "category": "nature",
+   "closedDays": null,
+   "specialClosures": [],
+   "unverified": [
+    "Boat hire prices not researched."
+   ],
+   "bio_ok": true
+  },
+  {
+   "id": "narooma-9",
+   "name": "The Big Cheese",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "The Big Cheese Visitors' Centre was once part of the old Bodalla cheese factory on the northern outskirts of Bodalla and was closed in 2007 (Wikipedia, 'citation needed').",
+     "source": "https://en.wikipedia.org/wiki/Bodalla,_New_South_Wales"
+    },
+    {
+     "claim": "Wikivoyage Bodalla lists 'The Big Cheese' with no description or hours; the working attraction is the Bodalla Dairy Shed, 52 Princes Highway (cafe, ice cream, cheeses).",
+     "source": "https://en.wikivoyage.org/wiki/Bodalla"
+    }
+   ],
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "costMin": null,
+   "costMax": null,
+   "ticketUrl": null,
+   "ticketUrl_note": "No official site; recommend not adding the Big Cheese.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -36.08662,
+     "longitude": 150.04934
+    },
+    "resolved": null,
+    "source": "resolve-pin.py: no feature found; Wikivoyage geo for Bodalla (-36.1,150.05) is a rough town point",
+    "confidence": "LOW"
+   },
+   "category": "landmark",
+   "closedDays": null,
+   "specialClosures": [],
+   "unverified": [
+    "HOLD: visitor centre closed since 2007, so it fails 'a visitor can actually do something there'. No hours or price. Suggest replacing with Bodalla Dairy Shed (52 Princes Hwy, cafe and viewing windows) if the owner wants a Bodalla stop, which needs separate research."
+   ],
+   "bio_ok": false,
+   "held": "closed visitors centre (2007); no pin found; recommend removal"
+  },
+  {
+   "id": "merimbula-1",
+   "name": "Tathra",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Tathra is a seaside town with the 1861 wharf as its icon; Mimosa Rocks National Park starts at the northern end of Tathra Beach.",
+     "source": "https://en.wikivoyage.org/wiki/Tathra"
+    },
+    {
+     "claim": "Tathra Hotel and cafes in town; the wharf and museum are a separate spot.",
+     "source": "https://en.wikivoyage.org/wiki/Tathra"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "A town with no single steward.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -36.72845,
+     "longitude": 149.98503
+    },
+    "resolved": {
+     "latitude": -36.72845,
+     "longitude": 149.985027
+    },
+    "source": "OSM place=town 'Tathra' (Photon; matches placement)",
+    "confidence": "MEDIUM",
+    "distance_m_from_placement": 0
+   },
+   "category": "historic",
+   "closedDays": null,
+   "specialClosures": [],
+   "unverified": [
+    "Overlaps the Tathra Wharf and Museum spot: the town spot is mostly an umbrella; consider dropping it."
+   ],
+   "bio_ok": true
+  },
+  {
+   "id": "merimbula-2",
+   "name": "Bega",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Bega is an inland dairy town on the Sapphire Coast; Wikivoyage's main See entry is the Bega Cheese Heritage Centre, which it calls modest.",
+     "source": "https://en.wikivoyage.org/wiki/Bega"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "A town with no single steward.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -36.67411,
+     "longitude": 149.84204
+    },
+    "resolved": {
+     "latitude": -36.674107,
+     "longitude": 149.842037
+    },
+    "source": "OSM place=town 'Bega' (Photon; matches placement)",
+    "confidence": "MEDIUM",
+    "distance_m_from_placement": 0
+   },
+   "category": "historic",
+   "closedDays": null,
+   "specialClosures": [],
+   "unverified": [
+    "Thin: the only See listing is the Heritage Centre, which is already a separate spot. Kept on one counted source; consider review."
+   ],
+   "bio_ok": true
+  },
+  {
+   "id": "merimbula-3",
+   "name": "Mimosa Rocks National Park",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Mimosa Rocks National Park is always open (may close for weather or fire danger); headland views, beaches and lagoons; Aragunnu, Picnic Point and Middle Beach campgrounds and Wajurda Point lookout; whale watching from headlands in winter.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/mimosa-rocks-national-park"
+    },
+    {
+     "claim": "No park entry fee line on the NPWS page.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/mimosa-rocks-national-park"
+    },
+    {
+     "claim": "Wikivoyage: starts at the northern end of Tathra Beach and runs north about 16 km with five access roads from the Tathra-Bermagui road.",
+     "source": "https://en.wikivoyage.org/wiki/Tathra"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/mimosa-rocks-national-park",
+   "ticketUrl_note": "NPWS park page; loads, title 'Mimosa Rocks National Park | NSW National Parks'.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -36.665,
+     "longitude": 149.951111
+    },
+    "resolved": {
+     "latitude": -36.691167,
+     "longitude": 149.995711
+    },
+    "source": "Photon/OSM tourism=viewpoint 'Wajurda Point' (the lookout named on the NPWS park page); replaces the park centroid -36.665,149.951",
+    "confidence": "MEDIUM",
+    "distance_m_from_placement": 4928
+   },
+   "category": "nature",
+   "closedDays": null,
+   "specialClosures": [],
+   "unverified": [
+    "Free because no fee line on NPWS; confirm.",
+    "Park is 16 km long; Wajurda Point is one of several visitor points (Aragunnu boardwalk is at -36.582837,150.052256)."
+   ],
+   "bio_ok": true
+  },
+  {
+   "id": "merimbula-4",
+   "name": "Bournda National Park",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Bournda National Park is always open; $8 per vehicle per day (self-registration, bring correct change); Kangarutha walking track, Turingal Head, Wine Glass Bay, Bournda Lagoon kayaking, Wallagoot Lake swimming and Hobart Beach campground.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/bournda-national-park"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "costMin": 8,
+   "costMax": 8,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/bournda-national-park",
+   "ticketUrl_note": "NPWS park page; loads, title 'Bournda National Park | NSW National Parks'.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -36.813379,
+     "longitude": 149.934707
+    },
+    "resolved": {
+     "latitude": -36.796121,
+     "longitude": 149.938772
+    },
+    "source": "Photon/OSM tourism=camp_site 'Hobart Beach' (NPWS: 'Hobart Beach makes a perfect base'); replaces the placement point (Field Studies Huts, 2 km south)",
+    "confidence": "LOW",
+    "distance_m_from_placement": 1953
+   },
+   "category": "nature",
+   "closedDays": null,
+   "specialClosures": [],
+   "unverified": [
+    "Single OSM source (Photon); LOW. The park's main visitor point is arguably Hobart Beach/Bournda Lagoon; owner to confirm."
+   ],
+   "bio_ok": true,
+   "cost_note": "$8 per vehicle per day."
+  },
+  {
+   "id": "merimbula-5",
+   "name": "Tathra Wharf and Museum",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Tathra Wharf (1861) is the town's icon; the last ship left in 1954; a museum next to the wharf covers its history.",
+     "source": "https://en.wikivoyage.org/wiki/Tathra"
+    },
+    {
+     "claim": "The museum is open 10am-3pm Saturdays and Sundays; $4 adults, children under 12 free; EFTPOS accepted.",
+     "source": "https://tathrawharfmuseum.org/"
+    },
+    {
+     "claim": "Bega Valley Shire Council lists the same hours and price.",
+     "source": "https://www.begavalley.nsw.gov.au/Our-Community/Bega-Valley-Local-Directory/Tathra-Wharf-Museum"
+    }
+   ],
+   "hours": "Wharf: open 24 hours; museum Sat–Sun 10:00 AM – 3:00 PM",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "costMin": 4,
+   "costMax": 4,
+   "currency": "AUD",
+   "ticketUrl": "https://tathrawharfmuseum.org/",
+   "ticketUrl_note": "Museum's own site; loads, title 'Tathra Wharf Museum'.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -36.72489,
+     "longitude": 149.99053
+    },
+    "resolved": {
+     "latitude": -36.725649,
+     "longitude": 149.988819
+    },
+    "source": "Photon/OSM tourism=museum 'Tathra Wharf Museum' (HIGH; placement 74 m away)",
+    "confidence": "HIGH",
+    "distance_m_from_placement": 174
+   },
+   "category": "historic",
+   "closedDays": null,
+   "specialClosures": [],
+   "unverified": [
+    "Older local news gave different (weekday) hours; operator and council agree on Sat-Sun 10-3."
+   ],
+   "bio_ok": true,
+   "cost_note": "Museum $4 adult; wharf walking is free."
+  },
+  {
+   "id": "merimbula-6",
+   "name": "Bega Cheese Heritage Centre",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Bega Cheese Heritage Centre, 11-13 Lagoon St, Bega: open Mon-Fri 9am-5pm and Sat-Sun 9am-4pm (winter trading hours), otherwise 9am-5pm; cheese tasting and a milkshake verandah over the Bega River.",
+     "source": "https://heritagecentre.com.au/about-us/contact-us/"
+    },
+    {
+     "claim": "Wikivoyage: small museum of Bega's cheese and dairy history with a cafe and tasting area; no factory tours.",
+     "source": "https://en.wikivoyage.org/wiki/Bega"
+    }
+   ],
+   "hours": "Mon–Fri 9:00 AM – 5:00 PM; Sat–Sun 9:00 AM – 4:00 PM (winter hours)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": "https://heritagecentre.com.au/",
+   "ticketUrl_note": "Operator's own site (heritagecentre.com.au); loads, title 'Home - Bega Cheese Heritage Centre'.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -36.66859,
+     "longitude": 149.83149
+    },
+    "resolved": {
+     "latitude": -36.66859,
+     "longitude": 149.83149
+    },
+    "source": "Wikivoyage listing point for 11-13 Lagoon St; confirmed against OSM Lagoon Street (unclassified) -36.668429,149.829624 and Apex Park -36.669058,149.831111 (<200 m); Commons median 23 files -36.673684,149.839586 is 1 km away and not used",
+    "confidence": "MEDIUM",
+    "distance_m_from_placement": 0
+   },
+   "category": "museum",
+   "closedDays": null,
+   "specialClosures": [],
+   "unverified": [
+    "Admission not stated on the site; treated as free (museum/tasting) because no price is shown. Confirm.",
+    "Summer hours may differ from the winter-hours line."
+   ],
+   "bio_ok": true
+  },
+  {
+   "id": "eden-1",
+   "name": "Eden Killer Whale Museum",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Eden Killer Whale Museum, 184 Imlay St: Mon-Sat 9:15AM-3:45PM, Sun 10:15AM-2:45PM, closed Christmas Day; adults $15, children 5-15 $5, under 5 free.",
+     "source": "https://killerwhalemuseum.com.au/"
+    },
+    {
+     "claim": "Features the skeleton of orca 'Old Tom'; the only complete killer whale skeleton on display in the Southern Hemisphere (Wikivoyage, 2016).",
+     "source": "https://en.wikivoyage.org/wiki/Eden_(New_South_Wales)"
+    },
+    {
+     "claim": "Wikivoyage gives Sunday 11:15AM start; the operator's current page says 10:15AM.",
+     "source": "https://en.wikivoyage.org/wiki/Eden_(New_South_Wales)"
+    }
+   ],
+   "hours": "Mon–Sat 9:15 AM – 3:45 PM; Sun 10:15 AM – 2:45 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 15,
+   "costMax": 15,
+   "currency": "AUD",
+   "ticketUrl": "https://killerwhalemuseum.com.au/",
+   "ticketUrl_note": "Operator's own site; loads, title 'Eden Killer Whale Museum | Home of Old Tom'.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -37.0686,
+     "longitude": 149.9085
+    },
+    "resolved": {
+     "latitude": -37.068667,
+     "longitude": 149.908653
+    },
+    "source": "Photon/OSM tourism=museum 'Eden Killer Whale Museum' (HIGH; Wikivoyage listing -37.0686,149.9085)",
+    "confidence": "HIGH",
+    "distance_m_from_placement": 15
+   },
+   "category": "museum",
+   "closedDays": null,
+   "specialClosures": [
+    "12-25"
+   ],
+   "unverified": [
+    "Extended summer hours (late Dec-late Jan) per Wikivoyage; not on the page read."
+   ],
+   "bio_ok": true
+  },
+  {
+   "id": "beowa-1",
+   "name": "Green Cape Lighthouse",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Green Cape Lighthouse, around 45 min south of Eden, is the southernmost lighthouse in NSW; to enter, join a tour; unsealed road may need all-wheel drive in wet weather.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/historic-buildings-places/green-cape-lighthouse"
+    },
+    {
+     "claim": "Park entry $8 per vehicle per day in the Green Cape area (south of Eden); the area is always open.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/historic-buildings-places/green-cape-lighthouse"
+    },
+    {
+     "claim": "Guided lighthouse tours on set dates (2026: 1, 3, 8 Oct, 10:00-11:30am; 2027: 7, 14, 21 Jan); adult $25, bookings required, park entry extra.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/guided-tours/green-cape-lighthouse-guided-tour"
+    }
+   ],
+   "hours": "Grounds open 24 hours; lighthouse tours on set dates (10:00 AM)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 8,
+   "costMax": 8,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/historic-buildings-places/green-cape-lighthouse",
+   "ticketUrl_note": "NPWS lighthouse page; loads, title 'Green Cape Lighthouse | NSW National Parks'.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -37.26145,
+     "longitude": 150.04948
+    },
+    "resolved": {
+     "latitude": -37.261453,
+     "longitude": 150.049476
+    },
+    "source": "Photon/OSM building 'Green Cape Lighthouse' (HIGH; placement point 0 m)",
+    "confidence": "HIGH",
+    "distance_m_from_placement": 0
+   },
+   "category": "landmark",
+   "closedDays": null,
+   "specialClosures": [],
+   "unverified": [
+    "Tour adult price differed between the fetched tour page ($25) and a search summary ($22); $25 used. The cost shown ($8) is the vehicle entry; a tour adds $25."
+   ],
+   "bio_ok": true,
+   "cost_note": "$8 per vehicle park entry; lighthouse tour $25 adult on limited dates."
+  },
+  {
+   "id": "beowa-2",
+   "name": "Light to Light Walk",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Light to Light Walk: 32 km over 3 days from Boyds Tower to Green Cape Lighthouse in Beowa National Park, with beachside campgrounds and optional transfers from Merimbula or Eden.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/light-to-light-walk"
+    },
+    {
+     "claim": "From $115 for 2 nights camping, priced per campsite (1-2 tents); transfers extra. Park entry $8 per vehicle south of Eden.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/light-to-light-walk"
+    },
+    {
+     "claim": "OSM hiking route relation 15102193; chained ways about 39 km, midpoint -37.1472,150.0055 (agrees with the placement skeptic's midpoint).",
+     "source": "https://www.openstreetmap.org/relation/15102193"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 16,
+   "visitHoursMax": 24,
+   "costMin": 115,
+   "costMax": 115,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/light-to-light-walk",
+   "ticketUrl_note": "NPWS walk page; loads, title 'Light to Light Walk | NSW National Parks'.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -37.14722,
+     "longitude": 150.0056
+    },
+    "resolved": {
+     "latitude": -37.147208,
+     "longitude": 150.005544
+    },
+    "source": "Midpoint along OSM hiking relation 15102193 (chained 10 ways; computed from the maps.mail.ru Overpass mirror because resolve-pin.py's Overpass call failed)",
+    "confidence": "MEDIUM",
+    "distance_m_from_placement": 5
+   },
+   "category": "hike",
+   "closedDays": null,
+   "specialClosures": [],
+   "unverified": [
+    "visitHours 16-24 is an estimate (32 km over 3 days); NPWS gives no hours.",
+    "$115 is 'from' for 2 nights camping per campsite, not per person.",
+    "Chained length 38.9 km vs NPWS 32 km: some OSM ways may be side tracks; confirm the midpoint lies on the track."
+   ],
+   "bio_ok": true,
+   "cost_note": "From $115 for 2 nights camping per campsite (1-2 tents); transfers extra."
+  },
+  {
+   "id": "wollongong",
+   "name": "Wollongong",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Wollongong is the regional city of the Illawarra, stretching over 40 km from Port Kembla to Stanwell Park; its coal and steel history continues with BlueScope at Port Kembla.",
+     "source": "https://en.wikivoyage.org/wiki/Wollongong"
+    },
+    {
+     "claim": "Wikivoyage See entries include Nan Tien Temple, Wollongong Head Lighthouse, Sea Cliff Bridge, Wollongong Botanical Garden and Science Space.",
+     "source": "https://en.wikivoyage.org/wiki/Wollongong"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "A town with no single steward; no official site to link.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.42439,
+     "longitude": 150.89385
+    },
+    "resolved": {
+     "latitude": -34.424394,
+     "longitude": 150.89385
+    },
+    "source": "Photon/OSM place=city 'Wollongong' (matches placement)",
+    "confidence": "MEDIUM",
+    "distance_m_from_placement": 0
+   },
+   "category": "city",
+   "closedDays": null,
+   "specialClosures": [],
+   "unverified": [
+    "Placement bio draft was empty; the city spans 40 km, so a single point is a CBD reference."
+   ],
+   "bio_ok": true
+  },
+  {
+   "id": "kiama",
+   "name": "Kiama",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Kiama has a heritage based on dairy farming and quarrying and a rich arts sector; it is about 90 minutes from Sydney, with train and a short walk to the harbour, blowhole and shops.",
+     "source": "https://en.wikivoyage.org/wiki/Kiama"
+    },
+    {
+     "claim": "Kiama Blowhole can spray water 30 m in the right tide and swell and is probably the most visited attraction in Kiama.",
+     "source": "https://en.wikivoyage.org/wiki/Kiama"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "A town with no single steward; no official site to link.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.67083,
+     "longitude": 150.85417
+    },
+    "resolved": {
+     "latitude": -34.671572,
+     "longitude": 150.855625
+    },
+    "source": "Photon/OSM place=locality 'Kiama' (placement is the Wikipedia point at 0.0028 deg; 130 m apart)",
+    "confidence": "MEDIUM",
+    "distance_m_from_placement": 157
+   },
+   "category": "city",
+   "closedDays": null,
+   "specialClosures": [],
+   "unverified": [
+    "Overlaps Kiama Blowhole spot (kiama-1)."
+   ],
+   "bio_ok": true
+  },
+  {
+   "id": "nowra",
+   "name": "Nowra",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Nowra, 163 km south of Sydney (population 29,000), is the chief administrative and business centre of Shoalhaven; the centre is a service town and 'isn't particularly scenic'.",
+     "source": "https://en.wikivoyage.org/wiki/Nowra"
+    },
+    {
+     "claim": "Nearby Wikivoyage listings: Fleet Air Arm Museum (10AM-4PM), Shoalhaven Zoo and Adventure World (daily 9AM-5PM).",
+     "source": "https://en.wikivoyage.org/wiki/Nowra"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "A town with no single steward; no official site to link.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.87412,
+     "longitude": 150.60047
+    },
+    "resolved": {
+     "latitude": -34.87412,
+     "longitude": 150.600471
+    },
+    "source": "Photon/OSM place=locality 'Nowra' (matches placement)",
+    "confidence": "MEDIUM",
+    "distance_m_from_placement": 0
+   },
+   "category": "city",
+   "closedDays": null,
+   "specialClosures": [],
+   "unverified": [
+    "Weak as a tourist stop: Wikivoyage itself calls the centre not scenic; kept as a regional base/gateway, rank low. Consider review."
+   ],
+   "bio_ok": true
+  },
+  {
+   "id": "batemans-bay",
+   "name": "Batemans Bay",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Batemans Bay is a small coastal city (population 16,000) at the mouth of the Clyde River, the closest ocean beach to Canberra (2-2.5 hours by Kings Highway).",
+     "source": "https://en.wikivoyage.org/wiki/Batemans_Bay"
+    },
+    {
+     "claim": "Wikivoyage says the township is 'fairly unlovely' but surrounded by spectacular coast; Clyde River National Park's Holmes Lookout gives a near-aerial view of the bay.",
+     "source": "https://en.wikivoyage.org/wiki/Batemans_Bay"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "A town with no single steward; no official site to link.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.70806,
+     "longitude": 150.17444
+    },
+    "resolved": {
+     "latitude": -35.707218,
+     "longitude": 150.178289
+    },
+    "source": "Photon/OSM place=locality 'Batemans Bay' (replaces Wikipedia DMS point 260 m away)",
+    "confidence": "MEDIUM",
+    "distance_m_from_placement": 360
+   },
+   "category": "city",
+   "closedDays": null,
+   "specialClosures": [],
+   "unverified": [],
+   "bio_ok": true
+  },
+  {
+   "id": "merimbula",
+   "name": "Merimbula",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Merimbula is a beachside town on the Sapphire Coast with six main beaches, a wharf and a lake boardwalk; its twin town Pambula is across Merimbula Lake; area known for oysters.",
+     "source": "https://en.wikivoyage.org/wiki/Merimbula"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "A town with no single steward; no official site to link.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -36.89806,
+     "longitude": 149.90111
+    },
+    "resolved": {
+     "latitude": -36.888203,
+     "longitude": 149.909846
+    },
+    "source": "Photon/OSM place=town 'Merimbula' (replaces Wikipedia rounded point 1 km south)",
+    "confidence": "MEDIUM",
+    "distance_m_from_placement": 1343
+   },
+   "category": "city",
+   "closedDays": null,
+   "specialClosures": [],
+   "unverified": [],
+   "bio_ok": true
+  },
+  {
+   "id": "eden",
+   "name": "Eden",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Eden is a fishing town at the northern head of Twofold Bay and the southernmost major town in NSW, about 230 nautical miles south of Sydney.",
+     "source": "https://en.wikivoyage.org/wiki/Eden_(New_South_Wales)"
+    },
+    {
+     "claim": "Eden Killer Whale Museum is the main See listing; Mount Imlay National Park is about 40 km away on unpaved roads.",
+     "source": "https://en.wikivoyage.org/wiki/Eden_(New_South_Wales)"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "A town with no single steward; no official site to link.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -37.06667,
+     "longitude": 149.9
+    },
+    "resolved": {
+     "latitude": -37.064049,
+     "longitude": 149.903512
+    },
+    "source": "Photon/OSM place=town 'Eden'",
+    "confidence": "MEDIUM",
+    "distance_m_from_placement": 427
+   },
+   "category": "city",
+   "closedDays": null,
+   "specialClosures": [],
+   "unverified": [
+    "Whale-watching base claim in draft bio not re-read on the page (Eden Whale Festival appears on NPWS)."
+   ],
+   "bio_ok": true
+  },
+  {
+   "id": "narooma",
+   "name": "Narooma",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Narooma is a pleasant coastal town in Eurobodalla with beautiful beaches and a salt-water inlet, population about 8,500.",
+     "source": "https://en.wikivoyage.org/wiki/Narooma"
+    },
+    {
+     "claim": "Day trips and dives to Montague Island, 9 km offshore, leave from Narooma; scuba dives with Narooma Charters ($80 single dive, 2017).",
+     "source": "https://en.wikivoyage.org/wiki/Narooma"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "A town with no single steward; no official site to link.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -36.2,
+     "longitude": 150.13333
+    },
+    "resolved": {
+     "latitude": -36.219015,
+     "longitude": 150.131724
+    },
+    "source": "Photon/OSM place=locality 'Narooma' (replaces Wikipedia rounded point 1.9 km north in bush)",
+    "confidence": "MEDIUM",
+    "distance_m_from_placement": 2119
+   },
+   "category": "city",
+   "closedDays": null,
+   "specialClosures": [],
+   "unverified": [
+    "Overlaps the Montague Island spot; the town is the base."
+   ],
+   "bio_ok": true
+  },
+  {
+   "id": "ulladulla",
+   "name": "Ulladulla",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Ulladulla is largely a service town for agriculture, fishing and tourism with 'few attractions likely to be of interest' by themselves, but it has pleasant beaches and is a convenient base; Ulladulla and Mollymook together are a popular holiday destination.",
+     "source": "https://en.wikivoyage.org/wiki/Ulladulla"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "A town with no single steward; no official site to link.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.34861,
+     "longitude": 150.46778
+    },
+    "resolved": {
+     "latitude": -35.36215,
+     "longitude": 150.475171
+    },
+    "source": "Photon/OSM place=town 'Ulladulla' (replaces Wikipedia rounded point 1.7 km north-west)",
+    "confidence": "MEDIUM",
+    "distance_m_from_placement": 1648
+   },
+   "category": "city",
+   "closedDays": null,
+   "specialClosures": [],
+   "unverified": [
+    "Wikivoyage itself calls the town low on attractions: kept as a base for Pigeon House and Mollymook; consider review as a standalone spot."
+   ],
+   "bio_ok": true
+  },
+  {
+   "id": "jervis-bay",
+   "name": "Jervis Bay",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Jervis Bay is a large protected bay 120 km south of Sydney, famous for white-sand beaches, safe swimming and snorkelling; humpback whales and dolphins are regular visitors and there is a fairy penguin colony.",
+     "source": "https://en.wikivoyage.org/wiki/Jervis_Bay"
+    },
+    {
+     "claim": "Jervis Bay Marine Park covers 100 km of coast; Jervis Bay Village and Murrays Beach are in the Commonwealth Jervis Bay Territory, which charges separate park entry.",
+     "source": "https://en.wikivoyage.org/wiki/Jervis_Bay"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 3,
+   "visitHoursMax": 8,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "A town with no single steward; no official site to link.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -35.06528,
+     "longitude": 150.73472
+    },
+    "resolved": {
+     "latitude": -35.05666,
+     "longitude": 150.726202
+    },
+    "source": "Photon/OSM place=locality 'Jervis Bay' (replaces Wikipedia bay centroid, 1.2 km away, in water)",
+    "confidence": "LOW",
+    "distance_m_from_placement": 1233
+   },
+   "category": "beach",
+   "closedDays": null,
+   "specialClosures": [],
+   "unverified": [
+    "The bay is an area: the point is a locality node in the bay near Huskisson. Overlaps Huskisson, Hyams Beach, Booderee and Beecroft spots."
+   ],
+   "bio_ok": true
+  }
+ ]
+}

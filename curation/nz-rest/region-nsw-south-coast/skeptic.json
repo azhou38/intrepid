@@ -1,0 +1,1659 @@
+[
+ {
+  "name": "Wollongong",
+  "verdict": "keep",
+  "objection": "Regional city with its own Wikivoyage chapter; escarpment, beaches, temple.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Wollongong Breakwater Lighthouse (8562842041).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Wollongong_Breakwater_Lighthouse_(8562842041).jpg",
+   "width": 5657,
+   "height": 3772,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.45 mean 0.5 on centre square. Harbour, pool and the Head lighthouse; Breakwater lighthouse sits left.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -34.42439,
+   "lng": 150.89385
+  },
+  "coordinates_source": "osm:place/city Wollongong (Photon) (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Kiama",
+  "verdict": "keep",
+  "objection": "Harbour town with its own Wikivoyage chapter; blowhole, rock pool, coast walk.",
+  "photo_verdict": "reject",
+  "photo": null,
+  "photo_reason": "Best file (Harbour seen from The Pilots Cottage Museum) fails hero crop: middle slice is lawn and sky, harbour a sliver; Kiama Light is dark (p40 0.10). Needs another source.",
+  "coordinates": {
+   "lat": -34.67083333,
+   "lng": 150.85416667
+  },
+  "coordinates_source": "wikipedia:Kiama, New South Wales (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Kiama Blowhole",
+  "verdict": "keep",
+  "objection": "Obvious draw: Wikivoyage names it; free, ~30 min.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Kiama Blowhole, January 2025.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Kiama_Blowhole,_January_2025.jpg",
+   "width": 3024,
+   "height": 4032,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.43 mean 0.5 on centre square.",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.6
+  },
+  "coordinates": {
+   "lat": -34.67185,
+   "lng": 150.86317
+  },
+  "coordinates_source": "wikivoyage:Kiama listing (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Cathedral Rocks",
+  "verdict": "reject",
+  "objection": "Short basalt-lookout stop on the Kiama coast, one source; part of the Kiama Coast Walk / Blowhole area.",
+  "photo_verdict": null,
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Saddleback Mountain Lookout",
+  "verdict": "keep",
+  "objection": "One source but a named lookout over dairy country; keep, second-tier.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "View from Saddleback Mountain.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:View_from_Saddleback_Mountain.jpg",
+   "width": 2000,
+   "height": 1333,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.25 mean 0.43 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -34.69838,
+   "lng": 150.79248
+  },
+  "coordinates_source": "wikivoyage:Kiama listing (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Bombo Beach",
+  "verdict": "reject",
+  "objection": "Station-side beach and quarry headland, one source, nothing to fill half an hour beyond the Kiama Coast Walk it sits on.",
+  "photo_verdict": null,
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Minnamurra Beach",
+  "verdict": "keep",
+  "objection": "Kiama tourism and Wikivoyage both describe the river-mouth sand spit (kayak, SUP, Stack Island); OSM natural=beach (\"Mystics\").",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Minnamurra Village.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Minnamurra_Village.jpg",
+   "width": 3849,
+   "height": 2433,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.68 mean 0.67 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -34.62135,
+   "lng": 150.8576
+  },
+  "coordinates_source": "osm:natural/beach way 95039342 \"Mystics\" (Overpass)"
+ },
+ {
+  "name": "Kiama Coast Walk",
+  "verdict": "keep",
+  "objection": "Named 20 km coast walk (note: coordinate is a route point; place at a main access such as Kiama harbour/Blowhole). Walks a guide promotes qualify.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "The Kiama coastal walk, nearing Kiama - panoramio.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:The_Kiama_coastal_walk,_nearing_Kiama_-_panoramio.jpg",
+   "width": 2048,
+   "height": 1536,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.39 mean 0.51 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -34.66345,
+   "lng": 150.85371
+  },
+  "coordinates_source": "osm:route=hiking relation 14273953, midpoint along the chained ways (Overpass; relation partly incomplete, ~27 km chained)"
+ },
+ {
+  "name": "Jamberoo Action Park",
+  "verdict": "keep",
+  "objection": "Permanent seasonal water park, named by Wikivoyage; seasonal venue is fine.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Jamberoo Action Park.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Jamberoo_Action_Park.jpg",
+   "width": 2304,
+   "height": 1728,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.49 mean 0.54 on centre square. Weak: view over the park from a ride (handlebar in corner).",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -34.6168,
+   "lng": 150.783
+  },
+  "coordinates_source": "wikipedia:Jamberoo Action Park (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Gerringong",
+  "verdict": "keep",
+  "objection": "Coastal town with its own Wikivoyage chapter; whale watching, south end of coast walk.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Gerringong and Werri Beach.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Gerringong_and_Werri_Beach.jpg",
+   "width": 2058,
+   "height": 1157,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.66 mean 0.6 on centre square.",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.5
+  },
+  "coordinates": {
+   "lat": -34.75,
+   "lng": 150.83333333
+  },
+  "coordinates_source": "wikipedia:Gerringong (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Werri Beach",
+  "verdict": "reject",
+  "objection": "Wikivoyage itself says neither Gerringong beach is exceptional; part of the Gerringong spot.",
+  "photo_verdict": null,
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Gerroa",
+  "verdict": "reject",
+  "objection": "Small village, no counted source beyond a passing mention; its draw is Seven Mile Beach NP, already kept.",
+  "photo_verdict": null,
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Stanwell Park",
+  "verdict": "keep",
+  "objection": "Wikivoyage names the village, beach and hang gliding from Bald Hill; second-tier stop.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "2013-05-19 Bald Hill Lookout.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:2013-05-19_Bald_Hill_Lookout.jpg",
+   "width": 5124,
+   "height": 3416,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.32 mean 0.41 on centre square. Ground-level view from Bald Hill; drone aerials in the category rejected.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -34.22888889,
+   "lng": 150.98333333
+  },
+  "coordinates_source": "wikipedia:Stanwell Park (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Stanwell Tops",
+  "verdict": "reject",
+  "objection": "Same draw as Stanwell Park (Bald Hill lookout and hang gliding); part of the Stanwell Park spot.",
+  "photo_verdict": null,
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Sea Cliff Bridge",
+  "verdict": "keep",
+  "objection": "Obvious draw: iconic cliff-hugging bridge, walkable, free.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Sea Cliff Bridge from below.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Sea_Cliff_Bridge_from_below.jpg",
+   "width": 4000,
+   "height": 3000,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.25 mean 0.38 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -34.2539,
+   "lng": 150.974
+  },
+  "coordinates_source": "wikivoyage:Wollongong listing (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Grand Pacific Drive",
+  "verdict": "reject",
+  "objection": "A route, not a place; its stop is Sea Cliff Bridge, already kept.",
+  "photo_verdict": null,
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Sublime Point Lookout",
+  "verdict": "keep",
+  "objection": "Two Wikivoyage mentions; escarpment lookout with coast views.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Sublime Point Lookout - panoramio.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Sublime_Point_Lookout_-_panoramio.jpg",
+   "width": 1600,
+   "height": 1200,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.38 mean 0.44 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -34.296747,
+   "lng": 150.925307
+  },
+  "coordinates_source": "wikivoyage:Bulli Pass listing (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Bulli Pass Lookouts",
+  "verdict": "reject",
+  "objection": "Near-duplicate of Sublime Point Lookout, one source.",
+  "photo_verdict": null,
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Mount Keira Lookout",
+  "verdict": "keep",
+  "objection": "Wikivoyage names mountain lookout with cafe, drive-up views over Wollongong.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Mt Keira views 2017 - Wollongong Central.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Mt_Keira_views_2017_-_Wollongong_Central.jpg",
+   "width": 3264,
+   "height": 2448,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.49 mean 0.55 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -34.40259,
+   "lng": 150.85566
+  },
+  "coordinates_source": "osm:natural/peak Mount Keira (Overpass); the lookout is at the summit road end; the candidate coordinate -34.4,150.85 was a rounded Wikipedia point"
+ },
+ {
+  "name": "Mount Kembla Lookout",
+  "verdict": "reject",
+  "objection": "One source with no description of the view; short stop beside Mount Keira.",
+  "photo_verdict": null,
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Wollongong Head Lighthouse",
+  "verdict": "keep",
+  "objection": "Wikivoyage names the harbour-head lighthouse, accessible walk-up with views.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Wollongong Head Lighthouse.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Wollongong_Head_Lighthouse.jpg",
+   "width": 1200,
+   "height": 900,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.56 mean 0.54 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -34.421944,
+   "lng": 150.909722
+  },
+  "coordinates_source": "wikivoyage:Wollongong listing (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Nan Tien Temple",
+  "verdict": "keep",
+  "objection": "Obvious draw: largest Buddhist temple in Australia, open daily.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Nan Tien Temple front.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Nan_Tien_Temple_front.jpg",
+   "width": 1280,
+   "height": 611,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.43 mean 0.42 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -34.46667,
+   "lng": 150.8473
+  },
+  "coordinates_source": "wikivoyage:Wollongong listing (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Wollongong Botanic Garden",
+  "verdict": "keep",
+  "objection": "Wikivoyage names garden; public and free, half-hour or more.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "2023-04-01 Wollongong Botanic Garden 3.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:2023-04-01_Wollongong_Botanic_Garden_3.jpg",
+   "width": 4032,
+   "height": 3024,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.44 mean 0.5 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -34.40982,
+   "lng": 150.87501
+  },
+  "coordinates_source": "wikivoyage:Wollongong listing (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Science Space",
+  "verdict": "reject",
+  "objection": "University science centre and planetarium, one source; family venue, not a trip draw.",
+  "photo_verdict": null,
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Port Kembla Beach",
+  "verdict": "reject",
+  "objection": "Ordinary city beach beside the steelworks port, one source with no detail.",
+  "photo_verdict": null,
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "North Beach Wollongong",
+  "verdict": "keep",
+  "objection": "Wollongong's main beach by Stuart Park, named by Wikivoyage; kiosk and promenade.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "North Beach, Wollongong, December 2025 02.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:North_Beach,_Wollongong,_December_2025_02.jpg",
+   "width": 4032,
+   "height": 3024,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.52 mean 0.6 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -34.41231,
+   "lng": 150.90129
+  },
+  "coordinates_source": "osm:natural/beach way 100114872 (Overpass)"
+ },
+ {
+  "name": "Austinmer Beach",
+  "verdict": "keep",
+  "objection": "Wikivoyage calls it one of the ultimate beaches on the coast; second-tier beach stop.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Austinmer Beach... (5074312397).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Austinmer_Beach..._(5074312397).jpg",
+   "width": 2560,
+   "height": 1920,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.36 mean 0.39 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -34.3066,
+   "lng": 150.9359
+  },
+  "coordinates_source": "osm:natural/beach way 95786715 (Overpass)"
+ },
+ {
+  "name": "Lake Illawarra",
+  "verdict": "reject",
+  "objection": "Large suburban lake with no single visitor point; cycle path mentioned in passing.",
+  "photo_verdict": null,
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Symbio Wildlife Park",
+  "verdict": "review",
+  "objection": "For: well-known zoo at Helensburgh, 2k Wikipedia views. Against: no counted visitor source found in Wikivoyage Wollongong or Illawarra pages; confirm via operator or tourism board before adding.",
+  "photo_verdict": null,
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Macquarie Pass National Park",
+  "verdict": "keep",
+  "objection": "Roadside-waterfall park, thin; kept on Wikivoyage listing alone (borderline).",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Macquarie Pass Cascades.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Macquarie_Pass_Cascades.jpg",
+   "width": 1620,
+   "height": 1080,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.37 mean 0.42 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -34.565,
+   "lng": 150.651111
+  },
+  "coordinates_source": "wikivoyage:Illawarra listing (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Budderoo National Park",
+  "verdict": "keep",
+  "objection": "Keep as the park (a destination); Minnamurra Rainforest and Carrington Falls are distinct draws inside it, listed separately and noted as parts of Budderoo.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Budderoo NP View from Jamberoo Lookout 2.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Budderoo_NP_View_from_Jamberoo_Lookout_2.jpg",
+   "width": 6000,
+   "height": 4000,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.57 mean 0.58 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -34.648333,
+   "lng": 150.701111
+  },
+  "coordinates_source": "wikivoyage:Illawarra listing (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Minnamurra Rainforest",
+  "verdict": "keep",
+  "objection": "Strong draw: boardwalk and visitor centre, NPWS and Wikivoyage. Part of Budderoo NP but a distinct visitor site.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Minnamurra Falls in Budderoo National Park, New South Wales in January 2022.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Minnamurra_Falls_in_Budderoo_National_Park,_New_South_Wales_in_January_2022.jpg",
+   "width": 4160,
+   "height": 6240,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.18 mean 0.3 on centre square. p40 0.18 below floor: needs brightening (rainforest, not dark on purpose).",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -34.63473,
+   "lng": 150.72734
+  },
+  "coordinates_source": "osm:information/office Minnamurra Rainforest Centre (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Carrington Falls",
+  "verdict": "keep",
+  "objection": "NPWS names waterfall with lookout and picnic area; distinct site on Budderoo plateau.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Carrington Falls.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Carrington_Falls.jpg",
+   "width": 3648,
+   "height": 2736,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.43 mean 0.47 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -34.62444444,
+   "lng": 150.65472222
+  },
+  "coordinates_source": "wikipedia:Carrington Falls (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Nowra",
+  "verdict": "keep",
+  "objection": "Regional centre with its own Wikivoyage chapter.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Nowra Shoalhaven RIver Hang. Roc. Look..jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Nowra_Shoalhaven_RIver_Hang._Roc._Look..jpg",
+   "width": 4096,
+   "height": 2304,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.39 mean 0.48 on centre square. Weak: view of the Shoalhaven River from Hanging Rock lookout, not the town; Lens judge to decide.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -34.87412,
+   "lng": 150.60047
+  },
+  "coordinates_source": "osm:place/locality Nowra (Photon) (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Fleet Air Arm Museum",
+  "verdict": "keep",
+  "objection": "Wikivoyage-named aviation museum, open to the public.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Replica of McDonnell Douglas A-4G Skyhawk 882 at the Fleet Air Arm Museum in February 2015.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Replica_of_McDonnell_Douglas_A-4G_Skyhawk_882_at_the_Fleet_Air_Arm_Museum_in_February_2015.jpg",
+   "width": 4608,
+   "height": 3456,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.44 mean 0.46 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -34.9369,
+   "lng": 150.5543
+  },
+  "coordinates_source": "wikivoyage:Nowra listing (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Shoalhaven Zoo and Adventure World",
+  "verdict": "reject",
+  "objection": "Small commercial farm zoo, one source.",
+  "photo_verdict": null,
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Berry",
+  "verdict": "keep",
+  "objection": "Heritage village with its own Wikivoyage chapter; popular day stop.",
+  "photo_verdict": "reject",
+  "photo": null,
+  "photo_reason": "Only street-view panoramio frames, a monument, a museum door or archive scans on Commons; need Openverse or tourism photo.",
+  "coordinates": {
+   "lat": -34.77527778,
+   "lng": 150.69388889
+  },
+  "coordinates_source": "wikipedia:Berry, New South Wales (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Kangaroo Valley",
+  "verdict": "keep",
+  "objection": "Valley village with its own Wikivoyage chapter.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "(1)Kangaroo Valley-2.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:(1)Kangaroo_Valley-2.jpg",
+   "width": 8161,
+   "height": 5025,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.26 mean 0.44 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -34.73333333,
+   "lng": 150.53333333
+  },
+  "coordinates_source": "wikipedia:Kangaroo Valley, New South Wales (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Hampden Bridge",
+  "verdict": "keep",
+  "objection": "Marginal 15-minute landmark in Kangaroo Valley but a named distinct draw with a swimming spot; keep.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "MK-02323 Hampden Bridge (Kangaroo Valley).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:MK-02323_Hampden_Bridge_(Kangaroo_Valley).jpg",
+   "width": 2783,
+   "height": 1996,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.5 mean 0.58 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -34.7275,
+   "lng": 150.5208
+  },
+  "coordinates_source": "wikivoyage:Kangaroo Valley listing (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Pioneer Village Museum Kangaroo Valley",
+  "verdict": "reject",
+  "objection": "Small local museum, one source, opening not confirmed.",
+  "photo_verdict": null,
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Tallowa Dam",
+  "verdict": "reject",
+  "objection": "End-of-road dam; picnic area and canoe ramp are part of Morton NP / Kangaroo Valley.",
+  "photo_verdict": null,
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Fitzroy Falls",
+  "verdict": "keep",
+  "objection": "Strong draw: waterfall and visitor centre, Wikivoyage and NPWS.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "FitzroyFalls.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:FitzroyFalls.jpg",
+   "width": 3347,
+   "height": 2547,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.38 mean 0.48 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -34.6483,
+   "lng": 150.4824
+  },
+  "coordinates_source": "wikivoyage:Kangaroo Valley listing (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Morton National Park",
+  "verdict": "keep",
+  "objection": "Keep as the park; Fitzroy Falls, Belmore Falls and Pigeon House Mountain are distinct stops inside it, noted as parts of Morton. Centroid coordinate is the park centre; its hub is Fitzroy Falls.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Morton National Park Outlook.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Morton_National_Park_Outlook.jpg",
+   "width": 1600,
+   "height": 1200,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.39 mean 0.44 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -35.231667,
+   "lng": 150.201111
+  },
+  "coordinates_source": "wikivoyage:Shoalhaven listing (park centroid) (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Belmore Falls",
+  "verdict": "keep",
+  "objection": "NPWS-named waterfall with lookout; distinct stop in Morton NP.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "2023-10-28 View from Belmore Falls Lookout.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:2023-10-28_View_from_Belmore_Falls_Lookout.jpg",
+   "width": 4032,
+   "height": 3024,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.29 mean 0.42 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -34.64027778,
+   "lng": 150.55972222
+  },
+  "coordinates_source": "wikipedia:Belmore Falls (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Pigeon House Mountain",
+  "verdict": "keep",
+  "objection": "Prominent peak with walking track and views, NPWS; Didthul. Walk named by guide.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Pigeon House Mountain.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Pigeon_House_Mountain.jpg",
+   "width": 2592,
+   "height": 1944,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.21 mean 0.4 on centre square. p40 0.21 just under the 0.22 floor: needs a light brighten.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -35.34928889,
+   "lng": 150.26498333
+  },
+  "coordinates_source": "wikipedia:Pigeon House Mountain (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Seven Mile Beach National Park",
+  "verdict": "keep",
+  "objection": "National park with beach and sand track, NPWS and Wikivoyage.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Beach Walk, Seven Mile Beach National Park, Shoalhaven, Australia.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Beach_Walk,_Seven_Mile_Beach_National_Park,_Shoalhaven,_Australia.jpg",
+   "width": 4000,
+   "height": 3000,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.48 mean 0.51 on centre square. Ground-level beach walk, good.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -34.81333333,
+   "lng": 150.75666667
+  },
+  "coordinates_source": "wikipedia:Seven Mile Beach National Park (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Shoalhaven Heads",
+  "verdict": "reject",
+  "objection": "Small river-mouth village, one source, nothing named to do; Seven Mile Beach NP covers the coast.",
+  "photo_verdict": null,
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Jervis Bay",
+  "verdict": "keep",
+  "objection": "Keep as the bay/area; Hyams Beach, Huskisson and Booderee NP are separate draws within it, noted as parts of the Jervis Bay area; Jervis Bay is a broad-area overlap so place it as the bay itself.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Murrays Beach, Jervis Bay, ACT.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Murrays_Beach,_Jervis_Bay,_ACT.jpg",
+   "width": 4032,
+   "height": 3024,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.56 mean 0.6 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -35.06527778,
+   "lng": 150.73472222
+  },
+  "coordinates_source": "wikipedia:Jervis Bay (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Huskisson",
+  "verdict": "keep",
+  "objection": "Largest Jervis Bay town and holiday base; Wikivoyage names it with maritime museum.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Huskisson NSW 2540, Jervis Bay - Uc - panoramio.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Huskisson_NSW_2540,_Jervis_Bay_-_Uc_-_panoramio.jpg",
+   "width": 3072,
+   "height": 1728,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.67 mean 0.67 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -35.03849,
+   "lng": 150.67071
+  },
+  "coordinates_source": "osm:place/locality Huskisson (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Hyams Beach",
+  "verdict": "keep",
+  "objection": "Obvious draw: famous white-sand beach, two Wikivoyage pages.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Hyams Beach 002.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Hyams_Beach_002.jpg",
+   "width": 2500,
+   "height": 1664,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.52 mean 0.68 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -35.11332,
+   "lng": 150.69864
+  },
+  "coordinates_source": "osm:natural/beach way 5874312 (Overpass)"
+ },
+ {
+  "name": "Currarong",
+  "verdict": "reject",
+  "objection": "Small village 60 km from Huskisson; its draw (Beecroft Peninsula) is already a spot.",
+  "photo_verdict": null,
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Beecroft Peninsula",
+  "verdict": "keep",
+  "objection": "Cliffs, beaches and walks open to public (when range inactive); Wikivoyage names it. Note access restrictions.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Beecroft Peninsula, Jervis Bay Territory 01.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Beecroft_Peninsula,_Jervis_Bay_Territory_01.jpg",
+   "width": 6480,
+   "height": 4320,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.42 mean 0.5 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -35.04349,
+   "lng": 150.80521
+  },
+  "coordinates_source": "wikipedia:Beecroft Peninsula (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Point Perpendicular Lighthouse",
+  "verdict": "reject",
+  "objection": "Part of Beecroft Peninsula, access restricted when the range is active.",
+  "photo_verdict": null,
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Booderee National Park",
+  "verdict": "keep",
+  "objection": "Keep the park; Cape St George and Botanic Gardens are its sub-sites (rejected). Overlaps Jervis Bay, so keep both only if Jervis Bay is the bay.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Jervis Bay National Park 8.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Jervis_Bay_National_Park_8.jpg",
+   "width": 5760,
+   "height": 3840,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.35 mean 0.43 on centre square. File named Jervis Bay National Park 8, categorised Booderee.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -35.12,
+   "lng": 150.681
+  },
+  "coordinates_source": "wikivoyage:Jervis Bay listing (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Booderee Botanic Gardens",
+  "verdict": "reject",
+  "objection": "Inside Booderee NP (part of the larger place), one source.",
+  "photo_verdict": null,
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Jervis Bay Maritime Museum",
+  "verdict": "reject",
+  "objection": "Small local museum in Huskisson, one source; fails the friend test.",
+  "photo_verdict": null,
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Ulladulla",
+  "verdict": "keep",
+  "objection": "Harbour town with its own Wikivoyage chapter; base for Murramarang.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Ulladulla Harbour, Ulladulla, NSW, 2023, 01.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Ulladulla_Harbour,_Ulladulla,_NSW,_2023,_01.jpg",
+   "width": 4032,
+   "height": 3024,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.57 mean 0.56 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -35.34861111,
+   "lng": 150.46777778
+  },
+  "coordinates_source": "wikipedia:Ulladulla (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Warden Head Lighthouse",
+  "verdict": "reject",
+  "objection": "Small lighthouse seen from outside, one source.",
+  "photo_verdict": null,
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Mollymook Beach",
+  "verdict": "keep",
+  "objection": "Wikivoyage-named beach, a well-known second-tier beach stop.",
+  "photo_verdict": "reject",
+  "photo": null,
+  "photo_reason": "Mollymook from Bannister Head fails hero crop (tree trunk centred, beach a thin arc); other files are rock platforms or a sun glare.",
+  "coordinates": {
+   "lat": -35.33261,
+   "lng": 150.47848
+  },
+  "coordinates_source": "osm:natural/beach way 95783344 (Overpass)"
+ },
+ {
+  "name": "Murramarang National Park",
+  "verdict": "keep",
+  "objection": "Strong draw: 44 km coast park, NPWS and Wikivoyage.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Murramarang National Park 06.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Murramarang_National_Park_06.jpg",
+   "width": 6480,
+   "height": 4320,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.43 mean 0.43 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -35.60111111,
+   "lng": 150.33111111
+  },
+  "coordinates_source": "wikipedia:Murramarang National Park (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Pebbly Beach",
+  "verdict": "keep",
+  "objection": "Kangaroos on the sand, a known draw (NPWS); distinct beach within Murramarang NP (note: part of park, but a named visitor icon).",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Pebbly Beach Escape kangaroo basking.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Pebbly_Beach_Escape_kangaroo_basking.jpg",
+   "width": 4032,
+   "height": 3024,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.38 mean 0.47 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -35.60972,
+   "lng": 150.32789
+  },
+  "coordinates_source": "osm:natural/beach way 12591715 (Overpass)"
+ },
+ {
+  "name": "Murramarang South Coast Walk",
+  "verdict": "keep",
+  "objection": "NPWS promotes it as a multi-day coastal walk (Hump Ridge precedent); a trail is placed at its midpoint.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Murramarang National Park 05.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Murramarang_National_Park_05.jpg",
+   "width": 6480,
+   "height": 4320,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.42 mean 0.47 on centre square. Beach on the walk route; different file from the park photo.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -35.69355,
+   "lng": 150.29459
+  },
+  "coordinates_source": "candidate osm:highway/path route point kept; Overpass timed out so the midpoint is unverified and must be re-checked"
+ },
+ {
+  "name": "Batemans Bay",
+  "verdict": "keep",
+  "objection": "Town with its own Wikivoyage chapter; base for Clyde River and Murramarang.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Batemans Bay-23.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Batemans_Bay-23.jpg",
+   "width": 1600,
+   "height": 1064,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.52 mean 0.56 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -35.70805556,
+   "lng": 150.17444444
+  },
+  "coordinates_source": "wikipedia:Batemans Bay (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Holmes Lookout",
+  "verdict": "reject",
+  "objection": "Short lookout stop, one source, hard to reach.",
+  "photo_verdict": null,
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Nelligen",
+  "verdict": "reject",
+  "objection": "Small village, one source, nothing to do beyond the Clyde River cruise.",
+  "photo_verdict": null,
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Broulee South Beach",
+  "verdict": "reject",
+  "objection": "Ordinary calm family beach, one source; the town is not a candidate.",
+  "photo_verdict": null,
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Eurobodalla Regional Botanic Garden",
+  "verdict": "reject",
+  "objection": "Local botanic garden, one source, open only Wed-Sun.",
+  "photo_verdict": null,
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Mogo",
+  "verdict": "keep",
+  "objection": "Wikivoyage names the restored gold-mining village with crafts shops; roadside stop.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Mogo NSW 2536, Australia - panoramio (29).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Mogo_NSW_2536,_Australia_-_panoramio_(29).jpg",
+   "width": 5183,
+   "height": 3015,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.41 mean 0.51 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -35.78333333,
+   "lng": 150.13333333
+  },
+  "coordinates_source": "wikipedia:Mogo, New South Wales (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Mogo Wildlife Park",
+  "verdict": "keep",
+  "objection": "Wikivoyage names small zoo open daily; a distinct attraction.",
+  "photo_verdict": "reject",
+  "photo": null,
+  "photo_reason": "Commons has only dark meerkat portraits (p40 0.07) and watermarked monkey; need an official or Openverse photo.",
+  "coordinates": {
+   "lat": -35.7952,
+   "lng": 150.1585
+  },
+  "coordinates_source": "wikivoyage:Mogo listing (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Central Tilba",
+  "verdict": "keep",
+  "objection": "Preserved heritage village with its own Wikivoyage chapter; a well-known stop.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Central Tilba NSW. Australia. (22785067302).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Central_Tilba_NSW._Australia._(22785067302).jpg",
+   "width": 4000,
+   "height": 2248,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.32 mean 0.46 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -36.31666667,
+   "lng": 150.06666667
+  },
+  "coordinates_source": "wikipedia:Tilba, New South Wales (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "The Big Cheese",
+  "verdict": "keep",
+  "objection": "Two Wikivoyage pages (Bodalla and Australia big things); roadside icon, a local institution at Bodalla Dairy Shed; keep.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Bodalla Dairy Shed, Bodalla, New South Wales.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Bodalla_Dairy_Shed,_Bodalla,_New_South_Wales.jpg",
+   "width": 5184,
+   "height": 3456,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.51 mean 0.53 on centre square. Weak: shows Bodalla Dairy Shed building where the Big Cheese is, not a giant cheese.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -36.08662,
+   "lng": 150.04934
+  },
+  "coordinates_source": "osm:shop/dairy Bodalla Cheese Factory (Big Cheese is at the Bodalla factory) (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Narooma",
+  "verdict": "keep",
+  "objection": "Harbour town with its own Wikivoyage chapter; base for Montague Island.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "2014-12-21 Narooma, New South Wales.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:2014-12-21_Narooma,_New_South_Wales.jpg",
+   "width": 5083,
+   "height": 3389,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.56 mean 0.58 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -36.2,
+   "lng": 150.13333333
+  },
+  "coordinates_source": "wikipedia:Narooma, New South Wales (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Barunguba Montague Island",
+  "verdict": "keep",
+  "objection": "Strong draw: seal colony and penguin island with lighthouse; three counted sources. Note reached by tour (island is the spot).",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Montague island Lighthouse keepers cottage.JPG",
+   "page": "https://commons.wikimedia.org/wiki/File:Montague_island_Lighthouse_keepers_cottage.JPG",
+   "width": 2560,
+   "height": 1920,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.36 mean 0.51 on centre square. Weak: lighthouse keepers cottage on the island, the best Commons file found.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -36.25108,
+   "lng": 150.22661
+  },
+  "coordinates_source": "osm:leisure/nature_reserve Barunguba Montague Island Nature Reserve (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Mount Dromedary",
+  "verdict": "keep",
+  "objection": "Gulaga is a named Wikivoyage See and an NPWS national park with a summit walk; access rules apply (cultural site).",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Mount Gulaga Rainforest Track.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Mount_Gulaga_Rainforest_Track.jpg",
+   "width": 2560,
+   "height": 1700,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.33 mean 0.42 on centre square. Weak: rainforest track on the mountain slopes, not the summit profile.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -36.3,
+   "lng": 150.03333333
+  },
+  "coordinates_source": "wikipedia:Gulaga / Mount Dromedary (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Eurobodalla National Park",
+  "verdict": "keep",
+  "objection": "National park, Wikivoyage and NPWS.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Mystery Bay, Eurobodalla National Park, New South Wales, Australia 01.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Mystery_Bay,_Eurobodalla_National_Park,_New_South_Wales,_Australia_01.jpg",
+   "width": 6480,
+   "height": 4320,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.46 mean 0.51 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -36.13055556,
+   "lng": 150.11555556
+  },
+  "coordinates_source": "wikipedia:Eurobodalla National Park (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Deua National Park",
+  "verdict": "reject",
+  "objection": "Remote, for experienced walkers only; few simple visits; one source.",
+  "photo_verdict": null,
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Bermagui",
+  "verdict": "keep",
+  "objection": "Fishing town with its own Wikivoyage chapter.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Bermagui Beach 01.JPG",
+   "page": "https://commons.wikimedia.org/wiki/File:Bermagui_Beach_01.JPG",
+   "width": 2816,
+   "height": 1853,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.55 mean 0.57 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -36.42786,
+   "lng": 150.0774
+  },
+  "coordinates_source": "osm:place/locality Bermagui (Photon) (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Blue Pool",
+  "verdict": "keep",
+  "objection": "Strong draw: tidal rock pools under the cliff on Scenic Drive; Wikivoyage names it.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Bermagui Blue Pool.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Bermagui_Blue_Pool.jpg",
+   "width": 5184,
+   "height": 3456,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.35 mean 0.41 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -36.42958,
+   "lng": 150.08381
+  },
+  "coordinates_source": "wikivoyage:Bermagui listing (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Horseshoe Bay Beach",
+  "verdict": "reject",
+  "objection": "Ordinary Bermagui town beach, part of the Bermagui spot.",
+  "photo_verdict": null,
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Camel Rock Beach",
+  "verdict": "keep",
+  "objection": "Wikivoyage names the well-known surf beach and photogenic rock; a real source names it, so a beach is not rejected.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "AVAV0311-a.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:AVAV0311-a.jpg",
+   "width": 4692,
+   "height": 3108,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.56 mean 0.57 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -36.37589,
+   "lng": 150.08034
+  },
+  "coordinates_source": "osm:natural/beach way 664606755 (unnamed, beside Camel Rock node; Overpass)"
+ },
+ {
+  "name": "Montreal Goldfields",
+  "verdict": "reject",
+  "objection": "Niche heritage site 7 km out, one source.",
+  "photo_verdict": null,
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Wallaga Lake",
+  "verdict": "keep",
+  "objection": "Wikivoyage names the lake for black swans and kayaking; second-tier natural stop.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Wallaga Lake at Sunset 1.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Wallaga_Lake_at_Sunset_1.jpg",
+   "width": 3264,
+   "height": 2448,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.64 mean 0.62 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -36.365,
+   "lng": 150.055
+  },
+  "coordinates_source": "wikipedia:Wallaga Lake (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Biamanga National Park",
+  "verdict": "reject",
+  "objection": "Cultural site with limited visitor access, one visit-oriented mention.",
+  "photo_verdict": null,
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Wadbilliga National Park",
+  "verdict": "reject",
+  "objection": "Remote wilderness for experienced walkers, one source.",
+  "photo_verdict": null,
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Tathra",
+  "verdict": "keep",
+  "objection": "Seaside town with its own Wikivoyage chapter; wharf and beach.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Tathra Beach.JPG",
+   "page": "https://commons.wikimedia.org/wiki/File:Tathra_Beach.JPG",
+   "width": 4912,
+   "height": 2760,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.6 mean 0.61 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -36.72845,
+   "lng": 149.98503
+  },
+  "coordinates_source": "osm:place/town Tathra (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Tathra Wharf and Museum",
+  "verdict": "keep",
+  "objection": "Wikivoyage names the 1861 wharf, an icon with museum; distinct attraction.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Old Wharf Tathra.NSW. (21031327415).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Old_Wharf_Tathra.NSW._(21031327415).jpg",
+   "width": 4000,
+   "height": 2248,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.32 mean 0.42 on centre square.",
+  "hero_crop": {
+   "x": 0.3,
+   "y": 0.5
+  },
+  "coordinates": {
+   "lat": -36.72489,
+   "lng": 149.99053
+  },
+  "coordinates_source": "wikivoyage:Tathra listing (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Mimosa Rocks National Park",
+  "verdict": "keep",
+  "objection": "National park, three counted sources.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "MimosaRock.JPG",
+   "page": "https://commons.wikimedia.org/wiki/File:MimosaRock.JPG",
+   "width": 2560,
+   "height": 1440,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.4 mean 0.5 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -36.665,
+   "lng": 149.951111
+  },
+  "coordinates_source": "wikivoyage:Tathra listing (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Bournda National Park",
+  "verdict": "keep",
+  "objection": "National park, three counted sources.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Bournda Bournda-Island.JPG",
+   "page": "https://commons.wikimedia.org/wiki/File:Bournda_Bournda-Island.JPG",
+   "width": 1971,
+   "height": 1305,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.42 mean 0.49 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -36.813379,
+   "lng": 149.934707
+  },
+  "coordinates_source": "wikivoyage:Sapphire Coast listing (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Bega",
+  "verdict": "keep",
+  "objection": "Town with its own Wikivoyage chapter; cheese and dairy region.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Carp Street, Bega, NSW, 2023.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Carp_Street,_Bega,_NSW,_2023.jpg",
+   "width": 4032,
+   "height": 3024,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.53 mean 0.5 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -36.67411,
+   "lng": 149.84204
+  },
+  "coordinates_source": "osm:place/town Bega (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Bega Cheese Heritage Centre",
+  "verdict": "keep",
+  "objection": "The cheese the town is known for: free heritage centre with tasting, named by Wikivoyage.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Bega Cheese Factory.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Bega_Cheese_Factory.jpg",
+   "width": 1024,
+   "height": 768,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.35 mean 0.41 on centre square. 1024 px wide.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -36.66859,
+   "lng": 149.83149
+  },
+  "coordinates_source": "wikivoyage:Bega listing (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Merimbula",
+  "verdict": "keep",
+  "objection": "Town with its own Wikivoyage chapter; beaches, wharf, lake.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Merimbula Sound.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Merimbula_Sound.jpg",
+   "width": 3264,
+   "height": 2448,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.48 mean 0.51 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -36.89805556,
+   "lng": 149.90111111
+  },
+  "coordinates_source": "wikipedia:Merimbula (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Merimbula Lake Boardwalk",
+  "verdict": "reject",
+  "objection": "Part of Merimbula, one source.",
+  "photo_verdict": null,
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Merimbula Aquarium",
+  "verdict": "reject",
+  "objection": "Small aquarium on the wharf, one source.",
+  "photo_verdict": null,
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Magic Mountain Theme Park",
+  "verdict": "reject",
+  "objection": "Small commercial park, one source, not a trip draw.",
+  "photo_verdict": null,
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Potoroo Palace",
+  "verdict": "reject",
+  "objection": "Small sanctuary, one source.",
+  "photo_verdict": null,
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Eden",
+  "verdict": "keep",
+  "objection": "Whaling town with its own Wikivoyage chapter.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Twofold Bay 001.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Twofold_Bay_001.jpg",
+   "width": 2048,
+   "height": 1536,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.65 mean 0.67 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -37.06666667,
+   "lng": 149.9
+  },
+  "coordinates_source": "wikipedia:Eden, New South Wales (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Eden Killer Whale Museum",
+  "verdict": "keep",
+  "objection": "Museum with Old Tom the orca skeleton; Wikivoyage names it; distinct draw.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Eden Killer Whale museum.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Eden_Killer_Whale_museum.jpg",
+   "width": 2048,
+   "height": 1536,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.35 mean 0.52 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -37.0686,
+   "lng": 149.9085
+  },
+  "coordinates_source": "wikivoyage:Eden listing (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Beowa National Park",
+  "verdict": "keep",
+  "objection": "National park, two counted sources (formerly Ben Boyd NP).",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Beowa National Park Tamsin Slater.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Beowa_National_Park_Tamsin_Slater.jpg",
+   "width": 1183,
+   "height": 785,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.44 mean 0.45 on centre square. 1183 px wide, 2001 date: Red cliffs/Pinnacles.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -37.165,
+   "lng": 150.001111
+  },
+  "coordinates_source": "wikivoyage:Sapphire Coast listing (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Green Cape Lighthouse",
+  "verdict": "keep",
+  "objection": "NPWS-named lighthouse; a known stop with tours in Beowa NP (flag: within larger park but a distinct visitor site).",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Green Cape Lighthouse (12534013823).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Green_Cape_Lighthouse_(12534013823).jpg",
+   "width": 1920,
+   "height": 1280,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.43 mean 0.45 on centre square. Solar array beside the lighthouse dominates part of frame.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -37.26145,
+   "lng": 150.04948
+  },
+  "coordinates_source": "osm:building Green Cape Lighthouse (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Light to Light Walk",
+  "verdict": "keep",
+  "objection": "NPWS promotes it as a multi-day coastal walk through Beowa NP; trail placed at its midpoint (Hump Ridge precedent).",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Ben Boyd Tower (honorary lighthouse) (12537814013).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Ben_Boyd_Tower_(honorary_lighthouse)_(12537814013).jpg",
+   "width": 5176,
+   "height": 3480,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.28 mean 0.34 on centre square. Shows the coast near Boyd Tower, start of the walk.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -37.14722,
+   "lng": 150.0056
+  },
+  "coordinates_source": "osm:route relation 15102193, midpoint along the chained ways (Overpass; relation incomplete, so approximate; candidate route point was a trail end)"
+ },
+ {
+  "name": "Mount Imlay National Park",
+  "verdict": "reject",
+  "objection": "Challenging summit walk, rarely visited.",
+  "photo_verdict": null,
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Budawang National Park",
+  "verdict": "reject",
+  "objection": "Remote wilderness for experienced walkers, one source.",
+  "photo_verdict": null,
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Shellharbour",
+  "verdict": "keep",
+  "objection": "Town with its own Wikivoyage chapter; harbour village and beaches.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Early dawn at Shellharbour - panoramio.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Early_dawn_at_Shellharbour_-_panoramio.jpg",
+   "width": 2496,
+   "height": 1664,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.27 mean 0.33 on centre square. Dawn sky over harbour, dark-ish on purpose.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -34.5786,
+   "lng": 150.8688
+  },
+  "coordinates_source": "wikivoyage:Shellharbour visitor information centre (town centre) (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Killalea State Park",
+  "verdict": "keep",
+  "objection": "Coastal state park with headland walks and beach, free; Wikivoyage names it.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Killalea State Park.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Killalea_State_Park.jpg",
+   "width": 5050,
+   "height": 3345,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.43 mean 0.53 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -34.598,
+   "lng": 150.867
+  },
+  "coordinates_source": "wikivoyage:Shellharbour listing (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "HARS Australian Historical Flying Museum",
+  "verdict": "keep",
+  "objection": "Aviation museum with last flying Super Constellation; Wikivoyage names it.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "HARS Super Connie at Woollongong.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:HARS_Super_Connie_at_Woollongong.jpg",
+   "width": 1444,
+   "height": 950,
+   "licence": "Commons (check file page)"
+  },
+  "photo_reason": "Colour current photo, checks 1-4 passed by eye; p40 0.37 mean 0.46 on centre square.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -34.561,
+   "lng": 150.788
+  },
+  "coordinates_source": "wikivoyage:Shellharbour listing (kept from candidates; park/town centre)"
+ },
+ {
+  "name": "Bass Point",
+  "verdict": "reject",
+  "objection": "Named only as an operator dive base, no visitor description.",
+  "photo_verdict": null,
+  "photo": null,
+  "photo_reason": ""
+ }
+]

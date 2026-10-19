@@ -1,0 +1,968 @@
+[
+ {
+  "name": "Wagga Wagga Botanic Gardens",
+  "verdict": "keep",
+  "objection": "Review resolved to keep: 8 ha gardens with a free aviary, small zoo and miniature railway fill 30+ minutes; Wikivoyage plus Wikipedia. Against: one counted source, a city park; kept because the zoo and aviary are a real activity, not a bare lawn. Cluster: Wagga Wagga.",
+  "coordinates": {
+   "lat": -35.129228,
+   "lng": 147.364821
+  },
+  "coordinates_source": "wikivoyage:Wagga Wagga (listing-level, kept)",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Wagga Wagga Botanic Gardens 1.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Wagga_Wagga_Botanic_Gardens_1.jpg",
+   "width": 1500,
+   "height": 997,
+   "licence": "CC BY 3.0"
+  },
+  "photo_reason": "Lawn and path in the gardens, colour 2008; plain but it is the gardens themselves; weak, replace if a better one turns up."
+ },
+ {
+  "name": "Museum of the Riverina",
+  "verdict": "reject",
+  "objection": "Resolved: local-history museum with one counted source (Wikivoyage) and no distinct draw; benchmarks to a local museum. Revisit only with a second source.",
+  "photo_verdict": "n/a",
+  "photo": null,
+  "photo_reason": "not kept"
+ },
+ {
+  "name": "Wagga Beach",
+  "verdict": "reject",
+  "objection": "Resolved: a city river beach in Cabarita Park, one source, local swimming spot; weaker than the Wiradjuri Walking Track which already covers the riverbank.",
+  "photo_verdict": "n/a",
+  "photo": null,
+  "photo_reason": "not kept"
+ },
+ {
+  "name": "Wagga Wagga Art Gallery",
+  "verdict": "reject",
+  "objection": "Resolved: free civic-centre gallery with a national art glass collection, but one source and a short visit; MAMA is the stronger single art gallery of the region.",
+  "photo_verdict": "n/a",
+  "photo": null,
+  "photo_reason": "not kept"
+ },
+ {
+  "name": "Wiradjuri Walking Track",
+  "verdict": "keep",
+  "objection": "Two counted sources (Wikivoyage and Riverina tourism); riverside walking track, 30+ minutes. Cluster: Wagga Wagga.",
+  "coordinates": {
+   "lat": -35.100171,
+   "lng": 147.367548
+  },
+  "coordinates_source": "photon highway=track \"Wiradjuri Walking Track\" + Commons median -35.09978,147.36736 (HIGH); a point on the track, not its true midpoint (route length unresolved; Overpass down)",
+  "photo_verdict": "reject",
+  "photo": null,
+  "photo_reason": "Only Commons file (track marker post) is a sign, fails check 2; the river-bridge photos are not the track. none."
+ },
+ {
+  "name": "The Rock (Hanging Rock Hill)",
+  "verdict": "keep",
+  "objection": "Two counted sources; granite monolith with a walking track and plains views. Pin replaced (the Wikipedia point was a rounded town coordinate). Stand-alone or Wagga cluster by distance, not for this pass.",
+  "coordinates": {
+   "lat": -35.27875,
+   "lng": 147.07609
+  },
+  "coordinates_source": "osm:leisure=nature_reserve The Rock Nature Reserve - Kengal Aboriginal Place (Photon/Nominatim, reserve is the hill); replaces rounded Wikipedia town point; Commons category The Rock Hill geotag -35.27495,147.07197 agrees within 700 m (summit track start)",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Staying Still 117 - The Cliffs of Kengal.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Staying_Still_117_-_The_Cliffs_of_Kengal.jpg",
+   "width": 2548,
+   "height": 3000,
+   "licence": "CC BY-SA 4.0"
+  },
+  "photo_reason": "Category The Rock Hill (geotag -35.2750,147.0720); dead tree on the rock top with plains below, 2016; not the whole monolith, a summit view; acceptable.",
+  "hero_crop": {
+   "x": 0.55,
+   "y": 0.4
+  }
+ },
+ {
+  "name": "Albury Library Museum",
+  "verdict": "reject",
+  "objection": "Library with a small museum: civic building, one source.",
+  "photo_verdict": "n/a",
+  "photo": null,
+  "photo_reason": "not kept"
+ },
+ {
+  "name": "Albury Botanic Gardens",
+  "verdict": "reject",
+  "objection": "Local town-centre park, one source, no extra attractions (unlike the Wagga gardens with a zoo and aviary).",
+  "photo_verdict": "n/a",
+  "photo": null,
+  "photo_reason": "not kept"
+ },
+ {
+  "name": "Murray Art Museum Albury",
+  "verdict": "keep",
+  "objection": "Wikivoyage names it; free, open 7 days (362 days a year) per mamalbury.com.au, collection of 2400+ items; a major regional gallery, one-source marginal bar met. Cluster: Albury.",
+  "coordinates": {
+   "lat": -36.080615,
+   "lng": 146.916544
+  },
+  "coordinates_source": "wikivoyage:Albury (listing-level, kept)",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Murray Art Museum Albury, 2022, 02.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Murray_Art_Museum_Albury,_2022,_02.jpg",
+   "width": 3934,
+   "height": 2950,
+   "licence": "CC BY-SA 4.0"
+  },
+  "photo_reason": "MAMA frontage, 2022 colour, clear, building is the attraction; passes crop and brightness."
+ },
+ {
+  "name": "Hume Dam",
+  "verdict": "keep",
+  "objection": "Wikivoyage names the wall walk and lookout; free; one source but a genuine structure with a walk. Cluster: Albury.",
+  "coordinates": {
+   "lat": -36.1067,
+   "lng": 147.033
+  },
+  "coordinates_source": "wikivoyage:Albury (listing-level, kept)",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Full Lake Hume looking towards the dam wall in November 2010.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Full_Lake_Hume_looking_towards_the_dam_wall_in_November_2010.jpg",
+   "width": 4272,
+   "height": 2848,
+   "licence": "CC BY-SA 2.0"
+  },
+  "photo_reason": "Dam wall across the water, 2010 colour; wall is mid-frame in the square slice."
+ },
+ {
+  "name": "Nail Can Hill",
+  "verdict": "reject",
+  "objection": "Suburban reserve lookout with a walking track, one source, no visitor facilities.",
+  "photo_verdict": "n/a",
+  "photo": null,
+  "photo_reason": "not kept"
+ },
+ {
+  "name": "High Country Rail Trail",
+  "verdict": "reject",
+  "objection": "Route lies mainly in Victoria (Wodonga to Shelley); only the start is in Albury; not a place in this region. Pass to the Victoria run.",
+  "photo_verdict": "n/a",
+  "photo": null,
+  "photo_reason": "not kept"
+ },
+ {
+  "name": "Woomargama National Park",
+  "verdict": "keep",
+  "objection": "NPWS park; a national park is always a destination or spot. Photo is a creek waterfall only.",
+  "coordinates": {
+   "lat": -35.87143333,
+   "lng": 147.48535556
+  },
+  "coordinates_source": "wikipedia:Woomargama National Park (listing-level, kept)",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Waterfall, Woomargama National Park.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Waterfall,_Woomargama_National_Park.jpg",
+   "width": 3840,
+   "height": 2160,
+   "licence": "CC BY-SA 4.0"
+  },
+  "photo_reason": "Basin Creek waterfall in the park (geo/category Woomargama NP), 2021; sole Commons image of the park; brightness ok.",
+  "hero_crop": {
+   "x": 0.55,
+   "y": 0.5
+  }
+ },
+ {
+  "name": "Holbrook Submarine Institution",
+  "verdict": "keep",
+  "objection": "Verified: Wikivoyage Holbrook (NSW) names Holbrook Submarine Museum, listed hours 10 AM-4 PM, adults about $6 (2017, stale), own site holbrooksubmarinemuseum.com.au loads. Re-verify hours/price in research; Wikivoyage lists the park casing (HMAS Otway) as free to see outside.",
+  "coordinates": {
+   "lat": -35.71858,
+   "lng": 147.3163
+  },
+  "coordinates_source": "osm:Holbrook Submarine Museum (listing-level, kept)",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Submarine HMAS Otway in Germanton Park, Holbrook, NSW, 2023, 03.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Submarine_HMAS_Otway_in_Germanton_Park,_Holbrook,_NSW,_2023,_03.jpg",
+   "width": 4032,
+   "height": 3024,
+   "licence": "CC BY-SA 4.0"
+  },
+  "photo_reason": "HMAS Otway casing in Germanton Park, 2023, clear; submarine near centre.",
+  "hero_crop": {
+   "x": 0.55,
+   "y": 0.45
+  }
+ },
+ {
+  "name": "Corowa Federation Museum",
+  "verdict": "reject",
+  "objection": "Small-town museum, one source; the Sanger Street heritage buildings are exterior-only; marginal.",
+  "photo_verdict": "n/a",
+  "photo": null,
+  "photo_reason": "not kept"
+ },
+ {
+  "name": "Murray to the Mountains Rail Trail",
+  "verdict": "reject",
+  "objection": "The trail runs from Wahgunyah (Victoria) to Bright; Corowa is only the cross-river start; a route mainly in Victoria. Pass to the Victoria run.",
+  "photo_verdict": "n/a",
+  "photo": null,
+  "photo_reason": "not kept"
+ },
+ {
+  "name": "Narrandera Flora and Fauna Reserve",
+  "verdict": "keep",
+  "objection": "Regional board (theriverina.com.au) names the koala reserve; koalas are a clear reason to stop. Name is the board/Wikivoyage listing \"Koala reserve\"; pin is a reserve centroid, replace with the reserve entrance in research. Cluster: none (Narrandera is small).",
+  "coordinates": {
+   "lat": -34.77409,
+   "lng": 146.58463
+  },
+  "coordinates_source": "osm:leisure=nature_reserve Murrumbidgee Valley Nature Reserve (Narrandera); LOW-MEDIUM centroid, koala reserve entrance not found (Overpass down); research to replace with the Koala Reserve car park",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Koala at the Narrandera Wetlands.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Koala_at_the_Narrandera_Wetlands.jpg",
+   "width": 2448,
+   "height": 3264,
+   "licence": "CC BY-SA 3.0"
+  },
+  "photo_reason": "Koala in a river red gum, Narrandera, 2017 (category Narrandera Wetlands, geotag in town); the koalas are the draw but this is the wetlands precinct, not proven inside the reserve; weak.",
+  "hero_crop": {
+   "x": 0.35,
+   "y": 0.3
+  }
+ },
+ {
+  "name": "Narrandera Parkside Cottage Museum",
+  "verdict": "reject",
+  "objection": "Small local museum, one source, limited hours; the Scott Antarctic items are a footnote.",
+  "photo_verdict": "n/a",
+  "photo": null,
+  "photo_reason": "not kept"
+ },
+ {
+  "name": "Big Guitar (Narrandera)",
+  "verdict": "keep",
+  "objection": "Two sources (Wikivoyage Do listing with coordinates plus a regional news piece on the Big Things trail); playable roadside guitar at the visitor centre. Marginal, quirky-icon rule; 10-minute stop, kept only as a roadside icon.",
+  "coordinates": {
+   "lat": -34.74532,
+   "lng": 146.55051
+  },
+  "coordinates_source": "wikivoyage listing lat/long at the Visitor Information Centre, Cadell St (listing-level, not town point)",
+  "photo_verdict": "reject",
+  "photo": null,
+  "photo_reason": "none: no Commons file of the guitar (geosearch returned only memorials and streets)."
+ },
+ {
+  "name": "Narrandera Skywalk",
+  "verdict": "reject",
+  "objection": "Short elevated riverside walkway; one source; part of the town walks and the reserve.",
+  "photo_verdict": "n/a",
+  "photo": null,
+  "photo_reason": "not kept"
+ },
+ {
+  "name": "Griffith Pioneer Park Museum",
+  "verdict": "keep",
+  "objection": "Two counted sources; open-air museum with 40+ buildings, long visit. Cluster: Griffith.",
+  "coordinates": {
+   "lat": -34.27676,
+   "lng": 146.0551
+  },
+  "coordinates_source": "wikivoyage:Griffith (listing-level, kept)",
+  "photo_verdict": "reject",
+  "photo": null,
+  "photo_reason": "none: only Bills Horse Trough replica (a minor exhibit); search outside Commons."
+ },
+ {
+  "name": "Cocoparra National Park",
+  "verdict": "keep",
+  "objection": "NPWS page loads: \"Open\" (check alerts), bushwalking and birdwatching, half an hour from Griffith; Wikivoyage Griffith also names it. Cluster: Griffith.",
+  "coordinates": {
+   "lat": -34.131667,
+   "lng": 146.217778
+  },
+  "coordinates_source": "wikivoyage:Griffith (listing-level, kept)",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Cocoparra valley view.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Cocoparra_valley_view.jpg",
+   "width": 1200,
+   "height": 1600,
+   "licence": "CC BY-SA 3.0"
+  },
+  "photo_reason": "Store Creek gorge view, portrait 1200x1600; scenic though plain; no better Commons landscape (rest are birds)."
+ },
+ {
+  "name": "Scenic Hill Lookout",
+  "verdict": "reject",
+  "objection": "Short drive-up lookout over farmland, one source, the Wikivoyage text could not be found; ten-minute stop.",
+  "photo_verdict": "n/a",
+  "photo": null,
+  "photo_reason": "not kept"
+ },
+ {
+  "name": "Fivebough and Tuckerbil Wetlands",
+  "verdict": "keep",
+  "objection": "Review resolved to keep, marginal: Ramsar-listed wetlands with a boardwalk walk and hides; Wikivoyage Leeton lists it (one source). Against: a birding site that is only meaningful to birders; kept as a half-hour nature walk.",
+  "coordinates": {
+   "lat": -34.533072,
+   "lng": 146.43018
+  },
+  "coordinates_source": "wikivoyage:Leeton (listing-level, kept)",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Wetlands Walk at Fivebough Wetlands (4).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Wetlands_Walk_at_Fivebough_Wetlands_(4).jpg",
+   "width": 3264,
+   "height": 2448,
+   "licence": "CC BY-SA 3.0 au"
+  },
+  "photo_reason": "Wetlands walk beside reeds, 2016-17; clear but ordinary; weak.",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.55
+  }
+ },
+ {
+  "name": "Middle Beach (Murrumbidgee River)",
+  "verdict": "reject",
+  "objection": "Part of Murrumbidgee Valley National Park (kept as one spot); unsealed river beach, near-duplicate.",
+  "photo_verdict": "n/a",
+  "photo": null,
+  "photo_reason": "not kept"
+ },
+ {
+  "name": "Hay Gaol",
+  "verdict": "keep",
+  "objection": "Wikivoyage lists 9AM-5PM daily, adults $4 (old price), council page; 2 counted sources. Cluster: Hay.",
+  "coordinates": {
+   "lat": -34.5077,
+   "lng": 144.835
+  },
+  "coordinates_source": "wikivoyage:Hay (listing-level, kept)",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "HayGaol.JPG",
+   "page": "https://commons.wikimedia.org/wiki/File:HayGaol.JPG",
+   "width": 2272,
+   "height": 1704,
+   "licence": "CC BY-SA 3.0"
+  },
+  "photo_reason": "Gaol entrance and path, 2007 colour; ok, a little dated."
+ },
+ {
+  "name": "ShearOutback (Shearers Hall of Fame)",
+  "verdict": "keep",
+  "objection": "Verified on shearoutback.com.au: museum open Mon-Sat 9-4, Sun 9-3, shearing demonstrations 7 days at 10:30 and 1:00, cafe, adult admission $20 (concession $15, child $10); site suggests 1 hour for the museum. Wikivoyage names it as the highlight of Hay. Cluster: Hay.",
+  "coordinates": {
+   "lat": -34.52183,
+   "lng": 144.8362
+  },
+  "coordinates_source": "osm:tourism=museum \"Shear Outback Hay Visitor Centre\" (Photon); MEDIUM, Sturt Hwy South Hay roundabout",
+  "photo_verdict": "reject",
+  "photo": null,
+  "photo_reason": "none on Commons (geosearch returns grass and water towers); search outside Commons; operator site shearoutback.com.au has photos (tier 2)."
+ },
+ {
+  "name": "Dunera Museum",
+  "verdict": "keep",
+  "objection": "Wikivoyage names it with address (421 Murray St) and coordinates; opening times not found, the council page is out of date and the museum is volunteer-run: hours must be verified in research or demote to review. Cluster: Hay.",
+  "coordinates": {
+   "lat": -34.4993,
+   "lng": 144.8429
+  },
+  "coordinates_source": "wikivoyage:Hay (listing-level, kept)",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Dunera Museum, Hay, NSW, 2022, 03.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Dunera_Museum,_Hay,_NSW,_2022,_03.jpg",
+   "width": 4032,
+   "height": 3024,
+   "licence": "CC BY-SA 4.0"
+  },
+  "photo_reason": "Interior carriage gallery at the museum (2022); the station shot with a sign was rejected as sign-dominated. Weak: an interior, no exterior found."
+ },
+ {
+  "name": "Hay Plain",
+  "verdict": "reject",
+  "objection": "Two counted sources but a landscape, not a place: no point or activity. Mention emus and sunsets in the Hay description.",
+  "photo_verdict": "n/a",
+  "photo": null,
+  "photo_reason": "not kept"
+ },
+ {
+  "name": "Balranald Discovery Centre",
+  "verdict": "reject",
+  "objection": "Visitor centre; the museum rooms are small; outback pass rejected it too. No single decision conflict.",
+  "photo_verdict": "n/a",
+  "photo": null,
+  "photo_reason": "not kept"
+ },
+ {
+  "name": "Balranald Southern Cross Museum",
+  "verdict": "reject",
+  "objection": "Tiny museum, one source; outback pass rejected it too.",
+  "photo_verdict": "n/a",
+  "photo": null,
+  "photo_reason": "not kept"
+ },
+ {
+  "name": "Yanga National Park",
+  "verdict": "keep",
+  "objection": "SINGLE DECISION for Yanga, Murrumbidgee Valley NP and Willandra NP: they are judged and owned by riverina-murray; the outback pass (which holds Yanga as review and rejects only Willandra Lakes, a different place) should drop its Yanga review so it is not added twice. Two counted sources.",
+  "coordinates": {
+   "lat": -34.65,
+   "lng": 143.583
+  },
+  "coordinates_source": "wikivoyage:Balranald (listing-level, kept)",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Murrimbidgee River, Yanga Campground in Yanga National Park, NSW.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Murrimbidgee_River,_Yanga_Campground_in_Yanga_National_Park,_NSW.jpg",
+   "width": 5184,
+   "height": 3888,
+   "licence": "CC BY-SA 4.0"
+  },
+  "photo_reason": "Murrumbidgee at Yanga campground, 2020; river and red gums; fine."
+ },
+ {
+  "name": "Murrumbidgee Valley National Park",
+  "verdict": "keep",
+  "objection": "Owned by riverina-murray (see Yanga). A national park along the river between Narrandera and Balranald; Wikipedia plus NPWS. Middle Beach is part of this park and stays rejected.",
+  "coordinates": {
+   "lat": -34.715,
+   "lng": 146.20111111
+  },
+  "coordinates_source": "wikipedia:Murrumbidgee Valley National Park (listing-level, kept)",
+  "photo_verdict": "reject",
+  "photo": null,
+  "photo_reason": "Commons has precinct photos (Platt Beach, Berry Jerry, MIA 1 precinct, 3264x2448, 2017) that I did not view on a contact sheet; none accepted yet, pick after a look."
+ },
+ {
+  "name": "Murray Valley National Park",
+  "verdict": "keep",
+  "objection": "Two counted sources; Ramsar red gum park; has a bird hide and picnic grounds.",
+  "coordinates": {
+   "lat": -35.7933,
+   "lng": 145.027
+  },
+  "coordinates_source": "wikivoyage:Riverina (listing-level, kept)",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "View of wetlands in Murray Valley National Park, NSW.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:View_of_wetlands_in_Murray_Valley_National_Park,_NSW.jpg",
+   "width": 5152,
+   "height": 3864,
+   "licence": "CC BY-SA 4.0"
+  },
+  "photo_reason": "Red gum wetland from Reed Beds Bird Hide, 2021; fine."
+ },
+ {
+  "name": "Willandra National Park",
+  "verdict": "keep",
+  "objection": "Owned by riverina-murray (see Yanga). Two counted sources; distinct from Willandra Lakes (Mungo), which is the outback region's rejected item.",
+  "coordinates": {
+   "lat": -33.498333,
+   "lng": 145.501111
+  },
+  "coordinates_source": "wikivoyage:Riverina (listing-level, kept)",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Willandra, New South Wales.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Willandra,_New_South_Wales.jpg",
+   "width": 4841,
+   "height": 3000,
+   "licence": "CC BY-SA 4.0"
+  },
+  "photo_reason": "Outback track with a kangaroo; ok as the park drive but not a landmark; weak, flagged.",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.55
+  }
+ },
+ {
+  "name": "Junction Park (Murray and Darling confluence)",
+  "verdict": "keep",
+  "objection": "Wikivoyage names it; free viewing of the Murray-Darling junction. Wentworth is edge-of-region; outback pass rejected Wentworth as a town, so this spot is not duplicated there.",
+  "coordinates": {
+   "lat": -34.111066,
+   "lng": 141.909984
+  },
+  "coordinates_source": "wikivoyage:Wentworth (listing-level, kept)",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "WentworthTwoRivers.JPG",
+   "page": "https://commons.wikimedia.org/wiki/File:WentworthTwoRivers.JPG",
+   "width": 3872,
+   "height": 2592,
+   "licence": "CC BY-SA 3.0"
+  },
+  "photo_reason": "Confluence at Wentworth, 2009; river view with islet; fine."
+ },
+ {
+  "name": "Old Wentworth Gaol",
+  "verdict": "keep",
+  "objection": "Review resolved to keep, marginal: heritage gaol museum (1879-81) you can go inside, like Hay Gaol; Wikivoyage lists it, one source. Against: small museum; opening hours not verified, so research must confirm.",
+  "coordinates": {
+   "lat": -34.1026,
+   "lng": 141.9134
+  },
+  "coordinates_source": "wikivoyage:Wentworth (listing-level, kept)",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "WentworthGaol2009.JPG",
+   "page": "https://commons.wikimedia.org/wiki/File:WentworthGaol2009.JPG",
+   "width": 3872,
+   "height": 2592,
+   "licence": "CC BY-SA 3.0"
+  },
+  "photo_reason": "Gaol gatehouse and building, 2009; clear."
+ },
+ {
+  "name": "Perry Sandhills",
+  "verdict": "keep",
+  "objection": "Wikivoyage names the dunes; free to walk; one source but a natural second-tier stop.",
+  "coordinates": {
+   "lat": -34.101547,
+   "lng": 141.867269
+  },
+  "coordinates_source": "wikivoyage:Wentworth (listing-level, kept)",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Perry Sandhills near Wentworth, New South Wales 2648 2025-02-16 15-20-50.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Perry_Sandhills_near_Wentworth,_New_South_Wales_2648_2025-02-16_15-20-50.jpg",
+   "width": 4032,
+   "height": 2236,
+   "licence": "CC0"
+  },
+  "photo_reason": "Dune and scrub, 2025; plain but the dunes themselves."
+ },
+ {
+  "name": "Wentworth Pioneer Museum",
+  "verdict": "reject",
+  "objection": "Small local museum, one source; the Old Wentworth Gaol is the heritage stop.",
+  "photo_verdict": "n/a",
+  "photo": null,
+  "photo_reason": "not kept"
+ },
+ {
+  "name": "Dog on the Tuckerbox",
+  "verdict": "keep",
+  "objection": "Famous Australian roadside icon, strong views (28k) and a visitor complex; free. A 15-30 minute stop with the fountain park, not under any dispute.",
+  "coordinates": {
+   "lat": -35.000511,
+   "lng": 148.111103
+  },
+  "coordinates_source": "wikivoyage:Gundagai (listing-level, kept)",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "DogonTuckerbox.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:DogonTuckerbox.jpg",
+   "width": 1536,
+   "height": 2048,
+   "licence": "CC BY-SA 2.5"
+  },
+  "photo_reason": "Close view of the dog statue, 2005; the dog is the subject and fills the crop; 1536 px wide; the fountain wide shot has the dog too small.",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.4
+  }
+ },
+ {
+  "name": "Rusconi's Marble Cathedral",
+  "verdict": "keep",
+  "objection": "Wikivoyage names it; paid exhibit at the visitor centre, 20,948 marble pieces; a distinct draw even if short.",
+  "coordinates": {
+   "lat": -35.06298,
+   "lng": 148.10187
+  },
+  "coordinates_source": "wikivoyage:Gundagai (listing-level, kept)",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Gundagai Rusconi's Marble Masterpiece 006.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Gundagai_Rusconi's_Marble_Masterpiece_006.jpg",
+   "width": 2048,
+   "height": 1536,
+   "licence": "CC BY-SA 2.5"
+  },
+  "photo_reason": "Marble Masterpiece model close view, 2006; the exhibit itself, a bit pink and soft; weak."
+ },
+ {
+  "name": "Gundagai Museum",
+  "verdict": "reject",
+  "objection": "Small local museum, one source.",
+  "photo_verdict": "n/a",
+  "photo": null,
+  "photo_reason": "not kept"
+ },
+ {
+  "name": "Prince Alfred Bridge",
+  "verdict": "keep",
+  "objection": "Wikivoyage names it; 1866 timber viaduct, short walk and view; marginal, one source, a 20-30 minute stop.",
+  "coordinates": {
+   "lat": -35.07428,
+   "lng": 148.10705
+  },
+  "coordinates_source": "osm:Prince Alfred Bridge (listing-level, kept)",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Prince Alfred Bridge over the Murrumbidgee River in Gundagai.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Prince_Alfred_Bridge_over_the_Murrumbidgee_River_in_Gundagai.jpg",
+   "width": 3000,
+   "height": 2000,
+   "licence": "CC BY-SA 3.0 au"
+  },
+  "photo_reason": "Timber viaduct over the flats, 2019; fine.",
+  "hero_crop": {
+   "x": 0.6,
+   "y": 0.35
+  }
+ },
+ {
+  "name": "Gundagai Railway Museum",
+  "verdict": "reject",
+  "objection": "Small station museum, hours unverified, one source.",
+  "photo_verdict": "n/a",
+  "photo": null,
+  "photo_reason": "not kept"
+ },
+ {
+  "name": "Pioneer Women's Hut Museum",
+  "verdict": "reject",
+  "objection": "Small museum open Wednesdays and weekends only, one source.",
+  "photo_verdict": "n/a",
+  "photo": null,
+  "photo_reason": "not kept"
+ },
+ {
+  "name": "Tumbarumba–Rosewood Rail Trail",
+  "verdict": "keep",
+  "objection": "Wikivoyage Tumbarumba names the 21 km trail; a rail trail is a place to walk or cycle for hours. Pin is a segment point (Overpass was down), not yet the true midpoint; re-run the midpoint step.",
+  "coordinates": {
+   "lat": -35.7858,
+   "lng": 147.98996
+  },
+  "coordinates_source": "photon highway=cycleway \"Tumbarumba to Rosewood Rail Trail\", a segment centre near Tumbarumba (LOW); the other segment sits at -35.70045,147.88361 (Rosewood end); true route midpoint needs Overpass way geometry, rerun the midpoint step",
+  "photo_verdict": "reject",
+  "photo": null,
+  "photo_reason": "none: only Bills Horse Trough files nearby; search outside Commons."
+ },
+ {
+  "name": "Paddys River Falls",
+  "verdict": "reject",
+  "objection": "No counted source; location and access unconfirmed (Snowy region).",
+  "photo_verdict": "n/a",
+  "photo": null,
+  "photo_reason": "not kept"
+ },
+ {
+  "name": "Bradman's Birthplace Museum",
+  "verdict": "keep",
+  "objection": "Wikivoyage names it with address and hours; cottage museum, paid; a recognised draw for cricket fans.",
+  "coordinates": {
+   "lat": -34.631,
+   "lng": 148.021
+  },
+  "coordinates_source": "wikivoyage:Cootamundra (listing-level, kept)",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Cootamundra Bradman's Birthplace Museum 001.JPG",
+   "page": "https://commons.wikimedia.org/wiki/File:Cootamundra_Bradman's_Birthplace_Museum_001.JPG",
+   "width": 5624,
+   "height": 3376,
+   "licence": "CC BY 3.0"
+  },
+  "photo_reason": "The birthplace cottage, 2015; ordinary building but it is the attraction; fine."
+ },
+ {
+  "name": "Cricket Captains Walk",
+  "verdict": "keep",
+  "objection": "Wikivoyage Cootamundra names it (plus the VisitNSW link) as a Do listing; free, 24 hours, bronze busts with a life-size Bradman, 20-30 minutes. Counted source confirmed; marginal but named.",
+  "coordinates": {
+   "lat": -34.6368,
+   "lng": 148.0207
+  },
+  "coordinates_source": "wikivoyage:Cootamundra (listing-level, kept)",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Cricket Captains Walk 4.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Cricket_Captains_Walk_4.jpg",
+   "width": 3648,
+   "height": 2736,
+   "licence": "CC BY-SA 4.0"
+  },
+  "photo_reason": "Busts along the path, 2019; recognisable."
+ },
+ {
+  "name": "Roundhouse Museum",
+  "verdict": "keep",
+  "objection": "Two counted sources; large railway roundhouse museum with locomotives; Cluster: Junee.",
+  "coordinates": {
+   "lat": -34.8834,
+   "lng": 147.5791
+  },
+  "coordinates_source": "wikivoyage:Junee (listing-level, kept)",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "The Roundhouse, Junee - January 2017.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:The_Roundhouse,_Junee_-_January_2017.jpg",
+   "width": 5760,
+   "height": 2282,
+   "licence": "CC BY 2.0"
+  },
+  "photo_reason": "Roundhouse and turntable, 5760x2282 wide; the building is in the middle slice. The 2021 shot is dark/B&W-like and fails brightness.",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.55
+  }
+ },
+ {
+  "name": "Junee Licorice Factory",
+  "verdict": "keep",
+  "objection": "Two counted sources; Wikivoyage: make-your-own sweets, weekday making, cafe, shop. The operator domain (greengroveorganics.com.au) now returns a Wix \"ConnectYourDomain\" error, so hours/ticket URL and whether it still operates must be verified before shipping; if unverified, demote to review. A shop-factory visit but a named Junee draw.",
+  "coordinates": {
+   "lat": -34.86011,
+   "lng": 147.579484
+  },
+  "coordinates_source": "wikivoyage:Junee (listing-level, kept)",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Junee Licorice and Chocolate factory 2008.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Junee_Licorice_and_Chocolate_factory_2008.jpg",
+   "width": 1280,
+   "height": 851,
+   "licence": "CC BY-SA 2.0"
+  },
+  "photo_reason": "Factory building 2008, 1280 wide; old industrial shed, not the sweets; weak but ok."
+ },
+ {
+  "name": "Monte Cristo Homestead",
+  "verdict": "reject",
+  "objection": "Resolved: Wikivoyage itself calls it \"all marketing fluff\", house unmaintained, exhibits dusty and parts closed; high Wikipedia views reflect the haunted-house reputation, not a visit worth recommending. Revisit if a tourism source lists current tours.",
+  "photo_verdict": "n/a",
+  "photo": null,
+  "photo_reason": "not kept"
+ },
+ {
+  "name": "Bethungra Spiral",
+  "verdict": "keep",
+  "objection": "Regional board (theriverina.com.au) and Wikipedia; a short lookout with a platform (2020) and sign, 20-30 minutes; marginal for non-rail visitors, kept as a named lookout.",
+  "coordinates": {
+   "lat": -34.7498,
+   "lng": 147.8813
+  },
+  "coordinates_source": "wikipedia:Bethungra Spiral (listing-level, kept)",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "BethungraSpiral.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:BethungraSpiral.jpg",
+   "width": 1951,
+   "height": 1000,
+   "licence": "CC BY-SA 2.5"
+  },
+  "photo_reason": "Spiral track curving at right of a 2007 colour view; needs the off-centre crop. Lookout photos show only a platform.",
+  "hero_crop": {
+   "x": 0.8,
+   "y": 0.6
+  }
+ },
+ {
+  "name": "Coolamon Fire Museum",
+  "verdict": "keep",
+  "objection": "Two counted sources; open museum; small town, 30-45 minutes. Marginal on distinctness but two sources meet the bar.",
+  "coordinates": {
+   "lat": -34.8134,
+   "lng": 147.1993
+  },
+  "coordinates_source": "wikivoyage:Coolamon (listing-level, kept)",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Coolamon Fire Museum, NSW, 2023, 14.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Coolamon_Fire_Museum,_NSW,_2023,_14.jpg",
+   "width": 4032,
+   "height": 3024,
+   "licence": "CC BY-SA 4.0"
+  },
+  "photo_reason": "Fire-brigade hand pump exhibit inside, 2023; weak: interior detail, no exterior."
+ },
+ {
+  "name": "Up-To-Date Store (Coolamon)",
+  "verdict": "reject",
+  "objection": "Mainly a shop; one source.",
+  "photo_verdict": "n/a",
+  "photo": null,
+  "photo_reason": "not kept"
+ },
+ {
+  "name": "Temora Aviation Museum",
+  "verdict": "keep",
+  "objection": "Verified: aviationmuseum.com.au opening hours page lists Monday-Friday 10-4 (weekend hours on the page too); flying displays and simulators; two counted sources; a headline attraction. Cluster: Temora.",
+  "coordinates": {
+   "lat": -34.4274,
+   "lng": 147.5151
+  },
+  "coordinates_source": "wikivoyage:Temora (listing-level, kept)",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "De Havilland DH-82A Tiger Moth II AN1103136.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:De_Havilland_DH-82A_Tiger_Moth_II_AN1103136.jpg",
+   "width": 1600,
+   "height": 1058,
+   "licence": "GFDL 1.2"
+  },
+  "photo_reason": "Tiger Moth in the museum hangar; the 2009 exterior shows a car park with people.",
+  "hero_crop": {
+   "x": 0.35,
+   "y": 0.5
+  }
+ },
+ {
+  "name": "Temora Rural Museum",
+  "verdict": "reject",
+  "objection": "Local agricultural museum, one source.",
+  "photo_verdict": "n/a",
+  "photo": null,
+  "photo_reason": "not kept"
+ },
+ {
+  "name": "Greens Gunyah Museum",
+  "verdict": "keep",
+  "objection": "Two counted sources; Lockhart museum with a wool art gallery; small, but two sources and open to the public.",
+  "coordinates": {
+   "lat": -35.2204,
+   "lng": 146.7136
+  },
+  "coordinates_source": "wikivoyage:Lockhart (listing-level, kept)",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "LockhartGreensGunyahMuseum.JPG",
+   "page": "https://commons.wikimedia.org/wiki/File:LockhartGreensGunyahMuseum.JPG",
+   "width": 3445,
+   "height": 2481,
+   "licence": "CC BY-SA 3.0"
+  },
+  "photo_reason": "Museum facade 2008, signed; ok."
+ },
+ {
+  "name": "Galore Hill Nature Reserve",
+  "verdict": "reject",
+  "objection": "Reserve with no visitor infrastructure, one source.",
+  "photo_verdict": "n/a",
+  "photo": null,
+  "photo_reason": "not kept"
+ },
+ {
+  "name": "Tocumwal Historic Aerodrome",
+  "verdict": "reject",
+  "objection": "Access and hangar tours uncertain; one source; revisit if the museum is verified open daily.",
+  "photo_verdict": "n/a",
+  "photo": null,
+  "photo_reason": "not kept"
+ },
+ {
+  "name": "Tocumwal Town Beach",
+  "verdict": "keep",
+  "objection": "Wikivoyage names the Murray River beach; second-tier beach stop under the rule on beaches and harbour towns.",
+  "coordinates": {
+   "lat": -35.818109,
+   "lng": 145.559549
+  },
+  "coordinates_source": "wikivoyage:Tocumwal (listing-level, kept)",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Tocumwal Town Beach 010.JPG",
+   "page": "https://commons.wikimedia.org/wiki/File:Tocumwal_Town_Beach_010.JPG",
+   "width": 3872,
+   "height": 2592,
+   "licence": "CC BY 3.0"
+  },
+  "photo_reason": "River and sand beach, 2012; fine."
+ },
+ {
+  "name": "The Big Cod (Tocumwal)",
+  "verdict": "keep",
+  "objection": "Quirky roadside icon on the foreshore; one source suffices for a big thing.",
+  "coordinates": {
+   "lat": -35.811674,
+   "lng": 145.56401
+  },
+  "coordinates_source": "wikivoyage:Tocumwal (listing-level, kept)",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Tocumwal Big Cod.JPG",
+   "page": "https://commons.wikimedia.org/wiki/File:Tocumwal_Big_Cod.JPG",
+   "width": 3608,
+   "height": 2484,
+   "licence": "CC BY-SA 3.0"
+  },
+  "photo_reason": "Big Cod statue, 2010; fills the crop."
+ },
+ {
+  "name": "Moama Holden Motor Museum",
+  "verdict": "reject",
+  "objection": "Opening times and even existence unverified; the listing is the only Moama attraction and a one-source local museum.",
+  "photo_verdict": "n/a",
+  "photo": null,
+  "photo_reason": "not kept"
+ },
+ {
+  "name": "Coleambally Bucyrus Dragline",
+  "verdict": "keep",
+  "objection": "Wikivoyage Coleambally names it with a description and photo; free, open-access machine in Lions Park, one of four dug the irrigation channels; short stop, kept as a quirky icon. The Wineglass Water Tower (same page) is the weaker of the two and goes to review.",
+  "coordinates": {
+   "lat": -34.798425,
+   "lng": 145.878206
+  },
+  "coordinates_source": "median of 16 geotagged Commons files of the dragline (LOW per resolver, but 87 m from Lions Park point; accept as the machine itself)",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Bucyrus Erie Class III dragline at Lions Park in Coleambally.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Bucyrus_Erie_Class_III_dragline_at_Lions_Park_in_Coleambally.jpg",
+   "width": 3264,
+   "height": 2448,
+   "licence": "CC BY-SA 3.0"
+  },
+  "photo_reason": "Dragline in Lions Park, 2017; fine."
+ },
+ {
+  "name": "Coleambally Wineglass Water Tower",
+  "verdict": "review",
+  "objection": "For: Wikivoyage describes a tiled wineglass water tower, a distinctive roadside landmark, 5-minute stop. Against: one source, a water tower in a tiny town, weaker than the dragline; owner call.",
+  "photo_verdict": "n/a",
+  "photo": null,
+  "photo_reason": "none: only a main street shot"
+ },
+ {
+  "name": "Big Tennis Racquet (Barellan)",
+  "verdict": "reject",
+  "objection": "Only a regional news article names it (not a counted visitor source); the Wikivoyage Barellan page has no listing for it that I could verify; reject unless Visit NSW or a tourism board lists it, then keep as a quirky icon like the Big Guitar.",
+  "photo_verdict": "n/a",
+  "photo": null,
+  "photo_reason": "not kept"
+ },
+ {
+  "name": "Biggest Football (Ungarie)",
+  "verdict": "keep",
+  "objection": "Counted source: Visit NSW (regional tourism page, \"Biggest Football, Ungarie\") with the Daniher brothers story; very remote and a 10-minute photo stop, so marginal; kept only as a big-thing icon per the Ohakune Carrot benchmark.",
+  "coordinates": {
+   "lat": -33.639089,
+   "lng": 146.974129
+  },
+  "coordinates_source": "photon tourism=artwork \"Big Football\" + Commons median (HIGH)",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Ungarie Big Football 09-08-2024 001.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Ungarie_Big_Football_09-08-2024_001.jpg",
+   "width": 4369,
+   "height": 3273,
+   "licence": "CC BY-SA 4.0"
+  },
+  "photo_reason": "Big football, 2024, clear.",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.4
+  }
+ }
+]

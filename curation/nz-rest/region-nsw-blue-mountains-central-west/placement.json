@@ -1,0 +1,3464 @@
+{
+ "region": "nsw-blue-mountains-central-west",
+ "country": "Australia",
+ "note": "Proposals only: no destination is added. Existing Blue Mountains, Warrumbungle and Hill End spots are unchanged and one new Blue Mountains spot: Six Foot Track as blue-mountains-19 (held for pin; highest ever used is blue-mountains-18). Every kept place outside the Blue Mountains base sits in a proposed destination or stands alone; if a destination is declined its places become the standalone entries in new_destinations[].if_declined_standalone. Photos are skeptic candidates only (photo_verdict \"candidate\"), not accepted until Lens.",
+ "overlap_decisions": {
+  "Wollemi / Dharug / Yengo": "Dharug National Park and Yengo National Park are decided in central-coast-hunter (Dharug is proposed there, Yengo standalone) and not touched. Wollemi National Park is owned here (held for pin); no other pass placed it.",
+  "Zig Zag Railway": "Inside the Blue Mountains 37.5 km reach (19 km) but visitors reach it from Lithgow, so lithgow-1, not blue-mountains-19.",
+  "Jenolan Caves": "34 km from the Blue Mountains centre but reached via Oberon/Hartley and tied to Kanangra-Boyd (20 km), so kanangra-boyd-national-park-2.",
+  "Glow Worm Tunnel": "Lies in Wollemi National Park (Wolgan Valley), reached from Lithgow: lithgow-2. Gardens of Stone sits beside it and is folded into Lithgow.",
+  "Hill End": "Existing standalone spot; unchanged. Nearest proposed destination is Mudgee (about 60 km); not a Mudgee spot.",
+  "Warrumbungle / Coonabarabran / Siding Spring": "Existing spots unchanged; Coolah Tops is 100+ km away and standalone.",
+  "New England pass (Pilliga, Burning Mountain)": "No overlap: those places are held or placed in nsw-new-england-north-west."
+ },
+ "hold_for_pin": [
+  {
+   "name": "Mount Panorama Circuit",
+   "id": "bathurst-1",
+   "why": [
+    "Skeptic's point is a 4 dp Wikipedia centroid of a loop (a memory-grade pin; apply-region refuses it). Re-pin on Murray's Corner / the pit straight from an OSM way."
+   ]
+  },
+  {
+   "name": "Orange Wine Region",
+   "id": "orange-nsw-2",
+   "why": [
+    "Region centroid (-33.4, 149.1) is a reference only and round; pin at the cellar-door district or a named flagship cellar door."
+   ]
+  },
+  {
+   "name": "Mudgee Wine Region",
+   "id": "mudgee-2",
+   "why": [
+    "Region centroid (-32.5, 149.8) is a reference only and round; pin at the cellar-door district or a named flagship cellar door."
+   ]
+  },
+  {
+   "name": "Plane on a Stick",
+   "id": "parkes-2",
+   "why": [
+    "Pinned only at the Apex Park centroid, not the plane; confirm the plane's exact spot (Wikivoyage gives no coordinates)."
+   ]
+  },
+  {
+   "name": "Six Foot Track",
+   "id": "blue-mountains-19",
+   "why": [
+    "Skeptic's point is an estimate (the way nearest the east-west midpoint; Overpass was unreachable). Compute the true route midpoint from the OSM route and confirm it lies on the track."
+   ]
+  },
+  {
+   "name": "Wollemi National Park",
+   "id": "wollemi-national-park",
+   "why": [
+    "Only a Wikipedia centroid (69 km from Lithgow, in wilderness); no visitor point. Pin the main access (e.g. Newnes/Glow Worm Tunnel precinct or Dunns Swamp) before placing."
+   ]
+  }
+ ],
+ "six_foot_track_if_not_blue_mountains": {
+  "name": "Six Foot Track",
+  "action": "standalone",
+  "destination": null,
+  "id": "six-foot-track",
+  "coordinates": {
+   "latitude": -33.741906,
+   "longitude": 150.166084
+  },
+  "coordinates_source": "osm highway=track way 649155418 'Six Foot Track'; chosen as the way nearest the east-west midpoint of the route (Overpass was unreachable so true route midpoint not computed). MEDIUM at best; replace with computed midpoint. Old pin was near the Katoomba end.",
+  "category": "hike",
+  "icon": "🥾",
+  "bio_draft": "A historic 45 km walk from Katoomba to Jenolan Caves along the escarpment; shut near Jenolan while the caves are closed.",
+  "hours": null,
+  "visitHoursMin": 14,
+  "visitHoursMax": 20,
+  "free": null,
+  "costMin": null,
+  "costMax": null,
+  "currency": null,
+  "ticketUrl": null,
+  "views": 2205,
+  "counted_sources": [
+   "https://en.wikivoyage.org/wiki/Blue_Mountains"
+  ],
+  "skeptic_objection": "Historic 45 km walk Katoomba to Jenolan; Wikivoyage. Note official closure: no access between Jenolan Caves House and Binda Bush Cabins while the caves are closed. Pin is a midpoint estimate.",
+  "photo": {
+   "file": "Six foot track megalong valley.JPG",
+   "page": "https://commons.wikimedia.org/wiki/File:Six_foot_track_megalong_valley.JPG",
+   "width": 2560,
+   "height": 1920,
+   "licence": "Public domain"
+  },
+  "photo_verdict": "candidate",
+  "skeptic_photo_verdict": "accept",
+  "skeptic_photo_reason": "2010 colour track through the Megalong valley with ranges behind; a recognisable stretch. Track in the lower left; give hero_crop y 0.7.",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.65
+  },
+  "photo_status": "candidate only; Lens must run the four checks before it is applied",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "reason": "If a Blue Mountains placement is not wanted: standalone, reached on its own (Katoomba to Jenolan).",
+  "country": "Australia",
+  "countryCode": "AU",
+  "continent": "Oceania",
+  "timezone": "Australia/Sydney",
+  "status": "hold-for-pin",
+  "hold_for_pin": [
+   "Skeptic's point is an estimate (the way nearest the east-west midpoint; Overpass was unreachable). Compute the true route midpoint from the OSM route and confirm it lies on the track."
+  ]
+ },
+ "spots": [
+  {
+   "name": "Mount Panorama Circuit",
+   "action": "spot",
+   "destination": "bathurst",
+   "id": "bathurst-1",
+   "coordinates": {
+    "latitude": -33.4475,
+    "longitude": 149.5564
+   },
+   "coordinates_source": "wikipedia 'Mount Panorama Circuit' (4 dp, MEDIUM). Circuit is a loop; centroid acceptable. Suburb relation -33.44557,149.557341 agrees within 250 m. Re-pin on the Murray's Corner/pit straight with an OSM way once Overpass is back.",
+   "category": "landmark",
+   "icon": "🏎️",
+   "bio_draft": "The public road loop around Mount Panorama, open to cars when no race is on, with a lookout over Bathurst.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 113172,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Bathurst_(New_South_Wales)"
+   ],
+   "skeptic_objection": "Public road loop, open to cars off race days; Wikivoyage plus a global motorsport icon.",
+   "photo": {
+    "file": "Mount Panorama Pit Straight and Pit Lane 2015.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Mount_Panorama_Pit_Straight_and_Pit_Lane_2015.JPG",
+    "width": 3456,
+    "height": 2304,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "April 2015 colour view of the pit straight and pit buildings (a one-hour production race); circuit identifiable, subject centre-left, no hero_crop needed beyond default. The image shows cars and people but as the circuit's own use.",
+   "hero_crop": "ok",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "3.6 km from the proposed Bathurst centre, inside its 30 km reach (75% of a 40 km span); visitors reach it from that base.",
+   "distance_km_from_destination": 3.6,
+   "inside_75pct_span": true,
+   "distance_km_from_blue_mountains_centre": 72.5,
+   "status": "hold-for-pin",
+   "hold_for_pin": [
+    "Skeptic's point is a 4 dp Wikipedia centroid of a loop (a memory-grade pin; apply-region refuses it). Re-pin on Murray's Corner / the pit straight from an OSM way."
+   ]
+  },
+  {
+   "name": "National Motor Racing Museum",
+   "action": "spot",
+   "destination": "bathurst",
+   "id": "bathurst-2",
+   "coordinates": {
+    "latitude": -33.440054,
+    "longitude": 149.561998
+   },
+   "coordinates_source": "osm tourism=museum W80890306 (MEDIUM)",
+   "category": "museum",
+   "icon": "🏁",
+   "bio_draft": "Motorcycle and car racing memorabilia at Murray's Corner, at the foot of Mount Panorama.",
+   "hours": "9:00 AM – 4:30 PM",
+   "closedDays": [
+    2
+   ],
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 1335,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Bathurst_(New_South_Wales)"
+   ],
+   "skeptic_objection": "RESOLVED from review: official page open 9-4:30 daily except Tuesday (7 days in school holidays), at Murray's Corner on the Mount Panorama circuit; a distinct museum with its own visit, ticketed. Access may be restricted on race days.",
+   "photo": {
+    "file": "National Motor Racing Museum.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:National_Motor_Racing_Museum.jpg",
+    "width": 1200,
+    "height": 900,
+    "licence": "CC BY-SA 2.0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "2009 colour front of the museum with its sign. 1200 px wide, fine; building is the attraction.",
+   "hero_crop": "ok",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "source_note": "Official page: open 9-4:30 daily except Tuesday (7 days in school holidays); may be restricted on race days. Ticketed.",
+   "reason": "2.7 km from the proposed Bathurst centre, inside its 30 km reach (75% of a 40 km span); visitors reach it from that base.",
+   "distance_km_from_destination": 2.7,
+   "inside_75pct_span": true,
+   "distance_km_from_blue_mountains_centre": 72.2,
+   "status": "ready for Pipeline C research"
+  },
+  {
+   "name": "Australian Fossil and Mineral Museum",
+   "action": "spot",
+   "destination": "bathurst",
+   "id": "bathurst-3",
+   "coordinates": {
+    "latitude": -33.41698,
+    "longitude": 149.580596
+   },
+   "coordinates_source": "osm tourism=museum W227665210 (HIGH with the Commons geotag)",
+   "category": "museum",
+   "icon": "🦴",
+   "bio_draft": "A council museum in Bathurst holding the Sommerville Collection of about 2000 fossil and mineral specimens.",
+   "hours": "9:00 AM – 4:30 PM",
+   "closedDays": [
+    3
+   ],
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 946,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Bathurst_(New_South_Wales)"
+   ],
+   "skeptic_objection": "RESOLVED from review: council museum, official page says open 9-4:30 daily bar Wednesday (7 days in school holidays), Wikivoyage names it; a proper museum visit.",
+   "photo": {
+    "file": "Australian Fossil & Mineral Museum, Bathurst.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Australian_Fossil_&_Mineral_Museum,_Bathurst.jpg",
+    "width": 3968,
+    "height": 2976,
+    "licence": "CC BY-SA 3.0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "April 2011 colour front of the museum in a heritage building, evening light; the attraction's own exterior (geotagged -33.41699,149.58067).",
+   "hero_crop": "ok",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "source_note": "Official page: open 9-4:30 daily bar Wednesday (7 days in school holidays).",
+   "reason": "0.4 km from the proposed Bathurst centre, inside its 30 km reach (75% of a 40 km span); visitors reach it from that base.",
+   "distance_km_from_destination": 0.4,
+   "inside_75pct_span": true,
+   "distance_km_from_blue_mountains_centre": 71.4,
+   "status": "ready for Pipeline C research"
+  },
+  {
+   "name": "Mount Canobolas",
+   "action": "spot",
+   "destination": "orange-nsw",
+   "id": "orange-nsw-1",
+   "coordinates": {
+    "latitude": -33.3443,
+    "longitude": 148.98221
+   },
+   "coordinates_source": "osm natural=peak 'Gaanha-bula-Mount Canobolas' N3019437379; wikivoyage -33.3442,148.982 (HIGH)",
+   "category": "nature",
+   "icon": "🌋",
+   "bio_draft": "An extinct volcano and the highest point west of the Great Dividing Range, with a summit road, lookouts and day walks.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 5553,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Orange_(New_South_Wales)",
+    "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)"
+   ],
+   "skeptic_objection": "Extinct volcano with summit road, lookouts and walks; Wikivoyage Orange and Central West; two counted sources.",
+   "photo": {
+    "file": "Mount Canobolas.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Mount_Canobolas.jpg",
+    "width": 1800,
+    "height": 1200,
+    "licence": "CC BY-SA 3.0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "2005 colour view of the mountain from the Pinnacles; clear identifiable subject, slightly old. Mountain right of centre, hero_crop x 0.65.",
+   "hero_crop": "ok",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "12.9 km from the proposed Orange centre, inside its 41.25 km reach (75% of a 55 km span); visitors reach it from that base.",
+   "distance_km_from_destination": 12.9,
+   "inside_75pct_span": true,
+   "distance_km_from_blue_mountains_centre": 126.9,
+   "status": "ready for Pipeline C research"
+  },
+  {
+   "name": "Orange Wine Region",
+   "action": "spot",
+   "destination": "orange-nsw",
+   "id": "orange-nsw-2",
+   "coordinates": {
+    "latitude": -33.4,
+    "longitude": 149.1
+   },
+   "coordinates_source": "wikipedia:Orange wine region",
+   "category": "nature",
+   "icon": "🍷",
+   "bio_draft": "Cool-climate cellar doors and vineyards around Orange, on the slopes of Mount Canobolas.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 848,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Orange_(New_South_Wales)",
+    "https://www.mynrma.com.au/open-road/destinations/orange-and-mudgee"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Orange_wine_region"
+   ],
+   "wiki": "Orange wine region",
+   "skeptic_objection": "Two counted sources (Wikivoyage, NRMA); one wine-area spot for Orange.",
+   "photo": null,
+   "photo_verdict": "none",
+   "skeptic_photo_verdict": "none",
+   "skeptic_photo_reason": "Commons returned unrelated results (Czech, Las Vegas, Barolo). None.",
+   "hero_crop": null,
+   "photo_status": "no Commons candidate; Lens searches outside Commons",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "13.0 km from the proposed Orange centre, inside its 41.25 km reach (75% of a 55 km span); visitors reach it from that base.",
+   "distance_km_from_destination": 13.0,
+   "inside_75pct_span": true,
+   "distance_km_from_blue_mountains_centre": 114.8,
+   "status": "hold-for-pin",
+   "hold_for_pin": [
+    "Region centroid (-33.4, 149.1) is a reference only and round; pin at the cellar-door district or a named flagship cellar door."
+   ]
+  },
+  {
+   "name": "Carcoar",
+   "action": "spot",
+   "destination": "orange-nsw",
+   "id": "orange-nsw-3",
+   "coordinates": {
+    "latitude": -33.611294,
+    "longitude": 149.139503
+   },
+   "coordinates_source": "osm place=locality relation Carcoar via Photon; matches Wikipedia -33.611037,149.140362 within 100 m (HIGH)",
+   "category": "historic",
+   "icon": "🏘️",
+   "bio_draft": "A 'lost to time' heritage village, the third oldest settlement west of the Divide, with a dam and small museums.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 8330,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Carcoar"
+   ],
+   "skeptic_objection": "RESOLVED from review: Wikivoyage plus visitnsw.com and Orange360 pages both name it as a 'lost to time' heritage village (third oldest settlement west of the Divide). Low-rank village stop; its tiny museums are folded into it.",
+   "photo": {
+    "file": "Over looking the village of Carcoar 01.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Over_looking_the_village_of_Carcoar_01.jpg",
+    "width": 2000,
+    "height": 1333,
+    "licence": "CC BY-SA 3.0 au"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "2011 colour view over the village roofs with hill behind; village is the subject, centred.",
+   "hero_crop": "ok",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "reason": "36.7 km from the proposed Orange centre, inside its 41.25 km reach (75% of a 55 km span); visitors reach it from that base.",
+   "distance_km_from_destination": 36.7,
+   "inside_75pct_span": true,
+   "distance_km_from_blue_mountains_centre": 108.1,
+   "status": "ready for Pipeline C research"
+  },
+  {
+   "name": "Taronga Western Plains Zoo",
+   "action": "spot",
+   "destination": "dubbo",
+   "id": "dubbo-1",
+   "coordinates": {
+    "latitude": -32.27858,
+    "longitude": 148.58176
+   },
+   "coordinates_source": "wikivoyage listing's own geo; OSM zoo polygon centroid -32.282027,148.579882 is 400 m away (inside the zoo). MEDIUM",
+   "category": "entertainment",
+   "icon": "🦒",
+   "bio_draft": "A large open-range zoo with African and native animals, the biggest tourist draw in Dubbo.",
+   "hours": "9:00 AM – 5:00 PM",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 6346,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Dubbo",
+    "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)"
+   ],
+   "skeptic_objection": "Open-range zoo, daily 9-5; two counted sources. Headline Dubbo draw.",
+   "photo": {
+    "file": "2020-10-08 Giraffe (Giraffa camelopardalis) in Taronga Western Plains Zoo 1.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:2020-10-08_Giraffe_(Giraffa_camelopardalis)_in_Taronga_Western_Plains_Zoo_1.jpg",
+    "width": 3721,
+    "height": 2887,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "2020 colour giraffe on open grass in the zoo (file categorised Taronga Western Plains Zoo, geotagged -32.2773,148.5824). Animal is the draw; fence behind. Giraffe left of centre, hero_crop x 0.3.",
+   "hero_crop": {
+    "x": 0.3,
+    "y": 0.5
+   },
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "3.0 km from the proposed Dubbo centre, inside its 52.5 km reach (75% of a 70 km span); visitors reach it from that base.",
+   "distance_km_from_destination": 3.0,
+   "inside_75pct_span": true,
+   "distance_km_from_blue_mountains_centre": 220.2,
+   "status": "ready for Pipeline C research"
+  },
+  {
+   "name": "Old Dubbo Gaol",
+   "action": "spot",
+   "destination": "dubbo",
+   "id": "dubbo-2",
+   "coordinates": {
+    "latitude": -32.245863,
+    "longitude": 148.6024
+   },
+   "coordinates_source": "osm tourism=attraction 'Old Dubbo Gaol' N4374907521 (MEDIUM)",
+   "category": "museum",
+   "icon": "⛓️",
+   "bio_draft": "A former gaol (1859-1966) with guided and self-guided tours and theatrical displays in the cells.",
+   "hours": "9:00 AM – 5:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": 24.5,
+   "costMax": 24.5,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "views": 1908,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Dubbo"
+   ],
+   "skeptic_objection": "RESOLVED from review: official site says open 7 days 9am-5pm, $24.50 adult, immersive theatrical displays; Wikivoyage names it. A permanent, enterable heritage attraction and a Dubbo staple.",
+   "photo": {
+    "file": "Old Dubbo Gaol, NSW, 2021, 09.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Old_Dubbo_Gaol,_NSW,_2021,_09.jpg",
+    "width": 3572,
+    "height": 2679,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "2021 colour view of the gaol entrance gates from Macquarie Street; the attraction's entrance, subject centred.",
+   "hero_crop": "ok",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "reason": "1.2 km from the proposed Dubbo centre, inside its 52.5 km reach (75% of a 70 km span); visitors reach it from that base.",
+   "distance_km_from_destination": 1.2,
+   "inside_75pct_span": true,
+   "distance_km_from_blue_mountains_centre": 221.4,
+   "status": "ready for Pipeline C research"
+  },
+  {
+   "name": "Royal Flying Doctor Service Visitor Experience",
+   "action": "spot",
+   "destination": "dubbo",
+   "id": "dubbo-3",
+   "coordinates": {
+    "latitude": -32.216418,
+    "longitude": 148.569928
+   },
+   "coordinates_source": "osm tourism=attraction 'Royal Flying Doctor Service Visitor Education Centre' N5542078286 (MEDIUM)",
+   "category": "museum",
+   "icon": "🛩️",
+   "bio_draft": "The Dubbo base of the Royal Flying Doctor Service, with a hands-on visitor experience at the airport.",
+   "hours": "9:00 AM – 5:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Dubbo"
+   ],
+   "wiki": "Royal Flying Doctor Service",
+   "skeptic_objection": "RESOLVED from review: the official site says open daily 9-5 (extended weekend hours per Wikivoyage), ticketed hands-on visitor experience at Dubbo airport; second source is the operator's own page. Low-medium rank; also named by Wikivoyage as a Dubbo attraction.",
+   "photo": null,
+   "photo_verdict": "none",
+   "skeptic_photo_verdict": "none",
+   "skeptic_photo_reason": "Commons photos are a car park and a corrugated hangar front; none shows the visitor experience. Needs outside Commons.",
+   "hero_crop": null,
+   "photo_status": "no Commons candidate; Lens searches outside Commons",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "5.4 km from the proposed Dubbo centre, inside its 52.5 km reach (75% of a 70 km span); visitors reach it from that base.",
+   "distance_km_from_destination": 5.4,
+   "inside_75pct_span": true,
+   "distance_km_from_blue_mountains_centre": 225.8,
+   "status": "ready for Pipeline C research"
+  },
+  {
+   "name": "Wellington Caves",
+   "action": "spot",
+   "destination": "dubbo",
+   "id": "dubbo-4",
+   "coordinates": {
+    "latitude": -32.621128,
+    "longitude": 148.938336
+   },
+   "coordinates_source": "osm tourism=information 'Wellington Caves Visitors Centre' N2662357369 (MEDIUM); wikipedia centroid -32.6208,148.9381 agrees",
+   "category": "nature",
+   "icon": "🦇",
+   "bio_draft": "Guided show-cave tours of Cathedral Cave and Gaden Cave, with megafauna fossils and a discovery lab.",
+   "hours": "Daily guided tours",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 2625,
+   "counted_sources": [
+    "https://wellingtoncaves.com.au/explore"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Wellington_Caves"
+   ],
+   "skeptic_objection": "Show caves open 7 days (official), megafauna fossils, tours; Wikivoyage plus official site; a clear draw.",
+   "photo": {
+    "file": "Wellington Caves, Wellington, NSW, 2022, 29.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Wellington_Caves,_Wellington,_NSW,_2022,_29.jpg",
+    "width": 4032,
+    "height": 3024,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "Feb 2022 colour view of the stairs down into the cave entrance among rocks; subject centred.",
+   "hero_crop": "ok",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "51.4 km from the proposed Dubbo centre, inside its 52.5 km reach (75% of a 70 km span); visitors reach it from that base.",
+   "distance_km_from_destination": 51.4,
+   "inside_75pct_span": true,
+   "distance_km_from_blue_mountains_centre": 169.8,
+   "status": "ready for Pipeline C research"
+  },
+  {
+   "name": "Gulgong",
+   "action": "spot",
+   "destination": "mudgee",
+   "id": "mudgee-1",
+   "coordinates": {
+    "latitude": -32.36305556,
+    "longitude": 149.53333333
+   },
+   "coordinates_source": "wikipedia:Gulgong",
+   "category": "historic",
+   "icon": "🏘️",
+   "bio_draft": "A gold-rush town whose intact Mayne Street heritage main street has a pioneers museum and the Henry Lawson Centre.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 14648,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Gulgong"
+   ],
+   "skeptic_objection": "Gold-rush main street, town spot of Mudgee cluster.",
+   "photo": {
+    "file": "Gulgong Mayne Street 001.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Gulgong_Mayne_Street_001.JPG",
+    "width": 5696,
+    "height": 3784,
+    "licence": "CC BY 3.0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "June 2014 colour view down Mayne Street with verandahs, the town's intact heritage street; 3:2, subject in the middle slice.",
+   "hero_crop": "ok",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "reason": "28.2 km from the proposed Mudgee centre, inside its 37.5 km reach (75% of a 50 km span); visitors reach it from that base.",
+   "distance_km_from_destination": 28.2,
+   "inside_75pct_span": true,
+   "distance_km_from_blue_mountains_centre": 158.3,
+   "status": "ready for Pipeline C research"
+  },
+  {
+   "name": "Mudgee Wine Region",
+   "action": "spot",
+   "destination": "mudgee",
+   "id": "mudgee-2",
+   "coordinates": {
+    "latitude": -32.5,
+    "longitude": 149.8
+   },
+   "coordinates_source": "wikipedia:Mudgee wine region",
+   "category": "nature",
+   "icon": "🍷",
+   "bio_draft": "Cellar doors and wineries in the hill country around Mudgee.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 768,
+   "counted_sources": [
+    "https://www.mynrma.com.au/open-road/destinations/orange-and-mudgee"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Mudgee_wine_region"
+   ],
+   "wiki": "Mudgee wine region",
+   "skeptic_objection": "Mudgee is a named wine region (NRMA, Wikipedia). Region-centroid pin is a reference only; place it at the cellar-door district when placed.",
+   "photo": null,
+   "photo_verdict": "none",
+   "skeptic_photo_verdict": "none",
+   "skeptic_photo_reason": "Only a single winery building (Lowe Wines, 2019) and a portrait of a winemaker; fails check 2. Needs a vineyard landscape from outside Commons.",
+   "hero_crop": null,
+   "photo_status": "no Commons candidate; Lens searches outside Commons",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "23.5 km from the proposed Mudgee centre, inside its 37.5 km reach (75% of a 50 km span); visitors reach it from that base.",
+   "distance_km_from_destination": 23.5,
+   "inside_75pct_span": true,
+   "distance_km_from_blue_mountains_centre": 134.3,
+   "status": "hold-for-pin",
+   "hold_for_pin": [
+    "Region centroid (-32.5, 149.8) is a reference only and round; pin at the cellar-door district or a named flagship cellar door."
+   ]
+  },
+  {
+   "name": "Zig Zag Railway",
+   "action": "spot",
+   "destination": "lithgow",
+   "id": "lithgow-1",
+   "coordinates": {
+    "latitude": -33.47733,
+    "longitude": 150.221149
+   },
+   "coordinates_source": "osm historic=railway 'Zig Zag Railway' way 187626307; wikivoyage -33.4774,150.2212 (HIGH)",
+   "category": "entertainment",
+   "icon": "🚂",
+   "bio_draft": "A heritage railway on the original zig-zag section of the western line, with stations at each end.",
+   "hours": null,
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 14172,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lithgow"
+   ],
+   "skeptic_objection": "Operating heritage railway on the original zig zag; clear draw. Inside the Blue Mountains span (19 km) but visitors come via Lithgow.",
+   "photo": {
+    "file": "The old Lithgow zigzag, now part of the Zig Zag Railway.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:The_old_Lithgow_zigzag,_now_part_of_the_Zig_Zag_Railway.jpg",
+    "width": 4320,
+    "height": 3240,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "Jan 2012 colour view of the cuttings and viaducts on the zig zag, line centred.",
+   "hero_crop": "ok",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "6.6 km from the proposed Lithgow centre, inside its 52.5 km reach (75% of a 70 km span); visitors reach it from that base.",
+   "distance_km_from_destination": 6.6,
+   "inside_75pct_span": true,
+   "distance_km_from_blue_mountains_centre": 18.8,
+   "status": "ready for Pipeline C research"
+  },
+  {
+   "name": "Glow Worm Tunnel",
+   "action": "spot",
+   "destination": "lithgow",
+   "id": "lithgow-2",
+   "coordinates": {
+    "latitude": -33.23833,
+    "longitude": 150.226275
+   },
+   "coordinates_source": "osm tunnel way 143680523 'Glow Worm Tunnel' via Photon (MEDIUM). Track is 1 km from car park; pinned at the tunnel itself, trailhead -33.24793,150.22404 (Commons file coords)",
+   "category": "hike",
+   "icon": "🥾",
+   "bio_draft": "A 1 km walk to a disused mining railway tunnel with a glow-worm colony in Wollemi National Park; high-clearance drive.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 2590,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lithgow"
+   ],
+   "wiki": "Glowworm Tunnel",
+   "skeptic_objection": "Wikivoyage names the 1 km walk to the old Wolgan Valley railway tunnel; a distinct named half-day, though inside Wollemi/Gardens of Stone. High-clearance drive needed. Keep.",
+   "photo": {
+    "file": "Glow Worm Tunnel - panoramio.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Glow_Worm_Tunnel_-_panoramio.jpg",
+    "width": 4288,
+    "height": 3216,
+    "licence": "CC BY 3.0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "Sept 2014 colour view of the tunnel mouth in tree ferns. Interior is dark by nature, so brightness p40 may fail; would then be dark-on-purpose. Subject centred. Brightness (p40>=0.22, mean>=0.30) not measured.",
+   "hero_crop": "ok",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "28.1 km from the proposed Lithgow centre, inside its 52.5 km reach (75% of a 70 km span); visitors reach it from that base.",
+   "distance_km_from_destination": 28.1,
+   "inside_75pct_span": true,
+   "distance_km_from_blue_mountains_centre": 44.3,
+   "status": "ready for Pipeline C research"
+  },
+  {
+   "name": "Gardens of Stone National Park",
+   "action": "spot",
+   "destination": "lithgow",
+   "id": "lithgow-3",
+   "coordinates": {
+    "latitude": -33.287951,
+    "longitude": 150.183422
+   },
+   "coordinates_source": "osm leisure=nature_reserve relation 'Gardens of Stone National Park' (centroid; park destination)",
+   "category": "nature",
+   "icon": "🪨",
+   "bio_draft": "World Heritage rock pagodas, cliffs and canyons in the sandstone country north of Lithgow.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 1567,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/gardens-of-stone-national-park"
+   ],
+   "skeptic_objection": "NPWS-named park; pagoda country north of Lithgow. Lies about 58 km from the Blue Mountains centre, outside its span.",
+   "photo": {
+    "file": "Lost City at Gardens of Stone Conservation Area.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Lost_City_at_Gardens_of_Stone_Conservation_Area.jpg",
+    "width": 4096,
+    "height": 3072,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "25 Dec 2025 colour view of the pagoda formations from a ridge; named in the description as the Lost City pagodas in Gardens of Stone. Subject spread across the frame so should crop fine; no category on the file page, trust is from the description. Brightness (p40>=0.22, mean>=0.30) not measured.",
+   "hero_crop": "ok",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "needs_research": [
+    "pin",
+    "cost",
+    "ticketUrl"
+   ],
+   "pin_review": "OSM/Wikipedia park centroid, not an entrance or car park; research must replace it with the main visitor point (needs_research includes 'pin').",
+   "reason": "21.9 km from the proposed Lithgow centre, inside its 52.5 km reach (75% of a 70 km span); visitors reach it from that base.",
+   "distance_km_from_destination": 21.9,
+   "inside_75pct_span": true,
+   "distance_km_from_blue_mountains_centre": 39.8,
+   "status": "ready for Pipeline C research",
+   "np_exception": "folded into lithgow: its pagodas are reached from Lithgow and overlap the town's span; a separate park destination would duplicate the display."
+  },
+  {
+   "name": "Capertee Valley",
+   "action": "spot",
+   "destination": "lithgow",
+   "id": "lithgow-4",
+   "coordinates": {
+    "latitude": -33.166505,
+    "longitude": 149.998033
+   },
+   "coordinates_source": "osm tourism=viewpoint 'Pearsons Lookout' (MEDIUM); old pin was the wikipedia centroid -33.048,150.134",
+   "category": "viewpoint",
+   "icon": "🏞️",
+   "bio_draft": "One of the widest enclosed canyons in the world, seen from Pearsons Lookout on a scenic drive near Glen Davis.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 12883,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Capertee_Valley"
+   ],
+   "skeptic_objection": "RESOLVED from review: Lithgow Tourism's Capertee page (a regional tourism board, counted) and Wikipedia name it as the widest enclosed canyon, with Pearsons Lookout and the Pantoneys Crown lookout; a real scenic drive-and-stop. Pin moved from the Wikipedia centroid to the lookout.",
+   "photo": {
+    "file": "Moonrise over Capertee Valley.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Moonrise_over_Capertee_Valley.jpg",
+    "width": 4000,
+    "height": 2250,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "2019 colour dusk view of the valley edge cliff (mesa) at sunset and moonrise; subject centred. Dusk so brightness may fall under the floor (candidate for dark-on-purpose after looking). Brightness (p40>=0.22, mean>=0.30) not measured.",
+   "hero_crop": "ok",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "reason": "38.0 km from the proposed Lithgow centre, inside its 52.5 km reach (75% of a 70 km span); visitors reach it from that base.",
+   "distance_km_from_destination": 38.0,
+   "inside_75pct_span": true,
+   "distance_km_from_blue_mountains_centre": 59.0,
+   "status": "ready for Pipeline C research"
+  },
+  {
+   "name": "Kanangra Walls",
+   "action": "spot",
+   "destination": "kanangra-boyd-national-park",
+   "id": "kanangra-boyd-national-park-1",
+   "coordinates": {
+    "latitude": -33.984886,
+    "longitude": 150.111245
+   },
+   "coordinates_source": "osm tourism=viewpoint 'Kanangra Walls Lookout' (MEDIUM, one precise OSM feature)",
+   "category": "viewpoint",
+   "icon": "⛰️",
+   "bio_draft": "The sheer sandstone cliff lookout where the Kanangra-Boyd road ends, with walks from the car park.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Blue_Mountains",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/kanangra-boyd-national-park"
+   ],
+   "skeptic_objection": "RESOLVED from reject: two counted sources, Wikivoyage's Blue Mountains page lists it as its own See item and NPWS names it, and it is the park's one headline lookout (the road ends at it); reached by sealed-then-gravel drive, visitable for 30+ min with walks from the car park. Distinct named draw, sits under Kanangra-Boyd. Pantoneys Crown and Cloudmaker stay folded or reviewed.",
+   "photo": {
+    "file": "Kanangra Boyd National Park NSW.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Kanangra_Boyd_National_Park_NSW.jpg",
+    "width": 3264,
+    "height": 2448,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "2016 colour view from Kanangra Walls showing the sheer cliff face; cliff right of centre, give hero_crop x about 0.65.",
+   "hero_crop": {
+    "x": 0.65,
+    "y": 0.5
+   },
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "0.0 km from the proposed Kanangra-Boyd National Park centre, inside its 37.5 km reach (75% of a 50 km span); visitors reach it from that base.",
+   "distance_km_from_destination": 0.0,
+   "inside_75pct_span": true,
+   "distance_km_from_blue_mountains_centre": 43.3,
+   "status": "ready for Pipeline C research"
+  },
+  {
+   "name": "Jenolan Caves",
+   "action": "spot",
+   "destination": "kanangra-boyd-national-park",
+   "id": "kanangra-boyd-national-park-2",
+   "coordinates": {
+    "latitude": -33.820604,
+    "longitude": 150.02109
+   },
+   "coordinates_source": "osm tourism=hotel 'Jenolan Caves House' W383029081 (precinct visitor point, MEDIUM); old pin was the village point",
+   "category": "nature",
+   "icon": "🦇",
+   "bio_draft": "Guided show-cave tours, walks and historic Caves House in a World Heritage setting; closed until early 2027.",
+   "hours": "Closed for Two Mile road repairs; reopening planned early 2027 (official site, checked 18 Oct 2026). Re-check before release.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 12622,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Jenolan_Caves"
+   ],
+   "skeptic_objection": "Keep: a permanent place with a temporary closure. Jenolan's official site (checked 18 Oct 2026, updated July 2026) says the caves are closed for major Two Mile road repairs with reopening planned for early 2027; the Six Foot Track is also shut between Jenolan Caves House and Binda Bush Cabins. Put the closure in the hours/notes and flag to re-check before release. Within 34 km of the Blue Mountains centre but over an hour from Katoomba.",
+   "photo": null,
+   "photo_verdict": "none",
+   "skeptic_photo_verdict": "none",
+   "skeptic_photo_reason": "Commons results are wildlife, 1920s-30s photos, and 1024 px cave interiors. None passes (no >=960 colour exterior or Grand Arch). Needs an outside-Commons search.",
+   "hero_crop": null,
+   "photo_status": "no Commons candidate; Lens searches outside Commons",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "closure_note": "Caves closed for major Two Mile road repairs, reopening planned for early 2027 (Jenolan official site, checked 18 Oct 2026); Six Foot Track shut between Jenolan Caves House and Binda Bush Cabins. Put in hours/notes and re-check before release.",
+   "reason": "20.1 km from the proposed Kanangra-Boyd National Park centre, inside its 37.5 km reach (75% of a 50 km span); visitors reach it from that base.",
+   "distance_km_from_destination": 20.1,
+   "inside_75pct_span": true,
+   "distance_km_from_blue_mountains_centre": 33.8,
+   "status": "ready for Pipeline C research"
+  },
+  {
+   "name": "Cowra Japanese Garden",
+   "action": "spot",
+   "destination": "cowra",
+   "id": "cowra-1",
+   "coordinates": {
+    "latitude": -33.826739,
+    "longitude": 148.697188
+   },
+   "coordinates_source": "osm leisure=garden 'Cowra Japanese Garden and Cultural Centre'; wikivoyage -33.826656,148.698248 (about 100 m) (HIGH)",
+   "category": "nature",
+   "icon": "🎋",
+   "bio_draft": "A strolling Japanese garden and cultural centre designed by Ken Nakajima, a symbol of reconciliation.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 1968,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Cowra"
+   ],
+   "wiki": "Cowra Japanese Garden and Cultural Centre",
+   "skeptic_objection": "Open daily, famous strolling garden; Wikivoyage.",
+   "photo": {
+    "file": "Cowra Japanese Garden (3379217011).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Cowra_Japanese_Garden_(3379217011).jpg",
+    "width": 2002,
+    "height": 1514,
+    "licence": "CC BY-SA 2.0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "2009 colour view across the garden pond and pavilion; the garden itself, centred.",
+   "hero_crop": "ok",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "0.8 km from the proposed Cowra centre, inside its 37.5 km reach (75% of a 50 km span); visitors reach it from that base.",
+   "distance_km_from_destination": 0.8,
+   "inside_75pct_span": true,
+   "distance_km_from_blue_mountains_centre": 150.4,
+   "status": "ready for Pipeline C research"
+  },
+  {
+   "name": "Cowra Breakout Site",
+   "action": "spot",
+   "destination": "cowra",
+   "id": "cowra-2",
+   "coordinates": {
+    "latitude": -33.811283,
+    "longitude": 148.704445
+   },
+   "coordinates_source": "wikivoyage listing's own geo, matches Commons file geotag -33.81139,148.70389 (HIGH)",
+   "category": "historic",
+   "icon": "🏛️",
+   "bio_draft": "The site of the 1944 prisoner-of-war camp breakout, free to visit.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 37883,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Cowra"
+   ],
+   "wiki": "Cowra breakout",
+   "skeptic_objection": "Free WWII POW camp site; Wikivoyage plus the story is the town's major draw. Sign/field-only site so a short stop but clear.",
+   "photo": {
+    "file": "Cowra Breakout 3.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Cowra_Breakout_3.jpg",
+    "width": 2988,
+    "height": 5312,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "2017 colour portrait of the reconstructed guard tower on the camp site (geotagged -33.81139,148.70389, matching the listing). Portrait 9:16; tower upper centre, give hero_crop y 0.3.",
+   "hero_crop": {
+    "x": 0.55,
+    "y": 0.3
+   },
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "reason": "2.5 km from the proposed Cowra centre, inside its 37.5 km reach (75% of a 50 km span); visitors reach it from that base.",
+   "distance_km_from_destination": 2.5,
+   "inside_75pct_span": true,
+   "distance_km_from_blue_mountains_centre": 149.5,
+   "status": "ready for Pipeline C research"
+  },
+  {
+   "name": "Age of Fishes Museum",
+   "action": "spot",
+   "destination": "cowra",
+   "id": "cowra-3",
+   "coordinates": {
+    "latitude": -33.562312,
+    "longitude": 148.660103
+   },
+   "coordinates_source": "osm tourism=museum 'The Age Of Fishes Museum' N4353240934 (MEDIUM); wikivoyage -33.5623,148.6601 agrees (HIGH)",
+   "category": "museum",
+   "icon": "🐟",
+   "bio_draft": "A fossil museum in Canowindra with Devonian fish specimens, one of two fish-fossil museums in the world.",
+   "hours": "10:00 AM – 4:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 833,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Canowindra"
+   ],
+   "skeptic_objection": "Open daily 10-4 (Wikivoyage); a fossil museum with a world-significant Devonian fish site. Wikivoyage plus its own site.",
+   "photo": null,
+   "photo_verdict": "none",
+   "skeptic_photo_verdict": "none",
+   "skeptic_photo_reason": "Commons returned unrelated museum fish items. None.",
+   "hero_crop": null,
+   "photo_status": "no Commons candidate; Lens searches outside Commons",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "30.4 km from the proposed Cowra centre, inside its 37.5 km reach (75% of a 50 km span); visitors reach it from that base.",
+   "distance_km_from_destination": 30.4,
+   "inside_75pct_span": true,
+   "distance_km_from_blue_mountains_centre": 152.7,
+   "status": "ready for Pipeline C research"
+  },
+  {
+   "name": "Canowindra",
+   "action": "spot",
+   "destination": "cowra",
+   "id": "cowra-4",
+   "coordinates": {
+    "latitude": -33.56666667,
+    "longitude": 148.66666667
+   },
+   "coordinates_source": "wikipedia:Canowindra",
+   "category": "historic",
+   "icon": "🏘️",
+   "bio_draft": "A Lachlan River town with a heritage main street, the Age of Fishes Museum and hot-air balloon flights.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 14795,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Canowindra"
+   ],
+   "skeptic_objection": "Town with Age of Fishes Museum, balloon flights and heritage street; low rank.",
+   "photo": {
+    "file": "CanowindraGaskillSt.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:CanowindraGaskillSt.JPG",
+    "width": 3872,
+    "height": 2592,
+    "licence": "CC BY 3.0 (unverified licence)"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "2008 colour view of Gaskill Street. Ordinary streetscape, weak; licence not opened. Prefer a balloon photo if one is wanted (Balloon Canowindra.jpg 4000x6000, 2022, portrait, shows a balloon not the town).",
+   "hero_crop": "ok",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "reason": "29.9 km from the proposed Cowra centre, inside its 37.5 km reach (75% of a 50 km span); visitors reach it from that base.",
+   "distance_km_from_destination": 29.9,
+   "inside_75pct_span": true,
+   "distance_km_from_blue_mountains_centre": 152.1,
+   "status": "ready for Pipeline C research"
+  },
+  {
+   "name": "Parkes Observatory",
+   "action": "spot",
+   "destination": "parkes",
+   "id": "parkes-1",
+   "coordinates": {
+    "latitude": -32.998601,
+    "longitude": 148.262423
+   },
+   "coordinates_source": "osm tourism=attraction 'Parkes Observatory' N81311142 (visitor centre point, MEDIUM); the Commons file geotag -32.99889,148.26306 agrees (HIGH)",
+   "category": "landmark",
+   "icon": "🔭",
+   "bio_draft": "The Dish radio telescope, with a visitor centre, 3D theatre and cafe; free entry to the visitor centre.",
+   "hours": "8:30 AM – 4:15 PM",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 33171,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Parkes"
+   ],
+   "skeptic_objection": "The Dish. Current CSIRO page (the old URL 404s; use csiro.au/en/about/facilities-collections/ATNF/Parkes-radio-telescope-Murriyang/Visitors-Centre): Parkes Observatory Visitors Centre open 7 days 8:30am-4:15pm plus extended NSW school-holiday hours; entry free; 3D theatre ticketed; cafe 8-3; 585 Telescope Road; turn off mobiles near the dish.",
+   "photo": {
+    "file": "Parkes Observatory 3.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Parkes_Observatory_3.jpg",
+    "width": 5312,
+    "height": 2988,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "June 2016 colour view of the dish against blue sky, 16:9 so the middle 53% slice holds the dish (dish centre x about 0.45); geotagged at the observatory.",
+   "hero_crop": "ok",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "reason": "17.4 km from the proposed Parkes centre, inside its 37.5 km reach (75% of a 50 km span); visitors reach it from that base.",
+   "distance_km_from_destination": 17.4,
+   "inside_75pct_span": true,
+   "distance_km_from_blue_mountains_centre": 202.5,
+   "status": "ready for Pipeline C research"
+  },
+  {
+   "name": "Plane on a Stick",
+   "action": "spot",
+   "destination": "parkes",
+   "id": "parkes-2",
+   "coordinates": {
+    "latitude": -33.389048,
+    "longitude": 148.008258
+   },
+   "coordinates_source": "osm leisure=park 'Apex Park' W492986103 (MEDIUM: park the plane stands in per Wikivoyage; park centroid, plane likely within 100 m of the bridge side)",
+   "category": "landmark",
+   "icon": "✈️",
+   "bio_draft": "A quirky roadside icon: a plane mounted on a pole in Apex Park by the main bridge at Forbes.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Forbes"
+   ],
+   "skeptic_objection": "Wikivoyage names it by name (Forbes plane-on-a-stick in Apex Park by the main bridge); a quirky roadside icon, a short stop. Marginal but fits the quirky-icon rule; low rank. No coordinates exist in sources: pinned at Apex Park, where the plane stands (confirm the plane's exact spot before shipping).",
+   "photo": null,
+   "photo_verdict": "none",
+   "skeptic_photo_verdict": "none",
+   "skeptic_photo_reason": "Commons search returned nothing for the sculpture. Needs an outside-Commons photo.",
+   "hero_crop": null,
+   "photo_status": "no Commons candidate; Lens searches outside Commons",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "reason": "32.0 km from the proposed Parkes centre, inside its 37.5 km reach (75% of a 50 km span); visitors reach it from that base.",
+   "distance_km_from_destination": 32.0,
+   "inside_75pct_span": true,
+   "distance_km_from_blue_mountains_centre": 214.8,
+   "status": "hold-for-pin",
+   "hold_for_pin": [
+    "Pinned only at the Apex Park centroid, not the plane; confirm the plane's exact spot (Wikivoyage gives no coordinates)."
+   ]
+  },
+  {
+   "name": "Six Foot Track",
+   "action": "spot",
+   "destination": "blue-mountains",
+   "id": "blue-mountains-19",
+   "coordinates": {
+    "latitude": -33.741906,
+    "longitude": 150.166084
+   },
+   "coordinates_source": "osm highway=track way 649155418 'Six Foot Track'; chosen as the way nearest the east-west midpoint of the route (Overpass was unreachable so true route midpoint not computed). MEDIUM at best; replace with computed midpoint. Old pin was near the Katoomba end.",
+   "category": "hike",
+   "icon": "🥾",
+   "bio_draft": "A historic 45 km walk from Katoomba to Jenolan Caves along the escarpment; shut near Jenolan while the caves are closed.",
+   "hours": null,
+   "visitHoursMin": 14,
+   "visitHoursMax": 20,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 2205,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Blue_Mountains"
+   ],
+   "skeptic_objection": "Historic 45 km walk Katoomba to Jenolan; Wikivoyage. Note official closure: no access between Jenolan Caves House and Binda Bush Cabins while the caves are closed. Pin is a midpoint estimate.",
+   "photo": {
+    "file": "Six foot track megalong valley.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Six_foot_track_megalong_valley.JPG",
+    "width": 2560,
+    "height": 1920,
+    "licence": "Public domain"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "2010 colour track through the Megalong valley with ranges behind; a recognisable stretch. Track in the lower left; give hero_crop y 0.7.",
+   "hero_crop": {
+    "x": 0.5,
+    "y": 0.65
+   },
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Starts at Explorers Tree in Katoomba and is walked from the Blue Mountains base; the estimated midpoint is 18.0 km from the Blue Mountains centre, inside its 37.5 km reach. Not a Kanangra-Boyd spot (the track ends at Jenolan but visitors set out from Katoomba). Highest blue-mountains id ever used is 18.",
+   "distance_km_from_destination": 18.0,
+   "inside_75pct_span": true,
+   "status": "hold-for-pin",
+   "hold_for_pin": [
+    "Skeptic's point is an estimate (the way nearest the east-west midpoint; Overpass was unreachable). Compute the true route midpoint from the OSM route and confirm it lies on the track."
+   ]
+  }
+ ],
+ "standalone_spots": [
+  {
+   "name": "Utes in the Paddock",
+   "action": "standalone",
+   "destination": null,
+   "id": "utes-in-the-paddock",
+   "coordinates": {
+    "latitude": -33.09951,
+    "longitude": 147.145752
+   },
+   "coordinates_source": "osm tourism=attraction 'Utes in the Paddock' W1523404717 (MEDIUM)",
+   "category": "landmark",
+   "icon": "🛻",
+   "bio_draft": "About 20 painted utes in a paddock near Condobolin, a free roadside public-art icon.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Condobolin"
+   ],
+   "skeptic_objection": "RESOLVED from review: Wikivoyage lists it with its own entry and a council tourism page (condobolin.nsw.au/things-to-do/utes-paddock), about 20 painted utes, free, outdoors, a quirky public-art icon. Marginal, low rank; short stop.",
+   "photo": null,
+   "photo_verdict": "none",
+   "skeptic_photo_verdict": "none",
+   "skeptic_photo_reason": "Commons has files named 'Vegemite ute, Utes in the Paddock, Condobolin.jpg' and 'Musical Ute', but they did not appear in the 1000 px bitmap search; not opened. Candidate to check.",
+   "hero_crop": null,
+   "photo_status": "no Commons candidate; Lens searches outside Commons",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "reason": "Condobolin is 94 km from Parkes and 80 km from the nearest other kept place; no destination reaches it.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "status": "ready for Pipeline C research",
+   "inside_75pct_span": false
+  },
+  {
+   "name": "Coolah Tops National Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "coolah-tops-national-park",
+   "coordinates": {
+    "latitude": -31.75083333,
+    "longitude": 150.07138889
+   },
+   "coordinates_source": "wikipedia:Coolah Tops National Park",
+   "category": "nature",
+   "icon": "🌲",
+   "bio_draft": "A plateau park at the Warrumbungle-Liverpool Ranges junction with snow gums, grass trees, waterfalls and walks.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 807,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/coolah-tops-national-park"
+   ],
+   "skeptic_objection": "NPWS-named park, remote but a real park with walks, snow gums and camping; low rank.",
+   "photo": null,
+   "photo_verdict": "none",
+   "skeptic_photo_verdict": "none",
+   "skeptic_photo_reason": "Only a park entrance sign, gravel roads and a hut. None passes.",
+   "hero_crop": null,
+   "photo_status": "no Commons candidate; Lens searches outside Commons",
+   "needs_research": [
+    "pin",
+    "cost",
+    "ticketUrl"
+   ],
+   "pin_review": "OSM/Wikipedia park centroid, not an entrance or car park; research must replace it with the main visitor point (needs_research includes 'pin').",
+   "reason": "Remote plateau park, 96 km from Mudgee and over 100 km from Warrumbungle; no kept sub-spots, so a standalone park rather than a thin destination (cf. Yengo).",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "status": "ready for Pipeline C research",
+   "inside_75pct_span": false
+  },
+  {
+   "name": "Weddin Mountains National Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "weddin-mountains-national-park",
+   "coordinates": {
+    "latitude": -33.97219444,
+    "longitude": 148.02311111
+   },
+   "coordinates_source": "wikipedia:Weddin Mountains National Park",
+   "category": "nature",
+   "icon": "⛰️",
+   "bio_draft": "A small rocky range near Grenfell with Ben Hall's cave refuge, a scenic drive and walks to Eualdrie lookout.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 890,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/weddin-mountains-national-park"
+   ],
+   "skeptic_objection": "RESOLVED from review: Wikivoyage lists it as a vicinity entry and NPWS manages it; content from Wikipedia shows concrete draws (Ben Hall's cave refuge, Holy Camp, Seaton's Farm walk, Eualdrie lookout). Park rule says every national park is a destination-level place; low rank.",
+   "photo": null,
+   "photo_verdict": "none",
+   "skeptic_photo_verdict": "none",
+   "skeptic_photo_reason": "Best candidates are a distant range from a roadside paddock and a cave interior (Ben Halls Cave). None shows the park.",
+   "hero_crop": null,
+   "photo_status": "no Commons candidate; Lens searches outside Commons",
+   "needs_research": [
+    "pin",
+    "cost",
+    "ticketUrl"
+   ],
+   "pin_review": "OSM/Wikipedia park centroid, not an entrance or car park; research must replace it with the main visitor point (needs_research includes 'pin').",
+   "reason": "Near Grenfell, 64 km from Cowra; no kept sub-spots, so standalone rather than a thin destination.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "status": "ready for Pipeline C research",
+   "inside_75pct_span": false
+  },
+  {
+   "name": "Abercrombie River National Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "abercrombie-river-national-park",
+   "coordinates": {
+    "latitude": -34.09388889,
+    "longitude": 149.7075
+   },
+   "coordinates_source": "wikipedia:Abercrombie River National Park",
+   "category": "nature",
+   "icon": "🏕️",
+   "bio_draft": "A river-gorge park near Oberon with Abercrombie Caves, river camping, swimming and fishing.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 1263,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/abercrombie-river-national-park"
+   ],
+   "skeptic_objection": "RESOLVED from review, low confidence: NPWS plus a Wikivoyage vicinity listing; river camping, swimming and fishing within reach of Bathurst/Oberon. Keep as low-rank park, no headline sight; demote to reject if the owner wants only parks with a named draw.",
+   "photo": null,
+   "photo_verdict": "none",
+   "skeptic_photo_verdict": "none",
+   "skeptic_photo_reason": "Commons has a shallow creek and a causeway bridge; neither reads as the park. None.",
+   "hero_crop": null,
+   "photo_status": "no Commons candidate; Lens searches outside Commons",
+   "needs_research": [
+    "pin",
+    "cost",
+    "ticketUrl"
+   ],
+   "pin_review": "OSM/Wikipedia park centroid, not an entrance or car park; research must replace it with the main visitor point (needs_research includes 'pin').",
+   "reason": "39 km from Kanangra Walls and reached from Oberon/Bathurst, not from the Kanangra road; no kept sub-spots, so standalone rather than a thin destination.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "status": "ready for Pipeline C research",
+   "inside_75pct_span": false
+  },
+  {
+   "name": "Wollemi National Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "wollemi-national-park",
+   "coordinates": {
+    "latitude": -32.87388889,
+    "longitude": 150.49222222
+   },
+   "coordinates_source": "wikipedia:Wollemi National Park",
+   "category": "nature",
+   "icon": "🌿",
+   "bio_draft": "A vast wilderness park of canyons and sandstone country, home of the Wollemi pine, reached from Lithgow, Mudgee and Windsor.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 8,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 11548,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/wollemi-national-park"
+   ],
+   "skeptic_objection": "Major NPWS park (Wollemi pine, Colo and Capertee canyon country); destination proposal. Reached from Lithgow, Mudgee and Windsor.",
+   "photo": {
+    "file": "Colo river valley.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Colo_river_valley.jpg",
+    "width": 2160,
+    "height": 1440,
+    "licence": "CC BY-SA 3.0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "2006 colour view into the Colo valley from the park. Weak (cleared flats, scrubby foreground) and 2006; accept only until something better is found. Brightness (p40>=0.22, mean>=0.30) not measured.",
+   "hero_crop": "ok",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Held for pin. Kept as a national park; 69 km from Lithgow's centre (outside its 52.5 km reach), reached from Lithgow, Mudgee and Windsor, so it is standalone (or a future park destination) once a visitor-point pin exists. Not a Mudgee or Lithgow spot.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "status": "hold-for-pin",
+   "hold_for_pin": [
+    "Only a Wikipedia centroid (69 km from Lithgow, in wilderness); no visitor point. Pin the main access (e.g. Newnes/Glow Worm Tunnel precinct or Dunns Swamp) before placing."
+   ]
+  }
+ ],
+ "new_destinations": [
+  {
+   "id": "bathurst",
+   "name": "Bathurst",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "category": "city",
+   "coordinates": {
+    "latitude": -33.42,
+    "longitude": 149.57777778
+   },
+   "coordinates_source": "wikipedia:Bathurst, New South Wales",
+   "defaultZoomSpanKm": 40,
+   "suggested_rank": 4,
+   "members": [
+    "bathurst-1 Mount Panorama Circuit",
+    "bathurst-2 National Motor Racing Museum",
+    "bathurst-3 Australian Fossil and Mineral Museum"
+   ],
+   "member_count": 3,
+   "notes": "Regional city with its own Wikivoyage chapter. Ophir Reserve (review) would be an Orange spot if kept; Bathurst is 64 km from Orange (spans 40 and 55 do not overlap).",
+   "thin": false,
+   "views": 71978,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Bathurst_(New_South_Wales)"
+   ],
+   "header_photo_candidate": null,
+   "header_photo_verdict": "none",
+   "header_photo_reason": "No passing Commons city view found: results are war memorials/carillon (civic monuments), an archive postcard, or a park. Needs header search outside Commons.",
+   "wiki": "Bathurst, New South Wales",
+   "needs": [
+    "description",
+    "three reasons with photos",
+    "tips",
+    "best months",
+    "header (Pipeline C / Lens)"
+   ],
+   "self_place": {
+    "name": "Bathurst",
+    "action": "standalone",
+    "destination": null,
+    "id": "bathurst",
+    "coordinates": {
+     "latitude": -33.42,
+     "longitude": 149.57777778
+    },
+    "coordinates_source": "wikipedia:Bathurst, New South Wales (town point; the spot is the town)",
+    "reason": "If the proposed Bathurst destination is declined, the town itself becomes a standalone town spot.",
+    "category": "historic",
+    "icon": "🏘️",
+    "bio_draft": "A regional city on the Great Dividing Range, home of the Mount Panorama racing circuit and heritage museums.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 1,
+    "visitHoursMax": 3,
+    "free": true,
+    "ticketUrl": null,
+    "views": 71978,
+    "counted_sources": [
+     "https://en.wikivoyage.org/wiki/Bathurst_(New_South_Wales)"
+    ],
+    "wiki": "Bathurst, New South Wales",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney",
+    "photo": null,
+    "photo_verdict": "none",
+    "needs_research": [
+     "ticketUrl"
+    ]
+   },
+   "if_declined_standalone": [
+    {
+     "name": "Mount Panorama Circuit",
+     "action": "standalone",
+     "destination": null,
+     "id": "mount-panorama-circuit",
+     "coordinates": {
+      "latitude": -33.4475,
+      "longitude": 149.5564
+     },
+     "coordinates_source": "wikipedia 'Mount Panorama Circuit' (4 dp, MEDIUM). Circuit is a loop; centroid acceptable. Suburb relation -33.44557,149.557341 agrees within 250 m. Re-pin on the Murray's Corner/pit straight with an OSM way once Overpass is back.",
+     "category": "landmark",
+     "icon": "🏎️",
+     "bio_draft": "The public road loop around Mount Panorama, open to cars when no race is on, with a lookout over Bathurst.",
+     "hours": null,
+     "visitHoursMin": 0.5,
+     "visitHoursMax": 1.5,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 113172,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Bathurst_(New_South_Wales)"
+     ],
+     "skeptic_objection": "Public road loop, open to cars off race days; Wikivoyage plus a global motorsport icon.",
+     "photo": {
+      "file": "Mount Panorama Pit Straight and Pit Lane 2015.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Mount_Panorama_Pit_Straight_and_Pit_Lane_2015.JPG",
+      "width": 3456,
+      "height": 2304,
+      "licence": "CC BY-SA 4.0"
+     },
+     "photo_verdict": "candidate",
+     "skeptic_photo_verdict": "accept",
+     "skeptic_photo_reason": "April 2015 colour view of the pit straight and pit buildings (a one-hour production race); circuit identifiable, subject centre-left, no hero_crop needed beyond default. The image shows cars and people but as the circuit's own use.",
+     "hero_crop": "ok",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "needs_research": [
+      "hours",
+      "cost",
+      "ticketUrl"
+     ],
+     "reason": "If the proposed Bathurst destination is declined: standalone spot, reached on its own.",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "status": "hold-for-pin",
+     "hold_for_pin": [
+      "Skeptic's point is a 4 dp Wikipedia centroid of a loop (a memory-grade pin; apply-region refuses it). Re-pin on Murray's Corner / the pit straight from an OSM way."
+     ]
+    },
+    {
+     "name": "National Motor Racing Museum",
+     "action": "standalone",
+     "destination": null,
+     "id": "national-motor-racing-museum",
+     "coordinates": {
+      "latitude": -33.440054,
+      "longitude": 149.561998
+     },
+     "coordinates_source": "osm tourism=museum W80890306 (MEDIUM)",
+     "category": "museum",
+     "icon": "🏁",
+     "bio_draft": "Motorcycle and car racing memorabilia at Murray's Corner, at the foot of Mount Panorama.",
+     "hours": "9:00 AM – 4:30 PM",
+     "closedDays": [
+      2
+     ],
+     "visitHoursMin": 1,
+     "visitHoursMax": 2,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 1335,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Bathurst_(New_South_Wales)"
+     ],
+     "skeptic_objection": "RESOLVED from review: official page open 9-4:30 daily except Tuesday (7 days in school holidays), at Murray's Corner on the Mount Panorama circuit; a distinct museum with its own visit, ticketed. Access may be restricted on race days.",
+     "photo": {
+      "file": "National Motor Racing Museum.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:National_Motor_Racing_Museum.jpg",
+      "width": 1200,
+      "height": 900,
+      "licence": "CC BY-SA 2.0"
+     },
+     "photo_verdict": "candidate",
+     "skeptic_photo_verdict": "accept",
+     "skeptic_photo_reason": "2009 colour front of the museum with its sign. 1200 px wide, fine; building is the attraction.",
+     "hero_crop": "ok",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "needs_research": [
+      "cost",
+      "ticketUrl"
+     ],
+     "source_note": "Official page: open 9-4:30 daily except Tuesday (7 days in school holidays); may be restricted on race days. Ticketed.",
+     "reason": "If the proposed Bathurst destination is declined: standalone spot, reached on its own.",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "status": "ready for Pipeline C research"
+    },
+    {
+     "name": "Australian Fossil and Mineral Museum",
+     "action": "standalone",
+     "destination": null,
+     "id": "australian-fossil-and-mineral-museum",
+     "coordinates": {
+      "latitude": -33.41698,
+      "longitude": 149.580596
+     },
+     "coordinates_source": "osm tourism=museum W227665210 (HIGH with the Commons geotag)",
+     "category": "museum",
+     "icon": "🦴",
+     "bio_draft": "A council museum in Bathurst holding the Sommerville Collection of about 2000 fossil and mineral specimens.",
+     "hours": "9:00 AM – 4:30 PM",
+     "closedDays": [
+      3
+     ],
+     "visitHoursMin": 1,
+     "visitHoursMax": 2,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 946,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Bathurst_(New_South_Wales)"
+     ],
+     "skeptic_objection": "RESOLVED from review: council museum, official page says open 9-4:30 daily bar Wednesday (7 days in school holidays), Wikivoyage names it; a proper museum visit.",
+     "photo": {
+      "file": "Australian Fossil & Mineral Museum, Bathurst.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Australian_Fossil_&_Mineral_Museum,_Bathurst.jpg",
+      "width": 3968,
+      "height": 2976,
+      "licence": "CC BY-SA 3.0"
+     },
+     "photo_verdict": "candidate",
+     "skeptic_photo_verdict": "accept",
+     "skeptic_photo_reason": "April 2011 colour front of the museum in a heritage building, evening light; the attraction's own exterior (geotagged -33.41699,149.58067).",
+     "hero_crop": "ok",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "needs_research": [
+      "cost",
+      "ticketUrl"
+     ],
+     "source_note": "Official page: open 9-4:30 daily bar Wednesday (7 days in school holidays).",
+     "reason": "If the proposed Bathurst destination is declined: standalone spot, reached on its own.",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "status": "ready for Pipeline C research"
+    }
+   ]
+  },
+  {
+   "id": "orange-nsw",
+   "name": "Orange",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "category": "city",
+   "coordinates": {
+    "latitude": -33.28333333,
+    "longitude": 149.1
+   },
+   "coordinates_source": "wikipedia:Orange, New South Wales",
+   "defaultZoomSpanKm": 55,
+   "suggested_rank": 4,
+   "members": [
+    "orange-nsw-1 Mount Canobolas",
+    "orange-nsw-2 Orange Wine Region",
+    "orange-nsw-3 Carcoar"
+   ],
+   "member_count": 3,
+   "notes": "Id suffixed -nsw so it does not claim 'orange' for Orange, France. Span 55 (41 km reach) holds Carcoar at 36.7 km (Wikivoyage groups it under Orange via the Mid-Western road; Bathurst is 46 km away). Ophir Reserve (review) is 25 km out and would join if kept.",
+   "thin": false,
+   "views": 80538,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Orange_(New_South_Wales)"
+   ],
+   "header_photo_candidate": null,
+   "header_photo_verdict": "none",
+   "header_photo_reason": "Commons results are only the Former Orange Town Hall (single building) and archive scans; Orange NSW panoramio 2700 wide not checked. Needs a header search.",
+   "wiki": "Orange, New South Wales",
+   "needs": [
+    "description",
+    "three reasons with photos",
+    "tips",
+    "best months",
+    "header (Pipeline C / Lens)"
+   ],
+   "self_place": {
+    "name": "Orange",
+    "action": "standalone",
+    "destination": null,
+    "id": "orange-nsw",
+    "coordinates": {
+     "latitude": -33.28333333,
+     "longitude": 149.1
+    },
+    "coordinates_source": "wikipedia:Orange, New South Wales (town point; the spot is the town)",
+    "reason": "If the proposed Orange destination is declined, the town itself becomes a standalone town spot.",
+    "category": "historic",
+    "icon": "🏘️",
+    "bio_draft": "A cool-climate regional city of wine, orchards and gardens at the foot of Mount Canobolas.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 1,
+    "visitHoursMax": 3,
+    "free": true,
+    "ticketUrl": null,
+    "views": 80538,
+    "counted_sources": [
+     "https://en.wikivoyage.org/wiki/Orange_(New_South_Wales)"
+    ],
+    "wiki": "Orange, New South Wales",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney",
+    "photo": null,
+    "photo_verdict": "none",
+    "needs_research": [
+     "ticketUrl"
+    ]
+   },
+   "if_declined_standalone": [
+    {
+     "name": "Mount Canobolas",
+     "action": "standalone",
+     "destination": null,
+     "id": "mount-canobolas",
+     "coordinates": {
+      "latitude": -33.3443,
+      "longitude": 148.98221
+     },
+     "coordinates_source": "osm natural=peak 'Gaanha-bula-Mount Canobolas' N3019437379; wikivoyage -33.3442,148.982 (HIGH)",
+     "category": "nature",
+     "icon": "🌋",
+     "bio_draft": "An extinct volcano and the highest point west of the Great Dividing Range, with a summit road, lookouts and day walks.",
+     "hours": null,
+     "visitHoursMin": 1,
+     "visitHoursMax": 3,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 5553,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Orange_(New_South_Wales)",
+      "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)"
+     ],
+     "skeptic_objection": "Extinct volcano with summit road, lookouts and walks; Wikivoyage Orange and Central West; two counted sources.",
+     "photo": {
+      "file": "Mount Canobolas.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Mount_Canobolas.jpg",
+      "width": 1800,
+      "height": 1200,
+      "licence": "CC BY-SA 3.0"
+     },
+     "photo_verdict": "candidate",
+     "skeptic_photo_verdict": "accept",
+     "skeptic_photo_reason": "2005 colour view of the mountain from the Pinnacles; clear identifiable subject, slightly old. Mountain right of centre, hero_crop x 0.65.",
+     "hero_crop": "ok",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "needs_research": [
+      "hours",
+      "cost",
+      "ticketUrl"
+     ],
+     "reason": "If the proposed Orange destination is declined: standalone spot, reached on its own.",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "status": "ready for Pipeline C research"
+    },
+    {
+     "name": "Orange Wine Region",
+     "action": "standalone",
+     "destination": null,
+     "id": "orange-wine-region",
+     "coordinates": {
+      "latitude": -33.4,
+      "longitude": 149.1
+     },
+     "coordinates_source": "wikipedia:Orange wine region",
+     "category": "nature",
+     "icon": "🍷",
+     "bio_draft": "Cool-climate cellar doors and vineyards around Orange, on the slopes of Mount Canobolas.",
+     "hours": null,
+     "visitHoursMin": 2,
+     "visitHoursMax": 4,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 848,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Orange_(New_South_Wales)",
+      "https://www.mynrma.com.au/open-road/destinations/orange-and-mudgee"
+     ],
+     "other_sources": [
+      "https://en.wikipedia.org/wiki/Orange_wine_region"
+     ],
+     "wiki": "Orange wine region",
+     "skeptic_objection": "Two counted sources (Wikivoyage, NRMA); one wine-area spot for Orange.",
+     "photo": null,
+     "photo_verdict": "none",
+     "skeptic_photo_verdict": "none",
+     "skeptic_photo_reason": "Commons returned unrelated results (Czech, Las Vegas, Barolo). None.",
+     "hero_crop": null,
+     "photo_status": "no Commons candidate; Lens searches outside Commons",
+     "needs_research": [
+      "hours",
+      "cost",
+      "ticketUrl"
+     ],
+     "reason": "If the proposed Orange destination is declined: standalone spot, reached on its own.",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "status": "hold-for-pin",
+     "hold_for_pin": [
+      "Region centroid (-33.4, 149.1) is a reference only and round; pin at the cellar-door district or a named flagship cellar door."
+     ]
+    },
+    {
+     "name": "Carcoar",
+     "action": "standalone",
+     "destination": null,
+     "id": "carcoar",
+     "coordinates": {
+      "latitude": -33.611294,
+      "longitude": 149.139503
+     },
+     "coordinates_source": "osm place=locality relation Carcoar via Photon; matches Wikipedia -33.611037,149.140362 within 100 m (HIGH)",
+     "category": "historic",
+     "icon": "🏘️",
+     "bio_draft": "A 'lost to time' heritage village, the third oldest settlement west of the Divide, with a dam and small museums.",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 1,
+     "visitHoursMax": 2,
+     "free": true,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 8330,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Carcoar"
+     ],
+     "skeptic_objection": "RESOLVED from review: Wikivoyage plus visitnsw.com and Orange360 pages both name it as a 'lost to time' heritage village (third oldest settlement west of the Divide). Low-rank village stop; its tiny museums are folded into it.",
+     "photo": {
+      "file": "Over looking the village of Carcoar 01.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Over_looking_the_village_of_Carcoar_01.jpg",
+      "width": 2000,
+      "height": 1333,
+      "licence": "CC BY-SA 3.0 au"
+     },
+     "photo_verdict": "candidate",
+     "skeptic_photo_verdict": "accept",
+     "skeptic_photo_reason": "2011 colour view over the village roofs with hill behind; village is the subject, centred.",
+     "hero_crop": "ok",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "needs_research": [
+      "ticketUrl"
+     ],
+     "reason": "If the proposed Orange destination is declined: standalone spot, reached on its own.",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "status": "ready for Pipeline C research"
+    }
+   ]
+  },
+  {
+   "id": "dubbo",
+   "name": "Dubbo",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "category": "city",
+   "coordinates": {
+    "latitude": -32.25694444,
+    "longitude": 148.60111111
+   },
+   "coordinates_source": "wikipedia:Dubbo",
+   "defaultZoomSpanKm": 70,
+   "suggested_rank": 4,
+   "members": [
+    "dubbo-1 Taronga Western Plains Zoo",
+    "dubbo-2 Old Dubbo Gaol",
+    "dubbo-3 Royal Flying Doctor Service Visitor Experience",
+    "dubbo-4 Wellington Caves"
+   ],
+   "member_count": 4,
+   "notes": "Span 70 (52.5 km reach) so that Wellington Caves, 51 km south on the Newell Highway and a Dubbo day trip, is inside it. Wellington Caves is 60 km from Mudgee, so it is not a Mudgee spot (the skeptic's Mudgee cluster note).",
+   "thin": false,
+   "views": 77593,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Dubbo"
+   ],
+   "header_photo_candidate": null,
+   "header_photo_verdict": "none",
+   "header_photo_reason": "Only a rail bridge, civic buildings and a 2008 set; none shows the city. Needs a header search.",
+   "wiki": "Dubbo",
+   "needs": [
+    "description",
+    "three reasons with photos",
+    "tips",
+    "best months",
+    "header (Pipeline C / Lens)"
+   ],
+   "self_place": {
+    "name": "Dubbo",
+    "action": "standalone",
+    "destination": null,
+    "id": "dubbo",
+    "coordinates": {
+     "latitude": -32.25694444,
+     "longitude": 148.60111111
+    },
+    "coordinates_source": "wikipedia:Dubbo (town point; the spot is the town)",
+    "reason": "If the proposed Dubbo destination is declined, the town itself becomes a standalone town spot.",
+    "category": "historic",
+    "icon": "🏘️",
+    "bio_draft": "A hub city in the western plains, home of Taronga Western Plains Zoo and the Old Dubbo Gaol.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 1,
+    "visitHoursMax": 3,
+    "free": true,
+    "ticketUrl": null,
+    "views": 77593,
+    "counted_sources": [
+     "https://en.wikivoyage.org/wiki/Dubbo"
+    ],
+    "wiki": "Dubbo",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney",
+    "photo": null,
+    "photo_verdict": "none",
+    "needs_research": [
+     "ticketUrl"
+    ]
+   },
+   "if_declined_standalone": [
+    {
+     "name": "Taronga Western Plains Zoo",
+     "action": "standalone",
+     "destination": null,
+     "id": "taronga-western-plains-zoo",
+     "coordinates": {
+      "latitude": -32.27858,
+      "longitude": 148.58176
+     },
+     "coordinates_source": "wikivoyage listing's own geo; OSM zoo polygon centroid -32.282027,148.579882 is 400 m away (inside the zoo). MEDIUM",
+     "category": "entertainment",
+     "icon": "🦒",
+     "bio_draft": "A large open-range zoo with African and native animals, the biggest tourist draw in Dubbo.",
+     "hours": "9:00 AM – 5:00 PM",
+     "visitHoursMin": 3,
+     "visitHoursMax": 6,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 6346,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Dubbo",
+      "https://en.wikivoyage.org/wiki/Central_West_(New_South_Wales)"
+     ],
+     "skeptic_objection": "Open-range zoo, daily 9-5; two counted sources. Headline Dubbo draw.",
+     "photo": {
+      "file": "2020-10-08 Giraffe (Giraffa camelopardalis) in Taronga Western Plains Zoo 1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:2020-10-08_Giraffe_(Giraffa_camelopardalis)_in_Taronga_Western_Plains_Zoo_1.jpg",
+      "width": 3721,
+      "height": 2887,
+      "licence": "CC BY-SA 4.0"
+     },
+     "photo_verdict": "candidate",
+     "skeptic_photo_verdict": "accept",
+     "skeptic_photo_reason": "2020 colour giraffe on open grass in the zoo (file categorised Taronga Western Plains Zoo, geotagged -32.2773,148.5824). Animal is the draw; fence behind. Giraffe left of centre, hero_crop x 0.3.",
+     "hero_crop": {
+      "x": 0.3,
+      "y": 0.5
+     },
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "needs_research": [
+      "cost",
+      "ticketUrl"
+     ],
+     "reason": "If the proposed Dubbo destination is declined: standalone spot, reached on its own.",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "status": "ready for Pipeline C research"
+    },
+    {
+     "name": "Old Dubbo Gaol",
+     "action": "standalone",
+     "destination": null,
+     "id": "old-dubbo-gaol",
+     "coordinates": {
+      "latitude": -32.245863,
+      "longitude": 148.6024
+     },
+     "coordinates_source": "osm tourism=attraction 'Old Dubbo Gaol' N4374907521 (MEDIUM)",
+     "category": "museum",
+     "icon": "⛓️",
+     "bio_draft": "A former gaol (1859-1966) with guided and self-guided tours and theatrical displays in the cells.",
+     "hours": "9:00 AM – 5:00 PM",
+     "visitHoursMin": 1,
+     "visitHoursMax": 2,
+     "free": null,
+     "costMin": 24.5,
+     "costMax": 24.5,
+     "currency": "AUD",
+     "ticketUrl": null,
+     "views": 1908,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Dubbo"
+     ],
+     "skeptic_objection": "RESOLVED from review: official site says open 7 days 9am-5pm, $24.50 adult, immersive theatrical displays; Wikivoyage names it. A permanent, enterable heritage attraction and a Dubbo staple.",
+     "photo": {
+      "file": "Old Dubbo Gaol, NSW, 2021, 09.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Old_Dubbo_Gaol,_NSW,_2021,_09.jpg",
+      "width": 3572,
+      "height": 2679,
+      "licence": "CC BY-SA 4.0"
+     },
+     "photo_verdict": "candidate",
+     "skeptic_photo_verdict": "accept",
+     "skeptic_photo_reason": "2021 colour view of the gaol entrance gates from Macquarie Street; the attraction's entrance, subject centred.",
+     "hero_crop": "ok",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "needs_research": [
+      "ticketUrl"
+     ],
+     "reason": "If the proposed Dubbo destination is declined: standalone spot, reached on its own.",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "status": "ready for Pipeline C research"
+    },
+    {
+     "name": "Royal Flying Doctor Service Visitor Experience",
+     "action": "standalone",
+     "destination": null,
+     "id": "rfds-visitor-experience-dubbo",
+     "coordinates": {
+      "latitude": -32.216418,
+      "longitude": 148.569928
+     },
+     "coordinates_source": "osm tourism=attraction 'Royal Flying Doctor Service Visitor Education Centre' N5542078286 (MEDIUM)",
+     "category": "museum",
+     "icon": "🛩️",
+     "bio_draft": "The Dubbo base of the Royal Flying Doctor Service, with a hands-on visitor experience at the airport.",
+     "hours": "9:00 AM – 5:00 PM",
+     "visitHoursMin": 1,
+     "visitHoursMax": 2,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 0,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Dubbo"
+     ],
+     "wiki": "Royal Flying Doctor Service",
+     "skeptic_objection": "RESOLVED from review: the official site says open daily 9-5 (extended weekend hours per Wikivoyage), ticketed hands-on visitor experience at Dubbo airport; second source is the operator's own page. Low-medium rank; also named by Wikivoyage as a Dubbo attraction.",
+     "photo": null,
+     "photo_verdict": "none",
+     "skeptic_photo_verdict": "none",
+     "skeptic_photo_reason": "Commons photos are a car park and a corrugated hangar front; none shows the visitor experience. Needs outside Commons.",
+     "hero_crop": null,
+     "photo_status": "no Commons candidate; Lens searches outside Commons",
+     "needs_research": [
+      "cost",
+      "ticketUrl"
+     ],
+     "reason": "If the proposed Dubbo destination is declined: standalone spot, reached on its own.",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "status": "ready for Pipeline C research"
+    },
+    {
+     "name": "Wellington Caves",
+     "action": "standalone",
+     "destination": null,
+     "id": "wellington-caves",
+     "coordinates": {
+      "latitude": -32.621128,
+      "longitude": 148.938336
+     },
+     "coordinates_source": "osm tourism=information 'Wellington Caves Visitors Centre' N2662357369 (MEDIUM); wikipedia centroid -32.6208,148.9381 agrees",
+     "category": "nature",
+     "icon": "🦇",
+     "bio_draft": "Guided show-cave tours of Cathedral Cave and Gaden Cave, with megafauna fossils and a discovery lab.",
+     "hours": "Daily guided tours",
+     "visitHoursMin": 1.5,
+     "visitHoursMax": 3,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 2625,
+     "counted_sources": [
+      "https://wellingtoncaves.com.au/explore"
+     ],
+     "other_sources": [
+      "https://en.wikipedia.org/wiki/Wellington_Caves"
+     ],
+     "skeptic_objection": "Show caves open 7 days (official), megafauna fossils, tours; Wikivoyage plus official site; a clear draw.",
+     "photo": {
+      "file": "Wellington Caves, Wellington, NSW, 2022, 29.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Wellington_Caves,_Wellington,_NSW,_2022,_29.jpg",
+      "width": 4032,
+      "height": 3024,
+      "licence": "CC BY-SA 4.0"
+     },
+     "photo_verdict": "candidate",
+     "skeptic_photo_verdict": "accept",
+     "skeptic_photo_reason": "Feb 2022 colour view of the stairs down into the cave entrance among rocks; subject centred.",
+     "hero_crop": "ok",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "needs_research": [
+      "hours",
+      "cost",
+      "ticketUrl"
+     ],
+     "reason": "If the proposed Dubbo destination is declined: standalone spot, reached on its own.",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "status": "ready for Pipeline C research"
+    }
+   ]
+  },
+  {
+   "id": "mudgee",
+   "name": "Mudgee",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "category": "city",
+   "coordinates": {
+    "latitude": -32.6125,
+    "longitude": 149.587222
+   },
+   "coordinates_source": "wikivoyage:Central West listing (town centre)",
+   "defaultZoomSpanKm": 50,
+   "suggested_rank": 5,
+   "members": [
+    "mudgee-1 Gulgong",
+    "mudgee-2 Mudgee Wine Region"
+   ],
+   "member_count": 2,
+   "notes": "THIN: one pinned spot (Gulgong, 28 km) plus the held wine region. Kept as a proposal because Mudgee is a regional hub with its own guide chapter and a named wine region; if the owner finds it too thin the town and Gulgong stand alone. Wollemi's Mudgee side is not placed here (Wollemi is held for pin).",
+   "thin": true,
+   "views": 40116,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Mudgee"
+   ],
+   "header_photo_candidate": null,
+   "header_photo_verdict": "none",
+   "header_photo_reason": "Mudgee Town Library and Theatre (2016) is a civic building streetscape with parked cars; Memorial Clock Tower portraits are single monuments. None passes.",
+   "wiki": "Mudgee, New South Wales",
+   "needs": [
+    "description",
+    "three reasons with photos",
+    "tips",
+    "best months",
+    "header (Pipeline C / Lens)"
+   ],
+   "self_place": {
+    "name": "Mudgee",
+    "action": "standalone",
+    "destination": null,
+    "id": "mudgee",
+    "coordinates": {
+     "latitude": -32.6125,
+     "longitude": 149.587222
+    },
+    "coordinates_source": "wikivoyage:Central West listing (town centre) (town point; the spot is the town)",
+    "reason": "If the proposed Mudgee destination is declined, the town itself becomes a standalone town spot.",
+    "category": "historic",
+    "icon": "🏘️",
+    "bio_draft": "A wine and produce town in hill country, the base for the Mudgee wine region and the gold-rush town of Gulgong.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 1,
+    "visitHoursMax": 3,
+    "free": true,
+    "ticketUrl": null,
+    "views": 40116,
+    "counted_sources": [
+     "https://en.wikivoyage.org/wiki/Mudgee"
+    ],
+    "wiki": "Mudgee, New South Wales",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney",
+    "photo": null,
+    "photo_verdict": "none",
+    "needs_research": [
+     "ticketUrl"
+    ]
+   },
+   "if_declined_standalone": [
+    {
+     "name": "Gulgong",
+     "action": "standalone",
+     "destination": null,
+     "id": "gulgong",
+     "coordinates": {
+      "latitude": -32.36305556,
+      "longitude": 149.53333333
+     },
+     "coordinates_source": "wikipedia:Gulgong",
+     "category": "historic",
+     "icon": "🏘️",
+     "bio_draft": "A gold-rush town whose intact Mayne Street heritage main street has a pioneers museum and the Henry Lawson Centre.",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 1,
+     "visitHoursMax": 3,
+     "free": true,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 14648,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Gulgong"
+     ],
+     "skeptic_objection": "Gold-rush main street, town spot of Mudgee cluster.",
+     "photo": {
+      "file": "Gulgong Mayne Street 001.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Gulgong_Mayne_Street_001.JPG",
+      "width": 5696,
+      "height": 3784,
+      "licence": "CC BY 3.0"
+     },
+     "photo_verdict": "candidate",
+     "skeptic_photo_verdict": "accept",
+     "skeptic_photo_reason": "June 2014 colour view down Mayne Street with verandahs, the town's intact heritage street; 3:2, subject in the middle slice.",
+     "hero_crop": "ok",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "needs_research": [
+      "ticketUrl"
+     ],
+     "reason": "If the proposed Mudgee destination is declined: standalone spot, reached on its own.",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "status": "ready for Pipeline C research"
+    },
+    {
+     "name": "Mudgee Wine Region",
+     "action": "standalone",
+     "destination": null,
+     "id": "mudgee-wine-region",
+     "coordinates": {
+      "latitude": -32.5,
+      "longitude": 149.8
+     },
+     "coordinates_source": "wikipedia:Mudgee wine region",
+     "category": "nature",
+     "icon": "🍷",
+     "bio_draft": "Cellar doors and wineries in the hill country around Mudgee.",
+     "hours": null,
+     "visitHoursMin": 2,
+     "visitHoursMax": 4,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 768,
+     "counted_sources": [
+      "https://www.mynrma.com.au/open-road/destinations/orange-and-mudgee"
+     ],
+     "other_sources": [
+      "https://en.wikipedia.org/wiki/Mudgee_wine_region"
+     ],
+     "wiki": "Mudgee wine region",
+     "skeptic_objection": "Mudgee is a named wine region (NRMA, Wikipedia). Region-centroid pin is a reference only; place it at the cellar-door district when placed.",
+     "photo": null,
+     "photo_verdict": "none",
+     "skeptic_photo_verdict": "none",
+     "skeptic_photo_reason": "Only a single winery building (Lowe Wines, 2019) and a portrait of a winemaker; fails check 2. Needs a vineyard landscape from outside Commons.",
+     "hero_crop": null,
+     "photo_status": "no Commons candidate; Lens searches outside Commons",
+     "needs_research": [
+      "hours",
+      "cost",
+      "ticketUrl"
+     ],
+     "reason": "If the proposed Mudgee destination is declined: standalone spot, reached on its own.",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "status": "hold-for-pin",
+     "hold_for_pin": [
+      "Region centroid (-32.5, 149.8) is a reference only and round; pin at the cellar-door district or a named flagship cellar door."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "lithgow",
+   "name": "Lithgow",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "category": "city",
+   "coordinates": {
+    "latitude": -33.48333333,
+    "longitude": 150.15
+   },
+   "coordinates_source": "wikipedia:Lithgow, New South Wales",
+   "defaultZoomSpanKm": 70,
+   "suggested_rank": 5,
+   "members": [
+    "lithgow-1 Zig Zag Railway",
+    "lithgow-2 Glow Worm Tunnel",
+    "lithgow-3 Gardens of Stone National Park",
+    "lithgow-4 Capertee Valley"
+   ],
+   "member_count": 4,
+   "notes": "Gateway for the escarpment's western side. Span 70 (52.5 km reach) holds Capertee Valley at 38 km, Glow Worm Tunnel 28 km, Gardens of Stone 22 km. It is 22 km from the Blue Mountains centre, so the two displays touch; Zig Zag Railway lies inside the Blue Mountains 37.5 km reach (19 km) but visitors arrive via Lithgow (Wikivoyage Lithgow), so it is Lithgow's. Gardens of Stone is folded in (np_exception) rather than a separate overlapping park destination; Wollemi National Park is held for a visitor-point pin and would stand alone.",
+   "thin": false,
+   "views": 30999,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lithgow"
+   ],
+   "header_photo_candidate": null,
+   "header_photo_verdict": "none",
+   "header_photo_reason": "Only archive scans (blast furnace) and Hartley village. Lithgow Main Street Shops 2019 is an ordinary shopfront row. None passes.",
+   "wiki": "Lithgow, New South Wales",
+   "needs": [
+    "description",
+    "three reasons with photos",
+    "tips",
+    "best months",
+    "header (Pipeline C / Lens)"
+   ],
+   "self_place": {
+    "name": "Lithgow",
+    "action": "standalone",
+    "destination": null,
+    "id": "lithgow",
+    "coordinates": {
+     "latitude": -33.48333333,
+     "longitude": 150.15
+    },
+    "coordinates_source": "wikipedia:Lithgow, New South Wales (town point; the spot is the town)",
+    "reason": "If the proposed Lithgow destination is declined, the town itself becomes a standalone town spot.",
+    "category": "historic",
+    "icon": "🏘️",
+    "bio_draft": "An industrial town at the foot of the Blue Mountains, the gateway to Zig Zag Railway, Glow Worm Tunnel and Gardens of Stone.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 1,
+    "visitHoursMax": 3,
+    "free": true,
+    "ticketUrl": null,
+    "views": 30999,
+    "counted_sources": [
+     "https://en.wikivoyage.org/wiki/Lithgow"
+    ],
+    "wiki": "Lithgow, New South Wales",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney",
+    "photo": null,
+    "photo_verdict": "none",
+    "needs_research": [
+     "ticketUrl"
+    ]
+   },
+   "if_declined_standalone": [
+    {
+     "name": "Zig Zag Railway",
+     "action": "standalone",
+     "destination": null,
+     "id": "zig-zag-railway",
+     "coordinates": {
+      "latitude": -33.47733,
+      "longitude": 150.221149
+     },
+     "coordinates_source": "osm historic=railway 'Zig Zag Railway' way 187626307; wikivoyage -33.4774,150.2212 (HIGH)",
+     "category": "entertainment",
+     "icon": "🚂",
+     "bio_draft": "A heritage railway on the original zig-zag section of the western line, with stations at each end.",
+     "hours": null,
+     "visitHoursMin": 1.5,
+     "visitHoursMax": 3,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 14172,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Lithgow"
+     ],
+     "skeptic_objection": "Operating heritage railway on the original zig zag; clear draw. Inside the Blue Mountains span (19 km) but visitors come via Lithgow.",
+     "photo": {
+      "file": "The old Lithgow zigzag, now part of the Zig Zag Railway.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:The_old_Lithgow_zigzag,_now_part_of_the_Zig_Zag_Railway.jpg",
+      "width": 4320,
+      "height": 3240,
+      "licence": "CC BY-SA 4.0"
+     },
+     "photo_verdict": "candidate",
+     "skeptic_photo_verdict": "accept",
+     "skeptic_photo_reason": "Jan 2012 colour view of the cuttings and viaducts on the zig zag, line centred.",
+     "hero_crop": "ok",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "needs_research": [
+      "hours",
+      "cost",
+      "ticketUrl"
+     ],
+     "reason": "If the proposed Lithgow destination is declined: standalone spot, reached on its own.",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "status": "ready for Pipeline C research"
+    },
+    {
+     "name": "Glow Worm Tunnel",
+     "action": "standalone",
+     "destination": null,
+     "id": "glow-worm-tunnel",
+     "coordinates": {
+      "latitude": -33.23833,
+      "longitude": 150.226275
+     },
+     "coordinates_source": "osm tunnel way 143680523 'Glow Worm Tunnel' via Photon (MEDIUM). Track is 1 km from car park; pinned at the tunnel itself, trailhead -33.24793,150.22404 (Commons file coords)",
+     "category": "hike",
+     "icon": "🥾",
+     "bio_draft": "A 1 km walk to a disused mining railway tunnel with a glow-worm colony in Wollemi National Park; high-clearance drive.",
+     "hours": null,
+     "visitHoursMin": 1,
+     "visitHoursMax": 2,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 2590,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Lithgow"
+     ],
+     "wiki": "Glowworm Tunnel",
+     "skeptic_objection": "Wikivoyage names the 1 km walk to the old Wolgan Valley railway tunnel; a distinct named half-day, though inside Wollemi/Gardens of Stone. High-clearance drive needed. Keep.",
+     "photo": {
+      "file": "Glow Worm Tunnel - panoramio.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Glow_Worm_Tunnel_-_panoramio.jpg",
+      "width": 4288,
+      "height": 3216,
+      "licence": "CC BY 3.0"
+     },
+     "photo_verdict": "candidate",
+     "skeptic_photo_verdict": "accept",
+     "skeptic_photo_reason": "Sept 2014 colour view of the tunnel mouth in tree ferns. Interior is dark by nature, so brightness p40 may fail; would then be dark-on-purpose. Subject centred. Brightness (p40>=0.22, mean>=0.30) not measured.",
+     "hero_crop": "ok",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "needs_research": [
+      "hours",
+      "cost",
+      "ticketUrl"
+     ],
+     "reason": "If the proposed Lithgow destination is declined: standalone spot, reached on its own.",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "status": "ready for Pipeline C research"
+    },
+    {
+     "name": "Gardens of Stone National Park",
+     "action": "standalone",
+     "destination": null,
+     "id": "gardens-of-stone-national-park",
+     "coordinates": {
+      "latitude": -33.287951,
+      "longitude": 150.183422
+     },
+     "coordinates_source": "osm leisure=nature_reserve relation 'Gardens of Stone National Park' (centroid; park destination)",
+     "category": "nature",
+     "icon": "🪨",
+     "bio_draft": "World Heritage rock pagodas, cliffs and canyons in the sandstone country north of Lithgow.",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 2,
+     "visitHoursMax": 6,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 1567,
+     "counted_sources": [
+      "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/gardens-of-stone-national-park"
+     ],
+     "skeptic_objection": "NPWS-named park; pagoda country north of Lithgow. Lies about 58 km from the Blue Mountains centre, outside its span.",
+     "photo": {
+      "file": "Lost City at Gardens of Stone Conservation Area.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Lost_City_at_Gardens_of_Stone_Conservation_Area.jpg",
+      "width": 4096,
+      "height": 3072,
+      "licence": "CC BY-SA 4.0"
+     },
+     "photo_verdict": "candidate",
+     "skeptic_photo_verdict": "accept",
+     "skeptic_photo_reason": "25 Dec 2025 colour view of the pagoda formations from a ridge; named in the description as the Lost City pagodas in Gardens of Stone. Subject spread across the frame so should crop fine; no category on the file page, trust is from the description. Brightness (p40>=0.22, mean>=0.30) not measured.",
+     "hero_crop": "ok",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "needs_research": [
+      "pin",
+      "cost",
+      "ticketUrl"
+     ],
+     "pin_review": "OSM/Wikipedia park centroid, not an entrance or car park; research must replace it with the main visitor point (needs_research includes 'pin').",
+     "reason": "If the proposed Lithgow destination is declined: standalone spot, reached on its own.",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "status": "ready for Pipeline C research"
+    },
+    {
+     "name": "Capertee Valley",
+     "action": "standalone",
+     "destination": null,
+     "id": "capertee-valley",
+     "coordinates": {
+      "latitude": -33.166505,
+      "longitude": 149.998033
+     },
+     "coordinates_source": "osm tourism=viewpoint 'Pearsons Lookout' (MEDIUM); old pin was the wikipedia centroid -33.048,150.134",
+     "category": "viewpoint",
+     "icon": "🏞️",
+     "bio_draft": "One of the widest enclosed canyons in the world, seen from Pearsons Lookout on a scenic drive near Glen Davis.",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 1,
+     "visitHoursMax": 3,
+     "free": true,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 12883,
+     "counted_sources": [],
+     "other_sources": [
+      "https://en.wikipedia.org/wiki/Capertee_Valley"
+     ],
+     "skeptic_objection": "RESOLVED from review: Lithgow Tourism's Capertee page (a regional tourism board, counted) and Wikipedia name it as the widest enclosed canyon, with Pearsons Lookout and the Pantoneys Crown lookout; a real scenic drive-and-stop. Pin moved from the Wikipedia centroid to the lookout.",
+     "photo": {
+      "file": "Moonrise over Capertee Valley.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Moonrise_over_Capertee_Valley.jpg",
+      "width": 4000,
+      "height": 2250,
+      "licence": "CC BY-SA 4.0"
+     },
+     "photo_verdict": "candidate",
+     "skeptic_photo_verdict": "accept",
+     "skeptic_photo_reason": "2019 colour dusk view of the valley edge cliff (mesa) at sunset and moonrise; subject centred. Dusk so brightness may fall under the floor (candidate for dark-on-purpose after looking). Brightness (p40>=0.22, mean>=0.30) not measured.",
+     "hero_crop": "ok",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "needs_research": [
+      "ticketUrl"
+     ],
+     "reason": "If the proposed Lithgow destination is declined: standalone spot, reached on its own.",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "status": "ready for Pipeline C research"
+    }
+   ]
+  },
+  {
+   "id": "kanangra-boyd-national-park",
+   "name": "Kanangra-Boyd National Park",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "category": "park",
+   "coordinates": {
+    "latitude": -33.984886,
+    "longitude": 150.111245
+   },
+   "coordinates_source": "osm tourism=viewpoint 'Kanangra Walls Lookout' (the park's headline visitor point, MEDIUM)",
+   "defaultZoomSpanKm": 50,
+   "suggested_rank": 5,
+   "members": [
+    "kanangra-boyd-national-park-1 Kanangra Walls",
+    "kanangra-boyd-national-park-2 Jenolan Caves"
+   ],
+   "member_count": 2,
+   "notes": "THIN (two spots): the park is the destination (every national park is one); its headline lookout is Kanangra Walls. Jenolan Caves is 20 km from the centre and visitors reach it via Oberon or Hartley, over an hour from Katoomba, so it is not a Blue Mountains spot even though it lies 34 km from that centre. Six Foot Track starts in Katoomba and is placed as blue-mountains-19 (held for pin). Abercrombie River National Park is 39 km away from a different (Oberon) access and stays standalone.",
+   "thin": true,
+   "views": 3852,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/kanangra-boyd-national-park"
+   ],
+   "header_photo_candidate": {
+    "file": "Kanangra-Boyd lookout, Kanangra-Boyd National Park 09.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Kanangra-Boyd_lookout,_Kanangra-Boyd_National_Park_09.jpg",
+    "width": 6480,
+    "height": 4320,
+    "licence": "CC0"
+   },
+   "header_photo_verdict": "candidate",
+   "header_photo_reason": "2015 colour view from the lookout over Kanangra Walls and Mount Cloudmaker; 3:2, walls right of centre so give hero_crop x about 0.6.",
+   "wiki": "Kanangra-Boyd National Park",
+   "needs": [
+    "description",
+    "three reasons with photos",
+    "tips",
+    "best months",
+    "header (Pipeline C / Lens)"
+   ],
+   "self_place": null,
+   "if_declined_standalone": [
+    {
+     "name": "Kanangra Walls",
+     "action": "standalone",
+     "destination": null,
+     "id": "kanangra-walls",
+     "coordinates": {
+      "latitude": -33.984886,
+      "longitude": 150.111245
+     },
+     "coordinates_source": "osm tourism=viewpoint 'Kanangra Walls Lookout' (MEDIUM, one precise OSM feature)",
+     "category": "viewpoint",
+     "icon": "⛰️",
+     "bio_draft": "The sheer sandstone cliff lookout where the Kanangra-Boyd road ends, with walks from the car park.",
+     "hours": null,
+     "visitHoursMin": 1,
+     "visitHoursMax": 2.5,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 0,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Blue_Mountains",
+      "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/kanangra-boyd-national-park"
+     ],
+     "skeptic_objection": "RESOLVED from reject: two counted sources, Wikivoyage's Blue Mountains page lists it as its own See item and NPWS names it, and it is the park's one headline lookout (the road ends at it); reached by sealed-then-gravel drive, visitable for 30+ min with walks from the car park. Distinct named draw, sits under Kanangra-Boyd. Pantoneys Crown and Cloudmaker stay folded or reviewed.",
+     "photo": {
+      "file": "Kanangra Boyd National Park NSW.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Kanangra_Boyd_National_Park_NSW.jpg",
+      "width": 3264,
+      "height": 2448,
+      "licence": "CC BY-SA 4.0"
+     },
+     "photo_verdict": "candidate",
+     "skeptic_photo_verdict": "accept",
+     "skeptic_photo_reason": "2016 colour view from Kanangra Walls showing the sheer cliff face; cliff right of centre, give hero_crop x about 0.65.",
+     "hero_crop": {
+      "x": 0.65,
+      "y": 0.5
+     },
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "needs_research": [
+      "hours",
+      "cost",
+      "ticketUrl"
+     ],
+     "reason": "If the proposed Kanangra-Boyd National Park destination is declined: standalone spot, reached on its own.",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "status": "ready for Pipeline C research"
+    },
+    {
+     "name": "Jenolan Caves",
+     "action": "standalone",
+     "destination": null,
+     "id": "jenolan-caves",
+     "coordinates": {
+      "latitude": -33.820604,
+      "longitude": 150.02109
+     },
+     "coordinates_source": "osm tourism=hotel 'Jenolan Caves House' W383029081 (precinct visitor point, MEDIUM); old pin was the village point",
+     "category": "nature",
+     "icon": "🦇",
+     "bio_draft": "Guided show-cave tours, walks and historic Caves House in a World Heritage setting; closed until early 2027.",
+     "hours": "Closed for Two Mile road repairs; reopening planned early 2027 (official site, checked 18 Oct 2026). Re-check before release.",
+     "visitHoursMin": 2,
+     "visitHoursMax": 5,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 12622,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Jenolan_Caves"
+     ],
+     "skeptic_objection": "Keep: a permanent place with a temporary closure. Jenolan's official site (checked 18 Oct 2026, updated July 2026) says the caves are closed for major Two Mile road repairs with reopening planned for early 2027; the Six Foot Track is also shut between Jenolan Caves House and Binda Bush Cabins. Put the closure in the hours/notes and flag to re-check before release. Within 34 km of the Blue Mountains centre but over an hour from Katoomba.",
+     "photo": null,
+     "photo_verdict": "none",
+     "skeptic_photo_verdict": "none",
+     "skeptic_photo_reason": "Commons results are wildlife, 1920s-30s photos, and 1024 px cave interiors. None passes (no >=960 colour exterior or Grand Arch). Needs an outside-Commons search.",
+     "hero_crop": null,
+     "photo_status": "no Commons candidate; Lens searches outside Commons",
+     "needs_research": [
+      "cost",
+      "ticketUrl"
+     ],
+     "closure_note": "Caves closed for major Two Mile road repairs, reopening planned for early 2027 (Jenolan official site, checked 18 Oct 2026); Six Foot Track shut between Jenolan Caves House and Binda Bush Cabins. Put in hours/notes and re-check before release.",
+     "reason": "If the proposed Kanangra-Boyd National Park destination is declined: standalone spot, reached on its own.",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "status": "ready for Pipeline C research"
+    }
+   ]
+  },
+  {
+   "id": "cowra",
+   "name": "Cowra",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "category": "city",
+   "coordinates": {
+    "latitude": -33.83388889,
+    "longitude": 148.7
+   },
+   "coordinates_source": "wikipedia:Cowra",
+   "defaultZoomSpanKm": 50,
+   "suggested_rank": 5,
+   "members": [
+    "cowra-1 Cowra Japanese Garden",
+    "cowra-2 Cowra Breakout Site",
+    "cowra-3 Age of Fishes Museum",
+    "cowra-4 Canowindra"
+   ],
+   "member_count": 4,
+   "notes": "Canowindra and its museum are 30 km north. The Japanese and Australian War Cemeteries stay review (would be cowra-5 area). Cowra wine region was rejected and folded into the town.",
+   "thin": false,
+   "views": 28549,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Cowra"
+   ],
+   "header_photo_candidate": {
+    "file": "Cowra to south east (3379160495).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Cowra_to_south_east_(3379160495).jpg",
+    "width": 1874,
+    "height": 1410,
+    "licence": "CC BY-SA 2.0"
+   },
+   "header_photo_verdict": "candidate",
+   "header_photo_reason": "2009 colour view over Cowra rooftops from a rocky hill, town in its landscape. Weak but passes the checks; subject centred.",
+   "wiki": "Cowra",
+   "needs": [
+    "description",
+    "three reasons with photos",
+    "tips",
+    "best months",
+    "header (Pipeline C / Lens)"
+   ],
+   "self_place": {
+    "name": "Cowra",
+    "action": "standalone",
+    "destination": null,
+    "id": "cowra",
+    "coordinates": {
+     "latitude": -33.83388889,
+     "longitude": 148.7
+    },
+    "coordinates_source": "wikipedia:Cowra (town point; the spot is the town)",
+    "reason": "If the proposed Cowra destination is declined, the town itself becomes a standalone town spot.",
+    "category": "historic",
+    "icon": "🏘️",
+    "bio_draft": "A Lachlan Valley town known for its Japanese Garden and the 1944 prisoner-of-war breakout site.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 1,
+    "visitHoursMax": 3,
+    "free": true,
+    "ticketUrl": null,
+    "views": 28549,
+    "counted_sources": [
+     "https://en.wikivoyage.org/wiki/Cowra"
+    ],
+    "wiki": "Cowra",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney",
+    "photo": {
+     "file": "Cowra to south east (3379160495).jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Cowra_to_south_east_(3379160495).jpg",
+     "width": 1874,
+     "height": 1410,
+     "licence": "CC BY-SA 2.0"
+    },
+    "photo_verdict": "candidate",
+    "needs_research": [
+     "ticketUrl"
+    ]
+   },
+   "if_declined_standalone": [
+    {
+     "name": "Cowra Japanese Garden",
+     "action": "standalone",
+     "destination": null,
+     "id": "cowra-japanese-garden",
+     "coordinates": {
+      "latitude": -33.826739,
+      "longitude": 148.697188
+     },
+     "coordinates_source": "osm leisure=garden 'Cowra Japanese Garden and Cultural Centre'; wikivoyage -33.826656,148.698248 (about 100 m) (HIGH)",
+     "category": "nature",
+     "icon": "🎋",
+     "bio_draft": "A strolling Japanese garden and cultural centre designed by Ken Nakajima, a symbol of reconciliation.",
+     "hours": null,
+     "visitHoursMin": 1,
+     "visitHoursMax": 2,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 1968,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Cowra"
+     ],
+     "wiki": "Cowra Japanese Garden and Cultural Centre",
+     "skeptic_objection": "Open daily, famous strolling garden; Wikivoyage.",
+     "photo": {
+      "file": "Cowra Japanese Garden (3379217011).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cowra_Japanese_Garden_(3379217011).jpg",
+      "width": 2002,
+      "height": 1514,
+      "licence": "CC BY-SA 2.0"
+     },
+     "photo_verdict": "candidate",
+     "skeptic_photo_verdict": "accept",
+     "skeptic_photo_reason": "2009 colour view across the garden pond and pavilion; the garden itself, centred.",
+     "hero_crop": "ok",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "needs_research": [
+      "hours",
+      "cost",
+      "ticketUrl"
+     ],
+     "reason": "If the proposed Cowra destination is declined: standalone spot, reached on its own.",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "status": "ready for Pipeline C research"
+    },
+    {
+     "name": "Cowra Breakout Site",
+     "action": "standalone",
+     "destination": null,
+     "id": "cowra-breakout-site",
+     "coordinates": {
+      "latitude": -33.811283,
+      "longitude": 148.704445
+     },
+     "coordinates_source": "wikivoyage listing's own geo, matches Commons file geotag -33.81139,148.70389 (HIGH)",
+     "category": "historic",
+     "icon": "🏛️",
+     "bio_draft": "The site of the 1944 prisoner-of-war camp breakout, free to visit.",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 0.5,
+     "visitHoursMax": 1,
+     "free": true,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 37883,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Cowra"
+     ],
+     "wiki": "Cowra breakout",
+     "skeptic_objection": "Free WWII POW camp site; Wikivoyage plus the story is the town's major draw. Sign/field-only site so a short stop but clear.",
+     "photo": {
+      "file": "Cowra Breakout 3.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cowra_Breakout_3.jpg",
+      "width": 2988,
+      "height": 5312,
+      "licence": "CC BY-SA 4.0"
+     },
+     "photo_verdict": "candidate",
+     "skeptic_photo_verdict": "accept",
+     "skeptic_photo_reason": "2017 colour portrait of the reconstructed guard tower on the camp site (geotagged -33.81139,148.70389, matching the listing). Portrait 9:16; tower upper centre, give hero_crop y 0.3.",
+     "hero_crop": {
+      "x": 0.55,
+      "y": 0.3
+     },
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "needs_research": [
+      "ticketUrl"
+     ],
+     "reason": "If the proposed Cowra destination is declined: standalone spot, reached on its own.",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "status": "ready for Pipeline C research"
+    },
+    {
+     "name": "Age of Fishes Museum",
+     "action": "standalone",
+     "destination": null,
+     "id": "age-of-fishes-museum",
+     "coordinates": {
+      "latitude": -33.562312,
+      "longitude": 148.660103
+     },
+     "coordinates_source": "osm tourism=museum 'The Age Of Fishes Museum' N4353240934 (MEDIUM); wikivoyage -33.5623,148.6601 agrees (HIGH)",
+     "category": "museum",
+     "icon": "🐟",
+     "bio_draft": "A fossil museum in Canowindra with Devonian fish specimens, one of two fish-fossil museums in the world.",
+     "hours": "10:00 AM – 4:00 PM",
+     "visitHoursMin": 1,
+     "visitHoursMax": 2,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 833,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Canowindra"
+     ],
+     "skeptic_objection": "Open daily 10-4 (Wikivoyage); a fossil museum with a world-significant Devonian fish site. Wikivoyage plus its own site.",
+     "photo": null,
+     "photo_verdict": "none",
+     "skeptic_photo_verdict": "none",
+     "skeptic_photo_reason": "Commons returned unrelated museum fish items. None.",
+     "hero_crop": null,
+     "photo_status": "no Commons candidate; Lens searches outside Commons",
+     "needs_research": [
+      "cost",
+      "ticketUrl"
+     ],
+     "reason": "If the proposed Cowra destination is declined: standalone spot, reached on its own.",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "status": "ready for Pipeline C research"
+    },
+    {
+     "name": "Canowindra",
+     "action": "standalone",
+     "destination": null,
+     "id": "canowindra",
+     "coordinates": {
+      "latitude": -33.56666667,
+      "longitude": 148.66666667
+     },
+     "coordinates_source": "wikipedia:Canowindra",
+     "category": "historic",
+     "icon": "🏘️",
+     "bio_draft": "A Lachlan River town with a heritage main street, the Age of Fishes Museum and hot-air balloon flights.",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 1,
+     "visitHoursMax": 2,
+     "free": true,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 14795,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Canowindra"
+     ],
+     "skeptic_objection": "Town with Age of Fishes Museum, balloon flights and heritage street; low rank.",
+     "photo": {
+      "file": "CanowindraGaskillSt.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:CanowindraGaskillSt.JPG",
+      "width": 3872,
+      "height": 2592,
+      "licence": "CC BY 3.0 (unverified licence)"
+     },
+     "photo_verdict": "candidate",
+     "skeptic_photo_verdict": "accept",
+     "skeptic_photo_reason": "2008 colour view of Gaskill Street. Ordinary streetscape, weak; licence not opened. Prefer a balloon photo if one is wanted (Balloon Canowindra.jpg 4000x6000, 2022, portrait, shows a balloon not the town).",
+     "hero_crop": "ok",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "needs_research": [
+      "ticketUrl"
+     ],
+     "reason": "If the proposed Cowra destination is declined: standalone spot, reached on its own.",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "status": "ready for Pipeline C research"
+    }
+   ]
+  },
+  {
+   "id": "parkes",
+   "name": "Parkes",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "category": "city",
+   "coordinates": {
+    "latitude": -33.13333333,
+    "longitude": 148.16666667
+   },
+   "coordinates_source": "wikipedia:Parkes, New South Wales",
+   "defaultZoomSpanKm": 50,
+   "suggested_rank": 5,
+   "members": [
+    "parkes-1 Parkes Observatory",
+    "parkes-2 Plane on a Stick"
+   ],
+   "member_count": 2,
+   "notes": "THIN: one pinned spot (the Observatory, 17 km) plus Plane on a Stick at Forbes (32 km, held). The skeptic offered 'low-rank destination or town spot'; proposed as a destination because Parkes is a regional town with a guide chapter. If declined, the Observatory stands alone and Parkes is a standalone town spot. Forbes itself was rejected.",
+   "thin": true,
+   "views": 29436,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Parkes"
+   ],
+   "header_photo_candidate": null,
+   "header_photo_verdict": "none",
+   "header_photo_reason": "Only town-clock shop corner and entry signs. None passes; the dish photo belongs to Parkes Observatory.",
+   "wiki": "Parkes, New South Wales",
+   "needs": [
+    "description",
+    "three reasons with photos",
+    "tips",
+    "best months",
+    "header (Pipeline C / Lens)"
+   ],
+   "self_place": {
+    "name": "Parkes",
+    "action": "standalone",
+    "destination": null,
+    "id": "parkes",
+    "coordinates": {
+     "latitude": -33.13333333,
+     "longitude": 148.16666667
+    },
+    "coordinates_source": "wikipedia:Parkes, New South Wales (town point; the spot is the town)",
+    "reason": "If the proposed Parkes destination is declined, the town itself becomes a standalone town spot.",
+    "category": "historic",
+    "icon": "🏘️",
+    "bio_draft": "A town in the Central West that hosts the Parkes Observatory radio telescope, known as the Dish.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 1,
+    "visitHoursMax": 3,
+    "free": true,
+    "ticketUrl": null,
+    "views": 29436,
+    "counted_sources": [
+     "https://en.wikivoyage.org/wiki/Parkes"
+    ],
+    "wiki": "Parkes, New South Wales",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney",
+    "photo": null,
+    "photo_verdict": "none",
+    "needs_research": [
+     "ticketUrl"
+    ]
+   },
+   "if_declined_standalone": [
+    {
+     "name": "Parkes Observatory",
+     "action": "standalone",
+     "destination": null,
+     "id": "parkes-observatory",
+     "coordinates": {
+      "latitude": -32.998601,
+      "longitude": 148.262423
+     },
+     "coordinates_source": "osm tourism=attraction 'Parkes Observatory' N81311142 (visitor centre point, MEDIUM); the Commons file geotag -32.99889,148.26306 agrees (HIGH)",
+     "category": "landmark",
+     "icon": "🔭",
+     "bio_draft": "The Dish radio telescope, with a visitor centre, 3D theatre and cafe; free entry to the visitor centre.",
+     "hours": "8:30 AM – 4:15 PM",
+     "visitHoursMin": 1.5,
+     "visitHoursMax": 3,
+     "free": true,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 33171,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Parkes"
+     ],
+     "skeptic_objection": "The Dish. Current CSIRO page (the old URL 404s; use csiro.au/en/about/facilities-collections/ATNF/Parkes-radio-telescope-Murriyang/Visitors-Centre): Parkes Observatory Visitors Centre open 7 days 8:30am-4:15pm plus extended NSW school-holiday hours; entry free; 3D theatre ticketed; cafe 8-3; 585 Telescope Road; turn off mobiles near the dish.",
+     "photo": {
+      "file": "Parkes Observatory 3.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Parkes_Observatory_3.jpg",
+      "width": 5312,
+      "height": 2988,
+      "licence": "CC BY-SA 4.0"
+     },
+     "photo_verdict": "candidate",
+     "skeptic_photo_verdict": "accept",
+     "skeptic_photo_reason": "June 2016 colour view of the dish against blue sky, 16:9 so the middle 53% slice holds the dish (dish centre x about 0.45); geotagged at the observatory.",
+     "hero_crop": "ok",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "needs_research": [
+      "ticketUrl"
+     ],
+     "reason": "If the proposed Parkes destination is declined: standalone spot, reached on its own.",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "status": "ready for Pipeline C research"
+    },
+    {
+     "name": "Plane on a Stick",
+     "action": "standalone",
+     "destination": null,
+     "id": "plane-on-a-stick",
+     "coordinates": {
+      "latitude": -33.389048,
+      "longitude": 148.008258
+     },
+     "coordinates_source": "osm leisure=park 'Apex Park' W492986103 (MEDIUM: park the plane stands in per Wikivoyage; park centroid, plane likely within 100 m of the bridge side)",
+     "category": "landmark",
+     "icon": "✈️",
+     "bio_draft": "A quirky roadside icon: a plane mounted on a pole in Apex Park by the main bridge at Forbes.",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 0,
+     "visitHoursMax": 0.25,
+     "free": true,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 0,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Forbes"
+     ],
+     "skeptic_objection": "Wikivoyage names it by name (Forbes plane-on-a-stick in Apex Park by the main bridge); a quirky roadside icon, a short stop. Marginal but fits the quirky-icon rule; low rank. No coordinates exist in sources: pinned at Apex Park, where the plane stands (confirm the plane's exact spot before shipping).",
+     "photo": null,
+     "photo_verdict": "none",
+     "skeptic_photo_verdict": "none",
+     "skeptic_photo_reason": "Commons search returned nothing for the sculpture. Needs an outside-Commons photo.",
+     "hero_crop": null,
+     "photo_status": "no Commons candidate; Lens searches outside Commons",
+     "needs_research": [
+      "ticketUrl"
+     ],
+     "reason": "If the proposed Parkes destination is declined: standalone spot, reached on its own.",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "status": "hold-for-pin",
+     "hold_for_pin": [
+      "Pinned only at the Apex Park centroid, not the plane; confirm the plane's exact spot (Wikivoyage gives no coordinates)."
+     ]
+    }
+   ]
+  }
+ ],
+ "review": [
+  {
+   "name": "Pantoneys Crown",
+   "verdict": "review",
+   "views": 0,
+   "counted_sources": 1,
+   "case": "Stays review. For: NPWS Gardens of Stone page names it, Wikipedia calls it the valley's most prominent feature, there is a lookout and a summit walk. Against: one counted source, access is by dirt road and the summit walk is long, and it sits inside the kept Gardens of Stone and Capertee entries. Reachable from the Pantoneys Crown lookout.",
+   "placement": "not placed. If approved: lithgow spot (about 15 km from the Capertee pin; OSM peak -33.185447,150.092289), else standalone."
+  },
+  {
+   "name": "Megalong Valley",
+   "verdict": "review",
+   "views": 3361,
+   "counted_sources": 1,
+   "case": "Stays review: one Wikivoyage listing, mostly operators and horse riding, no single sight, and no pin yet. Inside the Blue Mountains span (11 km). Reject if no second source.",
+   "placement": "not placed. If approved: a Blue Mountains spot (11 km from its centre; no pin yet), id blue-mountains-20."
+  },
+  {
+   "name": "Everglades Gardens",
+   "verdict": "review",
+   "views": 2413,
+   "counted_sources": 0,
+   "case": "Stays review: historic Leura garden open to the public (Wikipedia, OSM) but no counted visitor source was read here; check the Leura Wikivoyage page and the garden's own hours before a decision.",
+   "placement": "not placed. If approved: a Blue Mountains spot (Leura), id blue-mountains-21; no pin read."
+  },
+  {
+   "name": "Japanese and Australian War Cemeteries",
+   "verdict": "review",
+   "views": 0,
+   "counted_sources": 1,
+   "case": "Stays review. For: the Japanese cemetery is a significant visited site, free, in the same story as the breakout. Against: one source, a cemetery, close to the Breakout entry. Place with Cowra and decide with the owner.",
+   "placement": "not placed. If approved: cowra-5 (a spot of the proposed Cowra), else standalone."
+  },
+  {
+   "name": "Ophir Reserve",
+   "verdict": "review",
+   "views": 3185,
+   "counted_sources": 1,
+   "case": "Stays review: site of Australia's first payable gold find (1851), gold panning, picnic areas; one Wikivoyage source and a short visit. Placed with Orange if kept.",
+   "placement": "not placed. If approved: a spot of the proposed Orange (about 25 km), else standalone."
+  }
+ ],
+ "marginal_for_owner": [
+  "Plane on a Stick",
+  "Utes in the Paddock",
+  "Abercrombie River National Park",
+  "Carcoar"
+ ],
+ "np_exceptions": [
+  {
+   "park": "Gardens of Stone National Park",
+   "folded_into": "lithgow"
+  },
+  {
+   "park": "Wollemi National Park",
+   "folded_into": null,
+   "note": "held for pin; standalone or a future park destination"
+  },
+  {
+   "park": "Kanangra-Boyd National Park",
+   "folded_into": null,
+   "note": "is the proposed destination"
+  },
+  {
+   "park": "Coolah Tops National Park",
+   "folded_into": null,
+   "note": "standalone; no kept sub-spots"
+  },
+  {
+   "park": "Weddin Mountains National Park",
+   "folded_into": null,
+   "note": "standalone; no kept sub-spots"
+  },
+  {
+   "park": "Abercrombie River National Park",
+   "folded_into": null,
+   "note": "standalone; no kept sub-spots"
+  },
+  {
+   "park": "Goobang National Park",
+   "folded_into": null,
+   "note": "rejected: no named walk, lookout or feature in any source (What qualifies 1 and 2); the owner should confirm this exclusion on that ground, not on placement"
+  }
+ ],
+ "skipped_existing": [
+  "Echo Point",
+  "Scenic World",
+  "Wentworth Falls",
+  "Govett's Leap",
+  "Katoomba",
+  "Leura Cascades",
+  "Katoomba Falls",
+  "Blackheath",
+  "Blue Mountains Botanic Garden",
+  "Norman Lindsay Gallery and Museum",
+  "Grand Canyon Track",
+  "Evans Lookout",
+  "Blue Gum Forest",
+  "Giant Stairway",
+  "Ruined Castle",
+  "Leura",
+  "Mount Victoria",
+  "Mount Solitary",
+  "Breadknife and Grand High Tops Walk",
+  "Siding Spring Observatory",
+  "Coonabarabran",
+  "Hill End"
+ ],
+ "existing_fixes": []
+}

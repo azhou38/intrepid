@@ -1,0 +1,254 @@
+{
+ "spots": {
+  "mount-gower": {
+   "name": "Mount Gower",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Lord Howe's 875 m summit, reached only with a licensed guide on an eight-hour trek with rope-assisted climbs.",
+   "hours": "Guided tours only; book ahead (about 8 hours return)",
+   "visitHoursMin": 6,
+   "visitHoursMax": 8,
+   "costMin": 200,
+   "costMax": 200,
+   "currency": "AUD",
+   "coordinates": { "latitude": -31.58238, "longitude": 159.07883 },
+   "timezone": "Australia/Lord_Howe",
+   "notes": [
+    "Guided-only per LHI Board walking-tracks page; sold by several operators (Lord Howe Environmental Tours, Sea to Summit Expeditions) so no ticketUrl.",
+    "A$200 is the undated Lord Howe Environmental Tours price from the tourism association listing; other operators' prices and guiding months not found.",
+    "Summit pin (OSM peak). Guide route midpoint -31.5725,159.07417 if a route pin is preferred.",
+    "Photo candidate: Mount Gower, Lord Howe Island, NSW, Australia.jpg, hero_crop x 0.5 y 0.4 (Lens to confirm)."
+   ]
+  },
+  "balls-pyramid": {
+   "name": "Ball's Pyramid",
+   "icon": "🌊",
+   "category": "nature",
+   "bio": "The world's tallest sea stack, 551 m high and 23 km offshore, reached only by boat tour or dive trip.",
+   "hours": "Boat tours and dive trips by booking, weather permitting",
+   "visitHoursMin": 3,
+   "visitHoursMax": 4,
+   "costMin": 250,
+   "costMax": 250,
+   "currency": "AUD",
+   "coordinates": { "latitude": -31.75416667, "longitude": 159.25166667 },
+   "timezone": "Australia/Lord_Howe",
+   "notes": [
+    "No ticketUrl: sold by many operators (Reef N Beyond, Dive Lord Howe, Belle Chase, Sea Lord Howe).",
+    "A$250 is Reef N Beyond's 'from' price for the 3.5 hour expedition; dive and fishing-charter prices differ (Belle Chase fishing A$450). Dive Lord Howe runs September to May.",
+    "Distance: 23 km per tourism board and Wikipedia; Belle Chase says 15 km, Wikipedia's diving paragraph 26 km. Recreational climbing is prohibited (stick insect habitat).",
+    "Coordinates are the Wikipedia sea-stack point, correct for an offshore feature.",
+    "Photo candidate: Balls Pyramid, Lord Howe Marine Park 1008.jpg (licence to confirm)."
+   ]
+  },
+  "neds-beach": {
+   "name": "Ned's Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A calm north-east beach where you wade in to hand-feed fish and snorkel over a fringing coral reef.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": { "latitude": -31.51764, "longitude": 159.06414 },
+   "timezone": "Australia/Lord_Howe",
+   "notes": [
+    "No ticketUrl: public beach, no single steward.",
+    "Fish food ($1 coin) and snorkel hire (honesty box) are optional extras, not an entry cost.",
+    "Photo: weak accept on Neds Beach.jpg; compare 'Lord Howe Island Ned's Beach.jpg'."
+   ]
+  },
+  "malabar-hill": {
+   "name": "Malabar Hill",
+   "wiki": "Malabar Hill, Lord Howe Island",
+   "icon": "⛰️",
+   "category": "viewpoint",
+   "bio": "A two-hour return climb from Ned's Beach to cliff views and courting red-tailed tropicbirds, September to May.",
+   "hours": "Open 24 hours (daytime walk)",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": { "latitude": -31.51267, "longitude": 159.06113 },
+   "timezone": "Australia/Lord_Howe",
+   "notes": [
+    "No ticketUrl: walking track, no single steward.",
+    "Summit pin (OSM peak); Ned's Beach to summit route midpoint would be -31.51856,159.06190.",
+    "Wikivoyage calls it the island's most popular walk. No closure found, but current track status was not confirmed.",
+    "wiki title taken from research wiki_title; confirm the article exists before shipping."
+   ]
+  },
+  "old-settlement-beach": {
+   "name": "Old Settlement Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Weather-sculpted sandstone rocks dot the south end of this beach, where turtles are often seen close to shore.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": { "latitude": -31.52015, "longitude": 159.05775 },
+   "timezone": "Australia/Lord_Howe",
+   "notes": [
+    "No ticketUrl: public beach, no single steward.",
+    "Bio fixed: old 'southern beach' was wrong (the source's 'southern end' is the beach's own south end); turtles best at mid to high tide.",
+    "No passing Commons photo; needs a search outside Commons."
+   ]
+  },
+  "blinky-beach": {
+   "name": "Blinky Beach",
+   "icon": "🏄",
+   "category": "beach",
+   "bio": "An unspoilt west-coast beach for surfing and swimming, reached on foot from Transit Hill or Lagoon Road.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": { "latitude": -31.53823, "longitude": 159.08192 },
+   "timezone": "Australia/Lord_Howe",
+   "notes": [
+    "No ticketUrl: public beach, no single steward.",
+    "Bio fixed: dropped unsourced 'picnic area'. Surf hazard and lifeguard status not found.",
+    "Transit Hill track is steep and slippery when wet.",
+    "Photo candidate: Blinky Beach - panoramio.jpg (Lens to confirm it is Blinky)."
+   ]
+  },
+  "north-bay-lord-howe": {
+   "name": "North Bay",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A secluded north beach reached only on foot or by boat, with snorkelling over the wreck of the Favourite.",
+   "hours": "Open 24 hours (Mt Eliza track closed 1 September to 1 March)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": { "latitude": -31.51865, "longitude": 159.04359 },
+   "timezone": "Australia/Lord_Howe",
+   "notes": [
+    "No ticketUrl: public beach; boat access sold by several operators.",
+    "Coordinate is an approximate centroid (OSM names it 'North Beach'); track end -31.5165,159.0448.",
+    "Mt Eliza closure confirmed for 2025-26; 2026-27 notice not seen. Beach itself is open.",
+    "Picnic area has toilets and barbecues. Photo is only a candidate/review (check 1 unproven)."
+   ]
+  },
+  "intermediate-hill-lord-howe": {
+   "name": "Intermediate Hill",
+   "icon": "⛰️",
+   "category": "viewpoint",
+   "bio": "A steep 1 km climb to a 250 m summit platform with views across the island to Ball's Pyramid.",
+   "hours": "Open 24 hours (daytime walk)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": { "latitude": -31.54973, "longitude": 159.08735 },
+   "timezone": "Australia/Lord_Howe",
+   "notes": [
+    "No ticketUrl: walking track, no single steward.",
+    "Board lists 1 km one way, moderate; Wikipedia lists 45 minutes return. No seasonal closure found."
+   ]
+  },
+  "transit-hill-lord-howe": {
+   "name": "Transit Hill",
+   "icon": "⛰️",
+   "category": "viewpoint",
+   "bio": "An easy 1.2 km walk from the Administration Office to a summit lookout with a 360-degree view.",
+   "hours": "Open 24 hours (daytime walk)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "coordinates": { "latitude": -31.5345, "longitude": 159.07794 },
+   "timezone": "Australia/Lord_Howe",
+   "notes": [
+    "No ticketUrl: walking track, no single steward.",
+    "Return takes about an hour per the tourism board; Wikipedia says 2 km, 2 hours return. Can return via Blinky Beach.",
+    "No Commons photo; needs a search outside Commons."
+   ]
+  },
+  "muttonbird-point": {
+   "name": "Muttonbird Point",
+   "wiki": "Mutton Bird Point",
+   "icon": "🐦",
+   "category": "viewpoint",
+   "bio": "A lookout platform on a short side track off the coastal walk, with views across to Muttonbird Point.",
+   "hours": "Open 24 hours (daytime walk)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "coordinates": { "latitude": -31.54652, "longitude": 159.09169 },
+   "timezone": "Australia/Lord_Howe",
+   "notes": [
+    "No ticketUrl: lookout on a public track.",
+    "Bio fixed: unsourced seabird colony and blowhole removed.",
+    "Sidetrack is about 1.4 km along the coastal track to Boat Harbour from Lagoon Road. Arguably part of that track (COVERAGE 'part of a larger spot'); owner may review.",
+    "wiki title from research wiki_title; confirm the article exists before shipping."
+   ]
+  },
+  "goat-house-cave": {
+   "name": "Goat House Cave",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A difficult 2.1 km climb up Smoking Tree Ridge to a cave, steep and narrow with rope-assisted sections.",
+   "hours": "Open 24 hours (daytime walk)",
+   "visitHoursMin": 3,
+   "visitHoursMax": 5,
+   "free": true,
+   "coordinates": { "latitude": -31.55302, "longitude": 159.08575 },
+   "timezone": "Australia/Lord_Howe",
+   "notes": [
+    "No ticketUrl: walking track, no single steward.",
+    "Bio fixed: unsourced 'sweeping view' removed. Wikipedia lists 5 hours return, 6 km.",
+    "Pin is the route midpoint; cave entrance node is -31.56271,159.08812. Boot scrub station applies at the start of southern-mountain tracks."
+   ]
+  },
+  "lord-howe-island-museum": {
+   "name": "Lord Howe Island Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Island museum with history from 1788, World Heritage displays and a giant horned turtle skeleton.",
+   "hours": "9:00 AM – 1:30 PM daily (reduced hours June–August)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "ticketUrl": "https://lordhoweisland.info/about/museum-and-visitor-centre/",
+   "coordinates": { "latitude": -31.52791, "longitude": 159.06655 },
+   "timezone": "Australia/Lord_Howe",
+   "notes": [
+    "Entry by donation (Wikivoyage only) so marked free; official page states no charge. Confirm on the day.",
+    "Hours from the island directory; Wikivoyage lists 9AM-3PM. Exact June-August hours not found.",
+    "Visitor Centre is in the foyer (separate hours). No Wikipedia article, so no wiki field."
+   ]
+  },
+  "lagoon-beach-lord-howe": {
+   "name": "Lagoon Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A calm lagoon shore on the island's east side, lined with banyans and pandanus.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": { "latitude": -31.52919, "longitude": 159.06546 },
+   "timezone": "Australia/Lord_Howe",
+   "notes": [
+    "No ticketUrl: public beach, no single steward.",
+    "No wiki field: 'Lagoon Beach' is a generic title and no Lord Howe article was confirmed.",
+    "Low confidence: only incidental mentions. Banyans and pandanus come from Wikivoyage's description of the lagoon front, not this beach specifically; recheck the pin against the lagoon's east side.",
+    "No Commons photo; needs a search outside Commons."
+   ]
+  }
+ },
+ "existing_fixes": [],
+ "held": [
+  {
+   "id": "erscotts-hole",
+   "name": "Erscott's Hole",
+   "reason": "Owner call: LOW pin confidence (single iNaturalist geotag at -31.54639,159.06083; sources place it off the airport or at a groyne). Not researched for the pin. Known facts: staghorn coral garden, fish conditioned to glass-bottom boats; Lord Howe Environmental Tours 2-hour glass-bottom boat tour A$85 adult with optional snorkel; Wikivoyage spells it Escott's Reef. Official page: https://lordhoweisland.info/natural-attractions/natural-treasures/erscotts-hole/. No Commons photo passes."
+  }
+ ],
+ "notes": [
+  "All entries standalone (ids from research.json), timezone Australia/Lord_Howe, country Australia (AU), Oceania; add these four fields when applying.",
+  "Lord Howe Island Board visitor fees (Environment levy) are a trip cost, not a per-spot cost; the amount was not read.",
+  "ticketUrl set only for the museum; the _candidate informational pages were deliberately not used.",
+  "Bios were length-estimated by hand (all about 80-110 characters); bio-fit.py was not run because no shell was available in this session. Run it before applying.",
+  "Photos needing a search outside Commons: Old Settlement Beach, Transit Hill, Lagoon Beach (and held Erscott's Hole)."
+ ]
+}

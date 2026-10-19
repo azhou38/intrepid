@@ -1,0 +1,3364 @@
+{
+ "region": "nsw-mid-north-coast",
+ "country": "Australia",
+ "countryCode": "AU",
+ "continent": "Oceania",
+ "timezone": "Australia/Sydney",
+ "standalone_fields": "standalone spots take country Australia, countryCode AU, continent Oceania, timezone Australia/Sydney",
+ "summary": {
+  "spots_in_proposed_destinations": 53,
+  "standalone": 3,
+  "proposed_new_destinations": 9,
+  "held": 1
+ },
+ "existing_destinations_checked": [
+  "sydney",
+  "blue-mountains",
+  "warrumbungle"
+ ],
+ "existing_spots_kept_unchanged": [
+  {
+   "id": "yuraygir-national-park",
+   "name": "Yuraygir National Park",
+   "note": "Existing standalone spot (Northern Rivers pass); the skeptic kept it unchanged. Mostly Northern Rivers, only its southern end touches this region."
+  }
+ ],
+ "existing_fixes": [],
+ "unresolved": [
+  "Coffs Coast Wildlife Sanctuary: skeptic.json says \"kept\" under Dolphin Marine Magic but no candidate record exists; placed at coffs-harbour-9 with coordinates null.",
+  "Four verdict-keeps (Glenifer Road Swimming Hole, Crystal Shower Falls, Dark Point Walking Track, Treachery Headland Walking Track) were never seen by the skeptic: placed on candidate data, pins need resolve-pin.py, no photo candidate."
+ ],
+ "spots": [
+  {
+   "name": "Big Banana",
+   "action": "spot",
+   "destination": "coffs-harbour",
+   "id": "coffs-harbour-1",
+   "coordinates": {
+    "latitude": -30.27479,
+    "longitude": 153.1339
+   },
+   "coordinates_source": "osm nominatim tourism=artwork The Big Banana",
+   "views": 14682,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Coffs_Harbour"
+   ],
+   "distance_km_from_destination": 3.1,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination coffs-harbour (not yet in the app): 3.1 km from its centre, inside 75% of its 60 km span. If the proposal is declined this becomes a standalone spot with id 'big-banana'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "big-banana"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Big Banana 50 Years.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Big_Banana_50_Years.jpg",
+    "width": 3216,
+    "height": 2136,
+    "licence": "CC BY-SA 4.0"
+   },
+   "hero_crop": {
+    "x": 0.45
+   },
+   "brightness": {
+    "p40": 0.345,
+    "mean": 0.412
+   },
+   "photo_date": "2015-10-13 09:07:35",
+   "photo_note": "Banana with a temporary 50 Years banner (2015). Subject is wide: hero crop shows the middle of the banana and its logo, recognisable.",
+   "category": "entertainment",
+   "icon": "🍌",
+   "bio": "A giant banana roadside icon and fun park on the Pacific Highway, one of Australia's original Big Things.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "wiki": "Big Banana"
+  },
+  {
+   "name": "Muttonbird Island",
+   "action": "spot",
+   "destination": "coffs-harbour",
+   "id": "coffs-harbour-2",
+   "coordinates": {
+    "latitude": -30.30502,
+    "longitude": 153.15169
+   },
+   "coordinates_source": "osm nominatim nature_reserve (island centroid; walk starts at the breakwall ~-30.3038,153.1445)",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Coffs_Harbour"
+   ],
+   "distance_km_from_destination": 3.8,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination coffs-harbour (not yet in the app): 3.8 km from its centre, inside 75% of its 60 km span. If the proposal is declined this becomes a standalone spot with id 'muttonbird-island'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "muttonbird-island"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Muttonbird Island.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Muttonbird_Island.jpg",
+    "width": 2304,
+    "height": 1728,
+    "licence": "CC BY 2.0"
+   },
+   "hero_crop": "ok",
+   "brightness": {
+    "p40": 0.396,
+    "mean": 0.469
+   },
+   "photo_date": "7 October 2006, 13:37:07 (acco",
+   "photo_note": "Island from the coast with beach; undated year in metadata.",
+   "category": "nature",
+   "icon": "🐦",
+   "bio": "A nature-reserve island joined to the Coffs marina by a breakwater, with a short walk and nesting shearwaters.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal"
+  },
+  {
+   "name": "Park Beach",
+   "action": "spot",
+   "destination": "coffs-harbour",
+   "id": "coffs-harbour-3",
+   "coordinates": {
+    "latitude": -30.28868,
+    "longitude": 153.13957
+   },
+   "coordinates_source": "osm nominatim natural=beach",
+   "views": 664,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Coffs_Harbour"
+   ],
+   "distance_km_from_destination": 2.6,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination coffs-harbour (not yet in the app): 2.6 km from its centre, inside 75% of its 60 km span. If the proposal is declined this becomes a standalone spot with id 'park-beach'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "park-beach"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "none",
+   "photo": null,
+   "photo_note": "Commons has no Coffs Park Beach photo (results were US beaches).",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "The main Coffs surf beach, north of the Coffs Creek mouth.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal"
+  },
+  {
+   "name": "Bongil Bongil National Park",
+   "action": "spot",
+   "destination": "coffs-harbour",
+   "id": "coffs-harbour-4",
+   "coordinates": {
+    "latitude": -30.40172,
+    "longitude": 153.0698
+   },
+   "coordinates_source": "osm nominatim Bongil Beach Trail (visitor access)",
+   "views": 623,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/bongil-bongil-national-park"
+   ],
+   "distance_km_from_destination": 12.5,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination coffs-harbour (not yet in the app): 12.5 km from its centre, inside 75% of its 60 km span. If the proposal is declined this becomes a standalone spot with id 'bongil-bongil-national-park'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "bongil-bongil-national-park"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Bongil Bongil National Park.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Bongil_Bongil_National_Park.jpg",
+    "width": 3842,
+    "height": 2305,
+    "licence": "CC BY 2.0"
+   },
+   "hero_crop": "ok",
+   "brightness": {
+    "p40": 0.788,
+    "mean": 0.767
+   },
+   "photo_date": "Taken on<span typeof=\"mw:Entit",
+   "photo_note": "A beach with rock platforms; the file is pale and washed-out and undated, so it may be a scan. Weak pass.",
+   "category": "nature",
+   "icon": "🐨",
+   "bio": "A coastal park south of Coffs Harbour with wild beaches, creeks and a large koala population.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "wiki": "Bongil Bongil National Park",
+   "note": "A national park; folded into the Coffs Harbour proposal (12 km) rather than a thin destination of its own."
+  },
+  {
+   "name": "Woolgoolga",
+   "action": "spot",
+   "destination": "coffs-harbour",
+   "id": "coffs-harbour-5",
+   "coordinates": {
+    "latitude": -30.11083,
+    "longitude": 153.20001
+   },
+   "coordinates_source": "osm nominatim boundary centroid",
+   "views": 15334,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Woolgoolga",
+    "https://en.wikivoyage.org/wiki/Mid-North_Coast"
+   ],
+   "distance_km_from_destination": 22.2,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination coffs-harbour (not yet in the app): 22.2 km from its centre, inside 75% of its 60 km span. If the proposal is declined this becomes a standalone spot with id 'woolgoolga'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "woolgoolga"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "none",
+   "photo": null,
+   "photo_note": "Only a street photo (Woolgoolgamainstreet) and plant series; the beach photo is used for Woolgoolga Beach.",
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "A quiet coastal town north of Coffs Harbour with a large Punjabi community.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "wiki": "Woolgoolga, New South Wales"
+  },
+  {
+   "name": "Guru Nanak Sikh Temple",
+   "action": "spot",
+   "destination": "coffs-harbour",
+   "id": "coffs-harbour-6",
+   "coordinates": {
+    "latitude": -30.11712,
+    "longitude": 153.1928
+   },
+   "coordinates_source": "osm nominatim amenity=place_of_worship, River Street (matches Wikivoyage)",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Woolgoolga"
+   ],
+   "distance_km_from_destination": 21.3,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination coffs-harbour (not yet in the app): 21.3 km from its centre, inside 75% of its 60 km span. If the proposal is declined this becomes a standalone spot with id 'guru-nanak-sikh-temple'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "guru-nanak-sikh-temple"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "none",
+   "photo": null,
+   "photo_note": "The one Commons file is a photo of a sign about the temple; fails check 2 and 4.",
+   "category": "religious",
+   "icon": "🛕",
+   "bio": "One of regional Australia's largest Sikh temples, open to visitors outside prayer times; dress modestly.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "note": "Verdicts said reject, skeptic flipped to keep (visitors welcome outside prayer times). A place of worship with one counted source: review-grade; owner should confirm."
+  },
+  {
+   "name": "Woolgoolga Beach",
+   "action": "spot",
+   "destination": "coffs-harbour",
+   "id": "coffs-harbour-7",
+   "coordinates": {
+    "latitude": -30.10491,
+    "longitude": 153.19965
+   },
+   "coordinates_source": "osm nominatim natural=beach",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Woolgoolga"
+   ],
+   "distance_km_from_destination": 22.8,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination coffs-harbour (not yet in the app): 22.8 km from its centre, inside 75% of its 60 km span. If the proposal is declined this becomes a standalone spot with id 'woolgoolga-beach'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "woolgoolga-beach"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Mainbeachwoopi.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Mainbeachwoopi.JPG",
+    "width": 1632,
+    "height": 1232,
+    "licence": "Public domain"
+   },
+   "hero_crop": "ok",
+   "brightness": {
+    "p40": 0.384,
+    "mean": 0.444
+   },
+   "photo_date": "14 September 2004 (according t",
+   "photo_note": "Main beach with headland and town, public domain, undated 1632 px, likely 2004; clear.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A wide, clean beach with headland views at Woolgoolga.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal"
+  },
+  {
+   "name": "Arrawarra Beach",
+   "action": "spot",
+   "destination": "coffs-harbour",
+   "id": "coffs-harbour-8",
+   "coordinates": {
+    "latitude": -30.05889,
+    "longitude": 153.19791
+   },
+   "coordinates_source": "osm nominatim natural=beach",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Woolgoolga"
+   ],
+   "distance_km_from_destination": 27.6,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination coffs-harbour (not yet in the app): 27.6 km from its centre, inside 75% of its 60 km span. If the proposal is declined this becomes a standalone spot with id 'arrawarra-beach'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "arrawarra-beach"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Arrawarra Beach close to the Ocean.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Arrawarra_Beach_close_to_the_Ocean.jpg",
+    "width": 3264,
+    "height": 2448,
+    "licence": "CC BY-SA 4.0"
+   },
+   "hero_crop": "ok",
+   "brightness": {
+    "p40": 0.502,
+    "mean": 0.54
+   },
+   "photo_date": "2016-09-28 13:27:42",
+   "photo_note": "Plain beach with blue sky; real colour photo but empty and weak at card size.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "An uncrowded surf beach at Arrawarra, north of Woolgoolga.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal"
+  },
+  {
+   "name": "Coffs Coast Wildlife Sanctuary",
+   "action": "spot",
+   "destination": "coffs-harbour",
+   "id": "coffs-harbour-9",
+   "coordinates": null,
+   "coordinates_source": "NO CANDIDATE RECORD: skeptic.json (Dolphin Marine Magic) says the sanctuary is \"kept\", but candidates/verdicts/skeptic have no record for it. resolve-pin.py returned only LOW (photon landuse=retail -30.298763,153.136392; Commons median -30.293657,153.126068): pin not accepted, take the entrance from the operator page in Pipeline C",
+   "pin_confidence": "LOW (unresolved)",
+   "views": null,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Coffs_Harbour (via skeptic note on Dolphin Marine Magic; not independently checked)"
+   ],
+   "distance_km_from_destination": null,
+   "inside_75pct_span": null,
+   "reason": "Kept per the skeptic note on Dolphin Marine Magic (renamed Coffs Coast Wildlife Sanctuary), but never enumerated as a candidate; held at the Coffs Harbour proposal until the caller adds a record. Not dropped.",
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "not reviewed",
+   "photo": null,
+   "photo_note": "no record; needs photo search",
+   "category": "entertainment",
+   "icon": "🦘",
+   "bio": "Coffs Harbour wildlife park, the former Dolphin Marine Magic site, listed under its new name.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 3,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal"
+  },
+  {
+   "name": "Port Macquarie Koala Hospital",
+   "action": "spot",
+   "destination": "port-macquarie",
+   "id": "port-macquarie-1",
+   "coordinates": {
+    "latitude": -31.44306,
+    "longitude": 152.91952
+   },
+   "coordinates_source": "osm nominatim amenity=animal_shelter, Lord Street",
+   "views": 0,
+   "counted_sources": [],
+   "distance_km_from_destination": 1.7,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination port-macquarie (not yet in the app): 1.7 km from its centre, inside 75% of its 40 km span. If the proposal is declined this becomes a standalone spot with id 'port-macquarie-koala-hospital'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "port-macquarie-koala-hospital"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "none",
+   "photo": null,
+   "photo_note": "Commons has only a koala foetus; the hospital is not pictured. Operator or tourism photos would need permission (IMAGES.md tier 2).",
+   "category": "nature",
+   "icon": "🐨",
+   "bio": "A koala rescue hospital on Lord Street with daily public viewing of patients and residents.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "note": "Counted source is the Port Macquarie tourism board (skeptic), not Wikivoyage. The operator's newer Guulabaa Place of Koala is not a separate spot yet."
+  },
+  {
+   "name": "Sea Acres National Park",
+   "action": "spot",
+   "destination": "port-macquarie",
+   "id": "port-macquarie-2",
+   "coordinates": {
+    "latitude": -31.46158,
+    "longitude": 152.93
+   },
+   "coordinates_source": "osm nominatim Sea Acres Rainforest Centre (visitor entrance)",
+   "views": 990,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Port_Macquarie",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/sea-acres-national-park"
+   ],
+   "distance_km_from_destination": 4.0,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination port-macquarie (not yet in the app): 4.0 km from its centre, inside 75% of its 40 km span. If the proposal is declined this becomes a standalone spot with id 'sea-acres-national-park'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "sea-acres-national-park"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Coastline of Sea Acres National Park, Port Macquarie NSW.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Coastline_of_Sea_Acres_National_Park,_Port_Macquarie_NSW.JPG",
+    "width": 5152,
+    "height": 3864,
+    "licence": "CC BY-SA 4.0"
+   },
+   "hero_crop": "ok",
+   "brightness": {
+    "p40": 0.447,
+    "mean": 0.521
+   },
+   "photo_date": "2016-02-03",
+   "photo_note": "Coastline of Sea Acres NP, Port Macquarie in the file name; shows the coast, not the boardwalk rainforest.",
+   "category": "nature",
+   "icon": "🌳",
+   "bio": "A coastal rainforest reserve with a raised boardwalk and the Sea Acres Rainforest Centre, beside Shelly Beach.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "wiki": "Sea Acres National Park",
+   "note": "A national park, but 72 ha and 5 km from Port Macquarie: a second destination would overlap, so it is a spot of the Port Macquarie proposal."
+  },
+  {
+   "name": "Tacking Point Lighthouse",
+   "action": "spot",
+   "destination": "port-macquarie",
+   "id": "port-macquarie-3",
+   "coordinates": {
+    "latitude": -31.47561,
+    "longitude": 152.93726
+   },
+   "coordinates_source": "osm nominatim man_made=lighthouse",
+   "views": 1385,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Port_Macquarie"
+   ],
+   "distance_km_from_destination": 5.7,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination port-macquarie (not yet in the app): 5.7 km from its centre, inside 75% of its 40 km span. If the proposal is declined this becomes a standalone spot with id 'tacking-point-lighthouse'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "tacking-point-lighthouse"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Tacking Point Lighthouse qtl1b.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Tacking_Point_Lighthouse_qtl1b.jpg",
+    "width": 3800,
+    "height": 2626,
+    "licence": "CC BY-SA 3.0"
+   },
+   "hero_crop": "ok",
+   "brightness": {
+    "p40": 0.549,
+    "mean": 0.561
+   },
+   "photo_date": "2012-03-30 17:08",
+   "photo_note": "Lighthouse and keeper's cottage, clear colour 2012.",
+   "category": "landmark",
+   "icon": "🗼",
+   "bio": "A headland lighthouse at the end of the Port Macquarie Coastal Walk, with ocean views.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "wiki": "Tacking Point Lighthouse"
+  },
+  {
+   "name": "Port Macquarie Coastal Walk",
+   "action": "spot",
+   "destination": "port-macquarie",
+   "id": "port-macquarie-4",
+   "coordinates": {
+    "latitude": -31.45519,
+    "longitude": 152.93213
+   },
+   "coordinates_source": "MIDPOINT of OSM route relation 14223022 (Port Macquarie Coastal Walk), computed along the way chain; ends Tacking Point and Westport Park area",
+   "views": 0,
+   "counted_sources": [],
+   "distance_km_from_destination": 3.5,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination port-macquarie (not yet in the app): 3.5 km from its centre, inside 75% of its 40 km span. If the proposal is declined this becomes a standalone spot with id 'port-macquarie-coastal-walk'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "port-macquarie-coastal-walk"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "none",
+   "photo": null,
+   "photo_note": "Files are sunrise at Shelly Beach, rainforest carvings or fruit; none shows the walk. Non-Commons needed.",
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "A coastal walk of several kilometres linking beaches and headlands from town to Tacking Point Lighthouse.",
+   "hours": null,
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal"
+  },
+  {
+   "name": "Shelly Beach",
+   "action": "spot",
+   "destination": "port-macquarie",
+   "id": "port-macquarie-5",
+   "coordinates": {
+    "latitude": -31.45507,
+    "longitude": 152.93194
+   },
+   "coordinates_source": "osm nominatim natural=beach",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Port_Macquarie"
+   ],
+   "distance_km_from_destination": 3.5,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination port-macquarie (not yet in the app): 3.5 km from its centre, inside 75% of its 40 km span. If the proposal is declined this becomes a standalone spot with id 'shelly-beach-port-macquarie'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "shelly-beach-port-macquarie"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Shelly Beach on the Wednesday, 6th August 2008 at 11-58am. - panoramio.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Shelly_Beach_on_the_Wednesday,_6th_August_2008_at_11-58am._-_panoramio.jpg",
+    "width": 2272,
+    "height": 1704,
+    "licence": "CC BY-SA 3.0"
+   },
+   "hero_crop": "ok",
+   "brightness": {
+    "p40": 0.525,
+    "mean": 0.547
+   },
+   "photo_date": "Taken on<span typeof=\"mw:Entit",
+   "photo_note": "Beach and wooded headland. File page confirms Port Macquarie (not Forster); undated panoramio upload 2008.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A sheltered surf and snorkelling beach with a rock pool, beside Sea Acres National Park.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "wiki": "Shelly Beach, Port Macquarie",
+   "wiki_note": "No Wikipedia article exists for either beach, and the bare title \"Shelly Beach\" is a disambiguation page. The shown name stays \"Shelly Beach\"; the wiki value is only a unique photo key (spotPhotoTitle) so each beach gets its own WIKI_IMAGE_OVERRIDES entry. Do not rely on it as an article title.",
+   "note": "The two Shelly Beaches are different places: this is the Port Macquarie snorkelling beach beside Sea Acres."
+  },
+  {
+   "name": "Flynns Beach",
+   "action": "spot",
+   "destination": "port-macquarie",
+   "id": "port-macquarie-6",
+   "coordinates": {
+    "latitude": -31.44298,
+    "longitude": 152.92643
+   },
+   "coordinates_source": "osm nominatim natural=beach",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Port_Macquarie"
+   ],
+   "distance_km_from_destination": 2.1,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination port-macquarie (not yet in the app): 2.1 km from its centre, inside 75% of its 40 km span. If the proposal is declined this becomes a standalone spot with id 'flynns-beach'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "flynns-beach"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "2020-12-23 Flynn's Beach, New South Wales 3.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:2020-12-23_Flynn's_Beach,_New_South_Wales_3.jpg",
+    "width": 4032,
+    "height": 3024,
+    "licence": "CC BY-SA 4.0"
+   },
+   "hero_crop": "ok",
+   "brightness": {
+    "p40": 0.565,
+    "mean": 0.56
+   },
+   "photo_date": "2020-12-23 08:40:05",
+   "photo_note": "Beach with boardwalk steps and surf; recognisable.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A family surf beach lined with Norfolk pines near the Port Macquarie resort precinct.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "wiki": "Flynns Beach"
+  },
+  {
+   "name": "Town Beach",
+   "action": "spot",
+   "destination": "port-macquarie",
+   "id": "port-macquarie-7",
+   "coordinates": {
+    "latitude": -31.42851,
+    "longitude": 152.91819
+   },
+   "coordinates_source": "osm nominatim natural=beach",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Port_Macquarie"
+   ],
+   "distance_km_from_destination": 0.8,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination port-macquarie (not yet in the app): 0.8 km from its centre, inside 75% of its 40 km span. If the proposal is declined this becomes a standalone spot with id 'town-beach'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "town-beach"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Town Beach - panoramio.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Town_Beach_-_panoramio.jpg",
+    "width": 2272,
+    "height": 1704,
+    "licence": "CC BY-SA 3.0"
+   },
+   "hero_crop": "ok",
+   "brightness": {
+    "p40": 0.451,
+    "mean": 0.493
+   },
+   "photo_date": "Taken on<span typeof=\"mw:Entit",
+   "photo_note": "View of the beach and carpark from Flagstaff Hill, panoramio-origin 2272 px, date not recorded; the beach is clear but cars fill the foreground.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "The most central patrolled beach in Port Macquarie, with a cafe behind the sand.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal"
+  },
+  {
+   "name": "Roto House",
+   "action": "spot",
+   "destination": "port-macquarie",
+   "id": "port-macquarie-8",
+   "coordinates": {
+    "latitude": -31.44261,
+    "longitude": 152.91937
+   },
+   "coordinates_source": "osm nominatim tourism=attraction",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Port_Macquarie"
+   ],
+   "distance_km_from_destination": 1.6,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination port-macquarie (not yet in the app): 1.6 km from its centre, inside 75% of its 40 km span. If the proposal is declined this becomes a standalone spot with id 'roto-house'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "roto-house"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "none",
+   "photo": null,
+   "photo_note": "Nothing on Commons.",
+   "category": "historic",
+   "icon": "🏠",
+   "bio": "An 1891 heritage house in Macquarie Nature Reserve, open daily with free guided tours.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "wiki": "Roto House"
+  },
+  {
+   "name": "Billabong Zoo",
+   "action": "spot",
+   "destination": "port-macquarie",
+   "id": "port-macquarie-9",
+   "coordinates": {
+    "latitude": -31.45785,
+    "longitude": 152.82017
+   },
+   "coordinates_source": "osm nominatim tourism=zoo",
+   "views": 921,
+   "counted_sources": [],
+   "distance_km_from_destination": 9.1,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination port-macquarie (not yet in the app): 9.1 km from its centre, inside 75% of its 40 km span. If the proposal is declined this becomes a standalone spot with id 'billabong-zoo'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "billabong-zoo"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "none",
+   "photo": null,
+   "photo_note": "Only a caged macaw, big statues and a camp site; no clear view of the zoo or its koalas.",
+   "category": "entertainment",
+   "icon": "🦘",
+   "bio": "A wildlife park west of Port Macquarie offering animal encounters.",
+   "hours": null,
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal"
+  },
+  {
+   "name": "Skywalk",
+   "action": "spot",
+   "destination": "dorrigo-national-park",
+   "id": "dorrigo-national-park-1",
+   "coordinates": {
+    "latitude": -30.3636,
+    "longitude": 152.72981
+   },
+   "coordinates_source": "osm nominatim tourism=viewpoint",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Dorrigo_National_Park",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/dorrigo-national-park"
+   ],
+   "distance_km_from_destination": 0.1,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination dorrigo-national-park (not yet in the app): 0.1 km from its centre, inside 75% of its 40 km span. If the proposal is declined this becomes a standalone spot with id 'skywalk'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "skywalk"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Skywalk (50227539572).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Skywalk_(50227539572).jpg",
+    "width": 1866,
+    "height": 1240,
+    "licence": "CC BY-SA 2.0"
+   },
+   "hero_crop": "ok",
+   "brightness": {
+    "p40": 0.122,
+    "mean": 0.34
+   },
+   "photo_date": "2019-09-13 13:36",
+   "photo_note": "Skywalk platform and walkway, 1866 px, shows the structure, but p40 0.12 (dark rails) so it needs brightening.",
+   "category": "viewpoint",
+   "icon": "🌿",
+   "bio": "An elevated platform reaching out over the Gondwana rainforest canopy in Dorrigo National Park.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal"
+  },
+  {
+   "name": "Wonga Walk",
+   "action": "spot",
+   "destination": "dorrigo-national-park",
+   "id": "dorrigo-national-park-2",
+   "coordinates": {
+    "latitude": -30.37616,
+    "longitude": 152.7294
+   },
+   "coordinates_source": "MIDPOINT of OSM hiking route relation 6265960 (Wonga Walk loop, ~6 km)",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Dorrigo_National_Park"
+   ],
+   "distance_km_from_destination": 1.4,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination dorrigo-national-park (not yet in the app): 1.4 km from its centre, inside 75% of its 40 km span. If the proposal is declined this becomes a standalone spot with id 'wonga-walk'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "wonga-walk"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Crystal Shower Falls in Dorrigo National Park.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Crystal_Shower_Falls_in_Dorrigo_National_Park.jpg",
+    "width": 4912,
+    "height": 7360,
+    "licence": "CC BY-SA 4.0"
+   },
+   "hero_crop": "ok",
+   "brightness": {
+    "p40": 0.157,
+    "mean": 0.282
+   },
+   "photo_date": "2020-02-18 13:27:43",
+   "photo_note": "Crystal Shower Falls, on the Wonga Walk; portrait, falls central. p40 0.157 and mean 0.28 are below the floor: brighten.",
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "A two-hour rainforest loop past Crystal Shower and Tristania falls in Dorrigo National Park.",
+   "hours": null,
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal"
+  },
+  {
+   "name": "Dangar Falls",
+   "action": "spot",
+   "destination": "dorrigo-national-park",
+   "id": "dorrigo-national-park-3",
+   "coordinates": {
+    "latitude": -30.32326,
+    "longitude": 152.71426
+   },
+   "coordinates_source": "osm nominatim waterway=waterfall",
+   "views": 1642,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Dorrigo"
+   ],
+   "distance_km_from_destination": 4.7,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination dorrigo-national-park (not yet in the app): 4.7 km from its centre, inside 75% of its 40 km span. If the proposal is declined this becomes a standalone spot with id 'dangar-falls'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "dangar-falls"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Dangar Falls Dorrigo-retouched-by-karstn.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Dangar_Falls_Dorrigo-retouched-by-karstn.jpg",
+    "width": 3238,
+    "height": 2168,
+    "licence": "CC BY-SA 3.0"
+   },
+   "hero_crop": "ok",
+   "brightness": {
+    "p40": 0.251,
+    "mean": 0.351
+   },
+   "photo_date": "2010-09-10 17:43",
+   "photo_note": "Dangar Falls Dorrigo in the file name; two-tier falls into the pool. Other 'Dangars Falls' files are Armidale's falls (different place) and were not used.",
+   "category": "nature",
+   "icon": "💧",
+   "bio": "A small, picturesque waterfall cascade just outside Dorrigo, with a viewing platform.",
+   "hours": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "wiki": "Dangar Falls"
+  },
+  {
+   "name": "Crystal Shower Falls",
+   "action": "spot",
+   "destination": "dorrigo-national-park",
+   "id": "dorrigo-national-park-4",
+   "coordinates": {
+    "latitude": -30.38049,
+    "longitude": 152.7296
+   },
+   "coordinates_source": "wikivoyage:Dorrigo_National_Park",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Dorrigo_National_Park"
+   ],
+   "distance_km_from_destination": 1.9,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination dorrigo-national-park (not yet in the app): 1.9 km from its centre, inside 75% of its 40 km span. If the proposal is declined this becomes a standalone spot with id 'crystal-shower-falls'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "crystal-shower-falls"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "not reviewed",
+   "photo": null,
+   "photo_note": "not reviewed by the skeptic",
+   "category": "nature",
+   "icon": "💧",
+   "bio": "A large waterfall in Dorrigo National Park that you can walk behind, crossed by a suspension bridge.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "note": "Not in skeptic.json (no photo, no verified pin). The waterfall is also on the Wonga Walk loop, so it risks being \"part of a larger spot\": owner to confirm or merge into Wonga Walk. Pin is the Wikivoyage Dorrigo National Park listing coordinate: run resolve-pin.py (waterfall) before applying."
+  },
+  {
+   "name": "Dorrigo",
+   "action": "spot",
+   "destination": "dorrigo-national-park",
+   "id": "dorrigo-national-park-5",
+   "coordinates": {
+    "latitude": -30.33997,
+    "longitude": 152.71203
+   },
+   "coordinates_source": "osm nominatim boundary centroid",
+   "views": 13958,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Dorrigo"
+   ],
+   "distance_km_from_destination": 3.1,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination dorrigo-national-park (not yet in the app): 3.1 km from its centre, inside 75% of its 40 km span. If the proposal is declined this becomes a standalone spot with id 'dorrigo'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "dorrigo"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "none",
+   "photo": null,
+   "photo_note": "No town photo; every Dorrigo file is a park, waterfall or the 1900 homestead.",
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "The plateau town at the gateway to Dorrigo National Park and Dangar Falls.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "wiki": "Dorrigo, New South Wales"
+  },
+  {
+   "name": "Bellingen",
+   "action": "spot",
+   "destination": "dorrigo-national-park",
+   "id": "dorrigo-national-park-6",
+   "coordinates": {
+    "latitude": -30.45105,
+    "longitude": 152.89708
+   },
+   "coordinates_source": "osm nominatim boundary centroid",
+   "views": 30665,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Bellingen"
+   ],
+   "distance_km_from_destination": 18.8,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination dorrigo-national-park (not yet in the app): 18.8 km from its centre, inside 75% of its 40 km span. If the proposal is declined this becomes a standalone spot with id 'bellingen'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "bellingen"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Bellingen2020.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Bellingen2020.jpg",
+    "width": 5184,
+    "height": 3456,
+    "licence": "CC BY-SA 4.0"
+   },
+   "hero_crop": "ok",
+   "brightness": {
+    "p40": 0.102,
+    "mean": 0.183
+   },
+   "photo_date": "2020-03-24 04:31:42",
+   "photo_note": "Town under jacaranda from the hillside, right place; far too dark (centre-square p40 0.10, mean 0.18) so it must be brightened with brighten.py before use, and the town is small in the crop.",
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "An arts and food town in the Bellinger Valley, a base for Dorrigo National Park tours.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "wiki": "Bellingen, New South Wales",
+   "note": "Verdicts said keep; the skeptic notes the Wikipedia title needs disambiguation check (\"Bellingen, New South Wales\")."
+  },
+  {
+   "name": "Glenifer Road Swimming Hole",
+   "action": "spot",
+   "destination": "dorrigo-national-park",
+   "id": "dorrigo-national-park-7",
+   "coordinates": {
+    "latitude": -30.4424859,
+    "longitude": 152.8929699
+   },
+   "coordinates_source": "osm:photon unclassified \"Gleniffer Road\" (approximate: road point near the bridge)",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Bellingen"
+   ],
+   "distance_km_from_destination": 18.0,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination dorrigo-national-park (not yet in the app): 18.0 km from its centre, inside 75% of its 40 km span. If the proposal is declined this becomes a standalone spot with id 'glenifer-road-swimming-hole'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "glenifer-road-swimming-hole"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "not reviewed",
+   "photo": null,
+   "photo_note": "not reviewed by the skeptic",
+   "category": "nature",
+   "icon": "🏊",
+   "bio": "A deep swimming hole on the Bellinger River reached from Gleniffer Road near Bellingen.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "note": "Not in skeptic.json. Pin is an approximate road point near the bridge (LOW): run resolve-pin.py or find the swimming hole access before applying. Source spells it \"Glenifer\", the road is Gleniffer Road."
+  },
+  {
+   "name": "Trial Bay Gaol",
+   "action": "spot",
+   "destination": "south-west-rocks",
+   "id": "south-west-rocks-1",
+   "coordinates": {
+    "latitude": -30.87753,
+    "longitude": 153.07019
+   },
+   "coordinates_source": "osm nominatim tourism=historic",
+   "views": 5489,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/arakoon-national-park"
+   ],
+   "distance_km_from_destination": 3.4,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination south-west-rocks (not yet in the app): 3.4 km from its centre, inside 75% of its 40 km span. If the proposal is declined this becomes a standalone spot with id 'trial-bay-gaol'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "trial-bay-gaol"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "The main entrance to the Trial Bay Gaol - Taken on the Wednesday, 18th August 2010 at 1-21pm. - panoramio.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:The_main_entrance_to_the_Trial_Bay_Gaol_-_Taken_on_the_Wednesday,_18th_August_2010_at_1-21pm._-_panoramio.jpg",
+    "width": 2272,
+    "height": 1704,
+    "licence": "CC BY-SA 3.0"
+   },
+   "hero_crop": "ok",
+   "brightness": {
+    "p40": 0.514,
+    "mean": 0.499
+   },
+   "photo_date": "Taken on 18 August 2010",
+   "photo_note": "Main entrance of the gaol ruin, clear.",
+   "category": "historic",
+   "icon": "🏛️",
+   "bio": "A 19th-century prison and internment camp ruin on Trial Bay, inside Arakoon National Park.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "wiki": "Trial Bay Gaol"
+  },
+  {
+   "name": "Smoky Cape Lighthouse",
+   "action": "spot",
+   "destination": "south-west-rocks",
+   "id": "south-west-rocks-2",
+   "coordinates": {
+    "latitude": -30.92285,
+    "longitude": 153.08749
+   },
+   "coordinates_source": "osm nominatim man_made=lighthouse",
+   "views": 1295,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/hat-head-national-park"
+   ],
+   "distance_km_from_destination": 5.5,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination south-west-rocks (not yet in the app): 5.5 km from its centre, inside 75% of its 40 km span. If the proposal is declined this becomes a standalone spot with id 'smoky-cape-lighthouse'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "smoky-cape-lighthouse"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Smoky Cape Lighthouse on a beautiful clear day.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Smoky_Cape_Lighthouse_on_a_beautiful_clear_day.jpg",
+    "width": 4000,
+    "height": 3000,
+    "licence": "CC BY-SA 4.0"
+   },
+   "hero_crop": "ok",
+   "brightness": {
+    "p40": 0.396,
+    "mean": 0.436
+   },
+   "photo_date": "2018-05-03",
+   "photo_note": "Lighthouse and keeper's houses, clear day.",
+   "category": "landmark",
+   "icon": "🗼",
+   "bio": "An active 1891 lighthouse on Smoky Cape in Hat Head National Park, with coastal views.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "wiki": "Smoky Cape Lighthouse"
+  },
+  {
+   "name": "Arakoon National Park",
+   "action": "spot",
+   "destination": "south-west-rocks",
+   "id": "south-west-rocks-3",
+   "coordinates": {
+    "latitude": -30.88349,
+    "longitude": 153.07466
+   },
+   "coordinates_source": "osm nominatim nature_reserve, beside Trial Bay Gaol",
+   "views": 436,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/arakoon-national-park"
+   ],
+   "distance_km_from_destination": 3.5,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination south-west-rocks (not yet in the app): 3.5 km from its centre, inside 75% of its 40 km span. If the proposal is declined this becomes a standalone spot with id 'arakoon-national-park'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "arakoon-national-park"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Arakoon National Park.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Arakoon_National_Park.JPG",
+    "width": 4739,
+    "height": 3139,
+    "licence": "CC BY-SA 4.0"
+   },
+   "hero_crop": "ok",
+   "brightness": {
+    "p40": 0.408,
+    "mean": 0.421
+   },
+   "photo_date": "Taken on 11 February 2016, 17:",
+   "photo_note": "Kangaroos on a dusk beach; evocative but the park itself is barely identified, undated.",
+   "category": "nature",
+   "icon": "🌊",
+   "bio": "A beachside park around Trial Bay with camping, fishing and whale watching.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "wiki": "Arakoon National Park"
+  },
+  {
+   "name": "Hat Head National Park",
+   "action": "spot",
+   "destination": "south-west-rocks",
+   "id": "south-west-rocks-4",
+   "coordinates": {
+    "latitude": -31.08028,
+    "longitude": 153.03028
+   },
+   "coordinates_source": "wikipedia:Hat Head National Park centroid; OSM Hat Head village cape is -31.0532,153.0617",
+   "views": 1019,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/hat-head-national-park",
+    "https://en.wikivoyage.org/wiki/Kempsey"
+   ],
+   "distance_km_from_destination": 20.7,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination south-west-rocks (not yet in the app): 20.7 km from its centre, inside 75% of its 40 km span. If the proposal is declined this becomes a standalone spot with id 'hat-head-national-park'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "hat-head-national-park"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Overlook of Hat Head National Park.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Overlook_of_Hat_Head_National_Park.jpg",
+    "width": 7186,
+    "height": 2392,
+    "licence": "CC BY-SA 4.0"
+   },
+   "hero_crop": "ok",
+   "brightness": {
+    "p40": 0.549,
+    "mean": 0.539
+   },
+   "photo_date": "2017-01-02 19:16:53",
+   "photo_note": "3:1 panorama (7186x2392); the centre slice shows the beach arc and headland and works, but it is a very wide strip.",
+   "category": "nature",
+   "icon": "🏞️",
+   "bio": "A national park of beaches, dunes, rainforest and a lighthouse near South West Rocks.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "wiki": "Hat Head National Park",
+   "note": "Pin is the Wikipedia centroid; needs a visitor point."
+  },
+  {
+   "name": "Booti Booti National Park",
+   "action": "spot",
+   "destination": "forster",
+   "id": "forster-1",
+   "coordinates": {
+    "latitude": -32.24444,
+    "longitude": 152.54333
+   },
+   "coordinates_source": "wikipedia:Booti Booti National Park centroid (OSM centroid -32.2445,152.5283 lies in the lake); a visitor point such as Elizabeth Beach is an alternative",
+   "views": 1778,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/booti-booti-national-park",
+    "https://en.wikivoyage.org/wiki/Forster"
+   ],
+   "distance_km_from_destination": 7.5,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination forster (not yet in the app): 7.5 km from its centre, inside 75% of its 50 km span. If the proposal is declined this becomes a standalone spot with id 'booti-booti-national-park'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "booti-booti-national-park"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "none",
+   "photo": null,
+   "photo_note": "Only cone-shell specimen photos.",
+   "category": "nature",
+   "icon": "🌴",
+   "bio": "An 8 km peninsula between the ocean and Wallis Lake, with beaches, lookouts and coastal rainforest.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "wiki": "Booti Booti National Park",
+   "note": "Pin is the Wikipedia centroid (OSM centroid falls in the lake); a visitor point such as Elizabeth Beach would be better. Chosen as spot of Forster because the two overlap (10 km), not a second destination."
+  },
+  {
+   "name": "Cape Hawke Lookout",
+   "action": "spot",
+   "destination": "forster",
+   "id": "forster-2",
+   "coordinates": {
+    "latitude": -32.2165,
+    "longitude": 152.5631
+   },
+   "coordinates_source": "osm nominatim tourism=attraction Cape Hawke Lookout",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Forster"
+   ],
+   "distance_km_from_destination": 6.1,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination forster (not yet in the app): 6.1 km from its centre, inside 75% of its 50 km span. If the proposal is declined this becomes a standalone spot with id 'cape-hawke-lookout'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "cape-hawke-lookout"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Cape Hawke Lookout Tower - panoramio.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Cape_Hawke_Lookout_Tower_-_panoramio.jpg",
+    "width": 1293,
+    "height": 1495,
+    "licence": "CC BY-SA 3.0"
+   },
+   "hero_crop": "ok",
+   "brightness": {
+    "p40": 0.404,
+    "mean": 0.516
+   },
+   "photo_date": "Taken on 17 January 2003",
+   "photo_note": "The lookout tower, 1293 px wide (clears 960).",
+   "category": "viewpoint",
+   "icon": "🔭",
+   "bio": "An ocean-view lookout in Booti Booti National Park on Cape Hawke Drive.",
+   "hours": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal"
+  },
+  {
+   "name": "Bennetts Head Lookout",
+   "action": "spot",
+   "destination": "forster",
+   "id": "forster-3",
+   "coordinates": {
+    "latitude": -32.1823,
+    "longitude": 152.53397
+   },
+   "coordinates_source": "osm nominatim tourism=viewpoint",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Forster"
+   ],
+   "distance_km_from_destination": 2.0,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination forster (not yet in the app): 2.0 km from its centre, inside 75% of its 50 km span. If the proposal is declined this becomes a standalone spot with id 'bennetts-head-lookout'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "bennetts-head-lookout"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "View from Bennett's Head Lookout - panoramio.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:View_from_Bennett's_Head_Lookout_-_panoramio.jpg",
+    "width": 2304,
+    "height": 2957,
+    "licence": "CC BY-SA 3.0"
+   },
+   "hero_crop": "ok",
+   "brightness": {
+    "p40": 0.361,
+    "mean": 0.407
+   },
+   "photo_date": "Taken on 20 April 2007",
+   "photo_note": "View from the lookout down the cliff; a view, not the structure, which suits a lookout.",
+   "category": "viewpoint",
+   "icon": "🔭",
+   "bio": "A headland lookout on Marine Drive with coastal views near Forster.",
+   "hours": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal"
+  },
+  {
+   "name": "Boomerang Beach",
+   "action": "spot",
+   "destination": "forster",
+   "id": "forster-4",
+   "coordinates": {
+    "latitude": -32.33996,
+    "longitude": 152.5433
+   },
+   "coordinates_source": "osm nominatim natural=beach",
+   "views": 2355,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Forster"
+   ],
+   "distance_km_from_destination": 17.8,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination forster (not yet in the app): 17.8 km from its centre, inside 75% of its 50 km span. If the proposal is declined this becomes a standalone spot with id 'boomerang-beach'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "boomerang-beach"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Rock Layers in Cliff at Boomerang Beach in NSW in Australia.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Rock_Layers_in_Cliff_at_Boomerang_Beach_in_NSW_in_Australia.jpg",
+    "width": 1120,
+    "height": 768,
+    "licence": "CC BY-SA 2.0"
+   },
+   "hero_crop": "ok",
+   "brightness": {
+    "p40": 0.518,
+    "mean": 0.547
+   },
+   "photo_date": "2014-09-17",
+   "photo_note": "Headland and beach, 1120 px wide.",
+   "category": "beach",
+   "icon": "🏄",
+   "bio": "The best surf beach of the Forster strip, south of Forster.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "wiki": "Boomerang Beach, New South Wales"
+  },
+  {
+   "name": "Blueys Beach",
+   "action": "spot",
+   "destination": "forster",
+   "id": "forster-5",
+   "coordinates": {
+    "latitude": -32.35256,
+    "longitude": 152.53656
+   },
+   "coordinates_source": "osm nominatim natural=beach",
+   "views": 5096,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Forster"
+   ],
+   "distance_km_from_destination": 19.1,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination forster (not yet in the app): 19.1 km from its centre, inside 75% of its 50 km span. If the proposal is declined this becomes a standalone spot with id 'blueys-beach'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "blueys-beach"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Blueys beach long exposure.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Blueys_beach_long_exposure.jpg",
+    "width": 5996,
+    "height": 4000,
+    "licence": "CC BY 4.0"
+   },
+   "hero_crop": "ok",
+   "brightness": {
+    "p40": 0.604,
+    "mean": 0.575
+   },
+   "photo_date": "2025-08-08 22:18:08",
+   "photo_note": "Long exposure of the beach and headland, 2025.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A long, shallow family beach just south of Boomerang Beach.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "wiki": "Blueys Beach, New South Wales"
+  },
+  {
+   "name": "Elizabeth Beach",
+   "action": "spot",
+   "destination": "forster",
+   "id": "forster-6",
+   "coordinates": {
+    "latitude": -32.32951,
+    "longitude": 152.53645
+   },
+   "coordinates_source": "osm nominatim natural=beach",
+   "views": 697,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Forster"
+   ],
+   "distance_km_from_destination": 16.5,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination forster (not yet in the app): 16.5 km from its centre, inside 75% of its 50 km span. If the proposal is declined this becomes a standalone spot with id 'elizabeth-beach'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "elizabeth-beach"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Elizabeth Beach in the late afternoon - panoramio.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Elizabeth_Beach_in_the_late_afternoon_-_panoramio.jpg",
+    "width": 3223,
+    "height": 2073,
+    "licence": "CC BY-SA 3.0"
+   },
+   "hero_crop": "ok",
+   "brightness": {
+    "p40": 0.443,
+    "mean": 0.428
+   },
+   "photo_date": "Taken on 8 February 2009",
+   "photo_note": "Beach in the late afternoon, panoramio-origin.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A shallow family beach south of Forster.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "wiki": "Elizabeth Beach, New South Wales"
+  },
+  {
+   "name": "Diamond Beach",
+   "action": "spot",
+   "destination": "forster",
+   "id": "forster-7",
+   "coordinates": {
+    "latitude": -32.03811,
+    "longitude": 152.54286
+   },
+   "coordinates_source": "osm nominatim natural=beach",
+   "views": 2881,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Forster"
+   ],
+   "distance_km_from_destination": 16.3,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination forster (not yet in the app): 16.3 km from its centre, inside 75% of its 50 km span. If the proposal is declined this becomes a standalone spot with id 'diamond-beach'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "diamond-beach"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Diamond Beach from Diamond Beach Lookout.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Diamond_Beach_from_Diamond_Beach_Lookout.jpg",
+    "width": 8192,
+    "height": 6144,
+    "licence": "CC0"
+   },
+   "hero_crop": "ok",
+   "brightness": {
+    "p40": 0.455,
+    "mean": 0.498
+   },
+   "photo_date": "2026-09-06 07:06:34",
+   "photo_note": "From the Diamond Beach lookout, 2026, CC0; the sun at the edge is lens flare but fine.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A long, quiet beach with good surf, north of Forster.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "wiki": "Diamond Beach, New South Wales"
+  },
+  {
+   "name": "Shelly Beach",
+   "action": "spot",
+   "destination": "forster",
+   "id": "forster-8",
+   "coordinates": {
+    "latitude": -32.32909,
+    "longitude": 152.54539
+   },
+   "coordinates_source": "osm photon natural=beach \"Shelly Beach\" (Booti Booti); needs a check it is the Forster one, not Port Macquarie",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Forster"
+   ],
+   "distance_km_from_destination": 16.6,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination forster (not yet in the app): 16.6 km from its centre, inside 75% of its 50 km span. If the proposal is declined this becomes a standalone spot with id 'shelly-beach-forster'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "shelly-beach-forster"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "none",
+   "photo": null,
+   "photo_note": "Nothing on Commons for the Forster beach.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A walk-in, clothing-optional beach south of Forster in Booti Booti National Park.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "wiki": "Shelly Beach, Forster",
+   "wiki_note": "No Wikipedia article exists for either beach, and the bare title \"Shelly Beach\" is a disambiguation page. The shown name stays \"Shelly Beach\"; the wiki value is only a unique photo key (spotPhotoTitle) so each beach gets its own WIKI_IMAGE_OVERRIDES entry. Do not rely on it as an article title.",
+   "note": "The two Shelly Beaches are different places: this is the walk-in Booti Booti beach south of Forster. Pin is a photon natural=beach match flagged \"verify against Forster beaches\" (MEDIUM at best): confirm it is the Forster one. No Commons photo exists: needs a non-Commons photo."
+  },
+  {
+   "name": "Sugarloaf Point Lighthouse",
+   "action": "spot",
+   "destination": "myall-lakes-national-park",
+   "id": "myall-lakes-national-park-1",
+   "coordinates": {
+    "latitude": -32.44101,
+    "longitude": 152.53912
+   },
+   "coordinates_source": "osm nominatim man_made=lighthouse",
+   "views": 1443,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Seal_Rocks",
+    "https://en.wikivoyage.org/wiki/Myall_Lakes_National_Park"
+   ],
+   "distance_km_from_destination": 23.2,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination myall-lakes-national-park (not yet in the app): 23.2 km from its centre, inside 75% of its 60 km span. If the proposal is declined this becomes a standalone spot with id 'sugarloaf-point-lighthouse'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "sugarloaf-point-lighthouse"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Sugarloaf Point Lighthouse cropped.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Sugarloaf_Point_Lighthouse_cropped.jpg",
+    "width": 2846,
+    "height": 3249,
+    "licence": "CC BY-SA 3.0"
+   },
+   "hero_crop": "ok",
+   "brightness": {
+    "p40": 0.31,
+    "mean": 0.402
+   },
+   "photo_date": "2010-09-14 18:05",
+   "photo_note": "Lighthouse against blue sky, centred; tall, subject fine.",
+   "category": "landmark",
+   "icon": "🗼",
+   "bio": "An 1875 lighthouse on the Seal Rocks headland with lookouts and whale watching.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "wiki": "Sugarloaf Point Light"
+  },
+  {
+   "name": "Seal Rocks",
+   "action": "spot",
+   "destination": "myall-lakes-national-park",
+   "id": "myall-lakes-national-park-2",
+   "coordinates": {
+    "latitude": -32.43619,
+    "longitude": 152.52993
+   },
+   "coordinates_source": "osm nominatim boundary centroid",
+   "views": 8012,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Seal_Rocks"
+   ],
+   "distance_km_from_destination": 22.6,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination myall-lakes-national-park (not yet in the app): 22.6 km from its centre, inside 75% of its 60 km span. If the proposal is declined this becomes a standalone spot with id 'seal-rocks'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "seal-rocks"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Seal Rocks.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Seal_Rocks.jpg",
+    "width": 5184,
+    "height": 2314,
+    "licence": "CC BY-SA 4.0"
+   },
+   "hero_crop": "ok",
+   "brightness": {
+    "p40": 0.529,
+    "mean": 0.583
+   },
+   "photo_date": "2015-12-25 04:37:56",
+   "photo_note": "Headland and beach, 2.24:1 file; the centre slice keeps the headland and bay.",
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "A surf village on a peninsula at Myall Lakes with a lighthouse, a blowhole and beaches.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "wiki": "Seal Rocks, New South Wales"
+  },
+  {
+   "name": "Number One Beach",
+   "action": "spot",
+   "destination": "myall-lakes-national-park",
+   "id": "myall-lakes-national-park-3",
+   "coordinates": {
+    "latitude": -32.42865,
+    "longitude": 152.51947
+   },
+   "coordinates_source": "osm nominatim natural=beach",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Seal_Rocks"
+   ],
+   "distance_km_from_destination": 22.0,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination myall-lakes-national-park (not yet in the app): 22.0 km from its centre, inside 75% of its 60 km span. If the proposal is declined this becomes a standalone spot with id 'number-one-beach'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "number-one-beach"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "none",
+   "photo": null,
+   "photo_note": "Nothing on Commons; the Seal Rocks files show the bay from the headland (used for the village).",
+   "category": "beach",
+   "icon": "🏄",
+   "bio": "The first beach at Seal Rocks, with learner surf and a point break.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal"
+  },
+  {
+   "name": "Treachery Headland Walking Track",
+   "action": "spot",
+   "destination": "myall-lakes-national-park",
+   "id": "myall-lakes-national-park-4",
+   "coordinates": {
+    "latitude": -32.445765,
+    "longitude": 152.518598
+   },
+   "coordinates_source": "wikivoyage:Myall_Lakes_National_Park",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Myall_Lakes_National_Park"
+   ],
+   "distance_km_from_destination": 21.2,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination myall-lakes-national-park (not yet in the app): 21.2 km from its centre, inside 75% of its 60 km span. If the proposal is declined this becomes a standalone spot with id 'treachery-headland-walking-track'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "treachery-headland-walking-track"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "not reviewed",
+   "photo": null,
+   "photo_note": "not reviewed by the skeptic",
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "A 2 km return coastal rainforest walk with views of Sugarloaf Point Lighthouse.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "note": "Not in skeptic.json (no photo). Pin is the Wikivoyage Myall Lakes listing: run resolve-pin.py; midpoint of the OSM route wanted."
+  },
+  {
+   "name": "Yacaaba Headland Walking Track",
+   "action": "spot",
+   "destination": "myall-lakes-national-park",
+   "id": "myall-lakes-national-park-5",
+   "coordinates": {
+    "latitude": -32.69802,
+    "longitude": 152.19627
+   },
+   "coordinates_source": "MIDPOINT of OSM way 324442316 (Yacaaba Walking Track); the mapped way is only 1.2 km of the 3.5 km one-way route, so recheck against the full track",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Myall_Lakes_National_Park"
+   ],
+   "distance_km_from_destination": 23.4,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination myall-lakes-national-park (not yet in the app): 23.4 km from its centre, inside 75% of its 60 km span. If the proposal is declined this becomes a standalone spot with id 'yacaaba-headland-walking-track'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "yacaaba-headland-walking-track"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "none",
+   "photo": null,
+   "photo_note": null,
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "A 7 km return headland walk above Hawks Nest with long coast and estuary views.",
+   "hours": null,
+   "visitHoursMin": 2.5,
+   "visitHoursMax": 4,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal"
+  },
+  {
+   "name": "Dark Point Walking Track",
+   "action": "spot",
+   "destination": "myall-lakes-national-park",
+   "id": "myall-lakes-national-park-6",
+   "coordinates": {
+    "latitude": -32.596589,
+    "longitude": 152.269309
+   },
+   "coordinates_source": "wikivoyage:Myall_Lakes_National_Park",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Myall_Lakes_National_Park"
+   ],
+   "distance_km_from_destination": 10.4,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination myall-lakes-national-park (not yet in the app): 10.4 km from its centre, inside 75% of its 60 km span. If the proposal is declined this becomes a standalone spot with id 'dark-point-walking-track'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "dark-point-walking-track"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "not reviewed",
+   "photo": null,
+   "photo_note": "not reviewed by the skeptic",
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "A 2 km return walk through sand dunes to Dark Point, a Worimi Aboriginal place.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "note": "Not in skeptic.json (no photo). Pin is the Wikivoyage Myall Lakes listing: run resolve-pin.py; the track is a route, so the midpoint of the OSM route is wanted. Absorbs Dark Point Aboriginal Place and Mungo Walking Track (rejected as duplicates)."
+  },
+  {
+   "name": "Big Oyster",
+   "action": "spot",
+   "destination": "taree",
+   "id": "taree-1",
+   "coordinates": {
+    "latitude": -31.8995,
+    "longitude": 152.4866
+   },
+   "coordinates_source": "Wikivoyage Taree listing (-31.9000,152.4886) checked against OSM Manning River Drive, Chatham (-31.8995,152.4866); approximate to ~200 m",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Taree",
+    "https://en.wikivoyage.org/wiki/Old_Bar"
+   ],
+   "distance_km_from_destination": 2.8,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination taree (not yet in the app): 2.8 km from its centre, inside 75% of its 60 km span. If the proposal is declined this becomes a standalone spot with id 'big-oyster'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "big-oyster"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Big Oyster Taree 2007.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Big_Oyster_Taree_2007.jpg",
+    "width": 3264,
+    "height": 2448,
+    "licence": "CC BY-SA 4.0"
+   },
+   "hero_crop": "ok",
+   "brightness": {
+    "p40": 0.384,
+    "mean": 0.47
+   },
+   "photo_date": "2007-12-30 08:54:13",
+   "photo_note": "The oyster on the dealership, clear colour but taken 2007; the building is unchanged per Wikivoyage.",
+   "category": "landmark",
+   "icon": "🦪",
+   "bio": "A roadside giant oyster, now on a car dealership's second floor, near Taree.",
+   "hours": null,
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal"
+  },
+  {
+   "name": "Crowdy Bay National Park",
+   "action": "spot",
+   "destination": "taree",
+   "id": "taree-2",
+   "coordinates": {
+    "latitude": -31.81639,
+    "longitude": 152.72139
+   },
+   "coordinates_source": "wikipedia:Crowdy Bay National Park centroid; needs a visitor point (Diamond Head campground) from OSM before applying",
+   "views": 5549,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/crowdy-bay-national-park",
+    "https://en.wikivoyage.org/wiki/Mid-North_Coast"
+   ],
+   "distance_km_from_destination": 26.8,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination taree (not yet in the app): 26.8 km from its centre, inside 75% of its 60 km span. If the proposal is declined this becomes a standalone spot with id 'crowdy-bay-national-park'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "crowdy-bay-national-park"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "none",
+   "photo": null,
+   "photo_note": "Only the harbour, a lighthouse (Crowdy Head), a group at a hut (1990), a lobster and a dusk river; none shows the park.",
+   "category": "nature",
+   "icon": "🏞️",
+   "bio": "A coastal park between Port Macquarie and Taree with beach camping, walks and ocean views.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "wiki": "Crowdy Bay National Park",
+   "note": "A national park; pin is a Wikipedia centroid and needs a visitor point (skeptic). Folded into the Taree proposal (17 km)."
+  },
+  {
+   "name": "Old Bar",
+   "action": "spot",
+   "destination": "taree",
+   "id": "taree-3",
+   "coordinates": {
+    "latitude": -31.965,
+    "longitude": 152.58444
+   },
+   "coordinates_source": "osm nominatim boundary centroid",
+   "views": 7195,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Old_Bar",
+    "https://en.wikivoyage.org/wiki/Mid-North_Coast"
+   ],
+   "distance_km_from_destination": 13.0,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination taree (not yet in the app): 13.0 km from its centre, inside 75% of its 60 km span. If the proposal is declined this becomes a standalone spot with id 'old-bar'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "old-bar"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Old bar beach.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Old_bar_beach.jpg",
+    "width": 1140,
+    "height": 700,
+    "licence": "CC BY-SA 4.0"
+   },
+   "hero_crop": "ok",
+   "brightness": {
+    "p40": 0.714,
+    "mean": 0.707
+   },
+   "photo_date": "2018-03-28",
+   "photo_note": "Old Bar beach with rocks and headland; 1140 px wide, clears 960.",
+   "category": "beach",
+   "icon": "🏄",
+   "bio": "A coastal surf village near Taree, with Diamond Head Beach and Wallabi Point nearby.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "wiki": "Old Bar, New South Wales"
+  },
+  {
+   "name": "Big Axe",
+   "action": "spot",
+   "destination": "taree",
+   "id": "taree-4",
+   "coordinates": {
+    "latitude": -31.63505,
+    "longitude": 152.72218
+   },
+   "coordinates_source": "osm nominatim tourism=attraction Big Axe, Kew",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Mid-North_Coast"
+   ],
+   "distance_km_from_destination": 39.6,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination taree (not yet in the app): 39.6 km from its centre, inside 75% of its 60 km span. If the proposal is declined this becomes a standalone spot with id 'big-axe'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "big-axe"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "BigAxe Kew.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:BigAxe_Kew.jpg",
+    "width": 3524,
+    "height": 2517,
+    "licence": "Public domain"
+   },
+   "hero_crop": {
+    "x": 0.35
+   },
+   "brightness": {
+    "p40": 0.439,
+    "mean": 0.432
+   },
+   "photo_date": "2009-03-01",
+   "photo_note": "The axe with palms against sky; the axe head is at the left, so use a subject point or the crop shows half the head.",
+   "category": "landmark",
+   "icon": "🪓",
+   "bio": "A giant axe roadside icon at Kew on the Pacific Highway.",
+   "hours": null,
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "wiki": "Big Axe"
+  },
+  {
+   "name": "Urunga Boardwalk",
+   "action": "spot",
+   "destination": "nambucca-heads",
+   "id": "nambucca-heads-1",
+   "coordinates": {
+    "latitude": -30.50084,
+    "longitude": 153.02745
+   },
+   "coordinates_source": "MIDPOINT of OSM ways 84536795+84536783 (Urunga Lagoon Footbridge, c.1 km)",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Urunga"
+   ],
+   "distance_km_from_destination": 16.4,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination nambucca-heads (not yet in the app): 16.4 km from its centre, inside 75% of its 40 km span. If the proposal is declined this becomes a standalone spot with id 'urunga-boardwalk'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "urunga-boardwalk"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "UrungaBoardwalk2.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:UrungaBoardwalk2.jpg",
+    "width": 5184,
+    "height": 3456,
+    "licence": "CC BY 3.0"
+   },
+   "hero_crop": "ok",
+   "brightness": {
+    "p40": 0.702,
+    "mean": 0.7
+   },
+   "photo_date": "2013-11-03",
+   "photo_note": "Boardwalk through mangroves, clear.",
+   "category": "hike",
+   "icon": "🌿",
+   "bio": "A boardwalk of almost 2 km through mangroves to Hungry Head and the heart of Urunga.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "note": "Pin is the midpoint of the c.1 km OSM footbridge ways, not the ~2 km Wikivoyage route. Status: OSM tags the interpretive boardwalk \"closed\" while the main footbridge is open, so Pipeline C must confirm before applying; hold if the whole boardwalk is shut."
+  },
+  {
+   "name": "Urunga",
+   "action": "spot",
+   "destination": "nambucca-heads",
+   "id": "nambucca-heads-2",
+   "coordinates": {
+    "latitude": -30.49834,
+    "longitude": 153.01663
+   },
+   "coordinates_source": "osm nominatim boundary centroid",
+   "views": 9470,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Urunga",
+    "https://en.wikivoyage.org/wiki/Mid-North_Coast"
+   ],
+   "distance_km_from_destination": 16.5,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination nambucca-heads (not yet in the app): 16.5 km from its centre, inside 75% of its 40 km span. If the proposal is declined this becomes a standalone spot with id 'urunga'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "urunga"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "reject",
+   "photo": null,
+   "photo_note": "Lagoon from the boardwalk, colour 2025. Hero crop is mostly turquoise water with the town a sliver on the far shore: weak; prefer none or a better town photo.",
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "A town at the Bellinger and Kalang river mouths, known for its lagoon boardwalk and beaches.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "wiki": "Urunga, New South Wales",
+   "note": "Skeptic photo rejected (hero crop mostly water). OSM tags the interpretive boardwalk \"closed\"; the main footbridge is open. Confirm status before applying."
+  },
+  {
+   "name": "Hungry Head Beach",
+   "action": "spot",
+   "destination": "nambucca-heads",
+   "id": "nambucca-heads-3",
+   "coordinates": {
+    "latitude": -30.53134,
+    "longitude": 153.02528
+   },
+   "coordinates_source": "osm nominatim natural=beach",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Urunga"
+   ],
+   "distance_km_from_destination": 13.0,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination nambucca-heads (not yet in the app): 13.0 km from its centre, inside 75% of its 40 km span. If the proposal is declined this becomes a standalone spot with id 'hungry-head-beach'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "hungry-head-beach"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Urunga Boardwalk Hungry Head Beach.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Urunga_Boardwalk_Hungry_Head_Beach.jpg",
+    "width": 4080,
+    "height": 3072,
+    "licence": "CC BY-SA 4.0"
+   },
+   "hero_crop": "ok",
+   "brightness": {
+    "p40": 0.439,
+    "mean": 0.496
+   },
+   "photo_date": "2024-12-17 14:11:18",
+   "photo_note": "Beach beside the seawall from the boardwalk, 2024.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "An untouched beach south of Urunga, reached by car or along the boardwalk.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "note": "Verdict was review; the skeptic kept it."
+  },
+  {
+   "name": "Captain Cook Lookout",
+   "action": "spot",
+   "destination": "nambucca-heads",
+   "id": "nambucca-heads-4",
+   "coordinates": {
+    "latitude": -30.64568,
+    "longitude": 153.01665
+   },
+   "coordinates_source": "osm nominatim tourism=viewpoint",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Nambucca_Heads"
+   ],
+   "distance_km_from_destination": 2.3,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination nambucca-heads (not yet in the app): 2.3 km from its centre, inside 75% of its 40 km span. If the proposal is declined this becomes a standalone spot with id 'captain-cook-lookout'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "captain-cook-lookout"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "none",
+   "photo": null,
+   "photo_note": "Only a wet car park and a rock wall; no view from the lookout.",
+   "category": "viewpoint",
+   "icon": "🔭",
+   "bio": "A viewpoint over the Nambucca River estuary at the end of Parkes Street.",
+   "hours": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal"
+  },
+  {
+   "name": "Antarctic Beech Forest Walking Track",
+   "action": "spot",
+   "destination": "barrington-tops-national-park",
+   "id": "barrington-tops-national-park-1",
+   "coordinates": {
+    "latitude": -32.08849,
+    "longitude": 151.59649
+   },
+   "coordinates_source": "MIDPOINT of the OSM Beech Forest Walk (Long Loop) ways 460466920/927/926/925, c.1.5 km loop",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Barrington_Tops_National_Park"
+   ],
+   "distance_km_from_destination": 10.5,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination barrington-tops-national-park (not yet in the app): 10.5 km from its centre, inside 75% of its 60 km span. If the proposal is declined this becomes a standalone spot with id 'antarctic-beech-forest-walking-track'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "antarctic-beech-forest-walking-track"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Cool temperate Antartic Beech rainforest (45392054562).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Cool_temperate_Antartic_Beech_rainforest_(45392054562).jpg",
+    "width": 3264,
+    "height": 1836,
+    "licence": "CC BY-SA 2.0"
+   },
+   "hero_crop": "ok",
+   "brightness": {
+    "p40": 0.192,
+    "mean": 0.336
+   },
+   "photo_date": "Taken on 20 October 2018, 13:5",
+   "photo_note": "Cool temperate beech forest on the Barrington Tops walk (the sign photo was rejected). p40 0.19, mean 0.34: just below the floor, brighten.",
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "A 20- or 90-minute walk through Antarctic beech forest on Gloucester Tops.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal"
+  },
+  {
+   "name": "Careys Peak Lookout",
+   "action": "spot",
+   "destination": "barrington-tops-national-park",
+   "id": "barrington-tops-national-park-2",
+   "coordinates": {
+    "latitude": -32.0532954,
+    "longitude": 151.4551592
+   },
+   "coordinates_source": "osm nominatim natural=peak Careys Peak (summit)",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Barrington_Tops_National_Park"
+   ],
+   "distance_km_from_destination": 3.6,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination barrington-tops-national-park (not yet in the app): 3.6 km from its centre, inside 75% of its 60 km span. If the proposal is declined this becomes a standalone spot with id 'careys-peak-lookout'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "careys-peak-lookout"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "none",
+   "photo": null,
+   "photo_note": "Only 1995-96 scans (pre-2000), failing the current-colour rule.",
+   "category": "viewpoint",
+   "icon": "🏔️",
+   "bio": "The park's highest point at 1,544 m, reached by Careys Peak Track.",
+   "hours": null,
+   "visitHoursMin": 3,
+   "visitHoursMax": 5,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "note": "Pin is the OSM natural=peak summit; the pin has 7 decimals as given."
+  },
+  {
+   "name": "Kempsey",
+   "action": "standalone",
+   "destination": "",
+   "id": "kempsey",
+   "coordinates": {
+    "latitude": -31.07981,
+    "longitude": 152.84229
+   },
+   "coordinates_source": "osm nominatim boundary centroid",
+   "views": 22061,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Kempsey"
+   ],
+   "reason": "Macleay Valley hub on the Pacific Highway, 28 km from South West Rocks and about 40 km from Port Macquarie; reached on its own, so no base destination fits. Standalone. (Verdict was review, the skeptic kept it.)",
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "none",
+   "photo": null,
+   "photo_note": "Commons has a B&W street, a hotel, the post office (civic building) and a closed museum shed: none acceptable.",
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "The Macleay Valley centre, with a museum and an Aboriginal art gallery, on the Pacific Highway.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "wiki": "Kempsey, New South Wales"
+  },
+  {
+   "name": "Crescent Head",
+   "action": "standalone",
+   "destination": "",
+   "id": "crescent-head",
+   "coordinates": {
+    "latitude": -31.19088,
+    "longitude": 152.98265
+   },
+   "coordinates_source": "osm nominatim natural=cape Crescent Head",
+   "views": 10190,
+   "counted_sources": [],
+   "reason": "Own surf village with its own accommodation, about 27 km north of Port Macquarie at the edge of that proposal's span and reached via Kempsey/Macleay Valley roads; standalone. Zero counted sources (Wikipedia attractions section only): weakest evidence in the run.",
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Crescent Head.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Crescent_Head.jpg",
+    "width": 3648,
+    "height": 2736,
+    "licence": "CC BY 2.0"
+   },
+   "hero_crop": "ok",
+   "brightness": {
+    "p40": 0.549,
+    "mean": 0.545
+   },
+   "photo_date": "2013-05-25 16:41:43",
+   "photo_note": "Surf at the point at sunset, 2013; the point and break are recognisable.",
+   "category": "beach",
+   "icon": "🏄",
+   "bio": "A surf village with Killick and Delicate beaches and a long-running longboard point break.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "wiki": "Crescent Head, New South Wales"
+  },
+  {
+   "name": "Limeburners Creek National Park",
+   "action": "standalone",
+   "destination": "",
+   "id": "limeburners-creek-national-park",
+   "coordinates": {
+    "latitude": -31.31491,
+    "longitude": 152.97542
+   },
+   "coordinates_source": "osm nominatim natural=cape Point Plomer (main visitor area)",
+   "views": 745,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/limeburners-creek-national-park"
+   ],
+   "reason": "Pinned at Point Plomer, reached from the Crescent Head/Kempsey side rather than from Port Macquarie; a national park, but with no kept sights of its own inside it to form a destination. Standalone, flagged for the owner against the \"every national park is a destination\" rule.",
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Point Plomer ^1 taken on the Monday, 19th October 2009 at 1-37pm. - panoramio.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Point_Plomer_^1_taken_on_the_Monday,_19th_October_2009_at_1-37pm._-_panoramio.jpg",
+    "width": 2272,
+    "height": 1704,
+    "licence": "CC BY-SA 3.0"
+   },
+   "hero_crop": "ok",
+   "brightness": {
+    "p40": 0.518,
+    "mean": 0.54
+   },
+   "photo_date": "Taken on 19 October 2009",
+   "photo_note": "Point Plomer beach, 2009 panoramio-origin, plain beach; the 1981 slides were rejected as pre-2000 scans.",
+   "category": "nature",
+   "icon": "🏞️",
+   "bio": "A beachside park between Crescent Head and Port Macquarie with walks, camping and surf.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "wiki": "Limeburners Creek National Park"
+  }
+ ],
+ "new_destinations": [
+  {
+   "name": "Coffs Harbour",
+   "action": "new-destination",
+   "destination": null,
+   "id": "coffs-harbour",
+   "coordinates": {
+    "latitude": -30.29624,
+    "longitude": 153.11353
+   },
+   "coordinates_source": "osm nominatim place=city node",
+   "proposed_category": "city",
+   "proposed_rank": 3,
+   "proposed_defaultZoomSpanKm": 60,
+   "views": 58076,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Coffs_Harbour",
+    "https://en.wikivoyage.org/wiki/Mid-North_Coast"
+   ],
+   "members": [
+    "Big Banana",
+    "Muttonbird Island",
+    "Park Beach",
+    "Bongil Bongil National Park",
+    "Woolgoolga",
+    "Guru Nanak Sikh Temple",
+    "Woolgoolga Beach",
+    "Arrawarra Beach",
+    "Coffs Coast Wildlife Sanctuary"
+   ],
+   "member_count": 9,
+   "reason": "Largest centre on the Mid North Coast, with its own Wikivoyage chapter; 9 kept places (Big Banana, Muttonbird Island, the Woolgoolga strip, Bongil Bongil) are within 30 km. Standalone if declined.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "coffs-harbour"
+   },
+   "status": "PROPOSAL ONLY, not added: needs description, three reasons with photos, tips, best months and a header (WRITING.md, Pipeline C).",
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Coffs harbour-NSW.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Coffs_harbour-NSW.jpg",
+    "width": 6000,
+    "height": 4000,
+    "licence": "CC BY-SA 4.0"
+   },
+   "hero_crop": "ok",
+   "brightness": {
+    "p40": 0.388,
+    "mean": 0.504
+   },
+   "photo_date": "2020-07-08 04:41:55",
+   "photo_note": "Jetty foreshore beach with dinghies, the harbour edge; fine but not a skyline. p40 0.39."
+  },
+  {
+   "name": "Port Macquarie",
+   "action": "new-destination",
+   "destination": null,
+   "id": "port-macquarie",
+   "coordinates": {
+    "latitude": -31.42995,
+    "longitude": 152.91035
+   },
+   "coordinates_source": "osm nominatim boundary centroid; town centre",
+   "proposed_category": "city",
+   "proposed_rank": 3,
+   "proposed_defaultZoomSpanKm": 40,
+   "views": 57087,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Port_Macquarie",
+    "https://en.wikivoyage.org/wiki/Mid-North_Coast"
+   ],
+   "members": [
+    "Port Macquarie Koala Hospital",
+    "Sea Acres National Park",
+    "Tacking Point Lighthouse",
+    "Port Macquarie Coastal Walk",
+    "Shelly Beach (Port Macquarie)",
+    "Flynns Beach",
+    "Town Beach",
+    "Roto House",
+    "Billabong Zoo"
+   ],
+   "member_count": 9,
+   "reason": "Regional hub with its own Wikivoyage chapter and 9 kept places within 15 km (koalas, coastal walk, beaches, Sea Acres). Photo: none passing on Commons, needs a non-Commons townscape.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "port-macquarie"
+   },
+   "status": "PROPOSAL ONLY, not added: needs description, three reasons with photos, tips, best months and a header (WRITING.md, Pipeline C).",
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "none",
+   "photo": null,
+   "photo_note": "No passing Commons photo: only 5:1 panoramas of the river mouth and beach, a marina with apartments and a bridge, and civic or heritage items. Needs a non-Commons townscape (IMAGES.md fallback)."
+  },
+  {
+   "name": "Dorrigo National Park",
+   "action": "new-destination",
+   "destination": null,
+   "id": "dorrigo-national-park",
+   "coordinates": {
+    "latitude": -30.36374,
+    "longitude": 152.72891
+   },
+   "coordinates_source": "osm nominatim Dorrigo Rainforest Centre (visitor hub)",
+   "proposed_category": "park",
+   "proposed_rank": 3,
+   "proposed_defaultZoomSpanKm": 40,
+   "views": 2875,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/dorrigo-national-park",
+    "https://en.wikivoyage.org/wiki/Dorrigo_National_Park"
+   ],
+   "members": [
+    "Skywalk",
+    "Wonga Walk",
+    "Dangar Falls",
+    "Crystal Shower Falls",
+    "Dorrigo",
+    "Bellingen",
+    "Glenifer Road Swimming Hole"
+   ],
+   "member_count": 7,
+   "reason": "National park (World Heritage Gondwana rainforest, NPWS and Wikivoyage): destination by rule. Sights: Skywalk, Wonga Walk, waterfalls; gateways Dorrigo and Bellingen. Pin is the Dorrigo Rainforest Centre.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "dorrigo-national-park"
+   },
+   "status": "PROPOSAL ONLY, not added: needs description, three reasons with photos, tips, best months and a header (WRITING.md, Pipeline C).",
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "View from Skywalk lookout at Dorrigo National Park on 2025 ASBS Conference field trip 6 Nov 20256 Nov 2025 02.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:View_from_Skywalk_lookout_at_Dorrigo_National_Park_on_2025_ASBS_Conference_field_trip_6_Nov_20256_Nov_2025_02.jpg",
+    "width": 4080,
+    "height": 3060,
+    "licence": "CC BY 4.0"
+   },
+   "hero_crop": "ok",
+   "brightness": {
+    "p40": 0.451,
+    "mean": 0.45
+   },
+   "photo_date": "2025-11-06 12:22:24",
+   "photo_note": "View from the Skywalk lookout over the rainforest and ranges (2025). Shows the park's view, not the Skywalk itself; ok for the park."
+  },
+  {
+   "name": "South West Rocks",
+   "action": "new-destination",
+   "destination": null,
+   "id": "south-west-rocks",
+   "coordinates": {
+    "latitude": -30.89439,
+    "longitude": 153.04068
+   },
+   "coordinates_source": "osm nominatim boundary centroid",
+   "proposed_category": "city",
+   "proposed_rank": 4,
+   "proposed_defaultZoomSpanKm": 40,
+   "views": 18227,
+   "counted_sources": [],
+   "members": [
+    "Trial Bay Gaol",
+    "Smoky Cape Lighthouse",
+    "Arakoon National Park",
+    "Hat Head National Park"
+   ],
+   "member_count": 4,
+   "reason": "Town on the Macleay mouth with 4 kept places around it (Trial Bay Gaol, Smoky Cape, Arakoon and Hat Head national parks). Hat Head and Arakoon are national parks (destinations by rule) but too small to stand apart; folded here to avoid overlap. Zero counted sources for the town itself (Wikipedia only): evidence is the park listings. Kempsey is 28 km away and stays standalone.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "south-west-rocks"
+   },
+   "status": "PROPOSAL ONLY, not added: needs description, three reasons with photos, tips, best months and a header (WRITING.md, Pipeline C).",
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "A Day at the Beach, Horseshoe Bay South West Rocks.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:A_Day_at_the_Beach,_Horseshoe_Bay_South_West_Rocks.jpg",
+    "width": 1944,
+    "height": 2592,
+    "licence": "CC BY-SA 4.0"
+   },
+   "hero_crop": "ok",
+   "brightness": {
+    "p40": 0.329,
+    "mean": 0.405
+   },
+   "photo_date": "2013-04-09 14:01:55",
+   "photo_note": "Horseshoe Bay beach, rocks and sea, 2013 portrait; ok but a close beach scene, not the town."
+  },
+  {
+   "name": "Forster",
+   "action": "new-destination",
+   "destination": null,
+   "id": "forster",
+   "coordinates": {
+    "latitude": -32.18209,
+    "longitude": 152.51312
+   },
+   "coordinates_source": "osm nominatim boundary centroid",
+   "proposed_category": "city",
+   "proposed_rank": 4,
+   "proposed_defaultZoomSpanKm": 50,
+   "views": 22730,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Forster",
+    "https://en.wikivoyage.org/wiki/Mid-North_Coast"
+   ],
+   "members": [
+    "Booti Booti National Park",
+    "Cape Hawke Lookout",
+    "Bennetts Head Lookout",
+    "Boomerang Beach",
+    "Blueys Beach",
+    "Elizabeth Beach",
+    "Diamond Beach",
+    "Shelly Beach (Forster)"
+   ],
+   "member_count": 8,
+   "reason": "Twin-town base (with Tuncurry, which Wikivoyage folds into Forster) with 8 kept places on the Booti Booti peninsula, all within 17 km. Booti Booti National Park is a spot, not its own destination, because it overlaps Forster.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "forster"
+   },
+   "status": "PROPOSAL ONLY, not added: needs description, three reasons with photos, tips, best months and a header (WRITING.md, Pipeline C).",
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Belton Park foreshore Forster, NSW, 2023, 04.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Belton_Park_foreshore_Forster,_NSW,_2023,_04.jpg",
+    "width": 4032,
+    "height": 3024,
+    "licence": "CC BY-SA 4.0"
+   },
+   "hero_crop": "ok",
+   "brightness": {
+    "p40": 0.69,
+    "mean": 0.647
+   },
+   "photo_date": "2023-01-21 14:37:07",
+   "photo_note": "Waterfront with cruise boat and shops on the Wallis Lake channel; recognisable town waterfront."
+  },
+  {
+   "name": "Myall Lakes National Park",
+   "action": "new-destination",
+   "destination": null,
+   "id": "myall-lakes-national-park",
+   "coordinates": {
+    "latitude": -32.50802,
+    "longitude": 152.30465
+   },
+   "coordinates_source": "osm nominatim Bombah Point (ferry crossing, main visitor hub), not the park centroid",
+   "proposed_category": "park",
+   "proposed_rank": 4,
+   "proposed_defaultZoomSpanKm": 60,
+   "views": 1346,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/myall-lakes-national-park",
+    "https://en.wikivoyage.org/wiki/Mid-North_Coast"
+   ],
+   "members": [
+    "Sugarloaf Point Lighthouse",
+    "Seal Rocks",
+    "Number One Beach",
+    "Treachery Headland Walking Track",
+    "Yacaaba Headland Walking Track",
+    "Dark Point Walking Track"
+   ],
+   "member_count": 6,
+   "reason": "National park: destination by rule (NPWS, Wikivoyage). Sights: Seal Rocks, Sugarloaf Point Lighthouse, Number One Beach, three walks. Pin is Bombah Point, the main visitor point.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "myall-lakes-national-park"
+   },
+   "status": "PROPOSAL ONLY, not added: needs description, three reasons with photos, tips, best months and a header (WRITING.md, Pipeline C).",
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Myall Lakes.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Myall_Lakes.jpg",
+    "width": 4835,
+    "height": 3376,
+    "licence": "CC BY-SA 4.0"
+   },
+   "hero_crop": "ok",
+   "brightness": {
+    "p40": 0.573,
+    "mean": 0.59
+   },
+   "photo_date": "2017-02-26 01:28:04",
+   "photo_note": "Lake foreshore with a leaning tree; the saturated sky and greens look HDR-processed, which IMAGES.md discourages; weak pass."
+  },
+  {
+   "name": "Taree",
+   "action": "new-destination",
+   "destination": null,
+   "id": "taree",
+   "coordinates": {
+    "latitude": -31.91286,
+    "longitude": 152.46085
+   },
+   "coordinates_source": "osm nominatim place=town node",
+   "proposed_category": "city",
+   "proposed_rank": 5,
+   "proposed_defaultZoomSpanKm": 60,
+   "views": 27896,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Taree"
+   ],
+   "members": [
+    "Big Oyster",
+    "Crowdy Bay National Park",
+    "Old Bar",
+    "Big Axe"
+   ],
+   "member_count": 4,
+   "reason": "Manning Valley regional town (own Wikivoyage chapter) with Big Oyster, Old Bar, Crowdy Bay National Park and Big Axe within 31 km. Weakest proposal: 4 spots, 1 counted source for the town. Standalone if declined.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "taree"
+   },
+   "status": "PROPOSAL ONLY, not added: needs description, three reasons with photos, tips, best months and a header (WRITING.md, Pipeline C).",
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "none",
+   "photo": null,
+   "photo_note": "Only a courthouse, a distant bridge over the flooded river and a park series; none shows the town. Non-Commons needed."
+  },
+  {
+   "name": "Nambucca Heads",
+   "action": "new-destination",
+   "destination": null,
+   "id": "nambucca-heads",
+   "coordinates": {
+    "latitude": -30.64495,
+    "longitude": 152.99245
+   },
+   "coordinates_source": "osm nominatim boundary centroid",
+   "proposed_category": "city",
+   "proposed_rank": 5,
+   "proposed_defaultZoomSpanKm": 40,
+   "views": 14035,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Nambucca_Heads"
+   ],
+   "members": [
+    "Urunga Boardwalk",
+    "Urunga",
+    "Hungry Head Beach",
+    "Captain Cook Lookout"
+   ],
+   "member_count": 4,
+   "reason": "Nambucca Heads and Urunga (22 km apart) with 5 kept places between them. Weak cluster (1 source each); decline and the 5 become standalone spots.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "nambucca-heads"
+   },
+   "status": "PROPOSAL ONLY, not added: needs description, three reasons with photos, tips, best months and a header (WRITING.md, Pipeline C).",
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "none",
+   "photo": null,
+   "photo_note": "Only aerials, a rail bridge, a car park and a mosaic close-up; none acceptable for a spot. Non-Commons needed."
+  },
+  {
+   "name": "Barrington Tops National Park",
+   "action": "new-destination",
+   "destination": null,
+   "id": "barrington-tops-national-park",
+   "coordinates": {
+    "latitude": -32.05278,
+    "longitude": 151.49361
+   },
+   "coordinates_source": "wikipedia:Barrington Tops National Park; a park point, the walks (Careys Peak, Antarctic Beech) are the real stops",
+   "proposed_category": "park",
+   "proposed_rank": 4,
+   "proposed_defaultZoomSpanKm": 60,
+   "views": 5259,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/barrington-tops-national-park",
+    "https://en.wikivoyage.org/wiki/Barrington_Tops_National_Park"
+   ],
+   "members": [
+    "Antarctic Beech Forest Walking Track",
+    "Careys Peak Lookout"
+   ],
+   "member_count": 2,
+   "reason": "National park: destination by rule (World Heritage plateau). Only 2 kept sights (Antarctic Beech Forest Walk, Careys Peak) and a held gateway (Gloucester). Pin is a Wikipedia park point.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "barrington-tops-national-park"
+   },
+   "status": "PROPOSAL ONLY, not added: needs description, three reasons with photos, tips, best months and a header (WRITING.md, Pipeline C).",
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "View into the Hunter Valley - Barrington Tops National Park.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:View_into_the_Hunter_Valley_-_Barrington_Tops_National_Park.jpg",
+    "width": 4650,
+    "height": 2616,
+    "licence": "CC BY-SA 4.0"
+   },
+   "hero_crop": "ok",
+   "brightness": {
+    "p40": 0.365,
+    "mean": 0.46
+   },
+   "photo_date": "2017-12-03 02:56:29",
+   "photo_note": "Ranges from the park, 2017, titled 'View into the Hunter Valley' but in the park."
+  }
+ ],
+ "held": [
+  {
+   "name": "Gloucester",
+   "action": "hold",
+   "verdict": "review",
+   "views": 14295,
+   "counted_sources": 1,
+   "coordinates": {
+    "latitude": -32.00944444,
+    "longitude": 151.96027778
+   },
+   "coordinates_source": "wikipedia:Gloucester, New South Wales (town point; the spot is the town)",
+   "reason": "Not placed: held for owner review (one counted source, and the draw is Barrington Tops beyond it, the Pipiriki-type gateway benchmark). If approved: a spot of barrington-tops-national-park (about 44 km from the park pin, just inside 75% of its 60 km span), or standalone if that destination is declined. Suggested id barrington-tops-national-park-3 / standalone \"gloucester\".",
+   "case_for": "Wikivoyage Mid-North Coast names it as the Avon Valley centre and Barrington Tops gateway; rail and tourism-board backing.",
+   "case_against": "Service town; one counted source; the draw is the park."
+  }
+ ]
+}

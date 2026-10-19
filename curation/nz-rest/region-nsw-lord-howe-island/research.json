@@ -1,0 +1,708 @@
+{
+ "region": "nsw-lord-howe-island",
+ "researcher": "quill",
+ "date": "2026-10-18",
+ "mode": "standalone fallback (Lord Howe Island destination not being added); ids are the standalone_fallback ids",
+ "shared_notes": [
+  "Lord Howe Island Board visitor fees (the Environment levy, included in the airfare for Skytrans/Eastern Air Services arrivals per https://www.lhib.nsw.gov.au/visitors/environment-and-passenger-levies) are a trip cost, not a per-spot cost; the current amount is in the Board's Fees and Charges PDF (https://www.lhib.nsw.gov.au/sites/default/files/2026-07/Fees%20and%20Charges.pdf), not read.",
+  "Mount Gower requires a licensed guide (LHI Board walking-tracks page and tourism page). Mt Eliza track is closed 1 Sept to 1 March for nesting sooty terns; no closure found for Malabar, Intermediate Hill or Goat House.",
+  "Coordinates are carried over from Atlas placement (OSM feature, route midpoints for trails as the owner asked); resolve-pin.py was not re-run."
+ ],
+ "entries": [
+  {
+   "id": "mount-gower",
+   "name": "Mount Gower",
+   "placement_id": "lord-howe-island-1",
+   "kind": "new",
+   "standalone": true,
+   "facts": [
+    {
+     "claim": "Mt Gower is Lord Howe's highest mountain at 875 m; the hike is a challenging eight-hour return trek of about 14 km with rope-assisted climbs and dizzying drops, rated one of Australia's best day walks.",
+     "source": "https://lordhoweisland.info/natural-attractions/natural-treasures/mt-gower/"
+    },
+    {
+     "claim": "Mt Gower is 4.5 km one way, difficult, and 'only accessible with a guide'; it 'must only be attempted with a licensed guide'.",
+     "source": "https://lordhoweisland.info/experiences/walking-and-hiking/"
+    },
+    {
+     "claim": "Visitor access to Mt Gower is only permitted with a licensed guide (LHI Board).",
+     "source": "https://www.lhib.nsw.gov.au/visitors/walking-tracks"
+    },
+    {
+     "claim": "Guided Mt Gower treks are run by Lord Howe Environmental Tours (Dean Hiscox, $200 per person) and Sea to Summit Expeditions (Jack Shick, veteran guide of 2,200+ walks, limited numbers, advance booking recommended).",
+     "source": "https://lordhoweisland.info/experiences/tours/lord-howe-environmental-tours/"
+    },
+    {
+     "claim": "The summit has misty cloud forest with Lord Howe woodhens and views over the southern end of the island.",
+     "source": "https://lordhoweisland.info/natural-attractions/natural-treasures/mt-gower/"
+    }
+   ],
+   "hours": "Guided tours only; book ahead (about 8 hours return)",
+   "visitHoursMin": 6,
+   "visitHoursMax": 8,
+   "costMin": 200,
+   "costMax": 200,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "Guided-only and sold by at least two operators (Lord Howe Environmental Tours, Sea to Summit Expeditions), so no single ticketUrl. Candidate informational page: https://lordhoweisland.info/natural-attractions/natural-treasures/mt-gower/ (tourism association, 200, title 'Mt Gower'). Operator sites lordhoweislandtours.com (loaded, 200, Lord Howe Environmental Tours) and the Sea to Summit sites were not individually checked for the place.",
+   "ticketUrl_candidate": "https://lordhoweisland.info/natural-attractions/natural-treasures/mt-gower/",
+   "coordinates_check": {
+    "current": {
+     "latitude": -31.58238,
+     "longitude": 159.07883
+    },
+    "source_point": {
+     "latitude": -31.58238,
+     "longitude": 159.07883
+    },
+    "source": "osm natural=peak (Mount Gower node 391694667) + Photon; guide route midpoint -31.5725,159.07417 in notes (carried over from Atlas placement; resolve-pin not re-run)",
+    "ok": true
+   },
+   "category": "hike",
+   "unverified": [
+    "$200 is from the tourism association's Lord Howe Environmental Tours listing (undated); the Sea to Summit price and the operators' current prices were not found.",
+    "Which months guides run was not found.",
+    "Lord Howe Island Board visitor fees (the Environment levy, included in the airfare for Skytrans/Eastern Air Services arrivals per https://www.lhib.nsw.gov.au/visitors/environment-and-passenger-levies) are a trip cost, not a per-spot cost; the current amount is in the Board's Fees and Charges PDF (https://www.lhib.nsw.gov.au/sites/default/files/2026-07/Fees%20and%20Charges.pdf), not read."
+   ],
+   "fee_note": "Lord Howe Island Board visitor fees (the Environment levy, included in the airfare for Skytrans/Eastern Air Services arrivals per https://www.lhib.nsw.gov.au/visitors/environment-and-passenger-levies) are a trip cost, not a per-spot cost; the current amount is in the Board's Fees and Charges PDF (https://www.lhib.nsw.gov.au/sites/default/files/2026-07/Fees%20and%20Charges.pdf), not read.",
+   "guided_only": true,
+   "bio_note": "Bio '8-hour guided walk with rope-assisted sections' is supported. 'cloud-forest views' is supported (misty forest, views to the south)."
+  },
+  {
+   "id": "balls-pyramid",
+   "name": "Ball's Pyramid",
+   "placement_id": "balls-pyramid",
+   "kind": "new",
+   "standalone": true,
+   "facts": [
+    {
+     "claim": "Ball's Pyramid is 23 km southeast of the island, the world's tallest sea stack at 551 m and a site of some of Australia's most remarkable diving.",
+     "source": "https://lordhoweisland.info/natural-attractions/natural-treasures/balls-pyramid/"
+    },
+    {
+     "claim": "It is a popular spot for fishing charters and the only known place where the Ballina Angelfish can be seen scuba diving.",
+     "source": "https://lordhoweisland.info/natural-attractions/natural-treasures/balls-pyramid/"
+    },
+    {
+     "claim": "Recreational climbing there is prohibited, to protect the last wild population of the Lord Howe Island stick insect; climbers need Board permission.",
+     "source": "https://en.wikipedia.org/wiki/Lord_Howe_Island"
+    },
+    {
+     "claim": "Reef N Beyond runs a Ball's Pyramid / Lord Howe Island Expedition boat tour from A$250 (3.5 hours, ages 5 and up, up to 22 people, snorkelling optional); Dive Lord Howe runs Balls Pyramid dive trips (operates September to May).",
+     "source": "https://visitlordhowe.com.au/"
+    },
+    {
+     "claim": "Belle Chase offers an 8-hour shared Ball's Pyramid shelf fishing charter at $450 per person.",
+     "source": "https://lordhoweisland.info/experiences/tours/belle-chase/"
+    }
+   ],
+   "hours": "Boat tours and dive trips by booking, weather permitting",
+   "visitHoursMin": 3,
+   "visitHoursMax": 4,
+   "costMin": 250,
+   "costMax": 250,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "Sold by many operators (Reef N Beyond, Dive Lord Howe, Belle Chase, Sea Lord Howe), so no ticketUrl per WRITING.md. Candidate informational page: https://lordhoweisland.info/natural-attractions/natural-treasures/balls-pyramid/ (200, title \"Ball's Pyramid\").",
+   "ticketUrl_candidate": "https://lordhoweisland.info/natural-attractions/natural-treasures/balls-pyramid/",
+   "coordinates_check": {
+    "current": {
+     "latitude": -31.75416667,
+     "longitude": 159.25166667
+    },
+    "source_point": {
+     "latitude": -31.75416667,
+     "longitude": 159.25166667
+    },
+    "source": "wikipedia:Ball's Pyramid (offshore stack) (carried over from Atlas placement; resolve-pin not re-run)",
+    "ok": true
+   },
+   "category": "nature",
+   "unverified": [
+    "A$250 is the 'from' price on Reef N Beyond's homepage (https://visitlordhowe.com.au/, 200, loaded) for the cheapest expedition; the dive trip price was not found.",
+    "Season: Dive Lord Howe operates September to May; Reef N Beyond has low-season tours for Sep/May; June-August availability not checked.",
+    "Bio says '23 km offshore': tourism board and Wikipedia say 23 km (Belle Chase page says 15 km); Wikipedia's own diving paragraph says 26 km.",
+    "Lord Howe Island Board visitor fees (the Environment levy, included in the airfare for Skytrans/Eastern Air Services arrivals per https://www.lhib.nsw.gov.au/visitors/environment-and-passenger-levies) are a trip cost, not a per-spot cost; the current amount is in the Board's Fees and Charges PDF (https://www.lhib.nsw.gov.au/sites/default/files/2026-07/Fees%20and%20Charges.pdf), not read."
+   ],
+   "wiki_title": "Ball's Pyramid",
+   "fee_note": "Lord Howe Island Board visitor fees (the Environment levy, included in the airfare for Skytrans/Eastern Air Services arrivals per https://www.lhib.nsw.gov.au/visitors/environment-and-passenger-levies) are a trip cost, not a per-spot cost; the current amount is in the Board's Fees and Charges PDF (https://www.lhib.nsw.gov.au/sites/default/files/2026-07/Fees%20and%20Charges.pdf), not read.",
+   "wiki_note": "Article 'Ball's Pyramid' exists; placement already sets wiki."
+  },
+  {
+   "id": "neds-beach",
+   "name": "Ned's Beach",
+   "placement_id": "lord-howe-island-2",
+   "kind": "new",
+   "standalone": true,
+   "facts": [
+    {
+     "claim": "At Ned's Beach, on the island's north-east, you can wade in and hand-feed fish (mullet, wrasse, garfish, silver-drummer, spangled emperor, kingfish); golden sand and calm water suit kids paddling or snorkelling over a fringing coral reef.",
+     "source": "https://lordhoweisland.info/natural-attractions/natural-treasures/neds-beach/"
+    },
+    {
+     "claim": "Masks, fins and snorkels can be hired at Ned's Beach, paid into an honesty box.",
+     "source": "https://lordhoweisland.info/natural-attractions/natural-treasures/neds-beach/"
+    },
+    {
+     "claim": "The Malabar Hill track starts off the side of the road just before the grassy section at Ned's Beach.",
+     "source": "https://lordhoweisland.info/experiences/walking-and-hiking/"
+    },
+    {
+     "claim": "The fish-food dispenser takes $1 coins; Ned's Beach is the best-known snorkelling beach on the island.",
+     "source": "https://en.wikivoyage.org/wiki/Lord_Howe_Island"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "Public beach with no single steward; no ticketUrl. Candidate informational page: https://lordhoweisland.info/natural-attractions/natural-treasures/neds-beach/ (200, title \"Ned's Beach\").",
+   "ticketUrl_candidate": "https://lordhoweisland.info/natural-attractions/natural-treasures/neds-beach/",
+   "coordinates_check": {
+    "current": {
+     "latitude": -31.51764,
+     "longitude": 159.06414
+    },
+    "source_point": {
+     "latitude": -31.51764,
+     "longitude": 159.06414
+    },
+    "source": "osm natural=beach (Neds Beach way 157694811); Photon agrees (carried over from Atlas placement; resolve-pin not re-run)",
+    "ok": true
+   },
+   "category": "beach",
+   "unverified": [
+    "Fish food ($1 coin) and snorkel hire are optional extras, not an entry cost. No fee for the beach itself was found.",
+    "Lord Howe Island Board visitor fees (the Environment levy, included in the airfare for Skytrans/Eastern Air Services arrivals per https://www.lhib.nsw.gov.au/visitors/environment-and-passenger-levies) are a trip cost, not a per-spot cost; the current amount is in the Board's Fees and Charges PDF (https://www.lhib.nsw.gov.au/sites/default/files/2026-07/Fees%20and%20Charges.pdf), not read."
+   ],
+   "fee_note": "Lord Howe Island Board visitor fees (the Environment levy, included in the airfare for Skytrans/Eastern Air Services arrivals per https://www.lhib.nsw.gov.au/visitors/environment-and-passenger-levies) are a trip cost, not a per-spot cost; the current amount is in the Board's Fees and Charges PDF (https://www.lhib.nsw.gov.au/sites/default/files/2026-07/Fees%20and%20Charges.pdf), not read.",
+   "wiki_title": "Ned's Beach"
+  },
+  {
+   "id": "malabar-hill",
+   "name": "Malabar Hill",
+   "placement_id": "lord-howe-island-3",
+   "kind": "new",
+   "standalone": true,
+   "facts": [
+    {
+     "claim": "Red-tailed tropicbirds perform courting flights at Malabar between September and May; the cliffs host the world's largest nesting ground for the birds.",
+     "source": "https://lordhoweisland.info/natural-attractions/natural-treasures/malabar-hill/"
+    },
+    {
+     "claim": "The two-hour return walk passes through palm forest with muttonbird burrows to panoramic views of Mt Lidgbird and Mt Gower to the south and the Admiralty Islands to the north.",
+     "source": "https://lordhoweisland.info/natural-attractions/natural-treasures/malabar-hill/"
+    },
+    {
+     "claim": "Malabar Hill to Dawsons Point Ridge is 1.5 km one way, moderate: it starts at Ned's Beach, climbs a grassy slope to Pooles Lookout, reaches the 208 m summit and follows the cliff edge past Kim's Lookout.",
+     "source": "https://lordhoweisland.info/experiences/walking-and-hiking/"
+    },
+    {
+     "claim": "Wikivoyage calls the climb to Malabar Ridge the most popular walk on the island.",
+     "source": "https://en.wikivoyage.org/wiki/Lord_Howe_Island"
+    }
+   ],
+   "hours": "Open 24 hours (daytime walk)",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "Walking track in the Permanent Park Preserve with no single steward; no ticketUrl. Candidate pages: https://lordhoweisland.info/natural-attractions/natural-treasures/malabar-hill/ (200) and https://www.lhib.nsw.gov.au/visitors/walking-tracks (LHI Board, 200).",
+   "ticketUrl_candidate": "https://lordhoweisland.info/natural-attractions/natural-treasures/malabar-hill/",
+   "coordinates_check": {
+    "current": {
+     "latitude": -31.51267,
+     "longitude": 159.06113
+    },
+    "source_point": {
+     "latitude": -31.51267,
+     "longitude": 159.06113
+    },
+    "source": "osm natural=peak Malabar Hill (391923657) (carried over from Atlas placement; resolve-pin not re-run)",
+    "ok": true
+   },
+   "category": "viewpoint",
+   "unverified": [
+    "No Malabar track closure notice found in the LHI Board site or a web search (only Mt Eliza is closed, 1 Sept to 1 March for sooty terns). A 2023 Board track map headed as a Myrtle Rust closures map lists Malabar; its current status was not read.",
+    "Lord Howe Island Board visitor fees (the Environment levy, included in the airfare for Skytrans/Eastern Air Services arrivals per https://www.lhib.nsw.gov.au/visitors/environment-and-passenger-levies) are a trip cost, not a per-spot cost; the current amount is in the Board's Fees and Charges PDF (https://www.lhib.nsw.gov.au/sites/default/files/2026-07/Fees%20and%20Charges.pdf), not read."
+   ],
+   "wiki_title": "Malabar Hill, Lord Howe Island",
+   "fee_note": "Lord Howe Island Board visitor fees (the Environment levy, included in the airfare for Skytrans/Eastern Air Services arrivals per https://www.lhib.nsw.gov.au/visitors/environment-and-passenger-levies) are a trip cost, not a per-spot cost; the current amount is in the Board's Fees and Charges PDF (https://www.lhib.nsw.gov.au/sites/default/files/2026-07/Fees%20and%20Charges.pdf), not read.",
+   "closures_checked": "No seasonal closure found for Malabar; the Mt Eliza closure (Sep-Mar) is a different track."
+  },
+  {
+   "id": "old-settlement-beach",
+   "name": "Old Settlement Beach",
+   "placement_id": "lord-howe-island-4",
+   "kind": "new",
+   "standalone": true,
+   "facts": [
+    {
+     "claim": "Weather-sculpted sandstone rocks dot the southern end of Old Settlement Beach; turtles are often sighted close to shore at mid to high tides.",
+     "source": "https://lordhoweisland.info/natural-attractions/natural-treasures/old-settlement/"
+    },
+    {
+     "claim": "It is a picture-perfect spot for picnics, swims and snorkelling with mountain views.",
+     "source": "https://lordhoweisland.info/natural-attractions/natural-treasures/old-settlement/"
+    },
+    {
+     "claim": "The Max Nichols Memorial Track to North Bay (1.5 km one way, moderate) starts at the picnic area at Old Settlement Beach.",
+     "source": "https://lordhoweisland.info/experiences/walking-and-hiking/"
+    },
+    {
+     "claim": "Green turtles are best seen grazing on sea-grass off Old Settlement Beach; the Catalina Monument is next to the bike parking.",
+     "source": "https://en.wikivoyage.org/wiki/Lord_Howe_Island"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "Public beach with no single steward; no ticketUrl. Candidate page: https://lordhoweisland.info/natural-attractions/natural-treasures/old-settlement/ (200, title 'Old Settlement').",
+   "ticketUrl_candidate": "https://lordhoweisland.info/natural-attractions/natural-treasures/old-settlement/",
+   "coordinates_check": {
+    "current": {
+     "latitude": -31.52015,
+     "longitude": 159.05775
+    },
+    "source_point": {
+     "latitude": -31.52015,
+     "longitude": 159.05775
+    },
+    "source": "osm natural=beach (Old Settlement Beach way 157694823) (carried over from Atlas placement; resolve-pin not re-run)",
+    "ok": true
+   },
+   "category": "beach",
+   "unverified": [
+    "Lord Howe Island Board visitor fees (the Environment levy, included in the airfare for Skytrans/Eastern Air Services arrivals per https://www.lhib.nsw.gov.au/visitors/environment-and-passenger-levies) are a trip cost, not a per-spot cost; the current amount is in the Board's Fees and Charges PDF (https://www.lhib.nsw.gov.au/sites/default/files/2026-07/Fees%20and%20Charges.pdf), not read.",
+    "Bio calls it a 'southern beach'; the tourism page puts it in the island's north and uses 'southern end' for the beach's own south end. Rewrite suggested below."
+   ],
+   "fee_note": "Lord Howe Island Board visitor fees (the Environment levy, included in the airfare for Skytrans/Eastern Air Services arrivals per https://www.lhib.nsw.gov.au/visitors/environment-and-passenger-levies) are a trip cost, not a per-spot cost; the current amount is in the Board's Fees and Charges PDF (https://www.lhib.nsw.gov.au/sites/default/files/2026-07/Fees%20and%20Charges.pdf), not read.",
+   "bio_issue": "'A southern beach' is wrong; the source's 'southern end' is of the beach itself.",
+   "bio_suggestion": "Weather-sculpted sandstone rocks line this lagoon beach, where green turtles graze close to shore."
+  },
+  {
+   "id": "blinky-beach",
+   "name": "Blinky Beach",
+   "placement_id": "lord-howe-island-5",
+   "kind": "new",
+   "standalone": true,
+   "facts": [
+    {
+     "claim": "Blinky Beach is an unspoilt, secluded beach for surfing, picnics, swimming in turquoise water and fishing.",
+     "source": "https://lordhoweisland.info/natural-attractions/natural-treasures/blinky-beach/"
+    },
+    {
+     "claim": "The Transit Hill track continues about 0.5 km further to Blinky Beach; it is steep and slippery when wet. From the beach you can walk back along Lagoon Road.",
+     "source": "https://lordhoweisland.info/experiences/walking-and-hiking/"
+    },
+    {
+     "claim": "Transit Hill walkers can walk across Blinky Beach along a narrow track to reach the lookout, then swim at Blinky Beach on return.",
+     "source": "https://lordhoweisland.info/natural-attractions/natural-treasures/transit-hill/"
+    },
+    {
+     "claim": "Wikivoyage describes the west side of the island as having several sandy surf beaches.",
+     "source": "https://en.wikivoyage.org/wiki/Lord_Howe_Island"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "Public beach with no single steward; no ticketUrl. Candidate page: https://lordhoweisland.info/natural-attractions/natural-treasures/blinky-beach/ (200).",
+   "ticketUrl_candidate": "https://lordhoweisland.info/natural-attractions/natural-treasures/blinky-beach/",
+   "coordinates_check": {
+    "current": {
+     "latitude": -31.53823,
+     "longitude": 159.08192
+    },
+    "source_point": {
+     "latitude": -31.53823,
+     "longitude": 159.08192
+    },
+    "source": "osm tourism=attraction 'Surfing' on natural=beach way 32424463 (Blinky Beach); Photon beach point -31.54046,159.08225 is 250 m south (carried over from Atlas placement; resolve-pin not re-run)",
+    "ok": true
+   },
+   "category": "beach",
+   "unverified": [
+    "Lord Howe Island Board visitor fees (the Environment levy, included in the airfare for Skytrans/Eastern Air Services arrivals per https://www.lhib.nsw.gov.au/visitors/environment-and-passenger-levies) are a trip cost, not a per-spot cost; the current amount is in the Board's Fees and Charges PDF (https://www.lhib.nsw.gov.au/sites/default/files/2026-07/Fees%20and%20Charges.pdf), not read.",
+    "The bio's 'picnic area' is not stated by the sources (picnicking is); safest to drop 'with a picnic area'. Surf-hazard and lifeguard status not found."
+   ],
+   "fee_note": "Lord Howe Island Board visitor fees (the Environment levy, included in the airfare for Skytrans/Eastern Air Services arrivals per https://www.lhib.nsw.gov.au/visitors/environment-and-passenger-levies) are a trip cost, not a per-spot cost; the current amount is in the Board's Fees and Charges PDF (https://www.lhib.nsw.gov.au/sites/default/files/2026-07/Fees%20and%20Charges.pdf), not read."
+  },
+  {
+   "id": "north-bay-lord-howe",
+   "name": "North Bay",
+   "placement_id": "lord-howe-island-6",
+   "kind": "new",
+   "standalone": true,
+   "facts": [
+    {
+     "claim": "North Bay is a secluded beach at the north of the island accessible only by foot or water, with migratory seabirds, short walks to Mt Eliza and Old Gulch, and snorkelling with fish, turtles, stingrays and corals.",
+     "source": "https://lordhoweisland.info/natural-attractions/natural-treasures/north-bay/"
+    },
+    {
+     "claim": "Snorkellers can explore the wreck of the Favourite, on the sea floor since 1965.",
+     "source": "https://lordhoweisland.info/natural-attractions/natural-treasures/north-bay/"
+    },
+    {
+     "claim": "The picnic area at North Bay has toilets and barbecue facilities; the Max Nichols track from Old Settlement is 1.5 km one way, moderate.",
+     "source": "https://lordhoweisland.info/experiences/walking-and-hiking/"
+    },
+    {
+     "claim": "Mt Eliza, from the North Bay picnic area, is closed September to March for nesting sooty terns; Old Gulch is a 0.3 km easy boardwalk walk from the picnic area.",
+     "source": "https://lordhoweisland.info/experiences/walking-and-hiking/"
+    },
+    {
+     "claim": "Marine Adventures runs 3-hour North Bay Turtle and Nature Tours.",
+     "source": "https://lordhoweisland.info/experiences/tours/marine-adventures/"
+    }
+   ],
+   "hours": "Open 24 hours (Mt Eliza track closed 1 September to 1 March)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "Public beach with no single steward; no ticketUrl. Candidate page: https://lordhoweisland.info/natural-attractions/natural-treasures/north-bay/ (200). Boat access sold by several operators.",
+   "ticketUrl_candidate": "https://lordhoweisland.info/natural-attractions/natural-treasures/north-bay/",
+   "coordinates_check": {
+    "current": {
+     "latitude": -31.51865,
+     "longitude": 159.04359
+    },
+    "source_point": {
+     "latitude": -31.51865,
+     "longitude": 159.04359
+    },
+    "source": "osm natural=beach 'North Beach' way 157694817 centroid; track end -31.5165,159.0448 (carried over from Atlas placement; resolve-pin not re-run)",
+    "ok": true
+   },
+   "category": "beach",
+   "unverified": [
+    "Lord Howe Island Board visitor fees (the Environment levy, included in the airfare for Skytrans/Eastern Air Services arrivals per https://www.lhib.nsw.gov.au/visitors/environment-and-passenger-levies) are a trip cost, not a per-spot cost; the current amount is in the Board's Fees and Charges PDF (https://www.lhib.nsw.gov.au/sites/default/files/2026-07/Fees%20and%20Charges.pdf), not read.",
+    "Mt Eliza closure confirmed for 2025-26 (https://www.lhib.nsw.gov.au/news/householder-annual-mt-eliza-track-closure-1-september-2025-1-march-2026-sooty-tern-breeding); the 2026-27 notice was not seen. The beach itself is not closed.",
+    "Placement coordinate is an approximate centroid (OSM names it 'North Beach')."
+   ],
+   "wiki_title": "North Bay",
+   "fee_note": "Lord Howe Island Board visitor fees (the Environment levy, included in the airfare for Skytrans/Eastern Air Services arrivals per https://www.lhib.nsw.gov.au/visitors/environment-and-passenger-levies) are a trip cost, not a per-spot cost; the current amount is in the Board's Fees and Charges PDF (https://www.lhib.nsw.gov.au/sites/default/files/2026-07/Fees%20and%20Charges.pdf), not read.",
+   "closures_checked": "Mt Eliza track (from North Bay) closed 1 Sep - 1 Mar for sooty terns; beach unaffected."
+  },
+  {
+   "id": "intermediate-hill-lord-howe",
+   "name": "Intermediate Hill",
+   "placement_id": "lord-howe-island-7",
+   "kind": "new",
+   "standalone": true,
+   "facts": [
+    {
+     "claim": "Intermediate Hill is 1 km one way, moderate, a steep and demanding climb to the 250 m summit; its viewing platform gives 'some of the best vistas on the island' including Ball's Pyramid.",
+     "source": "https://lordhoweisland.info/experiences/walking-and-hiking/"
+    },
+    {
+     "claim": "The track branches off 0.2 km from the start of the coastal track on Lagoon Road; the descent to Smoking Tree Ridge is very steep.",
+     "source": "https://lordhoweisland.info/experiences/walking-and-hiking/"
+    },
+    {
+     "claim": "Wikipedia lists the Intermediate Hill walk as 45 minutes return, 1 km.",
+     "source": "https://en.wikipedia.org/wiki/Lord_Howe_Island"
+    },
+    {
+     "claim": "Biosecurity: boot scrub stations sit at the start of tracks into the southern mountains.",
+     "source": "https://www.lhib.nsw.gov.au/visitors/walking-tracks"
+    }
+   ],
+   "hours": "Open 24 hours (daytime walk)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "Walking track with no single steward; no ticketUrl. Candidate page: https://lordhoweisland.info/experiences/walking-and-hiking/ (200, 'Walking & Hiking').",
+   "ticketUrl_candidate": "https://lordhoweisland.info/experiences/walking-and-hiking/",
+   "coordinates_check": {
+    "current": {
+     "latitude": -31.54973,
+     "longitude": 159.08735
+    },
+    "source_point": {
+     "latitude": -31.54973,
+     "longitude": 159.08735
+    },
+    "source": "osm natural=peak + tourism=viewpoint platform (way 473451312) (carried over from Atlas placement; resolve-pin not re-run)",
+    "ok": true
+   },
+   "category": "viewpoint",
+   "unverified": [
+    "Lord Howe Island Board visitor fees (the Environment levy, included in the airfare for Skytrans/Eastern Air Services arrivals per https://www.lhib.nsw.gov.au/visitors/environment-and-passenger-levies) are a trip cost, not a per-spot cost; the current amount is in the Board's Fees and Charges PDF (https://www.lhib.nsw.gov.au/sites/default/files/2026-07/Fees%20and%20Charges.pdf), not read.",
+    "No seasonal closure for Intermediate Hill found on the LHI Board site or by search (only Mt Eliza); not guaranteed."
+   ],
+   "fee_note": "Lord Howe Island Board visitor fees (the Environment levy, included in the airfare for Skytrans/Eastern Air Services arrivals per https://www.lhib.nsw.gov.au/visitors/environment-and-passenger-levies) are a trip cost, not a per-spot cost; the current amount is in the Board's Fees and Charges PDF (https://www.lhib.nsw.gov.au/sites/default/files/2026-07/Fees%20and%20Charges.pdf), not read.",
+   "closures_checked": "None found."
+  },
+  {
+   "id": "transit-hill-lord-howe",
+   "name": "Transit Hill",
+   "placement_id": "lord-howe-island-8",
+   "kind": "new",
+   "standalone": true,
+   "facts": [
+    {
+     "claim": "Transit Hill is 1.2 km one way, easy, from opposite the Administration Office; the summit lookout platform gives a 360-degree view.",
+     "source": "https://lordhoweisland.info/experiences/walking-and-hiking/"
+    },
+    {
+     "claim": "The return walk takes about an hour; birds along the way include emerald ground dove and golden whistler. You can return via Blinky Beach.",
+     "source": "https://lordhoweisland.info/natural-attractions/natural-treasures/transit-hill/"
+    },
+    {
+     "claim": "Wikipedia lists Transit Hill as 2 km, 2 hours return.",
+     "source": "https://en.wikipedia.org/wiki/Lord_Howe_Island"
+    }
+   ],
+   "hours": "Open 24 hours (daytime walk)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "Walking track with no single steward; no ticketUrl. Candidate page: https://lordhoweisland.info/natural-attractions/natural-treasures/transit-hill/ (200).",
+   "ticketUrl_candidate": "https://lordhoweisland.info/natural-attractions/natural-treasures/transit-hill/",
+   "coordinates_check": {
+    "current": {
+     "latitude": -31.5345,
+     "longitude": 159.07794
+    },
+    "source_point": {
+     "latitude": -31.5345,
+     "longitude": 159.07794
+    },
+    "source": "osm natural=peak Transit Hill (391843021); platform node -31.53443,159.07814 (carried over from Atlas placement; resolve-pin not re-run)",
+    "ok": true
+   },
+   "category": "viewpoint",
+   "unverified": [
+    "Lord Howe Island Board visitor fees (the Environment levy, included in the airfare for Skytrans/Eastern Air Services arrivals per https://www.lhib.nsw.gov.au/visitors/environment-and-passenger-levies) are a trip cost, not a per-spot cost; the current amount is in the Board's Fees and Charges PDF (https://www.lhib.nsw.gov.au/sites/default/files/2026-07/Fees%20and%20Charges.pdf), not read."
+   ],
+   "fee_note": "Lord Howe Island Board visitor fees (the Environment levy, included in the airfare for Skytrans/Eastern Air Services arrivals per https://www.lhib.nsw.gov.au/visitors/environment-and-passenger-levies) are a trip cost, not a per-spot cost; the current amount is in the Board's Fees and Charges PDF (https://www.lhib.nsw.gov.au/sites/default/files/2026-07/Fees%20and%20Charges.pdf), not read."
+  },
+  {
+   "id": "muttonbird-point",
+   "name": "Muttonbird Point",
+   "placement_id": "lord-howe-island-10",
+   "kind": "new",
+   "standalone": true,
+   "facts": [
+    {
+     "claim": "The coastal track to Boat Harbour via Muttonbird Point Lookout starts on Lagoon Road near the airport turn-off; about 1.4 km along, a sidetrack drops a short distance to a lookout platform with views across to Muttonbird Point.",
+     "source": "https://lordhoweisland.info/experiences/walking-and-hiking/"
+    },
+    {
+     "claim": "The track is moderate, 3.5 km one way to Boat Harbour, narrow with roots and rocks.",
+     "source": "https://lordhoweisland.info/experiences/walking-and-hiking/"
+    }
+   ],
+   "hours": "Open 24 hours (daytime walk)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "Lookout on a public walking track; no ticketUrl. Candidate page: https://lordhoweisland.info/experiences/walking-and-hiking/ (200).",
+   "ticketUrl_candidate": "https://lordhoweisland.info/experiences/walking-and-hiking/",
+   "coordinates_check": {
+    "current": {
+     "latitude": -31.54652,
+     "longitude": 159.09169
+    },
+    "source_point": {
+     "latitude": -31.54652,
+     "longitude": 159.09169
+    },
+    "source": "osm tourism=viewpoint Mutton Bird Point Viewing Platform (391696307); Photon locality agrees within 100 m (carried over from Atlas placement; resolve-pin not re-run)",
+    "ok": true
+   },
+   "category": "viewpoint",
+   "unverified": [
+    "Bio claims a seabird colony and a nearby blowhole: neither is stated by any source read; cut or source them. Only the lookout over Muttonbird Point is confirmed.",
+    "The lookout is on the coastal track and arguably part of it, not a separate stop (COVERAGE.md 'part of a larger spot'); Atlas kept it, owner may review.",
+    "Lord Howe Island Board visitor fees (the Environment levy, included in the airfare for Skytrans/Eastern Air Services arrivals per https://www.lhib.nsw.gov.au/visitors/environment-and-passenger-levies) are a trip cost, not a per-spot cost; the current amount is in the Board's Fees and Charges PDF (https://www.lhib.nsw.gov.au/sites/default/files/2026-07/Fees%20and%20Charges.pdf), not read."
+   ],
+   "wiki_title": "Mutton Bird Point",
+   "fee_note": "Lord Howe Island Board visitor fees (the Environment levy, included in the airfare for Skytrans/Eastern Air Services arrivals per https://www.lhib.nsw.gov.au/visitors/environment-and-passenger-levies) are a trip cost, not a per-spot cost; the current amount is in the Board's Fees and Charges PDF (https://www.lhib.nsw.gov.au/sites/default/files/2026-07/Fees%20and%20Charges.pdf), not read.",
+   "bio_issue": "Seabird colony and blowhole unsourced.",
+   "bio_suggestion": "A lookout platform on a side track off the coastal walk, with views across to Muttonbird Point."
+  },
+  {
+   "id": "goat-house-cave",
+   "name": "Goat House Cave",
+   "placement_id": "lord-howe-island-11",
+   "kind": "new",
+   "standalone": true,
+   "facts": [
+    {
+     "claim": "Goat House Cave is 2.1 km one way, difficult: access is from Lagoon Road, up Smoking Tree Ridge, then a very steep, narrow, demanding climb with sections where ropes assist climbers.",
+     "source": "https://lordhoweisland.info/experiences/walking-and-hiking/"
+    },
+    {
+     "claim": "Wikipedia lists Goat House Cave as a 5-hour return, 6 km walk.",
+     "source": "https://en.wikipedia.org/wiki/Lord_Howe_Island"
+    },
+    {
+     "claim": "Biosecurity boot scrub stations apply on tracks into the southern mountains.",
+     "source": "https://www.lhib.nsw.gov.au/visitors/walking-tracks"
+    }
+   ],
+   "hours": "Open 24 hours (daytime walk)",
+   "visitHoursMin": 3,
+   "visitHoursMax": 5,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "Walking track with no single steward; no ticketUrl. Candidate page: https://lordhoweisland.info/experiences/walking-and-hiking/ (200).",
+   "ticketUrl_candidate": "https://lordhoweisland.info/experiences/walking-and-hiking/",
+   "coordinates_check": {
+    "current": {
+     "latitude": -31.55302,
+     "longitude": 159.08575
+    },
+    "source_point": {
+     "latitude": -31.55302,
+     "longitude": 159.08575
+    },
+    "source": "midpoint of OSM path/track ways routed from Lagoon Road to the cave entrance (2.5 km); cave node natural=cave_entrance -31.56271,159.08812 (carried over from Atlas placement; resolve-pin not re-run)",
+    "ok": true
+   },
+   "category": "hike",
+   "unverified": [
+    "Bio claims a 'sweeping view over the island' from the cave: not stated in sources read; cut or source.",
+    "visitHours widened from 2-4 to 3-5 from Wikipedia's 5-hour return.",
+    "No seasonal closure found.",
+    "Lord Howe Island Board visitor fees (the Environment levy, included in the airfare for Skytrans/Eastern Air Services arrivals per https://www.lhib.nsw.gov.au/visitors/environment-and-passenger-levies) are a trip cost, not a per-spot cost; the current amount is in the Board's Fees and Charges PDF (https://www.lhib.nsw.gov.au/sites/default/files/2026-07/Fees%20and%20Charges.pdf), not read."
+   ],
+   "fee_note": "Lord Howe Island Board visitor fees (the Environment levy, included in the airfare for Skytrans/Eastern Air Services arrivals per https://www.lhib.nsw.gov.au/visitors/environment-and-passenger-levies) are a trip cost, not a per-spot cost; the current amount is in the Board's Fees and Charges PDF (https://www.lhib.nsw.gov.au/sites/default/files/2026-07/Fees%20and%20Charges.pdf), not read.",
+   "bio_issue": "'sweeping view' unsourced."
+  },
+  {
+   "id": "lord-howe-island-museum",
+   "name": "Lord Howe Island Museum",
+   "placement_id": "lord-howe-island-12",
+   "kind": "new",
+   "standalone": true,
+   "facts": [
+    {
+     "claim": "The architect-designed Lord Howe Island Museum, opened in 2002, has displays on the island's World Heritage environment, community and history from 1788, and a skeleton of the extinct giant horned turtle Meiolania platyceps.",
+     "source": "https://lordhoweisland.info/about/museum-and-visitor-centre/"
+    },
+    {
+     "claim": "The Visitor Centre is in the Museum foyer; it also houses the Tropicbird Museum Shop and Coral Cafe.",
+     "source": "https://lordhoweisland.info/about/museum-and-visitor-centre/"
+    },
+    {
+     "claim": "Island directory: Museum and Gift Shop daily 9:00am-1:30pm (reduced hours June-August), corner of Lagoon Road and Middle Beach Road, +61 2 6563 2111; Visitor Centre Mon-Sat 9:00am-1:00pm, Sunday 10:00am-1:00pm.",
+     "source": "https://lordhoweisland.info/about/island-directory/"
+    },
+    {
+     "claim": "Wikivoyage: entry by donation; one room on island history, another on the environment and world heritage status (it lists 9AM-3PM daily, which differs from the island directory).",
+     "source": "https://en.wikivoyage.org/wiki/Lord_Howe_Island"
+    }
+   ],
+   "hours": "9:00 AM – 1:30 PM daily (reduced hours June–August)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": "https://lordhoweisland.info/about/museum-and-visitor-centre/",
+   "ticketUrl_note": "Verified: 200, title 'Museum and Visitor Centre | Lord Howe Island' (Lord Howe Island Tourism Association page for the museum; the museum has no separate site found).",
+   "coordinates_check": {
+    "current": {
+     "latitude": -31.52791,
+     "longitude": 159.06655
+    },
+    "source_point": {
+     "latitude": -31.52791,
+     "longitude": 159.06655
+    },
+    "source": "osm tourism=museum (391878208); Wikivoyage -31.527987,159.0665 (carried over from Atlas placement; resolve-pin not re-run)",
+    "ok": true
+   },
+   "category": "museum",
+   "unverified": [
+    "Entry is by donation (Wikivoyage only), so marked free: confirm on the day. The official museum page does not state an entry charge.",
+    "Hours differ: island directory 9:00-1:30 (reduced Jun-Aug) vs Wikivoyage 9-3; official directory used, exact June-August hours not found."
+   ],
+   "wiki_note": "No Wikipedia article; photo needs a non-Commons check per placement."
+  },
+  {
+   "id": "lagoon-beach-lord-howe",
+   "name": "Lagoon Beach",
+   "placement_id": "lord-howe-island-13",
+   "kind": "new",
+   "standalone": true,
+   "facts": [
+    {
+     "claim": "The Foreshore Walk (0.5 km one way, easy) runs from the boat sheds south past the Aquatic Club; the Board's walking page also suggests 'a stroll along Lagoon Beach' as an alternative to Lagoon Road.",
+     "source": "https://lordhoweisland.info/experiences/walking-and-hiking/"
+    },
+    {
+     "claim": "Wikivoyage: the lagoon is on the island's eastern side, generally calm; the whole front of the lagoon is lined with banyans and pandanus.",
+     "source": "https://en.wikivoyage.org/wiki/Lord_Howe_Island"
+    },
+    {
+     "claim": "Snorkelling is possible off just about every beach on the island.",
+     "source": "https://en.wikivoyage.org/wiki/Lord_Howe_Island"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "Public beach with no single steward; no ticketUrl.",
+   "coordinates_check": {
+    "current": {
+     "latitude": -31.52919,
+     "longitude": 159.06546
+    },
+    "source_point": {
+     "latitude": -31.52919,
+     "longitude": 159.06546
+    },
+    "source": "osm natural=beach way 157694680 centroid; existing pin on the way (carried over from Atlas placement; resolve-pin not re-run)",
+    "ok": true
+   },
+   "category": "beach",
+   "unverified": [
+    "Only incidental mentions; neither tourism page has a place page for it. Bio 'banyans and pandanus' is from Wikivoyage's lagoon-front description and not tied to this beach.",
+    "Wikivoyage says the lagoon is on the island's east; the placement's coordinates should be rechecked against that (the Board's page treats Lagoon Road as running along it).",
+    "Lord Howe Island Board visitor fees (the Environment levy, included in the airfare for Skytrans/Eastern Air Services arrivals per https://www.lhib.nsw.gov.au/visitors/environment-and-passenger-levies) are a trip cost, not a per-spot cost; the current amount is in the Board's Fees and Charges PDF (https://www.lhib.nsw.gov.au/sites/default/files/2026-07/Fees%20and%20Charges.pdf), not read."
+   ],
+   "wiki_title": "Lagoon Beach",
+   "fee_note": "Lord Howe Island Board visitor fees (the Environment levy, included in the airfare for Skytrans/Eastern Air Services arrivals per https://www.lhib.nsw.gov.au/visitors/environment-and-passenger-levies) are a trip cost, not a per-spot cost; the current amount is in the Board's Fees and Charges PDF (https://www.lhib.nsw.gov.au/sites/default/files/2026-07/Fees%20and%20Charges.pdf), not read.",
+   "wiki_note": "'Lagoon Beach' is a generic title; check the wiki field resolves to a Lord Howe article or drop it."
+  }
+ ],
+ "held": [
+  {
+   "id": "erscotts-hole",
+   "name": "Erscott's Hole",
+   "held": true,
+   "held_reason": "Owner instruction: hold for owner, LOW pin confidence. Not researched for the pin. Facts gathered incidentally: Lord Howe Environmental Tours' 2-hour Coral Viewing and Snorkelling glass-bottom boat tour is $85 adult with an optional snorkel at Erscott's Hole (https://lordhoweisland.info/experiences/tours/lord-howe-environmental-tours/); official page https://lordhoweisland.info/natural-attractions/natural-treasures/erscotts-hole/ (200) describes the staghorn coral garden and fish conditioned to glass-bottom boats; Wikivoyage spells it Escott's Reef and calls it a fair swim from shore ('a boat trip may be in order').",
+   "coordinates_check": {
+    "current": {
+     "latitude": -31.54639,
+     "longitude": 159.06083
+    },
+    "ok": null
+   }
+  }
+ ]
+}

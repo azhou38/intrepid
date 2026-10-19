@@ -1,0 +1,2859 @@
+{
+ "region": "nsw-sydney",
+ "country": "Australia",
+ "note": "Beyond-the-metro pass for Sydney. Sydney centre -33.8688,151.2093, defaultZoomSpanKm 40, so the reach is 30 km (75%). Next free Sydney id is 74: sydney-1..73 exist (33 was removed and is not reused); git history holds no id above sydney-73. Bobbin Head resolved to keep by the skeptic. Skeptic coordinates and verdicts are honoured; every photo is a candidate only (photo_verdict \"candidate\") until Lens runs the four checks.",
+ "overlap_decisions": {
+  "Dharug National Park / Wisemans Ferry / Old Great North Road": "Dropped here. Decided in region-nsw-central-coast-hunter (proposed destination dharug-national-park, centre Wisemans Ferry). Not placed again.",
+  "Brooklyn": "Placed here as central-coast-22 (spot of the central-coast proposal). 35.6 km from Sydney, 18 km from Gosford; the central-coast-hunter pass asked for this. If Central Coast is declined it is standalone \"brooklyn\".",
+  "Royal National Park": "Decided once here (south-coast placed no Royal NP stop): proposed destination royal-national-park centred on Audley with seven spots. See new_destinations.",
+  "Captain Cook's Landing Place": "Merge recommended with existing sydney-53 Kamay Botany Bay National Park; no new id.",
+  "Great North Walk": "Existing sydney-64; not re-added.",
+  "Yengo National Park": "Standalone in central-coast-hunter; not touched here."
+ },
+ "hold_for_pin": [
+  {
+   "name": "Parramatta",
+   "id": "sydney-75",
+   "why": "Wikipedia town point (the spot is the town); confirm with resolve-pin"
+  },
+  {
+   "name": "Ku-ring-gai Chase National Park",
+   "id": "sydney-76",
+   "why": "LOW: OSM nature_reserve centroid, park pin only; take the park hub (Bobbin Head / West Head Rd entry) via resolve-pin"
+  },
+  {
+   "name": "Rose Seidler House",
+   "id": "sydney-78",
+   "why": "Wikivoyage listing point (not re-resolved): run resolve-pin"
+  },
+  {
+   "name": "Parramatta Park",
+   "id": "sydney-79",
+   "why": "OSM leisure=park centroid, LOW; take a gate/visitor point via resolve-pin"
+  },
+  {
+   "name": "West Head",
+   "id": "pittwater-3",
+   "why": "MEDIUM only (Commons median, ~230 m from OSM): confirm lookout/car park with resolve-pin"
+  },
+  {
+   "name": "Windsor",
+   "id": "hawkesbury-1",
+   "why": "Wikipedia town point (the spot is the town)"
+  },
+  {
+   "name": "Cattai National Park",
+   "id": "hawkesbury-2",
+   "why": "LOW: Wikipedia park centroid; take the Cattai Farm / wharf entry via resolve-pin"
+  },
+  {
+   "name": "Scheyville National Park",
+   "id": "hawkesbury-3",
+   "why": "LOW: Wikipedia park centroid; take the heritage-walk / lagoon car park via resolve-pin"
+  },
+  {
+   "name": "Sydney Zoo",
+   "id": "penrith-2",
+   "why": "Wikipedia point; confirm entrance with resolve-pin"
+  },
+  {
+   "name": "Camden",
+   "id": "macarthur-1",
+   "why": "Wikipedia town point (the spot is the town)"
+  },
+  {
+   "name": "Campbelltown",
+   "id": "macarthur-2",
+   "why": "Wikipedia town point (the spot is the town)"
+  },
+  {
+   "name": "Picton",
+   "id": "macarthur-3",
+   "why": "Wikipedia town point (the spot is the town)"
+  },
+  {
+   "name": "Thirlmere Lakes National Park",
+   "id": "macarthur-4",
+   "why": "LOW: Wikipedia park centroid; take the lakes picnic area via resolve-pin"
+  },
+  {
+   "name": "Bundeena to Otford Coast Track",
+   "id": "royal-national-park-3",
+   "why": "HOLD: pin is a Commons photo-median proxy, not the route midpoint; resolve OSM hiking relation midpoint"
+  },
+  {
+   "name": "Bundeena",
+   "id": "royal-national-park-6",
+   "why": "Wikivoyage listing point (the spot is the village)"
+  },
+  {
+   "name": "Brooklyn",
+   "id": "central-coast-22",
+   "why": "Wikipedia town point (the spot is the town)"
+  },
+  {
+   "name": "Yerranderie",
+   "id": "yerranderie",
+   "why": "OSM place=hamlet, MEDIUM"
+  },
+  {
+   "name": "Captain Cook's Landing Place",
+   "id": "sydney-53",
+   "why": "LOW coordinate: OSM historic=memorial point; resolve before any separate spot; for a merge, mention the landing in the Kamay bio instead"
+  }
+ ],
+ "spots": [
+  {
+   "name": "WILD LIFE Sydney Zoo",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-74",
+   "coordinates": {
+    "latitude": -33.86931,
+    "longitude": 151.20228
+   },
+   "coordinates_source": "openstreetmap tourism=zoo (candidate value kept; a town/park point, not re-resolved)",
+   "reason": "0.7 km from the Sydney centre at Darling Harbour; a headline Sydney attraction missing from the app, distinct from Sea Life Sydney Aquarium (sydney-22).",
+   "category": "entertainment",
+   "icon": "🦘",
+   "bio": "A Darling Harbour zoo with its animals grouped by Australian habitat, beside the Sea Life aquarium.",
+   "hours": null,
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://www.sydney.com/things-to-do/family-holidays/zoos-and-wildlife"
+   ],
+   "skeptic_objection": "Keep: open daily Darling Harbour attraction, sydney.com names it; one counted source, but a Sydney headline attraction missing from existing spots. Distinct from Sea Life Sydney Aquarium (existing). Note the Commons photos are from its former name Sydney Wildlife World.",
+   "photo": {
+    "file": "Casuarius casuarius -Sydney Wildlife World, Darling Harbour, Sydney, Australia-8a.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Casuarius_casuarius_-Sydney_Wildlife_World,_Darling_Harbour,_Sydney,_Australia-8a.jpg",
+    "width": 3648,
+    "licence": "CC BY-SA 2.0"
+   },
+   "photo_verdict": "candidate",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "distance_km_from_destination": 0.7,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Parramatta",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-75",
+   "coordinates": {
+    "latitude": -33.81472222,
+    "longitude": 151.00166667
+   },
+   "coordinates_source": "wikipedia:Parramatta (candidate value kept; a town/park point, not re-resolved)",
+   "reason": "20.1 km from the Sydney centre, inside the 30 km reach and reached from Sydney by ferry, train and road; sits beside the existing Old Government House and Elizabeth Farm spots.",
+   "category": "historic",
+   "icon": "🏙️",
+   "bio": "Sydney's second CBD, a colonial-era city on the river with heritage parks, buildings and a ferry from Circular Quay.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 71030,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Parramatta"
+   ],
+   "skeptic_objection": "Keep: second CBD and a ferry-reachable heritage city, Wikivoyage chapter.",
+   "photo": {
+    "file": "Parramatta River at Parramatta CBD July 2018.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Parramatta_River_at_Parramatta_CBD_July_2018.jpg",
+    "width": 4608,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_verdict": "candidate",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "hold_for_pin": "Wikipedia town point (the spot is the town); confirm with resolve-pin",
+   "needs_research": [
+    "coordinates"
+   ],
+   "distance_km_from_destination": 20.1,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Ku-ring-gai Chase National Park",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-76",
+   "coordinates": {
+    "latitude": -33.628226,
+    "longitude": 151.229354
+   },
+   "coordinates_source": "photon/OSM leisure=nature_reserve centroid (the Wikivoyage geo was 3-decimal); LOW, park pin only",
+   "reason": "26.8 km from the Sydney centre (inside 30 km); follows the existing urban-park precedent (Lane Cove, Garigal, Berowra Valley as Sydney spots). West Head and Barrenjoey, 33-34 km out, go to the proposed Pittwater destination. np_exception: not made a destination because its stops split between the Sydney span, Pittwater and Bobbin Head.",
+   "category": "nature",
+   "icon": "🌳",
+   "bio": "A large national park on Broken Bay and the Hawkesbury with bushwalks, Aboriginal rock art and boat-only coves.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/ku-ring-gai-chase-national-park",
+   "views": 12309,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Ku-ring-gai_Chase_National_Park",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/ku-ring-gai-chase-national-park"
+   ],
+   "skeptic_objection": "Large national park, Wikivoyage plus NPWS. Overlaps Berowra/Garigal only at edges. Stays a spot; West Head, Bobbin Head and Barrenjoey are separate named stops inside it.",
+   "photo": {
+    "file": "Cowan Creek Ku-ring-gai Chase National Park.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Cowan_Creek_Ku-ring-gai_Chase_National_Park.jpg",
+    "width": 1024,
+    "licence": "CC BY-SA 3.0"
+   },
+   "photo_verdict": "candidate",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "ticketUrl_note": "official page named by a counted source; unverified, Pipeline C to load and confirm",
+   "hold_for_pin": "LOW: OSM nature_reserve centroid, park pin only; take the park hub (Bobbin Head / West Head Rd entry) via resolve-pin",
+   "needs_research": [
+    "hours",
+    "cost",
+    "coordinates"
+   ],
+   "distance_km_from_destination": 26.8,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Bobbin Head",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-77",
+   "coordinates": {
+    "latitude": -33.659548,
+    "longitude": 151.1588
+   },
+   "coordinates_source": "wikivoyage info-centre listing, 169 m from commons median; MEDIUM",
+   "reason": "23.7 km from the Sydney centre, reached from Sydney by road via Turramurra; inside the span.",
+   "category": "nature",
+   "icon": "⛵",
+   "bio": "A marina and picnic area on Cowan Creek inside Ku-ring-gai Chase, with boat hire and a visitor centre.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 1078,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Ku-ring-gai_Chase_National_Park"
+   ],
+   "skeptic_objection": "Resolved review to keep: a distinct named hub (marina, boat hire, Bobbin Inn, picnic area) with its own Wikivoyage section and Wikipedia article, 20 km from Sydney's centre by a different road to West Head. One counted source only, so marginal; owner may prefer to fold into the park.",
+   "photo": {
+    "file": "Bobbin Head.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Bobbin_Head.jpg",
+    "width": 3955,
+    "licence": "CC BY-SA 3.0"
+   },
+   "photo_verdict": "candidate",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "hero_crop": {
+    "x": 0.6,
+    "y": 0.5
+   },
+   "needs_research": [],
+   "wiki": "Bobbin Head, New South Wales",
+   "distance_km_from_destination": 23.7,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Rose Seidler House",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-78",
+   "coordinates": {
+    "latitude": -33.70977,
+    "longitude": 151.14209
+   },
+   "coordinates_source": "wikivoyage listing (candidate value kept; a town/park point, not re-resolved)",
+   "reason": "18.7 km from the Sydney centre in Wahroonga on the Upper North Shore; inside the span.",
+   "category": "museum",
+   "icon": "🏠",
+   "bio": "Harry Seidler's 1950 modernist house in Wahroonga, open to visitors as a house museum.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 16739,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Upper_North_Shore"
+   ],
+   "skeptic_objection": "Keep: Museums of History NSW open house museum, can be toured, 1950 Seidler modernist. Opening days limited (Sundays); verify hours.",
+   "photo": null,
+   "photo_verdict": "none",
+   "photo_status": "skeptic found no passing Commons photo: search outside Commons per IMAGES.md; if none, list under Photos still missing",
+   "status": "ready for Pipeline C research",
+   "hold_for_pin": "Wikivoyage listing point (not re-resolved): run resolve-pin",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "distance_km_from_destination": 18.7,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Parramatta Park",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-79",
+   "coordinates": {
+    "latitude": -33.80819,
+    "longitude": 150.99913
+   },
+   "coordinates_source": "openstreetmap leisure=park (candidate value kept; a town/park point, not re-resolved)",
+   "reason": "20.5 km from the Sydney centre, beside Parramatta; the park is a larger place than the Old Government House spot (sydney-70) inside it.",
+   "category": "nature",
+   "icon": "🌿",
+   "bio": "Convict-era parkland beside the Parramatta River with tudor gatehouses, the Governor's Bath House and cycling tracks.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 1858,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Parramatta"
+   ],
+   "skeptic_objection": "Keep: UNESCO-listed convict-era parkland with Old Government House inside it (existing spot); the park is a larger, distinct walk/picnic place. Keep low rank; the Old Government House spot stays separate.",
+   "photo": null,
+   "photo_verdict": "none",
+   "photo_status": "skeptic found no passing Commons photo: search outside Commons per IMAGES.md; if none, list under Photos still missing",
+   "status": "ready for Pipeline C research",
+   "hold_for_pin": "OSM leisure=park centroid, LOW; take a gate/visitor point via resolve-pin",
+   "needs_research": [
+    "coordinates"
+   ],
+   "wiki": "Parramatta Park, New South Wales",
+   "distance_km_from_destination": 20.5,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Mona Vale Beach",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-80",
+   "coordinates": {
+    "latitude": -33.68297,
+    "longitude": 151.31183
+   },
+   "coordinates_source": "openstreetmap natural=beach (candidate value kept; a town/park point, not re-resolved)",
+   "reason": "22.7 km from the Sydney centre, inside the span, with the existing Northern Beaches spots (sydney-58..63).",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A long golden surf beach with lifeguard patrols and parking on the Northern Beaches.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Northern_Beaches"
+   ],
+   "skeptic_objection": "Keep as second-tier patrolled beach, one counted source; marginal, near-duplicate risk with Warriewood and Narrabeen is low (different beach).",
+   "photo": {
+    "file": "Mona Vale Beach - panoramio (3).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Mona_Vale_Beach_-_panoramio_(3).jpg",
+    "width": 2048,
+    "licence": "CC BY 3.0"
+   },
+   "photo_verdict": "candidate",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "needs_research": [],
+   "distance_km_from_destination": 22.7,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Warriewood Beach",
+   "action": "spot",
+   "destination": "sydney",
+   "id": "sydney-81",
+   "coordinates": {
+    "latitude": -33.69073,
+    "longitude": 151.30867
+   },
+   "coordinates_source": "openstreetmap natural=beach (candidate value kept; a town/park point, not re-resolved)",
+   "reason": "21.8 km from the Sydney centre, inside the span, with the existing Northern Beaches spots.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A small sheltered beach between headlands on the Northern Beaches, reached by a trail down from the top.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Northern_Beaches"
+   ],
+   "skeptic_objection": "Resolved review to keep: Wikivoyage singles it out as picturesque and a named beach is not rejected on source count; low rank.",
+   "photo": {
+    "file": "Warriewood Beach - panoramio.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Warriewood_Beach_-_panoramio.jpg",
+    "width": 2048,
+    "licence": "CC BY 3.0"
+   },
+   "photo_verdict": "candidate",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "needs_research": [],
+   "distance_km_from_destination": 21.8,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Palm Beach",
+   "action": "spot",
+   "destination": "pittwater",
+   "id": "pittwater-1",
+   "coordinates": {
+    "latitude": -33.59119,
+    "longitude": 151.32529
+   },
+   "coordinates_source": "openstreetmap natural=beach (candidate value kept; a town/park point, not re-resolved)",
+   "reason": "32.7 km from the Sydney centre, outside the 30 km reach; with Barrenjoey, West Head and Whale Beach it clusters 2-4 km apart at the Pittwater end of the Northern Beaches, enough to propose a Pittwater destination.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "The long beach and village at the northern tip of the Northern Beaches, between the ocean and Pittwater.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 28470,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Northern_Beaches"
+   ],
+   "skeptic_objection": "Keep: a village-and-beach destination guides name (Wikivoyage, tourism); marginal on one counted source but beaches a real source names are not rejected.",
+   "photo": {
+    "file": "Palm Beach NSW.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Palm_Beach_NSW.jpg",
+    "width": 2272,
+    "licence": "Public domain"
+   },
+   "photo_verdict": "candidate",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "hero_crop": {
+    "x": 0.6,
+    "y": 0.5
+   },
+   "needs_research": [],
+   "wiki": "Palm Beach, New South Wales",
+   "distance_km_from_destination": 0.0,
+   "inside_75pct_span": true,
+   "destination_status": "proposed (not added; listed for the owner)"
+  },
+  {
+   "name": "Barrenjoey Lighthouse",
+   "action": "spot",
+   "destination": "pittwater",
+   "id": "pittwater-2",
+   "coordinates": {
+    "latitude": -33.580189,
+    "longitude": 151.329826
+   },
+   "coordinates_source": "photon/OSM man_made=lighthouse, within 100 m of commons median; HIGH",
+   "reason": "34.0 km from the Sydney centre; walked up from Palm Beach.",
+   "category": "historic",
+   "icon": "🗼",
+   "bio": "An 1881 sandstone lighthouse on Barrenjoey Head, reached by a 30 to 40 minute walk up from Palm Beach.",
+   "hours": null,
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/ku-ring-gai-chase-national-park",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Ku-ring-gai_Chase_National_Park",
+    "https://en.wikivoyage.org/wiki/Sydney/Northern_Beaches"
+   ],
+   "skeptic_objection": "Keep: named headland walk (about 30-40 min up) with its own NPWS page and Wikivoyage listing; distinct from Palm Beach.",
+   "photo": {
+    "file": "Barrenjoey Head Lighthouse 22042014.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Barrenjoey_Head_Lighthouse_22042014.jpg",
+    "width": 4272,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_verdict": "candidate",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "hero_crop": {
+    "x": 0.4,
+    "y": 0.5
+   },
+   "ticketUrl_note": "official page named by a counted source; unverified, Pipeline C to load and confirm",
+   "needs_research": [
+    "hours",
+    "cost"
+   ],
+   "distance_km_from_destination": 1.3,
+   "inside_75pct_span": true,
+   "destination_status": "proposed (not added; listed for the owner)"
+  },
+  {
+   "name": "West Head",
+   "action": "spot",
+   "destination": "pittwater",
+   "id": "pittwater-3",
+   "coordinates": {
+    "latitude": -33.580148,
+    "longitude": 151.308383
+   },
+   "coordinates_source": "commons geotagged photo median (5 files) ~230 m from OSM/Photon natural=cape West Head; MEDIUM. Candidate coordinates were New Zealand's West Head (-41.2, 174.3), wrong, replaced.",
+   "reason": "33.4 km from the Sydney centre; 2.5 km from Palm Beach across Pittwater, reached on its own road from Ku-ring-gai Chase, so a Pittwater spot, not a Sydney one.",
+   "category": "viewpoint",
+   "icon": "🔭",
+   "bio": "A Ku-ring-gai Chase headland lookout over Broken Bay and Pittwater, with Aboriginal engravings nearby.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/ku-ring-gai-chase-national-park",
+   "views": 555,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Ku-ring-gai_Chase_National_Park"
+   ],
+   "skeptic_objection": "Keep: NPWS and Wikivoyage both feature the lookout and Aboriginal engravings; its own named draw. Candidate coordinates pointed at New Zealand's West Head and are replaced. The Aboriginal Heritage Walk stays folded into it.",
+   "photo": {
+    "file": "View from West Head Lookout.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:View_from_West_Head_Lookout.jpg",
+    "width": 4000,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_verdict": "candidate",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "hero_crop": {
+    "x": 0.6,
+    "y": 0.4
+   },
+   "ticketUrl_note": "official page named by a counted source; unverified, Pipeline C to load and confirm",
+   "hold_for_pin": "MEDIUM only (Commons median, ~230 m from OSM): confirm lookout/car park with resolve-pin",
+   "needs_research": [
+    "hours",
+    "cost",
+    "coordinates"
+   ],
+   "distance_km_from_destination": 2.0,
+   "inside_75pct_span": true,
+   "destination_status": "proposed (not added; listed for the owner)"
+  },
+  {
+   "name": "Whale Beach",
+   "action": "spot",
+   "destination": "pittwater",
+   "id": "pittwater-4",
+   "coordinates": {
+    "latitude": -33.61075,
+    "longitude": 151.33156
+   },
+   "coordinates_source": "openstreetmap natural=beach (candidate value kept; a town/park point, not re-resolved)",
+   "reason": "30.8 km from the Sydney centre, outside the reach; 2.2 km from Palm Beach.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A patrolled surf beach with a rose-gold sand cove between cliffs, quieter than Palm Beach.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 5841,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Northern_Beaches"
+   ],
+   "skeptic_objection": "Keep as a second-tier beach, one counted source; marginal but a named patrolled surf beach.",
+   "photo": {
+    "file": "Whale Beach - panoramio (3).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Whale_Beach_-_panoramio_(3).jpg",
+    "width": 2048,
+    "licence": "CC BY 3.0"
+   },
+   "photo_verdict": "candidate",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "needs_research": [],
+   "wiki": "Whale Beach, New South Wales",
+   "distance_km_from_destination": 2.3,
+   "inside_75pct_span": true,
+   "destination_status": "proposed (not added; listed for the owner)"
+  },
+  {
+   "name": "Windsor",
+   "action": "spot",
+   "destination": "hawkesbury",
+   "id": "hawkesbury-1",
+   "coordinates": {
+    "latitude": -33.61361111,
+    "longitude": 150.81166667
+   },
+   "coordinates_source": "wikipedia:Windsor, New South Wales (candidate value kept; a town/park point, not re-resolved)",
+   "reason": "46.4 km from the Sydney centre; the historic hub of the Hawkesbury, with Cattai and Scheyville National Parks 9-12 km away: a Hawkesbury cluster of three.",
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "A colonial town on the Hawkesbury, one of Australia's oldest, with Georgian buildings and Thompson Square.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 16905,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Windsor_(New_South_Wales)"
+   ],
+   "skeptic_objection": "Keep: oldest colonial town on the Hawkesbury, Thompson Square, Wikivoyage hub.",
+   "photo": null,
+   "photo_verdict": "none",
+   "photo_status": "skeptic found no passing Commons photo: search outside Commons per IMAGES.md; if none, list under Photos still missing",
+   "status": "ready for Pipeline C research",
+   "hold_for_pin": "Wikipedia town point (the spot is the town)",
+   "needs_research": [
+    "coordinates"
+   ],
+   "wiki": "Windsor, New South Wales",
+   "distance_km_from_destination": 0.0,
+   "inside_75pct_span": true,
+   "destination_status": "proposed (not added; listed for the owner)"
+  },
+  {
+   "name": "Cattai National Park",
+   "action": "spot",
+   "destination": "hawkesbury",
+   "id": "hawkesbury-2",
+   "coordinates": {
+    "latitude": -33.54722222,
+    "longitude": 150.89694444
+   },
+   "coordinates_source": "wikipedia:Cattai National Park (candidate value kept; a town/park point, not re-resolved)",
+   "reason": "46.0 km from the Sydney centre; 12 km from Windsor. np_exception: folded into the Hawkesbury proposal rather than a one-spot park destination.",
+   "category": "nature",
+   "icon": "🌳",
+   "bio": "A Hawkesbury River park with the 1821 Cattai Farm and windmill ruins, plus camping, canoeing and picnics.",
+   "hours": null,
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/cattai-national-park",
+   "views": 700,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Hills",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/cattai-national-park"
+   ],
+   "skeptic_objection": "Keep: NPWS plus Wikivoyage, Cattai Farm heritage and Hawkesbury canoeing; visitor-oriented sources.",
+   "photo": {
+    "file": "Cattai national park view from cattai wharf.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Cattai_national_park_view_from_cattai_wharf.jpg",
+    "width": 2048,
+    "licence": "CC BY-SA 3.0"
+   },
+   "photo_verdict": "candidate",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "ticketUrl_note": "official page named by a counted source; unverified, Pipeline C to load and confirm",
+   "hold_for_pin": "LOW: Wikipedia park centroid; take the Cattai Farm / wharf entry via resolve-pin",
+   "needs_research": [
+    "hours",
+    "cost",
+    "coordinates"
+   ],
+   "distance_km_from_destination": 10.8,
+   "inside_75pct_span": true,
+   "destination_status": "proposed (not added; listed for the owner)"
+  },
+  {
+   "name": "Scheyville National Park",
+   "action": "spot",
+   "destination": "hawkesbury",
+   "id": "hawkesbury-3",
+   "coordinates": {
+    "latitude": -33.60666667,
+    "longitude": 150.88888889
+   },
+   "coordinates_source": "wikipedia:Scheyville National Park (candidate value kept; a town/park point, not re-resolved)",
+   "reason": "41.6 km from the Sydney centre; 9 km from Windsor. np_exception: folded into the Hawkesbury proposal.",
+   "category": "nature",
+   "icon": "🌳",
+   "bio": "A park near Windsor with a migrant-camp heritage walk, Longneck Lagoon and horse-riding trails.",
+   "hours": null,
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/scheyville-national-park",
+   "views": 2338,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Hills",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/scheyville-national-park"
+   ],
+   "skeptic_objection": "Keep with low rank: NPWS plus Wikivoyage, migrant-camp heritage walk; modest draw.",
+   "photo": {
+    "file": "Scheyville national park longneck lagoon north swamp.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Scheyville_national_park_longneck_lagoon_north_swamp.jpg",
+    "width": 2048,
+    "licence": "CC BY-SA 3.0"
+   },
+   "photo_verdict": "candidate",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "ticketUrl_note": "official page named by a counted source; unverified, Pipeline C to load and confirm",
+   "hold_for_pin": "LOW: Wikipedia park centroid; take the heritage-walk / lagoon car park via resolve-pin",
+   "needs_research": [
+    "hours",
+    "cost",
+    "coordinates"
+   ],
+   "distance_km_from_destination": 7.2,
+   "inside_75pct_span": true,
+   "destination_status": "proposed (not added; listed for the owner)"
+  },
+  {
+   "name": "Penrith Whitewater Stadium",
+   "action": "spot",
+   "destination": "penrith",
+   "id": "penrith-1",
+   "coordinates": {
+    "latitude": -33.720658,
+    "longitude": 150.684341
+   },
+   "coordinates_source": "photon/OSM leisure=water_park + wikipedia, HIGH",
+   "reason": "51.2 km from the Sydney centre; 3 km from Penrith, so a spot of the proposed Penrith destination.",
+   "category": "entertainment",
+   "icon": "🛶",
+   "bio": "The 2000 Olympic whitewater course at Cranebrook, open to the public for rafting and kayaking.",
+   "hours": null,
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 2153,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Penrith",
+    "https://www.sydney.com/articles/thrill-seekers-guide-to-western-sydney"
+   ],
+   "skeptic_objection": "Keep: Olympic course open to the public for rafting; the place is the course, not an operator. Two counted sources. Paid; official site exists (penrithwhitewater / Penrith Whitewater Stadium operated by Penrith City Council venue).",
+   "photo": null,
+   "photo_verdict": "none",
+   "photo_status": "skeptic found no passing Commons photo: search outside Commons per IMAGES.md; if none, list under Photos still missing",
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "distance_km_from_destination": 3.5,
+   "inside_75pct_span": true,
+   "destination_status": "proposed (not added; listed for the owner)"
+  },
+  {
+   "name": "Sydney Zoo",
+   "action": "spot",
+   "destination": "penrith",
+   "id": "penrith-2",
+   "coordinates": {
+    "latitude": -33.79111111,
+    "longitude": 150.86694444
+   },
+   "coordinates_source": "wikipedia:Sydney Zoo (candidate value kept; a town/park point, not re-resolved)",
+   "reason": "32.8 km from the Sydney centre, outside the reach; 16 km from Penrith along the M4, the nearest proposed base.",
+   "category": "entertainment",
+   "icon": "🐘",
+   "bio": "A walk-through zoo in the Western Sydney Parklands at Bungarribee, with walk-through safari-style exhibits and elephants.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 11674,
+   "counted_sources": [
+    "https://www.sydney.com/things-to-do/family-holidays/zoos-and-wildlife",
+    "https://www.sydney.com/destinations/sydney/sydney-west/blacktown"
+   ],
+   "skeptic_objection": "Keep: open daily, two counted sources (sydney.com, Wikivoyage).",
+   "photo": null,
+   "photo_verdict": "none",
+   "photo_status": "skeptic found no passing Commons photo: search outside Commons per IMAGES.md; if none, list under Photos still missing",
+   "status": "ready for Pipeline C research",
+   "hold_for_pin": "Wikipedia point; confirm entrance with resolve-pin",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "distance_km_from_destination": 16.6,
+   "inside_75pct_span": true,
+   "destination_status": "proposed (not added; listed for the owner)"
+  },
+  {
+   "name": "Warragamba Dam",
+   "action": "spot",
+   "destination": "penrith",
+   "id": "penrith-3",
+   "coordinates": {
+    "latitude": -33.883061,
+    "longitude": 150.596193
+   },
+   "coordinates_source": "OSM waterway=dam + wikipedia, HIGH",
+   "reason": "56.6 km from the Sydney centre; about 17 km from Penrith.",
+   "category": "landmark",
+   "icon": "💧",
+   "bio": "The huge dam wall on the Warragamba River that holds Sydney's main water supply, with a visitor centre and lookouts.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 11274,
+   "counted_sources": [],
+   "skeptic_objection": "Keep: WaterNSW visitor centre and lookout; zero formal counted sources (WaterNSW, VisitNSW are agency pages), so marginal; weekday access has been questioned, verify hours.",
+   "photo": {
+    "file": "Warragamba Dam, NSW.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Warragamba_Dam,_NSW.jpg",
+    "width": 5184,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_verdict": "candidate",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "distance_km_from_destination": 17.2,
+   "inside_75pct_span": true,
+   "destination_status": "proposed (not added; listed for the owner)"
+  },
+  {
+   "name": "Camden",
+   "action": "spot",
+   "destination": "macarthur",
+   "id": "macarthur-1",
+   "coordinates": {
+    "latitude": -34.05444444,
+    "longitude": 150.69583333
+   },
+   "coordinates_source": "wikipedia:Camden, New South Wales (candidate value kept; a town/park point, not re-resolved)",
+   "reason": "51.7 km from the Sydney centre; the old country town of the Macarthur district, with Campbelltown, Picton and Thirlmere Lakes within 25 km.",
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "A historic country town on the Nepean with Argyle Street cafes, museums and farmland around it.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 20251,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Camden_(New_South_Wales)",
+    "https://en.wikivoyage.org/wiki/Sydney/Macarthur"
+   ],
+   "skeptic_objection": "Keep: historic country town, two counted sources.",
+   "photo": null,
+   "photo_verdict": "none",
+   "photo_status": "skeptic found no passing Commons photo: search outside Commons per IMAGES.md; if none, list under Photos still missing",
+   "status": "ready for Pipeline C research",
+   "hold_for_pin": "Wikipedia town point (the spot is the town)",
+   "needs_research": [
+    "coordinates"
+   ],
+   "wiki": "Camden, New South Wales",
+   "distance_km_from_destination": 0.0,
+   "inside_75pct_span": true,
+   "destination_status": "proposed (not added; listed for the owner)"
+  },
+  {
+   "name": "Campbelltown",
+   "action": "spot",
+   "destination": "macarthur",
+   "id": "macarthur-2",
+   "coordinates": {
+    "latitude": -34.06666667,
+    "longitude": 150.81666667
+   },
+   "coordinates_source": "wikipedia:Campbelltown, New South Wales (candidate value kept; a town/park point, not re-resolved)",
+   "reason": "42.4 km from the Sydney centre; the Macarthur district hub, 12 km from Camden.",
+   "category": "historic",
+   "icon": "🏙️",
+   "bio": "The regional hub of the Macarthur district, with the Campbelltown Arts Centre and heritage walks.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 27325,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Macarthur"
+   ],
+   "skeptic_objection": "Keep, low rank: regional hub city with its own Wikivoyage chapter; borderline since draw is services and the Arts Centre.",
+   "photo": null,
+   "photo_verdict": "none",
+   "photo_status": "skeptic found no passing Commons photo: search outside Commons per IMAGES.md; if none, list under Photos still missing",
+   "status": "ready for Pipeline C research",
+   "hold_for_pin": "Wikipedia town point (the spot is the town)",
+   "needs_research": [
+    "coordinates"
+   ],
+   "wiki": "Campbelltown, New South Wales",
+   "distance_km_from_destination": 11.2,
+   "inside_75pct_span": true,
+   "destination_status": "proposed (not added; listed for the owner)"
+  },
+  {
+   "name": "Picton",
+   "action": "spot",
+   "destination": "macarthur",
+   "id": "macarthur-3",
+   "coordinates": {
+    "latitude": -34.18333333,
+    "longitude": 150.6
+   },
+   "coordinates_source": "wikipedia:Picton, New South Wales (candidate value kept; a town/park point, not re-resolved)",
+   "reason": "66.2 km from the Sydney centre; 15 km from Camden.",
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "A historic village on the Southern Highlands rail line with Argyle Street pubs and the Victoria Bridge.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 11153,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Picton_(New_South_Wales)",
+    "https://en.wikivoyage.org/wiki/Sydney/Macarthur"
+   ],
+   "skeptic_objection": "Keep, low rank: two counted sources, village with historic pubs and Mushroom Tunnel nearby.",
+   "photo": null,
+   "photo_verdict": "none",
+   "photo_status": "skeptic found no passing Commons photo: search outside Commons per IMAGES.md; if none, list under Photos still missing",
+   "status": "ready for Pipeline C research",
+   "hold_for_pin": "Wikipedia town point (the spot is the town)",
+   "needs_research": [
+    "coordinates"
+   ],
+   "wiki": "Picton, New South Wales",
+   "distance_km_from_destination": 16.8,
+   "inside_75pct_span": true,
+   "destination_status": "proposed (not added; listed for the owner)"
+  },
+  {
+   "name": "Thirlmere Lakes National Park",
+   "action": "spot",
+   "destination": "macarthur",
+   "id": "macarthur-4",
+   "coordinates": {
+    "latitude": -34.22555556,
+    "longitude": 150.53861111
+   },
+   "coordinates_source": "wikipedia:Thirlmere Lakes National Park (candidate value kept; a town/park point, not re-resolved)",
+   "reason": "73.4 km from the Sydney centre; 24 km from Camden. np_exception: folded into the Macarthur proposal.",
+   "category": "nature",
+   "icon": "🏞️",
+   "bio": "World Heritage lakes in the Greater Blue Mountains Area near Picton, with walking tracks and picnic areas.",
+   "hours": null,
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/thirlmere-lakes-national-park",
+   "views": 968,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Thirlmere",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/thirlmere-lakes-national-park"
+   ],
+   "skeptic_objection": "Keep: NPWS plus Wikivoyage; World Heritage lakes. Lake levels have been very low in dry years, so verify visitor value.",
+   "photo": {
+    "file": "Thirlmere Lake, Thirlmere National Park - panoramio.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Thirlmere_Lake,_Thirlmere_National_Park_-_panoramio.jpg",
+    "width": 2158,
+    "licence": "CC BY 3.0"
+   },
+   "photo_verdict": "candidate",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "ticketUrl_note": "official page named by a counted source; unverified, Pipeline C to load and confirm",
+   "hold_for_pin": "LOW: Wikipedia park centroid; take the lakes picnic area via resolve-pin",
+   "needs_research": [
+    "hours",
+    "cost",
+    "coordinates"
+   ],
+   "distance_km_from_destination": 23.9,
+   "inside_75pct_span": true,
+   "destination_status": "proposed (not added; listed for the owner)"
+  },
+  {
+   "name": "Audley",
+   "action": "spot",
+   "destination": "royal-national-park",
+   "id": "royal-national-park-1",
+   "coordinates": {
+    "latitude": -34.074196,
+    "longitude": 151.055502
+   },
+   "coordinates_source": "photon/OSM amenity=boat_rental Audley Boatshed, HIGH (commons median 147 m)",
+   "reason": "26.9 km from the Sydney centre (inside 30 km) but the Royal National Park hub: every national park is a destination (COVERAGE.md Granularity) and one spot has one parent, so it goes under Royal National Park rather than splitting the park between two destinations.",
+   "category": "nature",
+   "icon": "🛶",
+   "bio": "The Royal National Park's main hub on the Hacking River, with a historic boatshed, canoe hire, a weir and picnic grounds.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 1450,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Royal_National_Park"
+   ],
+   "skeptic_objection": "Resolved review to keep: the park's main hub (boatshed, weir, canoe hire, picnic) with its own NPWS visitor page as well as Wikivoyage, so two counted sources; a distinct named stop. Low rank.",
+   "photo": {
+    "file": "Audley Weir, Royal National Park.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Audley_Weir,_Royal_National_Park.jpg",
+    "width": 4032,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_verdict": "candidate",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "wiki": "Audley, New South Wales",
+   "distance_km_from_destination": 0.0,
+   "inside_75pct_span": true,
+   "destination_status": "proposed (not added; listed for the owner)"
+  },
+  {
+   "name": "Wattamolla Beach",
+   "action": "spot",
+   "destination": "royal-national-park",
+   "id": "royal-national-park-2",
+   "coordinates": {
+    "latitude": -34.137514,
+    "longitude": 151.117467
+   },
+   "coordinates_source": "OSM natural=beach (via Photon); MEDIUM",
+   "reason": "31.1 km from the Sydney centre; 9 km from the Audley hub; the park's classic road-access swim stop.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A sheltered lagoon and beach in Royal National Park, reached by road, with a waterfall and clifftop picnic area.",
+   "hours": null,
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Royal_National_Park"
+   ],
+   "skeptic_objection": "Keep: Wattamolla picnic area, lagoon and beach has its own NPWS page and Wikivoyage listing; the park's classic road-access swim stop.",
+   "photo": {
+    "file": "Wattamolla lagoon.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Wattamolla_lagoon.jpg",
+    "width": 3264,
+    "licence": "CC BY-SA 3.0"
+   },
+   "photo_verdict": "candidate",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "distance_km_from_destination": 9.1,
+   "inside_75pct_span": true,
+   "destination_status": "proposed (not added; listed for the owner)"
+  },
+  {
+   "name": "Bundeena to Otford Coast Track",
+   "action": "spot",
+   "destination": "royal-national-park",
+   "id": "royal-national-park-3",
+   "coordinates": {
+    "latitude": -34.142944,
+    "longitude": 151.114459
+   },
+   "coordinates_source": "commons geotagged photo median (18 files) as a proxy for the route midpoint; LOW (Overpass unavailable, OSM route midpoint not obtained). Re-run resolve-pin when Overpass is up",
+   "reason": "31.7 km from the Sydney centre; the park's signature walk, pinned at the proxy point until the route midpoint is resolved.",
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "A 26 km coastal walk from Bundeena to Otford through the park, passing most of its beaches and cliffs.",
+   "hours": null,
+   "visitHoursMin": 4,
+   "visitHoursMax": 10,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/royal-national-park",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Royal_National_Park"
+   ],
+   "skeptic_objection": "Keep: the Royal Coast Track is an NPWS-promoted named walk (26 km), a distinct route; Burning Palms, North Era and Big Marley are its sub-sites and stay folded in. Pin is a placeholder: midpoint not obtained.",
+   "photo": {
+    "file": "Royal National Park Coast Track - panoramio.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Royal_National_Park_Coast_Track_-_panoramio.jpg",
+    "width": 2048,
+    "licence": "CC BY 3.0"
+   },
+   "photo_verdict": "candidate",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "ticketUrl_note": "official page named by a counted source; unverified, Pipeline C to load and confirm",
+   "hold_for_pin": "HOLD: pin is a Commons photo-median proxy, not the route midpoint; resolve OSM hiking relation midpoint",
+   "needs_research": [
+    "hours",
+    "cost",
+    "coordinates"
+   ],
+   "distance_km_from_destination": 9.4,
+   "inside_75pct_span": true,
+   "destination_status": "proposed (not added; listed for the owner)"
+  },
+  {
+   "name": "Garie Beach",
+   "action": "spot",
+   "destination": "royal-national-park",
+   "id": "royal-national-park-4",
+   "coordinates": {
+    "latitude": -34.17013,
+    "longitude": 151.06811
+   },
+   "coordinates_source": "OSM natural=beach (via Photon); MEDIUM",
+   "reason": "35.9 km from the Sydney centre; 11 km from Audley.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A road-access surf beach in the park, patrolled on summer weekends, and the start of the walk to Figure Eight Pools.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 2110,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Royal_National_Park"
+   ],
+   "skeptic_objection": "Keep: NPWS (Garie Beach picnic area) and Wikivoyage list it; road-access surf beach and the start of the Figure Eight Pools walk.",
+   "photo": {
+    "file": "Garie Beach, Royal National Park.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Garie_Beach,_Royal_National_Park.jpg",
+    "width": 2365,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_verdict": "candidate",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "hero_crop": {
+    "x": 0.6,
+    "y": 0.5
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "distance_km_from_destination": 10.7,
+   "inside_75pct_span": true,
+   "destination_status": "proposed (not added; listed for the owner)"
+  },
+  {
+   "name": "Wedding Cake Rock",
+   "action": "spot",
+   "destination": "royal-national-park",
+   "id": "royal-national-park-5",
+   "coordinates": {
+    "latitude": -34.109487,
+    "longitude": 151.151984
+   },
+   "coordinates_source": "photon/OSM natural=rock + wikipedia, HIGH",
+   "reason": "27.3 km from the Sydney centre (inside 30 km) but a Coast Track stop in Royal National Park: spot of the park.",
+   "category": "nature",
+   "icon": "🍰",
+   "bio": "A white sandstone block on the Coast Track viewed from a fenced platform; check NPWS for closures.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/royal-national-park",
+   "views": 4591,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Royal_National_Park"
+   ],
+   "skeptic_objection": "Keep: named formation that guides and NPWS list; reached on a signed walk with a viewing platform and fence. NPWS access status should be verified (it has been closed before).",
+   "photo": {
+    "file": "Wedding Cake Rock in Royal National Park.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Wedding_Cake_Rock_in_Royal_National_Park.jpg",
+    "width": 4608,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_verdict": "candidate",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "hero_crop": {
+    "x": 0.3,
+    "y": 0.5
+   },
+   "ticketUrl_note": "official page named by a counted source; unverified, Pipeline C to load and confirm",
+   "needs_research": [
+    "hours",
+    "cost"
+   ],
+   "distance_km_from_destination": 9.7,
+   "inside_75pct_span": true,
+   "destination_status": "proposed (not added; listed for the owner)"
+  },
+  {
+   "name": "Bundeena",
+   "action": "spot",
+   "destination": "royal-national-park",
+   "id": "royal-national-park-6",
+   "coordinates": {
+    "latitude": -34.0827,
+    "longitude": 151.1506
+   },
+   "coordinates_source": "wikivoyage listing (Royal National Park page) (candidate value kept; a town/park point, not re-resolved)",
+   "reason": "24.4 km from the Sydney centre (inside 30 km) but the park's northern gateway and Coast Track start: spot of Royal National Park.",
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "A village on Port Hacking reached by Cronulla ferry, the northern gateway to the Coast Track and Jibbon Beach.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 9352,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Royal_National_Park",
+    "https://www.sydney.com/destinations/sydney/sydney-south"
+   ],
+   "skeptic_objection": "Keep: village reached by Cronulla ferry, sydney.com and Wikivoyage; start of the Coast Track and Jibbon Beach and Aboriginal engravings.",
+   "photo": {
+    "file": "Hordern Beach, Bundeena, New South Wales.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Hordern_Beach,_Bundeena,_New_South_Wales.jpg",
+    "width": 3982,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_verdict": "candidate",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "hold_for_pin": "Wikivoyage listing point (the spot is the village)",
+   "needs_research": [
+    "coordinates"
+   ],
+   "distance_km_from_destination": 8.8,
+   "inside_75pct_span": true,
+   "destination_status": "proposed (not added; listed for the owner)"
+  },
+  {
+   "name": "Burning Palms Beach",
+   "action": "spot",
+   "destination": "royal-national-park",
+   "id": "royal-national-park-7",
+   "coordinates": {
+    "latitude": -34.186968,
+    "longitude": 151.043675
+   },
+   "coordinates_source": "OSM natural=beach + commons median 81 m; HIGH",
+   "reason": "38.5 km from the Sydney centre; 14 km from Audley, on the Coast Track.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A remote surf beach with rock pools, reached by a steep walk down from Garrawarra or along the Coast Track.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Royal_National_Park"
+   ],
+   "skeptic_objection": "Resolved review to keep: a named beach a guide singles out, with its own surf-and-rockpool identity; one counted source and a steep walk, so low rank. Keep unless the owner sees it as part of the Coast Track.",
+   "photo": {
+    "file": "Royal National Park - Burning Palms Beach.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Royal_National_Park_-_Burning_Palms_Beach.jpg",
+    "width": 4592,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_verdict": "candidate",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "hero_crop": {
+    "x": 0.4,
+    "y": 0.6
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "distance_km_from_destination": 12.6,
+   "inside_75pct_span": true,
+   "destination_status": "proposed (not added; listed for the owner)"
+  },
+  {
+   "name": "Brooklyn",
+   "action": "spot",
+   "destination": "central-coast",
+   "id": "central-coast-22",
+   "coordinates": {
+    "latitude": -33.54833333,
+    "longitude": 151.21777778
+   },
+   "coordinates_source": "wikipedia:Brooklyn, New South Wales (candidate value kept; a town/park point, not re-resolved)",
+   "reason": "35.6 km from the Sydney centre, outside the 30 km reach; 18 km from the proposed Central Coast centre (Gosford), so it takes the next central-coast number (22) as the central-coast-hunter pass advised.",
+   "category": "historic",
+   "icon": "⛴️",
+   "bio": "A Hawkesbury River fishing town, the ferry gateway to Dangar Island and the start of the Great North Walk.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 8011,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Brooklyn_(New_South_Wales)"
+   ],
+   "skeptic_objection": "Keep, low rank: Hawkesbury River gateway (Dangar Island ferry, oyster/seafood), Wikivoyage. Borderline gateway; consider review if owner wants stricter.",
+   "photo": null,
+   "photo_verdict": "none",
+   "photo_status": "skeptic found no passing Commons photo: search outside Commons per IMAGES.md; if none, list under Photos still missing",
+   "status": "ready for Pipeline C research",
+   "hold_for_pin": "Wikipedia town point (the spot is the town)",
+   "needs_research": [
+    "coordinates"
+   ],
+   "wiki": "Brooklyn, New South Wales",
+   "distance_km_from_destination": 17.9,
+   "inside_75pct_span": true,
+   "destination_status": "proposed by region-nsw-central-coast-hunter (not added)"
+  },
+  {
+   "name": "Yerranderie",
+   "action": "standalone",
+   "destination": null,
+   "id": "yerranderie",
+   "coordinates": {
+    "latitude": -34.119157,
+    "longitude": 150.219816
+   },
+   "coordinates_source": "OSM place=hamlet (Photon) within ~280 m of commons file; MEDIUM",
+   "reason": "95.4 km from the Sydney centre in the Wollondilly hinterland; no other kept place within 40 km, so a standalone spot.",
+   "category": "historic",
+   "icon": "🏚️",
+   "bio": "A former silver-mining ghost town in the Wollondilly hinterland, reached by a long unsealed road, with a restored heritage site.",
+   "hours": null,
+   "visitHoursMin": 3,
+   "visitHoursMax": 8,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 3383,
+   "counted_sources": [],
+   "skeptic_objection": "Keep, low rank: NPWS-listed ghost town; remote 4WD, visited only by the committed, so effectively borderline; owner call.",
+   "photo": null,
+   "photo_verdict": "none",
+   "photo_status": "skeptic found no passing Commons photo: search outside Commons per IMAGES.md; if none, list under Photos still missing",
+   "status": "ready for Pipeline C research",
+   "hold_for_pin": "OSM place=hamlet, MEDIUM",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "nearest_destination_km": 95.4
+  },
+  {
+   "name": "Captain Cook's Landing Place",
+   "action": "merge-with-existing",
+   "destination": "sydney",
+   "id": "sydney-53",
+   "existing_spot": "Kamay Botany Bay National Park (sydney-53)",
+   "coordinates": {
+    "latitude": -34.00475,
+    "longitude": 151.217399
+   },
+   "coordinates_source": "photon/OSM historic=memorial 'The Landing Place of Captain Cook' (Inscription Point); the candidate's Wikivoyage point (-34.0315,151.172) is Kurnell village, ~5 km off; LOW (one source) -- LOW",
+   "reason": "15.1 km from the Sydney centre, Inscription Point in Kamay Botany Bay National Park, which is already sydney-53 (with La Perouse, Bare Island and Cape Solander as sydney-54..56). The skeptic kept it only as the named landing site and said the owner may merge: recommend MERGE, not a new id. If the owner wants it separate it takes sydney-82.",
+   "alt_id_if_separate": "sydney-82",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sydney/Sutherland_Shire"
+   ],
+   "photo": {
+    "file": "Captain Cooks Landing Place Park - panoramio (2).jpg",
+    "width": 3648,
+    "licence": "see Commons"
+   },
+   "photo_verdict": "candidate",
+   "hold_for_pin": "LOW coordinate: OSM historic=memorial point; resolve before any separate spot; for a merge, mention the landing in the Kamay bio instead",
+   "status": "merge recommended; not a new spot"
+  }
+ ],
+ "new_destinations": [
+  {
+   "id": "pittwater",
+   "name": "Pittwater",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "category": "beach",
+   "coordinates": {
+    "latitude": -33.59119,
+    "longitude": 151.32529
+   },
+   "defaultZoomSpanKm": 20,
+   "suggested_rank": 4,
+   "members": [
+    "pittwater-1 Palm Beach",
+    "pittwater-2 Barrenjoey Lighthouse",
+    "pittwater-3 West Head",
+    "pittwater-4 Whale Beach"
+   ],
+   "member_count": 4,
+   "notes": "The northern tip of the Northern Beaches: four kept places within 4 km of Palm Beach, none inside Sydney's 30 km reach (31-34 km). Mona Vale and Warriewood (22 km) stay Sydney spots. Span 20 km is enough for a 4 km cluster; the existing Sydney destination spans 40 km so the two overlap only at Sydney's northern edge.",
+   "self_place": null,
+   "if_declined_standalone": [
+    {
+     "name": "Palm Beach",
+     "action": "standalone",
+     "destination": null,
+     "id": "palm-beach",
+     "coordinates": {
+      "latitude": -33.59119,
+      "longitude": 151.32529
+     },
+     "coordinates_source": "openstreetmap natural=beach (candidate value kept; a town/park point, not re-resolved)",
+     "reason": "If the proposed destination is declined: standalone spot, reached on its own. 32.7 km from the Sydney centre, outside the 30 km reach; with Barrenjoey, West Head and Whale Beach it clusters 2-4 km apart at the Pittwater end of the Northern Beaches, enough to propose a Pittwater destination.",
+     "category": "beach",
+     "icon": "🏖️",
+     "bio": "The long beach and village at the northern tip of the Northern Beaches, between the ocean and Pittwater.",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 1,
+     "visitHoursMax": 4,
+     "free": true,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 28470,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Sydney/Northern_Beaches"
+     ],
+     "skeptic_objection": "Keep: a village-and-beach destination guides name (Wikivoyage, tourism); marginal on one counted source but beaches a real source names are not rejected.",
+     "photo": {
+      "file": "Palm Beach NSW.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Palm_Beach_NSW.jpg",
+      "width": 2272,
+      "licence": "Public domain"
+     },
+     "photo_verdict": "candidate",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "status": "ready for Pipeline C research",
+     "hero_crop": {
+      "x": 0.6,
+      "y": 0.5
+     },
+     "needs_research": [],
+     "wiki": "Palm Beach, New South Wales",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "if_declined": true
+    },
+    {
+     "name": "Barrenjoey Lighthouse",
+     "action": "standalone",
+     "destination": null,
+     "id": "barrenjoey-lighthouse",
+     "coordinates": {
+      "latitude": -33.580189,
+      "longitude": 151.329826
+     },
+     "coordinates_source": "photon/OSM man_made=lighthouse, within 100 m of commons median; HIGH",
+     "reason": "If the proposed destination is declined: standalone spot, reached on its own. 34.0 km from the Sydney centre; walked up from Palm Beach.",
+     "category": "historic",
+     "icon": "🗼",
+     "bio": "An 1881 sandstone lighthouse on Barrenjoey Head, reached by a 30 to 40 minute walk up from Palm Beach.",
+     "hours": null,
+     "visitHoursMin": 1.5,
+     "visitHoursMax": 3,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/ku-ring-gai-chase-national-park",
+     "views": 0,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Ku-ring-gai_Chase_National_Park",
+      "https://en.wikivoyage.org/wiki/Sydney/Northern_Beaches"
+     ],
+     "skeptic_objection": "Keep: named headland walk (about 30-40 min up) with its own NPWS page and Wikivoyage listing; distinct from Palm Beach.",
+     "photo": {
+      "file": "Barrenjoey Head Lighthouse 22042014.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Barrenjoey_Head_Lighthouse_22042014.jpg",
+      "width": 4272,
+      "licence": "CC BY-SA 4.0"
+     },
+     "photo_verdict": "candidate",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "status": "ready for Pipeline C research",
+     "hero_crop": {
+      "x": 0.4,
+      "y": 0.5
+     },
+     "ticketUrl_note": "official page named by a counted source; unverified, Pipeline C to load and confirm",
+     "needs_research": [
+      "hours",
+      "cost"
+     ],
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "if_declined": true
+    },
+    {
+     "name": "West Head",
+     "action": "standalone",
+     "destination": null,
+     "id": "west-head-ku-ring-gai",
+     "coordinates": {
+      "latitude": -33.580148,
+      "longitude": 151.308383
+     },
+     "coordinates_source": "commons geotagged photo median (5 files) ~230 m from OSM/Photon natural=cape West Head; MEDIUM. Candidate coordinates were New Zealand's West Head (-41.2, 174.3), wrong, replaced.",
+     "reason": "If the proposed destination is declined: standalone spot, reached on its own. 33.4 km from the Sydney centre; 2.5 km from Palm Beach across Pittwater, reached on its own road from Ku-ring-gai Chase, so a Pittwater spot, not a Sydney one.",
+     "category": "viewpoint",
+     "icon": "🔭",
+     "bio": "A Ku-ring-gai Chase headland lookout over Broken Bay and Pittwater, with Aboriginal engravings nearby.",
+     "hours": null,
+     "visitHoursMin": 1,
+     "visitHoursMax": 2.5,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/ku-ring-gai-chase-national-park",
+     "views": 555,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Ku-ring-gai_Chase_National_Park"
+     ],
+     "skeptic_objection": "Keep: NPWS and Wikivoyage both feature the lookout and Aboriginal engravings; its own named draw. Candidate coordinates pointed at New Zealand's West Head and are replaced. The Aboriginal Heritage Walk stays folded into it.",
+     "photo": {
+      "file": "View from West Head Lookout.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:View_from_West_Head_Lookout.jpg",
+      "width": 4000,
+      "licence": "CC BY-SA 4.0"
+     },
+     "photo_verdict": "candidate",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "status": "ready for Pipeline C research",
+     "hero_crop": {
+      "x": 0.6,
+      "y": 0.4
+     },
+     "ticketUrl_note": "official page named by a counted source; unverified, Pipeline C to load and confirm",
+     "hold_for_pin": "MEDIUM only (Commons median, ~230 m from OSM): confirm lookout/car park with resolve-pin",
+     "needs_research": [
+      "hours",
+      "cost",
+      "coordinates"
+     ],
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "if_declined": true
+    },
+    {
+     "name": "Whale Beach",
+     "action": "standalone",
+     "destination": null,
+     "id": "whale-beach",
+     "coordinates": {
+      "latitude": -33.61075,
+      "longitude": 151.33156
+     },
+     "coordinates_source": "openstreetmap natural=beach (candidate value kept; a town/park point, not re-resolved)",
+     "reason": "If the proposed destination is declined: standalone spot, reached on its own. 30.8 km from the Sydney centre, outside the reach; 2.2 km from Palm Beach.",
+     "category": "beach",
+     "icon": "🏖️",
+     "bio": "A patrolled surf beach with a rose-gold sand cove between cliffs, quieter than Palm Beach.",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 1,
+     "visitHoursMax": 3,
+     "free": true,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 5841,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Sydney/Northern_Beaches"
+     ],
+     "skeptic_objection": "Keep as a second-tier beach, one counted source; marginal but a named patrolled surf beach.",
+     "photo": {
+      "file": "Whale Beach - panoramio (3).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Whale_Beach_-_panoramio_(3).jpg",
+      "width": 2048,
+      "licence": "CC BY 3.0"
+     },
+     "photo_verdict": "candidate",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "status": "ready for Pipeline C research",
+     "needs_research": [],
+     "wiki": "Whale Beach, New South Wales",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "if_declined": true
+    }
+   ],
+   "status": "PROPOSAL ONLY, not added: needs description, three reasons with photos, tips, best months and a header (WRITING.md, Pipeline C)."
+  },
+  {
+   "id": "hawkesbury",
+   "name": "Hawkesbury",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "category": "city",
+   "coordinates": {
+    "latitude": -33.61361111,
+    "longitude": 150.81166667
+   },
+   "defaultZoomSpanKm": 30,
+   "suggested_rank": 5,
+   "members": [
+    "hawkesbury-1 Windsor",
+    "hawkesbury-2 Cattai National Park",
+    "hawkesbury-3 Scheyville National Park"
+   ],
+   "member_count": 3,
+   "notes": "Windsor and the two parks within 12 km. Dharug National Park and Wisemans Ferry are NOT part of it (decided in central-coast-hunter: dharug-national-park). Richmond, RAAF Museum and Australiana Pioneer Village were rejected. Thin (three) but Windsor is a Wikivoyage hub town.",
+   "self_place": null,
+   "if_declined_standalone": [
+    {
+     "name": "Windsor",
+     "action": "standalone",
+     "destination": null,
+     "id": "windsor",
+     "coordinates": {
+      "latitude": -33.61361111,
+      "longitude": 150.81166667
+     },
+     "coordinates_source": "wikipedia:Windsor, New South Wales (candidate value kept; a town/park point, not re-resolved)",
+     "reason": "If the proposed destination is declined: standalone spot, reached on its own. 46.4 km from the Sydney centre; the historic hub of the Hawkesbury, with Cattai and Scheyville National Parks 9-12 km away: a Hawkesbury cluster of three.",
+     "category": "historic",
+     "icon": "🏘️",
+     "bio": "A colonial town on the Hawkesbury, one of Australia's oldest, with Georgian buildings and Thompson Square.",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 1,
+     "visitHoursMax": 3,
+     "free": true,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 16905,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Windsor_(New_South_Wales)"
+     ],
+     "skeptic_objection": "Keep: oldest colonial town on the Hawkesbury, Thompson Square, Wikivoyage hub.",
+     "photo": null,
+     "photo_verdict": "none",
+     "photo_status": "skeptic found no passing Commons photo: search outside Commons per IMAGES.md; if none, list under Photos still missing",
+     "status": "ready for Pipeline C research",
+     "hold_for_pin": "Wikipedia town point (the spot is the town)",
+     "needs_research": [
+      "coordinates"
+     ],
+     "wiki": "Windsor, New South Wales",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "if_declined": true
+    },
+    {
+     "name": "Cattai National Park",
+     "action": "standalone",
+     "destination": null,
+     "id": "cattai-national-park",
+     "coordinates": {
+      "latitude": -33.54722222,
+      "longitude": 150.89694444
+     },
+     "coordinates_source": "wikipedia:Cattai National Park (candidate value kept; a town/park point, not re-resolved)",
+     "reason": "If the proposed destination is declined: standalone spot, reached on its own. 46.0 km from the Sydney centre; 12 km from Windsor. np_exception: folded into the Hawkesbury proposal rather than a one-spot park destination.",
+     "category": "nature",
+     "icon": "🌳",
+     "bio": "A Hawkesbury River park with the 1821 Cattai Farm and windmill ruins, plus camping, canoeing and picnics.",
+     "hours": null,
+     "visitHoursMin": 1.5,
+     "visitHoursMax": 4,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/cattai-national-park",
+     "views": 700,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Sydney/Hills",
+      "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/cattai-national-park"
+     ],
+     "skeptic_objection": "Keep: NPWS plus Wikivoyage, Cattai Farm heritage and Hawkesbury canoeing; visitor-oriented sources.",
+     "photo": {
+      "file": "Cattai national park view from cattai wharf.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cattai_national_park_view_from_cattai_wharf.jpg",
+      "width": 2048,
+      "licence": "CC BY-SA 3.0"
+     },
+     "photo_verdict": "candidate",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "status": "ready for Pipeline C research",
+     "ticketUrl_note": "official page named by a counted source; unverified, Pipeline C to load and confirm",
+     "hold_for_pin": "LOW: Wikipedia park centroid; take the Cattai Farm / wharf entry via resolve-pin",
+     "needs_research": [
+      "hours",
+      "cost",
+      "coordinates"
+     ],
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "if_declined": true
+    },
+    {
+     "name": "Scheyville National Park",
+     "action": "standalone",
+     "destination": null,
+     "id": "scheyville-national-park",
+     "coordinates": {
+      "latitude": -33.60666667,
+      "longitude": 150.88888889
+     },
+     "coordinates_source": "wikipedia:Scheyville National Park (candidate value kept; a town/park point, not re-resolved)",
+     "reason": "If the proposed destination is declined: standalone spot, reached on its own. 41.6 km from the Sydney centre; 9 km from Windsor. np_exception: folded into the Hawkesbury proposal.",
+     "category": "nature",
+     "icon": "🌳",
+     "bio": "A park near Windsor with a migrant-camp heritage walk, Longneck Lagoon and horse-riding trails.",
+     "hours": null,
+     "visitHoursMin": 1.5,
+     "visitHoursMax": 3,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/scheyville-national-park",
+     "views": 2338,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Sydney/Hills",
+      "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/scheyville-national-park"
+     ],
+     "skeptic_objection": "Keep with low rank: NPWS plus Wikivoyage, migrant-camp heritage walk; modest draw.",
+     "photo": {
+      "file": "Scheyville national park longneck lagoon north swamp.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Scheyville_national_park_longneck_lagoon_north_swamp.jpg",
+      "width": 2048,
+      "licence": "CC BY-SA 3.0"
+     },
+     "photo_verdict": "candidate",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "status": "ready for Pipeline C research",
+     "ticketUrl_note": "official page named by a counted source; unverified, Pipeline C to load and confirm",
+     "hold_for_pin": "LOW: Wikipedia park centroid; take the heritage-walk / lagoon car park via resolve-pin",
+     "needs_research": [
+      "hours",
+      "cost",
+      "coordinates"
+     ],
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "if_declined": true
+    }
+   ],
+   "status": "PROPOSAL ONLY, not added: needs description, three reasons with photos, tips, best months and a header (WRITING.md, Pipeline C)."
+  },
+  {
+   "id": "penrith",
+   "name": "Penrith",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "category": "city",
+   "coordinates": {
+    "latitude": -33.75111111,
+    "longitude": 150.69416667
+   },
+   "defaultZoomSpanKm": 40,
+   "suggested_rank": 5,
+   "members": [
+    "penrith-1 Penrith Whitewater Stadium",
+    "penrith-2 Sydney Zoo",
+    "penrith-3 Warragamba Dam"
+   ],
+   "member_count": 3,
+   "notes": "Penrith is itself the base (a sizable settlement with its own Wikivoyage chapter), so it is the destination and not a spot of itself; its kept places are the whitewater course (3 km), Sydney Zoo (16 km) and Warragamba Dam (17 km). If declined, Penrith itself is the standalone spot listed below. Existing standalone spots nearby (Featherdale Wildlife Park, 20 km) could join; the owner decides.",
+   "self_place": "Penrith",
+   "if_declined_standalone": [
+    {
+     "name": "Penrith Whitewater Stadium",
+     "action": "standalone",
+     "destination": null,
+     "id": "penrith-whitewater-stadium",
+     "coordinates": {
+      "latitude": -33.720658,
+      "longitude": 150.684341
+     },
+     "coordinates_source": "photon/OSM leisure=water_park + wikipedia, HIGH",
+     "reason": "If the proposed destination is declined: standalone spot, reached on its own. 51.2 km from the Sydney centre; 3 km from Penrith, so a spot of the proposed Penrith destination.",
+     "category": "entertainment",
+     "icon": "🛶",
+     "bio": "The 2000 Olympic whitewater course at Cranebrook, open to the public for rafting and kayaking.",
+     "hours": null,
+     "visitHoursMin": 1.5,
+     "visitHoursMax": 3,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 2153,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Sydney/Penrith",
+      "https://www.sydney.com/articles/thrill-seekers-guide-to-western-sydney"
+     ],
+     "skeptic_objection": "Keep: Olympic course open to the public for rafting; the place is the course, not an operator. Two counted sources. Paid; official site exists (penrithwhitewater / Penrith Whitewater Stadium operated by Penrith City Council venue).",
+     "photo": null,
+     "photo_verdict": "none",
+     "photo_status": "skeptic found no passing Commons photo: search outside Commons per IMAGES.md; if none, list under Photos still missing",
+     "status": "ready for Pipeline C research",
+     "needs_research": [
+      "hours",
+      "cost",
+      "ticketUrl"
+     ],
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "if_declined": true
+    },
+    {
+     "name": "Sydney Zoo",
+     "action": "standalone",
+     "destination": null,
+     "id": "sydney-zoo-bungarribee",
+     "coordinates": {
+      "latitude": -33.79111111,
+      "longitude": 150.86694444
+     },
+     "coordinates_source": "wikipedia:Sydney Zoo (candidate value kept; a town/park point, not re-resolved)",
+     "reason": "If the proposed destination is declined: standalone spot, reached on its own. 32.8 km from the Sydney centre, outside the reach; 16 km from Penrith along the M4, the nearest proposed base.",
+     "category": "entertainment",
+     "icon": "🐘",
+     "bio": "A walk-through zoo in the Western Sydney Parklands at Bungarribee, with walk-through safari-style exhibits and elephants.",
+     "hours": null,
+     "visitHoursMin": 2,
+     "visitHoursMax": 4,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 11674,
+     "counted_sources": [
+      "https://www.sydney.com/things-to-do/family-holidays/zoos-and-wildlife",
+      "https://www.sydney.com/destinations/sydney/sydney-west/blacktown"
+     ],
+     "skeptic_objection": "Keep: open daily, two counted sources (sydney.com, Wikivoyage).",
+     "photo": null,
+     "photo_verdict": "none",
+     "photo_status": "skeptic found no passing Commons photo: search outside Commons per IMAGES.md; if none, list under Photos still missing",
+     "status": "ready for Pipeline C research",
+     "hold_for_pin": "Wikipedia point; confirm entrance with resolve-pin",
+     "needs_research": [
+      "hours",
+      "cost",
+      "ticketUrl",
+      "coordinates"
+     ],
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "if_declined": true
+    },
+    {
+     "name": "Warragamba Dam",
+     "action": "standalone",
+     "destination": null,
+     "id": "warragamba-dam",
+     "coordinates": {
+      "latitude": -33.883061,
+      "longitude": 150.596193
+     },
+     "coordinates_source": "OSM waterway=dam + wikipedia, HIGH",
+     "reason": "If the proposed destination is declined: standalone spot, reached on its own. 56.6 km from the Sydney centre; about 17 km from Penrith.",
+     "category": "landmark",
+     "icon": "💧",
+     "bio": "The huge dam wall on the Warragamba River that holds Sydney's main water supply, with a visitor centre and lookouts.",
+     "hours": null,
+     "visitHoursMin": 0.5,
+     "visitHoursMax": 1.5,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 11274,
+     "counted_sources": [],
+     "skeptic_objection": "Keep: WaterNSW visitor centre and lookout; zero formal counted sources (WaterNSW, VisitNSW are agency pages), so marginal; weekday access has been questioned, verify hours.",
+     "photo": {
+      "file": "Warragamba Dam, NSW.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Warragamba_Dam,_NSW.jpg",
+      "width": 5184,
+      "licence": "CC BY-SA 4.0"
+     },
+     "photo_verdict": "candidate",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "status": "ready for Pipeline C research",
+     "needs_research": [
+      "hours",
+      "cost",
+      "ticketUrl"
+     ],
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "if_declined": true
+    },
+    {
+     "name": "Penrith",
+     "action": "standalone",
+     "destination": null,
+     "id": "penrith",
+     "coordinates": {
+      "latitude": -33.75111111,
+      "longitude": 150.69416667
+     },
+     "coordinates_source": "wikipedia:Penrith, New South Wales (candidate value kept; a town/park point, not re-resolved)",
+     "reason": "If the proposed Penrith destination is declined: the city stands alone (49.4 km from Sydney). It is the destination in the proposal, so it is not a spot of itself.",
+     "category": "historic",
+     "icon": "🏙️",
+     "bio": "The regional city at the western end of the Sydney basin, on the Nepean River and the base for western Sydney attractions.",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 1,
+     "visitHoursMax": 3,
+     "free": true,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 39785,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Sydney/Penrith"
+     ],
+     "photo": {
+      "file": "Penrith Weir - Nepean River - Penrith NSW (5554106143).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Penrith_Weir_-_Nepean_River_-_Penrith_NSW_(5554106143).jpg",
+      "width": 3648,
+      "licence": "CC BY 2.0"
+     },
+     "photo_verdict": "candidate",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "status": "ready for Pipeline C research",
+     "needs_research": [
+      "coordinates"
+     ],
+     "hold_for_pin": "Wikipedia town point (the spot is the town)",
+     "wiki": "Penrith, New South Wales",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "if_declined": true
+    }
+   ],
+   "status": "PROPOSAL ONLY, not added: needs description, three reasons with photos, tips, best months and a header (WRITING.md, Pipeline C)."
+  },
+  {
+   "id": "macarthur",
+   "name": "Macarthur",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "category": "city",
+   "coordinates": {
+    "latitude": -34.05444444,
+    "longitude": 150.69583333
+   },
+   "defaultZoomSpanKm": 50,
+   "suggested_rank": 5,
+   "members": [
+    "macarthur-1 Camden",
+    "macarthur-2 Campbelltown",
+    "macarthur-3 Picton",
+    "macarthur-4 Thirlmere Lakes National Park"
+   ],
+   "member_count": 4,
+   "notes": "Camden, Campbelltown, Picton and Thirlmere Lakes within 25 km of Camden. Existing standalone spots nearby (Australian Botanic Garden Mount Annan 6 km, NSW Rail Museum at Thirlmere, Dharawal and Heathcote National Parks) are not moved by this run; the owner may fold them in.",
+   "self_place": null,
+   "if_declined_standalone": [
+    {
+     "name": "Camden",
+     "action": "standalone",
+     "destination": null,
+     "id": "camden",
+     "coordinates": {
+      "latitude": -34.05444444,
+      "longitude": 150.69583333
+     },
+     "coordinates_source": "wikipedia:Camden, New South Wales (candidate value kept; a town/park point, not re-resolved)",
+     "reason": "If the proposed destination is declined: standalone spot, reached on its own. 51.7 km from the Sydney centre; the old country town of the Macarthur district, with Campbelltown, Picton and Thirlmere Lakes within 25 km.",
+     "category": "historic",
+     "icon": "🏘️",
+     "bio": "A historic country town on the Nepean with Argyle Street cafes, museums and farmland around it.",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 1,
+     "visitHoursMax": 3,
+     "free": true,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 20251,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Camden_(New_South_Wales)",
+      "https://en.wikivoyage.org/wiki/Sydney/Macarthur"
+     ],
+     "skeptic_objection": "Keep: historic country town, two counted sources.",
+     "photo": null,
+     "photo_verdict": "none",
+     "photo_status": "skeptic found no passing Commons photo: search outside Commons per IMAGES.md; if none, list under Photos still missing",
+     "status": "ready for Pipeline C research",
+     "hold_for_pin": "Wikipedia town point (the spot is the town)",
+     "needs_research": [
+      "coordinates"
+     ],
+     "wiki": "Camden, New South Wales",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "if_declined": true
+    },
+    {
+     "name": "Campbelltown",
+     "action": "standalone",
+     "destination": null,
+     "id": "campbelltown",
+     "coordinates": {
+      "latitude": -34.06666667,
+      "longitude": 150.81666667
+     },
+     "coordinates_source": "wikipedia:Campbelltown, New South Wales (candidate value kept; a town/park point, not re-resolved)",
+     "reason": "If the proposed destination is declined: standalone spot, reached on its own. 42.4 km from the Sydney centre; the Macarthur district hub, 12 km from Camden.",
+     "category": "historic",
+     "icon": "🏙️",
+     "bio": "The regional hub of the Macarthur district, with the Campbelltown Arts Centre and heritage walks.",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 1,
+     "visitHoursMax": 3,
+     "free": true,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 27325,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Sydney/Macarthur"
+     ],
+     "skeptic_objection": "Keep, low rank: regional hub city with its own Wikivoyage chapter; borderline since draw is services and the Arts Centre.",
+     "photo": null,
+     "photo_verdict": "none",
+     "photo_status": "skeptic found no passing Commons photo: search outside Commons per IMAGES.md; if none, list under Photos still missing",
+     "status": "ready for Pipeline C research",
+     "hold_for_pin": "Wikipedia town point (the spot is the town)",
+     "needs_research": [
+      "coordinates"
+     ],
+     "wiki": "Campbelltown, New South Wales",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "if_declined": true
+    },
+    {
+     "name": "Picton",
+     "action": "standalone",
+     "destination": null,
+     "id": "picton",
+     "coordinates": {
+      "latitude": -34.18333333,
+      "longitude": 150.6
+     },
+     "coordinates_source": "wikipedia:Picton, New South Wales (candidate value kept; a town/park point, not re-resolved)",
+     "reason": "If the proposed destination is declined: standalone spot, reached on its own. 66.2 km from the Sydney centre; 15 km from Camden.",
+     "category": "historic",
+     "icon": "🏘️",
+     "bio": "A historic village on the Southern Highlands rail line with Argyle Street pubs and the Victoria Bridge.",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 1,
+     "visitHoursMax": 2.5,
+     "free": true,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 11153,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Picton_(New_South_Wales)",
+      "https://en.wikivoyage.org/wiki/Sydney/Macarthur"
+     ],
+     "skeptic_objection": "Keep, low rank: two counted sources, village with historic pubs and Mushroom Tunnel nearby.",
+     "photo": null,
+     "photo_verdict": "none",
+     "photo_status": "skeptic found no passing Commons photo: search outside Commons per IMAGES.md; if none, list under Photos still missing",
+     "status": "ready for Pipeline C research",
+     "hold_for_pin": "Wikipedia town point (the spot is the town)",
+     "needs_research": [
+      "coordinates"
+     ],
+     "wiki": "Picton, New South Wales",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "if_declined": true
+    },
+    {
+     "name": "Thirlmere Lakes National Park",
+     "action": "standalone",
+     "destination": null,
+     "id": "thirlmere-lakes-national-park",
+     "coordinates": {
+      "latitude": -34.22555556,
+      "longitude": 150.53861111
+     },
+     "coordinates_source": "wikipedia:Thirlmere Lakes National Park (candidate value kept; a town/park point, not re-resolved)",
+     "reason": "If the proposed destination is declined: standalone spot, reached on its own. 73.4 km from the Sydney centre; 24 km from Camden. np_exception: folded into the Macarthur proposal.",
+     "category": "nature",
+     "icon": "🏞️",
+     "bio": "World Heritage lakes in the Greater Blue Mountains Area near Picton, with walking tracks and picnic areas.",
+     "hours": null,
+     "visitHoursMin": 1.5,
+     "visitHoursMax": 3,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/thirlmere-lakes-national-park",
+     "views": 968,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Thirlmere",
+      "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/thirlmere-lakes-national-park"
+     ],
+     "skeptic_objection": "Keep: NPWS plus Wikivoyage; World Heritage lakes. Lake levels have been very low in dry years, so verify visitor value.",
+     "photo": {
+      "file": "Thirlmere Lake, Thirlmere National Park - panoramio.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Thirlmere_Lake,_Thirlmere_National_Park_-_panoramio.jpg",
+      "width": 2158,
+      "licence": "CC BY 3.0"
+     },
+     "photo_verdict": "candidate",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "status": "ready for Pipeline C research",
+     "ticketUrl_note": "official page named by a counted source; unverified, Pipeline C to load and confirm",
+     "hold_for_pin": "LOW: Wikipedia park centroid; take the lakes picnic area via resolve-pin",
+     "needs_research": [
+      "hours",
+      "cost",
+      "coordinates"
+     ],
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "if_declined": true
+    }
+   ],
+   "status": "PROPOSAL ONLY, not added: needs description, three reasons with photos, tips, best months and a header (WRITING.md, Pipeline C)."
+  },
+  {
+   "id": "royal-national-park",
+   "name": "Royal National Park",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "category": "park",
+   "coordinates": {
+    "latitude": -34.074196,
+    "longitude": 151.055502
+   },
+   "defaultZoomSpanKm": 40,
+   "suggested_rank": 3,
+   "members": [
+    "royal-national-park-1 Audley",
+    "royal-national-park-2 Wattamolla Beach",
+    "royal-national-park-3 Bundeena to Otford Coast Track",
+    "royal-national-park-4 Garie Beach",
+    "royal-national-park-5 Wedding Cake Rock",
+    "royal-national-park-6 Bundeena",
+    "royal-national-park-7 Burning Palms Beach"
+   ],
+   "member_count": 7,
+   "notes": "Decided once here (the south-coast pass did not place any Royal NP stop): Royal National Park is a destination (every national park is), centred on the Audley hub (the park centroid -34.118,151.064 is LOW and is not used). Audley, Wedding Cake Rock and Bundeena lie inside Sydney's 30 km reach but are the park's own stops, so they are the park's spots, not Sydney's. Span 40 km covers all seven (max 14 km from Audley). The Royal Coast Track is the park's 26 km signature walk, so it is a spot, with North Era, Big Marley and Werrong beaches (rejected) and Figure Eight Pools (review) folded under it. The destination overlaps Sydney's span on its southern edge; the skeptic asked for this placement. If declined: Audley, Wedding Cake Rock and Bundeena could alternatively be Sydney spots (next free ids sydney-83..85); the rest stand alone.",
+   "self_place": "Royal National Park",
+   "if_declined_standalone": [
+    {
+     "name": "Royal National Park",
+     "action": "standalone",
+     "destination": null,
+     "id": "royal-national-park",
+     "coordinates": {
+      "latitude": -34.074196,
+      "longitude": 151.055502
+     },
+     "coordinates_source": "Audley Boatshed (OSM amenity=boat_rental, HIGH) as the main visitor hub; the skeptic's park centroid (-34.118308,151.063786) is LOW and not used",
+     "reason": "If the proposed Royal National Park destination is declined: the park itself stands alone (30.8 km from Sydney, outside the reach); its stops go as standalone spots below.",
+     "category": "nature",
+     "icon": "🌳",
+     "bio": "The world's second-oldest national park, south of Sydney, with coastal cliffs, lagoons, beaches and the Coast Track.",
+     "hours": null,
+     "visitHoursMin": 3,
+     "visitHoursMax": 8,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/royal-national-park",
+     "ticketUrl_note": "official page named by a counted source; unverified",
+     "views": 14486,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Royal_National_Park",
+      "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/royal-national-park",
+      "https://www.sydney.com/destinations/sydney/sydney-south"
+     ],
+     "photo": {
+      "file": "Bungoona Lookout, Royal National Park.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bungoona_Lookout,_Royal_National_Park.jpg",
+      "width": 2700,
+      "licence": "CC BY-SA 3.0"
+     },
+     "photo_verdict": "candidate",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "status": "ready for Pipeline C research",
+     "needs_research": [
+      "hours",
+      "cost"
+     ],
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "if_declined": true,
+     "note": "As a destination Royal National Park has no spot of itself; this entry exists only for the declined case. The photo Bungoona Lookout is the park's lead image; Bungoona Lookout itself was rejected as a pull-out."
+    },
+    {
+     "name": "Audley",
+     "action": "standalone",
+     "destination": null,
+     "id": "audley",
+     "coordinates": {
+      "latitude": -34.074196,
+      "longitude": 151.055502
+     },
+     "coordinates_source": "photon/OSM amenity=boat_rental Audley Boatshed, HIGH (commons median 147 m)",
+     "reason": "If the proposed destination is declined: standalone spot, reached on its own. 26.9 km from the Sydney centre (inside 30 km) but the Royal National Park hub: every national park is a destination (COVERAGE.md Granularity) and one spot has one parent, so it goes under Royal National Park rather than splitting the park between two destinations.",
+     "category": "nature",
+     "icon": "🛶",
+     "bio": "The Royal National Park's main hub on the Hacking River, with a historic boatshed, canoe hire, a weir and picnic grounds.",
+     "hours": null,
+     "visitHoursMin": 1,
+     "visitHoursMax": 3,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 1450,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Royal_National_Park"
+     ],
+     "skeptic_objection": "Resolved review to keep: the park's main hub (boatshed, weir, canoe hire, picnic) with its own NPWS visitor page as well as Wikivoyage, so two counted sources; a distinct named stop. Low rank.",
+     "photo": {
+      "file": "Audley Weir, Royal National Park.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Audley_Weir,_Royal_National_Park.jpg",
+      "width": 4032,
+      "licence": "CC BY-SA 4.0"
+     },
+     "photo_verdict": "candidate",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "status": "ready for Pipeline C research",
+     "needs_research": [
+      "hours",
+      "cost",
+      "ticketUrl"
+     ],
+     "wiki": "Audley, New South Wales",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "if_declined": true
+    },
+    {
+     "name": "Wattamolla Beach",
+     "action": "standalone",
+     "destination": null,
+     "id": "wattamolla-beach",
+     "coordinates": {
+      "latitude": -34.137514,
+      "longitude": 151.117467
+     },
+     "coordinates_source": "OSM natural=beach (via Photon); MEDIUM",
+     "reason": "If the proposed destination is declined: standalone spot, reached on its own. 31.1 km from the Sydney centre; 9 km from the Audley hub; the park's classic road-access swim stop.",
+     "category": "beach",
+     "icon": "🏖️",
+     "bio": "A sheltered lagoon and beach in Royal National Park, reached by road, with a waterfall and clifftop picnic area.",
+     "hours": null,
+     "visitHoursMin": 1.5,
+     "visitHoursMax": 4,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 0,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Royal_National_Park"
+     ],
+     "skeptic_objection": "Keep: Wattamolla picnic area, lagoon and beach has its own NPWS page and Wikivoyage listing; the park's classic road-access swim stop.",
+     "photo": {
+      "file": "Wattamolla lagoon.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Wattamolla_lagoon.jpg",
+      "width": 3264,
+      "licence": "CC BY-SA 3.0"
+     },
+     "photo_verdict": "candidate",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "status": "ready for Pipeline C research",
+     "needs_research": [
+      "hours",
+      "cost",
+      "ticketUrl"
+     ],
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "if_declined": true
+    },
+    {
+     "name": "Bundeena to Otford Coast Track",
+     "action": "standalone",
+     "destination": null,
+     "id": "royal-coast-track",
+     "coordinates": {
+      "latitude": -34.142944,
+      "longitude": 151.114459
+     },
+     "coordinates_source": "commons geotagged photo median (18 files) as a proxy for the route midpoint; LOW (Overpass unavailable, OSM route midpoint not obtained). Re-run resolve-pin when Overpass is up",
+     "reason": "If the proposed destination is declined: standalone spot, reached on its own. 31.7 km from the Sydney centre; the park's signature walk, pinned at the proxy point until the route midpoint is resolved.",
+     "category": "hike",
+     "icon": "🥾",
+     "bio": "A 26 km coastal walk from Bundeena to Otford through the park, passing most of its beaches and cliffs.",
+     "hours": null,
+     "visitHoursMin": 4,
+     "visitHoursMax": 10,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/royal-national-park",
+     "views": 0,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Royal_National_Park"
+     ],
+     "skeptic_objection": "Keep: the Royal Coast Track is an NPWS-promoted named walk (26 km), a distinct route; Burning Palms, North Era and Big Marley are its sub-sites and stay folded in. Pin is a placeholder: midpoint not obtained.",
+     "photo": {
+      "file": "Royal National Park Coast Track - panoramio.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Royal_National_Park_Coast_Track_-_panoramio.jpg",
+      "width": 2048,
+      "licence": "CC BY 3.0"
+     },
+     "photo_verdict": "candidate",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "status": "ready for Pipeline C research",
+     "ticketUrl_note": "official page named by a counted source; unverified, Pipeline C to load and confirm",
+     "hold_for_pin": "HOLD: pin is a Commons photo-median proxy, not the route midpoint; resolve OSM hiking relation midpoint",
+     "needs_research": [
+      "hours",
+      "cost",
+      "coordinates"
+     ],
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "if_declined": true
+    },
+    {
+     "name": "Garie Beach",
+     "action": "standalone",
+     "destination": null,
+     "id": "garie-beach",
+     "coordinates": {
+      "latitude": -34.17013,
+      "longitude": 151.06811
+     },
+     "coordinates_source": "OSM natural=beach (via Photon); MEDIUM",
+     "reason": "If the proposed destination is declined: standalone spot, reached on its own. 35.9 km from the Sydney centre; 11 km from Audley.",
+     "category": "beach",
+     "icon": "🏖️",
+     "bio": "A road-access surf beach in the park, patrolled on summer weekends, and the start of the walk to Figure Eight Pools.",
+     "hours": null,
+     "visitHoursMin": 1,
+     "visitHoursMax": 3,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 2110,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Royal_National_Park"
+     ],
+     "skeptic_objection": "Keep: NPWS (Garie Beach picnic area) and Wikivoyage list it; road-access surf beach and the start of the Figure Eight Pools walk.",
+     "photo": {
+      "file": "Garie Beach, Royal National Park.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Garie_Beach,_Royal_National_Park.jpg",
+      "width": 2365,
+      "licence": "CC BY-SA 4.0"
+     },
+     "photo_verdict": "candidate",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "status": "ready for Pipeline C research",
+     "hero_crop": {
+      "x": 0.6,
+      "y": 0.5
+     },
+     "needs_research": [
+      "hours",
+      "cost",
+      "ticketUrl"
+     ],
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "if_declined": true
+    },
+    {
+     "name": "Wedding Cake Rock",
+     "action": "standalone",
+     "destination": null,
+     "id": "wedding-cake-rock",
+     "coordinates": {
+      "latitude": -34.109487,
+      "longitude": 151.151984
+     },
+     "coordinates_source": "photon/OSM natural=rock + wikipedia, HIGH",
+     "reason": "If the proposed destination is declined: standalone spot, reached on its own. 27.3 km from the Sydney centre (inside 30 km) but a Coast Track stop in Royal National Park: spot of the park.",
+     "category": "nature",
+     "icon": "🍰",
+     "bio": "A white sandstone block on the Coast Track viewed from a fenced platform; check NPWS for closures.",
+     "hours": null,
+     "visitHoursMin": 1,
+     "visitHoursMax": 2.5,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/royal-national-park",
+     "views": 4591,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Royal_National_Park"
+     ],
+     "skeptic_objection": "Keep: named formation that guides and NPWS list; reached on a signed walk with a viewing platform and fence. NPWS access status should be verified (it has been closed before).",
+     "photo": {
+      "file": "Wedding Cake Rock in Royal National Park.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Wedding_Cake_Rock_in_Royal_National_Park.jpg",
+      "width": 4608,
+      "licence": "CC BY-SA 4.0"
+     },
+     "photo_verdict": "candidate",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "status": "ready for Pipeline C research",
+     "hero_crop": {
+      "x": 0.3,
+      "y": 0.5
+     },
+     "ticketUrl_note": "official page named by a counted source; unverified, Pipeline C to load and confirm",
+     "needs_research": [
+      "hours",
+      "cost"
+     ],
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "if_declined": true
+    },
+    {
+     "name": "Bundeena",
+     "action": "standalone",
+     "destination": null,
+     "id": "bundeena",
+     "coordinates": {
+      "latitude": -34.0827,
+      "longitude": 151.1506
+     },
+     "coordinates_source": "wikivoyage listing (Royal National Park page) (candidate value kept; a town/park point, not re-resolved)",
+     "reason": "If the proposed destination is declined: standalone spot, reached on its own. 24.4 km from the Sydney centre (inside 30 km) but the park's northern gateway and Coast Track start: spot of Royal National Park.",
+     "category": "historic",
+     "icon": "🏘️",
+     "bio": "A village on Port Hacking reached by Cronulla ferry, the northern gateway to the Coast Track and Jibbon Beach.",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 1,
+     "visitHoursMax": 3,
+     "free": true,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 9352,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Royal_National_Park",
+      "https://www.sydney.com/destinations/sydney/sydney-south"
+     ],
+     "skeptic_objection": "Keep: village reached by Cronulla ferry, sydney.com and Wikivoyage; start of the Coast Track and Jibbon Beach and Aboriginal engravings.",
+     "photo": {
+      "file": "Hordern Beach, Bundeena, New South Wales.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Hordern_Beach,_Bundeena,_New_South_Wales.jpg",
+      "width": 3982,
+      "licence": "CC BY-SA 4.0"
+     },
+     "photo_verdict": "candidate",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "status": "ready for Pipeline C research",
+     "hold_for_pin": "Wikivoyage listing point (the spot is the village)",
+     "needs_research": [
+      "coordinates"
+     ],
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "if_declined": true
+    },
+    {
+     "name": "Burning Palms Beach",
+     "action": "standalone",
+     "destination": null,
+     "id": "burning-palms-beach",
+     "coordinates": {
+      "latitude": -34.186968,
+      "longitude": 151.043675
+     },
+     "coordinates_source": "OSM natural=beach + commons median 81 m; HIGH",
+     "reason": "If the proposed destination is declined: standalone spot, reached on its own. 38.5 km from the Sydney centre; 14 km from Audley, on the Coast Track.",
+     "category": "beach",
+     "icon": "🏖️",
+     "bio": "A remote surf beach with rock pools, reached by a steep walk down from Garrawarra or along the Coast Track.",
+     "hours": null,
+     "visitHoursMin": 2,
+     "visitHoursMax": 4,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 0,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Royal_National_Park"
+     ],
+     "skeptic_objection": "Resolved review to keep: a named beach a guide singles out, with its own surf-and-rockpool identity; one counted source and a steep walk, so low rank. Keep unless the owner sees it as part of the Coast Track.",
+     "photo": {
+      "file": "Royal National Park - Burning Palms Beach.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Royal_National_Park_-_Burning_Palms_Beach.jpg",
+      "width": 4592,
+      "licence": "CC BY-SA 4.0"
+     },
+     "photo_verdict": "candidate",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "status": "ready for Pipeline C research",
+     "hero_crop": {
+      "x": 0.4,
+      "y": 0.6
+     },
+     "needs_research": [
+      "hours",
+      "cost",
+      "ticketUrl"
+     ],
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney",
+     "if_declined": true
+    }
+   ],
+   "status": "PROPOSAL ONLY, not added: needs description, three reasons with photos, tips, best months and a header (WRITING.md, Pipeline C)."
+  }
+ ],
+ "review": [
+  {
+   "name": "Figure Eight Pools",
+   "verdict": "review",
+   "reason": "For: famous rock pools named by Wikivoyage. Against: one source; scramble reachable only at low tide and unsafe in swell, often underwater.",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Marramarra National Park",
+   "verdict": "review",
+   "reason": "For: NPWS and Wikivoyage name it. Against: remote and rarely visited, reached mainly by boat or long walks; little for a half-hour stop.",
+   "views": 831,
+   "counted_sources": 2
+  },
+  {
+   "name": "Nattai National Park",
+   "verdict": "review",
+   "reason": "For: NPWS names the sandstone park for bushwalks. Against: remote and rarely visited; backpack camping, no easy half-hour stop.",
+   "views": 3287,
+   "counted_sources": 1
+  },
+  {
+   "name": "Rouse Hill House and Farm",
+   "verdict": "review",
+   "reason": "For: Museums of History NSW visitor page lists the estate, a rare intact colonial homestead. Against: no Wikivoyage entry; access by limited guided tours; opening days unconfirmed (page would not load).",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "Experiment Farm Cottage",
+   "verdict": "review",
+   "reason": "For: Wikivoyage lists Australia's first private farm cottage. Against: one source; open Wednesday to Sunday only; small.",
+   "views": 2200,
+   "counted_sources": 1
+  },
+  {
+   "name": "Lake Parramatta",
+   "verdict": "review",
+   "reason": "For: Wikivoyage names the lake reserve for walks and picnics. Against: one source; local reserve near the CBD.",
+   "views": 3276,
+   "counted_sources": 1
+  },
+  {
+   "name": "Ku-ring-gai Wildflower Garden",
+   "verdict": "review",
+   "reason": "For: Wikivoyage lists it; open daily with bush walks. Against: one source, small local garden.",
+   "views": 428,
+   "counted_sources": 1
+  },
+  {
+   "name": "Tobruk Sheep Station",
+   "verdict": "review",
+   "reason": "For: Wikivoyage names the working farm with sheepdog and shearing shows. Against: one source; show times and current opening not verified; modest draw.",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Powerhouse Parramatta",
+   "verdict": "review",
+   "reason": "For: new state museum, Wikivoyage lists it, 7 Nov 2026 opening confirmed by NSW Government. Against: not open yet at 18 Oct 2026; re-judge once open.",
+   "views": 887,
+   "counted_sources": 1
+  }
+ ],
+ "existing_fixes": [
+  {
+   "id": "sydney-53",
+   "name": "Kamay Botany Bay National Park",
+   "issue": "Captain Cook's Landing Place is inside it; recommend merging into the bio (the landing at Inscription Point) rather than a second spot.",
+   "action": "owner to decide merge"
+  },
+  {
+   "id": "featherdale-wildlife-park",
+   "issue": "Existing standalone, 20 km from Penrith; would suit the proposed Penrith destination if accepted.",
+   "action": "none now"
+  },
+  {
+   "id": "australian-botanic-garden-mount-annan, nsw-rail-museum, dharawal-national-park, heathcote-national-park",
+   "issue": "Existing standalone spots near the proposed Macarthur and Royal National Park destinations (Heathcote and Dharawal sit between Royal NP and Macarthur).",
+   "action": "none now; owner to decide whether to fold in"
+  }
+ ],
+ "skipped_existing": "77 existing spots in the region were re-judged keep and are unchanged.",
+ "photos_missing": [
+  {
+   "name": "Rose Seidler House",
+   "id": "sydney-78"
+  },
+  {
+   "name": "Parramatta Park",
+   "id": "sydney-79"
+  },
+  {
+   "name": "Windsor",
+   "id": "hawkesbury-1"
+  },
+  {
+   "name": "Penrith Whitewater Stadium",
+   "id": "penrith-1"
+  },
+  {
+   "name": "Sydney Zoo",
+   "id": "penrith-2"
+  },
+  {
+   "name": "Camden",
+   "id": "macarthur-1"
+  },
+  {
+   "name": "Campbelltown",
+   "id": "macarthur-2"
+  },
+  {
+   "name": "Picton",
+   "id": "macarthur-3"
+  },
+  {
+   "name": "Brooklyn",
+   "id": "central-coast-22"
+  },
+  {
+   "name": "Yerranderie",
+   "id": "yerranderie"
+  }
+ ]
+}

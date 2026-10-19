@@ -1,0 +1,1580 @@
+{
+ "region": "nsw-south-coast",
+ "researcher": "research-a",
+ "part": "first half of 'spot' entries (wollongong-1 .. nowra-3, 28 spots) plus standalone-town fallbacks for Wollongong, Kiama and Nowra",
+ "date": "2026-10-18",
+ "entries": [
+  {
+   "id": "wollongong-1",
+   "name": "Sea Cliff Bridge",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "The Sea Cliff Bridge is 665 m long and is a highlight of the Grand Pacific Drive; it opened in December 2005, lets visitors get out of the car and stretch their legs, and is a viewing platform for migrating whales.",
+     "source": "https://www.visitwollongong.com.au/operators/attraction/arts-and-culture/sea-cliff-bridge/"
+    },
+    {
+     "claim": "Pedestrians can walk along the bridge; the flat rocky area below has marine life at low tide.",
+     "source": "https://en.wikivoyage.org/wiki/Wollongong"
+    },
+    {
+     "claim": "The bridge carries two traffic lanes and a pedestrian walkway on Lawrence Hargrave Drive between Coalcliff and Clifton.",
+     "source": "https://en.wikipedia.org/wiki/Sea_Cliff_Bridge"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Public road bridge with no single operator or steward page (tourism-board and Wikipedia pages are not the steward); no ticketUrl.",
+   "coordinates": {
+    "latitude": -34.253577,
+    "longitude": 150.974295
+   },
+   "coordinates_confidence": "HIGH",
+   "coordinates_source": "OSM way 289365541 man_made=bridge 'Sea Cliff Bridge' (centre) via Overpass; agrees with Wikipedia coordinates (-34.25389,150.97389) within ~50 m and the OSM viewpoint node 4583555991 (-34.254141,150.973502)",
+   "distance_moved_m": 45,
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.2539,
+     "longitude": 150.974
+    },
+    "source_point": {
+     "latitude": -34.253577,
+     "longitude": 150.974295
+    },
+    "source": "OSM way 289365541 man_made=bridge 'Sea Cliff Bridge' (centre) via Overpass; agrees with Wikipedia coordinates (-34.25389,150.97389) within ~50 m and the OSM viewpoint node 4583555991 (-34.254141,150.973502)",
+    "ok": true
+   },
+   "category": "historic",
+   "bio_suggestion": "A 665 m road bridge on the Grand Pacific Drive with a footpath and whale-watching views over the Illawarra cliffs.",
+   "unverified": [
+    "Hours: 'Open 24 hours' is the pedestrian walkway on a public road, no source states opening times.",
+    "Visit duration is an estimate."
+   ],
+   "wiki_title": "Sea Cliff Bridge"
+  },
+  {
+   "id": "wollongong-2",
+   "name": "Nan Tien Temple",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Nan Tien Temple, opened in October 1995, is a branch temple of Fo Guang Shan and the biggest Buddhist temple in Australia; it contains a vegetarian restaurant and has won awards for its lighting, gardens and architecture.",
+     "source": "https://en.wikivoyage.org/wiki/Wollongong"
+    },
+    {
+     "claim": "Open Tuesday to Sunday and public holidays 9am-5pm, closed Mondays except public holidays; gates should be reached by 4:30pm.",
+     "source": "https://www.nantien.org.au/en/visit-us"
+    },
+    {
+     "claim": "Entry and parking are free (180 Berkeley Road, Berkeley).",
+     "source": "https://www.nantien.org.au/en/visit-us"
+    }
+   ],
+   "hours": "9:00 AM – 5:00 PM",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "closedDays": [
+    1
+   ],
+   "free": true,
+   "ticketUrl": "https://www.nantien.org.au/en/visit-us",
+   "ticketUrl_note": "Verified: HTTP 200, title 'Visit Us | Nan Tien Temple'.",
+   "coordinates": {
+    "latitude": -34.466633,
+    "longitude": 150.848572
+   },
+   "coordinates_confidence": "HIGH",
+   "coordinates_source": "OSM amenity=place_of_worship 'Nan Tien Temple' (Photon), agrees within 5 m with Wikipedia coordinates (-34.466667,150.848611); resolve-pin.py itself picked a LOW 'Pilgrim Lodge' hotel node and I overrode it",
+   "distance_moved_m": 117,
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.46667,
+     "longitude": 150.8473
+    },
+    "source_point": {
+     "latitude": -34.466633,
+     "longitude": 150.848572
+    },
+    "source": "OSM amenity=place_of_worship 'Nan Tien Temple' (Photon), agrees within 5 m with Wikipedia coordinates (-34.466667,150.848611); resolve-pin.py itself picked a LOW 'Pilgrim Lodge' hotel node and I overrode it",
+    "ok": true
+   },
+   "category": "religious",
+   "bio_suggestion": "Australia's largest Buddhist temple at Berkeley, with free entry, gardens, awarded architecture and a vegetarian restaurant.",
+   "unverified": [
+    "Closed Mondays except public holidays (site says 'Close (Except Public holidays)'); visit duration is an estimate."
+   ],
+   "wiki_title": "Nan Tien Temple"
+  },
+  {
+   "id": "wollongong-3",
+   "name": "Mount Keira Lookout",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Mount Keira is 463.9 m high, 4 km north-west of Wollongong's CBD, and gives sweeping views over the city; Mount Keira Lookout is on Mt Keira Road and is accessible seven days a week during daylight hours.",
+     "source": "https://www.visitwollongong.com.au/operators/attraction/great-outdoors-beaches/mount-keira-lookout/"
+    },
+    {
+     "claim": "There is a cafe at the top serving Devonshire teas, hang-gliders launch nearby, and the lookout is free; the 5 km Mount Keira Ring Track circles the mountain.",
+     "source": "https://en.wikivoyage.org/wiki/Wollongong"
+    },
+    {
+     "claim": "The 5.5 km Mt Keira Ring Track starts and finishes at a scenic picnic spot.",
+     "source": "https://www.visitwollongong.com.au/operators/attraction/great-outdoors-beaches/mount-keira-lookout/"
+    }
+   ],
+   "hours": "Daylight hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Council-run lookout; Wollongong City Council site is BLOCKED (403 'Just a moment...') so no official page was checked; tourism-board page is not the steward. Orchestrator may check wollongong.nsw.gov.au in a browser.",
+   "coordinates": {
+    "latitude": -34.402511,
+    "longitude": 150.857509
+   },
+   "coordinates_confidence": "MEDIUM",
+   "coordinates_source": "OSM tourism=viewpoint 'Victoria Lookout' (node 34918552), the lookout in Mount Keira Summit Park (Wollongong council plan of management names the Victoria Lookout); the peak node (-34.402594,150.855655) is ~170 m west",
+   "distance_moved_m": 170,
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.40259,
+     "longitude": 150.85566
+    },
+    "source_point": {
+     "latitude": -34.402511,
+     "longitude": 150.857509
+    },
+    "source": "OSM tourism=viewpoint 'Victoria Lookout' (node 34918552), the lookout in Mount Keira Summit Park (Wollongong council plan of management names the Victoria Lookout); the peak node (-34.402594,150.855655) is ~170 m west",
+    "ok": true
+   },
+   "category": "viewpoint",
+   "bio_suggestion": "Summit lookout 4 km from central Wollongong with sweeping views of the city and coast, a cafe and the Ring Track.",
+   "unverified": [
+    "Exact opening/closing times (a third-party listing says 8am-6pm, to 8pm in daylight saving; unverified)."
+   ],
+   "wiki_title": "Mount Keira"
+  },
+  {
+   "id": "wollongong-4",
+   "name": "Wollongong Head Lighthouse",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Wollongong Head Lighthouse (Flagstaff Point Light) is an active lighthouse beside the heritage-listed Wollongong Harbour precinct, on Flagstaff Point east of the city centre.",
+     "source": "https://en.wikipedia.org/wiki/Wollongong_Head_Lighthouse"
+    },
+    {
+     "claim": "The larger Flagstaff Hill lighthouse is active and sits right next to the inactive 12 m Breakwater Lighthouse; Wollongong is the only point on Australia's east coast with two lighthouses.",
+     "source": "https://www.nsw.gov.au/visiting-and-exploring-nsw/locations-and-attractions/wollongong-harbour-and-lighthouse"
+    },
+    {
+     "claim": "The lighthouse is on Endeavour Drive.",
+     "source": "https://en.wikivoyage.org/wiki/Wollongong"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Operated by AMSA/council precinct; no visitor page for the spot found; no ticketUrl.",
+   "coordinates": {
+    "latitude": -34.421946,
+    "longitude": 150.90973
+   },
+   "coordinates_confidence": "HIGH",
+   "coordinates_source": "OSM man_made=lighthouse 'Wollongong Head Lighthouse' (Photon) agrees with Wikipedia (-34.42194,150.90972); 1 m from placement",
+   "distance_moved_m": 1,
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.421944,
+     "longitude": 150.909722
+    },
+    "source_point": {
+     "latitude": -34.421946,
+     "longitude": 150.90973
+    },
+    "source": "OSM man_made=lighthouse 'Wollongong Head Lighthouse' (Photon) agrees with Wikipedia (-34.42194,150.90972); 1 m from placement",
+    "ok": true
+   },
+   "category": "landmark",
+   "bio_suggestion": "Active lighthouse on Flagstaff Point above Wollongong Harbour, beside the older Breakwater Lighthouse and the harbour.",
+   "unverified": [
+    "Whether the tower interior is open (a lighthouse database says grounds only; not verified at source).",
+    "Grounds hours not stated by any source; 'Open 24 hours' is an assumption for an open headland."
+   ],
+   "wiki_title": "Wollongong Head Lighthouse"
+  },
+  {
+   "id": "wollongong-5",
+   "name": "Sublime Point Lookout",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Sublime Point Lookout offers 180-degree views over the sea, the rainforest and the 17 beaches that span the coastline to Wollongong; barbecues, picnic shelters and toilets are provided (bring your own drinking water).",
+     "source": "https://www.nsw.gov.au/visiting-and-exploring-nsw/locations-and-attractions/sublime-point-lookout"
+    },
+    {
+     "claim": "Sublime Point is probably the most famous of the three Bulli Pass lookouts, best for a picnic or the view; it can be reached by car or a steep hike, and is free.",
+     "source": "https://en.wikivoyage.org/wiki/Wollongong"
+    },
+    {
+     "claim": "The Sublime Point walking track starts near the viewing platform.",
+     "source": "https://www.visitwollongong.com.au/operators/attraction/great-outdoors-beaches/sublime-point-lookout/"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Council-owned lookout; council site BLOCKED (403) and the tourism page is not the steward; no ticketUrl.",
+   "coordinates": {
+    "latitude": -34.296822,
+    "longitude": 150.925343
+   },
+   "coordinates_confidence": "HIGH",
+   "coordinates_source": "OSM tourism=viewpoint 'Sublime Point Lookout' (Photon); agrees with Wikivoyage listing (-34.296747,150.925307), 8 m from placement",
+   "distance_moved_m": 9,
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.296747,
+     "longitude": 150.925307
+    },
+    "source_point": {
+     "latitude": -34.296822,
+     "longitude": 150.925343
+    },
+    "source": "OSM tourism=viewpoint 'Sublime Point Lookout' (Photon); agrees with Wikivoyage listing (-34.296747,150.925307), 8 m from placement",
+    "ok": true
+   },
+   "category": "viewpoint",
+   "bio_suggestion": "Escarpment lookout with 180-degree views over the sea, rainforest and 17 beaches, with picnic shelters and barbecues.",
+   "unverified": [
+    "Opening times not stated by any source; 'Open 24 hours' assumed for an open lookout. Park kiosk currently idle per local news."
+   ]
+  },
+  {
+   "id": "wollongong-6",
+   "name": "Wollongong Botanic Garden",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "The garden covers 27 hectares of gardens, winding pathways and plant collections, with views over Wollongong from Gleniffer Brae Manor House; it is open daily.",
+     "source": "https://www.visitwollongong.com.au/operators/attraction/family-activities/botanic-garden-wollongong/"
+    },
+    {
+     "claim": "Hours listed: Monday to Friday 7:00am-6:00pm, Saturday 7:00am-6:45pm.",
+     "source": "https://www.visitwollongong.com.au/operators/attraction/family-activities/botanic-garden-wollongong/"
+    },
+    {
+     "claim": "The garden is across from the University of Wollongong, with duck ponds and short walks, and is free.",
+     "source": "https://en.wikivoyage.org/wiki/Wollongong"
+    }
+   ],
+   "hours": "7:00 AM – 6:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "BLOCKED: managed by Wollongong City Council, whose site (wollongong.nsw.gov.au) returns a Cloudflare 403; the council's visitor page for the garden was not found or loaded. Orchestrator: check in a real browser (a search surfaced https://www.wollongong.nsw.gov.au/business-in-wollongong/organise-an-event/sites-overview/wollongong-botanic-garden, which is an event-hire page, not confirmed as the right link).",
+   "coordinates": {
+    "latitude": -34.410726,
+    "longitude": 150.877085
+   },
+   "coordinates_confidence": "HIGH",
+   "coordinates_source": "Wikipedia coordinates (-34.4100,150.8775) and median of 28 geotagged Commons files (-34.410726,150.877085) agree within ~85 m; the OSM leisure=garden centroid (-34.410092,150.875003) is 230 m west, a centroid of a 27 ha garden, so not used",
+   "distance_moved_m": 215,
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.40982,
+     "longitude": 150.87501
+    },
+    "source_point": {
+     "latitude": -34.410726,
+     "longitude": 150.877085
+    },
+    "source": "Wikipedia coordinates (-34.4100,150.8775) and median of 28 geotagged Commons files (-34.410726,150.877085) agree within ~85 m; the OSM leisure=garden centroid (-34.410092,150.875003) is 230 m west, a centroid of a 27 ha garden, so not used",
+    "ok": true
+   },
+   "category": "nature",
+   "bio_suggestion": "A 27-hectare garden of native and exotic plants, duck ponds and a manor house, open daily and free to enter.",
+   "unverified": [
+    "Sunday hours not seen (Saturday to 6:45pm; Sunday assumed the same); a snippet of a council holiday notice says weekends/public holidays to 6:45pm. Free entry from Wikivoyage (2018) only; the tourism page lists no fee.",
+    "Closed Good Friday and Christmas Day per a Destination Wollongong wedding page (not loaded)."
+   ],
+   "wiki_title": "Wollongong Botanic Garden"
+  },
+  {
+   "id": "wollongong-7",
+   "name": "Stanwell Park",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Stanwell Park is famous for paragliding and hang gliding from Bald Hill down to its beach, which lies nested between high sea cliffs.",
+     "source": "https://en.wikipedia.org/wiki/Stanwell_Park,_New_South_Wales"
+    },
+    {
+     "claim": "Stanwell Park is a small quaint coastal town on the northern edge of the Illawarra; the Grand Pacific Drive passes through it on its way to the Sea Cliff Bridge.",
+     "source": "https://en.wikivoyage.org/wiki/Illawarra"
+    },
+    {
+     "claim": "Stanwell Park has a train station with hourly services and is one of the best stations for nearby beaches.",
+     "source": "https://en.wikivoyage.org/wiki/Wollongong"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A town and beach; no single steward; no ticketUrl.",
+   "coordinates": {
+    "latitude": -34.228928,
+    "longitude": 150.988124
+   },
+   "coordinates_confidence": "MEDIUM",
+   "coordinates_source": "OSM place=locality 'Stanwell Park' (Photon), 450 m from the Wikipedia point (-34.22889,150.98333, which sits near the station); Commons photo median of 76 files (-34.227925,150.991003) is 300 m east at the beach, so the pin is at the village-by-the-beach rather than the station",
+   "distance_moved_m": 440,
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.22888889,
+     "longitude": 150.98333333
+    },
+    "source_point": {
+     "latitude": -34.228928,
+     "longitude": 150.988124
+    },
+    "source": "OSM place=locality 'Stanwell Park' (Photon), 450 m from the Wikipedia point (-34.22889,150.98333, which sits near the station); Commons photo median of 76 files (-34.227925,150.991003) is 300 m east at the beach, so the pin is at the village-by-the-beach rather than the station",
+    "ok": true
+   },
+   "category": "historic",
+   "bio_suggestion": "Small beach village under Bald Hill on the Grand Pacific Drive, known for hang gliding and paragliding down to the sand.",
+   "unverified": [
+    "44 km from Sydney per placement; visit duration is an estimate."
+   ],
+   "wiki_title": "Stanwell Park, New South Wales"
+  },
+  {
+   "id": "wollongong-8",
+   "name": "North Beach Wollongong",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "North Wollongong Beach has rock pools, wading areas and good surf, with grass, shade, picnic booths, a playground nearby in Stuart Park, shops and cafes; parking is free.",
+     "source": "https://www.visitwollongong.com.au/operators/attraction/great-outdoors-beaches/north-wollongong-beach/"
+    },
+    {
+     "claim": "It is the only beach patrolled all year round.",
+     "source": "https://www.visitwollongong.com.au/operators/attraction/great-outdoors-beaches/north-wollongong-beach/"
+    },
+    {
+     "claim": "North Beach is one of Wollongong's most popular beaches, in front of Stuart Park and the Novotel, with a kiosk on the beach.",
+     "source": "https://en.wikivoyage.org/wiki/Wollongong"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Public beach; no single steward; no ticketUrl.",
+   "coordinates": {
+    "latitude": -34.412267,
+    "longitude": 150.902116
+   },
+   "coordinates_confidence": "MEDIUM",
+   "coordinates_source": "OSM natural=beach 'North Beach' (Photon), 76 m from placement point (OSM way 100114872)",
+   "distance_moved_m": 76,
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.41231,
+     "longitude": 150.90129
+    },
+    "source_point": {
+     "latitude": -34.412267,
+     "longitude": 150.902116
+    },
+    "source": "OSM natural=beach 'North Beach' (Photon), 76 m from placement point (OSM way 100114872)",
+    "ok": true
+   },
+   "category": "beach",
+   "bio_suggestion": "Wollongong's city beach, patrolled all year, with rock pools, picnic booths and free parking beside Stuart Park.",
+   "unverified": [
+    "Patrol hours not checked. Tourism page names it 'North Wollongong Beach'; the placement name 'North Beach Wollongong' is kept."
+   ]
+  },
+  {
+   "id": "wollongong-9",
+   "name": "Austinmer Beach",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Austinmer Beach is one of Wollongong's most popular beaches, about 20 minutes north of the CBD, patrolled September to April, with shops along the western side and a large car park and park between the beach and the road.",
+     "source": "https://www.visitwollongong.com.au/operators/attraction/great-outdoors-beaches/austinmer-beach/"
+    },
+    {
+     "claim": "Austinmer is a very pleasant cove and small beach with cafes and restaurants across the road and barbecues behind; it can suffer from popularity, so go early or late on a sunny day.",
+     "source": "https://en.wikivoyage.org/wiki/Wollongong"
+    },
+    {
+     "claim": "Austinmer train station is among the best for accessing nearby beaches.",
+     "source": "https://en.wikivoyage.org/wiki/Wollongong"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Public beach; no single steward; no ticketUrl.",
+   "coordinates": {
+    "latitude": -34.306643,
+    "longitude": 150.935141
+   },
+   "coordinates_confidence": "HIGH",
+   "coordinates_source": "OSM natural=beach 'Austinmer Beach' (Photon) agrees with placement (OSM way 95786715) within 60 m",
+   "distance_moved_m": 70,
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.3066,
+     "longitude": 150.9359
+    },
+    "source_point": {
+     "latitude": -34.306643,
+     "longitude": 150.935141
+    },
+    "source": "OSM natural=beach 'Austinmer Beach' (Photon) agrees with placement (OSM way 95786715) within 60 m",
+    "ok": true
+   },
+   "category": "beach",
+   "bio_suggestion": "Popular cove beach north of Wollongong, patrolled September to April, with cafes across the road and a park behind.",
+   "unverified": [
+    "Visit duration is an estimate."
+   ]
+  },
+  {
+   "id": "kiama-1",
+   "name": "Kiama Blowhole",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "The 2.5 m opening in the rock has thrown plumes recorded above 30 m, best when the swell runs from the south-east; there are several accessible viewing platforms, and the most eastern point shows the full height of the rock formation.",
+     "source": "https://kiama.com.au/listings/things-to-do/kiama-blowhole"
+    },
+    {
+     "claim": "It is estimated to attract 900,000 visitors a year.",
+     "source": "https://kiama.com.au/listings/things-to-do/kiama-blowhole"
+    },
+    {
+     "claim": "Kiama Blowhole and Lighthouse are on Blowhole Point Rd; free to visit. The Little Blowhole, further south, is best in north-easterly winds.",
+     "source": "https://en.wikivoyage.org/wiki/Kiama"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Council-owned headland with no operator; Destination Kiama is the tourism board, not a steward; no ticketUrl.",
+   "coordinates": {
+    "latitude": -34.671847,
+    "longitude": 150.863165
+   },
+   "coordinates_confidence": "HIGH",
+   "coordinates_source": "OSM natural=blowhole 'Kiama Blowhole' (Photon), agrees with Wikipedia (-34.671806,150.863056) and Commons median (-34.671719,150.862505)",
+   "distance_moved_m": 1,
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.67185,
+     "longitude": 150.86317
+    },
+    "source_point": {
+     "latitude": -34.671847,
+     "longitude": 150.863165
+    },
+    "source": "OSM natural=blowhole 'Kiama Blowhole' (Photon), agrees with Wikipedia (-34.671806,150.863056) and Commons median (-34.671719,150.862505)",
+    "ok": true
+   },
+   "category": "nature",
+   "bio_suggestion": "Sea blowhole that can throw spray over 30 m in a south-easterly swell, with viewing platforms and a lighthouse beside it.",
+   "unverified": [
+    "'Open 24 hours' assumed for an open headland; the 'largest in the world' claim on the tourism page is not repeated."
+   ]
+  },
+  {
+   "id": "kiama-2",
+   "name": "Kiama Coast Walk",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "The Kiama Coast Walk is about 20 km from the mouth of the Minnamurra River south through Kiama to Gerringong's Werri Beach, in three sections of sealed paths, grassed tracks and beach walking.",
+     "source": "https://kiama.com.au/experience/nature-walks-wildlife/kiama-coast-walk"
+    },
+    {
+     "claim": "North section: Minnamurra River to Kiama Blowhole, 8.5 km, about 3 hrs. Mid section: Blowhole to Loves Bay, 6 km, about 1.5 hrs (the Little Blowhole is midway). South section: Loves Bay to Gerringong, 6 km, about 2 hrs.",
+     "source": "https://kiama.com.au/experience/nature-walks-wildlife/kiama-coast-walk"
+    },
+    {
+     "claim": "The walk can be tackled in sections and runs roughly parallel to the train line.",
+     "source": "https://en.wikivoyage.org/wiki/Kiama"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 6.5,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Council-managed coastal path across many reserves; no single steward page checked; no ticketUrl.",
+   "coordinates": {
+    "latitude": -34.6785961,
+    "longitude": 150.8552212
+   },
+   "coordinates_confidence": "MEDIUM",
+   "coordinates_source": "Route midpoint by agency section lengths (Destination Kiama: north 8.5 km, mid 6 km, south 6 km, about 20.5 km; half is 1.75 km south of the Blowhole in the mid section, at Kendalls Beach). The point is the OSM node on way 108872900, a member of hiking relation 14273953 'Kiama Coast Walk', nearest to Kendalls Beach. resolve-pin.py returned LOW (Overpass down) and the relation's ways could not be chained reliably into a single line, so this is a hand-derived midpoint, not the tool's 'trail midpoint'",
+   "distance_moved_m": 1690,
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.66345,
+     "longitude": 150.85371
+    },
+    "source_point": {
+     "latitude": -34.6785961,
+     "longitude": 150.8552212
+    },
+    "source": "Route midpoint by agency section lengths (Destination Kiama: north 8.5 km, mid 6 km, south 6 km, about 20.5 km; half is 1.75 km south of the Blowhole in the mid section, at Kendalls Beach). The point is the OSM node on way 108872900, a member of hiking relation 14273953 'Kiama Coast Walk', nearest to Kendalls Beach. resolve-pin.py returned LOW (Overpass down) and the relation's ways could not be chained reliably into a single line, so this is a hand-derived midpoint, not the tool's 'trail midpoint'",
+    "ok": true
+   },
+   "category": "hike",
+   "bio_suggestion": "A 20 km coastal path from the Minnamurra River through Kiama to Gerringong, easily walked in three sections.",
+   "unverified": [
+    "Visit range is the sourced section times (1.5 h shortest to 6.5 h for all three); full midpoint not computed from a chained OSM line."
+   ]
+  },
+  {
+   "id": "kiama-3",
+   "name": "Jamberoo Action Park",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "2026-27 season adult (13-59 years) ticket: $84 online, $94 at the gate; ages 4-12 and 60+ $74 online, $84 gate; children 3 and under free. It is cheapest to buy online direct from the park.",
+     "source": "https://www.jamberoo.net/tickets/"
+    },
+    {
+     "claim": "Open 10am-5pm on open days; the park is open Friday to Sunday through October, with a Six Weeks of Summer program (daily dates are on the Open Hours page); 1215 Jamberoo Road.",
+     "source": "https://www.jamberoo.net/park-info/open-hours/"
+    },
+    {
+     "claim": "Rides include Velocity Falls, The Stinger, The Perfect Storm, Funnel Web, The Taipan, Bobsled, Rapid River and a chairlift.",
+     "source": "https://www.jamberoo.net/"
+    }
+   ],
+   "hours": "10:00 AM – 5:00 PM",
+   "visitHoursMin": 5,
+   "visitHoursMax": 8,
+   "free": false,
+   "costMin": 84,
+   "costMax": 94,
+   "currency": "AUD",
+   "ticketUrl": "https://www.jamberoo.net/",
+   "ticketUrl_note": "Verified: HTTP 200, title 'Website Home - Jamberoo Action Park - Water Theme Park, NSW'.",
+   "coordinates": {
+    "latitude": -34.61573,
+    "longitude": 150.783342
+   },
+   "coordinates_confidence": "HIGH",
+   "coordinates_source": "OSM tourism=theme_park / leisure=water_park 'Jamberoo Action Park' (Photon), ~120 m from the Wikipedia point (-34.6168,150.783)",
+   "distance_moved_m": 123,
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.6168,
+     "longitude": 150.783
+    },
+    "source_point": {
+     "latitude": -34.61573,
+     "longitude": 150.783342
+    },
+    "source": "OSM tourism=theme_park / leisure=water_park 'Jamberoo Action Park' (Photon), ~120 m from the Wikipedia point (-34.6168,150.783)",
+    "ok": true
+   },
+   "category": "entertainment",
+   "bio_suggestion": "Water and thrill park in the Jamberoo Valley with slides, a bobsled and a chairlift, open on selected days of the season.",
+   "unverified": [
+    "Seasonal: closed outside its calendar (the Open Hours page lists dates; not parsed). closedDays left unset.",
+    "Visit duration is an estimate."
+   ],
+   "wiki_title": "Jamberoo Action Park"
+  },
+  {
+   "id": "kiama-4",
+   "name": "Gerringong",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Gerringong is the first coastal town south of Kiama and considerably quieter than its northern neighbour; it surrounds the beach suburb of Werri Beach.",
+     "source": "https://en.wikivoyage.org/wiki/Gerringong"
+    },
+    {
+     "claim": "Gerringong Whale Watching Platform on Tasman Drive is a small viewing deck for spotting whales between May and November.",
+     "source": "https://en.wikivoyage.org/wiki/Gerringong"
+    },
+    {
+     "claim": "The town has two beaches, Gerringong Beach and Werri Beach, great for swimming in peace; the Kiama Coast Walk ends at Werri Beach.",
+     "source": "https://en.wikivoyage.org/wiki/Gerringong"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A town; no single steward; no ticketUrl.",
+   "coordinates": {
+    "latitude": -34.746198,
+    "longitude": 150.827855
+   },
+   "coordinates_confidence": "MEDIUM",
+   "coordinates_source": "OSM place=locality 'Gerringong' (Photon), at the town centre next to the town hall and library; 650 m from the Wikipedia point (-34.75,150.83333, rounded)",
+   "distance_moved_m": 655,
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.75,
+     "longitude": 150.83333333
+    },
+    "source_point": {
+     "latitude": -34.746198,
+     "longitude": 150.827855
+    },
+    "source": "OSM place=locality 'Gerringong' (Photon), at the town centre next to the town hall and library; 650 m from the Wikipedia point (-34.75,150.83333, rounded)",
+    "ok": true
+   },
+   "category": "historic",
+   "bio_suggestion": "Quiet beach town south of Kiama at the end of the Coast Walk, with a whale-watching platform used from May to November.",
+   "unverified": [
+    "Visit duration is an estimate."
+   ],
+   "wiki_title": "Gerringong, New South Wales"
+  },
+  {
+   "id": "kiama-5",
+   "name": "Shellharbour",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Shellharbour is a satellite city of Wollongong, 85 km south of Sydney; it has a township on the water, adjacent to a small harbour and a beach.",
+     "source": "https://en.wikivoyage.org/wiki/Shellharbour"
+    },
+    {
+     "claim": "Shellharbour Visitor Information Centre is on Addison St, Shellharbour Village (listed 9AM-5PM, updated 2017).",
+     "source": "https://en.wikivoyage.org/wiki/Shellharbour"
+    },
+    {
+     "claim": "Killalea State Park, Mystics Beach and Bass Point skydives are nearby; Shell Cove is a major housing development beside the town.",
+     "source": "https://en.wikivoyage.org/wiki/Shellharbour"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A town; no single steward; no ticketUrl.",
+   "coordinates": {
+    "latitude": -34.57887,
+    "longitude": 150.867249
+   },
+   "coordinates_confidence": "HIGH",
+   "coordinates_source": "OSM place=locality 'Shellharbour' (Photon) with Shellharbour Village residential area 160 m; Wikivoyage visitor centre point (-34.578573,150.868835)",
+   "distance_moved_m": 145,
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.5786,
+     "longitude": 150.8688
+    },
+    "source_point": {
+     "latitude": -34.57887,
+     "longitude": 150.867249
+    },
+    "source": "OSM place=locality 'Shellharbour' (Photon) with Shellharbour Village residential area 160 m; Wikivoyage visitor centre point (-34.578573,150.868835)",
+    "ok": true
+   },
+   "category": "historic",
+   "bio_suggestion": "Harbour village and beach south of Wollongong, near Killalea, with a visitor information centre.",
+   "unverified": [
+    "Visitor centre hours from a 2017 listing only.",
+    "Marginal as a destination for visitors (placement judged it a kept spot on one counted source)."
+   ],
+   "wiki_title": "Shellharbour, New South Wales"
+  },
+  {
+   "id": "kiama-6",
+   "name": "Saddleback Mountain Lookout",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "On a clear day the views run from Cronulla in the north to Milton in the south; there is a north-facing viewing platform off the main car park and a newer southern platform further up.",
+     "source": "https://kiama.com.au/listings/things-to-do/saddleback-mountain-lookout"
+    },
+    {
+     "claim": "The lookout is 10 minutes from Kiama's Blowhole.",
+     "source": "https://kiama.com.au/listings/things-to-do/saddleback-mountain-lookout"
+    },
+    {
+     "claim": "Saddleback Mountain Lookout is 7 km south-west of Kiama, reached from Saddleback Mountain Road, up a winding scenic drive through dairy country.",
+     "source": "https://en.wikivoyage.org/wiki/Kiama"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Council lookout; Destination Kiama is a tourism board, not a steward; no ticketUrl.",
+   "coordinates": {
+    "latitude": -34.698215,
+    "longitude": 150.791469
+   },
+   "coordinates_confidence": "MEDIUM",
+   "coordinates_source": "OSM tourism=viewpoint 'Rotary Lookout' (node 943287476, Photon), ~60 m from the Wikivoyage listing (-34.69838,150.79248); the north platform (-34.697757,150.79384) and south platform (-34.699862,150.791604) are within 250 m",
+   "distance_moved_m": 94,
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.69838,
+     "longitude": 150.79248
+    },
+    "source_point": {
+     "latitude": -34.698215,
+     "longitude": 150.791469
+    },
+    "source": "OSM tourism=viewpoint 'Rotary Lookout' (node 943287476, Photon), ~60 m from the Wikivoyage listing (-34.69838,150.79248); the north platform (-34.697757,150.79384) and south platform (-34.699862,150.791604) are within 250 m",
+    "ok": true
+   },
+   "category": "viewpoint",
+   "bio_suggestion": "Hilltop lookout 10 minutes from the Blowhole with views from Cronulla to Milton on a clear day, and two viewing platforms.",
+   "unverified": [
+    "Opening times not stated; 'Open 24 hours' assumed for an open lookout."
+   ]
+  },
+  {
+   "id": "kiama-7",
+   "name": "Minnamurra Beach",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Minnamurra Beach is the surf break of Killalea Regional Park, 'also known as Mystics to the locals'.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/killalea-regional-park"
+    },
+    {
+     "claim": "At the outlet of the Minnamurra River the beach ends in a long sand spit jutting towards Stack Island, popular for kayaking and stand-up paddling; the ocean side has strong waves and can be dangerous, the river side is shallow with tidal currents.",
+     "source": "https://en.wikivoyage.org/wiki/Kiama"
+    },
+    {
+     "claim": "Mystics Beach: 1.5 km of beach; access is via a steep path down from the car park; no lifeguards or other facilities.",
+     "source": "https://en.wikivoyage.org/wiki/Shellharbour"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Beach; no single steward page for this beach (the Killalea NPWS page covers the park); no ticketUrl.",
+   "coordinates": {
+    "latitude": -34.6213465,
+    "longitude": 150.8575971
+   },
+   "coordinates_confidence": "MEDIUM",
+   "coordinates_source": "OSM natural=beach way 95039342 named 'Mystics' (centre), at the Minnamurra River outlet; NPWS states Minnamurra Beach is 'also known as Mystics'; the Wikivoyage listing 'Minnamurra Beach (Mystics Beach)' (-34.6246,150.8585) is 340 m south on the same beach",
+   "distance_moved_m": 0,
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.62135,
+     "longitude": 150.8576
+    },
+    "source_point": {
+     "latitude": -34.6213465,
+     "longitude": 150.8575971
+    },
+    "source": "OSM natural=beach way 95039342 named 'Mystics' (centre), at the Minnamurra River outlet; NPWS states Minnamurra Beach is 'also known as Mystics'; the Wikivoyage listing 'Minnamurra Beach (Mystics Beach)' (-34.6246,150.8585) is 340 m south on the same beach",
+    "ok": true
+   },
+   "category": "beach",
+   "bio_suggestion": "Sand spit at the Minnamurra River mouth, popular for kayaking and paddleboarding; surfers know the ocean side as Mystics.",
+   "unverified": [
+    "Two sources describe different access sides (river-side village vs the Mystics path in Killalea); the pin is the beach feature."
+   ]
+  },
+  {
+   "id": "kiama-8",
+   "name": "HARS Australian Historical Flying Museum",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "HARS Aviation Museum at Shellharbour Airport (54 Airport Road, Albion Park Rail) is open Monday to Sunday 9:30am-3:30pm (last tour at 2pm), except Christmas Day and Airshow Days; entry is by guided tour of working hangars.",
+     "source": "https://hars.org.au/albion-park/tours/"
+    },
+    {
+     "claim": "Museum entrance fees from 1 July 2025: adult (15+) $35, concession $30, child (5-14) $15, family (2 adults and up to 4 children) $80.",
+     "source": "https://hars.org.au/museum-entrance-fees/"
+    },
+    {
+     "claim": "The museum has about 50 aircraft at Shellharbour, nearly 20 airworthy; the Boeing 747-438 VH-OJA is on display and can be walked on in the Wing Walk tour.",
+     "source": "https://hars.org.au/museum-entrance-fees/"
+    }
+   ],
+   "hours": "9:30 AM – 3:30 PM",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": false,
+   "costMin": 35,
+   "costMax": 35,
+   "currency": "AUD",
+   "ticketUrl": "https://hars.org.au/",
+   "ticketUrl_note": "Verified: HTTP 200; page title 'Home - Hars' and text names HARS Aviation Museum. (The placement name 'HARS Australian Historical Flying Museum' is Wikivoyage's; the museum now styles itself 'HARS Aviation Museum'.)",
+   "coordinates": {
+    "latitude": -34.561357,
+    "longitude": 150.790958
+   },
+   "coordinates_confidence": "HIGH",
+   "coordinates_source": "OSM tourism=museum 'Historical Aircraft Restoration Society' (way 86609995, Photon); Commons median of 26 geotagged files (-34.560742,150.790328) is ~80 m away",
+   "distance_moved_m": 274,
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.561,
+     "longitude": 150.788
+    },
+    "source_point": {
+     "latitude": -34.561357,
+     "longitude": 150.790958
+    },
+    "source": "OSM tourism=museum 'Historical Aircraft Restoration Society' (way 86609995, Photon); Commons median of 26 geotagged files (-34.560742,150.790328) is ~80 m away",
+    "ok": true
+   },
+   "category": "museum",
+   "bio_suggestion": "Volunteer-run aviation museum in working hangars at Shellharbour Airport, with guided tours and a Boeing 747 on display.",
+   "unverified": [
+    "Visit duration is an estimate (tours run continually; a snippet says at least 90 min, not loaded).",
+    "Wikivoyage's 'last flying Super Constellation' is not repeated; museum page not checked for it."
+   ]
+  },
+  {
+   "id": "kiama-9",
+   "name": "Killalea State Park",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Killalea Regional Park (formerly Killalea State Park) lies between Shellharbour and Kiama, less than 30 minutes south of Wollongong, with surf breaks (The Farm, Minnamurra Beach/Mystics), beach walks, fishing and a coastal campground.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/killalea-regional-park"
+    },
+    {
+     "claim": "Remnant rainforest with Moreton Bay figs, headland views, and birdlife including Australian bitterns and pied oystercatchers.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/killalea-regional-park"
+    },
+    {
+     "claim": "Wikivoyage lists Killalea State Park (The Farm) as free.",
+     "source": "https://en.wikivoyage.org/wiki/Shellharbour"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/killalea-regional-park",
+   "ticketUrl_note": "Verified: HTTP 200, title 'Killalea Regional Park | NSW National Parks'. The park has been renamed Regional Park; the app name 'Killalea State Park' is out of date.",
+   "coordinates": {
+    "latitude": -34.611144,
+    "longitude": 150.853604
+   },
+   "coordinates_confidence": "LOW",
+   "coordinates_source": "HELD. resolve-pin.py gave LOW: OSM leisure=nature_reserve relation 15952033 centroid (-34.610331,150.85615) and OSM tourism=camp_site 'Killalea State Park Camping Area' (-34.611144,150.853604). No named car park or entrance found (Overpass unavailable). The campground point is a visitor facility inside the park and a candidate, but unconfirmed as the main visitor point; take the entrance/car park from the NPWS Killalea map",
+   "distance_moved_m": 1908,
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.598,
+     "longitude": 150.867
+    },
+    "source_point": {
+     "latitude": -34.611144,
+     "longitude": 150.853604
+    },
+    "source": "HELD. resolve-pin.py gave LOW: OSM leisure=nature_reserve relation 15952033 centroid (-34.610331,150.85615) and OSM tourism=camp_site 'Killalea State Park Camping Area' (-34.611144,150.853604). No named car park or entrance found (Overpass unavailable). The campground point is a visitor facility inside the park and a candidate, but unconfirmed as the main visitor point; take the entrance/car park from the NPWS Killalea map",
+    "ok": false
+   },
+   "held": "pin held: LOW confidence, needs the visitor point (entrance or car park) from the NPWS map",
+   "category": "nature",
+   "bio_suggestion": "Coastal regional park between Shellharbour and Kiama with surf breaks, beach walks, fishing and a campground.",
+   "unverified": [
+    "NPWS page shows no day-entry fee, so free is assumed (camping is paid); the park may have access gates/hours not captured.",
+    "Rename: the park is now 'Killalea Regional Park' on NPWS; recommend renaming the spot (Wikipedia/OSM title unverified).",
+    "Pin held (LOW)."
+   ]
+  },
+  {
+   "id": "budderoo-1",
+   "name": "Minnamurra Rainforest",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Minnamurra Rainforest Centre in Budderoo National Park: wander elevated walkways through rare remnant rainforest; the Lyrebird loop walk takes an hour; residents include superb lyrebird, eastern water dragon and swamp wallaby.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/visitor-centres/minnamurra-rainforest-centre"
+    },
+    {
+     "claim": "Centre open 9am to 4pm daily, closed Christmas Day; park gates at Minnamurra Rainforest Centre open 9am and close 5pm every day.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/budderoo-national-park"
+    },
+    {
+     "claim": "Park entry fee: $12 per vehicle per day, only in the Minnamurra Rainforest area; bus or taxi $4.40 per adult and $2.20 per child.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/budderoo-national-park"
+    }
+   ],
+   "hours": "9:00 AM – 5:00 PM",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": false,
+   "costMin": 12,
+   "costMax": 12,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/visitor-centres/minnamurra-rainforest-centre",
+   "ticketUrl_note": "Verified: HTTP 200, title 'Minnamurra Rainforest Centre | NSW National Parks'. NPWS is the managing agency.",
+   "coordinates": {
+    "latitude": -34.634725,
+    "longitude": 150.727341
+   },
+   "coordinates_confidence": "MEDIUM",
+   "coordinates_source": "OSM tourism=information (office) 'Minnamurra Rainforest Centre' (Photon), the visitor centre and car park, 0 m from the placement point; Commons median of 15 files is 234 m west along the walks",
+   "distance_moved_m": 1,
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.63473,
+     "longitude": 150.72734
+    },
+    "source_point": {
+     "latitude": -34.634725,
+     "longitude": 150.727341
+    },
+    "source": "OSM tourism=information (office) 'Minnamurra Rainforest Centre' (Photon), the visitor centre and car park, 0 m from the placement point; Commons median of 15 files is 234 m west along the walks",
+    "ok": true
+   },
+   "category": "nature",
+   "bio_suggestion": "Boardwalks through remnant rainforest in Budderoo National Park, with a visitor centre and the one-hour Lyrebird loop.",
+   "unverified": [
+    "The $12 fee is per vehicle, not per adult; costMin/costMax record it as the entry cost (bus/taxi $4.40 per adult). Visit range is an estimate from the one-hour Lyrebird loop."
+   ],
+   "wiki_title": "Minnamurra Rainforest"
+  },
+  {
+   "id": "budderoo-2",
+   "name": "Carrington Falls",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Carrington Falls, where the Kangaroo River plunges over 50 m, has cascades, waterholes and rockpools that some regard as the most beautiful on the South Coast; there are three lookouts, picnic and barbecue facilities and short walking tracks.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/picnic-areas/carrington-falls-picnic-area"
+    },
+    {
+     "claim": "Park entry fees apply in the Minnamurra Rainforest area only, so there is no entry fee at Carrington Falls picnic area.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/picnic-areas/carrington-falls-picnic-area"
+    },
+    {
+     "claim": "Izzards lookout track is a short walk; the Warris Chair and Missingham lookout tracks are longer, from Nellies Glen picnic area.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/picnic-areas/carrington-falls-picnic-area"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/picnic-areas/carrington-falls-picnic-area",
+   "ticketUrl_note": "Verified: HTTP 200, title 'Carrington Falls picnic area | NSW National Parks'. NPWS is the managing agency.",
+   "coordinates": {
+    "latitude": -34.623805,
+    "longitude": 150.654887
+   },
+   "coordinates_confidence": "HIGH",
+   "coordinates_source": "OSM waterway=waterfall 'Carrington Falls' (Photon) agrees with Wikipedia (-34.62444,150.65472) and the Carrington Falls Loop Track and Commons median (-34.624949,150.654203) within 100 m",
+   "distance_moved_m": 73,
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.62444444,
+     "longitude": 150.65472222
+    },
+    "source_point": {
+     "latitude": -34.623805,
+     "longitude": 150.654887
+    },
+    "source": "OSM waterway=waterfall 'Carrington Falls' (Photon) agrees with Wikipedia (-34.62444,150.65472) and the Carrington Falls Loop Track and Commons median (-34.624949,150.654203) within 100 m",
+    "ok": true
+   },
+   "category": "nature",
+   "bio_suggestion": "The Kangaroo River drops over 50 m at the Budderoo plateau edge, with three lookouts and a picnic area close by.",
+   "unverified": [
+    "NPWS says the park is always open but may close in poor weather or fire danger; visit range is an estimate."
+   ],
+   "wiki_title": "Carrington Falls"
+  },
+  {
+   "id": "budderoo-3",
+   "name": "Macquarie Pass National Park",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Macquarie Pass National Park on the Illawarra escarpment is an easy day trip from the southern suburbs of Sydney, with rainforest, bushwalking, birdwatching, waterfalls, ocean views and Illawarra flame trees in flower.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/macquarie-pass-national-park"
+    },
+    {
+     "claim": "Cascades walk: 2 km return, 45 min to 1 hr 15 min, Grade 3, an easy walk through shady rainforest to a waterfall and pool near Kiama and Robertson.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/cascades-walk"
+    },
+    {
+     "claim": "Cascades picnic area is a sunny picnic area amid the rainforest, a break from the road trip or a rest after Cascades walk.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/macquarie-pass-national-park"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/macquarie-pass-national-park",
+   "ticketUrl_note": "Verified: HTTP 200, title 'Macquarie Pass National Park | NSW National Parks'.",
+   "coordinates": {
+    "latitude": -34.567199,
+    "longitude": 150.672819
+   },
+   "coordinates_confidence": "HIGH",
+   "coordinates_source": "OSM highway=footway 'Cascades Rainforest Walk' (way 439443954, Photon) at the Cascades walk start, within ~30 m of the Commons median of 10 geotagged files (-34.567,150.672521); replaces the Wikivoyage/centroid point (-34.565,150.651111, 2 km west)",
+   "distance_moved_m": 2003,
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.565,
+     "longitude": 150.651111
+    },
+    "source_point": {
+     "latitude": -34.567199,
+     "longitude": 150.672819
+    },
+    "source": "OSM highway=footway 'Cascades Rainforest Walk' (way 439443954, Photon) at the Cascades walk start, within ~30 m of the Commons median of 10 geotagged files (-34.567,150.672521); replaces the Wikivoyage/centroid point (-34.565,150.651111, 2 km west)",
+    "ok": true
+   },
+   "category": "nature",
+   "bio_suggestion": "Rainforest park on the Illawarra escarpment with the Cascades walk to a waterfall and pool, and a picnic area.",
+   "unverified": [
+    "Entry fee: none shown on the NPWS park or visitor-info pages, taken as free.",
+    "Pin is the Cascades walk start (park visitor point), not a centroid."
+   ],
+   "wiki_title": "Macquarie Pass National Park"
+  },
+  {
+   "id": "morton-1",
+   "name": "Fitzroy Falls",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Fitzroy Falls lookout is 150 m from the Fitzroy Falls Visitor Centre: a wheelchair-accessible elevated boardwalk to the escarpment edge, from where the falls drop nearly 100 m (the visitor centre page says over 80 m) into the Yarrunga Valley.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/fitzroy-falls-lookout"
+    },
+    {
+     "claim": "Fitzroy Falls Visitor Centre, 1301 Nowra Road, is open 9am to 4pm daily and closed Christmas Day; West Rim walking track and East Rim Wildflower walking track start nearby.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/visitor-centres/fitzroy-falls-visitor-centre"
+    },
+    {
+     "claim": "Park entry fee at Fitzroy Falls: $4 per vehicle per day (Bundanoon area $8); pay machines take cash and cards.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/morton-national-park"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": false,
+   "costMin": 4,
+   "costMax": 4,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/fitzroy-falls-lookout",
+   "ticketUrl_note": "Verified: HTTP 200, title 'Fitzroy Falls lookout | NSW National Parks'. NPWS is the managing agency.",
+   "coordinates": {
+    "latitude": -34.647999,
+    "longitude": 150.482545
+   },
+   "coordinates_confidence": "HIGH",
+   "coordinates_source": "OSM waterway=waterfall 'Fitzroy Falls' (Photon) within 36 m of the placement; OSM viewpoint 'Fitzroy Falls Lookout' (-34.647819,150.482466) and visitor centre (-34.647044,150.483018) agree",
+   "distance_moved_m": 36,
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.6483,
+     "longitude": 150.4824
+    },
+    "source_point": {
+     "latitude": -34.647999,
+     "longitude": 150.482545
+    },
+    "source": "OSM waterway=waterfall 'Fitzroy Falls' (Photon) within 36 m of the placement; OSM viewpoint 'Fitzroy Falls Lookout' (-34.647819,150.482466) and visitor centre (-34.647044,150.483018) agree",
+    "ok": true
+   },
+   "category": "nature",
+   "bio_suggestion": "Waterfall dropping over 80 m into Yarrunga Valley, a short boardwalk stroll from the visitor centre in Morton National Park.",
+   "unverified": [
+    "Fee is per vehicle, not per adult. Park 'always open' (may close in poor weather/fire); visitor centre 9am-4pm. Visit range is an estimate."
+   ],
+   "wiki_title": "Fitzroy Falls"
+  },
+  {
+   "id": "morton-2",
+   "name": "Belmore Falls",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Belmore Falls walking track is a short walk to several lookouts with views over Kangaroo Valley: 1.8 km return, 30 min to 1 hr, Grade 3.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/belmore-falls-walking-track"
+    },
+    {
+     "claim": "All access to the base of Belmore Falls is permanently closed.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/belmore-falls-walking-track"
+    },
+    {
+     "claim": "Park entry fees apply at Fitzroy Falls and in the Bundanoon area of Morton National Park, not at Belmore Falls; reaching the falls from Robertson involves a narrow winding dirt road.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/belmore-falls-walking-track"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/belmore-falls-walking-track",
+   "ticketUrl_note": "Verified: HTTP 200, title 'Belmore Falls walking track | NSW National Parks'. NPWS is the managing agency.",
+   "coordinates": {
+    "latitude": -34.639829,
+    "longitude": 150.559132
+   },
+   "coordinates_confidence": "HIGH",
+   "coordinates_source": "OSM waterway=waterfall 'Belmore Falls' (Photon) agrees with Wikipedia (-34.640278,150.559722) and Commons median (-34.640623,150.558929) within 80 m",
+   "distance_moved_m": 74,
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.64027778,
+     "longitude": 150.55972222
+    },
+    "source_point": {
+     "latitude": -34.639829,
+     "longitude": 150.559132
+    },
+    "source": "OSM waterway=waterfall 'Belmore Falls' (Photon) agrees with Wikipedia (-34.640278,150.559722) and Commons median (-34.640623,150.558929) within 80 m",
+    "ok": true
+   },
+   "category": "nature",
+   "bio_suggestion": "Short track to lookouts over Kangaroo Valley and the falls; the base of the falls is permanently closed to visitors.",
+   "unverified": [
+    "Placement said 'waterfall reached by a walking track from the park's road'; NPWS says there is 1 alert on the page (not read)."
+   ],
+   "wiki_title": "Belmore Falls"
+  },
+  {
+   "id": "morton-3",
+   "name": "Kangaroo Valley",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Kangaroo Valley is a fully enclosed valley with a small town (population 900) offering a historic suspension bridge, buildings and antique stores to browse; it is the historic home of the Wodi-Wodi people.",
+     "source": "https://en.wikivoyage.org/wiki/Kangaroo_Valley"
+    },
+    {
+     "claim": "The village is tiny and all buildings are a few minutes' walk apart; Hampden Bridge is over a kilometre away.",
+     "source": "https://en.wikivoyage.org/wiki/Kangaroo_Valley"
+    },
+    {
+     "claim": "A scenic route runs along Upper Kangaroo River Road to a flat rock picnic spot; the last kilometres are unsealed.",
+     "source": "https://en.wikivoyage.org/wiki/Kangaroo_Valley"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A village; no single steward; no ticketUrl.",
+   "coordinates": {
+    "latitude": -34.735157,
+    "longitude": 150.532543
+   },
+   "coordinates_confidence": "MEDIUM",
+   "coordinates_source": "OSM place=locality 'Kangaroo Valley' (Photon), the village, 216 m from the Wikipedia point; the Commons median (-34.726928,150.521347) is Hampden Bridge, ~1.5 km north-west",
+   "distance_moved_m": 215,
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.73333333,
+     "longitude": 150.53333333
+    },
+    "source_point": {
+     "latitude": -34.735157,
+     "longitude": 150.532543
+    },
+    "source": "OSM place=locality 'Kangaroo Valley' (Photon), the village, 216 m from the Wikipedia point; the Commons median (-34.726928,150.521347) is Hampden Bridge, ~1.5 km north-west",
+    "ok": true
+   },
+   "category": "historic",
+   "bio_suggestion": "Small valley village of about 900 with antique shops and historic buildings, a few minutes from a colonial suspension bridge.",
+   "unverified": [
+    "Visit duration is an estimate."
+   ],
+   "wiki_title": "Kangaroo Valley, New South Wales"
+  },
+  {
+   "id": "morton-4",
+   "name": "Hampden Bridge",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Hampden Bridge, a heritage-listed single-span suspension bridge over the Kangaroo River, opened on 19 May 1898, six days before floods washed away the old timber bridge; designed by Ernest de Burgh, built by Loveridge and Hudson.",
+     "source": "https://en.wikipedia.org/wiki/Hampden_Bridge,_Kangaroo_Valley"
+    },
+    {
+     "claim": "It is the second suspension bridge built in NSW and the only surviving suspension road bridge from the 19th century.",
+     "source": "https://en.wikipedia.org/wiki/Hampden_Bridge,_Kangaroo_Valley"
+    },
+    {
+     "claim": "The stone pillars tower over the river below; the bridge dates from 1889 per the Wikivoyage listing (Wikipedia and the NSW heritage listing say 1898).",
+     "source": "https://en.wikivoyage.org/wiki/Kangaroo_Valley"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Heritage road bridge managed by the roads authority; no visitor page; no ticketUrl.",
+   "coordinates": {
+    "latitude": -34.72755,
+    "longitude": 150.520925
+   },
+   "coordinates_confidence": "HIGH",
+   "coordinates_source": "OSM bridge 'Hampden Bridge' (Photon, 13 m from placement); agrees with Wikivoyage listing (-34.7275,150.5208) and Commons median (-34.726928,150.520742)",
+   "distance_moved_m": 13,
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.7275,
+     "longitude": 150.5208
+    },
+    "source_point": {
+     "latitude": -34.72755,
+     "longitude": 150.520925
+    },
+    "source": "OSM bridge 'Hampden Bridge' (Photon, 13 m from placement); agrees with Wikivoyage listing (-34.7275,150.5208) and Commons median (-34.726928,150.520742)",
+    "ok": true
+   },
+   "category": "historic",
+   "bio_suggestion": "Castle-towered suspension bridge opened in 1898 over the Kangaroo River, NSW's last 19th-century suspension road bridge.",
+   "unverified": [
+    "Year conflict: Wikivoyage says 1889, Wikipedia says opened 19 May 1898 (the bio uses 1898). Some tourism sites call it Australia's oldest suspension bridge; not repeated."
+   ],
+   "wiki_title": "Hampden Bridge, Kangaroo Valley"
+  },
+  {
+   "id": "nowra-1",
+   "name": "Fleet Air Arm Museum",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "The museum tells the story of Australian naval aviation in a hangar-style main exhibition hall and two art galleries at the entrance of HMAS Albatross, overlooking the runway, with aircraft, technology, models, clothing and memorabilia.",
+     "source": "https://mgnsw.org.au/organisations/fleet-air-arm-museum/"
+    },
+    {
+     "claim": "Open 10am to 4pm Friday to Sunday and public holidays; Tuesday to Sunday during school holidays; closed Christmas Day, Boxing Day and New Year's Day.",
+     "source": "https://mgnsw.org.au/organisations/fleet-air-arm-museum/"
+    },
+    {
+     "claim": "Admission is free per the Navy's museum page (as reported in a search summary; the Navy page itself could not be loaded by script).",
+     "source": "https://www.navy.gov.au/heritage/museums/fleet-air-arm-museum"
+    }
+   ],
+   "hours": "10:00 AM – 4:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": true,
+   "ticketUrl": "BLOCKED",
+   "ticketUrl_blocked_url": "https://www.navy.gov.au/heritage/museums/fleet-air-arm-museum",
+   "ticketUrl_note": "BLOCKED/unloadable: navy.gov.au returns status 0 (fetch failed) to the cache fetcher on both /fleet-air-arm-museum and /heritage/museums/fleet-air-arm-museum. The museum is run by the Royal Australian Navy so that is the official site; orchestrator must load it in a real browser to confirm title and the free-entry line before using it.",
+   "coordinates": {
+    "latitude": -34.936052,
+    "longitude": 150.554745
+   },
+   "coordinates_confidence": "HIGH",
+   "coordinates_source": "OSM tourism=museum 'Fleet Air Arm Museum' (Photon); agrees with Commons median of 23 files (-34.936325,150.554749), 100 m from placement",
+   "distance_moved_m": 103,
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.9369,
+     "longitude": 150.5543
+    },
+    "source_point": {
+     "latitude": -34.936052,
+     "longitude": 150.554745
+    },
+    "source": "OSM tourism=museum 'Fleet Air Arm Museum' (Photon); agrees with Commons median of 23 files (-34.936325,150.554749), 100 m from placement",
+    "ok": true
+   },
+   "category": "museum",
+   "bio_suggestion": "Free Royal Australian Navy museum in a hangar-style hall at HMAS Albatross, telling the story of naval aviation.",
+   "unverified": [
+    "Free entry and weekday closure come from a search summary of the Navy page plus MGNSW; the Navy page was not loaded.",
+    "Access to HMAS Albatross gate/security requirements not checked.",
+    "Visit duration is an estimate."
+   ],
+   "wiki_title": "Fleet Air Arm Museum"
+  },
+  {
+   "id": "nowra-2",
+   "name": "Berry",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Berry is an elegant village with a charming main street in the Shoalhaven; learn the town's history at the Berry Historic Museum or along the self-guided Berry Historical Walk, and browse antiques in heritage buildings.",
+     "source": "https://www.visitnsw.com/destinations/south-coast/jervis-bay-and-shoalhaven/berry"
+    },
+    {
+     "claim": "The Berry Donut Van on Queen Street is a local institution for cinnamon doughnuts.",
+     "source": "https://www.visitnsw.com/destinations/south-coast/jervis-bay-and-shoalhaven/berry"
+    },
+    {
+     "claim": "Berry is easily walkable if you are just browsing antique and craft shops; Berry Museum (135 Queen St) opens Saturday 11am-2pm and Sunday 11am-3pm (2021 listing).",
+     "source": "https://en.wikivoyage.org/wiki/Berry"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A village with no single steward; no ticketUrl.",
+   "coordinates": {
+    "latitude": -34.775324,
+    "longitude": 150.697722
+   },
+   "coordinates_confidence": "HIGH",
+   "coordinates_source": "OSM place=locality 'Berry' (Photon) agrees with Commons median of 94 files (-34.775403,150.697436) within 30 m; Wikipedia point (-34.775278,150.693889) 350 m west",
+   "distance_moved_m": 350,
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.77527778,
+     "longitude": 150.69388889
+    },
+    "source_point": {
+     "latitude": -34.775324,
+     "longitude": 150.697722
+    },
+    "source": "OSM place=locality 'Berry' (Photon) agrees with Commons median of 94 files (-34.775403,150.697436) within 30 m; Wikipedia point (-34.775278,150.693889) 350 m west",
+    "ok": true
+   },
+   "category": "historic",
+   "bio_suggestion": "Elegant Shoalhaven village with a heritage main street, antique shops, a historic museum and the Berry Donut Van.",
+   "unverified": [
+    "Village shops have their own hours; Berry Farmers' Market (Thursday afternoons) is an event, not part of the spot."
+   ],
+   "wiki_title": "Berry, New South Wales"
+  },
+  {
+   "id": "nowra-3",
+   "name": "Seven Mile Beach National Park",
+   "kind": "new",
+   "facts": [
+    {
+     "claim": "Seven Mile Beach National Park lies between Shoalhaven Heads and Gerroa and offers fishing, swimming, picnicking and walking; Beach Road picnic area has everything for a relaxing day at the beach and a lookout over the beach.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/seven-mile-beach-national-park"
+    },
+    {
+     "claim": "Sand track walk (north): 3 km one-way, 2 hr 30 min to 3 hr 30 min, through forest and back along the beach.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/sand-track-walk-north"
+    },
+    {
+     "claim": "The park is always open but may close in poor weather or fire danger.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/seven-mile-beach-national-park"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/seven-mile-beach-national-park",
+   "ticketUrl_note": "Verified: HTTP 200, title 'Seven Mile Beach National Park | NSW National Parks'.",
+   "coordinates": {
+    "latitude": -34.791066,
+    "longitude": 150.778922
+   },
+   "coordinates_confidence": "MEDIUM",
+   "coordinates_source": "OSM tourism=picnic_site 'Beach Road Picnic Area' (way 380332612, Photon), NPWS's Beach Road picnic area on the beach, replacing the park-centroid point (-34.813333,150.756667 Wikipedia / -34.817605,150.738572 OSM reserve centroid); the OSM '7 mile beach lookout' (-34.768314,150.81403) is 3 km north",
+   "distance_moved_m": 3203,
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.81333333,
+     "longitude": 150.75666667
+    },
+    "source_point": {
+     "latitude": -34.791066,
+     "longitude": 150.778922
+    },
+    "source": "OSM tourism=picnic_site 'Beach Road Picnic Area' (way 380332612, Photon), NPWS's Beach Road picnic area on the beach, replacing the park-centroid point (-34.813333,150.756667 Wikipedia / -34.817605,150.738572 OSM reserve centroid); the OSM '7 mile beach lookout' (-34.768314,150.81403) is 3 km north",
+    "ok": true
+   },
+   "category": "nature",
+   "bio_suggestion": "Coastal park between Shoalhaven Heads and Gerroa with swimming, fishing, picnic areas and the Sand track forest-and-beach walk.",
+   "unverified": [
+    "NPWS page shows no vehicle entry fee, taken as free; camping at Seven Mile Beach is paid and not covered."
+   ],
+   "wiki_title": "Seven Mile Beach National Park"
+  },
+  {
+   "id": "wollongong",
+   "name": "Wollongong",
+   "kind": "new",
+   "standalone_fallback": true,
+   "facts": [
+    {
+     "claim": "Wollongong stretches over 40 km south to north along a coastal strip between the escarpment and the sea, never more than about 6 km wide, from Port Kembla to Stanwell Park.",
+     "source": "https://en.wikivoyage.org/wiki/Wollongong"
+    },
+    {
+     "claim": "Highlights include Sublime Point and Mount Keira lookouts, Nan Tien Temple, the harbour lighthouses, the Botanic Garden and beaches such as North Beach and Austinmer.",
+     "source": "https://en.wikivoyage.org/wiki/Wollongong"
+    },
+    {
+     "claim": "The Grand Pacific Drive and the Sea Cliff Bridge link Wollongong with Sydney's Royal National Park.",
+     "source": "https://en.wikivoyage.org/wiki/Wollongong"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A city with no single steward; no ticketUrl.",
+   "coordinates": {
+    "latitude": -34.424394,
+    "longitude": 150.89385
+   },
+   "coordinates_confidence": "MEDIUM",
+   "coordinates_source": "OSM place=city 'Wollongong' node (Photon), identical to the placement point; town point as the spot is the city",
+   "distance_moved_m": 0,
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.42439,
+     "longitude": 150.89385
+    },
+    "source_point": {
+     "latitude": -34.424394,
+     "longitude": 150.89385
+    },
+    "source": "OSM place=city 'Wollongong' node (Photon), identical to the placement point; town point as the spot is the city",
+    "ok": true
+   },
+   "category": "historic",
+   "bio_suggestion": "Regional city on the Illawarra coast with a working harbour, beaches, escarpment lookouts and Nan Tien Temple.",
+   "unverified": [
+    "Standalone fallback only; the spots listed under wollongong-1..9 are the reasons to go. Visit range is an estimate."
+   ],
+   "wiki_title": "Wollongong"
+  },
+  {
+   "id": "kiama",
+   "name": "Kiama",
+   "kind": "new",
+   "standalone_fallback": true,
+   "facts": [
+    {
+     "claim": "Kiama is about 90 minutes south of Sydney by car and just over 2 hours by train, famous for its spectacular coastline and rural scenery.",
+     "source": "https://en.wikivoyage.org/wiki/Kiama"
+    },
+    {
+     "claim": "It is an easy walk from the train station to the beach, the blowhole and the shopping centre.",
+     "source": "https://en.wikivoyage.org/wiki/Kiama"
+    },
+    {
+     "claim": "Central Kiama has a harbour rather than a beach, with patrolled beaches to the north and south and a tidal rockpool beside the blowhole.",
+     "source": "https://en.wikivoyage.org/wiki/Kiama"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A town with no single steward; no ticketUrl.",
+   "coordinates": {
+    "latitude": -34.671572,
+    "longitude": 150.855625
+   },
+   "coordinates_confidence": "MEDIUM",
+   "coordinates_source": "OSM place=locality 'Kiama' (relation 6076648, Photon) ~150 m from the Wikipedia point (-34.67083,150.85417); Kiama station (-34.672584,150.854528) agrees",
+   "distance_moved_m": 157,
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.67083333,
+     "longitude": 150.85416667
+    },
+    "source_point": {
+     "latitude": -34.671572,
+     "longitude": 150.855625
+    },
+    "source": "OSM place=locality 'Kiama' (relation 6076648, Photon) ~150 m from the Wikipedia point (-34.67083,150.85417); Kiama station (-34.672584,150.854528) agrees",
+    "ok": true
+   },
+   "category": "historic",
+   "bio_suggestion": "Coastal town on the Illawarra coast with a harbour, rockpool, the famous Blowhole and the start of the Coast Walk.",
+   "unverified": [
+    "Standalone fallback only; visit range is an estimate."
+   ],
+   "wiki_title": "Kiama, New South Wales"
+  },
+  {
+   "id": "nowra",
+   "name": "Nowra",
+   "kind": "new",
+   "standalone_fallback": true,
+   "facts": [
+    {
+     "claim": "Nowra is a town of 29,000 on the Shoalhaven River, 163 km south of Sydney, the chief administrative and business centre of Shoalhaven City and a regional centre for tourism.",
+     "source": "https://en.wikivoyage.org/wiki/Nowra"
+    },
+    {
+     "claim": "Bomaderry, its twin town north of the river, has the train station; a bus connects over the road bridge to Nowra.",
+     "source": "https://en.wikivoyage.org/wiki/Nowra"
+    },
+    {
+     "claim": "Nowra is an Aboriginal word meaning 'black cockatoo'; the traditional owners south of the river are the Wandi-Wandandian of the Yuin nation.",
+     "source": "https://en.wikivoyage.org/wiki/Nowra"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A town with no single steward; no ticketUrl.",
+   "coordinates": {
+    "latitude": -34.87412,
+    "longitude": 150.600471
+   },
+   "coordinates_confidence": "MEDIUM",
+   "coordinates_source": "OSM place=locality 'Nowra' (relation 6076687, Photon), same as the placement point (-34.87412,150.60047)",
+   "distance_moved_m": 0,
+   "coordinates_check": {
+    "current": {
+     "latitude": -34.87412,
+     "longitude": 150.60047
+    },
+    "source_point": {
+     "latitude": -34.87412,
+     "longitude": 150.600471
+    },
+    "source": "OSM place=locality 'Nowra' (relation 6076687, Photon), same as the placement point (-34.87412,150.60047)",
+    "ok": true
+   },
+   "category": "historic",
+   "bio_suggestion": "Regional centre of the Shoalhaven on its river, a base for the area's beaches, parks and the Fleet Air Arm Museum.",
+   "unverified": [
+    "Standalone fallback only; Nowra has few sights of its own (placement: gateway town). Visit range is an estimate."
+   ],
+   "wiki_title": "Nowra"
+  }
+ ]
+}

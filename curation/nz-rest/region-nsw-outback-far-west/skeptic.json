@@ -1,0 +1,659 @@
+[
+ {
+  "name": "Broken Hill",
+  "verdict": "keep",
+  "objection": "Regional city and base for the Far West, two Wikivoyage pages plus Visit NSW. Proposed destination with Silverton (26 km), Mundi Mundi, Living Desert, Line of Lode, Pro Hart, RFDS, Daydream Mine, Mutawintji (about 130 km) in its span.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Broken Hill panorama from Line of Lode lookout, July 2026 03.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Broken_Hill_panorama_from_Line_of_Lode_lookout,_July_2026_03.jpg",
+   "width": 4608,
+   "height": 3456,
+   "licence": "CC BY-SA 4.0"
+  },
+  "photo_reason": "Current colour (2026) view over the city from the Line of Lode lookout. Town sits low in the frame: needs zoom.",
+  "hero_crop": {
+   "x": 0.35,
+   "y": 0.6,
+   "zoom": 1.5
+  }
+ },
+ {
+  "name": "Silverton",
+  "verdict": "keep",
+  "objection": "Ghost town and Mad Max location, Wikivoyage plus Visit NSW. Part of the Broken Hill cluster. Also note a gap: Silverton Gaol Museum and the Silverton Hotel are Visit NSW named stops missing from candidates.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Silverton Hotel NSW-01 (5138464252).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Silverton_Hotel_NSW-01_(5138464252).jpg",
+   "width": 1952,
+   "height": 1270,
+   "licence": "CC BY-SA 2.0"
+  },
+  "photo_reason": "The Silverton Hotel, the town's icon (film location). Thin black scan border at edges; the square crop removes it. Right place per title and category.",
+  "coordinates": {
+   "lat": -31.88525,
+   "lng": 141.2219
+  },
+  "coordinates_source": "osm Nominatim Mad Max 2 Museum used as the town's visitor core; town centroid from Wikipedia is -31.8667,141.2333 which is not a visitor point"
+ },
+ {
+  "name": "Menindee",
+  "verdict": "review",
+  "objection": "Case for: Wikivoyage base and gateway for Kinchega and the Menindee Lakes, with Visit NSW area page. Against: a very small town whose draw is the lakes and park beyond (Pipiriki pattern), exterior heritage only, limited services. Fold into a proposed Kinchega/Menindee Lakes destination as a spot rather than its own pin.",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Wilcannia",
+  "verdict": "reject",
+  "objection": "One counted source (Wikivoyage) calls it very small; Visit NSW has no listing. Heritage precinct and old theatre are seen from the street with nothing to do for 30 minutes.",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Tibooburra",
+  "verdict": "review",
+  "objection": "Case for: the only town for hundreds of km, base for Sturt National Park, Wikivoyage lists stone buildings and pub. Against: one counted source and the draw is the park and Cameron Corner (gateway pattern). Keep as a low-rank gateway only if the owner wants a base for Sturt; otherwise fold into Sturt National Park.",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "White Cliffs",
+  "verdict": "keep",
+  "objection": "Opal-mining village with underground dwellings, Wikivoyage x2. Visit NSW lists it with underground motel. Low-rank destination (base for Paroo-Darling).",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": "Commons has only a 1399x399 strip, a sky-dominated flat (White Cliffs New South Wales 08-08-2024) and a hotel. None pass. Search Openverse or White Cliffs tourism for a dugout/opal-field shot."
+ },
+ {
+  "name": "Lightning Ridge",
+  "verdict": "keep",
+  "objection": "Opal capital with bore baths, mines, Car Door trails; Wikivoyage x2 and Visit NSW. Proposed destination: Bore Baths, Big Opal, Chambers of the Black Hand, Bottle House, Car Door Explorer.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Open Cut Opal Mine at Lightning Ridge - panoramio.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Open_Cut_Opal_Mine_at_Lightning_Ridge_-_panoramio.jpg",
+   "width": 3153,
+   "height": 2302,
+   "licence": "CC BY-SA 3.0"
+  },
+  "photo_reason": "Open-cut opal workings at Lightning Ridge, colour 2013. Subject (pit) is centred; ok.",
+  "hero_crop": "ok"
+ },
+ {
+  "name": "Bourke",
+  "verdict": "keep",
+  "objection": "Darling River outback town, Wikivoyage x2 plus Visit NSW; base for Gundabooka and Toorale.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Darling River seen from Bourke Wharf 08-08-2024.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Darling_River_seen_from_Bourke_Wharf_08-08-2024.jpg",
+   "width": 5385,
+   "height": 3507,
+   "licence": "CC BY-SA 4.0"
+  },
+  "photo_reason": "Darling River from the wharf, 2024, colour. River is the setting for Bourke; ok for a town.",
+  "hero_crop": "ok"
+ },
+ {
+  "name": "Cobar",
+  "verdict": "keep",
+  "objection": "Mining town with open-cut lookout and heritage centre; Wikivoyage x2 plus Visit NSW.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Cobar mining.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Cobar_mining.jpg",
+   "width": 2160,
+   "height": 1440,
+   "licence": "CC BY-SA 3.0"
+  },
+  "photo_reason": "Open-cut pit at Cobar, colour 2003; pit fills the frame, recognisable. Slight risk it is not labelled Fort Bourke; it is the Cobar pit per title.",
+  "hero_crop": "ok"
+ },
+ {
+  "name": "Brewarrina",
+  "verdict": "keep",
+  "objection": "Resolved from review: two counted sources plus Visit NSW page; Fish Traps and Aboriginal Cultural Museum give two distinct spots. Low-rank destination or fold into Bourke touring route.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Brewarrina fish traps 2023.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Brewarrina_fish_traps_2023.jpg",
+   "width": 4080,
+   "height": 1836,
+   "licence": "CC BY-SA 4.0"
+  },
+  "photo_reason": "Traps shown across the river bed, 2023. Wide 2.2:1 file; needs left-of-centre crop.",
+  "hero_crop": {
+   "x": 0.3,
+   "y": 0.5
+  }
+ },
+ {
+  "name": "Balranald",
+  "verdict": "review",
+  "objection": "Overlaps nsw-riverina-murray (Murrumbidgee town). Wikivoyage x2 and Visit NSW. Reconcile there: decide one owner of Balranald, Yanga and the Mungo gateway. Not a Far West pin until then.",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Wentworth",
+  "verdict": "reject",
+  "objection": "Belongs to Riverina-Murray (Murray-Darling junction, Old Wentworth Gaol); judge there. Note for reconciliation.",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Mungo National Park",
+  "verdict": "keep",
+  "objection": "UNESCO park, NPWS plus Wikivoyage. Destination (every national park is one), spots: Walls of China, Mungo Lookout, Woolshed, drive loop.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "MungoNationalParkWallsOfChina.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:MungoNationalParkWallsOfChina.jpg",
+   "width": 2400,
+   "height": 1600,
+   "licence": "CC BY-SA 4.0"
+  },
+  "photo_reason": "Lunette dunes across the dry lake bed, 2013, colour. For the park.",
+  "hero_crop": "ok"
+ },
+ {
+  "name": "Walls of China",
+  "verdict": "keep",
+  "objection": "Reversed. Mungo NP is a destination, so its headline sight is a spot, not a duplicate of it. It has its own NPWS listing ('Walls of China viewing platform', plus the guided lunette tour) and its own Wikivoyage See entry; Wikivoyage calls it the park's most iconic feature. Red Top Lookout boardwalk is the same viewing area, so fold it into this spot. Pin: Photon tourism=attraction at the platform.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Walls of China in Mungo National Park (27464678334).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Walls_of_China_in_Mungo_National_Park_(27464678334).jpg",
+   "width": 4608,
+   "height": 3456,
+   "licence": "CC0"
+  },
+  "photo_reason": "Eroded lunettes, current colour, clear; subject fills the frame.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -33.741653,
+   "lng": 143.12783
+  },
+  "coordinates_source": "photon tourism=attraction 'Walls Of China' (68 m from candidate point); platform per Wikivoyage"
+ },
+ {
+  "name": "Mungo Lookout",
+  "verdict": "review",
+  "objection": "Case for: Wikivoyage names the sunset lookout over the dry lake bed. Against: one counted source (NPWS does not list it), 15-minute stop; seen only as a view. Review rather than reject now that Mungo is a destination; photo none (no Commons file).",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": "",
+  "coordinates": {
+   "lat": -33.738329,
+   "lng": 143.020824
+  },
+  "coordinates_source": "photon tourism=viewpoint 'Mungo Lookout'"
+ },
+ {
+  "name": "Kinchega National Park",
+  "verdict": "keep",
+  "objection": "NPWS plus Wikivoyage; destination with Menindee Lakes and Kinchega Woolshed as spots.",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": "Commons has a satellite image, a close-up scar tree (1988) and a 3968x567 banner. None pass. Menindee Lakes' sunset photo is not of the park proper."
+ },
+ {
+  "name": "Kinchega Woolshed",
+  "verdict": "keep",
+  "objection": "Reversed: Wikivoyage lists it with its own NPWS page (2 counted sources), 1875 woolshed open to walk through, with the visitor centre next door; needed as the park's first spot. Pin from Wikivoyage's own geotag.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Kinchega Woolshed (10641718584).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Kinchega_Woolshed_(10641718584).jpg",
+   "width": 2832,
+   "height": 4256,
+   "licence": "CC BY 2.0"
+  },
+  "photo_reason": "Interior of the woolshed shearing floor, 2013; named thing, but interior and portrait: needs top-centred crop. Prefer an exterior if one turns up.",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.45
+  },
+  "coordinates": {
+   "lat": -32.474567,
+   "lng": 142.343235
+  },
+  "coordinates_source": "wikivoyage Kinchega National Park listing own geotag; OSM woolshed -32.474497,142.343256 (agree within 10 m)"
+ },
+ {
+  "name": "Menindee Lakes",
+  "verdict": "keep",
+  "objection": "Wikivoyage x2 names the lakes as the reason to visit Menindee; birdlife and dead-tree sunsets. Best treated as spot of a Kinchega destination. Seasonal: lakes can be dry.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Sunset Menindee Lakes - Flickr - Rmonty119.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Sunset_Menindee_Lakes_-_Flickr_-_Rmonty119.jpg",
+   "width": 2332,
+   "height": 1500,
+   "licence": "CC BY 2.0"
+  },
+  "photo_reason": "Dead red gums reflected at sunset, 2023, colour. Colour is warm, brightness should be measured; dusk image but bright enough by eye.",
+  "hero_crop": "ok"
+ },
+ {
+  "name": "Mutawintji National Park",
+  "verdict": "keep",
+  "objection": "NPWS plus Wikivoyage; best Aboriginal rock-art collection in NSW. Destination (130 km from Broken Hill); spots: Historic Site, Gorge walk.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Mutawintji National Park.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Mutawintji_National_Park.jpg",
+   "width": 2240,
+   "height": 1488,
+   "licence": "CC BY-SA 2.0"
+  },
+  "photo_reason": "Red sandstone gorge, 2010 colour; subject central.",
+  "hero_crop": "ok"
+ },
+ {
+  "name": "Mutawintji Historic Site",
+  "verdict": "keep",
+  "objection": "Reversed: NPWS gives it its own page and says it boasts one of the best collections of Aboriginal art in NSW, visited by booked guided tour (a real activity, over 30 min). Distinct from the park's walks. Pin unresolved (LOW): take the NPWS Historic Site carpark point.",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": "Only a 241x320 petroglyph and a 1976 close-up scan on Commons. Search NPWS/Openverse."
+ },
+ {
+  "name": "Sturt National Park",
+  "verdict": "keep",
+  "objection": "NPWS plus Wikivoyage; destination. Spots: Cameron Corner, Mount Wood, Fort Grey, Gorge Loop. The Dingo Fence is a feature of this park's edge, folded into its bio.",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": "Commons options are a 2001 low-res plain, a road-only gibber photo and a ruin; none show the park's dunes or tors. Search other tiers."
+ },
+ {
+  "name": "Cameron Corner Survey Marker",
+  "verdict": "keep",
+  "objection": "Wikivoyage x2 calls it a must-stop; NSW/Qld/SA marker with the Dingo Fence meeting it. Quirky border icon. Real stop 30 min with the store 1 km away.",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": "Only 640x480 files (marker plate close-up, flat ground). Fails size and view.",
+  "coordinates": {
+   "lat": -28.999057,
+   "lng": 141.0
+  },
+  "coordinates_source": "Commons geotagged file median (68 m from Wikipedia -28.9991,140.9993); two sources within 100 m"
+ },
+ {
+  "name": "Dingo Fence",
+  "verdict": "reject",
+  "objection": "A 5,614 km linear feature with no single public site in NSW: NPWS only mentions it along the Sturt boundary and Cameron Corner. Name it in the Sturt and Cameron Corner bios; if a signed viewing point turns up, re-judge.",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Gundabooka National Park",
+  "verdict": "keep",
+  "objection": "NPWS plus Wikivoyage; rock art and range walks, 40 km from Bourke.",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": "Commons has a night scene, a 5120x1694 strip and a banner; none pass."
+ },
+ {
+  "name": "Paroo-Darling National Park",
+  "verdict": "keep",
+  "objection": "NPWS plus Wikivoyage; remote wetlands park (low rank).",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Peerylake.JPG",
+   "page": "https://commons.wikimedia.org/wiki/File:Peerylake.JPG",
+   "width": 3648,
+   "height": 2736,
+   "licence": "CC BY-SA 3.0"
+  },
+  "photo_reason": "Peery Lake shoreline, 2009 colour; plain but the named wetland. Weak, flag for a better shot.",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.65,
+   "zoom": 1.3
+  }
+ },
+ {
+  "name": "Lightning Ridge Bore Baths",
+  "verdict": "keep",
+  "objection": "Visit NSW and Wikivoyage both name it: free, open 24 hours artesian baths. Two counted sources.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Bore Baths - panoramio.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Bore_Baths_-_panoramio.jpg",
+   "width": 2048,
+   "height": 1536,
+   "licence": "CC BY-SA 3.0"
+  },
+  "photo_reason": "The pool and shelter, colour 2007 (date from upload). Recognisable.",
+  "hero_crop": "ok"
+ },
+ {
+  "name": "Australian Opal Centre",
+  "verdict": "reject",
+  "objection": "Reversed: the AOC site says the new building is 80% complete with construction paused; Wikivoyage has no hours or address verified; only fossil digs run. No open public venue to confirm. Re-judge when the building opens.",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Lightning Ridge Bottle House",
+  "verdict": "keep",
+  "objection": "Resolved: Visit NSW ('Bottle House Museum', a dwelling built of bottles in the 1960s) plus Wikivoyage, open most days 9-5 at 60 Opal St; quirky folk-art icon, 30 min.",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": "No Commons file of it (search returns Finnish and English bottle houses). Needs Openverse.",
+  "coordinates": {
+   "lat": -29.433765,
+   "lng": 147.981905
+  },
+  "coordinates_source": "photon tourism=attraction 'Bottle House' (4 m)"
+ },
+ {
+  "name": "The Big Opal",
+  "verdict": "keep",
+  "objection": "Resolved: Visit NSW and Wikivoyage; guided or self-guided underground mine, $20 adult. Operator-run but the place is the mine.",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": "No Commons file.",
+  "coordinates": {
+   "lat": -29.451802,
+   "lng": 147.967561
+  },
+  "coordinates_source": "photon tourism=attraction 'The Big Opal'"
+ },
+ {
+  "name": "Chambers of the Black Hand",
+  "verdict": "keep",
+  "objection": "Resolved: Visit NSW names the carved sandstone chambers 11 m underground; Wikivoyage lists it. Two counted sources, a Lightning Ridge signature. Pin unresolved: no OSM feature; keep the 3 Mile Opal Field area and ask the operator for the entrance.",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": "No Commons file."
+ },
+ {
+  "name": "Great Cobar Heritage Centre",
+  "verdict": "keep",
+  "objection": "Resolved: Visit NSW names the museum in the 1910 mines administration building, plus Wikivoyage. A$15, 45 min. ",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Great Cobar Heritage Centre, 2017 (03).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Great_Cobar_Heritage_Centre,_2017_(03).jpg",
+   "width": 3138,
+   "height": 3982,
+   "licence": "CC BY-SA 4.0"
+  },
+  "photo_reason": "Whole red-brick building, 2017 colour, clear. Portrait; top-centre crop.",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.45
+  },
+  "coordinates": {
+   "lat": -31.49825,
+   "lng": 145.842083
+  },
+  "coordinates_source": "Commons file geotag for the building (OSM Nominatim -31.49815,145.84257 within 60 m)"
+ },
+ {
+  "name": "Fort Bourke Hill Lookout",
+  "verdict": "keep",
+  "objection": "Resolved: Visit NSW and Wikivoyage (viewing platform over the open pit and underground mine entrance, open daily 9-5, Towsers Huts not accessible). 30 min.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Cobar from Fort Bourke Hill lookout 001.JPG",
+   "page": "https://commons.wikimedia.org/wiki/File:Cobar_from_Fort_Bourke_Hill_lookout_001.JPG",
+   "width": 5203,
+   "height": 3416,
+   "licence": "CC BY 3.0"
+  },
+  "photo_reason": "View of the pit and town, 2017. Mostly sky, needs zoom with y low.",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.78,
+   "zoom": 1.8
+  },
+  "coordinates": {
+   "lat": -31.516772,
+   "lng": 145.855881
+  },
+  "coordinates_source": "Commons geotag of a photo taken at the lookout; single source, MEDIUM-low (verify on a map)"
+ },
+ {
+  "name": "Cobar Big Beer Can",
+  "verdict": "reject",
+  "objection": "Resolved: one counted source, a roadside photo above a pub entrance; a 10-minute stop with nothing to do. A third quirky icon is not worth a pin.",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Mount Grenfell National Park",
+  "verdict": "reject",
+  "objection": "NPWS and Wikivoyage both state there are no roads or visitor facilities; nothing a visitor can do in 30 minutes.",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Brewarrina Aboriginal Fish Traps",
+  "verdict": "keep",
+  "objection": "Wikivoyage plus Visit NSW (heritage-registered; Visit NSW calls it World Heritage-listed, which is unverified); possibly the oldest human construction. Real draw with a tour.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Brewarrina fish traps 2023.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Brewarrina_fish_traps_2023.jpg",
+   "width": 4080,
+   "height": 1836,
+   "licence": "CC BY-SA 4.0"
+  },
+  "photo_reason": "Traps across the Barwon, colour 2023. Wide file; crop left.",
+  "hero_crop": {
+   "x": 0.3,
+   "y": 0.5
+  },
+  "coordinates": {
+   "lat": -29.958541,
+   "lng": 146.8556
+  },
+  "coordinates_source": "wikivoyage Brewarrina listing own geotag"
+ },
+ {
+  "name": "Brewarrina Aboriginal Culture Museum",
+  "verdict": "keep",
+  "objection": "Resolved: Visit NSW and Wikivoyage (Aboriginal Cultural Museum overlooking the fish traps); an underground museum, 45 min. Distinct from the traps.",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": "Only interior foyer scans from the heritage register. None passes.",
+  "coordinates": {
+   "lat": -29.9591941,
+   "lng": 146.8544058
+  },
+  "coordinates_source": "osm Nominatim museum 'Brewarrina Aboriginal Cultural Museum'"
+ },
+ {
+  "name": "Silverton Mad Max 2 Museum",
+  "verdict": "keep",
+  "objection": "Wikivoyage x2 plus Visit NSW; open 10-4.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Mad Max 2 Museum Silverton-1 (5141665025).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Mad_Max_2_Museum_Silverton-1_(5141665025).jpg",
+   "width": 1860,
+   "height": 1240,
+   "licence": "CC BY-SA 2.0"
+  },
+  "photo_reason": "Facade with painted mural, 2010. Black frame around the scan; the near-square crop trims it.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -31.888525,
+   "lng": 141.2219475
+  },
+  "coordinates_source": "osm Nominatim museum (13 m from Wikivoyage point)"
+ },
+ {
+  "name": "Mundi Mundi Lookout",
+  "verdict": "keep",
+  "objection": "Visit NSW and Wikivoyage; free lookout at the plains. Pin moved 1.1 km from the candidate.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "SilvertonMundiMundiLookout1.JPG",
+   "page": "https://commons.wikimedia.org/wiki/File:SilvertonMundiMundiLookout1.JPG",
+   "width": 3872,
+   "height": 2592,
+   "licence": "CC BY-SA 3.0"
+  },
+  "photo_reason": "Plains from the lookout, 2009. Half sky; zoom.",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.7,
+   "zoom": 1.5
+  },
+  "coordinates": {
+   "lat": -31.847403,
+   "lng": 141.202625
+  },
+  "coordinates_source": "HIGH: photon tourism=viewpoint plus Commons geotag -31.847816,141.203027 (within 50 m)"
+ },
+ {
+  "name": "Line of Lode Miners Memorial",
+  "verdict": "keep",
+  "objection": "Resolved: Visit NSW ('striking memorial honouring 800+ miners, commanding view') plus Wikivoyage; a landmark with café and lookout, 45 min, not a minor plaque.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Line of Lode Miner's Memorial, Broken Hill, NSW, 07.07.2007.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Line_of_Lode_Miner's_Memorial,_Broken_Hill,_NSW,_07.07.2007.jpg",
+   "width": 1600,
+   "height": 1067,
+   "licence": "CC BY-SA 3.0"
+  },
+  "photo_reason": "The steel memorial on the mullock heap, 2007 colour, clear.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -31.962147,
+   "lng": 141.467295
+  },
+  "coordinates_source": "photon tourism=attraction; Commons median -31.961975,141.465833 (about 130 m)"
+ },
+ {
+  "name": "Pro Hart Gallery and Sculpture Park",
+  "verdict": "keep",
+  "objection": "Wikivoyage x2 plus Visit NSW. Hours now confirmed on prohart.com.au: open 7 days 10:00 AM to 2:00 PM (not on Wikivoyage; verify before shipping). ticketUrl https://www.prohart.com.au/ (loaded, names the gallery).",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Pro-Hart-painted-Rolls-Royce.JPG",
+   "page": "https://commons.wikimedia.org/wiki/File:Pro-Hart-painted-Rolls-Royce.JPG",
+   "width": 1280,
+   "height": 960,
+   "licence": "CC BY-SA 3.0"
+  },
+  "photo_reason": "The painted Rolls-Royce outside the gallery, named by Wikivoyage; colour 2007. Alt: BrokenHillProHartGallery.JPG facade.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -31.94492,
+   "lng": 141.4472
+  },
+  "coordinates_source": "HIGH: photon tourism=gallery 'Pro Hart' (21 m)"
+ },
+ {
+  "name": "Afghan Mosque, Broken Hill",
+  "verdict": "reject",
+  "objection": "Resolved: Wikivoyage only; open by arranged tour via the visitor centre, otherwise exterior. Fails the exterior-only test; mention in Broken Hill's description.",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Royal Flying Doctor Service Bruce Langford Visitor Centre",
+  "verdict": "keep",
+  "objection": "Wikivoyage plus Visit NSW: 9-5, $7, working base with heritage aircraft. A place, not an operator.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "RFDS hangar.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:RFDS_hangar.jpg",
+   "width": 3872,
+   "height": 2581,
+   "licence": "CC BY-SA 4.0"
+  },
+  "photo_reason": "RFDS aircraft in the Broken Hill hangar, 2014, bright; hangar is the tour.",
+  "hero_crop": "ok",
+  "coordinates": {
+   "lat": -31.997195,
+   "lng": 141.471368
+  },
+  "coordinates_source": "wikivoyage Broken Hill listing (airport base)"
+ },
+ {
+  "name": "Daydream Mine",
+  "verdict": "keep",
+  "objection": "Resolved: Wikivoyage plus Visit NSW (guided underground tour of the 1882 hand-worked mine, a place not a vehicle).",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": "No Commons file.",
+  "coordinates": {
+   "lat": -31.814073,
+   "lng": 141.347706
+  },
+  "coordinates_source": "photon/Nominatim 'Daydream Mine' museum"
+ },
+ {
+  "name": "Living Desert Sculptures",
+  "verdict": "keep",
+  "objection": "Wikivoyage plus Visit NSW page for the Living Desert and Sculptures; sunset walk, $5 per Wikivoyage.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Living Desert Sculpture 2 (20939648053).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Living_Desert_Sculpture_2_(20939648053).jpg",
+   "width": 1830,
+   "height": 1210,
+   "licence": "CC BY-SA 2.0"
+  },
+  "photo_reason": "Carved sandstone sculpture on the hill with plain behind, 2015; thin black border.",
+  "hero_crop": {
+   "x": 0.2,
+   "y": 0.5
+  },
+  "coordinates": {
+   "lat": -31.898849,
+   "lng": 141.451111
+  },
+  "coordinates_source": "wikivoyage own geotag; photon -31.899358,141.449943 (about 90 m)"
+ },
+ {
+  "name": "Yanga National Park",
+  "verdict": "review",
+  "objection": "Overlaps nsw-riverina-murray; NPWS plus Wikivoyage both count, woolsheds and wetlands, minutes from Balranald. Likely keep, but decide with the Riverina pass.",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Toorale National Park",
+  "verdict": "keep",
+  "objection": "Resolved: NPWS and Wikivoyage; Kurnu-Baakandji homestead tours, 70 km from Bourke. Low rank.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Darling River at Toorale NP.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Darling_River_at_Toorale_NP.jpg",
+   "width": 4032,
+   "height": 3024,
+   "licence": "CC BY-SA 4.0"
+  },
+  "photo_reason": "Darling River with red gums in the park, 2018 colour.",
+  "hero_crop": "ok"
+ },
+ {
+  "name": "Narriearra-Caryapundy Swamp National Park",
+  "verdict": "review",
+  "objection": "Case for: NPWS and Wikivoyage both list it; wetland birdlife after rain. Against: 4WD-only, very remote, one source describes visits; 'rarely visited'. Owner call; default reject unless the owner wants every NPWS park.",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": ""
+ }
+]

@@ -1,0 +1,175 @@
+{
+ "region": "nsw-lord-howe-island",
+ "inside_destinations": 13,
+ "standalone": 1,
+ "new_destinations": 1,
+ "lowest_kept": [
+  {
+   "name": "Erscott's Hole",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Muttonbird Point",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Goat House Cave",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Lord Howe Island Museum",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Lagoon Beach",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Blinky Beach",
+   "views": 0,
+   "counted_sources": 3
+  },
+  {
+   "name": "North Bay",
+   "views": 0,
+   "counted_sources": 3
+  },
+  {
+   "name": "Intermediate Hill",
+   "views": 0,
+   "counted_sources": 3
+  },
+  {
+   "name": "Transit Hill",
+   "views": 0,
+   "counted_sources": 3
+  },
+  {
+   "name": "Ned's Beach",
+   "views": 0,
+   "counted_sources": 4
+  },
+  {
+   "name": "Malabar Hill",
+   "views": 0,
+   "counted_sources": 4
+  },
+  {
+   "name": "Old Settlement Beach",
+   "views": 0,
+   "counted_sources": 4
+  }
+ ],
+ "stronger_left_out": [
+  {
+   "name": "Lord Howe Island Marine Park",
+   "views": 3100,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A managed zone, not one place; the snorkel and dive sites within it are the spots."
+  },
+  {
+   "name": "Blackburn Island",
+   "views": 1955,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; Wikipedia geography category only, no visitor access."
+  },
+  {
+   "name": "Admiralty Islands",
+   "views": 1884,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Kept as review. For: the tourism board gives it a dedicated page (about 25 dive sites, 15 min by boat) and Wikivoyage shows it in a photo; Wikipedia has Admiralty Group. Against: only one real counted source, no landing, reached only by operator dive or boat trips (the group is a place, not a vehicle). Owner call; I lean keep because it is the island's headline dive area after Ball's Pyramid."
+  },
+  {
+   "name": "Wolf Rock",
+   "views": 1320,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; offshore rock named only in Wikipedia geography."
+  },
+  {
+   "name": "Mount Lidgbird",
+   "views": 1162,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; Wikipedia only, not promoted by the island walking list or Wikivoyage, and not a visitor climb."
+  },
+  {
+   "name": "Erskine Valley",
+   "views": 371,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; Wikipedia geography category only, no visitor draw."
+  },
+  {
+   "name": "Kim's Lookout",
+   "views": 0,
+   "counted_sources": 3,
+   "verdict": "reject",
+   "reason": "Three counted sources, but a viewpoint on the Malabar ridge walk and part of the larger Malabar Hill spot."
+  }
+ ],
+ "strongest_outsiders": {
+  "kept_outside_every_span": [
+   {
+    "name": "Ball's Pyramid",
+    "views": 119740,
+    "counted_sources": 3,
+    "kept_as": "standalone (29 km from the proposed island centre)"
+   }
+  ],
+  "left_out_or_review_outside_spans": [
+   {
+    "name": "Blackburn Island",
+    "views": 1955,
+    "verdict": "reject",
+    "reason": "No counted source, no visitor access."
+   },
+   {
+    "name": "Wolf Rock",
+    "views": 1320,
+    "verdict": "reject",
+    "reason": "No counted source; offshore rock in a Wikipedia category only."
+   }
+  ],
+  "note": "Every other candidate lies on the island itself. Ball's Pyramid is the only kept place outside the proposed span, and the strongest place in the region by views."
+ },
+ "benchmark": {
+  "applicable": "None of the named NZ benchmarks lie in this region. Negative-benchmark analogues behave correctly: a once-a-week or occasion venue (weather station balloon launch) rejected; a vehicle or operator is not a spot (Admiralty Islands is a place but held for review as operator-only); a gateway whose draw is beyond it was not relevant.",
+  "not_in_this_region": [
+   "Red Rocks",
+   "Kapiti Island",
+   "Lake Coleridge",
+   "Sumner/Godley Head/Lyttelton",
+   "Birdlings Flat",
+   "Paradise",
+   "Hump Ridge Track",
+   "St Kilda Beach",
+   "Ohakune Carrot",
+   "Ninety Mile Beach",
+   "Pipiriki"
+  ],
+  "result": "pass for the region-relevant items"
+ },
+ "review_list_for_owner": [
+  {
+   "name": "Middle Beach",
+   "views": 0,
+   "counted_sources": 2,
+   "case": "Both counted sources only name it as the Clear Place walk start; neighbours Lagoon Beach 900 m away. Skeptic would drop it unless the owner wants township beaches. Pin if kept: -31.5247,159.07456 (OSM natural=beach way 157694803)."
+  },
+  {
+   "name": "Admiralty Islands",
+   "views": 1884,
+   "counted_sources": 1,
+   "case": "Tourism board dedicated page (about 25 dive sites, 15 min by boat), Wikivoyage mentions; no landing, operator dive/boat trips only. Skeptic leans keep. Pin if kept: -31.50469,159.0681 (OSM Sugarloaf Island coastline midpoint). Would sit as a spot of the island if approved; photo candidate Admiralty Group off Ned's Beach (Commons)."
+  }
+ ]
+}

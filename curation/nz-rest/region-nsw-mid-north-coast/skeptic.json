@@ -1,0 +1,1450 @@
+[
+ {
+  "name": "Port Macquarie",
+  "verdict": "keep",
+  "objection": "Own Wikivoyage chapter plus the regional tourism board; the hub for the coast.",
+  "coordinates": {
+   "lat": -31.42995,
+   "lng": 152.91035
+  },
+  "coordinates_source": "osm nominatim boundary centroid; town centre",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": "No passing Commons photo: only 5:1 panoramas of the river mouth and beach, a marina with apartments and a bridge, and civic or heritage items. Needs a non-Commons townscape (IMAGES.md fallback)."
+ },
+ {
+  "name": "Coffs Harbour",
+  "verdict": "keep",
+  "objection": "Largest city on the coast, own Wikivoyage chapter.",
+  "coordinates": {
+   "lat": -30.29624,
+   "lng": 153.11353
+  },
+  "coordinates_source": "osm nominatim place=city node",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Coffs harbour-NSW.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Coffs_harbour-NSW.jpg",
+   "width": 6000,
+   "height": 4000,
+   "licence": "CC BY-SA 4.0"
+  },
+  "photo_reason": "Jetty foreshore beach with dinghies, the harbour edge; fine but not a skyline. p40 0.39.",
+  "hero_crop": "ok",
+  "brightness": {
+   "p40": 0.388,
+   "mean": 0.504
+  },
+  "photo_date": "2020-07-08 04:41:55"
+ },
+ {
+  "name": "Forster",
+  "verdict": "keep",
+  "objection": "Own Wikivoyage chapter; Forster-Tuncurry is a holiday hub. Tuncurry stays part of it.",
+  "coordinates": {
+   "lat": -32.18209,
+   "lng": 152.51312
+  },
+  "coordinates_source": "osm nominatim boundary centroid",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Belton Park foreshore Forster, NSW, 2023, 04.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Belton_Park_foreshore_Forster,_NSW,_2023,_04.jpg",
+   "width": 4032,
+   "height": 3024,
+   "licence": "CC BY-SA 4.0"
+  },
+  "photo_reason": "Waterfront with cruise boat and shops on the Wallis Lake channel; recognisable town waterfront.",
+  "hero_crop": "ok",
+  "brightness": {
+   "p40": 0.69,
+   "mean": 0.647
+  },
+  "photo_date": "2023-01-21 14:37:07"
+ },
+ {
+  "name": "Tuncurry",
+  "verdict": "reject",
+  "objection": "Wikivoyage redirects Tuncurry to the Forster page: it is part of the Forster spot and a near-duplicate."
+ },
+ {
+  "name": "Taree",
+  "verdict": "keep",
+  "objection": "Regional hub with its own Wikivoyage chapter, though the sights are thin (Big Oyster, small gallery). Borderline; kept as a sizable settlement.",
+  "coordinates": {
+   "lat": -31.91286,
+   "lng": 152.46085
+  },
+  "coordinates_source": "osm nominatim place=town node",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": "Only a courthouse, a distant bridge over the flooded river and a park series; none shows the town. Non-Commons needed."
+ },
+ {
+  "name": "Kempsey",
+  "verdict": "keep",
+  "objection": "Resolved review to keep: Wikivoyage chapter, Macleay Valley Coast tourism board lists it, and it is the base for the Slim Dusty Centre and Hat Head. Case against: stopover town with small museums.",
+  "coordinates": {
+   "lat": -31.07981,
+   "lng": 152.84229
+  },
+  "coordinates_source": "osm nominatim boundary centroid",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": "Commons has a B&W street, a hotel, the post office (civic building) and a closed museum shed: none acceptable."
+ },
+ {
+  "name": "Nambucca Heads",
+  "verdict": "keep",
+  "objection": "Own Wikivoyage chapter; estuary, breakwall and headland lookout.",
+  "coordinates": {
+   "lat": -30.64495,
+   "lng": 152.99245
+  },
+  "coordinates_source": "osm nominatim boundary centroid",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": "Only aerials, a rail bridge, a car park and a mosaic close-up; none acceptable for a spot. Non-Commons needed."
+ },
+ {
+  "name": "Bellingen",
+  "verdict": "keep",
+  "objection": "Own Wikivoyage chapter, the valley's arts and food town and a Waterfall Way stop.",
+  "coordinates": {
+   "lat": -30.45105,
+   "lng": 152.89708
+  },
+  "coordinates_source": "osm nominatim boundary centroid",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Bellingen2020.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Bellingen2020.jpg",
+   "width": 5184,
+   "height": 3456,
+   "licence": "CC BY-SA 4.0"
+  },
+  "photo_reason": "Town under jacaranda from the hillside, right place; far too dark (centre-square p40 0.10, mean 0.18) so it must be brightened with brighten.py before use, and the town is small in the crop.",
+  "hero_crop": "ok",
+  "brightness": {
+   "p40": 0.102,
+   "mean": 0.183
+  },
+  "needs_brighten": true,
+  "photo_date": "2020-03-24 04:31:42"
+ },
+ {
+  "name": "Dorrigo",
+  "verdict": "keep",
+  "objection": "Own Wikivoyage chapter, Waterfall Way plateau town with Dangar Falls.",
+  "coordinates": {
+   "lat": -30.33997,
+   "lng": 152.71203
+  },
+  "coordinates_source": "osm nominatim boundary centroid",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": "No town photo; every Dorrigo file is a park, waterfall or the 1900 homestead."
+ },
+ {
+  "name": "Gloucester",
+  "verdict": "review",
+  "objection": "For: Wikivoyage region page names it as the Avon Valley centre and gateway to Barrington Tops, with rail and tourism-board backing. Against: the draw is Barrington Tops beyond it; one counted source. Pipiriki-type gateway benchmark, so review."
+ },
+ {
+  "name": "Stroud",
+  "verdict": "reject",
+  "objection": "Only a region-page mention as a stopover en route to Barrington Tops; nothing to do for half an hour."
+ },
+ {
+  "name": "Woolgoolga",
+  "verdict": "keep",
+  "objection": "Wikivoyage chapter and region page; Sikh temple and beaches.",
+  "coordinates": {
+   "lat": -30.11083,
+   "lng": 153.20001
+  },
+  "coordinates_source": "osm nominatim boundary centroid",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": "Only a street photo (Woolgoolgamainstreet) and plant series; the beach photo is used for Woolgoolga Beach."
+ },
+ {
+  "name": "Urunga",
+  "verdict": "keep",
+  "objection": "Wikivoyage chapter; boardwalk and lagoon. Beware: OSM tags the interpretive boardwalk 'closed' (the main footbridge is open); confirm status before applying.",
+  "coordinates": {
+   "lat": -30.49834,
+   "lng": 153.01663
+  },
+  "coordinates_source": "osm nominatim boundary centroid",
+  "photo_verdict": "reject",
+  "photo": null,
+  "photo_reason": "Lagoon from the boardwalk, colour 2025. Hero crop is mostly turquoise water with the town a sliver on the far shore: weak; prefer none or a better town photo.",
+  "hero_crop": "fail: crop is mostly water, the town is a thin strip",
+  "brightness": {
+   "p40": 0.443,
+   "mean": 0.434
+  },
+  "photo_date": "2025-01-05 12:23:52"
+ },
+ {
+  "name": "Macksville",
+  "verdict": "reject",
+  "objection": "Service town; its only sight is a tiny pioneer cottage museum."
+ },
+ {
+  "name": "Old Bar",
+  "verdict": "keep",
+  "objection": "Resolved review to keep: Wikivoyage region page and Taree page name it as the surf and beach town; a beach town a real source names.",
+  "coordinates": {
+   "lat": -31.965,
+   "lng": 152.58444
+  },
+  "coordinates_source": "osm nominatim boundary centroid",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Old bar beach.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Old_bar_beach.jpg",
+   "width": 1140,
+   "height": 700,
+   "licence": "CC BY-SA 4.0"
+  },
+  "photo_reason": "Old Bar beach with rocks and headland; 1140 px wide, clears 960.",
+  "hero_crop": "ok",
+  "brightness": {
+   "p40": 0.714,
+   "mean": 0.707
+  },
+  "photo_date": "2018-03-28"
+ },
+ {
+  "name": "Crescent Head",
+  "verdict": "keep",
+  "objection": "Resolved review to keep: counted source found, the Macleay Valley Coast tourism board lists Crescent Head under Places to go (the candidate had none); also Wikipedia. A surf-point village with the Killick and Delicate beaches.",
+  "coordinates": {
+   "lat": -31.19088,
+   "lng": 152.98265
+  },
+  "coordinates_source": "osm nominatim natural=cape Crescent Head",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Crescent Head.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Crescent_Head.jpg",
+   "width": 3648,
+   "height": 2736,
+   "licence": "CC BY 2.0"
+  },
+  "photo_reason": "Surf at the point at sunset, 2013; the point and break are recognisable.",
+  "hero_crop": "ok",
+  "brightness": {
+   "p40": 0.549,
+   "mean": 0.545
+  },
+  "photo_date": "2013-05-25 16:41:43"
+ },
+ {
+  "name": "Seal Rocks",
+  "verdict": "keep",
+  "objection": "Own Wikivoyage page; surf village, lighthouse and beaches.",
+  "coordinates": {
+   "lat": -32.43619,
+   "lng": 152.52993
+  },
+  "coordinates_source": "osm nominatim boundary centroid",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Seal Rocks.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Seal_Rocks.jpg",
+   "width": 5184,
+   "height": 2314,
+   "licence": "CC BY-SA 4.0"
+  },
+  "photo_reason": "Headland and beach, 2.24:1 file; the centre slice keeps the headland and bay.",
+  "hero_crop": "ok",
+  "brightness": {
+   "p40": 0.529,
+   "mean": 0.583
+  },
+  "photo_date": "2015-12-25 04:37:56"
+ },
+ {
+  "name": "Hawks Nest",
+  "verdict": "reject",
+  "objection": "Checked Wikivoyage Port Stephens and the Port Stephens tourism site: no counted source for Hawks Nest itself (Wikipedia only); Yacaaba Headland Walking Track is kept instead."
+ },
+ {
+  "name": "Wingham",
+  "verdict": "reject",
+  "objection": "Wikivoyage covers it as a section of the Taree page only; service town."
+ },
+ {
+  "name": "South West Rocks",
+  "verdict": "keep",
+  "objection": "Resolved review to keep: Macleay Valley Coast tourism board lists it (counted); base for Trial Bay Gaol, Smoky Cape and Fish Rock diving.",
+  "coordinates": {
+   "lat": -30.89439,
+   "lng": 153.04068
+  },
+  "coordinates_source": "osm nominatim boundary centroid",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "A Day at the Beach, Horseshoe Bay South West Rocks.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:A_Day_at_the_Beach,_Horseshoe_Bay_South_West_Rocks.jpg",
+   "width": 1944,
+   "height": 2592,
+   "licence": "CC BY-SA 4.0"
+  },
+  "photo_reason": "Horseshoe Bay beach, rocks and sea, 2013 portrait; ok but a close beach scene, not the town.",
+  "hero_crop": "ok",
+  "brightness": {
+   "p40": 0.329,
+   "mean": 0.405
+  },
+  "photo_date": "2013-04-09 14:01:55"
+ },
+ {
+  "name": "Arrawarra Beach",
+  "verdict": "keep",
+  "objection": "Resolved review to keep: Wikivoyage's Woolgoolga page lists Arrawarra (quiet beaches, surf); one source, marginal.",
+  "coordinates": {
+   "lat": -30.05889,
+   "lng": 153.19791
+  },
+  "coordinates_source": "osm nominatim natural=beach",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Arrawarra Beach close to the Ocean.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Arrawarra_Beach_close_to_the_Ocean.jpg",
+   "width": 3264,
+   "height": 2448,
+   "licence": "CC BY-SA 4.0"
+  },
+  "photo_reason": "Plain beach with blue sky; real colour photo but empty and weak at card size.",
+  "hero_crop": "ok",
+  "brightness": {
+   "p40": 0.502,
+   "mean": 0.54
+  },
+  "photo_date": "2016-09-28 13:27:42"
+ },
+ {
+  "name": "Tacking Point Lighthouse",
+  "verdict": "keep",
+  "objection": "Wikivoyage names the headland lighthouse; Port Macquarie tourism lists it. Short stop but a named headland.",
+  "coordinates": {
+   "lat": -31.47561,
+   "lng": 152.93726
+  },
+  "coordinates_source": "osm nominatim man_made=lighthouse",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Tacking Point Lighthouse qtl1b.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Tacking_Point_Lighthouse_qtl1b.jpg",
+   "width": 3800,
+   "height": 2626,
+   "licence": "CC BY-SA 3.0"
+  },
+  "photo_reason": "Lighthouse and keeper's cottage, clear colour 2012.",
+  "hero_crop": "ok",
+  "brightness": {
+   "p40": 0.549,
+   "mean": 0.561
+  },
+  "photo_date": "2012-03-30 17:08"
+ },
+ {
+  "name": "Port Macquarie Coastal Walk",
+  "verdict": "keep",
+  "objection": "Resolved review to keep: the Port Macquarie tourism board's walking trails page lists the Coastal Walk and Wikipedia describes it; the town's best-known walk. Pin is the route midpoint.",
+  "coordinates": {
+   "lat": -31.45519,
+   "lng": 152.93213
+  },
+  "coordinates_source": "MIDPOINT of OSM route relation 14223022 (Port Macquarie Coastal Walk), computed along the way chain; ends Tacking Point and Westport Park area",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": "Files are sunrise at Shelly Beach, rainforest carvings or fruit; none shows the walk. Non-Commons needed."
+ },
+ {
+  "name": "Flynns Beach",
+  "verdict": "keep",
+  "objection": "Wikivoyage names it; main patrolled resort beach.",
+  "coordinates": {
+   "lat": -31.44298,
+   "lng": 152.92643
+  },
+  "coordinates_source": "osm nominatim natural=beach",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "2020-12-23 Flynn's Beach, New South Wales 3.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:2020-12-23_Flynn's_Beach,_New_South_Wales_3.jpg",
+   "width": 4032,
+   "height": 3024,
+   "licence": "CC BY-SA 4.0"
+  },
+  "photo_reason": "Beach with boardwalk steps and surf; recognisable.",
+  "hero_crop": "ok",
+  "brightness": {
+   "p40": 0.565,
+   "mean": 0.56
+  },
+  "photo_date": "2020-12-23 08:40:05"
+ },
+ {
+  "name": "Town Beach",
+  "verdict": "keep",
+  "objection": "Wikivoyage names it; central patrolled beach.",
+  "coordinates": {
+   "lat": -31.42851,
+   "lng": 152.91819
+  },
+  "coordinates_source": "osm nominatim natural=beach",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Town Beach - panoramio.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Town_Beach_-_panoramio.jpg",
+   "width": 2272,
+   "height": 1704,
+   "licence": "CC BY-SA 3.0"
+  },
+  "photo_reason": "View of the beach and carpark from Flagstaff Hill, panoramio-origin 2272 px, date not recorded; the beach is clear but cars fill the foreground.",
+  "hero_crop": "ok",
+  "brightness": {
+   "p40": 0.451,
+   "mean": 0.493
+  },
+  "photo_date": "Taken on<span typeof=\"mw:Entit"
+ },
+ {
+  "name": "Shelly Beach",
+  "verdict": "keep",
+  "objection": "Resolved review to keep: Wikivoyage names the snorkel beach beside Sea Acres. Name collides with the Forster Shelly Beach; WRITING.md forbids a disambiguator in the name, so one needs a distinct wiki or a different name.",
+  "coordinates": {
+   "lat": -31.45507,
+   "lng": 152.93194
+  },
+  "coordinates_source": "osm nominatim natural=beach",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Shelly Beach on the Wednesday, 6th August 2008 at 11-58am. - panoramio.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Shelly_Beach_on_the_Wednesday,_6th_August_2008_at_11-58am._-_panoramio.jpg",
+   "width": 2272,
+   "height": 1704,
+   "licence": "CC BY-SA 3.0"
+  },
+  "photo_reason": "Beach and wooded headland. File page confirms Port Macquarie (not Forster); undated panoramio upload 2008.",
+  "hero_crop": "ok",
+  "brightness": {
+   "p40": 0.525,
+   "mean": 0.547
+  },
+  "photo_date": "Taken on<span typeof=\"mw:Entit"
+ },
+ {
+  "name": "Roto House",
+  "verdict": "keep",
+  "objection": "Resolved review to keep: Wikivoyage plus the NPWS visitor page (open daily, free guided tours) give two counted sources and it can be entered.",
+  "coordinates": {
+   "lat": -31.44261,
+   "lng": 152.91937
+  },
+  "coordinates_source": "osm nominatim tourism=attraction",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": "Nothing on Commons."
+ },
+ {
+  "name": "Mid North Coast Maritime Museum",
+  "verdict": "reject",
+  "objection": "Small volunteer museum, one source."
+ },
+ {
+  "name": "Hello Koalas Sculpture Trail",
+  "verdict": "reject",
+  "objection": "Scattered painted statues across the region with no single place to go."
+ },
+ {
+  "name": "Billabong Zoo",
+  "verdict": "keep",
+  "objection": "Resolved review to keep: Port Macquarie tourism board lists Billabong Zoo and Wildlife Park under animal encounters (counted); a half-day zoo.",
+  "coordinates": {
+   "lat": -31.45785,
+   "lng": 152.82017
+  },
+  "coordinates_source": "osm nominatim tourism=zoo",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": "Only a caged macaw, big statues and a camp site; no clear view of the zoo or its koalas."
+ },
+ {
+  "name": "Port Macquarie Koala Hospital",
+  "verdict": "keep",
+  "objection": "Counted source found: the Port Macquarie tourism board (portmacquarieinfo.com.au, Nature and Wildlife > Our Koalas / Animal Encounters) names it; Wikivoyage's Port Macquarie page does not. Visitable daily; headline draw. Note the Guulabaa Place of Koala (newer visitor attraction) is the operator's second site, not a separate spot yet.",
+  "coordinates": {
+   "lat": -31.44306,
+   "lng": 152.91952
+  },
+  "coordinates_source": "osm nominatim amenity=animal_shelter, Lord Street",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": "Commons has only a koala foetus; the hospital is not pictured. Operator or tourism photos would need permission (IMAGES.md tier 2)."
+ },
+ {
+  "name": "Kooloonbung Nature Park",
+  "verdict": "reject",
+  "objection": "Town park walk, one source."
+ },
+ {
+  "name": "Sea Acres National Park",
+  "verdict": "keep",
+  "objection": "NPWS and Wikivoyage; boardwalk through coastal rainforest with a visitor centre.",
+  "coordinates": {
+   "lat": -31.46158,
+   "lng": 152.93
+  },
+  "coordinates_source": "osm nominatim Sea Acres Rainforest Centre (visitor entrance)",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Coastline of Sea Acres National Park, Port Macquarie NSW.JPG",
+   "page": "https://commons.wikimedia.org/wiki/File:Coastline_of_Sea_Acres_National_Park,_Port_Macquarie_NSW.JPG",
+   "width": 5152,
+   "height": 3864,
+   "licence": "CC BY-SA 4.0"
+  },
+  "photo_reason": "Coastline of Sea Acres NP, Port Macquarie in the file name; shows the coast, not the boardwalk rainforest.",
+  "hero_crop": "ok",
+  "brightness": {
+   "p40": 0.447,
+   "mean": 0.521
+  },
+  "photo_date": "2016-02-03"
+ },
+ {
+  "name": "Timbertown",
+  "verdict": "reject",
+  "objection": "CLOSED: Wikipedia states Timbertown closed on 28 January 2026 due to financial issues. Not open to visitors."
+ },
+ {
+  "name": "Mary Boulton's Pioneer Cottage",
+  "verdict": "reject",
+  "objection": "Tiny local museum, one source."
+ },
+ {
+  "name": "Big Banana",
+  "verdict": "keep",
+  "objection": "Wikivoyage names it; Australia's original Big Thing.",
+  "coordinates": {
+   "lat": -30.27479,
+   "lng": 153.1339
+  },
+  "coordinates_source": "osm nominatim tourism=artwork The Big Banana",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Big Banana 50 Years.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Big_Banana_50_Years.jpg",
+   "width": 3216,
+   "height": 2136,
+   "licence": "CC BY-SA 4.0"
+  },
+  "photo_reason": "Banana with a temporary 50 Years banner (2015). Subject is wide: hero crop shows the middle of the banana and its logo, recognisable.",
+  "hero_crop": {
+   "x": 0.45
+  },
+  "brightness": {
+   "p40": 0.345,
+   "mean": 0.412
+  },
+  "photo_date": "2015-10-13 09:07:35"
+ },
+ {
+  "name": "Muttonbird Island",
+  "verdict": "keep",
+  "objection": "Wikivoyage names it; breakwall walk, shearwater colony, views.",
+  "coordinates": {
+   "lat": -30.30502,
+   "lng": 153.15169
+  },
+  "coordinates_source": "osm nominatim nature_reserve (island centroid; walk starts at the breakwall ~-30.3038,153.1445)",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Muttonbird Island.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Muttonbird_Island.jpg",
+   "width": 2304,
+   "height": 1728,
+   "licence": "CC BY 2.0"
+  },
+  "photo_reason": "Island from the coast with beach; undated year in metadata.",
+  "hero_crop": "ok",
+  "brightness": {
+   "p40": 0.396,
+   "mean": 0.469
+  },
+  "photo_date": "7 October 2006, 13:37:07\u00a0(acco"
+ },
+ {
+  "name": "Coffs Harbour Jetty",
+  "verdict": "reject",
+  "objection": "No counted source: Wikivoyage mentions the jetty area only for eateries and a beach."
+ },
+ {
+  "name": "Park Beach",
+  "verdict": "keep",
+  "objection": "Wikivoyage names it; main Coffs surf beach.",
+  "coordinates": {
+   "lat": -30.28868,
+   "lng": 153.13957
+  },
+  "coordinates_source": "osm nominatim natural=beach",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": "Commons has no Coffs Park Beach photo (results were US beaches)."
+ },
+ {
+  "name": "Dolphin Marine Magic",
+  "verdict": "reject",
+  "objection": "Listed under its new name Coffs Coast Wildlife Sanctuary (kept)."
+ },
+ {
+  "name": "Butterfly House",
+  "verdict": "reject",
+  "objection": "Small paid venue, one source; only if nearby anyway."
+ },
+ {
+  "name": "Solitary Islands Marine Park",
+  "verdict": "reject",
+  "objection": "An offshore zone, not a place to go; the diving is operators (Jetty Dive), and Muttonbird Island covers the shore."
+ },
+ {
+  "name": "Big Oyster",
+  "verdict": "keep",
+  "objection": "Wikivoyage (Taree and Old Bar pages). A roadside icon, but Wikivoyage calls it 'breathtakingly tacky', now the second floor of a car dealership; a 10 minute stop. Kept as a Big Thing under the roadside-icon benchmark.",
+  "coordinates": {
+   "lat": -31.8995,
+   "lng": 152.4866
+  },
+  "coordinates_source": "Wikivoyage Taree listing (-31.9000,152.4886) checked against OSM Manning River Drive, Chatham (-31.8995,152.4866); approximate to ~200 m",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Big Oyster Taree 2007.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Big_Oyster_Taree_2007.jpg",
+   "width": 3264,
+   "height": 2448,
+   "licence": "CC BY-SA 4.0"
+  },
+  "photo_reason": "The oyster on the dealership, clear colour but taken 2007; the building is unchanged per Wikivoyage.",
+  "hero_crop": "ok",
+  "brightness": {
+   "p40": 0.384,
+   "mean": 0.47
+  },
+  "photo_date": "2007-12-30 08:54:13"
+ },
+ {
+  "name": "Manning Regional Art Gallery",
+  "verdict": "reject",
+  "objection": "Local gallery, one source (Tue-Sat)."
+ },
+ {
+  "name": "Kempsey Museum",
+  "verdict": "reject",
+  "objection": "Tiny local museum; the Kempsey spot covers it."
+ },
+ {
+  "name": "Dunghutti-Ngaku Aboriginal Art Gallery",
+  "verdict": "reject",
+  "objection": "Small gallery beside the museum, one source."
+ },
+ {
+  "name": "Captain Cook Lookout",
+  "verdict": "keep",
+  "objection": "Wikivoyage lists the headland lookout over the river mouth.",
+  "coordinates": {
+   "lat": -30.64568,
+   "lng": 153.01665
+  },
+  "coordinates_source": "osm nominatim tourism=viewpoint",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": "Only a wet car park and a rock wall; no view from the lookout."
+ },
+ {
+  "name": "Nambucca Historical Museum",
+  "verdict": "reject",
+  "objection": "Tiny local museum, limited hours."
+ },
+ {
+  "name": "Urunga Boardwalk",
+  "verdict": "keep",
+  "objection": "Wikivoyage names it as Urunga's main draw; see the closure caveat on the town. Pin is the route midpoint.",
+  "coordinates": {
+   "lat": -30.50084,
+   "lng": 153.02745
+  },
+  "coordinates_source": "MIDPOINT of OSM ways 84536795+84536783 (Urunga Lagoon Footbridge, c.1 km)",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "UrungaBoardwalk2.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:UrungaBoardwalk2.jpg",
+   "width": 5184,
+   "height": 3456,
+   "licence": "CC BY 3.0"
+  },
+  "photo_reason": "Boardwalk through mangroves, clear.",
+  "hero_crop": "ok",
+  "brightness": {
+   "p40": 0.702,
+   "mean": 0.7
+  },
+  "photo_date": "2013-11-03"
+ },
+ {
+  "name": "Hungry Head Beach",
+  "verdict": "keep",
+  "objection": "Resolved review to keep: Wikivoyage names the beach reached by the boardwalk; a beach a real source names. Weak; fine to drop if the boardwalk is closed.",
+  "coordinates": {
+   "lat": -30.53134,
+   "lng": 153.02528
+  },
+  "coordinates_source": "osm nominatim natural=beach",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Urunga Boardwalk Hungry Head Beach.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Urunga_Boardwalk_Hungry_Head_Beach.jpg",
+   "width": 4080,
+   "height": 3072,
+   "licence": "CC BY-SA 4.0"
+  },
+  "photo_reason": "Beach beside the seawall from the boardwalk, 2024.",
+  "hero_crop": "ok",
+  "brightness": {
+   "p40": 0.439,
+   "mean": 0.496
+  },
+  "photo_date": "2024-12-17 14:11:18"
+ },
+ {
+  "name": "Woolgoolga Beach",
+  "verdict": "keep",
+  "objection": "Resolved review to keep: Wikivoyage names it as the See listing; a beach a real source names.",
+  "coordinates": {
+   "lat": -30.10491,
+   "lng": 153.19965
+  },
+  "coordinates_source": "osm nominatim natural=beach",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Mainbeachwoopi.JPG",
+   "page": "https://commons.wikimedia.org/wiki/File:Mainbeachwoopi.JPG",
+   "width": 1632,
+   "height": 1232,
+   "licence": "Public domain"
+  },
+  "photo_reason": "Main beach with headland and town, public domain, undated 1632 px, likely 2004; clear.",
+  "hero_crop": "ok",
+  "brightness": {
+   "p40": 0.384,
+   "mean": 0.444
+  },
+  "photo_date": "14 September 2004\u00a0(according t"
+ },
+ {
+  "name": "Guru Nanak Sikh Temple",
+  "verdict": "keep",
+  "objection": "FLIPPED reject to keep: it is not exterior-only. Wikivoyage says visitors are welcome outside prayer times (dress modestly), and it is one of the largest Sikh temples in regional Australia and Woolgoolga's signature sight. Review-grade (one source), a Wikivoyage listing updated 2026.",
+  "flipped_from": "reject",
+  "coordinates": {
+   "lat": -30.11712,
+   "lng": 153.1928
+  },
+  "coordinates_source": "osm nominatim amenity=place_of_worship, River Street (matches Wikivoyage)",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": "The one Commons file is a photo of a sign about the temple; fails check 2 and 4."
+ },
+ {
+  "name": "Bellinger Valley Historical Society Museum",
+  "verdict": "reject",
+  "objection": "Tiny local museum, limited hours."
+ },
+ {
+  "name": "Dangar Falls",
+  "verdict": "keep",
+  "objection": "Wikivoyage names it; easy viewing and swim near Dorrigo.",
+  "coordinates": {
+   "lat": -30.32326,
+   "lng": 152.71426
+  },
+  "coordinates_source": "osm nominatim waterway=waterfall",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Dangar Falls Dorrigo-retouched-by-karstn.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Dangar_Falls_Dorrigo-retouched-by-karstn.jpg",
+   "width": 3238,
+   "height": 2168,
+   "licence": "CC BY-SA 3.0"
+  },
+  "photo_reason": "Dangar Falls Dorrigo in the file name; two-tier falls into the pool. Other 'Dangars Falls' files are Armidale's falls (different place) and were not used.",
+  "hero_crop": "ok",
+  "brightness": {
+   "p40": 0.251,
+   "mean": 0.351
+  },
+  "photo_date": "2010-09-10 17:43"
+ },
+ {
+  "name": "Dorrigo Historical Society Museum",
+  "verdict": "reject",
+  "objection": "Tiny local museum, limited hours."
+ },
+ {
+  "name": "Dorrigo National Park",
+  "verdict": "keep",
+  "objection": "NPWS and Wikivoyage; World Heritage rainforest. Sub-sites (Crystal Shower, Tristania, Red Cedar, Walk with the Birds) stay parts of the park.",
+  "coordinates": {
+   "lat": -30.36374,
+   "lng": 152.72891
+  },
+  "coordinates_source": "osm nominatim Dorrigo Rainforest Centre (visitor hub)",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "View from Skywalk lookout at Dorrigo National Park on 2025 ASBS Conference field trip 6 Nov 20256 Nov 2025 02.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:View_from_Skywalk_lookout_at_Dorrigo_National_Park_on_2025_ASBS_Conference_field_trip_6_Nov_20256_Nov_2025_02.jpg",
+   "width": 4080,
+   "height": 3060,
+   "licence": "CC BY 4.0"
+  },
+  "photo_reason": "View from the Skywalk lookout over the rainforest and ranges (2025). Shows the park's view, not the Skywalk itself; ok for the park.",
+  "hero_crop": "ok",
+  "brightness": {
+   "p40": 0.451,
+   "mean": 0.45
+  },
+  "photo_date": "2025-11-06 12:22:24"
+ },
+ {
+  "name": "Skywalk",
+  "verdict": "keep",
+  "objection": "NPWS and Wikivoyage name it as the park's signature walk; a distinct named draw, kept.",
+  "coordinates": {
+   "lat": -30.3636,
+   "lng": 152.72981
+  },
+  "coordinates_source": "osm nominatim tourism=viewpoint",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Skywalk (50227539572).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Skywalk_(50227539572).jpg",
+   "width": 1866,
+   "height": 1240,
+   "licence": "CC BY-SA 2.0"
+  },
+  "photo_reason": "Skywalk platform and walkway, 1866 px, shows the structure, but p40 0.12 (dark rails) so it needs brightening.",
+  "hero_crop": "ok",
+  "brightness": {
+   "p40": 0.122,
+   "mean": 0.34
+  },
+  "needs_brighten": true,
+  "photo_date": "2019-09-13 13:36"
+ },
+ {
+  "name": "Wonga Walk",
+  "verdict": "keep",
+  "objection": "Wikivoyage and NPWS: the park's main loop (5.8 km). Crystal Shower Falls is on this walk and is rejected as part of it. Pin is the route midpoint.",
+  "coordinates": {
+   "lat": -30.37616,
+   "lng": 152.7294
+  },
+  "coordinates_source": "MIDPOINT of OSM hiking route relation 6265960 (Wonga Walk loop, ~6 km)",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Crystal Shower Falls in Dorrigo National Park.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Crystal_Shower_Falls_in_Dorrigo_National_Park.jpg",
+   "width": 4912,
+   "height": 7360,
+   "licence": "CC BY-SA 4.0"
+  },
+  "photo_reason": "Crystal Shower Falls, on the Wonga Walk; portrait, falls central. p40 0.157 and mean 0.28 are below the floor: brighten.",
+  "hero_crop": "ok",
+  "brightness": {
+   "p40": 0.157,
+   "mean": 0.282
+  },
+  "needs_brighten": true,
+  "photo_date": "2020-02-18 13:27:43"
+ },
+ {
+  "name": "Cape Hawke Lookout",
+  "verdict": "keep",
+  "objection": "Wikivoyage plus the NPWS lookout page (two counted sources).",
+  "coordinates": {
+   "lat": -32.2165,
+   "lng": 152.5631
+  },
+  "coordinates_source": "osm nominatim tourism=attraction Cape Hawke Lookout",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Cape Hawke Lookout Tower - panoramio.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Cape_Hawke_Lookout_Tower_-_panoramio.jpg",
+   "width": 1293,
+   "height": 1495,
+   "licence": "CC BY-SA 3.0"
+  },
+  "photo_reason": "The lookout tower, 1293 px wide (clears 960).",
+  "hero_crop": "ok",
+  "brightness": {
+   "p40": 0.404,
+   "mean": 0.516
+  },
+  "photo_date": "Taken on\u00a017 January 2003"
+ },
+ {
+  "name": "Bennetts Head Lookout",
+  "verdict": "keep",
+  "objection": "Wikivoyage names it; headland viewpoint over Forster.",
+  "coordinates": {
+   "lat": -32.1823,
+   "lng": 152.53397
+  },
+  "coordinates_source": "osm nominatim tourism=viewpoint",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "View from Bennett's Head Lookout - panoramio.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:View_from_Bennett's_Head_Lookout_-_panoramio.jpg",
+   "width": 2304,
+   "height": 2957,
+   "licence": "CC BY-SA 3.0"
+  },
+  "photo_reason": "View from the lookout down the cliff; a view, not the structure, which suits a lookout.",
+  "hero_crop": "ok",
+  "brightness": {
+   "p40": 0.361,
+   "mean": 0.407
+  },
+  "photo_date": "Taken on\u00a020 April 2007"
+ },
+ {
+  "name": "Elizabeth Beach",
+  "verdict": "keep",
+  "objection": "Wikivoyage names it; patrolled beach in Booti Booti.",
+  "coordinates": {
+   "lat": -32.32951,
+   "lng": 152.53645
+  },
+  "coordinates_source": "osm nominatim natural=beach",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Elizabeth Beach in the late afternoon - panoramio.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Elizabeth_Beach_in_the_late_afternoon_-_panoramio.jpg",
+   "width": 3223,
+   "height": 2073,
+   "licence": "CC BY-SA 3.0"
+  },
+  "photo_reason": "Beach in the late afternoon, panoramio-origin.",
+  "hero_crop": "ok",
+  "brightness": {
+   "p40": 0.443,
+   "mean": 0.428
+  },
+  "photo_date": "Taken on\u00a08 February 2009"
+ },
+ {
+  "name": "Shelly Beach, Forster",
+  "verdict": "keep",
+  "objection": "Wikivoyage names it; a walk-in beach. The name must not carry a comma qualifier (WRITING.md) and collides with Port Macquarie's Shelly Beach.",
+  "coordinates": {
+   "lat": -32.32909,
+   "lng": 152.54539
+  },
+  "coordinates_source": "osm photon natural=beach \"Shelly Beach\" (Booti Booti); needs a check it is the Forster one, not Port Macquarie",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": "Nothing on Commons for the Forster beach."
+ },
+ {
+  "name": "Boomerang Beach",
+  "verdict": "keep",
+  "objection": "Wikivoyage names it as the strip's best surf beach.",
+  "coordinates": {
+   "lat": -32.33996,
+   "lng": 152.5433
+  },
+  "coordinates_source": "osm nominatim natural=beach",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Rock Layers in Cliff at Boomerang Beach in NSW in Australia.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Rock_Layers_in_Cliff_at_Boomerang_Beach_in_NSW_in_Australia.jpg",
+   "width": 1120,
+   "height": 768,
+   "licence": "CC BY-SA 2.0"
+  },
+  "photo_reason": "Headland and beach, 1120 px wide.",
+  "hero_crop": "ok",
+  "brightness": {
+   "p40": 0.518,
+   "mean": 0.547
+  },
+  "photo_date": "2014-09-17"
+ },
+ {
+  "name": "Blueys Beach",
+  "verdict": "keep",
+  "objection": "Wikivoyage names it.",
+  "coordinates": {
+   "lat": -32.35256,
+   "lng": 152.53656
+  },
+  "coordinates_source": "osm nominatim natural=beach",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Blueys beach long exposure.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Blueys_beach_long_exposure.jpg",
+   "width": 5996,
+   "height": 4000,
+   "licence": "CC BY 4.0"
+  },
+  "photo_reason": "Long exposure of the beach and headland, 2025.",
+  "hero_crop": "ok",
+  "brightness": {
+   "p40": 0.604,
+   "mean": 0.575
+  },
+  "photo_date": "2025-08-08 22:18:08"
+ },
+ {
+  "name": "Diamond Beach",
+  "verdict": "keep",
+  "objection": "Resolved review to keep: Wikivoyage names it (long quiet surf beach); a beach a real source names, though one source.",
+  "coordinates": {
+   "lat": -32.03811,
+   "lng": 152.54286
+  },
+  "coordinates_source": "osm nominatim natural=beach",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Diamond Beach from Diamond Beach Lookout.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Diamond_Beach_from_Diamond_Beach_Lookout.jpg",
+   "width": 8192,
+   "height": 6144,
+   "licence": "CC0"
+  },
+  "photo_reason": "From the Diamond Beach lookout, 2026, CC0; the sun at the edge is lens flare but fine.",
+  "hero_crop": "ok",
+  "brightness": {
+   "p40": 0.455,
+   "mean": 0.498
+  },
+  "photo_date": "2026-09-06 07:06:34"
+ },
+ {
+  "name": "Forster Ocean Baths",
+  "verdict": "reject",
+  "objection": "No counted source (Wikipedia photo caption only), short stop."
+ },
+ {
+  "name": "Wallis Lake",
+  "verdict": "reject",
+  "objection": "A water body with no counted source naming a place to go; Booti Booti and Forster cover it."
+ },
+ {
+  "name": "Myall Lakes National Park",
+  "verdict": "keep",
+  "objection": "NPWS and Wikivoyage. Sub-tracks (Mungo Rainforest, Neranie Headland, Dark Point, Treachery Headland, Submarine, Tamboi) are parts of the park.",
+  "coordinates": {
+   "lat": -32.50802,
+   "lng": 152.30465
+  },
+  "coordinates_source": "osm nominatim Bombah Point (ferry crossing, main visitor hub), not the park centroid",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Myall Lakes.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Myall_Lakes.jpg",
+   "width": 4835,
+   "height": 3376,
+   "licence": "CC BY-SA 4.0"
+  },
+  "photo_reason": "Lake foreshore with a leaning tree; the saturated sky and greens look HDR-processed, which IMAGES.md discourages; weak pass.",
+  "hero_crop": "ok",
+  "brightness": {
+   "p40": 0.573,
+   "mean": 0.59
+  },
+  "photo_date": "2017-02-26 01:28:04"
+ },
+ {
+  "name": "Mungo Rainforest Walk",
+  "verdict": "reject",
+  "objection": "Short sub-track inside Myall Lakes National Park, part of the park."
+ },
+ {
+  "name": "Neranie Headland Walking Track",
+  "verdict": "reject",
+  "objection": "1.4 km sub-track inside Myall Lakes National Park, part of the park."
+ },
+ {
+  "name": "Yacaaba Headland Walking Track",
+  "verdict": "keep",
+  "objection": "Kept as the one distinct named walk (3.5 km each way, headland summit with views); the others are parts of the park. Pin is the route midpoint of the mapped way. Gateway Hawks Nest itself has no counted source and is rejected.",
+  "coordinates": {
+   "lat": -32.69802,
+   "lng": 152.19627
+  },
+  "coordinates_source": "MIDPOINT of OSM way 324442316 (Yacaaba Walking Track); the mapped way is only 1.2 km of the 3.5 km one-way route, so recheck against the full track",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": ""
+ },
+ {
+  "name": "Sugarloaf Point Lighthouse",
+  "verdict": "keep",
+  "objection": "Wikivoyage and NPWS, two counted sources.",
+  "coordinates": {
+   "lat": -32.44101,
+   "lng": 152.53912
+  },
+  "coordinates_source": "osm nominatim man_made=lighthouse",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Sugarloaf Point Lighthouse cropped.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Sugarloaf_Point_Lighthouse_cropped.jpg",
+   "width": 2846,
+   "height": 3249,
+   "licence": "CC BY-SA 3.0"
+  },
+  "photo_reason": "Lighthouse against blue sky, centred; tall, subject fine.",
+  "hero_crop": "ok",
+  "brightness": {
+   "p40": 0.31,
+   "mean": 0.402
+  },
+  "photo_date": "2010-09-14 18:05"
+ },
+ {
+  "name": "Seal Rocks Blowhole",
+  "verdict": "reject",
+  "objection": "On the way to Sugarloaf Point Lighthouse, part of that spot; minor and storm-dependent."
+ },
+ {
+  "name": "Number One Beach",
+  "verdict": "keep",
+  "objection": "Wikivoyage names it. Lighthouse Beach and the blowhole are rejected as near-duplicates of the lighthouse spot.",
+  "coordinates": {
+   "lat": -32.42865,
+   "lng": 152.51947
+  },
+  "coordinates_source": "osm nominatim natural=beach",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": "Nothing on Commons; the Seal Rocks files show the bay from the headland (used for the village)."
+ },
+ {
+  "name": "Lighthouse Beach",
+  "verdict": "reject",
+  "objection": "Adjoins the lighthouse; near-duplicate of Sugarloaf Point Lighthouse."
+ },
+ {
+  "name": "Booti Booti National Park",
+  "verdict": "keep",
+  "objection": "NPWS and Wikivoyage.",
+  "coordinates": {
+   "lat": -32.24444,
+   "lng": 152.54333
+  },
+  "coordinates_source": "wikipedia:Booti Booti National Park centroid (OSM centroid -32.2445,152.5283 lies in the lake); a visitor point such as Elizabeth Beach is an alternative",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": "Only cone-shell specimen photos."
+ },
+ {
+  "name": "Crowdy Bay National Park",
+  "verdict": "keep",
+  "objection": "NPWS and Wikivoyage.",
+  "coordinates": {
+   "lat": -31.81639,
+   "lng": 152.72139
+  },
+  "coordinates_source": "wikipedia:Crowdy Bay National Park centroid; needs a visitor point (Diamond Head campground) from OSM before applying",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": "Only the harbour, a lighthouse (Crowdy Head), a group at a hut (1990), a lobster and a dusk river; none shows the park."
+ },
+ {
+  "name": "Hat Head National Park",
+  "verdict": "keep",
+  "objection": "NPWS and Wikivoyage.",
+  "coordinates": {
+   "lat": -31.08028,
+   "lng": 153.03028
+  },
+  "coordinates_source": "wikipedia:Hat Head National Park centroid; OSM Hat Head village cape is -31.0532,153.0617",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Overlook of Hat Head National Park.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Overlook_of_Hat_Head_National_Park.jpg",
+   "width": 7186,
+   "height": 2392,
+   "licence": "CC BY-SA 4.0"
+  },
+  "photo_reason": "3:1 panorama (7186x2392); the centre slice shows the beach arc and headland and works, but it is a very wide strip.",
+  "hero_crop": "ok",
+  "brightness": {
+   "p40": 0.549,
+   "mean": 0.539
+  },
+  "photo_date": "2017-01-02 19:16:53"
+ },
+ {
+  "name": "Smoky Cape Lighthouse",
+  "verdict": "keep",
+  "objection": "NPWS names it; visitor access to confirm.",
+  "coordinates": {
+   "lat": -30.92285,
+   "lng": 153.08749
+  },
+  "coordinates_source": "osm nominatim man_made=lighthouse",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Smoky Cape Lighthouse on a beautiful clear day.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Smoky_Cape_Lighthouse_on_a_beautiful_clear_day.jpg",
+   "width": 4000,
+   "height": 3000,
+   "licence": "CC BY-SA 4.0"
+  },
+  "photo_reason": "Lighthouse and keeper's houses, clear day.",
+  "hero_crop": "ok",
+  "brightness": {
+   "p40": 0.396,
+   "mean": 0.436
+  },
+  "photo_date": "2018-05-03"
+ },
+ {
+  "name": "Arakoon National Park",
+  "verdict": "keep",
+  "objection": "NPWS and Wikivoyage; the park around Trial Bay. Trial Bay Gaol is kept separately as the distinct named draw.",
+  "coordinates": {
+   "lat": -30.88349,
+   "lng": 153.07466
+  },
+  "coordinates_source": "osm nominatim nature_reserve, beside Trial Bay Gaol",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Arakoon National Park.JPG",
+   "page": "https://commons.wikimedia.org/wiki/File:Arakoon_National_Park.JPG",
+   "width": 4739,
+   "height": 3139,
+   "licence": "CC BY-SA 4.0"
+  },
+  "photo_reason": "Kangaroos on a dusk beach; evocative but the park itself is barely identified, undated.",
+  "hero_crop": "ok",
+  "brightness": {
+   "p40": 0.408,
+   "mean": 0.421
+  },
+  "photo_date": "Taken on\u00a011 February 2016, 17:"
+ },
+ {
+  "name": "Trial Bay Gaol",
+  "verdict": "keep",
+  "objection": "NPWS names it; obvious draw.",
+  "coordinates": {
+   "lat": -30.87753,
+   "lng": 153.07019
+  },
+  "coordinates_source": "osm nominatim tourism=historic",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "The main entrance to the Trial Bay Gaol - Taken on the Wednesday, 18th August 2010 at 1-21pm. - panoramio.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:The_main_entrance_to_the_Trial_Bay_Gaol_-_Taken_on_the_Wednesday,_18th_August_2010_at_1-21pm._-_panoramio.jpg",
+   "width": 2272,
+   "height": 1704,
+   "licence": "CC BY-SA 3.0"
+  },
+  "photo_reason": "Main entrance of the gaol ruin, clear.",
+  "hero_crop": "ok",
+  "brightness": {
+   "p40": 0.514,
+   "mean": 0.499
+  },
+  "photo_date": "Taken on\u00a018 August 2010"
+ },
+ {
+  "name": "Kattang Nature Reserve",
+  "verdict": "reject",
+  "objection": "Small reserve, one counted source; not worth a trip beyond the Port Macquarie to Taree drive."
+ },
+ {
+  "name": "Limeburners Creek National Park",
+  "verdict": "keep",
+  "objection": "NPWS and Wikivoyage (one counted source in data).",
+  "coordinates": {
+   "lat": -31.31491,
+   "lng": 152.97542
+  },
+  "coordinates_source": "osm nominatim natural=cape Point Plomer (main visitor area)",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Point Plomer ^1 taken on the Monday, 19th October 2009 at 1-37pm. - panoramio.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Point_Plomer_^1_taken_on_the_Monday,_19th_October_2009_at_1-37pm._-_panoramio.jpg",
+   "width": 2272,
+   "height": 1704,
+   "licence": "CC BY-SA 3.0"
+  },
+  "photo_reason": "Point Plomer beach, 2009 panoramio-origin, plain beach; the 1981 slides were rejected as pre-2000 scans.",
+  "hero_crop": "ok",
+  "brightness": {
+   "p40": 0.518,
+   "mean": 0.54
+  },
+  "photo_date": "Taken on\u00a019 October 2009"
+ },
+ {
+  "name": "Bongil Bongil National Park",
+  "verdict": "keep",
+  "objection": "NPWS and Wikivoyage.",
+  "coordinates": {
+   "lat": -30.40172,
+   "lng": 153.0698
+  },
+  "coordinates_source": "osm nominatim Bongil Beach Trail (visitor access)",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Bongil Bongil National Park.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Bongil_Bongil_National_Park.jpg",
+   "width": 3842,
+   "height": 2305,
+   "licence": "CC BY 2.0"
+  },
+  "photo_reason": "A beach with rock platforms; the file is pale and washed-out and undated, so it may be a scan. Weak pass.",
+  "hero_crop": "ok",
+  "brightness": {
+   "p40": 0.788,
+   "mean": 0.767
+  },
+  "photo_date": "Taken on<span typeof=\"mw:Entit"
+ },
+ {
+  "name": "Yuraygir National Park",
+  "verdict": "keep",
+  "objection": "Existing standalone spot, covered by the Northern Rivers pass; keep, no photo needed.",
+  "photo_verdict": "n/a",
+  "photo": null,
+  "photo_reason": "Existing spot; keeps its current photo."
+ },
+ {
+  "name": "Nowendoc National Park",
+  "verdict": "reject",
+  "objection": "Two counted sources but remote and rarely visited (Thunderbolts Way, Callaghans Canyon); a rarely visited place fails the test."
+ },
+ {
+  "name": "Cottan-Bimbang National Park",
+  "verdict": "reject",
+  "objection": "Two counted sources but a drive-through park of picnic areas on the Oxley Highway; rarely visited, nothing to do for half an hour."
+ },
+ {
+  "name": "Barrington Tops National Park",
+  "verdict": "keep",
+  "objection": "NPWS and Wikivoyage.",
+  "coordinates": {
+   "lat": -32.05278,
+   "lng": 151.49361
+  },
+  "coordinates_source": "wikipedia:Barrington Tops National Park; a park point, the walks (Careys Peak, Antarctic Beech) are the real stops",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "View into the Hunter Valley - Barrington Tops National Park.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:View_into_the_Hunter_Valley_-_Barrington_Tops_National_Park.jpg",
+   "width": 4650,
+   "height": 2616,
+   "licence": "CC BY-SA 4.0"
+  },
+  "photo_reason": "Ranges from the park, 2017, titled 'View into the Hunter Valley' but in the park.",
+  "hero_crop": "ok",
+  "brightness": {
+   "p40": 0.365,
+   "mean": 0.46
+  },
+  "photo_date": "2017-12-03 02:56:29"
+ },
+ {
+  "name": "Antarctic Beech Forest Walking Track",
+  "verdict": "keep",
+  "objection": "Wikivoyage names the 20 or 90 minute beech forest walks; the distinct named walk of the Gloucester Tops end. Pin is the OSM loop midpoint.",
+  "coordinates": {
+   "lat": -32.08849,
+   "lng": 151.59649
+  },
+  "coordinates_source": "MIDPOINT of the OSM Beech Forest Walk (Long Loop) ways 460466920/927/926/925, c.1.5 km loop",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Cool temperate Antartic Beech rainforest (45392054562).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Cool_temperate_Antartic_Beech_rainforest_(45392054562).jpg",
+   "width": 3264,
+   "height": 1836,
+   "licence": "CC BY-SA 2.0"
+  },
+  "photo_reason": "Cool temperate beech forest on the Barrington Tops walk (the sign photo was rejected). p40 0.19, mean 0.34: just below the floor, brighten.",
+  "hero_crop": "ok",
+  "brightness": {
+   "p40": 0.192,
+   "mean": 0.336
+  },
+  "needs_brighten": true,
+  "photo_date": "Taken on\u00a020 October 2018, 13:5"
+ },
+ {
+  "name": "Careys Peak Lookout",
+  "verdict": "keep",
+  "objection": "Wikivoyage names the summit hike; kept as a distinct named hike. No Commons photo found that passes (only 1995-96 scans).",
+  "photo_verdict": "none",
+  "photo": null,
+  "photo_reason": "Only 1995-96 scans (pre-2000), failing the current-colour rule.",
+  "coordinates": {
+   "lat": -32.0532954,
+   "lng": 151.4551592
+  },
+  "coordinates_source": "osm nominatim natural=peak Careys Peak (summit)"
+ },
+ {
+  "name": "Devils Hole Lookout",
+  "verdict": "reject",
+  "objection": "300 m lookout on the Barrington Tops tracks, part of the park."
+ },
+ {
+  "name": "Thunderbolts Lookout",
+  "verdict": "reject",
+  "objection": "Short lookout on the Barrington Tops tracks, part of the park."
+ },
+ {
+  "name": "National Motorcycle Museum",
+  "verdict": "reject",
+  "objection": "One line on the region page (Nabiac), niche, no opening or visitor detail found."
+ },
+ {
+  "name": "Big Axe",
+  "verdict": "keep",
+  "objection": "Wikivoyage region page; Big Thing roadside icon on the highway at Kew.",
+  "coordinates": {
+   "lat": -31.63505,
+   "lng": 152.72218
+  },
+  "coordinates_source": "osm nominatim tourism=attraction Big Axe, Kew",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "BigAxe Kew.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:BigAxe_Kew.jpg",
+   "width": 3524,
+   "height": 2517,
+   "licence": "Public domain"
+  },
+  "photo_reason": "The axe with palms against sky; the axe head is at the left, so use a subject point or the crop shows half the head.",
+  "hero_crop": {
+   "x": 0.35
+  },
+  "brightness": {
+   "p40": 0.439,
+   "mean": 0.432
+  },
+  "photo_date": "2009-03-01"
+ }
+]

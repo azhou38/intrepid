@@ -1,0 +1,2106 @@
+{
+ "region": "nsw-outback-far-west",
+ "country_fields": {
+  "country": "Australia",
+  "countryCode": "AU",
+  "continent": "Oceania",
+  "timezone_note": "Wikivoyage Broken Hill: \"Broken Hill and Silverton operate on ACST; all other towns in the region operate on AEST\". IANA Australia/Broken_Hill covers Broken Hill and Silverton (Yancowinna County), so every Broken Hill proposed-destination place uses Australia/Broken_Hill; everything else in the region uses Australia/Sydney. Cameron Corner, Tibooburra and Menindee are in the Sydney zone by law (locals sometimes keep Central time); verify in research."
+ },
+ "spots": [
+  {
+   "name": "Bourke",
+   "action": "standalone",
+   "destination": null,
+   "id": "bourke",
+   "coordinates": {
+    "latitude": -30.017132,
+    "longitude": 145.998005
+   },
+   "coordinates_source": "wikivoyage:Outback New South Wales (town listing)",
+   "category": "historic",
+   "icon": "🤠",
+   "bio": "The Darling River outback town of \"the back o' Bourke\", and the base for Gundabooka and Toorale.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 29975,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Bourke",
+    "https://en.wikivoyage.org/wiki/Outback_New_South_Wales"
+   ],
+   "photo": {
+    "file": "Darling River seen from Bourke Wharf 08-08-2024.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Darling_River_seen_from_Bourke_Wharf_08-08-2024.jpg",
+    "width": 5385,
+    "licence": "CC BY-SA 4.0",
+    "hero_crop": "ok",
+    "photo_verdict": "candidate",
+    "skeptic_photo_verdict": "accept",
+    "note": "Darling River from the wharf, 2024, colour. River is the setting for Bourke; ok for a town."
+   },
+   "wiki": "Bourke, New South Wales",
+   "pin_status": "ok",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "reason": "Outside every destination; no kept sub-places of its own (Exhibition Centre, wharf and gallery rejected), so a town-level standalone spot. Gundabooka (about 40 km) and Toorale (about 70 km) are separate park destinations."
+  },
+  {
+   "name": "White Cliffs",
+   "action": "standalone",
+   "destination": null,
+   "id": "white-cliffs",
+   "coordinates": {
+    "latitude": -30.777922,
+    "longitude": 143.079204
+   },
+   "coordinates_source": "wikivoyage:Outback New South Wales (town listing)",
+   "category": "historic",
+   "icon": "⛏️",
+   "bio": "An opal-mining village where many people live underground, with a heritage trail and fossicking.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 10213,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/White_Cliffs",
+    "https://en.wikivoyage.org/wiki/Outback_New_South_Wales"
+   ],
+   "photo": null,
+   "wiki": "White Cliffs, New South Wales",
+   "pin_status": "ok",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "reason": "Outside every destination and about 100 km from Paroo-Darling NP; its dwellings, trail and fossicking were folded into the village and rejected as separate spots, leaving the village as a standalone spot (low-rank destination option rejected: no spots to hold)."
+  },
+  {
+   "name": "Silverton",
+   "action": "spot-of-proposed-destination",
+   "destination": "broken-hill",
+   "id": "broken-hill-1",
+   "coordinates": {
+    "latitude": -31.88525,
+    "longitude": 141.2219
+   },
+   "coordinates_source": "osm Nominatim Mad Max 2 Museum used as the town's visitor core; town centroid from Wikipedia is -31.8667,141.2333 which is not a visitor point",
+   "category": "historic",
+   "icon": "🏚️",
+   "bio": "A mining ghost town 26 km from Broken Hill, a film location with galleries and a heritage walk.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 10107,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Broken_Hill"
+   ],
+   "photo": {
+    "file": "Silverton Hotel NSW-01 (5138464252).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Silverton_Hotel_NSW-01_(5138464252).jpg",
+    "width": 1952,
+    "licence": "CC BY-SA 2.0",
+    "hero_crop": null,
+    "photo_verdict": "candidate",
+    "skeptic_photo_verdict": "accept",
+    "note": "The Silverton Hotel, the town's icon (film location). Thin black scan border at edges; the square crop removes it. Right place per title and category."
+   },
+   "wiki": "Silverton, New South Wales",
+   "pin_status": "ok",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Broken_Hill",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "distance_km_from_proposed_destination": 23.6,
+   "inside_75pct_span": true,
+   "reason": "Reached from the proposed broken-hill base and 24 km from its centre (span 60 km, 75% = 45 km). Outside every existing destination.",
+   "if_declined": {
+    "action": "standalone",
+    "id": "silverton",
+    "destination": null,
+    "note": "Standalone spot with the four standalone fields (already present)."
+   }
+  },
+  {
+   "name": "Mundi Mundi Lookout",
+   "action": "spot-of-proposed-destination",
+   "destination": "broken-hill",
+   "id": "broken-hill-2",
+   "coordinates": {
+    "latitude": -31.847403,
+    "longitude": 141.202625
+   },
+   "coordinates_source": "HIGH: photon tourism=viewpoint plus Commons geotag -31.847816,141.203027 (within 50 m)",
+   "category": "viewpoint",
+   "icon": "🌅",
+   "bio": "A free lookout west of Silverton over the vast Mundi Mundi plain, best at sunset.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Broken_Hill"
+   ],
+   "photo": {
+    "file": "SilvertonMundiMundiLookout1.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:SilvertonMundiMundiLookout1.JPG",
+    "width": 3872,
+    "licence": "CC BY-SA 3.0",
+    "hero_crop": {
+     "x": 0.5,
+     "y": 0.7,
+     "zoom": 1.5
+    },
+    "photo_verdict": "candidate",
+    "skeptic_photo_verdict": "accept",
+    "note": "Plains from the lookout, 2009. Half sky; zoom."
+   },
+   "wiki": null,
+   "pin_status": "ok",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Broken_Hill",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "distance_km_from_proposed_destination": 27.2,
+   "inside_75pct_span": true,
+   "reason": "Reached from the proposed broken-hill base and 27 km from its centre (span 60 km, 75% = 45 km). Outside every existing destination.",
+   "if_declined": {
+    "action": "standalone",
+    "id": "mundi-mundi-lookout",
+    "destination": null,
+    "note": "Standalone spot with the four standalone fields (already present)."
+   }
+  },
+  {
+   "name": "Pro Hart Gallery and Sculpture Park",
+   "action": "spot-of-proposed-destination",
+   "destination": "broken-hill",
+   "id": "broken-hill-3",
+   "coordinates": {
+    "latitude": -31.94492,
+    "longitude": 141.4472
+   },
+   "coordinates_source": "HIGH: photon tourism=gallery 'Pro Hart' (21 m)",
+   "category": "museum",
+   "icon": "🎨",
+   "bio": "A gallery and sculpture park of the late artist Pro Hart's work, including his painted Rolls-Royce.",
+   "hours": "10:00 AM – 2:00 PM",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://www.prohart.com.au/",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Broken_Hill"
+   ],
+   "photo": {
+    "file": "Pro-Hart-painted-Rolls-Royce.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Pro-Hart-painted-Rolls-Royce.JPG",
+    "width": 1280,
+    "licence": "CC BY-SA 3.0",
+    "hero_crop": "ok",
+    "photo_verdict": "candidate",
+    "skeptic_photo_verdict": "accept",
+    "note": "The painted Rolls-Royce outside the gallery, named by Wikivoyage; colour 2007. Alt: BrokenHillProHartGallery.JPG facade."
+   },
+   "wiki": null,
+   "pin_status": "ok",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Broken_Hill",
+   "needs_research": [
+    "cost"
+   ],
+   "status": "ready for Pipeline C research",
+   "hours_note": "Daily 10-2 per skeptic reading of prohart.com.au; verify before shipping",
+   "distance_km_from_proposed_destination": 3.4,
+   "inside_75pct_span": true,
+   "reason": "Reached from the proposed broken-hill base and 3 km from its centre (span 60 km, 75% = 45 km). Outside every existing destination.",
+   "if_declined": {
+    "action": "standalone",
+    "id": "pro-hart-gallery-and-sculpture-park",
+    "destination": null,
+    "note": "Standalone spot with the four standalone fields (already present)."
+   }
+  },
+  {
+   "name": "Line of Lode Miners Memorial",
+   "action": "spot-of-proposed-destination",
+   "destination": "broken-hill",
+   "id": "broken-hill-4",
+   "coordinates": {
+    "latitude": -31.962147,
+    "longitude": 141.467295
+   },
+   "coordinates_source": "photon tourism=attraction; Commons median -31.961975,141.465833 (about 130 m)",
+   "category": "monument",
+   "icon": "🪦",
+   "bio": "A miners' memorial above the city honouring over 800 miners, with a lookout and a cafe.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Broken_Hill"
+   ],
+   "photo": {
+    "file": "Line of Lode Miner's Memorial, Broken Hill, NSW, 07.07.2007.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Line_of_Lode_Miner's_Memorial,_Broken_Hill,_NSW,_07.07.2007.jpg",
+    "width": 1600,
+    "licence": "CC BY-SA 3.0",
+    "hero_crop": "ok",
+    "photo_verdict": "candidate",
+    "skeptic_photo_verdict": "accept",
+    "note": "The steel memorial on the mullock heap, 2007 colour, clear."
+   },
+   "wiki": null,
+   "pin_status": "ok",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Broken_Hill",
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "distance_km_from_proposed_destination": 2.3,
+   "inside_75pct_span": true,
+   "reason": "Reached from the proposed broken-hill base and 2 km from its centre (span 60 km, 75% = 45 km). Outside every existing destination.",
+   "if_declined": {
+    "action": "standalone",
+    "id": "line-of-lode-miners-memorial",
+    "destination": null,
+    "note": "Standalone spot with the four standalone fields (already present)."
+   }
+  },
+  {
+   "name": "Silverton Mad Max 2 Museum",
+   "action": "spot-of-proposed-destination",
+   "destination": "broken-hill",
+   "id": "broken-hill-5",
+   "coordinates": {
+    "latitude": -31.888525,
+    "longitude": 141.2219475
+   },
+   "coordinates_source": "osm Nominatim museum (13 m from Wikivoyage point)",
+   "category": "museum",
+   "icon": "🚗",
+   "bio": "A small museum in Silverton showing cars from the Mad Max 2 film, some of them replicas.",
+   "hours": "10:00 AM – 4:00 PM",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Broken_Hill",
+    "https://en.wikivoyage.org/wiki/Silverton_(New_South_Wales)"
+   ],
+   "photo": {
+    "file": "Mad Max 2 Museum Silverton-1 (5141665025).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Mad_Max_2_Museum_Silverton-1_(5141665025).jpg",
+    "width": 1860,
+    "licence": "CC BY-SA 2.0",
+    "hero_crop": "ok",
+    "photo_verdict": "candidate",
+    "skeptic_photo_verdict": "accept",
+    "note": "Facade with painted mural, 2010. Black frame around the scan; the near-square crop trims it."
+   },
+   "wiki": null,
+   "pin_status": "ok",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Broken_Hill",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "distance_km_from_proposed_destination": 23.4,
+   "inside_75pct_span": true,
+   "reason": "Reached from the proposed broken-hill base and 23 km from its centre (span 60 km, 75% = 45 km). Outside every existing destination.",
+   "if_declined": {
+    "action": "standalone",
+    "id": "silverton-mad-max-2-museum",
+    "destination": null,
+    "note": "Standalone spot with the four standalone fields (already present)."
+   }
+  },
+  {
+   "name": "Royal Flying Doctor Service Bruce Langford Visitor Centre",
+   "action": "spot-of-proposed-destination",
+   "destination": "broken-hill",
+   "id": "broken-hill-6",
+   "coordinates": {
+    "latitude": -31.997195,
+    "longitude": 141.471368
+   },
+   "coordinates_source": "wikivoyage Broken Hill listing (airport base)",
+   "category": "museum",
+   "icon": "✈️",
+   "bio": "Tours and exhibits at the Royal Flying Doctor Service's Broken Hill base, with heritage aircraft.",
+   "hours": "9:00 AM – 5:00 PM",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": 7,
+   "costMax": 7,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Broken_Hill"
+   ],
+   "photo": {
+    "file": "RFDS hangar.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:RFDS_hangar.jpg",
+    "width": 3872,
+    "licence": "CC BY-SA 4.0",
+    "hero_crop": "ok",
+    "photo_verdict": "candidate",
+    "skeptic_photo_verdict": "accept",
+    "note": "RFDS aircraft in the Broken Hill hangar, 2014, bright; hangar is the tour."
+   },
+   "wiki": null,
+   "pin_status": "ok",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Broken_Hill",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "ticket_candidate": "http://www.flyingdoctor.org.au/Broken-Hill-Base.html (Wikivoyage; unverified)",
+   "distance_km_from_proposed_destination": 3.3,
+   "inside_75pct_span": true,
+   "reason": "Reached from the proposed broken-hill base and 3 km from its centre (span 60 km, 75% = 45 km). Outside every existing destination.",
+   "if_declined": {
+    "action": "standalone",
+    "id": "rfds-broken-hill-visitor-centre",
+    "destination": null,
+    "note": "Standalone spot with the four standalone fields (already present)."
+   }
+  },
+  {
+   "name": "Living Desert Sculptures",
+   "action": "spot-of-proposed-destination",
+   "destination": "broken-hill",
+   "id": "broken-hill-7",
+   "coordinates": {
+    "latitude": -31.898849,
+    "longitude": 141.451111
+   },
+   "coordinates_source": "wikivoyage own geotag; photon -31.899358,141.449943 (about 90 m)",
+   "category": "landmark",
+   "icon": "🗿",
+   "bio": "A hilltop sculpture symposium and reserve 9 km north of town, popular at sunset with kangaroos.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": 5,
+   "costMax": 5,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Broken_Hill"
+   ],
+   "photo": {
+    "file": "Living Desert Sculpture 2 (20939648053).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Living_Desert_Sculpture_2_(20939648053).jpg",
+    "width": 1830,
+    "licence": "CC BY-SA 2.0",
+    "hero_crop": {
+     "x": 0.2,
+     "y": 0.5
+    },
+    "photo_verdict": "candidate",
+    "skeptic_photo_verdict": "accept",
+    "note": "Carved sandstone sculpture on the hill with plain behind, 2015; thin black border."
+   },
+   "wiki": null,
+   "pin_status": "ok",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Broken_Hill",
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "distance_km_from_proposed_destination": 8.5,
+   "inside_75pct_span": true,
+   "reason": "Reached from the proposed broken-hill base and 9 km from its centre (span 60 km, 75% = 45 km). Outside every existing destination.",
+   "if_declined": {
+    "action": "standalone",
+    "id": "living-desert-sculptures",
+    "destination": null,
+    "note": "Standalone spot with the four standalone fields (already present)."
+   }
+  },
+  {
+   "name": "Daydream Mine",
+   "action": "spot-of-proposed-destination",
+   "destination": "broken-hill",
+   "id": "broken-hill-8",
+   "coordinates": {
+    "latitude": -31.814073,
+    "longitude": 141.347706
+   },
+   "coordinates_source": "photon/Nominatim 'Daydream Mine' museum",
+   "category": "historic",
+   "icon": "⛏️",
+   "bio": "A small 1882 hand-worked silver mine near Silverton, visited on a guided underground tour.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Broken_Hill"
+   ],
+   "photo": null,
+   "wiki": null,
+   "pin_status": "medium: Nominatim/Photon museum point",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Broken_Hill",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "distance_km_from_proposed_destination": 20.3,
+   "inside_75pct_span": true,
+   "reason": "Reached from the proposed broken-hill base and 20 km from its centre (span 60 km, 75% = 45 km). Outside every existing destination.",
+   "if_declined": {
+    "action": "standalone",
+    "id": "daydream-mine",
+    "destination": null,
+    "note": "Standalone spot with the four standalone fields (already present)."
+   }
+  },
+  {
+   "name": "Lightning Ridge Bore Baths",
+   "action": "spot-of-proposed-destination",
+   "destination": "lightning-ridge",
+   "id": "lightning-ridge-1",
+   "coordinates": {
+    "latitude": -29.4226578,
+    "longitude": 147.9978509
+   },
+   "coordinates_source": "osm:Nominatim Lightning Ridge Bore Baths",
+   "category": "nature",
+   "icon": "♨️",
+   "bio": "Free warm artesian baths fed by water from 900 m underground, open around the clock.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lightning_Ridge"
+   ],
+   "photo": {
+    "file": "Bore Baths - panoramio.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Bore_Baths_-_panoramio.jpg",
+    "width": 2048,
+    "licence": "CC BY-SA 3.0",
+    "hero_crop": "ok",
+    "photo_verdict": "candidate",
+    "skeptic_photo_verdict": "accept",
+    "note": "The pool and shelter, colour 2007 (date from upload). Recognisable."
+   },
+   "wiki": null,
+   "pin_status": "ok",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "distance_km_from_proposed_destination": 8.6,
+   "inside_75pct_span": true,
+   "reason": "Reached from the proposed lightning-ridge base and 9 km from its centre (span 30 km, 75% = 22 km). Outside every existing destination.",
+   "if_declined": {
+    "action": "standalone",
+    "id": "lightning-ridge-bore-baths",
+    "destination": null,
+    "note": "Standalone spot with the four standalone fields (already present)."
+   }
+  },
+  {
+   "name": "The Big Opal",
+   "action": "spot-of-proposed-destination",
+   "destination": "lightning-ridge",
+   "id": "lightning-ridge-2",
+   "coordinates": {
+    "latitude": -29.451802,
+    "longitude": 147.967561
+   },
+   "coordinates_source": "photon tourism=attraction 'The Big Opal'",
+   "category": "historic",
+   "icon": "💎",
+   "bio": "A self-guided underground opal mine tour, 30 m down through three tunnels showing an opal seam.",
+   "hours": null,
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": 20,
+   "costMax": 20,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lightning_Ridge"
+   ],
+   "photo": null,
+   "wiki": null,
+   "pin_status": "ok",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "distance_km_from_proposed_destination": 9.0,
+   "inside_75pct_span": true,
+   "reason": "Reached from the proposed lightning-ridge base and 9 km from its centre (span 30 km, 75% = 22 km). Outside every existing destination.",
+   "if_declined": {
+    "action": "standalone",
+    "id": "the-big-opal",
+    "destination": null,
+    "note": "Standalone spot with the four standalone fields (already present)."
+   }
+  },
+  {
+   "name": "Chambers of the Black Hand",
+   "action": "spot-of-proposed-destination",
+   "destination": "lightning-ridge",
+   "id": "lightning-ridge-3",
+   "coordinates": {
+    "latitude": -29.428518,
+    "longitude": 147.967561
+   },
+   "coordinates_source": "approx: 3 Mile Opal Field, Lightning Ridge (no OSM point found; replace with the visitor point)",
+   "category": "landmark",
+   "icon": "🗿",
+   "bio": "A gallery of figures carved in sandstone 11 m underground in the opal fields near Lightning Ridge.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lightning_Ridge"
+   ],
+   "photo": null,
+   "wiki": null,
+   "pin_status": "hold-for-pin",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "HOLD: pin unresolved; Pipeline C may not apply until a HIGH/MEDIUM pin or the agency car park/entrance is found",
+   "ticket_candidate": "http://www.blackopalsaustralia.com (Wikivoyage; unverified)",
+   "distance_km_from_proposed_destination": 6.8,
+   "inside_75pct_span": true,
+   "reason": "Reached from the proposed lightning-ridge base and 7 km from its centre (span 30 km, 75% = 22 km). Outside every existing destination.",
+   "if_declined": {
+    "action": "standalone",
+    "id": "chambers-of-the-black-hand",
+    "destination": null,
+    "note": "Standalone spot with the four standalone fields (already present)."
+   }
+  },
+  {
+   "name": "Lightning Ridge Bottle House",
+   "action": "spot-of-proposed-destination",
+   "destination": "lightning-ridge",
+   "id": "lightning-ridge-4",
+   "coordinates": {
+    "latitude": -29.433765,
+    "longitude": 147.981905
+   },
+   "coordinates_source": "photon tourism=attraction 'Bottle House' (4 m)",
+   "category": "museum",
+   "icon": "🍾",
+   "bio": "A folk-art house built of bottles in the 1960s, now a small museum on Opal Street.",
+   "hours": "9:00 AM – 5:00 PM",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lightning_Ridge"
+   ],
+   "photo": null,
+   "wiki": null,
+   "pin_status": "ok",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "distance_km_from_proposed_destination": 8.2,
+   "inside_75pct_span": true,
+   "reason": "Reached from the proposed lightning-ridge base and 8 km from its centre (span 30 km, 75% = 22 km). Outside every existing destination.",
+   "if_declined": {
+    "action": "standalone",
+    "id": "lightning-ridge-bottle-house",
+    "destination": null,
+    "note": "Standalone spot with the four standalone fields (already present)."
+   }
+  },
+  {
+   "name": "Walls of China",
+   "action": "spot-of-proposed-destination",
+   "destination": "mungo-national-park",
+   "id": "mungo-national-park-1",
+   "coordinates": {
+    "latitude": -33.741653,
+    "longitude": 143.12783
+   },
+   "coordinates_source": "photon tourism=attraction 'Walls Of China' (68 m from candidate point); platform per Wikivoyage",
+   "category": "nature",
+   "icon": "🏜️",
+   "bio": "Mungo's crescent of eroded white lunette dunes, seen from a viewing platform or on a guided tour.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Mungo_National_Park",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/mungo-national-park"
+   ],
+   "photo": {
+    "file": "Walls of China in Mungo National Park (27464678334).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Walls_of_China_in_Mungo_National_Park_(27464678334).jpg",
+    "width": 4608,
+    "licence": "CC0",
+    "hero_crop": "ok",
+    "photo_verdict": "candidate",
+    "skeptic_photo_verdict": "accept",
+    "note": "Eroded lunettes, current colour, clear; subject fills the frame."
+   },
+   "wiki": "Walls of China (Mungo)",
+   "pin_status": "ok",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "distance_km_from_proposed_destination": 1.1,
+   "inside_75pct_span": true,
+   "reason": "Reached from the proposed mungo-national-park base and 1 km from its centre (span 60 km, 75% = 45 km). Outside every existing destination.",
+   "if_declined": {
+    "action": "standalone",
+    "id": "walls-of-china",
+    "destination": null,
+    "note": "Standalone spot with the four standalone fields (already present)."
+   }
+  },
+  {
+   "name": "Menindee Lakes",
+   "action": "spot-of-proposed-destination",
+   "destination": "kinchega-national-park",
+   "id": "kinchega-national-park-1",
+   "coordinates": {
+    "latitude": -32.34972222,
+    "longitude": 142.36888889
+   },
+   "coordinates_source": "wikipedia:Menindee Lakes",
+   "category": "nature",
+   "icon": "🦢",
+   "bio": "A chain of Darling River lakes with birdlife and dead-tree sunsets, though they can run dry.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 6641,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Menindee",
+    "https://en.wikivoyage.org/wiki/Outback_New_South_Wales"
+   ],
+   "photo": {
+    "file": "Sunset Menindee Lakes - Flickr - Rmonty119.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Sunset_Menindee_Lakes_-_Flickr_-_Rmonty119.jpg",
+    "width": 2332,
+    "licence": "CC BY 2.0",
+    "hero_crop": "ok",
+    "photo_verdict": "candidate",
+    "skeptic_photo_verdict": "accept",
+    "note": "Dead red gums reflected at sunset, 2023, colour. Colour is warm, brightness should be measured; dusk image but bright enough by eye."
+   },
+   "wiki": null,
+   "pin_status": "centroid: park/lake-level point, fine for a destination centre; a visitor point (visitor centre/car park) is needed before it is used as a standalone spot",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "distance_km_from_proposed_destination": 16.8,
+   "inside_75pct_span": true,
+   "reason": "Reached from the proposed kinchega-national-park base and 17 km from its centre (span 50 km, 75% = 38 km). Outside every existing destination.",
+   "if_declined": {
+    "action": "standalone",
+    "id": "menindee-lakes",
+    "destination": null,
+    "note": "Standalone spot with the four standalone fields (already present)."
+   }
+  },
+  {
+   "name": "Kinchega Woolshed",
+   "action": "spot-of-proposed-destination",
+   "destination": "kinchega-national-park",
+   "id": "kinchega-national-park-2",
+   "coordinates": {
+    "latitude": -32.474567,
+    "longitude": 142.343235
+   },
+   "coordinates_source": "wikivoyage Kinchega National Park listing own geotag; OSM woolshed -32.474497,142.343256 (agree within 10 m)",
+   "category": "historic",
+   "icon": "🐑",
+   "bio": "An 1875 shearing shed you can walk through, beside the park visitor centre.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 584,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Kinchega_National_Park"
+   ],
+   "photo": {
+    "file": "Kinchega Woolshed (10641718584).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Kinchega_Woolshed_(10641718584).jpg",
+    "width": 2832,
+    "licence": "CC BY 2.0",
+    "hero_crop": {
+     "x": 0.5,
+     "y": 0.45
+    },
+    "photo_verdict": "candidate",
+    "skeptic_photo_verdict": "accept",
+    "note": "Interior of the woolshed shearing floor, 2013; named thing, but interior and portrait: needs top-centred crop. Prefer an exterior if one turns up."
+   },
+   "wiki": null,
+   "pin_status": "ok",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "ticket_candidate": "https://www.nationalparks.nsw.gov.au/things-to-do/historic-buildings-places/kinchega-woolshed (Wikivoyage; unverified)",
+   "distance_km_from_proposed_destination": 2.8,
+   "inside_75pct_span": true,
+   "reason": "Reached from the proposed kinchega-national-park base and 3 km from its centre (span 50 km, 75% = 38 km). Outside every existing destination.",
+   "if_declined": {
+    "action": "standalone",
+    "id": "kinchega-woolshed",
+    "destination": null,
+    "note": "Standalone spot with the four standalone fields (already present)."
+   }
+  },
+  {
+   "name": "Mutawintji Historic Site",
+   "action": "spot-of-proposed-destination",
+   "destination": "mutawintji-national-park",
+   "id": "mutawintji-national-park-1",
+   "coordinates": {
+    "latitude": -31.1691915,
+    "longitude": 142.3809594
+   },
+   "coordinates_source": "approx: Mutawintji National Park (no OSM point found; replace with the visitor point)",
+   "category": "historic",
+   "icon": "🖼️",
+   "bio": "Gorges holding one of NSW's best collections of Aboriginal rock art, visited on a booked guided tour.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/mutawintji-national-park"
+   ],
+   "photo": null,
+   "wiki": null,
+   "pin_status": "hold-for-pin",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "HOLD: pin unresolved; Pipeline C may not apply until a HIGH/MEDIUM pin or the agency car park/entrance is found",
+   "distance_km_from_proposed_destination": 2.5,
+   "inside_75pct_span": true,
+   "reason": "Reached from the proposed mutawintji-national-park base and 3 km from its centre (span 40 km, 75% = 30 km). Outside every existing destination.",
+   "if_declined": {
+    "action": "standalone",
+    "id": "mutawintji-historic-site",
+    "destination": null,
+    "note": "Standalone spot with the four standalone fields (already present)."
+   }
+  },
+  {
+   "name": "Great Cobar Heritage Centre",
+   "action": "spot-of-proposed-destination",
+   "destination": "cobar",
+   "id": "cobar-1",
+   "coordinates": {
+    "latitude": -31.49825,
+    "longitude": 145.842083
+   },
+   "coordinates_source": "Commons file geotag for the building (OSM Nominatim -31.49815,145.84257 within 60 m)",
+   "category": "museum",
+   "icon": "⛏️",
+   "bio": "A museum of Cobar's mining history in the 1910 mines administration building, also the visitor centre.",
+   "hours": "Mon–Fri 8:30 AM – 5:00 PM; Sat–Sun 9:00 AM – 5:00 PM",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": 15,
+   "costMax": 15,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Cobar"
+   ],
+   "photo": {
+    "file": "Great Cobar Heritage Centre, 2017 (03).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Great_Cobar_Heritage_Centre,_2017_(03).jpg",
+    "width": 3138,
+    "licence": "CC BY-SA 4.0",
+    "hero_crop": {
+     "x": 0.5,
+     "y": 0.45
+    },
+    "photo_verdict": "candidate",
+    "skeptic_photo_verdict": "accept",
+    "note": "Whole red-brick building, 2017 colour, clear. Portrait; top-centre crop."
+   },
+   "wiki": null,
+   "pin_status": "ok",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "distance_km_from_proposed_destination": 2.2,
+   "inside_75pct_span": true,
+   "reason": "Reached from the proposed cobar base and 2 km from its centre (span 20 km, 75% = 15 km). Outside every existing destination.",
+   "if_declined": {
+    "action": "standalone",
+    "id": "great-cobar-heritage-centre",
+    "destination": null,
+    "note": "Standalone spot with the four standalone fields (already present)."
+   }
+  },
+  {
+   "name": "Fort Bourke Hill Lookout",
+   "action": "spot-of-proposed-destination",
+   "destination": "cobar",
+   "id": "cobar-2",
+   "coordinates": {
+    "latitude": -31.516772,
+    "longitude": 145.855881
+   },
+   "coordinates_source": "Commons geotag of a photo taken at the lookout; single source, MEDIUM-low (verify on a map)",
+   "category": "viewpoint",
+   "icon": "🔭",
+   "bio": "A viewing platform over the open-cut mine and township of Cobar, open daily.",
+   "hours": "9:00 AM – 5:00 PM",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Cobar"
+   ],
+   "photo": {
+    "file": "Cobar from Fort Bourke Hill lookout 001.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Cobar_from_Fort_Bourke_Hill_lookout_001.JPG",
+    "width": 5203,
+    "licence": "CC BY 3.0",
+    "hero_crop": {
+     "x": 0.5,
+     "y": 0.78,
+     "zoom": 1.8
+    },
+    "photo_verdict": "candidate",
+    "skeptic_photo_verdict": "accept",
+    "note": "View of the pit and town, 2017. Mostly sky, needs zoom with y low."
+   },
+   "wiki": null,
+   "pin_status": "medium-low: Commons geotag of a photo at the lookout, single source; verify on a map",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "distance_km_from_proposed_destination": 3.9,
+   "inside_75pct_span": true,
+   "reason": "Reached from the proposed cobar base and 4 km from its centre (span 20 km, 75% = 15 km). Outside every existing destination.",
+   "if_declined": {
+    "action": "standalone",
+    "id": "fort-bourke-hill-lookout",
+    "destination": null,
+    "note": "Standalone spot with the four standalone fields (already present)."
+   }
+  },
+  {
+   "name": "Brewarrina Aboriginal Fish Traps",
+   "action": "spot-of-proposed-destination",
+   "destination": "brewarrina",
+   "id": "brewarrina-1",
+   "coordinates": {
+    "latitude": -29.958541,
+    "longitude": 146.8556
+   },
+   "coordinates_source": "wikivoyage Brewarrina listing own geotag",
+   "category": "historic",
+   "icon": "🐟",
+   "bio": "Baiame's Ngunnhu, stone fish traps in the Barwon River that may be the oldest human construction.",
+   "hours": null,
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 14240,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Brewarrina"
+   ],
+   "photo": {
+    "file": "Brewarrina fish traps 2023.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Brewarrina_fish_traps_2023.jpg",
+    "width": 4080,
+    "licence": "CC BY-SA 4.0",
+    "hero_crop": {
+     "x": 0.3,
+     "y": 0.5
+    },
+    "photo_verdict": "candidate",
+    "skeptic_photo_verdict": "accept",
+    "note": "Traps across the Barwon, colour 2023. Wide file; crop left."
+   },
+   "wiki": null,
+   "pin_status": "ok",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "ticket_candidate": "https://brewarrinafishtraps.com.au/ (Wikivoyage; unverified); guided tour A$20 adult per Wikivoyage",
+   "distance_km_from_proposed_destination": 0.7,
+   "inside_75pct_span": true,
+   "reason": "Reached from the proposed brewarrina base and 1 km from its centre (span 15 km, 75% = 11 km). Outside every existing destination.",
+   "if_declined": {
+    "action": "standalone",
+    "id": "brewarrina-aboriginal-fish-traps",
+    "destination": null,
+    "note": "Standalone spot with the four standalone fields (already present)."
+   }
+  },
+  {
+   "name": "Brewarrina Aboriginal Culture Museum",
+   "action": "spot-of-proposed-destination",
+   "destination": "brewarrina",
+   "id": "brewarrina-2",
+   "coordinates": {
+    "latitude": -29.9591941,
+    "longitude": 146.8544058
+   },
+   "coordinates_source": "osm Nominatim museum 'Brewarrina Aboriginal Cultural Museum'",
+   "category": "museum",
+   "icon": "🪃",
+   "bio": "An underground museum of Aboriginal artefacts and culture overlooking the Brewarrina fish traps.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Brewarrina"
+   ],
+   "photo": null,
+   "wiki": null,
+   "pin_status": "ok",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "ticket_candidate": "https://brewarrinafishtraps.com.au/ (Wikivoyage; unverified)",
+   "distance_km_from_proposed_destination": 0.7,
+   "inside_75pct_span": true,
+   "reason": "Reached from the proposed brewarrina base and 1 km from its centre (span 15 km, 75% = 11 km). Outside every existing destination.",
+   "if_declined": {
+    "action": "standalone",
+    "id": "brewarrina-aboriginal-culture-museum",
+    "destination": null,
+    "note": "Standalone spot with the four standalone fields (already present)."
+   }
+  },
+  {
+   "name": "Cameron Corner Survey Marker",
+   "action": "standalone",
+   "destination": null,
+   "id": "cameron-corner",
+   "coordinates": {
+    "latitude": -28.999057,
+    "longitude": 141.0
+   },
+   "coordinates_source": "Commons geotagged file median (68 m from Wikipedia -28.9991,140.9993); two sources within 100 m",
+   "category": "landmark",
+   "icon": "📍",
+   "bio": "The survey marker where NSW, Queensland and South Australia meet, beside the Dingo Fence.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 2601,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sturt_National_Park",
+    "https://en.wikivoyage.org/wiki/Cameron_Corner"
+   ],
+   "photo": null,
+   "wiki": null,
+   "pin_status": "ok",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "reason": "About 97 km from Sturt National Park centre and 140 km by road from Tibooburra; inside a destination span only if Sturt were widened to ~130 km, which COVERAGE.md says means it is not part of that destination. Standalone (first-class). Alternative if owner prefers: a spot of proposed sturt-national-park with its span widened; the Dingo Fence is named in the bio instead of being a spot."
+  }
+ ],
+ "proposed_destinations": [
+  {
+   "name": "Broken Hill",
+   "action": "new-destination",
+   "destination": null,
+   "id": "broken-hill",
+   "coordinates": {
+    "latitude": -31.97528,
+    "longitude": 141.448349
+   },
+   "coordinates_source": "wikivoyage:Outback New South Wales (town listing)",
+   "category": "historic",
+   "icon": "⛏️",
+   "bio": "A silver-mining city and the Far West hub, base for Silverton, Mundi Mundi and the outback parks.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 101286,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Broken_Hill",
+    "https://en.wikivoyage.org/wiki/Outback_New_South_Wales"
+   ],
+   "photo": {
+    "file": "Broken Hill panorama from Line of Lode lookout, July 2026 03.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Broken_Hill_panorama_from_Line_of_Lode_lookout,_July_2026_03.jpg",
+    "width": 4608,
+    "licence": "CC BY-SA 4.0",
+    "hero_crop": {
+     "x": 0.35,
+     "y": 0.6,
+     "zoom": 1.5
+    },
+    "photo_verdict": "candidate",
+    "skeptic_photo_verdict": "accept",
+    "note": "Current colour (2026) view over the city from the Line of Lode lookout. Town sits low in the frame: needs zoom."
+   },
+   "wiki": null,
+   "pin_status": "ok",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Broken_Hill",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "proposed_destination": {
+    "id": "broken-hill",
+    "category": "city",
+    "defaultZoomSpanKm": 60,
+    "rank": 3,
+    "timezone": "Australia/Broken_Hill",
+    "note": "Proposal only: needs description, three reasons with photos, tips, best months and header (WRITING.md); not added."
+   },
+   "reason": "Regional hub/base with a guidebook chapter; outside every existing AU destination (nearest: warrumbungle/blue-mountains/sydney, hundreds of km away). Proposed spots: Silverton, Mundi Mundi Lookout, Pro Hart Gallery and Sculpture Park, Line of Lode Miners Memorial, Silverton Mad Max 2 Museum, Royal Flying Doctor Service Bruce Langford Visitor Centre, Living Desert Sculptures, Daydream Mine.",
+   "if_declined": {
+    "action": "standalone",
+    "id": "broken-hill-city",
+    "destination": null,
+    "note": "The place itself becomes a standalone spot; its proposed spots below also become standalone."
+   }
+  },
+  {
+   "name": "Lightning Ridge",
+   "action": "new-destination",
+   "destination": null,
+   "id": "lightning-ridge",
+   "coordinates": {
+    "latitude": -29.379963,
+    "longitude": 147.924151
+   },
+   "coordinates_source": "wikivoyage:Outback New South Wales (town listing)",
+   "category": "historic",
+   "icon": "💎",
+   "bio": "The black-opal capital of NSW, with opal mines, artesian bore baths and coloured car-door trails.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 45508,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lightning_Ridge",
+    "https://en.wikivoyage.org/wiki/Outback_New_South_Wales"
+   ],
+   "photo": {
+    "file": "Open Cut Opal Mine at Lightning Ridge - panoramio.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Open_Cut_Opal_Mine_at_Lightning_Ridge_-_panoramio.jpg",
+    "width": 3153,
+    "licence": "CC BY-SA 3.0",
+    "hero_crop": "ok",
+    "photo_verdict": "candidate",
+    "skeptic_photo_verdict": "accept",
+    "note": "Open-cut opal workings at Lightning Ridge, colour 2013. Subject (pit) is centred; ok."
+   },
+   "wiki": "Lightning Ridge, New South Wales",
+   "pin_status": "ok",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "proposed_destination": {
+    "id": "lightning-ridge",
+    "category": "city",
+    "defaultZoomSpanKm": 30,
+    "rank": 4,
+    "timezone": "Australia/Sydney",
+    "note": "Proposal only: needs description, three reasons with photos, tips, best months and header (WRITING.md); not added."
+   },
+   "reason": "Regional hub/base with a guidebook chapter; outside every existing AU destination (nearest: warrumbungle/blue-mountains/sydney, hundreds of km away). Proposed spots: Lightning Ridge Bore Baths, The Big Opal, Chambers of the Black Hand, Lightning Ridge Bottle House.",
+   "if_declined": {
+    "action": "standalone",
+    "id": "lightning-ridge-town",
+    "destination": null,
+    "note": "The place itself becomes a standalone spot; its proposed spots below also become standalone."
+   }
+  },
+  {
+   "name": "Mungo National Park",
+   "action": "new-destination",
+   "destination": null,
+   "id": "mungo-national-park",
+   "coordinates": {
+    "latitude": -33.748889,
+    "longitude": 143.135556
+   },
+   "coordinates_source": "wikivoyage:Outback New South Wales (park listing)",
+   "category": "nature",
+   "icon": "🏜️",
+   "bio": "A UNESCO Willandra Lakes park of dry lake beds and lunette dunes, with a drive loop and guided tours.",
+   "hours": null,
+   "visitHoursMin": 3,
+   "visitHoursMax": 8,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 8839,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Mungo_National_Park",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/mungo-national-park"
+   ],
+   "photo": {
+    "file": "MungoNationalParkWallsOfChina.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:MungoNationalParkWallsOfChina.jpg",
+    "width": 2400,
+    "licence": "CC BY-SA 4.0",
+    "hero_crop": "ok",
+    "photo_verdict": "candidate",
+    "skeptic_photo_verdict": "accept",
+    "note": "Lunette dunes across the dry lake bed, 2013, colour. For the park."
+   },
+   "wiki": null,
+   "pin_status": "centroid: park/lake-level point, fine for a destination centre; a visitor point (visitor centre/car park) is needed before it is used as a standalone spot",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "proposed_destination": {
+    "id": "mungo-national-park",
+    "category": "park",
+    "defaultZoomSpanKm": 60,
+    "rank": 3,
+    "timezone": "Australia/Sydney",
+    "note": "Proposal only: needs description, three reasons with photos, tips, best months and header (WRITING.md); not added."
+   },
+   "reason": "Every national park is a destination (COVERAGE.md Granularity); outside every existing AU destination (nearest: warrumbungle/blue-mountains/sydney, hundreds of km away). Proposed spots: Walls of China.",
+   "if_declined": {
+    "action": "standalone",
+    "id": "mungo-national-park-site",
+    "destination": null,
+    "note": "The place itself becomes a standalone spot; its proposed spots below also become standalone."
+   }
+  },
+  {
+   "name": "Kinchega National Park",
+   "action": "new-destination",
+   "destination": null,
+   "id": "kinchega-national-park",
+   "coordinates": {
+    "latitude": -32.498333,
+    "longitude": 142.334444
+   },
+   "coordinates_source": "wikivoyage:Outback New South Wales (park listing)",
+   "category": "nature",
+   "icon": "🦢",
+   "bio": "A Darling River park of red gums beside the Menindee Lakes, with an 1875 woolshed.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 776,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Kinchega_National_Park",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/kinchega-national-park"
+   ],
+   "photo": null,
+   "wiki": null,
+   "pin_status": "centroid: park/lake-level point, fine for a destination centre; a visitor point (visitor centre/car park) is needed before it is used as a standalone spot",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "proposed_destination": {
+    "id": "kinchega-national-park",
+    "category": "park",
+    "defaultZoomSpanKm": 50,
+    "rank": 4,
+    "timezone": "Australia/Sydney",
+    "note": "Proposal only: needs description, three reasons with photos, tips, best months and header (WRITING.md); not added."
+   },
+   "reason": "Every national park is a destination (COVERAGE.md Granularity); outside every existing AU destination (nearest: warrumbungle/blue-mountains/sydney, hundreds of km away). Proposed spots: Menindee Lakes, Kinchega Woolshed.",
+   "if_declined": {
+    "action": "standalone",
+    "id": "kinchega-national-park-site",
+    "destination": null,
+    "note": "The place itself becomes a standalone spot; its proposed spots below also become standalone."
+   }
+  },
+  {
+   "name": "Mutawintji National Park",
+   "action": "new-destination",
+   "destination": null,
+   "id": "mutawintji-national-park",
+   "coordinates": {
+    "latitude": -31.1467,
+    "longitude": 142.381
+   },
+   "coordinates_source": "wikivoyage:Outback New South Wales (park listing)",
+   "category": "nature",
+   "icon": "🖼️",
+   "bio": "A Far West park of red gorges and some of the best Aboriginal rock art in NSW.",
+   "hours": null,
+   "visitHoursMin": 3,
+   "visitHoursMax": 8,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 1496,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/mutawintji-national-park",
+    "https://en.wikivoyage.org/wiki/Outback_New_South_Wales"
+   ],
+   "photo": {
+    "file": "Mutawintji National Park.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Mutawintji_National_Park.jpg",
+    "width": 2240,
+    "licence": "CC BY-SA 2.0",
+    "hero_crop": "ok",
+    "photo_verdict": "candidate",
+    "skeptic_photo_verdict": "accept",
+    "note": "Red sandstone gorge, 2010 colour; subject central."
+   },
+   "wiki": null,
+   "pin_status": "centroid: park/lake-level point, fine for a destination centre; a visitor point (visitor centre/car park) is needed before it is used as a standalone spot",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "proposed_destination": {
+    "id": "mutawintji-national-park",
+    "category": "park",
+    "defaultZoomSpanKm": 40,
+    "rank": 4,
+    "timezone": "Australia/Sydney",
+    "note": "Proposal only: needs description, three reasons with photos, tips, best months and header (WRITING.md); not added."
+   },
+   "reason": "Every national park is a destination (COVERAGE.md Granularity); outside every existing AU destination (nearest: warrumbungle/blue-mountains/sydney, hundreds of km away). Proposed spots: Mutawintji Historic Site.",
+   "if_declined": {
+    "action": "standalone",
+    "id": "mutawintji-national-park-site",
+    "destination": null,
+    "note": "The place itself becomes a standalone spot; its proposed spots below also become standalone."
+   }
+  },
+  {
+   "name": "Sturt National Park",
+   "action": "new-destination",
+   "destination": null,
+   "id": "sturt-national-park",
+   "coordinates": {
+    "latitude": -29.215,
+    "longitude": 141.967778
+   },
+   "coordinates_source": "wikivoyage:Outback New South Wales (park listing)",
+   "category": "nature",
+   "icon": "🦘",
+   "bio": "An arid north-west corner of NSW with gibber plains, dunes, granite tors and the road to Cameron Corner.",
+   "hours": null,
+   "visitHoursMin": 3,
+   "visitHoursMax": 8,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 1758,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sturt_National_Park",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/sturt-national-park"
+   ],
+   "photo": null,
+   "wiki": null,
+   "pin_status": "centroid: park/lake-level point, fine for a destination centre; a visitor point (visitor centre/car park) is needed before it is used as a standalone spot",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "proposed_destination": {
+    "id": "sturt-national-park",
+    "category": "park",
+    "defaultZoomSpanKm": 100,
+    "rank": 4,
+    "timezone": "Australia/Sydney",
+    "note": "Proposal only: needs description, three reasons with photos, tips, best months and header (WRITING.md); not added."
+   },
+   "reason": "Every national park is a destination (COVERAGE.md Granularity); outside every existing AU destination (nearest: warrumbungle/blue-mountains/sydney, hundreds of km away). Proposed spots: none kept (a park or town with no kept sub-places).",
+   "if_declined": {
+    "action": "standalone",
+    "id": "sturt-national-park-site",
+    "destination": null,
+    "note": "The place itself becomes a standalone spot; its proposed spots below also become standalone."
+   }
+  },
+  {
+   "name": "Gundabooka National Park",
+   "action": "new-destination",
+   "destination": null,
+   "id": "gundabooka-national-park",
+   "coordinates": {
+    "latitude": -30.509444,
+    "longitude": 145.716389
+   },
+   "coordinates_source": "wikivoyage:Outback New South Wales (park listing)",
+   "category": "nature",
+   "icon": "⛰️",
+   "bio": "A range park near Bourke with Aboriginal rock art sites and bush walks.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 590,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Bourke",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/gundabooka-national-park"
+   ],
+   "photo": null,
+   "wiki": null,
+   "pin_status": "centroid: park/lake-level point, fine for a destination centre; a visitor point (visitor centre/car park) is needed before it is used as a standalone spot",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "proposed_destination": {
+    "id": "gundabooka-national-park",
+    "category": "park",
+    "defaultZoomSpanKm": 40,
+    "rank": 5,
+    "timezone": "Australia/Sydney",
+    "note": "Proposal only: needs description, three reasons with photos, tips, best months and header (WRITING.md); not added."
+   },
+   "reason": "Every national park is a destination (COVERAGE.md Granularity); outside every existing AU destination (nearest: warrumbungle/blue-mountains/sydney, hundreds of km away). Proposed spots: none kept (a park or town with no kept sub-places).",
+   "if_declined": {
+    "action": "standalone",
+    "id": "gundabooka-national-park-site",
+    "destination": null,
+    "note": "The place itself becomes a standalone spot; its proposed spots below also become standalone."
+   }
+  },
+  {
+   "name": "Paroo-Darling National Park",
+   "action": "new-destination",
+   "destination": null,
+   "id": "paroo-darling-national-park",
+   "coordinates": {
+    "latitude": -31.52,
+    "longitude": 143.9
+   },
+   "coordinates_source": "wikivoyage:White Cliffs (park listing)",
+   "category": "nature",
+   "icon": "🦆",
+   "bio": "A remote wetland park of lakes and birdlife on the Paroo and Darling floodplains near White Cliffs.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 843,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/White_Cliffs",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/paroo-darling-national-park"
+   ],
+   "photo": {
+    "file": "Peerylake.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Peerylake.JPG",
+    "width": 3648,
+    "licence": "CC BY-SA 3.0",
+    "hero_crop": {
+     "x": 0.5,
+     "y": 0.65,
+     "zoom": 1.3
+    },
+    "photo_verdict": "candidate",
+    "skeptic_photo_verdict": "accept",
+    "note": "Peery Lake shoreline, 2009 colour; plain but the named wetland. Weak, flag for a better shot."
+   },
+   "wiki": null,
+   "pin_status": "centroid: park/lake-level point, fine for a destination centre; a visitor point (visitor centre/car park) is needed before it is used as a standalone spot",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "proposed_destination": {
+    "id": "paroo-darling-national-park",
+    "category": "park",
+    "defaultZoomSpanKm": 60,
+    "rank": 5,
+    "timezone": "Australia/Sydney",
+    "note": "Proposal only: needs description, three reasons with photos, tips, best months and header (WRITING.md); not added."
+   },
+   "reason": "Every national park is a destination (COVERAGE.md Granularity); outside every existing AU destination (nearest: warrumbungle/blue-mountains/sydney, hundreds of km away). Proposed spots: none kept (a park or town with no kept sub-places).",
+   "if_declined": {
+    "action": "standalone",
+    "id": "paroo-darling-national-park-site",
+    "destination": null,
+    "note": "The place itself becomes a standalone spot; its proposed spots below also become standalone."
+   }
+  },
+  {
+   "name": "Toorale National Park",
+   "action": "new-destination",
+   "destination": null,
+   "id": "toorale-national-park",
+   "coordinates": {
+    "latitude": -30.265,
+    "longitude": 145.401
+   },
+   "coordinates_source": "wikivoyage:Outback New South Wales (park listing)",
+   "category": "nature",
+   "icon": "🏛️",
+   "bio": "A Darling River park with a historic homestead, visited on tours led by Kurnu-Baakandji people.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 504,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Toorale_National_Park"
+   ],
+   "photo": {
+    "file": "Darling River at Toorale NP.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Darling_River_at_Toorale_NP.jpg",
+    "width": 4032,
+    "licence": "CC BY-SA 4.0",
+    "hero_crop": "ok",
+    "photo_verdict": "candidate",
+    "skeptic_photo_verdict": "accept",
+    "note": "Darling River with red gums in the park, 2018 colour."
+   },
+   "wiki": null,
+   "pin_status": "centroid: park/lake-level point, fine for a destination centre; a visitor point (visitor centre/car park) is needed before it is used as a standalone spot",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "proposed_destination": {
+    "id": "toorale-national-park",
+    "category": "park",
+    "defaultZoomSpanKm": 30,
+    "rank": 5,
+    "timezone": "Australia/Sydney",
+    "note": "Proposal only: needs description, three reasons with photos, tips, best months and header (WRITING.md); not added."
+   },
+   "reason": "Every national park is a destination (COVERAGE.md Granularity); outside every existing AU destination (nearest: warrumbungle/blue-mountains/sydney, hundreds of km away). Proposed spots: none kept (a park or town with no kept sub-places).",
+   "if_declined": {
+    "action": "standalone",
+    "id": "toorale-national-park-site",
+    "destination": null,
+    "note": "The place itself becomes a standalone spot; its proposed spots below also become standalone."
+   }
+  },
+  {
+   "name": "Cobar",
+   "action": "new-destination",
+   "destination": null,
+   "id": "cobar",
+   "coordinates": {
+    "latitude": -31.500408,
+    "longitude": 145.819074
+   },
+   "coordinates_source": "wikivoyage:Outback New South Wales (town listing)",
+   "category": "historic",
+   "icon": "🏭",
+   "bio": "A central-outback copper-mining town with an open-cut mine lookout and a heritage streetscape.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 29723,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Cobar",
+    "https://en.wikivoyage.org/wiki/Outback_New_South_Wales"
+   ],
+   "photo": {
+    "file": "Cobar mining.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Cobar_mining.jpg",
+    "width": 2160,
+    "licence": "CC BY-SA 3.0",
+    "hero_crop": "ok",
+    "photo_verdict": "candidate",
+    "skeptic_photo_verdict": "accept",
+    "note": "Open-cut pit at Cobar, colour 2003; pit fills the frame, recognisable. Slight risk it is not labelled Fort Bourke; it is the Cobar pit per title."
+   },
+   "wiki": null,
+   "pin_status": "ok",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "proposed_destination": {
+    "id": "cobar",
+    "category": "city",
+    "defaultZoomSpanKm": 20,
+    "rank": 5,
+    "timezone": "Australia/Sydney",
+    "note": "Proposal only: needs description, three reasons with photos, tips, best months and header (WRITING.md); not added."
+   },
+   "reason": "Regional hub/base with a guidebook chapter; outside every existing AU destination (nearest: warrumbungle/blue-mountains/sydney, hundreds of km away). Proposed spots: Great Cobar Heritage Centre, Fort Bourke Hill Lookout.",
+   "if_declined": {
+    "action": "standalone",
+    "id": "cobar-town",
+    "destination": null,
+    "note": "The place itself becomes a standalone spot; its proposed spots below also become standalone."
+   }
+  },
+  {
+   "name": "Brewarrina",
+   "action": "new-destination",
+   "destination": null,
+   "id": "brewarrina",
+   "coordinates": {
+    "latitude": -29.96244,
+    "longitude": 146.86112
+   },
+   "coordinates_source": "wikivoyage:Outback New South Wales (town listing)",
+   "category": "historic",
+   "icon": "🐟",
+   "bio": "A Barwon River town known for its Aboriginal fish traps and cultural museum.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 12753,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Brewarrina",
+    "https://en.wikivoyage.org/wiki/Outback_New_South_Wales"
+   ],
+   "photo": {
+    "file": "Brewarrina fish traps 2023.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Brewarrina_fish_traps_2023.jpg",
+    "width": 4080,
+    "licence": "CC BY-SA 4.0",
+    "hero_crop": {
+     "x": 0.3,
+     "y": 0.5
+    },
+    "photo_verdict": "candidate",
+    "skeptic_photo_verdict": "accept",
+    "note": "Traps shown across the river bed, 2023. Wide 2.2:1 file; needs left-of-centre crop."
+   },
+   "wiki": null,
+   "pin_status": "ok",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "status": "ready for Pipeline C research",
+   "proposed_destination": {
+    "id": "brewarrina",
+    "category": "city",
+    "defaultZoomSpanKm": 15,
+    "rank": 5,
+    "timezone": "Australia/Sydney",
+    "note": "Proposal only: needs description, three reasons with photos, tips, best months and header (WRITING.md); not added."
+   },
+   "reason": "Regional hub/base with a guidebook chapter; outside every existing AU destination (nearest: warrumbungle/blue-mountains/sydney, hundreds of km away). Proposed spots: Brewarrina Aboriginal Fish Traps, Brewarrina Aboriginal Culture Museum.",
+   "if_declined": {
+    "action": "standalone",
+    "id": "brewarrina-town",
+    "destination": null,
+    "note": "The place itself becomes a standalone spot; its proposed spots below also become standalone."
+   }
+  }
+ ],
+ "proposed_destination_note": "All kept places lie far outside the existing AU destinations (sydney, blue-mountains, warrumbungle); none is a spot of an existing destination. Eleven destinations are PROPOSED for the owner and not added: broken-hill (8 spots), lightning-ridge (4), cobar (2), brewarrina (2), kinchega-national-park (2), mungo-national-park (1), mutawintji-national-park (1), and four parks with no kept spots (sturt, gundabooka, paroo-darling, toorale). Parks with no kept spot are thin destinations: if the owner declines them, each becomes a standalone park spot via its if_declined block (after a visitor-point pin is found). Standalone as placed: Bourke, White Cliffs, Cameron Corner Survey Marker. Every proposed destination also lists each of its places under if_declined as the standalone spot it becomes.",
+ "sturt_note": "Cameron Corner is placed standalone rather than under proposed sturt-national-park: it is about 97 km from the park centre and 140 km by road from Tibooburra, so the destination span would balloon past 130 km. If the owner prefers it under Sturt, widen defaultZoomSpanKm to about 130. The Dingo Fence is named in its bio, not a spot (skeptic reject).",
+ "existing_fixes": [],
+ "existing_spots": "none in this region (existing-spots.json is empty)",
+ "left_to_review_list_not_placed": [
+  {
+   "name": "Silverton Gaol Museum",
+   "coordinates": {
+    "latitude": -31.8852543,
+    "longitude": 141.225158
+   },
+   "coordinates_source": "osm:Nominatim node tourism=museum (Burke Street, Silverton)",
+   "counted_sources": [
+    "https://www.visitnsw.com/destinations/outback-nsw/broken-hill-area/silverton"
+   ],
+   "views": 0,
+   "verdict": "review",
+   "case": "For: Visit NSW (counted) lists Silverton Gaol Museum on its Silverton page, verified by loading the page; an 1889 gaol museum a visitor can enter. Against: one counted source (Wikivoyage Broken Hill/Silverton does not list it; the Wikipedia article only mentions the former gaol), small, and near-duplicate of the Silverton visit. Marginal needs two sources.",
+   "if_approved": "spot of proposed broken-hill (broken-hill-9) or standalone slug silverton-gaol-museum; timezone Australia/Broken_Hill"
+  },
+  {
+   "name": "Silverton Hotel",
+   "coordinates": {
+    "latitude": -31.8848673,
+    "longitude": 141.2224072
+   },
+   "coordinates_source": "osm:Nominatim way tourism=hotel (Layard Street, Silverton)",
+   "counted_sources": [
+    "https://www.visitnsw.com/destinations/outback-nsw/broken-hill-area/silverton"
+   ],
+   "views": 0,
+   "verdict": "review",
+   "case": "For: Visit NSW names it; the film-location pub is the town icon and its photo is the Silverton spot photo. Against: one counted source, a pub/venue (fails \"only a shop, restaurant or office\" unless the film-icon status is accepted), and already the face of the Silverton spot.",
+   "if_approved": "spot of proposed broken-hill (broken-hill-10) or standalone slug silverton-hotel"
+  },
+  {
+   "name": "Menindee",
+   "verdict": "review",
+   "case": "Case for: Wikivoyage base and gateway for Kinchega and the Menindee Lakes, with Visit NSW area page. Against: a very small town whose draw is the lakes and park beyond (Pipiriki pattern), exterior heritage only, limited services. Fold into a proposed Kinchega/Menindee Lakes destination as a spot rather than its own pin.",
+   "suggestion": "Fold into proposed kinchega-national-park as a gateway-town spot (12 km east of the park centre, inside its span), standalone otherwise; coordinates -32.441696, 142.446464 (Wikivoyage town listing); timezone Australia/Sydney."
+  },
+  {
+   "name": "Tibooburra",
+   "verdict": "review",
+   "case": "Case for: the only town for hundreds of km, base for Sturt National Park, Wikivoyage lists stone buildings and pub. Against: one counted source and the draw is the park and Cameron Corner (gateway pattern). Keep as a low-rank gateway only if the owner wants a base for Sturt; otherwise fold into Sturt National Park.",
+   "suggestion": "Fold into proposed sturt-national-park as its gateway-town spot (the town is about 25 km from the park point used here, inside the span; it is at -29.43305556, 142.00805556); standalone otherwise."
+  },
+  {
+   "name": "Mungo Lookout",
+   "verdict": "review",
+   "case": "Case for: Wikivoyage names the sunset lookout over the dry lake bed. Against: one counted source (NPWS does not list it), 15-minute stop; seen only as a view. Review rather than reject now that Mungo is a destination; photo none (no Commons file).",
+   "suggestion": "If approved, spot of proposed mungo-national-park at -33.738329, 143.020824 (photon tourism=viewpoint), 8 km from the park centre; photo none."
+  },
+  {
+   "name": "Narriearra-Caryapundy Swamp National Park",
+   "verdict": "review",
+   "case": "Case for: NPWS and Wikivoyage both list it; wetland birdlife after rain. Against: 4WD-only, very remote, one source describes visits; 'rarely visited'. Owner call; default reject unless the owner wants every NPWS park.",
+   "suggestion": "Default reject (4WD-only, rarely visited, one source). If the owner wants every NPWS park it would be a proposed destination at -29.215, 142.53."
+  },
+  {
+   "name": "Balranald",
+   "verdict": "review",
+   "case": "Overlaps nsw-riverina-murray (Murrumbidgee town). Wikivoyage x2 and Visit NSW. Reconcile there: decide one owner of Balranald, Yanga and the Mungo gateway. Not a Far West pin until then.",
+   "suggestion": "Decided in region nsw-riverina-murray (see curation/nz-rest/nsw-overlaps.md); not a Far West pin."
+  },
+  {
+   "name": "Yanga National Park",
+   "verdict": "review (verdicts) / keep in riverina-murray",
+   "case": "Overlaps nsw-riverina-murray; NPWS plus Wikivoyage both count, woolsheds and wetlands, minutes from Balranald. Likely keep, but decide with the Riverina pass.",
+   "suggestion": "Riverina-Murray owns it: its verdicts.json there keeps it."
+  },
+  {
+   "name": "Wentworth",
+   "verdict": "reject here",
+   "case": "Belongs to Riverina-Murray (Murray-Darling junction, Old Wentworth Gaol); judge there. Note for reconciliation.",
+   "suggestion": "Riverina-Murray owns it."
+  }
+ ],
+ "hold_for_pin": {
+  "unresolved": [
+   "Chambers of the Black Hand",
+   "Mutawintji Historic Site"
+  ],
+  "approx_pin_candidates_all": [
+   "Red Top Lookout",
+   "Mallee Stop Walk",
+   "Mungo Foreshore Walk",
+   "Mungo Walls of China Guided Tour",
+   "Mutawintji Historic Site",
+   "Mutawintji Gorge Walk",
+   "Thaaklatjika Mingkana Walk",
+   "Mount Wood Summit Walk",
+   "Gorge Loop Road",
+   "Fort Grey Loop Walk",
+   "Tibooburra Granite Tors",
+   "Dingo Fence",
+   "Yapa (Mulgowan) Art Site",
+   "Valley of the Eagles Walk",
+   "White Cliffs Heritage Trail",
+   "White Cliffs Opal Fossicking",
+   "Lightning Ridge Water Theme Park",
+   "Australian Opal Centre",
+   "Walk In Mine, Lightning Ridge",
+   "Chambers of the Black Hand",
+   "Car Door Explorer",
+   "Amigo's Castle",
+   "Lightning Ridge Easter Festival",
+   "Coopers Cottage",
+   "Cobar Mining Memorial",
+   "Cobar Big Beer Can",
+   "Cobar Memorial Swimming Pool",
+   "Festival of the Miners' Ghost",
+   "Brewarrina Aboriginal Cultural Tour",
+   "Silverton Heritage Walk",
+   "Broken Hill Underground Mine Tours",
+   "Balranald Heritage and Historical Trail",
+   "Military Commemorative Trail, Balranald",
+   "Darling River Drive",
+   "Caryapundy Tank Bird Hide",
+   "Pooncarie Field Day",
+   "Wilcannia Old Bridge",
+   "Wilcannia Heritage Buildings"
+  ],
+  "approx_kept": [
+   "Mutawintji Historic Site",
+   "Chambers of the Black Hand"
+  ],
+  "approx_rejected_not_placed": [
+   "Red Top Lookout",
+   "Mallee Stop Walk",
+   "Mungo Foreshore Walk",
+   "Mungo Walls of China Guided Tour",
+   "Mutawintji Gorge Walk",
+   "Thaaklatjika Mingkana Walk",
+   "Mount Wood Summit Walk",
+   "Gorge Loop Road",
+   "Fort Grey Loop Walk",
+   "Tibooburra Granite Tors",
+   "Dingo Fence",
+   "Yapa (Mulgowan) Art Site",
+   "Valley of the Eagles Walk",
+   "White Cliffs Heritage Trail",
+   "White Cliffs Opal Fossicking",
+   "Lightning Ridge Water Theme Park",
+   "Australian Opal Centre",
+   "Walk In Mine, Lightning Ridge",
+   "Car Door Explorer",
+   "Amigo's Castle",
+   "Lightning Ridge Easter Festival",
+   "Coopers Cottage",
+   "Cobar Mining Memorial",
+   "Cobar Big Beer Can",
+   "Cobar Memorial Swimming Pool",
+   "Festival of the Miners' Ghost",
+   "Brewarrina Aboriginal Cultural Tour",
+   "Silverton Heritage Walk",
+   "Broken Hill Underground Mine Tours",
+   "Balranald Heritage and Historical Trail",
+   "Military Commemorative Trail, Balranald",
+   "Darling River Drive",
+   "Caryapundy Tank Bird Hide",
+   "Pooncarie Field Day",
+   "Wilcannia Old Bridge",
+   "Wilcannia Heritage Buildings"
+  ],
+  "weak_pins_to_check": [
+   "Mungo National Park",
+   "Kinchega National Park",
+   "Mutawintji National Park",
+   "Sturt National Park",
+   "Gundabooka National Park",
+   "Paroo-Darling National Park",
+   "Toorale National Park",
+   "Daydream Mine",
+   "Menindee Lakes",
+   "Fort Bourke Hill Lookout"
+  ],
+  "note": "Mutawintji Historic Site and Chambers of the Black Hand have no resolved pin (LOW): take the NPWS Historic Site car park and the operator entrance; Pipeline C must not apply them with the current approx point. The other approx pins belong to rejected candidates and are not placed. Parks and Menindee Lakes carry a centroid that suits a destination centre, not a standalone visitor pin."
+ },
+ "held_for_photo": [
+  "Kinchega National Park",
+  "Sturt National Park",
+  "Gundabooka National Park",
+  "White Cliffs",
+  "Daydream Mine",
+  "The Big Opal",
+  "Chambers of the Black Hand",
+  "Lightning Ridge Bottle House",
+  "Mutawintji Historic Site",
+  "Brewarrina Aboriginal Culture Museum",
+  "Cameron Corner Survey Marker"
+ ],
+ "photo_note": "Every photo is a candidate from skeptic.json, photo_verdict \"candidate\" (skeptic_photo_verdict kept alongside) until Lens judges it; hero_crop carried over. White Cliffs, Kinchega NP, Sturt NP etc. have none: search outside Commons.",
+ "nsw_overlaps_note": "Appended to curation/nz-rest/nsw-overlaps.md."
+}

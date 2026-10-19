@@ -1,0 +1,393 @@
+{
+ "region": "nsw-blue-mountains-central-west",
+ "inside_destinations": 1,
+ "inside_existing_destinations": 1,
+ "inside_proposed_destinations": 24,
+ "standalone": 5,
+ "new_destinations": 8,
+ "destination_self_places": [
+  "Bathurst",
+  "Orange",
+  "Dubbo",
+  "Mudgee",
+  "Lithgow",
+  "Cowra",
+  "Parkes"
+ ],
+ "standalone_if_all_proposals_declined": 37,
+ "existing_kept_unchanged": 22,
+ "held_for_pin": [
+  "Mount Panorama Circuit",
+  "Orange Wine Region",
+  "Mudgee Wine Region",
+  "Plane on a Stick",
+  "Six Foot Track",
+  "Wollemi National Park"
+ ],
+ "lowest_kept": [
+  {
+   "name": "Kanangra Walls",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Plane on a Stick",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Royal Flying Doctor Service Visitor Experience",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Utes in the Paddock",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Mudgee Wine Region",
+   "views": 768,
+   "counted_sources": 1
+  },
+  {
+   "name": "Coolah Tops National Park",
+   "views": 807,
+   "counted_sources": 1
+  },
+  {
+   "name": "Age of Fishes Museum",
+   "views": 833,
+   "counted_sources": 1
+  },
+  {
+   "name": "Orange Wine Region",
+   "views": 848,
+   "counted_sources": 2
+  },
+  {
+   "name": "Weddin Mountains National Park",
+   "views": 890,
+   "counted_sources": 1
+  },
+  {
+   "name": "Australian Fossil and Mineral Museum",
+   "views": 946,
+   "counted_sources": 1
+  },
+  {
+   "name": "Abercrombie River National Park",
+   "views": 1263,
+   "counted_sources": 1
+  },
+  {
+   "name": "National Motor Racing Museum",
+   "views": 1335,
+   "counted_sources": 1
+  }
+ ],
+ "lowest_kept_note": "Eleven or more kept places tie at 0 views (no Wikipedia article or a redirect) with one or two counted sources; every left-out candidate with any views is therefore listed below as stronger. Each has a concrete 'What qualifies' reason (event, service town with no named draw, private or limited opening, part of a larger spot, civic building, no counted source).",
+ "stronger_left_out": [
+  {
+   "name": "Bathurst 1000",
+   "views": 155252,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Event, not a permanent spot. (no coordinates)"
+  },
+  {
+   "name": "Lake Cargelligo",
+   "views": 47613,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small service town or village with no distinct visitor draw named by a visitor source."
+  },
+  {
+   "name": "Forbes",
+   "views": 23429,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "RESOLVED from review: farming service town; Wikivoyage's sights are a billabong, a $14 private motor museum and the plane on a stick, none a headline. The plane stays as its own quirky-icon spot; the town adds nothing."
+  },
+  {
+   "name": "West Wyalong",
+   "views": 17432,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small service town or village with no distinct visitor draw named by a visitor source."
+  },
+  {
+   "name": "Oberon",
+   "views": 16834,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small highland town; draw is Jenolan, not the town; museum has limited days."
+  },
+  {
+   "name": "Condobolin",
+   "views": 13848,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small service town or village with no distinct visitor draw named by a visitor source."
+  },
+  {
+   "name": "Gilgandra",
+   "views": 13296,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small service town or village with no distinct visitor draw named by a visitor source."
+  },
+  {
+   "name": "Grenfell",
+   "views": 13061,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small service town or village with no distinct visitor draw named by a visitor source."
+  },
+  {
+   "name": "Blayney",
+   "views": 9025,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small service town or village with no distinct visitor draw named by a visitor source."
+  },
+  {
+   "name": "Kandos",
+   "views": 8826,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small service town or village with no distinct visitor draw named by a visitor source."
+  },
+  {
+   "name": "Sofala",
+   "views": 8691,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Small service town or village with no distinct visitor draw named by a visitor source."
+  },
+  {
+   "name": "Small Arms Factory",
+   "views": 8043,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "RESOLVED from review: guns no longer displayed since the 2024 break-in and limited opening; the Wikivoyage listing is the only source."
+  },
+  {
+   "name": "Bells Line of Road",
+   "views": 7956,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Roadside viewpoint, drive or cycle route rather than a distinct place with a half-hour visit. (no coordinates)"
+  },
+  {
+   "name": "Millthorpe",
+   "views": 7157,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small service town or village with no distinct visitor draw named by a visitor source."
+  },
+  {
+   "name": "Coolah",
+   "views": 6017,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small service town or village with no distinct visitor draw named by a visitor source."
+  },
+  {
+   "name": "Megalong Valley",
+   "views": 3361,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Stays review: one Wikivoyage listing, mostly operators and horse riding, no single sight, and no pin yet. Inside the Blue Mountains span (11 km). Reject if no second source."
+  },
+  {
+   "name": "Ophir Reserve",
+   "views": 3185,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Stays review: site of Australia's first payable gold find (1851), gold panning, picnic areas; one Wikivoyage source and a short visit. Placed with Orange if kept."
+  },
+  {
+   "name": "Lucknow",
+   "views": 3099,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small service town or village with no distinct visitor draw named by a visitor source."
+  },
+  {
+   "name": "Parkes Elvis Festival",
+   "views": 3014,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Event, not a permanent spot."
+  },
+  {
+   "name": "Stuart Town",
+   "views": 2979,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small service town or village with no distinct visitor draw named by a visitor source."
+  },
+  {
+   "name": "Abercrombie House",
+   "views": 2978,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "RESOLVED from review: limited open days, private estate history; one Wikivoyage source."
+  },
+  {
+   "name": "Lachlan Valley Railway",
+   "views": 2882,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Under restoration or a small add-on to the visitor centre."
+  },
+  {
+   "name": "Burrendong Dam",
+   "views": 2615,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted visitor source; a dam and arboretum used locally. (no coordinates)"
+  },
+  {
+   "name": "Everglades Gardens",
+   "views": 2413,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Stays review: historic Leura garden open to the public (Wikipedia, OSM) but no counted visitor source was read here; check the Leura Wikivoyage page and the garden's own hours before a decision."
+  },
+  {
+   "name": "Mayfield Garden",
+   "views": 2063,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "RESOLVED from review: privately owned, seasonal opening, one source."
+  },
+  {
+   "name": "Dundullimal Homestead",
+   "views": 1531,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "RESOLVED from review: Wikivoyage lists Tue-Sat 11-3 and $9.50; a National Trust slab homestead with limited open days and an hour's visit; one source."
+  },
+  {
+   "name": "Lake Canobolas",
+   "views": 1339,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "RESOLVED from review: single Wikivoyage mention of a local lake; a locals' recreation spot."
+  },
+  {
+   "name": "Goobang National Park",
+   "views": 943,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "RESOLVED from review: only a Wikivoyage vicinity marker and the NPWS page; no named walk, lookout or feature in either, dry forest rarely visited, nothing for half an hour that a source names."
+  },
+  {
+   "name": "Ben Chifley's House",
+   "views": 870,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "RESOLVED from review: limited open days, a house museum; one source."
+  },
+  {
+   "name": "Carcoar Dam",
+   "views": 811,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Tiny sub-attraction within the village of Carcoar; not a distinct draw."
+  },
+  {
+   "name": "Oberon Dam",
+   "views": 651,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Small museum with limited days, or rail trail/dam with no counted visitor source."
+  },
+  {
+   "name": "Cowra Wine Region",
+   "views": 239,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "RESOLVED from review: single Wikivoyage mention (40-plus vineyards), no named flagship cellar door; fold into the Cowra town entry. Not a distinct draw beside the Garden and Breakout site."
+  },
+  {
+   "name": "Carillon War Memorial",
+   "views": 156,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Church, memorial, civic building, part of Mount Panorama, or only open one Sunday a month."
+  }
+ ],
+ "review_list_for_owner": [
+  "Pantoneys Crown",
+  "Megalong Valley",
+  "Everglades Gardens",
+  "Japanese and Australian War Cemeteries",
+  "Ophir Reserve"
+ ],
+ "strongest_outsiders": [
+  {
+   "name": "Mount Panorama Circuit",
+   "views": 113172,
+   "counted_sources": 1,
+   "outcome": "kept; outside every existing destination span, placed in a proposed destination"
+  },
+  {
+   "name": "Orange",
+   "views": 80538,
+   "counted_sources": 1,
+   "outcome": "kept; outside every existing destination span, placed in a proposed destination"
+  },
+  {
+   "name": "Dubbo",
+   "views": 77593,
+   "counted_sources": 1,
+   "outcome": "kept; outside every existing destination span, placed in a proposed destination"
+  },
+  {
+   "name": "Bathurst",
+   "views": 71978,
+   "counted_sources": 1,
+   "outcome": "kept; outside every existing destination span, placed in a proposed destination"
+  },
+  {
+   "name": "Mudgee",
+   "views": 40116,
+   "counted_sources": 1,
+   "outcome": "kept; outside every existing destination span, placed in a proposed destination"
+  },
+  {
+   "name": "Cowra Breakout Site",
+   "views": 37883,
+   "counted_sources": 1,
+   "outcome": "kept; outside every existing destination span, placed in a proposed destination"
+  },
+  {
+   "name": "Parkes Observatory",
+   "views": 33171,
+   "counted_sources": 1,
+   "outcome": "kept; outside every existing destination span, placed in a proposed destination"
+  },
+  {
+   "name": "Lithgow",
+   "views": 30999,
+   "counted_sources": 1,
+   "outcome": "kept; outside every existing destination span, placed in a proposed destination"
+  },
+  {
+   "name": "Parkes",
+   "views": 29436,
+   "counted_sources": 1,
+   "outcome": "kept; outside every existing destination span, placed in a proposed destination"
+  },
+  {
+   "name": "Cowra",
+   "views": 28549,
+   "counted_sources": 1,
+   "outcome": "kept; outside every existing destination span, placed in a proposed destination"
+  }
+ ],
+ "benchmark": "No NZ benchmark place lies in this region. Region-relevant checks: the Bathurst 1000, Parkes Elvis Festival and other events are rejected as occasions (Bathurst 1000 at 155,252 views is the strongest rejected); Mount Panorama Circuit, the permanent venue, is kept; the Carillon War Memorial, Lachlan Valley Railway (restoration) and Small Arms Factory (limited opening) fail the visitor test; no vehicle or operator is placed (the Dish, not a tour); Jenolan Caves is kept with its closure to early 2027 rather than dropped; small service towns (Forbes, Oberon, Grenfell, Blayney and others) are rejected with no named draw while Forbes' Plane on a Stick is kept as a quirky icon and held for a pin."
+}

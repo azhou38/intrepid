@@ -1,0 +1,647 @@
+{
+ "spots": {
+  "mount-panorama-circuit": {
+   "name": "Mount Panorama Circuit",
+   "icon": "🏎️",
+   "category": "landmark",
+   "bio": "Public road around Wahluu, drivable outside race periods, with views and a boardwalk at the top.",
+   "hours": "Open to public traffic outside race periods",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": "https://www.bathurstregion.com.au/mount-panorama-wahluu/",
+   "coordinates": { "latitude": -33.4484619, "longitude": 149.5502858 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "ticketUrl is the Bathurst Region Tourism page (loaded); no operator page of its own was found.",
+     "Pin is OSM footway 842363831 'Mount Panorama Boardwalk' (MEDIUM); tourism page calls the top boardwalk the 'Skyline Boardwalk', match unconfirmed. Moved 578 m from the placement loop centroid.",
+     "Wahluu is the Wiradjuri name and the mountain is significant to Wiradjuri people (tourism page). Speed limit and one-way rules not checked; race-week closures are events, not specialClosures.",
+     "Free: public road, no charge stated."
+   ]
+  },
+  "national-motor-racing-museum": {
+   "name": "National Motor Racing Museum",
+   "icon": "🏁",
+   "category": "museum",
+   "bio": "Motor racing museum beside the Mount Panorama track on Panorama Avenue, with an Immersive Room.",
+   "hours": "9:00 AM – 4:30 PM",
+   "closedDays": [2],
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 15,
+   "costMax": 15,
+   "currency": "AUD",
+   "ticketUrl": "https://museumsbathurst.com.au/nmrm/",
+   "coordinates": { "latitude": -33.440054, "longitude": 149.561998 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "Adult A$15 (concession 11, child 7.50, family 39), prices valid to 30 June 2027. Closed Tuesdays but open 7 days in NSW school holidays, so closedDays is not absolute; closed Christmas Day, Boxing Day, New Year's Day; access may be restricted during race events.",
+     "Pin MEDIUM (OSM museum W80890306)."
+   ]
+  },
+  "australian-fossil-and-mineral-museum": {
+   "name": "Australian Fossil and Mineral Museum",
+   "icon": "🦴",
+   "category": "museum",
+   "bio": "Council-run museum of fossils and minerals on Howick Street in Bathurst.",
+   "hours": "9:00 AM – 4:30 PM",
+   "closedDays": [3],
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 15,
+   "costMax": 15,
+   "currency": "AUD",
+   "ticketUrl": "https://museumsbathurst.com.au/australian-fossil-and-mineral-museum-plan-a-visit/",
+   "coordinates": { "latitude": -33.41698, "longitude": 149.580596 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "Adult A$15 (concession 11, child 7.50, family 39), valid to 30 June 2027. Closed Wednesdays but open 7 days in NSW school holidays; closed Christmas Day, Boxing Day, New Year's Day. 224 Howick St.",
+     "Bio is deliberately plain: research gave no collection detail (placement's '2000 specimens' and Sommerville Collection name were not in research, so left out). Pin HIGH."
+   ]
+  },
+  "bathurst": {
+   "name": "Bathurst",
+   "icon": "🏛️",
+   "category": "historic",
+   "bio": "Central West city that holds Mount Panorama, a motor racing museum and a fossil and mineral museum.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": { "latitude": -33.4166482, "longitude": 149.5803725 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "No ticketUrl: town with no single steward. Visitor Information Centre is at 1 Kendall Avenue; regional site bathurstregion.com.au loaded but not used.",
+     "Pin is OSM place=city node N172987017 (MEDIUM, town centre). Overlaps its own spots; keep only if no Bathurst destination is created."
+   ]
+  },
+  "mount-canobolas": {
+   "name": "Mount Canobolas",
+   "icon": "🌋",
+   "category": "nature",
+   "bio": "Dormant volcano near Orange, last erupted 11 million years ago, with walking tracks and picnic places.",
+   "hours": "Open 24 hours (may close for poor weather or fire danger)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/mount-canobolas-state-conservation-area",
+   "coordinates": { "latitude": -33.3443, "longitude": 148.98221 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "Free is inferred: no per-vehicle or entry fee on the NPWS page. Camping (campground in the area) is extra. Summit road hours not checked.",
+     "Placement's 'highest point west of the Great Dividing Range' was not re-read in a source, so left out. Pin HIGH (OSM peak plus Wikivoyage)."
+   ]
+  },
+  "orange-wine-region": {
+   "name": "Orange Wine Region",
+   "wiki": "Orange wine region",
+   "icon": "🍷",
+   "category": "nature",
+   "bio": "Wine region above 600 m around Orange, planted from 1980, with cellar doors open for tasting.",
+   "hours": "Cellar-door hours vary by winery",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": true,
+   "coordinates": { "latitude": -33.316104, "longitude": 149.146634 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "No ticketUrl: winesoforange.com.au serves a spam page and the other regional sites did not load.",
+     "Pin is Highland Heritage Estate, 4968 Mitchell Hwy (OSM N1346713295 plus Wikivoyage listing, 60 m apart; HIGH for the winery, but a single winery standing in for the region). Region centroid was 10 km away and round.",
+     "Free covers the region itself; tasting fees per cellar door were not checked. Hours text is a qualifier from research, not a researched range: confirm per winery.",
+     "wiki 'Orange wine region' is the Wikipedia article cited in research (GI region in City of Orange, Cabonne and Blayney)."
+   ]
+  },
+  "carcoar": {
+   "name": "Carcoar",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Small heritage village of about 270 people, the third oldest settlement west of the Great Dividing Range.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": { "latitude": -33.611294, "longitude": 149.139503 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "No ticketUrl: carcoarvillage.com is the Carcoar Show society, not a village steward. Population is the 2021 figure (Wikivoyage).",
+     "Museum hours and Carcoar Dam (WaterNSW) not checked. Pin HIGH."
+   ]
+  },
+  "orange-nsw": {
+   "name": "Orange",
+   "icon": "🍂",
+   "category": "historic",
+   "bio": "Small Central West city known for its food, wine and autumn colour.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": { "latitude": -33.2820463, "longitude": 149.0971567 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "No ticketUrl: town with no single steward.",
+     "Pin is the OSM place=city relation centroid (MEDIUM, administrative). Overlaps Mount Canobolas and Orange Wine Region."
+   ]
+  },
+  "taronga-western-plains-zoo": {
+   "name": "Taronga Western Plains Zoo",
+   "icon": "🦒",
+   "category": "entertainment",
+   "bio": "Zoo on Obley Road in Dubbo, open every day of the year, with bike, cart and pedal-boat hire.",
+   "hours": "9:00 AM – 4:00 PM",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "costMin": 57,
+   "costMax": 57,
+   "currency": "AUD",
+   "ticketUrl": "https://www.taronga.org.au/dubbo-zoo",
+   "coordinates": { "latitude": -32.27858, "longitude": 148.58176 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "Hours are the Zoo Circuit (9-4); Savannah Visitor Plaza opens 8:30. Open 365 days.",
+     "A$57 adult gate (from A$51.30 online) buys 2-consecutive-day entry; concession 43, child 33, under 4 free. A cheaper single-day price was not shown.",
+     "Pin MEDIUM (Wikivoyage listing point, 400 m from the OSM polygon centroid). Placement's 'open-range' claim was not in research, so left out."
+   ]
+  },
+  "old-dubbo-gaol": {
+   "name": "Old Dubbo Gaol",
+   "icon": "⛓️",
+   "category": "museum",
+   "bio": "Former gaol on Macquarie Street in Dubbo, open seven days, with immersive theatrical displays.",
+   "hours": "9:00 AM – 5:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 24.5,
+   "costMax": 24.5,
+   "currency": "AUD",
+   "ticketUrl": "https://www.olddubbogaol.com.au/",
+   "coordinates": { "latitude": -32.245863, "longitude": 148.6024 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "Adult A$24.50, child A$9; closed Christmas Day. 90 Macquarie Street.",
+     "'Immersive theatrical displays' comes from the placement skeptic quoting the official site; it is not in research.json, so re-read the site before shipping. Pin MEDIUM."
+   ]
+  },
+  "rfds-visitor-experience-dubbo": {
+   "name": "Royal Flying Doctor Service Visitor Experience",
+   "icon": "🛩️",
+   "category": "museum",
+   "bio": "The Royal Flying Doctor Service's Dubbo base, with a hands-on visitor experience at the airport.",
+   "hours": "Mon–Fri 9:00 AM – 5:00 PM; Sat 9:00 AM – 4:00 PM; Sun 9:00 AM – 3:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 25,
+   "costMax": 25,
+   "currency": "AUD",
+   "ticketUrl": "https://dubbo.experience.flyingdoctor.org.au/",
+   "coordinates": { "latitude": -32.216418, "longitude": 148.569928 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "Adult A$25, concession 20, child (4-15) 15. Public holidays 9-3; closed Christmas Day, Boxing Day, New Year's Day, Anzac Day and Good Friday.",
+     "'Hands-on' and 'at the airport' are from the placement bio, not research. A VisitNSW-linked listing shows an older A$18 adult price; operator page used. No wiki set (the generic article would give the wrong photo). Pin MEDIUM."
+   ]
+  },
+  "wellington-caves": {
+   "name": "Wellington Caves",
+   "icon": "🦇",
+   "category": "nature",
+   "bio": "Guided-only tours of Cathedral Cave and Gaden Cave, with a Discovery Lab, near Wellington.",
+   "hours": "9:00 AM – 4:15 PM, guided tours only",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "costMin": 32.5,
+   "costMax": 32.5,
+   "currency": "AUD",
+   "ticketUrl": "https://www.wellingtoncaves.com.au/",
+   "coordinates": { "latitude": -32.621128, "longitude": 148.938336 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "Open 7 days except Christmas Day. From A$32.50 adult (concession 28.50, child 4-16 A$16); minimum two paying adults per tour; Discovery Lab A$16.50. Which tour the 'from' price is for was not stated.",
+     "Helmets provided; enclosed non-slip footwear required. Run by Dubbo Regional Council. Pin MEDIUM (visitor centre)."
+   ]
+  },
+  "dubbo": {
+   "name": "Dubbo",
+   "icon": "🦓",
+   "category": "historic",
+   "bio": "Orana's largest centre, home to Taronga Western Plains Zoo and Old Dubbo Gaol.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": { "latitude": -32.2478964, "longitude": 148.6026502 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "No ticketUrl: town with no single steward. dubboregion.com.au returned a captcha (not used).",
+     "Pin is the OSM place=city relation centroid (MEDIUM), about 150 m from Old Dubbo Gaol."
+   ]
+  },
+  "gulgong": {
+   "name": "Gulgong",
+   "icon": "🏚️",
+   "category": "historic",
+   "bio": "Former gold-mining town where the Henry Lawson Centre stands at 147 Mayne Street.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": { "latitude": -32.3624999, "longitude": 149.5335213 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "No ticketUrl: town; visitmudgeeregion.com.au covers the whole region.",
+     "Research says Wikivoyage calls it the 'birthplace of poet Henry Lawson'. That is not repeated in the bio: from general knowledge Lawson was born near Grenfell, so check before using. Museum hours not checked. Pin HIGH."
+   ]
+  },
+  "mudgee": {
+   "name": "Mudgee",
+   "icon": "🍇",
+   "category": "historic",
+   "bio": "Historic township with a host of small wineries, centred on St Mary's Church and the clock tower.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": { "latitude": -32.59067, "longitude": 149.58396 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "No ticketUrl: town with no single steward.",
+     "Pin is Wikivoyage's St Mary's Church listing, 'right next to the clock tower in the middle of town' (MEDIUM, single source); OSM locality centroid is 800 m away. Placement's round point was 2.4 km off."
+   ]
+  },
+  "zig-zag-railway": {
+   "name": "Zig Zag Railway",
+   "icon": "🚂",
+   "category": "entertainment",
+   "bio": "Steam railway running four daily rides from Clarence, lasting 45 minutes to 1 hour 45 minutes.",
+   "hours": "9:30 AM – 4:30 PM",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "costMin": 46.5,
+   "costMax": 46.5,
+   "currency": "AUD",
+   "ticketUrl": "https://zigzagrailway.com.au/",
+   "coordinates": { "latitude": -33.47733, "longitude": 150.221149 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "Site and cafe open 9:30-4:30, 7 days; 840 Chifley Road, Clarence.",
+     "Adult (16+) A$46.50 (concession 41.50, child 30, family 140) from a table dated 1 January 2025; the 2026 price is not shown. Departure times not captured.",
+     "Pin HIGH (OSM historic railway way plus Wikivoyage). Reached via Lithgow, not a Blue Mountains spot."
+   ]
+  },
+  "glow-worm-tunnel": {
+   "name": "Glow Worm Tunnel",
+   "icon": "🐛",
+   "category": "hike",
+   "bio": "Walk to a 387 m former Wolgan Valley railway tunnel in Wollemi National Park, home to glow-worms.",
+   "hours": "Open 24 hours; 4WD recommended; park fire ban until 31 Mar 2027",
+   "visitHoursMin": 2,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/glow-worm-tunnel-walking-track",
+   "coordinates": { "latitude": -33.23833, "longitude": 150.226275 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "Bio quotes no walk distance because sources disagree: NPWS says 1.5 km to the entrance, Wikivoyage 1 km, and NPWS lists 6 km return, Grade 3. 387 m is the tunnel's length.",
+     "Access is unsealed gravel (State Mine Gully Road to Glowworm Tunnel Road): 2WD possible in dry weather, 4WD highly recommended, 4WD only when wet. Tunnel-to-Newnes section may close after heavy rain.",
+     "NPWS alerts read 19 Oct 2026: State Mine Gully Road closed 19-23 Oct 2026 for roadworks; Bungleboori site closed for construction until December 2026 with single-lane traffic on Glowworm Tunnel Road; park fire ban 1 Oct 2026 to 31 Mar 2027. Re-check before release.",
+     "Free is inferred (no entry fee on NPWS pages). Pinned at the tunnel (OSM way 143680523, MEDIUM), trailhead -33.24793,150.22404. No wiki set: placement suggested 'Glowworm Tunnel' but research did not confirm it."
+   ]
+  },
+  "gardens-of-stone-national-park": {
+   "name": "Gardens of Stone National Park",
+   "icon": "🪨",
+   "category": "nature",
+   "bio": "Rock pagodas, sandstone cliffs and canyons in a World Heritage park, with the Pantoneys Crown mesa.",
+   "hours": "Open 24 hours (may close for poor weather or fire danger)",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/gardens-of-stone-national-park",
+   "coordinates": { "latitude": -33.236379, "longitude": 150.09475 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "Free is inferred: no entry or per-vehicle fee on the NPWS page.",
+     "Pin is OSM 'Baal Bone Gap' (natural=gap, MEDIUM); NPWS calls the Baal Bone Gap picnic area 'the jewel in the crown'. Placement centroid was 10 km off. Road access not checked.",
+     "Pantoneys Crown is named only in the bio as scenery; it stays in review as its own spot. The national park is separate from the Lost City SCA near Lithgow."
+   ]
+  },
+  "capertee-valley": {
+   "name": "Capertee Valley",
+   "icon": "🏞️",
+   "category": "viewpoint",
+   "bio": "Described as one of the widest enclosed canyons, seen from Pearsons Lookout near Glen Davis.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": { "latitude": -33.166505, "longitude": 149.998033 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "No ticketUrl: no single steward found; the Lithgow Tourism page cited in placement was not re-loaded.",
+     "Pin is OSM viewpoint 'Pearsons Lookout' (MEDIUM). Lookout road condition and the 'widest enclosed canyons' claim (Wikipedia) were not re-read."
+   ]
+  },
+  "lithgow": {
+   "name": "Lithgow",
+   "icon": "🏔️",
+   "category": "historic",
+   "bio": "Gateway town to Zig Zag Railway, Glow Worm Tunnel and Gardens of Stone.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": { "latitude": -33.481536, "longitude": 150.1564887 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "No ticketUrl: council site is not a tourism steward.",
+     "Pin is OSM place=town node N78078822 (MEDIUM). Overlaps the three spots it names."
+   ]
+  },
+  "kanangra-walls": {
+   "name": "Kanangra Walls",
+   "icon": "⛰️",
+   "category": "viewpoint",
+   "bio": "Sheer sandstone cliffs in Kanangra-Boyd National Park, in the Greater Blue Mountains World Heritage Area.",
+   "hours": "Open 24 hours (may close for poor weather or fire danger)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/kanangra-boyd-national-park",
+   "coordinates": { "latitude": -33.984886, "longitude": 150.111245 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "Free is inferred: no entry fee on the NPWS park page. Park fire ban (campfires) 1 Oct 2026 to 31 Mar 2027. Road surface (gravel) and closures not confirmed.",
+     "ticketUrl is the park page; there is no lookout page (guessed URL 404s).",
+     "Pin is the OSM lookout (MEDIUM); the cliff itself is about 1 km east."
+   ]
+  },
+  "jenolan-caves": {
+   "name": "Jenolan Caves",
+   "icon": "🦇",
+   "category": "nature",
+   "bio": "Show-cave precinct with Caves House, closed for road repairs with reopening planned for early 2027.",
+   "hours": "Closed for Two Mile road repairs; planned reopening early 2027 (not confirmed)",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "costMin": 42,
+   "costMax": 55,
+   "currency": "AUD",
+   "ticketUrl": "https://www.jenolancaves.org.au/",
+   "coordinates": { "latitude": -33.820604, "longitude": 150.02109 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "UNVERIFIED PRICE: A$42-55 adult show-cave tickets is a 2021 Wikivoyage range; the operator shows no prices while closed. Re-check on reopening.",
+     "Official site (updated July 2026): closed for major road repairs, planned reopening early 2027; Two Mile section damaged 2021-2024, visitor access closed April 2024. NPWS: Jenolan Karst Conservation Reserve closed to early 2027, incl. Carlotta Arch, McKeown's Valley, Jenolan River and Blue Lake tracks and Binda Bush cabins. Caves House refurbishment and a new Blue Lake Boardwalk under way.",
+     "Six Foot Track is closed between Jenolan Caves House and Binda Bush Cabins meanwhile (see blue-mountains-19). Re-check before release.",
+     "Pin is OSM 'Jenolan Caves House' (MEDIUM, precinct visitor point). Park fee per vehicle not found."
+   ]
+  },
+  "cowra-japanese-garden": {
+   "name": "Cowra Japanese Garden",
+   "icon": "🎋",
+   "category": "nature",
+   "bio": "Japanese garden and cultural centre opened in 1979, designed by Ken Nakajima.",
+   "hours": "8:30 AM – 5:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 22,
+   "costMax": 22,
+   "currency": "AUD",
+   "ticketUrl": "https://www.cowragarden.com.au/",
+   "coordinates": { "latitude": -33.826739, "longitude": 148.697188 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "Adult (18+) A$22, concession 17, local 17, child (5-12) 12, family 52; festival prices differ. Open 7 days. Christmas closure not stated.",
+     "No wiki set: placement suggested 'Cowra Japanese Garden and Cultural Centre', unconfirmed. Pin HIGH."
+   ]
+  },
+  "cowra-breakout-site": {
+   "name": "Cowra Breakout Site",
+   "icon": "🏛️",
+   "category": "historic",
+   "bio": "Free site of the 1944 prisoner-of-war camp where more than 350 Japanese prisoners escaped.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "ticketUrl": "https://www.visitcowra.com.au/discover/the-cowra-breakout/",
+   "coordinates": { "latitude": -33.811283, "longitude": 148.704445 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "POW Camp Site, Sakura Avenue: 'All hours. Free.' (Wikivoyage). On 5 August 1944 more than 1000 prisoners attacked the guards and over 350 escaped (Visit Cowra).",
+     "Site is mostly remnants and signage; condition not checked. No wiki set (placement 'Cowra breakout' unconfirmed). Pin HIGH."
+   ]
+  },
+  "age-of-fishes-museum": {
+   "name": "Age of Fishes Museum",
+   "icon": "🐟",
+   "category": "museum",
+   "bio": "Fossil fish museum in Canowindra, open Thursday to Monday and daily in NSW school holidays.",
+   "hours": "10:00 AM – 3:45 PM",
+   "closedDays": [2, 3],
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 12,
+   "costMax": 12,
+   "currency": "AUD",
+   "ticketUrl": "https://www.ageoffishes.org.au/",
+   "coordinates": { "latitude": -33.562312, "longitude": 148.660103 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "Adults A$12, seniors/concessions 8, children K-6 5, years 7-12 10, family 25. Closed Tuesday and Wednesday except school holidays; closed Christmas Day and Anzac Morning.",
+     "'Fossil fish' is from the museum's name and the placement bio (Devonian); research gave no exhibit detail. Pin HIGH."
+   ]
+  },
+  "canowindra": {
+   "name": "Canowindra",
+   "icon": "🎈",
+   "category": "historic",
+   "bio": "Town known as the Balloon Capital of Australia, with a historic centre and the Age of Fishes Museum.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": { "latitude": -33.5628557, "longitude": 148.6610118 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "No ticketUrl: town with no single steward.",
+     "Pin is OSM place=town relation centroid (MEDIUM), about 100 m from the museum. Overlaps the Age of Fishes Museum spot."
+   ]
+  },
+  "cowra": {
+   "name": "Cowra",
+   "icon": "🌸",
+   "category": "historic",
+   "bio": "Central West town holding both the Cowra Japanese Garden and the site of the 1944 breakout.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": { "latitude": -33.8349393, "longitude": 148.6925158 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "No ticketUrl: town spot; visitcowra.com.au is council-run (loaded) but not a single steward.",
+     "Pin is OSM place=town relation centroid (MEDIUM). Overlaps both spots it names."
+   ]
+  },
+  "parkes-observatory": {
+   "name": "Parkes Observatory",
+   "icon": "🔭",
+   "category": "landmark",
+   "bio": "Radio telescope with a free visitors centre, a ticketed 3D theatre and a cafe on Telescope Road.",
+   "hours": "8:30 AM – 4:15 PM",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.csiro.au/en/about/facilities-collections/atnf/parkes-radio-telescope-murriyang/visitors-centre",
+   "coordinates": { "latitude": -32.998601, "longitude": 148.262423 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "Entry is free; the 3D theatre is ticketed but its price is not published on the page, so the spot is marked free and the theatre noted here. Open 7 days, extended hours in NSW school holidays; cafe 8-3. 585 Telescope Road.",
+     "Pin HIGH (OSM attraction plus Commons geotag)."
+   ]
+  },
+  "plane-on-a-stick": {
+   "name": "Plane on a Stick",
+   "icon": "✈️",
+   "category": "landmark",
+   "bio": "Roadside plane mounted on a stick in Apex Park by the main bridge in Forbes.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": true,
+   "coordinates": { "latitude": -33.389048, "longitude": 148.008258 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "Belongs with Forbes, not Parkes: Forbes is about 33 km from Parkes. Group it with a Forbes destination or leave it standalone; do not list it under Parkes.",
+     "No ticketUrl: roadside icon, no steward.",
+     "Pin is weak (LOW to MEDIUM): the centroid of OSM Apex Park (174 x 118 m); the plane is not an OSM node and Wikivoyage gives no coordinates. Confirm the plane's exact spot."
+   ]
+  },
+  "parkes": {
+   "name": "Parkes",
+   "icon": "📡",
+   "category": "historic",
+   "bio": "Central West town that hosts the Parkes Observatory and its visitors centre on Telescope Road.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": { "latitude": -33.1368067, "longitude": 148.1754823 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "No ticketUrl: town; visitparkes.com.au (Visit Parkes Region) loaded but is regional.",
+     "Pin is OSM place=town relation centroid (MEDIUM). Overlaps Parkes Observatory."
+   ]
+  },
+  "six-foot-track": {
+   "name": "Six Foot Track",
+   "destinationId": "blue-mountains",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Hard 42 km, three-day walk from Katoomba through Kanangra-Boyd, now ending at Binda Bush Cabins.",
+   "hours": "Open 24 hours; closed between Jenolan Caves House and Binda Bush Cabins until the caves reopen",
+   "visitHoursMin": 14,
+   "visitHoursMax": 24,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/six-foot-track",
+   "coordinates": { "latitude": -33.741906, "longitude": 150.166084 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "Apply as blue-mountains-19, a spot of the EXISTING Blue Mountains destination (add destinationId 'blue-mountains'; no standalone fields). Highest id used there is blue-mountains-18.",
+     "NPWS: 42 km one-way, 3 days, Grade Hard, from Katoomba; the track now ends at Binda Bush Cabins while Jenolan Karst Conservation Reserve is closed, and there is no access between Jenolan Caves House and Binda; arrange own transport to Binda. Managed by Crown Land (1300 886 235). Wikivoyage says 45 km; NPWS used.",
+     "Free is inferred: no fee on the NPWS page. visitHours 14-24 is an estimate, not sourced.",
+     "Pin is a computed route midpoint (half of about 42 km from OSM way fragments) that falls in an unnamed-way gap; OSM way 649155418 (highway=track) within about 1 km kept. MEDIUM by method, LOW from resolve-pin (Overpass down)."
+   ]
+  },
+  "coolah-tops-national-park": {
+   "name": "Coolah Tops National Park",
+   "icon": "🌲",
+   "category": "nature",
+   "bio": "National park with lookouts at Breeza, Bundella, Norfolk Falls and Pinnacle; the east closes when wet.",
+   "hours": "Open 24 hours (may close for poor weather, fire danger or management operations)",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/coolah-tops-national-park",
+   "coordinates": { "latitude": -31.696711, "longitude": 150.017926 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "Free is inferred: no entry fee on the NPWS page; camping is extra.",
+     "Pin is OSM 'The Bundella Lookout' (MEDIUM), 7.9 km from the placement centroid."
+   ]
+  },
+  "weddin-mountains-national-park": {
+   "name": "Weddin Mountains National Park",
+   "icon": "⛰️",
+   "category": "nature",
+   "bio": "Mountains visible from over 50 km away, with a short bushwalk up rugged hillside to Ben Hall's Cave.",
+   "hours": "Open 24 hours (may close for poor weather or fire danger)",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/weddin-mountains-national-park",
+   "coordinates": { "latitude": -33.9093835, "longitude": 147.9547049 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "Free is inferred: no entry fee on the NPWS page. The page shows 3 closed-area alerts that were not read.",
+     "Pin is OSM 'Ben Hall's Cave' (rock overhang, MEDIUM), 9.4 km from the placement centroid. Bio length is tight: check bio-fit."
+   ]
+  },
+  "abercrombie-river-national-park": {
+   "name": "Abercrombie River National Park",
+   "icon": "🛶",
+   "category": "nature",
+   "bio": "River park for swimming, canoeing and river hikes, with Bummaroo Ford reached by 2WD.",
+   "hours": "Open 24 hours (may close for poor weather or fire danger)",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/abercrombie-river-national-park",
+   "coordinates": { "latitude": -34.1933184, "longitude": 149.7439645 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "Free is inferred: no entry fee on the NPWS page; camping extra. Other camps (Silent Creek, The Beach) are 4WD-only. 2 closed-area alerts not read.",
+     "Pin is OSM Bummaroo Ford campground (MEDIUM), 11.6 km from the placement centroid."
+   ]
+  },
+  "wollemi-national-park": {
+   "name": "Wollemi National Park",
+   "icon": "🌳",
+   "category": "nature",
+   "bio": "Largest declared Wilderness Area in NSW, with camping, swimming and canoe tours at Gunguddy near Mudgee.",
+   "hours": "Open 24 hours (may close for poor weather or fire danger)",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/wollemi-national-park",
+   "coordinates": { "latitude": -32.835385, "longitude": 150.1970612 },
+   "timezone": "Australia/Sydney",
+   "notes": [
+     "Free is inferred: no entry fee on the NPWS page; camping extra. 7 alerts not read in full.",
+     "Pin is OSM 'Pagoda Lookout' at Dunns Swamp (Gunguddy), one access point of a huge park (MEDIUM), 28 km from the Wikipedia centroid. NPWS lists a Pagoda lookout walking track there.",
+     "The Glow Worm Tunnel is also in this park but is its own spot. Bio length is tight: check bio-fit."
+   ]
+  }
+ },
+ "existing_fixes": [],
+ "held": [
+  {
+   "id": "mudgee-wine-region",
+   "name": "Mudgee Wine Region",
+   "reason": "Pin held: no winery or cellar-door point found. Photon/Nominatim returned nothing for Botobolar, Craigmoor or other wineries; Wikipedia's Botobolar article gives -32.4997,149.719 but is a single LOW source. Needs a loaded OSM winery node or the owner's choice.",
+   "facts": "GI wine region with over 35 wineries, grapes first grown from 1858, mainly Shiraz, Cabernet Sauvignon and Merlot (Wikipedia 'Mudgee wine region'). No ticketUrl: mudgeewine.com.au loads but shows lorem-ipsum template text. Draft bio: 'Wine region of over 35 wineries, grapes grown since 1858, mainly Shiraz, Cabernet Sauvignon and Merlot.' Category nature, icon 🍷, free, hours 'Cellar-door hours vary by winery', visit 2-4 h, Australia/Sydney, wiki 'Mudgee wine region' (cited in research). Tasting fees not checked."
+  }
+ ],
+ "notes": [
+  "All entries are standalone (keyed by the research.json fallback ids) with country Australia (AU), continent Oceania, timezone Australia/Sydney, except six-foot-track, which is blue-mountains-19 under the existing 'blue-mountains' destination (no standalone fields).",
+  "No shell was available in this session, so bio-fit.py was NOT run. Every bio was counted by hand at roughly 70-110 characters; the tightest are Kanangra Walls, Mount Canobolas, Weddin Mountains, Wollemi, Glow Worm Tunnel, Jenolan Caves, Bathurst and Six Foot Track. Run `python3 scripts/curation/bio-fit.py` before applying and trim any that wrap past three lines.",
+  "Held: Mudgee Wine Region (no pin), with facts and a draft bio above. Omitted: Utes in the Paddock (official page returned 403; ticketUrl was BLOCKED in research, and the spot is left out as instructed).",
+  "Plane on a Stick is written as a spot but belongs with Forbes, not Parkes; its pin is the weak Apex Park centroid.",
+  "No wiki fields set except Orange Wine Region ('Orange wine region', the Wikipedia article cited in research). Placement suggestions for other titles (Glowworm Tunnel, Cowra breakout, Cowra Japanese Garden and Cultural Centre, Royal Flying Doctor Service) were not confirmed in research.",
+  "ticketUrl taken only from research (never BLOCKED or notes). None for the town spots, Plane on a Stick, Capertee Valley, Orange Wine Region or Carcoar. Mount Panorama Circuit uses the regional tourism page; swap if the owner prefers none.",
+  "Unverified and approximate: Jenolan Caves price (2021 Wikivoyage, A$42-55) and reopening date; Zig Zag price (Jan 2025 table); Orange Wine Region hours and tasting fees; Parkes 3D theatre price; Old Dubbo Gaol 'immersive theatrical displays' wording; Six Foot Track visit hours. NPWS parks show no entry fee, so free is inferred (camping extra); no per-vehicle fee was found for any park here.",
+  "Live access alerts (Glow Worm Tunnel roadworks and construction closures, park fire bans to 31 Mar 2027, Jenolan closure) change often: re-check before release.",
+  "Orange Wine Region is pinned at one winery (Highland Heritage Estate) and named as the region spot; Gulgong's bio avoids the 'birthplace of Henry Lawson' claim from research (see its note)."
+ ]
+}

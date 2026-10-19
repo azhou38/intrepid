@@ -1,0 +1,481 @@
+{
+ "region": "nsw-mid-north-coast",
+ "inside_destinations": 53,
+ "inside_existing_destinations": 0,
+ "inside_proposed_destinations_note": "None of the 65 kept places lies inside Sydney, Blue Mountains or Warrumbungle spans, so 0 are spots of existing destinations. The 52 counted here are spots of 9 PROPOSED destinations; if the owner declines a proposal its members become standalone.",
+ "standalone": 3,
+ "standalone_if_all_proposals_declined": 65,
+ "new_destinations": 9,
+ "new_destination_ids": [
+  "coffs-harbour",
+  "port-macquarie",
+  "dorrigo-national-park",
+  "south-west-rocks",
+  "forster",
+  "myall-lakes-national-park",
+  "taree",
+  "nambucca-heads",
+  "barrington-tops-national-park"
+ ],
+ "existing_kept_unchanged": 1,
+ "held_for_review": [
+  "Gloucester"
+ ],
+ "unresolved": [
+  "Coffs Coast Wildlife Sanctuary: skeptic.json says \"kept\" under Dolphin Marine Magic but no candidate record exists; placed at coffs-harbour-9 with coordinates null.",
+  "Four verdict-keeps (Glenifer Road Swimming Hole, Crystal Shower Falls, Dark Point Walking Track, Treachery Headland Walking Track) were never seen by the skeptic: placed on candidate data, pins need resolve-pin.py, no photo candidate."
+ ],
+ "lowest_kept": [
+  {
+   "name": "Port Macquarie Coastal Walk",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "Port Macquarie Koala Hospital",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "Antarctic Beech Forest Walking Track",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Arrawarra Beach",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Bennetts Head Lookout",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Big Axe",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Cape Hawke Lookout",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Captain Cook Lookout",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Careys Peak Lookout",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Coffs Coast Wildlife Sanctuary",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Crystal Shower Falls",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Dark Point Walking Track",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Flynns Beach",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Glenifer Road Swimming Hole",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Guru Nanak Sikh Temple",
+   "views": 0,
+   "counted_sources": 1
+  }
+ ],
+ "lowest_kept_note": "Eleven or more kept places have views 0; the lowest-evidence ones are Port Macquarie Coastal Walk, Port Macquarie Koala Hospital (counted source found by the skeptic from the tourism board, not in the candidate record), Billabong Zoo, South West Rocks and Crescent Head (all 0 counted sources, Wikipedia-only evidence).",
+ "stronger_left_out": [
+  {
+   "name": "Gloucester",
+   "views": 14295,
+   "counted_sources": 1,
+   "verdict": "review (held)",
+   "reason": "For: Wikivoyage region page names it as the Avon Valley centre and gateway to Barrington Tops, with rail and tourism-board backing. Against: the draw is Barrington Tops beyond it; one counted source. Pipiriki-type gateway benchmark, so review."
+  },
+  {
+   "name": "Wauchope",
+   "views": 12624,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small village or suburb with no counted visitor source and no distinct draw for half an hour."
+  },
+  {
+   "name": "Macksville",
+   "views": 9396,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Sent to review by the judge, rejected by the skeptic: Service town; its only sight is a tiny pioneer cottage museum."
+  },
+  {
+   "name": "Wingham",
+   "views": 8244,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Sent to review by the judge, rejected by the skeptic: Wikivoyage covers it as a section of the Taree page only; service town."
+  },
+  {
+   "name": "Tuncurry",
+   "views": 6419,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Sent to review by the judge, rejected by the skeptic: Wikivoyage redirects Tuncurry to the Forster page: it is part of the Forster spot and a near-duplicate."
+  },
+  {
+   "name": "Rally Australia",
+   "views": 6350,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Event, not a permanent place."
+  },
+  {
+   "name": "Hat Head",
+   "views": 6321,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Small village or suburb with no counted visitor source and no distinct draw for half an hour."
+  },
+  {
+   "name": "Harrington",
+   "views": 6304,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Small village or suburb with no counted visitor source and no distinct draw for half an hour."
+  },
+  {
+   "name": "Sawtell",
+   "views": 6198,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Small village or suburb with no counted visitor source and no distinct draw for half an hour."
+  },
+  {
+   "name": "Laurieton",
+   "views": 5931,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Small village or suburb with no counted visitor source and no distinct draw for half an hour."
+  },
+  {
+   "name": "Stroud",
+   "views": 5809,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Sent to review by the judge, rejected by the skeptic: Only a region-page mention as a stopover en route to Barrington Tops; nothing to do for half an hour."
+  },
+  {
+   "name": "Tea Gardens",
+   "views": 5592,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Small village or suburb with no counted visitor source and no distinct draw for half an hour."
+  },
+  {
+   "name": "Hawks Nest",
+   "views": 5279,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Sent to review by the judge, rejected by the skeptic: Checked Wikivoyage Port Stephens and the Port Stephens tourism site: no counted source for Hawks Nest itself (Wikipedia only); Yacaaba Headland Walking Track is kept instead."
+  },
+  {
+   "name": "Nabiac",
+   "views": 4820,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small village or suburb with no counted visitor source and no distinct draw for half an hour."
+  },
+  {
+   "name": "Dorrigo Steam Railway and Museum",
+   "views": 4696,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Not open to the public per the enumerator."
+  },
+  {
+   "name": "Kew",
+   "views": 4200,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small village or suburb with no counted visitor source and no distinct draw for half an hour."
+  },
+  {
+   "name": "Timbertown",
+   "views": 3818,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Sent to review by the judge, rejected by the skeptic: CLOSED: Wikipedia states Timbertown closed on 28 January 2026 due to financial issues. Not open to visitors."
+  },
+  {
+   "name": "Lighthouse Beach",
+   "views": 3607,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Sent to review by the judge, rejected by the skeptic: Adjoins the lighthouse; near-duplicate of Sugarloaf Point Lighthouse."
+  },
+  {
+   "name": "Green Cathedral",
+   "views": 3445,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rainforest site with a small open-air church; no counted source and short visit."
+  },
+  {
+   "name": "Corindi Beach",
+   "views": 2728,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Small village or suburb with no counted visitor source and no distinct draw for half an hour."
+  },
+  {
+   "name": "Seven Mile Beach",
+   "views": 2679,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Small village or suburb with no counted visitor source and no distinct draw for half an hour."
+  },
+  {
+   "name": "Oxley Wild Rivers National Park",
+   "views": 2319,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Out of region (New England); covered in that region."
+  },
+  {
+   "name": "Solitary Islands Marine Park",
+   "views": 1973,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Sent to review by the judge, rejected by the skeptic: An offshore zone, not a place to go; the diving is operators (Jetty Dive), and Muttonbird Island covers the shore."
+  },
+  {
+   "name": "Wollomombi Falls",
+   "views": 1802,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Out of region (New England); covered in that region."
+  },
+  {
+   "name": "Pacific Palms",
+   "views": 1638,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Small village or suburb with no counted visitor source and no distinct draw for half an hour."
+  },
+  {
+   "name": "Apsley Falls",
+   "views": 1545,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Out of region (New England); covered in that region."
+  },
+  {
+   "name": "Wallis Lake",
+   "views": 1544,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Sent to review by the judge, rejected by the skeptic: A water body with no counted source naming a place to go; Booti Booti and Forster cover it."
+  },
+  {
+   "name": "Cottan-Bimbang National Park",
+   "views": 525,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Sent to review by the judge, rejected by the skeptic: Two counted sources but a drive-through park of picnic areas on the Oxley Highway; rarely visited, nothing to do for half an hour."
+  },
+  {
+   "name": "Nowendoc National Park",
+   "views": 495,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Sent to review by the judge, rejected by the skeptic: Two counted sources but remote and rarely visited (Thunderbolts Way, Callaghans Canyon); a rarely visited place fails the test."
+  },
+  {
+   "name": "Perpendicular Point",
+   "views": 336,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Headland within Kattang Nature Reserve; part of a larger spot."
+  },
+  {
+   "name": "Kattang Nature Reserve",
+   "views": 308,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Sent to review by the judge, rejected by the skeptic: Small reserve, one counted source; not worth a trip beyond the Port Macquarie to Taree drive."
+  },
+  {
+   "name": "Port Macquarie Museum",
+   "views": 296,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Local museum with no counted source."
+  },
+  {
+   "name": "Murrays Beach",
+   "views": 219,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Small village or suburb with no counted visitor source and no distinct draw for half an hour."
+  }
+ ],
+ "stronger_left_out_note": "\"Stronger\" = more Wikipedia views than the lowest kept place (0), or 2+ counted sources. Every entry has a concrete What-qualifies reason (small village/service town with no counted source, closed, event, tour operator, out of region and covered by that region, duplicate or part of a larger spot). Several high-view village rejects (Wauchope, Hat Head, Harrington, Sawtell, Laurieton, Tea Gardens, Hawks Nest) have 0 counted sources and Wikipedia-only evidence, the same weakness as the lowest kept places SWR and Crescent Head: the owner may want the Wikipedia-only villages judged uniformly (SWR and Crescent Head kept because Trial Bay/Smoky Cape and surf-beach sights are named by NPWS/Wikivoyage; Hat Head is kept as a park).",
+ "strongest_outsiders": {
+  "note": "All kept places lie outside every existing destination span (Sydney, Blue Mountains, Warrumbungle). Strongest kept by views, and strongest left out:",
+  "kept_by_views": [
+   {
+    "name": "Coffs Harbour",
+    "views": 58076,
+    "counted_sources": 2
+   },
+   {
+    "name": "Port Macquarie",
+    "views": 57087,
+    "counted_sources": 2
+   },
+   {
+    "name": "Bellingen",
+    "views": 30665,
+    "counted_sources": 1
+   },
+   {
+    "name": "Taree",
+    "views": 27896,
+    "counted_sources": 1
+   },
+   {
+    "name": "Forster",
+    "views": 22730,
+    "counted_sources": 2
+   },
+   {
+    "name": "Kempsey",
+    "views": 22061,
+    "counted_sources": 1
+   },
+   {
+    "name": "South West Rocks",
+    "views": 18227,
+    "counted_sources": 0
+   },
+   {
+    "name": "Woolgoolga",
+    "views": 15334,
+    "counted_sources": 2
+   }
+  ],
+  "left_out_by_views": [
+   {
+    "name": "Gloucester",
+    "views": 14295,
+    "counted_sources": 1,
+    "verdict": "review (held)",
+    "reason": "For: Wikivoyage region page names it as the Avon Valley centre and gateway to Barrington Tops, with rail and tourism-board backing. Against: the draw is Barrington Tops beyond it; one counted source. Pipiriki-type gateway benchmark, so review."
+   },
+   {
+    "name": "Wauchope",
+    "views": 12624,
+    "counted_sources": 1,
+    "verdict": "reject",
+    "reason": "Small village or suburb with no counted visitor source and no distinct draw for half an hour."
+   },
+   {
+    "name": "Macksville",
+    "views": 9396,
+    "counted_sources": 2,
+    "verdict": "reject",
+    "reason": "Sent to review by the judge, rejected by the skeptic: Service town; its only sight is a tiny pioneer cottage museum."
+   },
+   {
+    "name": "Wingham",
+    "views": 8244,
+    "counted_sources": 1,
+    "verdict": "reject",
+    "reason": "Sent to review by the judge, rejected by the skeptic: Wikivoyage covers it as a section of the Taree page only; service town."
+   },
+   {
+    "name": "Tuncurry",
+    "views": 6419,
+    "counted_sources": 1,
+    "verdict": "reject",
+    "reason": "Sent to review by the judge, rejected by the skeptic: Wikivoyage redirects Tuncurry to the Forster page: it is part of the Forster spot and a near-duplicate."
+   },
+   {
+    "name": "Rally Australia",
+    "views": 6350,
+    "counted_sources": 1,
+    "verdict": "reject",
+    "reason": "Event, not a permanent place."
+   },
+   {
+    "name": "Hat Head",
+    "views": 6321,
+    "counted_sources": 0,
+    "verdict": "reject",
+    "reason": "Small village or suburb with no counted visitor source and no distinct draw for half an hour."
+   },
+   {
+    "name": "Harrington",
+    "views": 6304,
+    "counted_sources": 0,
+    "verdict": "reject",
+    "reason": "Small village or suburb with no counted visitor source and no distinct draw for half an hour."
+   }
+  ]
+ },
+ "benchmark": {
+  "applicable_NZ_items": "None of the NZ benchmark places lie in this region.",
+  "analogues": {
+   "roadside icons kept": [
+    "Big Banana",
+    "Big Oyster",
+    "Big Axe"
+   ],
+   "gateway village, draw is beyond it, sent to review (Pipiriki analogue)": "Gloucester (held)",
+   "closed venue rejected": "Timbertown (closed 28 Jan 2026)",
+   "operator rejected": [
+    "Gondwana Rainforest Tour",
+    "Spirit Cruises Whale and Dolphin Watching",
+    "Precision Helicopters Scenic Flights",
+    "Jetty Dive"
+   ],
+   "event rejected": "Rally Australia",
+   "minor memorial rejected": [
+    "Dorrigo War Memorial",
+    "Seal Rocks Whale Rescue Plaque"
+   ],
+   "national parks proposed as destinations": [
+    "Dorrigo National Park",
+    "Myall Lakes National Park",
+    "Barrington Tops National Park"
+   ],
+   "national parks folded into a town destination to avoid overlap (flag for owner)": [
+    "Sea Acres National Park",
+    "Booti Booti National Park",
+    "Bongil Bongil National Park",
+    "Crowdy Bay National Park",
+    "Arakoon National Park",
+    "Hat Head National Park"
+   ],
+   "national park left standalone": "Limeburners Creek National Park"
+  },
+  "result": "Pass for the applicable rules. Caveat: Coffs Coast Wildlife Sanctuary is \"kept\" in the skeptic note but has no candidate record; four keeps skipped the skeptic."
+ }
+}

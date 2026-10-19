@@ -1,0 +1,474 @@
+{
+ "region": "nsw-south-coast",
+ "kept_total": 69,
+ "inside_destinations": 0,
+ "inside_proposed_destinations": 56,
+ "inside_existing_destinations": 0,
+ "standalone": 0,
+ "new_destinations": 13,
+ "new_destination_places": 13,
+ "standalone_if_all_proposals_declined": 69,
+ "existing_kept_unchanged": 0,
+ "lowest_kept": [
+  {
+   "name": "Austinmer Beach",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Bega Cheese Heritage Centre",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Blue Pool",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Camel Rock Beach",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Fleet Air Arm Museum",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "HARS Australian Historical Flying Museum",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Kiama Coast Walk",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Killalea State Park",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Light to Light Walk",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Minnamurra Beach",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Murramarang South Coast Walk",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Pebbly Beach",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "The Big Cheese",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Minnamurra Rainforest",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Saddleback Mountain Lookout",
+   "views": 575,
+   "counted_sources": 1
+  }
+ ],
+ "stronger_left_out": [
+  {
+   "name": "Milton",
+   "views": 7991,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small country town; only a theatre named by Wikivoyage; no distinct draw."
+  },
+  {
+   "name": "Pambula",
+   "views": 6489,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Small town with no counted source or distinct draw."
+  },
+  {
+   "name": "Lake Illawarra",
+   "views": 5366,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Large suburban lake with no single visitor point; cycle path mentioned in passing."
+  },
+  {
+   "name": "Vincentia",
+   "views": 5193,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Holiday suburb; no distinct draw named beyond beaches of Jervis Bay."
+  },
+  {
+   "name": "Werri Beach",
+   "views": 3507,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Wikivoyage itself says neither Gerringong beach is exceptional; part of the Gerringong spot."
+  },
+  {
+   "name": "Shoalhaven Heads",
+   "views": 3474,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small river-mouth village, one source, nothing named to do; Seven Mile Beach NP covers the coast."
+  },
+  {
+   "name": "Currarong",
+   "views": 3033,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small village 60 km from Huskisson; its draw (Beecroft Peninsula) is already a spot."
+  },
+  {
+   "name": "Nelligen",
+   "views": 2985,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small village, one source, nothing to do beyond the Clyde River cruise."
+  },
+  {
+   "name": "Bodalla",
+   "views": 2922,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small dairy village; its draw is The Big Cheese, listed separately."
+  },
+  {
+   "name": "Cape St George Lighthouse",
+   "views": 2622,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Ruins within Booderee NP; part of the larger park, minor stop."
+  },
+  {
+   "name": "Bulli Pass Lookouts",
+   "views": 2122,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Near-duplicate of Sublime Point Lookout, one source."
+  },
+  {
+   "name": "Symbio Wildlife Park",
+   "views": 2015,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Held for review: no counted visitor source (zoo is named by Wikipedia/OSM only); confirm via operator or tourism board."
+  },
+  {
+   "name": "Wallaga Beach",
+   "views": 1789,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Beach near Central Tilba; one source, no visitor detail, near-duplicate of Wallaga Lake area."
+  },
+  {
+   "name": "Lawrence Hargrave Drive",
+   "views": 1781,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "A road/route, not a place; covered by Sea Cliff Bridge and Grand Pacific Drive. Route point coordinate."
+  },
+  {
+   "name": "Budawang National Park",
+   "views": 1629,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Remote wilderness for experienced walkers, one source."
+  },
+  {
+   "name": "Grand Pacific Drive",
+   "views": 1462,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A route, not a place; its stop is Sea Cliff Bridge, already kept."
+  },
+  {
+   "name": "Pretty Beach",
+   "views": 1277,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Beach and cabins in Murramarang NP; part of larger park, one source."
+  },
+  {
+   "name": "Shoalhaven Zoo and Adventure World",
+   "views": 1046,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small commercial farm zoo, one source."
+  },
+  {
+   "name": "Wadbilliga National Park",
+   "views": 1046,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Remote wilderness for experienced walkers, one source."
+  },
+  {
+   "name": "Deua National Park",
+   "views": 994,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Remote, for experienced walkers only; few simple visits; one source."
+  },
+  {
+   "name": "Biamanga National Park",
+   "views": 980,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Cultural site with limited visitor access, one visit-oriented mention."
+  },
+  {
+   "name": "Mount Imlay National Park",
+   "views": 862,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Challenging summit walk, rarely visited."
+  },
+  {
+   "name": "Tallowa Dam",
+   "views": 850,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "End-of-road dam; picnic area and canoe ramp are part of Morton NP / Kangaroo Valley."
+  },
+  {
+   "name": "Breakwater Battery",
+   "views": 838,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; public access not confirmed."
+  },
+  {
+   "name": "Smiths Hill Fort",
+   "views": 724,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; no confirmed visit."
+  },
+  {
+   "name": "Gerroa",
+   "views": 658,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small village, no counted source beyond a passing mention; its draw is Seven Mile Beach NP, already kept."
+  },
+  {
+   "name": "Conjola National Park",
+   "views": 642,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "No visitor feature given in the source."
+  },
+  {
+   "name": "Warden Head Lighthouse",
+   "views": 578,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small lighthouse seen from outside, one source."
+  },
+  {
+   "name": "Bugong National Park",
+   "views": 453,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "No visitor feature given."
+  },
+  {
+   "name": "Stanwell Tops",
+   "views": 428,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Same draw as Stanwell Park (Bald Hill lookout and hang gliding); part of the Stanwell Park spot."
+  },
+  {
+   "name": "Illawarra Grevillea Park",
+   "views": 408,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Opens only a few times a season; not there whenever a visitor arrives."
+  },
+  {
+   "name": "Berry Museum",
+   "views": 390,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small local museum open weekend afternoons only; part of Berry."
+  },
+  {
+   "name": "Bimberamala National Park",
+   "views": 342,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Remote, no visitor feature given."
+  },
+  {
+   "name": "Jerrawangala National Park",
+   "views": 341,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "No visitor feature given."
+  },
+  {
+   "name": "Jervis Bay Dolphin and Whale Watching Cruises",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Operator cruise; the bay is the spot."
+  }
+ ],
+ "strongest_outsiders": [
+  {
+   "name": "Wollongong",
+   "views": 140233,
+   "counted_sources": 1,
+   "outcome": "kept; outside Sydney and every other existing destination span"
+  },
+  {
+   "name": "Jervis Bay",
+   "views": 53588,
+   "counted_sources": 2,
+   "outcome": "kept; outside Sydney and every other existing destination span"
+  },
+  {
+   "name": "Bermagui",
+   "views": 30569,
+   "counted_sources": 1,
+   "outcome": "kept; outside Sydney and every other existing destination span"
+  },
+  {
+   "name": "Eden",
+   "views": 29431,
+   "counted_sources": 1,
+   "outcome": "kept; outside Sydney and every other existing destination span"
+  },
+  {
+   "name": "Bega",
+   "views": 25164,
+   "counted_sources": 1,
+   "outcome": "kept; outside Sydney and every other existing destination span"
+  },
+  {
+   "name": "Nowra",
+   "views": 24302,
+   "counted_sources": 1,
+   "outcome": "kept; outside Sydney and every other existing destination span"
+  },
+  {
+   "name": "Batemans Bay",
+   "views": 22883,
+   "counted_sources": 1,
+   "outcome": "kept; outside Sydney and every other existing destination span"
+  },
+  {
+   "name": "Kiama",
+   "views": 21991,
+   "counted_sources": 1,
+   "outcome": "kept; outside Sydney and every other existing destination span"
+  },
+  {
+   "name": "Narooma",
+   "views": 21243,
+   "counted_sources": 1,
+   "outcome": "kept; outside Sydney and every other existing destination span"
+  },
+  {
+   "name": "Merimbula",
+   "views": 19636,
+   "counted_sources": 1,
+   "outcome": "kept; outside Sydney and every other existing destination span"
+  }
+ ],
+ "strongest_left_out_outside_every_span": [
+  {
+   "name": "Milton",
+   "views": 7991,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small country town; only a theatre named by Wikivoyage; no distinct draw."
+  },
+  {
+   "name": "Pambula",
+   "views": 6489,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Small town with no counted source or distinct draw."
+  },
+  {
+   "name": "Lake Illawarra",
+   "views": 5366,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Large suburban lake with no single visitor point; cycle path mentioned in passing."
+  },
+  {
+   "name": "Vincentia",
+   "views": 5193,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Holiday suburb; no distinct draw named beyond beaches of Jervis Bay."
+  },
+  {
+   "name": "Werri Beach",
+   "views": 3507,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Wikivoyage itself says neither Gerringong beach is exceptional; part of the Gerringong spot."
+  },
+  {
+   "name": "Shoalhaven Heads",
+   "views": 3474,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small river-mouth village, one source, nothing named to do; Seven Mile Beach NP covers the coast."
+  },
+  {
+   "name": "Currarong",
+   "views": 3033,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small village 60 km from Huskisson; its draw (Beecroft Peninsula) is already a spot."
+  },
+  {
+   "name": "Nelligen",
+   "views": 2985,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small village, one source, nothing to do beyond the Clyde River cruise."
+  },
+  {
+   "name": "Bodalla",
+   "views": 2922,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small dairy village; its draw is The Big Cheese, listed separately."
+  },
+  {
+   "name": "Cape St George Lighthouse",
+   "views": 2622,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Ruins within Booderee NP; part of the larger park, minor stop."
+  }
+ ],
+ "review_symbio": "Symbio Wildlife Park stays in review (2015 views, 0 counted sources).",
+ "national_parks_left_out_note": "Deua, Biamanga, Wadbilliga, Mount Imlay, Budawang are national parks sent to review/reject as remote walker-only parks with one visit-oriented source and no simple visitor feature. COVERAGE.md says every national park is a destination: the owner should confirm this exclusion (reason given is \"What qualifies\" 1 and 2, not placement).",
+ "benchmark": "No NZ benchmark place lies in this region. Region-relevant checks: Symbio stays review; vehicle/operator candidates (Eden Whale Watching, Jervis Bay Dolphin and Whale Watching Cruises, Shellharbour Wild Whale Watching, BIGWAVE Skydive) rejected in favour of the place; once-a-week or annual events (Kiama Seaside Markets, Blessing of the Fleet, Bermagui Sculpture on the Edge, Illawarra Grevillea Park) rejected; Booderee and the bay are one place (Booderee kept as a spot of Jervis Bay).",
+ "method_note": "Lowest kept scores are 0 views with 1 counted source (many beaches, walks and museums), so every left-out candidate with any views counts as stronger; all are listed with their concrete reason."
+}

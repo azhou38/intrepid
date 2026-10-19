@@ -1,0 +1,2448 @@
+{
+ "region": "nsw-new-england-north-west",
+ "researcher": "quill",
+ "date": "2026-10-18",
+ "mode": "standalone fallback (proposed destinations NOT being added); every id is the if_declined_standalone id, and each proposed destination's centre is researched as a standalone town/park spot (ids armidale, new-england-national-park, oxley-wild-rivers-national-park, tamworth, glen-innes, gibraltar-range-national-park, tenterfield, inverell, mount-kaputar-national-park). Held-for-pin places were researched only where a route midpoint could be resolved (see \"kind\": \"held-resolved\").",
+ "shared_notes": [
+  "Park entry fees: NPWS charges per vehicle per day at 45 parks (https://www.nationalparks.nsw.gov.au/passes-and-fees/fee-collecting-parks). In this region that list contains only Bald Rock ($8), Boonoo Boonoo ($8), Gibraltar Range ($8) and Washpool ($8, \"only at attractions in the Glen Innes area\"); every other NPWS place here (New England, Cunnawarra, Cathedral Rock, Guy Fawkes River, Oxley Wild Rivers except Halls Peak/Riverside/Youdales permit areas, Mount Kaputar, Kings Plains, Horton Falls, Kwiambal, Warrabah, Burning Mountain, Pilliga NR, Bulagaranda) has no entry fee, so free: true. Camping and cabin fees are separate and not priced.",
+  "Coordinates: resolve-pin.py was run for the parks and held places but Overpass (overpass-api.de) was down, so it fell back to Photon and rated park centroids \"HIGH\" only because Photon's nature_reserve and natural=wood centroids agreed. Those are centroids, not visitor points, and were NOT used. Visitor points come from the managing agency's own attraction pages (NPWS pages carry JSON-LD geo coordinates) cross-checked against OpenStreetMap features found with Photon; route midpoints for the four held walks were computed from OpenStreetMap geometry read from the overpass.private.coffee mirror (chain.py, scratchpad), not by the tool. Placement points kept as they were where they already match an agency or OSM feature within 150 m.",
+  "Every NPWS alert below was read from the park's local-alerts page on 2026-10-18 (pages show \"Last reviewed\" 9-19 October 2026); all NPWS parks are \"always open but may have to close for poor weather or fire danger\".",
+  "The park-centre standalone entries (new-england-national-park, oxley-wild-rivers-national-park, gibraltar-range-national-park, mount-kaputar-national-park) are pinned at a visitor feature rather than a centroid; new-england-national-park (Banksia Point) is 0.6 km from the point-lookout spot and mount-kaputar-national-park (summit lookout) is the headline of its park, so the owner may choose to drop a park-centre pin if the two overlap on the map.",
+  "Official-site trap: https://www.moreeartesianaquaticcentre.com.au/ appears as the centre's website on Belgravia Leisure's page but is now an unrelated \"Moree Artesian Wellness Guide\" product site that states it is not an official aquatic centre site. Never use it. The council links the centre via moreeartesianaquaticcentre.pre-prod.belgravialeisure.com.au, whose TLS certificate has expired."
+ ],
+ "blocked": [
+  {
+   "url": "https://www.waternsw.com.au/supply/visit/copeton-dam",
+   "place": "Copeton Dam",
+   "why": "Cloudflare \"Just a moment...\" wall (403) for the fetch tool; check in the in-app browser. A ticketUrl is already supplied (Reflections Holidays day-pass page, loaded OK), but WaterNSW (dam owner) may be preferred."
+  },
+  {
+   "url": "https://www.nsw.gov.au/visiting-and-exploring-nsw/locations-and-attractions/pilliga-artesian-bore-baths",
+   "place": "Pilliga Hot Artesian Bore Baths",
+   "why": "403 \"Access denied | NSW Government\" for the fetch tool; its listing (price $5, probably an old camping rate) was read only through a search summary. No ticketUrl set for either place pending a steward page."
+  },
+  {
+   "url": "https://www.nsw.gov.au/visiting-and-exploring-nsw/locations-and-attractions/australian-standing-stones-national-celtic-monument",
+   "place": "Australian Standing Stones",
+   "why": "Same 403 wall (nsw.gov.au); check in a browser for hours and any steward link."
+  },
+  {
+   "url": "https://monumentaustralia.org.au/themes/technology/agriculture/display/21486-lamb-and-potato-monument",
+   "place": "The Big Lamb",
+   "why": "Would not load for the fetch tool (status 0); not needed, the Armidale Express article supports the facts."
+  }
+ ],
+ "entries": [
+  {
+   "id": "armidale",
+   "name": "Armidale",
+   "placement_id": "dest:armidale",
+   "kind": "new",
+   "standalone": true,
+   "category": "historic",
+   "facts": [
+    {
+     "claim": "Armidale is a small city of about 24,500 in the New England region, noted for colonial-era architecture, centres of education and culture, and nearby wilderness and gorge country; Wikivoyage calls it Australia's highest city by altitude.",
+     "source": "https://en.wikivoyage.org/wiki/Armidale"
+    },
+    {
+     "claim": "It sits roughly halfway between Sydney and Brisbane at the junction of the New England Highway and Waterfall Way, and is home to the University of New England.",
+     "source": "https://en.wikipedia.org/wiki/Armidale"
+    },
+    {
+     "claim": "Its sights include NERAM, Saumarez Homestead and the Waterfall Way parks; the city is also the gateway to Oxley Wild Rivers and New England national parks.",
+     "source": "https://en.wikivoyage.org/wiki/Armidale"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Town with no single steward; no ticketUrl.",
+   "coordinates": {
+    "latitude": -30.513916,
+    "longitude": 151.658902
+   },
+   "coordinates_source": "Placement point (Wikivoyage New England page); town centre, within 0.7 km of the OpenStreetMap place=city relation 6063353 (-30.514488,151.665656)",
+   "coordinates_check": {
+    "placement_point": {
+     "latitude": -30.513916,
+     "longitude": 151.658902
+    },
+    "final_point": {
+     "latitude": -30.513916,
+     "longitude": 151.658902
+    },
+    "distance_moved_m": 0,
+    "confidence": "MEDIUM (town centre, +-1 km is fine for a town)",
+    "ok": true
+   },
+   "suggested_bio": "A university city and gateway to Waterfall Way, with a regional art museum and a heritage homestead.",
+   "unverified": [
+    "Visit duration (1-3 h) is an estimate carried over from the Atlas draft."
+   ]
+  },
+  {
+   "id": "new-england-regional-art-museum",
+   "name": "New England Regional Art Museum",
+   "placement_id": "armidale-1",
+   "kind": "new",
+   "standalone": true,
+   "category": "museum",
+   "facts": [
+    {
+     "claim": "Open Tuesday to Sunday 10.00am-4.00pm; closed Mondays, Good Friday, Easter Sunday, Christmas Day, Boxing Day, New Year's Day and Anzac Day.",
+     "source": "https://www.neram.com.au/"
+    },
+    {
+     "claim": "Ticket price on NERAM's home page: \"Entry by donation\".",
+     "source": "https://www.neram.com.au/"
+    },
+    {
+     "claim": "Address 106-114 Kentucky Street, Armidale; phone (02) 6772 5255. The Museum of Printing is listed as temporarily closed.",
+     "source": "https://www.neram.com.au/"
+    },
+    {
+     "claim": "NERAM's collections are the Howard Hinton Collection, the Chandler Coventry Collection and the NERAM Collection (its own acquisitions); a semi-permanent display \"Wonders of Hinton\" runs to 30 January 2028.",
+     "source": "https://www.neram.com.au/"
+    },
+    {
+     "claim": "Wikipedia: NERAM holds the second largest and most valuable regional public art collection in NSW after Newcastle Art Gallery, and the complex has six gallery spaces, a Museum of Printing, a shop and cafe.",
+     "source": "https://en.wikipedia.org/wiki/New_England_Regional_Art_Museum"
+    }
+   ],
+   "hours": "10:00 AM - 4:00 PM, Tuesday to Sunday",
+   "closedDays": [
+    1
+   ],
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": "https://www.neram.com.au/",
+   "ticketUrl_note": "Loaded 2026-10-18: HTTP 200, title \"NERAM Armidale | New England Regional Art Museum\".",
+   "coordinates": {
+    "latitude": -30.52526,
+    "longitude": 151.664863
+   },
+   "coordinates_source": "Atlas placement point: Photon tourism=museum + Wikipedia (HIGH); not re-run",
+   "coordinates_check": {
+    "placement_point": {
+     "latitude": -30.52526,
+     "longitude": 151.664863
+    },
+    "final_point": {
+     "latitude": -30.52526,
+     "longitude": 151.664863
+    },
+    "distance_moved_m": 0,
+    "confidence": null,
+    "ok": true
+   },
+   "suggested_bio": "A regional art museum in Armidale with the Howard Hinton and Chandler Coventry collections of Australian art.",
+   "bio_note": "Draft said \"Howard Hinton and Bell collections\"; NERAM's site lists the Hinton, Chandler Coventry and NERAM collections, no \"Bell\". Corrected in suggested_bio.",
+   "unverified": [
+    "Entry is \"by donation\", recorded as free: true; a donation is suggested, no fixed price.",
+    "Hours differ on public holidays beyond those listed (Good Friday, Easter Sunday, Christmas, Boxing Day, New Year's Day, Anzac Day closed per NERAM); other public holidays not stated.",
+    "Café Six Counties has its own hours (Tue-Sun 8am-2pm)."
+   ]
+  },
+  {
+   "id": "saumarez-homestead",
+   "name": "Saumarez Homestead",
+   "placement_id": "armidale-2",
+   "kind": "new",
+   "standalone": true,
+   "category": "historic",
+   "facts": [
+    {
+     "claim": "Gardens open Wednesday, Friday, Saturday and Sunday 10am-4pm (last entry 3pm); the house is by guided tour only: Historic House tour Wed and Fri 10:30am, Sat and Sun 10:30am and 1:30pm; Hidden House tour Sat and Sun 11:30am starting November 2026.",
+     "source": "https://www.nationaltrust.org.au/places/saumarez-homestead/"
+    },
+    {
+     "claim": "Closed 21 November 2026, New Year's Day, Australia Day, Good Friday, Easter Sunday, Anzac Day, King's Birthday, Labour Day, Christmas Day and Boxing Day; special hours for the New England Garden Festival (31 Oct 9:30-4:30, 1 Nov 9:30-2).",
+     "source": "https://www.nationaltrust.org.au/places/saumarez-homestead/"
+    },
+    {
+     "claim": "Entry: garden visit adult $12, concession $10, family $34, under-5s and National Trust members free; house tour plus garden adult $17, concession $15, family $49. Booking fees apply online.",
+     "source": "https://www.nationaltrust.org.au/places/saumarez-homestead/"
+    },
+    {
+     "claim": "Address 230 Saumarez Road, Armidale (enter via Armidale Airport from the New England Highway); National Trust recommends at least two hours.",
+     "source": "https://www.nationaltrust.org.au/places/saumarez-homestead/"
+    },
+    {
+     "claim": "Wikipedia: Federation Edwardian homestead built 1888-1906, 30-room fully furnished house, 10 ha owned by the National Trust, on the NSW State Heritage Register.",
+     "source": "https://en.wikipedia.org/wiki/Saumarez_Homestead"
+    }
+   ],
+   "hours": "Gardens 10:00 AM - 4:00 PM Wed, Fri-Sun; house by guided tour only (10:30 AM, weekends also 1:30 PM)",
+   "closedDays": [
+    1,
+    2,
+    4
+   ],
+   "visitHoursMin": 2,
+   "visitHoursMax": 3,
+   "costMin": 12,
+   "costMax": 17,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationaltrust.org.au/places/saumarez-homestead/",
+   "ticketUrl_note": "Loaded 2026-10-18: HTTP 200, title \"Saumarez Homestead, Armidale - National Trust\" (National Trust is the owner/operator).",
+   "coordinates": {
+    "latitude": -30.539731,
+    "longitude": 151.589444
+   },
+   "coordinates_source": "Atlas placement point: Photon building=house Saumarez Homestead + Wikipedia (HIGH); Wikivoyage -30.540089,151.589373 agrees within 40 m",
+   "coordinates_check": {
+    "placement_point": {
+     "latitude": -30.539731,
+     "longitude": 151.589444
+    },
+    "final_point": {
+     "latitude": -30.539731,
+     "longitude": 151.589444
+    },
+    "distance_moved_m": 0,
+    "confidence": null,
+    "ok": true
+   },
+   "suggested_bio": "A 1906 National Trust homestead and gardens near Armidale, with guided house tours on set days.",
+   "bio_note": "Draft said tours \"weekends and public holidays\" (Wikivoyage 2018); the National Trust page now lists Wednesday and Friday tours too. Suggested bio avoids the day list.",
+   "unverified": [
+    "Prices are the adult garden-only ($12) and house tour plus garden ($17) fees; booking fees apply online.",
+    "Hidden House tour starts November 2026, per the National Trust page."
+   ]
+  },
+  {
+   "id": "uralla",
+   "name": "Uralla",
+   "placement_id": "armidale-3",
+   "kind": "new",
+   "standalone": true,
+   "category": "historic",
+   "facts": [
+    {
+     "claim": "Uralla is a small town at the junction of the New England Highway and Thunderbolts Way, 23 km south-west of Armidale, with more than 50 buildings and sites of heritage significance.",
+     "source": "https://en.wikipedia.org/wiki/Uralla,_New_South_Wales"
+    },
+    {
+     "claim": "McCrossin's Mill, bought and restored by the community in the 1980s-90s, is now a museum and gallery and the start of a heritage walk; the museum holds Captain Thunderbolt artefacts and oil paintings of his death.",
+     "source": "https://en.wikipedia.org/wiki/Uralla,_New_South_Wales"
+    },
+    {
+     "claim": "Wikivoyage lists a statue of Captain Thunderbolt beside the Uralla Visitor Information Centre, 104 Bridge Street (phone 02 6778 6420).",
+     "source": "https://en.wikivoyage.org/wiki/Uralla"
+    },
+    {
+     "claim": "McCrossin's Mill Museum is a separate paid attraction (adult $7 in listings, hours disagree between sources: its own site says 10am-4pm, uralla.com says 10am-5pm Sept-May).",
+     "source": "https://www.uralla.com/Explore/Things-to-Do/Galleries-Museums-Collections/McCrossins-Mill-Museum"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Town with no single steward; no ticketUrl (McCrossin's Mill Museum is a separate venue).",
+   "coordinates": {
+    "latitude": -30.64232,
+    "longitude": 151.49907
+   },
+   "coordinates_source": "Placement point (Wikivoyage New England page); town point, 70 m from OpenStreetMap place=locality relation 6063851",
+   "coordinates_check": {
+    "placement_point": {
+     "latitude": -30.64232,
+     "longitude": 151.49907
+    },
+    "final_point": {
+     "latitude": -30.64232,
+     "longitude": 151.49907
+    },
+    "distance_moved_m": 0,
+    "confidence": "MEDIUM (town point)",
+    "ok": true
+   },
+   "suggested_bio": "A heritage town on the New England Highway with a Captain Thunderbolt statue and the McCrossin's Mill museum.",
+   "bio_note": "Draft said \"built around the bushranger Captain Thunderbolt\", which overstates: sources give a Thunderbolt statue and museum collection, and 50+ heritage sites.",
+   "unverified": [
+    "Visit duration is an estimate.",
+    "Uralla Visitor Information Centre hours (Wikivoyage, Apr 2021) not re-checked."
+   ]
+  },
+  {
+   "id": "the-big-lamb",
+   "name": "The Big Lamb",
+   "placement_id": "armidale-4",
+   "kind": "new",
+   "standalone": true,
+   "category": "landmark",
+   "facts": [
+    {
+     "claim": "The Big Lamb was unveiled at Guyra on 26 January 1988: a Poll Dorset sheep sculpted by Sydney artist Cliff Axelsen, a Lamb and Potato sculpture marking the district's prime lamb and potato industries.",
+     "source": "https://www.armidaleexpress.com.au/story/5214321/never-sheepish-crowds-flock-as-big-lamb-celebrates-30-years/"
+    },
+    {
+     "claim": "It overlooks the New England Highway, and \"the number of people in front of it taking photos\" is noted by a local historical society member quoted in the article.",
+     "source": "https://www.armidaleexpress.com.au/story/5214321/never-sheepish-crowds-flock-as-big-lamb-celebrates-30-years/"
+    },
+    {
+     "claim": "Guyra is a town midway between Armidale and Glen Innes on the New England Highway.",
+     "source": "https://en.wikipedia.org/wiki/Guyra,_New_South_Wales"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Roadside monument; no steward site found.",
+   "coordinates": {
+    "latitude": -30.218583,
+    "longitude": 151.672773
+   },
+   "coordinates_source": "Atlas placement point: Photon historic=monument (MEDIUM); not re-run",
+   "coordinates_check": {
+    "placement_point": {
+     "latitude": -30.218583,
+     "longitude": 151.672773
+    },
+    "final_point": {
+     "latitude": -30.218583,
+     "longitude": 151.672773
+    },
+    "distance_moved_m": 0,
+    "confidence": "MEDIUM (one precise OSM feature)",
+    "ok": true
+   },
+   "suggested_bio": "A 1988 sculpture of a Poll Dorset sheep and potato plant overlooking the New England Highway at Guyra.",
+   "bio_note": "Draft \"giant lamb monument\" is supported; sources say a Poll Dorset sheep with a potato (Lamb and Potato sculpture).",
+   "unverified": [
+    "Monument Australia listing (monumentaustralia.org.au, display 21486) would not load for the fetch tool (status 0); the Armidale Express article was loaded and read.",
+    "\"Rotary Park\" siting comes only from a search summary of the article and is not used in the bio.",
+    "Open 24 hours is inferred for an open roadside monument."
+   ]
+  },
+  {
+   "id": "new-england-national-park",
+   "name": "New England National Park",
+   "placement_id": "dest:new-england-national-park",
+   "kind": "new",
+   "standalone": true,
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "World Heritage park in the Gondwana Rainforests of Australia on the Great Escarpment: Point lookout gives views across rainforest to the ocean; walks range from a 200 m stroll to multi-day hikes; Chalet, cabins and Thungutti campground for staying.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/new-england-national-park"
+    },
+    {
+     "claim": "NPWS: \"New England National Park is always open but may have to close at times due to poor weather or fire danger.\"",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/new-england-national-park"
+    },
+    {
+     "claim": "Banksia Point picnic area, in the park, is described by NPWS as a good place for a cuppa among superb lyrebirds.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/picnic-areas/banksia-point-picnic-area"
+    },
+    {
+     "claim": "The park covers 67,303 ha, created 1935, about 85 km east of Armidale and 65 km west of Coffs Harbour; closest village is Ebor, 20 km away.",
+     "source": "https://en.wikipedia.org/wiki/New_England_National_Park"
+    },
+    {
+     "claim": "No park entry fee: New England National Park is not on the NPWS list of 45 fee-collecting parks.",
+     "source": "https://www.nationalparks.nsw.gov.au/passes-and-fees/fee-collecting-parks"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/new-england-national-park",
+   "ticketUrl_note": "Loaded: HTTP 200, title \"New England National Park | NSW National Parks\" (managing agency page).",
+   "coordinates": {
+    "latitude": -30.492618,
+    "longitude": 152.406566
+   },
+   "coordinates_source": "NPWS Banksia Point picnic area (JSON-LD geo -30.4926178,152.406566) + OpenStreetMap tourism=picnic_site (-30.4925347,152.4066099), 10 m apart: visitor point replacing the park centroid",
+   "coordinates_check": {
+    "placement_point": {
+     "latitude": -30.59279,
+     "longitude": 152.45857
+    },
+    "final_point": {
+     "latitude": -30.492618,
+     "longitude": 152.406566
+    },
+    "distance_moved_m": 12201,
+    "confidence": "HIGH (two sources within 10 m)",
+    "ok": true
+   },
+   "suggested_bio": "A World Heritage park on the Great Escarpment with Point Lookout, snow gum walks and rainforest views to the coast.",
+   "notes": "NPWS alerts (read 2026-10-18): Eagles Nest walking track, all access to Weeping Rock, Lyrebird walking track and Snow Gum link track are closed for rockfall hazard (from 28 Oct 2025, no end date); West End Trail permanently closed (bridges out). Park itself open. This pin is 0.6 km from the separate Point Lookout spot (Point Lookout is the headline lookout); the owner may prefer to drop one if both are kept standalone.",
+   "unverified": [
+    "Visit duration 2-4 h is an estimate.",
+    "Accommodation (Chalet, Residence, Toms Cabin, Thungutti campground) fees not read.",
+    "NPWS alerts (read 2026-10-18): Eagles Nest walking track, all access to Weeping Rock, Lyrebird walking track and Snow Gum link track are closed for rockfall hazard (from 28 Oct 2025, no end date); West End Trail permanently closed (bridges out). Park itself open."
+   ],
+   "closures_alerts": "NPWS alerts (read 2026-10-18): Eagles Nest walking track, all access to Weeping Rock, Lyrebird walking track and Snow Gum link track are closed for rockfall hazard (from 28 Oct 2025, no end date); West End Trail permanently closed (bridges out). Park itself open."
+  },
+  {
+   "id": "point-lookout",
+   "name": "Point Lookout",
+   "placement_id": "new-england-national-park-1",
+   "kind": "new",
+   "standalone": true,
+   "category": "viewpoint",
+   "facts": [
+    {
+     "claim": "Point lookout is a \"must-see destination\" in New England National Park with panoramic views across World Heritage rainforest to the ocean in the distance; NPWS lists it as open all hours.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/point-lookout"
+    },
+    {
+     "claim": "Point lookout walking track: 0.5 km loop, Grade 1, 15-30 min suggested; sealed.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/point-lookout-walking-track"
+    },
+    {
+     "claim": "Point Lookout is a mountain on the Snowy Range at 1,564 m above sea level, the second highest peak in the region.",
+     "source": "https://en.wikipedia.org/wiki/Point_Lookout_(New_South_Wales)"
+    },
+    {
+     "claim": "No park entry fee (park not on the NPWS fee-collecting list).",
+     "source": "https://www.nationalparks.nsw.gov.au/passes-and-fees/fee-collecting-parks"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/point-lookout",
+   "ticketUrl_note": "Loaded: HTTP 200, title \"Point lookout | NSW National Parks\" (managing agency page).",
+   "coordinates": {
+    "latitude": -30.488636,
+    "longitude": 152.409606
+   },
+   "coordinates_source": "Atlas placement point: Photon footway + natural=peak, Commons median within 135 m (HIGH); NPWS lookout geo (-30.488605,152.410268) is 64 m away",
+   "coordinates_check": {
+    "placement_point": {
+     "latitude": -30.488636,
+     "longitude": 152.409606
+    },
+    "final_point": {
+     "latitude": -30.488636,
+     "longitude": 152.409606
+    },
+    "distance_moved_m": 0,
+    "confidence": "HIGH",
+    "ok": true
+   },
+   "suggested_bio": "The 1,564 m lookout at the top of New England National Park, with views over rainforest to the coast.",
+   "bio_note": "Draft said 1,563 m; Wikipedia gives 1,564 m. Corrected.",
+   "notes": "NPWS alerts (read 2026-10-18): Eagles Nest walking track, all access to Weeping Rock, Lyrebird walking track and Snow Gum link track are closed for rockfall hazard (from 28 Oct 2025, no end date); West End Trail permanently closed (bridges out). Park itself open.",
+   "unverified": [
+    "Visit duration is NPWS walk time plus an estimate.",
+    "NPWS alerts (read 2026-10-18): Eagles Nest walking track, all access to Weeping Rock, Lyrebird walking track and Snow Gum link track are closed for rockfall hazard (from 28 Oct 2025, no end date); West End Trail permanently closed (bridges out). Park itself open."
+   ],
+   "closures_alerts": "NPWS alerts (read 2026-10-18): Eagles Nest walking track, all access to Weeping Rock, Lyrebird walking track and Snow Gum link track are closed for rockfall hazard (from 28 Oct 2025, no end date); West End Trail permanently closed (bridges out). Park itself open."
+  },
+  {
+   "id": "ebor-falls",
+   "name": "Ebor Falls",
+   "placement_id": "new-england-national-park-2",
+   "kind": "new",
+   "standalone": true,
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "Ebor Falls is a tiered waterfall on the Guy Fawkes River on Waterfall Way, about 37 km north-east of Wollomombi; it lies in Guy Fawkes River National Park per NPWS.",
+     "source": "https://en.wikipedia.org/wiki/Ebor_Falls"
+    },
+    {
+     "claim": "NPWS: the Muurlay Garriirlgundi track joins the Upper and Lower Ebor Falls, an easy 2 km return walk with 6 lookouts; the falls are open at all hours.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/ebor-falls"
+    },
+    {
+     "claim": "No NPWS alerts for Guy Fawkes River National Park on 2026-10-18; no park entry fee (not on the fee-collecting list).",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/guy-fawkes-river-national-park/local-alerts"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/ebor-falls",
+   "ticketUrl_note": "Loaded: HTTP 200, title \"Ebor Falls | NSW National Parks\" (managing agency page).",
+   "coordinates": {
+    "latitude": -30.402159,
+    "longitude": 152.34215
+   },
+   "coordinates_source": "Atlas placement point: OpenStreetMap waterway=waterfall (HIGH with Wikipedia -30.402287,152.341576 and Commons); NPWS geo -30.40338,152.34263 is 140 m away",
+   "coordinates_check": {
+    "placement_point": {
+     "latitude": -30.402159,
+     "longitude": 152.34215
+    },
+    "final_point": {
+     "latitude": -30.402159,
+     "longitude": 152.34215
+    },
+    "distance_moved_m": 0,
+    "confidence": "HIGH",
+    "ok": true
+   },
+   "suggested_bio": "A tiered waterfall on Waterfall Way with an easy 2 km return walk linking six lookouts.",
+   "bio_note": "Draft said \"reached by a short walk\"; NPWS says an easy 2 km return walk with 6 lookouts, so the bio now says that.",
+   "unverified": [
+    "Visit duration 0.5-1 h is an estimate from the 2 km return walk."
+   ]
+  },
+  {
+   "id": "cathedral-rock-national-park",
+   "name": "Cathedral Rock National Park",
+   "placement_id": "new-england-national-park-3",
+   "kind": "new",
+   "standalone": true,
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "Cathedral Rock National Park is 8 km west of Waterfall Way, about 70 km east of Armidale, between the Guy Fawkes River and Macleay Range; it contains Round Mountain, the highest peak of the New England Tableland.",
+     "source": "https://en.wikipedia.org/wiki/Cathedral_Rock_National_Park"
+    },
+    {
+     "claim": "Cathedral Rock track: 6 km loop, Grade 5, 1.5-2.5 h suggested, to a summit of stacked boulders with panoramic tableland views (Cathedral Rock lookout); starts near Barokee campground.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/cathedral-rock-track"
+    },
+    {
+     "claim": "NPWS: \"Cathedral Rock National Park is always open, but may have to close at times due to poor weather or fire danger.\"",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/cathedral-rock-national-park"
+    },
+    {
+     "claim": "NPWS alert: Barokee campground closed 13 Apr 2026 to 30 Jun 2027 for maintenance; the day-use area and walking tracks remain publicly accessible.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/cathedral-rock-national-park/local-alerts"
+    },
+    {
+     "claim": "No park entry fee (not on the NPWS fee-collecting list).",
+     "source": "https://www.nationalparks.nsw.gov.au/passes-and-fees/fee-collecting-parks"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/cathedral-rock-national-park",
+   "ticketUrl_note": "Loaded: HTTP 200, title \"Cathedral Rock National Park | NSW National Parks\".",
+   "coordinates": {
+    "latitude": -30.433367,
+    "longitude": 152.250881
+   },
+   "coordinates_source": "NPWS Cathedral Rock lookout (JSON-LD geo -30.4333670,152.2508813) + OpenStreetMap natural=bare_rock \"Cathedral Rock\" (-30.4335315,152.2506431) and path \"Cathedral Rock Summit Track\" (13 m): visitor point on the summit, replacing the park centroid (-30.43672,152.22963, 2.1 km west)",
+   "coordinates_check": {
+    "placement_point": {
+     "latitude": -30.43672,
+     "longitude": 152.22963
+    },
+    "final_point": {
+     "latitude": -30.433367,
+     "longitude": 152.250881
+    },
+    "distance_moved_m": 2071,
+    "confidence": "HIGH (NPWS lookout, OSM rock and path within 30 m)",
+    "ok": true
+   },
+   "suggested_bio": "A small park of granite tors east of Armidale, with a 6 km loop walk to summit boulders and wide tableland views.",
+   "bio_note": "Draft \"day-use walk\" is vague; NPWS gives the 6 km Grade 5 loop to the summit.",
+   "unverified": [
+    "Visit duration 2-3 h comes from NPWS 1.5-2.5 h loop plus travel at the trailhead."
+   ],
+   "closures_alerts": "Barokee campground closed to 30 Jun 2027; day use and tracks open."
+  },
+  {
+   "id": "cunnawarra-national-park",
+   "name": "Cunnawarra National Park",
+   "placement_id": "new-england-national-park-4",
+   "kind": "new",
+   "standalone": true,
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "Cunnawarra National Park is 70 km from both Armidale and Dorrigo, a World Heritage-listed park for 4WD touring, hiking, camping and birdwatching.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/cunnawarra-national-park"
+    },
+    {
+     "claim": "Beech lookout in Cunnawarra National Park offers views out over World Heritage-listed rainforest (the only lookout NPWS lists for the park).",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/beech-lookout"
+    },
+    {
+     "claim": "Wikipedia: part of the New England Group of the Gondwana Rainforests World Heritage Area, home to the tallest eucalyptus trees in NSW; the 25 km Styx River Forest Way runs through it from Point Lookout Road to Kempsey Road.",
+     "source": "https://en.wikipedia.org/wiki/Cunnawarra_National_Park"
+    },
+    {
+     "claim": "NPWS: always open but may close for poor weather or fire danger; no current alerts for the park on 2026-10-18; no park entry fee (not on the fee-collecting list).",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/cunnawarra-national-park"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/cunnawarra-national-park",
+   "ticketUrl_note": "Loaded: HTTP 200, title \"Cunnawarra National Park | NSW National Parks\".",
+   "coordinates": {
+    "latitude": -30.518581,
+    "longitude": 152.354289
+   },
+   "coordinates_source": "NPWS Beech lookout (JSON-LD geo -30.5185814,152.3542886) + OpenStreetMap tourism=viewpoint \"Beech Lookout\" (-30.5185561,152.3541364), 15 m apart; the placement point (-30.63852,152.21514) was the OSM centroid 20 km away with no visitor feature",
+   "coordinates_check": {
+    "placement_point": {
+     "latitude": -30.63852,
+     "longitude": 152.21514
+    },
+    "final_point": {
+     "latitude": -30.518581,
+     "longitude": 152.354289
+    },
+    "distance_moved_m": 18850,
+    "confidence": "HIGH (two sources within 15 m; pin moved 20 km to the park's only mapped visitor feature)",
+    "ok": true
+   },
+   "suggested_bio": "A remote World Heritage park with Beech Lookout, 4WD tracks and camping, about 70 km from Armidale and Dorrigo.",
+   "notes": "Beech lookout sits near the park's north-east tip beside New England National Park, about 7 km from Point Lookout; the Wikipedia centroid (-30.62472,152.21722) is deep in the park with no visitor feature.",
+   "unverified": [
+    "Visit duration is an estimate (lookout stop to a half-day of 4WD touring).",
+    "Road condition on Point Lookout Road / Styx River Forest Way not checked."
+   ]
+  },
+  {
+   "id": "oxley-wild-rivers-national-park",
+   "name": "Oxley Wild Rivers National Park",
+   "placement_id": "dest:oxley-wild-rivers-national-park",
+   "kind": "new",
+   "standalone": true,
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "Oxley Wild Rivers National Park near Armidale is a World Heritage-listed park of Gondwana rainforest, dramatic gorges and waterfalls, for walking, camping, bike or horse riding and fishing.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/oxley-wild-rivers-national-park"
+    },
+    {
+     "claim": "Gara Gorge lookout is reached by an easy hike along Threlfall walking track, with birdwatching, picnicking and views over the gorge country near Armidale.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/gara-gorge-lookout"
+    },
+    {
+     "claim": "The park is 145,223 ha, one of the largest national parks in NSW, named for the explorer John Oxley.",
+     "source": "https://en.wikipedia.org/wiki/Oxley_Wild_Rivers_National_Park"
+    },
+    {
+     "claim": "Park fees: day-use vehicle permits are needed only at Halls Peak, Riverside and Youdales Hut campground and picnic areas; Wollomombi, Apsley and Gara Gorge are not fee areas.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/oxley-wild-rivers-national-park"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/oxley-wild-rivers-national-park",
+   "ticketUrl_note": "Loaded: HTTP 200, title \"Oxley Wild Rivers National Park | NSW National Parks\".",
+   "coordinates": {
+    "latitude": -30.60183,
+    "longitude": 151.811878
+   },
+   "coordinates_source": "NPWS Gara Gorge lookout (JSON-LD geo -30.6018304,151.8118776) + OpenStreetMap tourism=viewpoint \"Gorge Lookout\" (-30.60197,151.8118146), 16 m apart; replaces the derived midpoint of the two falls (-30.790457,151.90527, not a source point). A third distinct precinct from the Wollomombi and Apsley spots.",
+   "coordinates_check": {
+    "placement_point": {
+     "latitude": -30.790457,
+     "longitude": 151.90527
+    },
+    "final_point": {
+     "latitude": -30.60183,
+     "longitude": 151.811878
+    },
+    "distance_moved_m": 22796,
+    "confidence": "HIGH (two sources within 16 m); the park is very large so any single pin is a judgement",
+    "ok": true
+   },
+   "suggested_bio": "A huge World Heritage park of gorges and waterfalls near Armidale, with lookouts at Gara Gorge, Wollomombi and Apsley.",
+   "notes": "NPWS alerts (2026-10-18): Dangars Gorge precinct (Dangars Falls lookouts and picnic area, campground, McDirtys and Sailsbury Waters tracks) strictly closed for an upgrade until 31 Jan 2027; fire ban at Riverside, Youdales and Green Gully track until 28 Feb 2027. Wollomombi, Apsley and Gara Gorge are not listed as closed. Pin is 29 km (Gara Gorge) from the Wollomombi pin and 50 km from Apsley, so it does not duplicate either.",
+   "unverified": [
+    "Visit duration 1-3 h is an estimate (Threlfall walk length not read).",
+    "NPWS alerts (2026-10-18): Dangars Gorge precinct (Dangars Falls lookouts and picnic area, campground, McDirtys and Sailsbury Waters tracks) strictly closed for an upgrade until 31 Jan 2027; fire ban at Riverside, Youdales and Green Gully track until 28 Feb 2027. Wollomombi, Apsley and Gara Gorge are not listed as closed."
+   ],
+   "closures_alerts": "NPWS alerts (2026-10-18): Dangars Gorge precinct (Dangars Falls lookouts and picnic area, campground, McDirtys and Sailsbury Waters tracks) strictly closed for an upgrade until 31 Jan 2027; fire ban at Riverside, Youdales and Green Gully track until 28 Feb 2027. Wollomombi, Apsley and Gara Gorge are not listed as closed."
+  },
+  {
+   "id": "wollomombi-falls",
+   "name": "Wollomombi Falls",
+   "placement_id": "oxley-wild-rivers-national-park-1",
+   "kind": "new",
+   "standalone": true,
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "Wollomombi Falls is a horsetail waterfall on the Wollomombi River; Wikipedia gives its height as 150-230 m and Wikivoyage calls it the highest in NSW; it lies in Oxley Wild Rivers National Park.",
+     "source": "https://en.wikipedia.org/wiki/Wollomombi_Falls"
+    },
+    {
+     "claim": "NPWS: Wollomombi Falls lookout is reached by an easy walk from Wollomombi Falls picnic area and looks down from the top of the falls to Inaccessible Gulf; Wollomombi Main Falls lookout is nearby.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/wollomombi-falls-lookout"
+    },
+    {
+     "claim": "Wollomombi walking track: 4 km return, Grade 3.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/wollomombi-walking-track"
+    },
+    {
+     "claim": "No entry fee at Wollomombi: day-use permits apply only at Halls Peak, Riverside and Youdales.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/oxley-wild-rivers-national-park"
+    },
+    {
+     "claim": "OpenStreetMap shows two waterway=waterfall nodes (-30.530664,152.04068 and -30.5314579,152.0399727) within 110 m of the pin.",
+     "source": "https://www.openstreetmap.org/"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/wollomombi-falls-lookout",
+   "ticketUrl_note": "Loaded: HTTP 200, title \"Wollomombi Falls lookout | NSW National Parks\" (managing agency page).",
+   "coordinates": {
+    "latitude": -30.53159,
+    "longitude": 152.04111
+   },
+   "coordinates_source": "Atlas placement point: OpenStreetMap tourism=viewpoint \"Wollomombi Falls Lookout\" (node 448108640), the visitor standing point; OSM waterfalls 100 m away, Commons median -30.531089,152.038672 (176 m)",
+   "coordinates_check": {
+    "placement_point": {
+     "latitude": -30.53159,
+     "longitude": 152.04111
+    },
+    "final_point": {
+     "latitude": -30.53159,
+     "longitude": 152.04111
+    },
+    "distance_moved_m": 0,
+    "confidence": "HIGH",
+    "ok": true
+   },
+   "suggested_bio": "One of the highest waterfalls in New South Wales, viewed from lookouts above Inaccessible Gulf.",
+   "bio_note": "\"One of the tallest\" kept as \"one of the highest\": Wikivoyage says highest in NSW, Wikipedia gives a 150-230 m range.",
+   "notes": "NPWS alerts (2026-10-18): Dangars Gorge precinct (Dangars Falls lookouts and picnic area, campground, McDirtys and Sailsbury Waters tracks) strictly closed for an upgrade until 31 Jan 2027; fire ban at Riverside, Youdales and Green Gully track until 28 Feb 2027. Wollomombi, Apsley and Gara Gorge are not listed as closed.",
+   "unverified": [
+    "Wikivoyage \"highest in NSW\" is not re-checked against Geoscience Australia; the draft's phrase \"one of\" is the safer claim.",
+    "Visit duration estimate."
+   ],
+   "closures_alerts": "NPWS alerts (2026-10-18): Dangars Gorge precinct (Dangars Falls lookouts and picnic area, campground, McDirtys and Sailsbury Waters tracks) strictly closed for an upgrade until 31 Jan 2027; fire ban at Riverside, Youdales and Green Gully track until 28 Feb 2027. Wollomombi, Apsley and Gara Gorge are not listed as closed."
+  },
+  {
+   "id": "apsley-falls",
+   "name": "Apsley Falls",
+   "placement_id": "oxley-wild-rivers-national-park-2",
+   "kind": "new",
+   "standalone": true,
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "Apsley Falls are two waterfalls on the Apsley River, about 20 km east of Walcha and 1 km off the Oxley Highway in a deep gorge in Oxley Wild Rivers National Park; the first drop is about 65 m and the second, 800 m on, about 58 m.",
+     "source": "https://en.wikipedia.org/wiki/Apsley_Falls"
+    },
+    {
+     "claim": "NPWS: Apsley Main Falls lookout (also McMillan lookout) is the closest to the upper falls and best after heavy rain; the Apsley Gorge Rim walking track is a 1.2 km loop, Grade 2, joining scenic lookouts.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/apsley-main-falls-lookout"
+    },
+    {
+     "claim": "NPWS: Apsley Falls picnic area has barbecue facilities with views of gorges and waterfalls and nearby Aboriginal sites; Apsley Falls campground is also in the park.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/picnic-areas/apsley-falls-picnic-area"
+    },
+    {
+     "claim": "No entry fee: vehicle permits apply only at Halls Peak, Riverside and Youdales.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/oxley-wild-rivers-national-park"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/picnic-areas/apsley-falls-picnic-area",
+   "ticketUrl_note": "Loaded: HTTP 200, title \"Apsley Falls picnic area | NSW National Parks\" (managing agency page for the falls precinct).",
+   "coordinates": {
+    "latitude": -31.049323,
+    "longitude": 151.769429
+   },
+   "coordinates_source": "Atlas placement point: OpenStreetMap waterway=waterfall \"Apsley Falls\" (0 m); NPWS Apsley Main Falls lookout (-31.0500518,151.7699855) is 90 m away and Wikipedia -31.05028,151.76944 is 120 m away",
+   "coordinates_check": {
+    "placement_point": {
+     "latitude": -31.049323,
+     "longitude": 151.769429
+    },
+    "final_point": {
+     "latitude": -31.049323,
+     "longitude": 151.769429
+    },
+    "distance_moved_m": 0,
+    "confidence": "HIGH",
+    "ok": true
+   },
+   "suggested_bio": "Two waterfalls on the Apsley River, the first dropping about 65 m, seen from lookouts on a 1.2 km rim walk.",
+   "bio_note": "Draft said \"a 52 m waterfall\"; Wikipedia gives about 65 m for the first drop and 58 m for the second. Corrected.",
+   "notes": "NPWS alerts (2026-10-18): Dangars Gorge precinct (Dangars Falls lookouts and picnic area, campground, McDirtys and Sailsbury Waters tracks) strictly closed for an upgrade until 31 Jan 2027; fire ban at Riverside, Youdales and Green Gully track until 28 Feb 2027. Wollomombi, Apsley and Gara Gorge are not listed as closed.",
+   "unverified": [
+    "Visit duration is an estimate from the 1.2 km loop."
+   ],
+   "closures_alerts": "NPWS alerts (2026-10-18): Dangars Gorge precinct (Dangars Falls lookouts and picnic area, campground, McDirtys and Sailsbury Waters tracks) strictly closed for an upgrade until 31 Jan 2027; fire ban at Riverside, Youdales and Green Gully track until 28 Feb 2027. Wollomombi, Apsley and Gara Gorge are not listed as closed."
+  },
+  {
+   "id": "tamworth",
+   "name": "Tamworth",
+   "placement_id": "dest:tamworth",
+   "kind": "new",
+   "standalone": true,
+   "category": "historic",
+   "facts": [
+    {
+     "claim": "Tamworth is a regional city of about 43,900 on the Peel River, known as the \"Country Music Capital of Australia\" (hosting the Tamworth Country Music Festival each January) and as the \"First Town of Lights\", the first place in Australia to use electric street lights, in 1888.",
+     "source": "https://en.wikipedia.org/wiki/Tamworth,_New_South_Wales"
+    },
+    {
+     "claim": "Its sights include the Big Golden Guitar at the southern entrance (12 m, erected 1988) and the Australian Country Music Hall of Fame on Peel Street.",
+     "source": "https://www.tamworthregion.com.au/visit/experience/the-big-golden-guitar"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "City with no single steward; no ticketUrl.",
+   "coordinates": {
+    "latitude": -31.09198,
+    "longitude": 150.92294
+   },
+   "coordinates_source": "Placement point (Wikivoyage New England page); town centre, within 0.7 km of the OpenStreetMap place=city node (-31.0900743,150.9290159)",
+   "coordinates_check": {
+    "placement_point": {
+     "latitude": -31.09198,
+     "longitude": 150.92294
+    },
+    "final_point": {
+     "latitude": -31.09198,
+     "longitude": 150.92294
+    },
+    "distance_moved_m": 0,
+    "confidence": "MEDIUM (town centre)",
+    "ok": true
+   },
+   "suggested_bio": "A regional city on the Peel River, billed as the Country Music Capital of Australia, with a giant golden guitar and hall of fame.",
+   "unverified": [
+    "Visit duration is an estimate."
+   ]
+  },
+  {
+   "id": "tamworth-golden-guitar",
+   "name": "Tamworth Golden Guitar",
+   "placement_id": "tamworth-1",
+   "kind": "new",
+   "standalone": true,
+   "category": "landmark",
+   "facts": [
+    {
+     "claim": "The Big Golden Guitar stands on Goonoo Goonoo Road (New England Highway) at the southern entrance to Tamworth; erected 1988, unveiled by Slim Dusty, 12 m tall and half a tonne; \"available 24hrs and lit at night\".",
+     "source": "https://www.tamworthregion.com.au/visit/experience/the-big-golden-guitar"
+    },
+    {
+     "claim": "Tamworth Visitor Information Centre at the Big Golden Guitar is open 7 days 9am-4pm (excluding New Year's Day, Good Friday, Anzac Day, Christmas Day, Boxing Day); cafe Mon-Sat from 9am; phone (02) 6767 5300.",
+     "source": "https://www.tamworthregion.com.au/visit/plan/visitor-information-centre"
+    },
+    {
+     "claim": "Group bookings for the Wax Museum and National Guitar Museum (separate paid venues) are arranged at this site.",
+     "source": "https://www.tamworthregion.com.au/visit/plan/visitor-information-centre"
+    }
+   ],
+   "hours": "Guitar open 24 hours; visitor centre 9:00 AM - 4:00 PM daily",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "free": true,
+   "ticketUrl": "https://www.tamworthregion.com.au/visit/experience/the-big-golden-guitar",
+   "ticketUrl_note": "Loaded: HTTP 200, title \"The Big Golden Guitar | Tamworth Region\" (Tamworth Regional Council tourism page; the visitor centre is council-run).",
+   "coordinates": {
+    "latitude": -31.127568,
+    "longitude": 150.923622
+   },
+   "coordinates_source": "Atlas placement point: Photon tourism=attraction Big Golden Guitar (HIGH); not re-run",
+   "coordinates_check": {
+    "placement_point": {
+     "latitude": -31.127568,
+     "longitude": 150.923622
+    },
+    "final_point": {
+     "latitude": -31.127568,
+     "longitude": 150.923622
+    },
+    "distance_moved_m": 0,
+    "confidence": "HIGH",
+    "ok": true
+   },
+   "suggested_bio": "A 12 m golden guitar at Tamworth's southern entrance, floodlit at night, beside the visitor information centre.",
+   "unverified": [
+    "The guitar itself is free; the Wax Museum and National Guitar Museum on site charge separately and were not priced.",
+    "Visitor-centre hours conflict between the tourism pages (9am-4pm) and third-party listings (9am-5pm); the council tourism page is used."
+   ]
+  },
+  {
+   "id": "australian-country-music-hall-of-fame",
+   "name": "Australian Country Music Hall of Fame",
+   "placement_id": "tamworth-2",
+   "kind": "new",
+   "standalone": true,
+   "category": "museum",
+   "facts": [
+    {
+     "claim": "Open Tuesday to Sunday 10am-4pm; closed Mondays and public holidays. Address 561 Peel Street, Tamworth; phone 02 6767 5950.",
+     "source": "https://countrymusichalloffame.com.au/visit-us-2/"
+    },
+    {
+     "claim": "Admission: adults $10.00, concession $8.00, children 5-12 $4.00 (children under 12 shown as $4.00 on the home page); online tickets sold on the site.",
+     "source": "https://countrymusichalloffame.com.au/visit-us-2/"
+    },
+    {
+     "claim": "The Hall of Fame, including the Walk a Country Mile exhibition, holds memorabilia from Australian country music artists: stage outfits, instruments and handmade leather and bush works; displays are rotated.",
+     "source": "https://countrymusichalloffame.com.au/"
+    }
+   ],
+   "hours": "10:00 AM - 4:00 PM, Tuesday to Sunday",
+   "closedDays": [
+    1
+   ],
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://countrymusichalloffame.com.au/",
+   "ticketUrl_note": "Loaded: HTTP 200, title \"Australian Country Music Hall of Fame\" (official site).",
+   "coordinates": {
+    "latitude": -31.098962,
+    "longitude": 150.93668
+   },
+   "coordinates_source": "Atlas placement point: Photon tourism=attraction (MEDIUM); official address 561 Peel Street, not re-run",
+   "coordinates_check": {
+    "placement_point": {
+     "latitude": -31.098962,
+     "longitude": 150.93668
+    },
+    "final_point": {
+     "latitude": -31.098962,
+     "longitude": 150.93668
+    },
+    "distance_moved_m": 0,
+    "confidence": "MEDIUM",
+    "ok": true
+   },
+   "suggested_bio": "A country music museum on Peel Street with stage outfits, instruments and the Walk a Country Mile exhibition.",
+   "unverified": [
+    "The Hall of Fame site also shows extended hours (10am-5pm) during the January festival and a note of a past one-day closure; not applied.",
+    "Another official page says children under 12 are free with a paying adult; the Visit Us page says 5-12 are $4. Adult $10 is consistent."
+   ]
+  },
+  {
+   "id": "glen-innes",
+   "name": "Glen Innes",
+   "placement_id": "dest:glen-innes",
+   "kind": "new",
+   "standalone": true,
+   "category": "historic",
+   "facts": [
+    {
+     "claim": "Glen Innes is a New England town of about 6,000 (Wikivoyage), home to the Australian Standing Stones and the Australian Celtic Festival each May; Glen Innes Highlands tourism promotes its Celtic heritage.",
+     "source": "https://gleninneshighlands.com/celtic-experiences.html"
+    },
+    {
+     "claim": "Kings Plains National Park is 50 km from Glen Innes; Gibraltar Range National Park is 79 km north-east of the town.",
+     "source": "https://en.wikipedia.org/wiki/Kings_Plains_National_Park"
+    },
+    {
+     "claim": "Gibraltar Range National Park is situated 79 km north-east of Glen Innes.",
+     "source": "https://en.wikipedia.org/wiki/Gibraltar_Range_National_Park"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Town with no single steward; no ticketUrl.",
+   "coordinates": {
+    "latitude": -29.73679,
+    "longitude": 151.73841
+   },
+   "coordinates_source": "Placement point (Wikivoyage New England page); town centre, 0.3 km from the OpenStreetMap place=town relation 6069889",
+   "coordinates_check": {
+    "placement_point": {
+     "latitude": -29.73679,
+     "longitude": 151.73841
+    },
+    "final_point": {
+     "latitude": -29.73679,
+     "longitude": 151.73841
+    },
+    "distance_moved_m": 0,
+    "confidence": "MEDIUM (town centre)",
+    "ok": true
+   },
+   "suggested_bio": "A New England Highway town with a Celtic heritage, home to the Australian Standing Stones and gateway to Gibraltar Range.",
+   "unverified": [
+    "Visit duration is an estimate.",
+    "Distances come from the Wikipedia park articles."
+   ]
+  },
+  {
+   "id": "australian-standing-stones",
+   "name": "Australian Standing Stones",
+   "placement_id": "glen-innes-1",
+   "kind": "new",
+   "standalone": true,
+   "category": "landmark",
+   "facts": [
+    {
+     "claim": "The Australian Standing Stones in Glen Innes pay tribute to the Celtic heritage of the district's early European settlers, a gathering place for the Irish, Welsh, Cornish, Scottish, Manx and Bretons; the Australian Celtic Festival is held there each May.",
+     "source": "https://www.visitnsw.com/destinations/country-nsw/glen-innes-and-inverell-area/glen-innes/attractions/the-australian-standing-stones-national-celtic-monument"
+    },
+    {
+     "claim": "The first stone was raised in 1991 and the monument opened in 1992; it is arranged as a calendar marking the change of seasons, with a Celtic Cross and Southern Cross in the design (Secret Sydney).",
+     "source": "https://secretsydney.com/australian-standing-stones-nsw/"
+    },
+    {
+     "claim": "Free entry; in Centennial Parklands, Glen Innes, reached via Watsons Drive; a new Skywalk and lookouts are listed (NSW Government listing, read through a search summary: the page returns 403 to the fetch tool).",
+     "source": "https://www.nsw.gov.au/visiting-and-exploring-nsw/locations-and-attractions/australian-standing-stones-national-celtic-monument"
+    }
+   ],
+   "hours": "Open daily; open-air site (set hours not found)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "No steward site for the monument found: VisitNSW and Glen Innes Highlands pages are tourism listings, the NSW Government listing returned 403. Glen Innes Severn Council owns Centennial Parklands but no council page for the stones was located.",
+   "coordinates": {
+    "latitude": -29.741495,
+    "longitude": 151.752667
+   },
+   "coordinates_source": "Atlas placement point: Photon information=board (HIGH with Commons median); not re-run",
+   "coordinates_check": {
+    "placement_point": {
+     "latitude": -29.741495,
+     "longitude": 151.752667
+    },
+    "final_point": {
+     "latitude": -29.741495,
+     "longitude": 151.752667
+    },
+    "distance_moved_m": 0,
+    "confidence": "HIGH",
+    "ok": true
+   },
+   "suggested_bio": "A circle of standing stones in Glen Innes's Centennial Parklands honouring the district's Celtic settlers.",
+   "unverified": [
+    "Opening hours not found on any page loaded; \"Open daily\" is inferred from free open-air access.",
+    "The \"38 megaliths, each 3.5 m high\" figure appears only in a search summary of the (403-blocked) NSW Government listing and is not used.",
+    "Secret Sydney states the stones are \"about 12 km south of Glen Innes\", which conflicts with the Centennial Parklands pin 1.6 km from the town; the pin follows OSM and Commons."
+   ]
+  },
+  {
+   "id": "kings-plains-national-park",
+   "name": "Kings Plains National Park",
+   "placement_id": "glen-innes-2",
+   "kind": "new",
+   "standalone": true,
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "Kings Plains National Park, on the New England Tablelands, offers bushwalking, swimming, seasonal waterfalls and camping; Kings Plains Creek walking track is a challenging 3 km return walk to Kings Plains Falls, which flows only after rain (Grade 5, 2.5-3.5 h).",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/kings-plains-creek-walking-track"
+    },
+    {
+     "claim": "The park is 48 km from Inverell and 50 km from Glen Innes.",
+     "source": "https://en.wikipedia.org/wiki/Kings_Plains_National_Park"
+    },
+    {
+     "claim": "NPWS: always open but may close for poor weather or fire danger; no current alerts on 2026-10-18; no park entry fee (not on the fee-collecting list).",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/kings-plains-national-park"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/kings-plains-national-park",
+   "ticketUrl_note": "Loaded: HTTP 200, title \"Kings Plains National Park | NSW National Parks\".",
+   "coordinates": {
+    "latitude": -29.583851,
+    "longitude": 151.38636
+   },
+   "coordinates_source": "NPWS Kings Plains Creek walking track start (JSON-LD geo -29.5838514,151.3863603); OSM Kings Plains Creek stream -29.583638,151.384047 (200 m) and Commons median -29.584103,151.389313 (270 m) bracket it. Replaces the park centroid -29.59772,151.369672 (2.5 km).",
+   "coordinates_check": {
+    "placement_point": {
+     "latitude": -29.58395,
+     "longitude": 151.38953
+    },
+    "final_point": {
+     "latitude": -29.583851,
+     "longitude": 151.38636
+    },
+    "distance_moved_m": 307,
+    "confidence": "MEDIUM (agency trailhead point; two other sources 200-270 m away)",
+    "ok": true
+   },
+   "suggested_bio": "A small park near Glen Innes with a creekside walk to seasonal Kings Plains Falls, swimming holes and camping.",
+   "unverified": [
+    "Visit duration derived from the 2.5-3.5 h walk.",
+    "Kings Plains Falls flow depends on rain."
+   ]
+  },
+  {
+   "id": "gibraltar-range-national-park",
+   "name": "Gibraltar Range National Park",
+   "placement_id": "dest:gibraltar-range-national-park",
+   "kind": "new",
+   "standalone": true,
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "Gibraltar Range National Park has walks, lookouts and picnic spots in World Heritage-listed Gondwana rainforest, with cottage and campground stays; NPWS lists The Needles, Dandahra Falls and Duffer Falls walking tracks, Raspberry and Boundary Falls lookouts, and the Gibraltar-Washpool World Heritage walk.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/gibraltar-range-national-park"
+    },
+    {
+     "claim": "Dandahra picnic area, between Grafton and Glen Innes, is a rest stop for walking and birdwatching; Platypus picnic area is close to the Gwydir Highway.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/picnic-areas/dandahra-picnic-area"
+    },
+    {
+     "claim": "Park entry fee: $8 per vehicle per day, self-registration (bring the correct change).",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/picnic-areas/dandahra-picnic-area"
+    },
+    {
+     "claim": "The park is 79 km north-east of Glen Innes and 493 km north of Sydney.",
+     "source": "https://en.wikipedia.org/wiki/Gibraltar_Range_National_Park"
+    },
+    {
+     "claim": "NPWS: always open but may close for poor weather, road damage or high fire danger. No current alerts for the park on 2026-10-18.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/gibraltar-range-national-park/local-alerts"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "costMin": 8,
+   "costMax": 8,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/gibraltar-range-national-park",
+   "ticketUrl_note": "Loaded: HTTP 200, title \"Gibraltar Range National Park | NSW National Parks\".",
+   "coordinates": {
+    "latitude": -29.514819,
+    "longitude": 152.31287
+   },
+   "coordinates_source": "NPWS Dandahra picnic area (JSON-LD geo -29.5148193,152.3128701) + OpenStreetMap picnic_site / rest_area (-29.5147717,152.3128273), 6-8 m apart: the park's roadside access beside the Gwydir Highway, replacing the park centroid -29.554444,152.323889 (4.5 km)",
+   "coordinates_check": {
+    "placement_point": {
+     "latitude": -29.554444,
+     "longitude": 152.323889
+    },
+    "final_point": {
+     "latitude": -29.514819,
+     "longitude": 152.31287
+    },
+    "distance_moved_m": 4533,
+    "confidence": "HIGH (two sources within 10 m)",
+    "ok": true
+   },
+   "suggested_bio": "A World Heritage rainforest park on the Gwydir Highway with granite lookouts, waterfall walks and campgrounds.",
+   "notes": "Park entry fee also confirmed on NPWS Passes and fees list: Gibraltar Range National Park $8 per day (https://www.nationalparks.nsw.gov.au/passes-and-fees/fee-collecting-parks).",
+   "unverified": [
+    "Visit duration is an estimate (picnic stop to a day of walks).",
+    "$8 is per vehicle, not per person."
+   ]
+  },
+  {
+   "id": "washpool-national-park",
+   "name": "Washpool National Park",
+   "placement_id": "gibraltar-range-national-park-1",
+   "kind": "new",
+   "standalone": true,
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "Washpool National Park, north-west of Grafton or east of Glen Innes, offers wilderness walks, camping and horse riding in World Heritage surrounds; Wikipedia: 58,678 ha, one of the largest uncut forests in NSW.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/washpool-national-park"
+    },
+    {
+     "claim": "Coombadjha nature stroll: 1.4 km loop, Grade 2, 30-60 min through World Heritage rainforest to a swimming spot; Washpool walking track is an 8.5 km loop, Grade 4, 3-4 h.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/coombadjha-nature-stroll"
+    },
+    {
+     "claim": "Park entry fee: $8 per vehicle per day applies only at attractions in the Glen Innes area, self-registration (bring correct change).",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/washpool-national-park"
+    },
+    {
+     "claim": "NPWS: always open but may close for poor weather or fire danger; no current alerts in the park on 2026-10-18, but a nearby alert closes Cambridge Plateau Forest Drive (Richmond Range NP) until about 31 October.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/washpool-national-park/local-alerts"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "costMin": 8,
+   "costMax": 8,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/washpool-national-park",
+   "ticketUrl_note": "Loaded: HTTP 200, title \"Washpool National Park | NSW National Parks\".",
+   "coordinates": {
+    "latitude": -29.469759,
+    "longitude": 152.317691
+   },
+   "coordinates_source": "NPWS Coombadjha nature stroll start (JSON-LD geo -29.4697592,152.3176911); NPWS Coachwood Pool lookout (-29.4693617,152.3171083) 60 m away; replaces the park centroid -29.34962,152.25983 (13.5 km)",
+   "coordinates_check": {
+    "placement_point": {
+     "latitude": -29.34962,
+     "longitude": 152.25983
+    },
+    "final_point": {
+     "latitude": -29.469759,
+     "longitude": 152.317691
+    },
+    "distance_moved_m": 14487,
+    "confidence": "MEDIUM (agency points only; OSM names found nothing, Coombadjha is the park's visitor hub on the Gwydir Highway side)",
+    "ok": true
+   },
+   "suggested_bio": "A World Heritage rainforest park with the short Coombadjha nature stroll, a swimming spot and longer walks.",
+   "notes": "The NPWS Washpool fee wording is \"applies only at attractions in the Glen Innes area\"; the Coombadjha pages carry \"Park entry fees apply\", so $8 is used. Park fee list also names Washpool National Park.",
+   "unverified": [
+    "$8 is per vehicle per day and may not apply in every part of the park (NPWS wording).",
+    "Visit duration is an estimate."
+   ]
+  },
+  {
+   "id": "gibraltar-washpool-world-heritage-walk",
+   "name": "Gibraltar-Washpool World Heritage Walk",
+   "placement_id": "_hold:Gibraltar-Washpool World Heritage walk",
+   "kind": "held-resolved",
+   "standalone": true,
+   "category": "hike",
+   "facts": [
+    {
+     "claim": "NPWS: 45 km loop, Grade 4, 3-4 days through eucalypt forest, rainforest, wetlands and granite tors in the Northern Tablelands; NPWS geo of its start is -29.4884283,152.3308850 (in Gibraltar Range National Park). Trip Intention Form listed.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/gibraltarwashpool-world-heritage-walk"
+    },
+    {
+     "claim": "Park entry fee $8 per vehicle per day, self-registration (Gibraltar Range National Park).",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/gibraltarwashpool-world-heritage-walk"
+    },
+    {
+     "claim": "OpenStreetMap hiking route relation 4803280 \"World Heritage Walk\": 38 ways, 45.3 km in total, a closed loop; its length agrees with NPWS's 45 km.",
+     "source": "https://www.openstreetmap.org/relation/4803280"
+    },
+    {
+     "claim": "The Needles walking track (6 km return, Grade 3) is a shorter part of the walk.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/the-needles-walking-track"
+    }
+   ],
+   "hours": "Open 24 hours; multi-day walk (3-4 days)",
+   "visitHoursMin": 72,
+   "visitHoursMax": 96,
+   "costMin": 8,
+   "costMax": 8,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/gibraltarwashpool-world-heritage-walk",
+   "ticketUrl_note": "Loaded: HTTP 200, NPWS walking-track page \"Gibraltar-Washpool World Heritage walk\" (managing agency).",
+   "coordinates": {
+    "latitude": -29.501863,
+    "longitude": 152.250882
+   },
+   "coordinates_source": "Midpoint along the OpenStreetMap hiking route relation 4803280 \"World Heritage Walk\" (38 ways chained, 45.07 km, a closed loop starting at -29.514807,152.359734): -29.501863,152.250882. The tool resolve-pin.py could not reach Overpass so the route was read from the overpass.private.coffee mirror and the midpoint computed along the chained geometry. It lies on the path in Gibraltar Range National Park, 1.9 km from NPWS's Duffer Falls track.",
+   "coordinates_check": {
+    "placement_point": null,
+    "final_point": {
+     "latitude": -29.501863,
+     "longitude": 152.250882
+    },
+    "distance_moved_m": null,
+    "confidence": "MEDIUM (OSM route midpoint, one source; direction of the loop is arbitrary, so the halfway point could sit on the other half)",
+    "ok": true
+   },
+   "suggested_bio": "A 45 km, three to four day loop through rainforest, wetlands and granite tors in Gibraltar Range and Washpool.",
+   "notes": "Held-for-pin place, now resolved. The placement had no point (the tool gave a LOW Commons median -29.4855,152.3236 for \"placed\"). If the Gibraltar Range destination is declined it stays standalone (id gibraltar-washpool-world-heritage-walk); the owner may prefer to place it under gibraltar-range-national-park as gibraltar-range-national-park-2.",
+   "unverified": [
+    "Midpoint of a loop depends on the chosen start; confirm against the NPWS route map.",
+    "Camping fees on the walk (campgrounds en route) and whether a booking is needed were not read; only the park vehicle fee is priced.",
+    "visitHours 72-96 are the NPWS 3-4 days, not hours of walking."
+   ]
+  },
+  {
+   "id": "tenterfield",
+   "name": "Tenterfield",
+   "placement_id": "dest:tenterfield",
+   "kind": "new",
+   "standalone": true,
+   "category": "historic",
+   "facts": [
+    {
+     "claim": "Tenterfield is a regional town of about 4,000 at the junction of the New England and Bruxner highways, whose position on the Sydney-Brisbane route led to its role in promoting Federation.",
+     "source": "https://en.wikipedia.org/wiki/Tenterfield,_New_South_Wales"
+    },
+    {
+     "claim": "Wikivoyage lists the Sir Henry Parkes Memorial School of Arts, the Centenary Cottage Museum and the Tenterfield Railway Museum among its sights.",
+     "source": "https://en.wikivoyage.org/wiki/Tenterfield"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Town with no single steward; no ticketUrl.",
+   "coordinates": {
+    "latitude": -29.04833,
+    "longitude": 152.01778
+   },
+   "coordinates_source": "Placement point: OpenStreetMap place=locality relation 6070168 (Photon); the town centre",
+   "coordinates_check": {
+    "placement_point": {
+     "latitude": -29.04833,
+     "longitude": 152.01778
+    },
+    "final_point": {
+     "latitude": -29.04833,
+     "longitude": 152.01778
+    },
+    "distance_moved_m": 0,
+    "confidence": "MEDIUM (town centre)",
+    "ok": true
+   },
+   "suggested_bio": "A Northern Tablelands town on the Sydney-Brisbane route, tied to the Federation story, near Bald Rock.",
+   "unverified": [
+    "Visit duration is an estimate."
+   ]
+  },
+  {
+   "id": "sir-henry-parkes-school-of-arts",
+   "name": "Sir Henry Parkes School of Arts",
+   "placement_id": "tenterfield-1",
+   "kind": "new",
+   "standalone": true,
+   "category": "museum",
+   "facts": [
+    {
+     "claim": "Opening Times: \"Open Daily: 9.00am-3.00pm\". Entry to the Museum is free for casual visitors, donations welcome. Address cnr Manners and Rouse Streets, Tenterfield; phone 0421 246 815.",
+     "source": "https://tenterfieldsoa.com.au/contact-us/"
+    },
+    {
+     "claim": "Opened in 1876 as the Tenterfield School of Arts; in 1889 Sir Henry Parkes delivered the Tenterfield Oration in the Banquet Room, regarded as the start of the campaign for Federation. Today it is a museum, theatre and cinema.",
+     "source": "https://tenterfieldsoa.com.au/"
+    },
+    {
+     "claim": "The museum has the Sir Henry Parkes exhibition, the Banquet Room, and local history in the former Reading Room (Indigenous artefacts, the A B Butler photographic collection); guided tours of the building were to be offered from April; run by School of Arts, Tenterfield Incorporated (SOATI) with volunteers.",
+     "source": "https://tenterfieldsoa.com.au/museum/"
+    }
+   ],
+   "hours": "9:00 AM - 3:00 PM daily",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": "https://tenterfieldsoa.com.au/",
+   "ticketUrl_note": "Loaded: HTTP 200, title \"Tenterfield School of Arts | Museum Theatre Cinema\" (operator site; the museum page title is \"Tenterfield Museum | Sir Henry Parkes & Federation\").",
+   "coordinates": {
+    "latitude": -29.055819,
+    "longitude": 152.01901
+   },
+   "coordinates_source": "Atlas placement point: Wikivoyage + Commons median 34 m (HIGH); not re-run",
+   "coordinates_check": {
+    "placement_point": {
+     "latitude": -29.055819,
+     "longitude": 152.01901
+    },
+    "final_point": {
+     "latitude": -29.055819,
+     "longitude": 152.01901
+    },
+    "distance_moved_m": 0,
+    "confidence": "HIGH",
+    "ok": true
+   },
+   "suggested_bio": "The 1876 School of Arts where Sir Henry Parkes gave his 1889 Federation speech, now a free museum and theatre.",
+   "bio_note": "Draft said \"The National Trust museum\"; the current operator site says it is run by School of Arts, Tenterfield Incorporated. Wikivoyage (10am-4pm, council email) and 2022-era listings are out of date. Hours/prices from the operator's own pages.",
+   "unverified": [
+    "Hours 9-3 are from the contact page; the museum page does not repeat them. Older listings gave 10am-4pm.",
+    "Free for casual visitors; guided tour tickets (from April) not priced.",
+    "Tenterfield's council page for the museum (tenterfield.nsw.gov.au) is now stale."
+   ]
+  },
+  {
+   "id": "bald-rock-national-park",
+   "name": "Bald Rock National Park",
+   "placement_id": "tenterfield-2",
+   "kind": "new",
+   "standalone": true,
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "Bald Rock is a granite outcrop rising 260 m above the surrounding landscape, about 750 m long and 500 m wide: the largest granite monolith in Australia, just north of Tenterfield on the Queensland border.",
+     "source": "https://en.wikipedia.org/wiki/Bald_Rock_National_Park"
+    },
+    {
+     "claim": "Bald Rock Summit walk is a challenging 2.7 km return climb (Grade 5); Bald Rock base walk is a 0.7 km return, Grade 1; Bungoona walk is a 5.7 km return, Grade 3.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/bald-rock-summit-walk"
+    },
+    {
+     "claim": "Park entry fee $8 per vehicle per day, self-registration (bring the correct change); NPWS: always open but may close for poor weather or fire danger.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/bald-rock-national-park"
+    },
+    {
+     "claim": "No current NPWS alerts for Bald Rock National Park on 2026-10-18.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/bald-rock-national-park/local-alerts"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "costMin": 8,
+   "costMax": 8,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/bald-rock-national-park",
+   "ticketUrl_note": "Loaded: HTTP 200, title \"Bald Rock National Park | NSW National Parks\".",
+   "coordinates": {
+    "latitude": -28.85266,
+    "longitude": 152.0401
+   },
+   "coordinates_source": "Atlas placement point: OpenStreetMap natural=peak Bald Rock (node 1107818164); NPWS Bald Rock Trig lookout (-28.8527771,152.0401250) is 14 m away (HIGH)",
+   "coordinates_check": {
+    "placement_point": {
+     "latitude": -28.85266,
+     "longitude": 152.0401
+    },
+    "final_point": {
+     "latitude": -28.85266,
+     "longitude": 152.0401
+    },
+    "distance_moved_m": 0,
+    "confidence": "HIGH",
+    "ok": true
+   },
+   "suggested_bio": "Australia's largest granite monolith, a 260 m dome with walking tracks onto the rock, just north of Tenterfield.",
+   "unverified": [
+    "$8 is per vehicle per day, not per person.",
+    "Visit duration is an estimate."
+   ]
+  },
+  {
+   "id": "boonoo-boonoo-national-park",
+   "name": "Boonoo Boonoo National Park",
+   "placement_id": "tenterfield-3",
+   "kind": "new",
+   "standalone": true,
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "Boonoo Boonoo National Park is 26 km north-east of Tenterfield off Mount Lindesay Road; the Boonoo Boonoo River passes through it, with a cascading waterfall and rainforest gorge; bushwalking, swimming and bush camping.",
+     "source": "https://en.wikipedia.org/wiki/Boonoo_Boonoo_National_Park"
+    },
+    {
+     "claim": "Falls Lookout walk: 0.6 km return, Grade 4, 6-15 min suggested, about 35 km from Tenterfield; the park has also the Rockpool Ramble, Rockpools View and River walks.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/falls-lookout-walk"
+    },
+    {
+     "claim": "Park entry fee $8 per vehicle per day, self-registration; vehicle speed limit 40 km/h in the park. NPWS: always open but may close for weather or fire.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/boonoo-boonoo-national-park"
+    },
+    {
+     "claim": "NPWS alert 12 Oct 2026: barbecues at Cypress Pine campground out of order. No closures.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/boonoo-boonoo-national-park/local-alerts"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "costMin": 8,
+   "costMax": 8,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/boonoo-boonoo-national-park",
+   "ticketUrl_note": "Loaded: HTTP 200, title \"Boonoo Boonoo National Park | NSW National Parks\".",
+   "coordinates": {
+    "latitude": -28.796399,
+    "longitude": 152.165915
+   },
+   "coordinates_source": "NPWS Boonoo Boonoo Falls lookout (JSON-LD geo -28.7963990,152.1659148) + OpenStreetMap waterway=waterfall \"Boonoo Boonoo Falls\" (-28.796565,152.165115), 80 m apart; replaces the placement point -28.82695,152.15884 (3.4 km south of the falls)",
+   "coordinates_check": {
+    "placement_point": {
+     "latitude": -28.82695,
+     "longitude": 152.15884
+    },
+    "final_point": {
+     "latitude": -28.796399,
+     "longitude": 152.165915
+    },
+    "distance_moved_m": 3466,
+    "confidence": "HIGH (two sources within 100 m)",
+    "ok": true
+   },
+   "suggested_bio": "A park near Tenterfield centred on Boonoo Boonoo Falls, with rock pools, short lookout walks and swimming spots.",
+   "unverified": [
+    "$8 is per vehicle per day.",
+    "Wikipedia's \"210-metre waterfall\" height is not repeated (NPWS gives none).",
+    "Visit duration is an estimate."
+   ],
+   "closures_alerts": "No closures; BBQs out of order at Cypress Pine campground."
+  },
+  {
+   "id": "inverell",
+   "name": "Inverell",
+   "placement_id": "dest:inverell",
+   "kind": "new",
+   "standalone": true,
+   "category": "historic",
+   "facts": [
+    {
+     "claim": "Inverell is a large town (population about 12,000) on the Macintyre River, near the Queensland border, known as \"The Sapphire City\"; Copeton Dam, its water supply, is a popular destination.",
+     "source": "https://en.wikivoyage.org/wiki/Inverell"
+    },
+    {
+     "claim": "Wikipedia: the centre of Inverell Shire on the Gwydir Highway on the western slopes of the Northern Tablelands.",
+     "source": "https://en.wikipedia.org/wiki/Inverell"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Town with no single steward; no ticketUrl.",
+   "coordinates": {
+    "latitude": -29.77372,
+    "longitude": 151.11119
+   },
+   "coordinates_source": "Placement point (Wikivoyage New England page); town centre, 0.3 km from the OpenStreetMap place=locality relation 6069927",
+   "coordinates_check": {
+    "placement_point": {
+     "latitude": -29.77372,
+     "longitude": 151.11119
+    },
+    "final_point": {
+     "latitude": -29.77372,
+     "longitude": 151.11119
+    },
+    "distance_moved_m": 0,
+    "confidence": "MEDIUM (town centre)",
+    "ok": true
+   },
+   "suggested_bio": "The Sapphire City on the Macintyre River, a Gwydir Highway town and the base for Copeton Dam and Kwiambal National Park.",
+   "unverified": [
+    "Visit duration is an estimate.",
+    "The Kwiambal base claim is from NPWS (\"a secluded reserve past Inverell\")."
+   ]
+  },
+  {
+   "id": "copeton-dam",
+   "name": "Copeton Dam",
+   "placement_id": "inverell-1",
+   "kind": "new",
+   "standalone": true,
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "Copeton Dam is a clay-core and rockfill embankment dam on the Gwydir River upstream of Bingara, impounding Lake Copeton; used for irrigation, water supply, environmental flows and hydro power.",
+     "source": "https://en.wikipedia.org/wiki/Copeton_Dam"
+    },
+    {
+     "claim": "Copeton Waters (Reflections Holidays) is on the lake, about a 35-minute drive west of Inverell; the day pass is $15 online or $17.50 in park, per car, and includes the shared facilities; fishing, boating and picnics.",
+     "source": "https://reflectionsholidays.com.au/day-and-annual-passes/copeton-waters/"
+    },
+    {
+     "claim": "Annual-pass access hours are 5am-9:30pm; the park office is open 9am-5pm; phone +61 2 6723 6269; address 3533 Copeton Dam Road, Copeton NSW 2360.",
+     "source": "https://reflectionsholidays.com.au/day-and-annual-passes/copeton-waters/"
+    },
+    {
+     "claim": "WaterNSW has a Copeton Dam visitor page (https://www.waternsw.com.au/supply/visit/copeton-dam) but it returns a Cloudflare \"Just a moment...\" wall to the fetch tool: BLOCKED.",
+     "source": "https://www.waternsw.com.au/supply/visit/copeton-dam"
+    }
+   ],
+   "hours": "Park access 5:00 AM - 9:30 PM (office 9:00 AM - 5:00 PM)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "costMin": 15,
+   "costMax": 17.5,
+   "currency": "AUD",
+   "ticketUrl": "https://reflectionsholidays.com.au/day-and-annual-passes/copeton-waters/",
+   "ticketUrl_note": "Loaded: HTTP 200, title \"Copeton Dam day pass | fishing, boating & water sports near Inverell | Reflections Holidays\" (operator of the Copeton Waters park). WaterNSW (dam owner) page is BLOCKED (403/Cloudflare): https://www.waternsw.com.au/supply/visit/copeton-dam, for the orchestrator to check in a real browser; either may be preferred as the official link.",
+   "coordinates": {
+    "latitude": -29.907885,
+    "longitude": 150.927814
+   },
+   "coordinates_source": "Atlas placement point: Photon waterway=dam \"Copeton Dam\" (node, 0 m from the placement) with Wikipedia -29.906389,150.927222 (176 m); LOW-MEDIUM, kept at the dam wall. resolve-pin.py (Overpass down) rated it LOW because it had no OSM source.",
+   "coordinates_check": {
+    "placement_point": {
+     "latitude": -29.907885,
+     "longitude": 150.927814
+    },
+    "final_point": {
+     "latitude": -29.907885,
+     "longitude": 150.927814
+    },
+    "distance_moved_m": 0,
+    "confidence": "MEDIUM (dam wall; the visitor entrance is Copeton Waters on Copeton Dam Road, not mapped separately)",
+    "ok": true
+   },
+   "suggested_bio": "A large lake south-west of Inverell with fishing, boating, swimming and camping at Copeton Waters.",
+   "unverified": [
+    "Price: $15 online / $17.50 in park per car (the Reflections day-pass page); an older \"$10 until 30 May 2026\" promo has ended.",
+    "Hours: the 5am-9:30pm figure is the annual-pass access window, assumed to apply to day visitors.",
+    "WaterNSW page BLOCKED."
+   ],
+   "blocked_urls": [
+    "https://www.waternsw.com.au/supply/visit/copeton-dam"
+   ]
+  },
+  {
+   "id": "myall-creek-massacre-memorial-site",
+   "name": "Myall Creek Massacre Memorial Site",
+   "placement_id": "inverell-2",
+   "kind": "new",
+   "standalone": true,
+   "category": "historic",
+   "facts": [
+    {
+     "claim": "Memorial to the victims of the 1838 Myall Creek massacre, unveiled 10 June 2000, 23 km north-east of Bingara at the junction of Whitlow and Bingara-Delungra Roads: a 600 m walkway with seven oval granite boulders, each with a plaque.",
+     "source": "https://en.wikipedia.org/wiki/Myall_Creek_massacre"
+    },
+    {
+     "claim": "The Myall Creek Massacre and Memorial Site was added to the Australian National Heritage List on 7 June 2008 and the NSW State Heritage Register on 12 November 2010.",
+     "source": "https://en.wikipedia.org/wiki/Myall_Creek_massacre"
+    },
+    {
+     "claim": "Wikivoyage Bingara lists the site 24 km north-east of Bingara via Delungra Road and Whitlow Road, with a Myall Creek Sound audio tour.",
+     "source": "https://en.wikivoyage.org/wiki/Bingara"
+    }
+   ],
+   "hours": "Open daily; unstaffed memorial walk (hours not found)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "No official site loaded: myallcreekmemorial.com.au and myallcreek.org.au did not resolve; no steward page found.",
+   "coordinates": {
+    "latitude": -29.781259,
+    "longitude": 150.712724
+   },
+   "coordinates_source": "Atlas placement point: Photon historic=memorial Myall Creek Massacre Monument (HIGH); Wikivoyage -29.781342,150.712709 is 9 m away",
+   "coordinates_check": {
+    "placement_point": {
+     "latitude": -29.781259,
+     "longitude": 150.712724
+    },
+    "final_point": {
+     "latitude": -29.781259,
+     "longitude": 150.712724
+    },
+    "distance_moved_m": 0,
+    "confidence": "HIGH",
+    "ok": true
+   },
+   "suggested_bio": "A National Heritage-listed memorial walk at the site of the 1838 Myall Creek massacre, north-east of Bingara.",
+   "bio_note": "Draft said \"in the Inverell district\"; sources place it 23-24 km north-east of Bingara (it is in Inverell Shire). Bio says north-east of Bingara.",
+   "unverified": [
+    "Opening hours, any fees and the facilities (visitor amenities, an Indigenous bush garden) were not confirmed on an official page.",
+    "Open daily/free is inferred from a public memorial walk."
+   ]
+  },
+  {
+   "id": "mount-kaputar-national-park",
+   "name": "Mount Kaputar National Park",
+   "placement_id": "dest:mount-kaputar-national-park",
+   "kind": "new",
+   "standalone": true,
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "Mount Kaputar National Park is roughly an hour's drive from Narrabri, with lookouts, a picnic or barbecue, walks, camping and cabins; NPWS highlights the Bundabulla circuit, Sawn Rocks lookout, Dawsons Spring cabins and Mount Kaputar Summit lookout.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/mount-kaputar-national-park"
+    },
+    {
+     "claim": "Mount Kaputar Summit lookout is an easily-accessible stop with picnic tables and unimpeded 360-degree views; the summit walk is 2 km return, Grade 3.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/mount-kaputar-summit-lookout"
+    },
+    {
+     "claim": "The mountain rises to 1,510 m; it is a volcano active 17-21 million years ago, 50 km east of Narrabri; the summit view takes in about one-tenth of NSW.",
+     "source": "https://en.wikipedia.org/wiki/Mount_Kaputar_National_Park"
+    },
+    {
+     "claim": "Temperatures on the plateau can be about 10 degrees cooler than Narrabri (NPWS).",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/mount-kaputar-national-park"
+    },
+    {
+     "claim": "No park entry fee (not on the NPWS fee-collecting list).",
+     "source": "https://www.nationalparks.nsw.gov.au/passes-and-fees/fee-collecting-parks"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/mount-kaputar-national-park",
+   "ticketUrl_note": "Loaded: HTTP 200, title \"Mount Kaputar National Park | NSW National Parks\".",
+   "coordinates": {
+    "latitude": -30.273435,
+    "longitude": 150.164493
+   },
+   "coordinates_source": "NPWS Mount Kaputar Summit lookout (JSON-LD geo -30.2734350,150.1644933) + OpenStreetMap natural=peak \"Mount Kaputar\" (-30.273411,150.164505), 3 m apart; replaces the Wikipedia/Wikivoyage park centroid -30.290556,150.142778 (2.8 km south-west)",
+   "coordinates_check": {
+    "placement_point": {
+     "latitude": -30.290556,
+     "longitude": 150.142778
+    },
+    "final_point": {
+     "latitude": -30.273435,
+     "longitude": 150.164493
+    },
+    "distance_moved_m": 2823,
+    "confidence": "HIGH",
+    "ok": true
+   },
+   "suggested_bio": "A volcanic Nandewar Range park with a 1,510 m summit lookout, cliffs and forest, about an hour from Narrabri.",
+   "notes": "NPWS alerts (2026-10-18): Barraba Track (4WD route) closed 13-23 Oct 2026 for wet-weather access issues, may be extended; park fire ban until 31 Mar 2027 (no campfires or solid-fuel barbecues). The park is \"always open but may close for poor weather or fire danger\"; Allambie Road to Waa Gorge is dry-weather only.",
+   "unverified": [
+    "Visit duration is an estimate.",
+    "NPWS alerts (2026-10-18): Barraba Track (4WD route) closed 13-23 Oct 2026 for wet-weather access issues, may be extended; park fire ban until 31 Mar 2027 (no campfires or solid-fuel barbecues). The park is \"always open but may close for poor weather or fire danger\"; Allambie Road to Waa Gorge is dry-weather only.",
+    "Cabins and campground fees not read."
+   ],
+   "closures_alerts": "NPWS alerts (2026-10-18): Barraba Track (4WD route) closed 13-23 Oct 2026 for wet-weather access issues, may be extended; park fire ban until 31 Mar 2027 (no campfires or solid-fuel barbecues). The park is \"always open but may close for poor weather or fire danger\"; Allambie Road to Waa Gorge is dry-weather only."
+  },
+  {
+   "id": "sawn-rocks",
+   "name": "Sawn Rocks",
+   "placement_id": "mount-kaputar-national-park-1",
+   "kind": "new",
+   "standalone": true,
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "Sawn Rocks walking track: an easy 1.5 km return walk (Grade 2, 15-45 min) beside a shady creek bed to the organ-pipe cliff face of Sawn Rocks; the lookout is the best place to photograph it.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/sawn-rocks-walking-track"
+    },
+    {
+     "claim": "Sawn Rocks picnic area is at the start of the walking track, suited to barbecues and picnics.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/picnic-areas/sawn-rocks-picnic-area"
+    },
+    {
+     "claim": "Caravans are permitted on Killarney Gap Road to Sawn Rocks but overnight stays are prohibited; the road can be affected by weather.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/mount-kaputar-national-park/visitor-info"
+    },
+    {
+     "claim": "No park entry fee (not on the NPWS fee-collecting list). Alerts: see Mount Kaputar National Park (Barraba Track closure does not affect Sawn Rocks).",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/mount-kaputar-national-park/local-alerts"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/sawn-rocks-walking-track",
+   "ticketUrl_note": "Loaded: HTTP 200, title \"Sawn Rocks walking track | NSW National Parks\".",
+   "coordinates": {
+    "latitude": -30.145176,
+    "longitude": 150.060309
+   },
+   "coordinates_source": "Atlas placement point: Photon highway=steps Sawn Rocks Walking Track + attraction (HIGH); NPWS Sawn Rocks lookout (-30.1452407,150.0602447) is 9 m away",
+   "coordinates_check": {
+    "placement_point": {
+     "latitude": -30.145176,
+     "longitude": 150.060309
+    },
+    "final_point": {
+     "latitude": -30.145176,
+     "longitude": 150.060309
+    },
+    "distance_moved_m": 0,
+    "confidence": "HIGH",
+    "ok": true
+   },
+   "suggested_bio": "A cliff of organ-pipe rock columns at the end of an easy 1.5 km return walk in Mount Kaputar National Park.",
+   "bio_note": "Draft \"about 1 km\" corrected to NPWS 1.5 km return; \"columnar basalt\" not used (no source loaded).",
+   "notes": "NPWS alerts (2026-10-18): Barraba Track (4WD route) closed 13-23 Oct 2026 for wet-weather access issues, may be extended; park fire ban until 31 Mar 2027 (no campfires or solid-fuel barbecues). The park is \"always open but may close for poor weather or fire danger\"; Allambie Road to Waa Gorge is dry-weather only.",
+   "unverified": [
+    "Visit duration is NPWS walk time plus an estimate."
+   ],
+   "closures_alerts": "NPWS alerts (2026-10-18): Barraba Track (4WD route) closed 13-23 Oct 2026 for wet-weather access issues, may be extended; park fire ban until 31 Mar 2027 (no campfires or solid-fuel barbecues). The park is \"always open but may close for poor weather or fire danger\"; Allambie Road to Waa Gorge is dry-weather only."
+  },
+  {
+   "id": "narrabri",
+   "name": "Narrabri",
+   "placement_id": "mount-kaputar-national-park-2",
+   "kind": "new",
+   "standalone": true,
+   "category": "historic",
+   "facts": [
+    {
+     "claim": "Narrabri is a town of about 5,500 on the Namoi River at the junction of the Kamilaroi and Newell highways; Wikipedia names Mount Kaputar National Park and the Australia Telescope Compact Array as nearby attractions, with the Pilliga Forest just to the south.",
+     "source": "https://en.wikipedia.org/wiki/Narrabri"
+    },
+    {
+     "claim": "Narrabri Region Visitor Information Centre sells the Pilliga Forest map; the Pilliga is 500,000+ ha of parks and reserves.",
+     "source": "https://explorenarrabriregion.com.au/visit/explore/the-pilliga/"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Town with no single steward; no ticketUrl.",
+   "coordinates": {
+    "latitude": -30.32962,
+    "longitude": 149.78145
+   },
+   "coordinates_source": "Atlas placement point: OpenStreetMap place=town relation 5793383 (Photon); town centre",
+   "coordinates_check": {
+    "placement_point": {
+     "latitude": -30.32962,
+     "longitude": 149.78145
+    },
+    "final_point": {
+     "latitude": -30.32962,
+     "longitude": 149.78145
+    },
+    "distance_moved_m": 0,
+    "confidence": "MEDIUM (town centre)",
+    "ok": true
+   },
+   "suggested_bio": "A Namoi Valley town and base for Mount Kaputar, the Paul Wild Observatory and the Pilliga forest.",
+   "unverified": [
+    "Visit duration is an estimate.",
+    "Narrabri council notice 2026: Violet Street Bridge closed until November 2026 (detour via Selina Street, Newell Highway and Tibbereena Street)."
+   ]
+  },
+  {
+   "id": "horton-falls-national-park",
+   "name": "Horton Falls National Park",
+   "placement_id": "mount-kaputar-national-park-3",
+   "kind": "new",
+   "standalone": true,
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "Horton Falls National Park is on the eastern foothills of the Nandewar Range, about 40 minutes from Barraba, with waterfall and rugged cliff views and birdlife; the rustic Horton Falls campground is on site.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/horton-falls-national-park"
+    },
+    {
+     "claim": "Horton Falls lookout is a vantage point for the waterfall and rock pools, near the campground and picnic area.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/horton-falls-lookout"
+    },
+    {
+     "claim": "Wikivoyage Barraba: Horton Falls National Park is 47 km west of Barraba on Trevallyn Road; the waterfall may not flow in prolonged dry weather.",
+     "source": "https://en.wikivoyage.org/wiki/Barraba"
+    },
+    {
+     "claim": "NPWS alert: park fire ban until 31 Mar 2027 (campgrounds and picnic areas). No park entry fee (not on the fee-collecting list).",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/horton-falls-national-park/local-alerts"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 4,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/horton-falls-national-park",
+   "ticketUrl_note": "Loaded: HTTP 200, title \"Horton Falls National Park | NSW National Parks\".",
+   "coordinates": {
+    "latitude": -30.333005,
+    "longitude": 150.338502
+   },
+   "coordinates_source": "Atlas placement point refined to OpenStreetMap waterway=waterfall \"Horton Falls\" (HIGH with nature_reserve centroid 66 m and NPWS park geo -30.333365,150.339852); the NPWS lookout (-30.3356031,150.3366357) is 330 m away; 90 m from the placement point",
+   "coordinates_check": {
+    "placement_point": {
+     "latitude": -30.332439,
+     "longitude": 150.337949
+    },
+    "final_point": {
+     "latitude": -30.333005,
+     "longitude": 150.338502
+    },
+    "distance_moved_m": 82,
+    "confidence": "HIGH",
+    "ok": true
+   },
+   "suggested_bio": "A waterfall and rock pools in the Nandewar foothills, about 40 minutes from Barraba, with a rustic campground.",
+   "unverified": [
+    "Visit duration is an estimate (walk length not found).",
+    "The falls may not flow in dry weather."
+   ],
+   "closures_alerts": "Park fire ban to 31 Mar 2027."
+  },
+  {
+   "id": "moree-artesian-aquatic-centre",
+   "name": "Moree Artesian Aquatic Centre",
+   "placement_id": "moree-artesian-aquatic-centre",
+   "kind": "new",
+   "standalone": true,
+   "category": "entertainment",
+   "facts": [
+    {
+     "claim": "The Active and Passive thermal pools reopened on Thursday 9 April 2026 after almost two years, following a $3.223 m redevelopment funded by NSW, Commonwealth and Moree Plains Shire Council.",
+     "source": "https://moreeonlinenews.com.au/2026/04/08/moree-artesian-aquatic-centre-passive-and-active-pools-reopen-this-week/"
+    },
+    {
+     "claim": "Hours stated by council: Monday to Friday 6am-7pm, Saturday and Sunday 8am-6pm; the Wellness Pool reverted to a private booking space with its own entrance and fee.",
+     "source": "https://moreeonlinenews.com.au/2026/04/08/moree-artesian-aquatic-centre-passive-and-active-pools-reopen-this-week/"
+    },
+    {
+     "claim": "Moree Plains Shire fees 2026-27 (general fee): casual adult entry, 1 session per day $10.00; child (3-15)/concession $8.00; family pass (2 adults, 3 children) $25.00; adult day pass (multiple sessions) $18.00.",
+     "source": "https://www.mpsc.nsw.gov.au/publications-documents/fees-and-charges/3007-fees-and-charges-2026-27/file"
+    },
+    {
+     "claim": "The two thermal pools hold 39-41 C water, the Program Pool about 25 C; the waterslide runs weekends and limited school-holiday hours (extra fee).",
+     "source": "https://www.australiantraveller.com/nsw/new-england/moree-artesian-aquatic-centre-reopen/"
+    },
+    {
+     "claim": "Operator: Belgravia Leisure; address 20 Anne St, Moree; phone 02 6752 2272.",
+     "source": "https://belgravialeisure.com.au/our-centres/moree-artesian-aquatic-centre/"
+    }
+   ],
+   "hours": "Mon-Fri 6:00 AM - 7:00 PM; Sat-Sun 8:00 AM - 6:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "costMin": 10,
+   "costMax": 18,
+   "currency": "AUD",
+   "ticketUrl": "https://belgravialeisure.com.au/our-centres/moree-artesian-aquatic-centre/",
+   "ticketUrl_note": "Loaded: HTTP 200, title \"Moree Artesian Aquatic Centre\" (operator Belgravia Leisure). DO NOT USE https://www.moreeartesianaquaticcentre.com.au/ : it is listed on Belgravia's page as the centre's website, but it now serves an unrelated \"independent Moree Artesian Wellness Guide\" product site that says it is not an official site. The council's own link, moreeartesianaquaticcentre.pre-prod.belgravialeisure.com.au, has an expired TLS certificate and did not load.",
+   "coordinates": {
+    "latitude": -29.47413,
+    "longitude": 149.84665
+   },
+   "coordinates_source": "Atlas placement point: OpenStreetMap leisure=swimming_pool + Commons median 38 m (HIGH); Wikivoyage -29.47371,149.84669 agrees within 50 m",
+   "coordinates_check": {
+    "placement_point": {
+     "latitude": -29.47413,
+     "longitude": 149.84665
+    },
+    "final_point": {
+     "latitude": -29.47413,
+     "longitude": 149.84665
+    },
+    "distance_moved_m": 0,
+    "confidence": "HIGH",
+    "ok": true
+   },
+   "suggested_bio": "Council-run artesian hot pools in Moree, reopened in April 2026 after almost two years closed.",
+   "bio_note": "Draft said \"after about 21 months closed\"; sources say \"almost two years\". Rewritten.",
+   "unverified": [
+    "Prices come from the council 2026-27 fees PDF (adult casual $10, adult day pass $18), cost range is casual adult $10 to adult day pass $18; the Wellness Pool and Sauna pass ($30 per session) and the Wellness Centre hire ($200) are excluded, and the lower Moree Shire resident rate is not used.",
+    "Hours are from a 8 April 2026 council statement in the local press; the operator page carries no hours text.",
+    "Hours on public holidays not found."
+   ],
+   "blocked_urls": []
+  },
+  {
+   "id": "moree",
+   "name": "Moree",
+   "placement_id": "moree",
+   "kind": "new",
+   "standalone": true,
+   "category": "historic",
+   "facts": [
+    {
+     "claim": "Moree is a town of about 7,000 on the Mehi River in the black-soil plains of north-west NSW, a major cotton centre, \"well known for artesian hot-spring baths that are renowned for their reputed healing qualities\".",
+     "source": "https://en.wikipedia.org/wiki/Moree,_New_South_Wales"
+    },
+    {
+     "claim": "Wikivoyage lists the Bank Art Museum Moree (BAMM) and the Moree Artesian Aquatic Centre as sights; Moree Art Trails link its galleries and murals.",
+     "source": "https://en.wikivoyage.org/wiki/Moree_(New_South_Wales)"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Town with no single steward; no ticketUrl.",
+   "coordinates": {
+    "latitude": -29.46541,
+    "longitude": 149.84163
+   },
+   "coordinates_source": "Placement point (Wikivoyage New England page); town centre, 0.4 km from the OpenStreetMap place=town relation 5778250",
+   "coordinates_check": {
+    "placement_point": {
+     "latitude": -29.46541,
+     "longitude": 149.84163
+    },
+    "final_point": {
+     "latitude": -29.46541,
+     "longitude": 149.84163
+    },
+    "distance_moved_m": 0,
+    "confidence": "MEDIUM (town centre)",
+    "ok": true
+   },
+   "suggested_bio": "A north-west plains town and cotton centre known for its artesian hot baths and its gallery and mural trail.",
+   "bio_note": "Draft said \"on the road to Lightning Ridge\"; no source loaded supports that road claim, so it is dropped.",
+   "unverified": [
+    "Visit duration is an estimate."
+   ]
+  },
+  {
+   "id": "gunnedah",
+   "name": "Gunnedah",
+   "placement_id": "gunnedah",
+   "kind": "new",
+   "standalone": true,
+   "category": "historic",
+   "facts": [
+    {
+     "claim": "Gunnedah is a town of about 8,300 on the Namoi River in the Liverpool Plains; it claims the title \"Koala Capital of World\", and Dorothea Mackellar wrote \"My Country\" about her family's farm near the town.",
+     "source": "https://en.wikipedia.org/wiki/Gunnedah"
+    },
+    {
+     "claim": "Wikivoyage lists the Dorothea Mackellar Memorial Statue, Dorothea Mackellar silo art, Gunnedah Rural Museum (daily 9am-3pm), Water Tower Museum, Pensioners Hill Lookout and Porcupine Lookout.",
+     "source": "https://en.wikivoyage.org/wiki/Gunnedah"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Town with no single steward; no ticketUrl.",
+   "coordinates": {
+    "latitude": -30.97697,
+    "longitude": 150.25101
+   },
+   "coordinates_source": "Placement point: OpenStreetMap place=locality relation 6063570 (Photon); town centre",
+   "coordinates_check": {
+    "placement_point": {
+     "latitude": -30.97697,
+     "longitude": 150.25101
+    },
+    "final_point": {
+     "latitude": -30.97697,
+     "longitude": 150.25101
+    },
+    "distance_moved_m": 0,
+    "confidence": "MEDIUM (town centre)",
+    "ok": true
+   },
+   "suggested_bio": "A Namoi Valley town billed as the Koala Capital of the World, with Dorothea Mackellar silo art and a poets' precinct.",
+   "unverified": [
+    "Visit duration is an estimate.",
+    "Wikipedia notes concerns over the local koala population; the \"Koala Capital\" line is a claim, not a sighting guarantee."
+   ]
+  },
+  {
+   "id": "kwiambal-national-park",
+   "name": "Kwiambal National Park",
+   "placement_id": "kwiambal-national-park",
+   "kind": "new",
+   "standalone": true,
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "Pronounced Kigh-am-bal: a secluded reserve past Inverell near the NSW-Queensland border, with swimming, scenic picnics, cheap accommodation, mountain biking, birdwatching and fishing; day trippers travel in from Ashford and Inverell.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/kwiambal-national-park"
+    },
+    {
+     "claim": "The Severn and Macintyre rivers flow through the park and converge below Macintyre Falls; the park is studded with granite outcrops and also has Ashford Caves.",
+     "source": "https://en.wikipedia.org/wiki/Kwiambal_National_Park"
+    },
+    {
+     "claim": "Macintyre Falls lookout is next to a well-equipped picnic area with swimming, hiking and fishing nearby; walks include Junction, Rock Pool and Slippery Rock tracks.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/macintyre-falls-lookout"
+    },
+    {
+     "claim": "NPWS alerts (2026-10-18): Limestone Caves closed until further notice (since Sept 2020); Lavender Vale Homestead closed to bookings, Lavender Vale Cottage open. No park entry fee (not on the fee-collecting list).",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/kwiambal-national-park/local-alerts"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/kwiambal-national-park",
+   "ticketUrl_note": "Loaded: HTTP 200, title \"Kwiambal National Park | NSW National Parks\".",
+   "coordinates": {
+    "latitude": -29.153008,
+    "longitude": 150.965659
+   },
+   "coordinates_source": "OpenStreetMap waterway=waterfall \"Macintyre Falls\" (-29.153008,150.965659) + NPWS Macintyre Falls lookout (-29.1529479,150.9663534) 70 m away + Commons median 1.4 km: the main visitor point, replacing the park centroid -29.15597,150.98347 (1.7 km east) and the natural=wood centroid (-29.11707,151.003158)",
+   "coordinates_check": {
+    "placement_point": {
+     "latitude": -29.15597,
+     "longitude": 150.98347
+    },
+    "final_point": {
+     "latitude": -29.153008,
+     "longitude": 150.965659
+    },
+    "distance_moved_m": 1761,
+    "confidence": "HIGH",
+    "ok": true
+   },
+   "suggested_bio": "A secluded park near Ashford where the Severn and Macintyre meet below Macintyre Falls, with swimming and camping.",
+   "unverified": [
+    "Visit duration is an estimate.",
+    "Limestone Caves are closed.",
+    "\"Always open\" wording was not found on this park page; hours are the NPWS JSON-LD 24 hours."
+   ],
+   "closures_alerts": "Limestone Caves closed until further notice; Lavender Vale Homestead closed to bookings."
+  },
+  {
+   "id": "warrabah-national-park",
+   "name": "Warrabah National Park",
+   "placement_id": "warrabah-national-park",
+   "kind": "new",
+   "standalone": true,
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "Warrabah National Park, near Tamworth and Uralla, offers camping, bushwalking, fishing, swimming, canoeing and birdwatching beside the Namoi River; always open but may close for fire danger or flooding.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/warrabah-national-park"
+    },
+    {
+     "claim": "The Namoi River carves a 15 km gorge that drops 245 m; over 120 bird species have been recorded.",
+     "source": "https://en.wikipedia.org/wiki/Warrabah_National_Park"
+    },
+    {
+     "claim": "Billys Hole and Boundary Hole picnic areas are near Gum Hole campground, for bushwalking, birdwatching, fishing and canoeing on the Namoi, near Manilla north of Tamworth.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/picnic-areas/billys-hole-picnic-area"
+    },
+    {
+     "claim": "NPWS alerts: park fire ban until 31 Mar 2027; 1080 fox baiting 10 Aug-10 Dec 2026 (keep dogs restrained). No park entry fee (not on the fee-collecting list).",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/warrabah-national-park/local-alerts"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/warrabah-national-park",
+   "ticketUrl_note": "Loaded: HTTP 200, title \"Warrabah National Park | NSW National Parks\".",
+   "coordinates": {
+    "latitude": -30.559379,
+    "longitude": 150.931616
+   },
+   "coordinates_source": "NPWS Billys Hole picnic area (JSON-LD geo -30.5593794,150.9316159); OpenStreetMap Gum Hole Camping Area -30.563837,150.93196 is 495 m away; replaces the park centroid -30.56807,150.91441 (1.6 km)",
+   "coordinates_check": {
+    "placement_point": {
+     "latitude": -30.56807,
+     "longitude": 150.91441
+    },
+    "final_point": {
+     "latitude": -30.559379,
+     "longitude": 150.931616
+    },
+    "distance_moved_m": 1910,
+    "confidence": "MEDIUM (agency point; OSM only has the campground 500 m away)",
+    "ok": true
+   },
+   "suggested_bio": "A Namoi River park with a 15 km gorge, camping, fishing, swimming and canoeing north of Tamworth.",
+   "unverified": [
+    "Visit duration is an estimate.",
+    "Park is subject to a fire ban and 1080 baiting notice (see alerts)."
+   ],
+   "closures_alerts": "Fire ban to 31 Mar 2027; 1080 baiting to 10 Dec 2026."
+  },
+  {
+   "id": "paul-wild-observatory",
+   "name": "Paul Wild Observatory",
+   "placement_id": "paul-wild-observatory",
+   "kind": "new",
+   "standalone": true,
+   "category": "museum",
+   "facts": [
+    {
+     "claim": "CSIRO: the Paul Wild Observatory Visitors Centre is self-guided, open 8.00am-5.00pm daily including public holidays, and entry is free.",
+     "source": "https://www.csiro.au/en/about/facilities-collections/atnf/australia-telescope-compact-array/pwo-visitors-centre"
+    },
+    {
+     "claim": "Five of the Australia Telescope Compact Array's six 22 m dishes sit on a 3 km railway track in front of the visitors centre; the centre has indoor and outdoor exhibits and a small cinema; the observatory is about 25 km from Narrabri and 500 km from Sydney.",
+     "source": "https://www.csiro.au/en/about/facilities-collections/atnf/australia-telescope-compact-array/pwo-visitors-centre"
+    },
+    {
+     "claim": "CSIRO asks visitors to switch phones and other devices to airplane mode and turn off Wi-Fi and Bluetooth; photography is welcome. Contact: Compact Array Visitors Centre +61 2 6790 4000.",
+     "source": "https://www.csiro.au/en/about/facilities-collections/atnf/australia-telescope-compact-array/pwo-visitors-centre"
+    },
+    {
+     "claim": "Wikipedia: the observatory, about 24 km west of Narrabri, is the home of the Australia Telescope Compact Array (operating since 1988) and the Culgoora Solar Observatory.",
+     "source": "https://en.wikipedia.org/wiki/Paul_Wild_Observatory"
+    }
+   ],
+   "hours": "8:00 AM - 5:00 PM daily, including public holidays",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": "https://www.csiro.au/en/about/facilities-collections/atnf/australia-telescope-compact-array/pwo-visitors-centre",
+   "ticketUrl_note": "Loaded: HTTP 200, title \"Paul Wild Observatory Visitors Centre - CSIRO\" (operator page).",
+   "coordinates": {
+    "latitude": -30.311583,
+    "longitude": 149.564407
+   },
+   "coordinates_source": "Atlas placement point: Photon research_institute CSIRO Paul Wild Observatory (MEDIUM); Wikipedia -30.314,149.562 agrees within 300 m; Wikivoyage -30.3342 is 2.8 km off and not used",
+   "coordinates_check": {
+    "placement_point": {
+     "latitude": -30.311583,
+     "longitude": 149.564407
+    },
+    "final_point": {
+     "latitude": -30.311583,
+     "longitude": 149.564407
+    },
+    "distance_moved_m": 0,
+    "confidence": "MEDIUM",
+    "ok": true
+   },
+   "suggested_bio": "CSIRO's self-guided visitor centre by the Australia Telescope Compact Array, with dishes on a 3 km railway track.",
+   "bio_note": "Draft said \"six radio dishes\"; CSIRO says five of six sit on the track in front of the centre, so the bio now says \"dishes on a 3 km railway track\".",
+   "unverified": [
+    "Road access (causeways and floodways) after rain is flagged by CSIRO; no closure was found."
+   ]
+  },
+  {
+   "id": "pilliga-hot-artesian-bore-baths",
+   "name": "Pilliga Hot Artesian Bore Baths",
+   "placement_id": "pilliga-hot-artesian-bore-baths",
+   "kind": "new",
+   "standalone": true,
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "Pilliga Artesian Bore Bath: 37 C mineral-rich water, \"Open 24 hours a day\"; the bore was built in 1902 as the town water supply and the pool installed in 1980; it is also a primitive campground ($7 per site per night, maximum stay four nights); Pilliga is 105 km west of Narrabri.",
+     "source": "https://explorenarrabriregion.com.au/visit/explore/the-pilliga/"
+    },
+    {
+     "claim": "VisitNSW: just east of Pilliga village on the Pilliga Road; \"There is no charge to enter the Bore for a day visit\"; a toilet block, cold shower, electric barbecue and shelters; a roof covers the pool, which is lit for night bathing; water about 37.1 C.",
+     "source": "https://www.visitnsw.com/destinations/country-nsw/moree-and-narrabri-area/narrabri/attractions/pilliga-artesian-bore-baths-0"
+    },
+    {
+     "claim": "The NSW Government visitor listing (403 to the fetch tool, read through search) lists a price of $5, likely the older camping rate; the tourism board gives $7.",
+     "source": "https://www.nsw.gov.au/visiting-and-exploring-nsw/locations-and-attractions/pilliga-artesian-bore-baths"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "No official operator page found (council-run; Narrabri Shire Council page not located). Tourism pages (Explore Narrabri Region, VisitNSW) are listings, not a steward site, so no ticketUrl; candidate https://explorenarrabriregion.com.au/visit/explore/the-pilliga/ (title \"The Pilliga - Explore Narrabri Region\").",
+   "coordinates": {
+    "latitude": -30.355049,
+    "longitude": 148.906966
+   },
+   "coordinates_source": "Atlas placement point: Photon amenity=parking/swimming_pool/attraction Pilliga Artesian Bore Baths (HIGH); not re-run",
+   "coordinates_check": {
+    "placement_point": {
+     "latitude": -30.355049,
+     "longitude": 148.906966
+    },
+    "final_point": {
+     "latitude": -30.355049,
+     "longitude": 148.906966
+    },
+    "distance_moved_m": 0,
+    "confidence": "HIGH",
+    "ok": true
+   },
+   "suggested_bio": "A roofed 37 C artesian bore bath in Pilliga, open 24 hours and free for day visitors, with a basic campground.",
+   "bio_note": "Draft said \"about 98 km west of Narrabri\"; the tourism board says Pilliga is 105 km west. The suggested bio omits the distance.",
+   "unverified": [
+    "A search snippet said the baths are \"reportedly closed during the summer months\"; the tourism board says open 24 hours. Not confirmed either way.",
+    "Camping fee conflicts ($7 tourism board, $5 NSW Government listing, unspecified on VisitNSW).",
+    "Day entry free: VisitNSW says \"no charge to enter the Bore for a day visit\"."
+   ]
+  },
+  {
+   "id": "burning-mountain-nature-reserve",
+   "name": "Burning Mountain Nature Reserve",
+   "placement_id": "_hold:Burning Mountain Nature Reserve",
+   "kind": "held-resolved",
+   "standalone": true,
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "Home to Australia's only naturally burning coal seam: Burning Mountain walk is an accessible 4 km return track with information panels and some steep sections, Grade 3, 1-2 h suggested; it starts from the rest area off the New England Highway.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/burning-mountain-walk"
+    },
+    {
+     "claim": "Burning Mountain (Mount Wingen) takes its name from a smouldering coal seam running underground through the sandstone; a trail with information panels runs from the parking lots to where smoke emanates from the ground.",
+     "source": "https://en.wikipedia.org/wiki/Burning_Mountain"
+    },
+    {
+     "claim": "NPWS: park open 24 hours; no current alerts on 2026-10-18; no park entry fee (not on the fee-collecting list).",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/burning-mountain-nature-reserve/local-alerts"
+    },
+    {
+     "claim": "OpenStreetMap \"Burning Mountain Walking Track\" ways chain to 1.85 km from the rest area (-31.856343,150.900721) to the burning site (-31.868898,150.900009); NPWS walk geo start -31.8563491,150.9007847 agrees.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/burning-mountain-walk"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/burning-mountain-nature-reserve",
+   "ticketUrl_note": "Loaded: HTTP 200, title \"Burning Mountain Nature Reserve | NSW National Parks\".",
+   "coordinates": {
+    "latitude": -31.862215,
+    "longitude": 150.902629
+   },
+   "coordinates_source": "Midpoint along the OpenStreetMap \"Burning Mountain Walking Track\" ways (9 ways, 1.85 km chained, rest area to the burning site): -31.862215,150.902629. resolve-pin.py (Overpass down) returned LOW/photon only, so the route was read from the overpass.private.coffee mirror. Placement held-point -31.860245,150.903039 was a Photon path point 0.2 km north-east.",
+   "coordinates_check": {
+    "placement_point": {
+     "latitude": -31.860245,
+     "longitude": 150.903039
+    },
+    "final_point": {
+     "latitude": -31.862215,
+     "longitude": 150.902629
+    },
+    "distance_moved_m": 222,
+    "confidence": "MEDIUM (OSM route midpoint)",
+    "ok": true
+   },
+   "suggested_bio": "Australia's only naturally burning coal seam, reached by a 4 km return walk with information panels.",
+   "notes": "Held-for-pin place, now resolved. Upper Hunter, not claimed by the Hunter pass. The burning site itself is at the far end (-31.8681,150.9006 per NPWS park geo), 0.8 km south of this midpoint pin.",
+   "unverified": [
+    "Wikipedia -31.865,150.9011 and Commons median -31.8688,150.9001 point at the burning site, not the route midpoint; the pin follows the route-midpoint rule.",
+    "Visit duration is the NPWS 1-2 h."
+   ]
+  },
+  {
+   "id": "pilliga-sandstone-caves",
+   "name": "Pilliga Sandstone Caves",
+   "placement_id": "_hold:Pilliga Sandstone Caves",
+   "kind": "held-resolved",
+   "standalone": true,
+   "category": "hike",
+   "facts": [
+    {
+     "claim": "Sandstone Caves walking track, Pilliga Nature Reserve: 1.7 km loop, Grade 3, 1-1.5 h, to ancient Aboriginal rock art; NPWS geo of the start is -31.0116167,149.4160083.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/sandstone-caves-walking-track"
+    },
+    {
+     "claim": "The Sandstone Caves are a special place for the Gamilaraay people; self-guided, with an optional guided tour by an Aboriginal Discovery Ranger; about 81 km down the Newell Highway towards Coonabarabran, turn at the Yaminba Fire Trail.",
+     "source": "https://explorenarrabriregion.com.au/visit/explore/the-pilliga/"
+    },
+    {
+     "claim": "NPWS alerts: PARK FIRE BAN in Pilliga Nature Reserve 12 Oct 2026 to 31 Mar 2027 (no campfires or solid-fuel barbecues); no park entry fee (not on the fee-collecting list). Roads can become slippery or impassable in the wet; buy a Pilliga Forest map from the Narrabri Visitor Information Centre.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/pilliga-nature-reserve/local-alerts"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/sandstone-caves-walking-track",
+   "ticketUrl_note": "Loaded: HTTP 200, NPWS walking-track page \"Sandstone Caves walking track\" (managing agency); the parent Pilliga Nature Reserve page also loads.",
+   "coordinates": {
+    "latitude": -31.015879,
+    "longitude": 149.414362
+   },
+   "coordinates_source": "Midpoint along the OpenStreetMap \"Sandstone Caves Walk\" ways (2 ways, 1.42 km chained, start -31.011542,149.416072 matches the NPWS start): -31.015879,149.414362. resolve-pin.py (Overpass down) gave LOW for the car park; route read from the overpass.private.coffee mirror. The Wikivoyage car park point -31.01364,149.41717 is 0.36 km away.",
+   "coordinates_check": {
+    "placement_point": {
+     "latitude": -31.01364,
+     "longitude": 149.41717
+    },
+    "final_point": {
+     "latitude": -31.015879,
+     "longitude": 149.414362
+    },
+    "distance_moved_m": 366,
+    "confidence": "MEDIUM (OSM route midpoint; loop geometry, 1.42 km mapped vs 1.7 km NPWS)",
+    "ok": true
+   },
+   "suggested_bio": "A 1.7 km loop walk in Pilliga Nature Reserve to sandstone hills with ancient Aboriginal rock art.",
+   "notes": "Held-for-pin place, now resolved. Standalone (50 km from Warrumbungle's centre). NPWS describes \"rock art\"; the tourism board says \"rock engravings\".",
+   "unverified": [
+    "Loop midpoint depends on the chain direction; check against the NPWS map.",
+    "Unsealed access road (Yaminba Fire Trail) conditions not checked."
+   ],
+   "closures_alerts": "Pilliga Nature Reserve park fire ban to 31 Mar 2027."
+  },
+  {
+   "id": "bulagaranda-mount-yarrowyck-aboriginal-area",
+   "name": "Bulagaranda (Mount Yarrowyck) Aboriginal Area",
+   "placement_id": "_hold:Mount Yarrowyck Nature Reserve",
+   "kind": "held-resolved",
+   "standalone": true,
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "The reserve was Mount Yarrowyck Nature Reserve from 1983 until 2022, when it was handed back to Traditional Owners; the Anaiwan and Armidale Local Aboriginal Land Councils now co-manage it with NPWS; 585 ha, about 30 km west of Armidale.",
+     "source": "https://en.wikipedia.org/wiki/Bulagaranda_(Mount_Yarrowyck)_Aboriginal_Area"
+    },
+    {
+     "claim": "NPWS: protects an Aboriginal cave painting site; the Aboriginal cultural walk is a 3 km return track along the granite slopes to the paintings, clear, easy to follow and mostly level; discovery tours offered. Geo of the park page -30.453248,151.393111.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/bulagaranda-mount-yarrowyck-aboriginal-area"
+    },
+    {
+     "claim": "NPWS alerts: none for the area on 2026-10-18; no park entry fee (not on the fee-collecting list).",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/bulagaranda-mount-yarrowyck-aboriginal-area/local-alerts"
+    },
+    {
+     "claim": "OpenStreetMap: 13 unnamed path ways chain 1.67 km from the car park (-30.467422,151.370576) to the OSM attraction \"Bulagaranda (Mt Yarrowyck) Aboriginal Paintings\" (-30.455934,151.376951), 11 m from the chain end.",
+     "source": "https://www.openstreetmap.org/node/414685409"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/bulagaranda-mount-yarrowyck-aboriginal-area",
+   "ticketUrl_note": "Loaded: HTTP 200, title \"Bulagaranda (Mount Yarrowyck) Aboriginal Area | NSW National Parks\".",
+   "coordinates": {
+    "latitude": -30.460394,
+    "longitude": 151.37152
+   },
+   "coordinates_source": "Midpoint along 13 unnamed OpenStreetMap path ways chained from the car park (-30.467422,151.370576) to the Aboriginal Paintings node (-30.455934,151.376951): -30.460394,151.37152. resolve-pin.py found no feature (Overpass down); routes read from the overpass.private.coffee mirror. The placement point (-30.45593,151.37695) was the paintings node, 1.1 km further along.",
+   "coordinates_check": {
+    "placement_point": {
+     "latitude": -30.45593,
+     "longitude": 151.37695
+    },
+    "final_point": {
+     "latitude": -30.460394,
+     "longitude": 151.37152
+    },
+    "distance_moved_m": 719,
+    "confidence": "MEDIUM-LOW (OSM paths unnamed; chain verified end-to-end against the car park and the paintings node)",
+    "ok": true
+   },
+   "suggested_bio": "A 3 km return cultural walk to Aboriginal cave paintings on Mount Yarrowyck, co-managed with Traditional Owners.",
+   "notes": "Held-for-pin place, now resolved. RENAMED: the draft name \"Mount Yarrowyck Nature Reserve\" is out of date; the area is now \"Bulagaranda (Mount Yarrowyck) Aboriginal Area\" (Wikipedia, NPWS). Needs the owner's ok on the new name/id. Placement id suggested: standalone `bulagaranda-mount-yarrowyck-aboriginal-area` (the draft slug would have been mount-yarrowyck-nature-reserve).",
+   "unverified": [
+    "The 1.67 km OSM chain is about 3.3 km return, matching NPWS 3 km return.",
+    "Whether the walk needs a booking or discovery tour for access to the paintings was not read.",
+    "Photo verdict in placement was \"none\"; no photo checked here."
+   ]
+  }
+ ],
+ "held": [
+  {
+   "id": "green-gully-track",
+   "name": "Green Gully Track",
+   "held": true,
+   "held_reason": "No route in OpenStreetMap (searched hiking/foot relations and ways named \"Green Gully\" within the park, none found) and the NPWS page gives no coordinates; resolve-pin.py returned LOW/no feature. Needs the owner to take a point from the NPWS route map. The track is a booking-only 65 km self-guided loop, which also raises the question of whether it belongs as a normal spot.",
+   "facts": [
+    {
+     "claim": "The Green Gully Track is a 65 km loop in Oxley Wild Rivers National Park, near Walcha, Grade 5 (very experienced bushwalkers only), 4 days / 5 nights staying in each of 5 huts; starts and ends at Cedar Creek Cottage; 2 hrs by road from Walcha, 2.5 hrs from Port Macquarie.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/experiences/the-green-gully-track"
+    },
+    {
+     "claim": "Bookings are necessary: $900 for 2-4 walkers, additional walkers $300 per person, maximum 6 walkers, \"You cannot walk the track alone\"; available all year. A 6-day guided option is run by Aussie Bike or Hike (meet in Port Macquarie).",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/experiences/the-green-gully-track"
+    },
+    {
+     "claim": "NPWS alert (2026-10-18): park fire ban at Riverside, Youdales and the Green Gully track until 28 Feb 2027.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/oxley-wild-rivers-national-park/local-alerts"
+    }
+   ],
+   "hours": "Open all year, booking required",
+   "costMin": 900,
+   "costMax": 900,
+   "currency": "AUD",
+   "cost_note": "$900 is per booking for 2-4 walkers (about $225-450 each), not per adult.",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/experiences/the-green-gully-track",
+   "ticketUrl_note": "Loaded: HTTP 200, title \"The Green Gully Track | NSW National Parks\"; not applied because the entry is held.",
+   "coordinates_check": {
+    "current": null,
+    "ok": null
+   }
+  }
+ ]
+}

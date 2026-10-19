@@ -1,0 +1,2469 @@
+{
+ "region": "nsw-new-england-north-west",
+ "country": "Australia",
+ "countryCode": "AU",
+ "continent": "Oceania",
+ "timezone": "Australia/Sydney",
+ "standalone_fields": {
+  "country": "Australia",
+  "countryCode": "AU",
+  "continent": "Oceania",
+  "timezone": "Australia/Sydney"
+ },
+ "summary": {
+  "kept": 44,
+  "proposed_new_destinations": 9,
+  "spots_in_proposed_destinations": 23,
+  "standalone": 7,
+  "held_for_pin": 5,
+  "left_to_review": 4,
+  "note": "Kept 44 = 9 become proposed destinations (5 towns, 4 parks), 23 are spots of them, 7 stand alone, 5 are held for pin. No kept place falls inside an existing AU destination."
+ },
+ "existing_destinations_checked": {
+  "warrumbungle": {
+   "centre": [
+    -31.28637,
+    148.99753
+   ],
+   "defaultZoomSpanKm": 60,
+   "radius_km": 45,
+   "distances_km": {
+    "Pilliga Hot Artesian Bore Baths": 103.9,
+    "Narrabri": 130.1,
+    "Paul Wild Observatory": 121.2,
+    "Gunnedah": 124.2,
+    "Pilliga Sandstone Caves": 50.1,
+    "Mount Kaputar National Park": 155.7
+   },
+   "result": "No kept place is inside Warrumbungle's 45 km radius. Nearest are Pilliga Sandstone Caves (50.1 km, held for pin) and the Pilliga Hot Artesian Bore Baths (103.9 km), reached through the Pilliga from Narrabri, so both are standalone. Narrabri, Paul Wild Observatory, Gunnedah and Mount Kaputar are 121-156 km away."
+  },
+  "sydney": "far outside (about 300-600 km)",
+  "blue-mountains": "far outside (about 300+ km)"
+ },
+ "existing_fixes": [],
+ "existing_spots_kept_unchanged": 0,
+ "spots": [
+  {
+   "name": "New England Regional Art Museum",
+   "action": "spot",
+   "destination": "armidale",
+   "id": "armidale-1",
+   "coordinates": {
+    "latitude": -30.52526,
+    "longitude": 151.664863
+   },
+   "coordinates_source": "photon tourism=museum + Wikipedia (HIGH)",
+   "views": 756,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Armidale"
+   ],
+   "distance_km_from_destination": 1.4,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination armidale (not yet in the app): 1.4 km from its centre, inside 75% of its 45 km span. If declined, standalone spot 'new-england-regional-art-museum'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "new-england-regional-art-museum",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "E. New England Regional Art Museum (NERAM).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:E._New_England_Regional_Art_Museum_(NERAM).jpg",
+    "width": 1500,
+    "height": 1125,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_note": "Entrance with NERAM sign, colour (2017), 1500x1125; the building is the attraction; ok but low-res.",
+   "lens_required": true,
+   "category": "museum",
+   "icon": "🖼️",
+   "bio": "A regional art gallery in Armidale holding the Howard Hinton and Bell collections of Australian art.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "also_inside_radius_of": [
+    "oxley-wild-rivers-national-park"
+   ]
+  },
+  {
+   "name": "Saumarez Homestead",
+   "action": "spot",
+   "destination": "armidale",
+   "id": "armidale-2",
+   "coordinates": {
+    "latitude": -30.539731,
+    "longitude": 151.589444
+   },
+   "coordinates_source": "photon building=house Saumarez Homestead + Wikipedia (HIGH)",
+   "views": 2276,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Armidale"
+   ],
+   "distance_km_from_destination": 7.2,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination armidale (not yet in the app): 7.2 km from its centre, inside 75% of its 45 km span. If declined, standalone spot 'saumarez-homestead'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "saumarez-homestead",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   },
+   "photo_verdict": "none",
+   "skeptic_photo_verdict": "reject",
+   "photo": null,
+   "photo_note": "Commons has only garden pictures (Mary Garden, Picking Garden), no homestead exterior.",
+   "lens_required": true,
+   "category": "historic",
+   "icon": "🏡",
+   "bio": "A 1906 National Trust homestead and gardens near Armidale, open for guided house tours.",
+   "hours": "Guided tours weekends and public holidays",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "source_hint": "Guided house tours weekends/public holidays only; garden access and price unsourced.",
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "also_inside_radius_of": []
+  },
+  {
+   "name": "Uralla",
+   "action": "spot",
+   "destination": "armidale",
+   "id": "armidale-3",
+   "coordinates": {
+    "latitude": -30.64232,
+    "longitude": 151.49907
+   },
+   "coordinates_source": "wikivoyage:New England (New South Wales)",
+   "views": 12925,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Uralla"
+   ],
+   "distance_km_from_destination": 20.9,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination armidale (not yet in the app): 20.9 km from its centre, inside 75% of its 45 km span. If declined, standalone spot 'uralla'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "uralla",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   },
+   "photo_verdict": "none",
+   "skeptic_photo_verdict": "reject",
+   "photo": null,
+   "photo_note": "Commons files are single shopfronts/post office/street; no wide recognisable view of Uralla.",
+   "lens_required": true,
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "A New England Highway town built around the bushranger Captain Thunderbolt, with a museum and heritage sights.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "visit_hours_estimated": true,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "wiki": "Uralla, New South Wales",
+   "also_inside_radius_of": []
+  },
+  {
+   "name": "The Big Lamb",
+   "action": "spot",
+   "destination": "armidale",
+   "id": "armidale-4",
+   "coordinates": {
+    "latitude": -30.218583,
+    "longitude": 151.672773
+   },
+   "coordinates_source": "photon historic=monument The Big Lamb (MEDIUM)",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Guyra"
+   ],
+   "distance_km_from_destination": 32.9,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination armidale (not yet in the app): 32.9 km from its centre, inside 75% of its 45 km span. If declined, standalone spot 'the-big-lamb'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "the-big-lamb",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "BigLamb Guyra.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:BigLamb_Guyra.jpg",
+    "width": 2569,
+    "height": 2544,
+    "licence": "Public domain"
+   },
+   "photo_note": "Granite lamb monument, colour (2009), 2569x2544; centred. Checked the name is the Guyra lamb.",
+   "lens_required": true,
+   "category": "landmark",
+   "icon": "🐑",
+   "bio": "A giant lamb monument on the New England Highway at Guyra, a roadside photo stop.",
+   "hours": null,
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "also_inside_radius_of": []
+  },
+  {
+   "name": "Point Lookout",
+   "action": "spot",
+   "destination": "new-england-national-park",
+   "id": "new-england-national-park-1",
+   "coordinates": {
+    "latitude": -30.488636,
+    "longitude": 152.409606
+   },
+   "coordinates_source": "photon footway Point Lookout Circuit + natural=peak, Commons median within 135 m (HIGH)",
+   "views": 1182,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/New_England_National_Park"
+   ],
+   "distance_km_from_destination": 12.5,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination new-england-national-park (not yet in the app): 12.5 km from its centre, inside 75% of its 50 km span. If declined, standalone spot 'point-lookout'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "point-lookout",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Point Lookout, New England National Park.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Point_Lookout,_New_England_National_Park.jpg",
+    "width": 5760,
+    "height": 3840,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_note": "View over the escarpment ranges from the lookout, colour (2016), 5760 px; the view is the attraction. Crop shows layered ridges.",
+   "lens_required": true,
+   "category": "viewpoint",
+   "icon": "⛰️",
+   "bio": "The 1,563 m lookout at the top of New England National Park, with wide views over the escarpment.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "wiki": "Point Lookout (New South Wales)",
+   "also_inside_radius_of": []
+  },
+  {
+   "name": "Ebor Falls",
+   "action": "spot",
+   "destination": "new-england-national-park",
+   "id": "new-england-national-park-2",
+   "coordinates": {
+    "latitude": -30.402159,
+    "longitude": 152.34215
+   },
+   "coordinates_source": "photon waterway=waterfall (HIGH with Wikipedia and Commons median)",
+   "views": 1257,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Ebor"
+   ],
+   "distance_km_from_destination": 24.0,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination new-england-national-park (not yet in the app): 24.0 km from its centre, inside 75% of its 50 km span. If declined, standalone spot 'ebor-falls'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "ebor-falls",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Ebor Falls Snapshot.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Ebor_Falls_Snapshot.jpg",
+    "width": 4032,
+    "height": 3024,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_note": "Tiered falls seen through gum trunks, colour (2020), 4032 px; p40 0.41. Falls in left half; hero_crop pushes it toward centre. The 2024 Aug file fails brightness (p40 0.06) and crops the falls at the edge.",
+   "lens_required": true,
+   "category": "nature",
+   "icon": "💧",
+   "bio": "A waterfall on Waterfall Way with lookouts reached by a short walk, the headline stop of the Ebor area.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "also_inside_radius_of": []
+  },
+  {
+   "name": "Cathedral Rock National Park",
+   "action": "spot",
+   "destination": "new-england-national-park",
+   "id": "new-england-national-park-3",
+   "coordinates": {
+    "latitude": -30.43672,
+    "longitude": 152.22963
+   },
+   "coordinates_source": "osm",
+   "pin_note": "Park centroid/Wikivoyage point, not a visitor point: Pipeline C replaces it with the main car park, lookout or visitor-centre point (resolve-pin.py HIGH/MEDIUM) before the spot is applied.",
+   "views": 1064,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Guyra",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/cathedral-rock-national-park"
+   ],
+   "distance_km_from_destination": 28.0,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination new-england-national-park (not yet in the app): 28.0 km from its centre, inside 75% of its 50 km span. Park folded into the destination (np_exception), see np_exceptions. If declined, standalone spot 'cathedral-rock-national-park'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "cathedral-rock-national-park",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   },
+   "photo_verdict": "none",
+   "skeptic_photo_verdict": "reject",
+   "photo": null,
+   "photo_note": "Cathedral Rock NP.JPG shows the tor as a small bump on the skyline (fails crop; zoom would be soft). The other Commons files are flowers or ferns.",
+   "lens_required": true,
+   "category": "nature",
+   "icon": "🪨",
+   "bio": "A small park of granite tors with a day-use walk, beside Waterfall Way between Armidale and Ebor.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_candidate": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/cathedral-rock-national-park",
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "also_inside_radius_of": []
+  },
+  {
+   "name": "Cunnawarra National Park",
+   "action": "spot",
+   "destination": "new-england-national-park",
+   "id": "new-england-national-park-4",
+   "coordinates": {
+    "latitude": -30.63852,
+    "longitude": 152.21514
+   },
+   "coordinates_source": "osm",
+   "pin_note": "Park centroid/Wikivoyage point, not a visitor point: Pipeline C replaces it with the main car park, lookout or visitor-centre point (resolve-pin.py HIGH/MEDIUM) before the spot is applied.",
+   "views": 512,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Cunnawarra_National_Park",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/cunnawarra-national-park"
+   ],
+   "distance_km_from_destination": 23.8,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination new-england-national-park (not yet in the app): 23.8 km from its centre, inside 75% of its 50 km span. Park folded into the destination (np_exception), see np_exceptions. If declined, standalone spot 'cunnawarra-national-park'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "cunnawarra-national-park",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   },
+   "photo_verdict": "none",
+   "skeptic_photo_verdict": "reject",
+   "photo": null,
+   "photo_note": "Cunnawarra NP-3 is dominated by a tree trunk; others are signs. No clear view.",
+   "lens_required": true,
+   "category": "nature",
+   "icon": "🌲",
+   "bio": "A remote World Heritage park of beech forest with a lookout, 4WD tracks and camping, about 70 km from Armidale.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_candidate": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/cunnawarra-national-park",
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "also_inside_radius_of": [
+    "oxley-wild-rivers-national-park"
+   ]
+  },
+  {
+   "name": "Wollomombi Falls",
+   "action": "spot",
+   "destination": "oxley-wild-rivers-national-park",
+   "id": "oxley-wild-rivers-national-park-1",
+   "coordinates": {
+    "latitude": -30.53159,
+    "longitude": 152.04111
+   },
+   "coordinates_source": "photon tourism=viewpoint Wollomombi Falls Lookout (OSM node 448108640) - visitor standing point",
+   "views": 1802,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Oxley_Wild_Rivers_National_Park"
+   ],
+   "distance_km_from_destination": 31.6,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination oxley-wild-rivers-national-park (not yet in the app): 31.6 km from its centre, inside 75% of its 50 km span. If declined, standalone spot 'wollomombi-falls'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "wollomombi-falls",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Wollomombi Falls with Two Rivers.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Wollomombi_Falls_with_Two_Rivers.jpg",
+    "width": 3840,
+    "height": 5760,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_note": "Falls and gorge, colour (2016), 3840x5760 portrait; shows falls plus the two rivers; crop slides vertically, falls at left third.",
+   "lens_required": true,
+   "category": "nature",
+   "icon": "💧",
+   "bio": "One of New South Wales' tallest waterfalls, seen from lookouts in Oxley Wild Rivers National Park.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "also_inside_radius_of": []
+  },
+  {
+   "name": "Apsley Falls",
+   "action": "spot",
+   "destination": "oxley-wild-rivers-national-park",
+   "id": "oxley-wild-rivers-national-park-2",
+   "coordinates": {
+    "latitude": -31.049323,
+    "longitude": 151.769429
+   },
+   "coordinates_source": "photon waterway=waterfall (MEDIUM; lookout is within ~100 m)",
+   "views": 1545,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Oxley_Wild_Rivers_National_Park"
+   ],
+   "distance_km_from_destination": 31.6,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination oxley-wild-rivers-national-park (not yet in the app): 31.6 km from its centre, inside 75% of its 50 km span. If declined, standalone spot 'apsley-falls'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "apsley-falls",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Apsley Falls 7.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Apsley_Falls_7.JPG",
+    "width": 2592,
+    "height": 1944,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_note": "Apsley Falls in flow with gorge, colour (2007), 2592 px; falls right of centre.",
+   "lens_required": true,
+   "category": "nature",
+   "icon": "💧",
+   "bio": "A 52 m waterfall in Oxley Wild Rivers National Park, reached by a short walk to its lookouts.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "also_inside_radius_of": []
+  },
+  {
+   "name": "Tamworth Golden Guitar",
+   "action": "spot",
+   "destination": "tamworth",
+   "id": "tamworth-1",
+   "coordinates": {
+    "latitude": -31.127568,
+    "longitude": 150.923622
+   },
+   "coordinates_source": "photon tourism=attraction Big Golden Guitar (HIGH)",
+   "views": 529,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Tamworth_(New_South_Wales)"
+   ],
+   "distance_km_from_destination": 4.0,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination tamworth (not yet in the app): 4.0 km from its centre, inside 75% of its 60 km span. If declined, standalone spot 'tamworth-golden-guitar'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "tamworth-golden-guitar",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Big Golden Guitar during a nice day, October 2025.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Big_Golden_Guitar_during_a_nice_day,_October_2025.jpg",
+    "width": 3072,
+    "height": 4096,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_note": "Big Golden Guitar, colour (2025), 3072x4096 portrait; guitar centred, p40 0.51; hero_crop y toward the top so the head is kept.",
+   "lens_required": true,
+   "category": "landmark",
+   "icon": "🎸",
+   "bio": "A giant golden guitar and visitor centre, the roadside icon of Tamworth's country music fame.",
+   "hours": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "wiki": "Big Golden Guitar",
+   "also_inside_radius_of": []
+  },
+  {
+   "name": "Australian Country Music Hall of Fame",
+   "action": "spot",
+   "destination": "tamworth",
+   "id": "tamworth-2",
+   "coordinates": {
+    "latitude": -31.098962,
+    "longitude": 150.93668
+   },
+   "coordinates_source": "photon tourism=attraction (MEDIUM)",
+   "views": 0,
+   "counted_sources": [],
+   "distance_km_from_destination": 1.5,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination tamworth (not yet in the app): 1.5 km from its centre, inside 75% of its 60 km span. If declined, standalone spot 'australian-country-music-hall-of-fame'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "australian-country-music-hall-of-fame",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   },
+   "photo_verdict": "none",
+   "skeptic_photo_verdict": "reject",
+   "photo": null,
+   "photo_note": "No Commons photo found (search returns unrelated files).",
+   "lens_required": true,
+   "category": "museum",
+   "icon": "🎶",
+   "bio": "A country music museum on Peel Street with memorabilia and the Walk a Country Mile exhibits.",
+   "hours": "10:00 AM – 4:00 PM",
+   "closedDays": [
+    1
+   ],
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "source_hint": "Visit NSW / museum site: Tue-Sun 10am-4pm, 561 Peel Street (closedDays [1] = Monday).",
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "also_inside_radius_of": []
+  },
+  {
+   "name": "Australian Standing Stones",
+   "action": "spot",
+   "destination": "glen-innes",
+   "id": "glen-innes-1",
+   "coordinates": {
+    "latitude": -29.741495,
+    "longitude": 151.752667
+   },
+   "coordinates_source": "photon information=board (HIGH with Commons median)",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Glen_Innes"
+   ],
+   "distance_km_from_destination": 1.5,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination glen-innes (not yet in the app): 1.5 km from its centre, inside 75% of its 60 km span. If declined, standalone spot 'australian-standing-stones'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "australian-standing-stones",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Australian Standing Stones Glen Innes-1 (33594752084).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Australian_Standing_Stones_Glen_Innes-1_(33594752084).jpg",
+    "width": 2100,
+    "height": 1386,
+    "licence": "CC BY-SA 2.0"
+   },
+   "photo_note": "Stone circle in the park, colour (2017), 2100 px; subject centred, ok. VERIFY exact file name (truncated).",
+   "lens_required": true,
+   "category": "landmark",
+   "icon": "🗿",
+   "bio": "A circle of standing stones in Glen Innes's Centennial Parklands, the town's signature sight, free to visit.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "visit_hours_estimated": true,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "also_inside_radius_of": []
+  },
+  {
+   "name": "Kings Plains National Park",
+   "action": "spot",
+   "destination": "glen-innes",
+   "id": "glen-innes-2",
+   "coordinates": {
+    "latitude": -29.58395,
+    "longitude": 151.38953
+   },
+   "coordinates_source": "wikivoyage:Glen Innes",
+   "pin_note": "Park centroid/Wikivoyage point, not a visitor point: Pipeline C replaces it with the main car park, lookout or visitor-centre point (resolve-pin.py HIGH/MEDIUM) before the spot is applied.",
+   "views": 495,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Glen_Innes"
+   ],
+   "distance_km_from_destination": 37.8,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination glen-innes (not yet in the app): 37.8 km from its centre, inside 75% of its 60 km span. Park folded into the destination (np_exception), see np_exceptions. If declined, standalone spot 'kings-plains-national-park'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "kings-plains-national-park",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Kings Plains National Park 02.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Kings_Plains_National_Park_02.jpg",
+    "width": 3648,
+    "height": 2736,
+    "licence": "CC BY-SA 2.0"
+   },
+   "photo_note": "Waterhole with sedges, colour (2023), 3648 px; ok.",
+   "lens_required": true,
+   "category": "nature",
+   "icon": "🌿",
+   "bio": "A small park near Glen Innes with bushwalking, swimming holes, seasonal falls and camping.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "also_inside_radius_of": [
+    "inverell"
+   ]
+  },
+  {
+   "name": "Washpool National Park",
+   "action": "spot",
+   "destination": "gibraltar-range-national-park",
+   "id": "gibraltar-range-national-park-1",
+   "coordinates": {
+    "latitude": -29.34962,
+    "longitude": 152.25983
+   },
+   "coordinates_source": "osm",
+   "pin_note": "Park centroid/Wikivoyage point, not a visitor point: Pipeline C replaces it with the main car park, lookout or visitor-centre point (resolve-pin.py HIGH/MEDIUM) before the spot is applied.",
+   "views": 1397,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/washpool-national-park"
+   ],
+   "distance_km_from_destination": 23.6,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination gibraltar-range-national-park (not yet in the app): 23.6 km from its centre, inside 75% of its 60 km span. Park folded into the destination (np_exception), see np_exceptions. If declined, standalone spot 'washpool-national-park'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "washpool-national-park",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Washpool creek.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Washpool_creek.jpg",
+    "width": 3024,
+    "height": 4032,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_note": "Rainforest creek with boulders, colour (2023), 3024x4032 portrait; p40 0.29. Ok.",
+   "lens_required": true,
+   "category": "nature",
+   "icon": "🌳",
+   "bio": "World Heritage rainforest north of Gibraltar Range, with walking tracks and campgrounds.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_candidate": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/washpool-national-park",
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "also_inside_radius_of": []
+  },
+  {
+   "name": "Sir Henry Parkes School of Arts",
+   "action": "spot",
+   "destination": "tenterfield",
+   "id": "tenterfield-1",
+   "coordinates": {
+    "latitude": -29.055819,
+    "longitude": 152.01901
+   },
+   "coordinates_source": "Wikivoyage + Commons median 34 m (HIGH)",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Tenterfield"
+   ],
+   "distance_km_from_destination": 0.8,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination tenterfield (not yet in the app): 0.8 km from its centre, inside 75% of its 50 km span. If declined, standalone spot 'sir-henry-parkes-school-of-arts'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "sir-henry-parkes-school-of-arts",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Tenterfield School of Arts 001.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Tenterfield_School_of_Arts_001.JPG",
+    "width": 5725,
+    "height": 3614,
+    "licence": "CC BY 3.0"
+   },
+   "photo_note": "Red-brick building, colour (2017), 5725 px; the building is the attraction; ok.",
+   "lens_required": true,
+   "category": "museum",
+   "icon": "🏛️",
+   "bio": "The National Trust museum in Tenterfield's School of Arts, tied to Sir Henry Parkes' Federation speech.",
+   "hours": "10:00 AM – 4:00 PM",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "source_hint": "Wikivoyage: daily 10-4 with admission; cost unsourced.",
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "wiki": "Sir Henry Parkes Memorial School of Arts",
+   "also_inside_radius_of": []
+  },
+  {
+   "name": "Bald Rock National Park",
+   "action": "spot",
+   "destination": "tenterfield",
+   "id": "tenterfield-2",
+   "coordinates": {
+    "latitude": -28.85266,
+    "longitude": 152.0401
+   },
+   "coordinates_source": "photon natural=peak Bald Rock (OSM node 1107818164) - the monolith itself; the park is a single-feature park",
+   "views": 4207,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Bald_Rock_National_Park",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/bald-rock-national-park"
+   ],
+   "distance_km_from_destination": 21.9,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination tenterfield (not yet in the app): 21.9 km from its centre, inside 75% of its 50 km span. Park folded into the destination (np_exception), see np_exceptions. If declined, standalone spot 'bald-rock-national-park'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "bald-rock-national-park",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Bald Rock NP NSW 1.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Bald_Rock_NP_NSW_1.jpg",
+    "width": 2048,
+    "height": 1536,
+    "licence": "CC BY 2.0"
+   },
+   "photo_note": "Granite dome, colour (2004), 2048 px; subject left of centre.",
+   "lens_required": true,
+   "category": "nature",
+   "icon": "🪨",
+   "bio": "Australia's largest granite monolith, with a loop walk onto the rock, near Tenterfield.",
+   "hours": null,
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_candidate": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/bald-rock-national-park",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "also_inside_radius_of": []
+  },
+  {
+   "name": "Boonoo Boonoo National Park",
+   "action": "spot",
+   "destination": "tenterfield",
+   "id": "tenterfield-3",
+   "coordinates": {
+    "latitude": -28.82695,
+    "longitude": 152.15884
+   },
+   "coordinates_source": "osm",
+   "pin_note": "Park centroid/Wikivoyage point, not a visitor point: Pipeline C replaces it with the main car park, lookout or visitor-centre point (resolve-pin.py HIGH/MEDIUM) before the spot is applied.",
+   "views": 863,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/New_England_(New_South_Wales)",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/boonoo-boonoo-national-park"
+   ],
+   "distance_km_from_destination": 28.2,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination tenterfield (not yet in the app): 28.2 km from its centre, inside 75% of its 50 km span. Park folded into the destination (np_exception), see np_exceptions. If declined, standalone spot 'boonoo-boonoo-national-park'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "boonoo-boonoo-national-park",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Boonoo Boonoo Falls 2.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Boonoo_Boonoo_Falls_2.jpg",
+    "width": 3264,
+    "height": 1836,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_note": "Cascade down the cliff, colour (2017), 3264 px; falls a thin diagonal on the left; hero_crop slides left. Weak but acceptable; judge to check.",
+   "lens_required": true,
+   "category": "nature",
+   "icon": "💧",
+   "bio": "A park of waterfalls and swimming holes near Tenterfield, centred on Boonoo Boonoo Falls.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_candidate": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/boonoo-boonoo-national-park",
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "also_inside_radius_of": []
+  },
+  {
+   "name": "Copeton Dam",
+   "action": "spot",
+   "destination": "inverell",
+   "id": "inverell-1",
+   "coordinates": {
+    "latitude": -29.907885,
+    "longitude": 150.927814
+   },
+   "coordinates_source": "photon waterway=dam (LOW-MEDIUM; use state park beach/campground access if preferred)",
+   "pin_note": "Skeptic grade LOW-MEDIUM (dam wall feature): consider the Copeton Waters State Park beach/campground access point.",
+   "views": 3419,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Inverell"
+   ],
+   "distance_km_from_destination": 23.1,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination inverell (not yet in the app): 23.1 km from its centre, inside 75% of its 60 km span. If declined, standalone spot 'copeton-dam'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "copeton-dam",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Copeton Dam Storage.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Copeton_Dam_Storage.jpg",
+    "width": 3102,
+    "height": 1745,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_note": "Lake with islands and hills, colour (2006), 3102 px; clear lake view.",
+   "lens_required": true,
+   "category": "nature",
+   "icon": "🌊",
+   "bio": "A large reservoir south-west of Inverell with swimming, boating, fishing and camping at Copeton Waters State Park.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "also_inside_radius_of": []
+  },
+  {
+   "name": "Myall Creek Massacre Memorial Site",
+   "action": "spot",
+   "destination": "inverell",
+   "id": "inverell-2",
+   "coordinates": {
+    "latitude": -29.781259,
+    "longitude": 150.712724
+   },
+   "coordinates_source": "photon historic=memorial Myall Creek Massacre Monument (HIGH)",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Inverell"
+   ],
+   "distance_km_from_destination": 38.5,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination inverell (not yet in the app): 38.5 km from its centre, inside 75% of its 60 km span. If declined, standalone spot 'myall-creek-massacre-memorial-site'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "myall-creek-massacre-memorial-site",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   },
+   "photo_verdict": "none",
+   "skeptic_photo_verdict": "reject",
+   "photo": null,
+   "photo_note": "No Commons photo found for the memorial.",
+   "lens_required": true,
+   "category": "historic",
+   "icon": "🕊️",
+   "bio": "A National Heritage-listed memorial walk at the site of the 1838 Myall Creek massacre, in the Inverell district.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "visit_hours_estimated": true,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "also_inside_radius_of": []
+  },
+  {
+   "name": "Sawn Rocks",
+   "action": "spot",
+   "destination": "mount-kaputar-national-park",
+   "id": "mount-kaputar-national-park-1",
+   "coordinates": {
+    "latitude": -30.145176,
+    "longitude": 150.060309
+   },
+   "coordinates_source": "photon highway=steps Sawn Rocks Walking Track + attraction (HIGH). Trail is short; this is the track end at the columns.",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Mount_Kaputar_National_Park"
+   ],
+   "distance_km_from_destination": 18.0,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination mount-kaputar-national-park (not yet in the app): 18.0 km from its centre, inside 75% of its 70 km span. If declined, standalone spot 'sawn-rocks'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "sawn-rocks",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Mount Kaputar National Park, Narrabri, NSW. Sawn-rocks 01.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Mount_Kaputar_National_Park,_Narrabri,_NSW._Sawn-rocks_01.jpg",
+    "width": 4320,
+    "height": 3240,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_note": "Basalt columns, colour (2012), 4320 px, p40 0.28; recognisable and centred.",
+   "lens_required": true,
+   "category": "nature",
+   "icon": "🪨",
+   "bio": "A cliff of columnar basalt in Mount Kaputar National Park, reached by a short walk of about 1 km.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "also_inside_radius_of": []
+  },
+  {
+   "name": "Narrabri",
+   "action": "spot",
+   "destination": "mount-kaputar-national-park",
+   "id": "mount-kaputar-national-park-2",
+   "coordinates": {
+    "latitude": -30.32962,
+    "longitude": 149.78145
+   },
+   "coordinates_source": "photon place=town (OSM relation 5793383)",
+   "views": 25105,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Narrabri"
+   ],
+   "distance_km_from_destination": 35.0,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination mount-kaputar-national-park (not yet in the app): 35.0 km from its centre, inside 75% of its 70 km span. If declined, standalone spot 'narrabri'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "narrabri",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   },
+   "photo_verdict": "none",
+   "skeptic_photo_verdict": "reject",
+   "photo": null,
+   "photo_note": "Commons has a memorial, creek, street and cotton centre; no clear townscape.",
+   "lens_required": true,
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "The Namoi Valley town that is the base for Mount Kaputar National Park and the Paul Wild Observatory.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "visit_hours_estimated": true,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "also_inside_radius_of": []
+  },
+  {
+   "name": "Horton Falls National Park",
+   "action": "spot",
+   "destination": "mount-kaputar-national-park",
+   "id": "mount-kaputar-national-park-3",
+   "coordinates": {
+    "latitude": -30.332439,
+    "longitude": 150.337949
+   },
+   "coordinates_source": "wikivoyage:Barraba",
+   "pin_note": "Park centroid/Wikivoyage point, not a visitor point: Pipeline C replaces it with the main car park, lookout or visitor-centre point (resolve-pin.py HIGH/MEDIUM) before the spot is applied.",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Barraba",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/horton-falls-national-park"
+   ],
+   "distance_km_from_destination": 19.3,
+   "inside_75pct_span": true,
+   "reason": "Proposed destination mount-kaputar-national-park (not yet in the app): 19.3 km from its centre, inside 75% of its 70 km span. Park folded into the destination (np_exception), see np_exceptions. If declined, standalone spot 'horton-falls-national-park'.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "horton-falls-national-park",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   },
+   "photo_verdict": "none",
+   "skeptic_photo_verdict": "reject",
+   "photo": null,
+   "photo_note": "Commons searches returned only Horton Plains, Sri Lanka (wrong place); no NSW photo found.",
+   "lens_required": true,
+   "category": "nature",
+   "icon": "💧",
+   "bio": "A bushwalk to a waterfall in the Nandewar Range foothills, about 40 minutes from Barraba, with overnight camping.",
+   "hours": null,
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 4,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_candidate": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/horton-falls-national-park",
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research; new-destination members apply only if the owner approves the proposal",
+   "also_inside_radius_of": []
+  },
+  {
+   "name": "Moree Artesian Aquatic Centre",
+   "action": "standalone",
+   "destination": null,
+   "id": "moree-artesian-aquatic-centre",
+   "coordinates": {
+    "latitude": -29.47413,
+    "longitude": 149.84665
+   },
+   "coordinates_source": "osm swimming_pool; Commons median 38 m (HIGH)",
+   "views": 0,
+   "counted_sources": [
+    "https://mpsc.nsw.gov.au/redevelopment-moree-artesian-aquatic-centre-maac?start=1"
+   ],
+   "reason": "Moree's draw; 99 km from the nearest kept place and with only the Moree town spot beside it, a Moree destination would hold one spot, so it stands alone (owner may promote Moree).",
+   "photo_verdict": "none",
+   "skeptic_photo_verdict": "reject",
+   "photo": null,
+   "photo_note": "Only Moree Artesian Aquatic Centre.jpg (waterslide close, 1600 px) which shows the slide, not the hot pools; fails check 2. A Commons file of the main entrance to the Hot Artesian Baths exists but is dated unclear/archive.",
+   "lens_required": true,
+   "category": "entertainment",
+   "icon": "♨️",
+   "bio": "Council-run artesian hot pools in Moree, reopened in April 2026 after about 21 months closed.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "source_hint": "Wikivoyage (2021) gave Mon-Fri 6-8, Sat-Sun 7-7; reopened 9 April 2026 per council release; reconfirm hours and price.",
+   "status": "draft: ready for Pipeline C research",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "also_inside_radius_of": []
+  },
+  {
+   "name": "Moree",
+   "action": "standalone",
+   "destination": null,
+   "id": "moree",
+   "coordinates": {
+    "latitude": -29.46541,
+    "longitude": 149.84163
+   },
+   "coordinates_source": "wikivoyage:New England (New South Wales)",
+   "views": 37864,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Moree"
+   ],
+   "reason": "Wikivoyage hub town, the only kept place for 90 km; one neighbouring spot is too few for a destination. Standalone.",
+   "photo_verdict": "none",
+   "skeptic_photo_verdict": "reject",
+   "photo": null,
+   "photo_note": "Commons has a library, a weir, a sunset and a Balo Street shopfront; nothing recognisable as Moree.",
+   "lens_required": true,
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "A north-west plains town known for its artesian hot baths, on the road to Lightning Ridge.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "visit_hours_estimated": true,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research",
+   "wiki": "Moree, New South Wales",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "also_inside_radius_of": []
+  },
+  {
+   "name": "Gunnedah",
+   "action": "standalone",
+   "destination": null,
+   "id": "gunnedah",
+   "coordinates": {
+    "latitude": -30.97697,
+    "longitude": 150.25101
+   },
+   "coordinates_source": "photon place=locality (OSM relation 6063570)",
+   "views": 30131,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Gunnedah"
+   ],
+   "reason": "Regional hub 64 km from Tamworth (outside its 45 km radius) with no other kept place nearby; a destination with no spots would be hollow. Standalone.",
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Gunnedah-NSW-Australia 2005-12-01 IMG 0814.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Gunnedah-NSW-Australia_2005-12-01_IMG_0814.JPG",
+    "width": 2048,
+    "height": 1536,
+    "licence": "CC BY-SA 2.5"
+   },
+   "photo_note": "Gunnedah from the lookout, colour, 2048 px; town in its landscape. Crop shows plain and sky; acceptable.",
+   "lens_required": true,
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "A Namoi Valley town billed as the Koala Capital, set in Dorothea Mackellar country.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "visit_hours_estimated": true,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "also_inside_radius_of": []
+  },
+  {
+   "name": "Kwiambal National Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "kwiambal-national-park",
+   "coordinates": {
+    "latitude": -29.15597,
+    "longitude": 150.98347
+   },
+   "coordinates_source": "osm (candidate) kept; Photon only gives park centroid",
+   "pin_note": "Park centroid/Wikivoyage point, not a visitor point: Pipeline C replaces it with the main car park, lookout or visitor-centre point (resolve-pin.py HIGH/MEDIUM) before the spot is applied.",
+   "views": 542,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Inverell",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/kwiambal-national-park"
+   ],
+   "reason": "70 km north of Inverell, outside its radius; a park with no other kept place, so a one-place destination would be thin (np_exception: stands alone). Reached on its own from Ashford/Inverell.",
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "McIntyre Falls Kwiambal NP 02.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:McIntyre_Falls_Kwiambal_NP_02.jpg",
+    "width": 3648,
+    "height": 2736,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_note": "Granite pool and falls, colour (2024), 3648 px; striking and centred.",
+   "lens_required": true,
+   "category": "nature",
+   "icon": "🛶",
+   "bio": "A secluded park past Inverell with canoeing, swimming, camping and Macintyre Falls.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_candidate": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/kwiambal-national-park",
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "also_inside_radius_of": []
+  },
+  {
+   "name": "Warrabah National Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "warrabah-national-park",
+   "coordinates": {
+    "latitude": -30.56807,
+    "longitude": 150.91441
+   },
+   "coordinates_source": "wikivoyage:Barraba",
+   "pin_note": "Park centroid/Wikivoyage point, not a visitor point: Pipeline C replaces it with the main car park, lookout or visitor-centre point (resolve-pin.py HIGH/MEDIUM) before the spot is applied.",
+   "views": 835,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Barraba",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/warrabah-national-park"
+   ],
+   "reason": "58 km from Tamworth, at the edge of its radius, reached via Manilla/Barraba on the Namoi; no other kept place nearby (np_exception: stands alone).",
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Warrabah National Park.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Warrabah_National_Park.jpg",
+    "width": 4000,
+    "height": 2248,
+    "licence": "CC BY 2.0"
+   },
+   "photo_note": "River and valley, colour (2016), 4000x2248; ok; river low in frame.",
+   "lens_required": true,
+   "category": "nature",
+   "icon": "🛶",
+   "bio": "A park on the Namoi River with camping, fishing, swimming and canoeing.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "ticketUrl_candidate": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/warrabah-national-park",
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "also_inside_radius_of": []
+  },
+  {
+   "name": "Paul Wild Observatory",
+   "action": "standalone",
+   "destination": null,
+   "id": "paul-wild-observatory",
+   "coordinates": {
+    "latitude": -30.311583,
+    "longitude": 149.564407
+   },
+   "coordinates_source": "photon research_institute CSIRO Paul Wild Observatory (MEDIUM; Wikipedia -30.314,149.562 agrees within 300 m). Wikivoyage -30.3342 is wrong by 2.8 km.",
+   "views": 5177,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Narrabri"
+   ],
+   "reason": "22 km west of Narrabri; 55 km from the Mount Kaputar centre, outside its 52 km radius, and Narrabri is a spot there (a span ballooned to hold it would misstate the park). Standalone.",
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Australia Telescope Compact Array.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Australia_Telescope_Compact_Array.jpg",
+    "width": 1280,
+    "height": 960,
+    "licence": "CC BY-SA 2.0"
+   },
+   "photo_note": "Three dishes beside a gum, colour (2006), 1280x960; dishes left, hero_crop slides left.",
+   "lens_required": true,
+   "category": "museum",
+   "icon": "📡",
+   "bio": "CSIRO's self-guided visitor centre overlooking the six radio dishes of the Compact Array, west of Narrabri.",
+   "hours": "8:00 AM – 5:00 PM",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "visit_hours_estimated": true,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "source_hint": "CSIRO/Wikivoyage: visitor centre daily 8am-5pm, free; verified open by skeptic.",
+   "status": "draft: ready for Pipeline C research",
+   "wiki": "Australia Telescope Compact Array",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "also_inside_radius_of": []
+  },
+  {
+   "name": "Pilliga Hot Artesian Bore Baths",
+   "action": "standalone",
+   "destination": null,
+   "id": "pilliga-hot-artesian-bore-baths",
+   "coordinates": {
+    "latitude": -30.355049,
+    "longitude": 148.906966
+   },
+   "coordinates_source": "photon amenity=parking/swimming_pool/attraction Pilliga Artesian Bore Baths (HIGH)",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Narrabri"
+   ],
+   "reason": "98 km from Narrabri and 103 km from Warrumbungle's centre (45 km radius), reached on its own through the Pilliga. Standalone.",
+   "photo_verdict": "none",
+   "skeptic_photo_verdict": "reject",
+   "photo": null,
+   "photo_note": "Commons search found nothing.",
+   "lens_required": true,
+   "category": "nature",
+   "icon": "♨️",
+   "bio": "Hot artesian bore baths in the Pilliga with a campground, about 98 km west of Narrabri.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "visit_hours_estimated": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "status": "draft: ready for Pipeline C research",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney",
+   "also_inside_radius_of": []
+  }
+ ],
+ "new_destinations": [
+  {
+   "name": "Armidale",
+   "action": "new-destination",
+   "destination": null,
+   "id": "armidale",
+   "coordinates": {
+    "latitude": -30.513916,
+    "longitude": 151.658902
+   },
+   "coordinates_source": "wikivoyage:New England (New South Wales)",
+   "proposed_category": "city",
+   "proposed_rank": 4,
+   "proposed_defaultZoomSpanKm": 45,
+   "views": 46576,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Armidale"
+   ],
+   "members": [
+    "New England Regional Art Museum",
+    "Saumarez Homestead",
+    "Uralla",
+    "The Big Lamb"
+   ],
+   "member_count": 4,
+   "np_exception": [],
+   "reason": "Regional city with its own Wikivoyage chapter and the base for the Waterfall Way parks; four kept places within 33 km (NERAM, Saumarez Homestead, Uralla, The Big Lamb). Span kept to 45 km so Wollomombi Falls (37 km) stays with Oxley Wild Rivers, its park.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "armidale",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   },
+   "if_declined_standalone": [
+    {
+     "name": "New England Regional Art Museum",
+     "id": "new-england-regional-art-museum",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    },
+    {
+     "name": "Saumarez Homestead",
+     "id": "saumarez-homestead",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    },
+    {
+     "name": "Uralla",
+     "id": "uralla",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    },
+    {
+     "name": "The Big Lamb",
+     "id": "the-big-lamb",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    }
+   ],
+   "status": "PROPOSAL ONLY, not added: needs description, three reasons with photos, tips, best months and a header (WRITING.md, Pipeline C).",
+   "photo_verdict": "none",
+   "skeptic_photo_verdict": "reject",
+   "photo": null,
+   "photo_note": "Commons only has single buildings, the cathedrals, archive scans and a 1000 px overview; no wide current townscape found. Needs a non-Commons photo.",
+   "lens_required": true
+  },
+  {
+   "name": "New England National Park",
+   "action": "new-destination",
+   "destination": null,
+   "id": "new-england-national-park",
+   "coordinates": {
+    "latitude": -30.59279,
+    "longitude": 152.45857
+   },
+   "coordinates_source": "osm",
+   "proposed_category": "park",
+   "proposed_rank": 4,
+   "proposed_defaultZoomSpanKm": 50,
+   "views": 1548,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/New_England_National_Park",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/new-england-national-park"
+   ],
+   "members": [
+    "Point Lookout",
+    "Ebor Falls",
+    "Cathedral Rock National Park",
+    "Cunnawarra National Park"
+   ],
+   "member_count": 4,
+   "np_exception": [
+    "Cathedral Rock National Park",
+    "Cunnawarra National Park"
+   ],
+   "reason": "World Heritage park on the escarpment (every national park is a destination); Point Lookout and Ebor Falls are its headline stops and Cathedral Rock and Cunnawarra national parks, both on the same Waterfall Way road, are folded in.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "new-england-national-park",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   },
+   "if_declined_standalone": [
+    {
+     "name": "Point Lookout",
+     "id": "point-lookout",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    },
+    {
+     "name": "Ebor Falls",
+     "id": "ebor-falls",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    },
+    {
+     "name": "Cathedral Rock National Park",
+     "id": "cathedral-rock-national-park",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    },
+    {
+     "name": "Cunnawarra National Park",
+     "id": "cunnawarra-national-park",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    }
+   ],
+   "status": "PROPOSAL ONLY, not added: needs description, three reasons with photos, tips, best months and a header (WRITING.md, Pipeline C).",
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "NewEnglandNP.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:NewEnglandNP.jpg",
+    "width": 3648,
+    "height": 1858,
+    "licence": "CC BY-SA 3.0"
+   },
+   "photo_note": "Forested valley with eucalypt in foreground, colour (2008), 3648x1858 wide; crop centres on the tree and ridges; ok.",
+   "lens_required": true
+  },
+  {
+   "name": "Oxley Wild Rivers National Park",
+   "action": "new-destination",
+   "destination": null,
+   "id": "oxley-wild-rivers-national-park",
+   "coordinates": {
+    "latitude": -30.790457,
+    "longitude": 151.90527
+   },
+   "coordinates_source": "midpoint of the Wollomombi Falls and Apsley Falls skeptic pins (derived, not a source point)",
+   "proposed_category": "park",
+   "proposed_rank": 5,
+   "proposed_defaultZoomSpanKm": 50,
+   "views": 2319,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Oxley_Wild_Rivers_National_Park",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/oxley-wild-rivers-national-park"
+   ],
+   "members": [
+    "Wollomombi Falls",
+    "Apsley Falls"
+   ],
+   "member_count": 2,
+   "np_exception": [],
+   "reason": "World Heritage gorge park (every national park is a destination); its two own-listing waterfalls, Wollomombi and Apsley, are 57 km apart so the centre is their midpoint, not the Wikivoyage park centroid (49 km from the nearest falls). Thin (2 spots now): Green Gully Track (held for pin) and Walcha (review) would add to it.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "oxley-wild-rivers-national-park",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   },
+   "if_declined_standalone": [
+    {
+     "name": "Wollomombi Falls",
+     "id": "wollomombi-falls",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    },
+    {
+     "name": "Apsley Falls",
+     "id": "apsley-falls",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    }
+   ],
+   "status": "PROPOSAL ONLY, not added: needs description, three reasons with photos, tips, best months and a header (WRITING.md, Pipeline C).",
+   "pin_note": "Centre is a derived midpoint; Pipeline C should confirm a visitor hub.",
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Wollomombi Falls 2.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Wollomombi_Falls_2.jpg",
+    "width": 3699,
+    "height": 2627,
+    "licence": "CC BY-SA 3.0"
+   },
+   "photo_note": "Gorge with falls, colour (2009), 3699 px; shows the gorge country the park is for; falls small but centred in the gorge.",
+   "lens_required": true
+  },
+  {
+   "name": "Tamworth",
+   "action": "new-destination",
+   "destination": null,
+   "id": "tamworth",
+   "coordinates": {
+    "latitude": -31.09198,
+    "longitude": 150.92294
+   },
+   "coordinates_source": "wikivoyage:New England (New South Wales)",
+   "proposed_category": "city",
+   "proposed_rank": 4,
+   "proposed_defaultZoomSpanKm": 60,
+   "views": 51892,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Tamworth_(New_South_Wales)"
+   ],
+   "members": [
+    "Tamworth Golden Guitar",
+    "Australian Country Music Hall of Fame"
+   ],
+   "member_count": 2,
+   "np_exception": [],
+   "reason": "Largest New England city, Wikivoyage chapter and country-music capital; the Golden Guitar and the Country Music Hall of Fame are its two kept stops. Burning Mountain (held for pin) lies 85 km south and is not in its span.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "tamworth",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   },
+   "if_declined_standalone": [
+    {
+     "name": "Tamworth Golden Guitar",
+     "id": "tamworth-golden-guitar",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    },
+    {
+     "name": "Australian Country Music Hall of Fame",
+     "id": "australian-country-music-hall-of-fame",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    }
+   ],
+   "status": "PROPOSAL ONLY, not added: needs description, three reasons with photos, tips, best months and a header (WRITING.md, Pipeline C).",
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Tamworth-lookout.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Tamworth-lookout.jpg",
+    "width": 1600,
+    "height": 1200,
+    "licence": "CC BY-SA 3.0"
+   },
+   "photo_note": "Tamworth and plain from the lookout, colour (2004), 1600 px; city in its landscape. Crop shows plain and ranges; acceptable though not dramatic.",
+   "lens_required": true
+  },
+  {
+   "name": "Glen Innes",
+   "action": "new-destination",
+   "destination": null,
+   "id": "glen-innes",
+   "coordinates": {
+    "latitude": -29.73679,
+    "longitude": 151.73841
+   },
+   "coordinates_source": "wikivoyage:New England (New South Wales)",
+   "proposed_category": "city",
+   "proposed_rank": 5,
+   "proposed_defaultZoomSpanKm": 60,
+   "views": 26764,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Glen_Innes"
+   ],
+   "members": [
+    "Australian Standing Stones",
+    "Kings Plains National Park"
+   ],
+   "member_count": 2,
+   "np_exception": [
+    "Kings Plains National Park"
+   ],
+   "reason": "Highland town with a Wikivoyage chapter; Australian Standing Stones and Kings Plains National Park (folded in, np_exception) are within 38 km. Gibraltar Range and Washpool, 59-66 km away, are a separate park destination because holding them would need a 100 km span.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "glen-innes",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   },
+   "if_declined_standalone": [
+    {
+     "name": "Australian Standing Stones",
+     "id": "australian-standing-stones",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    },
+    {
+     "name": "Kings Plains National Park",
+     "id": "kings-plains-national-park",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    }
+   ],
+   "status": "PROPOSAL ONLY, not added: needs description, three reasons with photos, tips, best months and a header (WRITING.md, Pipeline C).",
+   "photo_verdict": "none",
+   "skeptic_photo_verdict": "reject",
+   "photo": null,
+   "photo_note": "Only candidate (Glen Innes (6).JPG) is a lamp post and town hall, an ordinary building; the rest are bank archives or lamp posts.",
+   "lens_required": true
+  },
+  {
+   "name": "Gibraltar Range National Park",
+   "action": "new-destination",
+   "destination": null,
+   "id": "gibraltar-range-national-park",
+   "coordinates": {
+    "latitude": -29.554444,
+    "longitude": 152.323889
+   },
+   "coordinates_source": "wikivoyage:New England (New South Wales)",
+   "proposed_category": "park",
+   "proposed_rank": 5,
+   "proposed_defaultZoomSpanKm": 60,
+   "views": 1796,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/gibraltar-range-national-park"
+   ],
+   "members": [
+    "Washpool National Park"
+   ],
+   "member_count": 1,
+   "np_exception": [
+    "Washpool National Park"
+   ],
+   "reason": "Granite park with the Washpool World Heritage rainforest 23 km north; every national park is a destination, Washpool is folded in (np_exception) because it would be a one-place destination. The Gibraltar-Washpool walk (held for pin) will be a spot of it.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "gibraltar-range-national-park",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   },
+   "if_declined_standalone": [
+    {
+     "name": "Washpool National Park",
+     "id": "washpool-national-park",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    }
+   ],
+   "status": "PROPOSAL ONLY, not added: needs description, three reasons with photos, tips, best months and a header (WRITING.md, Pipeline C).",
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Gibraltar Range National Park seen from Raspberry Lookout, 2021, 04.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Gibraltar_Range_National_Park_seen_from_Raspberry_Lookout,_2021,_04.jpg",
+    "width": 4032,
+    "height": 3024,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_note": "Forested range from the lookout, colour (2021), 4032 px; plain landscape view; verify exact file name on Commons (the file name was truncated in the contact sheet).",
+   "lens_required": true
+  },
+  {
+   "name": "Tenterfield",
+   "action": "new-destination",
+   "destination": null,
+   "id": "tenterfield",
+   "coordinates": {
+    "latitude": -29.04833,
+    "longitude": 152.01778
+   },
+   "coordinates_source": "photon place=locality (OSM relation 6070168); replaces memory-rounded Wikipedia point",
+   "proposed_category": "city",
+   "proposed_rank": 5,
+   "proposed_defaultZoomSpanKm": 50,
+   "views": 24784,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Tenterfield"
+   ],
+   "members": [
+    "Sir Henry Parkes School of Arts",
+    "Bald Rock National Park",
+    "Boonoo Boonoo National Park"
+   ],
+   "member_count": 3,
+   "np_exception": [
+    "Bald Rock National Park",
+    "Boonoo Boonoo National Park"
+   ],
+   "reason": "Federation heritage town with a Wikivoyage chapter and the gateway to Bald Rock and Boonoo Boonoo; both parks are folded in (np_exception) as each would be a one-place destination.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "tenterfield",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   },
+   "if_declined_standalone": [
+    {
+     "name": "Sir Henry Parkes School of Arts",
+     "id": "sir-henry-parkes-school-of-arts",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    },
+    {
+     "name": "Bald Rock National Park",
+     "id": "bald-rock-national-park",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    },
+    {
+     "name": "Boonoo Boonoo National Park",
+     "id": "boonoo-boonoo-national-park",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    }
+   ],
+   "status": "PROPOSAL ONLY, not added: needs description, three reasons with photos, tips, best months and a header (WRITING.md, Pipeline C).",
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Tenterfield, New South Wales CBD.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Tenterfield,_New_South_Wales_CBD.jpg",
+    "width": 4898,
+    "height": 3265,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_note": "Tenterfield rooftops and ranges, colour (2017), 4898 px; town in its landscape; brightness p40 0.38. Crop shows roofs and sky; fine.",
+   "lens_required": true
+  },
+  {
+   "name": "Inverell",
+   "action": "new-destination",
+   "destination": null,
+   "id": "inverell",
+   "coordinates": {
+    "latitude": -29.77372,
+    "longitude": 151.11119
+   },
+   "coordinates_source": "wikivoyage:New England (New South Wales)",
+   "proposed_category": "city",
+   "proposed_rank": 5,
+   "proposed_defaultZoomSpanKm": 60,
+   "views": 24411,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Inverell"
+   ],
+   "members": [
+    "Copeton Dam",
+    "Myall Creek Massacre Memorial Site"
+   ],
+   "member_count": 2,
+   "np_exception": [],
+   "reason": "Regional hub (Sapphire City) with a Wikivoyage chapter; Copeton Dam and Myall Creek are within 40 km. Kwiambal National Park (70 km) is outside the span and stands alone.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "inverell",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   },
+   "if_declined_standalone": [
+    {
+     "name": "Copeton Dam",
+     "id": "copeton-dam",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    },
+    {
+     "name": "Myall Creek Massacre Memorial Site",
+     "id": "myall-creek-massacre-memorial-site",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    }
+   ],
+   "status": "PROPOSAL ONLY, not added: needs description, three reasons with photos, tips, best months and a header (WRITING.md, Pipeline C).",
+   "photo_verdict": "none",
+   "skeptic_photo_verdict": "reject",
+   "photo": null,
+   "photo_note": "Commons gives an ordinary street, churches and an archive scan; no wide townscape.",
+   "lens_required": true
+  },
+  {
+   "name": "Mount Kaputar National Park",
+   "action": "new-destination",
+   "destination": null,
+   "id": "mount-kaputar-national-park",
+   "coordinates": {
+    "latitude": -30.290556,
+    "longitude": 150.142778
+   },
+   "coordinates_source": "wikivoyage:New England (New South Wales)",
+   "proposed_category": "park",
+   "proposed_rank": 4,
+   "proposed_defaultZoomSpanKm": 70,
+   "views": 4004,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Mount_Kaputar_National_Park",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/mount-kaputar-national-park"
+   ],
+   "members": [
+    "Sawn Rocks",
+    "Narrabri",
+    "Horton Falls National Park"
+   ],
+   "member_count": 3,
+   "np_exception": [
+    "Horton Falls National Park"
+   ],
+   "reason": "Extinct-volcano park above the Namoi plain (every national park is a destination); Narrabri is its gateway-town spot (35 km), Sawn Rocks its best-known walk, Horton Falls National Park folded in (np_exception). Paul Wild Observatory (55 km, west of Narrabri) is left outside the 52 km radius rather than ballooning the span.",
+   "if_proposal_declined": {
+    "action": "standalone",
+    "id": "mount-kaputar-national-park",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   },
+   "if_declined_standalone": [
+    {
+     "name": "Sawn Rocks",
+     "id": "sawn-rocks",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    },
+    {
+     "name": "Narrabri",
+     "id": "narrabri",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    },
+    {
+     "name": "Horton Falls National Park",
+     "id": "horton-falls-national-park",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    }
+   ],
+   "status": "PROPOSAL ONLY, not added: needs description, three reasons with photos, tips, best months and a header (WRITING.md, Pipeline C).",
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "Camels Hump and the big lava flow from Mitchell Dyke in Mt Kaputar National park, NSW.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Camels_Hump_and_the_big_lava_flow_from_Mitchell_Dyke_in_Mt_Kaputar_National_park,_NSW.jpg",
+    "width": 4416,
+    "height": 3312,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_note": "Camels Hump over the lava flow, colour (2012), 4416 px; recognisable range view. VERIFY exact file name (truncated in the sheet).",
+   "lens_required": true
+  }
+ ],
+ "np_exceptions": {
+  "note": "Every national park is a destination (COVERAGE.md Granularity). These parks are NOT proposed as their own destinations because each would hold one place or none; listed for the owner, who may promote any of them.",
+  "folded_into_a_destination": [
+   {
+    "park": "Cathedral Rock National Park",
+    "into": "new-england-national-park",
+    "id": "new-england-national-park-3",
+    "km_from_centre": 28.0
+   },
+   {
+    "park": "Cunnawarra National Park",
+    "into": "new-england-national-park",
+    "id": "new-england-national-park-4",
+    "km_from_centre": 23.8
+   },
+   {
+    "park": "Kings Plains National Park",
+    "into": "glen-innes",
+    "id": "glen-innes-2",
+    "km_from_centre": 37.8,
+    "note": "also inside the Inverell radius (about 34 km); reached from Glen Innes per Wikivoyage"
+   },
+   {
+    "park": "Washpool National Park",
+    "into": "gibraltar-range-national-park",
+    "id": "gibraltar-range-national-park-1",
+    "km_from_centre": 23.6
+   },
+   {
+    "park": "Bald Rock National Park",
+    "into": "tenterfield",
+    "id": "tenterfield-2",
+    "km_from_centre": 21.9
+   },
+   {
+    "park": "Boonoo Boonoo National Park",
+    "into": "tenterfield",
+    "id": "tenterfield-3",
+    "km_from_centre": 28.2
+   },
+   {
+    "park": "Horton Falls National Park",
+    "into": "mount-kaputar-national-park",
+    "id": "mount-kaputar-national-park-3",
+    "km_from_centre": 19.3
+   }
+  ],
+  "standalone_parks": [
+   {
+    "park": "Kwiambal National Park",
+    "id": "kwiambal-national-park"
+   },
+   {
+    "park": "Warrabah National Park",
+    "id": "warrabah-national-park"
+   }
+  ]
+ },
+ "span_overlap_notes": [
+  "Armidale (45 km) and Oxley Wild Rivers (50 km): centres 38.7 km apart, radii overlap, but the spots are assigned by access: Wollomombi (37 km from Armidale, outside its 33.75 km radius) and Apsley belong to the park; NERAM is the only Armidale spot that also falls in Oxley's radius.",
+  "Cunnawarra National Park lies inside both New England NP's and Oxley Wild Rivers' radii; it goes to New England NP (Waterfall Way, reached from Armidale/Ebor side).",
+  "Glen Innes/Inverell/Tenterfield/Gibraltar radii touch on empty country; the only spot in two radii is Kings Plains (above).",
+  "Warrumbungle's span is checked in existing_destinations_checked."
+ ],
+ "mid_north_coast_overlap": "Dorrigo National Park (mid-north-coast proposal) is 37 km east of Ebor Falls, outside its 30 km radius; Waterfall Way stops west of Dorrigo are placed here and none of them is claimed there. See nsw-overlaps.md.",
+ "left_to_review_list_not_placed": [
+  {
+   "name": "Walcha",
+   "views": 16260,
+   "counted_sources": 1,
+   "case": "Pipiriki-type gateway: the draw (Apsley Falls, Green Gully, Oxley Wild Rivers) is beyond the town; Wikivoyage lists it with 15 see/do items but the town itself is a 30-minute stop. Owner call; if kept, low rank, near Apsley Falls."
+  },
+  {
+   "name": "Bingara",
+   "views": 10052,
+   "counted_sources": 1,
+   "case": "Heritage gold town with 37 Wikivoyage listings (Roxy Theatre, Gwydir River, Fossickers Way); one counted source, small. Keep case: second-tier heritage town a guide names; reject case: short visit. Owner call."
+  },
+  {
+   "name": "Nundle",
+   "views": 6645,
+   "counted_sources": 1,
+   "case": "Gateway-type heritage village (Hanging Rock, fossicking, woollen mill); 16 Wikivoyage listings but all minor and one counted source. Case for: a destination of character in the Peel valley; against: short visit."
+  },
+  {
+   "name": "Barraba",
+   "views": 6187,
+   "counted_sources": 1,
+   "case": "Gateway to Horton Falls and Kaputar; Wikivoyage has 74 listings but the sights are silo art and small museums, rejected separately. Benchmark-style gateway: owner call."
+  }
+ ],
+ "hold_for_pin": [
+  {
+   "name": "Green Gully walk",
+   "action": "hold-for-pin",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Oxley_Wild_Rivers_National_Park"
+   ],
+   "current_coordinates": null,
+   "coordinates_source": null,
+   "photo_verdict": "none",
+   "skeptic_photo_verdict": "reject",
+   "photo": null,
+   "reason": "65 km hut-to-hut track (NPWS, booking required); needs the OSM/agency route midpoint (Hump Ridge precedent). If pinned: a spot of oxley-wild-rivers-national-park only if the midpoint lies inside its radius, else standalone 'green-gully-track'."
+  },
+  {
+   "name": "Gibraltar-Washpool World Heritage walk",
+   "action": "hold-for-pin",
+   "views": 0,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/gibraltar-range-national-park",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/washpool-national-park"
+   ],
+   "current_coordinates": null,
+   "coordinates_source": null,
+   "photo_verdict": "none",
+   "skeptic_photo_verdict": "reject",
+   "photo": null,
+   "reason": "45 km, 3-4 day walk (NPWS); needs the route midpoint. If pinned: a spot of gibraltar-range-national-park (suggested id gibraltar-range-national-park-2), standalone 'gibraltar-washpool-world-heritage-walk' if declined."
+  },
+  {
+   "name": "Pilliga Sandstone Caves",
+   "action": "hold-for-pin",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Narrabri"
+   ],
+   "current_coordinates": {
+    "latitude": -31.01364,
+    "longitude": 149.41717
+   },
+   "coordinates_source": "LOW: Wikivoyage car park only; pin is the midpoint of the track, to be taken from OSM/NPWS map",
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "SandstoneCavesPilliga27099501127 4df5800a2f o.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:SandstoneCavesPilliga27099501127_4df5800a2f_o.jpg",
+    "width": 3968,
+    "height": 2976,
+    "licence": "CC BY-SA 4.0"
+   },
+   "reason": "NPWS rock-art walk; only a LOW car-park point exists and the route midpoint is unresolved. 50 km from Warrumbungle's centre (outside its 45 km radius) and reached via the Pilliga, so standalone 'pilliga-sandstone-caves' when pinned."
+  },
+  {
+   "name": "Burning Mountain Nature Reserve",
+   "action": "hold-for-pin",
+   "views": 56973,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Quirindi"
+   ],
+   "current_coordinates": {
+    "latitude": -31.860245,
+    "longitude": 150.903039
+   },
+   "coordinates_source": "photon highway=path Burning Mountain Walking Track (MEDIUM; not the OSM route midpoint). Wikipedia peak -31.869,150.899 is 1.4 km south.",
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "photo": {
+    "file": "RK 1801 08342 Burning Mountain.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:RK_1801_08342_Burning_Mountain.jpg",
+    "width": 2000,
+    "height": 1333,
+    "licence": "CC BY-SA 4.0"
+   },
+   "reason": "Photon path point is MEDIUM but not the route midpoint; Wikipedia's peak is 1.4 km away. 85 km south of Tamworth, outside its radius; standalone 'burning-mountain-nature-reserve' (Upper Hunter, not claimed by the Hunter pass) when pinned."
+  },
+  {
+   "name": "Mount Yarrowyck Nature Reserve",
+   "action": "hold-for-pin",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Uralla"
+   ],
+   "current_coordinates": {
+    "latitude": -30.45593,
+    "longitude": 151.37695
+   },
+   "coordinates_source": "photon tourism=attraction Bulagaranda (Mt Yarrowyck) Aboriginal Paintings (OSM node 414685409), about mid-way between car park -30.46745,151.37028 and the summit; LOW-MEDIUM; confirm against OSM way when Overpass is up",
+   "photo_verdict": "none",
+   "skeptic_photo_verdict": "reject",
+   "photo": null,
+   "reason": "Pin is the rock-art point (LOW-MEDIUM, mid-walk), to be confirmed against the OSM way. 26 km from Armidale (inside Armidale's 33.75 km radius): spot of armidale (suggested id armidale-5) once pinned, standalone 'mount-yarrowyck-nature-reserve' if declined."
+  }
+ ],
+ "held_for_photo": [
+  "Saumarez Homestead",
+  "Uralla",
+  "Cathedral Rock National Park",
+  "Cunnawarra National Park",
+  "Australian Country Music Hall of Fame",
+  "Myall Creek Massacre Memorial Site",
+  "Narrabri",
+  "Horton Falls National Park",
+  "Moree Artesian Aquatic Centre",
+  "Moree",
+  "Pilliga Hot Artesian Bore Baths",
+  "Armidale",
+  "Glen Innes",
+  "Inverell"
+ ],
+ "photo_note": "Every photo is a skeptic candidate only (photo_verdict 'candidate', never 'accept') until Lens runs the four checks, crop, brightness and size. Slots with no passing Commons photo go to non-Commons search per IMAGES.md."
+}

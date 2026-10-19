@@ -1,0 +1,1682 @@
+{
+ "region": "nsw-central-coast-hunter",
+ "researcher": "quill-b",
+ "date": "2026-10-18",
+ "mode": "standalone fallback (proposed destinations not being added); second half of placement.json spots by order of appearance (spots[35:70], i.e. port-stephens-5 onwards) plus the two self_place standalone entries port-stephens and dharug-national-park. ids are the new_destinations[].if_declined_standalone ids (devils-hole-lookout and gloucester-falls follow nsw-overlaps.md; dungog-nsw and yengo-national-park are the placement ids).",
+ "shared_notes": [
+  "NPWS park entry is a per-vehicle fee ($8 per vehicle per day) at Bouddi and Brisbane Water National Parks (visitor-info pages); it is entered as costMin = costMax = 8 with a cost_note. No per-vehicle fee is stated on the NPWS visitor-info pages for Tomaree, Wyrrabalong, Dharug, Yengo or Barrington Tops, so those are marked free; the NPWS fee-list page (45 parks) could not be fetched to confirm.",
+  "Overpass (overpass-api.de) was unreachable, so resolve-pin.py ran through a copy pointed at the maps.mail.ru mirror (identical logic). Where it still returned only a Photon (OSM) node, the tool grades LOW; those pins are OSM nodes of the named feature itself and are labelled \"LOW per tool, MEDIUM-equivalent\" with pin_status ok-with-caveat for the orchestrator to accept or reject. Route midpoints for trails were computed directly from Overpass ways (length-weighted along the longest path), because resolve-pin.py prints per-way midpoints, not the route midpoint.",
+  "Sites that fetch.ts reported BLOCKED (captcha/403) and so need a real browser if the owner wants them: https://www.portstephens.nsw.gov.au/community/community-venues/parks-and-reserves/fly-point-aquatic-reserve (Port Stephens Council), https://www.dpi.nsw.gov.au/fishing/marine-protected-areas/marine-parks/port-stephens-marine-park/scuba-diving-and-snorkeling (NSW DPI), https://www.nsw.gov.au/visiting-and-exploring-nsw/locations-and-attractions/fly-point-halifax-park-aquatic-reserve, https://www.lovecentralcoast.com/ (Central Coast tourism). None of these is used as a ticketUrl.",
+  "The placement note said Point Stephens Lighthouse was \"walkable at low tide\": NPWS and the Port Stephens tourism board both say the Fingal Spit crossing is extremely dangerous (drownings), so the lighthouse is written as a boat-tour stop; the Wikivoyage line that suggests walking should not be repeated.",
+  "No park/lookout in this half has a seasonal closure that was stated on its NPWS page other than weather and fire closures; Tomaree, Brisbane Water, Dharug, Yengo and Wyrrabalong pages show active \"closed areas\"/fire-ban alerts at fetch time."
+ ],
+ "entries": [
+  {
+   "id": "shoal-bay-nsw",
+   "name": "Shoal Bay",
+   "placement_id": "port-stephens-5",
+   "kind": "new",
+   "standalone": true,
+   "category": "beach",
+   "facts": [
+    {
+     "claim": "Shoal Bay is a village on a sweeping curve of white sand and calm water beside Tomaree Head, about 5 minutes' drive from Nelson Bay; the Tomaree Head Summit walk and the Tomaree Coastal Walk start nearby.",
+     "source": "https://www.portstephens.com.au/peninsula/shoal-bay"
+    },
+    {
+     "claim": "Shoal Bay lies on the southern shore of Port Stephens at the harbour entrance, partly inside Tomaree National Park, and is a popular summer tourist destination.",
+     "source": "https://en.wikipedia.org/wiki/Shoal_Bay,_New_South_Wales"
+    },
+    {
+     "claim": "NPWS lists Tomaree National Park's backdrop villages as Nelson Bay, Shoal Bay, Fingal Bay, One Mile, Boat Harbour and Anna Bay, and a Shoal Bay to Fingal Bay walking track.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/tomaree-national-park"
+    }
+   ],
+   "bio": "A calm white-sand bay beside Tomaree Head, with waterfront cafes and the Tomaree Head Summit walk close by.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "A public beach and village with no single steward; no ticketUrl. Tourism board page: https://www.portstephens.com.au/peninsula/shoal-bay (200, title 'Shoal Bay | Port Stephens').",
+   "coordinates": {
+    "latitude": -32.714836,
+    "longitude": 152.172348
+   },
+   "placement_coordinates": {
+    "latitude": -32.71657,
+    "longitude": 152.17077
+   },
+   "distance_moved_from_placement_m": 243,
+   "coordinates_source": "OSM natural=beach way (unnamed) on the Shoal Bay shore, centre point, found by a direct Overpass query (maps.mail.ru mirror). resolve-pin returned only natural=bay (-32.71684,152.17483, a water centroid, MEDIUM) which was rejected for a visitor point on the sand.",
+   "pin_confidence": "MEDIUM (OSM natural=beach way; bay centroid replaced)",
+   "pin_status": "ok",
+   "wiki_title": "Shoal Bay, New South Wales",
+   "unverified": [
+    "Lifeguard patrol dates were not found for Shoal Bay beach."
+   ]
+  },
+  {
+   "id": "nelson-bay-nsw",
+   "name": "Nelson Bay",
+   "placement_id": "port-stephens-6",
+   "kind": "new",
+   "standalone": true,
+   "category": "historic",
+   "facts": [
+    {
+     "claim": "Nelson Bay is the central business district of the Tomaree Peninsula and the primary tourist hub of Port Stephens; d'Albora Marinas on the waterfront is the departure point for dolphin and whale watching cruises, with a fish co-op selling local seafood.",
+     "source": "https://www.portstephens.com.au/peninsula/nelson-bay"
+    },
+    {
+     "claim": "Whale watching cruises leave from Nelson Bay marina; humpbacks pass May to November, and resident dolphins are best seen from late November to May.",
+     "source": "https://en.wikivoyage.org/wiki/Port_Stephens"
+    },
+    {
+     "claim": "Wikivoyage's Nelson Bay listings also name Gan Gan Lookout, Fly Point and Halifax as shore dive sites.",
+     "source": "https://en.wikivoyage.org/wiki/Nelson_Bay"
+    }
+   ],
+   "bio": "The marina town at the heart of Port Stephens, where whale and dolphin cruises leave and the dive sites begin.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "A town with no single steward (cruises are sold by many operators); no ticketUrl. Tourism board page: https://www.portstephens.com.au/peninsula/nelson-bay (200, title 'Nelson Bay | Port Stephens').",
+   "coordinates": {
+    "latitude": -32.718582,
+    "longitude": 152.14527
+   },
+   "placement_coordinates": {
+    "latitude": -32.715,
+    "longitude": 152.15111111
+   },
+   "distance_moved_from_placement_m": 676,
+   "coordinates_source": "Photon (OSM) leisure=marina \"d'Albora Nelson Bay Marina\", Teramby Road. resolve-pin only returned the Wikipedia town point and LOW park/cemetery nodes; the marina is the waterfront hub Wikivoyage and the tourism board name, replacing the town-centre point.",
+   "pin_confidence": "LOW per tool, MEDIUM-equivalent (single OSM marina feature)",
+   "pin_status": "ok-with-caveat",
+   "wiki_title": "Nelson Bay, New South Wales",
+   "unverified": [
+    "Cruise prices are the operators' and were not read here (Wikivoyage 2022 lists about $60-63 for whale watching)."
+   ],
+   "note": "Coordinates are the Wikipedia town point; replaced only if resolve-pin gives a marina or foreshore feature."
+  },
+  {
+   "id": "fingal-bay-nsw",
+   "name": "Fingal Bay",
+   "placement_id": "port-stephens-7",
+   "kind": "new",
+   "standalone": true,
+   "category": "beach",
+   "facts": [
+    {
+     "claim": "Fingal Beach is a white-sand, patrolled surf beach under Fingal Head; Barry Park on the northern headland has a whale-watching platform and picnic area.",
+     "source": "https://www.portstephens.com.au/peninsula/fingal-bay"
+    },
+    {
+     "claim": "The Port Stephens tourism page warns: do not attempt to walk across Fingal Spit to Fingal Island because of dangerous, unpredictable currents.",
+     "source": "https://www.portstephens.com.au/peninsula/fingal-bay"
+    },
+    {
+     "claim": "NPWS names Fingal Bay Beach among the lifeguard-patrolled beaches of Tomaree National Park, and lists the Shoal Bay to Fingal Bay walking track.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/tomaree-national-park"
+    }
+   ],
+   "bio": "A white-sand surf beach under Fingal Head, with a whale-watching platform at Barry Park on the northern headland.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "A public beach and village with no single steward; no ticketUrl. Tourism board page: https://www.portstephens.com.au/peninsula/fingal-bay (200).",
+   "coordinates": {
+    "latitude": -32.744193,
+    "longitude": 152.174612
+   },
+   "placement_coordinates": {
+    "latitude": -32.74424,
+    "longitude": 152.17092
+   },
+   "distance_moved_from_placement_m": 345,
+   "coordinates_source": "OSM natural=beach \"Fingal Beach\" (resolve-pin via mirror candidate; the tool's pick, natural=bay -32.746432,152.18033, is a water centroid and was rejected).",
+   "pin_confidence": "MEDIUM (OSM natural=beach)",
+   "pin_status": "ok",
+   "wiki_title": "Fingal Bay",
+   "unverified": [
+    "The placement bio says Fingal Bay is the start of a 'low-tide walk to Fingal Island': NPWS and the tourism board both say the sand spit crossing is extremely dangerous, so that claim is dropped from the bio."
+   ]
+  },
+  {
+   "id": "anna-bay",
+   "name": "Anna Bay",
+   "placement_id": "port-stephens-8",
+   "kind": "new",
+   "standalone": true,
+   "category": "historic",
+   "facts": [
+    {
+     "claim": "Anna Bay is a surfing village 10 minutes from Nelson Bay and the entry point to the Stockton Bight sand dunes in the Worimi Conservation Lands, the largest moving coastal dunes in the southern hemisphere.",
+     "source": "https://www.portstephens.com.au/peninsula/anna-bay"
+    },
+    {
+     "claim": "Birubi Beach at Anna Bay is the base for 4WD tours, sandboarding, quad bikes, camel rides and horse riding on the dunes; the dunes are owned by the Worimi people and jointly managed with NSW National Parks.",
+     "source": "https://www.portstephens.com.au/peninsula/anna-bay"
+    },
+    {
+     "claim": "Wikivoyage lists Irukandji Shark & Ray Encounters at 2 Jessie Rd, Anna Bay, daily 9AM-5PM (2021).",
+     "source": "https://en.wikivoyage.org/wiki/Port_Stephens"
+    }
+   ],
+   "bio": "A surf village and gateway to the Stockton Bight dunes at Birubi Beach, with sandboarding and 4WD tours.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "A village sold by many operators (dune tours); no single steward. Tourism board page: https://www.portstephens.com.au/peninsula/anna-bay (200).",
+   "coordinates": {
+    "latitude": -32.777906,
+    "longitude": 152.08902
+   },
+   "placement_coordinates": {
+    "latitude": -32.76666667,
+    "longitude": 152.08333333
+   },
+   "distance_moved_from_placement_m": 1358,
+   "coordinates_source": "Photon (OSM) place=village \"Anna Bay\" node. resolve-pin's pick was natural=bay (-32.77187,152.12409, 3.9 km east in the sea) and was rejected; the spot is the village, so the village node is used.",
+   "pin_confidence": "LOW per tool, MEDIUM-equivalent (OSM place=village node)",
+   "pin_status": "ok-with-caveat",
+   "wiki_title": "Anna Bay",
+   "unverified": [
+    "Wikivoyage's 'Anna Bay' URL redirects to the Port Stephens guide, so there is no separate counted Wikivoyage article for the village; its draw overlaps port-stephens-1 Stockton Beach (first half). Keep only if the owner wants the village as well as the dunes."
+   ]
+  },
+  {
+   "id": "one-mile-beach",
+   "name": "One Mile Beach",
+   "placement_id": "port-stephens-9",
+   "kind": "new",
+   "standalone": true,
+   "category": "beach",
+   "facts": [
+    {
+     "claim": "One Mile Beach is one of the most popular patrolled surf beaches in Port Stephens: a one-mile white-sand beach patrolled through the summer months, with a kiosk, picnic and barbecue areas and a reserve behind the dunes.",
+     "source": "https://www.portstephens.com.au/peninsula/one-mile-boat-harbour"
+    },
+    {
+     "claim": "Wikivoyage: atmospheric views down the peninsula and dramatic swells, with a car park just off the beach and a small store.",
+     "source": "https://en.wikivoyage.org/wiki/Port_Stephens"
+    },
+    {
+     "claim": "NPWS names One Mile Beach among the lifeguard-patrolled beaches in Tomaree National Park.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/tomaree-national-park"
+    }
+   ],
+   "bio": "A long white-sand surf beach near Anna Bay, patrolled in summer, with a kiosk and picnic reserve behind the dunes.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "A public beach with no single steward; no ticketUrl. Tourism board page: https://www.portstephens.com.au/peninsula/one-mile-boat-harbour (200).",
+   "coordinates": {
+    "latitude": -32.774228,
+    "longitude": 152.117587
+   },
+   "placement_coordinates": {
+    "latitude": -32.77426,
+    "longitude": 152.11673
+   },
+   "distance_moved_from_placement_m": 80,
+   "coordinates_source": "OSM natural=beach \"One Mile Beach\" (resolve-pin MEDIUM via mirror).",
+   "pin_confidence": "MEDIUM",
+   "pin_status": "ok",
+   "wiki_title": "One Mile, New South Wales",
+   "unverified": []
+  },
+  {
+   "id": "point-stephens-lighthouse",
+   "name": "Point Stephens Lighthouse",
+   "placement_id": "port-stephens-10",
+   "kind": "new",
+   "standalone": true,
+   "category": "landmark",
+   "facts": [
+    {
+     "claim": "Point Stephens Lighthouse stands on Fingal Island and was built in 1862; its swept tower base and first-floor entrance make it unique among Australian lighthouses.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/historic-buildings-places/point-stephens-lighthouse-and-fingal-island"
+    },
+    {
+     "claim": "NPWS: take a boat or tour to Fingal Island; it is not safe to walk across the sand spit as tide and swell change quickly, and the sandbar has caused drownings. The Lighthouse Keepers' Cottages ruins are closed for public safety.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/historic-buildings-places/point-stephens-lighthouse-and-fingal-island"
+    },
+    {
+     "claim": "NPWS lists the Fingal Island eco-walk and lighthouse tour with Aquamarine Adventures (bookings required, dates and price from the operator; half-day guided tour including the lighthouse spiral staircase and balcony).",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/guided-tours/fingal-island-eco-walk-lighthouse-tour"
+    },
+    {
+     "claim": "Aquamarine Adventures lists the Fingal Island Eco-Walk & Lighthouse Tour from A$120, 3.5 hours; NPWS also names Moonshadow-TQC Cruises as a regular tour operator.",
+     "source": "https://aquamarineadventures.com.au/"
+    }
+   ],
+   "bio": "An 1862 lighthouse on Fingal Island, reached by guided boat tour because the sand spit crossing is dangerous.",
+   "hours": "Guided boat tours only; contact the operator for dates",
+   "visitHoursMin": 3,
+   "visitHoursMax": 4,
+   "costMin": 120,
+   "costMax": 120,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/historic-buildings-places/point-stephens-lighthouse-and-fingal-island",
+   "ticketUrl_note": "Managing agency (NPWS) page for the place, loaded 200, title 'Point Stephens Lighthouse and Fingal Island | NSW National Parks'. The tour is sold by Aquamarine Adventures and Moonshadow-TQC Cruises, so no single operator link.",
+   "coordinates": {
+    "latitude": -32.747049,
+    "longitude": 152.201385
+   },
+   "placement_coordinates": {
+    "latitude": -32.74705,
+    "longitude": 152.20138
+   },
+   "distance_moved_from_placement_m": 0,
+   "coordinates_source": "OSM man_made=lighthouse \"Point Stephens Lighthouse\" (resolve-pin MEDIUM via mirror).",
+   "pin_confidence": "MEDIUM",
+   "pin_status": "ok",
+   "unverified": [
+    "Wikivoyage and the placement say the lighthouse is 'walkable at low tide along Fingal Spit'; NPWS says this is extremely dangerous, so the bio does not suggest it (placement skeptic reasoning should be corrected).",
+    "A$120 is Aquamarine's 'from' price on its homepage; NPWS says to contact the operator for dates and pricing. Tour dates were not found.",
+    "NPWS shows a 'Closed areas' alert on the page (the cottages ruins); the lighthouse itself was not stated closed."
+   ]
+  },
+  {
+   "id": "gan-gan-lookout",
+   "name": "Gan Gan Lookout",
+   "placement_id": "port-stephens-11",
+   "kind": "new",
+   "standalone": true,
+   "category": "viewpoint",
+   "facts": [
+    {
+     "claim": "Gan Gan Lookout is on Lily Hill Road, Nelson Bay; Wikivoyage: fantastic views of the Nelson Bay region and its surrounds.",
+     "source": "https://en.wikivoyage.org/wiki/Port_Stephens"
+    },
+    {
+     "claim": "The Port Stephens tourism page calls Gan Gan Hill the region's highest accessible vantage point at 160 metres, with a 360-degree view of the peninsula, reached by road without a hike.",
+     "source": "https://www.portstephens.com.au/peninsula/nelson-bay"
+    }
+   ],
+   "bio": "The highest lookout reachable by road on the peninsula, 160 m up Gan Gan Hill above Nelson Bay.",
+   "hours": "Daylight hours (opening times not found)",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "A council lookout with no commercial steward; no ticketUrl. Port Stephens Council pages are behind a captcha (BLOCKED for fetch.ts).",
+   "coordinates": {
+    "latitude": -32.731005,
+    "longitude": 152.131263
+   },
+   "placement_coordinates": {
+    "latitude": -32.73119,
+    "longitude": 152.13123
+   },
+   "distance_moved_from_placement_m": 21,
+   "coordinates_source": "OSM tourism=viewpoint \"Gan Gan Hill lookout\" + natural=peak Gan Gan Hill (21 m) + 3 geotagged Commons files (17 m) (resolve-pin HIGH).",
+   "pin_confidence": "HIGH",
+   "pin_status": "ok",
+   "unverified": [
+    "Opening times: a 2014 visitor guide (seen only in a search snippet) said the gates are open 5am-9pm; not confirmed on a council or tourism page, so hours are given as daylight hours.",
+    "The 160 m height is the tourism board's; the Wikivoyage listing gives no height."
+   ]
+  },
+  {
+   "id": "fly-point-nelson-bay",
+   "name": "Fly Point",
+   "placement_id": "port-stephens-12",
+   "kind": "new",
+   "standalone": true,
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "Fly Point Aquatic Reserve is a protected sanctuary zone where snorkellers find colourful fish, sponge gardens and the occasional seahorse metres from shore; fishing and collecting are prohibited.",
+     "source": "https://www.portstephens.com.au/peninsula/nelson-bay"
+    },
+    {
+     "claim": "Wikivoyage: Nelson Bay has some of the best shore dives in New South Wales, at Fly Point and Halifax.",
+     "source": "https://en.wikivoyage.org/wiki/Port_Stephens"
+    }
+   ],
+   "bio": "A sheltered shore snorkel and dive site in a sanctuary zone, with sponge gardens and seahorses metres off the beach.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "Public reserve in the Port Stephens-Great Lakes Marine Park (NSW DPI); DPI and Port Stephens Council pages are behind captcha walls, so no link was verified.",
+   "coordinates": {
+    "latitude": -32.714648,
+    "longitude": 152.151214
+   },
+   "placement_coordinates": {
+    "latitude": -32.71465,
+    "longitude": 152.15121
+   },
+   "distance_moved_from_placement_m": 0,
+   "coordinates_source": "Photon (OSM) place=locality \"Fly Point\" node (the headland). resolve-pin found no feature (LOW: no feature found) and Wikipedia has no Fly Point article; the stairs to the snorkel site are by Neil Carroll Park on this point (per a search summary of the DPI page), but no OSM feature for the entry was found.",
+   "pin_confidence": "LOW (locality node of the point itself)",
+   "pin_status": "ok-with-caveat",
+   "unverified": [
+    "Snorkelling advice (around high tide; boat traffic) and the staircase access are from a search summary of the NSW DPI page, which fetch.ts could not load (BLOCKED); the NSW Government listing (nsw.gov.au) was also blocked.",
+    "No Wikipedia article for Fly Point (404), so no wiki_title is given."
+   ]
+  },
+  {
+   "id": "australian-reptile-park",
+   "name": "Australian Reptile Park",
+   "placement_id": "central-coast-1",
+   "kind": "new",
+   "standalone": true,
+   "category": "entertainment",
+   "facts": [
+    {
+     "claim": "Open daily 9am-5pm except Christmas Day; Pacific Highway, Somersby NSW 2250.",
+     "source": "https://www.reptilepark.com.au/book-your-visit/day-passes"
+    },
+    {
+     "claim": "General admission day pass: adult A$58.99 at the gate, A$53.99 online; child (3-15) A$36.99 gate / A$32.99 online; under-3s free. Entry includes free animal meet-and-greets and live shows.",
+     "source": "https://www.reptilepark.com.au/book-your-visit/day-passes"
+    },
+    {
+     "claim": "Wikivoyage: wildlife park 3 km from Gosford, with crocodiles, snakes, wombats, Tasmanian devils, kangaroos and unfenced emus, plus daily crocodile and bird shows; no local bus.",
+     "source": "https://en.wikivoyage.org/wiki/Central_Coast_(New_South_Wales)"
+    }
+   ],
+   "bio": "A Somersby wildlife park with daily shows, crocodiles, snakes, and kangaroos and emus roaming unfenced.",
+   "hours": "9:00 AM - 5:00 PM (closed Christmas Day)",
+   "visitHoursMin": 3,
+   "visitHoursMax": 5,
+   "costMin": 53.99,
+   "costMax": 58.99,
+   "currency": "AUD",
+   "ticketUrl": "https://www.reptilepark.com.au/",
+   "ticketUrl_note": "Operator homepage loaded 200, title 'Australian Reptile Park - Home'; the park's own day-pass page was used for prices.",
+   "coordinates": {
+    "latitude": -33.418497,
+    "longitude": 151.277686
+   },
+   "placement_coordinates": {
+    "latitude": -33.41803,
+    "longitude": 151.27724
+   },
+   "distance_moved_from_placement_m": 66,
+   "coordinates_source": "OSM tourism=attraction \"Reptile Display Pits\" 66 m from the Wikipedia point (-33.418247,151.277222) and 2 geotagged Commons files (resolve-pin HIGH).",
+   "pin_confidence": "HIGH",
+   "pin_status": "ok",
+   "wiki_title": "Australian Reptile Park",
+   "unverified": [
+    "Visit time of 3-5 hours is an estimate (no operator statement)."
+   ]
+  },
+  {
+   "id": "terrigal-beach",
+   "name": "Terrigal Beach",
+   "placement_id": "central-coast-2",
+   "kind": "new",
+   "standalone": true,
+   "category": "beach",
+   "facts": [
+    {
+     "claim": "Wikivoyage: an unbroken beach extending 4 km, good for surfing and surrounded by cafes; dogs not allowed; can get overcrowded; the rock pool at the southern end is popular with kids.",
+     "source": "https://en.wikivoyage.org/wiki/Central_Coast_(New_South_Wales)"
+    },
+    {
+     "claim": "Visit NSW: Terrigal is famed for its broad golden beach, tranquil lagoon and Norfolk Pine-lined esplanade of cafes and restaurants; a pretty rockpool at the southern end of Terrigal Beach is popular with families; The Skillion lookout is an easy walk southeast.",
+     "source": "https://www.visitnsw.com/destinations/central-coast/gosford-area/terrigal"
+    }
+   ],
+   "bio": "A golden surf beach with a family rock pool at the southern end and an esplanade of cafes and restaurants.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "A public beach with no single steward; no ticketUrl. Visit NSW page: https://www.visitnsw.com/destinations/central-coast/gosford-area/terrigal (200, title 'Terrigal, Central Coast ...').",
+   "coordinates": {
+    "latitude": -33.444988,
+    "longitude": 151.443939
+   },
+   "placement_coordinates": {
+    "latitude": -33.44499,
+    "longitude": 151.44394
+   },
+   "distance_moved_from_placement_m": 0,
+   "coordinates_source": "Photon (OSM) natural=beach \"Terrigal Beach\" (resolve-pin HIGH: the beach node plus the car park 77 m and Commons median).",
+   "pin_confidence": "HIGH",
+   "pin_status": "ok",
+   "unverified": [
+    "Lifeguard patrol dates not found."
+   ]
+  },
+  {
+   "id": "bouddi-national-park",
+   "name": "Bouddi National Park",
+   "placement_id": "central-coast-3",
+   "kind": "new",
+   "standalone": true,
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "Bouddi National Park, near Gosford, runs from beaches and steep cliffs to rainforest and heathland, with the Bouddi Coastal walk, lookouts, one of Australia's first marine protected areas, Aboriginal sites and the wreck of the paddle steamer Maitland; camping at Little Beach, Putty Beach and Tallow Beach.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/bouddi-national-park"
+    },
+    {
+     "claim": "Park entry fee: $8 per vehicle per day, with card pay machines or the Park'nPay app; the Bouddi coastal walk page says fees apply in the Putty Beach area only, and fees do not apply at the Maitland Bay Information Centre.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/bouddi-national-park/visitor-info"
+    },
+    {
+     "claim": "The park is always open but may close at times for poor weather or fire danger.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/bouddi-national-park/visitor-info"
+    },
+    {
+     "claim": "Maitland Bay Information Centre, 174 The Scenic Road, Killcare: open weekends and public holidays only, hours vary between 11am and 3pm.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/visitor-centres/maitland-bay-information-centre"
+    }
+   ],
+   "bio": "A coastal park of cliffs, beaches, rainforest and lookouts near Killcare, with a marine extension offshore.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "costMin": 8,
+   "costMax": 8,
+   "currency": "AUD",
+   "cost_note": "NPWS park entry is $8 per vehicle per day (a vehicle fee, not an adult price), per https://www.nationalparks.nsw.gov.au/visit-a-park/parks/bouddi-national-park/visitor-info and https://www.nationalparks.nsw.gov.au/visit-a-park/parks/brisbane-water-national-park/visitor-info",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/bouddi-national-park",
+   "ticketUrl_note": "Managing agency (NPWS) park page, loaded 200, title 'Bouddi National Park | NSW National Parks'.",
+   "coordinates": {
+    "latitude": -33.519955,
+    "longitude": 151.382798
+   },
+   "placement_coordinates": {
+    "latitude": -33.5211,
+    "longitude": 151.3828
+   },
+   "distance_moved_from_placement_m": 127,
+   "coordinates_source": "Photon (OSM) information=office \"Maitland Bay Information Centre\", 174 The Scenic Road, the park's visitor centre (NPWS); replaces the park centroid (-33.5211,151.3828 placement, resolve-pin LOW on the park).",
+   "pin_confidence": "LOW per tool, MEDIUM-equivalent (OSM information office named by NPWS)",
+   "pin_status": "ok-with-caveat",
+   "wiki_title": "Bouddi National Park",
+   "unverified": [
+    "The $8 is a per-vehicle fee, not a per-person adult price; the fee is charged in the Putty Beach area only (per the coastal walk and Maitland Bay track pages) although the park-level page states it without that qualifier.",
+    "Pin: a park centroid was replaced by the Maitland Bay Information Centre area (the park's visitor hub); see coordinates."
+   ]
+  },
+  {
+   "id": "maitland-bay",
+   "name": "Maitland Bay",
+   "placement_id": "central-coast-4",
+   "kind": "new",
+   "standalone": true,
+   "category": "beach",
+   "facts": [
+    {
+     "claim": "Maitland Bay track begins at Maitland Bay Information Centre and winds downhill to the secluded bay: 2 km return, 15-45 min suggested; allow 15-20 minutes down and 30-40 minutes back up; steep, with some steps.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/maitland-bay-track"
+    },
+    {
+     "claim": "At low tide the remains of the PS Maitland, wrecked in 1898, can be seen at the bay's eastern end; swimming and snorkelling are popular.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/maitland-bay-track"
+    },
+    {
+     "claim": "The Maitland Bay track page says park entry fees apply in the Putty Beach area only.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/maitland-bay-track"
+    }
+   ],
+   "bio": "A secluded beach at the foot of a steep 2 km return track, with the PS Maitland wreck visible at low tide.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/maitland-bay-track",
+   "ticketUrl_note": "NPWS page for the track to the bay, loaded 200, title 'Maitland Bay track | NSW National Parks' (the managing agency; the bay itself has no separate page).",
+   "coordinates": {
+    "latitude": -33.524028,
+    "longitude": 151.393579
+   },
+   "placement_coordinates": {
+    "latitude": -33.524,
+    "longitude": 151.39561
+   },
+   "distance_moved_from_placement_m": 188,
+   "coordinates_source": "OSM natural=beach \"Maitland Bay\" (resolve-pin MEDIUM via mirror; 33 geotagged Commons files median 152 m away).",
+   "pin_confidence": "MEDIUM",
+   "pin_status": "ok",
+   "unverified": [
+    "Placement bio said the bay's draw includes the information centre; NPWS says the centre is open weekends and public holidays only.",
+    "No fee at the track start per NPWS; the $8 vehicle fee applies at Putty Beach."
+   ]
+  },
+  {
+   "id": "bouddi-coastal-walk",
+   "name": "Bouddi Coastal Walk",
+   "placement_id": "central-coast-5",
+   "kind": "new",
+   "standalone": true,
+   "category": "hike",
+   "facts": [
+    {
+     "claim": "The 8 km Bouddi coastal walk runs from Putty Beach to MacMasters Beach, with beaches, boardwalks and birdlife; 3.5-4.5 hours; relatively easy with sweeping views, rainforest and picnic spots.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/bouddi-coastal-walk"
+    },
+    {
+     "claim": "Sections: Putty Beach to Maitland Bay 3 km, Maitland Bay to Little Beach 3.5 km, Little Beach to MacMasters Beach 1.7 km; Gerrin Point lookout is for whale watching; wildflowers in spring.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/bouddi-coastal-walk"
+    },
+    {
+     "claim": "Park entry fees apply in the Putty Beach area only.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/bouddi-coastal-walk"
+    }
+   ],
+   "bio": "An 8 km clifftop and beach walk from Putty Beach to MacMasters Beach, with lookouts, boardwalks and spring wildflowers.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 3.5,
+   "visitHoursMax": 4.5,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/bouddi-coastal-walk",
+   "ticketUrl_note": "NPWS walk page, loaded 200, title 'Bouddi coastal walk | NSW National Parks'.",
+   "coordinates": {
+    "latitude": -33.522252,
+    "longitude": 151.390967
+   },
+   "placement_coordinates": {
+    "latitude": -33.52225,
+    "longitude": 151.39097
+   },
+   "distance_moved_from_placement_m": 0,
+   "coordinates_source": "Midpoint by length of the longest path through the OSM ways named \"Bouddi Coastal Walk\" (17 ways, 4.64 km mapped under that name of the 8 km route), computed with a direct Overpass query (maps.mail.ru mirror); the point is a node on the path next to the Maitland Bay track junction. resolve-pin's own 'trail midpoint' rows are per-way midpoints and not the route midpoint.",
+   "pin_confidence": "MEDIUM (OSM way chain; only part of the 8 km route is mapped under the name)",
+   "pin_status": "ok-with-caveat",
+   "unverified": [
+    "The walk is free but parking at the Putty Beach end costs the $8 per-vehicle park fee; MacMasters Beach end has no NPWS fee stated.",
+    "The placement draft said the walk runs 'between Killcare and Maitland Bay'; NPWS says Putty Beach to MacMasters Beach (8 km), so the bio is corrected."
+   ]
+  },
+  {
+   "id": "brisbane-water-national-park",
+   "name": "Brisbane Water National Park",
+   "placement_id": "central-coast-6",
+   "kind": "new",
+   "standalone": true,
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "Brisbane Water National Park, near Gosford, offers walking and cycling trails through rainforest and sandstone country, spring wildflowers, scenic lookouts, fishing and kayaking, and protects ancient Aboriginal rock engraving sites.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/brisbane-water-national-park"
+    },
+    {
+     "claim": "Park entry fee $8 per vehicle per day. Girrakool and Somersby Falls picnic areas are open 7am-8pm in daylight saving, 7am-6pm otherwise; other areas are open at all times but may close for weather or fire.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/brisbane-water-national-park/visitor-info"
+    },
+    {
+     "claim": "Visit NSW (Woy Woy page) names Tommos loop and Rocky Ponds cycling loops and the Staples lookout hike in the park.",
+     "source": "https://www.visitnsw.com/destinations/central-coast/gosford-area/woy-woy"
+    }
+   ],
+   "bio": "A bushland park of sandstone ridges, spring wildflowers, Aboriginal engravings and walking and cycling trails near Gosford.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "costMin": 8,
+   "costMax": 8,
+   "currency": "AUD",
+   "cost_note": "NPWS park entry is $8 per vehicle per day (a vehicle fee, not an adult price), per https://www.nationalparks.nsw.gov.au/visit-a-park/parks/bouddi-national-park/visitor-info and https://www.nationalparks.nsw.gov.au/visit-a-park/parks/brisbane-water-national-park/visitor-info",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/brisbane-water-national-park",
+   "ticketUrl_note": "Managing agency (NPWS) park page, loaded 200, title 'Brisbane Water National Park | NSW National Parks'.",
+   "coordinates": {
+    "latitude": -33.431377,
+    "longitude": 151.276556
+   },
+   "placement_coordinates": {
+    "latitude": -33.44047,
+    "longitude": 151.25562
+   },
+   "distance_moved_from_placement_m": 2190,
+   "coordinates_source": "Photon (OSM) tourism=picnic_site \"Girrakool Picnic Ground\", the Girrakool area NPWS lists as a main visitor area (picnic area and office); replaces the park centroid (resolve-pin MEDIUM on the nature_reserve centroid).",
+   "pin_confidence": "LOW per tool, MEDIUM-equivalent (OSM picnic site named by NPWS)",
+   "pin_status": "ok-with-caveat",
+   "wiki_title": "Brisbane Water National Park",
+   "unverified": [
+    "The $8 is a per-vehicle fee, not an adult price.",
+    "Pin: the centroid has been replaced by a visitor point; see coordinates."
+   ]
+  },
+  {
+   "id": "pearl-beach",
+   "name": "Pearl Beach",
+   "placement_id": "central-coast-7",
+   "kind": "new",
+   "standalone": true,
+   "category": "beach",
+   "facts": [
+    {
+     "claim": "The Patonga to Pearl Beach walk ends at Crystal Avenue on a beautiful stretch of sand on the edge of the bush, with picnic spots and small cafes nearby.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/patonga-to-pearl-beach-walking-track"
+    },
+    {
+     "claim": "Pearl Beach is a suburb of Central Coast Council on the Central Coast of New South Wales.",
+     "source": "https://en.wikipedia.org/wiki/Pearl_Beach,_New_South_Wales"
+    }
+   ],
+   "bio": "A quiet beach village on the edge of the bush, where the walk from Patonga ends, with picnic spots and small cafes.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "A public beach and village with no single steward; no ticketUrl. No Visit NSW page exists for Pearl Beach (404).",
+   "coordinates": {
+    "latitude": -33.541902,
+    "longitude": 151.309928
+   },
+   "placement_coordinates": {
+    "latitude": -33.5419,
+    "longitude": 151.30818
+   },
+   "distance_moved_from_placement_m": 162,
+   "coordinates_source": "OSM natural=beach \"Pearl Beach\" (resolve-pin MEDIUM via mirror; Wikipedia point 20 m from the placement point).",
+   "pin_confidence": "MEDIUM",
+   "pin_status": "ok",
+   "wiki_title": "Pearl Beach, New South Wales",
+   "unverified": [
+    "Rock pool and patrol details were not found in an official source.",
+    "Only one visitor-oriented source (NPWS) names it; Wikivoyage has no Pearl Beach listing."
+   ]
+  },
+  {
+   "id": "patonga",
+   "name": "Patonga",
+   "placement_id": "central-coast-8",
+   "kind": "new",
+   "standalone": true,
+   "category": "beach",
+   "facts": [
+    {
+     "claim": "NPWS suggests stopping at Patonga for fish and chips with a beach view.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/brisbane-water-national-park"
+    },
+    {
+     "claim": "Patonga is a small beachside fishing and holiday village on the edge of Brisk Bay near the mouth of the Hawkesbury River, the southernmost village of the Central Coast.",
+     "source": "https://en.wikipedia.org/wiki/Patonga,_New_South_Wales"
+    },
+    {
+     "claim": "The Patonga to Pearl Beach walking track starts from the end of Patonga Beach.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/patonga-to-pearl-beach-walking-track"
+    }
+   ],
+   "bio": "A small fishing and holiday village near the mouth of the Hawkesbury, known for fish and chips with a beach view.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "A public beach and village with no single steward; no ticketUrl.",
+   "coordinates": {
+    "latitude": -33.553347,
+    "longitude": 151.273566
+   },
+   "placement_coordinates": {
+    "latitude": -33.5514,
+    "longitude": 151.2749
+   },
+   "distance_moved_from_placement_m": 249,
+   "coordinates_source": "OSM natural=beach \"Patonga Beach\" (resolve-pin MEDIUM via mirror; 26 geotagged Commons files median 113 m from the placement point).",
+   "pin_confidence": "MEDIUM",
+   "pin_status": "ok",
+   "wiki_title": "Patonga, New South Wales",
+   "unverified": [
+    "Placement bio said 'on Brisbane Water'; Wikipedia says Brisk Bay near the mouth of the Hawkesbury, so the bio is corrected."
+   ]
+  },
+  {
+   "id": "umina-beach",
+   "name": "Umina Beach",
+   "placement_id": "central-coast-9",
+   "kind": "new",
+   "standalone": true,
+   "category": "beach",
+   "facts": [
+    {
+     "claim": "Calm, shallow water makes Umina Beach popular with families; a food kiosk, picnic tables and a dog-friendly southern end; Central Coast Council lifeguards patrol Monday to Friday and Surf Life Saving volunteers on weekends and public holidays.",
+     "source": "https://www.visitnsw.com/destinations/central-coast/gosford-area/ettalong-beach/attractions/umina-beach"
+    },
+    {
+     "claim": "NPWS suggests Umina Beach for picking up lunch before a picnic in Brisbane Water National Park.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/brisbane-water-national-park"
+    }
+   ],
+   "bio": "A family beach on the Woy Woy peninsula with calm shallow water, a kiosk, picnic tables and lifeguards.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "A public beach with no single steward; no ticketUrl.",
+   "coordinates": {
+    "latitude": -33.530588,
+    "longitude": 151.312
+   },
+   "placement_coordinates": {
+    "latitude": -33.5299,
+    "longitude": 151.3123
+   },
+   "distance_moved_from_placement_m": 81,
+   "coordinates_source": "Photon (OSM) natural=beach \"Umina Beach\" node; resolve-pin graded LOW (single source) even via the mirror.",
+   "pin_confidence": "LOW per tool, MEDIUM-equivalent (OSM natural=beach node)",
+   "pin_status": "ok-with-caveat",
+   "wiki_title": "Umina Beach",
+   "unverified": [
+    "Sources disagree on who patrols and when (Visit NSW vs BeachSafe); patrol season dates were not settled."
+   ]
+  },
+  {
+   "id": "pelican-feeding",
+   "name": "Pelican Feeding",
+   "placement_id": "central-coast-10",
+   "kind": "new",
+   "standalone": true,
+   "category": "entertainment",
+   "facts": [
+    {
+     "claim": "Wikivoyage: The Entrance named itself 'The Pelican Capital of Australia' in 1999, with a specially constructed platform for daily feeds, at 129 The Entrance Rd.",
+     "source": "https://en.wikivoyage.org/wiki/Central_Coast_(New_South_Wales)"
+    },
+    {
+     "claim": "Burke's Backyard fact sheet: pelicans are fed every day, including public holidays, at 3.30pm at Pelican Plaza, Marine Parade, The Entrance.",
+     "source": "https://www.burkesbackyard.com.au/fact-sheets/pets/pets-pet-care-native-animals/pelicans/"
+    },
+    {
+     "claim": "Visit NSW describes The Entrance's Memorial Park and foreshore walk beside the channel to Tuggerah Lakes.",
+     "source": "https://www.visitnsw.com/destinations/central-coast/wyong-area/the-entrance"
+    }
+   ],
+   "bio": "A daily 3:30 pm pelican feed on Pelican Plaza in The Entrance, the self-styled Pelican Capital of Australia.",
+   "hours": "Daily feeding at 3:30 PM",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "Free public feeding with no operator site found; no ticketUrl.",
+   "coordinates": {
+    "latitude": -33.340933,
+    "longitude": 151.499275
+   },
+   "placement_coordinates": {
+    "latitude": -33.34158,
+    "longitude": 151.49895
+   },
+   "distance_moved_from_placement_m": 78,
+   "coordinates_source": "OSM tourism=attraction \"Pelican Plaza\", The Entrance (resolve-pin MEDIUM via mirror); Wikivoyage's listing point is -33.341167,151.499338 (27 m).",
+   "pin_confidence": "HIGH (OSM attraction + Wikivoyage listing within 30 m)",
+   "pin_status": "ok",
+   "unverified": [
+    "3:30 pm and 'free' come from Burke's Backyard (a TV-show fact sheet, undated) and listing summaries, not from the council; neither Central Coast Council nor lovecentralcoast.com (BLOCKED, 403) was readable.",
+    "Wikivoyage's own listing carries no time (updated Jan 2016)."
+   ]
+  },
+  {
+   "id": "the-skillion",
+   "name": "The Skillion",
+   "placement_id": "central-coast-11",
+   "kind": "new",
+   "standalone": true,
+   "category": "viewpoint",
+   "facts": [
+    {
+     "claim": "Wikivoyage: The Skillion (Terrigal Formation) is a hikeable lookout point with views of steep cliffs and the coastline.",
+     "source": "https://en.wikivoyage.org/wiki/Central_Coast_(New_South_Wales)"
+    },
+    {
+     "claim": "Visit NSW: soak up panoramic views from The Skillion lookout, an easy walk southeast from Terrigal Beach to Broken Head; humpback whales pass from May to November.",
+     "source": "https://www.visitnsw.com/destinations/central-coast/gosford-area/terrigal"
+    }
+   ],
+   "bio": "A rocky headland lookout above Terrigal, an easy walk from the beach, with coast views and whales from May to November.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "Public headland reserve with no single steward; no ticketUrl.",
+   "coordinates": {
+    "latitude": -33.45103,
+    "longitude": 151.451689
+   },
+   "placement_coordinates": {
+    "latitude": -33.45104,
+    "longitude": 151.45173
+   },
+   "distance_moved_from_placement_m": 4,
+   "coordinates_source": "OSM tourism=viewpoint \"The Skillion Lookout\" (4 m from natural=cape The Skillion and 5 Commons files) (resolve-pin HIGH).",
+   "pin_confidence": "HIGH",
+   "pin_status": "ok",
+   "unverified": [
+    "Any night-time closure of the headland car park was not checked; 'Open 24 hours' reflects open public access only."
+   ]
+  },
+  {
+   "id": "somersby-falls",
+   "name": "Somersby Falls",
+   "placement_id": "central-coast-12",
+   "kind": "new",
+   "standalone": true,
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "Somersby Falls picnic area has free barbecues and picnic tables in rainforest; an 800 m return walking track gives views of the top and bottom waterfalls, steep and slippery in places; the picnic area is wheelchair accessible.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/picnic-areas/somersby-falls-picnic-area"
+    },
+    {
+     "claim": "The picnic area is open 7am-8pm during daylight saving time and 7am-6pm otherwise; park entry fees apply ($8 per vehicle per day).",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/brisbane-water-national-park/visitor-info"
+    },
+    {
+     "claim": "Wikivoyage: three tiers of falls; the path to the middle falls has railings, the descent to the bottom tier is on slippery rocky slabs and may be risky; no public transport.",
+     "source": "https://en.wikivoyage.org/wiki/Central_Coast_(New_South_Wales)"
+    }
+   ],
+   "bio": "A short rainforest walk to a three-tier waterfall, with free barbecues and picnic tables in Brisbane Water National Park.",
+   "hours": "7:00 AM - 8:00 PM daylight saving, 7:00 AM - 6:00 PM otherwise",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 8,
+   "costMax": 8,
+   "currency": "AUD",
+   "cost_note": "NPWS park entry is $8 per vehicle per day (a vehicle fee, not an adult price), per https://www.nationalparks.nsw.gov.au/visit-a-park/parks/bouddi-national-park/visitor-info and https://www.nationalparks.nsw.gov.au/visit-a-park/parks/brisbane-water-national-park/visitor-info",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/picnic-areas/somersby-falls-picnic-area",
+   "ticketUrl_note": "NPWS page for the picnic area and falls, loaded 200, title 'Somersby Falls picnic area | NSW National Parks'.",
+   "coordinates": {
+    "latitude": -33.400811,
+    "longitude": 151.269743
+   },
+   "placement_coordinates": {
+    "latitude": -33.40081,
+    "longitude": 151.26974
+   },
+   "distance_moved_from_placement_m": 0,
+   "coordinates_source": "OSM waterway=waterfall \"Somersby Falls Top Fall\" with the track 33 m and picnic road 82 m (resolve-pin HIGH).",
+   "pin_confidence": "HIGH",
+   "pin_status": "ok",
+   "unverified": [
+    "The $8 is a per-vehicle fee, not an adult price."
+   ]
+  },
+  {
+   "id": "bulgandry-art-site",
+   "name": "Bulgandry Art Site",
+   "placement_id": "central-coast-13",
+   "kind": "new",
+   "standalone": true,
+   "category": "historic",
+   "facts": [
+    {
+     "claim": "Bulgandry Art Site Aboriginal Place, near Kariong in Brisbane Water National Park, has well-preserved engravings, most more than 200 years old and some perhaps ten times older: a large figure of a man with a headdress (Bulgandry), wallabies, fish, a dolphin, a canoe and a bird, plus tool-sharpening grooves.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/aboriginal-sites/bulgandry-art-site-aboriginal-place"
+    },
+    {
+     "claim": "Visitors must not walk on the rock shelf or touch the engravings; park entry fees apply; enquiries to the Girrakool office, Monday to Friday, hours vary.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/aboriginal-sites/bulgandry-art-site-aboriginal-place"
+    }
+   ],
+   "bio": "An Aboriginal Place with well-preserved rock engravings of a man with a headdress, wallabies, fish and a canoe.",
+   "hours": "Daylight hours (no posted times)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "costMin": 8,
+   "costMax": 8,
+   "currency": "AUD",
+   "cost_note": "NPWS park entry is $8 per vehicle per day (a vehicle fee, not an adult price), per https://www.nationalparks.nsw.gov.au/visit-a-park/parks/bouddi-national-park/visitor-info and https://www.nationalparks.nsw.gov.au/visit-a-park/parks/brisbane-water-national-park/visitor-info",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/aboriginal-sites/bulgandry-art-site-aboriginal-place",
+   "ticketUrl_note": "NPWS page, loaded 200, title 'Bulgandry Art Site Aboriginal Place | NSW National Parks'.",
+   "coordinates": {
+    "latitude": -33.453716,
+    "longitude": 151.285936
+   },
+   "placement_coordinates": {
+    "latitude": -33.45372,
+    "longitude": 151.28594
+   },
+   "distance_moved_from_placement_m": 1,
+   "coordinates_source": "OSM historic=archaeological_site \"Bulgandry Aboriginal Art Site\" (resolve-pin MEDIUM via mirror).",
+   "pin_confidence": "MEDIUM",
+   "pin_status": "ok",
+   "unverified": [
+    "NPWS gave no opening hours for the site, so 'daylight hours' is a descriptor, not a source.",
+    "Placement bio said 'NPWS runs guided tours'; no guided tour was found on the NPWS page, so the claim is dropped.",
+    "The park fee is a per-vehicle $8; whether it is collected at this car park was not stated beyond 'park entry fees apply'."
+   ]
+  },
+  {
+   "id": "wamberal-beach",
+   "name": "Wamberal Beach",
+   "placement_id": "central-coast-14",
+   "kind": "new",
+   "standalone": true,
+   "category": "beach",
+   "facts": [
+    {
+     "claim": "Wikivoyage: Wamberal beach is considered one of the best on the NSW east coast (updated 2015).",
+     "source": "https://en.wikivoyage.org/wiki/Central_Coast_(New_South_Wales)"
+    },
+    {
+     "claim": "Visit NSW: Wamberal Beach is at the northern end of the stretch of golden sand that runs north from Terrigal past Terrigal Lagoon.",
+     "source": "https://www.visitnsw.com/destinations/central-coast/gosford-area/terrigal"
+    }
+   ],
+   "bio": "A long surf beach north of Terrigal, rated by Wikivoyage among the best on the NSW east coast.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "A public beach with no single steward; no ticketUrl.",
+   "coordinates": {
+    "latitude": -33.430832,
+    "longitude": 151.447495
+   },
+   "placement_coordinates": {
+    "latitude": -33.43083,
+    "longitude": 151.44749
+   },
+   "distance_moved_from_placement_m": 1,
+   "coordinates_source": "Photon (OSM) natural=beach \"Wamberal Beach\" node; resolve-pin graded LOW (single source), toilets block 163 m away.",
+   "pin_confidence": "LOW per tool, MEDIUM-equivalent (OSM natural=beach node)",
+   "pin_status": "ok-with-caveat",
+   "wiki_title": "Wamberal",
+   "unverified": [
+    "The only 'best' claim is Wikivoyage's 2015 line.",
+    "Wikipedia's article is for the suburb (Wamberal), not the beach."
+   ]
+  },
+  {
+   "id": "forresters-beach",
+   "name": "Forresters Beach",
+   "placement_id": "central-coast-15",
+   "kind": "new",
+   "standalone": true,
+   "category": "beach",
+   "facts": [
+    {
+     "claim": "Wikivoyage: Forrester's Beach is renowned for its clear seawater and view, with the national park close by.",
+     "source": "https://en.wikivoyage.org/wiki/Central_Coast_(New_South_Wales)"
+    },
+    {
+     "claim": "Forresters Beach lies between Terrigal and Bateau Bay and is known to surfers for its reef breaks.",
+     "source": "https://en.wikipedia.org/wiki/Forresters_Beach,_New_South_Wales"
+    }
+   ],
+   "bio": "A surf beach between Terrigal and Bateau Bay, known for its clear water and reef breaks.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "A public beach with no single steward; no ticketUrl.",
+   "coordinates": {
+    "latitude": -33.412299,
+    "longitude": 151.467895
+   },
+   "placement_coordinates": {
+    "latitude": -33.41224,
+    "longitude": 151.46578
+   },
+   "distance_moved_from_placement_m": 196,
+   "coordinates_source": "OSM natural=beach \"Forresters Beach\" (resolve-pin MEDIUM via mirror).",
+   "pin_confidence": "MEDIUM",
+   "pin_status": "ok",
+   "wiki_title": "Forresters Beach",
+   "unverified": [
+    "Marginal: one counted source (Wikivoyage 2015) plus Wikipedia; the placement bio's 'headland and coast walk' is not sourced and is dropped."
+   ]
+  },
+  {
+   "id": "putty-beach-bouddi",
+   "name": "Putty Beach",
+   "placement_id": "central-coast-16",
+   "kind": "new",
+   "standalone": true,
+   "category": "beach",
+   "facts": [
+    {
+     "claim": "Putty Beach campground is the largest in Bouddi National Park, near Killcare, steps from the sand, with a swim in the Tasman Sea, fishing and a barbecue; the Bouddi coastal walk begins at the beach's eastern end and goes to Gerrin Point lookout.",
+     "source": "https://www.nationalparks.nsw.gov.au/camping-and-accommodation/campgrounds/putty-beach-campground"
+    },
+    {
+     "claim": "A park entry fee of $8 per vehicle per day applies at Putty Beach.",
+     "source": "https://www.nationalparks.nsw.gov.au/camping-and-accommodation/campgrounds/putty-beach-campground"
+    }
+   ],
+   "bio": "A surf beach and campground in Bouddi National Park, where the Bouddi Coastal Walk begins.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "costMin": 8,
+   "costMax": 8,
+   "currency": "AUD",
+   "cost_note": "NPWS park entry is $8 per vehicle per day (a vehicle fee, not an adult price), per https://www.nationalparks.nsw.gov.au/visit-a-park/parks/bouddi-national-park/visitor-info and https://www.nationalparks.nsw.gov.au/visit-a-park/parks/brisbane-water-national-park/visitor-info",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/bouddi-national-park",
+   "ticketUrl_note": "No NPWS page for the beach itself; the Bouddi National Park page (loaded 200, title 'Bouddi National Park | NSW National Parks') is the managing agency's.",
+   "coordinates": {
+    "latitude": -33.530688,
+    "longitude": 151.366933
+   },
+   "placement_coordinates": {
+    "latitude": -33.53074,
+    "longitude": 151.36321
+   },
+   "distance_moved_from_placement_m": 345,
+   "coordinates_source": "OSM natural=beach \"Putty Beach\" (resolve-pin MEDIUM via mirror; it is 346 m east of the placement point).",
+   "pin_confidence": "MEDIUM",
+   "pin_status": "ok",
+   "unverified": [
+    "The $8 is a per-vehicle fee, not an adult price.",
+    "Wikipedia has no Putty Beach article, so there is no wiki title.",
+    "Marginal: only NPWS names it, and as a campground and walk start."
+   ]
+  },
+  {
+   "id": "little-beach-bouddi",
+   "name": "Little Beach (Bouddi)",
+   "placement_id": "central-coast-17",
+   "kind": "new",
+   "standalone": true,
+   "category": "beach",
+   "facts": [
+    {
+     "claim": "Little Beach campground is a walk-in campground by the sand, reached by a 750 m walk along a gravel management trail from the gate at Grahame Drive; surfing, bushwalking and fishing.",
+     "source": "https://www.nationalparks.nsw.gov.au/camping-and-accommodation/campgrounds/little-beach-campground"
+    },
+    {
+     "claim": "Park entry fees do not apply at Little Beach campground. Maitland Bay to Little Beach is 3.5 km on the Bouddi coastal walk, and Little Beach to MacMasters Beach 1.7 km.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/bouddi-coastal-walk"
+    }
+   ],
+   "bio": "A small beach with a walk-in campground in Bouddi National Park, 3.5 km along the coastal walk from Maitland Bay.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/bouddi-national-park",
+   "ticketUrl_note": "No NPWS page for the beach itself; the Bouddi National Park page is the managing agency's.",
+   "coordinates": {
+    "latitude": -33.510666,
+    "longitude": 151.418934
+   },
+   "placement_coordinates": {
+    "latitude": -33.51067,
+    "longitude": 151.41862
+   },
+   "distance_moved_from_placement_m": 29,
+   "coordinates_source": "OSM natural=beach \"Little Beach\" (resolve-pin MEDIUM via mirror).",
+   "pin_confidence": "MEDIUM",
+   "pin_status": "ok",
+   "unverified": [
+    "Placement bio said 2.5 km from Maitland Bay; NPWS says 3.5 km, corrected.",
+    "Marginal: only NPWS names it, as a campground."
+   ]
+  },
+  {
+   "id": "tallow-beach-bouddi",
+   "name": "Tallow Beach",
+   "placement_id": "central-coast-18",
+   "kind": "new",
+   "standalone": true,
+   "category": "beach",
+   "facts": [
+    {
+     "claim": "Tallow Beach campground, near Killcare, is reached by a hard, steep 1.2 km walk on a gravel management trail; swimming, surfing and fishing spots by the tent; remote, bring all water.",
+     "source": "https://www.nationalparks.nsw.gov.au/camping-and-accommodation/campgrounds/tallow-beach-campground"
+    },
+    {
+     "claim": "Park entry fees do not apply at Tallow Beach campground.",
+     "source": "https://www.nationalparks.nsw.gov.au/camping-and-accommodation/campgrounds/tallow-beach-campground"
+    }
+   ],
+   "bio": "A remote beach reached by a steep 1.2 km management trail, with a walk-in campground near Killcare.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/bouddi-national-park",
+   "ticketUrl_note": "No NPWS page for the beach itself; the Bouddi National Park page is the managing agency's.",
+   "coordinates": {
+    "latitude": -33.537361,
+    "longitude": 151.351601
+   },
+   "placement_coordinates": {
+    "latitude": -33.53738,
+    "longitude": 151.35193
+   },
+   "distance_moved_from_placement_m": 31,
+   "coordinates_source": "OSM natural=beach \"Tallow Beach\" (resolve-pin MEDIUM via mirror).",
+   "pin_confidence": "MEDIUM",
+   "pin_status": "ok",
+   "unverified": [
+    "No Wikipedia article for this Tallow Beach (the REST summary returned none, and the placement's wiki 'Tallow Beach' would match Byron Bay's); no wiki_title given.",
+    "Marginal: only NPWS names it, as a campground; a 1.2 km steep walk-in makes it a weak stop."
+   ]
+  },
+  {
+   "id": "wyrrabalong-national-park",
+   "name": "Wyrrabalong National Park",
+   "placement_id": "central-coast-19",
+   "kind": "new",
+   "standalone": true,
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "Wyrrabalong National Park has two sections and conserves the last patch of coastal rainforest on the Central Coast; beaches alternate with rocky cliffs, with walking tracks, picnic areas, bike trails and whale watching; highlights include The Coast walking track, Bateau Bay Beach picnic area and Crackneck Point lookout.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/wyrrabalong-national-park"
+    },
+    {
+     "claim": "Northern section: drive north on Wilfred Barrett Drive; southern section: via The Entrance Road then Bateau Bay Road. No entry fee is stated on the visitor-info page.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/wyrrabalong-national-park/visitor-info"
+    },
+    {
+     "claim": "Wikivoyage: the park preserves one of the last few remaining coastal rainforests of the Central Coast.",
+     "source": "https://en.wikivoyage.org/wiki/Central_Coast_(New_South_Wales)"
+    }
+   ],
+   "bio": "Two coastal sections by The Entrance with the Central Coast's last coastal rainforest, beaches and whale-watching points.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 4,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/wyrrabalong-national-park",
+   "ticketUrl_note": "Managing agency (NPWS) park page, loaded 200, title 'Wyrrabalong National Park | NSW National Parks'.",
+   "coordinates": {
+    "latitude": -33.394189,
+    "longitude": 151.482968
+   },
+   "placement_coordinates": {
+    "latitude": -33.3462,
+    "longitude": 151.5157
+   },
+   "distance_moved_from_placement_m": 6141,
+   "coordinates_source": "Photon (OSM) tourism=viewpoint \"Crackneck Lookout\" (NPWS highlight \"Crackneck Point lookout\", southern section near Bateau Bay); replaces the park centroid in the northern section. resolve-pin graded it LOW (single source).",
+   "pin_confidence": "LOW per tool, MEDIUM-equivalent (OSM viewpoint named by NPWS)",
+   "pin_status": "ok-with-caveat",
+   "wiki_title": "Wyrrabalong National Park",
+   "unverified": [
+    "Free is inferred: NPWS lists 45 parks with vehicle entry fees and the Wyrrabalong visitor-info page states none; the fee list page itself could not be fetched.",
+    "Pin: centroid replaced by a visitor point; see coordinates."
+   ]
+  },
+  {
+   "id": "patonga-to-pearl-beach-walking-track",
+   "name": "Patonga to Pearl Beach Walking Track",
+   "placement_id": "central-coast-20",
+   "kind": "new",
+   "standalone": true,
+   "category": "hike",
+   "facts": [
+    {
+     "claim": "A moderately challenging day walk of 3 km one way (1 hr 30 min - 2 hrs, grade 5) through red gums and eucalypts, passing Warrah lookout with views of the Hawkesbury and Pacific, sandstone caves with hanging ferns, and ending at Pearl Beach; it follows the Great North Walk.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/patonga-to-pearl-beach-walking-track"
+    },
+    {
+     "claim": "The page says park entry fees apply and shows closed-area and event alerts.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/patonga-to-pearl-beach-walking-track"
+    }
+   ],
+   "bio": "A 3 km one-way bush walk between two beaches, passing Warrah lookout and sandstone caves.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 4,
+   "costMin": 8,
+   "costMax": 8,
+   "currency": "AUD",
+   "cost_note": "NPWS park entry is $8 per vehicle per day (a vehicle fee, not an adult price), per https://www.nationalparks.nsw.gov.au/visit-a-park/parks/bouddi-national-park/visitor-info and https://www.nationalparks.nsw.gov.au/visit-a-park/parks/brisbane-water-national-park/visitor-info",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/patonga-to-pearl-beach-walking-track",
+   "ticketUrl_note": "NPWS walk page, loaded 200, title 'Patonga to Pearl Beach walking track | NSW National Parks'.",
+   "coordinates": {
+    "latitude": -33.552367,
+    "longitude": 151.289554
+   },
+   "placement_coordinates": {
+    "latitude": -33.54143,
+    "longitude": 151.28025
+   },
+   "distance_moved_from_placement_m": 1491,
+   "coordinates_source": "Midpoint by length (1.57 km along a 3.15 km chain) of the OSM ways \"Pearl Beach Patonga Firetrail\" (233329551 + 96331343 + 96331347), computed from a direct Overpass query (maps.mail.ru mirror); NPWS gives the walk as 3 km one way. resolve-pin's own rows are per-way midpoints.",
+   "pin_confidence": "MEDIUM (OSM way chain, length matches NPWS)",
+   "pin_status": "ok",
+   "unverified": [
+    "It follows the Great North Walk, already an existing Sydney spot (sydney-64): flagged as a possible overlap.",
+    "NPWS says 'park entry fees apply' without a figure; $8 per vehicle is the Brisbane Water NP fee and may not be charged at the village ends.",
+    "Placement said 'half-day'; NPWS gives 1.5-2 hours one way, so the visit range is 1.5-4 hours for a return."
+   ]
+  },
+  {
+   "id": "woy-woy",
+   "name": "Woy Woy",
+   "placement_id": "central-coast-21",
+   "kind": "new",
+   "standalone": true,
+   "category": "historic",
+   "facts": [
+    {
+     "claim": "Visit NSW: Woy Woy is a peninsula town at the southern edge of Brisbane Water with waterfront seafood at Woy Woy Fishermen's Wharf, a one-hour scenic ferry round trip from Woy Woy Wharf, and a train direct from Sydney in about 1 hr 15 min.",
+     "source": "https://www.visitnsw.com/destinations/central-coast/gosford-area/woy-woy"
+    },
+    {
+     "claim": "Wikivoyage: a commuter town with an area of southern waterways, close to Sydney.",
+     "source": "https://en.wikivoyage.org/wiki/Central_Coast_(New_South_Wales)"
+    }
+   ],
+   "bio": "A bayside town on Brisbane Water with a seafood wharf and a scenic ferry round trip through the waterways.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "A town with no single steward; no ticketUrl.",
+   "coordinates": {
+    "latitude": -33.483161,
+    "longitude": 151.325055
+   },
+   "placement_coordinates": {
+    "latitude": -33.488056,
+    "longitude": 151.3275
+   },
+   "distance_moved_from_placement_m": 590,
+   "coordinates_source": "Photon (OSM) amenity=ferry_terminal \"Woy Woy Wharf\", The Boulevarde, beside Woy Woy Fishermen's Wharf (the stops Visit NSW names); replaces the Wikivoyage/Wikipedia town point (resolve-pin: war memorial MEDIUM 460 m away, suburb node LOW).",
+   "pin_confidence": "LOW per tool, MEDIUM-equivalent (OSM ferry terminal)",
+   "pin_status": "ok-with-caveat",
+   "wiki_title": "Woy Woy",
+   "unverified": [
+    "Marginal: Wikivoyage calls it a commuter town; the draw is the wharf and ferry (operator and ferry price not researched)."
+   ]
+  },
+  {
+   "id": "great-north-road-nsw",
+   "name": "Great North Road",
+   "placement_id": "dharug-national-park-1",
+   "kind": "new",
+   "standalone": true,
+   "category": "historic",
+   "facts": [
+    {
+     "claim": "The Old Great North Road - World Heritage walk is a 9 km loop (3.5-4.5 hours, grade 4) in Dharug National Park along a convict-built road overlooking the Hawkesbury, past a quarry with convict graffiti, stone buttresses, culverts and a curved wall; there is a Convict Road app.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/old-great-north-road-world-heritage-walk"
+    },
+    {
+     "claim": "The road was built by up to 720 convicts between 1826 and 1836; Dharug National Park is always open but may close for weather or fire danger.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/dharug-national-park"
+    },
+    {
+     "claim": "The Great North Road is on the Australian National Heritage List and the UNESCO World Heritage list as part of the Australian Convict Sites.",
+     "source": "https://en.wikipedia.org/wiki/Great_North_Road_(New_South_Wales)"
+    }
+   ],
+   "bio": "A convict-built World Heritage road, walked as a 9 km loop through Dharug National Park past quarries and buttresses.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 3.5,
+   "visitHoursMax": 4.5,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/old-great-north-road-world-heritage-walk",
+   "ticketUrl_note": "NPWS walk page, loaded 200, title 'Old Great North Road - World Heritage walk | NSW National Parks'.",
+   "coordinates": {
+    "latitude": -33.375558,
+    "longitude": 150.991448
+   },
+   "placement_coordinates": {
+    "latitude": -33.36987,
+    "longitude": 150.98543
+   },
+   "distance_moved_from_placement_m": 844,
+   "coordinates_source": "Midpoint by length (3.67 km) of the OSM chain Old Great North Road (ways 179119293, 374067820, 217801041) + Finchs Line (17773801, 454470999), the walking section of the Old Great North Road - World Heritage walk in Dharug National Park, from a direct Overpass query (maps.mail.ru mirror). The NPWS 9 km loop's full line is not mapped under one name; the point is on the path. resolve-pin's alternative was the 'Convict Trail - The Great North Road' monument -33.380493,150.987488.",
+   "pin_confidence": "MEDIUM (OSM way chain)",
+   "pin_status": "ok-with-caveat",
+   "wiki_title": "Great North Road, New South Wales",
+   "unverified": [
+    "No park entry fee is stated for Dharug on the NPWS visitor-info page, so the walk is marked free; the NPWS fee list page could not be fetched.",
+    "The NPWS walk page shows 'Other planned events' and fire-ban alerts."
+   ],
+   "note": "Trail: pinned at the route midpoint, see coordinates."
+  },
+  {
+   "id": "wisemans-ferry",
+   "name": "Wisemans Ferry",
+   "placement_id": "dharug-national-park-2",
+   "kind": "new",
+   "standalone": true,
+   "category": "historic",
+   "facts": [
+    {
+     "claim": "The cable ferry across the Hawkesbury has used its site since 1829, the oldest ferry crossing still in operation in NSW; it is free of tolls, takes about 4 minutes and runs on demand 24 hours a day, 7 days a week.",
+     "source": "https://en.wikipedia.org/wiki/Wisemans_Ferry"
+    },
+    {
+     "claim": "Wikivoyage: a small town established by an ex-convict in 1817, about an hour from Sydney, with colonial architecture, parks and river picnics; Wisemans Ferry Park has a beach, barbecues, playgrounds and a cafe by the ferry entrance.",
+     "source": "https://en.wikivoyage.org/wiki/Wisemans_Ferry"
+    },
+    {
+     "claim": "NPWS: Dharug National Park is reached from Wisemans Ferry, by car ferry or on foot.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/dharug-national-park/visitor-info"
+    }
+   ],
+   "bio": "A Hawkesbury River village with a free 24-hour cable ferry, in use since 1829, and the gateway to Dharug National Park.",
+   "hours": "Open 24 hours (ferry runs 24 hours)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "A village and ferry with no single operator site (ferry is under contract to Transport for NSW); no ticketUrl.",
+   "coordinates": {
+    "latitude": -33.379181,
+    "longitude": 150.988895
+   },
+   "placement_coordinates": {
+    "latitude": -33.379181,
+    "longitude": 150.988895
+   },
+   "distance_moved_from_placement_m": 0,
+   "coordinates_source": "Wikipedia coordinates of the Wisemans Ferry cable ferry article, within 50 m of the Wikivoyage ferry listing point -33.379517,150.98927 (Wisemans Ferry Road crossing): two independent sources; resolve-pin's OSM pick (ANZAC memorial, 574 m, MEDIUM) was rejected as a poor visitor point.",
+   "pin_confidence": "HIGH (Wikipedia + Wikivoyage ferry, 40 m apart)",
+   "pin_status": "ok",
+   "wiki_title": "Wisemans Ferry",
+   "unverified": [
+    "Wikivoyage's Wisemans Ferry listings were last updated in 2016."
+   ]
+  },
+  {
+   "id": "devils-hole-lookout",
+   "name": "Devils Hole Lookout",
+   "placement_id": "barrington-tops-national-park-4",
+   "kind": "new",
+   "standalone": true,
+   "category": "viewpoint",
+   "facts": [
+    {
+     "claim": "An easy paved, wheelchair-suitable track of 0.3 km return (6-15 minutes, grade 1) runs from Devils Hole campground and picnic area to a lookout platform over the World Heritage-listed Barrington wilderness; on a clear day the view reaches the coast over 90 km east.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/devils-hole-lookout-walk-and-picnic-area"
+    },
+    {
+     "claim": "The road to the lookout can be affected by snow and ice; check the weather. The park is always open but may close for weather or fire.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/devils-hole-lookout-walk-and-picnic-area"
+    }
+   ],
+   "bio": "A paved 300 m walk to a platform over the Barrington wilderness, with views to the coast on a clear day.",
+   "hours": "Open 24 hours (road can close with snow and ice)",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/devils-hole-lookout-walk-and-picnic-area",
+   "ticketUrl_note": "NPWS page, loaded 200, title 'Devils Hole lookout walk and picnic area | NSW National Parks'.",
+   "coordinates": {
+    "latitude": -31.918139,
+    "longitude": 151.4844
+   },
+   "placement_coordinates": {
+    "latitude": -31.91814,
+    "longitude": 151.4844
+   },
+   "distance_moved_from_placement_m": 0,
+   "coordinates_source": "OSM tourism=viewpoint \"Devils Hole Lookout\" (0 m) + 1 geotagged Commons file (75 m) (resolve-pin HIGH).",
+   "pin_confidence": "HIGH",
+   "pin_status": "ok",
+   "unverified": [
+    "No entry fee is stated for Barrington Tops on the visitor-info page; the NPWS fee list page could not be fetched.",
+    "The placement bio called it 'in the Gloucester sector'; NPWS says it is between Scone and Gloucester, so the bio is reworded."
+   ]
+  },
+  {
+   "id": "gloucester-falls",
+   "name": "Gloucester Falls",
+   "placement_id": "barrington-tops-national-park-5",
+   "kind": "new",
+   "standalone": true,
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "Gloucester Falls walking track is a 1.8 km loop (1 hr - 1 hr 30 min, grade 3) from Gloucester Falls picnic area through snow gums to Andrew Laurie lookout over the Gloucester River gorge and a second lookout over the twin drops of the falls, best after rain.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/gloucester-falls-walking-track"
+    },
+    {
+     "claim": "The road to Gloucester River and Gloucester Tops may be inaccessible in wet weather; Gloucester Falls picnic area is between Stroud and Gloucester.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/picnic-areas/gloucester-falls-picnic-area"
+    }
+   ],
+   "bio": "A 1.8 km loop through snow gums to lookouts over Gloucester Falls and the Gloucester River gorge.",
+   "hours": "Open 24 hours (access road can close in wet weather)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/gloucester-falls-walking-track",
+   "ticketUrl_note": "NPWS page, loaded 200, title 'Gloucester Falls walking track | NSW National Parks'.",
+   "coordinates": {
+    "latitude": -32.099618,
+    "longitude": 151.600719
+   },
+   "placement_coordinates": {
+    "latitude": -32.09962,
+    "longitude": 151.60072
+   },
+   "distance_moved_from_placement_m": 0,
+   "coordinates_source": "OSM waterway=waterfall \"Gloucester Falls\" with the Gloucester Falls Lookout 62 m and 33 Commons files (resolve-pin HIGH).",
+   "pin_confidence": "HIGH",
+   "pin_status": "ok",
+   "unverified": [
+    "No entry fee stated for Barrington Tops on the visitor-info page; fee list page not fetched."
+   ]
+  },
+  {
+   "id": "dungog-nsw",
+   "name": "Dungog",
+   "placement_id": "dungog-nsw",
+   "kind": "new",
+   "standalone": true,
+   "category": "historic",
+   "facts": [
+    {
+     "claim": "Dungog is an urban conservation area with late 19th and early 20th century shops; blue plaques mark a self-guided walk past historic buildings, and it is a base for Chichester Dam, Chichester State Forest and Barrington Tops.",
+     "source": "https://www.visitnsw.com/things-to-do/tours/go-drivin-dungog-shire/dungog"
+    },
+    {
+     "claim": "Visit NSW: the Dungog Museum covers local timber and dairy history, and the Spanish-style James Theatre is Australia's oldest operating cinema (first film 1912); Dungog is the southern gateway to Barrington Tops.",
+     "source": "https://www.visitnsw.com/destinations/hunter/barrington-tops/dungog"
+    },
+    {
+     "claim": "Wikivoyage lists Dungog Museum, 105 Dowling St, Wed 10AM-2:30PM and Sat 10AM-2PM (updated Sep 2023), and trains from Newcastle via Maitland.",
+     "source": "https://en.wikivoyage.org/wiki/Dungog"
+    }
+   ],
+   "bio": "A Williams River country town with a heritage main street, the Dungog Museum and the oldest operating cinema in Australia.",
+   "hours": "Open 24 hours (Dungog Museum Wed 10-2:30, Sat 10-2)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "A town with no single steward; no ticketUrl. The Dungog Shire Council site (dungogshire.nsw.gov.au) did not load (fetch failed).",
+   "coordinates": {
+    "latitude": -32.404293,
+    "longitude": 151.757307
+   },
+   "placement_coordinates": {
+    "latitude": -32.39833333,
+    "longitude": 151.7525
+   },
+   "distance_moved_from_placement_m": 802,
+   "coordinates_source": "OSM tourism=museum \"Dungog Museum\", 105 Dowling St in the main street (resolve-pin MEDIUM via mirror); replaces the Wikipedia town point (-32.39833,151.7525, rounded), 803 m away.",
+   "pin_confidence": "MEDIUM",
+   "pin_status": "ok",
+   "wiki_title": "Dungog, New South Wales",
+   "unverified": [
+    "Marginal: a gateway town whose draws are small; the strongest counted source for stopping is Visit NSW and a single Wikivoyage museum listing.",
+    "Museum hours are Wikivoyage 2023, not the museum's own page."
+   ]
+  },
+  {
+   "id": "yengo-national-park",
+   "name": "Yengo National Park",
+   "placement_id": "yengo-national-park",
+   "kind": "new",
+   "standalone": true,
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "Yengo National Park is part of the Greater Blue Mountains Area World Heritage Property, a rugged landscape of gorges and ridges for 4WD, car, mountain bike or foot, with Aboriginal sacred sites and rock engravings, and the convict-built Old Great North Road in the south-east.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/yengo-national-park"
+    },
+    {
+     "claim": "Finchley lookout looks across remote wilderness to Mount Yengo, with Aboriginal rock engravings at nearby Finchley campground; 4WD is required in wet weather, there is no public transport, and the Big Yango precinct is behind locked gates needing a permit.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/yengo-national-park/visitor-info"
+    },
+    {
+     "claim": "The park is always open but may close for weather or fire danger.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/yengo-national-park/visitor-info"
+    },
+    {
+     "claim": "Mount Yengo (Big Yengo) is 668 m high; the park covers 154,328 ha, about 91 km southwest of Newcastle.",
+     "source": "https://en.wikipedia.org/wiki/Yengo_National_Park"
+    }
+   ],
+   "bio": "A remote World Heritage wilderness around Mount Yengo, with Aboriginal engravings, Finchley lookout and 4WD tracks.",
+   "hours": "Open 24 hours (4WD needed in wet weather)",
+   "visitHoursMin": 3,
+   "visitHoursMax": 8,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/yengo-national-park",
+   "ticketUrl_note": "Managing agency (NPWS) park page, loaded 200, title 'Yengo National Park | NSW National Parks'.",
+   "coordinates": {
+    "latitude": -32.977829,
+    "longitude": 151.020769
+   },
+   "placement_coordinates": {
+    "latitude": -33.0353,
+    "longitude": 150.9031
+   },
+   "distance_moved_from_placement_m": 12698,
+   "coordinates_source": "OSM tourism=viewpoint \"Finchley Trig Lookout\" (found with a Photon query for 'Finchley Lookout' and confirmed by resolve-pin MEDIUM); NPWS names 'Finchley lookout' as the park's featured viewpoint. Replaces the park centroid (resolve-pin MEDIUM on the nature_reserve).",
+   "pin_confidence": "MEDIUM",
+   "pin_status": "ok-with-caveat",
+   "wiki_title": "Yengo National Park",
+   "unverified": [
+    "No entry fee is stated on the visitor-info page; fee list page not fetched.",
+    "No counted Wikivoyage/guidebook source was found (placement counted_sources was empty); NPWS is the only visitor-oriented source read, so it stays a single-source keep.",
+    "Pin: centroid replaced by Finchley lookout (the NPWS-named visitor viewpoint); see coordinates. Some access roads cross private land and Putty Road/Wollombi routes were not checked."
+   ]
+  },
+  {
+   "id": "port-stephens",
+   "name": "Port Stephens",
+   "placement_id": "port-stephens (new_destinations self_place)",
+   "kind": "new",
+   "standalone": true,
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "Port Stephens is a large natural harbour; its tourism board describes Nelson Bay as the primary tourist hub, with whale (May-November) and dolphin cruises, and Tomaree National Park around it.",
+     "source": "https://www.portstephens.com.au/peninsula/nelson-bay"
+    },
+    {
+     "claim": "Wikivoyage's Port Stephens guide covers See/Do listings for the whole area (Stockton dunes, Mt Tomaree, Gan Gan Lookout, Point Stephens Lighthouse).",
+     "source": "https://en.wikivoyage.org/wiki/Port_Stephens"
+    }
+   ],
+   "bio": "A large natural harbour on the Tomaree peninsula, with dolphin and whale cruises from Nelson Bay.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 8,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "ticketUrl_note": "A region with no single steward; no ticketUrl.",
+   "coordinates": null,
+   "placement_coordinates": {
+    "latitude": -32.69916667,
+    "longitude": 152.12388889
+   },
+   "coordinates_source": "HELD: Port Stephens is a harbour/region. resolve-pin's candidates: OSM natural=bay (-32.69864,152.15538, a water centroid), Wikipedia region point (-32.69917,152.12389). Neither is a visitor point.",
+   "pin_confidence": "LOW",
+   "pin_status": "held",
+   "wiki_title": "Port Stephens (New South Wales)",
+   "unverified": [
+    "Held: 'Port Stephens' is a harbour/region, not a place with a visitor point; its draws are already separate spots (Nelson Bay, Shoal Bay, Fly Point, Tomaree, Stockton Beach). As a standalone fallback it duplicates them, and any pin is a water or region centroid. Recommend dropping this self-place or merging it into Nelson Bay unless the owner wants it."
+   ],
+   "held": true
+  },
+  {
+   "id": "dharug-national-park",
+   "name": "Dharug National Park",
+   "placement_id": "dharug-national-park (new_destinations self_place)",
+   "kind": "new",
+   "standalone": true,
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "Dharug National Park covers rugged bushland north of the Hawkesbury River near Wisemans Ferry, with sandstone cliffs; the World Heritage-listed Old Great North Road (built by up to 720 convicts, 1826-1836), mountain biking, canoeing, and camping at Mill Creek and Ten Mile Hollow.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/dharug-national-park"
+    },
+    {
+     "claim": "Always open but may close for weather or fire danger; reached via Wisemans Ferry Road, by car ferry across the Hawkesbury or on foot from the south side.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/dharug-national-park/visitor-info"
+    }
+   ],
+   "bio": "Rugged bushland above the Hawkesbury River with the World Heritage Old Great North Road, canoeing and camping.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "free": true,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/dharug-national-park",
+   "ticketUrl_note": "Managing agency (NPWS) park page, loaded 200, title 'Dharug National Park | NSW National Parks'.",
+   "coordinates": {
+    "latitude": -33.400791,
+    "longitude": 151.048281
+   },
+   "placement_coordinates": {
+    "latitude": -33.3798,
+    "longitude": 151.072
+   },
+   "distance_moved_from_placement_m": 3209,
+   "coordinates_source": "Photon (OSM) leisure=park \"Mill Creek Picnic Area\", the NPWS-listed picnic area and campground base in Dharug National Park; replaces the park centroid (-33.3798,151.072, resolve-pin MEDIUM on the nature_reserve). Single OSM source; the NPWS page lists Mill Creek picnic area but gives no coordinates.",
+   "pin_confidence": "LOW per tool, MEDIUM-equivalent (OSM named picnic area)",
+   "pin_status": "ok-with-caveat",
+   "wiki_title": "Dharug National Park",
+   "unverified": [
+    "No entry fee is stated on the visitor-info page; fee list page not fetched.",
+    "Pin: centroid replaced by a visitor point; see coordinates.",
+    "Overlaps great-north-road-nsw (the same road) and wisemans-ferry; the three are one cluster."
+   ]
+  }
+ ],
+ "held": [
+  "port-stephens"
+ ]
+}

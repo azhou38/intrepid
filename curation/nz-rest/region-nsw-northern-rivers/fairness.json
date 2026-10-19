@@ -1,0 +1,275 @@
+{
+ "region": "nsw-northern-rivers",
+ "inside_destinations": 31,
+ "standalone": 1,
+ "new_destinations": 6,
+ "inside_by_destination": {
+  "byron-bay": 10,
+  "ballina": 5,
+  "tweed-heads": 7,
+  "lismore": 4,
+  "yamba": 4,
+  "bundjalung-national-park": 1
+ },
+ "existing_kept_unchanged": 3,
+ "held_for_pin": [
+  "Nightcap National Park (lismore-2)",
+  "Wollumbin National Park (tweed-heads-2)",
+  "Angourie Point (yamba-1)",
+  "Bundjalung National Park (destination centre)"
+ ],
+ "lowest_kept": [
+  {
+   "name": "Main Beach",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Wategos Beach",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "The Pass",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Tallow Beach",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Crystal Castle and Shambhala Gardens",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Seven Mile Beach",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Lake Ainsworth",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "The Big Prawn",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Angourie Point",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Tropical Fruit World",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Lismore Regional Gallery",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Lighthouse Beach",
+   "views": 452,
+   "counted_sources": 1
+  }
+ ],
+ "lowest_kept_views": 0,
+ "stronger_left_out": [
+  {
+   "name": "Mount Warning",
+   "views": 28324,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Near-duplicate of Wollumbin National Park (the summit track is closed and the park spot already centres on the mountain); keep one entry, carry the alias in search."
+  },
+  {
+   "name": "Casino",
+   "views": 24429,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Service town; Wikivoyage names it only as beef capital, nothing for a visitor to do for half an hour."
+  },
+  {
+   "name": "Kyogle",
+   "views": 11899,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Downgraded from keep: a gateway town whose draw is the parks beyond it (Border Ranges, Toonumbar), the Pipiriki pattern in COVERAGE.md. For: Wikivoyage calls it the gateway and it is the rail/road stop. Against: one source, no sight of its own."
+  },
+  {
+   "name": "New Italy",
+   "views": 6400,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Case for: Wikivoyage lists the Italian-settler heritage village with a museum. Against: one source, brief highway stop."
+  },
+  {
+   "name": "Ocean Shores",
+   "views": 5145,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Residential estate suburb; nothing a visitor does there beyond Brunswick Heads/New Brighton beach, which are separate."
+  },
+  {
+   "name": "Woodburn",
+   "views": 3288,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small service town with no distinct visitor draw."
+  },
+  {
+   "name": "Cook Island",
+   "views": 2694,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Case for: marine-reserve dive site, Wikivoyage and Wikipedia, 2 km offshore. Against: no landing, reachable only on dive/snorkel operators' trips; Julian Rocks is kept as the stronger, more accessible equivalent."
+  },
+  {
+   "name": "MardiGrass",
+   "views": 2059,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Annual festival; an event."
+  },
+  {
+   "name": "Mount Chincogan",
+   "views": 1792,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Case for: Wikivoyage Mullumbimby lists the summit walk and it is the town's backdrop. Against: one source, short local hill walk."
+  },
+  {
+   "name": "Duranbah Beach",
+   "views": 1732,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source found; local surf beach."
+  },
+  {
+   "name": "Clarkes Beach",
+   "views": 1481,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Case for: named by Wikivoyage with its own OSM beach. Against: one source and the sand is continuous with Main Beach; would be a near-duplicate."
+  },
+  {
+   "name": "Nimbin Rocks",
+   "views": 748,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source (Wikivoyage Nimbin does not list it); Aboriginal sacred site with no public access, viewed from the road."
+  },
+  {
+   "name": "Yamba Lighthouse",
+   "views": 654,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Case for: Wikivoyage lists the Clarence River Light on the headland with views. Against: small lighthouse, ten-minute look, one source."
+  },
+  {
+   "name": "Mallanganee National Park",
+   "views": 540,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Case for: NPWS and Wikivoyage both list it, a World Heritage part with a lookout and camping. Against: Wikivoyage itself calls it not particularly famous, remote and rarely visited."
+  },
+  {
+   "name": "Mebbin National Park",
+   "views": 396,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "NPWS lists no public visitor facilities; nothing to do."
+  },
+  {
+   "name": "Cape Byron State Conservation Area",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Near-duplicate: the reserve is the land of the Cape Byron lighthouse walk already kept; one place."
+  }
+ ],
+ "stronger_left_out_note": "The lowest kept score is 0 views (many kept beaches and a roadside icon have a Wikivoyage listing but no Wikipedia article), so every non-kept candidate with any views is technically stronger. Listed: every non-kept candidate with 500+ views or 2+ counted sources, each with its verdict and a concrete 'What qualifies' reason. The rest (under 500 views, one source) are in verdicts.json and skeptic.json. None was left out for want of a destination: Casino, Woodburn and Kyogle sit outside spans and were judged blind on their merits. Review cases (Kyogle, Mallanganee, Cook Island, New Italy, Nimbin Hemp Museum, Tweed Regional Museum, Koala Care Centre, Clarkes/Belongil/Shelly/Flat Rock/Lennox Point/Yamba Lighthouse/Ocean Pool/Turners Beach/Mount Chincogan) stay in the owner's review list, not placed.",
+ "strongest_outsiders": [
+  {
+   "name": "Grafton",
+   "action": "existing standalone, unchanged",
+   "views": 36691,
+   "counted_sources": 2,
+   "nearest_destination_km": [
+    "yamba",
+    49.1
+   ]
+  },
+  {
+   "name": "Border Ranges National Park",
+   "action": "existing standalone, unchanged",
+   "views": 2284,
+   "counted_sources": 1,
+   "nearest_destination_km": [
+    "lismore",
+    57.5
+   ]
+  },
+  {
+   "name": "Yuraygir National Park",
+   "action": "existing standalone, unchanged",
+   "views": 1053,
+   "counted_sources": 1,
+   "nearest_destination_km": [
+    "yamba",
+    42.6
+   ]
+  },
+  {
+   "name": "Toonumbar National Park",
+   "action": "standalone (new)",
+   "views": 730,
+   "counted_sources": 2,
+   "nearest_destination_km": [
+    "lismore",
+    63.3
+   ]
+  },
+  {
+   "name": "Mallanganee National Park",
+   "action": "review",
+   "views": 540,
+   "counted_sources": 2,
+   "nearest_destination_km": [
+    "lismore",
+    52.7
+   ]
+  },
+  {
+   "name": "Mebbin National Park",
+   "action": "reject",
+   "views": 396,
+   "counted_sources": 2,
+   "nearest_destination_km": [
+    "lismore",
+    41.5
+   ]
+  }
+ ],
+ "benchmark": {
+  "applicable": "Northern Rivers has none of the NZ named benchmark places; analogues checked",
+  "passed": true,
+  "results": {
+   "Weekly/monthly markets rejected (Nelson Market analogue)": "Mullumbimby Farmers' Market (Friday) and Nimbin Markets (monthly) rejected",
+   "Festivals rejected": "MardiGrass, Grafton Jacaranda Festival (Splendour in the Grass also rejected) rejected as events",
+   "Business or operator not a spot": "Nimbin Candle Factory, Hemp Embassy, Rainbow Power Company, The Farm Byron Bay rejected; Julian Rocks is kept as the place, not its dive operators",
+   "Gateway whose draw is beyond it (Pipiriki analogue)": "Kyogle (gateway to Border Ranges/Toonumbar) and Woodburn sent to review/rejected, not kept; Ulmarra, Brooms Head, Wooli not kept",
+   "Roadside icon kept (Ohakune Carrot analogue)": "The Big Prawn kept as ballina-5",
+   "Long feature not under its neighbour (Ninety Mile Beach analogue)": "Tallow Beach and Seven Mile Beach pinned at their OSM features and placed under the base visitors use (Byron Bay, Ballina via Lennox Head), not under whichever town they touch; Yuraygir stays standalone, not under Yamba",
+   "Same place under two names (TSS Earnslaw analogue)": "Mount Warning rejected as a spot and carried as an alias of Wollumbin National Park; Cape Byron State Conservation Area folded into the lighthouse spot",
+   "Part of a larger spot not duplicated": "Woody Head, Murray Scrub Lookout, Protesters Falls, Iluka Bluff, Lyrebird Track rejected as parts of kept parks"
+  }
+ }
+}

@@ -1,0 +1,3435 @@
+{
+ "region": "nsw-riverina-murray",
+ "country": "Australia",
+ "kept_total": 38,
+ "placed_total": 34,
+ "hold_for_pin_total": 4,
+ "note": "Existing AU destinations (Sydney, Blue Mountains, Warrumbungle) are 250 km or more away, so none of the 38 kept places lies inside an existing span. 7 town destinations and 5 national-park destinations are PROPOSED (listed for the owner, not added); each member also has an if_declined_standalone entry. 15 places are standalone now. 4 kept places are held for a pin (marked status hold-for-pin) and 2 are conditional keeps. Photos are candidates only until Lens accepts them; hours, cost and ticketUrl are null with needs_research where no source gave them (candidate sites are named in notes, unverified). Name-with-disambiguator: Junee Roundhouse Museum, Hume Dam etc. use the shown name, wiki carries the article title.",
+ "overlap_decisions": [
+  {
+   "place": "Yanga National Park, Murrumbidgee Valley National Park, Willandra National Park",
+   "decision": "Owned by riverina-murray as proposed national-park destinations; outback pass must drop its Yanga review and not place Balranald-area parks again. Willandra Lakes (Mungo) is a different place and stays with the outback pass."
+  },
+  {
+   "place": "Wentworth, Junction Park, Old Wentworth Gaol, Perry Sandhills",
+   "decision": "Owned here as proposed destination wentworth; the outback pass must not place them."
+  },
+  {
+   "place": "Balranald (Discovery Centre, Southern Cross Museum, Malcolm Building, Heritage Trail)",
+   "decision": "Rejected here; the outback pass rejected them too. No Balranald destination is proposed."
+  },
+  {
+   "place": "High Country Rail Trail, Murray to the Mountains Rail Trail",
+   "decision": "Rejected (routes mainly in Victoria); passed to the Victoria run."
+  }
+ ],
+ "conditional_keeps": [
+  "Dunera Museum",
+  "Junee Licorice Factory"
+ ],
+ "hold_for_pin": [
+  {
+   "name": "Narrandera Flora and Fauna Reserve",
+   "reason": "HOLD FOR PIN: the point is the reserve centroid (LOW-MEDIUM); replace with the Koala Reserve car park or entrance."
+  },
+  {
+   "name": "The Rock (Hanging Rock Hill)",
+   "reason": "HOLD FOR PIN: the point is the nature-reserve centroid (osm leisure=nature_reserve The Rock Nature Reserve - Kengal Aboriginal Place); Commons geotag -35.27495,147.07197 (summit track start) is within 700 m; take the walking track start or summit. Walk is about 6 km."
+  },
+  {
+   "name": "Tumbarumba–Rosewood Rail Trail",
+   "reason": "HOLD FOR PIN: LOW. The skeptic point is a segment near Tumbarumba (other segment -35.70045,147.88361); the true route midpoint needs Overpass way geometry."
+  },
+  {
+   "name": "Wiradjuri Walking Track",
+   "reason": "HOLD FOR PIN: skeptic point is on the track (photon highway=track + Commons median, HIGH) but not the true route midpoint; re-run the midpoint step (Overpass was down). Photo: skeptic rejected the only Commons file (a track marker post)."
+  }
+ ],
+ "spots": [
+  {
+   "name": "Wagga Wagga Botanic Gardens",
+   "source_name": "Wagga Wagga Botanic Gardens",
+   "action": "spot",
+   "destination": "wagga-wagga",
+   "id": "wagga-wagga-1",
+   "coordinates": {
+    "latitude": -35.129228,
+    "longitude": 147.364821
+   },
+   "coordinates_source": "wikivoyage:Wagga Wagga (listing-level, kept)",
+   "reason": "2.4 km from the proposed Wagga Wagga centre, inside 75% of its 40 km span (30.0 km); reached from Wagga Wagga.",
+   "category": "nature",
+   "icon": "🌳",
+   "bio_draft": "Eight-hectare gardens with a small zoo, a free flight aviary and a miniature railway on Willans Hill.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 2371,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wagga_Wagga"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Wagga_Wagga_Botanic_Gardens"
+   ],
+   "skeptic_objection": "Review resolved to keep: 8 ha gardens with a free aviary, small zoo and miniature railway fill 30+ minutes; Wikivoyage plus Wikipedia. Against: one counted source, a city park; kept because the zoo and aviary are a real activity, not a bare lawn. Cluster: Wagga Wagga.",
+   "photo": {
+    "file": "Wagga Wagga Botanic Gardens 1.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Wagga_Wagga_Botanic_Gardens_1.jpg",
+    "width": 1500,
+    "height": 997,
+    "licence": "CC BY 3.0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "Lawn and path in the gardens, colour 2008; plain but it is the gardens themselves; weak, replace if a better one turns up.",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "distance_km_from_destination": 2.4,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Wiradjuri Walking Track",
+   "source_name": "Wiradjuri Walking Track",
+   "action": "spot",
+   "destination": "wagga-wagga",
+   "id": "wagga-wagga-2",
+   "coordinates": {
+    "latitude": -35.100171,
+    "longitude": 147.367548
+   },
+   "coordinates_source": "photon highway=track \"Wiradjuri Walking Track\" + Commons median -35.09978,147.36736 (HIGH); a point on the track, not its true midpoint (route length unresolved; Overpass down)",
+   "reason": "1.1 km from the proposed Wagga Wagga centre, inside 75% of its 40 km span (30.0 km); reached from Wagga Wagga.",
+   "category": "hike",
+   "icon": "🚶",
+   "bio_draft": "Riverside walking track along the Murrumbidgee in Wagga Wagga, with maps at the visitor centre.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wagga_Wagga",
+    "https://www.theriverina.com.au/"
+   ],
+   "other_sources": [],
+   "skeptic_objection": "Two counted sources (Wikivoyage and Riverina tourism); riverside walking track, 30+ minutes. Cluster: Wagga Wagga.",
+   "photo": null,
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "reject",
+   "skeptic_photo_reason": "Only Commons file (track marker post) is a sign, fails check 2; the river-bridge photos are not the track. none.",
+   "photo_status": "no passing photo found by skeptic; Lens to search outside Commons (IMAGES.md)",
+   "status": "hold-for-pin",
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "notes": "HOLD FOR PIN: skeptic point is on the track (photon highway=track + Commons median, HIGH) but not the true route midpoint; re-run the midpoint step (Overpass was down). Photo: skeptic rejected the only Commons file (a track marker post).",
+   "hold_for_pin": [
+    "HOLD FOR PIN: skeptic point is on the track (photon highway=track + Commons median, HIGH) but not the true route midpoint; re-run the midpoint step (Overpass was down). Photo: skeptic rejected the only Commons file (a track marker post)."
+   ],
+   "distance_km_from_destination": 1.1,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Murray Art Museum Albury",
+   "source_name": "Murray Art Museum Albury",
+   "action": "spot",
+   "destination": "albury",
+   "id": "albury-1",
+   "coordinates": {
+    "latitude": -36.080615,
+    "longitude": 146.916544
+   },
+   "coordinates_source": "wikivoyage:Albury (listing-level, kept)",
+   "reason": "0.8 km from the proposed Albury centre, inside 75% of its 40 km span (30.0 km); reached from Albury.",
+   "category": "museum",
+   "icon": "🖼️",
+   "bio_draft": "Free regional art museum on Dean Street in Albury, with changing exhibitions and more than 2,400 works in its collection.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 480,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Albury"
+   ],
+   "other_sources": [],
+   "skeptic_objection": "Wikivoyage names it; free, open 7 days (362 days a year) per mamalbury.com.au, collection of 2400+ items; a major regional gallery, one-source marginal bar met. Cluster: Albury.",
+   "photo": {
+    "file": "Murray Art Museum Albury, 2022, 02.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Murray_Art_Museum_Albury,_2022,_02.jpg",
+    "width": 3934,
+    "height": 2950,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "MAMA frontage, 2022 colour, clear, building is the attraction; passes crop and brightness.",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "distance_km_from_destination": 0.8,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Hume Dam",
+   "source_name": "Hume Dam",
+   "action": "spot",
+   "destination": "albury",
+   "id": "albury-2",
+   "coordinates": {
+    "latitude": -36.1067,
+    "longitude": 147.033
+   },
+   "coordinates_source": "wikivoyage:Albury (listing-level, kept)",
+   "reason": "11.3 km from the proposed Albury centre, inside 75% of its 40 km span (30.0 km); reached from Albury.",
+   "category": "landmark",
+   "icon": "🏞️",
+   "bio_draft": "Murray River dam wall you can walk across, with a viewing platform, picnic area and small open-air museum.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "wiki": "Hume Dam",
+   "views": 6723,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Albury"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Hume_Dam"
+   ],
+   "skeptic_objection": "Wikivoyage names the wall walk and lookout; free; one source but a genuine structure with a walk. Cluster: Albury.",
+   "photo": {
+    "file": "Full Lake Hume looking towards the dam wall in November 2010.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Full_Lake_Hume_looking_towards_the_dam_wall_in_November_2010.jpg",
+    "width": 4272,
+    "height": 2848,
+    "licence": "CC BY-SA 2.0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "Dam wall across the water, 2010 colour; wall is mid-frame in the square slice.",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "distance_km_from_destination": 11.3,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "ShearOutback",
+   "source_name": "ShearOutback (Shearers Hall of Fame)",
+   "action": "spot",
+   "destination": "hay",
+   "id": "hay-1",
+   "coordinates": {
+    "latitude": -34.52183,
+    "longitude": 144.8362
+   },
+   "coordinates_source": "osm:tourism=museum \"Shear Outback Hay Visitor Centre\" (Photon); MEDIUM, Sturt Hwy South Hay roundabout",
+   "reason": "2.0 km from the proposed Hay centre, inside 75% of its 30 km span (22.5 km); reached from Hay.",
+   "category": "museum",
+   "icon": "🐑",
+   "bio_draft": "Shearers' Hall of Fame museum in Hay with live shearing demonstrations daily and a café.",
+   "hours": "Mon–Sat 9:00 AM – 4:00 PM, Sun 9:00 AM – 3:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": false,
+   "costMin": 20,
+   "costMax": 20,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Hay"
+   ],
+   "other_sources": [],
+   "skeptic_objection": "Verified on shearoutback.com.au: museum open Mon-Sat 9-4, Sun 9-3, shearing demonstrations 7 days at 10:30 and 1:00, cafe, adult admission $20 (concession $15, child $10); site suggests 1 hour for the museum. Wikivoyage names it as the highlight of Hay. Cluster: Hay.",
+   "photo": null,
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "reject",
+   "skeptic_photo_reason": "none on Commons (geosearch returns grass and water towers); search outside Commons; operator site shearoutback.com.au has photos (tier 2).",
+   "photo_status": "no passing photo found by skeptic; Lens to search outside Commons (IMAGES.md)",
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "notes": "Hours, adult $20 (concession $15, child $10) and demonstrations 10:30 and 1:00 daily verified by skeptic on shearoutback.com.au; operator site shearoutback.com.au is the candidate ticketUrl, to be confirmed by Pipeline C.",
+   "distance_km_from_destination": 2.0,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Hay Gaol",
+   "source_name": "Hay Gaol",
+   "action": "spot",
+   "destination": "hay",
+   "id": "hay-2",
+   "coordinates": {
+    "latitude": -34.5077,
+    "longitude": 144.835
+   },
+   "coordinates_source": "wikivoyage:Hay (listing-level, kept)",
+   "reason": "0.8 km from the proposed Hay centre, inside 75% of its 30 km span (22.5 km); reached from Hay.",
+   "category": "historic",
+   "icon": "🏛️",
+   "bio_draft": "Former colonial gaol on Church Street in Hay, now a museum open daily with paid entry.",
+   "hours": "9:00 AM – 5:00 PM (Wikivoyage listing, to re-verify)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 1146,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Hay",
+    "https://www.visithay.com.au/"
+   ],
+   "other_sources": [],
+   "skeptic_objection": "Wikivoyage lists 9AM-5PM daily, adults $4 (old price), council page; 2 counted sources. Cluster: Hay.",
+   "photo": {
+    "file": "HayGaol.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:HayGaol.JPG",
+    "width": 2272,
+    "height": 1704,
+    "licence": "CC BY-SA 3.0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "Gaol entrance and path, 2007 colour; ok, a little dated.",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "notes": "Wikivoyage hours 9-5 daily and adults $4 are old; Pipeline C must re-verify.",
+   "distance_km_from_destination": 0.8,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Dunera Museum",
+   "source_name": "Dunera Museum",
+   "action": "spot",
+   "destination": "hay",
+   "id": "hay-3",
+   "coordinates": {
+    "latitude": -34.4993,
+    "longitude": 144.8429
+   },
+   "coordinates_source": "wikivoyage:Hay (listing-level, kept)",
+   "reason": "0.6 km from the proposed Hay centre, inside 75% of its 30 km span (22.5 km); reached from Hay.",
+   "category": "museum",
+   "icon": "🚂",
+   "bio_draft": "Museum at Hay Railway Station on the Dunera ship and the WWII internment of refugees and prisoners at Hay.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Hay"
+   ],
+   "other_sources": [],
+   "skeptic_objection": "Wikivoyage names it with address (421 Murray St) and coordinates; opening times not found, the council page is out of date and the museum is volunteer-run: hours must be verified in research or demote to review. Cluster: Hay.",
+   "photo": {
+    "file": "Dunera Museum, Hay, NSW, 2022, 03.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Dunera_Museum,_Hay,_NSW,_2022,_03.jpg",
+    "width": 4032,
+    "height": 3024,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "Interior carriage gallery at the museum (2022); the station shot with a sign was rejected as sign-dominated. Weak: an interior, no exterior found.",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "conditional_keep": true,
+   "notes": "CONDITIONAL KEEP: opening times not found, council page out of date, volunteer-run. Demote to review if Pipeline C cannot verify hours.",
+   "distance_km_from_destination": 0.6,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Griffith Pioneer Park Museum",
+   "source_name": "Griffith Pioneer Park Museum",
+   "action": "spot",
+   "destination": "griffith",
+   "id": "griffith-1",
+   "coordinates": {
+    "latitude": -34.27676,
+    "longitude": 146.0551
+   },
+   "coordinates_source": "wikivoyage:Griffith (listing-level, kept)",
+   "reason": "1.4 km from the proposed Griffith centre, inside 75% of its 50 km span (37.5 km); reached from Griffith.",
+   "category": "museum",
+   "icon": "🏚️",
+   "bio_draft": "Open-air museum of more than 40 heritage buildings, with an Italian immigrant section, on Remembrance Drive in Griffith.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Griffith",
+    "https://www.theriverina.com.au/griffith"
+   ],
+   "other_sources": [],
+   "skeptic_objection": "Two counted sources; open-air museum with 40+ buildings, long visit. Cluster: Griffith.",
+   "photo": null,
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "reject",
+   "skeptic_photo_reason": "none: only Bills Horse Trough replica (a minor exhibit); search outside Commons.",
+   "photo_status": "no passing photo found by skeptic; Lens to search outside Commons (IMAGES.md)",
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "distance_km_from_destination": 1.4,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Cocoparra National Park",
+   "source_name": "Cocoparra National Park",
+   "action": "spot",
+   "destination": "griffith",
+   "id": "griffith-2",
+   "coordinates": {
+    "latitude": -34.131667,
+    "longitude": 146.217778
+   },
+   "coordinates_source": "wikivoyage:Griffith (listing-level, kept)",
+   "reason": "23.0 km from the proposed Griffith centre, inside 75% of its 50 km span (37.5 km); reached from Griffith.",
+   "category": "nature",
+   "icon": "🌿",
+   "bio_draft": "Range of gorges and bush near Griffith with the Jacks Creek, Falcon Falls and Store Creek walks and spring wildflowers.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "wiki": "Cocoparra National Park",
+   "views": 1384,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/cocoparra-national-park",
+    "https://en.wikivoyage.org/wiki/Griffith"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Cocoparra_National_Park"
+   ],
+   "skeptic_objection": "NPWS page loads: \"Open\" (check alerts), bushwalking and birdwatching, half an hour from Griffith; Wikivoyage Griffith also names it. Cluster: Griffith.",
+   "photo": {
+    "file": "Cocoparra valley view.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Cocoparra_valley_view.jpg",
+    "width": 1200,
+    "height": 1600,
+    "licence": "CC BY-SA 3.0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "Store Creek gorge view, portrait 1200x1600; scenic though plain; no better Commons landscape (rest are birds).",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "distance_km_from_destination": 23.0,
+   "inside_75pct_span": true,
+   "np_exception": true,
+   "np_exception_reason": "National park folded into the Griffith destination: 23 km from Griffith, reached only from Griffith, with no sub-spots of its own, so a separate one-spot park destination is not proposed."
+  },
+  {
+   "name": "Junee Roundhouse Museum",
+   "source_name": "Roundhouse Museum",
+   "action": "spot",
+   "destination": "junee",
+   "id": "junee-1",
+   "coordinates": {
+    "latitude": -34.8834,
+    "longitude": 147.5791
+   },
+   "coordinates_source": "wikivoyage:Junee (listing-level, kept)",
+   "reason": "1.6 km from the proposed Junee centre, inside 75% of its 44 km span (33.0 km); reached from Junee.",
+   "category": "museum",
+   "icon": "🚂",
+   "bio_draft": "Railway roundhouse museum in Junee with engines and carriages to explore, once the Southern Hemisphere's largest.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Junee",
+    "https://www.theriverina.com.au/junee"
+   ],
+   "other_sources": [],
+   "skeptic_objection": "Two counted sources; large railway roundhouse museum with locomotives; Cluster: Junee.",
+   "photo": {
+    "file": "The Roundhouse, Junee - January 2017.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:The_Roundhouse,_Junee_-_January_2017.jpg",
+    "width": 5760,
+    "height": 2282,
+    "licence": "CC BY 2.0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "Roundhouse and turntable, 5760x2282 wide; the building is in the middle slice. The 2021 shot is dark/B&W-like and fails brightness.",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "distance_km_from_destination": 1.6,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Junee Licorice and Chocolate Factory",
+   "source_name": "Junee Licorice Factory",
+   "action": "spot",
+   "destination": "junee",
+   "id": "junee-2",
+   "coordinates": {
+    "latitude": -34.86011,
+    "longitude": 147.579484
+   },
+   "coordinates_source": "wikivoyage:Junee (listing-level, kept)",
+   "reason": "1.2 km from the proposed Junee centre, inside 75% of its 44 km span (33.0 km); reached from Junee.",
+   "category": "entertainment",
+   "icon": "🍬",
+   "bio_draft": "Licorice and chocolate factory in Junee where visitors watch weekday making, make their own sweets and shop.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Junee",
+    "https://www.theriverina.com.au/junee"
+   ],
+   "other_sources": [],
+   "skeptic_objection": "Two counted sources; Wikivoyage: make-your-own sweets, weekday making, cafe, shop. The operator domain (greengroveorganics.com.au) now returns a Wix \"ConnectYourDomain\" error, so hours/ticket URL and whether it still operates must be verified before shipping; if unverified, demote to review. A shop-factory visit but a named Junee draw.",
+   "photo": {
+    "file": "Junee Licorice and Chocolate factory 2008.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Junee_Licorice_and_Chocolate_factory_2008.jpg",
+    "width": 1280,
+    "height": 851,
+    "licence": "CC BY-SA 2.0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "Factory building 2008, 1280 wide; old industrial shed, not the sweets; weak but ok.",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "conditional_keep": true,
+   "notes": "CONDITIONAL KEEP: operator domain greengroveorganics.com.au returned a Wix ConnectYourDomain error. Demote to review if hours, ticketUrl or continued operation cannot be verified. Name shown: confirm the current trading name in research.",
+   "distance_km_from_destination": 1.2,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Bethungra Spiral",
+   "source_name": "Bethungra Spiral",
+   "action": "spot",
+   "destination": "junee",
+   "id": "junee-3",
+   "coordinates": {
+    "latitude": -34.7498,
+    "longitude": 147.8813
+   },
+   "coordinates_source": "wikipedia:Bethungra Spiral (listing-level, kept)",
+   "reason": "30.1 km from the proposed Junee centre, inside 75% of its 44 km span (33.0 km); reached from Junee.",
+   "category": "landmark",
+   "icon": "🚆",
+   "bio_draft": "Railway spiral lifting the line over the Bethungra Range, with a lookout platform for train watchers.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "wiki": "Bethungra Spiral",
+   "views": 4776,
+   "counted_sources": [
+    "https://www.theriverina.com.au/junee"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Bethungra_Spiral"
+   ],
+   "skeptic_objection": "Regional board (theriverina.com.au) and Wikipedia; a short lookout with a platform (2020) and sign, 20-30 minutes; marginal for non-rail visitors, kept as a named lookout.",
+   "photo": {
+    "file": "BethungraSpiral.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:BethungraSpiral.jpg",
+    "width": 1951,
+    "height": 1000,
+    "licence": "CC BY-SA 2.5"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "Spiral track curving at right of a 2007 colour view; needs the off-centre crop. Lookout photos show only a platform.",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "distance_km_from_destination": 30.1,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Dog on the Tuckerbox",
+   "source_name": "Dog on the Tuckerbox",
+   "action": "spot",
+   "destination": "gundagai",
+   "id": "gundagai-1",
+   "coordinates": {
+    "latitude": -35.000511,
+    "longitude": 148.111103
+   },
+   "coordinates_source": "wikivoyage:Gundagai (listing-level, kept)",
+   "reason": "7.2 km from the proposed Gundagai centre, inside 75% of its 30 km span (22.5 km); reached from Gundagai.",
+   "category": "monument",
+   "icon": "🐕",
+   "bio_draft": "Bronze dog on a tuckerbox beside the Hume Highway at Snake Gully, with an interpretive walk and park.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "wiki": "Dog on the Tuckerbox",
+   "views": 28424,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Gundagai"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Dog_on_the_Tuckerbox"
+   ],
+   "skeptic_objection": "Famous Australian roadside icon, strong views (28k) and a visitor complex; free. A 15-30 minute stop with the fountain park, not under any dispute.",
+   "photo": {
+    "file": "DogonTuckerbox.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:DogonTuckerbox.jpg",
+    "width": 1536,
+    "height": 2048,
+    "licence": "CC BY-SA 2.5"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "Close view of the dog statue, 2005; the dog is the subject and fills the crop; 1536 px wide; the fountain wide shot has the dog too small.",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "distance_km_from_destination": 7.2,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Rusconi's Marble Cathedral",
+   "source_name": "Rusconi's Marble Cathedral",
+   "action": "spot",
+   "destination": "gundagai",
+   "id": "gundagai-2",
+   "coordinates": {
+    "latitude": -35.06298,
+    "longitude": 148.10187
+   },
+   "coordinates_source": "wikivoyage:Gundagai (listing-level, kept)",
+   "reason": "0.7 km from the proposed Gundagai centre, inside 75% of its 30 km span (22.5 km); reached from Gundagai.",
+   "category": "museum",
+   "icon": "⛪",
+   "bio_draft": "Marble model cathedral made from 20,948 pieces of NSW marble, on show in the Gundagai Visitor Centre.",
+   "hours": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Gundagai"
+   ],
+   "other_sources": [],
+   "skeptic_objection": "Wikivoyage names it; paid exhibit at the visitor centre, 20,948 marble pieces; a distinct draw even if short.",
+   "photo": {
+    "file": "Gundagai Rusconi's Marble Masterpiece 006.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Gundagai_Rusconi's_Marble_Masterpiece_006.jpg",
+    "width": 2048,
+    "height": 1536,
+    "licence": "CC BY-SA 2.5"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "Marble Masterpiece model close view, 2006; the exhibit itself, a bit pink and soft; weak.",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "distance_km_from_destination": 0.7,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Prince Alfred Bridge",
+   "source_name": "Prince Alfred Bridge",
+   "action": "spot",
+   "destination": "gundagai",
+   "id": "gundagai-3",
+   "coordinates": {
+    "latitude": -35.07428,
+    "longitude": 148.10705
+   },
+   "coordinates_source": "osm:Prince Alfred Bridge (listing-level, kept)",
+   "reason": "1.0 km from the proposed Gundagai centre, inside 75% of its 30 km span (22.5 km); reached from Gundagai.",
+   "category": "historic",
+   "icon": "🌉",
+   "bio_draft": "Timber bridge of 1866 over the Murrumbidgee, billed as Australia's longest timber bridge, to walk or view.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "wiki": "Prince Alfred Bridge, Gundagai",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Gundagai"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Prince_Alfred_Bridge,_Gundagai"
+   ],
+   "skeptic_objection": "Wikivoyage names it; 1866 timber viaduct, short walk and view; marginal, one source, a 20-30 minute stop.",
+   "photo": {
+    "file": "Prince Alfred Bridge over the Murrumbidgee River in Gundagai.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Prince_Alfred_Bridge_over_the_Murrumbidgee_River_in_Gundagai.jpg",
+    "width": 3000,
+    "height": 2000,
+    "licence": "CC BY-SA 3.0 au"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "Timber viaduct over the flats, 2019; fine.",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "distance_km_from_destination": 1.0,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Junction Park",
+   "source_name": "Junction Park (Murray and Darling confluence)",
+   "action": "spot",
+   "destination": "wentworth",
+   "id": "wentworth-1",
+   "coordinates": {
+    "latitude": -34.111066,
+    "longitude": 141.909984
+   },
+   "coordinates_source": "wikivoyage:Wentworth (listing-level, kept)",
+   "reason": "0.8 km from the proposed Wentworth centre, inside 75% of its 30 km span (22.5 km); reached from Wentworth.",
+   "category": "viewpoint",
+   "icon": "🌊",
+   "bio_draft": "Park and lookout at Wentworth where the Murray and Darling rivers meet.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wentworth_(New_South_Wales)"
+   ],
+   "other_sources": [],
+   "skeptic_objection": "Wikivoyage names it; free viewing of the Murray-Darling junction. Wentworth is edge-of-region; outback pass rejected Wentworth as a town, so this spot is not duplicated there.",
+   "photo": {
+    "file": "WentworthTwoRivers.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:WentworthTwoRivers.JPG",
+    "width": 3872,
+    "height": 2592,
+    "licence": "CC BY-SA 3.0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "Confluence at Wentworth, 2009; river view with islet; fine.",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "distance_km_from_destination": 0.8,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Old Wentworth Gaol",
+   "source_name": "Old Wentworth Gaol",
+   "action": "spot",
+   "destination": "wentworth",
+   "id": "wentworth-2",
+   "coordinates": {
+    "latitude": -34.1026,
+    "longitude": 141.9134
+   },
+   "coordinates_source": "wikivoyage:Wentworth (listing-level, kept)",
+   "reason": "0.6 km from the proposed Wentworth centre, inside 75% of its 30 km span (22.5 km); reached from Wentworth.",
+   "category": "historic",
+   "icon": "🏛️",
+   "bio_draft": "Heritage-listed brick gaol of 1879-81 on Beverley Street in Wentworth, now a museum.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wentworth_(New_South_Wales)"
+   ],
+   "other_sources": [],
+   "skeptic_objection": "Review resolved to keep, marginal: heritage gaol museum (1879-81) you can go inside, like Hay Gaol; Wikivoyage lists it, one source. Against: small museum; opening hours not verified, so research must confirm.",
+   "photo": {
+    "file": "WentworthGaol2009.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:WentworthGaol2009.JPG",
+    "width": 3872,
+    "height": 2592,
+    "licence": "CC BY-SA 3.0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "Gaol gatehouse and building, 2009; clear.",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "notes": "Marginal keep; opening hours not verified, research must confirm or it goes to review.",
+   "distance_km_from_destination": 0.6,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Perry Sandhills",
+   "source_name": "Perry Sandhills",
+   "action": "spot",
+   "destination": "wentworth",
+   "id": "wentworth-3",
+   "coordinates": {
+    "latitude": -34.101547,
+    "longitude": 141.867269
+   },
+   "coordinates_source": "wikivoyage:Wentworth (listing-level, kept)",
+   "reason": "4.6 km from the proposed Wentworth centre, inside 75% of its 30 km span (22.5 km); reached from Wentworth.",
+   "category": "nature",
+   "icon": "🏜️",
+   "bio_draft": "Large sand dunes on Renmark Road near Wentworth, open to walk and climb.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 630,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wentworth_(New_South_Wales)"
+   ],
+   "other_sources": [],
+   "skeptic_objection": "Wikivoyage names the dunes; free to walk; one source but a natural second-tier stop.",
+   "photo": {
+    "file": "Perry Sandhills near Wentworth, New South Wales 2648 2025-02-16 15-20-50.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Perry_Sandhills_near_Wentworth,_New_South_Wales_2648_2025-02-16_15-20-50.jpg",
+    "width": 4032,
+    "height": 2236,
+    "licence": "CC0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "Dune and scrub, 2025; plain but the dunes themselves.",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "distance_km_from_destination": 4.6,
+   "inside_75pct_span": true
+  },
+  {
+   "name": "Woomargama National Park",
+   "source_name": "Woomargama National Park",
+   "action": "new-destination",
+   "destination": null,
+   "id": "woomargama-national-park",
+   "coordinates": {
+    "latitude": -35.87143333,
+    "longitude": 147.48535556
+   },
+   "coordinates_source": "wikipedia:Woomargama National Park (listing-level, kept)",
+   "reason": "National park: every national park is a destination (COVERAGE.md Granularity). The park itself is the destination; its sub-sights are rejected as parts of it. No other kept place lies within 22.5 km of this point. Thin: no separate spots yet; if declined it stands alone.",
+   "wiki": "Woomargama National Park",
+   "views": 553,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/woomargama-national-park"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Woomargama_National_Park"
+   ],
+   "skeptic_objection": "NPWS park; a national park is always a destination or spot. Photo is a creek waterfall only.",
+   "photo": {
+    "file": "Waterfall, Woomargama National Park.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Waterfall,_Woomargama_National_Park.jpg",
+    "width": 3840,
+    "height": 2160,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "Basin Creek waterfall in the park (geo/category Woomargama NP), 2021; sole Commons image of the park; brightness ok.",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "proposed_destination_id": "woomargama-national-park",
+   "proposed_defaultZoomSpanKm": 30,
+   "category": "park",
+   "thin": true,
+   "category_as_spot": "nature",
+   "icon": "🌲",
+   "bio_draft": "Largest protected forest west of the Great Dividing Range, with camping, hiking and 4WD touring.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null
+  },
+  {
+   "name": "Murray Valley National Park",
+   "source_name": "Murray Valley National Park",
+   "action": "new-destination",
+   "destination": null,
+   "id": "murray-valley-national-park",
+   "coordinates": {
+    "latitude": -35.7933,
+    "longitude": 145.027
+   },
+   "coordinates_source": "wikivoyage:Riverina (listing-level, kept)",
+   "reason": "National park: every national park is a destination (COVERAGE.md Granularity). The park itself is the destination; its sub-sights are rejected as parts of it. No other kept place lies within 45.0 km of this point. Thin: no separate spots yet; if declined it stands alone.",
+   "wiki": "Murray Valley National Park",
+   "views": 682,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/murray-valley-national-park",
+    "https://en.wikivoyage.org/wiki/Riverina"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Murray_Valley_National_Park"
+   ],
+   "skeptic_objection": "Two counted sources; Ramsar red gum park; has a bird hide and picnic grounds.",
+   "photo": {
+    "file": "View of wetlands in Murray Valley National Park, NSW.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:View_of_wetlands_in_Murray_Valley_National_Park,_NSW.jpg",
+    "width": 5152,
+    "height": 3864,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "Red gum wetland from Reed Beds Bird Hide, 2021; fine.",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "proposed_destination_id": "murray-valley-national-park",
+   "proposed_defaultZoomSpanKm": 60,
+   "category": "park",
+   "thin": true,
+   "category_as_spot": "nature",
+   "icon": "🌳",
+   "bio_draft": "Red gum forest park on the Murray with Ramsar wetlands, a bird hide, picnic grounds and camping.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null
+  },
+  {
+   "name": "Willandra National Park",
+   "source_name": "Willandra National Park",
+   "action": "new-destination",
+   "destination": null,
+   "id": "willandra-national-park",
+   "coordinates": {
+    "latitude": -33.498333,
+    "longitude": 145.501111
+   },
+   "coordinates_source": "wikivoyage:Riverina (listing-level, kept)",
+   "reason": "National park: every national park is a destination (COVERAGE.md Granularity). The park itself is the destination; its sub-sights are rejected as parts of it. No other kept place lies within 45.0 km of this point. Thin: no separate spots yet; if declined it stands alone.",
+   "wiki": "Willandra National Park",
+   "views": 843,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/willandra-national-park",
+    "https://en.wikivoyage.org/wiki/Riverina"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Willandra_National_Park"
+   ],
+   "skeptic_objection": "Owned by riverina-murray (see Yanga). Two counted sources; distinct from Willandra Lakes (Mungo), which is the outback region's rejected item.",
+   "photo": {
+    "file": "Willandra, New South Wales.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Willandra,_New_South_Wales.jpg",
+    "width": 4841,
+    "height": 3000,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "Outback track with a kangaroo; ok as the park drive but not a landmark; weak, flagged.",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "proposed_destination_id": "willandra-national-park",
+   "proposed_defaultZoomSpanKm": 60,
+   "category": "park",
+   "thin": true,
+   "coordinates_note": "Distinct from Willandra Lakes (Mungo), rejected by the outback pass.",
+   "category_as_spot": "nature",
+   "icon": "🌾",
+   "bio_draft": "Pastoral-heritage park on Willandra Creek with self-drive, cycling and walking routes.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null
+  },
+  {
+   "name": "Yanga National Park",
+   "source_name": "Yanga National Park",
+   "action": "new-destination",
+   "destination": null,
+   "id": "yanga-national-park",
+   "coordinates": {
+    "latitude": -34.65,
+    "longitude": 143.583
+   },
+   "coordinates_source": "wikivoyage:Balranald (listing-level, kept)",
+   "reason": "National park: every national park is a destination (COVERAGE.md Granularity). The park itself is the destination; its sub-sights are rejected as parts of it. No other kept place lies within 30.0 km of this point. Thin: no separate spots yet; if declined it stands alone.",
+   "wiki": "Yanga National Park",
+   "views": 1520,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/yanga-national-park",
+    "https://en.wikivoyage.org/wiki/Yanga_National_Park"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Yanga_National_Park"
+   ],
+   "skeptic_objection": "SINGLE DECISION for Yanga, Murrumbidgee Valley NP and Willandra NP: they are judged and owned by riverina-murray; the outback pass (which holds Yanga as review and rejects only Willandra Lakes, a different place) should drop its Yanga review so it is not added twice. Two counted sources.",
+   "photo": {
+    "file": "Murrimbidgee River, Yanga Campground in Yanga National Park, NSW.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Murrimbidgee_River,_Yanga_Campground_in_Yanga_National_Park,_NSW.jpg",
+    "width": 5184,
+    "height": 3888,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "Murrumbidgee at Yanga campground, 2020; river and red gums; fine.",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "proposed_destination_id": "yanga-national-park",
+   "proposed_defaultZoomSpanKm": 40,
+   "category": "park",
+   "thin": true,
+   "coordinates_note": "Wikivoyage Balranald point; Balranald itself (outback pass) has no kept candidate. Outback pass must drop its Yanga review.",
+   "category_as_spot": "nature",
+   "icon": "🏞️",
+   "bio_draft": "National park beside Balranald on the Murrumbidgee with Yanga Lake, camping and historic station buildings.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null
+  },
+  {
+   "name": "Murrumbidgee Valley National Park",
+   "source_name": "Murrumbidgee Valley National Park",
+   "action": "new-destination",
+   "destination": null,
+   "id": "murrumbidgee-valley-national-park",
+   "coordinates": {
+    "latitude": -34.715,
+    "longitude": 146.20111111
+   },
+   "coordinates_source": "wikipedia:Murrumbidgee Valley National Park (listing-level, kept)",
+   "reason": "National park: every national park is a destination (COVERAGE.md Granularity). The park itself is the destination; its sub-sights are rejected as parts of it. No other kept place lies within 22.5 km of this point. Thin: no separate spots yet; if declined it stands alone.",
+   "wiki": "Murrumbidgee Valley National Park",
+   "views": 475,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/murrumbidgee-valley-national-park"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Murrumbidgee_Valley_National_Park"
+   ],
+   "skeptic_objection": "Owned by riverina-murray (see Yanga). A national park along the river between Narrandera and Balranald; Wikipedia plus NPWS. Middle Beach is part of this park and stays rejected.",
+   "photo": null,
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "reject",
+   "skeptic_photo_reason": "Commons has precinct photos (Platt Beach, Berry Jerry, MIA 1 precinct, 3264x2448, 2017) that I did not view on a contact sheet; none accepted yet, pick after a look.",
+   "photo_status": "no passing photo found by skeptic; Lens to search outside Commons (IMAGES.md)",
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "proposed_destination_id": "murrumbidgee-valley-national-park",
+   "proposed_defaultZoomSpanKm": 30,
+   "category": "park",
+   "thin": true,
+   "coordinates_note": "Wikipedia centroid of a linear park between Narrandera and Balranald (skeptic LOW-style point); replace with the main visitor access during destination research. Middle Beach is part of this park and stays rejected.",
+   "category_as_spot": "nature",
+   "icon": "🛶",
+   "bio_draft": "Riverside national park with river camping, fishing, kayaking and birdwatching, and few facilities.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null
+  },
+  {
+   "name": "The Rock",
+   "source_name": "The Rock (Hanging Rock Hill)",
+   "action": "standalone",
+   "destination": null,
+   "id": "the-rock",
+   "coordinates": {
+    "latitude": -35.27875,
+    "longitude": 147.07609
+   },
+   "coordinates_source": "osm:leisure=nature_reserve The Rock Nature Reserve - Kengal Aboriginal Place (Photon/Nominatim, reserve is the hill); replaces rounded Wikipedia town point; Commons category The Rock Hill geotag -35.27495,147.07197 agrees within 700 m (summit track start)",
+   "reason": "32 km from Wagga Wagga, outside its 30 km reach; reached on its own from The Rock village on the Olympic Highway.",
+   "category": "hike",
+   "icon": "⛰️",
+   "bio_draft": "Granite hill with a walk to the summit and views over the Riverina plains, west of The Rock township.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "wiki": "The Rock, New South Wales",
+   "views": 6708,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Riverina",
+    "https://en.wikivoyage.org/wiki/Wagga_Wagga"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/The_Rock,_New_South_Wales"
+   ],
+   "skeptic_objection": "Two counted sources; granite monolith with a walking track and plains views. Pin replaced (the Wikipedia point was a rounded town coordinate). Stand-alone or Wagga cluster by distance, not for this pass.",
+   "photo": {
+    "file": "Staying Still 117 - The Cliffs of Kengal.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Staying_Still_117_-_The_Cliffs_of_Kengal.jpg",
+    "width": 2548,
+    "height": 3000,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "Category The Rock Hill (geotag -35.2750,147.0720); dead tree on the rock top with plains below, 2016; not the whole monolith, a summit view; acceptable.",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "hold-for-pin",
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "notes": "HOLD FOR PIN: the point is the nature-reserve centroid (osm leisure=nature_reserve The Rock Nature Reserve - Kengal Aboriginal Place); Commons geotag -35.27495,147.07197 (summit track start) is within 700 m; take the walking track start or summit. Walk is about 6 km.",
+   "hold_for_pin": [
+    "HOLD FOR PIN: the point is the nature-reserve centroid (osm leisure=nature_reserve The Rock Nature Reserve - Kengal Aboriginal Place); Commons geotag -35.27495,147.07197 (summit track start) is within 700 m; take the walking track start or summit. Walk is about 6 km."
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney"
+  },
+  {
+   "name": "Holbrook Submarine Museum",
+   "source_name": "Holbrook Submarine Institution",
+   "action": "standalone",
+   "destination": null,
+   "id": "holbrook-submarine-museum",
+   "coordinates": {
+    "latitude": -35.71858,
+    "longitude": 147.3163
+   },
+   "coordinates_source": "osm:Holbrook Submarine Museum (listing-level, kept)",
+   "reason": "Hume Highway town 54 km from Albury; the nearest proposed destination (Woomargama NP, 23 km) is not where its visitors base.",
+   "category": "museum",
+   "icon": "🚢",
+   "bio_draft": "Submarine museum in Holbrook, with the decommissioned HMAS Otway displayed in Germanton Park.",
+   "hours": "10:00 AM – 4:00 PM (Wikivoyage listing, to re-verify)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "wiki": "Holbrook Submarine Institution",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Holbrook"
+   ],
+   "other_sources": [],
+   "skeptic_objection": "Verified: Wikivoyage Holbrook (NSW) names Holbrook Submarine Museum, listed hours 10 AM-4 PM, adults about $6 (2017, stale), own site holbrooksubmarinemuseum.com.au loads. Re-verify hours/price in research; Wikivoyage lists the park casing (HMAS Otway) as free to see outside.",
+   "photo": {
+    "file": "Submarine HMAS Otway in Germanton Park, Holbrook, NSW, 2023, 03.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Submarine_HMAS_Otway_in_Germanton_Park,_Holbrook,_NSW,_2023,_03.jpg",
+    "width": 4032,
+    "height": 3024,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "HMAS Otway casing in Germanton Park, 2023, clear; submarine near centre.",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "notes": "Skeptic: own site holbrooksubmarinemuseum.com.au loads (candidate ticketUrl); Wikivoyage hours 10-4 and price ~$6 (2017) are stale; the HMAS Otway outside is free to see.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney"
+  },
+  {
+   "name": "Narrandera Flora and Fauna Reserve",
+   "source_name": "Narrandera Flora and Fauna Reserve",
+   "action": "standalone",
+   "destination": null,
+   "id": "narrandera-flora-and-fauna-reserve",
+   "coordinates": {
+    "latitude": -34.77409,
+    "longitude": 146.58463
+   },
+   "coordinates_source": "osm:leisure=nature_reserve Murrumbidgee Valley Nature Reserve (Narrandera); LOW-MEDIUM centroid, koala reserve entrance not found (Overpass down); research to replace with the Koala Reserve car park",
+   "reason": "Narrandera is a small town with no destination of its own; 32+ km from the Murrumbidgee Valley park point, reached on its own.",
+   "category": "nature",
+   "icon": "🐨",
+   "bio_draft": "River red gum reserve on the Murrumbidgee where koalas are regularly seen, reached by a dirt trail from town.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "wiki": "Narrandera Flora and Fauna Reserve",
+   "views": 0,
+   "counted_sources": [
+    "https://www.theriverina.com.au/narrandera"
+   ],
+   "other_sources": [],
+   "skeptic_objection": "Regional board (theriverina.com.au) names the koala reserve; koalas are a clear reason to stop. Name is the board/Wikivoyage listing \"Koala reserve\"; pin is a reserve centroid, replace with the reserve entrance in research. Cluster: none (Narrandera is small).",
+   "photo": {
+    "file": "Koala at the Narrandera Wetlands.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Koala_at_the_Narrandera_Wetlands.jpg",
+    "width": 2448,
+    "height": 3264,
+    "licence": "CC BY-SA 3.0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "Koala in a river red gum, Narrandera, 2017 (category Narrandera Wetlands, geotag in town); the koalas are the draw but this is the wetlands precinct, not proven inside the reserve; weak.",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "hold-for-pin",
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "notes": "HOLD FOR PIN: the point is the reserve centroid (LOW-MEDIUM); replace with the Koala Reserve car park or entrance.",
+   "hold_for_pin": [
+    "HOLD FOR PIN: the point is the reserve centroid (LOW-MEDIUM); replace with the Koala Reserve car park or entrance."
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney"
+  },
+  {
+   "name": "Big Guitar",
+   "source_name": "Big Guitar (Narrandera)",
+   "action": "standalone",
+   "destination": null,
+   "id": "big-guitar-narrandera",
+   "coordinates": {
+    "latitude": -34.74532,
+    "longitude": 146.55051
+   },
+   "coordinates_source": "wikivoyage listing lat/long at the Visitor Information Centre, Cadell St (listing-level, not town point)",
+   "reason": "Narrandera is too small for a destination (one kept spot plus the held koala reserve); stands alone.",
+   "category": "landmark",
+   "icon": "🎸",
+   "bio_draft": "Giant playable guitar at the Narrandera Visitor Information Centre, a roadside Big Thing visitors photograph.",
+   "hours": null,
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Narrandera",
+    "https://www.dailyadvertiser.com.au/story/5283316/is-the-big-sherrin-the-catalyst-for-a-riverina-big-things-trail/?cs=148"
+   ],
+   "other_sources": [],
+   "skeptic_objection": "Two sources (Wikivoyage Do listing with coordinates plus a regional news piece on the Big Things trail); playable roadside guitar at the visitor centre. Marginal, quirky-icon rule; 10-minute stop, kept only as a roadside icon.",
+   "photo": null,
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "reject",
+   "skeptic_photo_reason": "none: no Commons file of the guitar (geosearch returned only memorials and streets).",
+   "photo_status": "no passing photo found by skeptic; Lens to search outside Commons (IMAGES.md)",
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "notes": "Marginal quirky-icon keep; Wikivoyage listing coordinates are at the Visitor Information Centre, Cadell St.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney"
+  },
+  {
+   "name": "Fivebough and Tuckerbil Wetlands",
+   "source_name": "Fivebough and Tuckerbil Wetlands",
+   "action": "standalone",
+   "destination": null,
+   "id": "fivebough-and-tuckerbil-wetlands",
+   "coordinates": {
+    "latitude": -34.533072,
+    "longitude": 146.43018
+   },
+   "coordinates_source": "wikivoyage:Leeton (listing-level, kept)",
+   "reason": "Beside Leeton, 44 km from Griffith (outside its 37.5 km reach); no Leeton destination (its other candidates were rejected).",
+   "category": "nature",
+   "icon": "🦆",
+   "bio_draft": "Ramsar-listed wetlands beside Leeton with boardwalks, walking trails and bird hides.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "wiki": "Fivebough and Tuckerbil Wetlands",
+   "views": 365,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Leeton"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Fivebough_and_Tuckerbil_Wetlands"
+   ],
+   "skeptic_objection": "Review resolved to keep, marginal: Ramsar-listed wetlands with a boardwalk walk and hides; Wikivoyage Leeton lists it (one source). Against: a birding site that is only meaningful to birders; kept as a half-hour nature walk.",
+   "photo": {
+    "file": "Wetlands Walk at Fivebough Wetlands (4).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Wetlands_Walk_at_Fivebough_Wetlands_(4).jpg",
+    "width": 3264,
+    "height": 2448,
+    "licence": "CC BY-SA 3.0 au"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "Wetlands walk beside reeds, 2016-17; clear but ordinary; weak.",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney"
+  },
+  {
+   "name": "Tumbarumba to Rosewood Rail Trail",
+   "source_name": "Tumbarumba–Rosewood Rail Trail",
+   "action": "standalone",
+   "destination": null,
+   "id": "tumbarumba-rosewood-rail-trail",
+   "coordinates": {
+    "latitude": -35.7858,
+    "longitude": 147.98996
+   },
+   "coordinates_source": "photon highway=cycleway \"Tumbarumba to Rosewood Rail Trail\", a segment centre near Tumbarumba (LOW); the other segment sits at -35.70045,147.88361 (Rosewood end); true route midpoint needs Overpass way geometry, rerun the midpoint step",
+   "reason": "A linear trail on the Snowy foothills, far from every proposed destination; reached from Tumbarumba.",
+   "category": "hike",
+   "icon": "🚴",
+   "bio_draft": "21 km rail trail on the former Tumbarumba branch line, for walking and cycling through scenic countryside.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Tumbarumba"
+   ],
+   "other_sources": [],
+   "skeptic_objection": "Wikivoyage Tumbarumba names the 21 km trail; a rail trail is a place to walk or cycle for hours. Pin is a segment point (Overpass was down), not yet the true midpoint; re-run the midpoint step.",
+   "photo": null,
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "reject",
+   "skeptic_photo_reason": "none: only Bills Horse Trough files nearby; search outside Commons.",
+   "photo_status": "no passing photo found by skeptic; Lens to search outside Commons (IMAGES.md)",
+   "status": "hold-for-pin",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "notes": "HOLD FOR PIN: LOW. The skeptic point is a segment near Tumbarumba (other segment -35.70045,147.88361); the true route midpoint needs Overpass way geometry.",
+   "hold_for_pin": [
+    "HOLD FOR PIN: LOW. The skeptic point is a segment near Tumbarumba (other segment -35.70045,147.88361); the true route midpoint needs Overpass way geometry."
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney"
+  },
+  {
+   "name": "Bradman's Birthplace Museum",
+   "source_name": "Bradman's Birthplace Museum",
+   "action": "standalone",
+   "destination": null,
+   "id": "bradmans-birthplace-museum",
+   "coordinates": {
+    "latitude": -34.631,
+    "longitude": 148.021
+   },
+   "coordinates_source": "wikivoyage:Cootamundra (listing-level, kept)",
+   "reason": "Cootamundra has only two kept places (this and the Cricket Captains Walk); thin for a destination, 65 km from Gundagai, so standalone.",
+   "category": "museum",
+   "icon": "🏏",
+   "bio_draft": "Cottage at 89 Adams Street in Cootamundra where Sir Donald Bradman was born, now a museum of memorabilia.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Cootamundra"
+   ],
+   "other_sources": [],
+   "skeptic_objection": "Wikivoyage names it with address and hours; cottage museum, paid; a recognised draw for cricket fans.",
+   "photo": {
+    "file": "Cootamundra Bradman's Birthplace Museum 001.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Cootamundra_Bradman's_Birthplace_Museum_001.JPG",
+    "width": 5624,
+    "height": 3376,
+    "licence": "CC BY 3.0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "The birthplace cottage, 2015; ordinary building but it is the attraction; fine.",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney"
+  },
+  {
+   "name": "Cricket Captains Walk",
+   "source_name": "Cricket Captains Walk",
+   "action": "standalone",
+   "destination": null,
+   "id": "cricket-captains-walk",
+   "coordinates": {
+    "latitude": -34.6368,
+    "longitude": 148.0207
+   },
+   "coordinates_source": "wikivoyage:Cootamundra (listing-level, kept)",
+   "reason": "Cootamundra has only two kept places; thin for a destination, so standalone (see Bradman's Birthplace Museum).",
+   "category": "monument",
+   "icon": "🏏",
+   "bio_draft": "Free 200 m walk in Cootamundra with bronze busts of every Australian Test captain and a life-size Bradman.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 875,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Cootamundra"
+   ],
+   "other_sources": [],
+   "skeptic_objection": "Wikivoyage Cootamundra names it (plus the VisitNSW link) as a Do listing; free, 24 hours, bronze busts with a life-size Bradman, 20-30 minutes. Counted source confirmed; marginal but named.",
+   "photo": {
+    "file": "Cricket Captains Walk 4.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Cricket_Captains_Walk_4.jpg",
+    "width": 3648,
+    "height": 2736,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "Busts along the path, 2019; recognisable.",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney"
+  },
+  {
+   "name": "Coolamon Fire Museum",
+   "source_name": "Coolamon Fire Museum",
+   "action": "standalone",
+   "destination": null,
+   "id": "coolamon-fire-museum",
+   "coordinates": {
+    "latitude": -34.8134,
+    "longitude": 147.1993
+   },
+   "coordinates_source": "wikivoyage:Coolamon (listing-level, kept)",
+   "reason": "36 km from Wagga Wagga and 36 km from Junee, outside both reaches; reached on its own on the Olympic Highway.",
+   "category": "museum",
+   "icon": "🚒",
+   "bio_draft": "Museum of fire-fighting equipment on Loughnan Street in Coolamon, open 10 am to 4 pm.",
+   "hours": "10:00 AM – 4:00 PM",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Coolamon",
+    "https://www.theriverina.com.au/coolamon"
+   ],
+   "other_sources": [],
+   "skeptic_objection": "Two counted sources; open museum; small town, 30-45 minutes. Marginal on distinctness but two sources meet the bar.",
+   "photo": {
+    "file": "Coolamon Fire Museum, NSW, 2023, 14.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Coolamon_Fire_Museum,_NSW,_2023,_14.jpg",
+    "width": 4032,
+    "height": 3024,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "Fire-brigade hand pump exhibit inside, 2023; weak: interior detail, no exterior.",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney"
+  },
+  {
+   "name": "Temora Aviation Museum",
+   "source_name": "Temora Aviation Museum",
+   "action": "standalone",
+   "destination": null,
+   "id": "temora-aviation-museum",
+   "coordinates": {
+    "latitude": -34.4274,
+    "longitude": 147.5151
+   },
+   "coordinates_source": "wikivoyage:Temora (listing-level, kept)",
+   "reason": "Town headline attraction, 50 km from Junee and far from every other base; standalone.",
+   "category": "museum",
+   "icon": "✈️",
+   "bio_draft": "Aviation museum at Temora Airport with flying warbirds, a large collection and VR exhibits.",
+   "hours": "Mon–Fri 10:00 AM – 4:00 PM (weekend hours on the museum page, to confirm)",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "wiki": "Temora Aviation Museum",
+   "views": 2951,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Temora",
+    "https://www.theriverina.com.au/temora"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Temora_Aviation_Museum"
+   ],
+   "skeptic_objection": "Verified: aviationmuseum.com.au opening hours page lists Monday-Friday 10-4 (weekend hours on the page too); flying displays and simulators; two counted sources; a headline attraction. Cluster: Temora.",
+   "photo": {
+    "file": "De Havilland DH-82A Tiger Moth II AN1103136.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:De_Havilland_DH-82A_Tiger_Moth_II_AN1103136.jpg",
+    "width": 1600,
+    "height": 1058,
+    "licence": "GFDL 1.2"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "Tiger Moth in the museum hangar; the 2009 exterior shows a car park with people.",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "notes": "Weekday hours verified by skeptic on aviationmuseum.com.au; that site is the candidate ticketUrl.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney"
+  },
+  {
+   "name": "Greens Gunyah Museum",
+   "source_name": "Greens Gunyah Museum",
+   "action": "standalone",
+   "destination": null,
+   "id": "greens-gunyah-museum",
+   "coordinates": {
+    "latitude": -35.2204,
+    "longitude": 146.7136
+   },
+   "coordinates_source": "wikivoyage:Lockhart (listing-level, kept)",
+   "reason": "Lockhart is a small town far from any destination.",
+   "category": "museum",
+   "icon": "🧶",
+   "bio_draft": "Lockhart museum with a wool art gallery and collections on the history of the verandah town.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lockhart",
+    "https://www.theriverina.com.au/lockhart"
+   ],
+   "other_sources": [],
+   "skeptic_objection": "Two counted sources; Lockhart museum with a wool art gallery; small, but two sources and open to the public.",
+   "photo": {
+    "file": "LockhartGreensGunyahMuseum.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:LockhartGreensGunyahMuseum.JPG",
+    "width": 3445,
+    "height": 2481,
+    "licence": "CC BY-SA 3.0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "Museum facade 2008, signed; ok.",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney"
+  },
+  {
+   "name": "Tocumwal Town Beach",
+   "source_name": "Tocumwal Town Beach",
+   "action": "standalone",
+   "destination": null,
+   "id": "tocumwal-town-beach",
+   "coordinates": {
+    "latitude": -35.818109,
+    "longitude": 145.559549
+   },
+   "coordinates_source": "wikivoyage:Tocumwal (listing-level, kept)",
+   "reason": "Tocumwal has two kept places (beach and Big Cod); thin, 49 km from Murray Valley NP; standalone.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio_draft": "Large Murray River beach in red gum forest at Tocumwal, popular for swimming and camping; unpatrolled.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Tocumwal"
+   ],
+   "other_sources": [],
+   "skeptic_objection": "Wikivoyage names the Murray River beach; second-tier beach stop under the rule on beaches and harbour towns.",
+   "photo": {
+    "file": "Tocumwal Town Beach 010.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Tocumwal_Town_Beach_010.JPG",
+    "width": 3872,
+    "height": 2592,
+    "licence": "CC BY 3.0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "River and sand beach, 2012; fine.",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney"
+  },
+  {
+   "name": "Big Cod",
+   "source_name": "The Big Cod (Tocumwal)",
+   "action": "standalone",
+   "destination": null,
+   "id": "big-cod-tocumwal",
+   "coordinates": {
+    "latitude": -35.811674,
+    "longitude": 145.56401
+   },
+   "coordinates_source": "wikivoyage:Tocumwal (listing-level, kept)",
+   "reason": "Tocumwal has two kept places; thin; standalone.",
+   "category": "landmark",
+   "icon": "🐟",
+   "bio_draft": "Giant fibreglass Murray cod on the Tocumwal foreshore, installed in 1968, a roadside Big Thing.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Tocumwal"
+   ],
+   "other_sources": [],
+   "skeptic_objection": "Quirky roadside icon on the foreshore; one source suffices for a big thing.",
+   "photo": {
+    "file": "Tocumwal Big Cod.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Tocumwal_Big_Cod.JPG",
+    "width": 3608,
+    "height": 2484,
+    "licence": "CC BY-SA 3.0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "Big Cod statue, 2010; fills the crop.",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney"
+  },
+  {
+   "name": "Coleambally Bucyrus Dragline",
+   "source_name": "Coleambally Bucyrus Dragline",
+   "action": "standalone",
+   "destination": null,
+   "id": "coleambally-bucyrus-dragline",
+   "coordinates": {
+    "latitude": -34.798425,
+    "longitude": 145.878206
+   },
+   "coordinates_source": "median of 16 geotagged Commons files of the dragline (LOW per resolver, but 87 m from Lions Park point; accept as the machine itself)",
+   "reason": "Tiny irrigation town on its own; 30 km from the Murrumbidgee Valley point but not reached from the park.",
+   "category": "landmark",
+   "icon": "🏗️",
+   "bio_draft": "Working 1935 Bucyrus dragline in Lions Park, one of four machines that dug the irrigation channels.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Coleambally"
+   ],
+   "other_sources": [],
+   "skeptic_objection": "Wikivoyage Coleambally names it with a description and photo; free, open-access machine in Lions Park, one of four dug the irrigation channels; short stop, kept as a quirky icon. The Wineglass Water Tower (same page) is the weaker of the two and goes to review.",
+   "photo": {
+    "file": "Bucyrus Erie Class III dragline at Lions Park in Coleambally.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Bucyrus_Erie_Class_III_dragline_at_Lions_Park_in_Coleambally.jpg",
+    "width": 3264,
+    "height": 2448,
+    "licence": "CC BY-SA 3.0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "Dragline in Lions Park, 2017; fine.",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "notes": "Pin is the median of 16 geotagged Commons files of the dragline (LOW per resolver) but 87 m from the Lions Park point; accepted as the machine itself.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney"
+  },
+  {
+   "name": "Biggest Football",
+   "source_name": "Biggest Football (Ungarie)",
+   "action": "standalone",
+   "destination": null,
+   "id": "biggest-football-ungarie",
+   "coordinates": {
+    "latitude": -33.639089,
+    "longitude": 146.974129
+   },
+   "coordinates_source": "photon tourism=artwork \"Big Football\" + Commons median (HIGH)",
+   "reason": "Remote roadside icon, over 130 km from any proposed destination.",
+   "category": "landmark",
+   "icon": "🏉",
+   "bio_draft": "800 kg fibreglass Sherrin football in Bing Wallder Park at Ungarie, honouring the Daniher brothers.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://visitnsw.com/destinations/country-nsw/riverina/west-wyalong/attractions/biggest-football-ungarie"
+   ],
+   "other_sources": [],
+   "skeptic_objection": "Counted source: Visit NSW (regional tourism page, \"Biggest Football, Ungarie\") with the Daniher brothers story; very remote and a 10-minute photo stop, so marginal; kept only as a big-thing icon per the Ohakune Carrot benchmark.",
+   "photo": {
+    "file": "Ungarie Big Football 09-08-2024 001.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Ungarie_Big_Football_09-08-2024_001.jpg",
+    "width": 4369,
+    "height": 3273,
+    "licence": "CC BY-SA 4.0"
+   },
+   "photo_verdict": "candidate",
+   "skeptic_photo_verdict": "accept",
+   "skeptic_photo_reason": "Big football, 2024, clear.",
+   "photo_status": "candidate only; Lens must run the four checks before it is applied",
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "notes": "Marginal quirky-icon keep (Visit NSW source); very remote.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney"
+  }
+ ],
+ "new_destinations": [
+  {
+   "id": "wagga-wagga",
+   "name": "Wagga Wagga",
+   "coordinates": {
+    "latitude": -35.1082,
+    "longitude": 147.3598
+   },
+   "coordinates_source": "approximate town centre; resolve with resolve-pin.py (HIGH/MEDIUM) during destination research",
+   "defaultZoomSpanKm": 40,
+   "category": "city",
+   "self_place": null,
+   "members": [
+    "wagga-wagga-1 Wagga Wagga Botanic Gardens",
+    "wagga-wagga-2 Wiradjuri Walking Track"
+   ],
+   "if_declined_standalone": [
+    {
+     "name": "Wagga Wagga Botanic Gardens",
+     "source_name": "Wagga Wagga Botanic Gardens",
+     "action": "standalone",
+     "destination": null,
+     "id": "wagga-wagga-botanic-gardens",
+     "coordinates": {
+      "latitude": -35.129228,
+      "longitude": 147.364821
+     },
+     "coordinates_source": "wikivoyage:Wagga Wagga (listing-level, kept)",
+     "reason": "If the proposed Wagga Wagga destination is declined: standalone spot, reached on its own.",
+     "category": "nature",
+     "icon": "🌳",
+     "bio_draft": "Eight-hectare gardens with a small zoo, a free flight aviary and a miniature railway on Willans Hill.",
+     "hours": null,
+     "visitHoursMin": 1,
+     "visitHoursMax": 2,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 2371,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Wagga_Wagga"
+     ],
+     "other_sources": [
+      "https://en.wikipedia.org/wiki/Wagga_Wagga_Botanic_Gardens"
+     ],
+     "skeptic_objection": "Review resolved to keep: 8 ha gardens with a free aviary, small zoo and miniature railway fill 30+ minutes; Wikivoyage plus Wikipedia. Against: one counted source, a city park; kept because the zoo and aviary are a real activity, not a bare lawn. Cluster: Wagga Wagga.",
+     "photo": {
+      "file": "Wagga Wagga Botanic Gardens 1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Wagga_Wagga_Botanic_Gardens_1.jpg",
+      "width": 1500,
+      "height": 997,
+      "licence": "CC BY 3.0"
+     },
+     "photo_verdict": "candidate",
+     "skeptic_photo_verdict": "accept",
+     "skeptic_photo_reason": "Lawn and path in the gardens, colour 2008; plain but it is the gardens themselves; weak, replace if a better one turns up.",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "status": "ready for Pipeline C research",
+     "needs_research": [
+      "hours",
+      "cost",
+      "ticketUrl"
+     ],
+     "distance_km_from_destination": 2.4,
+     "inside_75pct_span": true,
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    },
+    {
+     "name": "Wiradjuri Walking Track",
+     "source_name": "Wiradjuri Walking Track",
+     "action": "standalone",
+     "destination": null,
+     "id": "wiradjuri-walking-track",
+     "coordinates": {
+      "latitude": -35.100171,
+      "longitude": 147.367548
+     },
+     "coordinates_source": "photon highway=track \"Wiradjuri Walking Track\" + Commons median -35.09978,147.36736 (HIGH); a point on the track, not its true midpoint (route length unresolved; Overpass down)",
+     "reason": "If the proposed Wagga Wagga destination is declined: standalone spot, reached on its own.",
+     "category": "hike",
+     "icon": "🚶",
+     "bio_draft": "Riverside walking track along the Murrumbidgee in Wagga Wagga, with maps at the visitor centre.",
+     "hours": null,
+     "visitHoursMin": 1,
+     "visitHoursMax": 2,
+     "free": true,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 0,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Wagga_Wagga",
+      "https://www.theriverina.com.au/"
+     ],
+     "other_sources": [],
+     "skeptic_objection": "Two counted sources (Wikivoyage and Riverina tourism); riverside walking track, 30+ minutes. Cluster: Wagga Wagga.",
+     "photo": null,
+     "photo_verdict": "candidate",
+     "skeptic_photo_verdict": "reject",
+     "skeptic_photo_reason": "Only Commons file (track marker post) is a sign, fails check 2; the river-bridge photos are not the track. none.",
+     "photo_status": "no passing photo found by skeptic; Lens to search outside Commons (IMAGES.md)",
+     "status": "hold-for-pin",
+     "needs_research": [
+      "hours",
+      "ticketUrl"
+     ],
+     "notes": "HOLD FOR PIN: skeptic point is on the track (photon highway=track + Commons median, HIGH) but not the true route midpoint; re-run the midpoint step (Overpass was down). Photo: skeptic rejected the only Commons file (a track marker post).",
+     "hold_for_pin": [
+      "HOLD FOR PIN: skeptic point is on the track (photon highway=track + Commons median, HIGH) but not the true route midpoint; re-run the midpoint step (Overpass was down). Photo: skeptic rejected the only Commons file (a track marker post)."
+     ],
+     "distance_km_from_destination": 1.1,
+     "inside_75pct_span": true,
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    }
+   ],
+   "rationale": "Largest Riverina city and regional hub; guidebook chapter. Thin today (one placed spot plus the held Wiradjuri Walking Track), kept as a hub destination under \"Sizable settlements\"; The Rock (32 km) and Coolamon (36 km) lie outside the 30 km reach."
+  },
+  {
+   "id": "albury",
+   "name": "Albury",
+   "coordinates": {
+    "latitude": -36.0737,
+    "longitude": 146.9135
+   },
+   "coordinates_source": "approximate town centre; resolve with resolve-pin.py (HIGH/MEDIUM) during destination research",
+   "defaultZoomSpanKm": 40,
+   "category": "city",
+   "self_place": null,
+   "members": [
+    "albury-1 Murray Art Museum Albury",
+    "albury-2 Hume Dam"
+   ],
+   "if_declined_standalone": [
+    {
+     "name": "Murray Art Museum Albury",
+     "source_name": "Murray Art Museum Albury",
+     "action": "standalone",
+     "destination": null,
+     "id": "murray-art-museum-albury",
+     "coordinates": {
+      "latitude": -36.080615,
+      "longitude": 146.916544
+     },
+     "coordinates_source": "wikivoyage:Albury (listing-level, kept)",
+     "reason": "If the proposed Albury destination is declined: standalone spot, reached on its own.",
+     "category": "museum",
+     "icon": "🖼️",
+     "bio_draft": "Free regional art museum on Dean Street in Albury, with changing exhibitions and more than 2,400 works in its collection.",
+     "hours": null,
+     "visitHoursMin": 1,
+     "visitHoursMax": 2,
+     "free": true,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 480,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Albury"
+     ],
+     "other_sources": [],
+     "skeptic_objection": "Wikivoyage names it; free, open 7 days (362 days a year) per mamalbury.com.au, collection of 2400+ items; a major regional gallery, one-source marginal bar met. Cluster: Albury.",
+     "photo": {
+      "file": "Murray Art Museum Albury, 2022, 02.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Murray_Art_Museum_Albury,_2022,_02.jpg",
+      "width": 3934,
+      "height": 2950,
+      "licence": "CC BY-SA 4.0"
+     },
+     "photo_verdict": "candidate",
+     "skeptic_photo_verdict": "accept",
+     "skeptic_photo_reason": "MAMA frontage, 2022 colour, clear, building is the attraction; passes crop and brightness.",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "status": "ready for Pipeline C research",
+     "needs_research": [
+      "hours",
+      "ticketUrl"
+     ],
+     "distance_km_from_destination": 0.8,
+     "inside_75pct_span": true,
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    },
+    {
+     "name": "Hume Dam",
+     "source_name": "Hume Dam",
+     "action": "standalone",
+     "destination": null,
+     "id": "hume-dam",
+     "coordinates": {
+      "latitude": -36.1067,
+      "longitude": 147.033
+     },
+     "coordinates_source": "wikivoyage:Albury (listing-level, kept)",
+     "reason": "If the proposed Albury destination is declined: standalone spot, reached on its own.",
+     "category": "landmark",
+     "icon": "🏞️",
+     "bio_draft": "Murray River dam wall you can walk across, with a viewing platform, picnic area and small open-air museum.",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 0.5,
+     "visitHoursMax": 1.5,
+     "free": true,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "wiki": "Hume Dam",
+     "views": 6723,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Albury"
+     ],
+     "other_sources": [
+      "https://en.wikipedia.org/wiki/Hume_Dam"
+     ],
+     "skeptic_objection": "Wikivoyage names the wall walk and lookout; free; one source but a genuine structure with a walk. Cluster: Albury.",
+     "photo": {
+      "file": "Full Lake Hume looking towards the dam wall in November 2010.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Full_Lake_Hume_looking_towards_the_dam_wall_in_November_2010.jpg",
+      "width": 4272,
+      "height": 2848,
+      "licence": "CC BY-SA 2.0"
+     },
+     "photo_verdict": "candidate",
+     "skeptic_photo_verdict": "accept",
+     "skeptic_photo_reason": "Dam wall across the water, 2010 colour; wall is mid-frame in the square slice.",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "status": "ready for Pipeline C research",
+     "needs_research": [
+      "ticketUrl"
+     ],
+     "distance_km_from_destination": 11.3,
+     "inside_75pct_span": true,
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    }
+   ],
+   "rationale": "Murray border city with its own Wikivoyage chapter; two kept spots (Holbrook 54 km and Woomargama 56 km are outside its reach)."
+  },
+  {
+   "id": "hay",
+   "name": "Hay",
+   "coordinates": {
+    "latitude": -34.5043,
+    "longitude": 144.8431
+   },
+   "coordinates_source": "approximate town centre; resolve with resolve-pin.py (HIGH/MEDIUM) during destination research",
+   "defaultZoomSpanKm": 30,
+   "category": "city",
+   "self_place": null,
+   "members": [
+    "hay-1 ShearOutback",
+    "hay-2 Hay Gaol",
+    "hay-3 Dunera Museum"
+   ],
+   "if_declined_standalone": [
+    {
+     "name": "ShearOutback",
+     "source_name": "ShearOutback (Shearers Hall of Fame)",
+     "action": "standalone",
+     "destination": null,
+     "id": "shearoutback",
+     "coordinates": {
+      "latitude": -34.52183,
+      "longitude": 144.8362
+     },
+     "coordinates_source": "osm:tourism=museum \"Shear Outback Hay Visitor Centre\" (Photon); MEDIUM, Sturt Hwy South Hay roundabout",
+     "reason": "If the proposed Hay destination is declined: standalone spot, reached on its own.",
+     "category": "museum",
+     "icon": "🐑",
+     "bio_draft": "Shearers' Hall of Fame museum in Hay with live shearing demonstrations daily and a café.",
+     "hours": "Mon–Sat 9:00 AM – 4:00 PM, Sun 9:00 AM – 3:00 PM",
+     "visitHoursMin": 1,
+     "visitHoursMax": 2,
+     "free": false,
+     "costMin": 20,
+     "costMax": 20,
+     "currency": "AUD",
+     "ticketUrl": null,
+     "views": 0,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Hay"
+     ],
+     "other_sources": [],
+     "skeptic_objection": "Verified on shearoutback.com.au: museum open Mon-Sat 9-4, Sun 9-3, shearing demonstrations 7 days at 10:30 and 1:00, cafe, adult admission $20 (concession $15, child $10); site suggests 1 hour for the museum. Wikivoyage names it as the highlight of Hay. Cluster: Hay.",
+     "photo": null,
+     "photo_verdict": "candidate",
+     "skeptic_photo_verdict": "reject",
+     "skeptic_photo_reason": "none on Commons (geosearch returns grass and water towers); search outside Commons; operator site shearoutback.com.au has photos (tier 2).",
+     "photo_status": "no passing photo found by skeptic; Lens to search outside Commons (IMAGES.md)",
+     "status": "ready for Pipeline C research",
+     "needs_research": [
+      "ticketUrl"
+     ],
+     "notes": "Hours, adult $20 (concession $15, child $10) and demonstrations 10:30 and 1:00 daily verified by skeptic on shearoutback.com.au; operator site shearoutback.com.au is the candidate ticketUrl, to be confirmed by Pipeline C.",
+     "distance_km_from_destination": 2.0,
+     "inside_75pct_span": true,
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    },
+    {
+     "name": "Hay Gaol",
+     "source_name": "Hay Gaol",
+     "action": "standalone",
+     "destination": null,
+     "id": "hay-gaol",
+     "coordinates": {
+      "latitude": -34.5077,
+      "longitude": 144.835
+     },
+     "coordinates_source": "wikivoyage:Hay (listing-level, kept)",
+     "reason": "If the proposed Hay destination is declined: standalone spot, reached on its own.",
+     "category": "historic",
+     "icon": "🏛️",
+     "bio_draft": "Former colonial gaol on Church Street in Hay, now a museum open daily with paid entry.",
+     "hours": "9:00 AM – 5:00 PM (Wikivoyage listing, to re-verify)",
+     "visitHoursMin": 0.5,
+     "visitHoursMax": 1,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 1146,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Hay",
+      "https://www.visithay.com.au/"
+     ],
+     "other_sources": [],
+     "skeptic_objection": "Wikivoyage lists 9AM-5PM daily, adults $4 (old price), council page; 2 counted sources. Cluster: Hay.",
+     "photo": {
+      "file": "HayGaol.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:HayGaol.JPG",
+      "width": 2272,
+      "height": 1704,
+      "licence": "CC BY-SA 3.0"
+     },
+     "photo_verdict": "candidate",
+     "skeptic_photo_verdict": "accept",
+     "skeptic_photo_reason": "Gaol entrance and path, 2007 colour; ok, a little dated.",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "status": "ready for Pipeline C research",
+     "needs_research": [
+      "cost",
+      "ticketUrl"
+     ],
+     "notes": "Wikivoyage hours 9-5 daily and adults $4 are old; Pipeline C must re-verify.",
+     "distance_km_from_destination": 0.8,
+     "inside_75pct_span": true,
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    },
+    {
+     "name": "Dunera Museum",
+     "source_name": "Dunera Museum",
+     "action": "standalone",
+     "destination": null,
+     "id": "dunera-museum",
+     "coordinates": {
+      "latitude": -34.4993,
+      "longitude": 144.8429
+     },
+     "coordinates_source": "wikivoyage:Hay (listing-level, kept)",
+     "reason": "If the proposed Hay destination is declined: standalone spot, reached on its own.",
+     "category": "museum",
+     "icon": "🚂",
+     "bio_draft": "Museum at Hay Railway Station on the Dunera ship and the WWII internment of refugees and prisoners at Hay.",
+     "hours": null,
+     "visitHoursMin": 0.5,
+     "visitHoursMax": 1,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 0,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Hay"
+     ],
+     "other_sources": [],
+     "skeptic_objection": "Wikivoyage names it with address (421 Murray St) and coordinates; opening times not found, the council page is out of date and the museum is volunteer-run: hours must be verified in research or demote to review. Cluster: Hay.",
+     "photo": {
+      "file": "Dunera Museum, Hay, NSW, 2022, 03.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Dunera_Museum,_Hay,_NSW,_2022,_03.jpg",
+      "width": 4032,
+      "height": 3024,
+      "licence": "CC BY-SA 4.0"
+     },
+     "photo_verdict": "candidate",
+     "skeptic_photo_verdict": "accept",
+     "skeptic_photo_reason": "Interior carriage gallery at the museum (2022); the station shot with a sign was rejected as sign-dominated. Weak: an interior, no exterior found.",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "status": "ready for Pipeline C research",
+     "needs_research": [
+      "hours",
+      "cost",
+      "ticketUrl"
+     ],
+     "conditional_keep": true,
+     "notes": "CONDITIONAL KEEP: opening times not found, council page out of date, volunteer-run. Demote to review if Pipeline C cannot verify hours.",
+     "distance_km_from_destination": 0.6,
+     "inside_75pct_span": true,
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    }
+   ],
+   "rationale": "Outback-edge town on the Sturt Highway with a Wikivoyage chapter; three kept spots in town."
+  },
+  {
+   "id": "griffith",
+   "name": "Griffith",
+   "coordinates": {
+    "latitude": -34.289,
+    "longitude": 146.054
+   },
+   "coordinates_source": "approximate town centre; resolve with resolve-pin.py (HIGH/MEDIUM) during destination research",
+   "defaultZoomSpanKm": 50,
+   "category": "city",
+   "self_place": null,
+   "members": [
+    "griffith-1 Griffith Pioneer Park Museum",
+    "griffith-2 Cocoparra National Park"
+   ],
+   "if_declined_standalone": [
+    {
+     "name": "Griffith Pioneer Park Museum",
+     "source_name": "Griffith Pioneer Park Museum",
+     "action": "standalone",
+     "destination": null,
+     "id": "griffith-pioneer-park-museum",
+     "coordinates": {
+      "latitude": -34.27676,
+      "longitude": 146.0551
+     },
+     "coordinates_source": "wikivoyage:Griffith (listing-level, kept)",
+     "reason": "If the proposed Griffith destination is declined: standalone spot, reached on its own.",
+     "category": "museum",
+     "icon": "🏚️",
+     "bio_draft": "Open-air museum of more than 40 heritage buildings, with an Italian immigrant section, on Remembrance Drive in Griffith.",
+     "hours": null,
+     "visitHoursMin": 2,
+     "visitHoursMax": 3,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 0,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Griffith",
+      "https://www.theriverina.com.au/griffith"
+     ],
+     "other_sources": [],
+     "skeptic_objection": "Two counted sources; open-air museum with 40+ buildings, long visit. Cluster: Griffith.",
+     "photo": null,
+     "photo_verdict": "candidate",
+     "skeptic_photo_verdict": "reject",
+     "skeptic_photo_reason": "none: only Bills Horse Trough replica (a minor exhibit); search outside Commons.",
+     "photo_status": "no passing photo found by skeptic; Lens to search outside Commons (IMAGES.md)",
+     "status": "ready for Pipeline C research",
+     "needs_research": [
+      "hours",
+      "cost",
+      "ticketUrl"
+     ],
+     "distance_km_from_destination": 1.4,
+     "inside_75pct_span": true,
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    },
+    {
+     "name": "Cocoparra National Park",
+     "source_name": "Cocoparra National Park",
+     "action": "standalone",
+     "destination": null,
+     "id": "cocoparra-national-park",
+     "coordinates": {
+      "latitude": -34.131667,
+      "longitude": 146.217778
+     },
+     "coordinates_source": "wikivoyage:Griffith (listing-level, kept)",
+     "reason": "If the proposed Griffith destination is declined: standalone spot, reached on its own.",
+     "category": "nature",
+     "icon": "🌿",
+     "bio_draft": "Range of gorges and bush near Griffith with the Jacks Creek, Falcon Falls and Store Creek walks and spring wildflowers.",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 2,
+     "visitHoursMax": 6,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "wiki": "Cocoparra National Park",
+     "views": 1384,
+     "counted_sources": [
+      "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/cocoparra-national-park",
+      "https://en.wikivoyage.org/wiki/Griffith"
+     ],
+     "other_sources": [
+      "https://en.wikipedia.org/wiki/Cocoparra_National_Park"
+     ],
+     "skeptic_objection": "NPWS page loads: \"Open\" (check alerts), bushwalking and birdwatching, half an hour from Griffith; Wikivoyage Griffith also names it. Cluster: Griffith.",
+     "photo": {
+      "file": "Cocoparra valley view.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Cocoparra_valley_view.jpg",
+      "width": 1200,
+      "height": 1600,
+      "licence": "CC BY-SA 3.0"
+     },
+     "photo_verdict": "candidate",
+     "skeptic_photo_verdict": "accept",
+     "skeptic_photo_reason": "Store Creek gorge view, portrait 1200x1600; scenic though plain; no better Commons landscape (rest are birds).",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "status": "ready for Pipeline C research",
+     "needs_research": [
+      "cost",
+      "ticketUrl"
+     ],
+     "distance_km_from_destination": 23.0,
+     "inside_75pct_span": true,
+     "np_exception": true,
+     "np_exception_reason": "National park folded into the Griffith destination: 23 km from Griffith, reached only from Griffith, with no sub-spots of its own, so a separate one-spot park destination is not proposed.",
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    }
+   ],
+   "rationale": "Riverina wine and food city with its own chapter; Cocoparra National Park is folded in (np_exception). Fivebough (44 km) is outside the 37.5 km reach."
+  },
+  {
+   "id": "junee",
+   "name": "Junee",
+   "coordinates": {
+    "latitude": -34.8698,
+    "longitude": 147.5845
+   },
+   "coordinates_source": "approximate town centre; resolve with resolve-pin.py (HIGH/MEDIUM) during destination research",
+   "defaultZoomSpanKm": 44,
+   "category": "city",
+   "self_place": null,
+   "members": [
+    "junee-1 Junee Roundhouse Museum",
+    "junee-2 Junee Licorice and Chocolate Factory",
+    "junee-3 Bethungra Spiral"
+   ],
+   "if_declined_standalone": [
+    {
+     "name": "Junee Roundhouse Museum",
+     "source_name": "Roundhouse Museum",
+     "action": "standalone",
+     "destination": null,
+     "id": "junee-roundhouse-museum",
+     "coordinates": {
+      "latitude": -34.8834,
+      "longitude": 147.5791
+     },
+     "coordinates_source": "wikivoyage:Junee (listing-level, kept)",
+     "reason": "If the proposed Junee destination is declined: standalone spot, reached on its own.",
+     "category": "museum",
+     "icon": "🚂",
+     "bio_draft": "Railway roundhouse museum in Junee with engines and carriages to explore, once the Southern Hemisphere's largest.",
+     "hours": null,
+     "visitHoursMin": 1,
+     "visitHoursMax": 2,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 0,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Junee",
+      "https://www.theriverina.com.au/junee"
+     ],
+     "other_sources": [],
+     "skeptic_objection": "Two counted sources; large railway roundhouse museum with locomotives; Cluster: Junee.",
+     "photo": {
+      "file": "The Roundhouse, Junee - January 2017.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:The_Roundhouse,_Junee_-_January_2017.jpg",
+      "width": 5760,
+      "height": 2282,
+      "licence": "CC BY 2.0"
+     },
+     "photo_verdict": "candidate",
+     "skeptic_photo_verdict": "accept",
+     "skeptic_photo_reason": "Roundhouse and turntable, 5760x2282 wide; the building is in the middle slice. The 2021 shot is dark/B&W-like and fails brightness.",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "status": "ready for Pipeline C research",
+     "needs_research": [
+      "hours",
+      "cost",
+      "ticketUrl"
+     ],
+     "distance_km_from_destination": 1.6,
+     "inside_75pct_span": true,
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    },
+    {
+     "name": "Junee Licorice and Chocolate Factory",
+     "source_name": "Junee Licorice Factory",
+     "action": "standalone",
+     "destination": null,
+     "id": "junee-licorice-and-chocolate-factory",
+     "coordinates": {
+      "latitude": -34.86011,
+      "longitude": 147.579484
+     },
+     "coordinates_source": "wikivoyage:Junee (listing-level, kept)",
+     "reason": "If the proposed Junee destination is declined: standalone spot, reached on its own.",
+     "category": "entertainment",
+     "icon": "🍬",
+     "bio_draft": "Licorice and chocolate factory in Junee where visitors watch weekday making, make their own sweets and shop.",
+     "hours": null,
+     "visitHoursMin": 0.5,
+     "visitHoursMax": 1,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 0,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Junee",
+      "https://www.theriverina.com.au/junee"
+     ],
+     "other_sources": [],
+     "skeptic_objection": "Two counted sources; Wikivoyage: make-your-own sweets, weekday making, cafe, shop. The operator domain (greengroveorganics.com.au) now returns a Wix \"ConnectYourDomain\" error, so hours/ticket URL and whether it still operates must be verified before shipping; if unverified, demote to review. A shop-factory visit but a named Junee draw.",
+     "photo": {
+      "file": "Junee Licorice and Chocolate factory 2008.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Junee_Licorice_and_Chocolate_factory_2008.jpg",
+      "width": 1280,
+      "height": 851,
+      "licence": "CC BY-SA 2.0"
+     },
+     "photo_verdict": "candidate",
+     "skeptic_photo_verdict": "accept",
+     "skeptic_photo_reason": "Factory building 2008, 1280 wide; old industrial shed, not the sweets; weak but ok.",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "status": "ready for Pipeline C research",
+     "needs_research": [
+      "hours",
+      "cost",
+      "ticketUrl"
+     ],
+     "conditional_keep": true,
+     "notes": "CONDITIONAL KEEP: operator domain greengroveorganics.com.au returned a Wix ConnectYourDomain error. Demote to review if hours, ticketUrl or continued operation cannot be verified. Name shown: confirm the current trading name in research.",
+     "distance_km_from_destination": 1.2,
+     "inside_75pct_span": true,
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    },
+    {
+     "name": "Bethungra Spiral",
+     "source_name": "Bethungra Spiral",
+     "action": "standalone",
+     "destination": null,
+     "id": "bethungra-spiral",
+     "coordinates": {
+      "latitude": -34.7498,
+      "longitude": 147.8813
+     },
+     "coordinates_source": "wikipedia:Bethungra Spiral (listing-level, kept)",
+     "reason": "If the proposed Junee destination is declined: standalone spot, reached on its own.",
+     "category": "landmark",
+     "icon": "🚆",
+     "bio_draft": "Railway spiral lifting the line over the Bethungra Range, with a lookout platform for train watchers.",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 0.25,
+     "visitHoursMax": 0.75,
+     "free": true,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "wiki": "Bethungra Spiral",
+     "views": 4776,
+     "counted_sources": [
+      "https://www.theriverina.com.au/junee"
+     ],
+     "other_sources": [
+      "https://en.wikipedia.org/wiki/Bethungra_Spiral"
+     ],
+     "skeptic_objection": "Regional board (theriverina.com.au) and Wikipedia; a short lookout with a platform (2020) and sign, 20-30 minutes; marginal for non-rail visitors, kept as a named lookout.",
+     "photo": {
+      "file": "BethungraSpiral.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:BethungraSpiral.jpg",
+      "width": 1951,
+      "height": 1000,
+      "licence": "CC BY-SA 2.5"
+     },
+     "photo_verdict": "candidate",
+     "skeptic_photo_verdict": "accept",
+     "skeptic_photo_reason": "Spiral track curving at right of a 2007 colour view; needs the off-centre crop. Lookout photos show only a platform.",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "status": "ready for Pipeline C research",
+     "needs_research": [
+      "ticketUrl"
+     ],
+     "distance_km_from_destination": 30.1,
+     "inside_75pct_span": true,
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    }
+   ],
+   "rationale": "Railway town with three kept spots (Roundhouse, Licorice Factory, Bethungra Spiral). Conditional: if the Licorice Factory is demoted, only two remain; then decline and make them standalone. Span 44 km so Bethungra (30 km) fits; it touches the Wagga Wagga span edge and Coolamon (36 km) is left standalone."
+  },
+  {
+   "id": "gundagai",
+   "name": "Gundagai",
+   "coordinates": {
+    "latitude": -35.0654,
+    "longitude": 148.1086
+   },
+   "coordinates_source": "approximate town centre; resolve with resolve-pin.py (HIGH/MEDIUM) during destination research",
+   "defaultZoomSpanKm": 30,
+   "category": "city",
+   "self_place": null,
+   "members": [
+    "gundagai-1 Dog on the Tuckerbox",
+    "gundagai-2 Rusconi's Marble Cathedral",
+    "gundagai-3 Prince Alfred Bridge"
+   ],
+   "if_declined_standalone": [
+    {
+     "name": "Dog on the Tuckerbox",
+     "source_name": "Dog on the Tuckerbox",
+     "action": "standalone",
+     "destination": null,
+     "id": "dog-on-the-tuckerbox",
+     "coordinates": {
+      "latitude": -35.000511,
+      "longitude": 148.111103
+     },
+     "coordinates_source": "wikivoyage:Gundagai (listing-level, kept)",
+     "reason": "If the proposed Gundagai destination is declined: standalone spot, reached on its own.",
+     "category": "monument",
+     "icon": "🐕",
+     "bio_draft": "Bronze dog on a tuckerbox beside the Hume Highway at Snake Gully, with an interpretive walk and park.",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 0.25,
+     "visitHoursMax": 0.75,
+     "free": true,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "wiki": "Dog on the Tuckerbox",
+     "views": 28424,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Gundagai"
+     ],
+     "other_sources": [
+      "https://en.wikipedia.org/wiki/Dog_on_the_Tuckerbox"
+     ],
+     "skeptic_objection": "Famous Australian roadside icon, strong views (28k) and a visitor complex; free. A 15-30 minute stop with the fountain park, not under any dispute.",
+     "photo": {
+      "file": "DogonTuckerbox.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:DogonTuckerbox.jpg",
+      "width": 1536,
+      "height": 2048,
+      "licence": "CC BY-SA 2.5"
+     },
+     "photo_verdict": "candidate",
+     "skeptic_photo_verdict": "accept",
+     "skeptic_photo_reason": "Close view of the dog statue, 2005; the dog is the subject and fills the crop; 1536 px wide; the fountain wide shot has the dog too small.",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "status": "ready for Pipeline C research",
+     "needs_research": [
+      "ticketUrl"
+     ],
+     "distance_km_from_destination": 7.2,
+     "inside_75pct_span": true,
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    },
+    {
+     "name": "Rusconi's Marble Cathedral",
+     "source_name": "Rusconi's Marble Cathedral",
+     "action": "standalone",
+     "destination": null,
+     "id": "rusconis-marble-cathedral",
+     "coordinates": {
+      "latitude": -35.06298,
+      "longitude": 148.10187
+     },
+     "coordinates_source": "wikivoyage:Gundagai (listing-level, kept)",
+     "reason": "If the proposed Gundagai destination is declined: standalone spot, reached on its own.",
+     "category": "museum",
+     "icon": "⛪",
+     "bio_draft": "Marble model cathedral made from 20,948 pieces of NSW marble, on show in the Gundagai Visitor Centre.",
+     "hours": null,
+     "visitHoursMin": 0.25,
+     "visitHoursMax": 0.75,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 0,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Gundagai"
+     ],
+     "other_sources": [],
+     "skeptic_objection": "Wikivoyage names it; paid exhibit at the visitor centre, 20,948 marble pieces; a distinct draw even if short.",
+     "photo": {
+      "file": "Gundagai Rusconi's Marble Masterpiece 006.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Gundagai_Rusconi's_Marble_Masterpiece_006.jpg",
+      "width": 2048,
+      "height": 1536,
+      "licence": "CC BY-SA 2.5"
+     },
+     "photo_verdict": "candidate",
+     "skeptic_photo_verdict": "accept",
+     "skeptic_photo_reason": "Marble Masterpiece model close view, 2006; the exhibit itself, a bit pink and soft; weak.",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "status": "ready for Pipeline C research",
+     "needs_research": [
+      "hours",
+      "cost",
+      "ticketUrl"
+     ],
+     "distance_km_from_destination": 0.7,
+     "inside_75pct_span": true,
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    },
+    {
+     "name": "Prince Alfred Bridge",
+     "source_name": "Prince Alfred Bridge",
+     "action": "standalone",
+     "destination": null,
+     "id": "prince-alfred-bridge",
+     "coordinates": {
+      "latitude": -35.07428,
+      "longitude": 148.10705
+     },
+     "coordinates_source": "osm:Prince Alfred Bridge (listing-level, kept)",
+     "reason": "If the proposed Gundagai destination is declined: standalone spot, reached on its own.",
+     "category": "historic",
+     "icon": "🌉",
+     "bio_draft": "Timber bridge of 1866 over the Murrumbidgee, billed as Australia's longest timber bridge, to walk or view.",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 0.25,
+     "visitHoursMax": 0.75,
+     "free": true,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "wiki": "Prince Alfred Bridge, Gundagai",
+     "views": 0,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Gundagai"
+     ],
+     "other_sources": [
+      "https://en.wikipedia.org/wiki/Prince_Alfred_Bridge,_Gundagai"
+     ],
+     "skeptic_objection": "Wikivoyage names it; 1866 timber viaduct, short walk and view; marginal, one source, a 20-30 minute stop.",
+     "photo": {
+      "file": "Prince Alfred Bridge over the Murrumbidgee River in Gundagai.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Prince_Alfred_Bridge_over_the_Murrumbidgee_River_in_Gundagai.jpg",
+      "width": 3000,
+      "height": 2000,
+      "licence": "CC BY-SA 3.0 au"
+     },
+     "photo_verdict": "candidate",
+     "skeptic_photo_verdict": "accept",
+     "skeptic_photo_reason": "Timber viaduct over the flats, 2019; fine.",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "status": "ready for Pipeline C research",
+     "needs_research": [
+      "ticketUrl"
+     ],
+     "distance_km_from_destination": 1.0,
+     "inside_75pct_span": true,
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    }
+   ],
+   "rationale": "Hume Highway town with its own chapter; Dog on the Tuckerbox is 7 km north at Snake Gully."
+  },
+  {
+   "id": "wentworth",
+   "name": "Wentworth",
+   "coordinates": {
+    "latitude": -34.1067,
+    "longitude": 141.9172
+   },
+   "coordinates_source": "approximate town centre; resolve with resolve-pin.py (HIGH/MEDIUM) during destination research",
+   "defaultZoomSpanKm": 30,
+   "category": "city",
+   "self_place": null,
+   "members": [
+    "wentworth-1 Junction Park",
+    "wentworth-2 Old Wentworth Gaol",
+    "wentworth-3 Perry Sandhills"
+   ],
+   "if_declined_standalone": [
+    {
+     "name": "Junction Park",
+     "source_name": "Junction Park (Murray and Darling confluence)",
+     "action": "standalone",
+     "destination": null,
+     "id": "junction-park-wentworth",
+     "coordinates": {
+      "latitude": -34.111066,
+      "longitude": 141.909984
+     },
+     "coordinates_source": "wikivoyage:Wentworth (listing-level, kept)",
+     "reason": "If the proposed Wentworth destination is declined: standalone spot, reached on its own.",
+     "category": "viewpoint",
+     "icon": "🌊",
+     "bio_draft": "Park and lookout at Wentworth where the Murray and Darling rivers meet.",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 0.5,
+     "visitHoursMax": 1,
+     "free": true,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 0,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Wentworth_(New_South_Wales)"
+     ],
+     "other_sources": [],
+     "skeptic_objection": "Wikivoyage names it; free viewing of the Murray-Darling junction. Wentworth is edge-of-region; outback pass rejected Wentworth as a town, so this spot is not duplicated there.",
+     "photo": {
+      "file": "WentworthTwoRivers.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:WentworthTwoRivers.JPG",
+      "width": 3872,
+      "height": 2592,
+      "licence": "CC BY-SA 3.0"
+     },
+     "photo_verdict": "candidate",
+     "skeptic_photo_verdict": "accept",
+     "skeptic_photo_reason": "Confluence at Wentworth, 2009; river view with islet; fine.",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "status": "ready for Pipeline C research",
+     "needs_research": [
+      "ticketUrl"
+     ],
+     "distance_km_from_destination": 0.8,
+     "inside_75pct_span": true,
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    },
+    {
+     "name": "Old Wentworth Gaol",
+     "source_name": "Old Wentworth Gaol",
+     "action": "standalone",
+     "destination": null,
+     "id": "old-wentworth-gaol",
+     "coordinates": {
+      "latitude": -34.1026,
+      "longitude": 141.9134
+     },
+     "coordinates_source": "wikivoyage:Wentworth (listing-level, kept)",
+     "reason": "If the proposed Wentworth destination is declined: standalone spot, reached on its own.",
+     "category": "historic",
+     "icon": "🏛️",
+     "bio_draft": "Heritage-listed brick gaol of 1879-81 on Beverley Street in Wentworth, now a museum.",
+     "hours": null,
+     "visitHoursMin": 0.5,
+     "visitHoursMax": 1,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 0,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Wentworth_(New_South_Wales)"
+     ],
+     "other_sources": [],
+     "skeptic_objection": "Review resolved to keep, marginal: heritage gaol museum (1879-81) you can go inside, like Hay Gaol; Wikivoyage lists it, one source. Against: small museum; opening hours not verified, so research must confirm.",
+     "photo": {
+      "file": "WentworthGaol2009.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:WentworthGaol2009.JPG",
+      "width": 3872,
+      "height": 2592,
+      "licence": "CC BY-SA 3.0"
+     },
+     "photo_verdict": "candidate",
+     "skeptic_photo_verdict": "accept",
+     "skeptic_photo_reason": "Gaol gatehouse and building, 2009; clear.",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "status": "ready for Pipeline C research",
+     "needs_research": [
+      "hours",
+      "cost",
+      "ticketUrl"
+     ],
+     "notes": "Marginal keep; opening hours not verified, research must confirm or it goes to review.",
+     "distance_km_from_destination": 0.6,
+     "inside_75pct_span": true,
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    },
+    {
+     "name": "Perry Sandhills",
+     "source_name": "Perry Sandhills",
+     "action": "standalone",
+     "destination": null,
+     "id": "perry-sandhills",
+     "coordinates": {
+      "latitude": -34.101547,
+      "longitude": 141.867269
+     },
+     "coordinates_source": "wikivoyage:Wentworth (listing-level, kept)",
+     "reason": "If the proposed Wentworth destination is declined: standalone spot, reached on its own.",
+     "category": "nature",
+     "icon": "🏜️",
+     "bio_draft": "Large sand dunes on Renmark Road near Wentworth, open to walk and climb.",
+     "hours": "Open 24 hours",
+     "visitHoursMin": 0.5,
+     "visitHoursMax": 1.5,
+     "free": true,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "views": 630,
+     "counted_sources": [
+      "https://en.wikivoyage.org/wiki/Wentworth_(New_South_Wales)"
+     ],
+     "other_sources": [],
+     "skeptic_objection": "Wikivoyage names the dunes; free to walk; one source but a natural second-tier stop.",
+     "photo": {
+      "file": "Perry Sandhills near Wentworth, New South Wales 2648 2025-02-16 15-20-50.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Perry_Sandhills_near_Wentworth,_New_South_Wales_2648_2025-02-16_15-20-50.jpg",
+      "width": 4032,
+      "height": 2236,
+      "licence": "CC0"
+     },
+     "photo_verdict": "candidate",
+     "skeptic_photo_verdict": "accept",
+     "skeptic_photo_reason": "Dune and scrub, 2025; plain but the dunes themselves.",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "status": "ready for Pipeline C research",
+     "needs_research": [
+      "ticketUrl"
+     ],
+     "distance_km_from_destination": 4.6,
+     "inside_75pct_span": true,
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    }
+   ],
+   "rationale": "Murray-Darling confluence town, the far-west end of the region; the outback pass holds it only as review and must drop it. Cluster of three."
+  },
+  {
+   "id": "woomargama-national-park",
+   "name": "Woomargama National Park",
+   "coordinates": {
+    "latitude": -35.87143333,
+    "longitude": 147.48535556
+   },
+   "coordinates_source": "wikipedia:Woomargama National Park (listing-level, kept)",
+   "defaultZoomSpanKm": 30,
+   "category": "park",
+   "self_place": "Woomargama National Park",
+   "members": [],
+   "thin": true,
+   "if_declined_standalone": [
+    {
+     "name": "Woomargama National Park",
+     "source_name": "Woomargama National Park",
+     "action": "standalone",
+     "destination": null,
+     "id": "woomargama-national-park",
+     "coordinates": {
+      "latitude": -35.87143333,
+      "longitude": 147.48535556
+     },
+     "coordinates_source": "wikipedia:Woomargama National Park (listing-level, kept)",
+     "reason": "If the proposed national-park destination is declined: standalone spot, reached on its own.",
+     "wiki": "Woomargama National Park",
+     "views": 553,
+     "counted_sources": [
+      "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/woomargama-national-park"
+     ],
+     "other_sources": [
+      "https://en.wikipedia.org/wiki/Woomargama_National_Park"
+     ],
+     "skeptic_objection": "NPWS park; a national park is always a destination or spot. Photo is a creek waterfall only.",
+     "photo": {
+      "file": "Waterfall, Woomargama National Park.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Waterfall,_Woomargama_National_Park.jpg",
+      "width": 3840,
+      "height": 2160,
+      "licence": "CC BY-SA 4.0"
+     },
+     "photo_verdict": "candidate",
+     "skeptic_photo_verdict": "accept",
+     "skeptic_photo_reason": "Basin Creek waterfall in the park (geo/category Woomargama NP), 2021; sole Commons image of the park; brightness ok.",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "status": "ready for Pipeline C research",
+     "needs_research": [
+      "hours",
+      "cost",
+      "ticketUrl"
+     ],
+     "category": "nature",
+     "category_as_spot": "nature",
+     "icon": "🌲",
+     "bio_draft": "Largest protected forest west of the Great Dividing Range, with camping, hiking and 4WD touring.",
+     "hours": null,
+     "visitHoursMin": null,
+     "visitHoursMax": null,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    }
+   ],
+   "rationale": "National park, therefore a destination. No kept sub-spots (all sights inside it were rejected as parts of the park). Span 30 km so Holbrook (23 km away, a Hume Highway stop) stays standalone."
+  },
+  {
+   "id": "murray-valley-national-park",
+   "name": "Murray Valley National Park",
+   "coordinates": {
+    "latitude": -35.7933,
+    "longitude": 145.027
+   },
+   "coordinates_source": "wikivoyage:Riverina (listing-level, kept)",
+   "defaultZoomSpanKm": 60,
+   "category": "park",
+   "self_place": "Murray Valley National Park",
+   "members": [],
+   "thin": true,
+   "if_declined_standalone": [
+    {
+     "name": "Murray Valley National Park",
+     "source_name": "Murray Valley National Park",
+     "action": "standalone",
+     "destination": null,
+     "id": "murray-valley-national-park",
+     "coordinates": {
+      "latitude": -35.7933,
+      "longitude": 145.027
+     },
+     "coordinates_source": "wikivoyage:Riverina (listing-level, kept)",
+     "reason": "If the proposed national-park destination is declined: standalone spot, reached on its own.",
+     "wiki": "Murray Valley National Park",
+     "views": 682,
+     "counted_sources": [
+      "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/murray-valley-national-park",
+      "https://en.wikivoyage.org/wiki/Riverina"
+     ],
+     "other_sources": [
+      "https://en.wikipedia.org/wiki/Murray_Valley_National_Park"
+     ],
+     "skeptic_objection": "Two counted sources; Ramsar red gum park; has a bird hide and picnic grounds.",
+     "photo": {
+      "file": "View of wetlands in Murray Valley National Park, NSW.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:View_of_wetlands_in_Murray_Valley_National_Park,_NSW.jpg",
+      "width": 5152,
+      "height": 3864,
+      "licence": "CC BY-SA 4.0"
+     },
+     "photo_verdict": "candidate",
+     "skeptic_photo_verdict": "accept",
+     "skeptic_photo_reason": "Red gum wetland from Reed Beds Bird Hide, 2021; fine.",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "status": "ready for Pipeline C research",
+     "needs_research": [
+      "hours",
+      "cost",
+      "ticketUrl"
+     ],
+     "category": "nature",
+     "category_as_spot": "nature",
+     "icon": "🌳",
+     "bio_draft": "Red gum forest park on the Murray with Ramsar wetlands, a bird hide, picnic grounds and camping.",
+     "hours": null,
+     "visitHoursMin": null,
+     "visitHoursMax": null,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    }
+   ],
+   "rationale": "National park, therefore a destination. No kept sub-spots (all sights inside it were rejected as parts of the park)."
+  },
+  {
+   "id": "willandra-national-park",
+   "name": "Willandra National Park",
+   "coordinates": {
+    "latitude": -33.498333,
+    "longitude": 145.501111
+   },
+   "coordinates_source": "wikivoyage:Riverina (listing-level, kept)",
+   "defaultZoomSpanKm": 60,
+   "category": "park",
+   "self_place": "Willandra National Park",
+   "members": [],
+   "thin": true,
+   "if_declined_standalone": [
+    {
+     "name": "Willandra National Park",
+     "source_name": "Willandra National Park",
+     "action": "standalone",
+     "destination": null,
+     "id": "willandra-national-park",
+     "coordinates": {
+      "latitude": -33.498333,
+      "longitude": 145.501111
+     },
+     "coordinates_source": "wikivoyage:Riverina (listing-level, kept)",
+     "reason": "If the proposed national-park destination is declined: standalone spot, reached on its own.",
+     "wiki": "Willandra National Park",
+     "views": 843,
+     "counted_sources": [
+      "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/willandra-national-park",
+      "https://en.wikivoyage.org/wiki/Riverina"
+     ],
+     "other_sources": [
+      "https://en.wikipedia.org/wiki/Willandra_National_Park"
+     ],
+     "skeptic_objection": "Owned by riverina-murray (see Yanga). Two counted sources; distinct from Willandra Lakes (Mungo), which is the outback region's rejected item.",
+     "photo": {
+      "file": "Willandra, New South Wales.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Willandra,_New_South_Wales.jpg",
+      "width": 4841,
+      "height": 3000,
+      "licence": "CC BY-SA 4.0"
+     },
+     "photo_verdict": "candidate",
+     "skeptic_photo_verdict": "accept",
+     "skeptic_photo_reason": "Outback track with a kangaroo; ok as the park drive but not a landmark; weak, flagged.",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "status": "ready for Pipeline C research",
+     "needs_research": [
+      "hours",
+      "cost",
+      "ticketUrl"
+     ],
+     "category": "nature",
+     "coordinates_note": "Distinct from Willandra Lakes (Mungo), rejected by the outback pass.",
+     "category_as_spot": "nature",
+     "icon": "🌾",
+     "bio_draft": "Pastoral-heritage park on Willandra Creek with self-drive, cycling and walking routes.",
+     "hours": null,
+     "visitHoursMin": null,
+     "visitHoursMax": null,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    }
+   ],
+   "rationale": "National park, therefore a destination. No kept sub-spots (all sights inside it were rejected as parts of the park)."
+  },
+  {
+   "id": "yanga-national-park",
+   "name": "Yanga National Park",
+   "coordinates": {
+    "latitude": -34.65,
+    "longitude": 143.583
+   },
+   "coordinates_source": "wikivoyage:Balranald (listing-level, kept)",
+   "defaultZoomSpanKm": 40,
+   "category": "park",
+   "self_place": "Yanga National Park",
+   "members": [],
+   "thin": true,
+   "if_declined_standalone": [
+    {
+     "name": "Yanga National Park",
+     "source_name": "Yanga National Park",
+     "action": "standalone",
+     "destination": null,
+     "id": "yanga-national-park",
+     "coordinates": {
+      "latitude": -34.65,
+      "longitude": 143.583
+     },
+     "coordinates_source": "wikivoyage:Balranald (listing-level, kept)",
+     "reason": "If the proposed national-park destination is declined: standalone spot, reached on its own.",
+     "wiki": "Yanga National Park",
+     "views": 1520,
+     "counted_sources": [
+      "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/yanga-national-park",
+      "https://en.wikivoyage.org/wiki/Yanga_National_Park"
+     ],
+     "other_sources": [
+      "https://en.wikipedia.org/wiki/Yanga_National_Park"
+     ],
+     "skeptic_objection": "SINGLE DECISION for Yanga, Murrumbidgee Valley NP and Willandra NP: they are judged and owned by riverina-murray; the outback pass (which holds Yanga as review and rejects only Willandra Lakes, a different place) should drop its Yanga review so it is not added twice. Two counted sources.",
+     "photo": {
+      "file": "Murrimbidgee River, Yanga Campground in Yanga National Park, NSW.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Murrimbidgee_River,_Yanga_Campground_in_Yanga_National_Park,_NSW.jpg",
+      "width": 5184,
+      "height": 3888,
+      "licence": "CC BY-SA 4.0"
+     },
+     "photo_verdict": "candidate",
+     "skeptic_photo_verdict": "accept",
+     "skeptic_photo_reason": "Murrumbidgee at Yanga campground, 2020; river and red gums; fine.",
+     "photo_status": "candidate only; Lens must run the four checks before it is applied",
+     "status": "ready for Pipeline C research",
+     "needs_research": [
+      "hours",
+      "cost",
+      "ticketUrl"
+     ],
+     "category": "nature",
+     "coordinates_note": "Wikivoyage Balranald point; Balranald itself (outback pass) has no kept candidate. Outback pass must drop its Yanga review.",
+     "category_as_spot": "nature",
+     "icon": "🏞️",
+     "bio_draft": "National park beside Balranald on the Murrumbidgee with Yanga Lake, camping and historic station buildings.",
+     "hours": null,
+     "visitHoursMin": null,
+     "visitHoursMax": null,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    }
+   ],
+   "rationale": "National park, therefore a destination. No kept sub-spots (all sights inside it were rejected as parts of the park)."
+  },
+  {
+   "id": "murrumbidgee-valley-national-park",
+   "name": "Murrumbidgee Valley National Park",
+   "coordinates": {
+    "latitude": -34.715,
+    "longitude": 146.20111111
+   },
+   "coordinates_source": "wikipedia:Murrumbidgee Valley National Park (listing-level, kept)",
+   "defaultZoomSpanKm": 30,
+   "category": "park",
+   "self_place": "Murrumbidgee Valley National Park",
+   "members": [],
+   "thin": true,
+   "if_declined_standalone": [
+    {
+     "name": "Murrumbidgee Valley National Park",
+     "source_name": "Murrumbidgee Valley National Park",
+     "action": "standalone",
+     "destination": null,
+     "id": "murrumbidgee-valley-national-park",
+     "coordinates": {
+      "latitude": -34.715,
+      "longitude": 146.20111111
+     },
+     "coordinates_source": "wikipedia:Murrumbidgee Valley National Park (listing-level, kept)",
+     "reason": "If the proposed national-park destination is declined: standalone spot, reached on its own.",
+     "wiki": "Murrumbidgee Valley National Park",
+     "views": 475,
+     "counted_sources": [
+      "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/murrumbidgee-valley-national-park"
+     ],
+     "other_sources": [
+      "https://en.wikipedia.org/wiki/Murrumbidgee_Valley_National_Park"
+     ],
+     "skeptic_objection": "Owned by riverina-murray (see Yanga). A national park along the river between Narrandera and Balranald; Wikipedia plus NPWS. Middle Beach is part of this park and stays rejected.",
+     "photo": null,
+     "photo_verdict": "candidate",
+     "skeptic_photo_verdict": "reject",
+     "skeptic_photo_reason": "Commons has precinct photos (Platt Beach, Berry Jerry, MIA 1 precinct, 3264x2448, 2017) that I did not view on a contact sheet; none accepted yet, pick after a look.",
+     "photo_status": "no passing photo found by skeptic; Lens to search outside Commons (IMAGES.md)",
+     "status": "ready for Pipeline C research",
+     "needs_research": [
+      "hours",
+      "cost",
+      "ticketUrl"
+     ],
+     "category": "nature",
+     "coordinates_note": "Wikipedia centroid of a linear park between Narrandera and Balranald (skeptic LOW-style point); replace with the main visitor access during destination research. Middle Beach is part of this park and stays rejected.",
+     "category_as_spot": "nature",
+     "icon": "🛶",
+     "bio_draft": "Riverside national park with river camping, fishing, kayaking and birdwatching, and few facilities.",
+     "hours": null,
+     "visitHoursMin": null,
+     "visitHoursMax": null,
+     "free": null,
+     "costMin": null,
+     "costMax": null,
+     "currency": null,
+     "ticketUrl": null,
+     "country": "Australia",
+     "countryCode": "AU",
+     "continent": "Oceania",
+     "timezone": "Australia/Sydney"
+    }
+   ],
+   "rationale": "National park, therefore a destination. No kept sub-spots (all sights inside it were rejected as parts of the park). Span 30 km: the Big Guitar at Narrandera (32 km) and the Coleambally Dragline (30 km) are reached from their own towns, not the park."
+  }
+ ],
+ "review": [
+  {
+   "name": "Coleambally Wineglass Water Tower",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "For: Wikivoyage describes a tiled wineglass water tower, a distinctive roadside landmark, 5-minute stop. Against: one source, a water tower in a tiny town, weaker than the dragline; owner call."
+  }
+ ],
+ "existing_fixes": [],
+ "if_conditional_demoted": "If Dunera Museum or Junee Licorice Factory cannot have hours verified in Pipeline C they move to review and are removed from hay / junee; the junee proposal then falls to two spots and should be declined."
+}

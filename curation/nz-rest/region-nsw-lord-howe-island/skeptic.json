@@ -1,0 +1,365 @@
+[
+ {
+  "name": "Mount Gower",
+  "verdict": "keep",
+  "objection": "Verified: lordhoweisland.info natural treasures, hiking page, LHIB walking tracks (guide only), Wikivoyage. Guided 8 h climb; still a clear draw. Pin on summit per peak rule; OSM Gower Track routes 4.4 km from Lagoon Road end and its midpoint is -31.57250,159.07417 if the owner prefers a route pin.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Mount Gower, Lord Howe Island, NSW, Australia.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Mount_Gower,_Lord_Howe_Island,_NSW,_Australia.jpg",
+   "width": 2448,
+   "height": 3264,
+   "licence": "CC BY-SA 4.0 (Wiki Loves Earth, to confirm)"
+  },
+  "photo_reason": "Colour 2018 view over the lagoon to Lidgbird and Gower; portrait, peaks in the middle third so the square crop keeps them; p40 0.40 mean 0.44. Lens to confirm the peak at right is Gower. Alternative: Lord Howe Island view to Mount Gower.JPG (2048x1536, peaks small at left).",
+  "coordinates": {
+   "lat": -31.58238,
+   "lng": 159.07883,
+   "source": "osm natural=peak (Mount Gower node 391694667) + Photon; guide route midpoint -31.5725,159.07417 in notes"
+  },
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.4
+  }
+ },
+ {
+  "name": "Ball's Pyramid",
+  "verdict": "keep",
+  "objection": "Verified: three counted sources (tourism board, Wikivoyage, dive page). Boat tour and dive trips, no landing; obvious draw. Pin is Wikipedia's sea-stack point, correct for an offshore feature.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Balls Pyramid, Lord Howe Marine Park 1008.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Balls_Pyramid,_Lord_Howe_Marine_Park_1008.jpg",
+   "width": 5000,
+   "height": 3750,
+   "licence": "to confirm on file page"
+  },
+  "photo_reason": "Colour 2014 sea-level view of the stack with surf, subject centred, strong; p40 0.40 mean 0.52. Licence not read (API errored): Lens to confirm.",
+  "coordinates": {
+   "lat": -31.75416667,
+   "lng": 159.25166667,
+   "source": "wikipedia:Ball's Pyramid (offshore stack)"
+  }
+ },
+ {
+  "name": "Ned's Beach",
+  "verdict": "keep",
+  "objection": "Verified on lordhoweisland.info natural treasures (wade in to hand-feed fish), Wikivoyage and LHIB track page. OSM beach way centroid -31.51810,159.06663; existing point is on the beach too.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Neds Beach.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Neds_Beach.jpg",
+   "width": 2096,
+   "height": 1179,
+   "licence": "to confirm"
+  },
+  "photo_reason": "Colour 2015 beach with shelter in the foreground; saturated, slightly HDR-looking and the shelter takes the left third, so Lens should compare Lord Howe Island Ned's Beach.jpg (road and beach, duller). p40 0.55 mean 0.59. Weak accept.",
+  "coordinates": {
+   "lat": -31.51764,
+   "lng": 159.06414,
+   "source": "osm natural=beach (Neds Beach way 157694811); Photon agrees"
+  },
+  "hero_crop": {
+   "x": 0.6,
+   "y": 0.5
+  }
+ },
+ {
+  "name": "Blinky Beach",
+  "verdict": "keep",
+  "objection": "Verified: tourism board natural treasures page lists it (surf, picnic, swim, fish) and walking pages reach it from Transit Hill. Pin moved onto the beach at the OSM Surfing attraction node.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Blinky Beach - panoramio.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Blinky_Beach_-_panoramio.jpg",
+   "width": 1024,
+   "height": 768,
+   "licence": "CC BY 3.0 (David Stanley)"
+  },
+  "photo_reason": "Colour 2016, named Blinky Beach, in Commons Beaches of Lord Howe Island; beach and bay with Lidgbird behind, clear. 1024 px wide passes the 960 minimum. Geotag is 500 m off the beach, so Lens to confirm it is Blinky and not another west-coast beach. p40 0.40.",
+  "coordinates": {
+   "lat": -31.53823,
+   "lng": 159.08192,
+   "source": "osm tourism=attraction 'Surfing' on natural=beach way 32424463 (Blinky Beach); Photon beach point -31.54046,159.08225 is 250 m south"
+  }
+ },
+ {
+  "name": "Old Settlement Beach",
+  "verdict": "keep",
+  "objection": "Verified: tourism board lists the weather-sculpted rocks, Wikivoyage names the turtles, and it starts the Max Nichols track. OSM beach way; centroid -31.52004,159.05685 is within 100 m of the existing pin.",
+  "photo_verdict": "reject",
+  "photo": null,
+  "photo_reason": "Commons has Green Turtle near Settlement Beach (a turtle head in water, fails check 2) and Old Settlement Beach (32564834385) (steps and lagoon view, beach not shown). Nothing passes; search outside Commons (Openverse/tourism board) per IMAGES.md.",
+  "coordinates": {
+   "lat": -31.52015,
+   "lng": 159.05775,
+   "source": "osm natural=beach (Old Settlement Beach way 157694823)"
+  }
+ },
+ {
+  "name": "North Bay",
+  "verdict": "keep",
+  "objection": "Verified: dedicated lordhoweisland.info page (secluded beach by foot or water, snorkelling, Favourite wreck) plus LHIB walking page (picnic area, toilets, BBQ). Pin check: OSM has no 'North Bay' beach; the beach is 'North Beach' (way 157694817) and the OSM 'North Bay' bay node (-31.51943,159.04507) lies in its water; the Max Nichols track ends at its east end, so they are the same place. Pin moved to the beach centroid.",
+  "photo_verdict": "review",
+  "photo": {
+   "file": "Lord Howe Island from Mount Eliza.JPG",
+   "page": "https://commons.wikimedia.org/wiki/File:Lord_Howe_Island_from_Mount_Eliza.JPG",
+   "width": 3968,
+   "height": 2976,
+   "licence": "CC BY-SA 3.0"
+  },
+  "photo_reason": "Candidate only: 2013 colour view from Mount Eliza down on a bay with a sand spit and Lidgbird behind; Mount Eliza overlooks North Bay but the file says only 'view of the island', so check 1 is unproven and the beach is small in frame. Lord Howe Island North Bay.jpg (a sandy shore, undated, Lidgbird at right) probably is not North Bay (it faces north). Lens must decide; p40 0.31 mean 0.42.",
+  "coordinates": {
+   "lat": -31.51865,
+   "lng": 159.04359,
+   "source": "osm natural=beach 'North Beach' way 157694817 centroid; track end -31.5165,159.0448"
+  }
+ },
+ {
+  "name": "Lagoon Beach",
+  "verdict": "keep",
+  "objection": "Resolved from review: named by lordhoweisland.info and LHIB (foreshore walk, stroll along Lagoon Beach) and is the township's lagoon swim and snorkel shore; not a duplicate of Middle Beach, which is 900 m east. Incidental mention, so low confidence.",
+  "photo_verdict": "reject",
+  "photo": null,
+  "photo_reason": "Only Commons lagoon file is a generic Lord Howe Island Lagoon.jpg (vivid rocks and turquoise, not tied to this beach). Search outside Commons.",
+  "coordinates": {
+   "lat": -31.52919,
+   "lng": 159.06546,
+   "source": "osm natural=beach way 157694680 centroid; existing pin on the way"
+  }
+ },
+ {
+  "name": "Middle Beach",
+  "verdict": "review",
+  "objection": "Downgraded from keep. For: OSM beach, in Commons category, surf and rock pools at low tide. Against: both counted sources only name it as the start of the Clear Place walk; no source presents it as somewhere to go, and it neighbours Lagoon Beach. Case for keeping is only the lagoon swim; I would drop it unless the owner wants township beaches.",
+  "photo_verdict": "reject",
+  "photo": null,
+  "photo_reason": "Commons has only a 1024 px panoramio shot of a rocky low-tide cove (Middle Beach - panoramio) and a palm close-up; no strong photo.",
+  "coordinates": {
+   "lat": -31.5247,
+   "lng": 159.07456,
+   "source": "osm natural=beach (Middle Beach way 157694803, a node on it)"
+  }
+ },
+ {
+  "name": "Muttonbird Point",
+  "verdict": "keep",
+  "objection": "Resolved from review to keep: the coastal-track lookout named by both walking pages (1.4 km in), seabird colony and a blowhole; distinct enough as the headline stop of the Coastal Track, whose Boat Harbour end and Rocky Run are not kept separately. Pin on OSM Mutton Bird Point Viewing Platform.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Mutton Bird Point (32519532420).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Mutton_Bird_Point_(32519532420).jpg",
+   "width": 1024,
+   "height": 768,
+   "licence": "CC BY 2.0 (David Stanley)"
+  },
+  "photo_reason": "Colour 2016 headland and seabird rock, geotagged on the platform (-31.54664,159.09163), clearly the named point; p40 0.41 mean 0.46.",
+  "coordinates": {
+   "lat": -31.54652,
+   "lng": 159.09169,
+   "source": "osm tourism=viewpoint Mutton Bird Point Viewing Platform (391696307); Photon locality agrees within 100 m"
+  }
+ },
+ {
+  "name": "Malabar Hill",
+  "verdict": "keep",
+  "objection": "Verified: Wikivoyage, tourism board, LHIB, hiking page; the island's most popular walk. Pooles and Kims lookouts stay folded into it. Pin on the OSM summit; Neds Beach to summit route midpoint would be -31.51856,159.06190.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Malabar Hill (32388672630).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Malabar_Hill_(32388672630).jpg",
+   "width": 1024,
+   "height": 768,
+   "licence": "CC BY 2.0 (David Stanley)"
+  },
+  "photo_reason": "Colour 2016 view along the ridge to the headland and North Bay, geotagged 400 m west of the summit on the ridge; shows the walk's view, clear. p40 0.43. Alternative Lord Howe Island Malabar Hill.jpg (2912x1936, bay from above, undated).",
+  "coordinates": {
+   "lat": -31.51267,
+   "lng": 159.06113,
+   "source": "osm natural=peak Malabar Hill (391923657)"
+  }
+ },
+ {
+  "name": "Intermediate Hill",
+  "verdict": "keep",
+  "objection": "Verified: LHIB and hiking page (250 m, viewing platform, Ball's Pyramid views) and the tourism board. Steep 1 km climb; pin on the OSM peak/platform.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Intermediate Hill - panoramio.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Intermediate_Hill_-_panoramio.jpg",
+   "width": 1024,
+   "height": 768,
+   "licence": "CC BY 3.0 (David Stanley)"
+  },
+  "photo_reason": "Colour 2016 view from the hill toward the south-east coast; the lookout view is the attraction. Geotag -31.5516,159.0875 is on the hill. p40 0.35 mean 0.50.",
+  "coordinates": {
+   "lat": -31.54973,
+   "lng": 159.08735,
+   "source": "osm natural=peak + tourism=viewpoint platform (way 473451312)"
+  }
+ },
+ {
+  "name": "Transit Hill",
+  "verdict": "keep",
+  "objection": "Verified: LHIB and hiking page (1.2 km, 360 degree platform, continues to Blinky Beach) plus the tourism board natural treasures page. Pin on OSM peak, 15 m from the viewing platform.",
+  "photo_verdict": "reject",
+  "photo": null,
+  "photo_reason": "No Transit Hill photo on Commons (Overlooking Lord Howe Island.JPG, 6000x4000, 2013, may be from it but is unlabelled). Search outside Commons.",
+  "coordinates": {
+   "lat": -31.5345,
+   "lng": 159.07794,
+   "source": "osm natural=peak Transit Hill (391843021); platform node -31.53443,159.07814"
+  }
+ },
+ {
+  "name": "Goat House Cave",
+  "verdict": "keep",
+  "objection": "Resolved from review to keep: a named, demanding 2.1 km rope-assisted climb on both agencies' lists and one of only two hard walks; it is the hike with a lookout over the island, not a cave tour (call it a hike). Pin options: cave node -31.56271,159.08812; route midpoint -31.55302,159.08575 (OSM ways routed from Lagoon Road, 2.5 km). Given the hike rule use the midpoint.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Lord Howe - Goat House.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Lord_Howe_-_Goat_House.jpg",
+   "width": 4416,
+   "height": 3312,
+   "licence": "CC BY 2.0"
+  },
+  "photo_reason": "Colour 2014 view of the island from the cave, geotagged at the cave; a sweeping view, not the cave itself, which suits a hike. Lens: check 2 is a view from the spot. p40 0.26 (near the floor) mean 0.44. Alternative View from Goat House Cave (2448x2448, 2018, CC BY-SA 4.0, includes a hiker).",
+  "coordinates": {
+   "lat": -31.55302,
+   "lng": 159.08575,
+   "source": "midpoint of OSM path/track ways routed from Lagoon Road to the cave entrance (2.5 km); cave node natural=cave_entrance -31.56271,159.08812"
+  }
+ },
+ {
+  "name": "Lord Howe Island Museum",
+  "verdict": "keep",
+  "objection": "Verified: Wikivoyage (9am-3pm daily, donation) and the tourism island directory; small but the island's only indoor visit and the visitor centre. OSM museum node matches Wikivoyage's coordinates.",
+  "photo_verdict": "accept",
+  "photo": {
+   "file": "Lord Howe Museum (32861092495).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Lord_Howe_Museum_(32861092495).jpg",
+   "width": 1024,
+   "height": 768,
+   "licence": "to confirm (David Stanley series, CC BY 2.0 likely)"
+  },
+  "photo_reason": "Colour 2016 museum interior with a whaleboat and flying-boat model; no exterior on Commons, interior is the visit. File page could not be read: Lens to confirm licence and that it is this museum. p40 0.49.",
+  "coordinates": {
+   "lat": -31.52791,
+   "lng": 159.06655,
+   "source": "osm tourism=museum (391878208); Wikivoyage -31.527987,159.0665"
+  }
+ },
+ {
+  "name": "Erscott's Hole",
+  "verdict": "keep",
+  "objection": "Verified: dedicated lordhoweisland.info page (staghorn coral garden, tame fish from glass-bottom boats) and Wikivoyage (Escott's Reef, a fair swim from shore, boat advised). Pin is LOW: OSM has no feature. Only evidence is a 2019 iNaturalist file titled Erscott's Hole geotagged -31.54639,159.06083 in the lagoon; the tourism board says it sits in a protected intertidal groyne and Wikivoyage says off the airport. Accept as approximate, flagged. Comet's Hole (OSM viewpoint -31.53955,159.06642, about 1 km away) is rejected: one counted source, an offshore shark swim.",
+  "photo_verdict": "reject",
+  "photo": null,
+  "photo_reason": "Commons has only fish and shark close-ups (Carcharhinus galapagensis erscotts hole.jpg, Greyhead Surgeonfish) which fail check 3. Search outside Commons (tourism board, glass-bottom boat operators).",
+  "coordinates": {
+   "lat": -31.54639,
+   "lng": 159.06083,
+   "source": "LOW: geotag of Commons file 'Greyhead Surgeonfish, Erscott's Hole' (iNaturalist, 2019); lagoon off the airport"
+  }
+ },
+ {
+  "name": "Boat Harbour",
+  "verdict": "reject",
+  "objection": "Resolved to reject. OSM has a bay centroid in the water (-31.55862,159.09843) and Boat Harbour Point (-31.55702,159.10060); it is the far end of the 3.5 km Coastal Track, named only as the walk's end by both agencies, with no stated activity. The track's Muttonbird Point lookout is kept instead.",
+  "photo_verdict": "n/a",
+  "photo": null,
+  "photo_reason": "n/a",
+  "coordinates": {
+   "lat": -31.55862,
+   "lng": 159.09843,
+   "source": "osm natural=bay centroid (not a visitor point)"
+  }
+ },
+ {
+  "name": "Mount Eliza",
+  "verdict": "reject",
+  "objection": "Resolved to reject. Both agencies say the track is closed September to March for nesting terns, so it is unavailable most of a typical visit, and it is a 0.6 km spur from North Bay.",
+  "photo_verdict": "n/a",
+  "photo": null,
+  "photo_reason": "n/a",
+  "coordinates": {
+   "lat": -31.51315,
+   "lng": 159.04003,
+   "source": "osm natural=peak"
+  }
+ },
+ {
+  "name": "Comet's Hole",
+  "verdict": "reject",
+  "objection": "Resolved to reject: one counted source (Wikivoyage), an offshore shark swim for strong snorkellers, no landing or facility; Erscott's Hole already covers lagoon snorkelling.",
+  "photo_verdict": "n/a",
+  "photo": null,
+  "photo_reason": "n/a",
+  "coordinates": {
+   "lat": -31.53955,
+   "lng": 159.06642,
+   "source": "osm tourism=viewpoint 'Comets Hole'"
+  }
+ },
+ {
+  "name": "Admiralty Islands",
+  "verdict": "review",
+  "objection": "Kept as review. For: the tourism board gives it a dedicated page (about 25 dive sites, 15 min by boat) and Wikivoyage shows it in a photo; Wikipedia has Admiralty Group. Against: only one real counted source, no landing, reached only by operator dive or boat trips (the group is a place, not a vehicle). Owner call; I lean keep because it is the island's headline dive area after Ball's Pyramid.",
+  "photo_verdict": "n/a",
+  "photo": null,
+  "photo_reason": "No photo searched; Commons has Admiralty Group off Ned's Beach (3264x2448, 2011, from shore) if kept.",
+  "coordinates": {
+   "lat": -31.50469,
+   "lng": 159.0681,
+   "source": "osm coastline way Sugarloaf Island 157694839 midpoint; group spans Noddy -31.5012,159.0645 to South Island -31.5022,159.0722"
+  }
+ },
+ {
+  "name": "The Clear Place",
+  "verdict": "reject",
+  "objection": "Resolved to reject: 1.2 km level return stroll to a clearing, in practice a short forest walk; Valley of the Shadows is part of it.",
+  "photo_verdict": "n/a",
+  "photo": null,
+  "photo_reason": "n/a"
+ },
+ {
+  "name": "Stevens Reserve",
+  "verdict": "reject",
+  "objection": "Resolved to reject: 1.2 km loop beside the boat sheds, an ordinary short forest loop.",
+  "photo_verdict": "n/a",
+  "photo": null,
+  "photo_reason": "n/a"
+ },
+ {
+  "name": "Max Nichols Memorial Track",
+  "verdict": "reject",
+  "objection": "Resolved to reject: a connector between Old Settlement Beach and North Bay (route midpoint -31.5155,159.04939), described by the agencies as the way to reach those listed places.",
+  "photo_verdict": "n/a",
+  "photo": null,
+  "photo_reason": "n/a"
+ },
+ {
+  "name": "Little Island",
+  "verdict": "reject",
+  "objection": "Resolved to reject: 3 km easy return to a grassy clearing, mainly the trailhead of the guided Gower route; Little Island itself is an islet with no access.",
+  "photo_verdict": "n/a",
+  "photo": null,
+  "photo_reason": "n/a"
+ },
+ {
+  "name": "Catalina Wreckage",
+  "verdict": "reject",
+  "objection": "Resolved to reject: one counted source (Wikivoyage), a roadside monument beside Old Settlement Beach and wreckage up the ridge; a brief stop on that spot.",
+  "photo_verdict": "n/a",
+  "photo": null,
+  "photo_reason": "n/a"
+ },
+ {
+  "name": "Lord Howe Island Botanic Gardens",
+  "verdict": "reject",
+  "objection": "Resolved to reject: one counted source and Wikivoyage itself calls it small; the island is effectively the garden.",
+  "photo_verdict": "n/a",
+  "photo": null,
+  "photo_reason": "n/a"
+ }
+]

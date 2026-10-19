@@ -1,0 +1,655 @@
+{
+ "spots": {
+  "wagga-wagga-botanic-gardens": {
+   "name": "Wagga Wagga Botanic Gardens",
+   "icon": "🌳",
+   "category": "nature",
+   "bio": "Gardens from 1961 with a rainforest gully, succulent garden, free zoo and aviary, and a miniature railway.",
+   "hours": "Open daily (zoo and aviary Thursday to Monday 9:00 AM – 4:00 PM)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": { "latitude": -35.131054, "longitude": 147.366158 },
+   "notes": [
+    "ticketUrl omitted: the council pages (wagga.nsw.gov.au) are blocked to scripts; load in a real browser and add the gardens page.",
+    "Zoo and aviary days and times (Thu-Mon 9-4, closed Christmas Day and Good Friday) come from a search summary of the blocked council page, not read on the page. Garden opening times not found.",
+    "Railway running days not verified, so the bio only says the railway exists (Science Week listing).",
+    "No wiki field: name equals the research wiki_title. Pin HIGH (OSM park spelled 'Botanical Garden & Zoo' plus Wikipedia, 51 m); resolve-pin picked the wrong feature and was rejected."
+   ]
+  },
+  "wiradjuri-walking-track": {
+   "name": "Wiradjuri Walking Track",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "About 42 km of track circling much of Wagga Wagga, with river, hilltop and city views.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": { "latitude": -35.100172, "longitude": 147.367549 },
+   "notes": [
+    "Pin is on the track near the riverside start, NOT a computed midpoint: OSM has no single route for the loop (named ways total about 26 km). Replace from the council route map if wanted.",
+    "No ticketUrl: council pages are blocked to scripts and no other official page was loaded. The 42 km figure is from Visit NSW.",
+    "A popular return route runs from the Visitor Information Centre past Riverside, the Cadell Place murals, Wiradjuri Reserve and Marrambidya Wetland (Visit NSW); left out of the bio for length."
+   ]
+  },
+  "murray-art-museum-albury": {
+   "name": "Murray Art Museum Albury",
+   "icon": "🖼️",
+   "category": "museum",
+   "bio": "Free regional art museum in Albury, open seven days a week and 362 days a year.",
+   "hours": "Mon–Fri 10:00 AM – 5:00 PM; Sat–Sun and public holidays 10:00 AM – 4:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": "https://www.mamalbury.com.au/plan-your-trip",
+   "coordinates": { "latitude": -36.080518, "longitude": 146.916706 },
+   "notes": [
+    "Operator page loaded. Closed Anzac Day, Christmas Day and Good Friday (not entered as specialClosures: Good Friday moves).",
+    "'Regional' is descriptive wording; the sources do not use it. Pin HIGH."
+   ]
+  },
+  "hume-dam": {
+   "name": "Hume Dam",
+   "icon": "🌊",
+   "category": "landmark",
+   "bio": "Dam wall at Lake Hume, built 1919–1936, with a sealed 3.9 km return walk and viewing platforms.",
+   "hours": "Daylight hours (dam wall access restricted on some days)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "coordinates": { "latitude": -36.107635, "longitude": 147.031653 },
+   "notes": [
+    "ticketUrl omitted: WaterNSW pages are blocked to scripts; open https://www.waternsw.com.au/supply/visit/hume-dam in a real browser and read the current wall-access notice.",
+    "Hours and the closure days (wall closed Monday to Thursday for maintenance at one point) are from a search summary of the blocked page; free is inferred, no charge found.",
+    "Walk length and build dates are from walkingmaps.com.au. Pin HIGH (OSM dam 'Hume Weir' plus Wikipedia, 80 m); resolve-pin's camp monument was rejected."
+   ]
+  },
+  "shearoutback": {
+   "name": "ShearOutback",
+   "icon": "🐑",
+   "category": "museum",
+   "bio": "Shearing museum and Australian Shearers' Hall of Fame, with live demonstrations at 10:30 am and 1:00 pm.",
+   "hours": "Mon–Sat 9:00 AM – 4:00 PM; Sun 9:00 AM – 3:00 PM (shearing demonstrations 10:30 AM and 1:00 PM daily)",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "costMin": 20,
+   "costMax": 20,
+   "currency": "AUD",
+   "ticketUrl": "https://www.shearoutback.com.au/",
+   "coordinates": { "latitude": -34.52183, "longitude": 144.836202 },
+   "notes": [
+    "A$20 adult (concession 15, child under 12 10, family 45), operator Admissions page. Operator suggests at least an hour for the museum and half an hour for the demonstration.",
+    "Public-holiday and Christmas closures not found. Pin MEDIUM (OSM 'Shear Outback Hay Visitor Centre')."
+   ]
+  },
+  "hay-gaol": {
+   "name": "Hay Gaol",
+   "icon": "🔒",
+   "category": "historic",
+   "bio": "1878 gaol turned museum in 1976, with antique windmills and Australia's oldest known bark canoe.",
+   "hours": "Open daily 9:00 AM – 5:00 PM",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "costMin": 5,
+   "costMax": 5,
+   "currency": "AUD",
+   "ticketUrl": "https://www.visithay.com.au/explore/location/hay-gaol-museum/",
+   "coordinates": { "latitude": -34.503126, "longitude": 144.85102 },
+   "notes": [
+    "A$5 adult (child 1) is from an undated Visit NSW listing; Visit Hay does not state a price and the shire directory once said A$4. Approximate.",
+    "Hay Shire and Visit NSW call it 'Hay Gaol Museum'; the shorter name is kept. Pin HIGH, 1.55 km from the placement point."
+   ]
+  },
+  "dunera-museum": {
+   "name": "Dunera Museum",
+   "icon": "🚂",
+   "category": "museum",
+   "bio": "Railway-station museum on the 1,984 Dunera Boys and thousands of internees held at Hay in 1940–46.",
+   "hours": "Open daily 9:00 AM – 5:00 PM",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "costMin": 5,
+   "costMax": 5,
+   "currency": "AUD",
+   "ticketUrl": "https://www.visithay.com.au/explore/location/dunera-museum",
+   "coordinates": { "latitude": -34.49946, "longitude": 144.842852 },
+   "notes": [
+    "A$5 entry confirmed by Visit Hay, the Dunera Association and the shire directory. Hours differ: Visit Hay 9-5, the Association and directory 9-6; 9-5 recorded.",
+    "A Hay Shire URL slug reads 'closed for restoration' but redirects to the directory home and the current Visit Hay page shows it open; no dated closure found. Guided tours by appointment.",
+    "Pin HIGH (OSM Hay Railway Station, where the museum is, plus Commons median)."
+   ]
+  },
+  "griffith-pioneer-park-museum": {
+   "name": "Griffith Pioneer Park Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Council museum telling how the Murrumbidgee Irrigation Area shaped Griffith, open seven days.",
+   "hours": "Mon–Fri 10:00 AM – 4:00 PM; Sat–Sun 10:00 AM – 3:00 PM",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "costMin": 15,
+   "costMax": 15,
+   "currency": "AUD",
+   "ticketUrl": "https://artsculture.griffith.nsw.gov.au/Griffith-Pioneer-Park-Museum",
+   "coordinates": { "latitude": -34.276491, "longitude": 146.055192 },
+   "notes": [
+    "A$15 adult (concession 12, child 5-17 8, family 45); Griffith residents free in 2026. Pioneer Express train tour is priced separately.",
+    "Christmas and public-holiday closures not read. Pin MEDIUM (OSM museum, 31 m)."
+   ]
+  },
+  "cocoparra-national-park": {
+   "name": "Cocoparra National Park",
+   "icon": "⛰️",
+   "category": "nature",
+   "bio": "Range park about 25 km north-east of Griffith, with ridge walks and waterfalls after rain.",
+   "hours": "Open 24 hours (NPWS lists 7am to 7pm; closes for weather or fire danger)",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/cocoparra-national-park",
+   "coordinates": { "latitude": -34.1329526, "longitude": 146.2036058 },
+   "notes": [
+    "Free: no entry fee on the NPWS page (camping at Woolshed Flat is charged). Inferred; confirm.",
+    "Pin is the OSM 'Gorge lookout' near Jacks Creek Picnic Area, a central visitor point (MEDIUM). Other visitor areas: Woolshed Falls and Woolshed Flat (-34.081,146.221) and Mount Brogden (-34.205,146.286).",
+    "NPWS shows both '7am to 7pm' and 'always open'; unclear which is the gate rule."
+   ]
+  },
+  "junee-roundhouse-museum": {
+   "name": "Junee Roundhouse Museum",
+   "icon": "🚂",
+   "category": "museum",
+   "bio": "Rare working roundhouse opened in 1947, half museum and half workshop for locomotives and rolling stock.",
+   "hours": "Wed–Sun 10:00 AM – 4:00 PM (last admission 3:30 PM)",
+   "closedDays": [1, 2],
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 15,
+   "costMax": 15,
+   "currency": "AUD",
+   "ticketUrl": "https://roundhousemuseum.com.au/",
+   "wiki": "Junee Roundhouse",
+   "coordinates": { "latitude": -34.88351, "longitude": 147.579035 },
+   "notes": [
+    "A$15 adult (concession 10, family 35). Open most NSW public holidays; closed Christmas Day, Boxing Day and Good Friday; opens at noon on Anzac Day.",
+    "wiki 'Junee Roundhouse' is the research's wiki_title but the research did not record fetching the article; confirm before applying.",
+    "Operator calls it one of few working roundhouses in the Southern Hemisphere; bio says 'rare'. Pin MEDIUM."
+   ]
+  },
+  "junee-licorice-and-chocolate-factory": {
+   "name": "Junee Licorice and Chocolate Factory",
+   "icon": "🍫",
+   "category": "entertainment",
+   "bio": "Sweets factory in Junee's old flour mill, with a shop, the Millroom restaurant and self-guided viewing.",
+   "hours": "Open daily 9:00 AM – 4:00 PM (closed Anzac Day)",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": "https://juneelicoriceandchocolate.com/",
+   "coordinates": { "latitude": -34.860301, "longitude": 147.579523 },
+   "notes": [
+    "FLAGGED: guided tours are 'currently unavailable due to renovations'. Written as a free visit (self-guided look at the manufacturing areas 9-4 daily). When tours run they cost A$5 adult, A$4 senior, A$3 child (under 5 free).",
+    "Hands-on chocolate making is A$7 per plate (drop-in 9-3). Whether non-customers can enter the production areas free is not stated ('customers are welcome'). Tour resume date unknown.",
+    "Use the new domain juneelicoriceandchocolate.com (the old Wix domain errors). Demote to review if the owner wants a tour-based spot. Pin MEDIUM."
+   ]
+  },
+  "bethungra-spiral": {
+   "name": "Bethungra Spiral",
+   "icon": "🚆",
+   "category": "landmark",
+   "bio": "Australia's only 360-degree rail spiral, built in the 1940s, seen from a viewing platform above the tunnel.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "wiki": "Bethungra Spiral",
+   "coordinates": { "latitude": -34.750219, "longitude": 147.885589 },
+   "notes": [
+    "ticketUrl omitted: only a Junee tourism page exists (youmeandjunee.com.au, a candidate, not the steward).",
+    "Free and open access are inferred; the page gives no hours or fee. Pin is the OSM viewing platform, 395 m from the Wikipedia spiral point (MEDIUM).",
+    "wiki equals the name, so it is not needed if that is the article title."
+   ]
+  },
+  "dog-on-the-tuckerbox": {
+   "name": "Dog on the Tuckerbox",
+   "icon": "🐕",
+   "category": "monument",
+   "bio": "Monument from 1932, 8 km north of Gundagai just off the Hume Highway, based on an 1850s bullocky poem.",
+   "hours": "Open 24 hours (kiosk and farm shop open daily)",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "ticketUrl": "https://www.visitgundagai.com.au/discovergundagai/dog-on-the-tuckerbox",
+   "coordinates": { "latitude": -35.001055, "longitude": 148.110533 },
+   "notes": [
+    "The page says the monument was unveiled 28 November 1932 and the legend began with the 1850s poem 'Bullocky Bill'. 24-hour access is inferred (outdoor monument); kiosk hours not verified.",
+    "Pin HIGH (OSM attraction, Wikipedia and Commons within 100 m)."
+   ]
+  },
+  "rusconis-marble-cathedral": {
+   "name": "Rusconi's Marble Masterpiece",
+   "icon": "⛪",
+   "category": "museum",
+   "bio": "Miniature cathedral hand-built from more than 20,000 pieces of marble over nearly 30 years from 1910.",
+   "hours": "Mon–Fri 9:00 AM – 4:30 PM (closed 12:30–1:00 PM); Sat–Sun 10:00 AM – 3:00 PM",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "costMin": 5,
+   "costMax": 5,
+   "currency": "AUD",
+   "ticketUrl": "https://www.visitgundagai.com.au/discovergundagai/rusconis-marble-masterpiece",
+   "coordinates": { "latitude": -35.062912, "longitude": 148.101888 },
+   "notes": [
+    "Official name is 'Rusconi's Marble Masterpiece'; id keeps 'rusconis-marble-cathedral'.",
+    "On display inside the Gundagai Visitor Information Centre, Sheridan Street; hours are the centre's, which may be reduced or closed on public holidays. A$5 adult (pensioner 3, child 2, family 10); undated page, so unclear if still current after the 2025 centre renovation.",
+    "Pin MEDIUM (the visitor centre; no OSM feature for the exhibit)."
+   ]
+  },
+  "junction-park-wentworth": {
+   "name": "Junction Park",
+   "icon": "🌅",
+   "category": "viewpoint",
+   "bio": "Park with a 35-step tower over where the Darling and Murray meet, their waters showing different colours.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "coordinates": { "latitude": -34.110897, "longitude": 141.909597 },
+   "notes": [
+    "ticketUrl omitted: only a Wentworth Shire tourism page (a candidate) exists, with no hours or price. Open access is assumed.",
+    "Tower opened 1991 (Rotary Club project). A newer Junction Island viewing platform (Nov 2025) is from a search summary and was not verified. Pin HIGH (OSM park)."
+   ]
+  },
+  "old-wentworth-gaol": {
+   "name": "Old Wentworth Gaol",
+   "icon": "🔒",
+   "category": "historic",
+   "bio": "Gaol built 1879–81 from bricks made on site, open for self-guided visits; it closed in 1927.",
+   "hours": "Mon–Wed 10:00 AM – 4:00 PM; Sat–Sun 10:00 AM – 2:00 PM",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "costMin": 8,
+   "costMax": 8,
+   "currency": "AUD",
+   "ticketUrl": "https://www.experiencewentworth.com.au/Pages/ToursTrails/CyclingWalking/19-Old-Wentworth-Gaol.aspx",
+   "coordinates": { "latitude": -34.102678, "longitude": 141.913488 },
+   "notes": [
+    "WEAK, UNVERIFIED: hours are from a search summary of a Visit Mildura listing (also closed Christmas Day, Boxing Day, Good Friday); A$8 adult is from one visitor-review aggregator. Confirm with Wentworth Visitor Information Centre (+61 3 5027 5080). closedDays not set (inferred Thu-Fri).",
+    "Designed by James Barnett, the first Australian-designed gaol (Wentworth shire page). Shire page heading names the gaol but has no hours or price. Pin MEDIUM."
+   ]
+  },
+  "perry-sandhills": {
+   "name": "Perry Sandhills",
+   "icon": "🏜️",
+   "category": "nature",
+   "bio": "160 ha of shifting dunes 6 km west of Wentworth, where a 500-year-old red gum is buried to its canopy.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "coordinates": { "latitude": -34.099564, "longitude": 141.868096 },
+   "notes": [
+    "ticketUrl omitted: only a shire tourism page (a candidate). Access is assumed free and open; land tenure and permit rules are unverified (the dunes host ticketed events).",
+    "The red gum is called the God Tree (shire page). Pin HIGH (OSM attraction plus Commons median)."
+   ]
+  },
+  "woomargama-national-park": {
+   "name": "Woomargama National Park",
+   "icon": "🌲",
+   "category": "nature",
+   "bio": "Largest protected area of forest west of the Great Dividing Range, with campgrounds and Norths Lookout.",
+   "hours": "Open 24 hours (NPWS lists 7am to 7pm; closes for weather or fire danger)",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/woomargama-national-park",
+   "coordinates": { "latitude": -35.860254, "longitude": 147.412732 },
+   "notes": [
+    "Free: no entry fee on the NPWS page (camping charged). Inferred; confirm.",
+    "Pin is the OSM viewpoint 'Norths Lookout' on the Tin Mines Fire Trail (MEDIUM); no entrance point found. The Hume and Hovell walking track crosses the park. About 20 km from Holbrook and 30 km from Albury (Wikipedia)."
+   ]
+  },
+  "murray-valley-national-park": {
+   "name": "Murray Valley National Park",
+   "icon": "🛶",
+   "category": "nature",
+   "bio": "River red gum forest in the Riverina's Ramsar-listed wetlands, for kayaking, fishing and birdwatching.",
+   "hours": "Open 24 hours (NPWS lists 7am to 7pm; closes for weather or fire danger)",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/murray-valley-national-park",
+   "coordinates": { "latitude": -35.833374, "longitude": 144.949534 },
+   "notes": [
+    "Free: no entry fee on the NPWS page (camping charged). Inferred; confirm.",
+    "Pin is the OSM Reed Beds Bird Hide at Mathoura (MEDIUM), one visitor point of a park that is several separate blocks.",
+    "NPWS publishes daily river reports."
+   ]
+  },
+  "willandra-national-park": {
+   "name": "Willandra National Park",
+   "icon": "🦘",
+   "category": "nature",
+   "bio": "Wetlands and grassy plains with over 195 bird species, including the endangered plains-wanderer.",
+   "hours": "Open 24 hours (NPWS lists 7am to 7pm; closes for weather or fire danger)",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "costMin": 8,
+   "costMax": 8,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/willandra-national-park",
+   "coordinates": { "latitude": -33.198141, "longitude": 145.120916 },
+   "notes": [
+    "A$8 is per vehicle per day, self-registration, bring correct change (NPWS), not per person. This is the only park in the region with a listed entry fee.",
+    "Pin is the visitor precinct near the Willandra wool shed and campground (MEDIUM); the old Hillston-side point was 48 km away. Not the same place as Willandra Lakes (Mungo).",
+    "The pastoral history (shearing at 'Big Willandra' in the bush song 'Flash Jack from Gundagai') is left out of the bio for length."
+   ]
+  },
+  "yanga-national-park": {
+   "name": "Yanga National Park",
+   "icon": "🦆",
+   "category": "nature",
+   "bio": "Murrumbidgee park near Balranald with a red gum bird hide on Yanga Lake and an old homestead and woolshed.",
+   "hours": "Sunrise to sunset (Yanga Homestead precinct 8:30 AM – 4:30 PM)",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/yanga-national-park",
+   "coordinates": { "latitude": -34.715247, "longitude": 143.609026 },
+   "notes": [
+    "Free: no entry fee on the NPWS page (camping charged). Inferred; confirm. Cook's Cottage and the refrigeration shed exhibitions open daily.",
+    "Up to 150 bird species at the bird hide (NPWS). Pin is the Yanga Homestead precinct, the visitor hub (MEDIUM)."
+   ]
+  },
+  "murrumbidgee-valley-national-park": {
+   "name": "Murrumbidgee Valley National Park",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Linear Murrumbidgee park protecting part of the world's largest continuous tract of river red gum forest.",
+   "hours": "Open 24 hours (NPWS lists 7am to 7pm; closes for weather or fire danger)",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/murrumbidgee-valley-national-park",
+   "coordinates": { "latitude": -34.60947007, "longitude": 146.37108256 },
+   "notes": [
+    "PIN LOW: any single point on a park running Narrandera to Balranald is arbitrary. This is the NPWS coordinate for the Turkey Flat picnic area and bird hide, near Leeton, which NPWS calls a must-see. Alternative: Sandy Beach (-34.7243,146.4664, OSM beach). Owner to confirm.",
+    "Free: no entry fee on the NPWS page (camping charged). Inferred; confirm. Middle Beach is part of this park and stays rejected as its own spot."
+   ]
+  },
+  "the-rock": {
+   "name": "The Rock",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Grade 3 walk, 6 km return, climbing The Rock formation in Kengal Aboriginal Place to a lookout.",
+   "hours": "Open 24 hours (NPWS lists 7am to 7pm; closes for weather or fire danger)",
+   "visitHoursMin": 2.5,
+   "visitHoursMax": 3.5,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/the-rock-nature-reserve-kengal-aboriginal-place",
+   "coordinates": { "latitude": -35.27232, "longitude": 147.08108 },
+   "notes": [
+    "Pin is the computed midpoint of the surveyed OSM Yerong Walking Track (3.0 km one way, car park -35.2614,147.0761 to lookout -35.2747,147.0742). Use the lookout if a summit pin is preferred.",
+    "Free: no entry fee on the NPWS page. The reserve's full name is The Rock Nature Reserve - Kengal Aboriginal Place; shown name kept as 'The Rock'. Bio avoids repeating 'Yerong' to stay short."
+   ]
+  },
+  "holbrook-submarine-museum": {
+   "name": "Holbrook Submarine Museum",
+   "icon": "🚢",
+   "category": "museum",
+   "bio": "Holbrook's submarine museum, run by its Friends group and combined with the Greater Hume visitor centre.",
+   "hours": "Mon–Fri 9:30 AM – 4:30 PM; Sat–Sun 10:00 AM – 3:00 PM (Apr–Sep) or 10:00 AM – 4:00 PM (Oct–Mar)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://holbrooksubmarinemuseum.com.au/index.php/about-us/hsm/",
+   "coordinates": { "latitude": -35.718585, "longitude": 147.3163 },
+   "notes": [
+    "WEAK BIO: the research page says nothing about the exhibits (no submarine, HMAS Otway or collection facts), so the bio states only what was sourced. Add one distinctive fact once researched.",
+    "A$10 adult (family 20, students 5). Entry closes 30 minutes before the visitor centre closes; open public holidays on Monday. Christmas and Good Friday closures not stated. Older aggregators give A$7 and different hours.",
+    "No Wikipedia article titled 'Holbrook Submarine Museum' (404), so no wiki. Pin HIGH."
+   ]
+  },
+  "narrandera-flora-and-fauna-reserve": {
+   "name": "Narrandera Flora and Fauna Reserve",
+   "icon": "🐨",
+   "category": "nature",
+   "bio": "River red gum reserve with a colony of over 300 wild koalas, a few minutes' walk from Narrandera.",
+   "hours": "Daylight hours (access roads closed in wet weather)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": true,
+   "ticketUrl": "https://www.narrandera.com.au/nature-play-wildlife/flora-and-fauna-reserve",
+   "coordinates": { "latitude": -34.7701974, "longitude": 146.5873897 },
+   "notes": [
+    "Free entry per the NSW Government listing. 'Daylight hours' is an assumption: no opening hours were found. Council closes the unsealed access roads during and after wet weather.",
+    "Koalas descend from about 20 reintroduced in the 1970s. Pin HIGH (reserve entrance and car park). Address reads Oakbank Drive or Oakbank Street depending on source."
+   ]
+  },
+  "big-guitar-narrandera": {
+   "name": "Big Playable Guitar",
+   "icon": "🎸",
+   "category": "landmark",
+   "bio": "5.82 m plywood guitar built in 1988 by a local, displayed in Narrandera's visitor centre.",
+   "hours": "Mon–Fri 9:00 AM – 4:00 PM; Sat 9:00 AM – 3:00 PM; Sun 10:00 AM – 2:00 PM",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "ticketUrl": "https://www.narrandera.com.au/art-culture-history/big-playable-guitar",
+   "coordinates": { "latitude": -34.745362, "longitude": 146.550472 },
+   "notes": [
+    "Renamed from 'Big Guitar' to the official 'Big Playable Guitar'; id kept. Owner to confirm the shown name.",
+    "Hours are the Narrandera Destination and Discovery Hub's; public-holiday hours not read. Pin MEDIUM (the visitor centre, where the guitar is); resolve-pin returned Big Arrow and was rejected."
+   ]
+  },
+  "fivebough-and-tuckerbil-wetlands": {
+   "name": "Fivebough Wetlands",
+   "icon": "🦢",
+   "category": "nature",
+   "bio": "Ramsar-listed wetlands near Leeton with walking and cycling tracks, viewing shelters and a picnic area.",
+   "hours": "Daylight hours (walk or cycle in)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": true,
+   "ticketUrl": "https://www.fiveboughwetlands.org.au/",
+   "coordinates": { "latitude": -34.529796, "longitude": 146.430145 },
+   "notes": [
+    "Renamed from 'Fivebough and Tuckerbil Wetlands': Tuckerbil (283 ha) has no public access, so only Fivebough is the spot. Id kept.",
+    "Free per the NSW Government listing. Hours not stated; an older reserve page said a gate key came from the Leeton Visitor Information Centre with a A$10 deposit and vehicles were not permitted. Current rules unverified.",
+    "Pin is the OSM reserve centroid (MEDIUM); the entrance is on Petersham Road and was not separately resolved."
+   ]
+  },
+  "tumbarumba-rosewood-rail-trail": {
+   "name": "Tumbarumba to Rosewood Rail Trail",
+   "icon": "🚲",
+   "category": "hike",
+   "bio": "21 km sealed rail trail through farmland west of the Snowy Mountains, with four station sites and displays.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": true,
+   "ticketUrl": "https://www.visitsnowyvalleys.com.au/directory-visitsnowyva/listing/tumbarumba-to-rosewood-rail-trail/",
+   "coordinates": { "latitude": -35.747414, "longitude": 147.942944 },
+   "notes": [
+    "Opened April 2020 (Visit Snowy Valleys). Pin is the midpoint along OSM route relation 12568572, accurate to about 1-2 km because of small gaps in the geometry (MEDIUM). OSM geometry is about 24 km against the published 21 km.",
+    "Free and always open: volunteer site says 'Always open'; no charge found."
+   ]
+  },
+  "bradmans-birthplace-museum": {
+   "name": "Bradman's Birthplace Museum",
+   "icon": "🏏",
+   "category": "museum",
+   "bio": "Cottage where Donald Bradman was born in 1908, open to the public since 1992, with memorabilia next door.",
+   "hours": "Open daily 9:00 AM – 5:00 PM (10:00 AM – 4:00 PM June–August)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.25,
+   "costMin": 5,
+   "costMax": 5,
+   "currency": "AUD",
+   "ticketUrl": "https://visitcootamundra.com.au/history/bradmans-birthplace/",
+   "coordinates": { "latitude": -34.631025, "longitude": 148.021397 },
+   "notes": [
+    "A$5 adult, children under 16 free. Closed Christmas Day and Good Friday (not entered as specialClosures).",
+    "Memorabilia Cottage is at 87 Adams Street (Visit Cootamundra). Pin HIGH."
+   ]
+  },
+  "cricket-captains-walk": {
+   "name": "Cricket Captains Walk",
+   "icon": "🏏",
+   "category": "monument",
+   "bio": "A 150 m path of bronze busts of Australia's men's Test captains, opened in 1998 with a Bradman sculpture.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": true,
+   "ticketUrl": "https://visitcootamundra.com.au/history/captains-walk/",
+   "wiki": "Cricket Captains' Walk",
+   "coordinates": { "latitude": -34.637436, "longitude": 148.020842 },
+   "notes": [
+    "The page says Stage 1 opened 30 August 1998 with a life-size Bradman sculpture; the walk is wheelchair accessible. No hours stated; open access assumed.",
+    "wiki 'Cricket Captains' Walk' is the research's wiki_title, not confirmed as fetched; check before applying. Pin HIGH (OSM footway midpoint plus Commons)."
+   ]
+  },
+  "coolamon-fire-museum": {
+   "name": "Coolamon Fire Museum",
+   "icon": "🚒",
+   "category": "museum",
+   "bio": "Old fire station holding firefighting memorabilia from around the world, including 100-plus helmets.",
+   "hours": "Open daily 10:00 AM – 4:00 PM",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "ticketUrl": "https://visitcoolamonshire.com.au/coolamon-fire-museum",
+   "coordinates": { "latitude": -34.813392, "longitude": 147.199387 },
+   "notes": [
+    "Free, donations welcome; also the Visitor Information Centre. Opened 5 October 2015; helmets date from the 1830s and breathing apparatus from the 1800s. The page is undated; Christmas closures not stated.",
+    "Pin HIGH."
+   ]
+  },
+  "temora-aviation-museum": {
+   "name": "Temora Aviation Museum",
+   "icon": "✈️",
+   "category": "museum",
+   "bio": "Historic ex-military aircraft on the site of the WWII No. 10 Elementary Flying Training School.",
+   "hours": "Open daily 10:00 AM – 4:00 PM",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "costMin": 25,
+   "costMax": 25,
+   "currency": "AUD",
+   "ticketUrl": "https://www.aviationmuseum.com.au/",
+   "coordinates": { "latitude": -34.427342, "longitude": 147.515047 },
+   "notes": [
+    "A$25 adult (over 65 20, child 3-16 10, family 60). Closed Good Friday, New Year's Day, Christmas Day and Boxing Day (not entered as specialClosures).",
+    "Flying-day pricing is separate and not recorded. Pin HIGH."
+   ]
+  },
+  "greens-gunyah-museum": {
+   "name": "Greens Gunyah Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Lockhart museum with 1888 Shearers' Strike artefacts from Brookong Station and a gallery of wool art.",
+   "hours": "Open daily 10:00 AM – 2:00 PM",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://lockhartmuseum.org/",
+   "coordinates": { "latitude": -35.220558, "longitude": 146.713625 },
+   "notes": [
+    "A$10 adult (secondary 5, primary 1), matched by the 2026 NSW Government listing. The museum site footer reads 2020, so hours may have changed; older directories gave 9:30-4:30 on some days.",
+    "The museum's own spelling is 'Green's Gunyah'; research name kept. Pin MEDIUM."
+   ]
+  },
+  "tocumwal-town-beach": {
+   "name": "Tocumwal Town Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Big Murray River beach in red gum forest near town; unpatrolled, and the current can be treacherous.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2.5,
+   "free": true,
+   "coordinates": { "latitude": -35.818624, "longitude": 145.559524 },
+   "notes": [
+    "No ticketUrl: public beach; the only council page covers the whole town. Free is inferred (a search summary only). The beach closes in floods; a primitive camping area is attached (Wikivoyage).",
+    "Tocumwal has 25 river beach sites (Berrigan Shire Council). Pin MEDIUM (OSM natural=beach)."
+   ]
+  },
+  "big-cod-tocumwal": {
+   "name": "Big Cod",
+   "icon": "🐟",
+   "category": "landmark",
+   "bio": "Giant fibreglass Murray cod on the Tocumwal foreshore, dated to 1968 and one of Australia's Big Things.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": true,
+   "coordinates": { "latitude": -35.811699, "longitude": 145.563998 },
+   "notes": [
+    "No ticketUrl: roadside sculpture; the only council page is the whole-town page. The 1968 date and 'second oldest' claim are Wikivoyage's, so the bio says 'dated to'. Pin HIGH."
+   ]
+  },
+  "coleambally-bucyrus-dragline": {
+   "name": "Coleambally Bucyrus Dragline",
+   "icon": "🏗️",
+   "category": "landmark",
+   "bio": "Bucyrus-Erie dragline at the town entrance, the machine that built Coleambally's irrigation system.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": true,
+   "ticketUrl": "https://www.visitmurrumbidgee.com/Coleambally/See-and-do/Bucyrus-Erie-Dragline-Excavator",
+   "coordinates": { "latitude": -34.798425, "longitude": 145.878206 },
+   "notes": [
+    "Stands in Lions Park; free access is inferred (open park). The council page says the town would not exist without the dragline.",
+    "Pin is the Commons median of 16 geotagged dragline files, 114 m from the OSM park (MEDIUM)."
+   ]
+  },
+  "biggest-football-ungarie": {
+   "name": "Biggest Football",
+   "icon": "🏉",
+   "category": "landmark",
+   "bio": "800 kg fibreglass Sherrin on a five-metre pedestal in Ungarie, a tribute to the Daniher brothers.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": true,
+   "ticketUrl": "https://www.blandshire.nsw.gov.au/Services/Visitor-Information/Things-to-See-and-Do/The-Big-Football",
+   "coordinates": { "latitude": -33.639089, "longitude": 146.974129 },
+   "notes": [
+    "Bland Shire calls it 'The Big Football'; research name kept, owner to confirm. In Bing Wallder Park, unveiled March 2018. Free access inferred (public park).",
+    "Pin HIGH (OSM artwork plus Commons median 95 m)."
+   ]
+  }
+ },
+ "existing_fixes": [],
+ "held": [
+  {
+   "id": "prince-alfred-bridge",
+   "name": "Prince Alfred Bridge",
+   "reason": "Demoted to review: the bridge was demolished in November 2021. Only a memorial concept and the remaining Railway Bridge views exist, and the pin is LOW (Wikipedia point, 69 Commons files).",
+   "facts": "Visit NSW: Prince Alfred Bridge demolished November 2021; the Timber Railway Bridge and twin Sheahan Bridges remain, timber viaducts National Trust listed. Crown Lands released a memorial concept (viewing area off Sheridan Street with a wire sculpture and AR information panel; second site at O.I. Bell Drive; feedback to 31 May); whether it was built is unknown. If wanted, replace it with a Gundagai historic railway bridge / Prince Alfred Bridge memorial viewing-area spot named from https://www.visitnsw.com/destinations/country-nsw/riverina/gundagai/attractions/gundagai-historic-railway-bridge-prince-alfred-bridge-memorial. Pin if kept: -35.0744, 148.1069 (LOW). Category historic, free, Australia/Sydney, no ticketUrl."
+  },
+  {
+   "id": "coleambally-wineglass-water-tower",
+   "name": "Coleambally Wineglass Water Tower",
+   "reason": "Held for review per the brief. It has no entry in research.json (no facts, hours, cost, source or pin), so no spot can be written from the research.",
+   "facts": "None in research.json. Would need a counted source, a verified pin and confirmation it is a visitor stop, not a roadside look from the pavement. Coleambally already has the Bucyrus Dragline spot; if kept it should not repeat that spot's wording."
+  }
+ ],
+ "notes": [
+  "37 spots written plus 2 held (Prince Alfred Bridge, Coleambally Wineglass Water Tower). All are standalone, keyed by the research.json fallback ids, country Australia (AU), continent Oceania, timezone Australia/Sydney. Add the four standalone fields when applying.",
+  "No shell was available in this session, so bio-fit.py was NOT run. Bios were counted by hand at roughly 78-112 characters; the tightest are Dog on the Tuckerbox, Junee Roundhouse Museum, Hume Dam, Bradman's Birthplace Museum, Cricket Captains Walk and Dunera Museum. Run `python3 scripts/curation/bio-fit.py` before applying and trim any that wrap past three lines.",
+  "Coordinates are the research's coordinates_check.source_point values, copied exactly. LOW or weak pins to confirm: Murrumbidgee Valley National Park (arbitrary point on a linear park), Wiradjuri Walking Track (on-track, not a midpoint). Landmark/institution pins MEDIUM or HIGH otherwise.",
+  "ticketUrl omitted (no BLOCKED strings or *_candidate used): Wagga Wagga Botanic Gardens, Hume Dam (blocked council and WaterNSW pages), plus Wiradjuri Walking Track, Bethungra Spiral, Junction Park, Perry Sandhills, Tocumwal Town Beach and Big Cod (no steward page).",
+  "Parks other than Willandra are free: NPWS lists no entry fee on those pages (inferred; camping and tours are charged). Willandra is A$8 per vehicle per day. NPWS hours show both '7am to 7pm' and 'always open'.",
+  "Renames for the owner to confirm: Rusconi's Marble Masterpiece (id kept), Big Playable Guitar, Fivebough Wetlands (Tuckerbil has no public access). Kept as research names though sources differ: Greens Gunyah Museum, Biggest Football, The Rock.",
+  "wiki set only for Junee Roundhouse Museum ('Junee Roundhouse') and Cricket Captains Walk ('Cricket Captains\\' Walk'): both are research wiki_titles that were not shown as fetched, so confirm before applying. Other wiki_titles equal the name and are left out.",
+  "Flags: Junee Licorice and Chocolate Factory written as a free visit with tours unavailable (tour price A$5 in notes). Old Wentworth Gaol hours and A$8 price are unverified. Holbrook Submarine Museum bio is thin because the research has no exhibit facts. Dunera Museum hours differ by source (9-5 chosen).",
+  "Photos: not handled here."
+ ]
+}

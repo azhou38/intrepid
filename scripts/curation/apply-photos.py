@@ -68,7 +68,7 @@ def set_in(block_name, key, line_val):
 
 
 pending, report = [], {'copyright_risk': [], 'unresolved': [], 'applied': 0}
-for f in sorted(glob.glob('curation/nz-rest/lens/judge-2-C*.json')):
+for f in sorted(glob.glob(os.environ.get('JUDGE_GLOB', 'curation/nz-rest/lens/judge-2-C*.json'))):   # JUDGE_GLOB limits a run to one region's verdicts
     for r in json.load(open(f)):
         slot, acc = r['slot'], r['accept']
         if acc == 'none': continue

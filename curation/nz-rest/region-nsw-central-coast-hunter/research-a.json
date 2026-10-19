@@ -1,0 +1,1678 @@
+{
+ "region": "nsw-central-coast-hunter",
+ "researcher": "research-a (first half of placement.json spots + Port Stephens self entry)",
+ "date": "2026-10-18",
+ "mode": "standalone fallback (proposed destinations are not being added); ids are the if_declined_standalone ids; placement_id is the placement id",
+ "shared_notes": [
+  "Coverage of this half: placement.json spots[0..34] (newcastle-1..22, hunter-valley-1..9, port-stephens-1..4) plus the standalone \"port-stephens\" town entry. Newcastle and Gosford/Central Coast centres are not in placement.json as kept spots (no entry exists for them); Nelson Bay is port-stephens-6 (second half).",
+  "Australian Reptile Park (central-coast-1) and Point Stephens Lighthouse (port-stephens-10) fall in the second half and were not researched here.",
+  "Overpass (overpass-api.de) was unreachable; resolve-pin.py was run through a copy that points to the maps.mail.ru Overpass mirror (script otherwise unchanged). Trail midpoints beyond resolve-pin's single-segment output were computed with a small script over the same OSM geometry.",
+  "Two entries are closed to the public per their own live official sites: Maitland Gaol (closed until further notice, fire/electrical) and Richmond Vale Railway Museum (closed by council order). Both held.",
+  "NPWS fees: Watagans and Tomaree National Parks do not appear on https://www.nationalparks.nsw.gov.au/passes-and-fees/fee-collecting-parks (Bouddi and Brisbane Water, in the other half, do: $8 per day listed for the list's standard entries)."
+ ],
+ "entries": [
+  {
+   "id": "nobbys-head",
+   "name": "Nobbys Head",
+   "placement_id": "newcastle-1",
+   "kind": "new",
+   "standalone": true,
+   "category": "landmark",
+   "facts": [
+    {
+     "claim": "Nobbys Island is joined to the mainland by a pier built with convict labour (completed 1846), open to pedestrians and flanked by Nobbys Beach; it is a vantage point over the harbour and Stockton Beach.",
+     "source": "https://en.wikivoyage.org/wiki/Newcastle_(New_South_Wales)"
+    },
+    {
+     "claim": "Port Authority of NSW: the Nobbys-Whibayganba Headland grounds are open to the public on weekends and public holidays from 8:00am to 4:00pm; Macquarie Pier was built from 1818 to link the headland to the mainland.",
+     "source": "https://www.portauthoritynsw.com.au/around-ports/newcastle-harbour/see-and-do/nobbys-headland"
+    }
+   ],
+   "hours": "Headland grounds weekends and public holidays, 8:00 AM – 4:00 PM",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": "https://www.portauthoritynsw.com.au/around-ports/newcastle-harbour/see-and-do/nobbys-headland",
+   "ticketUrl_note": "Verified: Port Authority of NSW (manages the headland); loaded, HTTP 200, title \"Nobbys Headland | Port Authority of NSW\".",
+   "bio_suggestion": "A convict-built pier leads to Nobbys Head, a lighthouse headland with harbour views; grounds open weekends.",
+   "unverified": [
+    "Whether the Macquarie Pier walkway itself is open on weekdays (Port Authority page gives the weekend/public-holiday hours for the headland grounds only; a third-party guide says the pier is open daily)."
+   ],
+   "coordinates_check": {
+    "current": {
+     "latitude": -32.919627,
+     "longitude": 151.798592
+    },
+    "source_point": {
+     "latitude": -32.918188,
+     "longitude": 151.7989
+    },
+    "moved_m_from_placement": 163,
+    "source": "resolve-pin.py HIGH: OSM natural=cape \"Nobbys Head\" (Photon) with 36 geotagged Commons files median 183 m away; placement point was the Wikivoyage listing at the pier base",
+    "confidence": "HIGH",
+    "ok": true
+   },
+   "coordinates_source": "resolve-pin.py HIGH: OSM natural=cape \"Nobbys Head\" (Photon) with 36 geotagged Commons files median 183 m away; placement point was the Wikivoyage listing at the pier base"
+  },
+  {
+   "id": "fort-scratchley",
+   "name": "Fort Scratchley",
+   "placement_id": "newcastle-2",
+   "kind": "new",
+   "standalone": true,
+   "category": "historic",
+   "facts": [
+    {
+     "claim": "Built on the Newcastle East headland in 1882 to defend against a possible Russian attack and now a museum; its guns were first fired in anger on 8 June 1942 during the Japanese submarine shelling of Newcastle; the Army left in 1972.",
+     "source": "https://fortscratchley.org.au/"
+    },
+    {
+     "claim": "Open Wednesday to Monday 10:00am to 4:00pm, last entry 3:30pm, closed Tuesday.",
+     "source": "https://fortscratchley.org.au/"
+    },
+    {
+     "claim": "Self-guided visits cover the Parade and Ceremony Grounds, galleries and collections but not the tunnels. Guided tunnel tours run at 10:30, 11:30, 1:10, 1:40 and 2:30 on open days; allow 90 minutes on site; tunnel tour adult $16.50, concession $11, child (4-14) $9.50, family $42, under 4 free.",
+     "source": "https://fortscratchley.org.au/tours/"
+    },
+    {
+     "claim": "Wikivoyage: Wed-Mon 10AM-4PM, refurbished and open to the public, with views to the north and over the city.",
+     "source": "https://en.wikivoyage.org/wiki/Newcastle_(New_South_Wales)"
+    }
+   ],
+   "hours": "10:00 AM – 4:00 PM",
+   "closedDays": [
+    2
+   ],
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2,
+   "costMin": 16.5,
+   "costMax": 16.5,
+   "currency": "AUD",
+   "cost_note": "Adult guided tunnel tour price; the self-guided grounds price is not stated on the operator pages loaded (a council page seen in search results says grounds admission is free: not loaded, unverified).",
+   "ticketUrl": "https://fortscratchley.org.au/",
+   "ticketUrl_note": "Verified: Fort Scratchley Historical Society (operator of the museum and tours); loaded, HTTP 200, title \"Discover the rich history of Newcastle: Fort Scratchley\". The council site fortscratchley.nsw.gov.au is the function-centre/venue-hire site and its opening-hours page redirects to the Society site.",
+   "bio_suggestion": "An 1882 harbour fort and museum with guided tunnel tours, shelled by a Japanese submarine in 1942.",
+   "unverified": [
+    "Public-holiday closures (a council snippet lists Good Friday, Christmas Day, Boxing Day, New Year's Day; page not loaded)."
+   ],
+   "coordinates_check": {
+    "current": {
+     "latitude": -32.926163,
+     "longitude": 151.791113
+    },
+    "source_point": {
+     "latitude": -32.926073,
+     "longitude": 151.791098
+    },
+    "moved_m_from_placement": 10,
+    "source": "resolve-pin.py HIGH: Photon tourism=attraction \"Fort Scratchley\" + 11 geotagged Commons files 17 m away",
+    "confidence": "HIGH",
+    "ok": true
+   },
+   "coordinates_source": "resolve-pin.py HIGH: Photon tourism=attraction \"Fort Scratchley\" + 11 geotagged Commons files 17 m away"
+  },
+  {
+   "id": "newcastle-museum",
+   "name": "Newcastle Museum",
+   "placement_id": "newcastle-3",
+   "kind": "new",
+   "standalone": true,
+   "category": "museum",
+   "facts": [
+    {
+     "claim": "Open Tuesday to Sunday 10am to 5pm (also Mondays in NSW school holidays); general admission is free.",
+     "source": "https://newcastlemuseum.com.au/"
+    },
+    {
+     "claim": "Housed in three historic railway workshop buildings at 6 Workshop Way; permanent exhibitions on local history (A Newcastle Story), BHP steelworks and coal mining, and the Supernova hands-on science gallery.",
+     "source": "https://en.wikivoyage.org/wiki/Newcastle_(New_South_Wales)"
+    }
+   ],
+   "hours": "10:00 AM – 5:00 PM",
+   "closedDays": [
+    1
+   ],
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": true,
+   "ticketUrl": "https://newcastlemuseum.com.au/",
+   "ticketUrl_note": "Verified: City of Newcastle museum site; loaded, HTTP 200, title \"Newcastle Museum\".",
+   "bio_suggestion": "A free museum in three historic railway workshops on local history, BHP steelworks, coal mining and science.",
+   "unverified": [
+    "Mondays are closed except NSW school holidays and some public holidays (site names Labour Day)."
+   ],
+   "coordinates_check": {
+    "current": {
+     "latitude": -32.926109,
+     "longitude": 151.772381
+    },
+    "source_point": {
+     "latitude": -32.926165,
+     "longitude": 151.772199
+    },
+    "moved_m_from_placement": 18,
+    "source": "resolve-pin.py HIGH: Photon tourism=museum \"Newcastle Museum\" + Wikipedia article 20 m away + 55 geotagged Commons files",
+    "confidence": "HIGH",
+    "ok": true
+   },
+   "coordinates_source": "resolve-pin.py HIGH: Photon tourism=museum \"Newcastle Museum\" + Wikipedia article 20 m away + 55 geotagged Commons files"
+  },
+  {
+   "id": "bathers-way",
+   "name": "Bathers Way",
+   "placement_id": "newcastle-4",
+   "kind": "new",
+   "standalone": true,
+   "category": "hike",
+   "facts": [
+    {
+     "claim": "City of Newcastle: one of the premier coastal walks in NSW, 6 km from Merewether Baths in the south to Nobbys Beach in the north, passing Strzelecki Lookout.",
+     "source": "https://newcastle.nsw.gov.au/explore/things-to-do/walking-and-cycling/bathers-way"
+    },
+    {
+     "claim": "Visit Newcastle: 6 km one way, about 3 hours; the route includes the elevated 450 m Anzac Memorial Walk.",
+     "source": "https://visitnewcastle.com.au/insider-guides/walk-the-bathers-way"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://newcastle.nsw.gov.au/explore/things-to-do/walking-and-cycling/bathers-way",
+   "ticketUrl_note": "Verified: managing agency (City of Newcastle) page; loaded, HTTP 200, title \"Bathers Way - City of Newcastle\".",
+   "bio_suggestion": "Newcastle's 6 km coastal path linking Merewether Baths, headlands, beaches and ocean baths to Nobbys.",
+   "unverified": [
+    "The OSM-mapped part ends near Newcastle Beach, so the northern 2.8 km to Nobbys is placed by the council's stated 6 km length, not mapped geometry."
+   ],
+   "coordinates_check": {
+    "current": {
+     "latitude": -32.94172,
+     "longitude": 151.76646
+    },
+    "source_point": {
+     "latitude": -32.935918,
+     "longitude": 151.778038
+    },
+    "moved_m_from_placement": 1258,
+    "source": "Route midpoint: 3.0 km along the OSM-mapped \"Bathers Way\" ways from Merewether Baths (OSM chain 3.16 km, Merewether to Newcastle Beach end), i.e. halfway along the council's 6 km route. resolve-pin.py itself returned only single segments (HIGH on a 0.1 km way), so the midpoint was computed from the OSM geometry via the Overpass mirror (maps.mail.ru) with a script.",
+    "confidence": "MEDIUM",
+    "ok": true
+   },
+   "coordinates_source": "Route midpoint: 3.0 km along the OSM-mapped \"Bathers Way\" ways from Merewether Baths (OSM chain 3.16 km, Merewether to Newcastle Beach end), i.e. halfway along the council's 6 km route. resolve-pin.py itself returned only single segments (HIGH on a 0.1 km way), so the midpoint was computed from the OSM geometry via the Overpass mirror (maps.mail.ru) with a script."
+  },
+  {
+   "id": "newcastle-ocean-baths",
+   "name": "Newcastle Ocean Baths",
+   "placement_id": "newcastle-5",
+   "kind": "new",
+   "standalone": true,
+   "category": "beach",
+   "facts": [
+    {
+     "claim": "City of Newcastle: Newcastle Ocean Baths opened in 1922; open year round subject to maintenance and cleaning; closed all day every Wednesday for cleaning (altered by weather, surf or tide); change rooms open daily from 5:30am.",
+     "source": "https://newcastle.nsw.gov.au/explore/recreation/beaches-and-baths/ocean-baths"
+    },
+    {
+     "claim": "Lifeguard on duty 8am-4:30pm to 25 September 2026, then (summer roster) from 27 September; the Wikivoyage notes the baths stay open in winter and the Grandstand is a sunbathing spot.",
+     "source": "https://en.wikivoyage.org/wiki/Newcastle_(New_South_Wales)"
+    }
+   ],
+   "hours": "Daily; change rooms from 5:30 AM; closed Wednesdays for cleaning",
+   "closedDays": [
+    3
+   ],
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "cost_note": "No charge is stated on the council page or Wikivoyage.",
+   "ticketUrl": "https://newcastle.nsw.gov.au/explore/recreation/beaches-and-baths/ocean-baths",
+   "ticketUrl_note": "Verified: City of Newcastle page covering both ocean baths; loaded, HTTP 200, title \"Ocean Baths in Newcastle - City of Newcastle\".",
+   "bio_suggestion": "Historic 1922 ocean baths beside the Newcastle foreshore, open year round except Wednesday cleaning days.",
+   "unverified": [
+    "Lifeguard hours for the 2026-27 summer roster of the Newcastle baths were not read in full."
+   ],
+   "coordinates_check": {
+    "current": {
+     "latitude": -32.92957,
+     "longitude": 151.79095
+    },
+    "source_point": {
+     "latitude": -32.92957,
+     "longitude": 151.79095
+    },
+    "moved_m_from_placement": 0,
+    "source": "Placement point kept: OSM leisure=swimming_pool W35972781 plus Wikipedia article 6 m away and 43 geotagged Commons files 79 m away (two independent sources)",
+    "confidence": "HIGH",
+    "ok": true
+   },
+   "coordinates_source": "Placement point kept: OSM leisure=swimming_pool W35972781 plus Wikipedia article 6 m away and 43 geotagged Commons files 79 m away (two independent sources)"
+  },
+  {
+   "id": "merewether-ocean-baths",
+   "name": "Merewether Ocean Baths",
+   "placement_id": "newcastle-6",
+   "kind": "new",
+   "standalone": true,
+   "category": "beach",
+   "facts": [
+    {
+     "claim": "City of Newcastle: Merewether Ocean Baths opened in 1935; open year round subject to maintenance; cleaned every Thursday during the season, closed all day on cleaning days; change rooms open from 5:30am; lifeguard 9am-5:30pm from 27 September 2026.",
+     "source": "https://newcastle.nsw.gov.au/explore/recreation/beaches-and-baths/ocean-baths"
+    },
+    {
+     "claim": "Wikivoyage: the largest ocean baths complex in the southern hemisphere; free.",
+     "source": "https://en.wikivoyage.org/wiki/Newcastle_(New_South_Wales)"
+    }
+   ],
+   "hours": "Daily; change rooms from 5:30 AM; closed Thursdays for cleaning",
+   "closedDays": [
+    4
+   ],
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": "https://newcastle.nsw.gov.au/explore/recreation/beaches-and-baths/ocean-baths",
+   "ticketUrl_note": "Verified (same council page as Newcastle Ocean Baths; title \"Ocean Baths in Newcastle - City of Newcastle\").",
+   "bio_suggestion": "A large ocean baths complex at Merewether, billed as the biggest in the southern hemisphere, free to use.",
+   "unverified": [
+    "\"Largest in the southern hemisphere\" is Wikivoyage's claim; the council page does not make it."
+   ],
+   "coordinates_check": {
+    "current": {
+     "latitude": -32.95181,
+     "longitude": 151.75563
+    },
+    "source_point": {
+     "latitude": -32.95181,
+     "longitude": 151.75563
+    },
+    "moved_m_from_placement": 0,
+    "source": "Placement point kept: OSM leisure=swimming_pool W25026915, within 10 m of the Wikivoyage listing point -32.95186, 151.755647",
+    "confidence": "HIGH",
+    "ok": true
+   },
+   "coordinates_source": "Placement point kept: OSM leisure=swimming_pool W25026915, within 10 m of the Wikivoyage listing point -32.95186, 151.755647"
+  },
+  {
+   "id": "bogey-hole-newcastle",
+   "name": "The Bogey Hole",
+   "placement_id": "newcastle-7",
+   "kind": "new",
+   "standalone": true,
+   "category": "landmark",
+   "wiki_title": "Bogey Hole",
+   "facts": [
+    {
+     "claim": "Carved out of the rock by convicts, this ocean pool at the bottom of King Edward Park is a place for a dip.",
+     "source": "https://en.wikivoyage.org/wiki/Newcastle_(New_South_Wales)"
+    },
+    {
+     "claim": "Wikipedia article \"Bogey Hole\" gives the pool's coordinates 34 m from the placement point.",
+     "source": "https://en.wikipedia.org/wiki/Bogey_Hole"
+    }
+   ],
+   "hours": "Tides permitting",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "No single steward page for the pool: the council ocean-baths page does not cover it.",
+   "bio_suggestion": "A convict-carved rock ocean pool at the foot of King Edward Park, best at low tide in calm seas.",
+   "unverified": [
+    "A search snippet from the council says waves can break over the pool at high tide and it has no fixed hours; page not loaded."
+   ],
+   "coordinates_check": {
+    "current": {
+     "latitude": -32.935404,
+     "longitude": 151.781691
+    },
+    "source_point": {
+     "latitude": -32.935219,
+     "longitude": 151.78164
+    },
+    "moved_m_from_placement": 21,
+    "source": "resolve-pin.py HIGH: Photon natural=water / leisure=swimming_area \"The Bogey Hole\" + Wikipedia 34 m + 8 geotagged Commons files 44 m",
+    "confidence": "HIGH",
+    "ok": true
+   },
+   "coordinates_source": "resolve-pin.py HIGH: Photon natural=water / leisure=swimming_area \"The Bogey Hole\" + Wikipedia 34 m + 8 geotagged Commons files 44 m"
+  },
+  {
+   "id": "newcastle-art-gallery",
+   "name": "Newcastle Art Gallery",
+   "placement_id": "newcastle-8",
+   "kind": "new",
+   "standalone": true,
+   "category": "museum",
+   "facts": [
+    {
+     "claim": "Open Tuesday to Sunday 10am-4pm at 1 Laman Street; special exhibitions are ticketed (Angela Tiatia: Muse, 26 Sep 2026 - 7 Feb 2027: $20 adult).",
+     "source": "https://newcastleartgallery.nsw.gov.au/"
+    },
+    {
+     "claim": "Admission to the exhibition page: $20 adult, $18 concession, $8 child/teen, $50 family; The Matildas work shown free alongside.",
+     "source": "https://newcastleartgallery.nsw.gov.au/exhibitions/angela-tiatia"
+    },
+    {
+     "claim": "After a $48 million expansion that more than doubled exhibition space (from five to 13 galleries), the ground floor is always free to enter and given to the permanent collection.",
+     "source": "https://aapnews.aap.com.au/news/a-145m-art-collection-returns-as-gallery-reopens-doors"
+    },
+    {
+     "claim": "Wikivoyage: high-quality collection of Australian art, free.",
+     "source": "https://en.wikivoyage.org/wiki/Newcastle_(New_South_Wales)"
+    }
+   ],
+   "hours": "10:00 AM – 4:00 PM",
+   "closedDays": [
+    1
+   ],
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "cost_note": "Free ground-floor permanent collection; special exhibitions about $20 adult.",
+   "ticketUrl": "https://newcastleartgallery.nsw.gov.au/",
+   "ticketUrl_note": "Verified: official site; loaded, HTTP 200, title \"Newcastle Art Gallery\".",
+   "bio_suggestion": "A major regional gallery of Australian art on Laman Street, free to enter on the ground floor.",
+   "unverified": [
+    "The AAP article (a search result, not loaded) is the only source for the free ground floor; free ground-floor entry is from its text as quoted. Wikivoyage lists 10AM-5PM, the gallery site says 10am-4pm (site used)."
+   ],
+   "coordinates_check": {
+    "current": {
+     "latitude": -32.929498,
+     "longitude": 151.772772
+    },
+    "source_point": {
+     "latitude": -32.929498,
+     "longitude": 151.772809
+    },
+    "moved_m_from_placement": 3,
+    "source": "resolve-pin.py HIGH: Photon tourism=gallery \"Newcastle Art Gallery\" 3 m + Wikipedia article 16 m + 46 Commons files",
+    "confidence": "HIGH",
+    "ok": true
+   },
+   "coordinates_source": "resolve-pin.py HIGH: Photon tourism=gallery \"Newcastle Art Gallery\" 3 m + Wikipedia article 16 m + 46 Commons files"
+  },
+  {
+   "id": "newcastle-foreshore",
+   "name": "Newcastle Foreshore",
+   "placement_id": "newcastle-9",
+   "kind": "new",
+   "standalone": true,
+   "category": "entertainment",
+   "facts": [
+    {
+     "claim": "Large grassed open spaces on the old goods marshalling yards with playground equipment; bars, cafes and restaurants overlook the harbour from Queens Wharf, where live music plays on the outdoor area over the water.",
+     "source": "https://en.wikivoyage.org/wiki/Newcastle_(New_South_Wales)"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Open waterfront park with no single operator page found.",
+   "bio_suggestion": "Harbourside parkland on the old rail yards with a playground and, around Queens Wharf, bars and cafes.",
+   "unverified": [
+    "Individual venue hours not checked (not part of the spot)."
+   ],
+   "coordinates_check": {
+    "current": {
+     "latitude": -32.925242,
+     "longitude": 151.788343
+    },
+    "source_point": {
+     "latitude": -32.925446,
+     "longitude": 151.787911
+    },
+    "moved_m_from_placement": 46,
+    "source": "resolve-pin.py HIGH: Photon leisure=park \"Foreshore Park\" 46 m from the Wikivoyage listing point + 16 geotagged Commons files 131 m",
+    "confidence": "HIGH",
+    "ok": true
+   },
+   "coordinates_source": "resolve-pin.py HIGH: Photon leisure=park \"Foreshore Park\" 46 m from the Wikivoyage listing point + 16 geotagged Commons files 131 m"
+  },
+  {
+   "id": "anzac-walk",
+   "name": "ANZAC Walk",
+   "placement_id": "newcastle-10",
+   "kind": "new",
+   "standalone": true,
+   "category": "hike",
+   "facts": [
+    {
+     "claim": "A short bridge connecting Strzelecki Lookout with Bar Beach along the ridgeline, honouring the ANZACs of World War I; free.",
+     "source": "https://en.wikivoyage.org/wiki/Newcastle_(New_South_Wales)"
+    },
+    {
+     "claim": "The elevated Anzac Memorial Walk is 450 m, built for the centenary of the Gallipoli landings, with steel soldier silhouettes inscribed with the names of almost 11,000 Hunter Valley servicemen and women; steps at the southern end, wheelchair access via Strzelecki Lookout.",
+     "source": "https://visitnewcastle.com.au/insider-guides/walk-the-bathers-way"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A public walkway on the Bathers Way; no separate steward page loaded (the Bathers Way council page covers the route).",
+   "held": false,
+   "held_note": "Pin is an inferred midpoint, not an OSM route; owner may prefer the lookout point (-32.936809, 151.776891).",
+   "bio_suggestion": "A 450 m clifftop walkway from Strzelecki Lookout toward Bar Beach, with soldier silhouettes honouring ANZACs.",
+   "unverified": [
+    "Exact route geometry (not mapped in OSM under this name)."
+   ],
+   "coordinates_check": {
+    "current": {
+     "latitude": -32.936829,
+     "longitude": 151.776863
+    },
+    "source_point": {
+     "latitude": -32.938042,
+     "longitude": 151.774506
+    },
+    "moved_m_from_placement": 258,
+    "source": "resolve-pin.py LOW (route not mapped under its name; only a Commons median). Used the median of 7 geotagged Commons files, which lies about 270 m south-west of Strzelecki Lookout (OSM tourism=viewpoint -32.936809, 151.776891, 3 m from the Wikivoyage listing), consistent with the middle of a 450 m walkway that starts at the lookout.",
+    "confidence": "MEDIUM",
+    "ok": true
+   },
+   "coordinates_source": "resolve-pin.py LOW (route not mapped under its name; only a Commons median). Used the median of 7 geotagged Commons files, which lies about 270 m south-west of Strzelecki Lookout (OSM tourism=viewpoint -32.936809, 151.776891, 3 m from the Wikivoyage listing), consistent with the middle of a 450 m walkway that starts at the lookout."
+  },
+  {
+   "id": "newcastle-beach",
+   "name": "Newcastle Beach",
+   "placement_id": "newcastle-11",
+   "kind": "new",
+   "standalone": true,
+   "category": "beach",
+   "facts": [
+    {
+     "claim": "Another good beach next to the city centre.",
+     "source": "https://en.wikivoyage.org/wiki/Newcastle_(New_South_Wales)"
+    },
+    {
+     "claim": "City of Newcastle lists its patrolled beaches and ocean baths together on its beaches-and-baths pages.",
+     "source": "https://newcastle.nsw.gov.au/explore/recreation/beaches-and-baths/ocean-baths"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Public beach; no single steward page.",
+   "bio_suggestion": "The city-centre surf beach beside the CBD, ocean baths and harbour foreshore.",
+   "unverified": [
+    "Lifeguard season not checked."
+   ],
+   "coordinates_check": {
+    "current": {
+     "latitude": -32.93076,
+     "longitude": 151.78509
+    },
+    "source_point": {
+     "latitude": -32.93076,
+     "longitude": 151.78509
+    },
+    "moved_m_from_placement": 0,
+    "source": "Placement point kept: OSM natural=beach way W7481350 (resolve-pin.py also returned this beach feature); Wikivoyage -32.932, 151.786 agrees to ~150 m",
+    "confidence": "MEDIUM",
+    "ok": true
+   },
+   "coordinates_source": "Placement point kept: OSM natural=beach way W7481350 (resolve-pin.py also returned this beach feature); Wikivoyage -32.932, 151.786 agrees to ~150 m"
+  },
+  {
+   "id": "nobbys-beach",
+   "name": "Nobbys Beach",
+   "placement_id": "newcastle-12",
+   "kind": "new",
+   "standalone": true,
+   "category": "beach",
+   "facts": [
+    {
+     "claim": "One of the safer beaches to swim at, fairly close to the city and Newcastle train station.",
+     "source": "https://en.wikivoyage.org/wiki/Newcastle_(New_South_Wales)"
+    },
+    {
+     "claim": "Flanks the Macquarie Pier leading to Nobbys Head.",
+     "source": "https://en.wikivoyage.org/wiki/Newcastle_(New_South_Wales)"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Public beach; no single steward page.",
+   "bio_suggestion": "A city beach below Nobbys Head, one of the safer swimming beaches in Newcastle.",
+   "unverified": [
+    "Lifeguard season not checked."
+   ],
+   "coordinates_check": {
+    "current": {
+     "latitude": -32.92155,
+     "longitude": 151.79529
+    },
+    "source_point": {
+     "latitude": -32.92155,
+     "longitude": 151.79529
+    },
+    "moved_m_from_placement": 0,
+    "source": "Placement point kept: OSM natural=beach way W7487200; Wikivoyage -32.923, 151.795 agrees to ~150 m",
+    "confidence": "MEDIUM",
+    "ok": true
+   },
+   "coordinates_source": "Placement point kept: OSM natural=beach way W7487200; Wikivoyage -32.923, 151.795 agrees to ~150 m"
+  },
+  {
+   "id": "bar-beach-newcastle",
+   "name": "Bar Beach",
+   "placement_id": "newcastle-13",
+   "kind": "new",
+   "standalone": true,
+   "category": "beach",
+   "facts": [
+    {
+     "claim": "Regarded by many as the best of the beaches that ring the city; surfing and kite-surfing available.",
+     "source": "https://en.wikivoyage.org/wiki/Newcastle_(New_South_Wales)"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Public beach; no single steward page.",
+   "bio_suggestion": "A surf beach at The Hill rated among Newcastle's best city beaches, popular for surfing and kitesurfing.",
+   "unverified": [
+    "Lifeguard season not checked."
+   ],
+   "coordinates_check": {
+    "current": {
+     "latitude": -32.94194,
+     "longitude": 151.76704
+    },
+    "source_point": {
+     "latitude": -32.94194,
+     "longitude": 151.76704
+    },
+    "moved_m_from_placement": 0,
+    "source": "Placement point kept: OSM natural=beach way W33038007 (Wikivoyage -32.945, 151.762 is ~500 m away, rounded to 3 decimals)",
+    "confidence": "MEDIUM",
+    "ok": true
+   },
+   "coordinates_source": "Placement point kept: OSM natural=beach way W33038007 (Wikivoyage -32.945, 151.762 is ~500 m away, rounded to 3 decimals)"
+  },
+  {
+   "id": "fernleigh-track",
+   "name": "Fernleigh Track",
+   "placement_id": "newcastle-14",
+   "kind": "new",
+   "standalone": true,
+   "category": "hike",
+   "facts": [
+    {
+     "claim": "A 15.5 km cycling, walking and running trail from Adamstown (Newcastle) to Belmont (Lake Macquarie) on a former railway line; free.",
+     "source": "https://en.wikivoyage.org/wiki/Newcastle_(New_South_Wales)"
+    },
+    {
+     "claim": "City of Newcastle: the 15 km shared pathway from Adamstown to Belmont.",
+     "source": "https://newcastle.nsw.gov.au/explore/things-to-do/walking-and-cycling/fernleigh-track"
+    },
+    {
+     "claim": "Wikivoyage Lake Macquarie: asphalt/concrete path from Belmont to Adamstown through bush scenery.",
+     "source": "https://en.wikivoyage.org/wiki/Lake_Macquarie"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "free": true,
+   "ticketUrl": "https://newcastle.nsw.gov.au/explore/things-to-do/walking-and-cycling/fernleigh-track",
+   "ticketUrl_note": "Verified: managing agency page (City of Newcastle); loaded, HTTP 200, title \"Fernleigh Track - City of Newcastle\".",
+   "bio_suggestion": "A 15.5 km walking and cycling path on a former railway from Adamstown to Belmont, through bushland.",
+   "unverified": [
+    "Midpoint is within roughly 0.5 km of the true halfway point; the lit tunnel claimed in the placement draft was not confirmed by any source read, so it is dropped from the suggested bio."
+   ],
+   "coordinates_check": {
+    "current": {
+     "latitude": -32.99049,
+     "longitude": 151.70941
+    },
+    "source_point": {
+     "latitude": -33.002171,
+     "longitude": 151.71026
+    },
+    "moved_m_from_placement": 1301,
+    "source": "Route midpoint estimate on the OSM-named \"Fernleigh Track\"/\"Fernleigh Awabakal Shared Track\" ways: the OSM geometry totals 15.5 km (matches the 15.5 km route) but has a ~3 km gap in the name tags, so the midpoint was taken 1.5 km along the southern chain from its northern end (about 7.7 km along the route). resolve-pin.py returned only a 0.9 km fire-trail segment (MEDIUM) and was not usable.",
+    "confidence": "MEDIUM",
+    "ok": true
+   },
+   "coordinates_source": "Route midpoint estimate on the OSM-named \"Fernleigh Track\"/\"Fernleigh Awabakal Shared Track\" ways: the OSM geometry totals 15.5 km (matches the 15.5 km route) but has a ~3 km gap in the name tags, so the midpoint was taken 1.5 km along the southern chain from its northern end (about 7.7 km along the route). resolve-pin.py returned only a 0.9 km fire-trail segment (MEDIUM) and was not usable."
+  },
+  {
+   "id": "blackbutt-reserve",
+   "name": "Blackbutt Reserve",
+   "placement_id": "newcastle-15",
+   "kind": "new",
+   "standalone": true,
+   "category": "nature",
+   "wiki_title": "Blackbutt Reserve",
+   "facts": [
+    {
+     "claim": "182 hectares of bushland with over 10 km of walking trails and free entry to the wildlife exhibits; wildlife exhibits open 10am to 4:30pm daily (closed Christmas Day, Good Friday and before 1pm on Anzac Day); picnic facilities open 7am-7pm.",
+     "source": "https://blackbuttreserve.nsw.gov.au/blackbutt-reserve/blackbutt-reserve-home"
+    },
+    {
+     "claim": "Wikivoyage: native animals, picnic areas, wildlife exhibits, bushwalking trails; a flying fox colony on the Rainforest trail; main entrance off Carnley Avenue, Kotara.",
+     "source": "https://en.wikivoyage.org/wiki/Newcastle_(New_South_Wales)"
+    }
+   ],
+   "hours": "10:00 AM – 4:30 PM (wildlife exhibits); picnic areas 7:00 AM – 7:00 PM",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://blackbuttreserve.nsw.gov.au/blackbutt-reserve/blackbutt-reserve-home",
+   "ticketUrl_note": "Verified: City of Newcastle's Blackbutt Reserve site; loaded, HTTP 200, title \"Blackbutt Reserve - City of Newcastle\".",
+   "bio_suggestion": "A 182 ha bushland reserve with free wildlife exhibits, 10 km of walking trails and a flying-fox colony.",
+   "unverified": [
+    "Pin is one listing coordinate, not cross-checked against an OSM feature."
+   ],
+   "coordinates_check": {
+    "current": {
+     "latitude": -32.93214,
+     "longitude": 151.69428
+    },
+    "source_point": {
+     "latitude": -32.933566,
+     "longitude": 151.69323
+    },
+    "moved_m_from_placement": 186,
+    "source": "Wikivoyage listing for Blackbutt Reserve (its own 6 dp coordinate near the Carnley Avenue entrance/animal exhibits), within 150 m of the placement centroid; resolve-pin.py found no OSM feature (LOW, only a Wikipedia point 348 m off). Visitor point replaces the woodland-relation centroid.",
+    "confidence": "MEDIUM",
+    "ok": true
+   },
+   "coordinates_source": "Wikivoyage listing for Blackbutt Reserve (its own 6 dp coordinate near the Carnley Avenue entrance/animal exhibits), within 150 m of the placement centroid; resolve-pin.py found no OSM feature (LOW, only a Wikipedia point 348 m off). Visitor point replaces the woodland-relation centroid."
+  },
+  {
+   "id": "hunter-wetlands-centre",
+   "name": "Hunter Wetlands Centre",
+   "placement_id": "newcastle-16",
+   "kind": "new",
+   "standalone": true,
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "Open daily 9am-4pm (last entry 3pm), cafe 9:30am-2pm; closed some public holidays including Anzac Day, Good Friday and Easter Sunday; free car parking.",
+     "source": "https://www.wetlands.org.au/tickets-admission"
+    },
+    {
+     "claim": "Entry: 16 and over $9.50, concession/student $6, child 4-15 $6, under 4 free, family $25.",
+     "source": "https://www.wetlands.org.au/tickets-admission"
+    },
+    {
+     "claim": "Wikivoyage: a regenerated 45-hectare wetland beside Hexham Swamp with walking, bicycle and canoe trails and a visitor centre, 9AM-5PM.",
+     "source": "https://en.wikivoyage.org/wiki/Newcastle_(New_South_Wales)"
+    }
+   ],
+   "hours": "9:00 AM – 4:00 PM",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "costMin": 9.5,
+   "costMax": 9.5,
+   "currency": "AUD",
+   "ticketUrl": "https://www.wetlands.org.au/",
+   "ticketUrl_note": "Verified: operator site; loaded, HTTP 200, titles \"Hunter Wetlands Centre – Explore, Learn & Conserve, Newcastle NSW\" and \"Tickets & Admission - Hunter Wetlands | Newcastle NSW\".",
+   "bio_suggestion": "A 45 ha community-run wetland at Shortland with walking and canoe trails, birdlife and a cafe.",
+   "unverified": [
+    "The placement draft and Wikivoyage say Sandgate; the operator's address is 1 Wetlands Place, Shortland."
+   ],
+   "coordinates_check": {
+    "current": {
+     "latitude": -32.87619,
+     "longitude": 151.69583
+    },
+    "source_point": {
+     "latitude": -32.87619,
+     "longitude": 151.69583
+    },
+    "moved_m_from_placement": 0,
+    "source": "Placement point kept: OSM information/visitor centre, 30 m from the Wikivoyage listing coordinate -32.876224, 151.695565 (two sources). resolve-pin.py (name search) instead returned the Hunter Wetlands National Park centroid 4.6 km away, which is not the centre.",
+    "confidence": "HIGH",
+    "ok": true
+   },
+   "coordinates_source": "Placement point kept: OSM information/visitor centre, 30 m from the Wikivoyage listing coordinate -32.876224, 151.695565 (two sources). resolve-pin.py (name search) instead returned the Hunter Wetlands National Park centroid 4.6 km away, which is not the centre."
+  },
+  {
+   "id": "mount-sugarloaf-lookout",
+   "name": "Mount Sugarloaf Lookout",
+   "placement_id": "newcastle-17",
+   "kind": "new",
+   "standalone": true,
+   "category": "viewpoint",
+   "facts": [
+    {
+     "claim": "Lookout at West Wallsend listed in Wikivoyage's parks and gardens for Newcastle.",
+     "source": "https://en.wikivoyage.org/wiki/Newcastle_(New_South_Wales)"
+    },
+    {
+     "claim": "Visit NSW describes Mount Sugarloaf as a 412 m peak in the Hunter with views over Newcastle, Lake Macquarie, Cessnock and Maitland, with short walks (275 m to 1.6 km) and an Awabakal cultural connection.",
+     "source": "https://www.visitnsw.com/destinations/north-coast/lake-macquarie-area/attractions/mount-sugarloaf"
+    },
+    {
+     "claim": "NPWS: parts of Sugarloaf State Conservation Area are closed for subsidence from underground mining; visitors should stay on formed tracks and observe barriers.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/sugarloaf-state-conservation-area"
+    }
+   ],
+   "hours": "Daytime",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "free": true,
+   "cost_note": "No entry fee stated in any source read.",
+   "ticketUrl": null,
+   "ticketUrl_note": "Lookout area is not a single managed attraction; NPWS Sugarloaf SCA page (title \"Sugarloaf State Conservation Area | NSW National Parks\", HTTP 200) is the surrounding park but the lookout reserve's steward is not confirmed.",
+   "bio_suggestion": "A summit lookout at West Wallsend with views over Newcastle, Lake Macquarie and the Hunter Valley.",
+   "unverified": [
+    "Visit NSW claims (412 m, views, walks) come from a search-result summary of that page, which was not loaded; opening hours/gate times of the access road (an older Newcastle Herald story reported night closure); which agency manages the lookout; whether the approach tracks are open given the NPWS closures."
+   ],
+   "coordinates_check": {
+    "current": {
+     "latitude": -32.8911,
+     "longitude": 151.53834
+    },
+    "source_point": {
+     "latitude": -32.8911,
+     "longitude": 151.53834
+    },
+    "moved_m_from_placement": 0,
+    "source": "Placement point kept: OSM natural=peak \"Mount Sugarloaf\" (resolve-pin.py MEDIUM); Wikivoyage listing -32.890425, 151.54003 is 150 m away; the \"Western Lookout\" viewpoint node is 434 m away",
+    "confidence": "MEDIUM",
+    "ok": true
+   },
+   "coordinates_source": "Placement point kept: OSM natural=peak \"Mount Sugarloaf\" (resolve-pin.py MEDIUM); Wikivoyage listing -32.890425, 151.54003 is 150 m away; the \"Western Lookout\" viewpoint node is 434 m away"
+  },
+  {
+   "id": "lake-macquarie",
+   "name": "Lake Macquarie",
+   "placement_id": "newcastle-18",
+   "kind": "new",
+   "standalone": true,
+   "category": "nature",
+   "wiki_title": "Lake Macquarie (New South Wales)",
+   "facts": [
+    {
+     "claim": "Australia's largest coastal lake, 110 km2, connected to the Tasman Sea by a short channel; twice the size of Sydney Harbour and described as the largest coastal salt-water lake in the Southern Hemisphere.",
+     "source": "https://en.wikipedia.org/wiki/Lake_Macquarie_(New_South_Wales)"
+    },
+    {
+     "claim": "Sheltered lake swimming spots (Belmont Baths, Naru Beach, Pelican Foreshore Park) and four patrolled surf beaches on its ocean side.",
+     "source": "https://www.visitlakemac.com.au/Things-to-do/Beaches-and-swim-spots"
+    },
+    {
+     "claim": "Wikivoyage lists Speers Point Park with its 2-hectare Variety Playground, fishing, kayaking and sailing.",
+     "source": "https://en.wikivoyage.org/wiki/Lake_Macquarie"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": true,
+   "ticketUrl": "https://www.visitlakemac.com.au/",
+   "ticketUrl_note": "Verified: City of Lake Macquarie's visitor site; loaded, HTTP 200, title \"Home Visit Lake Macquarie\".",
+   "bio_suggestion": "Australia's largest coastal lake, with lakeside parks, swimming spots, sailing and kayaking.",
+   "unverified": [
+    "The lake spans 110 km2; Speers Point is one access, others (Warners Bay, Belmont, Swansea) are equally valid."
+   ],
+   "coordinates_check": {
+    "current": {
+     "latitude": -33.033,
+     "longitude": 151.63
+    },
+    "source_point": {
+     "latitude": -32.960842,
+     "longitude": 151.617407
+    },
+    "moved_m_from_placement": 8109,
+    "source": "Lakeshore visitor point: Speers Point Park, OSM leisure=park (Nominatim -32.960842, 151.617407) within 25 m of the Wikivoyage Variety Playground listing (-32.96099, 151.61727). Replaces the placement point at the lake's northern water.",
+    "confidence": "HIGH",
+    "ok": true
+   },
+   "coordinates_source": "Lakeshore visitor point: Speers Point Park, OSM leisure=park (Nominatim -32.960842, 151.617407) within 25 m of the Wikivoyage Variety Playground listing (-32.96099, 151.61727). Replaces the placement point at the lake's northern water."
+  },
+  {
+   "id": "caves-beach",
+   "name": "Caves Beach",
+   "placement_id": "newcastle-19",
+   "kind": "new",
+   "standalone": true,
+   "category": "beach",
+   "facts": [
+    {
+     "claim": "Known for dramatic sea caves that reveal themselves at low tide; ranked ninth in Tourism Australia's Best Australian Beaches for 2025.",
+     "source": "https://www.visitlakemac.com.au/Things-to-do/Beaches-and-swim-spots"
+    },
+    {
+     "claim": "Locality on the Swansea peninsula named for the many caves on the nearby coastline; surfing beach.",
+     "source": "https://en.wikipedia.org/wiki/Caves_Beach,_New_South_Wales"
+    },
+    {
+     "claim": "Wikivoyage: walk through the natural caves at low tide.",
+     "source": "https://en.wikivoyage.org/wiki/Lake_Macquarie"
+    }
+   ],
+   "hours": "Tides permitting",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Public beach; the council's beaches page covers many beaches (no single steward page for this one).",
+   "bio_suggestion": "A surf beach whose sea caves can be explored on foot at low tide on the Swansea peninsula.",
+   "unverified": [
+    "Tide safety advice (caves unsafe at high tide) is from search results, not a loaded page."
+   ],
+   "coordinates_check": {
+    "current": {
+     "latitude": -33.11041,
+     "longitude": 151.6477
+    },
+    "source_point": {
+     "latitude": -33.11041,
+     "longitude": 151.6477
+    },
+    "moved_m_from_placement": 0,
+    "source": "Placement point kept: OSM natural=beach node N12904009334",
+    "confidence": "MEDIUM",
+    "ok": true
+   },
+   "coordinates_source": "Placement point kept: OSM natural=beach node N12904009334"
+  },
+  {
+   "id": "catherine-hill-bay",
+   "name": "Catherine Hill Bay",
+   "placement_id": "newcastle-20",
+   "kind": "new",
+   "standalone": true,
+   "category": "beach",
+   "wiki_title": "Catherine Hill Bay, New South Wales",
+   "facts": [
+    {
+     "claim": "Village and bay on the southern peninsula of Lake Macquarie, the oldest continuous settlement in the City of Lake Macquarie, on the State Heritage Register as a Heritage Township.",
+     "source": "https://en.wikipedia.org/wiki/Catherine_Hill_Bay,_New_South_Wales"
+    },
+    {
+     "claim": "Fourth patrolled beach on the Lake Macquarie coast, with a massive wooden pier stretching into deep water.",
+     "source": "https://www.visitlakemac.com.au/Things-to-do/Beaches-and-swim-spots"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Village and public beach; no single steward page.",
+   "bio_suggestion": "A heritage-listed coal village with a long timber jetty beside a patrolled beach.",
+   "unverified": [
+    "The jetty/pier is described by the council site as massive and wooden; whether it can be walked on was not checked."
+   ],
+   "coordinates_check": {
+    "current": {
+     "latitude": -33.1516,
+     "longitude": 151.63089
+    },
+    "source_point": {
+     "latitude": -33.1516,
+     "longitude": 151.63089
+    },
+    "moved_m_from_placement": 0,
+    "source": "Placement point kept: OSM natural=beach relation R5614835 (centroid of the beach)",
+    "confidence": "MEDIUM",
+    "ok": true
+   },
+   "coordinates_source": "Placement point kept: OSM natural=beach relation R5614835 (centroid of the beach)"
+  },
+  {
+   "id": "redhead-beach",
+   "name": "Redhead Beach",
+   "placement_id": "newcastle-21",
+   "kind": "new",
+   "standalone": true,
+   "category": "beach",
+   "facts": [
+    {
+     "claim": "The first of Lake Macquarie's four patrolled beaches, popular with swimmers and surfers, with a 24-hour off-leash dog section.",
+     "source": "https://www.visitlakemac.com.au/Things-to-do/Beaches-and-swim-spots"
+    },
+    {
+     "claim": "Wikivoyage lists Redhead Beach among the beaches of the Swansea coast.",
+     "source": "https://en.wikivoyage.org/wiki/Lake_Macquarie"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Public beach; no single steward page.",
+   "bio_suggestion": "A patrolled surf beach on the Lake Macquarie coast, popular with swimmers and surfers, with a dog section.",
+   "unverified": [],
+   "coordinates_check": {
+    "current": {
+     "latitude": -33.01519,
+     "longitude": 151.719
+    },
+    "source_point": {
+     "latitude": -33.01519,
+     "longitude": 151.719
+    },
+    "moved_m_from_placement": 0,
+    "source": "Placement point kept: OSM natural=beach node N12904004015",
+    "confidence": "MEDIUM",
+    "ok": true
+   },
+   "coordinates_source": "Placement point kept: OSM natural=beach node N12904004015"
+  },
+  {
+   "id": "blacksmiths-beach",
+   "name": "Blacksmiths Beach",
+   "placement_id": "newcastle-22",
+   "kind": "new",
+   "standalone": true,
+   "category": "beach",
+   "facts": [
+    {
+     "claim": "Patrolled family beach bordered by the Swansea Channel breakwater at the south end of Nine Mile Beach; Grannies Pool, a shallow accessible inlet on the breakwater, is nearby.",
+     "source": "https://www.visitlakemac.com.au/Things-to-do/Beaches-and-swim-spots"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "Public beach; no single steward page.",
+   "bio_suggestion": "A patrolled family surf beach at the Swansea Channel breakwater, next to the shallow Grannies Pool.",
+   "unverified": [
+    "The placement bio mentioned ocean baths beside the surf club; no source read confirms them, so the suggested bio uses Grannies Pool instead."
+   ],
+   "coordinates_check": {
+    "current": {
+     "latitude": -33.08032,
+     "longitude": 151.6569
+    },
+    "source_point": {
+     "latitude": -33.08032,
+     "longitude": 151.6569
+    },
+    "moved_m_from_placement": 0,
+    "source": "Placement point kept: OSM Swansea Belmont Surf Life Saving Club building on Blacksmiths Beach (no named natural=beach feature exists)",
+    "confidence": "MEDIUM",
+    "ok": true
+   },
+   "coordinates_source": "Placement point kept: OSM Swansea Belmont Surf Life Saving Club building on Blacksmiths Beach (no named natural=beach feature exists)"
+  },
+  {
+   "id": "hunter-valley-gardens",
+   "name": "Hunter Valley Gardens",
+   "placement_id": "hunter-valley-1",
+   "kind": "new",
+   "standalone": true,
+   "category": "nature",
+   "facts": [
+    {
+     "claim": "Gardens open seven days a week 9am-5pm, last entry 4pm; closed Christmas Day (25 December).",
+     "source": "https://www.huntervalleygardens.com.au/visitor-information/"
+    },
+    {
+     "claim": "Eight kilometres of paths through 14 hectares and ten themed gardens (Rose, Storybook, Indian Mosaic, Chinese Moongate, Italian Grotto, Sunken, Oriental, Formal and others); opened October 2003; free parking.",
+     "source": "https://www.huntervalleygardens.com.au/attractions/gardens/"
+    },
+    {
+     "claim": "Australian Tourism Data Warehouse listing gives an indicative price range of AUD 31 (child 4-15) to AUD 39 (adult 16+); the official Buy Tickets page loads without a readable price (script-rendered).",
+     "source": "https://www.atdw.com.au/marketplace/56b23f4bd270154b45540c1c"
+    },
+    {
+     "claim": "Wikivoyage: Daily 9AM-5PM; described as Australia's largest display garden.",
+     "source": "https://en.wikivoyage.org/wiki/Pokolbin"
+    }
+   ],
+   "hours": "9:00 AM – 5:00 PM",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "costMin": 39,
+   "costMax": 39,
+   "currency": "AUD",
+   "cost_note": "Adult (16+) indicative price from ATDW; not confirmed on the operator page, and special events (Christmas Lights Spectacular, Mega Creatures) have separate ticket prices.",
+   "ticketUrl": "https://www.huntervalleygardens.com.au/",
+   "ticketUrl_note": "Verified: operator site; loaded, HTTP 200, title \"Home - Hunter Valley Gardens\". Buy Tickets deep link: https://www.huntervalleygardens.com.au/buy-tickets/ (loaded, HTTP 200).",
+   "bio_suggestion": "A 14 ha display garden of ten themed gardens on Broke Road, Pokolbin, with paid entry and free parking.",
+   "unverified": [
+    "Current adult ticket price (ATDW figure is indicative; operator page not readable)."
+   ],
+   "coordinates_check": {
+    "current": {
+     "latitude": -32.77526,
+     "longitude": 151.29469
+    },
+    "source_point": {
+     "latitude": -32.775256,
+     "longitude": 151.294686
+    },
+    "moved_m_from_placement": 1,
+    "source": "Placement point kept (OSM leisure=park W69487320); resolve-pin.py returned the same park (Photon, 1 m) with the Wikipedia article 164 m away and 22 Commons files 319 m away",
+    "confidence": "MEDIUM",
+    "ok": true
+   },
+   "coordinates_source": "Placement point kept (OSM leisure=park W69487320); resolve-pin.py returned the same park (Photon, 1 m) with the Wikipedia article 164 m away and 22 Commons files 319 m away"
+  },
+  {
+   "id": "pokolbin",
+   "name": "Pokolbin",
+   "placement_id": "hunter-valley-2",
+   "kind": "new",
+   "standalone": true,
+   "category": "historic",
+   "wiki_title": "Pokolbin, New South Wales",
+   "facts": [
+    {
+     "claim": "The Pokolbin district in the Lower Hunter is one of Australia's premier wine regions; vineyards date from the 1850s; it is a collection of vineyards and very small villages (Lovedale, Mount View, Rothbury) with no single centre, and needs a car to get around.",
+     "source": "https://en.wikivoyage.org/wiki/Pokolbin"
+    },
+    {
+     "claim": "Wikivoyage cellar-door listings give hours such as Mon-Fri 10am-5pm (Lindemans), daily 10am-4:30pm (McWilliams Mount Pleasant) and 7 days 10am-5pm (Tower Estate); hours vary by venue.",
+     "source": "https://en.wikivoyage.org/wiki/Pokolbin"
+    },
+    {
+     "claim": "Hunter Valley Wine & Tourism's official wine-country site lists cellar doors, gardens and visitor information.",
+     "source": "https://www.winecountry.com.au/"
+    }
+   ],
+   "hours": "Cellar doors typically 10:00 AM – 5:00 PM",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": true,
+   "cost_note": "Pokolbin itself is free; cellar-door tastings may charge per venue (not researched).",
+   "ticketUrl": "https://www.winecountry.com.au/",
+   "ticketUrl_note": "Verified: Hunter Valley Wine & Tourism site; loaded, HTTP 200, title \"Hunter Valley Wine Country | Here's to the Good Life\". It is the regional tourism body, not one steward of the district: owner may prefer no link.",
+   "held": false,
+   "held_note": "Weak as a spot: a district of vineyards with no entrance. Hunter Valley Gardens (-32.775256, 151.294686) is the anchor attraction; consider dropping or folding Pokolbin into the Gardens.",
+   "bio_suggestion": "A district of vineyards and cellar doors in the Lower Hunter, one of the premier wine regions of Australia.",
+   "unverified": [
+    "Per-venue hours and tasting fees."
+   ],
+   "coordinates_check": {
+    "current": {
+     "latitude": -32.79833333,
+     "longitude": 151.28444444
+    },
+    "source_point": {
+     "latitude": -32.798333,
+     "longitude": 151.284444
+    },
+    "moved_m_from_placement": 0,
+    "source": "Placement point kept: Wikipedia locality point for Pokolbin. Not an attraction entrance: the district has no township centre (Wikivoyage), so it is a locality reference. resolve-pin.py was not run (a district, no OSM feature of its own).",
+    "confidence": "MEDIUM",
+    "ok": true
+   },
+   "coordinates_source": "Placement point kept: Wikipedia locality point for Pokolbin. Not an attraction entrance: the district has no township centre (Wikivoyage), so it is a locality reference. resolve-pin.py was not run (a district, no OSM feature of its own)."
+  },
+  {
+   "id": "cessnock",
+   "name": "Cessnock",
+   "placement_id": "hunter-valley-3",
+   "kind": "new",
+   "standalone": true,
+   "category": "historic",
+   "wiki_title": "Cessnock, New South Wales",
+   "facts": [
+    {
+     "claim": "Historic buildings from the early 20th century survive in the town centre, with a walking-tour brochure; the town is the main service base for the surrounding vineyards, with cheaper motels than Pokolbin.",
+     "source": "https://en.wikivoyage.org/wiki/Cessnock"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A town; no single steward.",
+   "bio_suggestion": "The wine-country service town with early 1900s buildings and a heritage walking tour, base for the vineyards.",
+   "unverified": [
+    "Wikivoyage's Cessnock page is thin; whether Cessnock alone clears the \"worth a stop\" bar is for review."
+   ],
+   "coordinates_check": {
+    "current": {
+     "latitude": -32.83167,
+     "longitude": 151.35111
+    },
+    "source_point": {
+     "latitude": -32.83167,
+     "longitude": 151.35111
+    },
+    "moved_m_from_placement": 0,
+    "source": "Placement point kept: OSM place=city node for Cessnock (town centre; the spot is the town)",
+    "confidence": "MEDIUM",
+    "ok": true
+   },
+   "coordinates_source": "Placement point kept: OSM place=city node for Cessnock (town centre; the spot is the town)"
+  },
+  {
+   "id": "maitland-gaol",
+   "name": "Maitland Gaol",
+   "placement_id": "hunter-valley-4",
+   "kind": "new",
+   "standalone": true,
+   "category": "historic",
+   "facts": [
+    {
+     "claim": "The official site (checked live) says \"MAITLAND GAOL CLOSED UNTIL FURTHER NOTICE\": closed due to the discovery of fire and electrical safety issues, with a Maitland Gaol Redevelopment project page.",
+     "source": "https://www.maitlandgaol.com.au/"
+    },
+    {
+     "claim": "Pre-closure hours on the same site: Mon-Fri 9am-4pm, Sat-Sun 10am-4pm, last entry for self-guided audio tours 3pm. Wikivoyage lists 9AM-4PM.",
+     "source": "https://www.maitlandgaol.com.au/"
+    },
+    {
+     "claim": "News reports: closed since 2024; council said the earliest reopening would be late 2026 if development approval is granted and funding found; a $30 million redevelopment (including a boutique hotel) is proposed.",
+     "source": "https://newcastleherald.com.au/story/8831399/maitland-gaols-30m-revamp-hinges-on-state-funding/"
+    }
+   ],
+   "hours": "Closed until further notice",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "cost_note": "No current price: the gaol is closed. Not researched while closed.",
+   "ticketUrl": "https://www.maitlandgaol.com.au/",
+   "ticketUrl_note": "Verified: official council-run site; loaded, HTTP 200, title \"Home page - Maitland Gaol\". It shows a closure banner.",
+   "held": true,
+   "held_reason": "CLOSED to the public (official site, live): fails COVERAGE test 2 (\"it is closed ... or being restored\"). Hold until reopened; recommend removing from the batch or sending to review. Also a hold for cost (no price while closed).",
+   "bio_suggestion": null,
+   "unverified": [
+    "Reopening date; adult price on reopening; the Newcastle Herald article cited was seen only as a search result (not loaded)."
+   ],
+   "coordinates_check": {
+    "current": {
+     "latitude": -32.74532,
+     "longitude": 151.58989
+    },
+    "source_point": {
+     "latitude": -32.745325,
+     "longitude": 151.58989
+    },
+    "moved_m_from_placement": 1,
+    "source": "resolve-pin.py: OSM historic=building \"Maitland Gaol\" 1 m from the placement point, matching the Wikivoyage listing (-32.745123, 151.590188, ~30 m)",
+    "confidence": "HIGH",
+    "ok": true
+   },
+   "coordinates_source": "resolve-pin.py: OSM historic=building \"Maitland Gaol\" 1 m from the placement point, matching the Wikivoyage listing (-32.745123, 151.590188, ~30 m)"
+  },
+  {
+   "id": "morpeth-nsw",
+   "name": "Morpeth",
+   "placement_id": "hunter-valley-5",
+   "kind": "new",
+   "standalone": true,
+   "category": "historic",
+   "wiki_title": "Morpeth, New South Wales",
+   "facts": [
+    {
+     "claim": "A cute historical town on the outskirts of Maitland, well worth visiting for its cafes and boutique shops, but Thursday to Sunday are the only worthwhile days as many shops are closed early in the week.",
+     "source": "https://en.wikivoyage.org/wiki/Maitland_(New_South_Wales)"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A village; no single steward.",
+   "bio_suggestion": "A heritage river-port village near Maitland with cafes and boutique shops, best Thursday to Sunday.",
+   "unverified": [
+    "Wikivoyage has no standalone Morpeth page (the URL redirects to the Maitland article); a second counted source for Morpeth was not found in this pass."
+   ],
+   "coordinates_check": {
+    "current": {
+     "latitude": -32.72611111,
+     "longitude": 151.63166667
+    },
+    "source_point": {
+     "latitude": -32.726111,
+     "longitude": 151.631667
+    },
+    "moved_m_from_placement": 0,
+    "source": "Placement point kept: Wikipedia point for Morpeth (the spot is the village); Wikivoyage geo -32.7249, 151.6270 for its Jazz Festival listing is ~450 m away",
+    "confidence": "MEDIUM",
+    "ok": true
+   },
+   "coordinates_source": "Placement point kept: Wikipedia point for Morpeth (the spot is the village); Wikivoyage geo -32.7249, 151.6270 for its Jazz Festival listing is ~450 m away"
+  },
+  {
+   "id": "maitland-nsw",
+   "name": "Maitland",
+   "placement_id": "hunter-valley-6",
+   "kind": "new",
+   "standalone": true,
+   "category": "historic",
+   "wiki_title": "Maitland, New South Wales",
+   "facts": [
+    {
+     "claim": "Wikivoyage's Maitland See list: Cintra House, Maitland Gaol, Maitland Regional Art Gallery (10AM-5PM, closed Mondays) and Walka Water Works (free, 7AM-7PM in daylight saving).",
+     "source": "https://en.wikivoyage.org/wiki/Maitland_(New_South_Wales)"
+    },
+    {
+     "claim": "Maitland Gaol is currently closed (see its entry).",
+     "source": "https://www.maitlandgaol.com.au/"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A city; no single steward (the council visitor site mymaitland.com.au was not loaded).",
+   "bio_suggestion": "A historic Hunter River city of heritage buildings, an art gallery and Walka Water Works.",
+   "unverified": [
+    "With the gaol closed, the city's remaining draws (Art Gallery, Walka Water Works) were not individually verified; review whether Maitland clears the bar."
+   ],
+   "coordinates_check": {
+    "current": {
+     "latitude": -32.71666667,
+     "longitude": 151.55
+    },
+    "source_point": {
+     "latitude": -32.716667,
+     "longitude": 151.55
+    },
+    "moved_m_from_placement": 0,
+    "source": "Placement point kept: Wikipedia town point (the spot is the city)",
+    "confidence": "MEDIUM",
+    "ok": true
+   },
+   "coordinates_source": "Placement point kept: Wikipedia town point (the spot is the city)"
+  },
+  {
+   "id": "wollombi",
+   "name": "Wollombi",
+   "placement_id": "hunter-valley-7",
+   "kind": "new",
+   "standalone": true,
+   "category": "historic",
+   "wiki_title": "Wollombi, New South Wales",
+   "facts": [
+    {
+     "claim": "Sandstone heritage village with an 1866 former courthouse now a small historical museum ($2), a c1881 school building, the general store, Koolang Observatory and the Wollombi Tavern; the Great North Road convict trail passes through.",
+     "source": "https://en.wikivoyage.org/wiki/Wollombi"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "A village; no single steward.",
+   "bio_suggestion": "A sandstone heritage village on the Great North Road with a courthouse museum, general store and tavern.",
+   "unverified": [
+    "Courthouse museum hours and the $2 fee (Wikivoyage, Oct 2017)."
+   ],
+   "coordinates_check": {
+    "current": {
+     "latitude": -32.93166667,
+     "longitude": 151.13444444
+    },
+    "source_point": {
+     "latitude": -32.931667,
+     "longitude": 151.134444
+    },
+    "moved_m_from_placement": 0,
+    "source": "Placement point kept: Wikipedia point for Wollombi, within 40 m of the Wikivoyage geo -32.9317, 151.1340 (the spot is the village)",
+    "confidence": "HIGH",
+    "ok": true
+   },
+   "coordinates_source": "Placement point kept: Wikipedia point for Wollombi, within 40 m of the Wikivoyage geo -32.9317, 151.1340 (the spot is the village)"
+  },
+  {
+   "id": "watagans-national-park",
+   "name": "Watagans National Park",
+   "placement_id": "hunter-valley-8",
+   "kind": "new",
+   "standalone": true,
+   "category": "nature",
+   "wiki_title": "Watagans National Park",
+   "facts": [
+    {
+     "claim": "NPWS: rainforest park an hour from Newcastle with walking, biking, lookouts and campgrounds; Gap Creek Falls walk; Monkey Face and Gap Creek lookouts; Boarding House Dam picnic area; more than 40 Aboriginal sites.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/watagans-national-park"
+    },
+    {
+     "claim": "Roads are unsealed; only some are 2WD-accessible in dry conditions, most need 4WD; there is no public transport.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/watagans-national-park/visitor-info"
+    },
+    {
+     "claim": "Current alerts (reviewed October 2026): Gap Creek Forest Walk part-closed for rockfall risk; Heaton Road access closed by landslip; aerial baiting notice.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/watagans-national-park/local-alerts"
+    },
+    {
+     "claim": "Watagans is not on NPWS's list of fee-collecting national parks (no vehicle entry fee); camping is separate.",
+     "source": "https://www.nationalparks.nsw.gov.au/passes-and-fees/fee-collecting-parks"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": true,
+   "cost_note": "No vehicle entry fee: the park is absent from the NPWS fee-collecting parks list (camping fees apply separately).",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/watagans-national-park",
+   "ticketUrl_note": "Verified: managing agency (NPWS) park page; loaded, HTTP 200, title \"Watagans National Park | NSW National Parks\".",
+   "bio_suggestion": "A rainforest park with lookouts, Gap Creek Falls walk, campgrounds and Aboriginal sites, an hour from Newcastle.",
+   "unverified": [
+    "Most roads need 4WD; check alerts before driving in."
+   ],
+   "coordinates_check": {
+    "current": {
+     "latitude": -33.0094,
+     "longitude": 151.3715
+    },
+    "source_point": {
+     "latitude": -33.016273,
+     "longitude": 151.429936
+    },
+    "moved_m_from_placement": 5502,
+    "source": "resolve-pin.py HIGH-grade point for NPWS-listed \"Gap Creek Lookout\": OSM tourism=viewpoint (two nodes within 14 m), 5.5 km east of the placement centroid. Used as the park's main visitor point instead of the woodland centroid (-33.009524, 151.376892). Alternative: Monkey Face Lookout -33.019838, 151.428267 (MEDIUM).",
+    "confidence": "MEDIUM",
+    "ok": true
+   },
+   "coordinates_source": "resolve-pin.py HIGH-grade point for NPWS-listed \"Gap Creek Lookout\": OSM tourism=viewpoint (two nodes within 14 m), 5.5 km east of the placement centroid. Used as the park's main visitor point instead of the woodland centroid (-33.009524, 151.376892). Alternative: Monkey Face Lookout -33.019838, 151.428267 (MEDIUM)."
+  },
+  {
+   "id": "richmond-vale-railway-museum",
+   "name": "Richmond Vale Railway Museum",
+   "placement_id": "hunter-valley-9",
+   "kind": "new",
+   "standalone": true,
+   "category": "museum",
+   "facts": [
+    {
+     "claim": "The official site says (live): \"THE MUSEUM SITE IS PRESENTLY CLOSED BY COUNCIL ORDER, PENDING A REVIEW OF SAFETY DOCUMENTATION.\"",
+     "source": "https://www.richmondvalerailwaymuseum.org/"
+    },
+    {
+     "claim": "When open: first three Sundays of each month and every school-holiday Sunday, gates from 9:30am; standard entry adults $16, concession $11, children 5-15 $7.50, under 5 free; miniature train rides, mining museum, canteen; about 4 km south of Kurri Kurri.",
+     "source": "https://www.richmondvalerailwaymuseum.org/"
+    },
+    {
+     "claim": "Wikipedia: volunteer non-profit running a railway and museum at the heritage-listed Richmond Main Colliery, formed in 1979.",
+     "source": "https://en.wikipedia.org/wiki/Richmond_Vale_Railway_Museum"
+    }
+   ],
+   "hours": "First three Sundays of each month and school-holiday Sundays, from 9:30 AM (closed by council order at time of checking)",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "costMin": 16,
+   "costMax": 16,
+   "currency": "AUD",
+   "ticketUrl": "https://www.richmondvalerailwaymuseum.org/",
+   "ticketUrl_note": "Verified: official museum site (linked from Wikipedia); loaded, HTTP 200, title \"Welcome to Richmond Vale Railway Museum - Richmond Vale Railway Museum\". Other guessed domains (rvrm.org.au, rvrm.com.au, richmondvalerailway.com.au) did not load and were not used.",
+   "held": true,
+   "held_reason": "Site closed by council order (official site, live) and open only ~3 Sundays a month when it operates: hold until reopened or send to review (COVERAGE test 2 and 4: closed; limited days).",
+   "bio_suggestion": "A volunteer-run heritage railway and mining museum at Richmond Main colliery, open on limited Sundays.",
+   "unverified": [
+    "Reopening; date of the closure order."
+   ],
+   "coordinates_check": {
+    "current": {
+     "latitude": -32.85767,
+     "longitude": 151.4772
+    },
+    "source_point": {
+     "latitude": -32.857673,
+     "longitude": 151.477202
+    },
+    "moved_m_from_placement": 0,
+    "source": "resolve-pin.py HIGH: Photon tourism=museum \"Richmond Vale Railway Museum\" 0 m from the placement point (OSM W68023635)",
+    "confidence": "HIGH",
+    "ok": true
+   },
+   "coordinates_source": "resolve-pin.py HIGH: Photon tourism=museum \"Richmond Vale Railway Museum\" 0 m from the placement point (OSM W68023635)"
+  },
+  {
+   "id": "stockton-beach",
+   "name": "Stockton Beach",
+   "placement_id": "port-stephens-1",
+   "kind": "new",
+   "standalone": true,
+   "category": "beach",
+   "wiki_title": "Stockton Beach",
+   "facts": [
+    {
+     "claim": "Stockton Beach runs about 32 km from Newcastle's Stockton breakwall north-east to Anna Bay in Port Stephens, with dunes over 30 m high.",
+     "source": "https://en.wikipedia.org/wiki/Stockton_Beach"
+    },
+    {
+     "claim": "NPWS: the largest moving coastal sand dune in the southern hemisphere lies at Worimi Conservation Lands beside Tomaree National Park; Birubi Point Aboriginal Place gives Worimi context.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/tomaree-national-park"
+    },
+    {
+     "claim": "Worimi Conservation Lands: entry is free for walkers, bike riders and horse riders; driving on the beach and dunes needs a beach vehicle permit (4WD only): 3-day $33, annual $88.",
+     "source": "https://worimiconservationlands.com/beach-driving/"
+    },
+    {
+     "claim": "Wikivoyage: most easily visited on a guided tour (4WD, camel, sand-boarding from Birubi); you can stroll around the visitor centre at Birubi Beach for free; Sand Dune Safaris runs daily 9:30AM-4:30PM, $40 single.",
+     "source": "https://en.wikivoyage.org/wiki/Port_Stephens"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 4,
+   "free": true,
+   "cost_note": "Free on foot; $33 3-day vehicle permit for 4WD; guided dune tours roughly $40+ (Wikivoyage, June 2024).",
+   "ticketUrl": "https://worimiconservationlands.com/",
+   "ticketUrl_note": "Verified: Worimi Conservation Lands (joint-managed park); loaded, HTTP 200, title \"HOME - Worimi Conservation Lands\".",
+   "bio_suggestion": "A 32 km beach with huge moving sand dunes, reached from Birubi Point for 4WD, camel and sandboarding tours.",
+   "unverified": [
+    "Beach-vehicle permit prices were read from the 2026-era Worimi page; tour prices are Wikivoyage's, mid-2024."
+   ],
+   "coordinates_check": {
+    "current": {
+     "latitude": -32.78328,
+     "longitude": 152.07545
+    },
+    "source_point": {
+     "latitude": -32.78328,
+     "longitude": 152.07545
+    },
+    "moved_m_from_placement": 0,
+    "source": "Placement point kept: OSM Birubi Point Surf Life Saving Club at the Anna Bay access (the visitor access of a 32 km beach, not a centroid); Wikivoyage dune listing -32.781674, 152.064551 is ~1 km west",
+    "confidence": "MEDIUM",
+    "ok": true
+   },
+   "coordinates_source": "Placement point kept: OSM Birubi Point Surf Life Saving Club at the Anna Bay access (the visitor access of a 32 km beach, not a centroid); Wikivoyage dune listing -32.781674, 152.064551 is ~1 km west"
+  },
+  {
+   "id": "mount-tomaree",
+   "name": "Mount Tomaree",
+   "placement_id": "port-stephens-2",
+   "kind": "new",
+   "standalone": true,
+   "category": "hike",
+   "facts": [
+    {
+     "claim": "NPWS: Tomaree Head Summit walk is 2.2 km return, Grade 5, suggested 1h30-2h; the summit is 161 m above the Port Stephens entrance with views to Cabbage Tree and Boondelbah islands; WWII gun emplacements at the top; best whale watching May-November.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/tomaree-head-summit-walk"
+    },
+    {
+     "claim": "Wikivoyage: 2.2 km return walk to Mt Tomaree with views of Mt Yacaaba and the Point Stephens Lighthouse.",
+     "source": "https://en.wikivoyage.org/wiki/Port_Stephens"
+    },
+    {
+     "claim": "Tomaree National Park is not on the NPWS fee-collecting parks list (no entry fee).",
+     "source": "https://www.nationalparks.nsw.gov.au/passes-and-fees/fee-collecting-parks"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/tomaree-head-summit-walk",
+   "ticketUrl_note": "Verified: managing agency (NPWS) track page; loaded, HTTP 200, title \"Tomaree Head Summit walk | NSW National Parks\".",
+   "bio_suggestion": "A steep 2.2 km return climb to Tomaree Head for views over Port Stephens, plus WWII gun emplacements.",
+   "unverified": [
+    "A 2025 NPWS alert said the lower section is slippery when wet (search result, not re-read)."
+   ],
+   "coordinates_check": {
+    "current": {
+     "latitude": -32.716793,
+     "longitude": 152.187102
+    },
+    "source_point": {
+     "latitude": -32.716573,
+     "longitude": 152.187049
+    },
+    "moved_m_from_placement": 25,
+    "source": "resolve-pin.py HIGH: OSM natural=peak \"Mount Tomaree\" 25 m from the Wikivoyage listing point; summit pinned on the feature itself. (Route midpoint would be ~1 km from the summit; the summit is the named place.)",
+    "confidence": "HIGH",
+    "ok": true
+   },
+   "coordinates_source": "resolve-pin.py HIGH: OSM natural=peak \"Mount Tomaree\" 25 m from the Wikivoyage listing point; summit pinned on the feature itself. (Route midpoint would be ~1 km from the summit; the summit is the named place.)",
+   "wiki_title": "Mount Tomaree"
+  },
+  {
+   "id": "tomaree-coastal-walk",
+   "name": "Tomaree Coastal Walk",
+   "placement_id": "port-stephens-3",
+   "kind": "new",
+   "standalone": true,
+   "category": "hike",
+   "facts": [
+    {
+     "claim": "NPWS: 27 km one-way through Tomaree National Park, 2-3 days, Grade 4, from Tomaree Head Summit to Birubi (day 1: Tomaree Head to One Mile Beach, 18 km, 7-8 hours); toilets at Shoal Bay, Fingal Bay, Barry Park, One Mile Beach.",
+     "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/tomaree-coastal-walk-app"
+    },
+    {
+     "claim": "Tomaree National Park is not on the fee-collecting list (no entry fee).",
+     "source": "https://www.nationalparks.nsw.gov.au/passes-and-fees/fee-collecting-parks"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 8,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/tomaree-coastal-walk-app",
+   "ticketUrl_note": "Verified: managing agency (NPWS) track page; loaded, HTTP 200, title \"Tomaree Coastal Walk | NSW National Parks\".",
+   "held": true,
+   "held_reason": "Pin unresolved: needs the NPWS route map (https://www.nationalparks.nsw.gov.au/-/media/visitor/files/pdf/maps/1-mip-bespoke-pdf-maps/tomaree-coastal-walk-map-a3-pdf-map.pdf) to find the true route midpoint (probably south-west of Fingal Bay towards Barry Park/Gan Gan). The placement point is a usable on-path fallback.",
+   "bio_suggestion": "A 27 km coastal walk through Tomaree National Park, from Tomaree Head past Fingal Bay to Birubi.",
+   "unverified": [
+    "True midpoint of the route."
+   ],
+   "coordinates_check": {
+    "current": {
+     "latitude": -32.75977,
+     "longitude": 152.15954
+    },
+    "source_point": {
+     "latitude": -32.75977,
+     "longitude": 152.15954
+    },
+    "moved_m_from_placement": 0,
+    "source": "NOT RESOLVED: only ~9.7 km of the 27 km is mapped under the walk's name in OSM (no route relation). The placement point is the midpoint of the mapped named ways near Fingal Bay (my own OSM-geometry calculation reproduced it: -32.759771, 152.159536), which is on the path but is not the 13.5 km midpoint of the full route. The agency's PDF route map was not read.",
+    "confidence": "LOW",
+    "ok": false
+   },
+   "coordinates_source": "NOT RESOLVED: only ~9.7 km of the 27 km is mapped under the walk's name in OSM (no route relation). The placement point is the midpoint of the mapped named ways near Fingal Bay (my own OSM-geometry calculation reproduced it: -32.759771, 152.159536), which is on the path but is not the 13.5 km midpoint of the full route. The agency's PDF route map was not read."
+  },
+  {
+   "id": "tomaree-national-park",
+   "name": "Tomaree National Park",
+   "placement_id": "port-stephens-4",
+   "kind": "new",
+   "standalone": true,
+   "category": "nature",
+   "wiki_title": "Tomaree National Park",
+   "facts": [
+    {
+     "claim": "NPWS: backdrop to the villages of Nelson Bay, Shoal Bay, Fingal Bay, One Mile, Boat Harbour and Anna Bay; the 27 km Tomaree Coastal Walk, coastal lookouts for whale watching, Fort Tomaree and beaches; the only place in NSW with rhyodacite outcrops; borders the largest moving coastal sand dune in the southern hemisphere.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/tomaree-national-park"
+    },
+    {
+     "claim": "Entry points listed: Fingal Beach Surf Life Saving Club, Tomaree Crescent access and Tomaree Head carpark; sealed roads; not on the fee-collecting list.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/tomaree-national-park/visitor-info"
+    },
+    {
+     "claim": "Current alert: Lighthouse Keepers' Cottages Ruins site (Point Stephens Lighthouse and Fingal Island) closed to pedestrians for safety.",
+     "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/tomaree-national-park/local-alerts"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "free": true,
+   "cost_note": "No entry fee: the park is not on NPWS's fee-collecting list.",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/tomaree-national-park",
+   "ticketUrl_note": "Verified: managing agency (NPWS) park page; loaded, HTTP 200, title \"Tomaree National Park | NSW National Parks\".",
+   "held": true,
+   "held_reason": "Pin held: a park spot needs its own visitor point distinct from Mount Tomaree and the Coastal Walk (np_exception folds it into Port Stephens). Suggest the owner either merges the park with Mount Tomaree/Tomaree Coastal Walk, or chooses an NPWS entry point.",
+   "bio_suggestion": "A coastal national park of headlands, whale-watching lookouts, beaches and the 27 km Tomaree Coastal Walk.",
+   "unverified": [
+    "Pin; which NPWS entry point is best as the park spot."
+   ],
+   "coordinates_check": {
+    "current": {
+     "latitude": -32.7511,
+     "longitude": 152.1412
+    },
+    "source_point": {
+     "latitude": -32.7511,
+     "longitude": 152.1412
+    },
+    "moved_m_from_placement": 0,
+    "source": "NOT RESOLVED: the placement point is the park centroid in bush; the NPWS entry points (Fingal Beach SLSC, Tomaree Crescent, Tomaree Head carpark) have no resolved coordinates here, and Tomaree Head carpark/lookout (-32.715744, 152.186684) is 100 m from the separate Mount Tomaree spot. Zenith Beach (OSM natural=beach -32.720144, 152.184589) is another NPWS highlight but also beside Tomaree Head.",
+    "confidence": "LOW",
+    "ok": false
+   },
+   "coordinates_source": "NOT RESOLVED: the placement point is the park centroid in bush; the NPWS entry points (Fingal Beach SLSC, Tomaree Crescent, Tomaree Head carpark) have no resolved coordinates here, and Tomaree Head carpark/lookout (-32.715744, 152.186684) is 100 m from the separate Mount Tomaree spot. Zenith Beach (OSM natural=beach -32.720144, 152.184589) is another NPWS highlight but also beside Tomaree Head."
+  },
+  {
+   "id": "port-stephens",
+   "name": "Port Stephens",
+   "placement_id": "port-stephens",
+   "kind": "new",
+   "standalone": true,
+   "category": "nature",
+   "wiki_title": "Port Stephens (New South Wales)",
+   "facts": [
+    {
+     "claim": "Wikivoyage has a Port Stephens chapter: whale-watching cruises from Nelson Bay (May-November, about $60-63), resident dolphins (best late November-May), shore diving at Fly Point, Stockton sand dunes, Tomaree headlands.",
+     "source": "https://en.wikivoyage.org/wiki/Port_Stephens"
+    },
+    {
+     "claim": "The area's tourism site is Port Stephens (portstephens.com.au).",
+     "source": "https://www.portstephens.com.au/"
+    }
+   ],
+   "hours": "Open 24 hours",
+   "visitHoursMin": 3,
+   "visitHoursMax": 8,
+   "free": true,
+   "cost_note": "Free; cruises and tours are priced separately.",
+   "ticketUrl": "https://www.portstephens.com.au/",
+   "ticketUrl_note": "Verified: destination tourism site; loaded, HTTP 200, title \"Take a Walk to Another World | Port Stephens\". A regional tourism body, not one steward: owner may prefer no link.",
+   "held": true,
+   "held_reason": "Region/destination-level place with a water centroid; duplicates Nelson Bay and the headland spots. If Port Stephens stays a standalone spot it needs a visitor point on land (Nelson Bay foreshore); otherwise drop.",
+   "bio_suggestion": "A bay and holiday area for whale and dolphin watching, sand dunes and the Tomaree headlands.",
+   "unverified": [
+    "Pin."
+   ],
+   "coordinates_check": {
+    "current": {
+     "latitude": -32.69916667,
+     "longitude": 152.12388889
+    },
+    "source_point": {
+     "latitude": -32.699167,
+     "longitude": 152.123889
+    },
+    "moved_m_from_placement": 0,
+    "source": "NOT RESOLVED: Wikipedia point for the bay, which is in the water. The town base is Nelson Bay (separate spot port-stephens-6, second-half researcher).",
+    "confidence": "LOW",
+    "ok": false
+   },
+   "coordinates_source": "NOT RESOLVED: Wikipedia point for the bay, which is in the water. The town base is Nelson Bay (separate spot port-stephens-6, second-half researcher)."
+  }
+ ]
+}

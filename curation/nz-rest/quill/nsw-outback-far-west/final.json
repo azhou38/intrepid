@@ -1,0 +1,723 @@
+{
+ "spots": {
+  "bourke": {
+   "name": "Bourke",
+   "icon": "🤠",
+   "category": "historic",
+   "bio": "Darling River town with a replica 1850s river-port wharf and Gundabooka National Park 30 minutes away.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -30.087928,
+    "longitude": 145.935469
+   },
+   "timezone": "Australia/Sydney",
+   "notes": [
+    "No ticketUrl: town with no single steward; visitbourke.com.au sells the Exhibition Centre and cruise, which were rejected as separate spots.",
+    "Pin is the Wikivoyage geotag for the Old Bourke Wharf (LOW by resolve-pin; town-core point). The placement point was about 9.9 km off.",
+    "Wharf and Crossley engine from Wikivoyage; the engine's run times were not verified. Gundabooka distance (30 minutes on sealed Kidman Way) is Wikivoyage; its park roads are dirt."
+   ]
+  },
+  "white-cliffs": {
+   "name": "White Cliffs",
+   "icon": "⛏️",
+   "category": "historic",
+   "bio": "Opal-mining village, 93 km from Wilcannia, where many residents live underground in dugouts.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -30.8519713,
+    "longitude": 143.0886223
+   },
+   "timezone": "Australia/Sydney",
+   "notes": [
+    "No ticketUrl: no official village site found (undergroundmotel.com.au is a business).",
+    "Pin is the OSM Paroo-Darling Visitor Centre in the village (MEDIUM-low); the placement point was 8.3 km north of the village.",
+    "Dugout tours and fossicking operators were not researched, so none is named. A Heritage Trail exists (Wikivoyage) but its staffed hours were not verified."
+   ]
+  },
+  "silverton": {
+   "name": "Silverton",
+   "icon": "🏚️",
+   "category": "historic",
+   "bio": "Mining ghost town 26 km from Broken Hill, where Mad Max 2 was filmed, with art galleries.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://www.silverton.org.au/",
+   "coordinates": {
+    "latitude": -31.885299,
+    "longitude": 141.225092
+   },
+   "timezone": "Australia/Broken_Hill",
+   "notes": [
+    "ticketUrl is the Silverton Village Committee site (loaded, title 'Welcome to Silverton | Original Outback Australia'); village-level, not a single venue.",
+    "Pin is the Silverton Gaol 1889 attraction node (HIGH).",
+    "Gallery opening hours were not researched. Silverton is on ACST like Broken Hill (Wikivoyage)."
+   ]
+  },
+  "mundi-mundi-lookout": {
+   "name": "Mundi Mundi Lookout",
+   "icon": "🌅",
+   "category": "viewpoint",
+   "bio": "Lookout just west of Silverton over the Mundi Mundi plain, a favourite sunset spot.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": true,
+   "coordinates": {
+    "latitude": -31.847403,
+    "longitude": 141.202625
+   },
+   "timezone": "Australia/Broken_Hill",
+   "notes": [
+    "No ticketUrl: unattended lookout, no steward page.",
+    "Pin HIGH (OSM viewpoint plus Commons geotag).",
+    "Road surface and wet-weather closures on the Silverton road were not checked.",
+    "Placement photo needs hero_crop {x 0.5, y 0.7, zoom 1.5} (half sky)."
+   ]
+  },
+  "pro-hart-gallery-and-sculpture-park": {
+   "name": "Pro Hart Gallery and Sculpture Park",
+   "icon": "🎨",
+   "category": "museum",
+   "bio": "Gallery of artist Pro Hart's paintings and sculptures, including the Rolls-Royce he painted.",
+   "hours": "10:00 AM – 2:00 PM daily",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "costMin": 5,
+   "costMax": 5,
+   "currency": "AUD",
+   "ticketUrl": "https://www.prohart.com.au/",
+   "coordinates": {
+    "latitude": -31.94492,
+    "longitude": 141.4472
+   },
+   "timezone": "Australia/Broken_Hill",
+   "notes": [
+    "Closed Good Friday, Easter Monday and Anzac Day (prohart.com.au/contact). The page says 'new hours from March 2026' without stating them; 10-2 daily is what it shows. Confirm on 08 8087 2441.",
+    "A$5 adult is from the same contact page, undated.",
+    "Pin HIGH (OSM gallery plus sculpture park node, 92 m apart)."
+   ]
+  },
+  "line-of-lode-miners-memorial": {
+   "name": "Line of Lode Miners Memorial",
+   "icon": "🪦",
+   "category": "monument",
+   "bio": "Memorial on a mullock heap naming each miner who died on glass panels, with views over town.",
+   "hours": "8:00 AM – 10:30 PM",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "coordinates": {
+    "latitude": -31.962147,
+    "longitude": 141.467295
+   },
+   "timezone": "Australia/Broken_Hill",
+   "notes": [
+    "No ticketUrl: council and Crown-land memorial with a cafe that changed operators in 2025; no steward page verified.",
+    "Hours 8:00-22:30 are from Showcaves (third party, marked 2026), not an official page; cafe reportedly 8:30-15:00. Treat as approximate.",
+    "Opened 2001 with each name etched into glass panels within rust-red steel walls (Visit Broken Hill); views over town and desert (Wikivoyage).",
+    "Pin HIGH."
+   ]
+  },
+  "silverton-mad-max-2-museum": {
+   "name": "Silverton Mad Max 2 Museum",
+   "icon": "🚗",
+   "category": "museum",
+   "bio": "Museum of props, behind-the-scenes photos and original and replica vehicles from Mad Max 2.",
+   "hours": "Wed–Sat 10:00 AM – 4:00 PM; Sun 11:00 AM – 3:00 PM; closed Mon–Tue",
+   "closedDays": [
+    1,
+    2
+   ],
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "costMin": 7,
+   "costMax": 7,
+   "currency": "AUD",
+   "ticketUrl": "https://www.silverton.org.au/mad-max-museum/",
+   "coordinates": {
+    "latitude": -31.888525,
+    "longitude": 141.221947
+   },
+   "timezone": "Australia/Broken_Hill",
+   "notes": [
+    "Official page says only 'Admission fee'; A$7 is from a travel-blog snippet (ExploreOz says free). Approximate; confirm on (08) 8088 6128.",
+    "The page asks visitors to contact the museum for holiday and summer-break closing times.",
+    "ticketUrl is the museum's page on the village site; no separate operator domain was verified.",
+    "Pin HIGH (OSM museum plus VisitNSW point 14 m away)."
+   ]
+  },
+  "rfds-broken-hill-visitor-centre": {
+   "name": "Royal Flying Doctor Outback Heritage Experience",
+   "icon": "✈️",
+   "category": "museum",
+   "bio": "Heritage visit at the Flying Doctor's Broken Hill base, beside the airport terminal.",
+   "hours": "Mon–Fri 9:00 AM – 5:00 PM; Sat–Sun 10:00 AM – 4:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 25,
+   "costMax": 25,
+   "currency": "AUD",
+   "ticketUrl": "https://brokenhill.experience.flyingdoctor.org.au/",
+   "coordinates": {
+    "latitude": -31.9993221,
+    "longitude": 141.468711
+   },
+   "timezone": "Australia/Broken_Hill",
+   "notes": [
+    "Renamed from 'Royal Flying Doctor Service Bruce Langford Visitor Centre': the operator's site and Visit Broken Hill call it the Royal Flying Doctor Outback Heritage Experience. Id kept. Owner to confirm the shown name.",
+    "A$25 is the adult price (child 15, concession 20, family of four 60). Closed Christmas Day, reopening 2 January 2027 (operator visit page).",
+    "Placement bio claimed heritage aircraft; not in research, so left out.",
+    "Pin HIGH (OSM building plus Commons geotag 54 m); moved 345 m from the placement point."
+   ]
+  },
+  "living-desert-sculptures": {
+   "name": "Living Desert Sculptures",
+   "icon": "🗿",
+   "category": "landmark",
+   "bio": "Twelve sandstone sculptures on Sundown Hill, in a 180-hectare sanctuary, 900 m walk from the car park.",
+   "hours": "Dec–Feb 6:00 AM to half an hour after sunset; other months 8:30 AM to half an hour after sunset",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://www.visitbrokenhill.com/ATDW/Attractions/The-Living-Desert-and-Sculptures-56b240a7d5f1565045d860ed",
+   "coordinates": {
+    "latitude": -31.899358,
+    "longitude": 141.449943
+   },
+   "timezone": "Australia/Broken_Hill",
+   "notes": [
+    "A$10 adult (concession 7, under 5 free) from the tourism page, which also carries an older '$6' line. Paid at the entrance pay bay.",
+    "Council-run sanctuary with no council page found; ticketUrl is the official Broken Hill tourism listing.",
+    "Wikivoyage says the area closes periodically for maintenance; no current closure found.",
+    "Bio length is tight; check with bio-fit.py. Pin MEDIUM."
+   ]
+  },
+  "daydream-mine": {
+   "name": "Daydream Mine",
+   "icon": "⛏️",
+   "category": "historic",
+   "bio": "Historic mine 28 km north-west of Broken Hill, with underground and surface tours at 10:00 and 11:30 am.",
+   "hours": "Tours 10:00 AM and 11:30 AM; Tue–Thu, Sat–Sun in quiet months, daily in school holidays (book ahead)",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2,
+   "costMin": 15,
+   "costMax": 40,
+   "currency": "AUD",
+   "ticketUrl": "https://daydreammine.com.au/",
+   "coordinates": {
+    "latitude": -31.814073,
+    "longitude": 141.347706
+   },
+   "timezone": "Australia/Broken_Hill",
+   "notes": [
+    "Cost spans surface tour A$15 to underground A$40 adult; Sunday and public-holiday rates are higher (A$17 and A$48). Book by phone 0427 885 682.",
+    "Operator page mentions COVID guidelines and may be stale; confirm tour days. Closed Mondays and Fridays outside school holidays, so closedDays is not set.",
+    "Operator warns Google Maps misdirects; follow signage on the main road to Silverton.",
+    "'Silver' and 'hand-worked' come from the placement bio; confirm against a source before shipping. Pin MEDIUM."
+   ]
+  },
+  "lightning-ridge-bore-baths": {
+   "name": "Lightning Ridge Bore Baths",
+   "icon": "♨️",
+   "category": "nature",
+   "bio": "Free artesian pools of warm water from about 900 m underground, open around the clock.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "coordinates": {
+    "latitude": -29.422699,
+    "longitude": 147.997808
+   },
+   "timezone": "Australia/Sydney",
+   "notes": [
+    "No ticketUrl: run by Walgett Shire Council, no council page found; the tourism association listing is not the steward.",
+    "Listing says about 40 C; bring towel and bathers. A search snippet mentioned weekday cleaning closures around 10am-noon; no official source read.",
+    "Pin HIGH."
+   ]
+  },
+  "the-big-opal": {
+   "name": "The Big Opal",
+   "icon": "💎",
+   "category": "historic",
+   "bio": "Self-guided tour 30 m underground through three dug tunnels with an opal seam, about 45 minutes.",
+   "hours": "Daytime tours",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "costMin": 20,
+   "costMax": 20,
+   "currency": "AUD",
+   "coordinates": {
+    "latitude": -29.451802,
+    "longitude": 147.967561
+   },
+   "timezone": "Australia/Sydney",
+   "notes": [
+    "Hours NOT verified: no source gave them ('Daytime tours' is a qualifier, not researched). Call +61 2 6829 0247.",
+    "A$20 adult is a 2019 Wikivoyage figure (A$50 family); an older source said A$10. Approximate.",
+    "No official website found, so no ticketUrl.",
+    "Pin HIGH (OSM attraction equals Wikivoyage geotag)."
+   ]
+  },
+  "lightning-ridge-bottle-house": {
+   "name": "Lightning Ridge Bottle House",
+   "icon": "🍾",
+   "category": "museum",
+   "bio": "House built of bottles, now the Bottle House and Mining Museum on Opal Street.",
+   "hours": "9:00 AM – 5:00 PM",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "coordinates": {
+    "latitude": -29.433765,
+    "longitude": 147.981905
+   },
+   "timezone": "Australia/Sydney",
+   "notes": [
+    "Hours and A$10 adult are from an undated Frommer's page; the NSW Government listing says A$2 to A$10. Not verified with the owners.",
+    "No ticketUrl: a travel guide says the house has no website.",
+    "Placement's '1960s' claim dropped as unsourced in research. Pin MEDIUM."
+   ]
+  },
+  "walls-of-china": {
+   "name": "Walls of China",
+   "icon": "🏜️",
+   "category": "nature",
+   "bio": "Eroded lunette dunes at Mungo, seen from a platform; walking the lunette is by guided tour only.",
+   "hours": "Viewing platform open daily; lunette by 2-hour guided tour only (book ahead)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "costMin": 8,
+   "costMax": 50,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/walls-of-china-viewing-platform",
+   "coordinates": {
+    "latitude": -33.741653,
+    "longitude": 143.12783
+   },
+   "timezone": "Australia/Sydney",
+   "notes": [
+    "Cost spans the A$8 per vehicle park fee (platform only) to the A$50 adult Mungo lunette guided tour (concession/child 35, family 135; under 5 free; no cash on the park).",
+    "NPWS warns roads may close in wet weather, only Telstra has coverage at the platform, and summer temperatures exceed 40 C. Best at sunrise or sunset.",
+    "Lunette access is guided only (NPWS Aboriginal guide), meeting behind Mungo Visitor Centre 15 minutes early; tours run most days.",
+    "Pin MEDIUM (OSM attraction; car park 460 m south-west)."
+   ]
+  },
+  "menindee-lakes": {
+   "name": "Menindee Lakes",
+   "icon": "🦢",
+   "category": "nature",
+   "bio": "Chain of Darling River lakes near Menindee that fill only after months of rain in southern Queensland.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -32.39259,
+    "longitude": 142.41917
+   },
+   "timezone": "Australia/Sydney",
+   "notes": [
+    "No ticketUrl: no single steward; NPWS also runs Menindee Lakes and Kinchega guided tours (prices not read).",
+    "Pin is the Menindee Visitors Information Centre (27 Yartla St), a LOW-by-tool visitor point, not a lake feature; the lake centroid was 6.7 km away.",
+    "Current lake levels not checked; lakes can run dry. Birdlife and sunset claims in the placement bio were left out as unsourced."
+   ]
+  },
+  "kinchega-woolshed": {
+   "name": "Kinchega Woolshed",
+   "icon": "🐑",
+   "category": "historic",
+   "bio": "An 1875 woolshed of corrugated iron and river red gum where six million sheep were sheared in 97 years.",
+   "hours": "Park open daily; woolshed tours in Easter, winter and spring school holidays",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "costMin": 8,
+   "costMax": 8,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/historic-buildings-places/kinchega-woolshed",
+   "coordinates": {
+    "latitude": -32.474497,
+    "longitude": 142.3432561
+   },
+   "timezone": "Australia/Sydney",
+   "notes": [
+    "A$8 is the park entry per vehicle per day (coins, pay-and-display envelope).",
+    "NPWS showed the woolshed as 'Affected by closures' (2 Closed-parks alerts, text unreadable). It may be shut: check alerts before relying on it.",
+    "Pin HIGH."
+   ]
+  },
+  "cameron-corner": {
+   "name": "Cameron Corner",
+   "icon": "📍",
+   "category": "landmark",
+   "bio": "Survey marker where New South Wales, Queensland and South Australia meet, near Sturt National Park.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": true,
+   "coordinates": {
+    "latitude": -28.9991233,
+    "longitude": 140.9992883
+   },
+   "timezone": "Australia/Sydney",
+   "notes": [
+    "No ticketUrl: unstaffed marker. Dingo Fence not named: NPWS places the fence on Sturt's western and northern boundary, but no source ties it to the corner.",
+    "Road condition and distance from Tibooburra (placement said about 140 km) were not verified. Locals may keep Central time; not verified.",
+    "Pin HIGH (OSM locality plus Wikipedia). Name shortened from 'Cameron Corner Survey Marker'; no wiki confirmed."
+   ]
+  },
+  "great-cobar-heritage-centre": {
+   "name": "Great Cobar Heritage Centre",
+   "icon": "⛏️",
+   "category": "museum",
+   "bio": "Mining museum in the former 1910 mines office on the highway at the eastern end of Cobar.",
+   "hours": "Mon–Fri 8:30 AM – 5:00 PM; Sat–Sun and public holidays 9:00 AM – 5:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://www.cobar.nsw.gov.au/tourism-and-events/the-great-cobar-museum-and-visitors-centre/",
+   "coordinates": {
+    "latitude": -31.49815,
+    "longitude": 145.842571
+   },
+   "timezone": "Australia/Sydney",
+   "notes": [
+    "Council page: adult A$10, concession 5, family 20. Visit Cobar gives 4:30 PM close and prices as of Jan 2024; the council's 5 PM is used.",
+    "The council now calls it The Great Cobar Museum; the Heritage Centre name (Wikivoyage, OSM) is kept.",
+    "Pin HIGH."
+   ]
+  },
+  "brewarrina-aboriginal-fish-traps": {
+   "name": "Brewarrina Aboriginal Fish Traps",
+   "icon": "🐟",
+   "category": "historic",
+   "bio": "Baiame's Ngunnhu, heritage-registered stone fish traps stretching about 500 m along the Barwon riverbed.",
+   "hours": "Daylight hours; guided tours from the museum (times unverified)",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "coordinates": {
+    "latitude": -29.95827,
+    "longitude": 146.8545
+   },
+   "timezone": "Australia/Sydney",
+   "notes": [
+    "ticketUrl OMITTED: the only candidate (visitbrewarrina.com.au museum page) was unconfirmed (generic title, WebFetch 404). Check in a real browser before adding.",
+    "Free by absence: no source states a charge for viewing the traps; the guided tour price was not found (Wikivoyage said about A$20). Guided tour is about 45 minutes with local Aboriginal guides (VisitNSW). A river rise can cover the traps.",
+    "Tour times (9.30, 11, 1, 2.30 weekdays; 9.30 and 11 Saturday) come from a 2023 article.",
+    "Age claim ('may be the oldest human construction') dropped: sources only say age unknown, suggested 40,000 years.",
+    "Pin is the midpoint of two sources on the linear feature (MEDIUM-low)."
+   ]
+  },
+  "brewarrina-aboriginal-culture-museum": {
+   "name": "Brewarrina Aboriginal Culture Museum",
+   "icon": "🪃",
+   "category": "museum",
+   "bio": "Museum overlooking the fish traps, with local artefacts, language and fossils and an Aboriginal gift shop.",
+   "hours": "Mon–Fri 9:00 AM – 5:00 PM",
+   "closedDays": [
+    0,
+    6
+   ],
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "costMin": 6,
+   "costMax": 6,
+   "currency": "AUD",
+   "coordinates": {
+    "latitude": -29.959194,
+    "longitude": 146.854406
+   },
+   "timezone": "Australia/Sydney",
+   "notes": [
+    "ticketUrl OMITTED: the only candidate page was unconfirmed (generic title, WebFetch 404); check in a real browser.",
+    "Hours and A$6 adult (pensioner 3) are from undated directories (Which Museum, AU Museums); the official page could not be read. Weekend closure inferred from the Mon-Fri listing; confirm before shipping or drop closedDays.",
+    "Name is as placed; the OSM and VisitNSW name is 'Brewarrina Aboriginal Cultural Museum'. Owner to confirm.",
+    "'Underground museum' in the placement bio was unsourced and dropped. Pin HIGH."
+   ]
+  },
+  "broken-hill-city": {
+   "name": "Broken Hill",
+   "icon": "⛏️",
+   "category": "historic",
+   "bio": "Far West mining city on Central time, with the Line of Lode, Pro Hart Gallery and Silverton close by.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "free": true,
+   "ticketUrl": "https://www.visitbrokenhill.com/",
+   "coordinates": {
+    "latitude": -31.9602036,
+    "longitude": 141.4607671
+   },
+   "timezone": "Australia/Broken_Hill",
+   "notes": [
+    "ticketUrl is the official Broken Hill tourism site (loaded).",
+    "Overlaps its own spots (Silverton, Pro Hart, Line of Lode and others) and the proposed Broken Hill destination: add it only if that destination is not created.",
+    "Pin is the Visitor Information Centre (MEDIUM-low); the Wikivoyage region point was 2 km off. Central time (ACST) per Wikivoyage: only Broken Hill and Silverton use it."
+   ]
+  },
+  "lightning-ridge-town": {
+   "name": "Lightning Ridge",
+   "icon": "💎",
+   "category": "historic",
+   "bio": "Opal-mining town with a walkable centre of galleries, cafes, a pool and the artesian baths.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "free": true,
+   "ticketUrl": "https://lightningridgetourism.com/",
+   "coordinates": {
+    "latitude": -29.43136,
+    "longitude": 147.97215
+   },
+   "timezone": "Australia/Sydney",
+   "notes": [
+    "ticketUrl is the Lightning Ridge Tourism Association site (loaded); lightningridge.com.au deliberately not used.",
+    "Pin is the Visitors Information Centre in Lions Park (Wikivoyage geotag, MEDIUM-low); visitor centre Mon-Fri 9AM-5PM per Wikivoyage.",
+    "Overlaps the bore baths, Big Opal and Bottle House spots; add only if no destination is created. 'Coloured car-door trails' from placement left out as unsourced."
+   ]
+  },
+  "cobar-town": {
+   "name": "Cobar",
+   "icon": "🏜️",
+   "category": "historic",
+   "bio": "Mining town on the Barrier Highway whose Great Western Hotel claims NSW's longest verandah, at 91 m.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://visitcobarshire.com.au/",
+   "coordinates": {
+    "latitude": -31.4981,
+    "longitude": 145.8388
+   },
+   "timezone": "Australia/Sydney",
+   "notes": [
+    "ticketUrl is Visit Cobar (shire tourism, loaded).",
+    "Pin is the Great Western Hotel geotag on the heritage main street (town-core, one listing); 100 m from the Great Cobar Heritage Centre, so the two overlap.",
+    "Verandah claim is the hotel's own (Wikivoyage), hence 'claims'. Barrier Highway comes from the Wikivoyage listing address."
+   ]
+  },
+  "brewarrina-town": {
+   "name": "Brewarrina",
+   "icon": "🌉",
+   "category": "historic",
+   "bio": "Barwon River town with one of NSW's two remaining lift-span bridges and the Ochre Beds meeting site.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://visitbrewarrina.com.au/",
+   "coordinates": {
+    "latitude": -29.96084,
+    "longitude": 146.85754
+   },
+   "timezone": "Australia/Sydney",
+   "notes": [
+    "ticketUrl is the Visit Brewarrina homepage (title 'Visit Brewarrina'); the museum deep link was the unconfirmed one and is not used here.",
+    "Pin is the Visitor Information and Exhibition Centre (57 Bathurst St, Mon-Fri 9AM-4PM per Wikivoyage), a town-core point from one listing.",
+    "The Ochre Beds are a sacred meeting site west of the fish traps (Wikivoyage); the town spot largely overlaps the fish traps and museum spots."
+   ]
+  },
+  "mungo-national-park-site": {
+   "name": "Mungo National Park",
+   "icon": "🏜️",
+   "category": "nature",
+   "bio": "World Heritage park where Mungo Lady and Mungo Man were buried more than 42,000 years ago.",
+   "hours": "Open 24 hours (park may close for weather or fire)",
+   "visitHoursMin": 3,
+   "visitHoursMax": 8,
+   "costMin": 8,
+   "costMax": 8,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/mungo-national-park",
+   "coordinates": {
+    "latitude": -33.7232222,
+    "longitude": 143.0272294
+   },
+   "timezone": "Australia/Sydney",
+   "notes": [
+    "A$8 per vehicle per day, self-registration envelopes outside Mungo Visitor Centre. NPWS also lists 20,000-year-old fossil footprints.",
+    "Roads may close in wet weather and mobile coverage is limited; visitor centre hours vary and are posted on the door.",
+    "Overlaps the Walls of China spot (the park's headline sight). Pin is the OSM visitor-centre shelter (MEDIUM-low)."
+   ]
+  },
+  "kinchega-national-park-site": {
+   "name": "Kinchega National Park",
+   "icon": "🦘",
+   "category": "nature",
+   "bio": "Darling River park with an Emu Lake campground, a historic homestead and the PS Providence site.",
+   "hours": "Open 24 hours (park may close for weather or fire)",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "costMin": 8,
+   "costMax": 8,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/kinchega-national-park",
+   "coordinates": {
+    "latitude": -32.473796,
+    "longitude": 142.343234
+   },
+   "timezone": "Australia/Sydney",
+   "notes": [
+    "A$8 per vehicle per day, pay-and-display envelope (bring coins).",
+    "Pin is the OSM park office, 86 m from the Kinchega Woolshed spot; the two share a hub and the owner may keep only one.",
+    "Kinchega is in the Sydney zone (only Broken Hill and Silverton use ACST)."
+   ]
+  },
+  "mutawintji-national-park-site": {
+   "name": "Mutawintji National Park",
+   "icon": "🖼️",
+   "category": "nature",
+   "bio": "Bynguano Ranges park of gorge walks and hand stencil art, with the Historic Site open only on guided tours.",
+   "hours": "Open 24 hours (park may close for weather or fire)",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/mutawintji-national-park",
+   "coordinates": {
+    "latitude": -31.2936684,
+    "longitude": 142.2852488
+   },
+   "timezone": "Australia/Sydney",
+   "notes": [
+    "Free: the NPWS page states no entry fee (Mungo, Kinchega and Sturt state A$8). Camping and the Kuluwirru Yapa tour (A$50 adult, usually Wed-Sun 21 Oct 2026 to 21 Mar 2027) cost extra. Confirm.",
+    "The tour is the only way into the Historic Site, which is held as its own spot; this park spot carries the guided-only point.",
+    "Mutawintji keeps Eastern time while Broken Hill is on Central (NPWS tour page), so Australia/Sydney. Park is about 130 km north-east of Broken Hill via the Silver City Highway.",
+    "Pin is the OSM Mutawintji Visitor Centre (MEDIUM-low)."
+   ]
+  },
+  "sturt-national-park-site": {
+   "name": "Sturt National Park",
+   "icon": "🏜️",
+   "category": "nature",
+   "bio": "Park of Strzelecki desert dunes, mesas and granite tors, bounded by the Dingo Fence on the west and north.",
+   "hours": "Open 24 hours (park may close for weather or fire)",
+   "visitHoursMin": 3,
+   "visitHoursMax": 8,
+   "costMin": 8,
+   "costMax": 8,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/sturt-national-park",
+   "coordinates": {
+    "latitude": -29.4300885,
+    "longitude": 142.011332
+   },
+   "timezone": "Australia/Sydney",
+   "notes": [
+    "A$8 per vehicle per day, coin-operated machines (bring coins). Tibooburra Visitor Centre is unstaffed and always open.",
+    "Dingo Fence (5,614 km, built in the 1880s) runs along the park's western and northern boundary per NPWS; granite tors are 450 million years old, at Tibooburra.",
+    "Pin is the Tibooburra visitor centre (MEDIUM-low), 24 km from the park centroid. Unsealed roads and wet-weather closures likely but not read from an alert."
+   ]
+  },
+  "gundabooka-national-park-site": {
+   "name": "Gundabooka National Park",
+   "icon": "🪨",
+   "category": "nature",
+   "bio": "Park around 500 m Mount Gunderbooka, with a walk to Aboriginal rock art at the Yapa art site.",
+   "hours": "Open 24 hours (park may close for weather or fire); park roads are dirt",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/gundabooka-national-park",
+   "coordinates": {
+    "latitude": -30.6403687,
+    "longitude": 145.7679387
+   },
+   "timezone": "Australia/Sydney",
+   "notes": [
+    "Free: no entry fee on the NPWS page. Confirm.",
+    "About 30 minutes from Bourke on sealed Kidman Way but the park's roads are poorly maintained dirt (Wikivoyage). Bourke NPWS office 02 6830 0200.",
+    "NPWS spells the walk 'Yapa (Mulgowan)' and the mountain 'Gunderbooka'; the park is 'Gundabooka'. Pin is the rock-art car park (MEDIUM)."
+   ]
+  },
+  "paroo-darling-national-park-site": {
+   "name": "Paroo-Darling National Park",
+   "icon": "🦆",
+   "category": "nature",
+   "bio": "Remote park around Peery Lake, where a survey recorded 60,000 birds, with paddling and walking.",
+   "hours": "Open 24 hours (park may close for extreme weather or fire); dirt roads",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/paroo-darling-national-park",
+   "coordinates": {
+    "latitude": -30.7117908,
+    "longitude": 143.5596113
+   },
+   "timezone": "Australia/Sydney",
+   "notes": [
+    "Free: no entry fee on the NPWS page. Confirm.",
+    "About 100 km by dirt road from White Cliffs, where the park visitor centre is. Peery Lake dries, and access depends on rain.",
+    "Pin is the Peery Lake day-use area (MEDIUM), 95 km from the placement centroid."
+   ]
+  },
+  "toorale-national-park-site": {
+   "name": "Toorale National Park",
+   "icon": "🦩",
+   "category": "nature",
+   "bio": "Park at the Warrego and Darling river junction with seasonal wetlands, best visited April to November.",
+   "hours": "Open 24 hours (park may close for weather or fire)",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/toorale-national-park",
+   "coordinates": {
+    "latitude": -30.2791191,
+    "longitude": 145.3809106
+   },
+   "timezone": "Australia/Sydney",
+   "notes": [
+    "Free: no entry fee on the NPWS page. Confirm. Darling River campground and Many Big Rocks picnic area; wetlands bring ibis, pelicans and brolgas.",
+    "A Discovery tour led by Kurnu-Baakandji people is listed; price and dates not researched. Bourke NPWS office 02 6830 0200.",
+    "Pin is the homestead precinct (OSM isolated dwelling, MEDIUM-low)."
+   ]
+  }
+ },
+ "existing_fixes": [],
+ "held": [
+  {
+   "id": "chambers-of-the-black-hand",
+   "name": "Chambers of the Black Hand",
+   "reason": "Pin held: no OSM/Photon/Nominatim feature and no agency entrance coordinate (placement point -29.428518,147.967561 is an approximation, not usable). Operator says to turn left onto Three Mile Road before the Visitor Information Centre.",
+   "facts": "Open 7 days from 9am, hours may vary, bookings essential online; half days Nov-Jan; closed all February. Sculpture tour adult A$48, child A$16; gallery about 12 m underground (800+ sculptures per operator, 900 per tourism association). Operator site chambersoftheblackhand.com.au loaded and verified. Draft bio: 'Sandstone gallery of more than 800 sculptures carved about 12 m underground, visited by booked tour.' Category landmark, icon 🗿, free no, cost 48 AUD, Australia/Sydney."
+  },
+  {
+   "id": "fort-bourke-hill-lookout",
+   "name": "Fort Bourke Hill Lookout",
+   "reason": "Pin held: only a Commons photo median (-31.516772,145.855881) from 6 files; no OSM lookout or agency point.",
+   "facts": "Sealed road 2 km south of Cobar off Kidman Way to a platform over the open pit and underground mine entrance, best at sunset; open daily 9am-5pm (Wikivoyage); no charge mentioned in any source (free by absence). Historic Towsers Huts nearby. Draft bio: 'Sealed-road lookout 2 km south of Cobar over the open pit and underground mine entrance.' Category viewpoint, free, Australia/Sydney. No ticketUrl."
+  },
+  {
+   "id": "mutawintji-historic-site",
+   "name": "Mutawintji Historic Site",
+   "reason": "Held: the site (Kuluwirru Yapa) is entered only on the NPWS-guided tour and is not mapped; the only pin is the park visitor centre meeting point, which is the Mutawintji National Park spot's pin. Merge with the park spot or accept the meeting point as the entrance.",
+   "facts": "Kuluwirru Yapa cultural tour: 2 hours, Aboriginal-guided, 2 km rough track to rock engravings, ochre stencils and an audiovisual Dreaming story; usually Wed-Sun 8:30-10:30 AM, 21 Oct 2026 to 21 Mar 2027, no tours Christmas Day; adult A$50, concession 38, child 20, family 120, under 5 free; online bookings only, refunded if closed for rain; meet at Mutawintji Visitor Centre, 51 Old Coach Road. ticketUrl would be https://www.nationalparks.nsw.gov.au/things-to-do/guided-tours/kuluwirru-yapa-cultural-tour (loaded). Draft bio: 'Rock engravings and ochre stencils reached only on a two-hour guided walk led by an Aboriginal guide.' Category historic, Australia/Sydney, closedDays [1,2]."
+  }
+ ],
+ "notes": [
+  "All entries are standalone (keyed by the research.json fallback ids), country Australia (AU), continent Oceania. Broken Hill, Silverton and the Broken Hill-group spots use Australia/Broken_Hill; everything else Australia/Sydney. Add the four standalone fields when applying.",
+  "No shell was available in this session, so bio-fit.py was NOT run. Every bio was counted by hand at about 85-110 characters; the tightest are Living Desert Sculptures, Mutawintji National Park, Sturt National Park, Brewarrina Aboriginal Fish Traps, the Big Opal and Walls of China. Run `python3 scripts/curation/bio-fit.py` before applying.",
+  "No wiki fields were set: research confirmed no Wikipedia titles. Placement candidates (unconfirmed) were 'Bourke, New South Wales', 'White Cliffs, New South Wales', 'Silverton, New South Wales' and 'Walls of China (Mungo)'.",
+  "Renamed: rfds-broken-hill-visitor-centre is now 'Royal Flying Doctor Outback Heritage Experience' (operator's current name; id kept) and cameron-corner is 'Cameron Corner'.",
+  "ticketUrl omitted for both Brewarrina museum and fish-trap spots because the museum deep link was unconfirmed; the Brewarrina town spot uses the verified homepage.",
+  "Overlaps for the owner: the town spots (Broken Hill, Lightning Ridge, Cobar, Brewarrina) and park spots (Mungo, Kinchega, Mutawintji) overlap their sub-spots and the proposed destinations; keep them only if those destinations are not created.",
+  "Costs marked approximate in per-spot notes: Mad Max 2 Museum (A$7), Big Opal (A$20), Bottle House (A$10), Brewarrina museum (A$6), Pro Hart (A$5). Hours not verified: Big Opal, Bottle House, Brewarrina museum, Line of Lode, Daydream Mine. Line of Lode's own claim of 'each miner who died' is the Visit Broken Hill wording.",
+  "Photos: not handled here. Placement notes needing crops: Mundi Mundi Lookout (zoom 1.5), Kinchega Woolshed (interior, top-centre crop)."
+ ]
+}

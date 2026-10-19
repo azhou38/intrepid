@@ -1,0 +1,1512 @@
+{
+ "region": "nsw-southern-highlands-snowy",
+ "country": "Australia",
+ "currency": "AUD",
+ "researched": "2026-10-18",
+ "note": "All spots researched as the STANDALONE fallback (if_declined ids). Proposed destinations are not added. Overpass was unavailable during this run, so resolve-pin.py fell back to Photon + Wikipedia + Commons only; every point it returned equals the placement.json point (recorded when OSM was available) except where noted.",
+ "park_fee_note": "NPWS Kosciuszko National Park entry: $17 per vehicle per day (Tuesday after October long weekend to Thursday before June long weekend), $29 in winter peak (Friday of June long weekend to Monday of October long weekend); motorcycles $7/$12; applies on Alpine Way and Kosciuszko Road. Source https://www.nationalparks.nsw.gov.au/visit-a-park/parks/kosciuszko-national-park",
+ "spots": [
+  {
+   "id": "bowral",
+   "name": "Bowral",
+   "placement_id": "southern-highlands-1",
+   "proposed_destination": "PROPOSED:southern-highlands",
+   "action": "standalone (if_declined)",
+   "coordinates": {
+    "latitude": -34.467914,
+    "longitude": 150.416146
+   },
+   "coordinates_source": "Wikivoyage Southern Highlands geo (town centre), kept",
+   "pin_confidence": "LOW from resolve-pin (it returned Bowral railway station 1.1 km away); kept town-centre point as a town spot",
+   "distance_moved_from_placement_m": 0,
+   "pin_note": "Town spot: the town centre is the right pin. resolve-pin offered the railway station (-34.478018,150.416713), not used.",
+   "hours": "Open 24 hours",
+   "hours_source": "Open town; shop hours vary",
+   "closedDays": null,
+   "specialClosures": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "visitHours_source": "proposer estimate; unverified",
+   "cost": {
+    "free": true,
+    "currency": "AUD",
+    "basis": "Walking the town centre and Corbett Gardens has no charge; Tulip Time festival (late Sept-early Oct) is an event, not a spot.",
+    "source": "https://en.wikivoyage.org/wiki/Bowral"
+   },
+   "ticketUrl": {
+    "url": null,
+    "status": "none",
+    "checked": "A town with no single steward; Destination Southern Highlands (visitsouthernhighlands.com.au) is a tourism board, not an official site for Bowral."
+   },
+   "bio_fix": "\"Bradman's hometown\" is loose: Wikivoyage describes the Bradman Trail past his childhood homes, school and church. Suggest \"where Don Bradman grew up\".",
+   "seasonal_access": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Bowral"
+   ],
+   "unverified": [
+    "visit duration is an estimate"
+   ],
+   "ready_to_apply": true
+  },
+  {
+   "id": "berrima",
+   "name": "Berrima",
+   "placement_id": "southern-highlands-2",
+   "proposed_destination": "PROPOSED:southern-highlands",
+   "action": "standalone (if_declined)",
+   "coordinates": {
+    "latitude": -34.489005,
+    "longitude": 150.336151
+   },
+   "coordinates_source": "resolve-pin HIGH: Photon place=locality \"Berrima\" agrees with Commons photo median of 55 files (-34.488611,150.336740, 50 m)",
+   "pin_confidence": "HIGH",
+   "distance_moved_from_placement_m": 208,
+   "pin_note": "Moved from the Wikivoyage village centre geo (-34.487778,150.334444).",
+   "hours": "Open 24 hours",
+   "hours_source": "Village is open to walk; individual venues: Berrima Courthouse daily 10AM-4PM adult $9; District Museum Wed-Sun 10AM-4PM adult $5 (Wikivoyage, updated 2015, unverified).",
+   "closedDays": null,
+   "specialClosures": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "visitHours_source": "proposer estimate; unverified",
+   "cost": {
+    "free": true,
+    "currency": "AUD",
+    "basis": "Walking the village is free; Courthouse $9 adult and District Museum $5 are optional (Wikivoyage 2015 figures).",
+    "source": "https://en.wikivoyage.org/wiki/Berrima"
+   },
+   "ticketUrl": {
+    "url": null,
+    "status": "none",
+    "checked": "A village with no single steward."
+   },
+   "bio_fix": null,
+   "seasonal_access": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Berrima"
+   ],
+   "unverified": [
+    "venue hours and prices are 2015 Wikivoyage values"
+   ],
+   "ready_to_apply": true
+  },
+  {
+   "id": "bradman-museum",
+   "name": "Bradman Museum",
+   "placement_id": "southern-highlands-3",
+   "proposed_destination": "PROPOSED:southern-highlands",
+   "action": "standalone (if_declined)",
+   "coordinates": {
+    "latitude": -34.4830902,
+    "longitude": 150.4244408
+   },
+   "coordinates_source": "OSM tourism=museum (MEDIUM); Wikivoyage listing -34.483395,150.424314 is 70 m away",
+   "pin_confidence": "MEDIUM (OSM tourism=museum per placement; Photon returns the identical point)",
+   "distance_moved_from_placement_m": 0,
+   "pin_note": null,
+   "hours": "9:00 AM - 4:00 PM",
+   "hours_source": "https://www.bradman.com.au/tickets: \"9:00 am - 4:00 pm Monday to Sunday\"",
+   "closedDays": null,
+   "specialClosures": "Closed Good Friday and Christmas Day (https://www.bradman.com.au/museum)",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "visitHours_source": "proposer estimate; unverified",
+   "cost": {
+    "free": false,
+    "costMin": 30,
+    "costMax": 30,
+    "currency": "AUD",
+    "basis": "Adult $30.00; child (5-17) $16.50; concession/group $23.50; family (2+2) $77",
+    "source": "https://www.bradman.com.au/museum"
+   },
+   "ticketUrl": {
+    "url": "https://www.bradman.com.au/",
+    "status": "verified",
+    "checked": "Page title \"Bradman | Bradman Museum | St Jude St, Bowral NSW, Australia\" - loads. The old bradman.org.au domain does not resolve (DNS)."
+   },
+   "bio_fix": null,
+   "seasonal_access": null,
+   "sources": [
+    "https://www.bradman.com.au/tickets",
+    "https://www.bradman.com.au/museum",
+    "https://en.wikivoyage.org/wiki/Bowral"
+   ],
+   "unverified": [
+    "visit duration is an estimate"
+   ],
+   "ready_to_apply": true
+  },
+  {
+   "id": "mount-gibraltar",
+   "name": "Mount Gibraltar",
+   "placement_id": "southern-highlands-4",
+   "proposed_destination": "PROPOSED:southern-highlands",
+   "action": "standalone (if_declined)",
+   "coordinates": {
+    "latitude": -34.4654047,
+    "longitude": 150.42803
+   },
+   "coordinates_source": "OSM natural=peak (HIGH)",
+   "pin_confidence": "HIGH",
+   "distance_moved_from_placement_m": 0,
+   "pin_note": null,
+   "hours": "Open 24 hours",
+   "hours_source": "Reserve with no gate; no hours stated by NSW listing (unverified qualifier)",
+   "closedDays": null,
+   "specialClosures": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "visitHours_source": "Short walks are 10-45 min and the Rim track about 25 min (Mount Gibraltar Landcare booklet / tourism listings found by search, not loaded)",
+   "cost": {
+    "free": true,
+    "currency": "AUD",
+    "basis": "NSW Government listing: free entry; 250 Oxley Drive, Mittagong",
+    "source": "https://www.nsw.gov.au/visiting-and-exploring-nsw/locations-and-attractions/mount-gibraltar-heritage-reserve"
+   },
+   "ticketUrl": {
+    "url": null,
+    "status": "none",
+    "checked": "Council-run reserve; council page not found, tourism-board listing is not the steward."
+   },
+   "bio_fix": null,
+   "seasonal_access": null,
+   "sources": [
+    "https://www.nsw.gov.au/visiting-and-exploring-nsw/locations-and-attractions/mount-gibraltar-heritage-reserve",
+    "https://en.wikivoyage.org/wiki/Mittagong"
+   ],
+   "unverified": [
+    "Hours not sourced",
+    "walk durations came from a search summary, not a loaded page"
+   ],
+   "ready_to_apply": true
+  },
+  {
+   "id": "mittagong",
+   "name": "Mittagong",
+   "placement_id": "southern-highlands-5",
+   "proposed_destination": "PROPOSED:southern-highlands",
+   "action": "standalone (if_declined)",
+   "coordinates": {
+    "latitude": -34.4500664,
+    "longitude": 150.4473469
+   },
+   "coordinates_source": "OSM place=town node",
+   "pin_confidence": "LOW from resolve-pin (Photon place=locality only); kept as the town point",
+   "distance_moved_from_placement_m": 0,
+   "pin_note": null,
+   "hours": "Open 24 hours",
+   "hours_source": "Open town",
+   "closedDays": null,
+   "specialClosures": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "visitHours_source": "proposer estimate; unverified",
+   "cost": {
+    "free": true,
+    "currency": "AUD",
+    "basis": "Browsing the town (antique and second-hand shops) has no charge.",
+    "source": "https://en.wikivoyage.org/wiki/Mittagong"
+   },
+   "ticketUrl": {
+    "url": null,
+    "status": "none",
+    "checked": "A town."
+   },
+   "bio_fix": null,
+   "seasonal_access": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Mittagong"
+   ],
+   "unverified": [
+    "visit duration is an estimate"
+   ],
+   "ready_to_apply": true
+  },
+  {
+   "id": "robertson",
+   "name": "Big Potato",
+   "placement_id": "southern-highlands-6",
+   "proposed_destination": "PROPOSED:southern-highlands",
+   "action": "standalone (if_declined)",
+   "coordinates": {
+    "latitude": -34.589184,
+    "longitude": 150.59812
+   },
+   "coordinates_source": "OSM tourism=attraction The Big Potato (HIGH, Commons photo median 70 m)",
+   "pin_confidence": "HIGH (Photon tourism=attraction \"The Big Potato\" + Commons median 9 m)",
+   "distance_moved_from_placement_m": 0,
+   "pin_note": null,
+   "hours": "Open 24 hours",
+   "hours_source": "Roadside structure on the Illawarra Highway; no hours stated (unverified qualifier)",
+   "closedDays": null,
+   "specialClosures": null,
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "visitHours_source": "WRITING.md rule for a roadside icon",
+   "cost": {
+    "free": true,
+    "currency": "AUD",
+    "basis": "NSW Government listing describes it as enterable; no charge stated; roadside. Treated as free (unverified).",
+    "source": "https://www.nsw.gov.au/visiting-and-exploring-nsw/locations-and-attractions/big-potato"
+   },
+   "ticketUrl": {
+    "url": null,
+    "status": "none",
+    "checked": "Roadside icon; maintained by the Robertson Supermarket owners per a local village site; no official page."
+   },
+   "bio_fix": "Repainted in 2025 as the \"Pig Potato\" for the 30th anniversary of Babe (filmed on local farms); 1977, about 10 m long (NSW listing). A bio mention of the Babe repaint would be a distinctive fact.",
+   "seasonal_access": null,
+   "sources": [
+    "https://www.nsw.gov.au/visiting-and-exploring-nsw/locations-and-attractions/big-potato",
+    "https://www.visitnsw.com/destinations/country-nsw/southern-highlands/robertson/attractions/big-potato"
+   ],
+   "unverified": [
+    "No explicit \"free\" statement found on the loaded NSW page; hours are a qualifier"
+   ],
+   "ready_to_apply": true
+  },
+  {
+   "id": "fitzroy-falls",
+   "name": "Fitzroy Falls",
+   "placement_id": "morton-1",
+   "proposed_destination": "PROPOSED:morton",
+   "action": "standalone (if_declined)",
+   "coordinates": {
+    "latitude": -34.6479995,
+    "longitude": 150.4825447
+   },
+   "coordinates_source": "OSM waterway=waterfall (HIGH, matches Fitzroy Falls Lookout 30 m)",
+   "pin_confidence": "HIGH",
+   "distance_moved_from_placement_m": 0,
+   "pin_note": null,
+   "hours": "Park always open; visitor centre 9:00 AM - 4:00 PM",
+   "hours_source": "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/fitzroy-falls-lookout: \"Fitzroy Falls Visitor Centre 9am to 4pm daily. Closed Christmas Day\"; \"Morton National Park is always open but may have to close at times due to poor weather or fire danger\"",
+   "closedDays": null,
+   "specialClosures": "Visitor centre closed Christmas Day",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "visitHours_source": "proposer estimate; lookout is 150 m from the visitor centre (NPWS)",
+   "cost": {
+    "free": false,
+    "costMin": 4,
+    "costMax": 4,
+    "currency": "AUD",
+    "basis": "$4 per vehicle per day at Fitzroy Falls (per vehicle, not per person)",
+    "source": "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/fitzroy-falls-lookout"
+   },
+   "ticketUrl": {
+    "url": "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/fitzroy-falls-lookout",
+    "status": "verified",
+    "checked": "\"Fitzroy Falls lookout | NSW National Parks\" - loads and names the place"
+   },
+   "bio_fix": null,
+   "seasonal_access": null,
+   "sources": [
+    "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/fitzroy-falls-lookout",
+    "https://www.nationalparks.nsw.gov.au/things-to-do/visitor-centres/fitzroy-falls-visitor-centre"
+   ],
+   "unverified": [
+    "visit duration estimated"
+   ],
+   "ready_to_apply": true
+  },
+  {
+   "id": "belmore-falls",
+   "name": "Belmore Falls",
+   "placement_id": "morton-2",
+   "proposed_destination": "PROPOSED:morton",
+   "action": "standalone (if_declined)",
+   "coordinates": {
+    "latitude": -34.6398291,
+    "longitude": 150.5591322
+   },
+   "coordinates_source": "OSM waterway=waterfall (HIGH)",
+   "pin_confidence": "HIGH",
+   "distance_moved_from_placement_m": 0,
+   "pin_note": null,
+   "hours": "Open 24 hours",
+   "hours_source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/belmore-falls-walking-track: park always open, may close for weather or fire; base of the falls is permanently closed",
+   "closedDays": null,
+   "specialClosures": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "visitHours_source": "NPWS: 1.8 km return, 30 min - 1 hr, Grade 3",
+   "cost": {
+    "free": true,
+    "currency": "AUD",
+    "basis": "NPWS page says park entry fees apply \"at Fitzroy Falls and in the Bundanoon area\" only; the track is in neither. Treated as free (page wording ambiguous).",
+    "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/belmore-falls-walking-track"
+   },
+   "ticketUrl": {
+    "url": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/belmore-falls-walking-track",
+    "status": "verified",
+    "checked": "\"Belmore Falls walking track | NSW National Parks\" - loads"
+   },
+   "bio_fix": "Add that the lookouts (not the base) are the visit: all access to the base of the falls is permanently closed.",
+   "seasonal_access": null,
+   "sources": [
+    "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/belmore-falls-walking-track"
+   ],
+   "unverified": [
+    "fee wording ambiguous",
+    "a Closed-areas alert was live on the page"
+   ],
+   "ready_to_apply": true
+  },
+  {
+   "id": "carrington-falls",
+   "name": "Carrington Falls",
+   "placement_id": "morton-4",
+   "proposed_destination": "PROPOSED:morton",
+   "action": "standalone (if_declined)",
+   "coordinates": {
+    "latitude": -34.6238046,
+    "longitude": 150.6548868
+   },
+   "coordinates_source": "OSM waterway=waterfall (HIGH)",
+   "pin_confidence": "HIGH",
+   "distance_moved_from_placement_m": 0,
+   "pin_note": null,
+   "hours": "Open 24 hours",
+   "hours_source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/budderoo-national-park: park always open, may close for weather or fire",
+   "closedDays": null,
+   "specialClosures": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 0.75,
+   "visitHours_source": "NPWS: 0.6 km loop, 30-45 min",
+   "cost": {
+    "free": true,
+    "currency": "AUD",
+    "basis": "Budderoo park entry fees apply in the Minnamurra Rainforest area only",
+    "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/carrington-falls-walking-track"
+   },
+   "ticketUrl": {
+    "url": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/carrington-falls-walking-track",
+    "status": "verified",
+    "checked": "\"Carrington Falls walking track | NSW National Parks\" - loads"
+   },
+   "bio_fix": null,
+   "seasonal_access": null,
+   "sources": [
+    "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/carrington-falls-walking-track",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/budderoo-national-park"
+   ],
+   "unverified": [
+    "Two live alerts (Closed parks, Other planned events) on the page when fetched; check before going"
+   ],
+   "ready_to_apply": true
+  },
+  {
+   "id": "hampden-bridge",
+   "name": "Hampden Bridge",
+   "placement_id": "morton-5",
+   "proposed_destination": "PROPOSED:morton",
+   "action": "standalone (if_declined)",
+   "coordinates": {
+    "latitude": -34.72755,
+    "longitude": 150.520925
+   },
+   "coordinates_source": "Photon bridge=yes \"Hampden Bridge\" + Wikipedia + Commons",
+   "pin_confidence": "HIGH (Photon bridge=yes, Wikipedia 31 m, Commons median 71 m)",
+   "distance_moved_from_placement_m": 0,
+   "pin_note": null,
+   "hours": "Open 24 hours",
+   "hours_source": "Public road bridge",
+   "closedDays": null,
+   "specialClosures": null,
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "visitHours_source": "WRITING.md quick-stop rule",
+   "cost": {
+    "free": true,
+    "currency": "AUD",
+    "basis": "Public bridge over the Kangaroo River",
+    "source": null
+   },
+   "ticketUrl": {
+    "url": null,
+    "status": "none",
+    "checked": "Transport for NSW owns it; its project page is not a visitor site."
+   },
+   "bio_fix": "Heritage sources: second major suspension bridge in NSW, opened 19 May 1898; \"only surviving colonial suspension bridge\" is Engineers Australia wording, a tourism site says oldest in Australia - avoid \"oldest\". Load limit cut to 23 t in June 2025.",
+   "seasonal_access": null,
+   "sources": [
+    "https://en.wikipedia.org/wiki/Hampden_Bridge,_Kangaroo_Valley"
+   ],
+   "unverified": [
+    "Facts came from a search summary of Wikipedia/heritage pages, not loaded pages"
+   ],
+   "ready_to_apply": true
+  },
+  {
+   "id": "kangaroo-valley",
+   "name": "Kangaroo Valley",
+   "placement_id": "morton-6",
+   "proposed_destination": "PROPOSED:morton",
+   "action": "standalone (if_declined)",
+   "coordinates": {
+    "latitude": -34.7351573,
+    "longitude": 150.5325429
+   },
+   "coordinates_source": "Photon place=locality",
+   "pin_confidence": "LOW from resolve-pin (Photon place=locality); kept town point",
+   "distance_moved_from_placement_m": 0,
+   "pin_note": null,
+   "hours": "Open 24 hours",
+   "hours_source": "Open village",
+   "closedDays": null,
+   "specialClosures": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "visitHours_source": "proposer estimate; unverified",
+   "cost": {
+    "free": true,
+    "currency": "AUD",
+    "basis": "Village browsing, no charge",
+    "source": "https://en.wikivoyage.org/wiki/Kangaroo_Valley"
+   },
+   "ticketUrl": {
+    "url": null,
+    "status": "none",
+    "checked": "A village."
+   },
+   "bio_fix": null,
+   "seasonal_access": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kangaroo_Valley"
+   ],
+   "unverified": [
+    "visit duration estimated"
+   ],
+   "ready_to_apply": true
+  },
+  {
+   "id": "bundanoon",
+   "name": "Bundanoon",
+   "placement_id": "morton-7",
+   "proposed_destination": "PROPOSED:morton",
+   "action": "standalone (if_declined)",
+   "coordinates": {
+    "latitude": -34.655954,
+    "longitude": 150.299514
+   },
+   "coordinates_source": "Photon railway=stop \"Bundanoon 1\" (village centre)",
+   "pin_confidence": "HIGH (OSM railway=stop Bundanoon, 40 m from Wikivoyage geo)",
+   "distance_moved_from_placement_m": 45,
+   "pin_note": null,
+   "hours": "Open 24 hours",
+   "hours_source": "Open village",
+   "closedDays": null,
+   "specialClosures": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "visitHours_source": "proposer estimate; unverified",
+   "cost": {
+    "free": true,
+    "currency": "AUD",
+    "basis": "Village is free; entering Morton NP at Bundanoon is $8 per vehicle per day (NPWS), $7 per Wikivoyage (stale).",
+    "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/morton-national-park"
+   },
+   "ticketUrl": {
+    "url": null,
+    "status": "none",
+    "checked": "A village."
+   },
+   "bio_fix": null,
+   "seasonal_access": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Bundanoon",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/morton-national-park"
+   ],
+   "unverified": [
+    "visit duration estimated"
+   ],
+   "ready_to_apply": true
+  },
+  {
+   "id": "mount-kosciuszko",
+   "name": "Mount Kosciuszko",
+   "placement_id": "kosciuszko-1",
+   "proposed_destination": "PROPOSED:kosciuszko",
+   "action": "standalone (if_declined)",
+   "coordinates": {
+    "latitude": -36.4558303,
+    "longitude": 148.2635105
+   },
+   "coordinates_source": "OSM natural=peak (HIGH with Wikipedia)",
+   "pin_confidence": "HIGH (OSM natural=peak, Wikipedia 9 m)",
+   "distance_moved_from_placement_m": 0,
+   "pin_note": "Named peak pinned on the summit (the feature), not at the route midpoint.",
+   "hours": "Daylight hours; snowbound June to October",
+   "hours_source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/kosciuszko-walk-thredbo-to-mount-kosciuszko: \"generally snowbound in winter (June to October)\"",
+   "closedDays": null,
+   "specialClosures": null,
+   "visitHoursMin": 4,
+   "visitHoursMax": 5,
+   "visitHours_source": "NPWS Kosciuszko walk from Thredbo: 13 km return, 4-5 hrs suggested, Grade 3, starting at the top of the Kosciuszko Express Chairlift (15 min ride)",
+   "cost": {
+    "free": false,
+    "costMin": 17,
+    "costMax": 29,
+    "currency": "AUD",
+    "basis": "Park entry per vehicle per day ($17, or $29 in winter peak). The Thredbo scenic chairlift is extra: price not found. Not a per-person price.",
+    "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/kosciuszko-national-park/visitor-info"
+   },
+   "ticketUrl": {
+    "url": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/kosciuszko-walk-thredbo-to-mount-kosciuszko",
+    "status": "verified",
+    "checked": "\"Kosciuszko walk - Thredbo to Mount Kosciuszko | NSW National Parks\" - loads"
+   },
+   "bio_fix": null,
+   "seasonal_access": "Summer walking season; winter route snowbound with no snow poles. Thredbo summer lifts run November to April (Thredbo summer passes page). Thredbo notice: Snowgums chairlift stands in for the Kosciuszko chairlift during maintenance (search snippet, dates 13 Oct-14 Nov, year not shown).",
+   "sources": [
+    "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/kosciuszko-walk-thredbo-to-mount-kosciuszko",
+    "https://www.thredbo.com.au/passes-rentals/summer-passes/",
+    "https://en.wikipedia.org/wiki/Mount_Kosciuszko"
+   ],
+   "unverified": [
+    "Scenic lift adult price not found",
+    "Two alternative approaches (Charlotte Pass, Main Range loop 22 km 7-9 hrs) not priced"
+   ],
+   "ready_to_apply": true
+  },
+  {
+   "id": "thredbo",
+   "name": "Thredbo",
+   "placement_id": "kosciuszko-2",
+   "proposed_destination": "PROPOSED:kosciuszko",
+   "action": "standalone (if_declined)",
+   "coordinates": {
+    "latitude": -36.5047751,
+    "longitude": 148.3057091
+   },
+   "coordinates_source": "OSM place=locality (HIGH with Wikipedia)",
+   "pin_confidence": "HIGH (OSM place=locality + Wikipedia)",
+   "distance_moved_from_placement_m": 0,
+   "pin_note": null,
+   "hours": "Village open all year; summer lifts November to April",
+   "hours_source": "https://www.thredbo.com.au/passes-rentals/summer-passes/ (\"action from November to April\")",
+   "closedDays": null,
+   "specialClosures": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 8,
+   "visitHours_source": "proposer estimate; unverified",
+   "cost": {
+    "free": false,
+    "costMin": 17,
+    "costMax": 29,
+    "currency": "AUD",
+    "basis": "Park vehicle entry on Alpine Way per vehicle per day; walking the village is otherwise free; lifts are separate operator products (scenic lift price not found).",
+    "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/kosciuszko-national-park/visitor-info"
+   },
+   "ticketUrl": {
+    "url": "https://www.thredbo.com.au/",
+    "status": "verified",
+    "checked": "\"Thredbo | Australia's Best Winter & Summer Alpine Resort\" - loads"
+   },
+   "bio_fix": null,
+   "seasonal_access": "Winter ski season (dates not loaded); summer hiking and mountain biking November to April.",
+   "sources": [
+    "https://www.thredbo.com.au/",
+    "https://en.wikivoyage.org/wiki/Thredbo"
+   ],
+   "unverified": [
+    "Winter season dates",
+    "visit duration estimated",
+    "whether the park gate always applies when arriving by the Alpine Way from Jindabyne: NPWS says fees apply on Alpine Way"
+   ],
+   "ready_to_apply": true
+  },
+  {
+   "id": "charlotte-pass",
+   "name": "Charlotte Pass",
+   "placement_id": "kosciuszko-3",
+   "proposed_destination": "PROPOSED:kosciuszko",
+   "action": "standalone (if_declined)",
+   "coordinates": {
+    "latitude": -36.4313727,
+    "longitude": 148.3286811
+   },
+   "coordinates_source": "OSM Charlotte Pass Lookout/saddle (HIGH with Commons); village at -36.43278,148.33162 is 250 m away",
+   "pin_confidence": "HIGH (OSM lookout, Commons median 52 m)",
+   "distance_moved_from_placement_m": 0,
+   "pin_note": "Pin is Charlotte Pass Lookout/saddle; the resort village is 300 m south-east (-36.43278,148.331615). The spot is the pass and village.",
+   "hours": "Lookout open all year; no car access in winter",
+   "hours_source": "https://www.nationalparks.nsw.gov.au/things-to-do/snow-sports-facilities/charlotte-pass-ski-resort-and-kosciuszko-chalet-hotel: \"no car access to Charlotte Pass Resort in winter\"; Kosciuszko Road closed between Perisher and Charlotte Pass June to October long weekends (NPWS)",
+   "closedDays": null,
+   "specialClosures": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "visitHours_source": "proposer estimate; unverified",
+   "cost": {
+    "free": false,
+    "costMin": 17,
+    "costMax": 29,
+    "currency": "AUD",
+    "basis": "Park vehicle entry per vehicle per day; the lookout is free to stand at.",
+    "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/kosciuszko-national-park/visitor-info"
+   },
+   "ticketUrl": {
+    "url": "https://charlottepass.com.au/",
+    "status": "verified",
+    "checked": "\"Charlotte Pass Snow Resort - Australia's Highest Snow Resort\" - loads (resort operator); NPWS lookout page also loads: https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/charlotte-pass-lookout"
+   },
+   "bio_fix": null,
+   "seasonal_access": "Summer: drive to the end of Kosciuszko Road; start of Mount Kosciuszko Summit walk and Main Range walk. Winter: park free at Bullocks Flat Skitube, Skitube to Perisher Valley, then oversnow transport.",
+   "sources": [
+    "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/charlotte-pass-lookout",
+    "https://www.nationalparks.nsw.gov.au/things-to-do/snow-sports-facilities/charlotte-pass-ski-resort-and-kosciuszko-chalet-hotel",
+    "https://charlottepass.com.au/"
+   ],
+   "unverified": [
+    "Oversnow transport price not found"
+   ],
+   "ready_to_apply": true
+  },
+  {
+   "id": "perisher",
+   "name": "Perisher",
+   "placement_id": "kosciuszko-4",
+   "proposed_destination": "PROPOSED:kosciuszko",
+   "action": "standalone (if_declined)",
+   "coordinates": {
+    "latitude": -36.3961667,
+    "longitude": 148.408582
+   },
+   "coordinates_source": "OSM landuse=winter_sports Perisher (MEDIUM)",
+   "pin_confidence": "LOW from resolve-pin; placement recorded OSM landuse=winter_sports MEDIUM; same point",
+   "distance_moved_from_placement_m": 0,
+   "pin_note": null,
+   "hours": "Ski season only (2026 ended 25 September); closed in summer",
+   "hours_source": "https://www.perisher.com.au/ homepage: \"Today marks the final day of Winter 2026 at Perisher\", 25 September 2026",
+   "closedDays": null,
+   "specialClosures": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 8,
+   "visitHours_source": "proposer estimate; unverified",
+   "cost": null,
+   "ticketUrl": {
+    "url": "https://www.perisher.com.au/",
+    "status": "verified",
+    "checked": "\"Perisher Australia's Largest and Favourite Ski and Snowboard Resort\" - loads"
+   },
+   "bio_fix": null,
+   "seasonal_access": "Winter operation only; lift tickets not on sale between seasons (2027 Epic pass promoted).",
+   "sources": [
+    "https://www.perisher.com.au/",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/kosciuszko-national-park/visitor-info"
+   ],
+   "unverified": [
+    "No adult lift ticket price loaded: ticket shop shows only the 2027 Epic Australia Pass ($1,169); a search snippet gave an undated \"$49 adult\" which is not credible for a day ticket",
+    "Summer use of Perisher Valley not found"
+   ],
+   "ready_to_apply": false
+  },
+  {
+   "id": "blue-lake",
+   "name": "Blue Lake",
+   "placement_id": "kosciuszko-5",
+   "proposed_destination": "PROPOSED:kosciuszko",
+   "action": "standalone (if_declined)",
+   "coordinates": {
+    "latitude": -36.4038172,
+    "longitude": 148.3147127
+   },
+   "coordinates_source": "OSM water=lake (MEDIUM; Blue Lake lookout at -36.40755,148.30644 is 700 m west)",
+   "pin_confidence": "MEDIUM (OSM water=lake centroid; correct for a lake)",
+   "distance_moved_from_placement_m": 0,
+   "pin_note": "NPWS Blue Lake lookout is about 700 m west; the lake itself is only seen from the lookout since paths to it are closed.",
+   "hours": "Summer only; snowbound June to October",
+   "hours_source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/main-range-walking-track: \"snowbound in winter, between June and October\"",
+   "closedDays": null,
+   "specialClosures": null,
+   "visitHoursMin": 7,
+   "visitHoursMax": 9,
+   "visitHours_source": "Reached on the Main Range walk (22 km loop, 7-9 hrs, Grade 4, from Charlotte Pass) per NPWS",
+   "cost": {
+    "free": false,
+    "costMin": 17,
+    "costMax": 29,
+    "currency": "AUD",
+    "basis": "Park vehicle entry per vehicle per day (to reach Charlotte Pass by car in summer); the lookout itself is free.",
+    "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/kosciuszko-national-park/visitor-info"
+   },
+   "ticketUrl": {
+    "url": "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/blue-lake-lookout",
+    "status": "verified",
+    "checked": "\"Blue Lake lookout | NSW National Parks\" - loads and names the place"
+   },
+   "bio_fix": "NPWS: Blue Lake is one of only 4 glacial lakes on mainland Australia, Ramsar-listed 1996; paths to the lake itself are closed, so you see it from the lookout.",
+   "seasonal_access": null,
+   "sources": [
+    "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/blue-lake-lookout",
+    "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/main-range-walking-track"
+   ],
+   "unverified": [
+    "Distance from Charlotte Pass to the lookout (about 5 km) came from a search summary"
+   ],
+   "ready_to_apply": true
+  },
+  {
+   "id": "jindabyne",
+   "name": "Jindabyne",
+   "placement_id": "kosciuszko-7",
+   "proposed_destination": "PROPOSED:kosciuszko",
+   "action": "standalone (if_declined)",
+   "coordinates": {
+    "latitude": -36.41783,
+    "longitude": 148.61206
+   },
+   "coordinates_source": "Wikivoyage Jindabyne geo, kept",
+   "pin_confidence": "LOW from resolve-pin (it returned a cemetery); kept town point",
+   "distance_moved_from_placement_m": 0,
+   "pin_note": null,
+   "hours": "Open 24 hours",
+   "hours_source": "Open town",
+   "closedDays": null,
+   "specialClosures": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "visitHours_source": "proposer estimate; unverified",
+   "cost": {
+    "free": true,
+    "currency": "AUD",
+    "basis": "Town on Lake Jindabyne, no charge",
+    "source": "https://en.wikivoyage.org/wiki/Jindabyne"
+   },
+   "ticketUrl": {
+    "url": null,
+    "status": "none",
+    "checked": "A town; the Snowy Region Visitor Centre (NPWS) is in Jindabyne but is not the town's site."
+   },
+   "bio_fix": null,
+   "seasonal_access": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Jindabyne"
+   ],
+   "unverified": [
+    "visit duration estimated"
+   ],
+   "ready_to_apply": true
+  },
+  {
+   "id": "lake-eucumbene",
+   "name": "Lake Eucumbene",
+   "placement_id": "kosciuszko-8",
+   "proposed_destination": "PROPOSED:kosciuszko",
+   "action": "standalone (if_declined)",
+   "coordinates": {
+    "latitude": -36.0716008,
+    "longitude": 148.6626691
+   },
+   "coordinates_source": "OSM water=reservoir centroid (MEDIUM; lake is 145 km2, centroid in water acceptable; Providence Portal/Old Adaminaby access points not resolved)",
+   "pin_confidence": "MEDIUM (OSM water=reservoir centroid, in water, acceptable for a lake)",
+   "distance_moved_from_placement_m": 0,
+   "pin_note": null,
+   "hours": "Open 24 hours",
+   "hours_source": "Open reservoir shore (unverified qualifier)",
+   "closedDays": null,
+   "specialClosures": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "visitHours_source": "proposer estimate; unverified",
+   "cost": {
+    "free": true,
+    "currency": "AUD",
+    "basis": "No charge to visit the shoreline; fishing licence is separate",
+    "source": null
+   },
+   "ticketUrl": {
+    "url": null,
+    "status": "none",
+    "checked": "Reservoir run by Snowy Hydro; no single visitor page."
+   },
+   "bio_fix": "Wikipedia redirects \"Lake Eucumbene\" to the Eucumbene Dam article, so its page views belong to the dam.",
+   "seasonal_access": null,
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lake_Eucumbene"
+   ],
+   "unverified": [
+    "No visitor source loaded for access points"
+   ],
+   "ready_to_apply": true
+  },
+  {
+   "id": "selwyn-snow-resort",
+   "name": "Selwyn Snow Resort",
+   "placement_id": "kosciuszko-9",
+   "proposed_destination": "PROPOSED:kosciuszko",
+   "action": "standalone (if_declined)",
+   "coordinates": {
+    "latitude": -35.9087845,
+    "longitude": 148.4516989
+   },
+   "coordinates_source": "OSM landuse=winter_sports (MEDIUM)",
+   "pin_confidence": "LOW from resolve-pin; placement recorded OSM landuse=winter_sports MEDIUM; same point",
+   "distance_moved_from_placement_m": 0,
+   "pin_note": null,
+   "hours": "Winter snow season only (closed for the rest of the 2026 season)",
+   "hours_source": "https://selwynsnow.com.au/ homepage: \"CLOSED FOR 2026\"; Selwyn Centre cafe open some weekends",
+   "closedDays": null,
+   "specialClosures": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 8,
+   "visitHours_source": "proposer estimate; unverified",
+   "cost": null,
+   "ticketUrl": {
+    "url": "https://selwynsnow.com.au/",
+    "status": "verified",
+    "checked": "\"Selwyn Snow Resort | Your Mountain Playground Awaits\" - loads"
+   },
+   "bio_fix": null,
+   "seasonal_access": "Snow season only; closed Oct 2026.",
+   "sources": [
+    "https://selwynsnow.com.au/"
+   ],
+   "unverified": [
+    "No adult lift price on a loaded page; webstore snippet showed an undated $119 adult one-day (about 16,000 days old by its own stamp)"
+   ],
+   "ready_to_apply": false
+  },
+  {
+   "id": "big-merino",
+   "name": "Big Merino",
+   "placement_id": "goulburn-1",
+   "proposed_destination": "PROPOSED:goulburn",
+   "action": "standalone (if_declined)",
+   "coordinates": {
+    "latitude": -34.7725796,
+    "longitude": 149.6914489
+   },
+   "coordinates_source": "OSM building The Big Merino (HIGH with Commons median 40 m)",
+   "pin_confidence": "HIGH (OSM building + Commons median 40 m)",
+   "distance_moved_from_placement_m": 0,
+   "pin_note": null,
+   "hours": null,
+   "hours_source": "Operator site thebigmerino.com.au is script-rendered; a council listing (search snippet) said 8:30 AM - 5:00 PM, older sources 9-5. Unverified.",
+   "closedDays": null,
+   "specialClosures": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "visitHours_source": "proposer estimate; unverified",
+   "cost": {
+    "free": true,
+    "currency": "AUD",
+    "basis": "NSW Government listing: free entry (1 Sowerby Street, Goulburn). Shop/gallery purchases separate.",
+    "source": "https://www.nsw.gov.au/visiting-and-exploring-nsw/locations-and-attractions/big-merino"
+   },
+   "ticketUrl": {
+    "url": "https://www.thebigmerino.com.au/",
+    "status": "verified",
+    "checked": "Page title \"Home | The Big Merino\" - loads (content is script-rendered)"
+   },
+   "bio_fix": "NSW listing: three-storey concrete and steel ram \"Rambo\", 15.2 m high, 18 m long, built 1985.",
+   "seasonal_access": null,
+   "sources": [
+    "https://www.nsw.gov.au/visiting-and-exploring-nsw/locations-and-attractions/big-merino"
+   ],
+   "unverified": [
+    "Opening hours not read from the operator"
+   ],
+   "ready_to_apply": true
+  },
+  {
+   "id": "bungonia-national-park",
+   "name": "Bungonia National Park",
+   "placement_id": "goulburn-2",
+   "proposed_destination": "PROPOSED:goulburn",
+   "action": "standalone (if_declined)",
+   "coordinates": {
+    "latitude": -34.795914,
+    "longitude": 150.018966
+   },
+   "coordinates_source": "Commons geotag median of 26 files (near Lookdown/campground; OSM nature_reserve centroid at -34.79955,150.02273 is 400 m away)",
+   "pin_confidence": "Commons geotag median of 26 files near The Lookdown (placement); Photon reserve centroid 450 m away",
+   "distance_moved_from_placement_m": 0,
+   "pin_note": null,
+   "hours": "Park always open; park office 9:00 AM - 4:00 PM daily",
+   "hours_source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/bungonia-national-park (\"always open but may have to close... high fire danger\"; contact hours 9am-4pm daily, closed Christmas Day)",
+   "closedDays": null,
+   "specialClosures": "Park office closed Christmas Day",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "visitHours_source": "proposer estimate; unverified",
+   "cost": {
+    "free": false,
+    "costMin": 8,
+    "costMax": 8,
+    "currency": "AUD",
+    "basis": "$8 per vehicle per day, pay at the park office machines (per vehicle)",
+    "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/bungonia-national-park"
+   },
+   "ticketUrl": {
+    "url": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/bungonia-national-park",
+    "status": "verified",
+    "checked": "\"Bungonia National Park | NSW National Parks\" - loads"
+   },
+   "bio_fix": null,
+   "seasonal_access": null,
+   "sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/bungonia-national-park"
+   ],
+   "unverified": [
+    "visit duration estimated"
+   ],
+   "ready_to_apply": true
+  },
+  {
+   "id": "goulburn-city",
+   "name": "Goulburn",
+   "placement_id": "goulburn",
+   "proposed_destination": "goulburn",
+   "action": "standalone (if_declined)",
+   "coordinates": {
+    "latitude": -34.754722,
+    "longitude": 149.718611
+   },
+   "coordinates_source": "wikivoyage Southern Highlands geo (6 dp, city centre)",
+   "pin_confidence": "LOW from resolve-pin (Photon place=town, 270 m from placement); kept the Wikivoyage city-centre point",
+   "distance_moved_from_placement_m": 0,
+   "pin_note": null,
+   "hours": "Open 24 hours",
+   "hours_source": "Open city; Visitor Information Centre Mon-Fri 9AM-5PM, Sat Sun holidays 10AM-4PM (Wikivoyage, undated)",
+   "closedDays": null,
+   "specialClosures": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "visitHours_source": "proposer estimate; unverified",
+   "cost": {
+    "free": true,
+    "currency": "AUD",
+    "basis": "Walking the city has no charge",
+    "source": "https://en.wikivoyage.org/wiki/Goulburn"
+   },
+   "ticketUrl": {
+    "url": null,
+    "status": "none",
+    "checked": "A city. visitgoulburn.com.au did not respond; goulburnnsw.com.au is the tourism site but is not a steward of the city."
+   },
+   "bio_fix": null,
+   "seasonal_access": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Goulburn"
+   ],
+   "unverified": [
+    "visit duration estimated",
+    "The Goulburn destination is only proposed; the standalone city is a weak \"town with a heritage streetscape\" case"
+   ],
+   "ready_to_apply": true
+  },
+  {
+   "id": "yarrangobilly-caves",
+   "name": "Yarrangobilly Caves",
+   "placement_id": "yarrangobilly-caves",
+   "proposed_destination": null,
+   "action": "standalone (if_declined)",
+   "coordinates": {
+    "latitude": -35.7252179,
+    "longitude": 148.49157
+   },
+   "coordinates_source": "OSM place=locality (HIGH with Wikipedia)",
+   "pin_confidence": "HIGH (OSM place=locality + Wikipedia)",
+   "distance_moved_from_placement_m": 0,
+   "pin_note": null,
+   "hours": "Visitor centre 9:00 AM - 5:00 PM daily; South Glory Cave self-guided 9:30 AM - 4:00 PM",
+   "hours_source": "https://www.nationalparks.nsw.gov.au/things-to-do/show-caves/yarrangobilly-south-glory-cave and /visit-a-park/parks/yarrangobilly-area/visitor-info",
+   "closedDays": null,
+   "specialClosures": "Visitor centre closed Christmas Day. Jersey Cave closed 12 October to 24 December 2026. Guided caves run on set days; times are shown when booking.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "visitHours_source": "proposer estimate; NPWS: South Glory self-guided 30-40 min, North Glory guided tour about 1 hr 30 min (includes South Glory)",
+   "cost": {
+    "free": false,
+    "costMin": 22,
+    "costMax": 38,
+    "currency": "AUD",
+    "basis": "South Glory Cave self-guided adult $22; Jillabenan and Jersey guided adult $26; North Glory guided adult $38 (includes South Glory). Plus $4 per vehicle park entry.",
+    "source": "https://www.nationalparks.nsw.gov.au/things-to-do/show-caves/yarrangobilly-south-glory-cave"
+   },
+   "ticketUrl": {
+    "url": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/yarrangobilly-area",
+    "status": "verified",
+    "checked": "\"Yarrangobilly area | NSW National Parks\" - loads"
+   },
+   "bio_fix": null,
+   "seasonal_access": "Area open all year; extra guided tours in NSW school holidays. Entry road is 6 km of graded gravel (2WD ok, not caravans); NPWS recommends carrying snow chains in winter. Cave temperatures 10 C (South Glory) to 15 C.",
+   "sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/yarrangobilly-area/visitor-info",
+    "https://www.nationalparks.nsw.gov.au/things-to-do/show-caves/yarrangobilly-south-glory-cave",
+    "https://www.nationalparks.nsw.gov.au/things-to-do/show-caves/yarrangobilly-jillabenan-cave",
+    "https://www.nationalparks.nsw.gov.au/things-to-do/show-caves/yarrangobilly-north-glory-cave",
+    "https://www.nationalparks.nsw.gov.au/things-to-do/show-caves/yarrangobilly-jersey-cave"
+   ],
+   "unverified": [
+    "Castle Cave price not read",
+    "guided tour times not read"
+   ],
+   "ready_to_apply": true
+  },
+  {
+   "id": "yarrangobilly-thermal-pool",
+   "name": "Yarrangobilly Thermal Pool",
+   "placement_id": "yarrangobilly-thermal-pool",
+   "proposed_destination": null,
+   "action": "standalone (if_declined)",
+   "coordinates": {
+    "latitude": -35.7309762,
+    "longitude": 148.4859419
+   },
+   "coordinates_source": "OSM natural=spring/leisure=swimming_pool (HIGH with Commons)",
+   "pin_confidence": "HIGH (Photon swimming_pool + Commons)",
+   "distance_moved_from_placement_m": 0,
+   "pin_note": null,
+   "hours": "Sunrise to sunset",
+   "hours_source": "https://www.nationalparks.nsw.gov.au/things-to-do/swimming-spots/yarrangobilly-caves-thermal-pool: \"The pool is open from sunrise to sunset\"",
+   "closedDays": null,
+   "specialClosures": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "visitHours_source": "proposer estimate; walk is 700 m, very steep, 15-30 min each way (NPWS) plus swim",
+   "cost": {
+    "free": false,
+    "costMin": 4,
+    "costMax": 4,
+    "currency": "AUD",
+    "basis": "$4 per vehicle per day park entry at Yarrangobilly (per vehicle); the pool is free",
+    "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/yarrangobilly-area/visitor-info"
+   },
+   "ticketUrl": {
+    "url": "https://www.nationalparks.nsw.gov.au/things-to-do/swimming-spots/yarrangobilly-caves-thermal-pool",
+    "status": "verified",
+    "checked": "\"Yarrangobilly Caves thermal pool | NSW National Parks\" - loads"
+   },
+   "bio_fix": "NPWS: 20 m long, 2.5 m deep, spring-fed at 27 C year-round; bio \"half-hour swim\" is not sourced - drop it.",
+   "seasonal_access": "27 C all year, including in snow; no showers; no pets; hard accessibility.",
+   "sources": [
+    "https://www.nationalparks.nsw.gov.au/things-to-do/swimming-spots/yarrangobilly-caves-thermal-pool",
+    "https://www.nationalparks.nsw.gov.au/things-to-do/swimming-spots/yarrangobilly-caves-thermal-pool/visitor-info"
+   ],
+   "unverified": [
+    "15-30 min walk time is one way per NPWS search summary of the walk page, which was not loaded"
+   ],
+   "ready_to_apply": true
+  },
+  {
+   "id": "cooma",
+   "name": "Cooma",
+   "placement_id": "cooma",
+   "proposed_destination": null,
+   "action": "standalone (if_declined)",
+   "coordinates": {
+    "latitude": -36.2359015,
+    "longitude": 149.1263121
+   },
+   "coordinates_source": "Photon place=town",
+   "pin_confidence": "LOW from resolve-pin (Photon place=town); kept town point",
+   "distance_moved_from_placement_m": 0,
+   "pin_note": null,
+   "hours": "Open 24 hours",
+   "hours_source": "Open town",
+   "closedDays": null,
+   "specialClosures": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "visitHours_source": "proposer estimate; unverified",
+   "cost": {
+    "free": true,
+    "currency": "AUD",
+    "basis": "Town, no charge",
+    "source": "https://en.wikivoyage.org/wiki/Cooma"
+   },
+   "ticketUrl": {
+    "url": null,
+    "status": "none",
+    "checked": "A town."
+   },
+   "bio_fix": null,
+   "seasonal_access": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Cooma"
+   ],
+   "unverified": [
+    "visit duration estimated"
+   ],
+   "ready_to_apply": true
+  },
+  {
+   "id": "snowy-hydro-discovery-centre",
+   "name": "Snowy Hydro Discovery Centre",
+   "placement_id": "snowy-hydro-discovery-centre",
+   "proposed_destination": null,
+   "action": "standalone (if_declined)",
+   "coordinates": {
+    "latitude": -36.2193355,
+    "longitude": 149.1334102
+   },
+   "coordinates_source": "OSM tourism=museum (MEDIUM)",
+   "pin_confidence": "LOW from resolve-pin (Photon tourism=museum); placement recorded OSM museum MEDIUM; same point",
+   "distance_moved_from_placement_m": 0,
+   "pin_note": null,
+   "hours": "Mon-Fri 8:00 AM - 4:30 PM; Sat, Sun and public holidays 9:00 AM - 2:00 PM",
+   "hours_source": "https://www.snowyhydro.com.au/visit/snowy-hydro-discovery-centre/ (\"Monday - Friday 8am - 4.30pm\"; weekends 9am - 2pm)",
+   "closedDays": null,
+   "specialClosures": "Closed Anzac Day and Christmas Day; Christmas Eve 8 AM - 12 PM; Boxing Day and New Year's Day 9 AM - 2 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "visitHours_source": "proposer estimate; unverified",
+   "cost": {
+    "free": true,
+    "currency": "AUD",
+    "basis": "NSW Government listing: free entry. Guided sessions are booked by phone (1800 623 776) at 10:30, 11:30 and 2:30 weekdays, 10:30 and 12:30 weekends.",
+    "source": "https://www.nsw.gov.au/visiting-and-exploring-nsw/locations-and-attractions/snowy-hydro-discovery-centre"
+   },
+   "ticketUrl": {
+    "url": "https://www.snowyhydro.com.au/visit/snowy-hydro-discovery-centre/",
+    "status": "verified",
+    "checked": "\"Snowy Hydro Discovery Centre - Snowy Hydro\" - loads"
+   },
+   "bio_fix": "Check the placement bio against the operator: free entry (NSW listing), sessions booked by phone.",
+   "seasonal_access": null,
+   "sources": [
+    "https://www.snowyhydro.com.au/visit/snowy-hydro-discovery-centre/"
+   ],
+   "unverified": [
+    "The free entry came from the NSW listing; the operator page loaded does not state a price"
+   ],
+   "ready_to_apply": true
+  },
+  {
+   "id": "big-trout",
+   "name": "Big Trout",
+   "placement_id": "big-trout",
+   "proposed_destination": null,
+   "action": "standalone (if_declined)",
+   "coordinates": {
+    "latitude": -35.99727222,
+    "longitude": 148.77453889
+   },
+   "coordinates_source": "Wikipedia (8 dp) and Commons photo median 35 m agree",
+   "pin_confidence": "HIGH (Wikipedia 8 dp + Commons median 35 m); resolve-pin: Commons median only",
+   "distance_moved_from_placement_m": 0,
+   "pin_note": null,
+   "hours": "Open 24 hours",
+   "hours_source": "Roadside sculpture in a Lions picnic park (unverified qualifier)",
+   "closedDays": null,
+   "specialClosures": null,
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "visitHours_source": "WRITING.md rule for a roadside icon",
+   "cost": {
+    "free": true,
+    "currency": "AUD",
+    "basis": "NSW Government listing: \"Free entry\"",
+    "source": "https://www.nsw.gov.au/visiting-and-exploring-nsw/locations-and-attractions/big-trout"
+   },
+   "ticketUrl": {
+    "url": null,
+    "status": "none",
+    "checked": "Owned by Snowy Monaro Regional Council (page https://www.snowymonaro.nsw.gov.au/Community/Vibrant-Communities/Arts-and-Culture/Public-Art/The-Big-Trout loads); public art, no visitor operator, so no link set."
+   },
+   "bio_fix": "NSW listing: 10 m high, about 2.5 tonnes, built 1973 by Andy Lomnici, on Baker Street, 52 km north-west of Cooma.",
+   "seasonal_access": null,
+   "sources": [
+    "https://www.nsw.gov.au/visiting-and-exploring-nsw/locations-and-attractions/big-trout"
+   ],
+   "unverified": [],
+   "ready_to_apply": true
+  },
+  {
+   "id": "tumut",
+   "name": "Tumut",
+   "placement_id": "tumut",
+   "proposed_destination": null,
+   "action": "standalone (if_declined)",
+   "coordinates": {
+    "latitude": -35.3015747,
+    "longitude": 148.2226744
+   },
+   "coordinates_source": "Photon place=town",
+   "pin_confidence": "LOW from resolve-pin (Photon place=town); kept town point",
+   "distance_moved_from_placement_m": 0,
+   "pin_note": null,
+   "hours": "Open 24 hours",
+   "hours_source": "Open town",
+   "closedDays": null,
+   "specialClosures": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "visitHours_source": "proposer estimate; unverified",
+   "cost": {
+    "free": true,
+    "currency": "AUD",
+    "basis": "Town, no charge",
+    "source": "https://en.wikivoyage.org/wiki/Tumut"
+   },
+   "ticketUrl": {
+    "url": null,
+    "status": "none",
+    "checked": "A town."
+   },
+   "bio_fix": null,
+   "seasonal_access": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Tumut"
+   ],
+   "unverified": [
+    "visit duration estimated"
+   ],
+   "ready_to_apply": true
+  },
+  {
+   "id": "braidwood",
+   "name": "Braidwood",
+   "placement_id": "braidwood",
+   "proposed_destination": null,
+   "action": "standalone (if_declined)",
+   "coordinates": {
+    "latitude": -35.4388907,
+    "longitude": 149.7955552
+   },
+   "coordinates_source": "Photon place=locality (centre; Wikivoyage 3-dp value rejected)",
+   "pin_confidence": "LOW from resolve-pin (Photon place=locality); kept town point",
+   "distance_moved_from_placement_m": 0,
+   "pin_note": null,
+   "hours": "Open 24 hours",
+   "hours_source": "Open town; Braidwood Museum Fri-Sat 11AM-2PM adult $5 (Wikivoyage, Jun 2023)",
+   "closedDays": null,
+   "specialClosures": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "visitHours_source": "proposer estimate; unverified",
+   "cost": {
+    "free": true,
+    "currency": "AUD",
+    "basis": "Town, no charge; museum $5 optional",
+    "source": "https://en.wikivoyage.org/wiki/Braidwood"
+   },
+   "ticketUrl": {
+    "url": null,
+    "status": "none",
+    "checked": "A town."
+   },
+   "bio_fix": null,
+   "seasonal_access": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Braidwood"
+   ],
+   "unverified": [
+    "visit duration estimated"
+   ],
+   "ready_to_apply": true
+  },
+  {
+   "id": "wombeyan-caves",
+   "name": "Wombeyan Caves",
+   "placement_id": "wombeyan-caves",
+   "proposed_destination": null,
+   "action": "standalone (if_declined)",
+   "coordinates": {
+    "latitude": -34.3084619,
+    "longitude": 149.9688296
+   },
+   "coordinates_source": "OSM place=locality (MEDIUM); Commons median 26 files at -34.30430,149.96701, 450 m away, consistent",
+   "pin_confidence": "LOW from resolve-pin (Photon place=locality); Commons median 450 m away; kept the locality point near the visitor centre",
+   "distance_moved_from_placement_m": 0,
+   "pin_note": null,
+   "hours": "Fig Tree Cave self-guided 9:00 AM - 3:30 PM (out by 4:15 PM); office 9:00 AM - 4:30 PM",
+   "hours_source": "https://www.nationalparks.nsw.gov.au/things-to-do/show-caves/fig-tree-cave and /visit-a-park/parks/wombeyan-karst-conservation-reserve/visitor-info (reserve always open)",
+   "closedDays": null,
+   "specialClosures": "Office closed Christmas Day",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "visitHours_source": "proposer estimate; NPWS: Fig Tree Cave 1.2 km return, about 1 hr",
+   "cost": {
+    "free": false,
+    "costMin": 20,
+    "costMax": 20,
+    "currency": "AUD",
+    "basis": "Fig Tree Cave self-guided adult $20 (child/pensioner $13, senior $17, family $50). No reserve entry fee listed.",
+    "source": "https://www.nationalparks.nsw.gov.au/things-to-do/show-caves/fig-tree-cave"
+   },
+   "ticketUrl": {
+    "url": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/wombeyan-karst-conservation-reserve",
+    "status": "verified",
+    "checked": "\"Wombeyan Karst Conservation Reserve | NSW National Parks\" - loads"
+   },
+   "bio_fix": "PLACEMENT BIO IS WRONG: it says \"reached by road from Mittagong\", but NPWS says \"Wombeyan Caves Road access via Mittagong is closed until further notice\"; access is only via Taralga. Suggest: \"Limestone show caves and a self-guided Fig Tree Cave walk in a karst reserve reached via Taralga.\"",
+   "seasonal_access": "Open all year; spring wildflowers. Fire-ban alert live when fetched. No petrol in the reserve.",
+   "sources": [
+    "https://www.nationalparks.nsw.gov.au/things-to-do/show-caves/fig-tree-cave",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/wombeyan-karst-conservation-reserve/visitor-info"
+   ],
+   "unverified": [
+    "Guided-tour prices (search snippet: 2-cave combo from $33) not read from the page",
+    "Wikivoyage/Atlas \"Wombeyan\" is outside the Southern Highlands per most guides; region fit is the proposer's"
+   ],
+   "ready_to_apply": true
+  },
+  {
+   "id": "pigeon-house-mountain",
+   "name": "Pigeon House Mountain",
+   "placement_id": "pigeon-house-mountain",
+   "proposed_destination": null,
+   "action": "standalone (if_declined)",
+   "coordinates": {
+    "latitude": -35.3492936,
+    "longitude": 150.2649641
+   },
+   "coordinates_source": "OSM natural=peak/viewpoint at the summit (HIGH with Wikipedia); for a trail the midpoint rule would shift this about 1.2 km, flag for owner",
+   "pin_confidence": "HIGH (OSM viewpoint + peak + Wikipedia, 2 m)",
+   "distance_moved_from_placement_m": 0,
+   "pin_note": "Pinned on the summit (the named peak). The trail rule would give the route midpoint; the OSM route was not retrievable (Overpass down). Midpoint of the 7.1 km walk is not resolved.",
+   "hours": "Daylight hours; best in dry weather",
+   "hours_source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/pigeon-house-mountain-didthul-walking-track: park always open; very steep with ladders",
+   "closedDays": null,
+   "specialClosures": null,
+   "visitHoursMin": 2.5,
+   "visitHoursMax": 3.5,
+   "visitHours_source": "NPWS: 7.1 km return, 2 hr 30 min - 3 hr 30 min, Grade 4",
+   "cost": {
+    "free": true,
+    "currency": "AUD",
+    "basis": "NPWS: park entry fees apply at Fitzroy Falls and Bundanoon area only; this southern section is outside them",
+    "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/pigeon-house-mountain-didthul-walking-track"
+   },
+   "ticketUrl": {
+    "url": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/pigeon-house-mountain-didthul-walking-track",
+    "status": "verified",
+    "checked": "\"Pigeon House Mountain Didthul walking track | NSW National Parks\" - loads"
+   },
+   "bio_fix": "NPWS places it near Ulladulla on the south coast (southern Morton NP), about 2 hours from Southern Highlands bases; consider whether it belongs in this region.",
+   "seasonal_access": null,
+   "sources": [
+    "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/pigeon-house-mountain-didthul-walking-track"
+   ],
+   "unverified": [
+    "Route midpoint not resolved"
+   ],
+   "ready_to_apply": true
+  },
+  {
+   "id": "morton-national-park",
+   "name": "Morton National Park",
+   "placement_id": "morton",
+   "proposed_destination": "morton",
+   "action": "standalone (if_declined)",
+   "coordinates": {
+    "latitude": -34.6470435,
+    "longitude": 150.4830184
+   },
+   "coordinates_source": "OSM Fitzroy Falls Visitors Centre (NPWS hub) used as the park pin; park is spread over ~100 km so defaultZoomSpanKm must be large (~100)",
+   "pin_confidence": "LOW from resolve-pin (Commons median 16 files, 90 m from placement hub); kept NPWS visitor-centre hub point per placement",
+   "distance_moved_from_placement_m": 0,
+   "pin_note": null,
+   "hours": "Park always open; Fitzroy Falls visitor centre 9:00 AM - 4:00 PM",
+   "hours_source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/morton-national-park",
+   "closedDays": null,
+   "specialClosures": "Visitor centre closed Christmas Day",
+   "visitHoursMin": 2,
+   "visitHoursMax": 8,
+   "visitHours_source": "proposer estimate; unverified",
+   "cost": {
+    "free": false,
+    "costMin": 4,
+    "costMax": 8,
+    "currency": "AUD",
+    "basis": "$4 per vehicle per day at Fitzroy Falls; $8 per vehicle per day in the Bundanoon area; other areas no fee listed (per vehicle)",
+    "source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/pigeon-house-mountain-didthul-walking-track"
+   },
+   "ticketUrl": {
+    "url": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/morton-national-park",
+    "status": "verified",
+    "checked": "\"Morton National Park | NSW National Parks\" - loads"
+   },
+   "bio_fix": null,
+   "seasonal_access": null,
+   "sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/morton-national-park"
+   ],
+   "unverified": [
+    "Duplicates Fitzroy Falls, Belmore Falls, Pigeon House and Bundanoon if all are kept as standalone spots; the park is only a sensible spot if the destination is declined"
+   ],
+   "ready_to_apply": true
+  },
+  {
+   "id": "kosciuszko-national-park",
+   "name": "Kosciuszko National Park",
+   "placement_id": "kosciuszko",
+   "proposed_destination": "kosciuszko",
+   "action": "standalone (if_declined)",
+   "coordinates": {
+    "latitude": -36.456194,
+    "longitude": 148.270742
+   },
+   "coordinates_source": "Commons geotag median of 63 files on the Main Range (visual centre of visitor activity); a destination centre is the owner's call",
+   "pin_confidence": "LOW from resolve-pin (Commons median 71 files, 140 m); placement point is a visual-centre geotag median, not a visitor entrance",
+   "distance_moved_from_placement_m": 0,
+   "pin_note": null,
+   "hours": "Park open all year; some roads and trails close for weather",
+   "hours_source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/kosciuszko-national-park",
+   "closedDays": null,
+   "specialClosures": null,
+   "visitHoursMin": 3,
+   "visitHoursMax": 8,
+   "visitHours_source": "proposer estimate; unverified",
+   "cost": {
+    "free": false,
+    "costMin": 17,
+    "costMax": 29,
+    "currency": "AUD",
+    "basis": "Per vehicle per day; $29 in winter peak; $4 per vehicle at Yarrangobilly Caves only",
+    "source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/kosciuszko-national-park"
+   },
+   "ticketUrl": {
+    "url": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/kosciuszko-national-park",
+    "status": "verified",
+    "checked": "\"Kosciuszko National Park | NSW National Parks\" - loads"
+   },
+   "bio_fix": null,
+   "seasonal_access": "Winter peak fee June-October long weekends; Kosciuszko Road shut Perisher-Charlotte Pass in winter; see per-spot notes.",
+   "sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/kosciuszko-national-park"
+   ],
+   "unverified": [
+    "Park is a destination by COVERAGE.md; as a standalone spot it overlaps Mount Kosciuszko, Thredbo, Charlotte Pass, Perisher, Blue Lake, Yarrangobilly"
+   ],
+   "ready_to_apply": true
+  }
+ ],
+ "held_for_owner": [
+  {
+   "name": "The Gullies",
+   "id": "the-gullies",
+   "reason": "resolve-pin.py gave LOW; no HIGH/MEDIUM point, so not researched and not applied",
+   "resolve_pin_result": "LOW: no feature found; no OSM route",
+   "unblock": "Owner or Pipeline C to take the midpoint of the NPWS Gullies circuit from the NPWS map (Bundanoon area, fee $8 per vehicle); Fairy Bower Falls OSM node is -34.67828,150.30681"
+  },
+  {
+   "name": "Snowies Alpine Walk",
+   "id": "snowies-alpine-walk",
+   "reason": "resolve-pin.py gave LOW; no HIGH/MEDIUM point, so not researched and not applied",
+   "resolve_pin_result": "LOW: Photon highway=path -36.429774,148.324733 (Charlotte Pass end, not the route midpoint)",
+   "unblock": "Midpoint of the 56 km Guthega-Bullocks Hut route from the NPWS route map or OSM relation (Overpass was down); NPWS describes it as a 4-day hike linking Guthega, Charlotte Pass, Perisher Valley and Bullocks Hut"
+  },
+  {
+   "name": "Thirlmere Lakes National Park",
+   "id": "thirlmere-lakes-national-park",
+   "reason": "resolve-pin.py gave LOW; no HIGH/MEDIUM point, so not researched and not applied",
+   "resolve_pin_result": "LOW: Photon reserve centroid -34.234249,150.530339; Wikipedia -34.225556,150.538611 and Commons median -34.224755,150.544108 disagree by 500 m+",
+   "unblock": "Owner to supply the Couridjah/Oaks Fire Rd access point or the lake walking track midpoint from the NPWS map"
+  }
+ ],
+ "blocked": [],
+ "general_unverified": [
+  "No ticketUrl was BLOCKED: every URL set was loaded by scripts/curation/fetch.ts (status 200 with a title naming the place).",
+  "bradman.org.au (the old domain, still listed in some directories) does not resolve; bradman.com.au is the live site.",
+  "visitgoulburn.com.au did not respond (status 0).",
+  "Visit durations marked \"proposer estimate\" were not sourced; only NPWS walk times and Fig Tree/South Glory times are.",
+  "Operator hours that are a \"qualifier\" (Open 24 hours for open towns and roadside icons) are not sourced figures.",
+  "Perisher and Selwyn have no verified adult lift price and are not ready.",
+  "Several facts came from search-result summaries rather than a loaded page: Mount Gibraltar walk times, Hampden Bridge history, Big Merino council hours, Thredbo scenic-lift maintenance dates."
+ ]
+}

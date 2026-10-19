@@ -1,0 +1,676 @@
+{
+ "slots": {
+  "spot:wollongong-1": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Bridge from below with the curve along the cliff; pier dominates but bridge is clear",
+   "weak": true,
+   "hero_crop": {
+    "x": 0.4,
+    "y": 0.5
+   },
+   "dark": false,
+   "width": 4000,
+   "licence": "CC BY-SA 4.0",
+   "file": "Sea Cliff Bridge from below.jpg"
+  },
+  "spot:wollongong-2": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Temple front and steps, blue sky; Flickr stitched wide panorama",
+   "weak": true,
+   "hero_crop": {
+    "x": 0.5,
+    "y": 0.3,
+    "zoom": 1.5
+   },
+   "dark": false,
+   "width": 1280,
+   "licence": "CC BY 2.0",
+   "file": "Nan Tien Temple front.jpg"
+  },
+  "spot:wollongong-3": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "City and coast from Mount Keira lookout, the view visitors come for",
+   "weak": false,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 3264,
+   "licence": "CC BY-SA 4.0",
+   "file": "Mt Keira views 2017 - Wollongong Central.jpg"
+  },
+  "spot:wollongong-4": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Wollongong Head lighthouse at dawn",
+   "weak": false,
+   "hero_crop": {
+    "x": 0.75,
+    "y": 0.5
+   },
+   "dark": false,
+   "width": 1200,
+   "licence": "CC BY-SA 3.0",
+   "file": "Wollongong Head Lighthouse.jpg"
+  },
+  "spot:wollongong-5": {
+   "decision": "reject",
+   "failed_check": "1",
+   "reason": "Categorised Sublime Point Lookout with coordinates -33.74,150.34 = Blue Mountains (Leura) lookout, not the Illawarra Sublime Point at -34.36,150.93",
+   "weak": false,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 1600,
+   "licence": "CC BY 3.0",
+   "file": "Sublime Point Lookout - panoramio.jpg"
+  },
+  "spot:wollongong-6": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Lily pond and gazebo in the garden; overcast but readable",
+   "weak": true,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 4032,
+   "licence": "CC BY-SA 4.0",
+   "file": "2023-04-01 Wollongong Botanic Garden 3.jpg"
+  },
+  "spot:wollongong-7": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Bald Hill Lookout view over Stanwell Park beach and the coast",
+   "weak": false,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 5124,
+   "licence": "CC BY-SA 4.0",
+   "file": "2013-05-19 Bald Hill Lookout.jpg"
+  },
+  "spot:wollongong-9": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Austinmer Beach, blue sky, headland pool; Flickr, snapshot-quality",
+   "weak": true,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 2560,
+   "licence": "CC BY 2.0",
+   "file": "Austinmer Beach... (5074312397).jpg"
+  },
+  "spot:kiama-1": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Water bursting from Kiama Blowhole, overcast sky",
+   "weak": true,
+   "hero_crop": {
+    "x": 0.5,
+    "y": 0.6
+   },
+   "dark": false,
+   "width": 3024,
+   "licence": "CC BY-SA 4.0",
+   "file": "Kiama Blowhole, January 2025.jpg"
+  },
+  "spot:kiama-2": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Grassy Kiama Coast Walk track above the sea",
+   "weak": true,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 2048,
+   "licence": "CC BY 3.0",
+   "file": "The Kiama coastal walk, nearing Kiama - panoramio.jpg"
+  },
+  "spot:kiama-3": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Jamberoo Action Park from the chairlift; chairlift hardware in foreground",
+   "weak": true,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 2304,
+   "licence": "CC BY-SA 3.0",
+   "file": "Jamberoo Action Park.jpg"
+  },
+  "spot:kiama-4": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Gerringong and Werri Beach; cloudy, houses in foreground",
+   "weak": true,
+   "hero_crop": {
+    "x": 0.6,
+    "y": 0.65,
+    "zoom": 1.4
+   },
+   "dark": false,
+   "width": 2058,
+   "licence": "CC BY-SA 4.0",
+   "file": "Gerringong and Werri Beach.jpg"
+  },
+  "spot:kiama-5": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Boats at dawn, Shellharbour harbour, dramatic sky (dark on purpose)",
+   "weak": true,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 2496,
+   "licence": "CC BY-SA 3.0",
+   "file": "Early dawn at Shellharbour - panoramio.jpg"
+  },
+  "spot:kiama-6": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Saddleback Mountain lookout view framed by a fig tree over farmland and sea",
+   "weak": false,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 2000,
+   "licence": "CC BY-SA 2.0",
+   "file": "View from Saddleback Mountain.jpg"
+  },
+  "spot:kiama-7": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Minnamurra village and river mouth sandbar from Minnamurra Point; the ocean beach itself is not shown",
+   "weak": true,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 3849,
+   "licence": "CC BY-SA 4.0",
+   "file": "Minnamurra Village.jpg"
+  },
+  "spot:budderoo-1": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Minnamurra Falls in rainforest; WLE 2022 Budderoo NP; shaded forest, subject clear",
+   "weak": false,
+   "hero_crop": "ok",
+   "dark": true,
+   "width": 4160,
+   "licence": "CC BY-SA 4.0",
+   "file": "Minnamurra Falls in Budderoo National Park, New South Wales in January 2022.jpg"
+  },
+  "spot:budderoo-2": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Carrington Falls plunging into the gorge",
+   "weak": false,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 3648,
+   "licence": "CC BY-SA 3.0",
+   "file": "Carrington Falls.jpg"
+  },
+  "spot:budderoo-3": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Cascades at jump rock, Macquarie Pass NP",
+   "weak": false,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 1620,
+   "licence": "CC BY-SA 4.0",
+   "file": "Macquarie Pass Cascades.jpg"
+  },
+  "spot:morton-1": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Fitzroy Falls plunge and cliff",
+   "weak": false,
+   "hero_crop": {
+    "x": 0.35,
+    "y": 0.5
+   },
+   "dark": false,
+   "width": 3347,
+   "licence": "CC BY-SA 3.0",
+   "file": "FitzroyFalls.jpg"
+  },
+  "spot:morton-2": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "View from Belmore Falls Lookout; falls a thin ribbon in the distance",
+   "weak": true,
+   "hero_crop": {
+    "x": 0.45,
+    "y": 0.35,
+    "zoom": 1.6
+   },
+   "dark": false,
+   "width": 4032,
+   "licence": "CC BY-SA 4.0",
+   "file": "2023-10-28 View from Belmore Falls Lookout.jpg"
+  },
+  "spot:morton-3": {
+   "decision": "reject",
+   "failed_check": "4",
+   "reason": "1988 Kodachrome slide scan of cows in a paddock; not a current photo and the valley is not recognisable",
+   "weak": false,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 8161,
+   "licence": "CC BY-SA 4.0",
+   "file": "(1)Kangaroo Valley-2.jpg"
+  },
+  "spot:morton-4": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Hampden Bridge sandstone towers, strong frontal view",
+   "weak": false,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 2783,
+   "licence": "CC BY-SA 3.0",
+   "file": "MK-02323 Hampden Bridge (Kangaroo Valley).jpg"
+  },
+  "spot:nowra-1": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Skyhawk replica inside the Fleet Air Arm Museum hangar; a person on the ladder",
+   "weak": true,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 4608,
+   "licence": "CC BY-SA 4.0",
+   "file": "Replica of McDonnell Douglas A-4G Skyhawk 882 at the Fleet Air Arm Museum in February 2015.jpg"
+  },
+  "spot:nowra-3": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Empty beach with footprints, Seven Mile Beach NP (Shoalhaven, WLE 2021)",
+   "weak": true,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 4000,
+   "licence": "CC BY-SA 4.0",
+   "file": "Beach Walk, Seven Mile Beach National Park, Shoalhaven, Australia.jpg"
+  },
+  "spot:wollongong": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Wollongong Harbour with both lighthouses, rock pool and boats",
+   "weak": false,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 5657,
+   "licence": "CC BY 2.0",
+   "file": "Wollongong Breakwater Lighthouse (8562842041).jpg"
+  },
+  "spot:nowra": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Shoalhaven River from Hanging Rock Lookout, Nowra; town not shown",
+   "weak": true,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 4096,
+   "licence": "CC BY-SA 4.0",
+   "file": "Nowra Shoalhaven RIver Hang. Roc. Look..jpg"
+  },
+  "spot:batemans-bay": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Waterfront promenade and wharf, Batemans Bay",
+   "weak": true,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 1600,
+   "licence": "CC BY-SA 2.0",
+   "file": "Batemans Bay-23.jpg"
+  },
+  "spot:merimbula": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Merimbula Sound sandbar and turquoise water",
+   "weak": false,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 3264,
+   "licence": "CC BY 2.0",
+   "file": "Merimbula Sound.jpg"
+  },
+  "spot:eden": {
+   "decision": "reject",
+   "failed_check": "3",
+   "reason": "Hazy flat view across Twofold Bay to woodchip piles; not recognisable or attractive",
+   "weak": false,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 2048,
+   "licence": "CC BY 3.0",
+   "file": "Twofold Bay 001.jpg"
+  },
+  "spot:narooma": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Narooma beach with surf and granite rocks",
+   "weak": true,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 5083,
+   "licence": "CC BY-SA 4.0",
+   "file": "2014-12-21 Narooma, New South Wales.jpg"
+  },
+  "spot:ulladulla": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Ulladulla Harbour with moored boats, clear day",
+   "weak": false,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 4032,
+   "licence": "CC BY-SA 4.0",
+   "file": "Ulladulla Harbour, Ulladulla, NSW, 2023, 01.jpg"
+  },
+  "spot:jervis-bay": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Murrays Beach, Jervis Bay Territory; white sand and clear water",
+   "weak": false,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 4032,
+   "licence": "CC BY-SA 4.0",
+   "file": "Murrays Beach, Jervis Bay, ACT.jpg"
+  },
+  "spot:jervis-bay-1": {
+   "decision": "reject",
+   "failed_check": "3",
+   "reason": "Sun glare on dull water, no recognisable feature of Booderee NP",
+   "weak": false,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 5760,
+   "licence": "CC BY-SA 4.0",
+   "file": "Jervis Bay National Park 8.jpg"
+  },
+  "spot:jervis-bay-2": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Hyams Beach white sand and turquoise water, looking south",
+   "weak": false,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 2500,
+   "licence": "CC BY-SA 3.0",
+   "file": "Hyams Beach 002.jpg"
+  },
+  "spot:jervis-bay-3": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Huskisson wharf and boats; overcast",
+   "weak": true,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 3072,
+   "licence": "CC BY 3.0",
+   "file": "Huskisson NSW 2540, Jervis Bay - Uc - panoramio.jpg"
+  },
+  "spot:jervis-bay-4": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Rock pools on Beecroft Peninsula heads under grey sky; overcast and modest",
+   "weak": true,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 6480,
+   "licence": "CC0",
+   "file": "Beecroft Peninsula, Jervis Bay Territory 01.jpg"
+  },
+  "spot:ulladulla-1": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Pigeon House Mountain peak seen through trees from the track; obstructed",
+   "weak": true,
+   "hero_crop": {
+    "x": 0.48,
+    "y": 0.5
+   },
+   "dark": false,
+   "width": 2592,
+   "licence": "CC BY-SA 3.0",
+   "file": "Pigeon House Mountain.jpg"
+  },
+  "spot:murramarang-1": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Kangaroo on Pebbly Beach foreshore with cliff behind; kangaroo small",
+   "weak": true,
+   "hero_crop": {
+    "x": 0.3,
+    "y": 0.6,
+    "zoom": 1.4
+   },
+   "dark": false,
+   "width": 4032,
+   "licence": "CC BY-SA 4.0",
+   "file": "Pebbly Beach Escape kangaroo basking.jpg"
+  },
+  "spot:murramarang-2": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Rocky shore on the Murramarang coast walk",
+   "weak": true,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 6480,
+   "licence": "CC0",
+   "file": "Murramarang National Park 05.jpg"
+  },
+  "spot:batemans-bay-2": {
+   "decision": "reject",
+   "failed_check": "3",
+   "reason": "Shopfronts, signage and a car park (Wattlebark Gallery); street corner, not a recognisable draw",
+   "weak": false,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 5183,
+   "licence": "CC BY-SA 3.0",
+   "file": "Mogo NSW 2536, Australia - panoramio (29).jpg"
+  },
+  "spot:narooma-1": {
+   "decision": "reject",
+   "failed_check": "2",
+   "reason": "Keeper's cottage on a rock; the island and lighthouse are not shown",
+   "weak": false,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 2560,
+   "licence": "Public domain",
+   "file": "Montague island Lighthouse keepers cottage.JPG"
+  },
+  "spot:narooma-2": {
+   "decision": "reject",
+   "failed_check": "2",
+   "reason": "Fern track in forest; the mountain itself is not shown. Bermagui Beach photo (narooma-4, shows Dromedary behind the beach) could be reused",
+   "weak": false,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 2560,
+   "licence": "CC BY-SA 3.0",
+   "file": "Mount Gulaga Rainforest Track.jpg"
+  },
+  "spot:narooma-3": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Heritage house and war memorial on a bend, Central Tilba",
+   "weak": true,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 4000,
+   "licence": "CC0",
+   "file": "Central Tilba NSW. Australia. (22785067302).jpg"
+  },
+  "spot:narooma-4": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Bermagui Beach with Gulaga (Mount Dromedary) behind",
+   "weak": false,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 2816,
+   "licence": "Public domain",
+   "file": "Bermagui Beach 01.JPG"
+  },
+  "spot:narooma-5": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Mystery Bay beach and rocks, Eurobodalla NP",
+   "weak": false,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 6480,
+   "licence": "CC0",
+   "file": "Mystery Bay, Eurobodalla National Park, New South Wales, Australia 01.jpg"
+  },
+  "spot:narooma-6": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Bermagui Blue Pool rock pool from above, very clear",
+   "weak": false,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 5184,
+   "licence": "CC BY-SA 4.0",
+   "file": "Bermagui Blue Pool.jpg"
+  },
+  "spot:narooma-7": {
+   "decision": "reject",
+   "failed_check": "4",
+   "reason": "Heavily HDR-processed with overlaid text at the bottom",
+   "weak": false,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 4692,
+   "licence": "CC BY-SA 4.0",
+   "file": "AVAV0311-a.jpg"
+  },
+  "spot:narooma-8": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Sunset over Wallaga Lake, dark trees silhouetted (dusk on purpose)",
+   "weak": true,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 3264,
+   "licence": "CC BY-SA 4.0",
+   "file": "Wallaga Lake at Sunset 1.jpg"
+  },
+  "spot:merimbula-1": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Tathra Beach with surf club, overcast",
+   "weak": true,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 4912,
+   "licence": "CC BY-SA 4.0",
+   "file": "Tathra Beach.JPG"
+  },
+  "spot:merimbula-2": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Carp Street heritage shopfronts, Bega; a streetscape with cars",
+   "weak": true,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 4032,
+   "licence": "CC BY-SA 4.0",
+   "file": "Carp Street, Bega, NSW, 2023.jpg"
+  },
+  "spot:merimbula-3": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Mimosa Rock islet, clear sky and sea",
+   "weak": false,
+   "hero_crop": {
+    "x": 0.65,
+    "y": 0.4,
+    "zoom": 1.6
+   },
+   "dark": false,
+   "width": 2560,
+   "licence": "CC BY-SA 3.0",
+   "file": "MimosaRock.JPG"
+  },
+  "spot:merimbula-4": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Bournda Island from the park; small in bush frame",
+   "weak": true,
+   "hero_crop": {
+    "x": 0.4,
+    "y": 0.35,
+    "zoom": 1.6
+   },
+   "dark": false,
+   "width": 1971,
+   "licence": "CC BY-SA 3.0",
+   "file": "Bournda Bournda-Island.JPG"
+  },
+  "spot:merimbula-5": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Tathra Wharf and its museum building",
+   "weak": false,
+   "hero_crop": {
+    "x": 0.3,
+    "y": 0.5
+   },
+   "dark": false,
+   "width": 4000,
+   "licence": "CC0",
+   "file": "Old Wharf Tathra.NSW. (21031327415).jpg"
+  },
+  "spot:merimbula-6": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Bega Co-operative Creamery building and visitor centre sign",
+   "weak": false,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 1024,
+   "licence": "CC BY 2.0",
+   "file": "Bega Cheese Factory.jpg"
+  },
+  "spot:eden-1": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Killer Whale Museum with orca sign and tower; power lines clutter",
+   "weak": true,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 2048,
+   "licence": "CC BY 3.0",
+   "file": "Eden Killer Whale museum.jpg"
+  },
+  "spot:beowa-1": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Green Cape lighthouse; solar panels and a person beside it",
+   "weak": true,
+   "hero_crop": {
+    "x": 0.35,
+    "y": 0.5
+   },
+   "dark": false,
+   "width": 1920,
+   "licence": "CC BY 2.0",
+   "file": "Green Cape Lighthouse (12534013823).jpg"
+  },
+  "spot:beowa-2": {
+   "decision": "accept",
+   "failed_check": null,
+   "reason": "Coast of Ben Boyd NP, Light to Light walk (file title says Ben Boyd Tower); teal water and red rocks",
+   "weak": true,
+   "hero_crop": "ok",
+   "dark": false,
+   "width": 5176,
+   "licence": "CC BY 2.0",
+   "file": "Ben Boyd Tower (honorary lighthouse) (12537814013).jpg"
+  }
+ }
+}

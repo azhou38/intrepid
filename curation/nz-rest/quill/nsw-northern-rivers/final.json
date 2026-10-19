@@ -1,0 +1,731 @@
+{
+ "spots": {
+  "cape-byron-lighthouse": {
+   "name": "Cape Byron Lighthouse",
+   "wiki": "Cape Byron Light",
+   "icon": "🗼",
+   "category": "landmark",
+   "bio": "Lighthouse on mainland Australia's easternmost point, where whales, dolphins and turtles are often seen.",
+   "hours": "Lawn 8:00 AM – sunset; museum 10:00 AM – 4:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/historic-buildings-places/cape-byron-lighthouse",
+   "coordinates": {
+    "latitude": -28.638561,
+    "longitude": 153.636334
+   },
+   "notes": [
+    "A$10 is the NPWS pay-parking fee at the lighthouse car park (per vehicle per hour, max 1 hour per vehicle per day, annual passes included, $4 motorcycles). Walking up from town is free. Tour prices are not published.",
+    "The lighthouse cafe has been closed since 31 May 2026 (NPWS alert to 26 Feb 2027): kept out of the bio. Maritime Museum 10-4 daily; Information Centre 9:30-4:30.",
+    "Pin HIGH (OSM lighthouse, Wikipedia Cape Byron Light and Commons median agree). wiki 'Cape Byron Light' is the article named in the research's coordinate source; verify the title before relying on it."
+   ]
+  },
+  "main-beach-byron-bay": {
+   "name": "Main Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Byron's town beach, patrolled all summer, with waves that usually break close to shore.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -28.640772,
+    "longitude": 153.614943
+   },
+   "notes": [
+    "No ticketUrl: public beach. Wikivoyage says patrolled all summer; other beaches only in the Christmas school holidays. Council street parking is metered (about $2 an hour, undated).",
+    "No wiki set. 'Main Beach' is shared by many beaches, so the photo key needs an explicit override in WIKI_IMAGE_OVERRIDES. Pin MEDIUM (OSM natural=beach)."
+   ]
+  },
+  "wategos-beach": {
+   "name": "Wategos Beach",
+   "icon": "🏄",
+   "category": "beach",
+   "bio": "Beach on the north side of the cape, a longboarder favourite because its waves generally lack push.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -28.635513,
+    "longitude": 153.634925
+   },
+   "notes": [
+    "No ticketUrl: public beach. Patrolled only in the Christmas school holidays (Wikivoyage). Parking fee not found on NPWS or council pages.",
+    "The placement's 'sheltered' is dropped: no source read says so. Pin HIGH (OSM beach plus Commons median)."
+   ]
+  },
+  "the-pass-byron-bay": {
+   "name": "The Pass",
+   "icon": "🌊",
+   "category": "beach",
+   "bio": "Surf break at the south end of Main Beach, with wide rolling waves for longboarders and crowds in summer.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 5,
+   "costMax": 5,
+   "currency": "AUD",
+   "coordinates": {
+    "latitude": -28.636848,
+    "longitude": 153.628741
+   },
+   "notes": [
+    "A$5 is NPWS pay parking at The Pass ($5 per vehicle or motorcycle per hour); free on foot from town or the lighthouse track.",
+    "No ticketUrl: NPWS has no page that names The Pass.",
+    "Pin LOW by tool (OSM viewpoint via Photon, one Commons file 103 m away): owner to check on a map. No wiki set; the name is generic, so the photo key needs an explicit override."
+   ]
+  },
+  "julian-rocks": {
+   "name": "Julian Rocks",
+   "icon": "🐢",
+   "category": "nature",
+   "bio": "Islets 2.5 km off Cape Byron where temperate and tropical waters meet, reached by dive or snorkel boat.",
+   "hours": "Daily snorkel and dive trips by boat; book ahead",
+   "visitHoursMin": 3,
+   "visitHoursMax": 4,
+   "costMin": 119,
+   "costMax": 180,
+   "currency": "AUD",
+   "coordinates": {
+    "latitude": -28.61153,
+    "longitude": 153.628883
+   },
+   "notes": [
+    "A$119-180 are Byron Bay Dive Centre 'from' prices (snorkel tour A$119, 3 h, min age 10; Turtle School A$149, 4 h; fun dive A$180, min age 12). Other operators run trips too, so ticketUrl is left out. Landing on the reserve is not permitted.",
+    "NPWS reserve page (info only, no booking): https://www.nationalparks.nsw.gov.au/visit-a-park/parks/nguthungulli-julian-rocks-nature-reserve",
+    "Pin HIGH (OSM islet, Wikipedia and Commons). The research does not confirm the Wikipedia article title, so no wiki is set."
+   ]
+  },
+  "tallow-beach": {
+   "name": "Tallow Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Very long beach south of the Byron headland, where swells run straight in and surf is generally larger.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -28.669181,
+    "longitude": 153.621013
+   },
+   "notes": [
+    "No ticketUrl: long public beach. Swimming and whale-watching claims in the placement are dropped: not sourced for this beach. Car park fees not checked.",
+    "Pin LOW by tool (single OSM feature via Photon), a point on the beach near Suffolk Park; the Commons median is 2 km along the beach. Owner to accept or move."
+   ]
+  },
+  "crystal-castle-and-shambhala-gardens": {
+   "name": "Crystal Castle and Shambhala Gardens",
+   "icon": "💎",
+   "category": "entertainment",
+   "bio": "Hinterland gardens with some of the world's largest geodes and the southern hemisphere's only Kalachakra stupa.",
+   "hours": "10:00 AM – 5:00 PM (last entry 4:00 PM)",
+   "visitHoursMin": 3,
+   "visitHoursMax": 5,
+   "costMin": 49.95,
+   "costMax": 49.95,
+   "currency": "AUD",
+   "ticketUrl": "https://crystalcastle.com.au/",
+   "coordinates": {
+    "latitude": -28.591926,
+    "longitude": 153.459301
+   },
+   "notes": [
+    "A$49.95 adult online (child 4-14 A$34.95, under 4 free; the ticket includes 12 months of return visits). Closed Christmas Day, Boxing Day and Good Friday (a moving date, so not in specialClosures).",
+    "ticketUrl is the homepage: /visit/ is a 404. Wikivoyage's $33.21 is stale. Pin MEDIUM (OSM attraction, Wikipedia within 60 m)."
+   ]
+  },
+  "brunswick-heads": {
+   "name": "Brunswick Heads",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Seaside village at the Brunswick River mouth, with Torakina Beach inside the breakwater and timber bridges.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -28.538885,
+    "longitude": 153.548381
+   },
+   "notes": [
+    "No ticketUrl: village. 'Riverside pub' and 'quiet beach' dropped from the placement bio: not backed by a source. Wikivoyage has no Brunswick Heads page.",
+    "Pin LOW (OSM town point, 224 m from the Commons median): accept or move."
+   ]
+  },
+  "bangalow-nsw": {
+   "name": "Bangalow",
+   "wiki": "Bangalow, New South Wales",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Hinterland village whose single main street is lined with Federation-style buildings, cafes and restaurants.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": {
+    "latitude": -28.681667,
+    "longitude": 153.517778
+   },
+   "notes": [
+    "No ticketUrl: village. 'Nineteenth-century' replaced by Federation-style (Wikivoyage). The Bangalow Heritage House Museum (4 Ashton St) and the monthly village market are left out (market is not a spot).",
+    "Name id keeps the research suffix; the shown name is plain 'Bangalow'. Pin LOW (OSM locality; Wikivoyage listing 380 m away)."
+   ]
+  },
+  "mullumbimby": {
+   "name": "Mullumbimby",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Brunswick Valley town below Mount Chincogan, billing itself 'The Biggest Little Town in Australia'.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": {
+    "latitude": -28.548333,
+    "longitude": 153.501111
+   },
+   "notes": [
+    "No ticketUrl: town. The Friday farmers' market is a weekly market, so it is a tip, not a spot. Pin LOW by tool (town point; OSM and Wikipedia within 215 m)."
+   ]
+  },
+  "lennox-head": {
+   "name": "Lennox Head",
+   "wiki": "Lennox Head, New South Wales",
+   "icon": "🏄",
+   "category": "historic",
+   "bio": "Surf village with Lennox Point's long right-hand break and the Pat Morton lookout over Seven Mile Beach.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -28.791033,
+    "longitude": 153.587805
+   },
+   "notes": [
+    "No ticketUrl: village. Lennox Point is not its own spot (review list), so it lives in this bio. Hang-gliders launch from its 65 m cliff (Wikivoyage), a candidate tip.",
+    "Pin LOW (OSM locality); shops cluster 0.5-0.8 km south-east around Ballina St."
+   ]
+  },
+  "seven-mile-beach-lennox-head": {
+   "name": "Seven Mile Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Beach stretching from Lennox Head towards Broken Head, popular for body surfing and kite surfing.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -28.764443,
+    "longitude": 153.604004
+   },
+   "notes": [
+    "No ticketUrl: public beach. Patrolled seasonally; watch for rips (Wikivoyage). The northern half is open to 4WDs with a permit (about $96 for 6 months, undated).",
+    "PHOTO KEY: 'Seven Mile Beach' collides with the Shoalhaven and Tasmanian beaches, so the name keeps but the photo needs an explicit WIKI_IMAGE_OVERRIDES entry; no wiki set.",
+    "'Horse riding' dropped: unsourced. Pin MEDIUM (OSM natural=beach way centre), 502 m from the placement point."
+   ]
+  },
+  "lake-ainsworth": {
+   "name": "Lake Ainsworth",
+   "icon": "💧",
+   "category": "nature",
+   "bio": "Tea-tree-stained dune lake beside Lennox Head, with sheltered water for beginner windsurfers.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "coordinates": {
+    "latitude": -28.782355,
+    "longitude": 153.591503
+   },
+   "notes": [
+    "No ticketUrl: no single steward. Gear hire on the eastern shore (prices not found). A blue-green algal bloom can occur in warm months: a tip to check council notices before swimming.",
+    "Pin MEDIUM (OSM natural=water)."
+   ]
+  },
+  "the-big-prawn": {
+   "name": "The Big Prawn",
+   "icon": "🦐",
+   "category": "landmark",
+   "bio": "Giant concrete and fibreglass prawn on a stand beside the Bunnings car park entrance in Ballina.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": true,
+   "coordinates": {
+    "latitude": -28.863743,
+    "longitude": 153.532584
+   },
+   "notes": [
+    "No ticketUrl: roadside landmark with no official site. Council voted to allow demolition in 2009 but never acted on it.",
+    "No wiki set: no stand-alone Wikipedia article (404). Photo key should be 'The Big Prawn' or a Commons override. Pin HIGH."
+   ]
+  },
+  "lighthouse-beach-ballina": {
+   "name": "Lighthouse Beach",
+   "wiki": "Lighthouse Beach, New South Wales",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Patrolled East Ballina beach, 600 m long, between Shelly Beach and the North Wall.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -28.871533,
+    "longitude": 153.590413
+   },
+   "notes": [
+    "No ticketUrl: public beach. 'Patrolled September to April' dropped: patrol dates not found, so the bio says only patrolled.",
+    "Wikipedia notes the beach is most notable for shark attacks: a candidate safety tip, not for the bio. The name is shared with a Port Macquarie beach, hence the wiki title.",
+    "Pin LOW by tool (single OSM feature via Photon); the Commons median is 506 m north. Owner to accept or move."
+   ]
+  },
+  "murwillumbah": {
+   "name": "Murwillumbah",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Tweed River valley town among cane and banana farms, with a rainforest visitor centre and Wollumbin nearby.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -28.326762,
+    "longitude": 153.397154
+   },
+   "notes": [
+    "No ticketUrl: town. 'Heritage wharf' dropped: not in any source read. The Tweed Regional Gallery is its own spot, so it is kept out of this bio.",
+    "Pin MEDIUM (OSM town, Wikipedia within 153 m, Commons median 146 m)."
+   ]
+  },
+  "wollumbin-national-park": {
+   "name": "Wollumbin National Park",
+   "icon": "🌋",
+   "category": "nature",
+   "bio": "Short Lyrebird rainforest walk at the foot of Wollumbin (Mount Warning), whose summit track is closed.",
+   "hours": "Gate 7:00 AM – 5:00 PM (6:00 PM in summer)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/wollumbin-national-park",
+   "coordinates": {
+    "latitude": -28.397988,
+    "longitude": 153.284064
+   },
+   "notes": [
+    "CLOSURE: the summit track and summit are closed until further notice (NPWS alert since 30 Jun 2023, reviewed 3 Oct 2026); visitors are asked to respect Bundjalung wishes. Open: Lyrebird track (0.3 km return, 15-30 min, grade 3), Korrumbyn Creek picnic area and Breakfast Creek facilities; parking is limited. Mount Warning appears only as an alias.",
+    "Gate on Mount Warning Road closes at 5 PM in winter and 6 PM in summer (daylight saving), reopening at 7 AM. No pets. Park is about 12 km from Murwillumbah.",
+    "Free is inferred: NPWS lists no park entry fee (Bundjalung, by contrast, lists $8).",
+    "Pin is the midpoint of the Lyrebird Track and its lookout (HIGH), not the peak (-28.397824,153.271568); it replaces the placement centroid 2.7 km away."
+   ]
+  },
+  "fingal-head-nsw": {
+   "name": "Fingal Head",
+   "wiki": "Fingal Head, New South Wales",
+   "icon": "🗼",
+   "category": "landmark",
+   "bio": "Basalt headland with a seven-metre 1878 lighthouse and columns once called the Giants Causeway.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": {
+    "latitude": -28.199996,
+    "longitude": 153.570844
+   },
+   "notes": [
+    "No ticketUrl: no steward page found. Whether the lighthouse interior is open is not stated.",
+    "The latitude -28.199996 is a real OSM lighthouse feature (HIGH; Commons median within 7 m), not a rounded value. Cook's original Point Danger was this headland (Wikivoyage), a distinct fact from the Point Danger spot held for the owner."
+   ]
+  },
+  "tweed-regional-gallery": {
+   "name": "Tweed Regional Gallery",
+   "icon": "🖼️",
+   "category": "museum",
+   "bio": "Free gallery in Murwillumbah with the Margaret Olley Art Centre, a recreation of her Sydney workspace.",
+   "hours": "10:00 AM – 4:00 PM",
+   "closedDays": [
+    1,
+    2
+   ],
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": "https://gallery.tweed.nsw.gov.au/",
+   "coordinates": {
+    "latitude": -28.348862,
+    "longitude": 153.400303
+   },
+   "notes": [
+    "Open Wednesday to Sunday 10-4, free; groups of 10+ must book; guided tour daily at 11:30 AM. Closed Wed 23 to Sun 27 December: a holiday notice, not put in specialClosures.",
+    "Pin HIGH (OSM gallery plus Photon within 8 m)."
+   ]
+  },
+  "cabarita-beach": {
+   "name": "Cabarita Beach",
+   "wiki": "Cabarita Beach, New South Wales",
+   "icon": "🏄",
+   "category": "beach",
+   "bio": "Surf beach town on the Tweed coast, with Norries Headland and a popular surf spot north of it.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -28.331398,
+    "longitude": 153.571785
+   },
+   "notes": [
+    "No ticketUrl: public beach. Patrol status not found, so the bio omits it.",
+    "Pin LOW by tool (single OSM feature via Photon); Wikipedia's town point is 300 m inland. Owner to accept or move."
+   ]
+  },
+  "tropical-fruit-world": {
+   "name": "Tropical Fruit World",
+   "icon": "🍍",
+   "category": "entertainment",
+   "bio": "Duranbah farm with a free marketplace and tractor-train tours through more than 550 fruit varieties.",
+   "hours": "9:00 AM – 4:00 PM; closed Christmas Day",
+   "visitHoursMin": 2,
+   "visitHoursMax": 3,
+   "costMin": 78,
+   "costMax": 78,
+   "currency": "AUD",
+   "ticketUrl": "https://www.tropicalfruitworld.com.au/",
+   "coordinates": {
+    "latitude": -28.283869,
+    "longitude": 153.524858
+   },
+   "notes": [
+    "A$78 is the adult 'from' price for the guided tractor tour and fruit tasting (child 3-16 A$55); marketplace entry is free; tours must be booked (Rezdy page https://tropicalfruitworld.rezdy.com/). A shorter A$35 tour in search results was not re-verified.",
+    "'Big Avocado' dropped: not on the operator pages. Hours on NSW daylight time from 4 Oct 2026. Homepage used: the /farm-tours deep link 404s.",
+    "Pin LOW by tool (farm polygon centre, not the entrance; the farm is about 215 acres). Owner to check on a map."
+   ]
+  },
+  "nimbin": {
+   "name": "Nimbin",
+   "wiki": "Nimbin, New South Wales",
+   "icon": "🌈",
+   "category": "historic",
+   "bio": "Counterculture village since the 1973 Aquarius Festival, lined with alternative shops, cafes and a Hemp Museum.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -28.594046,
+    "longitude": 153.222975
+   },
+   "notes": [
+    "No ticketUrl: village. The Hemp Museum asks a gold-coin donation (Wikivoyage, undated). Recreational cannabis is illegal in NSW and police crack down on sales in Nimbin: a candidate tip. The market is on the 4th and 5th Sunday only, so it is not a spot.",
+    "Pin is the OSM locality (MEDIUM, within 170 m of the craft gallery); not resolve-pin's skatepark hit and not the Wikivoyage point, 1.7 km north."
+   ]
+  },
+  "nightcap-national-park": {
+   "name": "Nightcap National Park",
+   "icon": "🌳",
+   "category": "nature",
+   "bio": "World Heritage rainforest park, created in 1983 after logging blockades at Terania Creek.",
+   "hours": "Open daily; check NPWS alerts (road closures)",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/nightcap-national-park",
+   "coordinates": {
+    "latitude": -28.551989,
+    "longitude": 153.33792
+   },
+   "notes": [
+    "CLOSURE: Nightcap Range Road is closed between Rummery Road and Telephone Road (2022 flood landslip) until at least 31 Dec 2026; Minyon Falls and Rummery Park are reached via Minyon Falls Road only. Wettest month February, driest September; highest rainfall in NSW, often misty (NPWS).",
+    "No park entry fee on the NPWS page (free is inferred). About 35 km north of Lismore (Wikipedia), 8,080 ha.",
+    "Pin is the midpoint of a 3.6 km section of the Historic Nightcap Track (MEDIUM), not a facility; it replaces the park centroid 1.9 km away."
+   ]
+  },
+  "minyon-falls": {
+   "name": "Minyon Falls",
+   "icon": "💧",
+   "category": "nature",
+   "bio": "Lookout over a waterfall plunging more than 100 m over rhyolite cliffs of the old Tweed Volcano.",
+   "hours": "Daylight hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/minyon-falls-lookout",
+   "coordinates": {
+    "latitude": -28.612628,
+    "longitude": 153.390211
+   },
+   "notes": [
+    "ACCESS: Nightcap Range Road is closed (landslip) until at least 31 Dec 2026; reach the lookout via Minyon Falls Road only. No public access within 100 m of the top of the falls. Most impressive after wet weather.",
+    "Hours: NPWS gives none; Wikivoyage says 7 AM - 6 PM (May 2024), so the field says daylight hours. Short walk from an asphalt car park, unsealed 2WD road, non-flush toilets.",
+    "Pin HIGH (OSM viewpoint, Commons median and waterfall within 20 m)."
+   ]
+  },
+  "lismore-regional-gallery": {
+   "name": "Lismore Regional Gallery",
+   "icon": "🖼️",
+   "category": "museum",
+   "bio": "Free Rural Street gallery hosting exhibitions by local and well-known artists, open late on Thursdays.",
+   "hours": "10:00 AM – 4:00 PM (Thursday until 6:00 PM)",
+   "closedDays": [
+    1,
+    2
+   ],
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": "https://www.lismoregallery.org/",
+   "coordinates": {
+    "latitude": -28.809683,
+    "longitude": 153.279304
+   },
+   "notes": [
+    "Open Wednesday to Sunday, 11 Rural Street (official terms-of-entry page); free entry (nsw.gov.au). 2026 holiday closure dates not read (2025 had 24-26 Dec and 31 Dec-2 Jan).",
+    "Pin LOW by tool (Photon only) but within 150 m of the Commons median and the official address."
+   ]
+  },
+  "angourie-point": {
+   "name": "Angourie Point",
+   "icon": "🏄",
+   "category": "landmark",
+   "bio": "Surf point south of Yamba in a National Surfing Reserve, near the freshwater Angourie Pools.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -29.48383,
+    "longitude": 153.367907
+   },
+   "notes": [
+    "No ticketUrl: no single steward. The placement's 'lookout' is dropped: not confirmed in any source. Angourie Beach was declared a National Surfing Reserve in 2007; the quarry pools lie less than 20 m from the ocean (Wikipedia). Featured in the 1971 film Morning of the Earth.",
+    "No wiki set: Wikipedia's article is 'Angourie, New South Wales', a village, not the point. Pin is a named OSM headland locality (HIGH-ish), no longer held; Wikipedia's village point is 1.2 km west."
+   ]
+  },
+  "maclean-nsw": {
+   "name": "Maclean",
+   "wiki": "Maclean, New South Wales",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Clarence River town billed as 'The Scottish Town', with Gaelic street signs and tartan-painted power poles.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "coordinates": {
+    "latitude": -29.456667,
+    "longitude": 153.201111
+   },
+   "notes": [
+    "No ticketUrl: town. Wikivoyage lists the Maclean District Museum (Tue 9-noon, Wed and Sat 1-4, updated Sep 2025) and a lookout over the Clarence River islands; the Highland Gathering is an Easter event, so it is not a spot.",
+    "Pin LOW by tool (OSM locality; Wikivoyage within about 150 m)."
+   ]
+  },
+  "iluka": {
+   "name": "Iluka",
+   "icon": "⛴️",
+   "category": "historic",
+   "bio": "Small beachside village across the Clarence River from Yamba, reached by shuttle ferry or the motorway.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -29.40751,
+    "longitude": 153.35124
+   },
+   "notes": [
+    "No ticketUrl: village. 'Fishing village' dropped: sources say small beachside village. The Yamba shuttle ferry is a separate fare (A$11.90 one way, Wikivoyage Oct 2026; timetable is Wikivoyage's, not the operator's).",
+    "Pin LOW (OSM locality); shops are 300 m north-west around Young St."
+   ]
+  },
+  "iluka-nature-reserve": {
+   "name": "Iluka Nature Reserve",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "World Heritage littoral rainforest, the largest remaining stand in NSW, home to over 140 bird species.",
+   "hours": "Open daily; check NPWS alerts",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/iluka-nature-reserve",
+   "coordinates": {
+    "latitude": -29.404519,
+    "longitude": 153.363134
+   },
+   "notes": [
+    "No entry fee on the NPWS reserve page (free is inferred); Iluka Bluff in Bundjalung National Park, next door, is $8 per vehicle per day. The 2.6 km easy Iluka Rainforest Walking Track leads to Iluka Bluff. Reserve is 136 ha.",
+    "Pin MEDIUM (OSM wood, Wikipedia within 120 m), moved 243 m from the placement point."
+   ]
+  },
+  "evans-head": {
+   "name": "Evans Head",
+   "wiki": "Evans Head, New South Wales",
+   "icon": "✈️",
+   "category": "historic",
+   "bio": "River-mouth town between two national parks, with Airforce Beach and a heritage aviation museum showing an F-111.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -29.117409,
+    "longitude": 153.43121
+   },
+   "notes": [
+    "No ticketUrl: town. 'Harbour' dropped for river mouth: sources mention break walls and the river entrance. Neighbouring Bundjalung National Park charges $8 per vehicle per day. The ocean beach is only occasionally patrolled (Wikivoyage).",
+    "Stays a spot: the Bundjalung centre is held without a usable pin. Pin HIGH as a town-centre point (OSM, Wikipedia and Commons within 255 m)."
+   ]
+  },
+  "toonumbar-national-park": {
+   "name": "Toonumbar National Park",
+   "icon": "🌲",
+   "category": "nature",
+   "bio": "Gondwana rainforest park near Kyogle with walking tracks, horse riding and Murray Scrub and Sherwood lookouts.",
+   "hours": "Open daily; check NPWS alerts (roads and lookouts closed in wet weather)",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": true,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/toonumbar-national-park",
+   "coordinates": {
+    "latitude": -28.495985,
+    "longitude": 152.772655
+   },
+   "notes": [
+    "CLOSURE: Toonumbar Forest Drive and Cox's Road closed until about 31 Oct 2026 (wet conditions); Sherwood and Murray Scrub lookouts stay closed until the roads reopen. Iron Pot Creek campground and the Murray Scrub walking track are reachable via Murray Scrub Road from Afterlee.",
+    "No park entry fee on the NPWS page (free is inferred). 14,910 ha near Woodenbong; Kyogle is the gateway (Wikivoyage).",
+    "Pin is the OSM Murray Scrub Lookout (MEDIUM), 3.5 km from the placement centroid; it is a closed lookout today, so the Murray Scrub Walk midpoint (-28.505852,152.766601) is the alternative."
+   ]
+  },
+  "byron-bay-town": {
+   "name": "Byron Bay",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Beachside town beside Cape Byron, 772 km north of Sydney, known for surf, scuba diving and a laid-back lifestyle.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -28.648333,
+    "longitude": 153.617778
+   },
+   "notes": [
+    "Town spot; no ticketUrl (no single steward). Overlaps the lighthouse and beaches, so the bio stays on the town itself. Population 6,330 (2021 census; Wikivoyage's 30,000 conflicts and is not used).",
+    "Tips for the owner: council parking about $2 an hour (undated); Ewingsdale Road is crowded in school holidays; trains no longer stop at Byron, so the nearest rail link is by coach from Casino.",
+    "Pin LOW (OSM town node); the Wikipedia point is 560 m north-west near Jonson St: owner may prefer it."
+   ]
+  },
+  "ballina-town": {
+   "name": "Ballina",
+   "wiki": "Ballina, New South Wales",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Northern Rivers river-mouth town where settlement began on Shaws Bay in 1842, 740 km north of Sydney.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -28.869103,
+    "longitude": 153.558687
+   },
+   "notes": [
+    "Town spot; no ticketUrl. The Big Prawn and Lighthouse Beach are their own spots, so they are not in this bio. Urban population 46,190 (end 2021). Ballina Byron Gateway Airport is about 3.4 km from the CBD.",
+    "Wikivoyage has only a disambiguation page for Ballina, so counted sources are thin. Pin LOW (OSM CBD landuse plus Wikivoyage within 210 m); not the suburb node 0.7 km east."
+   ]
+  },
+  "tweed-heads-town": {
+   "name": "Tweed Heads",
+   "wiki": "Tweed Heads, New South Wales",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Northernmost town in NSW, twinned with Coolangatta, with the Queensland border running through the built-up area.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -28.181708,
+    "longitude": 153.546962
+   },
+   "notes": [
+    "Town spot; no ticketUrl. NSW observes daylight saving (clocks one hour ahead of Coolangatta, Queensland, October to April): a tip. Gold Coast Airport is about 5 km away. Point Danger is held for the owner (Queensland).",
+    "Pin MEDIUM (OSM town, Wikivoyage and Wikipedia within 350 m). Wikivoyage files it under Gold Coast/Tweed Heads."
+   ]
+  },
+  "lismore-town": {
+   "name": "Lismore",
+   "wiki": "Lismore, New South Wales",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Regional centre on the Wilsons River with a cafe-and-cultures trail past a museum and street-art laneways.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -28.80776,
+    "longitude": 153.27919
+   },
+   "notes": [
+    "Town spot; no ticketUrl. Thin: the gallery is the only separate draw, and the Saturday farmers' market is not a spot. The 2022 floods heavily affected the town and no current recovery status was read.",
+    "wiki 'Lismore, New South Wales' is the article cited in the research (Wikivoyage uses 'Lismore (New South Wales)'). Pin LOW: OSM locality point corroborated by the gallery 190 m away (the HIGH result was a war memorial, not used)."
+   ]
+  },
+  "yamba-town": {
+   "name": "Yamba",
+   "wiki": "Yamba, New South Wales",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Clarence River mouth town with a lighthouse, Story House museum and a whale-watching rock wall by Pippi Beach.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "coordinates": {
+    "latitude": -29.44,
+    "longitude": 153.359444
+   },
+   "notes": [
+    "Town spot; no ticketUrl. Whales are seen from the Lovers Point rock wall from May to October (Wikivoyage); the monthly Yamba River Markets are not a spot. Yamba Lighthouse (-29.432462,153.364039) is a possible separate spot, not in the placement.",
+    "Pin LOW: an approximate OSM town node on the southern edge of town, plus or minus 1 km."
+   ]
+  }
+ },
+ "existing_fixes": [],
+ "held": [
+  {
+   "id": "point-danger",
+   "name": "Point Danger",
+   "reason": "needs_owner: Wikipedia lists Point Danger Light in Queensland (headland between Coolangatta and Tweed Heads), so it is outside this NSW run. If added, its timezone is Australia/Brisbane (no daylight saving) and it is standalone.",
+   "facts": "Free, open 24 hours, visit 0.5-1.5 h, category landmark. Pin -28.165066,153.551004 (OSM cliff plus Wikipedia Point Danger Light within 30 m, HIGH). Also called the Captain Cook Memorial Light: built in 1971 for the bicentennial of Cook's 1770 voyage; claims to be the first lighthouse in the world to experiment with a laser light source (Wikipedia). Cook named Point Danger in 1770, but the name later moved to this headland north of the Tweed mouth; his original is today's Fingal Head (Wikivoyage). The placement's 'whale watching' is not confirmed. No single steward or official site found. Do not say it is in NSW."
+  },
+  {
+   "id": "bundjalung-national-park",
+   "name": "Bundjalung National Park (centre)",
+   "reason": "no usable pin: only a centroid in inland bush (-29.261456,153.293506) exists. The spot Evans Head stays a spot; the park itself is not written.",
+   "facts": "$8 per vehicle per day; ticketUrl https://www.nationalparks.nsw.gov.au/visit-a-park/parks/bundjalung-national-park (loaded 200). 210 sq km between Iluka and Evans Head. Candidate visitor points: Iluka Bluff Lookout -29.397854,153.371607 (OSM viewpoint, MEDIUM, Commons 175 m) and Woody Head Campground -29.366204,153.37168 (Photon, LOW). Activities: beach walking, canoeing the Evans River and Jerusalem Creek, mountain biking, fishing; Bundjalung guides lead campfire storytelling."
+  }
+ ],
+ "notes": [
+  "35 spots written, all standalone fallbacks keyed by the research ids (the five towns are byron-bay-town, ballina-town, tweed-heads-town, lismore-town, yamba-town). Held: Point Danger (Queensland) and the Bundjalung National Park centre (no usable pin). Evans Head stays a spot. The research lists no other held entry.",
+  "No shell was available, so bio-fit.py was NOT run. Every bio was counted by hand at about 85-115 characters. The tightest are Cape Byron Lighthouse, The Pass, Crystal Castle and Shambhala Gardens, Brunswick Heads, Bangalow, Nimbin, Evans Head and Byron Bay. Run `python3 scripts/curation/bio-fit.py` before applying and shorten any that overflow.",
+  "Timezone omitted (default Australia/Sydney). Every coordinate is copied exactly from research. Fingal Head's latitude -28.199996 is a real feature and must not be rounded.",
+  "Decisions applied: Wollumbin summit closed (bio describes the open Lyrebird walk; Mount Warning is an alias only); Minyon Falls via Minyon Falls Road while Nightcap Range Road stays closed to at least 31 Dec 2026; Toonumbar lookouts closed to about 31 Oct 2026; Cape Byron costs A$10 per vehicle per hour NPWS pay parking, walking is free, and the cafe is closed; Julian Rocks A$119-180 with no ticketUrl; Crystal Castle A$49.95; Tropical Fruit World A$78 tour; both galleries free Wednesday to Sunday 10-4 (Lismore Thursday to 6); Bundjalung park fee A$8 recorded only in notes.",
+  "Bio claims dropped as unsourced: Murwillumbah heritage wharf, Tropical Fruit World Big Avocado, Lighthouse Beach patrol months, Iluka fishing village, Evans Head harbour, Brunswick Heads riverside pub and quiet beach, Seven Mile Beach horse riding, Tallow Beach swimming and whale watching, Bangalow nineteenth-century (now Federation-style), Angourie Point lookout, Wategos sheltered.",
+  "wiki is set only where the research cites that Wikipedia article: Cape Byron Light, Bangalow, Lennox Head, Lighthouse Beach, Fingal Head, Cabarita Beach, Nimbin, Maclean, Evans Head, Ballina, Tweed Heads, Lismore and Yamba (each as 'X, New South Wales'; Cape Byron Light as given). Check each title when applying. No wiki on the rest.",
+  "PHOTO KEYS: Seven Mile Beach collides with Shoalhaven and Tasmanian beaches and needs an explicit WIKI_IMAGE_OVERRIDES entry; Main Beach, The Pass, Tallow Beach and Wategos Beach are generic names and the Big Prawn has no article, so they need overrides too. Julian Rocks and Angourie Point have no confirmed article.",
+  "Pins the owner should check on a map (LOW by tool): The Pass, Tallow Beach, Lighthouse Beach, Cabarita Beach, Tropical Fruit World (farm centre, not the entrance), Lismore Regional Gallery, Brunswick Heads and all town points (Byron Bay, Ballina, Lismore, Yamba, Tweed Heads). Nightcap's pin is a track-section midpoint and Toonumbar's pin is a currently closed lookout.",
+  "Not researched or written (review list): Kyogle, Clarkes Beach, Belongil Beach, Shelly Beach, Flat Rock, Lennox Point, Mount Chincogan, Mallanganee National Park, New Italy, Tweed Regional Museum and the Koala Care Centre. Yuraygir National Park, Grafton and Border Ranges are existing spots and were not rewritten.",
+  "Ticket prices and hours are as read on 2026-10-18 and can change; tour and gallery holiday closures for 2026 were not all verified."
+ ]
+}

@@ -1,0 +1,640 @@
+{
+ "region": "nsw-sydney",
+ "inside_destinations": 8,
+ "inside_proposed_destinations": 22,
+ "standalone": 1,
+ "new_destinations": 5,
+ "new_destination_ids": [
+  "pittwater",
+  "hawkesbury",
+  "penrith",
+  "macarthur",
+  "royal-national-park"
+ ],
+ "merged_with_existing": [
+  "Captain Cook's Landing Place -> sydney-53"
+ ],
+ "existing_kept_unchanged": 77,
+ "dropped_to_other_passes": [
+  "Dharug National Park",
+  "Wisemans Ferry (central-coast-hunter)"
+ ],
+ "lowest_kept": [
+  {
+   "name": "WILD LIFE Sydney Zoo",
+   "id": "sydney-74",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Mona Vale Beach",
+   "id": "sydney-80",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Warriewood Beach",
+   "id": "sydney-81",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Wattamolla Beach",
+   "id": "royal-national-park-2",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Bundeena to Otford Coast Track",
+   "id": "royal-national-park-3",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Burning Palms Beach",
+   "id": "royal-national-park-7",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Barrenjoey Lighthouse",
+   "id": "pittwater-2",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "West Head",
+   "id": "pittwater-3",
+   "views": 555,
+   "counted_sources": 1
+  },
+  {
+   "name": "Cattai National Park",
+   "id": "hawkesbury-2",
+   "views": 700,
+   "counted_sources": 2
+  },
+  {
+   "name": "Thirlmere Lakes National Park",
+   "id": "macarthur-4",
+   "views": 968,
+   "counted_sources": 2
+  },
+  {
+   "name": "Bobbin Head",
+   "id": "sydney-77",
+   "views": 1078,
+   "counted_sources": 1
+  },
+  {
+   "name": "Audley",
+   "id": "royal-national-park-1",
+   "views": 1450,
+   "counted_sources": 1
+  },
+  {
+   "name": "Parramatta Park",
+   "id": "sydney-79",
+   "views": 1858,
+   "counted_sources": 1
+  },
+  {
+   "name": "Garie Beach",
+   "id": "royal-national-park-4",
+   "views": 2110,
+   "counted_sources": 1
+  }
+ ],
+ "lowest_kept_note": "Ten kept places have 0 Wikipedia views (Mona Vale Beach, Warriewood Beach, Barrenjoey Lighthouse, WILD LIFE Sydney Zoo, Wattamolla, Burning Palms, Coast Track, Warragamba Dam, Yerranderie and the Landing Place); the Wikipedia article for several is a redirect or absent, so views understate them. Every left-out candidate with views above zero is therefore listed below.",
+ "stronger_left_out": [
+  {
+   "name": "Penrith",
+   "views": 39785,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Regional city and main base for the Nepean and western Sydney, with its own Wikivoyage chapter; 40k views.",
+   "skeptic": "keep"
+  },
+  {
+   "name": "Sydney Motorsport Park",
+   "views": 23685,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Racing circuit whose public side is paid driving experiences, track days and event meetings run by the operator; no walk-up visit whenever you arrive."
+  },
+  {
+   "name": "Hawkesbury River",
+   "views": 22524,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Long river feature with no single access point; its towns (Brooklyn, Windsor, Wisemans Ferry) are the spots."
+  },
+  {
+   "name": "Richmond",
+   "views": 14890,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Fails \"what qualifies\" 2 and 3: an RAAF base and farm town whose only listing is a town overview; no named stop gives a half-hour reason (skeptic reject).",
+   "skeptic": "reject"
+  },
+  {
+   "name": "Royal National Park",
+   "views": 14486,
+   "counted_sources": 3,
+   "verdict": "reject",
+   "reason": "National park with coastal walks and lagoons; NPWS, Wikivoyage and sydney.com (three sources).",
+   "skeptic": "keep"
+  },
+  {
+   "name": "Nepean River",
+   "views": 10473,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Long river with no single visitor point; Penrith and its riverside parks cover it."
+  },
+  {
+   "name": "RAAF Museum",
+   "views": 6807,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Fails 2: sits on an air-force base with entry checks and no counted source (skeptic reject).",
+   "skeptic": "reject"
+  },
+  {
+   "name": "Pittwater",
+   "views": 5000,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Long inlet with no single visitor point; its places (Palm Beach, Church Point) are the spots."
+  },
+  {
+   "name": "Blacktown Sportspark",
+   "views": 4461,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Sports fields; not a visitor draw."
+  },
+  {
+   "name": "Camden Park Estate",
+   "views": 4355,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; private estate open only on occasional heritage days."
+  },
+  {
+   "name": "Sydney Action Park",
+   "views": 4296,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; seasonal water park whose current operation is unconfirmed."
+  },
+  {
+   "name": "The Oaks",
+   "views": 4225,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small village with no distinct draw."
+  },
+  {
+   "name": "Lake Burragorang",
+   "views": 3524,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Dam catchment reservoir with restricted public access; no counted source."
+  },
+  {
+   "name": "Nattai National Park",
+   "views": 3287,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: NPWS names the sandstone park for bushwalks. Against: remote and rarely visited; backpack camping, no easy half-hour stop.",
+   "skeptic": "review"
+  },
+  {
+   "name": "Lake Parramatta",
+   "views": 3276,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Wikivoyage names the lake reserve for walks and picnics. Against: one source; local reserve near the CBD.",
+   "skeptic": "review"
+  },
+  {
+   "name": "Sydney International Regatta Centre",
+   "views": 3159,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Fails 2: a sports venue with little to see outside events, one source (skeptic reject).",
+   "skeptic": "reject"
+  },
+  {
+   "name": "Brislington House",
+   "views": 3091,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Limited opening hours; small specialist museum with one source."
+  },
+  {
+   "name": "St Patrick's Cathedral, Parramatta",
+   "views": 3041,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Church seen from the street."
+  },
+  {
+   "name": "Wisemans Ferry",
+   "views": 2635,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Hawkesbury village and river crossing, gateway to Dharug and Yengo; Wikivoyage. The ferry is the way across, the village is the place.",
+   "skeptic": "keep"
+  },
+  {
+   "name": "Western Sydney Parklands",
+   "views": 2627,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "A park system spread across western Sydney, not one place; its attractions (Sydney Zoo, TreeTops, Chang Lai Yuan) are judged on their own."
+  },
+  {
+   "name": "Experiment Farm Cottage",
+   "views": 2200,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Wikivoyage lists Australia's first private farm cottage. Against: one source; open Wednesday to Sunday only; small.",
+   "skeptic": "review"
+  },
+  {
+   "name": "Australiana Pioneer Village",
+   "views": 2038,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Fails 4: open Sundays and bank holiday Mondays only (skeptic reject).",
+   "skeptic": "reject"
+  },
+  {
+   "name": "Big Marley Beach",
+   "views": 1993,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Unpatrolled foot-access beach on the Coast Track; one source."
+  },
+  {
+   "name": "Prince Alfred Park",
+   "views": 1327,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small central park on a gaol site; minor."
+  },
+  {
+   "name": "Queens Wharf Reserve",
+   "views": 1303,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Minor riverside reserve with memorials."
+  },
+  {
+   "name": "Towra Point Nature Reserve",
+   "views": 1281,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Wetland reserve mostly closed to the public."
+  },
+  {
+   "name": "Muogamarra Nature Reserve",
+   "views": 991,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Open to the public only about six weeks a year on booked tours; not there whenever you arrive."
+  },
+  {
+   "name": "Ultimate Paintball",
+   "views": 978,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Operator (paintball park), not a place."
+  },
+  {
+   "name": "Dharug National Park",
+   "views": 943,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "National park north of Wisemans Ferry with the World Heritage Old Great North Road walk; NPWS and Wikivoyage.",
+   "skeptic": "keep"
+  },
+  {
+   "name": "Hambledon Cottage",
+   "views": 932,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Fails 4: open Thursday to Sunday only and one source (skeptic reject).",
+   "skeptic": "reject"
+  },
+  {
+   "name": "Victoria Bridge, Picton",
+   "views": 905,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Trestle bridge seen from beside it; minor."
+  },
+  {
+   "name": "Powerhouse Parramatta",
+   "views": 887,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: new state museum, Wikivoyage lists it, 7 Nov 2026 opening confirmed by NSW Government. Against: not open yet at 18 Oct 2026; re-judge once open.",
+   "skeptic": "review"
+  },
+  {
+   "name": "Marramarra National Park",
+   "views": 831,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "For: NPWS and Wikivoyage name it. Against: remote and rarely visited, reached mainly by boat or long walks; little for a half-hour stop.",
+   "skeptic": "review"
+  },
+  {
+   "name": "Campbelltown Arts Centre",
+   "views": 673,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Fails 3: modest regional gallery, one source; the town spot covers the area (skeptic reject).",
+   "skeptic": "reject"
+  },
+  {
+   "name": "Ku-ring-gai Wildflower Garden",
+   "views": 428,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Wikivoyage lists it; open daily with bush walks. Against: one source, small local garden.",
+   "skeptic": "review"
+  },
+  {
+   "name": "Joseph Banks Native Plants Reserve",
+   "views": 284,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small suburban plant reserve; not a tourist stop."
+  }
+ ],
+ "strongest_outsiders": {
+  "kept_outside_sydney_span": [
+   {
+    "name": "Palm Beach",
+    "views": 28470,
+    "counted_sources": 1,
+    "kept_as": "spot of proposed pittwater"
+   },
+   {
+    "name": "Campbelltown",
+    "views": 27325,
+    "counted_sources": 1,
+    "kept_as": "spot of proposed macarthur"
+   },
+   {
+    "name": "Camden",
+    "views": 20251,
+    "counted_sources": 2,
+    "kept_as": "spot of proposed macarthur"
+   },
+   {
+    "name": "Windsor",
+    "views": 16905,
+    "counted_sources": 1,
+    "kept_as": "spot of proposed hawkesbury"
+   },
+   {
+    "name": "Sydney Zoo",
+    "views": 11674,
+    "counted_sources": 2,
+    "kept_as": "spot of proposed penrith"
+   },
+   {
+    "name": "Warragamba Dam",
+    "views": 11274,
+    "counted_sources": 0,
+    "kept_as": "spot of proposed penrith"
+   },
+   {
+    "name": "Picton",
+    "views": 11153,
+    "counted_sources": 2,
+    "kept_as": "spot of proposed macarthur"
+   },
+   {
+    "name": "Brooklyn",
+    "views": 8011,
+    "counted_sources": 1,
+    "kept_as": "spot of proposed central-coast"
+   },
+   {
+    "name": "Whale Beach",
+    "views": 5841,
+    "counted_sources": 1,
+    "kept_as": "spot of proposed pittwater"
+   },
+   {
+    "name": "Yerranderie",
+    "views": 3383,
+    "counted_sources": 0,
+    "kept_as": "standalone"
+   },
+   {
+    "name": "Scheyville National Park",
+    "views": 2338,
+    "counted_sources": 2,
+    "kept_as": "spot of proposed hawkesbury"
+   },
+   {
+    "name": "Penrith Whitewater Stadium",
+    "views": 2153,
+    "counted_sources": 2,
+    "kept_as": "spot of proposed penrith"
+   },
+   {
+    "name": "Garie Beach",
+    "views": 2110,
+    "counted_sources": 1,
+    "kept_as": "spot of proposed royal-national-park"
+   },
+   {
+    "name": "Thirlmere Lakes National Park",
+    "views": 968,
+    "counted_sources": 2,
+    "kept_as": "spot of proposed macarthur"
+   },
+   {
+    "name": "Cattai National Park",
+    "views": 700,
+    "counted_sources": 2,
+    "kept_as": "spot of proposed hawkesbury"
+   },
+   {
+    "name": "West Head",
+    "views": 555,
+    "counted_sources": 1,
+    "kept_as": "spot of proposed pittwater"
+   },
+   {
+    "name": "Barrenjoey Lighthouse",
+    "views": 0,
+    "counted_sources": 2,
+    "kept_as": "spot of proposed pittwater"
+   },
+   {
+    "name": "Wattamolla Beach",
+    "views": 0,
+    "counted_sources": 1,
+    "kept_as": "spot of proposed royal-national-park"
+   },
+   {
+    "name": "Bundeena to Otford Coast Track",
+    "views": 0,
+    "counted_sources": 1,
+    "kept_as": "spot of proposed royal-national-park"
+   },
+   {
+    "name": "Burning Palms Beach",
+    "views": 0,
+    "counted_sources": 1,
+    "kept_as": "spot of proposed royal-national-park"
+   }
+  ],
+  "left_out_or_review_outside_span": [
+   "Sydney Motorsport Park",
+   "Hawkesbury River",
+   "Richmond",
+   "Nepean River",
+   "RAAF Museum",
+   "Pittwater",
+   "Camden Park Estate",
+   "The Oaks",
+   "Nattai National Park",
+   "Marramarra National Park"
+  ]
+ },
+ "benchmark": {
+  "applicable_to_nsw_sydney": "The NZ benchmark list does not apply to this region. Equivalent checks: operators rejected as places (Sydney Skydivers, iFLY Penrith, TreeTops, Cables Wake Park, Ultimate Paintball); once-a-week or event-only venues rejected (Australiana Pioneer Village, Muogamarra Nature Reserve); civic/exterior-only buildings rejected (St Patrick's Cathedral Parramatta, Female Orphan School); minor memorials and pull-outs rejected (Queens Wharf Reserve, Bungoona Lookout); a long feature not placed under a neighbour (Hawkesbury River, Nepean River, Royal Coast Track pinned as its own spot with the Royal National Park); gateway-journey case Wisemans Ferry sent to central-coast-hunter; vehicle/operator rule honoured (Wisemans Ferry crossing is not a spot)."
+ },
+ "review_list_for_owner": [
+  {
+   "name": "Figure Eight Pools",
+   "verdict": "review",
+   "reason": "For: famous rock pools named by Wikivoyage. Against: one source; scramble reachable only at low tide and unsafe in swell, often underwater.",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Marramarra National Park",
+   "verdict": "review",
+   "reason": "For: NPWS and Wikivoyage name it. Against: remote and rarely visited, reached mainly by boat or long walks; little for a half-hour stop.",
+   "views": 831,
+   "counted_sources": 2
+  },
+  {
+   "name": "Nattai National Park",
+   "verdict": "review",
+   "reason": "For: NPWS names the sandstone park for bushwalks. Against: remote and rarely visited; backpack camping, no easy half-hour stop.",
+   "views": 3287,
+   "counted_sources": 1
+  },
+  {
+   "name": "Rouse Hill House and Farm",
+   "verdict": "review",
+   "reason": "For: Museums of History NSW visitor page lists the estate, a rare intact colonial homestead. Against: no Wikivoyage entry; access by limited guided tours; opening days unconfirmed (page would not load).",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "Experiment Farm Cottage",
+   "verdict": "review",
+   "reason": "For: Wikivoyage lists Australia's first private farm cottage. Against: one source; open Wednesday to Sunday only; small.",
+   "views": 2200,
+   "counted_sources": 1
+  },
+  {
+   "name": "Lake Parramatta",
+   "verdict": "review",
+   "reason": "For: Wikivoyage names the lake reserve for walks and picnics. Against: one source; local reserve near the CBD.",
+   "views": 3276,
+   "counted_sources": 1
+  },
+  {
+   "name": "Ku-ring-gai Wildflower Garden",
+   "verdict": "review",
+   "reason": "For: Wikivoyage lists it; open daily with bush walks. Against: one source, small local garden.",
+   "views": 428,
+   "counted_sources": 1
+  },
+  {
+   "name": "Tobruk Sheep Station",
+   "verdict": "review",
+   "reason": "For: Wikivoyage names the working farm with sheepdog and shearing shows. Against: one source; show times and current opening not verified; modest draw.",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Powerhouse Parramatta",
+   "verdict": "review",
+   "reason": "For: new state museum, Wikivoyage lists it, 7 Nov 2026 opening confirmed by NSW Government. Against: not open yet at 18 Oct 2026; re-judge once open.",
+   "views": 887,
+   "counted_sources": 1
+  },
+  {
+   "name": "Captain Cook's Landing Place",
+   "verdict": "merge",
+   "reason": "Kept by the skeptic only as the named landing site; inside existing Kamay Botany Bay NP (sydney-53). Recommend merge."
+  },
+  {
+   "name": "Brooklyn",
+   "verdict": "keep (marginal)",
+   "reason": "Skeptic: borderline gateway, low rank; one counted source. Owner may prefer review."
+  },
+  {
+   "name": "Warragamba Dam, Yerranderie",
+   "verdict": "keep (marginal)",
+   "reason": "Zero counted sources found by the enumerator (agency pages WaterNSW and NPWS named by the skeptic); Yerranderie is a remote 4WD trip. Owner call."
+  }
+ ],
+ "photos_still_missing": [
+  {
+   "name": "Rose Seidler House",
+   "id": "sydney-78"
+  },
+  {
+   "name": "Parramatta Park",
+   "id": "sydney-79"
+  },
+  {
+   "name": "Windsor",
+   "id": "hawkesbury-1"
+  },
+  {
+   "name": "Penrith Whitewater Stadium",
+   "id": "penrith-1"
+  },
+  {
+   "name": "Sydney Zoo",
+   "id": "penrith-2"
+  },
+  {
+   "name": "Camden",
+   "id": "macarthur-1"
+  },
+  {
+   "name": "Campbelltown",
+   "id": "macarthur-2"
+  },
+  {
+   "name": "Picton",
+   "id": "macarthur-3"
+  },
+  {
+   "name": "Brooklyn",
+   "id": "central-coast-22"
+  },
+  {
+   "name": "Yerranderie",
+   "id": "yerranderie"
+  }
+ ]
+}

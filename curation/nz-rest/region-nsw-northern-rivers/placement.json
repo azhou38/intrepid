@@ -1,0 +1,2196 @@
+{
+ "region": "nsw-northern-rivers",
+ "span_rule": "A kept spot belongs to a proposed destination when within 75% of its defaultZoomSpanKm of its centre and reached from that base; otherwise standalone. Spans: byron-bay 40, ballina 30, tweed-heads 50, lismore 45, yamba 30, bundjalung-national-park 40.",
+ "standalone_fields": {
+  "country": "Australia",
+  "countryCode": "AU",
+  "continent": "Oceania",
+  "timezone": "Australia/Sydney"
+ },
+ "proposed_destinations": [
+  {
+   "id": "byron-bay",
+   "name": "Byron Bay",
+   "category": "city",
+   "centre": {
+    "latitude": -28.644744,
+    "longitude": 153.621376
+   },
+   "centre_source": "skeptic.json: wikivoyage Northern_Rivers listing (town centre); Wikipedia's town point (-28.6431,153.615) is an equally good alternative",
+   "defaultZoomSpanKm": 40,
+   "rank": 2,
+   "spot_ids": [
+    "byron-bay-1",
+    "byron-bay-3",
+    "byron-bay-4",
+    "byron-bay-5",
+    "byron-bay-6",
+    "byron-bay-11",
+    "byron-bay-7",
+    "byron-bay-8",
+    "byron-bay-9",
+    "byron-bay-10"
+   ],
+   "if_declined_standalone": [
+    {
+     "id": "cape-byron-lighthouse",
+     "name": "Cape Byron Lighthouse",
+     "from_id": "byron-bay-1"
+    },
+    {
+     "id": "main-beach-byron-bay",
+     "name": "Main Beach",
+     "from_id": "byron-bay-3"
+    },
+    {
+     "id": "wategos-beach",
+     "name": "Wategos Beach",
+     "from_id": "byron-bay-4"
+    },
+    {
+     "id": "the-pass-byron-bay",
+     "name": "The Pass",
+     "from_id": "byron-bay-5"
+    },
+    {
+     "id": "julian-rocks",
+     "name": "Julian Rocks",
+     "from_id": "byron-bay-6"
+    },
+    {
+     "id": "tallow-beach",
+     "name": "Tallow Beach",
+     "from_id": "byron-bay-11"
+    },
+    {
+     "id": "crystal-castle-and-shambhala-gardens",
+     "name": "Crystal Castle and Shambhala Gardens",
+     "from_id": "byron-bay-7"
+    },
+    {
+     "id": "brunswick-heads",
+     "name": "Brunswick Heads",
+     "from_id": "byron-bay-8"
+    },
+    {
+     "id": "bangalow-nsw",
+     "name": "Bangalow",
+     "from_id": "byron-bay-9"
+    },
+    {
+     "id": "mullumbimby",
+     "name": "Mullumbimby",
+     "from_id": "byron-bay-10"
+    }
+   ],
+   "np_exception": null,
+   "held_for_pin": false,
+   "note": "Town plus Cape Byron, its beaches, Julian Rocks and hinterland villages (10 spots within 17 km). Arakwal/Broken Head not in this pass's kept list.",
+   "town_score": {
+    "views": 112501,
+    "counted_sources": 2
+   },
+   "spot_count": 10,
+   "thin": false,
+   "photo_candidate": {
+    "file": "2012-07-19 View of Byron Bay from Cape Byron-04.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:2012-07-19_View_of_Byron_Bay_from_Cape_Byron-04.jpg",
+    "licence": "CC BY 4.0",
+    "photo_verdict": "candidate (skeptic: accept); header/why-visit photos are Lens work",
+    "note": "View of Byron Bay and the long beach from Cape Byron; recognisable but the town is small in frame. A better town view would be preferable if found."
+   },
+   "wiki": "Byron Bay",
+   "proposal_status": "Proposal for the owner, not added: needs description, three reasons with photos, tips, best months and a header (WRITING.md, Pipeline C)"
+  },
+  {
+   "id": "ballina",
+   "name": "Ballina",
+   "category": "city",
+   "centre": {
+    "latitude": -28.86574,
+    "longitude": 153.56595
+   },
+   "centre_source": "skeptic.json: OSM place=suburb (town); Wikivoyage listing point (-28.8681,153.5567) is the town centre",
+   "defaultZoomSpanKm": 30,
+   "rank": 5,
+   "spot_ids": [
+    "ballina-1",
+    "ballina-2",
+    "ballina-3",
+    "ballina-5",
+    "ballina-6"
+   ],
+   "if_declined_standalone": [
+    {
+     "id": "lennox-head",
+     "name": "Lennox Head",
+     "from_id": "ballina-1"
+    },
+    {
+     "id": "seven-mile-beach-lennox-head",
+     "name": "Seven Mile Beach",
+     "from_id": "ballina-2"
+    },
+    {
+     "id": "lake-ainsworth",
+     "name": "Lake Ainsworth",
+     "from_id": "ballina-3"
+    },
+    {
+     "id": "the-big-prawn",
+     "name": "The Big Prawn",
+     "from_id": "ballina-5"
+    },
+    {
+     "id": "lighthouse-beach-ballina",
+     "name": "Lighthouse Beach",
+     "from_id": "ballina-6"
+    }
+   ],
+   "np_exception": null,
+   "held_for_pin": false,
+   "note": "Regional centre with the Lennox Head cluster (9 km) and East Ballina beach. Overlaps Byron Bay's span by about 9 km on the Seven Mile Beach side; Lennox Head is nearer Ballina (8.6 km vs 16.7 km).",
+   "town_score": {
+    "views": 32514,
+    "counted_sources": 1
+   },
+   "spot_count": 5,
+   "thin": false,
+   "photo_candidate": {
+    "photo_verdict": "none: skeptic rejected the photo, Lens must find one"
+   },
+   "wiki": "Ballina, New South Wales",
+   "proposal_status": "Proposal for the owner, not added: needs description, three reasons with photos, tips, best months and a header (WRITING.md, Pipeline C)"
+  },
+  {
+   "id": "tweed-heads",
+   "name": "Tweed Heads",
+   "category": "city",
+   "centre": {
+    "latitude": -28.18171,
+    "longitude": 153.54696
+   },
+   "centre_source": "skeptic.json: OSM place=town",
+   "defaultZoomSpanKm": 50,
+   "rank": 4,
+   "spot_ids": [
+    "tweed-heads-1",
+    "tweed-heads-2",
+    "tweed-heads-4",
+    "tweed-heads-5",
+    "tweed-heads-6",
+    "tweed-heads-8",
+    "tweed-heads-9"
+   ],
+   "if_declined_standalone": [
+    {
+     "id": "murwillumbah",
+     "name": "Murwillumbah",
+     "from_id": "tweed-heads-1"
+    },
+    {
+     "id": "wollumbin-national-park",
+     "name": "Wollumbin National Park",
+     "from_id": "tweed-heads-2"
+    },
+    {
+     "id": "point-danger",
+     "name": "Point Danger",
+     "from_id": "tweed-heads-4"
+    },
+    {
+     "id": "fingal-head-nsw",
+     "name": "Fingal Head",
+     "from_id": "tweed-heads-5"
+    },
+    {
+     "id": "tweed-regional-gallery",
+     "name": "Tweed Regional Gallery",
+     "from_id": "tweed-heads-6"
+    },
+    {
+     "id": "cabarita-beach",
+     "name": "Cabarita Beach",
+     "from_id": "tweed-heads-8"
+    },
+    {
+     "id": "tropical-fruit-world",
+     "name": "Tropical Fruit World",
+     "from_id": "tweed-heads-9"
+    }
+   ],
+   "np_exception": "Wollumbin National Park folded in: no sub-spots of its own (Lyrebird Track rejected as part of it), reached from Murwillumbah; 36.5 km from the centre, just inside 75% of the 50 km span",
+   "held_for_pin": false,
+   "note": "Border twin town with Point Danger and Fingal Head, the Tweed coast and the Murwillumbah side (valley town, gallery, Wollumbin). The span is 50 km because Murwillumbah is 22 km inland; Tweed Heads has a Wikivoyage chapter and quill research already exists under id tweed-heads.",
+   "town_score": {
+    "views": 40094,
+    "counted_sources": 2
+   },
+   "spot_count": 7,
+   "thin": false,
+   "photo_candidate": {
+    "photo_verdict": "none: skeptic rejected the photo, Lens must find one"
+   },
+   "wiki": "Tweed Heads, New South Wales",
+   "proposal_status": "Proposal for the owner, not added: needs description, three reasons with photos, tips, best months and a header (WRITING.md, Pipeline C)"
+  },
+  {
+   "id": "lismore",
+   "name": "Lismore",
+   "category": "city",
+   "centre": {
+    "latitude": -28.80776,
+    "longitude": 153.27919
+   },
+   "centre_source": "skeptic.json: OSM place=locality",
+   "defaultZoomSpanKm": 45,
+   "rank": 5,
+   "spot_ids": [
+    "lismore-1",
+    "lismore-2",
+    "lismore-3",
+    "lismore-4"
+   ],
+   "if_declined_standalone": [
+    {
+     "id": "nimbin",
+     "name": "Nimbin",
+     "from_id": "lismore-1"
+    },
+    {
+     "id": "nightcap-national-park",
+     "name": "Nightcap National Park",
+     "from_id": "lismore-2"
+    },
+    {
+     "id": "minyon-falls",
+     "name": "Minyon Falls",
+     "from_id": "lismore-3"
+    },
+    {
+     "id": "lismore-regional-gallery",
+     "name": "Lismore Regional Gallery",
+     "from_id": "lismore-4"
+    }
+   ],
+   "np_exception": "Nightcap National Park folded in (with Minyon Falls inside it and Nimbin at its edge): 28 km from Lismore, inside its 45 km span; a separate Nightcap destination would have only two spots and its span would overlap Lismore's",
+   "held_for_pin": false,
+   "note": "Largest inland town (45,913 views). The city's own attraction is the gallery; Nimbin and Nightcap are folded in as the hinterland it serves. Thin on city sights, rank 5.",
+   "town_score": {
+    "views": 45913,
+    "counted_sources": 2
+   },
+   "spot_count": 4,
+   "thin": false,
+   "photo_candidate": {
+    "file": "View over Lismore Oct 2026.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:View_over_Lismore_Oct_2026.jpg",
+    "licence": "CC BY 4.0",
+    "photo_verdict": "candidate (skeptic: accept); header/why-visit photos are Lens work",
+    "note": "View over Lismore with hills behind, current colour."
+   },
+   "wiki": "Lismore, New South Wales",
+   "proposal_status": "Proposal for the owner, not added: needs description, three reasons with photos, tips, best months and a header (WRITING.md, Pipeline C)"
+  },
+  {
+   "id": "yamba",
+   "name": "Yamba",
+   "category": "city",
+   "centre": {
+    "latitude": -29.44,
+    "longitude": 153.35944
+   },
+   "centre_source": "skeptic.json: OSM place=town",
+   "defaultZoomSpanKm": 30,
+   "rank": 4,
+   "spot_ids": [
+    "yamba-1",
+    "yamba-4",
+    "yamba-5",
+    "yamba-6"
+   ],
+   "if_declined_standalone": [
+    {
+     "id": "angourie-point",
+     "name": "Angourie Point",
+     "from_id": "yamba-1"
+    },
+    {
+     "id": "maclean-nsw",
+     "name": "Maclean",
+     "from_id": "yamba-4"
+    },
+    {
+     "id": "iluka",
+     "name": "Iluka",
+     "from_id": "yamba-5"
+    },
+    {
+     "id": "iluka-nature-reserve",
+     "name": "Iluka Nature Reserve",
+     "from_id": "yamba-6"
+    }
+   ],
+   "np_exception": "Iluka Nature Reserve folded in: a single-site reserve 4 km from Yamba across the river; Iluka village is its gateway",
+   "held_for_pin": false,
+   "note": "Clarence River mouth town with Angourie, Iluka (across the river) and Maclean. Angourie Point is held for a pin. Does not take Yuraygir (existing standalone, mid-north-coast side).",
+   "town_score": {
+    "views": 24250,
+    "counted_sources": 3
+   },
+   "spot_count": 4,
+   "thin": false,
+   "photo_candidate": {
+    "file": "Main Beach Yamba.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Main_Beach_Yamba.JPG",
+    "licence": "CC BY-SA 3.0",
+    "photo_verdict": "candidate (skeptic: accept); header/why-visit photos are Lens work",
+    "note": "Main Beach Yamba, 1600 px, rocks and surf with the town above; recognisable."
+   },
+   "wiki": "Yamba, New South Wales",
+   "proposal_status": "Proposal for the owner, not added: needs description, three reasons with photos, tips, best months and a header (WRITING.md, Pipeline C)"
+  },
+  {
+   "id": "bundjalung-national-park",
+   "name": "Bundjalung National Park",
+   "category": "park",
+   "centre": {
+    "latitude": -29.26146,
+    "longitude": 153.29351
+   },
+   "centre_source": "skeptic.json: OSM nature_reserve CENTROID; main visitor points are Woody Head (-29.3676,153.3752) and Black Rocks/Ten Mile. HELD FOR PIN: replace with the NPWS visitor hub",
+   "defaultZoomSpanKm": 40,
+   "rank": 5,
+   "spot_ids": [
+    "bundjalung-national-park-1"
+   ],
+   "if_declined_standalone": [
+    {
+     "id": "evans-head",
+     "name": "Evans Head",
+     "from_id": "bundjalung-national-park-1"
+    }
+   ],
+   "np_exception": null,
+   "held_for_pin": true,
+   "note": "THIN: one kept spot (Evans Head) plus the park itself. Held for pin: the park point is an OSM centroid and must be replaced by the NPWS visitor hub. Woody Head and Iluka Bluff rejected as parts of the parks. Iluka and Iluka Nature Reserve go to Yamba (4 km from it, 17 km from this park's centre).",
+   "town_score": {
+    "views": 1316,
+    "counted_sources": 2
+   },
+   "spot_count": 1,
+   "thin": true,
+   "photo_candidate": {
+    "file": "Bundjalung National Park Woody Head Lookout.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Bundjalung_National_Park_Woody_Head_Lookout.JPG",
+    "licence": "CC BY-SA 3.0",
+    "photo_verdict": "candidate (skeptic: accept); header/why-visit photos are Lens work",
+    "note": "Woody Head lookout coast, Bundjalung NP (2009), clear coastal view."
+   },
+   "wiki": "Bundjalung National Park",
+   "proposal_status": "Proposal for the owner, not added: needs description, three reasons with photos, tips, best months and a header (WRITING.md, Pipeline C)"
+  }
+ ],
+ "spots": [
+  {
+   "name": "Cape Byron Lighthouse",
+   "action": "spot",
+   "destination": "byron-bay",
+   "id": "byron-bay-1",
+   "coordinates": {
+    "latitude": -28.63856,
+    "longitude": 153.63633
+   },
+   "coordinates_source": "osm via Photon (komoot) man_made=lighthouse",
+   "reason": "1.6 km from Byron Bay's centre, inside its 30.0 km reach (75% of 40 km); the town's headline headland walk and lighthouse.",
+   "category": "landmark",
+   "icon": "🗼",
+   "bio": "The lighthouse on Australia's most easterly point, with a maritime museum and a clifftop walk.",
+   "hours": "Lawn 8:00 AM – sunset; museum 10:00 AM – 4:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/historic-buildings-places/cape-byron-lighthouse",
+   "views": 4966,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Byron_Bay"
+   ],
+   "skeptic_verdict": "keep",
+   "photo": {
+    "file": "Cape Byron Lighthouse (26742976849).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Cape_Byron_Lighthouse_(26742976849).jpg",
+    "width": 4032,
+    "licence": "CC BY 2.0",
+    "photo_verdict": "candidate (skeptic: accept); not accepted until Lens",
+    "p40": 0.227,
+    "mean": 0.363,
+    "hero_crop": "ok",
+    "skeptic_note": "Lighthouse on its headland, clear, centred; p40 just above floor."
+   },
+   "needs_photo": false,
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "cost"
+   ],
+   "wiki": "Cape Byron Light",
+   "distance_km_from_destination": 1.6,
+   "inside_75pct_span": true,
+   "standalone_if_declined": {
+    "id": "cape-byron-lighthouse",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   }
+  },
+  {
+   "name": "Main Beach",
+   "action": "spot",
+   "destination": "byron-bay",
+   "id": "byron-bay-3",
+   "coordinates": {
+    "latitude": -28.64077,
+    "longitude": 153.61494
+   },
+   "coordinates_source": "osm via Photon (komoot) natural=beach Main Beach",
+   "reason": "0.8 km from Byron Bay's centre, inside its 30.0 km reach (75% of 40 km); the town beach.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "Byron Bay's patrolled town beach in front of the township, with Cape Byron on the horizon.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Byron_Bay"
+   ],
+   "skeptic_verdict": "keep",
+   "photo": {
+    "file": "Main Beach and Cape Byron, Byron Bay, New South Wales, Australia (Ank Kumar, Infosys Limited) 04.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Main_Beach_and_Cape_Byron,_Byron_Bay,_New_South_Wales,_Australia_(Ank_Kumar,_Infosys_Limited)_04.jpg",
+    "width": 6000,
+    "licence": "CC BY-SA 4.0",
+    "photo_verdict": "candidate (skeptic: accept); not accepted until Lens",
+    "p40": 0.561,
+    "mean": 0.596,
+    "hero_crop": "ok",
+    "skeptic_note": "Main Beach with Cape Byron behind; lifeguard board cut on the right but beach and headland clear."
+   },
+   "needs_photo": false,
+   "status": "ready for Pipeline C research",
+   "needs_research": [],
+   "wiki": "Main Beach, Byron Bay",
+   "distance_km_from_destination": 0.8,
+   "inside_75pct_span": true,
+   "standalone_if_declined": {
+    "id": "main-beach-byron-bay",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   }
+  },
+  {
+   "name": "Wategos Beach",
+   "action": "spot",
+   "destination": "byron-bay",
+   "id": "byron-bay-4",
+   "coordinates": {
+    "latitude": -28.63551,
+    "longitude": 153.63493
+   },
+   "coordinates_source": "osm via Photon (komoot) natural=beach",
+   "reason": "1.7 km from Byron Bay's centre, inside its 30.0 km reach (75% of 40 km); sheltered cove under the cape.",
+   "category": "beach",
+   "icon": "🏄",
+   "bio": "A sheltered beach behind the Cape Byron headland, known for its longboard surf breaks.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Byron_Bay"
+   ],
+   "skeptic_verdict": "keep",
+   "photo": {
+    "file": "2020-12-19 Wategos Beach, Byron Bay NSW 02.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:2020-12-19_Wategos_Beach,_Byron_Bay_NSW_02.jpg",
+    "width": 4032,
+    "licence": "CC BY-SA 4.0",
+    "photo_verdict": "candidate (skeptic: accept); not accepted until Lens",
+    "p40": 0.322,
+    "mean": 0.409,
+    "hero_crop": "ok",
+    "skeptic_note": "Wategos at dusk looking to the headland; moody, backlit but passes brightness (p40 0.32). Weak on check 3, a daytime shot would be better."
+   },
+   "needs_photo": false,
+   "status": "ready for Pipeline C research",
+   "needs_research": [],
+   "wiki": null,
+   "distance_km_from_destination": 1.7,
+   "inside_75pct_span": true,
+   "standalone_if_declined": {
+    "id": "wategos-beach",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   }
+  },
+  {
+   "name": "The Pass",
+   "action": "spot",
+   "destination": "byron-bay",
+   "id": "byron-bay-5",
+   "coordinates": {
+    "latitude": -28.63685,
+    "longitude": 153.62874
+   },
+   "coordinates_source": "osm via Photon (komoot) tourism=viewpoint The Pass",
+   "reason": "1.1 km from Byron Bay's centre, inside its 30.0 km reach (75% of 40 km); headland walk between Main Beach and Wategos.",
+   "category": "beach",
+   "icon": "🏄",
+   "bio": "A headland surf break and lookout between Main Beach and Wategos, on the walk to Cape Byron.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Byron_Bay"
+   ],
+   "skeptic_verdict": "keep",
+   "photo": {
+    "file": "Cape Byron Marine Protected area.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Cape_Byron_Marine_Protected_area.jpg",
+    "width": 5152,
+    "licence": "CC BY-SA 4.0",
+    "photo_verdict": "candidate (skeptic: accept); not accepted until Lens",
+    "p40": 0.353,
+    "mean": 0.419,
+    "hero_crop": "ok",
+    "skeptic_note": "File is categorised The Pass, Byron Bay; rocks and surf at The Pass."
+   },
+   "needs_photo": false,
+   "status": "ready for Pipeline C research",
+   "needs_research": [],
+   "wiki": "The Pass, Byron Bay",
+   "distance_km_from_destination": 1.1,
+   "inside_75pct_span": true,
+   "standalone_if_declined": {
+    "id": "the-pass-byron-bay",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   }
+  },
+  {
+   "name": "Julian Rocks",
+   "action": "spot",
+   "destination": "byron-bay",
+   "id": "byron-bay-6",
+   "coordinates": {
+    "latitude": -28.61153,
+    "longitude": 153.62888
+   },
+   "coordinates_source": "osm via Photon (komoot) place=islet Nguthungulli Julian Rocks (offshore dive/snorkel site, in water is correct)",
+   "reason": "3.8 km from Byron Bay's centre, inside its 30.0 km reach (75% of 40 km); offshore marine reserve reached by dive and snorkel boats from the town (the place, not the operators).",
+   "category": "nature",
+   "icon": "🤿",
+   "bio": "A marine reserve and diving and snorkelling reef about five minutes off Byron Bay, reached by dive-operator boat.",
+   "hours": "Boat tours, weather permitting",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 813,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Byron_Bay"
+   ],
+   "skeptic_verdict": "keep",
+   "photo": null,
+   "needs_photo": true,
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "cost"
+   ],
+   "wiki": "Nguthungulli Julian Rocks Nature Reserve",
+   "distance_km_from_destination": 3.8,
+   "inside_75pct_span": true,
+   "standalone_if_declined": {
+    "id": "julian-rocks",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   }
+  },
+  {
+   "name": "Tallow Beach",
+   "action": "spot",
+   "destination": "byron-bay",
+   "id": "byron-bay-11",
+   "coordinates": {
+    "latitude": -28.66918,
+    "longitude": 153.62101
+   },
+   "coordinates_source": "osm via Photon (komoot) natural=beach (long beach; access Suffolk Park end, point is the OSM feature)",
+   "reason": "2.7 km from Byron Bay's centre, inside its 30.0 km reach (75% of 40 km); long beach pinned at its OSM feature; visitors reach it from the Suffolk Park end, 3 km south, and Byron is the base.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A long beach south of Byron Bay towards Broken Head, reached from Suffolk Park, for swimming and whale watching.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Byron_Bay"
+   ],
+   "skeptic_verdict": "keep",
+   "photo": {
+    "file": "Broken Head From Tallow Beach October 2008.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Broken_Head_From_Tallow_Beach_October_2008.jpg",
+    "width": 1680,
+    "licence": "Public domain",
+    "photo_verdict": "candidate (skeptic: accept); not accepted until Lens",
+    "p40": 0.482,
+    "mean": 0.576,
+    "hero_crop": "ok",
+    "skeptic_note": "Broken Head from Tallow Beach (public domain, 2008); the beach is the subject, headland small at the far right."
+   },
+   "needs_photo": false,
+   "status": "ready for Pipeline C research",
+   "needs_research": [],
+   "wiki": null,
+   "distance_km_from_destination": 2.7,
+   "inside_75pct_span": true,
+   "standalone_if_declined": {
+    "id": "tallow-beach",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   }
+  },
+  {
+   "name": "Crystal Castle and Shambhala Gardens",
+   "action": "spot",
+   "destination": "byron-bay",
+   "id": "byron-bay-7",
+   "coordinates": {
+    "latitude": -28.59194,
+    "longitude": 153.45928
+   },
+   "coordinates_source": "osm via Photon (komoot) tourism=attraction (candidate point 550 m east was wrong)",
+   "reason": "16.9 km from Byron Bay's centre, inside its 30.0 km reach (75% of 40 km); hinterland attraction reached from Byron.",
+   "category": "entertainment",
+   "icon": "💎",
+   "bio": "A crystal collection and gardens at Montecollum in the hinterland, open daily.",
+   "hours": "10:00 AM – 5:00 PM (last entry 4:00 PM)",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://crystalcastle.com.au/",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Mullumbimby"
+   ],
+   "skeptic_verdict": "keep",
+   "photo": null,
+   "needs_photo": true,
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "cost"
+   ],
+   "wiki": "Crystal Castle (Byron Bay)",
+   "distance_km_from_destination": 16.9,
+   "inside_75pct_span": true,
+   "standalone_if_declined": {
+    "id": "crystal-castle-and-shambhala-gardens",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   }
+  },
+  {
+   "name": "Brunswick Heads",
+   "action": "spot",
+   "destination": "byron-bay",
+   "id": "byron-bay-8",
+   "coordinates": {
+    "latitude": -28.53889,
+    "longitude": 153.54838
+   },
+   "coordinates_source": "osm via Photon (komoot) place=town",
+   "reason": "13.8 km from Byron Bay's centre, inside its 30.0 km reach (75% of 40 km); day trip named by Wikivoyage Byron Bay.",
+   "category": "landmark",
+   "icon": "🏡",
+   "bio": "A river-mouth village north of Byron Bay with a quiet beach and riverside pub, a Byron day trip.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 5856,
+   "counted_sources": [],
+   "skeptic_verdict": "keep",
+   "photo": {
+    "file": "Brunswick Heads swimming hole.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Brunswick_Heads_swimming_hole.JPG",
+    "width": 1632,
+    "licence": "Public domain",
+    "photo_verdict": "candidate (skeptic: accept); not accepted until Lens",
+    "p40": 0.349,
+    "mean": 0.475,
+    "hero_crop": "ok",
+    "skeptic_note": "Brunswick Heads swimming hole and beach at the river mouth; file name and category confirm the place."
+   },
+   "needs_photo": false,
+   "status": "ready for Pipeline C research",
+   "needs_research": [],
+   "wiki": "Brunswick Heads, New South Wales",
+   "distance_km_from_destination": 13.8,
+   "inside_75pct_span": true,
+   "standalone_if_declined": {
+    "id": "brunswick-heads",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   }
+  },
+  {
+   "name": "Bangalow",
+   "action": "spot",
+   "destination": "byron-bay",
+   "id": "byron-bay-9",
+   "coordinates": {
+    "latitude": -28.68167,
+    "longitude": 153.51778
+   },
+   "coordinates_source": "osm via Photon (komoot) place=locality",
+   "reason": "10.9 km from Byron Bay's centre, inside its 30.0 km reach (75% of 40 km); hinterland village reached from Byron.",
+   "category": "landmark",
+   "icon": "🏡",
+   "bio": "A hinterland village with a well-preserved nineteenth-century main street.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 7971,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Northern_Rivers",
+    "https://www.visitnsw.com/destinations/north-coast/northern-rivers"
+   ],
+   "skeptic_verdict": "keep",
+   "photo": null,
+   "needs_photo": true,
+   "status": "ready for Pipeline C research",
+   "needs_research": [],
+   "wiki": null,
+   "distance_km_from_destination": 10.9,
+   "inside_75pct_span": true,
+   "standalone_if_declined": {
+    "id": "bangalow-nsw",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   }
+  },
+  {
+   "name": "Mullumbimby",
+   "action": "spot",
+   "destination": "byron-bay",
+   "id": "byron-bay-10",
+   "coordinates": {
+    "latitude": -28.54833,
+    "longitude": 153.50111
+   },
+   "coordinates_source": "osm via Photon (komoot) place=locality",
+   "reason": "15.9 km from Byron Bay's centre, inside its 30.0 km reach (75% of 40 km); hinterland town reached from Byron.",
+   "category": "landmark",
+   "icon": "🏡",
+   "bio": "A hinterland town beneath Mount Chincogan in Byron Shire, a stop for visitors exploring the hills behind Byron Bay.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 52209,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Northern_Rivers"
+   ],
+   "skeptic_verdict": "keep",
+   "photo": null,
+   "needs_photo": true,
+   "status": "ready for Pipeline C research",
+   "needs_research": [],
+   "wiki": null,
+   "distance_km_from_destination": 15.9,
+   "inside_75pct_span": true,
+   "standalone_if_declined": {
+    "id": "mullumbimby",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   }
+  },
+  {
+   "name": "Lennox Head",
+   "action": "spot",
+   "destination": "ballina",
+   "id": "ballina-1",
+   "coordinates": {
+    "latitude": -28.79103,
+    "longitude": 153.5878
+   },
+   "coordinates_source": "osm via Photon (komoot) place=locality (village)",
+   "reason": "8.6 km from Ballina's centre, inside its 22.5 km reach (75% of 30 km); surf village between Byron and Ballina, nearer Ballina.",
+   "category": "landmark",
+   "icon": "🏄",
+   "bio": "A surf village on Seven Mile Beach, with Lake Ainsworth and the Lennox Point headland beside it.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 15462,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Northern_Rivers",
+    "https://en.wikivoyage.org/wiki/Lennox_Head"
+   ],
+   "skeptic_verdict": "keep",
+   "photo": {
+    "file": "Pat Morton Lookout Dec 2024-3.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Pat_Morton_Lookout_Dec_2024-3.jpg",
+    "width": 4624,
+    "licence": "CC BY 4.0",
+    "photo_verdict": "candidate (skeptic: accept); not accepted until Lens",
+    "p40": 0.431,
+    "mean": 0.496,
+    "hero_crop": "ok",
+    "skeptic_note": "Pat Morton Lookout, Lennox Head, over the bay and beach to the north; the village itself is not shown, view is the draw."
+   },
+   "needs_photo": false,
+   "status": "ready for Pipeline C research",
+   "needs_research": [],
+   "wiki": null,
+   "distance_km_from_destination": 8.6,
+   "inside_75pct_span": true,
+   "standalone_if_declined": {
+    "id": "lennox-head",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   }
+  },
+  {
+   "name": "Seven Mile Beach",
+   "action": "spot",
+   "destination": "ballina",
+   "id": "ballina-2",
+   "coordinates": {
+    "latitude": -28.76351,
+    "longitude": 153.59897
+   },
+   "coordinates_source": "osm via Photon (komoot) natural=beach",
+   "reason": "11.8 km from Ballina's centre, inside its 22.5 km reach (75% of 30 km); long beach pinned at its OSM feature; access at Lennox Head, a Ballina-side base.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A wide ocean beach running from Broken Head to Lennox Head, used for surfing and horse riding.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lennox_Head"
+   ],
+   "skeptic_verdict": "keep",
+   "photo": {
+    "file": "Lennox Head Beach looking south - panoramio.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Lennox_Head_Beach_looking_south_-_panoramio.jpg",
+    "width": 2272,
+    "licence": "CC BY-SA 3.0",
+    "photo_verdict": "candidate (skeptic: accept); not accepted until Lens",
+    "p40": 0.424,
+    "mean": 0.44,
+    "hero_crop": "ok",
+    "skeptic_note": "Lennox Head beach looking south, dune and Lennox headland; plain sky but the right beach."
+   },
+   "needs_photo": false,
+   "status": "ready for Pipeline C research",
+   "needs_research": [],
+   "wiki": null,
+   "distance_km_from_destination": 11.8,
+   "inside_75pct_span": true,
+   "wiki_note": "Shares its name with Seven Mile Beach near Shoalhaven; give it an explicit WIKI_IMAGE_OVERRIDES photo.",
+   "standalone_if_declined": {
+    "id": "seven-mile-beach-lennox-head",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   }
+  },
+  {
+   "name": "Lake Ainsworth",
+   "action": "spot",
+   "destination": "ballina",
+   "id": "ballina-3",
+   "coordinates": {
+    "latitude": -28.7824,
+    "longitude": 153.59153
+   },
+   "coordinates_source": "osm via Photon (komoot) water=lake",
+   "reason": "9.6 km from Ballina's centre, inside its 22.5 km reach (75% of 30 km); dune lake behind Lennox Head.",
+   "category": "nature",
+   "icon": "🏞️",
+   "bio": "A freshwater dune lake with tea-tree-stained water behind the beach at Lennox Head.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lennox_Head"
+   ],
+   "skeptic_verdict": "keep",
+   "photo": null,
+   "needs_photo": true,
+   "status": "ready for Pipeline C research",
+   "needs_research": [],
+   "wiki": null,
+   "distance_km_from_destination": 9.6,
+   "inside_75pct_span": true,
+   "standalone_if_declined": {
+    "id": "lake-ainsworth",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   }
+  },
+  {
+   "name": "The Big Prawn",
+   "action": "spot",
+   "destination": "ballina",
+   "id": "ballina-5",
+   "coordinates": {
+    "latitude": -28.86374,
+    "longitude": 153.53258
+   },
+   "coordinates_source": "osm via Photon (komoot) tourism=attraction",
+   "reason": "3.3 km from Ballina's centre, inside its 22.5 km reach (75% of 30 km); roadside icon (Ohakune Carrot type) on the way into Ballina.",
+   "category": "landmark",
+   "icon": "🦐",
+   "bio": "A giant prawn sculpture beside the road into Ballina, one of Australia's roadside Big Things.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Ballina_(New_South_Wales)"
+   ],
+   "skeptic_verdict": "keep",
+   "photo": {
+    "file": "The Big Prawn Bunnings Ballina NSW L1010612.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:The_Big_Prawn_Bunnings_Ballina_NSW_L1010612.jpg",
+    "width": 8368,
+    "licence": "CC BY-SA 4.0",
+    "photo_verdict": "candidate (skeptic: accept); not accepted until Lens",
+    "p40": 0.514,
+    "mean": 0.576,
+    "hero_crop": "ok",
+    "skeptic_note": "Big Prawn at Ballina, centred, current colour."
+   },
+   "needs_photo": false,
+   "status": "ready for Pipeline C research",
+   "needs_research": [],
+   "wiki": null,
+   "distance_km_from_destination": 3.3,
+   "inside_75pct_span": true,
+   "standalone_if_declined": {
+    "id": "the-big-prawn",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   }
+  },
+  {
+   "name": "Lighthouse Beach",
+   "action": "spot",
+   "destination": "ballina",
+   "id": "ballina-6",
+   "coordinates": {
+    "latitude": -28.87153,
+    "longitude": 153.59041
+   },
+   "coordinates_source": "osm via Photon (komoot) natural=beach",
+   "reason": "2.5 km from Ballina's centre, inside its 22.5 km reach (75% of 30 km); East Ballina ocean beach.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "The main ocean beach at East Ballina, patrolled from September to April, below Ballina Head Lighthouse.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 452,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Ballina_(New_South_Wales)"
+   ],
+   "skeptic_verdict": "keep",
+   "photo": {
+    "file": "Lighthouse Beach Ballina.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Lighthouse_Beach_Ballina.jpg",
+    "width": 3853,
+    "licence": "CC BY-SA 4.0",
+    "photo_verdict": "candidate (skeptic: accept); not accepted until Lens",
+    "p40": 0.624,
+    "mean": 0.57,
+    "hero_crop": "ok",
+    "skeptic_note": "Lighthouse Beach from the lookout, whole beach visible."
+   },
+   "needs_photo": false,
+   "status": "ready for Pipeline C research",
+   "needs_research": [],
+   "wiki": "Lighthouse Beach, New South Wales",
+   "distance_km_from_destination": 2.5,
+   "inside_75pct_span": true,
+   "standalone_if_declined": {
+    "id": "lighthouse-beach-ballina",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   }
+  },
+  {
+   "name": "Murwillumbah",
+   "action": "spot",
+   "destination": "tweed-heads",
+   "id": "tweed-heads-1",
+   "coordinates": {
+    "latitude": -28.32676,
+    "longitude": 153.39715
+   },
+   "coordinates_source": "osm via Photon (komoot) place=town",
+   "reason": "21.8 km from Tweed Heads's centre, inside its 37.5 km reach (75% of 50 km); valley town and gateway to Wollumbin and the Border Ranges; a spot, not a destination, to avoid a second pin 22 km away.",
+   "category": "landmark",
+   "icon": "🏡",
+   "bio": "The Tweed Shire seat on the Tweed River and the gateway to Wollumbin and the Border Ranges, with a heritage wharf.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 34825,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Northern_Rivers",
+    "https://en.wikivoyage.org/wiki/Murwillumbah"
+   ],
+   "skeptic_verdict": "keep",
+   "photo": null,
+   "needs_photo": true,
+   "status": "ready for Pipeline C research",
+   "needs_research": [],
+   "wiki": null,
+   "distance_km_from_destination": 21.8,
+   "inside_75pct_span": true,
+   "standalone_if_declined": {
+    "id": "murwillumbah",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   }
+  },
+  {
+   "name": "Wollumbin National Park",
+   "action": "spot",
+   "destination": "tweed-heads",
+   "id": "tweed-heads-2",
+   "coordinates": {
+    "latitude": -28.38961,
+    "longitude": 153.25795
+   },
+   "coordinates_source": "osm via Photon (komoot) leisure=nature_reserve centroid; the Mount Warning car park is the visitor point and should be taken from NPWS/OSM before applying",
+   "reason": "36.5 km from Tweed Heads's centre, inside its 37.5 km reach (75% of 50 km); park folded in (np_exception); Mount Warning is the same place and is named in the bio only. Held for a pin.",
+   "category": "nature",
+   "icon": "🌋",
+   "bio": "World Heritage rainforest park around Wollumbin (Mount Warning); the summit track is closed, a short lookout walk remains.",
+   "hours": "Daylight; entrance gate may close from 5 PM in winter and 6 PM in summer",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/wollumbin-national-park",
+   "views": 1127,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Northern_Rivers",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/wollumbin-national-park"
+   ],
+   "skeptic_verdict": "keep",
+   "photo": {
+    "file": "Mt Warning as seen from Pinnacle Lookout in the NSW Border Ranges.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Mt_Warning_as_seen_from_Pinnacle_Lookout_in_the_NSW_Border_Ranges.jpg",
+    "width": 4032,
+    "licence": "CC BY-SA 4.0",
+    "photo_verdict": "candidate (skeptic: accept); not accepted until Lens",
+    "p40": 0.451,
+    "mean": 0.532,
+    "hero_crop": {
+     "x": 0.4,
+     "y": 0.4
+    },
+    "skeptic_note": "Mount Warning (Wollumbin) from Pinnacle Lookout, Border Ranges: the peak in a 2:1 file; peak in upper-middle of the crop. Right mountain by category; a long-lens view, not inside the park. Mountain left of centre."
+   },
+   "needs_photo": false,
+   "status": "held for pin; not applied until pinned",
+   "needs_research": [
+    "cost"
+   ],
+   "wiki": null,
+   "distance_km_from_destination": 36.5,
+   "inside_75pct_span": true,
+   "held_for_pin": true,
+   "hold_reason": "centroid only; replace with the Mount Warning car park/walk start from NPWS or OSM",
+   "aliases": [
+    "Mount Warning"
+   ],
+   "standalone_if_declined": {
+    "id": "wollumbin-national-park",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   }
+  },
+  {
+   "name": "Point Danger",
+   "action": "spot",
+   "destination": "tweed-heads",
+   "id": "tweed-heads-4",
+   "coordinates": {
+    "latitude": -28.16507,
+    "longitude": 153.551
+   },
+   "coordinates_source": "osm via Photon (komoot) natural=cliff Point Danger",
+   "reason": "1.9 km from Tweed Heads's centre, inside its 37.5 km reach (75% of 50 km); border headland at the town.",
+   "category": "landmark",
+   "icon": "🗼",
+   "bio": "The headland where the NSW-Queensland border meets the sea, with a lighthouse, parkland and whale watching.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 2426,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Tweed_Heads"
+   ],
+   "skeptic_verdict": "keep",
+   "photo": {
+    "file": "Point Danger and Tweed River mouth, Tweed Heads IMGP1702.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Point_Danger_and_Tweed_River_mouth,_Tweed_Heads_IMGP1702.jpg",
+    "width": 3008,
+    "licence": "CC BY-SA 4.0",
+    "photo_verdict": "candidate (skeptic: accept); not accepted until Lens",
+    "p40": 0.286,
+    "mean": 0.377,
+    "hero_crop": "ok",
+    "skeptic_note": "Point Danger and Tweed River mouth, categorised Point Danger/Tweed Heads; headland low at the left, beach and river dominate."
+   },
+   "needs_photo": false,
+   "status": "ready for Pipeline C research",
+   "needs_research": [],
+   "wiki": "Point Danger (Tweed Heads)",
+   "distance_km_from_destination": 1.9,
+   "inside_75pct_span": true,
+   "standalone_if_declined": {
+    "id": "point-danger",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   }
+  },
+  {
+   "name": "Fingal Head",
+   "action": "spot",
+   "destination": "tweed-heads",
+   "id": "tweed-heads-5",
+   "coordinates": {
+    "latitude": -28.2,
+    "longitude": 153.57084
+   },
+   "coordinates_source": "osm via Photon (komoot) man_made=lighthouse Fingal Head Lighthouse",
+   "reason": "3.1 km from Tweed Heads's centre, inside its 37.5 km reach (75% of 50 km); headland south of the town.",
+   "category": "landmark",
+   "icon": "🗼",
+   "bio": "A volcanic headland with a lighthouse and basalt columns, just south of the Queensland border.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 11093,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Tweed_Heads"
+   ],
+   "skeptic_verdict": "keep",
+   "photo": {
+    "file": "Fingal Head Lighthouse, Fingal Head, New South Wales 05.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Fingal_Head_Lighthouse,_Fingal_Head,_New_South_Wales_05.jpg",
+    "width": 4032,
+    "licence": "CC BY-SA 4.0",
+    "photo_verdict": "candidate (skeptic: accept); not accepted until Lens",
+    "p40": 0.475,
+    "mean": 0.487,
+    "hero_crop": "ok",
+    "skeptic_note": "Fingal Head Lighthouse, centred, clear."
+   },
+   "needs_photo": false,
+   "status": "ready for Pipeline C research",
+   "needs_research": [],
+   "wiki": "Fingal Head, New South Wales",
+   "distance_km_from_destination": 3.1,
+   "inside_75pct_span": true,
+   "pin_note": "latitude -28.2 is round (OSM lighthouse node); re-check with resolve-pin.py before apply, lint flags <=3 decimals",
+   "standalone_if_declined": {
+    "id": "fingal-head-nsw",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   }
+  },
+  {
+   "name": "Tweed Regional Gallery",
+   "action": "spot",
+   "destination": "tweed-heads",
+   "id": "tweed-heads-6",
+   "coordinates": {
+    "latitude": -28.34891,
+    "longitude": 153.40024
+   },
+   "coordinates_source": "osm via Photon (komoot) tourism=gallery",
+   "reason": "23.5 km from Tweed Heads's centre, inside its 37.5 km reach (75% of 50 km); Murwillumbah gallery with the Margaret Olley Art Centre.",
+   "category": "museum",
+   "icon": "🖼️",
+   "bio": "A contemporary art gallery in Murwillumbah that includes the Margaret Olley Art Centre and her recreated studio.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://gallery.tweed.nsw.gov.au/",
+   "views": 649,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Murwillumbah"
+   ],
+   "skeptic_verdict": "keep",
+   "photo": {
+    "file": "Tweed Regional Gallery 01.jpeg",
+    "page": "https://commons.wikimedia.org/wiki/File:Tweed_Regional_Gallery_01.jpeg",
+    "width": 3264,
+    "licence": "CC BY-SA 4.0",
+    "photo_verdict": "candidate (skeptic: accept); not accepted until Lens",
+    "p40": 0.357,
+    "mean": 0.514,
+    "hero_crop": "ok",
+    "skeptic_note": "Gallery building with coloured fins, the building is the attraction."
+   },
+   "needs_photo": false,
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "hours",
+    "cost"
+   ],
+   "wiki": "Tweed Regional Gallery",
+   "distance_km_from_destination": 23.5,
+   "inside_75pct_span": true,
+   "standalone_if_declined": {
+    "id": "tweed-regional-gallery",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   }
+  },
+  {
+   "name": "Cabarita Beach",
+   "action": "spot",
+   "destination": "tweed-heads",
+   "id": "tweed-heads-8",
+   "coordinates": {
+    "latitude": -28.3314,
+    "longitude": 153.57179
+   },
+   "coordinates_source": "osm via Photon (komoot) natural=beach",
+   "reason": "16.8 km from Tweed Heads's centre, inside its 37.5 km reach (75% of 50 km); Tweed coast surf beach.",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A surf beach on the Tweed coast with a beachside hotel.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 6314,
+   "counted_sources": [
+    "https://www.visitnsw.com/destinations/north-coast/northern-rivers"
+   ],
+   "skeptic_verdict": "keep",
+   "photo": {
+    "file": "Cabarita Beach - panoramio.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Cabarita_Beach_-_panoramio.jpg",
+    "width": 3264,
+    "licence": "CC BY-SA 3.0",
+    "photo_verdict": "candidate (skeptic: accept); not accepted until Lens",
+    "p40": 0.498,
+    "mean": 0.491,
+    "hero_crop": "ok",
+    "skeptic_note": "Cabarita Beach from the headland (panoramio import, 2012, 3264 px), whole beach visible."
+   },
+   "needs_photo": false,
+   "status": "ready for Pipeline C research",
+   "needs_research": [],
+   "wiki": "Cabarita Beach, New South Wales",
+   "distance_km_from_destination": 16.8,
+   "inside_75pct_span": true,
+   "standalone_if_declined": {
+    "id": "cabarita-beach",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   }
+  },
+  {
+   "name": "Tropical Fruit World",
+   "action": "spot",
+   "destination": "tweed-heads",
+   "id": "tweed-heads-9",
+   "coordinates": {
+    "latitude": -28.28387,
+    "longitude": 153.52486
+   },
+   "coordinates_source": "osm via Photon (komoot) landuse=farmland (attraction site, Duranbah)",
+   "reason": "11.6 km from Tweed Heads's centre, inside its 37.5 km reach (75% of 50 km); paid farm attraction at Duranbah.",
+   "category": "entertainment",
+   "icon": "🥭",
+   "bio": "A tropical fruit farm at Duranbah with tours, tastings and the Big Avocado; paid entry.",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Tweed_Heads",
+    "https://www.visitnsw.com/destinations/north-coast/northern-rivers"
+   ],
+   "skeptic_verdict": "keep",
+   "photo": null,
+   "needs_photo": true,
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "wiki": "Tropical Fruit World",
+   "distance_km_from_destination": 11.6,
+   "inside_75pct_span": true,
+   "standalone_if_declined": {
+    "id": "tropical-fruit-world",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   }
+  },
+  {
+   "name": "Nimbin",
+   "action": "spot",
+   "destination": "lismore",
+   "id": "lismore-1",
+   "coordinates": {
+    "latitude": -28.59405,
+    "longitude": 153.22298
+   },
+   "coordinates_source": "osm via Photon (komoot) place=locality (candidate point 1.5 km north)",
+   "reason": "24.4 km from Lismore's centre, inside its 33.8 km reach (75% of 45 km); village at the edge of Nightcap, reached from Lismore.",
+   "category": "landmark",
+   "icon": "🌈",
+   "bio": "A hinterland village known for its alternative culture and colourful main street.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 41372,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Northern_Rivers",
+    "https://en.wikivoyage.org/wiki/Nimbin",
+    "https://www.visitnsw.com/destinations/north-coast/northern-rivers"
+   ],
+   "skeptic_verdict": "keep",
+   "photo": {
+    "file": "Nimbin main street February 2014 (1).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Nimbin_main_street_February_2014_(1).jpg",
+    "width": 4752,
+    "licence": "CC BY-SA 4.0",
+    "photo_verdict": "candidate (skeptic: accept); not accepted until Lens",
+    "p40": 0.337,
+    "mean": 0.451,
+    "hero_crop": {
+     "x": 0.35,
+     "y": 0.5
+    },
+    "skeptic_note": "Nimbin main street with its painted shopfronts; a woman is large at the right edge, so use hero_crop x 0.35. Marginal on the no-people rule."
+   },
+   "needs_photo": false,
+   "status": "ready for Pipeline C research",
+   "needs_research": [],
+   "wiki": "Nimbin, New South Wales",
+   "distance_km_from_destination": 24.4,
+   "inside_75pct_span": true,
+   "standalone_if_declined": {
+    "id": "nimbin",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   }
+  },
+  {
+   "name": "Nightcap National Park",
+   "action": "spot",
+   "destination": "lismore",
+   "id": "lismore-2",
+   "coordinates": {
+    "latitude": -28.56003,
+    "longitude": 153.32127
+   },
+   "coordinates_source": "osm via Photon (komoot) leisure=nature_reserve centroid; visitor hubs are Minyon Falls (-28.6126,153.3902) and Rummery Park/Terania Creek on the Nimbin side",
+   "reason": "27.9 km from Lismore's centre, inside its 33.8 km reach (75% of 45 km); park folded in (np_exception); held for a pin.",
+   "category": "nature",
+   "icon": "🌳",
+   "bio": "A World Heritage rainforest park of waterfalls, creeks and walks between Lismore and Nimbin.",
+   "hours": "Open daily; check current alerts",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/nightcap-national-park",
+   "views": 2214,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Northern_Rivers",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/nightcap-national-park",
+    "https://www.visitnsw.com/destinations/north-coast/northern-rivers"
+   ],
+   "skeptic_verdict": "keep",
+   "photo": {
+    "file": "Terania Rapids in Nightcap National Park, NSW (35363169706).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Terania_Rapids_in_Nightcap_National_Park,_NSW_(35363169706).jpg",
+    "width": 5711,
+    "licence": "CC BY 2.0",
+    "photo_verdict": "candidate (skeptic: accept); not accepted until Lens",
+    "p40": 0.133,
+    "mean": 0.271,
+    "hero_crop": "ok",
+    "skeptic_note": "Terania Rapids, Nightcap NP (CC BY 2.0, 2017), right place and strong, but centre p40 0.13 / mean 0.27, below floor: needs scripts/curation/brighten.py before use."
+   },
+   "needs_photo": false,
+   "status": "held for pin; not applied until pinned",
+   "needs_research": [
+    "cost"
+   ],
+   "wiki": null,
+   "distance_km_from_destination": 27.9,
+   "inside_75pct_span": true,
+   "held_for_pin": true,
+   "hold_reason": "centroid only; visitor hubs are Minyon Falls lookout and Rummery Park/Terania Creek",
+   "standalone_if_declined": {
+    "id": "nightcap-national-park",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   }
+  },
+  {
+   "name": "Minyon Falls",
+   "action": "spot",
+   "destination": "lismore",
+   "id": "lismore-3",
+   "coordinates": {
+    "latitude": -28.61263,
+    "longitude": 153.39021
+   },
+   "coordinates_source": "osm via Photon (komoot) tourism=viewpoint Minyon Falls Lookout",
+   "reason": "24.2 km from Lismore's centre, inside its 33.8 km reach (75% of 45 km); lookout and waterfall inside Nightcap; a distinct named stop three guides single out.",
+   "category": "nature",
+   "icon": "💦",
+   "bio": "A waterfall of about 100 m in Nightcap National Park, with a lookout, a picnic area and a walking track to the base.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/minyon-falls-lookout",
+   "views": 4134,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Mullumbimby",
+    "https://www.visitnsw.com/destinations/north-coast/northern-rivers",
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/nightcap-national-park"
+   ],
+   "skeptic_verdict": "keep",
+   "photo": {
+    "file": "Minyon Falls, February 2026 03.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Minyon_Falls,_February_2026_03.jpg",
+    "width": 4032,
+    "licence": "CC0",
+    "photo_verdict": "candidate (skeptic: accept); not accepted until Lens",
+    "p40": 0.384,
+    "mean": 0.486,
+    "hero_crop": "ok",
+    "skeptic_note": "Minyon Falls with its cliff, 2026, CC0; falls central in the crop."
+   },
+   "needs_photo": false,
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "hours",
+    "cost"
+   ],
+   "wiki": null,
+   "distance_km_from_destination": 24.2,
+   "inside_75pct_span": true,
+   "standalone_if_declined": {
+    "id": "minyon-falls",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   }
+  },
+  {
+   "name": "Lismore Regional Gallery",
+   "action": "spot",
+   "destination": "lismore",
+   "id": "lismore-4",
+   "coordinates": {
+    "latitude": -28.80968,
+    "longitude": 153.2793
+   },
+   "coordinates_source": "osm via Photon (komoot) tourism=gallery",
+   "reason": "0.2 km from Lismore's centre, inside its 33.8 km reach (75% of 45 km); the city's own attraction.",
+   "category": "museum",
+   "icon": "🖼️",
+   "bio": "A regional art gallery in Lismore, open Wednesday to Sunday.",
+   "hours": "10:00 AM – 4:00 PM (Thursday until 6:00 PM)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://www.lismoregallery.org/",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lismore_(New_South_Wales)",
+    "https://www.visitnsw.com/destinations/north-coast/northern-rivers"
+   ],
+   "skeptic_verdict": "keep",
+   "photo": {
+    "file": "Lismore Regional Gallery, July 2025 01.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Lismore_Regional_Gallery,_July_2025_01.jpg",
+    "width": 4032,
+    "licence": "CC0",
+    "photo_verdict": "candidate (skeptic: accept); not accepted until Lens",
+    "p40": 0.333,
+    "mean": 0.429,
+    "hero_crop": "ok",
+    "skeptic_note": "Gallery frontage with name on wall; the building is the attraction."
+   },
+   "needs_photo": false,
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "cost"
+   ],
+   "wiki": null,
+   "distance_km_from_destination": 0.2,
+   "inside_75pct_span": true,
+   "standalone_if_declined": {
+    "id": "lismore-regional-gallery",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   }
+  },
+  {
+   "name": "Angourie Point",
+   "action": "spot",
+   "destination": "yamba",
+   "id": "yamba-1",
+   "coordinates": {
+    "latitude": -29.48383,
+    "longitude": 153.36791
+   },
+   "coordinates_source": "osm via Photon (komoot) place=locality Angourie Point (Angourie Point Beach feature at -29.48237,153.36498)",
+   "reason": "4.9 km from Yamba's centre, inside its 22.5 km reach (75% of 30 km); surf headland; held for a pin (OSM locality point).",
+   "category": "landmark",
+   "icon": "🏄",
+   "bio": "A famed surf headland south of Yamba, with a rocky point and lookout, at the start of the Yuraygir coast.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": [
+    "https://www.visitnsw.com/destinations/north-coast/clarence-valley"
+   ],
+   "skeptic_verdict": "keep",
+   "photo": {
+    "file": "Angourie Beach.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Angourie_Beach.jpg",
+    "width": 5669,
+    "licence": "CC BY 2.0",
+    "photo_verdict": "candidate (skeptic: accept); not accepted until Lens",
+    "p40": 0.58,
+    "mean": 0.62,
+    "hero_crop": "ok",
+    "skeptic_note": "Angourie Beach/point with dead tree and headland, 5669 px."
+   },
+   "needs_photo": false,
+   "status": "held for pin; not applied until pinned",
+   "needs_research": [],
+   "wiki": "Angourie Point",
+   "distance_km_from_destination": 4.9,
+   "inside_75pct_span": true,
+   "held_for_pin": true,
+   "hold_reason": "OSM place=locality; use the Angourie Point Beach feature (-29.48237,153.36498) or the lookout",
+   "standalone_if_declined": {
+    "id": "angourie-point",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   }
+  },
+  {
+   "name": "Maclean",
+   "action": "spot",
+   "destination": "yamba",
+   "id": "yamba-4",
+   "coordinates": {
+    "latitude": -29.45667,
+    "longitude": 153.20111
+   },
+   "coordinates_source": "osm via Photon (komoot) place=locality",
+   "reason": "15.4 km from Yamba's centre, inside its 22.5 km reach (75% of 30 km); riverside heritage town up the Clarence.",
+   "category": "landmark",
+   "icon": "🏡",
+   "bio": "A Scottish-heritage river town on the Clarence River.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 12441,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Northern_Rivers",
+    "https://www.visitnsw.com/destinations/north-coast/clarence-valley"
+   ],
+   "skeptic_verdict": "keep",
+   "photo": null,
+   "needs_photo": true,
+   "status": "ready for Pipeline C research",
+   "needs_research": [],
+   "wiki": "Maclean, New South Wales",
+   "distance_km_from_destination": 15.4,
+   "inside_75pct_span": true,
+   "standalone_if_declined": {
+    "id": "maclean-nsw",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   }
+  },
+  {
+   "name": "Iluka",
+   "action": "spot",
+   "destination": "yamba",
+   "id": "yamba-5",
+   "coordinates": {
+    "latitude": -29.40751,
+    "longitude": 153.35124
+   },
+   "coordinates_source": "osm via Photon (komoot) place=locality",
+   "reason": "3.7 km from Yamba's centre, inside its 22.5 km reach (75% of 30 km); village across the river from Yamba.",
+   "category": "landmark",
+   "icon": "🏡",
+   "bio": "A fishing village across the Clarence River from Yamba, beside World Heritage rainforest and the Iluka beaches.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 8257,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Northern_Rivers",
+    "https://en.wikivoyage.org/wiki/Iluka",
+    "https://www.visitnsw.com/destinations/north-coast/clarence-valley"
+   ],
+   "skeptic_verdict": "keep",
+   "photo": {
+    "file": "Iluka Bluff - panoramio (1).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Iluka_Bluff_-_panoramio_(1).jpg",
+    "width": 3582,
+    "licence": "CC BY 3.0",
+    "photo_verdict": "candidate (skeptic: accept); not accepted until Lens",
+    "p40": 0.4,
+    "mean": 0.49,
+    "hero_crop": "ok",
+    "skeptic_note": "Iluka Bluff coastline rock platform (panoramio import); the coast at Iluka rather than the village."
+   },
+   "needs_photo": false,
+   "status": "ready for Pipeline C research",
+   "needs_research": [],
+   "wiki": "Iluka, New South Wales",
+   "distance_km_from_destination": 3.7,
+   "inside_75pct_span": true,
+   "standalone_if_declined": {
+    "id": "iluka",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   }
+  },
+  {
+   "name": "Iluka Nature Reserve",
+   "action": "spot",
+   "destination": "yamba",
+   "id": "yamba-6",
+   "coordinates": {
+    "latitude": -29.40439,
+    "longitude": 153.36063
+   },
+   "coordinates_source": "osm via Photon (komoot) natural=wood Iluka Nature Reserve",
+   "reason": "4.0 km from Yamba's centre, inside its 22.5 km reach (75% of 30 km); single-site World Heritage reserve folded in (np_exception).",
+   "category": "nature",
+   "icon": "🌿",
+   "bio": "A World Heritage reserve with the state's largest stand of littoral rainforest and a short rainforest walk.",
+   "hours": "Open daily; check current alerts",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/iluka-nature-reserve",
+   "views": 589,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Iluka"
+   ],
+   "skeptic_verdict": "keep",
+   "photo": {
+    "file": "Iluka Nature Reserve - panoramio (3).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Iluka_Nature_Reserve_-_panoramio_(3).jpg",
+    "width": 2048,
+    "licence": "CC BY 3.0",
+    "photo_verdict": "candidate (skeptic: accept); not accepted until Lens",
+    "p40": 0.145,
+    "mean": 0.297,
+    "hero_crop": "ok",
+    "skeptic_note": "Rainforest track in the reserve; the right subject but centre p40 0.145 / mean 0.30, below floor: needs brighten.py."
+   },
+   "needs_photo": false,
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "cost"
+   ],
+   "wiki": null,
+   "distance_km_from_destination": 4.0,
+   "inside_75pct_span": true,
+   "standalone_if_declined": {
+    "id": "iluka-nature-reserve",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   }
+  },
+  {
+   "name": "Evans Head",
+   "action": "spot",
+   "destination": "bundjalung-national-park",
+   "id": "bundjalung-national-park-1",
+   "coordinates": {
+    "latitude": -29.11741,
+    "longitude": 153.43121
+   },
+   "coordinates_source": "osm via Photon (komoot) place=locality",
+   "reason": "20.9 km from Bundjalung National Park's centre, inside its 30.0 km reach (75% of 40 km); gateway town at the southern end of the park.",
+   "category": "landmark",
+   "icon": "🏡",
+   "bio": "A small coastal town on the Evans River at the southern end of Bundjalung National Park, with beaches and a harbour.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 9715,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Northern_Rivers"
+   ],
+   "skeptic_verdict": "keep",
+   "photo": {
+    "file": "Evans Head Feb 2025-2.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Evans_Head_Feb_2025-2.jpg",
+    "width": 4599,
+    "licence": "CC BY 4.0",
+    "photo_verdict": "candidate (skeptic: accept); not accepted until Lens",
+    "p40": 0.424,
+    "mean": 0.48,
+    "hero_crop": "ok",
+    "skeptic_note": "Evans Head breakwaters and beach from the lookout, 2025."
+   },
+   "needs_photo": false,
+   "status": "ready for Pipeline C research",
+   "needs_research": [],
+   "wiki": "Evans Head, New South Wales",
+   "distance_km_from_destination": 20.9,
+   "inside_75pct_span": true,
+   "standalone_if_declined": {
+    "id": "evans-head",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Sydney"
+   }
+  },
+  {
+   "name": "Toonumbar National Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "toonumbar-national-park",
+   "coordinates": {
+    "latitude": -28.49514,
+    "longitude": 152.73672
+   },
+   "coordinates_source": "osm via Photon (komoot) leisure=nature_reserve centroid (centroid: replace with the NPWS visitor point in research)",
+   "reason": "Two counted sources (NPWS, Wikivoyage); 63 km from Lismore and 40 km west of Border Ranges, outside every proposed span and no kept sibling to justify a park destination.",
+   "category": "nature",
+   "icon": "🌳",
+   "bio": "A World Heritage rainforest park near Kyogle with walks, camping and volcanic lookouts.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 730,
+   "counted_sources": [
+    "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/toonumbar-national-park",
+    "https://en.wikivoyage.org/wiki/Northern_Rivers"
+   ],
+   "skeptic_verdict": "keep",
+   "photo": null,
+   "needs_photo": true,
+   "photo_note": "Only the Toonumbar Dam (a reservoir at Bells Bay, not clearly inside the park) and a 1995 scan; fails.",
+   "status": "ready for Pipeline C research",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "wiki": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Sydney"
+  }
+ ],
+ "existing_kept_unchanged": [
+  "border-ranges-national-park",
+  "yuraygir-national-park",
+  "grafton"
+ ],
+ "existing_fixes": [],
+ "not_placed_review": [
+  {
+   "name": "Kyogle",
+   "verdict": "review",
+   "views": 11899,
+   "counted_sources": 1,
+   "reason": "Downgraded from keep: a gateway town whose draw is the parks beyond it (Border Ranges, Toonumbar), the Pipiriki pattern in COVERAGE.md. For: Wikivoyage calls it the gateway and it is the rail/road stop. Against: one source, no sight of its own.",
+   "placed": false
+  },
+  {
+   "name": "Clarkes Beach",
+   "verdict": "review",
+   "views": 1481,
+   "counted_sources": 1,
+   "reason": "Case for: named by Wikivoyage with its own OSM beach. Against: one source and the sand is continuous with Main Beach; would be a near-duplicate.",
+   "placed": false
+  },
+  {
+   "name": "Belongil Beach",
+   "verdict": "review",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Case for: named by Wikivoyage, its own OSM beach and a distinct (clothing-optional, quieter) character. Against: one source and it continues the town beach west of Main Beach.",
+   "placed": false
+  },
+  {
+   "name": "Shelly Beach, Ballina",
+   "verdict": "review",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Case for: patrolled beach, own OSM beach, Wikivoyage. Against: one source, one of three adjoining East Ballina beaches with Lighthouse Beach already kept.",
+   "placed": false
+  },
+  {
+   "name": "Flat Rock, Ballina",
+   "verdict": "review",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Case for: headland with tidal rock pools, Wikivoyage. Against: one source, minor local rock platform.",
+   "placed": false
+  },
+  {
+   "name": "Lennox Point",
+   "verdict": "review",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Case for: Pat Morton Lookout is the village's view point and hang-glide launch, Wikivoyage. Against: one source and overlaps the Lennox Head village spot, which already uses this lookout for its photo.",
+   "placed": false
+  },
+  {
+   "name": "Mount Chincogan",
+   "verdict": "review",
+   "views": 1792,
+   "counted_sources": 1,
+   "reason": "Case for: Wikivoyage Mullumbimby lists the summit walk and it is the town's backdrop. Against: one source, short local hill walk.",
+   "placed": false
+  },
+  {
+   "name": "Mallanganee National Park",
+   "verdict": "review",
+   "views": 540,
+   "counted_sources": 2,
+   "reason": "Case for: NPWS and Wikivoyage both list it, a World Heritage part with a lookout and camping. Against: Wikivoyage itself calls it not particularly famous, remote and rarely visited.",
+   "placed": false
+  },
+  {
+   "name": "New Italy",
+   "verdict": "review",
+   "views": 6400,
+   "counted_sources": 1,
+   "reason": "Case for: Wikivoyage lists the Italian-settler heritage village with a museum. Against: one source, brief highway stop.",
+   "placed": false
+  },
+  {
+   "name": "Tweed Regional Museum",
+   "verdict": "review",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Case for: 10,000-object regional museum, Wikivoyage. Against: one source, small regional museum with Tweed Regional Gallery already kept in the same town.",
+   "placed": false
+  },
+  {
+   "name": "Koala Care Centre Lismore",
+   "verdict": "review",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Case for: Wikivoyage lists the koala hospital. Against: one source, a rehabilitation facility with limited public access, no coordinates.",
+   "placed": false
+  },
+  {
+   "name": "Nimbin Hemp Museum",
+   "verdict": "review",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Case for: Wikivoyage lists it and it is Nimbin's signature quirky stop. Against: one source, a small shop-like venue inside a town already kept; no coordinates.",
+   "placed": false
+  },
+  {
+   "name": "Cook Island",
+   "verdict": "review",
+   "views": 2694,
+   "counted_sources": 1,
+   "reason": "Case for: marine-reserve dive site, Wikivoyage and Wikipedia, 2 km offshore. Against: no landing, reachable only on dive/snorkel operators' trips; Julian Rocks is kept as the stronger, more accessible equivalent.",
+   "placed": false
+  },
+  {
+   "name": "Yamba Lighthouse",
+   "verdict": "review",
+   "views": 654,
+   "counted_sources": 1,
+   "reason": "Case for: Wikivoyage lists the Clarence River Light on the headland with views. Against: small lighthouse, ten-minute look, one source.",
+   "placed": false
+  },
+  {
+   "name": "Yamba Ocean Pool",
+   "verdict": "review",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Case for: Visit NSW names it; free ocean swim. Against: one source, a local pool.",
+   "placed": false
+  },
+  {
+   "name": "Turners Beach",
+   "verdict": "review",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Case for: Visit NSW names it and OSM has its own beach feature in Yamba (identity confirmed as the Yamba beach, not the Wikipedia Turners Beach elsewhere). Against: one source, one of several Yamba beaches.",
+   "placed": false
+  },
+  {
+   "name": "Mount Warning",
+   "verdict": "reject",
+   "views": 28324,
+   "counted_sources": 2,
+   "reason": "Near-duplicate of Wollumbin National Park (the summit track is closed and the park spot already centres on the mountain); keep one entry, carry the alias in search.",
+   "placed": false
+  }
+ ],
+ "held_for_pin": [
+  "Nightcap National Park (lismore-2)",
+  "Wollumbin National Park (tweed-heads-2)",
+  "Angourie Point (yamba-1)",
+  "Bundjalung National Park (destination centre)"
+ ],
+ "needs_external_photo": [
+  "byron-bay-6",
+  "byron-bay-7",
+  "byron-bay-9",
+  "byron-bay-10",
+  "ballina-3",
+  "tweed-heads-1",
+  "tweed-heads-9",
+  "yamba-4",
+  "toonumbar-national-park"
+ ],
+ "notes": [
+  "No existing destination covers this region (the app has only the standalone border-ranges-national-park, yuraygir-national-park and grafton, unchanged and not re-added). Six destinations are proposed, none added.",
+  "Ids continue the earlier curation/nsw northern-rivers run (byron-bay-N, ballina-N, tweed-heads-N, lismore-N, yamba-N), which never reached src/data; gaps (e.g. byron-bay-2, -12 to -15, ballina-4, tweed-heads-3 and -7, yamba-2 and -3) are places that run proposed and this skeptic pass did not keep; do not reuse them. Quill/Lens work keyed to these ids stays valid.",
+  "National parks: Nightcap folded into lismore, Wollumbin into tweed-heads, Iluka Nature Reserve into yamba (np_exception in each proposal). Bundjalung National Park is a destination (thin, one spot). Border Ranges NP stays standalone and Toonumbar NP is standalone: neither has a kept sibling, so no park destination. Yuraygir stays the existing standalone (mid-north-coast pass owns it).",
+  "Mount Warning is an alias of Wollumbin National Park (named in its bio, aliases field), not a second spot.",
+  "Skeptic photos are candidates only: photo_verdict is never 'accept' until Lens. Nightcap (p40 0.13) and Iluka Nature Reserve (p40 0.145) photos are below the brightness floor and need brighten.py; Wollumbin needs a subject point {x:0.4,y:0.4}; Nimbin's photo needs hero crop x 0.35 and has a person at the edge; Wategos is a dusk shot; Byron Bay's header candidate shows the town small.",
+  "Seven Mile Beach (Lennox Head) shares a name with a Shoalhaven beach: it needs an explicit WIKI_IMAGE_OVERRIDES photo. Fingal Head's latitude (-28.2) is round: re-run resolve-pin.py before apply.",
+  "Mid-north-coast overlap: that pass placed nothing north of Woolgoolga and nothing for Yuraygir, Angourie, Wooli, Grafton or Maclean, so nothing is dropped; this pass places Angourie Point, Maclean and Iluka under yamba and leaves Yuraygir and Grafton as existing standalones. Ulmarra, Brooms Head, Wooli (candidates in this region) were not kept here.",
+  "Pins to resolve before apply (coordinates come from skeptic.json OSM via Photon): towns are place=locality/town points (acceptable for a town), the skeptic notes Nimbin's candidate point was 1.5 km north of the OSM village point."
+ ]
+}

@@ -19,17 +19,20 @@ dry = '--dry-run' in args
 photoless = '--photoless' in args   # a missing photo never holds a spot back (IMAGES.md); holds with another reason stay
 non_photo_holds = set(json.load(open('curation/nz-rest/non-photo-holds.json'))) if os.path.exists('curation/nz-rest/non-photo-holds.json') else set()
 only = set(args[args.index('--only') + 1].split(',')) if '--only' in args else None
-currency = args[args.index('--currency') + 1] if '--currency' in args else 'NZD'
+# Regions named nsw-* are Australian (NSW): AUD and Australian standalone defaults; every other region is New Zealand.
+currency = args[args.index('--currency') + 1] if '--currency' in args else ('AUD' if region.startswith('nsw-') else 'NZD')
 
-place = json.load(open(f'curation/nz-rest/region-{region}/placement.json'))
+_flat = f'curation/nz-rest/region-{region}/apply-placement.json'   # NSW: scripts/curation/nsw-build-apply.py writes a flat list
+place = json.load(open(_flat if os.path.exists(_flat) else f'curation/nz-rest/region-{region}/placement.json'))
 key = next(k for k in ('placements', 'places', 'spots', 'new_spots') if k in place)
 final_path = f'curation/nz-rest/quill/{region}/final.json'
 final = json.load(open(final_path)) if os.path.exists(final_path) else {'spots': {}, 'existing_fixes': {}, 'held': []}
-held_ids = set(final.get('held', []))
+held_ids = {h if isinstance(h, str) else (h.get('id') or h.get('key') or h.get('name')) for h in (final.get('held') or [])}
 dest_src = open('src/data/destinations.ts').read()
 dest_ids = set(re.findall(r"^\s*id: '([a-z0-9-]+)', name: ", dest_src, re.M))
 
-STANDALONE_DEFAULT = {'country': 'New Zealand', 'countryCode': 'NZ', 'continent': 'Oceania', 'timezone': 'Pacific/Auckland'}
+STANDALONE_DEFAULT = ({'country': 'Australia', 'countryCode': 'AU', 'continent': 'Oceania', 'timezone': 'Australia/Sydney'} if region.startswith('nsw-')
+                      else {'country': 'New Zealand', 'countryCode': 'NZ', 'continent': 'Oceania', 'timezone': 'Pacific/Auckland'})
 FIELDS = ['name', 'wiki', 'icon', 'category', 'bio', 'hours', 'visitHoursMin', 'visitHoursMax', 'free', 'costMin', 'costMax',
           'currency', 'closedDays', 'ticketUrl']
 
@@ -174,7 +177,9 @@ def set_field(text, k, v):
     return re.sub(r'\s*\}$', f', {lit} }}', text.rstrip())
 
 
-fixes = final.get('existing_fixes', {})
+fixes = final.get('existing_fixes') or {}
+if isinstance(fixes, list):
+    fixes = {}
 spots_src = open('src/data/spots.ts').read()
 dest_text = dest_src
 changed = []

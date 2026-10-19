@@ -1,0 +1,1131 @@
+{
+  "region": "nsw-mid-north-coast",
+  "country": "Australia",
+  "countryCode": "AU",
+  "continent": "Oceania",
+  "timezone": "Australia/Sydney",
+  "generated": "2026-10-18",
+  "scope": "research-b: second half of placement.json spots (indexes 28-55) plus the four verdict-keeps; every entry researched as its STANDALONE fallback (if_proposal_declined id). Currency AUD.",
+  "entries": [
+    {
+      "coordinates_source": "Photon/OSM natural=beach relation 20107103 \"Hat Head Beach\" at Hat Head village (visitor point; the park centroid -31.0903,153.0239 from OSM leisure=nature_reserve R6054206 is not a visitor point). resolve-pin graded the centroid LOW; Overpass was unreachable so the beach feature was found by Photon only.",
+      "pin_status": "MEDIUM-equivalent (one OSM feature, right type, Photon only)",
+      "bio": "Beaches, dunes, rainforest and wetlands near South West Rocks, with beach camping and the Smoky Cape lighthouse.",
+      "hours": "Open 24 hours",
+      "hours_note": "NPWS: always open but may close for poor weather or fire danger",
+      "hours_source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/hat-head-national-park",
+      "visitHoursMin": 1,
+      "visitHoursMax": 3,
+      "visit_hours_basis": "estimate, not sourced",
+      "cost": {
+        "costMin": 8,
+        "costMax": 8,
+        "currency": "AUD",
+        "source": "NPWS park page: $8 per vehicle per day (a Day Pass or Annual Pass is needed when visiting)"
+      },
+      "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/hat-head-national-park",
+      "ticketUrl_check": "Loaded (200); title \"Hat Head National Park | NSW National Parks\". NPWS is the managing agency.",
+      "counted_sources": [
+        "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/hat-head-national-park",
+        "https://en.wikivoyage.org/wiki/Kempsey"
+      ],
+      "notes": "NPWS page showed 1 alert (Closed areas), details not loaded. Smoky Cape Lighthouse is its own spot (south-west-rocks-2), so keep it out of this bio.",
+      "name": "Hat Head National Park",
+      "placement_id": "south-west-rocks-4",
+      "id_if_standalone": "hat-head-national-park",
+      "category": "nature",
+      "icon": "🏞️",
+      "placement_coordinates": {
+        "latitude": -31.08028,
+        "longitude": 153.03028
+      },
+      "coordinates": {
+        "latitude": -31.0510798,
+        "longitude": 153.0486667
+      },
+      "distance_moved_from_placement_m": 3689,
+      "verdict": "keep",
+      "bio_fit_lines": 3,
+      "bio_chars": 112,
+      "bio_sources": "bio facts come from the counted_sources and hours_source pages above"
+    },
+    {
+      "coordinates_source": "Photon/OSM tourism=camp_site \"The Ruins Campground and Picnic Area\" (NPWS: Booti Booti office is at The Ruins campground, 4374 The Lakes Way; 15 km south of Forster). Visitor point chosen instead of the leisure=nature_reserve centroid (-32.2445,152.5283, in the lake). Overpass unreachable; Photon only.",
+      "pin_status": "MEDIUM-equivalent (one OSM feature, NPWS-named hub, Photon only)",
+      "bio": "An 8 km peninsula between the ocean and Wallis Lake with beaches, rainforest, an 8 km loop walk and winter whales.",
+      "hours": "Open 24 hours",
+      "hours_note": "NPWS: always open but may close for poor weather or fire danger",
+      "hours_source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/booti-booti-national-park",
+      "visitHoursMin": 2,
+      "visitHoursMax": 5,
+      "visit_hours_basis": "estimate; the Booti walking track is an 8 km loop (NPWS)",
+      "cost": {
+        "costMin": 8,
+        "costMax": 8,
+        "currency": "AUD",
+        "source": "NPWS park page: $8 per vehicle per day (a Day Pass or Annual Pass is needed when visiting)"
+      },
+      "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/booti-booti-national-park",
+      "ticketUrl_check": "Loaded (200); title \"Booti Booti National Park | NSW National Parks\".",
+      "counted_sources": [
+        "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/booti-booti-national-park",
+        "https://en.wikivoyage.org/wiki/Forster",
+        "https://barringtoncoast.com.au/directory/booti-booti-national-park"
+      ],
+      "notes": "Cape Hawke Lookout, Elizabeth Beach and Shelly Beach are inside the park and are their own spots.",
+      "name": "Booti Booti National Park",
+      "placement_id": "forster-1",
+      "id_if_standalone": "booti-booti-national-park",
+      "category": "nature",
+      "icon": "🌴",
+      "placement_coordinates": {
+        "latitude": -32.24444,
+        "longitude": 152.54333
+      },
+      "coordinates": {
+        "latitude": -32.310421,
+        "longitude": 152.518994
+      },
+      "distance_moved_from_placement_m": 7685,
+      "verdict": "keep",
+      "bio_fit_lines": 3,
+      "bio_chars": 114,
+      "bio_sources": "bio facts come from the counted_sources and hours_source pages above"
+    },
+    {
+      "coordinates_source": "resolve-pin HIGH: Photon/OSM tourism=viewpoint \"Cape Hawke lookout\" -32.21659,152.562967; Wikivoyage listing -32.216204,152.561192 is 170 m away.",
+      "pin_status": "HIGH",
+      "bio": "A 500 m rainforest climb of about 420 steps to an 8.4 m tower with coast views and whale watching.",
+      "hours": "Open 24 hours",
+      "hours_note": "lookout page gives no hours; the park page says Booti Booti is always open (may close for weather/fire)",
+      "hours_source": "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/cape-hawke-lookout",
+      "visitHoursMin": 0.5,
+      "visitHoursMax": 1,
+      "visit_hours_basis": "estimate from a 500 m / 420-step walk each way (NPWS, Barrington Coast); not a sourced time",
+      "cost": {
+        "costMin": 8,
+        "costMax": 8,
+        "currency": "AUD",
+        "source": "NPWS lookout page: \"Park entry fees apply\"; park page $8 per vehicle per day"
+      },
+      "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/cape-hawke-lookout",
+      "ticketUrl_check": "Loaded (200); title \"Cape Hawke lookout | NSW National Parks\".",
+      "counted_sources": [
+        "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/cape-hawke-lookout",
+        "https://barringtoncoast.com.au/directory/cape-hawke-lookout",
+        "https://en.wikivoyage.org/wiki/Forster"
+      ],
+      "notes": "Barrington Coast says \"360-degree views\", NPWS says \"stunning views\"; bio avoids both.",
+      "name": "Cape Hawke Lookout",
+      "placement_id": "forster-2",
+      "id_if_standalone": "cape-hawke-lookout",
+      "category": "viewpoint",
+      "icon": "🔭",
+      "placement_coordinates": {
+        "latitude": -32.2165,
+        "longitude": 152.5631
+      },
+      "coordinates": {
+        "latitude": -32.21659,
+        "longitude": 152.562967
+      },
+      "distance_moved_from_placement_m": 16,
+      "verdict": "keep",
+      "bio_fit_lines": 3,
+      "bio_chars": 98,
+      "bio_sources": "bio facts come from the counted_sources and hours_source pages above"
+    },
+    {
+      "coordinates_source": "Photon/OSM tourism=viewpoint \"Bennetts Head Lookout\" -32.182304,152.533975; Wikivoyage listing -32.182431,152.533962 is 14 m away (effectively HIGH). resolve-pin graded LOW (Overpass unreachable, one source returned).",
+      "pin_status": "HIGH-equivalent (OSM viewpoint and Wikivoyage listing within 15 m)",
+      "bio": "A wheelchair-accessible headland lookout in Forster that is a good whale-watching post from May to November.",
+      "hours": "Open 24 hours",
+      "hours_source": "https://barringtoncoast.com.au/directory/bennetts-head-lookout",
+      "visitHoursMin": 0,
+      "visitHoursMax": 0.5,
+      "visit_hours_basis": "estimate; viewing platform by a turning circle",
+      "free": true,
+      "cost_note": "no charge stated; council-managed (not confirmed which)",
+      "ticketUrl": null,
+      "ticketUrl_reason": "open lookout with no single steward page found (Barrington Coast is a tourism directory, not the steward)",
+      "counted_sources": [
+        "https://en.wikivoyage.org/wiki/Forster",
+        "https://barringtoncoast.com.au/directory/bennetts-head-lookout"
+      ],
+      "name": "Bennetts Head Lookout",
+      "placement_id": "forster-3",
+      "id_if_standalone": "bennetts-head-lookout",
+      "category": "viewpoint",
+      "icon": "🔭",
+      "placement_coordinates": {
+        "latitude": -32.1823,
+        "longitude": 152.53397
+      },
+      "coordinates": {
+        "latitude": -32.182304,
+        "longitude": 152.533975
+      },
+      "distance_moved_from_placement_m": 1,
+      "verdict": "keep",
+      "bio_fit_lines": 3,
+      "bio_chars": 108,
+      "bio_sources": "bio facts come from the counted_sources and hours_source pages above"
+    },
+    {
+      "coordinates_source": "resolve-pin HIGH: Photon/OSM natural=beach \"Boomerang Beach\"; matches placement OSM natural=beach.",
+      "pin_status": "HIGH",
+      "bio": "A boomerang-shaped beach with rock-ledge waves, the best surf in the Pacific Palms area, and rock pools at low tide.",
+      "hours": "Open 24 hours",
+      "hours_source": "https://barringtoncoast.com.au/directory/boomerang-beach",
+      "visitHoursMin": 1,
+      "visitHoursMax": 3,
+      "visit_hours_basis": "estimate, not sourced",
+      "free": true,
+      "ticketUrl": null,
+      "ticketUrl_reason": "public beach, no single steward page",
+      "counted_sources": [
+        "https://en.wikivoyage.org/wiki/Forster",
+        "https://barringtoncoast.com.au/directory/boomerang-beach"
+      ],
+      "notes": "Barrington Coast says unpatrolled; its Blueys page says Boomerang has summer patrols: conflict, patrol status left out of the bio.",
+      "name": "Boomerang Beach",
+      "placement_id": "forster-4",
+      "id_if_standalone": "boomerang-beach",
+      "category": "beach",
+      "icon": "🏄",
+      "placement_coordinates": {
+        "latitude": -32.33996,
+        "longitude": 152.5433
+      },
+      "coordinates": {
+        "latitude": -32.339956,
+        "longitude": 152.543302
+      },
+      "distance_moved_from_placement_m": 0,
+      "verdict": "keep",
+      "bio_fit_lines": 3,
+      "bio_chars": 116,
+      "bio_sources": "bio facts come from the counted_sources and hours_source pages above"
+    },
+    {
+      "coordinates_source": "Photon/OSM natural=beach \"Blueys Beach\" -32.352565,152.53656 (same node as the placement nominatim pin); Commons photo median is 375 m away. resolve-pin LOW (single source, Overpass down).",
+      "pin_status": "MEDIUM-equivalent (one OSM beach feature)",
+      "bio": "A long, shallow beach with a headland view south to Seal Rocks, beside a village of cafes and a visitor centre.",
+      "hours": "Open 24 hours",
+      "hours_source": "https://barringtoncoast.com.au/directory/blueys-beach",
+      "visitHoursMin": 1,
+      "visitHoursMax": 3,
+      "visit_hours_basis": "estimate, not sourced",
+      "free": true,
+      "ticketUrl": null,
+      "ticketUrl_reason": "public beach, no single steward page",
+      "counted_sources": [
+        "https://en.wikivoyage.org/wiki/Forster",
+        "https://barringtoncoast.com.au/directory/blueys-beach"
+      ],
+      "notes": "Barrington Coast: not patrolled; village has a volunteer-run visitor centre.",
+      "name": "Blueys Beach",
+      "placement_id": "forster-5",
+      "id_if_standalone": "blueys-beach",
+      "category": "beach",
+      "icon": "🏖️",
+      "placement_coordinates": {
+        "latitude": -32.35256,
+        "longitude": 152.53656
+      },
+      "coordinates": {
+        "latitude": -32.352565,
+        "longitude": 152.53656
+      },
+      "distance_moved_from_placement_m": 1,
+      "verdict": "keep",
+      "bio_fit_lines": 3,
+      "bio_chars": 111,
+      "bio_sources": "bio facts come from the counted_sources and hours_source pages above"
+    },
+    {
+      "coordinates_source": "Photon/OSM natural=beach \"Elizabeth Beach\" -32.329512,152.536454 (same as placement); Commons median 222 m away. resolve-pin LOW (Overpass down).",
+      "pin_status": "MEDIUM-equivalent (one OSM beach feature)",
+      "bio": "A calm, north-facing family beach in Booti Booti National Park, patrolled in summer, where the Booti walking track starts.",
+      "hours": "Open 24 hours",
+      "hours_note": "inside Booti Booti NP, which NPWS says is always open",
+      "hours_source": "https://www.nationalparks.nsw.gov.au/things-to-do/picnic-areas/elizabeth-beach-picnic-area",
+      "visitHoursMin": 1,
+      "visitHoursMax": 3,
+      "visit_hours_basis": "estimate, not sourced",
+      "cost": {
+        "costMin": 8,
+        "costMax": 8,
+        "currency": "AUD",
+        "source": "NPWS Elizabeth Beach picnic area page: \"Park entry fees apply\"; $8 per vehicle per day. The NSW Government listing (nsw.gov.au Elizabeth Beach, Pacific Palms) says free entry: conflict, NPWS used."
+      },
+      "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/picnic-areas/elizabeth-beach-picnic-area",
+      "ticketUrl_check": "Loaded (200); title \"Elizabeth Beach picnic area | NSW National Parks\". Names the beach/picnic area, not a separate beach page.",
+      "counted_sources": [
+        "https://en.wikivoyage.org/wiki/Forster",
+        "https://barringtoncoast.com.au/directory/elizabeth-beach",
+        "https://www.nationalparks.nsw.gov.au/things-to-do/picnic-areas/elizabeth-beach-picnic-area"
+      ],
+      "name": "Elizabeth Beach",
+      "placement_id": "forster-6",
+      "id_if_standalone": "elizabeth-beach",
+      "category": "beach",
+      "icon": "🏖️",
+      "placement_coordinates": {
+        "latitude": -32.32951,
+        "longitude": 152.53645
+      },
+      "coordinates": {
+        "latitude": -32.329512,
+        "longitude": 152.536454
+      },
+      "distance_moved_from_placement_m": 0,
+      "verdict": "keep",
+      "bio_fit_lines": 3,
+      "bio_chars": 122,
+      "bio_sources": "bio facts come from the counted_sources and hours_source pages above"
+    },
+    {
+      "coordinates_source": "Photon/OSM natural=beach \"Diamond Beach\" -32.03811,152.54286 (same as placement). Wikipedia -32.044058,152.539564 is 730 m away (the village). A 6 km beach: this is the node by Diamond Beach Field. resolve-pin LOW (Overpass down).",
+      "pin_status": "MEDIUM-equivalent (one OSM beach feature)",
+      "bio": "A six-kilometre beach between Taree and Forster for fishing, surfing and long walks, with dolphins often offshore.",
+      "hours": "Open 24 hours",
+      "hours_source": "https://barringtoncoast.com.au/directory/diamond-beach",
+      "visitHoursMin": 1,
+      "visitHoursMax": 2,
+      "visit_hours_basis": "estimate, not sourced",
+      "free": true,
+      "ticketUrl": null,
+      "ticketUrl_reason": "public beach, no single steward page",
+      "counted_sources": [
+        "https://en.wikivoyage.org/wiki/Forster",
+        "https://barringtoncoast.com.au/directory/diamond-beach"
+      ],
+      "notes": "Barrington Coast: dog-friendly, horse riding allowed.",
+      "name": "Diamond Beach",
+      "placement_id": "forster-7",
+      "id_if_standalone": "diamond-beach",
+      "category": "beach",
+      "icon": "🏖️",
+      "placement_coordinates": {
+        "latitude": -32.03811,
+        "longitude": 152.54286
+      },
+      "coordinates": {
+        "latitude": -32.03811,
+        "longitude": 152.54286
+      },
+      "distance_moved_from_placement_m": 0,
+      "verdict": "keep",
+      "bio_fit_lines": 3,
+      "bio_chars": 114,
+      "bio_sources": "bio facts come from the counted_sources and hours_source pages above"
+    },
+    {
+      "coordinates_source": "Photon/OSM natural=beach \"Shelly Beach\" -32.329091,152.54539 (same as placement), beside Elizabeth Beach in Booti Booti; Commons median 119 m away. Confirmed it is the Forster-area one (Barrington Coast: Booti Booti NP, 800 m walk from Lakeside Crescent, neighbours Elizabeth Beach). resolve-pin LOW.",
+      "pin_status": "MEDIUM-equivalent (one OSM beach feature + Commons geotag at 119 m)",
+      "wiki_note": "no Wikipedia article for this one; the app looks up a photo by name \"Shelly Beach\", which also matches Port Macquarie's Shelly Beach (port-macquarie-5): needs a distinct id and a photo override",
+      "bio": "A north-facing beach in Booti Booti National Park, reached by an 800 m rainforest walk, and clothing-optional.",
+      "hours": "Open 24 hours",
+      "hours_note": "inside Booti Booti NP (always open)",
+      "hours_source": "https://barringtoncoast.com.au/directory/shelly-beach",
+      "visitHoursMin": 1,
+      "visitHoursMax": 2,
+      "visit_hours_basis": "estimate; 800 m walk each way (Barrington Coast)",
+      "cost": {
+        "costMin": 8,
+        "costMax": 8,
+        "currency": "AUD",
+        "source": "Inside Booti Booti NP: $8 per vehicle per day applies to vehicles in the park. Whether walk-in visitors from Lakeside Crescent are charged was not verified."
+      },
+      "ticketUrl": null,
+      "ticketUrl_reason": "no NPWS page for this beach found; the park page is the Booti Booti spot's link",
+      "counted_sources": [
+        "https://en.wikivoyage.org/wiki/Forster",
+        "https://barringtoncoast.com.au/directory/shelly-beach"
+      ],
+      "notes": "Name collision with port-macquarie-5 Shelly Beach: id here is shelly-beach-forster.",
+      "name": "Shelly Beach",
+      "placement_id": "forster-8",
+      "id_if_standalone": "shelly-beach-forster",
+      "category": "beach",
+      "icon": "🏖️",
+      "placement_coordinates": {
+        "latitude": -32.32909,
+        "longitude": 152.54539
+      },
+      "coordinates": {
+        "latitude": -32.329091,
+        "longitude": 152.54539
+      },
+      "distance_moved_from_placement_m": 0,
+      "verdict": "keep",
+      "bio_fit_lines": 3,
+      "bio_chars": 110,
+      "bio_sources": "bio facts come from the counted_sources and hours_source pages above"
+    },
+    {
+      "coordinates_source": "resolve-pin HIGH: Photon/OSM man_made=lighthouse -32.44101,152.539116; Wikivoyage listing -32.44179,152.537156 is 190 m away.",
+      "pin_status": "HIGH",
+      "bio": "An 1875 lighthouse above Seal Rocks, one of two Australian towers with an external stairway, and a whale-watching post.",
+      "hours": "Sunrise to sunset",
+      "hours_note": "NPWS: may close for poor weather or fire danger",
+      "hours_source": "https://www.nationalparks.nsw.gov.au/things-to-do/historic-buildings-places/sugarloaf-point-lighthouse",
+      "visitHoursMin": 0.5,
+      "visitHoursMax": 1.5,
+      "visit_hours_basis": "estimate; Barrington Coast: easy 800 m walk from the Boat Beach car park, steep final climb",
+      "cost": {
+        "costMin": 8,
+        "costMax": 8,
+        "currency": "AUD",
+        "source": "NPWS lighthouse page: \"Park entry fees apply\"; Myall Lakes park page $8 per vehicle per day"
+      },
+      "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/historic-buildings-places/sugarloaf-point-lighthouse",
+      "ticketUrl_check": "Loaded (200); title \"Sugarloaf Point Lighthouse | NSW National Parks\". Barrington Coast listing also has a website link (not opened).",
+      "counted_sources": [
+        "https://www.nationalparks.nsw.gov.au/things-to-do/historic-buildings-places/sugarloaf-point-lighthouse",
+        "https://barringtoncoast.com.au/directory/sugarloaf-point-lighthouse",
+        "https://en.wikivoyage.org/wiki/Seal_Rocks"
+      ],
+      "notes": "Keepers' cottages are holiday accommodation, not tours; no lighthouse tour found.",
+      "name": "Sugarloaf Point Lighthouse",
+      "placement_id": "myall-lakes-national-park-1",
+      "id_if_standalone": "sugarloaf-point-lighthouse",
+      "category": "landmark",
+      "icon": "🗼",
+      "placement_coordinates": {
+        "latitude": -32.44101,
+        "longitude": 152.53912
+      },
+      "coordinates": {
+        "latitude": -32.44101,
+        "longitude": 152.539116
+      },
+      "distance_moved_from_placement_m": 0,
+      "verdict": "keep",
+      "bio_fit_lines": 3,
+      "bio_chars": 119,
+      "bio_sources": "bio facts come from the counted_sources and hours_source pages above"
+    },
+    {
+      "coordinates_source": "Photon/OSM place=locality (relation 6059239) \"Seal Rocks\" -32.436191,152.529931 (same as placement). A village point; resolve-pin LOW (Overpass down; Wikipedia point is 2.7 km away on the locality boundary).",
+      "pin_status": "MEDIUM-equivalent (OSM village locality)",
+      "bio": "A remote fishing village in Myall Lakes National Park with five beaches, a lighthouse, a blowhole and good surf.",
+      "category_note": "placement category \"historic\" is wrong for a village: suggest \"nature\" or \"beach\"",
+      "hours": "Open 24 hours",
+      "hours_source": "https://en.wikivoyage.org/wiki/Seal_Rocks",
+      "visitHoursMin": 1,
+      "visitHoursMax": 3,
+      "visit_hours_basis": "estimate, not sourced",
+      "free": true,
+      "cost_note": "the village itself has no gate; NPWS $8 per vehicle applies at Sugarloaf Point (separate spot). Whether the Seal Rocks Road / Boat Beach car parks charge was not verified.",
+      "ticketUrl": null,
+      "ticketUrl_reason": "a village, no single steward",
+      "counted_sources": [
+        "https://en.wikivoyage.org/wiki/Seal_Rocks"
+      ],
+      "notes": "Overlaps Sugarloaf Point Lighthouse and Number One Beach (its main sights); keep as the village/area spot only if the owner wants both. Wikivoyage is the only counted source.",
+      "name": "Seal Rocks",
+      "placement_id": "myall-lakes-national-park-2",
+      "id_if_standalone": "seal-rocks",
+      "category": "historic",
+      "icon": "🏘️",
+      "placement_coordinates": {
+        "latitude": -32.43619,
+        "longitude": 152.52993
+      },
+      "coordinates": {
+        "latitude": -32.436191,
+        "longitude": 152.529931
+      },
+      "distance_moved_from_placement_m": 0,
+      "verdict": "keep",
+      "bio_fit_lines": 3,
+      "bio_chars": 112,
+      "bio_sources": "bio facts come from the counted_sources and hours_source pages above"
+    },
+    {
+      "coordinates_source": "OSM natural=beach way 182621183 \"Number One Beach\" (Nominatim) -32.4286493,152.5194667, as in placement. resolve-pin found no feature (Photon has no match; Overpass down). Wikivoyage listing -32.431758,152.522894 is 480 m away, nearer the village entrance (the council says the beach is opposite the caravan park).",
+      "pin_status": "MEDIUM-equivalent (OSM beach way; not reproduced by resolve-pin)",
+      "bio": "The first beach into Seal Rocks, sheltered for swimming, with small learner waves and a point break at its end.",
+      "hours": "Open 24 hours",
+      "hours_source": "https://www.midcoast.nsw.gov.au/Services/Facilities-and-venues/Find-a-Facility/Outdoor-Facilities/Number-One-Beach-Reserve",
+      "hours_note": "council reserve page gives no hours; open-access beach",
+      "visitHoursMin": 1,
+      "visitHoursMax": 3,
+      "visit_hours_basis": "estimate, not sourced",
+      "free": true,
+      "ticketUrl": "https://www.midcoast.nsw.gov.au/Services/Facilities-and-venues/Find-a-Facility/Outdoor-Facilities/Number-One-Beach-Reserve",
+      "ticketUrl_check": "Loaded (200); title \"Number One Beach Reserve - MidCoast Council\"; MidCoast Council manages the reserve. Page has a separate fees section (not opened) that may relate to bookings.",
+      "counted_sources": [
+        "https://en.wikivoyage.org/wiki/Seal_Rocks",
+        "https://barringtoncoast.com.au/directory/number-one-beach"
+      ],
+      "name": "Number One Beach",
+      "placement_id": "myall-lakes-national-park-3",
+      "id_if_standalone": "number-one-beach",
+      "category": "beach",
+      "icon": "🏄",
+      "placement_coordinates": {
+        "latitude": -32.42865,
+        "longitude": 152.51947
+      },
+      "coordinates": {
+        "latitude": -32.42865,
+        "longitude": 152.51947
+      },
+      "distance_moved_from_placement_m": 0,
+      "verdict": "keep",
+      "bio_fit_lines": 3,
+      "bio_chars": 111,
+      "bio_sources": "bio facts come from the counted_sources and hours_source pages above"
+    },
+    {
+      "verdict": "keep",
+      "verdict_reason": "Two counted sources (NPWS walk page, Wikivoyage Myall Lakes); a distinct 45 min walk to a headland with lighthouse views, not part of another listed spot (Sugarloaf Point Lighthouse is a separate stop).",
+      "coordinates_source": "Wikivoyage Myall Lakes National Park listing geo -32.445765,152.518598 (same as placement). NOT a route midpoint and NOT reproduced by resolve-pin (Commons median 1.3 km away; Photon has no track; Overpass down). OSM \"Treachery Beach Access\" track is at -32.4483,152.5114.",
+      "pin_status": "LOW: needs the OSM route midpoint or NPWS route map when Overpass is available",
+      "bio": "A 2 km return walk through coastal rainforest to a grassy headland with views of Sugarloaf Point Lighthouse.",
+      "hours": "Open 24 hours",
+      "hours_note": "park always open (NPWS)",
+      "hours_source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/treachery-headland-walking-track",
+      "visitHoursMin": 0.75,
+      "visitHoursMax": 1.25,
+      "visit_hours_basis": "NPWS: 45min - 1hr 15min, 2 km return, Grade 4",
+      "cost": {
+        "costMin": 8,
+        "costMax": 8,
+        "currency": "AUD",
+        "source": "NPWS walk page: \"Park entry fees apply\"; Myall Lakes park page $8 per vehicle per day"
+      },
+      "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/treachery-headland-walking-track",
+      "ticketUrl_check": "Loaded (200); title \"Treachery Headland walk | NSW National Parks\", heading \"Treachery Headland walking track\".",
+      "counted_sources": [
+        "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/treachery-headland-walking-track",
+        "https://en.wikivoyage.org/wiki/Myall_Lakes_National_Park"
+      ],
+      "name": "Treachery Headland Walking Track",
+      "placement_id": "myall-lakes-national-park-4",
+      "id_if_standalone": "treachery-headland-walking-track",
+      "category": "hike",
+      "icon": "🥾",
+      "placement_coordinates": {
+        "latitude": -32.445765,
+        "longitude": 152.518598
+      },
+      "coordinates": {
+        "latitude": -32.445765,
+        "longitude": 152.518598
+      },
+      "distance_moved_from_placement_m": 0,
+      "bio_fit_lines": 3,
+      "bio_chars": 108,
+      "bio_sources": "bio facts come from the counted_sources and hours_source pages above"
+    },
+    {
+      "coordinates_source": "Placement pin: midpoint of OSM way 324442316 (Yacaaba Walking Track), only 1.2 km of the 3.5 km one-way route. Photon/OSM natural=peak and tourism=viewpoint \"Yacaaba Headland\" (summit) is at -32.6979143,152.2009101, 430 m east; Wikivoyage listing -32.696377,152.194912 is 190 m NW. Overpass unreachable so the full route could not be rebuilt.",
+      "pin_status": "MEDIUM-equivalent (on the mapped track, partial way); recheck against the full route",
+      "bio": "A steep 7 km return climb above Hawks Nest to headland views of Port Stephens, Seal Rocks and the coast.",
+      "hours": "Open 24 hours",
+      "hours_note": "park always open (NPWS); NPWS page shows a \"Closed areas\" alert for this track (details not loaded): check before listing as open",
+      "hours_source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/yacaaba-headland-walking-track",
+      "visitHoursMin": 2.5,
+      "visitHoursMax": 3.5,
+      "visit_hours_basis": "NPWS: 2hrs 30min - 3hrs 30min, 7 km return, Grade 4",
+      "cost": {
+        "costMin": 8,
+        "costMax": 8,
+        "currency": "AUD",
+        "source": "NPWS walk page: \"Park entry fees apply\"; Myall Lakes park page $8 per vehicle per day"
+      },
+      "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/yacaaba-headland-walking-track",
+      "ticketUrl_check": "Loaded (200); title \"Yacaaba Headland walking track | NSW National Parks\".",
+      "counted_sources": [
+        "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/yacaaba-headland-walking-track",
+        "https://en.wikivoyage.org/wiki/Myall_Lakes_National_Park"
+      ],
+      "unverified": [
+        "the NPWS closure alert on this track: contents not read"
+      ],
+      "name": "Yacaaba Headland Walking Track",
+      "placement_id": "myall-lakes-national-park-5",
+      "id_if_standalone": "yacaaba-headland-walking-track",
+      "category": "hike",
+      "icon": "🥾",
+      "placement_coordinates": {
+        "latitude": -32.69802,
+        "longitude": 152.19627
+      },
+      "coordinates": {
+        "latitude": -32.69802,
+        "longitude": 152.19627
+      },
+      "distance_moved_from_placement_m": 0,
+      "verdict": "keep",
+      "bio_fit_lines": 3,
+      "bio_chars": 104,
+      "bio_sources": "bio facts come from the counted_sources and hours_source pages above"
+    },
+    {
+      "verdict": "keep",
+      "verdict_reason": "Two counted sources (NPWS page, Wikivoyage); the track leads to Dark Point Aboriginal Place (Little Gibber), a Worimi gathering place declared an Aboriginal Place; distinct from any listed spot.",
+      "coordinates_source": "Wikivoyage listing geo for the track -32.596589,152.269309 (same as placement). Cross-check: OSM Dark Point car park (Photon, amenity=parking, -32.5920185,152.2714828) and OSM place=locality \"Dark Point (Little Gibber)\" (-32.6027204,152.2693238); the midpoint of those two is -32.597369,152.270403, 100 m from the pin. The NPWS says the track starts at the car park on Mungo Brush Road.",
+      "pin_status": "MEDIUM (listing geo within ~100 m of the car-park-to-point midpoint; no OSM route way could be fetched)",
+      "bio": "A 2 km return walk behind the dunes to Dark Point, a Worimi gathering place for at least 4,000 years.",
+      "hours": "Open 24 hours",
+      "hours_note": "park always open (NPWS)",
+      "hours_source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/dark-point-walking-track",
+      "visitHoursMin": 0.75,
+      "visitHoursMax": 1.25,
+      "visit_hours_basis": "NPWS: 45min - 1hr 15min, 2 km return, Grade 5",
+      "cost": {
+        "costMin": 8,
+        "costMax": 8,
+        "currency": "AUD",
+        "source": "NPWS walk page: \"Park entry fees apply\"; Myall Lakes park page $8 per vehicle per day"
+      },
+      "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/dark-point-walking-track",
+      "ticketUrl_check": "Loaded (200); page title \"Dark Point (Little Gibber) Trail | NSW National Parks\", heading \"Dark Point walking track\".",
+      "counted_sources": [
+        "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/dark-point-walking-track",
+        "https://en.wikivoyage.org/wiki/Myall_Lakes_National_Park"
+      ],
+      "notes": "Cultural site: NPWS asks visitors not to remove relics. Wikivoyage lists the Aboriginal Place and the track separately; treat as one spot.",
+      "name": "Dark Point Walking Track",
+      "placement_id": "myall-lakes-national-park-6",
+      "id_if_standalone": "dark-point-walking-track",
+      "category": "hike",
+      "icon": "🥾",
+      "placement_coordinates": {
+        "latitude": -32.596589,
+        "longitude": 152.269309
+      },
+      "coordinates": {
+        "latitude": -32.596589,
+        "longitude": 152.269309
+      },
+      "distance_moved_from_placement_m": 0,
+      "bio_fit_lines": 3,
+      "bio_chars": 101,
+      "bio_sources": "bio facts come from the counted_sources and hours_source pages above"
+    },
+    {
+      "coordinates_source": "Commons photo median -31.899883,152.48854 (1 geotagged file) agrees within 15 m with the Wikivoyage Taree listing geo (-31.9,152.4886), so HIGH-equivalent. Placement point was the Manning River Drive road (-31.8995,152.4866), 190 m west.",
+      "pin_status": "HIGH-equivalent (two independent sources within 15 m)",
+      "bio": "A roadside giant oyster, once a restaurant and shop, now the upper floor of a Taree car dealership.",
+      "hours": "Visible from the road at any time",
+      "hours_source": "https://en.wikivoyage.org/wiki/Taree",
+      "hours_note": "private car dealership land: no visiting hours; exterior only",
+      "visitHoursMin": 0,
+      "visitHoursMax": 0.25,
+      "visit_hours_basis": "roadside photo stop (WRITING.md rule for roadside icons)",
+      "free": true,
+      "ticketUrl": null,
+      "ticketUrl_reason": "a roadside landmark on a private dealership",
+      "counted_sources": [
+        "https://en.wikivoyage.org/wiki/Taree",
+        "https://www.visitnsw.com/destinations/north-coast/forster-and-taree-area/taree/attractions/big-oyster"
+      ],
+      "notes": "Wikivoyage: \"no actual oysters to be found\". 98 vs 100 Manning River Drive varies by source. Placement coordinate source said Chatham; it is Taree.",
+      "name": "Big Oyster",
+      "placement_id": "taree-1",
+      "id_if_standalone": "big-oyster",
+      "category": "landmark",
+      "icon": "🦪",
+      "placement_coordinates": {
+        "latitude": -31.8995,
+        "longitude": 152.4866
+      },
+      "coordinates": {
+        "latitude": -31.899883,
+        "longitude": 152.48854
+      },
+      "distance_moved_from_placement_m": 188,
+      "verdict": "keep",
+      "bio_fit_lines": 3,
+      "bio_chars": 99,
+      "bio_sources": "bio facts come from the counted_sources and hours_source pages above"
+    },
+    {
+      "coordinates_source": "Photon/OSM tourism=camp_site \"Kylie's Beach Campground\" (way 345715892) -31.7359482,152.7913131: NPWS lists Kylies Beach campground and Diamond Head campground as park highlights; this is a visitor point, not the Wikipedia centroid (-31.8164,152.7214, 9 km SW). Mermaid lookout (OSM tourism=viewpoint, node 1696033697) is at -31.7211231,152.8004695. Overpass unreachable.",
+      "pin_status": "MEDIUM-equivalent (visitor-point OSM feature, Photon only)",
+      "bio": "A crowd-free coastal park between Port Macquarie and Taree with beach camping, headland lookouts and dune walks.",
+      "hours": "Open 24 hours",
+      "hours_note": "NPWS: always open but may close for weather/fire",
+      "hours_source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/crowdy-bay-national-park",
+      "visitHoursMin": 1,
+      "visitHoursMax": 3,
+      "visit_hours_basis": "estimate, not sourced",
+      "cost": {
+        "costMin": 8,
+        "costMax": 8,
+        "currency": "AUD",
+        "source": "NPWS park page: $8 per vehicle per day (a Day Pass or Annual Pass is needed when visiting)"
+      },
+      "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/crowdy-bay-national-park",
+      "ticketUrl_check": "Loaded (200); title \"Crowdy Bay National Park | NSW National Parks\".",
+      "counted_sources": [
+        "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/crowdy-bay-national-park",
+        "https://en.wikivoyage.org/wiki/Mid-North_Coast"
+      ],
+      "notes": "Park is a gap: NPWS \"every national park is a destination\" rule: owner decides destination vs standalone.",
+      "name": "Crowdy Bay National Park",
+      "placement_id": "taree-2",
+      "id_if_standalone": "crowdy-bay-national-park",
+      "category": "nature",
+      "icon": "🏞️",
+      "placement_coordinates": {
+        "latitude": -31.81639,
+        "longitude": 152.72139
+      },
+      "coordinates": {
+        "latitude": -31.7359482,
+        "longitude": 152.7913131
+      },
+      "distance_moved_from_placement_m": 11122,
+      "verdict": "keep",
+      "bio_fit_lines": 3,
+      "bio_chars": 112,
+      "bio_sources": "bio facts come from the counted_sources and hours_source pages above"
+    },
+    {
+      "coordinates_source": "Photon/OSM natural=beach way 760399355 \"Old Bar Beach\" -31.9719868,152.5914366; moved from the placement town-centroid (-31.965,152.58444, OSM boundary) onto the sand because the spot category is beach. resolve-pin LOW (Overpass down).",
+      "pin_status": "MEDIUM-equivalent (OSM beach feature)",
+      "bio": "A surf village near Taree with a summer-patrolled beach, kite-boarding and a 2.5 km path to Wallabi Point.",
+      "hours": "Open 24 hours",
+      "hours_source": "https://barringtoncoast.com.au/directory/old-bar-beach",
+      "visitHoursMin": 1,
+      "visitHoursMax": 3,
+      "visit_hours_basis": "estimate, not sourced",
+      "free": true,
+      "ticketUrl": null,
+      "ticketUrl_reason": "a village and public beach, no single steward",
+      "counted_sources": [
+        "https://en.wikivoyage.org/wiki/Taree",
+        "https://barringtoncoast.com.au/directory/old-bar-beach",
+        "https://en.wikivoyage.org/wiki/Mid-North_Coast"
+      ],
+      "notes": "Wikivoyage has no own Old Bar page (it redirects to Taree). Rename \"Old Bar\" is fine; Wikipedia article \"Old Bar, New South Wales\".",
+      "name": "Old Bar",
+      "placement_id": "taree-3",
+      "id_if_standalone": "old-bar",
+      "category": "beach",
+      "icon": "🏄",
+      "placement_coordinates": {
+        "latitude": -31.965,
+        "longitude": 152.58444
+      },
+      "coordinates": {
+        "latitude": -31.9719868,
+        "longitude": 152.5914366
+      },
+      "distance_moved_from_placement_m": 1019,
+      "verdict": "keep",
+      "bio_fit_lines": 3,
+      "bio_chars": 106,
+      "bio_sources": "bio facts come from the counted_sources and hours_source pages above"
+    },
+    {
+      "coordinates_source": "OSM tourism=attraction node 6382156586 \"Big Axe\" (Nominatim and Photon), -31.6350453,152.7221778. resolve-pin LOW (Overpass down; single OSM feature).",
+      "pin_status": "MEDIUM-equivalent (OSM attraction node)",
+      "bio": "A giant roadside axe at Kew, first built in 1979 for a local axeman and the timber trade, rebuilt in 2017.",
+      "hours": "Open 24 hours",
+      "hours_note": "outdoor roadside sculpture beside the iKew Visitor Information Centre (reported 10am-4pm daily, volunteer-run, undated)",
+      "hours_source": "https://landofthebigs.com/big-axe-kew-nsw/",
+      "visitHoursMin": 0,
+      "visitHoursMax": 0.25,
+      "visit_hours_basis": "roadside photo stop (WRITING.md rule)",
+      "free": true,
+      "ticketUrl": null,
+      "ticketUrl_reason": "roadside sculpture; no official site found for it",
+      "counted_sources": [
+        "https://en.wikivoyage.org/wiki/Mid-North_Coast"
+      ],
+      "notes": "Only Wikivoyage Mid-North Coast regional list (plus Wikipedia Kew / Land of the Bigs, which do not count). Wikivoyage Taree route box lists Kew as a stop. The 1979 / 2017 dates are from Land of the Bigs; sources disagree on size (8 or 9 m).",
+      "name": "Big Axe",
+      "placement_id": "taree-4",
+      "id_if_standalone": "big-axe",
+      "category": "landmark",
+      "icon": "🪓",
+      "placement_coordinates": {
+        "latitude": -31.63505,
+        "longitude": 152.72218
+      },
+      "coordinates": {
+        "latitude": -31.6350453,
+        "longitude": 152.7221778
+      },
+      "distance_moved_from_placement_m": 1,
+      "verdict": "keep",
+      "bio_fit_lines": 3,
+      "bio_chars": 106,
+      "bio_sources": "bio facts come from the counted_sources and hours_source pages above"
+    },
+    {
+      "coordinates_source": "Placement pin: midpoint of OSM ways 84536795+84536783 (Urunga Lagoon Footbridge, about 1 km). Photon also returns OSM way 84536798 \"Urunga Lagoon Interpretive Boardwalk (closed)\" at -30.500608,153.025485 (190 m away).",
+      "pin_status": "MEDIUM-equivalent (route midpoint of mapped ways)",
+      "bio": "A riverside and coastal boardwalk from Urunga toward Hungry Head, partly open while it is rebuilt.",
+      "hours": "Open access; parts closed during the 2026 rebuild",
+      "hours_note": "no opening hours published; nsw.gov.au listing says 850 m plus an 80 m section and a fishing platform are open and full completion is due in 2026",
+      "hours_source": "https://www.nsw.gov.au/visiting-and-exploring-nsw/locations-and-attractions/urunga-boardwalk",
+      "visitHoursMin": 1,
+      "visitHoursMax": 2,
+      "visit_hours_basis": "estimate; a local source mentions a 7 km return loop from the museum (not opened)",
+      "free": true,
+      "ticketUrl": null,
+      "ticketUrl_reason": "council-run boardwalk; no dedicated official page found (Bellingen Shire Council news page only)",
+      "counted_sources": [
+        "https://en.wikivoyage.org/wiki/Urunga",
+        "https://www.nsw.gov.au/visiting-and-exploring-nsw/locations-and-attractions/urunga-boardwalk"
+      ],
+      "unverified": [
+        "whether the full boardwalk is open by now (page says completion in 2026; today is October 2026)"
+      ],
+      "name": "Urunga Boardwalk",
+      "placement_id": "nambucca-heads-1",
+      "id_if_standalone": "urunga-boardwalk",
+      "category": "hike",
+      "icon": "🌿",
+      "placement_coordinates": {
+        "latitude": -30.50084,
+        "longitude": 153.02745
+      },
+      "coordinates": {
+        "latitude": -30.50084,
+        "longitude": 153.02745
+      },
+      "distance_moved_from_placement_m": 0,
+      "verdict": "keep",
+      "bio_fit_lines": 3,
+      "bio_chars": 98,
+      "bio_sources": "bio facts come from the counted_sources and hours_source pages above"
+    },
+    {
+      "coordinates_source": "Photon/OSM place=locality \"Urunga\" -30.498339,153.016629 (same as placement); Wikipedia -30.5,153.016667 is 185 m away. A town spot, so the town point is right.",
+      "pin_status": "MEDIUM (town centre; OSM + Wikipedia within 185 m)",
+      "bio": "A sleepy town where the Bellinger and Kalang rivers reach the sea, with a lagoon boardwalk and Hungry Head Beach.",
+      "hours": "Open 24 hours",
+      "hours_note": "town; Urunga Museum hours not checked",
+      "hours_source": "https://en.wikivoyage.org/wiki/Urunga",
+      "visitHoursMin": 1,
+      "visitHoursMax": 3,
+      "visit_hours_basis": "estimate, not sourced",
+      "free": true,
+      "ticketUrl": null,
+      "ticketUrl_reason": "a town, no single steward",
+      "counted_sources": [
+        "https://en.wikivoyage.org/wiki/Urunga",
+        "https://en.wikivoyage.org/wiki/Mid-North_Coast"
+      ],
+      "notes": "Weak as a separate spot: its draws (boardwalk, Hungry Head Beach) are their own spots. Placement category \"historic\" is wrong for a town.",
+      "name": "Urunga",
+      "placement_id": "nambucca-heads-2",
+      "id_if_standalone": "urunga",
+      "category": "historic",
+      "icon": "🏘️",
+      "placement_coordinates": {
+        "latitude": -30.49834,
+        "longitude": 153.01663
+      },
+      "coordinates": {
+        "latitude": -30.498339,
+        "longitude": 153.016629
+      },
+      "distance_moved_from_placement_m": 0,
+      "verdict": "keep",
+      "bio_fit_lines": 3,
+      "bio_chars": 113,
+      "bio_sources": "bio facts come from the counted_sources and hours_source pages above"
+    },
+    {
+      "coordinates_source": "Photon/OSM natural=beach way 959620718 \"Hungry Head\" -30.531342,153.0252797 (same as placement); Wikivoyage listing -30.516667,153.033333 is 2 km away (mid-beach). resolve-pin LOW (Overpass down).",
+      "pin_status": "MEDIUM-equivalent (OSM beach feature)",
+      "bio": "A largely untouched beach south of Urunga, with lifeguards at the car-accessible southern end.",
+      "hours": "Open 24 hours",
+      "hours_source": "https://en.wikivoyage.org/wiki/Urunga",
+      "visitHoursMin": 1,
+      "visitHoursMax": 2,
+      "visit_hours_basis": "estimate, not sourced",
+      "free": true,
+      "ticketUrl": null,
+      "ticketUrl_reason": "public beach, no single steward",
+      "counted_sources": [
+        "https://en.wikivoyage.org/wiki/Urunga"
+      ],
+      "notes": "Wikivoyage: northern end reached on foot via the boardwalk, no facilities. One counted source.",
+      "name": "Hungry Head Beach",
+      "placement_id": "nambucca-heads-3",
+      "id_if_standalone": "hungry-head-beach",
+      "category": "beach",
+      "icon": "🏖️",
+      "placement_coordinates": {
+        "latitude": -30.53134,
+        "longitude": 153.02528
+      },
+      "coordinates": {
+        "latitude": -30.531342,
+        "longitude": 153.0252797
+      },
+      "distance_moved_from_placement_m": 0,
+      "verdict": "keep",
+      "bio_fit_lines": 3,
+      "bio_chars": 94,
+      "bio_sources": "bio facts come from the counted_sources and hours_source pages above"
+    },
+    {
+      "coordinates_source": "OSM tourism=viewpoint (Nominatim) -30.64568,153.01665 as in placement; Wikivoyage listing -30.6456,153.0163 is 40 m away. resolve-pin result not captured (run timed out); Photon-equivalent not re-run.",
+      "pin_status": "HIGH-equivalent (OSM viewpoint and Wikivoyage listing within 40 m)",
+      "bio": "A clifftop lookout at the end of Parkes Street over the Nambucca River mouth, good for whales and dolphins.",
+      "hours": "Open 24 hours",
+      "hours_source": "https://www.visitnsw.com/destinations/north-coast/coffs-harbour-area/nambucca-heads/attractions/captain-cook-lookout-nambucca-heads",
+      "hours_note": "no hours stated; open public lookout",
+      "visitHoursMin": 0,
+      "visitHoursMax": 0.5,
+      "visit_hours_basis": "WRITING.md rule for a lookout stop",
+      "free": true,
+      "ticketUrl": null,
+      "ticketUrl_reason": "open lookout, council land; no steward page found",
+      "counted_sources": [
+        "https://en.wikivoyage.org/wiki/Nambucca_Heads",
+        "https://www.visitnsw.com/destinations/north-coast/coffs-harbour-area/nambucca-heads/attractions/captain-cook-lookout-nambucca-heads",
+        "https://www.lonelyplanet.com/australia/new-south-wales/nambucca-heads/attractions/captain-cook-lookout/a/poi-sig/1406727/362291"
+      ],
+      "notes": "Lonely Planet page only seen as a search result, not opened. Wikivoyage also lists Rotary Lookout on the same street: a near-duplicate, not added.",
+      "name": "Captain Cook Lookout",
+      "placement_id": "nambucca-heads-4",
+      "id_if_standalone": "captain-cook-lookout",
+      "category": "viewpoint",
+      "icon": "🔭",
+      "placement_coordinates": {
+        "latitude": -30.64568,
+        "longitude": 153.01665
+      },
+      "coordinates": {
+        "latitude": -30.64568,
+        "longitude": 153.01665
+      },
+      "distance_moved_from_placement_m": 0,
+      "verdict": "keep",
+      "bio_fit_lines": 3,
+      "bio_chars": 107,
+      "bio_sources": "bio facts come from the counted_sources and hours_source pages above"
+    },
+    {
+      "coordinates_source": "Placement: midpoint of OSM Beech Forest Walk (Long Loop) ways; resolve-pin HIGH -32.088495,151.596016 (Photon/OSM highway=path \"Beech Forest Walk (Short Loop)\") is 40 m away.",
+      "pin_status": "HIGH",
+      "bio": "A 2.5 km loop through snow gum woodland and Antarctic beech rainforest, with mossy cascades and a gorge.",
+      "hours": "Open 24 hours",
+      "hours_note": "park always open (NPWS); the road to Gloucester Tops can be impassable in wet weather",
+      "hours_source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/antarctic-beech-forest-walking-track",
+      "visitHoursMin": 1,
+      "visitHoursMax": 1.5,
+      "visit_hours_basis": "NPWS: 1hr - 1hr 30min, 2.5 km loop, Grade 3",
+      "free": true,
+      "cost_note": "Barrington Tops is not a fee-collecting park (Wikivoyage Barrington Tops); the NPWS park and walk pages list no entry fee. Camping fees apply separately. Not seen on an NPWS fees page.",
+      "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/antarctic-beech-forest-walking-track",
+      "ticketUrl_check": "Loaded (200); title \"Antarctic Beech Forest walking track | NSW National Parks\".",
+      "counted_sources": [
+        "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/antarctic-beech-forest-walking-track",
+        "https://en.wikivoyage.org/wiki/Barrington_Tops_National_Park"
+      ],
+      "notes": "Wikivoyage: 20 or 90 minutes (short/long walk). Placement said a 1.5 km loop; NPWS says 2.5 km.",
+      "name": "Antarctic Beech Forest Walking Track",
+      "placement_id": "barrington-tops-national-park-1",
+      "id_if_standalone": "antarctic-beech-forest-walking-track",
+      "category": "hike",
+      "icon": "🥾",
+      "placement_coordinates": {
+        "latitude": -32.08849,
+        "longitude": 151.59649
+      },
+      "coordinates": {
+        "latitude": -32.08849,
+        "longitude": 151.59649
+      },
+      "distance_moved_from_placement_m": 0,
+      "verdict": "keep",
+      "bio_fit_lines": 3,
+      "bio_chars": 104,
+      "bio_sources": "bio facts come from the counted_sources and hours_source pages above"
+    },
+    {
+      "coordinates_source": "Photon/OSM natural=peak \"Careys Peak\" (node 283129996) -32.0532954,151.4551592 = placement; Wikivoyage listing -32.05323,151.4551 within 10 m. resolve-pin graded LOW only because Overpass was down and the OSM peak was not returned.",
+      "pin_status": "HIGH-equivalent (OSM peak and Wikivoyage listing within 10 m)",
+      "bio": "A 14 km return track along the escarpment rim to a 1,544 m lookout over the Barrington wilderness and Hunter Valley.",
+      "hours": "Open 24 hours",
+      "hours_note": "park always open (NPWS); Barrington trail is open to vehicles only 1 Oct - 31 May; NPWS page shows a safety alert (not read)",
+      "hours_source": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/careys-peak-walking-track",
+      "visitHoursMin": 5,
+      "visitHoursMax": 7,
+      "visit_hours_basis": "ESTIMATE: NPWS page says \"12hrs - 1 day\" for 14 km return, which looks wrong; not used",
+      "free": true,
+      "cost_note": "Barrington Tops is not a fee-collecting park (Wikivoyage); NPWS pages list no entry fee.",
+      "ticketUrl": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/careys-peak-walking-track",
+      "ticketUrl_check": "Loaded (200); title \"Careys Peak walking track | NSW National Parks\".",
+      "counted_sources": [
+        "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/careys-peak-walking-track",
+        "https://en.wikivoyage.org/wiki/Barrington_Tops_National_Park"
+      ],
+      "notes": "Spot is a full-day track and a summit lookout at once; \"Careys Peak Lookout\" name fits the Wikivoyage listing. 1,544 m is from Wikivoyage (\"highest point of the park\"); I left out that claim.",
+      "unverified": [
+        "actual walking time",
+        "contents of the NPWS safety alert"
+      ],
+      "name": "Careys Peak Lookout",
+      "placement_id": "barrington-tops-national-park-2",
+      "id_if_standalone": "careys-peak-lookout",
+      "category": "viewpoint",
+      "icon": "🏔️",
+      "placement_coordinates": {
+        "latitude": -32.0532954,
+        "longitude": 151.4551592
+      },
+      "coordinates": {
+        "latitude": -32.0532954,
+        "longitude": 151.4551592
+      },
+      "distance_moved_from_placement_m": 0,
+      "verdict": "keep",
+      "bio_fit_lines": 3,
+      "bio_chars": 116,
+      "bio_sources": "bio facts come from the counted_sources and hours_source pages above"
+    },
+    {
+      "coordinates_source": "Wikivoyage Kempsey article geo -31.081944,152.835; Wikipedia -31.083333,152.833333 is 230 m away. resolve-pin \"HIGH\" (-31.079809,152.842289, the Photon place=locality) only echoed the placement hint, 700 m east of the town centre across the river; moved to the town centre.",
+      "pin_status": "MEDIUM (town centre, two sources within 230 m)",
+      "bio": "The Macleay Valley river town, birthplace of Slim Dusty and Akubra hats, with a local museum and Aboriginal art gallery.",
+      "hours": "Open 24 hours",
+      "hours_note": "town; Kempsey Museum is 10am-4pm daily, closed Good Friday and Christmas Day",
+      "hours_source": "https://mgnsw.org.au/organisations/kempsey-museum/",
+      "visitHoursMin": 1,
+      "visitHoursMax": 2,
+      "visit_hours_basis": "estimate, not sourced",
+      "free": true,
+      "cost_note": "museum entry not verified: an undated listing shows adult $4",
+      "ticketUrl": null,
+      "ticketUrl_reason": "a town; the museum has no official site found (only an MGNSW directory listing)",
+      "counted_sources": [
+        "https://en.wikivoyage.org/wiki/Kempsey",
+        "https://macleayvalleycoast.com.au/locations/kempsey/"
+      ],
+      "notes": "Weak town spot (placement skeptic verdict was review). Stronger candidates the run did not place: Slim Dusty Centre (slimdustycentre.com.au) and Wigay Aboriginal Cultural Park, both named by Macleay Valley Coast. Not researched.",
+      "name": "Kempsey",
+      "placement_id": "kempsey",
+      "id_if_standalone": "kempsey",
+      "category": "historic",
+      "icon": "🏘️",
+      "placement_coordinates": {
+        "latitude": -31.07981,
+        "longitude": 152.84229
+      },
+      "coordinates": {
+        "latitude": -31.081944,
+        "longitude": 152.835
+      },
+      "distance_moved_from_placement_m": 734,
+      "verdict": "keep",
+      "bio_fit_lines": 3,
+      "bio_chars": 120,
+      "bio_sources": "bio facts come from the counted_sources and hours_source pages above"
+    },
+    {
+      "coordinates_source": "Photon/OSM natural=cape \"Crescent Head\" -31.190883,152.98265 (same as placement); the surf reserve and break are at the village headland. resolve-pin LOW (Overpass down).",
+      "pin_status": "MEDIUM-equivalent (OSM cape)",
+      "bio": "A surf village with a National Surfing Reserve, a long-running longboard point break and a short walk to Little Nobby.",
+      "hours": "Open 24 hours",
+      "hours_source": "https://www.nsw.gov.au/visiting-and-exploring-nsw/locations-and-attractions/crescent-head-surfing-reserve",
+      "hours_note": "open-access reserve; nsw.gov.au lists \"Free entry\"",
+      "visitHoursMin": 1,
+      "visitHoursMax": 3,
+      "visit_hours_basis": "estimate, not sourced",
+      "free": true,
+      "ticketUrl": null,
+      "ticketUrl_reason": "a village and surfing reserve; the visitor sites are tourism boards, not stewards",
+      "counted_sources": [
+        "https://www.nsw.gov.au/visiting-and-exploring-nsw/locations-and-attractions/crescent-head-surfing-reserve",
+        "https://macleayvalleycoast.com.au/locations/crescent-head/"
+      ],
+      "notes": "Placement said zero counted sources; the NSW Government visitor listing (Crescent Head Surfing Reserve) and the Macleay Valley Coast tourism page are two. Wikivoyage has no Crescent Head page (404). Little Nobby detail comes from a search snippet, not a loaded page.",
+      "name": "Crescent Head",
+      "placement_id": "crescent-head",
+      "id_if_standalone": "crescent-head",
+      "category": "beach",
+      "icon": "🏄",
+      "placement_coordinates": {
+        "latitude": -31.19088,
+        "longitude": 152.98265
+      },
+      "coordinates": {
+        "latitude": -31.190883,
+        "longitude": 152.98265
+      },
+      "distance_moved_from_placement_m": 0,
+      "verdict": "keep",
+      "bio_fit_lines": 3,
+      "bio_chars": 118,
+      "bio_sources": "bio facts come from the counted_sources and hours_source pages above"
+    },
+    {
+      "coordinates_source": "Photon/OSM natural=cape \"Point Plomer\" (node 3967341149) -31.314908,152.9754159 = placement, the park's main visitor area (Point Plomer campground OSM camp_site at -31.31333,152.97, 540 m away). resolve-pin centroid (-31.3321,152.9142, leisure=nature_reserve) is not a visitor point.",
+      "pin_status": "MEDIUM-equivalent (visitor point; Photon only)",
+      "bio": "A remote coastal park between Crescent Head and Port Macquarie with surf breaks, beaches and camping at Point Plomer.",
+      "hours": "Open 24 hours",
+      "hours_note": "NPWS: always open but may close for weather/fire",
+      "hours_source": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/limeburners-creek-national-park",
+      "visitHoursMin": 1,
+      "visitHoursMax": 3,
+      "visit_hours_basis": "estimate, not sourced",
+      "cost": {
+        "costMin": 8,
+        "costMax": 8,
+        "currency": "AUD",
+        "source": "NPWS park page: $8 per vehicle per day (a Day Pass or Annual Pass is needed when visiting)"
+      },
+      "ticketUrl": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/limeburners-creek-national-park",
+      "ticketUrl_check": "Loaded (200); title \"Limeburners Creek National Park | NSW National Parks\".",
+      "counted_sources": [
+        "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/limeburners-creek-national-park"
+      ],
+      "notes": "Park is a gap against the every-national-park-is-a-destination rule: owner decides.",
+      "name": "Limeburners Creek National Park",
+      "placement_id": "limeburners-creek-national-park",
+      "id_if_standalone": "limeburners-creek-national-park",
+      "category": "nature",
+      "icon": "🏞️",
+      "placement_coordinates": {
+        "latitude": -31.31491,
+        "longitude": 152.97542
+      },
+      "coordinates": {
+        "latitude": -31.314908,
+        "longitude": 152.9754159
+      },
+      "distance_moved_from_placement_m": 0,
+      "verdict": "keep",
+      "bio_fit_lines": 3,
+      "bio_chars": 117,
+      "bio_sources": "bio facts come from the counted_sources and hours_source pages above"
+    },
+    {
+      "name": "Crystal Shower Falls",
+      "placement_id": "dorrigo-national-park-4",
+      "id_if_standalone": "crystal-shower-falls",
+      "verdict": "reject",
+      "verdict_reason": "Part of a larger listed spot: it is the highlight of the Wonga Walk (dorrigo-national-park-2; NPWS: Wonga walk 5.8 km loop passes Tristania Falls and Crystal Shower Falls, with a separate short Crystal Shower Falls walk off the same track). Also the bio says \"walk behind\", but Wikivoyage says you can no longer go behind the fall (NPWS says you can look through the veil from a cavern): conflicting. If the owner wants it separate, the pin is resolve-pin HIGH -30.380691,152.729527 (Photon/OSM waterway=waterfall, 20 m from placement).",
+      "counted_sources": [
+        "https://en.wikivoyage.org/wiki/Dorrigo_National_Park",
+        "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/wonga-walk"
+      ]
+    },
+    {
+      "name": "Glenifer Road Swimming Hole",
+      "placement_id": "dorrigo-national-park-7",
+      "id_if_standalone": "glenifer-road-swimming-hole",
+      "verdict": "reject",
+      "verdict_reason": "One counted source only (Wikivoyage Bellingen: a contributor tip about a deep swimming hole 300 m upstream of a bridge on Glenifer Road), no managing-agency or tourism-board page, public access and exact location unverified. The placement pin is an approximate road point; resolve-pin's \"HIGH\" hit (-30.383735,152.890145, a generic \"Swimming Hole\" 6 km north) is a different place. Fails \"a visitor can actually do something there\" for lack of verifiable access; would need a second counted source and a known access point to go to review.",
+      "counted_sources": [
+        "https://en.wikivoyage.org/wiki/Bellingen"
+      ]
+    }
+  ]
+}
