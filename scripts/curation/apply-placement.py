@@ -127,11 +127,11 @@ for e in place['placements']:
         if act != 'new-destination':
             skipped.append((name, f'action {act}: goes in with its destination'))
         continue
-    if e.get('status'):
+    if e.get('status') and not e.get('photoless'):
         skipped.append((name, e['status'])); continue
     if act == 'spot' and dest not in dest_ids:
         skipped.append((name, f'destination {dest} is not in the app yet')); continue
-    if not e.get('photo') or e.get('photo_verdict') not in (None, 'accept'):
+    if (not e.get('photo') and not e.get('photoless')) or e.get('photo_verdict') not in (None, 'accept'):
         skipped.append((name, 'no accepted photo')); continue
     if sid in ids_now:
         skipped.append((name, f'id {sid} already in spots.ts')); continue
@@ -176,6 +176,8 @@ if standalone:
 if not dry:
     open('src/data/spots.ts', 'w').write('\n'.join(lines_out))
     for e in [x for es in by_dest.values() for x in es] + standalone:
+        if not e.get('photo'):
+            continue
         set_override(e['spot'].get('wiki') or e['spot']['name'], e['photo']['file'])
         hc = e['photo'].get('hero_crop')
         if isinstance(hc, dict):

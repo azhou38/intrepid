@@ -16,6 +16,8 @@ if not args or args[0].startswith('--'):
     sys.exit(__doc__)
 region = args[0]
 dry = '--dry-run' in args
+photoless = '--photoless' in args   # a missing photo never holds a spot back (IMAGES.md); holds with another reason stay
+non_photo_holds = set(json.load(open('curation/nz-rest/non-photo-holds.json'))) if os.path.exists('curation/nz-rest/non-photo-holds.json') else set()
 only = set(args[args.index('--only') + 1].split(',')) if '--only' in args else None
 currency = args[args.index('--currency') + 1] if '--currency' in args else 'NZD'
 
@@ -62,10 +64,11 @@ for e in place[key]:
     if act not in ('spot', 'standalone'):
         skipped.append((sid, name, f'action {act}: waits on its proposed destination')); continue
     st = str(e.get('status') or '')
-    if 'held' in st or sid in held_ids:
+    if ('held' in st or sid in held_ids) and not (photoless and sid not in non_photo_holds):
         skipped.append((sid, name, 'held: ' + (st or 'see final.json'))); continue
     ph = e.get('photo') or {}
-    if not ph.get('file') or ph.get('external'):
+    nophoto = not ph.get('file') or ph.get('external')
+    if nophoto and not photoless:
         skipped.append((sid, name, 'no accepted Commons photo' + (' (external photo not yet committed)' if ph.get('external') else ''))); continue
     q = final['spots'].get(sid)
     if not q:
@@ -87,9 +90,9 @@ for e in place[key]:
     new_sid = free_id(sid, e.get('destination') if act == 'spot' else None) if not dry else sid
     entry = {'id': new_sid, 'name': name, 'action': act, 'destination': e.get('destination') if act == 'spot' else None,
              'coordinates': q.get('coordinates') or e.get('coordinates'),
-             'photo': {'file': re.sub(r'^File:', '', ph['file'])}, 'photo_verdict': 'accept', 'spot': spot}
+             'photo': {'file': re.sub(r'^File:', '', ph['file'])} if not nophoto else None, 'photoless': nophoto, 'photo_verdict': 'accept', 'spot': spot}
     hc = e.get('hero_crop') or ph.get('hero_crop')
-    if isinstance(hc, dict):
+    if isinstance(hc, dict) and not nophoto:
         entry['photo']['hero_crop'] = hc
     if not entry['coordinates']:
         skipped.append((sid, name, 'no coordinates')); continue

@@ -956,7 +956,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'An alpine spa village of hot pools, forest trails and jet boats.',
     description: 'Hanmer Springs is a small alpine village in North Canterbury, built around natural thermal springs first noted by Europeans in 1859. Its open-air thermal pools, steaming beneath the mountains, are the main draw, but the village also has forest walks, mountain biking, and jet-boating and bungy on the nearby Waiau River.',
     whyVisit: ['Open-air thermal pools', 'Alpine forest walks', 'Adventure on the Waiau River'],
-    whyVisitPhotos: ["Hamner Springs (261408475).jpg", "Hanmer Springs Conical Hill Walkway - panoramio.jpg", "Auf der Fahrt nach Hanmer Springs.JPG"],
+    whyVisitPhotos: ["Hamner Springs (261408475).jpg", "Hanmer Forest Sculpture Walk MRD 05.jpg", "Auf der Fahrt nach Hanmer Springs.JPG"],
     highlights: ['Thermal pools', 'Forest walks', 'River adventures'],
     goodToKnow: [
       { icon: '♨️', title: 'Soak after dark', detail: 'The pools stay open into the evening, and soaking under the stars on a cold night is the classic Hanmer experience.' },
@@ -1427,7 +1427,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "South Canterbury's port city, with a sheltered beach and a Māori rock art centre.",
     description: "Timaru is South Canterbury's main city, a working port with Edwardian architecture and a calmer pace than the tourist hubs inland. Caroline Bay is a sandy city beach with a summer carnival tradition, and the town has a good regional museum and a Māori rock art centre. It makes a natural stop between Christchurch and Dunedin or the Mackenzie Country.",
     whyVisit: ['Caroline Bay beach', 'Māori rock art at Te Ana', 'A stop on the way south'],
-    whyVisitPhotos: ["", "", "Timaru Botanic Garden, New Zealand.jpg"],
+    whyVisitPhotos: ["ext-dest-timaru-why1.jpg", "ext-dest-timaru-why2.jpg", "Timaru Botanic Garden, New Zealand.jpg"],
     highlights: ['Caroline Bay', 'Rock art', 'Port city'],
     goodToKnow: [
       { icon: '🏖️', title: 'Visit in summer', detail: 'Caroline Bay is liveliest at the Christmas carnival and in the warm summer months.' },
