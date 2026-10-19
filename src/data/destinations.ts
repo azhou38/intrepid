@@ -272,7 +272,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Europe's most reinvented city, where history, art, and nightlife collide.",
     description: "Berlin is a city still assembling itself — raw, creative, and deeply shaped by its divided past. The Brandenburg Gate, Berlin Wall remnants, and Holocaust Memorial carry weight few cities can match, while its world-class museum island, vibrant art scene, and legendary techno clubs make it the most culturally electric city in Europe.",
     whyVisit: ['Brandenburg Gate & Wall history', "Europe's greatest clubbing scene", 'Museum Island & world-class art'],
-    whyVisitPhotos: ["Brandenburger Tor morgens.jpg", "Cookies Nightclub Berlin Dancing.jpg", "Museumsinsel and Bode-Museum, West view 20130724 1.jpg"],
+    whyVisitPhotos: ["Brandenburger Tor morgens.jpg", "Berghain in October 2014.jpg", "Museumsinsel and Bode-Museum, West view 20130724 1.jpg"],
     highlights: ['Brandenburg Gate', 'Clubbing scene', 'Museum Island'],
     goodToKnow: [
       { icon: '🛍️', title: 'Shop before Sunday', detail: 'Shops are closed by law on Sundays — stock up on Saturday.' },
