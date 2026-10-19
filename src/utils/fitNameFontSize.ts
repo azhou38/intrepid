@@ -34,3 +34,20 @@ export function fitNameSize(name: string, max: number, min: number, maxWidth: nu
   if (three >= comfort - 2) return three;
   return Math.min(comfort, fitNameFontSize(name, max, min, maxWidth, 4, glyphEm, wordEm));
 }
+
+// The name broken into lines the same way fitNameFontSize packs them (greedy, at spaces), joined with "\n". Handing React
+// Native these breaks explicitly means a line is never decided by its own text measurement: a card's name was seen running
+// out of its card on one line ("Tāmaki Drive C…", the rest clipped) when the measured line width came out narrower than the
+// drawn one. A line that is still too wide in the real font then wraps once more inside its own box instead of overflowing.
+export function breakNameLines(name: string, size: number, maxWidth: number, glyphEm = 0.58): string {
+  const perLine = Math.max(1, Math.floor(maxWidth / (size * glyphEm)));
+  const lines: string[] = [];
+  let cur = '';
+  for (const w of name.split(/\s+/).filter(Boolean)) {
+    if (!cur) cur = w;
+    else if (cur.length + 1 + w.length <= perLine) cur += ' ' + w;
+    else { lines.push(cur); cur = w; }
+  }
+  if (cur) lines.push(cur);
+  return lines.join('\n');
+}

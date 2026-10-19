@@ -6,7 +6,7 @@ import FadeInImage from './FadeInImage';
 import { photoSubject } from '../../utils/subjectCrop';
 import { styles } from './DestinationCard';
 import { CARD_SCRIM_FADE, CARD_SCRIM_ABOVE, cardScrimStops } from './cardScrim';
-import { fitNameSize } from '../../utils/fitNameFontSize';
+import { fitNameSize, breakNameLines } from '../../utils/fitNameFontSize';
 import { titleStatGap } from '../../utils/titleStatGap';
 import { formatSpotCost, formatVisitTime, spotPhotoTitle, type Spot } from '../../data/spots';
 import { useVisitIndex } from '../../store';
@@ -95,7 +95,7 @@ function SpotCard({ spot, onPress, width }: {
             </Svg>
           </View>
           <View pointerEvents="none" style={[styles.cardImageInfo, local.imageInfo]} onLayout={e => setInfoH(e.nativeEvent.layout.height)}>
-            <Text style={[styles.cardName, { fontSize: nameSize, lineHeight: Math.round(nameSize * 1.14), marginBottom: titleStatGap(nameSize, 1.14, 6.5) }]}>{spot.name}</Text>
+            <Text style={[styles.cardName, { fontSize: nameSize, lineHeight: Math.round(nameSize * 1.14), marginBottom: titleStatGap(nameSize, 1.14, 6.5) }]}>{breakNameLines(spot.name, nameSize, width - 23, 0.53)}</Text>
             <View style={local.metaRow}>
               <Clock size={11} color="rgba(255,255,255,0.9)" strokeWidth={2.5} />
               <Text style={local.metaTxt}>{formatVisitTime(spot.visitHoursMin, spot.visitHoursMax)}</Text>
