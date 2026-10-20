@@ -21,22 +21,6 @@ import { cameraStore } from './cameraStore';
 // invisible anyway, e.g. behind its zoom gate) never fades. The first render never fades.
 
 type F = GeoJSON.Feature<GeoJSON.Point>;
-
-// The live placement plan (optional): which candidate pins get their full (photo) form at the live zoom, decided here on
-// every camera event so it never lags the camera. A feature with `cand` set is a candidate; `pri` orders them (lower is more
-// prominent), `force` always places one, `gz` is the zoom from which it is visible at all (before that it is placed last
-// and never blocks a visible pin). PERSISTENCE: candidates placed last time are placed first (by prominence), then the rest
-// (by prominence), each only where it does not overlap one already placed. Zooming in only moves pins apart, so a pin that
-// shows keeps showing; zooming out, two showing pins that come to overlap are settled by prominence. A candidate not placed
-// is drawn with `demote` merged into its properties (a spot's small pin) under its own key, or not drawn at all when
-// there is no `demote` (a destination: its dot, drawn elsewhere, remains). Changes go through the same fades as joining
-// and leaving pins.
-export type PinPlan = { w: number; h: number; demote?: Record<string, any> };
-const worldPx = (lng: number, lat: number, z: number) => {
-  const scale = 512 * Math.pow(2, z);
-  const s = Math.sin((Math.max(-85, Math.min(85, lat)) * Math.PI) / 180);
-  return { x: ((lng + 180) / 360) * scale, y: (0.5 - Math.log((1 + s) / (1 - s)) / (4 * Math.PI)) * scale };
-};
 const IN_SLOTS = ['in0', 'in1'];
 const OUT_SLOTS = ['out0', 'out1'];
 type SlotPhase = 'idle' | 'arming' | 'running' | 'resetting';
@@ -48,7 +32,7 @@ const shownAt = (f: F, z: number) => {
 };
 
 export const FadingShapeSource = memo(function FadingShapeSource({
-  id, features, fadeInMs = 160, fadeOutMs = 130, hitbox, onPress, layers, plan,
+  id, features, fadeInMs = 160, fadeOutMs = 130, hitbox, onPress, layers,
 }: {
   id: string;
   features: F[];
@@ -57,7 +41,6 @@ export const FadingShapeSource = memo(function FadingShapeSource({
   hitbox?: { width: number; height: number };
   onPress?: (e: any) => void;
   layers: (slot: string, opacity: number, ms: number) => React.ReactElement[];
-  plan?: PinPlan;
 }) {
   const [, bump] = useReducer((n: number) => n + 1, 0);
   const st = useRef({
@@ -68,42 +51,16 @@ export const FadingShapeSource = memo(function FadingShapeSource({
       ...OUT_SLOTS.map(s => [s, { phase: 'idle' as SlotPhase, opacity: 1, timers: [] as any[] }] as const)]),
     visibleSig: '',
     features,
-    placed: new Set<string>(),   // candidates placed in the last plan (persistence)
-    plan,
   }).current;
   st.features = features;
-  st.plan = plan;
 
   // Which features are shown at the live zoom, and a cheap signature of that set.
-  const visibleAt = (z: number, commit = false) => {
+  const visibleAt = (z: number) => {
     const vis: F[] = [];
     for (const f of st.features) if (shownAt(f, z)) vis.push(f);
-    const pl = st.plan;
-    if (!pl) return vis;
-    const keyOf = (f: F) => String(f.id ?? f.properties?.id);
-    const cands = vis.filter(f => f.properties?.cand);
-    const visibleNow = (f: F) => f.properties?.gz === undefined || z >= f.properties.gz;
-    const group = (f: F) => f.properties?.force ? 0 : !visibleNow(f) ? 3 : st.placed.has(keyOf(f)) ? 1 : 2;
-    cands.sort((a, b) => group(a) - group(b) || (a.properties!.pri ?? 0) - (b.properties!.pri ?? 0));
-    const boxes: { x: number; y: number }[] = [];
-    const placed = new Set<string>();
-    for (const f of cands) {
-      const [lng, lat] = f.geometry.coordinates;
-      const p = worldPx(lng, lat, z);
-      if (!f.properties?.force && boxes.some(o => Math.abs(o.x - p.x) < pl.w && Math.abs(o.y - p.y) < pl.h)) continue;
-      boxes.push(p); placed.add(keyOf(f));
-    }
-    if (commit) st.placed = new Set([...placed].filter(k => { const f = cands.find(c => keyOf(c) === k); return !!f && visibleNow(f); }));
-    const out: F[] = [];
-    for (const f of vis) {
-      if (!f.properties?.cand || placed.has(keyOf(f))) { out.push(f); continue; }
-      if (pl.demote) out.push({ ...f, id: `${keyOf(f)}#d`, properties: { ...f.properties, ...pl.demote, id: f.properties?.id, cand: 0 } });
-    }
-    return out;
+    return vis;
   };
   const sigOf = (vis: F[]) => vis.map(f => String(f.id ?? f.properties?.id)).join('|');
-  // NB: a demoted feature's key is `<id>#d`, so a pin turning from its full form into its small form (or back) fades
-  // like a pin leaving and another joining.
 
   // Follow the camera: re-render only when the shown set changes.
   useEffect(() => cameraStore.subscribe(z => {
@@ -118,7 +75,7 @@ export const FadingShapeSource = memo(function FadingShapeSource({
   };
 
   // Diff the shown set against what is drawn, assigning joiners and leavers to slots.
-  const vis = visibleAt(cameraStore.zoom, true);
+  const vis = visibleAt(cameraStore.zoom);
   st.visibleSig = sigOf(vis);
   const present = new Set<string>();
   const freeSlot = (names: string[]) => names.find(n => st.slots.get(n)!.phase === 'idle' || st.slots.get(n)!.phase === 'arming');

@@ -1020,9 +1020,9 @@ const MAP_TYPES: { key: MapStyleKey; label: string }[] = [
 // (textOptional), and returns once there is room. Mapbox fades both in and out as placements change.
 const DEST_SYMBOL_STYLE: any = {
   iconImage: ['get', 'img'],
-  // Which destinations show their photo pin is decided by the live placement plan in FadingShapeSource (every camera
-  // event, with persistence and prominence): Mapbox draws every pin it is given, and still records it so names avoid it.
-  iconAllowOverlap: true,
+  // Mapbox resolves pin-vs-pin collisions itself, every frame, with its own quick fade (as Google Maps does). Persistence
+  // comes from the placement priority (symbolSortKey): destPinPlan puts the pins that were showing first.
+  iconAllowOverlap: false,
   iconIgnorePlacement: false,
   iconPadding: 0,
   symbolSortKey: ['get', 'sort'],
@@ -1054,9 +1054,9 @@ const destFadeStyle = (opacity: number, ms: number, leaving: boolean) => {
   if (!st) {
     st = {
       ...DEST_SYMBOL_STYLE,
-      // Mid-fade pins take no part in collision (the live plan has already placed them).
-      iconAllowOverlap: true, iconIgnorePlacement: true,
-      textAllowOverlap: true, textIgnorePlacement: true,
+      // A joining pin takes part in collision (it shows only where it fits); a leaving one does not.
+      iconAllowOverlap: leaving, iconIgnorePlacement: leaving,
+      textAllowOverlap: leaving, textIgnorePlacement: leaving,
       textField: ['case', ['==', ['get', 'lt'], 1], ['get', 'label'], ''],
       iconOpacity: opacity, textOpacity: opacity,
       iconOpacityTransition: { duration: ms, delay: 0 },
@@ -1298,9 +1298,6 @@ const PIN_FADE_IN_NATIVE_MS = 160;
 const PIN_LIVE_LEAD = 1.5;
 // The least time between two camera-driven re-renders of the map screen (see handleCameraChanged).
 const SCREEN_CAMERA_THROTTLE_MS = 50;
-// The live placement plans (FadingShapeSource): the least on-screen spacing between two photo pins.
-const DEST_PIN_PLAN = { w: 44, h: 44 };
-const SPOT_PIN_PLAN = { w: SPOT_PIN_SIZE + 4, h: SPOT_PIN_SIZE + 14, demote: { img: '' } };
 const PIN_FADE_OUT_NATIVE_MS = 120;
 // How far ahead of a spot's reveal zoom its photo pin image is prepared (see nativeSpotPins).
 const SPOT_WARM_ZOOM = 0.75;
@@ -2367,7 +2364,7 @@ const destItems = useMemo((): DestItem[] =>
     // Placement priority for the native layer (symbolSortKey: lower is placed first and wins a collision).
     const priority = new Map<string, number>();
     ordered.forEach((d, i) => priority.set(d.id, i));
-
+    if (NATIVE_DEST_PINS) [...placedOrder, ...bumped].forEach((id, i) => priority.set(id, i));
     destPhotoShownRef.current = new Set([...(NATIVE_DEST_PINS ? placedOrder : photoIds)].filter(id => { const d = eligibleDests.find(x => x.id === id); return !!d && (isForced(d) || gateOnNow(d)); }));
     if (NATIVE_DEST_PINS) {
       destLabelHitRef.current = { pxPerDegLng, rects: [] };   // names are native symbols: they take taps themselves
@@ -2780,10 +2777,7 @@ const destItems = useMemo((): DestItem[] =>
           mini: visited ? SPOT_MINI_PIN_VISITED : SPOT_MINI_PIN_UNVISITED,
           img,
           label: spotLabelLines(sp.name).join('\n'),
-          sort: rank(sp),
-          // The live placement plan (FadingShapeSource) gives its photo pin where there is room, with persistence; else
-          // its small pin.
-          ...(img ? { cand: 1, pri: rank(sp), ...(must.has(sp.id) ? { force: 1 } : {}) } : {}),
+          sort: planRank.get(sp.id) ?? 100_000 + rank(sp),
           // Shown from its reveal zoom, read against the live camera zoom (see visibleSpots / FadingShapeSource).
           ...(must.has(sp.id) || nearCtx?.spots.some(n => n.id === sp.id) ? {} : { zmin: (SPOT_REVEAL_ZOOM_BY_ID[sp.id] ?? 0) - ZOOM_EPSILON }),
         },
@@ -4703,7 +4697,6 @@ const destItems = useMemo((): DestItem[] =>
     const destSortKey = (id: string) =>
       // The plan's priority already puts pins that were showing first (persistence), then by prominence.
       planDest?.id === id ? -1 : (destPinPlan.priority.get(id) ?? 99_999);
-    const gateZooms = destGateZooms();
     const specs = destPinSpecsRef.current;
     let added = false;
     const features: GeoJSON.Feature<GeoJSON.Point>[] = [];
@@ -4727,10 +4720,6 @@ const destItems = useMemo((): DestItem[] =>
           // its gate, which is invisible anyway; lt: its name shows only once its own gate is crossed.
           nofade: !destGateOn(destPinPlan.fadeTier.get(dest.id) ?? '', camZoomRef.current),
           lt: camZoomRef.current >= (destLabelGates.get(dest.id) ?? 0) - 1e-6 ? 1 : 0,
-          // The live placement plan (FadingShapeSource): a candidate for a photo pin, by prominence; the selected destination
-          // always; gz: visible only from its rank gate's zoom.
-          cand: 1, pri: destSortKey(dest.id), ...(planDest?.id === dest.id ? { force: 1 } : {}),
-          ...(gateZooms[destPinPlan.fadeTier.get(dest.id) ?? ''] !== undefined ? { gz: gateZooms[destPinPlan.fadeTier.get(dest.id) ?? ''] } : {}),
           // Hidden from its own default zoom on, against the live camera zoom: its spot pins take over there.
           ...(DEST_ZOOM_LEVEL_BY_ID[dest.id] !== undefined ? { zmax: DEST_ZOOM_LEVEL_BY_ID[dest.id] - ZOOM_EPSILON } : {}),
         },
@@ -5079,7 +5068,6 @@ const destItems = useMemo((): DestItem[] =>
           <FadingShapeSource
             id="destPhotos"
             features={nativeDestPins.shape.features}
-            plan={DEST_PIN_PLAN}
             fadeInMs={PIN_FADE_IN_NATIVE_MS}
             fadeOutMs={PIN_FADE_OUT_NATIVE_MS}
             onPress={(e) => {
@@ -5102,12 +5090,14 @@ const destItems = useMemo((): DestItem[] =>
                 />
               ));
               // A pin joining or leaving (FadingShapeSource): on top, outside collision, at the slot's animated opacity.
+              // Joining: beneath every tier layer (placed last), so it only takes room that is free. Leaving: on top, outside
+              // collision.
               const leaving = slot.startsWith('out');
               return [
                 <MapboxGL.SymbolLayer
                   key={`destPhotos-${slot}`}
                   id={`destPhotos-${slot}`}
-                  aboveLayerID={tiers[tiers.length - 1].id}
+                  {...(leaving ? { aboveLayerID: tiers[tiers.length - 1].id } : { belowLayerID: tiers[0].id })}
                   filter={['==', ['get', 'slot'], slot] as any}
                   style={destFadeStyle(opacity, ms, leaving)}
                 />,
@@ -5123,7 +5113,6 @@ const destItems = useMemo((): DestItem[] =>
         <FadingShapeSource
           id="spotPins"
           features={nativeSpotPins.shape.features}
-          plan={SPOT_PIN_PLAN}
           fadeInMs={PIN_FADE_IN_NATIVE_MS}
           fadeOutMs={PIN_FADE_OUT_NATIVE_MS}
           hitbox={{ width: 32, height: 40 }}
@@ -5149,7 +5138,7 @@ const destItems = useMemo((): DestItem[] =>
                 key={`spotMiniPins${slot}`}
                 id={main ? 'spotMiniPins' : `spotMiniPins-${slot}`}
                 belowLayerID={joining ? 'spotMiniPins' : 'destStampCircles'}
-                filter={['all', ['==', ['get', 'img'], ''], inSlot] as any}
+                filter={inSlot as any}
                 style={{
                   iconImage: ['get', 'mini'] as any,
                   iconAnchor: 'bottom',
@@ -5165,13 +5154,13 @@ const destItems = useMemo((): DestItem[] =>
               <MapboxGL.SymbolLayer
                 key={`spotPhotos${slot}`}
                 id={main ? 'spotPhotos' : `spotPhotos-${slot}`}
-                belowLayerID="destStampCircles"
+                belowLayerID={joining ? 'spotMiniPins' : 'destStampCircles'}
                 filter={['all', ['!=', ['get', 'img'], ''], inSlot] as any}
                 style={{
                   iconImage: ['get', 'img'] as any,
                   iconAnchor: 'bottom',
-                  iconAllowOverlap: true,
-                  iconIgnorePlacement: !main,
+                  iconAllowOverlap: leaving,
+                  iconIgnorePlacement: leaving,
                   iconPadding: 2,
                   symbolSortKey: ['get', 'sort'] as any,
                   textField: ['get', 'label'] as any,
