@@ -6,6 +6,7 @@
 // Spots
 //   ticketUrl   loads, isn't a captcha wall, and its title or heading names the place (WRITING.md → ticketUrl);
 //               "blocked" means it needs a real browser, not that it's wrong
+//   source      app text names a source (Wikivoyage, "per the brief"...)
 //   thin-destination a destination of rank 3+ with three or fewer spots
 //   park-in-park a national park listed as a spot of another national park
 //   no-ticket   charges (costMin > 0) but has no ticketUrl, or has no cost at all and isn't free (never researched)
@@ -48,6 +49,9 @@ if (regionId) {
 }
 if (!destIds.size && !standaloneIds.size) { console.error('usage: lint-entries.ts (--region <id> | --dest <id> …) [--json out.json] [--offline]'); process.exit(1); }
 
+// Source names never appear in what the app shows ("Wikivoyage warns...", "per the brief"): the fact is stated plainly.
+const SOURCE_MENTION = /wikivoyage|wikipedia|lonely planet|rough guide|tripadvisor|wikimedia|openstreetmap|according to|per the brief|in the brief|the guidebook/i;
+const textOf = (o: any): string[] => typeof o === 'string' ? [o] : Array.isArray(o) ? o.flatMap(textOf) : o && typeof o === 'object' ? Object.entries(o).filter(([k]) => k !== 'wiki' && k !== 'ticketUrl').flatMap(([, v]) => textOf(v)) : [];
 const MARKETING = /\b(stunning|breathtaking|must[- ]see|must[- ]visit|world[- ]class|iconic|unforgettable|hidden gem|picturesque|nestled|paradise|best in the world|bucket[- ]list|jaw[- ]dropping|awe[- ]inspiring|spectacular)\b/i;
 const norm = (s: string) => s.normalize('NFKD').replace(/[̀-ͯ]/g, '').toLowerCase();
 const STOP = new Set(['the', 'of', 'and', 'at', 'on', 'in', 'a', 'to', 'new', 'zealand', 'park', 'museum', 'beach', 'track', 'walk', 'national', 'reserve', 'regional', 'house', 'garden', 'gardens', 'island', 'bay', 'mount', 'lake']);
@@ -84,6 +88,7 @@ async function checkWiki(title: string): Promise<string | null> {
     // A destination needs at least four spots, or rank 1-2 headline status (COVERAGE.md): two or three spots never make one.
     const nSpots = SPOTS.filter(s => s.destinationId === d.id).length;
     if (nSpots <= 3 && d.rank >= 3) add(it, 'thin-destination', `only ${nSpots} spots at rank ${d.rank}: its spots should be standalone or go under the nearest real destination`);
+    { const m = textOf(d).join(' \n ').match(SOURCE_MENTION); if (m) add(it, 'source', `names a source ("${m[0]}"): state the fact without attribution`); }
     const nWhy = d.whyVisit?.length ?? 0;   // 2–4 by popularity (WRITING.md): the rank sets the target, the lint only enforces the range and that every reason has its highlight and photo
     if (nWhy < 2 || nWhy > 4) add(it, 'shape', `${nWhy} whyVisit (needs 2–4)`);
     if (d.whyVisitPhotos && d.whyVisitPhotos.length !== nWhy) add(it, 'shape', `${d.whyVisitPhotos.length} whyVisitPhotos for ${nWhy} whyVisit`);
@@ -113,6 +118,7 @@ async function checkWiki(title: string): Promise<string | null> {
   let n = 0;
   for (const s of spots) {
     const it: Issue = { kind: 'spot', id: s.id, name: s.name, checks: [] };
+    { const m = textOf(s).join(' \n ').match(SOURCE_MENTION); if (m) add(it, 'source', `names a source ("${m[0]}"): state the fact without attribution`); }
     if (sentences(s.bio) > 1) add(it, 'bio', 'more than one sentence');
     const nWords = s.bio.trim().split(/\s+/).filter(Boolean).length;
     if (nWords < 10) add(it, 'bio', `only ${nWords} words (min 10): say what it is, where, and why it is worth a stop`);

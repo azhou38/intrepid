@@ -31,6 +31,7 @@ Follow an existing entry in `src/data/destinations.ts` (they are the reference);
 Applies to `tagline`, `description`, `whyVisit`, `highlights`, `goodToKnow` and every spot `bio`.
 
 - **Facts from sources only.** Every claim traces to a source (Wikipedia, Wikivoyage, the operator or managing agency). Hours, prices and "best in the world" claims that cannot be sourced are cut, or flagged as approximate. Never invent.
+- **Never name a source in the app's text.** No "Wikivoyage says", "according to Wikipedia", "per the brief", "(Lonely Planet)" or the like in a description, tagline, reason, tip, best-time text, bio or hours: state the fact plainly. The source goes in the notes and the pull request, not the copy. `lint-entries.ts` flags it as `source`.
 - **Concrete, not marketing.** Say what the place is, why people go and one distinctive fact. No filler ("stunning", "must-see"), no superlatives that cannot be backed.
 - **No repetition** within an entry (description, reasons, tips and tagline each say something different) or across entries (two destinations should not share near-identical phrasing).
 - **One sentence** for a `tagline` and a spot `bio` (a spot `bio` is at least 10 words: say what it is, where, and the one thing that makes it worth a stop; `lint-entries.ts` flags a shorter one), and a spot `bio` fits three lines of the carousel card (about 120 characters; see "Writing a spot"); a `description` is 3–4 sentences.
