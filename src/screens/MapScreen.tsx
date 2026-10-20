@@ -131,6 +131,10 @@ const PLAN_LEAD_MAX_ZOOM = 4;     // cap on the predicted outward travel
 // never more than HANDOFF_LEAD_MAX levels.
 const HANDOFF_LEAD_MIN = 0.3;
 const HANDOFF_LEAD_MAX = 0.75;
+// A destination within this many zoom levels of its own default view is drawn on its own handoff layer (see handoffDests),
+// at most HANDOFF_MAX at once.
+const HANDOFF_BAND = 1.0;
+const HANDOFF_MAX = 6;
 // Destination photo pins are a native Mapbox SymbolLayer (destPhotoSymbols): Mapbox resolves pin-vs-pin and name
 // collisions itself on every rendered frame and fades symbols in and out, so pins never pile up while zooming (the
 // JS plan only decides which destinations are eligible for a photo at all). false falls back to the old MarkerView pins.
@@ -4413,11 +4417,34 @@ const destItems = useMemo((): DestItem[] =>
   // beyond the plan itself — no new arrays, no marker-list rebuild, no extra renders — and a frame that does change
   // something reacts immediately instead of queueing behind a pile of no-op re-renders.
   const stablePhotoIds = useStableSet(destPinPlan.photoIds);
+  const hiddenDestIdsRef = useRef(hiddenDestIds);
+  hiddenDestIdsRef.current = hiddenDestIds;
   const promotedDests = useMemo(() => destItems
     .filter(item => !hiddenDestIds.has(item.dest.id) && stablePhotoIds.has(item.dest.id))
     .map(item => item.dest)
     .sort((a, b) => b.rank - a.rank), // deterministic order; on-map stacking follows mount order (see useExitingItems)
   [destItems, stablePhotoIds, hiddenDestIds]);
+  // Destinations near their own default zoom (within HANDOFF_BAND levels, around the view): each is drawn on its own small
+  // layer (destHandoff-<id>) instead of its tier layer, so that when the camera crosses its default view its photo pin
+  // FADES out as its spot pins fade in (and back in on the way out), rather than being pulled from the layer's data at
+  // once. It moves onto that layer while it is still fully shown, well before the crossing, so the move is invisible;
+  // `past` (its spots have taken over) turns the layer's constant opacity to 0, which Mapbox animates.
+  const handoffDests = useMemo(() => {
+    const out: { dest: Destination; past: boolean }[] = [];
+    const { latitude, longitude, latitudeDelta, longitudeDelta } = region;
+    for (const item of destItems) {
+      const d = item.dest, level = DEST_ZOOM_LEVEL_BY_ID[d.id];
+      if (level === undefined || !stablePhotoIds.has(d.id)) continue;
+      if (Math.abs(handoffZoom - level) > HANDOFF_BAND) continue;
+      if (Math.abs(d.coordinates.latitude - latitude) > latitudeDelta * 1.5 || Math.abs(d.coordinates.longitude - longitude) > longitudeDelta * 1.5) continue;
+      out.push({ dest: d, past: hiddenDestIds.has(d.id) });
+      if (out.length >= HANDOFF_MAX) break;
+    }
+    return out;
+  }, [destItems, stablePhotoIds, handoffZoom, hiddenDestIds, region]);
+  const handoffSig = handoffDests.map(h => `${h.dest.id}${h.past ? '-' : '+'}`).join(',');
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const stableHandoffDests = useMemo(() => handoffDests, [handoffSig]);
   // HANDOFF_FADE_MS: a destination's photo pin may leave through the slower handoff fade (see below).
   const renderedPhotoDests = useExitingItems(promotedDests, d => d.id, HANDOFF_FADE_MS);
   useEffect(() => {
@@ -4487,7 +4514,9 @@ const destItems = useMemo((): DestItem[] =>
     const specs = destPinSpecsRef.current;
     let added = false;
     const features: GeoJSON.Feature<GeoJSON.Point>[] = [];
-    for (const dest of promotedDests) {
+    const handoffIds = new Set(stableHandoffDests.map(h => h.dest.id));
+    const drawn = [...promotedDests.filter(d => !handoffIds.has(d.id)), ...stableHandoffDests.map(h => h.dest)];
+    for (const dest of drawn) {
       const visited = visitIndex.isDestVisited(dest.id);
       const badge = visited ? (visitedSpotCountByDest[dest.id] ?? 0) : 0;
       // No separate selected look: a new image name would remount the image and flash the placeholder disc.
@@ -4498,7 +4527,7 @@ const destItems = useMemo((): DestItem[] =>
         type: 'Feature',
         id: dest.id,
         geometry: { type: 'Point', coordinates: [dest.coordinates.longitude, dest.coordinates.latitude] },
-        properties: { id: dest.id, img, label: dest.name, sort: destSortKey(dest.id), tier: destPinPlan.fadeTier.get(dest.id) ?? '' },
+        properties: { id: dest.id, img, label: dest.name, sort: destSortKey(dest.id), tier: destPinPlan.fadeTier.get(dest.id) ?? '', ho: handoffIds.has(dest.id) ? 1 : 0 },
       });
     }
     // Register the pin image of every destination that could be promoted soon (eligible now, or one rank tier deeper)
@@ -4517,7 +4546,7 @@ const destItems = useMemo((): DestItem[] =>
     }
     if (added) destPinSpecListRef.current = [...specs.values()];
     return { shape: { type: 'FeatureCollection' as const, features }, specs: destPinSpecListRef.current };
-  }, [promotedDests, visitIndex, visitedSpotCountByDest, destPinPlan, planDest, eligibleDests, visibleRank]);
+  }, [promotedDests, stableHandoffDests, visitIndex, visitedSpotCountByDest, destPinPlan, planDest, eligibleDests, visibleRank]);
 
   // Which sliding sheet is mounted right now. When it changes from one level to another, the incoming sheet is a
   // replacement for the one that was showing and starts where that one rested (see sheetPose) rather than from below
@@ -4845,22 +4874,36 @@ const destItems = useMemo((): DestItem[] =>
             shape={nativeDestPins.shape}
             onPress={(e) => {
               // Skip a pin that is hidden ahead of its gate (see destGateOn).
-              const hit = e.features.find(f => destGateOn(String(f.properties?.tier ?? ''), camZoomRef.current));
+              const hit = e.features.find(f => destGateOn(String(f.properties?.tier ?? ''), camZoomRef.current) && !(f.properties?.ho === 1 && hiddenDestIdsRef.current.has(String(f.properties?.id))));
               const id = hit?.properties?.id as string | undefined;
               if (!id) return;
               const dest = DESTINATIONS.find(d => d.id === id);
               if (dest && !pressBlocked()) { if (selectedDestRef.current?.id === dest.id) handleResetToDest(); else handleMarkerPress(dest); }
             }}
           >
-            {destTierOrder().map((tier, i, all) => (
+            {[...destTierOrder().map((tier, i, all) => (
               <MapboxGL.SymbolLayer
                 key={tier || 'ungated'}
                 id={`destPhotoSymbols-${tier || 'ungated'}`}
                 aboveLayerID={i === 0 ? 'destStampCircles' : `destPhotoSymbols-${all[i - 1] || 'ungated'}`}
-                filter={['==', ['get', 'tier'], tier]}
+                filter={['all', ['==', ['get', 'tier'], tier], ['!=', ['get', 'ho'], 1]] as any}
                 style={destTierStyle(tier, destGateOn(tier, camZoom))}
               />
-            ))}
+            )),
+            // A destination at its handoff (see handoffDests): its own layer, faded out once its spot pins have taken over.
+            ...stableHandoffDests.map(({ dest, past }) => {
+              const tier = destPinPlan.fadeTier.get(dest.id) ?? '';
+              const tiers = destTierOrder();
+              return (
+                <MapboxGL.SymbolLayer
+                  key={`destHandoff-${dest.id}`}
+                  id={`destHandoff-${dest.id}`}
+                  aboveLayerID={`destPhotoSymbols-${tiers[tiers.length - 1] || 'ungated'}`}
+                  filter={['all', ['==', ['get', 'id'], dest.id], ['==', ['get', 'ho'], 1]] as any}
+                  style={destTierStyle(tier, destGateOn(tier, camZoom) && !past)}
+                />
+              );
+            })]}
           </MapboxGL.ShapeSource>
         )}
 
