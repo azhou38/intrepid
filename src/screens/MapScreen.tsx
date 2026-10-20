@@ -1473,15 +1473,20 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   const sheetAfterCameraTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const releaseSheetsAfterCamera = useCallback(() => {
     if (sheetAfterCameraTimerRef.current) { clearTimeout(sheetAfterCameraTimerRef.current); sheetAfterCameraTimerRef.current = null; }
+    sheetAfterCameraZoomRef.current = null;
     if (exploreAfterCameraRef.current) { exploreAfterCameraRef.current = false; setExploreAfterCamera(false); }
     if (destAfterCameraRef.current) { destAfterCameraRef.current = false; setDestAfterCamera(false); }
   }, []);
-  // Hold that sheet back until the camera lands. The timer is only a safety net for a move that never reports idle.
-  const holdSheetUntilCamera = useCallback((which: 'explore' | 'dest', durationMs: number) => {
+  // Hold that sheet back until the camera reaches `targetZoom` (handleCameraChanged), the end of the zoom-out. Waiting for
+  // the map's idle event instead held it back about a second, since idle only comes once the new tiles have drawn. The
+  // timer is only a safety net for a move that never gets there (interrupted by a gesture, say).
+  const sheetAfterCameraZoomRef = useRef<number | null>(null);
+  const holdSheetUntilCamera = useCallback((which: 'explore' | 'dest', durationMs: number, targetZoom: number) => {
     if (which === 'explore') { exploreAfterCameraRef.current = true; setExploreAfterCamera(true); }
     else { destAfterCameraRef.current = true; setDestAfterCamera(true); }
+    sheetAfterCameraZoomRef.current = targetZoom;
     if (sheetAfterCameraTimerRef.current) clearTimeout(sheetAfterCameraTimerRef.current);
-    sheetAfterCameraTimerRef.current = setTimeout(releaseSheetsAfterCamera, durationMs + 800);
+    sheetAfterCameraTimerRef.current = setTimeout(releaseSheetsAfterCamera, durationMs + 300);
   }, [releaseSheetsAfterCamera]);
   // Layout effect: the frame's wait starts with the close commit itself, not once passive effects run.
   useLayoutEffect(() => {
@@ -3528,13 +3533,13 @@ const destItems = useMemo((): DestItem[] =>
     // Target: the destination's default view — unless already zoomed out past it (see
     // isZoomedOutBeyond).
     if (dest && !isZoomedOutBeyond(latDeltaToZoom(getDestZoomDelta(dest)))) {
-      holdSheetUntilCamera('explore', 500);   // the Explore sheet mounts once the camera lands
+      holdSheetUntilCamera('explore', 500, destDefaultCamera(dest, 'topHalf').zoom);   // the Explore sheet mounts once the camera lands
       beginClosePlan(destDefaultCamera(dest, 'topHalf').zoom, 500);   // see planZoomTarget (a no-op unless this zooms out)
       fitDestinationDefaultView(dest, 'easeTo', 'topHalf');
     } else if (standalone) {
       const cam = destDefaultCamera(standaloneSpotArea(standalone), 'topHalf');
       if (!isZoomedOutBeyond(cam.zoom)) {
-        holdSheetUntilCamera('explore', 500);
+        holdSheetUntilCamera('explore', 500, cam.zoom);
         beginClosePlan(cam.zoom, 500);
         beginProgrammaticCameraMove(500);
         cameraRef.current?.setCamera({
@@ -3594,7 +3599,7 @@ const destItems = useMemo((): DestItem[] =>
       const target = destDefaultCamera(selectedDest, 'topHalf').zoom;
       if (target < camZoomRef.current - ZOOM_EPSILON) {
         // The destination sheet mounts once the camera lands, not during the zoom-out (see destAfterCamera).
-        holdSheetUntilCamera('dest', 500);
+        holdSheetUntilCamera('dest', 500, target);
         spotCloseTargetRef.current = target;
         if (spotCloseTimerRef.current) clearTimeout(spotCloseTimerRef.current);
         spotCloseTimerRef.current = setTimeout(() => {
@@ -3711,7 +3716,7 @@ const destItems = useMemo((): DestItem[] =>
     }
     // Plan for the zoomed-out view from the first frame, so the pins it won't have fade out DURING the zoom (see
     // planZoomTarget) rather than after it settles.
-    holdSheetUntilCamera('explore', 600);
+    holdSheetUntilCamera('explore', 600, destDefaultCamera(dest, 'full', 0.5).zoom);
     beginClosePlan(destDefaultCamera(dest, 'full', 0.5).zoom, 600);
     fitDestinationDefaultView(dest, 'easeTo', 'full', 600, 0.5);
   }, [selectedDest, showBreadcrumb, fitDestinationDefaultView, isZoomedOutBeyond, releaseHeldSelection, beginClosePlan, destDefaultCamera, holdSheetUntilCamera]);
@@ -3850,7 +3855,7 @@ const destItems = useMemo((): DestItem[] =>
       releaseHeldSelection();
       return;
     }
-    holdSheetUntilCamera('explore', 600);   // the Explore sheet mounts once the camera lands
+    holdSheetUntilCamera('explore', 600, hasCached ? cached.zoom / 2 : latDeltaToZoom(WORLD_HOME_LATDELTA));   // the Explore sheet mounts once the camera lands
     beginClosePlan(hasCached ? cached.zoom / 2 : latDeltaToZoom(WORLD_HOME_LATDELTA), 600);   // see planZoomTarget
     if (hasCached) {
       beginProgrammaticCameraMove(600);
@@ -4096,6 +4101,9 @@ const destItems = useMemo((): DestItem[] =>
   }) => {
     const { center, bounds } = state.properties;
     const isGestureActive = state.gestures?.isGestureActive ?? false;
+    // A close's zoom-out has (all but) arrived, or the user took over the camera: bring the held-back sheet in now.
+    const holdZ = sheetAfterCameraZoomRef.current;
+    if (holdZ !== null && (state.properties.zoom <= holdZ + 0.05 || isGestureActive)) releaseSheetsAfterCamera();
 
     // The user just started panning/pinching the map — drop whichever destination/spot
     // sheet is open down to its "peek" state (if it isn't already), so it gets out of the
@@ -4271,7 +4279,7 @@ const destItems = useMemo((): DestItem[] =>
       setZoomOutLead(Math.max(0, Math.min(PLAN_LEAD_MAX_ZOOM, -v * PLAN_LAG_SEC)));
     });
     camZoomRef.current = state.properties.zoom;
-  }, [returnPromptProgress, destReturnPromptProgress, mapGestureAtSV, releaseHeldSelection]);
+  }, [returnPromptProgress, destReturnPromptProgress, mapGestureAtSV, releaseHeldSelection, releaseSheetsAfterCamera]);
 
   const handleMapIdle = useCallback((state: {
     properties: {
