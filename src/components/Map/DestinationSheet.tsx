@@ -19,7 +19,6 @@ import Reanimated, {
   useSharedValue, useAnimatedStyle, useAnimatedReaction, withTiming, runOnJS,
   interpolate, Extrapolation, Easing, scrollTo, useAnimatedRef,
 } from 'react-native-reanimated';
-import { perfTrace } from '../../utils/perfTrace';
 import type { SharedValue } from 'react-native-reanimated';
 // ScrollView specifically comes from gesture-handler (not core RN) — only a gesture-handler-
 // aware component can actually participate in `simultaneousWithExternalGesture` below; a
@@ -705,12 +704,6 @@ function DestinationSheet({
   const defaultTab: Tab = isVisited ? 'visit' : 'about';
   const startTab: Tab = (initialTab && TAB_ORDER.includes(initialTab)) ? initialTab : defaultTab;
   const [activeTab,     setActiveTab    ] = useState<Tab>(startTab);
-  // TEMPORARY instrumentation: per-panel render cost during a timed flow, plus the sheet's own render reason below.
-  const onSheetProfile = useCallback((id: string, phase: string, actual: number) => {
-    const f = perfTrace.name();
-    if (f && perfTrace.active() && actual >= 8) perfTrace.mark(f, `render ${id}(${phase}) ${actual.toFixed(0)}ms`, false);
-  }, []);
-  { const f = perfTrace.name(); if (f && perfTrace.active()) perfTrace.mark(f, `DestinationSheet body render (tab ${activeTab})`, false); }
 
   // Derive visits from store, carrying the old destination-level photos/notes/spots onto
   // the synthesized legacy entry so a pre-redesign visit still shows its content as its
@@ -1204,14 +1197,12 @@ function DestinationSheet({
   // interacted with, in which case it comes in already out of the way.
   useLayoutEffect(() => {
     if (leaving) {
-      perfTrace.mark('dismiss', 'sheetExitAnimStart');   // TEMPORARY instrumentation
       closingRef.current = true;
       slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, finished => {
         if (finished && onExited) runOnJS(onExited)();
       });
       return;
     }
-    perfTrace.mark('select', 'sheetAnimStart');   // TEMPORARY instrumentation
     transitionToRef.current(resolvedInitialSnap === 'full' ? 'full' : isMapInteracting?.() ? 'peek' : 'collapsed', 'mount');
   }, []);
 
@@ -1256,7 +1247,6 @@ function DestinationSheet({
     if (exitSignal === undefined || exitSignal === lastExitSignalRef.current) return;
     lastExitSignalRef.current = exitSignal;
     closingRef.current = true;
-    perfTrace.mark('dismiss', 'sheetExitAnimStart');   // TEMPORARY instrumentation
     if (__DEV__) console.log('[sheet] Destination', destination.id, snapStateRef.current, '-> closed', 'reason=exit');
     sheetPose.set(null);
     slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) });
@@ -1266,7 +1256,6 @@ function DestinationSheet({
   const markExiting = useCallback(() => {
     closingRef.current = true;
     sheetPose.set(null);
-    perfTrace.mark('dismiss', 'sheetExitAnimStart');   // TEMPORARY instrumentation
   }, []);
   const exitDone = useCallback(() => { onExitDone?.(); }, [onExitDone]);
   useAnimatedReaction(
@@ -1702,7 +1691,6 @@ function DestinationSheet({
                         new one (or editing/deleting a specific one) only ever touches that
                         single module's own card; every sibling module is copied through
                         untouched. Shared with CountrySheet/SpotSheet — see VisitCardList. */}
-                    <React.Profiler id="Sheet.Visit" onRender={onSheetProfile}>
                     <VisitCardList
                       defaultTitle={`${destination.name} Trip`}
                       visits={localVisits}
@@ -1716,7 +1704,6 @@ function DestinationSheet({
                       selectorLabel={spots.length > 0 ? 'Spots Visited' : undefined}
                       selectorItems={spots.length > 0 ? spotSelectorItems : undefined}
                     />
-                    </React.Profiler>
 
                   </View>
                   )}
@@ -1726,7 +1713,6 @@ function DestinationSheet({
                     style={st.slidePanel}
                     onLayout={e => measurePanel('about', e.nativeEvent.layout.height)}
                   >
-                    <React.Profiler id="Sheet.About" onRender={onSheetProfile}>
                     <AboutPanel
                       destination={destination} spots={spots}
                       onSelectSpot={onSelectSpot}
@@ -1735,7 +1721,6 @@ function DestinationSheet({
                       hlScrollRef={aboutHlScrollRef}
                       whyScrollRef={whyScrollRef}
                     />
-                    </React.Profiler>
                     <AIContentNote />
                   </View>
 
@@ -1744,9 +1729,7 @@ function DestinationSheet({
                     style={st.slidePanel}
                     onLayout={e => measurePanel('spots', e.nativeEvent.layout.height)}
                   >
-                    <React.Profiler id="Sheet.Spots" onRender={onSheetProfile}>
                     <SpotsPanel spots={spots} onSelectSpot={onSelectSpot} />
-                    </React.Profiler>
                   </View>
                 </Reanimated.View>
               </Reanimated.View>
@@ -2103,14 +2086,4 @@ const st = StyleSheet.create({
 
 // Memoized: the map screen re-renders continuously while the camera moves, and a re-render of the sheet is a React
 // commit on its animated views for no reason. With stable props it now renders only when its own inputs change.
-// TEMPORARY instrumentation: log which props changed whenever the sheet re-renders during a timed flow.
-function DestinationSheetWhy(props: any) {
-  const prev = useRef<any>(null);
-  if (prev.current && perfTrace.active()) {
-    const changed = Object.keys(props).filter(k => props[k] !== prev.current[k]);
-    perfTrace.mark(perfTrace.name() ?? '', `DestinationSheet props changed: ${changed.join(',') || '(none)'}`, false);
-  }
-  prev.current = props;
-  return <DestinationSheet {...props} />;
-}
-export default React.memo(DestinationSheetWhy) as unknown as typeof DestinationSheet;
+export default React.memo(DestinationSheet);
