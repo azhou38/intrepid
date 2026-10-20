@@ -4919,8 +4919,10 @@ const destItems = useMemo((): DestItem[] =>
               // spot that has its photo pin never also draws the small pin behind it (the mini pin's bubble used to show beside
               // the photo pin's narrow tail). Where the photo pin does not fit, the mini pin takes its place; the photo pin
               // fading in or out cross-fades with it through the same collision pass.
+              // iconIgnorePlacement: small pins never block anything, each other included, so they show at the same zooms as
+              // before (zoomed into a destination, where spots are dense, they used to hide one another).
               iconAllowOverlap: false,
-              iconIgnorePlacement: false,
+              iconIgnorePlacement: true,
               iconPadding: 0,
               symbolSortKey: ['get', 'sort'] as any,
             }}
