@@ -6,6 +6,7 @@
 // Spots
 //   ticketUrl   loads, isn't a captcha wall, and its title or heading names the place (WRITING.md → ticketUrl);
 //               "blocked" means it needs a real browser, not that it's wrong
+//   thin-destination a destination of rank 3+ with three or fewer spots
 //   park-in-park a national park listed as a spot of another national park
 //   no-ticket   charges (costMin > 0) but has no ticketUrl, or has no cost at all and isn't free (never researched)
 //   district    no entry in src/data/spotDistricts.json (the standalone-spot carousel needs it)
@@ -80,6 +81,9 @@ async function checkWiki(title: string): Promise<string | null> {
 (async () => {
   for (const d of DESTINATIONS.filter(x => destIds.has(x.id))) {
     const it: Issue = { kind: 'destination', id: d.id, name: d.name, checks: [] };
+    // A destination needs at least four spots, or rank 1-2 headline status (COVERAGE.md): two or three spots never make one.
+    const nSpots = SPOTS.filter(s => s.destinationId === d.id).length;
+    if (nSpots <= 3 && d.rank >= 3) add(it, 'thin-destination', `only ${nSpots} spots at rank ${d.rank}: its spots should be standalone or go under the nearest real destination`);
     const nWhy = d.whyVisit?.length ?? 0;   // 2–4 by popularity (WRITING.md): the rank sets the target, the lint only enforces the range and that every reason has its highlight and photo
     if (nWhy < 2 || nWhy > 4) add(it, 'shape', `${nWhy} whyVisit (needs 2–4)`);
     if (d.whyVisitPhotos && d.whyVisitPhotos.length !== nWhy) add(it, 'shape', `${d.whyVisitPhotos.length} whyVisitPhotos for ${nWhy} whyVisit`);
