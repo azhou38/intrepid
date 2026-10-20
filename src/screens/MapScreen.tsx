@@ -1094,6 +1094,16 @@ const destFadeStyle = (opacity: number, ms: number, leaving: boolean) => {
   }
   return st;
 };
+// The main destination photo pin layer: Mapbox resolves pin-vs-pin collisions (with its own fade); a name shows only
+// past its own gate (lt, set live by FadingShapeSource) and never knocks a pin out.
+const DEST_MAIN_STYLE: any = {
+  ...DEST_SYMBOL_STYLE,
+  iconAllowOverlap: false,
+  iconIgnorePlacement: false,
+  textField: ['case', ['==', ['get', 'lt'], 1], ['get', 'label'], ''],
+  textAllowOverlap: false,
+  textIgnorePlacement: true,
+};
 const CAMERA_DEFAULT_SETTINGS = { centerCoordinate: [10, 20] as [number, number], zoomLevel: 1 };
 
 // Layer pill sizing — a single continuous capsule (see the JSX comment above its render
@@ -4727,6 +4737,7 @@ const destItems = useMemo((): DestItem[] =>
     const destSortKey = (id: string) =>
       // The plan's priority already puts pins that were showing first (persistence), then by prominence.
       planDest?.id === id ? -1 : (destPinPlan.priority.get(id) ?? 99_999);
+    const gateZooms = destGateZooms();
     const specs = destPinSpecsRef.current;
     let added = false;
     const features: GeoJSON.Feature<GeoJSON.Point>[] = [];
@@ -4741,15 +4752,16 @@ const destItems = useMemo((): DestItem[] =>
         type: 'Feature',
         id: dest.id,
         geometry: { type: 'Point', coordinates: [dest.coordinates.longitude, dest.coordinates.latitude] },
-        properties: { id: dest.id, img, label: dest.name, sort: destSortKey(dest.id), tier: destPinPlan.fadeTier.get(dest.id) ?? '', lb: (() => {
-          // The name's gate bucket, when the fixed layer table has a layer for this tier and bucket; otherwise -1 (fallback layer).
-          const t = destPinPlan.fadeTier.get(dest.id) ?? '', b = destLabelGates.get(dest.id) ?? 99;
-          return destSymbolLayersStatic().combos.has(`${t}|${b}`) ? b : -1;
-        })(),
-          // FadingShapeSource fades a pin joining or leaving (drawn by destPhotosFade while it does), except one still behind
-          // its gate, which is invisible anyway; lt: its name shows only once its own gate is crossed.
-          nofade: !destGateOn(destPinPlan.fadeTier.get(dest.id) ?? '', camZoomRef.current),
-          lt: camZoomRef.current >= (destLabelGates.get(dest.id) ?? 0) - 1e-6 ? 1 : 0,
+        properties: { id: dest.id, img, label: dest.name, sort: destSortKey(dest.id), tier: destPinPlan.fadeTier.get(dest.id) ?? '',
+          // Gates, read against the LIVE camera zoom by FadingShapeSource (no re-render): the pin is drawn from its rank or
+          // country gate on (zmin; before that it is not on the map at all, so it can never push a showing pin out), fading
+          // in when the camera crosses it, and its name from its own name gate (lz).
+          ...(() => {
+            const g = gateZooms[destPinPlan.fadeTier.get(dest.id) ?? ''];
+            const lb = destLabelGates.get(dest.id);
+            const lz = Math.max(g ?? -Infinity, lb ?? -Infinity);
+            return { ...(g !== undefined && planDest?.id !== dest.id ? { zmin: g - ZOOM_EPSILON } : {}), ...(Number.isFinite(lz) ? { lz: lz - ZOOM_EPSILON } : {}) };
+          })(),
           // Hidden from its own default zoom on, against the live camera zoom: its spot pins take over there.
           ...(DEST_ZOOM_LEVEL_BY_ID[dest.id] !== undefined ? { zmax: DEST_ZOOM_LEVEL_BY_ID[dest.id] - ZOOM_EPSILON } : {}),
         },
@@ -5102,24 +5114,26 @@ const destItems = useMemo((): DestItem[] =>
             fadeOutMs={PIN_FADE_OUT_NATIVE_MS}
             onPress={(e) => {
               // Skip a pin that is hidden ahead of its gate (see destGateOn), or one fading out.
-              const hit = e.features.find((f: any) => !String(f.properties?.slot ?? '').startsWith('out') && destGateOn(String(f.properties?.tier ?? ''), camZoomRef.current));
+              const hit = e.features.find((f: any) => !String(f.properties?.slot ?? '').startsWith('out'));
               const id = hit?.properties?.id as string | undefined;
               if (!id) return;
               const dest = DESTINATIONS.find(d => d.id === id);
               if (dest && !pressBlocked()) { if (selectedDestRef.current?.id === dest.id) handleResetToDest(); else handleMarkerPress(dest); }
             }}
             layers={(slot, opacity, ms) => {
-              const tiers = destSymbolLayersStatic().layers;
-              if (slot === '') return tiers.map((l, i, all) => (
+              // All destination photo pins share ONE layer, so Mapbox's collision pass places them in one priority order
+              // (symbolSortKey: the selected destination, then pins that were showing, then prominence). Per-tier layers
+              // were placed in layer order whatever the priority, so a country-gated rank-5 pin could beat a rank-2 one, and
+              // the "already showing" priority could not carry across them: pins swapped back and forth while zooming in.
+              if (slot === '') return [
                 <MapboxGL.SymbolLayer
-                  key={l.id}
-                  id={l.id}
-                  aboveLayerID={i === 0 ? 'destStampCircles' : all[i - 1].id}
-                  filter={['all', ['==', ['get', 'tier'], l.tier], ['==', ['get', 'lb'], l.lb ?? -1], ['==', ['coalesce', ['get', 'slot'], ''], '']] as any}
-                  style={destTierStyleNative(l.tier, l.lb)}
-                />
-              ));
-              // A pin joining or leaving (FadingShapeSource): on top, outside collision, at the slot's animated opacity.
+                  key="destPhotoSymbols"
+                  id="destPhotoSymbols"
+                  aboveLayerID="destStampCircles"
+                  filter={['==', ['coalesce', ['get', 'slot'], ''], ''] as any}
+                  style={DEST_MAIN_STYLE}
+                />,
+              ];
               // Joining: beneath every tier layer (placed last), so it only takes room that is free. Leaving: on top, outside
               // collision.
               const leaving = slot.startsWith('out');
@@ -5127,7 +5141,7 @@ const destItems = useMemo((): DestItem[] =>
                 <MapboxGL.SymbolLayer
                   key={`destPhotos-${slot}`}
                   id={`destPhotos-${slot}`}
-                  {...(leaving ? { aboveLayerID: tiers[tiers.length - 1].id } : { belowLayerID: tiers[0].id })}
+                  {...(leaving ? { aboveLayerID: 'destPhotoSymbols' } : { belowLayerID: 'destPhotoSymbols' })}
                   filter={['==', ['get', 'slot'], slot] as any}
                   style={destFadeStyle(opacity, ms, leaving)}
                 />,

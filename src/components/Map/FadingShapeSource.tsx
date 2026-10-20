@@ -55,12 +55,23 @@ export const FadingShapeSource = memo(function FadingShapeSource({
   st.features = features;
 
   // Which features are shown at the live zoom, and a cheap signature of that set.
+  // A feature with `lz` gets `lt` (1 from that zoom on, else 0): its name's own gate, also read live. The copy with the
+  // current `lt` is cached per feature, so an unchanged name state hands back the same object.
+  const ltCache = useRef(new WeakMap<F, { lt: number; f: F }>()).current;
   const visibleAt = (z: number) => {
     const vis: F[] = [];
-    for (const f of st.features) if (shownAt(f, z)) vis.push(f);
+    for (const f of st.features) {
+      if (!shownAt(f, z)) continue;
+      const lz = f.properties?.lz;
+      if (lz === undefined || lz === null) { vis.push(f); continue; }
+      const lt = z >= lz ? 1 : 0;
+      let c = ltCache.get(f);
+      if (!c || c.lt !== lt) { c = { lt, f: { ...f, properties: { ...f.properties, lt } } }; ltCache.set(f, c); }
+      vis.push(c.f);
+    }
     return vis;
   };
-  const sigOf = (vis: F[]) => vis.map(f => String(f.id ?? f.properties?.id)).join('|');
+  const sigOf = (vis: F[]) => vis.map(f => `${f.id ?? f.properties?.id}${f.properties?.lt === 0 ? '-' : ''}`).join('|');
 
   // Follow the camera: re-render only when the shown set changes.
   useEffect(() => cameraStore.subscribe(z => {
@@ -125,7 +136,7 @@ export const FadingShapeSource = memo(function FadingShapeSource({
 
   const drawn: F[] = [];
   for (const e of st.entries.values()) drawn.push(e.slot === (e.f.properties?.slot ?? '') ? e.f : { ...e.f, properties: { ...e.f.properties, slot: e.slot } });
-  const sig = drawn.map(f => `${f.id ?? f.properties?.id}:${f.properties?.slot}`).join('|');
+  const sig = drawn.map(f => `${f.id ?? f.properties?.id}:${f.properties?.slot}:${f.properties?.lt ?? ''}`).join('|');
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const shape = useMemo(() => ({ type: 'FeatureCollection' as const, features: drawn }), [features, sig]);
 
