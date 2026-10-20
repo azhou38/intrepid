@@ -19,6 +19,7 @@ import Reanimated, {
   useSharedValue, useAnimatedStyle, useAnimatedReaction, withTiming, runOnJS,
   interpolate, Extrapolation, Easing, scrollTo, useAnimatedRef,
 } from 'react-native-reanimated';
+import { perfTrace } from '../../utils/perfTrace';
 import type { SharedValue } from 'react-native-reanimated';
 // ScrollView specifically comes from gesture-handler (not core RN) — only a gesture-handler-
 // aware component can actually participate in `simultaneousWithExternalGesture` below; a
@@ -1173,12 +1174,14 @@ function DestinationSheet({
   // interacted with, in which case it comes in already out of the way.
   useLayoutEffect(() => {
     if (leaving) {
+      perfTrace.mark('dismiss', 'sheetExitAnimStart');   // TEMPORARY instrumentation
       closingRef.current = true;
       slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, finished => {
         if (finished && onExited) runOnJS(onExited)();
       });
       return;
     }
+    perfTrace.mark('select', 'sheetAnimStart');   // TEMPORARY instrumentation
     transitionToRef.current(resolvedInitialSnap === 'full' ? 'full' : isMapInteracting?.() ? 'peek' : 'collapsed', 'mount');
   }, []);
 
@@ -1223,6 +1226,7 @@ function DestinationSheet({
     if (exitSignal === undefined || exitSignal === lastExitSignalRef.current) return;
     lastExitSignalRef.current = exitSignal;
     closingRef.current = true;
+    perfTrace.mark('dismiss', 'sheetExitAnimStart');   // TEMPORARY instrumentation
     if (__DEV__) console.log('[sheet] Destination', destination.id, snapStateRef.current, '-> closed', 'reason=exit');
     sheetPose.set(null);
     slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) });

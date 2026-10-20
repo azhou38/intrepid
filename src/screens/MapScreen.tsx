@@ -118,6 +118,7 @@ import ExploreSheet from '../components/Map/ExploreSheet';
 import { thumbCache, photoCache, fetchWikiThumbnail, prefetchWikiThumbnail, prewarmDestinationPins, HEADER_PX } from '../utils/photoCache';
 import DestPinImages, { DEST_PIN_SIZE, destPinImageName, type DestPinImageSpec } from '../components/Map/DestPinImages';
 import PhotoPlaceholder from '../components/Map/PhotoPlaceholder';
+import { perfTrace } from '../utils/perfTrace';
 import { NO_PHOTO } from '../data/imageOverrides';
 import SpotPhotoImages, { spotPhotoImageName, type SpotPhotoImageSpec } from '../components/Map/SpotPhotoImages';
 import SpotPinImages, { SPOT_MINI_PIN_UNVISITED, SPOT_MINI_PIN_VISITED } from '../components/Map/SpotPinImages';
@@ -3216,6 +3217,7 @@ const destItems = useMemo((): DestItem[] =>
   }, []);
 
   const handleMarkerPress = useCallback((dest: Destination) => {
+    perfTrace.start('select', dest.id);   // TEMPORARY instrumentation
     // Provenance: a normal drill-down only when the tapped destination actually belongs to
     // the currently selected country — not just "is *some* country selected". Rank-1
     // "anchor" destinations from OTHER countries are deliberately shown (as stamps) even
@@ -3708,6 +3710,7 @@ const destItems = useMemo((): DestItem[] =>
   // entered laterally (map pin tap with nothing selected, or search) → zoom out to half the
   // destination's own zoom level instead, no fabricated country sheet in between.
   const handleCloseDestinationSheet = useCallback((toCollapsed?: boolean) => {
+    perfTrace.start('dismiss', selectedDestRef.current?.id ?? '');   // TEMPORARY instrumentation
     if (destOrigin === 'country') handleCloseDestinationSheetToCountry(toCollapsed);
     else handleCloseDestinationToCountryView();
   }, [destOrigin, handleCloseDestinationSheetToCountry, handleCloseDestinationToCountryView]);
@@ -4226,6 +4229,7 @@ const destItems = useMemo((): DestItem[] =>
     // and the *next* pan's true would never register as a fresh rising edge (only the very
     // first pan of the whole session ever would). Reset it here so every pan is detected.
     wasMapGestureActiveRef.current = false;
+    perfTrace.mark('select', 'mapIdle'); perfTrace.mark('dismiss', 'mapIdle');   // TEMPORARY instrumentation
     releaseHeldSelection();   // a close's zoom-out has settled: let the pin/pill planning drop the old selection
     releaseSpotCloseTarget();
     const { center, bounds } = state.properties;
@@ -4642,7 +4646,21 @@ const destItems = useMemo((): DestItem[] =>
   const noop = useCallback(() => {}, []);
 
 
+  // TEMPORARY instrumentation: the first commit that has the selected destination's spot pins, and every map-screen
+  // render's duration while a select/dismiss flow is being timed.
+  useEffect(() => {
+    if (!selectedDest || !perfTrace.active('select')) return;
+    const n = nativeSpotPins.shape.features.filter((f: any) => SPOT_BY_ID.get(String(f.properties?.id))?.destinationId === selectedDest.id).length;
+    if (n > 0) perfTrace.mark('select', `firstSpotPinsCommitted (${n})`);
+  });
+  useEffect(() => { if (!selectedDest) perfTrace.mark('dismiss', 'selectionClearedCommitted'); }, [selectedDest]);
+  const onMapProfile = useCallback((_id: string, phase: string, actual: number) => {
+    const f = perfTrace.name();
+    if (f && perfTrace.active()) perfTrace.mark(f, `render(${phase}) ${actual.toFixed(0)}ms`, false);
+  }, []);
+
   return (
+    <React.Profiler id="MapScreen" onRender={onMapProfile as any}>
     <View
       style={styles.root}
       onLayout={e => { mapViewHRef.current = e.nativeEvent.layout.height; }}
@@ -5491,6 +5509,7 @@ const destItems = useMemo((): DestItem[] =>
         </Reanimated.View>
       )}
     </View>
+    </React.Profiler>
   );
 }
 
