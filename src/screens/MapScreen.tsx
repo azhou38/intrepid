@@ -809,6 +809,34 @@ const destTierOrder = (): string[] => {
   // Bottom → top: latest gate first, ungated last.
   return [...Object.keys(gz).sort((x, y) => gz[y] - gz[x]), ''];
 };
+// The ramp, in zoom levels, over which a gated pin (or name) fades in as the camera approaches its gate: fully shown AT the
+// gate, starting DEST_GATE_RAMP before it. Read natively from the camera zoom (like stampOpacityExpr), so it never waits for
+// a re-render; narrow, so a camera that stops near a gate is all but never left half-faded.
+const DEST_GATE_RAMP = 0.2;
+const zoomRamp = (gate: number | undefined) =>
+  gate === undefined ? 1 : ['interpolate', ['linear'], ['zoom'], gate - DEST_GATE_RAMP, 0, gate, 1];
+// A tier layer's style, fixed per layer (no React state): its pins fade in natively at the tier's gate, its names at the
+// later of that gate and the layer's name gate. A name never knocks a pin out (textIgnorePlacement): before, a name that
+// switched on joined the collision pass and pushed the photo pins of later tiers back to dots until zooming moved them
+// clear, so pins flipped photo → dot → photo while zooming in.
+const destTierStyleNativeCache = new Map<string, any>();
+const destTierStyleNative = (tier: string, lb: number | null) => {
+  const key = `${tier}|${lb}`;
+  let st = destTierStyleNativeCache.get(key);
+  if (!st) {
+    const g = tier ? destGateZooms()[tier] : undefined;
+    const lg = lb === null ? g : g === undefined ? lb : Math.max(g, lb);
+    st = {
+      ...DEST_SYMBOL_STYLE,
+      iconOpacity: zoomRamp(g),
+      textOpacity: zoomRamp(lg),
+      textAllowOverlap: false,
+      textIgnorePlacement: true,
+    };
+    destTierStyleNativeCache.set(key, st);
+  }
+  return st;
+};
 const destTierStyleCache = new Map<string, any>();
 // `on`: the tier's photo gate is crossed; `labelOn`: the name's own gate (a bucket of destLabelGates) is crossed too.
 const destTierStyle = (tier: string, on: boolean, labelOn: boolean = on, gated = false) => {
@@ -2293,10 +2321,12 @@ const destItems = useMemo((): DestItem[] =>
     // fixed id tiebreak. It NEVER references the viewport centre, so panning can't reshuffle
     // who wins the limited photo slots — the previous centre-distance ordering was the main
     // cause of pins swapping stamp↔photo as you panned.
+    // Prominence: the selected destination first, then (while a country is selected) its own destinations, then rank, a
+    // visited destination half a rank ahead; ties by id (below), so the order is deterministic.
     const rankScore = (d: Destination) =>
       (isForced(d) ? -1_000_000 : 0) +
       (planCountry && d.countryCode === planCountry.countryCode ? -1_000 : 0) +
-      d.rank;
+      d.rank - (visitIndex.isDestVisited(d.id) ? 0.5 : 0);
     const ordered = [...dests].sort(
       (a, b) => rankScore(a) - rankScore(b) || (a.id < b.id ? -1 : 1),
     );
@@ -5086,7 +5116,7 @@ const destItems = useMemo((): DestItem[] =>
                   id={l.id}
                   aboveLayerID={i === 0 ? 'destStampCircles' : all[i - 1].id}
                   filter={['all', ['==', ['get', 'tier'], l.tier], ['==', ['get', 'lb'], l.lb ?? -1], ['==', ['coalesce', ['get', 'slot'], ''], '']] as any}
-                  style={destTierStyle(l.tier, destGateOn(l.tier, camZoom), l.lb === null ? true : camZoom >= l.lb - 1e-6, l.lb !== null)}
+                  style={destTierStyleNative(l.tier, l.lb)}
                 />
               ));
               // A pin joining or leaving (FadingShapeSource): on top, outside collision, at the slot's animated opacity.
@@ -5171,8 +5201,9 @@ const destItems = useMemo((): DestItem[] =>
                   textRadialOffset: 1.7,
                   textTranslate: [0, -19],
                   textOptional: true,
+                  // A name never knocks a pin out (it would push later pins to small pins until zooming moved them clear).
                   textAllowOverlap: leaving,
-                  textIgnorePlacement: leaving,
+                  textIgnorePlacement: true,
                   textPadding: 2,
                   textColor, textHaloColor,
                   textHaloWidth: 1.5,
