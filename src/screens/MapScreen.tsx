@@ -808,8 +808,15 @@ const destGateOn = (tier: string, z: number) => {
 const DEST_GATE_FADE_MS = 250;
 const destTierOrder = (): string[] => {
   const gz = destGateZooms();
-  // Bottom → top: latest gate first, ungated last.
-  return [...Object.keys(gz).sort((x, y) => gz[y] - gz[x]), ''];
+  // Bottom → top: the country tiers (latest gate first), then the rank tiers (latest gate first), ungated last. Mapbox
+  // gives room to the top layer first, so every rank-gated pin (the prominent ones) is placed before any country-gated
+  // one: a low-ranked pin that only joins at its country's cutoff (Lithgow) takes just the room the prominent ones leave,
+  // and can no longer push one of them (Blue Mountains) out and back as the zoom changes. A country tier only holds the
+  // pins whose country gate opens before their rank gate, so a rank tier's still-hidden pins (joining early, before
+  // their own gate) are never in the same area as a visible country-tier pin they could block.
+  const byGate = (x: string, y: string) => gz[y] - gz[x];
+  const keys = Object.keys(gz);
+  return [...keys.filter(k => k.startsWith('c')).sort(byGate), ...keys.filter(k => k.startsWith('r')).sort(byGate), ''];
 };
 const destTierStyleCache = new Map<string, any>();
 const destTierStyle = (tier: string, on: boolean) => {
@@ -938,8 +945,11 @@ const DEST_SYMBOL_STYLE: any = {
   textHaloWidth: 1.2,
   textHaloBlur: 0.4,
   textOptional: true,
+  // A name hides itself where it would sit on a pin or another name placed before it, but never pushes a pin out
+  // (textIgnorePlacement): as the zoom changed, a name that newly fitted knocked a neighbouring photo pin out and gave it
+  // back a moment later, so pins pinballed between neighbours.
   textAllowOverlap: false,
-  textIgnorePlacement: false,
+  textIgnorePlacement: true,
   textPadding: 1,
 };
 const CAMERA_DEFAULT_SETTINGS = { centerCoordinate: [10, 20] as [number, number], zoomLevel: 1 };
