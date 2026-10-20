@@ -1340,6 +1340,8 @@ const PIN_FADE_IN_NATIVE_MS = 160;
 const PIN_LIVE_LEAD = 1.5;
 // The least time between two camera-driven re-renders of the map screen (see handleCameraChanged).
 const SCREEN_CAMERA_THROTTLE_MS = 50;
+// How long after the camera settles the drawn photo pins are read back (Mapbox's collision fade is about 300 ms).
+const SETTLE_QUERY_MS = 350;
 const PIN_FADE_OUT_NATIVE_MS = 120;
 // How far ahead of a spot's reveal zoom its photo pin image is prepared (see nativeSpotPins).
 const SPOT_WARM_ZOOM = 0.75;
@@ -1505,6 +1507,16 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // placement priority they had when it last settled: re-ordering them mid-zoom made Mapbox re-decide every collision on
   // each re-render, and pins ghosted in and out (Port Stephens and its neighbours).
   const cameraMovingRef = useRef(false);
+  const mapViewRef = useRef<MapboxGL.MapView>(null);
+  // The photo pins Mapbox actually drew when the camera last settled (queried from the map, not estimated): the "already
+  // showing" set that goes first in the placement priority (persistence). Using exactly what is on screen means
+  // re-placing with the new order at rest reproduces what is there (nothing jumps), and during the next gesture those
+  // pins really do keep their place. An estimate disagreed with the map (names take room too), so a settled map
+  // re-sorted itself a moment later: Armidale vanished at the end of a zoom and came back about a second later.
+  const shownDestIdsRef = useRef<Set<string>>(new Set());
+  const shownSpotIdsRef = useRef<Set<string>>(new Set());
+  const [shownTick, setShownTick] = useState(0);
+  const settleQueryRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const destSortFrozenRef = useRef<Map<string, number> | null>(null);
   const spotSortFrozenRef = useRef<Map<string, number> | null>(null);
   // Always-current mirror of `region`, so callbacks that only need to *read* the latest
@@ -2827,8 +2839,8 @@ const destItems = useMemo((): DestItem[] =>
       const revealZ = (SPOT_REVEAL_ZOOM_BY_ID[sp.id] ?? 0) - ZOOM_EPSILON;
       const photoZ = Math.max(revealZ, (SPOT_PHOTO_ZOOM_BY_ID[sp.id] ?? SPOT_REVEAL_ZOOM_BY_ID[sp.id] ?? 0) - ZOOM_EPSILON);
       const sort = cameraMovingRef.current && spotSortFrozenRef.current
-        ? (spotSortFrozenRef.current.get(sp.id) ?? 200_000 + (planRank.get(sp.id) ?? 0))
-        : (planRank.get(sp.id) ?? 100_000 + rank(sp));
+        ? (spotSortFrozenRef.current.get(sp.id) ?? 200_000_000 + rank(sp))
+        : (shownSpotIdsRef.current.has(sp.id) ? 0 : 100_000_000) + rank(sp);
       const geometry = { type: 'Point' as const, coordinates: [sp.coordinates.longitude, sp.coordinates.latitude] };
       features.push({
         type: 'Feature',
@@ -2880,7 +2892,7 @@ const destItems = useMemo((): DestItem[] =>
     const value = { shape: { type: 'FeatureCollection' as const, features }, specs: spotPhotoSpecListRef.current };
     lastSpotShapeRef.current = { sig, specs: spotPhotoSpecListRef.current, value };
     return value;
-  }, [nativePinSpots, nearCtx, visitIndex, handoffZoom, region, pinPlanLngDelta]);
+  }, [nativePinSpots, nearCtx, visitIndex, handoffZoom, region, pinPlanLngDelta, shownTick]);
   // Only the selected spot is a MarkerView now.
   const selectedOnly = useMemo(() => (selectedSpot ? [selectedSpot] : []), [selectedSpot]);
   const renderedSpots = useExitingItems(selectedOnly, s => s.id, HANDOFF_FADE_MS);
@@ -4471,6 +4483,24 @@ const destItems = useMemo((): DestItem[] =>
     // first pan of the whole session ever would). Reset it here so every pan is detected.
     wasMapGestureActiveRef.current = false;
     cameraMovingRef.current = false;
+    // Once Mapbox's own collision fades have finished, read which photo pins it drew.
+    if (settleQueryRef.current) clearTimeout(settleQueryRef.current);
+    settleQueryRef.current = setTimeout(async () => {
+      const map = mapViewRef.current;
+      if (!map || cameraMovingRef.current) return;
+      try {
+        const ids = async (layer: string) => {
+          const fc = await map.queryRenderedFeaturesInRect([], [], [layer]);
+          return new Set((fc?.features ?? []).map(f => String(f.properties?.id ?? '')).filter(Boolean));
+        };
+        const [d, sp] = await Promise.all([ids('destPhotoSymbols'), ids('spotPhotos')]);
+        if (cameraMovingRef.current) return;
+        const same = (a: Set<string>, b: Set<string>) => a.size === b.size && [...a].every(x => b.has(x));
+        if (same(d, shownDestIdsRef.current) && same(sp, shownSpotIdsRef.current)) return;
+        shownDestIdsRef.current = d; shownSpotIdsRef.current = sp;
+        setShownTick(t => t + 1);
+      } catch { /* the map may be mid-teardown */ }
+    }, SETTLE_QUERY_MS);
     releaseHeldSelection();   // a close's zoom-out has settled: let the pin/pill planning drop the old selection
     releaseSpotCloseTarget();
     const { center, bounds } = state.properties;
@@ -4775,7 +4805,7 @@ const destItems = useMemo((): DestItem[] =>
       planDest?.id === id ? -1
         : cameraMovingRef.current && destSortFrozenRef.current
           ? (destSortFrozenRef.current.get(id) ?? 50_000 + (destPinPlan.priority.get(id) ?? 49_999))
-          : (destPinPlan.priority.get(id) ?? 99_999);
+          : (shownDestIdsRef.current.has(id) ? 0 : 10_000) + (destPinPlan.priority.get(id) ?? 9_999);
 
     const specs = destPinSpecsRef.current;
     let added = false;
@@ -4822,7 +4852,7 @@ const destItems = useMemo((): DestItem[] =>
     const value = { shape: { type: 'FeatureCollection' as const, features }, specs: destPinSpecListRef.current };
     lastDestShapeRef.current = { sig, specs: destPinSpecListRef.current, value };
     return value;
-  }, [promotedDestsLead, visitIndex, visitedSpotCountByDest, destPinPlan, planDest, eligibleDests, visibleRank, destLabelGates]);
+  }, [promotedDestsLead, visitIndex, visitedSpotCountByDest, destPinPlan, planDest, eligibleDests, visibleRank, destLabelGates, shownTick]);
 
 
   // Which sliding sheet is mounted right now. When it changes from one level to another, the incoming sheet is a
@@ -4893,6 +4923,7 @@ const destItems = useMemo((): DestItem[] =>
       {/* ── MAP ──────────────────────────────────────────────────────────── */}
       {styleResolved && (
       <MapboxGL.MapView
+        ref={mapViewRef}
         style={StyleSheet.absoluteFill}
         // Globe at every zoom, never swapped. Mapbox's iOS SDK applies setProjection
         // instantly with no animated globe↔mercator transition (RNMBXMapView.swift), so
