@@ -1,5 +1,5 @@
 {
-  "_note": "Coverage regions (COVERAGE.md -> Finding what is missing). A region pass covers all of a region's land, between destinations as well as in them. Every destination and every standalone spot of a listed country must appear in exactly one region; scripts/curation-backlog.ts reports any that do not. A destination whose span crosses a border is listed where most of it lies. New Zealand uses its regional-council regions, with Nelson and Tasman as one, plus the Chatham Islands.",
+  "_note": "Coverage regions (COVERAGE.md -> Finding what is missing). A region pass covers all of a region's land, between destinations as well as in them. Every destination and every standalone spot of a listed country must appear in exactly one region; scripts/curation-backlog.ts reports any that do not. A destination whose span crosses a border is listed where most of it lies. New Zealand uses its regional-council regions, with Nelson and Tasman as one, plus the Chatham Islands. Papua New Guinea uses its provinces grouped into nine tourism regions.",
   "NZ": [
     {
       "id": "northland",
@@ -448,6 +448,62 @@
       "standalone": [
         "balls-pyramid"
       ]
+    }
+  ],
+  "PG": [
+    {
+      "id": "png-capital-central-gulf",
+      "name": "Port Moresby, Central & Gulf (PNG)",
+      "destinations": [],
+      "standalone": []
+    },
+    {
+      "id": "png-milne-bay",
+      "name": "Milne Bay (PNG)",
+      "destinations": [],
+      "standalone": []
+    },
+    {
+      "id": "png-oro-kokoda",
+      "name": "Oro (Northern) & Kokoda (PNG)",
+      "destinations": [],
+      "standalone": []
+    },
+    {
+      "id": "png-morobe-madang",
+      "name": "Morobe & Madang (PNG)",
+      "destinations": [],
+      "standalone": []
+    },
+    {
+      "id": "png-sepik",
+      "name": "East Sepik & Sandaun (PNG)",
+      "destinations": [],
+      "standalone": []
+    },
+    {
+      "id": "png-highlands",
+      "name": "Highlands (PNG): Eastern Highlands, Simbu, Western Highlands, Jiwaka, Enga, Hela, Southern Highlands",
+      "destinations": [],
+      "standalone": []
+    },
+    {
+      "id": "png-western",
+      "name": "Western Province (PNG)",
+      "destinations": [],
+      "standalone": []
+    },
+    {
+      "id": "png-new-britain",
+      "name": "New Britain (PNG): East and West New Britain",
+      "destinations": [],
+      "standalone": []
+    },
+    {
+      "id": "png-islands",
+      "name": "New Ireland, Manus & Bougainville (PNG)",
+      "destinations": [],
+      "standalone": []
     }
   ]
 }

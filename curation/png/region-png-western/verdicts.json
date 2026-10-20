@@ -1,0 +1,212 @@
+[
+ {
+  "name": "Daru",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "3 counted sources, 5931 page views",
+  "decided_by": "script",
+  "views": 5931,
+  "counted_sources": 3
+ },
+ {
+  "name": "Kiunga",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "3 counted sources, 3206 page views",
+  "decided_by": "script",
+  "views": 3206,
+  "counted_sources": 3
+ },
+ {
+  "name": "Tabubil",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Fails rule 1 and 2: no visitor source (Wikivoyage, PNG tourism) names it as a stop; re-looked, Wikivoyage mentions it only as the mine corridor with controlled access. A company mine town with no visitor draw.",
+  "decided_by": "judge",
+  "views": 4779,
+  "counted_sources": 0
+ },
+ {
+  "name": "Ok Tedi Mine",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Rule 2: working industrial site, controlled access, Wikivoyage says not to photograph it; nothing a visitor can do.",
+  "decided_by": "judge",
+  "views": 13895,
+  "counted_sources": 0
+ },
+ {
+  "name": "Lake Murray",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Rule 1/2: Wikivoyage lists it as an 'other destination' (largest lake in PNG; birdwatching, fishing, village visits) and it is a distinct natural place; second-tier stop a real source names. Lodge (Lake Murray Lodge) goes in the bio as the way in, plus charter aircraft.",
+  "decided_by": "judge",
+  "views": 4197,
+  "counted_sources": 1
+ },
+ {
+  "name": "Lake Murray Lodge",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "An accommodation operator, not a place (COVERAGE: lodge is not a spot); the place is Lake Murray.",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 0
+ },
+ {
+  "name": "Bensbach Wildlife Lodge",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Lodge/operator, not a spot; the place it serves is Tonda Wildlife Management Area (kept) and the Bensbach River.",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 2
+ },
+ {
+  "name": "Suki Eco-Lodge",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Lodge listed for fishing; operator not a place, no coordinates, no distinct place identified beyond a fishing village.",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 1
+ },
+ {
+  "name": "Angling Adventures",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Tour operator, not a place; its destination is the Bensbach River, covered by Tonda WMA.",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 1
+ },
+ {
+  "name": "Kiunga Nature Tours",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Operator, not a place; the place is Kiunga (already an audit entry).",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 1
+ },
+ {
+  "name": "Ecotourism Melanesia",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Operator/tour company, not a place.",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 1
+ },
+ {
+  "name": "Fly River",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "review",
+  "reason": "Rule 1 met (two counted sources; PNG tourism names it as a great river, Wikivoyage describes river trips from Daru and Kiunga). But a 1,060 km river is a linear feature with no single visitor point: case for: obvious headline feature of the province; case against: Wikivoyage warns passenger boats are not available, no distinct place to stand, pin would be arbitrary (needs a visitor access point, e.g. Kiunga river port).",
+  "decided_by": "judge",
+  "views": 16845,
+  "counted_sources": 2
+ },
+ {
+  "name": "Fly River Delta",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Rule 3: near-duplicate of Fly River and Kiwai Island; no coordinates; Wikivoyage's delta entry names Kiwai Island as its main visit.",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 1
+ },
+ {
+  "name": "Kiwai Island",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "review",
+  "reason": "One counted source (Wikivoyage: charter boat trip from Daru to the delta's largest island, 59 km long, villages). For: a real named place, a distinct visit, Wikipedia article with coordinates. Against: single source, needs a charter, a long visit to villages with permission; unclear what a visitor does for half an hour.",
+  "decided_by": "judge",
+  "views": 2154,
+  "counted_sources": 1
+ },
+ {
+  "name": "Parama Island",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Rule 1: no visitor source; village island with no stated visitor activity.",
+  "decided_by": "judge",
+  "views": 1007,
+  "counted_sources": 0
+ },
+ {
+  "name": "Tonda Wildlife Management Area",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Rules 1-4: two counted sources (PNG tourism 'must see', Wikivoyage other destination); largest protected area and Ramsar wetland with wildlife drives and birdwatching; reached through Bensbach Wildlife Lodge by charter flight, mention in bio.",
+  "decided_by": "judge",
+  "views": 695,
+  "counted_sources": 2
+ },
+ {
+  "name": "Wawoi Falls",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Rule 2: PNG tourism's line is 'decide if it is our largest waterfall', no access, location or visit information; no coordinates and no second source; cannot confirm a visitor can reach it.",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 1
+ },
+ {
+  "name": "Hindenburg Wall",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "review",
+  "reason": "One counted source (PNG tourism 'must see': limestone cliff escarpment, Star Mountains). For: a genuine natural landmark the tourism board promotes. Against: access only with customary landowners, no coordinates, no visitor facilities, no second source.",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 1
+ },
+ {
+  "name": "Mount Fubilan",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Rule 2: the peak no longer exists, replaced by the Ok Tedi pit; no public access.",
+  "decided_by": "judge",
+  "views": 754,
+  "counted_sources": 0
+ },
+ {
+  "name": "Balimo",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Rule 4: only draw is occasional canoe races (events); no permanent visitor site and Wikivoyage names no stop.",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 1
+ },
+ {
+  "name": "Strickland River",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Rule 3: river as a feature, no visitor point; tourism board mentions it only in the introduction, not as a stop.",
+  "decided_by": "judge",
+  "views": 1862,
+  "counted_sources": 1
+ }
+]

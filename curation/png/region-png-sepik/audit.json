@@ -1,0 +1,134 @@
+[
+ {
+  "name": "Kairiru Island",
+  "wiki": "",
+  "views": 0,
+  "counted_sources": 4,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Kairiru Island",
+   "wiki": "",
+   "coordinates": {
+    "lat": -3.3447,
+    "lng": 143.55973
+   },
+   "coordinates_source": "osm:way/22295680 island centroid",
+   "views": 0,
+   "counted_sources": [
+    "https://papuanewguinea.travel/",
+    "https://papuanewguinea.travel/momase-region/",
+    "https://en.wikivoyage.org/wiki/Sepik",
+    "https://www.remotelands.com/destination/sepik-region"
+   ],
+   "other_sources": [],
+   "note": "Island: volcanic island 30 minutes by boat off Wewak with waterfalls, snorkelling and natural hot springs (PTPA); guesthouse per Wikivoyage. Wikipedia title 'Kairiru' is the language."
+  }
+ },
+ {
+  "name": "Mushu Island",
+  "wiki": "",
+  "views": 0,
+  "counted_sources": 3,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Mushu Island",
+   "wiki": "",
+   "coordinates": {
+    "lat": -3.41396,
+    "lng": 143.58665
+   },
+   "coordinates_source": "osm:way/22295682 island centroid (OSM Muschu Island)",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sepik",
+    "https://papuanewguinea.travel/momase-region/",
+    "https://www.remotelands.com/destination/sepik-region"
+   ],
+   "other_sources": [],
+   "note": "Island: coral atoll with a white-sand beach and reef fish, half an hour off Wewak; basic guesthouse. Named Muschu by PTPA. Wikipedia title is the Disney character."
+  }
+ },
+ {
+  "name": "Vanimo",
+  "wiki": "Vanimo",
+  "views": 7075,
+  "counted_sources": 3,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Vanimo",
+   "wiki": "Vanimo",
+   "coordinates": {
+    "lat": -2.68476,
+    "lng": 141.30091
+   },
+   "coordinates_source": "osm:node/1250713619 place=city (wiki en:Vanimo)",
+   "views": 7075,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Vanimo",
+    "https://en.wikivoyage.org/wiki/Sepik",
+    "https://papuanewguinea.travel/momase-region/"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Vanimo"
+   ],
+   "note": "Town: capital of Sandaun Province on the Indonesian border; base for the surf breaks and the coastal headlands."
+  }
+ },
+ {
+  "name": "Vanimo Surf Breaks",
+  "wiki": "",
+  "views": 0,
+  "counted_sources": 3,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Vanimo Surf Breaks",
+   "wiki": "",
+   "coordinates": {
+    "lat": -2.66135,
+    "lng": 141.27749
+   },
+   "coordinates_source": "osm:node/1250713739 natural=cape Vanimo Point (area point; surf breaks not named in any source)",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Vanimo",
+    "https://papuanewguinea.travel/momase-region/",
+    "https://www.remotelands.com/destination/sepik-region"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Vanimo"
+   ],
+   "note": "Surf breaks: consistent reef and point breaks west of Vanimo, up to 3 m, best September to March (Wikivoyage); experienced surfers only."
+  }
+ },
+ {
+  "name": "Wewak",
+  "wiki": "Wewak",
+  "views": 11091,
+  "counted_sources": 2,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Wewak",
+   "wiki": "Wewak",
+   "coordinates": {
+    "lat": -3.55422,
+    "lng": 143.62709
+   },
+   "coordinates_source": "osm:node/1538978470 place=city (wiki en:Wewak)",
+   "views": 11091,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wewak",
+    "https://papuanewguinea.travel/momase-region/"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Wewak",
+    "https://en.wikivoyage.org/wiki/Sepik"
+   ],
+   "note": "Town: provincial capital of East Sepik and the gateway for Sepik River trips and the Wewak islands; WWII Japanese airbase and surrender site."
+  }
+ }
+]

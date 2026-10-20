@@ -41,5 +41,6 @@ const t = (v: string) => finalRows.filter(r => r.verdict === v).length;
 console.log(`${finalRows.length} candidates: ${t('keep')} keep, ${t('reject')} reject, ${t('review')} review (${finalRows.filter(r => r.decided_by === 'script').length} decided by the script, ${judged.length} by the judge)`);
 console.log(`audit: ${rows.length} script decisions re-judged blind, ${differ.length} differ`);
 for (const d of differ) console.log(`  ${d.name}: script ${d.script}, judge ${d.judge} (${d.reason})`);
+// Full path (the judge decided every candidate, e.g. after the audit failed): nothing is left for the script, so no audit is needed.
 if (!rows.length && finalRows.some(r => r.decided_by === 'script')) { console.error('no audited.json: the audit sample (audit.json) must be re-judged before the run is accepted'); process.exit(2); }
 if (rows.length && differ.length / rows.length > 0.1) { console.error('MORE THAN 1 IN 10 differ: the script rules do not fit this region; rerun the full recall + skeptic path before accepting'); process.exit(2); }

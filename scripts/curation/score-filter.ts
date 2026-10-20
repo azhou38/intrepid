@@ -22,7 +22,7 @@ const nSources = (c: Cand) => Array.isArray(c.counted_sources) ? c.counted_sourc
 
 // Ephemeral, civic, vehicle/operator and minor-memorial names (COVERAGE.md "What qualifies" 2-4): reject without an agent.
 const REJECT: [RegExp, string][] = [
-  [/\b(festival|carnival|parade|regatta|rodeo|fair|eisteddfod)\b(?!.*\b(centre|center|ground|grounds|park|museum|stadium)\b)/i, 'an event, not a permanent place'],
+  [/\b(festival|carnival|parade|regatta|rodeo|fair|eisteddfod|show|expo|singsing)\b(?!.*\b(centre|center|ground|grounds|park|museum|stadium)\b)/i, 'an event, not a permanent place'],
   [/\b(farmers'?|growers'?|twilight|night|sunday|saturday|weekend)\s+markets?\b/i, 'a market that runs only some days'],
   [/^(?!.*\b(museum|gallery|garden|cave)\b).*\b(hospital|library|town hall|council chambers?|court ?house|post office|police station|primary school|high school|public school)\b/i, 'a civic building seen from the pavement'],
   [/\b(cenotaph|war memorial|memorial (hall|gates|park)|bridge of remembrance|honour roll|plaque)\b/i, 'a minor memorial'],
@@ -33,7 +33,7 @@ const REJECT: [RegExp, string][] = [
 // A candidate that is part of another place (an outlook on a track, a site inside a park) needs a judgement, never an auto-keep.
 // Names that look like a feature or an area rather than a place to go (a river, a catchment, a parkland, a raceway): never an
 // auto-keep, however good the score, because the judge must decide whether anything there is a visitor draw.
-const NOT_AUTOKEEP = /motorsport|raceway|speedway|racecourse|\b(river|creek|estuary|catchment|parklands?|reserve|region|district|shire|valley|plains?|council|regional park|industrial|suburb)$/i;
+const NOT_AUTOKEEP = /wigmen|dancers|mudmen|singsing|performers|tribes?\b|motorsport|raceway|speedway|racecourse|\b(river|creek|estuary|catchment|parklands?|reserve|region|district|shire|islands?|group|passage|harbou?r|airfield|airport|valley|plains?|council|regional park|industrial|suburb)$/i;
 // A lookout, point, hill or cave whose own source note puts it on a walk or track is usually a stop on that walk (Kim's Lookout, Pooles Lookout on Lord Howe).
 const ON_A_WALK = /\b(lookout|viewpoint|view point|point|hill|cave|pool|beach)$/i;
 const WALK_NOTE = /\b(walk|track|trail|climb|hike|route|loop)\b/i;

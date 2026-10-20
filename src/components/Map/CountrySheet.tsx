@@ -152,6 +152,7 @@ const COUNTRY_FACTS: Record<string, { population: string; languages: string[]; c
   JP: { population: '124 million',  languages: ['Japanese'],                                      currency: 'Japanese Yen',       area: '377,970 km²',   capital: 'Tokyo' },
   AU: { population: '26 million',   languages: ['English'],                                       currency: 'Australian Dollar',  area: '7,692,000 km²', capital: 'Canberra' },
   NZ: { population: '5.3 million',  languages: ['English', 'Māori', 'NZ Sign Language'],         currency: 'New Zealand Dollar', area: '268,021 km²',   capital: 'Wellington' },
+  PG: { population: '10.3 million', languages: ['English', 'Tok Pisin', 'Hiri Motu'],            currency: 'Papua New Guinean Kina', area: '462,840 km²', capital: 'Port Moresby' },
 };
 
 type CountryTab = 'visit' | 'about' | 'destinations';
