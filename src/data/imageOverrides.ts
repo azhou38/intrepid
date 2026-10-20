@@ -445,6 +445,8 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "File:ext-madang-central-market.jpg": { x: 0.6, y: 0.55 },
   "File:Louisiadearchipelago.JPG": { x: 0.6, y: 0.35, zoom: 1.6 },
   "File:Alotau memorial-ww2.jpg": { x: 0.4, y: 0.5 },
+  "Coastwatchers Lighthouse": { x: 0.3, y: 0.5 },
+  "Tawali": { x: 0.35, y: 0.4 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {

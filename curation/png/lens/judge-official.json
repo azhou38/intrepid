@@ -1,0 +1,84 @@
+{
+ "spot:port-moresby-2": {
+  "choice": "/private/tmp/claude-501/-Users-alexzhou-Developer-mobile-wellington/16edc52c-57b1-4c22-8c60-6565c530b9eb/scratchpad/off/pm-museum.jpg",
+  "hero_crop": "ok",
+  "reason": "Gallery interior with PNG exhibits, colour, 1600 px; fine for a museum.",
+  "weak": false
+ },
+ "spot:port-moresby-5": {
+  "choice": "/private/tmp/claude-501/-Users-alexzhou-Developer-mobile-wellington/16edc52c-57b1-4c22-8c60-6565c530b9eb/scratchpad/off/pm-parliament.jpg",
+  "hero_crop": "ok",
+  "reason": "Parliament Haus gable with the large mosaic, distinctive and recognisable; centred.",
+  "weak": false
+ },
+ "spot:port-moresby-1": {
+  "choice": "/private/tmp/claude-501/-Users-alexzhou-Developer-mobile-wellington/16edc52c-57b1-4c22-8c60-6565c530b9eb/scratchpad/off/pm-nature-park.jpg",
+  "hero_crop": "ok",
+  "reason": "Wallaby joey held by a ranger with Port Moresby Nature Park logo legible; park only identified by the logo, animal close-up.",
+  "weak": true
+ },
+ "spot:madang-1": {
+  "choice": "/private/tmp/claude-501/-Users-alexzhou-Developer-mobile-wellington/16edc52c-57b1-4c22-8c60-6565c530b9eb/scratchpad/off/madang-lighthouse.jpg",
+  "hero_crop": {
+   "x": 0.3,
+   "y": 0.5,
+   "zoom": 1.0
+  },
+  "reason": "White lighthouse tower with palms, tower cut at top of frame, slightly soft; recognisable. Subject left of centre so x 0.3.",
+  "weak": true
+ },
+ "spot:lae-rainforest-habitat": {
+  "choice": "/private/tmp/claude-501/-Users-alexzhou-Developer-mobile-wellington/16edc52c-57b1-4c22-8c60-6565c530b9eb/scratchpad/off/lae-rainforest.jpg",
+  "hero_crop": "ok",
+  "reason": "Thatched shelters in lush habitat grounds; 1024 px (above 960), pleasant but generic, only the source page ties it to the place.",
+  "weak": true
+ },
+ "spot:buna": {
+  "choice": "/private/tmp/claude-501/-Users-alexzhou-Developer-mobile-wellington/16edc52c-57b1-4c22-8c60-6565c530b9eb/scratchpad/off/buna-beach.jpg",
+  "hero_crop": "ok",
+  "reason": "Beach, palms and turquoise water seen from above; attractive and clear; place only via source page (Northern Oro).",
+  "weak": false
+ },
+ "spot:trobriand-islands": {
+  "choice": "/private/tmp/claude-501/-Users-alexzhou-Developer-mobile-wellington/16edc52c-57b1-4c22-8c60-6565c530b9eb/scratchpad/off/kiriwina-jetty.jpg",
+  "hero_crop": "ok",
+  "reason": "Kiriwina jetty over turquoise water to palm beach; crowd of visitors is small, scenic and clear.",
+  "weak": false
+ },
+ "spot:sohano-island": {
+  "choice": "/private/tmp/claude-501/-Users-alexzhou-Developer-mobile-wellington/16edc52c-57b1-4c22-8c60-6565c530b9eb/scratchpad/off/db-sohano4.jpg",
+  "alt_considered": "/private/tmp/claude-501/-Users-alexzhou-Developer-mobile-wellington/16edc52c-57b1-4c22-8c60-6565c530b9eb/scratchpad/off/db-sohano3.jpg",
+  "hero_crop": "ok",
+  "reason": "Memorial obelisk with passage behind, portrait 2500x3333, centred; memorial is weaker than a view but the alt is a generic water view with a tree frame and a tiny boat.",
+  "weak": true
+ },
+ "spot:buka": {
+  "choice": "none: only image is a blurry, low-detail shot of a seaside building (resembles any tropical waterfront); not recognisable as Buka, 2.2:1 so crop loses most of it",
+  "hero_crop": "fail: blurry, building only",
+  "reason": "Fails clarity and recognisability.",
+  "weak": true
+ },
+ "spot:nissan-island": {
+  "choice": "/private/tmp/claude-501/-Users-alexzhou-Developer-mobile-wellington/16edc52c-57b1-4c22-8c60-6565c530b9eb/scratchpad/off/db-green-p8220314.jpg",
+  "alt_considered": "/private/tmp/claude-501/-Users-alexzhou-Developer-mobile-wellington/16edc52c-57b1-4c22-8c60-6565c530b9eb/scratchpad/off/db-green-0184.jpg",
+  "hero_crop": "ok",
+  "reason": "Bright white beach with outrigger canoes, clear and attractive; the aerial alt is hazy and flat.",
+  "weak": false
+ },
+ "spot:alotau-2": {
+  "choice": "/private/tmp/claude-501/-Users-alexzhou-Developer-mobile-wellington/16edc52c-57b1-4c22-8c60-6565c530b9eb/scratchpad/off/tawali-drone.jpg",
+  "hero_crop": {
+   "x": 0.35,
+   "y": 0.4,
+   "zoom": 1.0
+  },
+  "reason": "Drone view of bungalow roofs in forest above reef with jetty, resort and reef visible, 1920 px; roofs partly cut at the left edge, sharp and colourful.",
+  "weak": true
+ },
+ "dest:madang:header": {
+  "choice": "/private/tmp/claude-501/-Users-alexzhou-Developer-mobile-wellington/16edc52c-57b1-4c22-8c60-6565c530b9eb/scratchpad/off/madang-harbour.jpg",
+  "hero_crop": "ok",
+  "reason": "Low oblique aerial of the Madang peninsula, harbour, lighthouse in the distance: acceptable, attractive and sunlit. Only 1600 px wide, short of the 2000 px header minimum.",
+  "weak": true
+ }
+}
