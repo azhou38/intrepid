@@ -1340,6 +1340,9 @@ const PIN_FADE_IN_NATIVE_MS = 160;
 const PIN_LIVE_LEAD = 1.5;
 // The least time between two camera-driven re-renders of the map screen (see handleCameraChanged).
 const SCREEN_CAMERA_THROTTLE_MS = 50;
+// During a finger gesture the screen re-renders less often still, leaving the JS thread free for the pin layers, which
+// follow every camera event themselves (cameraStore).
+const SCREEN_CAMERA_THROTTLE_GESTURE_MS = 140;
 // How long after the camera settles the drawn photo pins are read back (Mapbox's collision fade is about 300 ms).
 const SETTLE_QUERY_MS = 350;
 const PIN_FADE_OUT_NATIVE_MS = 120;
@@ -4446,7 +4449,7 @@ const destItems = useMemo((): DestItem[] =>
     // out to SCREEN_CAMERA_THROTTLE_MS: re-rendering this large screen on every camera event queued renders behind the
     // camera (by more than half a second during a pinch), and that backlog is what held the pins back.
     const now = Date.now();
-    if (now - lastCameraTimeRef.current < SCREEN_CAMERA_THROTTLE_MS) return;
+    if (now - lastCameraTimeRef.current < (isGestureActive ? SCREEN_CAMERA_THROTTLE_GESTURE_MS : SCREEN_CAMERA_THROTTLE_MS)) return;
     lastCameraTimeRef.current = now;
 
     // One batched update: the region and the zoom always change together, and applying them separately renders the
@@ -5251,12 +5254,14 @@ const destItems = useMemo((): DestItem[] =>
               <MapboxGL.SymbolLayer
                 key={`spotMiniPins${slot}`}
                 id={main ? 'spotMiniPins' : `spotMiniPins-${slot}`}
-                belowLayerID={joining ? 'spotMiniPins' : 'destStampCircles'}
+                belowLayerID={main ? 'destStampCircles' : 'spotMiniPins'}
                 filter={['all', ['==', ['get', 'img'], ''], inSlot] as any}
                 style={{
                   iconImage: ['get', 'mini'] as any,
                   iconAnchor: 'bottom',
-                  iconAllowOverlap: leaving,
+                  // A pin fading out is placed last and never overlaps anything (where it is crowded it simply goes), and it
+                  // blocks nothing: on a zoom-out the leaving pins used to stack into a cluster while they faded.
+                  iconAllowOverlap: false,
                   iconIgnorePlacement: leaving,
                   iconPadding: 0,
                   symbolSortKey: ['get', 'sort'] as any,
@@ -5270,12 +5275,12 @@ const destItems = useMemo((): DestItem[] =>
                 id={main ? 'spotPhotos' : `spotPhotos-${slot}`}
                 // A joining photo pin sits just beneath the main photo pins and above every small pin: it takes only room the
                 // showing photo pins leave, and the small pins (its own included) yield to it.
-                belowLayerID={joining ? 'spotPhotos' : 'destStampCircles'}
+                belowLayerID={main ? 'destStampCircles' : joining ? 'spotPhotos' : 'spotMiniPins'}
                 filter={['all', ['!=', ['get', 'img'], ''], inSlot] as any}
                 style={{
                   iconImage: ['get', 'img'] as any,
                   iconAnchor: 'bottom',
-                  iconAllowOverlap: leaving,
+                  iconAllowOverlap: false,
                   iconIgnorePlacement: leaving,
                   iconPadding: 2,
                   symbolSortKey: ['get', 'sort'] as any,
@@ -5288,7 +5293,7 @@ const destItems = useMemo((): DestItem[] =>
                   textTranslate: [0, -19],
                   textOptional: true,
                   // A name never knocks a pin out (it would push later pins to small pins until zooming moved them clear).
-                  textAllowOverlap: leaving,
+                  textAllowOverlap: false,
                   textIgnorePlacement: true,
                   textPadding: 2,
                   textColor, textHaloColor,
