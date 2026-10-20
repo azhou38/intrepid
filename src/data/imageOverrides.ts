@@ -1597,6 +1597,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Port Moresby": "Port moresby (5986697553).jpg",
   "Rabaul": "Rabaul from Vulcanology Observatory.jpg",
   "Kokoda Track": "Kokoda Gate.jpg",
+  "Madang": "ext-madang.jpg",   // an official photo served from externalPhotos.json (src/data/externalPhotos.json wins); this keeps the header check satisfied
 };
 
 /**
