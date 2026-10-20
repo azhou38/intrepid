@@ -1461,11 +1461,28 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // closeSearch), so the commit that closes search stays light. The restore hint is only cleared
   // once the sheet has actually remounted with it.
   const [exploreHeld, setExploreHeld] = useState(false);
-  // True from a destination close's zoom-out until the camera lands (handleMapIdle). Mounting the Explore sheet during the
-  // zoom-out (155–190 ms of render, mounted on the UI thread the map draws on) froze the camera animation, so the map jumped
-  // from the zoomed-in view to the zoomed-out one with no frames between; it now mounts once the camera has landed.
+  // True from a close's zoom-out (a destination's, a spot's or a country's X) until the camera lands (handleMapIdle).
+  // Mounting the Explore sheet during the zoom-out (155–190 ms of render, mounted on the UI thread the map draws on) froze
+  // the camera animation, so the map jumped from the zoomed-in view to the zoomed-out one with no frames between; it now
+  // mounts once the camera has landed.
   const [exploreAfterCamera, setExploreAfterCamera] = useState(false);
   const exploreAfterCameraRef = useRef(false);
+  // The same for the destination sheet a spot's "‹ Destination" back returns to, while the camera zooms out to it.
+  const [destAfterCamera, setDestAfterCamera] = useState(false);
+  const destAfterCameraRef = useRef(false);
+  const sheetAfterCameraTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const releaseSheetsAfterCamera = useCallback(() => {
+    if (sheetAfterCameraTimerRef.current) { clearTimeout(sheetAfterCameraTimerRef.current); sheetAfterCameraTimerRef.current = null; }
+    if (exploreAfterCameraRef.current) { exploreAfterCameraRef.current = false; setExploreAfterCamera(false); }
+    if (destAfterCameraRef.current) { destAfterCameraRef.current = false; setDestAfterCamera(false); }
+  }, []);
+  // Hold that sheet back until the camera lands. The timer is only a safety net for a move that never reports idle.
+  const holdSheetUntilCamera = useCallback((which: 'explore' | 'dest', durationMs: number) => {
+    if (which === 'explore') { exploreAfterCameraRef.current = true; setExploreAfterCamera(true); }
+    else { destAfterCameraRef.current = true; setDestAfterCamera(true); }
+    if (sheetAfterCameraTimerRef.current) clearTimeout(sheetAfterCameraTimerRef.current);
+    sheetAfterCameraTimerRef.current = setTimeout(releaseSheetsAfterCamera, durationMs + 800);
+  }, [releaseSheetsAfterCamera]);
   // Layout effect: the frame's wait starts with the close commit itself, not once passive effects run.
   useLayoutEffect(() => {
     if (!exploreHeld) return;
@@ -3511,11 +3528,13 @@ const destItems = useMemo((): DestItem[] =>
     // Target: the destination's default view — unless already zoomed out past it (see
     // isZoomedOutBeyond).
     if (dest && !isZoomedOutBeyond(latDeltaToZoom(getDestZoomDelta(dest)))) {
+      holdSheetUntilCamera('explore', 500);   // the Explore sheet mounts once the camera lands
       beginClosePlan(destDefaultCamera(dest, 'topHalf').zoom, 500);   // see planZoomTarget (a no-op unless this zooms out)
       fitDestinationDefaultView(dest, 'easeTo', 'topHalf');
     } else if (standalone) {
       const cam = destDefaultCamera(standaloneSpotArea(standalone), 'topHalf');
       if (!isZoomedOutBeyond(cam.zoom)) {
+        holdSheetUntilCamera('explore', 500);
         beginClosePlan(cam.zoom, 500);
         beginProgrammaticCameraMove(500);
         cameraRef.current?.setCamera({
@@ -3527,7 +3546,7 @@ const destItems = useMemo((): DestItem[] =>
     } else {
       releaseHeldSelection();
     }
-  }, [showBreadcrumb, fitDestinationDefaultView, isZoomedOutBeyond, releaseHeldSelection, beginClosePlan, destDefaultCamera, beginProgrammaticCameraMove]);
+  }, [showBreadcrumb, fitDestinationDefaultView, isZoomedOutBeyond, releaseHeldSelection, beginClosePlan, destDefaultCamera, beginProgrammaticCameraMove, holdSheetUntilCamera]);
 
   // Closing the spot sheet INTO its parent destination sheet (still selected), re-centering
   // the camera on the destination's default zoomed-in view. `toCollapsed` (set when this
@@ -3574,6 +3593,8 @@ const destItems = useMemo((): DestItem[] =>
       // Plan the spot pins at the view this lands on (see spotCloseTargetRef) — only when it zooms out.
       const target = destDefaultCamera(selectedDest, 'topHalf').zoom;
       if (target < camZoomRef.current - ZOOM_EPSILON) {
+        // The destination sheet mounts once the camera lands, not during the zoom-out (see destAfterCamera).
+        holdSheetUntilCamera('dest', 500);
         spotCloseTargetRef.current = target;
         if (spotCloseTimerRef.current) clearTimeout(spotCloseTimerRef.current);
         spotCloseTimerRef.current = setTimeout(() => {
@@ -3585,7 +3606,7 @@ const destItems = useMemo((): DestItem[] =>
       }
       fitDestinationDefaultView(selectedDest, 'easeTo', 'topHalf');
     }
-  }, [spotOrigin, selectedDest, fitDestinationDefaultView, setSheetSnapState, setDestHomeToDefault, destDefaultCamera]);
+  }, [spotOrigin, selectedDest, fitDestinationDefaultView, setSheetSnapState, setDestHomeToDefault, destDefaultCamera, holdSheetUntilCamera]);
 
   // Spot close/back, provenance-routed: entered from the destination → return to it;
   // entered laterally (map tap at spot zoom, or search) → back to the map as it was.
@@ -3690,11 +3711,10 @@ const destItems = useMemo((): DestItem[] =>
     }
     // Plan for the zoomed-out view from the first frame, so the pins it won't have fade out DURING the zoom (see
     // planZoomTarget) rather than after it settles.
-    exploreAfterCameraRef.current = true;
-    setExploreAfterCamera(true);
+    holdSheetUntilCamera('explore', 600);
     beginClosePlan(destDefaultCamera(dest, 'full', 0.5).zoom, 600);
     fitDestinationDefaultView(dest, 'easeTo', 'full', 600, 0.5);
-  }, [selectedDest, showBreadcrumb, fitDestinationDefaultView, isZoomedOutBeyond, releaseHeldSelection, beginClosePlan, destDefaultCamera]);
+  }, [selectedDest, showBreadcrumb, fitDestinationDefaultView, isZoomedOutBeyond, releaseHeldSelection, beginClosePlan, destDefaultCamera, holdSheetUntilCamera]);
 
   // Closing the destination sheet INTO its country view. `toCollapsed` (set when this
   // fires from a swipe-down while the destination sheet was itself collapsed) lands the
@@ -3830,6 +3850,7 @@ const destItems = useMemo((): DestItem[] =>
       releaseHeldSelection();
       return;
     }
+    holdSheetUntilCamera('explore', 600);   // the Explore sheet mounts once the camera lands
     beginClosePlan(hasCached ? cached.zoom / 2 : latDeltaToZoom(WORLD_HOME_LATDELTA), 600);   // see planZoomTarget
     if (hasCached) {
       beginProgrammaticCameraMove(600);
@@ -3842,7 +3863,7 @@ const destItems = useMemo((): DestItem[] =>
       return;
     }
     animateCamera({ latitude: 20, longitude: regionRef.current.longitude, latitudeDelta: WORLD_HOME_LATDELTA, longitudeDelta: WORLD_HOME_LATDELTA }, 600);
-  }, [showBreadcrumb, animateCamera, beginProgrammaticCameraMove, isZoomedOutBeyond, releaseHeldSelection, beginClosePlan]);
+  }, [showBreadcrumb, animateCamera, beginProgrammaticCameraMove, isZoomedOutBeyond, releaseHeldSelection, beginClosePlan, holdSheetUntilCamera]);
 
   // `openPeeked` is for returning UP to a country from a destination via the breadcrumb: the
   // sheet opens in bottom-screen/peek instead of half-screen, and the map is framed for the
@@ -3893,15 +3914,15 @@ const destItems = useMemo((): DestItem[] =>
   const [sheetExitSignal, setSheetExitSignal] = useState(0);
   const sheetExitingRef = useRef(false);
   const SHEET_EXIT_MS = 180;
-  // The destination sheet slides out on the UI thread (destSheetExitSV) without a re-render here or in the sheet, and the
-  // close runs when its slide has finished (onDestSheetExited) rather than after a timer. Bumping sheetExitSignal (state)
+  // The open sheet (destination, spot or country) slides out on the UI thread (sheetExitSV) without a re-render here or in
+  // the sheet, and the close runs when its slide has finished (onSheetExited) rather than after a timer. Bumping sheetExitSignal (state)
   // re-rendered the whole map screen and the sheet first, which delayed the slide by 240–370 ms after the X tap.
-  const destSheetExitSV = useSharedValue(0);
+  const sheetExitSV = useSharedValue(0);
   const sheetKindRef = useRef<'country' | 'dest' | 'spot' | null>(null);
-  const destSheetExitActionRef = useRef<(() => void) | null>(null);
-  const onDestSheetExited = useCallback(() => {
-    const action = destSheetExitActionRef.current;
-    destSheetExitActionRef.current = null;
+  const sheetExitActionRef = useRef<(() => void) | null>(null);
+  const onSheetExited = useCallback(() => {
+    const action = sheetExitActionRef.current;
+    sheetExitActionRef.current = null;
     sheetExitingRef.current = false;
     action?.();
   }, []);
@@ -3909,9 +3930,9 @@ const destItems = useMemo((): DestItem[] =>
     if (sheetExitingRef.current) return;
     if (sheetSnapStateRef.current === 'full') { action(); return; }
     sheetExitingRef.current = true;
-    if (sheetKindRef.current === 'dest') {
-      destSheetExitActionRef.current = action;
-      destSheetExitSV.value = destSheetExitSV.value + 1;
+    if (sheetKindRef.current) {
+      sheetExitActionRef.current = action;
+      sheetExitSV.value = sheetExitSV.value + 1;
       return;
     }
     setSheetExitSignal(c => c + 1);
@@ -4265,7 +4286,7 @@ const destItems = useMemo((): DestItem[] =>
     // and the *next* pan's true would never register as a fresh rising edge (only the very
     // first pan of the whole session ever would). Reset it here so every pan is detected.
     wasMapGestureActiveRef.current = false;
-    if (exploreAfterCameraRef.current) { exploreAfterCameraRef.current = false; setExploreAfterCamera(false); }
+    releaseSheetsAfterCamera();
     releaseHeldSelection();   // a close's zoom-out has settled: let the pin/pill planning drop the old selection
     releaseSpotCloseTarget();
     const { center, bounds } = state.properties;
@@ -5407,6 +5428,8 @@ const destItems = useMemo((): DestItem[] =>
           collapseSignal={collapseSheetSignal}
           peekSignal={peekSheetSignal}
           exitSignal={sheetExitSignal}
+          exitSV={sheetExitSV}
+          onExitDone={onSheetExited}
           isMapInteracting={isFingerDraggingMap}
           isPressBlocked={pressBlocked}
           enterFromPrevious={newSheetEnterFromPrevious}
@@ -5426,7 +5449,7 @@ const destItems = useMemo((): DestItem[] =>
       )}
 
       {/* ── Unified destination sheet — hidden while a spot sheet is open on top */}
-      {mapState !== 'world' && selectedDest && !selectedSpot && (
+      {mapState !== 'world' && selectedDest && !selectedSpot && !destAfterCamera && (
         <DestinationSheet
           key={`dest-${sheetSwapKey}`}
           destination={selectedDest}
@@ -5440,8 +5463,8 @@ const destItems = useMemo((): DestItem[] =>
           collapseSignal={collapseSheetSignal}
           peekSignal={peekSheetSignal}
           exitSignal={sheetExitSignal}
-          exitSV={destSheetExitSV}
-          onExitDone={onDestSheetExited}
+          exitSV={sheetExitSV}
+          onExitDone={onSheetExited}
           isMapInteracting={destSheetIsMapInteracting}
           isPressBlocked={destSheetIsPressBlocked}
           enterFromPrevious={newSheetEnterFromPrevious}
@@ -5468,6 +5491,8 @@ const destItems = useMemo((): DestItem[] =>
           pillOffsetSV={upPillBottomSV}
           peekSignal={peekSheetSignal}
           exitSignal={sheetExitSignal}
+          exitSV={sheetExitSV}
+          onExitDone={onSheetExited}
           isMapInteracting={isFingerDraggingMap}
           isPressBlocked={pressBlocked}
           enterFromPrevious={newSheetEnterFromPrevious}

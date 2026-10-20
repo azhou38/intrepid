@@ -317,6 +317,10 @@ interface Props {
   // Increments when the parent is about to close this sheet (the back pill's X): slide it off
   // the bottom of the screen first, so it leaves rather than vanishing. Parent then unmounts it.
   exitSignal?: number;
+  // The UI-thread exit: bumping this slides the sheet out at once, with no re-render of it, and onExitDone runs when it
+  // has finished (see MapScreen.closeWithSheetExit).
+  exitSV?: SharedValue<number>;
+  onExitDone?: () => void;
   // "Grid view" — swaps this carousel for the destination sheet's full-screen Spots grid,
   // which is often easier to scan than swiping card-by-card.
   onGoToList?: () => void;
@@ -328,7 +332,7 @@ interface Props {
 
 function SpotSheet({
   spots, focusSpotId, destination, nearLabel, nearEyebrow, onClose, onExpand, onCollapse, onActiveSpotChange, onCollapsedTopChange,
-  pillOffsetSV, onSnapStateChange, peekSignal, exitSignal, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, onExited, onGoToList, collapseSignal,
+  pillOffsetSV, onSnapStateChange, peekSignal, exitSignal, exitSV, onExitDone, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, onExited, onGoToList, collapseSignal,
 }: Props) {
   const insets       = useSafeAreaInsets();
   const saveSpotVisited = useStore(s => s.saveSpotVisited);
@@ -786,6 +790,22 @@ function SpotSheet({
     sheetPose.set(null);
     slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) });
   }, [exitSignal]);
+
+  // The UI-thread exit (exitSV, see its prop): marks the sheet closing on the JS side, slides it out, and reports back.
+  const markExiting = useCallback(() => {
+    closingRef.current = true;
+    sheetPose.set(null);
+  }, []);
+  const exitDone = useCallback(() => { onExitDone?.(); }, [onExitDone]);
+  useAnimatedReaction(
+    () => exitSV?.value ?? 0,
+    (cur, prev) => {
+      if (prev === null || cur === prev) return;
+      runOnJS(markExiting)();
+      slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, () => { runOnJS(exitDone)(); });
+    },
+    [exitSV],
+  );
 
   // Imperatively drop to peek from the parent — used when the user pans/zooms the map, from
   // either collapsed or full. No-ops if already peeking or dismissed.

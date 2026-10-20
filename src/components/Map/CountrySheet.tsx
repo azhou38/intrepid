@@ -83,6 +83,10 @@ interface Props {
   // Increments when the parent is about to close this sheet (the back pill's X): slide it off
   // the bottom of the screen first, so it leaves rather than vanishing. Parent then unmounts it.
   exitSignal?: number;
+  // The UI-thread exit: bumping this slides the sheet out at once, with no re-render of it, and onExitDone runs when it
+  // has finished (see MapScreen.closeWithSheetExit).
+  exitSV?: SharedValue<number>;
+  onExitDone?: () => void;
 }
 
 const { height: H, width: W } = Dimensions.get('window');
@@ -196,7 +200,7 @@ function DestinationsPanel({
 // ── Main component ─────────────────────────────────────────────────────────────
 function CountrySheet({
   cluster, onClose, onSelectDestination, onExpand, onCollapse,
-  pillOffsetSV, pillOffsetLockedSV, onSnapStateChange, initialTab, initialSnap, collapseSignal, peekSignal, exitSignal, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, onExited,
+  pillOffsetSV, pillOffsetLockedSV, onSnapStateChange, initialTab, initialSnap, collapseSignal, peekSignal, exitSignal, exitSV, onExitDone, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, onExited,
 }: Props) {
   // Collapsed (bottom-screen carousel) is the default view whenever a country is selected —
   // callers only pass initialSnap explicitly for the other case (e.g. the destination sheet's
@@ -707,6 +711,22 @@ function CountrySheet({
     sheetPose.set(null);
     slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) });
   }, [exitSignal]);
+
+  // The UI-thread exit (exitSV, see its prop): marks the sheet closing on the JS side, slides it out, and reports back.
+  const markExiting = useCallback(() => {
+    closingRef.current = true;
+    sheetPose.set(null);
+  }, []);
+  const exitDone = useCallback(() => { onExitDone?.(); }, [onExitDone]);
+  useAnimatedReaction(
+    () => exitSV?.value ?? 0,
+    (cur, prev) => {
+      if (prev === null || cur === prev) return;
+      runOnJS(markExiting)();
+      slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, () => { runOnJS(exitDone)(); });
+    },
+    [exitSV],
+  );
 
   // Imperatively drop to peek from the parent — used when the user pans/zooms the map.
   // No-ops if already peeking or dismissed. Identical to DestinationSheet's own peekSignal.
