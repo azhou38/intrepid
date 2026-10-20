@@ -1103,9 +1103,10 @@ const DEST_MAIN_STYLE: any = {
   iconIgnorePlacement: false,
   textAllowOverlap: false,
   textIgnorePlacement: false,
-  // Below the widest rank gate (world view: country pills only) no photo pins; a short native fade at that one zoom.
-  iconOpacity: ['interpolate', ['linear'], ['zoom'], DEST_PHOTO_MIN_ZOOM - 0.25, 0, DEST_PHOTO_MIN_ZOOM, 1],
-  textOpacity: ['interpolate', ['linear'], ['zoom'], DEST_PHOTO_MIN_ZOOM - 0.25, 0, DEST_PHOTO_MIN_ZOOM, 1],
+  // Below the widest rank gate (world view: country pills only) no photo pins. A step, not a ramp: a ramp left pins
+  // resting half-faded wherever the camera stopped inside it.
+  iconOpacity: ['step', ['zoom'], 0, DEST_PHOTO_MIN_ZOOM, 1],
+  textOpacity: ['step', ['zoom'], 0, DEST_PHOTO_MIN_ZOOM, 1],
 };
 const CAMERA_DEFAULT_SETTINGS = { centerCoordinate: [10, 20] as [number, number], zoomLevel: 1 };
 

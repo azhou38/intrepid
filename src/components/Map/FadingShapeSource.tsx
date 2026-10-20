@@ -24,7 +24,10 @@ type F = GeoJSON.Feature<GeoJSON.Point>;
 const IN_SLOTS = ['in0', 'in1'];
 const OUT_SLOTS = ['out0', 'out1'];
 type SlotPhase = 'idle' | 'arming' | 'running' | 'resetting';
-type Slot = { phase: SlotPhase; opacity: number; timers: any[] };
+type Slot = { phase: SlotPhase; opacity: number; timers: any[]; since: number };
+// A fade that has not finished this long after it began (a timer or frame callback that never came) is finished at once,
+// so no pin is ever left resting half-faded.
+const SLOT_WATCHDOG_MS = 1000;
 
 const shownAt = (f: F, z: number) => {
   const p = f.properties ?? {};
@@ -47,8 +50,8 @@ export const FadingShapeSource = memo(function FadingShapeSource({
     init: false,
     // key -> the feature as last given, and the slot it is drawn on ('' = main)
     entries: new Map<string, { f: F; slot: string }>(),
-    slots: new Map<string, Slot>([...IN_SLOTS.map(s => [s, { phase: 'idle' as SlotPhase, opacity: 0, timers: [] as any[] }] as const),
-      ...OUT_SLOTS.map(s => [s, { phase: 'idle' as SlotPhase, opacity: 1, timers: [] as any[] }] as const)]),
+    slots: new Map<string, Slot>([...IN_SLOTS.map(s => [s, { phase: 'idle' as SlotPhase, opacity: 0, timers: [] as any[], since: 0 }] as const),
+      ...OUT_SLOTS.map(s => [s, { phase: 'idle' as SlotPhase, opacity: 1, timers: [] as any[], since: 0 }] as const)]),
     visibleSig: '',
     features,
   }).current;
@@ -85,6 +88,20 @@ export const FadingShapeSource = memo(function FadingShapeSource({
     slot.timers.push(requestAnimationFrame(() => slot.timers.push(requestAnimationFrame(fn))));
   };
 
+  // Watchdog: finish any fade that has overrun (see SLOT_WATCHDOG_MS) — joiners to the main layers, leavers dropped, the
+  // slot back at its rest opacity.
+  {
+    const now = Date.now();
+    for (const [name, slot] of st.slots) {
+      if (slot.phase === 'idle' || now - slot.since < SLOT_WATCHDOG_MS) continue;
+      for (const t of slot.timers) { clearTimeout(t); cancelAnimationFrame(t); }
+      slot.timers = [];
+      const isIn = IN_SLOTS.includes(name);
+      for (const [key, e] of st.entries) if (e.slot === name) { if (isIn) e.slot = ''; else st.entries.delete(key); }
+      slot.opacity = isIn ? 0 : 1; slot.phase = 'idle';
+    }
+  }
+
   // Diff the shown set against what is drawn, assigning joiners and leavers to slots.
   const vis = visibleAt(cameraStore.zoom);
   st.visibleSig = sigOf(vis);
@@ -97,7 +114,7 @@ export const FadingShapeSource = memo(function FadingShapeSource({
     if (!e) {
       const s = st.init && !f.properties?.nofade ? freeSlot(IN_SLOTS) : undefined;
       st.entries.set(key, { f, slot: s ?? '' });
-      if (s) st.slots.get(s)!.phase = 'arming';
+      if (s) { const sl = st.slots.get(s)!; if (sl.phase === 'idle') sl.since = Date.now(); sl.phase = 'arming'; }
     } else {
       e.f = f;
       if (OUT_SLOTS.includes(e.slot)) e.slot = '';   // came back while fading out: shown again at once
@@ -108,7 +125,7 @@ export const FadingShapeSource = memo(function FadingShapeSource({
     const s = st.init && !e.f.properties?.nofade ? freeSlot(OUT_SLOTS) : undefined;
     if (!s) { st.entries.delete(key); continue; }
     e.slot = s;
-    st.slots.get(s)!.phase = 'arming';
+    { const sl = st.slots.get(s)!; if (sl.phase === 'idle') sl.since = Date.now(); sl.phase = 'arming'; }
   }
   st.init = true;
 
@@ -126,11 +143,17 @@ export const FadingShapeSource = memo(function FadingShapeSource({
           bump();
           afterFrames(slot, () => {
             slot.phase = 'resetting'; slot.opacity = isIn ? 0 : 1; bump();
-            later(slot, () => { slot.phase = 'idle'; slot.timers = []; }, ms + 20);
+            later(slot, () => { slot.phase = 'idle'; slot.timers = []; bump(); }, ms + 20);
           });
         }, ms + 20);
       });
     }
+  });
+  // If a fade is still under way, make sure this component renders again once the watchdog window has passed.
+  useEffect(() => {
+    if (![...st.slots.values()].some(sl => sl.phase !== 'idle')) return;
+    const t = setTimeout(bump, SLOT_WATCHDOG_MS + 50);
+    return () => clearTimeout(t);
   });
   useEffect(() => () => { for (const s of st.slots.values()) for (const t of s.timers) { clearTimeout(t); cancelAnimationFrame(t); } }, []);   // eslint-disable-line react-hooks/exhaustive-deps
 
