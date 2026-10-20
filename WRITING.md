@@ -15,7 +15,7 @@ Applies to every `name` shown in the app.
 
 Follow an existing entry in `src/data/destinations.ts` (they are the reference); every field below is required unless noted.
 
-- `id` — lowercase, hyphenated, unique, stable (it is the key for saved data; never rename one once it ships). `name` — the common English name, matching its Wikipedia article title where possible; it is also the key into `WIKI_IMAGE_OVERRIDES`.
+- `id` — lowercase, hyphenated, unique, stable (it is the key for saved data; never rename one once it ships; a destination replaced by its region gets a new id and its old one retires, so saved visits on the old destination are lost: say so). `name` — the common English name (the region travellers name when one covers the area: "Sapphire Coast", not a town in it; see `COVERAGE.md`), matching its Wikipedia article title where possible; it is also the key into `WIKI_IMAGE_OVERRIDES`.
 - `country`, `countryCode` (ISO 3166-1 alpha-2), `timezone` (IANA, e.g. `Pacific/Auckland`), `continent`.
 - `coordinates` — the centre of the place as visitors understand it (a town's centre, a park's main visitor hub or visual centre), not a bureaucratic centroid.
 - `category` — one of `city | park | beach | mountain | landmark | island | desert | ruin | nature | lake`. Drives the header-image rule (cities/towns need a cityscape; everything else a wide landscape) and the Explore sections, so pick what the place *is*, not what it is near.

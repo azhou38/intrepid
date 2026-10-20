@@ -367,7 +367,6 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "File:Minyon Falls, February 2026 03.jpg": { x: 0.45, y: 0.6 },
   "File:Lost City at Gardens of Stone Conservation Area.jpg": { x: 0.4, y: 0.5 },
   "File:Lord Howe - Goat House.jpg": { x: 0.3, y: 0.45, zoom: 1.5 },
-  "Merimbula": { x: 0.5, y: 0.45 },
   "File:Bournda Bournda-Island.JPG": { x: 0.5, y: 0.45 },
   "File:MimosaRock.JPG": { x: 0.7, y: 0.45 },
   "File:Old Wharf Tathra.NSW. (21031327415).jpg": { x: 0.4, y: 0.5 },
@@ -447,6 +446,7 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "File:Alotau memorial-ww2.jpg": { x: 0.4, y: 0.5 },
   "Coastwatchers Lighthouse": { x: 0.3, y: 0.5 },
   "Tawali": { x: 0.35, y: 0.4 },
+  "Sapphire Coast": { x: 0.5, y: 0.45 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -1350,7 +1350,6 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Wollongong": "View from Sublime Point Lookout.jpg",
   "Nowra": "Nowra Shoalhaven RIver Hang. Roc. Look..jpg",
   "Batemans Bay": "Riverside walk and harbour at Batemans Bay (10).jpg",
-  "Merimbula": "Merimbula Sound.jpg",
   "Narooma": "Narooma 2013 - panoramio.jpg",
   "Ulladulla": "Ulladulla harbour February 2015.jpg",
   "Jervis Bay": "Murrays Beach, Booderee National Park.jpg",
@@ -1598,6 +1597,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Rabaul": "Rabaul from Vulcanology Observatory.jpg",
   "Kokoda Track": "Kokoda Gate.jpg",
   "Madang": "ext-madang.jpg",   // an official photo served from externalPhotos.json (src/data/externalPhotos.json wins); this keeps the header check satisfied
+  "Sapphire Coast": "Merimbula Sound.jpg",
 };
 
 /**

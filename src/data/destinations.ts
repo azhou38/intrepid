@@ -1135,23 +1135,6 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Visit in {months}: summer brings the island's best weather, and red-tailed tropicbirds court over Malabar Hill from September to May.",
   },
   {
-    id: 'merimbula', name: "Merimbula", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 35,
-    continent: 'Oceania', coordinates: { latitude: -36.89806, longitude: 149.90111 },
-    category: 'city', icon: "🐋", rank: 4,
-    tagline: "Sapphire Coast lake town with national parks, beaches and heritage towns up and down the coast.",
-    description: "Merimbula is a beachside town on Merimbula Lake in the far south of NSW, with 3,821 residents (over 11,500 with Pambula and Tura Beach) at the 2021 census. It draws visitors mainly from Victoria. Bournda and Mimosa Rocks national parks lie either side, Tathra has a heritage wharf, and Bega is the dairy town inland. Whale watching runs September to November.",
-    whyVisit: ["Look out to Bournda Island", "Explore Mimosa Rocks National Park headlands", "Stand on Tathra's heritage wharf"],
-    whyVisitPhotos: ["Bournda Bournda-Island.JPG", "MimosaRock.JPG", "Old Wharf Tathra.NSW. (21031327415).jpg"],
-    highlights: ["Bournda Island", "Mimosa Rocks", "Tathra Wharf"],
-    goodToKnow: [
-      { icon: "🎟️", title: "Parks differ in cost", detail: "Bournda charges $8 per vehicle, while Mimosa Rocks is free." },
-      { icon: "📅", title: "Tathra museum opens weekends", detail: "The museum beside the wharf is open Sat–Sun, 10:00 AM – 3:00 PM; the wharf itself is open all hours." },
-      { icon: "🚌", title: "Buses are limited", detail: "Local buses run only a few services Monday to Friday, so a car suits the spread-out parks and towns." },
-    ],
-    bestMonths: [11, 12, 1, 2, 3],
-    bestTimeBlurb: "{months} are the warm months, with whale watching from September to November.",
-  },
-  {
     id: 'morton', name: "Morton National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 15,
     continent: 'Oceania', coordinates: { latitude: -34.6483, longitude: 150.4824 },
     category: 'park', icon: "💧", rank: 4,
@@ -1431,6 +1414,23 @@ export const DESTINATIONS: Destination[] = [
     bestMonths: [9, 10, 11, 12, 1, 2],
     bestTimeBlurb: "Coffs Harbour is busiest in the summer holidays, but {months} suit it well: warm beach weather, whales passing offshore into November and the shearwaters returning to Muttonbird Island in November.",
     seasonalTags: [{ tag: 'beach-peak', months: [12, 1], strength: 0.6 }],
+  },
+  {
+    id: 'sapphire-coast', name: "Sapphire Coast", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 55,
+    continent: 'Oceania', coordinates: { latitude: -36.95, longitude: 149.95 },
+    category: 'beach', icon: "🐋", rank: 4,
+    tagline: "The far south coast of New South Wales, with long unspoilt beaches, national parks and the towns of Merimbula, Tathra and Eden.",
+    description: "The Sapphire Coast is the southernmost coastal region on the east coast of Australia, in the far south-east of New South Wales. It is known for long, unspoilt beaches and is a common holiday spot for Victorians over summer and Easter. Bournda, Mimosa Rocks and Beowa national parks run along the shore, Tathra has a heritage wharf, and Eden's Killer Whale Museum shows Old Tom, the only complete orca skeleton on display in the Southern Hemisphere. Bega, inland, is famous for its cheese, and whale watching runs September to November.",
+    whyVisit: ["Visit the Eden Killer Whale Museum", "Look out to Bournda Island", "Stand on Tathra's heritage wharf"],
+    whyVisitPhotos: ["Eden Killer Whale museum.jpg", "Bournda Bournda-Island.JPG", "Old Wharf Tathra.NSW. (21031327415).jpg"],
+    highlights: ["Killer Whale Museum", "Bournda Island", "Tathra Wharf"],
+    goodToKnow: [
+      { icon: "🏖️", title: "Most beaches are unpatrolled", detail: "Check the water conditions before swimming; most beaches along the coast have no lifeguards and you swim at your own risk." },
+      { icon: "🎟️", title: "Parks differ in cost", detail: "Bournda charges $8 per vehicle, while Mimosa Rocks is free." },
+      { icon: "🚗", title: "Fly in, then drive", detail: "Merimbula airport has flights from Sydney and Melbourne, but local buses run only a few services Monday to Friday, so a car suits the spread-out parks and towns." },
+    ],
+    bestMonths: [11, 12, 1, 2, 3],
+    bestTimeBlurb: "{months} are the warm months, with whale watching from September to November.",
   },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
