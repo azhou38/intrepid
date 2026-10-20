@@ -488,6 +488,7 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "Iron Blow": { x: 0.5, y: 0.6 },
   "Wynyard": { x: 0.4, y: 0.5 },
   "Table Cape": { x: 0.5, y: 0.4 },
+  "The Wall in the Wilderness": { x: 0.3, y: 0.5 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -1835,7 +1836,6 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Mount Nelson, Tasmania",
   "Tasmanian Museum & Art Gallery",
   "Cataraqui (ship)",
-  "The Wall in the Wilderness",
   "Godfreys Beach",
   "Tasman Blowhole",
   "Three Capes Track",
