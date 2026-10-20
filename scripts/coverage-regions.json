@@ -198,7 +198,6 @@
       "name": "Sydney (NSW)",
       "destinations": [
         "sydney",
-        "hawkesbury",
         "royal-national-park"
       ],
       "standalone": [
@@ -224,12 +223,9 @@
       "destinations": [
         "blue-mountains",
         "warrumbungle",
-        "bathurst",
         "cowra",
         "dubbo",
-        "kanangra-boyd-national-park",
-        "lithgow",
-        "orange-nsw"
+        "lithgow"
       ],
       "standalone": [
         "hill-end",
@@ -242,7 +238,10 @@
         "coolah-tops-national-park",
         "weddin-mountains-national-park",
         "abercrombie-river-national-park",
-        "wollemi-national-park"
+        "wollemi-national-park",
+        "orange-nsw",
+        "bathurst",
+        "kanangra-boyd-national-park"
       ]
     },
     {
@@ -250,7 +249,6 @@
       "name": "Central Coast & Hunter (NSW)",
       "destinations": [
         "central-coast",
-        "dharug-national-park",
         "hunter-valley",
         "newcastle",
         "port-stephens"
@@ -259,7 +257,8 @@
         "devils-hole-lookout",
         "gloucester-falls",
         "dungog-nsw",
-        "yengo-national-park"
+        "yengo-national-park",
+        "dharug-national-park"
       ]
     },
     {
@@ -268,8 +267,6 @@
       "destinations": [
         "dorrigo-national-park",
         "taree",
-        "nambucca-heads",
-        "barrington-tops-national-park",
         "port-macquarie",
         "south-west-rocks",
         "forster",
@@ -281,7 +278,9 @@
         "shelly-beach-forster",
         "kempsey",
         "crescent-head",
-        "limeburners-creek-national-park"
+        "limeburners-creek-national-park",
+        "nambucca-heads",
+        "barrington-tops-national-park"
       ]
     },
     {
@@ -306,12 +305,7 @@
       "id": "nsw-new-england-north-west",
       "name": "New England & North West (NSW)",
       "destinations": [
-        "armidale",
-        "glen-innes",
-        "mount-kaputar-national-park",
-        "new-england-national-park",
-        "oxley-wild-rivers-national-park",
-        "tenterfield"
+        "armidale"
       ],
       "standalone": [
         "tamworth",
@@ -332,36 +326,40 @@
         "pilliga-hot-artesian-bore-baths",
         "burning-mountain-nature-reserve",
         "pilliga-sandstone-caves",
-        "bulagaranda-mount-yarrowyck-aboriginal-area"
+        "bulagaranda-mount-yarrowyck-aboriginal-area",
+        "tenterfield",
+        "glen-innes",
+        "oxley-wild-rivers-national-park",
+        "mount-kaputar-national-park",
+        "new-england-national-park"
       ]
     },
     {
       "id": "nsw-south-coast",
       "name": "South Coast (NSW)",
       "destinations": [
-        "batemans-bay",
-        "beowa",
-        "budderoo",
         "jervis-bay",
         "kiama",
         "merimbula",
         "morton",
-        "murramarang",
         "narooma",
-        "nowra",
-        "ulladulla",
         "wollongong"
       ],
       "standalone": [
         "eden",
-        "eden-1"
+        "eden-1",
+        "nowra",
+        "ulladulla",
+        "batemans-bay",
+        "budderoo",
+        "beowa",
+        "murramarang"
       ]
     },
     {
       "id": "nsw-southern-highlands-snowy",
       "name": "Southern Highlands & Snowy Mountains (NSW)",
       "destinations": [
-        "goulburn",
         "kosciuszko",
         "southern-highlands"
       ],
@@ -374,21 +372,14 @@
         "big-trout",
         "tumut",
         "braidwood",
-        "wombeyan-caves"
+        "wombeyan-caves",
+        "goulburn"
       ]
     },
     {
       "id": "nsw-riverina-murray",
       "name": "Riverina & Murray (NSW)",
-      "destinations": [
-        "albury",
-        "griffith",
-        "gundagai",
-        "hay",
-        "junee",
-        "wagga-wagga",
-        "wentworth"
-      ],
+      "destinations": [],
       "standalone": [
         "woomargama-national-park",
         "murray-valley-national-park",
@@ -409,15 +400,21 @@
         "tocumwal-town-beach",
         "big-cod-tocumwal",
         "coleambally-bucyrus-dragline",
-        "biggest-football-ungarie"
+        "biggest-football-ungarie",
+        "albury",
+        "wagga-wagga",
+        "griffith",
+        "gundagai",
+        "hay",
+        "junee",
+        "wentworth"
       ]
     },
     {
       "id": "nsw-outback-far-west",
       "name": "Outback & Far West (NSW)",
       "destinations": [
-        "broken-hill",
-        "kinchega-national-park"
+        "broken-hill"
       ],
       "standalone": [
         "bourke",
@@ -438,7 +435,8 @@
         "sturt-national-park-site",
         "gundabooka-national-park-site",
         "paroo-darling-national-park-site",
-        "toorale-national-park-site"
+        "toorale-national-park-site",
+        "kinchega-national-park"
       ]
     },
     {
