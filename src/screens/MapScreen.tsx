@@ -1459,6 +1459,11 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // closeSearch), so the commit that closes search stays light. The restore hint is only cleared
   // once the sheet has actually remounted with it.
   const [exploreHeld, setExploreHeld] = useState(false);
+  // True from a destination close's zoom-out until the camera lands (handleMapIdle). Mounting the Explore sheet during the
+  // zoom-out (155–190 ms of render, mounted on the UI thread the map draws on) froze the camera animation, so the map jumped
+  // from the zoomed-in view to the zoomed-out one with no frames between; it now mounts once the camera has landed.
+  const [exploreAfterCamera, setExploreAfterCamera] = useState(false);
+  const exploreAfterCameraRef = useRef(false);
   // Layout effect: the frame's wait starts with the close commit itself, not once passive effects run.
   useLayoutEffect(() => {
     if (!exploreHeld) return;
@@ -3682,6 +3687,8 @@ const destItems = useMemo((): DestItem[] =>
     }
     // Plan for the zoomed-out view from the first frame, so the pins it won't have fade out DURING the zoom (see
     // planZoomTarget) rather than after it settles.
+    exploreAfterCameraRef.current = true;
+    setExploreAfterCamera(true);
     beginClosePlan(destDefaultCamera(dest, 'full', 0.5).zoom, 600);
     fitDestinationDefaultView(dest, 'easeTo', 'full', 600, 0.5);
   }, [selectedDest, showBreadcrumb, fitDestinationDefaultView, isZoomedOutBeyond, releaseHeldSelection, beginClosePlan, destDefaultCamera]);
@@ -4258,6 +4265,7 @@ const destItems = useMemo((): DestItem[] =>
     // first pan of the whole session ever would). Reset it here so every pan is detected.
     wasMapGestureActiveRef.current = false;
     perfTrace.mark('select', 'mapIdle'); perfTrace.mark('dismiss', 'mapIdle');   // TEMPORARY instrumentation
+    if (exploreAfterCameraRef.current) { exploreAfterCameraRef.current = false; setExploreAfterCamera(false); }
     releaseHeldSelection();   // a close's zoom-out has settled: let the pin/pill planning drop the old selection
     releaseSpotCloseTarget();
     const { center, bounds } = state.properties;
@@ -5354,7 +5362,7 @@ const destItems = useMemo((): DestItem[] =>
           Shown whenever nothing is selected; hidden the instant the user drills into a
           country/destination/spot, exactly like the other sheets are mutually exclusive
           with each other. ─────────────────────────────────────────────────────────────── */}
-      {!selectedCountry && !selectedDest && !selectedSpot && !searchFocused && !exploreHeld && (
+      {!selectedCountry && !selectedDest && !selectedSpot && !searchFocused && !exploreHeld && !exploreAfterCamera && (
         <React.Profiler id="ExploreSheet" onRender={onMapProfile as any}>
         <ExploreSheet
           collapseSignal={peekSheetSignal}
