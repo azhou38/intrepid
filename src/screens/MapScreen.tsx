@@ -145,6 +145,16 @@ const PIN_PLACEHOLDER_COLOR = '#E5E7EB';
 const BADGE_SIZE      = 16;  // 20% smaller than the original 20
 const STAMP_SIZE = 7;        // 20% smaller than the original 9
 
+// A callback with a stable identity that always calls the latest `fn`. Used for the destination sheet's callback props:
+// several of them were re-created whenever the map screen re-rendered after the camera moved (their dependencies change
+// with the region/selection), and each new identity re-rendered the whole (memoized) DestinationSheet — measured at
+// 355–433 ms twice right after a destination's camera flight landed.
+function useStableCallback<T extends (...args: any[]) => any>(fn: T): T {
+  const ref = useRef(fn);
+  ref.current = fn;
+  return useCallback(((...args: any[]) => ref.current(...args)) as T, []);
+}
+
 function DestPin({ dest, spotCount, isVisited, isSelected, pinState, hideLabel = false }: {
   dest: Destination;
   spotCount: number;
@@ -3874,10 +3884,27 @@ const destItems = useMemo((): DestItem[] =>
   const [sheetExitSignal, setSheetExitSignal] = useState(0);
   const sheetExitingRef = useRef(false);
   const SHEET_EXIT_MS = 180;
+  // The destination sheet slides out on the UI thread (destSheetExitSV) without a re-render here or in the sheet, and the
+  // close runs when its slide has finished (onDestSheetExited) rather than after a timer. Bumping sheetExitSignal (state)
+  // re-rendered the whole map screen and the sheet first, which delayed the slide by 240–370 ms after the X tap.
+  const destSheetExitSV = useSharedValue(0);
+  const sheetKindRef = useRef<'country' | 'dest' | 'spot' | null>(null);
+  const destSheetExitActionRef = useRef<(() => void) | null>(null);
+  const onDestSheetExited = useCallback(() => {
+    const action = destSheetExitActionRef.current;
+    destSheetExitActionRef.current = null;
+    sheetExitingRef.current = false;
+    action?.();
+  }, []);
   const closeWithSheetExit = useCallback((action: () => void) => {
     if (sheetExitingRef.current) return;
     if (sheetSnapStateRef.current === 'full') { action(); return; }
     sheetExitingRef.current = true;
+    if (sheetKindRef.current === 'dest') {
+      destSheetExitActionRef.current = action;
+      destSheetExitSV.value = destSheetExitSV.value + 1;
+      return;
+    }
     setSheetExitSignal(c => c + 1);
     setTimeout(() => { sheetExitingRef.current = false; action(); }, SHEET_EXIT_MS + 20);
   }, []);
@@ -4600,6 +4627,7 @@ const destItems = useMemo((): DestItem[] =>
     : mapState !== 'world' && selectedDest && !selectedSpot ? 'dest'
     : selectedCountry && !selectedDest && !selectedSpot ? 'country'
     : null;
+  sheetKindRef.current = sheetKind;
   // ── Sheet swaps ──────────────────────────────────────────────────────────────────────────────────────────
   // Whenever the sheet on screen is replaced by another (country <-> destination <-> spot in any direction, or one
   // destination / country / spot's sheet by another of the same kind), the old sheet is kept on screen as a
@@ -4646,6 +4674,15 @@ const destItems = useMemo((): DestItem[] =>
   }, []);
   const noop = useCallback(() => {}, []);
 
+
+  // Stable identities for the destination sheet's callback props (see useStableCallback).
+  const destSheetOnClose = useStableCallback(handleCloseDestinationSheet);
+  const destSheetOnExpand = useStableCallback(handleSheetExpand);
+  const destSheetOnCollapse = useStableCallback(handleCloseSheet);
+  const destSheetOnSelectSpot = useStableCallback(handleSpotPress);
+  const destSheetOnSnapStateChange = useStableCallback(handleSheetSnapStateChange);
+  const destSheetIsMapInteracting = useStableCallback(isFingerDraggingMap);
+  const destSheetIsPressBlocked = useStableCallback(pressBlocked);
 
   // TEMPORARY instrumentation: the first commit that has the selected destination's spot pins, and every map-screen
   // render's duration while a select/dismiss flow is being timed.
@@ -5373,21 +5410,23 @@ const destItems = useMemo((): DestItem[] =>
         <DestinationSheet
           key={`dest-${sheetSwapKey}`}
           destination={selectedDest}
-          onClose={handleCloseDestinationSheet}
-          onExpand={handleSheetExpand}
-          onCollapse={handleCloseSheet}
-          onSelectSpot={handleSpotPress}
+          onClose={destSheetOnClose}
+          onExpand={destSheetOnExpand}
+          onCollapse={destSheetOnCollapse}
+          onSelectSpot={destSheetOnSelectSpot}
           onCollapsedTopChange={setDestCardTop}
           pillOffsetSV={upPillBottomSV}
           pillOffsetLockedSV={spotOwnsPillSV}
           collapseSignal={collapseSheetSignal}
           peekSignal={peekSheetSignal}
           exitSignal={sheetExitSignal}
-          isMapInteracting={isFingerDraggingMap}
-          isPressBlocked={pressBlocked}
+          exitSV={destSheetExitSV}
+          onExitDone={onDestSheetExited}
+          isMapInteracting={destSheetIsMapInteracting}
+          isPressBlocked={destSheetIsPressBlocked}
           enterFromPrevious={newSheetEnterFromPrevious}
           mapGestureAtSV={mapGestureAtSV}
-          onSnapStateChange={handleSheetSnapStateChange}
+          onSnapStateChange={destSheetOnSnapStateChange}
           initialTab={destInitialTab}
           initialSnap={destInitialSnap}
         />

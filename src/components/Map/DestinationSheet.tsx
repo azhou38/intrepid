@@ -615,12 +615,16 @@ interface Props {
   // Increments when the parent is about to close this sheet (the back pill's X): slide it off
   // the bottom of the screen first, so it leaves rather than vanishing. Parent then unmounts it.
   exitSignal?: number;
+  // Slide off the bottom when this shared value changes (written by the parent on the X tap): the slide starts on the UI
+  // thread at once, with no re-render of this sheet, and onExitDone runs when it has finished.
+  exitSV?: SharedValue<number>;
+  onExitDone?: () => void;
 }
 
 function DestinationSheet({
   destination, onClose, onExpand, onCollapse, onSelectSpot, onCollapsedTopChange,
   onSnapStateChange, pillOffsetSV, pillOffsetLockedSV, initialTab, initialSnap,
-  collapseSignal, peekSignal, exitSignal, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, onExited,
+  collapseSignal, peekSignal, exitSignal, exitSV, onExitDone, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, onExited,
 }: Props) {
   const insets            = useSafeAreaInsets();
   const savedDestinations = useStore(s => s.savedDestinations);
@@ -1231,6 +1235,23 @@ function DestinationSheet({
     sheetPose.set(null);
     slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) });
   }, [exitSignal]);
+
+  // The UI-thread exit (exitSV, see its prop): marks the sheet closing on the JS side, slides it out, and reports back.
+  const markExiting = useCallback(() => {
+    closingRef.current = true;
+    sheetPose.set(null);
+    perfTrace.mark('dismiss', 'sheetExitAnimStart');   // TEMPORARY instrumentation
+  }, []);
+  const exitDone = useCallback(() => { onExitDone?.(); }, [onExitDone]);
+  useAnimatedReaction(
+    () => exitSV?.value ?? 0,
+    (cur, prev) => {
+      if (prev === null || cur === prev) return;
+      runOnJS(markExiting)();
+      slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, () => { runOnJS(exitDone)(); });
+    },
+    [exitSV],
+  );
 
   // Imperatively drop to peek from the parent — used when the user pans/zooms the map, from
   // either collapsed or full. No-ops if already peeking or dismissed.
@@ -2050,4 +2071,14 @@ const st = StyleSheet.create({
 
 // Memoized: the map screen re-renders continuously while the camera moves, and a re-render of the sheet is a React
 // commit on its animated views for no reason. With stable props it now renders only when its own inputs change.
-export default React.memo(DestinationSheet);
+// TEMPORARY instrumentation: log which props changed whenever the sheet re-renders during a timed flow.
+function DestinationSheetWhy(props: any) {
+  const prev = useRef<any>(null);
+  if (prev.current && perfTrace.active()) {
+    const changed = Object.keys(props).filter(k => props[k] !== prev.current[k]);
+    perfTrace.mark(perfTrace.name() ?? '', `DestinationSheet props changed: ${changed.join(',') || '(none)'}`, false);
+  }
+  prev.current = props;
+  return <DestinationSheet {...props} />;
+}
+export default React.memo(DestinationSheetWhy) as unknown as typeof DestinationSheet;
