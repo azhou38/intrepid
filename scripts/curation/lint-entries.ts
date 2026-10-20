@@ -6,6 +6,7 @@
 // Spots
 //   ticketUrl   loads, isn't a captcha wall, and its title or heading names the place (WRITING.md → ticketUrl);
 //               "blocked" means it needs a real browser, not that it's wrong
+//   photo-shared a spot whose photo file is also another spot's (every spot has its own image and subject)
 //   source      app text names a source (Wikivoyage, "per the brief"...)
 //   thin-destination a destination of rank 3+ with three or fewer spots
 //   park-in-park a national park listed as a spot of another national park
@@ -26,10 +27,18 @@ import { spawnSync } from 'node:child_process';
 import { cachedGet, cachedJson, htmlTitle, looksBlocked } from './http-cache';
 import { DESTINATIONS } from '../../src/data/destinations';
 import { SPOTS, spotPhotoTitle } from '../../src/data/spots';
-import { WIKI_IMAGE_OVERRIDES } from '../../src/data/imageOverrides';
+import { WIKI_IMAGE_OVERRIDES, NO_PHOTO } from '../../src/data/imageOverrides';
 
 const spotDistricts = JSON.parse(readFileSync('src/data/spotDistricts.json', 'utf8').toString()) as Record<string, unknown>;
 const EXTERNAL = JSON.parse(readFileSync('src/data/externalPhotos.json', 'utf8')) as Record<string, unknown>;
+
+
+// No two spots share a photo (IMAGES.md "Spot photos"): the resolved image file of every spot, so a spot whose photo is also another
+// spot's is flagged on both. Same-SUBJECT pairs (a park whose photo is its waterfall) need an eye: see the judge checklist.
+const MANIFEST_ENTRIES = (JSON.parse(readFileSync('src/data/imageManifest.json', 'utf8')) as { entries: Record<string, { o?: string }> }).entries;
+const photoFileOf = (sp: { name: string; wiki?: string }) => { const k = spotPhotoTitle(sp as any); return NO_PHOTO.has(k) ? null : decodeURIComponent((MANIFEST_ENTRIES[k]?.o ?? '').split('?')[0]).toLowerCase() || null; };
+const spotsByPhoto = new Map<string, string[]>();
+for (const sp of SPOTS) { const f = photoFileOf(sp); if (f) (spotsByPhoto.get(f) ?? spotsByPhoto.set(f, []).get(f)!).push(sp.id); }
 
 const args = process.argv.slice(2);
 const all = (f: string) => args.flatMap((a, i) => (a === f ? [args[i + 1]] : []));
@@ -119,6 +128,7 @@ async function checkWiki(title: string): Promise<string | null> {
   for (const s of spots) {
     const it: Issue = { kind: 'spot', id: s.id, name: s.name, checks: [] };
     { const m = textOf(s).join(' \n ').match(SOURCE_MENTION); if (m) add(it, 'source', `names a source ("${m[0]}"): state the fact without attribution`); }
+    { const f = photoFileOf(s); const others = f ? (spotsByPhoto.get(f) ?? []).filter(x => x !== s.id) : []; if (others.length) add(it, 'photo-shared', `shares its photo with ${others.join(', ')}: every spot needs its own image (and its own subject)`); }
     if (sentences(s.bio) > 1) add(it, 'bio', 'more than one sentence');
     const nWords = s.bio.trim().split(/\s+/).filter(Boolean).length;
     if (nWords < 10) add(it, 'bio', `only ${nWords} words (min 10): say what it is, where, and why it is worth a stop`);
