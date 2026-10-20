@@ -447,6 +447,7 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "Coastwatchers Lighthouse": { x: 0.3, y: 0.5 },
   "Tawali": { x: 0.35, y: 0.4 },
   "Sapphire Coast": { x: 0.5, y: 0.45 },
+  "Armidale": { x: 0.45, y: 0.45 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -1598,6 +1599,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Kokoda Track": "Kokoda Gate.jpg",
   "Madang": "ext-madang.jpg",   // an official photo served from externalPhotos.json (src/data/externalPhotos.json wins); this keeps the header check satisfied
   "Sapphire Coast": "Merimbula Sound.jpg",
+  "Armidale": "ext-armidale.jpg",   // the owner-supplied header served from externalPhotos.json (which wins); keeps the header check satisfied
 };
 
 /**
@@ -1625,7 +1627,6 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Number One Beach",
   "Dark Point Walking Track",
   "Captain Cook Lookout",
-  "Armidale",
   "Junee",
   "Gordons Market",
   "Loloata Island",
