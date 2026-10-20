@@ -449,10 +449,28 @@ function WhenToVisitCard({ destination, onOpenClimateDetail }: {
 // ── Spots panel — full grid of a destination's spots, with a
 // button that jumps into the sliding spot carousel (SpotSheet, via onSelectSpot), which
 // already receives the destination's full spot list regardless of which spot is passed.
-function SpotsPanel({ spots, onSelectSpot }: {
+// One grid card with its own stable press handler, so a memoized SpotCard is not re-rendered by a new inline callback.
+const GridSpotCard = React.memo(function GridSpotCard({ spot, onSelectSpot }: { spot: Spot; onSelectSpot?: (spot: Spot) => void }) {
+  const onPress = useCallback(() => onSelectSpot?.(spot), [onSelectSpot, spot]);
+  return <SpotCard spot={spot} width={GRID_CARD_W} onPress={onPress} />;
+});
+// How many grid cards the Spots panel mounts in its first frame, and how many it adds per animation frame after that.
+// Mounting all of a large destination's cards at once (Sydney's 84) took about 330 ms in one block, which stalled the map
+// and the sheet just after a destination opened; spread over a few frames the cards in view appear at once and the rest
+// follow without a long block.
+const SPOT_GRID_FIRST = 12;
+const SPOT_GRID_STEP = 12;
+const SpotsPanel = React.memo(function SpotsPanel({ spots, onSelectSpot }: {
   spots: typeof SPOTS;
   onSelectSpot?: (spot: Spot) => void;
 }) {
+  const [shown, setShown] = useState(Math.min(spots.length, SPOT_GRID_FIRST));
+  useEffect(() => { setShown(Math.min(spots.length, SPOT_GRID_FIRST)); }, [spots]);
+  useEffect(() => {
+    if (shown >= spots.length) return;
+    const id = requestAnimationFrame(() => setShown(n => Math.min(spots.length, n + SPOT_GRID_STEP)));
+    return () => cancelAnimationFrame(id);
+  }, [shown, spots.length]);
   return (
     <View style={{ gap: 16 }}>
       {spots.length > 0 && (
@@ -464,8 +482,8 @@ function SpotsPanel({ spots, onSelectSpot }: {
 
       {spots.length > 0 ? (
         <View style={st.spotsGrid}>
-          {spots.map(spot => (
-            <SpotCard key={spot.id} spot={spot} width={GRID_CARD_W} onPress={() => onSelectSpot?.(spot)} />
+          {spots.slice(0, shown).map(spot => (
+            <GridSpotCard key={spot.id} spot={spot} onSelectSpot={onSelectSpot} />
           ))}
         </View>
       ) : (
@@ -473,7 +491,7 @@ function SpotsPanel({ spots, onSelectSpot }: {
       )}
     </View>
   );
-}
+});
 
 // ── About panel (shared by visited "About" tab + non-visited view) ────────────
 function AboutPanel({
@@ -638,7 +656,9 @@ function DestinationSheet({
   // `saved` is the destination's own record (its own trips) — the only thing this sheet writes.
   // Visited status also comes through its spots and country trips (see utils/visitStatus.ts).
   const saved      = savedDestinations[destination.id];
-  const spots      = SPOTS.filter(s => s.destinationId === destination.id);
+  // Memoized: a fresh array on every render re-rendered the Spots panel and all its cards (measured 181–337 ms for
+  // Sydney's 84) whenever anything else in the sheet changed.
+  const spots      = useMemo(() => SPOTS.filter(s => s.destinationId === destination.id), [destination.id]);
   const isVisited  = visitIndex.isDestVisited(destination.id);
 
   // Drives the standalone per-visit edit sheet for BOTH creating a new visit module
