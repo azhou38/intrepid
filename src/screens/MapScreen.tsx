@@ -1041,6 +1041,14 @@ const DEST_SYMBOL_STYLE: any = {
   textIgnorePlacement: false,
   textPadding: 1,
 };
+// The layer for destination pins mid-fade (useTimedFade): opacity from the feature, outside collision.
+const DEST_FADE_STYLE: any = {
+  ...DEST_SYMBOL_STYLE,
+  iconAllowOverlap: true, iconIgnorePlacement: true,
+  textAllowOverlap: true, textIgnorePlacement: true,
+  iconOpacity: ['get', 'o'],
+  textOpacity: ['*', ['get', 'o'], ['get', 'lt']],
+};
 const CAMERA_DEFAULT_SETTINGS = { centerCoordinate: [10, 20] as [number, number], zoomLevel: 1 };
 
 // Layer pill sizing — a single continuous capsule (see the JSX comment above its render
@@ -1265,6 +1273,63 @@ const standaloneSpotArea = (s: Spot) => ({ coordinates: s.coordinates, defaultZo
 // collection from it would otherwise hand every downstream memo (stamp GeoJSON, pin lists, marker
 // elements) a brand-new identity each frame even when nothing actually changed — real work on the
 // JS thread that showed up as pins only being reassessed once the gesture had ended.
+// ─── Timed fades for the native pin layers ────────────────────────────────────────────────────
+// A native symbol drops out of the map the instant its feature leaves the source, and a destination's photo pin and its
+// spot pins swap at one zoom threshold (the destination's own default view). useTimedFade keeps a feature that leaves the
+// list for PIN_SWAP_FADE_MS with an opacity stepping down to 0 (`o`, read by the layer as a data-driven opacity), and steps
+// a newly added feature up from 0, so the swap is a brief cross-fade rather than a cut. The threshold itself is unchanged:
+// both sides of it are decided exactly as before, only their arrival and departure are eased. Items for which `fades`
+// returns false (a pin hidden anyway, e.g. behind its rank gate) come and go at once. The first render never fades.
+const PIN_SWAP_FADE_MS = 240;
+// How far ahead of a spot's reveal zoom its photo pin image is prepared (see nativeSpotPins).
+const SPOT_WARM_ZOOM = 0.75;
+const PIN_SWAP_STEP_MS = 34;
+type Faded<T> = { item: T; key: string; o: number; dir: -1 | 0 | 1 };
+function useTimedFade<T>(items: T[], keyOf: (t: T) => string, fades: (t: T) => boolean = () => true): Faded<T>[] {
+  type E = { item: T; start: number; dir: -1 | 0 | 1; from: number };
+  const stateRef = useRef<{ map: Map<string, E>; init: boolean; last: Faded<T>[] }>({ map: new Map(), init: false, last: [] });
+  const [, force] = useState(0);
+  const st = stateRef.current;
+  const now = Date.now();
+  const opacity = (e: E) => e.dir === 1 ? Math.min(1, e.from + (now - e.start) / PIN_SWAP_FADE_MS)
+    : e.dir === -1 ? Math.max(0, e.from - (now - e.start) / PIN_SWAP_FADE_MS) : 1;
+  const present = new Set<string>();
+  for (const item of items) {
+    const key = keyOf(item); present.add(key);
+    const e = st.map.get(key);
+    if (!e) st.map.set(key, { item, start: now, dir: st.init && fades(item) ? 1 : 0, from: 0 });
+    else {
+      if (e.dir === -1) { e.from = opacity(e); e.start = now; e.dir = 1; }
+      e.item = item;
+    }
+  }
+  for (const [key, e] of st.map) {
+    if (present.has(key)) continue;
+    if (e.dir !== -1) {
+      if (!fades(e.item)) { st.map.delete(key); continue; }
+      e.from = opacity(e); e.start = now; e.dir = -1;
+    }
+  }
+  st.init = true;
+  const out: Faded<T>[] = [];
+  let changed = false, active = false;
+  for (const [key, e] of st.map) {
+    const o = opacity(e);
+    if (e.dir === -1 && o <= 0) { st.map.delete(key); changed = true; continue; }
+    if (e.dir === 1 && o >= 1) e.dir = 0;
+    if (e.dir !== 0) active = true;
+    out.push({ item: e.item, key, o: Math.round(o * 100) / 100, dir: e.dir });
+  }
+  const prev = st.last;
+  if (changed || prev.length !== out.length || out.some((f, i) => f.key !== prev[i].key || f.item !== prev[i].item || f.o !== prev[i].o || f.dir !== prev[i].dir)) st.last = out;
+  useEffect(() => {
+    if (!active) return;
+    const t = setTimeout(() => force(n => n + 1), PIN_SWAP_STEP_MS);
+    return () => clearTimeout(t);
+  });
+  return st.last;
+}
+
 function useStableSet(next: Set<string>): Set<string> {
   const ref = useRef(next);
   const prev = ref.current;
@@ -2658,6 +2723,10 @@ const destItems = useMemo((): DestItem[] =>
   const spotPhotoSpecsRef = useRef<Map<string, SpotPhotoImageSpec>>(new Map());
   const spotPhotoSpecListRef = useRef<SpotPhotoImageSpec[]>([]);
   const lastSpotShapeRef = useRef<{ sig: string; specs: SpotPhotoImageSpec[]; value: any } | null>(null);
+  // The spot pins' arrival and departure are eased with a short timed fade (useTimedFade): at a destination's own default
+  // view its photo pin goes and its spot pins come in one cross-fade, and back again on the way out.
+  const nativePinSpots = useMemo(() => visibleSpots.filter(sp => sp.id !== selectedSpot?.id), [visibleSpots, selectedSpot]);
+  const fadedSpots = useTimedFade(nativePinSpots, sp => sp.id);
   const nativeSpotPins = useMemo(() => {
     const must = new Set<string>();
     if (nearCtx) for (const sp of nearCtx.spots.slice(0, NEAR_PINNED_SPOTS + 1)) must.add(sp.id);
@@ -2665,10 +2734,12 @@ const destItems = useMemo((): DestItem[] =>
       (must.has(sp.id) ? -4_000_000 : 0) + (visitIndex.isSpotVisited(sp.id) ? -1_000_000 : 0)
       + (SPOT_IMPORTANCE.get(sp.id) ?? 0) * 1000 + (SPOT_ORDER.get(sp.id) ?? 0);
     const specs = spotPhotoSpecsRef.current;
-    const sorted = visibleSpots.filter(sp => sp.id !== selectedSpot?.id).sort((x, y) => rank(x) - rank(y));
+    const fadeOf = new Map(fadedSpots.map(f => [f.key, f]));
+    const sorted = fadedSpots.map(f => f.item).sort((x, y) => rank(x) - rank(y));
     let added = false, fresh = 0;
     const features: GeoJSON.Feature<GeoJSON.Point>[] = [];
     for (const sp of sorted) {
+      const fade = fadeOf.get(sp.id);
       const visited = visitIndex.isSpotVisited(sp.id);
       const img = spotPhotoImageName(sp.id, visited);
       // Register the pin image before its symbol enters the data (an unregistered image is placed invisibly, and the pin
@@ -2687,20 +2758,35 @@ const destItems = useMemo((): DestItem[] =>
           img: specs.has(img) && !early ? img : '',
           label: spotLabelLines(sp.name).join('\n'),
           sort: rank(sp),
+          o: fade?.o ?? 1,
+          dir: fade?.dir ?? 0,
         },
       });
+    }
+    // Warm the photo pins of spots about to be revealed (within SPOT_WARM_ZOOM of their reveal zoom, in or near the view),
+    // so at the threshold they arrive with their photos instead of as bare small pins that pop their photos in later.
+    if (fresh < MAX_NEW_SPOT_IMAGES && handoffZoom >= MIN_SPOT_REVEAL_ZOOM - SPOT_WARM_ZOOM) {
+      const { latitude, longitude, latitudeDelta, longitudeDelta } = region;
+      for (const sp of SPOTS) {
+        if (fresh >= MAX_NEW_SPOT_IMAGES) break;
+        if (Math.abs(sp.coordinates.latitude - latitude) > latitudeDelta || Math.abs(sp.coordinates.longitude - longitude) > longitudeDelta) continue;
+        if (isSpotRevealed(sp, handoffZoom) || !isSpotRevealed(sp, handoffZoom + SPOT_WARM_ZOOM)) continue;
+        const visited = visitIndex.isSpotVisited(sp.id);
+        const img = spotPhotoImageName(sp.id, visited);
+        if (!specs.has(img)) { specs.set(img, { name: img, spot: sp, visited }); added = true; fresh++; }
+      }
     }
     if (added) spotPhotoSpecListRef.current = [...specs.values()];
     // visibleSpots is rebuilt on every camera frame (it follows the live bounds), but its CONTENT rarely changes: hand the
     // native source the same shape object unless a feature or its look did, so a pan or zoom doesn't re-push the whole
     // collection to Mapbox each frame.
-    const sig = features.map(f => `${f.properties!.id}|${f.properties!.img}|${f.properties!.mini}|${f.properties!.sort}`).join(',');
+    const sig = features.map(f => `${f.properties!.id}|${f.properties!.img}|${f.properties!.mini}|${f.properties!.sort}|${f.properties!.o}`).join(',');
     const last = lastSpotShapeRef.current;
     if (last && last.sig === sig && last.specs === spotPhotoSpecListRef.current) return last.value;
     const value = { shape: { type: 'FeatureCollection' as const, features }, specs: spotPhotoSpecListRef.current };
     lastSpotShapeRef.current = { sig, specs: spotPhotoSpecListRef.current, value };
     return value;
-  }, [visibleSpots, selectedSpot, nearCtx, visitIndex, handoffZoom]);
+  }, [fadedSpots, nearCtx, visitIndex, handoffZoom, region]);
   // Only the selected spot is a MarkerView now.
   const selectedOnly = useMemo(() => (selectedSpot ? [selectedSpot] : []), [selectedSpot]);
   const renderedSpots = useExitingItems(selectedOnly, s => s.id, HANDOFF_FADE_MS);
@@ -4559,6 +4645,11 @@ const destItems = useMemo((): DestItem[] =>
   const destLabelGates = useMemo(
     () => computeDestLabelGates(id => visitIndex.isDestVisited(id), selectedCountry?.countryCode ?? selectedDest?.countryCode),
     [visitIndex, selectedCountry, selectedDest]);
+  // A destination photo pin that leaves or joins the map (its own default view reached, so its spot pins take over, or
+  // left again) fades over PIN_SWAP_FADE_MS on its own layer (destPhotosFade) instead of cutting. A pin behind its rank gate
+  // is invisible anyway and comes and goes at once.
+  const fadedDests = useTimedFade(promotedDests, d => d.id,
+    d => destGateOn(destPinPlan.fadeTier.get(d.id) ?? '', camZoomRef.current));
   const nativeDestPins = useMemo(() => {
     if (!NATIVE_DEST_PINS) return null;
     const book = destPhotoSinceRef.current;
@@ -4571,7 +4662,7 @@ const destItems = useMemo((): DestItem[] =>
     const specs = destPinSpecsRef.current;
     let added = false;
     const features: GeoJSON.Feature<GeoJSON.Point>[] = [];
-    for (const dest of promotedDests) {
+    for (const { item: dest, o, dir } of fadedDests) {
       const visited = visitIndex.isDestVisited(dest.id);
       const badge = visited ? (visitedSpotCountByDest[dest.id] ?? 0) : 0;
       // No separate selected look: a new image name would remount the image and flash the placeholder disc.
@@ -4586,7 +4677,11 @@ const destItems = useMemo((): DestItem[] =>
           // The name's gate bucket, when the fixed layer table has a layer for this tier and bucket; otherwise -1 (fallback layer).
           const t = destPinPlan.fadeTier.get(dest.id) ?? '', b = destLabelGates.get(dest.id) ?? 99;
           return destSymbolLayersStatic().combos.has(`${t}|${b}`) ? b : -1;
-        })() },
+        })(),
+          // Mid-fade (joining or leaving): drawn by destPhotosFade at opacity o, its name only if its own gate is crossed.
+          fade: dir !== 0 ? 1 : 0, dir, o,
+          lt: camZoomRef.current >= (destLabelGates.get(dest.id) ?? 0) - 1e-6 ? 1 : 0,
+        },
       });
     }
     // Register the pin image of every destination that could be promoted soon (eligible now, or one rank tier deeper)
@@ -4605,7 +4700,7 @@ const destItems = useMemo((): DestItem[] =>
     }
     if (added) destPinSpecListRef.current = [...specs.values()];
     return { shape: { type: 'FeatureCollection' as const, features }, specs: destPinSpecListRef.current };
-  }, [promotedDests, visitIndex, visitedSpotCountByDest, destPinPlan, planDest, eligibleDests, visibleRank, destLabelGates]);
+  }, [fadedDests, visitIndex, visitedSpotCountByDest, destPinPlan, planDest, eligibleDests, visibleRank, destLabelGates]);
 
 
   // Which sliding sheet is mounted right now. When it changes from one level to another, the incoming sheet is a
@@ -4934,22 +5029,31 @@ const destItems = useMemo((): DestItem[] =>
             shape={nativeDestPins.shape}
             onPress={(e) => {
               // Skip a pin that is hidden ahead of its gate (see destGateOn).
-              const hit = e.features.find(f => destGateOn(String(f.properties?.tier ?? ''), camZoomRef.current));
+              const hit = e.features.find(f => f.properties?.dir !== -1 && destGateOn(String(f.properties?.tier ?? ''), camZoomRef.current));
               const id = hit?.properties?.id as string | undefined;
               if (!id) return;
               const dest = DESTINATIONS.find(d => d.id === id);
               if (dest && !pressBlocked()) { if (selectedDestRef.current?.id === dest.id) handleResetToDest(); else handleMarkerPress(dest); }
             }}
           >
-            {destSymbolLayersStatic().layers.map((l, i, all) => (
+            {[...destSymbolLayersStatic().layers.map((l, i, all) => (
               <MapboxGL.SymbolLayer
                 key={l.id}
                 id={l.id}
                 aboveLayerID={i === 0 ? 'destStampCircles' : all[i - 1].id}
-                filter={['all', ['==', ['get', 'tier'], l.tier], ['==', ['get', 'lb'], l.lb ?? -1]] as any}
+                filter={['all', ['==', ['get', 'tier'], l.tier], ['==', ['get', 'lb'], l.lb ?? -1], ['!=', ['get', 'fade'], 1]] as any}
                 style={destTierStyle(l.tier, destGateOn(l.tier, camZoom), l.lb === null ? true : camZoom >= l.lb - 1e-6, l.lb !== null)}
               />
-            ))}
+            )),
+            // Pins joining or leaving (see fadedDests): drawn on top at their own opacity, outside collision so a pin that is
+            // going never pushes another out and one that is coming shows where it will settle.
+            <MapboxGL.SymbolLayer
+              key="destPhotosFade"
+              id="destPhotosFade"
+              aboveLayerID={destSymbolLayersStatic().layers[destSymbolLayersStatic().layers.length - 1].id}
+              filter={['==', ['get', 'fade'], 1] as any}
+              style={DEST_FADE_STYLE}
+            />]}
           </MapboxGL.ShapeSource>
         )}
 
@@ -4963,7 +5067,9 @@ const destItems = useMemo((): DestItem[] =>
           shape={nativeSpotPins.shape}
           hitbox={{ width: 32, height: 40 }}
           onPress={(e) => {
-            const id = e.features[0]?.properties?.id as string | undefined;
+            // A pin fading out (dir -1) is leaving: it no longer takes taps.
+            const hit = e.features.find(f => f.properties?.dir !== -1);
+            const id = hit?.properties?.id as string | undefined;
             const spot = id ? SPOT_BY_ID.get(id) : undefined;
             if (spot && !pressBlocked()) handleSpotPress(spot);
           }}
@@ -4985,6 +5091,7 @@ const destItems = useMemo((): DestItem[] =>
               iconIgnorePlacement: false,
               iconPadding: 0,
               symbolSortKey: ['get', 'sort'] as any,
+              iconOpacity: ['get', 'o'] as any,
             }}
           />
           {/* The photo pin and its name. Mapbox places them by priority (sort), fades a pin in or out as room opens or
@@ -5013,6 +5120,8 @@ const destItems = useMemo((): DestItem[] =>
               textColor: mapType === 'satellite' ? '#FFFFFF' : '#111827',
               textHaloColor: mapType === 'satellite' ? '#000000' : '#FFFFFF',
               textHaloWidth: 1.5,
+              iconOpacity: ['get', 'o'] as any,
+              textOpacity: ['get', 'o'] as any,
             }}
           />
         </MapboxGL.ShapeSource>
