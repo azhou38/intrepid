@@ -225,7 +225,8 @@ function DestPin({ dest, spotCount, isVisited, isSelected, pinState, hideLabel =
 
 const SPOT_PIN_SIZE = 28;
 const SPOT_PIN_RIM = 'rgba(0,0,0,0.22)';   // the faint dark rim around a photo spot pin
-const SPOT_PIN_SIZE_SELECTED = 40;
+// The selected pin is the same size as any other (it used to grow to 40): selection shows in its shadow and glow instead.
+const SPOT_PIN_SIZE_SELECTED = SPOT_PIN_SIZE;
 
 const SPOT_LABEL_GAP = 6;
 // A spot's name label is at most this many characters per line (spaces included). A longer name
@@ -296,7 +297,7 @@ const SpotMarker = memo(function SpotMarker({ spot, isVisited, isSelected, exiti
   // triangle used to butt against it. For a circle of radius R and a tip a distance d below
   // its centre, the tangent points sit at y = R²/d and x = ±R·√(1 − R²/d²).
   const pinR = (isSelected ? SPOT_PIN_SIZE_SELECTED : SPOT_PIN_SIZE) / 2;
-  const tailL = isSelected ? 14 : 10;              // how far the tip hangs below the circle
+  const tailL = 10;                                // how far the tip hangs below the circle (the same selected or not)
   const tipD = pinR + tailL;
   const tanY = (pinR * pinR) / tipD;
   const tanX = pinR * Math.sqrt(1 - (pinR * pinR) / (tipD * tipD));
@@ -362,7 +363,8 @@ const SpotMarker = memo(function SpotMarker({ spot, isVisited, isSelected, exiti
       <FadePin exiting={exiting} instant={instant} slow={!closeFade.fast}>
         <Pressable disabled={exiting} onPress={() => onPress(spot)} hitSlop={6}>
           <View style={styles.spotMarkerRow}>
-            <View style={styles.spotPinWrap}>
+            <View style={[styles.spotPinGlow, isSelected && styles.spotPinGlowOn]}>
+            <View style={[styles.spotPinWrap, isSelected && styles.spotPinWrapSelected]}>
               {/* A faint dark rim around the whole pin (bubble and tail), 1 px outside the white or green ring, so a white pin
                   keeps its edge against a pale map. */}
               <View
@@ -397,6 +399,7 @@ const SpotMarker = memo(function SpotMarker({ spot, isVisited, isSelected, exiti
                 </View>
               </View>
               <View style={{ height: tailL }} />
+            </View>
             </View>
             {labelEl}
           </View>
@@ -2738,7 +2741,7 @@ const destItems = useMemo((): DestItem[] =>
       const x = m.x, y = -m.y;                         // screen y grows downward, mercator's grows north
       const sel = selectedSpot?.id === sp.id;
       const bubble = sel ? SPOT_PIN_SIZE_SELECTED : SPOT_PIN_SIZE;
-      const tail = sel ? 14 : 10;
+      const tail = 10;
       geo.set(sp.id, {
         pin: { l: x - bubble / 2, r: x + bubble / 2, t: y - bubble - tail, b: y },
         cx: x, cy: y - (bubble + tail) / 2, half: bubble / 2,   // the row centres the label on bubble + tail
@@ -2819,7 +2822,7 @@ const destItems = useMemo((): DestItem[] =>
       if (!side || side === 'none') continue;
       // The planner's cy sits half a tail below where the label is actually drawn (centred on the
       // bubble), so shift the tap target up to match what's on screen.
-      const shift = (selectedSpot?.id === sp.id ? 14 : 10) / 2;
+      const shift = 10 / 2;
       const r = labelRectFor(geo.get(sp.id)!, side);
       hitRects.push({ id: sp.id, rect: { l: r.l, r: r.r, t: r.t - shift, b: r.b - shift } });
     }
@@ -5614,6 +5617,16 @@ const styles = StyleSheet.create({
   },
   // Size/border-radius/border-color are all resolved per-pin (visited/selected) and passed
   // inline — see SpotPin.
+  // Selection is shown by shadow alone (the pin keeps its size): a deeper, longer drop shadow under the pin, and a blue glow around it.
+  spotPinWrapSelected: {
+    shadowColor: '#000', shadowOpacity: 0.6, shadowRadius: 12,
+    shadowOffset: { width: 0, height: 7 }, elevation: 12,
+  },
+  spotPinGlow: { alignItems: 'center' },
+  spotPinGlowOn: {
+    shadowColor: '#2F6BFF', shadowOpacity: 0.85, shadowRadius: 11,
+    shadowOffset: { width: 0, height: 0 },
+  },
   spotPinBubble: {
     backgroundColor: 'white', borderWidth: 2,
     alignItems: 'center', justifyContent: 'center',
