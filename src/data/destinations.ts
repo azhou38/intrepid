@@ -2744,7 +2744,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Wine, wildlife and a river-mouth lighthouse along the Tamar.",
     description: "The Tamar Valley runs north from Launceston along the Tamar River to Bass Strait, and is Tasmania's largest wine region, with over 30 cellar doors along its wine trail. The east bank is known for sparkling wines and the west bank for pinot noir. Beauty Point has a platypus house and a seahorse farm, and Low Head Lighthouse, built in 1833, stands at the river mouth. The heritage centre at Beaconsfield recalls the gold mine and the 2006 rescue of two trapped miners.",
     whyVisit: ["Look over Tamar vineyards", "Visit Low Head Lighthouse", "See platypus at Beauty Point"],
-    whyVisitPhotos: ["Tamar Valey Wine Route.jpg", "Low Head Lighthouse.JPG", "Duck-billed platypus (Ornithorhynchus anatinus) Scottsdale 2.jpg"],
+    whyVisitPhotos: ["Tamar Valey Wine Route.jpg", "Low Head Lighthouse.JPG", "ext-tamar-valley-3.jpg"],
     highlights: ["Wine country", "River-mouth lighthouse", "Platypus encounter"],
     goodToKnow: [
       { icon: "🍷", title: "Pick a driver", detail: "Cellar doors are spread along both banks, so allow a day, choose a designated driver and follow the wine trail." },

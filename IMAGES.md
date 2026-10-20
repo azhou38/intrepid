@@ -48,6 +48,8 @@ Run all four on every photo: headers, why-visit photos and spot overrides alike.
    - Files in Commons categories such as "Maps of", "Satellite images of", "Drawings of" and "Lithographs of" often have photo-like file names, so judge the image, not the name.
    - If you cannot tell whether it is a photograph, it fails.
 
+**A photo shows the place itself, or the place has no photo.** The picture must be of the named place (or venue, animal at that venue, building, beach, walk): not a nearby view, not another place's version of the same thing, not a stand-in (a wild platypus for a platypus house, a UK seahorse for a seahorse farm, a generic devil photo for a zoo, a beach photo for a town, a bay seen from a lookout for the isthmus it is named for). If no photo of the place itself passes in any tier, the spot is `NO_PHOTO` (the placeholder), never a nearby or stand-in image; a why-visit card the same (a grey card, or the reason is reworded or dropped). Judges reject a stand-in as a failure of check 2, and `Photos still missing` lists the slot. (Tasmania: Eaglehawk Neck, Swansea, Seahorse World, Platypus House and Tasmania Zoo were shipped with stand-ins and pulled.)
+
 ### Automatic pre-filter
 
 Before anyone (or any model) looks at a candidate, reject it by metadata and pixels. This is cheap, so run it on **every** photo in the app, including each spot's default Wikipedia lead image, not only the ones someone hand-picked:
