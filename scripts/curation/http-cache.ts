@@ -56,8 +56,14 @@ export async function cachedGet(url: string, opts: { maxAgeDays?: number; accept
     body = await res.text().catch(() => '');
   }
   const out: Fetched = { url, finalUrl, status, contentType, body, fetchedAt: Date.now(), fromCache: false };
-  mkdirSync(DIR, { recursive: true });
-  writeFileSync(fileFor(url), JSON.stringify(out));
+  // Only a real answer is cached: a success, or a definite 404/410 (kept for a day). A rate limit (429), a server error (5xx) or a
+  // network failure (status 0) is transient, and caching it made every later step and rerun read "nothing" until the day was up
+  // (about 29 of 46 Wikipedia coordinate lookups for New Britain came back empty that way).
+  const definite = (status >= 200 && status < 400) || status === 404 || status === 410;
+  if (definite) {
+    mkdirSync(DIR, { recursive: true });
+    writeFileSync(fileFor(url), JSON.stringify(out));
+  }
   return out;
 }
 
