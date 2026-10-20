@@ -1020,9 +1020,9 @@ const MAP_TYPES: { key: MapStyleKey; label: string }[] = [
 // (textOptional), and returns once there is room. Mapbox fades both in and out as placements change.
 const DEST_SYMBOL_STYLE: any = {
   iconImage: ['get', 'img'],
-  // Which destinations get a photo pin is decided by destPinPlan (with persistence), which already keeps photo pins apart:
-  // Mapbox draws every planned pin, and still records it so another destination's name never lands on it.
-  iconAllowOverlap: true,
+  // Mapbox resolves pin-vs-pin collisions itself, every frame, with its own quick fade (as Google Maps does). Persistence
+  // comes from the placement priority (symbolSortKey): destPinPlan puts the pins that were showing first.
+  iconAllowOverlap: false,
   iconIgnorePlacement: false,
   iconPadding: 0,
   symbolSortKey: ['get', 'sort'],
@@ -1048,14 +1048,15 @@ const DEST_SYMBOL_STYLE: any = {
 // The layers for destination pins mid-fade (FadingShapeSource): a constant opacity the map animates itself, outside
 // collision; the name shows only where its own gate is crossed (lt).
 const destFadeStyleCache = new Map<string, any>();
-const destFadeStyle = (opacity: number, ms: number) => {
-  const key = `${opacity}|${ms}`;
+const destFadeStyle = (opacity: number, ms: number, leaving: boolean) => {
+  const key = `${opacity}|${ms}|${leaving ? 1 : 0}`;
   let st = destFadeStyleCache.get(key);
   if (!st) {
     st = {
       ...DEST_SYMBOL_STYLE,
-      iconAllowOverlap: true, iconIgnorePlacement: true,
-      textAllowOverlap: true, textIgnorePlacement: true,
+      // A joining pin takes part in collision (it shows only where it fits); a leaving one does not.
+      iconAllowOverlap: leaving, iconIgnorePlacement: leaving,
+      textAllowOverlap: leaving, textIgnorePlacement: leaving,
       textField: ['case', ['==', ['get', 'lt'], 1], ['get', 'label'], ''],
       iconOpacity: opacity, textOpacity: opacity,
       iconOpacityTransition: { duration: ms, delay: 0 },
@@ -2322,6 +2323,9 @@ const destItems = useMemo((): DestItem[] =>
     const candidates = ordered.filter(d => isForced(d) || canPromote(d));
     const group = (d: Destination) => isForced(d) ? 0 : !gateOnNow(d) ? 3 : prevShown.has(d.id) ? 1 : 2;
     const planOrder = [...candidates].sort((a, b) => group(a) - group(b) || rankScore(a) - rankScore(b) || (a.id < b.id ? -1 : 1));
+    // Native mode: Mapbox decides the collisions; this plan only orders the priority (placed pins first, in plan order,
+    // then the ones this plan found blocked) so that pins already showing keep their photos.
+    const placedOrder: string[] = [], bumped: string[] = [];
     // The selected spot's pin always wins space over a destination photo: one that would sit on
     // it (including the selected destination's own) stays a stamp instead. This, not draw order,
     // is what keeps the spot uncovered — MarkerViews are stacked by when they were mounted, so a
@@ -2350,16 +2354,18 @@ const destItems = useMemo((): DestItem[] =>
           const dx = p.x - o.x, dy = p.y - o.y;
           if (dx * dx + dy * dy < STAMP_PX * STAMP_PX) { collides = true; break; }
         }
-        if (collides) continue;
+        if (collides) { if (NATIVE_DEST_PINS) { photoIds.add(d.id); bumped.push(d.id); } continue; }
       }
       photoIds.add(d.id);
       placed.push(p);
+      placedOrder.push(d.id);
     }
 
     // Placement priority for the native layer (symbolSortKey: lower is placed first and wins a collision).
     const priority = new Map<string, number>();
     ordered.forEach((d, i) => priority.set(d.id, i));
-    destPhotoShownRef.current = new Set([...photoIds].filter(id => { const d = eligibleDests.find(x => x.id === id); return !!d && (isForced(d) || gateOnNow(d)); }));
+    if (NATIVE_DEST_PINS) [...placedOrder, ...bumped].forEach((id, i) => priority.set(id, i));
+    destPhotoShownRef.current = new Set([...(NATIVE_DEST_PINS ? placedOrder : photoIds)].filter(id => { const d = eligibleDests.find(x => x.id === id); return !!d && (isForced(d) || gateOnNow(d)); }));
     if (NATIVE_DEST_PINS) {
       destLabelHitRef.current = { pxPerDegLng, rects: [] };   // names are native symbols: they take taps themselves
       return { photoIds, positions, labelHiddenIds: new Set<string>(), priority, fadeTier };
@@ -2754,11 +2760,14 @@ const destItems = useMemo((): DestItem[] =>
       if (!must.has(sp.id) && placedPins.some(o => Math.abs(o.x - x) < SPOT_PIN_SIZE + 4 && Math.abs(o.y - y) < SPOT_PIN_SIZE + 14)) continue;
       placedPins.push({ x, y }); photoSet.add(sp.id);
     }
+    const planRank = new Map<string, number>();
+    [...photoOrder.filter(sp => photoSet.has(sp.id)), ...photoOrder.filter(sp => !photoSet.has(sp.id))].forEach((sp, i) => planRank.set(sp.id, i));
     spotPhotoShownRef.current = new Set([...photoSet].filter(id => { const sp = SPOT_BY_ID.get(id); return !!sp && !pending(sp); }));
     for (const sp of sorted) {
       const visited = visitIndex.isSpotVisited(sp.id);
-      // A photo pin when the plan above gave it one (its image is registered and it is not revealed early); else a small pin.
-      const img = photoSet.has(sp.id) ? (wantsPhoto.get(sp.id) ?? '') : '';
+      // Its photo pin when its image is registered and it is not revealed early; Mapbox shows it where it fits and the small
+      // pin where it does not. The plan above only sets the priority (planRank), so pins already showing keep their photos.
+      const img = wantsPhoto.get(sp.id) ?? '';
       features.push({
         type: 'Feature',
         id: sp.id,
@@ -2768,7 +2777,7 @@ const destItems = useMemo((): DestItem[] =>
           mini: visited ? SPOT_MINI_PIN_VISITED : SPOT_MINI_PIN_UNVISITED,
           img,
           label: spotLabelLines(sp.name).join('\n'),
-          sort: rank(sp),
+          sort: planRank.get(sp.id) ?? 100_000 + rank(sp),
           // Shown from its reveal zoom, read against the live camera zoom (see visibleSpots / FadingShapeSource).
           ...(must.has(sp.id) || nearCtx?.spots.some(n => n.id === sp.id) ? {} : { zmin: (SPOT_REVEAL_ZOOM_BY_ID[sp.id] ?? 0) - ZOOM_EPSILON }),
         },
@@ -4686,7 +4695,8 @@ const destItems = useMemo((): DestItem[] =>
     let fresh = false;
     for (const d of promotedDestsLead) if (!book.since.has(d.id)) { if (!fresh) { book.seq += 1; fresh = true; } book.since.set(d.id, book.seq); }
     const destSortKey = (id: string) =>
-      planDest?.id === id ? -1 : (book.since.get(id) ?? book.seq) * 100_000 + (destPinPlan.priority.get(id) ?? 9999);
+      // The plan's priority already puts pins that were showing first (persistence), then by prominence.
+      planDest?.id === id ? -1 : (destPinPlan.priority.get(id) ?? 99_999);
     const specs = destPinSpecsRef.current;
     let added = false;
     const features: GeoJSON.Feature<GeoJSON.Point>[] = [];
@@ -5080,13 +5090,16 @@ const destItems = useMemo((): DestItem[] =>
                 />
               ));
               // A pin joining or leaving (FadingShapeSource): on top, outside collision, at the slot's animated opacity.
+              // Joining: beneath every tier layer (placed last), so it only takes room that is free. Leaving: on top, outside
+              // collision.
+              const leaving = slot.startsWith('out');
               return [
                 <MapboxGL.SymbolLayer
                   key={`destPhotos-${slot}`}
                   id={`destPhotos-${slot}`}
-                  aboveLayerID={tiers[tiers.length - 1].id}
+                  {...(leaving ? { aboveLayerID: tiers[tiers.length - 1].id } : { belowLayerID: tiers[0].id })}
                   filter={['==', ['get', 'slot'], slot] as any}
-                  style={destFadeStyle(opacity, ms)}
+                  style={destFadeStyle(opacity, ms, leaving)}
                 />,
               ];
             }}
@@ -5112,6 +5125,9 @@ const destItems = useMemo((): DestItem[] =>
           }}
           layers={(slot, opacity, ms) => {
             const main = slot === '';
+            // A pin joining is placed after (beneath) the main layers, so it only takes room that is free and never pushes a
+            // showing pin out; a pin leaving takes no part in collision.
+            const joining = slot.startsWith('in'), leaving = slot.startsWith('out');
             const inSlot = ['==', ['coalesce', ['get', 'slot'], ''], slot];
             const textColor = mapType === 'satellite' ? '#FFFFFF' : '#111827';
             const textHaloColor = mapType === 'satellite' ? '#000000' : '#FFFFFF';
@@ -5121,13 +5137,13 @@ const destItems = useMemo((): DestItem[] =>
               <MapboxGL.SymbolLayer
                 key={`spotMiniPins${slot}`}
                 id={main ? 'spotMiniPins' : `spotMiniPins-${slot}`}
-                belowLayerID="destStampCircles"
-                filter={['all', ['==', ['get', 'img'], ''], inSlot] as any}
+                belowLayerID={joining ? 'spotMiniPins' : 'destStampCircles'}
+                filter={inSlot as any}
                 style={{
                   iconImage: ['get', 'mini'] as any,
                   iconAnchor: 'bottom',
-                  iconAllowOverlap: !main,
-                  iconIgnorePlacement: !main,
+                  iconAllowOverlap: leaving,
+                  iconIgnorePlacement: leaving,
                   iconPadding: 0,
                   symbolSortKey: ['get', 'sort'] as any,
                   ...(main ? {} : { iconOpacity: opacity, iconOpacityTransition: { duration: ms, delay: 0 } }),
@@ -5138,13 +5154,13 @@ const destItems = useMemo((): DestItem[] =>
               <MapboxGL.SymbolLayer
                 key={`spotPhotos${slot}`}
                 id={main ? 'spotPhotos' : `spotPhotos-${slot}`}
-                belowLayerID="destStampCircles"
+                belowLayerID={joining ? 'spotMiniPins' : 'destStampCircles'}
                 filter={['all', ['!=', ['get', 'img'], ''], inSlot] as any}
                 style={{
                   iconImage: ['get', 'img'] as any,
                   iconAnchor: 'bottom',
-                  iconAllowOverlap: true,
-                  iconIgnorePlacement: !main,
+                  iconAllowOverlap: leaving,
+                  iconIgnorePlacement: leaving,
                   iconPadding: 2,
                   symbolSortKey: ['get', 'sort'] as any,
                   textField: ['get', 'label'] as any,
@@ -5155,8 +5171,8 @@ const destItems = useMemo((): DestItem[] =>
                   textRadialOffset: 1.7,
                   textTranslate: [0, -19],
                   textOptional: true,
-                  textAllowOverlap: !main,
-                  textIgnorePlacement: !main,
+                  textAllowOverlap: leaving,
+                  textIgnorePlacement: leaving,
                   textPadding: 2,
                   textColor, textHaloColor,
                   textHaloWidth: 1.5,
