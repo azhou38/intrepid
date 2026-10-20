@@ -2651,6 +2651,7 @@ const destItems = useMemo((): DestItem[] =>
   // and the mini layer beneath shows the small pin wherever it does not. The selected spot stays a MarkerView.
   const spotPhotoSpecsRef = useRef<Map<string, SpotPhotoImageSpec>>(new Map());
   const spotPhotoSpecListRef = useRef<SpotPhotoImageSpec[]>([]);
+  const lastSpotShapeRef = useRef<{ sig: string; specs: SpotPhotoImageSpec[]; value: any } | null>(null);
   const nativeSpotPins = useMemo(() => {
     const must = new Set<string>();
     if (nearCtx) for (const sp of nearCtx.spots.slice(0, NEAR_PINNED_SPOTS + 1)) must.add(sp.id);
@@ -2684,7 +2685,15 @@ const destItems = useMemo((): DestItem[] =>
       });
     }
     if (added) spotPhotoSpecListRef.current = [...specs.values()];
-    return { shape: { type: 'FeatureCollection' as const, features }, specs: spotPhotoSpecListRef.current };
+    // visibleSpots is rebuilt on every camera frame (it follows the live bounds), but its CONTENT rarely changes: hand the
+    // native source the same shape object unless a feature or its look did, so a pan or zoom doesn't re-push the whole
+    // collection to Mapbox each frame.
+    const sig = features.map(f => `${f.properties!.id}|${f.properties!.img}|${f.properties!.mini}|${f.properties!.sort}`).join(',');
+    const last = lastSpotShapeRef.current;
+    if (last && last.sig === sig && last.specs === spotPhotoSpecListRef.current) return last.value;
+    const value = { shape: { type: 'FeatureCollection' as const, features }, specs: spotPhotoSpecListRef.current };
+    lastSpotShapeRef.current = { sig, specs: spotPhotoSpecListRef.current, value };
+    return value;
   }, [visibleSpots, selectedSpot, nearCtx, visitIndex, handoffZoom]);
   // Only the selected spot is a MarkerView now.
   const selectedOnly = useMemo(() => (selectedSpot ? [selectedSpot] : []), [selectedSpot]);
