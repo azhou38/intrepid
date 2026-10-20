@@ -830,15 +830,17 @@ const destTierOrder = (): string[] => {
   return [...keys.filter(k => k.startsWith('c')).sort(byGate), ...keys.filter(k => k.startsWith('r')).sort(byGate), ''];
 };
 const destTierStyleCache = new Map<string, any>();
-const destTierStyle = (tier: string, on: boolean) => {
-  const key = `${tier}|${on ? 1 : 0}`;
+// `snap`: the opacity changes at once, not animated (a handoff layer changing state while it holds no pin yet).
+const destTierStyle = (tier: string, on: boolean, snap = false) => {
+  const key = `${tier}|${on ? 1 : 0}|${snap ? 1 : 0}`;
   let st = destTierStyleCache.get(key);
   if (!st) {
+    const ms = snap ? 0 : DEST_GATE_FADE_MS;
     st = {
       ...DEST_SYMBOL_STYLE,
       iconOpacity: on ? 1 : 0, textOpacity: on ? 1 : 0,
-      iconOpacityTransition: { duration: DEST_GATE_FADE_MS, delay: 0 },
-      textOpacityTransition: { duration: DEST_GATE_FADE_MS, delay: 0 },
+      iconOpacityTransition: { duration: ms, delay: 0 },
+      textOpacityTransition: { duration: ms, delay: 0 },
     };
     destTierStyleCache.set(key, st);
   }
@@ -4501,6 +4503,14 @@ const destItems = useMemo((): DestItem[] =>
   // The layers are always mounted: adding or removing a map layer mid-zoom made Mapbox redo its whole symbol placement,
   // and every destination photo pin vanished for a frame.
   const handoffSlotRef = useRef<Map<string, number>>(new Map());
+  // The opacity each slot's layer last committed (an empty slot keeps its last occupant's), and the destinations that
+  // have joined their slot's layer. A destination only joins once its slot already rests in its state: zooming out from
+  // inside Sydney, Sydney enters the band while still hidden, and a slot resting shown used to draw it at full opacity
+  // and then fade it out, a flash. A slot that must change state first snaps to it while still empty (no fade, nothing
+  // drawn), and the destination joins on the next render; until then it is drawn as usual (or not at all, if hidden).
+  const handoffSlotOnRef = useRef<boolean[]>(Array(HANDOFF_MAX).fill(true));
+  const handoffJoinedRef = useRef<Set<string>>(new Set());
+  const [handoffTick, setHandoffTick] = useState(0);
   const handoffSig = handoffDests.map(h => `${h.dest.id}${h.past ? '-' : '+'}`).join(',');
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const stableHandoffDests = useMemo(() => {
@@ -4512,7 +4522,10 @@ const destItems = useMemo((): DestItem[] =>
     for (const h of handoffDests) {
       let k = slots.get(h.dest.id);
       if (k === undefined) {
-        for (let i = 0; i < HANDOFF_MAX; i++) if (!used.has(i)) { k = i; break; }
+        // Prefer a free slot already resting in this destination's state, so it can join at once.
+        const want = !h.past;
+        for (let i = 0; i < HANDOFF_MAX; i++) if (!used.has(i) && handoffSlotOnRef.current[i] === want) { k = i; break; }
+        if (k === undefined) for (let i = 0; i < HANDOFF_MAX; i++) if (!used.has(i)) { k = i; break; }
         if (k === undefined) continue;
         slots.set(h.dest.id, k); used.add(k);
       }
@@ -4520,6 +4533,28 @@ const destItems = useMemo((): DestItem[] =>
     }
     return out;
   }, [handoffSig]);
+  // Each slot's state this render, and which destinations are on their slot's layer (see handoffSlotOnRef).
+  const handoffLayers = Array.from({ length: HANDOFF_MAX }, (_, k) => {
+    const h = stableHandoffDests.find(x => x.slot === k);
+    if (!h) return { h: undefined, tier: '', on: handoffSlotOnRef.current[k], snap: false };
+    const tier = destPinPlan.fadeTier.get(h.dest.id) ?? '';
+    const on = destGateOn(tier, camZoom) && !h.past;
+    if (!handoffJoinedRef.current.has(h.dest.id)) {
+      if (handoffSlotOnRef.current[k] !== on) return { h: undefined, tier, on, snap: true };
+      handoffJoinedRef.current.add(h.dest.id);
+    }
+    return { h, tier, on, snap: false };
+  });
+  for (const id of [...handoffJoinedRef.current]) if (!stableHandoffDests.some(h => h.dest.id === id)) handoffJoinedRef.current.delete(id);
+  const handoffWaiting = handoffLayers.some(l => l.snap);
+  const joinedSig = handoffLayers.map(l => l.h ? `${l.h.dest.id}:${l.h.slot}` : '').join(',');
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const joinedHandoffDests = useMemo(() => handoffLayers.flatMap(l => l.h ? [l.h] : []), [joinedSig]);
+  useEffect(() => {
+    handoffLayers.forEach((l, k) => { handoffSlotOnRef.current[k] = l.on; });
+    if (handoffWaiting) setHandoffTick(t => t + 1);
+  });
+  void handoffTick;
   // HANDOFF_FADE_MS: a destination's photo pin may leave through the slower handoff fade (see below).
   const renderedPhotoDests = useExitingItems(promotedDests, d => d.id, HANDOFF_FADE_MS);
   useEffect(() => {
@@ -4589,8 +4624,8 @@ const destItems = useMemo((): DestItem[] =>
     const specs = destPinSpecsRef.current;
     let added = false;
     const features: GeoJSON.Feature<GeoJSON.Point>[] = [];
-    const handoffIds = new Set(stableHandoffDests.map(h => h.dest.id));
-    const drawn = [...promotedDests.filter(d => !handoffIds.has(d.id)), ...stableHandoffDests.map(h => h.dest)];
+    const handoffIds = new Set(joinedHandoffDests.map(h => h.dest.id));
+    const drawn = [...promotedDests.filter(d => !handoffIds.has(d.id)), ...joinedHandoffDests.map(h => h.dest)];
     for (const dest of drawn) {
       const visited = visitIndex.isDestVisited(dest.id);
       const badge = visited ? (visitedSpotCountByDest[dest.id] ?? 0) : 0;
@@ -4603,7 +4638,7 @@ const destItems = useMemo((): DestItem[] =>
         id: dest.id,
         geometry: { type: 'Point', coordinates: [dest.coordinates.longitude, dest.coordinates.latitude] },
         properties: { id: dest.id, img, label: dest.name, sort: destSortKey(dest.id), tier: destPinPlan.fadeTier.get(dest.id) ?? '',
-          ho: handoffIds.has(dest.id) ? 1 : 0, hos: stableHandoffDests.find(h => h.dest.id === dest.id)?.slot ?? -1 },
+          ho: handoffIds.has(dest.id) ? 1 : 0, hos: joinedHandoffDests.find(h => h.dest.id === dest.id)?.slot ?? -1 },
       });
     }
     // Register the pin image of every destination that could be promoted soon (eligible now, or one rank tier deeper)
@@ -4622,7 +4657,7 @@ const destItems = useMemo((): DestItem[] =>
     }
     if (added) destPinSpecListRef.current = [...specs.values()];
     return { shape: { type: 'FeatureCollection' as const, features }, specs: destPinSpecListRef.current };
-  }, [promotedDests, stableHandoffDests, visitIndex, visitedSpotCountByDest, destPinPlan, planDest, eligibleDests, visibleRank]);
+  }, [promotedDests, joinedHandoffDests, visitIndex, visitedSpotCountByDest, destPinPlan, planDest, eligibleDests, visibleRank]);
 
   // Which sliding sheet is mounted right now. When it changes from one level to another, the incoming sheet is a
   // replacement for the one that was showing and starts where that one rested (see sheetPose) rather than from below
@@ -4980,8 +5015,7 @@ const destItems = useMemo((): DestItem[] =>
             // The handoff layers (see handoffDests): a fixed pool, always mounted; slot k draws the destination assigned to it
             // and fades it out once its spot pins have taken over. An empty slot draws nothing.
             ...Array.from({ length: HANDOFF_MAX }, (_, k) => {
-              const h = stableHandoffDests.find(x => x.slot === k);
-              const tier = h ? destPinPlan.fadeTier.get(h.dest.id) ?? '' : '';
+              const l = handoffLayers[k];
               const tiers = destTierOrder();
               return (
                 <MapboxGL.SymbolLayer
@@ -4989,8 +5023,8 @@ const destItems = useMemo((): DestItem[] =>
                   id={`destHandoff-${k}`}
                   aboveLayerID={k === 0 ? `destPhotoSymbols-${tiers[tiers.length - 1] || 'ungated'}` : `destHandoff-${k - 1}`}
                   filter={['all', ['==', ['get', 'ho'], 1], ['==', ['get', 'hos'], k]] as any}
-                  // An empty slot rests fully shown, so a destination moving into it (well before its crossing) never dips.
-                  style={destTierStyle(tier, !h || (destGateOn(tier, camZoom) && !h.past))}
+                  // An empty slot keeps its last state; a destination joins it only once it rests in that destination's state.
+                  style={destTierStyle(l.tier, l.on, l.snap)}
                 />
               );
             })]}
