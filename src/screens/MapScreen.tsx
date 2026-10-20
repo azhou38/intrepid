@@ -119,6 +119,7 @@ import { thumbCache, photoCache, fetchWikiThumbnail, prefetchWikiThumbnail, prew
 import DestPinImages, { DEST_PIN_SIZE, destPinImageName, type DestPinImageSpec } from '../components/Map/DestPinImages';
 import PhotoPlaceholder from '../components/Map/PhotoPlaceholder';
 import { NO_PHOTO } from '../data/imageOverrides';
+import SpotPhotoImages, { spotPhotoImageName, type SpotPhotoImageSpec } from '../components/Map/SpotPhotoImages';
 import SpotPinImages, { SPOT_MINI_PIN_UNVISITED, SPOT_MINI_PIN_VISITED } from '../components/Map/SpotPinImages';
 
 const VISITED_COLOR  = '#10B981';
@@ -1139,7 +1140,7 @@ const SPOT_PHOTO_ZOOM_BY_ID = earlySpotZoomTable(SPOT_PHOTO_EARLY_SEPARATION_PX,
 // At most this many spots draw as full photo pins at once; the rest of the revealed spots collapse to a small
 // photo-less dot (SpotDots below) that lives exactly as long as the full pin would have — same reveal zoom, same
 // viewport — so the map never loses a spot, it only stops paying for a photo MarkerView on every one of them.
-const MAX_SPOT_PINS = 25;
+const MAX_NEW_SPOT_IMAGES = 60;   // spot pin images registered per pass (see nativeSpotPins)
 // A standalone spot has no list to rank in; it ranks like a destination's third spot, so it neither crowds out a
 // destination's headline spots nor is the first to lose its pin.
 const STANDALONE_IMPORTANCE = 2;
@@ -2551,84 +2552,67 @@ const destItems = useMemo((): DestItem[] =>
   // placed or a destination's photo pin and name on screen, and no more than MAX_SPOT_PINS pins draw at once. A spot
   // that fails either test — or is revealed before its destination's own zoom, see beforeOwnZoom — becomes a dot, which sits under the pins and lives exactly as long as the pin would have. The
   // spots already holding a pin are placed before any newcomer, so zooming never swaps pins and small pins back and forth.
-  const prevPinIdsRef = useRef<Set<string>>(new Set());
-  // The visible span the spot pin/dot plan works in: the live view, or during a close the live view scaled out to the
-  // close's target zoom (closeViewScale). Measured the same way before and after the camera settles, so the plan doesn't
-  // shift once more when the close ends (it used to drop the bounds during a close and use them again after, which
-  // gave a few more pins their photo a beat after the camera had stopped).
+  // The visible span the label plan of the selected spot works in: the live view, or during a close the live view scaled
+  // out to the close's target zoom (closeViewScale).
   const pinPlanLngDelta = useMemo(() => Math.min(
     region.longitudeDelta * closeViewScale,
     SCREEN_W_GLOBAL * 360 / (256 * Math.pow(2, handoffZoom)),
   ), [region.longitudeDelta, closeViewScale, handoffZoom]);
-  const { pinSpots, dotSpots } = useMemo(() => {
+  // Spot photo pins are a NATIVE symbol layer (spotPhotos), like the destination pins: Mapbox itself decides, every frame on
+  // the render thread, which pins and names collide, and fades them in and out with the camera. The JS plan this replaces
+  // (greedy boxes, a pin cap, React-driven mounts and fades) only caught up a render or more behind the camera, and a
+  // close's zoom-out showed bare mini pins for about a second before the photo pins arrived. Every revealed spot is a
+  // feature in the data (so nothing is added or removed mid-zoom); the photo layer draws it as a photo pin where it fits,
+  // and the mini layer beneath shows the small pin wherever it does not. The selected spot stays a MarkerView.
+  const spotPhotoSpecsRef = useRef<Map<string, SpotPhotoImageSpec>>(new Map());
+  const spotPhotoSpecListRef = useRef<SpotPhotoImageSpec[]>([]);
+  const lastSpotShapeRef = useRef<{ sig: string; specs: SpotPhotoImageSpec[]; value: any } | null>(null);
+  const nativeSpotPins = useMemo(() => {
     const must = new Set<string>();
-    if (selectedSpot) must.add(selectedSpot.id);
     if (nearCtx) for (const sp of nearCtx.spots.slice(0, NEAR_PINNED_SPOTS + 1)) must.add(sp.id);
-    const prev = prevPinIdsRef.current;
-    // A spot that already has its photo pin is placed before every newcomer, so a more important spot coming into view
-    // (or being revealed by the zoom) never takes a neighbour's photo only to hand it back a level later: it stays a
-    // small pin until there is room for it too. Among themselves, and among newcomers, the usual priority applies.
     const rank = (sp: Spot) =>
-      (must.has(sp.id) ? -4_000_000 : 0) + (prev.has(sp.id) ? -2_000_000 : 0) + (visitIndex.isSpotVisited(sp.id) ? -1_000_000 : 0)
+      (must.has(sp.id) ? -4_000_000 : 0) + (visitIndex.isSpotVisited(sp.id) ? -1_000_000 : 0)
       + (SPOT_IMPORTANCE.get(sp.id) ?? 0) * 1000 + (SPOT_ORDER.get(sp.id) ?? 0);
-    const sorted = [...visibleSpots].sort((x, y) => rank(x) - rank(y));
-    // A close plans at the view it is flying to (handoffZoom holds that target), so pins that won't fit there turn into
-    // dots while the camera is still moving out instead of piling up and collapsing once it settles. A pinch plans at the
-    // zoom the camera is really at: the velocity prediction (planZoom) ran ahead of the fingers and turned pins into dots
-    // mid-gesture, only for them to come back on release.
-    const pxPerDegLng = SCREEN_W_GLOBAL / pinPlanLngDelta;
-    type Box = { l: number; r: number; t: number; b: number };
-    const overlaps = (a: Box, b: Box) => a.l < b.r && a.r > b.l && a.t < b.b && a.b > b.t;
-    const taken: Box[] = [];
-    // Destination photo pins on screen, with the name hanging below each (same footprint spotLabelPlan avoids).
-    for (const id of destPinPlan.photoIds) {
-      // A destination whose pin is hidden because the camera is inside it (its spot pins have taken over) is no obstacle:
-      // it is still in the photo plan, and its invisible pin used to keep the spot at its centre (Auckland's Sky Tower) small.
-      if (hiddenDestIds.has(id)) continue;
-      const d = DESTINATIONS.find(dd => dd.id === id);
-      if (!d) continue;
-      const m = mercatorPx(d.coordinates.longitude, d.coordinates.latitude, pxPerDegLng);
-      const x = m.x, y = -m.y, R = PIN_SIZE / 2 + 2;
-      const nameW = Math.min(90, d.name.length * 6.3), nameH = d.name.length * 6.3 > 90 ? 26 : 13;
-      taken.push({ l: x - Math.max(R, nameW / 2), r: x + Math.max(R, nameW / 2), t: y - R, b: y + R + 4 + nameH });
-    }
-    // Only spots in (or just around) the view compete for photo pins. A selected destination feeds ALL its spots into
-    // visibleSpots (so panning never reshuffles its set), and before this its most important spots took the
-    // MAX_SPOT_PINS photos wherever they were: zoomed into one corner of Sydney, the cap was spent on spots off-screen and
-    // the ones in view stayed small pins. Off-view spots are collapsed pins (invisible there anyway, and cheap); one gets
-    // its photo as it comes within the margin, before it reaches the screen.
-    const vLat = region.latitudeDelta * closeViewScale, vLng = region.longitudeDelta * closeViewScale, vPad = 0.15;
-    const inView = (sp: Spot) =>
-      Math.abs(sp.coordinates.latitude - region.latitude) <= vLat * (0.5 + vPad)
-      && Math.abs(sp.coordinates.longitude - region.longitude) <= vLng * (0.5 + vPad);
-    const pins: Spot[] = [], dots: Spot[] = [];
+    const specs = spotPhotoSpecsRef.current;
+    const sorted = visibleSpots.filter(sp => sp.id !== selectedSpot?.id).sort((x, y) => rank(x) - rank(y));
+    let added = false, fresh = 0;
+    const features: GeoJSON.Feature<GeoJSON.Point>[] = [];
     for (const sp of sorted) {
-      if (!must.has(sp.id) && !inView(sp)) { dots.push(sp); continue; }
-      const m = mercatorPx(sp.coordinates.longitude, sp.coordinates.latitude, pxPerDegLng);
-      const x = m.x, y = -m.y;
-      // The pin's footprint: the bubble plus the tail hanging to the coordinate, with a little air around it.
-      const box: Box = { l: x - SPOT_PIN_SIZE / 2 - 2, r: x + SPOT_PIN_SIZE / 2 + 2, t: y - SPOT_PIN_SIZE - 10 - 2, b: y + 2 };
-      // A spot revealed ahead of its destination's own default zoom (an outlying one, see SPOT_REVEAL_ZOOM_BY_ID) stays a
-      // small pin until its own photo zoom (SPOT_PHOTO_ZOOM_BY_ID): the destination leads at a wide view, and its outlying
-      // spots take their photos one by one, by how far out they are, rather than all at the destination's zoom.
+      const visited = visitIndex.isSpotVisited(sp.id);
+      const img = spotPhotoImageName(sp.id, visited);
+      // Register the pin image before its symbol enters the data (an unregistered image is placed invisibly, and the pin
+      // then pops in); a few per pass, most important first, so a wide view never snapshots hundreds at once.
+      if (!specs.has(img) && fresh < MAX_NEW_SPOT_IMAGES) { specs.set(img, { name: img, spot: sp, visited }); added = true; fresh++; }
+      // A spot revealed ahead of its destination's own default zoom stays a small pin until its own photo zoom.
       const photoZoom = SPOT_PHOTO_ZOOM_BY_ID[sp.id];
-      const beforeOwnZoom = photoZoom !== undefined && handoffZoom < photoZoom - ZOOM_EPSILON;
-      if (!must.has(sp.id) && (beforeOwnZoom || pins.length >= MAX_SPOT_PINS || taken.some(t => overlaps(t, box)))) { dots.push(sp); continue; }
-      pins.push(sp); taken.push(box);
+      const early = !must.has(sp.id) && photoZoom !== undefined && handoffZoom < photoZoom - ZOOM_EPSILON;
+      features.push({
+        type: 'Feature',
+        id: sp.id,
+        geometry: { type: 'Point', coordinates: [sp.coordinates.longitude, sp.coordinates.latitude] },
+        properties: {
+          id: sp.id,
+          mini: visited ? SPOT_MINI_PIN_VISITED : SPOT_MINI_PIN_UNVISITED,
+          img: specs.has(img) && !early ? img : '',
+          label: spotLabelLines(sp.name).join('\n'),
+          sort: rank(sp),
+        },
+      });
     }
-    prevPinIdsRef.current = new Set(pins.map(sp => sp.id));
-    return { pinSpots: pins, dotSpots: dots };
-  }, [visibleSpots, selectedSpot, nearCtx, visitIndex, pinPlanLngDelta, destPinPlan, handoffZoom, hiddenDestIds, region, closeViewScale]);
-  const stableDotSpots = useStableList(dotSpots, s => s.id);
-  const spotDotsGeoJSON = useMemo((): GeoJSON.FeatureCollection<GeoJSON.Point> => ({
-    type: 'FeatureCollection',
-    features: stableDotSpots.map(sp => ({
-      type: 'Feature',
-      properties: { id: sp.id, img: visitIndex.isSpotVisited(sp.id) ? SPOT_MINI_PIN_VISITED : SPOT_MINI_PIN_UNVISITED },
-      geometry: { type: 'Point', coordinates: [sp.coordinates.longitude, sp.coordinates.latitude] },
-    })),
-  }), [stableDotSpots, visitIndex]);
-  const renderedSpots = useExitingItems(useStableList(pinSpots, s => s.id), s => s.id, HANDOFF_FADE_MS);
+    if (added) spotPhotoSpecListRef.current = [...specs.values()];
+    // visibleSpots is rebuilt on every camera frame (it follows the live bounds), but its CONTENT rarely changes: hand the
+    // native source the same shape object unless a feature or its look did, so a pan or zoom doesn't re-push the whole
+    // collection to Mapbox each frame.
+    const sig = features.map(f => `${f.properties!.id}|${f.properties!.img}|${f.properties!.mini}|${f.properties!.sort}`).join(',');
+    const last = lastSpotShapeRef.current;
+    if (last && last.sig === sig && last.specs === spotPhotoSpecListRef.current) return last.value;
+    const value = { shape: { type: 'FeatureCollection' as const, features }, specs: spotPhotoSpecListRef.current };
+    lastSpotShapeRef.current = { sig, specs: spotPhotoSpecListRef.current, value };
+    return value;
+  }, [visibleSpots, selectedSpot, nearCtx, visitIndex, handoffZoom]);
+  // Only the selected spot is a MarkerView now.
+  const selectedOnly = useMemo(() => (selectedSpot ? [selectedSpot] : []), [selectedSpot]);
+  const renderedSpots = useExitingItems(selectedOnly, s => s.id, HANDOFF_FADE_MS);
 
   // Which side of each spot pin its name goes on — or none. Names default to the LEFT of the pin;
   // when that would run into another pin or an already-placed name the label flips to the right, and
@@ -4911,26 +4895,62 @@ const destItems = useMemo((): DestItem[] =>
             hold a full photo pin. A native layer (no MarkerView per spot), drawn beneath the destination
             stamps and photo pins, and present for exactly as long as the full pin would have been. */}
         <SpotPinImages />
+        <SpotPhotoImages specs={nativeSpotPins.specs} />
         <MapboxGL.ShapeSource
-          id="spotDots"
-          shape={spotDotsGeoJSON}
-          hitbox={{ width: 28, height: 28 }}
+          id="spotPins"
+          shape={nativeSpotPins.shape}
+          hitbox={{ width: 32, height: 40 }}
           onPress={(e) => {
             const id = e.features[0]?.properties?.id as string | undefined;
             const spot = id ? SPOT_BY_ID.get(id) : undefined;
             if (spot && !pressBlocked()) handleSpotPress(spot);
           }}
         >
-          {/* A small version of the spot pin (SpotPinImages): the same teardrop and white bubble with the photo
-              collapsed to a coloured core, its tip on the coordinate. Reads as a spot, never as a destination dot. */}
+          {/* The small pin under every revealed spot that has no photo pin placed: the photo pin's teardrop with the photo
+              collapsed to a core. It yields to the photo pin in Mapbox's own collision pass (see its style), so the two
+              never show together. */}
           <MapboxGL.SymbolLayer
             id="spotMiniPins"
             belowLayerID="destStampCircles"
             style={{
+              iconImage: ['get', 'mini'] as any,
+              iconAnchor: 'bottom',
+              // Placed AFTER the photo layer (it sits beneath it, and Mapbox places the top layer first) and WITHOUT overlap, so a
+              // spot that has its photo pin never also draws the small pin behind it (the mini pin's bubble used to show beside
+              // the photo pin's narrow tail). Where the photo pin does not fit, the mini pin takes its place; the photo pin
+              // fading in or out cross-fades with it through the same collision pass.
+              iconAllowOverlap: false,
+              iconIgnorePlacement: false,
+              iconPadding: 0,
+              symbolSortKey: ['get', 'sort'] as any,
+            }}
+          />
+          {/* The photo pin and its name. Mapbox places them by priority (sort), fades a pin in or out as room opens or
+              closes, and drops a name that does not fit (textOptional) without dropping its pin. */}
+          <MapboxGL.SymbolLayer
+            id="spotPhotos"
+            belowLayerID="destStampCircles"
+            filter={['!=', ['get', 'img'], ''] as any}
+            style={{
               iconImage: ['get', 'img'] as any,
               iconAnchor: 'bottom',
-              iconAllowOverlap: true,
-              iconIgnorePlacement: true,
+              iconAllowOverlap: false,
+              iconIgnorePlacement: false,
+              iconPadding: 2,
+              symbolSortKey: ['get', 'sort'] as any,
+              textField: ['get', 'label'] as any,
+              textFont: ['DIN Pro Bold', 'Arial Unicode MS Bold'],
+              textSize: 12,
+              textMaxWidth: 10,
+              textVariableAnchor: ['right', 'left'] as any,
+              textRadialOffset: 1.7,
+              textTranslate: [0, -19],
+              textOptional: true,
+              textAllowOverlap: false,
+              textPadding: 2,
+              textColor: mapType === 'satellite' ? '#FFFFFF' : '#111827',
+              textHaloColor: mapType === 'satellite' ? '#000000' : '#FFFFFF',
+              textHaloWidth: 1.5,
             }}
           />
         </MapboxGL.ShapeSource>
