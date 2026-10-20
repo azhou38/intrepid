@@ -1500,6 +1500,12 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   const zoomSampleRef = useRef<{ z: number; t: number; v: number } | null>(null);
   // Always-current mirror of camZoom, for callbacks (the X/close handlers) that only read it.
   const camZoomRef = useRef(0);
+  // True while the camera is moving (from its first camera event to the next idle). While it is, the pin layers keep the
+  // placement priority they had when it last settled: re-ordering them mid-zoom made Mapbox re-decide every collision on
+  // each re-render, and pins ghosted in and out (Port Stephens and its neighbours).
+  const cameraMovingRef = useRef(false);
+  const destSortFrozenRef = useRef<Map<string, number> | null>(null);
+  const spotSortFrozenRef = useRef<Map<string, number> | null>(null);
   // Always-current mirror of `region`, so callbacks that only need to *read* the latest
   // region (e.g. handleMarkerPress capturing the pre-zoom view) can do so WITHOUT taking
   // `region` as a useCallback dep — which would otherwise recreate the callback on every
@@ -2823,7 +2829,9 @@ const destItems = useMemo((): DestItem[] =>
           mini: visited ? SPOT_MINI_PIN_VISITED : SPOT_MINI_PIN_UNVISITED,
           img,
           label: spotLabelLines(sp.name).join('\n'),
-          sort: planRank.get(sp.id) ?? 100_000 + rank(sp),
+          sort: cameraMovingRef.current && spotSortFrozenRef.current
+            ? (spotSortFrozenRef.current.get(sp.id) ?? 200_000 + (planRank.get(sp.id) ?? 0))
+            : (planRank.get(sp.id) ?? 100_000 + rank(sp)),
           // Shown from its reveal zoom, read against the live camera zoom (see visibleSpots / FadingShapeSource).
           ...(must.has(sp.id) || nearCtx?.spots.some(n => n.id === sp.id) ? {} : { zmin: (SPOT_REVEAL_ZOOM_BY_ID[sp.id] ?? 0) - ZOOM_EPSILON }),
         },
@@ -2843,6 +2851,7 @@ const destItems = useMemo((): DestItem[] =>
       }
     }
     if (added) spotPhotoSpecListRef.current = [...specs.values()];
+    if (!cameraMovingRef.current) spotSortFrozenRef.current = new Map(features.map(f => [String(f.id), f.properties!.sort as number]));
     // visibleSpots is rebuilt on every camera frame (it follows the live bounds), but its CONTENT rarely changes: hand the
     // native source the same shape object unless a feature or its look did, so a pan or zoom doesn't re-push the whole
     // collection to Mapbox each frame.
@@ -4246,6 +4255,7 @@ const destItems = useMemo((): DestItem[] =>
   }) => {
     const { center, bounds } = state.properties;
     const isGestureActive = state.gestures?.isGestureActive ?? false;
+    cameraMovingRef.current = true;   // pin priorities stay frozen until the camera settles (see nativeDestPins)
 
     // The user just started panning/pinching the map — drop whichever destination/spot
     // sheet is open down to its "peek" state (if it isn't already), so it gets out of the
@@ -4441,6 +4451,7 @@ const destItems = useMemo((): DestItem[] =>
     // and the *next* pan's true would never register as a fresh rising edge (only the very
     // first pan of the whole session ever would). Reset it here so every pan is detected.
     wasMapGestureActiveRef.current = false;
+    cameraMovingRef.current = false;
     releaseHeldSelection();   // a close's zoom-out has settled: let the pin/pill planning drop the old selection
     releaseSpotCloseTarget();
     const { center, bounds } = state.properties;
@@ -4732,6 +4743,7 @@ const destItems = useMemo((): DestItem[] =>
   // A destination photo pin that leaves or joins the map (its own default view reached, so its spot pins take over, or
   // left again) fades (PIN_FADE_IN_NATIVE_MS / PIN_FADE_OUT_NATIVE_MS) on its own layer (destPhotosFade) instead of cutting. A pin behind its rank gate
   // is invisible anyway and comes and goes at once.
+  const lastDestShapeRef = useRef<{ sig: string; specs: DestPinImageSpec[]; value: any } | null>(null);
   const nativeDestPins = useMemo(() => {
     if (!NATIVE_DEST_PINS) return null;
     const book = destPhotoSinceRef.current;
@@ -4741,7 +4753,10 @@ const destItems = useMemo((): DestItem[] =>
     for (const d of promotedDestsLead) if (!book.since.has(d.id)) { if (!fresh) { book.seq += 1; fresh = true; } book.since.set(d.id, book.seq); }
     const destSortKey = (id: string) =>
       // The plan's priority already puts pins that were showing first (persistence), then by prominence.
-      planDest?.id === id ? -1 : (destPinPlan.priority.get(id) ?? 99_999);
+      planDest?.id === id ? -1
+        : cameraMovingRef.current && destSortFrozenRef.current
+          ? (destSortFrozenRef.current.get(id) ?? 50_000 + (destPinPlan.priority.get(id) ?? 49_999))
+          : (destPinPlan.priority.get(id) ?? 99_999);
 
     const specs = destPinSpecsRef.current;
     let added = false;
@@ -4779,7 +4794,15 @@ const destItems = useMemo((): DestItem[] =>
       if (!specs.has(img)) { specs.set(img, { name: img, dest, visited, badge, selected: false }); added = true; }
     }
     if (added) destPinSpecListRef.current = [...specs.values()];
-    return { shape: { type: 'FeatureCollection' as const, features }, specs: destPinSpecListRef.current };
+    if (!cameraMovingRef.current) destSortFrozenRef.current = new Map(features.map(f => [String(f.id), f.properties!.sort as number]));
+    // Hand the native source the same features unless a feature or its look changed: this memo re-runs on every camera
+    // re-render, and a new collection each time made Mapbox reload the layer (restarting its fades) about every 50 ms.
+    const sig = features.map(f => { const p = f.properties!; return `${p.id}|${p.img}|${p.sort}|${p.zmax ?? ''}`; }).join(',');
+    const last = lastDestShapeRef.current;
+    if (last && last.sig === sig && last.specs === destPinSpecListRef.current) return last.value;
+    const value = { shape: { type: 'FeatureCollection' as const, features }, specs: destPinSpecListRef.current };
+    lastDestShapeRef.current = { sig, specs: destPinSpecListRef.current, value };
+    return value;
   }, [promotedDestsLead, visitIndex, visitedSpotCountByDest, destPinPlan, planDest, eligibleDests, visibleRank, destLabelGates]);
 
 
