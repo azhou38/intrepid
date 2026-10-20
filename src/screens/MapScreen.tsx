@@ -1085,7 +1085,6 @@ const destFadeStyle = (opacity: number, ms: number, leaving: boolean) => {
       // A joining pin takes part in collision (it shows only where it fits); a leaving one does not.
       iconAllowOverlap: leaving, iconIgnorePlacement: leaving,
       textAllowOverlap: leaving, textIgnorePlacement: leaving,
-      textField: ['case', ['==', ['get', 'lt'], 1], ['get', 'label'], ''],
       iconOpacity: opacity, textOpacity: opacity,
       iconOpacityTransition: { duration: ms, delay: 0 },
       textOpacityTransition: { duration: ms, delay: 0 },
@@ -1094,15 +1093,19 @@ const destFadeStyle = (opacity: number, ms: number, leaving: boolean) => {
   }
   return st;
 };
-// The main destination photo pin layer: Mapbox resolves pin-vs-pin collisions (with its own fade); a name shows only
-// past its own gate (lt, set live by FadingShapeSource) and never knocks a pin out.
+// The main destination photo pin layer (Google-style): every destination is in it; Mapbox's collision pass decides which
+// show, every frame, with its own fade, in the order of symbolSortKey (selected, pins already showing, prominence). A name
+// shows where it fits (textOptional keeps the pin when it doesn't).
+const DEST_PHOTO_MIN_ZOOM = DEST_RANK_GATE_ZOOM.r1;
 const DEST_MAIN_STYLE: any = {
   ...DEST_SYMBOL_STYLE,
   iconAllowOverlap: false,
   iconIgnorePlacement: false,
-  textField: ['case', ['==', ['get', 'lt'], 1], ['get', 'label'], ''],
   textAllowOverlap: false,
-  textIgnorePlacement: true,
+  textIgnorePlacement: false,
+  // Below the widest rank gate (world view: country pills only) no photo pins; a short native fade at that one zoom.
+  iconOpacity: ['interpolate', ['linear'], ['zoom'], DEST_PHOTO_MIN_ZOOM - 0.25, 0, DEST_PHOTO_MIN_ZOOM, 1],
+  textOpacity: ['interpolate', ['linear'], ['zoom'], DEST_PHOTO_MIN_ZOOM - 0.25, 0, DEST_PHOTO_MIN_ZOOM, 1],
 };
 const CAMERA_DEFAULT_SETTINGS = { centerCoordinate: [10, 20] as [number, number], zoomLevel: 1 };
 
@@ -2274,7 +2277,9 @@ const destItems = useMemo((): DestItem[] =>
 
     // Plan over the pan-invariant ELIGIBLE set (not the viewport-culled render set), so the
     // greedy collision resolution sees a stable roster while panning.
-    const dests = eligibleDests;
+    // Native pins (Google-style): every destination is a candidate; Mapbox's collision pass, ordered by the priority below,
+    // decides which show their photo, every frame. The rank gates only apply to the older MarkerView path.
+    const dests = NATIVE_DEST_PINS ? DESTINATIONS : eligibleDests;
     const positions = new Map<string, { x: number; y: number }>();
     for (const d of dests) positions.set(d.id, mercatorPx(d.coordinates.longitude, d.coordinates.latitude, pxPerDegLng));
 
@@ -2360,8 +2365,8 @@ const destItems = useMemo((): DestItem[] =>
     // out, two showing pins that come to overlap are settled by prominence (Sydney over its neighbours).
     const prevShown = destPhotoShownRef.current;
     const gateOnNow = (d: Destination) => destGateOn(fadeTier.get(d.id) ?? '', camZoomRef.current);
-    const candidates = ordered.filter(d => isForced(d) || canPromote(d));
-    const group = (d: Destination) => isForced(d) ? 0 : !gateOnNow(d) ? 3 : prevShown.has(d.id) ? 1 : 2;
+    const candidates = ordered.filter(d => isForced(d) || NATIVE_DEST_PINS || canPromote(d));
+    const group = (d: Destination) => isForced(d) ? 0 : !NATIVE_DEST_PINS && !gateOnNow(d) ? 3 : prevShown.has(d.id) ? 1 : 2;
     const planOrder = [...candidates].sort((a, b) => group(a) - group(b) || rankScore(a) - rankScore(b) || (a.id < b.id ? -1 : 1));
     // Native mode: Mapbox decides the collisions; this plan only orders the priority (placed pins first, in plan order,
     // then the ones this plan found blocked) so that pins already showing keep their photos.
@@ -2405,7 +2410,8 @@ const destItems = useMemo((): DestItem[] =>
     const priority = new Map<string, number>();
     ordered.forEach((d, i) => priority.set(d.id, i));
     if (NATIVE_DEST_PINS) [...placedOrder, ...bumped].forEach((id, i) => priority.set(id, i));
-    destPhotoShownRef.current = new Set([...(NATIVE_DEST_PINS ? placedOrder : photoIds)].filter(id => { const d = eligibleDests.find(x => x.id === id); return !!d && (isForced(d) || gateOnNow(d)); }));
+    destPhotoShownRef.current = NATIVE_DEST_PINS ? new Set(placedOrder)
+      : new Set([...photoIds].filter(id => { const d = eligibleDests.find(x => x.id === id); return !!d && (isForced(d) || gateOnNow(d)); }));
     if (NATIVE_DEST_PINS) {
       destLabelHitRef.current = { pxPerDegLng, rects: [] };   // names are native symbols: they take taps themselves
       return { photoIds, positions, labelHiddenIds: new Set<string>(), priority, fadeTier };
@@ -4652,11 +4658,10 @@ const destItems = useMemo((): DestItem[] =>
     for (const d of DESTINATIONS) if (isPastDestDefaultZoom(d.id, handoffZoom - PIN_LIVE_LEAD)) ids.add(d.id);
     return ids;
   }, [handoffZoom]));
-  const promotedDestsLead = useMemo(() => destItems
-    .filter(item => !hiddenDestIdsLead.has(item.dest.id) && stablePhotoIds.has(item.dest.id))
-    .map(item => item.dest)
+  const promotedDestsLead = useMemo(() => DESTINATIONS
+    .filter(d => !hiddenDestIdsLead.has(d.id) && stablePhotoIds.has(d.id))
     .sort((a, b) => b.rank - a.rank),
-  [destItems, stablePhotoIds, hiddenDestIdsLead]);
+  [stablePhotoIds, hiddenDestIdsLead]);
   const promotedDests = useMemo(() => destItems
     .filter(item => !hiddenDestIds.has(item.dest.id) && stablePhotoIds.has(item.dest.id))
     .map(item => item.dest)
@@ -4737,7 +4742,7 @@ const destItems = useMemo((): DestItem[] =>
     const destSortKey = (id: string) =>
       // The plan's priority already puts pins that were showing first (persistence), then by prominence.
       planDest?.id === id ? -1 : (destPinPlan.priority.get(id) ?? 99_999);
-    const gateZooms = destGateZooms();
+
     const specs = destPinSpecsRef.current;
     let added = false;
     const features: GeoJSON.Feature<GeoJSON.Point>[] = [];
@@ -4753,15 +4758,7 @@ const destItems = useMemo((): DestItem[] =>
         id: dest.id,
         geometry: { type: 'Point', coordinates: [dest.coordinates.longitude, dest.coordinates.latitude] },
         properties: { id: dest.id, img, label: dest.name, sort: destSortKey(dest.id), tier: destPinPlan.fadeTier.get(dest.id) ?? '',
-          // Gates, read against the LIVE camera zoom by FadingShapeSource (no re-render): the pin is drawn from its rank or
-          // country gate on (zmin; before that it is not on the map at all, so it can never push a showing pin out), fading
-          // in when the camera crosses it, and its name from its own name gate (lz).
-          ...(() => {
-            const g = gateZooms[destPinPlan.fadeTier.get(dest.id) ?? ''];
-            const lb = destLabelGates.get(dest.id);
-            const lz = Math.max(g ?? -Infinity, lb ?? -Infinity);
-            return { ...(g !== undefined && planDest?.id !== dest.id ? { zmin: g - ZOOM_EPSILON } : {}), ...(Number.isFinite(lz) ? { lz: lz - ZOOM_EPSILON } : {}) };
-          })(),
+
           // Hidden from its own default zoom on, against the live camera zoom: its spot pins take over there.
           ...(DEST_ZOOM_LEVEL_BY_ID[dest.id] !== undefined ? { zmax: DEST_ZOOM_LEVEL_BY_ID[dest.id] - ZOOM_EPSILON } : {}),
         },
