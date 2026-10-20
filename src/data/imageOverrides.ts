@@ -448,6 +448,7 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "Tawali": { x: 0.35, y: 0.4 },
   "Sapphire Coast": { x: 0.5, y: 0.45 },
   "Armidale": { x: 0.45, y: 0.45 },
+  "Alotau": { x: 0.5, y: 0.55 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -1600,6 +1601,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Madang": "ext-madang.jpg",   // an official photo served from externalPhotos.json (src/data/externalPhotos.json wins); this keeps the header check satisfied
   "Sapphire Coast": "Merimbula Sound.jpg",
   "Armidale": "ext-armidale.jpg",   // the owner-supplied header served from externalPhotos.json (which wins); keeps the header check satisfied
+  "Alotau": "ext-alotau.jpg",   // the owner-supplied header served from externalPhotos.json (which wins); keeps the header check satisfied
 };
 
 /**
@@ -1668,5 +1670,4 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Kiunga, Papua New Guinea",
   "Lake Murray (Papua New Guinea)",
   "Tonda Wildlife Management Area",
-  "Alotau",
 ]);
