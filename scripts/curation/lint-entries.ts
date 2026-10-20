@@ -102,7 +102,7 @@ async function checkWiki(title: string): Promise<string | null> {
     if ((d.goodToKnow?.length ?? 0) !== 3) add(it, 'shape', `${d.goodToKnow?.length ?? 0} goodToKnow (needs 3)`);
     if (((d.bestTimeBlurb ?? '').match(/\{months\}/g) ?? []).length !== 1) add(it, 'shape', 'bestTimeBlurb needs exactly one {months}');
     for (const [f, v] of [['tagline', d.tagline], ['description', d.description]] as const) {
-      const m = (v ?? '').match(MARKETING); if (m) add(it, 'voice', `${f}: "${m[0]}"`);
+      const m = (v ?? '').replace(/\bbirds?[- ]of[- ]paradise\b/gi, 'birds').match(MARKETING); if (m) add(it, 'voice', `${f}: "${m[0]}"`);
     }
     if (it.checks.length) issues.push(it);
   }

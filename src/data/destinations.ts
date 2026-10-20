@@ -2538,7 +2538,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: "⛵", rank: 4,
     tagline: "A small provincial capital on Milne Bay and the way in to the islands of Papua New Guinea's far south-east.",
     description: "Alotau is the capital of Milne Bay Province, on the northern shore of Milne Bay at the tip of the Papuan Peninsula; it took over from Samarai in 1969. The province has 14,345 km2 of land and 252,990 km2 of sea, with more than 600 islands, and its reefs are described as some of the most biodiverse in the world. In 1942 the invading Japanese army suffered its first land defeat of the Pacific War at Milne Bay, and a memorial park marks the battle site. Fergusson Island, reached only by boat, is geothermal and has a rare bird of paradise.",
-    whyVisit: ["Cruise to the Louisiade Archipelago", "Remember the Battle of Milne Bay"],
+    whyVisit: ["Cruise to the Louisiade Archipelago", "Visit the Battle of Milne Bay memorial"],
     whyVisitPhotos: ["Louisiadearchipelago.JPG", "Alotau memorial-ww2.jpg"],
     highlights: ["Louisiade Archipelago", "Milne Bay memorial"],
     goodToKnow: [
