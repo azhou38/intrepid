@@ -4965,16 +4965,23 @@ const destItems = useMemo((): DestItem[] =>
             if (spot && !pressBlocked()) handleSpotPress(spot);
           }}
         >
-          {/* The small pin under every revealed spot: the photo pin's teardrop with the photo collapsed to a core. It is
-              always drawn (overlap allowed), so a spot never has nothing on the map while its photo pin fades in or out. */}
+          {/* The small pin under every revealed spot that has no photo pin placed: the photo pin's teardrop with the photo
+              collapsed to a core. It yields to the photo pin in Mapbox's own collision pass (see its style), so the two
+              never show together. */}
           <MapboxGL.SymbolLayer
             id="spotMiniPins"
             belowLayerID="destStampCircles"
             style={{
               iconImage: ['get', 'mini'] as any,
               iconAnchor: 'bottom',
-              iconAllowOverlap: true,
-              iconIgnorePlacement: true,
+              // Placed AFTER the photo layer (it sits beneath it, and Mapbox places the top layer first) and WITHOUT overlap, so a
+              // spot that has its photo pin never also draws the small pin behind it (the mini pin's bubble used to show beside
+              // the photo pin's narrow tail). Where the photo pin does not fit, the mini pin takes its place; the photo pin
+              // fading in or out cross-fades with it through the same collision pass.
+              iconAllowOverlap: false,
+              iconIgnorePlacement: false,
+              iconPadding: 0,
+              symbolSortKey: ['get', 'sort'] as any,
             }}
           />
           {/* The photo pin and its name. Mapbox places them by priority (sort), fades a pin in or out as room opens or
