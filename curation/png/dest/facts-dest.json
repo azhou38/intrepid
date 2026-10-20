@@ -1,0 +1,120 @@
+{
+ "port-moresby": {
+  "verdict": "ok",
+  "problems": [],
+  "fixes": {}
+ },
+ "rabaul": {
+  "verdict": "fix",
+  "problems": [
+   {
+    "field": "description",
+    "text": "scuba diving and snorkelling in the harbour area",
+    "issue": "Source says Rabaul is popular for scuba diving and snorkelling and has a spectacular harbour; the dive operators listed are up to an hour away. 'In the harbour area' places the diving where the source does not."
+   },
+   {
+    "field": "goodToKnow[0]",
+    "text": "the 34-room Rabaul Hotel is the town's main option",
+    "issue": "Source only lists it (34 rooms, 45 minutes from Tokua Airport, near the bus stop); 'main option' is an inference."
+   },
+   {
+    "field": "goodToKnow[2]",
+    "text": "The route to Tavurvur is unsigned and winding",
+    "issue": "Wikivoyage gives turn-by-turn directions (turn at an intersection, a white cross, veer left at a cross); it does not say unsigned or winding. The Barge Tunnel track is unmarked with its sign not at the turnoff (confirmed)."
+   },
+   {
+    "field": "goodToKnow[2]",
+    "text": "cost about K700 a car",
+    "issue": "Source says 'minimum K700 per car' (Mar 2017); 'about' understates it."
+   },
+   {
+    "field": "bestTimeBlurb",
+    "text": "June-September trekking months",
+    "issue": "Accurate as a national statement but not Rabaul-specific (Af climate, no dry season); weak as a best-time claim. Kept as is, flagged only."
+   }
+  ],
+  "fixes": {
+   "description": "Rabaul is a township on the Gazelle Peninsula in the northeast of New Britain. A 1994 eruption of Tavurvur and Vulcan covered it in ash and collapsed 80% of its buildings, and the provincial capital moved to Kokopo, about 20 km away. Visitors come for scuba diving and snorkelling and for Second World War history, including the many kilometres of tunnels the Japanese army dug around the town, where about 110,000 troops were based by 1943. Evacuation drills meant only five people died in 1994.",
+   "goodToKnow": [
+    {
+     "icon": "🏨",
+     "title": "Stay in Kokopo",
+     "detail": "Most accommodation is in Kokopo resorts; the 34-room Rabaul Hotel is in town, 45 minutes from Tokua Airport. The 1A bus runs Kokopo to Rabaul in about 40 minutes."
+    },
+    {
+     "icon": "🌋",
+     "title": "Ash and mudslide closures",
+     "detail": "The town always runs the risk of further volcanic activity, and the hot springs at Tavurvur are described as deadly. Tokua Airport has been closed by ashfall and parts of the Kokopo-Rabaul road are damaged by mudslides, so leave slack in your schedule and heed local advice."
+    },
+    {
+     "icon": "🧭",
+     "title": "Take a guide or driver",
+     "detail": "Reaching Tavurvur takes a string of turns along the road, and the Barge Tunnel is down an unmarked rough track whose sign is not at the turnoff. Hotel tours start at about K700 a car at 2017 prices."
+    }
+   ]
+  }
+ },
+ "madang": {
+  "verdict": "fix",
+  "problems": [
+   {
+    "field": "goodToKnow[2]",
+    "text": "Skip the sea and river swims",
+    "issue": "Crocodile and swimming advice is country-wide; the Madang page says the shoreline has many small sandy swimming spots with shade. The tip reads as a Madang-specific ban. Reworded to give both."
+   },
+   {
+    "field": "goodToKnow[1]",
+    "text": "described as the best place to buy crafts",
+    "issue": "Source says the craft shops at Madang Resort and Madang Lodge are 'probably the best places in town'; hedge restored."
+   }
+  ],
+  "fixes": {
+   "goodToKnow": [
+    {
+     "icon": "🌙",
+     "title": "Pre-arrange evening drivers",
+     "detail": "There are no taxis, it is almost impossible to get around town after 6 PM, and walking after dark is not advisable. For dinner anywhere other than your hotel, book a driver in advance; most evenings will be at your hotel or resort."
+    },
+    {
+     "icon": "🛍️",
+     "title": "Market for food, shops for crafts",
+     "detail": "The central market is open every day except Sunday and sells mostly fruit and vegetables. The craft shops at Madang Resort and Madang Lodge are probably the best places in town to buy crafts. Minivan buses to nearby towns leave from the central bus station near the market."
+    },
+    {
+     "icon": "🐊",
+     "title": "Crocodiles and malaria",
+     "detail": "Saltwater crocodiles are common in Papua New Guinea's coastal waters and rivers, and the advice is to avoid swimming except in hotel pools or at higher elevations; ask locally before using the small swimming spots along Madang's shoreline. Malaria is also a hazard, so ask a doctor about prevention before you travel."
+    }
+   ]
+  }
+ },
+ "alotau": {
+  "verdict": "fix",
+  "problems": [
+   {
+    "field": "goodToKnow[0]",
+    "text": "Islands beyond Alotau have very limited lodging and no regular passenger ferry",
+    "issue": "Overgeneralised. Source: Normanby and Goodenough have very limited accommodation; there is no passenger-only shipping from Alotau (freighters may take you after a long wait). Doini Island has a resort and Samarai is a short boat ride. Also the open-ocean/no-distress-signal point applies to crossings from Misima between Louisiade islands, not all local boats."
+   }
+  ],
+  "fixes": {
+   "goodToKnow": [
+    {
+     "icon": "🌊",
+     "title": "Open-ocean boat trips",
+     "detail": "Most Louisiade visitors arrive by private yacht from Cairns, about four days. Local transport there is by canoe or open longboat, and crossings from Misima to other islands are open ocean with no way to signal distress, so they suit only the extremely adventurous. There is no passenger-only shipping from Alotau and some islands, such as Normanby and Goodenough, have very limited lodging, so arrange boats and beds in advance."
+    },
+    {
+     "icon": "✈️",
+     "title": "Flights get cancelled",
+     "detail": "Air Niugini flies daily from Port Moresby to Gurney Airport, 12 km from town. Small-plane flights to the islands, such as the Trobriands, can be cancelled, so do not leave them until the last minute if you have connections."
+    },
+    {
+     "icon": "🤝",
+     "title": "Ask before you fish or take",
+     "detail": "In the Louisiades almost everything is privately owned, even fish in the lagoon. Get permission before fishing or taking anything, greet with a handshake and ask consent before photographing people."
+    }
+   ]
+  }
+ }
+}

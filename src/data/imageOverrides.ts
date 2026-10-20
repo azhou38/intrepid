@@ -434,6 +434,17 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "Louisiade Archipelago": { x: 0.6, y: 0.35, zoom: 1.6 },
   "Maprik": { x: 0.7, y: 0.5 },
   "Sepik": { x: 0.45, y: 0.55 },
+  "Port Moresby": { x: 0.7, y: 0.5 },
+  "Rabaul": { x: 0.4, y: 0.6, zoom: 1.3 },
+  "Kokoda Track": { x: 0.5, y: 0.5 },
+  "File:Ela Beach May 2015.jpg": { x: 0.6, y: 0.6 },
+  "File:Tavurvur volcano 3.jpg": { x: 0.45, y: 0.5 },
+  "File:Rabaul from Vulcanology Observatory.jpg": { x: 0.4, y: 0.5 },
+  "File:ext-rabaul-barge-tunnel.jpg": { x: 0.55, y: 0.55 },
+  "File:Mount Uluman.jpg": { x: 0.5, y: 0.6, zoom: 1.3 },
+  "File:ext-madang-central-market.jpg": { x: 0.6, y: 0.55 },
+  "File:Louisiadearchipelago.JPG": { x: 0.6, y: 0.35, zoom: 1.6 },
+  "File:Alotau memorial-ww2.jpg": { x: 0.4, y: 0.5 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -1581,6 +1592,9 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Kokoda": "Kokoda Gate.jpg",
   "Maprik": "Haus Tambaran - Maprik Distrikt, Papua Neuguinea.jpg",
   "Sepik": "Sepik River IMG 2097.jpg",
+  "Port Moresby": "Port moresby (5986697553).jpg",
+  "Rabaul": "Rabaul from Vulcanology Observatory.jpg",
+  "Kokoda Track": "Kokoda Gate.jpg",
 };
 
 /**
@@ -1660,4 +1674,6 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Kiunga, Papua New Guinea",
   "Lake Murray (Papua New Guinea)",
   "Tonda Wildlife Management Area",
+  "Madang",
+  "Alotau",
 ]);
