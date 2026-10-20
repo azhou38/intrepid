@@ -1,22 +1,38 @@
-import React, { memo, useEffect, useMemo, useRef, useState } from 'react';
+import React, { memo, useEffect, useMemo, useReducer, useRef } from 'react';
 import MapboxGL from '@rnmapbox/maps';
+import { cameraStore } from './cameraStore';
 
-// A ShapeSource whose features fade in when they join and fade out when they leave, instead of cutting.
+// A ShapeSource whose pins follow the camera's live zoom and fade in and out natively.
 //
-// A native symbol vanishes the instant its feature leaves the source, and appears the instant it joins. This component
-// diffs the features it is given by id: a new one is stepped up from opacity 0, a removed one is kept (its last copy) and
-// stepped down to 0, then dropped. Each feature carries `o` (its opacity, read by the layers as a data-driven opacity),
-// `fade` (1 while mid-fade) and `dir` (1 joining, -1 leaving, 0 steady). The stepping runs here, once per animation frame,
-// and re-renders only this component, never the screen around it. A feature whose `nofade` property is truthy (a pin that
-// is invisible anyway, e.g. behind its zoom gate) comes and goes at once. The first render never fades.
+// Two problems this solves. (1) Which pins show at a zoom threshold (a destination's own default view, where its photo
+// pin gives way to its spot pins) used to be decided only when the whole map screen re-rendered, which during a pinch runs
+// well behind the camera: pins swapped once the gesture had more or less ended. Here a feature may carry `zmin` (shown
+// from this zoom) and `zmax` (hidden from this zoom); the screen hands over features a little beyond the threshold, and
+// this component, subscribed to the live camera zoom (cameraStore), shows or hides them the moment the camera crosses.
+// (2) Fades stepped through the source data (a per-feature opacity re-sent every frame) never drew on a large source: the
+// map applies data updates asynchronously, so only the end state showed. Instead a feature that joins is put on an
+// "in" slot layer whose constant opacity is then switched 0 → 1, and one that leaves is moved to an "out" slot layer
+// switched 1 → 0; the map animates a constant opacity change itself (the layer's opacity transition), on the render
+// thread, at frame rate. When the fade has finished the joined feature moves to the main layers and the slot resets.
 //
-//   <FadingShapeSource id="spotPins" features={features} fadeInMs={160} fadeOutMs={130} onPress={…}>…layers…</FadingShapeSource>
+// `layers(slot, opacity, ms)` renders the layers for one slot: slot '' is the main set (opacity 1, collision as usual);
+// the slot layers must filter on ['==', ['get', 'slot'], slot], take the given constant opacity with a transition of
+// `ms`, and allow overlap (a pin mid-fade must neither push nor be pushed). A feature with `nofade` set (a pin that is
+// invisible anyway, e.g. behind its zoom gate) never fades. The first render never fades.
 
 type F = GeoJSON.Feature<GeoJSON.Point>;
-type Entry = { f: F; dir: -1 | 0 | 1; start: number; from: number };
+const IN_SLOTS = ['in0', 'in1'];
+const OUT_SLOTS = ['out0', 'out1'];
+type SlotPhase = 'idle' | 'arming' | 'running' | 'resetting';
+type Slot = { phase: SlotPhase; opacity: number; timers: any[] };
+
+const shownAt = (f: F, z: number) => {
+  const p = f.properties ?? {};
+  return (p.zmin === undefined || p.zmin === null || z >= p.zmin) && (p.zmax === undefined || p.zmax === null || z < p.zmax);
+};
 
 export const FadingShapeSource = memo(function FadingShapeSource({
-  id, features, fadeInMs = 160, fadeOutMs = 130, hitbox, onPress, children,
+  id, features, fadeInMs = 160, fadeOutMs = 130, hitbox, onPress, layers,
 }: {
   id: string;
   features: F[];
@@ -24,69 +40,105 @@ export const FadingShapeSource = memo(function FadingShapeSource({
   fadeOutMs?: number;
   hitbox?: { width: number; height: number };
   onPress?: (e: any) => void;
-  children: React.ReactElement | React.ReactElement[];
+  layers: (slot: string, opacity: number, ms: number) => React.ReactElement[];
 }) {
-  const stRef = useRef<{ map: Map<string, Entry>; init: boolean; prev: F[] | null }>({ map: new Map(), init: false, prev: null });
-  const [tick, setTick] = useState(0);
-  const st = stRef.current;
+  const [, bump] = useReducer((n: number) => n + 1, 0);
+  const st = useRef({
+    init: false,
+    // key -> the feature as last given, and the slot it is drawn on ('' = main)
+    entries: new Map<string, { f: F; slot: string }>(),
+    slots: new Map<string, Slot>([...IN_SLOTS.map(s => [s, { phase: 'idle' as SlotPhase, opacity: 0, timers: [] as any[] }] as const),
+      ...OUT_SLOTS.map(s => [s, { phase: 'idle' as SlotPhase, opacity: 1, timers: [] as any[] }] as const)]),
+    visibleSig: '',
+    features,
+  }).current;
+  st.features = features;
 
-  // Diff the incoming features against the last set (only when the prop changes, not on every animation frame).
-  if (st.prev !== features) {
-    const now = Date.now();
-    const present = new Set<string>();
-    for (const f of features) {
-      const key = String(f.id ?? f.properties?.id);
-      present.add(key);
-      const e = st.map.get(key);
-      const fades = st.init && !f.properties?.nofade;
-      if (!e) st.map.set(key, { f, dir: fades ? 1 : 0, start: now, from: 0 });
-      else {
-        if (e.dir === -1) { e.from = fades ? cur(e, now, fadeInMs, fadeOutMs) : 1; e.start = now; e.dir = fades ? 1 : 0; }
-        e.f = f;
-      }
+  // Which features are shown at the live zoom, and a cheap signature of that set.
+  const visibleAt = (z: number) => {
+    const vis: F[] = [];
+    for (const f of st.features) if (shownAt(f, z)) vis.push(f);
+    return vis;
+  };
+  const sigOf = (vis: F[]) => vis.map(f => String(f.id ?? f.properties?.id)).join('|');
+
+  // Follow the camera: re-render only when the shown set changes.
+  useEffect(() => cameraStore.subscribe(z => {
+    const s = sigOf(visibleAt(z));
+    if (s !== st.visibleSig) bump();
+  }), []);   // eslint-disable-line react-hooks/exhaustive-deps
+
+  const later = (slot: Slot, fn: () => void, ms: number) => { slot.timers.push(setTimeout(fn, ms)); };
+  const afterFrames = (slot: Slot, fn: () => void) => {
+    // Two frames: the data update that moved the features onto the slot reaches the map before the opacity switch.
+    slot.timers.push(requestAnimationFrame(() => slot.timers.push(requestAnimationFrame(fn))));
+  };
+
+  // Diff the shown set against what is drawn, assigning joiners and leavers to slots.
+  const vis = visibleAt(cameraStore.zoom);
+  st.visibleSig = sigOf(vis);
+  const present = new Set<string>();
+  const freeSlot = (names: string[]) => names.find(n => st.slots.get(n)!.phase === 'idle' || st.slots.get(n)!.phase === 'arming');
+  for (const f of vis) {
+    const key = String(f.id ?? f.properties?.id);
+    present.add(key);
+    const e = st.entries.get(key);
+    if (!e) {
+      const s = st.init && !f.properties?.nofade ? freeSlot(IN_SLOTS) : undefined;
+      st.entries.set(key, { f, slot: s ?? '' });
+      if (s) st.slots.get(s)!.phase = 'arming';
+    } else {
+      e.f = f;
+      if (OUT_SLOTS.includes(e.slot)) e.slot = '';   // came back while fading out: shown again at once
     }
-    for (const [key, e] of st.map) {
-      if (present.has(key) || e.dir === -1) continue;
-      if (!st.init || e.f.properties?.nofade) { st.map.delete(key); continue; }
-      e.from = cur(e, now, fadeInMs, fadeOutMs); e.start = now; e.dir = -1;
-    }
-    st.init = true;
-    st.prev = features;
   }
-
-  const now = Date.now();
-  let active = false;
-  const out: F[] = [];
-  for (const [key, e] of st.map) {
-    const o = cur(e, now, fadeInMs, fadeOutMs);
-    if (e.dir === -1 && o <= 0) { st.map.delete(key); continue; }
-    if (e.dir === 1 && o >= 1) e.dir = 0;
-    if (e.dir !== 0) active = true;
-    out.push(e.dir === 0 && (e.f.properties?.o ?? 1) === 1 && !e.f.properties?.fade ? e.f
-      : { ...e.f, properties: { ...e.f.properties, o: Math.round(o * 1000) / 1000, fade: e.dir !== 0 ? 1 : 0, dir: e.dir } });
+  for (const [key, e] of st.entries) {
+    if (present.has(key) || OUT_SLOTS.includes(e.slot)) continue;
+    const s = st.init && !e.f.properties?.nofade ? freeSlot(OUT_SLOTS) : undefined;
+    if (!s) { st.entries.delete(key); continue; }
+    e.slot = s;
+    st.slots.get(s)!.phase = 'arming';
   }
-  // The steady features are passed through unchanged, so a frame where nothing fades hands Mapbox the same objects.
-  const shape = useMemo(() => ({ type: 'FeatureCollection' as const, features: out }),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [features, tick]);
+  st.init = true;
 
+  // Start the fade of any slot that just received features.
   useEffect(() => {
-    if (!active) return;
-    const raf = requestAnimationFrame(() => setTick(t => t + 1));
-    return () => cancelAnimationFrame(raf);
+    for (const [name, slot] of st.slots) {
+      if (slot.phase !== 'arming') continue;
+      slot.phase = 'running';
+      const isIn = IN_SLOTS.includes(name), ms = isIn ? fadeInMs : fadeOutMs;
+      afterFrames(slot, () => {
+        slot.opacity = isIn ? 1 : 0; bump();
+        later(slot, () => {
+          // Done: joiners move to the main layers, leavers are dropped; then the empty slot resets to its rest opacity.
+          for (const [key, e] of st.entries) if (e.slot === name) { if (isIn) e.slot = ''; else st.entries.delete(key); }
+          bump();
+          afterFrames(slot, () => {
+            slot.phase = 'resetting'; slot.opacity = isIn ? 0 : 1; bump();
+            later(slot, () => { slot.phase = 'idle'; slot.timers = []; }, ms + 20);
+          });
+        }, ms + 20);
+      });
+    }
   });
+  useEffect(() => () => { for (const s of st.slots.values()) for (const t of s.timers) { clearTimeout(t); cancelAnimationFrame(t); } }, []);   // eslint-disable-line react-hooks/exhaustive-deps
 
+  const drawn: F[] = [];
+  for (const e of st.entries.values()) drawn.push(e.slot === (e.f.properties?.slot ?? '') ? e.f : { ...e.f, properties: { ...e.f.properties, slot: e.slot } });
+  const sig = drawn.map(f => `${f.id ?? f.properties?.id}:${f.properties?.slot}`).join('|');
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const shape = useMemo(() => ({ type: 'FeatureCollection' as const, features: drawn }), [features, sig]);
+
+  const children: React.ReactElement[] = [...layers('', 1, 0)];
+  for (const name of [...IN_SLOTS, ...OUT_SLOTS]) {
+    const slot = st.slots.get(name)!;
+    children.push(...layers(name, slot.opacity, IN_SLOTS.includes(name) ? fadeInMs : fadeOutMs));
+  }
   return (
     <MapboxGL.ShapeSource id={id} shape={shape} hitbox={hitbox} onPress={onPress}>
       {children}
     </MapboxGL.ShapeSource>
   );
 });
-
-function cur(e: Entry, now: number, inMs: number, outMs: number) {
-  if (e.dir === 1) return Math.min(1, e.from + (now - e.start) / inMs);
-  if (e.dir === -1) return Math.max(0, e.from - (now - e.start) / outMs);
-  return 1;
-}
 
 export default FadingShapeSource;
