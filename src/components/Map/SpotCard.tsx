@@ -11,6 +11,8 @@ import { titleStatGap } from '../../utils/titleStatGap';
 import { formatSpotCost, formatVisitTime, spotPhotoTitle, type Spot } from '../../data/spots';
 import { useVisitIndex } from '../../store';
 import { thumbCache, getOrFetchWikiThumbnail } from '../../utils/photoCache';
+import { NO_PHOTO } from '../../data/imageOverrides';
+import PhotoPlaceholder from './PhotoPlaceholder';
 
 // Spot card for the destination sheet's Spots tab. Deliberately the same card as the destination
 // cards in the country sheet — square, photo with the name in white serif over a bottom gradient,
@@ -72,6 +74,7 @@ function SpotCard({ spot, onPress, width }: {
       {/* Border color matches the shadow's own visited-status tint above. */}
       <View style={[styles.cardClip, isVisited ? { borderColor: '#059669' } : { borderColor: '#9CA3AF' }]}>
         <View style={[styles.cardTop, { height: width }]}>
+          {!photoUrl && NO_PHOTO.has(spotPhotoTitle(spot)) && <PhotoPlaceholder icon={spot.icon} category={spot.category} />}
           {photoUrl && (
             <FadeInImage
               instant={photoWasCachedRef.current}

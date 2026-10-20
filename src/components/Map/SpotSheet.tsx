@@ -40,6 +40,7 @@ import FadeInImage from './FadeInImage';
 import SpotCard from './SpotCard';
 import { sheetPose } from './sheetPose';
 import EntityPhoto from './EntityPhoto';
+import PhotoPlaceholder from './PhotoPlaceholder';
 import {
   VisitCardList, VisitModuleSheet, PhotoGalleryModal,
   useDeferredMount,
@@ -1157,6 +1158,7 @@ isVisited ? (
               <EntityPhoto
                 cacheKey={activePhotoKey} cache={photoCache} load={loadActivePhoto}
                 subject={photoSubject(spotPhotoTitle(activeSpot))}
+                fallback={<PhotoPlaceholder icon={activeSpot.icon} category={activeSpot.category} />}
               />
               <View pointerEvents="none" style={[st.heroTopFade, { height: insets.top + 80 }]}>
                 <Svg style={StyleSheet.absoluteFill}>
@@ -1416,7 +1418,7 @@ isVisited ? (
           style={[st.peekStrip, peekOpacityStyle]}
         >
           <Pressable style={StyleSheet.absoluteFill} onPress={() => { if (isPressBlocked?.()) return; snapToCollapsedRef.current(); }}>
-            <EntityPhoto instant placeholderColor="#111827" cacheKey={activePhotoKey} cache={photoCache} load={loadActivePhoto} subject={photoSubject(spotPhotoTitle(activeSpot))} />
+            <EntityPhoto instant placeholderColor="#111827" cacheKey={activePhotoKey} cache={photoCache} load={loadActivePhoto} subject={photoSubject(spotPhotoTitle(activeSpot))} fallback={<PhotoPlaceholder icon={activeSpot.icon} category={activeSpot.category} />} />
             <View pointerEvents="none" style={st.peekScrim} />
             <View pointerEvents="none" style={st.peekPillRow}>
               <View style={st.peekPill} />

@@ -38,6 +38,7 @@ import CircleFlag from '../CircleFlag';
 import { sheetPose } from './sheetPose';
 import { CARD_SCRIM_ABOVE, cardScrimStops } from './cardScrim';
 import EntityPhoto from './EntityPhoto';
+import PhotoPlaceholder from './PhotoPlaceholder';
 import { photoSubject } from '../../utils/subjectCrop';
 import ClimateDetailModal from './ClimateDetailModal';
 import { MONTHS_SHORT } from '../../utils/travelData';
@@ -663,6 +664,7 @@ function DestinationSheet({
           load={() => getOrFetchWikiThumbnail(`pick_spot_${spot.id}`, thumbCache, spotPhotoTitle(spot), 300)}
           subject={photoSubject(spotPhotoTitle(spot))}
           placeholderColor="#F3F4F6"
+          fallback={<PhotoPlaceholder icon={spot.icon} category={spot.category} />}
         />
       ),
     })),
@@ -1455,6 +1457,7 @@ function DestinationSheet({
                 cache={photoCache}
                 load={() => getOrFetchWikiThumbnail(destination.id, photoCache, destination.name, HEADER_PX)}
                 subject={photoSubject(destination.name)}
+                fallback={<PhotoPlaceholder icon={destination.icon} category={destination.category} />}
               />
 
               {/* Ambient scrim so text is always legible */}

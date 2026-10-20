@@ -117,6 +117,8 @@ import CountrySheet from '../components/Map/CountrySheet';
 import ExploreSheet from '../components/Map/ExploreSheet';
 import { thumbCache, photoCache, fetchWikiThumbnail, prefetchWikiThumbnail, prewarmDestinationPins, HEADER_PX } from '../utils/photoCache';
 import DestPinImages, { DEST_PIN_SIZE, destPinImageName, type DestPinImageSpec } from '../components/Map/DestPinImages';
+import PhotoPlaceholder from '../components/Map/PhotoPlaceholder';
+import { NO_PHOTO } from '../data/imageOverrides';
 import SpotPhotoImages, { spotPhotoImageName, type SpotPhotoImageSpec } from '../components/Map/SpotPhotoImages';
 import SpotPinImages, { SPOT_MINI_PIN_UNVISITED, SPOT_MINI_PIN_VISITED } from '../components/Map/SpotPinImages';
 
@@ -382,6 +384,7 @@ const SpotMarker = memo(function SpotMarker({ spot, isVisited, isSelected, exiti
               </Svg>
               <View style={[styles.spotPinBubble, { width: bubbleSize, height: bubbleSize, borderRadius: bubbleSize / 2, borderColor: ringColor }]}>
                 <View style={[styles.spotPinImgClip, { width: bubbleSize - 4, height: bubbleSize - 4, borderRadius: (bubbleSize - 4) / 2 }]}>
+                  {!photoUrl && NO_PHOTO.has(spotPhotoTitle(spot)) && <PhotoPlaceholder icon={spot.icon} category={spot.category} size={bubbleSize - 4} />}
                   {photoUrl && (
                     <PinPhoto
                       instant={photoWasCachedRef.current}

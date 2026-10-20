@@ -6,6 +6,8 @@ import PinPhoto from './PinPhoto';
 import { photoSubject } from '../../utils/subjectCrop';
 import { spotPhotoTitle, type Spot } from '../../data/spots';
 import { thumbCache, fetchWikiThumbnail } from '../../utils/photoCache';
+import { NO_PHOTO } from '../../data/imageOverrides';
+import PhotoPlaceholder from './PhotoPlaceholder';
 
 // A spot's photo pin drawn by a native symbol layer (MapScreen's spotPhotos), so Mapbox decides on the render thread,
 // every frame, which pins fit and fades them in and out with the camera, the way Google Maps does. Each pin's look
@@ -60,6 +62,7 @@ const SpotPhotoImage = memo(function SpotPhotoImage({ spec }: { spec: SpotPhotoI
         </Svg>
         <View collapsable={false} style={[st.bubble, { borderColor: ring }]}>
           <View collapsable={false} style={st.clip}>
+            {!url && NO_PHOTO.has(spotPhotoTitle(spot)) && <PhotoPlaceholder icon={spot.icon} category={spot.category} size={SPOT_PHOTO_BUBBLE - 4} />}
             {url && <PinPhoto instant subject={photoSubject(spotPhotoTitle(spot))} source={{ uri: url }} style={StyleSheet.absoluteFill as any} onLoad={snap} resizeMode="cover" />}
           </View>
         </View>

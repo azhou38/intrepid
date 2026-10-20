@@ -17,7 +17,7 @@ import type { Subject } from '../../utils/subjectCrop';
 // this small component, so a photo arriving re-renders only the photo, never the sheet around it.
 export default function EntityPhoto({
   cacheKey, cache, load, instant, scrim, placeholderColor, resizeMode = 'cover', style = StyleSheet.absoluteFill,
-  subject,
+  subject, fallback,
 }: {
   cacheKey: string;                                   // identifies the entity (and is the photoCache key)
   cache: Map<string, string>;
@@ -29,9 +29,12 @@ export default function EntityPhoto({
   style?: StyleProp<ImageStyle>;
   // Where the photo's subject sits (utils/subjectCrop): the 'cover' crop is placed to keep it near the middle.
   subject?: Subject;
+  // Shown (instead of the plain placeholder) once the load has settled with NO photo at all: the place is deliberately photoless.
+  fallback?: React.ReactNode;
 }) {
   const cached = cache.get(cacheKey) ?? null;
   const [loaded, setLoaded] = useState<{ key: string; url: string } | null>(null);
+  const [noneKey, setNoneKey] = useState<string | null>(null);
   const url = cached ?? (loaded?.key === cacheKey ? loaded.url : null);
 
   // Was this entity's photo already cached the moment it became current? A cache hit should appear immediately,
@@ -42,14 +45,14 @@ export default function EntityPhoto({
   useEffect(() => {
     if (cache.has(cacheKey)) return;
     let stale = false;
-    load().then(u => { if (!stale && u) setLoaded({ key: cacheKey, url: u }); });
+    load().then(u => { if (stale) return; if (u) setLoaded({ key: cacheKey, url: u }); else setNoneKey(cacheKey); });
     return () => { stale = true; };
   }, [cacheKey]);
 
   const placeholder = placeholderColor
     ? <View style={[StyleSheet.absoluteFill, { backgroundColor: placeholderColor }]} />
     : null;
-  if (!url) return placeholder;
+  if (!url) return fallback && noneKey === cacheKey ? <>{fallback}</> : placeholder;
 
   return (
     <>

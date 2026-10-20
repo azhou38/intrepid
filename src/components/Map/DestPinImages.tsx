@@ -5,6 +5,8 @@ import { photoSubject } from '../../utils/subjectCrop';
 import MapboxGL from '@rnmapbox/maps';
 import type { Destination } from '../../types';
 import { thumbCache, fetchWikiThumbnail } from '../../utils/photoCache';
+import { NO_PHOTO } from '../../data/imageOverrides';
+import PhotoPlaceholder from './PhotoPlaceholder';
 
 // Destination photo pins are drawn by a native Mapbox SymbolLayer (see MapScreen's destPhotoSymbols), so Mapbox
 // itself decides — every frame, on the render thread — which pins and names collide and fades them in and out, the
@@ -55,6 +57,7 @@ const DestPinImage = memo(function DestPinImage({ spec }: { spec: DestPinImageSp
     <MapboxGL.Image name={name} ref={imageRef as any}>
       <View collapsable={false} style={st.box}>
         <View collapsable={false} style={[st.disc, { borderColor: ring }, selected && st.discSelected]}>
+          {!url && NO_PHOTO.has(dest.name) && <PhotoPlaceholder icon={dest.icon} category={dest.category} size={DEST_PIN_SIZE - BORDER * 2} />}
           {url && <PinPhoto instant subject={photoSubject(dest.name)} source={{ uri: url }} style={st.photo} onLoad={snap} resizeMode="cover" />}
         </View>
         {badge > 0 && (
