@@ -128,10 +128,6 @@ const EXPLORE_COLOR  = '#6366F1';
 // Pin-plan look-ahead while the camera zooms out (see planZoom / zoomOutLead).
 const PLAN_LAG_SEC = 0.6;         // assumed delay between a camera frame and the render that reacts to it
 const PLAN_LEAD_MAX_ZOOM = 4;     // cap on the predicted outward travel
-// The destination <-> spot handoff reads ahead only on a fast zoom-out (see handoffZoom): from this predicted lead, and
-// never more than HANDOFF_LEAD_MAX levels.
-const HANDOFF_LEAD_MIN = 0.3;
-const HANDOFF_LEAD_MAX = 0.75;
 // A destination within this many zoom levels of its own default view is drawn on its own handoff layer (see handoffDests),
 // at most HANDOFF_MAX at once.
 const HANDOFF_BAND = 1.0;
@@ -1811,11 +1807,7 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // or, for a close, the known target — never the velocity prediction above: a pinch that merely starts to zoom out would
   // otherwise read as already past the destination's default zoom, flash its pin in and its spot pins out, then undo it
   // when the gesture settled.
-  //   Exception: a FAST pinch out (a zoom-out lead of at least HANDOFF_LEAD_MIN) reads up to HANDOFF_LEAD_MAX levels ahead,
-  //   so the spot pins start fading out (and the destination's pin comes back) while the camera is still moving, instead
-  //   of a render later. A pinch that merely starts to zoom out stays below the minimum and changes nothing.
-  const handoffLead = zoomOutLead >= HANDOFF_LEAD_MIN ? Math.min(zoomOutLead, HANDOFF_LEAD_MAX) : 0;
-  const handoffZoom = closeTarget !== null ? Math.min(camZoom, closeTarget) : camZoom - handoffLead;
+  const handoffZoom = closeTarget !== null ? Math.min(camZoom, closeTarget) : camZoom;
   // How much wider the view a close is flying to is than the one the camera reports right now (1 when no close is under
   // way). The viewport spot query and the spot pin plan scale the live bounds by it, so they work in the target view from
   // the first frame: the bounds lag the camera, and a close used to show only the few spots inside the old zoomed-in view
