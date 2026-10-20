@@ -2796,13 +2796,13 @@ const destItems = useMemo((): DestItem[] =>
       const visited = visitIndex.isSpotVisited(sp.id);
       const img = spotPhotoImageName(sp.id, visited);
       if (!specs.has(img) && fresh < MAX_NEW_SPOT_IMAGES) { specs.set(img, { name: img, spot: sp, visited }); added = true; fresh++; }
-      const photoZoom = SPOT_PHOTO_ZOOM_BY_ID[sp.id];
-      const early = !must.has(sp.id) && photoZoom !== undefined && handoffZoom < photoZoom - ZOOM_EPSILON;
-      if (specs.has(img) && !early) wantsPhoto.set(sp.id, img);
+      // Whether its photo pin is shown yet (its photo zoom) is read live from the camera (the photo feature's zmin below).
+      if (specs.has(img)) wantsPhoto.set(sp.id, img);
     }
     // A spot handed over ahead of its reveal (PIN_LIVE_LEAD) is not on screen yet: it goes last, so it never takes a photo
     // slot from a pin that is showing.
-    const pending = (sp: Spot) => !must.has(sp.id) && sp.id !== nearCtx?.anchor.id && !isSpotRevealed(sp, handoffZoom);
+    const pending = (sp: Spot) => !must.has(sp.id) && sp.id !== nearCtx?.anchor.id
+      && (!isSpotRevealed(sp, handoffZoom) || handoffZoom < (SPOT_PHOTO_ZOOM_BY_ID[sp.id] ?? 0) - ZOOM_EPSILON);
     const spotGroup = (sp: Spot) => must.has(sp.id) ? 0 : pending(sp) ? 3 : prevPhoto.has(sp.id) ? 1 : 2;
     const photoOrder = sorted.filter(sp => wantsPhoto.has(sp.id)).sort((x, y) => spotGroup(x) - spotGroup(y) || rank(x) - rank(y));
     const photoSet = new Set<string>();
@@ -2818,23 +2818,41 @@ const destItems = useMemo((): DestItem[] =>
     spotPhotoShownRef.current = new Set([...photoSet].filter(id => { const sp = SPOT_BY_ID.get(id); return !!sp && !pending(sp); }));
     for (const sp of sorted) {
       const visited = visitIndex.isSpotVisited(sp.id);
-      // Its photo pin when its image is registered and it is not revealed early; Mapbox shows it where it fits and the small
-      // pin where it does not. The plan above only sets the priority (planRank), so pins already showing keep their photos.
-      const img = wantsPhoto.get(sp.id) ?? '';
+      // Each spot is TWO features, both read against the live camera zoom by FadingShapeSource and fading in and out like
+      // the destination pins: its small pin from its reveal zoom, and (once its image is registered) its photo pin from its
+      // own photo zoom. Mapbox's collision pass then shows the photo pin where it fits, with its own fade, and the small pin
+      // (beneath, no overlap) yields to it; where the photo does not fit the small pin shows. Nothing swaps in the data, so
+      // nothing pops.
+      const pinned = must.has(sp.id) || !!nearCtx?.spots.some(n => n.id === sp.id);
+      const revealZ = (SPOT_REVEAL_ZOOM_BY_ID[sp.id] ?? 0) - ZOOM_EPSILON;
+      const photoZ = Math.max(revealZ, (SPOT_PHOTO_ZOOM_BY_ID[sp.id] ?? SPOT_REVEAL_ZOOM_BY_ID[sp.id] ?? 0) - ZOOM_EPSILON);
+      const sort = cameraMovingRef.current && spotSortFrozenRef.current
+        ? (spotSortFrozenRef.current.get(sp.id) ?? 200_000 + (planRank.get(sp.id) ?? 0))
+        : (planRank.get(sp.id) ?? 100_000 + rank(sp));
+      const geometry = { type: 'Point' as const, coordinates: [sp.coordinates.longitude, sp.coordinates.latitude] };
       features.push({
         type: 'Feature',
-        id: sp.id,
-        geometry: { type: 'Point', coordinates: [sp.coordinates.longitude, sp.coordinates.latitude] },
+        id: `${sp.id}#m`,
+        geometry,
         properties: {
           id: sp.id,
           mini: visited ? SPOT_MINI_PIN_VISITED : SPOT_MINI_PIN_UNVISITED,
+          img: '',
+          sort,
+          ...(pinned ? {} : { zmin: revealZ }),
+        },
+      });
+      const img = wantsPhoto.get(sp.id);
+      if (img) features.push({
+        type: 'Feature',
+        id: sp.id,
+        geometry,
+        properties: {
+          id: sp.id,
           img,
           label: spotLabelLines(sp.name).join('\n'),
-          sort: cameraMovingRef.current && spotSortFrozenRef.current
-            ? (spotSortFrozenRef.current.get(sp.id) ?? 200_000 + (planRank.get(sp.id) ?? 0))
-            : (planRank.get(sp.id) ?? 100_000 + rank(sp)),
-          // Shown from its reveal zoom, read against the live camera zoom (see visibleSpots / FadingShapeSource).
-          ...(must.has(sp.id) || nearCtx?.spots.some(n => n.id === sp.id) ? {} : { zmin: (SPOT_REVEAL_ZOOM_BY_ID[sp.id] ?? 0) - ZOOM_EPSILON }),
+          sort,
+          ...(pinned ? {} : { zmin: photoZ }),
         },
       });
     }
@@ -2852,11 +2870,11 @@ const destItems = useMemo((): DestItem[] =>
       }
     }
     if (added) spotPhotoSpecListRef.current = [...specs.values()];
-    if (!cameraMovingRef.current) spotSortFrozenRef.current = new Map(features.map(f => [String(f.id), f.properties!.sort as number]));
+    if (!cameraMovingRef.current) spotSortFrozenRef.current = new Map(features.map(f => [String(f.properties!.id), f.properties!.sort as number]));
     // visibleSpots is rebuilt on every camera frame (it follows the live bounds), but its CONTENT rarely changes: hand the
     // native source the same shape object unless a feature or its look did, so a pan or zoom doesn't re-push the whole
     // collection to Mapbox each frame.
-    const sig = features.map(f => `${f.properties!.id}|${f.properties!.img}|${f.properties!.mini}|${f.properties!.sort}`).join(',');
+    const sig = features.map(f => `${f.id}|${f.properties!.img}|${f.properties!.mini ?? ''}|${f.properties!.sort}|${f.properties!.zmin ?? ''}`).join(',');
     const last = lastSpotShapeRef.current;
     if (last && last.sig === sig && last.specs === spotPhotoSpecListRef.current) return last.value;
     const value = { shape: { type: 'FeatureCollection' as const, features }, specs: spotPhotoSpecListRef.current };
@@ -5203,7 +5221,7 @@ const destItems = useMemo((): DestItem[] =>
                 key={`spotMiniPins${slot}`}
                 id={main ? 'spotMiniPins' : `spotMiniPins-${slot}`}
                 belowLayerID={joining ? 'spotMiniPins' : 'destStampCircles'}
-                filter={inSlot as any}
+                filter={['all', ['==', ['get', 'img'], ''], inSlot] as any}
                 style={{
                   iconImage: ['get', 'mini'] as any,
                   iconAnchor: 'bottom',
@@ -5219,7 +5237,9 @@ const destItems = useMemo((): DestItem[] =>
               <MapboxGL.SymbolLayer
                 key={`spotPhotos${slot}`}
                 id={main ? 'spotPhotos' : `spotPhotos-${slot}`}
-                belowLayerID={joining ? 'spotMiniPins' : 'destStampCircles'}
+                // A joining photo pin sits just beneath the main photo pins and above every small pin: it takes only room the
+                // showing photo pins leave, and the small pins (its own included) yield to it.
+                belowLayerID={joining ? 'spotPhotos' : 'destStampCircles'}
                 filter={['all', ['!=', ['get', 'img'], ''], inSlot] as any}
                 style={{
                   iconImage: ['get', 'img'] as any,
