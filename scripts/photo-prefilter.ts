@@ -8,7 +8,7 @@
 //   • dated before about 2000, or from an archive (national library, Burton Brothers, "Historical images of …");
 //   • in a Commons category for maps, drawings, paintings, lithographs, satellite imagery, logos, flags, diagrams;
 //   • black-and-white or sepia (mean colour saturation, and the share of the colour that is one hue);
-//   • below the minimum width for its role (header 2000 px, why-visit 1280 px, spot 960 px) or, for a header, outside
+//   • below the minimum width for its role (header 1500 px, why-visit 1280 px, spot 960 px) or, for a header, outside
 //     the aspect range;
 //   • the same file used for two different DESTINATIONS' places. One destination's own header, why-visit photos and spots may share
 //     a file on purpose (the best photo of the Waitomo glowworm caves is the Waitomo header, a why-visit photo and the spot's).

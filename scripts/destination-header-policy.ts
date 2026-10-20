@@ -16,7 +16,7 @@ import { DESTINATIONS } from '../src/data/destinations';
 import { NO_PHOTO, WIKI_IMAGE_OVERRIDES } from '../src/data/imageOverrides';
 
 // Header files narrower than this look soft on a phone at full sheet width.
-export const HEADER_MIN_WIDTH = 2000;
+export const HEADER_MIN_WIDTH = 1500;
 // Width/height. Outside this range the phone's near-square crop throws most of the photo away.
 export const HEADER_ASPECT_MIN = 0.6;
 export const HEADER_ASPECT_MAX = 2.0;
