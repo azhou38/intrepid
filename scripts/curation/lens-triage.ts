@@ -9,6 +9,7 @@
 //   search   no photo, the pre-filter fails or flags it, or it's named with --flag → the searcher finds candidates
 //   confirm  a photo nobody has judged yet → one judge looks at the current photo only, and only a rejection leads
 //            to a search
+//   (after photo-prove.py: `proven` = the script proved the place, size, date and colour; no judge; `search` may also come from it)
 //   skip     scripts/curation/photo-verdicts.json already accepts this exact file for this slot (a judge, both judges
 //            or the owner did) → nobody looks at it again
 // Writes <out>/<group>/task.json and prints the counts. Pass the pre-filter's --json output with --prefilter (run

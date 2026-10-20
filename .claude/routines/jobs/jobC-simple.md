@@ -1,0 +1,4 @@
+# Job: Pipeline C (writing), bios for the SIMPLE tier
+Repo: the repository root you were started in (edit NOTHING except `curation/<branch>/quill/<group>/simple-bios.json`). Input: the `simple` list from `tier-spots.ts` plus each spot's name, category, coordinates, district and the enumerator's source note; up to 40 spots per run. Rules: WRITING.md → "Voice" and the `bio` field (one sentence, at least 10 words, fits three lines of the card: `python3 scripts/curation/bio-fit.py --text "<bio>"`), and never name a source.
+
+Write `[{ "id", "bio" }]`. Say what it is, where, and the one thing that makes it worth a stop, from the source note only; never invent a fact, and never state a fee, hours or a link (the defaults carry those). If a note shows the spot is not simple after all (a fee, an operator, a booking, inside a fee-charging park), write `{ "id", "bio": null, "reroute": "<why>" }` and it goes to the full chain.

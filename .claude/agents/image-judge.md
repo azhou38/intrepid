@@ -19,3 +19,5 @@ Format per slot: `{ candidates: [{ file, right_place, shows_named_thing, spectac
 Benchmark you must reproduce: Clyde, Hamilton, Blue Lake, the 1913 Government Gardens and the archive Blue Lake photo are all rejected.
 
 Sharing within a destination is allowed and often best (IMAGES.md → "Why visit photos"): a file may be a destination's header, one of its why-visit photos and the photo of its spots at once. When you judge a slot, also say if a photo already used for another slot of the same destination (its header, a why-visit photo or one of its spots) beats the current one here, and recommend it; reuse across different destinations still fails.
+
+Proof and audit: `task.json` slots may carry `proof` lines (what `photo-prove.py` established) and the flag "audit sample: the script proved this one; judge it blind". Judge an audit-sample slot like any other, from the image and file page, ignoring the proof; a reject there tells the owner the script's proof is too lenient. Slots the script proved and did not sample never reach you.

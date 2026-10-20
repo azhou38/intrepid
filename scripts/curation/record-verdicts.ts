@@ -2,6 +2,7 @@
 // photo is already accepted (lens-triage.ts reads it). Commit the file with the data change.
 //
 //   npx tsx scripts/curation/record-verdicts.ts --task <group>/task.json --judge1 <group>/judge-1.json [--judge2 <group>/judge-2.json]
+//   npx tsx scripts/curation/record-verdicts.ts --proven <group>/task.json   (slots photo-prove.py proved; by "script")
 //   npx tsx scripts/curation/record-verdicts.ts --owner <slot> <file>     (a photo the owner supplied or chose)
 //
 // What counts as accepted (PIPELINES.md → Pipeline B):
@@ -27,6 +28,16 @@ if (ownerIdx >= 0) {
   if (!slot || !file) { console.error('usage: --owner <slot> <file>'); process.exit(1); }
   book[slot] = { file, verdict: 'accept', by: 'owner', at };
   save(); console.log(`recorded ${slot}: ${file} (owner)`);
+  process.exit(0);
+}
+
+// Photos the script proved (photo-prove.py set their status to `proven`): recorded as accepted by "script", so later runs skip them.
+const provenIdx = args.indexOf('--proven');
+if (provenIdx >= 0) {
+  const task = JSON.parse(readFileSync(args[provenIdx + 1], 'utf8'));
+  let n = 0;
+  for (const s of task.slots) if (s.status === 'proven' && s.current) { book[s.slot] = { file: s.current.file, verdict: 'accept', by: 'script', at }; n++; }
+  save(); console.log(`recorded ${n} proven slots (by script)`);
   process.exit(0);
 }
 
