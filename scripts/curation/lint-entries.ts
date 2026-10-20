@@ -6,6 +6,7 @@
 // Spots
 //   ticketUrl   loads, isn't a captcha wall, and its title or heading names the place (WRITING.md → ticketUrl);
 //               "blocked" means it needs a real browser, not that it's wrong
+//   park-in-park a national park listed as a spot of another national park
 //   no-ticket   charges (costMin > 0) but has no ticketUrl, or has no cost at all and isn't free (never researched)
 //   district    no entry in src/data/spotDistricts.json (the standalone-spot carousel needs it)
 //   pin         round coordinates (three decimals or fewer): a point written from memory, not taken from a map feature
@@ -119,6 +120,8 @@ async function checkWiki(title: string): Promise<string | null> {
     // Real points from a map feature have five or more decimal places.
     const dec = (v: number) => (String(v).split('.')[1] ?? '').length;
     if (s.coordinates && dec(s.coordinates.latitude) <= 3 && dec(s.coordinates.longitude) <= 3) add(it, 'pin', `round coordinates (${s.coordinates.latitude}, ${s.coordinates.longitude}): a memory pin; run scripts/curation/resolve-pin.py`);
+    // A national park is a destination or a standalone spot, never a spot of another national park (Horton Falls NP shipped under Mount Kaputar NP).
+    if (/national park/i.test(s.name) && s.destinationId && /national park/i.test(DESTINATIONS.find(d => d.id === s.destinationId)?.name ?? '')) add(it, 'park-in-park', `a national park under ${s.destinationId}: make it standalone or its own destination`);
     if ((s.costMin ?? 0) > 0 && !s.ticketUrl) add(it, 'no-ticket', 'charges but has no ticketUrl');
     // Neither priced nor free: the cost was never researched (Sea Life Sydney shipped this way, with no link either).
     if (!s.free && s.costMin == null) add(it, 'no-ticket', 'no cost and not free: research the price and the official site');
