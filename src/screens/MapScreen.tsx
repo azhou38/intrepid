@@ -5619,12 +5619,12 @@ const styles = StyleSheet.create({
   // inline — see SpotPin.
   // Selection is shown by shadow alone (the pin keeps its size): a deeper, longer drop shadow under the pin, and a blue glow around it.
   spotPinWrapSelected: {
-    shadowColor: '#000', shadowOpacity: 0.6, shadowRadius: 12,
-    shadowOffset: { width: 0, height: 7 }, elevation: 12,
+    shadowColor: '#000', shadowOpacity: 0.3, shadowRadius: 8,
+    shadowOffset: { width: 0, height: 4 }, elevation: 6,
   },
   spotPinGlow: { alignItems: 'center' },
   spotPinGlowOn: {
-    shadowColor: '#2F6BFF', shadowOpacity: 0.85, shadowRadius: 11,
+    shadowColor: '#2F6BFF', shadowOpacity: 0.4, shadowRadius: 7,
     shadowOffset: { width: 0, height: 0 },
   },
   spotPinBubble: {
