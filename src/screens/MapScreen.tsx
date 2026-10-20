@@ -3710,7 +3710,7 @@ const destItems = useMemo((): DestItem[] =>
   // entered laterally (map pin tap with nothing selected, or search) → zoom out to half the
   // destination's own zoom level instead, no fabricated country sheet in between.
   const handleCloseDestinationSheet = useCallback((toCollapsed?: boolean) => {
-    perfTrace.start('dismiss', selectedDestRef.current?.id ?? '');   // TEMPORARY instrumentation
+    perfTrace.mark('dismiss', 'closeActionStart');   // TEMPORARY instrumentation
     if (destOrigin === 'country') handleCloseDestinationSheetToCountry(toCollapsed);
     else handleCloseDestinationToCountryView();
   }, [destOrigin, handleCloseDestinationSheetToCountry, handleCloseDestinationToCountryView]);
@@ -3885,6 +3885,7 @@ const destItems = useMemo((): DestItem[] =>
   // Back pill: one level up — spot → destination, destination → country, country → world
   const handleBackNav = useCallback(() => {
     if (pressBlocked()) return;   // a pinch finger lifting over the X is not a close
+    perfTrace.start('dismiss', selectedDestRef.current?.id ?? '');   // TEMPORARY instrumentation
     const close = () => {
       if (selectedSpot) {
         handleCloseSpot();
@@ -4654,9 +4655,9 @@ const destItems = useMemo((): DestItem[] =>
     if (n > 0) perfTrace.mark('select', `firstSpotPinsCommitted (${n})`);
   });
   useEffect(() => { if (!selectedDest) perfTrace.mark('dismiss', 'selectionClearedCommitted'); }, [selectedDest]);
-  const onMapProfile = useCallback((_id: string, phase: string, actual: number) => {
+  const onMapProfile = useCallback((id: string, phase: string, actual: number) => {
     const f = perfTrace.name();
-    if (f && perfTrace.active()) perfTrace.mark(f, `render(${phase}) ${actual.toFixed(0)}ms`, false);
+    if (f && perfTrace.active() && actual >= 8) perfTrace.mark(f, `render ${id}(${phase}) ${actual.toFixed(0)}ms`, false);
   }, []);
 
   return (
@@ -4671,6 +4672,7 @@ const destItems = useMemo((): DestItem[] =>
 
       {/* ── MAP ──────────────────────────────────────────────────────────── */}
       {styleResolved && (
+      <React.Profiler id="MapView" onRender={onMapProfile as any}>
       <MapboxGL.MapView
         style={StyleSheet.absoluteFill}
         // Globe at every zoom, never swapped. Mapbox's iOS SDK applies setProjection
@@ -5098,6 +5100,7 @@ const destItems = useMemo((): DestItem[] =>
 
         </>}
       </MapboxGL.MapView>
+      </React.Profiler>
       )}
 
       {/* ── Search backdrop — white fill behind the focused search bar + results, so the
@@ -5315,6 +5318,7 @@ const destItems = useMemo((): DestItem[] =>
           country/destination/spot, exactly like the other sheets are mutually exclusive
           with each other. ─────────────────────────────────────────────────────────────── */}
       {!selectedCountry && !selectedDest && !selectedSpot && !searchFocused && !exploreHeld && (
+        <React.Profiler id="ExploreSheet" onRender={onMapProfile as any}>
         <ExploreSheet
           collapseSignal={peekSheetSignal}
           onSnapStateChange={handleExploreSnapChange}
@@ -5326,10 +5330,12 @@ const destItems = useMemo((): DestItem[] =>
           onScrollYChange={handleExploreScrollY}
           onSearchPress={handleExploreSearchPress}
         />
+        </React.Profiler>
       )}
 
 {/* ── Country sheet ─────────────────────────────────────────────────── */}
       {selectedCountry && !selectedDest && !selectedSpot && (
+        <React.Profiler id="CountrySheet" onRender={onMapProfile as any}>
         <CountrySheet
           key={`country-${sheetSwapKey}`}
           cluster={selectedCountry}
@@ -5358,10 +5364,12 @@ const destItems = useMemo((): DestItem[] =>
           // had anywhere to report to.
           onSnapStateChange={handleSheetSnapStateChange}
         />
+        </React.Profiler>
       )}
 
       {/* ── Unified destination sheet — hidden while a spot sheet is open on top */}
       {mapState !== 'world' && selectedDest && !selectedSpot && (
+        <React.Profiler id="DestinationSheet" onRender={onMapProfile as any}>
         <DestinationSheet
           key={`dest-${sheetSwapKey}`}
           destination={selectedDest}
@@ -5383,10 +5391,12 @@ const destItems = useMemo((): DestItem[] =>
           initialTab={destInitialTab}
           initialSnap={destInitialSnap}
         />
+        </React.Profiler>
       )}
 
       {/* ── Spot sheet — swipeable carousel of the destination's spots, expandable to full */}
       {selectedSpot && spotFocusId && (
+        <React.Profiler id="SpotSheet" onRender={onMapProfile as any}>
         <SpotSheet
           key={`spot-${sheetSwapKey}`}
           spots={carouselSpots}
@@ -5410,6 +5420,7 @@ const destItems = useMemo((): DestItem[] =>
           onGoToList={selectedSpot.destinationId && !nearCtx ? handleGoToListView : undefined}
           collapseSignal={collapseSheetSignal}
         />
+        </React.Profiler>
       )}
 
 {/* ── Outgoing copy of the sheet a country <-> destination swap is replacing — drawn ABOVE the incoming sheet so its slide down is visible while the new one rises beneath it ── */}
