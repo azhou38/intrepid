@@ -1,0 +1,1405 @@
+{
+ "port-moresby-1": {
+  "name": "Port Moresby Nature Park",
+  "region": "png-capital-central-gulf",
+  "add": true,
+  "why": [],
+  "pin": "HIGH",
+  "cost": "ok",
+  "hours": "9:00 AM – 4:00 PM",
+  "cat": "nature",
+  "coordinates": {
+   "lat": -9.405448,
+   "lng": 147.165605
+  },
+  "coordinates_source": "WV Port Moresby listing geo"
+ },
+ "port-moresby-2": {
+  "name": "National Museum and Art Gallery",
+  "region": "png-capital-central-gulf",
+  "add": true,
+  "why": [],
+  "pin": "HIGH",
+  "cost": "ok",
+  "hours": "Mon–Fri 8:30 AM – 3:30 PM, Sun 1:00 PM – 3:00 PM",
+  "cat": "museum",
+  "coordinates": {
+   "lat": -9.425693,
+   "lng": 147.189953
+  },
+  "coordinates_source": "WV Port Moresby listing geo"
+ },
+ "port-moresby-3": {
+  "name": "Ela Beach",
+  "region": "png-capital-central-gulf",
+  "add": true,
+  "why": [],
+  "pin": "MEDIUM",
+  "cost": "free",
+  "hours": "Open 24 hours",
+  "cat": "beach",
+  "coordinates": {
+   "lat": -9.481124,
+   "lng": 147.151751
+  },
+  "coordinates_source": "WV Port Moresby listing geo (Ela Beach Craft Market point on the beach; no OSM \"Ela Beach\" feature found, check)"
+ },
+ "port-moresby-4": {
+  "name": "Bomana War Cemetery",
+  "region": "png-capital-central-gulf",
+  "add": true,
+  "why": [],
+  "pin": "MEDIUM",
+  "cost": "ok",
+  "hours": "8:00 AM – 4:00 PM",
+  "cat": "monument",
+  "coordinates": {
+   "lat": -9.39535,
+   "lng": 147.25309
+  },
+  "coordinates_source": "WV Port Moresby listing geo"
+ },
+ "port-moresby-5": {
+  "name": "National Parliament of Papua New Guinea",
+  "region": "png-capital-central-gulf",
+  "add": true,
+  "why": [],
+  "pin": "MEDIUM",
+  "cost": "ok",
+  "hours": "Weekdays except public holidays",
+  "cat": "landmark",
+  "coordinates": {
+   "lat": -9.428064,
+   "lng": 147.191906
+  },
+  "coordinates_source": "WV Port Moresby listing geo"
+ },
+ "port-moresby-6": {
+  "name": "Gordons Market",
+  "region": "png-capital-central-gulf",
+  "add": true,
+  "why": [],
+  "pin": "MEDIUM",
+  "cost": "ok",
+  "hours": "Daily; mornings best (times not published)",
+  "cat": "market",
+  "coordinates": {
+   "lat": -9.441575,
+   "lng": 147.1958
+  },
+  "coordinates_source": "photon OSM amenity=marketplace \"Gordons Market\" (resolver LOW, hand-graded; verify)"
+ },
+ "port-moresby-7": {
+  "name": "Loloata Island",
+  "region": "png-capital-central-gulf",
+  "add": true,
+  "why": [],
+  "pin": "MEDIUM",
+  "cost": "ok",
+  "hours": "Day passes by advance booking; last ferry back 6:30 PM",
+  "cat": "nature",
+  "coordinates": {
+   "lat": -9.536174,
+   "lng": 147.290343
+  },
+  "coordinates_source": "photon OSM leisure=resort \"Loloata Island Resort\" (the visitor point on the island; resolver LOW, verify)"
+ },
+ "port-moresby-8": {
+  "name": "Adventure Park PNG",
+  "region": "png-capital-central-gulf",
+  "add": false,
+  "why": [
+   "no pin"
+  ],
+  "pin": null,
+  "cost": "ok",
+  "hours": "9:00 AM – 5:00 PM",
+  "cat": "entertainment",
+  "coordinates": null,
+  "coordinates_source": ""
+ },
+ "varirata-national-park": {
+  "name": "Varirata National Park",
+  "region": "png-capital-central-gulf",
+  "add": false,
+  "why": [
+   "no pin"
+  ],
+  "pin": null,
+  "cost": "ok",
+  "hours": "6:00 AM – 6:00 PM",
+  "cat": "nature",
+  "coordinates": null,
+  "coordinates_source": ""
+ },
+ "sogeri-plateau": {
+  "name": "Sogeri Plateau",
+  "region": "png-capital-central-gulf",
+  "add": false,
+  "why": [
+   "no pin"
+  ],
+  "pin": null,
+  "cost": "ok",
+  "hours": "Open 24 hours",
+  "cat": "nature",
+  "coordinates": null,
+  "coordinates_source": ""
+ },
+ "kerema": {
+  "name": "Kerema",
+  "region": "png-capital-central-gulf",
+  "add": true,
+  "why": [],
+  "pin": "HIGH",
+  "cost": "free",
+  "hours": "Open 24 hours",
+  "cat": "landmark",
+  "coordinates": {
+   "lat": -7.95967,
+   "lng": 145.772239
+  },
+  "coordinates_source": "WV Western PNG cities list"
+ },
+ "kikori": {
+  "name": "Kikori",
+  "region": "png-capital-central-gulf",
+  "add": true,
+  "why": [],
+  "pin": "area-centre (Wikipedia/OSM place)",
+  "cost": "free",
+  "hours": "Open 24 hours",
+  "cat": "landmark",
+  "coordinates": {
+   "lat": -7.416667,
+   "lng": 144.233333
+  },
+  "coordinates_source": "WV Western PNG cities list"
+ },
+ "goroka": {
+  "name": "Goroka",
+  "region": "png-highlands",
+  "add": true,
+  "why": [],
+  "pin": "area-centre (Wikipedia/OSM place)",
+  "cost": "free",
+  "hours": "Open 24 hours",
+  "cat": "landmark",
+  "coordinates": {
+   "lat": -6.08333333,
+   "lng": 145.38333333
+  },
+  "coordinates_source": "wikipedia:Goroka"
+ },
+ "mount-hagen": {
+  "name": "Mount Hagen",
+  "region": "png-highlands",
+  "add": true,
+  "why": [],
+  "pin": "MEDIUM",
+  "cost": "free",
+  "hours": "Open 24 hours",
+  "cat": "landmark",
+  "coordinates": {
+   "lat": -5.858784,
+   "lng": 144.2316365
+  },
+  "coordinates_source": "osm place=city node (town centre)"
+ },
+ "kainantu": {
+  "name": "Kainantu",
+  "region": "png-highlands",
+  "add": true,
+  "why": [],
+  "pin": "MEDIUM",
+  "cost": "free",
+  "hours": "Open 24 hours",
+  "cat": "landmark",
+  "coordinates": {
+   "lat": -6.2907745,
+   "lng": 145.8678771
+  },
+  "coordinates_source": "osm place=town node (town centre)"
+ },
+ "mendi": {
+  "name": "Mendi",
+  "region": "png-highlands",
+  "add": true,
+  "why": [],
+  "pin": "area-centre (Wikipedia/OSM place)",
+  "cost": "free",
+  "hours": "Open 24 hours",
+  "cat": "landmark",
+  "coordinates": {
+   "lat": -6.14777778,
+   "lng": 143.65722222
+  },
+  "coordinates_source": "wikipedia:Mendi"
+ },
+ "kundiawa": {
+  "name": "Kundiawa",
+  "region": "png-highlands",
+  "add": true,
+  "why": [],
+  "pin": "MEDIUM",
+  "cost": "free",
+  "hours": "Open 24 hours",
+  "cat": "landmark",
+  "coordinates": {
+   "lat": -6.0190251,
+   "lng": 144.9722522
+  },
+  "coordinates_source": "osm place=city node (town centre)"
+ },
+ "tari": {
+  "name": "Tari",
+  "region": "png-highlands",
+  "add": true,
+  "why": [],
+  "pin": "HIGH",
+  "cost": "free",
+  "hours": "Open 24 hours",
+  "cat": "landmark",
+  "coordinates": {
+   "lat": -5.84524,
+   "lng": 142.946622
+  },
+  "coordinates_source": "osm place=city node (town centre)"
+ },
+ "mount-wilhelm": {
+  "name": "Mount Wilhelm",
+  "region": "png-highlands",
+  "add": true,
+  "why": [],
+  "pin": "MEDIUM",
+  "cost": "assumed-free",
+  "hours": "Daytime guided treks arranged with operators",
+  "cat": "hike",
+  "coordinates": {
+   "lat": -5.7799986,
+   "lng": 145.0295844
+  },
+  "coordinates_source": "osm natural=peak node (MEDIUM; Wikipedia coordinates are rounded)"
+ },
+ "mount-giluwe": {
+  "name": "Mount Giluwe",
+  "region": "png-highlands",
+  "add": true,
+  "why": [],
+  "pin": "HIGH",
+  "cost": "assumed-free",
+  "hours": "Daytime guided climbs arranged with operators",
+  "cat": "hike",
+  "coordinates": {
+   "lat": -6.043176,
+   "lng": 143.886151
+  },
+  "coordinates_source": "osm natural=volcano node (HIGH with Commons)"
+ },
+ "mount-michael": {
+  "name": "Mount Michael",
+  "region": "png-highlands",
+  "add": false,
+  "why": [
+   "no honest bio: Only fact found is that it is the highest point in Eastern Highlands (about 3,615 m) in remote Lufa District; no visitor source, access or activities. Send to review or drop."
+  ],
+  "pin": "MEDIUM",
+  "cost": "assumed-free",
+  "hours": "not published",
+  "cat": "hike",
+  "coordinates": {
+   "lat": -6.4049915,
+   "lng": 145.3148184
+  },
+  "coordinates_source": "osm natural=peak node, Lufa district (MEDIUM)"
+ },
+ "lake-kutubu": {
+  "name": "Lake Kutubu",
+  "region": "png-highlands",
+  "add": true,
+  "why": [],
+  "pin": "area-centre (Wikipedia/OSM place)",
+  "cost": "assumed-free",
+  "hours": "Open 24 hours",
+  "cat": "nature",
+  "coordinates": {
+   "lat": -6.4,
+   "lng": 143.33333333
+  },
+  "coordinates_source": "wikipedia:Lake Kutubu"
+ },
+ "asaro-mudmen": {
+  "name": "Asaro Mudmen",
+  "region": "png-highlands",
+  "add": false,
+  "why": [
+   "no pin",
+   "no published cost"
+  ],
+  "pin": null,
+  "cost": null,
+  "hours": "Performances arranged in advance through a Goroka hotel",
+  "cat": "entertainment",
+  "coordinates": null,
+  "coordinates_source": ""
+ },
+ "eastern-highlands-cultural-centre": {
+  "name": "Eastern Highlands Cultural Centre and Museum",
+  "region": "png-highlands",
+  "add": false,
+  "why": [
+   "no pin",
+   "no published cost"
+  ],
+  "pin": null,
+  "cost": null,
+  "hours": "not published",
+  "cat": "museum",
+  "coordinates": null,
+  "coordinates_source": ""
+ },
+ "jk-mccarthy-museum": {
+  "name": "J.K. McCarthy Museum",
+  "region": "png-highlands",
+  "add": false,
+  "why": [
+   "no pin"
+  ],
+  "pin": null,
+  "cost": "ok",
+  "hours": "Variable; ask locally",
+  "cat": "museum",
+  "coordinates": null,
+  "coordinates_source": ""
+ },
+ "taekanda-cultural-centre": {
+  "name": "Taekanda Cultural Centre",
+  "region": "png-highlands",
+  "add": false,
+  "why": [
+   "no pin",
+   "no published cost"
+  ],
+  "pin": null,
+  "cost": null,
+  "hours": "not published",
+  "cat": "museum",
+  "coordinates": null,
+  "coordinates_source": ""
+ },
+ "western-highlands-cultural-centre": {
+  "name": "Western Highlands Cultural Centre",
+  "region": "png-highlands",
+  "add": false,
+  "why": [
+   "no pin",
+   "no published cost"
+  ],
+  "pin": null,
+  "cost": null,
+  "hours": "not published",
+  "cat": "museum",
+  "coordinates": null,
+  "coordinates_source": ""
+ },
+ "kavieng": {
+  "name": "Kavieng",
+  "region": "png-islands",
+  "add": true,
+  "why": [],
+  "pin": "HIGH",
+  "cost": "free",
+  "hours": "Open 24 hours",
+  "cat": "landmark",
+  "coordinates": {
+   "lat": -2.56666667,
+   "lng": 150.8
+  },
+  "coordinates_source": "wikipedia:Kavieng"
+ },
+ "boluminski-highway": {
+  "name": "Boluminski Highway",
+  "region": "png-islands",
+  "add": false,
+  "why": [
+   "no pin"
+  ],
+  "pin": null,
+  "cost": "ok",
+  "hours": "Open 24 hours",
+  "cat": "landmark",
+  "coordinates": null,
+  "coordinates_source": ""
+ },
+ "lihir-group": {
+  "name": "Lihir Group",
+  "region": "png-islands",
+  "add": true,
+  "why": [],
+  "pin": "HIGH",
+  "cost": "ok",
+  "hours": "Open 24 hours",
+  "cat": "nature",
+  "coordinates": {
+   "lat": -3,
+   "lng": 152.583333
+  },
+  "coordinates_source": "wikipedia:Lihir Group"
+ },
+ "lorengau": {
+  "name": "Lorengau",
+  "region": "png-islands",
+  "add": true,
+  "why": [],
+  "pin": "MEDIUM",
+  "cost": "free",
+  "hours": "Open 24 hours",
+  "cat": "landmark",
+  "coordinates": {
+   "lat": -2.020833,
+   "lng": 147.266667
+  },
+  "coordinates_source": "Wikivoyage Lorengau geo tag (town centre; a town, not an attraction)"
+ },
+ "manus-island": {
+  "name": "Manus Island",
+  "region": "png-islands",
+  "add": true,
+  "why": [],
+  "pin": "area-centre (Wikipedia/OSM place)",
+  "cost": "ok",
+  "hours": "Open 24 hours",
+  "cat": "nature",
+  "coordinates": {
+   "lat": -2.1,
+   "lng": 146.9
+  },
+  "coordinates_source": "wikipedia:Manus Island"
+ },
+ "buka-island": {
+  "name": "Buka Island",
+  "region": "png-islands",
+  "add": true,
+  "why": [],
+  "pin": "area-centre (Wikipedia/OSM place)",
+  "cost": "ok",
+  "hours": "Open 24 hours",
+  "cat": "nature",
+  "coordinates": {
+   "lat": -5.25,
+   "lng": 154.63333333
+  },
+  "coordinates_source": "wikipedia:Buka Island"
+ },
+ "buka": {
+  "name": "Buka",
+  "region": "png-islands",
+  "add": true,
+  "why": [],
+  "pin": "HIGH",
+  "cost": "free",
+  "hours": "Open 24 hours",
+  "cat": "landmark",
+  "coordinates": {
+   "lat": -5.42194444,
+   "lng": 154.67277778
+  },
+  "coordinates_source": "wikipedia:Buka, Papua New Guinea"
+ },
+ "sohano-island": {
+  "name": "Sohano Island",
+  "region": "png-islands",
+  "add": true,
+  "why": [],
+  "pin": "MEDIUM",
+  "cost": "ok",
+  "hours": "Boats leave Buka on demand",
+  "cat": "historic",
+  "coordinates": {
+   "lat": -5.441618,
+   "lng": 154.666555
+  },
+  "coordinates_source": "OSM place=village \"Sohano\" (photon; the village node on the island)"
+ },
+ "mount-balbi": {
+  "name": "Mount Balbi",
+  "region": "png-islands",
+  "add": true,
+  "why": [],
+  "pin": "area-centre (Wikipedia/OSM place)",
+  "cost": "assumed-free",
+  "hours": "Guided treks only",
+  "cat": "hike",
+  "coordinates": {
+   "lat": -5.91416667,
+   "lng": 154.9825
+  },
+  "coordinates_source": "wikipedia:Mount Balbi"
+ },
+ "yamamoto-bomber-wreck": {
+  "name": "Yamamoto Bomber Wreck",
+  "region": "png-islands",
+  "add": false,
+  "why": [
+   "no pin"
+  ],
+  "pin": null,
+  "cost": "assumed-free",
+  "hours": "Guided visits by arrangement",
+  "cat": "historic",
+  "coordinates": null,
+  "coordinates_source": ""
+ },
+ "nissan-island": {
+  "name": "Nissan Island",
+  "region": "png-islands",
+  "add": true,
+  "why": [],
+  "pin": "area-centre (Wikipedia/OSM place)",
+  "cost": "ok",
+  "hours": "Weather and boat permitting",
+  "cat": "historic",
+  "coordinates": {
+   "lat": -4.5,
+   "lng": 154.21666667
+  },
+  "coordinates_source": "wikipedia:Nissan Island"
+ },
+ "alotau-1": {
+  "name": "Samarai",
+  "region": "png-milne-bay",
+  "add": true,
+  "why": [],
+  "pin": "HIGH",
+  "cost": "ok",
+  "hours": "Reached by boat from Alotau",
+  "cat": "historic",
+  "coordinates": {
+   "lat": -10.6125,
+   "lng": 150.66472222
+  },
+  "coordinates_source": "wikipedia:Samarai"
+ },
+ "alotau-2": {
+  "name": "Tawali",
+  "region": "png-milne-bay",
+  "add": true,
+  "why": [],
+  "pin": "MEDIUM",
+  "cost": "ok",
+  "hours": "Dive and snorkel trips by arrangement",
+  "cat": "nature",
+  "coordinates": {
+   "lat": -10.25127,
+   "lng": 150.81432
+  },
+  "coordinates_source": "OSM amenity=dive_centre \"Tawali diving beach\" (node 6217623785)"
+ },
+ "alotau-3": {
+  "name": "Normanby Island",
+  "region": "png-milne-bay",
+  "add": true,
+  "why": [],
+  "pin": "MEDIUM",
+  "cost": "ok",
+  "hours": "Open access; reached by boat",
+  "cat": "nature",
+  "coordinates": {
+   "lat": -9.95172,
+   "lng": 151.01753
+  },
+  "coordinates_source": "OSM place=island relation \"Normanby Island\" (12552527), centroid"
+ },
+ "alotau-4": {
+  "name": "Gonubalabala",
+  "region": "png-milne-bay",
+  "add": false,
+  "why": [
+   "no pin"
+  ],
+  "pin": null,
+  "cost": "assumed-free",
+  "hours": "Dive trips by arrangement",
+  "cat": "nature",
+  "coordinates": null,
+  "coordinates_source": ""
+ },
+ "alotau-5": {
+  "name": "Fergusson Island",
+  "region": "png-milne-bay",
+  "add": true,
+  "why": [],
+  "pin": "area-centre (Wikipedia/OSM place)",
+  "cost": "ok",
+  "hours": "Open access; reached by boat",
+  "cat": "nature",
+  "coordinates": {
+   "lat": -9.5175,
+   "lng": 150.675
+  },
+  "coordinates_source": "wikipedia:Fergusson Island"
+ },
+ "trobriand-islands": {
+  "name": "Trobriand Islands",
+  "region": "png-milne-bay",
+  "add": true,
+  "why": [],
+  "pin": "HIGH",
+  "cost": "ok",
+  "hours": "Open access; reached by air",
+  "cat": "nature",
+  "coordinates": {
+   "lat": -8.66666667,
+   "lng": 150.91666667
+  },
+  "coordinates_source": "wikipedia:Trobriand Islands"
+ },
+ "louisiade-archipelago": {
+  "name": "Louisiade Archipelago",
+  "region": "png-milne-bay",
+  "add": true,
+  "why": [],
+  "pin": "HIGH",
+  "cost": "ok",
+  "hours": "Open access; reached by yacht or boat",
+  "cat": "nature",
+  "coordinates": {
+   "lat": -11.2,
+   "lng": 153
+  },
+  "coordinates_source": "wikipedia:Louisiade Archipelago"
+ },
+ "misima-island": {
+  "name": "Misima Island",
+  "region": "png-milne-bay",
+  "add": true,
+  "why": [],
+  "pin": "area-centre (Wikipedia/OSM place)",
+  "cost": "ok",
+  "hours": "Open access; reached by air or boat",
+  "cat": "nature",
+  "coordinates": {
+   "lat": -10.68333333,
+   "lng": 152.71666667
+  },
+  "coordinates_source": "wikipedia:Misima Island"
+ },
+ "goodenough-island": {
+  "name": "Goodenough Island",
+  "region": "png-milne-bay",
+  "add": true,
+  "why": [],
+  "pin": "area-centre (Wikipedia/OSM place)",
+  "cost": "ok",
+  "hours": "Open access; reached by boat",
+  "cat": "nature",
+  "coordinates": {
+   "lat": -9.36666667,
+   "lng": 150.26666667
+  },
+  "coordinates_source": "wikipedia:Goodenough Island"
+ },
+ "woodlark-island": {
+  "name": "Woodlark Island",
+  "region": "png-milne-bay",
+  "add": false,
+  "why": [
+   "no honest bio: Sources give one line (remote island group with wood carvings); no access, activities or reef confirmation. Hold for review or drop."
+  ],
+  "pin": "area-centre (Wikipedia/OSM place)",
+  "cost": "ok",
+  "hours": "Open access; reached by boat or small plane",
+  "cat": "nature",
+  "coordinates": {
+   "lat": -9.12083333,
+   "lng": 152.73611111
+  },
+  "coordinates_source": "wikipedia:Woodlark Island"
+ },
+ "madang-1": {
+  "name": "Coastwatchers Lighthouse",
+  "region": "png-morobe-madang",
+  "add": true,
+  "why": [],
+  "pin": "MEDIUM",
+  "cost": "ok",
+  "hours": "Open access",
+  "cat": "landmark",
+  "coordinates": {
+   "lat": -5.2124353,
+   "lng": 145.8148396
+  },
+  "coordinates_source": "osm:historic/memorial Coastwatchers Memorial"
+ },
+ "madang-2": {
+  "name": "Madang Central Market",
+  "region": "png-morobe-madang",
+  "add": true,
+  "why": [],
+  "pin": "MEDIUM",
+  "cost": "ok",
+  "hours": "Daily except Sunday, daytime",
+  "cat": "market",
+  "coordinates": {
+   "lat": -5.2123298,
+   "lng": 145.80628
+  },
+  "coordinates_source": "osm:amenity/marketplace Madang Market"
+ },
+ "madang-3": {
+  "name": "Krangket Island",
+  "region": "png-morobe-madang",
+  "add": true,
+  "why": [],
+  "pin": "MEDIUM",
+  "cost": "ok",
+  "hours": "Boats run every half hour, daytime",
+  "cat": "nature",
+  "coordinates": {
+   "lat": -5.1976267,
+   "lng": 145.8231134
+  },
+  "coordinates_source": "osm:place/island Kranket Island"
+ },
+ "madang-4": {
+  "name": "USS Boston Wreck",
+  "region": "png-morobe-madang",
+  "add": false,
+  "why": [
+   "no pin"
+  ],
+  "pin": null,
+  "cost": "assumed-free",
+  "hours": "Dive trips by arrangement",
+  "cat": "historic",
+  "coordinates": null,
+  "coordinates_source": ""
+ },
+ "madang-5": {
+  "name": "Balek Wildlife Sanctuary",
+  "region": "png-morobe-madang",
+  "add": false,
+  "why": [
+   "no pin"
+  ],
+  "pin": null,
+  "cost": "assumed-free",
+  "hours": "Open 24 hours*",
+  "cat": "nature",
+  "coordinates": null,
+  "coordinates_source": ""
+ },
+ "madang-6": {
+  "name": "Magic Passage",
+  "region": "png-morobe-madang",
+  "add": false,
+  "why": [
+   "no pin"
+  ],
+  "pin": null,
+  "cost": "assumed-free",
+  "hours": "Open 24 hours*",
+  "cat": "nature",
+  "coordinates": null,
+  "coordinates_source": ""
+ },
+ "karkar-island": {
+  "name": "Karkar Island",
+  "region": "png-morobe-madang",
+  "add": true,
+  "why": [],
+  "pin": "area-centre (Wikipedia/OSM place)",
+  "cost": "ok",
+  "hours": "Daytime visits; reached by boat",
+  "cat": "nature",
+  "coordinates": {
+   "lat": -4.65,
+   "lng": 145.96666667
+  },
+  "coordinates_source": "wikipedia:Karkar Island"
+ },
+ "lae": {
+  "name": "Lae",
+  "region": "png-morobe-madang",
+  "add": true,
+  "why": [],
+  "pin": "HIGH",
+  "cost": "free",
+  "hours": "Open 24 hours",
+  "cat": "landmark",
+  "coordinates": {
+   "lat": -6.73027778,
+   "lng": 147.00083333
+  },
+  "coordinates_source": "wikipedia:Lae"
+ },
+ "lae-botanic-gardens": {
+  "name": "Lae Botanic Gardens",
+  "region": "png-morobe-madang",
+  "add": false,
+  "why": [
+   "pin only from a Wikipedia point for a point feature"
+  ],
+  "pin": null,
+  "cost": "assumed-free",
+  "hours": "Daytime; not always open to the public",
+  "cat": "nature",
+  "coordinates": {
+   "lat": -6.719509,
+   "lng": 146.995362
+  },
+  "coordinates_source": "wikipedia:Lae Botanic Gardens"
+ },
+ "lae-war-cemetery": {
+  "name": "Lae War Cemetery",
+  "region": "png-morobe-madang",
+  "add": true,
+  "why": [],
+  "pin": "HIGH",
+  "cost": "ok",
+  "hours": "Open daily",
+  "cat": "monument",
+  "coordinates": {
+   "lat": -6.72313,
+   "lng": 146.9969
+  },
+  "coordinates_source": "wikipedia:Lae War Cemetery"
+ },
+ "lae-rainforest-habitat": {
+  "name": "Rainforest Habitat",
+  "region": "png-morobe-madang",
+  "add": true,
+  "why": [],
+  "pin": "MEDIUM",
+  "cost": "assumed-free",
+  "hours": "Daytime visits (feeding Tue and Thu at noon)",
+  "cat": "nature",
+  "coordinates": {
+   "lat": -6.6615115,
+   "lng": 146.9954623
+  },
+  "coordinates_source": "osm:tourism/zoo Rainforest Habitat"
+ },
+ "black-cat-track": {
+  "name": "Black Cat Track",
+  "region": "png-morobe-madang",
+  "add": false,
+  "why": [
+   "no pin"
+  ],
+  "pin": null,
+  "cost": "assumed-free",
+  "hours": "Guided multi-day trek",
+  "cat": "hike",
+  "coordinates": null,
+  "coordinates_source": ""
+ },
+ "wau": {
+  "name": "Wau",
+  "region": "png-morobe-madang",
+  "add": true,
+  "why": [],
+  "pin": "area-centre (Wikipedia/OSM place)",
+  "cost": "free",
+  "hours": "Open 24 hours",
+  "cat": "landmark",
+  "coordinates": {
+   "lat": -7.33888889,
+   "lng": 146.71666667
+  },
+  "coordinates_source": "wikipedia:Wau, Papua New Guinea"
+ },
+ "bulolo": {
+  "name": "Bulolo",
+  "region": "png-morobe-madang",
+  "add": true,
+  "why": [],
+  "pin": "MEDIUM",
+  "cost": "free",
+  "hours": "Open 24 hours",
+  "cat": "landmark",
+  "coordinates": {
+   "lat": -7.202224,
+   "lng": 146.6440009
+  },
+  "coordinates_source": "osm:place/town Bulolo"
+ },
+ "bulolo-gold-dredges": {
+  "name": "Bulolo Gold Dredges",
+  "region": "png-morobe-madang",
+  "add": true,
+  "why": [],
+  "pin": "MEDIUM",
+  "cost": "ok",
+  "hours": "Open access",
+  "cat": "historic",
+  "coordinates": {
+   "lat": -7.248076,
+   "lng": 146.668323
+  },
+  "coordinates_source": "OSM tourism=attraction 'Gold Dredge' via photon (MEDIUM; resolve-pin's HIGH was Bulolo Country Club, a different feature); two dredge nodes lie about 250 m apart"
+ },
+ "rabaul-1": {
+  "name": "Tavurvur",
+  "region": "png-new-britain",
+  "add": true,
+  "why": [],
+  "pin": "Wikipedia point of the feature itself",
+  "cost": "ok",
+  "hours": "Open 24 hours*",
+  "cat": "nature",
+  "coordinates": {
+   "lat": -4.239,
+   "lng": 152.21
+  },
+  "coordinates_source": "wikipedia:Tavurvur"
+ },
+ "rabaul-2": {
+  "name": "Kokopo",
+  "region": "png-new-britain",
+  "add": true,
+  "why": [],
+  "pin": "area-centre (Wikipedia/OSM place)",
+  "cost": "free",
+  "hours": "Open 24 hours",
+  "cat": "landmark",
+  "coordinates": {
+   "lat": -4.35,
+   "lng": 152.2736
+  },
+  "coordinates_source": "Wikipedia article coordinates (town centre)"
+ },
+ "rabaul-3": {
+  "name": "Rabaul Volcano Observatory",
+  "region": "png-new-britain",
+  "add": true,
+  "why": [],
+  "pin": "HIGH",
+  "cost": "ok",
+  "hours": "Open 24 hours*",
+  "cat": "viewpoint",
+  "coordinates": {
+   "lat": -4.191061,
+   "lng": 152.163384
+  },
+  "coordinates_source": "Wikivoyage Rabaul listing geo tag"
+ },
+ "rabaul-4": {
+  "name": "Japanese Barge Tunnel",
+  "region": "png-new-britain",
+  "add": true,
+  "why": [],
+  "pin": "MEDIUM",
+  "cost": "ok",
+  "hours": "Daytime visits*",
+  "cat": "historic",
+  "coordinates": {
+   "lat": -4.2847726,
+   "lng": 152.1532866
+  },
+  "coordinates_source": "OpenStreetMap node (Overpass) tourism=attraction \"Japanese WWII Barges Tunnel\""
+ },
+ "rabaul-5": {
+  "name": "New Guinea Club Museum",
+  "region": "png-new-britain",
+  "add": true,
+  "why": [],
+  "pin": "MEDIUM",
+  "cost": "ok",
+  "hours": "Daytime visits*",
+  "cat": "museum",
+  "coordinates": {
+   "lat": -4.204129,
+   "lng": 152.181462
+  },
+  "coordinates_source": "Wikivoyage Rabaul listing geo tag"
+ },
+ "rabaul-6": {
+  "name": "Bitapaka War Cemetery",
+  "region": "png-new-britain",
+  "add": true,
+  "why": [],
+  "pin": "MEDIUM",
+  "cost": "ok",
+  "hours": "Daytime visits*",
+  "cat": "monument",
+  "coordinates": {
+   "lat": -4.406577,
+   "lng": 152.299391
+  },
+  "coordinates_source": "Wikivoyage Rabaul listing geo tag"
+ },
+ "rabaul-7": {
+  "name": "Kokopo War and Cultural Museum",
+  "region": "png-new-britain",
+  "add": true,
+  "why": [],
+  "pin": "MEDIUM",
+  "cost": "ok",
+  "hours": "Daytime visits*",
+  "cat": "museum",
+  "coordinates": {
+   "lat": -4.335628,
+   "lng": 152.262686
+  },
+  "coordinates_source": "Wikivoyage Rabaul listing geo tag"
+ },
+ "rabaul-8": {
+  "name": "Duke of York Islands",
+  "region": "png-new-britain",
+  "add": true,
+  "why": [],
+  "pin": "area-centre (Wikipedia/OSM place)",
+  "cost": "assumed-free",
+  "hours": "Open 24 hours*",
+  "cat": "nature",
+  "coordinates": {
+   "lat": -4.166667,
+   "lng": 152.45
+  },
+  "coordinates_source": "Wikipedia article coordinates"
+ },
+ "kimbe": {
+  "name": "Kimbe",
+  "region": "png-new-britain",
+  "add": true,
+  "why": [],
+  "pin": "area-centre (Wikipedia/OSM place)",
+  "cost": "free",
+  "hours": "Open 24 hours",
+  "cat": "landmark",
+  "coordinates": {
+   "lat": -5.5575,
+   "lng": 150.155
+  },
+  "coordinates_source": "wikipedia:Kimbe"
+ },
+ "kimbe-bay": {
+  "name": "Kimbe Bay",
+  "region": "png-new-britain",
+  "add": true,
+  "why": [],
+  "pin": "area-centre (Wikipedia/OSM place)",
+  "cost": "assumed-free",
+  "hours": "Open 24 hours*",
+  "cat": "nature",
+  "coordinates": {
+   "lat": -5.1666667,
+   "lng": 150.5
+  },
+  "coordinates_source": "wikipedia:Kimbe Bay"
+ },
+ "garbuna-volcano": {
+  "name": "Garbuna Volcano",
+  "region": "png-new-britain",
+  "add": false,
+  "why": [
+   "no pin"
+  ],
+  "pin": null,
+  "cost": "assumed-free",
+  "hours": "Open 24 hours*",
+  "cat": "nature",
+  "coordinates": null,
+  "coordinates_source": ""
+ },
+ "kokoda-track-1": {
+  "name": "Owers' Corner",
+  "region": "png-oro-kokoda",
+  "add": true,
+  "why": [],
+  "pin": "MEDIUM",
+  "cost": "ok",
+  "hours": "Open 24 hours*",
+  "cat": "monument",
+  "coordinates": {
+   "lat": -9.36206,
+   "lng": 147.48794
+  },
+  "coordinates_source": "osm:node 713077699 tourism=attraction Owers Corner"
+ },
+ "kokoda-track-2": {
+  "name": "Isurava",
+  "region": "png-oro-kokoda",
+  "add": true,
+  "why": [],
+  "pin": "MEDIUM",
+  "cost": "ok",
+  "hours": "Open 24 hours*",
+  "cat": "historic",
+  "coordinates": {
+   "lat": -8.98706,
+   "lng": 147.73428
+  },
+  "coordinates_source": "osm:node 715956237 place=village Isurava"
+ },
+ "kokoda-track-3": {
+  "name": "Kokoda",
+  "region": "png-oro-kokoda",
+  "add": true,
+  "why": [],
+  "pin": "HIGH",
+  "cost": "free",
+  "hours": "Open 24 hours",
+  "cat": "landmark",
+  "coordinates": {
+   "lat": -8.87839,
+   "lng": 147.73655
+  },
+  "coordinates_source": "osm:node 302477619 place=town Kokoda"
+ },
+ "popondetta": {
+  "name": "Popondetta",
+  "region": "png-oro-kokoda",
+  "add": true,
+  "why": [],
+  "pin": "area-centre (Wikipedia/OSM place)",
+  "cost": "free",
+  "hours": "Open 24 hours",
+  "cat": "landmark",
+  "coordinates": {
+   "lat": -8.76555556,
+   "lng": 148.23472222
+  },
+  "coordinates_source": "wikipedia:Popondetta"
+ },
+ "tufi": {
+  "name": "Tufi",
+  "region": "png-oro-kokoda",
+  "add": true,
+  "why": [],
+  "pin": "HIGH",
+  "cost": "free",
+  "hours": "Open 24 hours",
+  "cat": "landmark",
+  "coordinates": {
+   "lat": -9.08333333,
+   "lng": 149.31666667
+  },
+  "coordinates_source": "wikipedia:Tufi"
+ },
+ "tufi-fjords": {
+  "name": "Tufi Fjords",
+  "region": "png-oro-kokoda",
+  "add": false,
+  "why": [
+   "no pin"
+  ],
+  "pin": null,
+  "cost": "assumed-free",
+  "hours": "Open 24 hours*",
+  "cat": "nature",
+  "coordinates": null,
+  "coordinates_source": ""
+ },
+ "buna": {
+  "name": "Buna",
+  "region": "png-oro-kokoda",
+  "add": true,
+  "why": [],
+  "pin": "MEDIUM",
+  "cost": "assumed-free",
+  "hours": "Open 24 hours*",
+  "cat": "historic",
+  "coordinates": {
+   "lat": -8.66522,
+   "lng": 148.39793
+  },
+  "coordinates_source": "osm:node 8940442050 place=village Buna"
+ },
+ "gona": {
+  "name": "Gona",
+  "region": "png-oro-kokoda",
+  "add": true,
+  "why": [],
+  "pin": "HIGH",
+  "cost": "assumed-free",
+  "hours": "Open 24 hours*",
+  "cat": "historic",
+  "coordinates": {
+   "lat": -8.6,
+   "lng": 148.26666667
+  },
+  "coordinates_source": "wikipedia:Gona, Papua New Guinea"
+ },
+ "wewak": {
+  "name": "Wewak",
+  "region": "png-sepik",
+  "add": true,
+  "why": [],
+  "pin": "MEDIUM",
+  "cost": "free",
+  "hours": "Open 24 hours",
+  "cat": "landmark",
+  "coordinates": {
+   "lat": -3.55422,
+   "lng": 143.62709
+  },
+  "coordinates_source": "osm:node/1538978470 place=city (wiki en:Wewak)"
+ },
+ "vanimo": {
+  "name": "Vanimo",
+  "region": "png-sepik",
+  "add": true,
+  "why": [],
+  "pin": "MEDIUM",
+  "cost": "free",
+  "hours": "Open 24 hours",
+  "cat": "landmark",
+  "coordinates": {
+   "lat": -2.68476,
+   "lng": 141.30091
+  },
+  "coordinates_source": "osm:node/1250713619 place=city (wiki en:Vanimo)"
+ },
+ "maprik": {
+  "name": "Maprik",
+  "region": "png-sepik",
+  "add": true,
+  "why": [],
+  "pin": "MEDIUM",
+  "cost": "assumed-free",
+  "hours": "Open 24 hours*",
+  "cat": "historic",
+  "coordinates": {
+   "lat": -3.63086,
+   "lng": 143.0564
+  },
+  "coordinates_source": "osm:node/1363471946 place=town"
+ },
+ "sepik-river": {
+  "name": "Sepik River",
+  "region": "png-sepik",
+  "add": true,
+  "why": [],
+  "pin": "MEDIUM",
+  "cost": "assumed-free",
+  "hours": "Open 24 hours*",
+  "cat": "nature",
+  "coordinates": {
+   "lat": -4.05629,
+   "lng": 144.0729
+  },
+  "coordinates_source": "osm:node/2643833870 Angoram (river visitor access point, not the river centroid); Wikipedia article Sepik"
+ },
+ "kairiru-island": {
+  "name": "Kairiru Island",
+  "region": "png-sepik",
+  "add": true,
+  "why": [],
+  "pin": "MEDIUM",
+  "cost": "assumed-free",
+  "hours": "Open 24 hours*",
+  "cat": "nature",
+  "coordinates": {
+   "lat": -3.3447,
+   "lng": 143.55973
+  },
+  "coordinates_source": "osm:way/22295680 island centroid"
+ },
+ "mushu-island": {
+  "name": "Mushu Island",
+  "region": "png-sepik",
+  "add": true,
+  "why": [],
+  "pin": "MEDIUM",
+  "cost": "assumed-free",
+  "hours": "Open 24 hours*",
+  "cat": "beach",
+  "coordinates": {
+   "lat": -3.41396,
+   "lng": 143.58665
+  },
+  "coordinates_source": "osm:way/22295682 island centroid (OSM Muschu Island)"
+ },
+ "cape-wom": {
+  "name": "Cape Wom",
+  "region": "png-sepik",
+  "add": true,
+  "why": [],
+  "pin": "MEDIUM",
+  "cost": "assumed-free",
+  "hours": "Open 24 hours*",
+  "cat": "historic",
+  "coordinates": {
+   "lat": -3.51945,
+   "lng": 143.59329
+  },
+  "coordinates_source": "osm:node/11799415670 monument (Cape Wom Memorial); agrees with Wikipedia within 100 m"
+ },
+ "vanimo-surf-breaks": {
+  "name": "Vanimo Surf Breaks",
+  "region": "png-sepik",
+  "add": true,
+  "why": [],
+  "pin": "MEDIUM",
+  "cost": "free",
+  "hours": "Open 24 hours",
+  "cat": "beach",
+  "coordinates": {
+   "lat": -2.66135,
+   "lng": 141.27749
+  },
+  "coordinates_source": "osm:node/1250713739 natural=cape Vanimo Point (area point; surf breaks not named in any source)"
+ },
+ "daru": {
+  "name": "Daru",
+  "region": "png-western",
+  "add": true,
+  "why": [],
+  "pin": "MEDIUM",
+  "cost": "free",
+  "hours": "Open 24 hours",
+  "cat": "landmark",
+  "coordinates": {
+   "lat": -9.069901,
+   "lng": 143.210029
+  },
+  "coordinates_source": "openstreetmap:place=city node (Nominatim, Daru, Western)"
+ },
+ "kiunga": {
+  "name": "Kiunga",
+  "region": "png-western",
+  "add": true,
+  "why": [],
+  "pin": "MEDIUM",
+  "cost": "free",
+  "hours": "Open 24 hours",
+  "cat": "landmark",
+  "coordinates": {
+   "lat": -6.1159886,
+   "lng": 141.2981755
+  },
+  "coordinates_source": "openstreetmap:place=town node (Nominatim, Kiunga, North Fly)"
+ },
+ "lake-murray": {
+  "name": "Lake Murray",
+  "region": "png-western",
+  "add": true,
+  "why": [],
+  "pin": "MEDIUM",
+  "cost": "assumed-free",
+  "hours": "Open 24 hours*",
+  "cat": "nature",
+  "coordinates": {
+   "lat": -6.9756776,
+   "lng": 141.5221123
+  },
+  "coordinates_source": "openstreetmap:natural=water relation centroid (Nominatim, Lake Murray)"
+ },
+ "tonda-wildlife-management-area": {
+  "name": "Tonda Wildlife Management Area",
+  "region": "png-western",
+  "add": true,
+  "why": [],
+  "pin": "Wikipedia point of the feature itself",
+  "cost": "assumed-free",
+  "hours": "Open 24 hours*",
+  "cat": "nature",
+  "coordinates": {
+   "lat": -9.00138889,
+   "lng": 141.54444444
+  },
+  "coordinates_source": "wikipedia:Tonda Wildlife Management Area"
+ }
+}

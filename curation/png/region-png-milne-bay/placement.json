@@ -1,0 +1,318 @@
+{
+ "region": "region-png-milne-bay",
+ "entries": [
+  {
+   "name": "Alotau",
+   "wiki": "Alotau",
+   "id": "alotau",
+   "category": "landmark",
+   "action": "new-destination",
+   "destination": "alotau",
+   "kind": "proposed-destination",
+   "coordinates": {
+    "lat": -10.316667,
+    "lng": 150.433333
+   },
+   "coordinates_source": "Wikivoyage Alotau geo tag (town centre; a town, not an attraction)",
+   "views": 5813,
+   "counted_sources": 3,
+   "note": "Town: provincial capital and gateway to Milne Bay on a natural harbour, with a waterfront, a produce and seafood market, the Turnbull WWII memorial park and the dive trade. The annual Kenu and Kundu Festival is an event, so it is not a spot (mentioned here only).",
+   "reason": "Kept; base passes the name test (see destinations-proposed.json name_evidence) and has the spots to fill a visit.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Samarai",
+   "wiki": "Samarai",
+   "id": "alotau-1",
+   "category": "historic",
+   "action": "spot",
+   "destination": "alotau",
+   "kind": "spot:alotau",
+   "coordinates": {
+    "lat": -10.6125,
+    "lng": 150.66472222
+   },
+   "coordinates_source": "wikipedia:Samarai",
+   "views": 3753,
+   "counted_sources": 3,
+   "note": "Island: former colonial capital and trading port at the entrance to Milne Bay, a 20-minute walk round, with ruins of its boom-town past and a National Historical Heritage Island listing; reached by boat from Alotau.",
+   "reason": "Kept; inside the span of Alotau and reached from that base.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "distance_from_destination_km": 41.5,
+   "within_span": true
+  },
+  {
+   "name": "Tawali",
+   "wiki": "Tawali",
+   "id": "alotau-2",
+   "category": "nature",
+   "action": "spot",
+   "destination": "alotau",
+   "kind": "spot:alotau",
+   "coordinates": {
+    "lat": -10.25127,
+    "lng": 150.81432
+   },
+   "coordinates_source": "OSM amenity=dive_centre \"Tawali diving beach\" (node 6217623785)",
+   "views": 0,
+   "counted_sources": 1,
+   "note": "Dive site: reef and drop-offs at Tawali on the coast near Alotau, named by the PNG tourism authority as a world-renowned Milne Bay dive site; reached by boat, with the Tawali Leisure and Dive Resort on the bluff above.",
+   "reason": "Kept; inside the span of Alotau and reached from that base.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "distance_from_destination_km": 42.3,
+   "within_span": true
+  },
+  {
+   "name": "Normanby Island",
+   "wiki": "Normanby Island (Papua New Guinea)",
+   "id": "alotau-3",
+   "category": "nature",
+   "action": "spot",
+   "destination": "alotau",
+   "kind": "spot:alotau",
+   "coordinates": {
+    "lat": -9.95172,
+    "lng": 151.01753
+   },
+   "coordinates_source": "OSM place=island relation \"Normanby Island\" (12552527), centroid",
+   "views": 1921,
+   "counted_sources": 2,
+   "note": "Island: unspoilt D'Entrecasteaux island with trekking trails, rainforest waterfalls and birdwatching (including the Goldie's bird-of-paradise), with very limited accommodation.",
+   "reason": "Kept; inside the span of Alotau and reached from that base.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "distance_from_destination_km": 75.7,
+   "within_span": true
+  },
+  {
+   "name": "Gonubalabala",
+   "wiki": "Gonubalabala",
+   "id": "alotau-4",
+   "category": "nature",
+   "action": "spot",
+   "destination": "alotau",
+   "kind": "spot:alotau",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": "coordinates null: needs resolve-pin.py or the owner (not guessed)",
+   "views": 0,
+   "counted_sources": 1,
+   "note": "Dive site: Gonubalabala Island waters in Milne Bay, named by the PNG tourism authority as a dive site and a known manta ray location.",
+   "reason": "Kept; inside the span of Alotau and reached from that base.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "within_span": "unverified (no coordinates): described as nearby in source"
+  },
+  {
+   "name": "Fergusson Island",
+   "wiki": "Fergusson Island",
+   "id": "alotau-5",
+   "category": "nature",
+   "action": "spot",
+   "destination": "alotau",
+   "kind": "spot:alotau",
+   "coordinates": {
+    "lat": -9.5175,
+    "lng": 150.675
+   },
+   "coordinates_source": "wikipedia:Fergusson Island",
+   "views": 4653,
+   "counted_sources": 2,
+   "note": "Island: geothermal volcanic island reached only by boat, with trekking trails and birdwatching for a rare bird-of-paradise and the Curl-crested Manucode; its hot springs at Deidei are listed separately.",
+   "reason": "Kept; inside the span of Alotau and reached from that base.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "distance_from_destination_km": 92.7,
+   "within_span": true
+  },
+  {
+   "name": "Trobriand Islands",
+   "wiki": "Trobriand Islands",
+   "id": "trobriand-islands",
+   "category": "nature",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": {
+    "lat": -8.66666667,
+    "lng": 150.91666667
+   },
+   "coordinates_source": "wikipedia:Trobriand Islands",
+   "views": 28084,
+   "counted_sources": 4,
+   "note": "Island group: the Kiriwina Islands, raised coral atolls in the north of Milne Bay known as the Islands of Love, with yam-harvest dancing, village stays, the Kula ring and white beaches; reached by a twice-weekly PNG Air flight from Alotau.",
+   "reason": "Far northern Milne Bay (about 260 km from Alotau), reached by air to Kiriwina: standalone.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Louisiade Archipelago",
+   "wiki": "Louisiade Archipelago",
+   "id": "louisiade-archipelago",
+   "category": "nature",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": {
+    "lat": -11.2,
+    "lng": 153
+   },
+   "coordinates_source": "wikipedia:Louisiade Archipelago",
+   "views": 8230,
+   "counted_sources": 4,
+   "note": "Archipelago: about 100 islands in the far southeast of Milne Bay, a diver's paradise and yachting destination with coral reefs; few visitors and reached mainly by private yacht, so a region rather than a single stop.",
+   "reason": "Far southeast; with Misima Island and Woodlark Island only three islands, not a destination: standalone.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Misima Island",
+   "wiki": "Misima Island",
+   "id": "misima-island",
+   "category": "nature",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": {
+    "lat": -10.68333333,
+    "lng": 152.71666667
+   },
+   "coordinates_source": "wikipedia:Misima Island",
+   "views": 3416,
+   "counted_sources": 3,
+   "note": "Island: the most populated and most accessible Louisiade island, served by air to Bwagaoia with a guest house; a closed gold mine and island-hopping stop named by the PNG tourism authority.",
+   "reason": "Island inside the Louisiade group; cluster below four: standalone.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Goodenough Island",
+   "wiki": "Goodenough Island",
+   "id": "goodenough-island",
+   "category": "nature",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": {
+    "lat": -9.36666667,
+    "lng": 150.26666667
+   },
+   "coordinates_source": "wikipedia:Goodenough Island",
+   "views": 6207,
+   "counted_sources": 3,
+   "note": "Island: volcanic island of the D'Entrecasteaux group with rainforest, waterfalls, Mount Vineuo and good birdwatching; named as an unspoilt island to explore and a tour destination from Alotau.",
+   "reason": "About 100 km from Alotau, beyond 75% of any sensible span: standalone.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Woodlark Island",
+   "wiki": "Woodlark Island",
+   "id": "woodlark-island",
+   "category": "nature",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": {
+    "lat": -9.12083333,
+    "lng": 152.73611111
+   },
+   "coordinates_source": "wikipedia:Woodlark Island",
+   "views": 5123,
+   "counted_sources": 1,
+   "note": "Island group: remote Woodlarks to the north of the province, known for wood carvings and coral reefs, listed as an other destination in Wikivoyage's Milne Bay guide.",
+   "reason": "Remote island group; standalone.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  }
+ ],
+ "reviews": [
+  {
+   "name": "Logea Island",
+   "views": 453,
+   "counted_sources": 1,
+   "reason": "Rule 1: PNG tourism page names Nuli Sapi on Logea Island (one counted source); rule 2 uncertain since the draw is a resort stay, though a reef island near Samarai.",
+   "skeptic_objection": "For: tourism board map highlights it, easy boat ride from Alotau. Against: the named thing is a lodge (operators are not spots) and a single source.",
+   "coordinates": {
+    "lat": -10.63861111,
+    "lng": 150.64861111
+   }
+  },
+  {
+   "name": "Deacon's Reef",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Rule 1: named only in the tourism board's list of dive sites (one counted source); no coordinates, no detail.",
+   "skeptic_objection": "For: same source as Tawali calls it world-renowned. Against: one list mention, no pin, no description; cannot be placed without owner-supplied coordinates.",
+   "coordinates": null
+  },
+  {
+   "name": "Wahoo Point",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Rule 1: only a dive-site list mention on the tourism page; no pin or detail.",
+   "skeptic_objection": "For: board calls it world-renowned. Against: one bare mention, nothing sourced about what is there, no coordinates.",
+   "coordinates": null
+  },
+  {
+   "name": "Kiriwina",
+   "views": 7475,
+   "counted_sources": 1,
+   "reason": "Rule 1: Wikivoyage Trobriand Islands names it as the main island (airstrip, lodges, dancing). Risk of duplicating a Trobriand Islands group entry; sources describe the group as one visitor area.",
+   "skeptic_objection": "For: the island where all visitors land. Against: near-duplicate of the group entry; dancing is tied to a yam festival (event). Keep only one of Kiriwina or the group.",
+   "coordinates": {
+    "lat": -8.66666667,
+    "lng": 150.91666667
+   }
+  },
+  {
+   "name": "Dobu Island",
+   "views": 3097,
+   "counted_sources": 0,
+   "reason": "Rule 1: Wikivoyage Milne Bay names it as a most significant small island with volcanic activity (inline in Other destinations, not its own listing); one source.",
+   "skeptic_objection": "For: counted source plus 3,097 views, volcanic. Against: no listing of its own, no visitor facilities, little to do.",
+   "coordinates": {
+    "lat": -9.76666667,
+    "lng": 150.88305556
+   }
+  }
+ ],
+ "existing_fixes": [],
+ "note": "PNG has no existing destinations or spots. Placement run jointly for all nine regions; proposed destinations are in curation/png/destinations-proposed.json."
+}

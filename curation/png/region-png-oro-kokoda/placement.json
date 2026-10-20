@@ -1,0 +1,280 @@
+{
+ "region": "region-png-oro-kokoda",
+ "entries": [
+  {
+   "name": "Kokoda Track",
+   "wiki": "Kokoda Track",
+   "id": "kokoda-track",
+   "category": "hike",
+   "action": "new-destination",
+   "destination": "kokoda-track",
+   "kind": "proposed-destination",
+   "coordinates": {
+    "lat": -9.15028,
+    "lng": 147.66875
+   },
+   "coordinates_source": "osm:Kokoda Track ways (Nominatim geometry, midpoint of mapped length; approximate, track is 96 km)",
+   "views": 37890,
+   "counted_sources": 3,
+   "note": "Trail: the 96 km multi-day trek over the Owen Stanley Range from Owers' Corner (Central Province) to Kokoda (Oro Province), with WWII battle sites; the headline walk of the region.",
+   "reason": "Kept; headline long trail named by Wikivoyage and PNG Tourism, proposed as a destination (rank-2 exemption) with its trailheads and battle sites as spots; the trek itself is the destination, not a duplicate spot.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "pin_flag": "Pin is the midpoint of the OSM-mapped length (approximate; route is 96 km). Confirm with resolve-pin.py."
+  },
+  {
+   "name": "Owers' Corner",
+   "wiki": "Owers' Corner",
+   "id": "kokoda-track-1",
+   "category": "monument",
+   "action": "spot",
+   "destination": "kokoda-track",
+   "kind": "spot:kokoda-track",
+   "coordinates": {
+    "lat": -9.36206,
+    "lng": 147.48794
+   },
+   "coordinates_source": "osm:node 713077699 tourism=attraction Owers Corner",
+   "views": 0,
+   "counted_sources": 2,
+   "note": "Trail start/end: the southern trailhead at Owers' Corner (Central Province, 50 km east of Port Moresby) with the monument where the track starts; every guided walk begins or ends here.",
+   "reason": "Kept; inside the span of Kokoda Track and reached from that base.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "distance_from_destination_km": 30.8,
+   "within_span": true
+  },
+  {
+   "name": "Isurava",
+   "wiki": "Isurava, Papua New Guinea",
+   "id": "kokoda-track-2",
+   "category": "historic",
+   "action": "spot",
+   "destination": "kokoda-track",
+   "kind": "spot:kokoda-track",
+   "coordinates": {
+    "lat": -8.98706,
+    "lng": 147.73428
+   },
+   "coordinates_source": "osm:node 715956237 place=village Isurava",
+   "views": 917,
+   "counted_sources": 1,
+   "note": "Battle site and village: the Isurava war memorial and museum on the track, the site of the 1942 Battle of Isurava; Wikivoyage notes it is hard not to weep at the memorial site.",
+   "reason": "Kept; inside the span of Kokoda Track and reached from that base.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "distance_from_destination_km": 19.5,
+   "within_span": true
+  },
+  {
+   "name": "Kokoda",
+   "wiki": "Kokoda",
+   "id": "kokoda-track-3",
+   "category": "landmark",
+   "action": "spot",
+   "destination": "kokoda-track",
+   "kind": "spot:kokoda-track",
+   "coordinates": {
+    "lat": -8.87839,
+    "lng": 147.73655
+   },
+   "coordinates_source": "osm:node 302477619 place=town Kokoda",
+   "views": 4531,
+   "counted_sources": 2,
+   "note": "Town: station town at the northern end of the Kokoda Track, the only airfield on the track, and the finishing point of most walks.",
+   "reason": "Kept; inside the span of Kokoda Track and reached from that base.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "distance_from_destination_km": 31.1,
+   "within_span": true
+  },
+  {
+   "name": "Bomana War Cemetery",
+   "action": "merged-duplicate",
+   "merged_into_region": "region-png-capital-central-gulf",
+   "id": "port-moresby-4",
+   "reason": "Same place kept in region-png-capital-central-gulf; one entry only, placed there."
+  },
+  {
+   "name": "Popondetta",
+   "wiki": "Popondetta",
+   "id": "popondetta",
+   "category": "landmark",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": {
+    "lat": -8.76555556,
+    "lng": 148.23472222
+   },
+   "coordinates_source": "wikipedia:Popondetta",
+   "views": 4182,
+   "counted_sources": 2,
+   "note": "Town: the Oro Province capital and gateway, with Girua Airport flights from Port Moresby and the road to Kokoda; the tourism site calls it a base rather than a sight.",
+   "reason": "Popondetta, Buna and Gona form a cluster of three on the Oro coast: below four, so standalone.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Tufi",
+   "wiki": "Tufi",
+   "id": "tufi",
+   "category": "landmark",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": {
+    "lat": -9.08333333,
+    "lng": 149.31666667
+   },
+   "coordinates_source": "wikipedia:Tufi",
+   "views": 1879,
+   "counted_sources": 3,
+   "note": "Town: fishing and dive town on the Cape Nelson peninsula, base for the Tufi fjords, reef dives and tapa-cloth making; Wikivoyage calls it the Fjordland of Papua New Guinea.",
+   "reason": "Tufi and Tufi Fjords are two kept places: standalone.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Tufi Fjords",
+   "wiki": null,
+   "id": "tufi-fjords",
+   "category": "nature",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": "coordinates null: needs resolve-pin.py or the owner (not guessed)",
+   "views": 0,
+   "counted_sources": 2,
+   "note": "Scenic feature: drowned river valleys (rias) over 90 m deep with rainforest sides, cruised or kayaked from Tufi; a separate scenic draw from the town itself.",
+   "reason": "Two kept places with Tufi: standalone.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Buna",
+   "wiki": "Buna, Papua New Guinea",
+   "id": "buna",
+   "category": "historic",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": {
+    "lat": -8.66522,
+    "lng": 148.39793
+   },
+   "coordinates_source": "osm:node 8940442050 place=village Buna",
+   "views": 5115,
+   "counted_sources": 1,
+   "note": "Village: coastal village and the Kokoda Track trailhead, with WWII relics and a memorial plaque to the 32nd Division; the tourism site says to visit Buna and Gona.",
+   "reason": "Cluster of three with Popondetta and Gona: standalone. Not on the Kokoda Track itself (north coast, outside the Kokoda Track span).",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Gona",
+   "wiki": "Gona, Papua New Guinea",
+   "id": "gona",
+   "category": "historic",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": {
+    "lat": -8.6,
+    "lng": 148.26666667
+   },
+   "coordinates_source": "wikipedia:Gona, Papua New Guinea",
+   "views": 2266,
+   "counted_sources": 1,
+   "note": "Village: coastal village and WWII battle site where Japanese forces landed in 1942; the tourism site names it with Buna as a place to visit WWII relics.",
+   "reason": "Cluster of three with Popondetta and Buna: standalone.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  }
+ ],
+ "reviews": [
+  {
+   "name": "Ioribaiwa Ridge",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Battle site reached by short treks from Owers' Corner per the national tourism site, so a possible day-walk draw (rule 3 vs track). One counted source, hard access.",
+   "skeptic_objection": "For: named battlefield and a realistic short trek for visitors not doing the full track. Against: it is a ridge on the track itself and only a single, passing mention.",
+   "coordinates": {
+    "lat": -9.3123,
+    "lng": 147.55404
+   }
+  },
+  {
+   "name": "Brigade Hill",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Memorial and WWII battle site on the track pictured by Wikivoyage; named battle site, but one source and it sits mid-track (about a day-plus from either end).",
+   "skeptic_objection": "For: one of the few named memorial sites on the track. Against: only reachable as part of the multi-day walk, so part of the track; one source.",
+   "coordinates": {
+    "lat": -9.16384,
+    "lng": 147.64511
+   }
+  },
+  {
+   "name": "Mount Lamington",
+   "views": 5251,
+   "counted_sources": 1,
+   "reason": "Two counted sources (national tourism site's Oro page and its Mount Lamington page): a dormant volcano and the 1951 eruption story, with memorial sites and small exhibits near Popondetta. But the page says climbing it is not common (safety and cultural reasons) and the memorials are in Popondetta, so the visit is a view plus memorials.",
+   "skeptic_objection": "For: well-known landmark with a visitor page of its own and a strong story. Against: no defined visit, the Higaturu site needs landowner arrangement, and the memorials are in Popondetta.",
+   "coordinates": {
+    "lat": -8.95,
+    "lng": 148.15
+   }
+  },
+  {
+   "name": "Cyclone Reef",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Dive site named by Wikivoyage 'Do' (15 km from Tufi), with marine life and wrecks; one source, dive-boat only. Tufi's hammerhead diving is also on the tourism page.",
+   "skeptic_objection": "For: the named reef of Tufi diving. Against: reachable only by operator dive boat, one source, no coordinates; the place is the reef but practically a dive trip.",
+   "coordinates": null
+  },
+  {
+   "name": "Cape Nelson",
+   "views": 440,
+   "counted_sources": 1,
+   "reason": "Headland named by the national tourism site (snorkelling, Korafe tapa and face tattooing cultural visits); one counted source and the culture is in villages, not at a defined point.",
+   "skeptic_objection": "For: tourism board names it for cultural and reef visits. Against: it is a peninsula/region that Tufi covers; no distinct point to stand at.",
+   "coordinates": {
+    "lat": -8.9975,
+    "lng": 149.25027778
+   }
+  }
+ ],
+ "existing_fixes": [],
+ "note": "PNG has no existing destinations or spots. Placement run jointly for all nine regions; proposed destinations are in curation/png/destinations-proposed.json."
+}

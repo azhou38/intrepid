@@ -1,0 +1,75 @@
+{
+ "spot:louisiade-archipelago": {
+  "candidates": [
+   {
+    "file": "Louisiadearchipelago.JPG",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Category Louisiade Archipelago, 2013 colour, Robinsons Anchorage off Kuwanak Island; hills and sea; needs zoom"
+   }
+  ],
+  "choice": "Louisiadearchipelago.JPG",
+  "hero_crop": {
+   "x": 0.6,
+   "y": 0.35,
+   "zoom": 1.6
+  }
+ },
+ "spot:lae-war-cemetery": {
+  "candidates": [
+   {
+    "file": "Lae War Cemetery Australian Grave Row A.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Headstone rows with cross plaque at Lae War Cemetery, colour, 2592 px"
+   },
+   {
+    "file": "Lae War Cemetery front-view.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Gate and lawn; acceptable alternative but small subject"
+   }
+  ],
+  "choice": "Lae War Cemetery Australian Grave Row A.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:lae-rainforest-habitat": {
+  "candidates": [
+   {
+    "file": "Dwarf Cassowary Lae.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "A single animal, not the habitat; named thing not shown"
+   }
+  ],
+  "choice": "none: candidate is an animal not the habitat; current Chiapas rainforest is another country",
+  "hero_crop": "n/a"
+ },
+ "spot:rabaul-3": {
+  "candidates": [
+   {
+    "file": "Rabaul from Vulcanology Observatory.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Pleasant 2816 px view over Simpson Harbour but it is the view from the observatory, not the observatory"
+   }
+  ],
+  "choice": "none: shows the view, not the Observatory; current is a space image",
+  "hero_crop": "n/a"
+ }
+}

@@ -1,0 +1,161 @@
+{
+ "region": "region-png-capital-central-gulf",
+ "inside_destinations": 8,
+ "standalone": 4,
+ "new_destinations": 1,
+ "lowest_kept": [
+  {
+   "name": "Varirata National Park",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Adventure Park PNG",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Loloata Island",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Owers' Corner",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Bomana War Cemetery",
+   "views": 0,
+   "counted_sources": 3
+  }
+ ],
+ "stronger_left_out": [
+  {
+   "name": "Hanuabada",
+   "views": 6288,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "One counted source (Wikivoyage lists Hiri villages); a large stilt-house Motu village on the harbour, strong Wikipedia interest (6,288 views); visiting is cultural but needs a guide and has safety issues."
+  },
+  {
+   "name": "Bulldog Track",
+   "views": 1226,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "One counted source (tourism board Gulf page, calls it a must-see): a 60 km trek from the Lakekamu side to Wau; an expedition, and half lies in Morobe."
+  },
+  {
+   "name": "Sirinumu Dam",
+   "views": 1051,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; the board story only mentions it as a landmark for directions; a reservoir with no verified visitor offering."
+  },
+  {
+   "name": "Bootless Inlet",
+   "views": 565,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; Wikipedia only. Re-looked: the board and Wikivoyage name Loloata, not the inlet (rule 1)."
+  },
+  {
+   "name": "Eora Creek",
+   "views": 365,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; Wikipedia-only battle site (rule 1); it also lies in Oro Province, so any entry belongs to the Oro region."
+  },
+  {
+   "name": "Koitaki",
+   "views": 282,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; village with a country club, Wikipedia only; not a visitor stop (rule 1)."
+  },
+  {
+   "name": "Redscar Bay",
+   "views": 267,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; Wikipedia/Pacific Wrecks only (rule 1)."
+  },
+  {
+   "name": "Efogi",
+   "views": 259,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; Wikipedia-only village on the track (rule 1). Re-looked, none found."
+  },
+  {
+   "name": "Hiri Moale Festival",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Rule 4: annual festival, an event, not a place."
+  },
+  {
+   "name": "Hiritano Highway",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "A road, a way of getting to Kerema, not a place (COVERAGE: spot is a place); a drive without a destination of its own."
+  }
+ ],
+ "strongest_outsiders": [
+  {
+   "name": "Kerema",
+   "views": 2691,
+   "counted_sources": 3,
+   "kept": true
+  },
+  {
+   "name": "Kikori",
+   "views": 1900,
+   "counted_sources": 2,
+   "kept": true
+  },
+  {
+   "name": "Bulldog Track",
+   "views": 1226,
+   "counted_sources": 1,
+   "kept": false,
+   "verdict": "review"
+  },
+  {
+   "name": "Sogeri Plateau",
+   "views": 782,
+   "counted_sources": 2,
+   "kept": true
+  },
+  {
+   "name": "Eora Creek",
+   "views": 365,
+   "counted_sources": 0,
+   "kept": false,
+   "verdict": "reject"
+  },
+  {
+   "name": "Koitaki",
+   "views": 282,
+   "counted_sources": 0,
+   "kept": false,
+   "verdict": "reject"
+  },
+  {
+   "name": "Redscar Bay",
+   "views": 267,
+   "counted_sources": 0,
+   "kept": false,
+   "verdict": "reject"
+  },
+  {
+   "name": "Efogi",
+   "views": 259,
+   "counted_sources": 0,
+   "kept": false,
+   "verdict": "reject"
+  }
+ ],
+ "benchmark": "No NZ benchmark applies to this region; negatives (hospital, library, memorial-only) were rejected by the judge where they appeared."
+}

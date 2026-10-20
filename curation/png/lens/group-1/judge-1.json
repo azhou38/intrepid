@@ -1,0 +1,373 @@
+{
+ "spot:port-moresby-1": {
+  "candidates": [
+   {
+    "file": "GrevyZebra.jpg",
+    "right_place": false,
+    "shows_named_thing": false,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Grevy zebra, not in PNG; geotag 14,000 km away"
+   }
+  ],
+  "choice": "none: current zebra is the wrong place; Commons has only Varirata NP bird shots and renovation photos of the Nature Park (workers/handrails); Openverse API blocked (challenge page), Unsplash had nothing"
+ },
+ "spot:port-moresby-2": {
+  "candidates": [
+   {
+    "file": "Papua New Guinea National Museum May 2015.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "museum building, geotag Waigani"
+   },
+   {
+    "file": "Former Royal Australian Air Force (33 Squadron) Ford 5-AT-C A45-1 displayed at the National Museum and Art Gallery, Port Moresby.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "maybe",
+    "reason": "exhibit only"
+   }
+  ],
+  "choice": "Papua New Guinea National Museum May 2015.jpg",
+  "hero_crop": {
+   "x": 0.3,
+   "y": 0.45
+  },
+  "credit_note": "Commons CC BY-SA 4.0 Nick-D"
+ },
+ "spot:port-moresby-3": {
+  "candidates": [],
+  "choice": "keep-current",
+  "reason": "Ela Beach May 2015.jpg: real beach, geotag 309 m from pin, 4000 px",
+  "hero_crop": {
+   "x": 0.6,
+   "y": 0.45,
+   "zoom": 1.4
+  }
+ },
+ "spot:port-moresby-4": {
+  "candidates": [
+   {
+    "file": "Deir El Belah War Cemetery, 2016 (4).jpg",
+    "right_place": false,
+    "shows_named_thing": false,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Gaza cemetery"
+   },
+   {
+    "file": "View of Nine-Mile Quarry from Bomana War Cemetery near Port Moresby.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Bomana graves with hills; category correct"
+   }
+  ],
+  "choice": "View of Nine-Mile Quarry from Bomana War Cemetery near Port Moresby.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:port-moresby-5": {
+  "candidates": [
+   {
+    "file": "Papua New Guinea 1991-039 Parliament House, Port Moresby (33351725760).jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept-with-flag",
+    "reason": "1991 colour slide of the building; pre-2000 pre-filter flag; second judge to decide"
+   }
+  ],
+  "choice": "Papua New Guinea 1991-039 Parliament House, Port Moresby (33351725760).jpg",
+  "hero_crop": "ok",
+  "flag": "dated 1991"
+ },
+ "spot:port-moresby-6": {
+  "candidates": [],
+  "choice": "none: Commons has no Gordons Market photo (only a 1940 census scan), Gerehu market shots are portraits of children; Openverse blocked; Unsplash nothing"
+ },
+ "spot:port-moresby-7": {
+  "candidates": [],
+  "choice": "none: Commons has only Bootless Bay fish/nudibranch and farm photos, no Loloata Island view; Openverse blocked; Unsplash nothing"
+ },
+ "spot:kerema": {
+  "candidates": [
+   {
+    "file": "Pangu Highway near Silaura, Gulf Province, Papua New Guinea (2022).jpg",
+    "right_place": false,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "jungle road, not Kerema"
+   }
+  ],
+  "choice": "none: Commons has no Kerema photo beyond a jungle-road frame; Openverse blocked; Unsplash nothing"
+ },
+ "spot:kikori": {
+  "candidates": [],
+  "choice": "none: no Kikori (PNG) photos on Commons (only Japanese Kikori and a 1933 scan); Openverse blocked"
+ },
+ "spot:goroka": {
+  "candidates": [
+   {
+    "file": "Goroka (5502134974).jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "weak",
+    "reason": "area landscape, town not visible"
+   },
+   {
+    "file": "Goroka (5501545223).jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "weak",
+    "reason": "area landscape, town not visible"
+   }
+  ],
+  "choice": "Goroka (5502134974).jpg",
+  "hero_crop": "ok",
+  "note": "weak: shows highlands near Goroka, not the town; second judge decide"
+ },
+ "spot:mount-hagen": {
+  "candidates": [],
+  "choice": "keep-current",
+  "reason": "Hagen Show performers in highland setting, 1200 px, geotag 9 km; people are the subject (strict rule would fail) but Commons has no town view; nothing else found",
+  "hero_crop": "ok"
+ },
+ "spot:kainantu": {
+  "candidates": [],
+  "choice": "none: Commons Kainantu files are panorama strips (aspect >3) and hotel interiors; Openverse blocked"
+ },
+ "spot:mendi": {
+  "candidates": [
+   {
+    "file": "Papua New Guinea single age population pyramid 2020.png",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": false,
+    "verdict": "reject",
+    "reason": "chart"
+   },
+   {
+    "file": "Momei Oval Grandstand.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Mendi sports ground; ordinary building"
+   },
+   {
+    "file": "Road Down from Sunda,Tubiri,Mendi,SHP.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Dirt road near Mendi; not a draw"
+   }
+  ],
+  "choice": "none: current is a chart; Commons has only a grandstand, bank, church and dirt road"
+ },
+ "spot:kundiawa": {
+  "candidates": [
+   {
+    "file": "Diocese of Kundiawa.png",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": false,
+    "verdict": "reject",
+    "reason": "coat of arms"
+   }
+  ],
+  "choice": "none: current is a coat of arms; Commons Kundiawa photos are people at stalls and moths"
+ },
+ "spot:tari": {
+  "candidates": [
+   {
+    "file": "Lower Tari Valley - 8605496865.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "maybe",
+    "reason": "Forested slopes above the Tari valley, Hela Province, 2003"
+   },
+   {
+    "file": "Tari Gap - 8606600630.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "maybe",
+    "reason": "Cloud-filled basin and peak at Tari Gap, Hela, 2003; the gap is ~20 km from Tari"
+   }
+  ],
+  "choice": "Lower Tari Valley - 8605496865.jpg",
+  "hero_crop": "ok",
+  "note": "scenery of Tari valley/gap rather than the town"
+ },
+ "spot:mount-wilhelm": {
+  "candidates": [],
+  "choice": "keep-current",
+  "reason": "Mount Wilhelm.jpg: summit rock, 1600 px, geotagged on the mountain",
+  "hero_crop": {
+   "x": 0.45,
+   "y": 0.4
+  }
+ },
+ "spot:mount-giluwe": {
+  "candidates": [],
+  "choice": "keep-current",
+  "reason": "Mount Giluwe.jpg, CC0, 1024 px, peak from Ialibu; peak small so zoom",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.55,
+   "zoom": 1.6
+  }
+ },
+ "spot:lake-kutubu": {
+  "candidates": [],
+  "choice": "keep-current",
+  "reason": "Clouds over Lake Kutubu.jpg, 1024 px, the lake itself",
+  "hero_crop": {
+   "x": 0.55,
+   "y": 0.7,
+   "zoom": 1.3
+  }
+ },
+ "spot:kavieng": {
+  "candidates": [
+   {
+    "file": "Kavieng underwater 596.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "weak",
+    "reason": "a Kavieng shoreline, small and flat"
+   }
+  ],
+  "choice": "Kavieng underwater 596.jpg",
+  "hero_crop": "ok",
+  "note": "weak, second judge decide"
+ },
+ "spot:lihir-group": {
+  "candidates": [],
+  "choice": "none: Commons has only maps, ISS and aircraft photos; Openverse blocked"
+ },
+ "spot:lorengau": {
+  "candidates": [],
+  "choice": "none: Commons has only WWII and Seabee photos; Openverse blocked"
+ },
+ "spot:manus-island": {
+  "candidates": [
+   {
+    "file": "Manus - 043.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "ok",
+    "reason": "Lagoon and mangrove islets from height, Manus Island"
+   },
+   {
+    "file": "Manus - 106.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "ok",
+    "reason": "Island profile from the sea with Mt Dremsel"
+   },
+   {
+    "file": "Manus - 303.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "ok",
+    "reason": "Stilt house on the shore among palms"
+   }
+  ],
+  "choice": "Manus - 043.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:buka-island": {
+  "candidates": [
+   {
+    "file": "Hanahan Bay, Buka Island.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "ok",
+    "reason": "Beach at Hanahan Bay, Buka Island"
+   },
+   {
+    "file": "Kessa Beach.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "ok",
+    "reason": "Shallow reef water at Kessa Beach, Buka Island"
+   }
+  ],
+  "choice": "Hanahan Bay, Buka Island.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:buka": {
+  "candidates": [
+   {
+    "file": "View from a balcony, Buka, Papua New Guinea.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Coast and sea from Buka; no identifiable town"
+   },
+   {
+    "file": "Market on the way back to Buka town.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Market stall food; people/goods subject"
+   }
+  ],
+  "choice": "none: only balcony sea view and a market; no recognisable Buka town photo"
+ },
+ "spot:sohano-island": {
+  "candidates": [
+   {
+    "file": "Sundowners in Buka, Papua New Guinea.jpg",
+    "right_place": false,
+    "shows_named_thing": false,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "not proven Sohano"
+   }
+  ],
+  "choice": "none: nothing on Commons for Sohano Island (searches return Indian Sohana)"
+ }
+}

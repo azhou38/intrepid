@@ -1,0 +1,290 @@
+{
+ "group": "group-3",
+ "slots": {
+  "spot:rabaul-6": {
+   "candidates": [],
+   "choice": "none: Bitapaka War Cemetery: Commons geosearch (5 km), text searches and Openverse found nothing; Commons Rabaul category has only the Chinese soldier cemetery (a different place)"
+  },
+  "spot:rabaul-7": {
+   "candidates": [],
+   "choice": "none: current Frierl portrait is 200 px and a person; Commons Kokopo/East New Britain categories and searches have only workshop photos, 1913 archive and Trinity Beach (Australia); Openverse gave only two Flickr photos of people"
+  },
+  "spot:rabaul-8": {
+   "candidates": [],
+   "choice": "none: Commons Duke of York Islands category: Landsat, charts, museum masks, archive only; Openverse nothing"
+  },
+  "spot:kimbe": {
+   "candidates": [
+    {
+     "file": "Kimbe Bay islands.jpg",
+     "right_place": true,
+     "shows_named_thing": false,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "no",
+     "reason": "Restorf Island, a Kimbe Bay island, not the town (check 2)"
+    }
+   ],
+   "choice": "none: current Kimbe Bay islands.jpg is an island in the bay, not the town: reject (check 2); no photo of Kimbe town on Commons or Openverse. Kimbe Bay islands.jpg could be shared from the kimbe-bay slot"
+  },
+  "spot:kimbe-bay": {
+   "candidates": [
+    {
+     "file": "Kimbe Bay islands.jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "accept",
+     "reason": "Beach and turquoise water of Restorf Island in Kimbe Bay, 2048 px; replaces the hazy boat-wake current photo (fails check 2/3)"
+    }
+   ],
+   "choice": "Kimbe Bay islands.jpg",
+   "hero_crop": {
+    "x": 0.5,
+    "y": 0.35,
+    "zoom": 1.4
+   },
+   "note": "current boat-trip photo rejected: wake and hazy hills, no recognisable subject"
+  },
+  "spot:kokoda-track-1": {
+   "candidates": [
+    {
+     "file": "Bush Walk Kokoda 016.jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "reject",
+     "reason": "forest trail, not Owers Corner; geotag 11 km away"
+    }
+   ],
+   "choice": "none: Owers Corner: Commons category/geosearch/search nothing specific (search hit Hummus Corner); Openverse nothing; current is a map"
+  },
+  "spot:kokoda-track-2": {
+   "candidates": [
+    {
+     "file": "Kokoda track Papua New Guinea.JPG",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "weak",
+     "reason": "track between Kokoda and Isurava, not Isurava memorial"
+    }
+   ],
+   "choice": "none: Isurava memorial: nothing on Commons or Openverse; only the track potato-fields photo, which is not the named place"
+  },
+  "spot:kokoda-track-3": {
+   "candidates": [
+    {
+     "file": "Kokoda Gate.jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "accept",
+     "reason": "Kokoda Gate arch marking the Kokoda Track end at Kokoda, colour 2019"
+    },
+    {
+     "file": "Kokoda airstrip 2008.jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "weak",
+     "reason": "aerial airstrip"
+    }
+   ],
+   "choice": "Kokoda Gate.jpg",
+   "hero_crop": "ok",
+   "note": "16:9-ish; arch central, fits the square slice"
+  },
+  "spot:popondetta": {
+   "candidates": [],
+   "choice": "none: current Popondetta.png does not exist on Commons (404); Commons Popondetta category only archive/map/people; Openverse Flickr photos are an airport pickup truck and signs; Mt Lamington Commons photos are 1947/1951 archive"
+  },
+  "spot:tufi": {
+   "candidates": [],
+   "choice": "keep-current",
+   "hero_crop": "ok",
+   "note": "Tufi Town.jpg 5272x3948, 2022 colour, view of Tufi village, wharf and airstrip at the fjord head (file page checked); aerial-style but shows the named place"
+  },
+  "spot:buna": {
+   "candidates": [],
+   "choice": "none: Commons/Openverse only WWII archive and a book; no modern photo of Buna"
+  },
+  "spot:gona": {
+   "candidates": [],
+   "choice": "none: only WWII archive photos; the current is the national emblem"
+  },
+  "spot:wewak": {
+   "candidates": [],
+   "choice": "none: Commons Wewak has US Navy exercise photos, ship archive; Openverse eGuide Travel Flickr photos are villagers/huts/flowers, not the town or beach"
+  },
+  "spot:vanimo": {
+   "candidates": [],
+   "choice": "none: Commons Vanimo: road with a sign and portraits only; no town or beach photo"
+  },
+  "spot:maprik": {
+   "candidates": [
+    {
+     "file": "Haus Tambaran - Maprik Distrikt, Papua Neuguinea.jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "accept",
+     "reason": "Haus Tambaran spirit house in Maprik District, 4000x3000 CC0, file page confirms East Sepik/Maprik; the current Kambar wh.jpg is a yam from Reunion on white (wrong place, reject)"
+    },
+    {
+     "file": "Haus Tambaran, Apangai.jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "accept",
+     "reason": "another haus tambaran"
+    }
+   ],
+   "choice": "Haus Tambaran - Maprik Distrikt, Papua Neuguinea.jpg",
+   "hero_crop": "ok"
+  },
+  "spot:sepik-river": {
+   "candidates": [
+    {
+     "file": "Sepik river IMG 3665.jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "accept",
+     "reason": "stilt house on the Sepik, geotagged on the river"
+    },
+    {
+     "file": "Sepik River IMG 2097.jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "accept",
+     "reason": "canoes on the river"
+    }
+   ],
+   "choice": "Sepik river IMG 3665.jpg",
+   "hero_crop": "ok"
+  },
+  "spot:kairiru-island": {
+   "candidates": [
+    {
+     "file": "https://live.staticflickr.com/1151/1410006502_75c71b772e_b.jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "accept",
+     "reason": "island hills across the water, from welix Flickr set, CC BY 2.0; titled Kairiru Island"
+    },
+    {
+     "file": "https://live.staticflickr.com/1332/1410004164_09d911a543_b.jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "accept",
+     "reason": "palm beach, same set"
+    }
+   ],
+   "choice": "https://live.staticflickr.com/1151/1410006502_75c71b772e_b.jpg",
+   "licence": "CC BY 2.0",
+   "credit": {
+    "by": "welix",
+    "license": "CC BY 2.0",
+    "page": "https://www.flickr.com/photos/85976605@N00/1410006502"
+   },
+   "hero_crop": {
+    "x": 0.5,
+    "y": 0.45,
+    "zoom": 1.4
+   },
+   "note": "1024x768, ~2007, modest quality; place proven by Flickr title only"
+  },
+  "spot:mushu-island": {
+   "candidates": [
+    {
+     "file": "https://live.staticflickr.com/1426/1410004936_5629d540e4_b.jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "accept",
+     "reason": "beach with palms, Flickr title Mushu Island"
+    },
+    {
+     "file": "https://live.staticflickr.com/1224/1410005716_c078d41549_b.jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "accept",
+     "reason": "beach with canoes"
+    }
+   ],
+   "choice": "https://live.staticflickr.com/1426/1410004936_5629d540e4_b.jpg",
+   "licence": "CC BY 2.0",
+   "credit": {
+    "by": "welix",
+    "license": "CC BY 2.0",
+    "page": "https://www.flickr.com/photos/85976605@N00/1410004936"
+   },
+   "hero_crop": "ok",
+   "note": "1024x768; place proven by Flickr title only"
+  },
+  "spot:cape-wom": {
+   "candidates": [],
+   "choice": "none: Commons/Openverse: nothing for Cape Wom/Wom Point except a 1945 archive surrender photo (current)"
+  },
+  "spot:vanimo-surf-breaks": {
+   "candidates": [],
+   "choice": "none: no Vanimo surf photo on Commons or Openverse"
+  },
+  "spot:daru": {
+   "candidates": [
+    {
+     "file": "Daru Waterfront (10691180695).jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "weak",
+     "reason": "real Daru waterfront but rubbish-strewn low tide"
+    }
+   ],
+   "choice": "none: current is a Sentinel-2 satellite image; only Daru Waterfront (unflattering) and sea-ambulance photos exist; left for owner/second look"
+  },
+  "spot:kiunga": {
+   "candidates": [
+    {
+     "file": "Kiunga Airfield.jpg",
+     "right_place": true,
+     "shows_named_thing": true,
+     "spectacular_wide": true,
+     "real_photograph": true,
+     "verdict": "weak",
+     "reason": "airfield, not the town"
+    }
+   ],
+   "choice": "none: Commons Kiunga: airfield and wildlife only; Openverse insects"
+  },
+  "spot:lake-murray": {
+   "candidates": [],
+   "choice": "none: only NASA satellite image on Commons; Openverse nothing"
+  },
+  "spot:tonda-wildlife-management-area": {
+   "candidates": [],
+   "choice": "keep-current",
+   "hero_crop": "ok",
+   "note": "Trans Fly Bensbach 2007.jpg: colour aerial of a river through Trans Fly savanna near Bensbach (about 45 km from Tonda), 1024 px; right landscape type but not proven to be inside Tonda; weak keep, flag for owner"
+  }
+ }
+}

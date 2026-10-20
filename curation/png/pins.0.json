@@ -1,0 +1,1362 @@
+{
+ "port-moresby-1": {
+  "name": "Port Moresby Nature Park",
+  "recommended": {
+   "lat": -9.405172,
+   "lon": 147.165245,
+   "src": "photon",
+   "name": "Port Moresby Nature Park Main Entrance",
+   "type": "building=retail"
+  },
+  "confidence": "HIGH",
+  "agreeing": [
+   "photon"
+  ],
+  "candidates": [
+   {
+    "src": "photon",
+    "name": "Port Moresby Nature Park Main Entrance",
+    "type": "building=retail",
+    "lat": -9.4051719,
+    "lon": 147.1652454,
+    "match": 0.6,
+    "from_hint_m": 50
+   },
+   {
+    "src": "photon",
+    "name": "Nature Park Main Entrance",
+    "type": "tourism=attraction",
+    "lat": -9.4052405,
+    "lon": 147.1650835,
+    "match": 0.6,
+    "from_hint_m": 62
+   },
+   {
+    "src": "photon",
+    "name": "Nature Park",
+    "type": "highway=bus_stop",
+    "lat": -9.4059853,
+    "lon": 147.1647851,
+    "match": 0.6,
+    "from_hint_m": 108
+   },
+   {
+    "src": "photon",
+    "name": "Nature Park",
+    "type": "tourism=attraction",
+    "lat": -9.4066986,
+    "lon": 147.1657851,
+    "match": 0.6,
+    "from_hint_m": 141
+   },
+   {
+    "src": "photon",
+    "name": "Nature Park Administration",
+    "type": "office=yes",
+    "lat": -9.4063438,
+    "lon": 147.1665191,
+    "match": 0.6,
+    "from_hint_m": 142
+   },
+   {
+    "src": "photon",
+    "name": "Nature Park University Shop",
+    "type": "shop=convenience",
+    "lat": -9.4063433,
+    "lon": 147.1666529,
+    "match": 0.6,
+    "from_hint_m": 152
+   },
+   {
+    "src": "photon",
+    "name": "Nature Park Pathway",
+    "type": "highway=path",
+    "lat": -9.4069795,
+    "lon": 147.1660416,
+    "match": 0.6,
+    "from_hint_m": 177
+   },
+   {
+    "src": "photon",
+    "name": "Nature Park",
+    "type": "leisure=park",
+    "lat": -9.4016197,
+    "lon": 147.166733,
+    "match": 0.6,
+    "from_hint_m": 444
+   },
+   {
+    "src": "commons",
+    "name": "3 geotagged files",
+    "type": "photo median",
+    "lat": -9.435194,
+    "lon": 147.187578,
+    "match": 0.5,
+    "from_hint_m": 4097
+   }
+  ]
+ },
+ "port-moresby-4": {
+  "name": "Bomana War Cemetery",
+  "recommended": {
+   "lat": -9.396388,
+   "lon": 147.252416,
+   "src": "photon",
+   "name": "Port Moresby (Bomana) War Cemetery",
+   "type": "landuse=cemetery"
+  },
+  "confidence": "LOW",
+  "agreeing": [],
+  "candidates": [
+   {
+    "src": "photon",
+    "name": "Port Moresby (Bomana) War Cemetery",
+    "type": "landuse=cemetery",
+    "lat": -9.3963879,
+    "lon": 147.2524158,
+    "match": 0.6,
+    "from_hint_m": 137
+   }
+  ]
+ },
+ "port-moresby-7": {
+  "name": "Loloata Island",
+  "recommended": {
+   "lat": -9.536174,
+   "lon": 147.290343,
+   "src": "photon",
+   "name": "Loloata Island Resort",
+   "type": "leisure=resort"
+  },
+  "confidence": "LOW",
+  "agreeing": [],
+  "candidates": [
+   {
+    "src": "photon",
+    "name": "Loloata Island Resort",
+    "type": "leisure=resort",
+    "lat": -9.5361736,
+    "lon": 147.2903425,
+    "match": 0.6,
+    "from_hint_m": 0
+   },
+   {
+    "src": "photon",
+    "name": "Loloata Island",
+    "type": "place=islet",
+    "lat": -9.5385932,
+    "lon": 147.2908658,
+    "match": 0.6,
+    "from_hint_m": 275
+   }
+  ]
+ },
+ "goroka": {
+  "name": "Goroka",
+  "recommended": {
+   "lat": -6.087844,
+   "lon": 145.384291,
+   "src": "photon",
+   "name": "Goroka Secondary School",
+   "type": "amenity=school"
+  },
+  "confidence": "LOW",
+  "agreeing": [],
+  "candidates": [
+   {
+    "src": "wiki",
+    "name": "Goroka",
+    "type": "article",
+    "lat": -6.08333333,
+    "lon": 145.38333333,
+    "match": 1.0,
+    "from_hint_m": 0
+   },
+   {
+    "src": "photon",
+    "name": "Goroka Secondary School",
+    "type": "amenity=school",
+    "lat": -6.0878444,
+    "lon": 145.3842912,
+    "match": 0.6,
+    "from_hint_m": 513
+   },
+   {
+    "src": "photon",
+    "name": "Goroka Department of Works",
+    "type": "landuse=commercial",
+    "lat": -6.0856194,
+    "lon": 145.3884861,
+    "match": 0.6,
+    "from_hint_m": 625
+   },
+   {
+    "src": "photon",
+    "name": "Goroka Airport",
+    "type": "aeroway=aerodrome",
+    "lat": -6.0838887,
+    "lon": 145.391478,
+    "match": 0.6,
+    "from_hint_m": 904
+   },
+   {
+    "src": "photon",
+    "name": "Goroka Kakaruk Market",
+    "type": "amenity=marketplace",
+    "lat": -6.0729769,
+    "lon": 145.3885524,
+    "match": 0.6,
+    "from_hint_m": 1290
+   },
+   {
+    "src": "photon",
+    "name": "Goroka Post Office",
+    "type": "amenity=post_office",
+    "lat": -6.0729815,
+    "lon": 145.3922774,
+    "match": 0.6,
+    "from_hint_m": 1519
+   },
+   {
+    "src": "photon",
+    "name": "Goroka",
+    "type": "place=city",
+    "lat": -6.0730028,
+    "lon": 145.3932891,
+    "match": 0.6,
+    "from_hint_m": 1593
+   },
+   {
+    "src": "photon",
+    "name": "Goroka District",
+    "type": "place=county",
+    "lat": -6.05,
+    "lon": 145.383333,
+    "match": 0.6,
+    "from_hint_m": 3711
+   },
+   {
+    "src": "commons",
+    "name": "1 geotagged files",
+    "type": "photo median",
+    "lat": -6.0738366666667,
+    "lon": 145.39170833333,
+    "match": 0.5,
+    "from_hint_m": 1406
+   }
+  ]
+ },
+ "mendi": {
+  "name": "Mendi",
+  "recommended": {
+   "lat": -6.149499,
+   "lon": 143.657305,
+   "src": "photon",
+   "name": "Mendi Airport",
+   "type": "aeroway=aerodrome"
+  },
+  "confidence": "LOW",
+  "agreeing": [],
+  "candidates": [
+   {
+    "src": "photon",
+    "name": "Mendi Airport",
+    "type": "aeroway=aerodrome",
+    "lat": -6.1494989,
+    "lon": 143.6573046,
+    "match": 0.6,
+    "from_hint_m": 192
+   },
+   {
+    "src": "photon",
+    "name": "Mendi",
+    "type": "place=city",
+    "lat": -6.1393582,
+    "lon": 143.6578597,
+    "match": 0.6,
+    "from_hint_m": 940
+   },
+   {
+    "src": "photon",
+    "name": "Mendi Court House",
+    "type": "landuse=commercial",
+    "lat": -6.1386494,
+    "lon": 143.6593062,
+    "match": 0.6,
+    "from_hint_m": 1042
+   },
+   {
+    "src": "photon",
+    "name": "Mendi Highway",
+    "type": "highway=secondary",
+    "lat": -6.137157,
+    "lon": 143.6547677,
+    "match": 0.6,
+    "from_hint_m": 1213
+   },
+   {
+    "src": "photon",
+    "name": "Mendi RIver",
+    "type": "waterway=river",
+    "lat": -6.1727883,
+    "lon": 143.6639449,
+    "match": 0.6,
+    "from_hint_m": 2882
+   },
+   {
+    "src": "photon",
+    "name": "Mendi District",
+    "type": "place=county",
+    "lat": -6.116667,
+    "lon": 143.666667,
+    "match": 0.6,
+    "from_hint_m": 3618
+   },
+   {
+    "src": "photon",
+    "name": "Mendi-Munihiu Officers",
+    "type": "landuse=residential",
+    "lat": -6.1082557,
+    "lon": 143.6524469,
+    "match": 0.6,
+    "from_hint_m": 4431
+   },
+   {
+    "src": "commons",
+    "name": "11 geotagged files",
+    "type": "photo median",
+    "lat": -6.139623,
+    "lon": 143.656006,
+    "match": 0.5,
+    "from_hint_m": 918
+   }
+  ]
+ },
+ "mount-wilhelm": {
+  "name": "Mount Wilhelm",
+  "recommended": {
+   "lat": -5.779999,
+   "lon": 145.029584,
+   "src": "photon",
+   "name": "Mount Wilhelm",
+   "type": "natural=peak"
+  },
+  "confidence": "LOW",
+  "agreeing": [],
+  "candidates": [
+   {
+    "src": "photon",
+    "name": "Mount Wilhelm",
+    "type": "natural=peak",
+    "lat": -5.7799986,
+    "lon": 145.0295844,
+    "match": 0.6,
+    "from_hint_m": 0
+   },
+   {
+    "src": "wiki",
+    "name": "Mount Wilhelm",
+    "type": "article",
+    "lat": -5.8,
+    "lon": 145.03333333,
+    "match": 1.0,
+    "from_hint_m": 2265
+   },
+   {
+    "src": "commons",
+    "name": "1 geotagged files",
+    "type": "photo median",
+    "lat": -5.77689,
+    "lon": 145.02863,
+    "match": 0.5,
+    "from_hint_m": 362
+   }
+  ]
+ },
+ "lake-kutubu": {
+  "name": "Lake Kutubu",
+  "recommended": {
+   "lat": -6.391892,
+   "lon": 143.322522,
+   "src": "photon",
+   "name": "Lake Kutubu",
+   "type": "water=lake"
+  },
+  "confidence": "LOW",
+  "agreeing": [],
+  "candidates": [
+   {
+    "src": "photon",
+    "name": "Lake Kutubu",
+    "type": "water=lake",
+    "lat": -6.3918917,
+    "lon": 143.3225218,
+    "match": 0.6,
+    "from_hint_m": 1498
+   },
+   {
+    "src": "wiki",
+    "name": "Lake Kutubu",
+    "type": "article",
+    "lat": -6.4,
+    "lon": 143.33333333,
+    "match": 1.0,
+    "from_hint_m": 0
+   }
+  ]
+ },
+ "lorengau": {
+  "name": "Lorengau",
+  "recommended": {
+   "lat": -2.026724,
+   "lon": 147.270372,
+   "src": "photon",
+   "name": "Lorengau Market",
+   "type": "highway=secondary"
+  },
+  "confidence": "LOW",
+  "agreeing": [],
+  "candidates": [
+   {
+    "src": "wiki",
+    "name": "Lorengau",
+    "type": "article",
+    "lat": -2.03055556,
+    "lon": 147.27222222,
+    "match": 1.0,
+    "from_hint_m": 1246
+   },
+   {
+    "src": "photon",
+    "name": "Lorengau Market",
+    "type": "highway=secondary",
+    "lat": -2.0267235,
+    "lon": 147.2703723,
+    "match": 0.6,
+    "from_hint_m": 775
+   },
+   {
+    "src": "photon",
+    "name": "Lorengau River",
+    "type": "waterway=river",
+    "lat": -2.0359057,
+    "lon": 147.2643736,
+    "match": 0.6,
+    "from_hint_m": 1697
+   },
+   {
+    "src": "photon",
+    "name": "Lorengau",
+    "type": "place=city",
+    "lat": -2.0329567,
+    "lon": 147.2789185,
+    "match": 0.6,
+    "from_hint_m": 1918
+   }
+  ]
+ },
+ "buka": {
+  "name": "Buka",
+  "recommended": {
+   "lat": -5.422108,
+   "lon": 154.673287,
+   "src": "photon",
+   "name": "Buka Airport",
+   "type": "aeroway=aerodrome"
+  },
+  "confidence": "HIGH",
+  "agreeing": [
+   "wiki"
+  ],
+  "candidates": [
+   {
+    "src": "wiki",
+    "name": "Buka, Papua New Guinea",
+    "type": "article",
+    "lat": -5.42194444,
+    "lon": 154.67277778,
+    "match": 1.0,
+    "from_hint_m": 0
+   },
+   {
+    "src": "photon",
+    "name": "Buka Airport",
+    "type": "aeroway=aerodrome",
+    "lat": -5.4221082,
+    "lon": 154.6732872,
+    "match": 0.6,
+    "from_hint_m": 59
+   },
+   {
+    "src": "photon",
+    "name": "Buka General Hospital",
+    "type": "amenity=hospital",
+    "lat": -5.4296031,
+    "lon": 154.6712366,
+    "match": 0.6,
+    "from_hint_m": 870
+   },
+   {
+    "src": "photon",
+    "name": "Buka Passage",
+    "type": "natural=strait",
+    "lat": -5.4317088,
+    "lon": 154.6751833,
+    "match": 0.6,
+    "from_hint_m": 1119
+   },
+   {
+    "src": "photon",
+    "name": "Buka",
+    "type": "place=city",
+    "lat": -5.4324184,
+    "lon": 154.6701836,
+    "match": 0.6,
+    "from_hint_m": 1201
+   },
+   {
+    "src": "photon",
+    "name": "Buka city dump",
+    "type": "landuse=landfill",
+    "lat": -5.3985405,
+    "lon": 154.6602745,
+    "match": 0.6,
+    "from_hint_m": 2951
+   }
+  ]
+ },
+ "nissan-island": {
+  "name": "Nissan Island",
+  "recommended": {
+   "lat": -4.498874,
+   "lon": 154.225723,
+   "src": "photon",
+   "name": "Nissan Island Airport",
+   "type": "aeroway=aerodrome"
+  },
+  "confidence": "LOW",
+  "agreeing": [],
+  "candidates": [
+   {
+    "src": "wiki",
+    "name": "Nissan Island",
+    "type": "article",
+    "lat": -4.5,
+    "lon": 154.21666667,
+    "match": 1.0,
+    "from_hint_m": 0
+   },
+   {
+    "src": "photon",
+    "name": "Nissan Island Airport",
+    "type": "aeroway=aerodrome",
+    "lat": -4.4988742,
+    "lon": 154.2257233,
+    "match": 0.6,
+    "from_hint_m": 1013
+   },
+   {
+    "src": "photon",
+    "name": "Nissan High School",
+    "type": "amenity=school",
+    "lat": -4.5031524,
+    "lon": 154.2258988,
+    "match": 0.6,
+    "from_hint_m": 1083
+   },
+   {
+    "src": "photon",
+    "name": "Nissan Island",
+    "type": "place=island",
+    "lat": -4.5118843,
+    "lon": 154.230335,
+    "match": 0.6,
+    "from_hint_m": 2013
+   },
+   {
+    "src": "commons",
+    "name": "1 geotagged files",
+    "type": "photo median",
+    "lat": -4.562001,
+    "lon": 154.216947,
+    "match": 0.5,
+    "from_hint_m": 6902
+   }
+  ]
+ },
+ "alotau-3": {
+  "name": "Normanby Island",
+  "recommended": {
+   "lat": -9.951774,
+   "lon": 150.957255,
+   "src": "photon",
+   "name": "Normanby Island",
+   "type": "place=island"
+  },
+  "confidence": "LOW",
+  "agreeing": [],
+  "candidates": [
+   {
+    "src": "wiki",
+    "name": "Normanby Island (Papua New Guinea)",
+    "type": "article",
+    "lat": -10,
+    "lon": 151,
+    "match": 1.0,
+    "from_hint_m": 5708
+   },
+   {
+    "src": "photon",
+    "name": "Normanby Island",
+    "type": "place=island",
+    "lat": -9.9517741,
+    "lon": 150.957255,
+    "match": 0.6,
+    "from_hint_m": 6609
+   },
+   {
+    "src": "commons",
+    "name": "1 geotagged files",
+    "type": "photo median",
+    "lat": -9.941798,
+    "lon": 150.987854,
+    "match": 0.5,
+    "from_hint_m": 3436
+   }
+  ]
+ },
+ "louisiade-archipelago": {
+  "name": "Louisiade Archipelago",
+  "recommended": {
+   "lat": -11.2,
+   "lon": 153.0,
+   "src": "photon",
+   "name": "Louisiade Archipelago",
+   "type": "place=archipelago"
+  },
+  "confidence": "HIGH",
+  "agreeing": [
+   "wiki"
+  ],
+  "candidates": [
+   {
+    "src": "wiki",
+    "name": "Louisiade Archipelago",
+    "type": "article",
+    "lat": -11.2,
+    "lon": 153,
+    "match": 1.0,
+    "from_hint_m": 0
+   },
+   {
+    "src": "photon",
+    "name": "Louisiade Archipelago",
+    "type": "place=archipelago",
+    "lat": -11.2,
+    "lon": 153.0,
+    "match": 0.6,
+    "from_hint_m": 0
+   }
+  ]
+ },
+ "woodlark-island": {
+  "name": "Woodlark Island",
+  "recommended": {
+   "lat": -9.122602,
+   "lon": 152.807598,
+   "src": "photon",
+   "name": "Woodlark Island",
+   "type": "place=island"
+  },
+  "confidence": "LOW",
+  "agreeing": [],
+  "candidates": [
+   {
+    "src": "wiki",
+    "name": "Woodlark Island",
+    "type": "article",
+    "lat": -9.12083333,
+    "lon": 152.73611111,
+    "match": 1.0,
+    "from_hint_m": 0
+   },
+   {
+    "src": "photon",
+    "name": "Woodlark Island",
+    "type": "place=island",
+    "lat": -9.1226016,
+    "lon": 152.8075983,
+    "match": 0.6,
+    "from_hint_m": 7860
+   }
+  ]
+ },
+ "madang-3": {
+  "name": "Krangket Island",
+  "recommended": null,
+  "confidence": "LOW",
+  "agreeing": [],
+  "candidates": []
+ },
+ "lae-botanic-gardens": {
+  "name": "Lae Botanic Gardens",
+  "recommended": {
+   "lat": -6.721855,
+   "lon": 146.995128,
+   "src": "photon",
+   "name": "Lae Botanical Gardens",
+   "type": "leisure=park"
+  },
+  "confidence": "LOW",
+  "agreeing": [],
+  "candidates": [
+   {
+    "src": "wiki",
+    "name": "Lae Botanic Gardens",
+    "type": "article",
+    "lat": -6.719509,
+    "lon": 146.995362,
+    "match": 1.0,
+    "from_hint_m": 0
+   },
+   {
+    "src": "photon",
+    "name": "Lae Botanical Gardens",
+    "type": "leisure=park",
+    "lat": -6.7218552,
+    "lon": 146.9951276,
+    "match": 0.6,
+    "from_hint_m": 262
+   },
+   {
+    "src": "commons",
+    "name": "26 geotagged files",
+    "type": "photo median",
+    "lat": -6.72274,
+    "lon": 146.9973,
+    "match": 0.5,
+    "from_hint_m": 419
+   }
+  ]
+ },
+ "wau": {
+  "name": "Wau",
+  "recommended": {
+   "lat": -7.340314,
+   "lon": 146.717273,
+   "src": "photon",
+   "name": "Wau",
+   "type": "place=town"
+  },
+  "confidence": "LOW",
+  "agreeing": [],
+  "candidates": [
+   {
+    "src": "wiki",
+    "name": "Wau, Papua New Guinea",
+    "type": "article",
+    "lat": -7.33888889,
+    "lon": 146.71666667,
+    "match": 1.0,
+    "from_hint_m": 0
+   },
+   {
+    "src": "photon",
+    "name": "Wau",
+    "type": "place=town",
+    "lat": -7.3403142,
+    "lon": 146.7172732,
+    "match": 0.6,
+    "from_hint_m": 172
+   },
+   {
+    "src": "photon",
+    "name": "Wau Airport",
+    "type": "aeroway=aerodrome",
+    "lat": -7.3452489,
+    "lon": 146.7189733,
+    "match": 0.6,
+    "from_hint_m": 752
+   },
+   {
+    "src": "photon",
+    "name": "Wau Baptist Mission",
+    "type": "landuse=religious",
+    "lat": -7.347893,
+    "lon": 146.7199411,
+    "match": 0.6,
+    "from_hint_m": 1066
+   },
+   {
+    "src": "photon",
+    "name": "Wau Ecology",
+    "type": "landuse=residential",
+    "lat": -7.3390158,
+    "lon": 146.7056422,
+    "match": 0.6,
+    "from_hint_m": 1217
+   },
+   {
+    "src": "photon",
+    "name": "Wau-Bulolo Highway",
+    "type": "highway=primary",
+    "lat": -7.3281765,
+    "lon": 146.7190178,
+    "match": 0.6,
+    "from_hint_m": 1220
+   },
+   {
+    "src": "photon",
+    "name": "Wau Ecology",
+    "type": "place=village",
+    "lat": -7.3395679,
+    "lon": 146.7036739,
+    "match": 0.6,
+    "from_hint_m": 1436
+   },
+   {
+    "src": "photon",
+    "name": "Wau Creek",
+    "type": "waterway=river",
+    "lat": -7.3273023,
+    "lon": 146.7332665,
+    "match": 0.6,
+    "from_hint_m": 2241
+   },
+   {
+    "src": "photon",
+    "name": "Wau-Bulolo Highway",
+    "type": "highway=primary",
+    "lat": -7.3076347,
+    "lon": 146.719882,
+    "match": 0.6,
+    "from_hint_m": 3497
+   }
+  ]
+ },
+ "rabaul-2": {
+  "name": "Kokopo",
+  "recommended": {
+   "lat": -4.343866,
+   "lon": 152.27002,
+   "src": "photon",
+   "name": "Kokopo Fried Chicken",
+   "type": "amenity=fast_food"
+  },
+  "confidence": "LOW",
+  "agreeing": [],
+  "candidates": [
+   {
+    "src": "photon",
+    "name": "Kokopo Fried Chicken",
+    "type": "amenity=fast_food",
+    "lat": -4.3438656,
+    "lon": 152.2700196,
+    "match": 0.6,
+    "from_hint_m": 790
+   },
+   {
+    "src": "photon",
+    "name": "Kokopo",
+    "type": "place=town",
+    "lat": -4.3432175,
+    "lon": 152.2686741,
+    "match": 0.6,
+    "from_hint_m": 932
+   },
+   {
+    "src": "photon",
+    "name": "Kokopo Post Office",
+    "type": "amenity=post_office",
+    "lat": -4.3426564,
+    "lon": 152.2681128,
+    "match": 0.6,
+    "from_hint_m": 1019
+   },
+   {
+    "src": "photon",
+    "name": "Kokopo United Church",
+    "type": "amenity=place_of_worship",
+    "lat": -4.3497947,
+    "lon": 152.2580494,
+    "match": 0.6,
+    "from_hint_m": 1726
+   },
+   {
+    "src": "photon",
+    "name": "Kokopo-Rabaul Road",
+    "type": "highway=primary",
+    "lat": -4.3322282,
+    "lon": 152.2548767,
+    "match": 0.6,
+    "from_hint_m": 2869
+   },
+   {
+    "src": "photon",
+    "name": "Kokopo Power Plant",
+    "type": "landuse=industrial",
+    "lat": -4.3313051,
+    "lon": 152.2472893,
+    "match": 0.6,
+    "from_hint_m": 3586
+   },
+   {
+    "src": "photon",
+    "name": "Kokopo District",
+    "type": "boundary=administrative",
+    "lat": -4.4062427,
+    "lon": 152.2850011,
+    "match": 0.6,
+    "from_hint_m": 6388
+   }
+  ]
+ },
+ "rabaul-5": {
+  "name": "New Guinea Club Museum",
+  "recommended": {
+   "lat": -4.204076,
+   "lon": 152.181491,
+   "src": "photon",
+   "name": "New Guinea Club",
+   "type": "club=social_club"
+  },
+  "confidence": "LOW",
+  "agreeing": [],
+  "candidates": [
+   {
+    "src": "photon",
+    "name": "New Guinea Club",
+    "type": "club=social_club",
+    "lat": -4.2040758,
+    "lon": 152.181491,
+    "match": 0.6,
+    "from_hint_m": 7
+   },
+   {
+    "src": "photon",
+    "name": "Rabaul Yacht Club",
+    "type": "club=social_club",
+    "lat": -4.2069556,
+    "lon": 152.1796214,
+    "match": 0.6,
+    "from_hint_m": 375
+   },
+   {
+    "src": "commons",
+    "name": "6 geotagged files",
+    "type": "photo median",
+    "lat": -4.210142,
+    "lon": 152.172316,
+    "match": 0.5,
+    "from_hint_m": 1216
+   }
+  ]
+ },
+ "rabaul-8": {
+  "name": "Duke of York Islands",
+  "recommended": {
+   "lat": -4.166589,
+   "lon": 152.455071,
+   "src": "photon",
+   "name": "Duke of York Island",
+   "type": "place=island"
+  },
+  "confidence": "LOW",
+  "agreeing": [],
+  "candidates": [
+   {
+    "src": "wiki",
+    "name": "Duke of York Islands",
+    "type": "article",
+    "lat": -4.166667,
+    "lon": 152.45,
+    "match": 1.0,
+    "from_hint_m": 0
+   },
+   {
+    "src": "photon",
+    "name": "Duke of York Island",
+    "type": "place=island",
+    "lat": -4.1665891,
+    "lon": 152.4550714,
+    "match": 0.6,
+    "from_hint_m": 563
+   },
+   {
+    "src": "photon",
+    "name": "Duke of York Islands",
+    "type": "place=island",
+    "lat": -4.1787518,
+    "lon": 152.4425598,
+    "match": 0.6,
+    "from_hint_m": 1579
+   }
+  ]
+ },
+ "kokoda-track-1": {
+  "name": "Owers' Corner",
+  "recommended": {
+   "lat": -9.362065,
+   "lon": 147.487938,
+   "src": "photon",
+   "name": "Owers Corner",
+   "type": "historic=monument"
+  },
+  "confidence": "LOW",
+  "agreeing": [],
+  "candidates": [
+   {
+    "src": "photon",
+    "name": "Owers Corner",
+    "type": "historic=monument",
+    "lat": -9.3620646,
+    "lon": 147.487938,
+    "match": 0.6,
+    "from_hint_m": 1
+   }
+  ]
+ },
+ "popondetta": {
+  "name": "Popondetta",
+  "recommended": {
+   "lat": -8.764291,
+   "lon": 148.233807,
+   "src": "photon",
+   "name": "Popondetta International School",
+   "type": "amenity=school"
+  },
+  "confidence": "LOW",
+  "agreeing": [],
+  "candidates": [
+   {
+    "src": "wiki",
+    "name": "Popondetta",
+    "type": "article",
+    "lat": -8.76555556,
+    "lon": 148.23472222,
+    "match": 1.0,
+    "from_hint_m": 0
+   },
+   {
+    "src": "photon",
+    "name": "Popondetta International School",
+    "type": "amenity=school",
+    "lat": -8.7642912,
+    "lon": 148.2338069,
+    "match": 0.6,
+    "from_hint_m": 173
+   },
+   {
+    "src": "photon",
+    "name": "Popondetta Council Chambers",
+    "type": "amenity=townhall",
+    "lat": -8.7648025,
+    "lon": 148.2373482,
+    "match": 0.6,
+    "from_hint_m": 301
+   },
+   {
+    "src": "photon",
+    "name": "Popondetta",
+    "type": "place=city",
+    "lat": -8.7667424,
+    "lon": 148.2375057,
+    "match": 0.6,
+    "from_hint_m": 334
+   },
+   {
+    "src": "photon",
+    "name": "Popondetta General Hospital",
+    "type": "amenity=hospital",
+    "lat": -8.7636457,
+    "lon": 148.2392225,
+    "match": 0.6,
+    "from_hint_m": 539
+   },
+   {
+    "src": "photon",
+    "name": "Popondetta PNG Bible Church",
+    "type": "amenity=place_of_worship",
+    "lat": -8.7569761,
+    "lon": 148.2365684,
+    "match": 0.6,
+    "from_hint_m": 976
+   },
+   {
+    "src": "photon",
+    "name": "Popondetta AOG Church",
+    "type": "amenity=place_of_worship",
+    "lat": -8.7564425,
+    "lon": 148.2380242,
+    "match": 0.6,
+    "from_hint_m": 1078
+   },
+   {
+    "src": "photon",
+    "name": "Popondetta Power Station",
+    "type": "landuse=industrial",
+    "lat": -8.7469201,
+    "lon": 148.2536213,
+    "match": 0.6,
+    "from_hint_m": 2937
+   },
+   {
+    "src": "commons",
+    "name": "1 geotagged files",
+    "type": "photo median",
+    "lat": -8.766667,
+    "lon": 148.233333,
+    "match": 0.5,
+    "from_hint_m": 197
+   }
+  ]
+ },
+ "gona": {
+  "name": "Gona",
+  "recommended": {
+   "lat": -8.619546,
+   "lon": 148.289826,
+   "src": "photon",
+   "name": "Gona Memorial Clinic",
+   "type": "amenity=clinic"
+  },
+  "confidence": "HIGH",
+  "agreeing": [
+   "photon"
+  ],
+  "candidates": [
+   {
+    "src": "wiki",
+    "name": "Gona, Papua New Guinea",
+    "type": "article",
+    "lat": -8.6,
+    "lon": 148.26666667,
+    "match": 1.0,
+    "from_hint_m": 0
+   },
+   {
+    "src": "photon",
+    "name": "Gona Memorial Clinic",
+    "type": "amenity=clinic",
+    "lat": -8.6195457,
+    "lon": 148.2898263,
+    "match": 0.6,
+    "from_hint_m": 3351
+   },
+   {
+    "src": "photon",
+    "name": "Gona",
+    "type": "place=village",
+    "lat": -8.6195032,
+    "lon": 148.290184,
+    "match": 0.6,
+    "from_hint_m": 3378
+   },
+   {
+    "src": "photon",
+    "name": "Gona Holy Cross Primary School",
+    "type": "amenity=school",
+    "lat": -8.6216321,
+    "lon": 148.2902738,
+    "match": 0.6,
+    "from_hint_m": 3543
+   },
+   {
+    "src": "photon",
+    "name": "Gona Holy Cross Anglican Church",
+    "type": "amenity=place_of_worship",
+    "lat": -8.6218805,
+    "lon": 148.2916733,
+    "match": 0.6,
+    "from_hint_m": 3675
+   }
+  ]
+ },
+ "maprik": {
+  "name": "Maprik",
+  "recommended": {
+   "lat": -3.630859,
+   "lon": 143.056401,
+   "src": "photon",
+   "name": "Maprik",
+   "type": "place=town"
+  },
+  "confidence": "LOW",
+  "agreeing": [],
+  "candidates": [
+   {
+    "src": "photon",
+    "name": "Maprik",
+    "type": "place=town",
+    "lat": -3.6308588,
+    "lon": 143.0564013,
+    "match": 0.6,
+    "from_hint_m": 0
+   },
+   {
+    "src": "photon",
+    "name": "Maprik District Administration",
+    "type": "office=government",
+    "lat": -3.6288001,
+    "lon": 143.0561174,
+    "match": 0.6,
+    "from_hint_m": 231
+   },
+   {
+    "src": "photon",
+    "name": "Maprik Admin Primary and Junior High School",
+    "type": "amenity=school",
+    "lat": -3.6322227,
+    "lon": 143.0588362,
+    "match": 0.6,
+    "from_hint_m": 310
+   },
+   {
+    "src": "photon",
+    "name": "Maprik Market",
+    "type": "amenity=marketplace",
+    "lat": -3.6279034,
+    "lon": 143.055931,
+    "match": 0.6,
+    "from_hint_m": 333
+   },
+   {
+    "src": "photon",
+    "name": "Maprik 1",
+    "type": "place=village",
+    "lat": -3.6425957,
+    "lon": 143.0551263,
+    "match": 0.6,
+    "from_hint_m": 1314
+   },
+   {
+    "src": "photon",
+    "name": "Maprik 2",
+    "type": "place=village",
+    "lat": -3.6358564,
+    "lon": 143.0422879,
+    "match": 0.6,
+    "from_hint_m": 1664
+   },
+   {
+    "src": "photon",
+    "name": "Maprik District",
+    "type": "boundary=administrative",
+    "lat": -3.645185,
+    "lon": 143.0005035,
+    "match": 0.6,
+    "from_hint_m": 6411
+   }
+  ]
+ },
+ "mushu-island": {
+  "name": "Mushu Island",
+  "recommended": null,
+  "confidence": "LOW",
+  "agreeing": [],
+  "candidates": []
+ },
+ "daru": {
+  "name": "Daru",
+  "recommended": {
+   "lat": -9.069901,
+   "lon": 143.210029,
+   "src": "photon",
+   "name": "Daru",
+   "type": "place=city"
+  },
+  "confidence": "LOW",
+  "agreeing": [],
+  "candidates": [
+   {
+    "src": "photon",
+    "name": "Daru",
+    "type": "place=city",
+    "lat": -9.069901,
+    "lon": 143.210029,
+    "match": 0.6,
+    "from_hint_m": 0
+   },
+   {
+    "src": "photon",
+    "name": "Daru United Pentecostal Church Compound",
+    "type": "landuse=religious",
+    "lat": -9.0710281,
+    "lon": 143.2086891,
+    "match": 0.6,
+    "from_hint_m": 193
+   },
+   {
+    "src": "photon",
+    "name": "Daru",
+    "type": "tourism=viewpoint",
+    "lat": -9.065039,
+    "lon": 143.2096768,
+    "match": 0.6,
+    "from_hint_m": 543
+   },
+   {
+    "src": "photon",
+    "name": "Daru United Church Mission",
+    "type": "landuse=religious",
+    "lat": -9.0761762,
+    "lon": 143.2100524,
+    "match": 0.6,
+    "from_hint_m": 699
+   },
+   {
+    "src": "photon",
+    "name": "Daru Jehovah's Witness Compound",
+    "type": "landuse=religious",
+    "lat": -9.0761758,
+    "lon": 143.2112392,
+    "match": 0.6,
+    "from_hint_m": 711
+   },
+   {
+    "src": "photon",
+    "name": "Daru Destiny Church Compound",
+    "type": "landuse=religious",
+    "lat": -9.0760787,
+    "lon": 143.2069423,
+    "match": 0.6,
+    "from_hint_m": 767
+   },
+   {
+    "src": "photon",
+    "name": "Daru Island",
+    "type": "place=island",
+    "lat": -9.0838168,
+    "lon": 143.2074994,
+    "match": 0.6,
+    "from_hint_m": 1574
+   },
+   {
+    "src": "photon",
+    "name": "Daru Airport",
+    "type": "aeroway=aerodrome",
+    "lat": -9.0867784,
+    "lon": 143.208028,
+    "match": 0.6,
+    "from_hint_m": 1892
+   }
+  ]
+ },
+ "tonda-wildlife-management-area": {
+  "name": "Tonda Wildlife Management Area",
+  "recommended": null,
+  "confidence": "LOW",
+  "agreeing": [],
+  "candidates": [
+   {
+    "src": "wiki",
+    "name": "Tonda Wildlife Management Area",
+    "type": "article",
+    "lat": -9.00138889,
+    "lon": 141.54444444,
+    "match": 1.0,
+    "from_hint_m": 0
+   }
+  ]
+ }
+}

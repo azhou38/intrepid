@@ -23,9 +23,11 @@ else { console.error('usage: tier-spots.ts (--file spots.json | --ids a,b) --out
 
 const SIMPLE_CATEGORIES = new Set(['beach', 'viewpoint', 'landmark', 'monument']);
 // Name cues that mean it may charge, keep hours, or have its own site: full chain.
-const NEEDS_RESEARCH = /national park|conservation|state forest|garden|park\b|reserve|falls|gorge|walk|track|trail|zoo|aquarium|museum|gallery|cave|tour|cruise|winery|vineyard|distillery|brewery|observatory|railway|gaol|jail|resort|farm|centre|center|house|castle|fort |lighthouse|cellar|experience|tower|island|mine|market|baths|pool|pier|wharf|jetty|cemetery|station|hall|school|dam|lake|river|reef|circuit|sculpture|guitar|memorial|anzac/i;
+const NEEDS_RESEARCH = /national park|conservation|state forest|garden|park\b|reserve|falls|gorge|walk|track|trail|zoo|aquarium|museum|gallery|cave|tour|cruise|winery|vineyard|distillery|brewery|observatory|railway|gaol|jail|resort|farm|centre|center|house|castle|fort |lighthouse|cellar|experience|tower|island|mine|market|baths|pool|pier|wharf|jetty|cemetery|station|hall|school|dam|lake|river|reef|circuit|sculpture|guitar|memorial|anzac|highway|road\b|drive/i;
 // Text cues that it is inside, or run by, something that charges.
 const FEE_TEXT = /\b(national park|state conservation|fee|fees|entry|admission|permit|ticket|tolls?|\$\d|booking|book ahead|guided)\b/i;
+// A town or settlement is a free, open place to wander: filed as a heritage place, 1-3 hours (as the NSW town spots were).
+const TOWN = /\b(town|city|capital|settlement|village|hub|gateway|provincial)\b/i;
 const VISIT: Record<string, [number, number]> = { beach: [1, 3], viewpoint: [0, 0.5], landmark: [0, 0.25], monument: [0, 0.5] };
 
 const simple: any[] = [], timed: any[] = [];
@@ -34,8 +36,9 @@ for (const e of input) {
     : NEEDS_RESEARCH.test(e.name) ? 'name suggests an operator, park or ticketed site'
     : FEE_TEXT.test(`${e.note ?? ''}`) ? 'its source text mentions a fee, a park or a booking' : null;
   if (why) { timed.push({ id: e.id, reason: why }); continue; }
-  const [min, max] = VISIT[e.category];
-  simple.push({ id: e.id, facts: { hours: e.category === 'landmark' ? 'Visible from the road at any time' : 'Open 24 hours', visitHoursMin: min, visitHoursMax: max, free: true, basis: 'default for a free, open-access place; no ticketUrl (no single steward)' } });
+  const town = e.category === 'landmark' && TOWN.test((e.note ?? '').slice(0, 120));
+  const [min, max] = town ? [1, 3] : VISIT[e.category];
+  simple.push({ id: e.id, facts: { ...(town ? { category: 'historic' } : {}), hours: /^(big|giant)\b/i.test(e.name) ? 'Visible from the road at any time' : 'Open 24 hours', visitHoursMin: min, visitHoursMax: max, free: true, basis: 'default for a free, open-access place; no ticketUrl (no single steward)' } });
 }
 const auditSize = Math.min(simple.length, Math.max(3, Math.ceil(simple.length * 0.12)));   // ~12% of the simple spots, at least 3
 const step = Math.max(1, Math.floor(simple.length / Math.max(1, auditSize)));

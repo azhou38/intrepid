@@ -1,0 +1,497 @@
+{
+ "region": "region-png-morobe-madang",
+ "entries": [
+  {
+   "name": "Madang",
+   "wiki": "Madang",
+   "id": "madang",
+   "category": "landmark",
+   "action": "new-destination",
+   "destination": "madang",
+   "kind": "proposed-destination",
+   "coordinates": {
+    "lat": -5.21666667,
+    "lng": 145.8
+   },
+   "coordinates_source": "wikipedia:Madang",
+   "views": 17307,
+   "counted_sources": 1,
+   "note": "Town: provincial capital and main base on the Madang north-coast harbour; Wikivoyage's start point for the coast.",
+   "reason": "Kept; base passes the name test (see destinations-proposed.json name_evidence) and has the spots to fill a visit.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Coastwatchers Lighthouse",
+   "wiki": null,
+   "id": "madang-1",
+   "category": "landmark",
+   "action": "spot",
+   "destination": "madang",
+   "kind": "spot:madang",
+   "coordinates": {
+    "lat": -5.2124353,
+    "lng": 145.8148396
+   },
+   "coordinates_source": "osm:historic/memorial Coastwatchers Memorial",
+   "views": 0,
+   "counted_sources": 2,
+   "note": "Landmark: working lighthouse on Madang harbour, a memorial to the WWII coastwatchers.",
+   "reason": "Kept; inside the span of Madang and reached from that base.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "distance_from_destination_km": 1.7,
+   "within_span": true
+  },
+  {
+   "name": "Madang Central Market",
+   "wiki": null,
+   "id": "madang-2",
+   "category": "market",
+   "action": "spot",
+   "destination": "madang",
+   "kind": "spot:madang",
+   "coordinates": {
+    "lat": -5.2123298,
+    "lng": 145.80628
+   },
+   "coordinates_source": "osm:amenity/marketplace Madang Market",
+   "views": 0,
+   "counted_sources": 1,
+   "note": "Market: busy local market in the centre of Madang, open daily, with produce brought in from the Highlands.",
+   "reason": "Kept; inside the span of Madang and reached from that base.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "distance_from_destination_km": 0.8,
+   "within_span": true
+  },
+  {
+   "name": "Krangket Island",
+   "wiki": null,
+   "id": "madang-3",
+   "category": "nature",
+   "action": "spot",
+   "destination": "madang",
+   "kind": "spot:madang",
+   "coordinates": {
+    "lat": -5.1976267,
+    "lng": 145.8231134
+   },
+   "coordinates_source": "osm:place/island Kranket Island",
+   "views": 0,
+   "counted_sources": 1,
+   "note": "Island: five-minute boat trip from Madang; two villages with gardens, a lagoon beach and a basic lodge.",
+   "reason": "Kept; inside the span of Madang and reached from that base.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "distance_from_destination_km": 3.3,
+   "within_span": true
+  },
+  {
+   "name": "USS Boston Wreck",
+   "wiki": null,
+   "id": "madang-4",
+   "category": "historic",
+   "action": "spot",
+   "destination": "madang",
+   "kind": "spot:madang",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": "coordinates null: needs resolve-pin.py or the owner (not guessed)",
+   "views": 0,
+   "counted_sources": 0,
+   "note": "Wreck dive: US Navy minesweeper (converted Liberty ship) sunk on a reef drop-off off Madang, about 30 m deep.",
+   "reason": "Kept; inside the span of Madang and reached from that base.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "within_span": "unverified (no coordinates): described as nearby in source"
+  },
+  {
+   "name": "Balek Wildlife Sanctuary",
+   "wiki": null,
+   "id": "madang-5",
+   "category": "nature",
+   "action": "spot",
+   "destination": "madang",
+   "kind": "spot:madang",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": "coordinates null: needs resolve-pin.py or the owner (not guessed)",
+   "views": 0,
+   "counted_sources": 1,
+   "note": "Nature: village wildlife sanctuary about 30 minutes from Madang, where a sulphur creek runs through a limestone cave to a clear stream with turtles and eels; tours via Melanesian Tourist Services.",
+   "reason": "Kept; inside the span of Madang and reached from that base.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "within_span": "unverified (no coordinates): described as nearby in source"
+  },
+  {
+   "name": "Magic Passage",
+   "wiki": null,
+   "id": "madang-6",
+   "category": "nature",
+   "action": "spot",
+   "destination": "madang",
+   "kind": "spot:madang",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": "coordinates null: needs resolve-pin.py or the owner (not guessed)",
+   "views": 0,
+   "counted_sources": 0,
+   "note": "Dive site: narrow drift-dive passage about five minutes by boat from Madang Resort, with coral gardens and garden eels.",
+   "reason": "Kept; inside the span of Madang and reached from that base.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "within_span": "unverified (no coordinates): described as nearby in source"
+  },
+  {
+   "name": "Karkar Island",
+   "wiki": "Karkar Island",
+   "id": "karkar-island",
+   "category": "nature",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": {
+    "lat": -4.65,
+    "lng": 145.96666667
+   },
+   "coordinates_source": "wikipedia:Karkar Island",
+   "views": 3601,
+   "counted_sources": 1,
+   "note": "Island: volcanic island 30 km off Madang with a caldera volcano (last big eruptions 1974-75), a ring road and views back to Madang; known for bilums.",
+   "reason": "About 63 km from Madang across the water, beyond 75% of Madang's span: standalone, with its own ring road.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Lae",
+   "wiki": "Lae",
+   "id": "lae",
+   "category": "landmark",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": {
+    "lat": -6.73027778,
+    "lng": 147.00083333
+   },
+   "coordinates_source": "wikipedia:Lae",
+   "views": 46821,
+   "counted_sources": 1,
+   "note": "Town: PNG's second city and Morobe's capital, at the start of the Highlands Highway; gateway to the Highlands and Huon Gulf.",
+   "reason": "Lae has only three kept neighbours (Botanic Gardens, War Cemetery, Rainforest Habitat): below four, so Lae is not a destination; standalone town. Wikivoyage \"Lae\" page exists; owner may promote it if Black Cat Track is pinned within reach.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Lae Botanic Gardens",
+   "wiki": null,
+   "id": "lae-botanic-gardens",
+   "category": "nature",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": {
+    "lat": -6.719509,
+    "lng": 146.995362
+   },
+   "coordinates_source": "wikipedia:Lae Botanic Gardens",
+   "views": 527,
+   "counted_sources": 1,
+   "note": "Gardens: city gardens in central Lae with PNG plants, birds and an old aeroplane; not always open to the public (Wikipedia).",
+   "reason": "Lae cluster has three spots: standalone.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Lae War Cemetery",
+   "wiki": "Lae War Cemetery",
+   "id": "lae-war-cemetery",
+   "category": "monument",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": {
+    "lat": -6.72313,
+    "lng": 146.9969
+   },
+   "coordinates_source": "wikipedia:Lae War Cemetery",
+   "views": 2047,
+   "counted_sources": 1,
+   "note": "Cemetery: Commonwealth war cemetery with about 2,800 WWII burials, next to the botanic gardens and including the Lae Memorial.",
+   "reason": "Lae cluster has three spots: standalone.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Rainforest Habitat",
+   "wiki": null,
+   "id": "lae-rainforest-habitat",
+   "category": "nature",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": {
+    "lat": -6.6615115,
+    "lng": 146.9954623
+   },
+   "coordinates_source": "osm:tourism/zoo Rainforest Habitat",
+   "views": 0,
+   "counted_sources": 1,
+   "note": "Wildlife: 10-hectare animal and bird display at Lae University of Technology, with about 80 birds of paradise in a rainforest enclosure.",
+   "reason": "Lae cluster has three spots: standalone.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Black Cat Track",
+   "wiki": "Black Cat Track",
+   "id": "black-cat-track",
+   "category": "hike",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": "coordinates null: needs resolve-pin.py or the owner (not guessed)",
+   "views": 1294,
+   "counted_sources": 0,
+   "note": "Trail: rough 3-4 day overland trek from Salamaua to Wau, a gold-rush and WWII route now used by experienced trekkers.",
+   "reason": "Salamaua to Wau trek; midpoint is far from Lae and the Wau/Bulolo group (Wau, Bulolo, Bulolo Gold Dredges, this track) has no destination name beyond a Wikivoyage Bulolo page, and is three plus the track only if the track counts. Treated as standalone (also leaves Bulolo/Wau as standalone). Pin needed.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "pin_flag": "Wikipedia point is at Salamaua (trailhead), not the route midpoint; left null for resolve-pin / OSM route midpoint."
+  },
+  {
+   "name": "Wau",
+   "wiki": "Wau, Papua New Guinea",
+   "id": "wau",
+   "category": "landmark",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": {
+    "lat": -7.33888889,
+    "lng": 146.71666667
+   },
+   "coordinates_source": "wikipedia:Wau, Papua New Guinea",
+   "views": 6840,
+   "counted_sources": 0,
+   "note": "Town: gold-rush town at about 1,100 m, the Black Cat Track's inland end, with the Wau Ecology Institute nearby.",
+   "reason": "Wau, Bulolo, Bulolo Gold Dredges and Black Cat Track: no name travellers use for the group (Wikivoyage covers Bulolo only); standalone.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Bulolo",
+   "wiki": "Bulolo",
+   "id": "bulolo",
+   "category": "landmark",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": {
+    "lat": -7.202224,
+    "lng": 146.6440009
+   },
+   "coordinates_source": "osm:place/town Bulolo",
+   "views": 3122,
+   "counted_sources": 1,
+   "note": "Town: former gold-dredging town on the Bulolo River, 32 km north-west of Wau, with dredge relics and a golf course.",
+   "reason": "Wikivoyage has a \"Bulolo\" page but the valley has only the dredges and Wau as neighbours: standalone.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Bulolo Gold Dredges",
+   "wiki": null,
+   "id": "bulolo-gold-dredges",
+   "category": "historic",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": "coordinates null: needs resolve-pin.py or the owner (not guessed)",
+   "views": 0,
+   "counted_sources": 1,
+   "note": "Relic: eight 2,000-tonne gold dredges airlifted into the Bulolo valley; some abandoned in the valley and still visible (Wikivoyage).",
+   "reason": "Part of the Bulolo valley; standalone. Pin needed.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  }
+ ],
+ "reviews": [
+  {
+   "name": "Madang Museum",
+   "views": 278,
+   "counted_sources": 0,
+   "reason": "Rule 1 only via Wikipedia citing Lonely Planet; small ethnographic museum open to visitors but I could not open a counted page.",
+   "skeptic_objection": "For: real museum with collections, guidebook-cited. Against: no counted source I could open, tiny, opening reliability unknown.",
+   "coordinates": {
+    "lat": -5.2261938,
+    "lng": 145.800925
+   }
+  },
+  {
+   "name": "Bil Bil Village",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Rule 1: single city-guide mention (clay pot making), tour only.",
+   "skeptic_objection": "For: traditional pottery village on the coast is a real cultural draw. Against: one source, operator tour, village.",
+   "coordinates": {
+    "lat": -5.2977312,
+    "lng": 145.7801932
+   }
+  },
+  {
+   "name": "Hobe Village",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Rule 1: Wikivoyage Do names village stay with birdwatching and WWII hideouts.",
+   "skeptic_objection": "For: Wikivoyage names it with contacts and activities. Against: it is mainly a homestay and not a drop-in stop.",
+   "coordinates": null
+  },
+  {
+   "name": "Madang Japanese WWII Airfield",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Rule 1: Wikivoyage Do names it (overgrown airfield, Betty bomber), half-day tour.",
+   "skeptic_objection": "For: distinctive WWII relics, source names it. Against: one source, jungle-covered, access via tour, exact site unclear.",
+   "coordinates": null
+  },
+  {
+   "name": "Tupira Surf Club",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Rule 1: one city-guide mention; a surf break 90 min up the coast.",
+   "skeptic_objection": "For: named as the place to surf, hosted 2017 World Longboard Championships. Against: one source, surf club venue, remote.",
+   "coordinates": {
+    "lat": -4.4911049,
+    "lng": 145.4280434
+   }
+  },
+  {
+   "name": "Mitchell Bomber Wreck (Madang)",
+   "views": 0,
+   "counted_sources": 0,
+   "reason": "Rule 1: Underwater Asia names it as an excellent WWII plane wreck; only one dive guide opened.",
+   "skeptic_objection": "For: permanent dive site named by a guide. Against: one source, shallow wreck, divers only.",
+   "coordinates": null
+  },
+  {
+   "name": "Planet Rock",
+   "views": 0,
+   "counted_sources": 0,
+   "reason": "Rule 1: Underwater Asia calls it one of the area's most famous dive sites; no second source found.",
+   "skeptic_objection": "For: famous site. Against: one source, advanced current/shark dive, only via operators.",
+   "coordinates": {
+    "lat": -5.266667,
+    "lng": 145.833333
+   }
+  },
+  {
+   "name": "Coral Queen Wreck",
+   "views": 0,
+   "counted_sources": 0,
+   "reason": "Rule 1: one dive guide (night dive with flashlight fish).",
+   "skeptic_objection": "For: distinctive night-dive draw. Against: one source, divers only.",
+   "coordinates": null
+  },
+  {
+   "name": "Lae Main Market",
+   "views": 0,
+   "counted_sources": 0,
+   "reason": "Rules 1-4: only Wikipedia ('best food market in PNG'); no counted source and trading days unstated.",
+   "skeptic_objection": "For: big food market in the second city. Against: no counted source, unclear daily trading.",
+   "coordinates": {
+    "lat": -6.7330455,
+    "lng": 146.9926794
+   }
+  },
+  {
+   "name": "Finschhafen",
+   "views": 11845,
+   "counted_sources": 1,
+   "reason": "Rule 1: Wikivoyage PNG mentions it only as a ship stop from Lae; Wikipedia gives WWII and mission history.",
+   "skeptic_objection": "For: town with WWII sites on the peninsula. Against: passing mention, weekly ship, no named things to do.",
+   "coordinates": {
+    "lat": -6.6,
+    "lng": 147.85
+   }
+  },
+  {
+   "name": "Salamaua",
+   "views": 4258,
+   "counted_sources": 0,
+   "reason": "Rule 1: Wikipedia only, though Wikivoyage mentions the trail ending there; WWII ruins, boat from Lae.",
+   "skeptic_objection": "For: trek endpoint, historic port. Against: no counted page names it; small village.",
+   "coordinates": {
+    "lat": -7.055984,
+    "lng": 147.0482725
+   }
+  },
+  {
+   "name": "Aseki and Watama",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Rule 1: Wikivoyage Go next names the smoked burials; remote, needs a guide.",
+   "skeptic_objection": "For: distinctive cultural site named by a guide. Against: ~100 km remote, needs local arrangements, ethical concerns.",
+   "coordinates": {
+    "lat": -7.3490678,
+    "lng": 146.1927561
+   }
+  }
+ ],
+ "existing_fixes": [],
+ "note": "PNG has no existing destinations or spots. Placement run jointly for all nine regions; proposed destinations are in curation/png/destinations-proposed.json."
+}

@@ -1,0 +1,408 @@
+{
+ "region": "region-png-new-britain",
+ "entries": [
+  {
+   "name": "Rabaul",
+   "wiki": "Rabaul",
+   "id": "rabaul",
+   "category": "landmark",
+   "action": "new-destination",
+   "destination": "rabaul",
+   "kind": "proposed-destination",
+   "coordinates": {
+    "lat": -4.2,
+    "lng": 152.18333333
+   },
+   "coordinates_source": "wikipedia:Rabaul",
+   "views": 95567,
+   "counted_sources": 2,
+   "note": "City (town): former provincial capital on Simpson Harbour, base for volcano, WWII and dive sights; Wikivoyage 'Rabaul'.",
+   "reason": "Kept; base passes the name test (see destinations-proposed.json name_evidence) and has the spots to fill a visit.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Tavurvur",
+   "wiki": "Tavurvur",
+   "id": "rabaul-1",
+   "category": "nature",
+   "action": "spot",
+   "destination": "rabaul",
+   "kind": "spot:rabaul",
+   "coordinates": {
+    "lat": -4.239,
+    "lng": 152.21
+   },
+   "coordinates_source": "wikipedia:Tavurvur",
+   "views": 7628,
+   "counted_sources": 2,
+   "note": "Volcano: active stratovolcano above Rabaul with a drive-up parking point, hot springs and ash views; Wikivoyage 'See' item 1.",
+   "reason": "Kept; inside the span of Rabaul and reached from that base.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "distance_from_destination_km": 5.2,
+   "within_span": true
+  },
+  {
+   "name": "Kokopo",
+   "wiki": "Kokopo",
+   "id": "rabaul-2",
+   "category": "landmark",
+   "action": "spot",
+   "destination": "rabaul",
+   "kind": "spot:rabaul",
+   "coordinates": {
+    "lat": -4.35,
+    "lng": 152.2736
+   },
+   "coordinates_source": "Wikipedia article coordinates (town centre)",
+   "views": 16847,
+   "counted_sources": 2,
+   "note": "Town: current provincial capital and airport gateway (Tokua), with markets and the Kokopo war museum; covered in Wikivoyage 'Rabaul'.",
+   "reason": "Kept; inside the span of Rabaul and reached from that base.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "distance_from_destination_km": 19.5,
+   "within_span": true
+  },
+  {
+   "name": "Rabaul Volcano Observatory",
+   "wiki": null,
+   "id": "rabaul-3",
+   "category": "viewpoint",
+   "action": "spot",
+   "destination": "rabaul",
+   "kind": "spot:rabaul",
+   "coordinates": {
+    "lat": -4.191061,
+    "lng": 152.163384
+   },
+   "coordinates_source": "Wikivoyage Rabaul listing geo tag",
+   "views": 0,
+   "counted_sources": 1,
+   "note": "Lookout: volcano observatory on Mount Tavanabatir with a view over Rabaul town, bay and volcano; Wikivoyage 'See' item 6 and 'Do' climb.",
+   "reason": "Kept; inside the span of Rabaul and reached from that base.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "distance_from_destination_km": 2.4,
+   "within_span": true
+  },
+  {
+   "name": "Japanese Barge Tunnel",
+   "wiki": null,
+   "id": "rabaul-4",
+   "category": "historic",
+   "action": "spot",
+   "destination": "rabaul",
+   "kind": "spot:rabaul",
+   "coordinates": {
+    "lat": -4.2847726,
+    "lng": 152.1532866
+   },
+   "coordinates_source": "OpenStreetMap node (Overpass) tourism=attraction \"Japanese WWII Barges Tunnel\"",
+   "views": 0,
+   "counted_sources": 1,
+   "note": "WWII tunnel: Japanese tunnel near Mount Vulcan with barges still inside at Karavia; Wikivoyage 'See' item 3.",
+   "reason": "Kept; inside the span of Rabaul and reached from that base.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "distance_from_destination_km": 10.0,
+   "within_span": true
+  },
+  {
+   "name": "New Guinea Club Museum",
+   "wiki": null,
+   "id": "rabaul-5",
+   "category": "museum",
+   "action": "spot",
+   "destination": "rabaul",
+   "kind": "spot:rabaul",
+   "coordinates": {
+    "lat": -4.204129,
+    "lng": 152.181462
+   },
+   "coordinates_source": "Wikivoyage Rabaul listing geo tag",
+   "views": 0,
+   "counted_sources": 1,
+   "note": "Museum: 1937 New Guinea Club building now a museum of Rabaul's history, with photographs; Wikivoyage 'See' item 5.",
+   "reason": "Kept; inside the span of Rabaul and reached from that base.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "distance_from_destination_km": 0.5,
+   "within_span": true
+  },
+  {
+   "name": "Bitapaka War Cemetery",
+   "wiki": null,
+   "id": "rabaul-6",
+   "category": "monument",
+   "action": "spot",
+   "destination": "rabaul",
+   "kind": "spot:rabaul",
+   "coordinates": {
+    "lat": -4.406577,
+    "lng": 152.299391
+   },
+   "coordinates_source": "Wikivoyage Rabaul listing geo tag",
+   "views": 0,
+   "counted_sources": 1,
+   "note": "War cemetery: Australian War Graves Commission cemetery for WWII servicemen of many nations, with a Japanese war memorial; Wikivoyage 'See' item 2.",
+   "reason": "Kept; inside the span of Rabaul and reached from that base.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "distance_from_destination_km": 26.3,
+   "within_span": true
+  },
+  {
+   "name": "Kokopo War and Cultural Museum",
+   "wiki": null,
+   "id": "rabaul-7",
+   "category": "museum",
+   "action": "spot",
+   "destination": "rabaul",
+   "kind": "spot:rabaul",
+   "coordinates": {
+    "lat": -4.335628,
+    "lng": 152.262686
+   },
+   "coordinates_source": "Wikivoyage Rabaul listing geo tag",
+   "views": 0,
+   "counted_sources": 1,
+   "note": "Museum: Japanese war relics and photographs in central Kokopo; Wikivoyage 'See' item 7.",
+   "reason": "Kept; inside the span of Rabaul and reached from that base.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "distance_from_destination_km": 17.5,
+   "within_span": true
+  },
+  {
+   "name": "Duke of York Islands",
+   "wiki": "Duke of York Islands",
+   "id": "rabaul-8",
+   "category": "nature",
+   "action": "spot",
+   "destination": "rabaul",
+   "kind": "spot:rabaul",
+   "coordinates": {
+    "lat": -4.166667,
+    "lng": 152.45
+   },
+   "coordinates_source": "Wikipedia article coordinates",
+   "views": 4189,
+   "counted_sources": 1,
+   "note": "Island group: 45 minutes by boat from Kokopo, for diving, snorkelling and picnics; PNG Tourism 'East New Britain' page.",
+   "reason": "Kept; inside the span of Rabaul and reached from that base.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "distance_from_destination_km": 29.8,
+   "within_span": true
+  },
+  {
+   "name": "Kimbe",
+   "wiki": "Kimbe",
+   "id": "kimbe",
+   "category": "landmark",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": {
+    "lat": -5.5575,
+    "lng": 150.155
+   },
+   "coordinates_source": "wikipedia:Kimbe",
+   "views": 6250,
+   "counted_sources": 2,
+   "note": "Town: capital of West New Britain on Kimbe Bay, main gateway and base for diving; Wikivoyage 'Kimbe'.",
+   "reason": "Kimbe, Kimbe Bay and Garbuna Volcano are three kept places: below four, standalone.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Kimbe Bay",
+   "wiki": "Kimbe Bay",
+   "id": "kimbe-bay",
+   "category": "nature",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": {
+    "lat": -5.1666667,
+    "lng": 150.5
+   },
+   "coordinates_source": "wikipedia:Kimbe Bay",
+   "views": 912,
+   "counted_sources": 2,
+   "note": "Dive area: bay with 400+ coral and 900+ fish species, WWII wrecks and dolphins; Wikivoyage 'Kimbe' Do (diving).",
+   "reason": "Three-place cluster: standalone. Bay centroid (water) is fine for a dive area.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Garbuna Volcano",
+   "wiki": null,
+   "id": "garbuna-volcano",
+   "category": "nature",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": "coordinates null: needs resolve-pin.py or the owner (not guessed)",
+   "views": 0,
+   "counted_sources": 1,
+   "note": "Volcano: still-active volcano near Hoskins with trekking and geothermal features; PNG Tourism West New Britain page.",
+   "reason": "Three-place cluster: standalone. Pin needed.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  }
+ ],
+ "reviews": [
+  {
+   "name": "Vulcan",
+   "views": 2075,
+   "counted_sources": 1,
+   "reason": "Rule 1: Wikivoyage Rabaul names it only as the second erupting volcano (Understand, Do climb); rule 2 access and any visit unclear.",
+   "skeptic_objection": "Case for: active volcano above Rabaul; against: no listing says how to see or climb it, and the Barge Tunnel and Rabaul Tours already bring visitors to its flank.",
+   "coordinates": {
+    "lat": -4.271,
+    "lng": 152.17
+   }
+  },
+  {
+   "name": "Mount Mother",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Rule 1: Wikivoyage Do names the climb (700 m, from Matalau Village, early morning); a real half-day-plus activity.",
+   "skeptic_objection": "Case against: one source, no route details, guide probably needed, no coordinates; case for: highest hill around Simpson Harbour.",
+   "coordinates": null
+  },
+  {
+   "name": "Japanese Wrecks, Simpson Harbour",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Rule 1: Wikivoyage Do (dive) names sunken Japanese ships; rule 2 only divers can see them and no single site is pinned.",
+   "skeptic_objection": "Case for: a headline reason divers go to Rabaul; against: a dive activity, no specific named wreck or point, operator dependent.",
+   "coordinates": {
+    "lat": -4.21666667,
+    "lng": 152.16666667
+   }
+  },
+  {
+   "name": "General Yamamoto's Bunker",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Rule 1: Wikivoyage See item 4, K5 underground command post; rule 2 visit is short.",
+   "skeptic_objection": "Wikivoyage itself says it is small and there's nothing in it; for: a named WWII site that visitors enter, next to the New Guinea Club.",
+   "coordinates": {
+    "lat": -4.2033492,
+    "lng": 152.181853
+   }
+  },
+  {
+   "name": "Kokopo Market",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Rule 1: named by Wikivoyage Buy and PNG Tourism ('stroll through the Kokopo markets'); rule 4 trading days not stated in either source.",
+   "skeptic_objection": "If it runs most days it is fine; if it is a weekly market it fails.",
+   "coordinates": {
+    "lat": -4.35,
+    "lng": 152.2736
+   }
+  },
+  {
+   "name": "Baining Mountains",
+   "views": 758,
+   "counted_sources": 1,
+   "reason": "Rule 1: Wikivoyage PNG 'The Islands' names the forest, trails, hot springs and mud holes; rule 3 a range, not one point.",
+   "skeptic_objection": "For: the one place the fire dance villages and trails sit; against: a range with no single entrance, one source.",
+   "coordinates": {
+    "lat": -4.6666667,
+    "lng": 152
+   }
+  },
+  {
+   "name": "Mount Ulawun",
+   "views": 7618,
+   "counted_sources": 1,
+   "reason": "Rule 1: PNG Tourism West New Britain names it as one of PNG's most prominent peaks; rule 2 how visitors see or climb it is unstated.",
+   "skeptic_objection": "For: 7.6k views and a clear landmark volcano; against: remote, active, no visit details, one source.",
+   "coordinates": {
+    "lat": -5.05,
+    "lng": 151.33333333
+   }
+  },
+  {
+   "name": "Garu Hot Springs",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Rule 1: PNG Tourism West New Britain gives only photo captions (Garu volcanic site, hot springs in Talasea).",
+   "skeptic_objection": "For: a natural feature of a district the page tells visitors to visit; against: no description of access or a visit.",
+   "coordinates": null
+  },
+  {
+   "name": "Lockheed Ventura Wreck",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Rule 1: PNG Tourism lists 'Tour the Lockheed Ventura' under top activities; a WWII wreck in Talasea foothills.",
+   "skeptic_objection": "For: a named, tourable site; against: single source, remote, no coordinates.",
+   "coordinates": null
+  },
+  {
+   "name": "Kimbe Town Market",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Rule 1: PNG Tourism West New Britain names it for produce and handicrafts; rule 4 trading days not stated.",
+   "skeptic_objection": "If daily it qualifies; the source gives no days and the pin is the town centre.",
+   "coordinates": {
+    "lat": -5.5575,
+    "lng": 150.155
+   }
+  },
+  {
+   "name": "Muruk Cave",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Rule 1: PNG Tourism names the deepest recorded cave system in the southern hemisphere in the Nakanai area; rule 2 access is expedition caving.",
+   "skeptic_objection": "For: a headline natural feature on the official page; against: not a half-hour visit, no coordinates or access details.",
+   "coordinates": null
+  }
+ ],
+ "existing_fixes": [],
+ "note": "PNG has no existing destinations or spots. Placement run jointly for all nine regions; proposed destinations are in curation/png/destinations-proposed.json."
+}

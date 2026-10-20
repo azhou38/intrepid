@@ -1,0 +1,489 @@
+{
+ "region": "region-png-highlands",
+ "entries": [
+  {
+   "name": "Goroka",
+   "wiki": "Goroka",
+   "id": "goroka",
+   "category": "landmark",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": {
+    "lat": -6.08333333,
+    "lng": 145.38333333
+   },
+   "coordinates_source": "wikipedia:Goroka",
+   "views": 13180,
+   "counted_sources": 3,
+   "note": "Town: provincial capital of Eastern Highlands and the base for the Goroka Show, Asaro Mudmen and Mount Michael; the region's main hub (base).",
+   "reason": "Goroka, J.K. McCarthy Museum, Asaro Mudmen and Mount Michael make three spots round the base: below four, so no destination; Kainantu (60 km) is beyond a town span.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Mount Hagen",
+   "wiki": "Mount Hagen",
+   "id": "mount-hagen",
+   "category": "landmark",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": {
+    "lat": -5.858784,
+    "lng": 144.2316365
+   },
+   "coordinates_source": "osm place=city node (town centre)",
+   "views": 22355,
+   "counted_sources": 3,
+   "note": "Town: provincial capital of Western Highlands and the regional air hub (Kagamuga Airport); base for Kuk, Hagen Show, Baiyer River and Mount Hagen Market.",
+   "reason": "Mount Hagen and the Western Highlands Cultural Centre only (Baiyer River, Kuk and the market are reviews): standalone.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Kainantu",
+   "wiki": "Kainantu",
+   "id": "kainantu",
+   "category": "landmark",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": {
+    "lat": -6.2907745,
+    "lng": 145.8678771
+   },
+   "coordinates_source": "osm place=town node (town centre)",
+   "views": 2906,
+   "counted_sources": 3,
+   "note": "Town: market town on the Highlands Highway with the Eastern Highlands Cultural Centre and pottery; a stop between Lae and Goroka.",
+   "reason": "With the Eastern Highlands Cultural Centre only two places: standalone.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Mendi",
+   "wiki": "Mendi, Papua New Guinea",
+   "id": "mendi",
+   "category": "landmark",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": {
+    "lat": -6.14777778,
+    "lng": 143.65722222
+   },
+   "coordinates_source": "wikipedia:Mendi",
+   "views": 3851,
+   "counted_sources": 2,
+   "note": "Town: provincial capital of Southern Highlands; gateway to Lake Kutubu and Mount Giluwe, with a Friday and Saturday market.",
+   "reason": "Mendi, Lake Kutubu and Mount Giluwe: Lake Kutubu is 50 km out, so below four: standalone.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Kundiawa",
+   "wiki": "Kundiawa",
+   "id": "kundiawa",
+   "category": "landmark",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": {
+    "lat": -6.0190251,
+    "lng": 144.9722522
+   },
+   "coordinates_source": "osm place=city node (town centre)",
+   "views": 2970,
+   "counted_sources": 2,
+   "note": "Town: capital of Simbu (Chimbu) Province; the departure point for the Mount Wilhelm climb, reached from Keglsugl.",
+   "reason": "Kundiawa and Mount Wilhelm only: standalone.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Tari",
+   "wiki": "Tari, Papua New Guinea",
+   "id": "tari",
+   "category": "landmark",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": {
+    "lat": -5.84524,
+    "lng": 142.946622
+   },
+   "coordinates_source": "osm place=city node (town centre)",
+   "views": 4606,
+   "counted_sources": 2,
+   "note": "Town: capital of Hela Province and base for the Huli wigmen, Tari Basin and Ambua Lodge. No Wikivoyage article exists (404).",
+   "reason": "Standalone town (Huli wigmen base, no other kept spot nearby).",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Mount Wilhelm",
+   "wiki": "Mount Wilhelm",
+   "id": "mount-wilhelm",
+   "category": "hike",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": {
+    "lat": -5.7799986,
+    "lng": 145.0295844
+   },
+   "coordinates_source": "osm natural=peak node (MEDIUM; Wikipedia coordinates are rounded)",
+   "views": 34949,
+   "counted_sources": 3,
+   "note": "Mountain: Papua New Guinea's highest peak (4,509 m), climbed by guided treks from Keglsugl (Simbu) or Ambullua (Western Highlands).",
+   "reason": "Summit of PNG; pinned on the OSM peak. Standalone.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Mount Giluwe",
+   "wiki": "Mount Giluwe",
+   "id": "mount-giluwe",
+   "category": "hike",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": {
+    "lat": -6.043176,
+    "lng": 143.886151
+   },
+   "coordinates_source": "osm natural=volcano node (HIGH with Commons)",
+   "views": 7427,
+   "counted_sources": 2,
+   "note": "Mountain: second-highest peak in PNG (4,368 m), a shield volcano with guided climbs, in Southern Highlands.",
+   "reason": "Standalone (about 28 km from Mendi).",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Mount Michael",
+   "wiki": "Mount Michael (Papua New Guinea)",
+   "id": "mount-michael",
+   "category": "hike",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": {
+    "lat": -6.4049915,
+    "lng": 145.3148184
+   },
+   "coordinates_source": "osm natural=peak node, Lufa district (MEDIUM)",
+   "views": 0,
+   "counted_sources": 2,
+   "note": "Mountain: cloud-forest hill near Goroka with hiking trails and highland views. The Wikipedia title Mount Michael is the South Sandwich Islands volcano, so it is not used.",
+   "reason": "Three-spot Goroka cluster (about 36 km): standalone.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Lake Kutubu",
+   "wiki": "Lake Kutubu",
+   "id": "lake-kutubu",
+   "category": "nature",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": {
+    "lat": -6.4,
+    "lng": 143.33333333
+   },
+   "coordinates_source": "wikipedia:Lake Kutubu",
+   "views": 2528,
+   "counted_sources": 2,
+   "note": "Lake: 800 m upland lake, about 50 km southwest of Mendi, with Ramsar status and endemic fish; reached by road and boat.",
+   "reason": "Standalone.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Asaro Mudmen",
+   "wiki": "Asaro Mudmen",
+   "id": "asaro-mudmen",
+   "category": "entertainment",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": "coordinates null: needs resolve-pin.py or the owner (not guessed)",
+   "views": 38307,
+   "counted_sources": 2,
+   "note": "Cultural attraction: masked mud-men performers from the Asaro people, who live in a village near Goroka; the tourism board names the village performances.",
+   "reason": "Three-spot Goroka cluster: standalone. Village performance, pin needed.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Eastern Highlands Cultural Centre and Museum",
+   "wiki": null,
+   "id": "eastern-highlands-cultural-centre",
+   "category": "museum",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": "coordinates null: needs resolve-pin.py or the owner (not guessed)",
+   "views": 0,
+   "counted_sources": 2,
+   "note": "Museum: cultural centre and museum at Kainantu, known for its pottery and the Kainantu pottery and weaving markets. No dedicated Wikipedia article found.",
+   "reason": "Two places at Kainantu: standalone. Pin needed.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "J.K. McCarthy Museum",
+   "wiki": null,
+   "id": "jk-mccarthy-museum",
+   "category": "museum",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": "coordinates null: needs resolve-pin.py or the owner (not guessed)",
+   "views": 0,
+   "counted_sources": 2,
+   "note": "Museum: Goroka museum on Airport Road with WWII relics, traditional artefacts and 1930s photos of the first Australian patrols into the Highlands. Hours variable per Wikivoyage.",
+   "reason": "Three-spot Goroka cluster: standalone.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Taekanda Cultural Centre",
+   "wiki": null,
+   "id": "taekanda-cultural-centre",
+   "category": "museum",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": "coordinates null: needs resolve-pin.py or the owner (not guessed)",
+   "views": 0,
+   "counted_sources": 2,
+   "note": "Museum: Enga cultural centre near Wabag with wigs, war shields, masks and a sand-painting workshop. No Wikipedia article found.",
+   "reason": "Standalone near Wabag (Wabag is a review); pin needed.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Western Highlands Cultural Centre",
+   "wiki": null,
+   "id": "western-highlands-cultural-centre",
+   "category": "museum",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": "coordinates null: needs resolve-pin.py or the owner (not guessed)",
+   "views": 0,
+   "counted_sources": 1,
+   "note": "Museum: cultural centre in Mount Hagen with a reconstructed village hut and artefacts. No Wikipedia article found.",
+   "reason": "Standalone; pin needed.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  }
+ ],
+ "reviews": [
+  {
+   "name": "Wabag",
+   "views": 4098,
+   "counted_sources": 2,
+   "reason": "Enga capital named on the tourism board page and in Wikivoyage's Highlands guide, but the page lists no sight in the town itself; the draws (Yuo Falls, Laiagam, Taekanda Cultural Centre) are elsewhere. For: provincial hub and gateway. Against: nothing to do in town for half an hour. (full-path: judged fresh after the audit disagreed with the script)",
+   "skeptic_objection": null,
+   "coordinates": {
+    "lat": -5.491944,
+    "lng": 143.721667
+   }
+  },
+  {
+   "name": "Mount Ialibu",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Rule 1/2: tourism board names tracks around the 3,465 m peak next to Giluwe (opened southern-highlands page), but nothing on route, access or guides; one source.",
+   "skeptic_objection": "For: a named mountain in a province page's headline sentence. Against: single source, no description, region under advisory, rarely visited.",
+   "coordinates": null
+  },
+  {
+   "name": "Mount Hagen (volcano)",
+   "views": 2230,
+   "counted_sources": 1,
+   "reason": "Rule 1: Wikivoyage Mount Hagen 'Do' lists it among climbs but says 'not much is known, climb them and document'; one source, no infrastructure.",
+   "skeptic_objection": "For: the mountain the city is named after, 24 km away. Against: no track info, no guide, advisory area; an unknown climb is not a visitor draw.",
+   "coordinates": null
+  },
+  {
+   "name": "Toi Wara Waterfall",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Rule 1/2: Wikivoyage Mount Hagen Do listing gives a detailed adventurous visit (swim, walk behind falls) but needs a four-hour drive and steep gorge trail with local helpers; one source.",
+   "skeptic_objection": "For: detailed named listing with a clear half-day activity. Against: one source, remote, Southern Highlands is under travel advisories, hard to find.",
+   "coordinates": null
+  },
+  {
+   "name": "Wasi Falls",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Rule 1/2: tourism board 'must see' for the Southern Highlands (100 m fall in a Wildlife Management Area), reached on guided tours from Lakwanda; one source.",
+   "skeptic_objection": "For: headline must-see. Against: one source, no detail on access, advisory area.",
+   "coordinates": {
+    "lat": -6.7486371,
+    "lng": 143.6071423
+   }
+  },
+  {
+   "name": "Yuo Falls",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Rule 1/2: tourism board's Enga page names a 15-minute hike to the falls from Wabag; one source, short visit.",
+   "skeptic_objection": "For: easy named hike near the provincial capital. Against: one source, short visit, no description.",
+   "coordinates": null
+  },
+  {
+   "name": "Bisil Kana Waterfall",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Rule 1: tourism board 'must see' (river bursting from a mountain face, 10 m wide); one source, location and access not given.",
+   "skeptic_objection": "For: named natural wonder. Against: single source, vague access, no images or Wikipedia.",
+   "coordinates": null
+  },
+  {
+   "name": "Kuk Early Agricultural Site",
+   "views": 9702,
+   "counted_sources": 3,
+   "reason": "UNESCO World Heritage swamp gardens named by Wikivoyage Mount Hagen and the tourism board, but visitors need permission and there is little to see on site. For: world-heritage draw a guide names. Against: access is by arrangement and the visible remains are slight. (full-path: judged fresh after the audit disagreed with the script)",
+   "skeptic_objection": null,
+   "coordinates": {
+    "lat": -5.7847981,
+    "lng": 144.3371072
+   }
+  },
+  {
+   "name": "Baiyer River Sanctuary",
+   "views": 591,
+   "counted_sources": 0,
+   "reason": "Rule 1/2: a 740 ha bird-of-paradise sanctuary 40 km from Mount Hagen; Wikivoyage has no page and the tourism pages opened do not name it, so only Wikipedia (not counted) and travel-article mentions; facilities reportedly destroyed.",
+   "skeptic_objection": "For: a recognised bird-of-paradise reserve and Wikipedia tourist attraction. Against: no counted source found, uncertain facilities and access, advisory area.",
+   "coordinates": null
+  },
+  {
+   "name": "Mount Hagen Market",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Rule 1/4: Wikivoyage See listing (with coordinates) for the main produce market, but trading days are not stated and the tourism board mentions 'Saturday markets'; one source.",
+   "skeptic_objection": "For: a named See listing, a daily market would be fine. Against: days unconfirmed, a once-weekly market would fail rule 4; advisory area.",
+   "coordinates": null
+  },
+  {
+   "name": "Mendi Market",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Rule 1/4: tourism board names it for Imbonggu baskets, 'best visited Fridays and Saturdays when the full force of vendors comes', implying it trades other days; one source.",
+   "skeptic_objection": "For: the one named craft market in the Southern Highlands. Against: peak days weekly, one source, advisory area.",
+   "coordinates": null
+  },
+  {
+   "name": "Banz Market",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Rule 1/4: tourism board calls it the biggest and best market in Jiwaka; one source and trading days not given.",
+   "skeptic_objection": "For: a must-see in the only Jiwaka page. Against: may be a weekly market, which fails rule 4; one source.",
+   "coordinates": null
+  },
+  {
+   "name": "Kurumul Tea Plantation",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Rule 1/2: tourism board must-see (pick tea leaves on a 2,000 ha estate); one source, unknown whether open to casual visits.",
+   "skeptic_objection": "For: a distinctive hands-on activity. Against: a working estate, access and hours unstated, one source.",
+   "coordinates": null
+  },
+  {
+   "name": "Nambaiyufa Amphitheatre",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Rule 1/2: tourism board names rock paintings and Keu Caves near Chuave; one source, no access or description.",
+   "skeptic_objection": "For: a named cultural-archaeological site. Against: one source, no access details, little known.",
+   "coordinates": null
+  },
+  {
+   "name": "Kemase Caves",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Rule 1/2: limestone caves with prehistoric paintings at Kemase village, visited through Kemase Eco Tourism, a tourism-board-listed partner; one source and guided only.",
+   "skeptic_objection": "For: the specific place behind the Lufa cave-art recommendation. Against: single source, village-arranged access only.",
+   "coordinates": null
+  },
+  {
+   "name": "Laiagam Botanical Gardens",
+   "views": 0,
+   "counted_sources": 2,
+   "reason": "Rule 1/2: tourism board 'must see' (100+ native orchids and rhododendrons); I did not find it in Wikivoyage Highlands, so one counted source.",
+   "skeptic_objection": "For: a garden open to stroll and a must-see list entry. Against: one source, upkeep and access unknown.",
+   "coordinates": null
+  },
+  {
+   "name": "Laiagam Salt Ponds",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Rule 1/2: tourism board names a visit; one source, no description, visit length unknown.",
+   "skeptic_objection": "For: distinctive natural/cultural site named for the Enga visit. Against: sketchy information, one source.",
+   "coordinates": null
+  }
+ ],
+ "existing_fixes": [],
+ "note": "PNG has no existing destinations or spots. Placement run jointly for all nine regions; proposed destinations are in curation/png/destinations-proposed.json."
+}

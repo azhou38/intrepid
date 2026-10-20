@@ -1,0 +1,298 @@
+{
+ "region": "region-png-sepik",
+ "entries": [
+  {
+   "name": "Wewak",
+   "wiki": "Wewak",
+   "id": "wewak",
+   "category": "landmark",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": {
+    "lat": -3.55422,
+    "lng": 143.62709
+   },
+   "coordinates_source": "osm:node/1538978470 place=city (wiki en:Wewak)",
+   "views": 11091,
+   "counted_sources": 2,
+   "note": "Town: provincial capital of East Sepik and the gateway for Sepik River trips and the Wewak islands; WWII Japanese airbase and surrender site.",
+   "reason": "Wewak, Kairiru Island, Mushu Island and Cape Wom: base plus three spots; Maprik (about 60 km) would be the fourth but would stretch a town span to about 90 km: not proposed as a destination, all standalone.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Vanimo",
+   "wiki": "Vanimo",
+   "id": "vanimo",
+   "category": "landmark",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": {
+    "lat": -2.68476,
+    "lng": 141.30091
+   },
+   "coordinates_source": "osm:node/1250713619 place=city (wiki en:Vanimo)",
+   "views": 7075,
+   "counted_sources": 3,
+   "note": "Town: capital of Sandaun Province on the Indonesian border; base for the surf breaks and the coastal headlands.",
+   "reason": "Vanimo and its surf breaks are two places: standalone.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Maprik",
+   "wiki": "Maprik",
+   "id": "maprik",
+   "category": "historic",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": {
+    "lat": -3.63086,
+    "lng": 143.0564
+   },
+   "coordinates_source": "osm:node/1363471946 place=town",
+   "views": 0,
+   "counted_sources": 2,
+   "note": "Town and district: the Maprik area holds the best-known haus tambaran spirit houses; Wikipedia article is the district.",
+   "reason": "About 60 km inland from Wewak, a district rather than a stop around the town: standalone.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Sepik River",
+   "wiki": "Sepik",
+   "id": "sepik-river",
+   "category": "nature",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": {
+    "lat": -4.05629,
+    "lng": 144.0729
+   },
+   "coordinates_source": "osm:node/2643833870 Angoram (river visitor access point, not the river centroid); Wikipedia article Sepik",
+   "views": 12536,
+   "counted_sources": 3,
+   "note": "River: the Sepik, PNG's longest river, visited by motor-canoe and riverboat trips to river villages; a long linear feature, pin at its main visitor access (Wewak, Angoram, Pagwi). Pinned at Angoram, a river-town access point, not the river centroid.",
+   "reason": "Long river placed at its visitor access (Angoram), not under Wewak: standalone.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "pin_flag": "Pinned at Angoram, the river's main visitor access (OSM place=town); long feature, not the centroid."
+  },
+  {
+   "name": "Kairiru Island",
+   "wiki": null,
+   "id": "kairiru-island",
+   "category": "nature",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": {
+    "lat": -3.3447,
+    "lng": 143.55973
+   },
+   "coordinates_source": "osm:way/22295680 island centroid",
+   "views": 0,
+   "counted_sources": 4,
+   "note": "Island: volcanic island 30 minutes by boat off Wewak with waterfalls, snorkelling and natural hot springs (PTPA); guesthouse per Wikivoyage. Wikipedia title 'Kairiru' is the language.",
+   "reason": "Three spots round Wewak: below four, standalone.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Mushu Island",
+   "wiki": null,
+   "id": "mushu-island",
+   "category": "beach",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": {
+    "lat": -3.41396,
+    "lng": 143.58665
+   },
+   "coordinates_source": "osm:way/22295682 island centroid (OSM Muschu Island)",
+   "views": 0,
+   "counted_sources": 3,
+   "note": "Island: coral atoll with a white-sand beach and reef fish, half an hour off Wewak; basic guesthouse. Named Muschu by PTPA. Wikipedia title is the Disney character.",
+   "reason": "Three spots round Wewak: standalone.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Cape Wom",
+   "wiki": "Cape Wom",
+   "id": "cape-wom",
+   "category": "historic",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": {
+    "lat": -3.51945,
+    "lng": 143.59329
+   },
+   "coordinates_source": "osm:node/11799415670 monument (Cape Wom Memorial); agrees with Wikipedia within 100 m",
+   "views": 684,
+   "counted_sources": 2,
+   "note": "WWII memorial: peace park where General Adachi signed the Japanese surrender in New Guinea in 1945, with open Japanese tunnels; PTPA calls it the Wom Memorial and Japanese Peace Park.",
+   "reason": "Three spots round Wewak: standalone.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Vanimo Surf Breaks",
+   "wiki": null,
+   "id": "vanimo-surf-breaks",
+   "category": "beach",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": {
+    "lat": -2.66135,
+    "lng": 141.27749
+   },
+   "coordinates_source": "osm:node/1250713739 natural=cape Vanimo Point (area point; surf breaks not named in any source)",
+   "views": 0,
+   "counted_sources": 3,
+   "note": "Surf breaks: consistent reef and point breaks west of Vanimo, up to 3 m, best September to March (Wikivoyage); experienced surfers only.",
+   "reason": "Two places with Vanimo: standalone.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  }
+ ],
+ "reviews": [
+  {
+   "name": "Angoram",
+   "views": 1185,
+   "counted_sources": 1,
+   "reason": "Rule 1: one counted source (Wikivoyage Sepik) names it as a road-accessible river village, the lower-Sepik start of trips.",
+   "skeptic_objection": "For: main road gateway to the Sepik by road from Wewak, a harbour-town style stop. Against: no sight or activity listed, one source, mostly a launching point.",
+   "coordinates": {
+    "lat": -4.05629,
+    "lng": 144.0729
+   }
+  },
+  {
+   "name": "Ambunti",
+   "views": 808,
+   "counted_sources": 1,
+   "reason": "Rule 1: PTPA Momase names it only as the festival host; Remote Lands lists it as a Sepik region hub. Upper Sepik base for crocodile and bird trips.",
+   "skeptic_objection": "For: recognised upper-Sepik village a guide treats as a destination. Against: the counted mention is the festival (an event), no permanent sight described.",
+   "coordinates": {
+    "lat": -4.21804,
+    "lng": 142.82253
+   }
+  },
+  {
+   "name": "Pagwi",
+   "views": 352,
+   "counted_sources": 1,
+   "reason": "Rule 1: one counted source (Wikivoyage Sepik) lists it as a road-accessible river village near the Chambri Lakes.",
+   "skeptic_objection": "For: road access point for Middle Sepik canoe trips. Against: a transit village with guesthouses, no sight described.",
+   "coordinates": {
+    "lat": -4.05654,
+    "lng": 143.02981
+   }
+  },
+  {
+   "name": "Chambri Lakes",
+   "views": 882,
+   "counted_sources": 0,
+   "reason": "Rule 1: re-looked; PTPA's Sepik Adventure Tours business listing and tour itineraries (Aibom pottery, Wombun haus tambaran) name it as a stop, but no editorial counted page found.",
+   "skeptic_objection": "For: genuine river-trip stop with a pottery village. Against: sourcing is operator material only; seasonal water level.",
+   "coordinates": {
+    "lat": -4.27733,
+    "lng": 143.11366
+   }
+  },
+  {
+   "name": "Robuin Island",
+   "views": 0,
+   "counted_sources": 2,
+   "reason": "Rule 1: Wikivoyage Sepik and Remote Lands both name it, as an uninhabited WWII fuel-dump island off Wewak.",
+   "skeptic_objection": "For: two counted sources and a day-trip island like Kairiru and Mushu. Against: uninhabited, owned by Wom village, no facilities and no coordinates found; needs landowner permission.",
+   "coordinates": null
+  },
+  {
+   "name": "Wuvulu Island",
+   "views": 2010,
+   "counted_sources": 1,
+   "reason": "Rule 1: one counted source (Wikivoyage Sepik) for diving. Administratively Manus Province: belongs to the islands (Manus) region, not this one.",
+   "skeptic_objection": "For: Cousteau-cited diving, a real destination. Against: one source here and outside this region; route to the Manus pass.",
+   "coordinates": {
+    "lat": -1.74028,
+    "lng": 142.85259
+   }
+  },
+  {
+   "name": "Mission Hill",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Rule 1: one counted source (PTPA Momase 'main attractions'), no description found.",
+   "skeptic_objection": "For: a lookout PTPA lists as a main Wewak attraction. Against: a single listing, no description, short visit.",
+   "coordinates": {
+    "lat": -3.58596,
+    "lng": 143.62969
+   }
+  },
+  {
+   "name": "Vanimo Headlands",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Rule 1: one counted source (Remote Lands 'The Headland'): limestone peninsula with beaches and snorkelling; overlaps the Vanimo Surf Breaks pin at Vanimo Point.",
+   "skeptic_objection": "For: named experience (beaches, snorkelling, villages). Against: one source, an area not a site, near-duplicate pin with Vanimo Surf Breaks.",
+   "coordinates": {
+    "lat": -2.66135,
+    "lng": 141.27749
+   }
+  },
+  {
+   "name": "Palimbei",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Rule 1: one counted source (Remote Lands, Palambe village haus tambaran and sago demonstration), no coordinates and spelling varies.",
+   "skeptic_objection": "For: a named village visit with a haus tambaran. Against: one operator-style source, no pin, only via tour.",
+   "coordinates": null
+  },
+  {
+   "name": "Mindimbit",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Rule 1: one counted source (Remote Lands): Iatmul village known for carved moon-faced figures and masks, with a men's spirit house.",
+   "skeptic_objection": "For: a named craft village visit. Against: single source, tour access only.",
+   "coordinates": {
+    "lat": -4.29117,
+    "lng": 143.39634
+   }
+  }
+ ],
+ "existing_fixes": [],
+ "note": "PNG has no existing destinations or spots. Placement run jointly for all nine regions; proposed destinations are in curation/png/destinations-proposed.json."
+}

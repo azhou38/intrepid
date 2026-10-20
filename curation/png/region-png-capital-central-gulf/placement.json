@@ -1,0 +1,399 @@
+{
+ "region": "region-png-capital-central-gulf",
+ "entries": [
+  {
+   "name": "Port Moresby",
+   "wiki": "Port Moresby",
+   "id": "port-moresby",
+   "category": "landmark",
+   "action": "new-destination",
+   "destination": "port-moresby",
+   "kind": "proposed-destination",
+   "coordinates": {
+    "lat": -9.478889,
+    "lng": 147.149444
+   },
+   "coordinates_source": "WV Papua New Guinea cities list",
+   "views": 276451,
+   "counted_sources": 2,
+   "note": "City: the national capital and main gateway to PNG, a destination in its own right with the city's spots around it.",
+   "reason": "Kept; base passes the name test (see destinations-proposed.json name_evidence) and has the spots to fill a visit.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Port Moresby Nature Park",
+   "wiki": "Port Moresby Nature Park",
+   "id": "port-moresby-1",
+   "category": "nature",
+   "action": "spot",
+   "destination": "port-moresby",
+   "kind": "spot:port-moresby",
+   "coordinates": {
+    "lat": -9.405448,
+    "lng": 147.165605
+   },
+   "coordinates_source": "WV Port Moresby listing geo",
+   "views": 0,
+   "counted_sources": 4,
+   "note": "Wildlife and botanical park (formerly the National Capital Botanical Gardens) with tree kangaroos, cassowaries, birds of paradise, a WWII walk-through aviary and gardens.",
+   "reason": "Kept; inside the span of Port Moresby and reached from that base.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "distance_from_destination_km": 8.4,
+   "within_span": true
+  },
+  {
+   "name": "National Museum and Art Gallery",
+   "wiki": "Papua New Guinea National Museum and Art Gallery",
+   "id": "port-moresby-2",
+   "category": "museum",
+   "action": "spot",
+   "destination": "port-moresby",
+   "kind": "spot:port-moresby",
+   "coordinates": {
+    "lat": -9.425693,
+    "lng": 147.189953
+   },
+   "coordinates_source": "WV Port Moresby listing geo",
+   "views": 2716,
+   "counted_sources": 3,
+   "note": "Museum: PNG's national museum in Waigani, with carvings, beads, traditional boats, cultural objects and WWII relics outside.",
+   "reason": "Kept; inside the span of Port Moresby and reached from that base.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "distance_from_destination_km": 7.4,
+   "within_span": true
+  },
+  {
+   "name": "Ela Beach",
+   "wiki": "Ela Beach",
+   "id": "port-moresby-3",
+   "category": "beach",
+   "action": "spot",
+   "destination": "port-moresby",
+   "kind": "spot:port-moresby",
+   "coordinates": {
+    "lat": -9.481124,
+    "lng": 147.151751
+   },
+   "coordinates_source": "WV Port Moresby listing geo (Ela Beach Craft Market point on the beach; no OSM \"Ela Beach\" feature found, check)",
+   "views": 980,
+   "counted_sources": 3,
+   "note": "Beach: the revitalised waterfront in central Port Moresby, a paved promenade for walks and sunsets, with weekend markets and cultural events (not a swimming beach).",
+   "reason": "Kept; inside the span of Port Moresby and reached from that base.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "distance_from_destination_km": 0.4,
+   "within_span": true
+  },
+  {
+   "name": "Bomana War Cemetery",
+   "wiki": "Bomana War Cemetery",
+   "id": "port-moresby-4",
+   "category": "monument",
+   "action": "spot",
+   "destination": "port-moresby",
+   "kind": "spot:port-moresby",
+   "coordinates": {
+    "lat": -9.39535,
+    "lng": 147.25309
+   },
+   "coordinates_source": "WV Port Moresby listing geo",
+   "views": 0,
+   "counted_sources": 3,
+   "note": "War cemetery: the largest WWII Commonwealth cemetery in PNG, 3,824 graves, mostly from the Kokoda campaign; free and open daily, 19 km out of town.",
+   "reason": "Kept; inside the span of Port Moresby and reached from that base.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "distance_from_destination_km": 14.7,
+   "within_span": true
+  },
+  {
+   "name": "National Parliament of Papua New Guinea",
+   "wiki": "National Parliament of Papua New Guinea",
+   "id": "port-moresby-5",
+   "category": "landmark",
+   "action": "spot",
+   "destination": "port-moresby",
+   "kind": "spot:port-moresby",
+   "coordinates": {
+    "lat": -9.428064,
+    "lng": 147.191906
+   },
+   "coordinates_source": "WV Port Moresby listing geo",
+   "views": 27880,
+   "counted_sources": 3,
+   "note": "Landmark: the parliament building in Waigani, designed on a Maprik haus tambaran; visitors see the exterior, with guided tours outside sitting days.",
+   "reason": "Kept; inside the span of Port Moresby and reached from that base.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "distance_from_destination_km": 7.3,
+   "within_span": true
+  },
+  {
+   "name": "Gordons Market",
+   "wiki": "Gordons Market",
+   "id": "port-moresby-6",
+   "category": "market",
+   "action": "spot",
+   "destination": "port-moresby",
+   "kind": "spot:port-moresby",
+   "coordinates": {
+    "lat": -9.441575,
+    "lng": 147.1958
+   },
+   "coordinates_source": "photon OSM amenity=marketplace \"Gordons Market\" (resolver LOW, hand-graded; verify)",
+   "views": 13,
+   "counted_sources": 1,
+   "note": "Market: a daily city market in Gordons with produce, betel nut, crafts and bilums; best visited in the morning with a guide.",
+   "reason": "Kept; inside the span of Port Moresby and reached from that base.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "distance_from_destination_km": 6.6,
+   "within_span": true
+  },
+  {
+   "name": "Loloata Island",
+   "wiki": null,
+   "id": "port-moresby-7",
+   "category": "nature",
+   "action": "spot",
+   "destination": "port-moresby",
+   "kind": "spot:port-moresby",
+   "coordinates": {
+    "lat": -9.536174,
+    "lng": 147.290343
+   },
+   "coordinates_source": "photon OSM leisure=resort \"Loloata Island Resort\" (the visitor point on the island; resolver LOW, verify)",
+   "views": 0,
+   "counted_sources": 2,
+   "note": "Island: a private island resort in Bootless Inlet, 20-30 minutes by boat from Port Moresby, with snorkelling, diving, kayaks and day visits.",
+   "reason": "Kept; inside the span of Port Moresby and reached from that base.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "distance_from_destination_km": 16.7,
+   "within_span": true
+  },
+  {
+   "name": "Adventure Park PNG",
+   "wiki": null,
+   "id": "port-moresby-8",
+   "category": "entertainment",
+   "action": "spot",
+   "destination": "port-moresby",
+   "kind": "spot:port-moresby",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": "coordinates null: needs resolve-pin.py or the owner (not guessed)",
+   "views": 0,
+   "counted_sources": 2,
+   "note": "Family amusement park at 14 Mile, outside the city, with a Ferris wheel, water slides, paddle boats, a small zoo, lakes and gardens.",
+   "reason": "Kept; inside the span of Port Moresby and reached from that base.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "within_span": "unverified (no coordinates): described as nearby in source"
+  },
+  {
+   "name": "Varirata National Park",
+   "wiki": "Varirata National Park",
+   "id": "varirata-national-park",
+   "category": "nature",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": "coordinates null: needs resolve-pin.py or the owner (not guessed)",
+   "views": 0,
+   "counted_sources": 1,
+   "note": "National park: PNG's first national park, 23 km NE of Port Moresby on the Sogeri Plateau, with lookouts, a lake, trails, birdwatching and picnic areas; admission charged.",
+   "reason": "National park but no other kept spot in it (Sogeri Plateau only shares the area): under COVERAGE a national park with fewer than four spots is a standalone spot, not a destination.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Sogeri Plateau",
+   "wiki": "Sogeri",
+   "id": "sogeri-plateau",
+   "category": "nature",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": "coordinates null: needs resolve-pin.py or the owner (not guessed)",
+   "views": 782,
+   "counted_sources": 2,
+   "note": "Natural area: 600 m plateau 'a popular weekend trip' from Port Moresby, with picnic sites, rapids and walks (Wikipedia article is the town of Sogeri on the plateau).",
+   "reason": "Cluster Sogeri Plateau, Varirata National Park (and Owers' Corner, which belongs to the Kokoda Track) is below four spots; the plateau is not a name with its own visitor chapter. Pin needed (Wikipedia article is the town of Sogeri).",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Kerema",
+   "wiki": "Kerema",
+   "id": "kerema",
+   "category": "landmark",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": {
+    "lat": -7.95967,
+    "lng": 145.772239
+   },
+   "coordinates_source": "WV Western PNG cities list",
+   "views": 2691,
+   "counted_sources": 3,
+   "note": "Town: the capital of Gulf Province on the Gulf of Papua coast, a basic base for the Gulf with a few hotels, reached by the Hiritano Highway or by air.",
+   "reason": "Gulf Province town: Kerema and Kikori are 2: standalone.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Kikori",
+   "wiki": "Kikori",
+   "id": "kikori",
+   "category": "landmark",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": {
+    "lat": -7.416667,
+    "lng": 144.233333
+   },
+   "coordinates_source": "WV Western PNG cities list",
+   "views": 1900,
+   "counted_sources": 2,
+   "note": "Town: a small fishing centre on the Kikori River delta, a good birdwatching base with Delta Lodge.",
+   "reason": "Standalone.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Owers' Corner",
+   "action": "merged-duplicate",
+   "merged_into_region": "region-png-oro-kokoda",
+   "id": "kokoda-track-1",
+   "reason": "Same place kept in region-png-oro-kokoda; one entry only, placed there."
+  },
+  {
+   "name": "Kokoda Track",
+   "action": "merged-duplicate",
+   "merged_into_region": "region-png-oro-kokoda",
+   "id": "kokoda-track",
+   "reason": "Same place kept in region-png-oro-kokoda; one entry only, placed there."
+  }
+ ],
+ "reviews": [
+  {
+   "name": "Iarokrai Rapids",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "One counted source (tourism board story): family-run campsite and rapids with a 2 hr trek to a stone-markings site; a half-day-plus visit but booking by phone, closed Saturdays.",
+   "skeptic_objection": "For: board names it as a 'best kept secret' with a swim and trek. Against: one source, small private operator, near-duplicate of Crystal Rapids/Sogeri area.",
+   "coordinates": null
+  },
+  {
+   "name": "Moitaka Wildlife Sanctuary",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "One counted source (Wikivoyage See): crocodiles and birds on the Sir Hubert Murray Highway; access, hours and condition unverified.",
+   "skeptic_objection": "For: a wildlife stop with a guide listing. Against: one thin line, no hours or site, possibly run down.",
+   "coordinates": {
+    "lat": -9.42622,
+    "lng": 147.20764
+   }
+  },
+  {
+   "name": "Atama Beach",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "One counted source (Wikivoyage Do, free, open 24h) at Pari on Taurama Road; a beach with a hiking route is second-tier, but the listing is a single line.",
+   "skeptic_objection": "For: an open-access beach near Loloata. Against: single source, local use, safety concerns.",
+   "coordinates": {
+    "lat": -9.5223,
+    "lng": 147.257
+   }
+  },
+  {
+   "name": "Boroko Market",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "One counted source (same board article) names it alongside Gordons Market as a daily market; a near-duplicate of Gordons in type.",
+   "skeptic_objection": "For: daily market, board-named. Against: single mention, safety, near-duplicate.",
+   "coordinates": {
+    "lat": -9.466651,
+    "lng": 147.198442
+   }
+  },
+  {
+   "name": "Hanuabada",
+   "views": 6288,
+   "counted_sources": 1,
+   "reason": "One counted source (Wikivoyage lists Hiri villages); a large stilt-house Motu village on the harbour, strong Wikipedia interest (6,288 views); visiting is cultural but needs a guide and has safety issues.",
+   "skeptic_objection": "For: the city's best-known cultural village. Against: a living community, no visitor facilities, one source.",
+   "coordinates": {
+    "lat": -9.45,
+    "lng": 147.13333333
+   }
+  },
+  {
+   "name": "Lakekamu Basin",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "One counted source (Wikivoyage Western PNG): remote 2,500 sq km rainforest in Gulf for birding, reached only by charter or specialist tour with basic guest houses.",
+   "skeptic_objection": "For: a significant wilderness named by a guide. Against: very remote, operator-only, one source.",
+   "coordinates": null
+  },
+  {
+   "name": "Bulldog Track",
+   "views": 1226,
+   "counted_sources": 1,
+   "reason": "One counted source (tourism board Gulf page, calls it a must-see): a 60 km trek from the Lakekamu side to Wau; an expedition, and half lies in Morobe.",
+   "skeptic_objection": "For: a named multi-day trek, 1,226 views. Against: one source, specialist, ends outside the region.",
+   "coordinates": null
+  }
+ ],
+ "existing_fixes": [],
+ "note": "PNG has no existing destinations or spots. Placement run jointly for all nine regions; proposed destinations are in curation/png/destinations-proposed.json."
+}

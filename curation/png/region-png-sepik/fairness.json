@@ -1,0 +1,168 @@
+{
+ "region": "region-png-sepik",
+ "inside_destinations": 0,
+ "standalone": 8,
+ "new_destinations": 0,
+ "lowest_kept": [
+  {
+   "name": "Maprik",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Mushu Island",
+   "views": 0,
+   "counted_sources": 3
+  },
+  {
+   "name": "Vanimo Surf Breaks",
+   "views": 0,
+   "counted_sources": 3
+  },
+  {
+   "name": "Kairiru Island",
+   "views": 0,
+   "counted_sources": 4
+  },
+  {
+   "name": "Cape Wom",
+   "views": 684,
+   "counted_sources": 2
+  }
+ ],
+ "stronger_left_out": [
+  {
+   "name": "Aitape",
+   "views": 7404,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2/1: Wikivoyage Sepik names it only as a mission town and a pointer to Sissano Lagoon; no See/Do listing, nothing a visitor does for half an hour."
+  },
+  {
+   "name": "Torricelli Mountains",
+   "views": 3223,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1: re-looked, only Wikipedia; no visitor source."
+  },
+  {
+   "name": "Telefomin",
+   "views": 2814,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1/2: re-looked; Wikivoyage Sepik names it only as one of the most remote towns, no See/Do, reached by air only."
+  },
+  {
+   "name": "Wuvulu Island",
+   "views": 2010,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Rule 1: one counted source (Wikivoyage Sepik) for diving. Administratively Manus Province: belongs to the islands (Manus) region, not this one."
+  },
+  {
+   "name": "Angoram",
+   "views": 1185,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Rule 1: one counted source (Wikivoyage Sepik) names it as a road-accessible river village, the lower-Sepik start of trips."
+  },
+  {
+   "name": "Chambri Lakes",
+   "views": 882,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Rule 1: re-looked; PTPA's Sepik Adventure Tours business listing and tour itineraries (Aibom pottery, Wombun haus tambaran) name it as a stop, but no editorial counted page found."
+  },
+  {
+   "name": "Sissano Lagoon",
+   "views": 849,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2/3: Wikivoyage mentions it only as the 1998 tsunami site near Aitape; no visitor facilities or activity."
+  },
+  {
+   "name": "Ambunti",
+   "views": 808,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Rule 1: PTPA Momase names it only as the festival host; Remote Lands lists it as a Sepik region hub. Upper Sepik base for crocodile and bird trips."
+  },
+  {
+   "name": "Prince Alexander Mountains",
+   "views": 768,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1: re-looked, only Wikipedia."
+  },
+  {
+   "name": "Bewani Mountains",
+   "views": 663,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1: re-looked, only Wikipedia."
+  },
+  {
+   "name": "Pagwi",
+   "views": 352,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Rule 1: one counted source (Wikivoyage Sepik) lists it as a road-accessible river village near the Chambri Lakes."
+  }
+ ],
+ "strongest_outsiders": [
+  {
+   "name": "Sepik River",
+   "views": 12536,
+   "counted_sources": 3,
+   "kept": true
+  },
+  {
+   "name": "Wewak",
+   "views": 11091,
+   "counted_sources": 2,
+   "kept": true
+  },
+  {
+   "name": "Aitape",
+   "views": 7404,
+   "counted_sources": 1,
+   "kept": false,
+   "verdict": "reject"
+  },
+  {
+   "name": "Vanimo",
+   "views": 7075,
+   "counted_sources": 3,
+   "kept": true
+  },
+  {
+   "name": "Torricelli Mountains",
+   "views": 3223,
+   "counted_sources": 0,
+   "kept": false,
+   "verdict": "reject"
+  },
+  {
+   "name": "Telefomin",
+   "views": 2814,
+   "counted_sources": 0,
+   "kept": false,
+   "verdict": "reject"
+  },
+  {
+   "name": "Wuvulu Island",
+   "views": 2010,
+   "counted_sources": 1,
+   "kept": false,
+   "verdict": "review"
+  },
+  {
+   "name": "Angoram",
+   "views": 1185,
+   "counted_sources": 1,
+   "kept": false,
+   "verdict": "review"
+  }
+ ],
+ "benchmark": "Sepik River kept as a standalone spot pinned at Angoram (visitor access), not under Wewak."
+}

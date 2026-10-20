@@ -50,7 +50,7 @@ for f in glob.glob('curation/nz-rest/lens/search-C*-candidates.json'):
 
 
 def spot_key(sid):
-    m = re.search(r"\{ id: '%s',[^\n]*" % re.escape(sid), spots)
+    m = re.search(r"\{ id: ['\"]%s['\"],[^\n]*" % re.escape(sid), spots)
     if not m: return None
     l = m.group(0)
     w = re.search(r'\bwiki: (?:"([^"]*)"|\'([^\']*)\')', l)

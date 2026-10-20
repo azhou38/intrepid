@@ -1,0 +1,131 @@
+{
+ "region": "region-png-western",
+ "entries": [
+  {
+   "name": "Daru",
+   "wiki": "Daru, Papua New Guinea",
+   "id": "daru",
+   "category": "landmark",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": {
+    "lat": -9.069901,
+    "lng": 143.210029
+   },
+   "coordinates_source": "openstreetmap:place=city node (Nominatim, Daru, Western)",
+   "views": 5931,
+   "counted_sources": 3,
+   "note": "Town: provincial capital of Western Province on Daru Island at the Fly River mouth, and the domestic air gateway to the province. PNG Tourism calls it the 'Wild Wild West' of PNG; Wikivoyage says it has little to interest visitors beyond fishing. Also covers Daru Island (same island, not a separate spot).",
+   "reason": "Western Province places are 190+ km apart (Daru, Kiunga, Lake Murray, Tonda): no cluster round one base: all standalone.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Kiunga",
+   "wiki": "Kiunga, Papua New Guinea",
+   "id": "kiunga",
+   "category": "landmark",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": {
+    "lat": -6.1159886,
+    "lng": 141.2981755
+   },
+   "coordinates_source": "openstreetmap:place=town node (Nominatim, Kiunga, North Fly)",
+   "views": 3206,
+   "counted_sources": 3,
+   "note": "Town: river port on the Fly River and southern end of the Kiunga-Tabubil Highway, known as a base for birdwatching (Wikivoyage) and for nature tours (Kiunga Nature Tours is based here, per PNG Tourism).",
+   "reason": "Standalone.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Lake Murray",
+   "wiki": "Lake Murray (Papua New Guinea)",
+   "id": "lake-murray",
+   "category": "nature",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": {
+    "lat": -6.9756776,
+    "lng": 141.5221123
+   },
+   "coordinates_source": "openstreetmap:natural=water relation centroid (Nominatim, Lake Murray)",
+   "views": 4197,
+   "counted_sources": 1,
+   "note": "Natural lake: Papua New Guinea's largest lake (about 647 km2 in the dry season, up to five times that in the wet season), surrounded by wetlands and rainforest. Wikivoyage lists it for birdwatching, fishing and village visits; access is normally by charter aircraft through a lodge.",
+   "reason": "Standalone; remote.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Tonda Wildlife Management Area",
+   "wiki": "Tonda Wildlife Management Area",
+   "id": "tonda-wildlife-management-area",
+   "category": "nature",
+   "action": "standalone",
+   "destination": null,
+   "kind": "standalone",
+   "coordinates": {
+    "lat": -9.00138889,
+    "lng": 141.54444444
+   },
+   "coordinates_source": "wikipedia:Tonda Wildlife Management Area",
+   "views": 695,
+   "counted_sources": 2,
+   "note": "Protected wetland: PNG's largest protected area, a Ramsar site on the Indonesian border with over 250 waterbird species and savanna wildlife. PNG Tourism lists 'Visit the Tonda Wildlife Management Area'; visits are based at Bensbach Wildlife Lodge.",
+   "reason": "Protected area (Ramsar) with no other kept spot: standalone.",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  }
+ ],
+ "reviews": [
+  {
+   "name": "Fly River",
+   "views": 16845,
+   "counted_sources": 2,
+   "reason": "Rule 1 met (two counted sources; PNG tourism names it as a great river, Wikivoyage describes river trips from Daru and Kiunga). But a 1,060 km river is a linear feature with no single visitor point: case for: obvious headline feature of the province; case against: Wikivoyage warns passenger boats are not available, no distinct place to stand, pin would be arbitrary (needs a visitor access point, e.g. Kiunga river port).",
+   "skeptic_objection": "Per COVERAGE, long features are placed at main visitor access, which here is unclear; Fly River Delta and Kiwai Island cover the lower river.",
+   "coordinates": {
+    "lat": -8.56111111,
+    "lng": 143.58888889
+   }
+  },
+  {
+   "name": "Kiwai Island",
+   "views": 2154,
+   "counted_sources": 1,
+   "reason": "One counted source (Wikivoyage: charter boat trip from Daru to the delta's largest island, 59 km long, villages). For: a real named place, a distinct visit, Wikipedia article with coordinates. Against: single source, needs a charter, a long visit to villages with permission; unclear what a visitor does for half an hour.",
+   "skeptic_objection": "Fly River Delta trip is vague; could be treated as the delta spot instead.",
+   "coordinates": {
+    "lat": -8.55,
+    "lng": 143.41666667
+   }
+  },
+  {
+   "name": "Hindenburg Wall",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "One counted source (PNG tourism 'must see': limestone cliff escarpment, Star Mountains). For: a genuine natural landmark the tourism board promotes. Against: access only with customary landowners, no coordinates, no visitor facilities, no second source.",
+   "skeptic_objection": "Could be reject on rule 2 if no public access can be confirmed.",
+   "coordinates": null
+  }
+ ],
+ "existing_fixes": [],
+ "note": "PNG has no existing destinations or spots. Placement run jointly for all nine regions; proposed destinations are in curation/png/destinations-proposed.json."
+}

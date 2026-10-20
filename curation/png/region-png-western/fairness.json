@@ -1,0 +1,135 @@
+{
+ "region": "region-png-western",
+ "inside_destinations": 0,
+ "standalone": 4,
+ "new_destinations": 0,
+ "lowest_kept": [
+  {
+   "name": "Tonda Wildlife Management Area",
+   "views": 695,
+   "counted_sources": 2
+  },
+  {
+   "name": "Kiunga",
+   "views": 3206,
+   "counted_sources": 3
+  },
+  {
+   "name": "Lake Murray",
+   "views": 4197,
+   "counted_sources": 1
+  },
+  {
+   "name": "Daru",
+   "views": 5931,
+   "counted_sources": 3
+  }
+ ],
+ "stronger_left_out": [
+  {
+   "name": "Fly River",
+   "views": 16845,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Rule 1 met (two counted sources; PNG tourism names it as a great river, Wikivoyage describes river trips from Daru and Kiunga). But a 1,060 km river is a linear feature with no single visitor point: case for: obvious headline feature of the province; case against: Wikivoyage warns passenger boats are not available, no distinct place to stand, pin would be arbitrary (needs a visitor access point, e.g. Kiunga river port)."
+  },
+  {
+   "name": "Ok Tedi Mine",
+   "views": 13895,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 2: working industrial site, controlled access, Wikivoyage says not to photograph it; nothing a visitor can do."
+  },
+  {
+   "name": "Tabubil",
+   "views": 4779,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Fails rule 1 and 2: no visitor source (Wikivoyage, PNG tourism) names it as a stop; re-looked, Wikivoyage mentions it only as the mine corridor with controlled access. A company mine town with no visitor draw."
+  },
+  {
+   "name": "Kiwai Island",
+   "views": 2154,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "One counted source (Wikivoyage: charter boat trip from Daru to the delta's largest island, 59 km long, villages). For: a real named place, a distinct visit, Wikipedia article with coordinates. Against: single source, needs a charter, a long visit to villages with permission; unclear what a visitor does for half an hour."
+  },
+  {
+   "name": "Strickland River",
+   "views": 1862,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: river as a feature, no visitor point; tourism board mentions it only in the introduction, not as a stop."
+  },
+  {
+   "name": "Parama Island",
+   "views": 1007,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1: no visitor source; village island with no stated visitor activity."
+  },
+  {
+   "name": "Mount Fubilan",
+   "views": 754,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 2: the peak no longer exists, replaced by the Ok Tedi pit; no public access."
+  }
+ ],
+ "strongest_outsiders": [
+  {
+   "name": "Fly River",
+   "views": 16845,
+   "counted_sources": 2,
+   "kept": false,
+   "verdict": "review"
+  },
+  {
+   "name": "Ok Tedi Mine",
+   "views": 13895,
+   "counted_sources": 0,
+   "kept": false,
+   "verdict": "reject"
+  },
+  {
+   "name": "Daru",
+   "views": 5931,
+   "counted_sources": 3,
+   "kept": true
+  },
+  {
+   "name": "Tabubil",
+   "views": 4779,
+   "counted_sources": 0,
+   "kept": false,
+   "verdict": "reject"
+  },
+  {
+   "name": "Lake Murray",
+   "views": 4197,
+   "counted_sources": 1,
+   "kept": true
+  },
+  {
+   "name": "Kiunga",
+   "views": 3206,
+   "counted_sources": 3,
+   "kept": true
+  },
+  {
+   "name": "Kiwai Island",
+   "views": 2154,
+   "counted_sources": 1,
+   "kept": false,
+   "verdict": "review"
+  },
+  {
+   "name": "Strickland River",
+   "views": 1862,
+   "counted_sources": 1,
+   "kept": false,
+   "verdict": "reject"
+  }
+ ],
+ "benchmark": "Fly River and Kiwai Island sent to review (long feature / vague trip), as the rules require for journeys beyond a gateway."
+}

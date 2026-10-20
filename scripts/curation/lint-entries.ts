@@ -122,7 +122,7 @@ async function checkWiki(title: string): Promise<string | null> {
     if (sentences(s.bio) > 1) add(it, 'bio', 'more than one sentence');
     const nWords = s.bio.trim().split(/\s+/).filter(Boolean).length;
     if (nWords < 10) add(it, 'bio', `only ${nWords} words (min 10): say what it is, where, and why it is worth a stop`);
-    const m = s.bio.match(MARKETING); if (m) add(it, 'bio', `marketing word "${m[0]}"`);
+    const m = s.bio.replace(/\bbirds?[- ]of[- ]paradise\b/gi, 'birds').match(MARKETING); if (m) add(it, 'bio', `marketing word "${m[0]}"`);
     const tl = tooLong.get(s.id); if (tl) add(it, 'bio', `${tl.lines} lines on the carousel card (max 3): cut ~${tl.cut} characters`);
     // The standalone-spot carousel lists every spot of the same second-level division (src/data/spotDistricts.json).
     if (!spotDistricts[s.id]) add(it, 'district', 'no entry in src/data/spotDistricts.json: run scripts/curation/build-spot-districts.py --only ' + s.id);

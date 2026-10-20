@@ -1,0 +1,125 @@
+{
+ "note": "Proposals only, for the owner; not added to destinations.ts. Each needs description, reasons, tips, best months and a header (Pipeline C).",
+ "destinations": [
+  {
+   "id": "port-moresby",
+   "name": "Port Moresby",
+   "name_evidence": "Wikivoyage city page \"Port Moresby\" (See/Do/Buy listings); named in the Wikivoyage Papua New Guinea cities list; national capital and main international gateway.",
+   "member_spot_ids": [
+    "port-moresby-1",
+    "port-moresby-2",
+    "port-moresby-3",
+    "port-moresby-4",
+    "port-moresby-5",
+    "port-moresby-6",
+    "port-moresby-7",
+    "port-moresby-8"
+   ],
+   "member_count": 8,
+   "rank": 3,
+   "centre": {
+    "lat": -9.478889,
+    "lng": 147.149444
+   },
+   "span_km": 50,
+   "centre_source": "WV Papua New Guinea cities list",
+   "owning_region": "region-png-capital-central-gulf"
+  },
+  {
+   "id": "kokoda-track",
+   "name": "Kokoda Track",
+   "name_evidence": "Wikivoyage article \"Kokoda Track\"; papuanewguinea.travel Northern Oro Province page names it the headline walk; 37,890 en.wikipedia views. Headline long trail, rank-2 exemption from the four-spot rule (only 3 spots); owner to confirm.",
+   "member_spot_ids": [
+    "kokoda-track-1",
+    "kokoda-track-2",
+    "kokoda-track-3"
+   ],
+   "member_count": 3,
+   "rank": 2,
+   "centre": {
+    "lat": -9.15028,
+    "lng": 147.66875
+   },
+   "span_km": 80,
+   "centre_source": "osm:Kokoda Track ways (Nominatim geometry, midpoint of mapped length; approximate, track is 96 km)",
+   "owning_region": "region-png-oro-kokoda"
+  },
+  {
+   "id": "alotau",
+   "name": "Alotau",
+   "name_evidence": "Wikivoyage city page \"Alotau\"; provincial capital and gateway to Milne Bay (PNG Tourism \"Milne Bay\" dive region).",
+   "member_spot_ids": [
+    "alotau-1",
+    "alotau-2",
+    "alotau-3",
+    "alotau-4",
+    "alotau-5"
+   ],
+   "member_count": 5,
+   "rank": 4,
+   "centre": {
+    "lat": -10.316667,
+    "lng": 150.433333
+   },
+   "span_km": 125,
+   "centre_source": "Wikivoyage Alotau geo tag (town centre; a town, not an attraction)",
+   "owning_region": "region-png-milne-bay"
+  },
+  {
+   "id": "madang",
+   "name": "Madang",
+   "name_evidence": "Wikivoyage page \"Madang\" (start point for the north coast); en.wikipedia Madang, 17,307 views.",
+   "member_spot_ids": [
+    "madang-1",
+    "madang-2",
+    "madang-3",
+    "madang-4",
+    "madang-5",
+    "madang-6"
+   ],
+   "member_count": 6,
+   "rank": 3,
+   "centre": {
+    "lat": -5.216667,
+    "lng": 145.8
+   },
+   "span_km": 70,
+   "centre_source": "wikipedia:Madang",
+   "owning_region": "region-png-morobe-madang"
+  },
+  {
+   "id": "rabaul",
+   "name": "Rabaul",
+   "name_evidence": "Wikivoyage page \"Rabaul\" (also covers Kokopo, See items 1-7); PNG Tourism East New Britain page.",
+   "member_spot_ids": [
+    "rabaul-1",
+    "rabaul-2",
+    "rabaul-3",
+    "rabaul-4",
+    "rabaul-5",
+    "rabaul-6",
+    "rabaul-7",
+    "rabaul-8"
+   ],
+   "member_count": 8,
+   "rank": 3,
+   "centre": {
+    "lat": -4.2,
+    "lng": 152.183333
+   },
+   "span_km": 60,
+   "centre_source": "wikipedia:Rabaul",
+   "owning_region": "region-png-new-britain"
+  }
+ ],
+ "rejected_proposals": {
+  "Kimbe": "3 kept places (Kimbe, Kimbe Bay, Garbuna): standalone",
+  "Kavieng": "Kavieng, Boluminski Highway, Lihir Group: standalone",
+  "Goroka": "3 spots (J.K. McCarthy Museum, Asaro Mudmen, Mount Michael): standalone",
+  "Mount Hagen": "1-2 spots: standalone",
+  "Lae": "3 spots: standalone",
+  "Wewak/Sepik River": "Wewak has 3 spots; Sepik River is a single long-feature spot pinned at Angoram: standalone",
+  "Bougainville/Buka": "3 places in Buka Passage; others 80-130 km away: standalone",
+  "Varirata National Park": "national park with fewer than four spots: standalone spot"
+ }
+}
