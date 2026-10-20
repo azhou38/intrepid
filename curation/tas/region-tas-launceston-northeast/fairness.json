@@ -1,0 +1,301 @@
+{
+ "region": "tas-launceston-northeast",
+ "inside_destinations": {
+  "count": 24,
+  "by_destination": {
+   "launceston (proposed)": 9,
+   "tamar-valley (proposed)": 6,
+   "bay-of-fires (proposed)": 9
+  },
+  "note": "No Tasmanian destination exists in the app; all three are proposals for the owner, so these spots are held with their proposed parents. If the owner declines a destination, its spots become standalone."
+ },
+ "standalone": {
+  "count": 4,
+  "names": [
+   "Bridestowe Lavender Estate",
+   "Ben Lomond National Park",
+   "Ben Lomond Ski Field",
+   "Little Blue Lake"
+  ]
+ },
+ "new_destinations": {
+  "count": 3,
+  "names": [
+   "Launceston",
+   "Tamar Valley",
+   "Bay of Fires"
+  ],
+  "folded_kept_places": [
+   "Launceston (the destination itself)",
+   "Tamar Valley Wine Route",
+   "George Town",
+   "Bay of Fires (the destination itself)"
+  ]
+ },
+ "kept_total": 32,
+ "lowest_kept": [
+  {
+   "name": "Brady's Lookout",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "Pyengana Dairy",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "St Columba Falls",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "Little Blue Lake",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "Bass and Flinders Centre",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Platypus House",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Seahorse World",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "St Helens Mountain Bike Trails",
+   "views": 0,
+   "counted_sources": 1
+  }
+ ],
+ "stronger_left_out": [
+  {
+   "name": "York Park",
+   "views": 18480,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 4: sports stadium visited for matches, an occasion not a permanent draw."
+  },
+  {
+   "name": "Longford",
+   "views": 9443,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Case for: historic town visitors stop in. Against: wrapper for Brickendon and Woolmers, town lists only restaurants. Review verdicts are not placed; for the owner."
+  },
+  {
+   "name": "Bridport",
+   "views": 6868,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Case for: coastal town with beaches that a guide covers. Against: its sights are weak ('Just another beach'), mostly a golf and ferry base. Review verdicts are not placed; for the owner."
+  },
+  {
+   "name": "Perth",
+   "views": 5731,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Case for: heritage town on the way from Hobart. Against: no sight of its own after the church and pubs are removed. Review verdicts are not placed; for the owner."
+  },
+  {
+   "name": "Beaconsfield",
+   "views": 5676,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: town wrapper for its own heritage centre."
+  },
+  {
+   "name": "Tamar River",
+   "views": 4685,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: a linear feature/estuary, not a place; cruises are operators."
+  },
+  {
+   "name": "Scamander",
+   "views": 4595,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Case for: second-tier beach town a guide covers. Against: one source and no See listing. Review verdicts are not placed; for the owner."
+  },
+  {
+   "name": "Batman Bridge",
+   "views": 3844,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1: no counted source; a road bridge seen in passing."
+  },
+  {
+   "name": "Barnbougle Dunes",
+   "views": 3491,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Case for: famous dune golf resort that people travel for. Against: a paid golf venue, one source, a dead link. Review verdicts are not placed; for the owner."
+  },
+  {
+   "name": "Beauty Point",
+   "views": 2857,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: town wrapper for its own attractions, Platypus House and Seahorse World."
+  },
+  {
+   "name": "Legges Tor",
+   "views": 2050,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Case for: summit with a name. Against: part of the park walks and one source. Review verdicts are not placed; for the owner."
+  },
+  {
+   "name": "Low Head",
+   "views": 1907,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 3: locality whose sights (lighthouse, pilot station) are listed separately; no counted source for the locality itself."
+  },
+  {
+   "name": "Launceston Synagogue",
+   "views": 1776,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 2: heritage building seen from outside, no regular public access, no counted source."
+  },
+  {
+   "name": "Ansons Bay",
+   "views": 1741,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Case for: quiet bay. Against: one source, mainly fishing, few things to do. Review verdicts are not placed; for the owner."
+  },
+  {
+   "name": "Musselroe Bay",
+   "views": 1449,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Case for: remote coast. Against: one source, mainly fishing. Review verdicts are not placed; for the owner."
+  },
+  {
+   "name": "Pyengana",
+   "views": 1348,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 3: village wrapper for the dairy and St Columba Falls, which are listed separately."
+  },
+  {
+   "name": "Gladstone",
+   "views": 1010,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2/3: very small town; a few churches, cottages and cemetery, no stop of 30 min that a guide pushes."
+  },
+  {
+   "name": "Trevallyn Dam",
+   "views": 962,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1: no counted source found; a utilitarian dam."
+  },
+  {
+   "name": "Entally House",
+   "views": 936,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Case for: 1819 estate and gardens named by a guide. Against: single source, access days uncertain, short visit. Review verdicts are not placed; for the owner."
+  },
+  {
+   "name": "Stacks Bluff",
+   "views": 932,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Case for: 1527 m cliff peak, a hard walk. Against: one source and a remote challenging walk. Review verdicts are not placed; for the owner."
+  },
+  {
+   "name": "Mount Arthur",
+   "views": 874,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1: re-looked: only walker forums and Wikipedia; no visitor board source; also the NZ peak name clash."
+  },
+  {
+   "name": "Franklin House",
+   "views": 836,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Case for: open heritage house a guide names. Against: one source, 30 min, typical local-heritage stop and the app has stronger heritage draws (Brickendon, Woolmers). Review verdicts are not placed; for the owner."
+  },
+  {
+   "name": "Mount Victoria Forest Reserve",
+   "views": 341,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1: no counted source; a reserve identified for conservation."
+  }
+ ],
+ "strongest_outsiders": [
+  {
+   "name": "Bridestowe Lavender Estate",
+   "views": 968,
+   "counted_sources": 0,
+   "verdict": "keep",
+   "placed": "standalone"
+  },
+  {
+   "name": "Ben Lomond National Park",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "keep",
+   "placed": "standalone"
+  },
+  {
+   "name": "Ben Lomond Ski Field",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "keep",
+   "placed": "standalone"
+  },
+  {
+   "name": "Little Blue Lake",
+   "views": 0,
+   "counted_sources": 0,
+   "verdict": "keep",
+   "placed": "standalone"
+  }
+ ],
+ "review_for_owner": [
+  "Longford",
+  "Bridport",
+  "Perth",
+  "Scamander",
+  "Barnbougle Dunes",
+  "Legges Tor",
+  "Ansons Bay",
+  "Musselroe Bay",
+  "Entally House",
+  "Stacks Bluff",
+  "Franklin House",
+  "Design Centre Tasmania",
+  "Jansz Tasmania",
+  "Josef Chromy",
+  "Tamar Ridge Wines",
+  "Pilots Station and Museum",
+  "Watch House",
+  "Fly By Night Creek Fossicking Area",
+  "Australian Fly Fishing Museum",
+  "St Helens History Room",
+  "Mainly Maritime",
+  "Serpentarium Wildlife Park",
+  "Georges Bay Foreshore Trail",
+  "Eureka Farm",
+  "Jacobs Ladder",
+  "Carr Villa to Alpine Village Walk",
+  "Blue Tier"
+ ],
+ "benchmark": "The NZ benchmark list (Red Rocks, Kapiti Island, Ninety Mile Beach, etc.) is not applicable to a Tasmanian region. Applicable checks pass: no operator or vehicle spots kept (Launceston Ghost Tour and the Tamar River cruises rejected); a once-a-week market (Harvest Market) rejected; a civic/occasion venue (York Park) rejected; gateway-village wrappers (Pyengana, Beauty Point, Beaconsfield, Low Head, Gladstone) rejected or folded; a long feature (Bay of Fires) is a destination reached at Binalong Bay and Eddystone Point, not a spot under a neighbour. Data fixes applied: Little Blue Lake and St Columba Falls coordinates in candidates.json belong to other places and are not used."
+}

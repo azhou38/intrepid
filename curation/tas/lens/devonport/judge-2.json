@@ -1,0 +1,152 @@
+{
+ "dest:devonport:header": {
+  "candidates": [
+   {
+    "file": "Devonport Mersey Bluff.JPG",
+    "verdict": "accept",
+    "reason": "Mersey Bluff coast, Devonport on horizon; category Mersey Bluff; 2896 px; no spectacular town view exists"
+   },
+   {
+    "file": "Spirit of Tasmania III on Mersey River, Devonport, Tasmania.jpg",
+    "verdict": "reject",
+    "reason": "a ship is the subject, not the place; flat"
+   }
+  ],
+  "choice": "Devonport Mersey Bluff.JPG",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.5
+  },
+  "note": "weak: not a cityscape, but best available; ferry photo is the alternative"
+ },
+ "dest:devonport:why1": {
+  "candidates": [
+   {
+    "file": "official:visitdevonport-lillico-penguins",
+    "verdict": "accept",
+    "reason": "little penguins at Lillico, from Visit Devonport page; dark on purpose (night)"
+   }
+  ],
+  "choice": "official:visitdevonport-lillico-penguins",
+  "hero_crop": "ok",
+  "dark": false,
+  "dark_on_purpose": true,
+  "copyright_risk": true,
+  "credit": {
+   "by": "Visit Devonport / Tourism Tasmania",
+   "licence": "official photo, permission not confirmed",
+   "page": "https://www.visitdevonport.com.au/penguin-viewing-season-returns-to-lillico-beach/"
+  }
+ },
+ "dest:devonport:why2": {
+  "candidates": [
+   {
+    "file": "Devonport Mersey Bluff.JPG",
+    "verdict": "accept",
+    "reason": "rocky Mersey Bluff shore"
+   },
+   {
+    "file": "Mersey-Bluff-20070325-007.jpg",
+    "verdict": "reject",
+    "reason": "pebble foreground, lighthouse tiny and distant"
+   }
+  ],
+  "choice": "Devonport Mersey Bluff.JPG",
+  "hero_crop": "ok",
+  "note": "same file as header: allowed within destination"
+ },
+ "dest:devonport:why3": {
+  "candidates": [
+   {
+    "file": "Don River Railway Devonport Tasmania.jpg",
+    "verdict": "accept",
+    "reason": "steam train, category Don River Railway, geotag Don"
+   }
+  ],
+  "choice": "Don River Railway Devonport Tasmania.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:devonport-1": {
+  "candidates": [
+   {
+    "file": "Tasmania Mersey Bluff Lighthouse in Devonport (4578673241).jpg",
+    "verdict": "accept",
+    "reason": "lighthouse, category Mersey Bluff Lighthouse; current is an aerial of the town"
+   }
+  ],
+  "choice": "Tasmania Mersey Bluff Lighthouse in Devonport (4578673241).jpg",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.25
+  }
+ },
+ "spot:devonport-2": {
+  "candidates": [
+   {
+    "file": "official:bassstrait-museum-exterior",
+    "verdict": "accept",
+    "reason": "entrance with Maritime Museum sign, museum's own site; current file is Queenscliffe, Victoria"
+   }
+  ],
+  "choice": "official:bassstrait-museum-exterior",
+  "hero_crop": {
+   "x": 0.62,
+   "y": 0.5
+  },
+  "copyright_risk": true,
+  "credit": {
+   "by": "Bass Strait Maritime Centre",
+   "licence": "official photo, permission not confirmed",
+   "page": "https://bassstrait.museum/"
+  }
+ },
+ "spot:devonport-6": {
+  "candidates": [
+   {
+    "file": "official:atdw-lillico-beach",
+    "verdict": "accept",
+    "reason": "pebble beach with rainbow, listed as Lillico Beach by Visit Devonport; current is a Bruny penguin"
+   }
+  ],
+  "choice": "official:atdw-lillico-beach",
+  "hero_crop": "ok",
+  "copyright_risk": true,
+  "credit": {
+   "by": "ATDW / Visit Devonport",
+   "licence": "official photo, permission not confirmed",
+   "page": "https://www.visitdevonport.com.au/see-do/nature-recreation/"
+  }
+ },
+ "spot:devonport-8": {
+  "candidates": [
+   {
+    "file": "Sheffield-20070422-003.jpg",
+    "verdict": "accept",
+    "reason": "Sheffield main street with mural building; geotag -41.382; category Sheffield, Tasmania"
+   },
+   {
+    "file": "Sheffield TAS.jpg",
+    "verdict": "reject",
+    "reason": "Mount Roland behind duplicates devonport-9 subject"
+   }
+  ],
+  "choice": "Sheffield-20070422-003.jpg",
+  "hero_crop": {
+   "x": 0.78,
+   "y": 0.4,
+   "zoom": 1.6
+  },
+  "note": "mural is modest; recognisable as the town's mural street"
+ },
+ "spot:devonport-11": {
+  "candidates": [
+   {
+    "file": "Leven Canyon, Tasmania (25309866649).jpg",
+    "verdict": "accept",
+    "reason": "canyon and river, geotag -41.397 matches pin; 5184 px; current is 768 px photo of a person"
+   }
+  ],
+  "choice": "Leven Canyon, Tasmania (25309866649).jpg",
+  "hero_crop": "ok"
+ }
+}

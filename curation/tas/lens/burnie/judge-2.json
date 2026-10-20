@@ -1,0 +1,83 @@
+{
+ "dest:burnie:header": {
+  "candidates": [
+   {
+    "file": "View of Burnie from Upper Burnie lookout in Wilfred Campbell Memorial Reserve.jpg",
+    "verdict": "accept",
+    "reason": "Burnie and port, category Burnie; town is a thin strip so needs zoom"
+   }
+  ],
+  "choice": "View of Burnie from Upper Burnie lookout in Wilfred Campbell Memorial Reserve.jpg",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.72,
+   "zoom": 1.8
+  }
+ },
+ "dest:burnie:why2": {
+  "candidates": [
+   {
+    "file": "Guide Falls, Tasmania (31302319832).jpg",
+    "verdict": "accept",
+    "reason": "falls in full flow, geotag matches Guide Falls"
+   },
+   {
+    "file": "Guide Falls 2020.jpg",
+    "verdict": "reject",
+    "reason": "weaker"
+   }
+  ],
+  "choice": "Guide Falls, Tasmania (31302319832).jpg",
+  "hero_crop": {
+   "x": 0.6,
+   "y": 0.5
+  }
+ },
+ "spot:burnie-1": {
+  "candidates": [
+   {
+    "file": "official:visitburnie-penguin-banner",
+    "verdict": "accept",
+    "reason": "little penguin in burrow, 1140 px, Burnie tourism site"
+   }
+  ],
+  "choice": "official:visitburnie-penguin-banner",
+  "hero_crop": "ok",
+  "copyright_risk": true,
+  "credit": {
+   "by": "Visit Burnie",
+   "licence": "official photo, permission not confirmed",
+   "page": "https://visitburnie.com/"
+  }
+ },
+ "spot:burnie-2": {
+  "candidates": [
+   {
+    "file": "Penguin BigPenguin.jpg",
+    "verdict": "accept",
+    "reason": "Big Penguin statue with plaque, category Big Penguin; current is a bin"
+   }
+  ],
+  "choice": "Penguin BigPenguin.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:burnie-4": {
+  "candidates": [
+   {
+    "file": "Guide Falls, Tasmania (31302319832).jpg",
+    "verdict": "accept",
+    "reason": "falls; shared with why2 (allowed)"
+   },
+   {
+    "file": "Guide Falls 2020.jpg",
+    "verdict": "reject",
+    "reason": "weaker"
+   }
+  ],
+  "choice": "Guide Falls, Tasmania (31302319832).jpg",
+  "hero_crop": {
+   "x": 0.6,
+   "y": 0.5
+  }
+ }
+}

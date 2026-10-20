@@ -59,6 +59,8 @@ if (regionId) {
 if (!destIds.size && !standaloneIds.size) { console.error('usage: lint-entries.ts (--region <id> | --dest <id> …) [--json out.json] [--offline]'); process.exit(1); }
 
 // Source names never appear in what the app shows ("Wikivoyage warns...", "per the brief"): the fact is stated plainly.
+// Destinations the owner approved below the four-spot bar as flagship parks (Tasmania, 2026-10-20).
+const FLAGSHIP_EXEMPT = new Set(['mount-field', 'southwest-national-park']);
 const SOURCE_MENTION = /wikivoyage|wikipedia|lonely planet|rough guide|tripadvisor|wikimedia|openstreetmap|according to|per the brief|in the brief|the guidebook/i;
 const textOf = (o: any): string[] => typeof o === 'string' ? [o] : Array.isArray(o) ? o.flatMap(textOf) : o && typeof o === 'object' ? Object.entries(o).filter(([k]) => k !== 'wiki' && k !== 'ticketUrl').flatMap(([, v]) => textOf(v)) : [];
 const MARKETING = /\b(stunning|breathtaking|must[- ]see|must[- ]visit|world[- ]class|iconic|unforgettable|hidden gem|picturesque|nestled|paradise|best in the world|bucket[- ]list|jaw[- ]dropping|awe[- ]inspiring|spectacular)\b/i;
@@ -96,7 +98,7 @@ async function checkWiki(title: string): Promise<string | null> {
     const it: Issue = { kind: 'destination', id: d.id, name: d.name, checks: [] };
     // A destination needs at least four spots, or rank 1-2 headline status (COVERAGE.md): two or three spots never make one.
     const nSpots = SPOTS.filter(s => s.destinationId === d.id).length;
-    if (nSpots <= 3 && d.rank >= 3) add(it, 'thin-destination', `only ${nSpots} spots at rank ${d.rank}: its spots should be standalone or go under the nearest real destination`);
+    if (nSpots <= 3 && d.rank >= 3 && !FLAGSHIP_EXEMPT.has(d.id)) add(it, 'thin-destination', `only ${nSpots} spots at rank ${d.rank}: its spots should be standalone or go under the nearest real destination`);
     { const m = textOf(d).join(' \n ').match(SOURCE_MENTION); if (m) add(it, 'source', `names a source ("${m[0]}"): state the fact without attribution`); }
     const nWhy = d.whyVisit?.length ?? 0;   // 2–4 by popularity (WRITING.md): the rank sets the target, the lint only enforces the range and that every reason has its highlight and photo
     if (nWhy < 2 || nWhy > 4) add(it, 'shape', `${nWhy} whyVisit (needs 2–4)`);

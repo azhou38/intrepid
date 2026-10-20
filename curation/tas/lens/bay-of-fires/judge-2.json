@@ -1,0 +1,124 @@
+{
+ "dest:bay-of-fires:header": {
+  "candidates": [
+   {
+    "file": "Bay of Fires-Tasmania04.jpg",
+    "verdict": "accept",
+    "reason": "Quality image: lichen rocks, turquoise bay, white beach, 3888x2592"
+   },
+   {
+    "file": "Bay of Fires-15.jpg",
+    "verdict": "accept-alt",
+    "reason": "Lichen rocks and sea, simpler"
+   },
+   {
+    "file": "Lichen on Granite at Bay of Fires Conservation Area.jpg",
+    "verdict": "reject",
+    "reason": "Saturated/HDR look"
+   }
+  ],
+  "choice": "Bay of Fires-Tasmania04.jpg",
+  "hero_crop": "ok"
+ },
+ "dest:bay-of-fires:why1": {
+  "candidates": [
+   {
+    "file": "Tasmania Eddystone Point Lighthouse (4578320568).jpg",
+    "verdict": "accept",
+    "reason": "Orange lichen rocks with Eddystone lighthouse behind; matches reason exactly"
+   },
+   {
+    "file": "Orange lichen covered rocks at the Bay of Fires, Tasmania.jpg",
+    "verdict": "accept-alt",
+    "reason": "Lichen rocks, no Eddystone"
+   }
+  ],
+  "choice": "Tasmania Eddystone Point Lighthouse (4578320568).jpg",
+  "hero_crop": "ok (lighthouse is small and at the far left; the lichen rocks are the subject)"
+ },
+ "dest:bay-of-fires:why2": {
+  "candidates": [
+   {
+    "file": "Binalong Bay beach.JPG",
+    "verdict": "accept",
+    "reason": "White sand and clear water, category Bay of Fires, 2816x2112"
+   },
+   {
+    "file": "Bay of Fires-11.jpg",
+    "verdict": "accept-alt",
+    "reason": "Similar, no people, from dunes"
+   }
+  ],
+  "choice": "Binalong Bay beach.JPG",
+  "hero_crop": "ok"
+ },
+ "spot:bay-of-fires-1": {
+  "candidates": [
+   {
+    "file": "Binalong Bay (30117838782).jpg",
+    "verdict": "accept",
+    "reason": "Category Binalong Bay, Tasmania; red rocks, bay and beach, 5240 px"
+   },
+   {
+    "file": "Binalong Bay beach.JPG",
+    "verdict": "accept-alt",
+    "reason": "Used for why2"
+   }
+  ],
+  "choice": "Binalong Bay (30117838782).jpg",
+  "hero_crop": "ok"
+ },
+ "spot:bay-of-fires-2": {
+  "candidates": [
+   {
+    "file": "Tasmania Eddystone Point Lighthouse (4577644355).jpg",
+    "verdict": "accept",
+    "reason": "Lighthouse and track, category Eddystone Point Lighthouse, 4752 px"
+   },
+   {
+    "file": "Tasmania Eddystone Point Lighthouse (4578277936).jpg",
+    "verdict": "reject",
+    "reason": "Lighthouse tiny at right edge, mostly sky"
+   }
+  ],
+  "choice": "Tasmania Eddystone Point Lighthouse (4577644355).jpg",
+  "hero_crop": {
+   "x": 0.17,
+   "y": 0.33,
+   "zoom": 1.4
+  }
+ },
+ "spot:bay-of-fires-5": {
+  "candidates": [
+   {
+    "file": "Columba Falls-Tasmania-Australia02.JPG",
+    "verdict": "accept",
+    "reason": "Category Columba Falls; falls with tree ferns, 2592x3888"
+   },
+   {
+    "file": "Columba Falls-Tasmania-Australia01.JPG",
+    "verdict": "reject",
+    "reason": "Near monochrome and tight"
+   },
+   {
+    "file": "St. Columba Falls from viewing platform.jpg",
+    "verdict": "accept-alt",
+    "reason": "Rocky cascade, falls a thin line at top"
+   }
+  ],
+  "choice": "Columba Falls-Tasmania-Australia02.JPG",
+  "hero_crop": "ok"
+ },
+ "spot:bay-of-fires-7": {
+  "candidates": [
+   {
+    "file": "Milking Shed at Pyengana Dairy, Tasmania.jpg",
+    "verdict": "accept-weak",
+    "reason": "Geotagged 30 m from the dairy; misty milking yards with cows; not the cafe/cheese, overcast"
+   }
+  ],
+  "choice": "Milking Shed at Pyengana Dairy, Tasmania.jpg",
+  "hero_crop": "ok",
+  "note": "current Pyengana aerial.jpg is an aerial of the township: rejected (check 4)"
+ }
+}

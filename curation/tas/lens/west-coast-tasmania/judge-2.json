@@ -1,0 +1,178 @@
+{
+ "dest:west-coast-tasmania:header": {
+  "candidates": [
+   {
+    "file": "HellsGateLighthouse.jpg",
+    "verdict": "accept",
+    "reason": "Hells Gates lighthouse, Macquarie Harbour entrance, wide 3:2 colour"
+   },
+   {
+    "file": "Macquarie Harbour Strahan Tasmania.jpg",
+    "verdict": "reject",
+    "reason": "dark, moody, no subject"
+   },
+   {
+    "file": "Strahan.JPG",
+    "verdict": "reject",
+    "reason": "small, film-like, ordinary"
+   }
+  ],
+  "choice": "HellsGateLighthouse.jpg",
+  "hero_crop": {
+   "x": 0.4,
+   "y": 0.5
+  }
+ },
+ "dest:west-coast-tasmania:why1": {
+  "candidates": [
+   {
+    "file": "Gordon River bend.jpg",
+    "verdict": "accept",
+    "reason": "Gordon River from cruise boat, wake, rainforest banks"
+   },
+   {
+    "file": "Gordon RIver Mangroves.jpg",
+    "verdict": "reject",
+    "reason": "reflection only, abstract"
+   },
+   {
+    "file": "Gordon River Cruise 2.jpg",
+    "verdict": "reject",
+    "reason": "harbour entrance, not the river"
+   }
+  ],
+  "choice": "Gordon River bend.jpg",
+  "hero_crop": "ok"
+ },
+ "dest:west-coast-tasmania:why2": {
+  "candidates": [
+   {
+    "file": "Penitentiary on Sarah Island.jpg",
+    "verdict": "accept",
+    "reason": "penitentiary ruin on Sarah Island, categories confirm"
+   },
+   {
+    "file": "Bakehouse on Sarah Island.jpg",
+    "verdict": "reject",
+    "reason": "small ruin in scrub, weaker"
+   }
+  ],
+  "choice": "Penitentiary on Sarah Island.jpg",
+  "hero_crop": {
+   "x": 0.45,
+   "y": 0.5
+  }
+ },
+ "dest:west-coast-tasmania:why3": {
+  "candidates": [
+   {
+    "file": "Iron Blow Lookout near Queenstown, March 2019 (47581542612).jpg",
+    "verdict": "accept",
+    "reason": "Iron Blow turquoise pit, 1.74:1, geotagged"
+   },
+   {
+    "file": "Iron-blow-pan1.jpg",
+    "verdict": "reject",
+    "reason": "2.5:1 pano, pit tiny in square"
+   }
+  ],
+  "choice": "Iron Blow Lookout near Queenstown, March 2019 (47581542612).jpg",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.6
+  }
+ },
+ "spot:west-coast-tasmania-2": {
+  "candidates": [
+   {
+    "file": "Gordon River bend.jpg",
+    "verdict": "accept",
+    "reason": "the Gordon River itself; shares with why1"
+   },
+   {
+    "file": "Gordon RIver Mangroves.jpg",
+    "verdict": "reject",
+    "reason": "abstract reflection"
+   },
+   {
+    "file": "Gordon Dam, Southwest National Park, Tasmania.jpg",
+    "verdict": "reject",
+    "reason": "current: Gordon Dam, wrong place, duplicates southwest-national-park-1"
+   }
+  ],
+  "choice": "Gordon River bend.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:west-coast-tasmania-5": {
+  "candidates": [
+   {
+    "file": "OceanBeachwest from air.jpg",
+    "verdict": "accept-weak",
+    "reason": "only photo of Ocean Beach on Commons; aerial colour 2010 showing surf and dunes, readable as a surf beach; flag: aerial, low drama"
+   },
+   {
+    "file": "Topography of Tasmania.jpg",
+    "verdict": "reject",
+    "reason": "current: map"
+   }
+  ],
+  "choice": "OceanBeachwest from air.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:west-coast-tasmania-7": {
+  "candidates": [
+   {
+    "file": "Iron Blow Lookout near Queenstown, March 2019 (47581542612).jpg",
+    "verdict": "accept",
+    "reason": "pit and mountain clear"
+   },
+   {
+    "file": "Iron-blow-pan1.jpg",
+    "verdict": "reject",
+    "reason": "2.5:1 pano"
+   }
+  ],
+  "choice": "Iron Blow Lookout near Queenstown, March 2019 (47581542612).jpg",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.6
+  }
+ },
+ "spot:west-coast-tasmania-9": {
+  "candidates": [
+   {
+    "file": "Zeehan School of Mines 20171121-053.jpg",
+    "verdict": "accept",
+    "reason": "former School of Mines, part of the West Coast Heritage Centre, geotag in Zeehan, CC0; differs from Zeehan spot photo (post office)"
+   },
+   {
+    "file": "Locomotive West Coast Pioneers Museum Zeehan.JPG",
+    "verdict": "reject",
+    "reason": "interior detail, weaker"
+   },
+   {
+    "file": "Zeehan main street.jpg",
+    "verdict": "reject",
+    "reason": "current: 1890 archive"
+   }
+  ],
+  "choice": "Zeehan School of Mines 20171121-053.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:west-coast-tasmania-10": {
+  "candidates": [
+   {
+    "file": "Hogarth Falls, Tasmania.jpg",
+    "verdict": "accept",
+    "reason": "Hogarth Falls, categorised Strahan"
+   },
+   {
+    "file": "Steve Hogarth of Marillion at Port Zelande in 2025 by Anne-Marie Forker.jpg",
+    "verdict": "reject",
+    "reason": "current: a musician"
+   }
+  ],
+  "choice": "Hogarth Falls, Tasmania.jpg",
+  "hero_crop": "ok"
+ }
+}

@@ -1,0 +1,122 @@
+{
+ "dest:stanley:header": {
+  "candidates": [
+   {
+    "file": "Stanley and The Nut (6280265492).jpg",
+    "verdict": "accept",
+    "reason": "The Nut and town, blue sky, 3888 px, geotag Stanley"
+   },
+   {
+    "file": "Stanley and The Nut (25619890904).jpg",
+    "verdict": "reject",
+    "reason": "1600 px < 2000 header minimum"
+   }
+  ],
+  "choice": "Stanley and The Nut (6280265492).jpg",
+  "hero_crop": {
+   "x": 0.35,
+   "y": 0.58,
+   "zoom": 1.5
+  }
+ },
+ "dest:stanley:why1": {
+  "candidates": [
+   {
+    "file": "Stanley tasmania from the path up The Nut.JPG",
+    "verdict": "accept",
+    "reason": "view of Stanley from the path up The Nut (2003; view-from-above reason)"
+   },
+   {
+    "file": "The Nut Chairlift.jpg",
+    "verdict": "reject",
+    "reason": "dark vignette, unclear"
+   }
+  ],
+  "choice": "Stanley tasmania from the path up The Nut.JPG",
+  "hero_crop": "ok",
+  "note": "mild: shows the view, not the climb"
+ },
+ "dest:stanley:why2": {
+  "candidates": [
+   {
+    "file": "Highfield stanley tasmania.jpg",
+    "verdict": "accept",
+    "reason": "Highfield House frontal, category Highfield House, Stanley"
+   }
+  ],
+  "choice": "Highfield stanley tasmania.jpg",
+  "hero_crop": "ok"
+ },
+ "dest:stanley:why3": {
+  "candidates": [
+   {
+    "file": "official:stanleytasmania-little-blue-penguin",
+    "verdict": "reject",
+    "reason": "1200 px < 1280 and looks captive"
+   }
+  ],
+  "choice": "none: only candidate is 1200 px and looks captive; reword/drop reason or find a wild penguin photo",
+  "hero_crop": "n/a"
+ },
+ "spot:stanley-1": {
+  "candidates": [
+   {
+    "file": "Stanley and The Nut (25619890904).jpg",
+    "verdict": "accept",
+    "reason": "The Nut with beach, category Stanley, Tasmania, geotag matches"
+   },
+   {
+    "file": "Stanley and The Nut (6280265492).jpg",
+    "verdict": "reject",
+    "reason": "used as header; spot prefers different shot"
+   }
+  ],
+  "choice": "Stanley and The Nut (25619890904).jpg",
+  "hero_crop": {
+   "x": 0.3,
+   "y": 0.45,
+   "zoom": 1.2
+  }
+ },
+ "spot:stanley-2": {
+  "candidates": [
+   {
+    "file": "Highfield House, Stanley (6279727441).jpg",
+    "verdict": "accept",
+    "reason": "house with bay, category Highfield House, Stanley, geotag matches; house low-right so zoom"
+   },
+   {
+    "file": "Highfield stanley tasmania.jpg",
+    "verdict": "reject",
+    "reason": "used for why2"
+   }
+  ],
+  "choice": "Highfield House, Stanley (6279727441).jpg",
+  "hero_crop": {
+   "x": 0.78,
+   "y": 0.72,
+   "zoom": 1.6
+  }
+ },
+ "spot:stanley-3": {
+  "candidates": [
+   {
+    "file": "official:stanleytasmania-little-blue-penguin",
+    "verdict": "accept",
+    "reason": "little penguins on sand; Stanley village site; 1200 px ok for a spot; current is a Bruny penguin shared"
+   }
+  ],
+  "choice": "official:stanleytasmania-little-blue-penguin",
+  "hero_crop": {
+   "x": 0.55,
+   "y": 0.5
+  },
+  "copyright_risk": true,
+  "credit": {
+   "by": "Stanley Village (stanleytasmania.com.au)",
+   "licence": "official photo, permission not confirmed",
+   "page": "https://www.stanleytasmania.com.au/explore-stanley/"
+  },
+  "note": "may be captive-looking; replace if a wild photo is found"
+ }
+}

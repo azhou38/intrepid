@@ -1,0 +1,205 @@
+{
+ "dest:cradle-mountain:header": {
+  "candidates": [
+   {
+    "file": "View of Cradle Mountain across Dove Lake, Tasmania.jpg",
+    "verdict": "accept",
+    "reason": "wide scenic, peak near centre"
+   },
+   {
+    "file": "Cradle Mountain with snow 2013.JPG",
+    "verdict": "accept",
+    "reason": "good alt, used for why1"
+   }
+  ],
+  "choice": "View of Cradle Mountain across Dove Lake, Tasmania.jpg",
+  "hero_crop": "ok"
+ },
+ "dest:cradle-mountain:why1": {
+  "candidates": [
+   {
+    "file": "Cradle Mountain with snow 2013.JPG",
+    "verdict": "accept",
+    "reason": "snow-capped Cradle over Dove Lake, bright, peaks right of centre"
+   }
+  ],
+  "choice": "Cradle Mountain with snow 2013.JPG",
+  "hero_crop": {
+   "x": 0.7,
+   "y": 0.5
+  }
+ },
+ "dest:cradle-mountain:why2": {
+  "candidates": [
+   {
+    "file": "Tasmanian Early Morning on the Overland Track.jpg",
+    "verdict": "accept",
+    "reason": "Barn Bluff over buttongrass on the Overland Track; only candidate, passes"
+   }
+  ],
+  "choice": "Tasmanian Early Morning on the Overland Track.jpg",
+  "hero_crop": "ok"
+ },
+ "dest:cradle-mountain:why3": {
+  "candidates": [
+   {
+    "file": "Cradle Mountain, Marion's Lookout 2.jpg",
+    "verdict": "accept",
+    "reason": "shows peak and lake"
+   },
+   {
+    "file": "Cradle Mountain, Marion's Lookout.jpg",
+    "verdict": "accept",
+    "reason": "better kept for the spot"
+   }
+  ],
+  "choice": "Cradle Mountain, Marion's Lookout 2.jpg",
+  "hero_crop": "ok"
+ },
+ "dest:cradle-mountain:why4": {
+  "candidates": [
+   {
+    "file": "Our ride down Lake St. Clair - Flickr - brewbooks.jpg",
+    "verdict": "accept",
+    "reason": "ferry, geotagged correctly"
+   },
+   {
+    "file": "Parque Nacional Lago St Clair-Tasmania-Australia01.JPG",
+    "verdict": "accept",
+    "reason": "plain shore; used for spot 4"
+   }
+  ],
+  "choice": "Our ride down Lake St. Clair - Flickr - brewbooks.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:cradle-mountain-1": {
+  "candidates": [
+   {
+    "file": "Dove-Lake from South-2008.jpg",
+    "verdict": "accept",
+    "reason": "Dove Lake from above, lake is subject, blue, real photo"
+   }
+  ],
+  "choice": "keep-current",
+  "hero_crop": "ok"
+ },
+ "spot:cradle-mountain-2": {
+  "candidates": [
+   {
+    "file": "Cradle Mountain Behind Dove Lake.jpg",
+    "verdict": "accept",
+    "reason": "peak clear, nearly square"
+   },
+   {
+    "file": "Cradle Mt. from Dove Lake circuit. Richea pandanifolia, pandani, in the foreground. Tasmania Wilderness World Heritage Area.jpg",
+    "verdict": "reject",
+    "reason": "peak small at top behind foreground plants"
+   }
+  ],
+  "choice": "Cradle Mountain Behind Dove Lake.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:cradle-mountain-3": {
+  "candidates": [
+   {
+    "file": "Overland Track Past Cradle Mountain.jpg",
+    "verdict": "accept",
+    "reason": "boardwalk track below ridge, Cradle area; real photo"
+   }
+  ],
+  "choice": "keep-current",
+  "hero_crop": "ok"
+ },
+ "spot:cradle-mountain-4": {
+  "candidates": [
+   {
+    "file": "Parque Nacional Lago St Clair-Tasmania-Australia01.JPG",
+    "verdict": "accept",
+    "reason": "lake shore"
+   },
+   {
+    "file": "Our ride down Lake St. Clair - Flickr - brewbooks.jpg",
+    "verdict": "accept",
+    "reason": "boat subject; used in why4"
+   }
+  ],
+  "choice": "Parque Nacional Lago St Clair-Tasmania-Australia01.JPG",
+  "hero_crop": "ok"
+ },
+ "spot:cradle-mountain-5": {
+  "candidates": [
+   {
+    "file": "Cradle Mountain, Marion's Lookout.jpg",
+    "verdict": "accept",
+    "reason": "distinct from why3's other file"
+   },
+   {
+    "file": "Cradle Mountain, Marion's Lookout 2.jpg",
+    "verdict": "accept",
+    "reason": "used in why3"
+   }
+  ],
+  "choice": "Cradle Mountain, Marion's Lookout.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:cradle-mountain-6": {
+  "candidates": [
+   {
+    "file": "The Summit of Cradle Mountain.jpg",
+    "verdict": "accept",
+    "reason": "summit trig cairn with view, real; distinct from spot 2's lake view; current duplicates spot 2 photo"
+   }
+  ],
+  "choice": "The Summit of Cradle Mountain.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:cradle-mountain-7": {
+  "candidates": [
+   {
+    "file": "Mount Ossa Tasmania.jpg",
+    "verdict": "accept",
+    "reason": "dolerite peak with snow, recognisable"
+   }
+  ],
+  "choice": "keep-current",
+  "hero_crop": "ok"
+ },
+ "spot:cradle-mountain-8": {
+  "candidates": [
+   {
+    "file": "Pencil Pines Falls, Tasmania (31351019915).jpg",
+    "verdict": "accept",
+    "reason": "tight, centred"
+   },
+   {
+    "file": "Pencil Pines Falls, Tasmania (31989159381).jpg",
+    "verdict": "accept",
+    "reason": "very similar, more cropped by trees"
+   }
+  ],
+  "choice": "Pencil Pines Falls, Tasmania (31351019915).jpg",
+  "hero_crop": "ok"
+ },
+ "spot:cradle-mountain-9": {
+  "candidates": [
+   {
+    "file": "Waldheim 1.jpg",
+    "verdict": "accept",
+    "reason": "Waldheim chalet huts, category Waldheim, Tasmania; current duplicates spot 2"
+   }
+  ],
+  "choice": "Waldheim 1.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:cradle-mountain-10": {
+  "candidates": [
+   {
+    "file": "Echo Point jetty.JPG",
+    "verdict": "accept",
+    "reason": "jetty on Lake St Clair, geotag -42.0436,146.138 at Echo Point; distinct from spot 4's shore (jetty is the point); current geotag ~1000 km away"
+   }
+  ],
+  "choice": "Echo Point jetty.JPG",
+  "hero_crop": "ok"
+ }
+}

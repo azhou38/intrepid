@@ -1,0 +1,132 @@
+{
+ "dest:bruny-island:header": {
+  "candidates": [
+   {
+    "file": "View of Adventure Bay from The Neck lookout, Bruny Island, Tasmania.jpg",
+    "verdict": "accept",
+    "reason": "the Neck and beach, 4032x3024"
+   },
+   {
+    "file": "The Neck Bruny Island Towards Adventure Bay.jpg",
+    "verdict": "reject",
+    "reason": "1931 px under header minimum 2000"
+   }
+  ],
+  "choice": "View of Adventure Bay from The Neck lookout, Bruny Island, Tasmania.jpg",
+  "hero_crop": "ok (full height, beach and bay central)"
+ },
+ "dest:bruny-island:why1": {
+  "candidates": [
+   {
+    "file": "The Neck Bruny Island Towards Adventure Bay.jpg",
+    "verdict": "accept",
+    "reason": "The Neck isthmus from lookout, 1931 px, golden light"
+   },
+   {
+    "file": "CSIRO ScienceImage 11375 View towards North Bruny.jpg",
+    "verdict": "accept-alt",
+    "reason": "path on isthmus ridge"
+   }
+  ],
+  "choice": "The Neck Bruny Island Towards Adventure Bay.jpg",
+  "hero_crop": "ok"
+ },
+ "dest:bruny-island:why2": {
+  "candidates": [
+   {
+    "file": "Bruny Island, Tasmania (30770795865).jpg",
+    "verdict": "accept-weak",
+    "reason": "lighthouse small on headland; needs subject point"
+   },
+   {
+    "file": "Cape Bruny Lighthouse (30765250005).jpg",
+    "verdict": "reject",
+    "reason": "portrait, tower cut in 1.6 card; 'see page' licence"
+   }
+  ],
+  "choice": "Bruny Island, Tasmania (30770795865).jpg",
+  "hero_crop": {
+   "x": 0.71,
+   "y": 0.36,
+   "zoom": 2
+  }
+ },
+ "dest:bruny-island:why3": {
+  "candidates": [
+   {
+    "file": "Fluted Cape - Pennicott Bruny Island cruise (33528398040).jpg",
+    "verdict": "accept",
+    "reason": "dolerite cliff of Fluted Cape, from the water"
+   },
+   {
+    "file": "Looking towards Fluted Cape and Adventure Bay - Cape Queen Elizabeth Track (33786312621).jpg",
+    "verdict": "reject",
+    "reason": "hazy distant"
+   }
+  ],
+  "choice": "Fluted Cape - Pennicott Bruny Island cruise (33528398040).jpg",
+  "hero_crop": {
+   "x": 0.75,
+   "y": 0.55,
+   "zoom": 1.3
+  }
+ },
+ "spot:bruny-island-1": {
+  "candidates": [
+   {
+    "file": "Trail in South Bruny National Park.jpg",
+    "verdict": "accept-weak",
+    "reason": "CC0 park bush track geotagged in park; generic but correct. Current The Friars is a distant speck mostly sky: reject"
+   }
+  ],
+  "choice": "Trail in South Bruny National Park.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:bruny-island-3": {
+  "candidates": [
+   {
+    "file": "The Neck Bruny Island.jpg",
+    "verdict": "accept",
+    "reason": "steps up to lookout over the Neck, portrait 1300x1953; current is an 1866 portrait of Truganini"
+   },
+   {
+    "file": "The Neck Bruny Island Towards Adventure Bay.jpg",
+    "verdict": "reject",
+    "reason": "used for why1"
+   }
+  ],
+  "choice": "The Neck Bruny Island.jpg",
+  "hero_crop": "ok (portrait, steps and isthmus central; try y 0.5)"
+ },
+ "spot:bruny-island-5": {
+  "candidates": [
+   {
+    "file": "Fluted Cape - Pennicott Bruny Island cruise (33528398040).jpg",
+    "verdict": "accept",
+    "reason": "same file as why3, sharing allowed; current Matt Molloy is a person"
+   },
+   {
+    "file": "Looking towards Fluted Cape and Adventure Bay - Cape Queen Elizabeth Track (33786312621).jpg",
+    "verdict": "reject",
+    "reason": "hazy"
+   }
+  ],
+  "choice": "Fluted Cape - Pennicott Bruny Island cruise (33528398040).jpg",
+  "hero_crop": {
+   "x": 0.75,
+   "y": 0.55,
+   "zoom": 1.3
+  }
+ },
+ "spot:bruny-island-8": {
+  "candidates": [
+   {
+    "file": "Overlooking Cloudy Bay, South Bruny - panoramio.jpg",
+    "verdict": "accept",
+    "reason": "Cloudy Bay beach and river mouth; current is St Helens beach (wrong place)"
+   }
+  ],
+  "choice": "Overlooking Cloudy Bay, South Bruny - panoramio.jpg",
+  "hero_crop": "ok (15-85% width)"
+ }
+}

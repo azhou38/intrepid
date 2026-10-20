@@ -1,0 +1,87 @@
+{
+ "dest:franklin-gordon-wild-rivers:header": {
+  "candidates": [
+   {
+    "file": "Franklin Gordon Wild Rivers National Park-Tasmania.jpg",
+    "verdict": "accept",
+    "reason": "wilderness valley and lake, in the park category (Wiki Loves Monuments 2018)"
+   },
+   {
+    "file": "Gordon River, Franklin-Gordon Wild Rivers National Park -- user aliceae.jpg",
+    "verdict": "reject",
+    "reason": "pleasant but generic reflection; Gordon River already used by West Coast"
+   },
+   {
+    "file": "Nelson Falls Tasmania.jpg",
+    "verdict": "reject",
+    "reason": "a spot photo, keep for why1"
+   }
+  ],
+  "choice": "Franklin Gordon Wild Rivers National Park-Tasmania.jpg",
+  "hero_crop": "ok"
+ },
+ "dest:franklin-gordon-wild-rivers:why1": {
+  "candidates": [
+   {
+    "file": "Nelson Falls Tasmania.jpg",
+    "verdict": "accept",
+    "reason": "Nelson Falls clear"
+   },
+   {
+    "file": "Nelson Falls Tassie.jpg",
+    "verdict": "reject",
+    "reason": "similar, darker"
+   },
+   {
+    "file": "Nelson Falls, Princess River Conservation Area.jpg",
+    "verdict": "reject",
+    "reason": "falls off to side, dark"
+   }
+  ],
+  "choice": "Nelson Falls Tasmania.jpg",
+  "hero_crop": {
+   "x": 0.62,
+   "y": 0.5
+  }
+ },
+ "dest:franklin-gordon-wild-rivers:why3": {
+  "candidates": [
+   {
+    "file": "Frenchmans Cap from Clytemnestra.jpg",
+    "verdict": "accept",
+    "reason": "Frenchmans Cap summit, 2022 colour, CC0"
+   },
+   {
+    "file": "FrenchmansCap.jpg",
+    "verdict": "reject",
+    "reason": "distant, small"
+   },
+   {
+    "file": "Frenchmans Cap, March 2016.jpg",
+    "verdict": "reject",
+    "reason": "portrait, lake foreground, ok but weaker"
+   }
+  ],
+  "choice": "Frenchmans Cap from Clytemnestra.jpg",
+  "hero_crop": {
+   "x": 0.4,
+   "y": 0.3
+  }
+ },
+ "spot:franklin-gordon-wild-rivers-4": {
+  "candidates": [
+   {
+    "file": "Franklin River 20171121-025.jpg",
+    "verdict": "accept",
+    "reason": "Franklin River from Lyell Highway bridge, geotag and description confirm"
+   },
+   {
+    "file": "Franklin meets Gordon River Tasmania 1.jpg",
+    "verdict": "reject",
+    "reason": "aerial, confluence rather than river"
+   }
+  ],
+  "choice": "Franklin River 20171121-025.jpg",
+  "hero_crop": "ok"
+ }
+}

@@ -74,7 +74,7 @@ for f in sorted(glob.glob(os.environ.get('JUDGE_GLOB', 'curation/nz-rest/lens/ju
         if acc == 'none': continue
         if slot.startswith('spot:'): key = spot_key(slot[5:])
         elif slot.endswith(':header'):
-            m = re.search(r"id: '%s', name: '([^']*)'" % re.escape(slot.split(':')[1]), dest); key = m and m.group(1)
+            m = re.search(r"id: ['\"]%s['\"], name: ['\"]([^'\"]*)['\"]" % re.escape(slot.split(':')[1]), dest); key = m and m.group(1)
         else: key = None   # why-visit handled below
         why = re.match(r'dest:([^:]+):why(\d)$', slot)
         if not key and not why:
@@ -108,7 +108,7 @@ for f in sorted(glob.glob(os.environ.get('JUDGE_GLOB', 'curation/nz-rest/lens/ju
             pending.append({'key': k, 'slug': s, 'ow': img.width,
                             'credit': {'by': r.get('author') or 'unknown', 'license': r.get('licence') or 'unknown', 'page': r.get('page') or ''}})
             if why:
-                m = re.search(r"id: '%s',.*?whyVisitPhotos: \[(.*?)\]" % re.escape(why.group(1)), dest, re.S)
+                m = re.search(r"id: ['\"]%s['\"],.*?whyVisitPhotos: \[(.*?)\]" % re.escape(why.group(1)), dest, re.S)
                 arr = re.findall(r'"([^"]*)"', m.group(1)); arr[int(why.group(2)) - 1] = k.replace('File:', '')
                 new = 'whyVisitPhotos: [' + ', '.join(jq(a) for a in arr) + ']'
                 dest = dest[:m.start()] + re.sub(r'whyVisitPhotos: \[.*?\]', lambda _: new, dest[m.start():m.end()], 1, flags=re.S) + dest[m.end():]
@@ -118,7 +118,7 @@ for f in sorted(glob.glob(os.environ.get('JUDGE_GLOB', 'curation/nz-rest/lens/ju
         else:
             fn = re.sub(r'^File:', '', acc)
             if why:
-                m = re.search(r"id: '%s',.*?whyVisitPhotos: \[(.*?)\]" % re.escape(why.group(1)), dest, re.S)
+                m = re.search(r"id: ['\"]%s['\"],.*?whyVisitPhotos: \[(.*?)\]" % re.escape(why.group(1)), dest, re.S)
                 arr = re.findall(r'"([^"]*)"', m.group(1)); arr[int(why.group(2)) - 1] = fn
                 new = 'whyVisitPhotos: [' + ', '.join(jq(a) for a in arr) + ']'
                 dest = dest[:m.start()] + re.sub(r'whyVisitPhotos: \[.*?\]', lambda _: new, dest[m.start():m.end()], 1, flags=re.S) + dest[m.end():]

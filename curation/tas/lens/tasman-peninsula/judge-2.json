@@ -1,0 +1,239 @@
+{
+ "dest:tasman-peninsula:header": {
+  "candidates": [
+   {
+    "file": "Cape Pillar Sea Cliffs.jpg",
+    "verdict": "accept",
+    "reason": "Wide dolerite sea cliffs with surf, 3695px, real colour photo; Tasman Peninsula's signature coast; may share with Cape Pillar spot"
+   },
+   {
+    "file": "The spectacular sea cliffs of Cape Huay, Tasman National Park, Tasmania.jpg",
+    "verdict": "ok",
+    "reason": "good but cliff dominates, Candlestick small; kept for why2"
+   },
+   {
+    "file": "Cape Raoul Columnar Dolerites.jpg",
+    "verdict": "ok",
+    "reason": "aspect 1.78, sliver in square crop"
+   }
+  ],
+  "choice": "Cape Pillar Sea Cliffs.jpg",
+  "hero_crop": "ok"
+ },
+ "dest:tasman-peninsula:why1": {
+  "candidates": [
+   {
+    "file": "Port Arthur historic site, May 2018 3.jpg",
+    "verdict": "accept",
+    "reason": "Penitentiary and grounds in golden light, 6000px"
+   },
+   {
+    "file": "Port Arthur historic site, May 2018 4.jpg",
+    "verdict": "ok",
+    "reason": "penitentiary small and distant"
+   },
+   {
+    "file": "Port Arthur Tasmania.jpg",
+    "verdict": "ok",
+    "reason": "close, reflection; less setting"
+   }
+  ],
+  "choice": "Port Arthur historic site, May 2018 3.jpg",
+  "hero_crop": "ok"
+ },
+ "dest:tasman-peninsula:why2": {
+  "candidates": [
+   {
+    "file": "The spectacular sea cliffs of Cape Huay, Tasman National Park, Tasmania.jpg",
+    "verdict": "accept",
+    "reason": "Cape Hauy cliffs with the Candlestick stack, 3892px; differs from Cape Hauy spot photo (Totem Pole)"
+   },
+   {
+    "file": "Totem Pole Cape Hauy 2016.jpg",
+    "verdict": "reject",
+    "reason": "portrait vertical drop, mostly rock/water, subject unclear"
+   }
+  ],
+  "choice": "The spectacular sea cliffs of Cape Huay, Tasman National Park, Tasmania.jpg",
+  "hero_crop": {
+   "x": 0.4,
+   "y": 0.35,
+   "zoom": 1.2
+  }
+ },
+ "dest:tasman-peninsula:why3": {
+  "candidates": [
+   {
+    "file": "Tessellated Pavement Sunrise Landscape.jpg",
+    "verdict": "accept",
+    "reason": "Featured picture; sunrise over the pavement grid, clearly recognisable, 3587px"
+   },
+   {
+    "file": "Eaglehawk Neck tessellated pavement 20201115-021.jpg",
+    "verdict": "ok",
+    "reason": "mossy blocks, less striking"
+   }
+  ],
+  "choice": "Tessellated Pavement Sunrise Landscape.jpg",
+  "hero_crop": "ok (sunset/dawn colours on purpose)"
+ },
+ "dest:tasman-peninsula:why4": {
+  "candidates": [
+   {
+    "file": "Sarcophilus harrisii taranna.jpg",
+    "verdict": "accept",
+    "reason": "Featured picture of a Tasmanian devil at the Taranna park (geotag -43.065,147.864), sharp, 2200px"
+   },
+   {
+    "file": "Sarcophilus harrisii taranna edit.jpg",
+    "verdict": "ok",
+    "reason": "edit of same"
+   }
+  ],
+  "choice": "Sarcophilus harrisii taranna.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:tasman-peninsula-4": {
+  "candidates": [
+   {
+    "file": "Cape Raoul from Lookout.jpg",
+    "verdict": "accept",
+    "reason": "Featured, geotag at the lookout, the cape visible; portrait 1271px"
+   },
+   {
+    "file": "Cape Raoul, Tasman National Park, Tasmania.jpg",
+    "verdict": "ok",
+    "reason": "track and cliffs, cape not shown as a cape"
+   },
+   {
+    "file": "Cape Raoul Columnar Dolerites.jpg",
+    "verdict": "ok",
+    "reason": "wide; used as spare"
+   }
+  ],
+  "choice": "Cape Raoul from Lookout.jpg",
+  "hero_crop": {
+   "x": 0.6,
+   "y": 0.4
+  }
+ },
+ "spot:tasman-peninsula-8": {
+  "candidates": [
+   {
+    "file": "Tasman's Arch, Tasman National Park, Tasmania.jpg",
+    "verdict": "accept",
+    "reason": "Arch with sea through it, bright, clearly the arch; not in first-pass candidates (found by Commons search); file size/geotag unchecked beyond thumbnail (rate limits), same photographer as other Tasman NP 2011 files"
+   },
+   {
+    "file": "TASMAN ARCH, TASMAN PENINSULA, TASMANIA.jpg",
+    "verdict": "ok",
+    "reason": "portrait alternative"
+   },
+   {
+    "file": "Tasman Arch (34436347274).jpg",
+    "verdict": "ok",
+    "reason": "dark view from below"
+   }
+  ],
+  "choice": "Tasman's Arch, Tasman National Park, Tasmania.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:tasman-peninsula-9": {
+  "candidates": [
+   {
+    "file": "DEVIL'S KITCHEN, TASMAN PENINSULA, TASMANIA.jpg",
+    "verdict": "accept",
+    "reason": "The chasm itself, named in the file; from Commons search, size unverified"
+   },
+   {
+    "file": "Devil Kitchen.jpg",
+    "verdict": "reject",
+    "reason": "shows Tasman Arch, not the chasm"
+   },
+   {
+    "file": "Guna cave.jpg",
+    "verdict": "reject",
+    "reason": "current: a cave elsewhere (check 1)"
+   }
+  ],
+  "choice": "DEVIL'S KITCHEN, TASMAN PENINSULA, TASMANIA.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:tasman-peninsula-11": {
+  "candidates": [
+   {
+    "file": "Remarkable Cave, Tasman National Park, Tasmania.jpg",
+    "verdict": "accept",
+    "reason": "Cave opening with surf, 4000px"
+   },
+   {
+    "file": "Remarkable Cave Tasmania.jpg",
+    "verdict": "ok",
+    "reason": "portrait, sand floor; second choice"
+   }
+  ],
+  "choice": "Remarkable Cave, Tasman National Park, Tasmania.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:tasman-peninsula-13": {
+  "candidates": [
+   {
+    "file": "Coal Mines Historic Area 4.jpg",
+    "verdict": "accept",
+    "reason": "ruins clear, 1280x960 (colour)"
+   },
+   {
+    "file": "Coal Mines Historic Area 3.jpg",
+    "verdict": "ok",
+    "reason": "ruins small and far"
+   }
+  ],
+  "choice": "Coal Mines Historic Area 4.jpg",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.4,
+   "zoom": 1.5
+  }
+ },
+ "spot:tasman-peninsula-14": {
+  "candidates": [
+   {
+    "file": "Sarcophilus harrisii taranna.jpg",
+    "verdict": "accept",
+    "reason": "Devil at the Tasmanian Devil Conservation Park, Taranna (the Unzoo's former name/site); current is a wallaby of unrelated provenance; shares with dest why4, allowed"
+   },
+   {
+    "file": "Macropus rufogriseus rufogriseus Juvenile 2.jpg",
+    "verdict": "reject",
+    "reason": "wallaby, geotag 48 km away"
+   }
+  ],
+  "choice": "Sarcophilus harrisii taranna.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:tasman-peninsula-15": {
+  "candidates": [
+   {
+    "file": "Tasman Bay National Park Lookout 20201115-009.jpg",
+    "verdict": "accept",
+    "reason": "Clear view over Pirates Bay and the neck coast to Cape Hauy, CC0 4008px; no better file shows the isthmus itself"
+   },
+   {
+    "file": "Pirate's Bay (8173018367).jpg",
+    "verdict": "ok",
+    "reason": "tree-framed, near duplicate"
+   },
+   {
+    "file": "Eaglehawk Neck 1.jpg",
+    "verdict": "ok",
+    "reason": "tree-framed beach"
+   }
+  ],
+  "choice": "Tasman Bay National Park Lookout 20201115-009.jpg",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.35,
+   "zoom": 1.5
+  }
+ }
+}

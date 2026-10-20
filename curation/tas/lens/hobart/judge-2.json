@@ -1,0 +1,392 @@
+{
+ "dest:hobart:header": {
+  "candidates": [
+   {
+    "file": "Hobart and Mount Wellington 20171120-039.jpg",
+    "verdict": "accept",
+    "reason": "city, harbour and Kunanyi in one wide view; CC0, 4008 px, colour, Hobart"
+   },
+   {
+    "file": "Sullivans Cove, Hobart, 2013 (02).jpg",
+    "verdict": "reject",
+    "reason": "ship rail intrudes, mountain tiny at edge"
+   },
+   {
+    "file": "Hobart MRII snowy kunanyi 2022.jpg",
+    "verdict": "reject",
+    "reason": "good but dusk-teal grade, ferry dominates left; second choice"
+   }
+  ],
+  "choice": "Hobart and Mount Wellington 20171120-039.jpg",
+  "hero_crop": {
+   "x": 0.55,
+   "y": 0.5
+  }
+ },
+ "dest:hobart:why1": {
+  "candidates": [
+   {
+    "file": "Ena, Hobart, 2019 (01).jpg",
+    "verdict": "accept",
+    "reason": "MR-I MONA ferry clearly shown, 5109 px"
+   },
+   {
+    "file": "Mona Roma MR1 2015.jpg",
+    "verdict": "reject",
+    "reason": "grey sky, flatter"
+   },
+   {
+    "file": "Hobart from the MONA ferry 2024.jpg",
+    "verdict": "reject",
+    "reason": "grey, view not the ferry"
+   }
+  ],
+  "choice": "Ena, Hobart, 2019 (01).jpg",
+  "hero_crop": "ok"
+ },
+ "dest:hobart:why2": {
+  "candidates": [
+   {
+    "file": "Mount Wellington Hobart Tasmania.jpg",
+    "verdict": "accept",
+    "reason": "summit boardwalk with Hobart and the Derwent below; 5000 px"
+   },
+   {
+    "file": "Viewing Platform Mount Wellington Hobart Tasmania.jpg",
+    "verdict": "accept",
+    "reason": "good alternative, people small"
+   },
+   {
+    "file": "Mountain Organ Pipes 2022.jpg",
+    "verdict": "reject",
+    "reason": "not the drive/view; used for the spot"
+   }
+  ],
+  "choice": "Mount Wellington Hobart Tasmania.jpg",
+  "hero_crop": "ok"
+ },
+ "dest:hobart:why3": {
+  "candidates": [
+   {
+    "file": "Hobart Tasmania Salamanca Place (2).jpg",
+    "verdict": "accept",
+    "reason": "sandstone warehouses with market stalls and mountain"
+   },
+   {
+    "file": "Salamanca Place, Hobart (1).jpg",
+    "verdict": "reject",
+    "reason": "car park in foreground"
+   },
+   {
+    "file": "Hobart Tasmania Salamanca Place.jpg",
+    "verdict": "accept",
+    "reason": "same scene, current spot photo; fine as shared"
+   }
+  ],
+  "choice": "Hobart Tasmania Salamanca Place (2).jpg",
+  "hero_crop": "ok"
+ },
+ "dest:hobart:why4": {
+  "candidates": [
+   {
+    "file": "Tasmanian devil yawning in a pool.jpg",
+    "verdict": "accept",
+    "reason": "categorised Bonorong Wildlife Sanctuary, geotagged there, 2023, CC BY 4.0"
+   },
+   {
+    "file": "Older Tasmanian Devil.jpg",
+    "verdict": "accept",
+    "reason": "Bonorong category, 2007 Flickr; calmer fallback"
+   },
+   {
+    "file": "Sarcophilus harrisii taranna.jpg",
+    "verdict": "reject",
+    "reason": "Taranna park, not Bonorong"
+   }
+  ],
+  "choice": "Tasmanian devil yawning in a pool.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:hobart-1": {
+  "candidates": [
+   {
+    "file": "Staircase MONA.jpg",
+    "verdict": "accept",
+    "reason": "MONA's own staircase void, real colour photo, 1024 px; interior is the museum's signature; lit on purpose"
+   }
+  ],
+  "choice": "keep-current",
+  "hero_crop": "ok",
+  "dark": false
+ },
+ "spot:hobart-2": {
+  "candidates": [
+   {
+    "file": "Mountain Organ Pipes 2022.jpg",
+    "verdict": "accept",
+    "reason": "summit towers over the Organ Pipes cliffs, 8232 px, kunanyi"
+   },
+   {
+    "file": "Hobart and Mount Wellington 20171120-039.jpg",
+    "verdict": "accept",
+    "reason": "mountain above city, but the header uses it"
+   },
+   {
+    "file": "Kunanyi Organ Pipes towers 2023.jpg",
+    "verdict": "reject",
+    "reason": "grey and gloomy"
+   },
+   {
+    "file": "Mount Wellington.jpg (current)",
+    "verdict": "reject",
+    "reason": "779 px, too small"
+   }
+  ],
+  "choice": "Mountain Organ Pipes 2022.jpg",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.7,
+   "zoom": 1.4
+  }
+ },
+ "spot:hobart-3": {
+  "candidates": [
+   {
+    "file": "Hobart Tasmania Salamanca Place.jpg",
+    "verdict": "accept",
+    "reason": "sandstone warehouses, market, snowy mountain; recognisable, 4080 px"
+   }
+  ],
+  "choice": "keep-current",
+  "hero_crop": "ok"
+ },
+ "spot:hobart-4": {
+  "candidates": [
+   {
+    "file": "Battery Point, Tasmania.jpg",
+    "verdict": "accept",
+    "reason": "heritage timber houses on a Battery Point corner; orange haze cast but readable. Marginal; replace if a better streetscape is found"
+   }
+  ],
+  "choice": "keep-current",
+  "hero_crop": "ok"
+ },
+ "spot:hobart-5": {
+  "candidates": [
+   {
+    "file": "Tasmanian Museum and Art Gallery logo.svg",
+    "verdict": "reject",
+    "reason": "logo, fails check 4"
+   }
+  ],
+  "choice": "none: current is a logo and no candidates were supplied; needs a search for a building photo",
+  "hero_crop": "n/a"
+ },
+ "spot:hobart-6": {
+  "candidates": [
+   {
+    "file": "Cascades Female Factory-Yard 4.jpg",
+    "verdict": "accept",
+    "reason": "2024 colour yard and cottages with hill; Cascades, 4000 px"
+   },
+   {
+    "file": "Cascades Female Factory.jpg",
+    "verdict": "reject",
+    "reason": "bare yard wall remnants, less clear"
+   },
+   {
+    "file": "Cascades Female Factory Entrance.jpg",
+    "verdict": "reject",
+    "reason": "wall and sign close-up"
+   },
+   {
+    "file": "CascadesWomens.jpg (current)",
+    "verdict": "reject",
+    "reason": "1914 archive, 641 px"
+   }
+  ],
+  "choice": "Cascades Female Factory-Yard 4.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:hobart-7": {
+  "candidates": [
+   {
+    "file": "Hobart City Sullivans Cove.jpg",
+    "verdict": "accept",
+    "reason": "cove, wharf shed and city seen across the water; recognisable"
+   }
+  ],
+  "choice": "keep-current",
+  "hero_crop": "ok"
+ },
+ "spot:hobart-8": {
+  "candidates": [
+   {
+    "file": "Cascade Brewery 1.jpg",
+    "verdict": "accept",
+    "reason": "the brewery building with mountain behind, 2848 px"
+   }
+  ],
+  "choice": "keep-current",
+  "hero_crop": "ok"
+ },
+ "spot:hobart-10": {
+  "candidates": [
+   {
+    "file": "Hobart Botanical Gardens Entrance.png",
+    "verdict": "accept",
+    "reason": "ornate entrance gates with visitors incidental; modest but the gardens' own entrance"
+   }
+  ],
+  "choice": "keep-current",
+  "hero_crop": "ok"
+ },
+ "spot:hobart-11": {
+  "candidates": [
+   {
+    "file": "Main street of Richmond (26279738970).jpg",
+    "verdict": "accept",
+    "reason": "village main street with hills; 5472 px, Richmond Tasmania per file"
+   },
+   {
+    "file": "RICHMOND HOTEL, RICHMOND, TASMANIA.jpg",
+    "verdict": "reject",
+    "reason": "single building"
+   },
+   {
+    "file": "RichmondCourthouse.JPG",
+    "verdict": "reject",
+    "reason": "war memorial close-up"
+   }
+  ],
+  "choice": "Main street of Richmond (26279738970).jpg",
+  "hero_crop": "ok",
+  "note": "verify file page names Richmond, Tasmania (not Richmond, Victoria/Surrey); the Tasmanian mountain and layout look right but I did not fetch the page"
+ },
+ "spot:hobart-12": {
+  "candidates": [
+   {
+    "file": "Richmond Bridge 01.jpg",
+    "verdict": "accept",
+    "reason": "bridge in full, 4608 px"
+   },
+   {
+    "file": "Richmond Bridge Tasmania Autumn 2020.jpg",
+    "verdict": "reject",
+    "reason": "tight arch detail"
+   },
+   {
+    "file": "Richmond Bridge on a sunny day.jpg",
+    "verdict": "reject",
+    "reason": "bridge small"
+   }
+  ],
+  "choice": "Richmond Bridge 01.jpg",
+  "hero_crop": {
+   "x": 0.45,
+   "y": 0.5
+  }
+ },
+ "spot:hobart-13": {
+  "candidates": [
+   {
+    "file": "RICHMOND JAIL, RCHMOND TASMANIA.jpg",
+    "verdict": "accept",
+    "reason": "gaol yard and building; modest but the place itself"
+   }
+  ],
+  "choice": "keep-current",
+  "hero_crop": "ok"
+ },
+ "spot:hobart-15": {
+  "candidates": [
+   {
+    "file": "Penitentiary Chapel Hobart 20171119-007.jpg",
+    "verdict": "accept",
+    "reason": "CC0 colour exterior, 4008 px"
+   },
+   {
+    "file": "Penitentiary Chapel Hobart 20171119-006.jpg",
+    "verdict": "reject",
+    "reason": "aspect 2.2, small subject"
+   },
+   {
+    "file": "Penitentiary Chapel Hobart 20171119-009.jpg",
+    "verdict": "reject",
+    "reason": "tower detail"
+   },
+   {
+    "file": "HobartGaol.jpg (current)",
+    "verdict": "reject",
+    "reason": "600 px"
+   }
+  ],
+  "choice": "Penitentiary Chapel Hobart 20171119-007.jpg",
+  "hero_crop": {
+   "x": 0.35,
+   "y": 0.5
+  }
+ },
+ "spot:hobart-16": {
+  "candidates": [
+   {
+    "file": "Narryna museum 20171118 003.jpg",
+    "verdict": "accept",
+    "reason": "facade and garden, CC0, 4008 px"
+   },
+   {
+    "file": "Narryna Heritage Museum in Hobart, Australia.jpg",
+    "verdict": "reject",
+    "reason": "darker, similar"
+   },
+   {
+    "file": "Rear of Narryna, Hobart.jpg",
+    "verdict": "reject",
+    "reason": "rear"
+   },
+   {
+    "file": "William Buelow Gould...jpg (current)",
+    "verdict": "reject",
+    "reason": "232 px painting"
+   }
+  ],
+  "choice": "Narryna museum 20171118 003.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:hobart-17": {
+  "candidates": [
+   {
+    "file": "Taroona Shot Tower.jpg",
+    "verdict": "accept",
+    "reason": "tower and building, clear"
+   }
+  ],
+  "choice": "keep-current",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.35
+  }
+ },
+ "spot:hobart-18": {
+  "candidates": [
+   {
+    "file": "Mount Nelson Signal Station Cafe.jpg",
+    "verdict": "reject",
+    "reason": "check 2: the cafe terrace with diners, not the lookout view or signal station"
+   }
+  ],
+  "choice": "none: current rejected (cafe terrace), no candidates supplied; search for a Derwent view from Mount Nelson",
+  "hero_crop": "n/a"
+ },
+ "spot:hobart-19": {
+  "candidates": [
+   {
+    "file": "Kingston Beach, Tasmania.jpg",
+    "verdict": "accept",
+    "reason": "beach and bay, overcast but clear"
+   }
+  ],
+  "choice": "keep-current",
+  "hero_crop": "ok"
+ }
+}

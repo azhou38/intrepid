@@ -1,0 +1,105 @@
+{
+ "group": "wynyard",
+ "generated": "2026-10-20T15:57:11.061Z",
+ "slots": [
+  {
+   "slot": "dest:wynyard:header",
+   "key": "Wynyard",
+   "current": {
+    "file": "ext-wynyard.jpg",
+    "source": "imageOverrides.ts"
+   },
+   "status": "search",
+   "flags": [
+    "placeholder: no photo chosen yet"
+   ]
+  },
+  {
+   "slot": "dest:wynyard:why1",
+   "key": "File:ext-wynyard-1.jpg",
+   "current": {
+    "file": "ext-wynyard-1.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "search",
+   "flags": [
+    "placeholder: no photo chosen yet"
+   ]
+  },
+  {
+   "slot": "dest:wynyard:why2",
+   "key": "File:ext-wynyard-2.jpg",
+   "current": {
+    "file": "ext-wynyard-2.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "search",
+   "flags": [
+    "placeholder: no photo chosen yet"
+   ]
+  },
+  {
+   "slot": "spot:wynyard-1",
+   "key": "Table Cape",
+   "current": {
+    "file": "Table Cape from Fossil Bluff.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "proof: 921 px wide (min 960)"
+   ]
+  },
+  {
+   "slot": "spot:wynyard-2",
+   "key": "Rocky Cape National Park",
+   "current": {
+    "file": "Rocky Cape 2009.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:wynyard-3",
+   "key": "Boat Harbour Beach",
+   "current": {
+    "file": "Boat harbour beach from lookout.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "proof: 512 px wide (min 960)"
+   ]
+  },
+  {
+   "slot": "spot:wynyard-4",
+   "key": "Sisters Beach, Tasmania",
+   "current": {
+    "file": "Sisters Beach from west.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "geotag 2663 m from the pin: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:wynyard-5",
+   "key": "Fossil Bluff",
+   "current": {
+    "file": "Fossil Bluff Hut.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "geotag 7239622 m from the pin: a judge must look"
+   ]
+  }
+ ]
+}

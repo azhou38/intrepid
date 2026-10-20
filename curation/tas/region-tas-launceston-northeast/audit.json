@@ -1,0 +1,127 @@
+[
+ {
+  "name": "Bay of Fires",
+  "wiki": "Bay of Fires",
+  "views": 18178,
+  "counted_sources": 2,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Bay of Fires",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Mount_William_National_Park",
+    "https://parks.tas.gov.au/explore-our-parks/mount-william-national-park"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Bay_of_Fires"
+   ],
+   "note": "Coastline of white beaches and orange lichen granite from Binalong Bay to Eddystone Point (a long coastal feature).",
+   "wiki": "Bay of Fires",
+   "views": 18178,
+   "coordinates": {
+    "lat": -41.137,
+    "lng": 148.308
+   },
+   "coordinates_source": "wikipedia:Bay of Fires"
+  }
+ },
+ {
+  "name": "Cataract Gorge",
+  "wiki": "Cataract Gorge",
+  "views": 8428,
+  "counted_sources": 2,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Cataract Gorge",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Launceston",
+    "https://www.launceston.com.au/"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Cataract_Gorge"
+   ],
+   "note": "Natural river gorge reserve on the South Esk, 1 km from the centre: walking tracks, a suspension bridge, free swimming and a chairlift across the gorge.",
+   "wiki": "Cataract Gorge",
+   "views": 8428,
+   "coordinates": {
+    "lat": -41.44611111,
+    "lng": 147.11944444
+   },
+   "coordinates_source": "wikipedia:Cataract Gorge"
+  }
+ },
+ {
+  "name": "Launceston",
+  "wiki": "Launceston, Tasmania",
+  "views": 117274,
+  "counted_sources": 2,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Launceston",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Launceston",
+    "https://www.launceston.com.au/"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Launceston,_Tasmania"
+   ],
+   "note": "City: the second-largest city in Tasmania and the base for the northeast and the Tamar Valley.",
+   "wiki": "Launceston, Tasmania",
+   "views": 117274,
+   "coordinates": {
+    "lat": -41.44194444,
+    "lng": 147.145
+   },
+   "coordinates_source": "wikipedia:Launceston, Tasmania"
+  }
+ },
+ {
+  "name": "Mount William National Park",
+  "wiki": "Mount William National Park",
+  "views": 1104,
+  "counted_sources": 2,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Mount William National Park",
+   "counted_sources": [
+    "https://parks.tas.gov.au/explore-our-parks/mount-william-national-park",
+    "https://en.wikivoyage.org/wiki/Mount_William_National_Park"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Mount_William_National_Park"
+   ],
+   "note": "National park on the far northeast coast with beaches, walks, coastal birdlife and forester kangaroos (park-level destination).",
+   "wiki": "Mount William National Park",
+   "coordinates": {
+    "lat": -40.9375,
+    "lng": 148.253333
+   },
+   "coordinates_source": "wikivoyage listing geo",
+   "views": 1104
+  }
+ },
+ {
+  "name": "Perth Baptist Church",
+  "views": 0,
+  "counted_sources": 1,
+  "script_verdict": "reject",
+  "rule": "auto-reject",
+  "candidate": {
+   "name": "Perth Baptist Church",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Perth_(Tasmania)"
+   ],
+   "other_sources": [],
+   "note": "Church (opened 1862) with its 19th-century architecture; a building seen from outside.",
+   "coordinates": {
+    "lat": -41.5768,
+    "lng": 147.1767
+   },
+   "coordinates_source": "wikivoyage listing geo",
+   "views": 0
+  }
+ }
+]

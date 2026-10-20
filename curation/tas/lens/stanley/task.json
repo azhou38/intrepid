@@ -1,0 +1,105 @@
+{
+ "group": "stanley",
+ "generated": "2026-10-20T15:57:11.061Z",
+ "slots": [
+  {
+   "slot": "dest:stanley:header",
+   "key": "Stanley",
+   "current": {
+    "file": "ext-stanley.jpg",
+    "source": "imageOverrides.ts"
+   },
+   "status": "search",
+   "flags": [
+    "placeholder: no photo chosen yet"
+   ]
+  },
+  {
+   "slot": "dest:stanley:why1",
+   "key": "File:ext-stanley-1.jpg",
+   "current": {
+    "file": "ext-stanley-1.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "search",
+   "flags": [
+    "placeholder: no photo chosen yet"
+   ]
+  },
+  {
+   "slot": "dest:stanley:why2",
+   "key": "File:ext-stanley-2.jpg",
+   "current": {
+    "file": "ext-stanley-2.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "search",
+   "flags": [
+    "placeholder: no photo chosen yet"
+   ]
+  },
+  {
+   "slot": "dest:stanley:why3",
+   "key": "File:ext-stanley-3.jpg",
+   "current": {
+    "file": "ext-stanley-3.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "search",
+   "flags": [
+    "placeholder: no photo chosen yet"
+   ]
+  },
+  {
+   "slot": "spot:stanley-1",
+   "key": "The Nut (Tasmania)",
+   "current": {
+    "file": "Macadamia nuts on tree.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag; the spot name is not in the file text: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:stanley-2",
+   "key": "Highfield Historic Site",
+   "current": {
+    "file": "HIGHFIELDS, EAST AMWELL TOWNSHIP, HUNTERDON COUNTY.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:stanley-3",
+   "key": "Little Penguin Viewing Area",
+   "current": {
+    "file": "Eudyptula minor Bruny 1.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "geotag 326491 m from the pin: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:stanley-4",
+   "key": "Godfreys Beach",
+   "current": {
+    "file": "Arthur Michael Godfrey, NPG-9400084C 1.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "proof: dated 1947"
+   ]
+  }
+ ]
+}

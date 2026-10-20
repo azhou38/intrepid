@@ -1,0 +1,158 @@
+{
+ "group": "bruny-island",
+ "generated": "2026-10-20T15:57:09.662Z",
+ "slots": [
+  {
+   "slot": "dest:bruny-island:header",
+   "key": "Bruny Island",
+   "current": {
+    "file": "ext-bruny-island.jpg",
+    "source": "imageOverrides.ts"
+   },
+   "status": "search",
+   "flags": [
+    "placeholder: no photo chosen yet"
+   ]
+  },
+  {
+   "slot": "dest:bruny-island:why1",
+   "key": "File:ext-bruny-island-1.jpg",
+   "current": {
+    "file": "ext-bruny-island-1.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "search",
+   "flags": [
+    "placeholder: no photo chosen yet"
+   ]
+  },
+  {
+   "slot": "dest:bruny-island:why2",
+   "key": "File:ext-bruny-island-2.jpg",
+   "current": {
+    "file": "ext-bruny-island-2.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "search",
+   "flags": [
+    "placeholder: no photo chosen yet"
+   ]
+  },
+  {
+   "slot": "dest:bruny-island:why3",
+   "key": "File:ext-bruny-island-3.jpg",
+   "current": {
+    "file": "ext-bruny-island-3.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "search",
+   "flags": [
+    "placeholder: no photo chosen yet"
+   ]
+  },
+  {
+   "slot": "spot:bruny-island-1",
+   "key": "South Bruny National Park",
+   "current": {
+    "file": "The Friars.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "geotag 17465 m from the pin: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:bruny-island-2",
+   "key": "Cape Bruny Lighthouse",
+   "current": {
+    "file": "Cape Bruny Lighthouse (22796056806).jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [
+    "audit sample: the script proved this one; judge it blind"
+   ],
+   "proof": [
+    "geotag 22 m from the pin; a name word is in the title, description or categories; 1200 px; colour ok"
+   ]
+  },
+  {
+   "slot": "spot:bruny-island-3",
+   "key": "Truganini Lookout",
+   "current": {
+    "file": "Truganini - Charles Woolley (cropped).jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "proof: dated 1866"
+   ]
+  },
+  {
+   "slot": "spot:bruny-island-4",
+   "key": "Adventure Bay, Tasmania",
+   "current": {
+    "file": "Adventure Bay.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:bruny-island-5",
+   "key": "Fluted Cape",
+   "current": {
+    "file": "Matt Molloy.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "proof: 316 px wide (min 960)"
+   ]
+  },
+  {
+   "slot": "spot:bruny-island-6",
+   "key": "Grass Point, Tasmania",
+   "current": {
+    "file": "Flag of Tasmania.svg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "proof: excluded category or title (map/drawing/historical/...)",
+    "proof: dated 1876"
+   ]
+  },
+  {
+   "slot": "spot:bruny-island-7",
+   "key": "East Cloudy Head",
+   "current": {
+    "file": "Tennessee Titans Uniforms (2026).png",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag; the spot name is not in the file text: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:bruny-island-8",
+   "key": "Cloudy Bay (Tasmania)",
+   "current": {
+    "file": "Beach at St Helens 01.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag; the spot name is not in the file text: a judge must look"
+   ]
+  }
+ ]
+}

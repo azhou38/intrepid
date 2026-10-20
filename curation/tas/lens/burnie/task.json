@@ -1,0 +1,93 @@
+{
+ "group": "burnie",
+ "generated": "2026-10-20T15:57:11.060Z",
+ "slots": [
+  {
+   "slot": "dest:burnie:header",
+   "key": "Burnie",
+   "current": {
+    "file": "ext-burnie.jpg",
+    "source": "imageOverrides.ts"
+   },
+   "status": "search",
+   "flags": [
+    "placeholder: no photo chosen yet"
+   ]
+  },
+  {
+   "slot": "dest:burnie:why1",
+   "key": "File:ext-burnie-1.jpg",
+   "current": {
+    "file": "ext-burnie-1.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "search",
+   "flags": [
+    "placeholder: no photo chosen yet"
+   ]
+  },
+  {
+   "slot": "dest:burnie:why2",
+   "key": "File:ext-burnie-2.jpg",
+   "current": {
+    "file": "ext-burnie-2.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "search",
+   "flags": [
+    "placeholder: no photo chosen yet"
+   ]
+  },
+  {
+   "slot": "spot:burnie-1",
+   "key": "Little Penguin Observation Centre",
+   "current": {
+    "file": "Eudyptula minor Bruny 1.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "geotag 274639 m from the pin: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:burnie-2",
+   "key": "Big Penguin",
+   "current": {
+    "file": "Penguin-bin.png",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "proof: 875 px wide (min 960)"
+   ]
+  },
+  {
+   "slot": "spot:burnie-3",
+   "key": "Emu Valley Rhododendron Garden",
+   "current": {
+    "file": "Black-Swan-20071101-003.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "geotag 2137 m from the pin; the spot name is not in the file text: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:burnie-4",
+   "key": "Guide Falls",
+   "current": {
+    "file": "Guide Falls.webm",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  }
+ ]
+}

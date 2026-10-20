@@ -1,0 +1,502 @@
+[
+ {
+  "id": "bicheno-1",
+  "name": "The Gulch",
+  "wiki": null,
+  "destination": "bicheno",
+  "category": "landmark",
+  "icon": "⚓",
+  "bio": "Fishing harbour and rocky inlet at Bicheno's south end, with a glass-bottom boat, a seafood cafe and a small aquarium.",
+  "coordinates": null,
+  "coordinates_source": "resolve-pin.py found no OSM feature (LOW); take the managing agency's point",
+  "coordinates_confidence": null,
+  "reason": "In Bicheno.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl",
+   "coordinates"
+  ],
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5
+ },
+ {
+  "id": "bicheno-2",
+  "name": "Bicheno Blowhole",
+  "wiki": null,
+  "destination": "bicheno",
+  "category": "nature",
+  "icon": "🌊",
+  "bio": "Coastal blowhole reached by a walking track south of the Gulch; unfenced, so take care in rough weather.",
+  "coordinates": {
+   "lat": -41.874555,
+   "lng": 148.30827
+  },
+  "coordinates_source": "Commons geotag median (28 files); no OSM blowhole found",
+  "coordinates_confidence": null,
+  "reason": "In Bicheno.",
+  "needs_research": [
+   "hours",
+   "ticketUrl",
+   "coordinates"
+  ],
+  "visitHoursMin": 0.25,
+  "visitHoursMax": 0.5
+ },
+ {
+  "id": "bicheno-3",
+  "name": "East Coast Natureworld",
+  "wiki": null,
+  "destination": "bicheno",
+  "category": "entertainment",
+  "icon": "🦘",
+  "bio": "Wildlife park on Bicheno's outskirts with daily devil feeding and hand-feeding of free-ranging animals.",
+  "coordinates": null,
+  "coordinates_source": "resolve-pin.py found no OSM feature (LOW); take the managing agency's point",
+  "coordinates_confidence": null,
+  "reason": "On Bicheno's outskirts.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl",
+   "coordinates"
+  ],
+  "visitHoursMin": 1,
+  "visitHoursMax": 2.5
+ },
+ {
+  "id": "bicheno-4",
+  "name": "Douglas-Apsley National Park",
+  "wiki": "Douglas-Apsley National Park",
+  "destination": "bicheno",
+  "category": "nature",
+  "icon": "🏞️",
+  "bio": "National park of dry eucalypt forest, gorges and swimming waterholes on the Douglas and Apsley rivers, west of Bicheno.",
+  "coordinates": {
+   "lat": -41.758333,
+   "lng": 148.199444
+  },
+  "coordinates_source": "Wikipedia article 'Douglas-Apsley National Park' own coordinates (park centroid)",
+  "coordinates_confidence": null,
+  "reason": "Park with only two kept spots, so it is a spot of Bicheno (15 km, inside the span) rather than its own destination; not a spot of another park.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl",
+   "coordinates"
+  ],
+  "visitHoursMin": 2,
+  "visitHoursMax": 5
+ },
+ {
+  "id": "bicheno-5",
+  "name": "Apsley Waterhole",
+  "wiki": null,
+  "destination": "bicheno",
+  "category": "nature",
+  "icon": "🏊",
+  "bio": "Large swimming hole on the Apsley River, a 15-minute return walk from the park's only car park.",
+  "coordinates": null,
+  "coordinates_source": "resolve-pin.py found no OSM feature (LOW); take the managing agency's point",
+  "coordinates_confidence": null,
+  "reason": "Inside Douglas-Apsley.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl",
+   "coordinates"
+  ],
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 2
+ },
+ {
+  "id": "launceston-1",
+  "name": "Cataract Gorge",
+  "wiki": "Cataract Gorge",
+  "destination": "launceston",
+  "category": "nature",
+  "icon": "🏞️",
+  "bio": "South Esk river gorge a short walk from the centre, with a suspension bridge, trails, a chairlift and a swimming basin.",
+  "coordinates": {
+   "lat": -41.446111,
+   "lng": 147.119444
+  },
+  "coordinates_source": "Wikipedia article Cataract Gorge (coordinates of the gorge itself; resolve-pin LOW, Overpass found no feature)",
+  "coordinates_confidence": null,
+  "reason": "Gorge reserve 2 km from the centre; Inside the proposed destination's span and reached from its base.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl",
+   "coordinates"
+  ],
+  "visitHoursMin": 1,
+  "visitHoursMax": 3
+ },
+ {
+  "id": "launceston-2",
+  "name": "Queen Victoria Museum & Art Gallery",
+  "wiki": "Queen Victoria Museum and Art Gallery",
+  "destination": "launceston",
+  "category": "museum",
+  "icon": "🏛️",
+  "bio": "Tasmania's northern museum and art gallery at Inveresk, with natural science, local history, art, craft and a planetarium.",
+  "coordinates": {
+   "lat": -41.428445,
+   "lng": 147.140474
+  },
+  "coordinates_source": "Wikivoyage listing geo for the Inveresk site, agrees within 40 m with the median of 3 geotagged Commons files (MEDIUM)",
+  "coordinates_confidence": null,
+  "reason": "Inveresk museum in the city; Inside the proposed destination's span and reached from its base. Two sites (Inveresk, Royal Park): the pin is Inveresk, the larger; Pipeline C to confirm.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 1,
+  "visitHoursMax": 2.5
+ },
+ {
+  "id": "launceston-3",
+  "name": "City Park",
+  "wiki": "City Park, Launceston",
+  "destination": "launceston",
+  "category": "nature",
+  "icon": "🌳",
+  "bio": "Victorian-era park in the heart of Launceston, with a Japanese macaque enclosure, a conservatory and old trees.",
+  "coordinates": {
+   "lat": -41.432881,
+   "lng": 147.142849
+  },
+  "coordinates_source": "OpenStreetMap leisure=park via Photon, agrees with Wikipedia City Park, Launceston within 60 m (HIGH)",
+  "coordinates_confidence": null,
+  "reason": "Central heritage park; Inside the proposed destination's span and reached from its base.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5
+ },
+ {
+  "id": "launceston-4",
+  "name": "Brickendon Estate",
+  "wiki": "Brickendon",
+  "destination": "launceston",
+  "category": "historic",
+  "icon": "🌾",
+  "bio": "Working farm founded in 1824 at Longford, part of the Australian Convict Sites World Heritage listing, with its original buildings.",
+  "coordinates": {
+   "lat": -41.620768,
+   "lng": 147.130451
+  },
+  "coordinates_source": "Median of 5 geotagged Commons files (resolve-pin LOW; the Wikipedia 'Brickendon' title is a London suburb, not used)",
+  "coordinates_confidence": null,
+  "reason": "Convict-site World Heritage farm at Longford, 20 km south of the centre; inside Launceston's 32 km span (24 km radius) and a day trip from the city.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl",
+   "coordinates"
+  ],
+  "visitHoursMin": 1,
+  "visitHoursMax": 2.5
+ },
+ {
+  "id": "launceston-5",
+  "name": "Woolmers Estate",
+  "wiki": "Woolmers Estate",
+  "destination": "launceston",
+  "category": "historic",
+  "icon": "🏡",
+  "bio": "1817 Longford estate with a manor house, convict cottages, coach house and the National Rose Garden.",
+  "coordinates": {
+   "lat": -41.62525,
+   "lng": 147.148167
+  },
+  "coordinates_source": "Wikipedia article Woolmers Estate, agrees with Wikivoyage listing geo within 20 m (HIGH)",
+  "coordinates_confidence": null,
+  "reason": "Convict-site World Heritage estate at Longford, 20.5 km south of the centre; inside Launceston's span and reached from the city.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 1,
+  "visitHoursMax": 2.5
+ },
+ {
+  "id": "launceston-6",
+  "name": "Boag's Brewery",
+  "wiki": "Boag's Brewery",
+  "destination": "launceston",
+  "category": "entertainment",
+  "icon": "🍺",
+  "bio": "Historic Launceston brewery, visited on tours from the Boag's Centre for Beer Lovers at the Tamar Hotel.",
+  "coordinates": {
+   "lat": -41.43268,
+   "lng": 147.137758
+  },
+  "coordinates_source": "Wikipedia article Boag's Brewery agrees with the median of 8 geotagged Commons files within 35 m (HIGH)",
+  "coordinates_confidence": null,
+  "reason": "City brewery with tours; Inside the proposed destination's span and reached from its base.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 1,
+  "visitHoursMax": 2
+ },
+ {
+  "id": "launceston-7",
+  "name": "Duck Reach Power Station",
+  "wiki": "Duck Reach Power Station",
+  "destination": "launceston",
+  "category": "historic",
+  "icon": "⚡",
+  "bio": "1895 hydro station at the head of the gorge, reached by a walk of about 1.5 hours return from the Gorge or Trevallyn.",
+  "coordinates": {
+   "lat": -41.459167,
+   "lng": 147.111111
+  },
+  "coordinates_source": "Wikipedia article Duck Reach Power Station (the ruin's own point; resolve-pin LOW, no OSM feature)",
+  "coordinates_confidence": null,
+  "reason": "At the end of a Cataract Gorge walk; Inside the proposed destination's span and reached from its base. Kept as its own stop because the heritage ruin and interpretation centre is a distinct destination of the walk, though it could fold into the Gorge.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl",
+   "coordinates"
+  ],
+  "visitHoursMin": 1,
+  "visitHoursMax": 2.5
+ },
+ {
+  "id": "launceston-8",
+  "name": "Tamar Island Wetlands",
+  "wiki": null,
+  "destination": "launceston",
+  "category": "nature",
+  "icon": "🦆",
+  "bio": "Estuary wetland reserve with an interpretation centre, a boardwalk to Tamar Island and bird hides.",
+  "coordinates": null,
+  "coordinates_source": "No source gave the visitor centre or boardwalk point; the Wikipedia Tamar River Conservation Area centroid (-41.33983, 147.03418) is a reserve centroid, not a pin",
+  "coordinates_confidence": null,
+  "reason": "About 10 km north of the centre on the Tamar; inside Launceston's span and a short trip from the city. Not a Tamar Valley spot because it is 14 km from the city but 21 km from the valley's centre and is the city's own nearby nature stop.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl",
+   "coordinates"
+  ],
+  "visitHoursMin": 1,
+  "visitHoursMax": 2.5
+ },
+ {
+  "id": "launceston-9",
+  "name": "Tasmania Zoo",
+  "wiki": "Tasmania Zoo",
+  "destination": "launceston",
+  "category": "entertainment",
+  "icon": "🦘",
+  "bio": "Zoo on 900 acres of bushland at Riverside with about 100 native and exotic species.",
+  "coordinates": {
+   "lat": -41.43095,
+   "lng": 146.978461
+  },
+  "coordinates_source": "Wikipedia article Tasmania Zoo (1.1 km from the Wikivoyage listing geo; unresolved, resolve-pin LOW)",
+  "coordinates_confidence": null,
+  "reason": "Riverside zoo 13.6 km west of the centre; inside Launceston's span and reached from the city. Not a Tamar Valley spot (it is 25 km from the valley centre and a Launceston outing).",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl",
+   "coordinates"
+  ],
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3
+ },
+ {
+  "id": "maria-island",
+  "name": "Maria Island National Park",
+  "wiki": "Maria Island",
+  "destination": null,
+  "category": "nature",
+  "icon": "🏝️",
+  "bio": "Ferry-only island national park of convict-era ruins, painted cliffs, walks and wildlife off the east coast.",
+  "coordinates": {
+   "lat": -42.64977,
+   "lng": 148.099253
+  },
+  "coordinates_source": "OSM leisure=nature_reserve (Photon) centroid",
+  "coordinates_confidence": null,
+  "reason": "Four kept places cluster here (park, Darlington, Fossil Cliffs, Painted Cliffs) but the park is the base itself, leaving three spots; three never make a destination and Maria Island is rank 3 at best, so all four stand alone. Owner option: propose Maria Island as an island destination (name_evidence: Wikivoyage 'Maria Island National Park', Parks Tasmania, Discover Tasmania) with the other three as its spots.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl",
+   "coordinates"
+  ],
+  "visitHoursMin": 4,
+  "visitHoursMax": 24
+ },
+ {
+  "id": "darlington-probation-station",
+  "name": "Darlington Probation Station",
+  "wiki": "Darlington Probation Station",
+  "destination": null,
+  "category": "historic",
+  "icon": "🏚️",
+  "bio": "Convict probation station ruins at Darlington, a World Heritage convict site and the island's settlement and visitor hub.",
+  "coordinates": {
+   "lat": -42.58155,
+   "lng": 148.0652
+  },
+  "coordinates_source": "Photon place=hamlet 'Darlington Probation Station'; Commons median 350 m away",
+  "coordinates_confidence": null,
+  "reason": "Maria Island, reached by ferry from Triabunna; not a spot of the park spot (no spots of spots).",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3
+ },
+ {
+  "id": "fossil-cliffs-maria-island",
+  "name": "Fossil Cliffs",
+  "wiki": "Fossil Cliffs",
+  "destination": null,
+  "category": "nature",
+  "icon": "🪨",
+  "bio": "Fossil-bearing cliffs on Maria Island, reached by a 4.5 km circuit of one and a half to two and a half hours from Darlington.",
+  "coordinates": {
+   "lat": -42.57288,
+   "lng": 148.079421
+  },
+  "coordinates_source": "OSM natural=cliff (Photon) 'Fossil Cliffs'; OSM attraction 90 m away",
+  "coordinates_confidence": null,
+  "reason": "Maria Island.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 2.5
+ },
+ {
+  "id": "painted-cliffs-maria-island",
+  "name": "Painted Cliffs",
+  "wiki": "Painted Cliffs",
+  "destination": null,
+  "category": "nature",
+  "icon": "🎨",
+  "bio": "Sandstone cliffs with natural colour and swirl patterns, best seen from the rock platform within two hours of low tide.",
+  "coordinates": {
+   "lat": -42.592488,
+   "lng": 148.051667
+  },
+  "coordinates_source": "OSM natural=cliff (Photon) 'Painted Cliffs'; Commons median 120 m away",
+  "coordinates_confidence": null,
+  "reason": "Maria Island.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5
+ },
+ {
+  "id": "spring-beach-tasmania",
+  "name": "Spring Beach",
+  "wiki": "Spring Beach, Tasmania",
+  "destination": null,
+  "category": "beach",
+  "icon": "🏖️",
+  "bio": "White-sand beach on the Great Eastern Drive south of Triabunna, with a clifftop walk from Shelly Beach through an old quarry.",
+  "coordinates": {
+   "lat": -42.578922,
+   "lng": 147.909925
+  },
+  "coordinates_source": "OSM natural=beach (Photon) 'Spring Beach'; Wikipedia point 2 km away (check)",
+  "coordinates_confidence": null,
+  "reason": "Mainland east-coast beach by Triabunna/Orford; Maria Island is across the water and is not its base; no proposed destination within 40 km of its position.",
+  "needs_research": [
+   "hours",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5
+ },
+ {
+  "id": "oatlands",
+  "name": "Oatlands",
+  "wiki": "Oatlands, Tasmania",
+  "destination": null,
+  "category": "landmark",
+  "icon": "🏘️",
+  "bio": "Historic Midlands village on Lake Dulverton with about 150 sandstone Georgian buildings, mostly convict-built.",
+  "coordinates": {
+   "lat": -42.300218,
+   "lng": 147.371007
+  },
+  "coordinates_source": "Photon amenity=post_office 'Oatlands Post Office' (village centre); Commons median 300 m",
+  "coordinates_confidence": null,
+  "reason": "Heritage Highway village; no destination near it.",
+  "needs_research": [
+   "hours",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5
+ },
+ {
+  "id": "ross-tasmania",
+  "name": "Ross",
+  "wiki": "Ross, Tasmania",
+  "destination": null,
+  "category": "landmark",
+  "icon": "🏘️",
+  "bio": "Georgian sandstone village on the Heritage Highway with many of Tasmania's oldest buildings.",
+  "coordinates": {
+   "lat": -42.030168,
+   "lng": 147.493007
+  },
+  "coordinates_source": "Photon place=town 'Ross'; Commons median 90 m",
+  "coordinates_confidence": null,
+  "reason": "Heritage Highway village; no destination near it. Ross Bridge is kept beside the town because it is a separate attraction.",
+  "needs_research": [
+   "hours",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5
+ },
+ {
+  "id": "ross-bridge",
+  "name": "Ross Bridge",
+  "wiki": "Ross Bridge",
+  "destination": null,
+  "category": "landmark",
+  "icon": "🌉",
+  "bio": "Sandstone bridge built by convicts in 1836, one of Australia's oldest, with a barbecue and resting spot.",
+  "coordinates": {
+   "lat": -42.030766,
+   "lng": 147.489744
+  },
+  "coordinates_source": "OSM man_made=bridge (Photon) 'Ross Bridge'; Commons median 200 m",
+  "coordinates_confidence": null,
+  "reason": "Ross, Midlands.",
+  "needs_research": [
+   "hours",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 0,
+  "visitHoursMax": 0.5
+ }
+]

@@ -1,0 +1,307 @@
+{
+ "dest:tasman-peninsula:header": {
+  "candidates": [
+   {
+    "file": "Cape Pillar Sea Cliffs.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Spectacular, ground-level, colour, Cape Pillar category; 3695px, aspect 1.36, cliffs fill frame"
+   },
+   {
+    "file": "The spectacular sea cliffs of Cape Huay, Tasman National Park, Tasmania.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "alternative, also spectacular but duplicates why2"
+   }
+  ],
+  "choice": "Cape Pillar Sea Cliffs.jpg",
+  "hero_crop": "ok"
+ },
+ "dest:tasman-peninsula:why1": {
+  "candidates": [
+   {
+    "file": "Port Arthur historic site, May 2018 3.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Port Arthur penitentiary, colour 2018, 6000px"
+   },
+   {
+    "file": "Port Arthur historic site, May 2018 4.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "alt"
+   }
+  ],
+  "choice": "Port Arthur historic site, May 2018 3.jpg",
+  "hero_crop": "ok"
+ },
+ "dest:tasman-peninsula:why2": {
+  "candidates": [
+   {
+    "file": "The spectacular sea cliffs of Cape Huay, Tasman National Park, Tasmania.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Cape Hauy cliffs and stack, landscape"
+   }
+  ],
+  "choice": "The spectacular sea cliffs of Cape Huay, Tasman National Park, Tasmania.jpg",
+  "hero_crop": "ok"
+ },
+ "dest:tasman-peninsula:why3": {
+  "candidates": [
+   {
+    "file": "Tessellated Pavement Sunrise Landscape.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Featured picture of the Tessellated Pavement at sunrise; dark on purpose (sunrise) but readable"
+   }
+  ],
+  "choice": "Tessellated Pavement Sunrise Landscape.jpg",
+  "hero_crop": "ok"
+ },
+ "dest:tasman-peninsula:why4": {
+  "candidates": [
+   {
+    "file": "Sarcophilus harrisii taranna.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Devil at Taranna conservation park, the Unzoo site; animal is subject"
+   }
+  ],
+  "choice": "Sarcophilus harrisii taranna.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:tasman-peninsula-1": {
+  "candidates": [],
+  "choice": "keep-current",
+  "hero_crop": {
+   "x": 0.4,
+   "y": 0.5
+  },
+  "note": "PortArthurPenitentiary.jpg 1000px, real colour photo of the penitentiary; default crop clips its left end so subject x=0.4. A sharper 6000px alternative exists (Port Arthur historic site, May 2018 3.jpg) used for why1."
+ },
+ "spot:tasman-peninsula-2": {
+  "candidates": [
+   {
+    "file": "Cape Pillar and lighthouse.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "shows Cape Pillar, which is its own spot (neighbour duplicate); crop small"
+   }
+  ],
+  "choice": "none: current Fortesque Bay Sunrise.jpg is a bay not the track and is also Tasman Blowhole photo (check 2, shared); Commons has no honest Three Capes Track photo, Openverse nothing >=1280px",
+  "hero_crop": "n/a"
+ },
+ "spot:tasman-peninsula-3": {
+  "candidates": [],
+  "choice": "keep-current",
+  "hero_crop": "ok",
+  "note": "Totem Pole and Candlestick at Cape Hauy; geotag 1.7km (stack offshore). Portrait, pillar central."
+ },
+ "spot:tasman-peninsula-4": {
+  "candidates": [
+   {
+    "file": "Cape Raoul from Lookout.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "featured, geotag at the lookout, the cape itself"
+   },
+   {
+    "file": "Cape Raoul, Tasman National Park, Tasmania.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "alt landscape"
+   }
+  ],
+  "choice": "Cape Raoul from Lookout.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:tasman-peninsula-5": {
+  "candidates": [],
+  "choice": "keep-current",
+  "hero_crop": "ok",
+  "note": "Cape Pillar Sea Cliffs, geotag in Cape Pillar; used also as proposed header (same destination)"
+ },
+ "spot:tasman-peninsula-7": {
+  "candidates": [],
+  "choice": "keep-current",
+  "hero_crop": "ok",
+  "note": "close-up of the pavement blocks, which is the subject; 2048px; sunrise alternative used for why3"
+ },
+ "spot:tasman-peninsula-8": {
+  "candidates": [
+   {
+    "file": "Tasman Peninsula-Tasmania-Australia03.JPG",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Tasman Arch named in description, centred"
+   },
+   {
+    "file": "Tasman's Arch, Tasman National Park, Tasmania.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "alt"
+   }
+  ],
+  "choice": "Tasman Peninsula-Tasmania-Australia03.JPG",
+  "hero_crop": "ok",
+  "note": "current is Totem Pole at Cape Hauy = Cape Hauy spot subject (reject, check 1/2)"
+ },
+ "spot:tasman-peninsula-9": {
+  "candidates": [
+   {
+    "file": "DEVIL'S KITCHEN, TASMAN PENINSULA, TASMANIA.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "chasm named Devil's Kitchen, 1498px portrait"
+   }
+  ],
+  "choice": "DEVIL'S KITCHEN, TASMAN PENINSULA, TASMANIA.jpg",
+  "hero_crop": "ok",
+  "note": "current Guna cave.jpg is an Indian cave (reject, wrong place). Do NOT use Devil Kitchen.jpg / Devils Kitchen.jpg (RahMan911): they appear to show Tasman Arch."
+ },
+ "spot:tasman-peninsula-10": {
+  "candidates": [],
+  "choice": "none: current Fortesque Bay Sunrise.jpg is not the blowhole (Fortescue Bay; shared with Three Capes). Commons has only 1962 DPLA archive scans of the blowhole; Openverse nothing >=1280. Needs an official/operator photo (browser).",
+  "hero_crop": "n/a"
+ },
+ "spot:tasman-peninsula-11": {
+  "candidates": [
+   {
+    "file": "Remarkable Cave, Tasman National Park, Tasmania.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Remarkable Cave opening with surf; Tasman NP"
+   },
+   {
+    "file": "Remarkable Cave Tasmania.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "alt portrait"
+   }
+  ],
+  "choice": "Remarkable Cave, Tasman National Park, Tasmania.jpg",
+  "hero_crop": "ok",
+  "note": "current Kailash temple (Ellora) is wrong place"
+ },
+ "spot:tasman-peninsula-12": {
+  "candidates": [],
+  "choice": "keep-current",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.7,
+   "zoom": 1.5
+  },
+  "note": "Fortescue Bay at midday 5472px, geotag 823m; bay is mostly sand/sky in a square, zoom suggested; Fortescue Bay Sunrise 2 / The white sands of Fortescue Bay are alternatives"
+ },
+ "spot:tasman-peninsula-13": {
+  "candidates": [
+   {
+    "file": "Coal Mines Historic Area 4.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "ruins at Coal Mines Historic Area 2002, colour; 1280px"
+   },
+   {
+    "file": "Coal Mines Historic Area 3.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "alt"
+   }
+  ],
+  "choice": "Coal Mines Historic Area 4.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:tasman-peninsula-14": {
+  "candidates": [
+   {
+    "file": "Sarcophilus harrisii taranna.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "devil at Taranna (the Unzoo site)"
+   }
+  ],
+  "choice": "Sarcophilus harrisii taranna.jpg",
+  "hero_crop": "ok",
+  "note": "current is a Bennett wallaby on Maria Island (not the site). NB same file proposed for why4 of the same destination: allowed."
+ },
+ "spot:tasman-peninsula-15": {
+  "candidates": [
+   {
+    "file": "Pirate's Bay (8173018367).jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Pirates Bay from Eaglehawk Neck, category Eaglehawk Neck, 4000px"
+   },
+   {
+    "file": "Eaglehawk Neck 1.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "alt"
+   }
+  ],
+  "choice": "Pirate's Bay (8173018367).jpg",
+  "hero_crop": "ok",
+  "note": "shows the bay/neck setting not the isthmus itself; weak but best found; second judge should check"
+ }
+}

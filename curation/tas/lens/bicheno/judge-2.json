@@ -1,0 +1,142 @@
+{
+ "dest:bicheno:header": {
+  "candidates": [
+   {
+    "file": "View from Whalers Lookout Bicheno 201907025-008.jpg",
+    "verdict": "accept",
+    "reason": "CC0 2019; Bicheno town, bay and ranges, wide; town in its landscape"
+   },
+   {
+    "file": "View from Whalers Lookout Bicheno 201907025-007.jpg",
+    "verdict": "reject",
+    "reason": "mostly roofs, weaker than -008"
+   },
+   {
+    "file": "Bicheno (8874181745).jpg",
+    "verdict": "reject",
+    "reason": "rock foreground dominates, town a thin strip"
+   },
+   {
+    "file": "Tasmania bicheno town view.jpg",
+    "verdict": "reject",
+    "reason": "2592 px ok but lower quality duplicate view of -008"
+   }
+  ],
+  "choice": "View from Whalers Lookout Bicheno 201907025-008.jpg",
+  "hero_crop": "ok"
+ },
+ "dest:bicheno:why1": {
+  "candidates": [
+   {
+    "file": "Bicheno Blowhole Tasmania 20190725-027.jpg",
+    "verdict": "accept",
+    "reason": "blowhole spray clearly visible, CC0, geotag-matched series"
+   },
+   {
+    "file": "Bicheno Blowhole, Tasmania.jpg",
+    "verdict": "reject",
+    "reason": "spray small, big dark rock dominates"
+   }
+  ],
+  "choice": "Bicheno Blowhole Tasmania 20190725-027.jpg",
+  "hero_crop": {
+   "x": 0.35,
+   "y": 0.5
+  }
+ },
+ "dest:bicheno:why2": {
+  "candidates": [
+   {
+    "file": "D1020065TassieDevil.jpg",
+    "verdict": "accept",
+    "reason": "devil at East Coast Natureworld, 1542 px (>=1280); a man behind is incidental, devil is subject"
+   },
+   {
+    "file": "D1020064TassieDevil.jpg",
+    "verdict": "reject",
+    "reason": "cleaner but 1273 px, under the 1280 why-visit minimum (use for the spot)"
+   }
+  ],
+  "choice": "D1020065TassieDevil.jpg",
+  "hero_crop": "ok"
+ },
+ "dest:bicheno:why3": {
+  "candidates": [
+   {
+    "file": "Apsley Waterhole.jpg",
+    "verdict": "accept",
+    "reason": "waterhole pool in Douglas-Apsley NP, 5472 px, CC0"
+   },
+   {
+    "file": "Apsley-Gorge.jpg",
+    "verdict": "reject",
+    "reason": "dry boulder gorge, not swimming"
+   }
+  ],
+  "choice": "Apsley Waterhole.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:bicheno-1": {
+  "candidates": [
+   {
+    "file": "Governor Island Tasmania 201907025-013.jpg",
+    "verdict": "accept",
+    "reason": "Gulch harbour with jetty and buildings, CC0, same Whalers Lookout series"
+   },
+   {
+    "file": "Boat at Bicheno Tasmania 201907025-016.jpg",
+    "verdict": "reject",
+    "reason": "only a boat and rocks; the harbour is not recognisable"
+   }
+  ],
+  "choice": "Governor Island Tasmania 201907025-013.jpg",
+  "hero_crop": {
+   "x": 0.6,
+   "y": 0.75,
+   "zoom": 1.3
+  },
+  "note": "current Wikipedia image (E8236 Tamchy dry gulch) is a different, non-Tasmanian place: rejected"
+ },
+ "spot:bicheno-2": {
+  "candidates": [
+   {
+    "file": "Bicheno Blowhole Tasmania 20190725-027.jpg",
+    "verdict": "accept",
+    "reason": "blowhole spraying; current lead is a town view not the blowhole"
+   },
+   {
+    "file": "Bicheno Blowhole, Tasmania.jpg",
+    "verdict": "reject",
+    "reason": "spray small"
+   }
+  ],
+  "choice": "Bicheno Blowhole Tasmania 20190725-027.jpg",
+  "hero_crop": {
+   "x": 0.35,
+   "y": 0.5
+  },
+  "note": "shares the file with the destination why1 (same destination, allowed)"
+ },
+ "spot:bicheno-3": {
+  "candidates": [
+   {
+    "file": "D1020064TassieDevil.jpg",
+    "verdict": "accept",
+    "reason": "clean devil portrait, category East Coast Natureworld, 1273 px >= 960"
+   },
+   {
+    "file": "D1020065TassieDevil.jpg",
+    "verdict": "reject",
+    "reason": "used for why2; man behind"
+   },
+   {
+    "file": "Wallaby D1020067.jpg",
+    "verdict": "reject",
+    "reason": "small bettong lying in woodchips, unclear"
+   }
+  ],
+  "choice": "D1020064TassieDevil.jpg",
+  "hero_crop": "ok",
+  "note": "current Macropus rufogriseus juvenile is a generic animal (geotag 92 km away): rejected"
+ }
+}

@@ -1,0 +1,415 @@
+[
+ {
+  "id": "cradle-mountain-1",
+  "name": "Dove Lake",
+  "wiki": "Dove Lake (Tasmania)",
+  "destination": "cradle-mountain",
+  "category": "nature",
+  "icon": "🏞️",
+  "bio": "The glacial lake beneath Cradle Mountain, reached from the Dove Lake car park, with a shoreline circuit.",
+  "coordinates": {
+   "lat": -41.660407,
+   "lng": 145.96141
+  },
+  "coordinates_source": "resolve-pin.py: photon water=lake (Dove Lake)",
+  "coordinates_confidence": "LOW",
+  "reason": "Inside the park's span, reached from the Cradle Mountain end; its Dove Lake Loop Track was rejected as part of this spot.",
+  "needs_research": [
+   "coordinates",
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 1,
+  "visitHoursMax": 2
+ },
+ {
+  "id": "cradle-mountain-2",
+  "name": "Cradle Mountain",
+  "wiki": "Cradle Mountain",
+  "destination": "cradle-mountain",
+  "category": "viewpoint",
+  "icon": "⛰️",
+  "bio": "The 1,545 m dolerite peak that is the park's icon, seen from Dove Lake and climbed as a long day walk.",
+  "coordinates": {
+   "lat": -41.684644,
+   "lng": 145.951304
+  },
+  "coordinates_source": "resolve-pin.py: photon natural=peak (Cradle Mountain)",
+  "coordinates_confidence": "HIGH",
+  "reason": "Headline peak of the park; kept as a spot beside the Summit Walk (see note).",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 0,
+  "visitHoursMax": 0.25
+ },
+ {
+  "id": "cradle-mountain-3",
+  "name": "Overland Track",
+  "wiki": null,
+  "destination": "cradle-mountain",
+  "category": "hike",
+  "icon": "🥾",
+  "bio": "Australia's most famous bushwalk: a 65 km multi-day track from Cradle Mountain south to Lake St Clair.",
+  "coordinates": null,
+  "coordinates_source": "resolve-pin.py found no feature; take the managing agency's point (route midpoint for a track, entrance or car park otherwise)",
+  "coordinates_confidence": "LOW",
+  "reason": "Linear route inside the park; pinned at its midpoint (to be taken from the agency route map). Also listed by tas-west-coast-southwest, which should reference this id.",
+  "needs_research": [
+   "coordinates",
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": null,
+  "visitHoursMax": null
+ },
+ {
+  "id": "cradle-mountain-4",
+  "name": "Lake St Clair",
+  "wiki": "Lake St Clair (Tasmania)",
+  "destination": "cradle-mountain",
+  "category": "nature",
+  "icon": "🏞️",
+  "bio": "Australia's deepest freshwater lake, at the southern end of the Overland Track, with a visitor centre and boat trips.",
+  "coordinates": {
+   "lat": -42.112474,
+   "lng": 146.212829
+  },
+  "coordinates_source": "resolve-pin.py: photon water=lagoon (Lake St Clair Lagoon)",
+  "coordinates_confidence": "LOW",
+  "reason": "Cynthia Bay end of the park, about 39 km from the park centre, inside the span. Wiki fixed to the Tasmanian article (the candidate's views and coordinates belonged to Michigan). Also listed by tas-west-coast-southwest; this id is the owner.",
+  "needs_research": [
+   "coordinates",
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": null,
+  "visitHoursMax": null
+ },
+ {
+  "id": "cradle-mountain-5",
+  "name": "Marion's Lookout",
+  "wiki": null,
+  "destination": "cradle-mountain",
+  "category": "viewpoint",
+  "icon": "🔭",
+  "bio": "A steep two-hour return climb past Crater Falls and Crater Lake to a lookout over Dove Lake, with chain-assisted sections.",
+  "coordinates": null,
+  "coordinates_source": "resolve-pin.py found no feature; take the managing agency's point (route midpoint for a track, entrance or car park otherwise)",
+  "coordinates_confidence": "LOW",
+  "reason": "Reached from the Dove Lake car park; inside the park span.",
+  "needs_research": [
+   "coordinates",
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 2,
+  "visitHoursMax": 3
+ },
+ {
+  "id": "cradle-mountain-6",
+  "name": "Cradle Mountain Summit Walk",
+  "wiki": null,
+  "destination": "cradle-mountain",
+  "category": "hike",
+  "icon": "🥾",
+  "bio": "The six-hour return scramble from the Dove Lake car park to the summit of Cradle Mountain.",
+  "coordinates": {
+   "lat": -41.680349,
+   "lng": 145.951327
+  },
+  "coordinates_source": "resolve-pin.py: photon highway=path (Cradle Mount Summit Track)",
+  "coordinates_confidence": "LOW",
+  "reason": "The route to the peak; kept as the walk beside the peak spot.",
+  "needs_research": [
+   "coordinates",
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 6,
+  "visitHoursMax": 7
+ },
+ {
+  "id": "cradle-mountain-7",
+  "name": "Mount Ossa",
+  "wiki": "Mount Ossa (Tasmania)",
+  "destination": "cradle-mountain",
+  "category": "viewpoint",
+  "icon": "⛰️",
+  "bio": "Tasmania's highest peak at 1,617 m, climbed on a worn side track from Pelion Gap on the Overland Track.",
+  "coordinates": {
+   "lat": -41.870716,
+   "lng": 146.032969
+  },
+  "coordinates_source": "resolve-pin.py: photon natural=peak (Mount Ossa)",
+  "coordinates_confidence": "HIGH",
+  "reason": "Inside the park span, reached by Overland Track walkers. Also listed by tas-west-coast-southwest; this id is the owner.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": null,
+  "visitHoursMax": null
+ },
+ {
+  "id": "cradle-mountain-8",
+  "name": "Pencil Pine Falls",
+  "wiki": null,
+  "destination": "cradle-mountain",
+  "category": "nature",
+  "icon": "💧",
+  "bio": "A short rainforest boardwalk past a waterfall, starting behind the Cradle Mountain Visitor Centre.",
+  "coordinates": {
+   "lat": -41.595043,
+   "lng": 145.930252
+  },
+  "coordinates_source": "resolve-pin.py: photon waterway=waterfall (Pencil Pine Falls)",
+  "coordinates_confidence": "HIGH",
+  "reason": "Park entrance area, reached from the Cradle Mountain base.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 0.25,
+  "visitHoursMax": 0.5
+ },
+ {
+  "id": "cradle-mountain-9",
+  "name": "Waldheim Chalet",
+  "wiki": null,
+  "destination": "cradle-mountain",
+  "category": "historic",
+  "icon": "🛖",
+  "bio": "Gustav Weindorfer's 1912 chalet, a heritage site in the park reached on a short walk from the road.",
+  "coordinates": {
+   "lat": -41.638333,
+   "lng": 145.944957
+  },
+  "coordinates_source": "resolve-pin.py: commons photo median (2 geotagged files)",
+  "coordinates_confidence": "LOW",
+  "reason": "Inside the park span; its Weindorfers Forest Walk was rejected as part of this stop.",
+  "needs_research": [
+   "coordinates",
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1
+ },
+ {
+  "id": "mole-creek-karst-national-park-1",
+  "name": "Marakoopa Cave",
+  "wiki": null,
+  "destination": "mole-creek-karst-national-park",
+  "category": "nature",
+  "icon": "🦇",
+  "bio": "A limestone cave near Mole Creek with a glow-worm display, one of the Karst park's show caves.",
+  "coordinates": null,
+  "coordinates_source": "resolve-pin.py found no feature; take the managing agency's point (route midpoint for a track, entrance or car park otherwise)",
+  "coordinates_confidence": "LOW",
+  "reason": "Inside the park.",
+  "needs_research": [
+   "coordinates",
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 1,
+  "visitHoursMax": 1.5
+ },
+ {
+  "id": "mole-creek-karst-national-park-2",
+  "name": "King Solomon's Cave",
+  "wiki": null,
+  "destination": "mole-creek-karst-national-park",
+  "category": "nature",
+  "icon": "🦇",
+  "bio": "A limestone show cave in the Mole Creek Karst area, reached by Liena Road.",
+  "coordinates": null,
+  "coordinates_source": "resolve-pin.py found no feature; take the managing agency's point (route midpoint for a track, entrance or car park otherwise)",
+  "coordinates_confidence": "LOW",
+  "reason": "Inside the park.",
+  "needs_research": [
+   "coordinates",
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5
+ },
+ {
+  "id": "mole-creek-karst-national-park-3",
+  "name": "Devils Gullet",
+  "wiki": null,
+  "destination": "mole-creek-karst-national-park",
+  "category": "viewpoint",
+  "icon": "🔭",
+  "bio": "A platform overhanging a sheer cliff near Mole Creek, looking across the Fisher River valley to Cradle Mountain.",
+  "coordinates": {
+   "lat": -41.662963,
+   "lng": 146.321968
+  },
+  "coordinates_source": "resolve-pin.py: photon highway=service (Devils Gullet Road)",
+  "coordinates_confidence": "LOW",
+  "reason": "Near Mole Creek, reached from the same base.",
+  "needs_research": [
+   "coordinates",
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1
+ },
+ {
+  "id": "mole-creek-karst-national-park-4",
+  "name": "Deloraine",
+  "wiki": "Deloraine, Tasmania",
+  "destination": "mole-creek-karst-national-park",
+  "category": "landmark",
+  "icon": "🏘️",
+  "bio": "A historic town on the Meander River and the gateway to Mole Creek, Cradle Mountain and the Highland Lakes.",
+  "coordinates": {
+   "lat": -41.524668,
+   "lng": 146.656685
+  },
+  "coordinates_source": "resolve-pin.py: commons photo median (24 geotagged files)",
+  "coordinates_confidence": "LOW",
+  "reason": "About 32 km from the park centre; the usual base for the caves (Wikivoyage lists it as gateway). Keeps its own draws beyond the Big Coffee Pot.",
+  "needs_research": [
+   "coordinates",
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 2
+ },
+ {
+  "id": "mole-creek-karst-national-park-5",
+  "name": "Big Coffee Pot",
+  "wiki": null,
+  "destination": "mole-creek-karst-national-park",
+  "category": "landmark",
+  "icon": "☕",
+  "bio": "A giant coffee pot sculpture, an old silo, on the Mole Creek Road at Deloraine.",
+  "coordinates": null,
+  "coordinates_source": "resolve-pin.py found no feature; take the managing agency's point (route midpoint for a track, entrance or car park otherwise)",
+  "coordinates_confidence": "LOW",
+  "reason": "Roadside icon beside Deloraine, a few minutes' photo stop.",
+  "needs_research": [
+   "coordinates",
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 0,
+  "visitHoursMax": 0.25
+ },
+ {
+  "id": "cradle-mountain-10",
+  "name": "Echo Point",
+  "wiki": null,
+  "destination": "cradle-mountain",
+  "category": "viewpoint",
+  "icon": "🔭",
+  "bio": "A lake-shore lookout on a 3-7 hour circuit from Cynthia Bay, with views over Lake St Clair.",
+  "coordinates": {
+   "latitude": -42.04347,
+   "longitude": 146.138028
+  },
+  "coordinates_source": "photon 'Echo Point Hut' / 'Echo Point Track' on the Lake St Clair shore; single source, LOW: check it is the Great Short Walk lookout, not only the hut",
+  "coordinates_confidence": "LOW",
+  "reason": "Great Short Walk on the lake; see Lake St Clair re-homing note.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 3,
+  "visitHoursMax": 7
+ },
+ {
+  "id": "walls-of-jerusalem-national-park",
+  "name": "Walls of Jerusalem National Park",
+  "wiki": "Walls of Jerusalem National Park",
+  "destination": null,
+  "category": "nature",
+  "icon": "🏔️",
+  "bio": "A high-country park of dolerite peaks and tarns, known for its 43 km loop walk.",
+  "coordinates": {
+   "lat": -41.8219,
+   "lng": 146.2919
+  },
+  "coordinates_source": "resolve-pin.py: commons photo median (31 geotagged files)",
+  "coordinates_confidence": "LOW",
+  "reason": "A national park, never a spot of another; its only other spot is its own walk, so it stays standalone. About 28 km from Cradle Mountain's centre (inside that span) and 28 km from Mole Creek: not a spot of either because it is its own park reached from the Mersey Forest Road.",
+  "needs_research": [
+   "coordinates",
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": null,
+  "visitHoursMax": null
+ },
+ {
+  "id": "walls-of-jerusalem-walk",
+  "name": "Walls of Jerusalem Multi-Day Walk",
+  "wiki": null,
+  "destination": null,
+  "category": "hike",
+  "icon": "🥾",
+  "bio": "A three to four day, 43 km loop through the park's lakes and peaks, with the Mount Jerusalem ascent.",
+  "coordinates": {
+   "lat": -41.8219,
+   "lng": 146.2919
+  },
+  "coordinates_source": "resolve-pin.py: commons photo median (31 geotagged files)",
+  "coordinates_confidence": "LOW",
+  "reason": "Linear route; pinned at its centre. Standalone beside the park spot: not a spot of Cradle Mountain, a different park.",
+  "needs_research": [
+   "coordinates",
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": null,
+  "visitHoursMax": null
+ },
+ {
+  "id": "narawntapu-national-park",
+  "name": "Narawntapu National Park",
+  "wiki": "Narawntapu National Park",
+  "destination": null,
+  "category": "nature",
+  "icon": "🦘",
+  "bio": "A coastal park with long beaches, bird hides and dusk wildlife between Devonport and Greens Beach.",
+  "coordinates": {
+   "lat": -41.144147,
+   "lng": 146.613321
+  },
+  "coordinates_source": "resolve-pin.py: commons photo median (3 geotagged files)",
+  "coordinates_confidence": "LOW",
+  "reason": "Only two kept spots (with Bakers Beach), so it is a standalone spot. About 26 km from Devonport but on the Tamar side, reached from Frankford and Launceston; not a Devonport spot.",
+  "needs_research": [
+   "coordinates",
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": null,
+  "visitHoursMax": null
+ }
+]

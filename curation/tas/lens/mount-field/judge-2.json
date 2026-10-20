@@ -1,0 +1,88 @@
+{
+ "dest:mount-field:header": {
+  "candidates": [
+   {
+    "file": "Russell Falls Mt Field National Park.jpg",
+    "verdict": "accept",
+    "reason": "park icon, 1963x1605 (<2000 header minimum by 37 px: flag), falls central"
+   },
+   {
+    "file": "Lake Newdgate Dawn 2.jpg",
+    "verdict": "accept-alt",
+    "reason": "wide alpine tarn at dawn, 2136 px, 1.5; page licence 'see page'"
+   },
+   {
+    "file": "Lake Dobson - Dec 4 2015.jpg",
+    "verdict": "reject",
+    "reason": "snow gum dominates"
+   }
+  ],
+  "choice": "Lake Newdgate Dawn 2.jpg",
+  "hero_crop": "ok (reflection and ridge centred)"
+ },
+ "dest:mount-field:why1": {
+  "candidates": [
+   {
+    "file": "Russell Falls 2.jpg",
+    "verdict": "accept",
+    "reason": "Russell Falls, Mt Field; same file as Russell Falls spot"
+   }
+  ],
+  "choice": "Russell Falls 2.jpg",
+  "hero_crop": "ok"
+ },
+ "dest:mount-field:why2": {
+  "candidates": [
+   {
+    "file": "Tarn Shelf Mt Field National Park 2.jpg",
+    "verdict": "accept",
+    "reason": "tarns on Tarn Shelf, geotagged"
+   }
+  ],
+  "choice": "Tarn Shelf Mt Field National Park 2.jpg",
+  "hero_crop": "ok"
+ },
+ "dest:mount-field:why3": {
+  "candidates": [
+   {
+    "file": "Deciduous Beech - Nothofagus cunninghami Mt. Field National Park, Tasmania.jpg",
+    "verdict": "accept-weak",
+    "reason": "fagus autumn leaves, sharp, 4000 px; close-up but is the subject of the reason"
+   },
+   {
+    "file": "MtFieldNationalParkNothofagus.jpg",
+    "verdict": "reject",
+    "reason": "blurry, 'see page' licence"
+   }
+  ],
+  "choice": "Deciduous Beech - Nothofagus cunninghami Mt. Field National Park, Tasmania.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:mount-field-2": {
+  "candidates": [
+   {
+    "file": "Tarn Shelf Mt Field National Park 3.jpg",
+    "verdict": "accept",
+    "reason": "tarns on Tarn Shelf, geotag ~1.2 km from pin; different shot from why2; current is Russell Falls (another spot's photo)"
+   }
+  ],
+  "choice": "Tarn Shelf Mt Field National Park 3.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:mount-field-3": {
+  "candidates": [
+   {
+    "file": "Lake Dobson - Mount Field National Park Tasmania.jpg",
+    "verdict": "accept",
+    "reason": "lake with pencil pine and shore track, 'see page' licence; current is a train"
+   },
+   {
+    "file": "Lake Dobson - Dec 4 2015.jpg",
+    "verdict": "accept-alt",
+    "reason": "snow gum dominates frame"
+   }
+  ],
+  "choice": "Lake Dobson - Mount Field National Park Tasmania.jpg",
+  "hero_crop": "ok"
+ }
+}

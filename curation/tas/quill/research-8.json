@@ -1,0 +1,552 @@
+[
+ {
+  "id": "west-coast-tasmania-1",
+  "name": "Sarah Island",
+  "coordinates": {
+   "lat": -42.388391,
+   "lng": 145.447847
+  },
+  "coordinates_source": "resolve-pin HIGH: OSM place=islet 'Sarah Island' (Photon) within 100 m of Wikipedia coordinates; input point kept",
+  "pin_confidence": "HIGH",
+  "moved_m": 0,
+  "hours": "Cruises daily; World Heritage Cruises depart Strahan Wharf 9:00 AM",
+  "closedDays": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 2.5,
+  "costMin": 160,
+  "costMax": 225,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/sarah-island",
+  "blocked_url": null,
+  "bio": "The ruins of an 1822 convict penal station on a Macquarie Harbour island, reached by cruise from Strahan.",
+  "unverified": [
+   "Price is the cruise (the island has no entry fee): World Heritage Cruises adult $160 main deck centre to $225 upper deck window incl. lunch, valid to 31/3/2027; Gordon River Cruises prices not checked (site blocked)",
+   "Island guided-walk length not stated by the operator"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/sarah-island",
+   "https://www.worldheritagecruises.com.au/cruises"
+  ]
+ },
+ {
+  "id": "west-coast-tasmania-2",
+  "name": "Gordon River",
+  "coordinates": {
+   "lat": -42.4415678,
+   "lng": 145.6121071
+  },
+  "coordinates_source": "OSM tourism=attraction 'Heritage Landing' (Nominatim/Photon): the Gordon River cruise landing and rainforest boardwalk",
+  "pin_confidence": "MEDIUM",
+  "moved_m": null,
+  "hours": "Cruises daily; World Heritage Cruises depart Strahan Wharf 9:00 AM, back about 3:00 PM",
+  "closedDays": null,
+  "visitHoursMin": 3,
+  "visitHoursMax": 6,
+  "costMin": 160,
+  "costMax": 225,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/franklin-gordon-wild-rivers-national-park",
+  "blocked_url": null,
+  "bio": "The lower Gordon River's rainforest banks, seen on a cruise from Strahan with a boardwalk at Heritage Landing.",
+  "unverified": [
+   "Price is the cruise (World Heritage Cruises adult $160-$225 incl. lunch); Gordon River Cruises (the other operator) prices not checked, site returned 403 CloudFront bot wall (https://www.gordonrivercruises.com.au/)",
+   "ticketUrl is the managing agency's park page, not an operator booking page; cruises are sold by two operators",
+   "No input point existed; pin from OSM only (Heritage Landing is a visitor landing, not the river centreline)"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/franklin-gordon-wild-rivers-national-park",
+   "https://www.worldheritagecruises.com.au/cruises",
+   "https://nominatim.openstreetmap.org/search?q=Heritage+Landing"
+  ]
+ },
+ {
+  "id": "west-coast-tasmania-3",
+  "name": "Strahan",
+  "coordinates": {
+   "lat": -42.152397,
+   "lng": 145.3327805
+  },
+  "coordinates_source": "OSM man_made=pier 'Strahan Fishermans Wharf' (Photon), on the waterfront beside the Esplanade; replaces the foreshore-track point",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 197,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 3,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "A Macquarie Harbour port with a historic waterfront and foreshore walk, the base for Gordon River cruises.",
+  "unverified": [
+   "No single official site for the town (no ticketUrl by rule); Strahan Visitor Centre site not checked"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/things-to-do/60-great-short-walks/hogarth-falls",
+   "https://en.wikivoyage.org/wiki/Strahan"
+  ]
+ },
+ {
+  "id": "west-coast-tasmania-4",
+  "name": "Queenstown",
+  "coordinates": {
+   "lat": -42.080124,
+   "lng": 145.555384
+  },
+  "coordinates_source": "resolve-pin HIGH: OSM place=town 'Queenstown' agrees with Wikipedia; town centre kept because the town is the spot (Orr Street heritage main street)",
+  "pin_confidence": "HIGH",
+  "moved_m": 0,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 3,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "A copper-mining town ringed by bare mined hills, with a historic main street and underground mine tours.",
+  "unverified": [
+   "No single official site for the town (no ticketUrl); Douggie's Mine Tours price/hours not researched"
+  ],
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Queenstown_(Tasmania)"
+  ]
+ },
+ {
+  "id": "west-coast-tasmania-5",
+  "name": "Ocean Beach",
+  "coordinates": {
+   "lat": -42.1449915,
+   "lng": 145.2629517
+  },
+  "coordinates_source": "OSM natural=coastline node at the end of Ocean Beach Road (road end -42.1449805,145.2644782, 125 m east), the road access to the beach near Strahan; the beach is 40 km long so this is its main visitor access",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 5876,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "A 40 km beach of Southern Ocean swell near Strahan, unpatrolled and too dangerous for swimming.",
+  "unverified": [
+   "No official site found (Ocean Beach Conservation Area has no Parks page); length 40 km is Lonely Planet's figure"
+  ],
+  "sources": [
+   "https://beachsafe.org.au/beach/tas/west-coast/strahan/ocean-beach-s",
+   "https://www.strahanvillage.com.au/blog/Explore-Ocean-Beach-Strahan",
+   "https://api.openstreetmap.org/api/0.6/map?bbox=145.20,-42.16,145.30,-42.08"
+  ]
+ },
+ {
+  "id": "west-coast-tasmania-6",
+  "name": "Montezuma Falls",
+  "coordinates": {
+   "lat": -41.838851,
+   "lng": 145.476744
+  },
+  "coordinates_source": "resolve-pin HIGH: OSM waterway=waterfall 'Montezuma Falls' (Photon) plus nearby viewpoint and track; pinned on the falls (the spot's subject), not the route midpoint",
+  "pin_confidence": "HIGH",
+  "moved_m": 0,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 3,
+  "visitHoursMax": 4.5,
+  "free": true,
+  "ticketUrl": "https://parks.tas.gov.au/things-to-do/60-great-short-walks/montezuma-falls",
+  "blocked_url": null,
+  "bio": "One of Tasmania's highest waterfalls at 104 m, reached by an 11.5 km return walk along an old tramway.",
+  "unverified": [
+   "Free assumed: the Parks page does not state a parks pass requirement (it does for national-park walks)",
+   "Viewing platform closed from 26/8/2026; the suspension bridge is still reachable on the track (Parks alert, reviewed 5/10/2026)"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/things-to-do/60-great-short-walks/montezuma-falls"
+  ]
+ },
+ {
+  "id": "west-coast-tasmania-7",
+  "name": "Iron Blow Lookout",
+  "coordinates": {
+   "lat": -42.069167,
+   "lng": 145.58955
+  },
+  "coordinates_source": "resolve-pin HIGH: OSM tourism=viewpoint 'Iron Blow Lookout' within 100 m of Wikipedia",
+  "pin_confidence": "HIGH",
+  "moved_m": 0,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0,
+  "visitHoursMax": 0.5,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "A lookout over the Iron Blow, the huge mine pit above Queenstown where the area's mining began.",
+  "unverified": [
+   "No official site; hours assumed open access",
+   "The Iron Blow is a mine pit lookout listed by Wikivoyage; no steward page found"
+  ],
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Queenstown_(Tasmania)"
+  ]
+ },
+ {
+  "id": "west-coast-tasmania-8",
+  "name": "Zeehan",
+  "coordinates": {
+   "lat": -41.883943,
+   "lng": 145.335727
+  },
+  "coordinates_source": "resolve-pin: OSM place=town 'Zeehan' (Photon), 206 m from Wikipedia; the town point sits on Main Street; kept as a town spot",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 0,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "A former silver-mining boomtown whose single main street keeps many of its civic and heritage buildings.",
+  "unverified": [
+   "No single official site for the streetscape; the West Coast Heritage Centre has its own spot"
+  ],
+  "sources": [
+   "https://wchczeehan.com.au/plan-your-visit/"
+  ]
+ },
+ {
+  "id": "west-coast-tasmania-9",
+  "name": "West Coast Heritage Centre",
+  "coordinates": {
+   "lat": -41.882051,
+   "lng": 145.335865
+  },
+  "coordinates_source": "resolve-pin HIGH: OSM tourism=museum 'West Coast Heritage Centre' within 100 m of Commons photos",
+  "pin_confidence": "HIGH",
+  "moved_m": 0,
+  "hours": "10:00 AM - 3:00 PM (May-Aug); 9:30 AM - 4:00 PM (Sep-Apr); 7 days",
+  "closedDays": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 2.5,
+  "costMin": 25,
+  "costMax": 25,
+  "currency": "AUD",
+  "ticketUrl": "https://wchczeehan.com.au",
+  "blocked_url": null,
+  "bio": "A museum in Zeehan's old School of Mines, with heritage buildings and a film show on West Coast history.",
+  "unverified": [
+   "Adult $25 general entry (includes Gaiety Theatre film show; valid seven days); closed Christmas and Boxing Day"
+  ],
+  "sources": [
+   "https://wchczeehan.com.au/plan-your-visit/"
+  ]
+ },
+ {
+  "id": "west-coast-tasmania-10",
+  "name": "Hogarth Falls",
+  "coordinates": {
+   "lat": -42.153642,
+   "lng": 145.349399
+  },
+  "coordinates_source": "resolve-pin HIGH: OSM waterway=waterfall 'Hogarth Falls' with a viewpoint 68 m away",
+  "pin_confidence": "HIGH",
+  "moved_m": 0,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "free": true,
+  "ticketUrl": "https://parks.tas.gov.au/things-to-do/60-great-short-walks/hogarth-falls",
+  "blocked_url": null,
+  "bio": "A rainforest waterfall at the end of a 1.2 km walk from People's Park, just outside central Strahan.",
+  "unverified": [
+   "Free assumed: the Parks page does not state a parks pass requirement; People's Park facilities are West Coast Council's"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/things-to-do/60-great-short-walks/hogarth-falls"
+  ]
+ },
+ {
+  "id": "franklin-gordon-wild-rivers-1",
+  "name": "Nelson Falls",
+  "coordinates": {
+   "lat": -42.09989,
+   "lng": 145.73737
+  },
+  "coordinates_source": "OSM waterway=waterfall 'Nelson Falls' (Photon, single feature); consistent with the 0.7 km boardwalk from the Lyell Highway car park (-42.1040,145.7364)",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 0,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0.25,
+  "visitHoursMax": 0.75,
+  "costMin": 49.15,
+  "costMax": 49.15,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/franklin-gordon-wild-rivers-national-park/nelson-falls",
+  "blocked_url": null,
+  "bio": "A 30 m waterfall on the Nelson River, reached by a 20-minute return boardwalk off the Lyell Highway.",
+  "unverified": [
+   "Cost is the Parks Pass day price per vehicle (adult on foot $24.55); Parks page: 20 minutes return, 1.4 km, Grade 1"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/franklin-gordon-wild-rivers-national-park/nelson-falls",
+   "https://en.wikipedia.org/wiki/Nelson_Falls",
+   "https://parks.tas.gov.au/explore-our-parks/know-before-you-go/park-passes-and-entry-fees"
+  ]
+ },
+ {
+  "id": "franklin-gordon-wild-rivers-2",
+  "name": "Frenchmans Cap Track",
+  "coordinates": {
+   "lat": -42.27220421402588,
+   "lng": 145.9193259009628
+  },
+  "coordinates_source": "Midpoint of the OSM Frenchmans Cap Track (ways chained from the Lyell Highway car park to the Irenabyss end, 22.06 km, fetched via the OSM API); lies on Laughton's Lead",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 8689,
+  "hours": "Open 24 hours; walkers must register",
+  "closedDays": null,
+  "visitHoursMin": 72,
+  "visitHoursMax": 120,
+  "costMin": 49.15,
+  "costMax": 49.15,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/franklin-gordon-wild-rivers-national-park/frenchmans-cap",
+  "blocked_url": null,
+  "bio": "A challenging 3-5 day, 54 km return walk from the Lyell Highway to the white peak of Frenchmans Cap.",
+  "unverified": [
+   "Cost is the Parks Pass day price per vehicle; walker registration is required (free); Parks alert: no heating or lighting at Tahune Hut from 27/9/2026",
+   "Parks says 54 km return; the OSM chain measures 22 km one way (some route sections may be unmapped)"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/franklin-gordon-wild-rivers-national-park/frenchmans-cap",
+   "https://api.openstreetmap.org/api/0.6/map?bbox=145.82,-42.29,146.00,-42.19"
+  ]
+ },
+ {
+  "id": "franklin-gordon-wild-rivers-3",
+  "name": "Donaghys Hill Lookout",
+  "coordinates": {
+   "lat": -42.196207,
+   "lng": 145.933863
+  },
+  "coordinates_source": "OSM tourism=viewpoint 'Donaghys Lookout' (Photon), 26 m from the Donaghys Hill Wilderness Walk start; pinned on the lookout",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 0,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "costMin": 49.15,
+  "costMax": 49.15,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/franklin-gordon-wild-rivers-national-park/donaghys-hill",
+  "blocked_url": null,
+  "bio": "A 40-minute return walk to a lookout over the Franklin River valley and out to Frenchmans Cap.",
+  "unverified": [
+   "Cost is the Parks Pass day price per vehicle; Fuel Stove Only Area"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/franklin-gordon-wild-rivers-national-park/donaghys-hill"
+  ]
+ },
+ {
+  "id": "franklin-gordon-wild-rivers-4",
+  "name": "Franklin River",
+  "coordinates": {
+   "lat": -42.2155529,
+   "lng": 146.0203848
+  },
+  "coordinates_source": "OSM amenity=parking 'Franklin River Picnic Area' beside the Lyell Highway bridge and Franklin River Nature Trail start (OSM bridge way -42.2152,146.0198)",
+  "pin_confidence": "MEDIUM",
+  "moved_m": null,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0.25,
+  "visitHoursMax": 0.5,
+  "costMin": 49.15,
+  "costMax": 49.15,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/franklin-gordon-wild-rivers-national-park",
+  "blocked_url": null,
+  "bio": "A wild World Heritage river crossed by the Lyell Highway and famed for multi-day rafting trips.",
+  "unverified": [
+   "Cost is the Parks Pass day price per vehicle; rafting trips are priced by guiding companies (not researched)",
+   "Wikipedia's river point (-42.59,145.74) is far south and was not used"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/franklin-gordon-wild-rivers-national-park",
+   "https://api.openstreetmap.org/api/0.6/map?bbox=146.00,-42.23,146.04,-42.20"
+  ]
+ },
+ {
+  "id": "southwest-national-park-1",
+  "name": "Gordon Dam",
+  "coordinates": {
+   "lat": -42.7304704,
+   "lng": 145.9763319
+  },
+  "coordinates_source": "OSM waterway=dam 'Gordon Dam' (Photon) within 100 m of Wikipedia; the lookout is 140 m south-east",
+  "pin_confidence": "HIGH",
+  "moved_m": 169,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "costMin": 49.15,
+  "costMax": 49.15,
+  "currency": "AUD",
+  "ticketUrl": "https://www.hydro.com.au/our-energy-system/our-power-stations/gordon-pedder",
+  "blocked_url": null,
+  "bio": "A 140 m double-curvature arch dam at Strathgordon, with a viewing platform and stairs down to the dam wall.",
+  "unverified": [
+   "Cost is the Parks Pass day price per vehicle (Southwest National Park); Hydro Tasmania page gives no opening hours",
+   "ticketUrl is Hydro Tasmania's Gordon-Pedder page (dam operator)"
+  ],
+  "sources": [
+   "https://www.hydro.com.au/articles/recreation/no-time-camping-try-these-scenic-tassie-day-trips",
+   "https://www.hydro.com.au/our-energy-system/our-power-stations/gordon-pedder",
+   "https://parks.tas.gov.au/explore-our-parks/southwest-national-park"
+  ]
+ },
+ {
+  "id": "southwest-national-park-2",
+  "name": "Lake Pedder",
+  "coordinates": {
+   "lat": -43.03726,
+   "lng": 146.2775861
+  },
+  "coordinates_source": "OSM tourism=viewpoint 'Red Knoll Lookout' on Scotts Peak Road, looking over Lake Pedder; replaces the reservoir centroid",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 21461,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 2,
+  "costMin": 49.15,
+  "costMax": 49.15,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/southwest-national-park",
+  "blocked_url": null,
+  "bio": "A large hydro lake in Southwest National Park, viewed from Scotts Peak Road lookouts and fished for trout.",
+  "unverified": [
+   "Cost is the Parks Pass day price per vehicle; Red Knoll's view over Lake Pedder is from a blog and road description, not Parks",
+   "The pin is a lookout on the lake's south edge, about 40 km from Strathgordon; Teds Beach boat ramp (-42.787,146.060) is the north-shore alternative"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/southwest-national-park",
+   "https://www.cowirrie.com/blog/red-knoll-lookout/"
+  ]
+ },
+ {
+  "id": "southwest-national-park-3",
+  "name": "South Coast Track",
+  "coordinates": {
+   "lat": -43.530423,
+   "lng": 146.4967095
+  },
+  "coordinates_source": "LOW: OSM tourism=camp_site 'Little Deadmans Bay Campsite' on the route; about 42.5 km along (day 1 plus day 2 planned 23.9 + 18.6 km of 84.6 km). OSM way data for the track is fragmentary, so no computed midpoint",
+  "pin_confidence": "LOW",
+  "moved_m": 29493,
+  "hours": "Open 24 hours; walkers must register",
+  "closedDays": null,
+  "visitHoursMin": 144,
+  "visitHoursMax": 192,
+  "costMin": 49.15,
+  "costMax": 49.15,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/southwest-national-park/south-coast-track",
+  "blocked_url": null,
+  "bio": "An 85 km coastal walk from Melaleuca to Cockle Creek, usually six to eight days, with no huts after Melaleuca.",
+  "unverified": [
+   "Pin is a waypoint near the midpoint, not an exact computed midpoint",
+   "Cost is the Parks Pass day price; most walkers also pay for a flight to Melaleuca (Par Avion, not priced here)",
+   "Parks alert: West Picton Road closure affects other Southwest walks, not this track's ends"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/southwest-national-park/south-coast-track",
+   "https://australianhiker.com.au/episodes/242-south-coast-track-expectations-versus-reality/"
+  ]
+ },
+ {
+  "id": "wall-in-the-wilderness",
+  "name": "The Wall in the Wilderness",
+  "coordinates": {
+   "lat": -42.1255407,
+   "lng": 146.2484405
+  },
+  "coordinates_source": "OSM tourism=attraction 'The Wall in the Wilderness' (Photon, single feature) at 15352 Lyell Highway, Derwent Bridge",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 0,
+  "hours": "Timed 1.5-hour sessions by booking; closed June to August",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "costMin": 22,
+  "costMax": 22,
+  "currency": "AUD",
+  "ticketUrl": "https://thewalltasmania.com.au",
+  "blocked_url": null,
+  "bio": "A 100 m wall of carved Huon pine panels at Derwent Bridge telling the central highlands' history.",
+  "unverified": [
+   "Price $22 is from an ExplorOz listing, not the operator (tickets are sold through Bookeo, which blocked scripts); daily hours not published on the site",
+   "Site says open from 1 September, closed Good Friday and June-August; cafe permanently closed"
+  ],
+  "sources": [
+   "https://thewalltasmania.com.au/",
+   "https://www.exploroz.com/places/415293/tas+the-wall-in-the-wilderness"
+  ]
+ },
+ {
+  "id": "arthur-pieman-conservation-area",
+  "name": "Arthur-Pieman Conservation Area",
+  "coordinates": {
+   "lat": -41.0476824,
+   "lng": 144.6679901
+  },
+  "coordinates_source": "OSM amenity=ranger_station 'Parks & Wildlife Service', Arthur River Road, Arthur River (the Parks 'Arthur River Field Centre', 1409 Arthur River Road); the area's visitor point",
+  "pin_confidence": "MEDIUM",
+  "moved_m": null,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 3,
+  "free": true,
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/arthur-pieman-conservation-area",
+  "blocked_url": null,
+  "bio": "A 100,000 ha wild coast of beaches, dunes, shack settlements and 4WD tracks in north-west Tasmania.",
+  "unverified": [
+   "No parks pass for the area; Recreational Driver Pass needed for Sandy Cape and Balfour tracks (fee not checked)",
+   "Visit time is a rough estimate; the area is 1.2 km from the Edge of the World spot's pin, so consider whether it should stand as its own spot"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/arthur-pieman-conservation-area"
+  ]
+ },
+ {
+  "id": "edge-of-the-world",
+  "name": "Edge of the World",
+  "coordinates": {
+   "lat": -41.0574366,
+   "lng": 144.6597753
+  },
+  "coordinates_source": "OSM tourism=viewpoint 'Edge of the World' (Photon) with an OSM tourism=attraction node 20 m away, Arthur River",
+  "pin_confidence": "MEDIUM",
+  "moved_m": null,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0,
+  "visitHoursMax": 0.5,
+  "free": true,
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/arthur-pieman-conservation-area",
+  "blocked_url": null,
+  "bio": "A rugged shoreline at Arthur River where Roaring Forties swells break on Tasmania's far north-west coast.",
+  "unverified": [
+   "Official page is the Arthur-Pieman Conservation Area page (no page for the point itself)"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/arthur-pieman-conservation-area"
+  ]
+ }
+]

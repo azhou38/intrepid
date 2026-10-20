@@ -1,0 +1,173 @@
+{
+ "group": "launceston",
+ "generated": "2026-10-20T15:57:10.607Z",
+ "slots": [
+  {
+   "slot": "dest:launceston:header",
+   "key": "Launceston",
+   "current": {
+    "file": "ext-launceston.jpg",
+    "source": "imageOverrides.ts"
+   },
+   "status": "search",
+   "flags": [
+    "placeholder: no photo chosen yet"
+   ]
+  },
+  {
+   "slot": "dest:launceston:why1",
+   "key": "File:ext-launceston-1.jpg",
+   "current": {
+    "file": "ext-launceston-1.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "search",
+   "flags": [
+    "placeholder: no photo chosen yet"
+   ]
+  },
+  {
+   "slot": "dest:launceston:why2",
+   "key": "File:ext-launceston-2.jpg",
+   "current": {
+    "file": "ext-launceston-2.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "search",
+   "flags": [
+    "placeholder: no photo chosen yet"
+   ]
+  },
+  {
+   "slot": "dest:launceston:why3",
+   "key": "File:ext-launceston-3.jpg",
+   "current": {
+    "file": "ext-launceston-3.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "search",
+   "flags": [
+    "placeholder: no photo chosen yet"
+   ]
+  },
+  {
+   "slot": "spot:launceston-1",
+   "key": "Cataract Gorge",
+   "current": {
+    "file": "Alexandra Suspension bridge - launceston tasmania.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:launceston-2",
+   "key": "Queen Victoria Museum and Art Gallery",
+   "current": {
+    "file": "Victoria and Albert Museum Logo.svg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "proof: excluded category or title (map/drawing/historical/...)",
+    "proof: 512 px wide (min 960)",
+    "proof: dated 1989"
+   ]
+  },
+  {
+   "slot": "spot:launceston-3",
+   "key": "City Park, Launceston",
+   "current": {
+    "file": "Macaque monkey enclosure in City Park Launceston March 2015.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [
+    "audit sample: the script proved this one; judge it blind"
+   ],
+   "proof": [
+    "geotag 73 m from the pin; a name word is in the title, description or categories; 4000 px; colour ok"
+   ]
+  },
+  {
+   "slot": "spot:launceston-4",
+   "key": "Brickendon",
+   "current": {
+    "file": "'The Farmer's Boy' public house at Brickendon - geograph.org.uk - 1494088.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "proof: 640 px wide (min 960)"
+   ]
+  },
+  {
+   "slot": "spot:launceston-5",
+   "key": "Woolmers Estate",
+   "current": {
+    "file": "WoolmersEstateLongford.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "geotag 12763 m from the pin: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:launceston-6",
+   "key": "Boag's Brewery",
+   "current": {
+    "file": "XXXX Gold bottle cap .jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag; the spot name is not in the file text: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:launceston-7",
+   "key": "Duck Reach Power Station",
+   "current": {
+    "file": "Duck Reach Power Station Picture 1.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "proof: 602 px wide (min 960)",
+    "proof: dated 1930"
+   ]
+  },
+  {
+   "slot": "spot:launceston-8",
+   "key": "Tamar Island Wetlands",
+   "current": {
+    "file": "Bell Bay Pulp Mill - NASA.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:launceston-9",
+   "key": "Tasmania Zoo",
+   "current": {
+    "file": "Beaumaris Zoo site.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag; the spot name is not in the file text: a judge must look"
+   ]
+  }
+ ]
+}

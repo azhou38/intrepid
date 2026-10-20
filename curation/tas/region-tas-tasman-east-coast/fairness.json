@@ -1,0 +1,560 @@
+{
+ "region": "tas-tasman-east-coast",
+ "inside_destinations": 26,
+ "standalone": 11,
+ "new_destinations": [
+  "Tasman Peninsula",
+  "Freycinet",
+  "Bicheno"
+ ],
+ "handed_to_other_region": {
+  "owner": "tas-launceston-northeast (CROSS-REGION.md)",
+  "places": [
+   "Bay of Fires",
+   "Binalong Bay",
+   "Eddystone Point Lighthouse",
+   "St Helens",
+   "Mount William National Park",
+   "Stumpys Bay (review)",
+   "Scamander (review)"
+  ]
+ },
+ "lowest_kept": [
+  {
+   "name": "Cape Hauy",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Wineglass Bay Lookout",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Fossil Cliffs",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Three Capes Track",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Tasman Arch",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Devils Kitchen",
+   "views": 0,
+   "counted_sources": 2
+  }
+ ],
+ "stronger_left_out": [
+  {
+   "name": "Lewisham",
+   "views": 88411,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small shack community; only a Wikivoyage mention of its beach as one of the small southern beaches; coordinates/views refer to Lewisham, London, so the signals are wrong."
+  },
+  {
+   "name": "Sorell",
+   "views": 8165,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Shopping hub and supermarket town; Wikivoyage's listed sights are churches seen from outside (one closed), a fruit farm and a fortnightly market."
+  },
+  {
+   "name": "Dunalley",
+   "views": 8159,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "A pass-through village with no sight of its own; Dunalley Bay Distillery and Bangor are shops. (judge: Wikivoyage calls Dunalley the gateway to the Tasman Peninsula; a small town with a bakery and a hotel.)"
+  },
+  {
+   "name": "Campbell Town",
+   "views": 6981,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Mostly a highway rest stop; museum open Mon-Fri 10-3 only; the Agricultural Show is an event. (judge: Wikivoyage lists a local-history museum and Red Bridge park; Heritage Highway stop. Arguable 30 min stop.)"
+  },
+  {
+   "name": "Nubeena",
+   "views": 5393,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Service town and Wikivoyage lists only cafes, a tavern and a supermarket; draws are elsewhere (Coal Mines)."
+  },
+  {
+   "name": "Triabunna",
+   "views": 4993,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Ferry gateway town: Wikivoyage lists only caravan park; the draw is Maria Island, which is its own entry."
+  },
+  {
+   "name": "Coles Bay",
+   "views": 4830,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Town itself is not a draw beyond services; wrapper for Freycinet National Park. (judge: Wikivoyage/Discover Tasmania cover it, but it is the service town at Freycinet's gate (cafes, shops, tavern); the park is the draw.)"
+  },
+  {
+   "name": "Dodges Ferry",
+   "views": 4812,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "One source; a suburb-like holiday town; other beach towns are near-duplicates. (judge: Wikivoyage names a beach at the regional centre of the Southern Beaches.)"
+  },
+  {
+   "name": "Scamander",
+   "views": 4595,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "One source; a small pass-through town with no named sight. (judge: Wikivoyage names the coastal town as a stop between Bicheno and St Helens.)"
+  },
+  {
+   "name": "Tasman Island",
+   "views": 3966,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Seen only from the water or from distant lookouts, so a visitor cannot do half an hour there themselves; the cruise is the operator's product. (judge: Tasman Island is the place (Tasman NP's dolerite cliffs; Wikivoyage, Discover Tasmania) but it cannot be landed and is seen on a cruise or from Cape Hauy.)"
+  },
+  {
+   "name": "Orford",
+   "views": 3922,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "No specific attraction found beyond a river walk and beach; base for Maria Island. (judge: Holiday village at the Prosser River mouth and start of the Great Eastern Drive; two Discover Tasmania pages name it.)"
+  },
+  {
+   "name": "The Hazards",
+   "views": 2893,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Part of a larger spot (Freycinet); the Wineglass Bay Lookout walk is the real activity. (judge: Pink granite range named by Wikivoyage and Parks Tasmania, but it is a viewed feature within Freycinet National Park.)"
+  },
+  {
+   "name": "Primrose Sands",
+   "views": 2332,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "One source, a shack beach village with no distinct sight. (judge: Wikivoyage names it among the best small beaches of the Southern Beaches.)"
+  },
+  {
+   "name": "Ansons Bay",
+   "views": 1741,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "One source; settlement and fishing spot, no sight."
+  },
+  {
+   "name": "Callington Mill",
+   "views": 1663,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "One source; a distillery tasting venue. (judge: Discover Tasmania names the 1837 windmill and distillery.)"
+  },
+  {
+   "name": "Ross Female Factory",
+   "views": 1554,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "One source and a short visit; ruins with little standing. (judge: Wikivoyage names the site in Ross; open to the public.)"
+  },
+  {
+   "name": "Carlton",
+   "views": 918,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "One source; a small riverside village with no visitor draw named beyond 'historic'."
+  },
+  {
+   "name": "Lake Dulverton",
+   "views": 833,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "One source; local lake. (judge: Discover Tasmania names the lake with cow sculptures and a walk.)"
+  },
+  {
+   "name": "Diamond Island",
+   "views": 703,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "One source, tide-dependent, near-duplicate of Bicheno waterfront walk. (judge: Wikivoyage names the island reached on foot at low tide with a penguin sanctuary.)"
+  },
+  {
+   "name": "Saltwater Lagoon",
+   "views": 523,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "One source; lagoon on the Friendly Beaches, part of that spot (rule 3)."
+  },
+  {
+   "name": "Governor Island Marine Reserve",
+   "views": 395,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A marine reserve for divers, an area not a place (one source)."
+  },
+  {
+   "name": "Isle of the Dead (Port Arthur)",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Entry is only on a guided boat tour from the Port Arthur site, which a visitor may not book; overlaps the Port Arthur experience. (judge: Wikivoyage and Discover Tasmania name it; a distinct draw but reachable only on a paid escorted tour.)"
+  },
+  {
+   "name": "Port Arthur Ghost Tour",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Operator-run evening tour; the place is the Port Arthur site (operator, not a spot)."
+  },
+  {
+   "name": "St Helens Mountain Bike Trails",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "A network, not a single place; the Bay of Fires trail is a 42 km ride. (judge: Discover Tasmania (two pages) names the trail network; St Helens is known for mountain biking.)"
+  },
+  {
+   "name": "Little Penguins of Bicheno",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Only seen on an operator tour at night, seasonal; place and tour are hard to separate. (judge: Wikivoyage and Discover Tasmania both name the nightly penguin viewing; the penguin colony is the place.)"
+  },
+  {
+   "name": "Honeymoon Bay",
+   "views": 0,
+   "counted_sources": 3,
+   "verdict": "review",
+   "reason": "Small bay within Freycinet, a second-tier beach; reached by drive, short visit; name is ambiguous. (judge: Wikivoyage names it for snorkelling, diving and a campground; three counted sources but no coordinates and no Wikipedia article.)"
+  },
+  {
+   "name": "Freycinet Marine Farm",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "A farm gate shop with seating; mainly a venue to buy oysters. (judge: Wikivoyage and Discover Tasmania name the oyster farm outlet.)"
+  },
+  {
+   "name": "Melshell Oysters",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Mainly a food venue. (judge: Two Discover Tasmania pages name the oyster tasting venue.)"
+  },
+  {
+   "name": "Oyster Bay Tours",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Tour operator."
+  },
+  {
+   "name": "McHenry Distillery",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Distillery tastings (two sources)."
+  },
+  {
+   "name": "Old Hobart Town",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Small paid family attraction, not a headline draw. (judge: Two sources name the miniature model village.)"
+  },
+  {
+   "name": "Pooseum",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "A quirky paid family venue; reasonable shop-like. (judge: Two sources name the quirky museum.)"
+  },
+  {
+   "name": "Richmond Maze",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "A paid family attraction. (judge: Two sources name the hedge maze (Wikivoyage 'worthy of a visit').)"
+  }
+ ],
+ "review_for_owner": [
+  {
+   "name": "Isle of the Dead (Port Arthur)",
+   "views": 0,
+   "counted_sources": 2,
+   "case_against": "Entry is only on a guided boat tour from the Port Arthur site, which a visitor may not book; overlaps the Port Arthur experience.",
+   "judge": "Wikivoyage and Discover Tasmania name it; a distinct draw but reachable only on a paid escorted tour."
+  },
+  {
+   "name": "Tasman Island",
+   "views": 3966,
+   "counted_sources": 2,
+   "case_against": "Seen only from the water or from distant lookouts, so a visitor cannot do half an hour there themselves; the cruise is the operator's product.",
+   "judge": "Tasman Island is the place (Tasman NP's dolerite cliffs; Wikivoyage, Discover Tasmania) but it cannot be landed and is seen on a cruise or from Cape Hauy."
+  },
+  {
+   "name": "Officers Quarters Museum",
+   "views": 0,
+   "counted_sources": 1,
+   "case_against": "One source, short visit, small museum; may be folded into the Dog Line story only.",
+   "judge": "Small museum at the Dog Line (Eaglehawk Neck Historic Site) named in Wikivoyage's See."
+  },
+  {
+   "name": "Pirates Bay Lookout",
+   "views": 0,
+   "counted_sources": 1,
+   "case_against": "A roadside lookout with one source and a ten-minute stay; Tessellated Pavement is the real draw there.",
+   "judge": "Wikivoyage names the easy viewpoint over Pirates Bay and the Tessellated Pavement on the Arthur Highway."
+  },
+  {
+   "name": "Martin Cash's Lookout",
+   "views": 0,
+   "counted_sources": 1,
+   "case_against": "One source, a long winding road for a view; rarely visited.",
+   "judge": "Wikivoyage lists a lookout with peninsula views, reached by a long road."
+  },
+  {
+   "name": "Maingon Blowhole",
+   "views": 0,
+   "counted_sources": 1,
+   "case_against": "One source; steep slippery track; two other blowholes are listed in the same area, a near-duplicate.",
+   "judge": "Wikivoyage lists it as a one-hour return walk to a blowhole."
+  },
+  {
+   "name": "Dunalley",
+   "views": 8159,
+   "counted_sources": 1,
+   "case_against": "A pass-through village with no sight of its own; Dunalley Bay Distillery and Bangor are shops.",
+   "judge": "Wikivoyage calls Dunalley the gateway to the Tasman Peninsula; a small town with a bakery and a hotel."
+  },
+  {
+   "name": "Primrose Sands",
+   "views": 2332,
+   "counted_sources": 1,
+   "case_against": "One source, a shack beach village with no distinct sight.",
+   "judge": "Wikivoyage names it among the best small beaches of the Southern Beaches."
+  },
+  {
+   "name": "Dodges Ferry",
+   "views": 4812,
+   "counted_sources": 1,
+   "case_against": "One source; a suburb-like holiday town; other beach towns are near-duplicates.",
+   "judge": "Wikivoyage names a beach at the regional centre of the Southern Beaches."
+  },
+  {
+   "name": "Stumpys Bay",
+   "views": 0,
+   "counted_sources": 1,
+   "case_against": "One source; remote campground; may be part of Mount William NP.",
+   "judge": "Discover Tasmania names Stumpys Bay as the start of coastal heath walks in Mount William NP."
+  },
+  {
+   "name": "St Helens Mountain Bike Trails",
+   "views": 0,
+   "counted_sources": 2,
+   "case_against": "A network, not a single place; the Bay of Fires trail is a 42 km ride.",
+   "judge": "Discover Tasmania (two pages) names the trail network; St Helens is known for mountain biking."
+  },
+  {
+   "name": "Beerbarrel Beach",
+   "views": 0,
+   "counted_sources": 1,
+   "case_against": "One source, part of St Helens Point Conservation Area.",
+   "judge": "Discover Tasmania names a remote beach one hour's walk away."
+  },
+  {
+   "name": "Scamander",
+   "views": 4595,
+   "counted_sources": 1,
+   "case_against": "One source; a small pass-through town with no named sight.",
+   "judge": "Wikivoyage names the coastal town as a stop between Bicheno and St Helens."
+  },
+  {
+   "name": "Little Penguins of Bicheno",
+   "views": 0,
+   "counted_sources": 2,
+   "case_against": "Only seen on an operator tour at night, seasonal; place and tour are hard to separate.",
+   "judge": "Wikivoyage and Discover Tasmania both name the nightly penguin viewing; the penguin colony is the place."
+  },
+  {
+   "name": "Diamond Island",
+   "views": 703,
+   "counted_sources": 1,
+   "case_against": "One source, tide-dependent, near-duplicate of Bicheno waterfront walk.",
+   "judge": "Wikivoyage names the island reached on foot at low tide with a penguin sanctuary."
+  },
+  {
+   "name": "Whalers' Lookout",
+   "views": 0,
+   "counted_sources": 1,
+   "case_against": "One source; a lookout, short stay.",
+   "judge": "Wikivoyage names the short walk to a lookout above Bicheno."
+  },
+  {
+   "name": "Apsley Gorge",
+   "views": 0,
+   "counted_sources": 1,
+   "case_against": "One source and a long loop within the national park.",
+   "judge": "Discover Tasmania names a 4-5 hour loop to a gorge."
+  },
+  {
+   "name": "The Hazards",
+   "views": 2893,
+   "counted_sources": 2,
+   "case_against": "Part of a larger spot (Freycinet); the Wineglass Bay Lookout walk is the real activity.",
+   "judge": "Pink granite range named by Wikivoyage and Parks Tasmania, but it is a viewed feature within Freycinet National Park."
+  },
+  {
+   "name": "Honeymoon Bay",
+   "views": 0,
+   "counted_sources": 3,
+   "case_against": "Small bay within Freycinet, a second-tier beach; reached by drive, short visit; name is ambiguous.",
+   "judge": "Wikivoyage names it for snorkelling, diving and a campground; three counted sources but no coordinates and no Wikipedia article."
+  },
+  {
+   "name": "Sleepy Bay",
+   "views": 0,
+   "counted_sources": 1,
+   "case_against": "One source, close to Cape Tourville.",
+   "judge": "Wikivoyage names the short walk to the snorkel bay."
+  },
+  {
+   "name": "Hazards Beach",
+   "views": 0,
+   "counted_sources": 1,
+   "case_against": "One source, part of a larger circuit.",
+   "judge": "Wikivoyage names the beach as part of the 4 to 8 hour Wineglass circuit."
+  },
+  {
+   "name": "Coles Bay",
+   "views": 4830,
+   "counted_sources": 2,
+   "case_against": "Town itself is not a draw beyond services; wrapper for Freycinet National Park.",
+   "judge": "Wikivoyage/Discover Tasmania cover it, but it is the service town at Freycinet's gate (cafes, shops, tavern); the park is the draw."
+  },
+  {
+   "name": "Freycinet Marine Farm",
+   "views": 0,
+   "counted_sources": 2,
+   "case_against": "A farm gate shop with seating; mainly a venue to buy oysters.",
+   "judge": "Wikivoyage and Discover Tasmania name the oyster farm outlet."
+  },
+  {
+   "name": "Melshell Oysters",
+   "views": 0,
+   "counted_sources": 2,
+   "case_against": "Mainly a food venue.",
+   "judge": "Two Discover Tasmania pages name the oyster tasting venue."
+  },
+  {
+   "name": "East Coast Heritage Museum",
+   "views": 0,
+   "counted_sources": 1,
+   "case_against": "One source; a small community museum.",
+   "judge": "Wikivoyage names the local museum in Swansea open daily."
+  },
+  {
+   "name": "Orford",
+   "views": 3922,
+   "counted_sources": 2,
+   "case_against": "No specific attraction found beyond a river walk and beach; base for Maria Island.",
+   "judge": "Holiday village at the Prosser River mouth and start of the Great Eastern Drive; two Discover Tasmania pages name it."
+  },
+  {
+   "name": "Paradise Probation Station",
+   "views": 0,
+   "counted_sources": 1,
+   "case_against": "One source; ruins with little to see.",
+   "judge": "Discover Tasmania names the convict ruins on a road from Orford."
+  },
+  {
+   "name": "Callington Mill",
+   "views": 1663,
+   "counted_sources": 1,
+   "case_against": "One source; a distillery tasting venue.",
+   "judge": "Discover Tasmania names the 1837 windmill and distillery."
+  },
+  {
+   "name": "Lake Dulverton",
+   "views": 833,
+   "counted_sources": 1,
+   "case_against": "One source; local lake.",
+   "judge": "Discover Tasmania names the lake with cow sculptures and a walk."
+  },
+  {
+   "name": "Ross Female Factory",
+   "views": 1554,
+   "counted_sources": 1,
+   "case_against": "One source and a short visit; ruins with little standing.",
+   "judge": "Wikivoyage names the site in Ross; open to the public."
+  },
+  {
+   "name": "Tasmanian Wool Centre Museum",
+   "views": 0,
+   "counted_sources": 1,
+   "case_against": "One source; small museum.",
+   "judge": "Wikivoyage names the museum; open daily."
+  },
+  {
+   "name": "Campbell Town",
+   "views": 6981,
+   "counted_sources": 2,
+   "case_against": "Mostly a highway rest stop; museum open Mon-Fri 10-3 only; the Agricultural Show is an event.",
+   "judge": "Wikivoyage lists a local-history museum and Red Bridge park; Heritage Highway stop. Arguable 30 min stop."
+  },
+  {
+   "name": "Old Hobart Town",
+   "views": 0,
+   "counted_sources": 2,
+   "case_against": "Small paid family attraction, not a headline draw.",
+   "judge": "Two sources name the miniature model village."
+  },
+  {
+   "name": "Pooseum",
+   "views": 0,
+   "counted_sources": 2,
+   "case_against": "A quirky paid family venue; reasonable shop-like.",
+   "judge": "Two sources name the quirky museum."
+  },
+  {
+   "name": "Richmond Maze",
+   "views": 0,
+   "counted_sources": 2,
+   "case_against": "A paid family attraction.",
+   "judge": "Two sources name the hedge maze (Wikivoyage 'worthy of a visit')."
+  }
+ ],
+ "strongest_outsiders": [
+  {
+   "name": "Maria Island National Park",
+   "views": 18274,
+   "note": "Four kept places cluster here (park, Darlington, Fossil Cliffs, Painted Cliffs) but the park is the base itself, leaving three spots; three never make a destination and Maria Island is rank 3 at best, so all four stand alone. Owner option: propose Maria Island as an island destination (name_evidence: Wikivoyage 'Maria Island National Park', Parks Tasmania, Discover Tasmania) with the other three as its spots."
+  },
+  {
+   "name": "Richmond",
+   "views": 10708,
+   "note": "Day trip from Hobart, 25 km out, and not near any destination of this region. Filed under Hobart by travellers: if hobart-southeast's Hobart span is widened to reach it, Richmond, Richmond Bridge and Richmond Gaol become Hobart spots (coordinator to reconcile)."
+  },
+  {
+   "name": "Oatlands",
+   "views": 9197,
+   "note": "Heritage Highway village; no destination near it."
+  },
+  {
+   "name": "Ross",
+   "views": 8117,
+   "note": "Heritage Highway village; no destination near it. Ross Bridge is kept beside the town because it is a separate attraction."
+  }
+ ],
+ "benchmark": {
+  "applicable": "none of the NZ benchmark places lie in this region",
+  "negatives": "Tasman Peninsula reached by cruise/tour operators (Port Arthur Ghost Tour, Oyster Bay Tours, Tasman Island cruise) rejected or reviewed as operators; Pirates Bay lookout, Martin Cash's Lookout reviewed as short stops; gateway towns (Dunalley, Orford, Coles Bay) sent to review not kept"
+ }
+}

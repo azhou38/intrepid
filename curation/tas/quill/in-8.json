@@ -1,0 +1,454 @@
+[
+ {
+  "id": "west-coast-tasmania-1",
+  "name": "Sarah Island",
+  "wiki": "Sarah Island (Tasmania)",
+  "destination": "west-coast-tasmania",
+  "category": "historic",
+  "icon": "🏝️",
+  "bio": "The ruins of an 1822 convict penal station on a Macquarie Harbour island, visited on a cruise from Strahan.",
+  "coordinates": {
+   "latitude": -42.388391,
+   "longitude": 145.447847
+  },
+  "coordinates_source": "resolve-pin HIGH: photon place=islet 'Sarah Island' within 100 m of Wikipedia (Macquarie Harbour Penal Station)",
+  "coordinates_confidence": "HIGH",
+  "reason": "Macquarie Harbour island reached by cruise from Strahan; inside the West Coast span and reached from that base.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 1,
+  "visitHoursMax": 2.5
+ },
+ {
+  "id": "west-coast-tasmania-2",
+  "name": "Gordon River",
+  "wiki": "Gordon River (Tasmania)",
+  "destination": "west-coast-tasmania",
+  "category": "nature",
+  "icon": "🛶",
+  "bio": "A rainforest river in Franklin-Gordon Wild Rivers National Park, visited by cruise from Strahan.",
+  "coordinates": null,
+  "coordinates_source": "none: resolve-pin found no feature. Pin should be the cruise landing (Heritage Landing) from the operator or Parks Tasmania; Wikipedia gives no usable point",
+  "coordinates_confidence": "none",
+  "reason": "Reached only by river cruise from Strahan (Wikivoyage Strahan), so it is a spot of the West Coast base, not of Franklin-Gordon Wild Rivers National Park, which it lies in.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl",
+   "coordinates"
+  ],
+  "visitHoursMin": 3,
+  "visitHoursMax": 6
+ },
+ {
+  "id": "west-coast-tasmania-3",
+  "name": "Strahan",
+  "wiki": "Strahan, Tasmania",
+  "destination": "west-coast-tasmania",
+  "category": "historic",
+  "icon": "⚓",
+  "bio": "A Macquarie Harbour fishing port with a historic waterfront and foreshore walk, the base for Gordon River cruises.",
+  "coordinates": {
+   "latitude": -42.152893,
+   "longitude": 145.335081
+  },
+  "coordinates_source": "resolve-pin LOW; point is Strahan Historic Foreshore Walking Track (photon highway=footway) on the waterfront; Wikipedia town point (-42.15,145.3167) is the town centre. Pipeline C to confirm a waterfront point",
+  "coordinates_confidence": "LOW",
+  "reason": "The town itself is a draw (waterfront, foreshore walk, Regatta Point); kept as a spot because the destination is the West Coast region, not the town. Its cruises and railway are not listed beside it as vehicles.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 1,
+  "visitHoursMax": 3
+ },
+ {
+  "id": "west-coast-tasmania-4",
+  "name": "Queenstown",
+  "wiki": "Queenstown, Tasmania",
+  "destination": "west-coast-tasmania",
+  "category": "historic",
+  "icon": "🏔️",
+  "bio": "A former copper-mining town ringed by bare mined hills, with a historic main street and mine tours.",
+  "coordinates": {
+   "latitude": -42.080124,
+   "longitude": 145.555384
+  },
+  "coordinates_source": "resolve-pin HIGH: photon place=town 'Queenstown' agrees with Wikipedia; town centre point, acceptable for a town spot",
+  "coordinates_confidence": "HIGH",
+  "reason": "The town has several open attractions of its own and a historic main street; reached on the Lyell Highway within the West Coast span (about 16 km from Iron Blow Lookout).",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 1,
+  "visitHoursMax": 3
+ },
+ {
+  "id": "west-coast-tasmania-5",
+  "name": "Ocean Beach",
+  "wiki": "Ocean Beach, Tasmania",
+  "destination": "west-coast-tasmania",
+  "category": "beach",
+  "icon": "🏖️",
+  "bio": "A 40 km surf beach of huge dunes and Southern Ocean swell north-west of Strahan, with dangerous swimming.",
+  "coordinates": {
+   "latitude": -42.092286,
+   "longitude": 145.268045
+  },
+  "coordinates_source": "resolve-pin LOW: photon leisure=nature_reserve 'Ocean Beach Conservation Area'; no natural=beach feature returned. Needs OSM beach or the access car park confirmed",
+  "coordinates_confidence": "LOW",
+  "reason": "A 40 km surf beach reached by road from Strahan, inside the West Coast span.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5
+ },
+ {
+  "id": "west-coast-tasmania-6",
+  "name": "Montezuma Falls",
+  "wiki": "Montezuma Falls",
+  "destination": "west-coast-tasmania",
+  "category": "hike",
+  "icon": "💧",
+  "bio": "Tasmania's highest waterfall at over 104 m, reached by an 11.5 km return walk along an old tramway.",
+  "coordinates": {
+   "latitude": -41.838851,
+   "longitude": 145.476744
+  },
+  "coordinates_source": "resolve-pin HIGH: photon waterway=waterfall 'Montezuma Falls' near Wikipedia point",
+  "coordinates_confidence": "HIGH",
+  "reason": "Reached from Zeehan/Rosebery on the old tramway walk, inside the West Coast span.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 3,
+  "visitHoursMax": 4.5
+ },
+ {
+  "id": "west-coast-tasmania-7",
+  "name": "Iron Blow Lookout",
+  "wiki": "Iron Blow",
+  "destination": "west-coast-tasmania",
+  "category": "viewpoint",
+  "icon": "🔭",
+  "bio": "A lookout over the Iron Blow, the huge mine pit above Queenstown where the area's mining began.",
+  "coordinates": {
+   "latitude": -42.069167,
+   "longitude": 145.58955
+  },
+  "coordinates_source": "resolve-pin HIGH: photon tourism=viewpoint 'Iron Blow Lookout' within 100 m of Wikipedia",
+  "coordinates_confidence": "HIGH",
+  "reason": "A short roadside viewpoint above Queenstown, reached from there.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 0,
+  "visitHoursMax": 0.5
+ },
+ {
+  "id": "west-coast-tasmania-8",
+  "name": "Zeehan",
+  "wiki": "Zeehan",
+  "destination": "west-coast-tasmania",
+  "category": "historic",
+  "icon": "🏛️",
+  "bio": "A former silver-mining boomtown whose single main street keeps many of its civic and heritage buildings.",
+  "coordinates": {
+   "latitude": -41.883943,
+   "longitude": 145.335727
+  },
+  "coordinates_source": "resolve-pin LOW: photon place=town 'Zeehan' (town centre)",
+  "coordinates_confidence": "LOW",
+  "reason": "A one-street silver-mining town with a surviving heritage streetscape; kept beside its museum because the streetscape is a draw the museum does not cover (as Eden's waterfront). Within the West Coast span (about 25 km from Strahan).",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5
+ },
+ {
+  "id": "west-coast-tasmania-9",
+  "name": "West Coast Heritage Centre",
+  "wiki": null,
+  "destination": "west-coast-tasmania",
+  "category": "museum",
+  "icon": "🏛️",
+  "bio": "A small museum on Zeehan's Main Street about life on Tasmania's West Coast in the early 20th century.",
+  "coordinates": {
+   "latitude": -41.882051,
+   "longitude": 145.335865
+  },
+  "coordinates_source": "resolve-pin HIGH: photon tourism=museum 'West Coast Heritage Centre'",
+  "coordinates_confidence": "HIGH",
+  "reason": "Small Zeehan museum; one source only and low views (324), kept by the merged skeptic.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5
+ },
+ {
+  "id": "west-coast-tasmania-10",
+  "name": "Hogarth Falls",
+  "wiki": "Hogarth Falls",
+  "destination": "west-coast-tasmania",
+  "category": "nature",
+  "icon": "💧",
+  "bio": "A small cascade reached by a 30-minute rainforest walk from People's Park at the north end of Strahan Harbour.",
+  "coordinates": {
+   "latitude": -42.153642,
+   "longitude": 145.349399
+  },
+  "coordinates_source": "resolve-pin HIGH: photon waterway=waterfall 'Hogarth Falls'; People's Park folded in",
+  "coordinates_confidence": "HIGH",
+  "reason": "A short walk from Strahan's People's Park.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5
+ },
+ {
+  "id": "franklin-gordon-wild-rivers-1",
+  "name": "Nelson Falls",
+  "wiki": "Nelson Falls",
+  "destination": "franklin-gordon-wild-rivers",
+  "category": "nature",
+  "icon": "💧",
+  "bio": "A roughly 30 m waterfall on the Nelson River, reached by a short boardwalk walk off the Lyell Highway.",
+  "coordinates": {
+   "latitude": -42.09989,
+   "longitude": 145.73737
+  },
+  "coordinates_source": "resolve-pin LOW (single photon waterway=waterfall 'Nelson Falls', 1.4 km from the footway; waterfall is a precise feature type: treat as MEDIUM pending confirmation)",
+  "coordinates_confidence": "LOW",
+  "reason": "Named by Wikivoyage as the main draw of Franklin-Gordon Wild Rivers National Park; a short boardwalk walk off the Lyell Highway, so it belongs to the park, not to West Coast.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1
+ },
+ {
+  "id": "franklin-gordon-wild-rivers-2",
+  "name": "Frenchmans Cap Track",
+  "wiki": "Frenchmans Cap",
+  "destination": "franklin-gordon-wild-rivers",
+  "category": "hike",
+  "icon": "🥾",
+  "bio": "A hard 3-5 day walk from the Lyell Highway to the white quartzite summit of Frenchmans Cap.",
+  "coordinates": {
+   "latitude": -42.2086549,
+   "longitude": 145.9807556
+  },
+  "coordinates_source": "photon amenity=parking 'Frenchmans Cap Carpark': TRAILHEAD only. Trail rule needs the route midpoint, to be taken from the agency route map in Pipeline C",
+  "coordinates_confidence": "LOW (trailhead, not midpoint)",
+  "reason": "Multi-day walk from the Lyell Highway to Frenchmans Cap, inside the park.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 72,
+  "visitHoursMax": 120
+ },
+ {
+  "id": "franklin-gordon-wild-rivers-3",
+  "name": "Donaghys Hill Lookout",
+  "wiki": "Donaghys Hill",
+  "destination": "franklin-gordon-wild-rivers",
+  "category": "viewpoint",
+  "icon": "🔭",
+  "bio": "A 30-40 minute return walk to a wilderness lookout over the Franklin River Valley.",
+  "coordinates": {
+   "latitude": -42.196207,
+   "longitude": 145.933863
+  },
+  "coordinates_source": "resolve-pin LOW: photon tourism=viewpoint 'Donaghys Lookout' (single precise feature of the right type)",
+  "coordinates_confidence": "LOW",
+  "reason": "A 30-40 minute return walk off the Lyell Highway into the park.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5
+ },
+ {
+  "id": "franklin-gordon-wild-rivers-4",
+  "name": "Franklin River",
+  "wiki": "Franklin River",
+  "destination": "franklin-gordon-wild-rivers",
+  "category": "nature",
+  "icon": "🛶",
+  "bio": "A wild river in the World Heritage area, famed for guided multi-day rafting expeditions through its gorges.",
+  "coordinates": null,
+  "coordinates_source": "none: no feature found by resolve-pin; Wikipedia -42.59,145.74 is a river point far south of the road. Pin at the Lyell Highway crossing from Parks Tasmania, to be found in Pipeline C",
+  "coordinates_confidence": "none",
+  "reason": "Visited mainly on guided 8-9 day rafting expeditions; place it at the Lyell Highway crossing where non-rafters reach it.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl",
+   "coordinates"
+  ],
+  "visitHoursMin": 0.25,
+  "visitHoursMax": 0.5
+ },
+ {
+  "id": "southwest-national-park-1",
+  "name": "Gordon Dam",
+  "wiki": "Gordon Dam",
+  "destination": "southwest-national-park",
+  "category": "landmark",
+  "icon": "🏗️",
+  "bio": "A 140 m-high arch dam at Strathgordon with a lookout over Lake Gordon and the Gordon River gorge.",
+  "coordinates": {
+   "latitude": -42.73161,
+   "longitude": 145.977702
+  },
+  "coordinates_source": "resolve-pin LOW: photon tourism=viewpoint 'Gordon Dam Lookout' (single precise feature, pin on the lookout)",
+  "coordinates_confidence": "LOW",
+  "reason": "At Strathgordon at the end of the Gordon River Road, inside Southwest NP's span (about 19 km from the park centre).",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5
+ },
+ {
+  "id": "southwest-national-park-2",
+  "name": "Lake Pedder",
+  "wiki": "Lake Pedder",
+  "destination": "southwest-national-park",
+  "category": "nature",
+  "icon": "🏞️",
+  "bio": "A large lake in the Southwest National Park with a lodge on its shore, viewed from lookouts and by boat.",
+  "coordinates": {
+   "latitude": -42.9030879,
+   "longitude": 146.0879855
+  },
+  "coordinates_source": "photon water=reservoir 'Lake Pedder' (waterbody centroid, not a visitor point). Visitor lookout/Scotts Peak Dam point to be confirmed in Pipeline C",
+  "coordinates_confidence": "LOW (centroid)",
+  "reason": "Reached by the Gordon River Road and Scotts Peak Road within Southwest NP.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 2
+ },
+ {
+  "id": "southwest-national-park-3",
+  "name": "South Coast Track",
+  "wiki": "South Coast Track",
+  "destination": "southwest-national-park",
+  "category": "hike",
+  "icon": "🥾",
+  "bio": "An 85 km coastal walk through the park's wild south coast, usually six to eight days one way.",
+  "coordinates": {
+   "latitude": -43.423741,
+   "longitude": 146.162066
+  },
+  "coordinates_source": "resolve-pin LOW: photon highway=path 'South Coast Track' (one segment of the route; not a computed midpoint). Take the route midpoint from Parks Tasmania in Pipeline C",
+  "coordinates_confidence": "LOW",
+  "reason": "An 85 km walk between Melaleuca and Cockle Creek inside Southwest NP; owner of this track is this region.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 144,
+  "visitHoursMax": 192
+ },
+ {
+  "id": "wall-in-the-wilderness",
+  "name": "The Wall in the Wilderness",
+  "wiki": "The Wall in the Wilderness",
+  "destination": null,
+  "category": "entertainment",
+  "icon": "🪵",
+  "bio": "A roughly 100 m wall of carved Huon pine panels at Derwent Bridge telling the region's history.",
+  "coordinates": {
+   "latitude": -42.1255407,
+   "longitude": 146.2484405
+  },
+  "coordinates_source": "photon tourism=attraction 'The Wall in the Wilderness', Derwent Bridge (single source)",
+  "coordinates_confidence": "MEDIUM",
+  "reason": "At Derwent Bridge on the Lyell Highway, 7 km east of Lake St Clair; reached from the highway, not from a base. Within about 37 km of the Franklin-Gordon proposed centre but outside its span (45 km): it lies in the Central Highlands on the other side of the Cradle-Lake St Clair park, and Derwent Bridge village is dropped as a wrapper.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5
+ },
+ {
+  "id": "arthur-pieman-conservation-area",
+  "name": "Arthur-Pieman Conservation Area",
+  "wiki": "Arthur-Pieman Conservation Area",
+  "destination": null,
+  "category": "nature",
+  "icon": "🌊",
+  "bio": "A wild coastal area at the Tarkine's west end, with long beaches, 4WD tracks and the Edge of the World.",
+  "coordinates": null,
+  "coordinates_source": "resolve-pin.py found no feature; take the managing agency's point (route midpoint for a track, entrance or car park otherwise)",
+  "coordinates_confidence": "LOW",
+  "reason": "About 70 km from Stanley and far from every destination; two kept places (with Edge of the World) so it stays standalone.",
+  "needs_research": [
+   "coordinates",
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": null,
+  "visitHoursMax": null
+ },
+ {
+  "id": "edge-of-the-world",
+  "name": "Edge of the World",
+  "wiki": null,
+  "destination": null,
+  "category": "viewpoint",
+  "icon": "🌅",
+  "bio": "The coastal cliffs at the far western edge of Tasmania, a stop on the Tarkine drive.",
+  "coordinates": null,
+  "coordinates_source": "resolve-pin.py found no feature; take the managing agency's point (route midpoint for a track, entrance or car park otherwise)",
+  "coordinates_confidence": "LOW",
+  "reason": "Inside Arthur-Pieman, 70 km from Stanley; standalone.",
+  "needs_research": [
+   "coordinates",
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 0,
+  "visitHoursMax": 0.5
+ }
+]

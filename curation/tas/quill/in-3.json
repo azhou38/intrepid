@@ -1,0 +1,481 @@
+[
+ {
+  "id": "tasman-peninsula-1",
+  "name": "Port Arthur Historic Site",
+  "wiki": "Port Arthur Historic Site",
+  "destination": "tasman-peninsula",
+  "category": "historic",
+  "icon": "⛓️",
+  "bio": "World Heritage convict penitentiary and village ruins at the head of the Tasman Peninsula, the area's main attraction.",
+  "coordinates": {
+   "lat": -43.147312,
+   "lng": 147.847403
+  },
+  "coordinates_source": "OSM tourism=attraction (Photon) 'Port Arthur Historic Site'; Commons geotag median 210 m away",
+  "coordinates_confidence": null,
+  "reason": "Core headline attraction of the Tasman Peninsula, inside the span, 10 km from the proposed centre.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 2,
+  "visitHoursMax": 5
+ },
+ {
+  "id": "tasman-peninsula-2",
+  "name": "Three Capes Track",
+  "wiki": "Three Capes Track",
+  "destination": "tasman-peninsula",
+  "category": "hike",
+  "icon": "🥾",
+  "bio": "About 48 km multi-day coastal walk from Port Arthur to Fortescue Bay along the peninsula's sea cliffs; passes booked ahead.",
+  "coordinates": null,
+  "coordinates_source": "resolve-pin.py found no OSM feature (LOW); take the managing agency's point",
+  "coordinates_confidence": null,
+  "reason": "Track is on the peninsula; pinned at route midpoint once the agency route is checked.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl",
+   "coordinates"
+  ],
+  "visitHoursMin": 24,
+  "visitHoursMax": 72
+ },
+ {
+  "id": "tasman-peninsula-3",
+  "name": "Cape Hauy",
+  "wiki": "Cape Hauy",
+  "destination": "tasman-peninsula",
+  "category": "hike",
+  "icon": "🥾",
+  "bio": "Sea-cliff cape of dolerite spires reached by a day walk from Fortescue Bay, one of the Three Capes Track's highlights.",
+  "coordinates": {
+   "lat": -43.138876,
+   "lng": 148.005097
+  },
+  "coordinates_source": "OSM natural=cape (Photon) 'Cape Hauy'; Commons geotag median 70 m away",
+  "coordinates_confidence": null,
+  "reason": "Tasman National Park walk from Fortescue Bay on the peninsula.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 3,
+  "visitHoursMax": 5
+ },
+ {
+  "id": "tasman-peninsula-4",
+  "name": "Cape Raoul",
+  "wiki": "Cape Raoul",
+  "destination": "tasman-peninsula",
+  "category": "hike",
+  "icon": "🥾",
+  "bio": "Sea-cliff cape in Tasman National Park with a lookout at the end of a 14 km return track of about five hours.",
+  "coordinates": {
+   "lat": -43.239463,
+   "lng": 147.796613
+  },
+  "coordinates_source": "OSM tourism=viewpoint 'Cape Lookout' (Photon); Commons geotag median 50 m away",
+  "coordinates_confidence": null,
+  "reason": "Peninsula walk, 15 km from the Port Arthur centre.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 4,
+  "visitHoursMax": 6
+ },
+ {
+  "id": "tasman-peninsula-5",
+  "name": "Cape Pillar",
+  "wiki": "Cape Pillar",
+  "destination": "tasman-peninsula",
+  "category": "hike",
+  "icon": "🥾",
+  "bio": "Sea-cliff cape reached on the middle days of the Three Capes Track, past the Blade rock formation.",
+  "coordinates": null,
+  "coordinates_source": "resolve-pin.py found no OSM feature (LOW); take the managing agency's point",
+  "coordinates_confidence": null,
+  "reason": "On the peninsula's Three Capes Track.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl",
+   "coordinates"
+  ],
+  "visitHoursMin": 6,
+  "visitHoursMax": 10
+ },
+ {
+  "id": "tasman-peninsula-6",
+  "name": "Tasman National Park",
+  "wiki": "Tasman National Park",
+  "destination": "tasman-peninsula",
+  "category": "nature",
+  "icon": "🏞️",
+  "bio": "National park protecting the peninsula's sea cliffs, arches, caves and capes, with the Three Capes Track.",
+  "coordinates": null,
+  "coordinates_source": "resolve-pin.py found no OSM feature (LOW); take the managing agency's point",
+  "coordinates_confidence": null,
+  "reason": "Kept by the skeptic as a park entry. A park is normally a destination, but the region destination Tasman Peninsula covers it and the capes, so the park sits as a spot of that region (overlapping destinations are not allowed). Flagged for the owner.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl",
+   "coordinates"
+  ],
+  "visitHoursMin": 2,
+  "visitHoursMax": 6
+ },
+ {
+  "id": "tasman-peninsula-7",
+  "name": "Tessellated Pavement",
+  "wiki": "Tessellated Pavement",
+  "destination": "tasman-peninsula",
+  "category": "nature",
+  "icon": "🪨",
+  "bio": "Flat shore platform split into block-like sections by the sea, at the northern end of Pirates Bay.",
+  "coordinates": {
+   "lat": -43.008919,
+   "lng": 147.932554
+  },
+  "coordinates_source": "OSM tourism=attraction (Photon) 'Tessallated Pavement'; Commons geotag median 20 m away",
+  "coordinates_confidence": null,
+  "reason": "Eaglehawk Neck, on the peninsula's approach road.",
+  "needs_research": [
+   "hours",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 0.25,
+  "visitHoursMax": 0.75
+ },
+ {
+  "id": "tasman-peninsula-8",
+  "name": "Tasman Arch",
+  "wiki": "Tasman Arch",
+  "destination": "tasman-peninsula",
+  "category": "nature",
+  "icon": "🌉",
+  "bio": "Natural sea arch on the Tasman Sea coast near Eaglehawk Neck, reached by a short walk from a car park.",
+  "coordinates": {
+   "lat": -43.042126,
+   "lng": 147.950939
+  },
+  "coordinates_source": "OSM natural=arch (Photon); Commons geotag median 25 m away",
+  "coordinates_confidence": null,
+  "reason": "Eaglehawk Neck coast.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 0.25,
+  "visitHoursMax": 0.5
+ },
+ {
+  "id": "tasman-peninsula-9",
+  "name": "Devils Kitchen",
+  "wiki": "Devils Kitchen",
+  "destination": "tasman-peninsula",
+  "category": "nature",
+  "icon": "🌊",
+  "bio": "Sea-carved trench with a cliff-top lookout beside a car park, close to Tasman Arch.",
+  "coordinates": {
+   "lat": -43.044247,
+   "lng": 147.950111
+  },
+  "coordinates_source": "OSM tourism=attraction (Photon) 'Devils Kitchen'",
+  "coordinates_confidence": null,
+  "reason": "Eaglehawk Neck coast.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 0,
+  "visitHoursMax": 0.5
+ },
+ {
+  "id": "tasman-peninsula-10",
+  "name": "Tasman Blowhole",
+  "wiki": "Tasman Blowhole",
+  "destination": "tasman-peninsula",
+  "category": "nature",
+  "icon": "🌊",
+  "bio": "Coastal blowhole on Blowhole Road, a shorter stop than Maingon Blowhole on the same coast.",
+  "coordinates": {
+   "lat": -43.033907,
+   "lng": 147.94792
+  },
+  "coordinates_source": "OSM natural=blowhole (Photon) 'Tasman Blowhole'; Commons geotag median 1 km away",
+  "coordinates_confidence": null,
+  "reason": "Eaglehawk Neck coast.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 0,
+  "visitHoursMax": 0.5
+ },
+ {
+  "id": "tasman-peninsula-11",
+  "name": "Remarkable Cave",
+  "wiki": "Remarkable Cave",
+  "destination": "tasman-peninsula",
+  "category": "nature",
+  "icon": "🕳️",
+  "bio": "Sea cavern shaped like the outline of Tasmania, seen from a lookout a short walk from Maingon Bay Lookout.",
+  "coordinates": null,
+  "coordinates_source": "resolve-pin.py found no OSM feature (LOW); take the managing agency's point",
+  "coordinates_confidence": null,
+  "reason": "Tasman National Park coast.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl",
+   "coordinates"
+  ],
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1
+ },
+ {
+  "id": "tasman-peninsula-12",
+  "name": "Fortescue Bay",
+  "wiki": "Fortescue Bay",
+  "destination": "tasman-peninsula",
+  "category": "beach",
+  "icon": "🏖️",
+  "bio": "Sheltered white-sand bay and campground at the end of the road, popular for swimming and snorkelling.",
+  "coordinates": {
+   "lat": -43.130052,
+   "lng": 147.97019
+  },
+  "coordinates_source": "OSM natural=bay (Photon) 'Fortescue Bay'; bay centroid, beach feature not found",
+  "coordinates_confidence": null,
+  "reason": "Trailhead for Cape Hauy and Three Capes Track.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl",
+   "coordinates"
+  ],
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 2
+ },
+ {
+  "id": "tasman-peninsula-13",
+  "name": "Coal Mines Historic Site",
+  "wiki": "Coal Mines Historic Site",
+  "destination": "tasman-peninsula",
+  "category": "historic",
+  "icon": "🏚️",
+  "bio": "Ruins of an 1833 convict coal mine on the peninsula's north-east, World Heritage listed and free to visit.",
+  "coordinates": {
+   "lat": -42.983916,
+   "lng": 147.714738
+  },
+  "coordinates_source": "OSM leisure=nature_reserve (Photon) 'Coal Mines Historic Site' centroid; car park at -42.988033,147.714596",
+  "coordinates_confidence": null,
+  "reason": "22 km from the proposed centre, inside the span; reached by drive from Port Arthur.",
+  "needs_research": [
+   "hours",
+   "ticketUrl",
+   "coordinates"
+  ],
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1
+ },
+ {
+  "id": "tasman-peninsula-14",
+  "name": "Tasmanian Devil Unzoo",
+  "wiki": "Tasmanian Devil Unzoo",
+  "destination": "tasman-peninsula",
+  "category": "entertainment",
+  "icon": "🦘",
+  "bio": "Wildlife park at Taranna where free-roaming animals, including Tasmanian devils, can be seen and hand-fed.",
+  "coordinates": {
+   "lat": -43.060223,
+   "lng": 147.864149
+  },
+  "coordinates_source": "OSM tourism=attraction (Photon) 'Tasmanian Devil Unzoo'",
+  "coordinates_confidence": null,
+  "reason": "Taranna, on the peninsula.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 1,
+  "visitHoursMax": 2
+ },
+ {
+  "id": "tasman-peninsula-15",
+  "name": "Eaglehawk Neck",
+  "wiki": "Eaglehawk Neck, Tasmania",
+  "destination": "tasman-peninsula",
+  "category": "landmark",
+  "icon": "🏞️",
+  "bio": "Narrow isthmus at the peninsula's gateway, site of the convict dog line, beside several coastal sights.",
+  "coordinates": {
+   "lat": -43.017121,
+   "lng": 147.925445
+  },
+  "coordinates_source": "Photon place=hamlet 'Eaglehawk Neck'; Commons geotag median 1 km away (village point)",
+  "coordinates_confidence": null,
+  "reason": "Kept by the skeptic with the objection that Tessellated Pavement and Pirates Bay cover the draw; kept as the dog-line isthmus, listed last.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 0.25,
+  "visitHoursMax": 0.75
+ },
+ {
+  "id": "freycinet-1",
+  "name": "Wineglass Bay Lookout",
+  "wiki": null,
+  "destination": "freycinet",
+  "category": "viewpoint",
+  "icon": "👀",
+  "bio": "Lookout over Wineglass Bay on a well-formed walk from the car park, with the classic view of the bay.",
+  "coordinates": {
+   "lat": -42.154939,
+   "lng": 148.293573
+  },
+  "coordinates_source": "OSM tourism=viewpoint (Photon) 'Wineglass Bay Lookout'; Commons median 170 m away",
+  "coordinates_confidence": null,
+  "reason": "Inside the Freycinet destination, the park's headline walk.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 1,
+  "visitHoursMax": 2
+ },
+ {
+  "id": "freycinet-2",
+  "name": "Wineglass Bay",
+  "wiki": "Wineglass Bay",
+  "destination": "freycinet",
+  "category": "beach",
+  "icon": "🏖️",
+  "bio": "Crescent of white sand reached by a three-hour walk over the hills from the car park.",
+  "coordinates": {
+   "lat": -42.168107,
+   "lng": 148.305006
+  },
+  "coordinates_source": "OSM natural=bay (Photon) 'Wineglass Bay'; bay centroid, beach feature not found",
+  "coordinates_confidence": null,
+  "reason": "Beach inside Freycinet National Park; candidates.json had the park's coordinates, replaced.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl",
+   "coordinates"
+  ],
+  "visitHoursMin": 2,
+  "visitHoursMax": 4
+ },
+ {
+  "id": "freycinet-3",
+  "name": "Mount Amos",
+  "wiki": "Mount Amos",
+  "destination": "freycinet",
+  "category": "viewpoint",
+  "icon": "⛰️",
+  "bio": "Granite summit walk with views over Wineglass Bay, a medium-grade walk of two to four hours return.",
+  "coordinates": {
+   "lat": -42.152905,
+   "lng": 148.305258
+  },
+  "coordinates_source": "Commons geotag median (9 files); OSM peak not found",
+  "coordinates_confidence": null,
+  "reason": "Inside Freycinet.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl",
+   "coordinates"
+  ],
+  "visitHoursMin": 2,
+  "visitHoursMax": 4
+ },
+ {
+  "id": "freycinet-4",
+  "name": "Cape Tourville Lighthouse",
+  "wiki": "Cape Tourville Lighthouse",
+  "destination": "freycinet",
+  "category": "landmark",
+  "icon": "🏠",
+  "bio": "Lighthouse on a boardwalked cliff track at the end of a 6.4 km sealed road, with sweeping coastal views.",
+  "coordinates": {
+   "lat": -42.122711,
+   "lng": 148.342639
+  },
+  "coordinates_source": "OSM man_made=lighthouse (Photon); Commons median 57 m away",
+  "coordinates_confidence": null,
+  "reason": "Inside Freycinet.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1
+ },
+ {
+  "id": "freycinet-5",
+  "name": "Friendly Beaches",
+  "wiki": "Friendly Beaches",
+  "destination": "freycinet",
+  "category": "beach",
+  "icon": "🏖️",
+  "bio": "Long white-sand beaches on the park's north-east side, reached by gravel road and foot tracks.",
+  "coordinates": {
+   "lat": -41.9919,
+   "lng": 148.2513
+  },
+  "coordinates_source": "Wikipedia article 'Friendly Beaches' own coordinates (4 decimals, long beach); Commons median 3.8 km away",
+  "coordinates_confidence": null,
+  "reason": "Inside Freycinet NP, 15 km from the centre; reached from the Coles Bay road.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl",
+   "coordinates"
+  ],
+  "visitHoursMin": 1,
+  "visitHoursMax": 3
+ },
+ {
+  "id": "freycinet-6",
+  "name": "Swansea",
+  "wiki": "Swansea, Tasmania",
+  "destination": "freycinet",
+  "category": "landmark",
+  "icon": "🏘️",
+  "bio": "Seaside village on Great Oyster Bay facing the Hazards, with a local history museum and the coast's food and wine.",
+  "coordinates": {
+   "lat": -42.123644,
+   "lng": 148.076172
+  },
+  "coordinates_source": "Commons geotag median 10 files (town centre); Wikipedia match belongs to Wales",
+  "coordinates_confidence": null,
+  "reason": "Town spot: 18 km west of the Freycinet centre across Great Oyster Bay, inside the span and a common base for the park; 30 km from Bicheno, outside its span.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl",
+   "coordinates"
+  ],
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 2
+ }
+]

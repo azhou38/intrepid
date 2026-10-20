@@ -1,0 +1,131 @@
+{
+ "group": "tamar-valley",
+ "generated": "2026-10-20T15:57:10.607Z",
+ "slots": [
+  {
+   "slot": "dest:tamar-valley:header",
+   "key": "Tamar Valley",
+   "current": {
+    "file": "ext-tamar-valley.jpg",
+    "source": "imageOverrides.ts"
+   },
+   "status": "search",
+   "flags": [
+    "placeholder: no photo chosen yet"
+   ]
+  },
+  {
+   "slot": "dest:tamar-valley:why1",
+   "key": "File:ext-tamar-valley-1.jpg",
+   "current": {
+    "file": "ext-tamar-valley-1.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "search",
+   "flags": [
+    "placeholder: no photo chosen yet"
+   ]
+  },
+  {
+   "slot": "dest:tamar-valley:why2",
+   "key": "File:ext-tamar-valley-2.jpg",
+   "current": {
+    "file": "ext-tamar-valley-2.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "search",
+   "flags": [
+    "placeholder: no photo chosen yet"
+   ]
+  },
+  {
+   "slot": "dest:tamar-valley:why3",
+   "key": "File:ext-tamar-valley-3.jpg",
+   "current": {
+    "file": "ext-tamar-valley-3.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "search",
+   "flags": [
+    "placeholder: no photo chosen yet"
+   ]
+  },
+  {
+   "slot": "spot:tamar-valley-1",
+   "key": "Beaconsfield Mine & Heritage Centre",
+   "current": {
+    "file": "Beaconsfield mine.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "proof: 639 px wide (min 960)"
+   ]
+  },
+  {
+   "slot": "spot:tamar-valley-2",
+   "key": "Low Head Lighthouse",
+   "current": {
+    "file": "Low Head Lighthouse-NW.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:tamar-valley-3",
+   "key": "Platypus House",
+   "current": {
+    "file": "Duck-billed platypus (Ornithorhynchus anatinus) Scottsdale.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "geotag 54903 m from the pin: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:tamar-valley-4",
+   "key": "Seahorse World",
+   "current": {
+    "file": "Hippocampus hippocampus (on Ascophyllum nodosum).jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:tamar-valley-5",
+   "key": "Bass and Flinders Centre",
+   "current": {
+    "file": "Flinders island.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "proof: excluded category or title (map/drawing/historical/...)",
+    "proof: dated 1993"
+   ]
+  },
+  {
+   "slot": "spot:tamar-valley-6",
+   "key": "Brady's Lookout",
+   "current": {
+    "file": "William Strutt Bushrangers.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag; the spot name is not in the file text: a judge must look"
+   ]
+  }
+ ]
+}

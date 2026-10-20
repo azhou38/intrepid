@@ -1,0 +1,640 @@
+[
+ {
+  "id": "huon-valley-1",
+  "name": "Hartz Mountains National Park",
+  "coordinates": {
+   "lat": -43.196293,
+   "lng": 146.767655
+  },
+  "coordinates_source": "OpenStreetMap highway=path \"Waratah picnic area\" (way 687872189 midpoint), the Waratah Lookout entrance facilities named on the Parks page; replaces the park centroid. Overpass mirrors and overpass-api.de all timed out, so OSM data read through api.openstreetmap.org map bbox",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 3833,
+  "hours": "Open 24 hours (road can close in snow)",
+  "closedDays": null,
+  "visitHoursMin": 2,
+  "visitHoursMax": 5,
+  "costMin": 24.55,
+  "costMax": 49.15,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/hartz-mountains-national-park",
+  "blocked_url": null,
+  "bio": "An alpine plateau of glacial lakes, waterfalls and dolerite peaks, up a 10 km unsealed road off Arve Road.",
+  "unverified": [
+   "Parks pass cost is the 2026 24-hour list price (24.55 per person on foot/bus/cycle, 49.15 per vehicle up to 8 people)",
+   "Hours: no gate hours published; only the Huonville office hours (10am-4pm Mon-Fri)",
+   "Pin is the Waratah entrance facilities, not the road-end Hartz visitor shelter where the Hartz Peak and Lake Esperance walks start (about 2.3 km south)"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/hartz-mountains-national-park",
+   "https://parks.tas.gov.au/Pages/entry-fees.aspx",
+   "https://api.openstreetmap.org/api/0.6/map?bbox=146.72,-43.26,146.80,-43.19"
+  ]
+ },
+ {
+  "id": "huon-valley-2",
+  "name": "Tahune Forest AirWalk",
+  "coordinates": {
+   "lat": -43.095177,
+   "lng": 146.725693
+  },
+  "coordinates_source": "OpenStreetMap highway=path \"Tahune Air Walk\" (way 32382004, 460 m, midpoint); agrees within 45 m with the median of 14 geotagged Commons files (-43.095119,146.726119) and Photon",
+  "pin_confidence": "HIGH",
+  "moved_m": 36,
+  "hours": "10:00 AM – 4:00 PM daily (closed Christmas Day and in hazardous weather)",
+  "closedDays": null,
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "costMin": 35,
+  "costMax": 35,
+  "currency": "AUD",
+  "ticketUrl": "https://tahuneadventures.com.au/",
+  "blocked_url": null,
+  "bio": "A 600 m walkway through the forest canopy, ending in a cantilevered platform 50 m above the Huon River.",
+  "unverified": [
+   "Price is adult site entry (includes Airwalk, Huon Pine Walk, Swinging Bridges Track); hang glider and other adventures are extra",
+   "Last ticket sales time (3:55pm) is from a search summary of the FAQ page, not read directly"
+  ],
+  "sources": [
+   "https://tahuneadventures.com.au/",
+   "https://tahuneadventures.com.au/faq/",
+   "https://api.openstreetmap.org/api/0.6/map?bbox=146.70,-43.12,146.76,-43.07"
+  ]
+ },
+ {
+  "id": "huon-valley-3",
+  "name": "Hastings Caves",
+  "coordinates": {
+   "lat": -43.413068,
+   "lng": 146.873954
+  },
+  "coordinates_source": "OpenStreetMap tourism=information \"Hastings Visitor center\" (node), the Hastings Caves and Thermal Springs visitor centre where tickets are bought (754 Hastings Caves Road per the Parks page); the Newdegate Cave entrance is a further 5 km along the road (-43.380696,146.843453, natural=cave_entrance). Overpass mirrors and overpass-api.de all timed out, so OSM data read through api.openstreetmap.org map bbox",
+  "pin_confidence": "MEDIUM",
+  "moved_m": null,
+  "moved_m_note": "no input point (input coordinates null)",
+  "hours": "10:00 AM – 4:00 PM (cave tours hourly 11am-3pm; 9am-5pm with tours to 4pm from 26 Dec to 9 Feb; closed Christmas Day)",
+  "closedDays": null,
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "costMin": 8,
+  "costMax": 32,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/hastings-caves-state-reserve/hastings-caves-and-thermal-springs",
+  "blocked_url": null,
+  "bio": "Guided tours of Newdegate Cave, Australia's largest dolomite tourist cave, plus a 28 °C thermal spring pool.",
+  "unverified": [
+   "Cost: $8 adult thermal pool only; $32 adult cave tour (includes the pool). No parks pass needed. Prices as listed 2026",
+   "Current-season times (10 Feb-24 Dec) used; peak-season times differ",
+   "The input had no point; this is the visitor centre, not the cave entrance"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/hastings-caves-state-reserve/hastings-caves-and-thermal-springs",
+   "https://parks.tas.gov.au/explore-our-parks/hastings-caves-state-reserve",
+   "https://api.openstreetmap.org/api/0.6/map?bbox=146.82,-43.43,146.90,-43.36"
+  ]
+ },
+ {
+  "id": "huon-valley-4",
+  "name": "Hartz Peak",
+  "coordinates": {
+   "lat": -43.231935,
+   "lng": 146.772441
+  },
+  "coordinates_source": "Midpoint of OSM hiking route (ways 186551723 + 765372374 + 765372375 \"Hartz Peak Track\"/\"Hartz Peak\", 3.75 km one way, car park to summit), computed from way geometry. Overpass mirrors and overpass-api.de all timed out, so OSM data read through api.openstreetmap.org map bbox",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 1546,
+  "hours": "Open 24 hours (daylight walk; track can be impassable in snow)",
+  "closedDays": null,
+  "visitHoursMin": 3,
+  "visitHoursMax": 5,
+  "costMin": 24.55,
+  "costMax": 49.15,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/hartz-mountains-national-park/hartz-peak",
+  "blocked_url": null,
+  "bio": "A 7.4 km return climb to a 1254 m dolerite summit with views over the south-west wilderness, 3 to 5 hours.",
+  "unverified": [
+   "Parks pass cost is the 2026 24-hour list price (24.55 per person on foot/bus/cycle, 49.15 per vehicle up to 8 people)",
+   "Summit is 1254 m on the Parks page (1255 m on the park page)"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/hartz-mountains-national-park/hartz-peak",
+   "https://parks.tas.gov.au/Pages/entry-fees.aspx",
+   "https://api.openstreetmap.org/api/0.6/map?bbox=146.72,-43.26,146.80,-43.19"
+  ]
+ },
+ {
+  "id": "huon-valley-5",
+  "name": "Huonville",
+  "coordinates": {
+   "lat": -43.031491,
+   "lng": 147.047928
+  },
+  "coordinates_source": "OpenStreetMap tourism=information \"Huon Valley Visitor Centre\" (way, first node); replaces the Wikipedia town point. Overpass mirrors and overpass-api.de all timed out, so OSM data read through api.openstreetmap.org map bbox",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 118,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 2,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "The Huon Valley's main town on the Huon River, with the valley's visitor centre and a riverside park.",
+  "unverified": [
+   "Town spot: marginal draw (COVERAGE: a town is a spot only when the town itself is a draw); consider dropping",
+   "Original bio named the Mount Misery and Scenic Hill walks: not verified, removed",
+   "Visitor centre hours not checked",
+   "ticketUrl none: a town with no single steward"
+  ],
+  "sources": [
+   "https://api.openstreetmap.org/api/0.6/map?bbox=147.03,-43.04,147.07,-43.02",
+   "https://en.wikipedia.org/wiki/Huonville,_Tasmania"
+  ]
+ },
+ {
+  "id": "huon-valley-6",
+  "name": "Geeveston",
+  "coordinates": {
+   "lat": -43.163725,
+   "lng": 146.927054
+  },
+  "coordinates_source": "OpenStreetMap tourism=information \"Geeveston Town Hall Visitor Centre\" (node); replaces the Wikipedia town point. Overpass mirrors and overpass-api.de all timed out, so OSM data read through api.openstreetmap.org map bbox",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 605,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "A small timber town and the gateway to Tahune and Hartz Mountains, with a visitor centre in the old town hall.",
+  "unverified": [
+   "Town spot: marginal draw; OSM lists a heritage park, a schoolmasters house museum, a platypus platform and the Tasmanian Forest Memorial but no source read for visitor appeal",
+   "Visitor centre hours not checked",
+   "\"Old town hall\" wording rests on the OSM name only",
+   "ticketUrl none: a town with no single steward"
+  ],
+  "sources": [
+   "https://api.openstreetmap.org/api/0.6/map?bbox=146.91,-43.18,146.95,-43.155",
+   "https://en.wikipedia.org/wiki/Geeveston"
+  ]
+ },
+ {
+  "id": "huon-valley-7",
+  "name": "Cygnet",
+  "coordinates": {
+   "lat": -43.160943,
+   "lng": 147.075882
+  },
+  "coordinates_source": "OpenStreetMap tourism=museum \"Cygnet Living History Museum\" (way, first node), on the main street beside galleries and cafes; replaces the Wikipedia town point. Overpass mirrors and overpass-api.de all timed out, so OSM data read through api.openstreetmap.org map bbox",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 1428,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "An arts town on the Huon Trail with galleries, cafes and a living history museum on its main street.",
+  "unverified": [
+   "Town spot: marginal draw; galleries and cafes seen as OSM features only, \"arts town\" from the input",
+   "The pin is on one main-street building, not a centroid",
+   "ticketUrl none: a town with no single steward"
+  ],
+  "sources": [
+   "https://api.openstreetmap.org/api/0.6/map?bbox=147.05,-43.17,147.09,-43.145",
+   "https://en.wikipedia.org/wiki/Cygnet,_Tasmania"
+  ]
+ },
+ {
+  "id": "huon-valley-8",
+  "name": "Lake Esperance",
+  "coordinates": {
+   "lat": -43.228613,
+   "lng": 146.771094
+  },
+  "coordinates_source": "OpenStreetMap highway=path \"Lake Esperance walk\" (way 380198910 midpoint), the lakeside viewing area at the end of the track; the lake (OSM water, -43.2279,146.7692) and the Wikivoyage point lie about 150 m away. Overpass mirrors and overpass-api.de all timed out, so OSM data read through api.openstreetmap.org map bbox",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 140,
+  "hours": "Open 24 hours (daylight walk; boardwalk can be snow-covered)",
+  "closedDays": null,
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 2,
+  "costMin": 24.55,
+  "costMax": 49.15,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/hartz-mountains-national-park/lake-esperance",
+  "blocked_url": null,
+  "bio": "A glacial lake beneath the Devils Backbone, reached by a 3.4 km return boardwalk walk to a viewing area.",
+  "unverified": [
+   "Parks pass cost is the 2026 24-hour list price (24.55 per person on foot/bus/cycle, 49.15 per vehicle up to 8 people)"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/hartz-mountains-national-park/lake-esperance",
+   "https://parks.tas.gov.au/Pages/entry-fees.aspx",
+   "https://api.openstreetmap.org/api/0.6/map?bbox=146.72,-43.26,146.80,-43.19"
+  ]
+ },
+ {
+  "id": "huon-valley-9",
+  "name": "Arve Falls",
+  "coordinates": {
+   "lat": -43.210311,
+   "lng": 146.77327
+  },
+  "coordinates_source": "OpenStreetMap waterway=waterfall \"Arve Falls\" (node); agrees within 15 m with the Wikivoyage listing point",
+  "pin_confidence": "HIGH",
+  "moved_m": 5,
+  "hours": "Open 24 hours (daylight walk)",
+  "closedDays": null,
+  "visitHoursMin": 0.25,
+  "visitHoursMax": 0.75,
+  "costMin": 24.55,
+  "costMax": 49.15,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/hartz-mountains-national-park/arve-falls",
+  "blocked_url": null,
+  "bio": "A 20 minute return walk from Hartz Road to a waterfall dropping off the plateau edge.",
+  "unverified": [
+   "Parks pass cost is the 2026 24-hour list price (24.55 per person on foot/bus/cycle, 49.15 per vehicle up to 8 people)"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/hartz-mountains-national-park/arve-falls",
+   "https://parks.tas.gov.au/Pages/entry-fees.aspx",
+   "https://api.openstreetmap.org/api/0.6/map?bbox=146.72,-43.26,146.80,-43.19"
+  ]
+ },
+ {
+  "id": "mount-field-1",
+  "name": "Russell Falls",
+  "coordinates": {
+   "lat": -42.677031,
+   "lng": 146.712618
+  },
+  "coordinates_source": "OpenStreetMap waterway=waterfall \"Russell Falls\" (node) via Photon; agrees with the median of 9 geotagged Commons files within 15 m",
+  "pin_confidence": "HIGH",
+  "moved_m": 0,
+  "hours": "Open 24 hours (visitor centre 9:00 AM – 4:00 PM until 31 October, then 9:00 AM – 4:15 PM in November)",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "costMin": 24.55,
+  "costMax": 49.15,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/mount-field-national-park/russell-falls",
+  "blocked_url": null,
+  "bio": "A multi-tiered waterfall in mossy rainforest, on a flat 1.4 km return track from the visitor centre.",
+  "unverified": [
+   "Parks pass cost is the 2026 24-hour list price (24.55 per person on foot/bus/cycle, 49.15 per vehicle up to 8 people)",
+   "No alerts for Mount Field on the Parks page today (the only listed is Edgar Dam in Southwest National Park)"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/mount-field-national-park/russell-falls",
+   "https://parks.tas.gov.au/Pages/entry-fees.aspx"
+  ]
+ },
+ {
+  "id": "mount-field-2",
+  "name": "Tarn Shelf",
+  "coordinates": {
+   "lat": -42.655689,
+   "lng": 146.574603
+  },
+  "coordinates_source": "Midpoint of the Tarn Shelf circuit built from OSM hiking ways (Snowgum Track, Tarn Shelf Track, Lake Newdegate Track, Lake Webster Track; 11.3 km, matching the Parks page 12 km circuit), computed from way geometry. Overpass mirrors and overpass-api.de all timed out, so OSM data read through api.openstreetmap.org map bbox",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 2566,
+  "hours": "Open 24 hours (daylight walk; Lake Dobson road can close in snow)",
+  "closedDays": null,
+  "visitHoursMin": 4,
+  "visitHoursMax": 6,
+  "costMin": 24.55,
+  "costMax": 49.15,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/mount-field-national-park/tarn-shelf",
+  "blocked_url": null,
+  "bio": "A 12 km circuit past glacial tarns, Lake Newdegate and Twilight Tarn, 5 to 6 hours from Lake Dobson.",
+  "unverified": [
+   "Parks pass cost is the 2026 24-hour list price (24.55 per person on foot/bus/cycle, 49.15 per vehicle up to 8 people)",
+   "Parks page gives 5-6 hours for the circuit and 3 hours for the short out-and-back; range kept at 4-6",
+   "Lake Dobson road (16 km unsealed) may need chains or be closed by snow in spring; phone the visitor centre on 03 6288 1149"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/mount-field-national-park/tarn-shelf",
+   "https://parks.tas.gov.au/Pages/entry-fees.aspx",
+   "https://api.openstreetmap.org/api/0.6/map?bbox=146.54,-42.71,146.62,-42.65"
+  ]
+ },
+ {
+  "id": "mount-field-3",
+  "name": "Lake Dobson",
+  "coordinates": {
+   "lat": -42.683848,
+   "lng": 146.591548
+  },
+  "coordinates_source": "OpenStreetMap water=lake \"Lake Dobson\" (Photon); the lake is a water feature so the point lies on the lake. Overpass mirrors and overpass-api.de all timed out, so OSM data read through api.openstreetmap.org map bbox",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 193,
+  "hours": "Open 24 hours (road can be closed by snow)",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 2,
+  "costMin": 24.55,
+  "costMax": 49.15,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/mount-field-national-park",
+  "blocked_url": null,
+  "bio": "A glacial tarn at the end of the Lake Dobson road, with short walks, the Pandani Grove and snow in winter.",
+  "unverified": [
+   "Parks pass cost is the 2026 24-hour list price (24.55 per person on foot/bus/cycle, 49.15 per vehicle up to 8 people)",
+   "Road is 16 km of winding gravel from the park entrance; not suitable for campervans or buses; may be closed by snow",
+   "No Lake Dobson page on parks.tas.gov.au: ticketUrl is the park page"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/mount-field-national-park",
+   "https://parks.tas.gov.au/Pages/entry-fees.aspx",
+   "https://api.openstreetmap.org/api/0.6/map?bbox=146.54,-42.71,146.62,-42.65"
+  ]
+ },
+ {
+  "id": "bruny-island-1",
+  "name": "South Bruny National Park",
+  "coordinates": {
+   "lat": -43.364168,
+   "lng": 147.35469
+  },
+  "coordinates_source": "OpenStreetMap highway=path start node of Grass Point Track = the East Cove car park at the end of Adventure Bay Road, the park's Adventure Bay entrance named on the Parks page (Fluted Cape page); no single park entrance exists, so this is a representative visitor point, not a centroid",
+  "pin_confidence": "LOW",
+  "moved_m": 2060,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 2,
+  "visitHoursMax": 5,
+  "costMin": 24.55,
+  "costMax": 49.15,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/south-bruny-national-park",
+  "blocked_url": null,
+  "bio": "Coastal forest, heath and cliffs at Bruny's southern end, with Cape Bruny Lighthouse and Cloudy Bay.",
+  "unverified": [
+   "Parks pass cost is the 2026 24-hour list price (24.55 per person on foot/bus/cycle, 49.15 per vehicle up to 8 people)",
+   "Pin is one of several visitor entrances (Adventure Bay, Cape Bruny, Cloudy Bay); the park centroid on Wikipedia lies in the sea. LOW because no single entrance exists; orchestrator may prefer to drop or restructure this spot, since its parts are separate spots",
+   "Input bio said \"three sections\": not verified, removed"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/south-bruny-national-park",
+   "https://parks.tas.gov.au/Pages/entry-fees.aspx",
+   "https://parks.tas.gov.au/explore-our-parks/south-bruny-national-park/fluted-cape"
+  ]
+ },
+ {
+  "id": "bruny-island-2",
+  "name": "Cape Bruny Lighthouse",
+  "coordinates": {
+   "lat": -43.491056,
+   "lng": 147.142344
+  },
+  "coordinates_source": "OpenStreetMap man_made=lighthouse \"Cape Bruny Lighthouse\" (node); agrees within 20 m with the Wikivoyage listing point and Wikipedia",
+  "pin_confidence": "HIGH",
+  "moved_m": 20,
+  "hours": "Grounds open any time (vehicles 9:30 AM – 4:30 PM); tours by booking",
+  "closedDays": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 24.55,
+  "costMax": 49.15,
+  "currency": "AUD",
+  "ticketUrl": "https://www.capebrunylighthouse.com/",
+  "blocked_url": null,
+  "bio": "An 1836 lighthouse on cliffs at the southern end of Bruny Island, with guided tours and a small museum.",
+  "unverified": [
+   "Parks pass cost is the 2026 24-hour list price (24.55 per person on foot/bus/cycle, 49.15 per vehicle up to 8 people)",
+   "Lighthouse tour is extra: the operator page shows $25 adult but the price is dated 1 April 2024 - 31 March 2025, so stale; a parks pass is also needed for the tour",
+   "Tour times (a reseller said daily 10am-4pm, last 3:15pm) not confirmed on the operator page",
+   "ticketUrl is the tour operator (Bruny Island Safaris), linked from the Parks page; Parks page for the site is the sources[0] URL"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/south-bruny-national-park/cape-bruny-lighthouse",
+   "https://www.capebrunylighthouse.com/",
+   "https://parks.tas.gov.au/Pages/entry-fees.aspx",
+   "https://en.wikivoyage.org/wiki/Bruny_Island"
+  ]
+ },
+ {
+  "id": "bruny-island-3",
+  "name": "Truganini Lookout",
+  "coordinates": {
+   "lat": -43.269385,
+   "lng": 147.348795
+  },
+  "coordinates_source": "OpenStreetMap tourism=viewpoint \"Truganini Lookout\" (node); agrees within 20 m with the Wikivoyage listing point for \"The Hummock at The Neck\"",
+  "pin_confidence": "HIGH",
+  "moved_m": 10,
+  "hours": "Open 24 hours (penguins return at dusk, September to February)",
+  "closedDays": null,
+  "visitHoursMin": 0.25,
+  "visitHoursMax": 0.75,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "A 300 m track of about 200 steps up the dunes to a lookout over The Neck, with a memorial to Truganini.",
+  "unverified": [
+   "No entry fee is mentioned by any source read; not confirmed on a managing-agency page (no Parks Tasmania page for The Neck found)",
+   "ticketUrl none: only the Bruny Tourism community site describes it, which is not the steward",
+   "Name: the same lookout is called Truganini Lookout, The Neck Lookout and (Wikivoyage) The Hummock; I recommend renaming the spot to Truganini Lookout. The input bio's \"must-see\" removed"
+  ],
+  "sources": [
+   "https://www.brunyisland.org.au/about-bruny-island/the-neck/",
+   "https://brunyisland.org.au/walk/truganini-the-neck-lookout/",
+   "https://en.wikivoyage.org/wiki/Bruny_Island",
+   "https://api.openstreetmap.org/api/0.6/map?bbox=147.30,-43.31,147.40,-43.24"
+  ],
+  "name_note": "Wikivoyage lists it as \"The Hummock at The Neck\"; the Bruny Island tourism site and OSM call the same place the Truganini Lookout (The Neck Lookout). Recommend name \"Truganini Lookout\" with the old name as an alias.",
+  "original_name": "The Hummock"
+ },
+ {
+  "id": "bruny-island-4",
+  "name": "Adventure Bay",
+  "coordinates": {
+   "lat": -43.368343,
+   "lng": 147.349825
+  },
+  "coordinates_source": "OpenStreetMap natural=beach \"Adventure Bay Beach\" (way 1019426878, midpoint of its length), beside the jetty and boat ramp; Wikipedia/Commons median -43.3638,147.3449 lies about 450 m away. Overpass mirrors and overpass-api.de all timed out, so OSM data read through api.openstreetmap.org map bbox",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 644,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 2,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "A sheltered bay and long beach on South Bruny, with the jetty where Bruny Island Cruises depart.",
+  "unverified": [
+   "ticketUrl none: open beach with no single steward",
+   "Bruny Island Cruises jetty from OSM only (sold by an operator, not linked)"
+  ],
+  "sources": [
+   "https://api.openstreetmap.org/api/0.6/map?bbox=147.30,-43.40,147.40,-43.33",
+   "https://parks.tas.gov.au/explore-our-parks/south-bruny-national-park/grass-point"
+  ]
+ },
+ {
+  "id": "bruny-island-5",
+  "name": "Fluted Cape",
+  "coordinates": {
+   "lat": -43.355246,
+   "lng": 147.370363
+  },
+  "coordinates_source": "Midpoint of the Fluted Cape circuit from OSM hiking ways (Grass Point Track 575888742 + Fluted Cape Track 165478305 + 575888741, 5.5 km; the Parks page says 4 km), computed from way geometry. Overpass mirrors and overpass-api.de all timed out, so OSM data read through api.openstreetmap.org map bbox",
+  "pin_confidence": "MEDIUM",
+  "moved_m": null,
+  "moved_m_note": "no input point (input coordinates null)",
+  "hours": "Open 24 hours (daylight walk)",
+  "closedDays": null,
+  "visitHoursMin": 2,
+  "visitHoursMax": 3,
+  "costMin": 24.55,
+  "costMax": 49.15,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/south-bruny-national-park/fluted-cape",
+  "blocked_url": null,
+  "bio": "A clockwise circuit from East Cove to cliff-top views at Fluted Cape, passing the Grass Point whaling ruins.",
+  "unverified": [
+   "Parks pass cost is the 2026 24-hour list price (24.55 per person on foot/bus/cycle, 49.15 per vehicle up to 8 people)",
+   "Parks page: 2.5 hours return, 4 km, Grade 4, clockwise only; OSM geometry is longer than 4 km"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/south-bruny-national-park/fluted-cape",
+   "https://parks.tas.gov.au/Pages/entry-fees.aspx",
+   "https://api.openstreetmap.org/api/0.6/map?bbox=147.30,-43.40,147.40,-43.33"
+  ]
+ },
+ {
+  "id": "bruny-island-6",
+  "name": "Grass Point",
+  "coordinates": {
+   "lat": -43.357525,
+   "lng": 147.359886
+  },
+  "coordinates_source": "Midpoint of OSM hiking way \"Grass Point Track\" (way 575888742, 2.0 km one way), computed from way geometry. Overpass mirrors and overpass-api.de all timed out, so OSM data read through api.openstreetmap.org map bbox",
+  "pin_confidence": "MEDIUM",
+  "moved_m": null,
+  "moved_m_note": "no input point (input coordinates null)",
+  "hours": "Open 24 hours (daylight walk)",
+  "closedDays": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 24.55,
+  "costMax": 49.15,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/south-bruny-national-park/grass-point",
+  "blocked_url": null,
+  "bio": "An easy 4 km return track along the coast from Adventure Bay to the ruins of a bay whaling station.",
+  "unverified": [
+   "Parks pass cost is the 2026 24-hour list price (24.55 per person on foot/bus/cycle, 49.15 per vehicle up to 8 people)",
+   "Parks page: 1.5 hours return, 4 km, Grade 2; southern right whales possible June-October"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/south-bruny-national-park/grass-point",
+   "https://parks.tas.gov.au/Pages/entry-fees.aspx",
+   "https://api.openstreetmap.org/api/0.6/map?bbox=147.30,-43.40,147.40,-43.33"
+  ]
+ },
+ {
+  "id": "bruny-island-7",
+  "name": "East Cloudy Head",
+  "coordinates": {
+   "lat": -43.466855,
+   "lng": 147.250627
+  },
+  "coordinates_source": "Halfway point of the 6 km route: OSM \"East Cloudy Head Track\" start node (way 661373565/514936035) where the 3 km of Cloudy Bay Beach ends and the 3 km track begins; the beach section is not mapped as a path, so the midpoint is derived from the Parks page (3 km beach + 3 km track). Overpass mirrors and overpass-api.de all timed out, so OSM data read through api.openstreetmap.org map bbox",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 3064,
+  "hours": "Open 24 hours (daylight walk)",
+  "closedDays": null,
+  "visitHoursMin": 4,
+  "visitHoursMax": 5,
+  "costMin": 24.55,
+  "costMax": 49.15,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/south-bruny-national-park/east-cloudy-head",
+  "blocked_url": null,
+  "bio": "A 12 km return walk, 3 km along Cloudy Bay Beach and 3 km on an old 4WD track, to East Cloudy Head.",
+  "unverified": [
+   "Parks pass cost is the 2026 24-hour list price (24.55 per person on foot/bus/cycle, 49.15 per vehicle up to 8 people)",
+   "Parks page: 4 hours return, 12 km, Grade 4; sections of the beach may be affected by tides (not stated, check)"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/south-bruny-national-park/east-cloudy-head",
+   "https://parks.tas.gov.au/Pages/entry-fees.aspx",
+   "https://api.openstreetmap.org/api/0.6/map?bbox=147.20,-43.50,147.30,-43.42"
+  ]
+ },
+ {
+  "id": "bruny-island-8",
+  "name": "Cloudy Bay",
+  "coordinates": {
+   "lat": -43.440403,
+   "lng": 147.240289
+  },
+  "coordinates_source": "OpenStreetMap natural=beach \"Cloudy Bay Beach\" (way 661373569) start node at the end of Cloudy Bay Road, the beach access and car park used by walkers and surfers; the candidate point in the input was Cloudy Bay in New Zealand. Overpass mirrors and overpass-api.de all timed out, so OSM data read through api.openstreetmap.org map bbox",
+  "pin_confidence": "MEDIUM",
+  "moved_m": null,
+  "moved_m_note": "no input point (input coordinates null)",
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 2,
+  "costMin": 24.55,
+  "costMax": 49.15,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/south-bruny-national-park",
+  "blocked_url": null,
+  "bio": "A long white-sand beach on South Bruny, popular with surfers, at the end of Cloudy Bay Road.",
+  "unverified": [
+   "Parks pass cost is the 2026 24-hour list price (24.55 per person on foot/bus/cycle, 49.15 per vehicle up to 8 people)",
+   "Parks pass required because the road-end car park and beach are inside South Bruny National Park (the East Cloudy Head page starts at this car park)",
+   "No dedicated Cloudy Bay page on parks.tas.gov.au; ticketUrl is the park page"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/south-bruny-national-park",
+   "https://parks.tas.gov.au/explore-our-parks/south-bruny-national-park/east-cloudy-head",
+   "https://parks.tas.gov.au/Pages/entry-fees.aspx",
+   "https://api.openstreetmap.org/api/0.6/map?bbox=147.20,-43.50,147.30,-43.42"
+  ]
+ },
+ {
+  "id": "cockle-creek",
+  "name": "Cockle Creek",
+  "coordinates": {
+   "lat": -43.577234,
+   "lng": 146.900323
+  },
+  "coordinates_source": "OpenStreetMap historic=monument \"Whale sculpture\" (Adams Point, the road end named on the Parks page); agrees within 10 m with the median of 6 geotagged Commons files",
+  "pin_confidence": "HIGH",
+  "moved_m": 5,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 3,
+  "costMin": 24.55,
+  "costMax": 49.15,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/southwest-national-park/cockle-creek",
+  "blocked_url": null,
+  "bio": "The road end on Recherche Bay, with a whale sculpture, a campground and the South Coast Track start.",
+  "unverified": [
+   "Parks pass cost is the 2026 24-hour list price (24.55 per person on foot/bus/cycle, 49.15 per vehicle up to 8 people)",
+   "Parks pass applies beyond the Cockle Creek bridge (national park); the Recherche Bay campgrounds before the bridge are outside it - per a search summary of the Parks camping page",
+   "Last 1.5 hours of road is gravel; Parks page current alerts (1/9/2026) are for West Picton Road and Edgar Dam, not Cockle Creek",
+   "Catamaran campground closure (15 Apr-31 Jul 2026) has ended"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/southwest-national-park/cockle-creek",
+   "https://parks.tas.gov.au/Pages/entry-fees.aspx",
+   "https://api.openstreetmap.org/api/0.6/map?bbox=146.86,-43.60,146.95,-43.54"
+  ]
+ }
+]

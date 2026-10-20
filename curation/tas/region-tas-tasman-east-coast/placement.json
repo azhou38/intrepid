@@ -1,0 +1,1527 @@
+{
+ "region": "tas-tasman-east-coast",
+ "note": "Drafts: every spot goes to Pipeline C research (hours, cost, official site) before it is applied. LOW pins are provisional and flagged in needs_research; null coordinates mean no source feature was found.",
+ "existing_fixes": [],
+ "proposed_new_destinations": [
+  {
+   "name": "Tasman Peninsula",
+   "id": "tasman-peninsula",
+   "category": "park",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Hobart",
+   "coordinates": {
+    "lat": -43.1,
+    "lng": 147.87
+   },
+   "coordinates_source": "midpoint of its kept spots (Port Arthur, Eaglehawk Neck, Coal Mines, Cape Raoul, Cape Hauy); to be re-set from a named visitor hub in research",
+   "defaultZoomSpanKm": 55,
+   "suggested_rank": 2,
+   "name_evidence": "Wikivoyage region page 'Tasman Peninsula' (en.wikivoyage.org/wiki/Tasman_Peninsula); Discover Tasmania region page 'Tasman Peninsula' (hobart-and-south/tasman-peninsula); Port Arthur Wikivoyage page.",
+   "spots": [
+    "tasman-peninsula-1",
+    "tasman-peninsula-2",
+    "tasman-peninsula-3",
+    "tasman-peninsula-4",
+    "tasman-peninsula-5",
+    "tasman-peninsula-6",
+    "tasman-peninsula-7",
+    "tasman-peninsula-8",
+    "tasman-peninsula-9",
+    "tasman-peninsula-10",
+    "tasman-peninsula-11",
+    "tasman-peninsula-12",
+    "tasman-peninsula-13",
+    "tasman-peninsula-14",
+    "tasman-peninsula-15"
+   ],
+   "why": "Named region travellers use (Port Arthur, the capes and the Eaglehawk Neck coast); 15 kept spots. Named for the region rather than Tasman National Park or Port Arthur so the park, the site and the coast sit in one destination (no overlapping destinations)."
+  },
+  {
+   "name": "Freycinet",
+   "id": "freycinet",
+   "category": "park",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Hobart",
+   "coordinates": {
+    "lat": -42.12527778,
+    "lng": 148.29833333
+   },
+   "coordinates_source": "Wikipedia 'Freycinet National Park' coordinates; confirm a visitor-hub point in research",
+   "defaultZoomSpanKm": 50,
+   "suggested_rank": 2,
+   "name_evidence": "Wikivoyage 'Freycinet National Park'; Parks Tasmania 'Freycinet National Park'; Discover Tasmania east-coast 'Freycinet National Park' (three counted sources). Named 'Freycinet' (the national park destination); Freycinet National Park itself is the destination and not also a spot.",
+   "spots": [
+    "freycinet-1",
+    "freycinet-2",
+    "freycinet-3",
+    "freycinet-4",
+    "freycinet-5",
+    "freycinet-6"
+   ],
+   "why": "Flagship park (Wineglass Bay) and 6 kept spots; Coles Bay is the gateway town and is not a spot (service town, review)."
+  },
+  {
+   "name": "Bicheno",
+   "id": "bicheno",
+   "category": "city",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Hobart",
+   "coordinates": {
+    "lat": -41.86666667,
+    "lng": 148.28333333
+   },
+   "coordinates_source": "Wikipedia 'Bicheno, Tasmania'",
+   "defaultZoomSpanKm": 35,
+   "suggested_rank": 4,
+   "name_evidence": "Wikivoyage page 'Bicheno'; Discover Tasmania east-coast 'Bicheno' page.",
+   "spots": [
+    "bicheno-1",
+    "bicheno-2",
+    "bicheno-3",
+    "bicheno-4",
+    "bicheno-5"
+   ],
+   "why": "Town with its own Wikivoyage page and Discover Tasmania chapter; five kept spots (Gulch, Blowhole, Natureworld, Douglas-Apsley, Apsley Waterhole). The town is the destination, not a spot of itself. Freycinet is 28 km south: Bicheno is a separate base on the Great Eastern Drive; Friendly Beaches (between them) sits in Freycinet National Park."
+  }
+ ],
+ "dropped_to_other_region": {
+  "owner": "tas-launceston-northeast (CROSS-REGION.md)",
+  "places": [
+   "Bay of Fires",
+   "Binalong Bay",
+   "Eddystone Point Lighthouse",
+   "St Helens",
+   "Mount William National Park",
+   "Stumpys Bay (review)",
+   "Scamander (review)"
+  ]
+ },
+ "not_placed_review": [
+  "Isle of the Dead (Port Arthur)",
+  "Tasman Island",
+  "Officers Quarters Museum",
+  "Pirates Bay Lookout",
+  "Martin Cash's Lookout",
+  "Maingon Blowhole",
+  "Dunalley",
+  "Primrose Sands",
+  "Dodges Ferry",
+  "St Helens Mountain Bike Trails",
+  "Beerbarrel Beach",
+  "Little Penguins of Bicheno",
+  "Diamond Island",
+  "Whalers' Lookout",
+  "Apsley Gorge",
+  "The Hazards",
+  "Honeymoon Bay",
+  "Sleepy Bay",
+  "Hazards Beach",
+  "Coles Bay",
+  "Freycinet Marine Farm",
+  "Melshell Oysters",
+  "East Coast Heritage Museum",
+  "Orford",
+  "Paradise Probation Station",
+  "Callington Mill",
+  "Lake Dulverton",
+  "Ross Female Factory",
+  "Tasmanian Wool Centre Museum",
+  "Campbell Town",
+  "Old Hobart Town",
+  "Pooseum",
+  "Richmond Maze"
+ ],
+ "neighbour_check": [
+  "Maria Island spots (standalone) are 60+ km from Freycinet and 75 km from the Tasman Peninsula centre: not spots of either.",
+  "Spring Beach (standalone) is 58 km from the Tasman Peninsula centre and 55 km from Freycinet: no proposed destination within 40 km.",
+  "Swansea (Freycinet spot) is 30 km from Bicheno but outside Bicheno's 26 km reach; it is closer to and used with Freycinet.",
+  "Richmond (standalone): 55 km from the Tasman Peninsula centre; Coal Mines is 37 km from Richmond but visitors reach Richmond from Hobart, not the peninsula.",
+  "Oatlands, Ross, Ross Bridge (standalone): 100+ km from every proposed destination here.",
+  "Friendly Beaches: 15 km from both Bicheno and Freycinet centres; placed in Freycinet because it lies in Freycinet National Park and is reached by the Coles Bay road side."
+ ],
+ "spots": [
+  {
+   "name": "Port Arthur Historic Site",
+   "action": "spot",
+   "destination": "tasman-peninsula",
+   "id": "tasman-peninsula-1",
+   "coordinates": {
+    "lat": -43.147312,
+    "lng": 147.847403
+   },
+   "coordinates_source": "OSM tourism=attraction (Photon) 'Port Arthur Historic Site'; Commons geotag median 210 m away",
+   "pin_confidence": "MEDIUM",
+   "reason": "Core headline attraction of the Tasman Peninsula, inside the span, 10 km from the proposed centre.",
+   "wiki": "Port Arthur Historic Site",
+   "icon": "⛓️",
+   "category": "historic",
+   "bio": "World Heritage convict penitentiary and village ruins at the head of the Tasman Peninsula, the area's main attraction.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": 3,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Port_Arthur_(Tasmania)",
+    "https://www.discovertasmania.com.au/regions/hobart-and-south/port-arthur/",
+    "https://en.wikivoyage.org/wiki/Tasman_Peninsula"
+   ],
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Three Capes Track",
+   "action": "spot",
+   "destination": "tasman-peninsula",
+   "id": "tasman-peninsula-2",
+   "coordinates": null,
+   "coordinates_source": "resolve-pin.py found no OSM feature (LOW); take the managing agency's point",
+   "pin_confidence": "LOW",
+   "reason": "Track is on the peninsula; pinned at route midpoint once the agency route is checked.",
+   "wiki": "Three Capes Track",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "About 48 km multi-day coastal walk from Port Arthur to Fortescue Bay along the peninsula's sea cliffs; passes booked ahead.",
+   "hours": null,
+   "visitHoursMin": 24,
+   "visitHoursMax": 72,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": 2,
+   "sources": [
+    "https://parks.tas.gov.au/explore-our-parks/tasman-national-park",
+    "https://www.discovertasmania.com.au/regions/hobart-and-south/tasman-peninsula/"
+   ],
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "pin_note": "hike: pin at mid-route, not trailhead; no OSM route found"
+  },
+  {
+   "name": "Cape Hauy",
+   "action": "spot",
+   "destination": "tasman-peninsula",
+   "id": "tasman-peninsula-3",
+   "coordinates": {
+    "lat": -43.138876,
+    "lng": 148.005097
+   },
+   "coordinates_source": "OSM natural=cape (Photon) 'Cape Hauy'; Commons geotag median 70 m away",
+   "pin_confidence": "HIGH",
+   "reason": "Tasman National Park walk from Fortescue Bay on the peninsula.",
+   "wiki": "Cape Hauy",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Sea-cliff cape of dolerite spires reached by a day walk from Fortescue Bay, one of the Three Capes Track's highlights.",
+   "hours": null,
+   "visitHoursMin": 3,
+   "visitHoursMax": 5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": 1,
+   "sources": [
+    "https://parks.tas.gov.au/explore-our-parks/tasman-national-park"
+   ],
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "pin_note": "cape point; hike route midpoint to be confirmed by research"
+  },
+  {
+   "name": "Cape Raoul",
+   "action": "spot",
+   "destination": "tasman-peninsula",
+   "id": "tasman-peninsula-4",
+   "coordinates": {
+    "lat": -43.239463,
+    "lng": 147.796613
+   },
+   "coordinates_source": "OSM tourism=viewpoint 'Cape Lookout' (Photon); Commons geotag median 50 m away",
+   "pin_confidence": "HIGH",
+   "reason": "Peninsula walk, 15 km from the Port Arthur centre.",
+   "wiki": "Cape Raoul",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Sea-cliff cape in Tasman National Park with a lookout at the end of a 14 km return track of about five hours.",
+   "hours": null,
+   "visitHoursMin": 4,
+   "visitHoursMax": 6,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "views": 2966,
+   "counted_sources": 2,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Tasman_National_Park",
+    "https://parks.tas.gov.au/explore-our-parks/tasman-national-park"
+   ],
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "pin_note": "lookout at the cape end; walk midpoint to be confirmed by research"
+  },
+  {
+   "name": "Cape Pillar",
+   "action": "spot",
+   "destination": "tasman-peninsula",
+   "id": "tasman-peninsula-5",
+   "coordinates": null,
+   "coordinates_source": "resolve-pin.py found no OSM feature (LOW); take the managing agency's point",
+   "pin_confidence": "LOW",
+   "reason": "On the peninsula's Three Capes Track.",
+   "wiki": "Cape Pillar",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Sea-cliff cape reached on the middle days of the Three Capes Track, past the Blade rock formation.",
+   "hours": null,
+   "visitHoursMin": 6,
+   "visitHoursMax": 10,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "views": 1606,
+   "counted_sources": 2,
+   "sources": [
+    "https://parks.tas.gov.au/explore-our-parks/tasman-national-park",
+    "https://www.discovertasmania.com.au/regions/hobart-and-south/tasman-peninsula/"
+   ],
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "pin_note": "Wikipedia point is 3-decimal reference only (memory-level); Commons median wrong; needs agency route point"
+  },
+  {
+   "name": "Tasman National Park",
+   "action": "spot",
+   "destination": "tasman-peninsula",
+   "id": "tasman-peninsula-6",
+   "coordinates": null,
+   "coordinates_source": "resolve-pin.py found no OSM feature (LOW); take the managing agency's point",
+   "pin_confidence": "LOW",
+   "reason": "Kept by the skeptic as a park entry. A park is normally a destination, but the region destination Tasman Peninsula covers it and the capes, so the park sits as a spot of that region (overlapping destinations are not allowed). Flagged for the owner.",
+   "wiki": "Tasman National Park",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "National park protecting the peninsula's sea cliffs, arches, caves and capes, with the Three Capes Track.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "views": 2276,
+   "counted_sources": 3,
+   "sources": [
+    "https://parks.tas.gov.au/explore-our-parks/tasman-national-park",
+    "https://en.wikivoyage.org/wiki/Tasman_National_Park",
+    "https://www.discovertasmania.com.au/regions/hobart-and-south/tasman-peninsula/"
+   ],
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "pin_note": "Wikipedia point (-42.855, 147.976) is 30 km north of the park's visitor area: not used"
+  },
+  {
+   "name": "Tessellated Pavement",
+   "action": "spot",
+   "destination": "tasman-peninsula",
+   "id": "tasman-peninsula-7",
+   "coordinates": {
+    "lat": -43.008919,
+    "lng": 147.932554
+   },
+   "coordinates_source": "OSM tourism=attraction (Photon) 'Tessallated Pavement'; Commons geotag median 20 m away",
+   "pin_confidence": "HIGH",
+   "reason": "Eaglehawk Neck, on the peninsula's approach road.",
+   "wiki": "Tessellated Pavement",
+   "icon": "🪨",
+   "category": "nature",
+   "bio": "Flat shore platform split into block-like sections by the sea, at the northern end of Pirates Bay.",
+   "hours": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 11266,
+   "counted_sources": 2,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Eaglehawk_Neck",
+    "https://www.discovertasmania.com.au/regions/hobart-and-south/tasman-peninsula/"
+   ],
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Tasman Arch",
+   "action": "spot",
+   "destination": "tasman-peninsula",
+   "id": "tasman-peninsula-8",
+   "coordinates": {
+    "lat": -43.042126,
+    "lng": 147.950939
+   },
+   "coordinates_source": "OSM natural=arch (Photon); Commons geotag median 25 m away",
+   "pin_confidence": "HIGH",
+   "reason": "Eaglehawk Neck coast.",
+   "wiki": "Tasman Arch",
+   "icon": "🌉",
+   "category": "nature",
+   "bio": "Natural sea arch on the Tasman Sea coast near Eaglehawk Neck, reached by a short walk from a car park.",
+   "hours": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": 2,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Eaglehawk_Neck",
+    "https://www.discovertasmania.com.au/regions/hobart-and-south/tasman-peninsula/"
+   ],
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Devils Kitchen",
+   "action": "spot",
+   "destination": "tasman-peninsula",
+   "id": "tasman-peninsula-9",
+   "coordinates": {
+    "lat": -43.044247,
+    "lng": 147.950111
+   },
+   "coordinates_source": "OSM tourism=attraction (Photon) 'Devils Kitchen'",
+   "pin_confidence": "MEDIUM",
+   "reason": "Eaglehawk Neck coast.",
+   "wiki": "Devils Kitchen",
+   "icon": "🌊",
+   "category": "nature",
+   "bio": "Sea-carved trench with a cliff-top lookout beside a car park, close to Tasman Arch.",
+   "hours": null,
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": 2,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Eaglehawk_Neck",
+    "https://parks.tas.gov.au/explore-our-parks/tasman-national-park"
+   ],
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Tasman Blowhole",
+   "action": "spot",
+   "destination": "tasman-peninsula",
+   "id": "tasman-peninsula-10",
+   "coordinates": {
+    "lat": -43.033907,
+    "lng": 147.94792
+   },
+   "coordinates_source": "OSM natural=blowhole (Photon) 'Tasman Blowhole'; Commons geotag median 1 km away",
+   "pin_confidence": "MEDIUM",
+   "reason": "Eaglehawk Neck coast.",
+   "wiki": "Tasman Blowhole",
+   "icon": "🌊",
+   "category": "nature",
+   "bio": "Coastal blowhole on Blowhole Road, a shorter stop than Maingon Blowhole on the same coast.",
+   "hours": null,
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": 2,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Eaglehawk_Neck",
+    "https://parks.tas.gov.au/explore-our-parks/tasman-national-park"
+   ],
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Remarkable Cave",
+   "action": "spot",
+   "destination": "tasman-peninsula",
+   "id": "tasman-peninsula-11",
+   "coordinates": null,
+   "coordinates_source": "resolve-pin.py found no OSM feature (LOW); take the managing agency's point",
+   "pin_confidence": "LOW",
+   "reason": "Tasman National Park coast.",
+   "wiki": "Remarkable Cave",
+   "icon": "🕳️",
+   "category": "nature",
+   "bio": "Sea cavern shaped like the outline of Tasmania, seen from a lookout a short walk from Maingon Bay Lookout.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": 3,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Tasman_National_Park",
+    "https://parks.tas.gov.au/explore-our-parks/tasman-national-park",
+    "https://www.discovertasmania.com.au/regions/hobart-and-south/port-arthur/"
+   ],
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "pin_note": "no feature found; needs agency point"
+  },
+  {
+   "name": "Fortescue Bay",
+   "action": "spot",
+   "destination": "tasman-peninsula",
+   "id": "tasman-peninsula-12",
+   "coordinates": {
+    "lat": -43.130052,
+    "lng": 147.97019
+   },
+   "coordinates_source": "OSM natural=bay (Photon) 'Fortescue Bay'; bay centroid, beach feature not found",
+   "pin_confidence": "LOW",
+   "reason": "Trailhead for Cape Hauy and Three Capes Track.",
+   "wiki": "Fortescue Bay",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Sheltered white-sand bay and campground at the end of the road, popular for swimming and snorkelling.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "views": 972,
+   "counted_sources": 1,
+   "sources": [
+    "https://parks.tas.gov.au/explore-our-parks/tasman-national-park"
+   ],
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "pin_note": "bay centroid; replace with OSM natural=beach or car park in research"
+  },
+  {
+   "name": "Coal Mines Historic Site",
+   "action": "spot",
+   "destination": "tasman-peninsula",
+   "id": "tasman-peninsula-13",
+   "coordinates": {
+    "lat": -42.983916,
+    "lng": 147.714738
+   },
+   "coordinates_source": "OSM leisure=nature_reserve (Photon) 'Coal Mines Historic Site' centroid; car park at -42.988033,147.714596",
+   "pin_confidence": "LOW",
+   "reason": "22 km from the proposed centre, inside the span; reached by drive from Port Arthur.",
+   "wiki": "Coal Mines Historic Site",
+   "icon": "🏚️",
+   "category": "historic",
+   "bio": "Ruins of an 1833 convict coal mine on the peninsula's north-east, World Heritage listed and free to visit.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 1403,
+   "counted_sources": 3,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Nubeena",
+    "https://en.wikivoyage.org/wiki/Tasman_Peninsula",
+    "https://www.discovertasmania.com.au/regions/hobart-and-south/tasman-peninsula/"
+   ],
+   "needs_research": [
+    "hours",
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "name": "Tasmanian Devil Unzoo",
+   "action": "spot",
+   "destination": "tasman-peninsula",
+   "id": "tasman-peninsula-14",
+   "coordinates": {
+    "lat": -43.060223,
+    "lng": 147.864149
+   },
+   "coordinates_source": "OSM tourism=attraction (Photon) 'Tasmanian Devil Unzoo'",
+   "pin_confidence": "MEDIUM",
+   "reason": "Taranna, on the peninsula.",
+   "wiki": "Tasmanian Devil Unzoo",
+   "icon": "🦘",
+   "category": "entertainment",
+   "bio": "Wildlife park at Taranna where free-roaming animals, including Tasmanian devils, can be seen and hand-fed.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": 2,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Tasman_Peninsula",
+    "https://www.discovertasmania.com.au/regions/hobart-and-south/tasman-peninsula/"
+   ],
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Eaglehawk Neck",
+   "action": "spot",
+   "destination": "tasman-peninsula",
+   "id": "tasman-peninsula-15",
+   "coordinates": {
+    "lat": -43.017121,
+    "lng": 147.925445
+   },
+   "coordinates_source": "Photon place=hamlet 'Eaglehawk Neck'; Commons geotag median 1 km away (village point)",
+   "pin_confidence": "MEDIUM",
+   "reason": "Kept by the skeptic with the objection that Tessellated Pavement and Pirates Bay cover the draw; kept as the dog-line isthmus, listed last.",
+   "wiki": "Eaglehawk Neck, Tasmania",
+   "icon": "🏞️",
+   "category": "landmark",
+   "bio": "Narrow isthmus at the peninsula's gateway, site of the convict dog line, beside several coastal sights.",
+   "hours": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "views": 4959,
+   "counted_sources": 3,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Eaglehawk_Neck",
+    "https://en.wikivoyage.org/wiki/Tasman_Peninsula",
+    "https://www.discovertasmania.com.au/regions/hobart-and-south/tasman-peninsula/"
+   ],
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Wineglass Bay Lookout",
+   "action": "spot",
+   "destination": "freycinet",
+   "id": "freycinet-1",
+   "coordinates": {
+    "lat": -42.154939,
+    "lng": 148.293573
+   },
+   "coordinates_source": "OSM tourism=viewpoint (Photon) 'Wineglass Bay Lookout'; Commons median 170 m away",
+   "pin_confidence": "HIGH",
+   "reason": "Inside the Freycinet destination, the park's headline walk.",
+   "wiki": null,
+   "icon": "👀",
+   "category": "viewpoint",
+   "bio": "Lookout over Wineglass Bay on a well-formed walk from the car park, with the classic view of the bay.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": 1,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Freycinet_National_Park"
+   ],
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Wineglass Bay",
+   "action": "spot",
+   "destination": "freycinet",
+   "id": "freycinet-2",
+   "coordinates": {
+    "lat": -42.168107,
+    "lng": 148.305006
+   },
+   "coordinates_source": "OSM natural=bay (Photon) 'Wineglass Bay'; bay centroid, beach feature not found",
+   "pin_confidence": "LOW",
+   "reason": "Beach inside Freycinet National Park; candidates.json had the park's coordinates, replaced.",
+   "wiki": "Wineglass Bay",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Crescent of white sand reached by a three-hour walk over the hills from the car park.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": 3,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Freycinet_National_Park",
+    "https://parks.tas.gov.au/explore-our-parks/freycinet-national-park",
+    "https://www.discovertasmania.com.au/regions/east-coast/bay-of-fires/"
+   ],
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "pin_note": "bay centroid in water; replace with OSM natural=beach in research"
+  },
+  {
+   "name": "Mount Amos",
+   "action": "spot",
+   "destination": "freycinet",
+   "id": "freycinet-3",
+   "coordinates": {
+    "lat": -42.152905,
+    "lng": 148.305258
+   },
+   "coordinates_source": "Commons geotag median (9 files); OSM peak not found",
+   "pin_confidence": "LOW",
+   "reason": "Inside Freycinet.",
+   "wiki": "Mount Amos",
+   "icon": "⛰️",
+   "category": "viewpoint",
+   "bio": "Granite summit walk with views over Wineglass Bay, a medium-grade walk of two to four hours return.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": 2,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Freycinet_National_Park",
+    "https://parks.tas.gov.au/explore-our-parks/freycinet-national-park"
+   ],
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "pin_note": "unverified summit; needs OSM natural=peak or agency point"
+  },
+  {
+   "name": "Cape Tourville Lighthouse",
+   "action": "spot",
+   "destination": "freycinet",
+   "id": "freycinet-4",
+   "coordinates": {
+    "lat": -42.122711,
+    "lng": 148.342639
+   },
+   "coordinates_source": "OSM man_made=lighthouse (Photon); Commons median 57 m away",
+   "pin_confidence": "HIGH",
+   "reason": "Inside Freycinet.",
+   "wiki": "Cape Tourville Lighthouse",
+   "icon": "🏠",
+   "category": "landmark",
+   "bio": "Lighthouse on a boardwalked cliff track at the end of a 6.4 km sealed road, with sweeping coastal views.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "views": 510,
+   "counted_sources": 2,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Freycinet_National_Park",
+    "https://parks.tas.gov.au/explore-our-parks/freycinet-national-park"
+   ],
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Friendly Beaches",
+   "action": "spot",
+   "destination": "freycinet",
+   "id": "freycinet-5",
+   "coordinates": {
+    "lat": -41.9919,
+    "lng": 148.2513
+   },
+   "coordinates_source": "Wikipedia article 'Friendly Beaches' own coordinates (4 decimals, long beach); Commons median 3.8 km away",
+   "pin_confidence": "LOW",
+   "reason": "Inside Freycinet NP, 15 km from the centre; reached from the Coles Bay road.",
+   "wiki": "Friendly Beaches",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Long white-sand beaches on the park's north-east side, reached by gravel road and foot tracks.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "views": 652,
+   "counted_sources": 2,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Freycinet_National_Park",
+    "https://parks.tas.gov.au/explore-our-parks/freycinet-national-park"
+   ],
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "pin_note": "long beach; main access point to confirm"
+  },
+  {
+   "name": "Swansea",
+   "action": "spot",
+   "destination": "freycinet",
+   "id": "freycinet-6",
+   "coordinates": {
+    "lat": -42.123644,
+    "lng": 148.076172
+   },
+   "coordinates_source": "Commons geotag median 10 files (town centre); Wikipedia match belongs to Wales",
+   "pin_confidence": "LOW",
+   "reason": "Town spot: 18 km west of the Freycinet centre across Great Oyster Bay, inside the span and a common base for the park; 30 km from Bicheno, outside its span.",
+   "wiki": "Swansea, Tasmania",
+   "icon": "🏘️",
+   "category": "landmark",
+   "bio": "Seaside village on Great Oyster Bay facing the Hazards, with a local history museum and the coast's food and wine.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "views": 9655,
+   "counted_sources": 2,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Swansea_Tasmania",
+    "https://www.discovertasmania.com.au/regions/east-coast/swansea/"
+   ],
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "name": "The Gulch",
+   "action": "spot",
+   "destination": "bicheno",
+   "id": "bicheno-1",
+   "coordinates": null,
+   "coordinates_source": "resolve-pin.py found no OSM feature (LOW); take the managing agency's point",
+   "pin_confidence": "LOW",
+   "reason": "In Bicheno.",
+   "wiki": null,
+   "icon": "⚓",
+   "category": "landmark",
+   "bio": "Fishing harbour and rocky inlet at Bicheno's south end, with a glass-bottom boat, a seafood cafe and a small aquarium.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": 2,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Bicheno",
+    "https://www.discovertasmania.com.au/things-to-do/food-and-drink/lobstershack/"
+   ],
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "pin_note": "no feature found by resolve-pin"
+  },
+  {
+   "name": "Bicheno Blowhole",
+   "action": "spot",
+   "destination": "bicheno",
+   "id": "bicheno-2",
+   "coordinates": {
+    "lat": -41.874555,
+    "lng": 148.30827
+   },
+   "coordinates_source": "Commons geotag median (28 files); no OSM blowhole found",
+   "pin_confidence": "LOW",
+   "reason": "In Bicheno.",
+   "wiki": null,
+   "icon": "🌊",
+   "category": "nature",
+   "bio": "Coastal blowhole reached by a walking track south of the Gulch; unfenced, so take care in rough weather.",
+   "hours": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": 2,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Bicheno",
+    "https://www.discovertasmania.com.au/regions/east-coast/bicheno/"
+   ],
+   "needs_research": [
+    "hours",
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "name": "East Coast Natureworld",
+   "action": "spot",
+   "destination": "bicheno",
+   "id": "bicheno-3",
+   "coordinates": null,
+   "coordinates_source": "resolve-pin.py found no OSM feature (LOW); take the managing agency's point",
+   "pin_confidence": "LOW",
+   "reason": "On Bicheno's outskirts.",
+   "wiki": null,
+   "icon": "🦘",
+   "category": "entertainment",
+   "bio": "Wildlife park on Bicheno's outskirts with daily devil feeding and hand-feeding of free-ranging animals.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": 2,
+   "sources": [
+    "https://www.discovertasmania.com.au/things-to-do/nature-and-wildlife/eastcoastnatureworld/",
+    "https://www.discovertasmania.com.au/things-to-do/road-trips/7-reasons-to-love-the-great-eastern-drive/"
+   ],
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "pin_note": "Commons median found pointed at the blowhole, not the park: not used"
+  },
+  {
+   "name": "Douglas-Apsley National Park",
+   "action": "spot",
+   "destination": "bicheno",
+   "id": "bicheno-4",
+   "coordinates": {
+    "lat": -41.758333,
+    "lng": 148.199444
+   },
+   "coordinates_source": "Wikipedia article 'Douglas-Apsley National Park' own coordinates (park centroid)",
+   "pin_confidence": "LOW",
+   "reason": "Park with only two kept spots, so it is a spot of Bicheno (15 km, inside the span) rather than its own destination; not a spot of another park.",
+   "wiki": "Douglas-Apsley National Park",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "National park of dry eucalypt forest, gorges and swimming waterholes on the Douglas and Apsley rivers, west of Bicheno.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "views": 793,
+   "counted_sources": 2,
+   "sources": [
+    "https://www.discovertasmania.com.au/regions/east-coast/douglas-apsley-national-park/",
+    "https://en.wikivoyage.org/wiki/Eastern_Tasmania"
+   ],
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "name": "Apsley Waterhole",
+   "action": "spot",
+   "destination": "bicheno",
+   "id": "bicheno-5",
+   "coordinates": null,
+   "coordinates_source": "resolve-pin.py found no OSM feature (LOW); take the managing agency's point",
+   "pin_confidence": "LOW",
+   "reason": "Inside Douglas-Apsley.",
+   "wiki": null,
+   "icon": "🏊",
+   "category": "nature",
+   "bio": "Large swimming hole on the Apsley River, a 15-minute return walk from the park's only car park.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": 2,
+   "sources": [
+    "https://www.discovertasmania.com.au/regions/east-coast/douglas-apsley-national-park/",
+    "https://en.wikivoyage.org/wiki/Bicheno"
+   ],
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "pin_note": "no feature found"
+  },
+  {
+   "name": "Maria Island National Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "maria-island",
+   "coordinates": {
+    "lat": -42.64977,
+    "lng": 148.099253
+   },
+   "coordinates_source": "OSM leisure=nature_reserve (Photon) centroid",
+   "pin_confidence": "LOW",
+   "reason": "Four kept places cluster here (park, Darlington, Fossil Cliffs, Painted Cliffs) but the park is the base itself, leaving three spots; three never make a destination and Maria Island is rank 3 at best, so all four stand alone. Owner option: propose Maria Island as an island destination (name_evidence: Wikivoyage 'Maria Island National Park', Parks Tasmania, Discover Tasmania) with the other three as its spots.",
+   "wiki": "Maria Island",
+   "icon": "🏝️",
+   "category": "nature",
+   "bio": "Ferry-only island national park of convict-era ruins, painted cliffs, walks and wildlife off the east coast.",
+   "hours": null,
+   "visitHoursMin": 4,
+   "visitHoursMax": 24,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "views": 18274,
+   "counted_sources": 3,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Maria_Island_National_Park",
+    "https://parks.tas.gov.au/explore-our-parks/maria-island-national-park",
+    "https://www.discovertasmania.com.au/regions/east-coast/maria-island-national-park/"
+   ],
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Hobart"
+  },
+  {
+   "name": "Darlington Probation Station",
+   "action": "standalone",
+   "destination": null,
+   "id": "darlington-probation-station",
+   "coordinates": {
+    "lat": -42.58155,
+    "lng": 148.0652
+   },
+   "coordinates_source": "Photon place=hamlet 'Darlington Probation Station'; Commons median 350 m away",
+   "pin_confidence": "MEDIUM",
+   "reason": "Maria Island, reached by ferry from Triabunna; not a spot of the park spot (no spots of spots).",
+   "wiki": "Darlington Probation Station",
+   "icon": "🏚️",
+   "category": "historic",
+   "bio": "Convict probation station ruins at Darlington, a World Heritage convict site and the island's settlement and visitor hub.",
+   "hours": null,
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "views": 1565,
+   "counted_sources": 2,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Maria_Island_National_Park",
+    "https://parks.tas.gov.au/explore-our-parks/maria-island-national-park"
+   ],
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Hobart"
+  },
+  {
+   "name": "Fossil Cliffs",
+   "action": "standalone",
+   "destination": null,
+   "id": "fossil-cliffs-maria-island",
+   "coordinates": {
+    "lat": -42.57288,
+    "lng": 148.079421
+   },
+   "coordinates_source": "OSM natural=cliff (Photon) 'Fossil Cliffs'; OSM attraction 90 m away",
+   "pin_confidence": "HIGH",
+   "reason": "Maria Island.",
+   "wiki": "Fossil Cliffs",
+   "icon": "🪨",
+   "category": "nature",
+   "bio": "Fossil-bearing cliffs on Maria Island, reached by a 4.5 km circuit of one and a half to two and a half hours from Darlington.",
+   "hours": null,
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": 1,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Maria_Island_National_Park"
+   ],
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Hobart",
+   "pin_note": "circuit midpoint to be confirmed; wiki title unverified (leave null)"
+  },
+  {
+   "name": "Painted Cliffs",
+   "action": "standalone",
+   "destination": null,
+   "id": "painted-cliffs-maria-island",
+   "coordinates": {
+    "lat": -42.592488,
+    "lng": 148.051667
+   },
+   "coordinates_source": "OSM natural=cliff (Photon) 'Painted Cliffs'; Commons median 120 m away",
+   "pin_confidence": "HIGH",
+   "reason": "Maria Island.",
+   "wiki": "Painted Cliffs",
+   "icon": "🎨",
+   "category": "nature",
+   "bio": "Sandstone cliffs with natural colour and swirl patterns, best seen from the rock platform within two hours of low tide.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "views": 0,
+   "counted_sources": 2,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Maria_Island_National_Park",
+    "https://parks.tas.gov.au/explore-our-parks/maria-island-national-park"
+   ],
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Hobart"
+  },
+  {
+   "name": "Spring Beach",
+   "action": "standalone",
+   "destination": null,
+   "id": "spring-beach-tasmania",
+   "coordinates": {
+    "lat": -42.578922,
+    "lng": 147.909925
+   },
+   "coordinates_source": "OSM natural=beach (Photon) 'Spring Beach'; Wikipedia point 2 km away (check)",
+   "pin_confidence": "MEDIUM",
+   "reason": "Mainland east-coast beach by Triabunna/Orford; Maria Island is across the water and is not its base; no proposed destination within 40 km of its position.",
+   "wiki": "Spring Beach, Tasmania",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "White-sand beach on the Great Eastern Drive south of Triabunna, with a clifftop walk from Shelly Beach through an old quarry.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 661,
+   "counted_sources": 2,
+   "sources": [
+    "https://www.discovertasmania.com.au/things-to-do/road-trips/7-reasons-to-love-the-great-eastern-drive/",
+    "https://www.discovertasmania.com.au/regions/east-coast/orford/"
+   ],
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Hobart"
+  },
+  {
+   "name": "Oatlands",
+   "action": "standalone",
+   "destination": null,
+   "id": "oatlands",
+   "coordinates": {
+    "lat": -42.300218,
+    "lng": 147.371007
+   },
+   "coordinates_source": "Photon amenity=post_office 'Oatlands Post Office' (village centre); Commons median 300 m",
+   "pin_confidence": "MEDIUM",
+   "reason": "Heritage Highway village; no destination near it.",
+   "wiki": "Oatlands, Tasmania",
+   "icon": "🏘️",
+   "category": "landmark",
+   "bio": "Historic Midlands village on Lake Dulverton with about 150 sandstone Georgian buildings, mostly convict-built.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 9197,
+   "counted_sources": 1,
+   "sources": [
+    "https://www.discovertasmania.com.au/regions/hobart-and-south/oatlands/"
+   ],
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Hobart"
+  },
+  {
+   "name": "Ross",
+   "action": "standalone",
+   "destination": null,
+   "id": "ross-tasmania",
+   "coordinates": {
+    "lat": -42.030168,
+    "lng": 147.493007
+   },
+   "coordinates_source": "Photon place=town 'Ross'; Commons median 90 m",
+   "pin_confidence": "HIGH",
+   "reason": "Heritage Highway village; no destination near it. Ross Bridge is kept beside the town because it is a separate attraction.",
+   "wiki": "Ross, Tasmania",
+   "icon": "🏘️",
+   "category": "landmark",
+   "bio": "Georgian sandstone village on the Heritage Highway with many of Tasmania's oldest buildings.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 8117,
+   "counted_sources": 2,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Ross_Tasmania",
+    "https://en.wikivoyage.org/wiki/Eastern_Tasmania"
+   ],
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Hobart"
+  },
+  {
+   "name": "Ross Bridge",
+   "action": "standalone",
+   "destination": null,
+   "id": "ross-bridge",
+   "coordinates": {
+    "lat": -42.030766,
+    "lng": 147.489744
+   },
+   "coordinates_source": "OSM man_made=bridge (Photon) 'Ross Bridge'; Commons median 200 m",
+   "pin_confidence": "HIGH",
+   "reason": "Ross, Midlands.",
+   "wiki": "Ross Bridge",
+   "icon": "🌉",
+   "category": "landmark",
+   "bio": "Sandstone bridge built by convicts in 1836, one of Australia's oldest, with a barbecue and resting spot.",
+   "hours": null,
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 2381,
+   "counted_sources": 1,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Ross_Tasmania"
+   ],
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Hobart"
+  },
+  {
+   "name": "Richmond",
+   "action": "standalone",
+   "destination": null,
+   "id": "richmond-tasmania",
+   "coordinates": {
+    "lat": -42.735272,
+    "lng": 147.438455
+   },
+   "coordinates_source": "Photon place=town 'Richmond'; Commons median 130 m",
+   "pin_confidence": "MEDIUM",
+   "reason": "Day trip from Hobart, 25 km out, and not near any destination of this region. Filed under Hobart by travellers: if hobart-southeast's Hobart span is widened to reach it, Richmond, Richmond Bridge and Richmond Gaol become Hobart spots (coordinator to reconcile).",
+   "wiki": "Richmond, Tasmania",
+   "icon": "🏘️",
+   "category": "landmark",
+   "bio": "Intact colonial town with over 50 Georgian buildings, a day trip from Hobart.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 10708,
+   "counted_sources": 2,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Richmond_Tasmania",
+    "https://www.discovertasmania.com.au/regions/hobart-and-south/richmond/"
+   ],
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Hobart"
+  },
+  {
+   "name": "Richmond Bridge",
+   "action": "standalone",
+   "destination": null,
+   "id": "richmond-bridge",
+   "coordinates": {
+    "lat": -42.73383,
+    "lng": 147.439981
+   },
+   "coordinates_source": "OSM man_made=bridge (Photon) 'Richmond Bridge'; Commons median 50 m",
+   "pin_confidence": "HIGH",
+   "reason": "Richmond; see Richmond.",
+   "wiki": "Richmond Bridge (Tasmania)",
+   "icon": "🌉",
+   "category": "landmark",
+   "bio": "Convict-built sandstone bridge over the Coal River, built in 1823 and claimed as Australia's oldest bridge.",
+   "hours": null,
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "views": 7099,
+   "counted_sources": 2,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Richmond_Tasmania",
+    "https://www.discovertasmania.com.au/regions/hobart-and-south/richmond/"
+   ],
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Hobart"
+  },
+  {
+   "name": "Richmond Gaol",
+   "action": "standalone",
+   "destination": null,
+   "id": "richmond-gaol",
+   "coordinates": {
+    "lat": -42.73631,
+    "lng": 147.439272
+   },
+   "coordinates_source": "OSM tourism=museum (Photon) 'Richmond Gaol'; site point 40 m",
+   "pin_confidence": "HIGH",
+   "reason": "Richmond; see Richmond.",
+   "wiki": "Richmond Gaol",
+   "icon": "⛓️",
+   "category": "historic",
+   "bio": "Australia's oldest convict gaol, in use from 1825 to 1840, now a Parks and Wildlife historic site.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "views": 1689,
+   "counted_sources": 2,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Richmond_Tasmania",
+    "https://www.discovertasmania.com.au/regions/hobart-and-south/richmond/"
+   ],
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Hobart"
+  }
+ ]
+}

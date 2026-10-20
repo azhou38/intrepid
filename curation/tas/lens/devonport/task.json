@@ -1,0 +1,172 @@
+{
+ "group": "devonport",
+ "generated": "2026-10-20T15:57:11.061Z",
+ "slots": [
+  {
+   "slot": "dest:devonport:header",
+   "key": "Devonport",
+   "current": {
+    "file": "ext-devonport.jpg",
+    "source": "imageOverrides.ts"
+   },
+   "status": "search",
+   "flags": [
+    "placeholder: no photo chosen yet"
+   ]
+  },
+  {
+   "slot": "dest:devonport:why1",
+   "key": "File:ext-devonport-1.jpg",
+   "current": {
+    "file": "ext-devonport-1.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "search",
+   "flags": [
+    "placeholder: no photo chosen yet"
+   ]
+  },
+  {
+   "slot": "dest:devonport:why2",
+   "key": "File:ext-devonport-2.jpg",
+   "current": {
+    "file": "ext-devonport-2.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "search",
+   "flags": [
+    "placeholder: no photo chosen yet"
+   ]
+  },
+  {
+   "slot": "dest:devonport:why3",
+   "key": "File:ext-devonport-3.jpg",
+   "current": {
+    "file": "ext-devonport-3.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "search",
+   "flags": [
+    "placeholder: no photo chosen yet"
+   ]
+  },
+  {
+   "slot": "spot:devonport-1",
+   "key": "Mersey Bluff",
+   "current": {
+    "file": "Devonport, TAS.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag; the spot name is not in the file text: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:devonport-2",
+   "key": "Bass Strait Maritime Museum",
+   "current": {
+    "file": "Queenscliffe Maritime Museum 2.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:devonport-3",
+   "key": "Don River Railway",
+   "current": {
+    "file": "Railway Museum - Don (25665542364).jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [
+    "audit sample: the script proved this one; judge it blind"
+   ],
+   "proof": [
+    "geotag 174 m from the pin; a name word is in the title, description or categories; 1561 px; colour ok"
+   ]
+  },
+  {
+   "slot": "spot:devonport-5",
+   "key": "Tasmanian Arboretum",
+   "current": {
+    "file": "Weir in Tasmanian Arboretum, January 2009.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:devonport-6",
+   "key": "Lillico Beach",
+   "current": {
+    "file": "Eudyptula minor Bruny 1.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "geotag 251103 m from the pin; the spot name is not in the file text: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:devonport-8",
+   "key": "Sheffield, Tasmania",
+   "current": {
+    "file": "Mount Roland from lookout at Sheffield.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:devonport-9",
+   "key": "Mount Roland",
+   "current": {
+    "file": "Mount Roland from lookout at Sheffield.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:devonport-10",
+   "key": "Gunns Plains Cave",
+   "current": {
+    "file": "Gunns caves flowstone.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:devonport-11",
+   "key": "Leven Canyon",
+   "current": {
+    "file": "Leven Rambin October 2014.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "proof: 768 px wide (min 960)"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,582 @@
+[
+ {
+  "id": "hobart-1",
+  "name": "Museum of Old and New Art",
+  "coordinates": {
+   "lat": -42.8126877,
+   "lng": 147.2612436
+  },
+  "coordinates_source": "Photon/OSM tourism=museum node (MONA); Wikipedia article point agrees (15 m)",
+  "pin_confidence": "HIGH",
+  "moved_m": 0,
+  "hours": "10:00 AM – 5:00 PM (Thursday to Monday)",
+  "closedDays": [
+   2,
+   3
+  ],
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "costMin": 45,
+  "costMax": 45,
+  "currency": "AUD",
+  "ticketUrl": "https://mona.net.au/",
+  "blocked_url": null,
+  "bio": "A private museum of old and new art at Berriedale, reached by ferry from Hobart's waterfront or by road.",
+  "unverified": [
+   "Adult $45 is the standard rate; Tasmanian residents and under-4s free, concession $39, 12-17 $21; a $3.50 booking fee applies to most advance bookings",
+   "Opening hours could change for events or closures; not checked beyond the visit page"
+  ],
+  "sources": [
+   "https://mona.net.au/",
+   "https://mona.net.au/visit",
+   "https://mona.net.au/tickets"
+  ]
+ },
+ {
+  "id": "hobart-2",
+  "name": "Kunanyi / Mount Wellington",
+  "coordinates": {
+   "lat": -42.896007,
+   "lng": 147.237305
+  },
+  "coordinates_source": "Photon/OSM natural=peak (kunanyi / Mount Wellington); Wikipedia article point agrees (1 m)",
+  "pin_confidence": "HIGH",
+  "moved_m": 1,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 3,
+  "free": true,
+  "ticketUrl": "https://wellingtonpark.org.au/",
+  "blocked_url": null,
+  "bio": "A 1,271 m mountain above Hobart with a sealed road to the summit, lookouts and walking tracks.",
+  "unverified": [
+   "Hours: Wellington Park is an open-access reserve, closed only on Extreme/Catastrophic fire days; Pinnacle Road (the only road to the summit) closes for snow/ice (esp. Apr-Sep)",
+   "Pinnacle Rd annual maintenance closure 16-19 Nov 2026 (no vehicle access to the summit; The Springs only on 18-19 Nov); tracks stay open",
+   "Free entry per the Trust site; no vehicle fee found",
+   "ticketUrl is the Wellington Park Management Trust (the managing body); Parks Tasmania does not run this park"
+  ],
+  "sources": [
+   "https://wellingtonpark.org.au/",
+   "https://wellingtonpark.org.au/getting-there",
+   "https://wellingtonpark.org.au/faqs"
+  ]
+ },
+ {
+  "id": "hobart-3",
+  "name": "Salamanca Place",
+  "coordinates": {
+   "lat": -42.886639,
+   "lng": 147.332054
+  },
+  "coordinates_source": "Photon/OSM highway=unclassified (Salamanca Place street); Wikipedia article point agrees (9 m)",
+  "pin_confidence": "HIGH",
+  "moved_m": 0,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 2,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "A row of heritage sandstone warehouses on Hobart's waterfront, now holding galleries, shops, bars and restaurants.",
+  "unverified": [
+   "No single steward: a street of many venues, so no ticketUrl (salamanca.com.au is a precinct/market site; its operator was not confirmed)",
+   "Saturday market (8:30-3:30) is a weekly event, not part of the spot",
+   "Venue hours vary"
+  ],
+  "sources": [
+   "https://www.salamanca.com.au/",
+   "https://en.wikipedia.org/wiki/Salamanca_Place"
+  ]
+ },
+ {
+  "id": "hobart-4",
+  "name": "Battery Point",
+  "coordinates": {
+   "lat": -42.888997,
+   "lng": 147.335129
+  },
+  "coordinates_source": "Photon/OSM leisure=park (Arthur Circus), the named heart of the suburb; Wikipedia district point (suburb centroid) not used",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 445,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "A historic Hobart suburb of steep lanes, Arthur Circus and old cottages, best explored on foot.",
+  "unverified": [
+   "Pin is the Arthur Circus green, a standing point in the suburb; one OSM feature, no second source",
+   "No single steward, so no ticketUrl"
+  ],
+  "sources": [
+   "https://en.wikipedia.org/wiki/Battery_Point,_Tasmania"
+  ]
+ },
+ {
+  "id": "hobart-5",
+  "name": "Tasmanian Museum and Art Gallery",
+  "coordinates": {
+   "lat": -42.881981,
+   "lng": 147.3319795
+  },
+  "coordinates_source": "Photon/OSM tourism=museum node; Wikipedia article point agrees (11 m)",
+  "pin_confidence": "HIGH",
+  "moved_m": 0,
+  "hours": "10:00 AM – 4:00 PM (Tuesday to Sunday, April to December)",
+  "closedDays": [
+   1
+  ],
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "free": true,
+  "ticketUrl": "https://www.tmag.tas.gov.au/",
+  "blocked_url": "https://www.tmag.tas.gov.au/",
+  "bio": "The state museum in Hobart, with Tasmanian art, natural history and an Antarctic exhibition, free to enter.",
+  "unverified": [
+   "BLOCKED: tmag.tas.gov.au answers scripts with a Cloudflare check; owner to open it in a browser and confirm the page names TMAG",
+   "Hours and free entry come from a search summary of the official visit page, not read directly: 10-4, Tue-Sun 1 Apr-24 Dec, daily 26 Dec-31 Mar, open Monday public holidays, closed Good Friday, Anzac Day and Christmas Day; special exhibitions may charge",
+   "Bio mentions an Antarctic exhibition from the input bio, not re-verified"
+  ],
+  "sources": [
+   "https://www.tmag.tas.gov.au/visit",
+   "https://www.tmag.tas.gov.au/"
+  ]
+ },
+ {
+  "id": "hobart-6",
+  "name": "Cascades Female Factory",
+  "coordinates": {
+   "lat": -42.893902,
+   "lng": 147.29958
+  },
+  "coordinates_source": "Wikipedia article point (-42.8938,147.2993) and median of 4 geotagged Commons files agree within 100 m (placement point kept)",
+  "pin_confidence": "HIGH",
+  "moved_m": 0,
+  "hours": "9:30 AM – 4:30 PM",
+  "closedDays": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 35,
+  "costMax": 35,
+  "currency": "AUD",
+  "ticketUrl": "https://femalefactory.org.au/",
+  "blocked_url": null,
+  "bio": "A World Heritage convict women's prison in South Hobart, explored on guided tours and storytelling shows.",
+  "unverified": [
+   "Adult $35 (concession $25, child $20, family $90); tours daily from 10am; closed Christmas Day",
+   "The input point is not an OSM feature; resolve-pin returned only a bus stop (LOW), so the two-source Wikipedia/Commons agreement was used"
+  ],
+  "sources": [
+   "https://femalefactory.org.au/",
+   "https://femalefactory.org.au/visit/hours_admission/"
+  ]
+ },
+ {
+  "id": "hobart-7",
+  "name": "Sullivans Cove",
+  "coordinates": {
+   "lat": -42.882621,
+   "lng": 147.333139
+  },
+  "coordinates_source": "Photon/OSM leisure=marina (Constitution Dock), the waterfront standing point; Wikipedia bay centroid (-42.88528,147.33444) was 300 m away in the water",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 314,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "Hobart's original landing point and working harbour, home to Constitution Dock and the Sydney to Hobart finish.",
+  "unverified": [
+   "Pin is Constitution Dock, not the bay centroid; one OSM feature",
+   "No single steward, so no ticketUrl"
+  ],
+  "sources": [
+   "https://en.wikipedia.org/wiki/Sullivans_Cove"
+  ]
+ },
+ {
+  "id": "hobart-8",
+  "name": "Cascade Brewery",
+  "coordinates": {
+   "lat": -42.8960939,
+   "lng": 147.2934439
+  },
+  "coordinates_source": "Photon/OSM amenity=bar (Cascade Brewery Bar); Wikipedia article point agrees (82 m)",
+  "pin_confidence": "HIGH",
+  "moved_m": 0,
+  "hours": "Guided tours daily",
+  "closedDays": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 52,
+  "costMax": 52,
+  "currency": "AUD",
+  "ticketUrl": "https://www.cascadebreweryco.com.au/",
+  "blocked_url": null,
+  "bio": "Australia's oldest continually operating brewery, in South Hobart, with brewery and heritage tours.",
+  "unverified": [
+   "Hours and price NOT verified: the tours are booked through a JavaScript FareHarbor page (fareharbor.com/embeds/book/cascadebreweryco) that scripts cannot read",
+   "Price A$52 is the Expedia AU reseller price for the Brewery Tour (about 1.5 h, four-beer tasting); older sources say $30; Heritage Tour a lower price; check on the FareHarbor page",
+   "Tours reported as starting around 10-11am daily; confirm",
+   "Age limits: brewery tour 16+/18+ per reseller; closed-toe shoes required"
+  ],
+  "sources": [
+   "https://www.cascadebreweryco.com.au/",
+   "https://www.cascadebreweryco.com.au/pages/history",
+   "https://en.wikipedia.org/wiki/Cascade_Brewery",
+   "https://www.expedia.com.au/things-to-do/a.a49865443.activity-details"
+  ]
+ },
+ {
+  "id": "hobart-9",
+  "name": "Bonorong Wildlife Sanctuary",
+  "coordinates": {
+   "lat": -42.7092183,
+   "lng": 147.2715494
+  },
+  "coordinates_source": "Photon/OSM tourism=zoo (Bonorong Wildlife Sanctuary); Wikipedia article point agrees (0 m)",
+  "pin_confidence": "HIGH",
+  "moved_m": 56,
+  "hours": "9:00 AM – 5:00 PM",
+  "closedDays": null,
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "costMin": 37,
+  "costMax": 37,
+  "currency": "AUD",
+  "ticketUrl": "https://www.bonorong.com.au/",
+  "blocked_url": null,
+  "bio": "A wildlife rescue sanctuary at Brighton where daily tours meet kangaroos, wombats, koalas and Tasmanian devils.",
+  "unverified": [
+   "Adult $37 general admission (child $22; family $105); open every day, Christmas Day closes at 4pm; day tours 10:00, 11:30, 1:30 and 3:30",
+   "Which species are on show was taken from the input bio; the homepage names echidnas and wombats only"
+  ],
+  "sources": [
+   "https://www.bonorong.com.au/",
+   "https://www.bonorong.com.au/plan-your-visit/",
+   "https://www.bonorong.com.au/experiences/"
+  ]
+ },
+ {
+  "id": "hobart-10",
+  "name": "Royal Tasmanian Botanical Gardens",
+  "coordinates": {
+   "lat": -42.863493,
+   "lng": 147.32959
+  },
+  "coordinates_source": "Photon/OSM leisure=park polygon centroid (Royal Tasmanian Botanical Gardens), a point inside the gardens; Wikipedia point (-42.8652,147.3304) is rounded and 190 m away",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 201,
+  "hours": "8:00 AM – 6:30 PM (to 31 March; 8:00 AM – 5:00 PM April to September)",
+  "closedDays": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "free": true,
+  "ticketUrl": "https://gardens.tas.gov.au/",
+  "blocked_url": null,
+  "bio": "Free botanical gardens on Hobart's Queens Domain, founded in 1818, with a timber viewing deck over the lily pond.",
+  "unverified": [
+   "Conservatory is closed for restoration (site alert today); shop, kiosk and restaurant have shorter hours and close on Christmas Day",
+   "Site heading reads \"Botanical Gardens Tasmania\" (the Gardens current brand); page text names the Royal Tasmanian Botanical Gardens",
+   "The Queens Domain location is from the input bio",
+   "Lily pond deck from Monument Australia (Lily Pads plaque), not the official site"
+  ],
+  "sources": [
+   "https://gardens.tas.gov.au/",
+   "https://gardens.tas.gov.au/visit",
+   "https://gardens.tas.gov.au/visit/opening-hours-location",
+   "https://monumentaustralia.org.au/themes/government/state/display/114270-200th-anniversary-of-the-royal-tasmanian-botanical-gardens"
+  ]
+ },
+ {
+  "id": "hobart-11",
+  "name": "Richmond",
+  "coordinates": {
+   "lat": -42.7352717,
+   "lng": 147.4384546
+  },
+  "coordinates_source": "Photon/OSM place=town (Richmond); the spot is the village itself",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 471,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "A colonial village in the Coal River valley, with a convict-built bridge and gaol, sandstone buildings and tea rooms.",
+  "unverified": [
+   "The village has no single official site found; no ticketUrl",
+   "Venue hours vary; Richmond Bridge and Richmond Gaol are separate spots (hobart-12, hobart-13): consider trimming this bio so it does not repeat them"
+  ],
+  "sources": [
+   "https://en.wikipedia.org/wiki/Richmond,_Tasmania",
+   "https://www.fodors.com/world/australia-and-the-pacific/australia/tasmania/richmond"
+  ]
+ },
+ {
+  "id": "hobart-12",
+  "name": "Richmond Bridge",
+  "coordinates": {
+   "lat": -42.7338298,
+   "lng": 147.4399809
+  },
+  "coordinates_source": "Photon/OSM man_made=bridge (Richmond Bridge); the placement point is 20 m away",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 50,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0,
+  "visitHoursMax": 0.5,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "A convict-built sandstone arch bridge begun in 1823, the oldest stone span bridge in Australia.",
+  "unverified": [
+   "Wikipedia article point not returned by resolve-pin; one OSM feature",
+   "No single steward, so no ticketUrl"
+  ],
+  "sources": [
+   "https://en.wikipedia.org/wiki/Richmond_Bridge,_Tasmania"
+  ]
+ },
+ {
+  "id": "hobart-13",
+  "name": "Richmond Gaol",
+  "coordinates": {
+   "lat": -42.7363111,
+   "lng": 147.4392723
+  },
+  "coordinates_source": "Photon/OSM tourism=museum (Richmond Gaol); Wikipedia article point agrees (25 m)",
+  "pin_confidence": "HIGH",
+  "moved_m": 32,
+  "hours": "9:00 AM – 5:00 PM",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "costMin": 12,
+  "costMax": 12,
+  "currency": "AUD",
+  "ticketUrl": "https://richmondgaol.com.au/",
+  "blocked_url": null,
+  "bio": "A convict gaol built from 1825 to 1840, open daily for self-guided visits of its cells and courtyards.",
+  "unverified": [
+   "Adult $12 (child $6, family $30); closed Christmas Day (not seen on the home page; from third-party listings)"
+  ],
+  "sources": [
+   "https://richmondgaol.com.au/"
+  ]
+ },
+ {
+  "id": "hobart-14",
+  "name": "Maritime Museum of Tasmania",
+  "coordinates": {
+   "lat": -42.8826328,
+   "lng": 147.3316158
+  },
+  "coordinates_source": "Photon/OSM tourism=museum node; Wikipedia article point agrees (44 m)",
+  "pin_confidence": "HIGH",
+  "moved_m": 0,
+  "hours": "9:00 AM – 5:00 PM",
+  "closedDays": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 16,
+  "costMax": 16,
+  "currency": "AUD",
+  "ticketUrl": "https://www.maritimetas.org/",
+  "blocked_url": null,
+  "bio": "A museum opposite Constitution Dock on Tasmania's maritime history, with galleries and historic vessels.",
+  "unverified": [
+   "Adult $16 (concession $13, child $6, family $32); open daily except Christmas Day"
+  ],
+  "sources": [
+   "https://www.maritimetas.org/visit/plan-your-visit",
+   "https://www.maritimetas.org/visit/admission"
+  ]
+ },
+ {
+  "id": "hobart-15",
+  "name": "Penitentiary Chapel",
+  "coordinates": {
+   "lat": -42.877319,
+   "lng": 147.3269359
+  },
+  "coordinates_source": "Photon/OSM building=yes (Penitentiary Chapel and Criminal Court); median of 4 geotagged Commons files agrees (53 m)",
+  "pin_confidence": "HIGH",
+  "moved_m": 0,
+  "hours": "9:30 AM – 4:30 PM (Wednesday to Sunday to end of October; Tuesday to Sunday from November)",
+  "closedDays": [
+   1
+  ],
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 35,
+  "costMax": 35,
+  "currency": "AUD",
+  "ticketUrl": "https://www.nationaltrust.org.au/places/penitentiary/",
+  "blocked_url": null,
+  "bio": "A convict-era penitentiary with courtrooms, tunnels and solitary cells, seen on 90-minute guided tours.",
+  "unverified": [
+   "Price $35 adult is from the 2023-24 Rezdy booking page (concession $30, child 7-16 $20); the National Trust page gave no current price",
+   "Tours 10am and 11:30am morning and afternoon slots; booking recommended; closed Tuesday only until the November summer hours start",
+   "Page heading is \"Unshackled: Hobart Penitentiary\" (National Trust name for the Penitentiary Chapel Historic Site)"
+  ],
+  "sources": [
+   "https://www.nationaltrust.org.au/places/penitentiary/",
+   "https://nationaltrusttas.rezdy.com/563883/hobart-penitentiary-guided-tour-2023-24"
+  ]
+ },
+ {
+  "id": "hobart-16",
+  "name": "Narryna Heritage Museum",
+  "coordinates": {
+   "lat": -42.8892857,
+   "lng": 147.3315508
+  },
+  "coordinates_source": "Photon/OSM tourism=museum (Narryna); median of 2 geotagged Commons files agrees (23 m)",
+  "pin_confidence": "HIGH",
+  "moved_m": 23,
+  "hours": "10:00 AM – 4:00 PM (Tuesday to Saturday)",
+  "closedDays": [
+   0,
+   1
+  ],
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "costMin": 10,
+  "costMax": 10,
+  "currency": "AUD",
+  "ticketUrl": "https://www.narryna.com.au/",
+  "blocked_url": null,
+  "bio": "An 1830s merchant's house museum in Battery Point with period furnishings and a garden.",
+  "unverified": [
+   "Adult $10 (concession $8, child to 18 $5); closed Sunday, Monday, public holidays and 28 Jul-3 Sep",
+   "Garden and furnishings are from the input bio, not re-checked"
+  ],
+  "sources": [
+   "https://www.narryna.com.au/",
+   "https://www.narryna.com.au/visit",
+   "https://www.narryna.com.au/about"
+  ]
+ },
+ {
+  "id": "hobart-17",
+  "name": "Shot Tower",
+  "coordinates": {
+   "lat": -42.9579822,
+   "lng": 147.3374734
+  },
+  "coordinates_source": "Photon/OSM tourism=attraction (Shot Tower); Tea Room 8 m away",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 8,
+  "hours": "10:00 AM – 5:00 PM",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "costMin": 8,
+  "costMax": 8,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/shot-tower",
+  "blocked_url": null,
+  "bio": "A 58 m sandstone shot tower at Taroona with 259 steps up to views over the River Derwent.",
+  "unverified": [
+   "Price UNVERIFIED: Taroona Community Association confirms an entry charge for the climb; $8 adult is from a 2017 blog; the Parks page gives none",
+   "Shot Tower Historic Site: expressions of interest for a new operator opened Oct 2026, so hours, price and operator may change",
+   "Hours 10-5 daily from the Parks page (a Taroona listing says Thu-Sun 10-4; the Parks page was used)"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/shot-tower",
+   "https://www.taroona.tas.au/businesses-in-taroona/"
+  ]
+ },
+ {
+  "id": "hobart-18",
+  "name": "Mount Nelson",
+  "coordinates": {
+   "lat": -42.9241863,
+   "lng": 147.3442507
+  },
+  "coordinates_source": "Photon/OSM tourism=viewpoint (Mount Nelson Signal Station); OSM natural=peak and Commons median within 15 m",
+  "pin_confidence": "HIGH",
+  "moved_m": 15,
+  "hours": "Daylight hours",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "free": true,
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/mount-nelson-signal-station",
+  "blocked_url": null,
+  "bio": "A hill above Hobart with a lookout at the historic signal station, picnic areas and views as far as Bruny Island.",
+  "unverified": [
+   "Hours and fee not stated on the Parks page; free and daylight access assumed for an open lookout: confirm",
+   "The signal station restaurant and bar was due to open in October 2026 (Parks page); not yet checked",
+   "Spot name stays \"Mount Nelson\"; the visitor site is the Signal Station"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/mount-nelson-signal-station"
+  ]
+ },
+ {
+  "id": "hobart-19",
+  "name": "Kingston Beach",
+  "coordinates": {
+   "lat": -42.9807385,
+   "lng": 147.3257204
+  },
+  "coordinates_source": "Photon/OSM natural=beach way (Kingston Beach); the placement point (Wikipedia suburb coordinates) was 1.3 km west of the beach",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 1328,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 2,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "A sandy suburban beach on the Derwent estuary at Kingston, south of Hobart.",
+  "unverified": [
+   "No visitor-oriented source read for this beach: Wikipedia covers the suburb only; consider review as a marginal spot",
+   "The beachside art hub in the input bio was not verified and is left out",
+   "No single steward, so no ticketUrl"
+  ],
+  "sources": [
+   "https://en.wikipedia.org/wiki/Kingston_Beach"
+  ]
+ },
+ {
+  "id": "hobart-20",
+  "name": "Glenorchy Art and Sculpture Park",
+  "coordinates": {
+   "lat": -42.81984167,
+   "lng": 147.28511389
+  },
+  "coordinates_source": "Wikipedia article point (Glenorchy Art and Sculpture Park); OSM Wilkinsons Point (natural=cape, where the park ends) is 105 m away. Unchanged from the placement point",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 0,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "A free waterside sculpture park on Elwick Bay at Glenorchy, with public artworks, wetlands and a walking path.",
+  "unverified": [
+   "ticketUrl not found: the council page linked from Wikipedia (gcc.tas.gov.au/discover-glenorchy/arts-and-culture/glenorchy-art-and-sculpture-park/) returns 404",
+   "Funding for the park was withdrawn in 2020 and its directors dissolved in 2021 (Wikipedia); a boardwalk was to stay open. Current state of the artworks and path not verified: consider review",
+   "Free and open access assumed; wetlands and walking-path details come from a search summary of the council page, not read directly"
+  ],
+  "sources": [
+   "https://en.wikipedia.org/wiki/Glenorchy_Art_and_Sculpture_Park"
+  ]
+ }
+]

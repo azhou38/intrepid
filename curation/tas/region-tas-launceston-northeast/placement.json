@@ -1,0 +1,910 @@
+{
+ "region": "tas-launceston-northeast",
+ "placements": [
+  {
+   "name": "Cataract Gorge",
+   "action": "spot",
+   "destination": "launceston",
+   "id": "launceston-1",
+   "coordinates": {
+    "lat": -41.446111,
+    "lng": 147.119444
+   },
+   "coordinates_source": "Wikipedia article Cataract Gorge (coordinates of the gorge itself; resolve-pin LOW, Overpass found no feature)",
+   "pin_confidence": "LOW",
+   "reason": "Gorge reserve 2 km from the centre; Inside the proposed destination's span and reached from its base.",
+   "wiki": "Cataract Gorge",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "South Esk river gorge a short walk from the centre, with a suspension bridge, trails, a chairlift and a swimming basin.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "cost": null,
+   "free": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "name": "Queen Victoria Museum & Art Gallery",
+   "action": "spot",
+   "destination": "launceston",
+   "id": "launceston-2",
+   "coordinates": {
+    "lat": -41.428445,
+    "lng": 147.140474
+   },
+   "coordinates_source": "Wikivoyage listing geo for the Inveresk site, agrees within 40 m with the median of 3 geotagged Commons files (MEDIUM)",
+   "pin_confidence": "MEDIUM",
+   "reason": "Inveresk museum in the city; Inside the proposed destination's span and reached from its base. Two sites (Inveresk, Royal Park): the pin is Inveresk, the larger; Pipeline C to confirm.",
+   "wiki": "Queen Victoria Museum and Art Gallery",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Tasmania's northern museum and art gallery at Inveresk, with natural science, local history, art, craft and a planetarium.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "cost": null,
+   "free": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "City Park",
+   "action": "spot",
+   "destination": "launceston",
+   "id": "launceston-3",
+   "coordinates": {
+    "lat": -41.432881,
+    "lng": 147.142849
+   },
+   "coordinates_source": "OpenStreetMap leisure=park via Photon, agrees with Wikipedia City Park, Launceston within 60 m (HIGH)",
+   "pin_confidence": "HIGH",
+   "reason": "Central heritage park; Inside the proposed destination's span and reached from its base.",
+   "wiki": "City Park, Launceston",
+   "icon": "🌳",
+   "category": "nature",
+   "bio": "Victorian-era park in the heart of Launceston, with a Japanese macaque enclosure, a conservatory and old trees.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "cost": null,
+   "free": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Brickendon Estate",
+   "action": "spot",
+   "destination": "launceston",
+   "id": "launceston-4",
+   "coordinates": {
+    "lat": -41.620768,
+    "lng": 147.130451
+   },
+   "coordinates_source": "Median of 5 geotagged Commons files (resolve-pin LOW; the Wikipedia 'Brickendon' title is a London suburb, not used)",
+   "pin_confidence": "LOW",
+   "reason": "Convict-site World Heritage farm at Longford, 20 km south of the centre; inside Launceston's 32 km span (24 km radius) and a day trip from the city.",
+   "wiki": "Brickendon",
+   "icon": "🌾",
+   "category": "historic",
+   "bio": "Working farm founded in 1824 at Longford, part of the Australian Convict Sites World Heritage listing, with its original buildings.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "cost": null,
+   "free": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "name": "Woolmers Estate",
+   "action": "spot",
+   "destination": "launceston",
+   "id": "launceston-5",
+   "coordinates": {
+    "lat": -41.62525,
+    "lng": 147.148167
+   },
+   "coordinates_source": "Wikipedia article Woolmers Estate, agrees with Wikivoyage listing geo within 20 m (HIGH)",
+   "pin_confidence": "HIGH",
+   "reason": "Convict-site World Heritage estate at Longford, 20.5 km south of the centre; inside Launceston's span and reached from the city.",
+   "wiki": "Woolmers Estate",
+   "icon": "🏡",
+   "category": "historic",
+   "bio": "1817 Longford estate with a manor house, convict cottages, coach house and the National Rose Garden.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "cost": null,
+   "free": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Boag's Brewery",
+   "action": "spot",
+   "destination": "launceston",
+   "id": "launceston-6",
+   "coordinates": {
+    "lat": -41.43268,
+    "lng": 147.137758
+   },
+   "coordinates_source": "Wikipedia article Boag's Brewery agrees with the median of 8 geotagged Commons files within 35 m (HIGH)",
+   "pin_confidence": "HIGH",
+   "reason": "City brewery with tours; Inside the proposed destination's span and reached from its base.",
+   "wiki": "Boag's Brewery",
+   "icon": "🍺",
+   "category": "entertainment",
+   "bio": "Historic Launceston brewery, visited on tours from the Boag's Centre for Beer Lovers at the Tamar Hotel.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "cost": null,
+   "free": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Duck Reach Power Station",
+   "action": "spot",
+   "destination": "launceston",
+   "id": "launceston-7",
+   "coordinates": {
+    "lat": -41.459167,
+    "lng": 147.111111
+   },
+   "coordinates_source": "Wikipedia article Duck Reach Power Station (the ruin's own point; resolve-pin LOW, no OSM feature)",
+   "pin_confidence": "LOW",
+   "reason": "At the end of a Cataract Gorge walk; Inside the proposed destination's span and reached from its base. Kept as its own stop because the heritage ruin and interpretation centre is a distinct destination of the walk, though it could fold into the Gorge.",
+   "wiki": "Duck Reach Power Station",
+   "icon": "⚡",
+   "category": "historic",
+   "bio": "1895 hydro station at the head of the gorge, reached by a walk of about 1.5 hours return from the Gorge or Trevallyn.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "cost": null,
+   "free": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "name": "Tamar Island Wetlands",
+   "action": "spot",
+   "destination": "launceston",
+   "id": "launceston-8",
+   "coordinates": null,
+   "coordinates_source": "No source gave the visitor centre or boardwalk point; the Wikipedia Tamar River Conservation Area centroid (-41.33983, 147.03418) is a reserve centroid, not a pin",
+   "pin_confidence": null,
+   "reason": "About 10 km north of the centre on the Tamar; inside Launceston's span and a short trip from the city. Not a Tamar Valley spot because it is 14 km from the city but 21 km from the valley's centre and is the city's own nearby nature stop.",
+   "wiki": null,
+   "icon": "🦆",
+   "category": "nature",
+   "bio": "Estuary wetland reserve with an interpretation centre, a boardwalk to Tamar Island and bird hides.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "cost": null,
+   "free": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "name": "Tasmania Zoo",
+   "action": "spot",
+   "destination": "launceston",
+   "id": "launceston-9",
+   "coordinates": {
+    "lat": -41.43095,
+    "lng": 146.978461
+   },
+   "coordinates_source": "Wikipedia article Tasmania Zoo (1.1 km from the Wikivoyage listing geo; unresolved, resolve-pin LOW)",
+   "pin_confidence": "LOW",
+   "reason": "Riverside zoo 13.6 km west of the centre; inside Launceston's span and reached from the city. Not a Tamar Valley spot (it is 25 km from the valley centre and a Launceston outing).",
+   "wiki": "Tasmania Zoo",
+   "icon": "🦘",
+   "category": "entertainment",
+   "bio": "Zoo on 900 acres of bushland at Riverside with about 100 native and exotic species.",
+   "hours": null,
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "cost": null,
+   "free": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "name": "Beaconsfield Mine & Heritage Centre",
+   "action": "spot",
+   "destination": "tamar-valley",
+   "id": "tamar-valley-1",
+   "coordinates": {
+    "lat": -41.20159,
+    "lng": 146.816413
+   },
+   "coordinates_source": "Median of 17 geotagged Commons files, agrees with Wikipedia article within 50 m (HIGH)",
+   "pin_confidence": "HIGH",
+   "reason": "Former gold mine at Beaconsfield, 7 km from the valley centre; also within 38 km of Launceston's centre but outside its 24 km radius, so a Tamar Valley spot. Owner for this place per CROSS-REGION.",
+   "wiki": "Beaconsfield Mine & Heritage Centre",
+   "icon": "⛏️",
+   "category": "museum",
+   "bio": "Heritage centre on the former Beaconsfield gold mine, known for the 2006 rescue of two trapped miners.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "cost": null,
+   "free": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Low Head Lighthouse",
+   "action": "spot",
+   "destination": "tamar-valley",
+   "id": "tamar-valley-2",
+   "coordinates": {
+    "lat": -41.050417,
+    "lng": 146.789444
+   },
+   "coordinates_source": "Wikipedia article Low Head Lighthouse (0.7 km from the Wikivoyage listing geo; resolve-pin LOW)",
+   "pin_confidence": "LOW",
+   "reason": "Lighthouse at the Tamar mouth, 19 km from the valley centre; inside the span, reached from George Town.",
+   "wiki": "Low Head Lighthouse",
+   "icon": "🗼",
+   "category": "landmark",
+   "bio": "Lighthouse at the mouth of the Tamar, the third built in Australia and its oldest in continuous use.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "cost": null,
+   "free": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "name": "Platypus House",
+   "action": "spot",
+   "destination": "tamar-valley",
+   "id": "tamar-valley-3",
+   "coordinates": {
+    "lat": -41.1505,
+    "lng": 146.82424
+   },
+   "coordinates_source": "Wikivoyage listing geo for the attraction itself (4 decimals; resolve-pin LOW)",
+   "pin_confidence": "LOW",
+   "reason": "Beauty Point wildlife stop, 8 km from the valley centre; inside the span. Beauty Point itself is rejected as a wrapper town.",
+   "wiki": null,
+   "icon": "🦫",
+   "category": "entertainment",
+   "bio": "Guided wildlife house at Beauty Point where visitors see platypus and echidnas close up.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "cost": null,
+   "free": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "name": "Seahorse World",
+   "action": "spot",
+   "destination": "tamar-valley",
+   "id": "tamar-valley-4",
+   "coordinates": {
+    "lat": -41.1498,
+    "lng": 146.8239
+   },
+   "coordinates_source": "Wikivoyage listing geo for the attraction itself (4 decimals; resolve-pin LOW)",
+   "pin_confidence": "LOW",
+   "reason": "Beauty Point aquarium next to Platypus House; inside the span. Status (hours, ownership) unverified: Wikivoyage link is dead.",
+   "wiki": null,
+   "icon": "🐠",
+   "category": "entertainment",
+   "bio": "Beauty Point aquarium and seahorse breeding farm with tanks of seahorse species.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "cost": null,
+   "free": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "name": "Bass and Flinders Centre",
+   "action": "spot",
+   "destination": "tamar-valley",
+   "id": "tamar-valley-5",
+   "coordinates": {
+    "lat": -41.10784,
+    "lng": 146.82117
+   },
+   "coordinates_source": "Wikivoyage listing geo for the attraction itself (resolve-pin LOW)",
+   "pin_confidence": "LOW",
+   "reason": "George Town museum, 12 km from the valley centre; inside the span. George Town (the town) is folded into the destination description, since this museum and Low Head Lighthouse are its draws.",
+   "wiki": null,
+   "icon": "⛵",
+   "category": "museum",
+   "bio": "George Town museum with a working replica of the Norfolk, the ship that first sailed around Tasmania, which visitors can board.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "cost": null,
+   "free": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "name": "Brady's Lookout",
+   "action": "spot",
+   "destination": "tamar-valley",
+   "id": "tamar-valley-6",
+   "coordinates": null,
+   "coordinates_source": "No source gave a point; resolve-pin found no OSM feature (LOW). Take the lookout's car park from the agency or OSM in Pipeline C",
+   "pin_confidence": null,
+   "reason": "Tamar River lookout; reached from the valley base and Launceston, inside either span; sits on the Tamar so placed in the Tamar Valley. Kept on a single weak source (skeptic: roadside, 20-30 min); visitor details unconfirmed.",
+   "wiki": null,
+   "icon": "👀",
+   "category": "viewpoint",
+   "bio": "Lookout over the Tamar River and its vineyards, a short stop on the valley drive north of Launceston.",
+   "hours": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "cost": null,
+   "free": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "name": "Bridestowe Lavender Estate",
+   "action": "standalone",
+   "destination": null,
+   "id": "bridestowe-lavender-estate",
+   "coordinates": {
+    "lat": -41.133547,
+    "lng": 147.351809
+   },
+   "coordinates_source": "Wikipedia article Bridestowe Lavender Estate (the estate's own point; resolve-pin LOW)",
+   "pin_confidence": "LOW",
+   "reason": "Nabowla, 38.7 km from the Tamar Valley centre and 38 km from Launceston's, outside both spans (Tamar Valley radius 34 km, Launceston 24 km); reached by its own road via Scottsdale or Launceston. Not a spot of Tamar Valley: it lies east of the valley on the road to Scottsdale and nowhere near the river. Standalone.",
+   "wiki": "Bridestowe Lavender Estate",
+   "icon": "💜",
+   "category": "nature",
+   "bio": "Large commercial lavender farm at Nabowla, in full bloom around December and January, with a shop and cafe.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "cost": null,
+   "free": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Hobart"
+  },
+  {
+   "name": "Binalong Bay",
+   "action": "spot",
+   "destination": "bay-of-fires",
+   "id": "bay-of-fires-1",
+   "coordinates": {
+    "lat": -41.252626,
+    "lng": 148.302682
+   },
+   "coordinates_source": "Wikivoyage listing geo for the village/beach (Wikipedia rounds to -41.25, 148.30; OSM natural/beach not confirmed; resolve-pin LOW)",
+   "pin_confidence": "LOW",
+   "reason": "Southern access to the Bay of Fires, 11 km from the destination centre; inside its span and reached from St Helens (10 km).",
+   "wiki": "Binalong Bay",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Coastal village and white-sand beach at the southern end of the Bay of Fires, good for swimming and kayaking.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "cost": null,
+   "free": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "name": "Eddystone Point Lighthouse",
+   "action": "spot",
+   "destination": "bay-of-fires",
+   "id": "bay-of-fires-2",
+   "coordinates": {
+    "lat": -40.993889,
+    "lng": 148.348889
+   },
+   "coordinates_source": "Wikipedia article Eddystone Point (the point itself)",
+   "pin_confidence": "LOW",
+   "reason": "At the northern end of the Bay of Fires, 18 km from the centre; inside the span, driven from St Helens. Sits within Mount William NP (a spot of its own).",
+   "wiki": "Eddystone Point",
+   "icon": "🗼",
+   "category": "landmark",
+   "bio": "Granite lighthouse at the northern end of the Bay of Fires, with orange-lichen rocks and beaches around the grounds.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "cost": null,
+   "free": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "name": "Mount William National Park",
+   "action": "spot",
+   "destination": "bay-of-fires",
+   "id": "bay-of-fires-3",
+   "coordinates": {
+    "lat": -40.937778,
+    "lng": 148.253611
+   },
+   "coordinates_source": "Wikipedia article centroid of the park (resolve-pin LOW); Pipeline C to give the main visitor point",
+   "pin_confidence": "LOW",
+   "reason": "National park on the far northeast coast, 24 km from the centre; inside the destination span, reached from St Helens or via Gladstone. Not a destination itself: only 3 kept spots (Eddystone Point, the summit walk, Cobler Rocks), below the four-spot bar. Owner for this place per CROSS-REGION.",
+   "wiki": "Mount William National Park",
+   "icon": "🦘",
+   "category": "nature",
+   "bio": "National park of beaches, heath and coastal walks on the northeast tip, known for forester kangaroos and birdlife.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "cost": null,
+   "free": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "name": "Mount William (wukalina) Summit Walk",
+   "action": "spot",
+   "destination": "bay-of-fires",
+   "id": "bay-of-fires-4",
+   "coordinates": null,
+   "coordinates_source": "No source gave the route; take the midpoint of the OSM hiking route or the agency's track map in Pipeline C (resolve-pin found nothing)",
+   "pin_confidence": null,
+   "reason": "Summit walk of Mount William NP, 24 km from the centre; inside the span. Named for the summit walk, not the guided wukalina Walk tour.",
+   "wiki": null,
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "About 90 minutes return climb to the 216 m summit of wukalina/Mount William, with coastal views toward the Furneaux Group.",
+   "hours": null,
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2.5,
+   "cost": null,
+   "free": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "name": "St Columba Falls",
+   "action": "spot",
+   "destination": "bay-of-fires",
+   "id": "bay-of-fires-5",
+   "coordinates": null,
+   "coordinates_source": "No source gave a point; the candidate's coordinates belong to Ben Lomond (Mount Victoria Forest Reserve); resolve-pin found nothing. Take the agency's car park in Pipeline C",
+   "pin_confidence": null,
+   "reason": "Waterfall near Pyengana, about 28 km west of the centre; inside the span, reached from St Helens. Not a Ben Lomond spot (different valley).",
+   "wiki": "St Columba Falls",
+   "icon": "💧",
+   "category": "nature",
+   "bio": "One of Tasmania's tallest waterfalls, reached by a short forest walk from the road near Pyengana.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "cost": null,
+   "free": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "name": "St Helens",
+   "action": "spot",
+   "destination": "bay-of-fires",
+   "id": "bay-of-fires-6",
+   "coordinates": {
+    "lat": -41.316667,
+    "lng": 148.233333
+   },
+   "coordinates_source": "Wikipedia article St Helens, Tasmania (town centre point, which is the right point for a town spot)",
+   "pin_confidence": "MEDIUM",
+   "reason": "The coast's base town on Georges Bay, 19 km from the centre. Kept as a town because it is the base and its bay and waterfront are a draw; its own sights (History Room, Mainly Maritime, Serpentarium) are review, not kept, so no wrapper issue.",
+   "wiki": "St Helens, Tasmania",
+   "icon": "⚓",
+   "category": "landmark",
+   "bio": "Largest town on the northeast coast, on Georges Bay, and the base for the Bay of Fires and Mount William.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "cost": null,
+   "free": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Pyengana Dairy",
+   "action": "spot",
+   "destination": "bay-of-fires",
+   "id": "bay-of-fires-7",
+   "coordinates": {
+    "lat": -41.289033,
+    "lng": 148.004914
+   },
+   "coordinates_source": "Median of 1 geotagged Commons file whose title shares the name (resolve-pin LOW); confirm in Pipeline C",
+   "pin_confidence": "LOW",
+   "reason": "Cheese dairy at Pyengana, 28 km from the centre; inside the span, on the road to St Columba Falls. Kept as a regional icon though close to a food venue.",
+   "wiki": null,
+   "icon": "🧀",
+   "category": "entertainment",
+   "bio": "Farm dairy at Pyengana where visitors taste aged cheddars and watch cheese-making through a window.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "cost": null,
+   "free": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "name": "Cobler Rocks Walk",
+   "action": "spot",
+   "destination": "bay-of-fires",
+   "id": "bay-of-fires-8",
+   "coordinates": null,
+   "coordinates_source": "No source gave the route; take the midpoint of the OSM route or the agency's map in Pipeline C (resolve-pin found nothing)",
+   "pin_confidence": null,
+   "reason": "Coastal walk in Mount William NP; inside the destination span.",
+   "wiki": null,
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Two-hour return walk from banksia heath along fire trails and beach to rocky coastal outlooks.",
+   "hours": null,
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2.5,
+   "cost": null,
+   "free": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "name": "St Helens Mountain Bike Trails",
+   "action": "spot",
+   "destination": "bay-of-fires",
+   "id": "bay-of-fires-9",
+   "coordinates": {
+    "lat": -41.357046,
+    "lng": 148.247889
+   },
+   "coordinates_source": "Wikivoyage listing geo (trail-network point; resolve-pin LOW)",
+   "pin_confidence": "LOW",
+   "reason": "Trail network around St Helens, 23 km from the centre; inside the span and reached from the town. A network not a single place; kept on the verdict but weakest of the nine.",
+   "wiki": null,
+   "icon": "🚵",
+   "category": "hike",
+   "bio": "Mountain bike trail network around St Helens, with a ride that finishes at the bay.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "cost": null,
+   "free": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ]
+  },
+  {
+   "name": "Ben Lomond National Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "ben-lomond-national-park",
+   "coordinates": {
+    "lat": -41.550833,
+    "lng": 147.666944
+   },
+   "coordinates_source": "Wikivoyage listing geo for the park (resolve-pin: the Commons median of 8 files lies 4 km north; Pipeline C to settle the Alpine Village hub)",
+   "pin_confidence": "LOW",
+   "reason": "Alpine plateau park 65 km from the Bay of Fires and 50 km from Launceston: outside every proposed span. Not a destination: only 2 kept spots (park, ski field), below the four-spot bar. Standalone.",
+   "wiki": "Ben Lomond National Park",
+   "icon": "⛰️",
+   "category": "nature",
+   "bio": "Alpine plateau park of dolerite cliffs and walks above the Midlands, with Tasmania's only downhill ski area.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "cost": null,
+   "free": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Hobart"
+  },
+  {
+   "name": "Ben Lomond Ski Field",
+   "action": "standalone",
+   "destination": null,
+   "id": "ben-lomond-ski-field",
+   "coordinates": null,
+   "coordinates_source": "No source gave a point; resolve-pin found only the Commons median of 8 files (-41.5138, 147.670), a 2 km-off centre. Take the Alpine Village point from the agency in Pipeline C",
+   "pin_confidence": null,
+   "reason": "Ski area inside Ben Lomond NP, 50 km from Launceston: outside every span. Standalone beside the park (a distinct activity; the skeptic noted it could be one spot with the park, left for the owner).",
+   "wiki": null,
+   "icon": "⛷️",
+   "category": "entertainment",
+   "bio": "Tasmania's only downhill ski area, on the Ben Lomond plateau and usually open from July to September.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "cost": null,
+   "free": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Hobart"
+  },
+  {
+   "name": "Little Blue Lake",
+   "action": "standalone",
+   "destination": null,
+   "id": "little-blue-lake",
+   "coordinates": null,
+   "coordinates_source": "The candidate's coordinates (-37.93, 140.68) are Little Blue Lake in South Australia: wrong. Resolve-pin found no Tasmanian feature; take the lake from OSM/agency in Pipeline C",
+   "pin_confidence": null,
+   "reason": "Lake near Ansons Bay in the Blue Derby area, about 45 km east of Scottsdale and 60 km from the Bay of Fires centre: no destination spans it. Standalone. May lie outside this region (Derby): owner to confirm.",
+   "wiki": null,
+   "icon": "💙",
+   "category": "nature",
+   "bio": "Small blue-tinted lake in Tasmania's northeast, a short roadside stop; swimming is not recommended.",
+   "hours": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "cost": null,
+   "free": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Hobart"
+  }
+ ],
+ "merged_into_destination": [
+  {
+   "name": "Launceston",
+   "action": "new-destination",
+   "destination": "launceston",
+   "reason": "The city is the destination, not a spot of itself."
+  },
+  {
+   "name": "Tamar Valley Wine Route",
+   "action": "new-destination",
+   "destination": "tamar-valley",
+   "reason": "A regional wine route, not a place with a point; merged into the Tamar Valley destination's description and why-visit (a destination is not a spot of itself). Individual cellar doors were rejected by the judge."
+  },
+  {
+   "name": "George Town",
+   "action": "new-destination",
+   "destination": "tamar-valley",
+   "reason": "A base town whose draws are Low Head Lighthouse and the Bass and Flinders Centre, both kept as spots; per 'a town is a spot only when the town itself is a draw' it is named in the Tamar Valley description rather than listed beside them."
+  },
+  {
+   "name": "Bay of Fires",
+   "action": "new-destination",
+   "destination": "bay-of-fires",
+   "reason": "The coast itself is the proposed destination (a long beach feature goes where visitors reach it: Binalong Bay south, Eddystone Point north); a destination is not a spot of itself. Pin the destination centre at -41.15, 148.28."
+  }
+ ],
+ "proposed_destinations": [
+  {
+   "id": "launceston",
+   "name": "Launceston",
+   "category": "city",
+   "coordinates": {
+    "lat": -41.44194444,
+    "lng": 147.145
+   },
+   "coordinates_source": "Wikipedia: Launceston, Tasmania (city centre)",
+   "defaultZoomSpanKm": 32,
+   "rank": 3,
+   "spots": 9,
+   "name_evidence": "Wikivoyage has a 'Launceston' city chapter, the launceston.com.au tourism board uses the name; 117,274 page views.",
+   "timezone": "Australia/Hobart",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "note": "Second-largest Tasmanian city, base for the northeast and the Tamar. Rank 1-2 not claimed; 9 kept spots."
+  },
+  {
+   "id": "tamar-valley",
+   "name": "Tamar Valley",
+   "category": "nature",
+   "coordinates": {
+    "lat": -41.2,
+    "lng": 146.9
+   },
+   "coordinates_source": "centre of its spots (Beaconsfield, Beauty Point, Low Head, George Town); a region centre, not a source point",
+   "defaultZoomSpanKm": 45,
+   "rank": 4,
+   "spots": 6,
+   "name_evidence": "Wikivoyage has a 'Tamar Valley' regional page (en.wikivoyage.org/wiki/Tamar_Valley); the 'Tamar Valley Wine Route' is a tourism-board brand. Not a council or river grouping: travellers say they are going to the Tamar Valley.",
+   "timezone": "Australia/Hobart",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "note": "Launceston is 33 km from the centre and its own destination; Tamar Valley is a separate day-trip or overnight base (Beauty Point, Low Head). Only Tamar Island Wetlands, Tasmania Zoo and Brady's Lookout sit in the shared zone: the first two are Launceston's, Brady's is on the river."
+  },
+  {
+   "id": "bay-of-fires",
+   "name": "Bay of Fires",
+   "category": "beach",
+   "coordinates": {
+    "lat": -41.15,
+    "lng": 148.28
+   },
+   "coordinates_source": "centre of its spots (Binalong Bay, St Helens, Eddystone Point, Mount William NP); a region centre, not a source point",
+   "defaultZoomSpanKm": 70,
+   "rank": 3,
+   "spots": 9,
+   "name_evidence": "Wikipedia 'Bay of Fires' (18,178 page views) and Parks Tasmania/Wikivoyage 'St Helens (Tasmania)' chapter name the Bay of Fires as the headline attraction; the region is the Bay of Fires and St Helens tourism brand. Wikivoyage has no standalone Bay of Fires page (404), so the headline-attraction route to the name test is used. Region over the town per COVERAGE 'Prefer the region travellers name'.",
+   "timezone": "Australia/Hobart",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "note": "Named for the region not St Helens (whose draws are the bay, Mount William and Pyengana). Ben Lomond (65 km) is not part of it."
+  }
+ ],
+ "existing_fixes": [],
+ "standalone_near_proposed_destinations": [
+  {
+   "spot": "Bridestowe Lavender Estate",
+   "nearest": "Tamar Valley (38.7 km)",
+   "why_not_a_spot": "Outside the 34 km radius, east of the valley on the Scottsdale road, reached from Launceston or Scottsdale, not from the valley's bases."
+  },
+  {
+   "spot": "Ben Lomond National Park / Ski Field",
+   "nearest": "Launceston (50 km); Bay of Fires (65 km)",
+   "why_not_a_spot": "Beyond 40 km of every centre and outside every span; a separate plateau reached by its own Jacobs Ladder road. Standalone."
+  },
+  {
+   "spot": "Little Blue Lake",
+   "nearest": "Bay of Fires (about 60 km)",
+   "why_not_a_spot": "Beyond 40 km, in the Derby area; outside every span."
+  }
+ ],
+ "notes": "Time zone Australia/Hobart. Pins: resolve-pin mostly returned LOW (Overpass unavailable); each pin lists its source and any LOW point is flagged needs_research coordinates for Pipeline C. Coordinates for Little Blue Lake and St Columba Falls in candidates.json belong to South Australia and Ben Lomond; never used. All spots go to Pipeline C research. Review-verdict candidates are not placed."
+}

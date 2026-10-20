@@ -1,0 +1,415 @@
+[
+ {
+  "id": "king-island-1",
+  "name": "Cape Wickham Lighthouse",
+  "coordinates": {
+   "lat": -39.588547,
+   "lng": 143.942981
+  },
+  "coordinates_source": "resolve-pin.py HIGH: OSM man_made=lighthouse 'Cape Wickham Light' and the Wikipedia article point agree within 5 m",
+  "pin_confidence": "HIGH",
+  "moved_m": 9,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "free": true,
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/cape-wickham-state-reserve",
+  "blocked_url": null,
+  "bio": "Australia's tallest lighthouse, 48 m, built in 1861 after the Cataraqui wreck, on the island's northern tip.",
+  "unverified": [
+   "Opening hours: the reserve page gives none, so 'Open 24 hours' is assumed for an unfenced reserve",
+   "No climbing or interior tours found on any source (the input bio's 'climbing tours' was removed); tower is leased to AMSA",
+   "Current PWS alerts or closures not checked"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/cape-wickham-state-reserve",
+   "https://www.discovertasmania.com.au/things-to-do/heritage-and-history/cape-wickham-lighthouse-king-island/",
+   "https://en.wikipedia.org/wiki/Cape_Wickham_Lighthouse"
+  ]
+ },
+ {
+  "id": "king-island-2",
+  "name": "Currie",
+  "coordinates": {
+   "lat": -39.931263,
+   "lng": 143.849395
+  },
+  "coordinates_source": "OSM place=town node via Photon; Wikipedia article point (-39.931111,143.850556) is 98 m away. Town-centre point, accepted for a town spot",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 0,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "King Island's main town, with a harbour precinct, the Currie Lighthouse and the visitor information centre.",
+  "unverified": [
+   "ticketUrl omitted: a town with no single steward (King Island Tourism's Currie page https://kingisland.org.au/plan/currie/ is a regional listing, not an operator)",
+   "Hours: town with open access, no hours apply"
+  ],
+  "sources": [
+   "https://kingisland.org.au/plan/currie/",
+   "https://kingisland.org.au/things-to-do/walks-hikes/",
+   "https://en.wikipedia.org/wiki/Currie,_Tasmania"
+  ]
+ },
+ {
+  "id": "king-island-3",
+  "name": "Cataraqui",
+  "coordinates": {
+   "lat": -40.030456,
+   "lng": 143.883865
+  },
+  "coordinates_source": "OSM historic=memorial 'Cataraqui Memorial' (Pearsons Lane) via Photon; the Wikipedia wreck point (-40.02714,143.88044) is the offshore wreck, ~500 m away, so the memorial where visitors stand is used",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 0,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0.25,
+  "visitHoursMax": 0.75,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "Memorial near the wreck site of the emigrant ship Cataraqui, lost in 1845, Australia's worst civilian maritime disaster.",
+  "unverified": [
+   "ticketUrl omitted: no steward page found (no Parks page; memorial erected by council and Lions Club). King Island Tourism listing https://kingisland.org.au/things-to-do/cataraqui-memorial-king-island/ is a regional listing",
+   "Access is by unsealed gravel road, higher-clearance vehicle recommended (per tourism listing)",
+   "Hours assumed open access"
+  ],
+  "sources": [
+   "https://kingisland.org.au/things-to-do/cataraqui-memorial-king-island/",
+   "https://parks.tas.gov.au/explore-our-parks/cape-wickham-state-reserve",
+   "https://en.wikipedia.org/wiki/Cataraqui_(ship)"
+  ]
+ },
+ {
+  "id": "king-island-4",
+  "name": "Calcified Forest",
+  "coordinates": {
+   "lat": -40.1062,
+   "lng": 143.884754
+  },
+  "coordinates_source": "Midpoint (by length) of the 'Calcified Forest Track' line (835 m) in the Parks & Wildlife Service Tasmania 60 Great Short Walks map data; OSM highway=path/tourism=viewpoint 'Calcified Forest' at the forest end is ~330 m west. resolve-pin.py found no feature (Overpass unreachable)",
+  "pin_confidence": "MEDIUM",
+  "moved_m": null,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "free": true,
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/seal-rocks-state-reserve",
+  "blocked_url": null,
+  "bio": "A 30-minute, 1.3 km Great Short Walk through limestone formations left by a calcified forest about 7000 years old.",
+  "unverified": [
+   "Parks Tasmania has no page of its own for the walk (404 on guessed deep links); the Seal Rocks State Reserve page, which contains the walk and names it, is used",
+   "State reserve: no Parks Pass requirement stated (the pass is stated only for national parks)",
+   "Hours assumed open access; PWS alerts not checked"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/seal-rocks-state-reserve",
+   "https://kingisland.org.au/things-to-do/calcified-forest-king-island-great-short-walk/",
+   "https://parks.tas.gov.au/things-to-do/60-great-short-walks/castle-rock (page embedding the walks map data)"
+  ]
+ },
+ {
+  "id": "king-island-5",
+  "name": "Seal Rocks",
+  "coordinates": {
+   "lat": -40.095452,
+   "lng": 143.873165
+  },
+  "coordinates_source": "OSM tourism=viewpoint 'Seal Rocks Lookout' (Seal Rocks Road) via Photon, inside Seal Rocks State Reserve; Parks page puts the lookout 80 m from the car park",
+  "pin_confidence": "MEDIUM",
+  "moved_m": null,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0.25,
+  "visitHoursMax": 0.75,
+  "free": true,
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/seal-rocks-state-reserve",
+  "blocked_url": null,
+  "bio": "Lookout 80 m from the car park over the island's tallest cliffs, 60 m above the Southern Ocean.",
+  "unverified": [
+   "Hours assumed open access",
+   "Single OSM feature only; Wikipedia has no article for it",
+   "PWS alerts not checked"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/seal-rocks-state-reserve"
+  ]
+ },
+ {
+  "id": "king-island-6",
+  "name": "Martha Lavinia Beach",
+  "coordinates": {
+   "lat": -39.657712,
+   "lng": 144.088955
+  },
+  "coordinates_source": "Roadtrippers POI 'Martha Lavinia' (Martha Lavinia Road, Egg Lagoon); no OSM natural=beach or Wikipedia article exists. Cross-check: OSM track Martha Lavinia Road ends 1.3 km west and Lake Martha Lavinia is 2.5 km west, so the point is on the north-east coast. Not verified against a map feature",
+  "pin_confidence": "LOW",
+  "moved_m": null,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "North-east coast beach known for a surf break of near-perfect A-frame peaks, on an unpatrolled stretch of sand.",
+  "unverified": [
+   "Pin is LOW: third-party point, confirm on a map that it sits on the sand and not in the water",
+   "Surfing Life 'top 10' claim not on an official source, so not used in the bio",
+   "Access road condition and any ban on surf/camping not checked"
+  ],
+  "sources": [
+   "https://maps.roadtrippers.com/au/tas/nature/martha-lavinia",
+   "https://www.discovertasmania.com.au/things-to-do/outdoor-and-adventure/martha-lavinia-king-island/",
+   "https://kingisland.org.au/plan/surfing-on-king-island/"
+  ]
+ },
+ {
+  "id": "king-island-7",
+  "name": "King Island Historical Museum",
+  "coordinates": {
+   "lat": -39.930092,
+   "lng": 143.843774
+  },
+  "coordinates_source": "OSM tourism=museum 'King Island Museum', 36 Lighthouse Street, via Photon; corroborated by the 'Currie Lightkeepers Residence Historic Site' reserve point 15 m away",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 0,
+  "hours": "2:00 PM – 4:00 PM, Tue, Thu, Sat and Sun",
+  "closedDays": [
+   1,
+   3,
+   5
+  ],
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "costMin": 5,
+  "costMax": 5,
+  "currency": "AUD",
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "Volunteer-run museum in Currie's lighthouse keeper's cottage on shipwrecks, early settlement and farming.",
+  "unverified": [
+   "Hours and $5 entry are from King Island Tourism's old listing and WhichMuseum (third party); two guides disagree on closed days; WhichMuseum says closed each June-August",
+   "No museum website found; ticketUrl omitted (kingisland.org.au/things-to-do/king-island-museum/ is a regional listing). Phone 03 6462 1512",
+   "Name: sources call it 'King Island Museum'"
+  ],
+  "sources": [
+   "https://production.tourismtasmania.com.au/things-to-do/heritage-and-history/king-island-museum/",
+   "https://kingisland.org.au/things-to-do/king-island-museum/",
+   "https://whichmuseum.com/museum/king-island-historical-society-museum-currie-17674"
+  ]
+ },
+ {
+  "id": "flinders-island-1",
+  "name": "Strzelecki Peaks",
+  "coordinates": {
+   "lat": -40.205798,
+   "lng": 148.062402
+  },
+  "coordinates_source": "Midpoint (by length) of the 'Mount Strzelecki Track' line (2.83 km one way) in the Parks & Wildlife Service Tasmania 60 Great Short Walks map data; resolve-pin.py found no OSM feature",
+  "pin_confidence": "MEDIUM",
+  "moved_m": null,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 4,
+  "visitHoursMax": 5,
+  "costMin": 49.15,
+  "costMax": 49.15,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/strzelecki-national-park/strzelecki-peaks",
+  "blocked_url": null,
+  "bio": "Steep 4-5 hour return walk to the 756 m summit of Mount Strzelecki, the island's highest point.",
+  "unverified": [
+   "Cost is the Parks Pass 24-hour vehicle day pass ($49.15, per person on foot/bus $30.70); the track page states a valid pass is required",
+   "Walk is Grade 4, 5.6 km return; not to be walked in high fire danger",
+   "PWS alerts not checked"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/strzelecki-national-park/strzelecki-peaks",
+   "https://parks.tas.gov.au/explore-our-parks/strzelecki-national-park",
+   "https://parks.tas.gov.au/Pages/entry-fees.aspx"
+  ]
+ },
+ {
+  "id": "flinders-island-2",
+  "name": "Trousers Point",
+  "coordinates": {
+   "lat": -40.223629,
+   "lng": 148.0263
+  },
+  "coordinates_source": "Midpoint (by length) of the 'Trousers Point Coastal Track' line (2.19 km circuit) in the Parks & Wildlife Service Tasmania map data; resolve-pin.py found no OSM feature of the right type (only Trousers Point Road). Point is on the walk, a few hundred metres from the beach and car park",
+  "pin_confidence": "MEDIUM",
+  "moved_m": null,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 3,
+  "costMin": 49.15,
+  "costMax": 49.15,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/strzelecki-national-park/trousers-point",
+  "blocked_url": null,
+  "bio": "Flinders Island's most photographed beach, with a 2 km coastal circuit walk, snorkelling and a campground.",
+  "unverified": [
+   "Cost is the Parks Pass 24-hour vehicle day pass ($49.15); page states a valid pass is required",
+   "Beach is unpatrolled",
+   "PWS alerts not checked"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/strzelecki-national-park/trousers-point",
+   "https://parks.tas.gov.au/explore-our-parks/strzelecki-national-park",
+   "https://parks.tas.gov.au/Pages/entry-fees.aspx"
+  ]
+ },
+ {
+  "id": "flinders-island-3",
+  "name": "Wybalenna Chapel",
+  "coordinates": {
+   "lat": -40.01685,
+   "lng": 147.882716
+  },
+  "coordinates_source": "OSM amenity=place_of_worship 'Wybalenna Chapel' (Port Davies Road) via Photon; Wikipedia article point for Wybalenna Aboriginal Establishment is 12 m away",
+  "pin_confidence": "HIGH",
+  "moved_m": 12,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "Restored chapel and cemetery, the last of Wybalenna, where Aboriginal Tasmanians were exiled in the 1830s.",
+  "unverified": [
+   "Hours and free entry not stated by any source; open access assumed. Site is on Aboriginal land, visitors asked to be respectful (Aboriginal Land Council of Tasmania leading a restoration project in 2026), check for closure",
+   "ticketUrl omitted: no steward website found"
+  ],
+  "sources": [
+   "https://discovertasmania.com.au/regions/flinders-island/guide-to-flinders-island",
+   "https://visitflindersisland.com.au/about/",
+   "https://en.wikipedia.org/wiki/Wybalenna_Aboriginal_Establishment"
+  ]
+ },
+ {
+  "id": "flinders-island-4",
+  "name": "Killiecrankie to The Dock Coast Walk",
+  "coordinates": {
+   "lat": -39.812379,
+   "lng": 147.842067
+  },
+  "coordinates_source": "Midpoint (by length) of the 7.8 km published GPX track 'The Dock to Killiecrankie' (trailhiking.com.au, 335 points, Top Carpark on The Dock Road to Killiecrankie Beach). Third-party track, not the agency's; resolve-pin.py found no OSM route",
+  "pin_confidence": "LOW",
+  "moved_m": null,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 3,
+  "visitHoursMax": 5,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "Rocky coastal walk from Killiecrankie to The Dock, past a sea arch at Stackys Bight and Old Man's Head.",
+  "unverified": [
+   "Sources disagree on length (8 km one way vs 10-12 km) and grade (3-4); input visit time of 1.5-3 hr is too short for the full walk, set to 3-5 hr (one way 3-4 hr per trailhiking.com.au)",
+   "Pin is LOW (third-party GPX)",
+   "No managing-agency page found: ticketUrl omitted",
+   "Free assumed (nature recreation area; no fee found)"
+  ],
+  "sources": [
+   "https://www.trailhiking.com.au/hikes/the-dock-to-killiecrankie/",
+   "https://www.trailhiking.com.au/hikes/killiecrankie-to-stackys-bight/",
+   "https://discovertasmania.com.au/regions/flinders-island/guide-to-flinders-island"
+  ]
+ },
+ {
+  "id": "flinders-island-5",
+  "name": "Killiecrankie Bay",
+  "coordinates": {
+   "lat": -39.835312,
+   "lng": 147.833689
+  },
+  "coordinates_source": "Killiecrankie Beach trailhead point from trailhiking.com.au (and the end of its GPX at -39.83516,147.83388); Wikipedia's Killiecrankie township point (-39.83639,147.83389) is 125 m away. OSM natural=bay centroid is in the water so not used",
+  "pin_confidence": "LOW",
+  "moved_m": null,
+  "hours": "Low tide best; open access",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "Bay where visitors search the sand at low tide for semi-precious topaz, known as Killiecrankie diamonds.",
+  "unverified": [
+   "Pin is LOW: beach access point from a third-party source; the designated fossicking area is Diamond Gully, ~700 m north along the shore",
+   "Sieve and shovel hire from Killiecrankie Enterprises (cost not checked)",
+   "No steward website: ticketUrl omitted"
+  ],
+  "sources": [
+   "https://discovertasmania.com.au/regions/flinders-island/guide-to-flinders-island",
+   "https://www.trailhiking.com.au/hikes/killiecrankie-to-stackys-bight/"
+  ]
+ },
+ {
+  "id": "flinders-island-6",
+  "name": "Castle Rock",
+  "coordinates": {
+   "lat": -39.993523,
+   "lng": 147.901497
+  },
+  "coordinates_source": "Midpoint (by length) of the Castle Rock Great Short Walk route (nine linked segments, ~3.8 km one way from Allports Beach to the rock) in the Parks & Wildlife Service Tasmania map data; OSM natural=rock 'Castle Rock' is at the far end (-39.98026,147.903013). resolve-pin.py not run (Overpass unreachable)",
+  "pin_confidence": "MEDIUM",
+  "moved_m": null,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 2.5,
+  "free": true,
+  "ticketUrl": "https://parks.tas.gov.au/things-to-do/60-great-short-walks/castle-rock",
+  "blocked_url": null,
+  "bio": "Beach-hop walk to Castle Rock, a massive granite boulder on Marshall Bay, one of Tasmania's 60 Great Short Walks.",
+  "unverified": [
+   "Parks page says 1.5 hours return, 6.6 km, Grade 3; other sources say 2-3 hours, so visit time set to 1.5-2.5",
+   "Marshall Bay Conservation Area: no Parks Pass requirement stated, so free",
+   "PWS alerts not checked"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/things-to-do/60-great-short-walks/castle-rock",
+   "https://discovertasmania.com.au/regions/flinders-island/guide-to-flinders-island"
+  ]
+ },
+ {
+  "id": "flinders-island-7",
+  "name": "Furneaux Museum",
+  "coordinates": {
+   "lat": -40.001124,
+   "lng": 147.898475
+  },
+  "coordinates_source": "OSM tourism=museum 'Furneaux Museum' (Fowlers Road) via Photon; address 8 Fowlers Road, Emita matches the tourism listings",
+  "pin_confidence": "MEDIUM",
+  "moved_m": null,
+  "hours": "Sat–Sun 1:00 PM – 4:00 PM (1 May–24 Dec); Tue–Sun 1:00 PM – 5:00 PM (26 Dec–30 Apr)",
+  "closedDays": null,
+  "visitHoursMin": 0.75,
+  "visitHoursMax": 1.25,
+  "costMin": 10,
+  "costMax": 10,
+  "currency": "AUD",
+  "ticketUrl": "https://flinders.tas.gov.au/furneaux-museum",
+  "blocked_url": "https://flinders.tas.gov.au/furneaux-museum",
+  "bio": "Island history museum at Emita, with a muttonbirding shed replica, police cells and a Sydney Cove anchor.",
+  "unverified": [
+   "Official Flinders Council page is BLOCKED to scripts (Cloudflare 'Just a moment'): ticketUrl needs a real-browser check of title and hours",
+   "Hours and $10 adult fee (children under 10 free) come from a search summary of that council page; other listings give $5 cash and visitflindersisland.com.au says 'Free'",
+   "Today (2026-10-20) falls in the weekend-only season; phone (03) 6359 8434; volunteer-run, closed Good Friday"
+  ],
+  "sources": [
+   "https://flinders.tas.gov.au/furneaux-museum",
+   "https://discovertasmania.com.au/attraction/furneauxmuseum",
+   "https://visitflindersisland.com.au/?p=1671"
+  ]
+ }
+]

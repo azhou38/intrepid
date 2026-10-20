@@ -1,0 +1,107 @@
+{
+ "dest:tamar-valley:header": {
+  "candidates": [
+   {
+    "file": "Tamar Valley Wine Route.jpg",
+    "verdict": "accept",
+    "reason": "River and vineyard from Rosevears, category Tamar Valley / Landscapes of Tasmania, 5184x3888"
+   },
+   {
+    "file": "Tamar river & Batman bridge.jpg",
+    "verdict": "reject",
+    "reason": "Mudflats and a distant bridge, less sweeping"
+   }
+  ],
+  "choice": "Tamar Valley Wine Route.jpg",
+  "hero_crop": "ok"
+ },
+ "dest:tamar-valley:why1": {
+  "candidates": [
+   {
+    "file": "Tamar Valey Wine Route.jpg",
+    "verdict": "accept",
+    "reason": "Vines at Kayena, geotag in the valley (-41.19,146.89)"
+   },
+   {
+    "file": "A Tamar Valley Wineyard.jpg",
+    "verdict": "reject",
+    "reason": "Gateway sign and road, not vineyard"
+   }
+  ],
+  "choice": "Tamar Valey Wine Route.jpg",
+  "hero_crop": "ok",
+  "note": "modest; the header file (river over a vineyard) is the stronger vineyards view if repeats are acceptable"
+ },
+ "dest:tamar-valley:why2": {
+  "candidates": [
+   {
+    "file": "Low Head Lighthouse.JPG",
+    "verdict": "accept",
+    "reason": "Category Low Head Lighthouse, tower with sea and keeper cottages; portrait so needs y"
+   },
+   {
+    "file": "Low Head Lighthouse-West.JPG",
+    "verdict": "reject",
+    "reason": "Tower filling frame, no setting"
+   }
+  ],
+  "choice": "Low Head Lighthouse.JPG",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.3
+  },
+  "note": "portrait: tower cut on the 1.6:1 card unless y=0.3 is applied; verified in square crop"
+ },
+ "dest:tamar-valley:why3": {
+  "candidates": [
+   {
+    "file": "Duck-billed platypus (Ornithorhynchus anatinus) Scottsdale 2.jpg",
+    "verdict": "accept",
+    "reason": "Platypus swimming, Tasmania (Scottsdale, Mammals of Tasmania); the reason is seeing platypus. Not Platypus House itself"
+   }
+  ],
+  "choice": "Duck-billed platypus (Ornithorhynchus anatinus) Scottsdale 2.jpg",
+  "hero_crop": "ok (head near left edge in square, fine in 1.6:1 card)",
+  "note": "wild platypus at Scottsdale, not Beauty Point"
+ },
+ "spot:tamar-valley-1": {
+  "candidates": [
+   {
+    "file": "Beaconsfield mining museum (30643955924).jpg",
+    "verdict": "accept",
+    "reason": "Brick engine house of the mine, geotagged Beaconsfield (-41.2016,146.816), 1535x1080"
+   }
+  ],
+  "choice": "Beaconsfield mining museum (30643955924).jpg",
+  "hero_crop": "ok"
+ },
+ "spot:tamar-valley-5": {
+  "candidates": [
+   {
+    "file": "Admiral Wooden Boat.jpg",
+    "verdict": "accept-weak",
+    "reason": "Inside the Bass and Flinders Maritime Museum, George Town; an exhibit rather than the building, but real, colour, right place"
+   }
+  ],
+  "choice": "Admiral Wooden Boat.jpg",
+  "hero_crop": "ok",
+  "note": "current Flinders island.jpg is a 1993 map/excluded category: rejected. Weak replacement; an exterior would be better"
+ },
+ "spot:tamar-valley-6": {
+  "candidates": [
+   {
+    "file": "Tamar Valley (26123403945).jpg",
+    "verdict": "accept",
+    "reason": "Geotag 25 m from the Brady's Lookout pin; the view over the river and paddocks that visitors come for"
+   },
+   {
+    "file": "Tamar River (26125503095).jpg",
+    "verdict": "accept-alt",
+    "reason": "Same spot, hazier"
+   }
+  ],
+  "choice": "Tamar Valley (26123403945).jpg",
+  "hero_crop": "ok",
+  "note": "current is Strutt's painting of bushrangers: rejected (check 4)"
+ }
+}

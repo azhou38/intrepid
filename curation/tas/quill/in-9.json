@@ -1,0 +1,310 @@
+[
+ {
+  "id": "king-island-1",
+  "name": "Cape Wickham Lighthouse",
+  "wiki": "Cape Wickham Lighthouse",
+  "destination": "king-island",
+  "category": "landmark",
+  "icon": "🗼",
+  "bio": "Australia's tallest lighthouse, 48 m, built in 1861 after the Cataraqui wreck, with climbing tours.",
+  "coordinates": {
+   "lat": -39.588477,
+   "lng": 143.943038
+  },
+  "coordinates_source": "resolve-pin HIGH: OSM man_made=lighthouse (-39.588547,143.942981) and Wikipedia article agree within 10 m; recorded point is the Cape Wickham State Reserve node, same place",
+  "coordinates_confidence": null,
+  "reason": "Island's headline sight; 2 counted sources, 1438 views; on the north-west cape, 38 km from Currie, inside the island span.",
+  "needs_research": [
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5
+ },
+ {
+  "id": "king-island-2",
+  "name": "Currie",
+  "wiki": "Currie, Tasmania",
+  "destination": "king-island",
+  "category": "landmark",
+  "icon": "⚓",
+  "bio": "King Island's main harbour town, with the visitor centre, the harbour and the old lighthouse keeper's precinct.",
+  "coordinates": {
+   "lat": -39.931263,
+   "lng": 143.849395
+  },
+  "coordinates_source": "LOW: Photon place=town node, within 130 m of the Wikipedia article point (-39.931111,143.850556); a town-centre point, acceptable for a town spot",
+  "coordinates_confidence": null,
+  "reason": "The island's main harbour town with its own draws (harbour, visitor centre); its museum is kept as a separate spot because it is a distinct attraction. Currie Lighthouse is a review candidate, not placed.",
+  "needs_research": [
+   "coordinates",
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5
+ },
+ {
+  "id": "king-island-3",
+  "name": "Cataraqui",
+  "wiki": "Cataraqui (ship)",
+  "destination": "king-island",
+  "category": "historic",
+  "icon": "⚓",
+  "bio": "Memorial and wreck site of the 1845 barque Cataraqui, Australia's worst peacetime maritime disaster.",
+  "coordinates": {
+   "lat": -40.030456,
+   "lng": 143.883865
+  },
+  "coordinates_source": "LOW: Photon historic=memorial 'Cataraqui Memorial' (507 m from the Wikipedia wreck point -40.027139,143.880444); the memorial is where visitors stand; confirm against the Maritime Trail brochure",
+  "coordinates_confidence": null,
+  "reason": "Skeptic keep; Maritime Trail headline stop; 4652 views. Memorial and wreck site on the south-west coast, 12 km from Currie.",
+  "needs_research": [
+   "coordinates",
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 0.25,
+  "visitHoursMax": 0.75
+ },
+ {
+  "id": "king-island-4",
+  "name": "Calcified Forest",
+  "wiki": "Calcified Forest",
+  "destination": "king-island",
+  "category": "hike",
+  "icon": "🥾",
+  "bio": "A 30-minute, 1.3 km Great Short Walk through limestone formations left by a calcified forest about 7000 years old.",
+  "coordinates": null,
+  "coordinates_source": "LOW: resolve-pin found no OSM feature; take the Great Short Walk's route midpoint from the managing agency's map",
+  "coordinates_confidence": null,
+  "reason": "Two counted sources (Wikivoyage, Discover Tasmania); short Great Short Walk, a distinct natural feature.",
+  "needs_research": [
+   "coordinates",
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1
+ },
+ {
+  "id": "king-island-5",
+  "name": "Seal Rocks",
+  "wiki": "Seal Rocks, Tasmania",
+  "destination": "king-island",
+  "category": "viewpoint",
+  "icon": "🌊",
+  "bio": "Lookout on the island's highest cliffs, about 60 m above the sea, reached by a short walk.",
+  "coordinates": null,
+  "coordinates_source": "LOW: resolve-pin found no feature; take the lookout car park from the managing agency",
+  "coordinates_confidence": null,
+  "reason": "Skeptic keep despite short visit; one counted source; lookout on the island's highest cliffs, start of the Copperhead Track.",
+  "needs_research": [
+   "coordinates",
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 0.25,
+  "visitHoursMax": 0.75
+ },
+ {
+  "id": "king-island-6",
+  "name": "Martha Lavinia Beach",
+  "wiki": "Martha Lavinia Beach",
+  "destination": "king-island",
+  "category": "beach",
+  "icon": "🏖️",
+  "bio": "North-east coast surf beach, rated among the world's best breaks by Surfing Life, good for beachcombing.",
+  "coordinates": null,
+  "coordinates_source": "LOW: resolve-pin returned only a track and lake 3 km away (Lake Martha Lavinia); beach is on the north-east coast; needs the beach's own OSM natural/beach or Wikipedia point",
+  "coordinates_confidence": null,
+  "reason": "Skeptic keep: one source, second-tier beach named for surf and beachcombing; inside the island span.",
+  "needs_research": [
+   "coordinates",
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5
+ },
+ {
+  "id": "king-island-7",
+  "name": "King Island Historical Museum",
+  "wiki": null,
+  "destination": "king-island",
+  "category": "museum",
+  "icon": "🏛️",
+  "bio": "Museum in the old lighthouse keeper's cottage with shipwreck and sealing history and the original Cape Wickham lens.",
+  "coordinates": {
+   "lat": -39.930092,
+   "lng": 143.843774
+  },
+  "coordinates_source": "LOW: Photon tourism=museum 'King Island Museum' (single geocoder feature of the right type, ~530 m from the Currie hint); confirm",
+  "coordinates_confidence": null,
+  "reason": "Skeptic keep: one source; museum in the old lighthouse keeper's cottage at Currie with its own exhibits (not a wrapper for the town).",
+  "needs_research": [
+   "coordinates",
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1
+ },
+ {
+  "id": "flinders-island-1",
+  "name": "Strzelecki Peaks",
+  "wiki": null,
+  "destination": "flinders-island",
+  "category": "hike",
+  "icon": "⛰️",
+  "bio": "Steep 4-5 hour return walk to the 756 m summit of Mount Strzelecki, the island's highest point.",
+  "coordinates": null,
+  "coordinates_source": "LOW: resolve-pin found no feature; pin the middle of the walk from the agency route map",
+  "coordinates_confidence": null,
+  "reason": "Headline summit walk, 3 counted-source park; Great Short Walk inside Strzelecki National Park (container, merged).",
+  "needs_research": [
+   "coordinates",
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 4,
+  "visitHoursMax": 5
+ },
+ {
+  "id": "flinders-island-2",
+  "name": "Trousers Point",
+  "wiki": null,
+  "destination": "flinders-island",
+  "category": "beach",
+  "icon": "🏖️",
+  "bio": "Turquoise beach with a Great Short Walk loop, snorkelling and a walk-in campground at its southern end.",
+  "coordinates": null,
+  "coordinates_source": "LOW: resolve-pin found no feature; take the Trousers Point car park from the agency",
+  "coordinates_confidence": null,
+  "reason": "Headline beach and Great Short Walk, 2 counted sources; inside Strzelecki National Park (container, merged).",
+  "needs_research": [
+   "coordinates",
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 1,
+  "visitHoursMax": 3
+ },
+ {
+  "id": "flinders-island-3",
+  "name": "Wybalenna Chapel",
+  "wiki": "Wybalenna Aboriginal Establishment",
+  "destination": "flinders-island",
+  "category": "historic",
+  "icon": "⛪",
+  "bio": "Chapel and cemetery at Wybalenna, the 1830s-40s settlement where Aboriginal Tasmanians were exiled.",
+  "coordinates": {
+   "lat": -40.016944,
+   "lng": 147.882778
+  },
+  "coordinates_source": "LOW: Wikipedia article point for Wybalenna Aboriginal Establishment; resolve-pin found no OSM feature; confirm chapel position",
+  "coordinates_confidence": null,
+  "reason": "Kept: listed 'Don't miss' by Discover Tasmania and Wikivoyage; accessible chapel and cemetery; 11465 views.",
+  "needs_research": [
+   "coordinates",
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1
+ },
+ {
+  "id": "flinders-island-4",
+  "name": "Killiecrankie to The Dock Coast Walk",
+  "wiki": null,
+  "destination": "flinders-island",
+  "category": "hike",
+  "icon": "🥾",
+  "bio": "Rocky coastal walk from Killiecrankie to The Dock, past a sea arch at Stackys Bight and Old Man's Head.",
+  "coordinates": null,
+  "coordinates_source": "LOW: resolve-pin offered only the Commons median at Killiecrankie; pin the middle of the route from the agency map",
+  "coordinates_confidence": null,
+  "reason": "Kept; the single spot for the walk, with Stackys Bight, Old Man's Head and The Dock folded in (those are rejected as parts).",
+  "needs_research": [
+   "coordinates",
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3
+ },
+ {
+  "id": "flinders-island-5",
+  "name": "Killiecrankie Bay",
+  "wiki": null,
+  "destination": "flinders-island",
+  "category": "beach",
+  "icon": "💎",
+  "bio": "Bay where visitors search the sand at low tide for semi-precious topaz, known as Killiecrankie diamonds.",
+  "coordinates": null,
+  "coordinates_source": "LOW: only a Commons photo median near Killiecrankie; needs the bay's own beach feature",
+  "coordinates_confidence": null,
+  "reason": "Kept: topaz ('Killiecrankie diamonds') fossicking, a Discover Tasmania 'Don't miss'; the town itself is rejected as a wrapper.",
+  "needs_research": [
+   "coordinates",
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5
+ },
+ {
+  "id": "flinders-island-6",
+  "name": "Castle Rock",
+  "wiki": null,
+  "destination": "flinders-island",
+  "category": "hike",
+  "icon": "🥾",
+  "bio": "Beach-hop walk to towering Castle Rock, one of Tasmania's 60 Great Short Walks.",
+  "coordinates": null,
+  "coordinates_source": "LOW: resolve-pin found no feature; pin the middle of the walk from the agency route map",
+  "coordinates_confidence": null,
+  "reason": "Kept, second-tier Great Short Walk named by Discover Tasmania; a separate walk, not the park itself.",
+  "needs_research": [
+   "coordinates",
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 1,
+  "visitHoursMax": 2.5
+ },
+ {
+  "id": "flinders-island-7",
+  "name": "Furneaux Museum",
+  "wiki": null,
+  "destination": "flinders-island",
+  "category": "museum",
+  "icon": "🏛️",
+  "bio": "Island history museum at Emita, with a muttonbirding shed replica, police cells and a Sydney Cove anchor.",
+  "coordinates": null,
+  "coordinates_source": "LOW: resolve-pin found no feature; the museum is at Emita, take its point from the operator or OSM",
+  "coordinates_confidence": null,
+  "reason": "Kept: two counted sources with distinct exhibits.",
+  "needs_research": [
+   "coordinates",
+   "hours",
+   "cost",
+   "ticketUrl"
+  ],
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1
+ }
+]

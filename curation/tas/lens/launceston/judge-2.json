@@ -1,0 +1,203 @@
+{
+ "dest:launceston:header": {
+  "candidates": [
+   {
+    "file": "Launie.JPG",
+    "verdict": "accept",
+    "reason": "Category Cityscapes of Launceston; river, bridges and city under hills; real colour photo, 3072x2304"
+   },
+   {
+    "file": "View Of Cataract Gorge.jpg",
+    "verdict": "reject",
+    "reason": "First Basin lawn with suburbs and marina; less of the city, flatter, phone-quality"
+   }
+  ],
+  "choice": "Launie.JPG",
+  "hero_crop": "ok"
+ },
+ "dest:launceston:why1": {
+  "candidates": [
+   {
+    "file": "Launceston-Tasmania-Australia05.JPG",
+    "verdict": "accept",
+    "reason": "Quality image, category Alexandra Suspension Bridge / First Basin Cataract Gorge; rapids and bridge under forested cliffs"
+   },
+   {
+    "file": "Launceston Cataract Gorge 002.JPG",
+    "verdict": "reject",
+    "reason": "Calm river between cliffs, hazy, less distinctive"
+   }
+  ],
+  "choice": "Launceston-Tasmania-Australia05.JPG",
+  "hero_crop": "ok"
+ },
+ "dest:launceston:why2": {
+  "candidates": [
+   {
+    "file": "Brickendon farm.jpg",
+    "verdict": "accept",
+    "reason": "Convict-era farm lane and brick/timber outbuildings, category Brickendon; 1280x960 meets the why-visit minimum exactly"
+   },
+   {
+    "file": "Brickendon Chapel.JPG",
+    "verdict": "accept-alt",
+    "reason": "Clear and high-res but a single chapel; kept for the spot slot"
+   },
+   {
+    "file": "Grainhouse brickendon.jpg",
+    "verdict": "reject",
+    "reason": "Single building, 2440 px tall file but plain"
+   },
+   {
+    "file": "Brickendon house.jpg",
+    "verdict": "reject",
+    "reason": "Homestead small in a big lawn"
+   }
+  ],
+  "choice": "Brickendon farm.jpg",
+  "hero_crop": "ok"
+ },
+ "dest:launceston:why3": {
+  "candidates": [
+   {
+    "file": "Duck Reach Power station - launceston.JPG",
+    "verdict": "accept",
+    "reason": "The power station itself, category Cataract Gorge; shows the hike's destination (same file as launceston-7 spot, allowed within a destination)"
+   },
+   {
+    "file": "Duck Reach power station bridge.JPG",
+    "verdict": "accept-alt",
+    "reason": "Footbridge plus small blue building; the power station is not clearly the subject"
+   }
+  ],
+  "choice": "Duck Reach Power station - launceston.JPG",
+  "hero_crop": "ok",
+  "note": "alternative: Duck Reach power station bridge.JPG if the owner prefers a distinct file"
+ },
+ "spot:launceston-2": {
+  "candidates": [
+   {
+    "file": "Launceston Queen Victoria Museum & Art Gallery 001.JPG",
+    "verdict": "accept",
+    "reason": "Geotagged Royal Park art gallery building, 5516 px; but spot pin is the Inveresk site (~1.5 km away), same institution"
+   }
+  ],
+  "choice": "Launceston Queen Victoria Museum & Art Gallery 001.JPG",
+  "hero_crop": {
+   "x": 0.45,
+   "y": 0.5
+  },
+  "note": "current is the Victoria and Albert Museum logo: wrong place, SVG, rejected. Pin is at Inveresk, photo is the Royal Park gallery."
+ },
+ "spot:launceston-3": {
+  "candidates": [
+   {
+    "file": "Launceston City Park Conservatory 001.JPG",
+    "verdict": "accept",
+    "reason": "John Hart Conservatory on the lawn, geotag at the park"
+   },
+   {
+    "file": "Launceston City Park 001.JPG",
+    "verdict": "reject",
+    "reason": "Bare winter trees and path, dull, no landmark"
+   },
+   {
+    "file": "Macaque monkey enclosure in City Park Launceston March 2015.jpg",
+    "verdict": "reject",
+    "reason": "Right place but monkeys are tiny and unrecognisable; enclosure of rocks and pond not recognisable as the park"
+   }
+  ],
+  "choice": "Launceston City Park Conservatory 001.JPG",
+  "hero_crop": "ok"
+ },
+ "spot:launceston-4": {
+  "candidates": [
+   {
+    "file": "Brickendon Chapel.JPG",
+    "verdict": "accept",
+    "reason": "Estate chapel, 4288 px, clear at thumbnail, category Brickendon, Tasmania"
+   },
+   {
+    "file": "Brickendon farm.jpg",
+    "verdict": "accept-alt",
+    "reason": "Used for why2"
+   },
+   {
+    "file": "Brickendon house.jpg",
+    "verdict": "reject",
+    "reason": "Homestead tiny in lawn"
+   }
+  ],
+  "choice": "Brickendon Chapel.JPG",
+  "hero_crop": "ok",
+  "note": "current is a Farmer's Boy pub at Brickendon, Herefordshire (geograph, UK): wrong country"
+ },
+ "spot:launceston-6": {
+  "candidates": [
+   {
+    "file": "Launceston Boags Brewery 001.JPG",
+    "verdict": "accept",
+    "reason": "Brewery with BOAGS BREWERY sign, geotagged 40 m from pin"
+   },
+   {
+    "file": "Launceston Boags Brewery 003.JPG",
+    "verdict": "reject",
+    "reason": "Brick wall and a tower detail, no sign"
+   }
+  ],
+  "choice": "Launceston Boags Brewery 001.JPG",
+  "hero_crop": {
+   "x": 0.65,
+   "y": 0.5
+  }
+ },
+ "spot:launceston-7": {
+  "candidates": [
+   {
+    "file": "Duck Reach Power station - launceston.JPG",
+    "verdict": "accept",
+    "reason": "The power station, 2008 colour"
+   }
+  ],
+  "choice": "Duck Reach Power station - launceston.JPG",
+  "hero_crop": "ok (square crop trims the building ends but it is still recognisable)"
+ },
+ "spot:launceston-8": {
+  "candidates": [
+   {
+    "file": "Tamar Island Wetlands Jpg (112557333).jpeg",
+    "verdict": "accept",
+    "reason": "Geotagged at the wetlands, boardwalk through reeds at sunrise, 2048 px"
+   },
+   {
+    "file": "Tamar Island Wetlands 216.jpg",
+    "verdict": "reject",
+    "reason": "Flat, grey, hazy, soft"
+   }
+  ],
+  "choice": "Tamar Island Wetlands Jpg (112557333).jpeg",
+  "hero_crop": {
+   "x": 0.6,
+   "y": 0.6,
+   "zoom": 1.3
+  },
+  "note": "current is a NASA photo of Bell Bay pulp mill: wrong subject"
+ },
+ "spot:launceston-9": {
+  "candidates": [
+   {
+    "file": "Tasmanian Devils Cuddle.JPG",
+    "verdict": "accept",
+    "reason": "Category Tasmania Zoo; devils recognisable, 5184 px"
+   },
+   {
+    "file": "Tasmania Zoo Bird and Man.JPG",
+    "verdict": "reject",
+    "reason": "A man is a main subject, cage mesh"
+   }
+  ],
+  "choice": "Tasmanian Devils Cuddle.JPG",
+  "hero_crop": "ok",
+  "note": "weak: an animal photo, no zoo context; current Beaumaris Zoo site (Tasmania zoo? not the named place) is rejected"
+ }
+}

@@ -1,0 +1,211 @@
+{
+ "region": "tas-bass-strait-islands",
+ "inside_destinations": 14,
+ "standalone": 0,
+ "new_destinations": [
+  "King Island",
+  "Flinders Island"
+ ],
+ "lowest_kept": [
+  {
+   "name": "Calcified Forest",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Seal Rocks",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Martha Lavinia Beach",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "King Island Historical Museum",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Strzelecki Peaks",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Trousers Point",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Castle Rock",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Furneaux Museum",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Killiecrankie Bay",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Killiecrankie to The Dock Coast Walk",
+   "views": 0,
+   "counted_sources": 1
+  }
+ ],
+ "stronger_left_out": [
+  {
+   "name": "Cape Barren Island",
+   "views": 12147,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source names it as a stop; restricted-access Aboriginal community island (What qualifies 1-2)."
+  },
+  {
+   "name": "Reid Rocks",
+   "views": 204,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; offshore reef with no landing, seen only on boat trips (1-2)."
+  },
+  {
+   "name": "Grassy",
+   "views": 1800,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Mining-town restaurant listing only, nothing to see or do for half an hour (2)."
+  },
+  {
+   "name": "King Island Dairy",
+   "views": 2862,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "A shop with tastings, not a sight (rule 2); held for the owner, not placed."
+  },
+  {
+   "name": "Whitemark",
+   "views": 2639,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Service town; the source lists services only (2)."
+  },
+  {
+   "name": "Lady Barron",
+   "views": 2206,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Ferry port with a general store; no sight (2)."
+  },
+  {
+   "name": "Killiecrankie",
+   "views": 904,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Wrapper for its own attractions, which are kept (Killiecrankie Bay, the Dock walk); a town is not listed beside its attraction."
+  },
+  {
+   "name": "Kent Group National Park",
+   "views": 686,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Boat-only, no operator named, almost no visitors (2); held for the owner."
+  },
+  {
+   "name": "Currie Lighthouse",
+   "views": 374,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "One source, exterior only, ~15 min, near-duplicate of Currie and the museum (2-3); held for the owner."
+  },
+  {
+   "name": "Naracoopa",
+   "views": 327,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Named only for a restaurant and cottages (2)."
+  }
+ ],
+ "other_left_out_zero_views": [
+  {
+   "name": "Cape Wickham Golf Links",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Paying golf venue, one source, no casual half-hour visit (2); held."
+  },
+  {
+   "name": "Mount Tanner",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Drive-up pull-out, one source, short (3); held."
+  },
+  {
+   "name": "Palana Beach",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "One of 120 beaches, passing mention (1); held."
+  },
+  {
+   "name": "Yellow Beach",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "One of 120 beaches, passing mention (1); held."
+  }
+ ],
+ "strongest_outsiders": [
+  {
+   "name": "Cape Barren Island",
+   "views": 12147,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source names it as a stop; restricted-access Aboriginal community island (What qualifies 1-2)."
+  },
+  {
+   "name": "Grassy",
+   "views": 1800,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Mining-town restaurant listing only, nothing to see or do for half an hour (2)."
+  },
+  {
+   "name": "King Island Dairy",
+   "views": 2862,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "A shop with tastings, not a sight (rule 2); held for the owner, not placed."
+  },
+  {
+   "name": "Whitemark",
+   "views": 2639,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Service town; the source lists services only (2)."
+  },
+  {
+   "name": "Lady Barron",
+   "views": 2206,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Ferry port with a general store; no sight (2)."
+  }
+ ],
+ "review_for_owner": [
+  "Currie Lighthouse",
+  "King Island Dairy",
+  "Cape Wickham Golf Links",
+  "Mount Tanner",
+  "Palana Beach",
+  "Yellow Beach",
+  "Kent Group National Park"
+ ],
+ "note": "Because many kept spots have no English Wikipedia article (0 views), every left-out candidate with an article scores higher; each has a concrete What-qualifies reason. No standalone spots: every kept place lies inside one of the two proposed island destinations.",
+ "benchmark": "New Zealand benchmarks do not apply to this Tasmanian region; negative benchmarks (event, operator, restaurant, venue) were rejected: Festival of King Island, Penny Royal Adventures, Flinders Island Adventures, Roaring 40s Kayaking, Wild Harvest, The Flinders Wharf."
+}

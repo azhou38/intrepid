@@ -1,0 +1,106 @@
+{
+ "group": "franklin-gordon-wild-rivers",
+ "generated": "2026-10-20T15:57:11.529Z",
+ "slots": [
+  {
+   "slot": "dest:franklin-gordon-wild-rivers:header",
+   "key": "Franklin-Gordon Wild Rivers National Park",
+   "current": {
+    "file": "ext-franklin-gordon-wild-rivers.jpg",
+    "source": "imageOverrides.ts"
+   },
+   "status": "search",
+   "flags": [
+    "placeholder: no photo chosen yet"
+   ]
+  },
+  {
+   "slot": "dest:franklin-gordon-wild-rivers:why1",
+   "key": "File:ext-franklin-gordon-wild-rivers-1.jpg",
+   "current": {
+    "file": "ext-franklin-gordon-wild-rivers-1.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "search",
+   "flags": [
+    "placeholder: no photo chosen yet"
+   ]
+  },
+  {
+   "slot": "dest:franklin-gordon-wild-rivers:why2",
+   "key": "File:ext-franklin-gordon-wild-rivers-2.jpg",
+   "current": {
+    "file": "ext-franklin-gordon-wild-rivers-2.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "search",
+   "flags": [
+    "placeholder: no photo chosen yet"
+   ]
+  },
+  {
+   "slot": "dest:franklin-gordon-wild-rivers:why3",
+   "key": "File:ext-franklin-gordon-wild-rivers-3.jpg",
+   "current": {
+    "file": "ext-franklin-gordon-wild-rivers-3.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "search",
+   "flags": [
+    "placeholder: no photo chosen yet"
+   ]
+  },
+  {
+   "slot": "spot:franklin-gordon-wild-rivers-1",
+   "key": "Nelson Falls",
+   "current": {
+    "file": "Nelson Falls.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [
+    "audit sample: the script proved this one; judge it blind"
+   ],
+   "proof": [
+    "geotag 104 m from the pin; a name word is in the title, description or categories; 1795 px; colour ok"
+   ]
+  },
+  {
+   "slot": "spot:franklin-gordon-wild-rivers-2",
+   "key": "Frenchmans Cap",
+   "current": {
+    "file": "Frenchmans Cap.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:franklin-gordon-wild-rivers-3",
+   "key": "Donaghys Hill",
+   "current": {
+    "file": "Mutya Keisha Siobhan (cropped).jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "proof: 503 px wide (min 960)"
+   ]
+  },
+  {
+   "slot": "spot:franklin-gordon-wild-rivers-4",
+   "key": "Franklin River",
+   "current": {
+    "file": "Franklin River Tasmania.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "proof: 858 px wide (min 960)"
+   ]
+  }
+ ]
+}

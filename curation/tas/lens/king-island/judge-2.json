@@ -1,0 +1,236 @@
+{
+ "dest:king-island:header": {
+  "candidates": [
+   {
+    "url": "https://kingisland.org.au/wp-content/uploads/Above-King-Island_Kramer-Photography-0013_Currie-Lighthouse-copy-scaled.jpeg",
+    "verdict": "accept",
+    "reason": "2560 px drone dusk: Currie lighthouse, harbour, island coast; striking (dusk on purpose)"
+   },
+   {
+    "url": "https://kingisland.org.au/wp-content/uploads/136611-56.jpg",
+    "verdict": "reject",
+    "reason": "plain beach, 1500 px under header minimum"
+   },
+   {
+    "url": "https://kingisland.org.au/wp-content/uploads/134380-56.jpg",
+    "verdict": "reject",
+    "reason": "1500 px, under 2000"
+   },
+   {
+    "url": "https://kingisland.org.au/wp-content/uploads/Martha-Lavinia-Beach_King-Island_Stu-Gibson-1500.jpg",
+    "verdict": "reject",
+    "reason": "1500 px, under 2000"
+   }
+  ],
+  "choice": "https://kingisland.org.au/wp-content/uploads/Above-King-Island_Kramer-Photography-0013_Currie-Lighthouse-copy-scaled.jpeg",
+  "hero_crop": {
+   "x": 0.7,
+   "y": 0.5
+  },
+  "copyright_risk": true,
+  "credit": {
+   "by": "Kramer Photography via King Island Tourism",
+   "licence": "official photo, permission not confirmed",
+   "page": "https://kingisland.org.au/"
+  },
+  "dark": false,
+  "note": "dusk on purpose; only candidate >= 2000 px. Alternative if the owner prefers wider: Martha Lavinia, but too small"
+ },
+ "dest:king-island:why1": {
+  "candidates": [
+   {
+    "url": "https://kingisland.org.au/wp-content/uploads/136484-56.jpg",
+    "verdict": "accept",
+    "reason": "road to Cape Wickham Lighthouse, 1500x1000, landscape, lighthouse centred though small"
+   },
+   {
+    "file": "Cape Wickham Lighthouse (King Island).jpg",
+    "verdict": "reject-for-why",
+    "reason": "portrait; why-visit 1.6:1 crop would slice the tower. Best for the spot (accept there)"
+   },
+   {
+    "file": "Cape Wickham Lighthouse on King Island.jpg",
+    "verdict": "reject-for-why",
+    "reason": "portrait, lots of sky"
+   },
+   {
+    "url": "https://kingisland.org.au/wp-content/uploads/Above-King-Island_Kramer-Photography-0019_Cape-Wickham-Lighthouse-copy.jpeg",
+    "verdict": "reject",
+    "reason": "1200 px < 1280"
+   }
+  ],
+  "choice": "https://kingisland.org.au/wp-content/uploads/136484-56.jpg",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.55,
+   "zoom": 1.3
+  },
+  "copyright_risk": true,
+  "credit": {
+   "by": "Adam Gibson via King Island Tourism",
+   "licence": "official photo, permission not confirmed",
+   "page": "https://kingisland.org.au/"
+  }
+ },
+ "dest:king-island:why2": {
+  "candidates": [
+   {
+    "url": "https://parks.tas.gov.au/ContentImages/b3f242.jpg",
+    "verdict": "accept",
+    "reason": "bleached limestone tree casts, Calcified Forest per Parks page (Seal Rocks State Reserve), 2000 px"
+   },
+   {
+    "url": "https://kingisland.org.au/wp-content/uploads/136488-56.jpg",
+    "verdict": "reject",
+    "reason": "portrait, drab"
+   }
+  ],
+  "choice": "https://parks.tas.gov.au/ContentImages/b3f242.jpg",
+  "hero_crop": "ok",
+  "copyright_risk": true,
+  "credit": {
+   "by": "Parks and Wildlife Service Tasmania",
+   "licence": "official photo, permission not confirmed",
+   "page": "https://parks.tas.gov.au/explore-our-parks/seal-rocks-state-reserve"
+  }
+ },
+ "dest:king-island:why3": {
+  "candidates": [
+   {
+    "url": "https://parks.tas.gov.au/ContentImages/Seal%20Rocks%202000%20x%201499.jpg",
+    "verdict": "accept",
+    "reason": "Seal Rocks State Reserve coast from cliff top, 2000 px, wide"
+   },
+   {
+    "url": "https://kingisland.org.au/wp-content/uploads/136617-56.jpg",
+    "verdict": "reject",
+    "reason": "cliff close-up, less wide (alternative)"
+   }
+  ],
+  "choice": "https://parks.tas.gov.au/ContentImages/Seal%20Rocks%202000%20x%201499.jpg",
+  "hero_crop": "ok",
+  "copyright_risk": true,
+  "credit": {
+   "by": "Parks and Wildlife Service Tasmania",
+   "licence": "official photo, permission not confirmed",
+   "page": "https://parks.tas.gov.au/explore-our-parks/seal-rocks-state-reserve"
+  }
+ },
+ "spot:king-island-1": {
+  "candidates": [
+   {
+    "file": "Cape Wickham Lighthouse (King Island).jpg",
+    "verdict": "accept",
+    "reason": "CC BY-SA 4.0, 2016, tower centred in colour; square crop keeps whole tower with y 0.4"
+   },
+   {
+    "file": "Cape Wickham Lighthouse on King Island.jpg",
+    "verdict": "reject",
+    "reason": "tower smaller, grey sky; second best"
+   },
+   {
+    "url": "https://kingisland.org.au/wp-content/uploads/136484-56.jpg",
+    "verdict": "reject",
+    "reason": "used for why1; lighthouse small"
+   }
+  ],
+  "choice": "Cape Wickham Lighthouse (King Island).jpg",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.4
+  },
+  "note": "current 1887 photo rejected (archive, 728 px)"
+ },
+ "spot:king-island-4": {
+  "candidates": [
+   {
+    "url": "https://parks.tas.gov.au/ContentImages/b3f242.jpg",
+    "verdict": "accept",
+    "reason": "limestone tree casts; current lead is red algae in Monterey, California (wrong subject)"
+   },
+   {
+    "url": "https://kingisland.org.au/wp-content/uploads/136488-56.jpg",
+    "verdict": "reject",
+    "reason": "portrait drab"
+   }
+  ],
+  "choice": "https://parks.tas.gov.au/ContentImages/b3f242.jpg",
+  "hero_crop": "ok",
+  "copyright_risk": true,
+  "credit": {
+   "by": "Parks and Wildlife Service Tasmania",
+   "licence": "official photo, permission not confirmed",
+   "page": "https://parks.tas.gov.au/explore-our-parks/seal-rocks-state-reserve"
+  }
+ },
+ "spot:king-island-5": {
+  "candidates": [
+   {
+    "url": "https://parks.tas.gov.au/ContentImages/Seal%20Rocks%202000%20x%201499.jpg",
+    "verdict": "accept",
+    "reason": "coast of the reserve"
+   },
+   {
+    "url": "https://kingisland.org.au/wp-content/uploads/136617-56.jpg",
+    "verdict": "reject",
+    "reason": "alternative; cliff close-up"
+   }
+  ],
+  "choice": "https://parks.tas.gov.au/ContentImages/Seal%20Rocks%202000%20x%201499.jpg",
+  "hero_crop": "ok",
+  "copyright_risk": true,
+  "credit": {
+   "by": "Parks and Wildlife Service Tasmania",
+   "licence": "official photo, permission not confirmed",
+   "page": "https://parks.tas.gov.au/explore-our-parks/seal-rocks-state-reserve"
+  },
+  "note": "current lead (See elefanten, 700 px, an elephant seal lake image) is wrong; shares file with why3 (same destination)"
+ },
+ "spot:king-island-6": {
+  "candidates": [
+   {
+    "url": "https://kingisland.org.au/wp-content/uploads/Martha-Lavinia-Beach_King-Island_Stu-Gibson-1500.jpg",
+    "verdict": "accept",
+    "reason": "named in file; long beach and lichen boulders (tiny person incidental)"
+   },
+   {
+    "url": "https://kingisland.org.au/wp-content/uploads/134341-56.jpg",
+    "verdict": "reject",
+    "reason": "surf wave, surfers small; not the beach itself"
+   }
+  ],
+  "choice": "https://kingisland.org.au/wp-content/uploads/Martha-Lavinia-Beach_King-Island_Stu-Gibson-1500.jpg",
+  "hero_crop": {
+   "x": 0.6,
+   "y": 0.6
+  },
+  "copyright_risk": true,
+  "credit": {
+   "by": "Stu Gibson via King Island Tourism",
+   "licence": "official photo, permission not confirmed",
+   "page": "https://kingisland.org.au/"
+  },
+  "note": "current lead is a photo of Ava Gardner (wrong, 1954)"
+ },
+ "spot:king-island-7": {
+  "candidates": [
+   {
+    "url": "https://kingisland.org.au/wp-content/uploads/Above-King-Island_Kramer-Photography-4102_KI-Museum.jpg",
+    "verdict": "accept",
+    "reason": "museum cottage with sign and lighthouse behind, 1500 px"
+   }
+  ],
+  "choice": "https://kingisland.org.au/wp-content/uploads/Above-King-Island_Kramer-Photography-4102_KI-Museum.jpg",
+  "hero_crop": {
+   "x": 0.55,
+   "y": 0.5
+  },
+  "copyright_risk": true,
+  "credit": {
+   "by": "Kramer Photography via King Island Tourism",
+   "licence": "official photo, permission not confirmed",
+   "page": "https://kingisland.org.au/"
+  },
+  "note": "current lead is Berlin Museum Island (wrong place)"
+ }
+}

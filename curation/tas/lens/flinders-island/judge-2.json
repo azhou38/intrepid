@@ -1,0 +1,274 @@
+{
+ "dest:flinders-island:header": {
+  "candidates": [
+   {
+    "url": "https://www.discovertasmania.com.au/siteassets/places-to-go/flinders-island/131451-56.jpg",
+    "verdict": "accept",
+    "reason": "Trousers Point bay, boulders and Strzelecki Peaks with rainbow, 3000x2000"
+   },
+   {
+    "url": "https://www.discovertasmania.com.au/siteassets/places-to-go/national-parks/strzelecki/131453-56.jpg",
+    "verdict": "reject",
+    "reason": "dusky, darker second choice"
+   },
+   {
+    "file": "Killiecrankie Bay Flinders Island - panoramio.jpg",
+    "verdict": "reject",
+    "reason": "plain grey bay, 2007"
+   },
+   {
+    "file": "Rainbow over Killiecrankie Bay - panoramio.jpg",
+    "verdict": "reject",
+    "reason": "hazy, dated 2007"
+   }
+  ],
+  "choice": "https://www.discovertasmania.com.au/siteassets/places-to-go/flinders-island/131451-56.jpg",
+  "hero_crop": "ok",
+  "copyright_risk": true,
+  "credit": {
+   "by": "Tourism Tasmania via Discover Tasmania",
+   "licence": "official photo, permission not confirmed",
+   "page": "https://www.discovertasmania.com.au/regions/flinders-island/guide-to-flinders-island/"
+  }
+ },
+ "dest:flinders-island:why1": {
+  "candidates": [
+   {
+    "url": "https://parks.tas.gov.au/ContentImages/HERO%20new%20Strzelecki%20Peak%20Geoffrey%20Lea.jpg",
+    "verdict": "accept",
+    "reason": "hiker on summit rocks over the island; shows the hike"
+   },
+   {
+    "url": "https://parks.tas.gov.au/ContentImages/RS5190_JordanDavis_FlindersIsland_Strzelecki-1-lpr.jpg",
+    "verdict": "reject",
+    "reason": "also fine; second choice"
+   },
+   {
+    "url": "https://www.discovertasmania.com.au/siteassets/places-to-go/flinders-island/137380-2.jpg",
+    "verdict": "reject",
+    "reason": "peaks only, no hike (used for spot)"
+   },
+   {
+    "url": "https://www.discovertasmania.com.au/siteassets/places-to-go/flinders-island/131445-56.jpg",
+    "verdict": "reject",
+    "reason": "dusk, under brightness floor"
+   }
+  ],
+  "choice": "https://parks.tas.gov.au/ContentImages/HERO%20new%20Strzelecki%20Peak%20Geoffrey%20Lea.jpg",
+  "hero_crop": "ok",
+  "copyright_risk": true,
+  "credit": {
+   "by": "Parks and Wildlife Service Tasmania (Geoffrey Lea)",
+   "licence": "official photo, permission not confirmed",
+   "page": "https://parks.tas.gov.au/explore-our-parks/strzelecki-national-park"
+  }
+ },
+ "dest:flinders-island:why2": {
+  "candidates": [
+   {
+    "url": "https://www.discovertasmania.com.au/siteassets/places-to-go/flinders-island/129076-2.jpg",
+    "verdict": "accept",
+    "reason": "swimmers in clear shallows, peaks behind: shows the swim"
+   },
+   {
+    "url": "https://www.discovertasmania.com.au/siteassets/places-to-go/flinders-island/131451-56.jpg",
+    "verdict": "reject",
+    "reason": "no swimming; used for header"
+   },
+   {
+    "url": "https://www.discovertasmania.com.au/siteassets/places-to-go/national-parks/strzelecki/133600-2.jpg",
+    "verdict": "reject",
+    "reason": "portrait"
+   }
+  ],
+  "choice": "https://www.discovertasmania.com.au/siteassets/places-to-go/flinders-island/129076-2.jpg",
+  "hero_crop": "ok",
+  "copyright_risk": true,
+  "credit": {
+   "by": "Tourism Tasmania via Discover Tasmania",
+   "licence": "official photo, permission not confirmed",
+   "page": "https://www.discovertasmania.com.au/regions/flinders-island/guide-to-flinders-island/"
+  }
+ },
+ "dest:flinders-island:why3": {
+  "candidates": [
+   {
+    "url": "https://parks.tas.gov.au/ContentImages/TT%20Rob%20Mulally%20new%20133605%202000%20x%201330.jpg",
+    "verdict": "accept",
+    "reason": "Castle Rock boulder at sunset, 2000 px; needs x 0.87 so the rock is in the 1.6:1 crop"
+   },
+   {
+    "url": "https://www.discovertasmania.com.au/siteassets/places-to-go/flinders-island/133604-56.jpg",
+    "verdict": "reject",
+    "reason": "same scene, smaller crop"
+   }
+  ],
+  "choice": "https://parks.tas.gov.au/ContentImages/TT%20Rob%20Mulally%20new%20133605%202000%20x%201330.jpg",
+  "hero_crop": {
+   "x": 0.87,
+   "y": 0.5
+  },
+  "copyright_risk": true,
+  "credit": {
+   "by": "Tourism Tasmania (Rob Mulally) via Parks and Wildlife Service Tasmania",
+   "licence": "official photo, permission not confirmed",
+   "page": "https://parks.tas.gov.au/things-to-do/60-great-short-walks/castle-rock"
+  }
+ },
+ "spot:flinders-island-1": {
+  "candidates": [
+   {
+    "url": "https://www.discovertasmania.com.au/siteassets/places-to-go/flinders-island/137380-2.jpg",
+    "verdict": "accept",
+    "reason": "granite twin summit of the peaks, moody grey but readable"
+   },
+   {
+    "url": "https://parks.tas.gov.au/ContentImages/HERO%20new%20Strzelecki%20Peak%20Geoffrey%20Lea.jpg",
+    "verdict": "reject",
+    "reason": "used for why1; person is subject"
+   },
+   {
+    "url": "https://www.discovertasmania.com.au/siteassets/places-to-go/flinders-island/131445-56.jpg",
+    "verdict": "reject",
+    "reason": "dark dusk"
+   }
+  ],
+  "choice": "https://www.discovertasmania.com.au/siteassets/places-to-go/flinders-island/137380-2.jpg",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.6
+  },
+  "copyright_risk": true,
+  "credit": {
+   "by": "Tourism Tasmania via Discover Tasmania",
+   "licence": "official photo, permission not confirmed",
+   "page": "https://www.discovertasmania.com.au/regions/flinders-island/guide-to-flinders-island/"
+  },
+  "note": "current is a portrait of Strzelecki the man: rejected"
+ },
+ "spot:flinders-island-2": {
+  "candidates": [
+   {
+    "url": "https://www.discovertasmania.com.au/siteassets/places-to-go/flinders-island/131451-56.jpg",
+    "verdict": "accept",
+    "reason": "Trousers Point bay itself (shares file with header, same destination)"
+   },
+   {
+    "url": "https://www.discovertasmania.com.au/siteassets/places-to-go/flinders-island/129076-2.jpg",
+    "verdict": "reject",
+    "reason": "used for why2, people subject"
+   }
+  ],
+  "choice": "https://www.discovertasmania.com.au/siteassets/places-to-go/flinders-island/131451-56.jpg",
+  "hero_crop": "ok",
+  "copyright_risk": true,
+  "credit": {
+   "by": "Tourism Tasmania via Discover Tasmania",
+   "licence": "official photo, permission not confirmed",
+   "page": "https://www.discovertasmania.com.au/regions/flinders-island/guide-to-flinders-island/"
+  },
+  "note": "current is a trousers clip-art: rejected"
+ },
+ "spot:flinders-island-3": {
+  "candidates": [
+   {
+    "url": "https://www.discovertasmania.com.au/siteassets/places-to-go/flinders-island/131455-56.jpg",
+    "verdict": "accept",
+    "reason": "Wybalenna chapel, modern colour photo, 3000 px"
+   }
+  ],
+  "choice": "https://www.discovertasmania.com.au/siteassets/places-to-go/flinders-island/131455-56.jpg",
+  "hero_crop": "ok",
+  "copyright_risk": true,
+  "credit": {
+   "by": "Tourism Tasmania via Discover Tasmania",
+   "licence": "official photo, permission not confirmed",
+   "page": "https://www.discovertasmania.com.au/regions/flinders-island/guide-to-flinders-island/"
+  },
+  "note": "current 1846 painting rejected"
+ },
+ "spot:flinders-island-4": {
+  "candidates": [
+   {
+    "url": "https://www.discovertasmania.com.au/siteassets/places-to-go/flinders-island/137373-2.jpg",
+    "verdict": "accept",
+    "reason": "the coastal trail with lichen rocks and Old Mans Head; shows the walk"
+   },
+   {
+    "url": "https://www.discovertasmania.com.au/siteassets/places-to-go/flinders-island/137306-2.jpg",
+    "verdict": "reject",
+    "reason": "Stackys Bight arch, a feature on the walk; second choice"
+   },
+   {
+    "file": "Stackies Bite Killiecrankie Bay - panoramio.jpg",
+    "verdict": "reject",
+    "reason": "from water, 2007"
+   },
+   {
+    "url": "https://www.discovertasmania.com.au/siteassets/places-to-go/flinders-island/131458-56.jpg",
+    "verdict": "reject",
+    "reason": "The Dock only, long exposure"
+   }
+  ],
+  "choice": "https://www.discovertasmania.com.au/siteassets/places-to-go/flinders-island/137373-2.jpg",
+  "hero_crop": {
+   "x": 0.7,
+   "y": 0.5
+  },
+  "copyright_risk": true,
+  "credit": {
+   "by": "Tourism Tasmania via Discover Tasmania",
+   "licence": "official photo, permission not confirmed",
+   "page": "https://www.discovertasmania.com.au/regions/flinders-island/guide-to-flinders-island/"
+  },
+  "note": "current is a Highland railway shield: rejected"
+ },
+ "spot:flinders-island-5": {
+  "candidates": [
+   {
+    "file": "Killiecrankie Bay Flinders Island - panoramio.jpg",
+    "verdict": "accept",
+    "reason": "CC BY 3.0 (2007) view of the bay; filename names Flinders Island; geotag ~3 km east on the same long bay"
+   },
+   {
+    "url": "https://www.discovertasmania.com.au/siteassets/places-to-go/flinders-island/137375-2.jpg",
+    "verdict": "reject",
+    "reason": "beach with two people, caption unverified as Killiecrankie"
+   },
+   {
+    "file": "Rainbow over Killiecrankie Bay - panoramio.jpg",
+    "verdict": "reject",
+    "reason": "hazy; mountain not bay"
+   }
+  ],
+  "choice": "Killiecrankie Bay Flinders Island - panoramio.jpg",
+  "hero_crop": "ok",
+  "note": "current is a battle painting of Killiecrankie, Scotland: rejected. 2007 is a little old but is a real colour photo; official alternative 137375-2"
+ },
+ "spot:flinders-island-6": {
+  "candidates": [
+   {
+    "url": "https://parks.tas.gov.au/ContentImages/TT%20Rob%20Mulally%20new%20133605%202000%20x%201330.jpg",
+    "verdict": "accept",
+    "reason": "Castle Rock; shares file with why3, same destination"
+   },
+   {
+    "url": "https://www.discovertasmania.com.au/siteassets/places-to-go/flinders-island/133604-56.jpg",
+    "verdict": "reject",
+    "reason": "smaller"
+   }
+  ],
+  "choice": "https://parks.tas.gov.au/ContentImages/TT%20Rob%20Mulally%20new%20133605%202000%20x%201330.jpg",
+  "hero_crop": {
+   "x": 0.87,
+   "y": 0.5
+  },
+  "copyright_risk": true,
+  "credit": {
+   "by": "Tourism Tasmania (Rob Mulally) via Parks and Wildlife Service Tasmania",
+   "licence": "official photo, permission not confirmed",
+   "page": "https://parks.tas.gov.au/things-to-do/60-great-short-walks/castle-rock"
+  },
+  "note": "current is Castle Rock, Colorado: rejected"
+ }
+}

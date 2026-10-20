@@ -1,0 +1,120 @@
+{
+ "group": "mole-creek-karst-national-park",
+ "generated": "2026-10-20T15:57:11.061Z",
+ "slots": [
+  {
+   "slot": "dest:mole-creek-karst-national-park:header",
+   "key": "Mole Creek Karst National Park",
+   "current": {
+    "file": "ext-mole-creek-karst-national-park.jpg",
+    "source": "imageOverrides.ts"
+   },
+   "status": "search",
+   "flags": [
+    "placeholder: no photo chosen yet"
+   ]
+  },
+  {
+   "slot": "dest:mole-creek-karst-national-park:why1",
+   "key": "File:ext-mole-creek-karst-national-park-1.jpg",
+   "current": {
+    "file": "ext-mole-creek-karst-national-park-1.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "search",
+   "flags": [
+    "placeholder: no photo chosen yet"
+   ]
+  },
+  {
+   "slot": "dest:mole-creek-karst-national-park:why2",
+   "key": "File:ext-mole-creek-karst-national-park-2.jpg",
+   "current": {
+    "file": "ext-mole-creek-karst-national-park-2.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "search",
+   "flags": [
+    "placeholder: no photo chosen yet"
+   ]
+  },
+  {
+   "slot": "dest:mole-creek-karst-national-park:why3",
+   "key": "File:ext-mole-creek-karst-national-park-3.jpg",
+   "current": {
+    "file": "ext-mole-creek-karst-national-park-3.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "search",
+   "flags": [
+    "placeholder: no photo chosen yet"
+   ]
+  },
+  {
+   "slot": "spot:mole-creek-karst-national-park-1",
+   "key": "Marakoopa Cave",
+   "current": {
+    "file": "Jenolan Caves Imperial Cave 3.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "geotag 923036 m from the pin: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:mole-creek-karst-national-park-2",
+   "key": "King Solomon's Cave",
+   "current": {
+    "file": "Front cover King Solomon's Mines 1887.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "proof: dated 1887"
+   ]
+  },
+  {
+   "slot": "spot:mole-creek-karst-national-park-3",
+   "key": "Devils Gullet",
+   "current": {
+    "file": "Lake St Clair NP Tas.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag; the spot name is not in the file text: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:mole-creek-karst-national-park-4",
+   "key": "Deloraine, Tasmania",
+   "current": {
+    "file": "Weir-Deloraine-20070422-031.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [
+    "audit sample: the script proved this one; judge it blind"
+   ],
+   "proof": [
+    "geotag 272 m from the pin; a name word is in the title, description or categories; 3031 px; colour ok"
+   ]
+  },
+  {
+   "slot": "spot:mole-creek-karst-national-park-5",
+   "key": "Big Coffee Pot",
+   "current": {
+    "file": "Preparation of cold brew coffee 06.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  }
+ ]
+}

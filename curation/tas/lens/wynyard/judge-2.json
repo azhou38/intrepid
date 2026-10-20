@@ -1,0 +1,100 @@
+{
+ "dest:wynyard:header": {
+  "candidates": [
+   {
+    "file": "View-from-Table-Cape-20070423-025.jpg",
+    "verdict": "accept",
+    "reason": "coast and Wynyard from Table Cape, category Table Cape; 3031 px"
+   },
+   {
+    "file": "Table Cape in the Mist.jpg",
+    "verdict": "reject",
+    "reason": "grey, dull"
+   }
+  ],
+  "choice": "View-from-Table-Cape-20070423-025.jpg",
+  "hero_crop": {
+   "x": 0.4,
+   "y": 0.5
+  }
+ },
+ "dest:wynyard:why1": {
+  "candidates": [
+   {
+    "file": "Wynyard Tulip Festival, Tasmania (30205973315).jpg",
+    "verdict": "accept",
+    "reason": "tulips with Table Cape lighthouse; category Table Cape"
+   },
+   {
+    "file": "Wynyard Tulip Festival, Tasmania (30115492251).jpg",
+    "verdict": "reject",
+    "reason": "tulips only, no place cue"
+   }
+  ],
+  "choice": "Wynyard Tulip Festival, Tasmania (30205973315).jpg",
+  "hero_crop": "ok"
+ },
+ "dest:wynyard:why2": {
+  "candidates": [
+   {
+    "file": "Rocky Cape 2009.jpg",
+    "verdict": "accept",
+    "reason": "headland, category Rocky Cape National Park; grey light"
+   },
+   {
+    "file": "Sisters Island taken from near Rocky Cape (cropped).jpg",
+    "verdict": "reject",
+    "reason": "tiny island, better kept free for Sisters Beach"
+   }
+  ],
+  "choice": "Rocky Cape 2009.jpg",
+  "hero_crop": "ok",
+  "note": "same file is wynyard-2 current: allowed"
+ },
+ "spot:wynyard-1": {
+  "candidates": [
+   {
+    "file": "Table Cape Lighthouse, Tasmania (29592722904).jpg",
+    "verdict": "accept",
+    "reason": "lighthouse on the cape, geotag matches pin, 2864 px"
+   },
+   {
+    "file": "Table Cape in the Mist.jpg",
+    "verdict": "reject",
+    "reason": "dull, 1600 px"
+   }
+  ],
+  "choice": "Table Cape Lighthouse, Tasmania (29592722904).jpg",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.25
+  }
+ },
+ "spot:wynyard-3": {
+  "candidates": [
+   {
+    "file": "Boat-Habour-beach-20150411-008.jpg",
+    "verdict": "accept",
+    "reason": "white sand and rocks, category Boat Harbour, Tasmania, geotag matches"
+   },
+   {
+    "file": "Boat Harbour Beach 20190722-004.jpg",
+    "verdict": "reject",
+    "reason": "houses dominate"
+   }
+  ],
+  "choice": "Boat-Habour-beach-20150411-008.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:wynyard-5": {
+  "candidates": [
+   {
+    "file": "Fossil-Bluff-20070423-032.jpg",
+    "verdict": "accept",
+    "reason": "bluff and beach, category Fossil Bluff, Tasmania; current is an Antarctic hut"
+   }
+  ],
+  "choice": "Fossil-Bluff-20070423-032.jpg",
+  "hero_crop": "ok"
+ }
+}

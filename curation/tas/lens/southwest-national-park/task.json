@@ -1,0 +1,92 @@
+{
+ "group": "southwest-national-park",
+ "generated": "2026-10-20T15:57:11.529Z",
+ "slots": [
+  {
+   "slot": "dest:southwest-national-park:header",
+   "key": "Southwest National Park",
+   "current": {
+    "file": "ext-southwest-national-park.jpg",
+    "source": "imageOverrides.ts"
+   },
+   "status": "search",
+   "flags": [
+    "placeholder: no photo chosen yet"
+   ]
+  },
+  {
+   "slot": "dest:southwest-national-park:why1",
+   "key": "File:ext-southwest-national-park-1.jpg",
+   "current": {
+    "file": "ext-southwest-national-park-1.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "search",
+   "flags": [
+    "placeholder: no photo chosen yet"
+   ]
+  },
+  {
+   "slot": "dest:southwest-national-park:why2",
+   "key": "File:ext-southwest-national-park-2.jpg",
+   "current": {
+    "file": "ext-southwest-national-park-2.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "search",
+   "flags": [
+    "placeholder: no photo chosen yet"
+   ]
+  },
+  {
+   "slot": "dest:southwest-national-park:why3",
+   "key": "File:ext-southwest-national-park-3.jpg",
+   "current": {
+    "file": "ext-southwest-national-park-3.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "search",
+   "flags": [
+    "placeholder: no photo chosen yet"
+   ]
+  },
+  {
+   "slot": "spot:southwest-national-park-1",
+   "key": "Gordon Dam",
+   "current": {
+    "file": "Gordon Dam, Southwest National Park, Tasmania.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:southwest-national-park-2",
+   "key": "Lake Pedder",
+   "current": {
+    "file": "Lake Pedder & Environs - 18.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "proof: dated 1968"
+   ]
+  },
+  {
+   "slot": "spot:southwest-national-park-3",
+   "key": "South Coast Track",
+   "current": {
+    "file": "South Cape Bay.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "geotag 27759 m from the pin: a judge must look"
+   ]
+  }
+ ]
+}

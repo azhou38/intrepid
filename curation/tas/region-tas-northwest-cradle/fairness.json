@@ -1,0 +1,330 @@
+{
+ "region": "tas-northwest-cradle",
+ "inside_destinations": 39,
+ "standalone": 6,
+ "new_destinations": [
+  {
+   "id": "cradle-mountain",
+   "name": "Cradle Mountain-Lake St Clair National Park",
+   "spots": 9,
+   "name_evidence": "Wikivoyage page 'Cradle Mountain-Lake St Clair National Park' (a guidebook chapter) and the Discover Tasmania North West page; CROSS-REGION names it 'Cradle Mountain'. Flagship Tasmanian park (World Heritage), so rank 1-2 exemption applies besides its nine spots."
+  },
+  {
+   "id": "devonport",
+   "name": "Devonport",
+   "spots": 11,
+   "name_evidence": "Wikivoyage 'Devonport' page (with its own See list) and the 'Western Tasmania' region page; Discover Tasmania North West page. Regional city and Spirit of Tasmania ferry port."
+  },
+  {
+   "id": "burnie",
+   "name": "Burnie",
+   "spots": 4,
+   "name_evidence": "Wikivoyage 'Burnie' page lists the penguin centre, garden and Guide Falls; regional city."
+  },
+  {
+   "id": "wynyard",
+   "name": "Wynyard",
+   "spots": 6,
+   "name_evidence": "Wikivoyage 'Wynyard' page (Table Cape, Fossil Bluff, the Rocky Cape coast) and 'Western Tasmania' page; Table Cape tulips are the area's headline."
+  },
+  {
+   "id": "stanley",
+   "name": "Stanley",
+   "spots": 4,
+   "name_evidence": "Wikivoyage 'Stanley (Tasmania)' page and 'Western Tasmania'; The Nut is a named headline attraction. The town is the destination, so it is not also a spot."
+  },
+  {
+   "id": "mole-creek-karst-national-park",
+   "name": "Mole Creek Karst National Park",
+   "spots": 5,
+   "name_evidence": "Wikivoyage 'Mole Creek' page (the caves and Devils Gullet) and Parks Tasmania; the park is named for the caves. Deloraine and Big Coffee Pot are its gateway spots (Wikivoyage Deloraine page)."
+  }
+ ],
+ "kept_total": 49,
+ "kept_total_note": "45 placed spots plus 4 kept candidates that became the destinations themselves (Cradle Mountain-Lake St Clair NP, Devonport, Stanley, Mole Creek Karst NP); Beaconsfield Mine is kept but owned by tas-launceston-northeast.",
+ "lowest_kept": [
+  {
+   "name": "Marion's Lookout",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "keep",
+   "reason": "Named Wikivoyage day walk (2 h return) to a Dove Lake viewpoint; a distinct half-day outing (rules 1-2)."
+  },
+  {
+   "name": "Pencil Pine Falls",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "keep",
+   "reason": "Short boardwalk rainforest walk behind the visitor centre; Wikivoyage calls it a must for all visitors."
+  },
+  {
+   "name": "Waldheim Chalet",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "keep",
+   "reason": "Gustav Weindorfer's 1912 chalet with displays; a heritage site visitors can enter, named by the guide (rules 1-2)."
+  },
+  {
+   "name": "Cradle Mountain Summit Walk",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "keep",
+   "reason": "The headline day walk to the summit of Cradle Mountain from Dove Lake; Wikivoyage names it (rule 1)."
+  },
+  {
+   "name": "Devils Gullet",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "keep",
+   "reason": "Named lookout platform over a sheer cliff with views to Cradle Mountain, near Mole Creek (rules 1-2)."
+  },
+  {
+   "name": "King Solomon's Cave",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "keep",
+   "reason": "Show cave in the Mole Creek Karst, listed by Wikivoyage (rules 1-2)."
+  },
+  {
+   "name": "Marakoopa Cave",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "keep",
+   "reason": "Glow-worm show cave in Mole Creek Karst, listed by Wikivoyage; a distinct tour."
+  },
+  {
+   "name": "Walls of Jerusalem Multi-Day Walk",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "keep",
+   "reason": "Promoted multi-day loop in the national park (benchmark: Hump Ridge Track)."
+  }
+ ],
+ "stronger_left_out": [
+  {
+   "name": "Pool of Bethesda",
+   "views": 96143,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Views and coordinates belong to the biblical pool in Jerusalem; the Tasmanian tarn has one counted source and is a side feature of a multi-day walk (rule 3). Script reject, audit review: held for the owner."
+  },
+  {
+   "name": "Ulverstone",
+   "views": 14687,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Wikivoyage page lists only cafes, a volunteer-run history museum and surrounding sites (Lillico Beach, Leven Canyon); the town has no own draw."
+  },
+  {
+   "name": "Penguin",
+   "views": 12203,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Seaside town with the Big Penguin icon, heritage trail and beach; Wikivoyage lists it only as 'home of the Big Penguin', no town page."
+  },
+  {
+   "name": "Takayna / Tarkine",
+   "views": 9708,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Named by Discover Tasmania as a wilderness region of rainforest and coast; a region, not one place."
+  },
+  {
+   "name": "Smithton",
+   "views": 9460,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Dairy town and base for the Circular Head area per Wikivoyage."
+  },
+  {
+   "name": "Beaconsfield",
+   "views": 5676,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Town wrapper beside its own attraction, Beaconsfield Mine and Heritage Centre (WIKI: town only a spot when the town is itself a draw)."
+  },
+  {
+   "name": "Latrobe",
+   "views": 5671,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Historic town with Gilbert Street heritage, Axemans Hall of Fame and platypus viewing; only one real-sourced listing (Wikivoyage Latrobe (Tasmania) page); town itself is a modest draw."
+  },
+  {
+   "name": "Mole Creek",
+   "views": 4190,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Town beside Mole Creek Karst, the caves' base; two Wikivoyage pages."
+  },
+  {
+   "name": "Somerset Beach",
+   "views": 3170,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Wikivoyage Burnie and Western Tasmania: swimming beach along Somerset coast, but the pin is the Somerset town centre point."
+  },
+  {
+   "name": "Somerset",
+   "views": 3170,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small coastal town with a beach; no sight of its own named by the guide."
+  },
+  {
+   "name": "Arthur River",
+   "views": 2657,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Gateway village for the Tarkine / Edge of the World drive; draws are beyond it (benchmark: Pipiriki)."
+  },
+  {
+   "name": "Great Western Tiers",
+   "views": 1827,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A broad escarpment/range of many walks, not one place (rule 3)."
+  },
+  {
+   "name": "Greens Beach",
+   "views": 1563,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Ambiguous: the source may mean the Marrawah surf beach or Greens Beach at the Tamar mouth (candidate coordinates -41.085,146.740 are the latter); not placed until resolved (CROSS-REGION)."
+  },
+  {
+   "name": "Barn Bluff",
+   "views": 1470,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Named Wikivoyage mountain climb off the Overland Track; real but 10 h and for experienced walkers."
+  },
+  {
+   "name": "Hellyer Gorge",
+   "views": 1013,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Walking tracks along the Hellyer River, named by Wikivoyage."
+  },
+  {
+   "name": "King David's Peak",
+   "views": 623,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A peak climbed within the Walls of Jerusalem trip (rule 3)."
+  },
+  {
+   "name": "Cathedral Mountain",
+   "views": 569,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Peak seen from the Overland Track; no specific visitor outing in the source (rule 2)."
+  },
+  {
+   "name": "Dial Range",
+   "views": 459,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Coastal walks with views over Penguin, Wikivoyage 'Do' entry."
+  },
+  {
+   "name": "Enchanted Walk",
+   "views": 231,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Half-hour dry walk past waterfalls and rainforest, named by Wikivoyage."
+  }
+ ],
+ "review_for_owner": [
+  "Hanson's Peak",
+  "Barn Bluff",
+  "Enchanted Walk",
+  "Lake Rodway",
+  "Lake Barrington",
+  "Dial Range",
+  "Hellyer Gorge",
+  "Pool of Bethesda",
+  "Sandy Cape Beach",
+  "Takayna / Tarkine",
+  "Balfour",
+  "Greens Beach",
+  "Rocky Cape Lighthouse",
+  "Somerset Beach",
+  "Wonders of Wynyard",
+  "Burnie Regional Museum",
+  "Fernglade",
+  "Back Beach",
+  "Ulverstone",
+  "Kaydale Lodge Gardens",
+  "Penguin",
+  "Penguin General Cemetery and Vantage Point",
+  "Mole Creek",
+  "Latrobe",
+  "Smithton",
+  "Allendale Gardens and Rainforest Walks",
+  "Arthur River"
+ ],
+ "strongest_outsiders": [
+  {
+   "name": "Walls of Jerusalem National Park",
+   "views": 5166,
+   "status": "standalone, kept"
+  },
+  {
+   "name": "Narawntapu National Park",
+   "views": 2114,
+   "status": "standalone, kept"
+  },
+  {
+   "name": "Bakers Beach",
+   "views": 1051,
+   "status": "standalone, kept"
+  },
+  {
+   "name": "Arthur-Pieman Conservation Area",
+   "views": 413,
+   "status": "standalone, kept"
+  },
+  {
+   "name": "Walls of Jerusalem Multi-Day Walk",
+   "views": 0,
+   "status": "standalone, kept"
+  },
+  {
+   "name": "Edge of the World",
+   "views": 0,
+   "status": "standalone, kept"
+  },
+  {
+   "name": "Takayna / Tarkine",
+   "views": 9708,
+   "status": "review (outside every proposed destination's span)"
+  },
+  {
+   "name": "Smithton",
+   "views": 9460,
+   "status": "review (outside every proposed destination's span)"
+  },
+  {
+   "name": "Somerset Beach",
+   "views": 3170,
+   "status": "review (outside every proposed destination's span)"
+  },
+  {
+   "name": "Arthur River",
+   "views": 2657,
+   "status": "review (outside every proposed destination's span)"
+  },
+  {
+   "name": "Greens Beach",
+   "views": 1563,
+   "status": "review (outside every proposed destination's span)"
+  },
+  {
+   "name": "Dial Range",
+   "views": 459,
+   "status": "review (outside every proposed destination's span)"
+  }
+ ],
+ "benchmark": "NZ-specific benchmarks do not apply to Tasmania. Negative benchmarks held: events (Sheffield Mural Fest) excluded, a cemetery lookout (Penguin General Cemetery) held for review, town wrappers (Beaconsfield, Latrobe, Mole Creek, Ulverstone, Penguin, Smithton) not placed beside their attractions, a gateway village whose draw is the journey beyond (Arthur River) is review, not kept."
+}

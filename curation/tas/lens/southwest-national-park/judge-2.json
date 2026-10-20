@@ -1,0 +1,119 @@
+{
+ "dest:southwest-national-park:header": {
+  "candidates": [
+   {
+    "file": "Mt Anne from High Shelf Camp.jpg",
+    "verdict": "accept",
+    "reason": "featured picture, Mt Anne in Southwest NP"
+   },
+   {
+    "file": "Lake Pedder (25639397525).jpg",
+    "verdict": "reject",
+    "reason": "used for why2"
+   },
+   {
+    "file": "Western Arthur Range, SW Tasmania.jpg",
+    "verdict": "reject",
+    "reason": "pleasant, less striking"
+   }
+  ],
+  "choice": "Mt Anne from High Shelf Camp.jpg",
+  "hero_crop": "ok"
+ },
+ "dest:southwest-national-park:why1": {
+  "candidates": [
+   {
+    "file": "Gordon Dam, Tasmania.jpg",
+    "verdict": "accept",
+    "reason": "dam and lake, geotagged at Gordon Dam"
+   },
+   {
+    "file": "Gordon Dam and lake 2001-01-31.jpg",
+    "verdict": "reject",
+    "reason": "only 1280 px, dam cut off"
+   }
+  ],
+  "choice": "Gordon Dam, Tasmania.jpg",
+  "hero_crop": "ok"
+ },
+ "dest:southwest-national-park:why2": {
+  "candidates": [
+   {
+    "file": "Lake Pedder (25639397525).jpg",
+    "verdict": "accept",
+    "reason": "Lake Pedder shore with islands, 2014 colour"
+   },
+   {
+    "file": "Lake Pedder (25012657463).jpg",
+    "verdict": "reject",
+    "reason": "near duplicate"
+   },
+   {
+    "file": "Lake Pedder from Strathgordon.jpg",
+    "verdict": "reject",
+    "reason": "dark, grey"
+   }
+  ],
+  "choice": "Lake Pedder (25639397525).jpg",
+  "hero_crop": "ok"
+ },
+ "dest:southwest-national-park:why3": {
+  "candidates": [
+   {
+    "file": "Storm at South Cape Range in Tasmania.jpg",
+    "verdict": "accept",
+    "reason": "South Coast Track beach, category confirms; heavily graded colour but real"
+   },
+   {
+    "file": "Granite Beach in Tasmania.jpg",
+    "verdict": "reject",
+    "reason": "2.7:1 pano, oversaturated"
+   }
+  ],
+  "choice": "Storm at South Cape Range in Tasmania.jpg",
+  "hero_crop": {
+   "x": 0.55,
+   "y": 0.5
+  }
+ },
+ "spot:southwest-national-park-2": {
+  "candidates": [
+   {
+    "file": "Lake Pedder (25639397525).jpg",
+    "verdict": "accept",
+    "reason": "replaces 1968 slide; shares with why2"
+   },
+   {
+    "file": "Lake Pedder (25012657463).jpg",
+    "verdict": "reject",
+    "reason": "duplicate"
+   },
+   {
+    "file": "Lake Pedder view from Red Knoll Lookout - February 2022.jpg",
+    "verdict": "reject",
+    "reason": "2.7:1 pano"
+   }
+  ],
+  "choice": "Lake Pedder (25639397525).jpg",
+  "hero_crop": "ok"
+ },
+ "spot:southwest-national-park-3": {
+  "candidates": [
+   {
+    "file": "Storm at South Cape Range in Tasmania.jpg",
+    "verdict": "accept",
+    "reason": "track beach in 3:2; current South Cape Bay.jpg is a 3:1 pano needing zoom"
+   },
+   {
+    "file": "Granite Beach in Tasmania.jpg",
+    "verdict": "reject",
+    "reason": "pano, oversaturated"
+   }
+  ],
+  "choice": "Storm at South Cape Range in Tasmania.jpg",
+  "hero_crop": {
+   "x": 0.55,
+   "y": 0.5
+  }
+ }
+}

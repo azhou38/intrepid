@@ -1,0 +1,515 @@
+[
+ {
+  "id": "cradle-mountain-1",
+  "name": "Dove Lake",
+  "coordinates": {
+   "lat": -41.653461,
+   "lng": 145.959531
+  },
+  "coordinates_source": "OSM tourism=viewpoint node 1930087130 at the Dove Lake Boatshed (Photon, OSM mirrors down), on the shore where visitors stand; input point was the lake centroid in the water 790 m away, Wikipedia -41.65806,145.96194 is 480 m off",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 788,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 3,
+  "costMin": 30.7,
+  "costMax": 30.7,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/Pages/Dove-Lake.aspx",
+  "blocked_url": null,
+  "bio": "A glacial lake directly beneath Cradle Mountain, with a 6 km circuit track through Ballroom Forest.",
+  "unverified": [
+   "Shuttle bus times are seasonal and private vehicles are barred from the Dove Lake road during shuttle hours; the visitor centre was listed 8 AM - 5 PM on 2026-10-20 (4 Oct - 1 Dec). Price is the adult Cradle Mountain Icon Day Pass (includes shuttle); the standard per-vehicle Daily Pass excludes Cradle Mountain.",
+   "Circuit time is 2-3 hours (agency); the 1-3 hour visit range covers a lakeside stroll to the full loop."
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/Pages/Dove-Lake.aspx",
+   "https://parks.tas.gov.au/Pages/entry-fees.aspx",
+   "https://en.wikipedia.org/wiki/Dove_Lake_(Tasmania)"
+  ]
+ },
+ {
+  "id": "cradle-mountain-2",
+  "name": "Cradle Mountain",
+  "coordinates": {
+   "lat": -41.6846445,
+   "lng": 145.9513044
+  },
+  "coordinates_source": "OSM natural=peak and tourism=viewpoint node (Photon), Wikipedia -41.68,145.94 is only an area point",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 0,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0,
+  "visitHoursMax": 0.5,
+  "costMin": 30.7,
+  "costMax": 30.7,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/cradle-mountain",
+  "blocked_url": null,
+  "bio": "The jagged dolerite peak above Dove Lake that gives the park its name, often shrouded in cloud.",
+  "unverified": [
+   "Shuttle bus times are seasonal and private vehicles are barred from the Dove Lake road during shuttle hours; the visitor centre was listed 8 AM - 5 PM on 2026-10-20 (4 Oct - 1 Dec). Price is the adult Cradle Mountain Icon Day Pass (includes shuttle); the standard per-vehicle Daily Pass excludes Cradle Mountain.",
+   "Peak is not itself visited: the summit climb is cradle-mountain-6."
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/cradle-mountain",
+   "https://parks.tas.gov.au/Pages/entry-fees.aspx"
+  ]
+ },
+ {
+  "id": "cradle-mountain-3",
+  "name": "Overland Track",
+  "coordinates": {
+   "lat": -41.871683,
+   "lng": 146.063414
+  },
+  "coordinates_source": "Midpoint of the OSM Overland Track way chain (45 ways named Overland Track via api.openstreetmap.org, Ronny Creek to Cynthia Bay, 73.5 km as chained against the agency 65 km); falls on way 50800680 between Pelion and Kia Ora; Photon path point -41.87476,146.06687 is 380 m away",
+  "pin_confidence": "MEDIUM",
+  "moved_m": null,
+  "hours": "Open year-round; booking and fee required 1 Oct - 31 May",
+  "closedDays": null,
+  "visitHoursMin": 120,
+  "visitHoursMax": 144,
+  "costMin": 312,
+  "costMax": 312,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/cradle-mountain/overland-track",
+  "blocked_url": null,
+  "bio": "Australia's premier alpine walk: 65 km over six days from Cradle Mountain to Lake St Clair.",
+  "unverified": [
+   "Adult Overland Track Pass $312 (1 Oct - 31 May; includes park entry and the Cradle shuttle); 1 Jun - 23 Sep needs registration and a normal parks pass instead.",
+   "Pin chain length 73.5 km exceeds the agency 65 km because OSM gaps were bridged; the midpoint lies on the track near Pelion/Kia Ora. Stay 5-6 days (agency says 6 days one way)."
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/cradle-mountain/overland-track",
+   "https://parks.tas.gov.au/Pages/Overland-Track.aspx",
+   "https://api.openstreetmap.org/api/0.6/map"
+  ]
+ },
+ {
+  "id": "cradle-mountain-4",
+  "name": "Lake St Clair",
+  "coordinates": {
+   "lat": -42.1162549,
+   "lng": 146.1740903
+  },
+  "coordinates_source": "OSM information office way 317702201 (Lake St Clair Visitor Centre, Cynthia Bay) via Photon; input was a lagoon point at the lake outlet ~3 km away",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 3223,
+  "hours": "Open 24 hours; visitor centre 8:15 AM - 4:45 PM (Oct - May)",
+  "closedDays": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 3,
+  "costMin": 24.55,
+  "costMax": 49.15,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/lake-st-clair",
+  "blocked_url": null,
+  "bio": "Australia's deepest freshwater lake, with a visitor centre at Cynthia Bay and a ferry to Narcissus Bay.",
+  "unverified": [
+   "Price is the Parks Pass (per vehicle or per person per day); ferry and walks are extra.",
+   "Alert dated 2026-10-14: Fergys Campsite toilets closed to about 23 Oct; not affecting Cynthia Bay.",
+   "Ferry timetable and prices are with Lake St Clair Lodge, not checked."
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/lake-st-clair",
+   "https://parks.tas.gov.au/Pages/entry-fees.aspx"
+  ]
+ },
+ {
+  "id": "cradle-mountain-5",
+  "name": "Marion's Lookout",
+  "coordinates": {
+   "lat": -41.660333,
+   "lng": 145.952845
+  },
+  "coordinates_source": "OSM tourism=viewpoint node 647629307 named Marion's Lookout (and natural=peak node 2359587892 within 20 m) via Photon",
+  "pin_confidence": "MEDIUM",
+  "moved_m": null,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 2,
+  "visitHoursMax": 3,
+  "costMin": 30.7,
+  "costMax": 30.7,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/cradle-mountain",
+  "blocked_url": null,
+  "bio": "A steep climb above Crater Lake, with chain-assisted sections, to a lookout over Dove Lake.",
+  "unverified": [
+   "Shuttle bus times are seasonal and private vehicles are barred from the Dove Lake road during shuttle hours; the visitor centre was listed 8 AM - 5 PM on 2026-10-20 (4 Oct - 1 Dec). Price is the adult Cradle Mountain Icon Day Pass (includes shuttle); the standard per-vehicle Daily Pass excludes Cradle Mountain.",
+   "No Parks Tasmania page for the lookout: link is the park page. Return time (2-3 hours) and the chains are from guide/trail sources and OSM (a way named Chain Track), not the agency."
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/cradle-mountain",
+   "https://www.openstreetmap.org/node/647629307"
+  ]
+ },
+ {
+  "id": "cradle-mountain-6",
+  "name": "Cradle Mountain Summit Walk",
+  "coordinates": {
+   "lat": -41.6655703,
+   "lng": 145.9490544
+  },
+  "coordinates_source": "Midpoint (2.55 km of 5.06 km) of the shortest OSM path chain from Dove Lake carpark to the summit node (Dove Lake Circuit, Chain Track, Overland Track, Cradle Mount Summit Track; api.openstreetmap.org)",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 1654,
+  "hours": "Open 24 hours; not for wind, snow or rain",
+  "closedDays": null,
+  "visitHoursMin": 6,
+  "visitHoursMax": 8,
+  "costMin": 30.7,
+  "costMax": 30.7,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/Pages/Cradle-Summit.aspx",
+  "blocked_url": null,
+  "bio": "A steep, exposed 12.8 km return scramble over large rocks to the summit of Cradle Mountain, about 8 hours.",
+  "unverified": [
+   "Shuttle bus times are seasonal and private vehicles are barred from the Dove Lake road during shuttle hours; the visitor centre was listed 8 AM - 5 PM on 2026-10-20 (4 Oct - 1 Dec). Price is the adult Cradle Mountain Icon Day Pass (includes shuttle); the standard per-vehicle Daily Pass excludes Cradle Mountain.",
+   "Agency gives 8 hours return, grade 5 (input said six hours, now corrected). OSM chain gives about 5 km one way against the agency 6.4 km, so the midpoint is approximate."
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/Pages/Cradle-Summit.aspx"
+  ]
+ },
+ {
+  "id": "cradle-mountain-7",
+  "name": "Mount Ossa",
+  "coordinates": {
+   "lat": -41.870716,
+   "lng": 146.032969
+  },
+  "coordinates_source": "OSM natural=peak node Mount Ossa (Photon); Wikipedia -41.87,146.03 is 230 m away",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 0,
+  "hours": "Open 24 hours; side trip needs 4-5 hours of daylight",
+  "closedDays": null,
+  "visitHoursMin": 4,
+  "visitHoursMax": 5,
+  "costMin": 312,
+  "costMax": 312,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/cradle-mountain/overland-track",
+  "blocked_url": null,
+  "bio": "Tasmania's highest peak, 1,617 m, a steep 4-5 hour return side trip from Pelion Gap on the Overland Track.",
+  "unverified": [
+   "Cost is the Overland Track adult fee because the peak is reached as a side trip of the track (1 Oct - 31 May); there is no separate page for Ossa, link is the Overland Track page which names it.",
+   "Wikipedia/other approaches (Lake Ayr, Du Cane) not checked."
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/cradle-mountain/overland-track/overland-track-walk-notes",
+   "https://parks.tas.gov.au/explore-our-parks/cradle-mountain/overland-track"
+  ]
+ },
+ {
+  "id": "cradle-mountain-8",
+  "name": "Pencil Pine Falls",
+  "coordinates": {
+   "lat": -41.5950428,
+   "lng": 145.9302518
+  },
+  "coordinates_source": "OSM waterway=waterfall node 696476679 Pencil Pine Falls (Photon); falls are on the boardwalk behind the Interpretation Centre",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 0,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0.25,
+  "visitHoursMax": 0.5,
+  "costMin": 30.7,
+  "costMax": 30.7,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/Pages/Pencil-Pine-Falls-and-Rainforest-walk.aspx",
+  "blocked_url": null,
+  "bio": "A 10-minute rainforest boardwalk to Pencil Pine Falls, behind the interpretation centre; wheelchair accessible.",
+  "unverified": [
+   "Shuttle bus times are seasonal and private vehicles are barred from the Dove Lake road during shuttle hours; the visitor centre was listed 8 AM - 5 PM on 2026-10-20 (4 Oct - 1 Dec). Price is the adult Cradle Mountain Icon Day Pass (includes shuttle); the standard per-vehicle Daily Pass excludes Cradle Mountain.",
+   "Interpretation Centre 9 AM - 4 PM daily (hours extended in peak periods)."
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/Pages/Pencil-Pine-Falls-and-Rainforest-walk.aspx"
+  ]
+ },
+ {
+  "id": "cradle-mountain-9",
+  "name": "Waldheim Chalet",
+  "coordinates": {
+   "lat": -41.638616,
+   "lng": 145.943655
+  },
+  "coordinates_source": "OSM building way 543401221 named Weindorfer's Chalet (tourism=museum) with the Waldheim place node 647770032 within 10 m; input was a Commons median 110 m east",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 113,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0.25,
+  "visitHoursMax": 0.75,
+  "costMin": 30.7,
+  "costMax": 30.7,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/Pages/Waldheim-Chalet.aspx",
+  "blocked_url": null,
+  "bio": "A replica of Gustav and Kate Weindorfer's 1912 chalet, with a history display, a short walk from the car park.",
+  "unverified": [
+   "Shuttle bus times are seasonal and private vehicles are barred from the Dove Lake road during shuttle hours; the visitor centre was listed 8 AM - 5 PM on 2026-10-20 (4 Oct - 1 Dec). Price is the adult Cradle Mountain Icon Day Pass (includes shuttle); the standard per-vehicle Daily Pass excludes Cradle Mountain.",
+   "The standing chalet was rebuilt in 1976 after a fire (agency), so the bio now says replica. Opening hours of the interior display not stated."
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/Pages/Waldheim-Chalet.aspx"
+  ]
+ },
+ {
+  "id": "mole-creek-karst-national-park-1",
+  "name": "Marakoopa Cave",
+  "coordinates": {
+   "lat": -41.5786704,
+   "lng": 146.2890673
+  },
+  "coordinates_source": "OSM natural=cave_entrance node 1201366332 Marakoopa Cave (Photon)",
+  "pin_confidence": "MEDIUM",
+  "moved_m": null,
+  "hours": "Guided tours daily 10 AM - 4 PM (Oct - Apr); closed Christmas Day",
+  "closedDays": null,
+  "visitHoursMin": 0.75,
+  "visitHoursMax": 1.5,
+  "costMin": 32,
+  "costMax": 32,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/Pages/Mole-Creek-Karst---cave-tours.aspx",
+  "blocked_url": null,
+  "bio": "A show cave, visited by tour only, with the largest glow worm display in a public Australian cave.",
+  "unverified": [
+   "Tours: Underground Rivers and Glow Worms 10, 12, 2 (and 4 PM Oct-Apr); Great Cathedral 11, 1, 3. 45 minutes, bookings by phone (03) 6363 5182; 800 m walk from the upper car park.",
+   "Adult $32, child $16; no Parks Pass needed for the cave tours."
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/Pages/Mole-Creek-Karst---cave-tours.aspx",
+   "https://parks.tas.gov.au/explore-our-parks/mole-creek-karst-national-park"
+  ]
+ },
+ {
+  "id": "mole-creek-karst-national-park-2",
+  "name": "King Solomon's Cave",
+  "coordinates": {
+   "lat": -41.5516035,
+   "lng": 146.2481437
+  },
+  "coordinates_source": "OSM natural=cave_entrance node 1201366333 King Solomons Cave (Photon)",
+  "pin_confidence": "MEDIUM",
+  "moved_m": null,
+  "hours": "Guided tours daily 10:30 AM - 3:30 PM; closed Christmas Day",
+  "closedDays": null,
+  "visitHoursMin": 0.75,
+  "visitHoursMax": 1.25,
+  "costMin": 32,
+  "costMax": 32,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/Pages/Mole-Creek-Karst---cave-tours.aspx",
+  "blocked_url": null,
+  "bio": "A compact, drier show cave of shawls, stalactites and stalagmites, visited by guided tour from Liena Road.",
+  "unverified": [
+   "Tours depart 10:30, 11:30, 12:30, 1:30, 2:30, 3:30; 45 minutes; tickets from the Mayberry Road office, 11 km away; adult $32, child $16.",
+   "Agency and OSM spell it King Solomons Cave (no apostrophe); input spelling kept, owner may prefer the agency form."
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/Pages/Mole-Creek-Karst---cave-tours.aspx"
+  ]
+ },
+ {
+  "id": "mole-creek-karst-national-park-3",
+  "name": "Devils Gullet",
+  "coordinates": {
+   "lat": -41.6680132,
+   "lng": 146.3230894
+  },
+  "coordinates_source": "OSM tourism=viewpoint node 1937928579 Devil Gullets Lookout (Photon); Wikipedia reserve point -41.67361,146.33861 is 1.4 km away (a reserve centroid)",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 569,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "A lookout platform on a 220 m dolerite cliff with views to Cradle Mountain, 35 minutes by road from Mole Creek.",
+  "unverified": [
+   "No Parks Tasmania page for the reserve (parks.tas.gov.au URL guesses returned 403/404); Discover Tasmania and Tourism Tasmania pages are tourism-board listings, not an operator. ticketUrl left null.",
+   "Free is assumed: a state reserve inside the Central Plateau Conservation Area, no entry fee page found. Walk about 20 minutes return on a boardwalk; last 14 km are gravel, snow and ice in winter."
+  ],
+  "sources": [
+   "https://tasmania.com/things-to-do/best-views-and-lookouts/devils-gullet-lookout/",
+   "https://www.discovertasmania.com.au/things-to-do/nature-and-wildlife/devilsgullet/",
+   "https://en.wikipedia.org/wiki/Devils_Gullet_State_Reserve"
+  ]
+ },
+ {
+  "id": "mole-creek-karst-national-park-4",
+  "name": "Deloraine",
+  "coordinates": {
+   "lat": -41.5250938,
+   "lng": 146.65993
+  },
+  "coordinates_source": "OSM place=town node Deloraine (Photon); Commons median of 24 geotagged files -41.52467,146.65669 is 270 m away; town spot so a town point is right",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 274,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 2,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "A historic town on the Meander River with a museum and cafes, the usual base for the Mole Creek caves.",
+  "unverified": [
+   "Hours and prices: town, none applicable. No single steward or official visitor site found, so no ticketUrl.",
+   "Deloraine is 32 km from the Mole Creek park centre; consider whether it earns a spot beside a destination (COVERAGE.md: a town is a spot only when the town itself is a draw)."
+  ],
+  "sources": [
+   "https://en.wikipedia.org/wiki/Deloraine,_Tasmania",
+   "https://en.wikivoyage.org/wiki/Deloraine",
+   "https://parks.tas.gov.au/explore-our-parks/mole-creek-karst-national-park"
+  ]
+ },
+ {
+  "id": "mole-creek-karst-national-park-5",
+  "name": "Big Coffee Pot",
+  "coordinates": {
+   "lat": -41.5229,
+   "lng": 146.6318
+  },
+  "coordinates_source": "Wikivoyage Deloraine listing own geotag (155 Mole Creek Rd, 4 decimals, listing-specific); not in OSM or Commons; 129 m from OSM Mole Creek Road",
+  "pin_confidence": "LOW",
+  "moved_m": null,
+  "hours": "Open 24 hours (roadside)",
+  "closedDays": null,
+  "visitHoursMin": 0,
+  "visitHoursMax": 0.25,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "A repurposed grain silo made over as a giant coffee pot, on Mole Creek Road at Deloraine.",
+  "unverified": [
+   "Single-source pin: not in OSM, Commons or Wikipedia; owner to check on a satellite map.",
+   "Wikivoyage describes it as next to a tyre shop and \"looks like it belongs in a junkyard\"; marginal as a spot (a photo stop). Private roadside silo: public access only from the road."
+  ],
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Deloraine",
+   "https://www.burnie.tas.gov.au/tourism/Explore/NW-Tas-Big-Things"
+  ]
+ },
+ {
+  "id": "cradle-mountain-10",
+  "name": "Echo Point",
+  "coordinates": {
+   "lat": -42.0434411,
+   "lng": 146.1380112
+  },
+  "coordinates_source": "OSM tourism=wilderness_hut node 647776155 Echo Point Hut with Echo Point Track way, camp site and Echo Point Pier within 50 m",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 4,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 3,
+  "visitHoursMax": 7,
+  "costMin": 24.55,
+  "costMax": 49.15,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/Pages/Echo-Point.aspx",
+  "blocked_url": null,
+  "bio": "A walkers' hut and jetty on Lake St Clair's shore, reached by an 11 km walk from Cynthia Bay or by ferry.",
+  "unverified": [
+   "Agency describes Echo Point as a hut and jetty (11 km, 3-4 hours one way, ferry 20 minutes, fee applies), not a lookout: category viewpoint may be wrong.",
+   "Cost is the Parks Pass only; ferry price not checked. Alert 2026-10-14: Fergys Campsite toilets closed to about 23 Oct."
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/Pages/Echo-Point.aspx",
+   "https://parks.tas.gov.au/explore-our-parks/lake-st-clair"
+  ]
+ },
+ {
+  "id": "walls-of-jerusalem-national-park",
+  "name": "Walls of Jerusalem National Park",
+  "coordinates": {
+   "lat": -41.776022,
+   "lng": 146.2344969
+  },
+  "coordinates_source": "OSM amenity=parking way 1547593927 Walls of Jerusalem National Park Car park (the walking-track start and registration booth; the park has no roads); input Commons median was 6.6 km into the park",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 6976,
+  "hours": "Open 24 hours; walkers must register",
+  "closedDays": null,
+  "visitHoursMin": 8,
+  "visitHoursMax": 72,
+  "costMin": 24.55,
+  "costMax": 49.15,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/walls-of-jerusalem-national-park",
+  "blocked_url": null,
+  "bio": "A remote alpine park of dolerite peaks, tarns and pencil pines, reached only on foot from Mersey Forest Road.",
+  "unverified": [
+   "Pin is the entrance car park, not the Central Walls (-41.8126,146.2975). Gravel last 1.5 km. Price is the Parks Pass; 3-4 days is typical."
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/walls-of-jerusalem-national-park",
+   "https://parks.tas.gov.au/Pages/Walls-of-Jerusalem.aspx"
+  ]
+ },
+ {
+  "id": "walls-of-jerusalem-walk",
+  "name": "Walls of Jerusalem Multi-Day Walk",
+  "coordinates": {
+   "lat": -41.8245554,
+   "lng": 146.3003994
+  },
+  "coordinates_source": "OSM natural=saddle node Damascus Gate (Photon) on the Central Walls circuit track, the far point of the 23 km circuit from the car park (OSM chain car park to Damascus Gate is 8.6 km); a loop whose half-way point is not mappable from OSM so the far point is used",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 764,
+  "hours": "Open 24 hours; registration required",
+  "closedDays": null,
+  "visitHoursMin": 24,
+  "visitHoursMax": 72,
+  "costMin": 24.55,
+  "costMax": 49.15,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/Pages/Walls-of-Jerusalem.aspx",
+  "blocked_url": null,
+  "bio": "A 23 km, three-day circuit through the Central Walls, past lakes, tarns and pencil pine groves.",
+  "unverified": [
+   "Input said 43 km; agency says 23 km Central Walls Circuit, 3 days, grade 4. Price is the Parks Pass; registration (free) required, camping platforms only.",
+   "Parks Tasmania titles it \"Walls of Jerusalem multi-day walk\": input name kept."
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/Pages/Walls-of-Jerusalem.aspx"
+  ]
+ },
+ {
+  "id": "narawntapu-national-park",
+  "name": "Narawntapu National Park",
+  "coordinates": {
+   "lat": -41.1491126,
+   "lng": 146.6032285
+  },
+  "coordinates_source": "OSM information office way 199017381 Narawntapu National Park Visitor Centre (Springlawn); input Commons median was 6 km off",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 1009,
+  "hours": "Open 24 hours; visitor centre 9 AM - 4 PM (Dec - Apr), 9:30 AM - 3:30 PM otherwise",
+  "closedDays": null,
+  "visitHoursMin": 2,
+  "visitHoursMax": 6,
+  "costMin": 24.55,
+  "costMax": 49.15,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/narawntapu-national-park",
+  "blocked_url": null,
+  "bio": "A coastal park of long beaches, a wetland bird hide, and Forester kangaroos and wallabies grazing at dusk.",
+  "unverified": [
+   "Visitor centre closes 12:30-1 PM daily; hours vary with school holidays. Price is the Parks Pass (per vehicle or person). Pin is the main park entrance at Springlawn, not the park centroid."
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/narawntapu-national-park"
+  ]
+ }
+]

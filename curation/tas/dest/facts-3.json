@@ -1,0 +1,439 @@
+[
+ {
+  "id": "cradle-mountain",
+  "verdict": "fix",
+  "problems": [
+   {
+    "field": "tagline",
+    "claim": "Tasmania's best-known World Heritage park",
+    "issue": "Unsupported superlative; sources say 'one of Australia's most famous national parks'.",
+    "source": "https://parks.tas.gov.au/explore-our-parks/cradle-mountain"
+   },
+   {
+    "field": "description",
+    "claim": "alpine heath",
+    "issue": "Sources describe rainforest, buttongrass moorland and ancient conifers (sub-alpine); 'alpine heath' is not stated.",
+    "source": "https://parks.tas.gov.au/explore-our-parks/cradle-mountain"
+   },
+   {
+    "field": "description",
+    "claim": "Wombats, wallabies and pademelons graze near the tracks",
+    "issue": "Sources only say they are present/likely seen, not that they graze near the tracks.",
+    "source": "https://en.wikivoyage.org/wiki/Cradle_Mountain-Lake_St_Clair_National_Park"
+   },
+   {
+    "field": "goodToKnow[1]",
+    "claim": "walk north to south in peak season Oct-May ... fee applies; Departure dates fill early",
+    "issue": "Peak season Oct-May, north-to-south and a booking fee are supported; 'fixed date' and 'dates fill early' are not verified (cut).",
+    "source": "https://en.wikipedia.org/wiki/Overland_Track ; https://en.wikivoyage.org/wiki/Overland_Track"
+   },
+   {
+    "field": "goodToKnow[0]",
+    "claim": "parks pass tip",
+    "issue": "Pass requirement is supported; the Dove Lake shuttle rule (flagged unverified) is now verified: private vehicles are not allowed into the park during shuttle hours. Added.",
+    "source": "https://parks.tas.gov.au/explore-our-parks/cradle-mountain"
+   },
+   {
+    "field": "bestTimeBlurb",
+    "claim": "mildest, most settled weather ... winter snow closes the high tracks to casual walkers",
+    "issue": "'Most settled' and the winter closure claim are unsupported (sources say snow, rain and wind are possible any time). Autumn beech colour IS supported.",
+    "source": "https://parks.tas.gov.au/explore-our-parks/cradle-mountain"
+   }
+  ],
+  "fixed": {
+   "tagline": "Jagged dolerite peaks, glacial lakes and wombats in a Tasmanian Wilderness World Heritage park.",
+   "description": "Cradle Mountain-Lake St Clair National Park sits in the Central Highlands, with the Cradle Mountain end in the north and Lake St Clair in the south, and no road joining the two. People come to walk among rainforest, buttongrass moorland and ancient pines, from short boardwalks to the multi-day Overland Track. Gustav Weindorfer built a chalet here in 1912 and campaigned for the area to become a national park for the people for all time. Wombats, wallabies and pademelons live in the park, and snow, rain and wind are possible at any time of year.",
+   "goodToKnow": [
+    {
+     "icon": "🎫",
+     "title": "Parks pass and shuttle",
+     "detail": "A valid Tasmanian parks pass is required to enter the national park. Private cars cannot enter during shuttle hours, so park at the Cradle Mountain Visitor Centre, validate your pass and take the shuttle to Dove Lake."
+    },
+    {
+     "icon": "🚌",
+     "title": "Book the Overland Track",
+     "detail": "In the peak season, which runs from October to May, walkers must book, pay a track fee and walk north to south. Book well ahead."
+    },
+    {
+     "icon": "🌧️",
+     "title": "Pack for all weather",
+     "detail": "Weather can change very quickly, even in summer, so carry waterproofs and warm layers on every walk. Do not feed the wildlife, and keep food packed away because currawongs will open bags."
+    }
+   ],
+   "bestTimeBlurb": "{months} bring the longest days and milder weather for the high walks, though rain, wind and snow are possible at any time. Autumn colours the deciduous beech on the hillsides."
+  }
+ },
+ {
+  "id": "devonport",
+  "verdict": "fix",
+  "problems": [
+   {
+    "field": "description",
+    "claim": "Most visitors pass through on their way to Cradle Mountain",
+    "issue": "Unsupported; sources say Devonport is the closest arrival point to Cradle Mountain, about an hour away. Also 'museums' is thin and the penguin sentence repeats the previous one ('penguin colony' twice).",
+    "source": "https://en.wikivoyage.org/wiki/Devonport"
+   },
+   {
+    "field": "description",
+    "claim": "A little penguin colony nests on the foreshore in the warmer months",
+    "issue": "Sources only say penguins walk up Lillico Beach each evening and Mersey Bluff has a penguin-viewing area; no nesting/season stated. Duplicate sentence cut.",
+    "source": "https://en.wikivoyage.org/wiki/Ulverstone ; https://en.wikivoyage.org/wiki/Devonport"
+   },
+   {
+    "field": "goodToKnow[0]",
+    "claim": "vehicles need a booking in advance ... sailings differ by season",
+    "issue": "Booking rule could not be verified (operator pages 404 for the sub-pages). Verified instead: route is Geelong-Devonport, the terminal is in East Devonport across the Mersey from the town centre.",
+    "source": "https://en.wikivoyage.org/wiki/Devonport ; https://www.spiritoftasmania.com.au/"
+   },
+   {
+    "field": "goodToKnow[1]",
+    "claim": "come ashore at dusk ... from about October to March ... viewing platform rules, no flash",
+    "issue": "The Oct-Mar season is from the Burnie penguin centre, not Devonport; dusk, no flash and platform rules are not in the sources. Only 'each evening' at Lillico Beach and a viewing area at Mersey Bluff are supported.",
+    "source": "https://en.wikivoyage.org/wiki/Ulverstone ; https://en.wikivoyage.org/wiki/Devonport"
+   },
+   {
+    "field": "goodToKnow[2]",
+    "claim": "allow a full day for the loop",
+    "issue": "Unverifiable; cut. A car being the easiest way around the region is supported.",
+    "source": "https://en.wikivoyage.org/wiki/Ulverstone"
+   },
+   {
+    "field": "bestTimeBlurb",
+    "claim": "penguins are on shore at dusk through the summer breeding season; Winter is cool and wet",
+    "issue": "Breeding season and winter weather unsupported for Devonport; cut.",
+    "source": "none"
+   }
+  ],
+  "fixed": {
+   "description": "Devonport is the third-largest city in Tasmania, on the north-west coast, and the arrival port of the Spirit of Tasmania ferry from the mainland. It is the closest arrival point to Cradle Mountain, about an hour's drive away, and has its own lighthouse headland at Mersey Bluff, a maritime museum and an arboretum. Within a drive are the mural town of Sheffield, a steam railway, limestone caves and a canyon walk. Little penguins walk up the sand at Lillico Beach each evening.",
+   "goodToKnow": [
+    {
+     "icon": "⛴️",
+     "title": "Ferry terminal",
+     "detail": "The Spirit of Tasmania runs between Geelong and Devonport, and the terminal is in East Devonport, across the Mersey from the town centre. The walk round via the road bridge is long, so a car or taxi helps."
+    },
+    {
+     "icon": "🐧",
+     "title": "Penguin etiquette",
+     "detail": "Little penguins walk up Lillico Beach each evening, and Mersey Bluff has a penguin-viewing area. Keep your distance and let them come ashore undisturbed."
+    },
+    {
+     "icon": "🚗",
+     "title": "Hire a car for the area",
+     "detail": "The caves, Sheffield and Leven Canyon are out of town, and driving a private car is the easiest way to see them. Car rental is available at the wharf and the airport."
+    }
+   ],
+   "bestTimeBlurb": "{months} are the warmer months for the headland, the beaches and the country drives around Devonport."
+  }
+ },
+ {
+  "id": "wynyard",
+  "verdict": "fix",
+  "problems": [
+   {
+    "field": "whyVisit[1]",
+    "claim": "Walk to Rocky Cape's North Cave",
+    "issue": "North Cave was dropped as a spot; reason cannot rely on it. Replaced with a Rocky Cape coast walk (Rocky Cape National Park is a kept spot; walks 20 minutes to four hours verified).",
+    "source": "https://parks.tas.gov.au/explore-our-parks/rocky-cape-national-park"
+   },
+   {
+    "field": "whyVisitSubjects[1]",
+    "claim": "North Cave shelter cave in Rocky Cape National Park",
+    "issue": "Depends on dropped North Cave.",
+    "source": "n/a"
+   },
+   {
+    "field": "goodToKnow[0]",
+    "claim": "blooms for a few weeks in spring and opens only then",
+    "issue": "Farm says tulips flower for one month each spring (2026 season from 26 Sept to late October) but the farm 'operates all year round'; 'opens only then' is wrong. Entry is charged ($18 adult).",
+    "source": "https://www.tablecapetulipfarm.com.au/"
+   },
+   {
+    "field": "goodToKnow[2]",
+    "claim": "little public transport",
+    "issue": "Metro Tasmania and Redline buses operate; supported only that driving is fastest, easiest and most convenient.",
+    "source": "https://en.wikivoyage.org/wiki/Wynyard"
+   },
+   {
+    "field": "description",
+    "claim": "basalt headland",
+    "issue": "Table Cape is an extinct volcano with fertile basalt soils; reworded to 'volcanic headland'. Tulip, lighthouse, Inglis River, Fossil Bluff, Boat Harbour, Sisters Beach and Rocky Cape claims supported. Description does not mention North Cave.",
+    "source": "https://en.wikipedia.org/wiki/Table_Cape"
+   },
+   {
+    "field": "bestTimeBlurb",
+    "claim": "Winter is wild and wet on this exposed coast",
+    "issue": "Unsupported weather claim; cut. Tulip bloom in spring supported.",
+    "source": "https://www.tablecapetulipfarm.com.au/"
+   }
+  ],
+  "fixed": {
+   "description": "Wynyard is a small town on the Inglis River where the coast road meets Bass Strait. The volcanic headland of Table Cape rises behind it, with a lighthouse and fields that are planted with tulips for the spring bloom. To the west the road runs past Fossil Bluff and the coves of Boat Harbour and Sisters Beach into Rocky Cape National Park. It suits a slow day of coast and lookouts between Burnie and Stanley.",
+   "whyVisit": [
+    "See Table Cape's spring tulip fields",
+    "Walk the Rocky Cape coast"
+   ],
+   "highlights": [
+    "Tulip fields",
+    "Rocky Cape"
+   ],
+   "whyVisitSubjects": [
+    "tulip fields at Table Cape with lighthouse",
+    "Rocky Cape coastline and lighthouse in Rocky Cape National Park"
+   ],
+   "goodToKnow": [
+    {
+     "icon": "🌷",
+     "title": "Tulip season is short",
+     "detail": "The tulips at Table Cape flower for about a month each spring, from late September to late October in 2026, and entry to the farm is charged. Check the farm's dates before you drive out."
+    },
+    {
+     "icon": "🎫",
+     "title": "Parks pass for Rocky Cape",
+     "detail": "Rocky Cape National Park needs a valid Tasmanian parks pass for entry."
+    },
+    {
+     "icon": "🚗",
+     "title": "Drive the coast",
+     "detail": "Buses run to Burnie and Launceston, but driving is the fastest and easiest way along this coast; fuel and food are easiest in Wynyard and Burnie."
+    }
+   ],
+   "bestTimeBlurb": "{months} cover the tulip bloom in spring and the beach weather of summer."
+  }
+ },
+ {
+  "id": "burnie",
+  "verdict": "fix",
+  "problems": [
+   {
+    "field": "description",
+    "claim": "known for its paper mill",
+    "issue": "The pulp and paper mill closed in 2010; sources describe an industrial deep-water port. Reworded.",
+    "source": "https://en.wikipedia.org/wiki/Burnie,_Tasmania ; https://en.wikivoyage.org/wiki/Burnie"
+   },
+   {
+    "field": "description",
+    "claim": "a base for gentler outings",
+    "issue": "Filler, cut. Penguins at Parsonage Point, Emu Valley garden, Guide Falls and the Big Penguin statue at Penguin are supported (statue is opposite the post office in the town centre).",
+    "source": "https://en.wikipedia.org/wiki/Penguin,_Tasmania"
+   },
+   {
+    "field": "goodToKnow[2]",
+    "claim": "little public transport beyond the main road",
+    "issue": "Metro Tasmania buses serve Burnie and nearby towns; replaced with verified distances (garden 6 km south, Guide Falls 20 minutes south).",
+    "source": "https://en.wikivoyage.org/wiki/Burnie"
+   },
+   {
+    "field": "bestTimeBlurb",
+    "claim": "best weather for the garden",
+    "issue": "Unsupported; garden peak flowering is September to November.",
+    "source": "https://en.wikivoyage.org/wiki/Burnie"
+   },
+   {
+    "field": "goodToKnow[0]",
+    "claim": "Guided viewing ... dusk from October to March",
+    "issue": "Supported as 'guides present around sunset from October to March, free'. Wording tightened.",
+    "source": "https://en.wikivoyage.org/wiki/Burnie"
+   }
+  ],
+  "fixed": {
+   "description": "Burnie is a regional port city on Tasmania's north-west coast, with an industrial deep-water port and north-facing beaches. Little penguins come ashore at Parsonage Point, and the Emu Valley Rhododendron Garden and Guide Falls are a short drive south. The nearby town of Penguin has a giant penguin statue in its centre.",
+   "goodToKnow": [
+    {
+     "icon": "🐧",
+     "title": "Penguin viewing",
+     "detail": "Guides are at the Little Penguin Observation Centre around sunset from October to March, and viewing is free; confirm times before going."
+    },
+    {
+     "icon": "💧",
+     "title": "Falls are best after rain",
+     "detail": "Guide Falls flows best in winter and spring and can be modest after a dry summer."
+    },
+    {
+     "icon": "🚗",
+     "title": "A car helps",
+     "detail": "The Emu Valley Rhododendron Garden is 6 km south of Burnie and Guide Falls about 20 minutes' drive south, so driving is the easiest way to reach them."
+    }
+   ],
+   "bestTimeBlurb": "{months} cover the penguin season. The garden's rhododendrons peak from September to November, and Guide Falls runs strongest in winter and spring."
+  }
+ },
+ {
+  "id": "mole-creek-karst-national-park",
+  "verdict": "fix",
+  "problems": [
+   {
+    "field": "tagline",
+    "claim": "cliff-edge lookouts",
+    "issue": "Only one lookout (Devils Gullet) is kept; plural overstated.",
+    "source": "https://en.wikivoyage.org/wiki/Western_Tasmania"
+   },
+   {
+    "field": "description",
+    "claim": "a scenic drive through Chudleigh, Mole Creek and Caveside links the caves with Devils Gullet and the gateway town of Deloraine",
+    "issue": "Sources say the drive passes Chudleigh, Mole Creek and Caveside; they do not say it links Devils Gullet or Deloraine. Devils Gullet is 'near Mole Creek'; Deloraine is the gateway town (separate Wikivoyage statement).",
+    "source": "https://parks.tas.gov.au/explore-our-parks/mole-creek-karst-national-park ; https://en.wikivoyage.org/wiki/Deloraine"
+   },
+   {
+    "field": "goodToKnow[0]",
+    "claim": "visited on guided tours at set times",
+    "issue": "Entry is by tour only is supported; 'set times' not stated. Tour suitability (all ages / medium fitness) verified.",
+    "source": "https://parks.tas.gov.au/explore-our-parks/mole-creek-karst-national-park"
+   },
+   {
+    "field": "goodToKnow[2]",
+    "claim": "Caves stay cool and damp all year",
+    "issue": "Unsupported; replaced with verified visitor-centre hours.",
+    "source": "https://parks.tas.gov.au/explore-our-parks/mole-creek-karst-national-park"
+   },
+   {
+    "field": "bestTimeBlurb",
+    "claim": "caves stay the same temperature year round; easiest driving and walking weather",
+    "issue": "Unsupported; cut. The visitor centre is open 7 days (verified).",
+    "source": "https://parks.tas.gov.au/explore-our-parks/mole-creek-karst-national-park"
+   }
+  ],
+  "fixed": {
+   "tagline": "Limestone country of show caves, glow-worms and a cliff-edge lookout below the Great Western Tiers.",
+   "description": "Mole Creek Karst National Park was created to protect an underground landscape of caves, sinkholes, gorges and streams that run below the surface. Two show caves are open to visitors: Marakoopa, with its glow-worm display and the Great Cathedral cavern, and King Solomons, a compact, drier cave with shawls and stalactites. A scenic drive through Chudleigh, Mole Creek and Caveside adds to the visit, and Devils Gullet, near Mole Creek, is a lookout platform over a sheer cliff with views to Cradle Mountain. Deloraine is the gateway town, and many lesser caves are reserved for recreational cavers.",
+   "goodToKnow": [
+    {
+     "icon": "🔦",
+     "title": "Cave tours are guided",
+     "detail": "Entry to the caves is by guided tour only; the Underground Rivers and Glow Worms tour and the King Solomons tour suit all ages, but the Great Cathedral tour needs medium fitness."
+    },
+    {
+     "icon": "🎫",
+     "title": "Pass and tickets",
+     "detail": "A parks pass is not needed to tour the show caves, but a pass lets you visit other scenic spots such as Croesus Reserve."
+    },
+    {
+     "icon": "🕓",
+     "title": "Visitor centre hours",
+     "detail": "The visitor centre is open seven days, 9.30am to 4pm from October to April and 9.30am to 3.45pm from May to September, and closes at 2.30pm every third Tuesday of the month."
+    }
+   ],
+   "bestTimeBlurb": "{months} suit the scenic drive and the walk to Croesus Reserve. The visitor centre is open seven days a week all year, so winter visits work too."
+  }
+ },
+ {
+  "id": "king-island",
+  "verdict": "fix",
+  "problems": [
+   {
+    "field": "description",
+    "claim": "unusually tall lighthouse and several wreck memorials",
+    "issue": "Cape Wickham Lighthouse is Australia's tallest (48 m); 'wreck memorials' not sourced. The island has more than 60 known wrecks and a maritime trail past eight wreck sites incl. the Cataraqui.",
+    "source": "https://en.wikipedia.org/wiki/Cape_Wickham_Lighthouse ; https://www.discovertasmania.com.au/regions/king-island/guide-to-king-island/"
+   },
+   {
+    "field": "description",
+    "claim": "brie and cheddar",
+    "issue": "Cheddar not in sources (Wikivoyage: brie, camembert; dairy's range: blue, semi-hard, soft white). Reworded to cheese. King Island Dairy still trading per its site.",
+    "source": "https://www.kingislanddairy.com/"
+   },
+   {
+    "field": "description",
+    "claim": "visitors reach it by air from Melbourne or northern Tasmania",
+    "issue": "Discover Tasmania lists flights from Hobart, Launceston, Burnie and Melbourne.",
+    "source": "https://www.discovertasmania.com.au/regions/king-island/guide-to-king-island/"
+   },
+   {
+    "field": "goodToKnow[0]",
+    "claim": "Melbourne, Burnie or Launceston with one of the small regional airlines; book early in summer",
+    "issue": "Add Hobart; 'book early in summer' unverified, cut.",
+    "source": "https://www.discovertasmania.com.au/regions/king-island/guide-to-king-island/"
+   },
+   {
+    "field": "goodToKnow[1]",
+    "claim": "there is little public transport",
+    "issue": "Source says there is no public transport; car hire available.",
+    "source": "https://www.discovertasmania.com.au/regions/king-island/guide-to-king-island/"
+   },
+   {
+    "field": "goodToKnow[2]",
+    "claim": "west coast exposed to strong swells",
+    "issue": "West coast swells not sourced; island is windswept (Roaring Forties) and Seal Rocks cliffs rise 60 m. Reworded.",
+    "source": "https://www.kingislanddairy.com/ ; Discover Tasmania guide"
+   },
+   {
+    "field": "bestTimeBlurb",
+    "claim": "warmest and calmest ... Winter brings storms and cold seas",
+    "issue": "Unsupported; cut.",
+    "source": "none"
+   }
+  ],
+  "fixed": {
+   "description": "King Island lies in Bass Strait between Tasmania and Victoria, and visitors reach it by air from Melbourne or Tasmania; there is no ferry. More than 60 ships are known to have been wrecked on its coast, and Cape Wickham Lighthouse, at 48 m Australia's tallest, stands at its northern tip; divers come for the wrecks. The pasture produces rich milk for the island's cheeses, and the island is also known for lobster. It has no traffic lights and few roads.",
+   "goodToKnow": [
+    {
+     "icon": "✈️",
+     "title": "Fly in",
+     "detail": "There is no ferry service, so book a flight to Currie from Melbourne, Hobart, Launceston or Burnie."
+    },
+    {
+     "icon": "🚗",
+     "title": "Hire a car",
+     "detail": "There is no public transport on the island, and car hire is available in Currie; book it with your flights."
+    },
+    {
+     "icon": "💨",
+     "title": "Wind and cliffs",
+     "detail": "The island is windswept; stay back from cliff edges at Seal Rocks, where the cliffs rise about 60 m from the sea, and follow signs at lookouts and wreck sites."
+    }
+   ],
+   "bestTimeBlurb": "{months} are the summer months, the usual choice for walking to the Calcified Forest and Seal Rocks; wind is common at any time of year."
+  }
+ },
+ {
+  "id": "flinders-island",
+  "verdict": "fix",
+  "problems": [
+   {
+    "field": "description",
+    "claim": "Whitemark is its largest town, with about 300 people",
+    "issue": "Population figures conflict between sources (301 vs about 155-170); figure cut, 'largest town' kept. Wybalenna 1830s-40s exile, 78 islands, two Bass Strait islands open to tourism, flights from Launceston and Melbourne all verified.",
+    "source": "https://en.wikivoyage.org/wiki/Flinders_Island ; https://en.wikipedia.org/wiki/Flinders_Island"
+   },
+   {
+    "field": "goodToKnow[0]",
+    "claim": "freight boat sails from Bridport about weekly",
+    "issue": "Verified as a weekly barge (Furneaux Freight) from Bridport; schedule source is dated, so kept with a check-schedule caveat.",
+    "source": "https://parks.tas.gov.au/explore-our-parks/strzelecki-national-park"
+   },
+   {
+    "field": "goodToKnow[1]",
+    "claim": "The B85 ... hire car",
+    "issue": "Supported; added that there is no public transport (verified).",
+    "source": "https://www.discovertasmania.com.au/regions/flinders-island/guide-to-flinders-island/"
+   },
+   {
+    "field": "bestTimeBlurb",
+    "claim": "best weather for climbing ... Winter is cool and windy",
+    "issue": "Unsupported weather claims; cut.",
+    "source": "none"
+   }
+  ],
+  "fixed": {
+   "description": "Flinders Island is the largest of the 78 islands in the Furneaux Group in Bass Strait, and one of two Bass Strait islands open to everyday tourism, with scheduled flights from Launceston and Melbourne. Granite peaks in Strzelecki National Park rise above white beaches and calm snorkelling water. The island also holds Wybalenna, where Aboriginal Tasmanians were exiled in the 1830s and 1840s, and a museum covering the sealers and shipwrecks of Bass Strait. Whitemark is its largest town.",
+   "goodToKnow": [
+    {
+     "icon": "✈️",
+     "title": "Fly or sail",
+     "detail": "Flights run to Flinders Island Airport from Launceston and Melbourne, and a weekly freight barge from Bridport can carry cars; check schedules with the operators."
+    },
+    {
+     "icon": "🚗",
+     "title": "Rent a car",
+     "detail": "There is no public transport; the B85 runs most of the island's length, and a hire car is the practical way to reach the peaks, beaches and Killiecrankie."
+    },
+    {
+     "icon": "🥾",
+     "title": "Strzelecki is steep",
+     "detail": "The Strzelecki Peaks walk is a 4-5 hour return on a steep track; start early and carry water and a jacket."
+    }
+   ],
+   "bestTimeBlurb": "{months} are the summer months, the usual choice for swimming and snorkelling at the beaches and for the Strzelecki Peaks climb."
+  }
+ }
+]

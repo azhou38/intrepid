@@ -1,0 +1,544 @@
+{
+ "region": "tas-hobart-southeast",
+ "inside_destinations": 40,
+ "standalone": 1,
+ "new_destinations": [
+  "Hobart",
+  "Huon Valley",
+  "Mount Field National Park",
+  "Bruny Island"
+ ],
+ "kept_total": 41,
+ "lowest_kept": [
+  {
+   "name": "Narryna Heritage Museum",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Hartz Peak",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Arve Falls",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Tarn Shelf",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "The Hummock",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Penitentiary Chapel",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Shot Tower",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Tahune Forest AirWalk",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Hastings Caves",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Lake Esperance",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Lake Dobson",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Grass Point",
+   "views": 0,
+   "counted_sources": 2
+  }
+ ],
+ "stronger_left_out": [
+  {
+   "name": "Cadbury Chocolate Factory",
+   "views": 13794,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "For: famous factory with visitor centre/shop. Against: tours reported discontinued, weekday only, conflicting info."
+  },
+  {
+   "name": "Australian Antarctic Division Visitor Centre",
+   "views": 13456,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Antarctic gateway exhibit that is free. Against: office hours only, small, reached by few."
+  },
+  {
+   "name": "Wrest Point Hotel Casino",
+   "views": 11780,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "accommodation"
+  },
+  {
+   "name": "Oyster Cove",
+   "views": 6344,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1-2: no visitor source; Aboriginal-owned site with interpretive signs and an annual festival, not a drop-in stop."
+  },
+  {
+   "name": "Salamanca Market",
+   "views": 5493,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Rule 4: runs Saturdays only (Discover Tasmania calls it 'a Saturday institution'); a once-a-week market is a negative benchmark, mention in Salamanca Place/Hobart description."
+  },
+  {
+   "name": "Moorilla",
+   "views": 4527,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: winery and restaurant at MONA; MONA is the draw and is a separate museum."
+  },
+  {
+   "name": "Government House, Hobart",
+   "views": 4367,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2: WV says it is seen from outside except on occasional open days."
+  },
+  {
+   "name": "Recherche Bay",
+   "views": 3834,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: Cockle Creek lies on Recherche Bay; same place and visitors, near-duplicate."
+  },
+  {
+   "name": "Parliament House of Tasmania",
+   "views": 3197,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: genuine interior visit of a historic building. Against: booking-dependent tours, a civic building, single source."
+  },
+  {
+   "name": "Hobart Synagogue",
+   "views": 2847,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "For: heritage interior by guided tour. Against: booking only, a worship building."
+  },
+  {
+   "name": "Huon River",
+   "views": 2729,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: a river at Huonville; the activity (jet boat) is an operator and the esplanade is covered by the town."
+  },
+  {
+   "name": "Queens Domain",
+   "views": 2714,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: large open parkland that merely contains the botanical gardens and Government House; one source, no distinct thing to do."
+  },
+  {
+   "name": "Hobart Rivulet Walk",
+   "views": 2662,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: guide-named heritage city walk. Against: urban creek path, short, single source."
+  },
+  {
+   "name": "Theatre Royal",
+   "views": 2461,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 4: a performing venue; visitors come for shows (WV notes you can look inside, but with a schedule)."
+  },
+  {
+   "name": "Hobart Cenotaph",
+   "views": 2452,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "a minor memorial"
+  },
+  {
+   "name": "Hobart Zoo and Aquarium",
+   "views": 2215,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 1: Discover Tasmania's family list uses the label, but no zoo or aquarium by that name exists to confirm opening or location; no stable name."
+  },
+  {
+   "name": "Kelly's Steps",
+   "views": 2167,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 3: a short historic stair; media treat it as the start of the Battery Point walk, which is already a spot."
+  },
+  {
+   "name": "Franklin Square",
+   "views": 1733,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: small oak-lined city square with a statue; WV mention only, minor and not a destination for a visit."
+  },
+  {
+   "name": "St David's Park",
+   "views": 1615,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 2-3: small city park next to the cathedral grounds, Wikipedia only."
+  },
+  {
+   "name": "Clifton Beach",
+   "views": 1538,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "For: scenic surf beach with a lookout walk. Against: no tourism source."
+  },
+  {
+   "name": "Lake Osborne",
+   "views": 1398,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: accessible glacial lake. Against: near-duplicate of Lake Esperance, single source."
+  },
+  {
+   "name": "Lady Franklin Gallery",
+   "views": 1365,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: architectural curiosity with history. Against: tiny, outside the centre, opening depends on exhibitions."
+  },
+  {
+   "name": "Elwick Racecourse",
+   "views": 1097,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 4: race meetings on a calendar; the ground is not a visitor draw."
+  },
+  {
+   "name": "Constitution Dock",
+   "views": 1091,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: part of the Sullivans Cove waterfront; its fame is the Boxing Day finish of the Sydney to Hobart race."
+  },
+  {
+   "name": "Long Beach",
+   "views": 824,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1/3: suburban beach with a park; WV only mentions a market at Long Beach Park."
+  },
+  {
+   "name": "Bellerive Beach",
+   "views": 765,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1/3: suburban beach park; aggregator listings only, no tourism-board source."
+  },
+  {
+   "name": "Gunners Quoin",
+   "views": 694,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1: Wikipedia-only; the candidate note (a gun emplacement above Battery Point) does not match the eastern-shore hill; no visitor source."
+  },
+  {
+   "name": "Wellington Park",
+   "views": 675,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 3: the protected area around kunanyi/Mount Wellington; the mountain is the spot; managing site names the walks."
+  },
+  {
+   "name": "Mount Direction",
+   "views": 630,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "For: summit hike with views. Against: a council trails site, not a tourism board, local hike."
+  },
+  {
+   "name": "Horseshoe Falls",
+   "views": 597,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: part of the Russell Falls/Three Falls circuit; WV describes them as one walk."
+  },
+  {
+   "name": "Royal Hobart Showground",
+   "views": 595,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 4: venue for the annual Royal Hobart Show; an event ground."
+  },
+  {
+   "name": "Lady Barron Falls",
+   "views": 485,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: named waterfall. Against: part of the Three Falls circuit with Russell Falls, 7.5 km walk."
+  },
+  {
+   "name": "Allport Library and Museum of Fine Arts",
+   "views": 481,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: a small collection inside the State Library building, entered through the foyer; library-type venue with limited display."
+  },
+  {
+   "name": "Australian Army Museum Tasmania",
+   "views": 453,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2-3: inside active Anglesea Barracks, open three mornings a week (Tue/Thu/Sat 9-1), one source, local military-history museum."
+  },
+  {
+   "name": "Pelverata Falls",
+   "views": 284,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "For: significant waterfall walk. Against: council page only, effort for lookout, flow varies."
+  },
+  {
+   "name": "Bruny Island Premium Wines",
+   "views": 244,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2: winery cellar door with lunch; the 'southernmost vineyard' claim is a marketing line."
+  },
+  {
+   "name": "Eagle Hang Gliding",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Rule: an operator offering tandem flights; the place is Tahune."
+  }
+ ],
+ "review_for_owner_not_placed": [
+  {
+   "name": "Cadbury Chocolate Factory",
+   "views": 13794,
+   "counted_sources": 0,
+   "reason": "For: famous factory with visitor centre/shop. Against: tours reported discontinued, weekday only, conflicting info."
+  },
+  {
+   "name": "Australian Antarctic Division Visitor Centre",
+   "views": 13456,
+   "counted_sources": 1,
+   "reason": "For: Antarctic gateway exhibit that is free. Against: office hours only, small, reached by few."
+  },
+  {
+   "name": "Parliament House of Tasmania",
+   "views": 3197,
+   "counted_sources": 1,
+   "reason": "For: genuine interior visit of a historic building. Against: booking-dependent tours, a civic building, single source."
+  },
+  {
+   "name": "Hobart Synagogue",
+   "views": 2847,
+   "counted_sources": 0,
+   "reason": "For: heritage interior by guided tour. Against: booking only, a worship building."
+  },
+  {
+   "name": "Hobart Rivulet Walk",
+   "views": 2662,
+   "counted_sources": 1,
+   "reason": "For: guide-named heritage city walk. Against: urban creek path, short, single source."
+  },
+  {
+   "name": "Clifton Beach",
+   "views": 1538,
+   "counted_sources": 0,
+   "reason": "For: scenic surf beach with a lookout walk. Against: no tourism source."
+  },
+  {
+   "name": "Lake Osborne",
+   "views": 1398,
+   "counted_sources": 1,
+   "reason": "For: accessible glacial lake. Against: near-duplicate of Lake Esperance, single source."
+  },
+  {
+   "name": "Lady Franklin Gallery",
+   "views": 1365,
+   "counted_sources": 1,
+   "reason": "For: architectural curiosity with history. Against: tiny, outside the centre, opening depends on exhibitions."
+  },
+  {
+   "name": "Mount Direction",
+   "views": 630,
+   "counted_sources": 0,
+   "reason": "For: summit hike with views. Against: a council trails site, not a tourism board, local hike."
+  },
+  {
+   "name": "Lady Barron Falls",
+   "views": 485,
+   "counted_sources": 1,
+   "reason": "For: named waterfall. Against: part of the Three Falls circuit with Russell Falls, 7.5 km walk."
+  },
+  {
+   "name": "Pelverata Falls",
+   "views": 284,
+   "counted_sources": 0,
+   "reason": "For: significant waterfall walk. Against: council page only, effort for lookout, flow varies."
+  },
+  {
+   "name": "Kangaroo Bluff Battery",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "For: open public historic site with views. Against: short visit, single source, eastern-shore suburb."
+  },
+  {
+   "name": "Mawson's Huts Replica Museum",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "For: Antarctic gateway story, a quirky stop. Against: single source, small, paid, 30 minutes."
+  },
+  {
+   "name": "Runnymede",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "For: National Trust house and gardens open to visitors. Against: single source, limited opening, not verified hours."
+  },
+  {
+   "name": "Raptor Refuge Tasmania",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "For: wildlife encounter, Tasmania-specific. Against: small, bookings, single source with no name verification."
+  },
+  {
+   "name": "Snug Falls",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "For: classic short waterfall walk, Wikipedia article. Against: no counted tourism source, depends on rain, pin pending."
+  },
+  {
+   "name": "Mount Misery Walk",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "For: named local walk with an interpreted trail. Against: single source, local use."
+  },
+  {
+   "name": "Waratah Lookout",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "For: free short viewpoint. Against: roadside lookout, single source, part of the park entry."
+  },
+  {
+   "name": "Hartz Pass",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "For: a defined walk. Against: overlaps Hartz Peak and Lake Esperance area, single source."
+  },
+  {
+   "name": "Tall Trees Walk",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "For: 20-30 minute walk among giant trees. Against: stage of the three falls circuit."
+  },
+  {
+   "name": "Lake Fenton",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "For: accessible alpine lake. Against: close to Lake Dobson and the Tarn Shelf, single source."
+  },
+  {
+   "name": "Old Hobart Town",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "For: family stop in Richmond. Against: small paid model village, single source."
+  },
+  {
+   "name": "Pooseum",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "For: quirky roadside-type icon. Against: small private museum, single source."
+  },
+  {
+   "name": "Richmond Maze",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "For: kid-friendly stop. Against: minimal description and tiny, privately operated."
+  },
+  {
+   "name": "Bligh Museum of Pacific Exploration",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "For: open daily, island history. Against: small museum, single source."
+  },
+  {
+   "name": "Teds Beach",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "For: wild beach reached on foot. Against: remote, minor beach, single source, near Cockle Creek."
+  }
+ ],
+ "strongest_outsiders": {
+  "kept_outside_every_span": [
+   {
+    "name": "Cockle Creek",
+    "views": 2772,
+    "counted_sources": 2,
+    "verdict": "kept (standalone)"
+   }
+  ],
+  "left_out_outside_spans": [
+   {
+    "name": "Cadbury Chocolate Factory",
+    "views": 13794,
+    "counted_sources": 0,
+    "verdict": "review",
+    "reason": "For: famous factory with visitor centre/shop. Against: tours reported discontinued, weekday only, conflicting info."
+   },
+   {
+    "name": "Oyster Cove",
+    "views": 6344,
+    "counted_sources": 0,
+    "verdict": "reject",
+    "reason": "Rule 1-2: no visitor source; Aboriginal-owned site with interpretive signs and an annual festival, not a drop-in stop."
+   },
+   {
+    "name": "Moorilla",
+    "views": 4527,
+    "counted_sources": 1,
+    "verdict": "reject",
+    "reason": "Rule 3: winery and restaurant at MONA; MONA is the draw and is a separate museum."
+   },
+   {
+    "name": "Recherche Bay",
+    "views": 3834,
+    "counted_sources": 1,
+    "verdict": "reject",
+    "reason": "Rule 3: Cockle Creek lies on Recherche Bay; same place and visitors, near-duplicate."
+   },
+   {
+    "name": "Wellington Park",
+    "views": 675,
+    "counted_sources": 0,
+    "verdict": "reject",
+    "reason": "Rule 3: the protected area around kunanyi/Mount Wellington; the mountain is the spot; managing site names the walks."
+   }
+  ]
+ },
+ "benchmark": {
+  "applicable": "No NZ benchmarks apply to Tasmania. Negative-benchmark analogues behave as expected: Salamanca Market (weekly) rejected, Government House/Hobart Cenotaph/Theatre Royal rejected, operators (Huon Jet Boat, Bruny Island Cruises, Eagle Hang Gliding) rejected, Peppermint Bay (cruise venue) rejected, gateway-village-with-journey analogue (Cockle Creek) kept as end-of-road stop and Recherche Bay rejected as duplicate."
+ },
+ "note": "Lowest-kept spots have 0 Wikipedia views (several tourism-source-backed walks and sites); every rejected candidate with more views is listed with its What-qualifies rule. Many rejects share a rule 3/4 reason (weekly market, venue, near-duplicate, winery cellar door)."
+}

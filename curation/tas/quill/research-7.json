@@ -1,0 +1,727 @@
+[
+ {
+  "id": "devonport-1",
+  "name": "Mersey Bluff",
+  "coordinates": {
+   "lat": -41.158729,
+   "lng": 146.355506
+  },
+  "coordinates_source": "resolve-pin.py: OSM man_made=lighthouse \"Mersey Bluff Lighthouse\" (the bluff is a headland, pinned on its lighthouse)",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 839,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "A Devonport headland with an 1899 lighthouse, a beach and a coastal reserve with walking tracks.",
+  "unverified": [
+   "Lighthouse cannot be climbed (secondary source only)",
+   "Lighthouse build year from a local-history page, not an agency page",
+   "no single official steward page for the reserve; left null"
+  ],
+  "sources": [
+   "https://traversingtasmania.com/2017/08/06/mersey-bluff-reserve/"
+  ]
+ },
+ {
+  "id": "devonport-2",
+  "name": "Bass Strait Maritime Museum",
+  "coordinates": {
+   "lat": -41.166705,
+   "lng": 146.363069
+  },
+  "coordinates_source": "resolve-pin.py: OSM tourism=museum \"Bass Strait Maritime Centre\" (Photon); 6 Gloucester Ave matches",
+  "pin_confidence": "MEDIUM",
+  "moved_m": null,
+  "hours": "10:00 AM – 3:00 PM daily",
+  "closedDays": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 12,
+  "costMax": 12,
+  "currency": "AUD",
+  "ticketUrl": "https://bassstrait.museum/",
+  "blocked_url": null,
+  "bio": "A Devonport maritime museum with Bass Strait collections, a ship simulator and a licensed café.",
+  "unverified": [
+   "Renamed from Bass Strait Maritime Centre: the museum now calls itself Bass Strait Maritime Museum (site title); name changed to match",
+   "Closed Christmas Day, Boxing Day, New Year's Day, Good Friday, ANZAC Day (site footer)",
+   "Adult $12 read from tickets page; simulator extra not checked"
+  ],
+  "sources": [
+   "https://bassstrait.museum/",
+   "https://bassstrait.museum/tickets/"
+  ]
+ },
+ {
+  "id": "devonport-3",
+  "name": "Don River Railway",
+  "coordinates": {
+   "lat": -41.180398,
+   "lng": 146.318316
+  },
+  "coordinates_source": "resolve-pin.py: Photon tourism=attraction \"Don River Railway Preservation Society\" agrees with Wikipedia (-41.18103,146.31814) within 100 m",
+  "pin_confidence": "HIGH",
+  "moved_m": 249,
+  "hours": "Museum Mon–Wed 9:00 AM – 12:00 PM, Thu–Sun 9:00 AM – 3:00 PM; trains Thu–Sun",
+  "closedDays": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 2.5,
+  "costMin": 5,
+  "costMax": 20,
+  "currency": "AUD",
+  "ticketUrl": "https://donriverrailway.com.au/",
+  "blocked_url": null,
+  "bio": "A heritage railway and rail museum at Don near Devonport, with 30-minute train rides to Coles Beach.",
+  "unverified": [
+   "Page heading says \"Open Wednesday to Sunday\" but its hours list Monday to Wednesday: confirm days",
+   "Museum entry $5; adult train ticket $20 (tickets page)"
+  ],
+  "sources": [
+   "https://donriverrailway.com.au/tickets/"
+  ]
+ },
+ {
+  "id": "devonport-4",
+  "name": "Tiagarra Aboriginal Culture Centre",
+  "coordinates": {
+   "lat": -41.160043,
+   "lng": 146.355127
+  },
+  "coordinates_source": "resolve-pin.py: Photon building=yes \"Tiagarra Aboriginal Cultural Centre and Keeping Place\"",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 20,
+  "hours": "By appointment, school and tour groups only",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "costMin": null,
+  "costMax": null,
+  "currency": "AUD",
+  "ticketUrl": "https://tiagarra.com.au/",
+  "blocked_url": null,
+  "bio": "An Aboriginal cultural centre on Mersey Bluff, open by appointment for groups of ten or more.",
+  "unverified": [
+   "NOT A WALK-IN STOP: council page and tiagarra.com.au say open by appointment for school groups (20+) and tour groups (10+) only; recommend drop or review",
+   "Price: only $15 per student / $20 per teacher per hour for school groups found; no adult visitor price",
+   "The input bio mention of a nature trail to rock carvings is not confirmed as open to the public"
+  ],
+  "sources": [
+   "https://www.devonport.tas.gov.au/visit-devonport/arts-culture-heritage/tiagarra/",
+   "https://tiagarra.com.au/",
+   "https://tiagarra.com.au/bookings/"
+  ]
+ },
+ {
+  "id": "devonport-5",
+  "name": "Tasmanian Arboretum",
+  "coordinates": {
+   "lat": -41.226473,
+   "lng": 146.303119
+  },
+  "coordinates_source": "resolve-pin.py: Photon leisure=park \"The Tasmanian Arboretum\" (66 ha park centroid; Wikipedia -41.22944,146.29972 is 480 m away). INPUT POINT WAS WRONG: it was the Don River Railway pin, 5 km north",
+  "pin_confidence": "LOW",
+  "moved_m": 5146,
+  "hours": "9:00 AM – 8:00 PM in daylight saving, otherwise 9:00 AM – 5:00 PM",
+  "closedDays": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 10,
+  "costMax": 10,
+  "currency": "AUD",
+  "ticketUrl": "https://tasmanianarboretum.org.au/",
+  "blocked_url": null,
+  "bio": "A 66-hectare park of temperate-world trees at Eugenana, 12 km south of Devonport, with a lake and wild platypus.",
+  "unverified": [
+   "Pin is a park centroid (LOW); entrance is on Old Tramway Road (address from search listings)",
+   "Council page lists $5 and the arboretum site $10: used the arboretum's own $10"
+  ],
+  "sources": [
+   "https://tasmanianarboretum.org.au/"
+  ]
+ },
+ {
+  "id": "devonport-6",
+  "name": "Lillico Beach",
+  "coordinates": {
+   "lat": -41.156824,
+   "lng": 146.273984
+  },
+  "coordinates_source": "resolve-pin.py: Photon leisure=nature_reserve \"Lillico Beach Conservation Area\" (reserve centroid, about 7.8 km from the input hint point; reserve is 2.5 km long on the Bass Highway). INPUT HAD NO POINT",
+  "pin_confidence": "LOW",
+  "moved_m": null,
+  "hours": "Penguin viewing at dusk, September to April",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "free": true,
+  "ticketUrl": "https://www.devonport.tas.gov.au/park-recreation/lillico-beach/",
+  "blocked_url": null,
+  "bio": "A beach west of Devonport where little penguins come ashore at dusk, watched from a platform with volunteer guides.",
+  "unverified": [
+   "Pin is the reserve centroid: the viewing platform itself not located; check against the council map",
+   "Viewing season September to April (council page); other pages say to May",
+   "Free, donations welcome (council page)"
+  ],
+  "sources": [
+   "https://www.devonport.tas.gov.au/park-recreation/lillico-beach/"
+  ]
+ },
+ {
+  "id": "devonport-7",
+  "name": "Australian Axeman's Hall of Fame",
+  "coordinates": {
+   "lat": -41.230948,
+   "lng": 146.402333
+  },
+  "coordinates_source": "resolve-pin.py: Photon tourism=museum \"Axeman's Hall of Fame\" (Latrobe, Bells Parade)",
+  "pin_confidence": "MEDIUM",
+  "moved_m": null,
+  "hours": "Summer Mon–Fri 9:00 AM – 5:00 PM, weekends and holidays 9:00 AM – 3:00 PM; winter Mon–Fri 9:00 AM – 4:00 PM, weekends 10:00 AM – 2:00 PM",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "costMin": null,
+  "costMax": null,
+  "currency": "AUD",
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "A woodchopping sport museum on Bells Parade in Latrobe, with a café beside it.",
+  "unverified": [
+   "Admission price not found: no official site located; verify before keeping",
+   "Hours come from the Sheffield/Kentish visitor-centre listing for the Hall, not the Hall's own page",
+   "Museum closed for about six years, refitted and set to reopen from 2021 (Examiner); current opening status not confirmed",
+   "Removed \"building of local timbers\" claim: not sourced",
+   "no official operator site found"
+  ],
+  "sources": [
+   "https://sheffieldtasmania.com.au/australian-axemans-hall-of-fame-latrobe-tasmania",
+   "https://www.examiner.com.au/story/7176192/new-axemans-hall-of-fame-a-cut-above/"
+  ]
+ },
+ {
+  "id": "devonport-8",
+  "name": "Sheffield",
+  "coordinates": {
+   "lat": -41.382405,
+   "lng": 146.324783
+  },
+  "coordinates_source": "Commons photo median of 24 geotagged files (input point kept): resolve-pin only gave Sheffield's town-node (a town centre, 183 m away)",
+  "pin_confidence": "LOW",
+  "moved_m": 0,
+  "hours": "Open 24 hours (outdoor murals)",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "free": true,
+  "ticketUrl": "https://www.sheffieldtasmania.com.au/",
+  "blocked_url": null,
+  "bio": "The Town of Murals below Mount Roland, with large murals painted on buildings around the town.",
+  "unverified": [
+   "Visitor centre (5 Pioneer Cres) hours Summer Mon–Fri 9–5, weekends 9–3",
+   "Mural count varies by source (100 to 160+), left out of the bio"
+  ],
+  "sources": [
+   "https://www.sheffieldtasmania.com.au/",
+   "https://www.kentish.tas.gov.au/our-region/about-kentish"
+  ]
+ },
+ {
+  "id": "devonport-9",
+  "name": "Mount Roland",
+  "coordinates": {
+   "lat": -41.461502,
+   "lng": 146.265866
+  },
+  "coordinates_source": "resolve-pin.py: OSM natural=peak \"Mount Roland\" (Photon), 3 m from hint",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 0,
+  "hours": "Open 24 hours (daylight walking)",
+  "closedDays": null,
+  "visitHoursMin": 4,
+  "visitHoursMax": 6,
+  "free": true,
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/mount-roland-regional-reserve",
+  "blocked_url": null,
+  "bio": "A peak of about 1,230 m above Sheffield; the 16 km return summit walk takes four to six hours.",
+  "unverified": [
+   "Free: Mount Roland is a regional reserve, not a national park; the page carries the generic parks-pass banner so confirm no pass is required",
+   "Parks page says 4-6 hours, Grade 3; 6-8 hr visit range in the input is longer than the agency's"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/mount-roland-regional-reserve"
+  ]
+ },
+ {
+  "id": "devonport-10",
+  "name": "Gunns Plains Caves",
+  "coordinates": {
+   "lat": -41.296479,
+   "lng": 146.00535
+  },
+  "coordinates_source": "resolve-pin.py: HIGH, OSM natural=cave_entrance \"Gunns Plains Caves\" matching Wikipedia within 56 m",
+  "pin_confidence": "HIGH",
+  "moved_m": 0,
+  "hours": "Guided tours 10:00 AM, 11:00 AM, 12:00 PM, 1:30 PM, 2:30 PM, 3:30 PM daily; closed Christmas Day",
+  "closedDays": null,
+  "visitHoursMin": 0.75,
+  "visitHoursMax": 1.25,
+  "costMin": 17,
+  "costMax": 17,
+  "currency": "AUD",
+  "ticketUrl": "https://www.gunnsplainscaves.com.au/",
+  "blocked_url": null,
+  "bio": "A limestone cave near Ulverstone with six guided tours daily past calcite shawls, flowstone and a cave river.",
+  "unverified": [
+   "PRICE NOT CONFIRMED: operator site says phone for costs; $17 adult is a 2021 figure from showcaves.com (another listing $13); verify by phone (03) 6429 1388",
+   "Steep 54 steps and a short ladder; tour about 275 m"
+  ],
+  "sources": [
+   "https://www.gunnsplainscaves.com.au/",
+   "https://parks.tas.gov.au/explore-our-parks/gunns-plains-cave-state-reserve",
+   "https://showcaves.com/english/au/showcaves/GunnsPlains.html"
+  ]
+ },
+ {
+  "id": "devonport-11",
+  "name": "Leven Canyon",
+  "coordinates": {
+   "lat": -41.397742,
+   "lng": 146.025918
+  },
+  "coordinates_source": "resolve-pin.py: HIGH-graded, Photon highway=steps \"Leven Canyon Track\" 5 m from the hint, Wikipedia 197 m away (lookout circuit start)",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 0,
+  "hours": "Open 24 hours (daylight walking)",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "free": true,
+  "ticketUrl": "https://parks.tas.gov.au/things-to-do/60-great-short-walks/leven-canyon-lookout",
+  "blocked_url": null,
+  "bio": "A canyon above the Leven River with two lookouts on a 1.2 km circuit, one about 275 m above the river.",
+  "unverified": [
+   "Managed by Central Coast Council; used the Parks page for the walk (title: Leven Canyon Lookout) since no council page was found",
+   "Free (regional reserve, no pass found: confirm)",
+   "Cruickshanks 275 m figure from Parks page via search result"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/things-to-do/60-great-short-walks/leven-canyon-lookout"
+  ]
+ },
+ {
+  "id": "burnie-1",
+  "name": "Little Penguin Observation Centre",
+  "coordinates": {
+   "lat": -41.045438,
+   "lng": 145.901133
+  },
+  "coordinates_source": "resolve-pin.py: Photon building=roof \"Little Penguin Observation Centre\" (OSM), 325 m from hint",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 353,
+  "hours": "Guided viewing from dusk, October to March",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "free": true,
+  "ticketUrl": "https://www.burnie.tas.gov.au/tourism/Explore/Fairy-Penguin-Viewing",
+  "blocked_url": null,
+  "bio": "A foreshore platform at Parsonage Point where volunteer guides show little penguins coming ashore at dusk.",
+  "unverified": [
+   "Free, donations welcome",
+   "Season October to March per council page (other sources say September)"
+  ],
+  "sources": [
+   "https://www.burnie.tas.gov.au/tourism/Explore/Fairy-Penguin-Viewing"
+  ]
+ },
+ {
+  "id": "burnie-2",
+  "name": "Big Penguin",
+  "coordinates": {
+   "lat": -41.113359,
+   "lng": 146.072627
+  },
+  "coordinates_source": "resolve-pin.py: Photon tourism=artwork \"Big Penguin\" (OSM), 220 m from the input",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 217,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0,
+  "visitHoursMax": 0.25,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "A three-metre concrete penguin in the centre of Penguin, built in 1975 for the town's centenary.",
+  "unverified": [
+   "Location (town centre vs foreshore) varies by source; pin is OSM's artwork node",
+   "Heritage-listed in 2025 (Heritage Council)",
+   "no single steward site for a statue"
+  ],
+  "sources": [
+   "https://penguinheritagetrail.com.au/?p=1408",
+   "https://www.centralcoast.tas.gov.au/community-news/the-story-of-the-big-penguin-celebrating-50-years-of-a-tasmanian-icon/"
+  ]
+ },
+ {
+  "id": "burnie-3",
+  "name": "Emu Valley Rhododendron Garden",
+  "coordinates": {
+   "lat": -41.098963,
+   "lng": 145.907397
+  },
+  "coordinates_source": "resolve-pin.py: Photon leisure=garden \"Emu Valley Rhododendron Garden\" (OSM); input point (Commons median) was 2.4 km away",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 2466,
+  "hours": "10:00 AM – 4:00 PM daily; closed Good Friday and Christmas Day",
+  "closedDays": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 15,
+  "costMax": 15,
+  "currency": "AUD",
+  "ticketUrl": "https://emuvalleyrhodogarden.org.au/",
+  "blocked_url": null,
+  "bio": "An 11-hectare rhododendron garden near Burnie with more than 24,000 plants, a café and a platypus sanctuary.",
+  "unverified": [
+   "Hours and \"closed Good Friday and Christmas Day\" from the garden's earlier site wording via a search summary; the current page says Open Daily 10 am - 4 pm with a footnote not read",
+   "Adult $15, concession $13 (garden site)"
+  ],
+  "sources": [
+   "https://emuvalleyrhodogarden.org.au/"
+  ]
+ },
+ {
+  "id": "burnie-4",
+  "name": "Guide Falls",
+  "coordinates": {
+   "lat": -41.158111,
+   "lng": 145.803572
+  },
+  "coordinates_source": "resolve-pin.py: Photon waterway=waterfall \"Guide Falls\" (OSM), 904 m from the input (which was a rounded point)",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 902,
+  "hours": "Open daylight hours",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "free": true,
+  "ticketUrl": "https://www.burnie.tas.gov.au/tourism/Explore/Parks-and-Reserves/Guide-Falls",
+  "blocked_url": null,
+  "bio": "A 10-metre waterfall in a reserve south of Burnie, an easy 10-minute walk from the car park and picnic area.",
+  "unverified": [
+   "Council page FAQ says no entrance fee"
+  ],
+  "sources": [
+   "https://www.burnie.tas.gov.au/tourism/Explore/Parks-and-Reserves/Guide-Falls"
+  ]
+ },
+ {
+  "id": "wynyard-1",
+  "name": "Table Cape",
+  "coordinates": {
+   "lat": -40.946853,
+   "lng": 145.73169
+  },
+  "coordinates_source": "resolve-pin.py: Photon natural=cape \"Table Cape\" (OSM), 227 m from hint; Table Cape State Reserve centroid 142 m away",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 202,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "A headland above Wynyard with a lighthouse, lookout and walking track, and a tulip farm open in spring.",
+  "unverified": [
+   "Tulip farm is separately ticketed ($18 adult, 2026 Time Out; open about 26 Sep to late Oct) and not part of this spot",
+   "No lighthouse hours or fee found",
+   "no single official page verified for the headland"
+  ],
+  "sources": [
+   "https://www.timeout.com/australia/news/australias-biggest-tulip-field-is-hosting-a-huge-spring-flower-festival-and-entry-is-free-081426"
+  ]
+ },
+ {
+  "id": "wynyard-2",
+  "name": "Rocky Cape National Park",
+  "coordinates": {
+   "lat": -40.899175,
+   "lng": 145.519373
+  },
+  "coordinates_source": "resolve-pin.py: Photon leisure=nature_reserve \"Rocky Cape National Park\" (park centroid, 4.7 km from the input; LOW)",
+  "pin_confidence": "LOW",
+  "moved_m": 4637,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 4,
+  "costMin": 24.55,
+  "costMax": 49.15,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/rocky-cape-national-park",
+  "blocked_url": null,
+  "bio": "A coastal national park with Aboriginal shelter caves, a lighthouse and walks between Wynyard and Stanley.",
+  "unverified": [
+   "Park entry is a Parks Pass: 24-hour vehicle pass $49.15, per-person $24.55 (parks.tas.gov.au passes page, not re-checked against today's date)",
+   "Pin is a park centroid, not an entrance; park has two approaches, main entrance on Rocky Cape Rd"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/rocky-cape-national-park",
+   "https://parks.tas.gov.au/explore-our-parks/know-before-you-go/park-passes-and-entry-fees"
+  ]
+ },
+ {
+  "id": "wynyard-3",
+  "name": "Boat Harbour Beach",
+  "coordinates": {
+   "lat": -40.929234,
+   "lng": 145.618956
+  },
+  "coordinates_source": "resolve-pin.py: Photon natural=beach \"Boat Harbour Beach\" (OSM), 159 m from hint",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 130,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 2,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "A small sheltered beach at Boat Harbour, on the road to Rocky Cape.",
+  "unverified": [
+   "Bio simplified: \"turquoise water\" in the input is not sourced",
+   "beach with no single steward"
+  ],
+  "sources": [
+   "https://en.wikipedia.org/wiki/Boat_Harbour_Beach"
+  ]
+ },
+ {
+  "id": "wynyard-4",
+  "name": "Sisters Beach",
+  "coordinates": {
+   "lat": -40.914696,
+   "lng": 145.570056
+  },
+  "coordinates_source": "resolve-pin.py: Photon natural=beach \"Sisters Beach\" (OSM), 952 m from the input",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 920,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 2,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "A beach at the eastern end of Rocky Cape National Park, with electric barbecues and sheltered picnic spots.",
+  "unverified": [
+   "Postmans Track claim in the input bio not verified, dropped",
+   "Standing at the beach needs no pass; entering the park does",
+   "beach with no single steward (Rocky Cape park page covers the park)"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/rocky-cape-national-park"
+  ]
+ },
+ {
+  "id": "wynyard-5",
+  "name": "Fossil Bluff",
+  "coordinates": {
+   "lat": -40.980084,
+   "lng": 145.730409
+  },
+  "coordinates_source": "resolve-pin.py: OSM/Photon natural=beach \"Fossil Bluff\" -40.97979,145.73084 within 45 m of Commons median (15 files); input kept (HIGH)",
+  "pin_confidence": "HIGH",
+  "moved_m": 0,
+  "hours": "Open 24 hours; fossils best at low tide",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "A beach and bluff at Wynyard where low tide shows fossils in the sandstone, with a short walk to a lookout.",
+  "unverified": [
+   "Council page: fossils visible at low tide; please do not take specimens",
+   "council-run beach, no single attraction site"
+  ],
+  "sources": [
+   "https://www.warwyn.tas.gov.au/?p=7921",
+   "https://www.spiritoftasmania.com.au/things-to-do/fossil-bluff-wynyard"
+  ]
+ },
+ {
+  "id": "wynyard-6",
+  "name": "North Cave",
+  "coordinates": {
+   "lat": -40.857795,
+   "lng": 145.512576
+  },
+  "coordinates_source": "resolve-pin.py: Photon natural=cave_entrance \"North Cave\" (OSM); input had no point",
+  "pin_confidence": "MEDIUM",
+  "moved_m": null,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "costMin": 24.55,
+  "costMax": 49.15,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/rocky-cape-national-park",
+  "blocked_url": null,
+  "bio": "A short walk to an Aboriginal rock shelter in Rocky Cape National Park, the park's most accessible cave.",
+  "unverified": [
+   "Park entry is a Parks Pass: 24-hour vehicle pass $49.15, per-person $24.55 (parks.tas.gov.au passes page, not re-checked against today's date)",
+   "Likely part of the Rocky Cape National Park spot (wynyard-2): consider merging"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/rocky-cape-national-park"
+  ]
+ },
+ {
+  "id": "stanley-1",
+  "name": "The Nut",
+  "coordinates": {
+   "lat": -40.762631,
+   "lng": 145.302307
+  },
+  "coordinates_source": "resolve-pin.py: Photon leisure=nature_reserve \"The Nut State Reserve\" centroid, 150 m from the Wikipedia point (-40.7637,145.3031); input (Commons median) was the foot",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 332,
+  "hours": "Chairlift 9:30 AM – 4:15 PM (first Thursday in Sept) / 9:30 AM – 5:15 PM peak; closed over winter; walking track open daylight",
+  "closedDays": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 0,
+  "costMax": 23,
+  "currency": "AUD",
+  "ticketUrl": "https://thenutchairlift.com.au/",
+  "blocked_url": null,
+  "bio": "A flat-topped volcanic plug above Stanley with a 2 km summit circuit, reached by chairlift or a walking track.",
+  "unverified": [
+   "Walk is free; chairlift adult $23 return, $15 one way (chairlift prices page)",
+   "Site says operating days changed: see its Facebook page; closed over winter",
+   "4.6 km walk length in the input not verified, dropped"
+  ],
+  "sources": [
+   "https://thenutchairlift.com.au/",
+   "https://thenutchairlift.com.au/prices",
+   "https://www.discovertasmania.com.au/things-to-do/nature-and-wildlife/thenutchairlift"
+  ]
+ },
+ {
+  "id": "stanley-2",
+  "name": "Highfield Historic Site",
+  "coordinates": {
+   "lat": -40.743355,
+   "lng": 145.288696
+  },
+  "coordinates_source": "Commons photo median of 8 geotagged files (input kept); resolve-pin gave only Photon leisure=nature_reserve centroid 589 m south",
+  "pin_confidence": "LOW",
+  "moved_m": 0,
+  "hours": "9:30 AM – 4:30 PM daily; closed Christmas Day",
+  "closedDays": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 20,
+  "costMax": 20,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/highfield-historic-site/visiting-highfield-house",
+  "blocked_url": null,
+  "bio": "A historic colonial homestead near Stanley, explored on a self-guided tour with an introduction from a guide.",
+  "unverified": [
+   "Adult $20, concession $15 (Parks page; search snippet earlier said $15, the page itself lists $20)",
+   "Pin LOW: house location from photo median"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/highfield-historic-site/visiting-highfield-house"
+  ]
+ },
+ {
+  "id": "stanley-3",
+  "name": "Little Penguin Viewing Area",
+  "coordinates": {
+   "lat": -40.759371,
+   "lng": 145.299216
+  },
+  "coordinates_source": "resolve-pin.py: Photon tourism=viewpoint \"Little Penguin Viewing Area\" (OSM) 110 m from information board \"Little Penguins\"",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 323,
+  "hours": "Dusk (from about September to March)",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "A viewing platform at Stanley where little penguins come ashore at dusk, from about September to March.",
+  "unverified": [
+   "Free assumed: no fee found; a Parks sign sits at the gate",
+   "Probably the same platform as the penguin platform at Godfreys Beach (stanley-4): overlap",
+   "no official page found"
+  ],
+  "sources": [
+   "https://www.big4.com.au/caravan-parks/tas/devonport-cradle-mountain-great-western-tiers/stanley-holiday-park/whats-local/penguin-viewing"
+  ]
+ },
+ {
+  "id": "stanley-4",
+  "name": "Godfreys Beach",
+  "coordinates": {
+   "lat": -40.754588,
+   "lng": 145.295137
+  },
+  "coordinates_source": "resolve-pin.py: Photon natural=beach \"Godfreys Beach\" (OSM)",
+  "pin_confidence": "MEDIUM",
+  "moved_m": null,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "A sheltered beach beside Stanley with views of The Nut and a penguin viewing platform at one end.",
+  "unverified": [
+   "Overlaps stanley-3 (Godfreys Beach viewing platform): consider merging or dropping the beach",
+   "beach with no single steward"
+  ],
+  "sources": [
+   "https://www.hotels.com/es/tgp/lodging/974580791696687104/godfreys-beach-penguin-viewing-platform"
+  ]
+ },
+ {
+  "id": "bakers-beach",
+  "name": "Bakers Beach",
+  "coordinates": {
+   "lat": -41.13515,
+   "lng": 146.616299
+  },
+  "coordinates_source": "resolve-pin.py: Photon natural=beach \"Bakers Beach\" (OSM beach centroid, 1.1 km from the input Commons median)",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 1163,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 2,
+  "costMin": 24.55,
+  "costMax": 49.15,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/narawntapu-national-park",
+  "blocked_url": null,
+  "bio": "A long beach in Narawntapu National Park, with beachcombing, swimming and camping nearby.",
+  "unverified": [
+   "Park entry is a Parks Pass: 24-hour vehicle pass $49.15, per-person $24.55 (parks.tas.gov.au passes page, not re-checked against today's date)",
+   "Beaches are unpatrolled (Parks page)",
+   "Longest-beach claim and sunset claim from the input not verified, dropped"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/narawntapu-national-park"
+  ]
+ }
+]

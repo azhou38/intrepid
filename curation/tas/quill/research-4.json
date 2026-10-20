@@ -1,0 +1,616 @@
+[
+ {
+  "id": "bicheno-1",
+  "name": "The Gulch",
+  "coordinates": {
+   "lat": -41.8740703,
+   "lng": 148.3106877
+  },
+  "coordinates_source": "OpenStreetMap tourism=attraction node 'Bicheno's Glass Bottom Boat', 46 Waubs Esplanade, which departs from the Gulch (no OSM feature for the Gulch itself)",
+  "pin_confidence": "MEDIUM",
+  "moved_m": null,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "Bicheno's rocky harbour inlet, where the glass-bottom boat leaves and a waterfront track runs to the blowhole.",
+  "unverified": [
+   "Open-access harbour; boat tours (daily Sep-Apr per tourism listings) not checked on the operator's own site",
+   "Wikivoyage mentions an aquarium by the Gulch; not confirmed, left out of the bio"
+  ],
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Bicheno",
+   "https://nominatim.openstreetmap.org/ui/details.html?osmtype=N&osmid=4192730190"
+  ],
+  "ticketUrl_note": "Harbour with no single steward (boat tours sold by an operator, whose own site was not checked)"
+ },
+ {
+  "id": "bicheno-2",
+  "name": "Bicheno Blowhole",
+  "coordinates": {
+   "lat": -41.8801923,
+   "lng": 148.3088867
+  },
+  "coordinates_source": "OpenStreetMap natural=blowhole node 'Bicheno Blowhole'; agrees within 40 m with geotagged Commons photos (Bicheno Blowhole Tasmania 20190725-026/027)",
+  "pin_confidence": "HIGH",
+  "moved_m": 630,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0.25,
+  "visitHoursMax": 0.5,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "Blowhole just south of the Gulch along the waterfront track; unfenced, so take care in rough weather.",
+  "unverified": [
+   "Input point was the Whalers Lookout area, 630 m north; moved to the OSM blowhole"
+  ],
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Bicheno",
+   "https://commons.wikimedia.org/wiki/Category:Bicheno_Blowhole"
+  ],
+  "ticketUrl_note": "Open coastal feature, no steward page found"
+ },
+ {
+  "id": "bicheno-3",
+  "name": "East Coast Natureworld",
+  "coordinates": {
+   "lat": -41.8387812,
+   "lng": 148.2580908
+  },
+  "coordinates_source": "OpenStreetMap tourism=zoo way 'East Coast Natureworld'",
+  "pin_confidence": "MEDIUM",
+  "moved_m": null,
+  "hours": "9:30 AM – 4:00 PM",
+  "closedDays": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 2.5,
+  "costMin": 32,
+  "costMax": 32,
+  "currency": "AUD",
+  "ticketUrl": "https://www.natureworld.com.au",
+  "blocked_url": null,
+  "bio": "Wildlife park north of Bicheno with daily Tasmanian devil feedings and an after-dark devil experience.",
+  "unverified": [
+   "Closed Christmas Day only (operator); price $32 adult from operator's prices page"
+  ],
+  "sources": [
+   "https://www.natureworld.com.au",
+   "https://www.natureworld.com.au/prices"
+  ]
+ },
+ {
+  "id": "bicheno-4",
+  "name": "Douglas-Apsley National Park",
+  "coordinates": {
+   "lat": -41.7721045,
+   "lng": 148.1867384
+  },
+  "coordinates_source": "OpenStreetMap leisure=nature_reserve relation (park centroid); Wikipedia centroid is 1.9 km away; the park's visitor entrance is the Apsley Waterhole, listed separately",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 1861,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 2,
+  "visitHoursMax": 5,
+  "costMin": 24.55,
+  "costMax": 49.15,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/douglas-apsley-national-park",
+  "blocked_url": null,
+  "bio": "National park of dry eucalypt forest, river gorges and waterholes west of Bicheno, good for birdwatching.",
+  "unverified": [
+   "Parks Pass $49.15 per vehicle or $24.55 per person on foot/bus (entry fees page); costMin/costMax span those",
+   "No fixed hours stated; daylight use assumed"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/douglas-apsley-national-park",
+   "https://parks.tas.gov.au/Pages/entry-fees.aspx"
+  ]
+ },
+ {
+  "id": "bicheno-5",
+  "name": "Apsley Waterhole",
+  "coordinates": {
+   "lat": -41.8628829,
+   "lng": 148.1861995
+  },
+  "coordinates_source": "OpenStreetMap natural=water (stream_pool) way 'Apsley Waterhole'; Parks Tasmania places the waterhole about 10 minutes' walk from the southern car park",
+  "pin_confidence": "MEDIUM",
+  "moved_m": null,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 2,
+  "costMin": 24.55,
+  "costMax": 49.15,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/douglas-apsley-national-park",
+  "blocked_url": null,
+  "bio": "Turquoise swimming hole on the Apsley River, a short walk from the park's southern car park.",
+  "unverified": [
+   "Parks Pass $24.55 per person / $49.15 per vehicle (park entry applies)",
+   "No fixed hours stated; not cross-checked with a second coordinate source (Commons search was down)"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/douglas-apsley-national-park",
+   "https://parks.tas.gov.au/Pages/entry-fees.aspx"
+  ]
+ },
+ {
+  "id": "launceston-1",
+  "name": "Cataract Gorge",
+  "coordinates": {
+   "lat": -41.446111,
+   "lng": 147.119444
+  },
+  "coordinates_source": "Wikipedia 'Cataract Gorge' coordinates; OSM First Basin (water basin relation) -41.44620,147.11879 is 55 m away",
+  "pin_confidence": "HIGH",
+  "moved_m": 0,
+  "hours": "Open access; chairlift and cafe run their own hours",
+  "closedDays": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 3,
+  "free": true,
+  "ticketUrl": "https://www.launceston.tas.gov.au/Parks-Gardens-Active-Recreation/Parks-and-Gardens/Cataract-Gorge-Reserve-First-Basin",
+  "blocked_url": null,
+  "bio": "River gorge close to the city centre, with walking trails, a suspension bridge, a chairlift and swimming pools.",
+  "unverified": [
+   "Reserve operating hours not published on the council page; chairlift fare and hours not checked (Gorge Scenic Chairlift is a separate operator)",
+   "First Basin pool normally open Nov-Mar; parking $1/hr, $6/day"
+  ],
+  "sources": [
+   "https://www.launceston.tas.gov.au/Parks-Gardens-Active-Recreation/Parks-and-Gardens/Cataract-Gorge-Reserve-First-Basin",
+   "https://www.launceston.tas.gov.au/Parks-Gardens-Active-Recreation/Parks-and-Gardens/Cataract-Gorge-Reserve-Duck-Reach"
+  ]
+ },
+ {
+  "id": "launceston-2",
+  "name": "Queen Victoria Museum & Art Gallery",
+  "coordinates": {
+   "lat": -41.4284501,
+   "lng": 147.1409141
+  },
+  "coordinates_source": "OpenStreetMap tourism=museum node 'Queen Victoria Museum & Art Gallery' (Inveresk), agrees within 40 m with prior Wikivoyage point",
+  "pin_confidence": "HIGH",
+  "moved_m": 37,
+  "hours": "10:00 AM – 4:00 PM",
+  "closedDays": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 2.5,
+  "free": true,
+  "ticketUrl": "https://www.qvmag.tas.gov.au/Visit",
+  "blocked_url": null,
+  "bio": "Free museum at Inveresk with local history, science and a planetarium; the art gallery is at Royal Park.",
+  "unverified": [
+   "Closed Good Friday and Christmas Day; planetarium shows are ticketed separately (not checked)"
+  ],
+  "sources": [
+   "https://www.qvmag.tas.gov.au/Visit"
+  ]
+ },
+ {
+  "id": "launceston-3",
+  "name": "City Park",
+  "coordinates": {
+   "lat": -41.4328809,
+   "lng": 147.1428485
+  },
+  "coordinates_source": "OpenStreetMap leisure=park way 'Launceston City Park' centroid",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 0,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "free": true,
+  "ticketUrl": "https://www.launceston.tas.gov.au/Parks-Gardens-Active-Recreation/Parks-and-Gardens/City-Park",
+  "blocked_url": null,
+  "bio": "Central park with a conservatory, duck pond and macaque enclosure, plus a playground, barbecues and mature trees.",
+  "unverified": [
+   "Hours not stated by council; open park assumed"
+  ],
+  "sources": [
+   "https://www.launceston.tas.gov.au/Parks-Gardens-Active-Recreation/Parks-and-Gardens/City-Park"
+  ]
+ },
+ {
+  "id": "launceston-4",
+  "name": "Brickendon Estate",
+  "coordinates": {
+   "lat": -41.6154235,
+   "lng": 147.1328322
+  },
+  "coordinates_source": "OpenStreetMap historic=building way 'Brickendon Estate' (Wellington Street, Longford); prior Commons median was 620 m south in the farmland",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 627,
+  "hours": "9:30 AM – 4:00 PM",
+  "closedDays": [
+   1
+  ],
+  "visitHoursMin": 1,
+  "visitHoursMax": 2.5,
+  "costMin": 28,
+  "costMax": 28,
+  "currency": "AUD",
+  "ticketUrl": "https://www.brickendon.com.au",
+  "blocked_url": null,
+  "bio": "Working farm settled in 1824 and still farmed by the founding family, with a heritage farm village and gardens.",
+  "unverified": [
+   "Hours Oct-Apr (10:00 AM May-Sep), closed Mondays, last entry 3:15 PM; closed Christmas Day, short hours New Year's Day and Good Friday",
+   "Adult $28 Brickendon only; $49 combined with Woolmers"
+  ],
+  "sources": [
+   "https://www.brickendon.com.au",
+   "https://www.brickendon.com.au/attractions/opening-hours-and-entry-prices/"
+  ]
+ },
+ {
+  "id": "launceston-5",
+  "name": "Woolmers Estate",
+  "coordinates": {
+   "lat": -41.6252691,
+   "lng": 147.1502777
+  },
+  "coordinates_source": "OpenStreetMap historic=building way 'Woolmers Estate' (prior point 170 m west)",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 176,
+  "hours": "9:30 AM – 4:00 PM",
+  "closedDays": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 2.5,
+  "costMin": 49,
+  "costMax": 49,
+  "currency": "AUD",
+  "ticketUrl": "https://www.woolmers.com.au",
+  "blocked_url": null,
+  "bio": "Longford estate of 18 heritage buildings, with a homestead, rose garden and the Convict Farm Walk to Brickendon.",
+  "unverified": [
+   "Open daily from 9:30 AM, last entry 4:00 PM per the operator, closed Christmas Day",
+   "Adult $49 general admission (the Brickendon page lists the same $49 as the combined ticket)"
+  ],
+  "sources": [
+   "https://www.woolmers.com.au",
+   "https://www.woolmers.com.au/before-you-arrive/"
+  ]
+ },
+ {
+  "id": "launceston-6",
+  "name": "Boag's Brewery",
+  "coordinates": {
+   "lat": -41.43268,
+   "lng": 147.137758
+  },
+  "coordinates_source": "Wikipedia 'Boag's Brewery' coordinates; OSM building=brewery way 80 m away",
+  "pin_confidence": "HIGH",
+  "moved_m": 0,
+  "hours": "Tours by booking",
+  "closedDays": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 33,
+  "costMax": 33,
+  "currency": "AUD",
+  "ticketUrl": "https://www.jamesboag.com.au",
+  "blocked_url": null,
+  "bio": "Historic Launceston brewery, with tours and tastings run from the James Boag visitor centre.",
+  "unverified": [
+   "Tour price $33 adult comes only from undated third-party listings; operator's booking page (FareHarbor) shows no prices to scripts",
+   "Tour times and visitor-centre hours not on the operator's pages",
+   "Brewery shown as James Boag on the official site; bookings go through FareHarbor"
+  ],
+  "sources": [
+   "https://www.jamesboag.com.au",
+   "https://www.jamesboag.com.au/brewery/"
+  ]
+ },
+ {
+  "id": "launceston-7",
+  "name": "Duck Reach Power Station",
+  "coordinates": {
+   "lat": -41.4591147,
+   "lng": 147.1113281
+  },
+  "coordinates_source": "OpenStreetMap tourism=museum way 'Interpretation Centre (Duck Reach Power Station)'; agrees within 20 m with Wikipedia",
+  "pin_confidence": "HIGH",
+  "moved_m": 19,
+  "hours": "Daylight hours",
+  "closedDays": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 2.5,
+  "free": true,
+  "ticketUrl": "https://www.launceston.tas.gov.au/Parks-Gardens-Active-Recreation/Parks-and-Gardens/Cataract-Gorge-Reserve-Duck-Reach",
+  "blocked_url": null,
+  "bio": "Australia's first hydro-electric power station, built in 1895 and now an interpretation centre up the gorge.",
+  "unverified": [
+   "Interpretation centre opening hours not stated; walk time varies by source (about 1.5 to 3 hours return)"
+  ],
+  "sources": [
+   "https://www.launceston.tas.gov.au/Parks-Gardens-Active-Recreation/Parks-and-Gardens/Cataract-Gorge-Reserve-Duck-Reach"
+  ]
+ },
+ {
+  "id": "launceston-8",
+  "name": "Tamar Island Wetlands",
+  "coordinates": {
+   "lat": -41.391306,
+   "lng": 147.0739254
+  },
+  "coordinates_source": "OpenStreetMap amenity=parking way 'Tamar Island Wetlands' (the reserve's entrance and car park by the wetlands centre); Parks Tasmania gives no coordinates",
+  "pin_confidence": "MEDIUM",
+  "moved_m": null,
+  "hours": "Centre 10:00 AM – 4:00 PM Wed–Sun; boardwalk open daily",
+  "closedDays": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 2.5,
+  "free": true,
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/tamar-island-wetlands-centre",
+  "blocked_url": null,
+  "bio": "Estuary wetland reserve with a boardwalk to Tamar Island, bird hides and a volunteer-run wetlands centre.",
+  "unverified": [
+   "CURRENT CLOSURE: the walkway is partly closed 6 July to 17 December 2026 for bridge replacement; centre and the walkway to the bird hide stay open (Parks alert)",
+   "Entry by donation; closed Good Friday and Christmas Day"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/tamar-island-wetlands-centre"
+  ]
+ },
+ {
+  "id": "launceston-9",
+  "name": "Tasmania Zoo",
+  "coordinates": {
+   "lat": -41.4307826,
+   "lng": 146.9790899
+  },
+  "coordinates_source": "OpenStreetMap tourism=zoo way 'Tasmania Zoo' (prior point 55 m away)",
+  "pin_confidence": "HIGH",
+  "moved_m": 56,
+  "hours": "10:00 AM – 4:00 PM",
+  "closedDays": null,
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "costMin": 43,
+  "costMax": 43,
+  "currency": "AUD",
+  "ticketUrl": "https://tasmaniazoo.com.au",
+  "blocked_url": null,
+  "bio": "Wildlife zoo at Riverside west of Launceston, with Tasmanian devils and native and exotic animals.",
+  "unverified": [
+   "Closed Christmas Day; adult (16+) $43 from operator's visit page"
+  ],
+  "sources": [
+   "https://tasmaniazoo.com.au/",
+   "https://tasmaniazoo.com.au/visit"
+  ]
+ },
+ {
+  "id": "maria-island",
+  "name": "Maria Island National Park",
+  "coordinates": {
+   "lat": -42.6358214,
+   "lng": 148.0849313
+  },
+  "coordinates_source": "OpenStreetMap boundary=administrative relation centre 'Maria Island'; agrees within 300 m with Wikipedia 'Maria Island' (island centroid, near Mount Maria)",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 1946,
+  "hours": "Daylight hours; ferry times set the day",
+  "closedDays": null,
+  "visitHoursMin": 4,
+  "visitHoursMax": 24,
+  "costMin": 24.55,
+  "costMax": 77,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/maria-island-national-park",
+  "blocked_url": null,
+  "bio": "Car-free island national park reached by ferry from Triabunna, with convict ruins, painted cliffs and wildlife.",
+  "unverified": [
+   "Parks Pass per person $24.55 (parks.tas.gov.au entry fees); ferry from Triabunna is extra (about $52 adult return per third-party listings, Encounter Maria Island site not loadable)",
+   "Darlington construction works (Parks alert, Dec 2025 to about Nov 2026): noise and dust around Darlington; showers unavailable",
+   "Hours: no fixed hours; daylight and ferry timetable"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/maria-island-national-park",
+   "https://parks.tas.gov.au/Pages/entry-fees.aspx"
+  ]
+ },
+ {
+  "id": "darlington-probation-station",
+  "name": "Darlington Probation Station",
+  "coordinates": {
+   "lat": -42.58155,
+   "lng": 148.0652
+  },
+  "coordinates_source": "OpenStreetMap place=hamlet node 'Darlington Probation Station' (same point as prior); Commons geotags of Darlington photos median -42.5784,148.0648 about 330 m north",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 0,
+  "hours": "Daylight hours; ferry times set the day",
+  "closedDays": null,
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "costMin": 24.55,
+  "costMax": 24.55,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/maria-island-national-park",
+  "blocked_url": null,
+  "bio": "World Heritage convict station on Maria Island, with buildings from 1824 and the island's visitor hub.",
+  "unverified": [
+   "Parks Pass per person $24.55 (parks.tas.gov.au entry fees); ferry from Triabunna is extra (about $52 adult return per third-party listings, Encounter Maria Island site not loadable)",
+   "Darlington construction works (Parks alert, Dec 2025 to about Nov 2026): noise and dust around Darlington; showers unavailable",
+   "Park entry per person applies; ferry extra"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/maria-island-national-park",
+   "https://parks.tas.gov.au/Pages/entry-fees.aspx"
+  ]
+ },
+ {
+  "id": "fossil-cliffs-maria-island",
+  "name": "Fossil Cliffs",
+  "coordinates": {
+   "lat": -42.5728796,
+   "lng": 148.0794206
+  },
+  "coordinates_source": "OpenStreetMap natural=cliff way 'Fossil Cliffs'; tourism=attraction node 70 m away. Pinned on the cliffs, not the circuit midpoint",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 0,
+  "hours": "Daylight hours; ferry times set the day",
+  "closedDays": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 2.5,
+  "costMin": 24.55,
+  "costMax": 24.55,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/maria-island-national-park",
+  "blocked_url": null,
+  "bio": "Fossil-rich cliffs on Maria Island, reached by a 4.5 km circuit of one to two and a half hours.",
+  "unverified": [
+   "Parks Pass per person $24.55 (parks.tas.gov.au entry fees); ferry from Triabunna is extra (about $52 adult return per third-party listings, Encounter Maria Island site not loadable)",
+   "Darlington construction works (Parks alert, Dec 2025 to about Nov 2026): noise and dust around Darlington; showers unavailable",
+   "Park entry per person applies; ferry extra",
+   "Parks page lists the circuit as grade 3, 1-2.5 hours walking"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/maria-island-national-park",
+   "https://parks.tas.gov.au/Pages/entry-fees.aspx"
+  ]
+ },
+ {
+  "id": "painted-cliffs-maria-island",
+  "name": "Painted Cliffs",
+  "coordinates": {
+   "lat": -42.5924881,
+   "lng": 148.0516672
+  },
+  "coordinates_source": "OpenStreetMap natural=cliff way 'Painted Cliffs' (same point as prior)",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 0,
+  "hours": "Tides permitting",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "costMin": 24.55,
+  "costMax": 24.55,
+  "currency": "AUD",
+  "ticketUrl": "https://parks.tas.gov.au/explore-our-parks/maria-island-national-park",
+  "blocked_url": null,
+  "bio": "Sandstone cliffs with swirling colours, safest to visit within two hours of low tide.",
+  "unverified": [
+   "Parks Pass per person $24.55 (parks.tas.gov.au entry fees); ferry from Triabunna is extra (about $52 adult return per third-party listings, Encounter Maria Island site not loadable)",
+   "Darlington construction works (Parks alert, Dec 2025 to about Nov 2026): noise and dust around Darlington; showers unavailable",
+   "Park entry per person applies; ferry extra",
+   "Parks page: no access from the clifftop; walk is 4.3 km circuit from Darlington"
+  ],
+  "sources": [
+   "https://parks.tas.gov.au/explore-our-parks/maria-island-national-park",
+   "https://parks.tas.gov.au/Pages/entry-fees.aspx"
+  ]
+ },
+ {
+  "id": "spring-beach-tasmania",
+  "name": "Spring Beach",
+  "coordinates": {
+   "lat": -42.5789218,
+   "lng": 147.9099246
+  },
+  "coordinates_source": "OpenStreetMap natural=beach way 'Spring Beach' (same point as prior)",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 0,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "East-coast beach about 14 km south of Triabunna, in the small locality of Spring Beach.",
+  "unverified": [
+   "Visitor-oriented source for the beach and its Shelly Beach clifftop walk not found; marginal spot, consider dropping or sending to review",
+   "Old bio claims (white sand, quarry walk) unverified and removed"
+  ],
+  "sources": [
+   "https://en.wikipedia.org/wiki/Spring_Beach,_Tasmania"
+  ],
+  "ticketUrl_note": "Open beach, no steward page"
+ },
+ {
+  "id": "oatlands",
+  "name": "Oatlands",
+  "coordinates": {
+   "lat": -42.300218,
+   "lng": 147.371007
+  },
+  "coordinates_source": "Wikipedia 'Oatlands, Tasmania' coordinates (village centre); OSM boundary centroid 150 m away",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 0,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "Midlands village on Lake Dulverton with 87 original sandstone buildings along its main street, many built by convicts.",
+  "unverified": [
+   "Village spot: individual attractions (Callington Mill, court house) have their own hours"
+  ],
+  "sources": [
+   "https://en.wikipedia.org/wiki/Oatlands,_Tasmania"
+  ],
+  "ticketUrl_note": "Village with no single steward"
+ },
+ {
+  "id": "ross-tasmania",
+  "name": "Ross",
+  "coordinates": {
+   "lat": -42.0301677,
+   "lng": 147.493007
+  },
+  "coordinates_source": "OpenStreetMap boundary relation centre 'Ross' (village centre; same as prior)",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 0,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "Midlands village on the Macquarie River noted for its historic bridge, sandstone buildings and convict history.",
+  "unverified": [
+   "Village spot: attractions in it have their own hours"
+  ],
+  "sources": [
+   "https://en.wikipedia.org/wiki/Ross,_Tasmania"
+  ],
+  "ticketUrl_note": "Village with no single steward"
+ },
+ {
+  "id": "ross-bridge",
+  "name": "Ross Bridge",
+  "coordinates": {
+   "lat": -42.0307657,
+   "lng": 147.4897441
+  },
+  "coordinates_source": "OpenStreetMap man_made=bridge way 'Ross Bridge'; Wikipedia coordinates within 20 m",
+  "pin_confidence": "HIGH",
+  "moved_m": 0,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0,
+  "visitHoursMax": 0.5,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "Historic sandstone bridge over the Macquarie River in Ross, completed in July 1836.",
+  "unverified": [
+   "Convict-built and carving details not re-checked in this pass, so left out of the bio"
+  ],
+  "sources": [
+   "https://en.wikipedia.org/wiki/Ross_Bridge"
+  ],
+  "ticketUrl_note": "Open public bridge"
+ }
+]

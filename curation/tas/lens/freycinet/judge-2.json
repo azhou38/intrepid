@@ -1,0 +1,174 @@
+{
+ "dest:freycinet:header": {
+  "candidates": [
+   {
+    "file": "Wineglass Bay Lookout.jpg",
+    "verdict": "accept",
+    "reason": "Iconic view of the bay and Hazards, 5472px, real photo"
+   },
+   {
+    "file": "20100209 Wineglass Bay and The Hazards from Mt Amos peak.JPG",
+    "verdict": "ok",
+    "reason": "good alternative"
+   },
+   {
+    "file": "The Hazards From Hazards Beach.jpg",
+    "verdict": "ok",
+    "reason": "1935px, no bay"
+   }
+  ],
+  "choice": "Wineglass Bay Lookout.jpg",
+  "hero_crop": "ok"
+ },
+ "dest:freycinet:why1": {
+  "candidates": [
+   {
+    "file": "Wineglass Bay Lookout (8874650826).jpg",
+    "verdict": "accept",
+    "reason": "the lookout view, 4036px, distinct from header file"
+   },
+   {
+    "file": "Wineglass Bay Lookout.jpg",
+    "verdict": "ok",
+    "reason": "header/spot"
+   }
+  ],
+  "choice": "Wineglass Bay Lookout (8874650826).jpg",
+  "hero_crop": "ok"
+ },
+ "dest:freycinet:why2": {
+  "candidates": [
+   {
+    "file": "Hazards from Wineglass Bay.jpg",
+    "verdict": "accept",
+    "reason": "beach, turquoise water, Hazards, 1900px"
+   },
+   {
+    "file": "Beach, Wineglass Bay, Freycinet National Park, Tasmania.jpg",
+    "verdict": "ok",
+    "reason": "footprints; subject mostly sand"
+   }
+  ],
+  "choice": "Hazards from Wineglass Bay.jpg",
+  "hero_crop": "ok"
+ },
+ "dest:freycinet:why3": {
+  "candidates": [
+   {
+    "file": "20100209 Wineglass Bay and The Hazards from Mt Amos peak.JPG",
+    "verdict": "accept",
+    "reason": "summit boulders and the bay from Mount Amos, 4288px"
+   },
+   {
+    "file": "Wineglass Bay, Freycinet Peninsula, Tasmania.jpg",
+    "verdict": "ok",
+    "reason": "dark"
+   },
+   {
+    "file": "Freycinet Wineglass Bay And Promise Bay.jpg",
+    "verdict": "ok",
+    "reason": "aerial-like, bright"
+   }
+  ],
+  "choice": "20100209 Wineglass Bay and The Hazards from Mt Amos peak.JPG",
+  "hero_crop": "ok"
+ },
+ "dest:freycinet:why4": {
+  "candidates": [
+   {
+    "file": "Tasmania Cape Tourville (4577511613).jpg",
+    "verdict": "accept",
+    "reason": "bright lighthouse on the headland, 4752px portrait; use y near top for crop"
+   },
+   {
+    "file": "Cape Tourville Lighthouse, Tasmania.JPG",
+    "verdict": "reject",
+    "reason": "dark silhouette against sky, tower hard to read"
+   }
+  ],
+  "choice": "Tasmania Cape Tourville (4577511613).jpg",
+  "hero_crop": {
+   "x": 0.45,
+   "y": 0.4
+  }
+ },
+ "spot:freycinet-1": {
+  "candidates": [
+   {
+    "file": "Wineglass Bay Lookout.jpg",
+    "verdict": "accept",
+    "reason": "the lookout view, distinct from Wineglass Bay beach spot photo; shares with header, allowed"
+   },
+   {
+    "file": "Wineglass Bay view from the Beach.jpg",
+    "verdict": "reject",
+    "reason": "current: beach-level view, belongs to the Wineglass Bay spot (shared subject)"
+   }
+  ],
+  "choice": "Wineglass Bay Lookout.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:freycinet-3": {
+  "candidates": [
+   {
+    "file": "20100209 Wineglass Bay and The Hazards from Mt Amos peak.JPG",
+    "verdict": "accept",
+    "reason": "view from Mount Amos summit; shares with why3, allowed"
+   },
+   {
+    "file": "Patria AMV XA-361 AMOS Kokonaisturvallisuus 2015 02.JPG",
+    "verdict": "reject",
+    "reason": "current: Finnish armoured vehicle, wrong subject"
+   }
+  ],
+  "choice": "20100209 Wineglass Bay and The Hazards from Mt Amos peak.JPG",
+  "hero_crop": "ok"
+ },
+ "spot:freycinet-5": {
+  "candidates": [
+   {
+    "file": "South Friendlies Beach Freycinet National Park.jpg",
+    "verdict": "accept",
+    "reason": "white sand beach and dunes, 4032px, named in file"
+   },
+   {
+    "file": "Friendly Beaches 1.jpg",
+    "verdict": "ok",
+    "reason": "rocks seascape, 1944px"
+   },
+   {
+    "file": "The Friendly Beaches, Tasmania. (33586250220).jpg",
+    "verdict": "ok",
+    "reason": "wide, sky heavy"
+   },
+   {
+    "file": "Freycinet Peninsula NASA.jpg",
+    "verdict": "reject",
+    "reason": "satellite"
+   }
+  ],
+  "choice": "South Friendlies Beach Freycinet National Park.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:freycinet-6": {
+  "candidates": [
+   {
+    "file": "Swansea Beach, Tasmania - panoramio.jpg",
+    "verdict": "accept",
+    "reason": "Swansea beach, 2048px, geotagged at Swansea; modest but a real view of the town's setting"
+   },
+   {
+    "file": "Morris General Store, Swansea 20190725-033.jpg",
+    "verdict": "ok",
+    "reason": "one shop, aspect 2.0 crop"
+   },
+   {
+    "file": "East Coast Heritage Museum, Swansea 20190725-032.jpg",
+    "verdict": "ok",
+    "reason": "single building"
+   }
+  ],
+  "choice": "Swansea Beach, Tasmania - panoramio.jpg",
+  "hero_crop": "ok"
+ }
+}

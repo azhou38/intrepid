@@ -1,0 +1,95 @@
+{
+ "group": "mount-field",
+ "generated": "2026-10-20T15:57:09.663Z",
+ "slots": [
+  {
+   "slot": "dest:mount-field:header",
+   "key": "Mount Field National Park",
+   "current": {
+    "file": "ext-mount-field.jpg",
+    "source": "imageOverrides.ts"
+   },
+   "status": "search",
+   "flags": [
+    "placeholder: no photo chosen yet"
+   ]
+  },
+  {
+   "slot": "dest:mount-field:why1",
+   "key": "File:ext-mount-field-1.jpg",
+   "current": {
+    "file": "ext-mount-field-1.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "search",
+   "flags": [
+    "placeholder: no photo chosen yet"
+   ]
+  },
+  {
+   "slot": "dest:mount-field:why2",
+   "key": "File:ext-mount-field-2.jpg",
+   "current": {
+    "file": "ext-mount-field-2.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "search",
+   "flags": [
+    "placeholder: no photo chosen yet"
+   ]
+  },
+  {
+   "slot": "dest:mount-field:why3",
+   "key": "File:ext-mount-field-3.jpg",
+   "current": {
+    "file": "ext-mount-field-3.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "search",
+   "flags": [
+    "placeholder: no photo chosen yet"
+   ]
+  },
+  {
+   "slot": "spot:mount-field-1",
+   "key": "Russell Falls",
+   "current": {
+    "file": "Russell Falls 2.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [
+    "audit sample: the script proved this one; judge it blind"
+   ],
+   "proof": [
+    "geotag 14 m from the pin; a name word is in the title, description or categories; 3888 px; colour ok"
+   ]
+  },
+  {
+   "slot": "spot:mount-field-2",
+   "key": "Tarn Shelf",
+   "current": {
+    "file": "Russell Falls 2.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "geotag 11516 m from the pin; the spot name is not in the file text: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:mount-field-3",
+   "key": "Lake Dobson",
+   "current": {
+    "file": "TGR H2 under overhaul at New Norfolk.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag; the spot name is not in the file text: a judge must look"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,297 @@
+{
+ "spot:fossil-cliffs-maria-island": {
+  "candidates": [
+   {
+    "file": "(current)",
+    "verdict": "reject",
+    "reason": "Joggins fossil cliffs is in Nova Scotia, Canada: wrong place (check 1)"
+   },
+   {
+    "file": "Fossil Cliffs Maria Island.jpg",
+    "verdict": "reject",
+    "reason": "Geotagged at site but a scrappy clifftop, portrait, weak"
+   },
+   {
+    "file": "Maria Island Grand Picnic .jpg",
+    "verdict": "reject",
+    "reason": "Visitor stands at Fossil Cliffs (file text); a person is the foreground subject, so second choice"
+   },
+   {
+    "file": "Bishop and Clerk in Maria Island National Park.jpg",
+    "verdict": "accept",
+    "reason": "Description: fossil-bearing cliffs and Bishop and Clerk, Maria Island NP; 4000 px, colour, no people, cliffs fill the crop. Slightly broad view of the cliff coast, but recognisably the place."
+   }
+  ],
+  "choice": "Bishop and Clerk in Maria Island National Park.jpg",
+  "hero_crop": {
+   "x": 0.6,
+   "y": 0.5
+  }
+ },
+ "spot:maria-island": {
+  "candidates": [
+   {
+    "file": "(current)",
+    "verdict": "reject",
+    "reason": "Current is a location map PNG, 835 px: fails check 4 and size"
+   },
+   {
+    "file": "Maria Island Beach.jpg",
+    "verdict": "accept",
+    "reason": "JJ Harrison, geotagged on the island, clear water beach, bright, centred in crop; shows the island's coast"
+   },
+   {
+    "file": "Maria Island East Coast.jpg",
+    "verdict": "reject",
+    "reason": "portrait, little context"
+   },
+   {
+    "file": "Brick Kilns, Maria Island, Tasmania (21495728584).jpg",
+    "verdict": "reject",
+    "reason": "Darlington brick kilns: overlaps Darlington Probation Station spot"
+   }
+  ],
+  "choice": "Maria Island Beach.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:painted-cliffs-maria-island": {
+  "candidates": [
+   {
+    "file": "(current)",
+    "verdict": "reject",
+    "reason": "Current is a location map PNG: fails check 4"
+   },
+   {
+    "file": "Painted Cliffs (51354210921).jpg",
+    "verdict": "reject",
+    "reason": "Right place but tight detail of the rock with no setting; strong runner-up"
+   },
+   {
+    "file": "Painted Cliffs.jpg",
+    "verdict": "accept",
+    "reason": "Featured picture, JJ Harrison, geotagged at the cliffs (-42.593,148.0508), swirled sandstone with sea setting"
+   },
+   {
+    "file": "Triassic Sandstone on Maria Island of Tasmania in Australia.jpg",
+    "verdict": "reject",
+    "reason": "Pattern close-up"
+   },
+   {
+    "file": "PaintedCliffsMariaIsland.jpg",
+    "verdict": "reject",
+    "reason": "less striking, bluish low-contrast"
+   }
+  ],
+  "choice": "Painted Cliffs.jpg",
+  "hero_crop": {
+   "x": 0.8,
+   "y": 0.45
+  }
+ },
+ "spot:ross-bridge": {
+  "candidates": [
+   {
+    "file": "(current)",
+    "verdict": "reject",
+    "reason": "Current is the aerial pano of the whole village (the bridge is a speck) and is also the Ross town photo: fails check 2 and the no-shared-photo rule"
+   },
+   {
+    "file": "Ross, Tasmania (32311704451).jpg",
+    "verdict": "accept",
+    "reason": "Geotagged -42.0306,147.4897 (pin 198 m away); ground-level 1836 bridge, 5184 px, colour, bridge is the subject"
+   },
+   {
+    "file": "Ross, Tasmania (31621194593).jpg",
+    "verdict": "reject",
+    "reason": "Same bridge, second choice, tree overhang"
+   },
+   {
+    "file": "Ross Bridge.jpg",
+    "verdict": "reject",
+    "reason": "3.3:1 strip, too wide"
+   }
+  ],
+  "choice": "Ross, Tasmania (32311704451).jpg",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.6,
+   "zoom": 1.3
+  }
+ },
+ "spot:ross-tasmania": {
+  "candidates": [
+   {
+    "file": "(current)",
+    "verdict": "accept",
+    "reason": "Aerial pano of Ross in its Midlands landscape, colour, 8155 px, shows the village and the Macquarie River; fine for the town spot once the bridge spot has its own photo (an aerial is only banned for headers). Crop shows the village at x=0.55."
+   },
+   {
+    "file": "Ross, Tasmania (32432437875).jpg",
+    "verdict": "reject",
+    "reason": "A single building (town hall): not the town"
+   },
+   {
+    "file": "Ross Bakery 20201113-045.jpg",
+    "verdict": "reject",
+    "reason": "a shopfront"
+   },
+   {
+    "file": "Macquarie House Ross 20201113-046.jpg",
+    "verdict": "reject",
+    "reason": "one building"
+   }
+  ],
+  "choice": "keep-current",
+  "hero_crop": {
+   "x": 0.55,
+   "y": 0.6
+  }
+ },
+ "spot:ben-lomond-national-park": {
+  "candidates": [
+   {
+    "file": "(current)",
+    "verdict": "reject",
+    "reason": "Snow-field photo is real and fine but is also the Ben Lomond Ski Field photo (shared subject); the park should have its own"
+   },
+   {
+    "file": "Jacob's Ladder at Ben Lomond National Park.jpg",
+    "verdict": "accept",
+    "reason": "Park signature: dolerite cliffs and the Jacobs Ladder road, geotagged -41.513,147.662 in the park, colour, 2048 px; distinct from the ski field's snow photo"
+   },
+   {
+    "file": "Jacob's Ladder - Mount Ben Lomond, Tasmania.jpg",
+    "verdict": "reject",
+    "reason": "same subject, closer, more cropped; alternative"
+   },
+   {
+    "file": "Escarpment of Ben Lomond, Tasmania.jpg",
+    "verdict": "reject",
+    "reason": "portrait, less recognisable"
+   }
+  ],
+  "choice": "Jacob's Ladder at Ben Lomond National Park.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:bakers-beach": {
+  "candidates": [
+   {
+    "file": "(current)",
+    "verdict": "reject",
+    "reason": "Current is a silhouetted angler at sunset: a person is the subject and it is a backlit shot, fails check 2/no-people"
+   },
+   {
+    "file": "Bakers Beach Tasmania.jpg",
+    "verdict": "accept",
+    "reason": "Categorised Bakers Beach, Tasmania, geotag -41.1195,146.636 (same beach, 1.5 km along); long sweep of beach and sea from the dune track, 5472 px, colour"
+   },
+   {
+    "file": "Bakers Beach, Tasmania. (52264252160).jpg",
+    "verdict": "reject",
+    "reason": "also the beach, but strewn with kelp and flatter light; second choice"
+   }
+  ],
+  "choice": "Bakers Beach Tasmania.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:edge-of-the-world": {
+  "candidates": [
+   {
+    "file": "(current)",
+    "verdict": "reject",
+    "reason": "Current is a 1970 Dutch film still of the Fim lighthouse in Spain: wrong place and archive (check 1 and 4)"
+   },
+   {
+    "file": "The edge of the world, Tasmania, Australia.jpeg",
+    "verdict": "accept",
+    "reason": "Description names the western edge of the Tarkine, the point facing the Southern Ocean (Arthur River), driftwood on the shore as at Marilla Bay; no geotag so the place is by description only, and the photo is grey and modest. Weak but real, colour and in the right place."
+   }
+  ],
+  "choice": "The edge of the world, Tasmania, Australia.jpeg",
+  "hero_crop": {
+   "x": 0.35,
+   "y": 0.5,
+   "zoom": 1.5
+  },
+  "copyright_risk": false
+ },
+ "spot:narawntapu-national-park": {
+  "candidates": [
+   {
+    "file": "(current)",
+    "verdict": "reject",
+    "reason": "Current is a dull flat grassland under dark sky; weak, near-empty crop"
+   },
+   {
+    "file": "Narawntapu National Park, Tasmania. - Flickr - Steven Penton.jpg",
+    "verdict": "accept",
+    "reason": "Geotagged in the park (-41.149,146.6016), wetland pond reflecting hills, bright, colour; aspect 2.08 so crop at x=0.45 y=0.6"
+   },
+   {
+    "file": "Evening, Narawntapu National Park (30454177042).jpg",
+    "verdict": "reject",
+    "reason": "wallabies at dusk, the park's draw, but animals tiny and dim; good runner-up"
+   },
+   {
+    "file": "Narawntapu National Park, Tasmania (25954667055).jpg",
+    "verdict": "reject",
+    "reason": "road and cloud, sky dominates"
+   }
+  ],
+  "choice": "Narawntapu National Park, Tasmania. - Flickr - Steven Penton.jpg",
+  "hero_crop": {
+   "x": 0.45,
+   "y": 0.6
+  }
+ },
+ "spot:walls-of-jerusalem-national-park": {
+  "candidates": [
+   {
+    "file": "(current)",
+    "verdict": "reject",
+    "reason": "Current is East Jerusalem (Israel): wrong place (check 1)"
+   },
+   {
+    "file": "King David's Peak, Barn Bluff and Cradle Mountain from Mt Jerusalem track - Walls of Jerusalem.jpg",
+    "verdict": "accept",
+    "reason": "File name and description place it in Walls of Jerusalem; dolerite peak over a valley and tarn, 2500 px, colour; subject at left so x=0.35"
+   },
+   {
+    "file": "Looking north west from Solomon's Throne - Walls of Jerusalem.jpg",
+    "verdict": "reject",
+    "reason": "3.3:1 pano, too wide"
+   }
+  ],
+  "choice": "King David's Peak, Barn Bluff and Cradle Mountain from Mt Jerusalem track - Walls of Jerusalem.jpg",
+  "hero_crop": {
+   "x": 0.35,
+   "y": 0.55
+  }
+ },
+ "spot:walls-of-jerusalem-walk": {
+  "candidates": [
+   {
+    "file": "(current)",
+    "verdict": "reject",
+    "reason": "Current is the Western Wall in Jerusalem, Israel: wrong place, 717 px, 1989"
+   },
+   {
+    "file": "Walls of Jerusalem National Park, Tasmania 101.jpg",
+    "verdict": "reject",
+    "reason": "ridge across empty plateau, subject small"
+   },
+   {
+    "file": "Walls of Jerusalem National Park, Tasmania 92.jpg",
+    "verdict": "reject",
+    "reason": "gap between walls but half sky and dull in crop"
+   },
+   {
+    "file": "Walls of Jerusalem National Park, Tasmania 49.jpg",
+    "verdict": "accept",
+    "reason": "Wiki Loves Earth, tarn among alpine vegetation and snow gums on the plateau, matches the walk's tarns; CC0; clear crop"
+   }
+  ],
+  "choice": "Walls of Jerusalem National Park, Tasmania 49.jpg",
+  "hero_crop": "ok"
+ }
+}

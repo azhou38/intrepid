@@ -1,0 +1,138 @@
+{
+ "dest:huon-valley:header": {
+  "candidates": [
+   {
+    "file": "Scenic Hill vantage of Huonville.jpg",
+    "verdict": "accept",
+    "reason": "Town in green valley under ranges, Huon Valley Council/Huonville categories, 4592 px, 1.68 aspect"
+   },
+   {
+    "file": "Huon River at Tahune Adventures Tasmania.jpg",
+    "verdict": "reject",
+    "reason": "river in forest, no town/valley sense; ok but weaker header"
+   }
+  ],
+  "choice": "Scenic Hill vantage of Huonville.jpg",
+  "hero_crop": "ok (shows 22-78% of width; town and hills centred)"
+ },
+ "dest:huon-valley:why1": {
+  "candidates": [
+   {
+    "file": "Tahune-Forest-AirWalk-Cantilever-2008.jpg",
+    "verdict": "accept",
+    "reason": "the AirWalk cantilever over the Huon, 1280 px (minimum met)"
+   },
+   {
+    "file": "Tahune-Air walk-Tasmania-Australia06.JPG",
+    "verdict": "reject",
+    "reason": "platform a sliver at right edge"
+   },
+   {
+    "file": "Tahune Airwalk, view of Huon River, January 2025.jpg",
+    "verdict": "reject",
+    "reason": "view from AirWalk but no walkway visible"
+   }
+  ],
+  "choice": "Tahune-Forest-AirWalk-Cantilever-2008.jpg",
+  "hero_crop": "ok (1.33 aspect, walkway fills frame)"
+ },
+ "dest:huon-valley:why2": {
+  "candidates": [
+   {
+    "file": "Hartz Lake Hartz National Park.jpg",
+    "verdict": "accept",
+    "reason": "glacial lake in Hartz Mountains, categories Hartz Mountains NP / Lakes of Tasmania"
+   },
+   {
+    "file": "Ladies Tarn Hartz National Park.jpg",
+    "verdict": "reject",
+    "reason": "ok but is the park spot's photo conceptually and lake is a strip; weaker"
+   }
+  ],
+  "choice": "Hartz Lake Hartz National Park.jpg",
+  "hero_crop": "ok (lake central, 1.33)"
+ },
+ "dest:huon-valley:why3": {
+  "candidates": [
+   {
+    "file": "Newdegate cave-Tasmania-Australia13.JPG",
+    "verdict": "accept",
+    "reason": "Newdegate Cave formations, Hastings; dark on purpose (cave); same file is Hastings Caves spot photo, sharing allowed"
+   }
+  ],
+  "choice": "Newdegate cave-Tasmania-Australia13.JPG",
+  "hero_crop": "ok"
+ },
+ "spot:huon-valley-2": {
+  "candidates": [
+   {
+    "file": "Tahune-Forest-AirWalk-Cantilever-2008.jpg",
+    "verdict": "accept",
+    "reason": "AirWalk itself, 1280x960; current is 640 px"
+   },
+   {
+    "file": "Tahune-Air walk-Tasmania-Australia06.JPG",
+    "verdict": "reject",
+    "reason": "platform tiny at edge"
+   }
+  ],
+  "choice": "Tahune-Forest-AirWalk-Cantilever-2008.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:huon-valley-6": {
+  "candidates": [
+   {
+    "file": "Geeveston, Tasmania 1.jpg",
+    "verdict": "accept",
+    "reason": "Geeveston main street, library sign; weak but recognisable town centre, better than a single bakery shopfront; verify on file page (no geotag checked)"
+   }
+  ],
+  "choice": "Geeveston, Tasmania 1.jpg",
+  "hero_crop": {
+   "x": 0.3,
+   "y": 0.5
+  }
+ },
+ "spot:huon-valley-7": {
+  "candidates": [
+   {
+    "file": "Port Cygnet, Tasmania.jpg",
+    "verdict": "accept",
+    "reason": "Port Cygnet shore at the town; current Cygnet.jpg is a baby swan (cygnet bird): wrong subject"
+   }
+  ],
+  "choice": "Port Cygnet, Tasmania.jpg",
+  "hero_crop": "ok (14-85% width, bay and hill)"
+ },
+ "spot:huon-valley-8": {
+  "candidates": [
+   {
+    "file": "Lake Esperance, Hartz Mountains, TAS, AUS.jpg",
+    "verdict": "accept-weak",
+    "reason": "the lake itself but flat grey sky; needs zoom; current is 640 px Pink Lake Sunset"
+   },
+   {
+    "file": "Lake Esperance Walk, Hartz Mountains, TAS, AUS.jpg",
+    "verdict": "reject",
+    "reason": "boardwalk, lake barely visible"
+   }
+  ],
+  "choice": "Lake Esperance, Hartz Mountains, TAS, AUS.jpg",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.5,
+   "zoom": 1.5
+  }
+ },
+ "spot:huon-valley-9": {
+  "candidates": [
+   {
+    "file": "Arve Falls.jpg",
+    "verdict": "accept",
+    "reason": "Arve Falls, Hartz NP per first-pass geotag (~170 m); current is Millaa Millaa Falls, Queensland: wrong place. Verify file page names Arve Falls (Commons API rate-limited)"
+   }
+  ],
+  "choice": "Arve Falls.jpg",
+  "hero_crop": "ok (1.5 aspect, falls central)"
+ }
+}

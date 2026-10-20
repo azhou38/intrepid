@@ -1,0 +1,126 @@
+[
+ {
+  "id": "hobart",
+  "verdict": "fix",
+  "problems": [
+   { "field": "tagline", "claim": "convict-era sandstone", "issue": "The sandstone warehouses were built to serve the 19th-century whaling industry, not the convict era.", "source": "https://en.wikivoyage.org/wiki/Hobart (Salamanca Place)" },
+   { "field": "description", "claim": "Georgian sandstone warehouses and cottages still line the waterfront and the lanes of Battery Point", "issue": "Source describes colonial sandstone warehouses at Salamanca Place and Georgian/Victorian buildings generally; cottages and 'line the waterfront' are not stated.", "source": "https://en.wikivoyage.org/wiki/Hobart" },
+   { "field": "description", "claim": "with the mountain and the Derwent never out of sight", "issue": "Filler, not sourced.", "source": "WRITING.md Voice" },
+   { "field": "description", "claim": "The Sydney to Hobart yacht race finishes in the city's working harbour", "issue": "Source says it finishes at Constitution Dock in Sullivans Cove; 'working harbour' is not stated.", "source": "https://en.wikivoyage.org/wiki/Hobart (Sullivan's Cove)" },
+   { "field": "goodToKnow[0]", "claim": "MONA opens Friday to Monday only and asks visitors to book in advance", "issue": "MONA's own page now says open Thursday to Monday, 10am-5pm, with bookings recommended (timed entry slots are limited). Wikivoyage's Fri-Mon is a 2017 listing.", "source": "https://mona.net.au/visit" },
+   { "field": "goodToKnow[1]", "claim": "much colder and windier than the city, and its road can be affected by snow", "issue": "Colder (10-15 degrees) and snow congestion/closure are sourced; 'windier' is not.", "source": "https://en.wikivoyage.org/wiki/Hobart; https://wellingtonpark.org.au/" },
+   { "field": "bestTimeBlurb", "claim": "Winter is cold but dry enough for the museums", "issue": "Unsourced; Hobart rainfall is about even year round. Summer highs around 21 C and snowcapped mountain in winter are sourced.", "source": "https://en.wikivoyage.org/wiki/Hobart (Climate)" }
+  ],
+  "fixed": {
+   "tagline": "Tasmania's harbour capital, where colonial sandstone meets a mountain and a famously eccentric art museum.",
+   "description": "Hobart is the capital of Tasmania and Australia's second oldest city, set along the Derwent River beneath Kunanyi / Mount Wellington. It began as a penal colony, and colonial sandstone warehouses and historic buildings still stand around Salamanca Place and Battery Point. Visitors come for the museums, the food and the waterfront. The Sydney to Hobart Yacht Race finishes at Constitution Dock in Sullivans Cove.",
+   "goodToKnow": [
+    { "icon": "🎟️", "title": "Book MONA ahead", "detail": "MONA is open Thursday to Monday and recommends booking ahead, as timed entry slots are limited; ferries leave from Brooke Street Pier." },
+    { "icon": "🧥", "title": "Pack for the summit", "detail": "Hobart is mild, but the top of Kunanyi / Mount Wellington is typically 10 degrees or more colder than the city, and in snow the road can be congested or closed, so check conditions before you go." },
+    { "icon": "🚶", "title": "Walk the waterfront", "detail": "Sullivans Cove, Salamanca Place and Battery Point are all within walking distance of each other, so you can leave the car behind for a day in the centre." }
+   ],
+   "bestTimeBlurb": "Hobart is most pleasant in {months}, when days are mild and long, with summer highs averaging around 21 °C. Winter is cold, and snow often caps the mountain above the city."
+  }
+ },
+ {
+  "id": "huon-valley",
+  "verdict": "fix",
+  "problems": [
+   { "field": "description", "claim": "limestone caves", "issue": "Newdegate Cave is a dolomite cave, Australia's largest dolomite tourist cave.", "source": "https://parks.tas.gov.au/explore-our-parks/hastings-caves-state-reserve" },
+   { "field": "goodToKnow[0]", "claim": "Hartz Mountains and Hastings Caves State Reserve need a valid Tasmanian parks pass", "issue": "Hartz Mountains needs a pass; Hastings Caves and Thermal Springs does not (cave tour fees apply instead). Tours run hourly; arrive 45 minutes before the tour time.", "source": "https://parks.tas.gov.au/explore-our-parks/hastings-caves-state-reserve; https://parks.tas.gov.au/explore-our-parks/hartz-mountains-national-park" },
+   { "field": "bestTimeBlurb", "claim": "warmest and driest weather; Autumn brings apple harvest", "issue": "'Driest' and the autumn harvest timing are not in any source (the researcher flagged the harvest as unchecked). The Hartz road being closed by snow in winter is sourced.", "source": "https://parks.tas.gov.au/explore-our-parks/hartz-mountains-national-park" },
+   { "field": "seasonalTags", "claim": "harvest: Apple and fruit harvest runs through autumn", "issue": "Unverified timing; removed.", "source": "none" }
+  ],
+  "fixed": {
+   "description": "The Huon Valley runs south of Hobart along the Huon River and the D'Entrecasteaux Channel, and is home to Australia's southernmost inhabited settlements. Orchards produce roughly a tenth of the country's apples, alongside pears and cherries, and the valley's towns are scattered along the Huon Highway. Beyond the farmland lie tall-forest reserves, dolomite caves and the glacial country of Hartz Mountains National Park. Expect cool weather even in summer, with frosts common between April and October.",
+   "goodToKnow": [
+    { "icon": "🎟️", "title": "Parks pass for Hartz", "detail": "Hartz Mountains National Park needs a valid Tasmanian parks pass; buy one online or at a visitor centre. Hastings Caves needs no pass, but cave tours are guided, run hourly and are ticketed at the visitor centre, where you check in 45 minutes before." },
+    { "icon": "🧥", "title": "Cold, even in summer", "detail": "The valley rarely tops 20 °C and the mountains are colder still, with snow possible in the cooler months; carry a warm jacket and rain layer on any walk." },
+    { "icon": "🚗", "title": "Plan for distances", "detail": "Towns are strung along the Huon Highway and the far-south attractions are long drives from Huonville, so allow a full day for Tahune or Hastings." }
+   ],
+   "bestTimeBlurb": "The warmest weather for walking and driving is {months}. The high country can be snowy in the cooler months, and the Hartz Mountains road can close in winter snow.",
+   "seasonalTags": []
+  }
+ },
+ {
+  "id": "bruny-island",
+  "verdict": "cut-claims",
+  "problems": [
+   { "field": "tagline", "claim": "lighthouses", "issue": "Only Cape Bruny Lighthouse is sourced; plural unsupported.", "source": "https://en.wikivoyage.org/wiki/Bruny_Island" },
+   { "field": "goodToKnow[0]", "claim": "The Mirambeena car ferry ... about $46 return per car at last check", "issue": "Fare and vessel name come from an undated Wikivoyage line and cannot be confirmed as current; cut both. Foot passengers free and no public transport at the terminals are sourced.", "source": "https://en.wikivoyage.org/wiki/Bruny_Island" },
+   { "field": "bestTimeBlurb", "claim": "Winter brings cold, wind and rough seas, which suit lighthouse and storm-watching", "issue": "Unsourced.", "source": "none" }
+  ],
+  "fixed": {
+   "tagline": "A car-ferry island of a lighthouse, long beaches and white wallabies south of Hobart.",
+   "goodToKnow": [
+    { "icon": "⛴️", "title": "Car ferry from Kettering", "detail": "A car ferry crosses from Kettering to Roberts Bay and vehicles pay a fare; foot passengers travel free, but there is no public transport at either end." },
+    { "icon": "🚗", "title": "Bring your own car", "detail": "There is no car hire on the island, and some hire companies bar their cars from the ferry or do not insure them on it, so check before you book." },
+    { "icon": "🎟️", "title": "Parks pass for South Bruny", "detail": "South Bruny National Park, including Cape Bruny Lighthouse and its walks, requires a valid Tasmanian parks pass. Allow time: the drive from the ferry to Adventure Bay takes about 45 minutes, and the lighthouse is another half hour on." }
+   ],
+   "bestTimeBlurb": "Calm, mild days for the ferry, cruises and walks are most likely in {months}."
+  }
+ },
+ {
+  "id": "mount-field",
+  "verdict": "ok",
+  "problems": [
+   { "field": "bestMonths", "claim": "12,1,2,3,4", "issue": "Not stated on the park page (consensus judgement); autumn colour (fagus) and winter snow/cross-country skiing, Lake Dobson road chains/closure, parks pass, two visitor sections are all confirmed. Not changed.", "source": "https://parks.tas.gov.au/explore-our-parks/mount-field-national-park" }
+  ],
+  "fixed": {}
+ },
+ {
+  "id": "southwest-national-park",
+  "verdict": "fix",
+  "problems": [
+   { "field": "tagline", "claim": "a huge dam", "issue": "Size of Gordon Dam is not stated in sources.", "source": "https://parks.tas.gov.au/explore-our-parks/southwest-national-park" },
+   { "field": "description", "claim": "Most visitors reach it by road from the Strathgordon area", "issue": "'Most visitors' is unsourced. Sourced: the Gordon River and Scotts Peak roads run west of Maydena to Lake Pedder and Lake Gordon; Strathgordon was built for the hydro-electric scheme.", "source": "https://parks.tas.gov.au/explore-our-parks/southwest-national-park; https://en.wikivoyage.org/wiki/Southwest_National_Park" },
+   { "field": "description", "claim": "reached only on foot or by light aircraft", "issue": "Melaleuca is reachable by boat, hiking or plane; the park also lists kayak and boat trips.", "source": "https://en.wikivoyage.org/wiki/Southwest_National_Park" },
+   { "field": "goodToKnow[1]", "claim": "Overnight walkers should register before setting out", "issue": "Registration is required for specific walks (Mount Anne Circuit, Western Arthur Range, Farmhouse Creek Track), not all overnight walks.", "source": "https://parks.tas.gov.au/explore-our-parks/southwest-national-park" },
+   { "field": "goodToKnow[2]", "claim": "West Picton Road, closed at Cook Creek for the Eastern Arthur Range Traverse and Mount Picton Track from 1 September 2026", "issue": "The road is closed (structures deteriorated); the two tracks remain open but need an extra 6.1 km one-way and 1.5 km return walk. Date is correct.", "source": "https://parks.tas.gov.au/explore-our-parks/southwest-national-park" }
+  ],
+  "fixed": {
+   "tagline": "Tasmania's largest national park: a remote lake, a hydro dam and a wilderness coastline.",
+   "description": "Southwest National Park is Tasmania's largest park and part of the Tasmanian Wilderness World Heritage Area. The Gordon River Road runs west from Maydena to Lake Pedder, Lake Gordon and the Gordon Dam at Strathgordon, while walkers tackle the long tracks beyond the roads. The wilder parts of the park, including the south coast, are reached on foot, by boat or by air, and conditions change quickly.",
+   "goodToKnow": [
+    { "icon": "🎟️", "title": "Parks pass needed", "detail": "A valid Tasmanian parks pass is required to enter the park." },
+    { "icon": "📝", "title": "Register overnight walks", "detail": "Overnight walker registration is required for some walks, including the Western Arthur Range and Mount Anne Circuit; be prepared for extreme, rapidly changing weather." },
+    { "icon": "🚧", "title": "Check access notices", "detail": "From 1 September 2026 West Picton Road is closed at Cook Creek, so the Eastern Arthur Range Traverse and Mount Picton Track need an extra walk from the closure. Check current notices before you go." }
+   ]
+  }
+ },
+ {
+  "id": "franklin-gordon-wild-rivers",
+  "verdict": "fix",
+  "problems": [
+   { "field": "description", "claim": "The Franklin River is best known for guided multi-day rafting through its gorges", "issue": "Park page says the region is best known for the conservation battle to save the Franklin; rafting needs an experienced paddler or qualified guide. Guided 8-9 day trips are sourced.", "source": "https://parks.tas.gov.au/explore-our-parks/franklin-gordon-wild-rivers-national-park; https://en.wikivoyage.org/wiki/Franklin-Gordon_Wild_Rivers_National_Park" },
+   { "field": "goodToKnow[1]", "claim": "one of Tasmania's wettest areas", "issue": "Park page: the wettest part of Tasmania, more than 1900 mm a year. Frenchmans Cap 3-5 days return (54 km) is sourced.", "source": "https://parks.tas.gov.au/explore-our-parks/franklin-gordon-wild-rivers-national-park" },
+   { "field": "goodToKnow[2]", "claim": "book a guided expedition rather than turning up at the roadside", "issue": "Supported: only experienced paddlers or those with a qualified guide should attempt the river.", "source": "https://parks.tas.gov.au/explore-our-parks/franklin-gordon-wild-rivers-national-park" }
+  ],
+  "fixed": {
+   "description": "Franklin-Gordon Wild Rivers National Park protects a wild river system and the white quartzite summit of Frenchmans Cap in the Tasmanian Wilderness World Heritage Area. Short walks from the Lyell Highway lead to waterfalls and lookouts, while the Frenchmans Cap Track is a multi-day hike. The Franklin River itself is a remote, challenging trip for experienced paddlers or guided parties.",
+   "goodToKnow": [
+    { "icon": "🎟️", "title": "Parks pass needed", "detail": "A valid Tasmanian parks pass is required for entry to the park." },
+    { "icon": "🌧️", "title": "Wet, changeable weather", "detail": "This is the wettest part of Tasmania, with more than 1900 mm of rain a year, so carry waterproofs for even the short Lyell Highway walks, and treat the Frenchmans Cap Track as a hard, weather-exposed 3-5 day trip." },
+    { "icon": "🛶", "title": "Rafting is guided", "detail": "The Franklin River is a multi-day wilderness trip for experienced paddlers or guided parties; book a guided expedition rather than turning up at the roadside." }
+   ]
+  }
+ },
+ {
+  "id": "west-coast-tasmania",
+  "verdict": "fix",
+  "problems": [
+   { "field": "description", "claim": "Strahan, a former fishing port on Macquarie Harbour", "issue": "Source: Strahan was the port serving Queenstown and Zeehan, a small fishing industry still operates, and it is now the main tourist centre. Not 'former' fishing port.", "source": "https://en.wikivoyage.org/wiki/Strahan" },
+   { "field": "description", "claim": "Queenstown and Zeehan keep the story of the region's copper and silver mining", "issue": "Supported (Queenstown copper; Zeehan silver lodes).", "source": "https://en.wikivoyage.org/wiki/Queenstown_(Tasmania); https://en.wikivoyage.org/wiki/Zeehan" },
+   { "field": "goodToKnow[0]", "claim": "reserve in advance, especially in summer", "issue": "Seasonal booking pressure is unsourced; bookings are made through the Strahan Visitors Centre.", "source": "https://en.wikivoyage.org/wiki/Strahan" },
+   { "field": "goodToKnow[1]", "claim": "Ocean Beach ... has dangerous conditions and is not for swimming", "issue": "Not in any source loaded. Sourced: 40 km long with large dunes, waves that have travelled from Patagonia.", "source": "https://en.wikivoyage.org/wiki/Strahan" }
+  ],
+  "fixed": {
+   "description": "Tasmania's west coast is one of the most isolated parts of Australia, about 300 km west of Hobart. Strahan, a port town on Macquarie Harbour, is the base for Gordon River cruises and the convict ruins of Sarah Island, while Queenstown and Zeehan keep the story of the region's copper and silver mining. Ocean Beach, a huge surf beach of dunes and Southern Ocean swell, lies nearby, and the West Coast Wilderness Railway runs from Strahan's Regatta Point.",
+   "goodToKnow": [
+    { "icon": "🚤", "title": "Book cruises ahead", "detail": "Gordon River and Sarah Island visits depart from Strahan by cruise, so reserve in advance through the visitor centre or the operator." },
+    { "icon": "🌊", "title": "Take care at Ocean Beach", "detail": "Ocean Beach is a 40 km beach of large dunes where waves arrive from as far as Patagonia; take care near the surf." },
+    { "icon": "🚗", "title": "Long distances", "detail": "The coast is about 300 km from Hobart, with Queenstown, Zeehan and Strahan spread across the region, so allow at least a night rather than a day trip." }
+   ]
+  }
+ }
+]
