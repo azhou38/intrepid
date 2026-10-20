@@ -115,6 +115,7 @@ import { computeSearchResults, computeSuggestions, SearchResultRows, toRecentSea
 import SpotSheet from '../components/Map/SpotSheet';
 import CountrySheet from '../components/Map/CountrySheet';
 import ExploreSheet from '../components/Map/ExploreSheet';
+import { prefetchPinPhotos } from '../utils/pinPhotoCache';
 import { thumbCache, photoCache, fetchWikiThumbnail, prefetchWikiThumbnail, prewarmDestinationPins, HEADER_PX } from '../utils/photoCache';
 import DestPinImages, { DEST_PIN_SIZE, destPinImageName, type DestPinImageSpec } from '../components/Map/DestPinImages';
 import PhotoPlaceholder from '../components/Map/PhotoPlaceholder';
@@ -3260,6 +3261,8 @@ const destItems = useMemo((): DestItem[] =>
     // Kick off DestinationSheet's own hero-photo fetch right now, in parallel with the sheet's
     // slide-up/camera animation, instead of waiting for it to mount a render cycle later.
     prefetchWikiThumbnail(dest.id, photoCache, dest.name, HEADER_PX);
+    // Likewise its spots' pin photos (most important first), so they are on disk by the time the camera lands.
+    prefetchPinPhotos(SPOTS.filter(s => s.destinationId === dest.id));
     setMapState('context');
     setZoomedIntoDestination(true);
     showBreadcrumb(true);

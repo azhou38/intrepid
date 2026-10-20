@@ -5,8 +5,7 @@ import MapboxGL from '@rnmapbox/maps';
 import PinPhoto from './PinPhoto';
 import { photoSubject } from '../../utils/subjectCrop';
 import { spotPhotoTitle, type Spot } from '../../data/spots';
-import { thumbCache, fetchWikiThumbnail } from '../../utils/photoCache';
-import { NO_PHOTO } from '../../data/imageOverrides';
+import { pinPhotoUri, loadPinPhoto } from '../../utils/pinPhotoCache';
 import PhotoPlaceholder from './PhotoPlaceholder';
 
 // A spot's photo pin drawn by a native symbol layer (MapScreen's spotPhotos), so Mapbox decides on the render thread,
@@ -33,14 +32,13 @@ export const spotPhotoImageName = (id: string, visited: boolean) => `sp:${id}:${
 const SpotPhotoImage = memo(function SpotPhotoImage({ spec }: { spec: SpotPhotoImageSpec }) {
   const { spot, name, visited } = spec;
   const imageRef = useRef<{ refresh: () => void } | null>(null);
-  const cacheKey = `spotpin_${spot.id}`;
-  const [url, setUrl] = useState<string | null>(thumbCache.get(cacheKey) ?? null);
+  // The photo from the disk cache when it is there (instant), else downloaded once into it. Until it has loaded, the
+  // bubble shows the spot's tinted category placeholder rather than a blank white disc.
+  const [url, setUrl] = useState<string | null>(() => pinPhotoUri(spot));
   useEffect(() => {
-    if (thumbCache.has(cacheKey)) { setUrl(thumbCache.get(cacheKey)!); return; }
+    if (url) return;
     let live = true;
-    fetchWikiThumbnail(spotPhotoTitle(spot), 120).then(u => {
-      if (u) { thumbCache.set(cacheKey, u); if (live) setUrl(u); }
-    });
+    loadPinPhoto(spot).then(u => { if (u && live) setUrl(u); });
     return () => { live = false; };
   }, [spot.id]);
   const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
@@ -62,7 +60,7 @@ const SpotPhotoImage = memo(function SpotPhotoImage({ spec }: { spec: SpotPhotoI
         </Svg>
         <View collapsable={false} style={[st.bubble, { borderColor: ring }]}>
           <View collapsable={false} style={st.clip}>
-            {!url && NO_PHOTO.has(spotPhotoTitle(spot)) && <PhotoPlaceholder icon={spot.icon} category={spot.category} size={SPOT_PHOTO_BUBBLE - 4} />}
+            <PhotoPlaceholder icon={spot.icon} category={spot.category} size={SPOT_PHOTO_BUBBLE - 4} />
             {url && <PinPhoto instant subject={photoSubject(spotPhotoTitle(spot))} source={{ uri: url }} style={StyleSheet.absoluteFill as any} onLoad={snap} resizeMode="cover" />}
           </View>
         </View>
