@@ -1012,12 +1012,19 @@ function SpotSheet({
   // After the release the slide carries on by itself; the card the scroll position is nearest to is the one it is going to,
   // so each scroll event of that phase also moves the active spot when the nearest card changes. This does not depend on the
   // release-velocity guess below (which can miss), so the counter and the map follow the slide every time.
+  // The real spot index a card of the extended list stands for: the loop's leading clone is the last spot and its trailing
+  // clone the first, so the counter and the map follow a wrap-around slide as they do any other (they used to wait for the
+  // slide to settle there). Settle then does the silent jump to the real card and finds the spot already active.
+  const realIndexOfExt = (extIdx: number) => {
+    if (!loopOffset) return Math.max(0, Math.min(spots.length - 1, extIdx));
+    if (extIdx <= 0) return spots.length - 1;
+    if (extIdx >= extendedSpots.length - 1) return 0;
+    return extIdx - loopOffset;
+  };
   const carouselReleasedRef = useRef(false);
   const handleCarouselScroll = (offsetX: number) => {
     if (!carouselReleasedRef.current) return;
-    const extIdx = Math.round(offsetX / CARD_SNAP);
-    if (loopOffset && (extIdx <= 0 || extIdx >= extendedSpots.length - 1)) return;
-    const idx = Math.max(0, Math.min(spots.length - 1, extIdx - loopOffset));
+    const idx = realIndexOfExt(Math.round(offsetX / CARD_SNAP));
     if (idx === activeIndex) return;
     setActiveIndex(idx);
     Haptics.selectionAsync();
@@ -1027,9 +1034,7 @@ function SpotSheet({
     carouselReleasedRef.current = true;
     // iOS "fast" deceleration (0.99/ms) carries a release at v pt/ms about 99·v pt further.
     const projected = offsetX + velocityX * 99;
-    const extIdx = Math.round(projected / CARD_SNAP);
-    if (loopOffset && (extIdx <= 0 || extIdx >= extendedSpots.length - 1)) return;
-    const idx = Math.max(0, Math.min(spots.length - 1, extIdx - loopOffset));
+    const idx = realIndexOfExt(Math.round(projected / CARD_SNAP));
     if (idx === activeIndex) return;
     setActiveIndex(idx);
     Haptics.selectionAsync();
