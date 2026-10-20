@@ -685,6 +685,12 @@ function DestinationSheet({
   const defaultTab: Tab = isVisited ? 'visit' : 'about';
   const startTab: Tab = (initialTab && TAB_ORDER.includes(initialTab)) ? initialTab : defaultTab;
   const [activeTab,     setActiveTab    ] = useState<Tab>(startTab);
+  // TEMPORARY instrumentation: per-panel render cost during a timed flow, plus the sheet's own render reason below.
+  const onSheetProfile = useCallback((id: string, phase: string, actual: number) => {
+    const f = perfTrace.name();
+    if (f && perfTrace.active() && actual >= 8) perfTrace.mark(f, `render ${id}(${phase}) ${actual.toFixed(0)}ms`, false);
+  }, []);
+  { const f = perfTrace.name(); if (f && perfTrace.active()) perfTrace.mark(f, `DestinationSheet body render (tab ${activeTab})`, false); }
 
   // Derive visits from store, carrying the old destination-level photos/notes/spots onto
   // the synthesized legacy entry so a pre-redesign visit still shows its content as its
@@ -1676,6 +1682,7 @@ function DestinationSheet({
                         new one (or editing/deleting a specific one) only ever touches that
                         single module's own card; every sibling module is copied through
                         untouched. Shared with CountrySheet/SpotSheet — see VisitCardList. */}
+                    <React.Profiler id="Sheet.Visit" onRender={onSheetProfile}>
                     <VisitCardList
                       defaultTitle={`${destination.name} Trip`}
                       visits={localVisits}
@@ -1689,6 +1696,7 @@ function DestinationSheet({
                       selectorLabel={spots.length > 0 ? 'Spots Visited' : undefined}
                       selectorItems={spots.length > 0 ? spotSelectorItems : undefined}
                     />
+                    </React.Profiler>
 
                   </View>
                   )}
@@ -1698,6 +1706,7 @@ function DestinationSheet({
                     style={st.slidePanel}
                     onLayout={e => measurePanel('about', e.nativeEvent.layout.height)}
                   >
+                    <React.Profiler id="Sheet.About" onRender={onSheetProfile}>
                     <AboutPanel
                       destination={destination} spots={spots}
                       onSelectSpot={onSelectSpot}
@@ -1706,6 +1715,7 @@ function DestinationSheet({
                       hlScrollRef={aboutHlScrollRef}
                       whyScrollRef={whyScrollRef}
                     />
+                    </React.Profiler>
                     <AIContentNote />
                   </View>
 
@@ -1714,7 +1724,9 @@ function DestinationSheet({
                     style={st.slidePanel}
                     onLayout={e => measurePanel('spots', e.nativeEvent.layout.height)}
                   >
+                    <React.Profiler id="Sheet.Spots" onRender={onSheetProfile}>
                     <SpotsPanel spots={spots} onSelectSpot={onSelectSpot} />
+                    </React.Profiler>
                   </View>
                 </Reanimated.View>
               </Reanimated.View>
