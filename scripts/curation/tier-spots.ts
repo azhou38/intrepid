@@ -37,7 +37,8 @@ for (const e of input) {
   const [min, max] = VISIT[e.category];
   simple.push({ id: e.id, facts: { hours: e.category === 'landmark' ? 'Visible from the road at any time' : 'Open 24 hours', visitHoursMin: min, visitHoursMax: max, free: true, basis: 'default for a free, open-access place; no ticketUrl (no single steward)' } });
 }
-const step = Math.max(1, Math.min(8, Math.floor(simple.length / 5)));
-const audit = simple.filter((_, i) => i % step === 0).map(s => s.id);
+const auditSize = Math.min(simple.length, Math.max(3, Math.ceil(simple.length * 0.12)));   // ~12% of the simple spots, at least 3
+const step = Math.max(1, Math.floor(simple.length / Math.max(1, auditSize)));
+const audit = simple.filter((_, i) => i % step === 0).slice(0, auditSize).map(s => s.id);
 if (one('--out')) writeFileSync(one('--out')!, JSON.stringify({ simple, timed, audit }, null, 1) + '\n');
 console.log(`${input.length} spots: ${simple.length} simple (bio only), ${timed.length} full chain; ${audit.length} simple spots also go through the full chain as the audit`);

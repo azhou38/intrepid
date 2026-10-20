@@ -34,11 +34,14 @@ const REJECT: [RegExp, string][] = [
 // Names that look like a feature or an area rather than a place to go (a river, a catchment, a parkland, a raceway): never an
 // auto-keep, however good the score, because the judge must decide whether anything there is a visitor draw.
 const NOT_AUTOKEEP = /motorsport|raceway|speedway|racecourse|\b(river|creek|estuary|catchment|parklands?|reserve|region|district|shire|valley|plains?|council|regional park|industrial|suburb)$/i;
+// A lookout, point, hill or cave whose own source note puts it on a walk or track is usually a stop on that walk (Kim's Lookout, Pooles Lookout on Lord Howe).
+const ON_A_WALK = /\b(lookout|viewpoint|view point|point|hill|cave|pool|beach)$/i;
+const WALK_NOTE = /\b(walk|track|trail|climb|hike|route|loop)\b/i;
 const PART_OF = /\b(part of|within|inside|sub-?site|section of|lookout on|arm of|beach within|a stop on)\b/i;
 
 const out: any[] = [];
 for (const c of cands) {
-  const n = nSources(c), views = c.views ?? 0, text = `${c.name} ${c.note ?? ''}`;
+  const n = nSources(c), views = c.views ?? 0, text = `${c.name} ${c.note ?? ''}`, onAWalk = ON_A_WALK.test(c.name) && WALK_NOTE.test(c.note ?? '');
   const base = { name: c.name, wiki: c.wiki, views, counted_sources: n, existing_spot: c.existing_spot ?? null };
   const rej = REJECT.find(([re]) => re.test(c.name));
   if (c.existing_spot) {
@@ -48,24 +51,24 @@ for (const c of cands) {
   }
   if (rej && n < 2) { out.push({ ...base, verdict: 'reject', rule: 'auto-reject', reason: rej[1] }); continue; }
   if (rej) { out.push({ ...base, verdict: 'marginal', rule: 'reject-signal-with-sources', reason: `${rej[1]}, but ${n} counted sources name it` }); continue; }
-  // No counted source: reject only when nobody is interested either. A known place (views) goes to the judge, who re-looks for the
-  // source: a second-tier stop a real source names must not be lost for want of a counted link in the candidate list.
-  if (n === 0 && views < 500) { out.push({ ...base, verdict: 'reject', rule: 'no-counted-source', reason: 'no visitor-oriented source names it and little interest (a Wikipedia article or OSM node alone does not count)' }); continue; }
-  if (n === 0) { out.push({ ...base, verdict: 'marginal', rule: 'no-counted-source-but-known', reason: `no counted source in the list, but ${views} page views: judge re-looks for a source` }); continue; }
+  // No counted source: never a script reject. The judge re-looks for a source first: a second-tier stop a real source names must not
+  // be lost for want of a counted link in the candidate list (Bass Point, Rouse Hill House were reviews, not rejects, for this reason).
+    if (n === 0) { out.push({ ...base, verdict: 'marginal', rule: 'no-counted-source', reason: `no counted source in the list (${views} page views): the judge re-looks for one before rejecting` }); continue; }
   const strong = (n >= 2 && views >= 1000) || n >= 3 || (n >= 1 && views >= 20000);
-  if (strong && !PART_OF.test(text) && !NOT_AUTOKEEP.test(c.name)) { out.push({ ...base, verdict: 'keep', rule: 'auto-keep', reason: `${n} counted sources, ${views} page views` }); continue; }
-  out.push({ ...base, verdict: 'marginal', rule: PART_OF.test(text) ? 'part-of-signal' : NOT_AUTOKEEP.test(c.name) ? 'feature-or-area' : 'weak-score', reason: PART_OF.test(text) ? 'may be part of a larger place' : NOT_AUTOKEEP.test(c.name) ? 'a feature or area, not obviously a place to go' : `${n} counted source(s), ${views} page views` });
+  if (strong && !PART_OF.test(text) && !NOT_AUTOKEEP.test(c.name) && !onAWalk) { out.push({ ...base, verdict: 'keep', rule: 'auto-keep', reason: `${n} counted sources, ${views} page views` }); continue; }
+  out.push({ ...base, verdict: 'marginal', rule: PART_OF.test(text) || onAWalk ? 'part-of-signal' : NOT_AUTOKEEP.test(c.name) ? 'feature-or-area' : 'weak-score', reason: PART_OF.test(text) || onAWalk ? 'may be a stop on a walk or part of a larger place' : NOT_AUTOKEEP.test(c.name) ? 'a feature or area, not obviously a place to go' : `${n} counted source(s), ${views} page views` });
 }
 writeFileSync(resolve(dir, 'verdicts.auto.json'), JSON.stringify(out, null, 1) + '\n');
 const marginal = out.filter(o => o.verdict === 'marginal').map(o => ({ ...o, candidate: cands.find(c => c.name === o.name) }));
 writeFileSync(resolve(dir, 'marginal.json'), JSON.stringify(marginal, null, 1) + '\n');
 // Quality guard: every automatic decision is listed (auto-decided.json, for the report to the owner) and a deterministic ~12% sample
-// (at least 8, every 8th by name order) goes to audit.json for the judge to re-decide blind. The judge reports its disagreements; more
+// (at least 5, evenly spaced by name order) goes to audit.json for the judge to re-decide blind. The judge reports its disagreements; more
 // than 1 in 10 means the script's rules do not fit this region, so the region is rerun through the full recall + skeptic path.
 const auto = out.filter(o => o.verdict !== 'marginal').sort((a, b) => a.name.localeCompare(b.name));
 writeFileSync(resolve(dir, 'auto-decided.json'), JSON.stringify(auto, null, 1) + '\n');
-const step = Math.max(1, Math.min(8, Math.floor(auto.length / 8)));
-writeFileSync(resolve(dir, 'audit.json'), JSON.stringify(auto.filter((_, i) => i % step === 0).map(o => ({ name: o.name, wiki: o.wiki, views: o.views, counted_sources: o.counted_sources, script_verdict: o.verdict, rule: o.rule, candidate: cands.find(c => c.name === o.name) })), null, 1) + '\n');
+const size = Math.min(auto.length, Math.max(5, Math.ceil(auto.length * 0.12)));   // ~12% of the script's decisions, at least 5
+const step = Math.max(1, Math.floor(auto.length / size));
+writeFileSync(resolve(dir, 'audit.json'), JSON.stringify(auto.filter((_, i) => i % step === 0).slice(0, size).map(o => ({ name: o.name, wiki: o.wiki, views: o.views, counted_sources: o.counted_sources, script_verdict: o.verdict, rule: o.rule, candidate: cands.find(c => c.name === o.name) })), null, 1) + '\n');
 const tally = (v: string) => out.filter(o => o.verdict === v).length;
 console.log(`${out.length} candidates: ${tally('keep')} auto-keep, ${tally('reject')} auto-reject, ${tally('marginal')} marginal (the only ones an agent reads)`);
 if (existsSync(resolve(dir, 'verdicts.json'))) {
