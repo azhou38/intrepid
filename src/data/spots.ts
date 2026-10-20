@@ -242,9 +242,10 @@ const CURRENCY_FORMAT: Record<string, { prefix?: string; suffix?: string }> = {
   ISK: { suffix: ' ISK' },
 };
 
-// Visit time is always in hours up to a day — "0.5 – 1 hr", "1 – 1.5 hr", "2 hr" — never mixing minutes and hours, so
-// spots read the same way and compare at a glance. A multi-day visit (a Great Walk, a river journey) is stored as
-// hours (24 per day) and shown in days once it reaches a day: "2 – 3 days", "4 days". Up to two decimals, zeros dropped.
+// One unit per range, never mixing minutes and hours, so spots read the same way and compare at a glance: a visit that
+// tops out under an hour reads in minutes ("0 – 15 min", "15 – 45 min"); one that reaches an hour reads in hours for both
+// ends ("0.5 – 1 hr", "1 – 1.5 hr", "2 hr"). A multi-day visit (a Great Walk, a river journey) is stored as hours (24 per
+// day) and shown in days once it reaches a day: "2 – 3 days", "4 days". Up to two decimals, zeros dropped.
 const numTxt = (n: number): string => String(Math.round(n * 100) / 100);
 export function formatVisitTime(min: number, max: number): string {
   if (min >= 24) {
@@ -257,7 +258,6 @@ export function formatVisitTime(min: number, max: number): string {
     const m = (h: number) => String(Math.round(h * 60));
     return max === min ? `${m(min)} min` : `${m(min)} – ${m(max)} min`;
   }
-  if (min < 1 && min > 0) return `${Math.round(min * 60)} min – ${numTxt(max)} hr`;
   return max === min ? `${numTxt(min)} hr` : `${numTxt(min)} – ${numTxt(max)} hr`;
 }
 
