@@ -4449,9 +4449,29 @@ const destItems = useMemo((): DestItem[] =>
     }
     return out;
   }, [destItems, stablePhotoIds, handoffZoom, hiddenDestIds, region]);
+  // Each handoff destination keeps one of HANDOFF_MAX fixed layers (destHandoff-0 … -5) for as long as it is in the band.
+  // The layers are always mounted: adding or removing a map layer mid-zoom made Mapbox redo its whole symbol placement,
+  // and every destination photo pin vanished for a frame.
+  const handoffSlotRef = useRef<Map<string, number>>(new Map());
   const handoffSig = handoffDests.map(h => `${h.dest.id}${h.past ? '-' : '+'}`).join(',');
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const stableHandoffDests = useMemo(() => handoffDests, [handoffSig]);
+  const stableHandoffDests = useMemo(() => {
+    const slots = handoffSlotRef.current;
+    const ids = new Set(handoffDests.map(h => h.dest.id));
+    for (const id of [...slots.keys()]) if (!ids.has(id)) slots.delete(id);
+    const used = new Set(slots.values());
+    const out: { dest: Destination; past: boolean; slot: number }[] = [];
+    for (const h of handoffDests) {
+      let k = slots.get(h.dest.id);
+      if (k === undefined) {
+        for (let i = 0; i < HANDOFF_MAX; i++) if (!used.has(i)) { k = i; break; }
+        if (k === undefined) continue;
+        slots.set(h.dest.id, k); used.add(k);
+      }
+      out.push({ ...h, slot: k });
+    }
+    return out;
+  }, [handoffSig]);
   // HANDOFF_FADE_MS: a destination's photo pin may leave through the slower handoff fade (see below).
   const renderedPhotoDests = useExitingItems(promotedDests, d => d.id, HANDOFF_FADE_MS);
   useEffect(() => {
@@ -4534,7 +4554,8 @@ const destItems = useMemo((): DestItem[] =>
         type: 'Feature',
         id: dest.id,
         geometry: { type: 'Point', coordinates: [dest.coordinates.longitude, dest.coordinates.latitude] },
-        properties: { id: dest.id, img, label: dest.name, sort: destSortKey(dest.id), tier: destPinPlan.fadeTier.get(dest.id) ?? '', ho: handoffIds.has(dest.id) ? 1 : 0 },
+        properties: { id: dest.id, img, label: dest.name, sort: destSortKey(dest.id), tier: destPinPlan.fadeTier.get(dest.id) ?? '',
+          ho: handoffIds.has(dest.id) ? 1 : 0, hos: stableHandoffDests.find(h => h.dest.id === dest.id)?.slot ?? -1 },
       });
     }
     // Register the pin image of every destination that could be promoted soon (eligible now, or one rank tier deeper)
@@ -4897,17 +4918,20 @@ const destItems = useMemo((): DestItem[] =>
                 style={destTierStyle(tier, destGateOn(tier, camZoom))}
               />
             )),
-            // A destination at its handoff (see handoffDests): its own layer, faded out once its spot pins have taken over.
-            ...stableHandoffDests.map(({ dest, past }) => {
-              const tier = destPinPlan.fadeTier.get(dest.id) ?? '';
+            // The handoff layers (see handoffDests): a fixed pool, always mounted; slot k draws the destination assigned to it
+            // and fades it out once its spot pins have taken over. An empty slot draws nothing.
+            ...Array.from({ length: HANDOFF_MAX }, (_, k) => {
+              const h = stableHandoffDests.find(x => x.slot === k);
+              const tier = h ? destPinPlan.fadeTier.get(h.dest.id) ?? '' : '';
               const tiers = destTierOrder();
               return (
                 <MapboxGL.SymbolLayer
-                  key={`destHandoff-${dest.id}`}
-                  id={`destHandoff-${dest.id}`}
-                  aboveLayerID={`destPhotoSymbols-${tiers[tiers.length - 1] || 'ungated'}`}
-                  filter={['all', ['==', ['get', 'id'], dest.id], ['==', ['get', 'ho'], 1]] as any}
-                  style={destTierStyle(tier, destGateOn(tier, camZoom) && !past)}
+                  key={`destHandoff-${k}`}
+                  id={`destHandoff-${k}`}
+                  aboveLayerID={k === 0 ? `destPhotoSymbols-${tiers[tiers.length - 1] || 'ungated'}` : `destHandoff-${k - 1}`}
+                  filter={['all', ['==', ['get', 'ho'], 1], ['==', ['get', 'hos'], k]] as any}
+                  // An empty slot rests fully shown, so a destination moving into it (well before its crossing) never dips.
+                  style={destTierStyle(tier, !h || (destGateOn(tier, camZoom) && !h.past))}
                 />
               );
             })]}
