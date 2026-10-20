@@ -2567,6 +2567,7 @@ const destItems = useMemo((): DestItem[] =>
   const spotPhotoSpecsRef = useRef<Map<string, SpotPhotoImageSpec>>(new Map());
   const spotPhotoSpecListRef = useRef<SpotPhotoImageSpec[]>([]);
   const lastSpotShapeRef = useRef<{ sig: string; specs: SpotPhotoImageSpec[]; value: any } | null>(null);
+  const spotPhotoPrevRef = useRef<Set<string>>(new Set());
   const nativeSpotPins = useMemo(() => {
     const must = new Set<string>();
     if (nearCtx) for (const sp of nearCtx.spots.slice(0, NEAR_PINNED_SPOTS + 1)) must.add(sp.id);
@@ -2577,6 +2578,35 @@ const destItems = useMemo((): DestItem[] =>
     const sorted = visibleSpots.filter(sp => sp.id !== selectedSpot?.id).sort((x, y) => rank(x) - rank(y));
     let added = false, fresh = 0;
     const features: GeoJSON.Feature<GeoJSON.Point>[] = [];
+    // Which spots get a photo pin, as before the native layer: a spot already holding its photo goes first (so pins don't
+    // swap back and forth), then by rank; each takes its photo only clear of the photo pins already placed and of the
+    // destination photo pins (with their names) on screen. Every other revealed spot gets its small pin, which is always
+    // drawn (as before), so no small pin is lost under a neighbour's photo or name in a dense destination like Sydney.
+    const prev = spotPhotoPrevRef.current;
+    const pxPerDegLng = SCREEN_W_GLOBAL / pinPlanLngDelta;
+    type Box = { l: number; r: number; t: number; b: number };
+    const overlaps = (a: Box, b: Box) => a.l < b.r && a.r > b.l && a.t < b.b && a.b > b.t;
+    const taken: Box[] = [];
+    for (const id of destPinPlan.photoIds) {
+      if (hiddenDestIds.has(id)) continue;
+      const d = DESTINATIONS.find(dd => dd.id === id);
+      if (!d) continue;
+      const m = mercatorPx(d.coordinates.longitude, d.coordinates.latitude, pxPerDegLng);
+      const x = m.x, y = -m.y, R = PIN_SIZE / 2 + 2;
+      const nameW = Math.min(90, d.name.length * 6.3), nameH = d.name.length * 6.3 > 90 ? 26 : 13;
+      taken.push({ l: x - Math.max(R, nameW / 2), r: x + Math.max(R, nameW / 2), t: y - R, b: y + R + 4 + nameH });
+    }
+    const photoPlan = new Set<string>();
+    const planOrder = [...sorted].sort((x, y) => (prev.has(x.id) ? 0 : 1) - (prev.has(y.id) ? 0 : 1) || rank(x) - rank(y));
+    for (const sp of planOrder) {
+      const photoZoom = SPOT_PHOTO_ZOOM_BY_ID[sp.id];
+      if (!must.has(sp.id) && photoZoom !== undefined && handoffZoom < photoZoom - ZOOM_EPSILON) continue;
+      const m = mercatorPx(sp.coordinates.longitude, sp.coordinates.latitude, pxPerDegLng);
+      const x = m.x, y = -m.y;
+      const box: Box = { l: x - SPOT_PIN_SIZE / 2 - 2, r: x + SPOT_PIN_SIZE / 2 + 2, t: y - SPOT_PIN_SIZE - 10 - 2, b: y + 2 };
+      if (!must.has(sp.id) && taken.some(t => overlaps(t, box))) continue;
+      taken.push(box); photoPlan.add(sp.id);
+    }
     for (const sp of sorted) {
       const visited = visitIndex.isSpotVisited(sp.id);
       const img = spotPhotoImageName(sp.id, visited);
@@ -2593,13 +2623,14 @@ const destItems = useMemo((): DestItem[] =>
         properties: {
           id: sp.id,
           mini: visited ? SPOT_MINI_PIN_VISITED : SPOT_MINI_PIN_UNVISITED,
-          img: specs.has(img) && !early ? img : '',
+          img: specs.has(img) && !early && photoPlan.has(sp.id) ? img : '',
           label: spotLabelLines(sp.name).join('\n'),
           sort: rank(sp),
         },
       });
     }
     if (added) spotPhotoSpecListRef.current = [...specs.values()];
+    spotPhotoPrevRef.current = new Set(features.filter(f => f.properties!.img).map(f => String(f.properties!.id)));
     // visibleSpots is rebuilt on every camera frame (it follows the live bounds), but its CONTENT rarely changes: hand the
     // native source the same shape object unless a feature or its look did, so a pan or zoom doesn't re-push the whole
     // collection to Mapbox each frame.
@@ -2609,7 +2640,7 @@ const destItems = useMemo((): DestItem[] =>
     const value = { shape: { type: 'FeatureCollection' as const, features }, specs: spotPhotoSpecListRef.current };
     lastSpotShapeRef.current = { sig, specs: spotPhotoSpecListRef.current, value };
     return value;
-  }, [visibleSpots, selectedSpot, nearCtx, visitIndex, handoffZoom]);
+  }, [visibleSpots, selectedSpot, nearCtx, visitIndex, handoffZoom, pinPlanLngDelta, destPinPlan, hiddenDestIds]);
   // Only the selected spot is a MarkerView now.
   const selectedOnly = useMemo(() => (selectedSpot ? [selectedSpot] : []), [selectedSpot]);
   const renderedSpots = useExitingItems(selectedOnly, s => s.id, HANDOFF_FADE_MS);
@@ -4912,6 +4943,7 @@ const destItems = useMemo((): DestItem[] =>
           <MapboxGL.SymbolLayer
             id="spotMiniPins"
             belowLayerID="destStampCircles"
+            filter={['==', ['get', 'img'], ''] as any}
             style={{
               iconImage: ['get', 'mini'] as any,
               iconAnchor: 'bottom',
@@ -4921,7 +4953,8 @@ const destItems = useMemo((): DestItem[] =>
               // fading in or out cross-fades with it through the same collision pass.
               // iconIgnorePlacement: small pins never block anything, each other included, so they show at the same zooms as
               // before (zoomed into a destination, where spots are dense, they used to hide one another).
-              iconAllowOverlap: false,
+              // A spot without a photo pin (see the plan in nativeSpotPins) always shows its small pin, as before.
+              iconAllowOverlap: true,
               iconIgnorePlacement: true,
               iconPadding: 0,
               symbolSortKey: ['get', 'sort'] as any,
@@ -4936,7 +4969,9 @@ const destItems = useMemo((): DestItem[] =>
             style={{
               iconImage: ['get', 'img'] as any,
               iconAnchor: 'bottom',
-              iconAllowOverlap: false,
+              // The plan in nativeSpotPins already spaced the photo pins: draw every one (a spot whose photo Mapbox hid would
+              // have no pin at all, since its small pin is not drawn), still recording it so names avoid it.
+              iconAllowOverlap: true,
               iconIgnorePlacement: false,
               iconPadding: 2,
               symbolSortKey: ['get', 'sort'] as any,
