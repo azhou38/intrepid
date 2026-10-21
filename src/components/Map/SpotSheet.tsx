@@ -721,16 +721,6 @@ function SpotSheet({
   // Full-screen panels mount a moment after the sheet does, or at once on heading to full — see
   // useDeferredMount.
   const [panelsReady, revealPanels] = useDeferredMount();
-  // The entrance slide starts once the sheet has been laid out natively (see transitionTo).
-  const laidOutRef = useRef(false);
-  const enterPendingRef = useRef<(() => void) | null>(null);
-  const onSheetLayout = useCallback(() => {
-    if (laidOutRef.current) return;
-    laidOutRef.current = true;
-    const start = enterPendingRef.current;
-    enterPendingRef.current = null;
-    start?.();
-  }, []);
   const perfRevealPanels = useCallback(() => { perfMark('SpotSheet slide landed, panels mount'); revealPanels(); }, [revealPanels]);   // TEMPORARY
   useLayoutEffect(() => { if (panelsReady) perfMark('SpotSheet panels committed'); }, [panelsReady]);   // TEMPORARY
   // Scrolls the content back to its top on the UI thread, over a fixed 220ms — finishing before the sheet settles at
@@ -769,16 +759,9 @@ function SpotSheet({
     sheetPose.set(next === 'full' ? null : target);
     // 'userUI': the gesture worklet already started this exact animation on the UI thread (see snapUI).
     // The entrance uses its own gentler curve (SHEET_ENTER_CONFIG) and mounts the full-screen panels as it lands.
-    // The entrance waits for the sheet's first native layout (onSheetLayout): started in the mount commit, its first
-    // frames ran while that same commit was still building the sheet's views on the UI thread, and stalled (42 ms).
-    enterPendingRef.current = null;
-    if (reason === 'mount') {
-      const start = () => {
-        perfMark('SpotSheet slide starts');   // TEMPORARY
-        slideAnim.value = withTiming(target, SHEET_ENTER_CONFIG, finished => { if (finished) runOnJS(perfRevealPanels)(); });
-      };
-      if (laidOutRef.current) start(); else enterPendingRef.current = start;
-    } else if (reason !== 'userUI') slideAnim.value = withTiming(target, SNAP_CONFIG);
+    if (reason === 'mount') perfMark('SpotSheet slide starts');   // TEMPORARY
+    if (reason === 'mount') slideAnim.value = withTiming(target, SHEET_ENTER_CONFIG, finished => { if (finished) runOnJS(perfRevealPanels)(); });
+    else if (reason !== 'userUI') slideAnim.value = withTiming(target, SNAP_CONFIG);
   };
   const snapToFullRef = useRef(() => {});
   snapToFullRef.current = () => transitionToRef.current('full', 'user');
@@ -1188,7 +1171,7 @@ isVisited ? (
       <Reanimated.View pointerEvents="none" style={[st.sheetShadow, sheetAnimStyle]} />
 
       <GestureDetector gesture={pan}>
-      <Reanimated.View style={[st.sheet, sheetAnimStyle]} onLayout={onSheetLayout}>
+      <Reanimated.View style={[st.sheet, sheetAnimStyle]}>
         <Reanimated.View style={[StyleSheet.absoluteFill, { overflow: 'hidden' }, contentOpacityStyle]}>
         {/* An outgoing copy (leaving) only ever rests at half-screen or peek, where this whole
             full-screen layer is fully transparent (contentOpacityStyle) — so it skips it, keeping

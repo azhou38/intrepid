@@ -1,7 +1,7 @@
 import React, { memo, useRef, useState, useMemo, useCallback, useEffect, useLayoutEffect } from 'react';
 import { unstable_batchedUpdates, View, StyleSheet, Pressable, Text, Dimensions, Animated, Platform, TextInput, Image, Easing as RNEasing, Keyboard, ScrollView } from 'react-native';
 import Reanimated, { useSharedValue, useAnimatedStyle, useAnimatedReaction, runOnJS, withTiming, Easing, useFrameCallback } from 'react-native-reanimated';
-import { perfArm, perfMark, perfCount, perfNow, PERF_WINDOW_MS } from '../utils/perfProbe';   // TEMPORARY
+import { perfArm, perfMark, perfCount, perfNow, perfLap, perfLapStart, PERF_WINDOW_MS } from '../utils/perfProbe';   // TEMPORARY
 import Svg, { Rect, Path, Circle } from 'react-native-svg';
 import { sheetPose } from '../components/Map/sheetPose';
 import MapboxGL from '@rnmapbox/maps';
@@ -1210,6 +1210,7 @@ function useStableList<T>(next: T[], key: (t: T) => string): T[] {
 export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = {}) {
   // TEMPORARY perf probe (see perfProbe.ts): this render's JS time and commit, and the UI thread's long frames.
   const perfRenderStart = perfNow();
+  perfLapStart();
   useLayoutEffect(() => { perfCount('MapScreen render+commit', perfNow() - perfRenderStart); });
   const perfUiArmSV = useSharedValue(0);
   const perfUiStartSV = useSharedValue(0);
@@ -2040,6 +2041,7 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     }, durationMs + 800);
     setHeldSelTick(t => t + 1);
   }, []);
+  perfLap('state and hooks');   // TEMPORARY
 
   const countryPills = useMemo(() => {
     // "visitedCount" is the country's visited destinations (see visitIndex) — the number on its
@@ -2334,6 +2336,7 @@ const destItems = useMemo((): DestItem[] =>
     // the (equally pan-invariant) country pill plan.
     // No camera centre → recompute produces an identical plan while panning at fixed zoom.
   }, [eligibleDests, planLngDelta, pillPlanLngDelta, planCountry, planDest, selectedSpot, visitIndex, countryPills]);
+  perfLap('destPinPlan and earlier');   // TEMPORARY
 
   // Stamps are rendered via CircleLayer (not MarkerView) so Mapbox renders all of them
   // regardless of proximity. Every filter-passing destination gets a stamp — INCLUDING ones
@@ -2607,6 +2610,7 @@ const destItems = useMemo((): DestItem[] =>
     if (selectedSpot && !result.some(sp => sp.id === selectedSpot.id)) result.push(selectedSpot);
     return result;
   }, [region, handoffZoom, closeViewScale, selectedSpot, selectedDest, spotsInDest, nearCtx]);
+  perfLap('visibleSpots and earlier');   // TEMPORARY
   // Exit-fade tracking for spot pins (same treatment as pills/photos): pins leaving the
   // set linger for PIN_EXIT_MS fading out, new ones mount at 0 and fade in.
   // Which revealed spots get a full photo pin and which collapse to a dot. Spots are taken in priority order (the selected
@@ -2704,6 +2708,7 @@ const destItems = useMemo((): DestItem[] =>
     lastSpotShapeRef.current = { sig, specs: spotPhotoSpecListRef.current, value };
     return value;
   }, [visibleSpots, selectedSpot, nearCtx, visitIndex, handoffZoom, pinPlanLngDelta, destPinPlan, hiddenDestIds]);
+  perfLap('nativeSpotPins');   // TEMPORARY
   // Only the selected spot is a MarkerView now.
   const selectedOnly = useMemo(() => (selectedSpot ? [selectedSpot] : []), [selectedSpot]);
   const renderedSpots = useExitingItems(selectedOnly, s => s.id, HANDOFF_FADE_MS);
@@ -2833,6 +2838,7 @@ const destItems = useMemo((): DestItem[] =>
     prevSpotLabelPlanRef.current = plan;
     return plan;
   }, [renderedSpots, pinPlanLngDelta, selectedSpot, savedSpots, visitIndex, destPinPlan, hiddenDestIds]);
+  perfLap('spot markers');   // TEMPORARY
 
   // Spot pins in depth order: northernmost first, southernmost last. MarkerViews stack by when they
   // were mounted, so mounting in this order puts a pin that is lower on the map in front of any pin
@@ -3357,6 +3363,7 @@ const destItems = useMemo((): DestItem[] =>
     // Reads region via regionRef (not a dep) so this callback stays stable across pans and
     // doesn't bust the memoized destination-pin marker list.
   }, [selectedCountry, showBreadcrumb, animateCamera, dropCountryIfForeign, setDestHomeToDefault]);
+  perfLap('handlers A');   // TEMPORARY
 
   const handleSheetExpand = useCallback(() => setMapState('sheet'), []);
   const handleCloseSheet = useCallback(() => {
@@ -4398,6 +4405,7 @@ const destItems = useMemo((): DestItem[] =>
       return;
     }
   }, [mapState, selectedDest, savedDestinations, showBreadcrumb, releaseHeldSelection]);
+  perfLap('handlers B');   // TEMPORARY
 
   // Pre-rendered marker element arrays, memoized on their pan-invariant inputs. Building the
   // MarkerViews here (instead of inline in the JSX) means the SAME element instances — and
@@ -4708,6 +4716,7 @@ const destItems = useMemo((): DestItem[] =>
     if (added) destPinSpecListRef.current = [...specs.values()];
     return { shape: { type: 'FeatureCollection' as const, features }, specs: destPinSpecListRef.current };
   }, [promotedDests, joinedHandoffDests, visitIndex, visitedSpotCountByDest, destPinPlan, planDest, eligibleDests, visibleRank]);
+  perfLap('nativeDestPins and earlier');   // TEMPORARY
 
   // Which sliding sheet is mounted right now. When it changes from one level to another, the incoming sheet is a
   // replacement for the one that was showing and starts where that one rested (see sheetPose) rather than from below
@@ -4776,6 +4785,7 @@ const destItems = useMemo((): DestItem[] =>
   const destSheetIsPressBlocked = useStableCallback(pressBlocked);
 
 
+  perfLap('rest before JSX');   // TEMPORARY
   return (
     <View
       style={styles.root}

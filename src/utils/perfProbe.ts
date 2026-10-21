@@ -46,3 +46,8 @@ function report() {
 }
 
 export const perfNow = now;
+
+// Render laps: perfLapStart() at the top of a render, perfLap(name) after each stage, timing the code between.
+let lapAt = 0;
+export function perfLapStart() { lapAt = now(); }
+export function perfLap(what: string) { const t = now(); perfCount(`lap ${what}`, t - lapAt); lapAt = t; }

@@ -1156,16 +1156,6 @@ function DestinationSheet({
   // Full-screen panels mount a moment after the sheet does, or at once on heading to full — see
   // useDeferredMount.
   const [panelsReady, revealPanels] = useDeferredMount();
-  // The entrance slide starts once the sheet has been laid out natively (see transitionTo).
-  const laidOutRef = useRef(false);
-  const enterPendingRef = useRef<(() => void) | null>(null);
-  const onSheetLayout = useCallback(() => {
-    if (laidOutRef.current) return;
-    laidOutRef.current = true;
-    const start = enterPendingRef.current;
-    enterPendingRef.current = null;
-    start?.();
-  }, []);
   const perfRevealPanels = useCallback(() => { perfMark('DestinationSheet slide landed, panels mount'); revealPanels(); }, [revealPanels]);   // TEMPORARY
   useLayoutEffect(() => { if (panelsReady) perfMark('DestinationSheet panels committed'); }, [panelsReady]);   // TEMPORARY
   // Scrolls the content back to its top on the UI thread, over a fixed 220ms — finishing before the sheet settles at
@@ -1204,16 +1194,9 @@ function DestinationSheet({
     sheetPose.set(next === 'full' ? null : target);
     // 'userUI': the gesture worklet already started this exact animation on the UI thread (see snapUI).
     // The entrance uses its own gentler curve (SHEET_ENTER_CONFIG) and mounts the full-screen panels as it lands.
-    // The entrance waits for the sheet's first native layout (onSheetLayout): started in the mount commit, its first
-    // frames ran while that same commit was still building the sheet's views on the UI thread, and stalled (42 ms).
-    enterPendingRef.current = null;
-    if (reason === 'mount') {
-      const start = () => {
-        perfMark('DestinationSheet slide starts');   // TEMPORARY
-        slideAnim.value = withTiming(target, SHEET_ENTER_CONFIG, finished => { if (finished) runOnJS(perfRevealPanels)(); });
-      };
-      if (laidOutRef.current) start(); else enterPendingRef.current = start;
-    } else if (reason !== 'userUI') slideAnim.value = withTiming(target, SNAP_CONFIG);
+    if (reason === 'mount') perfMark('DestinationSheet slide starts');   // TEMPORARY
+    if (reason === 'mount') slideAnim.value = withTiming(target, SHEET_ENTER_CONFIG, finished => { if (finished) runOnJS(perfRevealPanels)(); });
+    else if (reason !== 'userUI') slideAnim.value = withTiming(target, SNAP_CONFIG);
   };
 
   // Slide in on mount — collapsed (bottom-screen carousel) by default whenever a destination is selected, unless
@@ -1502,7 +1485,7 @@ function DestinationSheet({
       <Reanimated.View pointerEvents="none" style={[st.sheetShadow, sheetAnimStyle]} />
 
       <GestureDetector gesture={pan}>
-      <Reanimated.View style={[st.sheet, sheetAnimStyle]} onLayout={onSheetLayout}>
+      <Reanimated.View style={[st.sheet, sheetAnimStyle]}>
 
         {/* ── FULL CONTENT — fills entire sheet, hero starts at y=0 ──────── */}
         <View style={[StyleSheet.absoluteFill, { overflow: 'hidden' }]}>
