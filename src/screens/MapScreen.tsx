@@ -2157,7 +2157,6 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     else if (was === undefined) on = destGateOn(tier, destGateZoom);
     else if (was) on = destGateOn(tier, destGateZoom);          // on: switches off once the look-ahead passes its gate
     else on = destZoomingIn;                                    // off but at/above its gate: back on when zooming in
-    if (__DEV__ && was !== undefined && was !== on) console.log(`[mapdata] z=${camZoom.toFixed(2)} tier ${tier} ${on ? 'on' : 'off'}`);   // TEMPORARY
     destTierOnRef.current.set(tier, on);
     return on;
   };
@@ -4842,19 +4841,6 @@ const destItems = useMemo((): DestItem[] =>
     if (added) destPinSpecListRef.current = [...specs.values()];
     return { shape: { type: 'FeatureCollection' as const, features }, specs: destPinSpecListRef.current };
   }, [promotedDests, joinedHandoffDests, visitIndex, visitedSpotCountByDest, destPhotoPlan, planDest, stablePhotoIds]);
-
-  // TEMPORARY [mapdata] log: which map source data or layer styles change, at what zoom (finding a one-frame blink of
-  // every pin). Remove once found.
-  const mapDataPrevRef = useRef<Record<string, unknown>>({});
-  if (__DEV__) {
-    const watch: Record<string, unknown> = {
-      stamps: stampGeoJSON, stampStyle: stampOpacityExpr, destPins: nativeDestPins?.shape, destImages: nativeDestPins?.specs,
-      spotPins: nativeSpotPins.shape, spotImages: nativeSpotPins.specs, pills: countryPills,
-    };
-    const changed = Object.keys(watch).filter(k => mapDataPrevRef.current[k] !== undefined && mapDataPrevRef.current[k] !== watch[k]);
-    if (changed.length) console.log(`[mapdata] z=${camZoom.toFixed(2)} ${changed.join(' ')}`);
-    mapDataPrevRef.current = watch;
-  }
 
   // Which sliding sheet is mounted right now. When it changes from one level to another, the incoming sheet is a
   // replacement for the one that was showing and starts where that one rested (see sheetPose) rather than from below
