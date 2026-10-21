@@ -517,6 +517,7 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "Charles Darwin National Park": { x: 0.5, y: 0.55 },
   "Berry Springs, Northern Territory": { x: 0.45, y: 0.6 },
   "Palmerston, Northern Territory": { x: 0.5, y: 0.6 },
+  "Adelaide River, Northern Territory": { x: 0.4, y: 0.65, zoom: 1.3 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -1800,6 +1801,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Tolmer Falls": "Tolmer Falls in the Litchfield National Park.jpg",
   "Batchelor, Northern Territory": "BatchelorOct192024.jpg",
   "Tiwi Islands": "MRF-D conducts a site survey at Tiwi Island (6629791).jpg",
+  "Adelaide River, Northern Territory": "Adelaide River Lookout.jpg",
 };
 
 /**
@@ -1893,7 +1895,6 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Platypus House",
   "Seahorse World",
   // Northern Territory: no photo of the place itself passed the judges (stand-ins rejected); the owner is asked for one
-  "Adelaide River, Northern Territory",
   "Mary River National Park",
   "The Lost City",
 ]);
