@@ -2323,6 +2323,7 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     setHeldSelTick(t => t + 1);
   }, []);
 
+  const lastPillsRef = useRef<{ sig: string; value: CountryCluster[] } | null>(null);
   const countryPills = useMemo(() => {
     // "visitedCount" is the country's visited destinations (see visitIndex) — the number on its
     // pill's badge.
@@ -2409,6 +2410,10 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
       pills.push(c);
     }
 
+    // The same array unless a pill or its badge changed (it is recomputed on every camera frame).
+    const sig = pills.map(c => `${c.countryCode}|${c.visitedCount}`).join(',');
+    if (lastPillsRef.current && lastPillsRef.current.sig === sig) return lastPillsRef.current.value;
+    lastPillsRef.current = { sig, value: pills };
     return pills;
     // Depends on planLngDelta/pillVisibleLngDelta only (pan-invariant zoom) — NOT
     // latitudeDelta, which drifts on pan and would otherwise recompute this and re-resolve
@@ -2566,6 +2571,7 @@ const destItems = useMemo((): DestItem[] =>
     if (!destPinPlan.photoIds.has(id) || hiddenDestIds.has(id)) pendingRevealRef.current.delete(id);
   }
 
+  const lastStampRef = useRef<{ sig: string; value: GeoJSON.FeatureCollection<GeoJSON.Point> } | null>(null);
   const stampGeoJSON = useMemo(() => {
     const selCountryCode = planCountry?.countryCode ?? planDest?.countryCode;
 
@@ -2595,8 +2601,15 @@ const destItems = useMemo((): DestItem[] =>
         },
       });
     }
-    return { type: 'FeatureCollection' as const, features };
-  }, [savedDestinations, visitIndex, planCountry, planDest, activeStampTier, hiddenDestIds, revealTick, destPinPlan]);
+    // The same object unless a dot or its look changed: a new object re-sends the whole source to Mapbox, which re-places
+    // every pin on the map, and this used to be rebuilt on every camera frame (every pin blinked out for a frame now and
+    // then while zooming).
+    const sig = features.map(f => `${f.id}|${f.properties!.tier}|${f.properties!.color}`).join(',');
+    if (lastStampRef.current && lastStampRef.current.sig === sig) return lastStampRef.current.value;
+    const value = { type: 'FeatureCollection' as const, features };
+    lastStampRef.current = { sig, value };
+    return value;
+  }, [savedDestinations, visitIndex, planCountry, planDest, activeStampTier, hiddenDestIds, revealTick]);
 
   // Discrete tier activation + native style TRANSITION (not a continuous zoom
   // interpolation): the opacity expression only ever targets exactly 0 or 1 per dot, and
