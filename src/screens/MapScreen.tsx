@@ -803,8 +803,8 @@ const destGateZooms = (): Record<string, number> => {
     const z = countryGateZoom(cc);
     if (z !== undefined) out[`c${cc}`] = z;
   }
-  // The photo plan's tiers: `z<i>` switches on at DEST_LADDER[i] (see destPhotoPlan).
-  DEST_LADDER.forEach((z, i) => { out[`z${i}`] = z; });
+  // The photo plan's tiers: `z<i>` switches on at destLadder()[i] (see destPhotoPlan).
+  destLadder().forEach((z, i) => { out[`z${i}`] = z; });
   return (destGateZoomCache = out);
 };
 // Whether a tier's pins show at camera zoom `z`: a cliff at its gate zoom ('' — not gated — always shows). The decision
@@ -822,7 +822,7 @@ const DEST_GATE_FADE_MS = 250;
 // One layer per photo-plan tier (destPhotoPlan): bottom to top, the latest to switch on first, '' (always shown) on top.
 // Pins and names are drawn without collision (the plan has already spaced them), so the order only sets which pin draws
 // over which where a fading pin passes another.
-const destTierOrder = (): string[] => [...DEST_LADDER.map((_, i) => `z${i}`).reverse(), ''];
+const destTierOrder = (): string[] => [...destLadder().map((_, i) => `z${i}`).reverse(), ''];
 const destTierStyleCache = new Map<string, any>();
 // `snap`: the opacity changes at once, not animated (a handoff layer changing state while it holds no pin yet).
 const destTierStyle = (tier: string, on: boolean, snap = false) => {
@@ -962,8 +962,24 @@ const DEST_SYMBOL_STYLE: any = {
   textPadding: 1,
 };
 
-// The photo plan's zoom ladder (destPhotoPlan): pins are placed, and switch on, at these zooms.
-const DEST_LADDER: number[] = Array.from({ length: 31 }, (_, i) => 1 + i * 0.5);
+// The photo plan's zoom ladder (destPhotoPlan): pins and names are placed, and switch on, at these zooms. It holds every
+// rank and country gate exactly, so a pin with room shows exactly where it used to, plus a half-level grid for pins and
+// names that wait for room. Built on first use (the country gates need helpers defined further down).
+let destLadderCache: number[] | null = null;
+const destLadder = (): number[] => {
+  if (destLadderCache) return destLadderCache;
+  const zs = [...Array.from({ length: 31 }, (_, i) => 1 + i * 0.5), ...Object.values(DEST_RANK_GATE_ZOOM)];
+  for (const cc of new Set(DESTINATIONS.map(d => d.countryCode))) { const z = countryGateZoom(cc); if (z !== undefined) zs.push(z); }
+  zs.sort((a, b) => a - b);
+  const out: number[] = [];
+  for (const z of zs) {
+    if (!Number.isFinite(z)) continue;
+    // A grid zoom right next to a gate gives way to the gate.
+    if (out.length && z - out[out.length - 1] < 0.1) { if (Object.values(DEST_RANK_GATE_ZOOM).includes(z) || z % 0.5 !== 0) out[out.length - 1] = z; continue; }
+    out.push(z);
+  }
+  return (destLadderCache = out);
+};
 // The zoom from which a destination may have a photo pin: its rank gate (a visited destination gets a one-rank head
 // start), or its country's cutoff (where the country's pill goes), or, inside the selected country, that country's own
 // view, whichever comes first.
@@ -2177,7 +2193,9 @@ const destItems = useMemo((): DestItem[] =>
   // zooming back out removes pins in exactly the reverse order. Nothing in it depends on where the camera is, so panning
   // never changes which pins show. It is recomputed only when the selection or the visited set changes.
   const destPhotoPlan = useMemo(() => {
-    const zoomOf = new Map<string, number>();   // destination id -> ladder index of its photo zoom (-1: always)
+    const ladder = destLadder();
+    const pinAt = new Map<string, number>();    // destination id -> ladder index of its photo zoom (-1: always)
+    const nameAt = new Map<string, number>();   // destination id -> ladder index from which its name shows
     const priority = new Map<string, number>();
     const rankScore = (d: Destination) =>
       (planDest?.id === d.id ? -1_000_000 : 0) + (planCountry && d.countryCode === planCountry.countryCode ? -1_000 : 0) + d.rank;
@@ -2189,9 +2207,9 @@ const destItems = useMemo((): DestItem[] =>
       return { x: (lng + 180) / 360, y: 0.5 - Math.log((1 + s) / (1 - s)) / (4 * Math.PI) };
     };
     const pos = new Map(ordered.map(d => [d.id, unit(d.coordinates.longitude, d.coordinates.latitude)]));
-    // A pin's footprint at scale 1 (screen points around its point): the photo circle, and its name hanging below it.
-    const R = DEST_PIN_SIZE / 2 + 3;
-    const foot = new Map<string, { l: number; r: number; t: number; b: number }>();
+    // Footprints at scale 1 (screen points around the point): the photo circle, and the name hanging below it.
+    const R = DEST_PIN_SIZE / 2;
+    const nameFoot = new Map<string, { l: number; r: number; t: number; b: number }>();
     for (const d of ordered) {
       const perLine = Math.floor(90 / 6.3);
       let lines = 1, cur = 0;
@@ -2201,53 +2219,68 @@ const destItems = useMemo((): DestItem[] =>
         else { lines++; cur = w.length; }
         while (cur > perLine) { lines++; cur -= perLine; }
       }
-      const half = Math.max(R, Math.min(90, Math.min(d.name.length, perLine) * 6.3 + 4) / 2);
-      foot.set(d.id, { l: -half, r: half, t: -R, b: DEST_PIN_SIZE / 2 + 4 + lines * 13 + 2 });
+      const half = Math.min(90, Math.min(d.name.length, perLine) * 6.3 + 4) / 2;
+      nameFoot.set(d.id, { l: -half, r: half, t: R + 3, b: R + 4 + lines * 13 + 1 });
     }
     const selCC = planCountry?.countryCode ?? planDest?.countryCode;
     const selCountryZoom = selCC ? zoomForPanLatDelta(getCountryStampThreshold(selCC)) : Infinity;
     const spotU = selectedSpot ? unit(selectedSpot.coordinates.longitude, selectedSpot.coordinates.latitude) : null;
     type Box = { l: number; r: number; t: number; b: number };
     const hit = (a: Box, b: Box) => a.l < b.r && a.r > b.l && a.t < b.b && a.b > b.t;
-    const placed: string[] = [];
-    for (let i = 0; i < DEST_LADDER.length; i++) {
-      const z = DEST_LADDER[i];
+    const pins: string[] = [], names: string[] = [];
+    for (let i = 0; i < ladder.length; i++) {
+      const z = ladder[i];
       const scale = 256 * Math.pow(2, z);
-      const boxAt = (id: string): Box => {
-        const u = pos.get(id)!, f = foot.get(id)!, x = u.x * scale, y = u.y * scale;
-        return { l: x + f.l, r: x + f.r, t: y + f.t, b: y + f.b };
-      };
-      const taken: Box[] = placed.map(boxAt);
+      const at = (id: string) => { const u = pos.get(id)!; return { x: u.x * scale, y: u.y * scale }; };
+      const pinBox = (id: string): Box => { const p = at(id); return { l: p.x - R, r: p.x + R, t: p.y - R, b: p.y + R }; };
+      const nameBox = (id: string): Box => { const p = at(id), f = nameFoot.get(id)!; return { l: p.x + f.l, r: p.x + f.r, t: p.y + f.t, b: p.y + f.b }; };
+      // Pins keep clear of the pins and names already placed (a name, once shown, is never covered), the country pills
+      // showing at this zoom and the selected spot.
+      const pinTaken: Box[] = [...pins.map(pinBox), ...names.map(nameBox)];
       for (const p of pillsAtZoom(z, planCountry, planDest)) {
         const u = unit(p.longitude, p.latitude), x = u.x * scale, y = u.y * scale;
-        taken.push({ l: x - 75, r: x + 75, t: y - 42, b: y + 42 });
+        pinTaken.push({ l: x - 75, r: x + 75, t: y - 42, b: y + 42 });
       }
-      if (spotU) { const x = spotU.x * scale, y = spotU.y * scale; taken.push({ l: x - 75, r: x + 75, t: y - 60, b: y + 60 }); }
+      if (spotU) { const x = spotU.x * scale, y = spotU.y * scale; pinTaken.push({ l: x - 75, r: x + 75, t: y - 60, b: y + 60 }); }
       for (const d of ordered) {
-        if (zoomOf.has(d.id)) continue;
-        if (planDest?.id === d.id) { zoomOf.set(d.id, -1); placed.push(d.id); taken.push(boxAt(d.id)); continue; }
+        if (pinAt.has(d.id)) continue;
+        if (planDest?.id === d.id) { pinAt.set(d.id, -1); pins.push(d.id); pinTaken.push(pinBox(d.id)); continue; }
         if (destEligibleZoom(d, visitIndex.isDestVisited(d.id), selCC, selCountryZoom) > z + ZOOM_EPSILON) continue;
-        const box = boxAt(d.id);
-        if (taken.some(t => hit(t, box))) continue;
-        zoomOf.set(d.id, i); placed.push(d.id); taken.push(box);
+        const box = pinBox(d.id);
+        if (pinTaken.some(t => hit(t, box))) continue;
+        pinAt.set(d.id, i); pins.push(d.id); pinTaken.push(box);
+      }
+      // Then the names of placed pins, in the same order, clear of every pin and every name already shown. A name only
+      // shows while its pin can (up to the destination's own default view, where its spots take over).
+      const nameTaken: Box[] = [...pins.map(pinBox), ...names.map(nameBox)];
+      for (const d of ordered) {
+        if (!pinAt.has(d.id) || nameAt.has(d.id)) continue;
+        const level = DEST_ZOOM_LEVEL_BY_ID[d.id];
+        if (level !== undefined && z >= level - ZOOM_EPSILON && planDest?.id !== d.id) continue;
+        const box = nameBox(d.id);
+        if (planDest?.id !== d.id && nameTaken.some(t => hit(t, box))) continue;
+        nameAt.set(d.id, pinAt.get(d.id)! < 0 && planDest?.id === d.id ? -1 : i); names.push(d.id); nameTaken.push(box);
       }
     }
-    const fadeTier = new Map<string, string>();
-    for (const [id, i] of zoomOf) fadeTier.set(id, i < 0 ? '' : `z${i}`);
-    return { zoomOf, priority, fadeTier };
+    const tierOf = (i: number) => (i < 0 ? '' : `z${i}`);
+    const fadeTier = new Map<string, string>(), nameTier = new Map<string, string>();
+    for (const [id, i] of pinAt) fadeTier.set(id, tierOf(i));
+    for (const [id, i] of nameAt) nameTier.set(id, tierOf(i));
+    return { pinAt, priority, fadeTier, nameTier };
   }, [planCountry, planDest, selectedSpot, visitIndex]);
-  // The plan at the current zoom: photoIds show now (spot planning keeps clear of them); dataIds are in the pin layers'
-  // data, DEST_GATE_LEAD zoom levels ahead of their photo zoom, still transparent, so their fade-in is never a data change.
+  // The plan at the current zoom: photoIds show now (spot planning keeps clear of them). dataIds, the pin layers' data, is
+  // every planned pin whatever the zoom (each waits, transparent, in its tier's layer), so zooming never changes the data:
+  // reloading the layers' data as pins joined it ahead of their gates made every pin flash.
   const destPinPlan = useMemo(() => {
     const photoIds = new Set<string>(), dataIds = new Set<string>();
-    for (const [id, i] of destPhotoPlan.zoomOf) {
-      const gz = i < 0 ? -Infinity : DEST_LADDER[i];
-      if (gz <= handoffZoom + ZOOM_EPSILON) photoIds.add(id);
-      if (gz <= planZoom + DEST_GATE_LEAD) dataIds.add(id);
+    const ladder = destLadder();
+    for (const [id, i] of destPhotoPlan.pinAt) {
+      if ((i < 0 ? -Infinity : ladder[i]) <= handoffZoom + ZOOM_EPSILON) photoIds.add(id);
+      dataIds.add(id);
     }
     destLabelHitRef.current = { pxPerDegLng: 1, rects: [] };   // names are native symbols: they take taps themselves
-    return { photoIds, dataIds, labelHiddenIds: new Set<string>(), priority: destPhotoPlan.priority, fadeTier: destPhotoPlan.fadeTier };
-  }, [destPhotoPlan, handoffZoom, planZoom]);
+    return { photoIds, dataIds, labelHiddenIds: new Set<string>(), priority: destPhotoPlan.priority, fadeTier: destPhotoPlan.fadeTier, nameTier: destPhotoPlan.nameTier };
+  }, [destPhotoPlan, handoffZoom]);
 
   // Stamps are rendered via CircleLayer (not MarkerView) so Mapbox renders all of them
   // regardless of proximity. Every filter-passing destination gets a stamp — INCLUDING ones
@@ -4438,11 +4471,10 @@ const destItems = useMemo((): DestItem[] =>
   const stablePhotoIds = useStableSet(destPinPlan.dataIds);
   const hiddenDestIdsRef = useRef(hiddenDestIds);
   hiddenDestIdsRef.current = hiddenDestIds;
-  const promotedDests = useMemo(() => destItems
-    .filter(item => !hiddenDestIds.has(item.dest.id) && stablePhotoIds.has(item.dest.id))
-    .map(item => item.dest)
-    .sort((a, b) => b.rank - a.rank), // deterministic order; on-map stacking follows mount order (see useExitingItems)
-  [destItems, stablePhotoIds, hiddenDestIds]);
+  const promotedDests = useMemo(() => DESTINATIONS
+    .filter(d => !hiddenDestIds.has(d.id) && stablePhotoIds.has(d.id))
+    .sort((a, b) => b.rank - a.rank), // deterministic order
+  [stablePhotoIds, hiddenDestIds]);
   // Destinations near their own default zoom (within HANDOFF_BAND levels, around the view): each is drawn on its own small
   // layer (destHandoff-<id>) instead of its tier layer, so that when the camera crosses its default view its photo pin
   // FADES out as its spot pins fade in (and back in on the way out), rather than being pulled from the layer's data at
@@ -4451,8 +4483,8 @@ const destItems = useMemo((): DestItem[] =>
   const handoffDests = useMemo(() => {
     const out: { dest: Destination; past: boolean }[] = [];
     const { latitude, longitude, latitudeDelta, longitudeDelta } = region;
-    for (const item of destItems) {
-      const d = item.dest, level = DEST_ZOOM_LEVEL_BY_ID[d.id];
+    for (const d of DESTINATIONS) {
+      const level = DEST_ZOOM_LEVEL_BY_ID[d.id];
       if (level === undefined || !stablePhotoIds.has(d.id)) continue;
       if (Math.abs(handoffZoom - level) > HANDOFF_BAND) continue;
       if (Math.abs(d.coordinates.latitude - latitude) > latitudeDelta * 1.5 || Math.abs(d.coordinates.longitude - longitude) > longitudeDelta * 1.5) continue;
@@ -4460,7 +4492,7 @@ const destItems = useMemo((): DestItem[] =>
       if (out.length >= HANDOFF_MAX) break;
     }
     return out;
-  }, [destItems, stablePhotoIds, handoffZoom, hiddenDestIds, region]);
+  }, [stablePhotoIds, handoffZoom, hiddenDestIds, region]);
   // Each handoff destination keeps one of HANDOFF_MAX fixed layers (destHandoff-0 … -5) for as long as it is in the band.
   // The layers are always mounted: adding or removing a map layer mid-zoom made Mapbox redo its whole symbol placement,
   // and every destination photo pin vanished for a frame.
@@ -4582,7 +4614,7 @@ const destItems = useMemo((): DestItem[] =>
     let fresh = false;
     for (const d of promotedDests) if (!book.since.has(d.id)) { if (!fresh) { book.seq += 1; fresh = true; } book.since.set(d.id, book.seq); }
     const destSortKey = (id: string) =>
-      planDest?.id === id ? -1 : (book.since.get(id) ?? book.seq) * 100_000 + (destPinPlan.priority.get(id) ?? 9999);
+      planDest?.id === id ? -1 : (book.since.get(id) ?? book.seq) * 100_000 + (destPhotoPlan.priority.get(id) ?? 9999);
     const specs = destPinSpecsRef.current;
     let added = false;
     const features: GeoJSON.Feature<GeoJSON.Point>[] = [];
@@ -4595,31 +4627,23 @@ const destItems = useMemo((): DestItem[] =>
       const selected = false;
       const img = destPinImageName(dest.id, visited, badge, selected);
       if (!specs.has(img)) { specs.set(img, { name: img, dest, visited, badge, selected }); added = true; }
+      // The pin and its name are separate features, each in its own tier's layer (the name may show from a later zoom
+      // than its pin; see destPhotoPlan), and both on the handoff layer while the destination is on one.
+      const ho = handoffIds.has(dest.id) ? 1 : 0, hos = joinedHandoffDests.find(h => h.dest.id === dest.id)?.slot ?? -1;
+      const coordinates = [dest.coordinates.longitude, dest.coordinates.latitude];
       features.push({
-        type: 'Feature',
-        id: dest.id,
-        geometry: { type: 'Point', coordinates: [dest.coordinates.longitude, dest.coordinates.latitude] },
-        properties: { id: dest.id, img, label: dest.name, sort: destSortKey(dest.id), tier: destPinPlan.fadeTier.get(dest.id) ?? '',
-          ho: handoffIds.has(dest.id) ? 1 : 0, hos: joinedHandoffDests.find(h => h.dest.id === dest.id)?.slot ?? -1 },
+        type: 'Feature', id: dest.id, geometry: { type: 'Point', coordinates },
+        properties: { id: dest.id, img, label: '', sort: destSortKey(dest.id), tier: destPhotoPlan.fadeTier.get(dest.id) ?? '', ho, hos },
       });
-    }
-    // Register the pin image of every destination that could be promoted soon (eligible now, or one rank tier deeper)
-    // BEFORE its symbol enters the data. A symbol whose image is not registered yet is placed invisibly: Mapbox runs
-    // its fade with nothing to draw, and the pin then pops in at full opacity when the snapshot lands. Inside a
-    // country every destination is promoted the moment it becomes eligible (the in-country bypass), so rank-4 pins
-    // such as Whanganui, Kāpiti Coast and Wairarapa used to arrive that way while earlier-registered ones faded in.
-    const warm = new Map<string, Destination>();
-    for (const d of eligibleDests) warm.set(d.id, d);
-    for (const d of DESTINATIONS) if (d.rank <= visibleRank + 1) warm.set(d.id, d);
-    for (const dest of warm.values()) {
-      const visited = visitIndex.isDestVisited(dest.id);
-      const badge = visited ? (visitedSpotCountByDest[dest.id] ?? 0) : 0;
-      const img = destPinImageName(dest.id, visited, badge, false);
-      if (!specs.has(img)) { specs.set(img, { name: img, dest, visited, badge, selected: false }); added = true; }
+      const nameTier = destPhotoPlan.nameTier.get(dest.id);
+      if (nameTier !== undefined) features.push({
+        type: 'Feature', id: `${dest.id}:name`, geometry: { type: 'Point', coordinates },
+        properties: { id: dest.id, img: '', label: dest.name, sort: destSortKey(dest.id), tier: nameTier, ho, hos },
+      });
     }
     if (added) destPinSpecListRef.current = [...specs.values()];
     return { shape: { type: 'FeatureCollection' as const, features }, specs: destPinSpecListRef.current };
-  }, [promotedDests, joinedHandoffDests, visitIndex, visitedSpotCountByDest, destPinPlan, planDest, eligibleDests, visibleRank]);
+  }, [promotedDests, joinedHandoffDests, visitIndex, visitedSpotCountByDest, destPhotoPlan, planDest]);
 
   // Which sliding sheet is mounted right now. When it changes from one level to another, the incoming sheet is a
   // replacement for the one that was showing and starts where that one rested (see sheetPose) rather than from below
