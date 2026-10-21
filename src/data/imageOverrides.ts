@@ -514,6 +514,7 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "File:Litchfield National Park (AU), Florence Falls -- 2019 -- 3738.jpg": { x: 0.6, y: 0.5 },
   "Territory Wildlife Park": { x: 0.4, y: 0.6 },
   "Aquascene": { x: 0.5, y: 0.6 },
+  "Charles Darwin National Park": { x: 0.5, y: 0.55 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -1891,7 +1892,6 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Seahorse World",
   // Northern Territory: no photo of the place itself passed the judges (stand-ins rejected); the owner is asked for one
   "Berry Springs, Northern Territory",
-  "Charles Darwin National Park",
   "Palmerston, Northern Territory",
   "Adelaide River, Northern Territory",
   "Mary River National Park",
