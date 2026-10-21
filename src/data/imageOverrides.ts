@@ -518,6 +518,7 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "Berry Springs, Northern Territory": { x: 0.45, y: 0.6 },
   "Palmerston, Northern Territory": { x: 0.5, y: 0.6 },
   "Adelaide River, Northern Territory": { x: 0.4, y: 0.65, zoom: 1.3 },
+  "The Lost City": { x: 0.5, y: 0.5 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -1896,5 +1897,4 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Seahorse World",
   // Northern Territory: no photo of the place itself passed the judges (stand-ins rejected); the owner is asked for one
   "Mary River National Park",
-  "The Lost City",
 ]);
