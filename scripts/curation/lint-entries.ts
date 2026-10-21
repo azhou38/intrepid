@@ -13,6 +13,8 @@
 //   no-ticket   charges (costMin > 0) but has no ticketUrl, or has no cost at all and isn't free (never researched)
 //   district    no entry in src/data/spotDistricts.json (the standalone-spot carousel needs it)
 //   pin         round coordinates (three decimals or fewer): a point written from memory, not taken from a map feature
+//   pin-shared  within PIN_SHARED_M of another spot's pin: one place's point copied to another (Dharug National Park sat on
+//               Wisemans Ferry's point, 5.6 km from the park's visitor area)
 //   bio         fewer than 10 words, more than one sentence, marketing words (WRITING.md → "Voice"), or longer than the carousel card's three
 //               lines (bio-fit.py, measured in the card's own font)
 //   wiki        its photo title (wiki, else name) is missing on Wikipedia, a disambiguation page, or a redirect —
@@ -20,7 +22,7 @@
 // Destinations
 //   shape       whyVisit not two to four (or highlights / whyVisitPhotos not matching its count), goodToKnow not exactly three, a whyVisit reason outside 2–8 words, or bestTimeBlurb without exactly one {months}
 //   voice       marketing words in tagline or description
-// With --offline only the checks that need no network run (shape, voice, bio, no-ticket).
+// With --offline only the checks that need no network run (shape, voice, bio, no-ticket, pin, pin-shared).
 // Fetches go through the shared cache (http-cache.ts). Prints one line per failing entry; --json writes them all.
 import { readFileSync, writeFileSync } from 'node:fs';
 import { spawnSync } from 'node:child_process';
@@ -39,6 +41,13 @@ const MANIFEST_ENTRIES = (JSON.parse(readFileSync('src/data/imageManifest.json',
 const photoFileOf = (sp: { name: string; wiki?: string }) => { const k = spotPhotoTitle(sp as any); return NO_PHOTO.has(k) ? null : decodeURIComponent((MANIFEST_ENTRIES[k]?.o ?? '').split('?')[0]).toLowerCase() || null; };
 const spotsByPhoto = new Map<string, string[]>();
 for (const sp of SPOTS) { const f = photoFileOf(sp); if (f) (spotsByPhoto.get(f) ?? spotsByPhoto.set(f, []).get(f)!).push(sp.id); }
+
+// Two different places almost never share a point: a pin within this distance of another spot's is one place's coordinates
+// reused for another (a park given its gateway village's point, a town given its museum's, a walk given its trailhead
+// beach's). Genuinely adjacent places (two attractions in one building) sit 25 m or more apart.
+const PIN_SHARED_M = 25;
+const metresBetween = (a: { latitude: number; longitude: number }, b: { latitude: number; longitude: number }) =>
+  Math.hypot((a.latitude - b.latitude) * 111_320, (a.longitude - b.longitude) * 111_320 * Math.cos((a.latitude * Math.PI) / 180));
 
 const args = process.argv.slice(2);
 const all = (f: string) => args.flatMap((a, i) => (a === f ? [args[i + 1]] : []));
@@ -142,6 +151,9 @@ async function checkWiki(title: string): Promise<string | null> {
     // Real points from a map feature have five or more decimal places.
     const dec = (v: number) => (String(v).split('.')[1] ?? '').length;
     if (s.coordinates && dec(s.coordinates.latitude) <= 3 && dec(s.coordinates.longitude) <= 3) add(it, 'pin', `round coordinates (${s.coordinates.latitude}, ${s.coordinates.longitude}): a memory pin; run scripts/curation/resolve-pin.py`);
+    // Compared against every spot in the app, not just this region's: a copied point is often a neighbour's across a border.
+    { const twins = SPOTS.filter(o => o.id !== s.id && metresBetween(s.coordinates, o.coordinates) < PIN_SHARED_M);
+      if (twins.length) add(it, 'pin-shared', `within ${PIN_SHARED_M} m of ${twins.map(o => `${o.id} (${o.name}, ${metresBetween(s.coordinates, o.coordinates).toFixed(0)} m)`).join(', ')}: give each place its own point (resolve-pin.py; a park or area at its main visitor point)`); }
     // A national park is a destination or a standalone spot, never a spot of another national park (Horton Falls NP shipped under Mount Kaputar NP).
     if (/national park/i.test(s.name) && s.destinationId && /national park/i.test(DESTINATIONS.find(d => d.id === s.destinationId)?.name ?? '')) add(it, 'park-in-park', `a national park under ${s.destinationId}: make it standalone or its own destination`);
     if ((s.costMin ?? 0) > 0 && !s.ticketUrl) add(it, 'no-ticket', 'charges but has no ticketUrl');
