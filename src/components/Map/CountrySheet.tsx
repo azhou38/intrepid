@@ -68,6 +68,9 @@ interface Props {
   // the parent when the user pans/zooms the map. Identical to DestinationSheet's own
   // peekSignal.
   peekSignal?: number;
+  // The UI-thread peek: bumped by MapScreen the moment a map gesture starts, it drops the sheet to its bottom strip at
+  // once (from half-screen or full), without waiting for a re-render of the map screen.
+  peekSV?: SharedValue<number>;
   // Set by MapScreen to Date.now() on every camera event of a live map gesture. Zooming the map
   // with a finger resting on this sheet's strip used to be read as a swipe of the sheet itself —
   // the finger travels upward during a pinch-in — so lifting it snapped the sheet to half-screen.
@@ -200,7 +203,7 @@ function DestinationsPanel({
 // ── Main component ─────────────────────────────────────────────────────────────
 function CountrySheet({
   cluster, onClose, onSelectDestination, onExpand, onCollapse,
-  pillOffsetSV, pillOffsetLockedSV, onSnapStateChange, initialTab, initialSnap, collapseSignal, peekSignal, exitSignal, exitSV, onExitDone, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, onExited,
+  pillOffsetSV, pillOffsetLockedSV, onSnapStateChange, initialTab, initialSnap, collapseSignal, peekSignal, peekSV, exitSignal, exitSV, onExitDone, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, onExited,
 }: Props) {
   // Collapsed (bottom-screen carousel) is the default view whenever a country is selected —
   // callers only pass initialSnap explicitly for the other case (e.g. the destination sheet's
@@ -411,6 +414,7 @@ function CountrySheet({
   // ── Sheet animation ──────────────────────────────────────────────────────────
   const snapStateRef = useRef<CountrySnapState>(resolvedInitialSnap);
   // Mirrors snapStateRef but readable from the UI-thread gesture worklets below.
+  const exitingSV    = useSharedValue(false);   // set as the UI-thread exit starts: a peek must not cancel it
   const snapStateSV  = useSharedValue<CountrySnapState>(resolvedInitialSnap);
   // Real React state mirror (unlike the ref above, mutating it DOES trigger a re-render) —
   // needed for scrollEnabled below, which must flip the instant the sheet reaches
@@ -722,6 +726,7 @@ function CountrySheet({
     () => exitSV?.value ?? 0,
     (cur, prev) => {
       if (prev === null || cur === prev) return;
+      exitingSV.value = true;
       runOnJS(markExiting)();
       slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, () => { runOnJS(exitDone)(); });
     },
@@ -780,6 +785,20 @@ function CountrySheet({
     lastPos.value = target;
     slideAnim.value = withTiming(target, SNAP_CONFIG);
   };
+  // Map gesture started (peekSV): drop to the bottom strip on the UI thread right away; the JS bookkeeping follows.
+  const peekFromMapGesture = useCallback(() => {
+    if (snapStateRef.current === 'collapsed' || snapStateRef.current === 'full') transitionToRef.current('peek', 'userUI');
+  }, []);
+  useAnimatedReaction(
+    () => peekSV?.value ?? 0,
+    (cur, prev) => {
+      if (prev === null || cur === prev || exitingSV.value) return;
+      if (snapStateSV.value !== 'collapsed' && snapStateSV.value !== 'full') return;
+      snapUI('peek');
+      runOnJS(peekFromMapGesture)();
+    },
+    [peekSV],
+  );
   const callSnapToFullUI      = useCallback(() => transitionToRef.current('full', 'userUI'), []);
   const callSnapToCollapsedUI = useCallback(() => transitionToRef.current('collapsed', 'userUI'), []);
   const callSnapToPeekUI      = useCallback(() => transitionToRef.current('peek', 'userUI'), []);

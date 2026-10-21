@@ -302,6 +302,9 @@ interface Props {
   // parent when the user pans/zooms the map, so the sheet gets out of the way. No-ops if
   // already peeking or the sheet has been dismissed.
   peekSignal?: number;
+  // The UI-thread peek: bumped by MapScreen the moment a map gesture starts, it drops the sheet to its bottom strip at
+  // once (from half-screen or full), without waiting for a re-render of the map screen.
+  peekSV?: SharedValue<number>;
   // Set by MapScreen to Date.now() on every camera event of a live map gesture. Zooming the map
   // with a finger resting on this sheet's strip used to be read as a swipe of the sheet itself —
   // the finger travels upward during a pinch-in — so lifting it snapped the sheet to half-screen.
@@ -332,7 +335,7 @@ interface Props {
 
 function SpotSheet({
   spots, focusSpotId, destination, nearLabel, nearEyebrow, onClose, onExpand, onCollapse, onActiveSpotChange, onCollapsedTopChange,
-  pillOffsetSV, onSnapStateChange, peekSignal, exitSignal, exitSV, onExitDone, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, onExited, onGoToList, collapseSignal,
+  pillOffsetSV, onSnapStateChange, peekSignal, peekSV, exitSignal, exitSV, onExitDone, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, onExited, onGoToList, collapseSignal,
 }: Props) {
   const insets       = useSafeAreaInsets();
   const saveSpotVisited = useStore(s => s.saveSpotVisited);
@@ -607,6 +610,7 @@ function SpotSheet({
   // Shared-value mirror of snapStateRef, readable from the UI-thread gesture worklet below —
   // a plain ref can't be read reliably from a worklet (see the tab gesture's own comment on
   // why). Matches DestinationSheet's own snapStateSV.
+  const exitingSV    = useSharedValue(false);   // set as the UI-thread exit starts: a peek must not cancel it
   const snapStateSV  = useSharedValue<'peek' | 'collapsed' | 'full'>('collapsed');
   // React-state mirror too, for the one spot in the JSX below that needs to actually
   // RE-RENDER when the snap state changes (a plain ref/shared-value read at render time
@@ -801,6 +805,7 @@ function SpotSheet({
     () => exitSV?.value ?? 0,
     (cur, prev) => {
       if (prev === null || cur === prev) return;
+      exitingSV.value = true;
       runOnJS(markExiting)();
       slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, () => { runOnJS(exitDone)(); });
     },
@@ -902,6 +907,20 @@ function SpotSheet({
     lastPos.value = target;
     slideAnim.value = withTiming(target, SNAP_CONFIG);
   };
+  // Map gesture started (peekSV): drop to the bottom strip on the UI thread right away; the JS bookkeeping follows.
+  const peekFromMapGesture = useCallback(() => {
+    if (snapStateRef.current === 'collapsed' || snapStateRef.current === 'full') transitionToRef.current('peek', 'userUI');
+  }, []);
+  useAnimatedReaction(
+    () => peekSV?.value ?? 0,
+    (cur, prev) => {
+      if (prev === null || cur === prev || exitingSV.value) return;
+      if (snapStateSV.value !== 'collapsed' && snapStateSV.value !== 'full') return;
+      snapUI('peek');
+      runOnJS(peekFromMapGesture)();
+    },
+    [peekSV],
+  );
   const callSnapToFullUI      = useCallback(() => transitionToRef.current('full', 'userUI'), []);
   const callSnapToCollapsedUI = useCallback(() => transitionToRef.current('collapsed', 'userUI'), []);
   const callSnapToPeekUI      = useCallback(() => transitionToRef.current('peek', 'userUI'), []);

@@ -1623,6 +1623,9 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // Bumped to imperatively drop whichever sheet is open down to its "peek" state — driven by
   // handleCameraChanged below, the moment the user starts panning/zooming the map.
   const [peekSheetSignal, setPeekSheetSignal] = useState(0);
+  // The country, destination and spot sheets peek on the UI thread from this (see their peekSV): bumping the state above
+  // re-rendered the whole map screen first, so the sheet only started moving well after the gesture had.
+  const peekSheetSV = useSharedValue(0);
   const wasMapGestureActiveRef = useRef(false);
 
   // ── Is the map being interacted with? ─────────────────────────────────────────────────────────────────
@@ -4255,7 +4258,8 @@ const destItems = useMemo((): DestItem[] =>
     // way while still showing what's selected via the thin hero-image strip.
     if (isGestureActive && !wasMapGestureActiveRef.current && sheetSnapStateRef.current !== 'peek'
         && !suppressPeekPushRef.current) {
-      setPeekSheetSignal(c => c + 1);
+      if (sheetKindRef.current) peekSheetSV.value = peekSheetSV.value + 1;
+      else setPeekSheetSignal(c => c + 1);   // the Explore sheet (collapses from half-screen)
       // This peek is a side effect of the user's own map gesture, NOT them dragging the
       // sheet — so the framing sync in handleSheetSnapStateChange must sit it out, or it
       // would fly the camera back to the country's default view mid-pan.
@@ -5549,6 +5553,7 @@ const destItems = useMemo((): DestItem[] =>
           pillOffsetLockedSV={spotOwnsPillSV}
           collapseSignal={collapseSheetSignal}
           peekSignal={peekSheetSignal}
+          peekSV={peekSheetSV}
           exitSignal={sheetExitSignal}
           exitSV={sheetExitSV}
           onExitDone={onSheetExited}
@@ -5584,6 +5589,7 @@ const destItems = useMemo((): DestItem[] =>
           pillOffsetLockedSV={spotOwnsPillSV}
           collapseSignal={collapseSheetSignal}
           peekSignal={peekSheetSignal}
+          peekSV={peekSheetSV}
           exitSignal={sheetExitSignal}
           exitSV={sheetExitSV}
           onExitDone={onSheetExited}
@@ -5612,6 +5618,7 @@ const destItems = useMemo((): DestItem[] =>
           onActiveSpotChange={handleActiveSpotChange}
           pillOffsetSV={upPillBottomSV}
           peekSignal={peekSheetSignal}
+          peekSV={peekSheetSV}
           exitSignal={sheetExitSignal}
           exitSV={sheetExitSV}
           onExitDone={onSheetExited}
