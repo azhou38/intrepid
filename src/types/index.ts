@@ -115,7 +115,8 @@ export interface Destination {
   // Up to three short (2–3 word) phrases, one per whyVisit item, for space-tight surfaces like
   // the Explore cards ("Hot springs · Nordic cafés · Northern lights").
   highlights?: string[];
-  goodToKnow?: [GoodToKnowTip, GoodToKnowTip, GoodToKnowTip];
+  // Two or three tips by popularity (WRITING.md → goodToKnow).
+  goodToKnow?: GoodToKnowTip[];
   // Destination-specific crowd drivers (Tier 2 of the crowd model) — see travelData.ts.
   seasonalTags?: SeasonalSignal[];
   // "Best time to visit" months (1–12), from general travel-guide consensus rather than this

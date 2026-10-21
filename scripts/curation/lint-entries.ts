@@ -20,7 +20,7 @@
 //   wiki        its photo title (wiki, else name) is missing on Wikipedia, a disambiguation page, or a redirect —
 //               only for spots whose photo comes from that lookup (no override, no supplied photo)
 // Destinations
-//   shape       whyVisit not two to four (or highlights / whyVisitPhotos not matching its count), goodToKnow not exactly three, a whyVisit reason outside 2–8 words, or bestTimeBlurb without exactly one {months}
+//   shape       whyVisit not two to four (or highlights / whyVisitPhotos not matching its count), goodToKnow not two or three (or a tip detail over 160 characters), a whyVisit reason outside 2–8 words, or bestTimeBlurb without exactly one {months}
 //   voice       marketing words in tagline or description
 // With --offline only the checks that need no network run (shape, voice, bio, no-ticket, pin, pin-shared).
 // Fetches go through the shared cache (http-cache.ts). Prints one line per failing entry; --json writes them all.
@@ -119,7 +119,10 @@ async function checkWiki(title: string): Promise<string | null> {
       if (!/^(See|Visit|Walk|Hike|Cross|Climb|Swim|Soak|Taste|Sail|Cruise|Explore|Watch|Spot|Meet|Ride|Paddle|Kayak|Dive|Snorkel|Wander|Stroll|Sip|Eat|Try|Hunt|Ski|Soar|Fly|Drive|Join|Feed|Stay|Discover|Relax|Trek|Camp|Float|Raft|Bungy|Gaze|Admire|Browse|Tour|Cycle|Bike|Surf|Fish|Dine|Shop|Roam|Find|Enjoy|Experience|Take|Hear|Step|Stand|Ascend|Descend|Sample|Look|Spend|Go|Board|Paraglide|Zipline|Scramble|Marvel|Sandboard|Dig|Punt|View|Photograph|Pan|Learn|Feel|Taste|Cheer|Shelter|Pause|Pass|Reach|Follow|Hunt|Scale|Wade|Bathe|Ramble|Savour|Sunbathe|Stargaze|Whale-watch|Heli-hike|Stop)\b/i.test(w.trim())) add(it, 'shape', `whyVisit "${w}" does not start with an action (e.g. "Walk the…", "See the…")`);
     }
     if ((d.highlights?.length ?? 0) !== nWhy) add(it, 'shape', `${d.highlights?.length ?? 0} highlights (needs one per whyVisit: ${nWhy})`);
-    if ((d.goodToKnow?.length ?? 0) !== 3) add(it, 'shape', `${d.goodToKnow?.length ?? 0} goodToKnow (needs 3)`);
+    // Two or three tips by popularity (WRITING.md: 3 for rank 1–3, 2 for rank 4–5), each detail three to four lines on screen.
+    const nTips = d.goodToKnow?.length ?? 0;
+    if (nTips < 2 || nTips > 3) add(it, 'shape', `${nTips} goodToKnow (needs 2–3: 3 for rank 1–3, 2 for rank 4–5)`);
+    for (const t of d.goodToKnow ?? []) if (t.detail.length > 160) add(it, 'shape', `goodToKnow "${t.title}" detail is ${t.detail.length} characters (max 160, aim ~120)`);
     if (((d.bestTimeBlurb ?? '').match(/\{months\}/g) ?? []).length !== 1) add(it, 'shape', 'bestTimeBlurb needs exactly one {months}');
     for (const [f, v] of [['tagline', d.tagline], ['description', d.description]] as const) {
       const m = (v ?? '').replace(/\bbirds?[- ]of[- ]paradise\b/gi, 'birds').match(MARKETING); if (m) add(it, 'voice', `${f}: "${m[0]}"`);
