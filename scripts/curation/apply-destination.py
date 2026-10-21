@@ -31,8 +31,8 @@ if (not picks.get('header') and not no_header) or len(picks.get('why', [])) != n
     sys.exit(f"refusing: {d['id']} needs an accepted header and one why-visit photo per reason ({n_why}) (picks.json); have {picks}")
 if len(d.get('highlights', [])) != n_why:
     sys.exit(f'refusing: highlights must have one entry per reason ({n_why})')
-if len(d.get('goodToKnow', [])) != 3:
-    sys.exit('refusing: goodToKnow must have exactly three entries')
+if not 2 <= len(d.get('goodToKnow', [])) <= 3 or any(len(t.get('detail', '')) > 160 for t in d.get('goodToKnow', [])):
+    sys.exit('refusing: goodToKnow must have two or three entries (3 for rank 1-3, 2 for rank 4-5), each detail 160 characters or fewer')
 if d['bestTimeBlurb'].count('{months}') != 1:
     sys.exit('refusing: bestTimeBlurb needs exactly one {months}')
 
