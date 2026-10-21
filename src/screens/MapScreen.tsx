@@ -5110,8 +5110,10 @@ const destItems = useMemo((): DestItem[] =>
               textSize: 12,
               textMaxWidth: 10,
               textVariableAnchor: ['right', 'left'] as any,
-              textRadialOffset: 1.7,
-              textTranslate: [0, -19],
+              // 'auto': a name to the right of its pin is left-aligned, one to the left right-aligned (never centred).
+              textJustify: 'auto',
+              textRadialOffset: 1.5,
+              textTranslate: [0, -23],
               textOptional: true,
               textAllowOverlap: false,
               textPadding: 2,
