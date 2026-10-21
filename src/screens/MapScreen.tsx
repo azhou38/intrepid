@@ -965,17 +965,19 @@ const DEST_SYMBOL_STYLE: any = {
 // The photo plan's zoom ladder (destPhotoPlan): pins and names are placed, and switch on, at these zooms. It holds every
 // rank and country gate exactly, so a pin with room shows exactly where it used to, plus a half-level grid for pins and
 // names that wait for room. Built on first use (the country gates need helpers defined further down).
+// Photo pins (and their names) come in this many zoom levels wider than their rank or country gate.
+const DEST_PHOTO_EARLY = 0.35;
 let destLadderCache: number[] | null = null;
 const destLadder = (): number[] => {
   if (destLadderCache) return destLadderCache;
-  const zs = [...Array.from({ length: 31 }, (_, i) => 1 + i * 0.5), ...Object.values(DEST_RANK_GATE_ZOOM)];
-  for (const cc of new Set(DESTINATIONS.map(d => d.countryCode))) { const z = countryGateZoom(cc); if (z !== undefined) zs.push(z); }
+  const zs = [...Array.from({ length: 31 }, (_, i) => 1 + i * 0.5), ...Object.values(DEST_RANK_GATE_ZOOM).map(z => z - DEST_PHOTO_EARLY)];
+  for (const cc of new Set(DESTINATIONS.map(d => d.countryCode))) { const z = countryGateZoom(cc); if (z !== undefined) zs.push(z - DEST_PHOTO_EARLY); }
   zs.sort((a, b) => a - b);
   const out: number[] = [];
   for (const z of zs) {
     if (!Number.isFinite(z)) continue;
     // A grid zoom right next to a gate gives way to the gate.
-    if (out.length && z - out[out.length - 1] < 0.1) { if (Object.values(DEST_RANK_GATE_ZOOM).includes(z) || z % 0.5 !== 0) out[out.length - 1] = z; continue; }
+    if (out.length && z - out[out.length - 1] < 0.1) { if (z % 0.5 !== 0) out[out.length - 1] = z; continue; }
     out.push(z);
   }
   return (destLadderCache = out);
@@ -987,7 +989,7 @@ function destEligibleZoom(d: Destination, visited: boolean, selCC: string | unde
   const effRank = Math.max(1, d.rank - (visited ? 1 : 0));
   const rz = DEST_RANK_GATE_ZOOM[`r${effRank}`] ?? Infinity;
   const cz = countryGateZoom(d.countryCode) ?? Infinity;
-  return Math.min(rz, cz, d.countryCode === selCC ? selCountryZoom : Infinity);
+  return Math.min(rz, cz, d.countryCode === selCC ? selCountryZoom : Infinity) - DEST_PHOTO_EARLY;
 }
 // The country pills showing at zoom `z` (the same rules as MapScreen's countryPills, at that zoom), for the photo plan.
 function pillsAtZoom(z: number, planCountry: { countryCode: string } | null, planDest: Destination | null): { latitude: number; longitude: number }[] {
