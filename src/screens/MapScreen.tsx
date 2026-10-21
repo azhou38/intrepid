@@ -130,6 +130,7 @@ const EXPLORE_COLOR  = '#6366F1';
 // Pin-plan look-ahead while the camera zooms out (see planZoom / zoomOutLead).
 const PLAN_LAG_SEC = 0.6;         // assumed delay between a camera frame and the render that reacts to it
 const PLAN_LEAD_MAX_ZOOM = 4;     // cap on the predicted outward travel
+const DEST_GATE_LOOKAHEAD = 0.75; // cap on it for the destination photo tiers (see destGateZoom)
 // A destination within this many zoom levels of its own default view is drawn on its own handoff layer (see handoffDests),
 // at most HANDOFF_MAX at once.
 const HANDOFF_BAND = 1.0;
@@ -820,6 +821,7 @@ const destGateOn = (tier: string, z: number) => {
 // Mapbox places the TOP layer's symbols first, so tiers that switch on at wider zooms sit above later ones and a pin
 // that is still hidden (it joins its layer DEST_GATE_LEAD early) can never push out one that is showing; '' is on top.
 const DEST_GATE_FADE_MS = 250;
+const DEST_GATE_FADE_OUT_MS = 140;
 // One layer per photo-plan tier (destPhotoPlan): bottom to top, the latest to switch on first, '' (always shown) on top.
 // Pins and names are drawn without collision (the plan has already spaced them), so the order only sets which pin draws
 // over which where a fading pin passes another.
@@ -830,7 +832,8 @@ const destTierStyle = (tier: string, on: boolean, snap = false) => {
   const key = `${tier}|${on ? 1 : 0}|${snap ? 1 : 0}`;
   let st = destTierStyleCache.get(key);
   if (!st) {
-    const ms = snap ? 0 : DEST_GATE_FADE_MS;
+    // Fading out is quicker than fading in, so pins clear out of the way on a fast zoom-out.
+    const ms = snap ? 0 : on ? DEST_GATE_FADE_MS : DEST_GATE_FADE_OUT_MS;
     st = {
       ...DEST_SYMBOL_STYLE,
       iconOpacity: on ? 1 : 0, textOpacity: on ? 1 : 0,
@@ -2126,6 +2129,10 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // otherwise read as already past the destination's default zoom, flash its pin in and its spot pins out, then undo it
   // when the gesture settled.
   const handoffZoom = closeTarget !== null ? Math.min(camZoom, closeTarget) : camZoom;
+  // The zoom the destination photo tiers switch at: on a fast zoom-out, a little ahead of the camera (the predicted outward
+  // travel over the render lag, at most DEST_GATE_LOOKAHEAD levels), so pins start fading as their gate approaches instead
+  // of a render or more after the camera has passed it, which left them clumped together on the way out.
+  const destGateZoom = camZoom - Math.min(zoomOutLead, DEST_GATE_LOOKAHEAD);
   // How much wider the view a close is flying to is than the one the camera reports right now (1 when no close is under
   // way). The viewport spot query and the spot pin plan scale the live bounds by it, so they work in the target view from
   // the first frame: the bounds lag the camera, and a close used to show only the few spots inside the old zoomed-in view
@@ -4671,7 +4678,7 @@ const destItems = useMemo((): DestItem[] =>
     const h = stableHandoffDests.find(x => x.slot === k);
     if (!h) return { h: undefined, tier: '', on: handoffSlotOnRef.current[k], snap: false };
     const tier = destPinPlan.fadeTier.get(h.dest.id) ?? '';
-    const on = destGateOn(tier, camZoom) && !h.past;
+    const on = destGateOn(tier, destGateZoom) && !h.past;
     if (!handoffJoinedRef.current.has(h.dest.id)) {
       if (handoffSlotOnRef.current[k] !== on) return { h: undefined, tier, on, snap: true };
       handoffJoinedRef.current.add(h.dest.id);
@@ -5134,7 +5141,7 @@ const destItems = useMemo((): DestItem[] =>
                 id={`destPhotoSymbols-${tier || 'ungated'}`}
                 aboveLayerID={i === 0 ? 'destStampCircles' : `destPhotoSymbols-${all[i - 1] || 'ungated'}`}
                 filter={['all', ['==', ['get', 'tier'], tier], ['!=', ['get', 'ho'], 1]] as any}
-                style={destTierStyle(tier, destGateOn(tier, camZoom))}
+                style={destTierStyle(tier, destGateOn(tier, destGateZoom))}
               />
             )),
             // The handoff layers (see handoffDests): a fixed pool, always mounted; slot k draws the destination assigned to it
