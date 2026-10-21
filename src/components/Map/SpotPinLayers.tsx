@@ -24,10 +24,10 @@ function SpotPinLayers({ shape, satellite, onPressSpot }: Props) {
   // then fades to 1, leavers move to one resting at 1 that then fades to 0. Once its fade has finished a newcomer moves to
   // the steady layer and a leaver is dropped; the layer keeps its final opacity, ready for the opposite fade next. With no
   // free layer, the pins switch at once, as before. What shows is exactly the plan's; only the switch is animated.
-  type SpotFadeSlot = { mode: 'free' | 'in' | 'out'; keys: Set<string>; on: boolean; started: boolean };
+  type SpotFadeSlot = { mode: 'free' | 'in' | 'out'; keys: Set<string>; on: boolean; started: boolean; readyAt: number };
   const spotFadeRef = useRef<{ steady: Set<string>; feats: Map<string, GeoJSON.Feature<GeoJSON.Point>>; slots: Record<'p' | 'm', SpotFadeSlot[]> } | null>(null);
   if (!spotFadeRef.current) {
-    const mk = () => Array.from({ length: SPOT_FADE_SLOTS }, (_, i): SpotFadeSlot => ({ mode: 'free', keys: new Set(), on: i % 2 === 1, started: false }));
+    const mk = () => Array.from({ length: SPOT_FADE_SLOTS }, (_, i): SpotFadeSlot => ({ mode: 'free', keys: new Set(), on: i % 2 === 1, started: false, readyAt: 0 }));
     spotFadeRef.current = { steady: new Set(), feats: new Map(), slots: { p: mk(), m: mk() } };
   }
   const [spotFadeTick, setSpotFadeTick] = useState(0);
@@ -40,6 +40,7 @@ function SpotPinLayers({ shape, satellite, onPressSpot }: Props) {
       desired.set(`${f.properties!.id}:${kind}`, { ...f, properties: { ...f.properties, k: kind } });
     }
     const kindOf = (key: string) => (key.endsWith(':p') ? 'p' : 'm') as 'p' | 'm';
+    const now = Date.now();
     const slotOf = new Map<string, SpotFadeSlot>();
     for (const kind of ['p', 'm'] as const) for (const sl of st.slots[kind]) for (const key of sl.keys) slotOf.set(key, sl);
     const entering: Record<'p' | 'm', string[]> = { p: [], m: [] };
@@ -55,13 +56,13 @@ function SpotPinLayers({ shape, satellite, onPressSpot }: Props) {
     }
     for (const kind of ['p', 'm'] as const) {
       if (entering[kind].length) {
-        const sl = st.slots[kind].find(x => x.mode === 'free' && !x.on);
+        const sl = st.slots[kind].find(x => x.mode === 'free' && !x.on && x.readyAt <= now);
         if (sl) { sl.mode = 'in'; sl.keys = new Set(entering[kind]); sl.started = false; }
         else for (const key of entering[kind]) st.steady.add(key);
       }
       if (leaving[kind].length) {
         for (const key of leaving[kind]) st.steady.delete(key);
-        const sl = st.slots[kind].find(x => x.mode === 'free' && x.on);
+        const sl = st.slots[kind].find(x => x.mode === 'free' && x.on && x.readyAt <= now);
         if (sl) { sl.mode = 'out'; sl.keys = new Set(leaving[kind]); sl.started = false; }
       }
     }
@@ -97,29 +98,28 @@ function SpotPinLayers({ shape, satellite, onPressSpot }: Props) {
         sl.on = sl.mode === 'in';
         sl.mode = 'free';
         sl.keys = new Set();
-        // Keep free layers ready for both directions: an empty layer can change its resting opacity unseen (a free
-        // layer's change is not animated), so after many fades one way there are still layers to fade the other way.
+        // Keep free layers ready for both directions: an empty layer can change its resting opacity unseen, so after many
+        // fades one way there are still layers to fade the other way. That change animates like any other (the layers'
+        // transition never changes: a fade that also switched the transition did not animate on the phone), so
+        // the layer takes no pins until it has finished.
         const free = st.slots[kind].filter(x => x.mode === 'free');
         const offs = free.filter(x => !x.on), ons = free.filter(x => x.on);
-        if (offs.length < 2 && ons.length > 2) ons[0].on = false;
-        else if (ons.length < 2 && offs.length > 2) offs[0].on = true;
+        const flip = offs.length < 2 && ons.length > 2 ? ons[0] : ons.length < 2 && offs.length > 2 ? offs[0] : null;
+        if (flip) { flip.on = !flip.on; flip.readyAt = Date.now() + DEST_GATE_FADE_MS + 50; }
         setSpotFadeTick(t => t + 1);
       }, DEST_GATE_FADE_MS + 50);
     }
     if (start) setSpotFadeTick(t => t + 1);
   }, [spotPinShape]);
-  // Each fade layer's opacity; `snap` while it is free or its batch has not started, so a change then is not animated.
+  // Each fade layer's opacity: its resting one while free or before its batch starts, then the fade's target.
   const spotFadeLayers = (['m', 'p'] as const).map(kind => ({
     kind,
-    slots: spotFadeRef.current!.slots[kind].map(sl => sl.mode === 'free' || !sl.started
-      ? { on: sl.on, snap: true }
-      : { on: sl.mode === 'in', snap: false }),
+    slots: spotFadeRef.current!.slots[kind].map(sl => (sl.mode === 'free' || !sl.started ? sl.on : sl.mode === 'in')),
   }));
 
   // The spot pin layers' styles: the small pin, or the photo pin and its name, at a constant opacity Mapbox animates.
   const spotPinStyles = useMemo(() => {
     const fade = { duration: DEST_GATE_FADE_MS, delay: 0 };
-    const none = { duration: 0, delay: 0 };
     const mini = {
       iconImage: ['get', 'mini'] as any,
       iconAnchor: 'bottom' as const,
@@ -159,14 +159,13 @@ function SpotPinLayers({ shape, satellite, onPressSpot }: Props) {
       textOpacityTransition: fade,
     };
     const out: Record<string, any> = {};
-    for (const on of [false, true]) for (const snap of [false, true]) {
-      const t = snap ? none : fade;
-      out[`m${on}${snap}`] = { ...mini, iconOpacity: on ? 1 : 0, iconOpacityTransition: t };
-      out[`p${on}${snap}`] = { ...photo, iconOpacity: on ? 1 : 0, textOpacity: on ? 1 : 0, iconOpacityTransition: t, textOpacityTransition: t };
+    for (const on of [false, true]) {
+      out[`m${on}`] = { ...mini, iconOpacity: on ? 1 : 0 };
+      out[`p${on}`] = { ...photo, iconOpacity: on ? 1 : 0, textOpacity: on ? 1 : 0 };
     }
     return out;
   }, [satellite]);
-  const spotPinStyle = (kind: 'p' | 'm', on: boolean, snap = false) => spotPinStyles[`${kind}${on}${snap}`];
+  const spotPinStyle = (kind: 'p' | 'm', on: boolean) => spotPinStyles[`${kind}${on}`];
 
 
   return (
@@ -182,13 +181,13 @@ function SpotPinLayers({ shape, satellite, onPressSpot }: Props) {
       {/* Small pins, then photo pins with their names, each as a steady layer plus fade layers (see spotPinShape).
           Bottom to top: the fade layers under their steady layer, so steady pins and names are placed first. */}
       {spotFadeLayers.flatMap(({ kind, slots }) => [
-        ...slots.map(({ on, snap }, i) => (
+        ...slots.map((on, i) => (
           <MapboxGL.SymbolLayer
             key={`spotPins-${kind}-${i}`}
             id={`spotPins-${kind}-${i}`}
             belowLayerID="destStampCircles"
             filter={['all', ['==', ['get', 'k'], kind], ['==', ['get', 'L'], String(i)]] as any}
-            style={spotPinStyle(kind, on, snap)}
+            style={spotPinStyle(kind, on)}
           />
         )),
         <MapboxGL.SymbolLayer
