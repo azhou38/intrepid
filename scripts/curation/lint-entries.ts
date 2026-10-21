@@ -153,7 +153,7 @@ async function checkWiki(title: string): Promise<string | null> {
     if (s.coordinates && dec(s.coordinates.latitude) <= 3 && dec(s.coordinates.longitude) <= 3) add(it, 'pin', `round coordinates (${s.coordinates.latitude}, ${s.coordinates.longitude}): a memory pin; run scripts/curation/resolve-pin.py`);
     // Compared against every spot in the app, not just this region's: a copied point is often a neighbour's across a border.
     { const twins = SPOTS.filter(o => o.id !== s.id && metresBetween(s.coordinates, o.coordinates) < PIN_SHARED_M);
-      if (twins.length) add(it, 'pin-shared', `within ${PIN_SHARED_M} m of ${twins.map(o => `${o.id} (${o.name}, ${metresBetween(s.coordinates, o.coordinates).toFixed(0)} m)`).join(', ')}: give each place its own point (resolve-pin.py; a park or area at its main visitor point)`); }
+      if (twins.length) add(it, 'pin-shared', `within ${PIN_SHARED_M} m of ${twins.map(o => `${o.id} (${o.name}, ${metresBetween(s.coordinates, o.coordinates).toFixed(0)} m)`).join(', ')}: give each place its own point (COVERAGE.md → "Every place has its own point"), or if both are right, move the lesser one 25 m away`); }
     // A national park is a destination or a standalone spot, never a spot of another national park (Horton Falls NP shipped under Mount Kaputar NP).
     if (/national park/i.test(s.name) && s.destinationId && /national park/i.test(DESTINATIONS.find(d => d.id === s.destinationId)?.name ?? '')) add(it, 'park-in-park', `a national park under ${s.destinationId}: make it standalone or its own destination`);
     if ((s.costMin ?? 0) > 0 && !s.ticketUrl) add(it, 'no-ticket', 'charges but has no ticketUrl');
