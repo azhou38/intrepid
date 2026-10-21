@@ -112,6 +112,8 @@ const CARD_GAP  = 12;
 const CARD_SNAP = CARD_W + CARD_GAP;
 // Cards either side of the active one that are rendered for real (see the carousel's map below).
 const CAROUSEL_WINDOW = 3;
+// Clones of the spots at the other end on each side of the looping carousel (see extendedSpots).
+const LOOP_CLONES = 2;
 const SIDE_PAD  = (W - CARD_W) / 2;
 
 // "Explore nearby" grid card — same square SpotCard, same width formula, as the destination
@@ -416,18 +418,20 @@ function SpotSheet({
   // recognizes gesture-handler-managed native views (DestinationSheet's own equivalent ref is
   // GH's ScrollView for the same reason).
   const nearbyHlScrollRef = useRef<GHScrollView>(null);
-  // Endless-scroll illusion: a clone of the last spot is prepended and a clone of the first
-  // is appended, so scrolling past either real end reveals a card that looks identical to
-  // wrapping around — then the moment that clone settles, we silently (non-animated)
-  // reposition to the matching real card at the opposite end, which is imperceptible since
-  // the two render identically. Only worth doing with 2+ spots.
-  const loopOffset = spots.length > 1 ? 1 : 0;
+  // Endless-scroll illusion: clones of the last LOOP_CLONES spots are prepended and clones of the first LOOP_CLONES
+  // appended, so scrolling past either real end reveals cards that look identical to wrapping around — then the moment a
+  // clone settles, we silently (non-animated) reposition to the matching real card, which is imperceptible since the two
+  // render identically. Two clones a side, not one: a swipe from the last spot lands on the first spot's clone, and the
+  // card beside it (the second spot) has to be there too until the slide stops and the jump happens, about a second
+  // later; with one clone that side of the carousel stood empty meanwhile. Only worth doing with 2+ spots.
+  const loopOffset = spots.length > 1 ? LOOP_CLONES : 0;
   const extendedSpots = useMemo(() => {
     if (spots.length <= 1) return spots.map((s, i) => ({ spot: s, realIndex: i }));
+    const n = spots.length, at = (i: number) => ((i % n) + n) % n;
     return [
-      { spot: spots[spots.length - 1], realIndex: spots.length - 1 },
+      ...Array.from({ length: LOOP_CLONES }, (_, k) => { const r = at(k - LOOP_CLONES); return { spot: spots[r], realIndex: r }; }),
       ...spots.map((s, i) => ({ spot: s, realIndex: i })),
-      { spot: spots[0], realIndex: 0 },
+      ...Array.from({ length: LOOP_CLONES }, (_, k) => { const r = at(k); return { spot: spots[r], realIndex: r }; }),
     ];
   }, [spots]);
   const [activeTab, setActiveTab] = useState<'visit' | 'about'>('visit');
@@ -1024,18 +1028,12 @@ function SpotSheet({
   const handleCarouselSettle = (offsetX: number) => {
     carouselReleasedRef.current = false;
     const extIdx = Math.round(offsetX / CARD_SNAP);
-    // Landed on the leading clone (a copy of the last spot) — silently jump to the real
-    // last card's position, which looks identical, completing the wrap-around.
-    if (loopOffset && extIdx === 0) {
-      const real = spots.length - 1;
+    // Landed on a clone (a copy of a spot from the other end) — silently jump to the matching real card's position,
+    // which looks identical, completing the wrap-around.
+    if (loopOffset && (extIdx < loopOffset || extIdx >= loopOffset + spots.length)) {
+      const real = realIndexOfExt(extIdx);
       carouselRef.current?.scrollTo({ x: (real + loopOffset) * CARD_SNAP, animated: false });
       if (real !== activeIndex) { setActiveIndex(real); Haptics.selectionAsync(); onActiveSpotChange?.(spots[real]); }
-      return;
-    }
-    // Landed on the trailing clone (a copy of the first spot) — same idea, other direction.
-    if (loopOffset && extIdx === extendedSpots.length - 1) {
-      carouselRef.current?.scrollTo({ x: loopOffset * CARD_SNAP, animated: false });
-      if (activeIndex !== 0) { setActiveIndex(0); Haptics.selectionAsync(); onActiveSpotChange?.(spots[0]); }
       return;
     }
     const idx = Math.max(0, Math.min(spots.length - 1, extIdx - loopOffset));
@@ -1055,12 +1053,11 @@ function SpotSheet({
   // The real spot index a card of the extended list stands for: the loop's leading clone is the last spot and its trailing
   // clone the first, so the counter and the map follow a wrap-around slide as they do any other (they used to wait for the
   // slide to settle there). Settle then does the silent jump to the real card and finds the spot already active.
-  const realIndexOfExt = (extIdx: number) => {
+  function realIndexOfExt(extIdx: number) {
     if (!loopOffset) return Math.max(0, Math.min(spots.length - 1, extIdx));
-    if (extIdx <= 0) return spots.length - 1;
-    if (extIdx >= extendedSpots.length - 1) return 0;
-    return extIdx - loopOffset;
-  };
+    const n = spots.length, i = Math.max(0, Math.min(extendedSpots.length - 1, extIdx)) - loopOffset;
+    return ((i % n) + n) % n;
+  }
   const carouselReleasedRef = useRef(false);
   const handleCarouselScroll = (offsetX: number) => {
     if (!carouselReleasedRef.current) return;
@@ -1402,7 +1399,7 @@ isVisited ? (
               // (Wellington: 30 spots, 32 cards with the loop clones) used to mount every card at once — each with its
               // own photo fetch and gradient — on the tap that opens the sheet, which is what held the sheet back.
               // The two ends stay real too, so the loop's clone hand-off never lands on a blank card.
-              Math.abs(i - (activeIndex + loopOffset)) > CAROUSEL_WINDOW && i > 1 && i < extendedSpots.length - 2 ? (
+              Math.abs(i - (activeIndex + loopOffset)) > CAROUSEL_WINDOW && i > 2 * loopOffset && i < extendedSpots.length - 1 - 2 * loopOffset ? (
                 <View key={`${item.spot.id}-${i}`} style={[st.card, st.cardShadowUnvisited, st.cardPlaceholder, { width: CARD_W, marginRight: CARD_GAP, height: '100%' }]} />
               ) : (
               <CarouselCard
