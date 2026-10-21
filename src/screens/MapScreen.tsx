@@ -1233,6 +1233,8 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
       perfUiStartSV.value = 0;
     }
   });
+  // TEMPORARY: React's own render+commit time per wrapped subtree.
+  const perfOnRender = useCallback((id: string, phase: string, actual: number) => { perfCount(`${id} ${phase}`, actual); }, []);
   const perfStart = (what: string) => { perfArm(what); perfUiStartSV.value = 0; perfUiArmSV.value = 1; };
   const insets = useSafeAreaInsets();
   const cameraRef = useRef<MapboxGL.Camera>(null);
@@ -4797,6 +4799,7 @@ const destItems = useMemo((): DestItem[] =>
 
       {/* ── MAP ──────────────────────────────────────────────────────────── */}
       {styleResolved && (
+      <React.Profiler id="MapView" onRender={perfOnRender}>
       <MapboxGL.MapView
         style={StyleSheet.absoluteFill}
         // Globe at every zoom, never swapped. Mapbox's iOS SDK applies setProjection
@@ -5223,6 +5226,7 @@ const destItems = useMemo((): DestItem[] =>
 
         </>}
       </MapboxGL.MapView>
+      </React.Profiler>
       )}
 
       {/* ── Search backdrop — white fill behind the focused search bar + results, so the
@@ -5441,6 +5445,7 @@ const destItems = useMemo((): DestItem[] =>
           with each other. ─────────────────────────────────────────────────────────────── */}
       {/* Stays mounted (hidden off-screen) behind a selection, so closing it slides the sheet straight back up. */}
       {!searchFocused && !exploreHeld && (
+        <React.Profiler id="ExploreSheet" onRender={perfOnRender}>
         <ExploreSheet
           hidden={!!(selectedCountry || selectedDest || selectedSpot)}
           collapseSignal={peekSheetSignal}
@@ -5453,10 +5458,12 @@ const destItems = useMemo((): DestItem[] =>
           onScrollYChange={handleExploreScrollY}
           onSearchPress={handleExploreSearchPress}
         />
+        </React.Profiler>
       )}
 
 {/* ── Country sheet ─────────────────────────────────────────────────── */}
       {selectedCountry && !selectedDest && !selectedSpot && (
+        <React.Profiler id="CountrySheet" onRender={perfOnRender}>
         <CountrySheet
           key={`country-${sheetSwapKey}`}
           cluster={selectedCountry}
@@ -5487,10 +5494,12 @@ const destItems = useMemo((): DestItem[] =>
           // had anywhere to report to.
           onSnapStateChange={handleSheetSnapStateChange}
         />
+        </React.Profiler>
       )}
 
       {/* ── Unified destination sheet — hidden while a spot sheet is open on top */}
       {mapState !== 'world' && selectedDest && !selectedSpot && !destAfterCamera && (
+        <React.Profiler id="DestinationSheet" onRender={perfOnRender}>
         <DestinationSheet
           key={`dest-${sheetSwapKey}`}
           destination={selectedDest}
@@ -5514,10 +5523,12 @@ const destItems = useMemo((): DestItem[] =>
           initialTab={destInitialTab}
           initialSnap={destInitialSnap}
         />
+        </React.Profiler>
       )}
 
       {/* ── Spot sheet — swipeable carousel of the destination's spots, expandable to full */}
       {selectedSpot && spotFocusId && (
+        <React.Profiler id="SpotSheet" onRender={perfOnRender}>
         <SpotSheet
           key={`spot-${sheetSwapKey}`}
           spots={carouselSpots}
@@ -5543,12 +5554,14 @@ const destItems = useMemo((): DestItem[] =>
           onGoToList={selectedSpot.destinationId && !nearCtx ? handleGoToListView : undefined}
           collapseSignal={collapseSheetSignal}
         />
+        </React.Profiler>
       )}
 
 {/* ── Outgoing copy of the sheet a country <-> destination swap is replacing — drawn ABOVE the incoming sheet so its slide down is visible while the new one rises beneath it ── */}
       {leavingSheetRef.current && (
         <View pointerEvents="none" style={StyleSheet.absoluteFill}>
           {leavingSheetRef.current.kind === 'country' && leavingSheetRef.current.cluster && (
+            <React.Profiler id="leaving CountrySheet" onRender={perfOnRender}>
             <CountrySheet
               key={`leaving-country-${leavingSheetRef.current.seq}`}
               cluster={leavingSheetRef.current.cluster}
@@ -5558,8 +5571,10 @@ const destItems = useMemo((): DestItem[] =>
               onExited={handleLeavingSheetExited}
               enterFromPrevious
             />
+            </React.Profiler>
           )}
           {leavingSheetRef.current.kind === 'spot' && leavingSheetRef.current.focusId && (
+            <React.Profiler id="leaving SpotSheet" onRender={perfOnRender}>
             <SpotSheet
               key={`leaving-spot-${leavingSheetRef.current.seq}`}
               spots={leavingSheetRef.current.spots}
@@ -5570,8 +5585,10 @@ const destItems = useMemo((): DestItem[] =>
               onExited={handleLeavingSheetExited}
               enterFromPrevious
             />
+            </React.Profiler>
           )}
           {leavingSheetRef.current.kind === 'dest' && leavingSheetRef.current.dest && (
+            <React.Profiler id="leaving DestinationSheet" onRender={perfOnRender}>
             <DestinationSheet
               key={`leaving-dest-${leavingSheetRef.current.seq}`}
               destination={leavingSheetRef.current.dest}
@@ -5581,6 +5598,7 @@ const destItems = useMemo((): DestItem[] =>
               onExited={handleLeavingSheetExited}
               enterFromPrevious
             />
+            </React.Profiler>
           )}
         </View>
       )}
