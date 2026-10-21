@@ -1,6 +1,7 @@
 import React, { memo, useRef, useState, useMemo, useCallback, useEffect, useLayoutEffect } from 'react';
 import { unstable_batchedUpdates, View, StyleSheet, Pressable, Text, Dimensions, Animated, Platform, TextInput, Image, Easing as RNEasing, Keyboard, ScrollView } from 'react-native';
-import Reanimated, { useSharedValue, useAnimatedStyle, useAnimatedReaction, runOnJS, withTiming, Easing } from 'react-native-reanimated';
+import Reanimated, { useSharedValue, useAnimatedStyle, useAnimatedReaction, runOnJS, withTiming, Easing, useFrameCallback } from 'react-native-reanimated';
+import { perfArm, perfMark, perfCount, perfNow, PERF_WINDOW_MS } from '../utils/perfProbe';   // TEMPORARY
 import Svg, { Rect, Path, Circle } from 'react-native-svg';
 import { sheetPose } from '../components/Map/sheetPose';
 import MapboxGL from '@rnmapbox/maps';
@@ -1207,6 +1208,31 @@ function useStableList<T>(next: T[], key: (t: T) => string): T[] {
 }
 
 export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = {}) {
+  // TEMPORARY perf probe (see perfProbe.ts): this render's JS time and commit, and the UI thread's long frames.
+  const perfRenderStart = perfNow();
+  useLayoutEffect(() => { perfCount('MapScreen render+commit', perfNow() - perfRenderStart); });
+  const perfUiArmSV = useSharedValue(0);
+  const perfUiStartSV = useSharedValue(0);
+  const perfUiFramesSV = useSharedValue(0);
+  const perfUiLogSV = useSharedValue('');
+  const perfUiReport = useCallback((frames: number, log: string) => {
+    console.log(`[perf] UI thread: ${frames} frames in ${PERF_WINDOW_MS}ms; long frames (at:ms) ${log || 'none'}`);
+  }, []);
+  useFrameCallback(f => {
+    'worklet';
+    if (!perfUiArmSV.value) return;
+    if (!perfUiStartSV.value) { perfUiStartSV.value = f.timestamp; perfUiFramesSV.value = 0; perfUiLogSV.value = ''; return; }
+    const at = f.timestamp - perfUiStartSV.value;
+    perfUiFramesSV.value += 1;
+    const dt = f.timeSincePreviousFrame ?? 0;
+    if (dt > 20) perfUiLogSV.value = `${perfUiLogSV.value} ${at.toFixed(0)}:${dt.toFixed(0)}`;
+    if (at > PERF_WINDOW_MS) {
+      runOnJS(perfUiReport)(perfUiFramesSV.value, perfUiLogSV.value);
+      perfUiArmSV.value = 0;
+      perfUiStartSV.value = 0;
+    }
+  });
+  const perfStart = (what: string) => { perfArm(what); perfUiStartSV.value = 0; perfUiArmSV.value = 1; };
   const insets = useSafeAreaInsets();
   const cameraRef = useRef<MapboxGL.Camera>(null);
   // The MapView's real rendered height (shorter than the device height — App.tsx's bottom tab
@@ -3252,6 +3278,7 @@ const destItems = useMemo((): DestItem[] =>
   }, []);
 
   const handleMarkerPress = useCallback((dest: Destination) => {
+    perfStart(`select destination ${dest.id}`);   // TEMPORARY
     // Provenance: a normal drill-down only when the tapped destination actually belongs to
     // the currently selected country — not just "is *some* country selected". Rank-1
     // "anchor" destinations from OTHER countries are deliberately shown (as stamps) even
@@ -3404,6 +3431,7 @@ const destItems = useMemo((): DestItem[] =>
 
   // ── Spot selection ──────────────────────────────────────────────────────────
   const handleSpotPress = useCallback((spot: Spot) => {
+    perfStart(`select spot ${spot.id}`);   // TEMPORARY
     // Tapping a pin (rather than swiping the carousel) leaves any near context: a destination's spot then opens in that
     // destination's own context, and a standalone one starts its own near context.
     nearCtxRef.current = null;
@@ -3870,6 +3898,7 @@ const destItems = useMemo((): DestItem[] =>
     cameraMode: 'easeTo' | 'flyTo' = 'easeTo',
     openPeeked = false,
   ) => {
+    perfStart(`select country ${cluster.countryCode}`);   // TEMPORARY
     lastCountryPressRef.current = Date.now();
     selectedCountryRef.current = cluster;
     countryHomeRegionRef.current = null;

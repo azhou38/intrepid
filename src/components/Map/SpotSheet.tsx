@@ -16,6 +16,7 @@ import Reanimated, {
   useSharedValue, useAnimatedStyle, useAnimatedReaction, withTiming, runOnJS,
   interpolate, Extrapolation, Easing, scrollTo, useAnimatedRef,
 } from 'react-native-reanimated';
+import { perfMark, perfCount, perfNow } from '../../utils/perfProbe';   // TEMPORARY
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { SharedValue } from 'react-native-reanimated';
 import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'react-native-svg';
@@ -720,6 +721,8 @@ function SpotSheet({
   // Full-screen panels mount a moment after the sheet does, or at once on heading to full — see
   // useDeferredMount.
   const [panelsReady, revealPanels] = useDeferredMount();
+  const perfRevealPanels = useCallback(() => { perfMark('SpotSheet slide landed, panels mount'); revealPanels(); }, [revealPanels]);   // TEMPORARY
+  useLayoutEffect(() => { if (panelsReady) perfMark('SpotSheet panels committed'); }, [panelsReady]);   // TEMPORARY
   // Scrolls the content back to its top on the UI thread, over a fixed 220ms — finishing before the sheet settles at
   // half-screen (SNAP_CONFIG, 280ms), so it never still looks like it's scrolling once the sheet has landed. (The
   // ScrollView's own animated scrollTo has a fixed, longer duration of its own.)
@@ -756,7 +759,8 @@ function SpotSheet({
     sheetPose.set(next === 'full' ? null : target);
     // 'userUI': the gesture worklet already started this exact animation on the UI thread (see snapUI).
     // The entrance uses its own gentler curve (SHEET_ENTER_CONFIG) and mounts the full-screen panels as it lands.
-    if (reason === 'mount') slideAnim.value = withTiming(target, SHEET_ENTER_CONFIG, finished => { if (finished) runOnJS(revealPanels)(); });
+    if (reason === 'mount') perfMark('SpotSheet slide starts');   // TEMPORARY
+    if (reason === 'mount') slideAnim.value = withTiming(target, SHEET_ENTER_CONFIG, finished => { if (finished) runOnJS(perfRevealPanels)(); });
     else if (reason !== 'userUI') slideAnim.value = withTiming(target, SNAP_CONFIG);
   };
   const snapToFullRef = useRef(() => {});

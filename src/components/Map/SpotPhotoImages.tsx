@@ -1,4 +1,5 @@
 import React, { memo, useEffect, useRef, useState } from 'react';
+import { perfCount } from '../../utils/perfProbe';   // TEMPORARY
 import { View, StyleSheet } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 import MapboxGL from '@rnmapbox/maps';
@@ -44,8 +45,8 @@ const SpotPhotoImage = memo(function SpotPhotoImage({ spec }: { spec: SpotPhotoI
   const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
   useEffect(() => () => timers.current.forEach(clearTimeout), []);
   const snap = () => {
-    timers.current.push(setTimeout(() => imageRef.current?.refresh(), 60));
-    timers.current.push(setTimeout(() => imageRef.current?.refresh(), 500));
+    timers.current.push(setTimeout(() => (perfCount('spot photo snapshot'), imageRef.current?.refresh()), 60));
+    timers.current.push(setTimeout(() => (perfCount('spot photo snapshot'), imageRef.current?.refresh()), 500));
   };
   const ring = visited ? VISITED_COLOR : 'white';
   const cx = PAD + R, cy = PAD + R;
