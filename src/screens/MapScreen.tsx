@@ -655,7 +655,7 @@ const cpinSt = StyleSheet.create({
   label: {
     marginTop: 3, fontSize: 11, fontWeight: '700', color: '#111827',
     textShadowColor: 'rgba(255,255,255,0.9)', textShadowRadius: 3,
-    textShadowOffset: { width: 0, height: 0 }, maxWidth: 90,
+    textShadowOffset: { width: 0, height: 0 },
   },
 });
 
@@ -5880,7 +5880,8 @@ const styles = StyleSheet.create({
     position: 'absolute', bottom: 0, left: 12,
     width: 12, height: 1.5, backgroundColor: 'rgba(188,193,202,0.95)',
   },
-  countryPillName: { fontSize: 11, fontWeight: '600', color: '#111827', maxWidth: 90 },
+  // No width cap: a country's name always shows in full (a 90 pt cap cut "Papua New Guinea" to "Papua New Gu…").
+  countryPillName: { fontSize: 11, fontWeight: '600', color: '#111827' },
 
 
 
