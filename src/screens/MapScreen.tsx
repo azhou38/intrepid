@@ -130,7 +130,11 @@ const EXPLORE_COLOR  = '#6366F1';
 // Pin-plan look-ahead while the camera zooms out (see planZoom / zoomOutLead).
 const PLAN_LAG_SEC = 0.6;         // assumed delay between a camera frame and the render that reacts to it
 const PLAN_LEAD_MAX_ZOOM = 4;     // cap on the predicted outward travel
-const DEST_GATE_LOOKAHEAD = 0.75; // cap on it for the destination photo tiers (see destGateZoom)
+// The destination photo tiers look less far ahead (see destGateZoom): this share of that predicted travel, at most this
+// many levels. The full prediction (0.6 s of travel, up to 0.75 levels) overshot as a fast zoom-out slowed down, so pins
+// faded out early and straight back in when the camera stopped.
+const DEST_GATE_LOOKAHEAD_SHARE = 0.4;
+const DEST_GATE_LOOKAHEAD = 0.3;
 // A destination within this many zoom levels of its own default view is drawn on its own handoff layer (see handoffDests),
 // at most HANDOFF_MAX at once.
 const HANDOFF_BAND = 1.0;
@@ -2130,9 +2134,9 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // when the gesture settled.
   const handoffZoom = closeTarget !== null ? Math.min(camZoom, closeTarget) : camZoom;
   // The zoom the destination photo tiers switch at: on a fast zoom-out, a little ahead of the camera (the predicted outward
-  // travel over the render lag, at most DEST_GATE_LOOKAHEAD levels), so pins start fading as their gate approaches instead
+  // travel over the render lag, a share of it and capped: see DEST_GATE_LOOKAHEAD), so pins start fading as their gate approaches instead
   // of a render or more after the camera has passed it, which left them clumped together on the way out.
-  const destGateZoom = camZoom - Math.min(zoomOutLead, DEST_GATE_LOOKAHEAD);
+  const destGateZoom = camZoom - Math.min(zoomOutLead * DEST_GATE_LOOKAHEAD_SHARE, DEST_GATE_LOOKAHEAD);
   // How much wider the view a close is flying to is than the one the camera reports right now (1 when no close is under
   // way). The viewport spot query and the spot pin plan scale the live bounds by it, so they work in the target view from
   // the first frame: the bounds lag the camera, and a close used to show only the few spots inside the old zoomed-in view
