@@ -2870,11 +2870,12 @@ const destItems = useMemo((): DestItem[] =>
   }, []);
 
   // ── Breadcrumb helpers ────────────────────────────────────────────────────
+  // Two separate springs, not Animated.parallel: when a second call interrupted the first, the interrupted parallel stopped
+  // its members by stopping their VALUES (a spring's stop() is value.stopAnimation()), which halted the new springs too,
+  // and the search bar was left resting half-transparent after a sheet's X.
   const showBreadcrumb = useCallback((show: boolean) => {
-    Animated.parallel([
-      Animated.spring(worldPillAnim, { toValue: show ? 0 : 1, damping: 22, stiffness: 280, useNativeDriver: true }),
-      Animated.spring(breadcrumbAnim, { toValue: show ? 1 : 0, damping: 22, stiffness: 280, useNativeDriver: true }),
-    ]).start();
+    Animated.spring(worldPillAnim, { toValue: show ? 0 : 1, damping: 22, stiffness: 280, useNativeDriver: true }).start();
+    Animated.spring(breadcrumbAnim, { toValue: show ? 1 : 0, damping: 22, stiffness: 280, useNativeDriver: true }).start();
   }, [worldPillAnim, breadcrumbAnim]);
 
   // ── Camera helpers ────────────────────────────────────────────────────────
