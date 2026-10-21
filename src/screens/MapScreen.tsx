@@ -2142,6 +2142,24 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // of a render or more after the camera has passed it, which left them clumped together on the way out.
   // A close flies to a known zoom (closeTarget): never look past it.
   const destGateZoom = Math.max(camZoom - Math.min(zoomOutLead * DEST_GATE_LOOKAHEAD_SHARE, DEST_GATE_LOOKAHEAD), Math.min(camZoom, closeTarget ?? -Infinity));
+  // Each photo tier's on/off, with a hold: a tier switched off on the way out (by the look-ahead above) stays off until the
+  // camera next zooms IN, rather than coming back the moment the camera stops just above its gate. A pin whose gate sat
+  // just under where a fast zoom-out stopped (Newcastle, Kiama) otherwise faded out and straight back in. Zooming in, a
+  // tier switches on exactly at its gate as before; nothing here depends on where the camera is.
+  const destTierOnRef = useRef<Map<string, boolean>>(new Map());
+  const destGatePrevZoomRef = useRef(camZoom);
+  const destZoomingIn = camZoom > destGatePrevZoomRef.current + 0.001;
+  destGatePrevZoomRef.current = camZoom;
+  const destTierOn = (tier: string): boolean => {
+    const was = destTierOnRef.current.get(tier);
+    let on: boolean;
+    if (!destGateOn(tier, camZoom)) on = false;                 // below its gate: off
+    else if (was === undefined) on = destGateOn(tier, destGateZoom);
+    else if (was) on = destGateOn(tier, destGateZoom);          // on: switches off once the look-ahead passes its gate
+    else on = destZoomingIn;                                    // off but at/above its gate: back on when zooming in
+    destTierOnRef.current.set(tier, on);
+    return on;
+  };
   // How much wider the view a close is flying to is than the one the camera reports right now (1 when no close is under
   // way). The viewport spot query and the spot pin plan scale the live bounds by it, so they work in the target view from
   // the first frame: the bounds lag the camera, and a close used to show only the few spots inside the old zoomed-in view
@@ -4689,7 +4707,7 @@ const destItems = useMemo((): DestItem[] =>
     const h = stableHandoffDests.find(x => x.slot === k);
     if (!h) return { h: undefined, tier: '', on: handoffSlotOnRef.current[k], snap: false };
     const tier = destPinPlan.fadeTier.get(h.dest.id) ?? '';
-    const on = destGateOn(tier, destGateZoom) && !h.past;
+    const on = destTierOn(tier) && !h.past;
     if (!handoffJoinedRef.current.has(h.dest.id)) {
       if (handoffSlotOnRef.current[k] !== on) return { h: undefined, tier, on, snap: true };
       handoffJoinedRef.current.add(h.dest.id);
@@ -5148,7 +5166,7 @@ const destItems = useMemo((): DestItem[] =>
             shape={nativeDestPins.shape}
             onPress={(e) => {
               // Skip a pin that is hidden ahead of its gate (see destGateOn).
-              const hit = e.features.find(f => destGateOn(String(f.properties?.tier ?? ''), camZoomRef.current) && !(f.properties?.ho === 1 && hiddenDestIdsRef.current.has(String(f.properties?.id))));
+              const hit = e.features.find(f => (destTierOnRef.current.get(String(f.properties?.tier ?? '')) ?? destGateOn(String(f.properties?.tier ?? ''), camZoomRef.current)) && !(f.properties?.ho === 1 && hiddenDestIdsRef.current.has(String(f.properties?.id))));
               const id = hit?.properties?.id as string | undefined;
               if (!id) return;
               const dest = DESTINATIONS.find(d => d.id === id);
@@ -5161,7 +5179,7 @@ const destItems = useMemo((): DestItem[] =>
                 id={`destPhotoSymbols-${tier || 'ungated'}`}
                 aboveLayerID={i === 0 ? 'destStampCircles' : `destPhotoSymbols-${all[i - 1] || 'ungated'}`}
                 filter={['all', ['==', ['get', 'tier'], tier], ['!=', ['get', 'ho'], 1]] as any}
-                style={destTierStyle(tier, destGateOn(tier, destGateZoom))}
+                style={destTierStyle(tier, destTierOn(tier))}
               />
             )),
             // The handoff layers (see handoffDests): a fixed pool, always mounted; slot k draws the destination assigned to it
