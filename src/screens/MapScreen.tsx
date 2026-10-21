@@ -1009,7 +1009,7 @@ function destSpotPhotoFloor(destId: string): number {
       const z = SPOT_PHOTO_ZOOM_BY_ID[sp.id];
       if (z === undefined) continue;
       if (sp.destinationId) { lower(sp.destinationId, z); continue; }
-      const u = unit(sp.coordinates.longitude, sp.coordinates.latitude), scale = 256 * Math.pow(2, z);
+      const u = unit(sp.coordinates.longitude, sp.coordinates.latitude), scale = 512 * Math.pow(2, z);
       for (const d of dests) if (Math.hypot((d.u.x - u.x) * scale, (d.u.y - u.y) * scale) < SPOT_PHOTO_EARLY_SEPARATION_PX) lower(d.id, z);
     }
     destSpotPhotoFloorCache = floor;
@@ -2228,7 +2228,7 @@ const destItems = useMemo((): DestItem[] =>
       (planDest?.id === d.id ? -1_000_000 : 0) + (planCountry && d.countryCode === planCountry.countryCode ? -1_000 : 0) + d.rank;
     const ordered = [...DESTINATIONS].sort((a, b) => rankScore(a) - rankScore(b) || (a.id < b.id ? -1 : 1));
     ordered.forEach((d, i) => priority.set(d.id, i));
-    // Unit Web-Mercator positions (0..1 across the world); at zoom z a point is at u * 256 * 2^z on screen.
+    // Unit Web-Mercator positions (0..1 across the world); at zoom z a point is at u * 512 * 2^z on screen.
     const unit = (lng: number, lat: number) => {
       const s = Math.sin((Math.max(-85, Math.min(85, lat)) * Math.PI) / 180);
       return { x: (lng + 180) / 360, y: 0.5 - Math.log((1 + s) / (1 - s)) / (4 * Math.PI) };
@@ -2257,7 +2257,7 @@ const destItems = useMemo((): DestItem[] =>
     const pins: string[] = [], names: string[] = [];
     for (let i = 0; i < ladder.length; i++) {
       const z = ladder[i];
-      const scale = 256 * Math.pow(2, z);
+      const scale = 512 * Math.pow(2, z);   // Mapbox's world size in screen points (512 px tiles)
       const at = (id: string) => { const u = pos.get(id)!; return { x: u.x * scale, y: u.y * scale }; };
       const pinBox = (id: string): Box => { const p = at(id); return { l: p.x - R, r: p.x + R, t: p.y - R, b: p.y + R }; };
       const nameBox = (id: string): Box => { const p = at(id), f = nameFoot.get(id)!; return { l: p.x + f.l, r: p.x + f.r, t: p.y + f.t, b: p.y + f.b }; };
