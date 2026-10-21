@@ -120,7 +120,6 @@ import { thumbCache, photoCache, fetchWikiThumbnail, prefetchWikiThumbnail, prew
 import DestPinImages, { DEST_PIN_SIZE, destPinImageName, type DestPinImageSpec } from '../components/Map/DestPinImages';
 import PhotoPlaceholder from '../components/Map/PhotoPlaceholder';
 import { NO_PHOTO } from '../data/imageOverrides';
-import SpotPinLayers from '../components/Map/SpotPinLayers';
 import SpotPhotoImages, { spotPhotoImageName, type SpotPhotoImageSpec } from '../components/Map/SpotPhotoImages';
 import SpotPinImages, { SPOT_MINI_PIN_UNVISITED, SPOT_MINI_PIN_VISITED } from '../components/Map/SpotPinImages';
 
@@ -4742,11 +4741,6 @@ const destItems = useMemo((): DestItem[] =>
   const noop = useCallback(() => {}, []);
 
 
-  // The spot pin layers' press handler (SpotPinLayers is memoised, so a stable identity).
-  const onPressSpotPin = useStableCallback((id: string) => {
-    const spot = SPOT_BY_ID.get(id);
-    if (spot && !pressBlocked()) handleSpotPress(spot);
-  });
   // Stable identities for the destination sheet's callback props (see useStableCallback).
   const destSheetOnClose = useStableCallback(handleCloseDestinationSheet);
   const destSheetOnExpand = useStableCallback(handleSheetExpand);
@@ -5067,7 +5061,72 @@ const destItems = useMemo((): DestItem[] =>
             stamps and photo pins, and present for exactly as long as the full pin would have been. */}
         <SpotPinImages />
         <SpotPhotoImages specs={nativeSpotPins.specs} />
-        <SpotPinLayers shape={nativeSpotPins.shape} satellite={mapType === 'satellite'} onPressSpot={onPressSpotPin} />
+        <MapboxGL.ShapeSource
+          id="spotPins"
+          shape={nativeSpotPins.shape}
+          hitbox={{ width: 32, height: 40 }}
+          onPress={(e) => {
+            const id = e.features[0]?.properties?.id as string | undefined;
+            const spot = id ? SPOT_BY_ID.get(id) : undefined;
+            if (spot && !pressBlocked()) handleSpotPress(spot);
+          }}
+        >
+          {/* The small pin under every revealed spot that has no photo pin placed: the photo pin's teardrop with the photo
+              collapsed to a core. It yields to the photo pin in Mapbox's own collision pass (see its style), so the two
+              never show together. */}
+          <MapboxGL.SymbolLayer
+            id="spotMiniPins"
+            belowLayerID="destStampCircles"
+            filter={['==', ['get', 'img'], ''] as any}
+            style={{
+              iconImage: ['get', 'mini'] as any,
+              iconAnchor: 'bottom',
+              // Placed AFTER the photo layer (it sits beneath it, and Mapbox places the top layer first) and WITHOUT overlap, so a
+              // spot that has its photo pin never also draws the small pin behind it (the mini pin's bubble used to show beside
+              // the photo pin's narrow tail). Where the photo pin does not fit, the mini pin takes its place; the photo pin
+              // fading in or out cross-fades with it through the same collision pass.
+              // iconIgnorePlacement: small pins never block anything, each other included, so they show at the same zooms as
+              // before (zoomed into a destination, where spots are dense, they used to hide one another).
+              // A spot without a photo pin (see the plan in nativeSpotPins) always shows its small pin, as before.
+              iconAllowOverlap: true,
+              iconIgnorePlacement: true,
+              iconPadding: 0,
+              symbolSortKey: ['get', 'sort'] as any,
+            }}
+          />
+          {/* The photo pin and its name. Mapbox places them by priority (sort), fades a pin in or out as room opens or
+              closes, and drops a name that does not fit (textOptional) without dropping its pin. */}
+          <MapboxGL.SymbolLayer
+            id="spotPhotos"
+            belowLayerID="destStampCircles"
+            filter={['!=', ['get', 'img'], ''] as any}
+            style={{
+              iconImage: ['get', 'img'] as any,
+              iconAnchor: 'bottom',
+              // The plan in nativeSpotPins already spaced the photo pins: draw every one (a spot whose photo Mapbox hid would
+              // have no pin at all, since its small pin is not drawn), still recording it so names avoid it.
+              iconAllowOverlap: true,
+              iconIgnorePlacement: false,
+              iconPadding: 2,
+              symbolSortKey: ['get', 'sort'] as any,
+              textField: ['get', 'label'] as any,
+              textFont: ['DIN Pro Bold', 'Arial Unicode MS Bold'],
+              textSize: 12,
+              textMaxWidth: 10,
+              textVariableAnchor: ['right', 'left'] as any,
+              // 'auto': a name to the right of its pin is left-aligned, one to the left right-aligned (never centred).
+              textJustify: 'auto',
+              textRadialOffset: 1.5,
+              textTranslate: [0, -23],
+              textOptional: true,
+              textAllowOverlap: false,
+              textPadding: 2,
+              textColor: mapType === 'satellite' ? '#FFFFFF' : '#111827',
+              textHaloColor: mapType === 'satellite' ? '#000000' : '#FFFFFF',
+              textHaloWidth: 1.5,
+            }}
+          />
+        </MapboxGL.ShapeSource>
 
         {/* All MarkerViews require the map style to be loaded before Mapbox can
             project coordinates to screen positions. Gate on mapReady. */}
