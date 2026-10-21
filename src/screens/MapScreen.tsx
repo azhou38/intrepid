@@ -5108,7 +5108,10 @@ const destItems = useMemo((): DestItem[] =>
               iconAllowOverlap: true,
               iconIgnorePlacement: false,
               iconPadding: 2,
-              symbolSortKey: ['get', 'sort'] as any,
+              // Priority comes from the data's order (nativeSpotPins lists the spots by rank), not a symbolSortKey: with a sort
+              // key Mapbox draws each pin's icon and name together, one pin at a time, so a later pin's photo covered an
+              // earlier pin's name. Without one it draws every icon first and every name above them.
+              symbolZOrder: 'source',
               textField: ['get', 'label'] as any,
               textFont: ['DIN Pro Bold', 'Arial Unicode MS Bold'],
               textSize: 12,
