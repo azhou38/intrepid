@@ -1059,7 +1059,21 @@ function SpotSheet({
     return ((i % n) + n) % n;
   }
   const carouselReleasedRef = useRef(false);
+  const carouselOffsetRef = useRef(0);
+  // A new swipe that starts while the carousel is on (or sliding through) a loop clone first moves it, invisibly, to the
+  // same place among the real cards. The settle jump only comes once a slide has fully stopped, so a second swipe made
+  // before then used to start from a clone and run past the last one into empty space.
+  const handleCarouselDragStart = () => {
+    carouselReleasedRef.current = false;
+    if (!loopOffset) return;
+    const x = carouselOffsetRef.current, n = spots.length, ext = Math.round(x / CARD_SNAP);
+    if (ext >= loopOffset && ext < loopOffset + n) return;
+    const shifted = x + (ext < loopOffset ? n : -n) * CARD_SNAP;
+    carouselOffsetRef.current = shifted;
+    carouselRef.current?.scrollTo({ x: shifted, animated: false });
+  };
   const handleCarouselScroll = (offsetX: number) => {
+    carouselOffsetRef.current = offsetX;
     if (!carouselReleasedRef.current) return;
     const idx = realIndexOfExt(Math.round(offsetX / CARD_SNAP));
     if (idx === activeIndex) return;
@@ -1388,7 +1402,7 @@ isVisited ? (
             style={{ flex: 1 }}
             contentContainerStyle={{ paddingHorizontal: SIDE_PAD, paddingTop: 8, paddingBottom: 4 }}
             scrollEventThrottle={16}
-            onScrollBeginDrag={() => { carouselReleasedRef.current = false; }}
+            onScrollBeginDrag={handleCarouselDragStart}
             onScroll={e => handleCarouselScroll(e.nativeEvent.contentOffset.x)}
             onMomentumScrollBegin={() => { carouselReleasedRef.current = true; }}
             onScrollEndDrag={e => handleCarouselRelease(e.nativeEvent.contentOffset.x, e.nativeEvent.velocity?.x ?? 0)}
