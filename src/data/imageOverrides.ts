@@ -519,6 +519,7 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "Palmerston, Northern Territory": { x: 0.5, y: 0.6 },
   "Adelaide River, Northern Territory": { x: 0.4, y: 0.65, zoom: 1.3 },
   "The Lost City": { x: 0.5, y: 0.5 },
+  "Mary River National Park": { x: 0.5, y: 0.6 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -1896,5 +1897,4 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Platypus House",
   "Seahorse World",
   // Northern Territory: no photo of the place itself passed the judges (stand-ins rejected); the owner is asked for one
-  "Mary River National Park",
 ]);
