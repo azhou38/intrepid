@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { View, Text, StyleSheet, Pressable, Dimensions, Platform } from 'react-native';
 // Sheet drag is driven entirely by Reanimated + Gesture Handler (UI thread), identical
 // mechanism to CountrySheet/DestinationSheet's own three-state (collapsed/half/full) drag —
@@ -77,9 +77,13 @@ interface Props {
   // with a finger resting on this sheet's strip used to be read as a swipe of the sheet itself —
   // the finger travels upward during a pinch-in — so lifting it snapped the sheet to half-screen.
   mapGestureAtSV?: SharedValue<number>;
+  // True while a country, destination or spot is selected. The sheet stays mounted then, just off the bottom of the screen,
+  // so closing that selection slides it straight back up (at the bottom strip) instead of building it again: the rebuild
+  // took long enough that it had to wait for the camera's zoom-out to finish, which read as a long delay.
+  hidden?: boolean;
 }
 
-function ExploreSheet({ collapseSignal, onSnapStateChange, onSelectDestination, onSearchPress, initialSnap, initialScrollY, onScrollYChange, onMountSnap, mapGestureAtSV }: Props) {
+function ExploreSheet({ collapseSignal, onSnapStateChange, onSelectDestination, onSearchPress, initialSnap, initialScrollY, onScrollYChange, onMountSnap, mapGestureAtSV, hidden }: Props) {
   // Internal names (see ExploreSnapState) differ from the shared vocabulary: shared 'peek' is
   // this sheet's 'collapsed', shared 'collapsed' is its 'half'.
   const startSnap = useRef<ExploreSnapState | null>(
@@ -189,6 +193,7 @@ function ExploreSheet({ collapseSignal, onSnapStateChange, onSelectDestination, 
   // same way, into its restored position. A layout effect, so the slide starts with the mount
   // commit itself rather than once the (busy) JS thread gets round to passive effects.
   useLayoutEffect(() => {
+    if (hidden) return;   // mounted behind a selection: it comes up when that closes (below)
     onMountSnap?.(initialSnap ?? 'peek');
     // The feed reveals itself via DiscoverScreen's onInitialScrollApplied; this is only a
     // failsafe so it can never stay hidden if that never fires.
@@ -197,6 +202,22 @@ function ExploreSheet({ collapseSignal, onSnapStateChange, onSelectDestination, 
     slideAnim.value = withTiming(startPos, startSnap ? RESTORE_CONFIG : SNAP_CONFIG);
     if (startSnap) onSnapStateChange?.(initialSnap!);
   }, []);
+
+  // Hidden behind a selection (see Props.hidden): drop off-screen at once, as the unmount used to; back at the bottom strip,
+  // sliding up, as soon as the selection closes, reported as a fresh mount would be.
+  const lastHiddenRef = useRef(hidden);
+  useLayoutEffect(() => {
+    if (hidden === lastHiddenRef.current) return;
+    lastHiddenRef.current = hidden;
+    if (hidden) { slideAnim.value = CLOSE_POS; return; }
+    snapStateRef.current = 'collapsed';
+    snapStateSV.value = 'collapsed';
+    lastPos.value = COLLAPSED_Y;
+    if (snapState !== 'collapsed') setSnapState('collapsed');
+    scrollRef.current?.scrollTo({ x: 0, y: 0, animated: false });
+    onMountSnap?.('peek');
+    slideAnim.value = withTiming(COLLAPSED_Y, SNAP_CONFIG);
+  }, [hidden]);
 
   // Map interaction started (see Props.collapseSignal) → drop from half back to collapsed,
   // mirroring how the destination/spot sheets peek on the same signal. Ref-diffed so the
@@ -267,8 +288,30 @@ function ExploreSheet({ collapseSignal, onSnapStateChange, onSelectDestination, 
   // the sheet.
   pan = pan.simultaneousWithExternalGesture(scrollRef);
 
+  // The feed only re-renders when what it shows changes, not when the sheet is hidden or shown.
+  const onScrollYChangeRef = useRef(onScrollYChange);
+  onScrollYChangeRef.current = onScrollYChange;
+  const handleFeedScroll = useCallback((e: any) => {
+    scrollY.value = e.nativeEvent.contentOffset.y;
+    onScrollYChangeRef.current?.(e.nativeEvent.contentOffset.y);
+  }, []);
+  const handleInitialScrollApplied = useCallback(() => setFeedReady(true), []);
+  const feed = useMemo(() => (
+    <DiscoverScreen
+      initialScrollY={initialScrollY}
+      onInitialScrollApplied={handleInitialScrollApplied}
+      scrollRef={scrollRef}
+      scrollEnabled={snapState === 'full'}
+      topPadding={snapState === 'full' ? undefined : 0}
+      searchProgress={searchProgress}
+      searchVisible={snapState === 'full'}
+      onScroll={handleFeedScroll}
+      onSelectDestination={onSelectDestination}
+    />
+  ), [initialScrollY, snapState, searchProgress, onSelectDestination]);
+
   return (
-    <View style={st.backdrop} pointerEvents="box-none">
+    <View style={st.backdrop} pointerEvents={hidden ? 'none' : 'box-none'}>
       <Animated.View
         pointerEvents={snapStateRef.current === 'full' ? 'box-none' : 'none'}
         style={StyleSheet.absoluteFill}
@@ -291,17 +334,7 @@ function ExploreSheet({ collapseSignal, onSnapStateChange, onSelectDestination, 
                 only full-screen lets it actually scroll, matching the other sheets'
                 collapsed/half being a fixed, non-scrollable preview of their own content. */}
             <View style={{ flex: 1, opacity: feedReady ? 1 : 0 }}>
-              <DiscoverScreen
-                initialScrollY={initialScrollY}
-                onInitialScrollApplied={() => setFeedReady(true)}
-                scrollRef={scrollRef}
-                scrollEnabled={snapState === 'full'}
-                topPadding={snapState === 'full' ? undefined : 0}
-                searchProgress={searchProgress}
-                searchVisible={snapState === 'full'}
-                onScroll={e => { scrollY.value = e.nativeEvent.contentOffset.y; onScrollYChange?.(e.nativeEvent.contentOffset.y); }}
-                onSelectDestination={onSelectDestination}
-              />
+              {feed}
             </View>
 
             {/* Bottom-screen (collapsed) is just a cropped sliver of the feed — tapping
