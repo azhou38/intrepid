@@ -1,10 +1,15 @@
 #!/usr/bin/env python3
 """Applies one region's finished curation to src/data: Atlas's placement, Quill's final copy, Lens's accepted photos.
 
-  python3 scripts/curation/apply-region.py <region-id> [--dry-run] [--only id,id] [--currency NZD]
+  python3 scripts/curation/apply-region.py <region-id> [--dry-run] [--only id,id] [--evidence <folder>] [--currency XXX]
 
-Reads curation/nz-rest/region-<id>/placement.json (any of the keys `placements | places | spots | new_spots`) and
-curation/nz-rest/quill/<id>/final.json (`spots`, `existing_fixes`, `held`). Adds, through apply-placement.py, every placed
+Works for any region in scripts/coverage-regions.json, any country, any branch. The evidence folder is found by looking for
+curation/*/region-<id>/ (pass --evidence curation/<folder> if two folders hold the same region); the standalone-spot defaults
+(country, code, continent, timezone) and the currency come from the region's country in COUNTRY_DEFAULTS below, with an
+optional "timezone" and/or "currency" on the region's own entry in coverage-regions.json (Tasmania is Australia/Hobart).
+
+Reads <evidence>/region-<id>/placement.json (any of the keys `placements | places | spots | new_spots`) and
+<evidence>/quill/<id>/final.json (`spots`, `existing_fixes`, `held`). Adds, through apply-placement.py, every placed
 spot of an EXISTING destination (or standalone) that has: a Quill entry, an accepted Commons photo (not held, not external),
 and is not a spot of a proposed destination. Everything else is listed with its reason, never added. Then applies
 `existing_fixes` to existing spots (fields) and destinations (description etc.), and records `hero_crop` as PHOTO_SUBJECT.
@@ -17,22 +22,52 @@ if not args or args[0].startswith('--'):
 region = args[0]
 dry = '--dry-run' in args
 photoless = '--photoless' in args   # a missing photo never holds a spot back (IMAGES.md); holds with another reason stay
-non_photo_holds = set(json.load(open('curation/nz-rest/non-photo-holds.json'))) if os.path.exists('curation/nz-rest/non-photo-holds.json') else set()
 only = set(args[args.index('--only') + 1].split(',')) if '--only' in args else None
-# Regions named nsw-* are Australian (NSW): AUD and Australian standalone defaults; every other region is New Zealand.
-currency = args[args.index('--currency') + 1] if '--currency' in args else ('AUD' if region.startswith('nsw-') else 'NZD')
 
-_flat = f'curation/nz-rest/region-{region}/apply-placement.json'   # NSW: scripts/curation/nsw-build-apply.py writes a flat list
-place = json.load(open(_flat if os.path.exists(_flat) else f'curation/nz-rest/region-{region}/placement.json'))
-key = next(k for k in ('placements', 'places', 'spots', 'new_spots') if k in place)
-final_path = f'curation/nz-rest/quill/{region}/final.json'
+# ---- where this region's evidence lives, and what country it is in ------------------------------------------------------
+import glob
+if '--evidence' in args:
+    EVID = f"{args[args.index('--evidence') + 1].rstrip('/')}/region-{region}"
+else:
+    found = sorted({os.path.dirname(f) for f in glob.glob(f'curation/*/region-{region}/placement.json') + glob.glob(f'curation/*/region-{region}/apply-placement.json')})
+    if not found:
+        sys.exit(f'no curation/*/region-{region}/placement.json: run the region first, or pass --evidence curation/<folder>')
+    if len(found) > 1:
+        sys.exit(f'region {region} has evidence in {len(found)} folders ({", ".join(found)}): pass --evidence curation/<folder> (the folder that holds region-{region}/)')
+    EVID = found[0]
+REG = json.load(open('scripts/coverage-regions.json'))
+region_entry, region_cc = None, None
+for cc, lst in REG.items():
+    if cc.startswith('_'):
+        continue
+    for r in lst:
+        if r['id'] == region:
+            region_entry, region_cc = r, cc
+if not region_entry:
+    sys.exit(f'region {region} is not in scripts/coverage-regions.json')
+# Country defaults for standalone spots and costs. Add a country here when its first region is run (COVERAGE.md → new country checklist).
+COUNTRY_DEFAULTS = {
+    'NZ': {'country': 'New Zealand', 'countryCode': 'NZ', 'continent': 'Oceania', 'timezone': 'Pacific/Auckland', 'currency': 'NZD'},
+    'AU': {'country': 'Australia', 'countryCode': 'AU', 'continent': 'Oceania', 'timezone': 'Australia/Sydney', 'currency': 'AUD'},
+    'PG': {'country': 'Papua New Guinea', 'countryCode': 'PG', 'continent': 'Oceania', 'timezone': 'Pacific/Port_Moresby', 'currency': 'PGK'},
+}
+if region_cc not in COUNTRY_DEFAULTS:
+    sys.exit(f'no COUNTRY_DEFAULTS for {region_cc}: add its country, continent, timezone and currency to apply-region.py')
+_cd = {**COUNTRY_DEFAULTS[region_cc], **{k: region_entry[k] for k in ('timezone', 'currency') if k in region_entry}}
+currency = args[args.index('--currency') + 1] if '--currency' in args else _cd['currency']
+non_photo_holds_path = os.path.join(os.path.dirname(EVID), 'non-photo-holds.json')
+non_photo_holds = set(json.load(open(non_photo_holds_path))) if os.path.exists(non_photo_holds_path) else set()
+
+_flat = f'{EVID}/apply-placement.json'   # scripts/curation/build-apply-placement.py writes a flat list from Quill's final copy
+place = json.load(open(_flat if os.path.exists(_flat) else f'{EVID}/placement.json'))
+key = next(k for k in ('placements', 'places', 'spots', 'new_spots', 'placed') if k in place)
+final_path = f'{os.path.dirname(EVID)}/quill/{region}/final.json'
 final = json.load(open(final_path)) if os.path.exists(final_path) else {'spots': {}, 'existing_fixes': {}, 'held': []}
 held_ids = {h if isinstance(h, str) else (h.get('id') or h.get('key') or h.get('name')) for h in (final.get('held') or [])}
 dest_src = open('src/data/destinations.ts').read()
 dest_ids = set(re.findall(r"^\s*id: '([a-z0-9-]+)', name: ", dest_src, re.M))
 
-STANDALONE_DEFAULT = ({'country': 'Australia', 'countryCode': 'AU', 'continent': 'Oceania', 'timezone': 'Australia/Sydney'} if region.startswith('nsw-')
-                      else {'country': 'New Zealand', 'countryCode': 'NZ', 'continent': 'Oceania', 'timezone': 'Pacific/Auckland'})
+STANDALONE_DEFAULT = {k: _cd[k] for k in ('country', 'countryCode', 'continent', 'timezone')}
 FIELDS = ['name', 'wiki', 'icon', 'category', 'bio', 'hours', 'visitHoursMin', 'visitHoursMax', 'free', 'costMin', 'costMax',
           'currency', 'closedDays', 'ticketUrl']
 
@@ -61,6 +96,9 @@ def free_id(sid, dest):
 norm, skipped = [], []
 for e in place[key]:
     sid, name = e.get('id'), e.get('name')
+    c = e.get('coordinates')
+    if isinstance(c, dict) and 'lat' in c:   # a placement written with lat/lng (Tasmania's) → latitude/longitude
+        e['coordinates'] = {'latitude': c['lat'], 'longitude': c['lng']}
     if only and sid not in only:
         continue
     act = e.get('action')

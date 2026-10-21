@@ -4,7 +4,7 @@
   python3 scripts/curation/apply-destination.py curation/<branch>/quill/<id>/final.json --picks picks.json [--dry-run]
 
 final.json: { destination: { id, name, country, countryCode, timezone, continent, coordinates, category, defaultZoomSpanKm,
-              rank, icon, tagline, description, whyVisit[2-4 by popularity], highlights[one per reason], goodToKnow[3 {icon,title,detail}], bestMonths,
+              rank, icon, tagline, description, whyVisit[2-4 by popularity], highlights[one per reason], goodToKnow[2-3 {icon,title,detail}, by popularity], bestMonths,
               bestTimeBlurb, seasonalTags? }, spots, notes }
 picks.json:  { "header": "<Commons file>", "why": ["<file>", "<file>", "<file>"] }   (files agreed by both judges)
 
