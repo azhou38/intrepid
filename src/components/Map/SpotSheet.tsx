@@ -44,6 +44,7 @@ import PhotoPlaceholder from './PhotoPlaceholder';
 import {
   VisitCardList, VisitModuleSheet, PhotoGalleryModal,
   useDeferredMount,
+  SHEET_ENTER_CONFIG,
   AIContentNote, nameFontSize, heroFontSize,
 } from './sheetShared';
 
@@ -754,7 +755,9 @@ function SpotSheet({
     if (next !== 'full') onCollapsedTopChange?.(H - target);
     sheetPose.set(next === 'full' ? null : target);
     // 'userUI': the gesture worklet already started this exact animation on the UI thread (see snapUI).
-    if (reason !== 'userUI') slideAnim.value = withTiming(target, SNAP_CONFIG);
+    // The entrance uses its own gentler curve (SHEET_ENTER_CONFIG) and mounts the full-screen panels as it lands.
+    if (reason === 'mount') slideAnim.value = withTiming(target, SHEET_ENTER_CONFIG, finished => { if (finished) runOnJS(revealPanels)(); });
+    else if (reason !== 'userUI') slideAnim.value = withTiming(target, SNAP_CONFIG);
   };
   const snapToFullRef = useRef(() => {});
   snapToFullRef.current = () => transitionToRef.current('full', 'user');

@@ -7,7 +7,7 @@ import {
   type StyleProp, type TextStyle,
 } from 'react-native';
 import { ScrollView as GHScrollView, Gesture, GestureDetector, State } from 'react-native-gesture-handler';
-import Reanimated, { useSharedValue, useAnimatedStyle, withTiming, runOnJS } from 'react-native-reanimated';
+import Reanimated, { useSharedValue, useAnimatedStyle, withTiming, runOnJS, Easing } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { X, Check, Camera, Calendar, Pencil, ChevronDown, ChevronRight, Trash2, Star, NotebookPen, Plus } from 'lucide-react-native';
 import * as ImagePicker from 'expo-image-picker';
@@ -56,7 +56,15 @@ export function nameFontSize(name: string, sizes: [number, number, number], brea
 // and the camera moves. Mounting it a moment later, once the slide-in has finished, keeps that
 // commit (and the slide itself) light. `reveal` mounts it right away instead — call it the moment
 // the sheet heads to full-screen, where the content is visible.
-export const SHEET_PANEL_MOUNT_DELAY_MS = 300;
+// The sheets reveal it when their entrance slide lands (SHEET_ENTER_CONFIG's completion); this delay is only the
+// fallback for an entrance that never completes (interrupted by a drag, say).
+export const SHEET_PANEL_MOUNT_DELAY_MS = 600;
+
+// A sheet's entrance (bottom of the screen → half-screen or peek, on selecting a country, destination or spot). Longer and
+// with a gentler start than the snaps' 280 ms cubic ease-out, whose first frames each moved the sheet ~18% of the way: a
+// frame dropped there, in the busiest moment of a selection (the sheet mounting, the camera setting off), showed as a
+// jump. Quadratic over 340 ms moves it about half as far per frame at the start.
+export const SHEET_ENTER_CONFIG = { duration: 340, easing: Easing.out(Easing.quad) };
 export function useDeferredMount(delayMs = SHEET_PANEL_MOUNT_DELAY_MS): [boolean, () => void] {
   const [ready, setReady] = useState(false);
   const readyRef = useRef(false);

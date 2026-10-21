@@ -31,7 +31,7 @@ import CircleFlag from '../CircleFlag';
 import { sheetPose } from './sheetPose';
 import EntityPhoto from './EntityPhoto';
 import DestinationCard from './DestinationCard';
-import { VisitCardList, VisitModuleSheet, PhotoGalleryModal, useDeferredMount, AIContentNote, type VisitSelectorItem } from './sheetShared';
+import { VisitCardList, VisitModuleSheet, PhotoGalleryModal, useDeferredMount, SHEET_ENTER_CONFIG, AIContentNote, type VisitSelectorItem } from './sheetShared';
 
 interface Props {
   cluster: CountryCluster;
@@ -623,7 +623,9 @@ function CountrySheet({
     if (next === 'full') onExpand?.(); else if (reason !== 'mount' || next === 'peek') onCollapse?.();
     sheetPose.set(next === 'full' ? null : target);
     // 'userUI': the gesture worklet already started this exact animation on the UI thread (see snapUI).
-    if (reason !== 'userUI') slideAnim.value = withTiming(target, SNAP_CONFIG);
+    // The entrance uses its own gentler curve (SHEET_ENTER_CONFIG) and mounts the full-screen panels as it lands.
+    if (reason === 'mount') slideAnim.value = withTiming(target, SHEET_ENTER_CONFIG, finished => { if (finished) runOnJS(revealPanels)(); });
+    else if (reason !== 'userUI') slideAnim.value = withTiming(target, SNAP_CONFIG);
     reportSnapState(next);
   };
 
