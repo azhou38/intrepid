@@ -124,6 +124,15 @@ Prominence tier; it decides what shows when space is limited (pin plans, Near Yo
 
 A country with 20+ destinations should have only a handful at rank 1. A guidebook's "top experiences" map to ranks 1–2.
 
+## Pin priority on the map: popularity
+
+Where pins compete for room, the map gives the photo pin (and its name) to the more popular place. Which pins show is planned once for the whole world, by zoom only (`planDestPhotos` and `planSpotPhotos` in `src/screens/MapScreen.tsx`): a pin that shows zoomed out keeps showing zooming in, and panning never changes it. Popularity decides who wins a contested place in that plan:
+
+- **Destinations:** by `rank` first (the gates above decide from which zoom each rank may show), then, within a rank, by popularity: the year's English Wikipedia page views of the destination's own spots, added up. Destinations have no views of their own because many names are ambiguous on Wikipedia ("Blue Mountains", "Hay").
+- **Spots:** spots the user has visited first, then by the year's English Wikipedia page views of the spot's own article, then by the spot's place in its destination's list (importance order), which also decides between spots with no views.
+
+The views live in `src/data/spotPopularity.json`, built by `npx tsx scripts/curation/spot-popularity.ts` (it fetches only spots missing from the file). **Run it whenever spots are added**, or new spots rank as having no views. A spot's views come from its photo title (its `wiki`, else its `name`; see `WRITING.md`), so that title must be the place's own article: a title that redirects to a broader article, a disambiguation page or a missing article counts as 0. A generic title can lend a spot the views of an unrelated article. The Sydney spot "Opera House" has no `wiki`, so it takes the views of Wikipedia's general article on opera houses, not "Sydney Opera House", and ranks well below its real popularity.
+
 ## Standalone spots in the app
 
 A spot with no `destinationId` is standalone, and the app supports it end to end. Because a destination normally supplies a spot's place context, a standalone spot carries its own — **all four are required**:
