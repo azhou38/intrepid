@@ -803,6 +803,8 @@ const destGateZooms = (): Record<string, number> => {
     const z = countryGateZoom(cc);
     if (z !== undefined) out[`c${cc}`] = z;
   }
+  // The photo plan's tiers: `z<i>` switches on at DEST_LADDER[i] (see destPhotoPlan).
+  DEST_LADDER.forEach((z, i) => { out[`z${i}`] = z; });
   return (destGateZoomCache = out);
 };
 // Whether a tier's pins show at camera zoom `z`: a cliff at its gate zoom ('' — not gated — always shows). The decision
@@ -817,18 +819,10 @@ const destGateOn = (tier: string, z: number) => {
 // Mapbox places the TOP layer's symbols first, so tiers that switch on at wider zooms sit above later ones and a pin
 // that is still hidden (it joins its layer DEST_GATE_LEAD early) can never push out one that is showing; '' is on top.
 const DEST_GATE_FADE_MS = 250;
-const destTierOrder = (): string[] => {
-  const gz = destGateZooms();
-  // Bottom → top: the country tiers (latest gate first), then the rank tiers (latest gate first), ungated last. Mapbox
-  // gives room to the top layer first, so every rank-gated pin (the prominent ones) is placed before any country-gated
-  // one: a low-ranked pin that only joins at its country's cutoff (Lithgow) takes just the room the prominent ones leave,
-  // and can no longer push one of them (Blue Mountains) out and back as the zoom changes. A country tier only holds the
-  // pins whose country gate opens before their rank gate, so a rank tier's still-hidden pins (joining early, before
-  // their own gate) are never in the same area as a visible country-tier pin they could block.
-  const byGate = (x: string, y: string) => gz[y] - gz[x];
-  const keys = Object.keys(gz);
-  return [...keys.filter(k => k.startsWith('c')).sort(byGate), ...keys.filter(k => k.startsWith('r')).sort(byGate), ''];
-};
+// One layer per photo-plan tier (destPhotoPlan): bottom to top, the latest to switch on first, '' (always shown) on top.
+// Pins and names are drawn without collision (the plan has already spaced them), so the order only sets which pin draws
+// over which where a fading pin passes another.
+const destTierOrder = (): string[] => [...DEST_LADDER.map((_, i) => `z${i}`).reverse(), ''];
 const destTierStyleCache = new Map<string, any>();
 // `snap`: the opacity changes at once, not animated (a handoff layer changing state while it holds no pin yet).
 const destTierStyle = (tier: string, on: boolean, snap = false) => {
@@ -942,7 +936,9 @@ const MAP_TYPES: { key: MapStyleKey; label: string }[] = [
 // (textOptional), and returns once there is room. Mapbox fades both in and out as placements change.
 const DEST_SYMBOL_STYLE: any = {
   iconImage: ['get', 'img'],
-  iconAllowOverlap: false,
+  // Always drawn: destPhotoPlan already keeps pins and names apart. They still record their place (ignorePlacement off)
+  // so spot names keep clear of them.
+  iconAllowOverlap: true,
   iconIgnorePlacement: false,
   iconPadding: 0,
   symbolSortKey: ['get', 'sort'],
@@ -961,10 +957,46 @@ const DEST_SYMBOL_STYLE: any = {
   // A name hides itself where it would sit on a pin or another name placed before it, but never pushes a pin out
   // (textIgnorePlacement): as the zoom changed, a name that newly fitted knocked a neighbouring photo pin out and gave it
   // back a moment later, so pins pinballed between neighbours.
-  textAllowOverlap: false,
-  textIgnorePlacement: true,
+  textAllowOverlap: true,
+  textIgnorePlacement: false,
   textPadding: 1,
 };
+
+// The photo plan's zoom ladder (destPhotoPlan): pins are placed, and switch on, at these zooms.
+const DEST_LADDER: number[] = Array.from({ length: 31 }, (_, i) => 1 + i * 0.5);
+// The zoom from which a destination may have a photo pin: its rank gate (a visited destination gets a one-rank head
+// start), or its country's cutoff (where the country's pill goes), or, inside the selected country, that country's own
+// view, whichever comes first.
+function destEligibleZoom(d: Destination, visited: boolean, selCC: string | undefined, selCountryZoom: number): number {
+  const effRank = Math.max(1, d.rank - (visited ? 1 : 0));
+  const rz = DEST_RANK_GATE_ZOOM[`r${effRank}`] ?? Infinity;
+  const cz = countryGateZoom(d.countryCode) ?? Infinity;
+  return Math.min(rz, cz, d.countryCode === selCC ? selCountryZoom : Infinity);
+}
+// The country pills showing at zoom `z` (the same rules as MapScreen's countryPills, at that zoom), for the photo plan.
+function pillsAtZoom(z: number, planCountry: { countryCode: string } | null, planDest: Destination | null): { latitude: number; longitude: number }[] {
+  const span = (SCREEN_W_GLOBAL * 360) / (256 * Math.pow(2, z));
+  const cands = COUNTRY_GROUPS.filter(g => {
+    const sel = planCountry?.countryCode === g.countryCode;
+    if (!sel && planDest?.countryCode === g.countryCode) return false;
+    const cutoff = getCountryPillCutoffLngDelta(g.countryCode);
+    return span >= (sel ? cutoff * 1.1 : cutoff);
+  }).sort((a, b) => {
+    const aSel = a.countryCode === planCountry?.countryCode, bSel = b.countryCode === planCountry?.countryCode;
+    if (aSel !== bSel) return aSel ? -1 : 1;
+    return getCountryPopularity(a.countryCode) - getCountryPopularity(b.countryCode) || (a.countryCode < b.countryCode ? -1 : 1);
+  });
+  const pxPerDegLng = SCREEN_W_GLOBAL / span;
+  const placed: { x: number; y: number }[] = [];
+  const out: { latitude: number; longitude: number }[] = [];
+  for (const g of cands) {
+    const p = mercatorPx(g.longitude, g.latitude, pxPerDegLng);
+    if (placed.some(o => Math.abs(p.x - o.x) < 100 && Math.abs(p.y - o.y) < 30)) continue;
+    placed.push(p);
+    out.push({ latitude: g.latitude, longitude: g.longitude });
+  }
+  return out;
+}
 const CAMERA_DEFAULT_SETTINGS = { centerCoordinate: [10, 20] as [number, number], zoomLevel: 1 };
 
 // Layer pill sizing — a single continuous capsule (see the JSX comment above its render
@@ -2135,182 +2167,87 @@ const destItems = useMemo((): DestItem[] =>
 
   // Rects of the visible destination name labels, read by the map's onPress (written by destPinPlan below).
   const destLabelHitRef = useRef<{ pxPerDegLng: number; rects: { id: string; rect: { l: number; r: number; t: number; b: number } }[] }>({ pxPerDegLng: 1, rects: [] });
-  const destPinPlan = useMemo(() => {
-    // Pan-invariant Web-Mercator projection scaled off the true visible span only (see
-    // mercatorPx + planLngDelta). NO camera centre, NO latitudeDelta — both drift under pan.
-    // Collisions are tested at the TRUE on-screen scale (pillVisibleLngDelta), not the planning scale. The planning scale
-    // runs ~2x deeper than reality, so two pins the plan thought 60pt apart were really 30pt apart and overlapped; Mapbox
-    // then hid one of them natively — instantly, with no fade. Tested at real distances the plan resolves the overlap
-    // itself (the loser becomes a dot, through the normal cross-fade). The promotion GATES below stay on planLngDelta.
-    const pxPerDegLng = SCREEN_W / pillPlanLngDelta;
-
-    // Plan over the pan-invariant ELIGIBLE set (not the viewport-culled render set), so the
-    // greedy collision resolution sees a stable roster while panning.
-    const dests = eligibleDests;
-    const positions = new Map<string, { x: number; y: number }>();
-    for (const d of dests) positions.set(d.id, mercatorPx(d.coordinates.longitude, d.coordinates.latitude, pxPerDegLng));
-
-    // The selected destination always wins a photo, unconditionally (even outside the photo
-    // zoom range); its MarkerView is hidden separately while its sheet is open.
-    const isForced = (d: Destination) => planDest?.id === d.id;
-
-    // Rank-STAGGERED promotion gates (pan-invariant latDelta): the most prominent
-    // destinations (rank 1) blossom into photo pins first, at a much wider zoom, and each
-    // lower rank tier earns its photo progressively deeper — so zooming in gradually
-    // reveals photos in order of prominence (Apple/Google Maps-style), instead of every
-    // destination flipping to a photo at one shared threshold. Saved destinations get a
-    // one-tier head start: a place you've marked matters more to you than its global rank.
-    // (PROMOTE_LATDELTA_BY_RANK, module level.) A rank-gated pin joins DEST_GATE_LEAD zoom levels early, transparent,
-    // and fades in when the camera crosses its gate (destGateOn, destTierStyle); fadeTier records each pin's tier.
-    const gateLead = Math.pow(2, DEST_GATE_LEAD);
-    const fadeTier = new Map<string, string>();
-    const panLatDelta = panInvariantLatDelta(planLngDelta);
-    // While a country is drilled into (explicitly, or implicitly via a selected
-    // destination), its own destinations bypass the rank gates within the country's own
-    // zoom range — a country's default view MUST show its destination pins (the whole point
-    // of selecting it is exploring what's inside), and some countries' default views sit
-    // wider than any global gate. Capped at the same per-country threshold the stamp fade
-    // uses so the bypass ends once the user zooms far out toward continent/world view.
-    const selCountryCode = planCountry?.countryCode ?? planDest?.countryCode;
-    const inSelectedCountryRange =
-      !!selCountryCode && panLatDelta <= getCountryStampThreshold(selCountryCode);
-    const canPromote = (d: Destination) => {
-      if (inSelectedCountryRange && d.countryCode === selCountryCode) return true;
-      // Pill→photo handoff, selection or not: once the camera is inside a country's own
-      // default view (pillVisibleLngDelta past its cutoff — the same rule that just hid
-      // that country's pill), its destinations become the primary markers there and bypass
-      // the global rank gates, exactly as if the country had been selected. Without this,
-      // browsing into a country without tapping its pill left only dots at zooms where the
-      // pill was already gone (e.g. Los Angeles/Grand Canyon still dots with the western
-      // US filling the screen). Eligibility (visibleRank/saved) and the photo-vs-photo and
-      // pill collision rules still apply on top.
-      // The in-country bypass is a gate too, at the country's own cutoff, with the same transparent early join and native
-      // fade as the rank gates: it used to promote every one of the country's destinations in the frame the camera
-      // crossed the cutoff, all popping in (and out again on the way back) with no fade.
-      const effRank = Math.max(1, d.rank - (visitIndex.isDestVisited(d.id) ? 1 : 0));
-      const cut = getCountryPillCutoffLngDelta(d.countryCode);
-      const countryIn = cut > 0 && pillPlanLngDelta < cut * gateLead;
-      const rankIn = panLatDelta <= (PROMOTE_LATDELTA_BY_RANK[effRank] ?? 2.5) * gateLead;
-      if (!countryIn && !rankIn) return false;
-      // It follows whichever gate admits it first (the lower zoom).
-      const rz = destGateZooms()[`r${effRank}`] ?? Infinity, cz = destGateZooms()[`c${d.countryCode}`] ?? Infinity;
-      fadeTier.set(d.id, rz <= cz ? `r${effRank}` : `c${d.countryCode}`);
-      return true;
-    };
-
-    // Deterministic, pan-invariant priority: selected destination first; then (while a
-    // country is selected) that country's own destinations; then importance (rank); then a
-    // fixed id tiebreak. It NEVER references the viewport centre, so panning can't reshuffle
-    // who wins the limited photo slots — the previous centre-distance ordering was the main
-    // cause of pins swapping stamp↔photo as you panned.
-    const rankScore = (d: Destination) =>
-      (isForced(d) ? -1_000_000 : 0) +
-      (planCountry && d.countryCode === planCountry.countryCode ? -1_000 : 0) +
-      d.rank;
-    const ordered = [...dests].sort(
-      (a, b) => rankScore(a) - rankScore(b) || (a.id < b.id ? -1 : 1),
-    );
-
-    // Country pills always win space over destination photos — they're the higher-level
-    // context, and the pills' own visibility rule already guarantees they disappear once
-    // the user zooms past a country's default view. Any destination whose photo would
-    // overlap a currently-shown pill simply stays a dot until the camera is deep enough
-    // that the two no longer collide (or the pill has hit its own default-view cutoff).
-    // Same pan-invariant projection/scale as the photo collision test below.
-    const pillBlocks = countryPills.map(c => mercatorPx(c.longitude, c.latitude, pxPerDegLng));
-    const PILL_BLOCK_DX = 75; // ~half pill width + photo pin radius
-    const PILL_BLOCK_DY = 42; // ~half pill height + photo pin radius + label headroom
-
-    const photoIds = new Set<string>();
-    const placed: { x: number; y: number }[] = [];
-    // The selected spot's pin always wins space over a destination photo: one that would sit on
-    // it (including the selected destination's own) stays a stamp instead. This, not draw order,
-    // is what keeps the spot uncovered — MarkerViews are stacked by when they were mounted, so a
-    // destination photo that fades in after the spot pin would land on top of it.
-    const spotPx = selectedSpot
-      ? mercatorPx(selectedSpot.coordinates.longitude, selectedSpot.coordinates.latitude, pxPerDegLng)
-      : null;
-    for (const d of ordered) {
-      const forced = isForced(d);
-      if (!forced && !canPromote(d)) continue;            // stays a stamp at wide zoom
-      const p = positions.get(d.id)!;
-      // Applies to the selected destination's own (forced) photo too — that's the pin that most
-      // often sits right on top of its own spot.
-      if (spotPx && Math.abs(p.x - spotPx.x) < 75 && Math.abs(p.y - spotPx.y) < 60) continue;
-      if (!forced) {
-        let blockedByPill = false;
-        for (const o of pillBlocks) {
-          if (Math.abs(p.x - o.x) < PILL_BLOCK_DX && Math.abs(p.y - o.y) < PILL_BLOCK_DY) { blockedByPill = true; break; }
-        }
-        if (blockedByPill) continue;
-        // Reject (stays a stamp) if it would sit within STAMP_PX of an already-placed,
-        // higher-priority photo — this is the collision rule, and since photos are only
-        // ever placed in the fixed priority order, the lower-priority one is the one that
-        // stays a stamp. STAMP_PX (44) > photo diameter (37) so photos never overlap.
-        let collides = false;
-        if (!NATIVE_DEST_PINS) for (const o of placed) {
-          const dx = p.x - o.x, dy = p.y - o.y;
-          if (dx * dx + dy * dy < STAMP_PX * STAMP_PX) { collides = true; break; }
-        }
-        if (collides) continue;
-      }
-      photoIds.add(d.id);
-      placed.push(p);
-    }
-
-    // Placement priority for the native layer (symbolSortKey: lower is placed first and wins a collision).
+  // ── Destination photo pins: one zoom-only plan ─────────────────────────────────────────────────────────────────────
+  // Each destination gets a PHOTO ZOOM: the zoom from which it shows as a photo pin with its name. The plan walks the
+  // zoom ladder (DEST_LADDER) from wide to close over EVERY destination in the world (never just what is on screen) and,
+  // at each step, keeps every pin it has already placed and then adds the newcomers that are eligible there (their rank or
+  // country gate, see destEligibleZoom), in priority order, wherever the pin and its name fit clear of the pins placed so
+  // far, the country pills showing at that zoom and the selected spot. Zooming in only spreads pins apart, so a pin placed
+  // at one zoom still fits at every closer one: a photo pin (and its name) that shows zoomed out persists zooming in, and
+  // zooming back out removes pins in exactly the reverse order. Nothing in it depends on where the camera is, so panning
+  // never changes which pins show. It is recomputed only when the selection or the visited set changes.
+  const destPhotoPlan = useMemo(() => {
+    const zoomOf = new Map<string, number>();   // destination id -> ladder index of its photo zoom (-1: always)
     const priority = new Map<string, number>();
+    const rankScore = (d: Destination) =>
+      (planDest?.id === d.id ? -1_000_000 : 0) + (planCountry && d.countryCode === planCountry.countryCode ? -1_000 : 0) + d.rank;
+    const ordered = [...DESTINATIONS].sort((a, b) => rankScore(a) - rankScore(b) || (a.id < b.id ? -1 : 1));
     ordered.forEach((d, i) => priority.set(d.id, i));
-    if (NATIVE_DEST_PINS) {
-      destLabelHitRef.current = { pxPerDegLng, rects: [] };   // names are native symbols: they take taps themselves
-      return { photoIds, positions, labelHiddenIds: new Set<string>(), priority, fadeTier };
-    }
-
-    // Name labels. A label is hidden when its text box would overlap another placed destination's circle or an
-    // already-visible higher-priority label. The circle is centred on the coordinate and the label hangs below it.
-    const R = PIN_SIZE / 2 + 2, LH = 13, CHW = 6.3, MAXW = 90;
-    const geo = new Map<string, { cx: number; cy: number; l: number; r: number; t: number; b: number }>();
+    // Unit Web-Mercator positions (0..1 across the world); at zoom z a point is at u * 256 * 2^z on screen.
+    const unit = (lng: number, lat: number) => {
+      const s = Math.sin((Math.max(-85, Math.min(85, lat)) * Math.PI) / 180);
+      return { x: (lng + 180) / 360, y: 0.5 - Math.log((1 + s) / (1 - s)) / (4 * Math.PI) };
+    };
+    const pos = new Map(ordered.map(d => [d.id, unit(d.coordinates.longitude, d.coordinates.latitude)]));
+    // A pin's footprint at scale 1 (screen points around its point): the photo circle, and its name hanging below it.
+    const R = DEST_PIN_SIZE / 2 + 3;
+    const foot = new Map<string, { l: number; r: number; t: number; b: number }>();
     for (const d of ordered) {
-      if (!photoIds.has(d.id)) continue;
-      const p = positions.get(d.id)!;
+      const perLine = Math.floor(90 / 6.3);
       let lines = 1, cur = 0;
-      const perLine = Math.floor(MAXW / CHW);
       for (const w of d.name.split(/\s+/)) {
         if (cur === 0) cur = w.length;
         else if (cur + 1 + w.length <= perLine) cur += 1 + w.length;
         else { lines++; cur = w.length; }
         while (cur > perLine) { lines++; cur -= perLine; }
       }
-      const longest = Math.min(MAXW, Math.min(d.name.length, perLine) * CHW + 2);
-      // mercatorPx's y grows northward, so the screen-down y is -p.y; the circle is centred on the coordinate.
-      const h = lines * LH, cy = -p.y;
-      geo.set(d.id, { cx: p.x, cy, l: p.x - longest / 2, r: p.x + longest / 2, t: cy + PIN_SIZE / 2 + 4, b: cy + PIN_SIZE / 2 + 4 + h });
+      const half = Math.max(R, Math.min(90, Math.min(d.name.length, perLine) * 6.3 + 4) / 2);
+      foot.set(d.id, { l: -half, r: half, t: -R, b: DEST_PIN_SIZE / 2 + 4 + lines * 13 + 2 });
     }
-    const labelHiddenIds = new Set<string>();
-    const shownLabels: { l: number; r: number; t: number; b: number }[] = [];
-    for (const d of ordered) {
-      const g = geo.get(d.id);
-      if (!g) continue;
-      let hide = false;
-      for (const [oid, o] of geo) {
-        if (oid === d.id) continue;
-        // nearest point of the other circle to this label's box
-        const nx = Math.max(g.l, Math.min(o.cx, g.r)), ny = Math.max(g.t, Math.min(o.cy, g.b));
-        if ((nx - o.cx) ** 2 + (ny - o.cy) ** 2 < R * R) { hide = true; break; }
+    const selCC = planCountry?.countryCode ?? planDest?.countryCode;
+    const selCountryZoom = selCC ? zoomForPanLatDelta(getCountryStampThreshold(selCC)) : Infinity;
+    const spotU = selectedSpot ? unit(selectedSpot.coordinates.longitude, selectedSpot.coordinates.latitude) : null;
+    type Box = { l: number; r: number; t: number; b: number };
+    const hit = (a: Box, b: Box) => a.l < b.r && a.r > b.l && a.t < b.b && a.b > b.t;
+    const placed: string[] = [];
+    for (let i = 0; i < DEST_LADDER.length; i++) {
+      const z = DEST_LADDER[i];
+      const scale = 256 * Math.pow(2, z);
+      const boxAt = (id: string): Box => {
+        const u = pos.get(id)!, f = foot.get(id)!, x = u.x * scale, y = u.y * scale;
+        return { l: x + f.l, r: x + f.r, t: y + f.t, b: y + f.b };
+      };
+      const taken: Box[] = placed.map(boxAt);
+      for (const p of pillsAtZoom(z, planCountry, planDest)) {
+        const u = unit(p.longitude, p.latitude), x = u.x * scale, y = u.y * scale;
+        taken.push({ l: x - 75, r: x + 75, t: y - 42, b: y + 42 });
       }
-      if (!hide) hide = shownLabels.some(o => g.l < o.r && g.r > o.l && g.t < o.b && g.b > o.t);
-      if (hide) labelHiddenIds.add(d.id); else shownLabels.push(g);
+      if (spotU) { const x = spotU.x * scale, y = spotU.y * scale; taken.push({ l: x - 75, r: x + 75, t: y - 60, b: y + 60 }); }
+      for (const d of ordered) {
+        if (zoomOf.has(d.id)) continue;
+        if (planDest?.id === d.id) { zoomOf.set(d.id, -1); placed.push(d.id); taken.push(boxAt(d.id)); continue; }
+        if (destEligibleZoom(d, visitIndex.isDestVisited(d.id), selCC, selCountryZoom) > z + ZOOM_EPSILON) continue;
+        const box = boxAt(d.id);
+        if (taken.some(t => hit(t, box))) continue;
+        zoomOf.set(d.id, i); placed.push(d.id); taken.push(box);
+      }
     }
-
-    const labelRects: { id: string; rect: { l: number; r: number; t: number; b: number } }[] = [];
-    geo.forEach((g, id) => { if (!labelHiddenIds.has(id)) labelRects.push({ id, rect: g }); });
-    destLabelHitRef.current = { pxPerDegLng, rects: labelRects };
-
-    return { photoIds, positions, labelHiddenIds, priority, fadeTier };
-    // Pure function of zoom (planLngDelta) + eligible set + selection + saved state +
-    // the (equally pan-invariant) country pill plan.
-    // No camera centre → recompute produces an identical plan while panning at fixed zoom.
-  }, [eligibleDests, planLngDelta, pillPlanLngDelta, planCountry, planDest, selectedSpot, visitIndex, countryPills]);
+    const fadeTier = new Map<string, string>();
+    for (const [id, i] of zoomOf) fadeTier.set(id, i < 0 ? '' : `z${i}`);
+    return { zoomOf, priority, fadeTier };
+  }, [planCountry, planDest, selectedSpot, visitIndex]);
+  // The plan at the current zoom: photoIds show now (spot planning keeps clear of them); dataIds are in the pin layers'
+  // data, DEST_GATE_LEAD zoom levels ahead of their photo zoom, still transparent, so their fade-in is never a data change.
+  const destPinPlan = useMemo(() => {
+    const photoIds = new Set<string>(), dataIds = new Set<string>();
+    for (const [id, i] of destPhotoPlan.zoomOf) {
+      const gz = i < 0 ? -Infinity : DEST_LADDER[i];
+      if (gz <= handoffZoom + ZOOM_EPSILON) photoIds.add(id);
+      if (gz <= planZoom + DEST_GATE_LEAD) dataIds.add(id);
+    }
+    destLabelHitRef.current = { pxPerDegLng: 1, rects: [] };   // names are native symbols: they take taps themselves
+    return { photoIds, dataIds, labelHiddenIds: new Set<string>(), priority: destPhotoPlan.priority, fadeTier: destPhotoPlan.fadeTier };
+  }, [destPhotoPlan, handoffZoom, planZoom]);
 
   // Stamps are rendered via CircleLayer (not MarkerView) so Mapbox renders all of them
   // regardless of proximity. Every filter-passing destination gets a stamp — INCLUDING ones
@@ -4498,7 +4435,7 @@ const destItems = useMemo((): DestItem[] =>
   // threshold crossings. Downstream lists are keyed on this stable copy, so a frame that changes nothing costs nothing
   // beyond the plan itself — no new arrays, no marker-list rebuild, no extra renders — and a frame that does change
   // something reacts immediately instead of queueing behind a pile of no-op re-renders.
-  const stablePhotoIds = useStableSet(destPinPlan.photoIds);
+  const stablePhotoIds = useStableSet(destPinPlan.dataIds);
   const hiddenDestIdsRef = useRef(hiddenDestIds);
   hiddenDestIdsRef.current = hiddenDestIds;
   const promotedDests = useMemo(() => destItems
