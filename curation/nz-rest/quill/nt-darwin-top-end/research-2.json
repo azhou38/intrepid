@@ -1,0 +1,454 @@
+[
+ {
+  "id": "darwin-17",
+  "name": "Charles Darwin National Park",
+  "coordinates": {
+   "latitude": -12.438451,
+   "longitude": 130.8773
+  },
+  "coordinates_source": "OSM tourism=information board inside the park (visitor entrance area, Wishart Road side); park centroid not used",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 0,
+  "hours": "Daily 8:00 AM – 7:00 PM",
+  "closedDays": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "free": true,
+  "ticketUrl": "BLOCKED",
+  "blocked_url": "https://nt.gov.au/parks/find-a-park/charles-darwin-national-park",
+  "bio": "Small park on Frances Bay with WWII ammunition bunkers, a harbour lookout, shell middens and walking tracks.",
+  "unverified": [
+   "visit length (estimate)"
+  ],
+  "notes": "Hours and \"Free entry\" from the Tourism NT listing, which links to the nt.gov.au page (403 captcha to scripts).",
+  "sources": [
+   "https://northernterritory.com/darwin-and-surrounds/see-and-do/charles-darwin-national-park",
+   "https://en.wikivoyage.org/wiki/Darwin"
+  ]
+ },
+ {
+  "id": "darwin-18",
+  "name": "Fogg Dam Conservation Reserve",
+  "coordinates": {
+   "latitude": -12.563484,
+   "longitude": 131.303438
+  },
+  "coordinates_source": "OSM tourism=viewpoint on the dam wall; the Commons photo median is 40 m away",
+  "pin_confidence": "HIGH",
+  "moved_m": 0,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 10,
+  "costMax": 10,
+  "currency": "AUD",
+  "ticketUrl": "BLOCKED",
+  "blocked_url": "https://nt.gov.au/leisure/parks-reserves/find-a-park-to-visit/fogg-dam-conservation-area",
+  "bio": "Wetland reserve about 70 km east of Darwin with boardwalks, bird hides and a road across the dam wall.",
+  "unverified": [
+   "hours: no stated hours, \"accessible all year\" only (Open 24 hours is an inference)",
+   "Wikivoyage says no entry fee but Tourism NT says visitors need an NT Parks Visitor Pass: used the pass price; confirm",
+   "visit length (estimate)"
+  ],
+  "sources": [
+   "https://northernterritory.com/darwin-and-surrounds/see-and-do/fogg-dam-conservation-reserve",
+   "https://en.wikivoyage.org/wiki/Humpty_Doo"
+  ]
+ },
+ {
+  "id": "darwin-19",
+  "name": "The Big Boxing Crocodile",
+  "coordinates": {
+   "latitude": -12.5727281,
+   "longitude": 131.1044851
+  },
+  "coordinates_source": "OSM tourism=attraction \"The Big Boxing Croc\"",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 0,
+  "hours": "Open 24 hours",
+  "closedDays": null,
+  "visitHoursMin": 0,
+  "visitHoursMax": 0.25,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "Roadside giant sculpture of a boxing crocodile on the Arnhem Highway at Humpty Doo.",
+  "unverified": [
+   "no official site found; hours and free access from Wikivoyage only (updated Sep 2021)",
+   "still standing today (unverified)"
+  ],
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Humpty_Doo"
+  ]
+ },
+ {
+  "id": "darwin-20",
+  "name": "Palmerston",
+  "coordinates": {
+   "latitude": -12.4799608,
+   "longitude": 130.9844108
+  },
+  "coordinates_source": "OSM place=town \"Palmerston\" (town centre)",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 0,
+  "hours": "Daytime; venue hours unverified",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 2,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "Darwin's second centre, 21 km south-east, with shopping, Palmerston Water Park and the SWELL venue.",
+  "unverified": [
+   "hours of Water Park and SWELL",
+   "water park/venue prices (spot is the town: free)"
+  ],
+  "notes": "Town spot with no single steward: no ticketUrl. Tourism NT lists Palmerston Water Park and SWELL Palmerston under See and do.",
+  "sources": [
+   "https://northernterritory.com/darwin-and-surrounds/see-and-do",
+   "https://en.wikipedia.org/wiki/Palmerston,_Northern_Territory"
+  ]
+ },
+ {
+  "id": "litchfield-1",
+  "name": "Wangi Falls",
+  "coordinates": {
+   "latitude": -13.163878,
+   "longitude": 130.684932
+  },
+  "coordinates_source": "photon waterway=waterfall \"Wangi Falls\"; agrees with wiki, commons",
+  "pin_confidence": "HIGH",
+  "moved_m": 0,
+  "hours": "Open daily; swimming closed in the wet season (typically October to March)",
+  "closedDays": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 3,
+  "costMin": 10,
+  "costMax": 10,
+  "currency": "AUD",
+  "ticketUrl": "BLOCKED",
+  "blocked_url": "https://nt.gov.au/parks/find-a-park/litchfield-national-park/wangi-falls",
+  "fallback_verified_url": "https://nt.gov.au/parks/find-a-park/litchfield-national-park",
+  "bio": "Twin falls into a large plunge pool in monsoon forest, with a kiosk, picnic area and campground.",
+  "unverified": [
+   "kiosk/site opening times",
+   "visit length (estimate)"
+  ],
+  "notes": "Cost is the NT Parks Visitor Pass, adult 1-day $10 (NT residents exempt), from the Tourism NT listing of the park pass table; the listing does not state opening hours.",
+  "sources": [
+   "https://northernterritory.com/darwin-and-surrounds/see-and-do/wangi-falls",
+   "https://en.wikivoyage.org/wiki/Litchfield_National_Park",
+   "https://nt.gov.au/parks/find-a-park/litchfield-national-park"
+  ]
+ },
+ {
+  "id": "litchfield-2",
+  "name": "Florence Falls",
+  "coordinates": {
+   "latitude": -13.099146,
+   "longitude": 130.78354
+  },
+  "coordinates_source": "photon waterway=waterfall \"Florence Falls\"; agrees with photon, commons",
+  "pin_confidence": "HIGH",
+  "moved_m": 0,
+  "hours": "Open daily; opening times unverified",
+  "closedDays": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 10,
+  "costMax": 10,
+  "currency": "AUD",
+  "ticketUrl": "BLOCKED",
+  "blocked_url": "https://nt.gov.au/parks/find-a-park/litchfield-national-park/florence-falls",
+  "fallback_verified_url": "https://nt.gov.au/parks/find-a-park/litchfield-national-park",
+  "bio": "Double waterfall in monsoon forest, reached by 160 steps down to the plunge pool.",
+  "unverified": [
+   "hours (none stated)",
+   "visit length (estimate)"
+  ],
+  "notes": "Cost is the NT Parks Visitor Pass, adult 1-day $10 (NT residents exempt), from the Tourism NT listing of the park pass table; the listing does not state opening hours.",
+  "sources": [
+   "https://northernterritory.com/darwin-and-surrounds/see-and-do/florence-falls",
+   "https://en.wikivoyage.org/wiki/Litchfield_National_Park",
+   "https://nt.gov.au/parks/find-a-park/litchfield-national-park"
+  ]
+ },
+ {
+  "id": "litchfield-3",
+  "name": "Buley Rockhole",
+  "coordinates": {
+   "latitude": -13.112833,
+   "longitude": 130.785797
+  },
+  "coordinates_source": "photon tourism=viewpoint \"Buley Rockhole\"; agrees with commons",
+  "pin_confidence": "HIGH",
+  "moved_m": 0,
+  "hours": "Open daily; opening times unverified",
+  "closedDays": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 10,
+  "costMax": 10,
+  "currency": "AUD",
+  "ticketUrl": "BLOCKED",
+  "blocked_url": "https://nt.gov.au/parks/find-a-park/litchfield-national-park/buley-rockhole",
+  "fallback_verified_url": "https://nt.gov.au/parks/find-a-park/litchfield-national-park",
+  "bio": "Series of cascading rockholes 80 m from the car park, popular for a swim.",
+  "unverified": [
+   "hours (Tourism NT says only \"open for most of the year\")",
+   "visit length (estimate)"
+  ],
+  "notes": "Cost is the NT Parks Visitor Pass, adult 1-day $10 (NT residents exempt), from the Tourism NT listing of the park pass table; the listing does not state opening hours.",
+  "sources": [
+   "https://northernterritory.com/darwin-and-surrounds/see-and-do/buley-rockhole",
+   "https://en.wikivoyage.org/wiki/Litchfield_National_Park",
+   "https://nt.gov.au/parks/find-a-park/litchfield-national-park"
+  ]
+ },
+ {
+  "id": "litchfield-4",
+  "name": "Magnetic Termite Mounds",
+  "coordinates": {
+   "latitude": -13.102811,
+   "longitude": 130.844147
+  },
+  "coordinates_source": "photon tourism=attraction \"Magnetic Termite Mounds\"; agrees with photon, commons",
+  "pin_confidence": "HIGH",
+  "moved_m": 0,
+  "hours": "Open daily; opening times unverified",
+  "closedDays": null,
+  "visitHoursMin": 0,
+  "visitHoursMax": 0.5,
+  "costMin": 10,
+  "costMax": 10,
+  "currency": "AUD",
+  "ticketUrl": "https://nt.gov.au/parks/find-a-park/litchfield-national-park",
+  "blocked_url": null,
+  "bio": "Boardwalk through hundreds of magnetic termite mounds up to two metres high, their thin edges pointing north-south.",
+  "unverified": [
+   "hours (none stated)"
+  ],
+  "notes": "Cost is the NT Parks Visitor Pass, adult 1-day $10 (NT residents exempt), from the Tourism NT listing of the park pass table; the listing does not state opening hours. ticketUrl is the Litchfield park page (loads, names the park and its termite mounds); it is the page the Tourism NT listing links to.",
+  "sources": [
+   "https://northernterritory.com/darwin-and-surrounds/see-and-do/magnetic-termite-mounds",
+   "https://en.wikivoyage.org/wiki/Litchfield_National_Park",
+   "https://nt.gov.au/parks/find-a-park/litchfield-national-park"
+  ]
+ },
+ {
+  "id": "litchfield-5",
+  "name": "Tolmer Falls",
+  "coordinates": {
+   "latitude": -13.205575,
+   "longitude": 130.715066
+  },
+  "coordinates_source": "photon waterway=waterfall \"Tolmer Falls\"; agrees with wiki",
+  "pin_confidence": "HIGH",
+  "moved_m": 0,
+  "hours": "Open daily; opening times unverified",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "costMin": 10,
+  "costMax": 10,
+  "currency": "AUD",
+  "ticketUrl": "BLOCKED",
+  "blocked_url": "https://nt.gov.au/parks/find-a-park/litchfield-national-park/tolmer-falls",
+  "fallback_verified_url": "https://nt.gov.au/parks/find-a-park/litchfield-national-park",
+  "bio": "Waterfall over two escarpments into a deep plunge pool, seen from viewing platforms on a 400 m walk; no swimming.",
+  "unverified": [
+   "hours (none stated)"
+  ],
+  "notes": "Cost is the NT Parks Visitor Pass, adult 1-day $10 (NT residents exempt), from the Tourism NT listing of the park pass table; the listing does not state opening hours. A 1.6 km, 45-minute loop walk is also stated.",
+  "sources": [
+   "https://northernterritory.com/darwin-and-surrounds/see-and-do/tolmer-falls",
+   "https://nt.gov.au/parks/find-a-park/litchfield-national-park"
+  ]
+ },
+ {
+  "id": "litchfield-6",
+  "name": "Batchelor",
+  "coordinates": {
+   "latitude": -13.046805,
+   "longitude": 131.028358
+  },
+  "coordinates_source": "OSM place=town \"Batchelor\" (town centre)",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 0,
+  "hours": "Daytime; Batchelor Museum daily 10:00 AM – 4:00 PM",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "Small gateway town to Litchfield with the park headquarters, a butterfly farm and Batchelor Museum.",
+  "unverified": [
+   "museum price differs by regional Tourism NT page ($5 vs $10): irrelevant to the town spot, which is free",
+   "museum hours from search snippet of Tourism NT"
+  ],
+  "notes": "Town spot: no ticketUrl (museum has its own site, https://batchelormuseum.org.au/, loaded and OK, if the owner prefers it; museum entry $10 per Tourism NT listing, children 13 and under free).",
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Litchfield_National_Park",
+   "https://en.wikivoyage.org/wiki/Darwin",
+   "https://northernterritory.com/darwin-and-surrounds/see-and-do/batchelor-museum"
+  ]
+ },
+ {
+  "id": "litchfield-7",
+  "name": "Tabletop Track",
+  "coordinates": {
+   "latitude": -13.117046,
+   "longitude": 130.781288
+  },
+  "coordinates_source": "Midpoint of the OSM \"Tabletop Track\" ways chained west to east (39.6 km of way); OSM has no route relation, so the order is approximate",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 0,
+  "hours": "Open daily; bookings essential",
+  "closedDays": null,
+  "visitHoursMin": 3,
+  "visitHoursMax": 6,
+  "costMin": 10,
+  "costMax": 10,
+  "currency": "AUD",
+  "ticketUrl": "BLOCKED",
+  "blocked_url": "https://nt.gov.au/parks/find-a-park/litchfield-national-park/litchfield-national-park-tabletop-track",
+  "fallback_verified_url": "https://nt.gov.au/parks/find-a-park/litchfield-national-park",
+  "bio": "Multi-day bushwalk of 39 to 46 km through the Tabletop Range, reached from Wangi Falls, Florence Falls or Walker Creek.",
+  "unverified": [
+   "visit range is a day-section estimate",
+   "camping and extended walk fees (amounts not stated)",
+   "official page for the track not loadable"
+  ],
+  "notes": "Full walk takes three to five days (Wikivoyage) for 39 km, 39 to 46 km per Tourism NT; the Wangi Falls to Walker Creek section is a two-day 18.5 km walk. Cost is the park pass only; camping and extended walk fees are extra for all visitors. Book online before arrival.",
+  "sources": [
+   "https://northernterritory.com/darwin-and-surrounds/see-and-do/tabletop-track",
+   "https://northernterritory.com/darwin-and-surrounds/see-and-do/wangi-falls-to-walker-creek--tabletop-track",
+   "https://en.wikivoyage.org/wiki/Litchfield_National_Park",
+   "https://nt.gov.au/parks/find-a-park/litchfield-national-park"
+  ]
+ },
+ {
+  "id": "litchfield-8",
+  "name": "The Lost City",
+  "coordinates": {
+   "latitude": -13.2171412,
+   "longitude": 130.7355456
+  },
+  "coordinates_source": "OSM tourism=viewpoint \"The Lost City\"",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 0,
+  "hours": "4WD access only; tracks can close in the wet season",
+  "closedDays": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 10,
+  "costMax": 10,
+  "currency": "AUD",
+  "ticketUrl": "https://nt.gov.au/parks/find-a-park/litchfield-national-park",
+  "blocked_url": null,
+  "bio": "Weathered sandstone blocks and pillars that resemble a lost city, reached only by a 4WD track.",
+  "unverified": [
+   "hours",
+   "whether the track is open now",
+   "visit length (estimate)"
+  ],
+  "notes": "Cost is the NT Parks Visitor Pass, adult 1-day $10 (NT residents exempt), from the Tourism NT listing of the park pass table; the listing does not state opening hours. Park page loads and lists The Lost City. Wikivoyage: 4WD tracks may be closed by flooding in the wet season (Dec-Mar).",
+  "sources": [
+   "https://nt.gov.au/parks/find-a-park/litchfield-national-park",
+   "https://en.wikivoyage.org/wiki/Litchfield_National_Park"
+  ]
+ },
+ {
+  "id": "adelaide-river",
+  "name": "Adelaide River",
+  "coordinates": {
+   "latitude": -13.237696,
+   "longitude": 131.104436
+  },
+  "coordinates_source": "photon amenity=police \"Adelaide River Police Station\"; agrees with wiki",
+  "pin_confidence": "HIGH",
+  "moved_m": 0,
+  "hours": "Daytime; cruises May to October",
+  "closedDays": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 2,
+  "free": true,
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "Stuart Highway town 112 km south of Darwin, with a WWII war cemetery and jumping crocodile cruises.",
+  "unverified": [
+   "cruise prices and times (Wikivoyage: 9am, 11am, 1pm and 3pm from May to October); no single steward"
+  ],
+  "notes": "Town spot: no ticketUrl. Cruise operator site https://www.jumpingcroccruises.com.au/ (\"Adelaide River Cruises\", loads) is one of the operators, not a steward of the town.",
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Adelaide_River",
+   "https://en.wikivoyage.org/wiki/Litchfield_National_Park"
+  ]
+ },
+ {
+  "id": "mary-river-national-park",
+  "name": "Mary River National Park",
+  "coordinates": {
+   "latitude": -12.705917,
+   "longitude": 131.636019
+  },
+  "coordinates_source": "OSM tourism=attraction \"Corroboree Billabong Wetland Cruises\", the park's main visitor access off the Arnhem Highway; park centroid not used",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 0,
+  "hours": "Open daily; hours unverified",
+  "closedDays": null,
+  "visitHoursMin": 2,
+  "visitHoursMax": 5,
+  "costMin": 10,
+  "costMax": 10,
+  "currency": "AUD",
+  "ticketUrl": "BLOCKED",
+  "blocked_url": "https://nt.gov.au/parks/find-a-park/mary-river-national-park",
+  "bio": "Wetlands and billabongs east of Darwin with dense birdlife, crocodiles, boardwalks and wetland cruises.",
+  "unverified": [
+   "hours (none stated)",
+   "visit length (estimate)"
+  ],
+  "notes": "Cost is the NT Parks Visitor Pass, adult 1-day $10 (NT residents exempt), from the Tourism NT listing of the park pass table; a Mary River listing (Mistake Billabong) does not state opening hours.",
+  "sources": [
+   "https://northernterritory.com/darwin-and-surrounds/see-and-do/mistake-billabong",
+   "https://northernterritory.com/darwin-and-surrounds/see-and-do/nature-and-wildlife",
+   "https://en.wikivoyage.org/wiki/Top_End",
+   "https://en.wikipedia.org/wiki/Mary_River_National_Park"
+  ]
+ },
+ {
+  "id": "tiwi-islands",
+  "name": "Tiwi Islands",
+  "coordinates": {
+   "latitude": -11.762586,
+   "longitude": 130.632109
+  },
+  "coordinates_source": "OSM place=village \"Wurrumiyanga\" on Bathurst Island, where tours and flights arrive; the Wikipedia point for the island group is open water",
+  "pin_confidence": "MEDIUM",
+  "moved_m": 0,
+  "hours": "Guided day tours only (permit required)",
+  "closedDays": null,
+  "visitHoursMin": 4,
+  "visitHoursMax": 10,
+  "costMin": 465,
+  "costMax": 469,
+  "currency": "AUD",
+  "ticketUrl": null,
+  "blocked_url": null,
+  "bio": "Island group north of Darwin with Tiwi art, mission heritage and Aboriginal culture, visited on guided tours.",
+  "unverified": [
+   "current price: Wikivoyage \"from $465\", a SeaLink listing $469 (promo to Nov 2025); AAT Kings lists USD",
+   "tour days (Sealink: Thursday and Friday, April to November)",
+   "visit length (tour is about 8-10 hours incl. 2.5 h ferry each way; estimate)"
+  ],
+  "notes": "Sold by many operators (tours, flights, ferry) and a permit is needed: no ticketUrl.",
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Tiwi_Islands",
+   "https://entertainment.sealinktravelgroup.com.au/offers/5970",
+   "https://www.aatkings.com/tfer"
+  ]
+ }
+]

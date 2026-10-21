@@ -1,0 +1,537 @@
+{
+ "darwin-3": {
+  "name": "Darwin Waterfront",
+  "recommended": {
+   "lat": -12.466728,
+   "lon": 130.846055,
+   "src": "photon",
+   "name": "Waterfront Parklands & Recreation",
+   "type": "highway=bus_stop"
+  },
+  "confidence": "HIGH",
+  "agreeing": [
+   "commons"
+  ],
+  "candidates": [
+   {
+    "src": "photon",
+    "name": "Waterfront Parklands & Recreation",
+    "type": "highway=bus_stop",
+    "lat": -12.4667279,
+    "lon": 130.8460554,
+    "match": 0.6,
+    "from_hint_m": 62
+   },
+   {
+    "src": "photon",
+    "name": "Surf Dive 'n Ski - Darwin Waterfront",
+    "type": "shop=clothes",
+    "lat": -12.4681147,
+    "lon": 130.846395,
+    "match": 0.6,
+    "from_hint_m": 109
+   },
+   {
+    "src": "photon",
+    "name": "Waterfront Artificial Beach",
+    "type": "natural=beach",
+    "lat": -12.468131,
+    "lon": 130.8469016,
+    "match": 0.6,
+    "from_hint_m": 121
+   },
+   {
+    "src": "photon",
+    "name": "Waterfront Swimming Lagoon",
+    "type": "leisure=swimming_pool",
+    "lat": -12.4680424,
+    "lon": 130.8471532,
+    "match": 0.6,
+    "from_hint_m": 127
+   },
+   {
+    "src": "photon",
+    "name": "Charles Darwin University - Waterfront",
+    "type": "amenity=university",
+    "lat": -12.4677396,
+    "lon": 130.8454097,
+    "match": 0.6,
+    "from_hint_m": 131
+   },
+   {
+    "src": "photon",
+    "name": "Darwin Waterfront Precinct Municipality",
+    "type": "place=municipality",
+    "lat": -12.4678515,
+    "lon": 130.8485503,
+    "match": 0.6,
+    "from_hint_m": 242
+   },
+   {
+    "src": "commons",
+    "name": "49 geotagged files",
+    "type": "photo median",
+    "lat": -12.466736,
+    "lon": 130.846948,
+    "match": 0.5,
+    "from_hint_m": 71
+   }
+  ]
+ },
+ "darwin-6": {
+  "name": "George Brown Darwin Botanic Gardens",
+  "recommended": {
+   "lat": -12.444809,
+   "lon": 130.837134,
+   "src": "photon",
+   "name": "George Brown Darwin Botanic Gardens",
+   "type": "leisure=park"
+  },
+  "confidence": "HIGH",
+  "agreeing": [
+   "wiki"
+  ],
+  "candidates": [
+   {
+    "src": "wiki",
+    "name": "George Brown Darwin Botanic Gardens",
+    "type": "article",
+    "lat": -12.445,
+    "lon": 130.83638889,
+    "match": 1.0,
+    "from_hint_m": 0
+   },
+   {
+    "src": "photon",
+    "name": "George Brown Darwin Botanic Gardens",
+    "type": "leisure=park",
+    "lat": -12.4448089,
+    "lon": 130.8371343,
+    "match": 0.6,
+    "from_hint_m": 84
+   },
+   {
+    "src": "commons",
+    "name": "47 geotagged files",
+    "type": "photo median",
+    "lat": -12.445306,
+    "lon": 130.838136,
+    "match": 0.5,
+    "from_hint_m": 193
+   }
+  ]
+ },
+ "darwin-9": {
+  "name": "Darwin Military Museum",
+  "recommended": {
+   "lat": -12.407983,
+   "lon": 130.819549,
+   "src": "photon",
+   "name": "Darwin Military Museum",
+   "type": "tourism=museum"
+  },
+  "confidence": "HIGH",
+  "agreeing": [
+   "wiki"
+  ],
+  "candidates": [
+   {
+    "src": "wiki",
+    "name": "Darwin Military Museum",
+    "type": "article",
+    "lat": -12.40751667,
+    "lon": 130.81976944,
+    "match": 1.0,
+    "from_hint_m": 0
+   },
+   {
+    "src": "photon",
+    "name": "Darwin Military Museum",
+    "type": "tourism=museum",
+    "lat": -12.407983,
+    "lon": 130.8195495,
+    "match": 0.6,
+    "from_hint_m": 57
+   },
+   {
+    "src": "commons",
+    "name": "19 geotagged files",
+    "type": "photo median",
+    "lat": -12.4086,
+    "lon": 130.820556,
+    "match": 0.5,
+    "from_hint_m": 148
+   }
+  ]
+ },
+ "darwin-13": {
+  "name": "Aquascene",
+  "recommended": {
+   "lat": -12.459793,
+   "lon": 130.831884,
+   "src": "photon",
+   "name": "Aquascene Fish Feeding",
+   "type": "tourism=attraction"
+  },
+  "confidence": "LOW",
+  "agreeing": [],
+  "candidates": [
+   {
+    "src": "photon",
+    "name": "Aquascene Fish Feeding",
+    "type": "tourism=attraction",
+    "lat": -12.4597926,
+    "lon": 130.8318841,
+    "match": 0.6,
+    "from_hint_m": 101
+   }
+  ]
+ },
+ "darwin-16": {
+  "name": "Casuarina Coastal Reserve",
+  "recommended": {
+   "lat": -12.354681,
+   "lon": 130.867237,
+   "src": "photon",
+   "name": "Casuarina Coastal Reserve",
+   "type": "leisure=nature_reserve"
+  },
+  "confidence": "LOW",
+  "agreeing": [],
+  "candidates": [
+   {
+    "src": "wiki",
+    "name": "Casuarina Coastal Reserve",
+    "type": "article",
+    "lat": -12.33166667,
+    "lon": 130.89555556,
+    "match": 1.0,
+    "from_hint_m": 0
+   },
+   {
+    "src": "photon",
+    "name": "Casuarina Coastal Reserve",
+    "type": "leisure=nature_reserve",
+    "lat": -12.3546815,
+    "lon": 130.8672373,
+    "match": 0.6,
+    "from_hint_m": 4006
+   }
+  ]
+ },
+ "darwin-19": {
+  "name": "The Big Boxing Crocodile",
+  "recommended": {
+   "lat": -12.572728,
+   "lon": 131.104485,
+   "src": "photon",
+   "name": "The Big Boxing Croc",
+   "type": "tourism=attraction"
+  },
+  "confidence": "LOW",
+  "agreeing": [],
+  "candidates": [
+   {
+    "src": "photon",
+    "name": "The Big Boxing Croc",
+    "type": "tourism=attraction",
+    "lat": -12.5727281,
+    "lon": 131.1044851,
+    "match": 0.6,
+    "from_hint_m": 18
+   },
+   {
+    "src": "commons",
+    "name": "1 geotagged files",
+    "type": "photo median",
+    "lat": -12.540488,
+    "lon": 131.131439,
+    "match": 0.5,
+    "from_hint_m": 4632
+   }
+  ]
+ },
+ "litchfield-2": {
+  "name": "Florence Falls",
+  "recommended": {
+   "lat": -13.099146,
+   "lon": 130.78354,
+   "src": "photon",
+   "name": "Florence Falls",
+   "type": "waterway=waterfall"
+  },
+  "confidence": "HIGH",
+  "agreeing": [
+   "photon",
+   "commons"
+  ],
+  "candidates": [
+   {
+    "src": "photon",
+    "name": "Florence Falls",
+    "type": "waterway=waterfall",
+    "lat": -13.0991456,
+    "lon": 130.7835398,
+    "match": 0.6,
+    "from_hint_m": 325
+   },
+   {
+    "src": "wiki",
+    "name": "Florence Falls",
+    "type": "article",
+    "lat": -13.09888889,
+    "lon": 130.78055556,
+    "match": 1.0,
+    "from_hint_m": 0
+   },
+   {
+    "src": "photon",
+    "name": "Florence Falls",
+    "type": "tourism=viewpoint",
+    "lat": -13.0987169,
+    "lon": 130.7834077,
+    "match": 0.6,
+    "from_hint_m": 310
+   },
+   {
+    "src": "photon",
+    "name": "Florence Falls Link Track (to Tabletop)",
+    "type": "highway=path",
+    "lat": -13.1018111,
+    "lon": 130.7794622,
+    "match": 0.6,
+    "from_hint_m": 346
+   },
+   {
+    "src": "photon",
+    "name": "Florence Falls 2WD Campground",
+    "type": "tourism=camp_site",
+    "lat": -13.0968211,
+    "lon": 130.7845865,
+    "match": 0.6,
+    "from_hint_m": 494
+   },
+   {
+    "src": "photon",
+    "name": "Florence Falls Day Use Area",
+    "type": "tourism=picnic_site",
+    "lat": -13.101064,
+    "lon": 130.7848676,
+    "match": 0.6,
+    "from_hint_m": 527
+   },
+   {
+    "src": "photon",
+    "name": "Florence Falls Day Use Area",
+    "type": "tourism=picnic_site",
+    "lat": -13.1013132,
+    "lon": 130.7850079,
+    "match": 0.6,
+    "from_hint_m": 553
+   },
+   {
+    "src": "photon",
+    "name": "Florence Falls 'Old 4WD' Campground",
+    "type": "tourism=camp_site",
+    "lat": -13.0929838,
+    "lon": 130.7846541,
+    "match": 0.6,
+    "from_hint_m": 793
+   },
+   {
+    "src": "commons",
+    "name": "15 geotagged files",
+    "type": "photo median",
+    "lat": -13.098688888889,
+    "lon": 130.783373,
+    "match": 0.5,
+    "from_hint_m": 306
+   }
+  ]
+ },
+ "litchfield-5": {
+  "name": "Tolmer Falls",
+  "recommended": {
+   "lat": -13.205575,
+   "lon": 130.715066,
+   "src": "photon",
+   "name": "Tolmer Falls",
+   "type": "waterway=waterfall"
+  },
+  "confidence": "HIGH",
+  "agreeing": [
+   "wiki"
+  ],
+  "candidates": [
+   {
+    "src": "photon",
+    "name": "Tolmer Falls",
+    "type": "waterway=waterfall",
+    "lat": -13.205575,
+    "lon": 130.7150658,
+    "match": 0.6,
+    "from_hint_m": 67
+   },
+   {
+    "src": "wiki",
+    "name": "Tolmer Falls",
+    "type": "article",
+    "lat": -13.20555556,
+    "lon": 130.71444444,
+    "match": 1.0,
+    "from_hint_m": 0
+   },
+   {
+    "src": "photon",
+    "name": "Tolmer Falls Lookout",
+    "type": "tourism=viewpoint",
+    "lat": -13.2054156,
+    "lon": 130.7139605,
+    "match": 0.6,
+    "from_hint_m": 55
+   },
+   {
+    "src": "photon",
+    "name": "Tolmer Falls Walk",
+    "type": "highway=footway",
+    "lat": -13.2033417,
+    "lon": 130.7148058,
+    "match": 0.6,
+    "from_hint_m": 250
+   },
+   {
+    "src": "photon",
+    "name": "Tolmer Falls Walk",
+    "type": "highway=path",
+    "lat": -13.2033703,
+    "lon": 130.7160265,
+    "match": 0.6,
+    "from_hint_m": 298
+   },
+   {
+    "src": "photon",
+    "name": "Tolmer Falls Parking",
+    "type": "amenity=parking",
+    "lat": -13.202458,
+    "lon": 130.7137651,
+    "match": 0.6,
+    "from_hint_m": 353
+   },
+   {
+    "src": "photon",
+    "name": "Tolmer Falls Road",
+    "type": "highway=unclassified",
+    "lat": -13.2003507,
+    "lon": 130.7133424,
+    "match": 0.6,
+    "from_hint_m": 592
+   },
+   {
+    "src": "commons",
+    "name": "3 geotagged files",
+    "type": "photo median",
+    "lat": -13.204766,
+    "lon": 130.713958,
+    "match": 0.5,
+    "from_hint_m": 102
+   }
+  ]
+ },
+ "adelaide-river": {
+  "name": "Adelaide River",
+  "recommended": {
+   "lat": -13.237696,
+   "lon": 131.104436,
+   "src": "photon",
+   "name": "Adelaide River Police Station",
+   "type": "amenity=police"
+  },
+  "confidence": "HIGH",
+  "agreeing": [
+   "wiki"
+  ],
+  "candidates": [
+   {
+    "src": "wiki",
+    "name": "Adelaide River, Northern Territory",
+    "type": "article",
+    "lat": -13.237804,
+    "lon": 131.104727,
+    "match": 1.0,
+    "from_hint_m": 0
+   },
+   {
+    "src": "photon",
+    "name": "Adelaide River Police Station",
+    "type": "amenity=police",
+    "lat": -13.2376957,
+    "lon": 131.1044357,
+    "match": 0.6,
+    "from_hint_m": 34
+   },
+   {
+    "src": "photon",
+    "name": "Adelaide River Volunteer Fire Brigade",
+    "type": "amenity=fire_station",
+    "lat": -13.2370133,
+    "lon": 131.1036219,
+    "match": 0.6,
+    "from_hint_m": 149
+   },
+   {
+    "src": "photon",
+    "name": "Adelaide River Health Centre",
+    "type": "amenity=clinic",
+    "lat": -13.2363544,
+    "lon": 131.1040015,
+    "match": 0.6,
+    "from_hint_m": 180
+   },
+   {
+    "src": "photon",
+    "name": "Adelaide River Inn",
+    "type": "landuse=commercial",
+    "lat": -13.2385972,
+    "lon": 131.1066357,
+    "match": 0.6,
+    "from_hint_m": 225
+   },
+   {
+    "src": "photon",
+    "name": "Adelaide River",
+    "type": "place=village",
+    "lat": -13.2387657,
+    "lon": 131.1070072,
+    "match": 0.6,
+    "from_hint_m": 269
+   },
+   {
+    "src": "photon",
+    "name": "Adelaide River Inn",
+    "type": "tourism=caravan_site",
+    "lat": -13.2388317,
+    "lon": 131.107377,
+    "match": 0.6,
+    "from_hint_m": 309
+   },
+   {
+    "src": "photon",
+    "name": "Adelaide River War Cemetery",
+    "type": "landuse=cemetery",
+    "lat": -13.2310077,
+    "lon": 131.1140313,
+    "match": 0.6,
+    "from_hint_m": 1261
+   },
+   {
+    "src": "commons",
+    "name": "11 geotagged files",
+    "type": "photo median",
+    "lat": -13.2427,
+    "lon": 131.1129,
+    "match": 0.5,
+    "from_hint_m": 1040
+   }
+  ]
+ }
+}

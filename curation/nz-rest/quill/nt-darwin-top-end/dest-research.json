@@ -1,0 +1,236 @@
+{
+  "generated": "2026-10-21",
+  "note": "Pipeline C step 1 facts for two new destinations. Every fact has a source URL. Parks and Wildlife NT / BoM blocked scripts (403) and were not used.",
+  "sources": {
+    "wv_darwin": "https://en.wikivoyage.org/wiki/Darwin",
+    "wv_litchfield": "https://en.wikivoyage.org/wiki/Litchfield_National_Park",
+    "wp_darwin": "https://en.wikipedia.org/wiki/Darwin,_Northern_Territory",
+    "wp_litchfield": "https://en.wikipedia.org/wiki/Litchfield_National_Park",
+    "tnt_darwin": "https://northernterritory.com/darwin-and-surrounds/destinations/darwin",
+    "tnt_litchfield": "https://northernterritory.com/darwin-and-surrounds/destinations/litchfield-national-park",
+    "tnt_weather": "https://northernterritory.com/plan/weather-and-seasons",
+    "tnt_safety": "https://northernterritory.com/plan/useful-information/safety-information",
+    "tnt_wangi": "https://northernterritory.com/darwin-and-surrounds/see-and-do/wangi-falls",
+    "tnt_tolmer": "https://northernterritory.com/darwin-and-surrounds/see-and-do/tolmer-falls",
+    "tnt_florence": "https://northernterritory.com/darwin-and-surrounds/see-and-do/florence-falls",
+    "tnt_termites": "https://northernterritory.com/darwin-and-surrounds/see-and-do/magnetic-termite-mounds"
+  },
+  "darwin": {
+    "id": "darwin",
+    "category": "city",
+    "icon_suggestion": "🐊",
+    "coordinates": { "latitude": -12.4634, "longitude": 130.8456 },
+    "defaultZoomSpanKm": 72,
+    "span_check": "OK. 75% reach = 54 km. Farthest spot is darwin-18 Fogg Dam at 50.9 km; others: darwin-5 Territory Wildlife Park 31.6 km, darwin-14 Berry Springs 31.3 km, darwin-19 Big Boxing Crocodile 30.6 km. All inside. Fogg Dam is the tight one (3 km margin).",
+    "tagline_fact": {
+      "fact": "Darwin is Australia's northernmost capital, the only tropical capital city, on Darwin Harbour and the Timor Sea.",
+      "sources": ["https://northernterritory.com/darwin-and-surrounds/destinations/darwin", "https://en.wikipedia.org/wiki/Darwin,_Northern_Territory"]
+    },
+    "description_facts": [
+      { "fact": "Capital and largest city of the Northern Territory; 139,902 people at the 2021 census, nearly 63% of the territory's population.", "source": "https://en.wikipedia.org/wiki/Darwin,_Northern_Territory" },
+      { "fact": "Smallest, wettest and most northerly Australian capital; serves as the Top End's regional centre. Mean annual rainfall 1,811.7 mm; mean max 32.2 C.", "source": "https://en.wikipedia.org/wiki/Darwin,_Northern_Territory" },
+      { "fact": "Overlooks Darwin Harbour, 'a harbour 5 times the size of Sydney Harbour', known for multicultural food scene, markets, outdoor sunsets.", "source": "https://northernterritory.com/darwin-and-surrounds/destinations/darwin" },
+      { "fact": "People from more than 50 nations live there; the Australian National Trust recognised its multiculturalism as a 'multicultural icon of national significance'.", "source": "https://en.wikivoyage.org/wiki/Darwin" },
+      { "fact": "Gateway to Kakadu, Litchfield and Nitmiluk (Katherine Gorge) national parks.", "source": "https://northernterritory.com/darwin-and-surrounds/destinations/darwin" },
+      { "fact": "Distinctive: the only Australian capital to come under substantial wartime attack; Japanese air raids began 19 Feb 1942 (64 raids in all, last 12 Nov 1943). Cyclone Tracy on 25 Dec 1974 killed 71 people and destroyed over 70% of buildings; the city has been rebuilt four times.", "source": "https://en.wikivoyage.org/wiki/Darwin ; https://en.wikipedia.org/wiki/Darwin,_Northern_Territory" },
+      { "fact": "Traditional owners are the Larrakia people (Larrakia name Garramilla).", "source": "https://en.wikipedia.org/wiki/Darwin,_Northern_Territory" },
+      { "fact": "About 3,000 km north of Adelaide along the Stuart Highway; airport 13 km north-east of the city centre with flights to all mainland capitals plus Bali, Singapore and Dili.", "source": "https://northernterritory.com/darwin-and-surrounds/destinations/darwin ; https://en.wikivoyage.org/wiki/Darwin" }
+    ],
+    "whyVisit_candidates": [
+      {
+        "reason": "Meet saltwater crocodiles at Crocosaurus Cove",
+        "spot_id": "darwin-2",
+        "facts": [
+          { "fact": "Crocodiles in the middle of the city (Mitchell St).", "source": "https://en.wikivoyage.org/wiki/Darwin" },
+          { "fact": "Tourism NT: 'more crocodiles in the Northern Territory than anywhere else in the world'; visit a park or take a boat to meet them.", "source": "https://northernterritory.com/darwin-and-surrounds/destinations/darwin" },
+          { "fact": "Cage-of-death tank dive: placement bio only, not yet confirmed on operator page (research step).", "source": "placement.json darwin-2 bio" }
+        ]
+      },
+      {
+        "reason": "Watch the sunset at Mindil Beach",
+        "spot_id": "darwin-4",
+        "facts": [
+          { "fact": "Beachfront sunsets at Mindil Beach Markets; Darwin sunsets are 'legendary'.", "source": "https://northernterritory.com/darwin-and-surrounds/destinations/darwin" },
+          { "fact": "Mindil Beach Sunset Markets are the largest in the NT; run May to October, Thursday and Sunday; bring a blanket and watch the sunset on the sand.", "source": "https://en.wikivoyage.org/wiki/Darwin" }
+        ]
+      },
+      {
+        "reason": "Swim in the clear pools at Berry Springs",
+        "spot_id": "darwin-14",
+        "facts": [
+          { "fact": "Popular picturesque swimming spot; use goggles to spot native fish in the clear pools; monsoon-forest walk from the picnic area; about 50 km south of Darwin, 45 minutes by car; can be closed for swimming in the wet season.", "source": "https://en.wikivoyage.org/wiki/Darwin" }
+        ]
+      },
+      {
+        "reason": "Explore Darwin's wartime tunnels and bunkers",
+        "spot_id": "darwin-12 (Oil Storage Tunnels) or darwin-9 (Military Museum)",
+        "facts": [
+          { "fact": "Oil Storage Tunnels: long tunnels bored into the cliff to store oil in WWII, now with historic photos; $7 (Wikivoyage, updated 2015, verify).", "source": "https://en.wikivoyage.org/wiki/Darwin" },
+          { "fact": "Wharf was bombed at 9:58 AM on 19 Feb 1942.", "source": "https://en.wikivoyage.org/wiki/Darwin" }
+        ]
+      },
+      {
+        "reason": "See a B-52 bomber at the Aviation Museum (alternate)",
+        "spot_id": "darwin-11",
+        "facts": [
+          { "fact": "B-52 on permanent loan from USAF, one of only two on public display outside the US; 8 km from the city.", "source": "https://en.wikivoyage.org/wiki/Darwin" }
+        ]
+      },
+      {
+        "reason": "Spot birds on the Fogg Dam wetlands (alternate)",
+        "spot_id": "darwin-18",
+        "facts": [
+          { "fact": "'One of the best birding sites in the country'; Darwin region has over 400 bird species.", "source": "https://en.wikipedia.org/wiki/Darwin,_Northern_Territory ; https://northernterritory.com/darwin-and-surrounds/destinations/darwin" }
+        ]
+      }
+    ],
+    "whyVisit_recommendation": "Rank 3 so 3 reasons: (1) darwin-2 crocodiles, (2) darwin-4 sunset (a Tourism NT 'Why visit Darwin' item), (3) darwin-14 Berry Springs swim or darwin-12 wartime tunnels. Verify each has a photo; the Mindil Beach reason depends on a beach/sunset photo, not a market photo.",
+    "goodToKnow_candidates": [
+      {
+        "title": "Be Crocwise",
+        "detail": "Any Top End water may hold crocodiles; swim only where signed safe. Box jellyfish are a danger from October to May.",
+        "sources": ["https://northernterritory.com/plan/useful-information/safety-information", "https://en.wikivoyage.org/wiki/Darwin"],
+        "detail_chars": 113
+      },
+      {
+        "title": "Wet and dry seasons",
+        "detail": "The Dry runs May to October; the Wet, November to April, brings storms, humidity and cyclone risk. Book tours ahead in peak season.",
+        "sources": ["https://northernterritory.com/darwin-and-surrounds/destinations/darwin", "https://northernterritory.com/plan/useful-information/safety-information"],
+        "detail_chars": 128
+      },
+      {
+        "title": "Buy a Parks pass",
+        "detail": "Darwin needs no permit, but day trips to Litchfield need an NT Parks Visitor Pass ($10 adult per day); NT residents are exempt.",
+        "sources": ["https://northernterritory.com/darwin-and-surrounds/destinations/darwin", "https://northernterritory.com/darwin-and-surrounds/see-and-do/wangi-falls"],
+        "detail_chars": 124
+      },
+      {
+        "title": "Drink plenty of water",
+        "detail": "Drink at least two litres of water a day, more outdoors; avoid walking in the hottest part of the day and wear a hat and sunscreen.",
+        "sources": ["https://northernterritory.com/plan/useful-information/safety-information", "https://en.wikivoyage.org/wiki/Darwin"],
+        "detail_chars": 131
+      },
+      {
+        "title": "Markets run May to October",
+        "detail": "Mindil Beach Sunset Markets trade Thursday and Sunday in the Dry only and jam traffic and parking; go early or take a bus.",
+        "sources": ["https://en.wikivoyage.org/wiki/Darwin"],
+        "detail_chars": 121,
+        "caveat": "'take a bus' is not sourced; writer should drop it or keep only 'arrive early' (also an inference). Wikivoyage page dated Jul 2015 for this listing; confirm days on operator page."
+      }
+    ],
+    "bestMonths": [5, 6, 7, 8, 9, 10],
+    "bestMonths_note": "Wikivoyage: 'climatically perfect to visit from May to October'; Tourism NT: dry season May-Oct is best; most famous events (Mindil markets, Darwin Festival in August) fall then.",
+    "bestMonths_sources": ["https://en.wikivoyage.org/wiki/Darwin", "https://northernterritory.com/plan/weather-and-seasons"],
+    "bestTimeBlurb_reason": "The Dry, {months}, is warm and sunny with cooler nights, and the Mindil Beach markets and Darwin Festival run then; Wikivoyage notes it is nearly always about 31 C and sunny by day.",
+    "seasonalTags": [
+      { "pattern": "Dry-season peak: Darwin and the Top End are bustling May to October with a packed events and festivals calendar; the Wet (Nov-Apr) is low season with smaller crowds and cheaper flights, accommodation and tours.", "source": "https://northernterritory.com/darwin-and-surrounds/destinations/darwin" },
+      { "pattern": "Darwin Festival is held each August (18 nights).", "source": "https://northernterritory.com/darwin-and-surrounds/destinations/darwin ; https://en.wikivoyage.org/wiki/Darwin" }
+    ],
+    "not_sourced": ["BoM climate averages (bom.gov.au blocked 403); used Wikivoyage/Wikipedia climate figures instead."]
+  },
+  "litchfield": {
+    "id": "litchfield",
+    "category": "park",
+    "icon_suggestion": "💦",
+    "coordinates": { "latitude": -13.14, "longitude": 130.82 },
+    "defaultZoomSpanKm": 50,
+    "span_check": "OK. 75% reach = 37.5 km. Farthest spot is litchfield-6 Batchelor at 24.8 km; all other spots are well inside (waterfalls and Lost City within about 15 km).",
+    "tagline_fact": {
+      "fact": "Tourism NT calls it 'the waterfall capital of Australia': tumbling waterfalls, huge termite mounds and swimming holes about an hour south of Darwin.",
+      "sources": ["https://northernterritory.com/darwin-and-surrounds/destinations/litchfield-national-park"]
+    },
+    "description_facts": [
+      { "fact": "Covers about 1,500 km2 (1,458.47 km2 per CAPAD); declared a national park (Wikipedia gives 1986 in text, infobox 29 July 1991; do not state a date); about 329,600 visitors in 2017.", "source": "https://en.wikipedia.org/wiki/Litchfield_National_Park" },
+      { "fact": "Waterfalls fall from the Tabletop Range sandstone plateau; permanent spring-fed falls (Florence, Tolmer, Wangi), Buley Rockhole cascades, magnetic termite mounds and the Lost City sandstone pillars.", "source": "https://en.wikivoyage.org/wiki/Litchfield_National_Park" },
+      { "fact": "About 60 minutes' drive south of Darwin by Tourism NT; Wikipedia says about 100 km south-west of Darwin near Batchelor (Wikivoyage's '69 km' disagrees; do not use).", "source": "https://northernterritory.com/darwin-and-surrounds/destinations/litchfield-national-park ; https://en.wikipedia.org/wiki/Litchfield_National_Park" },
+      { "fact": "Magnetic termite mounds stand up to 2 m high, up to 100 years old, with thin edges pointing north-south to regulate temperature.", "source": "https://northernterritory.com/darwin-and-surrounds/see-and-do/magnetic-termite-mounds" },
+      { "fact": "Traditional owners are the Wagait Aboriginal people; named for Territory pioneer Frederick Henry Litchfield (explored the area in 1864).", "source": "https://en.wikivoyage.org/wiki/Litchfield_National_Park ; https://en.wikipedia.org/wiki/Litchfield_National_Park" },
+      { "fact": "Wikivoyage: crocodiles are not as much of a threat in Litchfield as other Top End parks, but Wikipedia notes salties in the Finniss River area.", "source": "https://en.wikivoyage.org/wiki/Litchfield_National_Park ; https://en.wikipedia.org/wiki/Litchfield_National_Park" },
+      { "fact": "Only real way to explore is by own vehicle or hire car, or a tour from Darwin; north end by 2WD on bitumen, south end needs 4WD.", "source": "https://northernterritory.com/darwin-and-surrounds/destinations/litchfield-national-park ; https://en.wikivoyage.org/wiki/Litchfield_National_Park" }
+    ],
+    "whyVisit_candidates": [
+      {
+        "reason": "Swim beneath Wangi Falls",
+        "spot_id": "litchfield-1",
+        "facts": [
+          { "fact": "Best-known, one of the most popular attractions; twin falls into a large plunge pool in monsoon rainforest; 3 km loop up and over the falls; kiosk, barbecues and campground (book online).", "source": "https://northernterritory.com/darwin-and-surrounds/see-and-do/wangi-falls" },
+          { "fact": "Swimming not permitted during the wet season, 'typically from October to March', due to currents and possible saltwater crocodiles; the falls are then spectacular to watch.", "source": "https://northernterritory.com/darwin-and-surrounds/see-and-do/wangi-falls" }
+        ]
+      },
+      {
+        "reason": "Walk down to Florence Falls",
+        "spot_id": "litchfield-2",
+        "facts": [
+          { "fact": "Double waterfall into a plunge pool in monsoon forest; 160 steps down, or the 1 km Shady Creek Walk; flows year-round, most spectacular in the wet season and early dry.", "source": "https://northernterritory.com/darwin-and-surrounds/see-and-do/florence-falls" }
+        ]
+      },
+      {
+        "reason": "Stroll among magnetic termite mounds",
+        "spot_id": "litchfield-4",
+        "facts": [
+          { "fact": "Hundreds of mounds up to 2 m high on a flood plain; boardwalk with accessible viewing and info shelter; open daily 24 hours; also larger cathedral termite mounds nearby.", "source": "https://northernterritory.com/darwin-and-surrounds/see-and-do/magnetic-termite-mounds" }
+        ]
+      },
+      {
+        "reason": "Soak in the cascades at Buley Rockhole",
+        "spot_id": "litchfield-3",
+        "facts": [
+          { "fact": "Series of cascading plunge pools; Wikivoyage: 80 m from the car park; a popular swimming spot.", "source": "https://en.wikivoyage.org/wiki/Litchfield_National_Park ; https://northernterritory.com/darwin-and-surrounds/destinations/litchfield-national-park" }
+        ]
+      },
+      {
+        "reason": "View Tolmer Falls from the gorge rim (alternate)",
+        "spot_id": "litchfield-5",
+        "facts": [
+          { "fact": "400 m walk to two viewing platforms; 1.6 km loop walk (about 45 min); swimming not permitted; colonies of rare ghost bats and orange horseshoe bats in the gorge.", "source": "https://northernterritory.com/darwin-and-surrounds/see-and-do/tolmer-falls ; https://en.wikipedia.org/wiki/Litchfield_National_Park" }
+        ]
+      }
+    ],
+    "whyVisit_recommendation": "Rank 3 so 3 reasons: (1) litchfield-1 Wangi swim, (2) litchfield-2 Florence Falls, (3) litchfield-4 termite mounds (a distinct subject for the photo; Buley Rockhole litchfield-3 is the swim alternate). Note Wangi swimming is closed in the wet season, so reason 1 should not imply year-round.",
+    "goodToKnow_candidates": [
+      {
+        "title": "Parks pass required",
+        "detail": "Visitors need an NT Parks Visitor Pass before arriving: $10 adult per day, $20 for 3 days, $5 child; NT residents are exempt.",
+        "sources": ["https://northernterritory.com/darwin-and-surrounds/see-and-do/wangi-falls"],
+        "detail_chars": 124
+      },
+      {
+        "title": "Wet-season swimming limits",
+        "detail": "Wangi Falls swimming is not permitted in the wet season, typically October to March; some areas can close from flooding. Check before you go.",
+        "sources": ["https://northernterritory.com/darwin-and-surrounds/see-and-do/wangi-falls", "https://northernterritory.com/plan/weather-and-seasons"],
+        "detail_chars": 138
+      },
+      {
+        "title": "Drive in your own vehicle",
+        "detail": "Public transport does not reach the park. Sealed roads reach the waterfalls; the south end and Lost City need a 4WD and are dry season only.",
+        "sources": ["https://northernterritory.com/darwin-and-surrounds/destinations/litchfield-national-park", "https://en.wikivoyage.org/wiki/Litchfield_National_Park"],
+        "detail_chars": 141,
+        "caveat": "'Public transport does not reach the park' is not stated by a source (Tourism NT says driving or a tour). Writer should use: 'Drive yourself or join a tour from Darwin.' Also 'dry season only' is for 4WD campsites/tracks closed in the wet per Wikivoyage 'Dec-Mar'; say 'tracks close when flooded'."
+      },
+      {
+        "title": "Be Crocwise",
+        "detail": "Swim only where signed safe; saltwater crocodiles can be in unsigned waters. Tolmer Falls pool is closed to swimmers.",
+        "sources": ["https://northernterritory.com/plan/useful-information/safety-information", "https://northernterritory.com/darwin-and-surrounds/see-and-do/tolmer-falls", "https://en.wikivoyage.org/wiki/Litchfield_National_Park"],
+        "detail_chars": 114
+      },
+      {
+        "title": "Book camping online",
+        "detail": "All campsites at Wangi and Florence Falls must be booked online before arrival. The Tabletop Track also needs a booking and permit.",
+        "sources": ["https://northernterritory.com/darwin-and-surrounds/see-and-do/wangi-falls", "https://northernterritory.com/darwin-and-surrounds/see-and-do/florence-falls"],
+        "detail_chars": 128
+      }
+    ],
+    "bestMonths": [5, 6, 7, 8, 9, 10],
+    "bestMonths_note": "Tourism NT: cooler weather in the Dry, May to October; some locals say April shoulder month is ultimate for camping without crowds. Park is open all year; waterfalls are most spectacular in the Wet but some areas close from flooding. Alternate range if the writer wants the swim window: May-Oct (swimming is closed Oct-Mar at Wangi so Oct is borderline; consider 5-9).",
+    "bestMonths_sources": ["https://northernterritory.com/plan/weather-and-seasons", "https://northernterritory.com/darwin-and-surrounds/destinations/litchfield-national-park", "https://northernterritory.com/darwin-and-surrounds/see-and-do/wangi-falls"],
+    "bestTimeBlurb_reason": "The Dry, {months}, has warm sunny days and cooler nights, and the pools are open for swimming; in the Wet the falls thunder but swimming at Wangi is closed and some areas flood.",
+    "seasonalTags": [
+      { "pattern": "Dry season (May-Oct) is peak; Wet (Nov-Apr) is low season with smaller crowds (Tourism NT, whole NT).", "source": "https://northernterritory.com/darwin-and-surrounds/destinations/litchfield-national-park" }
+    ],
+    "not_sourced": ["Parks and Wildlife NT park page (nt.gov.au) returned 403 captcha; not used. Opening hours for the park as a whole not sourced (termite mounds only: open daily 24 hours).", "Driving time: Tourism NT says 60 min / about 1 hour; the brief's 1.5 hours is not sourced (Wikipedia 100 km, Tolmer page '85 km as the crow flies'); Wangi is farther than the park gate."]
+  },
+  "report_notes": [
+    "Wikivoyage Litchfield says '69 km south of Darwin' and gives the park centre as -13.054722, 130.905; placement centre (-13.14, 130.82) is the waterfall midpoint, which is fine for visitors.",
+    "Wikivoyage Darwin population figure (147,255, 2019) differs from Wikipedia (139,902, 2021); use the 2021 census figure."
+  ]
+}

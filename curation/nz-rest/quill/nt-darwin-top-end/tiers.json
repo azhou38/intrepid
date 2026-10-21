@@ -1,0 +1,156 @@
+{
+ "simple": [
+  {
+   "id": "darwin-3",
+   "facts": {
+    "hours": "Open 24 hours",
+    "visitHoursMin": 0,
+    "visitHoursMax": 0.25,
+    "free": true,
+    "basis": "default for a free, open-access place; no ticketUrl (no single steward)"
+   }
+  },
+  {
+   "id": "darwin-4",
+   "facts": {
+    "hours": "Open 24 hours",
+    "visitHoursMin": 1,
+    "visitHoursMax": 3,
+    "free": true,
+    "basis": "default for a free, open-access place; no ticketUrl (no single steward)"
+   }
+  },
+  {
+   "id": "darwin-19",
+   "facts": {
+    "hours": "Open 24 hours",
+    "visitHoursMin": 0,
+    "visitHoursMax": 0.25,
+    "free": true,
+    "basis": "default for a free, open-access place; no ticketUrl (no single steward)"
+   }
+  },
+  {
+   "id": "darwin-20",
+   "facts": {
+    "category": "historic",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 1,
+    "visitHoursMax": 3,
+    "free": true,
+    "basis": "default for a free, open-access place; no ticketUrl (no single steward)"
+   }
+  }
+ ],
+ "timed": [
+  {
+   "id": "darwin-1",
+   "reason": "category museum may charge or keep hours"
+  },
+  {
+   "id": "darwin-2",
+   "reason": "category entertainment may charge or keep hours"
+  },
+  {
+   "id": "darwin-5",
+   "reason": "category entertainment may charge or keep hours"
+  },
+  {
+   "id": "darwin-6",
+   "reason": "category nature may charge or keep hours"
+  },
+  {
+   "id": "darwin-7",
+   "reason": "category historic may charge or keep hours"
+  },
+  {
+   "id": "darwin-8",
+   "reason": "category nature may charge or keep hours"
+  },
+  {
+   "id": "darwin-9",
+   "reason": "category museum may charge or keep hours"
+  },
+  {
+   "id": "darwin-11",
+   "reason": "category museum may charge or keep hours"
+  },
+  {
+   "id": "darwin-12",
+   "reason": "category historic may charge or keep hours"
+  },
+  {
+   "id": "darwin-13",
+   "reason": "category entertainment may charge or keep hours"
+  },
+  {
+   "id": "darwin-14",
+   "reason": "category nature may charge or keep hours"
+  },
+  {
+   "id": "darwin-15",
+   "reason": "category entertainment may charge or keep hours"
+  },
+  {
+   "id": "darwin-16",
+   "reason": "category nature may charge or keep hours"
+  },
+  {
+   "id": "darwin-17",
+   "reason": "category nature may charge or keep hours"
+  },
+  {
+   "id": "darwin-18",
+   "reason": "category nature may charge or keep hours"
+  },
+  {
+   "id": "litchfield-1",
+   "reason": "category nature may charge or keep hours"
+  },
+  {
+   "id": "litchfield-2",
+   "reason": "category nature may charge or keep hours"
+  },
+  {
+   "id": "litchfield-3",
+   "reason": "category nature may charge or keep hours"
+  },
+  {
+   "id": "litchfield-4",
+   "reason": "category nature may charge or keep hours"
+  },
+  {
+   "id": "litchfield-5",
+   "reason": "name suggests an operator, park or ticketed site"
+  },
+  {
+   "id": "litchfield-6",
+   "reason": "its source text mentions a fee, a park or a booking"
+  },
+  {
+   "id": "litchfield-7",
+   "reason": "category hike may charge or keep hours"
+  },
+  {
+   "id": "litchfield-8",
+   "reason": "category nature may charge or keep hours"
+  },
+  {
+   "id": "adelaide-river",
+   "reason": "name suggests an operator, park or ticketed site"
+  },
+  {
+   "id": "mary-river-national-park",
+   "reason": "category nature may charge or keep hours"
+  },
+  {
+   "id": "tiwi-islands",
+   "reason": "category nature may charge or keep hours"
+  }
+ ],
+ "audit": [
+  "darwin-3",
+  "darwin-4",
+  "darwin-19"
+ ]
+}

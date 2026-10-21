@@ -1,0 +1,355 @@
+{
+ "slots": {
+  "spot:darwin-17": {
+   "candidates": [
+    {
+     "file": "Darwin skyline viewed from Charles Darwin National Park.jpg",
+     "verdict": "reject",
+     "check_failed": "2",
+     "reason": "File description is \"The changing face of Darwin\": the subject is the city skyline seen from the park, not the park.",
+     "hero_crop": "n/a"
+    },
+    {
+     "file": "Darwin (AU), East Point -- 2019 -- 4331.jpg",
+     "verdict": "reject",
+     "check_failed": "1/2",
+     "reason": "East Point Reserve coast, not Charles Darwin National Park.",
+     "hero_crop": "n/a"
+    },
+    {
+     "file": "Charles Darwin National Park.jpg",
+     "verdict": "accept",
+     "check_failed": null,
+     "reason": "Flickr photo (2003, CC BY 2.0) looking back into the park from the observation deck; categorised Charles Darwin National Park. Plain but is the park itself. Weak; replace if a better park photo turns up.",
+     "hero_crop": "ok"
+    }
+   ],
+   "choice": "Charles Darwin National Park.jpg"
+  },
+  "spot:darwin-18": {
+   "candidates": [
+    {
+     "file": "View over swampland at Fogg Dam - panoramio.jpg",
+     "verdict": "accept",
+     "check_failed": null,
+     "reason": "Lily-covered floodplain wetland, the thing visitors come for; clear at thumbnail, 4272 px.",
+     "hero_crop": "ok"
+    },
+    {
+     "file": "Lookout platform at Fogg Dam - panoramio.jpg",
+     "verdict": "reject",
+     "check_failed": "2",
+     "reason": "Alternative: lookout shelter dominates; the wetland pick is better (acceptable fallback).",
+     "hero_crop": "ok"
+    },
+    {
+     "file": "FoggDam-NT.jpg",
+     "verdict": "reject",
+     "check_failed": "3",
+     "reason": "Storm cloud over floodplain; dull/small, 1000 px; fallback only.",
+     "hero_crop": "ok"
+    },
+    {
+     "file": "Pied heron (Egretta picata) Fogg Dam.jpg",
+     "verdict": "reject",
+     "check_failed": "2",
+     "reason": "Close-up of a bird, not the place.",
+     "hero_crop": "ok"
+    }
+   ],
+   "choice": "View over swampland at Fogg Dam - panoramio.jpg"
+  },
+  "spot:darwin-19": {
+   "candidates": [
+    {
+     "file": "Big Crocodiles in Humpty Doo, Northern Territory, 2021.jpg",
+     "verdict": "accept",
+     "check_failed": null,
+     "reason": "The boxing croc statue (Big Things of Australia, NT, Arnhem Highway, Humpty Doo), 2021, portrait, central; crop square shows whole statue.",
+     "hero_crop": "ok"
+    }
+   ],
+   "choice": "Big Crocodiles in Humpty Doo, Northern Territory, 2021.jpg"
+  },
+  "spot:darwin-20": {
+   "candidates": [
+    {
+     "file": "Palmerston-CBD-NT.jpg",
+     "verdict": "accept",
+     "check_failed": null,
+     "reason": "Palmerston CBD streetscape, 2008, categorised Buildings in Palmerston NT with coordinates at the centre; plain but is the place. 1000 px (>=960).",
+     "hero_crop": "ok"
+    },
+    {
+     "file": "City of Palmerston Northern Territory in April 2010.jpg",
+     "verdict": "reject",
+     "check_failed": "3/4",
+     "reason": "Plane-window aerial with wing in frame.",
+     "hero_crop": "n/a"
+    }
+   ],
+   "choice": "Palmerston-CBD-NT.jpg"
+  },
+  "spot:litchfield-1": {
+   "candidates": [
+    {
+     "file": "Litchfield National Park (AU), Wangi Falls -- 2019 -- 3749.jpg",
+     "verdict": "accept",
+     "check_failed": null,
+     "reason": "Falls and plunge pool, sharp, bright, centred, 6720 px.",
+     "hero_crop": "ok"
+    },
+    {
+     "file": "Litchfield National Park (AU), Wangi Falls -- 2019 -- 121650.jpg",
+     "verdict": "reject",
+     "check_failed": null,
+     "reason": "Good alternative, not chosen (same view).",
+     "hero_crop": "ok"
+    },
+    {
+     "file": "Litchfield National Park - Wangi Falls.jpg",
+     "verdict": "reject",
+     "check_failed": null,
+     "reason": "Good alternative, not chosen.",
+     "hero_crop": "ok"
+    }
+   ],
+   "choice": "Litchfield National Park (AU), Wangi Falls -- 2019 -- 3749.jpg"
+  },
+  "spot:litchfield-2": {
+   "candidates": [
+    {
+     "file": "Litchfield National Park (AU), Florence Falls -- 2019 -- 3738.jpg",
+     "verdict": "accept",
+     "check_failed": null,
+     "reason": "Twin falls and plunge pool; checked the square crop: both falls inside.",
+     "hero_crop": "ok"
+    },
+    {
+     "file": "Litchfield National Park (AU), Florence Falls -- 2019 -- 3741.jpg",
+     "verdict": "reject",
+     "check_failed": null,
+     "reason": "Good alternative, same view.",
+     "hero_crop": "ok"
+    },
+    {
+     "file": "Litchfield National Park (AU), Florence Falls -- 2019 -- 3736.jpg",
+     "verdict": "reject",
+     "check_failed": null,
+     "reason": "Tighter alternative.",
+     "hero_crop": "ok"
+    }
+   ],
+   "choice": "Litchfield National Park (AU), Florence Falls -- 2019 -- 3738.jpg"
+  },
+  "spot:litchfield-3": {
+   "candidates": [
+    {
+     "file": "Buley Rockhole (Litchfield National Park).jpg",
+     "verdict": "accept",
+     "check_failed": null,
+     "reason": "Cascade and rock pools, 6000 px, coordinates match Buley Rockhole; no people.",
+     "hero_crop": "ok"
+    },
+    {
+     "file": "00 2254 Buley Rockhole - Litchfield National Park (Australien).jpg",
+     "verdict": "reject",
+     "check_failed": null,
+     "reason": "Swimmers are prominent; fallback.",
+     "hero_crop": "ok"
+    },
+    {
+     "file": "Buley Rockhole.jpg",
+     "verdict": "reject",
+     "check_failed": null,
+     "reason": "Good alternative (pool, 1500 px); fallback.",
+     "hero_crop": "ok"
+    }
+   ],
+   "choice": "Buley Rockhole (Litchfield National Park).jpg"
+  },
+  "spot:litchfield-4": {
+   "candidates": [
+    {
+     "file": "Litchfield National Park (AU), Magnetic Termite Mounds -- 2019 -- 3725.jpg",
+     "verdict": "accept",
+     "check_failed": null,
+     "reason": "Tall blade-shaped magnetic mound in landscape, clear.",
+     "hero_crop": "ok"
+    },
+    {
+     "file": "Litchfield National Park (AU), Magnetic Termite Mounds -- 2019 -- 3721.jpg",
+     "verdict": "reject",
+     "check_failed": null,
+     "reason": "Field view; mounds small in the square crop; fallback.",
+     "hero_crop": "ok"
+    },
+    {
+     "file": "Litchfield National Park (AU), Magnetic Termite Mounds -- 2019 -- 3730.jpg",
+     "verdict": "reject",
+     "check_failed": "3",
+     "reason": "Close-up texture of a mound.",
+     "hero_crop": "ok"
+    }
+   ],
+   "choice": "Litchfield National Park (AU), Magnetic Termite Mounds -- 2019 -- 3725.jpg"
+  },
+  "spot:litchfield-5": {
+   "candidates": [
+    {
+     "file": "Tolmer Falls in the Litchfield National Park.jpg",
+     "verdict": "accept",
+     "check_failed": null,
+     "reason": "Falls and gorge, vivid, centred enough; 2083 px.",
+     "hero_crop": "ok"
+    },
+    {
+     "file": "Tolmer Falls.jpg",
+     "verdict": "reject",
+     "check_failed": null,
+     "reason": "Narrow portrait of the falls, 2007; fallback.",
+     "hero_crop": "ok"
+    },
+    {
+     "file": "Litchfield National Park (from Tolmer Falls).jpg",
+     "verdict": "reject",
+     "check_failed": "2",
+     "reason": "View from the lookout, not the falls.",
+     "hero_crop": "ok"
+    }
+   ],
+   "choice": "Tolmer Falls in the Litchfield National Park.jpg"
+  },
+  "spot:litchfield-6": {
+   "candidates": [
+    {
+     "file": "Batchelor General Store.jpg",
+     "verdict": "reject",
+     "check_failed": "3",
+     "reason": "A single shop; fallback only.",
+     "hero_crop": "ok"
+    },
+    {
+     "file": "BatchelorOct192024.jpg",
+     "verdict": "accept",
+     "check_failed": null,
+     "reason": "Low drone view of Batchelor town amid bush, 2024 (categorised Batchelor, NT, coordinates in town). Clear photograph.",
+     "hero_crop": "ok"
+    },
+    {
+     "file": "RumJungleLakeOct192024.jpg",
+     "verdict": "reject",
+     "check_failed": "2",
+     "reason": "Rum Jungle Lake, not the town.",
+     "hero_crop": "ok"
+    }
+   ],
+   "choice": "BatchelorOct192024.jpg"
+  },
+  "spot:litchfield-7": {
+   "candidates": [],
+   "choice": "none: no candidates; Tabletop Track needs an outside-Commons search"
+  },
+  "spot:litchfield-8": {
+   "candidates": [
+    {
+     "file": "Flying into the Lost City (4205083104).jpg",
+     "verdict": "reject",
+     "check_failed": "1",
+     "reason": "Flickr description links capecrawfordtourism.com.au: this is the Cape Crawford (Limmen) Lost City, flown in by helicopter, only mis-categorised under Litchfield National Park. Wrong place.",
+     "hero_crop": "fail: wrong place"
+    },
+    {
+     "file": "Landing at the Lost City (3592207942).jpg",
+     "verdict": "reject",
+     "check_failed": "1",
+     "reason": "Same Cape Crawford helicopter site, helicopter central; wrong place.",
+     "hero_crop": "fail: wrong place"
+    }
+   ],
+   "choice": "none: both Commons candidates show the Cape Crawford Lost City (wrong place); search again for Litchfield Lost City"
+  },
+  "spot:adelaide-river": {
+   "candidates": [
+    {
+     "file": "Historic Adelaide River Railway Station - panoramio.jpg",
+     "verdict": "accept",
+     "check_failed": null,
+     "reason": "Station sign reads ADELAIDE RIVER, categorised Adelaide River, coordinates match the town; a part of the town. Small camera date stamp in lower right (minor, outside the square crop). Weak but recognisable.",
+     "hero_crop": "ok"
+    },
+    {
+     "file": "Adelaide River War Cemetery 1.jpg",
+     "verdict": "reject",
+     "check_failed": "2",
+     "reason": "War cemetery is a separate place.",
+     "hero_crop": "ok"
+    },
+    {
+     "file": "Adelaide River Hills.jpg",
+     "verdict": "reject",
+     "check_failed": "3",
+     "reason": "Hazy hills, not the town.",
+     "hero_crop": "ok"
+    }
+   ],
+   "choice": "Historic Adelaide River Railway Station - panoramio.jpg"
+  },
+  "spot:mary-river-national-park": {
+   "candidates": [
+    {
+     "file": "BlackneckedStorkCorroboreeBillabongNTAustralia.jpg",
+     "verdict": "accept",
+     "check_failed": null,
+     "reason": "Corroboree Billabong wetland of the Mary River system with a jabiru; wide 2.2:1 panorama so needs a subject point; wetland reads, though bird is the focal point. Not verified the billabong lies inside the park boundary.",
+     "hero_crop": {
+      "x": 0.45,
+      "y": 0.6,
+      "zoom": 1.2
+     }
+    },
+    {
+     "file": "Brolga with flower in Mary River National Park (NT).jpg",
+     "verdict": "reject",
+     "check_failed": "2",
+     "reason": "Bird close-up, not the wetland; fallback.",
+     "hero_crop": "ok"
+    },
+    {
+     "file": "Looking upstream from Mary River Bridge, Arnhem Highway, Northern Territory, June 2021.jpg",
+     "verdict": "reject",
+     "check_failed": "2",
+     "reason": "Highway-bridge river view, dull, probably outside the park.",
+     "hero_crop": "ok"
+    }
+   ],
+   "choice": "BlackneckedStorkCorroboreeBillabongNTAustralia.jpg"
+  },
+  "spot:tiwi-islands": {
+   "candidates": [
+    {
+     "file": "MRF-D conducts a site survey at Tiwi Island (6629791).jpg",
+     "verdict": "accept",
+     "check_failed": null,
+     "reason": "Clear aerial of a Tiwi island beach and turquoise sea (US Marines photo, public domain, 2021); no aircraft or window in frame. Weak-ish as an aerial but shows the islands themselves.",
+     "hero_crop": "ok"
+    },
+    {
+     "file": "Tiwi Islands car ferry.jpg",
+     "verdict": "reject",
+     "check_failed": "3",
+     "reason": "Ferry on a muddy shore; dull.",
+     "hero_crop": "ok"
+    },
+    {
+     "file": "Aerial image of Wurrumiyanga and the Tiwi Islands, Northern Territory, Australia.jpg",
+     "verdict": "reject",
+     "check_failed": "4",
+     "reason": "Plane window with wing in frame.",
+     "hero_crop": "n/a"
+    }
+   ],
+   "choice": "MRF-D conducts a site survey at Tiwi Island (6629791).jpg"
+  }
+ }
+}

@@ -543,8 +543,15 @@
     {
       "id": "nt-darwin-top-end",
       "name": "Darwin & Top End (NT)",
-      "destinations": [],
-      "standalone": [],
+      "destinations": [
+        "darwin",
+        "litchfield"
+      ],
+      "standalone": [
+        "adelaide-river",
+        "mary-river-national-park",
+        "tiwi-islands"
+      ],
       "timezone": "Australia/Darwin"
     },
     {

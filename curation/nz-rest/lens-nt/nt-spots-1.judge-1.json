@@ -1,0 +1,504 @@
+{
+ "spot:darwin-1": {
+  "candidates": [
+   {
+    "file": "Museum and Art Gallery of the Northern Territory, Sep 2025 04.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "2025 exterior, entrance partly cut in square",
+    "hero_crop": {
+     "x": 0.65,
+     "y": 0.5
+    }
+   },
+   {
+    "file": "Museum and Art Gallery of the Northern Territory.JPG",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "2014 exterior, entrance centred, sharp, 1600 px; best",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "MAGNT Darwin, 2023 (01).jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "2023 exterior, building oblique",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Museum and Art Gallery of the Northern Territory, Sep 2025 05.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "road and sign, building barely visible",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Sweetheart, MAGNT Darwin, Sep 2025.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "Sweetheart exhibit, not the building",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "Museum and Art Gallery of the Northern Territory.JPG"
+ },
+ "spot:darwin-2": {
+  "candidates": [
+   {
+    "file": "Crocosaurus Cove, October 2025 01.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "enclosure sign close-up",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Crocosaurus Cove, October 2025 03.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "stuffed croc at door, venue not clear",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Cage of Death at Crocosaurus Cove, October 2025 04.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "sign and empty shelter",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Saltwater crocodile under water at Crocosaurus Cove, Darwin, Australia, 05.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "murky underwater, unreadable",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Crocodile at Crocosaurus Cove, October 2025.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "croc tank with viewing glass at the venue (category Crocosaurus Cove, 2025); weakest acceptable, no venue exterior on Commons",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "Crocodile at Crocosaurus Cove, October 2025.jpg"
+ },
+ "spot:darwin-3": {
+  "candidates": [
+   {
+    "file": "Darwin Waterfront, 2023 (02).jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "walkway close, partial",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Darwin Waterfront Precinct 01.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "wide view of lagoon, lawns, wharf; sunny 2009 colour",
+    "hero_crop": {
+     "x": 0.45,
+     "y": 0.5
+    }
+   },
+   {
+    "file": "Darwin Waterfront Precinct.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "flat lawn, dim",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Darwin (AU), Darwin Waterfront -- 2019 -- 4423-5.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "night shot, dark, convention centre only",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "Darwin Waterfront Precinct 01.jpg"
+ },
+ "spot:darwin-4": {
+  "candidates": [
+   {
+    "file": "A front moving in over Mindil Beach, Darwin, Australia 01.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "eroded bank and cloud, beach not the subject; crop mostly cloud",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "A front moving in over Mindil Beach, Darwin, Australia 04.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "casino building, not the beach",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Sunset over Darwin's Mindil beach.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "beach and sea at sunset, category Mindil Beach (WLM 2017); dark on purpose (sunset)",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "A front moving in over Mindil Beach, Darwin, Australia 06.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "same as 0",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "Sunset over Darwin's Mindil beach.jpg"
+ },
+ "spot:darwin-5": {
+  "candidates": [
+   {
+    "file": "Wedge-tailed Eagle at Territory Wildlife Park.JPG",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "bird show lawn with tiny eagle and keeper: stand-in, park not recognisable",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Pandion haliaetus -Territory Wildlife Park, Berry Springs, Northern Territory, Australia -zoo keeper-8.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "keeper with osprey: animal and person, stand-in",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "White Bellied Sea Eagle 070531c.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "close-up eagle head, stand-in",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "none: only animal photos at the park; no grounds, entrance or recognisable exhibit on Commons (stand-ins)"
+ },
+ "spot:darwin-6": {
+  "candidates": [
+   {
+    "file": "Fountain in the George Brown Darwin Botanic Gardens.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "fountain pond in gardens, 2008, clear",
+    "hero_crop": {
+     "x": 0.45,
+     "y": 0.5
+    }
+   },
+   {
+    "file": "Rainforest gully in the George Brown Darwin Botanic Gardens.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "rainforest gully boardwalk, good alternative",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Blue Water Lily Pond - George Brown Darwin Botanic Gardens.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "top-down lily close-up",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "AU-Darwin-botan-garden.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "flower bed lawn, acceptable",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Walkway through the George Brown Darwin Botanic Gardens, Darwin, Australia 02.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "boardwalk through palms, square, dim (p40 0.16: brighten if chosen)",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "Fountain in the George Brown Darwin Botanic Gardens.jpg"
+ },
+ "spot:darwin-7": {
+  "candidates": [
+   {
+    "file": "Fannie Bay Gaol.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "perimeter fence from road",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Fannie Bay Gaol entrance gates.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "entrance container wall with sign",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Fannie Bay Gaol P6200008.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "stone cell block with gallows footings, sunny, recognisable",
+    "hero_crop": {
+     "x": 0.6,
+     "y": 0.5
+    }
+   },
+   {
+    "file": "Fannie Bay Gaol 2.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "same cell block, overcast",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Fannie Bay Gaol gallows.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "interior detail",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "Fannie Bay Gaol P6200008.jpg"
+ },
+ "spot:darwin-8": {
+  "candidates": [
+   {
+    "file": "East Point Reserve, Darwin, Australia (314881920).jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "low-tide rocky shore, category East Point Reserve, 2006",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "East Point Reserve, Darwin, Australia (314880633).jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "low-tide rocky shore and sea, category East Point Reserve; best",
+    "hero_crop": {
+     "x": 0.5,
+     "y": 0.65,
+     "zoom": 1.3
+    }
+   },
+   {
+    "file": "Lake Alexander on a Sunday afternoon - panoramio.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "Lake Alexander alone (excluded)",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Sunset from Lake Alexander Beach, East Point, Darwin.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "Lake Alexander beach sunset, 1024 px, small",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "East Point Reserve, Darwin, Australia (314880633).jpg"
+ },
+ "spot:darwin-9": {
+  "candidates": [
+   {
+    "file": "Darwin Military Museum, September 2025 02.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "sign and car park",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Darwin Military Museum at East Point.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "2011 washed out, tower and shed",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Darwin Military Museum.JPG",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "entrance building, sunny, 2014 colour",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Darwin Military Museum, September 2025 04.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "entrance with tractor, building partial",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "Darwin Military Museum.JPG"
+ },
+ "spot:darwin-11": {
+  "candidates": [
+   {
+    "file": "Darwin Aviation Museum, Darwin, Northern Territory, Australia.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "entrance with mural figures; ok",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "USAF B52 Bomber (Darwins pride) at the Australian Aviation Heritage Centre.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "B-52 inside the hangar, centrepiece, recognisable",
+    "hero_crop": {
+     "x": 0.35,
+     "y": 0.5
+    }
+   },
+   {
+    "file": "The Australian Aviation Heritage Centre.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "control tower and hangar exterior 2008, not the museum itself",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Darwin Aviation Museum, 2023 (01).jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "exterior 2023, small subject",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "USAF B52 Bomber (Darwins pride) at the Australian Aviation Heritage Centre.jpg"
+ },
+ "spot:darwin-12": {
+  "candidates": [
+   {
+    "file": "WWII Oil Storage Tunnels 01.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "tunnel, dim orange (dark on purpose)",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "WWII Oil Storage Tunnels.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "pipework detail",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "World War II Oil Storage Tunnels in Darwin, Northern Territory, Australia (2).jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "tunnel, brightest of set, 2014; p40 about 0.18: dark on purpose (tunnel) or brighten",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "AK5D1508.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "tunnel with display panels, dark",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "World War II Oil Storage Tunnels in Darwin, Northern Territory, Australia (2).jpg"
+ },
+ "spot:darwin-13": {
+  "candidates": [],
+  "choice": "none: no candidates (no Commons photo of Aquascene found)"
+ },
+ "spot:darwin-14": {
+  "candidates": [
+   {
+    "file": "Family fun at Berry Springs Nature Reserve.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "swimmers in foreground are the subject (people)",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Sunset Berry Springs.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "sunset tree silhouette; springs not shown",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "none: the only photo showing the pool has people as subject; the other does not show the springs"
+ },
+ "spot:darwin-15": {
+  "candidates": [
+   {
+    "file": "Crocodylus Park, Darwin, September 2025 02.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "roadside sign",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Crocodylus Park, Darwin, September 2025 03.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "entrance building with Crocodylus Park name, 2025",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Crocodylus Park.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "distant road sign",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Crocodylus Park, Darwin, September 2025 05.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "Brutus sign close-up",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "Crocodylus Park, Darwin, September 2025 03.jpg"
+ },
+ "spot:darwin-16": {
+  "candidates": [
+   {
+    "file": "Casuarina Coastal Reserve.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "road junction",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Estuary mouth.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Sandy Creek estuary mouth and casuarina row, category Casuarina Beach, in reserve, 2007 quality image",
+    "hero_crop": {
+     "x": 0.6,
+     "y": 0.6
+    }
+   },
+   {
+    "file": "Walking track.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "bush track, dim",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Lee-point-beach.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "flat sand, smoke, empty",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Wet Season Storm at Sunset from Dripstone Cliffs - Casuarina Beach.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "storm sunset, cliffs not visible, 1000 px",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "Estuary mouth.jpg"
+ }
+}

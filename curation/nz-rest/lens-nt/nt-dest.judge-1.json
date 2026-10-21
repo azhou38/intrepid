@@ -1,0 +1,225 @@
+{
+ "dest:darwin:header": {
+  "candidates": [
+   {
+    "file": "Darwin CBD (March 2017).jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Elevated colour photo over the CBD to Darwin Harbour; city in its setting, 2581 px, CC BY-SA 2.0, Darwin category. Not spectacular but the best available; square crop keeps harbour and towers.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Darwin Skyline in January 2012.jpg",
+    "verdict": "reject",
+    "check_failed": "3 (not spectacular/wide)",
+    "reason": "Real East Point view of the skyline but it is a thin strip on the horizon under 75% sea/sky; zoom 2 leaves a soft, empty crop.",
+    "hero_crop": "fail: skyline a sliver; zoom 2 still mostly sea and sky"
+   },
+   {
+    "file": "Darwin skyline in November 2008.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Close rooftop view of a few towers; no harbour or setting.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Darwin Waterfront Precinct 01.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "2009 view of lawns and apartment blocks; the wave lagoon is minor and apartments dominate; second best.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Sunset in Darwin, Australia (10766351126).jpg",
+    "verdict": "reject",
+    "check_failed": "1/3",
+    "reason": "Pretty sunset over rocks but no city and location within Darwin not confirmed.",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "Darwin CBD (March 2017).jpg"
+ },
+ "dest:darwin:why1": {
+  "candidates": [
+   {
+    "file": "Crocodile at Crocosaurus Cove, October 2025.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Saltwater crocodile (Crocodylus porosus, captive) in the Crocosaurus Cove pool; page categories confirm venue and coordinates; 5712 px, CC BY-SA 4.0, Oct 2025. Crocodile is in the middle band, recognisable in the 1.6:1 card.",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "Crocodile at Crocosaurus Cove, October 2025.jpg"
+ },
+ "dest:darwin:why2": {
+  "candidates": [
+   {
+    "file": "Sunset over Darwin's Mindil beach.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Real sunset over the sea, categories Mindil Beach and Sunsets of the Northern Territory, coordinates at Mindil; no people. Lower half is dark sand, so crop with zoom to the sky and sea; with that crop the mean is about 0.47 (no brightening needed). Sunset is dusk-on-purpose.",
+    "hero_crop": {
+     "x": 0.5,
+     "y": 0.35,
+     "zoom": 1.4
+    }
+   },
+   {
+    "file": "DarwinBeach.JPG",
+    "verdict": "reject",
+    "check_failed": "size",
+    "reason": "Mindil-category sunset with a boat, but only 1024 px wide (<1280).",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Sunset in Darwin, Australia (10766351126).jpg",
+    "verdict": "reject",
+    "check_failed": "1",
+    "reason": "Rocky shore; Mindil not confirmed on the file page.",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "Sunset over Darwin's Mindil beach.jpg"
+ },
+ "dest:darwin:why3": {
+  "candidates": [
+   {
+    "file": "Family fun at Berry Springs Nature Reserve.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Berry Springs Nature Park (categories, description 'natural pools ... 60 km from Darwin'), 2016, 5184 px. Spring pool with bush around it, clear and shows swimming. Caveat: swimmers and two seated people in the lower foreground are visible (not the subject, but prominent); only usable Berry Springs photo found.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Light (50570150283).jpg",
+    "verdict": "reject",
+    "check_failed": "1",
+    "reason": "Filed under Berry Springs Nature Park but shows a temperate park stream with ducks and autumn trees; photographer's other work is US; not the NT park.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Berry springs park (6).JPG",
+    "verdict": "reject",
+    "check_failed": "1/2",
+    "reason": "Berry Springs Park in the USA (Texas-type pecan trees), 2007; also parkland, not pools.",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "Family fun at Berry Springs Nature Reserve.jpg"
+ },
+ "dest:litchfield:header": {
+  "candidates": [
+   {
+    "file": "Litchfield National Park (AU), Florence Falls -- 2019 -- 3738.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Florence Falls twin cascades into plunge pool, monsoon-forest cliffs; Quality image, 6720 px, CC BY-SA 4.0, coordinates at Florence Falls; centred, fills the square. Strongest scenic photo in the set; its sibling 3741 is the second Florence option.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Litchfield National Park (AU), Wangi Falls -- 2019 -- 3749.jpg",
+    "verdict": "reject",
+    "check_failed": "none (alternate)",
+    "reason": "Valid and wide but the fall is thin; kept for why-visit 1 instead of repeating a subject.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Litchfield National Park (from Tolmer Falls).jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Hazy flat lookout over forest; no named feature.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Tolmer Falls in the Litchfield National Park.jpg",
+    "verdict": "reject",
+    "check_failed": "3 / crop",
+    "reason": "Dramatic gorge but the fall is a thin strip at the left; only 2083 px.",
+    "hero_crop": "fail: fall a sliver at left edge"
+   }
+  ],
+  "choice": "Litchfield National Park (AU), Florence Falls -- 2019 -- 3738.jpg"
+ },
+ "dest:litchfield:why1": {
+  "candidates": [
+   {
+    "file": "Litchfield National Park (AU), Wangi Falls -- 2019 -- 3749.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Wangi Falls (coordinates and category confirm) with the plunge pool across the lower third, Quality image, 6720 px; the pool is the swim reason. Square crop keeps fall and pool.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Litchfield National Park (AU), Wangi Falls -- 2019 -- 3754.jpg",
+    "verdict": "reject",
+    "check_failed": "none (alternate)",
+    "reason": "Near-duplicate wide framing; 3749 preferred.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Litchfield National Park (AU), Wangi Falls -- 2019 -- 3758.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Tight cascade, little pool.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Litchfield National Park - Wangi Falls.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "2017 wide view, but flatter light and weaker than 3749.",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "Litchfield National Park (AU), Wangi Falls -- 2019 -- 3749.jpg"
+ },
+ "dest:litchfield:why2": {
+  "candidates": [
+   {
+    "file": "Litchfield National Park (AU), Florence Falls -- 2019 -- 3741.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Florence Falls close with both cascades and pool, same photographer and set; different framing from the header (header takes 3738). If the owner prefers no near-duplicate, the same 3738 file may be shared with the header instead.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Litchfield National Park (AU), Florence Falls -- 2019 -- 3738.jpg",
+    "verdict": "reject",
+    "check_failed": "none (used as header)",
+    "reason": "Equally good, chosen as the header.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Litchfield National Park (AU), Florence Falls -- 2019 -- 3736.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Single cascade only, weaker; does not show the double falls.",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "Litchfield National Park (AU), Florence Falls -- 2019 -- 3741.jpg"
+ },
+ "dest:litchfield:why3": {
+  "candidates": [
+   {
+    "file": "Litchfield National Park (AU), Magnetic Termite Mounds -- 2019 -- 3721.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Field of blade-like magnetic termite mounds (category confirms Litchfield, coordinates at the mounds), Quality image, 6720 px. In a square crop half is sky, so zoom into the mounds.",
+    "hero_crop": {
+     "x": 0.62,
+     "y": 0.62,
+     "zoom": 1.5
+    }
+   },
+   {
+    "file": "Litchfield National Park (AU), Magnetic Termite Mounds -- 2019 -- 3725.jpg",
+    "verdict": "reject",
+    "check_failed": "none (alternate)",
+    "reason": "Two mounds only, correct subject but weaker; keep as fallback.",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "Litchfield National Park (AU), Magnetic Termite Mounds -- 2019 -- 3721.jpg"
+ }
+}

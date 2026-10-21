@@ -1,0 +1,632 @@
+[
+ {
+  "id": "darwin",
+  "field": "tagline",
+  "verdict": "supported",
+  "text": "Australia's northernmost capital, with crocodiles in the city centre, sunsets over the Timor Sea and the Top End on its doorstep.",
+  "source": "https://en.wikipedia.org/wiki/Darwin,_Northern_Territory (most northerly capital); https://en.wikivoyage.org/wiki/Darwin (crocodiles in the middle of the city); https://northernterritory.com/darwin-and-surrounds/destinations/darwin (harbour and Timor Sea, sunsets)",
+  "status": "supported",
+  "fix": "Optional: it repeats reasons 1 and 2 (crocodiles, sunsets); fine to keep."
+ },
+ {
+  "id": "darwin",
+  "field": "description.only-tropical-capital",
+  "verdict": "supported",
+  "text": "Australia's only tropical capital",
+  "source": "https://northernterritory.com/darwin-and-surrounds/destinations/darwin: \"the country's only tropical capital city\"",
+  "status": "supported",
+  "fix": ""
+ },
+ {
+  "id": "darwin",
+  "field": "description.population",
+  "verdict": "supported",
+  "text": "About 140,000 people",
+  "source": "https://en.wikipedia.org/wiki/Darwin,_Northern_Territory: 139,902 at the 2021 census",
+  "status": "supported",
+  "fix": "None; rounding is fair."
+ },
+ {
+  "id": "darwin",
+  "field": "description.compact",
+  "verdict": "needs-change",
+  "text": "compact, multicultural city",
+  "source": "https://northernterritory.com/darwin-and-surrounds/destinations/darwin and https://en.wikivoyage.org/wiki/Darwin support multicultural (50+ nations); \"compact\" is in no source",
+  "status": "unsupported",
+  "fix": "Cut \"compact,\"."
+ },
+ {
+  "id": "darwin",
+  "field": "description.bombed",
+  "verdict": "needs-change",
+  "text": "It is the only Australian capital to have been bombed, in 1942",
+  "source": "https://en.wikivoyage.org/wiki/Darwin: \"the only Australian capital city to have come under substantial attack during a war\"; 19 Feb 1942 first of 64 raids to Nov 1943. WV also notes Sydney had submarine attacks and other northern areas were bombed, so \"only capital to have been bombed\" is stronger than the source.",
+  "status": "unsupported",
+  "fix": "\"It is the only Australian capital to have come under substantial attack in the war, with Japanese air raids from 1942, and Cyclone Tracy destroyed most of it in 1974.\" (also fixes the repeated \"only\" in the description)."
+ },
+ {
+  "id": "darwin",
+  "field": "description.cyclone-tracy",
+  "verdict": "supported",
+  "text": "Cyclone Tracy destroyed most of it in 1974",
+  "source": "https://en.wikipedia.org/wiki/Darwin,_Northern_Territory (destroyed over 70% of buildings, 25 Dec 1974); https://en.wikivoyage.org/wiki/Darwin: \"Much of the city was destroyed\"",
+  "status": "supported",
+  "fix": "Acceptable as \"most of it\"; more exact: \"destroyed over 70% of its buildings\"."
+ },
+ {
+  "id": "darwin",
+  "field": "description.gateway",
+  "verdict": "supported",
+  "text": "base for Litchfield, Kakadu and Nitmiluk",
+  "source": "https://northernterritory.com/darwin-and-surrounds/destinations/darwin: gateway to Kakadu, Litchfield and Nitmiluk",
+  "status": "supported",
+  "fix": ""
+ },
+ {
+  "id": "darwin",
+  "field": "description.harbour-markets-croc",
+  "verdict": "supported",
+  "text": "harbourside sunsets, markets and a crocodile attraction in the middle of town",
+  "source": "https://northernterritory.com/darwin-and-surrounds/destinations/darwin (sunsets, markets); https://en.wikivoyage.org/wiki/Darwin (crocodiles in the middle of the city)",
+  "status": "supported",
+  "fix": "Repeats the tagline and reason 1; consider dropping the crocodile clause here."
+ },
+ {
+  "id": "darwin",
+  "field": "whyVisit[0]",
+  "verdict": "supported",
+  "text": "Meet saltwater crocodiles at Crocosaurus Cove",
+  "source": "https://www.crocosauruscove.com/ ; https://en.wikivoyage.org/wiki/Darwin",
+  "status": "supported",
+  "fix": ""
+ },
+ {
+  "id": "darwin",
+  "field": "whyVisit[1]",
+  "verdict": "supported",
+  "text": "Watch the sunset at Mindil Beach",
+  "source": "https://northernterritory.com/darwin-and-surrounds/destinations/darwin (beachfront sunsets at Mindil); https://en.wikivoyage.org/wiki/Darwin (sunset markets on the beach)",
+  "status": "supported",
+  "fix": ""
+ },
+ {
+  "id": "darwin",
+  "field": "whyVisit[2]",
+  "verdict": "supported",
+  "text": "Swim in the clear pools at Berry Springs",
+  "source": "https://nt.gov.au/parks/find-a-park/berry-springs-nature-park (clear swimming pools; swimming may be closed in the wet season Oct-Apr)",
+  "status": "supported",
+  "fix": "Fine; the Wet closure is already in the Berry Springs spot."
+ },
+ {
+  "id": "darwin",
+  "field": "highlights",
+  "verdict": "supported",
+  "text": "Crocodile encounters / Beach sunsets / Spring-fed pools",
+  "source": "Match the three reasons",
+  "status": "supported",
+  "fix": ""
+ },
+ {
+  "id": "darwin",
+  "field": "goodToKnow[0] Be crocwise",
+  "verdict": "supported",
+  "text": "Any Top End water may hold crocodiles. Swim only where signed safe; box jellyfish are a danger from October to May.",
+  "source": "https://northernterritory.com/plan/useful-information/safety-information (any body of water in the Top End may contain crocodiles); https://en.wikivoyage.org/wiki/Darwin (box jellyfish October-May)",
+  "status": "supported",
+  "fix": "Near-identical phrasing with the Litchfield \"Be crocwise\" tip; reword one."
+ },
+ {
+  "id": "darwin",
+  "field": "goodToKnow[0].box-jellyfish-months",
+  "verdict": "supported",
+  "text": "box jellyfish ... October to May",
+  "source": "https://en.wikivoyage.org/wiki/Darwin: \"During the months of October-May the sea contains deadly box jellyfish\"",
+  "status": "supported",
+  "fix": ""
+ },
+ {
+  "id": "darwin",
+  "field": "goodToKnow[1] Wet and dry seasons",
+  "verdict": "supported",
+  "text": "The Dry runs May to October; the Wet, November to April, brings storms and humidity. Book tours ahead in the Dry.",
+  "source": "https://northernterritory.com/plan/weather-and-seasons (Dry May-Oct, Wet Nov-Apr, humidity up to 80%+, monsoon storms); https://northernterritory.com/darwin-and-surrounds/destinations/darwin (Dry is peak season, Wet is low season)",
+  "status": "supported",
+  "fix": "\"Book tours ahead\" is an inference from peak season; acceptable."
+ },
+ {
+  "id": "darwin",
+  "field": "goodToKnow[2] Parks pass for day trips",
+  "verdict": "needs-change",
+  "text": "Darwin needs no permit, but Litchfield's falls need an NT Parks Visitor Pass: $10 adult per day, NT residents exempt.",
+  "source": "Pass facts: Tourism NT Wangi Falls page (1-day adult $10; NT residents exempt) and ticket-verified.json (nt.gov.au pages for Wangi, Florence, Buley and Tolmer state a pass is required). \"Darwin needs no permit\" is in no source.",
+  "status": "unsupported",
+  "fix": "\"Litchfield's waterfalls need an NT Parks Visitor Pass: $10 adult per day; NT residents are exempt.\" (drop \"Darwin needs no permit\"). Also duplicates the Litchfield pass tip; consider a different Darwin tip (e.g. drink plenty of water, researched: at least two litres a day, avoid midday heat)."
+ },
+ {
+  "id": "darwin",
+  "field": "goodToKnow.detail-length",
+  "verdict": "supported",
+  "text": "all three details",
+  "source": "Longest is about 118 characters",
+  "status": "supported",
+  "fix": "Within 160."
+ },
+ {
+  "id": "darwin",
+  "field": "bestMonths",
+  "verdict": "supported",
+  "text": "5-10",
+  "source": "https://northernterritory.com/plan/weather-and-seasons: Dry May to October is best; Mindil markets and Darwin Festival fall then",
+  "status": "supported",
+  "fix": ""
+ },
+ {
+  "id": "darwin",
+  "field": "bestTimeBlurb",
+  "verdict": "needs-change",
+  "text": "The Dry, {months}, brings sunny days, lower humidity and the markets and festivals; the Wet is hotter, stormier and quieter.",
+  "source": "https://northernterritory.com/plan/weather-and-seasons: Wet maximum 33 C vs Dry 32-33 C; the difference is humidity (80%+) and minimum temperature, not heat by day. Quieter: https://northernterritory.com/darwin-and-surrounds/destinations/darwin (Wet is low season).",
+  "status": "unsupported",
+  "fix": "\"...; the Wet is more humid, stormier and quieter.\""
+ },
+ {
+  "id": "darwin",
+  "field": "seasonalTags monsoon-dry-season 5-10",
+  "verdict": "supported",
+  "text": "monsoon-dry-season May to October",
+  "source": "https://northernterritory.com/plan/weather-and-seasons",
+  "status": "supported",
+  "fix": ""
+ },
+ {
+  "id": "darwin",
+  "field": "seasonalTags major-festival 8",
+  "verdict": "supported",
+  "text": "major-festival August",
+  "source": "https://northernterritory.com/darwin-and-surrounds/destinations/darwin and https://en.wikivoyage.org/wiki/Darwin: Darwin Festival each August (18 nights)",
+  "status": "supported",
+  "fix": ""
+ },
+ {
+  "id": "litchfield",
+  "field": "tagline",
+  "verdict": "supported",
+  "text": "Waterfalls, swimming holes and giant termite mounds about an hour south of Darwin.",
+  "source": "https://northernterritory.com/darwin-and-surrounds/destinations/litchfield-national-park: approximately one hour drive from Darwin; https://en.wikipedia.org/wiki/Litchfield_National_Park says about 100 km south-west of Darwin",
+  "status": "supported",
+  "fix": "Fine (\"about an hour\"; Wangi is further in). Description repeats the hour: say it once."
+ },
+ {
+  "id": "litchfield",
+  "field": "description.area",
+  "verdict": "supported",
+  "text": "covers about 1,500 square kilometres of the Tabletop Range",
+  "source": "https://en.wikipedia.org/wiki/Litchfield_National_Park: \"covering approximately 1,500 km2\" (1,458.47 km2 in the infobox)",
+  "status": "supported",
+  "fix": ""
+ },
+ {
+  "id": "litchfield",
+  "field": "description.waterfall-capital",
+  "verdict": "needs-change",
+  "text": "Tourism NT calls it the waterfall capital of Australia",
+  "source": "https://northernterritory.com/darwin-and-surrounds/destinations/litchfield-national-park (heading: \"The waterfall capital of Australia\") - the claim is sourced but the app text NAMES THE SOURCE, which WRITING.md forbids (lint: source).",
+  "status": "unsupported",
+  "fix": "Cut the clause: \"Litchfield National Park covers about 1,500 square kilometres of the Tabletop Range south of Darwin.\" (or state the tourism-board slogan plainly only if kept as a fact, e.g. \"billed as the waterfall capital of Australia\", which is still marketing; cutting is safer)."
+ },
+ {
+  "id": "litchfield",
+  "field": "description.features",
+  "verdict": "supported",
+  "text": "Spring-fed falls tumble off the sandstone plateau into plunge pools, Buley Rockhole's cascades, the magnetic termite mounds and the sandstone pillars of the Lost City",
+  "source": "https://en.wikivoyage.org/wiki/Litchfield_National_Park (permanent spring-fed falls, Buley cascades, magnetic termite mounds, Lost City)",
+  "status": "supported",
+  "fix": ""
+ },
+ {
+  "id": "litchfield",
+  "field": "description.short-drive",
+  "verdict": "supported",
+  "text": "all within a short drive of each other",
+  "source": "WV: Florence/Buley/termite mounds within a few km; Lost City is a 4WD track",
+  "status": "supported",
+  "fix": "Acceptable; the Lost City needs 4WD (said in the last sentence)."
+ },
+ {
+  "id": "litchfield",
+  "field": "description.hour-drive",
+  "verdict": "supported",
+  "text": "The northern end is reached on sealed roads in about an hour from Darwin; the south needs a 4WD.",
+  "source": "https://northernterritory.com/darwin-and-surrounds/destinations/litchfield-national-park (about one hour from Darwin); WV: north end 2WD on bitumen, south end needs a 4WD",
+  "status": "supported",
+  "fix": "Repeats \"about an hour\" from the tagline; drop it from one."
+ },
+ {
+  "id": "litchfield",
+  "field": "whyVisit[0]",
+  "verdict": "needs-change",
+  "text": "Swim beneath Wangi Falls",
+  "source": "https://northernterritory.com/darwin-and-surrounds/see-and-do/wangi-falls: swimming not permitted in the wet season, typically October to March; ticket-verified.json: official page on 2026-10-21 shows swimming currently closed (crocodile management). dest-research.json itself warned the reason must not imply year-round swimming.",
+  "status": "unsupported",
+  "fix": "\"Swim beneath Wangi Falls in the Dry\" (or \"See the twin falls at Wangi Falls\"); highlight \"Plunge-pool swimming\" then \"Dry-season swimming\"."
+ },
+ {
+  "id": "litchfield",
+  "field": "whyVisit[1]",
+  "verdict": "supported",
+  "text": "Walk down to Florence Falls",
+  "source": "https://northernterritory.com/darwin-and-surrounds/see-and-do/florence-falls: 160 steps down to the plunge pool",
+  "status": "supported",
+  "fix": ""
+ },
+ {
+  "id": "litchfield",
+  "field": "whyVisit[2]",
+  "verdict": "supported",
+  "text": "Stroll among magnetic termite mounds",
+  "source": "https://northernterritory.com/darwin-and-surrounds/see-and-do/magnetic-termite-mounds: boardwalk among hundreds of mounds",
+  "status": "supported",
+  "fix": ""
+ },
+ {
+  "id": "litchfield",
+  "field": "highlights",
+  "verdict": "supported",
+  "text": "Plunge-pool swimming / Double waterfall / Giant termite mounds",
+  "source": "Match reasons; see whyVisit[0] about swimming",
+  "status": "supported",
+  "fix": ""
+ },
+ {
+  "id": "litchfield",
+  "field": "goodToKnow[0] Parks pass required",
+  "verdict": "supported",
+  "text": "Visitors need an NT Parks Visitor Pass: $10 adult per day, $20 for three days, $5 child. NT residents are exempt.",
+  "source": "https://northernterritory.com/darwin-and-surrounds/see-and-do/wangi-falls (re-opened): adult 1-day $10, 3-day $20; child 5-17 1-day $5; \"NT residents are exempt\"; ticket-verified.json: official nt.gov.au falls pages say a pass is required (nt.gov.au is 403 to scripts here; relied on the recorded browser check).",
+  "status": "supported",
+  "fix": "Optional precision: \"$5 child (5-17)\"; children under 5 not priced on the page; concessions exist."
+ },
+ {
+  "id": "litchfield",
+  "field": "goodToKnow[1] Wet-season swimming limits",
+  "verdict": "supported",
+  "text": "Wangi Falls swimming is closed in the wet season, typically October to March, and some areas close for flooding. Check before you go.",
+  "source": "https://northernterritory.com/darwin-and-surrounds/see-and-do/wangi-falls (\"typically from October to March\"); https://northernterritory.com/plan/weather-and-seasons (some areas may close due to flooding)",
+  "status": "supported",
+  "fix": ""
+ },
+ {
+  "id": "litchfield",
+  "field": "goodToKnow[2] Be crocwise",
+  "verdict": "supported",
+  "text": "Swim only where signed safe; saltwater crocodiles can be in unsigned waters. The pool at Tolmer Falls is closed to swimmers.",
+  "source": "https://northernterritory.com/darwin-and-surrounds/see-and-do/tolmer-falls: \"Swimming is not permitted at Tolmer Falls\"; https://northernterritory.com/plan/useful-information/safety-information",
+  "status": "supported",
+  "fix": "Phrase \"closed to swimmers\" -> \"no swimming at Tolmer Falls\" is closer to the source; near-duplicate of the Darwin croc tip."
+ },
+ {
+  "id": "litchfield",
+  "field": "goodToKnow.detail-length",
+  "verdict": "supported",
+  "text": "all three details",
+  "source": "Longest about 132 characters",
+  "status": "supported",
+  "fix": "Within 160."
+ },
+ {
+  "id": "litchfield",
+  "field": "bestMonths",
+  "verdict": "needs-change",
+  "text": "5-10",
+  "source": "https://northernterritory.com/plan/weather-and-seasons: Dry May-Oct. But Wangi Falls swimming is not permitted Oct-Mar (Tourism NT) while the blurb calls the Dry \"the time for swimming\"; dest-research.json suggested 5-9 for the same reason.",
+  "status": "unsupported",
+  "fix": "bestMonths 5-9; bestTimeBlurb \"The Dry, {months}, is the time for swimming...\" then true; seasonalTags months 5-9."
+ },
+ {
+  "id": "litchfield",
+  "field": "bestTimeBlurb",
+  "verdict": "supported",
+  "text": "The Dry, {months}, is the time for swimming and for reaching the 4WD tracks; in the Wet some areas flood and Wangi Falls closes to swimmers.",
+  "source": "WV: 4WD tracks closed by flooding Dec-Mar; Tourism NT: flooding closures, Wangi swimming closed Oct-Mar",
+  "status": "supported",
+  "fix": "Supported once the month range is 5-9 (see bestMonths)."
+ },
+ {
+  "id": "litchfield",
+  "field": "seasonalTags monsoon-dry-season 5-10",
+  "verdict": "supported",
+  "text": "monsoon-dry-season May to October",
+  "source": "https://northernterritory.com/plan/weather-and-seasons (regional Dry is May-Oct)",
+  "status": "supported",
+  "fix": "If bestMonths becomes 5-9, keep the tag at the climatic Dry 5-10 or align; either is defensible."
+ },
+ {
+  "id": "darwin-1",
+  "field": "bio+hours+cost",
+  "verdict": "supported",
+  "text": "Territory museum ... Bullocky Point ... Aboriginal art, Cyclone Tracy and Sweetheart; 10:00 AM - 4:00 PM; free",
+  "source": "https://www.magnt.net.au/magnt (open daily 10am-4pm, free entry, Sweetheart and Cyclone Tracy galleries); WV (Bullocky Point)",
+  "status": "supported",
+  "fix": "Bio 115 chars, fits three lines (bio-fit)."
+ },
+ {
+  "id": "darwin-2",
+  "field": "bio+hours+cost",
+  "verdict": "supported",
+  "text": "swim-with-the-crocs cage, reptile shows and a freshwater aquarium; 9-6 last entry 5; $42",
+  "source": "https://www.crocosauruscove.com/plan-your-day/prices/ (adult $42.00); home page (open daily 9am-6pm, last entry 5pm; 9 reptile shows daily; Swim with the Crocs)",
+  "status": "supported",
+  "fix": ""
+ },
+ {
+  "id": "darwin-3",
+  "field": "bio",
+  "verdict": "needs-change",
+  "text": "Harbourside precinct on Darwin's old wharf with a wave lagoon, restaurants, shops and the Esplanade.",
+  "source": "https://www.waterfront.nt.gov.au/ and Tourism NT (wave lagoon, cafes, restaurants); no loaded source puts the Esplanade in the precinct or says the precinct is on the \"old wharf\" (WV places the Wharf Precinct on Kitchener Dr).",
+  "status": "unsupported",
+  "fix": "\"Harbourside precinct with a wave lagoon, free saltwater lagoon, restaurants and shops beside Darwin's CBD.\" Keep free:true, hours \"Open daily\"."
+ },
+ {
+  "id": "darwin-4",
+  "field": "bio+hours+cost",
+  "verdict": "unverifiable",
+  "text": "Open 24 hours; free; sunset views over the Timor Sea",
+  "source": "https://en.wikivoyage.org/wiki/Darwin (Mindil Beach, sunset markets); hours and free access not stated by a source (public beach).",
+  "status": "unverifiable",
+  "fix": "Acceptable for an open-access beach; research flagged it unverified."
+ },
+ {
+  "id": "darwin-5",
+  "field": "hours+cost",
+  "verdict": "supported",
+  "text": "9:00-3:00 (to 4:00 from 1 April to 30 September); $41.50",
+  "source": "https://territorywildlifepark.com.au/plan-your-visit (re-opened): adult $41.50; open 9am-3pm, closes 4pm 1 Apr-30 Sep, 3pm 1 Oct-31 Mar",
+  "status": "supported",
+  "fix": "Rates stated until 31 March 2027. Bio (\"aquarium tunnel, bird of prey shows, wetlands walk\") not re-checked on the page; low risk."
+ },
+ {
+  "id": "darwin-6",
+  "field": "bio+hours",
+  "verdict": "supported",
+  "text": "Forty-two hectares ... open daily; 7:00 AM - 7:00 PM; free",
+  "source": "https://nt.gov.au/parks/find-a-park/george-brown-darwin-botanic-gardens (42 hectares); https://northernterritory.com/gb/en/darwin-and-surrounds/see-and-do/george-brown-darwin-botanic-gardens (daily 7am-7pm)",
+  "status": "supported",
+  "fix": "\"coastal foredune\" not found on either loaded page; if unwanted, drop it."
+ },
+ {
+  "id": "darwin-7",
+  "field": "closedDays [1,2]",
+  "verdict": "supported",
+  "text": "closedDays [1,2] (Monday, Tuesday); 10:00 AM - 2:00 PM; free; 1883 to 1979",
+  "source": "https://www.magnt.net.au/fannie-bay-gaol (re-opened): \"Open Wed - Sun: 10am - 2pm\", FREE ENTRY, main prison 20 Sep 1883 to 1 Sep 1979, gallows",
+  "status": "supported",
+  "fix": "Correct: Wed-Sun open = closed Mon (1) and Tue (2) with 0 = Sunday."
+ },
+ {
+  "id": "darwin-8",
+  "field": "hours",
+  "verdict": "needs-change",
+  "text": "Open 24 hours",
+  "source": "https://www.darwin.nt.gov.au/explore/out-and-about/find-a-facility/east-point-reserve: page lists \"Daylight Hours\" and a notice \"Designated areas of East Point Reserve are being opened. Avoid other areas of the Reserve until further notice.\" No source says 24 hours (research flagged it).",
+  "status": "unsupported",
+  "fix": "hours \"Daylight hours\". Bio (walking/cycling trails, Lake Alexander, wallabies at dawn and dusk) is supported by the council page and WV. Check the closure notice before shipping."
+ },
+ {
+  "id": "darwin-9",
+  "field": "hours+cost+bio",
+  "verdict": "supported",
+  "text": "9:30-4:00 (Sunday/public holidays 10:00-3:00); $22",
+  "source": "https://www.darwinmilitarymuseum.au/ (adult 16+ $22; Mon-Sat 9:30-4:00, Sun & public holidays 10-3); WV (East Point museum on the bombing)",
+  "status": "supported",
+  "fix": ""
+ },
+ {
+  "id": "darwin-11",
+  "field": "bio",
+  "verdict": "needs-change",
+  "text": "Aviation museum about 8 km from the city with 19 aircraft, including a B-52 bomber on loan from the US Air Force.",
+  "source": "https://en.wikivoyage.org/wiki/Darwin (8 km, B-52 on permanent loan, one of two on display outside the US); the visit page loaded gives no aircraft count, so \"19 aircraft\" is unsourced. Hours 9-5 and $20 adult supported by https://www.darwinaviationmuseum.com.au/visit/",
+  "status": "unsupported",
+  "fix": "\"Aviation museum about 8 km from the city, with a B-52 bomber on loan from the US Air Force.\" (still 10+ words)."
+ },
+ {
+  "id": "darwin-12",
+  "field": "bio+hours+cost+ticketUrl",
+  "verdict": "supported",
+  "text": "tunnels on Kitchener Drive; 9-1 (9-4 May to September); $12",
+  "source": "https://www.visittopend.com.au/book/darwin-cbd/wwii-oil-storage-tunnels (re-opened): May-Sep 9am-4pm, Oct-Apr 9am-1pm, adult $12, Kitchener Drive, photographs of Allied wartime activity",
+  "status": "supported",
+  "fix": "The ticketUrl is a Tourism Top End booking page, not the tunnels' own site; confirm it is the operator, otherwise it breaks the no-aggregator rule. WV says $7 (2015, stale)."
+ },
+ {
+  "id": "darwin-13",
+  "field": "bio+hours+cost",
+  "verdict": "supported",
+  "text": "hand-feed wild fish at high tide; Tide dependent; $15",
+  "source": "https://www.aquascene.com.au/faq (adult $15.00; tickets online or at the gate; marine sanctuary at Doctors Gully)",
+  "status": "supported",
+  "fix": ""
+ },
+ {
+  "id": "darwin-14",
+  "field": "bio+hours+cost",
+  "verdict": "supported",
+  "text": "clear spring-fed pools, picnic and barbecue areas, monsoon forest walks; 8:00-6:30; free",
+  "source": "https://nt.gov.au/parks/find-a-park/berry-springs-nature-park (re-opened: park and picnic areas open year round 8am-6:30pm; swimming may be closed in the wet season Oct-Apr; no fee stated)",
+  "status": "supported",
+  "fix": "Add to hours or bio that swimming can close in the wet season if space allows (the Darwin reason \"Swim in the clear pools\" is Dry-season)."
+ },
+ {
+  "id": "darwin-15",
+  "field": "bio+hours+cost",
+  "verdict": "unverifiable",
+  "text": "Crocodile park and zoo near Darwin Airport with thousands of crocodiles plus lions, primates and cassowaries; 9-4; $49",
+  "source": "https://www.crocodyluspark.com.au/ (thousands of crocodiles, lions, meerkats, spider monkeys, marmosets, cassowaries) and /tickets ($49 adult; 9am-4pm text vs 9-5 table)",
+  "status": "unverifiable",
+  "fix": "\"near Darwin Airport\" is in no loaded page (address is McMillans Rd, Berrimah): say \"in Berrimah\" or cut. Hours conflict on the site (9-4 text, 9-5 table)."
+ },
+ {
+  "id": "darwin-16",
+  "field": "bio",
+  "verdict": "supported",
+  "text": "eight kilometres of beach under sandstone cliffs, walking paths, barbecues and Old Man Rock; free",
+  "source": "https://northernterritory.com/gb/en/darwin-and-surrounds/see-and-do/casuarina-coastal-reserve (8 kilometres of sandy beaches, sandstone cliffs, barbecues, Old Man Rock at low tide)",
+  "status": "supported",
+  "fix": "Hours \"Open 24 hours\" not stated by a source (low risk)."
+ },
+ {
+  "id": "darwin-17",
+  "field": "bio+hours+cost",
+  "verdict": "supported",
+  "text": "WWII ammunition bunkers, harbour lookout, shell middens; Daily 8-7; free",
+  "source": "https://northernterritory.com/darwin-and-surrounds/see-and-do/charles-darwin-national-park (Free entry, daily 8am-7pm, bunkers, lookout platform, shell middens); nt.gov.au page 403 here, free recorded by browser check in ticket-verified.json",
+  "status": "supported",
+  "fix": ""
+ },
+ {
+  "id": "darwin-18",
+  "field": "cost",
+  "verdict": "unverifiable",
+  "text": "free: true",
+  "source": "ticket-verified.json: official nt.gov.au page names no pass; but https://northernterritory.com/darwin-and-surrounds/see-and-do/fogg-dam-conservation-reserve (re-opened) says \"Purchase an NT Parks Visitor Pass before you arrive. NT residents are exempt.\" WV says no fee. Sources conflict; the official page was 403 to me.",
+  "status": "unverifiable",
+  "fix": "Confirm on the official page; if a pass applies set costMin/costMax 10 AUD."
+ },
+ {
+  "id": "darwin-18",
+  "field": "bio",
+  "verdict": "supported",
+  "text": "about 70 km east of Darwin with boardwalks, bird hides and a road across the dam wall",
+  "source": "https://northernterritory.com/darwin-and-surrounds/see-and-do/fogg-dam-conservation-reserve (about 70 km east, boardwalks, bird hides, drive across the dam wall)",
+  "status": "supported",
+  "fix": "hours \"Open daily\" ok."
+ },
+ {
+  "id": "darwin-19",
+  "field": "bio+hours",
+  "verdict": "unverifiable",
+  "text": "Roadside giant sculpture ... Arnhem Highway at Humpty Doo; Open 24 hours; free",
+  "source": "https://en.wikivoyage.org/wiki/Humpty_Doo (326 Arnhem Hwy, 24/7, listing updated Sep 2021)",
+  "status": "unverifiable",
+  "fix": "Only source is Wikivoyage 2021; still standing today is unconfirmed."
+ },
+ {
+  "id": "darwin-20",
+  "field": "bio",
+  "verdict": "supported",
+  "text": "Darwin's second centre, 21 km south-east, with shopping, Palmerston Water Park and the SWELL venue",
+  "source": "https://en.wikipedia.org/wiki/Palmerston,_Northern_Territory (21 km from Darwin; four shopping centres); https://northernterritory.com/darwin-and-surrounds/see-and-do (Palmerston Water Park, SWELL Palmerston)",
+  "status": "supported",
+  "fix": "\"Darwin's second centre\" is not in a source (\"satellite city\" is typical); soften to \"Satellite city 21 km south-east of Darwin\". Coverage note: a town filed under Darwin is a questionable spot unless it has its own draws."
+ },
+ {
+  "id": "litchfield-1",
+  "field": "bio+hours+cost",
+  "verdict": "supported",
+  "text": "twin falls into a large plunge pool, kiosk, picnic area, campground; swimming closed in the wet season (typically October to March); $10",
+  "source": "https://northernterritory.com/darwin-and-surrounds/see-and-do/wangi-falls (twin falls, plunge pool; swimming not permitted wet season typically Oct-Mar; pass $10 adult); WV (kiosk, campground)",
+  "status": "supported",
+  "fix": "ticket-verified.json: swimming is currently closed (crocodile management) on the official page; consider saying so on the day it ships."
+ },
+ {
+  "id": "litchfield-2",
+  "field": "bio+cost",
+  "verdict": "supported",
+  "text": "Double waterfall ... 160 steps; $10",
+  "source": "https://northernterritory.com/darwin-and-surrounds/see-and-do/florence-falls (160 steps; pass); cost is the park pass",
+  "status": "supported",
+  "fix": ""
+ },
+ {
+  "id": "litchfield-3",
+  "field": "bio+cost",
+  "verdict": "supported",
+  "text": "cascading rockholes 80 m from the car park; $10",
+  "source": "https://en.wikivoyage.org/wiki/Litchfield_National_Park (80 metres from the car park); cost is the park pass; official page says pass per ticket-verified.json",
+  "status": "supported",
+  "fix": ""
+ },
+ {
+  "id": "litchfield-4",
+  "field": "bio+cost+hours",
+  "verdict": "supported",
+  "text": "hundreds of magnetic termite mounds up to two metres high, thin edges pointing north-south; $10; Open daily",
+  "source": "https://northernterritory.com/darwin-and-surrounds/see-and-do/magnetic-termite-mounds (hundreds of mounds up to two metres, thin edges north-south; open daily 24 hours). The page also shows a stray \"$24\" widget figure; ignore.",
+  "status": "supported",
+  "fix": "The $10 is the park-wide pass (park page); the mound page itself does not list a price."
+ },
+ {
+  "id": "litchfield-5",
+  "field": "bio+cost",
+  "verdict": "supported",
+  "text": "over two escarpments into a deep plunge pool, viewing platforms, 400 m walk; no swimming; $10",
+  "source": "https://northernterritory.com/darwin-and-surrounds/see-and-do/tolmer-falls (two high escarpments, deep plunge pool, 400 m walk to two viewing platforms, swimming not permitted)",
+  "status": "supported",
+  "fix": ""
+ },
+ {
+  "id": "litchfield-6",
+  "field": "bio",
+  "verdict": "supported",
+  "text": "Small gateway town to Litchfield with the park headquarters, a butterfly farm and Batchelor Museum.",
+  "source": "https://en.wikivoyage.org/wiki/Litchfield_National_Park (Park Headquarters at Batchelor; Batchelor Butterfly and Petting Farm); https://northernterritory.com/darwin-and-surrounds/see-and-do/batchelor-museum",
+  "status": "supported",
+  "fix": ""
+ },
+ {
+  "id": "litchfield-7",
+  "field": "bio+hours+visit",
+  "verdict": "supported",
+  "text": "39 to 46 km through the Tabletop Range, from Wangi, Florence or Walker Creek; open seasonally usually June to September; visit 3-6 hr",
+  "source": "https://northernterritory.com/darwin-and-surrounds/see-and-do/tabletop-track (39-46 km; access via Florence Falls, Wangi Falls, Walker Creek; book campgrounds); hours note from ticket-verified.json (official page, seasonal June-September)",
+  "status": "supported",
+  "fix": "visitHoursMax 6 is low for the listed sections (Wangi-Walker Creek about 7 hours, Florence-Wangi 8 hours); widen if the field is a section time."
+ },
+ {
+  "id": "litchfield-8",
+  "field": "bio+hours",
+  "verdict": "supported",
+  "text": "reached only by a 4WD track; 4WD access only; may close in the wet season; $10",
+  "source": "https://en.wikivoyage.org/wiki/Litchfield_National_Park (Lost City 4WD access only; tracks closed by flooding Dec-Mar)",
+  "status": "supported",
+  "fix": ""
+ },
+ {
+  "id": "adelaide-river",
+  "field": "bio",
+  "verdict": "supported",
+  "text": "Stuart Highway town 112 km south of Darwin, with a WWII war cemetery and jumping crocodile cruises",
+  "source": "https://en.wikivoyage.org/wiki/Litchfield_National_Park (112 km south of Darwin); https://en.wikivoyage.org/wiki/Adelaide_River (war cemetery, jumping crocodile cruise)",
+  "status": "supported",
+  "fix": ""
+ },
+ {
+  "id": "mary-river-national-park",
+  "field": "bio+cost",
+  "verdict": "unverifiable",
+  "text": "free: true; wetlands, billabongs, birdlife, crocodiles, boardwalks, wetland cruises",
+  "source": "Bio: https://northernterritory.com/darwin-and-surrounds/see-and-do/mistake-billabong (boardwalk, bird hide, crocodiles) and nature-and-wildlife (birdlife, crocodiles, barramundi; wildlife cruise at Corroboree Billabong). Cost: Tourism NT Mistake Billabong page says \"Purchase an NT Parks Visitor Pass before you arrive\" but ticket-verified.json says the official page names only a camping fee.",
+  "status": "unverifiable",
+  "fix": "Confirm on the official page; if a pass applies set cost 10 AUD."
+ },
+ {
+  "id": "tiwi-islands",
+  "field": "bio+hours+cost",
+  "verdict": "needs-change",
+  "text": "Guided day tours only (permit required); 465-469 AUD",
+  "source": "https://en.wikivoyage.org/wiki/Tiwi_Islands (permit via tour operators; day tours from $465 incl. permits; but the same page also says \"Permits are no longer required\"); SeaLink listing $469 (promo to Nov 2025)",
+  "status": "unsupported",
+  "fix": "hours \"Guided day tours only\" (drop \"permit required\" or say operators arrange it); price is approximate, \"from about $465\"."
+ },
+ {
+  "id": "all-spots",
+  "field": "bio length",
+  "verdict": "supported",
+  "text": "30 bios",
+  "source": "bio-fit.py --text on the longest (darwin-1 115, litchfield-4 115, litchfield-7 119 chars): each wraps to exactly 3 lines",
+  "status": "supported",
+  "fix": "None over about 120 characters; all 10+ words, one sentence."
+ }
+]

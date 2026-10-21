@@ -1,0 +1,515 @@
+{
+ "spots": {
+  "darwin-1": {
+   "name": "Museum and Art Gallery of the Northern Territory",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Territory museum and art gallery on Bullocky Point with Aboriginal art, Cyclone Tracy and Sweetheart the crocodile.",
+   "hours": "10:00 AM – 4:00 PM",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -12.437269,
+    "longitude": 130.833283
+   },
+   "wiki": "Museum and Art Gallery of the Northern Territory",
+   "free": true,
+   "ticketUrl": "https://www.magnt.net.au/magnt"
+  },
+  "darwin-2": {
+   "name": "Crocosaurus Cove",
+   "icon": "🐊",
+   "category": "entertainment",
+   "bio": "Darwin city-centre crocodile attraction with a swim-with-the-crocs cage, reptile shows and a freshwater aquarium.",
+   "hours": "9:00 AM – 6:00 PM (last entry 5:00 PM)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -12.462333,
+    "longitude": 130.839226
+   },
+   "wiki": "Crocosaurus Cove",
+   "costMin": 42,
+   "costMax": 42,
+   "currency": "AUD",
+   "ticketUrl": "https://www.crocosauruscove.com/"
+  },
+  "darwin-3": {
+   "name": "Darwin Waterfront",
+   "icon": "🌊",
+   "category": "landmark",
+   "bio": "Harbourside precinct beside Darwin's CBD with a wave lagoon, a free saltwater lagoon, restaurants and shops.",
+   "hours": "Open daily",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -12.466728,
+    "longitude": 130.846055
+   },
+   "wiki": "Darwin Waterfront Precinct",
+   "free": true,
+   "ticketUrl": "https://www.waterfront.nt.gov.au/"
+  },
+  "darwin-4": {
+   "name": "Mindil Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Darwin's western beach beside the casino and the sunset market, with sunset views over the Timor Sea.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -12.445256,
+    "longitude": 130.830543
+   },
+   "wiki": "Mindil Beach",
+   "free": true
+  },
+  "darwin-5": {
+   "name": "Territory Wildlife Park",
+   "icon": "🦅",
+   "category": "entertainment",
+   "bio": "Berry Springs wildlife park with monsoon forest, a wetlands walk, aquarium tunnel and daily bird of prey shows.",
+   "hours": "9:00 AM – 3:00 PM (to 4:00 PM from 1 April to 30 September)",
+   "visitHoursMin": 3,
+   "visitHoursMax": 5,
+   "coordinates": {
+    "latitude": -12.710243,
+    "longitude": 130.989682
+   },
+   "wiki": "Territory Wildlife Park",
+   "costMin": 41.5,
+   "costMax": 41.5,
+   "currency": "AUD",
+   "ticketUrl": "https://territorywildlifepark.com.au/plan-your-visit"
+  },
+  "darwin-6": {
+   "name": "George Brown Darwin Botanic Gardens",
+   "icon": "🌴",
+   "category": "nature",
+   "bio": "Forty-two hectares of tropical gardens with monsoon forest and woodland walks, open daily.",
+   "hours": "7:00 AM – 7:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -12.444809,
+    "longitude": 130.837134
+   },
+   "wiki": "George Brown Darwin Botanic Gardens",
+   "free": true,
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/george-brown-darwin-botanic-gardens"
+  },
+  "darwin-7": {
+   "name": "Fannie Bay Gaol",
+   "icon": "🏛️",
+   "category": "historic",
+   "bio": "Darwin's main prison from 1883 to 1979, now a free museum with walk-through cells and the gallows.",
+   "hours": "10:00 AM – 2:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -12.425628,
+    "longitude": 130.836306
+   },
+   "wiki": "Fannie Bay Gaol",
+   "closedDays": [
+    1,
+    2
+   ],
+   "free": true,
+   "ticketUrl": "https://www.magnt.net.au/fannie-bay-gaol"
+  },
+  "darwin-8": {
+   "name": "East Point Reserve",
+   "icon": "🦘",
+   "category": "nature",
+   "bio": "Coastal reserve north of the city with walking and cycling trails, Lake Alexander and wallabies at dawn and dusk.",
+   "hours": "Daylight hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -12.407711,
+    "longitude": 130.825421
+   },
+   "free": true,
+   "ticketUrl": "https://www.darwin.nt.gov.au/explore/out-and-about/find-a-facility/east-point-reserve"
+  },
+  "darwin-9": {
+   "name": "Darwin Military Museum",
+   "icon": "🪖",
+   "category": "museum",
+   "bio": "World War II museum at East Point on the 1942 bombing of Darwin and the defence of northern Australia.",
+   "hours": "9:30 AM – 4:00 PM (10:00 AM – 3:00 PM Sundays and public holidays)",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -12.407983,
+    "longitude": 130.819549
+   },
+   "wiki": "Darwin Military Museum",
+   "costMin": 22,
+   "costMax": 22,
+   "currency": "AUD",
+   "ticketUrl": "https://www.darwinmilitarymuseum.au/"
+  },
+  "darwin-11": {
+   "name": "Darwin Aviation Museum",
+   "icon": "✈️",
+   "category": "museum",
+   "bio": "Aviation museum about 8 km from the city, with a B-52 bomber on loan from the US Air Force.",
+   "hours": "9:00 AM – 5:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -12.425394,
+    "longitude": 130.895711
+   },
+   "wiki": "Darwin Aviation Museum",
+   "costMin": 20,
+   "costMax": 20,
+   "currency": "AUD",
+   "ticketUrl": "https://www.darwinaviationmuseum.com.au/"
+  },
+  "darwin-12": {
+   "name": "Oil Storage Tunnels",
+   "icon": "🕳️",
+   "category": "historic",
+   "bio": "World War II tunnels bored into the cliff on Kitchener Drive to store oil, now holding wartime photographs.",
+   "hours": "9:00 AM – 1:00 PM (9:00 AM – 4:00 PM May to September)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -12.467424,
+    "longitude": 130.845102
+   },
+   "wiki": "Oil Storage Tunnels",
+   "costMin": 12,
+   "costMax": 12,
+   "currency": "AUD",
+   "ticketUrl": "https://www.visittopend.com.au/book/darwin-cbd/wwii-oil-storage-tunnels"
+  },
+  "darwin-13": {
+   "name": "Aquascene",
+   "icon": "🐟",
+   "category": "entertainment",
+   "bio": "Doctors Gully fish-feeding sanctuary where you hand-feed wild fish that come in with the high tide.",
+   "hours": "Tide dependent",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -12.4597926,
+    "longitude": 130.8318841
+   },
+   "wiki": "Aquascene",
+   "costMin": 15,
+   "costMax": 15,
+   "currency": "AUD",
+   "ticketUrl": "https://www.aquascene.com.au/"
+  },
+  "darwin-14": {
+   "name": "Berry Springs Nature Park",
+   "icon": "💧",
+   "category": "nature",
+   "bio": "Nature park with clear spring-fed swimming pools, picnic and barbecue areas and monsoon forest walks.",
+   "hours": "8:00 AM – 6:30 PM (park and picnic areas, year round)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -12.7023153,
+    "longitude": 130.9981933
+   },
+   "wiki": "Berry Springs, Northern Territory",
+   "free": true,
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/berry-springs-nature-park"
+  },
+  "darwin-15": {
+   "name": "Crocodylus Park",
+   "icon": "🐊",
+   "category": "entertainment",
+   "bio": "Crocodile park and zoo in Berrimah with thousands of crocodiles plus lions, primates and cassowaries.",
+   "hours": "9:00 AM – 4:00 PM",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -12.411949,
+    "longitude": 130.928481
+   },
+   "wiki": "Crocodylus Park",
+   "costMin": 49,
+   "costMax": 49,
+   "currency": "AUD",
+   "ticketUrl": "https://www.crocodyluspark.com.au/"
+  },
+  "darwin-16": {
+   "name": "Casuarina Coastal Reserve",
+   "icon": "🏝️",
+   "category": "nature",
+   "bio": "Coastal reserve with eight kilometres of beach under sandstone cliffs, walking paths, barbecues and Old Man Rock.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -12.361983,
+    "longitude": 130.867541
+   },
+   "wiki": "Casuarina Coastal Reserve",
+   "free": true,
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/casuarina-coastal-reserve"
+  },
+  "darwin-17": {
+   "name": "Charles Darwin National Park",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Small park on Frances Bay with WWII ammunition bunkers, a harbour lookout, shell middens and walking tracks.",
+   "hours": "Daily 8:00 AM – 7:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -12.438451,
+    "longitude": 130.8773
+   },
+   "wiki": "Charles Darwin National Park",
+   "free": true,
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/charles-darwin-national-park"
+  },
+  "darwin-18": {
+   "name": "Fogg Dam Conservation Reserve",
+   "icon": "🦆",
+   "category": "nature",
+   "bio": "Wetland reserve about 70 km east of Darwin with boardwalks, bird hides and a road across the dam wall.",
+   "hours": "Open daily",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -12.563484,
+    "longitude": 131.303438
+   },
+   "wiki": "Fogg Dam Conservation Reserve",
+   "ticketUrl": "https://nt.gov.au/leisure/parks-reserves/find-a-park-to-visit/fogg-dam-conservation-area",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD"
+  },
+  "darwin-19": {
+   "name": "The Big Boxing Crocodile",
+   "icon": "🥊",
+   "category": "landmark",
+   "bio": "Roadside giant sculpture of a boxing crocodile on the Arnhem Highway at Humpty Doo.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "coordinates": {
+    "latitude": -12.5727281,
+    "longitude": 131.1044851
+   },
+   "wiki": "The Big Boxing Crocodile",
+   "free": true
+  },
+  "darwin-20": {
+   "name": "Palmerston",
+   "icon": "🏙️",
+   "category": "landmark",
+   "bio": "Satellite city 21 km south-east of Darwin with shopping, Palmerston Water Park and the SWELL venue.",
+   "hours": "Open daily",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -12.4799608,
+    "longitude": 130.9844108
+   },
+   "wiki": "Palmerston, Northern Territory",
+   "free": true
+  },
+  "litchfield-1": {
+   "name": "Wangi Falls",
+   "icon": "💦",
+   "category": "nature",
+   "bio": "Twin falls into a large plunge pool in monsoon forest, with a kiosk, picnic area and campground.",
+   "hours": "Open daily; swimming closed in the wet season (typically October to March)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -13.163878,
+    "longitude": 130.684932
+   },
+   "wiki": "Wangi Falls",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/litchfield-national-park/wangi-falls"
+  },
+  "litchfield-2": {
+   "name": "Florence Falls",
+   "icon": "💦",
+   "category": "nature",
+   "bio": "Double waterfall in monsoon forest, reached by 160 steps down to the plunge pool.",
+   "hours": "Open daily",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -13.099146,
+    "longitude": 130.78354
+   },
+   "wiki": "Florence Falls",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/litchfield-national-park/florence-falls"
+  },
+  "litchfield-3": {
+   "name": "Buley Rockhole",
+   "icon": "🏊",
+   "category": "nature",
+   "bio": "Series of cascading rockholes 80 m from the car park, popular for a swim.",
+   "hours": "Open daily",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -13.112833,
+    "longitude": 130.785797
+   },
+   "wiki": "Buley Rockhole",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/litchfield-national-park/buley-rockhole"
+  },
+  "litchfield-4": {
+   "name": "Magnetic Termite Mounds",
+   "icon": "🏜️",
+   "category": "nature",
+   "bio": "Boardwalk through hundreds of magnetic termite mounds up to two metres high, their thin edges pointing north-south.",
+   "hours": "Open daily",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -13.102811,
+    "longitude": 130.844147
+   },
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/litchfield-national-park"
+  },
+  "litchfield-5": {
+   "name": "Tolmer Falls",
+   "icon": "🌄",
+   "category": "viewpoint",
+   "bio": "Waterfall over two escarpments into a deep plunge pool, seen from viewing platforms on a 400 m walk; no swimming.",
+   "hours": "Open daily",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -13.205575,
+    "longitude": 130.715066
+   },
+   "wiki": "Tolmer Falls",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/litchfield-national-park/tolmer-falls"
+  },
+  "litchfield-6": {
+   "name": "Batchelor",
+   "icon": "🏘️",
+   "category": "landmark",
+   "bio": "Small gateway town to Litchfield with the park headquarters, a butterfly farm and Batchelor Museum.",
+   "hours": "Open daily",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -13.046805,
+    "longitude": 131.028358
+   },
+   "wiki": "Batchelor, Northern Territory",
+   "free": true
+  },
+  "litchfield-7": {
+   "name": "Tabletop Track",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Multi-day bushwalk of 39 to 46 km through the Tabletop Range, reached from Wangi Falls, Florence Falls or Walker Creek.",
+   "hours": "Open seasonally, usually June to September",
+   "visitHoursMin": 3,
+   "visitHoursMax": 8,
+   "coordinates": {
+    "latitude": -13.117046,
+    "longitude": 130.781288
+   },
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/litchfield-national-park/litchfield-national-park-tabletop-track"
+  },
+  "litchfield-8": {
+   "name": "The Lost City",
+   "icon": "🪨",
+   "category": "nature",
+   "bio": "Weathered sandstone blocks and pillars that resemble a lost city, reached only by a 4WD track.",
+   "hours": "4WD access only; may close in the wet season",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -13.2171412,
+    "longitude": 130.7355456
+   },
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/litchfield-national-park"
+  },
+  "adelaide-river": {
+   "name": "Adelaide River",
+   "icon": "🐊",
+   "category": "landmark",
+   "bio": "Stuart Highway town 112 km south of Darwin, with a WWII war cemetery and jumping crocodile cruises.",
+   "hours": "Open daily",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -13.237696,
+    "longitude": 131.104436
+   },
+   "wiki": "Adelaide River, Northern Territory",
+   "free": true
+  },
+  "mary-river-national-park": {
+   "name": "Mary River National Park",
+   "icon": "🦢",
+   "category": "nature",
+   "bio": "Wetlands and billabongs east of Darwin with dense birdlife, crocodiles, boardwalks and wetland cruises.",
+   "hours": "Open daily",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "coordinates": {
+    "latitude": -12.705917,
+    "longitude": 131.636019
+   },
+   "wiki": "Mary River National Park",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/mary-river-national-park",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD"
+  },
+  "tiwi-islands": {
+   "name": "Tiwi Islands",
+   "icon": "🏝️",
+   "category": "nature",
+   "bio": "Island group north of Darwin with Tiwi art, mission heritage and Aboriginal culture, visited on guided tours.",
+   "hours": "Guided day tours only",
+   "visitHoursMin": 4,
+   "visitHoursMax": 10,
+   "coordinates": {
+    "latitude": -11.762586,
+    "longitude": 130.632109
+   },
+   "wiki": "Tiwi Islands",
+   "costMin": 465,
+   "costMax": 469,
+   "currency": "AUD"
+  }
+ },
+ "existing_fixes": {},
+ "held": [],
+ "notes": "Researchers: research-1/2.json; links on nt.gov.au verified in the in-app browser (ticket-verified.json), which also corrected Fogg Dam, Mary River NP, Berry Springs and Charles Darwin NP to free (the official pages name no park pass). Fact-check applied (facts.json). Fogg Dam and Mary River NP cost: Tourism NT states an NT Parks Visitor Pass applies (AUD 10); the nt.gov.au pages name none: AUD 10 kept and flagged for the owner."
+}

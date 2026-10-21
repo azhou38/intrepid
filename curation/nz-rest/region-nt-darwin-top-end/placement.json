@@ -1,0 +1,1135 @@
+{
+ "region": "nt-darwin-top-end",
+ "existing_fixes": [],
+ "existing_in_app": "none for NT (confirmed no darwin/litchfield/NT ids in destinations.ts or spots.ts; ids new, none in git history)",
+ "new_destinations": [
+  {
+   "id": "darwin",
+   "name": "Darwin",
+   "category": "city",
+   "coordinates": {
+    "latitude": -12.4634,
+    "longitude": 130.8456
+   },
+   "defaultZoomSpanKm": 72,
+   "rank": 3,
+   "name_evidence": "Wikivoyage 'Darwin' city article (See/Do/Eat sections); Tourism NT 'Darwin and surrounds' see-and-do; capital of the Northern Territory and a guidebook chapter.",
+   "spots": [
+    "darwin-1",
+    "darwin-2",
+    "darwin-3",
+    "darwin-4",
+    "darwin-5",
+    "darwin-6",
+    "darwin-7",
+    "darwin-8",
+    "darwin-9",
+    "darwin-10",
+    "darwin-11",
+    "darwin-12",
+    "darwin-13",
+    "darwin-14",
+    "darwin-15",
+    "darwin-16",
+    "darwin-17",
+    "darwin-18",
+    "darwin-19",
+    "darwin-20"
+   ],
+   "note": "Span 72 km (reach 54 km) holds Fogg Dam (about 50 km) and Berry Springs (about 31 km) as Darwin day trips; Palmerston is filed under Darwin. Replace pins with resolve-pin output and re-check span."
+  },
+  {
+   "id": "litchfield",
+   "name": "Litchfield National Park",
+   "category": "park",
+   "coordinates": {
+    "latitude": -13.14,
+    "longitude": 130.82
+   },
+   "defaultZoomSpanKm": 50,
+   "rank": 3,
+   "name_evidence": "Wikivoyage 'Litchfield National Park' article; Parks and Wildlife NT / Tourism NT page; a flagship Top End day trip about 1.5 hours south of Darwin. Park candidate itself (v5405, 2 counted sources) becomes the destination, not a spot of itself.",
+   "spots": [
+    "litchfield-1",
+    "litchfield-2",
+    "litchfield-3",
+    "litchfield-4",
+    "litchfield-5",
+    "litchfield-6",
+    "litchfield-7",
+    "litchfield-8"
+   ],
+   "note": "Eight kept spots; candidate centre is a visitor-understood midpoint of the waterfalls; Batchelor is about 23 km from it, inside the 37 km reach."
+  }
+ ],
+ "placements": [
+  {
+   "id": "darwin-1",
+   "name": "Museum and Art Gallery of the Northern Territory",
+   "action": "spot",
+   "destination": "darwin",
+   "coordinates": {
+    "latitude": -12.437269,
+    "longitude": 130.833283
+   },
+   "pin": "HIGH",
+   "pin_note": "museum building",
+   "coordinates_source": "photon tourism=museum \"Museum and Art Gallery of the Northern Territory\"; agrees with wiki",
+   "wiki": "Museum and Art Gallery of the Northern Territory",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Territory museum on Bullocky Point with Aboriginal art, Cyclone Tracy and maritime galleries, and the crocodile Sweetheart.",
+   "hours": null,
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "ticketUrl": null,
+   "reason": "City attraction on Bullocky Point; two counted sources; free per Wikivoyage. Score: 2416 views, 2 counted sources.",
+   "free": true,
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "darwin-2",
+   "name": "Crocosaurus Cove",
+   "action": "spot",
+   "destination": "darwin",
+   "coordinates": {
+    "latitude": -12.462333,
+    "longitude": 130.839226
+   },
+   "pin": "HIGH",
+   "pin_note": "venue entrance in the CBD",
+   "coordinates_source": "osm tourism=attraction \"Crocosaurus Cove\"; agrees with wiki, commons",
+   "wiki": "Crocosaurus Cove",
+   "icon": "🐊",
+   "category": "entertainment",
+   "bio": "City-centre crocodile attraction where you can be lowered into a tank with saltwater crocodiles in a clear cage.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "ticketUrl": null,
+   "reason": "City-centre venue. Score: 2756 views, 2 counted sources.",
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "darwin-3",
+   "name": "Darwin Waterfront",
+   "action": "spot",
+   "destination": "darwin",
+   "coordinates": {
+    "latitude": -12.466728,
+    "longitude": 130.846055
+   },
+   "pin": "HIGH",
+   "pin_note": "precinct centre",
+   "coordinates_source": "photon highway=bus_stop \"Waterfront Parklands & Recreation\"; agrees with commons",
+   "wiki": "Darwin Waterfront Precinct",
+   "icon": "🌊",
+   "category": "landmark",
+   "bio": "Harbourside precinct on the old wharf with a wave lagoon, recreation lagoon, restaurants and the Esplanade.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "ticketUrl": null,
+   "reason": "Harbour precinct in the city. Score: 2956 views, 2 counted sources.",
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "darwin-4",
+   "name": "Mindil Beach",
+   "action": "spot",
+   "destination": "darwin",
+   "coordinates": {
+    "latitude": -12.445256,
+    "longitude": 130.830543
+   },
+   "pin": "HIGH",
+   "pin_note": "beach centre (to be replaced by OSM natural/beach)",
+   "coordinates_source": "photon natural=beach \"Mindil Beach\"; agrees with wiki",
+   "wiki": "Mindil Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Darwin's western beach beside the casino and the sunset market, with sunset views over the Timor Sea.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "ticketUrl": null,
+   "reason": "City beach. Score: 3202 views, 2 counted sources.",
+   "free": true,
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "darwin-5",
+   "name": "Territory Wildlife Park",
+   "action": "spot",
+   "destination": "darwin",
+   "coordinates": {
+    "latitude": -12.710243,
+    "longitude": 130.989682
+   },
+   "pin": "HIGH",
+   "pin_note": "park entrance",
+   "coordinates_source": "osm leisure=park \"Territory Wildlife Park - Main Station\"; agrees with wiki",
+   "wiki": "Territory Wildlife Park",
+   "icon": "🦅",
+   "category": "entertainment",
+   "bio": "Wildlife park at Berry Springs with monsoon forest, a wetlands walk, an aquarium tunnel and twice-daily bird of prey shows.",
+   "hours": null,
+   "visitHoursMin": 3,
+   "visitHoursMax": 5,
+   "ticketUrl": null,
+   "reason": "Reached from Darwin (about 45 km); inside the Darwin span. Score: 1117 views, 2 counted sources.",
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "darwin-6",
+   "name": "George Brown Darwin Botanic Gardens",
+   "action": "spot",
+   "destination": "darwin",
+   "coordinates": {
+    "latitude": -12.444809,
+    "longitude": 130.837134
+   },
+   "pin": "HIGH",
+   "pin_note": "gardens centre (draft)",
+   "coordinates_source": "photon leisure=park \"George Brown Darwin Botanic Gardens\"; agrees with wiki",
+   "wiki": "George Brown Darwin Botanic Gardens",
+   "icon": "🌴",
+   "category": "nature",
+   "bio": "Forty-two hectares of tropical gardens with monsoon forest, coastal foredune and woodland walks, open daily.",
+   "hours": "7:00 AM – 7:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "ticketUrl": null,
+   "reason": "City garden; hours/free per Wikivoyage. Score: 1561 views, 2 counted sources.",
+   "free": true,
+   "needs_research": [
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "darwin-7",
+   "name": "Fannie Bay Gaol",
+   "action": "spot",
+   "destination": "darwin",
+   "coordinates": {
+    "latitude": -12.425628,
+    "longitude": 130.836306
+   },
+   "pin": "HIGH",
+   "pin_note": "gaol entrance",
+   "coordinates_source": "photon tourism=museum \"Fannie Bay Gaol\"; agrees with wiki, commons",
+   "wiki": "Fannie Bay Gaol",
+   "icon": "🏛️",
+   "category": "historic",
+   "bio": "Darwin's former prison, in use from 1883 to the 1950s, with walk-through cells and the gallows.",
+   "hours": "10:30 AM – 4:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "ticketUrl": null,
+   "reason": "Distinct draw (cells, gallows); hours/free per Wikivoyage. Score: 1675 views, 2 counted sources.",
+   "free": true,
+   "needs_research": [
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "darwin-8",
+   "name": "East Point Reserve",
+   "action": "spot",
+   "destination": "darwin",
+   "coordinates": {
+    "latitude": -12.407711,
+    "longitude": 130.825421
+   },
+   "pin": "HIGH",
+   "pin_note": "reserve visitor point (draft)",
+   "coordinates_source": "photon place=locality \"East Point Reserve\"; agrees with photon",
+   "wiki": null,
+   "icon": "🦘",
+   "category": "nature",
+   "bio": "Coastal reserve north of the city with walking and cycling trails, Lake Alexander and wallabies at dawn and dusk.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "ticketUrl": null,
+   "reason": "The reserve is the unit; Lake Alexander (review) and the military museum sit inside it. Score: 0 views, 2 counted sources.",
+   "free": true,
+   "needs_research": [
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "darwin-9",
+   "name": "Darwin Military Museum",
+   "action": "spot",
+   "destination": "darwin",
+   "coordinates": {
+    "latitude": -12.407983,
+    "longitude": 130.819549
+   },
+   "pin": "HIGH",
+   "pin_note": "museum entrance",
+   "coordinates_source": "photon tourism=museum \"Darwin Military Museum\"; agrees with wiki",
+   "wiki": "Darwin Military Museum",
+   "icon": "🪖",
+   "category": "museum",
+   "bio": "World War II museum at East Point telling the story of the 1942 bombing of Darwin and the defence of the north.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "ticketUrl": null,
+   "reason": "Same venue as Wikivoyage's East Point Military Museum. Score: 1388 views, 2 counted sources.",
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "darwin-11",
+   "name": "Darwin Aviation Museum",
+   "action": "spot",
+   "destination": "darwin",
+   "coordinates": {
+    "latitude": -12.425394,
+    "longitude": 130.895711
+   },
+   "pin": "MEDIUM",
+   "pin_note": "museum entrance",
+   "coordinates_source": "Wikipedia article coordinates of the museum building (Winnellie); the OSM \"Aviation Museum\" bus stop is 130 m away",
+   "wiki": "Darwin Aviation Museum",
+   "icon": "✈️",
+   "category": "museum",
+   "bio": "Aviation museum about 8 km from the city, home to a B-52 bomber on loan from the US Air Force.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "ticketUrl": null,
+   "reason": "Distinct museum. Score: 1849 views, 2 counted sources.",
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "darwin-12",
+   "name": "Oil Storage Tunnels",
+   "action": "spot",
+   "destination": "darwin",
+   "coordinates": {
+    "latitude": -12.467424,
+    "longitude": 130.845102
+   },
+   "pin": "MEDIUM",
+   "pin_note": "tunnel entrance",
+   "coordinates_source": "Wikivoyage listing point (tunnel entrance, Kitchener Drive); a Commons photo geotag is 70 m away",
+   "wiki": "Oil Storage Tunnels",
+   "icon": "🕳️",
+   "category": "historic",
+   "bio": "World War II tunnels bored into the cliff on Kitchener Drive to store oil, with historic photos inside.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "ticketUrl": null,
+   "reason": "Paid entry; Wikivoyage entry dated 2015 so opening status must be confirmed in research. Score: 0 views, 2 counted sources.",
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "darwin-13",
+   "name": "Aquascene",
+   "action": "spot",
+   "destination": "darwin",
+   "coordinates": {
+    "latitude": -12.4597926,
+    "longitude": 130.8318841
+   },
+   "pin": "MEDIUM",
+   "pin_note": "Doctors Gully",
+   "coordinates_source": "OSM tourism=attraction \"Aquascene Fish Feeding\"",
+   "wiki": "Aquascene",
+   "icon": "🐟",
+   "category": "entertainment",
+   "bio": "Doctors Gully fish-feeding sanctuary where visitors hand-feed large fish from the harbour at high tide.",
+   "hours": "Tide dependent",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "ticketUrl": null,
+   "reason": "Tide-dependent fee-charging venue. Score: 0 views, 2 counted sources.",
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "darwin-14",
+   "name": "Berry Springs Nature Park",
+   "action": "spot",
+   "destination": "darwin",
+   "coordinates": {
+    "latitude": -12.7023153,
+    "longitude": 130.9981933
+   },
+   "pin": "MEDIUM",
+   "pin_note": "park entrance (draft)",
+   "coordinates_source": "OSM leisure=park \"Berry Springs Nature Park\"",
+   "wiki": "Berry Springs, Northern Territory",
+   "icon": "💧",
+   "category": "nature",
+   "bio": "Nature park with clear spring-fed swimming pools, picnic and barbecue areas and monsoon forest walks.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "ticketUrl": null,
+   "reason": "Berry Springs, about 45 km from Darwin; shares the village with Territory Wildlife Park but is a distinct swim stop. Score: 0 views, 3 counted sources.",
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "darwin-15",
+   "name": "Crocodylus Park",
+   "action": "spot",
+   "destination": "darwin",
+   "coordinates": {
+    "latitude": -12.411949,
+    "longitude": 130.928481
+   },
+   "pin": "HIGH",
+   "pin_note": "park entrance",
+   "coordinates_source": "photon tourism=zoo \"Crocodylus Park\"; agrees with wiki, photon, commons",
+   "wiki": "Crocodylus Park",
+   "icon": "🐊",
+   "category": "entertainment",
+   "bio": "Crocodile park and zoo near Darwin Airport with over a thousand crocodiles plus birds, primates and big cats.",
+   "hours": null,
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "ticketUrl": null,
+   "reason": "Near the airport; Darwin Crocodile Farm is the same venue. Score: 1045 views, 3 counted sources.",
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "darwin-16",
+   "name": "Casuarina Coastal Reserve",
+   "action": "spot",
+   "destination": "darwin",
+   "coordinates": {
+    "latitude": -12.361983,
+    "longitude": 130.867541
+   },
+   "pin": "MEDIUM",
+   "pin_note": "reserve visitor point (draft)",
+   "coordinates_source": "OSM tourism=picnic_site \"Dripstone Beach\", the reserve's main beach access (a long coastal reserve: pinned at a visitor point, not the centroid)",
+   "wiki": "Casuarina Coastal Reserve",
+   "icon": "🏝️",
+   "category": "nature",
+   "bio": "Coastal reserve with eight kilometres of beach under sandstone cliffs, walking paths, barbecues and the Old Man Rock.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "ticketUrl": null,
+   "reason": "Beach entry was rejected as an overlap; reserve is the unit. Score: 605 views, 2 counted sources.",
+   "free": true,
+   "needs_research": [
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "darwin-17",
+   "name": "Charles Darwin National Park",
+   "action": "spot",
+   "destination": "darwin",
+   "coordinates": {
+    "latitude": -12.438451,
+    "longitude": 130.8773
+   },
+   "pin": "MEDIUM",
+   "pin_note": "park visitor point (draft)",
+   "coordinates_source": "OSM tourism=information board inside the park (visitor entrance area, Wishart Road side); park centroid not used",
+   "wiki": "Charles Darwin National Park",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Small national park south-east of the city with World War II bunkers, city lookouts, middens and fire trails.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "ticketUrl": null,
+   "reason": "Small park, a stop of Darwin, never a destination; not a spot of another national park. Score: 1548 views, 2 counted sources.",
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "darwin-18",
+   "name": "Fogg Dam Conservation Reserve",
+   "action": "spot",
+   "destination": "darwin",
+   "coordinates": {
+    "latitude": -12.563484,
+    "longitude": 131.303438
+   },
+   "pin": "HIGH",
+   "pin_note": "dam wall (draft)",
+   "coordinates_source": "OSM tourism=viewpoint on the dam wall; the Commons photo median is 40 m away",
+   "wiki": "Fogg Dam Conservation Reserve",
+   "icon": "🦆",
+   "category": "nature",
+   "bio": "Wetland reserve with bird-watching hides along a narrow road across Fogg Dam, rich in birdlife.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "ticketUrl": null,
+   "reason": "Arnhem Highway day trip, about 50 km from the city, inside the Darwin span. Score: 1597 views, 1 counted sources.",
+   "free": true,
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "darwin-19",
+   "name": "The Big Boxing Crocodile",
+   "action": "spot",
+   "destination": "darwin",
+   "coordinates": {
+    "latitude": -12.5727281,
+    "longitude": 131.1044851
+   },
+   "pin": "MEDIUM",
+   "pin_note": "sculpture (draft)",
+   "coordinates_source": "OSM tourism=attraction \"The Big Boxing Croc\"",
+   "wiki": "The Big Boxing Crocodile",
+   "icon": "🥊",
+   "category": "landmark",
+   "bio": "Roadside giant sculpture of a boxing crocodile on the Arnhem Highway at Humpty Doo, one of Australia's big things.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "ticketUrl": null,
+   "reason": "Quirky roadside icon; Humpty Doo town folded into it (see folded). Score: 0 views, 1 counted sources.",
+   "free": true,
+   "needs_research": [
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "darwin-20",
+   "name": "Palmerston",
+   "action": "spot",
+   "destination": "darwin",
+   "coordinates": {
+    "latitude": -12.4799608,
+    "longitude": 130.9844108
+   },
+   "pin": "MEDIUM",
+   "pin_note": "town centre",
+   "coordinates_source": "OSM place=town \"Palmerston\" (town centre)",
+   "wiki": "Palmerston, Northern Territory",
+   "icon": "🏙️",
+   "category": "landmark",
+   "bio": "Darwin's second centre about 20 km south-east, with shopping, the Palmerston Water Park and the SWELL entertainment venue.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "ticketUrl": null,
+   "reason": "City-adjacent satellite filed under Darwin; one counted source only; low in order. Marginal as a draw, kept by the merge. Score: 31072 views, 1 counted sources.",
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "litchfield-1",
+   "name": "Wangi Falls",
+   "action": "spot",
+   "destination": "litchfield",
+   "coordinates": {
+    "latitude": -13.163878,
+    "longitude": 130.684932
+   },
+   "pin": "HIGH",
+   "pin_note": "falls viewing/swim area (draft)",
+   "coordinates_source": "photon waterway=waterfall \"Wangi Falls\"; agrees with wiki, commons",
+   "wiki": "Wangi Falls",
+   "icon": "💦",
+   "category": "nature",
+   "bio": "Litchfield's most popular waterfall and swimming hole, with a campground, kiosk and barbecues.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "ticketUrl": null,
+   "reason": "Headline Litchfield stop. Score: 1410 views, 2 counted sources.",
+   "free": true,
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "litchfield-2",
+   "name": "Florence Falls",
+   "action": "spot",
+   "destination": "litchfield",
+   "coordinates": {
+    "latitude": -13.099146,
+    "longitude": 130.78354
+   },
+   "pin": "HIGH",
+   "pin_note": "plunge-pool lookout (draft)",
+   "coordinates_source": "photon waterway=waterfall \"Florence Falls\"; agrees with photon, commons",
+   "wiki": "Florence Falls",
+   "icon": "💦",
+   "category": "nature",
+   "bio": "Double waterfall in monsoon forest with a plunge pool reached by about 160 steps.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "ticketUrl": null,
+   "reason": "Headline swim stop. Score: 1100 views, 2 counted sources.",
+   "free": true,
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "litchfield-3",
+   "name": "Buley Rockhole",
+   "action": "spot",
+   "destination": "litchfield",
+   "coordinates": {
+    "latitude": -13.112833,
+    "longitude": 130.785797
+   },
+   "pin": "HIGH",
+   "pin_note": "rockhole (draft)",
+   "coordinates_source": "photon tourism=viewpoint \"Buley Rockhole\"; agrees with commons",
+   "wiki": "Buley Rockhole",
+   "icon": "🏊",
+   "category": "nature",
+   "bio": "Cascading waterfalls and rockholes a short walk from the car park, popular for swimming.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "ticketUrl": null,
+   "reason": "Distinct swim stop. Score: 379 views, 2 counted sources.",
+   "free": true,
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "litchfield-4",
+   "name": "Magnetic Termite Mounds",
+   "action": "spot",
+   "destination": "litchfield",
+   "coordinates": {
+    "latitude": -13.102811,
+    "longitude": 130.844147
+   },
+   "pin": "HIGH",
+   "pin_note": "viewing platform (draft)",
+   "coordinates_source": "photon tourism=attraction \"Magnetic Termite Mounds\"; agrees with photon, commons",
+   "wiki": null,
+   "icon": "🏜️",
+   "category": "nature",
+   "bio": "Viewing platform over flat-faced magnetic termite mounds aligned north to south.",
+   "hours": null,
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "ticketUrl": null,
+   "reason": "Named feature; short stop. Score: 0 views, 2 counted sources.",
+   "free": true,
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "litchfield-5",
+   "name": "Tolmer Falls",
+   "action": "spot",
+   "destination": "litchfield",
+   "coordinates": {
+    "latitude": -13.205575,
+    "longitude": 130.715066
+   },
+   "pin": "HIGH",
+   "pin_note": "viewing platform (draft)",
+   "coordinates_source": "photon waterway=waterfall \"Tolmer Falls\"; agrees with wiki",
+   "wiki": "Tolmer Falls",
+   "icon": "🌄",
+   "category": "viewpoint",
+   "bio": "Waterfall viewing platform over a gorge; the pool is closed to swimmers to protect wildlife.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "ticketUrl": null,
+   "reason": "Viewing spot only. Score: 492 views, 1 counted sources.",
+   "free": true,
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "litchfield-6",
+   "name": "Batchelor",
+   "action": "spot",
+   "destination": "litchfield",
+   "coordinates": {
+    "latitude": -13.046805,
+    "longitude": 131.028358
+   },
+   "pin": "MEDIUM",
+   "pin_note": "town centre",
+   "coordinates_source": "OSM place=town \"Batchelor\" (town centre)",
+   "wiki": "Batchelor, Northern Territory",
+   "icon": "🏘️",
+   "category": "landmark",
+   "bio": "Small gateway town to Litchfield with the park's headquarters and Batchelor Museum.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "ticketUrl": null,
+   "reason": "Gateway town; its butterfly farm is only in review so no wrapper issue. Score: 6694 views, 2 counted sources.",
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "litchfield-7",
+   "name": "Tabletop Track",
+   "action": "spot",
+   "destination": "litchfield",
+   "coordinates": {
+    "latitude": -13.117046,
+    "longitude": 130.781288
+   },
+   "pin": "MEDIUM",
+   "pin_note": "route midpoint to be resolved (candidate point is Walker Creek, not the midpoint)",
+   "coordinates_source": "Midpoint of the OSM \"Tabletop Track\" ways chained west to east (39.6 km of way); OSM has no route relation, so the order is approximate",
+   "wiki": null,
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Walk of about 39 km over three to five days from Wangi Falls to Florence Falls via Walker Creek; permit needed.",
+   "hours": null,
+   "visitHoursMin": 72,
+   "visitHoursMax": 120,
+   "ticketUrl": null,
+   "reason": "Multi-day track; draft coordinate duplicates Walker Creek (review) and must be replaced by the route midpoint. Score: 0 views, 2 counted sources.",
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "litchfield-8",
+   "name": "The Lost City",
+   "action": "spot",
+   "destination": "litchfield",
+   "coordinates": {
+    "latitude": -13.2171412,
+    "longitude": 130.7355456
+   },
+   "pin": "MEDIUM",
+   "pin_note": "formations (draft)",
+   "coordinates_source": "OSM tourism=viewpoint \"The Lost City\"",
+   "wiki": null,
+   "icon": "🪨",
+   "category": "nature",
+   "bio": "Sandstone rock formations reached only by a 4WD track, the park's most demanding drive.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "ticketUrl": null,
+   "reason": "4WD-only named feature. Score: 0 views, 2 counted sources.",
+   "free": true,
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "adelaide-river",
+   "name": "Adelaide River",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": -13.237696,
+    "longitude": 131.104436
+   },
+   "pin": "HIGH",
+   "pin_note": "town centre",
+   "coordinates_source": "photon amenity=police \"Adelaide River Police Station\"; agrees with wiki",
+   "wiki": "Adelaide River, Northern Territory",
+   "icon": "🐊",
+   "category": "landmark",
+   "bio": "Stuart Highway town about 112 km south of Darwin, base for jumping crocodile cruises and a war cemetery.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "ticketUrl": null,
+   "reason": "112 km south of Darwin centre (past its 54 km reach) and on the Stuart Highway south route. It is 35 km from Litchfield's centre but reached via the Stuart Highway, not the Batchelor road; its draws (jumping-crocodile cruises, war cemetery) are unrelated to the waterfalls, so it is not a Litchfield spot. Score: 7819 views, 2 counted sources.",
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Darwin"
+  },
+  {
+   "id": "mary-river-national-park",
+   "name": "Mary River National Park",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": -12.705917,
+    "longitude": 131.636019
+   },
+   "pin": "MEDIUM",
+   "pin_note": "park visitor point (draft)",
+   "coordinates_source": "OSM tourism=attraction \"Corroboree Billabong Wetland Cruises\", the park's main visitor access off the Arnhem Highway; park centroid not used",
+   "wiki": "Mary River National Park",
+   "icon": "🦢",
+   "category": "nature",
+   "bio": "Park of wetlands and billabongs on the Arnhem Highway, known for dense birdlife and crocodile cruises.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "ticketUrl": null,
+   "reason": "About 95 km from Darwin centre on the Arnhem Highway, beyond Darwin's reach; it has only one kept place (Corroboree Billabong is review), so it cannot be a destination. Score: 744 views, 2 counted sources.",
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Darwin"
+  },
+  {
+   "id": "tiwi-islands",
+   "name": "Tiwi Islands",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": -11.762586,
+    "longitude": 130.632109
+   },
+   "pin": "MEDIUM",
+   "pin_note": "island group centre (draft); resolve visitor point (Wurrumiyanga/Nguiu)",
+   "coordinates_source": "OSM place=village \"Wurrumiyanga\" on Bathurst Island, where tours and flights arrive; the Wikipedia point for the island group is open water",
+   "wiki": "Tiwi Islands",
+   "icon": "🏝️",
+   "category": "nature",
+   "bio": "Island group north of Darwin with rainforest, beaches, Tiwi art and mission heritage, reached by air or ferry.",
+   "hours": null,
+   "visitHoursMin": 4,
+   "visitHoursMax": 10,
+   "ticketUrl": null,
+   "reason": "About 95 km north of Darwin across the sea, reached by air or ferry tour; outside any span. Only one kept place, so not a destination. Score: 51220 views, 3 counted sources.",
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Darwin"
+  }
+ ],
+ "folded": [
+  {
+   "name": "Humpty Doo",
+   "candidate_verdict": "keep",
+   "action": "folded",
+   "into": "darwin-19",
+   "reason": "Rule: never list a town beside its own attraction; the town is a general store, pub and cafe and Wikivoyage warns it is much smaller than the map suggests, so The Big Boxing Crocodile is the spot and Humpty Doo is named in its bio/description as the gateway to Fogg Dam. This is the one kept place not given its own entry; the owner may override and add it as a spot of darwin."
+  },
+  {
+   "name": "Litchfield National Park",
+   "candidate_verdict": "keep",
+   "action": "new-destination",
+   "into": "litchfield",
+   "reason": "The park is the destination itself; it is not listed as a spot of itself."
+  }
+ ],
+ "neighbour_check": [
+  {
+   "standalone": "adelaide-river",
+   "within_40km_of": "none of the proposed centres except Adelaide River (about 35 km from Litchfield)",
+   "why_not_a_spot": "112 km south of Darwin centre (past its 54 km reach) and on the Stuart Highway south route. It is 35 km from Litchfield's centre but reached via the Stuart Highway, not the Batchelor road; its draws (jumping-crocodile cruises, war cemetery) are unrelated to the waterfalls, so it is not a Litchfield spot."
+  },
+  {
+   "standalone": "mary-river-national-park",
+   "within_40km_of": "none of the proposed centres except Adelaide River (about 35 km from Litchfield)",
+   "why_not_a_spot": "About 95 km from Darwin centre on the Arnhem Highway, beyond Darwin's reach; it has only one kept place (Corroboree Billabong is review), so it cannot be a destination."
+  },
+  {
+   "standalone": "tiwi-islands",
+   "within_40km_of": "none of the proposed centres except Adelaide River (about 35 km from Litchfield)",
+   "why_not_a_spot": "About 95 km north of Darwin across the sea, reached by air or ferry tour; outside any span. Only one kept place, so not a destination."
+  }
+ ],
+ "review": [
+  {
+   "name": "Burnett House",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for_and_against": "For: architecture of the Top End and a harbour-side stop. Against: a tea room, open mainly Sundays, interior access unconfirmed.",
+   "coordinates": {
+    "lat": -12.450861,
+    "lng": 130.82969
+   }
+  },
+  {
+   "name": "Lake Alexander",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for_and_against": "For: safe swimming when the sea has stingers. Against: part of East Point Reserve, local recreation.",
+   "coordinates": {
+    "lat": -12.414147,
+    "lng": 130.831738
+   }
+  },
+  {
+   "name": "Wagait Beach",
+   "views": 1458,
+   "counted_sources": 1,
+   "case_for_and_against": "For: day trip with ferry, beach, WWII gun emplacement. Against: one counted source, local holiday community.",
+   "coordinates": {
+    "lat": -12.434041,
+    "lng": 130.742309
+   }
+  },
+  {
+   "name": "Howard Springs Nature Park",
+   "views": 352,
+   "counted_sources": 1,
+   "case_for_and_against": "For: a recognised swimming and picnic stop. Against: one counted source, local park; Wikivoyage Darwin does not name it.",
+   "coordinates": {
+    "lat": -12.4617924,
+    "lng": 131.05306682
+   }
+  },
+  {
+   "name": "Batchelor Butterfly and Petting Farm",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for_and_against": "For: family stop in Litchfield's gateway. Against: one source, small commercial venue.",
+   "coordinates": {
+    "lat": -13.046368,
+    "lng": 131.023613
+   }
+  },
+  {
+   "name": "Tjaynera Falls (Sandy Creek)",
+   "views": 0,
+   "counted_sources": 2,
+   "case_for_and_against": "For: genuine swim destination. Against: 4WD-only access and a minority of visitors.",
+   "coordinates": {
+    "lat": -13.2444657,
+    "lng": 130.7575245
+   }
+  },
+  {
+   "name": "Walker Creek",
+   "views": 0,
+   "counted_sources": 2,
+   "case_for_and_against": "For: good swim and walk start. Against: mainly a campground and trail junction.",
+   "coordinates": {
+    "lat": -13.0771651,
+    "lng": 130.6984507
+   }
+  },
+  {
+   "name": "Blyth Homestead",
+   "views": 0,
+   "counted_sources": 2,
+   "case_for_and_against": "For: heritage stop with story. Against: 4WD-only, ruin.",
+   "coordinates": {
+    "lat": -13.2324226,
+    "lng": 130.7251426
+   }
+  },
+  {
+   "name": "Adelaide River War Cemetery",
+   "views": 926,
+   "counted_sources": 1,
+   "case_for_and_against": "For: a quiet, well-kept site of real interest. Against: memorial, 20-minute visit.",
+   "coordinates": {
+    "lat": -13.2307,
+    "lng": 131.1142
+   }
+  },
+  {
+   "name": "Corroboree Billabong",
+   "views": 0,
+   "counted_sources": 2,
+   "case_for_and_against": "For: crocodile-rich wetland a guide singles out. Against: inside Mary River National Park, and activity is mostly a cruise.",
+   "coordinates": {
+    "lat": -12.7162317,
+    "lng": 131.6400553
+   }
+  },
+  {
+   "name": "Mandorah",
+   "views": 858,
+   "counted_sources": 0,
+   "case_for_and_against": "For: ferry day trip, pub on the water. Against: small settlement, no standalone listing of a stop; consider with Wagait Beach.",
+   "coordinates": {
+    "lat": -12.449432,
+    "lng": 130.757617
+   }
+  },
+  {
+   "name": "Cullen Bay",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for_and_against": "For: waterfront promenade a visitor might spend an hour on. Against: dining/marina precinct.",
+   "coordinates": {
+    "lat": -12.4523718,
+    "lng": 130.8228433
+   }
+  },
+  {
+   "name": "Deckchair Cinema",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for_and_against": "For: a Darwin signature evening, seasonal venue is fine. Against: it is a screening, effectively an evening event, not half-hour sightseeing.",
+   "coordinates": {
+    "lat": -12.467754,
+    "lng": 130.842518
+   }
+  },
+  {
+   "name": "Patakijiyali Museum",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for_and_against": "For: Tiwi history and art. Against: short hours, reached via tours, one source.",
+   "coordinates": {
+    "lat": -11.756606,
+    "lng": 130.64006
+   }
+  },
+  {
+   "name": "Garig Gunak Barlu National Park",
+   "views": 1736,
+   "counted_sources": 0,
+   "case_for_and_against": "For: marine turtles, wilderness, Victoria Settlement. Against: rarely visited and no counted source reached.",
+   "coordinates": {
+    "lat": -11.32111111,
+    "lng": 132.17833333
+   }
+  }
+ ],
+ "notes": [
+  "All coordinates are DRAFT candidate-list points; resolve-pin.py must resolve every one (trail midpoint for Tabletop Track, which currently carries Walker Creek's point; beach natural/beach for Mindil Beach).",
+  "Standalone spots carry country, countryCode, continent, timezone as marked; run build-spot-districts.py for every new id.",
+  "Hours/cost/ticketUrl are null with needs_research unless a source gave them (Wikivoyage: gaol, MAGNT, gardens, Fogg Dam, croc sculpture)."
+ ],
+ "counts": {
+  "kept": 33,
+  "spots_of_new_destinations": 28,
+  "standalone": 3,
+  "new_destinations": 2,
+  "folded": 1,
+  "destination_itself": 1
+ },
+ "owner_decisions": [
+  "Humpty Doo stays folded into its attraction: the spot is \"The Big Boxing Crocodile\".",
+  "Stokes Hill Wharf dropped (near-duplicate of Darwin Waterfront).",
+  "Tabletop Track pinned at the midpoint of its route.",
+  "Darwin and Litchfield National Park approved as proposed; none of the 15 review places added (owner did not select any)."
+ ]
+}

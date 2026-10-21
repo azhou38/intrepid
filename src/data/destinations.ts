@@ -1432,6 +1432,42 @@ export const DESTINATIONS: Destination[] = [
     bestMonths: [11, 12, 1, 2, 3],
     bestTimeBlurb: "{months} are the warm months, with whale watching from September to November.",
   },
+  {
+    id: 'darwin', name: "Darwin", country: "Australia", countryCode: 'AU', timezone: 'Australia/Darwin', defaultZoomSpanKm: 72,
+    continent: 'Oceania', coordinates: { latitude: -12.4634, longitude: 130.8456 },
+    category: 'city', icon: "🐊", rank: 3,
+    tagline: "Australia's northernmost capital, with crocodiles in the city centre, sunsets over the Timor Sea and the Top End on its doorstep.",
+    description: "Darwin is the capital of the Northern Territory and Australia's only tropical capital, on Darwin Harbour and the Timor Sea. About 140,000 people live in this multicultural city, known for harbourside sunsets, markets and a crocodile attraction in the middle of town. It is the only Australian capital to have come under substantial attack in the war, with Japanese air raids from 1942, and Cyclone Tracy destroyed most of it in 1974. It is also the base for Litchfield, Kakadu and Nitmiluk, and for the wildlife parks and swimming holes south and east of the city.",
+    whyVisit: ["Meet saltwater crocodiles at Crocosaurus Cove", "Watch the sunset at Mindil Beach", "See a B-52 bomber at the Aviation Museum"],
+    whyVisitPhotos: ["Crocodile at Crocosaurus Cove, October 2025.jpg", "Sunset over Darwin's Mindil beach.jpg", "USAF B52 Bomber (Darwins pride) at the Australian Aviation Heritage Centre.jpg"],
+    highlights: ["Crocodile encounters", "Beach sunsets", "B-52 bomber"],
+    goodToKnow: [
+      { icon: "🐊", title: "Be crocwise", detail: "Any Top End water may hold crocodiles. Swim only where signed safe; box jellyfish are a danger from October to May." },
+      { icon: "🌦️", title: "Wet and dry seasons", detail: "The Dry runs May to October; the Wet, November to April, brings storms and humidity. Book tours ahead in the Dry." },
+      { icon: "💧", title: "Drink plenty of water", detail: "Drink at least two litres a day, wear a hat and sunscreen, and avoid walking in the hottest part of the day." },
+    ],
+    bestMonths: [5, 6, 7, 8, 9, 10],
+    bestTimeBlurb: "The Dry season, {months}, brings sunny days, lower humidity and the markets and festivals; the Wet is more humid, stormier and quieter.",
+    seasonalTags: [{ tag: 'monsoon-dry-season', months: [5, 6, 7, 8, 9, 10] }, { tag: 'major-festival', months: [8], strength: 0.5 }],
+  },
+  {
+    id: 'litchfield', name: "Litchfield National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Darwin', defaultZoomSpanKm: 50,
+    continent: 'Oceania', coordinates: { latitude: -13.14, longitude: 130.82 },
+    category: 'park', icon: "💦", rank: 3,
+    tagline: "Waterfalls, swimming holes and giant termite mounds about an hour south of Darwin.",
+    description: "Litchfield National Park covers about 1,500 square kilometres of the Tabletop Range south of Darwin. Spring-fed falls tumble off the sandstone plateau into plunge pools, and Buley Rockhole's cascades, the magnetic termite mounds and the sandstone pillars of the Lost City are all within a short drive of each other. The northern end is reached on sealed roads; the south needs a 4WD.",
+    whyVisit: ["Swim beneath Wangi Falls in the Dry", "Walk down to Florence Falls", "Stroll among magnetic termite mounds"],
+    whyVisitPhotos: ["Litchfield National Park (AU), Wangi Falls -- 2019 -- 3749.jpg", "Litchfield National Park (AU), Florence Falls -- 2019 -- 3738.jpg", "Litchfield National Park (AU), Magnetic Termite Mounds -- 2019 -- 3721.jpg"],
+    highlights: ["Plunge-pool swimming", "Double waterfall", "Giant termite mounds"],
+    goodToKnow: [
+      { icon: "🎟️", title: "Parks pass required", detail: "Visitors need an NT Parks Visitor Pass: $10 adult per day, $20 for three days, $5 child. NT residents are exempt." },
+      { icon: "🏊", title: "Wet-season swimming limits", detail: "Wangi Falls swimming is closed in the wet season, typically October to March, and some areas close for flooding. Check before you go." },
+      { icon: "🐊", title: "Be crocwise", detail: "Swim only where signed safe; saltwater crocodiles can be in unsigned waters. The pool at Tolmer Falls is closed to swimmers." },
+    ],
+    bestMonths: [5, 6, 7, 8, 9],
+    bestTimeBlurb: "The Dry season, {months}, is the time for swimming and for reaching the 4WD tracks; in the Wet some areas flood and Wangi Falls closes to swimmers.",
+    seasonalTags: [{ tag: 'monsoon-dry-season', months: [5, 6, 7, 8, 9, 10] }],
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {

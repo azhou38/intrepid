@@ -1,0 +1,566 @@
+{
+ "region": "nt-darwin-top-end",
+ "slots": [
+  {
+   "slot": "spot:darwin-1",
+   "name": "Museum and Art Gallery of the Northern Territory",
+   "kind": "spot",
+   "note": null,
+   "coordinates": {
+    "latitude": -12.437269,
+    "longitude": 130.833283
+   },
+   "file": "Museum and Art Gallery of the Northern Territory.JPG",
+   "page": "https://commons.wikimedia.org/wiki/File:Museum_and_Art_Gallery_of_the_Northern_Territory.JPG",
+   "first_judge_crop": "ok",
+   "status": "review"
+  },
+  {
+   "slot": "spot:darwin-2",
+   "name": "Crocosaurus Cove",
+   "kind": "spot",
+   "note": null,
+   "coordinates": {
+    "latitude": -12.462333,
+    "longitude": 130.839226
+   },
+   "file": "Crocodile at Crocosaurus Cove, October 2025.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Crocodile_at_Crocosaurus_Cove,_October_2025.jpg",
+   "first_judge_crop": "ok",
+   "status": "review"
+  },
+  {
+   "slot": "spot:darwin-3",
+   "name": "Darwin Waterfront",
+   "kind": "spot",
+   "note": null,
+   "coordinates": {
+    "latitude": -12.466728,
+    "longitude": 130.846055
+   },
+   "file": "Darwin Waterfront Precinct 01.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Darwin_Waterfront_Precinct_01.jpg",
+   "first_judge_crop": {
+    "x": 0.45,
+    "y": 0.5
+   },
+   "status": "review"
+  },
+  {
+   "slot": "spot:darwin-4",
+   "name": "Mindil Beach",
+   "kind": "spot",
+   "note": null,
+   "coordinates": {
+    "latitude": -12.445256,
+    "longitude": 130.830543
+   },
+   "file": "Sunset over Darwin's Mindil beach.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Sunset_over_Darwin's_Mindil_beach.jpg",
+   "first_judge_crop": "ok",
+   "status": "review"
+  },
+  {
+   "slot": "spot:darwin-5",
+   "name": "Territory Wildlife Park",
+   "kind": "spot",
+   "note": null,
+   "coordinates": {
+    "latitude": -12.710243,
+    "longitude": 130.989682
+   },
+   "status": "none",
+   "first_judge": "none: only animal photos at the park; no grounds, entrance or recognisable exhibit on Commons (stand-ins)"
+  },
+  {
+   "slot": "spot:darwin-6",
+   "name": "George Brown Darwin Botanic Gardens",
+   "kind": "spot",
+   "note": null,
+   "coordinates": {
+    "latitude": -12.444809,
+    "longitude": 130.837134
+   },
+   "file": "Fountain in the George Brown Darwin Botanic Gardens.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Fountain_in_the_George_Brown_Darwin_Botanic_Gardens.jpg",
+   "first_judge_crop": {
+    "x": 0.45,
+    "y": 0.5
+   },
+   "status": "review"
+  },
+  {
+   "slot": "spot:darwin-7",
+   "name": "Fannie Bay Gaol",
+   "kind": "spot",
+   "note": null,
+   "coordinates": {
+    "latitude": -12.425628,
+    "longitude": 130.836306
+   },
+   "file": "Fannie Bay Gaol P6200008.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Fannie_Bay_Gaol_P6200008.jpg",
+   "first_judge_crop": {
+    "x": 0.6,
+    "y": 0.5
+   },
+   "status": "review"
+  },
+  {
+   "slot": "spot:darwin-8",
+   "name": "East Point Reserve",
+   "kind": "spot",
+   "note": null,
+   "coordinates": {
+    "latitude": -12.407711,
+    "longitude": 130.825421
+   },
+   "file": "East Point Reserve, Darwin, Australia (314880633).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:East_Point_Reserve,_Darwin,_Australia_(314880633).jpg",
+   "first_judge_crop": {
+    "x": 0.5,
+    "y": 0.65,
+    "zoom": 1.3
+   },
+   "status": "review"
+  },
+  {
+   "slot": "spot:darwin-9",
+   "name": "Darwin Military Museum",
+   "kind": "spot",
+   "note": null,
+   "coordinates": {
+    "latitude": -12.407983,
+    "longitude": 130.819549
+   },
+   "file": "Darwin Military Museum.JPG",
+   "page": "https://commons.wikimedia.org/wiki/File:Darwin_Military_Museum.JPG",
+   "first_judge_crop": "ok",
+   "status": "review"
+  },
+  {
+   "slot": "spot:darwin-11",
+   "name": "Darwin Aviation Museum",
+   "kind": "spot",
+   "note": null,
+   "coordinates": {
+    "latitude": -12.425394,
+    "longitude": 130.895711
+   },
+   "file": "USAF B52 Bomber (Darwins pride) at the Australian Aviation Heritage Centre.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:USAF_B52_Bomber_(Darwins_pride)_at_the_Australian_Aviation_Heritage_Centre.jpg",
+   "first_judge_crop": {
+    "x": 0.35,
+    "y": 0.5
+   },
+   "status": "review"
+  },
+  {
+   "slot": "spot:darwin-12",
+   "name": "Oil Storage Tunnels",
+   "kind": "spot",
+   "note": null,
+   "coordinates": {
+    "latitude": -12.467424,
+    "longitude": 130.845102
+   },
+   "file": "World War II Oil Storage Tunnels in Darwin, Northern Territory, Australia (2).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:World_War_II_Oil_Storage_Tunnels_in_Darwin,_Northern_Territory,_Australia_(2).jpg",
+   "first_judge_crop": "ok",
+   "status": "review"
+  },
+  {
+   "slot": "spot:darwin-13",
+   "name": "Aquascene",
+   "kind": "spot",
+   "note": null,
+   "coordinates": {
+    "latitude": -12.4597926,
+    "longitude": 130.8318841
+   },
+   "status": "review",
+   "first_judge": "none: no candidates (no Commons photo of Aquascene found)",
+   "file": "assets/photos/ext-aquascene.jpg",
+   "page": "https://www.aquascene.com.au/",
+   "licence": "official operator photo, permission not confirmed",
+   "external": true
+  },
+  {
+   "slot": "spot:darwin-14",
+   "name": "Berry Springs Nature Park",
+   "kind": "spot",
+   "note": null,
+   "coordinates": {
+    "latitude": -12.7023153,
+    "longitude": 130.9981933
+   },
+   "status": "none",
+   "first_judge": "none: the only photo showing the pool has people as subject; the other does not show the springs"
+  },
+  {
+   "slot": "spot:darwin-15",
+   "name": "Crocodylus Park",
+   "kind": "spot",
+   "note": null,
+   "coordinates": {
+    "latitude": -12.411949,
+    "longitude": 130.928481
+   },
+   "file": "Crocodylus Park, Darwin, September 2025 03.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Crocodylus_Park,_Darwin,_September_2025_03.jpg",
+   "first_judge_crop": "ok",
+   "status": "review"
+  },
+  {
+   "slot": "spot:darwin-16",
+   "name": "Casuarina Coastal Reserve",
+   "kind": "spot",
+   "note": null,
+   "coordinates": {
+    "latitude": -12.361983,
+    "longitude": 130.867541
+   },
+   "file": "Estuary mouth.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Estuary_mouth.jpg",
+   "first_judge_crop": {
+    "x": 0.6,
+    "y": 0.6
+   },
+   "status": "review"
+  },
+  {
+   "slot": "spot:darwin-17",
+   "name": "Charles Darwin National Park",
+   "kind": "spot",
+   "note": null,
+   "coordinates": {
+    "latitude": -12.438451,
+    "longitude": 130.8773
+   },
+   "file": "Charles Darwin National Park.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Charles_Darwin_National_Park.jpg",
+   "first_judge_crop": "ok",
+   "status": "review"
+  },
+  {
+   "slot": "spot:darwin-18",
+   "name": "Fogg Dam Conservation Reserve",
+   "kind": "spot",
+   "note": null,
+   "coordinates": {
+    "latitude": -12.563484,
+    "longitude": 131.303438
+   },
+   "file": "View over swampland at Fogg Dam - panoramio.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:View_over_swampland_at_Fogg_Dam_-_panoramio.jpg",
+   "first_judge_crop": "ok",
+   "status": "review"
+  },
+  {
+   "slot": "spot:darwin-19",
+   "name": "The Big Boxing Crocodile",
+   "kind": "spot",
+   "note": null,
+   "coordinates": {
+    "latitude": -12.5727281,
+    "longitude": 131.1044851
+   },
+   "file": "Big Crocodiles in Humpty Doo, Northern Territory, 2021.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Big_Crocodiles_in_Humpty_Doo,_Northern_Territory,_2021.jpg",
+   "first_judge_crop": "ok",
+   "status": "review"
+  },
+  {
+   "slot": "spot:darwin-20",
+   "name": "Palmerston",
+   "kind": "spot",
+   "note": null,
+   "coordinates": {
+    "latitude": -12.4799608,
+    "longitude": 130.9844108
+   },
+   "file": "Palmerston-CBD-NT.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Palmerston-CBD-NT.jpg",
+   "first_judge_crop": "ok",
+   "status": "review"
+  },
+  {
+   "slot": "spot:litchfield-1",
+   "name": "Wangi Falls",
+   "kind": "spot",
+   "note": null,
+   "coordinates": {
+    "latitude": -13.163878,
+    "longitude": 130.684932
+   },
+   "file": "Litchfield National Park (AU), Wangi Falls -- 2019 -- 3749.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Litchfield_National_Park_(AU),_Wangi_Falls_--_2019_--_3749.jpg",
+   "first_judge_crop": "ok",
+   "status": "review"
+  },
+  {
+   "slot": "spot:litchfield-2",
+   "name": "Florence Falls",
+   "kind": "spot",
+   "note": null,
+   "coordinates": {
+    "latitude": -13.099146,
+    "longitude": 130.78354
+   },
+   "file": "Litchfield National Park (AU), Florence Falls -- 2019 -- 3738.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Litchfield_National_Park_(AU),_Florence_Falls_--_2019_--_3738.jpg",
+   "first_judge_crop": "ok",
+   "status": "review"
+  },
+  {
+   "slot": "spot:litchfield-3",
+   "name": "Buley Rockhole",
+   "kind": "spot",
+   "note": null,
+   "coordinates": {
+    "latitude": -13.112833,
+    "longitude": 130.785797
+   },
+   "file": "Buley Rockhole (Litchfield National Park).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Buley_Rockhole_(Litchfield_National_Park).jpg",
+   "first_judge_crop": "ok",
+   "status": "review"
+  },
+  {
+   "slot": "spot:litchfield-4",
+   "name": "Magnetic Termite Mounds",
+   "kind": "spot",
+   "note": null,
+   "coordinates": {
+    "latitude": -13.102811,
+    "longitude": 130.844147
+   },
+   "file": "Litchfield National Park (AU), Magnetic Termite Mounds -- 2019 -- 3725.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Litchfield_National_Park_(AU),_Magnetic_Termite_Mounds_--_2019_--_3725.jpg",
+   "first_judge_crop": "ok",
+   "status": "review"
+  },
+  {
+   "slot": "spot:litchfield-5",
+   "name": "Tolmer Falls",
+   "kind": "spot",
+   "note": null,
+   "coordinates": {
+    "latitude": -13.205575,
+    "longitude": 130.715066
+   },
+   "file": "Tolmer Falls in the Litchfield National Park.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Tolmer_Falls_in_the_Litchfield_National_Park.jpg",
+   "first_judge_crop": "ok",
+   "status": "review"
+  },
+  {
+   "slot": "spot:litchfield-6",
+   "name": "Batchelor",
+   "kind": "spot",
+   "note": null,
+   "coordinates": {
+    "latitude": -13.046805,
+    "longitude": 131.028358
+   },
+   "file": "BatchelorOct192024.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:BatchelorOct192024.jpg",
+   "first_judge_crop": "ok",
+   "status": "review"
+  },
+  {
+   "slot": "spot:litchfield-7",
+   "name": "Tabletop Track",
+   "kind": "spot",
+   "note": null,
+   "coordinates": {
+    "latitude": -13.117046,
+    "longitude": 130.781288
+   },
+   "status": "review",
+   "first_judge": "none: no candidates; Tabletop Track needs an outside-Commons search",
+   "file": "assets/photos/ext-tabletop-track.jpg",
+   "page": "https://northernterritory.com/darwin-and-surrounds/see-and-do/tabletop-track",
+   "licence": "Tourism NT / ATDW listing photo \"Tabletop Track - creek crossing between Wangi Falls and Southern Campground\", permission not confirmed",
+   "external": true
+  },
+  {
+   "slot": "spot:litchfield-8",
+   "name": "The Lost City",
+   "kind": "spot",
+   "note": null,
+   "coordinates": {
+    "latitude": -13.2171412,
+    "longitude": 130.7355456
+   },
+   "status": "none",
+   "first_judge": "none: both Commons candidates show the Cape Crawford Lost City (wrong place); search again for Litchfield Lost City"
+  },
+  {
+   "slot": "spot:adelaide-river",
+   "name": "Adelaide River",
+   "kind": "spot",
+   "note": null,
+   "coordinates": {
+    "latitude": -13.237696,
+    "longitude": 131.104436
+   },
+   "file": "Historic Adelaide River Railway Station - panoramio.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Historic_Adelaide_River_Railway_Station_-_panoramio.jpg",
+   "first_judge_crop": "ok",
+   "status": "review"
+  },
+  {
+   "slot": "spot:mary-river-national-park",
+   "name": "Mary River National Park",
+   "kind": "spot",
+   "note": null,
+   "coordinates": {
+    "latitude": -12.705917,
+    "longitude": 131.636019
+   },
+   "file": "BlackneckedStorkCorroboreeBillabongNTAustralia.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:BlackneckedStorkCorroboreeBillabongNTAustralia.jpg",
+   "first_judge_crop": {
+    "x": 0.45,
+    "y": 0.6,
+    "zoom": 1.2
+   },
+   "status": "review"
+  },
+  {
+   "slot": "spot:tiwi-islands",
+   "name": "Tiwi Islands",
+   "kind": "spot",
+   "note": null,
+   "coordinates": {
+    "latitude": -11.762586,
+    "longitude": 130.632109
+   },
+   "file": "MRF-D conducts a site survey at Tiwi Island (6629791).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:MRF-D_conducts_a_site_survey_at_Tiwi_Island_(6629791).jpg",
+   "first_judge_crop": "ok",
+   "status": "review"
+  },
+  {
+   "slot": "dest:darwin:header",
+   "name": "Darwin",
+   "kind": "header",
+   "note": "a spectacular cityscape or waterfront of Darwin itself (skyline, harbour, Waterfront or a sunset over the city); never a single building; at least 1500 px wide, ~3:2, subject near the centre",
+   "coordinates": {
+    "latitude": -12.4634,
+    "longitude": 130.8456
+   },
+   "file": "Darwin CBD (March 2017).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Darwin_CBD_%28March_2017%29.jpg",
+   "first_judge_crop": "ok",
+   "status": "review"
+  },
+  {
+   "slot": "dest:darwin:why1",
+   "name": "Crocosaurus Cove",
+   "kind": "why-visit",
+   "note": "Reason: \"Meet saltwater crocodiles at Crocosaurus Cove\": a photo of a saltwater crocodile AT Crocosaurus Cove or its cage-of-death dive; at least 1280 px wide, landscape",
+   "coordinates": {
+    "latitude": -12.46222,
+    "longitude": 130.83917
+   },
+   "file": "Crocodile at Crocosaurus Cove, October 2025.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Crocodile_at_Crocosaurus_Cove%2C_October_2025.jpg",
+   "first_judge_crop": "ok",
+   "status": "review"
+  },
+  {
+   "slot": "dest:darwin:why2",
+   "name": "Mindil Beach",
+   "kind": "why-visit",
+   "note": "Reason: \"Watch the sunset at Mindil Beach\": a sunset over the sea at Mindil Beach (not a market photo, no people as the subject); at least 1280 px wide, landscape",
+   "coordinates": {
+    "latitude": -12.44505,
+    "longitude": 130.83103
+   },
+   "file": "Sunset over Darwin's Mindil beach.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Sunset_over_Darwin%27s_Mindil_beach.jpg",
+   "first_judge_crop": {
+    "x": 0.5,
+    "y": 0.35,
+    "zoom": 1.4
+   },
+   "status": "review"
+  },
+  {
+   "slot": "dest:darwin:why3",
+   "name": "Berry Springs",
+   "kind": "why-visit",
+   "note": "Reason: \"Swim in the clear pools at Berry Springs\": the spring-fed pools at Berry Springs Nature Park; at least 1280 px wide, landscape",
+   "coordinates": {
+    "latitude": -12.7023,
+    "longitude": 130.99819
+   },
+   "file": "Family fun at Berry Springs Nature Reserve.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Family_fun_at_Berry_Springs_Nature_Reserve.jpg",
+   "first_judge_crop": "ok",
+   "status": "review"
+  },
+  {
+   "slot": "dest:litchfield:header",
+   "name": "Litchfield National Park",
+   "kind": "header",
+   "note": "the landscape Litchfield is known for, wide: a waterfall and plunge pool in monsoon forest, or the Tabletop Range; at least 1500 px wide, ~3:2",
+   "coordinates": {
+    "latitude": -13.14,
+    "longitude": 130.82
+   },
+   "file": "Litchfield National Park (AU), Florence Falls -- 2019 -- 3738.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Litchfield_National_Park_%28AU%29%2C_Florence_Falls_--_2019_--_3738.jpg",
+   "first_judge_crop": "ok",
+   "status": "review"
+  },
+  {
+   "slot": "dest:litchfield:why1",
+   "name": "Wangi Falls",
+   "kind": "why-visit",
+   "note": "Reason: \"Swim beneath Wangi Falls\": Wangi Falls and its plunge pool; at least 1280 px wide, landscape",
+   "coordinates": {
+    "latitude": -13.16361,
+    "longitude": 130.68528
+   },
+   "file": "Litchfield National Park (AU), Wangi Falls -- 2019 -- 3749.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Litchfield_National_Park_%28AU%29%2C_Wangi_Falls_--_2019_--_3749.jpg",
+   "first_judge_crop": "ok",
+   "status": "review"
+  },
+  {
+   "slot": "dest:litchfield:why2",
+   "name": "Florence Falls",
+   "kind": "why-visit",
+   "note": "Reason: \"Walk down to Florence Falls\": Florence Falls (the double waterfall); at least 1280 px wide, landscape; not the same file as the Wangi photo",
+   "coordinates": {
+    "latitude": -13.09889,
+    "longitude": 130.78056
+   },
+   "file": "Litchfield National Park (AU), Florence Falls -- 2019 -- 3741.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Litchfield_National_Park_%28AU%29%2C_Florence_Falls_--_2019_--_3741.jpg",
+   "first_judge_crop": "ok",
+   "status": "review"
+  },
+  {
+   "slot": "dest:litchfield:why3",
+   "name": "Magnetic Termite Mounds",
+   "kind": "why-visit",
+   "note": "Reason: \"Stroll among magnetic termite mounds\": the magnetic termite mounds field or boardwalk at Litchfield; at least 1280 px wide, landscape",
+   "coordinates": {
+    "latitude": -13.10281,
+    "longitude": 130.84415
+   },
+   "file": "Litchfield National Park (AU), Magnetic Termite Mounds -- 2019 -- 3721.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Litchfield_National_Park_%28AU%29%2C_Magnetic_Termite_Mounds_--_2019_--_3721.jpg",
+   "first_judge_crop": {
+    "x": 0.62,
+    "y": 0.62,
+    "zoom": 1.5
+   },
+   "status": "review"
+  }
+ ]
+}
