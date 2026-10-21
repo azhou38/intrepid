@@ -1896,5 +1896,4 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Tasmania Zoo",
   "Platypus House",
   "Seahorse World",
-  // Northern Territory: no photo of the place itself passed the judges (stand-ins rejected); the owner is asked for one
 ]);
