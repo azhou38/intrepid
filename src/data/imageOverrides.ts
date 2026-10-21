@@ -512,6 +512,7 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "File:USAF B52 Bomber (Darwins pride) at the Australian Aviation Heritage Centre.jpg": { x: 0.35, y: 0.5 },
   "File:Litchfield National Park (AU), Wangi Falls -- 2019 -- 3749.jpg": { x: 0.72, y: 0.5 },
   "File:Litchfield National Park (AU), Florence Falls -- 2019 -- 3738.jpg": { x: 0.6, y: 0.5 },
+  "Territory Wildlife Park": { x: 0.4, y: 0.6 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -1888,7 +1889,6 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Platypus House",
   "Seahorse World",
   // Northern Territory: no photo of the place itself passed the judges (stand-ins rejected); the owner is asked for one
-  "Territory Wildlife Park",
   "Aquascene",
   "Berry Springs, Northern Territory",
   "Charles Darwin National Park",
