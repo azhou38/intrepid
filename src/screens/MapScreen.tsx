@@ -1621,6 +1621,10 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // Measured from the camera-changed events' own zoom velocity; the pin plan reads it so it decides ahead of the render lag.
   const [zoomOutLead, setZoomOutLead] = useState(0);
   const zoomSampleRef = useRef<{ z: number; t: number; v: number } | null>(null);
+  // The predicted zoom-out ends once the camera stops reporting moves (see handleCameraChanged), not only at the map's
+  // idle event, which comes about a second later (once tiles have drawn): until then pins were planned as if the camera
+  // were still zooming out, and destination pins faded out and straight back in after it had landed.
+  const zoomLeadTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   // Always-current mirror of camZoom, for callbacks (the X/close handlers) that only read it.
   const camZoomRef = useRef(0);
   // Always-current mirror of `region`, so callbacks that only need to *read* the latest
@@ -2136,7 +2140,8 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // The zoom the destination photo tiers switch at: on a fast zoom-out, a little ahead of the camera (the predicted outward
   // travel over the render lag, a share of it and capped: see DEST_GATE_LOOKAHEAD), so pins start fading as their gate approaches instead
   // of a render or more after the camera has passed it, which left them clumped together on the way out.
-  const destGateZoom = camZoom - Math.min(zoomOutLead * DEST_GATE_LOOKAHEAD_SHARE, DEST_GATE_LOOKAHEAD);
+  // A close flies to a known zoom (closeTarget): never look past it.
+  const destGateZoom = Math.max(camZoom - Math.min(zoomOutLead * DEST_GATE_LOOKAHEAD_SHARE, DEST_GATE_LOOKAHEAD), Math.min(camZoom, closeTarget ?? -Infinity));
   // How much wider the view a close is flying to is than the one the camera reports right now (1 when no close is under
   // way). The viewport spot query and the spot pin plan scale the live bounds by it, so they work in the target view from
   // the first frame: the bounds lag the camera, and a close used to show only the few spots inside the old zoomed-in view
@@ -4393,6 +4398,8 @@ const destItems = useMemo((): DestItem[] =>
       if (prev && now > prev.t) v = 0.5 * prev.v + 0.5 * ((z - prev.z) / ((now - prev.t) / 1000));
       zoomSampleRef.current = { z, t: now, v };
       setZoomOutLead(Math.max(0, Math.min(PLAN_LEAD_MAX_ZOOM, -v * PLAN_LAG_SEC)));
+      if (zoomLeadTimerRef.current) clearTimeout(zoomLeadTimerRef.current);
+      zoomLeadTimerRef.current = setTimeout(() => { zoomLeadTimerRef.current = null; zoomSampleRef.current = null; setZoomOutLead(0); }, 120);
     });
     camZoomRef.current = state.properties.zoom;
   }, [returnPromptProgress, destReturnPromptProgress, mapGestureAtSV, releaseHeldSelection, releaseSheetsAfterCamera]);
@@ -4791,9 +4798,18 @@ const destItems = useMemo((): DestItem[] =>
         properties: { id: dest.id, img: '', label: dest.name, sort: destSortKey(dest.id), tier: nameTier, ho, hos },
       });
     }
+    // Register the pin image of every planned destination, hidden ones included (zoomed into, its spots showing): one that
+    // registered only when it came back into the data, as a close zoomed out, appeared late, once its photo had loaded.
+    for (const dest of DESTINATIONS) {
+      if (!stablePhotoIds.has(dest.id)) continue;
+      const visited = visitIndex.isDestVisited(dest.id);
+      const badge = visited ? (visitedSpotCountByDest[dest.id] ?? 0) : 0;
+      const img = destPinImageName(dest.id, visited, badge, false);
+      if (!specs.has(img)) { specs.set(img, { name: img, dest, visited, badge, selected: false }); added = true; }
+    }
     if (added) destPinSpecListRef.current = [...specs.values()];
     return { shape: { type: 'FeatureCollection' as const, features }, specs: destPinSpecListRef.current };
-  }, [promotedDests, joinedHandoffDests, visitIndex, visitedSpotCountByDest, destPhotoPlan, planDest]);
+  }, [promotedDests, joinedHandoffDests, visitIndex, visitedSpotCountByDest, destPhotoPlan, planDest, stablePhotoIds]);
 
   // Which sliding sheet is mounted right now. When it changes from one level to another, the incoming sheet is a
   // replacement for the one that was showing and starts where that one rested (see sheetPose) rather than from below
