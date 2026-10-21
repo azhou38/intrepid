@@ -966,7 +966,7 @@ const DEST_SYMBOL_STYLE: any = {
 // rank and country gate exactly, so a pin with room shows exactly where it used to, plus a half-level grid for pins and
 // names that wait for room. Built on first use (the country gates need helpers defined further down).
 // Photo pins (and their names) come in this many zoom levels wider than their rank or country gate.
-const DEST_PHOTO_EARLY = 0.35;
+const DEST_PHOTO_EARLY = 0.75;
 let destLadderCache: number[] | null = null;
 const destLadder = (): number[] => {
   if (destLadderCache) return destLadderCache;
@@ -989,7 +989,32 @@ function destEligibleZoom(d: Destination, visited: boolean, selCC: string | unde
   const effRank = Math.max(1, d.rank - (visited ? 1 : 0));
   const rz = DEST_RANK_GATE_ZOOM[`r${effRank}`] ?? Infinity;
   const cz = countryGateZoom(d.countryCode) ?? Infinity;
-  return Math.min(rz, cz, d.countryCode === selCC ? selCountryZoom : Infinity) - DEST_PHOTO_EARLY;
+  return Math.min(Math.min(rz, cz, d.countryCode === selCC ? selCountryZoom : Infinity) - DEST_PHOTO_EARLY, destSpotPhotoFloor(d.id));
+}
+// A destination's photo pin is eligible no later than the first spot photo pin it would be beside: the earliest photo
+// zoom (SPOT_PHOTO_ZOOM_BY_ID) of its own spots and of the standalone spots within SPOT_PHOTO_EARLY_SEPARATION_PX of it
+// at that zoom, less three quarters of a level (the plan rounds up to its half-level ladder), so a destination never
+// stays a dot while spots around it already show photos.
+let destSpotPhotoFloorCache: Map<string, number> | null = null;
+function destSpotPhotoFloor(destId: string): number {
+  if (!destSpotPhotoFloorCache) {
+    const floor = new Map<string, number>();
+    const unit = (lng: number, lat: number) => {
+      const s = Math.sin((Math.max(-85, Math.min(85, lat)) * Math.PI) / 180);
+      return { x: (lng + 180) / 360, y: 0.5 - Math.log((1 + s) / (1 - s)) / (4 * Math.PI) };
+    };
+    const dests = DESTINATIONS.map(d => ({ id: d.id, u: unit(d.coordinates.longitude, d.coordinates.latitude) }));
+    const lower = (id: string, z: number) => floor.set(id, Math.min(floor.get(id) ?? Infinity, z - 0.75));
+    for (const sp of SPOTS) {
+      const z = SPOT_PHOTO_ZOOM_BY_ID[sp.id];
+      if (z === undefined) continue;
+      if (sp.destinationId) { lower(sp.destinationId, z); continue; }
+      const u = unit(sp.coordinates.longitude, sp.coordinates.latitude), scale = 256 * Math.pow(2, z);
+      for (const d of dests) if (Math.hypot((d.u.x - u.x) * scale, (d.u.y - u.y) * scale) < SPOT_PHOTO_EARLY_SEPARATION_PX) lower(d.id, z);
+    }
+    destSpotPhotoFloorCache = floor;
+  }
+  return destSpotPhotoFloorCache.get(destId) ?? Infinity;
 }
 // The country pills showing at zoom `z` (the same rules as MapScreen's countryPills, at that zoom), for the photo plan.
 function pillsAtZoom(z: number, planCountry: { countryCode: string } | null, planDest: Destination | null): { latitude: number; longitude: number }[] {
