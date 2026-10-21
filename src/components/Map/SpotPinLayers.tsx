@@ -8,7 +8,9 @@ import MapboxGL from '@rnmapbox/maps';
 // Same fade as the destination pins' tier layers (MapScreen's DEST_GATE_FADE_MS).
 const DEST_GATE_FADE_MS = 250;
 // Fade layers per spot pin kind (photo, small) for spot pins starting or stopping to show.
-const SPOT_FADE_SLOTS = 6;
+const SPOT_FADE_SLOTS = 10;
+// Pins that start (or stop) showing within this long of a fade's start join it, so a zoom's stream of changes shares layers.
+const SPOT_FADE_JOIN_MS = 80;
 
 type Props = {
   shape: GeoJSON.FeatureCollection<GeoJSON.Point>;
@@ -21,14 +23,16 @@ function SpotPinLayers({ shape, satellite, onPressSpot }: Props) {
   // Mapbox has nothing to fade: a pin added to or removed from the data just appears or vanishes. A pin that starts or
   // stops showing (a photo pin, or a small pin, separately) therefore passes through one of a few fade layers whose
   // constant opacity Mapbox animates (as the destination pins' tier layers do): newcomers join a layer resting at 0 that
-  // then fades to 1, leavers move to one resting at 1 that then fades to 0. Once its fade has finished a newcomer moves to
-  // the steady layer and a leaver is dropped; the layer keeps its final opacity, ready for the opposite fade next. With no
-  // free layer (a fast zoom changes pins every frame or two), pins join the latest fade going their way, part-way through,
-  // rather than switching at once. What shows is exactly the plan's; only the switch is animated.
-  type SpotFadeSlot = { mode: 'free' | 'in' | 'out'; keys: Set<string>; on: boolean; started: boolean; readyAt: number; startedAt: number };
+  // then fades to 1, leavers move to one resting at 1 that then fades to 0. Half the layers are for fading in (resting at
+  // 0), half for fading out (resting at 1). Once a fade has finished, a newcomer moves to the steady layer and a leaver is
+  // dropped, and the empty layer then returns to its resting opacity (unseen, and animated like any change, since the
+  // layers' transition never changes: a fade that also switched the transition did not animate on the phone), taking no
+  // pins until it has. Pins changing within SPOT_FADE_JOIN_MS of a fade's start join it; with no free layer they join the
+  // latest fade going their way, part-way through. What shows is exactly the plan's; only the switch is animated.
+  type SpotFadeSlot = { mode: 'free' | 'in' | 'out'; rest: boolean; keys: Set<string>; on: boolean; started: boolean; readyAt: number; startedAt: number };
   const spotFadeRef = useRef<{ steady: Set<string>; feats: Map<string, GeoJSON.Feature<GeoJSON.Point>>; slots: Record<'p' | 'm', SpotFadeSlot[]> } | null>(null);
   if (!spotFadeRef.current) {
-    const mk = () => Array.from({ length: SPOT_FADE_SLOTS }, (_, i): SpotFadeSlot => ({ mode: 'free', keys: new Set(), on: i % 2 === 1, started: false, readyAt: 0, startedAt: 0 }));
+    const mk = () => Array.from({ length: SPOT_FADE_SLOTS }, (_, i): SpotFadeSlot => ({ mode: 'free', rest: i % 2 === 1, keys: new Set(), on: i % 2 === 1, started: false, readyAt: 0, startedAt: 0 }));
     spotFadeRef.current = { steady: new Set(), feats: new Map(), slots: { p: mk(), m: mk() } };
   }
   const [spotFadeTick, setSpotFadeTick] = useState(0);
@@ -60,19 +64,24 @@ function SpotPinLayers({ shape, satellite, onPressSpot }: Props) {
       // The newest fade going this way: an unstarted batch first, else the one that started last.
       const latest = (mode: 'in' | 'out') => st.slots[kind].filter(x => x.mode === mode)
         .sort((a, b) => (a.started ? a.startedAt : Infinity) - (b.started ? b.startedAt : Infinity)).pop();
+      const recent = (x: SpotFadeSlot | undefined) => x && (!x.started || now - x.startedAt < SPOT_FADE_JOIN_MS) ? x : undefined;
       if (entering[kind].length) {
-        const sl = st.slots[kind].find(x => x.mode === 'free' && !x.on && x.readyAt <= now);
-        const join = sl ? null : latest('in');
+        const lat = latest('in');
+        const join = recent(lat);
+        const sl = join ? null : st.slots[kind].find(x => x.mode === 'free' && !x.on && x.readyAt <= now);
+        const into = join ?? (sl ? null : lat);
         if (sl) { sl.mode = 'in'; sl.keys = new Set(entering[kind]); sl.started = false; }
-        else if (join) for (const key of entering[kind]) join.keys.add(key);
+        else if (into) for (const key of entering[kind]) into.keys.add(key);
         else for (const key of entering[kind]) st.steady.add(key);
       }
       if (leaving[kind].length) {
         for (const key of leaving[kind]) st.steady.delete(key);
-        const sl = st.slots[kind].find(x => x.mode === 'free' && x.on && x.readyAt <= now);
-        const join = sl ? null : latest('out');
+        const lat = latest('out');
+        const join = recent(lat);
+        const sl = join ? null : st.slots[kind].find(x => x.mode === 'free' && x.on && x.readyAt <= now);
+        const into = join ?? (sl ? null : lat);
         if (sl) { sl.mode = 'out'; sl.keys = new Set(leaving[kind]); sl.started = false; }
-        else if (join) for (const key of leaving[kind]) join.keys.add(key);
+        else if (into) for (const key of leaving[kind]) into.keys.add(key);
       }
     }
     for (const [key, f] of desired) st.feats.set(key, f);
@@ -107,14 +116,11 @@ function SpotPinLayers({ shape, satellite, onPressSpot }: Props) {
         sl.on = sl.mode === 'in';
         sl.mode = 'free';
         sl.keys = new Set();
-        // Keep free layers ready for both directions: an empty layer can change its resting opacity unseen, so after many
-        // fades one way there are still layers to fade the other way. That change animates like any other (the layers'
-        // transition never changes: a fade that also switched the transition did not animate on the phone), so
-        // the layer takes no pins until it has finished.
-        const free = st.slots[kind].filter(x => x.mode === 'free');
-        const offs = free.filter(x => !x.on), ons = free.filter(x => x.on);
-        const flip = offs.length < 2 && ons.length > 2 ? ons[0] : ons.length < 2 && offs.length > 2 ? offs[0] : null;
-        if (flip) { flip.on = !flip.on; flip.readyAt = Date.now() + DEST_GATE_FADE_MS + 50; }
+        // Back to its resting opacity once the pins have left it (a render later), and ready again once that has run.
+        if (sl.on !== sl.rest) {
+          sl.readyAt = Infinity;
+          setTimeout(() => { sl.on = sl.rest; sl.readyAt = Date.now() + DEST_GATE_FADE_MS + 50; setSpotFadeTick(t => t + 1); }, 50);
+        }
         setSpotFadeTick(t => t + 1);
       }, DEST_GATE_FADE_MS + 50);
     }
