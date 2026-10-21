@@ -12,7 +12,6 @@ import Animated, {
   useSharedValue, useAnimatedStyle, useAnimatedReaction, withTiming, runOnJS,
   interpolate, Extrapolation, Easing, scrollTo, useAnimatedRef,
 } from 'react-native-reanimated';
-import { perfMark, perfCount, perfNow } from '../../utils/perfProbe';   // TEMPORARY
 import type { SharedValue } from 'react-native-reanimated';
 // ScrollView specifically comes from gesture-handler (not core RN) — only a gesture-handler-
 // aware component can actually participate in `simultaneousWithExternalGesture` below; a
@@ -32,7 +31,7 @@ import CircleFlag from '../CircleFlag';
 import { sheetPose } from './sheetPose';
 import EntityPhoto from './EntityPhoto';
 import DestinationCard from './DestinationCard';
-import { VisitCardList, VisitModuleSheet, PhotoGalleryModal, useDeferredMount, SHEET_ENTER_CONFIG, AIContentNote, type VisitSelectorItem } from './sheetShared';
+import { VisitCardList, VisitModuleSheet, PhotoGalleryModal, useDeferredMount, AIContentNote, type VisitSelectorItem } from './sheetShared';
 
 interface Props {
   cluster: CountryCluster;
@@ -591,8 +590,6 @@ function CountrySheet({
   // Full-screen panels mount a moment after the sheet does, or at once on heading to full — see
   // useDeferredMount.
   const [panelsReady, revealPanels] = useDeferredMount();
-  const perfRevealPanels = useCallback(() => { perfMark('CountrySheet slide landed, panels mount'); revealPanels(); }, [revealPanels]);   // TEMPORARY
-  useLayoutEffect(() => { if (panelsReady) perfMark('CountrySheet panels committed'); }, [panelsReady]);   // TEMPORARY
   // Scrolls the content back to its top on the UI thread, over a fixed 220ms — finishing before the sheet settles at
   // half-screen (SNAP_CONFIG, 280ms), so it never still looks like it's scrolling once the sheet has landed. (The
   // ScrollView's own animated scrollTo has a fixed, longer duration of its own.)
@@ -626,10 +623,7 @@ function CountrySheet({
     if (next === 'full') onExpand?.(); else if (reason !== 'mount' || next === 'peek') onCollapse?.();
     sheetPose.set(next === 'full' ? null : target);
     // 'userUI': the gesture worklet already started this exact animation on the UI thread (see snapUI).
-    // The entrance uses its own gentler curve (SHEET_ENTER_CONFIG) and mounts the full-screen panels as it lands.
-    if (reason === 'mount') perfMark('CountrySheet slide starts');   // TEMPORARY
-    if (reason === 'mount') slideAnim.value = withTiming(target, SHEET_ENTER_CONFIG, finished => { if (finished) runOnJS(perfRevealPanels)(); });
-    else if (reason !== 'userUI') slideAnim.value = withTiming(target, SNAP_CONFIG);
+    if (reason !== 'userUI') slideAnim.value = withTiming(target, SNAP_CONFIG);
     reportSnapState(next);
   };
 

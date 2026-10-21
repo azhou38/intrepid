@@ -1,7 +1,6 @@
 import React, { memo, useRef, useState, useMemo, useCallback, useEffect, useLayoutEffect } from 'react';
 import { unstable_batchedUpdates, View, StyleSheet, Pressable, Text, Dimensions, Animated, Platform, TextInput, Image, Easing as RNEasing, Keyboard, ScrollView } from 'react-native';
-import Reanimated, { useSharedValue, useAnimatedStyle, useAnimatedReaction, runOnJS, withTiming, Easing, useFrameCallback } from 'react-native-reanimated';
-import { perfArm, perfMark, perfCount, perfNow, perfLap, perfLapStart, PERF_WINDOW_MS } from '../utils/perfProbe';   // TEMPORARY
+import Reanimated, { useSharedValue, useAnimatedStyle, useAnimatedReaction, runOnJS, withTiming, Easing } from 'react-native-reanimated';
 import Svg, { Rect, Path, Circle } from 'react-native-svg';
 import { sheetPose } from '../components/Map/sheetPose';
 import MapboxGL from '@rnmapbox/maps';
@@ -1208,34 +1207,6 @@ function useStableList<T>(next: T[], key: (t: T) => string): T[] {
 }
 
 export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = {}) {
-  // TEMPORARY perf probe (see perfProbe.ts): this render's JS time and commit, and the UI thread's long frames.
-  const perfRenderStart = perfNow();
-  perfLapStart();
-  useLayoutEffect(() => { perfCount('MapScreen render+commit', perfNow() - perfRenderStart); });
-  const perfUiArmSV = useSharedValue(0);
-  const perfUiStartSV = useSharedValue(0);
-  const perfUiFramesSV = useSharedValue(0);
-  const perfUiLogSV = useSharedValue('');
-  const perfUiReport = useCallback((frames: number, log: string) => {
-    console.log(`[perf] UI thread: ${frames} frames in ${PERF_WINDOW_MS}ms; long frames (at:ms) ${log || 'none'}`);
-  }, []);
-  useFrameCallback(f => {
-    'worklet';
-    if (!perfUiArmSV.value) return;
-    if (!perfUiStartSV.value) { perfUiStartSV.value = f.timestamp; perfUiFramesSV.value = 0; perfUiLogSV.value = ''; return; }
-    const at = f.timestamp - perfUiStartSV.value;
-    perfUiFramesSV.value += 1;
-    const dt = f.timeSincePreviousFrame ?? 0;
-    if (dt > 20) perfUiLogSV.value = `${perfUiLogSV.value} ${at.toFixed(0)}:${dt.toFixed(0)}`;
-    if (at > PERF_WINDOW_MS) {
-      runOnJS(perfUiReport)(perfUiFramesSV.value, perfUiLogSV.value);
-      perfUiArmSV.value = 0;
-      perfUiStartSV.value = 0;
-    }
-  });
-  // TEMPORARY: React's own render+commit time per wrapped subtree.
-  const perfOnRender = useCallback((id: string, phase: string, actual: number) => { perfCount(`${id} ${phase}`, actual); }, []);
-  const perfStart = (what: string) => { perfArm(what); perfUiStartSV.value = 0; perfUiArmSV.value = 1; };
   const insets = useSafeAreaInsets();
   const cameraRef = useRef<MapboxGL.Camera>(null);
   // The MapView's real rendered height (shorter than the device height — App.tsx's bottom tab
@@ -2043,7 +2014,6 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     }, durationMs + 800);
     setHeldSelTick(t => t + 1);
   }, []);
-  perfLap('state and hooks');   // TEMPORARY
 
   const countryPills = useMemo(() => {
     // "visitedCount" is the country's visited destinations (see visitIndex) — the number on its
@@ -2338,7 +2308,6 @@ const destItems = useMemo((): DestItem[] =>
     // the (equally pan-invariant) country pill plan.
     // No camera centre → recompute produces an identical plan while panning at fixed zoom.
   }, [eligibleDests, planLngDelta, pillPlanLngDelta, planCountry, planDest, selectedSpot, visitIndex, countryPills]);
-  perfLap('destPinPlan and earlier');   // TEMPORARY
 
   // Stamps are rendered via CircleLayer (not MarkerView) so Mapbox renders all of them
   // regardless of proximity. Every filter-passing destination gets a stamp — INCLUDING ones
@@ -2612,7 +2581,6 @@ const destItems = useMemo((): DestItem[] =>
     if (selectedSpot && !result.some(sp => sp.id === selectedSpot.id)) result.push(selectedSpot);
     return result;
   }, [region, handoffZoom, closeViewScale, selectedSpot, selectedDest, spotsInDest, nearCtx]);
-  perfLap('visibleSpots and earlier');   // TEMPORARY
   // Exit-fade tracking for spot pins (same treatment as pills/photos): pins leaving the
   // set linger for PIN_EXIT_MS fading out, new ones mount at 0 and fade in.
   // Which revealed spots get a full photo pin and which collapse to a dot. Spots are taken in priority order (the selected
@@ -2710,7 +2678,6 @@ const destItems = useMemo((): DestItem[] =>
     lastSpotShapeRef.current = { sig, specs: spotPhotoSpecListRef.current, value };
     return value;
   }, [visibleSpots, selectedSpot, nearCtx, visitIndex, handoffZoom, pinPlanLngDelta, destPinPlan, hiddenDestIds]);
-  perfLap('nativeSpotPins');   // TEMPORARY
   // Only the selected spot is a MarkerView now.
   const selectedOnly = useMemo(() => (selectedSpot ? [selectedSpot] : []), [selectedSpot]);
   const renderedSpots = useExitingItems(selectedOnly, s => s.id, HANDOFF_FADE_MS);
@@ -2840,7 +2807,6 @@ const destItems = useMemo((): DestItem[] =>
     prevSpotLabelPlanRef.current = plan;
     return plan;
   }, [renderedSpots, pinPlanLngDelta, selectedSpot, savedSpots, visitIndex, destPinPlan, hiddenDestIds]);
-  perfLap('spot markers');   // TEMPORARY
 
   // Spot pins in depth order: northernmost first, southernmost last. MarkerViews stack by when they
   // were mounted, so mounting in this order puts a pin that is lower on the map in front of any pin
@@ -3286,7 +3252,6 @@ const destItems = useMemo((): DestItem[] =>
   }, []);
 
   const handleMarkerPress = useCallback((dest: Destination) => {
-    perfStart(`select destination ${dest.id}`);   // TEMPORARY
     // Provenance: a normal drill-down only when the tapped destination actually belongs to
     // the currently selected country — not just "is *some* country selected". Rank-1
     // "anchor" destinations from OTHER countries are deliberately shown (as stamps) even
@@ -3365,7 +3330,6 @@ const destItems = useMemo((): DestItem[] =>
     // Reads region via regionRef (not a dep) so this callback stays stable across pans and
     // doesn't bust the memoized destination-pin marker list.
   }, [selectedCountry, showBreadcrumb, animateCamera, dropCountryIfForeign, setDestHomeToDefault]);
-  perfLap('handlers A');   // TEMPORARY
 
   const handleSheetExpand = useCallback(() => setMapState('sheet'), []);
   const handleCloseSheet = useCallback(() => {
@@ -3440,7 +3404,6 @@ const destItems = useMemo((): DestItem[] =>
 
   // ── Spot selection ──────────────────────────────────────────────────────────
   const handleSpotPress = useCallback((spot: Spot) => {
-    perfStart(`select spot ${spot.id}`);   // TEMPORARY
     // Tapping a pin (rather than swiping the carousel) leaves any near context: a destination's spot then opens in that
     // destination's own context, and a standalone one starts its own near context.
     nearCtxRef.current = null;
@@ -3907,7 +3870,6 @@ const destItems = useMemo((): DestItem[] =>
     cameraMode: 'easeTo' | 'flyTo' = 'easeTo',
     openPeeked = false,
   ) => {
-    perfStart(`select country ${cluster.countryCode}`);   // TEMPORARY
     lastCountryPressRef.current = Date.now();
     selectedCountryRef.current = cluster;
     countryHomeRegionRef.current = null;
@@ -4407,7 +4369,6 @@ const destItems = useMemo((): DestItem[] =>
       return;
     }
   }, [mapState, selectedDest, savedDestinations, showBreadcrumb, releaseHeldSelection]);
-  perfLap('handlers B');   // TEMPORARY
 
   // Pre-rendered marker element arrays, memoized on their pan-invariant inputs. Building the
   // MarkerViews here (instead of inline in the JSX) means the SAME element instances — and
@@ -4718,7 +4679,6 @@ const destItems = useMemo((): DestItem[] =>
     if (added) destPinSpecListRef.current = [...specs.values()];
     return { shape: { type: 'FeatureCollection' as const, features }, specs: destPinSpecListRef.current };
   }, [promotedDests, joinedHandoffDests, visitIndex, visitedSpotCountByDest, destPinPlan, planDest, eligibleDests, visibleRank]);
-  perfLap('nativeDestPins and earlier');   // TEMPORARY
 
   // Which sliding sheet is mounted right now. When it changes from one level to another, the incoming sheet is a
   // replacement for the one that was showing and starts where that one rested (see sheetPose) rather than from below
@@ -4787,7 +4747,6 @@ const destItems = useMemo((): DestItem[] =>
   const destSheetIsPressBlocked = useStableCallback(pressBlocked);
 
 
-  perfLap('rest before JSX');   // TEMPORARY
   return (
     <View
       style={styles.root}
@@ -4799,7 +4758,6 @@ const destItems = useMemo((): DestItem[] =>
 
       {/* ── MAP ──────────────────────────────────────────────────────────── */}
       {styleResolved && (
-      <React.Profiler id="MapView" onRender={perfOnRender}>
       <MapboxGL.MapView
         style={StyleSheet.absoluteFill}
         // Globe at every zoom, never swapped. Mapbox's iOS SDK applies setProjection
@@ -5226,7 +5184,6 @@ const destItems = useMemo((): DestItem[] =>
 
         </>}
       </MapboxGL.MapView>
-      </React.Profiler>
       )}
 
       {/* ── Search backdrop — white fill behind the focused search bar + results, so the
@@ -5445,7 +5402,6 @@ const destItems = useMemo((): DestItem[] =>
           with each other. ─────────────────────────────────────────────────────────────── */}
       {/* Stays mounted (hidden off-screen) behind a selection, so closing it slides the sheet straight back up. */}
       {!searchFocused && !exploreHeld && (
-        <React.Profiler id="ExploreSheet" onRender={perfOnRender}>
         <ExploreSheet
           hidden={!!(selectedCountry || selectedDest || selectedSpot)}
           collapseSignal={peekSheetSignal}
@@ -5458,12 +5414,10 @@ const destItems = useMemo((): DestItem[] =>
           onScrollYChange={handleExploreScrollY}
           onSearchPress={handleExploreSearchPress}
         />
-        </React.Profiler>
       )}
 
 {/* ── Country sheet ─────────────────────────────────────────────────── */}
       {selectedCountry && !selectedDest && !selectedSpot && (
-        <React.Profiler id="CountrySheet" onRender={perfOnRender}>
         <CountrySheet
           key={`country-${sheetSwapKey}`}
           cluster={selectedCountry}
@@ -5494,12 +5448,10 @@ const destItems = useMemo((): DestItem[] =>
           // had anywhere to report to.
           onSnapStateChange={handleSheetSnapStateChange}
         />
-        </React.Profiler>
       )}
 
       {/* ── Unified destination sheet — hidden while a spot sheet is open on top */}
       {mapState !== 'world' && selectedDest && !selectedSpot && !destAfterCamera && (
-        <React.Profiler id="DestinationSheet" onRender={perfOnRender}>
         <DestinationSheet
           key={`dest-${sheetSwapKey}`}
           destination={selectedDest}
@@ -5523,12 +5475,10 @@ const destItems = useMemo((): DestItem[] =>
           initialTab={destInitialTab}
           initialSnap={destInitialSnap}
         />
-        </React.Profiler>
       )}
 
       {/* ── Spot sheet — swipeable carousel of the destination's spots, expandable to full */}
       {selectedSpot && spotFocusId && (
-        <React.Profiler id="SpotSheet" onRender={perfOnRender}>
         <SpotSheet
           key={`spot-${sheetSwapKey}`}
           spots={carouselSpots}
@@ -5554,14 +5504,12 @@ const destItems = useMemo((): DestItem[] =>
           onGoToList={selectedSpot.destinationId && !nearCtx ? handleGoToListView : undefined}
           collapseSignal={collapseSheetSignal}
         />
-        </React.Profiler>
       )}
 
 {/* ── Outgoing copy of the sheet a country <-> destination swap is replacing — drawn ABOVE the incoming sheet so its slide down is visible while the new one rises beneath it ── */}
       {leavingSheetRef.current && (
         <View pointerEvents="none" style={StyleSheet.absoluteFill}>
           {leavingSheetRef.current.kind === 'country' && leavingSheetRef.current.cluster && (
-            <React.Profiler id="leaving CountrySheet" onRender={perfOnRender}>
             <CountrySheet
               key={`leaving-country-${leavingSheetRef.current.seq}`}
               cluster={leavingSheetRef.current.cluster}
@@ -5571,10 +5519,8 @@ const destItems = useMemo((): DestItem[] =>
               onExited={handleLeavingSheetExited}
               enterFromPrevious
             />
-            </React.Profiler>
           )}
           {leavingSheetRef.current.kind === 'spot' && leavingSheetRef.current.focusId && (
-            <React.Profiler id="leaving SpotSheet" onRender={perfOnRender}>
             <SpotSheet
               key={`leaving-spot-${leavingSheetRef.current.seq}`}
               spots={leavingSheetRef.current.spots}
@@ -5585,10 +5531,8 @@ const destItems = useMemo((): DestItem[] =>
               onExited={handleLeavingSheetExited}
               enterFromPrevious
             />
-            </React.Profiler>
           )}
           {leavingSheetRef.current.kind === 'dest' && leavingSheetRef.current.dest && (
-            <React.Profiler id="leaving DestinationSheet" onRender={perfOnRender}>
             <DestinationSheet
               key={`leaving-dest-${leavingSheetRef.current.seq}`}
               destination={leavingSheetRef.current.dest}
@@ -5598,7 +5542,6 @@ const destItems = useMemo((): DestItem[] =>
               onExited={handleLeavingSheetExited}
               enterFromPrevious
             />
-            </React.Profiler>
           )}
         </View>
       )}

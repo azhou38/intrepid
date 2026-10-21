@@ -1,6 +1,4 @@
 import React, { memo, useEffect, useRef } from 'react';
-import { perfCount } from '../../utils/perfProbe';   // TEMPORARY
-import { queueSnapshot } from '../../utils/snapshotQueue';
 import { View, StyleSheet } from 'react-native';
 import Svg, { Circle, Path } from 'react-native-svg';
 import MapboxGL from '@rnmapbox/maps';
@@ -34,8 +32,8 @@ const MiniPin = memo(function MiniPin({ name, visited }: { name: string; visited
   const imageRef = useRef<{ refresh: () => void } | null>(null);
   // The snapshot is taken from the view as drawn; re-take it shortly after mount in case the first ran just too early.
   useEffect(() => {
-    const t1 = setTimeout(() => queueSnapshot(() => (perfCount('spot mini snapshot'), imageRef.current?.refresh())), 60);
-    const t2 = setTimeout(() => queueSnapshot(() => (perfCount('spot mini snapshot'), imageRef.current?.refresh())), 500);
+    const t1 = setTimeout(() => imageRef.current?.refresh(), 60);
+    const t2 = setTimeout(() => imageRef.current?.refresh(), 500);
     return () => { clearTimeout(t1); clearTimeout(t2); };
   }, []);
   return (

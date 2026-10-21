@@ -1,6 +1,4 @@
 import React, { memo, useEffect, useRef, useState } from 'react';
-import { perfCount } from '../../utils/perfProbe';   // TEMPORARY
-import { queueSnapshot } from '../../utils/snapshotQueue';
 import { View, Text, StyleSheet } from 'react-native';
 import PinPhoto from './PinPhoto';
 import { photoSubject } from '../../utils/subjectCrop';
@@ -50,8 +48,8 @@ const DestPinImage = memo(function DestPinImage({ spec }: { spec: DestPinImageSp
   const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
   useEffect(() => () => timers.current.forEach(clearTimeout), []);
   const snap = () => {
-    timers.current.push(setTimeout(() => queueSnapshot(() => (perfCount('dest pin snapshot'), imageRef.current?.refresh())), 60));
-    timers.current.push(setTimeout(() => queueSnapshot(() => (perfCount('dest pin snapshot'), imageRef.current?.refresh())), 500));
+    timers.current.push(setTimeout(() => imageRef.current?.refresh(), 60));
+    timers.current.push(setTimeout(() => imageRef.current?.refresh(), 500));
   };
 
   const ring = visited ? VISITED_COLOR : 'white';
