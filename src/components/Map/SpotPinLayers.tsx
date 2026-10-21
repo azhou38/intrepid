@@ -8,7 +8,7 @@ import MapboxGL from '@rnmapbox/maps';
 // Same fade as the destination pins' tier layers (MapScreen's DEST_GATE_FADE_MS).
 const DEST_GATE_FADE_MS = 250;
 // Fade layers per spot pin kind (photo, small) for spot pins starting or stopping to show.
-const SPOT_FADE_SLOTS = 4;
+const SPOT_FADE_SLOTS = 6;
 
 type Props = {
   shape: GeoJSON.FeatureCollection<GeoJSON.Point>;
@@ -23,11 +23,12 @@ function SpotPinLayers({ shape, satellite, onPressSpot }: Props) {
   // constant opacity Mapbox animates (as the destination pins' tier layers do): newcomers join a layer resting at 0 that
   // then fades to 1, leavers move to one resting at 1 that then fades to 0. Once its fade has finished a newcomer moves to
   // the steady layer and a leaver is dropped; the layer keeps its final opacity, ready for the opposite fade next. With no
-  // free layer, the pins switch at once, as before. What shows is exactly the plan's; only the switch is animated.
-  type SpotFadeSlot = { mode: 'free' | 'in' | 'out'; keys: Set<string>; on: boolean; started: boolean; readyAt: number };
+  // free layer (a fast zoom changes pins every frame or two), pins join the latest fade going their way, part-way through,
+  // rather than switching at once. What shows is exactly the plan's; only the switch is animated.
+  type SpotFadeSlot = { mode: 'free' | 'in' | 'out'; keys: Set<string>; on: boolean; started: boolean; readyAt: number; startedAt: number };
   const spotFadeRef = useRef<{ steady: Set<string>; feats: Map<string, GeoJSON.Feature<GeoJSON.Point>>; slots: Record<'p' | 'm', SpotFadeSlot[]> } | null>(null);
   if (!spotFadeRef.current) {
-    const mk = () => Array.from({ length: SPOT_FADE_SLOTS }, (_, i): SpotFadeSlot => ({ mode: 'free', keys: new Set(), on: i % 2 === 1, started: false, readyAt: 0 }));
+    const mk = () => Array.from({ length: SPOT_FADE_SLOTS }, (_, i): SpotFadeSlot => ({ mode: 'free', keys: new Set(), on: i % 2 === 1, started: false, readyAt: 0, startedAt: 0 }));
     spotFadeRef.current = { steady: new Set(), feats: new Map(), slots: { p: mk(), m: mk() } };
   }
   const [spotFadeTick, setSpotFadeTick] = useState(0);
@@ -46,7 +47,8 @@ function SpotPinLayers({ shape, satellite, onPressSpot }: Props) {
     const entering: Record<'p' | 'm', string[]> = { p: [], m: [] };
     const leaving: Record<'p' | 'm', string[]> = { p: [], m: [] };
     for (const key of st.steady) if (!desired.has(key)) leaving[kindOf(key)].push(key);
-    for (const [key, sl] of slotOf) if (sl.mode === 'in' && !desired.has(key)) sl.keys.delete(key);
+    // A pin still fading in that is no longer wanted fades out from where it is.
+    for (const [key, sl] of slotOf) if (sl.mode === 'in' && !desired.has(key)) { sl.keys.delete(key); leaving[kindOf(key)].push(key); }
     for (const key of desired.keys()) {
       if (st.steady.has(key)) continue;
       const sl = slotOf.get(key);
@@ -55,15 +57,22 @@ function SpotPinLayers({ shape, satellite, onPressSpot }: Props) {
       entering[kindOf(key)].push(key);
     }
     for (const kind of ['p', 'm'] as const) {
+      // The newest fade going this way: an unstarted batch first, else the one that started last.
+      const latest = (mode: 'in' | 'out') => st.slots[kind].filter(x => x.mode === mode)
+        .sort((a, b) => (a.started ? a.startedAt : Infinity) - (b.started ? b.startedAt : Infinity)).pop();
       if (entering[kind].length) {
         const sl = st.slots[kind].find(x => x.mode === 'free' && !x.on && x.readyAt <= now);
+        const join = sl ? null : latest('in');
         if (sl) { sl.mode = 'in'; sl.keys = new Set(entering[kind]); sl.started = false; }
+        else if (join) for (const key of entering[kind]) join.keys.add(key);
         else for (const key of entering[kind]) st.steady.add(key);
       }
       if (leaving[kind].length) {
         for (const key of leaving[kind]) st.steady.delete(key);
         const sl = st.slots[kind].find(x => x.mode === 'free' && x.on && x.readyAt <= now);
+        const join = sl ? null : latest('out');
         if (sl) { sl.mode = 'out'; sl.keys = new Set(leaving[kind]); sl.started = false; }
+        else if (join) for (const key of leaving[kind]) join.keys.add(key);
       }
     }
     for (const [key, f] of desired) st.feats.set(key, f);
@@ -90,7 +99,7 @@ function SpotPinLayers({ shape, satellite, onPressSpot }: Props) {
     let start = false;
     for (const kind of ['p', 'm'] as const) for (const sl of st.slots[kind]) {
       if (sl.mode === 'free' || sl.started) continue;
-      sl.started = true; start = true;
+      sl.started = true; sl.startedAt = Date.now(); start = true;
       const batch = sl.keys;
       setTimeout(() => {
         if (sl.keys !== batch) return;
