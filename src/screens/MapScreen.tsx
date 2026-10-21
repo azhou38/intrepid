@@ -1290,6 +1290,192 @@ function useStableList<T>(next: T[], key: (t: T) => string): T[] {
   return ref.current.list;
 }
 
+// The destination photo plan (see destPhotoPlan in MapScreen): a pure function of the selection context and visits.
+function planDestPhotos(planCountry: { countryCode: string } | null, planDest: Destination | null, selectedSpot: Spot | null, isDestVisited: (id: string) => boolean) {
+  const ladder = destLadder();
+  const pinAt = new Map<string, number>();    // destination id -> ladder index of its photo zoom (-1: always)
+  const nameAt = new Map<string, number>();   // destination id -> ladder index from which its name shows
+  const priority = new Map<string, number>();
+  const rankScore = (d: Destination) =>
+    (planDest?.id === d.id ? -1_000_000 : 0) + (planCountry && d.countryCode === planCountry.countryCode ? -1_000 : 0) + d.rank;
+  // Within a rank, the more popular destination first (DEST_POPULARITY), then a fixed tiebreak.
+  const ordered = [...DESTINATIONS].sort((a, b) => rankScore(a) - rankScore(b)
+    || (DEST_POPULARITY.get(b.id) ?? 0) - (DEST_POPULARITY.get(a.id) ?? 0) || (a.id < b.id ? -1 : 1));
+  ordered.forEach((d, i) => priority.set(d.id, i));
+  // Unit Web-Mercator positions (0..1 across the world); at zoom z a point is at u * 512 * 2^z on screen.
+  const unit = (lng: number, lat: number) => {
+    const s = Math.sin((Math.max(-85, Math.min(85, lat)) * Math.PI) / 180);
+    return { x: (lng + 180) / 360, y: 0.5 - Math.log((1 + s) / (1 - s)) / (4 * Math.PI) };
+  };
+  const pos = new Map(ordered.map(d => [d.id, unit(d.coordinates.longitude, d.coordinates.latitude)]));
+  // Footprints at scale 1 (screen points around the point): the photo circle, and the name hanging below it.
+  const R = DEST_PIN_SIZE / 2;
+  const nameFoot = new Map<string, { l: number; r: number; t: number; b: number }>();
+  for (const d of ordered) {
+    const perLine = Math.floor(90 / 6.3);
+    let lines = 1, cur = 0;
+    for (const w of d.name.split(/\s+/)) {
+      if (cur === 0) cur = w.length;
+      else if (cur + 1 + w.length <= perLine) cur += 1 + w.length;
+      else { lines++; cur = w.length; }
+      while (cur > perLine) { lines++; cur -= perLine; }
+    }
+    const half = Math.min(90, Math.min(d.name.length, perLine) * 6.3 + 4) / 2;
+    nameFoot.set(d.id, { l: -half, r: half, t: R + 3, b: R + 4 + lines * 13 + 1 });
+  }
+  const selCC = planCountry?.countryCode ?? planDest?.countryCode;
+  const selCountryZoom = selCC ? zoomForPanLatDelta(getCountryStampThreshold(selCC)) : Infinity;
+  const spotU = selectedSpot ? unit(selectedSpot.coordinates.longitude, selectedSpot.coordinates.latitude) : null;
+  type Box = { l: number; r: number; t: number; b: number };
+  const hit = (a: Box, b: Box) => a.l < b.r && a.r > b.l && a.t < b.b && a.b > b.t;
+  const pins: string[] = [], names: string[] = [];
+  for (let i = 0; i < ladder.length; i++) {
+    const z = ladder[i];
+    const scale = 512 * Math.pow(2, z);   // Mapbox's world size in screen points (512 px tiles)
+    const at = (id: string) => { const u = pos.get(id)!; return { x: u.x * scale, y: u.y * scale }; };
+    const pinBox = (id: string): Box => { const p = at(id); return { l: p.x - R, r: p.x + R, t: p.y - R, b: p.y + R }; };
+    const nameBox = (id: string): Box => { const p = at(id), f = nameFoot.get(id)!; return { l: p.x + f.l, r: p.x + f.r, t: p.y + f.t, b: p.y + f.b }; };
+    // Pins keep clear of the pins and names already placed (a name, once shown, is never covered), the country pills
+    // showing at this zoom and the selected spot.
+    const pinTaken: Box[] = [...pins.map(pinBox), ...names.map(nameBox)];
+    for (const p of pillsAtZoom(z, planCountry, planDest)) {
+      const u = unit(p.longitude, p.latitude), x = u.x * scale, y = u.y * scale;
+      pinTaken.push({ l: x - 75, r: x + 75, t: y - 42, b: y + 42 });
+    }
+    if (spotU) { const x = spotU.x * scale, y = spotU.y * scale; pinTaken.push({ l: x - 75, r: x + 75, t: y - 60, b: y + 60 }); }
+    for (const d of ordered) {
+      if (pinAt.has(d.id)) continue;
+      if (planDest?.id === d.id) { pinAt.set(d.id, -1); pins.push(d.id); pinTaken.push(pinBox(d.id)); continue; }
+      if (destEligibleZoom(d, isDestVisited(d.id), selCC, selCountryZoom) > z + ZOOM_EPSILON) continue;
+      const box = pinBox(d.id);
+      if (pinTaken.some(t => hit(t, box))) continue;
+      pinAt.set(d.id, i); pins.push(d.id); pinTaken.push(box);
+    }
+    // Then the names of placed pins, in the same order, clear of every pin and every name already shown. A name only
+    // shows while its pin can (up to the destination's own default view, where its spots take over).
+    const nameTaken: Box[] = [...pins.map(pinBox), ...names.map(nameBox)];
+    for (const d of ordered) {
+      if (!pinAt.has(d.id) || nameAt.has(d.id)) continue;
+      const level = DEST_ZOOM_LEVEL_BY_ID[d.id];
+      if (level !== undefined && z >= level - ZOOM_EPSILON && planDest?.id !== d.id) continue;
+      const box = nameBox(d.id);
+      if (planDest?.id !== d.id && nameTaken.some(t => hit(t, box))) continue;
+      nameAt.set(d.id, pinAt.get(d.id)! < 0 && planDest?.id === d.id ? -1 : i); names.push(d.id); nameTaken.push(box);
+    }
+  }
+  const tierOf = (i: number) => (i < 0 ? '' : `z${i}`);
+  const fadeTier = new Map<string, string>(), nameTier = new Map<string, string>();
+  for (const [id, i] of pinAt) fadeTier.set(id, tierOf(i));
+  for (const [id, i] of nameAt) nameTier.set(id, tierOf(i));
+  return { pinAt, nameAt, priority, fadeTier, nameTier, pos, nameFoot, R };
+}
+
+// ── Spot photo pins and names: one zoom-only plan, as for destinations (planDestPhotos) ───────────────────────────────
+// Each spot gets a PHOTO ZOOM (from which it shows its photo pin rather than its small pin) and a NAME ZOOM with a side
+// (right of the pin, else left). The plan walks the zoom from wide to close over EVERY spot, never just those on screen:
+// a spot becomes a candidate at its own photo zoom (SPOT_PHOTO_ZOOM_BY_ID) and is retried every half level until it has
+// room, clear of the spot pins and names already placed and of the destination pins and names showing at that zoom (a
+// destination's stop once its spots take over). Placed pins and names are never displaced, and zooming in only spreads
+// them apart, so a photo pin or name that shows zoomed out persists zooming in; nothing depends on where the camera is,
+// so panning changes nothing. Priority: visited spots, then the most popular (a year's Wikipedia page views), then a
+// spot's place in its destination's list.
+const SPOT_PLAN_REACH_PT = 340;   // the widest two footprints can reach toward each other (pins plus names)
+function planSpotPhotos(destPlan: ReturnType<typeof planDestPhotos>, isSpotVisited: (id: string) => boolean) {
+  const t0 = Date.now();
+  const views = spotPopularity as Record<string, number>;
+  const ordered = [...SPOTS].sort((a, b) => (isSpotVisited(a.id) ? 0 : 1) - (isSpotVisited(b.id) ? 0 : 1)
+    || (views[b.id] ?? 0) - (views[a.id] ?? 0)
+    || (SPOT_IMPORTANCE.get(a.id) ?? 0) - (SPOT_IMPORTANCE.get(b.id) ?? 0) || (SPOT_ORDER.get(a.id) ?? 0) - (SPOT_ORDER.get(b.id) ?? 0));
+  const n = ordered.length;
+  const sortOf = new Map(ordered.map((sp, i) => [sp.id, i]));
+  const ux = new Float64Array(n), uy = new Float64Array(n), first = new Float64Array(n), nw = new Float64Array(n), nh = new Float64Array(n);
+  ordered.forEach((sp, i) => {
+    const lat = Math.max(-85, Math.min(85, sp.coordinates.latitude)), sn = Math.sin((lat * Math.PI) / 180);
+    ux[i] = (sp.coordinates.longitude + 180) / 360; uy[i] = 0.5 - Math.log((1 + sn) / (1 - sn)) / (4 * Math.PI);
+    first[i] = Math.max(4, SPOT_PHOTO_ZOOM_BY_ID[sp.id] ?? Infinity);
+    const lines = spotLabelLines(sp.name);
+    nw[i] = Math.max(...lines.map(l => l.length)) * 6.8 + 4; nh[i] = lines.length * 15;
+  });
+  // Footprints in screen points around the spot's point (the pin's tip): the teardrop pin, and a name to either side
+  // (DIN Pro Bold 12 pt, 15 pt lines, centred on the pin's bubble 23 pt up, 18 pt from the point; see the photo layer).
+  const PL = -SPOT_PIN_SIZE / 2 - 3, PR = SPOT_PIN_SIZE / 2 + 3, PT = -SPOT_PIN_SIZE - 14, PB = 2;
+  // Placed footprints (pins and names): unit position plus a box in points.
+  const ix: number[] = [], iy: number[] = [], il: number[] = [], ir: number[] = [], it: number[] = [], ib: number[] = [];
+  let cell = 1, grid = new Map<number, number[]>();
+  const keyOf = (x: number, y: number) => Math.floor(x / cell) * 4_194_304 + Math.floor(y / cell);
+  const insert = (k: number) => { const key = keyOf(ix[k], iy[k]); const arr = grid.get(key); if (arr) arr.push(k); else grid.set(key, [k]); };
+  const add = (x: number, y: number, l: number, r: number, t: number, b: number) => { ix.push(x); iy.push(y); il.push(l); ir.push(r); it.push(t); ib.push(b); insert(ix.length - 1); };
+  const rebuild = (z: number) => { cell = SPOT_PLAN_REACH_PT / (512 * Math.pow(2, z)); grid = new Map(); for (let k = 0; k < ix.length; k++) insert(k); };
+  const clear = (x: number, y: number, scale: number, l: number, r: number, t: number, b: number) => {
+    const cx = Math.floor(x / cell), cy = Math.floor(y / cell);
+    const L = x * scale + l, R = x * scale + r, T = y * scale + t, B = y * scale + b;
+    for (let i = -1; i <= 1; i++) for (let j = -1; j <= 1; j++) {
+      const arr = grid.get((cx + i) * 4_194_304 + cy + j);
+      if (!arr) continue;
+      for (const k of arr) {
+        const kx = ix[k] * scale, ky = iy[k] * scale;
+        if (L < kx + ir[k] && R > kx + il[k] && T < ky + ib[k] && B > ky + it[k]) return false;
+      }
+    }
+    return true;
+  };
+  // Destination pins and names showing at zoom z, near each spot.
+  const dLadder = destLadder(), R0 = destPlan.R;
+  const nearDests: [string, number][][] = ordered.map((_, i) => [...destPlan.pinAt].filter(([id]) => {
+    const du = destPlan.pos.get(id)!; return Math.abs(du.x - ux[i]) < 0.01 && Math.abs(du.y - uy[i]) < 0.01;
+  }));
+  const clearOfDests = (i: number, z: number, scale: number, l: number, r: number, t: number, b: number) => {
+    const L = ux[i] * scale + l, R = ux[i] * scale + r, T = uy[i] * scale + t, B = uy[i] * scale + b;
+    for (const [id, pi] of nearDests[i]) {
+      if (pi >= 0 && dLadder[pi] > z + ZOOM_EPSILON) continue;
+      const level = DEST_ZOOM_LEVEL_BY_ID[id];
+      if (level !== undefined && z >= level - ZOOM_EPSILON) continue;   // its spots have taken over
+      const du = destPlan.pos.get(id)!, dx = du.x * scale, dy = du.y * scale;
+      if (L < dx + R0 && R > dx - R0 && T < dy + R0 && B > dy - R0) return false;
+      const ni = destPlan.nameAt.get(id), f = destPlan.nameFoot.get(id)!;
+      if (ni !== undefined && (ni < 0 || dLadder[ni] <= z + ZOOM_EPSILON) && L < dx + f.r && R > dx + f.l && T < dy + f.b && B > dy + f.t) return false;
+    }
+    return true;
+  };
+  const photoAt = new Map<string, number>(), nameAt = new Map<string, { z: number; side: 'right' | 'left' }>();
+  const tryPin = (i: number, z: number, scale: number) => {
+    if (!clear(ux[i], uy[i], scale, PL, PR, PT, PB) || !clearOfDests(i, z, scale, PL, PR, PT, PB)) return false;
+    photoAt.set(ordered[i].id, z); add(ux[i], uy[i], PL, PR, PT, PB);
+    return true;
+  };
+  const tryName = (i: number, z: number, scale: number) => {
+    for (const side of ['right', 'left'] as const) {
+      const l = side === 'right' ? 18 : -18 - nw[i], r = side === 'right' ? 18 + nw[i] : -18, t = -23 - nh[i] / 2, b = -23 + nh[i] / 2;
+      if (!clear(ux[i], uy[i], scale, l, r, t, b) || !clearOfDests(i, z, scale, l, r, t, b)) continue;
+      nameAt.set(ordered[i].id, { z, side }); add(ux[i], uy[i], l, r, t, b);
+      return true;
+    }
+    return false;
+  };
+  const byFirst = Array.from({ length: n }, (_, i) => i).filter(i => Number.isFinite(first[i])).sort((a, b) => first[a] - first[b] || a - b);
+  let next = 0;
+  let waiting: number[] = [], unnamed: number[] = [];
+  for (let g = 4; g <= 19; g += 0.5) {
+    // On each half level: rebuild the grid for this zoom, and retry the pins and names still waiting for room.
+    rebuild(g);
+    const sg = 512 * Math.pow(2, g);
+    const stillWaiting: number[] = [], stillUnnamed: number[] = [];
+    for (const i of waiting) { if (tryPin(i, g, sg)) unnamed.push(i); else stillWaiting.push(i); }
+    unnamed.sort((a, b) => a - b);
+    for (const i of unnamed) if (!tryName(i, g, sg)) stillUnnamed.push(i);
+    waiting = stillWaiting; unnamed = stillUnnamed;
+    // Then the spots whose own photo zoom falls in this half level, each at that zoom.
+    while (next < byFirst.length && first[byFirst[next]] < g + 0.5 - 1e-9) {
+      const i = byFirst[next++], z = first[i], sz = 512 * Math.pow(2, z);
+      if (!tryPin(i, z, sz)) { waiting.push(i); continue; }
+      if (!tryName(i, z, sz)) unnamed.push(i);
+    }
+    waiting.sort((a, b) => a - b);
+  }
+  if (__DEV__) console.log(`[pins] spot plan: ${photoAt.size} photo pins, ${nameAt.size} names, ${Date.now() - t0} ms`);
+  return { photoAt, nameAt, sortOf };
+}
+
 export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = {}) {
   const insets = useSafeAreaInsets();
   const cameraRef = useRef<MapboxGL.Camera>(null);
@@ -2228,84 +2414,10 @@ const destItems = useMemo((): DestItem[] =>
   // at one zoom still fits at every closer one: a photo pin (and its name) that shows zoomed out persists zooming in, and
   // zooming back out removes pins in exactly the reverse order. Nothing in it depends on where the camera is, so panning
   // never changes which pins show. It is recomputed only when the selection or the visited set changes.
-  const destPhotoPlan = useMemo(() => {
-    const ladder = destLadder();
-    const pinAt = new Map<string, number>();    // destination id -> ladder index of its photo zoom (-1: always)
-    const nameAt = new Map<string, number>();   // destination id -> ladder index from which its name shows
-    const priority = new Map<string, number>();
-    const rankScore = (d: Destination) =>
-      (planDest?.id === d.id ? -1_000_000 : 0) + (planCountry && d.countryCode === planCountry.countryCode ? -1_000 : 0) + d.rank;
-    // Within a rank, the more popular destination first (DEST_POPULARITY), then a fixed tiebreak.
-    const ordered = [...DESTINATIONS].sort((a, b) => rankScore(a) - rankScore(b)
-      || (DEST_POPULARITY.get(b.id) ?? 0) - (DEST_POPULARITY.get(a.id) ?? 0) || (a.id < b.id ? -1 : 1));
-    ordered.forEach((d, i) => priority.set(d.id, i));
-    // Unit Web-Mercator positions (0..1 across the world); at zoom z a point is at u * 512 * 2^z on screen.
-    const unit = (lng: number, lat: number) => {
-      const s = Math.sin((Math.max(-85, Math.min(85, lat)) * Math.PI) / 180);
-      return { x: (lng + 180) / 360, y: 0.5 - Math.log((1 + s) / (1 - s)) / (4 * Math.PI) };
-    };
-    const pos = new Map(ordered.map(d => [d.id, unit(d.coordinates.longitude, d.coordinates.latitude)]));
-    // Footprints at scale 1 (screen points around the point): the photo circle, and the name hanging below it.
-    const R = DEST_PIN_SIZE / 2;
-    const nameFoot = new Map<string, { l: number; r: number; t: number; b: number }>();
-    for (const d of ordered) {
-      const perLine = Math.floor(90 / 6.3);
-      let lines = 1, cur = 0;
-      for (const w of d.name.split(/\s+/)) {
-        if (cur === 0) cur = w.length;
-        else if (cur + 1 + w.length <= perLine) cur += 1 + w.length;
-        else { lines++; cur = w.length; }
-        while (cur > perLine) { lines++; cur -= perLine; }
-      }
-      const half = Math.min(90, Math.min(d.name.length, perLine) * 6.3 + 4) / 2;
-      nameFoot.set(d.id, { l: -half, r: half, t: R + 3, b: R + 4 + lines * 13 + 1 });
-    }
-    const selCC = planCountry?.countryCode ?? planDest?.countryCode;
-    const selCountryZoom = selCC ? zoomForPanLatDelta(getCountryStampThreshold(selCC)) : Infinity;
-    const spotU = selectedSpot ? unit(selectedSpot.coordinates.longitude, selectedSpot.coordinates.latitude) : null;
-    type Box = { l: number; r: number; t: number; b: number };
-    const hit = (a: Box, b: Box) => a.l < b.r && a.r > b.l && a.t < b.b && a.b > b.t;
-    const pins: string[] = [], names: string[] = [];
-    for (let i = 0; i < ladder.length; i++) {
-      const z = ladder[i];
-      const scale = 512 * Math.pow(2, z);   // Mapbox's world size in screen points (512 px tiles)
-      const at = (id: string) => { const u = pos.get(id)!; return { x: u.x * scale, y: u.y * scale }; };
-      const pinBox = (id: string): Box => { const p = at(id); return { l: p.x - R, r: p.x + R, t: p.y - R, b: p.y + R }; };
-      const nameBox = (id: string): Box => { const p = at(id), f = nameFoot.get(id)!; return { l: p.x + f.l, r: p.x + f.r, t: p.y + f.t, b: p.y + f.b }; };
-      // Pins keep clear of the pins and names already placed (a name, once shown, is never covered), the country pills
-      // showing at this zoom and the selected spot.
-      const pinTaken: Box[] = [...pins.map(pinBox), ...names.map(nameBox)];
-      for (const p of pillsAtZoom(z, planCountry, planDest)) {
-        const u = unit(p.longitude, p.latitude), x = u.x * scale, y = u.y * scale;
-        pinTaken.push({ l: x - 75, r: x + 75, t: y - 42, b: y + 42 });
-      }
-      if (spotU) { const x = spotU.x * scale, y = spotU.y * scale; pinTaken.push({ l: x - 75, r: x + 75, t: y - 60, b: y + 60 }); }
-      for (const d of ordered) {
-        if (pinAt.has(d.id)) continue;
-        if (planDest?.id === d.id) { pinAt.set(d.id, -1); pins.push(d.id); pinTaken.push(pinBox(d.id)); continue; }
-        if (destEligibleZoom(d, visitIndex.isDestVisited(d.id), selCC, selCountryZoom) > z + ZOOM_EPSILON) continue;
-        const box = pinBox(d.id);
-        if (pinTaken.some(t => hit(t, box))) continue;
-        pinAt.set(d.id, i); pins.push(d.id); pinTaken.push(box);
-      }
-      // Then the names of placed pins, in the same order, clear of every pin and every name already shown. A name only
-      // shows while its pin can (up to the destination's own default view, where its spots take over).
-      const nameTaken: Box[] = [...pins.map(pinBox), ...names.map(nameBox)];
-      for (const d of ordered) {
-        if (!pinAt.has(d.id) || nameAt.has(d.id)) continue;
-        const level = DEST_ZOOM_LEVEL_BY_ID[d.id];
-        if (level !== undefined && z >= level - ZOOM_EPSILON && planDest?.id !== d.id) continue;
-        const box = nameBox(d.id);
-        if (planDest?.id !== d.id && nameTaken.some(t => hit(t, box))) continue;
-        nameAt.set(d.id, pinAt.get(d.id)! < 0 && planDest?.id === d.id ? -1 : i); names.push(d.id); nameTaken.push(box);
-      }
-    }
-    const tierOf = (i: number) => (i < 0 ? '' : `z${i}`);
-    const fadeTier = new Map<string, string>(), nameTier = new Map<string, string>();
-    for (const [id, i] of pinAt) fadeTier.set(id, tierOf(i));
-    for (const [id, i] of nameAt) nameTier.set(id, tierOf(i));
-    return { pinAt, nameAt, priority, fadeTier, nameTier, pos, nameFoot, R };
-  }, [planCountry, planDest, selectedSpot, visitIndex]);
+  const destPhotoPlan = useMemo(() => planDestPhotos(planCountry, planDest, selectedSpot, id => visitIndex.isDestVisited(id)),
+    [planCountry, planDest, selectedSpot, visitIndex]);
+  // The same plan with nothing selected: what the spot plan keeps clear of, so selecting or closing never re-plans spots.
+  const baseDestPhotoPlan = useMemo(() => planDestPhotos(null, null, null, id => visitIndex.isDestVisited(id)), [visitIndex]);
   // The plan at the current zoom: photoIds show now (spot planning keeps clear of them). dataIds, the pin layers' data, is
   // every planned pin whatever the zoom (each waits, transparent, in its tier's layer), so zooming never changes the data:
   // reloading the layers' data as pins joined it ahead of their gates made every pin flash.
@@ -2612,149 +2724,15 @@ const destItems = useMemo((): DestItem[] =>
   // close's zoom-out showed bare mini pins for about a second before the photo pins arrived. Every revealed spot is a
   // feature in the data (so nothing is added or removed mid-zoom); the photo layer draws it as a photo pin where it fits,
   // and the mini layer beneath shows the small pin wherever it does not. The selected spot stays a MarkerView.
-  // ── Spot photo pins and names: one zoom-only plan, as for destinations (destPhotoPlan) ─────────────────────────────
-  // Each spot gets a PHOTO ZOOM (from which it shows its photo pin rather than its small pin) and a NAME ZOOM with a side
-  // (right of the pin, else left). The plan walks the zoom from wide to close over EVERY spot, never just those on screen:
-  // a spot becomes a candidate at its own photo zoom (SPOT_PHOTO_ZOOM_BY_ID) and is retried every half level until it has
-  // room, clear of the photo pins and names already placed, the destination photo pins and names showing at that zoom (a
-  // destination's stop once its spots take over) and the spot names placed so far. Already-placed pins and names are never
-  // displaced, and zooming in only spreads them apart, so a photo pin or name that shows zoomed out persists zooming in;
-  // nothing depends on where the camera is, so panning changes nothing. Priority: a near carousel's spots, then visited
-  // spots, then the most popular (a year's Wikipedia page views), then a spot's place in its destination's list.
-  // Recomputed only when the near context, visits or destination plan change.
-  const spotPhotoPlan = useMemo(() => {
-    const t0 = Date.now();
-    const must = new Set<string>();
-    if (nearCtx) for (const sp of nearCtx.spots.slice(0, NEAR_PINNED_SPOTS + 1)) must.add(sp.id);
-    const views = spotPopularity as Record<string, number>;
-    const prio = (sp: Spot) => (must.has(sp.id) ? 0 : visitIndex.isSpotVisited(sp.id) ? 1 : 2);
-    const ordered = [...SPOTS].sort((a, b) => prio(a) - prio(b) || (views[b.id] ?? 0) - (views[a.id] ?? 0)
-      || (SPOT_IMPORTANCE.get(a.id) ?? 0) - (SPOT_IMPORTANCE.get(b.id) ?? 0) || (SPOT_ORDER.get(a.id) ?? 0) - (SPOT_ORDER.get(b.id) ?? 0));
-    const sortOf = new Map(ordered.map((sp, i) => [sp.id, i]));
-    const unit = (lng: number, lat: number) => {
-      const sn = Math.sin((Math.max(-85, Math.min(85, lat)) * Math.PI) / 180);
-      return { x: (lng + 180) / 360, y: 0.5 - Math.log((1 + sn) / (1 - sn)) / (4 * Math.PI) };
-    };
-    const pos = new Map(ordered.map(sp => [sp.id, unit(sp.coordinates.longitude, sp.coordinates.latitude)]));
-    type Box = { l: number; r: number; t: number; b: number };
-    const hit = (a: Box, b: Box) => a.l < b.r && a.r > b.l && a.t < b.b && a.b > b.t;
-    // Footprints in screen points around the spot's point (the pin's tip): the teardrop pin, and a name to either side
-    // (DIN Pro Bold 12 pt, 15 pt lines, centred on the pin's bubble 23 pt up, 18 pt from the point; see the photo layer).
-    const pinFoot: Box = { l: -SPOT_PIN_SIZE / 2 - 3, r: SPOT_PIN_SIZE / 2 + 3, t: -SPOT_PIN_SIZE - 14, b: 2 };
-    const nameSize = (sp: Spot) => {
-      const lines = spotLabelLines(sp.name);
-      return { w: Math.max(...lines.map(l => l.length)) * 6.8 + 4, h: lines.length * 15 };
-    };
-    // A spatial grid over unit coordinates so each test only looks at nearby placements.
-    const CELL = 1 / (512 * Math.pow(2, 6));   // ~one 512 pt tile at zoom 6
-    type Item = { box: (scale: number) => Box; u: { x: number; y: number } };
-    const grid = new Map<string, Item[]>();
-    const keyOf = (cx: number, cy: number) => `${cx},${cy}`;
-    const put = (it: Item) => {
-      const k = keyOf(Math.floor(it.u.x / CELL), Math.floor(it.u.y / CELL));
-      const arr = grid.get(k); if (arr) arr.push(it); else grid.set(k, [it]);
-    };
-    const near = (u: { x: number; y: number }, scale: number, reachPt: number): Item[] => {
-      const k = Math.max(1, Math.ceil(reachPt / scale / CELL));
-      const cx = Math.floor(u.x / CELL), cy = Math.floor(u.y / CELL), out: Item[] = [];
-      if ((2 * k + 1) ** 2 > grid.size) {   // a wide reach (low zoom): scan the occupied cells instead
-        for (const [key, arr] of grid) {
-          const [gx, gy] = key.split(',').map(Number);
-          if (Math.abs(gx - cx) <= k && Math.abs(gy - cy) <= k) out.push(...arr);
-        }
-        return out;
-      }
-      for (let i = -k; i <= k; i++) for (let j = -k; j <= k; j++) { const arr = grid.get(keyOf(cx + i, cy + j)); if (arr) out.push(...arr); }
-      return out;
-    };
-    const at = (u: { x: number; y: number }, scale: number, f: Box): Box => ({ l: u.x * scale + f.l, r: u.x * scale + f.r, t: u.y * scale + f.t, b: u.y * scale + f.b });
-    const nameFootFor = (sp: Spot, side: 'right' | 'left'): Box => {
-      const { w, h } = nameSize(sp);
-      const cy = -23;
-      return side === 'right' ? { l: 18, r: 18 + w, t: cy - h / 2, b: cy + h / 2 } : { l: -18 - w, r: -18, t: cy - h / 2, b: cy + h / 2 };
-    };
-    // Destination pins and names showing at zoom z (from destPhotoPlan), as blockers.
-    const dLadder = destLadder();
-    // The destinations within a few degrees of each point (all a test at spot zooms can reach), looked up once per spot.
-    const nearDestsCache = new Map<string, [string, number][]>();
-    const nearDests = (u: { x: number; y: number }) => {
-      const key = `${u.x},${u.y}`;
-      let list = nearDestsCache.get(key);
-      if (!list) {
-        list = [...destPhotoPlan.pinAt].filter(([id]) => { const du = destPhotoPlan.pos.get(id)!; return Math.abs(du.x - u.x) < 0.01 && Math.abs(du.y - u.y) < 0.01; });
-        nearDestsCache.set(key, list);
-      }
-      return list;
-    };
-    const destBlockers = (u: { x: number; y: number }, z: number, scale: number): Box[] => {
-      const out: Box[] = [];
-      for (const [id, i] of nearDests(u)) {
-        if (i >= 0 && dLadder[i] > z + ZOOM_EPSILON) continue;
-        const level = DEST_ZOOM_LEVEL_BY_ID[id];
-        if (level !== undefined && z >= level - ZOOM_EPSILON && planDest?.id !== id) continue;   // its spots have taken over
-        const du = destPhotoPlan.pos.get(id)!;
-        if (Math.abs(du.x - u.x) * scale > 300 || Math.abs(du.y - u.y) * scale > 300) continue;
-        const R = destPhotoPlan.R;
-        out.push(at(du, scale, { l: -R, r: R, t: -R, b: R }));
-        const ni = destPhotoPlan.nameAt.get(id);
-        if (ni !== undefined && (ni < 0 || dLadder[ni] <= z + ZOOM_EPSILON)) out.push(at(du, scale, destPhotoPlan.nameFoot.get(id)!));
-      }
-      return out;
-    };
-    const photoAt = new Map<string, number>(), nameAt = new Map<string, { z: number; side: 'right' | 'left' }>();
-    // Steps: every spot's own photo zoom, plus a half-level grid for retries.
-    const firstZ = new Map<string, number>();
-    for (const sp of ordered) {
-      if (sp.id === selectedSpot?.id) continue;
-      firstZ.set(sp.id, must.has(sp.id) ? -Infinity : (SPOT_PHOTO_ZOOM_BY_ID[sp.id] ?? Infinity));
-    }
-    const steps = [...new Set([...firstZ.values()].filter(z => Number.isFinite(z)))];
-    for (let z = 4; z <= 19; z += 0.5) steps.push(z);
-    steps.sort((a, b) => a - b);
-    const waiting: Spot[] = [];       // eligible, not yet placed
-    const named: Spot[] = [];         // placed pins still waiting for a name
-    let next = 0;
-    const byFirst = ordered.filter(sp => firstZ.has(sp.id)).sort((a, b) => firstZ.get(a.id)! - firstZ.get(b.id)!);
-    for (const sp of byFirst) if (firstZ.get(sp.id) === -Infinity) { photoAt.set(sp.id, -Infinity); put({ u: pos.get(sp.id)!, box: sc => at(pos.get(sp.id)!, sc, pinFoot) }); named.push(sp); next++; }
-    const gridZ = new Set<number>();
-    for (let z = 4; z <= 19; z += 0.5) gridZ.add(z);
-    const tryPin = (sp: Spot, z: number, scale: number) => {
-      const u = pos.get(sp.id)!, box = at(u, scale, pinFoot);
-      if (near(u, scale, 200).some(it => hit(it.box(scale), box)) || destBlockers(u, z, scale).some(b => hit(b, box))) return false;
-      photoAt.set(sp.id, z);
-      put({ u, box: sc => at(u, sc, pinFoot) });
-      return true;
-    };
-    const tryName = (sp: Spot, z: number, scale: number) => {
-      const u = pos.get(sp.id)!;
-      for (const side of ['right', 'left'] as const) {
-        const f = nameFootFor(sp, side), box = at(u, scale, f);
-        if (!must.has(sp.id) && (near(u, scale, 260).some(it => hit(it.box(scale), box)) || destBlockers(u, z, scale).some(b => hit(b, box)))) continue;
-        nameAt.set(sp.id, { z: Math.max(z, photoAt.get(sp.id)!), side });
-        put({ u, box: sc => at(u, sc, f) });
-        return true;
-      }
-      return false;
-    };
-    for (const z of steps) {
-      const scale = 512 * Math.pow(2, z);
-      // Newcomers at this zoom are tried at once; spots still waiting for room (pins or names) are retried on the grid.
-      const fresh: Spot[] = [];
-      while (next < byFirst.length && firstZ.get(byFirst[next].id)! <= z + 1e-9) fresh.push(byFirst[next++]);
-      const retry = gridZ.has(z);
-      const pins = retry ? [...waiting, ...fresh] : fresh;
-      if (retry) waiting.length = 0;
-      pins.sort((a, b) => sortOf.get(a.id)! - sortOf.get(b.id)!);
-      const placedNow: Spot[] = [];
-      for (const sp of pins) { if (tryPin(sp, z, scale)) placedNow.push(sp); else waiting.push(sp); }
-      const names = retry ? [...named, ...placedNow] : placedNow;
-      if (retry) named.length = 0;
-      names.sort((a, b) => sortOf.get(a.id)! - sortOf.get(b.id)!);
-      for (const sp of names) if (!tryName(sp, z, scale)) named.push(sp);
-    }
-    if (__DEV__) console.log(`[pins] spot plan: ${photoAt.size} photo pins, ${nameAt.size} names, ${Date.now() - t0} ms`);
-    return { photoAt, nameAt, sortOf };
-  }, [nearCtx, selectedSpot, visitIndex, destPhotoPlan, planDest]);
+  // Spot photo pins and names: planSpotPhotos (module level), against the destination plan with nothing selected, so a
+  // selection never re-plans them. It runs once after the first render, off the selection path (and again only when
+  // visits change); until then every spot shows its small pin.
+  const [spotPhotoPlan, setSpotPhotoPlan] = useState<ReturnType<typeof planSpotPhotos> | null>(null);
+  useEffect(() => {
+    const t = setTimeout(() => setSpotPhotoPlan(planSpotPhotos(baseDestPhotoPlan, id => visitIndex.isSpotVisited(id))), 0);
+    return () => clearTimeout(t);
+  }, [baseDestPhotoPlan, visitIndex]);
+
 
   const spotPhotoSpecsRef = useRef<Map<string, SpotPhotoImageSpec>>(new Map());
   const spotPhotoSpecListRef = useRef<SpotPhotoImageSpec[]>([]);
@@ -2763,8 +2741,8 @@ const destItems = useMemo((): DestItem[] =>
   const nativeSpotPins = useMemo(() => {
     const must = new Set<string>();
     if (nearCtx) for (const sp of nearCtx.spots.slice(0, NEAR_PINNED_SPOTS + 1)) must.add(sp.id);
-    // Draw and data order: spotPhotoPlan's priority.
-    const rank = (sp: Spot) => spotPhotoPlan.sortOf.get(sp.id) ?? 0;
+    // Draw and data order: spotPhotoPlan's priority (a near carousel's spots first).
+    const rank = (sp: Spot) => (must.has(sp.id) ? -1_000_000 : 0) + (spotPhotoPlan?.sortOf.get(sp.id) ?? 0);
     const specs = spotPhotoSpecsRef.current;
     const sorted = visibleSpots.filter(sp => sp.id !== selectedSpot?.id).sort((x, y) => rank(x) - rank(y));
     let added = false, fresh = 0;
@@ -2774,8 +2752,9 @@ const destItems = useMemo((): DestItem[] =>
     // destination photo pins (with their names) on screen. Every other revealed spot gets its small pin, which is always
     // drawn (as before), so no small pin is lost under a neighbour's photo or name in a dense destination like Sydney.
     // Which spots show their photo, and their name, at this zoom: spotPhotoPlan's zooms (never the viewport).
+    // A near carousel's pinned spots always show their photo.
     const photoPlan = new Set<string>();
-    for (const sp of sorted) if ((spotPhotoPlan.photoAt.get(sp.id) ?? Infinity) <= handoffZoom + ZOOM_EPSILON) photoPlan.add(sp.id);
+    for (const sp of sorted) if (must.has(sp.id) || (spotPhotoPlan?.photoAt.get(sp.id) ?? Infinity) <= handoffZoom + ZOOM_EPSILON) photoPlan.add(sp.id);
     for (const sp of sorted) {
       const visited = visitIndex.isSpotVisited(sp.id);
       const img = spotPhotoImageName(sp.id, visited);
@@ -2793,8 +2772,8 @@ const destItems = useMemo((): DestItem[] =>
           id: sp.id,
           mini: visited ? SPOT_MINI_PIN_VISITED : SPOT_MINI_PIN_UNVISITED,
           img: specs.has(img) && !early && photoPlan.has(sp.id) ? img : '',
-          label: photoPlan.has(sp.id) && (spotPhotoPlan.nameAt.get(sp.id)?.z ?? Infinity) <= handoffZoom + ZOOM_EPSILON ? spotLabelLines(sp.name).join('\n') : '',
-          side: spotPhotoPlan.nameAt.get(sp.id)?.side ?? 'right',
+          label: photoPlan.has(sp.id) && (spotPhotoPlan?.nameAt.get(sp.id)?.z ?? Infinity) <= handoffZoom + ZOOM_EPSILON ? spotLabelLines(sp.name).join('\n') : '',
+          side: spotPhotoPlan?.nameAt.get(sp.id)?.side ?? 'right',
           sort: rank(sp),
         },
       });
