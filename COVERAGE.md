@@ -124,14 +124,15 @@ Prominence tier; it decides what shows when space is limited (pin plans, Near Yo
 
 A country with 20+ destinations should have only a handful at rank 1. A guidebook's "top experiences" map to ranks 1–2.
 
-## Pin priority on the map: popularity
+## Pin priority on the map: curated order
 
-Where pins compete for room, the map gives the photo pin (and its name) to the more popular place. Which pins show is planned once for the whole world, by zoom only (`planDestPhotos` and `planSpotPhotos` in `src/screens/MapScreen.tsx`): a pin that shows zoomed out keeps showing zooming in, and panning never changes it. Popularity decides who wins a contested place in that plan:
+Where pins compete for room, the map gives the photo pin (and its name) to the place that comes first in the curated order. Which pins show is planned once for the whole world, by zoom only (`planDestPhotos` and `planSpotPhotos` in `src/screens/MapScreen.tsx`): a pin that shows zoomed out keeps showing zooming in, and panning never changes it. The order uses only data written while curating, so it needs no fetching:
 
-- **Destinations:** by `rank` first (the gates above decide from which zoom each rank may show), then, within a rank, by popularity: the year's English Wikipedia page views of the destination's own spots, added up. Destinations have no views of their own because many names are ambiguous on Wikipedia ("Blue Mountains", "Hay").
-- **Spots:** spots the user has visited first, then by the year's English Wikipedia page views of the spot's own article, then by the spot's place in its destination's list (importance order), which also decides between spots with no views.
+- **Countries** (their pills): `POPULARITY` in `src/utils/countryBounds.ts`, the tourism-prominence order. Add a new country to it (see the checklist below).
+- **Destinations:** by `rank` first (the gates above also decide from which zoom each rank may show), then by their place in `src/data/destinations.ts`.
+- **Spots:** spots the user has visited first, then the parent destination's `rank` (a standalone spot counts as a rank-5 destination's), then the spot's place in its destination's list, which is its importance order (a standalone spot ranks as a third spot).
 
-The views live in `src/data/spotPopularity.json`, built by `npx tsx scripts/curation/spot-popularity.ts` (it fetches only spots missing from the file). **Run it whenever spots are added**, or new spots rank as having no views. A spot's views come from its photo title (its `wiki`, else its `name`; see `WRITING.md`), so that title must be the place's own article: a title that redirects to a broader article, a disambiguation page or a missing article counts as 0. A generic title can lend a spot the views of an unrelated article. The Sydney spot "Opera House" has no `wiki`, so it takes the views of Wikipedia's general article on opera houses, not "Sydney Opera House", and ranks well below its real popularity.
+So the order of a destination's spots in `src/data/spots.ts` is not only for the sheet: it decides which of them get their photo pins first on the map. Keep it in importance order (see "Coverage — how many" above), the headline attraction first.
 
 ## Standalone spots in the app
 

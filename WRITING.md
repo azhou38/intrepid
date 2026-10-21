@@ -73,5 +73,5 @@ Every new destination needs a hand-picked header and three "Why visit" photos, r
 - `python3 scripts/curation/bio-fit.py` passes: no spot bio runs past the carousel card's three lines.
 - Costs have a `currency`, free spots say `free: true`, and every spot with one official site has a verified `ticketUrl` (see "Writing a spot"); no `ticketUrl` points anywhere you have not confirmed. Search the new spots for a paid attraction with no link before finishing.
 - `npx tsx scripts/curation/lint-entries.ts --region <id> --offline` shows no `no-ticket` line for any spot you added or touched: none charges without a link, and none is left with no cost and not free.
-- `npx tsx scripts/curation/spot-popularity.ts` has fetched page views for the new spots (`src/data/spotPopularity.json`), which the map uses to decide which pins get their photo first (see `COVERAGE.md` → "Pin priority on the map").
+- A destination's spots are in importance order, the headline attraction first: the map gives photo pins in that order where pins compete (see `COVERAGE.md` → "Pin priority on the map").
 - Say plainly in your summary what you could not verify (hours, prices, links) — these are approximate until someone checks them.

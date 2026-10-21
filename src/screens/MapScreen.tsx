@@ -105,7 +105,6 @@ import type { Destination, CountryCluster } from '../types';
 import type GeoJSON from 'geojson';
 import { getCountryRegion, getCountryBounds, getCountryCenter, getCountryPopularity } from '../utils/countryBounds';
 import { DESTINATIONS } from '../data/destinations';
-import spotPopularity from '../data/spotPopularity.json';
 import spotDistricts from '../data/spotDistricts.json';
 import { SPOTS, STANDALONE_SPOT_SPAN_KM, spotPhotoTitle, spotCountry, spotCountryCode, spotDestination, type Spot } from '../data/spots';
 import DestinationSheet from '../components/Map/DestinationSheet';
@@ -970,14 +969,8 @@ const DEST_SYMBOL_STYLE: any = {
   textPadding: 1,
 };
 
-// How popular a destination is: the year's English Wikipedia page views of its spots, added up (src/data/spotPopularity.json).
-// Destinations have no views of their own (many names are ambiguous on Wikipedia), and a place travellers flock to has
-// well-read spots. Orders the photo plan within a rank (destPhotoPlan), so the better-known pin wins a contested spot.
-const DEST_POPULARITY: Map<string, number> = (() => {
-  const views = spotPopularity as Record<string, number>, out = new Map<string, number>();
-  for (const sp of SPOTS) if (sp.destinationId) out.set(sp.destinationId, (out.get(sp.destinationId) ?? 0) + (views[sp.id] ?? 0));
-  return out;
-})();
+// Curated order: a destination's place in src/data/destinations.ts, which breaks ties within a rank (destPhotoPlan).
+const DEST_ORDER = new Map(DESTINATIONS.map((d, i) => [d.id, i]));
 // The photo plan's zoom ladder (destPhotoPlan): pins and names are placed, and switch on, at these zooms. It holds every
 // rank and country gate exactly, so a pin with room shows exactly where it used to, plus a half-level grid for pins and
 // names that wait for room. Built on first use (the country gates need helpers defined further down).
@@ -1305,9 +1298,9 @@ function planDestPhotos(planCountry: { countryCode: string } | null, planDest: D
   const priority = new Map<string, number>();
   const rankScore = (d: Destination) =>
     (planDest?.id === d.id ? -1_000_000 : 0) + (planCountry && d.countryCode === planCountry.countryCode ? -1_000 : 0) + d.rank;
-  // Within a rank, the more popular destination first (DEST_POPULARITY), then a fixed tiebreak.
+  // Curated order: by rank, then by place in the destinations data (DEST_ORDER).
   const ordered = [...DESTINATIONS].sort((a, b) => rankScore(a) - rankScore(b)
-    || (DEST_POPULARITY.get(b.id) ?? 0) - (DEST_POPULARITY.get(a.id) ?? 0) || (a.id < b.id ? -1 : 1));
+    || (DEST_ORDER.get(a.id) ?? 0) - (DEST_ORDER.get(b.id) ?? 0));
   ordered.forEach((d, i) => priority.set(d.id, i));
   // Unit Web-Mercator positions (0..1 across the world); at zoom z a point is at u * 512 * 2^z on screen.
   const unit = (lng: number, lat: number) => {
@@ -1384,14 +1377,17 @@ function planDestPhotos(planCountry: { countryCode: string } | null, planDest: D
 // room, clear of the spot pins and names already placed and of the destination pins and names showing at that zoom (a
 // destination's stop once its spots take over). Placed pins and names are never displaced, and zooming in only spreads
 // them apart, so a photo pin or name that shows zoomed out persists zooming in; nothing depends on where the camera is,
-// so panning changes nothing. Priority: visited spots, then the most popular (a year's Wikipedia page views), then a
-// spot's place in its destination's list.
+// so panning changes nothing. Priority (curated): visited spots, then the parent destination's rank, then the spot's place
+// in its destination's list.
 const SPOT_PLAN_REACH_PT = 340;   // the widest two footprints can reach toward each other (pins plus names)
 function planSpotPhotos(destPlan: ReturnType<typeof planDestPhotos>, isSpotVisited: (id: string) => boolean) {
   const t0 = Date.now();
-  const views = spotPopularity as Record<string, number>;
+  // Curated order: visited first, then the parent destination's rank (a standalone spot counts as a rank-5 destination's),
+  // then the spot's place in its destination's list (importance order; a standalone spot ranks as a third spot).
+  const destRank = new Map(DESTINATIONS.map(d => [d.id, d.rank]));
+  const parentRank = (sp: Spot) => (sp.destinationId ? destRank.get(sp.destinationId) ?? 5 : 5);
   const ordered = [...SPOTS].sort((a, b) => (isSpotVisited(a.id) ? 0 : 1) - (isSpotVisited(b.id) ? 0 : 1)
-    || (views[b.id] ?? 0) - (views[a.id] ?? 0)
+    || parentRank(a) - parentRank(b)
     || (SPOT_IMPORTANCE.get(a.id) ?? 0) - (SPOT_IMPORTANCE.get(b.id) ?? 0) || (SPOT_ORDER.get(a.id) ?? 0) - (SPOT_ORDER.get(b.id) ?? 0));
   const n = ordered.length;
   const sortOf = new Map(ordered.map((sp, i) => [sp.id, i]));
