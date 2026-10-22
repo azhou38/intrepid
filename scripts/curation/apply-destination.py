@@ -6,7 +6,8 @@
 final.json: { destination: { id, name, country, countryCode, timezone, continent, coordinates, category, defaultZoomSpanKm,
               rank, icon, tagline, description, whyVisit[2-4 by popularity], highlights[one per reason], goodToKnow[2-3 {icon,title,detail}, by popularity], bestMonths,
               bestTimeBlurb, seasonalTags? }, spots, notes }
-picks.json:  { "header": "<Commons file>", "why": ["<file>", "<file>", "<file>"] }   (files agreed by both judges)
+picks.json:  { "header": "<Commons file>", "why": ["<file>", "<file>", "<file>"] }   (files agreed by both judges; with
+             --allow-missing-why a reason with no photo in any tier may be "" or null: it shows as a grey card)
 
 Writes the entry into src/data/destinations.ts after the last destination of the same country (or at the end), the header
 into WIKI_IMAGE_OVERRIDES keyed by the destination's name, and `whyVisitPhotos` from picks. A destination with no
@@ -24,11 +25,18 @@ picks = json.load(open(args[args.index('--picks') + 1])) if '--picks' in args el
 dry = '--dry-run' in args
 
 no_header = '--allow-no-header' in args   # no passing header exists in any tier: still add the destination, with NO_PHOTO (the owner is asked for one)
+# A strong reason with no honest photo in any tier keeps its wording and gets a grey card (an empty slot, "" in whyVisitPhotos)
+# rather than being reworded away from the destination's real draw; the owner is asked for a photo (IMAGES.md, "Photos still missing").
+missing_why = '--allow-missing-why' in args
 n_why = len(d.get('whyVisit', []))
 if not 2 <= n_why <= 4:
     sys.exit(f'refusing: whyVisit must have two to four reasons (4 for the most popular, 3 average, 2 less popular); have {n_why}')
-if (not picks.get('header') and not no_header) or len(picks.get('why', [])) != n_why or not all(picks['why']):
-    sys.exit(f"refusing: {d['id']} needs an accepted header and one why-visit photo per reason ({n_why}) (picks.json); have {picks}")
+picks['why'] = [w or '' for w in picks.get('why', [])]
+if (not picks.get('header') and not no_header) or len(picks['why']) != n_why or (not all(picks['why']) and not missing_why):
+    sys.exit(f"refusing: {d['id']} needs an accepted header and one why-visit photo per reason ({n_why}) (picks.json; pass --allow-missing-why to leave a grey card); have {picks}")
+for i, w in enumerate(picks['why'], 1):
+    if not w:
+        print(f'why-visit photo missing: dest:{d["id"]}:why{i} ("{d["whyVisit"][i - 1]}"): a grey card until the owner supplies one')
 if len(d.get('highlights', [])) != n_why:
     sys.exit(f'refusing: highlights must have one entry per reason ({n_why})')
 if not 2 <= len(d.get('goodToKnow', [])) <= 3 or any(len(t.get('detail', '')) > 160 for t in d.get('goodToKnow', [])):
