@@ -1,7 +1,7 @@
 import React, { memo, useRef, useState, useMemo, useCallback, useEffect, useLayoutEffect } from 'react';
 import { flagSource } from '../utils/flags';
 import { unstable_batchedUpdates, View, StyleSheet, Pressable, Text, Dimensions, Animated, Platform, TextInput, Image, Easing as RNEasing, Keyboard, ScrollView } from 'react-native';
-import Reanimated, { useSharedValue, useAnimatedStyle, useAnimatedReaction, runOnJS, withTiming, Easing } from 'react-native-reanimated';
+import Reanimated, { useSharedValue, useAnimatedStyle, useAnimatedReaction, runOnJS, withTiming, Easing, FadeIn, FadeOut, LinearTransition } from 'react-native-reanimated';
 import Svg, { Rect, Path, Circle } from 'react-native-svg';
 import { sheetPose } from '../components/Map/sheetPose';
 import MapboxGL from '@rnmapbox/maps';
@@ -1526,6 +1526,9 @@ function planSpotPhotos(destPlan: ReturnType<typeof planDestPhotos>, isSpotVisit
   return { photoAt, nameAt, sortOf };
 }
 
+// A Pressable that takes Reanimated layout transitions (the breadcrumb pills, see crumbLayout).
+const AnimatedPressable = Reanimated.createAnimatedComponent(Pressable);
+
 // The country pills' flags, drawn invisibly at the pills' exact size from MapScreen's first render (FlagWarmup), two seconds
 // before the map is ready and the pills mount. React Native's iOS image loader runs four network loads at a time, first come
 // first served: the pills' flags used to wait behind every destination photo queued at start-up and showed seconds late. A
@@ -2028,22 +2031,14 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   const destReturnPromptVisibleRef = useRef(false);
   const worldPillScale  = useMemo(() => worldPillAnim.interpolate({ inputRange: [0, 1], outputRange: [0.88, 1] }), []);
   const breadcrumbScale = useMemo(() => breadcrumbAnim.interpolate({ inputRange: [0, 1], outputRange: [0.88, 1] }), []);
-  const returnPromptStyle = useAnimatedStyle(() => ({
-    overflow: 'hidden',
-    alignItems: 'center',
-    justifyContent: 'center',
-    opacity: returnPromptProgress.value,
-    width: returnPromptProgress.value * 20,
-    marginRight: returnPromptProgress.value * 6,
-  }));
-  const destReturnPromptStyle = useAnimatedStyle(() => ({
-    overflow: 'hidden',
-    alignItems: 'center',
-    justifyContent: 'center',
-    opacity: destReturnPromptProgress.value,
-    width: destReturnPromptProgress.value * 20,
-    marginRight: destReturnPromptProgress.value * 6,
-  }));
+  // The breadcrumbs' return arrows. They used to grow in by animating their width (0→20 pt) every frame: a layout pass per
+  // frame, committed alongside React's own updates, and those are heaviest while a big destination's many pins re-render
+  // during a pan, so the arrow and the re-centring pill stuttered. The arrow is now mounted while its prompt shows and
+  // fades in and out (entering/exiting), and the pill and its contents glide to their new size and place with a layout
+  // transition: one layout, then an animation of the native frames on the UI thread.
+  const crumbLayout = useMemo(() => LinearTransition.duration(250).easing(Easing.out(Easing.cubic)), []);
+  const crumbArrowIn = useMemo(() => FadeIn.duration(250).easing(Easing.out(Easing.cubic)), []);
+  const crumbArrowOut = useMemo(() => FadeOut.duration(150), []);
 
   // Gate for the TOP breadcrumb ("Australia | Sydney"): visible only once the user has panned
   // or zoomed away from the selected country/destination, OR the sheet has dropped to its
@@ -5674,7 +5669,7 @@ const destItems = useMemo((): DestItem[] =>
         >
           {crumb ? (
             /* Destination view: single white pill (fixed height) so black segment overflows below */
-            <View style={styles.breadcrumbPillWhite} onLayout={e => { crumbWidthSV.value = e.nativeEvent.layout.width; }}>
+            <Reanimated.View layout={crumbLayout} style={styles.breadcrumbPillWhite} onLayout={e => { crumbWidthSV.value = e.nativeEvent.layout.width; }}>
               <Pressable style={styles.breadcrumbSegmentInactive} onPress={handleZoomToCountry} hitSlop={6}>
                 <View style={styles.bcFlagCircle}>
                   <View style={styles.bcFlagClip}>
@@ -5687,27 +5682,32 @@ const destItems = useMemo((): DestItem[] =>
                 </View>
                 <Text style={styles.breadcrumbTxtDark}>{crumb.country}</Text>
               </Pressable>
-              <Pressable style={styles.breadcrumbSegmentActive} onPress={handleResetToDest} hitSlop={6}>
-                <Reanimated.View style={destReturnPromptStyle}>
-                  <CornerUpLeft size={14} color="rgba(255,255,255,0.9)" strokeWidth={2.5} />
-                </Reanimated.View>
-                <View style={styles.breadcrumbPillRow}>
+              <AnimatedPressable layout={crumbLayout} style={styles.breadcrumbSegmentActive} onPress={handleResetToDest} hitSlop={6}>
+                {showDestReturnPrompt && (
+                  <Reanimated.View entering={crumbArrowIn} exiting={crumbArrowOut} style={styles.crumbArrow}>
+                    <CornerUpLeft size={14} color="rgba(255,255,255,0.9)" strokeWidth={2.5} />
+                  </Reanimated.View>
+                )}
+                <Reanimated.View layout={crumbLayout} style={styles.breadcrumbPillRow}>
                   <Text style={styles.breadcrumbTxtLight} numberOfLines={1} ellipsizeMode="tail">{crumb.name}</Text>
-                </View>
-              </Pressable>
-            </View>
+                </Reanimated.View>
+              </AnimatedPressable>
+            </Reanimated.View>
           ) : (
             /* Country view: black pill — arrow slides in when user pans/zooms away */
-            <Pressable
+            <AnimatedPressable
+              layout={crumbLayout}
               style={styles.breadcrumbPillBlack}
               onLayout={e => { crumbWidthSV.value = e.nativeEvent.layout.width; }}
               onPress={handleResetToCountry}
               hitSlop={6}
             >
-              <Reanimated.View style={returnPromptStyle}>
-                <CornerUpLeft size={14} color="rgba(255,255,255,0.9)" strokeWidth={2.5} />
-              </Reanimated.View>
-              <View style={styles.breadcrumbPillRow}>
+              {showReturnPrompt && (
+                <Reanimated.View entering={crumbArrowIn} exiting={crumbArrowOut} style={styles.crumbArrow}>
+                  <CornerUpLeft size={14} color="rgba(255,255,255,0.9)" strokeWidth={2.5} />
+                </Reanimated.View>
+              )}
+              <Reanimated.View layout={crumbLayout} style={styles.breadcrumbPillRow}>
                 <View style={styles.bcFlagCircle}>
                   <View style={styles.bcFlagClip}>
                     <Image
@@ -5718,8 +5718,8 @@ const destItems = useMemo((): DestItem[] =>
                   </View>
                 </View>
                 <Text style={styles.breadcrumbTxtLight}>{selectedCountry!.country}</Text>
-              </View>
-            </Pressable>
+              </Reanimated.View>
+            </AnimatedPressable>
           )}
         </Animated.View>
         </Reanimated.View>
@@ -6186,6 +6186,8 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 3 }, elevation: 6,
   },
   breadcrumbPillRow: { flexDirection: 'row', alignItems: 'center', gap: 6, flexShrink: 1, minWidth: 0 },
+  // A breadcrumb's return arrow: its 20 pt slot and 6 pt gap before the name.
+  crumbArrow: { width: 20, marginRight: 6, alignItems: 'center', justifyContent: 'center' },
 
   breadcrumbDestRow: {
     flexDirection: 'row', alignItems: 'flex-start', gap: 6,
