@@ -586,6 +586,7 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "File:ext-denmark-ocean-beach.jpg": { x: 0.69, y: 0.62, zoom: 1.6 },
   "Merredin": { x: 0.5, y: 0.62, zoom: 1.5 },
   "File:ext-merredin-peak-over-town.jpg": { x: 0.5, y: 0.62, zoom: 1.5 },
+  "Albany": { x: 0.45, y: 0.5, zoom: 1.5 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -1939,6 +1940,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Denmark": "Denmarkwa-rivermouth.JPG",
   "Nullarbor Plain": "Nullabor Plains Australia - panoramio.jpg",
   "Merredin": "ext-merredin-peak-over-town.jpg",
+  "Albany": "Consul General Gainer visits Albany, WA August 2020 (50303439758).jpg",
 };
 
 /**

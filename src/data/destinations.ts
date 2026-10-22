@@ -1892,6 +1892,23 @@ export const DESTINATIONS: Destination[] = [
     bestMonths: [9, 10, 11],
     bestTimeBlurb: "Spring, {months}, brings wildflowers to the bush reserves around Merredin and mild days for walking.",
   },
+  {
+    id: 'albany', name: "Albany", country: "Australia", countryCode: 'AU', timezone: 'Australia/Perth', defaultZoomSpanKm: 40,
+    continent: 'Oceania', coordinates: { latitude: -35.024782, longitude: 117.883608 },
+    category: 'city', icon: "⚓", rank: 3,
+    tagline: "A harbour city of Anzac history, a whaling station and sheltered white beaches.",
+    description: "Albany sits on Princess Royal Harbour and King George Sound, and was founded in 1826, three years before Perth, as Western Australia's first European settlement. The first WWI convoys gathered in the sound under the guns of the Princess Royal Fortress, now home to the National Anzac Centre. Across the harbour, the Cheynes Beach whaling station worked until 1978 and is now a museum. Beaches run from Middleton Beach and Emu Point in town to Little Beach in Two Peoples Bay.",
+    whyVisit: ["Follow an Anzac soldier through the war", "Walk the decks of a whaling station", "Swim at Little Beach in Two Peoples Bay"],
+    whyVisitPhotos: ["National Anzac Centre, Albany, April 2022 05.jpg", "Flensing deck, AHWS, 2018 (03).jpg", "Little Beach at Two Peoples Bay Nature Reserve WA.jpg"],
+    highlights: ["Anzac history", "Whaling station", "White-sand beaches"],
+    goodToKnow: [
+      { icon: "🚗", title: "Bring a car", detail: "The fortress, whaling station and beaches are spread around the harbour and coast; town buses don't reach them, so drive or join a tour." },
+      { icon: "🎟️", title: "Park fees outside town", detail: "Two Peoples Bay and West Cape Howe charge the WA park fee of $17 per vehicle; Gull Rock is free. A park pass covers repeat visits." },
+      { icon: "🌊", title: "Most beaches unpatrolled", detail: "Only Middleton Beach has a shark net and summer-holiday patrols. Little Beach and Shelley Beach have strong rips, so swim with care." },
+    ],
+    bestMonths: [11, 12, 1, 2, 3],
+    bestTimeBlurb: "Beach weather runs {months}; from June to October whales shelter close to shore in King George Sound.",
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {
