@@ -2131,19 +2131,26 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     return zoomedOut || destPannedAway(region.latitude, region.longitude, region.latitudeDelta, region.longitudeDelta, destHomeRegion, selectedSpot);
   }, [selectedDest, destHomeRegion, region, camZoom, selectedSpot]);
 
+  // The return arrows open and close only while the map is still: during a pan the region state updates every camera
+  // frame, so the whole screen re-renders and the pins remount, and the main thread is too busy for the arrow's
+  // animation to run smoothly (it stuttered, worst for a big destination's many pins). A change seen mid-gesture waits
+  // for the map idle (mapIdleTick) and then plays. Camera moves the app makes itself are not gestures and apply at once.
+  const [mapIdleTick, setMapIdleTick] = useState(0);
   useEffect(() => {
     // Fallback for state-driven transitions (e.g. selectedCountry changes while map is static).
     // The ref guard prevents restarting an animation already triggered by handleCameraChanged.
     if (showReturnPrompt === returnPromptVisibleRef.current) return;
+    if (isMapInteracting()) return;
     returnPromptVisibleRef.current = showReturnPrompt;
     returnPromptProgress.value = withTiming(showReturnPrompt ? 1 : 0, showReturnPrompt ? { duration: CRUMB_ARROW_MS, easing: Easing.out(Easing.cubic) } : { duration: 200 });
-  }, [showReturnPrompt, returnPromptProgress]);
+  }, [showReturnPrompt, returnPromptProgress, mapIdleTick]);
 
   useEffect(() => {
     if (showDestReturnPrompt === destReturnPromptVisibleRef.current) return;
+    if (isMapInteracting()) return;
     destReturnPromptVisibleRef.current = showDestReturnPrompt;
     destReturnPromptProgress.value = withTiming(showDestReturnPrompt ? 1 : 0, showDestReturnPrompt ? { duration: CRUMB_ARROW_MS, easing: Easing.out(Easing.cubic) } : { duration: 200 });
-  }, [showDestReturnPrompt, destReturnPromptProgress]);
+  }, [showDestReturnPrompt, destReturnPromptProgress, mapIdleTick]);
 
   // Center the world view on the user's longitude at first load (fallback: Europe).
   useEffect(() => {
@@ -4683,6 +4690,7 @@ const destItems = useMemo((): DestItem[] =>
     releaseSheetsAfterCamera();
     releaseHeldSelection();   // a close's zoom-out has settled: let the pin/pill planning drop the old selection
     releaseSpotCloseTarget();
+    setMapIdleTick(t => t + 1);   // a return arrow held back during the gesture can now open (see mapIdleTick)
     const { center, bounds } = state.properties;
     const newRegion: Region = {
       latitude:      center[1],
