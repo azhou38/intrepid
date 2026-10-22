@@ -47,6 +47,13 @@ const DestPinImage = memo(function DestPinImage({ spec }: { spec: DestPinImageSp
   // second one a little later in case the first ran just before it did.
   const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
   useEffect(() => () => timers.current.forEach(clearTimeout), []);
+  // A photo the server refused (a burst of thumbnail requests at start-up can be throttled) is never retried by the image
+  // itself, so the pin would stay a grey disc until the app restarts: try again a few times, a little later each time.
+  const [tries, setTries] = useState(0);
+  const retry = () => {
+    if (tries >= 4) return;
+    timers.current.push(setTimeout(() => setTries(t => t + 1), 1500 * (tries + 1)));
+  };
   const snap = () => {
     timers.current.push(setTimeout(() => imageRef.current?.refresh(), 60));
     timers.current.push(setTimeout(() => imageRef.current?.refresh(), 500));
@@ -58,7 +65,7 @@ const DestPinImage = memo(function DestPinImage({ spec }: { spec: DestPinImageSp
       <View collapsable={false} style={st.box}>
         <View collapsable={false} style={[st.disc, { borderColor: ring }, selected && st.discSelected]}>
           {!url && NO_PHOTO.has(dest.name) && <PhotoPlaceholder icon={dest.icon} category={dest.category} size={DEST_PIN_SIZE - BORDER * 2} />}
-          {url && <PinPhoto instant subject={photoSubject(dest.name)} source={{ uri: url }} style={st.photo} onLoad={snap} resizeMode="cover" />}
+          {url && <PinPhoto key={tries} instant subject={photoSubject(dest.name)} source={{ uri: url }} style={st.photo} onLoad={snap} onError={retry} resizeMode="cover" />}
         </View>
         {badge > 0 && (
           <View collapsable={false} style={st.badge}>

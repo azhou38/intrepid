@@ -184,7 +184,14 @@ export function prewarmDestinationPins(dests: { id: string; name: string; rank: 
     for (let d = queue.shift(); d; d = queue.shift()) {
       try {
         const url = await fetchWikiThumbnail(d.name, 120);
-        if (url) { thumbCache.set(d.id, url); await Image.prefetch(url); }
+        if (url) {
+          thumbCache.set(d.id, url);
+          // A refused download (throttled at start-up) is retried a few times, so the pin is not drawn grey for good.
+          for (let attempt = 0; attempt < 4; attempt++) {
+            if (await Image.prefetch(url).catch(() => false)) break;
+            await new Promise(r => setTimeout(r, 1500 * (attempt + 1)));
+          }
+        }
       } catch { /* a failed warm-up just leaves the pin to load its own photo, as before */ }
     }
   };
