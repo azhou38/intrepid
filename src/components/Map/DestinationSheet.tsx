@@ -1511,13 +1511,17 @@ function DestinationSheet({
             and then the content over it while the photo itself stays put, dimming as it is covered. Same animated
             height as the hero placeholder in the ScrollView, so every snap state crops it exactly as before. */}
         <Reanimated.View pointerEvents="none" style={[st.heroBackdrop, heroAnimStyle]}>
-              <EntityPhoto
-                cacheKey={destination.id}
-                cache={photoCache}
-                load={() => getOrFetchWikiThumbnail(destination.id, photoCache, destination.name, HEADER_PX)}
-                subject={photoSubject(destination.name)}
-                fallback={<PhotoPlaceholder icon={destination.icon} category={destination.category} />}
-              />
+              {/* The photo keeps its full-screen size and top edge at every snap and during a drag; the backdrop's shrinking
+                  height only clips its bottom, so the picture is never re-cropped or rescaled as the sheet moves. */}
+              <View pointerEvents="none" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: fullHeroH }}>
+                <EntityPhoto
+                  cacheKey={destination.id}
+                  cache={photoCache}
+                  load={() => getOrFetchWikiThumbnail(destination.id, photoCache, destination.name, HEADER_PX)}
+                  subject={photoSubject(destination.name)}
+                  fallback={<PhotoPlaceholder icon={destination.icon} category={destination.category} />}
+                />
+              </View>
 
               {/* Ambient scrim so text is always legible */}
               <View pointerEvents="none" style={[st.heroTopFade, { height: insets.top + 80 }]}>
