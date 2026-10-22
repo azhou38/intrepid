@@ -2198,6 +2198,22 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Come in {months}, when wildflowers bloom and the gorge is cool enough to hike.",
     seasonalTags: [{ tag: 'wildlife-migration', months: [6, 7, 8, 9, 10, 11], strength: 0.3 }],
   },
+  {
+    id: 'geraldton', name: "Geraldton", country: "Australia", countryCode: 'AU', timezone: 'Australia/Perth', defaultZoomSpanKm: 35,
+    continent: 'Oceania', coordinates: { latitude: -28.7750979, longitude: 114.6099114 },
+    category: 'city', icon: "🌬️", rank: 4,
+    tagline: "A windy Mid West port city with Dutch shipwreck relics and windsurfing beaches.",
+    description: "Geraldton is the main city of Western Australia's Mid West, a port 424 km north of Perth with an urban population of about 38,600. Dutch East India Company ships were wrecked on the Houtman Abrolhos, 60 km offshore, and their story runs through the city. When the wind and swell are up, its northern beaches are a base for windsurfing and kitesurfing. The 19th-century farming settlement of Greenough lies 24 km south on the Brand Highway.",
+    whyVisit: ["See Dutch shipwreck relics at the museum", "Visit the HMAS Sydney memorial", "Tour Monsignor Hawes' cathedral"],
+    whyVisitPhotos: ["Batavia treasure.jpg", "HMAS Sydney II Memorial, Geraldton, October 2023 05.jpg", "Geraldton Cathedral.jpg"],
+    highlights: ["Shipwreck relics", "HMAS Sydney memorial", "Hawes cathedral"],
+    goodToKnow: [
+      { icon: "🕒", title: "Short opening hours", detail: "The museum closes at 3pm daily, and the art gallery and visitor centre close at 1:30pm on weekends." },
+      { icon: "⛪", title: "Cathedral tour times", detail: "Tours leave the Hawes Heritage Centre next to the cathedral at 2:30pm on Sunday, Monday and Wednesday and 4pm on Friday; tickets are $5." },
+    ],
+    bestMonths: [3, 4, 9, 10, 11],
+    bestTimeBlurb: "{months} bring warm, mostly dry days; winter is the wet season.",
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {

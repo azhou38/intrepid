@@ -602,6 +602,7 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "Broome": { x: 0.5, y: 0.42, zoom: 1.3 },
   "File:Cable Beach Sunset Camel Ride.JPG": { x: 0.5, y: 0.55 },
   "File:Broome - Gantheaume Point 09.jpg": { x: 0.5, y: 0.6 },
+  "Geraldton": { x: 0.6, y: 0.4, zoom: 1.5 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -1972,6 +1973,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Bunbury": "View of Bunbury from Marlston Hill Lookout, January 2021 02.jpg",
   "Broome": "Broome Coast, Western Australia.jpg",
   "Kalbarri National Park": "Nature's Window, Kalbarri National Park, Western Australia.jpg",
+  "Geraldton": "Geraldton Foreshore October 2023 08.jpg",
 };
 
 /**
