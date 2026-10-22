@@ -1,5 +1,5 @@
 import React, { memo, useRef, useState, useMemo, useCallback, useEffect, useLayoutEffect } from 'react';
-import { flagSource } from '../utils/flags';
+import { flagSource, preloadFlags } from '../utils/flags';
 import { unstable_batchedUpdates, View, StyleSheet, Pressable, Text, Dimensions, Animated, Platform, TextInput, Image, Easing as RNEasing, Keyboard, ScrollView } from 'react-native';
 import Reanimated, { useSharedValue, useAnimatedStyle, useAnimatedReaction, runOnJS, withTiming, Easing } from 'react-native-reanimated';
 import Svg, { Rect, Path, Circle } from 'react-native-svg';
@@ -1526,7 +1526,12 @@ function planSpotPhotos(destPlan: ReturnType<typeof planDestPhotos>, isSpotVisit
   return { photoAt, nameAt, sortOf };
 }
 
+// The country pills' flags, started when the module loads (see preloadFlags); the start-up photo prewarm waits for it.
+let flagsPreloaded: Promise<void> | null = null;
+const preloadPillFlags = () => (flagsPreloaded ??= preloadFlags(COUNTRY_GROUPS.map(g => g.countryCode)));
+
 export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = {}) {
+  preloadPillFlags();
   const insets = useSafeAreaInsets();
   const cameraRef = useRef<MapboxGL.Camera>(null);
   // The MapView's real rendered height (shorter than the device height — App.tsx's bottom tab
@@ -5113,7 +5118,8 @@ const destItems = useMemo((): DestItem[] =>
         onDidFinishLoadingMap={() => {
           setMapReady(true);
           // Pin photos for every destination, so a pin's photo is already there when it first appears instead of popping in.
-          prewarmDestinationPins(DESTINATIONS);
+          // After the pills' flags: the image loader runs four loads at a time, and the flags must not queue behind these.
+          void preloadPillFlags().then(() => prewarmDestinationPins(DESTINATIONS));
           // onDidFinishLoadingMap fires once the STYLE has loaded, but the globe's own
           // atmosphere/lighting shader keeps visibly settling for a bit after that — the
           // "shines white, then flashes" effect this delay is masking. There's no public event

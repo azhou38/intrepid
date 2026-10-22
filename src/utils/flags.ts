@@ -1,4 +1,4 @@
-import type { ImageSourcePropType } from 'react-native';
+import { Image, type ImageSourcePropType } from 'react-native';
 
 // Country flags ship with the app (assets/flags, flagcdn's 160 px PNGs) so the map's country pins and every other flag
 // show at once on a cold start instead of waiting on one network request each. A code with no bundled file (a country
@@ -213,4 +213,17 @@ const FLAGS: Record<string, ImageSourcePropType> = {
 export function flagSource(countryCode: string): ImageSourcePropType {
   const cc = countryCode.toLowerCase();
   return FLAGS[cc] ?? { uri: `https://flagcdn.com/w160/${cc}.png` };
+}
+
+// Loads these countries' flags into the native image cache ahead of the views that show them, and resolves once they are in
+// (or after maxMs). React Native's iOS image loader runs only four loads at a time, and everything but a release build's
+// bundled files waits in that queue (a dev build fetches bundled images from Metro over HTTP): the map's country pills used
+// to queue behind the start-up photo prewarm's slow Wikimedia downloads and stay flagless for seconds. MapScreen starts this
+// as it mounts, before the map is ready, and prewarms photos only after it resolves.
+export function preloadFlags(countryCodes: string[], maxMs = 3000): Promise<void> {
+  const uris = countryCodes
+    .map(cc => Image.resolveAssetSource(flagSource(cc))?.uri)
+    .filter((u): u is string => !!u && /^https?:/.test(u));
+  const all = Promise.all(uris.map(u => Image.prefetch(u).catch(() => false))).then(() => undefined);
+  return Promise.race([all, new Promise<void>(r => setTimeout(r, maxMs))]);
 }
