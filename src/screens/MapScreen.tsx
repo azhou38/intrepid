@@ -1246,6 +1246,7 @@ const SPOT_PHOTO_ZOOM_BY_ID = earlySpotZoomTable(SPOT_PHOTO_EARLY_SEPARATION_PX,
 // At most this many spots draw as full photo pins at once; the rest of the revealed spots collapse to a small
 // photo-less dot (SpotDots below) that lives exactly as long as the full pin would have — same reveal zoom, same
 // viewport — so the map never loses a spot, it only stops paying for a photo MarkerView on every one of them.
+const SHEET_HOLD_RELEASE_ZOOM = 0.6;   // see handleCameraChanged: how near its target a close's zoom-out releases the next sheet
 const SHEET_SLIDE_IN_MS = 340;   // the sheets' slide-in (40 ms start delay + 280 ms) plus a frame; see afterSheetSlideIn
 const PIN_IMAGE_HOLD_MS = 450;    // see pinImagesHoldUntilRef: no new pin images while a sheet slides in
 const PLAN_SPOT_DELAY_MS = 600;   // see destPhotoPlan: after the sheet's slide-in
@@ -4364,9 +4365,11 @@ const destItems = useMemo((): DestItem[] =>
   }) => {
     const { center, bounds } = state.properties;
     const isGestureActive = state.gestures?.isGestureActive ?? false;
-    // A close's zoom-out has (all but) arrived, or the user took over the camera: bring the held-back sheet in now.
+    // A close's zoom-out is most of the way there, or the user took over the camera: bring the held-back sheet in now. It
+    // waited for the last 0.05 of the zoom, which the easing makes the slowest part: the map then sat with no sheet for
+    // about a third of a second after the spot sheet had gone. The sheet's mount is light enough now to share the end of it.
     const holdZ = sheetAfterCameraZoomRef.current;
-    if (holdZ !== null && (state.properties.zoom <= holdZ + 0.05 || isGestureActive)) releaseSheetsAfterCamera();
+    if (holdZ !== null && (state.properties.zoom <= holdZ + SHEET_HOLD_RELEASE_ZOOM || isGestureActive)) releaseSheetsAfterCamera();
 
     // The user just started panning/pinching the map — drop whichever destination/spot
     // sheet is open down to its "peek" state (if it isn't already), so it gets out of the
