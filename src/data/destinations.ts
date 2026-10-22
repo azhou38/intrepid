@@ -2011,6 +2011,22 @@ export const DESTINATIONS: Destination[] = [
     bestMonths: [4, 5, 8, 9, 10],
     bestTimeBlurb: "Visit in {months} for mild days and spring wildflowers; summer in the valley is hot.",
   },
+  {
+    id: 'karratha', name: "Karratha", country: "Australia", countryCode: 'AU', timezone: 'Australia/Perth', defaultZoomSpanKm: 55,
+    continent: 'Oceania', coordinates: { latitude: -20.7370067, longitude: 116.8478592 },
+    category: 'city', icon: "🏙️", rank: 4,
+    tagline: "The Pilbara's main town, a base for Murujuga's rock art, Dampier and the islands.",
+    description: "Karratha was founded in 1968 to house workers for the iron-ore and gas industries and is now the Pilbara's largest town, about 1,575 km north of Perth. Within a short drive are the Burrup Peninsula's Aboriginal rock engravings, the beach at Hearson Cove and the port town of Dampier, where boats leave for the islands offshore. To the east, Roebourne, the old pearling port of Cossack and the village of Point Samson make a coastal loop.",
+    whyVisit: ["See ancient rock engravings at Ngajarli", "Boat out to the Dampier Archipelago", "Visit the Red Dog statue at Dampier"],
+    whyVisitPhotos: ["Nganjarli Murujuga Rock Art 01.jpg", "ext-dampier-archipelago-tour-boat.jpg", "Dampier Red Dog, Western Australia.jpg"],
+    highlights: ["Ancient rock art", "Island boat trips", "Red Dog statue"],
+    goodToKnow: [
+      { icon: "📸", title: "Go late in the day", detail: "The Ngajarli engravings are shallow and show best in late-afternoon light. The site has no toilets; Hearson Cove nearby does." },
+      { icon: "🌕", title: "Staircase to the Moon", detail: "On full-moon low tides from March to October the Hearson Cove mudflats light up; the visitor centre publishes the dates." },
+    ],
+    bestMonths: [5, 6, 7, 8, 9],
+    bestTimeBlurb: "Come {months} for warm, dry days, with humpback whales passing offshore from July to September.",
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {

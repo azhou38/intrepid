@@ -591,6 +591,9 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "Gibb River Road": { x: 0.45, y: 0.5, zoom: 1.5 },
   "Wyndham": { x: 0.5, y: 0.45, zoom: 1.5 },
   "Karijini National Park": { x: 0.62, y: 0.5 },
+  "Karratha": { x: 0.55, y: 0.5, zoom: 1.4 },
+  "File:Nganjarli Murujuga Rock Art 01.jpg": { x: 0.45, y: 0.58 },
+  "File:Dampier Red Dog, Western Australia.jpg": { x: 0.5, y: 0.42 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -1951,6 +1954,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Wyndham": "1 Hafenstadt Wyndham - Kimberleys Australien.jpg",
   "Karijini National Park": "Karijini National Park, Pilbara Region, Western Australia, Dales Gorge 02.jpg",
   "Avon Valley": "Avon vally gnangarra-35.jpg",
+  "Karratha": "Karratha revamp (9587312345).jpg",
 };
 
 /**
