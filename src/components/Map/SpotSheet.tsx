@@ -276,6 +276,53 @@ function CostValue({ spot }: { spot: Spot }) {
   );
 }
 
+// The full-screen header's place line: the flag and country, then a divider and the destination (a standalone spot has
+// none). When the whole line does not fit, the destination moves to a line of its own below, without the divider. Its
+// width on one line is measured from an invisible copy laid out unconstrained; until a spot's copy is measured the line
+// is drawn as one row. Its own component, so a measurement re-renders only this line.
+function HeroPlaceMeta({ spot, destination }: { spot: Spot; destination?: Destination | null }) {
+  const [natural, setNatural] = useState<{ id: string; w: number } | null>(null);
+  const [avail, setAvail] = useState(0);
+  const cc = spotCountryCode(spot);
+  const country = (
+    <>
+      {!!cc && <CircleFlag countryCode={cc} size={13} ring ringWidth={1} />}
+      <Text style={[st.heroMetaTxt, { marginLeft: 4 }]}>{spotCountry(spot)}</Text>
+    </>
+  );
+  const oneLine = (
+    <>
+      {country}
+      {!!destination && (
+        <>
+          <View style={st.heroMetaDivider} />
+          <Text style={st.heroMetaTxt}>{destination.name}</Text>
+        </>
+      )}
+    </>
+  );
+  const split = !!destination && natural?.id === spot.id && avail > 0 && natural.w > avail;
+  return (
+    <View onLayout={e => setAvail(e.nativeEvent.layout.width)}>
+      {split ? (
+        <View style={{ gap: 6 }}>
+          <View style={st.heroMeta}>{country}</View>
+          <Text style={st.heroMetaTxt}>{destination!.name}</Text>
+        </View>
+      ) : (
+        <View style={st.heroMeta}>{oneLine}</View>
+      )}
+      {!!destination && (
+        <View pointerEvents="none" style={st.heroMetaMeasure}>
+          <View style={[st.heroMeta, { alignSelf: 'flex-start' }]} onLayout={e => setNatural({ id: spot.id, w: e.nativeEvent.layout.width })}>
+            {oneLine}
+          </View>
+        </View>
+      )}
+    </View>
+  );
+}
+
 // ── Main ─────────────────────────────────────────────────────────────────────
 interface Props {
   spots: Spot[];
@@ -1323,17 +1370,7 @@ isVisited ? (
             >
               <View style={st.heroContent}>
                 <Text style={[st.heroName, heroNameSize(activeSpot.name)]}>{activeSpot.name}</Text>
-                <View style={st.heroMeta}>
-                  {!!spotCountryCode(activeSpot) && <CircleFlag countryCode={spotCountryCode(activeSpot)!} size={13} ring ringWidth={1} />}
-                  <Text style={[st.heroMetaTxt, { marginLeft: 4 }]}>{spotCountry(activeSpot)}</Text>
-                  {/* A standalone spot has no destination to name — just its country. */}
-                  {!!destination && (
-                    <>
-                      <View style={st.heroMetaDivider} />
-                      <Text style={st.heroMetaTxt}>{destination.name}</Text>
-                    </>
-                  )}
-                </View>
+                <HeroPlaceMeta spot={activeSpot} destination={destination} />
               </View>
             </Reanimated.View>
           </View>
@@ -1962,6 +1999,8 @@ const st = StyleSheet.create({
   heroMeta: { flexDirection: 'row', alignItems: 'center', gap: 4 },
   heroMetaTxt: { fontSize: 14, color: 'rgba(255,255,255,0.90)', fontWeight: '500' },
   heroMetaDivider: { width: 1, height: 12, backgroundColor: 'rgba(255,255,255,0.40)', marginHorizontal: 8 },
+  // HeroPlaceMeta's invisible one-line copy: wide enough that nothing in it wraps or shrinks.
+  heroMetaMeasure: { position: 'absolute', left: 0, top: 0, width: 4000, opacity: 0 },
   // The spot description, in the About panel between the glance row and the official site.
   aboutBio: { padding: 16, borderRadius: 18, borderWidth: 1, borderColor: '#E5E7EB', backgroundColor: 'white', fontSize: 15, lineHeight: 22, fontWeight: '400', color: '#374151' },
 
