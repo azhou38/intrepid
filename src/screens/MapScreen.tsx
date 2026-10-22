@@ -1,4 +1,4 @@
-import React, { memo, useRef, useState, useMemo, useCallback, useEffect, useLayoutEffect } from 'react';
+import React, { memo, useRef, useState, useMemo, useCallback, useEffect, useLayoutEffect, Profiler } from 'react';
 import { unstable_batchedUpdates, View, StyleSheet, Pressable, Text, Dimensions, Animated, Platform, TextInput, Image, Easing as RNEasing, Keyboard, ScrollView } from 'react-native';
 import Reanimated, { useSharedValue, useAnimatedStyle, useAnimatedReaction, runOnJS, withTiming, Easing, useFrameCallback } from 'react-native-reanimated';
 import { perfMark, perfLog, timed, perfNow, registerFrameMonitor } from '../utils/perf';
@@ -1486,7 +1486,13 @@ function planSpotPhotos(destPlan: ReturnType<typeof planDestPhotos>, isSpotVisit
 export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = {}) {
   // [perf] how long each MapScreen render takes (render to commit), and UI-thread frames during a sheet's slide-in.
   const renderT0 = perfNow();
-  useLayoutEffect(() => { perfLog('MapScreen render+commit', perfNow() - renderT0); });
+  const perfBodyMsRef = useRef(0);
+  useLayoutEffect(() => {
+    perfLog('MapScreen render+commit', perfNow() - renderT0);
+    perfLog('  of which MapScreen body (its own hooks and memos)', perfBodyMsRef.current);
+  });
+  // Per-section render time of MapScreen's children (React Profiler, dev only).
+  const onPerfRender = useCallback((id: string, phase: string, actualMs: number) => { perfLog(`  render ${id} (${phase})`, actualMs); }, []);
   const fStart = useSharedValue(0), fLast = useSharedValue(0), fCount = useSharedValue(0), fLong = useSharedValue(0), fWorst = useSharedValue(0);
   const reportFrames = useCallback((frames: number, long: number, worst: number) => {
     console.log(`[perf] UI frames in the 1.5 s after the tap: ${frames} frames, ${long} longer than 20 ms, worst ${worst.toFixed(0)} ms`);
@@ -4975,6 +4981,7 @@ const destItems = useMemo((): DestItem[] =>
   const destSheetIsPressBlocked = useStableCallback(pressBlocked);
 
 
+  perfBodyMsRef.current = perfNow() - renderT0;
   return (
     <View
       style={styles.root}
@@ -4986,6 +4993,7 @@ const destItems = useMemo((): DestItem[] =>
 
       {/* ── MAP ──────────────────────────────────────────────────────────── */}
       {styleResolved && (
+      <Profiler id="map" onRender={onPerfRender}>
       <MapboxGL.MapView
         style={StyleSheet.absoluteFill}
         // Globe at every zoom, never swapped. Mapbox's iOS SDK applies setProjection
@@ -5418,6 +5426,7 @@ const destItems = useMemo((): DestItem[] =>
 
         </>}
       </MapboxGL.MapView>
+      </Profiler>
       )}
 
       {/* ── Search backdrop — white fill behind the focused search bar + results, so the
@@ -5636,6 +5645,7 @@ const destItems = useMemo((): DestItem[] =>
           with each other. ─────────────────────────────────────────────────────────────── */}
       {/* Stays mounted (hidden off-screen) behind a selection, so closing it slides the sheet straight back up. */}
       {!searchFocused && !exploreHeld && (
+        <Profiler id="explore sheet" onRender={onPerfRender}>
         <ExploreSheet
           hidden={!!(selectedCountry || selectedDest || selectedSpot)}
           collapseSignal={peekSheetSignal}
@@ -5648,10 +5658,12 @@ const destItems = useMemo((): DestItem[] =>
           onScrollYChange={handleExploreScrollY}
           onSearchPress={handleExploreSearchPress}
         />
+        </Profiler>
       )}
 
 {/* ── Country sheet ─────────────────────────────────────────────────── */}
       {selectedCountry && !selectedDest && !selectedSpot && (
+        <Profiler id="country sheet" onRender={onPerfRender}>
         <CountrySheet
           key={`country-${sheetSwapKey}`}
           cluster={selectedCountry}
@@ -5683,10 +5695,12 @@ const destItems = useMemo((): DestItem[] =>
           // had anywhere to report to.
           onSnapStateChange={handleSheetSnapStateChange}
         />
+        </Profiler>
       )}
 
       {/* ── Unified destination sheet — hidden while a spot sheet is open on top */}
       {mapState !== 'world' && selectedDest && !selectedSpot && !destAfterCamera && (
+        <Profiler id="destination sheet" onRender={onPerfRender}>
         <DestinationSheet
           key={`dest-${sheetSwapKey}`}
           destination={selectedDest}
@@ -5711,10 +5725,12 @@ const destItems = useMemo((): DestItem[] =>
           initialTab={destInitialTab}
           initialSnap={destInitialSnap}
         />
+        </Profiler>
       )}
 
       {/* ── Spot sheet — swipeable carousel of the destination's spots, expandable to full */}
       {selectedSpot && spotFocusId && (
+        <Profiler id="spot sheet" onRender={onPerfRender}>
         <SpotSheet
           key={`spot-${sheetSwapKey}`}
           spots={carouselSpots}
@@ -5741,12 +5757,14 @@ const destItems = useMemo((): DestItem[] =>
           onGoToList={selectedSpot.destinationId && !nearCtx ? handleGoToListView : undefined}
           collapseSignal={collapseSheetSignal}
         />
+        </Profiler>
       )}
 
 {/* ── Outgoing copy of the sheet a country <-> destination swap is replacing — drawn ABOVE the incoming sheet so its slide down is visible while the new one rises beneath it ── */}
       {leavingSheetRef.current && (
         <View pointerEvents="none" style={StyleSheet.absoluteFill}>
           {leavingSheetRef.current.kind === 'country' && leavingSheetRef.current.cluster && (
+            <Profiler id="country sheet" onRender={onPerfRender}>
             <CountrySheet
               key={`leaving-country-${leavingSheetRef.current.seq}`}
               cluster={leavingSheetRef.current.cluster}
@@ -5756,8 +5774,10 @@ const destItems = useMemo((): DestItem[] =>
               onExited={handleLeavingSheetExited}
               enterFromPrevious
             />
+            </Profiler>
           )}
           {leavingSheetRef.current.kind === 'spot' && leavingSheetRef.current.focusId && (
+            <Profiler id="spot sheet" onRender={onPerfRender}>
             <SpotSheet
               key={`leaving-spot-${leavingSheetRef.current.seq}`}
               spots={leavingSheetRef.current.spots}
@@ -5768,8 +5788,10 @@ const destItems = useMemo((): DestItem[] =>
               onExited={handleLeavingSheetExited}
               enterFromPrevious
             />
+            </Profiler>
           )}
           {leavingSheetRef.current.kind === 'dest' && leavingSheetRef.current.dest && (
+            <Profiler id="destination sheet" onRender={onPerfRender}>
             <DestinationSheet
               key={`leaving-dest-${leavingSheetRef.current.seq}`}
               destination={leavingSheetRef.current.dest}
@@ -5779,6 +5801,7 @@ const destItems = useMemo((): DestItem[] =>
               onExited={handleLeavingSheetExited}
               enterFromPrevious
             />
+            </Profiler>
           )}
         </View>
       )}
