@@ -1,4 +1,5 @@
 import React from 'react';
+import { flagSource } from '../utils/flags';
 import { View, Image, StyleProp, ViewStyle } from 'react-native';
 
 interface Props {
@@ -11,12 +12,12 @@ interface Props {
   style?: StyleProp<ViewStyle>;
 }
 
-/** Circular country flag image (flagcdn), used anywhere a flag icon appears in the app. */
+/** Circular country flag image (bundled; utils/flags), used anywhere a flag icon appears in the app. */
 export default function CircleFlag({ countryCode, size = 20, ring = false, ringColor = '#fff', style }: Props) {
   const img = (
     <View style={{ width: size, height: size, borderRadius: size / 2, overflow: 'hidden', backgroundColor: '#E5E7EB' }}>
       <Image
-        source={{ uri: `https://flagcdn.com/w160/${countryCode.toLowerCase()}.png` }}
+        source={flagSource(countryCode)}
         style={{ width: size, height: size }}
         resizeMode="cover"
       />

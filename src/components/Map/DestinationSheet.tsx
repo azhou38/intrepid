@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useLayoutEffect, useState, useCallback, useMemo } from 'react';
+import { flagSource } from '../../utils/flags';
 import {
   View, Text, StyleSheet, Pressable, Image, Alert,
   Animated, Dimensions, Modal, TextInput, Platform,
@@ -1668,7 +1669,7 @@ function DestinationSheet({
                   <View style={st.heroFlagCircle}>
                     <View style={st.heroFlagClip}>
                       <Image
-                        source={{ uri: `https://flagcdn.com/w160/${destination.countryCode.toLowerCase()}.png` }}
+                        source={flagSource(destination.countryCode)}
                         style={st.heroFlagImg}
                         resizeMode="cover"
                       />

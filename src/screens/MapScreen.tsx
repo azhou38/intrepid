@@ -1,4 +1,5 @@
 import React, { memo, useRef, useState, useMemo, useCallback, useEffect, useLayoutEffect } from 'react';
+import { flagSource } from '../utils/flags';
 import { unstable_batchedUpdates, View, StyleSheet, Pressable, Text, Dimensions, Animated, Platform, TextInput, Image, Easing as RNEasing, Keyboard, ScrollView } from 'react-native';
 import Reanimated, { useSharedValue, useAnimatedStyle, useAnimatedReaction, runOnJS, withTiming, Easing } from 'react-native-reanimated';
 import Svg, { Rect, Path, Circle } from 'react-native-svg';
@@ -4770,7 +4771,7 @@ const destItems = useMemo((): DestItem[] =>
               ]}>
                 <View style={styles.countryPillFlagClip}>
                   <Image
-                    source={{ uri: `https://flagcdn.com/w160/${cluster.countryCode.toLowerCase()}.png` }}
+                    source={flagSource(cluster.countryCode)}
                     style={styles.countryPillFlagImg}
                     resizeMode="cover"
                   />
@@ -5646,7 +5647,7 @@ const destItems = useMemo((): DestItem[] =>
                 <View style={styles.bcFlagCircle}>
                   <View style={styles.bcFlagClip}>
                     <Image
-                      source={{ uri: `https://flagcdn.com/w160/${crumb.countryCode.toLowerCase()}.png` }}
+                      source={flagSource(crumb.countryCode)}
                       style={styles.bcFlagImg}
                       resizeMode="cover"
                     />
@@ -5678,7 +5679,7 @@ const destItems = useMemo((): DestItem[] =>
                 <View style={styles.bcFlagCircle}>
                   <View style={styles.bcFlagClip}>
                     <Image
-                      source={{ uri: `https://flagcdn.com/w160/${selectedCountry!.countryCode.toLowerCase()}.png` }}
+                      source={flagSource(selectedCountry!.countryCode)}
                       style={styles.bcFlagImg}
                       resizeMode="cover"
                     />
