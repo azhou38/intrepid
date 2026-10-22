@@ -1,0 +1,93 @@
+{
+ "group": "nitmiluk-national-park",
+ "generated": "2026-10-22T02:34:07.242Z",
+ "slots": [
+  {
+   "slot": "dest:nitmiluk-national-park:header",
+   "key": "Nitmiluk National Park",
+   "current": {
+    "file": "Katherine River in Nitmiluk National Park.jpg",
+    "source": "imageOverrides.ts"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:nitmiluk-national-park:why1",
+   "key": "File:00 4648 Katharine Gorge in Nitmiluk National Park.jpg",
+   "current": {
+    "file": "00 4648 Katharine Gorge in Nitmiluk National Park.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:nitmiluk-national-park:why2",
+   "key": "File:Katherine Gorge 05.jpg",
+   "current": {
+    "file": "Katherine Gorge 05.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:nitmiluk-national-park:why3",
+   "key": "File:Waterfall in Edith Falls, Nitmiluk National Park, Katherine, Northern Territory, Australia, during Dry Season (4).jpg",
+   "current": {
+    "file": "Waterfall in Edith Falls, Nitmiluk National Park, Katherine, Northern Territory, Australia, during Dry Season (4).jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:nitmiluk-national-park:why4",
+   "key": "File:Jatbula Trail.jpg",
+   "current": {
+    "file": "Jatbula Trail.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "spot:nitmiluk-national-park-1",
+   "key": "Katherine Gorge",
+   "current": {
+    "file": "Nitmiluk National Park 0317.svg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: category: Maps of national parks of Australia; Maps of the Northern Territory",
+    "pre-filter: file name suggests a map, drawing, logo or similar",
+    "pre-filter: not a photograph file (image/svg+xml)",
+    "pre-filter: 743px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:nitmiluk-national-park-2",
+   "key": "Edith Falls",
+   "current": {
+    "file": "Edith-Falls-3007.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: 939px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:nitmiluk-national-park-3",
+   "key": "Jatbula Trail",
+   "current": {
+    "file": "Jatbula Trail.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": []
+  }
+ ]
+}

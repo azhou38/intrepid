@@ -1,0 +1,78 @@
+{
+ "group": "watarrka-national-park",
+ "generated": "2026-10-22T02:34:07.713Z",
+ "slots": [
+  {
+   "slot": "dest:watarrka-national-park:header",
+   "key": "Watarrka National Park",
+   "current": {
+    "file": "Kings Canyon North Wall (9585383815).jpg",
+    "source": "imageOverrides.ts"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:watarrka-national-park:why1",
+   "key": "File:Top of the Rim at Kings Canyon.jpg",
+   "current": {
+    "file": "Top of the Rim at Kings Canyon.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:watarrka-national-park:why2",
+   "key": "File:Lascar Kings Creek at the gorge of the canyon (4563009062).jpg",
+   "current": {
+    "file": "Lascar Kings Creek at the gorge of the canyon (4563009062).jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "spot:watarrka-national-park-1",
+   "key": "Kings Canyon (Northern Territory)",
+   "current": {
+    "file": "Kings Canyon NT view.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "spot:watarrka-national-park-2",
+   "key": "Kings Canyon Rim Walk",
+   "current": {
+    "file": "Kings Canyon NT view.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "spot:watarrka-national-park-3",
+   "key": "Kings Creek Walk",
+   "current": {
+    "file": "Kings Canyon NT view.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "spot:watarrka-national-park-4",
+   "key": "Kathleen Springs Walk",
+   "current": {
+    "file": "Kathleen Rooney a la Weldon Kees.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: 640px wide, minimum 960 for a spot"
+   ]
+  }
+ ]
+}

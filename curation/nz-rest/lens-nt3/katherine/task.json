@@ -1,0 +1,62 @@
+{
+ "group": "katherine",
+ "generated": "2026-10-22T02:34:07.241Z",
+ "slots": [
+  {
+   "slot": "dest:katherine:header",
+   "key": "Katherine",
+   "current": {
+    "file": "Katherine Heigl at 27 Dresses Premiere 13.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: 676px wide, minimum 1500 for a header"
+   ]
+  },
+  {
+   "slot": "dest:katherine:why1",
+   "key": "File:Cutta Cutta caves - panoramio.jpg",
+   "current": {
+    "file": "Cutta Cutta caves - panoramio.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:katherine:why2",
+   "key": "File:ext-katherine-museum.jpg",
+   "current": {
+    "file": "external:ext-katherine-museum.jpg",
+    "source": "externalPhotos.json"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "spot:katherine-1",
+   "key": "Katherine Museum",
+   "current": {
+    "file": "Katherine Johnson 1983.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: dated 1983",
+    "pre-filter: category: 1983 black and white portrait photographs of women; 20th-century black and white portrait photographs of women at half length",
+    "pre-filter review: black-and-white? (saturation 0.00)"
+   ]
+  },
+  {
+   "slot": "spot:katherine-3",
+   "key": "Cutta Cutta Caves Nature Park",
+   "current": {
+    "file": "Cutta Cutta Caverns in Northern Territory, Australia (4).jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": []
+  }
+ ]
+}

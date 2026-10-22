@@ -1,0 +1,180 @@
+{
+ "group": "alice-springs",
+ "generated": "2026-10-22T02:34:07.712Z",
+ "slots": [
+  {
+   "slot": "dest:alice-springs:header",
+   "key": "Alice Springs",
+   "current": {
+    "file": "Alice Springs - Anzac Hill - panoramio.jpg",
+    "source": "imageOverrides.ts"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:alice-springs:why1",
+   "key": "File:ext-desert-park-bird-show.jpg",
+   "current": {
+    "file": "external:ext-desert-park-bird-show.jpg",
+    "source": "externalPhotos.json"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:alice-springs:why2",
+   "key": "File:Alice Springs Telegraph Station, 2015 (08).JPG",
+   "current": {
+    "file": "Alice Springs Telegraph Station, 2015 (08).JPG",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:alice-springs:why3",
+   "key": "File:Alice Springs, 2015 (02).JPG",
+   "current": {
+    "file": "Alice Springs, 2015 (02).JPG",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "spot:alice-springs-1",
+   "key": "Alice Springs Desert Park",
+   "current": {
+    "file": "Alice Springs Desert Park, October 2025 07.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "spot:alice-springs-2",
+   "key": "Alice Springs Telegraph Station",
+   "current": {
+    "file": "Aboriginal children at the Bungalow in Alice Springs.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: dated 1927",
+    "pre-filter review: sepia? (92% one warm hue, no vivid colour)"
+   ]
+  },
+  {
+   "slot": "spot:alice-springs-3",
+   "key": "Araluen Cultural Precinct",
+   "current": {
+    "file": "Alice Springs0258.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: 597px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:alice-springs-4",
+   "key": "Anzac Hill",
+   "current": {
+    "file": "Anzac hill stairs.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: 640px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:alice-springs-5",
+   "key": "Emily Gap",
+   "current": {
+    "file": "Black-white photograph of Emily Dickinson2.png",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: dated 1846"
+   ]
+  },
+  {
+   "slot": "spot:alice-springs-6",
+   "key": "Royal Flying Doctor Service Tourist Facility",
+   "current": {
+    "file": "Munjina Airstrip.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: dated 1997",
+    "pre-filter: 512px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:alice-springs-7",
+   "key": "Old Ghan Heritage Railway and Museum",
+   "current": {
+    "file": "Commonwealth Railways NSU class diesel-electric locomotive at the Old Ghan Heritage Railway and Museum, 2006.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "spot:alice-springs-8",
+   "key": "Olive Pink Botanic Garden",
+   "current": {
+    "file": "Snakes and Goannas. Olive Pink, Alice Springs 01.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "spot:alice-springs-9",
+   "key": "Women's Museum of Australia",
+   "current": {
+    "file": "Catherine Helen Spence.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter review: black-and-white? (saturation 0.00)"
+   ]
+  },
+  {
+   "slot": "spot:alice-springs-10",
+   "key": "Adelaide House (Alice Springs)",
+   "current": {
+    "file": "Adelaide House.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "spot:alice-springs-11",
+   "key": "Alice Springs Reptile Centre",
+   "current": {
+    "file": "Alice Springs Reptile Centre, October 2025.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "spot:alice-springs-12",
+   "key": "National Road Transport Museum",
+   "current": {
+    "file": "National Road Transport Hall of Fame, 2015 (01).JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": []
+  }
+ ]
+}

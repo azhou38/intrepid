@@ -1,0 +1,130 @@
+{
+ "group": "arnhem-land",
+ "generated": "2026-10-22T02:34:06.781Z",
+ "slots": [
+  {
+   "slot": "dest:arnhem-land:header",
+   "key": "Arnhem Land",
+   "current": {
+    "file": "external:ext-arnhem-land-header.jpg",
+    "source": "externalPhotos.json"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:arnhem-land:why1",
+   "key": "File:ext-arnhem-land-bark-art.jpg",
+   "current": {
+    "file": "external:ext-arnhem-land-bark-art.jpg",
+    "source": "externalPhotos.json"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:arnhem-land:why2",
+   "key": "File:ext-rainbow-cliffs.jpg",
+   "current": {
+    "file": "external:ext-rainbow-cliffs.jpg",
+    "source": "externalPhotos.json"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:arnhem-land:why3",
+   "key": "File:ext-east-woody-island.jpg",
+   "current": {
+    "file": "external:ext-east-woody-island.jpg",
+    "source": "externalPhotos.json"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "spot:arnhem-land-1",
+   "key": "Nhulunbuy",
+   "current": {
+    "file": "Gove Airport terminal main entrance.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "spot:arnhem-land-2",
+   "key": "Buku-Larrnggay Mulka Centre",
+   "current": {
+    "file": "〈阿納姆地東部四個偉大易瑞卡立法者〉樹皮畫.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "spot:arnhem-land-3",
+   "key": "Galuru (East Woody Beach)",
+   "current": null,
+   "status": "search",
+   "flags": [
+    "no photo"
+   ]
+  },
+  {
+   "slot": "spot:arnhem-land-4",
+   "key": "East Woody Island",
+   "current": {
+    "file": "Woody Island US Navy wireless station 1915.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: dated 1915",
+    "pre-filter: 799px wide, minimum 960 for a spot",
+    "pre-filter review: sepia? (100% one warm hue, no vivid colour)"
+   ]
+  },
+  {
+   "slot": "spot:arnhem-land-5",
+   "key": "Wirrwawuy (Cape Wirrawoi)",
+   "current": null,
+   "status": "search",
+   "flags": [
+    "no photo"
+   ]
+  },
+  {
+   "slot": "spot:arnhem-land-6",
+   "key": "Garanhan (Macassan Beach)",
+   "current": null,
+   "status": "search",
+   "flags": [
+    "no photo"
+   ]
+  },
+  {
+   "slot": "spot:arnhem-land-7",
+   "key": "Banambarrna (Rainbow Cliffs)",
+   "current": null,
+   "status": "search",
+   "flags": [
+    "no photo"
+   ]
+  },
+  {
+   "slot": "spot:arnhem-land-8",
+   "key": "Bremer Island",
+   "current": {
+    "file": "Sir James Bremer.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: dated 1842",
+    "pre-filter: 716px wide, minimum 960 for a spot",
+    "pre-filter review: black-and-white? (saturation 0.00)"
+   ]
+  }
+ ]
+}
