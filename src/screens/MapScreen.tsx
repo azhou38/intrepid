@@ -3736,7 +3736,7 @@ const destItems = useMemo((): DestItem[] =>
     // 280ms (down from 500) — tapping a new spot pin, the carousel itself is also sliding to
     // match (see SpotSheet's own focusSpotId effect), and the slower of the two dominates how
     // sluggish the combined transition reads.
-    fitSpotView(spot, 'easeTo', 280);
+    fitSpotView(spot, 'flyTo', 280);
   }, [showBreadcrumb, fitSpotView, spotFocusId, dropCountryIfForeign]);
   // Stable for the memoized SpotMarker pins (a two-finger gesture landing on a pin isn't a tap).
   // Reads handleSpotPress through a ref: it changes with every selection, and passing it straight through re-rendered every
@@ -3807,7 +3807,7 @@ const destItems = useMemo((): DestItem[] =>
     // isZoomedOutBeyond).
     if (dest && !isZoomedOutBeyond(latDeltaToZoom(getDestZoomDelta(dest)))) {
       beginClosePlan(destDefaultCamera(dest, 'topHalf').zoom, 500);   // see planZoomTarget (a no-op unless this zooms out)
-      fitDestinationDefaultView(dest, 'easeTo', 'topHalf');
+      fitDestinationDefaultView(dest, 'flyTo', 'topHalf');
     } else if (standalone) {
       const cam = destDefaultCamera(standaloneSpotArea(standalone), 'topHalf');
       if (!isZoomedOutBeyond(cam.zoom)) {
@@ -3883,7 +3883,7 @@ const destItems = useMemo((): DestItem[] =>
       // The zoom-out starts once the spot sheet has slid away and the destination sheet has slid up: running in the same
       // frames as the two sheets made both stutter (as the camera flight did for a pin tap's slide-in).
       cameraHoldUntilRef.current = Date.now() + BACK_CAMERA_DELAY_MS;
-      fitDestinationDefaultView(selectedDest, 'easeTo', 'topHalf');
+      fitDestinationDefaultView(selectedDest, 'flyTo', 'topHalf');
     }
   }, [spotOrigin, selectedDest, fitDestinationDefaultView, setSheetSnapState, setDestHomeToDefault, destDefaultCamera, holdSheetUntilCamera]);
 
@@ -3991,7 +3991,7 @@ const destItems = useMemo((): DestItem[] =>
     // Plan for the zoomed-out view from the first frame, so the pins it won't have fade out DURING the zoom (see
     // planZoomTarget) rather than after it settles.
     beginClosePlan(destDefaultCamera(dest, 'full', 0.5).zoom, 600);
-    fitDestinationDefaultView(dest, 'easeTo', 'full', 600, 0.5);
+    fitDestinationDefaultView(dest, 'flyTo', 'full', 600, 0.5);
   }, [selectedDest, showBreadcrumb, fitDestinationDefaultView, isZoomedOutBeyond, releaseHeldSelection, beginClosePlan, destDefaultCamera, holdSheetUntilCamera]);
 
   // Closing the destination sheet INTO its country view. `toCollapsed` (set when this
@@ -4062,7 +4062,7 @@ const destItems = useMemo((): DestItem[] =>
       suppressPeekPushRef.current = true;
       if (suppressPeekPushTimerRef.current) clearTimeout(suppressPeekPushTimerRef.current);
       suppressPeekPushTimerRef.current = setTimeout(() => { suppressPeekPushRef.current = false; }, 650);
-      fitSpotView(selectedSpot, 'easeTo', 400);
+      fitSpotView(selectedSpot, 'flyTo', 400);
       return;
     }
     if (!selectedDest) return;
@@ -4085,7 +4085,7 @@ const destItems = useMemo((): DestItem[] =>
     const framing = sheetSnapStateRef.current === 'peek' ? 'full' : 'topHalf';
     setDestHomeToDefault(selectedDest, framing);
     destFlightInterruptedRef.current = false;
-    fitDestinationDefaultView(selectedDest, 'easeTo', framing);
+    fitDestinationDefaultView(selectedDest, 'flyTo', framing);
   }, [selectedDest, selectedSpot, fitSpotView, fitDestinationDefaultView, setDestHomeToDefault]);
 
   const handleCloseCountry = useCallback(() => {
