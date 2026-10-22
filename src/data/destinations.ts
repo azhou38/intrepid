@@ -2027,6 +2027,23 @@ export const DESTINATIONS: Destination[] = [
     bestMonths: [5, 6, 7, 8, 9],
     bestTimeBlurb: "Come {months} for warm, dry days, with humpback whales passing offshore from July to September.",
   },
+  {
+    id: 'perth', name: "Perth", country: "Australia", countryCode: 'AU', timezone: 'Australia/Perth', defaultZoomSpanKm: 60,
+    continent: 'Oceania', coordinates: { latitude: -31.9558967, longitude: 115.8605784 },
+    category: 'city', icon: "🌇", rank: 2,
+    tagline: "A river capital between Indian Ocean surf beaches and the Swan Valley's vineyards.",
+    description: "Perth is the capital of Western Australia and one of the most isolated large cities in the world, spread along the Swan River a few kilometres inland from the Indian Ocean. Kings Park's bushland looks down on the city centre and Elizabeth Quay, and the Perth Cultural Centre holds the state museum and art gallery. Fremantle, the port at the river mouth, keeps a convict-built prison and gold-boom streets, while swimming and surf beaches run north from Cottesloe.",
+    whyVisit: ["Walk Kings Park above the Swan River", "Tour convict-built Fremantle Prison", "Swim at Cottesloe Beach at sunset", "Taste wine in the Swan Valley"],
+    whyVisitPhotos: ["Cloudy day in Perth, WA, 2019 Oct 30 (IMGP7623).jpg", "Freo prison WMAU gnangarra-131.jpg", "AUS Perth, Cottesloe, Cottesloe Beach 052.jpg", "ext-swan-valley-upper-reach.jpg"],
+    highlights: ["Kings Park views", "Convict heritage", "Ocean beaches", "Swan Valley wine"],
+    goodToKnow: [
+      { icon: "🚌", title: "Ride free in the centre", detail: "Trains and buses inside the city's Free Transit Zone cost nothing, and the CAT buses are free along their whole route." },
+      { icon: "🌬️", title: "Afternoon sea breeze", detail: "Summer days often pass 36 °C, but the afternoon sea breeze known as the Fremantle Doctor can cool the city by up to 15 °C." },
+      { icon: "💳", title: "Tap a bank card", detail: "Transperth trains, buses and ferries take contactless credit and debit cards, so a visitor does not need a SmartRider card." },
+    ],
+    bestMonths: [3, 4, 9, 10, 11],
+    bestTimeBlurb: "{months} are warm but not hot; Kings Park's wildflowers peak in September.",
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {
