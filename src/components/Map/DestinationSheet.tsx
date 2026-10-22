@@ -996,16 +996,9 @@ function DestinationSheet({
   useEffect(() => {
     if (!spotsPanelOn && (snapStateReact === 'full' || activeTab === 'spots')) setSpotsPanelOn(true);
   }, [snapStateReact, activeTab, spotsPanelOn]);
-  // TEMPORARY test: the React side of a snap (this sheet's re-render and MapScreen's) runs once the snap has landed,
-  // not in the frames it animates.
-  const reportSnapTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const reportSnapState = useCallback((state: SnapState) => {
-    if (reportSnapTimerRef.current) clearTimeout(reportSnapTimerRef.current);
-    reportSnapTimerRef.current = setTimeout(() => {
-      reportSnapTimerRef.current = null;
-      setSnapStateReact(state);
-      onSnapStateChange?.(state);
-    }, 300);
+    setSnapStateReact(state);
+    onSnapStateChange?.(state);
   }, [onSnapStateChange]);
   const slideAnim    = useSharedValue(enterFromPrevious ? (sheetPose.get() ?? CLOSE_POS) : CLOSE_POS);
   const lastPos      = useSharedValue(resolvedInitialSnap === 'full' ? FULL_POS : COLLAPSED_Y);
