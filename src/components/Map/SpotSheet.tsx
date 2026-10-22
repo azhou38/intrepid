@@ -1525,14 +1525,8 @@ isVisited ? (
             </View>
             <View pointerEvents="none" style={st.peekNameRow}>
               <Text style={st.peekNameTxt} numberOfLines={1}>{activeSpot.name}</Text>
-              {/* As in the full-screen header: the destination (none for a standalone spot), a divider, the flag and country. */}
+              {/* The flag and country, then a divider and the destination (none for a standalone spot). */}
               <View style={st.peekMetaRow}>
-                {!!destination && (
-                  <>
-                    <Text style={[st.peekMetaTxt, st.peekMetaShrink]} numberOfLines={1}>{destination.name}</Text>
-                    <View style={st.peekMetaDivider} />
-                  </>
-                )}
                 {!!spotCountryCode(activeSpot) && (
                   <View style={st.peekFlagCircle}>
                     <View style={st.peekFlagClip}>
@@ -1541,6 +1535,12 @@ isVisited ? (
                   </View>
                 )}
                 <Text style={[st.peekMetaTxt, st.peekMetaShrink]} numberOfLines={1}>{spotCountry(activeSpot)}</Text>
+                {!!destination && (
+                  <>
+                    <View style={st.peekMetaDivider} />
+                    <Text style={[st.peekMetaTxt, st.peekMetaShrink]} numberOfLines={1}>{destination.name}</Text>
+                  </>
+                )}
               </View>
             </View>
           </Pressable>
