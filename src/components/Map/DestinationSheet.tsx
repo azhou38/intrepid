@@ -17,7 +17,7 @@ import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'reac
 // scroll-driven tab bar overlay — still use core Animated and aren't part of this fix.
 import Reanimated, {
   useSharedValue, useAnimatedStyle, useAnimatedReaction, withTiming, runOnJS,
-  interpolate, Extrapolation, Easing, scrollTo, useAnimatedRef, useDerivedValue,
+  interpolate, Extrapolation, Easing, scrollTo, useAnimatedRef, useDerivedValue, withDelay
 } from 'react-native-reanimated';
 import type { SharedValue } from 'react-native-reanimated';
 // ScrollView specifically comes from gesture-handler (not core RN) — only a gesture-handler-
@@ -85,6 +85,7 @@ const PEEK_Y = Math.max(COLLAPSED_Y, (H - BOTTOM_TAB_H) - PEEK_STRIP_H);
 // tween instead of a physical spring, since any spring (even lightly underdamped) reads as
 // "bouncy" here given how large a distance these snaps travel.
 const SNAP_CONFIG  = { duration: 280, easing: Easing.out(Easing.cubic) };
+const MOUNT_SLIDE_DELAY_MS = 40;   // see transitionTo: the slide-in waits out the mount frame
 const QUICK_CONFIG = { duration: 150, easing: Easing.out(Easing.cubic) };
 
 // Legibility scrim over the hero photo: transparent at the top, darkening toward the bottom.
@@ -1204,7 +1205,11 @@ function DestinationSheet({
     if (next !== 'full') onCollapsedTopChange?.(H - target);
     sheetPose.set(next === 'full' ? null : target);
     // 'userUI': the gesture worklet already started this exact animation on the UI thread (see snapUI).
-    if (reason !== 'userUI') slideAnim.value = withTiming(target, SNAP_CONFIG);
+    // The slide-in on mount starts two frames late: its ease-out curve does most of its travel in the first frames, which
+    // are the ones the UI thread spends building this sheet's views (and starting the camera move), so starting at once
+    // let that work swallow the fast part of the slide and it looked like lag. Closing has no such frame, and was smooth.
+    if (reason === 'mount') slideAnim.value = withDelay(MOUNT_SLIDE_DELAY_MS, withTiming(target, SNAP_CONFIG));
+    else if (reason !== 'userUI') slideAnim.value = withTiming(target, SNAP_CONFIG);
   };
 
   // Slide in on mount — collapsed (bottom-screen carousel) by default whenever a destination is selected, unless

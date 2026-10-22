@@ -14,7 +14,7 @@ import { ScrollView as GHScrollView, Gesture, GestureDetector } from 'react-nati
 // react-native and mixing the two default-export namings would be confusing.
 import Reanimated, {
   useSharedValue, useAnimatedStyle, useAnimatedReaction, withTiming, runOnJS,
-  interpolate, Extrapolation, Easing, scrollTo, useAnimatedRef,
+  interpolate, Extrapolation, Easing, scrollTo, useAnimatedRef, withDelay
 } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { SharedValue } from 'react-native-reanimated';
@@ -72,6 +72,7 @@ const CLOSE_POS   = H + 40;  // fully off-screen
 // (not two, one per animation system) — the whole sheet runs on Reanimated, same as
 // DestinationSheet, so there's no more core-Animated/Reanimated Easing split to keep in sync.
 const SNAP_CONFIG = { duration: 280, easing: Easing.out(Easing.cubic) };
+const MOUNT_SLIDE_DELAY_MS = 40;   // see transitionTo: the slide-in waits out the mount frame
 // Tab-panel slide — matches DestinationSheet's own TAB_SLIDE_CONFIG (a plain tween, not the
 // spring this used before switching to Reanimated): no overshoot on switching or settling.
 const TAB_SLIDE_CONFIG = { duration: 220, easing: Easing.out(Easing.cubic) };
@@ -784,7 +785,11 @@ function SpotSheet({
     if (next !== 'full') onCollapsedTopChange?.(H - target);
     sheetPose.set(next === 'full' ? null : target);
     // 'userUI': the gesture worklet already started this exact animation on the UI thread (see snapUI).
-    if (reason !== 'userUI') slideAnim.value = withTiming(target, SNAP_CONFIG);
+    // The slide-in on mount starts two frames late: its ease-out curve does most of its travel in the first frames, which
+    // are the ones the UI thread spends building this sheet's views (and starting the camera move), so starting at once
+    // let that work swallow the fast part of the slide and it looked like lag. Closing has no such frame, and was smooth.
+    if (reason === 'mount') slideAnim.value = withDelay(MOUNT_SLIDE_DELAY_MS, withTiming(target, SNAP_CONFIG));
+    else if (reason !== 'userUI') slideAnim.value = withTiming(target, SNAP_CONFIG);
   };
   const snapToFullRef = useRef(() => {});
   snapToFullRef.current = () => transitionToRef.current('full', 'user');
