@@ -197,3 +197,27 @@ export function prewarmDestinationPins(dests: { id: string; name: string; rank: 
   };
   for (let i = 0; i < concurrency; i++) void worker();
 }
+
+/**
+ * Warms the selected-spot pin photos of the spots next to the one in focus, so a swipe along the spot carousel lands on a
+ * pin whose photo is already there: the pin shows it at once instead of drawing a grey disc and fading the photo in a
+ * moment after the camera has arrived. `key` is the thumbCache key the pin reads (`spotpin_<id>`). Anything already cached is
+ * skipped; a refused download is retried like the destination pins'.
+ */
+export function prewarmSpotMarkerPhotos(items: { key: string; title: string }[], concurrency = 2): void {
+  const queue = items.filter(it => !thumbCache.has(it.key));
+  const worker = async () => {
+    for (let it = queue.shift(); it; it = queue.shift()) {
+      try {
+        const url = await fetchWikiThumbnail(it.title, 120);
+        if (!url) continue;
+        thumbCache.set(it.key, url);
+        for (let attempt = 0; attempt < 3; attempt++) {
+          if (await Image.prefetch(url).catch(() => false)) break;
+          await new Promise(r => setTimeout(r, 1000 * (attempt + 1)));
+        }
+      } catch { /* the pin loads its own photo, as before */ }
+    }
+  };
+  for (let i = 0; i < concurrency; i++) void worker();
+}

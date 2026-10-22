@@ -116,7 +116,7 @@ import SpotSheet from '../components/Map/SpotSheet';
 import CountrySheet from '../components/Map/CountrySheet';
 import ExploreSheet from '../components/Map/ExploreSheet';
 import { prefetchPinPhotos } from '../utils/pinPhotoCache';
-import { thumbCache, photoCache, fetchWikiThumbnail, prefetchWikiThumbnail, prewarmDestinationPins, HEADER_PX } from '../utils/photoCache';
+import { thumbCache, photoCache, fetchWikiThumbnail, prefetchWikiThumbnail, prewarmDestinationPins, prewarmSpotMarkerPhotos, HEADER_PX } from '../utils/photoCache';
 import DestPinImages, { DEST_PIN_SIZE, destPinImageName, type DestPinImageSpec } from '../components/Map/DestPinImages';
 import PhotoPlaceholder from '../components/Map/PhotoPlaceholder';
 import { NO_PHOTO } from '../data/imageOverrides';
@@ -2671,6 +2671,17 @@ const destItems = useMemo((): DestItem[] =>
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [nearCtx, selectedSpotDestId, selectedSpotDestId ? null : selectedSpot?.id],
   );
+
+  // Swiping the spot carousel selects the next spot, whose pin is drawn as a marker that reads its own photo: warm the
+  // photos of the cards on either side (nearest first) so they are on hand the moment a swipe lands.
+  useEffect(() => {
+    if (!selectedSpot) return;
+    const i = carouselSpots.findIndex(s => s.id === selectedSpot.id);
+    if (i < 0) return;
+    const near: Spot[] = [];
+    for (let d = 1; d <= 4; d++) { const a = carouselSpots[i + d], b = carouselSpots[i - d]; if (a) near.push(a); if (b) near.push(b); }
+    prewarmSpotMarkerPhotos([selectedSpot, ...near].map(sp => ({ key: `spotpin_${sp.id}`, title: spotPhotoTitle(sp) })));
+  }, [selectedSpot?.id, carouselSpots]);
 
   // What the breadcrumb names as "where you are": the selected destination, or — for a standalone spot, which has no
   // destination — the spot itself under its own country.
