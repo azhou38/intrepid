@@ -2162,6 +2162,24 @@ export const DESTINATIONS: Destination[] = [
     bestMonths: [11, 12, 1, 2, 3],
     bestTimeBlurb: "River pools and mine lakes are best for swimming from {months}; winter brings rain and river rapids.",
   },
+  {
+    id: 'broome', name: "Broome", country: "Australia", countryCode: 'AU', timezone: 'Australia/Perth', defaultZoomSpanKm: 32,
+    continent: 'Oceania', coordinates: { latitude: -17.953504, longitude: 122.241416 },
+    category: 'city', icon: "🐪", rank: 2,
+    tagline: "Pearling town on a peninsula between the Indian Ocean and the mudflats of Roebuck Bay.",
+    description: "Broome is the largest town in the Kimberley, founded on pearling in the late 19th century and a beach resort since the 1980s. Cable Beach runs 22 km along the Indian Ocean west of town, while Chinatown, the museum and Town Beach face Roebuck Bay. Hundreds of pearl divers from Japan, Malaya and elsewhere lie in its cemeteries, and the wrecks of flying boats shot up in the 1942 air raid still surface at the lowest tides. It is the usual starting point for the Gibb River Road.",
+    whyVisit: ["Ride a camel along Cable Beach", "Watch the Staircase to the Moon", "See dinosaur footprints at Gantheaume Point", "Catch a film at Sun Pictures"],
+    whyVisitPhotos: ["Cable Beach Sunset Camel Ride.JPG", "Staircasetothemoon.jpg", "Broome - Gantheaume Point 09.jpg", "A crowd settle in at dusk to watch a film at Sun Picture Gardens, Broome, WA, Australia 02.jpg"],
+    highlights: ["Cable Beach camels", "Staircase to the Moon", "Dinosaur footprints", "Open-air cinema"],
+    goodToKnow: [
+      { icon: "🪼", title: "Swim between the flags", detail: "Irukandji jellyfish can be in the water even in the dry season; swim between the patrol flags on Cable Beach and wear a long-sleeve rash shirt." },
+      { icon: "🌕", title: "Time the Staircase", detail: "It shows only on evenings when the full moon rises at low tide; the visitor centre posts the dates and moonrise times." },
+      { icon: "🚗", title: "Town is spread out", detail: "Cable Beach is 7 km from Chinatown, too far and hot to walk comfortably; hire a car or take the town bus." },
+    ],
+    bestMonths: [5, 6, 7, 8, 9],
+    bestTimeBlurb: "Visit in the dry season, {months}, for warm days; the wet brings heat and cyclones.",
+    seasonalTags: [{ tag: 'monsoon-dry-season', months: [5, 6, 7, 8, 9, 10] }],
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {
