@@ -1943,6 +1943,24 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "The park opens only for the dry season; {months} have the mildest weather for its gorge walks.",
     seasonalTags: [{ tag: 'monsoon-dry-season', months: [5, 6, 7, 8, 9] }],
   },
+  {
+    id: 'gibb-river-road', name: "Gibb River Road", country: "Australia", countryCode: 'AU', timezone: 'Australia/Perth', defaultZoomSpanKm: 110,
+    continent: 'Oceania', coordinates: { latitude: -17.149271, longitude: 125.459321 },
+    category: 'nature', icon: "🚙", rank: 3,
+    tagline: "Old cattle route across the Kimberley's ranges, with side tracks to gorges and waterholes.",
+    description: "The Gibb River Road runs about 650 km across the Kimberley from Derby towards Kununurra and Wyndham, a former cattle droving route that is still mostly graded gravel. Its western half crosses the Napier and Wunaamin Miliwundi ranges, where side tracks lead to Windjana Gorge, Tunnel Creek and Bell Gorge. Further east, Galvans and Manning gorges lie near Mount Barnett Roadhouse. Most travellers take three or four days, camping along the way.",
+    whyVisit: ["Swim beneath the falls at Bell Gorge", "Wade through Tunnel Creek", "Spot freshwater crocodiles at Windjana Gorge"],
+    whyVisitPhotos: ["17. Bell Gorge waterfall.jpg", "Gibb River Road, The Kimberley (2052478242).jpg", "Freshwater crocs at windjana gorge.jpg"],
+    highlights: ["Bell Gorge falls", "Tunnel Creek", "Windjana crocodiles"],
+    goodToKnow: [
+      { icon: "🚙", title: "High-clearance 4WD only", detail: "Most of the road is graded gravel with river fords; caravans cannot make it, and many hire firms bar their cars, so check first." },
+      { icon: "⛽", title: "Fuel is scarce", detail: "Between Derby and Kununurra, fuel and supplies are sold only at Imintji and Mount Barnett, and at Drysdale Station off the road." },
+      { icon: "📵", title: "No mobile signal", detail: "There is no mobile coverage along the road; carry a satellite phone or personal locator beacon and tell someone your plans." },
+    ],
+    bestMonths: [5, 6, 7, 8, 9],
+    bestTimeBlurb: "The dry, {months}, is warm and clear; in the wet the fords flood and the road closes.",
+    seasonalTags: [{ tag: 'monsoon-dry-season', months: [5, 6, 7, 8, 9, 10] }],
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {
