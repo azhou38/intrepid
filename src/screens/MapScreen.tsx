@@ -3669,9 +3669,7 @@ const destItems = useMemo((): DestItem[] =>
     else { destHomeRegionRef.current = null; setDestHomeRegion(null); }
     destFlightInterruptedRef.current = false;
 
-    // After the sheet has landed: the map shifting in the same frames as the sheet's snap made the snap stutter (as the
-    // camera flight did for the slide-in; see afterSheetSlideIn).
-    setTimeout(() => cameraRef.current?.moveBy({ x: 0, y: dy, animationMode: 'easeTo', animationDuration: SHEET_SNAP_MS }), SHEET_SNAP_MS);
+    cameraRef.current?.moveBy({ x: 0, y: dy, animationMode: 'easeTo', animationDuration: SHEET_SNAP_MS });
   }, [setSheetSnapState, setDestHomeToDefault]);
 
   // ── Spot selection ──────────────────────────────────────────────────────────
