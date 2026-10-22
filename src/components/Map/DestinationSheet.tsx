@@ -1,5 +1,4 @@
 import React, { useRef, useEffect, useLayoutEffect, useState, useCallback, useMemo } from 'react';
-import { BISECT } from '../../utils/bisect';
 import {
   View, Text, StyleSheet, Pressable, Image, Alert,
   Animated, Dimensions, Modal, TextInput, Platform,
@@ -1521,7 +1520,7 @@ function DestinationSheet({
           native layout pass on every touch-move frame — top is a layout property and was part
           of the drag jank. The gesture itself (`pan` above) is the bigger fix: a Reanimated /
           Gesture-Handler worklet running on the UI thread with no per-frame JS-thread hop. */}
-      {BISECT !== 'shadow' && <Reanimated.View pointerEvents="none" style={[st.sheetShadow, sheetAnimStyle]} />}
+      <Reanimated.View pointerEvents="none" style={[st.sheetShadow, sheetAnimStyle]} />
 
       <GestureDetector gesture={pan}>
       <Reanimated.View style={[st.sheet, sheetAnimStyle]}>
@@ -1538,14 +1537,14 @@ function DestinationSheet({
             and then the content over it while the photo itself stays put, dimming as it is covered. Same animated
             height as the hero placeholder in the ScrollView, so every snap state crops it exactly as before. */}
         <Reanimated.View pointerEvents="none" style={[st.heroBackdrop, heroAnimStyle]}>
-              {BISECT !== 'photo' && <EntityPhoto
+              <EntityPhoto
                 cacheKey={destination.id}
                 cache={photoCache}
                 load={() => getOrFetchWikiThumbnail(destination.id, photoCache, destination.name, HEADER_PX)}
                 subject={photoSubject(destination.name)}
                 frame={heroFrame}
                 fallback={<PhotoPlaceholder icon={destination.icon} category={destination.category} />}
-              />}
+              />
 
               {/* Ambient scrim so text is always legible */}
               <View pointerEvents="none" style={[st.heroTopFade, { height: insets.top + 80 }]}>
