@@ -582,6 +582,8 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "File:Northern end of the Cape to Cape Track, October 2023 03.jpg": { x: 0.6, y: 0.5 },
   "Walpole Wilderness": { x: 0.65, y: 0.5 },
   "Fitzgerald River National Park": { x: 0.52, y: 0.52, zoom: 1.5 },
+  "Denmark": { x: 0.62, y: 0.55, zoom: 1.7 },
+  "File:ext-denmark-ocean-beach.jpg": { x: 0.69, y: 0.62, zoom: 1.6 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -1932,6 +1934,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Walpole Wilderness": "Walpole-Nornalup - Tree Top Walk 2.JPG",
   "Stirling Range National Park": "Bluff Knoll 1 Stirling Range NP II-2012.jpeg",
   "Fitzgerald River National Park": "Fitzgerald River National Park.jpg",
+  "Denmark": "Denmarkwa-rivermouth.JPG",
 };
 
 /**

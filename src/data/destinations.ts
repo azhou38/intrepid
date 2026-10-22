@@ -1842,6 +1842,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "In {months} southern right whales are still calving off Point Ann and the coastal heath is in flower.",
     seasonalTags: [{ tag: 'wildlife-migration', months: [6, 7, 8, 9, 10], strength: 0.6 }],
   },
+  {
+    id: 'denmark', name: "Denmark", country: "Australia", countryCode: 'AU', timezone: 'Australia/Perth', defaultZoomSpanKm: 22,
+    continent: 'Oceania', coordinates: { latitude: -34.960437, longitude: 117.355116 },
+    category: 'city', icon: "🏖️", rank: 3,
+    tagline: "Wilson Inlet town near granite-ringed swimming coves and karri forest.",
+    description: "Denmark is a small town on Wilson Inlet on the south coast of Western Australia, 66 km east of Walpole. It began as a karri timber-milling settlement in 1895, turned to holidaymakers after the Second World War, and now sits at the centre of a wine subregion with more than twenty vineyards. West of town, granite boulders in William Bay National Park shelter Greens Pool and Elephant Rocks, while Ocean Beach is its surf beach.",
+    whyVisit: ["Snorkel in the calm of Greens Pool", "Walk between the boulders of Elephant Rocks", "Surf at Ocean Beach"],
+    whyVisitPhotos: ["Greens pool - William Bay NP - WA.jpg", "William Bay National Park, Elephant Rocks 01.jpg", "ext-denmark-ocean-beach.jpg"],
+    highlights: ["Turquoise pool", "Granite cove", "Surf beach"],
+    goodToKnow: [
+      { icon: "🅿️", title: "Arrive early in summer", detail: "William Bay's car parks are small and fill fast in school and public holidays. Come early or outside peak periods." },
+      { icon: "🌊", title: "Swim the eastern end", detail: "Currents can run at Greens Pool's western end; the eastern end near the access steps is the sheltered part for swimming." },
+      { icon: "🐕", title: "No dogs or camping", detail: "Pets are not allowed anywhere in William Bay National Park and camping is not permitted there, though entry is free." },
+    ],
+    bestMonths: [12, 1, 2, 3],
+    bestTimeBlurb: "Summer, {months}, is the time to swim at Greens Pool and Ocean Beach, when lifeguards patrol.",
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {
