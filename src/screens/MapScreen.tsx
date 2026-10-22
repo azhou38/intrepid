@@ -3187,7 +3187,7 @@ const destItems = useMemo((): DestItem[] =>
     cameraRef.current?.setCamera({
       centerCoordinate: [reg.longitude, reg.latitude],
       zoomLevel: latDeltaToZoom(reg.latitudeDelta),
-      animationDuration: duration,
+      animationDuration: BISECT === 'camera' ? 0 : (duration),
       animationMode: mode,
     });
   }, [cancelCountryCapture, beginProgrammaticCameraMove]);
@@ -3249,7 +3249,7 @@ const destItems = useMemo((): DestItem[] =>
     cameraRef.current?.setCamera({
       centerCoordinate: [rawCenterLng - dxPx / scale, rawCenterLat + dyPx / scale],
       zoomLevel,
-      animationDuration: duration,
+      animationDuration: BISECT === 'camera' ? 0 : (duration),
       animationMode: mode,
     });
   }, [cancelCountryCapture, beginProgrammaticCameraMove]);
@@ -3334,7 +3334,7 @@ const destItems = useMemo((): DestItem[] =>
       cameraRef.current?.setCamera({
         centerCoordinate: [cached.lng, cached.lat],
         zoomLevel: cached.zoom,
-        animationDuration: FIT_MS,
+        animationDuration: BISECT === 'camera' ? 0 : (FIT_MS),
         animationMode: mode,
       });
       return;
@@ -3368,7 +3368,7 @@ const destItems = useMemo((): DestItem[] =>
         windowBottom: bottomBound,
         shrink: SHRINK,
       } as any,
-      animationDuration: FIT_MS,
+      animationDuration: BISECT === 'camera' ? 0 : (FIT_MS),
       animationMode: mode,
     });
 
@@ -3426,7 +3426,7 @@ const destItems = useMemo((): DestItem[] =>
     cameraRef.current?.setCamera({
       centerCoordinate: [cam.lng, cam.lat],
       zoomLevel: cam.zoom,
-      animationDuration: durationMs,
+      animationDuration: BISECT === 'camera' ? 0 : (durationMs),
       animationMode: mode,
     });
   }, [cancelCountryCapture, beginProgrammaticCameraMove, destDefaultCamera]);
@@ -3475,7 +3475,7 @@ const destItems = useMemo((): DestItem[] =>
     cameraRef.current?.setCamera({
       centerCoordinate: [spot.coordinates.longitude, centerLat],
       zoomLevel,
-      animationDuration: durationMs,
+      animationDuration: BISECT === 'camera' ? 0 : (durationMs),
       animationMode: mode,
     });
   }, [cancelCountryCapture, beginProgrammaticCameraMove]);
@@ -3662,7 +3662,7 @@ const destItems = useMemo((): DestItem[] =>
     else { destHomeRegionRef.current = null; setDestHomeRegion(null); }
     destFlightInterruptedRef.current = false;
 
-    cameraRef.current?.moveBy({ x: 0, y: dy, animationMode: 'easeTo', animationDuration: SHEET_SNAP_MS });
+    cameraRef.current?.moveBy({ x: 0, y: dy, animationMode: 'easeTo', animationDuration: BISECT === 'camera' ? 0 : (SHEET_SNAP_MS) });
   }, [setSheetSnapState, setDestHomeToDefault]);
 
   // ── Spot selection ──────────────────────────────────────────────────────────
@@ -3800,7 +3800,7 @@ const destItems = useMemo((): DestItem[] =>
         beginClosePlan(cam.zoom, 500);
         beginProgrammaticCameraMove(500);
         cameraRef.current?.setCamera({
-          centerCoordinate: [cam.lng, cam.lat], zoomLevel: cam.zoom, animationDuration: 500, animationMode: 'easeTo',
+          centerCoordinate: [cam.lng, cam.lat], zoomLevel: cam.zoom, animationDuration: BISECT === 'camera' ? 0 : (500), animationMode: 'easeTo',
         });
       } else {
         releaseHeldSelection();
@@ -4117,7 +4117,7 @@ const destItems = useMemo((): DestItem[] =>
       cameraRef.current?.setCamera({
         centerCoordinate: [cached.lng, cached.lat],
         zoomLevel: cached.zoom / 2,
-        animationDuration: 600,
+        animationDuration: BISECT === 'camera' ? 0 : (600),
         animationMode: 'easeTo',
       });
       return;
@@ -4438,7 +4438,7 @@ const destItems = useMemo((): DestItem[] =>
       const targetCenterLat = SOUTH_LIMIT;
       cameraRef.current?.setCamera({
         centerCoordinate: [center[0], targetCenterLat],
-        animationDuration: 300,
+        animationDuration: BISECT === 'camera' ? 0 : (300),
         animationMode: 'easeTo',
       });
       if (southCorrectingTimerRef.current) clearTimeout(southCorrectingTimerRef.current);
