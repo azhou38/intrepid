@@ -318,6 +318,9 @@ interface Props {
   isMapInteracting?: () => boolean;
   // The OUTGOING copy of a sheet another sheet is replacing — see DestinationSheet.
   leaving?: boolean;
+  // The live sheet itself becomes the outgoing sheet (MapScreen "Sheet swaps"): it slides off the bottom and calls
+  // onExited, instead of a fresh outgoing copy being mounted to do it.
+  leaveNow?: boolean;
   onExited?: () => void;
   enterFromPrevious?: boolean;   // this sheet replaces another one that was showing: start where it rested, not below the screen
   isPressBlocked?: () => boolean;   // a press that is really a finger of a map gesture (see MapScreen.pressBlocked)
@@ -339,7 +342,7 @@ interface Props {
 
 function SpotSheet({
   spots, focusSpotId, destination, nearLabel, nearEyebrow, onClose, onExpand, onCollapse, onActiveSpotChange, onCollapsedTopChange,
-  pillOffsetSV, onSnapStateChange, peekSignal, peekSV, exitSignal, exitSV, onExitDone, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, onExited, onGoToList, collapseSignal,
+  pillOffsetSV, onSnapStateChange, peekSignal, peekSV, exitSignal, exitSV, onExitDone, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, leaveNow, onExited, onGoToList, collapseSignal,
 }: Props) {
   // [perf] the sheet's first render to commit (its mount), after a selection.
   const perfT0 = useRef(perfNow()).current;
@@ -864,6 +867,16 @@ function SpotSheet({
     // Collapsed, or already peeked if the map is being interacted with.
     transitionToRef.current(isMapInteracting?.() ? 'peek' : 'collapsed', 'mount');
   }, []);
+
+  // Turned into the outgoing sheet while mounted: the same slide off the bottom an outgoing copy does on mount.
+  useEffect(() => {
+    if (!leaveNow) return;
+    closingRef.current = true;
+    slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, finished => {
+      if (finished && onExited) runOnJS(onExited)();
+    });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [leaveNow]);
 
   // When a NEW spot is tapped on the map (focusSpotId changes), jump the carousel to it and
   // return to the collapsed carousel view.

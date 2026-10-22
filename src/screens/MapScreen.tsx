@@ -4932,7 +4932,7 @@ const destItems = useMemo((): DestItem[] =>
   // slide finishes. The live sheet is re-keyed per swap so it mounts fresh and pops up.
   // Not animated — the sheets just swap in place, as before — when the old sheet had no resting pose (full screen, or
   // already exiting) or the user is mid map gesture (the sheets stay peeked out of the way then).
-  type SheetSnap = { identity: string; kind: 'country' | 'dest' | 'spot'; cluster: CountryCluster | null; dest: Destination | null; spots: Spot[]; focusId: string | null; liveKey?: number };
+  type SheetSnap = { identity: string; kind: 'country' | 'dest' | 'spot'; cluster: CountryCluster | null; dest: Destination | null; spots: Spot[]; focusId: string | null; liveKey?: number; nearLabel?: string; nearEyebrow?: 'SPOTS' | 'NEAR' };
   const sheetIdentity = sheetKind === 'country' ? `country:${selectedCountry?.countryCode}`
     : sheetKind === 'dest' ? `dest:${selectedDest?.id}`
     : sheetKind === 'spot' ? `spot:${nearCtx ? nearCtx.anchor.id : selectedSpot?.destinationId ?? selectedSpot?.id}` : null;
@@ -4959,6 +4959,8 @@ const destItems = useMemo((): DestItem[] =>
       // A spot sheet's destination is the SPOT's own (none when standalone), not whatever happens to be selected.
       dest: sheetKind === 'spot' && selectedSpot ? (nearCtx ? null : spotDestination(selectedSpot) ?? null) : selectedDest,
       spots: sheetKind === 'spot' ? carouselSpots : [], focusId: spotFocusId,
+      nearLabel: sheetKind === 'spot' && nearCtx ? (nearCtx.district ?? nearCtx.near?.name) : undefined,
+      nearEyebrow: nearCtx?.district ? 'SPOTS' : 'NEAR',
     };
   } else if (!sheetKind) {
     shownSnapRef.current = null;
@@ -4976,6 +4978,10 @@ const destItems = useMemo((): DestItem[] =>
   // busiest commit of the swap). Same element position and key, so React keeps the instance.
   const liveDestSheet = mapState !== 'world' && !!selectedDest && !selectedSpot && !destAfterCamera;
   const destLeavesInPlace = !liveDestSheet && leavingSheetRef.current?.kind === 'dest' && !!leavingSheetRef.current.dest && leavingSheetRef.current.liveKey !== undefined;
+  // The same for the spot sheet, when a spot's sheet gives way to a destination's or a country's (back to the destination).
+  const liveSpotSheet = !!selectedSpot && !!spotFocusId;
+  const spotLeavesInPlace = !liveSpotSheet && leavingSheetRef.current?.kind === 'spot' && !!leavingSheetRef.current.focusId && leavingSheetRef.current.liveKey !== undefined;
+  const leavingSpot = spotLeavesInPlace ? leavingSheetRef.current! : null;
 
 
   // Stable identities for the destination sheet's callback props (see useStableCallback).
@@ -5738,15 +5744,17 @@ const destItems = useMemo((): DestItem[] =>
       )}
 
       {/* ── Spot sheet — swipeable carousel of the destination's spots, expandable to full */}
-      {selectedSpot && spotFocusId && (
+      {(liveSpotSheet || spotLeavesInPlace) && (
         <Profiler id="spot sheet" onRender={onPerfRender}>
         <SpotSheet
-          key={`spot-${sheetSwapKey}`}
-          spots={carouselSpots}
-          focusSpotId={spotFocusId}
-          destination={nearCtx ? null : spotDestination(selectedSpot) ?? null}
-          nearLabel={nearCtx ? (nearCtx.district ?? nearCtx.near?.name) : undefined}
-          nearEyebrow={nearCtx?.district ? 'SPOTS' : 'NEAR'}
+          key={liveSpotSheet ? `spot-${sheetSwapKey}` : `spot-${leavingSpot!.liveKey}`}
+          spots={liveSpotSheet ? carouselSpots : leavingSpot!.spots}
+          focusSpotId={liveSpotSheet ? spotFocusId! : leavingSpot!.focusId!}
+          destination={liveSpotSheet ? (nearCtx ? null : spotDestination(selectedSpot!) ?? null) : leavingSpot!.dest}
+          nearLabel={liveSpotSheet ? (nearCtx ? (nearCtx.district ?? nearCtx.near?.name) : undefined) : leavingSpot!.nearLabel}
+          nearEyebrow={liveSpotSheet ? (nearCtx?.district ? 'SPOTS' : 'NEAR') : leavingSpot!.nearEyebrow}
+          leaveNow={!liveSpotSheet}
+          onExited={handleLeavingSheetExited}
           onClose={handleCloseSpot}
           onExpand={handleSheetExpand}
           onCollapse={handleCloseSheet}
@@ -5763,7 +5771,7 @@ const destItems = useMemo((): DestItem[] =>
           mapGestureAtSV={mapGestureAtSV}
           onSnapStateChange={handleSheetSnapStateChange}
           // A standalone spot has no destination sheet to open a list in.
-          onGoToList={selectedSpot.destinationId && !nearCtx ? handleGoToListView : undefined}
+          onGoToList={liveSpotSheet && selectedSpot!.destinationId && !nearCtx ? handleGoToListView : undefined}
           collapseSignal={collapseSheetSignal}
         />
         </Profiler>
@@ -5785,7 +5793,7 @@ const destItems = useMemo((): DestItem[] =>
             />
             </Profiler>
           )}
-          {leavingSheetRef.current.kind === 'spot' && leavingSheetRef.current.focusId && (
+          {leavingSheetRef.current.kind === 'spot' && leavingSheetRef.current.focusId && !spotLeavesInPlace && (
             <Profiler id="spot sheet" onRender={onPerfRender}>
             <SpotSheet
               key={`leaving-spot-${leavingSheetRef.current.seq}`}
