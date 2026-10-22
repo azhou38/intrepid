@@ -1773,6 +1773,24 @@ export const DESTINATIONS: Destination[] = [
     bestMonths: [3, 4, 5, 9, 10, 11],
     bestTimeBlurb: "Come in {months} for autumn leaves at Golden Valley or for spring blossom and wildflowers.",
   },
+  {
+    id: 'margaret-river-region', name: "Margaret River Region", country: "Australia", countryCode: 'AU', timezone: 'Australia/Perth', defaultZoomSpanKm: 75,
+    continent: 'Oceania', coordinates: { latitude: -33.948853, longitude: 115.074017 },
+    category: 'nature', icon: "🍷", rank: 2,
+    tagline: "Wineries, surf breaks, show caves and two lighthouses between the capes south of Perth.",
+    description: "The Margaret River Region is the strip of coast and forest between Cape Naturaliste and Cape Leeuwin, about three hours' drive south of Perth. Its first vines were planted at Vasse Felix in 1967, and cellar doors now line Caves Road between Dunsborough, Yallingup, Margaret River and Augusta. Over 100 limestone caves lie beneath the Leeuwin-Naturaliste Ridge, six of them open to visitors, and the 130 km Cape to Cape Track links the lighthouses at either end.",
+    whyVisit: ["Taste wine at the region's cellar doors", "Explore the region's limestone show caves", "Walk the Cape to Cape Track", "Climb Cape Leeuwin Lighthouse"],
+    whyVisitPhotos: ["Cape Mentelle, May 2025 07.jpg", "Margaret River Day 2 - going underground at Ngilgi Caves (25826907444).jpg", "Northern end of the Cape to Cape Track, October 2023 03.jpg", "CapeLeeuwinLighthouseWA.jpg"],
+    highlights: ["Cellar doors", "Limestone caves", "Coastal walking", "Lighthouse tour"],
+    goodToKnow: [
+      { icon: "🎟️", title: "Book guided caves ahead", detail: "Jewel Cave and Lake Cave run fully guided tours that must be booked; tickets go fast in school holidays." },
+      { icon: "🚗", title: "Bring a car", detail: "Buses reach Margaret River town, but the wineries, caves and beaches are spread along Caves Road; without a car or tour you are limited." },
+      { icon: "🌊", title: "Respect the swell", detail: "Waves can surge over coastal rocks and cliff edges without warning. Stay out of rock pools such as Injidup when the sea is rough." },
+    ],
+    bestMonths: [10, 11, 12, 1, 2, 3, 4],
+    bestTimeBlurb: "{months} bring warm, dry days for the beaches and cellar doors, with wildflowers in spring.",
+    seasonalTags: [{ tag: 'beach-peak' }],
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {
