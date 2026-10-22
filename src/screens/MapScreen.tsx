@@ -1547,10 +1547,6 @@ const FlagWarmup = memo(function FlagWarmup() {
   );
 });
 
-// TEMP timing logs (remove after measuring)
-const T0LOG = Date.now();
-const tlog = (m: string) => { void fetch('http://10.34.229.235:9799/', { method: 'POST', body: `+${Date.now() - T0LOG} ${m}` }).catch(() => {}); };
-
 export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = {}) {
   const insets = useSafeAreaInsets();
   const cameraRef = useRef<MapboxGL.Camera>(null);
@@ -2237,7 +2233,11 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // or, for a close, the known target — never the velocity prediction above: a pinch that merely starts to zoom out would
   // otherwise read as already past the destination's default zoom, flash its pin in and its spot pins out, then undo it
   // when the gesture settled.
-  const handoffZoom = closeTarget !== null ? Math.min(camZoom, closeTarget) : camZoom;
+  // A back tap's plan (planWithSelRef) holds the target outright, even where its fly-to arcs out past the target and back
+  // in (Wellington → New Zealand dips to zoom 2 before landing at 3.9): following the live zoom there switched every photo
+  // pin off for the dip and back on as the camera climbed in, a burst of pins on landing.
+  const backPlan = planWithSelRef.current && closeTarget !== null;
+  const handoffZoom = backPlan ? closeTarget! : closeTarget !== null ? Math.min(camZoom, closeTarget) : camZoom;
   // The zoom the destination photo tiers switch at: on a fast zoom-out, a little ahead of the camera (the predicted outward
   // travel over the render lag, a share of it and capped: see DEST_GATE_LOOKAHEAD), so pins start fading as their gate approaches instead
   // of a render or more after the camera has passed it, which left them clumped together on the way out.
@@ -2245,8 +2245,8 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // A back tap ("← Country", "← Destination"; planWithSelRef) switches the tiers at its target at once: its zoom-out
   // passes many tiers' gates (a destination out to its whole country), and each tier's pins lingered until the camera
   // reached its gate, clumping on the way out.
-  const destGateZoom = planWithSelRef.current && closeTarget !== null
-    ? Math.min(camZoom, closeTarget)
+  const destGateZoom = backPlan
+    ? closeTarget!
     : Math.max(camZoom - Math.min(zoomOutLead * DEST_GATE_LOOKAHEAD_SHARE, DEST_GATE_LOOKAHEAD), Math.min(camZoom, closeTarget ?? -Infinity));
   // Each photo tier's on/off, with a hold: a tier switched off on the way out (by the look-ahead above) stays off until the
   // camera next zooms IN, rather than coming back the moment the camera stops just above its gate. A pin whose gate sat
@@ -2259,7 +2259,8 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   const destTierOn = (tier: string): boolean => {
     const was = destTierOnRef.current.get(tier);
     let on: boolean;
-    if (!destGateOn(tier, camZoom)) on = false;                 // below its gate: off
+    if (backPlan) on = destGateOn(tier, closeTarget!);          // a back tap: the target's tiers, whatever the arc (see backPlan)
+    else if (!destGateOn(tier, camZoom)) on = false;            // below its gate: off
     else if (was === undefined) on = destGateOn(tier, destGateZoom);
     else if (was) on = destGateOn(tier, destGateZoom);          // on: switches off once the look-ahead passes its gate
     else on = destZoomingIn;                                    // off but at/above its gate: back on when zooming in
@@ -2606,7 +2607,6 @@ const destItems = useMemo((): DestItem[] =>
       dataIds.add(id);
     }
     destLabelHitRef.current = { pxPerDegLng: 1, rects: [] };   // names are native symbols: they take taps themselves
-    if (selectedCountry && !selectedDest) tlog(`plan cam=${camZoom.toFixed(2)} target=${closeTarget?.toFixed(2) ?? '-'} handoff=${handoffZoom.toFixed(2)} back=${planWithSelRef.current} photos=${photoIds.size} country=${planCountry?.countryCode ?? '-'} dest=${planDest?.id ?? '-'}`);
     return { photoIds, dataIds, labelHiddenIds: new Set<string>(), priority: destPhotoPlan.priority, fadeTier: destPhotoPlan.fadeTier, nameTier: destPhotoPlan.nameTier };
   }, [destPhotoPlan, handoffZoom]);
 
@@ -4163,7 +4163,6 @@ const destItems = useMemo((): DestItem[] =>
     // Plan the pins at the country's view from the tap, as an X close does (see beginBackPlan): the camera only starts once
     // the country sheet has slid in, so the destination's spot pins and photo pins used to wait for it before fading.
     const target = countryTargetZoom(cluster);
-    tlog(`country target ${target?.toFixed(2)} cached=${!!countryCamCacheRef.current[`${cluster.countryCode}:topHalf`]}`);
     if (target !== null) beginBackPlan(target, BACK_CAMERA_DELAY_MS + 500);
     // The camera waits for the swap, as for the X close and "← Destination": started with it, it zoomed out while the new
     // selection was still rendering, over pins planned for the old one (they piled up, then a crowd flashed in).
@@ -4368,7 +4367,6 @@ const destItems = useMemo((): DestItem[] =>
   // The back pill: one level up. The parent's sheet replaces this one (see "Sheet swaps": the outgoing sheet slides down
   // while the parent's rises in its place), so it closes straight away rather than sliding this sheet off first.
   const handleUpNav = useCallback(() => {
-    tlog('back tap');
     if (pressBlocked()) return;   // a pinch finger lifting over the pill is not a press
     if (sheetExitingRef.current) return;
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
@@ -4720,7 +4718,6 @@ const destItems = useMemo((): DestItem[] =>
     releaseSheetsAfterCamera();
     releaseHeldSelection();   // a close's zoom-out has settled: let the pin/pill planning drop the old selection
     releaseSpotCloseTarget();
-    tlog(`idle z=${state.properties.zoom.toFixed(2)} back=${planWithSelRef.current}`);
     setMapIdleTick(t => t + 1);   // a return arrow held back during the gesture can now open (see mapIdleTick)
     const { center, bounds } = state.properties;
     const newRegion: Region = {
