@@ -587,6 +587,7 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "Merredin": { x: 0.5, y: 0.62, zoom: 1.5 },
   "File:ext-merredin-peak-over-town.jpg": { x: 0.5, y: 0.62, zoom: 1.5 },
   "Albany": { x: 0.45, y: 0.5, zoom: 1.5 },
+  "Purnululu National Park": { x: 0.62, y: 0.45 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -1942,6 +1943,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Merredin": "ext-merredin-peak-over-town.jpg",
   "Albany": "Consul General Gainer visits Albany, WA August 2020 (50303439758).jpg",
   "Torndirrup National Park": "Torndirrup Peninsula to Bald Head.JPG",
+  "Purnululu National Park": "00 2174 Purnulula-Nationalpark - Western Australia.jpg",
 };
 
 /**

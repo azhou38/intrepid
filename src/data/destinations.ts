@@ -1925,6 +1925,24 @@ export const DESTINATIONS: Destination[] = [
     bestMonths: [10, 11, 12, 1, 2, 3],
     bestTimeBlurb: "Spring and summer, {months}, bring wildflowers and calmer days; whales pass the cliffs in winter.",
   },
+  {
+    id: 'purnululu', name: "Purnululu National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Perth', defaultZoomSpanKm: 40,
+    continent: 'Oceania', coordinates: { latitude: -17.420719, longitude: 128.299101 },
+    category: 'park', icon: "⛰️", rank: 2,
+    tagline: "Striped beehive domes and palm-lined chasms of the World Heritage Bungle Bungle Range.",
+    description: "Purnululu National Park, country of the Gija and Jaru people, protects the Bungle Bungle Range, about 45,000 hectares of striped sandstone domes some 360 million years old, and is on the UNESCO World Heritage List. The north of the range hides narrow gorges such as Echidna Chasm and Mini Palms, while the south has the beehive domes, Cathedral Gorge and Piccaninny Creek. The two ends are 47 km apart, and the park is 304 km by road from Kununurra, so allow at least two nights.",
+    whyVisit: ["Walk into Cathedral Gorge's amphitheatre", "Squeeze through narrow Echidna Chasm", "Wander among the beehive domes", "Fly over the Bungle Bungle Range"],
+    whyVisitPhotos: ["Cathedral Gorge, Purnulu NP.jpg", "Bungle Bungles (2051696203).jpg", "The Domes Walk, Purnululu National Park.jpg", "The Bungle Bungle Ranges.jpg"],
+    highlights: ["Cathedral Gorge", "Echidna Chasm", "Beehive domes", "Scenic flights"],
+    goodToKnow: [
+      { icon: "🚙", title: "High-clearance 4WD only", detail: "The 53 km Spring Creek Track from the highway takes 1.5 to 3 hours; only high-clearance 4WDs and single-axle trailers may enter." },
+      { icon: "⛽", title: "No fuel in the park", detail: "Arrive with enough fuel for at least 300 km, and treat the park's bore water before drinking it." },
+      { icon: "🥵", title: "Walk in the cool", detail: "Temperatures can pass 40°C: walk early or late, and carry a litre of water per person for every hour of walking." },
+    ],
+    bestMonths: [5, 6, 7, 8, 9],
+    bestTimeBlurb: "The park opens only for the dry season; {months} have the mildest weather for its gorge walks.",
+    seasonalTags: [{ tag: 'monsoon-dry-season', months: [5, 6, 7, 8, 9] }],
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {
