@@ -573,6 +573,7 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "Barrow Creek Telegraph Station": { x: 0.63, y: 0.47, zoom: 1.4 },
   "Garig Gunak Barlu National Park": { x: 0.45, y: 0.5, zoom: 1.3 },
   "Shark Bay": { x: 0.62, y: 0.62, zoom: 1.4 },
+  "Esperance": { x: 0.42, y: 0.5 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -1912,6 +1913,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Barrow Creek Telegraph Station": "Barrow Creek Telegraph Station.jpg",
   "Ningaloo": "00 1870 Ningaloo Reef - Westaustralien.jpg",
   "Shark Bay": "Skipjack Point, Francois Peron National Park, Western Australia.jpg",
+  "Esperance": "Esperance Waterfront, 2019 (04).jpg",
 };
 
 /**

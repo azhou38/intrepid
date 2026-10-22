@@ -1656,6 +1656,23 @@ export const DESTINATIONS: Destination[] = [
     bestMonths: [5, 6, 7, 8, 9, 10],
     bestTimeBlurb: "The cooler months, {months}, suit 4WD tracks and wildlife cruises; summer days often pass 35°C.",
   },
+  {
+    id: 'esperance', name: "Esperance", country: "Australia", countryCode: 'AU', timezone: 'Australia/Perth', defaultZoomSpanKm: 25,
+    continent: 'Oceania', coordinates: { latitude: -33.858228, longitude: 121.8931606 },
+    category: 'city', icon: "🏖️", rank: 3,
+    tagline: "White-sand beaches, a coastal loop drive and island day trips on the Southern Ocean.",
+    description: "Esperance is a port town on Western Australia's south coast, about 720 km by road south-east of Perth, looking out over the islands of the Recherche Archipelago. The 38 km Great Ocean Drive links the beaches and lookouts west of town, and in summer a ferry runs out to Woody Island. The town is named after the French ship Espérance, which sheltered in the bay in 1792, and pieces of the Skylab space station fell around it in 1979.",
+    whyVisit: ["Drive the Great Ocean Drive loop", "Swim at Twilight and Blue Haven beaches", "Cruise out to Woody Island"],
+    whyVisitPhotos: ["Twilight Beach Road, Esperance, January 2024.jpg", "Twilight Beach, bay and rocks, Esperance, January 2025 07.jpg", "Skinny Dip Bay 2 Woody Island NR VIII-2012.jpeg"],
+    highlights: ["Coastal loop drive", "Sheltered swimming beaches", "Island day trip"],
+    goodToKnow: [
+      { icon: "🌊", title: "Mind the swell", detail: "King waves and rips occur on this coast. Swim at sheltered spots such as Blue Haven, and never turn your back on the sea from the rocks." },
+      { icon: "⛴️", title: "Woody Island is seasonal", detail: "The island ferry runs in the warmer months only; day tours leave Taylor Street Jetty at 9 am and need fair weather and minimum numbers." },
+      { icon: "🧥", title: "Four seasons in a day", detail: "The weather turns quickly, with sun, wind and short cold showers in one afternoon, so carry a warm layer even in summer." },
+    ],
+    bestMonths: [11, 12, 1, 2, 3],
+    bestTimeBlurb: "Come {months} for warm, mostly dry beach days and the Woody Island ferry; winters are wet.",
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {
