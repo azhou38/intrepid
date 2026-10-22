@@ -1985,7 +1985,6 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Tasmania Zoo",
   "Platypus House",
   "Seahorse World",
-  "Katherine",
   "Tennant Creek",
   "Emily Gap",
   "Olive Pink Botanic Garden",

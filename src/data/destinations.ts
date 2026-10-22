@@ -1590,23 +1590,6 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "The Dry season, {months}, brings sunny days and cooler nights and opens the Central Arnhem Road; the Wet, November to April, means storms and cyclone risk.",
   },
   {
-    id: 'katherine', name: "Katherine", country: "Australia", countryCode: 'AU', timezone: 'Australia/Darwin', defaultZoomSpanKm: 60,
-    continent: 'Oceania', coordinates: { latitude: -14.464616, longitude: 132.263599 },
-    category: 'city', icon: "🌉", rank: 4,
-    tagline: "The Top End's southern hub on the Katherine River, gateway to Nitmiluk and the Savannah Way.",
-    description: "Katherine is the Northern Territory's third-largest town, sitting on the Stuart Highway and the Katherine River. It is the regional base for Nitmiluk Gorge 30 km to the north-east and for the Mataranka thermal pools to the south. In town, the museum tells the story of life in the outback, and Cutta Cutta Caves lie 27 km down the highway.",
-    whyVisit: ["Tour the limestone chambers of Cutta Cutta Caves", "Visit Katherine Museum's outback history"],
-    whyVisitPhotos: ["Cutta Cutta caves - panoramio.jpg", "ext-katherine-museum.jpg"],
-    highlights: ["Cutta Cutta Caves", "Outback history"],
-    goodToKnow: [
-      { icon: "👟", title: "Cave tours need shoes", detail: "Cutta Cutta tours run April to October and require fully enclosed shoes; thongs and sandals are turned away." },
-      { icon: "🕘", title: "Plan around weekdays", detail: "Most shops close on weekends, so schedule town stops and supplies early in the week before heading out to the gorge or the caves." },
-    ],
-    bestMonths: [5, 6, 7, 8, 9],
-    bestTimeBlurb: "The dry season, {months}, is the time to visit: Cutta Cutta tours run, gorge swimming and canoeing are open and the days are mild.",
-    seasonalTags: [{ tag: 'monsoon-dry-season', months: [5, 6, 7, 8, 9, 10] }],
-  },
-  {
     id: 'east-macdonnell-ranges', name: "East MacDonnell Ranges", country: "Australia", countryCode: 'AU', timezone: 'Australia/Darwin', defaultZoomSpanKm: 60,
     continent: 'Oceania', coordinates: { latitude: -23.59306, longitude: 134.494098 },
     category: 'nature', icon: "⛰️", rank: 4,
