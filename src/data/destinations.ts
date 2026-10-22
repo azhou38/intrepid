@@ -2180,6 +2180,24 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Visit in the dry season, {months}, for warm days; the wet brings heat and cyclones.",
     seasonalTags: [{ tag: 'monsoon-dry-season', months: [5, 6, 7, 8, 9, 10] }],
   },
+  {
+    id: 'kalbarri-national-park', name: "Kalbarri National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Perth', defaultZoomSpanKm: 48,
+    continent: 'Oceania', coordinates: { latitude: -27.709181, longitude: 114.1661526 },
+    category: 'park', icon: "🏜️", rank: 3,
+    tagline: "Murchison River gorges inland and 100 m sea cliffs on the coast, either side of Kalbarri.",
+    description: "Kalbarri National Park protects the lower Murchison River, which has cut an 80 km gorge through red and white banded Tumblagooda sandstone east of the town of Kalbarri. South of town, coastal cliffs more than 100 m high have been worn into gorges, a sea stack and a natural arch. The gorge and the coast are reached by separate roads from town, and the gorge can be more than 10°C hotter than the coast. From July to October around 1,000 species of wildflowers bloom across the park.",
+    whyVisit: ["Walk out on the Kalbarri Skywalk", "Frame the river through Nature's Window", "Walk the red clifftops of the Kalbarri coast"],
+    whyVisitPhotos: ["Kalbarri Skywalk Platform Over the Murchison Gorge.jpg", "Murchison River Gorge - Nature's window (6136071267).jpg", "Cliffs at Kalbarri - Falaises roses (6101279965).jpg"],
+    highlights: ["Skywalk platforms", "Nature's Window", "Coastal cliffs"],
+    goodToKnow: [
+      { icon: "🎟️", title: "Park entry fee", detail: "Entry is $17 per vehicle, paid at the gorge entry stations; the coastal lookouts are in the park too. A WA park pass covers it." },
+      { icon: "🌡️", title: "Hike early or in winter", detail: "Gorge temperatures can reach 50°C in summer, and the Loop Trail closes after 7am from November to March." },
+      { icon: "💧", title: "Bring your own water", detail: "There is no drinking water anywhere in the park, so fill up in Kalbarri before heading to the gorges." },
+    ],
+    bestMonths: [7, 8, 9, 10],
+    bestTimeBlurb: "Come in {months}, when wildflowers bloom and the gorge is cool enough to hike.",
+    seasonalTags: [{ tag: 'wildlife-migration', months: [6, 7, 8, 9, 10, 11], strength: 0.3 }],
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {

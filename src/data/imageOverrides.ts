@@ -1971,6 +1971,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Southern Forests": "WAR Dave Evan's Bicentennial Tree 1 WNP X-2009.JPG",
   "Bunbury": "View of Bunbury from Marlston Hill Lookout, January 2021 02.jpg",
   "Broome": "Broome Coast, Western Australia.jpg",
+  "Kalbarri National Park": "Nature's Window, Kalbarri National Park, Western Australia.jpg",
 };
 
 /**
