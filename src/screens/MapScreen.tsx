@@ -1246,7 +1246,8 @@ const SPOT_PHOTO_ZOOM_BY_ID = earlySpotZoomTable(SPOT_PHOTO_EARLY_SEPARATION_PX,
 // At most this many spots draw as full photo pins at once; the rest of the revealed spots collapse to a small
 // photo-less dot (SpotDots below) that lives exactly as long as the full pin would have — same reveal zoom, same
 // viewport — so the map never loses a spot, it only stops paying for a photo MarkerView on every one of them.
-const SHEET_HOLD_MAX_MS = 60;    // see holdSheetUntilCamera: the destination sheet rises while the spot sheet is still sliding away
+const SHEET_HOLD_MAX_MS = 60;
+const BACK_CAMERA_DELAY_MS = 60 + 340;   // spot back to its destination: the zoom-out waits for both sheets (hold + slide-in)    // see holdSheetUntilCamera: the destination sheet rises while the spot sheet is still sliding away
 const SHEET_HOLD_RELEASE_ZOOM = 0.6;   // see handleCameraChanged: how near its target a close's zoom-out releases the next sheet
 const SHEET_SLIDE_IN_MS = 340;   // the sheets' slide-in (40 ms start delay + 280 ms) plus a frame; see afterSheetSlideIn
 const PIN_IMAGE_HOLD_MS = 450;    // see pinImagesHoldUntilRef: no new pin images while a sheet slides in
@@ -3858,10 +3859,10 @@ const destItems = useMemo((): DestItem[] =>
       // was closed back to its destination.
       suppressPeekPushRef.current = true;
       if (suppressPeekPushTimerRef.current) clearTimeout(suppressPeekPushTimerRef.current);
-      suppressPeekPushTimerRef.current = setTimeout(() => { suppressPeekPushRef.current = false; }, 650);
+      suppressPeekPushTimerRef.current = setTimeout(() => { suppressPeekPushRef.current = false; }, 650 + BACK_CAMERA_DELAY_MS);
       suppressDestReturnPromptRef.current = true;
       if (suppressDestReturnPromptTimerRef.current) clearTimeout(suppressDestReturnPromptTimerRef.current);
-      suppressDestReturnPromptTimerRef.current = setTimeout(() => { suppressDestReturnPromptRef.current = false; }, 650);
+      suppressDestReturnPromptTimerRef.current = setTimeout(() => { suppressDestReturnPromptRef.current = false; }, 650 + BACK_CAMERA_DELAY_MS);
       // Neither snap this can land on leaves the bottom-screen strip showing, so 'topHalf'.
       setDestHomeToDefault(selectedDest, 'topHalf');
       // Plan the spot pins at the view this lands on (see spotCloseTargetRef) — only when it zooms out.
@@ -3876,8 +3877,11 @@ const destItems = useMemo((): DestItem[] =>
           if (spotCloseTargetRef.current === null) return;
           spotCloseTargetRef.current = null;
           setHeldSelTick(t => t + 1);
-        }, 500 + 800);
+        }, 500 + 800 + BACK_CAMERA_DELAY_MS);
       }
+      // The zoom-out starts once the spot sheet has slid away and the destination sheet has slid up: running in the same
+      // frames as the two sheets made both stutter (as the camera flight did for a pin tap's slide-in).
+      cameraHoldUntilRef.current = Date.now() + BACK_CAMERA_DELAY_MS;
       fitDestinationDefaultView(selectedDest, 'easeTo', 'topHalf');
     }
   }, [spotOrigin, selectedDest, fitDestinationDefaultView, setSheetSnapState, setDestHomeToDefault, destDefaultCamera, holdSheetUntilCamera]);
