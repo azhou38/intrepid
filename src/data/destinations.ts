@@ -3319,9 +3319,9 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: "🌋", rank: 3,
     tagline: "A harbour town on New Britain beside active volcanoes, partly buried by ash in 1994.",
     description: "Rabaul is a township on the Gazelle Peninsula in the northeast of New Britain. A 1994 eruption of Tavurvur and Vulcan covered it in ash and collapsed 80% of its buildings, and the provincial capital moved to Kokopo, about 20 km away. Visitors come for scuba diving and snorkelling and for Second World War history, including the many kilometres of tunnels the Japanese army dug around the town, where about 110,000 troops were based by 1943. Evacuation drills meant only five people died in 1994.",
-    whyVisit: ["See Tavurvur smoke across Simpson Harbour", "Watch the volcanoes from the observatory lookout", "Walk into the Japanese Barge Tunnel"],
-    whyVisitPhotos: ["Tavurvur volcano 3.jpg", "Rabaul from Vulcanology Observatory.jpg", "ext-rabaul-barge-tunnel.jpg"],
-    highlights: ["Tavurvur volcano", "Observatory lookout", "Barge Tunnel"],
+    whyVisit: ["Watch the volcanoes from the observatory lookout", "Walk into the Japanese Barge Tunnel"],
+    whyVisitPhotos: ["Rabaul from Vulcanology Observatory.jpg", "ext-rabaul-barge-tunnel.jpg"],
+    highlights: ["Observatory lookout", "Barge Tunnel"],
     goodToKnow: [
       { icon: "🏨", title: "Stay in Kokopo", detail: "Most accommodation is in Kokopo resorts; the 34-room Rabaul Hotel is in town, 45 minutes from Tokua Airport. The 1A bus runs Kokopo to Rabaul in about 40 minutes." },
       { icon: "🌋", title: "Ash and mudslide closures", detail: "The town always runs the risk of further volcanic activity, and the hot springs at Tavurvur are described as deadly. Tokua Airport has been closed by ashfall and parts of the Kokopo-Rabaul road are damaged by mudslides, so leave slack in your schedule and heed local advice." },

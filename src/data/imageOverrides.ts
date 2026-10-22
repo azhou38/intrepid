@@ -431,7 +431,6 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "Rabaul": { x: 0.4, y: 0.6, zoom: 1.3 },
   "Kokoda Track": { x: 0.8, y: 0.5 },
   "File:Ela Beach May 2015.jpg": { x: 0.6, y: 0.6 },
-  "File:Tavurvur volcano 3.jpg": { x: 0.45, y: 0.5 },
   "File:Rabaul from Vulcanology Observatory.jpg": { x: 0.4, y: 0.5 },
   "File:ext-rabaul-barge-tunnel.jpg": { x: 0.55, y: 0.55 },
   "File:Mount Uluman.jpg": { x: 0.5, y: 0.6, zoom: 1.3 },
