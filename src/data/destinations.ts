@@ -1876,6 +1876,22 @@ export const DESTINATIONS: Destination[] = [
     bestMonths: [6, 7, 8, 9, 10],
     bestTimeBlurb: "The cooler months, {months}, are easiest for the long drive, and whales pass along the Bight coast from June.",
   },
+  {
+    id: 'merredin', name: "Merredin", country: "Australia", countryCode: 'AU', timezone: 'Australia/Perth', defaultZoomSpanKm: 15,
+    continent: 'Oceania', coordinates: { latitude: -31.4813329, longitude: 118.2779117 },
+    category: 'city', icon: "🚂", rank: 5,
+    tagline: "Wheatbelt railway and military museums, a granite peak walk and silos painted 35 m high.",
+    description: "Merredin is the largest town in the Central Eastern Wheatbelt, about three hours east of Perth on the Great Eastern Highway and the Golden Pipeline Heritage Trail. Its museum precinct holds a restored railway station with a 95-lever signal box and a military museum of vehicles from both World Wars, Korea and Vietnam. A loop trail climbs Merredin Peak past early works built to harvest water off the rock, and four grain silos outside town carry a 2017 mural.",
+    whyVisit: ["Climb the Railway Museum's signal tower", "Walk the Merredin Peak loop"],
+    whyVisitPhotos: ["Merredin Railway Museum, January 2024 05.jpg", "ext-merredin-peak-over-town.jpg"],
+    highlights: ["Railway heritage", "Peak lookout"],
+    goodToKnow: [
+      { icon: "🚆", title: "Arrive by train", detail: "The Transwa Prospector and MerredinLink trains stop in Merredin daily, so the town works as a car-free trip from Perth." },
+      { icon: "🕐", title: "Check museum hours", detail: "Both museums are run by volunteers: the Railway Museum opens only 11am to 2pm and shuts on Mondays, and times can change." },
+    ],
+    bestMonths: [9, 10, 11],
+    bestTimeBlurb: "Spring, {months}, brings wildflowers to the bush reserves around Merredin and mild days for walking.",
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {

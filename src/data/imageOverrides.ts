@@ -584,6 +584,8 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "Fitzgerald River National Park": { x: 0.52, y: 0.52, zoom: 1.5 },
   "Denmark": { x: 0.62, y: 0.55, zoom: 1.7 },
   "File:ext-denmark-ocean-beach.jpg": { x: 0.69, y: 0.62, zoom: 1.6 },
+  "Merredin": { x: 0.5, y: 0.62, zoom: 1.5 },
+  "File:ext-merredin-peak-over-town.jpg": { x: 0.5, y: 0.62, zoom: 1.5 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -1936,6 +1938,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Fitzgerald River National Park": "Fitzgerald River National Park.jpg",
   "Denmark": "Denmarkwa-rivermouth.JPG",
   "Nullarbor Plain": "Nullabor Plains Australia - panoramio.jpg",
+  "Merredin": "ext-merredin-peak-over-town.jpg",
 };
 
 /**
