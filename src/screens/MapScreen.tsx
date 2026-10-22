@@ -1,7 +1,7 @@
 import React, { memo, useRef, useState, useMemo, useCallback, useEffect, useLayoutEffect } from 'react';
 import { flagSource } from '../utils/flags';
 import { unstable_batchedUpdates, View, StyleSheet, Pressable, Text, Dimensions, Animated, Platform, TextInput, Image, Easing as RNEasing, Keyboard, ScrollView } from 'react-native';
-import Reanimated, { useSharedValue, useAnimatedStyle, useAnimatedReaction, runOnJS, withTiming, Easing, FadeIn, FadeOut, LinearTransition } from 'react-native-reanimated';
+import Reanimated, { useSharedValue, useAnimatedStyle, useAnimatedReaction, runOnJS, withTiming, Easing, FadeOut, LinearTransition } from 'react-native-reanimated';
 import Svg, { Rect, Path, Circle } from 'react-native-svg';
 import { sheetPose } from '../components/Map/sheetPose';
 import MapboxGL from '@rnmapbox/maps';
@@ -1526,6 +1526,8 @@ function planSpotPhotos(destPlan: ReturnType<typeof planDestPhotos>, isSpotVisit
   return { photoAt, nameAt, sortOf };
 }
 
+// How long a breadcrumb's return arrow takes to fade in while its pill grows to make room (see crumbLayout).
+const CRUMB_ARROW_MS = 250;
 // A Pressable that takes Reanimated layout transitions (the breadcrumb pills, see crumbLayout).
 const AnimatedPressable = Reanimated.createAnimatedComponent(Pressable);
 
@@ -2034,11 +2036,15 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // The breadcrumbs' return arrows. They used to grow in by animating their width (0→20 pt) every frame: a layout pass per
   // frame, committed alongside React's own updates, and those are heaviest while a big destination's many pins re-render
   // during a pan, so the arrow and the re-centring pill stuttered. The arrow is now mounted while its prompt shows and
-  // fades in and out (entering/exiting), and the pill and its contents glide to their new size and place with a layout
-  // transition: one layout, then an animation of the native frames on the UI thread.
-  const crumbLayout = useMemo(() => LinearTransition.duration(250).easing(Easing.out(Easing.cubic)), []);
-  const crumbArrowIn = useMemo(() => FadeIn.duration(250).easing(Easing.out(Easing.cubic)), []);
+  // fades in and out, and the pill and its contents glide to their new size and place with a layout transition: one
+  // layout, then an animation of the native frames on the UI thread. The fade-in is the prompt's own progress value (an
+  // opacity, set going in the same commit that mounts the arrow) rather than an entering animation, which started only
+  // once the pill had finished growing, so the box visibly resized before the arrow appeared. Same length and easing as
+  // the layout transition (CRUMB_ARROW_MS), so the two move as one.
+  const crumbLayout = useMemo(() => LinearTransition.duration(CRUMB_ARROW_MS).easing(Easing.out(Easing.cubic)), []);
   const crumbArrowOut = useMemo(() => FadeOut.duration(150), []);
+  const countryArrowStyle = useAnimatedStyle(() => ({ opacity: returnPromptProgress.value }));
+  const destArrowStyle = useAnimatedStyle(() => ({ opacity: destReturnPromptProgress.value }));
 
   // Gate for the TOP breadcrumb ("Australia | Sydney"): visible only once the user has panned
   // or zoomed away from the selected country/destination, OR the sheet has dropped to its
@@ -2125,15 +2131,13 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     // The ref guard prevents restarting an animation already triggered by handleCameraChanged.
     if (showReturnPrompt === returnPromptVisibleRef.current) return;
     returnPromptVisibleRef.current = showReturnPrompt;
-    returnPromptProgress.value = withTiming(showReturnPrompt ? 1 : 0, { duration: showReturnPrompt ? 250 : 200 });
+    returnPromptProgress.value = withTiming(showReturnPrompt ? 1 : 0, showReturnPrompt ? { duration: CRUMB_ARROW_MS, easing: Easing.out(Easing.cubic) } : { duration: 200 });
   }, [showReturnPrompt, returnPromptProgress]);
 
-  // TEMP crumb logs
-  useEffect(() => { void fetch('http://10.34.229.235:9799/', { method: 'POST', body: `${Date.now() % 100000} dest=${showDestReturnPrompt} country=${showReturnPrompt} peek=${crumbPeekSV.value.toFixed(2)} coll=${sheetCollapsedSV.value.toFixed(2)}` }).catch(() => {}); }, [showDestReturnPrompt, showReturnPrompt]);
   useEffect(() => {
     if (showDestReturnPrompt === destReturnPromptVisibleRef.current) return;
     destReturnPromptVisibleRef.current = showDestReturnPrompt;
-    destReturnPromptProgress.value = withTiming(showDestReturnPrompt ? 1 : 0, { duration: showDestReturnPrompt ? 250 : 200 });
+    destReturnPromptProgress.value = withTiming(showDestReturnPrompt ? 1 : 0, showDestReturnPrompt ? { duration: CRUMB_ARROW_MS, easing: Easing.out(Easing.cubic) } : { duration: 200 });
   }, [showDestReturnPrompt, destReturnPromptProgress]);
 
   // Center the world view on the user's longitude at first load (fallback: Europe).
@@ -5684,9 +5688,9 @@ const destItems = useMemo((): DestItem[] =>
                 </View>
                 <Text style={styles.breadcrumbTxtDark}>{crumb.country}</Text>
               </Pressable>
-              <AnimatedPressable layout={crumbLayout} style={styles.breadcrumbSegmentActive} onPress={handleResetToDest} hitSlop={6} onLayout={e => { void fetch('http://10.34.229.235:9799/', { method: 'POST', body: `${Date.now() % 100000} segment w=${e.nativeEvent.layout.width.toFixed(1)}` }).catch(() => {}); }}>
+              <AnimatedPressable layout={crumbLayout} style={styles.breadcrumbSegmentActive} onPress={handleResetToDest} hitSlop={6}>
                 {showDestReturnPrompt && (
-                  <Reanimated.View entering={crumbArrowIn} exiting={crumbArrowOut} style={styles.crumbArrow}>
+                  <Reanimated.View exiting={crumbArrowOut} style={[styles.crumbArrow, destArrowStyle]}>
                     <CornerUpLeft size={14} color="rgba(255,255,255,0.9)" strokeWidth={2.5} />
                   </Reanimated.View>
                 )}
@@ -5705,7 +5709,7 @@ const destItems = useMemo((): DestItem[] =>
               hitSlop={6}
             >
               {showReturnPrompt && (
-                <Reanimated.View entering={crumbArrowIn} exiting={crumbArrowOut} style={styles.crumbArrow}>
+                <Reanimated.View exiting={crumbArrowOut} style={[styles.crumbArrow, countryArrowStyle]}>
                   <CornerUpLeft size={14} color="rgba(255,255,255,0.9)" strokeWidth={2.5} />
                 </Reanimated.View>
               )}
