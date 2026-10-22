@@ -596,6 +596,7 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "File:Dampier Red Dog, Western Australia.jpg": { x: 0.5, y: 0.42 },
   "Perth": { x: 0.45, y: 0.5 },
   "File:The Basin on Rottnest Island in 2019.jpg": { x: 0.5, y: 0.65 },
+  "Perth Hills": { x: 0.38, y: 0.5 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -1959,6 +1960,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Karratha": "Karratha revamp (9587312345).jpg",
   "Perth": "Skyline of Perth seen from Perth Stadium, December 2022 04.jpg",
   "Rottnest Island": "Rottnest Island coastline near Parker Point 01.jpg",
+  "Perth Hills": "MUNDARING WEIR FROM THE SOUTH.jpg",
 };
 
 /**

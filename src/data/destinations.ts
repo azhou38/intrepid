@@ -2062,6 +2062,22 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Come {months} for warm water and calm days, but avoid late November, when school leavers take over.",
     seasonalTags: [{ tag: 'beach-peak' }],
   },
+  {
+    id: 'perth-hills', name: "Perth Hills", country: "Australia", countryCode: 'AU', timezone: 'Australia/Perth', defaultZoomSpanKm: 60,
+    continent: 'Oceania', coordinates: { latitude: -31.9707988, longitude: 116.0597087 },
+    category: 'nature', icon: "🌳", rank: 4,
+    tagline: "Waterfalls, jarrah forest and old railway trails on the scarp above Perth.",
+    description: "The Perth Hills follow the Darling Scarp along Perth's eastern edge, from the Avon River at Walyunga south to Serpentine. John Forrest, Western Australia's first national park, Mundaring Weir and Kalamunda, where the 1,000 km Bibbulmun Track begins, are each within about 40 minutes of the city. Waterfalls at Lesmurdie and Serpentine run only after winter rain, and from July to November the woodland floor fills with wildflowers.",
+    whyVisit: ["Walk to Serpentine Falls", "Walk across the Mundaring Weir wall", "Drive the Zig Zag for views over Perth"],
+    whyVisitPhotos: ["Serpentine Falls, February 2023 05.jpg", "Mundaring Weir Wall (Northend Lookout POV).jpg", "Perth City Skyline from Zig Zag Scenic Drive.jpg"],
+    highlights: ["Waterfall walk", "Historic weir", "City views"],
+    goodToKnow: [
+      { icon: "🎟️", title: "Vehicle fees in some parks", detail: "John Forrest, Serpentine and Walyunga charge $17 per car, covered by a WA Parks pass; Helena and Lesmurdie Falls are free." },
+      { icon: "⏰", title: "Get to Serpentine early", detail: "Serpentine Falls often fills up and closes to new cars, so arrive before 10am; no vehicles enter after 4:15pm." },
+    ],
+    bestMonths: [7, 8, 9, 10],
+    bestTimeBlurb: "Visit in {months}, when the waterfalls are running and the bush is in flower; summers are hot.",
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {
