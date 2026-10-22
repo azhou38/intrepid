@@ -2044,6 +2044,24 @@ export const DESTINATIONS: Destination[] = [
     bestMonths: [3, 4, 9, 10, 11],
     bestTimeBlurb: "{months} are warm but not hot; Kings Park's wildflowers peak in September.",
   },
+  {
+    id: 'rottnest-island', name: "Rottnest Island", country: "Australia", countryCode: 'AU', timezone: 'Australia/Perth', defaultZoomSpanKm: 20,
+    continent: 'Oceania', coordinates: { latitude: -31.995637, longitude: 115.5414645 },
+    category: 'island', icon: "🏝️", rank: 2,
+    tagline: "A car-free island of quokkas and reef-sheltered bays, 30 minutes by ferry from Fremantle.",
+    description: "Rottnest Island, Wadjemup to the Noongar people, is a 19-square-kilometre A-class reserve 18 km west of Fremantle. Dutch explorer Willem de Vlamingh named it 'rats' nest' in 1696, mistaking its quokkas for rats. The limestone buildings of the Thomson Bay settlement date from colonial times, when the island also held a prison for Aboriginal people from 1838 to 1931.",
+    whyVisit: ["Meet quokkas along the island's paths", "Snorkel the reef pool at The Basin", "Cycle the island's car-free roads", "Watch fur seals at Cathedral Rocks"],
+    whyVisitPhotos: ["Quokka on Rottnest Island (52031565710).jpg", "The Basin on Rottnest Island in 2019.jpg", "Cyclist on Parker Point Road, April 2026.jpg", "Arctocephalus forsteri (28212911559).jpg"],
+    highlights: ["Quokka encounters", "Reef snorkelling", "Car-free cycling", "Fur seal colony"],
+    goodToKnow: [
+      { icon: "🎟️", title: "Admission comes with the ferry", detail: "Day visitors pay a $21.50 adult island admission fee, usually added to the ferry fare; overnight stays cost $28.50." },
+      { icon: "🚫", title: "Look, don't touch quokkas", detail: "Touching or feeding quokkas is not allowed, and anyone interfering with the island's wildlife can be fined on the spot." },
+      { icon: "🛏️", title: "Book summer stays early", detail: "Island accommodation is so sought after in summer that most beds go by ballot months ahead; most visitors come for the day." },
+    ],
+    bestMonths: [1, 2, 3, 4, 10, 11, 12],
+    bestTimeBlurb: "Come {months} for warm water and calm days, but avoid late November, when school leavers take over.",
+    seasonalTags: [{ tag: 'beach-peak' }],
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {
