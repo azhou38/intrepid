@@ -10,7 +10,7 @@ Replaces the recall checker and the skeptic. A script (`scripts/curation/score-f
 
 Checklist ("What qualifies" — all must hold, or it's reject or review)
 1. A visitor-oriented source names it (Wikivoyage, DOC/agency page, tourism board, guidebook). Wikipedia, OSM, Commons or a heritage register alone don't count. One counted source for an obvious draw; two for a marginal one.
-2. A visitor can do or see something for about half an hour, and it's open to the public. Fail: exterior-only civic buildings, libraries, churches, hospitals, closed or private places, plain shops/restaurants/offices.
+2. A visitor can do or see something for about half an hour, and it's open to the public. Fail: exterior-only civic buildings, libraries, hospitals, closed or private places, plain shops/restaurants/offices. A church is never kept for being a church, nor rejected for it: keep it only when a visitor source names something to see or do there (an interior visitors go in for, notable art or architecture, a tour, a landmark a guide singles out); a local parish church seen from the street fails.
 3. A distinct draw: not a near-duplicate of a spot already listed, not part of a larger spot (an outlook on a track the app lists), not a minor memorial or plaque, not a short roadside pull-out unless a guide names it.
 4. There whenever you arrive: no festivals, fairs, events, weekly markets (a daily market hall is fine; a seasonal venue is fine).
 - A vehicle, ferry, cruise, tour or operator is not a spot: the place it goes to is (COVERAGE.md → "A spot is a place").
