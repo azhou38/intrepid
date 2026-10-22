@@ -714,6 +714,10 @@ function DestinationSheet({
   const defaultTab: Tab = isVisited ? 'visit' : 'about';
   const startTab: Tab = (initialTab && TAB_ORDER.includes(initialTab)) ? initialTab : defaultTab;
   const [activeTab,     setActiveTab    ] = useState<Tab>(startTab);
+  // The Spots tab's grid (Sydney: 84 photo cards, added a few per frame) is mounted the first time it can be seen: the
+  // sheet at full screen, or the Spots tab opened. Mounted with the other panels, it kept the sheet and the map busy for
+  // about 2.5 s after every destination tap, right through the sheet's slide-in and the camera move.
+  const [spotsPanelOn, setSpotsPanelOn] = useState(startTab === 'spots');
 
   // Derive visits from store, carrying the old destination-level photos/notes/spots onto
   // the synthesized legacy entry so a pre-redesign visit still shows its content as its
@@ -992,6 +996,9 @@ function DestinationSheet({
   // needed for scrollEnabled below, which must flip the instant the sheet reaches
   // full-screen. Set via reportSnapState alongside every onSnapStateChange call.
   const [snapStateReact, setSnapStateReact] = useState<SnapState>(resolvedInitialSnap);
+  useEffect(() => {
+    if (!spotsPanelOn && (snapStateReact === 'full' || activeTab === 'spots')) setSpotsPanelOn(true);
+  }, [snapStateReact, activeTab, spotsPanelOn]);
   const reportSnapState = useCallback((state: SnapState) => {
     setSnapStateReact(state);
     onSnapStateChange?.(state);
@@ -1767,7 +1774,7 @@ function DestinationSheet({
                     style={st.slidePanel}
                     onLayout={e => measurePanel('spots', e.nativeEvent.layout.height)}
                   >
-                    <SpotsPanel spots={spots} onSelectSpot={onSelectSpot} />
+                    {spotsPanelOn && <SpotsPanel spots={spots} onSelectSpot={onSelectSpot} />}
                   </View>
                 </Reanimated.View>
               </Reanimated.View>
