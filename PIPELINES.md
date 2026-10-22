@@ -41,7 +41,7 @@ Benchmark: the full list in `COVERAGE.md` → "Finding what is missing" (Red Roc
 3. **Judge (one first judge)** (also checks that no neighbouring spot already has the same subject: `IMAGES.md` → "Spot photos") — only the slots the script could not prove, the audit sample and any weak slot; views the image, scores the checks with reasons. A photo may be shared by one destination's header, why-visit photos and spots (the Waitomo glowworm-boat photo is all three): the searcher proposes and the judge recommends the best photo for every slot, wherever it is already used in that destination; only reuse across different destinations fails.
 4. **Second judge** — re-scores, blind, only the slots where the first judge proposed a new file; disagreement means the slot stays as it is and goes to the owner. A keep-current needs no second judge (nothing changes).
 5. **Technical check (script)** — licence, size, manifest.
-6. **Report** — the final report lists, under "Photos still missing", every slot for which no passing photo was found in any tier (Commons, openly licensed, official, blogs), with the current failing photo and what was tried.
+6. **Report** — the final report lists, under "Photos still missing", every slot for which no passing photo was found in any tier (Commons, openly licensed, official, blogs), with the current failing photo and what was tried. Why-visit slots without a photo (grey cards, and reasons reworded or dropped for want of one) come first, and the run's closing message alerts the owner to them and asks for each photo.
 Benchmark: Clyde, Hamilton, Blue Lake, the 1913 Government Gardens and the archive Blue Lake photo must all be rejected.
 
 ## Pipeline C — writing
