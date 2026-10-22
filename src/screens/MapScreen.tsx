@@ -3451,6 +3451,24 @@ const destItems = useMemo((): DestItem[] =>
     countryCacheArmRef.current = { code: cluster.countryCode, key: cacheKey, at: Date.now() + FIT_MS };
   }, [fitCoords, cancelCountryCapture, beginProgrammaticCameraMove]);
 
+  // The zoom fitCountryDefaultView's half-screen ('topHalf') framing lands on: the camera it captured last time, or else an
+  // estimate from the country's bounds (the same 90% fit, in mercator). Only a look-ahead target for the pin planning while
+  // the camera flies there (see spotCloseTargetRef), so an estimate is enough: a target the camera never quite reaches is
+  // cleared by the map idle when it lands.
+  const countryTargetZoom = useCallback((cluster: CountryCluster): number | null => {
+    const mapViewH = mapViewHRef.current || (H - BOTTOM_TAB_H);
+    const cached = countryCamCacheRef.current[`${cluster.countryCode}:topHalf`];
+    if (cached && cached.mapH === mapViewH) return cached.zoom;
+    const b = getCountryBounds(cluster.countryCode);
+    if (!b) return null;
+    const lngSpan = Math.max(1e-6, b.ne.longitude - b.sw.longitude);
+    const mercY = (lat: number) => Math.log(Math.tan(Math.PI / 4 + (lat * Math.PI) / 360));
+    const latSpan = Math.max(1e-6, mercY(b.ne.latitude) - mercY(b.sw.latitude));
+    const zLng = Math.log2((SCREEN_W_GLOBAL * 0.9 * 360) / (512 * lngSpan));
+    const zLat = Math.log2(((H / 2) * 0.9 * 2 * Math.PI) / (512 * latSpan));
+    return Math.min(zLng, zLat);
+  }, []);
+
   // Destination equivalent of fitCountryDefaultView, and much simpler for two reasons: a
   // destination is a POINT rather than a bounding box, so there's nothing to size — the zoom
   // is just getDestZoomDelta's — and its zoom is deep enough to be squarely in mercator, so the
@@ -4095,8 +4113,22 @@ const destItems = useMemo((): DestItem[] =>
     // animateCamera's own comment on the equivalent zoom-IN case). Always lands on the
     // country's default view, however far out the user has zoomed — this is deliberate upward
     // navigation ("‹ Country"), not the bare-X close isZoomedOutBeyond's stay-put rule is for.
+    // Plan the pins at the country's view from the tap, as the spot → destination back does (spotCloseTargetRef): the
+    // camera only starts once the country sheet has slid in, so the destination's spot pins and photo pins used to wait
+    // for it before fading.
+    const target = countryTargetZoom(cluster);
+    if (target !== null && target < camZoomRef.current - ZOOM_EPSILON) {
+      spotCloseTargetRef.current = target;
+      if (spotCloseTimerRef.current) clearTimeout(spotCloseTimerRef.current);
+      spotCloseTimerRef.current = setTimeout(() => {
+        spotCloseTimerRef.current = null;
+        if (spotCloseTargetRef.current === null) return;
+        spotCloseTargetRef.current = null;
+        setHeldSelTick(t => t + 1);
+      }, SHEET_SLIDE_IN_MS + 500 + 800);
+    }
     handleCountryPress(cluster, 'flyTo');
-  }, [selectedDest, savedDestinations, handleCountryPress, visitIndex]);
+  }, [selectedDest, savedDestinations, handleCountryPress, visitIndex, countryTargetZoom]);
 
   // Destination close/back, provenance-routed: drilled down from the country → back up to it;
   // entered laterally (map pin tap with nothing selected, or search) → zoom out to half the
