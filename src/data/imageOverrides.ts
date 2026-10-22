@@ -576,6 +576,7 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "Esperance": { x: 0.42, y: 0.5 },
   "Hyden": { x: 0.42, y: 0.5 },
   "File:Mulkas cave.jpg": { x: 0.5, y: 0.3 },
+  "Nambung National Park": { x: 0.5, y: 0.6, zoom: 1.25 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -1919,6 +1920,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Cape Le Grand National Park": "Cape Le Grande National Park Esperance 03.jpg",
   "Kalgoorlie-Boulder": "View of Kalgoorlie, Western Australia from museum headframe 05.jpg",
   "Hyden": "Wave-Rock-Hyden-WA.jpg",
+  "Nambung National Park": "AUS Cervantes, Nambung National Park, Pinnacles Desert 017.jpg",
 };
 
 /**

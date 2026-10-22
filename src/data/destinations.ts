@@ -1724,6 +1724,23 @@ export const DESTINATIONS: Destination[] = [
     bestMonths: [9, 10, 11],
     bestTimeBlurb: "Spring, {months}, brings wildflowers and orchids to the bush around the granite outcrops.",
   },
+  {
+    id: 'nambung-national-park', name: "Nambung National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Perth', defaultZoomSpanKm: 25,
+    continent: 'Oceania', coordinates: { latitude: -30.603077, longitude: 115.155613 },
+    category: 'park', icon: "🗿", rank: 2,
+    tagline: "Thousands of limestone pillars rise from yellow sand two hours' drive north of Perth.",
+    description: "Nambung National Park lies on the coast beside the village of Cervantes, about two hours' drive north of Perth. Its draw is the Pinnacles Desert, where limestone pillars formed from ancient dunes stand in yellow sand, with their geology explained at the Pinnacles Desert Discovery centre. Beyond the desert lie white beaches on the Jurien Bay Marine Park, and boat trips from Cervantes visit the sea lions of the Cervantes Islands.",
+    whyVisit: ["Drive the Pinnacles Desert loop", "See stromatolites at Lake Thetis", "Swim in the clear water of Hangover Bay"],
+    whyVisitPhotos: ["AUS Cervantes, Nambung National Park, Pinnacles Desert 056.jpg", "Stromatolites, Lake Thetis, 2105 (01).JPG", "ext-nambung-hangover-bay.jpg"],
+    highlights: ["Desert loop drive", "Lake stromatolites", "Beach swimming"],
+    goodToKnow: [
+      { icon: "🎟️", title: "Vehicle entry fee", detail: "Entry is $17 per vehicle and a WA Park Pass covers it; no dogs or other pets are allowed anywhere in the park." },
+      { icon: "🌡️", title: "Beat the summer heat", detail: "December to March often reaches 40°C: come early or near sunset, carry water, and expect closures in extreme heat." },
+      { icon: "🪨", title: "Never climb the pinnacles", detail: "The limestone pillars are fragile: stay on the drive and marked trails, and look but don't climb." },
+    ],
+    bestMonths: [8, 9, 10],
+    bestTimeBlurb: "Wildflowers bloom across the heath in {months}, before summer heat that often reaches 40°C.",
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {
