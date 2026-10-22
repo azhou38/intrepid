@@ -115,7 +115,7 @@ import { computeSearchResults, computeSuggestions, SearchResultRows, toRecentSea
 import SpotSheet from '../components/Map/SpotSheet';
 import CountrySheet from '../components/Map/CountrySheet';
 import ExploreSheet from '../components/Map/ExploreSheet';
-import { prefetchPinPhotos } from '../utils/pinPhotoCache';
+import { prefetchPinPhotos, pinPhotoUri, loadPinPhoto } from '../utils/pinPhotoCache';
 import { thumbCache, photoCache, fetchWikiThumbnail, prefetchWikiThumbnail, prewarmDestinationPins, HEADER_PX } from '../utils/photoCache';
 import DestPinImages, { DEST_PIN_SIZE, destPinImageName, type DestPinImageSpec } from '../components/Map/DestPinImages';
 import PhotoPlaceholder from '../components/Map/PhotoPlaceholder';
@@ -299,17 +299,20 @@ const SpotMarker = memo(function SpotMarker({ spot, isVisited, isSelected, exiti
   instant?: boolean;
   onPress: (spot: Spot) => void;
 }) {
-  const cacheKey = `spotpin_${spot.id}`;
   const coordinate = useMemo(() => [spot.coordinates.longitude, spot.coordinates.latitude] as [number, number], [spot.coordinates.longitude, spot.coordinates.latitude]);
-  const [photoUrl, setPhotoUrl] = useState<string | null>(thumbCache.get(cacheKey) ?? null);
-  const photoWasCachedRef = useRef(thumbCache.has(cacheKey));   // see DestPin
+  // The same photo file the spot's native pin is drawn from (the pin photo disk cache), so selecting a spot swaps its native
+  // pin for this marker with the photo already there, instead of fetching a separate copy over the network while the
+  // marker shows a grey disc.
+  const [photoUrl, setPhotoUrl] = useState<string | null>(() => pinPhotoUri(spot));
+  const photoWasCachedRef = useRef(!!pinPhotoUri(spot));   // see DestPin
   useEffect(() => {
-    if (thumbCache.has(cacheKey)) { photoWasCachedRef.current = true; setPhotoUrl(thumbCache.get(cacheKey)!); return; }
+    const local = pinPhotoUri(spot);
+    if (local) { photoWasCachedRef.current = true; setPhotoUrl(local); return; }
     photoWasCachedRef.current = false;
     setPhotoUrl(null);
-    fetchWikiThumbnail(spotPhotoTitle(spot), 120).then(url => {
-      if (url) { thumbCache.set(cacheKey, url); setPhotoUrl(url); }
-    });
+    let live = true;
+    loadPinPhoto(spot).then(url => { if (url && live) setPhotoUrl(url); });
+    return () => { live = false; };
   }, [spot.id]);
 
   // Teardrop geometry: the tail's two edges are the straight TANGENT lines from the tip to the
@@ -2835,7 +2838,9 @@ const destItems = useMemo((): DestItem[] =>
   }, [visibleSpots, selectedSpot, nearCtx, visitIndex, handoffZoom, spotPhotoPlan]);
   // Only the selected spot is a MarkerView now.
   const selectedOnly = useMemo(() => (selectedSpot ? [selectedSpot] : []), [selectedSpot]);
-  const renderedSpots = useExitingItems(selectedOnly, s => s.id, HANDOFF_FADE_MS);
+  // When the selection moves to another spot, the old spot's native pin is back at once, so its marker goes at once too
+  // (a fade-out drew both together for a moment); closing the spot keeps the fade.
+  const renderedSpots = useExitingItems(selectedOnly, s => s.id, selectedSpot ? 0 : HANDOFF_FADE_MS);
 
   // Which side of each spot pin its name goes on — or none. Names default to the LEFT of the pin;
   // when that would run into another pin or an already-placed name the label flips to the right, and
@@ -2962,6 +2967,13 @@ const destItems = useMemo((): DestItem[] =>
     prevSpotLabelPlanRef.current = plan;
     return plan;
   }, [renderedSpots, pinPlanLngDelta, selectedSpot, savedSpots, visitIndex, destPinPlan, hiddenDestIds]);
+  // The selected spot's name sits on the side its native pin's name uses (spotPhotoPlan), so selecting a spot or swiping
+  // the carousel never flips the name from one side of the pin to the other; the marker-only plan is the fallback.
+  const markerLabelSide = (id: string): 'left' | 'right' | 'none' => {
+    const planned = spotPhotoPlan?.nameAt.get(id)?.side;
+    const fallback = spotLabelPlan.get(id) ?? 'left';
+    return planned && fallback !== 'none' ? planned : fallback;
+  };
 
   // Spot pins in depth order: northernmost first, southernmost last. MarkerViews stack by when they
   // were mounted, so mounting in this order puts a pin that is lower on the map in front of any pin
@@ -5320,7 +5332,7 @@ const destItems = useMemo((): DestItem[] =>
               isSelected={isSelectedSpot}
               exiting={exiting}
               isSatellite={mapType === 'satellite'}
-              labelSide={spotLabelPlan.get(spot.id) ?? 'left'}
+              labelSide={markerLabelSide(spot.id)}
               onPress={onSpotPinPress}
             />
           );
@@ -5340,7 +5352,7 @@ const destItems = useMemo((): DestItem[] =>
             exiting={false}
             instant
             isSatellite={mapType === 'satellite'}
-            labelSide={spotLabelPlan.get(selectedSpot.id) ?? 'left'}
+            labelSide={markerLabelSide(selectedSpot.id)}
             onPress={handleSpotPress}
           />
         )}
@@ -5916,7 +5928,9 @@ const styles = StyleSheet.create({
   spotPinImgClip: { overflow: 'hidden', alignItems: 'center', justifyContent: 'center', backgroundColor: PIN_PLACEHOLDER_COLOR },
   // Row holding [label, pin] as normal flex siblings inside SpotMarker's one MarkerView —
   // see SpotMarker's own comment for why this replaced two earlier, more fragile attempts.
-  spotMarkerRow: { flexDirection: 'row', alignItems: 'center', columnGap: SPOT_LABEL_GAP },
+  // paddingBottom: the native pin image (SpotPhotoImages) keeps a 2 pt margin below its tip, so its tip sits 2 pt above the
+  // coordinate; the selected marker matches it, or the pin shifts 2 pt each time it is selected or let go.
+  spotMarkerRow: { flexDirection: 'row', alignItems: 'center', columnGap: SPOT_LABEL_GAP, paddingBottom: 2 },
   spotPinLabelWrap: { position: 'absolute' },
   spotPinLabel: {
     fontSize: 12, lineHeight: SPOT_LABEL_LINE_H, fontWeight: '700', color: '#111827',
