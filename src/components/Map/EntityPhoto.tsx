@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { View, StyleSheet, type StyleProp, type ImageStyle } from 'react-native';
-import FadeInImage from './FadeInImage';
+import FadeInImage, { type AnimatedFrame } from './FadeInImage';
 import type { Subject } from '../../utils/subjectCrop';
 
 // A photo that always belongs to the entity it was asked about.
@@ -17,7 +17,7 @@ import type { Subject } from '../../utils/subjectCrop';
 // this small component, so a photo arriving re-renders only the photo, never the sheet around it.
 export default function EntityPhoto({
   cacheKey, cache, load, instant, scrim, placeholderColor, resizeMode = 'cover', style = StyleSheet.absoluteFill,
-  subject, fallback,
+  subject, fallback, frame,
 }: {
   cacheKey: string;                                   // identifies the entity (and is the photoCache key)
   cache: Map<string, string>;
@@ -31,6 +31,8 @@ export default function EntityPhoto({
   subject?: Subject;
   // Shown (instead of the plain placeholder) once the load has settled with NO photo at all: the place is deliberately photoless.
   fallback?: React.ReactNode;
+  // A box whose height animates (see FadeInImage): the photo follows it on the UI thread.
+  frame?: AnimatedFrame;
 }) {
   const cached = cache.get(cacheKey) ?? null;
   const [loaded, setLoaded] = useState<{ key: string; url: string } | null>(null);
@@ -57,7 +59,7 @@ export default function EntityPhoto({
   return (
     <>
       {/* keyed by entity: a fresh instance (and fresh fade state) per photo, never one image swapped in place */}
-      <FadeInImage key={cacheKey} instant={instant ?? meta.current.hit} source={{ uri: url }} style={style} resizeMode={resizeMode} subject={resizeMode === 'cover' ? subject : undefined} />
+      <FadeInImage key={cacheKey} instant={instant ?? meta.current.hit} source={{ uri: url }} style={style} resizeMode={resizeMode} subject={resizeMode === 'cover' ? subject : undefined} frame={resizeMode === 'cover' ? frame : undefined} />
       {scrim ? <View pointerEvents="none" style={[StyleSheet.absoluteFill, { backgroundColor: scrim }]} /> : null}
     </>
   );

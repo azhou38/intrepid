@@ -21,3 +21,13 @@ export function subjectCoverRect(fw: number, fh: number, nw: number, nh: number,
   const top = clamp(fh / 2 - (s?.y ?? 0.5) * h, fh - h, 0);
   return { position: 'absolute' as const, left, top, width: w, height: h };
 }
+
+// The same placement, runnable on the UI thread (a Reanimated worklet), for a frame whose height animates.
+export function subjectCoverRectUI(fw: number, fh: number, nw: number, nh: number, sx: number, sy: number, zoom: number) {
+  'worklet';
+  const scale = Math.max(fw / nw, fh / nh) * Math.max(1, zoom);
+  const w = nw * scale, h = nh * scale;
+  const left = Math.max(fw - w, Math.min(0, fw / 2 - sx * w));
+  const top = Math.max(fh - h, Math.min(0, fh / 2 - sy * h));
+  return { left, top, width: w, height: h };
+}

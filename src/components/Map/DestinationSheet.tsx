@@ -17,7 +17,7 @@ import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'reac
 // scroll-driven tab bar overlay — still use core Animated and aren't part of this fix.
 import Reanimated, {
   useSharedValue, useAnimatedStyle, useAnimatedReaction, withTiming, runOnJS,
-  interpolate, Extrapolation, Easing, scrollTo, useAnimatedRef,
+  interpolate, Extrapolation, Easing, scrollTo, useAnimatedRef, useDerivedValue,
 } from 'react-native-reanimated';
 import type { SharedValue } from 'react-native-reanimated';
 // ScrollView specifically comes from gesture-handler (not core RN) — only a gesture-handler-
@@ -1105,12 +1105,13 @@ function DestinationSheet({
   // instead of being clipped at its edge. Without this the tab bar rendered flush against
   // the window boundary with the last few px (its underline) pushed just past it.
   const fullHeroH = HERO_H - insets.bottom;
-  const heroAnimStyle = useAnimatedStyle(() => {
-    const collapsedHeroH = COMPACT_H - Math.max(0, tabBarHAnim.value - TAB_BAR_TUCK);
-    return {
-      height: interpolate(slideAnim.value, [FULL_POS, COLLAPSED_Y], [fullHeroH, collapsedHeroH], Extrapolation.CLAMP),
-    };
-  });
+  // The hero's height, computed once on the UI thread and shared by the box and the photo inside it, so the photo moves
+  // in step with the box (see FadeInImage's `frame`) instead of being re-fitted a frame late after each layout pass.
+  const collapsedHeroHSV = useDerivedValue(() => COMPACT_H - Math.max(0, tabBarHAnim.value - TAB_BAR_TUCK));
+  const heroHSV = useDerivedValue(() =>
+    interpolate(slideAnim.value, [FULL_POS, COLLAPSED_Y], [fullHeroH, collapsedHeroHSV.value], Extrapolation.CLAMP));
+  const heroAnimStyle = useAnimatedStyle(() => ({ height: heroHSV.value }));
+  const heroFrame = useMemo(() => ({ width: W, fullH: fullHeroH, height: heroHSV, minH: collapsedHeroHSV }), [fullHeroH, heroHSV, collapsedHeroHSV]);
 
   // The sticky header (title bar + tab bar) — see STICKY HEADER in the ScrollView.
   const COMPACT_BAR_H = insets.top + 48;
@@ -1516,6 +1517,7 @@ function DestinationSheet({
                 cache={photoCache}
                 load={() => getOrFetchWikiThumbnail(destination.id, photoCache, destination.name, HEADER_PX)}
                 subject={photoSubject(destination.name)}
+                frame={heroFrame}
                 fallback={<PhotoPlaceholder icon={destination.icon} category={destination.category} />}
               />
 
