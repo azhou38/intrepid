@@ -1249,6 +1249,7 @@ const SPOT_PHOTO_ZOOM_BY_ID = earlySpotZoomTable(SPOT_PHOTO_EARLY_SEPARATION_PX,
 const SHEET_HOLD_MAX_MS = 60;    // see holdSheetUntilCamera: the destination sheet rises while the spot sheet is still sliding away
 const BACK_CAMERA_DELAY_MS = 220;   // spot back to its destination: the zoom-out starts once the spot sheet has slid away
 const SHEET_HOLD_RELEASE_ZOOM = 0.6;   // see handleCameraChanged: how near its target a close's zoom-out releases the next sheet
+const SPOT_CAMERA_DELAY_MS = 180;   // a spot pin tap: the zoom-in starts part-way through the spot sheet's slide-in
 const SHEET_SLIDE_IN_MS = 340;   // the sheets' slide-in (40 ms start delay + 280 ms) plus a frame; see afterSheetSlideIn
 const PIN_IMAGE_HOLD_MS = 450;    // see pinImagesHoldUntilRef: no new pin images while a sheet slides in
 const PLAN_SPOT_DELAY_MS = 600;   // see destPhotoPlan: after the sheet's slide-in
@@ -3679,7 +3680,7 @@ const destItems = useMemo((): DestItem[] =>
 
   // ── Spot selection ──────────────────────────────────────────────────────────
   const handleSpotPress = useCallback((spot: Spot) => {
-    cameraHoldUntilRef.current = Date.now() + SHEET_SLIDE_IN_MS;
+    cameraHoldUntilRef.current = Date.now() + SPOT_CAMERA_DELAY_MS;
     // Tapping a pin (rather than swiping the carousel) leaves any near context: a destination's spot then opens in that
     // destination's own context, and a standalone one starts its own near context.
     nearCtxRef.current = null;
