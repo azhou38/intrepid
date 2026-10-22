@@ -590,6 +590,7 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "Purnululu National Park": { x: 0.62, y: 0.45 },
   "Gibb River Road": { x: 0.45, y: 0.5, zoom: 1.5 },
   "Wyndham": { x: 0.5, y: 0.45, zoom: 1.5 },
+  "Karijini National Park": { x: 0.62, y: 0.5 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -1948,6 +1949,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Purnululu National Park": "00 2174 Purnulula-Nationalpark - Western Australia.jpg",
   "Gibb River Road": "Pentecost crossing with cockburn ranges.jpg",
   "Wyndham": "1 Hafenstadt Wyndham - Kimberleys Australien.jpg",
+  "Karijini National Park": "Karijini National Park, Pilbara Region, Western Australia, Dales Gorge 02.jpg",
 };
 
 /**

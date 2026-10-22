@@ -1977,6 +1977,24 @@ export const DESTINATIONS: Destination[] = [
     bestMonths: [5, 6, 7, 8, 9],
     bestTimeBlurb: "Visit in the dry season, {months}; from November to March the monsoon rain sets in.",
   },
+  {
+    id: 'karijini', name: "Karijini National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Perth', defaultZoomSpanKm: 75,
+    continent: 'Oceania', coordinates: { latitude: -22.3875283, longitude: 118.2635786 },
+    category: 'park', icon: "🏞️", rank: 2,
+    tagline: "Red banded-iron gorges, waterfalls and cold swimming pools in the Hamersley Range.",
+    description: "Karijini is Western Australia's second-largest national park, covering about 6,270 square kilometres of the Hamersley Range near Tom Price. Erosion has cut gorges with cliffs about 100 m high into rock more than 2.5 billion years old, and permanent pools, ferns and waterfalls sit at their feet. Karijini is the Banyjima name for the range, and the Banyjima, Kurrama and Innawonga people are its Traditional Owners. The two campgrounds, at Dales and the eco retreat, are the bases for a stay of a couple of nights.",
+    whyVisit: ["Swim below Fortescue Falls in Dales Gorge", "Scramble through Hancock Gorge to Kermits Pool", "Swim among Hamersley Gorge's folded rock", "Look into four gorges from Oxer Lookout"],
+    whyVisitPhotos: ["Karijini National Park - Fortescue falls.jpg", "Hancock Gorge.jpg", "Hammersley Gorge, Western Australia (6924535064).jpg", "Karijini National Park (2052473138).jpg"],
+    highlights: ["Fortescue Falls", "Hancock Gorge scramble", "Folded-rock swimming", "Oxer Lookout views"],
+    goodToKnow: [
+      { icon: "🎟️", title: "Park entry fee", detail: "Entry is $17 per standard vehicle, or $10 with a concession; a WA Parks pass covers it." },
+      { icon: "⛺", title: "Book Dales early", detail: "Dales Campground must be booked and fills fast from June to September; the only other campground is the eco retreat." },
+      { icon: "⛈️", title: "Leave if it rains", detail: "Flash floods can sweep the gorges: do not go in if rain is about, and climb out at once if it starts." },
+    ],
+    bestMonths: [5, 6, 7, 8, 9],
+    bestTimeBlurb: "Visit {months}, when days are warm and nights cold; summer often tops 40°C.",
+    seasonalTags: [{ tag: 'monsoon-dry-season', months: [5, 6, 7, 8, 9] }],
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {
