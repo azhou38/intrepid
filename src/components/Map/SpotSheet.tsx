@@ -674,7 +674,8 @@ function SpotSheet({
   // peek strip would show and fade out again on the way up (and the carousel fade in). An opening slide shows the
   // carousel throughout instead; the strip is for a sheet dropped to peek.
   const hidePeekSV = useSharedValue(leaving ? 0 : 1);
-  useAnimatedReaction(() => slideAnim.value <= COLLAPSED_Y + 0.5, (arrived) => { if (arrived) hidePeekSV.value = 0; });
+  // Cleared when the opening slide lands (transitionTo's 'mount' animation), never by watching the position: a watcher
+  // re-registered on a re-render at half-screen and cleared it just as a close began, showing the strip on the way down.
   const carouselOpacityStyle = useAnimatedStyle(() => ({
     opacity: hidePeekSV.value === 1 ? 1 : slideAnim.value <= COLLAPSED_Y
       ? interpolate(slideAnim.value, [FULL_FADE_END_Y, COLLAPSED_Y], [0, 1], Extrapolation.CLAMP)
@@ -793,7 +794,8 @@ function SpotSheet({
     // The slide-in on mount starts two frames late: its ease-out curve does most of its travel in the first frames, which
     // are the ones the UI thread spends building this sheet's views (and starting the camera move), so starting at once
     // let that work swallow the fast part of the slide and it looked like lag. Closing has no such frame, and was smooth.
-    if (reason === 'mount') slideAnim.value = withDelay(MOUNT_SLIDE_DELAY_MS, withTiming(target, SNAP_CONFIG));
+    if (reason !== 'mount') hidePeekSV.value = 0;   // any later snap (to peek included) shows the strip normally
+    if (reason === 'mount') slideAnim.value = withDelay(MOUNT_SLIDE_DELAY_MS, withTiming(target, SNAP_CONFIG, finished => { if (finished) hidePeekSV.value = 0; }));
     else if (reason !== 'userUI') slideAnim.value = withTiming(target, SNAP_CONFIG);
   };
   const snapToFullRef = useRef(() => {});

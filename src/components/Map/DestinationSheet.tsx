@@ -1025,7 +1025,7 @@ function DestinationSheet({
   // 1 while the sheet is sliding in from below on its way to half-screen (see SpotSheet's hidePeekSV): the peek strip then
   // stays hidden instead of showing in the peek zone and fading out on the way up.
   const hidePeekSV = useSharedValue(leaving ? 0 : 1);
-  useAnimatedReaction(() => slideAnim.value <= collapsedYAnim.value + 0.5, (arrived) => { if (arrived) hidePeekSV.value = 0; });
+  // Cleared when the opening slide lands (transitionTo's 'mount' animation); see SpotSheet's hidePeekSV.
   const peekAnimStyle = useAnimatedStyle(() => ({
     opacity: hidePeekSV.value === 1 ? 0 : interpolate(slideAnim.value, [collapsedYAnim.value, PEEK_Y], [0, 1], Extrapolation.CLAMP),
   }));
@@ -1212,7 +1212,8 @@ function DestinationSheet({
     // The slide-in on mount starts two frames late: its ease-out curve does most of its travel in the first frames, which
     // are the ones the UI thread spends building this sheet's views (and starting the camera move), so starting at once
     // let that work swallow the fast part of the slide and it looked like lag. Closing has no such frame, and was smooth.
-    if (reason === 'mount') slideAnim.value = withDelay(MOUNT_SLIDE_DELAY_MS, withTiming(target, SNAP_CONFIG));
+    if (reason !== 'mount') hidePeekSV.value = 0;   // any later snap (to peek included) shows the strip normally
+    if (reason === 'mount') slideAnim.value = withDelay(MOUNT_SLIDE_DELAY_MS, withTiming(target, SNAP_CONFIG, finished => { if (finished) hidePeekSV.value = 0; }));
     else if (reason !== 'userUI') slideAnim.value = withTiming(target, SNAP_CONFIG);
   };
 
