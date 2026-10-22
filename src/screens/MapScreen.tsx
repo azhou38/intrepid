@@ -2801,6 +2801,29 @@ const destItems = useMemo((): DestItem[] =>
     // A near carousel's pinned spots always show their photo.
     const photoPlan = new Set<string>();
     for (const sp of sorted) if (must.has(sp.id) || (spotPhotoPlan?.photoAt.get(sp.id) ?? Infinity) <= handoffZoom + ZOOM_EPSILON) photoPlan.add(sp.id);
+    // A selected spot's pin and name are drawn over the native layer; any other spot whose name would run into them drops
+    // its name (its pin stays), so a stronger neighbour's name never shows through behind the spot you picked.
+    // Screen geometry at the planned scale (as spotLabelPlan): y grows downward; the native pin image's tip sits 2 pt above
+    // the coordinate, its bubble centre about 26 pt above, and its name is offset 1.5 em (18 pt) to one side.
+    type Box = { l: number; r: number; t: number; b: number };
+    const pxPerDegLng = SCREEN_W_GLOBAL / pinPlanLngDelta;
+    const labelBox = (sp: Spot, side: 'left' | 'right', gap: number): Box => {
+      const m = mercatorPx(sp.coordinates.longitude, sp.coordinates.latitude, pxPerDegLng), x = m.x, cy = -m.y - 26;
+      const lines = spotLabelLines(sp.name), w = Math.max(...lines.map(l => l.length)) * 6.6 + 4, h = lines.length * SPOT_LABEL_LINE_H;
+      const l = side === 'left' ? x - gap - w : x + gap;
+      return { l, r: l + w, t: cy - h / 2, b: cy + h / 2 };
+    };
+    const blockers: Box[] = [];
+    if (selectedSpot) {
+      const m = mercatorPx(selectedSpot.coordinates.longitude, selectedSpot.coordinates.latitude, pxPerDegLng), x = m.x, y = -m.y;
+      blockers.push({ l: x - SPOT_PIN_SIZE / 2 - 2, r: x + SPOT_PIN_SIZE / 2 + 2, t: y - SPOT_PIN_SIZE - 12, b: y });
+      blockers.push(labelBox(selectedSpot, spotPhotoPlan?.nameAt.get(selectedSpot.id)?.side ?? 'left', SPOT_PIN_SIZE / 2 + SPOT_LABEL_GAP));
+    }
+    const hitsSelected = (sp: Spot) => {
+      if (!blockers.length) return false;
+      const b = labelBox(sp, spotPhotoPlan?.nameAt.get(sp.id)?.side ?? 'right', 18);
+      return blockers.some(o => b.l < o.r + 2 && b.r > o.l - 2 && b.t < o.b + 2 && b.b > o.t - 2);
+    };
     for (const sp of sorted) {
       const visited = visitIndex.isSpotVisited(sp.id);
       const img = spotPhotoImageName(sp.id, visited);
@@ -2818,7 +2841,7 @@ const destItems = useMemo((): DestItem[] =>
           id: sp.id,
           mini: visited ? SPOT_MINI_PIN_VISITED : SPOT_MINI_PIN_UNVISITED,
           img: specs.has(img) && !early && photoPlan.has(sp.id) ? img : '',
-          label: photoPlan.has(sp.id) && (spotPhotoPlan?.nameAt.get(sp.id)?.z ?? Infinity) <= handoffZoom + ZOOM_EPSILON ? spotLabelLines(sp.name).join('\n') : '',
+          label: photoPlan.has(sp.id) && (spotPhotoPlan?.nameAt.get(sp.id)?.z ?? Infinity) <= handoffZoom + ZOOM_EPSILON && !hitsSelected(sp) ? spotLabelLines(sp.name).join('\n') : '',
           side: spotPhotoPlan?.nameAt.get(sp.id)?.side ?? 'right',
           sort: rank(sp),
         },
@@ -2835,7 +2858,7 @@ const destItems = useMemo((): DestItem[] =>
     const value = { shape: { type: 'FeatureCollection' as const, features }, specs: spotPhotoSpecListRef.current };
     lastSpotShapeRef.current = { sig, specs: spotPhotoSpecListRef.current, value };
     return value;
-  }, [visibleSpots, selectedSpot, nearCtx, visitIndex, handoffZoom, spotPhotoPlan]);
+  }, [visibleSpots, selectedSpot, nearCtx, visitIndex, handoffZoom, spotPhotoPlan, pinPlanLngDelta]);
   // Only the selected spot is a MarkerView now.
   const selectedOnly = useMemo(() => (selectedSpot ? [selectedSpot] : []), [selectedSpot]);
   // When the selection moves to another spot, the old spot's native pin is back at once, so its marker goes at once too
