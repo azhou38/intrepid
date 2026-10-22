@@ -1961,6 +1961,22 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "The dry, {months}, is warm and clear; in the wet the fords flood and the road closes.",
     seasonalTags: [{ tag: 'monsoon-dry-season', months: [5, 6, 7, 8, 9, 10] }],
   },
+  {
+    id: 'wyndham', name: "Wyndham", country: "Australia", countryCode: 'AU', timezone: 'Australia/Perth', defaultZoomSpanKm: 42,
+    continent: 'Oceania', coordinates: { latitude: -15.486798, longitude: 128.12362 },
+    category: 'city', icon: "🐊", rank: 5,
+    tagline: "Port town under the Bastion Range where five rivers meet the Cambridge Gulf.",
+    description: "Wyndham, the most northerly town in Western Australia, began as a port in 1886 for the Halls Creek gold rush and later shipped beef from its meatworks until 1985. It sits beneath the Bastion Range, where Five Rivers Lookout looks over the mudflats as the King, Pentecost, Durack, Forrest and Ord rivers drain into Cambridge Gulf. A giant crocodile statue greets arrivals, and the hollow Prison Tree and The Grotto's rock pool lie along the roads south.",
+    whyVisit: ["Look over the gulf from Five Rivers Lookout", "Visit the hollow Prison Tree boab"],
+    whyVisitPhotos: ["Wyndham from five rivers lookout.jpg", "Wyndham Prison Boab.jpg"],
+    highlights: ["Five Rivers view", "Prison Tree"],
+    goodToKnow: [
+      { icon: "🐊", title: "Keep back from the water", detail: "Saltwater crocodiles rest by the jetty and live in all five rivers: never swim, and stay well back from the edge." },
+      { icon: "⛽", title: "Short fuel hours", detail: "The town's fuel stop opens 6 am–3 pm on weekdays and 7 am–1 pm at weekends, so fill up in Kununurra if arriving late." },
+    ],
+    bestMonths: [5, 6, 7, 8, 9],
+    bestTimeBlurb: "Visit in the dry season, {months}; from November to March the monsoon rain sets in.",
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {
