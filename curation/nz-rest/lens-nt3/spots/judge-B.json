@@ -1,0 +1,675 @@
+{
+ "spot:alice-springs-4": {
+  "status": "accept",
+  "choice": "Anzac Hill, 2015 (01).JPG",
+  "candidates": [
+   {
+    "file": "Anzac Hill, 2015 (01).JPG",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Memorial obelisk, flags, ranges beyond; 2015, 3648 px",
+    "hero_crop": {
+     "x": 0.66,
+     "y": 0.6,
+     "zoom": 1.4
+    }
+   },
+   {
+    "file": "Anzac Hill, 2015 (02).JPG",
+    "verdict": "reject-lesser",
+    "check_failed": "",
+    "reason": "Same memorial, obelisk smaller and flat plaza dominates; backup",
+    "hero_crop": {
+     "x": 0.55,
+     "y": 0.6,
+     "zoom": 1.4
+    }
+   },
+   {
+    "file": "ANZAC Hill, Alice Springs, October 2025 05.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "Just stone stairs, not the memorial/view",
+    "hero_crop": "ok"
+   }
+  ],
+  "needs_brightening": false,
+  "licence": "CC BY-SA 4.0",
+  "owner": "Bahnfrend"
+ },
+ "spot:arnhem-land-2": {
+  "status": "none",
+  "choice": null,
+  "reason": "no candidates supplied; lead image is a bark painting",
+  "candidates": [],
+  "needs_brightening": false,
+  "licence": null,
+  "owner": null
+ },
+ "spot:arnhem-land-6": {
+  "status": "none",
+  "choice": null,
+  "reason": "no candidates supplied",
+  "candidates": [],
+  "needs_brightening": false,
+  "licence": null,
+  "owner": null
+ },
+ "spot:east-macdonnell-ranges-2": {
+  "status": "accept",
+  "choice": "curation/nz-rest/lens-nt3/spots/ext/arltunga-f22c6877a324d30a29a0790025de0223.jpg",
+  "candidates": [
+   {
+    "file": "curation/nz-rest/lens-nt3/spots/ext/arltunga-f22c6877a324d30a29a0790025de0223.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Restored police station buildings with interpretive sign naming Arltunga; shows the reserve itself",
+    "hero_crop": {
+     "x": 0.3,
+     "y": 0.4,
+     "zoom": 1.3
+    }
+   },
+   {
+    "file": "curation/nz-rest/lens-nt3/spots/ext/arltunga-5a9c8bb6e990961383b46301f24504ca.jpg",
+    "verdict": "pass-backup",
+    "check_failed": null,
+    "reason": "Strong arched stone building; equally valid, less setting",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "curation/nz-rest/lens-nt3/spots/ext/arltunga-98c85715fdca18476a8ea9638f0044c1.jpg",
+    "verdict": "pass-backup",
+    "check_failed": null,
+    "reason": "Ruined stone hut, ok",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "curation/nz-rest/lens-nt3/spots/ext/arltunga-90fc2abbc39d57bfa09efba6c3ccf610.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "Visitor silhouette and machinery are the focus",
+    "hero_crop": "ok"
+   }
+  ],
+  "needs_brightening": false,
+  "licence": "official photo, permission not confirmed",
+  "owner": "Tourism NT"
+ },
+ "spot:kakadu-national-park-4": {
+  "status": "accept",
+  "choice": "Jim jim falls.jpg",
+  "candidates": [
+   {
+    "file": "Jim jim falls.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Falls into gorge, wide, colour, 2006, 2272 px",
+    "hero_crop": {
+     "x": 0.56,
+     "y": 0.35
+    }
+   },
+   {
+    "file": "Jim Jim falls by light aircraft, Kakadu National Park.jpg",
+    "verdict": "reject",
+    "check_failed": "2/3",
+    "reason": "Aerial, falls small and off-centre",
+    "hero_crop": "fail: falls tiny"
+   }
+  ],
+  "needs_brightening": false,
+  "licence": "CC BY-SA 1.0",
+  "owner": "Wikivoyage user"
+ },
+ "spot:kakadu-national-park-11": {
+  "status": "accept",
+  "choice": "Kakadu (AU), Kakadu National Park, Cahills Crossing -- 2019 -- 4160.jpg",
+  "candidates": [
+   {
+    "file": "Kakadu (AU), Kakadu National Park, Cahills Crossing -- 2019 -- 4160.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "4WD crossing the tidal causeway with depth gauge; 2019",
+    "hero_crop": {
+     "x": 0.6,
+     "y": 0.5
+    }
+   }
+  ],
+  "needs_brightening": false,
+  "licence": "CC BY-SA 4.0",
+  "owner": "Commons (2019)"
+ },
+ "spot:kakadu-national-park-17": {
+  "status": "accept",
+  "choice": "Rock towers on Bardedjilidji Walk, Kakadu National Park.jpg",
+  "candidates": [
+   {
+    "file": "Rock towers on Bardedjilidji Walk, Kakadu National Park.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Sandstone outlier tower; title/desc name the walk",
+    "hero_crop": {
+     "x": 0.3,
+     "y": 0.45
+    }
+   },
+   {
+    "file": "Rock formations Kakadu National Park.jpg",
+    "verdict": "pass-backup",
+    "check_failed": null,
+    "reason": "Categorised Bardedjilidji Walk, good",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Pandanus dead tree and more rocks.jpg",
+    "verdict": "pass-backup",
+    "check_failed": null,
+    "reason": "Description names the walk; dead tree distracts",
+    "hero_crop": "ok"
+   }
+  ],
+  "needs_brightening": false,
+  "licence": "CC BY-SA 4.0",
+  "owner": "Commons (2012)"
+ },
+ "spot:kakadu-national-park-22": {
+  "status": "accept",
+  "choice": "curation/nz-rest/lens-nt3/spots/ext/kubara-pools-walk.jpg",
+  "candidates": [
+   {
+    "file": "curation/nz-rest/lens-nt3/spots/ext/kubara-pools-walk.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Parks Australia tile image for the Kubara (Gubara) walk; sandstone cliffs dominate, walker minor-ish. 1200px square. Page proves place",
+    "hero_crop": "ok"
+   }
+  ],
+  "needs_brightening": false,
+  "licence": "official photo, permission not confirmed",
+  "owner": "Parks Australia"
+ },
+ "spot:nitmiluk-national-park-2": {
+  "status": "accept",
+  "choice": "Waterfall in Distance in Edith Falls, Nitmiluk National Park, Katherine, Northern Territory, Australia, during Dry Season.jpg",
+  "candidates": [
+   {
+    "file": "Waterfall in Distance in Edith Falls, Nitmiluk National Park, Katherine, Northern Territory, Australia, during Dry Season.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Falls and plunge pool in gorge; falls smallish but named in file/cats; 2014",
+    "hero_crop": {
+     "x": 0.55,
+     "y": 0.5,
+     "zoom": 1.2
+    }
+   },
+   {
+    "file": "Waterfall in Edith Falls, Nitmiluk National Park, Katherine, Northern Territory, Australia, during Dry Season (2).jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "Rocks dominate, falls tiny",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Edith Falls - panoramio (1).jpg",
+    "verdict": "reject",
+    "check_failed": "real photo/overlay",
+    "reason": "Date-stamp overlay burned in",
+    "hero_crop": "ok"
+   }
+  ],
+  "needs_brightening": false,
+  "licence": "CC BY-SA 4.0",
+  "owner": "Commons (2014)"
+ },
+ "spot:ewaninga-conservation-reserve": {
+  "status": "none",
+  "choice": null,
+  "reason": "all candidates are 1987 Kodachrome slide scans (fail date rule)",
+  "candidates": [
+   {
+    "file": "Ewaninga004a.jpg",
+    "verdict": "reject",
+    "check_failed": "4/date",
+    "reason": "1987 slide scan",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Ewaninga007a.jpg",
+    "verdict": "reject",
+    "check_failed": "4/date",
+    "reason": "1987",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Ewaninga009a.jpg",
+    "verdict": "reject",
+    "check_failed": "4/date",
+    "reason": "1987",
+    "hero_crop": "ok"
+   }
+  ],
+  "needs_brightening": false,
+  "licence": null,
+  "owner": null
+ },
+ "spot:uluru-kata-tjuta-national-park-3": {
+  "status": "accept",
+  "choice": "Outback Trip - Uluru Base Walk 14 (4157617260).jpg",
+  "candidates": [
+   {
+    "file": "Outback Trip - Uluru Base Walk 14 (4157617260).jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Uluru dome from the base track, 2009; weaker as a walk (no track) but only base-walk-titled option; not the same shot as the Uluru spot",
+    "hero_crop": {
+     "x": 0.55,
+     "y": 0.62,
+     "zoom": 1.4
+    }
+   },
+   {
+    "file": "Uluru Base Walk 2.JPG",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "Close-up rock detail",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Mala Walk at Uluru (retouched).jpg",
+    "verdict": "pass-backup",
+    "check_failed": null,
+    "reason": "Path at the base; used as Mala/alternate",
+    "hero_crop": "ok"
+   }
+  ],
+  "needs_brightening": false,
+  "licence": "CC BY 2.0",
+  "owner": "Flickr via Commons"
+ },
+ "spot:uluru-kata-tjuta-national-park-8": {
+  "status": "accept",
+  "choice": "Uluru Mala Walk.JPG",
+  "candidates": [
+   {
+    "file": "Uluru Mala Walk.JPG",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Start of the Mala Walk, path under Uluru wall; 2016",
+    "hero_crop": {
+     "x": 0.5,
+     "y": 0.6
+    }
+   },
+   {
+    "file": "Mala Walk at Uluru (retouched).jpg",
+    "verdict": "pass-backup",
+    "check_failed": null,
+    "reason": "Path along base, clean, bright",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Uluru Rock Art.JPG",
+    "verdict": "reject",
+    "check_failed": "2/3",
+    "reason": "Murky close-up rock art",
+    "hero_crop": "ok"
+   }
+  ],
+  "needs_brightening": false,
+  "licence": "CC BY-SA 4.0",
+  "owner": "Commons (2016)"
+ },
+ "spot:uluru-kata-tjuta-national-park-13": {
+  "status": "accept",
+  "choice": "https://live.staticflickr.com/5741/30440728326_76818a2c82_b.jpg",
+  "candidates": [
+   {
+    "file": "https://live.staticflickr.com/5741/30440728326_76818a2c82_b.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Kata Tjuta domes from the Dune Viewing Area (title), 1024 px, colour; licence per Openverse CC BY 2.0 (verify)",
+    "hero_crop": {
+     "x": 0.3,
+     "y": 0.3,
+     "zoom": 1.2
+    }
+   },
+   {
+    "file": "https://live.staticflickr.com/5504/30390532501_2f26f621e6_b.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Blue-toned distant Uluru, small, colour cast",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Autumn at Kata Tjuta.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "Uluru-type dome; Walpa Gorge not dune viewing",
+    "hero_crop": "ok"
+   }
+  ],
+  "needs_brightening": false,
+  "licence": "CC BY 2.0",
+  "owner": "Martin7d2 (Flickr)"
+ },
+ "spot:west-macdonnell-national-park-4": {
+  "status": "accept",
+  "choice": "Ellery Creek Big Hole - West Macdonnell Ranges NT.jpg",
+  "candidates": [
+   {
+    "file": "Ellery Creek Big Hole - West Macdonnell Ranges NT.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Waterhole beneath red gorge walls; 2015, 3872 px, Wiki Loves Earth",
+    "hero_crop": {
+     "x": 0.5,
+     "y": 0.5
+    }
+   }
+  ],
+  "needs_brightening": false,
+  "licence": "CC BY-SA 4.0",
+  "owner": "Commons (2015)"
+ },
+ "spot:alice-springs-5": {
+  "status": "none",
+  "choice": null,
+  "reason": "Emily Gap: official photo has two visitors as the focus with gap barely shown; Commons file is 1987 slide",
+  "candidates": [
+   {
+    "file": "curation/nz-rest/lens-nt3/spots/ext/s4-emily.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "People are the caption; gap not shown",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "(1)Emily Gap.jpg",
+    "verdict": "reject",
+    "check_failed": "date",
+    "reason": "1987 slide",
+    "hero_crop": "ok"
+   }
+  ],
+  "needs_brightening": false,
+  "licence": null,
+  "owner": null
+ },
+ "spot:arnhem-land-3": {
+  "status": "none",
+  "choice": null,
+  "reason": "only NT411 (1024x676) is wide enough; dim, colour-cast dusk shot, beach barely legible",
+  "candidates": [
+   {
+    "file": "flickr 32415918465",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "dark, murky, weak at thumbnail",
+    "hero_crop": "ok"
+   }
+  ],
+  "needs_brightening": false,
+  "licence": null,
+  "owner": null
+ },
+ "spot:arnhem-land-7": {
+  "status": "none",
+  "choice": null,
+  "reason": "no candidates",
+  "candidates": [],
+  "needs_brightening": false,
+  "licence": null,
+  "owner": null
+ },
+ "spot:east-macdonnell-ranges-4": {
+  "status": "accept",
+  "choice": "curation/nz-rest/lens-nt3/spots/ext/s4-ndhala.jpg",
+  "candidates": [
+   {
+    "file": "curation/nz-rest/lens-nt3/spots/ext/s4-ndhala.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Orange gorge walls and greenery, modern, 1920 px; plain but the gorge itself",
+    "hero_crop": {
+     "x": 0.55,
+     "y": 0.4
+    }
+   },
+   {
+    "file": "N'Dhala Gorge002a.jpg",
+    "verdict": "reject",
+    "check_failed": "date",
+    "reason": "1987 slide",
+    "hero_crop": "ok"
+   }
+  ],
+  "needs_brightening": false,
+  "licence": "official photo, permission not confirmed",
+  "owner": "Tourism NT"
+ },
+ "spot:kakadu-national-park-8": {
+  "status": "accept",
+  "choice": "Bowali Visitor Centre, Jabiru NT, October 2025 08.jpg",
+  "candidates": [
+   {
+    "file": "Bowali Visitor Centre, Jabiru NT, October 2025 08.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "The centre building itself (verandah, roof), 2025; plain, shutters down, but the named thing",
+    "hero_crop": {
+     "x": 0.35,
+     "y": 0.5
+    }
+   },
+   {
+    "file": "Bowali Visitor Centre, Jabiru NT, October 2025 01.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "Roadside sign only",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "curation/nz-rest/lens-nt3/spots/ext/s4-bowali.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "Ranger and visitors are the focus, interior",
+    "hero_crop": "ok"
+   }
+  ],
+  "needs_brightening": false,
+  "licence": "CC BY-SA 4.0",
+  "owner": "Commons (2025)"
+ },
+ "spot:kakadu-national-park-13": {
+  "status": "none",
+  "choice": null,
+  "reason": "no passing: Commons files show rock face/a hill from a bonnet; official is a 2.8:1 interior strip",
+  "candidates": [
+   {
+    "file": "Gabriel Maralngurra, Injalak Arts, 2008.jpg",
+    "verdict": "reject",
+    "check_failed": "1/2",
+    "reason": "not the arts centre",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "InjalakHill.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "hill, not centre; windscreen bonnet",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "curation/nz-rest/lens-nt3/spots/ext/s4-injalak.jpg",
+    "verdict": "reject",
+    "check_failed": "shape",
+    "reason": "2.8:1 strip, crowd",
+    "hero_crop": "fail: strip"
+   }
+  ],
+  "needs_brightening": false,
+  "licence": null,
+  "owner": null
+ },
+ "spot:kakadu-national-park-18": {
+  "status": "none",
+  "choice": null,
+  "reason": "no candidates",
+  "candidates": [],
+  "needs_brightening": false,
+  "licence": null,
+  "owner": null
+ },
+ "spot:kakadu-national-park-23": {
+  "status": "none",
+  "choice": null,
+  "reason": "Jabiru: only plain roads/signs, no townscape",
+  "candidates": [
+   {
+    "file": "End of the street in Jabiru, Northern Territory, 2021.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "street",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Jabiru, Arnhem Highway, Northern Territory.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "road sign",
+    "hero_crop": "ok"
+   }
+  ],
+  "needs_brightening": false,
+  "licence": null,
+  "owner": null
+ },
+ "spot:finke-gorge-national-park": {
+  "status": "accept",
+  "choice": "Palm Valley NT.jpg",
+  "candidates": [
+   {
+    "file": "Palm Valley NT.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Livistona palms under red cliffs, 2004, 2048 px, in the park. NOTE: standalone spot palm-valley exists (same subject area): if it uses this file or a palm-grove shot, prefer the 4WD aerial s4-finke.jpg for the park instead",
+    "hero_crop": {
+     "x": 0.45,
+     "y": 0.5
+    }
+   },
+   {
+    "file": "curation/nz-rest/lens-nt3/spots/ext/s4-finke.jpg",
+    "verdict": "pass-backup",
+    "check_failed": null,
+    "reason": "Aerial of 4WD track through red ranges, 4899 px; distinct from Palm Valley; vehicle tiny but landscape is the park",
+    "hero_crop": {
+     "x": 0.4,
+     "y": 0.4
+    }
+   },
+   {
+    "file": "Finke Gorge NP.jpg",
+    "verdict": "unviewed-backup",
+    "check_failed": null,
+    "reason": "2004 amphitheatre; not viewed",
+    "hero_crop": "ok"
+   }
+  ],
+  "needs_brightening": false,
+  "licence": "CC BY-SA 4.0 (multi)",
+  "owner": "Commons"
+ },
+ "spot:tennant-creek-2": {
+  "status": "accept",
+  "choice": "curation/nz-rest/lens-nt3/spots/ext/s4-nyinkka.jpg",
+  "candidates": [
+   {
+    "file": "curation/nz-rest/lens-nt3/spots/ext/s4-nyinkka.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "The centre building with curved roof; modern, bright, 1920 px",
+    "hero_crop": {
+     "x": 0.55,
+     "y": 0.45
+    }
+   }
+  ],
+  "needs_brightening": false,
+  "licence": "official photo, permission not confirmed",
+  "owner": "Tourism NT"
+ },
+ "spot:uluru-kata-tjuta-national-park-4": {
+  "status": "accept",
+  "choice": "curation/nz-rest/lens-nt3/spots/ext/s4-vow.jpg",
+  "candidates": [
+   {
+    "file": "curation/nz-rest/lens-nt3/spots/ext/s4-vow.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Kata Tjuta domes at golden hour, no people; shows the domes the walk circles. Overlaps Kata Tjuta spot subject (its photo is aerial Kata Tjuta, not shown to be same file)",
+    "hero_crop": {
+     "x": 0.55,
+     "y": 0.35,
+     "zoom": 1.2
+    }
+   },
+   {
+    "file": "Kata-Tjuta.jpg",
+    "verdict": "pass-backup",
+    "check_failed": null,
+    "reason": "Taken on the walk (desc), not viewed fully",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Autumn at Kata Tjuta.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "Walpa Gorge, which is its own spot",
+    "hero_crop": "ok"
+   }
+  ],
+  "needs_brightening": false,
+  "licence": "official photo, permission not confirmed",
+  "owner": "Tourism NT"
+ },
+ "spot:uluru-kata-tjuta-national-park-9": {
+  "status": "accept",
+  "choice": "Mutitjulu Waterhole.jpg",
+  "candidates": [
+   {
+    "file": "Mutitjulu Waterhole.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Red path to the Uluru base at Mutitjulu, bright, no people, 2017; shows the path/rock, not the waterhole itself",
+    "hero_crop": {
+     "x": 0.5,
+     "y": 0.6
+    }
+   },
+   {
+    "file": "curation/nz-rest/lens-nt3/spots/ext/s4-kuniya.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "Walkers are the focus",
+    "hero_crop": "ok"
+   }
+  ],
+  "needs_brightening": false,
+  "licence": "CC BY-SA 4.0",
+  "owner": "Commons (2017)"
+ },
+ "spot:watarrka-national-park-4": {
+  "status": "none",
+  "choice": null,
+  "reason": "no candidates",
+  "candidates": [],
+  "needs_brightening": false,
+  "licence": null,
+  "owner": null
+ }
+}

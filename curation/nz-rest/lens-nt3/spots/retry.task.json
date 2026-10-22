@@ -1,0 +1,171 @@
+{
+ "region": "nt-rest",
+ "group": "retry",
+ "slots": [
+  {
+   "slot": "spot:kakadu-national-park-3",
+   "key": "Yellow Water",
+   "current": {
+    "file": "Yellow River - panoramio.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "judge rejected the current photo: Photo is of the Yellow River in Henan, China (categories: China, Hubin District); wrong place."
+   ],
+   "proof": [
+    "geotag 5757568 m from the pin: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:kakadu-national-park-16",
+   "key": "Motor Car Falls",
+   "current": {
+    "file": "1925 Ford Model T touring.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "judge rejected the current photo: A 1925 Ford Model T car; nothing to do with Motor Car Falls (lead image from the car-name match)."
+   ],
+   "proof": [
+    "no geotag; the spot name is not in the file text: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:henbury-meteorites-conservation-reserve",
+   "key": "Henbury Meteorites Conservation Reserve",
+   "current": {
+    "file": "Henbury Meteorite Crater.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "judge rejected the current photo: Faded film-scan style landscape; the crater is not discernible, reads as generic red scrub and hills. Needs a clearer crater photo."
+   ],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:west-macdonnell-national-park-1",
+   "key": "Ormiston Gorge",
+   "current": {
+    "file": "Ormiston Pound.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "judge rejected the current photo: Hazy 1024 px 2004 shot of the ranges around Ormiston Pound from a distance; does not show the gorge (waterhole, cliffs) visitors come for; soft and half sky."
+   ],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:west-macdonnell-national-park-10",
+   "key": "Redbank Gorge",
+   "current": {
+    "file": "Redbank Gorge - Northern Territory.jpeg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "judge rejected the current photo: A Toyota LandCruiser bonnet fills the left/foreground of the frame; the gorge is only a distant cliff. The vehicle is the focus, not the gorge."
+   ],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:arnhem-land-1",
+   "key": "Nhulunbuy",
+   "current": {
+    "file": "Gove Airport terminal main entrance.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "judge rejected the current photo: Nhulunbuy is the town; photo is an airport terminal entrance, not the town or its setting."
+   ],
+   "proof": [
+    "no geotag; the spot name is not in the file text: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:kakadu-national-park-20",
+   "key": "Home Billabong",
+   "current": {
+    "file": "Berrinba Wetlands billabong.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "judge rejected the current photo: Billabong at Berrinba Wetlands, Logan City, Queensland; wrong place entirely."
+   ],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:west-macdonnell-national-park-8",
+   "key": "Serpentine Gorge",
+   "current": {
+    "file": "SerpentineGorgeSideWall.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "judge rejected the current photo: Close view of a rock wall slope; no gorge, waterhole or recognisable Serpentine Gorge feature. Needs a photo of the gorge itself."
+   ],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:alice-springs-8",
+   "key": "Olive Pink Botanic Garden",
+   "current": {
+    "file": "Snakes and Goannas. Olive Pink, Alice Springs 01.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "judge rejected the current photo: A warning sign close-up, not the garden."
+   ],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:tennant-creek-3",
+   "key": "Battery Hill Mining Centre",
+   "current": {
+    "file": "Argent Street, Broken Hill.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "judge rejected the current photo: Argent Street in Broken Hill, NSW: wrong place and not the Battery Hill Mining Centre."
+   ],
+   "proof": [
+    "geotag 1548500 m from the pin: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:uluru-kata-tjuta-national-park-6",
+   "key": "Field of Light",
+   "current": {
+    "file": "Eden Project Winter 2008 showing Bruce Munro field of Light.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "judge rejected the current photo: Bruce Munro installation at the Eden Project, UK; not the Uluru Field of Light."
+   ],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  }
+ ]
+}

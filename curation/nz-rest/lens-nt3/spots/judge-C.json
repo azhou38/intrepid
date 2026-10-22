@@ -1,0 +1,326 @@
+{
+ "spot:kakadu-national-park-3": {
+  "status": "accept",
+  "choice": "Kakadu (AU), Kakadu National Park, Yellow Water -- 2019 -- 3782.jpg",
+  "candidates": [
+   {
+    "file": "Kakadu (AU), Kakadu National Park, Yellow Water -- 2019 -- 3782.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Yellow Water (Ngurrungurrudjba) billabong, pandanus island and mirror reflection, 2019, 6720px; page names Yellow Water, Kakadu. Distinct from Mamukala (lily wetland) and Home Billabong.",
+    "hero_crop": {
+     "x": 0.38,
+     "y": 0.5
+    }
+   },
+   {
+    "file": "Kakadu (AU), Kakadu National Park, Yellow Water -- 2019 -- 3871.jpg",
+    "verdict": "reject",
+    "check_failed": "2/3",
+    "reason": "Near duplicate, close pandanus clump",
+    "hero_crop": {
+     "x": 0.5,
+     "y": 0.5
+    }
+   },
+   {
+    "file": "Kakadu (AU), Kakadu National Park, Yellow Water -- 2019 -- 3884.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Wide but flat/brown, less striking than 3782",
+    "hero_crop": {
+     "x": 0.5,
+     "y": 0.5
+    }
+   },
+   {
+    "file": "Kakadu (AU), Kakadu National Park, Yellow Water -- 2019 -- 3957.jpg",
+    "verdict": "reject",
+    "check_failed": "distinct subject",
+    "reason": "Lily wetland reads as Mamukala-type subject; no billabong landmark",
+    "hero_crop": {
+     "x": 0.5,
+     "y": 0.5
+    }
+   }
+  ],
+  "needs_brightening": false,
+  "licence": "CC BY-SA 4.0",
+  "owner": "Commons"
+ },
+ "spot:kakadu-national-park-16": {
+  "status": "accept",
+  "choice": "Motor Car Falls, Kakadu, 2004 - panoramio.jpg",
+  "candidates": [
+   {
+    "file": "MotorCarFallsKakadu.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "Pool and gorge walls, no falls visible; weaker as the falls",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Motor Car Falls, Kakadu, 2004 - panoramio.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Page: Motor Car Falls, Kakadu, 2004, category Kakadu National Park; colour photo of the waterfall itself, 1536x2048 portrait, crop shows full falls",
+    "hero_crop": {
+     "x": 0.5,
+     "y": 0.4
+    }
+   }
+  ],
+  "needs_brightening": false,
+  "licence": "CC BY-SA 3.0",
+  "owner": "Commons (Panoramio)"
+ },
+ "spot:henbury-meteorites-conservation-reserve": {
+  "status": "none",
+  "choice": null,
+  "candidates": [
+   {
+    "file": "Henbury crater.jpg",
+    "verdict": "reject",
+    "check_failed": "2/3",
+    "reason": "Dark backlit scrub; crater not recognisable",
+    "hero_crop": "fail: crater not discernible"
+   },
+   {
+    "file": "Henbury crater2.jpg",
+    "verdict": "reject",
+    "check_failed": "2/3/4",
+    "reason": "Red-tinted close slope with no crater form; scan-like",
+    "hero_crop": "fail: unrecognisable"
+   }
+  ],
+  "needs_brightening": false,
+  "licence": null,
+  "owner": null
+ },
+ "spot:west-macdonnell-national-park-1": {
+  "status": "accept",
+  "choice": "Ormiston Gorge, October 2025 31.jpg",
+  "candidates": [
+   {
+    "file": "Ormiston Gorge, October 2025 31.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Waterhole under red cliff, Oct 2025, 4032px; a small fly speck in sky only",
+    "hero_crop": {
+     "x": 0.62,
+     "y": 0.5
+    }
+   },
+   {
+    "file": "Ormiston Gorge, October 2025 26.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Dry creek bed and cliff, acceptable but less striking (second choice)",
+    "hero_crop": {
+     "x": 0.5,
+     "y": 0.5
+    }
+   },
+   {
+    "file": "Ormiston Gorge, October 2025 10.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Hazy elevated view, gorge small",
+    "hero_crop": "ok"
+   }
+  ],
+  "needs_brightening": false,
+  "licence": "CC BY-SA 4.0",
+  "owner": "Commons"
+ },
+ "spot:west-macdonnell-national-park-10": {
+  "status": "accept",
+  "choice": "ext/retry-redbank1.jpg",
+  "candidates": [
+   {
+    "file": "ext/retry-redbank1.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Narrow red gorge and green waterhole with two small visitors; page is Tourism NT Redbank Gorge; 6000x4000",
+    "hero_crop": {
+     "x": 0.55,
+     "y": 0.5
+    }
+   },
+   {
+    "file": "ext/retry-redbank4.jpg",
+    "verdict": "reject",
+    "check_failed": "1/2",
+    "reason": "Person is focus, gorge identity unconfirmed, 2449px",
+    "hero_crop": "ok"
+   }
+  ],
+  "needs_brightening": false,
+  "licence": "official photo, permission not confirmed (Tourism NT / ATDW)",
+  "owner": "Tourism NT / ATDW"
+ },
+ "spot:arnhem-land-1": {
+  "status": "none",
+  "choice": null,
+  "candidates": [
+   {
+    "file": "Nhulunbuy Gove.jpg",
+    "verdict": "reject",
+    "check_failed": "size/3",
+    "reason": "1024px, distant dusk industrial skyline over water",
+    "hero_crop": "fail: tiny and dull"
+   },
+   {
+    "file": "ext/retry-nhulunbuy1.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "Gove Peninsula beach and rocks: stand-in, not the town",
+    "hero_crop": "ok"
+   }
+  ],
+  "needs_brightening": false,
+  "licence": null,
+  "owner": null
+ },
+ "spot:kakadu-national-park-20": {
+  "status": "none",
+  "choice": null,
+  "candidates": [],
+  "needs_brightening": false,
+  "licence": null,
+  "owner": null
+ },
+ "spot:west-macdonnell-national-park-8": {
+  "status": "accept",
+  "choice": "Serpentine Gorge WestMacs.jpg",
+  "candidates": [
+   {
+    "file": "Serpentine Gorge WestMacs.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Gorge mouth with waterhole between red walls; categorised Serpentine Gorge; 2014; 3072 wide, central in square crop",
+    "hero_crop": {
+     "x": 0.5,
+     "y": 0.5
+    }
+   },
+   {
+    "file": "SerpentineGorgeWaterhole.jpg",
+    "verdict": "reject",
+    "check_failed": "2/3",
+    "reason": "Close rock wall with sliver of water",
+    "hero_crop": "ok"
+   }
+  ],
+  "needs_brightening": false,
+  "licence": "CC BY-SA 4.0",
+  "owner": "Commons"
+ },
+ "spot:alice-springs-8": {
+  "status": "none",
+  "choice": null,
+  "candidates": [
+   {
+    "file": "ext/retry-olivepink1.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "Wallaby close-up is the focus",
+    "hero_crop": "fail"
+   },
+   {
+    "file": "ext/retry-olivepink2.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "Desert pea close-up",
+    "hero_crop": "fail"
+   },
+   {
+    "file": "ext/retry-olivepink3.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "Selfie of a group",
+    "hero_crop": "fail"
+   },
+   {
+    "file": "ext/retry-olivepink4.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "Hibiscus close-up",
+    "hero_crop": "fail"
+   }
+  ],
+  "needs_brightening": false,
+  "licence": null,
+  "owner": null
+ },
+ "spot:tennant-creek-3": {
+  "status": "accept",
+  "choice": "Battery Hill 01.jpg",
+  "candidates": [
+   {
+    "file": "Battery Hill 01.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Mining centre entrance, sculptures and water tower, 2018, 4032px; modest but shows the site itself",
+    "hero_crop": {
+     "x": 0.62,
+     "y": 0.5
+    }
+   },
+   {
+    "file": "Battery Hill 03.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Headframe is a part of the site, not the centre; second choice",
+    "hero_crop": {
+     "x": 0.75,
+     "y": 0.5
+    }
+   },
+   {
+    "file": "Battery Hill 02.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Termite-like rock mounds, not the centre",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Battery Hill 05.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Hill buildings, flat, mostly sky",
+    "hero_crop": "ok"
+   }
+  ],
+  "needs_brightening": false,
+  "licence": "CC BY-SA 4.0",
+  "owner": "Commons"
+ },
+ "spot:uluru-kata-tjuta-national-park-6": {
+  "status": "accept",
+  "choice": "Field of Light Uluru, October 2025 01.jpg",
+  "candidates": [
+   {
+    "file": "Field of Light Uluru, October 2025 01.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Lit field of lights at dusk, Uluru, Oct 2025; dark on purpose; lights low in frame so zoom",
+    "hero_crop": {
+     "x": 0.5,
+     "y": 0.7,
+     "zoom": 1.5
+    }
+   },
+   {
+    "file": "Field of Light Uluru, October 2025 02.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Portrait close view, less setting; second choice",
+    "hero_crop": "ok"
+   }
+  ],
+  "needs_brightening": false,
+  "licence": "CC BY-SA 4.0",
+  "owner": "Commons"
+ }
+}

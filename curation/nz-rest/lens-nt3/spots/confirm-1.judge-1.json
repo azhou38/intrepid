@@ -1,0 +1,94 @@
+{
+ "spot:alice-springs-1": {
+  "file": "Alice Springs Desert Park, October 2025 07.jpg",
+  "verdict": "accept",
+  "check_failed": null,
+  "reason": "Recent colour photo of the Desert Park entrance/visitor centre with MacDonnell ranges behind; the venue itself, building centred.",
+  "hero_crop": "ok",
+  "needs_brightening": false
+ },
+ "spot:alice-springs-10": {
+  "file": "Adelaide House.JPG",
+  "verdict": "accept",
+  "check_failed": null,
+  "reason": "Colour photo (2003) of the stone Adelaide House building, subject is the building itself; framed by tree but recognisable.",
+  "hero_crop": "ok",
+  "needs_brightening": false
+ },
+ "spot:kakadu-national-park-3": {
+  "file": "Yellow River - panoramio.jpg",
+  "verdict": "reject",
+  "check_failed": "1",
+  "reason": "Photo is of the Yellow River in Henan, China (categories: China, Hubin District); wrong place.",
+  "hero_crop": "n/a",
+  "needs_brightening": false
+ },
+ "spot:kakadu-national-park-16": {
+  "file": "1925 Ford Model T touring.jpg",
+  "verdict": "reject",
+  "check_failed": "1/2",
+  "reason": "A 1925 Ford Model T car; nothing to do with Motor Car Falls (lead image from the car-name match).",
+  "hero_crop": "n/a",
+  "needs_brightening": false
+ },
+ "spot:nitmiluk-national-park-3": {
+  "file": "Jatbula Trail.jpg",
+  "verdict": "accept",
+  "check_failed": null,
+  "reason": "Colour photo of a creek with pools and rock on the Jatbula Trail in Nitmiluk (category Nitmiluk NP); characteristic stretch, 5760 px.",
+  "hero_crop": "ok",
+  "needs_brightening": false
+ },
+ "spot:henbury-meteorites-conservation-reserve": {
+  "file": "Henbury Meteorite Crater.jpg",
+  "verdict": "reject",
+  "check_failed": "2/3",
+  "reason": "Faded film-scan style landscape; the crater is not discernible, reads as generic red scrub and hills. Needs a clearer crater photo.",
+  "hero_crop": "n/a",
+  "needs_brightening": false
+ },
+ "spot:tennant-creek-5": {
+  "file": "Lake Mary Ann Dam.jpg",
+  "verdict": "accept",
+  "check_failed": null,
+  "reason": "Real colour photo of Lake Mary Ann water and dam wall, 4032 px; mostly sky so zoom needed.",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.8,
+   "zoom": 1.8
+  },
+  "needs_brightening": false
+ },
+ "spot:uluru-kata-tjuta-national-park-11": {
+  "file": "Yulara from helicopter (August 2004).jpg",
+  "verdict": "accept",
+  "check_failed": null,
+  "reason": "Colour aerial of Yulara resort village in desert; acceptable for a spot that is the settlement (not a header). Slightly dated (2004), low-angle helicopter shot.",
+  "hero_crop": "ok",
+  "needs_brightening": false
+ },
+ "spot:west-macdonnell-national-park-1": {
+  "file": "Ormiston Pound.JPG",
+  "verdict": "reject",
+  "check_failed": "2/3",
+  "reason": "Hazy 1024 px 2004 shot of the ranges around Ormiston Pound from a distance; does not show the gorge (waterhole, cliffs) visitors come for; soft and half sky.",
+  "hero_crop": "n/a",
+  "needs_brightening": false
+ },
+ "spot:west-macdonnell-national-park-7": {
+  "file": "Mount Sonder.JPG",
+  "verdict": "accept",
+  "check_failed": null,
+  "reason": "Colour photo of Mount Sonder from the Larapinta Trail, peak range clear and central; 1024 px (below 1280 preferred but over 960).",
+  "hero_crop": "ok",
+  "needs_brightening": false
+ },
+ "spot:west-macdonnell-national-park-10": {
+  "file": "Redbank Gorge - Northern Territory.jpeg",
+  "verdict": "reject",
+  "check_failed": "2",
+  "reason": "A Toyota LandCruiser bonnet fills the left/foreground of the frame; the gorge is only a distant cliff. The vehicle is the focus, not the gorge.",
+  "hero_crop": "n/a",
+  "needs_brightening": false
+ }
+}

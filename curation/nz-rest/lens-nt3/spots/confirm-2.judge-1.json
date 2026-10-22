@@ -1,0 +1,88 @@
+{
+ "spot:alice-springs-7": {
+  "file": "Commonwealth Railways NSU class diesel-electric locomotive at the Old Ghan Heritage Railway and Museum, 2006.jpg",
+  "verdict": "accept",
+  "check_failed": null,
+  "reason": "Real 2006 colour photo of the NSU loco at the Old Ghan museum site; recognisable, centred.",
+  "hero_crop": "ok",
+  "needs_brightening": false
+ },
+ "spot:arnhem-land-1": {
+  "file": "Gove Airport terminal main entrance.jpg",
+  "verdict": "reject",
+  "check_failed": "2",
+  "reason": "Nhulunbuy is the town; photo is an airport terminal entrance, not the town or its setting.",
+  "hero_crop": "n/a",
+  "needs_brightening": false
+ },
+ "spot:kakadu-national-park-6": {
+  "file": "Gunlom Falls Kakadu NT.jpg",
+  "verdict": "accept",
+  "check_failed": null,
+  "reason": "Natural infinity pool at top of Gunlom Falls with the valley beyond; real colour photo.",
+  "hero_crop": "ok",
+  "needs_brightening": false
+ },
+ "spot:kakadu-national-park-20": {
+  "file": "Berrinba Wetlands billabong.jpg",
+  "verdict": "reject",
+  "check_failed": "1",
+  "reason": "Billabong at Berrinba Wetlands, Logan City, Queensland; wrong place entirely.",
+  "hero_crop": "n/a",
+  "needs_brightening": false
+ },
+ "spot:palm-valley": {
+  "file": "Palm Valley NT.jpg",
+  "verdict": "accept",
+  "check_failed": null,
+  "reason": "Livistona mariae palms under red cliff at Palm Valley, Finke Gorge NP; plain but shows the valley.",
+  "hero_crop": "ok",
+  "needs_brightening": false
+ },
+ "spot:tennant-creek-1": {
+  "file": "Tennant Creek Telegraph Station 2.jpg",
+  "verdict": "accept",
+  "check_failed": null,
+  "reason": "The station buildings, real photo; the pair spans most of the width so square crop trims edges but both stay recognisable.",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.5
+  },
+  "needs_brightening": false
+ },
+ "spot:uluru-kata-tjuta-national-park-1": {
+  "file": "ULURU.jpg",
+  "verdict": "accept",
+  "check_failed": null,
+  "reason": "Classic Uluru photo at sunset light; rock fills width, square crop clips ends slightly but is clearly Uluru.",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.7
+  },
+  "needs_brightening": false
+ },
+ "spot:watarrka-national-park-1": {
+  "file": "Kings Canyon NT view.jpg",
+  "verdict": "accept",
+  "check_failed": null,
+  "reason": "Canyon walls seen from the Rim Walk; real colour photo, recognisable.",
+  "hero_crop": "ok",
+  "needs_brightening": false
+ },
+ "spot:west-macdonnell-national-park-5": {
+  "file": "Glen Helen Gorge - panoramio.jpg",
+  "verdict": "accept",
+  "check_failed": null,
+  "reason": "Gorge walls and waterhole; child on the beach is small, place is the focus. Geotag 8 km off but description names Glen Helen Gorge.",
+  "hero_crop": "ok",
+  "needs_brightening": false
+ },
+ "spot:west-macdonnell-national-park-8": {
+  "file": "SerpentineGorgeSideWall.jpg",
+  "verdict": "reject",
+  "check_failed": "2",
+  "reason": "Close view of a rock wall slope; no gorge, waterhole or recognisable Serpentine Gorge feature. Needs a photo of the gorge itself.",
+  "hero_crop": "n/a",
+  "needs_brightening": false
+ }
+}
