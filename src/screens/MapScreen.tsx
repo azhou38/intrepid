@@ -4932,7 +4932,7 @@ const destItems = useMemo((): DestItem[] =>
   // slide finishes. The live sheet is re-keyed per swap so it mounts fresh and pops up.
   // Not animated — the sheets just swap in place, as before — when the old sheet had no resting pose (full screen, or
   // already exiting) or the user is mid map gesture (the sheets stay peeked out of the way then).
-  type SheetSnap = { identity: string; kind: 'country' | 'dest' | 'spot'; cluster: CountryCluster | null; dest: Destination | null; spots: Spot[]; focusId: string | null };
+  type SheetSnap = { identity: string; kind: 'country' | 'dest' | 'spot'; cluster: CountryCluster | null; dest: Destination | null; spots: Spot[]; focusId: string | null; liveKey?: number };
   const sheetIdentity = sheetKind === 'country' ? `country:${selectedCountry?.countryCode}`
     : sheetKind === 'dest' ? `dest:${selectedDest?.id}`
     : sheetKind === 'spot' ? `spot:${nearCtx ? nearCtx.anchor.id : selectedSpot?.destinationId ?? selectedSpot?.id}` : null;
@@ -4943,6 +4943,7 @@ const destItems = useMemo((): DestItem[] =>
   if (sheetIdentity !== swapRef.current.identity) {
     const prevSnap = shownSnapRef.current;
     const animate = !!(prevSnap && sheetIdentity && sheetPose.get() !== null && !isMapInteracting());
+    const prevKey = swapRef.current.key;
     swapRef.current = {
       identity: sheetIdentity,
       animate,
@@ -4950,7 +4951,7 @@ const destItems = useMemo((): DestItem[] =>
       key: swapRef.current.key + (animate ? 1 : 0),
       seq: swapRef.current.seq + 1,
     };
-    if (animate && prevSnap) leavingSheetRef.current = { ...prevSnap, seq: swapRef.current.seq };
+    if (animate && prevSnap) leavingSheetRef.current = { ...prevSnap, seq: swapRef.current.seq, liveKey: prevKey };
   }
   if (sheetKind && sheetIdentity) {
     shownSnapRef.current = {
@@ -4969,6 +4970,12 @@ const destItems = useMemo((): DestItem[] =>
     setLeavingTick(t => t + 1);
   }, []);
   const noop = useCallback(() => {}, []);
+  // The live destination sheet, and whether the one that was live leaves IN PLACE: when a destination's sheet is
+  // replaced by a spot's or a country's (no destination sheet takes its place), the mounted sheet slides itself off
+  // instead of being dropped and re-mounted as an outgoing copy (a second destination sheet mount, ~100 ms, in the
+  // busiest commit of the swap). Same element position and key, so React keeps the instance.
+  const liveDestSheet = mapState !== 'world' && !!selectedDest && !selectedSpot && !destAfterCamera;
+  const destLeavesInPlace = !liveDestSheet && leavingSheetRef.current?.kind === 'dest' && !!leavingSheetRef.current.dest && leavingSheetRef.current.liveKey !== undefined;
 
 
   // Stable identities for the destination sheet's callback props (see useStableCallback).
@@ -5699,11 +5706,13 @@ const destItems = useMemo((): DestItem[] =>
       )}
 
       {/* ── Unified destination sheet — hidden while a spot sheet is open on top */}
-      {mapState !== 'world' && selectedDest && !selectedSpot && !destAfterCamera && (
+      {(liveDestSheet || destLeavesInPlace) && (
         <Profiler id="destination sheet" onRender={onPerfRender}>
         <DestinationSheet
-          key={`dest-${sheetSwapKey}`}
-          destination={selectedDest}
+          key={liveDestSheet ? `dest-${sheetSwapKey}` : `dest-${leavingSheetRef.current!.liveKey}`}
+          destination={liveDestSheet ? selectedDest! : leavingSheetRef.current!.dest!}
+          leaveNow={!liveDestSheet}
+          onExited={handleLeavingSheetExited}
           onClose={destSheetOnClose}
           onExpand={destSheetOnExpand}
           onCollapse={destSheetOnCollapse}
@@ -5790,7 +5799,7 @@ const destItems = useMemo((): DestItem[] =>
             />
             </Profiler>
           )}
-          {leavingSheetRef.current.kind === 'dest' && leavingSheetRef.current.dest && (
+          {leavingSheetRef.current.kind === 'dest' && leavingSheetRef.current.dest && !destLeavesInPlace && (
             <Profiler id="destination sheet" onRender={onPerfRender}>
             <DestinationSheet
               key={`leaving-dest-${leavingSheetRef.current.seq}`}

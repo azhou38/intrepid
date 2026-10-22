@@ -630,6 +630,9 @@ interface Props {
   // sheet rested, slides off the bottom while the new one slides up, then calls onExited. It never reports snap state,
   // moves the back pill or records a pose.
   leaving?: boolean;
+  // The live sheet itself becomes the outgoing sheet (MapScreen "Sheet swaps"): it slides off the bottom and calls
+  // onExited, instead of a fresh outgoing copy being mounted to do it.
+  leaveNow?: boolean;
   onExited?: () => void;
   enterFromPrevious?: boolean;   // this sheet replaces another one that was showing: start where it rested, not below the screen
   isPressBlocked?: () => boolean;   // a press that is really a finger of a map gesture (see MapScreen.pressBlocked)
@@ -645,7 +648,7 @@ interface Props {
 function DestinationSheet({
   destination, onClose, onExpand, onCollapse, onSelectSpot, onCollapsedTopChange,
   onSnapStateChange, pillOffsetSV, pillOffsetLockedSV, initialTab, initialSnap,
-  collapseSignal, peekSignal, peekSV, exitSignal, exitSV, onExitDone, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, onExited,
+  collapseSignal, peekSignal, peekSV, exitSignal, exitSV, onExitDone, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, leaveNow, onExited,
 }: Props) {
   // [perf] the sheet's first render to commit (its mount), after a selection.
   const perfT0 = useRef(perfNow()).current;
@@ -1214,6 +1217,16 @@ function DestinationSheet({
     }
     transitionToRef.current(resolvedInitialSnap === 'full' ? 'full' : isMapInteracting?.() ? 'peek' : 'collapsed', 'mount');
   }, []);
+
+  // Turned into the outgoing sheet while mounted: the same slide off the bottom an outgoing copy does on mount.
+  useEffect(() => {
+    if (!leaveNow) return;
+    closingRef.current = true;
+    slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, finished => {
+      if (finished && onExited) runOnJS(onExited)();
+    });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [leaveNow]);
 
   // A different destination was selected while this sheet is up (it isn't remounted). Go straight to the snap it
   // should be in now — half-screen for an ordinary tap, but peeked if the user is mid map gesture, so the
