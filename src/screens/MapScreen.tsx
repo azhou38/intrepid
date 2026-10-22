@@ -5958,19 +5958,19 @@ const destItems = useMemo((): DestItem[] =>
               </Pressable>
             ) : (() => {
               // Half-screen and peek: "← Parent" (a spot's destination, a destination's country; a country, and a
-              // standalone spot with no destination selected, have none) beside an X that closes to the map.
+              // standalone spot with no destination selected, have none) to the right of an X that closes to the map.
               const backName = selectedSpot ? (selectedDest?.name ?? null) : selectedDest ? selectedDest.country : null;
               return (
                 <View style={styles.upPillRow}>
+                  <Pressable style={[styles.upPill, styles.upPillFixed, styles.upPillRound]} onPress={handleCloseToMap} hitSlop={6}>
+                    <X size={15} color="#374151" strokeWidth={2.5} />
+                  </Pressable>
                   {!!backName && (
                     <Pressable style={[styles.upPill, styles.upPillFixed]} onPress={handleUpNav} hitSlop={6}>
                       <Text style={styles.upPillArrow}>←</Text>
                       <Text style={styles.upPillTxt} numberOfLines={1}>{backName}</Text>
                     </Pressable>
                   )}
-                  <Pressable style={[styles.upPill, styles.upPillFixed, styles.upPillRound]} onPress={handleCloseToMap} hitSlop={6}>
-                    <X size={15} color="#374151" strokeWidth={2.5} />
-                  </Pressable>
                 </View>
               );
             })()}
