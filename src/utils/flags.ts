@@ -210,9 +210,14 @@ const FLAGS: Record<string, ImageSourcePropType> = {
   zw: require('../../assets/flags/zw.png'),
 };
 
+// In a dev build a bundled image is fetched from Metro, which serves it "no-store", so React Native never keeps it in its
+// decoded image cache and every view fetches it again through the image loader's four-at-a-time queue (MapScreen's
+// FlagWarmup could not help: the country pills waited seconds behind the start-up photos). flagcdn's files are cacheable for
+// a month, so a dev build uses them. A release build loads the bundled files directly, which skips the queue.
 export function flagSource(countryCode: string): ImageSourcePropType {
   const cc = countryCode.toLowerCase();
-  return FLAGS[cc] ?? { uri: `https://flagcdn.com/w160/${cc}.png` };
+  const remote = { uri: `https://flagcdn.com/w160/${cc}.png` };
+  return __DEV__ ? remote : FLAGS[cc] ?? remote;
 }
 
 // TEMP flag-timing logs (remove after measuring)

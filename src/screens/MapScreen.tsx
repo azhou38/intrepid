@@ -1527,10 +1527,10 @@ function planSpotPhotos(destPlan: ReturnType<typeof planDestPhotos>, isSpotVisit
 }
 
 // The country pills' flags, drawn invisibly at the pills' exact size from MapScreen's first render (FlagWarmup), two seconds
-// before the map is ready and the pills mount. React Native's iOS image loader runs four loads at a time, first come first
-// served, and in a dev build even bundled images are fetched from Metro through that queue: the pills' flags used to wait
-// behind every destination photo queued at start-up and showed seconds late. A view whose image is already in the decoded
-// image cache (same file, size and resize mode) skips the queue, so the pills now draw their flags at once.
+// before the map is ready and the pills mount. React Native's iOS image loader runs four network loads at a time, first come
+// first served: the pills' flags used to wait behind every destination photo queued at start-up and showed seconds late. A
+// view whose image is already in the decoded image cache (same URL, size and resize mode) skips the queue, so the pills
+// draw their flags at once. (A release build's bundled flags skip the queue anyway; see flagSource.)
 const PILL_FLAG_CODES = COUNTRY_GROUPS.map(g => g.countryCode);
 const FlagWarmup = memo(function FlagWarmup() {
   return (
