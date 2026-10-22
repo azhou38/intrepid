@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useLayoutEffect, useState, useMemo, useCallback } from 'react';
+import { BISECT } from '../../utils/bisect';
 import {
   View, Text, StyleSheet, Pressable, ScrollView, Alert,
   Dimensions, Platform, Linking, Image,
@@ -1228,7 +1229,7 @@ isVisited ? (
         <Pressable style={StyleSheet.absoluteFill} onPress={() => snapToCollapsedRef.current()} />
       </View>
 
-      <Reanimated.View pointerEvents="none" style={[st.sheetShadow, sheetAnimStyle]} />
+      {BISECT !== 'shadow' && <Reanimated.View pointerEvents="none" style={[st.sheetShadow, sheetAnimStyle]} />}
 
       <GestureDetector gesture={pan}>
       <Reanimated.View style={[st.sheet, sheetAnimStyle]}>

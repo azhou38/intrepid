@@ -1,4 +1,5 @@
 import React, { memo, useRef, useState, useMemo, useCallback, useEffect, useLayoutEffect } from 'react';
+import { BISECT } from '../utils/bisect';
 import { unstable_batchedUpdates, View, StyleSheet, Pressable, Text, Dimensions, Animated, Platform, TextInput, Image, Easing as RNEasing, Keyboard, ScrollView } from 'react-native';
 import Reanimated, { useSharedValue, useAnimatedStyle, useAnimatedReaction, runOnJS, withTiming, Easing } from 'react-native-reanimated';
 import Svg, { Rect, Path, Circle } from 'react-native-svg';
@@ -2803,6 +2804,16 @@ const destItems = useMemo((): DestItem[] =>
   const [spotImagesTick, setSpotImagesTick] = useState(0);
   // Each new pin image is a view the UI thread snapshots; a batch of them in the frames right after a selection froze the
   // sheet's slide-in for ~130 ms (the sheet stalled, then jumped). So no new images are registered while a sheet slides in.
+  // TEMPORARY (utils/bisect): hide the pin layers for 700 ms after a selection changes.
+  const [bisectHidePins, setBisectHidePins] = useState(false);
+  useEffect(() => {
+    if (BISECT !== 'pins') return;
+    setBisectHidePins(true);
+    const t = setTimeout(() => setBisectHidePins(false), 700);
+    return () => clearTimeout(t);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedDest?.id, selectedSpot?.id]);
+  const pinVis = bisectHidePins ? 'none' : 'visible';
   const pinImagesHoldUntilRef = useRef(0);
   const pinImagesHoldKeyRef = useRef('');
   const selectionKey = `${selectedDest?.id ?? ''}|${selectedSpot?.id ?? ''}`;
@@ -5298,7 +5309,7 @@ const destItems = useMemo((): DestItem[] =>
                 id={`destPhotoSymbols-${tier || 'ungated'}`}
                 aboveLayerID={i === 0 ? 'destStampCircles' : `destPhotoSymbols-${all[i - 1] || 'ungated'}`}
                 filter={['all', ['==', ['get', 'tier'], tier], ['!=', ['get', 'ho'], 1]] as any}
-                style={destTierStyle(tier, destTierOn(tier))}
+                style={{ ...destTierStyle(tier, destTierOn(tier)), visibility: pinVis } as any}
               />
             )),
             // The handoff layers (see handoffDests): a fixed pool, always mounted; slot k draws the destination assigned to it
@@ -5313,7 +5324,7 @@ const destItems = useMemo((): DestItem[] =>
                   aboveLayerID={k === 0 ? `destPhotoSymbols-${tiers[tiers.length - 1] || 'ungated'}` : `destHandoff-${k - 1}`}
                   filter={['all', ['==', ['get', 'ho'], 1], ['==', ['get', 'hos'], k]] as any}
                   // An empty slot keeps its last state; a destination joins it only once it rests in that destination's state.
-                  style={destTierStyle(l.tier, l.on, l.snap)}
+                  style={{ ...destTierStyle(l.tier, l.on, l.snap), visibility: pinVis } as any}
                 />
               );
             })]}
@@ -5343,6 +5354,7 @@ const destItems = useMemo((): DestItem[] =>
             belowLayerID="destStampCircles"
             filter={['==', ['get', 'img'], ''] as any}
             style={{
+              visibility: pinVis,
               iconImage: ['get', 'mini'] as any,
               iconAnchor: 'bottom',
               // Placed AFTER the photo layer (it sits beneath it, and Mapbox places the top layer first) and WITHOUT overlap, so a
@@ -5365,6 +5377,7 @@ const destItems = useMemo((): DestItem[] =>
             belowLayerID="destStampCircles"
             filter={['!=', ['get', 'img'], ''] as any}
             style={{
+              visibility: pinVis,
               iconImage: ['get', 'img'] as any,
               iconAnchor: 'bottom',
               // The plan in nativeSpotPins already spaced the photo pins: draw every one (a spot whose photo Mapbox hid would
