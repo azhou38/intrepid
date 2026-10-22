@@ -120,6 +120,7 @@ const SIDE_PAD  = (W - CARD_W) / 2;
 // "Explore nearby" grid card — same square SpotCard, same width formula, as the destination
 // sheet's "Popular Spots" row (see DestinationSheet's own GRID_CARD_W), so the two carousels match exactly.
 const NEARBY_GRID_GAP = 14;
+const NEARBY_MAX = 12;   // cards in the About tab's "Nearby spots" row
 const NEARBY_CARD_W = (W - 32 - NEARBY_GRID_GAP) / 2;
 
 // Visible gap (px) between a carousel card's title and its time/cost line: what the old fixed 5 px gap looked like under a
@@ -422,6 +423,14 @@ function SpotSheet({
   // recognizes gesture-handler-managed native views (DestinationSheet's own equivalent ref is
   // GH's ScrollView for the same reason).
   const nearbyHlScrollRef = useRef<GHScrollView>(null);
+  // The About tab's "Nearby spots" row: the NEAREST few of the other spots, not all of them. Every card is a photo card,
+  // and rendering a big destination's whole list (Sydney: 83 cards) took ~400 ms in the moments after the sheet opened,
+  // which is what made its slide-in stutter in crowded areas. "See all" still opens the full carousel.
+  const nearbySpots = useMemo(() => {
+    const a = activeSpot.coordinates, k = Math.cos((a.latitude * Math.PI) / 180);
+    const d2 = (s: Spot) => { const dx = (s.coordinates.longitude - a.longitude) * k, dy = s.coordinates.latitude - a.latitude; return dx * dx + dy * dy; };
+    return spots.filter(s => s.id !== activeSpot.id).sort((x, y) => d2(x) - d2(y)).slice(0, NEARBY_MAX);
+  }, [spots, activeSpot]);
   // Endless-scroll illusion: clones of the last LOOP_CLONES spots are prepended and clones of the first LOOP_CLONES
   // appended, so scrolling past either real end reveals cards that look identical to wrapping around — then the moment a
   // clone settles, we silently (non-animated) reposition to the matching real card, which is imperceptible since the two
@@ -1336,12 +1345,12 @@ isVisited ? (
 
                   {/* ── ABOUT PANEL ────────────────────────────────────── */}
                   <View style={st.slidePanel} onLayout={e => measurePanel(1, e.nativeEvent.layout.height)}>
-                    <SpotAbout spot={activeSpot} tabbed nearbySpots={spots.filter(s => s.id !== activeSpot.id)} onSelectNearby={handleSelectNearby} onExplore={() => snapToCollapsedRef.current()} nearbyHlScrollRef={nearbyHlScrollRef} />
+                    <SpotAbout spot={activeSpot} tabbed nearbySpots={nearbySpots} onSelectNearby={handleSelectNearby} onExplore={() => snapToCollapsedRef.current()} nearbyHlScrollRef={nearbyHlScrollRef} />
                   </View>
                 </Reanimated.View>
               </Reanimated.View>
             ) : (
-              <SpotAbout spot={activeSpot} nearbySpots={spots.filter(s => s.id !== activeSpot.id)} onSelectNearby={handleSelectNearby} onExplore={() => snapToCollapsedRef.current()} nearbyHlScrollRef={nearbyHlScrollRef} />
+              <SpotAbout spot={activeSpot} nearbySpots={nearbySpots} onSelectNearby={handleSelectNearby} onExplore={() => snapToCollapsedRef.current()} nearbyHlScrollRef={nearbyHlScrollRef} />
             )}
           </View>
           </View>
