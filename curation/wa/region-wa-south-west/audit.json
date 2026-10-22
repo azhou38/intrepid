@@ -1,0 +1,117 @@
+[
+ {
+  "name": "All Sea Charters",
+  "views": 0,
+  "counted_sources": 1,
+  "script_verdict": "reject",
+  "rule": "auto-reject",
+  "candidate": {
+   "name": "All Sea Charters",
+   "coordinates": null,
+   "coordinates_source": "",
+   "views": 0,
+   "counted_sources": [
+    "https://australiassouthwest.com/listings/all-sea-charters/"
+   ],
+   "other_sources": [],
+   "note": "Boat charter operator from Busselton or Dunsborough; operator, judge."
+  }
+ },
+ {
+  "name": "Busselton Jetty",
+  "wiki": "Busselton Jetty",
+  "views": 11122,
+  "counted_sources": 3,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Busselton Jetty",
+   "wiki": "Busselton Jetty",
+   "coordinates": {
+    "lat": -33.637433,
+    "lng": 115.340785
+   },
+   "coordinates_source": "Wikivoyage listing geo tag",
+   "views": 11122,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Busselton",
+    "https://www.westernaustralia.com/en/things-to-do/attractions",
+    "https://australiassouthwest.com/listings/busselton-jetty/"
+   ],
+   "other_sources": [],
+   "note": "Historic jetty almost 2 km long into Geographe Bay, with a train to the end and an underwater observatory."
+  }
+ },
+ {
+  "name": "Chariot Charters",
+  "views": 0,
+  "counted_sources": 1,
+  "script_verdict": "reject",
+  "rule": "auto-reject",
+  "candidate": {
+   "name": "Chariot Charters",
+   "coordinates": null,
+   "coordinates_source": "",
+   "views": 0,
+   "counted_sources": [
+    "https://australiassouthwest.com/listings/chariot-charters/"
+   ],
+   "other_sources": [],
+   "note": "Charter operator (scenic or tour, location to confirm); operator, judge."
+  }
+ },
+ {
+  "name": "Leeuwin-Naturaliste National Park",
+  "wiki": "Leeuwin-Naturaliste National Park",
+  "views": 2548,
+  "counted_sources": 3,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Leeuwin-Naturaliste National Park",
+   "wiki": "Leeuwin-Naturaliste National Park",
+   "coordinates": {
+    "lat": -34.23861111,
+    "lng": 115.04722222
+   },
+   "coordinates_source": "wikipedia:Leeuwin-Naturaliste National Park",
+   "views": 2548,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Leeuwin-Naturaliste_National_Park",
+    "https://exploreparks.dbca.wa.gov.au/site/leeuwin-naturaliste-national-park",
+    "https://australiassouthwest.com/listings/leeuwin-naturaliste-national-park/"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Leeuwin-Naturaliste_National_Park"
+   ],
+   "note": "National park along the Leeuwin-Naturaliste peninsula with the caves, lighthouses, coastal walks and the Cape to Cape Track."
+  }
+ },
+ {
+  "name": "Ngilgi Cave",
+  "wiki": "Ngilgi Cave",
+  "views": 3869,
+  "counted_sources": 3,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Ngilgi Cave",
+   "wiki": "Ngilgi Cave",
+   "coordinates": {
+    "lat": -33.6422,
+    "lng": 115.0342
+   },
+   "coordinates_source": "Wikivoyage listing geo tag",
+   "views": 3869,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Yallingup",
+    "https://en.wikivoyage.org/wiki/Leeuwin-Naturaliste_National_Park",
+    "https://australiassouthwest.com/listings/ngilgi-cave/"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Ngilgi_Cave"
+   ],
+   "note": "Show cave just outside Yallingup on the Dunsborough road, with a long history of Aboriginal and European use."
+  }
+ }
+]
