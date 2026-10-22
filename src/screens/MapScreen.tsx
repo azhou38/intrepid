@@ -1246,7 +1246,7 @@ const SPOT_PHOTO_ZOOM_BY_ID = earlySpotZoomTable(SPOT_PHOTO_EARLY_SEPARATION_PX,
 // At most this many spots draw as full photo pins at once; the rest of the revealed spots collapse to a small
 // photo-less dot (SpotDots below) that lives exactly as long as the full pin would have — same reveal zoom, same
 // viewport — so the map never loses a spot, it only stops paying for a photo MarkerView on every one of them.
-const SHEET_HOLD_MAX_MS = 220;   // see holdSheetUntilCamera
+const SHEET_HOLD_MAX_MS = 60;    // see holdSheetUntilCamera: the destination sheet rises while the spot sheet is still sliding away
 const SHEET_HOLD_RELEASE_ZOOM = 0.6;   // see handleCameraChanged: how near its target a close's zoom-out releases the next sheet
 const SHEET_SLIDE_IN_MS = 340;   // the sheets' slide-in (40 ms start delay + 280 ms) plus a frame; see afterSheetSlideIn
 const PIN_IMAGE_HOLD_MS = 450;    // see pinImagesHoldUntilRef: no new pin images while a sheet slides in
@@ -1772,7 +1772,7 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     destAfterCameraRef.current = true; setDestAfterCamera(true);
     sheetAfterCameraZoomRef.current = targetZoom;
     if (sheetAfterCameraTimerRef.current) clearTimeout(sheetAfterCameraTimerRef.current);
-    // At most until the outgoing sheet has slid away (its in-place exit is 180 ms): waiting for the zoom-out itself left the
+    // Only a moment (SHEET_HOLD_MAX_MS), so the destination sheet rises while the spot sheet is still sliding away: waiting for the zoom-out itself left the
     // map with no sheet for a noticeable moment.
     sheetAfterCameraTimerRef.current = setTimeout(releaseSheetsAfterCamera, Math.min(durationMs + 300, SHEET_HOLD_MAX_MS));
   }, [releaseSheetsAfterCamera]);
