@@ -10,7 +10,7 @@
 //   existing_spot_by_proximity true when the existing_spot match is by 300 m distance only (judge it as a new place unless it really is the same)
 //   disambiguation true when the title is a disambiguation page (the agent must pick the right article)
 //   coordinates    from Wikipedia when the candidate has none ({ lat, lng }), with coordinates_source
-//   existing_spot  the id of a spot already in the app with the same name or wiki title, or within 300 m
+//   existing_spot  the id of a spot already in the app with the same name within 50 km (or the same Wikipedia title), or within 300 m
 // Fetches go through the shared cache (http-cache.ts), so a rerun is nearly free. Accepts either an array of candidates
 // or an object with a `candidates` array.
 import { readFileSync, writeFileSync } from 'node:fs';
@@ -59,8 +59,22 @@ async function views(title: string): Promise<number> {
 }
 
 (async () => {
-  const byName = new Map<string, string>();
-  for (const sp of SPOTS) { byName.set(norm(sp.name), sp.id); if (sp.wiki) byName.set(norm(sp.wiki), sp.id); }
+  // Names repeat across the world (Chinatown, Castle Rock, Rainbow Valley): a match by name counts only within NAME_MATCH_KM of
+  // the candidate, and without the candidate's coordinates only by its exact Wikipedia title (which names one place).
+  const NAME_MATCH_KM = 50;
+  const byName = new Map<string, typeof SPOTS>();
+  const byWiki = new Map<string, string>();
+  for (const sp of SPOTS) {
+    for (const k of [norm(sp.name), ...(sp.wiki ? [norm(sp.wiki)] : [])]) byName.set(k, [...(byName.get(k) ?? []), sp]);
+    byWiki.set(norm(sp.wiki ?? sp.name), sp.id);
+  }
+  const nameMatch = (c: any, here: { lat: number; lng: number } | null): string | undefined => {
+    if (c.wiki && byWiki.has(norm(c.wiki)) && norm(c.wiki) !== norm(c.name)) return byWiki.get(norm(c.wiki));
+    if (!here) return undefined;
+    const near = (byName.get(norm(c.name)) ?? []).concat(c.wiki ? byName.get(norm(c.wiki)) ?? [] : [])
+      .filter(sp => km(here, { lat: sp.coordinates.latitude, lng: sp.coordinates.longitude }) <= NAME_MATCH_KM);
+    return near[0]?.id;
+  };
   let n = 0;
   for (const c of list) {
     n++;
@@ -75,12 +89,13 @@ async function views(title: string): Promise<number> {
       c.views = 0; delete c.disambiguation;
     }
     const here = coordOf(c);
-    const match = byName.get(norm(c.name)) ?? (c.wiki ? byName.get(norm(c.wiki)) : undefined)
+    const named = nameMatch(c, here);
+    const match = named
       ?? (here ? SPOTS.find(sp => km(here, { lat: sp.coordinates.latitude, lng: sp.coordinates.longitude }) < 0.3)?.id : undefined);
     if (match) {
       c.existing_spot = match;
       // A match by name is the same place; one by distance alone is only a pointer (the placement runs found many wrong ones).
-      const byNm = byName.get(norm(c.name)) !== undefined || (c.wiki ? byName.get(norm(c.wiki)) !== undefined : false);
+      const byNm = named !== undefined;
       if (byNm) delete c.existing_spot_by_proximity; else c.existing_spot_by_proximity = true;
     } else { delete c.existing_spot; delete c.existing_spot_by_proximity; }
     if (n % 25 === 0) console.error(`… ${n}/${list.length}`);
