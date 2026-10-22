@@ -1757,6 +1757,22 @@ export const DESTINATIONS: Destination[] = [
     bestMonths: [8, 9, 10, 11],
     bestTimeBlurb: "Lesueur's wildflowers bloom in {months}, when the coast is mild for walks and snorkelling.",
   },
+  {
+    id: 'blackwood-valley', name: "Blackwood Valley", country: "Australia", countryCode: 'AU', timezone: 'Australia/Perth', defaultZoomSpanKm: 42,
+    continent: 'Oceania', coordinates: { latitude: -33.786367, longitude: 115.984604 },
+    category: 'nature', icon: "🛶", rank: 4,
+    tagline: "Heritage river towns and forest trails along the Blackwood from Nannup to Bridgetown.",
+    description: "The Blackwood Valley follows Western Australia's longest continually flowing river through farmland and forest between Bridgetown, Balingup and Nannup. Bridgetown keeps its 1898 railway station and other early buildings, and holds an annual blues festival; Nannup is known as the Garden Village. The Bibbulmun Track and the Munda Biddi cycle trail both pass through Balingup, beside the state's largest arboretum.",
+    whyVisit: ["Paddle the Blackwood River", "Walk the arboretum at Golden Valley", "Stroll Bridgetown's heritage main street"],
+    whyVisitPhotos: ["Blackwood River at Bridgetown, January 2022 06.jpg", "Golden Valley Tree Park in autumn, May 2022 06.jpg", "Bridgetown WA main street 01.jpg"],
+    highlights: ["River paddling", "Autumn arboretum", "Heritage main street"],
+    goodToKnow: [
+      { icon: "🛶", title: "River levels vary", detail: "In winter the river runs in long pools with some rapids; levels depend on rainfall, so check conditions before paddling." },
+      { icon: "🐕", title: "Dogs: check the park", detail: "Dogs on leads are welcome at Golden Valley Tree Park, but pets are banned in national parks along the river." },
+    ],
+    bestMonths: [3, 4, 5, 9, 10, 11],
+    bestTimeBlurb: "Come in {months} for autumn leaves at Golden Valley or for spring blossom and wildflowers.",
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {

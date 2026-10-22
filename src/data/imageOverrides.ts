@@ -1923,6 +1923,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Hyden": "Wave-Rock-Hyden-WA.jpg",
   "Nambung National Park": "AUS Cervantes, Nambung National Park, Pinnacles Desert 017.jpg",
   "Jurien Bay": "Jurien Bay Jetty, Jurien Bay, 2012.JPG",
+  "Blackwood Valley": "Blackwood River at Bridgetown, January 2022 01.jpg",
 };
 
 /**
