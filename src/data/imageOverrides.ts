@@ -1935,6 +1935,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Stirling Range National Park": "Bluff Knoll 1 Stirling Range NP II-2012.jpeg",
   "Fitzgerald River National Park": "Fitzgerald River National Park.jpg",
   "Denmark": "Denmarkwa-rivermouth.JPG",
+  "Nullarbor Plain": "Nullabor Plains Australia - panoramio.jpg",
 };
 
 /**

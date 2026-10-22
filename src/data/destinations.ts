@@ -1859,6 +1859,23 @@ export const DESTINATIONS: Destination[] = [
     bestMonths: [12, 1, 2, 3],
     bestTimeBlurb: "Summer, {months}, is the time to swim at Greens Pool and Ocean Beach, when lifeguards patrol.",
   },
+  {
+    id: 'nullarbor-plain', name: "Nullarbor Plain", country: "Australia", countryCode: 'AU', timezone: 'Australia/Perth', defaultZoomSpanKm: 250,
+    continent: 'Oceania', coordinates: { latitude: -31.9006772, longitude: 127.0208221 },
+    category: 'desert', icon: "🏜️", rank: 3,
+    tagline: "Escarpment lookouts, telegraph ruins and Australia's longest straight road.",
+    description: "The Nullarbor Plain is a flat, almost treeless plain of about 200,000 square kilometres along the Great Australian Bight, the world's largest single exposure of limestone bedrock. In Western Australia the Eyre Highway crosses it between roadhouses at Caiguna, Cocklebiddy, Madura and Eucla. Along the way are the 146.6 km 90 Mile Straight, the lookout at Madura Pass and the sand-swamped ruins of Eucla's 1877 telegraph station. East of Caiguna, settlements keep their own unofficial time, 45 minutes ahead of Perth.",
+    whyVisit: ["Drive the 90 Mile Straight", "Explore Eucla's sand-buried telegraph station", "Look over the Roe Plains from Madura Pass"],
+    whyVisitPhotos: ["Australia's Longest Straight Road 146,6 km - panoramio.jpg", "Old Telegraph Station, Eucla SA. Main homestead slowly being buried by the sand dunes.jpg", "Madura Pass, 2017 (01).jpg"],
+    highlights: ["Longest straight road", "Telegraph ruins", "Escarpment lookout"],
+    goodToKnow: [
+      { icon: "⛽", title: "Plan around roadhouse hours", detail: "Roadhouses are about 100 km apart, so spare fuel isn't needed, but not all open 24 hours: plan any night driving." },
+      { icon: "📵", title: "Expect patchy coverage", detail: "Only Telstra has signal along much of the highway, and none off it; tell someone your plans before a 4WD side trip." },
+      { icon: "🍎", title: "Declare fresh produce", detail: "Heading west, fruit, vegetables and plants must be declared at the quarantine checkpoint just past Border Village." },
+    ],
+    bestMonths: [6, 7, 8, 9, 10],
+    bestTimeBlurb: "The cooler months, {months}, are easiest for the long drive, and whales pass along the Bight coast from June.",
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {
