@@ -19,23 +19,18 @@ import { subjectCoverRect, type Subject } from '../../utils/subjectCrop';
 const naturalSizes = new Map<string, { w: number; h: number }>();
 const uriOf = (source: ImageProps['source']) => (source && !Array.isArray(source) && typeof source === 'object' && 'uri' in source ? (source as { uri?: string }).uri : undefined);
 
-export default function PinPhoto({ instant, onLoad, onShown, style, subject, boxSize, ...rest }: ImageProps & { instant?: boolean; subject?: Subject; boxSize?: number; onShown?: () => void }) {
+export default function PinPhoto({ instant, onLoad, style, subject, boxSize, ...rest }: ImageProps & { instant?: boolean; subject?: Subject; boxSize?: number }) {
   const uri = uriOf(rest.source);
   const knownNatural = uri ? naturalSizes.get(uri) ?? null : null;
   const [box, setBox] = useState<{ w: number; h: number } | null>(boxSize ? { w: boxSize, h: boxSize } : null);
   const [natural, setNatural] = useState<{ w: number; h: number } | null>(knownNatural);
-  const startsShown = !!instant && (!subject || (!!knownNatural && !!boxSize));
-  const opacity = useRef(new Animated.Value(startsShown ? 1 : 0)).current;
+  const opacity = useRef(new Animated.Value(instant && (!subject || (!!knownNatural && !!boxSize)) ? 1 : 0)).current;
   const placed = !!subject && !!box && !!natural;
-  // `onShown` tells a caller that is hiding its own placeholder behind this photo that the photo is now actually on screen.
-  const shownRef = useRef(false);
-  const markShown = () => { if (!shownRef.current) { shownRef.current = true; onShown?.(); } };
-  useEffect(() => { if (startsShown) markShown(); }, []);
-  useEffect(() => { if (placed) { if (instant) { opacity.setValue(1); markShown(); } else fadeIn(); } }, [placed]);
+  useEffect(() => { if (placed) { if (instant) opacity.setValue(1); else fadeIn(); } }, [placed]);
   // On finish, sync the settled value back to JS: a native-driven animation leaves the JS-side value at 0, and the next
   // React re-render would otherwise re-apply that, hiding the photo again (see FadePin in MapScreen).
-  const fadeIn = () => { markShown(); Animated.timing(opacity, { toValue: 1, duration: 220, useNativeDriver: true })
-    .start(({ finished }) => { if (finished) opacity.setValue(1); }); };
+  const fadeIn = () => Animated.timing(opacity, { toValue: 1, duration: 220, useNativeDriver: true })
+    .start(({ finished }) => { if (finished) opacity.setValue(1); });
 
   // Failsafe if onLoad never fires, so a photo can't stay hidden behind its placeholder.
   useEffect(() => {
