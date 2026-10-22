@@ -2012,6 +2012,10 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
       crumbPeekSV.value,
     ),
   }));
+  // With nothing selected there is no breadcrumb, so it can't push the selector down: forget its last measured width. A
+  // close left that width (and a fade input) behind, and the selector stayed pushed down over an empty map.
+  const hasBreadcrumb = !!(selectedCountry || selectedDest || selectedSpot);
+  useLayoutEffect(() => { if (!hasBreadcrumb) crumbWidthSV.value = 0; }, [hasBreadcrumb]);
   // A breadcrumb wide enough to reach the map-type selector (top-right) pushes the selector down to just below it, in
   // step with the breadcrumb's own fade, and it returns to the corner when the breadcrumb is hidden or narrow again.
   const layersShiftStyle = useAnimatedStyle(() => {
