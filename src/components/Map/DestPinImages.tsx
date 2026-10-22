@@ -66,7 +66,7 @@ const DestPinImage = memo(function DestPinImage({ spec }: { spec: DestPinImageSp
         <View collapsable={false} style={st.outline}>
         <View collapsable={false} style={[st.disc, { borderColor: ring }, selected && st.discSelected]}>
           {!url && NO_PHOTO.has(dest.name) && <PhotoPlaceholder icon={dest.icon} category={dest.category} size={DEST_PIN_SIZE - BORDER * 2} />}
-          {url && <PinPhoto key={tries} instant subject={photoSubject(dest.name)} source={{ uri: url }} style={st.photo} onLoad={snap} onError={retry} resizeMode="cover" />}
+          {url && <PinPhoto key={tries} instant boxSize={DEST_PIN_SIZE - BORDER * 2} subject={photoSubject(dest.name)} source={{ uri: url }} style={st.photo} onLoad={snap} onError={retry} resizeMode="cover" />}
         </View>
         </View>
         {badge > 0 && (
