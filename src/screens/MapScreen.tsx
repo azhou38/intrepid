@@ -1547,6 +1547,10 @@ const FlagWarmup = memo(function FlagWarmup() {
   );
 });
 
+// TEMP timing logs (remove after measuring)
+const T0LOG = Date.now();
+const tlog = (m: string) => { void fetch('http://10.34.229.235:9799/', { method: 'POST', body: `+${Date.now() - T0LOG} ${m}` }).catch(() => {}); };
+
 export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = {}) {
   const insets = useSafeAreaInsets();
   const cameraRef = useRef<MapboxGL.Camera>(null);
@@ -2602,6 +2606,7 @@ const destItems = useMemo((): DestItem[] =>
       dataIds.add(id);
     }
     destLabelHitRef.current = { pxPerDegLng: 1, rects: [] };   // names are native symbols: they take taps themselves
+    if (selectedCountry && !selectedDest) tlog(`plan cam=${camZoom.toFixed(2)} target=${closeTarget?.toFixed(2) ?? '-'} handoff=${handoffZoom.toFixed(2)} back=${planWithSelRef.current} photos=${photoIds.size} country=${planCountry?.countryCode ?? '-'} dest=${planDest?.id ?? '-'}`);
     return { photoIds, dataIds, labelHiddenIds: new Set<string>(), priority: destPhotoPlan.priority, fadeTier: destPhotoPlan.fadeTier, nameTier: destPhotoPlan.nameTier };
   }, [destPhotoPlan, handoffZoom]);
 
@@ -4158,6 +4163,7 @@ const destItems = useMemo((): DestItem[] =>
     // Plan the pins at the country's view from the tap, as an X close does (see beginBackPlan): the camera only starts once
     // the country sheet has slid in, so the destination's spot pins and photo pins used to wait for it before fading.
     const target = countryTargetZoom(cluster);
+    tlog(`country target ${target?.toFixed(2)} cached=${!!countryCamCacheRef.current[`${cluster.countryCode}:topHalf`]}`);
     if (target !== null) beginBackPlan(target, BACK_CAMERA_DELAY_MS + 500);
     // The camera waits for the swap, as for the X close and "← Destination": started with it, it zoomed out while the new
     // selection was still rendering, over pins planned for the old one (they piled up, then a crowd flashed in).
@@ -4362,6 +4368,7 @@ const destItems = useMemo((): DestItem[] =>
   // The back pill: one level up. The parent's sheet replaces this one (see "Sheet swaps": the outgoing sheet slides down
   // while the parent's rises in its place), so it closes straight away rather than sliding this sheet off first.
   const handleUpNav = useCallback(() => {
+    tlog('back tap');
     if (pressBlocked()) return;   // a pinch finger lifting over the pill is not a press
     if (sheetExitingRef.current) return;
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
@@ -4713,6 +4720,7 @@ const destItems = useMemo((): DestItem[] =>
     releaseSheetsAfterCamera();
     releaseHeldSelection();   // a close's zoom-out has settled: let the pin/pill planning drop the old selection
     releaseSpotCloseTarget();
+    tlog(`idle z=${state.properties.zoom.toFixed(2)} back=${planWithSelRef.current}`);
     setMapIdleTick(t => t + 1);   // a return arrow held back during the gesture can now open (see mapIdleTick)
     const { center, bounds } = state.properties;
     const newRegion: Region = {
