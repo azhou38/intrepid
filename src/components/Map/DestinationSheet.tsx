@@ -1829,15 +1829,19 @@ function DestinationSheet({
             </View>
             <View pointerEvents="none" style={st.peekNameRow}>
               <Text style={st.peekNameTxt} numberOfLines={1}>{destination.name}</Text>
-              {spots.length > 0 && (
-                // marginTop:0 override — commRatingRow's own marginTop:6 is meant for the
-                // hero (no other spacing mechanism there); here peekNameRow's own gap:2
-                // already spaces this from the name above it, so the two shouldn't stack.
-                <View style={[st.commRatingRow, { marginTop: 0 }]}>
-                  <MapPin size={12} color="rgba(255,255,255,0.80)" />
-                  <Text style={st.commRatingCount} numberOfLines={1}>{spots.length} spots</Text>
-                </View>
-              )}
+              {/* The country, then the spot count after the header's divider (as in the full-screen header).
+                  marginTop:0 override — commRatingRow's own marginTop:6 is meant for the hero (no other spacing
+                  mechanism there); here peekNameRow's own gap:2 already spaces this from the name above it. */}
+              <View style={[st.commRatingRow, { marginTop: 0 }]}>
+                <Text style={[st.commRatingCount, st.peekCountry]} numberOfLines={1}>{destination.country}</Text>
+                {spots.length > 0 && (
+                  <>
+                    <View style={st.peekMetaDivider} />
+                    <MapPin size={12} color="rgba(255,255,255,0.80)" />
+                    <Text style={st.commRatingCount} numberOfLines={1}>{spots.length} spots</Text>
+                  </>
+                )}
+              </View>
             </View>
           </Pressable>
         </Reanimated.View>
@@ -1910,6 +1914,9 @@ const st = StyleSheet.create({
   // Same serif face as the full/half-screen hero's own heroName (just smaller, to fit the
   // much shorter peek strip) — matches its letterSpacing too so it reads as the same
   // typographic treatment, not a different font at a bigger size.
+  // The peek strip's country and its divider before the spot count: heroMetaDivider's look, its 8 pt spacing less the row's gap:5.
+  peekCountry: { flexShrink:1 },
+  peekMetaDivider: { width: 1, height: 11, backgroundColor: 'rgba(255,255,255,0.40)', marginHorizontal: 3 },
   peekNameTxt: { fontSize:30, fontFamily:'PlayfairDisplay_700Bold', color:'white', letterSpacing:-0.4 },
 
   // Pill
