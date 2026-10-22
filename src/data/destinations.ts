@@ -1909,6 +1909,22 @@ export const DESTINATIONS: Destination[] = [
     bestMonths: [11, 12, 1, 2, 3],
     bestTimeBlurb: "Beach weather runs {months}; from June to October whales shelter close to shore in King George Sound.",
   },
+  {
+    id: 'torndirrup-national-park', name: "Torndirrup National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Perth', defaultZoomSpanKm: 24,
+    continent: 'Oceania', coordinates: { latitude: -35.117704, longitude: 117.893763 },
+    category: 'park', icon: "🌊", rank: 4,
+    tagline: "Granite cliffs, blowholes and sheltered coves on the peninsula south of Albany.",
+    description: "Torndirrup National Park covers the granite peninsula on the west side of King George Sound, about 10 km south of Albany. Gazetted in 1918, it is one of Western Australia's oldest national parks, and the Southern Ocean has cut its coast into chasms, arches and blowholes. Viewing platforms hang 40 m above the surge at The Gap, while Misery Beach and Jimmy Newells hold calmer water.",
+    whyVisit: ["Stand above the surge at The Gap", "Swim at sheltered Misery Beach", "Hike the Flinders Peninsula to Bald Head"],
+    whyVisitPhotos: ["The Gap, Torndirrup National Park, April 2022 01.jpg", "Eastern end of Misery Beach, Torndirrup National Park, April 2022 02.jpg", "Bald Head Walk Trail.jpg"],
+    highlights: ["Clifftop platform", "Sheltered cove", "Peninsula hike"],
+    goodToKnow: [
+      { icon: "🎟️", title: "Park entry fee", detail: "Entry is $17 per vehicle ($10 concession), or covered by a valid WA parks pass. Dogs and other pets are not allowed." },
+      { icon: "⚠️", title: "Keep clear of the sea", detail: "Large swells have washed people off these rocks. Stay on paths behind the barriers, and fish from beaches rather than rock ledges." },
+    ],
+    bestMonths: [10, 11, 12, 1, 2, 3],
+    bestTimeBlurb: "Spring and summer, {months}, bring wildflowers and calmer days; whales pass the cliffs in winter.",
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {

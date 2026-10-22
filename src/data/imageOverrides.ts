@@ -1941,6 +1941,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Nullarbor Plain": "Nullabor Plains Australia - panoramio.jpg",
   "Merredin": "ext-merredin-peak-over-town.jpg",
   "Albany": "Consul General Gainer visits Albany, WA August 2020 (50303439758).jpg",
+  "Torndirrup National Park": "Torndirrup Peninsula to Bald Head.JPG",
 };
 
 /**
