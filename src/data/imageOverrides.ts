@@ -598,6 +598,7 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "File:The Basin on Rottnest Island in 2019.jpg": { x: 0.5, y: 0.65 },
   "Perth Hills": { x: 0.38, y: 0.5 },
   "Kununurra": { x: 0.45, y: 0.6, zoom: 1.3 },
+  "File:ext-koombana-bay-dolphins.jpg": { x: 0.5, y: 0.55 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -1965,6 +1966,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Mandurah": "ext-mandurah-eastern-foreshore.jpg",
   "Kununurra": "ext-kununurra-from-kellys-knob.jpg",
   "Southern Forests": "WAR Dave Evan's Bicentennial Tree 1 WNP X-2009.JPG",
+  "Bunbury": "View of Bunbury from Marlston Hill Lookout, January 2021 02.jpg",
 };
 
 /**

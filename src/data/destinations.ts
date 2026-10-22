@@ -2130,6 +2130,22 @@ export const DESTINATIONS: Destination[] = [
     bestMonths: [9, 10, 11],
     bestTimeBlurb: "Spring, {months}, brings forest wildflowers, full waterfalls and whales passing the coast.",
   },
+  {
+    id: 'bunbury', name: "Bunbury", country: "Australia", countryCode: 'AU', timezone: 'Australia/Perth', defaultZoomSpanKm: 15,
+    continent: 'Oceania', coordinates: { latitude: -33.32678, longitude: 115.636698 },
+    category: 'city', icon: "🐬", rank: 4,
+    tagline: "Port city on Koombana Bay, where wild bottlenose dolphins swim close to the beach.",
+    description: "Bunbury is Western Australia's third most populous city, about 175 km south of Perth where the Leschenault Inlet meets Koombana Bay. A resident population of 100 to 200 bottlenose dolphins lives in the bay's calm waters. The compact centre keeps a regional art gallery in a pink former convent and a city museum in an 1886 schoolhouse, while basalt from ancient lava flows lines the ocean beach.",
+    whyVisit: ["Cruise among Koombana Bay's wild dolphins", "Explore the basalt at Wyalup-Rocky Point", "Feed kangaroos at Bunbury Wildlife Park"],
+    whyVisitPhotos: ["ext-koombana-bay-dolphins.jpg", "Wyalup-Rocky Point, January 2021 09.jpg", "ext-bunbury-wildlife-park.jpg"],
+    highlights: ["Wild dolphins", "Ancient basalt", "Wildlife encounters"],
+    goodToKnow: [
+      { icon: "🐬", title: "Book dolphin cruises ahead", detail: "Eco-cruises leave several times a day and fill up; arrive 30 to 45 minutes early to check in at the Dolphin Discovery Centre." },
+      { icon: "📅", title: "Avoid Mondays", detail: "The museum and wildlife park close on Mondays in term time and the art gallery opens only Wednesday to Sunday." },
+    ],
+    bestMonths: [11, 12, 1, 2, 3],
+    bestTimeBlurb: "Warm, dry days from {months} suit the beaches and dolphin cruises; winters are cool and wet.",
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {
