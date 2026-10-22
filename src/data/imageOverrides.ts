@@ -2084,4 +2084,5 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Kathleen Springs Walk",
   "Escarpment Walk",
   "Anmatjere Man",
+  "Collie",
 ]);

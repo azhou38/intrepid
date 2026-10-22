@@ -2146,6 +2146,22 @@ export const DESTINATIONS: Destination[] = [
     bestMonths: [11, 12, 1, 2, 3],
     bestTimeBlurb: "Warm, dry days from {months} suit the beaches and dolphin cruises; winters are cool and wet.",
   },
+  {
+    id: 'collie', name: "Collie", country: "Australia", countryCode: 'AU', timezone: 'Australia/Perth', defaultZoomSpanKm: 30,
+    continent: 'Oceania', coordinates: { latitude: -33.359122, longitude: 116.153617 },
+    category: 'city', icon: "🌲", rank: 5,
+    tagline: "Coal-mining town in the jarrah forest, with river pools, mine lakes and bike trails.",
+    description: "Collie is a town of about 7,600 people, 213 km south of Perth at the junction of the Collie and Harris rivers, in jarrah forest over Western Australia's only coalfields. Old open-cut mines around the town have filled into deep lakes used for swimming and water skiing. To the west, Wellington National Park follows the Collie River past campgrounds and forest trails, and the Wambenger mountain-bike network fans out through the surrounding bush.",
+    whyVisit: ["See the giant Wellington Dam mural", "Swim at Honeymoon Pool"],
+    whyVisitPhotos: ["Wellington Dam wall, April 2022 20.jpg", "Honeymoon Pool, Wellington National Park, April 2022 06.jpg"],
+    highlights: ["Dam wall mural", "River swimming"],
+    goodToKnow: [
+      { icon: "⚠️", title: "Black Diamond has nothing", detail: "Black Diamond Lake has no toilets or drinking water and camping is banned; campers use Stockton Lake, 8 km east of town." },
+      { icon: "🏕️", title: "Book park campsites", detail: "Entry to Wellington National Park is free, but its campgrounds at Honeymoon Pool and Potters Gorge are booked online." },
+    ],
+    bestMonths: [11, 12, 1, 2, 3],
+    bestTimeBlurb: "River pools and mine lakes are best for swimming from {months}; winter brings rain and river rapids.",
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {
