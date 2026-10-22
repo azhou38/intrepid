@@ -2214,6 +2214,23 @@ export const DESTINATIONS: Destination[] = [
     bestMonths: [3, 4, 9, 10, 11],
     bestTimeBlurb: "{months} bring warm, mostly dry days; winter is the wet season.",
   },
+  {
+    id: 'derby', name: "Derby", country: "Australia", countryCode: 'AU', timezone: 'Australia/Perth', defaultZoomSpanKm: 18,
+    continent: 'Oceania', coordinates: { latitude: -17.303191, longitude: 123.628723 },
+    category: 'city', icon: "🌳", rank: 5,
+    tagline: "Mudflat town on King Sound where the Gibb River Road begins, two hours from Broome.",
+    description: "Derby is a small port town on King Sound, 220 km east of Broome, and the western end of the Gibb River Road. A hollow boab about 1,500 years old stands at the entrance to town, and the horseshoe jetty is where locals fish and watch the sunset. Just out of town, the Mowanjum Art and Culture Centre shows the art and history of the Worrorra, Ngarinyin and Wunambal peoples.",
+    whyVisit: ["See the hollow Boab Prison Tree", "See Wandjina art at Mowanjum"],
+    whyVisitPhotos: ["00 1996 Boab Prison Tree - Derby, Westaustralien.jpg", "ext-mowanjum-gallery-atdw.jpg"],
+    highlights: ["Boab Prison Tree", "Wandjina art"],
+    goodToKnow: [
+      { icon: "🌊", title: "Watch the tides", detail: "Tides here reach 12 m and flood the mudflats fast; check tide times before walking out from the jetty or along the creeks." },
+      { icon: "🏊", title: "Swim at the town pool", detail: "The muddy sea is no place to swim; the open-air Memorial Swimming Pool by the visitor centre opens daily, 11 am to 5 pm." },
+    ],
+    bestMonths: [5, 6, 7, 8, 9],
+    bestTimeBlurb: "The dry season, {months}, brings warm, clear days; the wet is hot, humid and stormy.",
+    seasonalTags: [{ tag: 'monsoon-dry-season', months: [5, 6, 7, 8, 9, 10] }],
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {

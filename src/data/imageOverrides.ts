@@ -1974,6 +1974,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Broome": "Broome Coast, Western Australia.jpg",
   "Kalbarri National Park": "Nature's Window, Kalbarri National Park, Western Australia.jpg",
   "Geraldton": "Geraldton Foreshore October 2023 08.jpg",
+  "Derby": "00 2013 Anlegesteg (Jetty) in Derby, Westaustralien.jpg",
 };
 
 /**
