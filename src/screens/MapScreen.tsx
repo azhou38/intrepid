@@ -1547,6 +1547,10 @@ const FlagWarmup = memo(function FlagWarmup() {
   );
 });
 
+// TEMP timing logs (remove after measuring)
+const T0LOG = Date.now();
+const tlog = (m: string) => { void fetch('http://10.34.229.235:9799/', { method: 'POST', body: `+${Date.now() - T0LOG} ${m}` }).catch(() => {}); };
+
 export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = {}) {
   const insets = useSafeAreaInsets();
   const cameraRef = useRef<MapboxGL.Camera>(null);
@@ -2136,6 +2140,7 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // animation to run smoothly (it stuttered, worst for a big destination's many pins). A change seen mid-gesture waits
   // for the map idle (mapIdleTick) and then plays. Camera moves the app makes itself are not gestures and apply at once.
   const [mapIdleTick, setMapIdleTick] = useState(0);
+  useEffect(() => { tlog(`commit country=${selectedCountry?.countryCode ?? '-'} dest=${selectedDest?.id ?? '-'}`); }, [selectedCountry, selectedDest]);
   useEffect(() => {
     // Fallback for state-driven transitions (e.g. selectedCountry changes while map is static).
     // The ref guard prevents restarting an animation already triggered by handleCameraChanged.
@@ -2213,7 +2218,10 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
       spotCloseTargetRef.current = null;
       if (spotCloseTimerRef.current) { clearTimeout(spotCloseTimerRef.current); spotCloseTimerRef.current = null; }
     }
-    if (arrived(planZoomTargetRef.current)) { planZoomTargetRef.current = null; planZoomTarget = null; planWithSelRef.current = false; }
+    // A back tap's plan (planWithSelRef) is not ended here: its fly-to can pass the target and come back in, and the
+    // country target is an estimate the camera may not reach exactly, either of which ended it mid-flight and let the
+    // destination photo pins bunch up on the way out. It ends at the map idle instead (see releaseSpotCloseTarget).
+    if (!planWithSelRef.current && arrived(planZoomTargetRef.current)) { planZoomTargetRef.current = null; planZoomTarget = null; }
   }
   const closeTarget = planZoomTargetRef.current ?? spotCloseTargetRef.current;
   // Pin planning runs ahead of the (heavy, laggy) per-frame renders.
@@ -2435,7 +2443,7 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
       planWithSelRef.current = false;
       planZoomTargetRef.current = null;
       setHeldSelTick(t => t + 1);
-    }, durationMs + 800);
+    }, durationMs + 2500);   // generous: the swap's render can hold the camera's start back by a second or more
     setHeldSelTick(t => t + 1);
   }, []);
 
@@ -4154,7 +4162,9 @@ const destItems = useMemo((): DestItem[] =>
     // The camera waits for the swap, as for the X close and "← Destination": started with it, it zoomed out while the new
     // selection was still rendering, over pins planned for the old one (they piled up, then a crowd flashed in).
     cameraHoldUntilRef.current = Date.now() + BACK_CAMERA_DELAY_MS;
+    tlog('country press start');
     handleCountryPress(cluster, 'flyTo');
+    tlog('country press end');
   }, [selectedDest, savedDestinations, handleCountryPress, visitIndex, countryTargetZoom, beginBackPlan]);
 
   // Destination close/back, provenance-routed: drilled down from the country → back up to it;
@@ -4354,6 +4364,7 @@ const destItems = useMemo((): DestItem[] =>
   // The back pill: one level up. The parent's sheet replaces this one (see "Sheet swaps": the outgoing sheet slides down
   // while the parent's rises in its place), so it closes straight away rather than sliding this sheet off first.
   const handleUpNav = useCallback(() => {
+    tlog('back tap');
     if (pressBlocked()) return;   // a pinch finger lifting over the pill is not a press
     if (sheetExitingRef.current) return;
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
@@ -4705,6 +4716,7 @@ const destItems = useMemo((): DestItem[] =>
     releaseSheetsAfterCamera();
     releaseHeldSelection();   // a close's zoom-out has settled: let the pin/pill planning drop the old selection
     releaseSpotCloseTarget();
+    tlog(`idle z=${state.properties.zoom.toFixed(2)}`);
     setMapIdleTick(t => t + 1);   // a return arrow held back during the gesture can now open (see mapIdleTick)
     const { center, bounds } = state.properties;
     const newRegion: Region = {
