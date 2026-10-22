@@ -1833,12 +1833,17 @@ function DestinationSheet({
                   marginTop:0 override — commRatingRow's own marginTop:6 is meant for the hero (no other spacing
                   mechanism there); here peekNameRow's own gap:2 already spaces this from the name above it. */}
               <View style={[st.commRatingRow, { marginTop: 0 }]}>
-                <Text style={[st.commRatingCount, st.peekCountry]} numberOfLines={1}>{destination.country}</Text>
+                <View style={st.peekFlagCircle}>
+                  <View style={st.peekFlagClip}>
+                    <Image source={flagSource(destination.countryCode)} style={st.peekFlagImg} resizeMode="cover" />
+                  </View>
+                </View>
+                <Text style={[st.peekMetaTxt, st.peekCountry]} numberOfLines={1}>{destination.country}</Text>
                 {spots.length > 0 && (
                   <>
                     <View style={st.peekMetaDivider} />
                     <MapPin size={12} color="rgba(255,255,255,0.80)" />
-                    <Text style={st.commRatingCount} numberOfLines={1}>{spots.length} spots</Text>
+                    <Text style={st.peekMetaTxt} numberOfLines={1}>{spots.length} spots</Text>
                   </>
                 )}
               </View>
@@ -1916,6 +1921,11 @@ const st = StyleSheet.create({
   // typographic treatment, not a different font at a bigger size.
   // The peek strip's country and its divider before the spot count: heroMetaDivider's look, its 8 pt spacing less the row's gap:5.
   peekCountry: { flexShrink:1 },
+  // The header's medium weight (heroMetaTxt), at the strip's 13 pt, and its white-ringed flag a size smaller.
+  peekMetaTxt: { fontSize:13, color:'rgba(255,255,255,0.92)', fontWeight:'500' },
+  peekFlagCircle: { width:18, height:18, borderRadius:9, backgroundColor:'#fff', alignItems:'center', justifyContent:'center' },
+  peekFlagClip:   { width:15, height:15, borderRadius:7.5, overflow:'hidden' },
+  peekFlagImg:    { width:15, height:15 },
   peekMetaDivider: { width: 1, height: 11, backgroundColor: 'rgba(255,255,255,0.40)', marginHorizontal: 3 },
   peekNameTxt: { fontSize:30, fontFamily:'PlayfairDisplay_700Bold', color:'white', letterSpacing:-0.4 },
 
