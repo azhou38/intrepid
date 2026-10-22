@@ -1621,6 +1621,24 @@ export const DESTINATIONS: Destination[] = [
     bestMonths: [4, 5, 6, 7, 8, 9],
     bestTimeBlurb: "The cooler months, {months}, suit sightseeing: summer days are very hot and floods can cut roads.",
   },
+  {
+    id: 'ningaloo', name: "Ningaloo", country: "Australia", countryCode: 'AU', timezone: 'Australia/Perth', defaultZoomSpanKm: 175,
+    continent: 'Oceania', coordinates: { latitude: -22.027804, longitude: 113.923589 },
+    category: 'nature', icon: "🦈", rank: 1,
+    tagline: "A World Heritage reef you can snorkel from the beach, below the red gorges of Cape Range.",
+    description: "Ningaloo is a 260 km fringing reef along the North West Cape and the coast south to Coral Bay, protected with the Cape Range limestone country behind it as a World Heritage area. Around the cape the reef lies only a few hundred metres offshore, so its coral gardens are a short swim from the beach. Boats head out from Exmouth and Coral Bay to the deeper water, where whale sharks, manta rays and humpback whales pass through. Exmouth, on the gulf side of the cape, is the main base, with Coral Bay a smaller village about 150 km south.",
+    whyVisit: ["Swim alongside whale sharks on the reef", "Snorkel coral straight from Turquoise Bay", "Cruise up Yardie Creek Gorge", "Watch the sunset from Vlamingh Head"],
+    whyVisitPhotos: ["Whale shark (Rhincodon typus) (16222515872).jpg", "ext-turquoise-bay-ningaloo.jpg", "Yardi Creek - Flickr - GregTheBusker.jpg", "Ningaloo Sunset (252038219).jpeg"],
+    highlights: ["Whale shark swims", "Shore snorkelling", "Gorge boat tour", "Lighthouse sunsets"],
+    goodToKnow: [
+      { icon: "🎟️", title: "Cape Range entry fee", detail: "Cape Range National Park charges $17 per vehicle; the marine park, Exmouth's beaches and the two eastern canyon drives are free." },
+      { icon: "🌊", title: "Check tides and currents", detail: "Oyster Stacks needs a high tide of 1.2 m or more, and Turquoise Bay's drift can run strong: get tide times at Milyering first." },
+      { icon: "🥵", title: "Walk in the cool months", detail: "Gorge walks are advised only from April to September, as summer passes 45°C; the park has no drinking water, so carry 4 litres each." },
+    ],
+    bestMonths: [4, 5, 6, 7, 8, 9],
+    bestTimeBlurb: "Come in {months}: whale sharks stay until August, humpbacks arrive in June and the gorges are cool to walk.",
+    seasonalTags: [{ tag: 'wildlife-migration', months: [3, 4, 5, 6, 7, 8], strength: 0.8 }],
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {

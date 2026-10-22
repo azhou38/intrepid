@@ -1909,6 +1909,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Karlu Karlu / Devils Marbles Conservation Reserve": "Karlu Karlu Rocks in Devils Marbles Conservation Reserve, NT.jpg",
   "Iytwelepenty / Davenport Range National Park": "P4150010 Old Police Station Waterhole - Iytwelepenty - Davenport Ranges National Park.jpg",
   "Barrow Creek Telegraph Station": "Barrow Creek Telegraph Station.jpg",
+  "Ningaloo": "00 1870 Ningaloo Reef - Westaustralien.jpg",
 };
 
 /**
