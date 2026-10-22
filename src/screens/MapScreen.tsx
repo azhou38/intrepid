@@ -1161,7 +1161,8 @@ const spotParentKey = (s: Spot) => s.destinationId ?? s.id;
 
 // A standalone spot's carousel (its "near" context): the spot itself, then EVERY other spot in the same second-level
 // administrative division (src/data/spotDistricts.json, from OpenStreetMap: a New Zealand district or city council area,
-// a county elsewhere), nearest first, destination spots included. Labelled with the division ("SPOTS / Selwyn District").
+// a county elsewhere), destination spots included, in proximity order (proximityLoop). Labelled with the division
+// ("SPOTS / Selwyn District").
 // A spot with no recorded division falls back to the standalone spots within NEAR_RADIUS_KM.
 const NEAR_RADIUS_KM = 40;
 const NEAR_MAX_SPOTS = 10;
@@ -1175,7 +1176,42 @@ const kmBetween = (a: { latitude: number; longitude: number }, b: { latitude: nu
   const x = Math.sin(dl / 2) ** 2 + Math.cos(a.latitude * r) * Math.cos(b.latitude * r) * Math.sin(dn / 2) ** 2;
   return 12742 * Math.asin(Math.sqrt(x));
 };
-type NearContext = { anchor: Spot; spots: Spot[]; near?: Destination; district?: string };
+// The order a carousel shows its spots in: a short closed loop through them, so the cards either side of any card are
+// spots close to it and swiping never jumps across the area and back (the carousel itself loops, so the last card leads
+// back to the first). Built nearest-neighbour from spots[0], which stays first, then shortened by 2-opt (reversing any
+// stretch whose ends cross over). A few hundred spots take a few milliseconds; results are cached by the caller.
+function proximityLoop(spots: Spot[]): Spot[] {
+  const n = spots.length;
+  if (n < 4) return spots;
+  const d = (i: number, j: number) => kmBetween(spots[i].coordinates, spots[j].coordinates);
+  const dist = spots.map((_, i) => spots.map((_, j) => d(i, j)));
+  const tour = [0], used = new Array(n).fill(false); used[0] = true;
+  for (let k = 1; k < n; k++) {
+    const last = tour[k - 1]; let best = -1;
+    for (let j = 0; j < n; j++) if (!used[j] && (best < 0 || dist[last][j] < dist[last][best])) best = j;
+    tour.push(best); used[best] = true;
+  }
+  for (let pass = 0, improved = true; improved && pass < 20; pass++) {
+    improved = false;
+    for (let i = 1; i < n - 1; i++) for (let j = i + 1; j < n; j++) {
+      const a = tour[i - 1], b = tour[i], c = tour[j], e = tour[(j + 1) % n];
+      if (dist[a][c] + dist[b][e] < dist[a][b] + dist[c][e] - 1e-9) {
+        for (let x = i, y = j; x < y; x++, y--) [tour[x], tour[y]] = [tour[y], tour[x]];
+        improved = true;
+      }
+    }
+  }
+  return tour.map(i => spots[i]);
+}
+const destCarouselCache = new Map<string, Spot[]>();
+// A destination's carousel: its spots in proximity order, starting from its headline spot (the list's first).
+const destCarouselSpots = (destId: string) => {
+  let v = destCarouselCache.get(destId);
+  if (!v) { v = proximityLoop(SPOTS.filter(s => s.destinationId === destId)); destCarouselCache.set(destId, v); }
+  return v;
+};
+// `spots` is the carousel's (proximity) order; `nearest` the same spots by distance from the anchor, for pin priority.
+type NearContext = { anchor: Spot; spots: Spot[]; nearest: Spot[]; near?: Destination; district?: string };
 function nearContextFor(anchor: Spot): NearContext {
   const key = districtKey(anchor.id);
   if (key) {
@@ -1184,7 +1220,7 @@ function nearContextFor(anchor: Spot): NearContext {
       .map(s => ({ s, km: kmBetween(anchor.coordinates, s.coordinates) }))
       .sort((a, b) => a.km - b.km)
       .map(o => o.s);
-    return { anchor, spots: [anchor, ...others], district: SPOT_DISTRICTS[anchor.id].d };
+    return { anchor, spots: proximityLoop([anchor, ...others]), nearest: [anchor, ...others], district: SPOT_DISTRICTS[anchor.id].d };
   }
   let near: Destination | undefined, best = Infinity;
   for (const d of DESTINATIONS) {
@@ -1198,7 +1234,7 @@ function nearContextFor(anchor: Spot): NearContext {
     .sort((a, b) => a.km - b.km)
     .slice(0, NEAR_MAX_SPOTS)
     .map(o => o.s);
-  return { anchor, spots: [anchor, ...others], near };
+  return { anchor, spots: proximityLoop([anchor, ...others]), nearest: [anchor, ...others], near };
 }
 
 // Spots far from their destination's centre are revealed EARLIER than the destination's own default zoom: as soon as
@@ -2698,7 +2734,7 @@ const destItems = useMemo((): DestItem[] =>
   const selectedSpotDestId = selectedSpot?.destinationId;
   const carouselSpots = useMemo(
     () => nearCtx ? nearCtx.spots
-      : selectedSpotDestId ? SPOTS.filter(s => s.destinationId === selectedSpotDestId) : selectedSpot ? [selectedSpot] : [],
+      : selectedSpotDestId ? destCarouselSpots(selectedSpotDestId) : selectedSpot ? [selectedSpot] : [],
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [nearCtx, selectedSpotDestId, selectedSpotDestId ? null : selectedSpot?.id],
   );
@@ -2831,7 +2867,7 @@ const destItems = useMemo((): DestItem[] =>
   const spotPhotoPrevRef = useRef<Set<string>>(new Set());
   const nativeSpotPins = useMemo(() => {
     const must = new Set<string>();
-    if (nearCtx) for (const sp of nearCtx.spots.slice(0, NEAR_PINNED_SPOTS + 1)) must.add(sp.id);
+    if (nearCtx) for (const sp of nearCtx.nearest.slice(0, NEAR_PINNED_SPOTS + 1)) must.add(sp.id);
     // Draw and data order: spotPhotoPlan's priority (a near carousel's spots first).
     const rank = (sp: Spot) => (must.has(sp.id) ? -1_000_000 : 0) + (spotPhotoPlan?.sortOf.get(sp.id) ?? 0);
     const specs = spotPhotoSpecsRef.current;

@@ -39,6 +39,9 @@ if _fit.returncode != 0:
     sys.exit(f"refusing: the tagline must fill exactly two lines of the header (WRITING.md); tagline-fit.py says {_fit.stdout.splitlines()[0] if _fit.stdout else _fit.stderr}")
 if d['bestTimeBlurb'].count('{months}') != 1:
     sys.exit('refusing: bestTimeBlurb needs exactly one {months}')
+_fit = _sp.run(['python3', 'scripts/curation/blurb-fit.py', '--text', d['bestTimeBlurb'], '--months', ','.join(str(m) for m in d.get('bestMonths', []))], capture_output=True, text=True)
+if _fit.returncode != 0:
+    sys.exit(f"refusing: the When to Visit sentence must fill two or three lines of its card (WRITING.md); blurb-fit.py says {_fit.stdout.splitlines()[0] if _fit.stdout else _fit.stderr}")
 
 src = open('src/data/destinations.ts').read()
 if re.search(r"id: '" + re.escape(d['id']) + r"'", src):
