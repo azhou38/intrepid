@@ -1921,8 +1921,8 @@ const st = StyleSheet.create({
   // typographic treatment, not a different font at a bigger size.
   // The peek strip's country and its divider before the spot count: heroMetaDivider's look, its 8 pt spacing less the row's gap:5.
   peekCountry: { flexShrink:1 },
-  // The header's medium weight (heroMetaTxt), at the strip's 13 pt, and its white-ringed flag a size smaller.
-  peekMetaTxt: { fontSize:13, color:'rgba(255,255,255,0.92)', fontWeight:'500' },
+  // The strip's bold 13 pt labels, and the header's white-ringed flag a size smaller.
+  peekMetaTxt: { fontSize:13, color:'rgba(255,255,255,0.92)', fontWeight:'800' },
   peekFlagCircle: { width:18, height:18, borderRadius:9, backgroundColor:'#fff', alignItems:'center', justifyContent:'center' },
   peekFlagClip:   { width:15, height:15, borderRadius:7.5, overflow:'hidden' },
   peekFlagImg:    { width:15, height:15 },
