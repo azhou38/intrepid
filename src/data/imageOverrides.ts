@@ -1915,6 +1915,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Shark Bay": "Skipjack Point, Francois Peron National Park, Western Australia.jpg",
   "Esperance": "Esperance Waterfront, 2019 (04).jpg",
   "Cape Le Grand National Park": "Cape Le Grande National Park Esperance 03.jpg",
+  "Kalgoorlie-Boulder": "View of Kalgoorlie, Western Australia from museum headframe 05.jpg",
 };
 
 /**

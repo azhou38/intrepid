@@ -1690,6 +1690,23 @@ export const DESTINATIONS: Destination[] = [
     bestMonths: [10, 11, 12, 1, 2, 3],
     bestTimeBlurb: "Visit {months} for warm beach days, with banksias in flower through spring.",
   },
+  {
+    id: 'kalgoorlie-boulder', name: "Kalgoorlie-Boulder", country: "Australia", countryCode: 'AU', timezone: 'Australia/Perth', defaultZoomSpanKm: 20,
+    continent: 'Oceania', coordinates: { latitude: -30.7464139, longitude: 121.473223 },
+    category: 'city', icon: "⛏️", rank: 3,
+    tagline: "Gold-rush city on the Golden Mile, with a vast working open-cut mine at its edge.",
+    description: "Kalgoorlie-Boulder is the Goldfields' twin city, about 595 km east of Perth, founded in 1893 after Paddy Hannan found gold here. Gold-rush hotels still trade in the city centre, and the Super Pit, an open-cut mine 3.7 km long, is worked beside the Golden Mile. Since 1903 the Golden Pipeline has pumped water to the city from Mundaring Weir near Perth, ending at the Mount Charlotte Reservoir.",
+    whyVisit: ["Look into the Super Pit from its lookout", "See gold bars and nuggets on Hannan Street", "Explore gold-rush mine buildings at Hannans North"],
+    whyVisitPhotos: ["Super Pit Gold Mine, Kalgoorlie, WA, 2023, 10.jpg", "ext-kalgoorlie-museum-goldfields-gold.jpg", "Hannans North Tourist Mine, 2016 (06).jpg"],
+    highlights: ["Super Pit view", "Gold collection", "Open-air mine museum"],
+    goodToKnow: [
+      { icon: "💥", title: "Check blast times", detail: "The Super Pit Lookout closes when blasting is close to it; check the day's blast times on the mine's website before you go." },
+      { icon: "🚆", title: "Train or fly in", detail: "The Prospector train runs daily between Perth and Kalgoorlie, and the city's airport has flights to Perth and Melbourne." },
+      { icon: "☀️", title: "Hot summers", detail: "Summers are hot and winters mild, so plan outdoor sightseeing for the morning between December and February." },
+    ],
+    bestMonths: [5, 6, 7, 8, 9],
+    bestTimeBlurb: "The cooler months, {months}, bring mild days for walking Hannan Street and the lookouts; summers are hot.",
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {
