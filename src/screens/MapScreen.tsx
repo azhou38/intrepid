@@ -303,6 +303,12 @@ const SpotMarker = memo(function SpotMarker({ spot, isVisited, isSelected, exiti
   const coordinate = useMemo(() => [spot.coordinates.longitude, spot.coordinates.latitude] as [number, number], [spot.coordinates.longitude, spot.coordinates.latitude]);
   const [photoUrl, setPhotoUrl] = useState<string | null>(thumbCache.get(cacheKey) ?? null);
   const photoWasCachedRef = useRef(thumbCache.has(cacheKey));   // see DestPin
+  // The on-top copy of the selected spot (`instant`) is re-created whenever the set of spot pins changes, and sits over the
+  // original pin. Until its own photo is on screen it is see-through, so the original's photo shows through instead of this
+  // copy flashing a grey (and white-ringed) disc over it for a frame.
+  const [photoShown, setPhotoShown] = useState(false);
+  useEffect(() => { setPhotoShown(false); }, [photoUrl]);
+  const seeThrough = !!instant && !!photoUrl && !photoShown;
   useEffect(() => {
     if (thumbCache.has(cacheKey)) { photoWasCachedRef.current = true; setPhotoUrl(thumbCache.get(cacheKey)!); return; }
     photoWasCachedRef.current = false;
@@ -404,13 +410,14 @@ const SpotMarker = memo(function SpotMarker({ spot, isVisited, isSelected, exiti
                   fill={ringColor}
                 />
               </Svg>
-              <View style={[styles.spotPinBubble, { width: bubbleSize, height: bubbleSize, borderRadius: bubbleSize / 2, borderColor: ringColor }]}>
-                <View style={[styles.spotPinImgClip, { width: bubbleSize - 4, height: bubbleSize - 4, borderRadius: (bubbleSize - 4) / 2 }]}>
+              <View style={[styles.spotPinBubble, { width: bubbleSize, height: bubbleSize, borderRadius: bubbleSize / 2, borderColor: ringColor }, seeThrough && { backgroundColor: 'transparent' }]}>
+                <View style={[styles.spotPinImgClip, { width: bubbleSize - 4, height: bubbleSize - 4, borderRadius: (bubbleSize - 4) / 2 }, seeThrough && { backgroundColor: 'transparent' }]}>
                   {!photoUrl && NO_PHOTO.has(spotPhotoTitle(spot)) && <PhotoPlaceholder icon={spot.icon} category={spot.category} size={bubbleSize - 4} />}
                   {photoUrl && (
                     <PinPhoto
                       instant={photoWasCachedRef.current}
                       boxSize={bubbleSize - 4}
+                      onShown={() => setPhotoShown(true)}
                       subject={photoSubject(spotPhotoTitle(spot))}
                       source={{ uri: photoUrl }}
                       style={StyleSheet.absoluteFill as any}
