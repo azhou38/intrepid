@@ -4289,28 +4289,26 @@ const destItems = useMemo((): DestItem[] =>
     setTimeout(() => { sheetExitingRef.current = false; action(); }, SHEET_EXIT_MS + 20);
   }, []);
 
-  // Back pill: one level up — spot → destination, destination → country, country → world
-  const handleBackNav = useCallback(() => {
-    if (pressBlocked()) return;   // a pinch finger lifting over the X is not a close
-    const close = () => {
-      if (selectedSpot) {
-        handleCloseSpot();
-      } else if (selectedDest) {
-        handleCloseDestinationSheet();
-      } else {
-        handleCloseCountry();
-      }
-    };
-    // "‹ Parent" (a spot drilled into from its destination, or a destination from its country)
-    // replaces this sheet with the parent's, so close straight away and let the sheet swap
-    // animate it (see "Sheet swaps": the outgoing sheet slides down while the parent's rises in
-    // its place). Sliding this sheet off first, as a bare-X close does, left the map with no
-    // sheet at all — just the lingering back pill — until the parent's sheet mounted afterwards.
+  // The pills under the back/X row at half-screen and peek: "← Parent" always opens the parent's sheet (a spot's
+  // destination, a destination's country), however the user got here, and X always closes to the map.
+  // The back pill: one level up. The parent's sheet replaces this one (see "Sheet swaps": the outgoing sheet slides down
+  // while the parent's rises in its place), so it closes straight away rather than sliding this sheet off first.
+  const handleUpNav = useCallback(() => {
+    if (pressBlocked()) return;   // a pinch finger lifting over the pill is not a press
     if (sheetExitingRef.current) return;
-    const toParentSheet = selectedSpot ? spotOrigin === 'destination' : !!selectedDest && destOrigin === 'country';
-    if (toParentSheet) close();
-    else closeWithSheetExit(close);
-  }, [selectedSpot, selectedDest, spotOrigin, destOrigin, handleCloseSpot, handleCloseDestinationSheet, handleCloseCountry, closeWithSheetExit]);
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+    if (selectedSpot) { if (selectedDest) handleCloseSpotToDestination(); }
+    else if (selectedDest) handleCloseDestinationSheetToCountry();
+  }, [selectedSpot, selectedDest, handleCloseSpotToDestination, handleCloseDestinationSheetToCountry]);
+  // The X pill: close to the map (the sheet slides off first, then the camera steps back; see the *View closes).
+  const handleCloseToMap = useCallback(() => {
+    if (pressBlocked()) return;
+    if (sheetExitingRef.current) return;
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+    closeWithSheetExit(selectedSpot ? handleCloseSpotToDestinationView
+      : selectedDest ? handleCloseDestinationToCountryView
+      : handleCloseCountry);
+  }, [selectedSpot, selectedDest, handleCloseSpotToDestinationView, handleCloseDestinationToCountryView, handleCloseCountry, closeWithSheetExit]);
 
   // Back pill, while the country/destination sheet is full-screen: instead of navigating up
   // a level, just collapse the currently open sheet to its bottom-screen carousel view.
@@ -5952,39 +5950,30 @@ const destItems = useMemo((): DestItem[] =>
           <Animated.View
             style={{ opacity: breadcrumbAnim, transform: [{ scale: breadcrumbScale }] }}
           >
-            <Pressable
-              style={mapState === 'sheet' ? styles.upPillBare : styles.upPill}
-              onPress={mapState === 'sheet' ? handlePillCollapse : handleBackNav}
-              hitSlop={6}
-            >
-              {mapState === 'sheet' ? (
-                // Full-screen: a simple down arrow that collapses the sheet back to its
-                // bottom-screen carousel view, instead of navigating up a level.
+            {mapState === 'sheet' ? (
+              // Full-screen: a simple down arrow that collapses the sheet back to its
+              // bottom-screen carousel view, instead of navigating up a level.
+              <Pressable style={styles.upPillBare} onPress={handlePillCollapse} hitSlop={6}>
                 <ChevronDown size={24} color="#374151" strokeWidth={2.5} />
-              ) : (
-                (() => {
-                  // Provenance-aware target (see destOrigin/spotOrigin): a NAMED level
-                  // renders "← Name"; a plain return-to-map (lateral entries, or a
-                  // selected country whose only "up" is the world) renders a bare X —
-                  // there's no meaningful level to name, it's just "dismiss this".
-                  const backName = selectedSpot
-                    ? (spotOrigin === 'destination'
-                        ? (selectedDest?.name ?? selectedCountry?.country ?? null)
-                        : null)
-                    : selectedDest
-                      ? (destOrigin === 'country' ? selectedDest.country : null)
-                      : null;
-                  return backName ? (
-                    <>
+              </Pressable>
+            ) : (() => {
+              // Half-screen and peek: "← Parent" (a spot's destination, a destination's country; a country, and a
+              // standalone spot with no destination selected, have none) beside an X that closes to the map.
+              const backName = selectedSpot ? (selectedDest?.name ?? null) : selectedDest ? selectedDest.country : null;
+              return (
+                <View style={styles.upPillRow}>
+                  {!!backName && (
+                    <Pressable style={[styles.upPill, styles.upPillFixed]} onPress={handleUpNav} hitSlop={6}>
                       <Text style={styles.upPillArrow}>←</Text>
-                      <Text style={styles.upPillTxt}>{backName}</Text>
-                    </>
-                  ) : (
+                      <Text style={styles.upPillTxt} numberOfLines={1}>{backName}</Text>
+                    </Pressable>
+                  )}
+                  <Pressable style={[styles.upPill, styles.upPillFixed, styles.upPillRound]} onPress={handleCloseToMap} hitSlop={6}>
                     <X size={15} color="#374151" strokeWidth={2.5} />
-                  );
-                })()
-              )}
-            </Pressable>
+                  </Pressable>
+                </View>
+              );
+            })()}
           </Animated.View>
         </Reanimated.View>
       )}
@@ -6252,6 +6241,10 @@ const styles = StyleSheet.create({
     width: 36, height: 36, borderRadius: 18,
     backgroundColor: '#FFFFFF',
   },
+  // The back pill and the X side by side at half-screen and peek, both 36 pt tall.
+  upPillRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+  upPillFixed: { height: 36, paddingVertical: 0 },
+  upPillRound: { width: 36, paddingHorizontal: 0, justifyContent: 'center' },
   upPillArrow: { fontSize: 13, color: '#374151', fontWeight: '700' },
   upPillTxt:   { fontSize: 13, fontWeight: '600', color: '#111827' },
 
